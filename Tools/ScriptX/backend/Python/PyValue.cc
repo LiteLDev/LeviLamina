@@ -119,11 +119,11 @@ Local<Function> Function::newFunction(FunctionCallback callback) {
   };
   PyObject* capsule = PyCapsule_New(
       new FunctionData{std::move(callback), py_backend::currentEngine()}, nullptr, destructor);
-  py_backend::checkAndThrowError();
+  py_backend::checkAndThrowException();
 
   PyObject* function = PyCFunction_New(method, capsule);
   Py_DECREF(capsule);
-  py_backend::checkAndThrowError();
+  py_backend::checkAndThrowException();
 
   return py_interop::asLocal<Function>(function);
 }

@@ -121,8 +121,9 @@ class PyEngine;
 PyObject* newCustomInstance(PyTypeObject* pType, PyObject* argsTuple, PyObject* kwds = nullptr);
 PyObject* newExceptionInstance(PyTypeObject *pType, PyObject* pValue, PyObject* pTraceback);
 PyObject* newExceptionInstance(std::string msg);
-void checkAndThrowError();
-bool checkAndClearError();
+void checkAndThrowException();
+bool checkAndClearException();
+PyObject* checkAndGetException();   // return new ref
 PyEngine* currentEngine();
 PyEngine* currentEngineChecked();
 

@@ -188,11 +188,11 @@ private:
     };
     PyObject* capsule =
         PyCapsule_New(new FunctionData{std::move(callback), this, name}, nullptr, destructor);
-    checkAndThrowError();
+    checkAndThrowException();
 
     PyObject* function = PyCFunction_New(method, capsule);
     Py_DECREF(capsule);
-    checkAndThrowError();
+    checkAndThrowException();
     return function;
   }
 
@@ -240,11 +240,11 @@ private:
     };
     PyObject* capsule =
         PyCapsule_New(new FunctionData{std::move(callback), this, name}, nullptr, destructor);
-    checkAndThrowError();
+    checkAndThrowException();
 
     PyObject* function = PyCFunction_New(method, capsule);
     Py_DECREF(capsule);
-    checkAndThrowError();
+    checkAndThrowException();
 
     return function;
   }
@@ -291,11 +291,11 @@ private:
     };
     PyObject* capsule =
         PyCapsule_New(new FunctionData{std::move(callback), this, name}, nullptr, destructor);
-    checkAndThrowError();
+    checkAndThrowException();
 
     PyObject* function = PyCFunction_New(method, capsule);
     Py_DECREF(capsule);
-    checkAndThrowError();
+    checkAndThrowException();
 
     return function;
   }
@@ -344,11 +344,11 @@ private:
     };
     PyObject* capsule =
         PyCapsule_New(new FunctionData{std::move(callback), this, name}, nullptr, destructor);
-    checkAndThrowError();
+    checkAndThrowException();
 
     PyObject* function = PyCFunction_New(method, capsule);
     Py_DECREF(capsule);
-    checkAndThrowError();
+    checkAndThrowException();
 
     return function;
   }
@@ -452,11 +452,11 @@ private:
       };
       PyObject* capsule =
           PyCapsule_New(new FunctionData{std::move(f.callback), this, f.name}, nullptr, destructor);
-      checkAndThrowError();
+      checkAndThrowException();
 
       PyObject* function = PyCFunction_New(method, capsule);
       Py_DECREF(capsule);
-      checkAndThrowError();
+      checkAndThrowException();
 
       PyObject* staticMethod = PyStaticMethod_New(function);
       Py_DECREF(function);
@@ -528,11 +528,11 @@ private:
       };
       PyObject* capsule =
           PyCapsule_New(new FunctionData{std::move(f.callback), this, f.name}, nullptr, destructor);
-      checkAndThrowError();
+      checkAndThrowException();
 
       PyObject* function = PyCFunction_New(method, capsule);
       Py_DECREF(capsule);
-      checkAndThrowError();
+      checkAndThrowException();
 
       PyObject* instanceMethod = PyInstanceMethod_New(function);
       Py_DECREF(function);

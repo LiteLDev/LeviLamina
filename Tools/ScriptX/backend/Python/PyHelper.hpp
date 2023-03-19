@@ -62,6 +62,11 @@ struct py_interop {
 
   static Arguments makeArguments(py_backend::PyEngine* engine, PyObject* self, PyObject* args);
 
+  // Exception APIs
+  static bool clearLastException();
+  static bool hasException();
+  static script::Exception getAndClearLastException();
+
   // Python runtime config APIs
   static void setPythonHomePath(const std::wstring &path);
   static std::wstring getPythonHomePath();

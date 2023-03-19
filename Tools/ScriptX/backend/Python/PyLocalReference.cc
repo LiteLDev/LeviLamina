@@ -250,7 +250,7 @@ bool Local<Object>::instanceOf(const Local<class script::Value>& type) const {
     ret = PyObject_IsInstance(val_, type.val_);
   else
     ret = PyObject_IsInstance(val_, (PyObject*)Py_TYPE(type.val_));
-  if (py_backend::checkAndClearError())
+  if (py_backend::checkAndClearException())
     return false;
   return ret;
 }
@@ -291,7 +291,7 @@ Local<Value> Local<Function>::callImpl(const Local<Value>& thiz, size_t size,
   }
   PyObject* result = PyObject_CallObject(val_, args_tuple);
   Py_DECREF(args_tuple);
-  py_backend::checkAndThrowError();
+  py_backend::checkAndThrowException();
   return py_interop::asLocal<Value>(result);
 }
 

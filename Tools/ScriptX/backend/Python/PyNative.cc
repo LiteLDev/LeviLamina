@@ -61,7 +61,7 @@ Local<Array> ScriptClass::getInternalStore() const {
   PyObject* storage = PyObject_GetAttrString(ref, "scriptx_internal_store");    // return new ref
   if(!storage || storage == Py_None || PyList_Check(storage) == 0)
   {
-    py_backend::checkAndClearError();
+    py_backend::checkAndClearException();
     PyObject *internalList = PyList_New(0);
     py_backend::setAttr(ref, "scriptx_internal_store", internalList);
     Py_DECREF(internalList);

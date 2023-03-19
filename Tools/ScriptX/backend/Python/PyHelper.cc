@@ -25,6 +25,23 @@ namespace script {
     return Arguments(py_backend::ArgumentsData{engine, self, args});
   }
 
+  bool py_interop::clearLastException() {
+    return py_backend::checkAndClearException();
+  }
+  bool py_interop::hasException() {
+    return PyErr_Occurred();
+  }
+  script::Exception py_interop::getAndClearLastException() {
+    PyObject* exceptionObj = py_backend::checkAndGetException();
+    if(Py_IsNone(exceptionObj))
+    {
+      Py_XDECREF(exceptionObj);
+      throw std::runtime_error("There is no Python exception currently");
+    }
+    else
+      return Exception(py_interop::asLocal<Value>(exceptionObj));
+  }
+
   void py_interop::setPythonHomePath(const std::wstring &path) {
     return script::py_backend::py_runtime_settings::setPythonHomePath(path);
   }
@@ -130,14 +147,14 @@ SCRIPTX_END_IGNORE_DEPRECARED
 
 void setAttr(PyObject* obj, PyObject* key, PyObject* value) {
   if (PyObject_SetAttr(obj, key, value) != 0) {
-    checkAndThrowError();
+    checkAndThrowException();
     throw Exception(std::string("Fail to set attr"));
   }
 }
 
 void setAttr(PyObject* obj, const char* key, PyObject* value) {
   if (PyObject_SetAttrString(obj, key, value) != 0) {
-    checkAndThrowError();
+    checkAndThrowException();
     throw Exception(std::string("Fail to set attr named ") + key);
   }
 }
@@ -146,7 +163,7 @@ void setAttr(PyObject* obj, const char* key, PyObject* value) {
 PyObject* getAttr(PyObject* obj, PyObject* key) {
   PyObject* result = PyObject_GetAttr(obj, key);
   if (!result) {
-    checkAndThrowError();
+    checkAndThrowException();
     throw Exception("Fail to get attr");
   }
   return result;
@@ -156,7 +173,7 @@ PyObject* getAttr(PyObject* obj, PyObject* key) {
 PyObject* getAttr(PyObject* obj, const char* key) {
   PyObject* result = PyObject_GetAttrString(obj, key);
   if (!result) {
-    checkAndThrowError();
+    checkAndThrowException();
     throw Exception(std::string("Fail to get attr named ") + key);
   }
   return result;
@@ -168,14 +185,14 @@ bool hasAttr(PyObject* obj, const char* key) { return PyObject_HasAttrString(obj
 
 void delAttr(PyObject* obj, PyObject* key) {
   if (PyObject_DelAttr(obj, key) != 0) {
-    checkAndThrowError();
+    checkAndThrowException();
     throw Exception("Fail to del attr");
   }
 }
 
 void delAttr(PyObject* obj, const char* key) {
   if (PyObject_DelAttrString(obj, key) != 0) {
-    checkAndThrowError();
+    checkAndThrowException();
     throw Exception(std::string("Fail to del attr named ") + key);
   }
 }
@@ -229,11 +246,11 @@ PyObject* newCustomInstance(PyTypeObject* pType, PyObject* argsTuple, PyObject* 
 {
   PyObject* self = pType->tp_new(pType, argsTuple, kwds);
   if(self == nullptr) {
-    checkAndThrowError();
+    checkAndThrowException();
     throw Exception(std::string("Fail to alloc space for new instance of type ") + pType->tp_name);
   }
   if (pType->tp_init(self, argsTuple, kwds) < 0) {
-    checkAndThrowError();
+    checkAndThrowException();
     throw Exception(std::string("Fail to init new instance of type ") + pType->tp_name);
   }
   return self;
@@ -249,7 +266,7 @@ PyObject* newExceptionInstance(PyTypeObject *pType, PyObject* pValue, PyObject* 
   std::string message{pType->tp_name};
   PyObject *msgObj = PyObject_Str(pValue);
   if (msgObj) {
-    message = PyUnicode_AsUTF8(msgObj);
+    message = message + ": " + PyUnicode_AsUTF8(msgObj);
   }
 
   // create arguments list for constructor
@@ -285,23 +302,31 @@ PyObject* newExceptionInstance(std::string msg)
   return exceptionObj;
 }
 
-void checkAndThrowError() {
-  if (PyErr_Occurred()) {
-    PyTypeObject *pType;
-    PyObject *pValue, *pTraceback;
-    PyErr_Fetch((PyObject**)(&pType), &pValue, &pTraceback);
-    PyErr_NormalizeException((PyObject**)(&pType), &pValue, &pTraceback);
-
-    throw Exception(py_interop::asLocal<Value>(newExceptionInstance(pType, pValue, pTraceback)));
-  }
+void checkAndThrowException() {
+  PyObject* exceptionObj = checkAndGetException();
+  if(Py_IsNone(exceptionObj))
+    Py_XDECREF(exceptionObj);
+  else
+    throw Exception(py_interop::asLocal<Value>(exceptionObj));
 }
 
-bool checkAndClearError() {
+bool checkAndClearException() {
   if (PyErr_Occurred()) {
     PyErr_Clear();
     return true;
   }
   return false;
+}
+
+PyObject* checkAndGetException() {
+  if (PyErr_Occurred()) {
+    PyTypeObject *pType;
+    PyObject *pValue, *pTraceback;
+    PyErr_Fetch((PyObject**)(&pType), &pValue, &pTraceback);
+    PyErr_NormalizeException((PyObject**)(&pType), &pValue, &pTraceback);
+    return newExceptionInstance(pType, pValue, pTraceback);
+  }
+  return Py_NewRef(Py_None);
 }
 
 PyEngine* currentEngine() { return EngineScope::currentEngineAs<PyEngine>(); }
@@ -495,7 +520,7 @@ PyObject *makeEmptyPyFunction() {
     Py_RETURN_NONE;
   };
   PyObject* function = PyCFunction_New(method, Py_None);
-  py_backend::checkAndThrowError();
+  py_backend::checkAndThrowException();
   return function;
 }
 
