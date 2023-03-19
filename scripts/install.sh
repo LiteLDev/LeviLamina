@@ -23,5 +23,6 @@ cd bedrock_server
 
 # Install LiteLoaderBDS
 ./../lip-${lip_version}-linux-amd64/lip install ll
+WINEDEBUG=-all wine LLPeEditor.exe
 
 echo Done!
