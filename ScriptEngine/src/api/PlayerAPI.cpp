@@ -2549,13 +2549,15 @@ Local<Value> PlayerClass::giveItem(const Arguments& args) {
 Local<Value> PlayerClass::clearItem(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
 
     try {
         Player* player = get();
-        if (!player)
+        if (!player) {
             return Local<Value>();
-
-        return Number::newNumber(player->clearItem(args[0].toStr()));
+        }
+        return Number::newNumber(
+            (int32_t)player->clearItem(args[0].toStr(), args.size() == 1 ? 1 : args[1].asNumber().toInt32()));
     }
     CATCH("Fail in clearItem!");
 }

@@ -130,12 +130,13 @@ public:
      * @return True if the player is successfully given the items; otherwise false
      */
     LIAPI bool giveItem(ItemStack* item);
-    LIAPI bool giveItem(string typeName, int amount);
+    LIAPI bool giveItem(std::string typeName, int amount);
     LIAPI bool giveItem(ItemStack* item, int amount);
 
-    LIAPI int clearItem(string typeName);
+    [[deprecated]] LIAPI int clearItem(std::string typeName);
+    LIAPI unsigned int clearItem(std::string_view typeName, unsigned int clearCount);
     LIAPI bool runcmd(const string& cmd);
-    LIAPI bool transferServer(const string& address, unsigned short port);
+    LIAPI bool transferServer(const std::string& address, unsigned short port);
     LIAPI bool setSidebar(const std::string& title, const std::vector<std::pair<std::string, int>>& data, ObjectiveSortOrder sortOrder);
     LIAPI bool removeSidebar();
 

@@ -1,4 +1,5 @@
-﻿#include <bitset>
+#include <bitset>
+#include <string_view>
 #include "magic_enum/magic_enum.hpp"
 
 #include "llapi/mc/Minecraft.hpp"
@@ -251,50 +252,73 @@ bool Player::giveItem(string typeName, int amount) {
     return true;
 }
 
-int Player::clearItem(string typeName) {
-    int res = 0;
+int Player::clearItem(std::string typeName) {
+    return this->clearItem(typeName, 2 ^ 32);
+}
+
+unsigned int Player::clearItem(std::string_view typeName, unsigned int num) {
+    unsigned int clearedCount = 0;
+    if (num < 0) {
+        return 0;
+    }
+
+    auto reduceItemCount = [&typeName, &clearedCount, num](Player* player, ItemStack* item) {
+        if (item->getTypeName() == typeName) {
+            auto itemCount = item->getCount();
+            if (itemCount >= int(num) - int(clearedCount)) {
+                item->setNull({});
+                clearedCount += itemCount;
+            } else {
+                item->remove(num - clearedCount);
+                clearedCount = num;
+            }
+        }
+    };
 
     // Hand
-    ItemStack* item = getHandSlot();
-    if (item->getTypeName() == typeName) {
-        auto out = item->getCount();
-        item->setNull({});
-        res += out;
+    reduceItemCount(this, getHandSlot());
+    if (clearedCount >= num) { // > case should never happen
+        refreshInventory();
+        return clearedCount;
     }
 
     // OffHand
-    item = (ItemStack*)&getOffhandSlot();
-    if (item->getTypeName() == typeName) {
-        auto out = item->getCount();
-        item->setNull({});
-        res += out;
+    reduceItemCount(this, (ItemStack*)&getOffhandSlot());
+    if (clearedCount >= num) { // > case should never happen
+        refreshInventory();
+        return clearedCount;
     }
 
     // Inventory
-    Container* container = &getInventory();
-    auto items = container->getAllSlots();
-    int size = container->getSize();
-    for (int i = 0; i < size; ++i) {
-        if (items[i]->getTypeName() == typeName) {
-            int cnt = items[i]->getCount();
-            container->removeItem(i, cnt);
-            res += cnt;
+    {
+        Container* container = &getInventory();
+        auto items = container->getAllSlots();
+        auto size = container->getSize();
+        for (int i = 0; i < size; ++i) {
+            reduceItemCount(this, (ItemStack*)items[i]);
+            if (clearedCount >= num) { // > case should never happen
+                refreshInventory();
+                return clearedCount;
+            }
         }
     }
 
     // Armor
-    auto& armor = getArmorContainer();
-    items = armor.getAllSlots();
-    size = armor.getSize();
-    for (int i = 0; i < size; ++i) {
-        if (items[i]->getTypeName() == typeName) {
-            int cnt = items[i]->getCount();
-            armor.removeItem(i, cnt);
-            res += cnt;
+    {
+        Container* armor = &getArmorContainer();
+        auto items = armor->getAllSlots();
+        auto size = armor->getSize();
+        for (int i = 0; i < size; ++i) {
+            reduceItemCount(this, (ItemStack*)items[i]);
+            if (clearedCount >= num) { // > case should never happen
+                refreshInventory();
+                return clearedCount;
+            }
         }
     }
+
     refreshInventory();
-    return res;
+    return clearedCount;
 }
 
 string Player::getName() {
@@ -816,7 +840,6 @@ bool Player::sendBossEventPacket(BossEvent type, string name, float percent, Bos
     sendNetworkPacket(*pkt);
     return true;
 }
-
 
 bool Player::sendCommandRequestPacket(const string& cmd) {
     auto packet = MinecraftPackets::createPacket(0x4d);
