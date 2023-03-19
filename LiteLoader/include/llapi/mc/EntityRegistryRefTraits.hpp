@@ -5,7 +5,7 @@
 
 class EntityRegistryOwned : public EntityRegistry {
 public:
-    entt::basic_registry<EntityId, std::allocator<EntityId>> mOwnedRegistry;
+    entt::basic_registry<EntityId> mOwnedRegistry;
 };
 
 struct EntityRegistryRefTraits {
