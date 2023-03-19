@@ -36,9 +36,9 @@ public:
     inline Entity* tryUnwrap() {
         StackResultStorageEntity ref(*this);
         if (!ref._hasValue()) {
-            return Entity::tryGetFromEntity(ref._getStackRef(), Unknown);
+            return nullptr;
         }
-        return nullptr;
+        return Entity::tryGetFromEntity(ref._getStackRef(), Unknown);
     }
 
 #undef AFTER_EXTRA
