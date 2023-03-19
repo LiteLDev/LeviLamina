@@ -3,117 +3,22 @@
 #include <llapi/utils/StringHelper.h>
 #include <string>
 #include <llapi/LoggerAPI.h>
+#ifdef LLSE_BACKEND_PYTHON
+#include "PythonHelper.h"
+#endif
 using namespace std;
 
 extern Logger logger;
 extern bool isInConsoleDebugMode;
 extern ScriptEngine* debugEngine;
 
-#define OUTPUT_DEBUG_SIGN() std::cout << ">>> " << std::flush
-
-// process python debug seperately
-#ifdef LLSE_BACKEND_PYTHON
-
-#define OUTPUT_DEBUG_NEED_MORE_CODE_SIGN() std::cout << "... " << std::flush
-std::string codeBlockBuffer = "";
-bool isInsideCodeBlock = false;
-
-bool ProcessPythonDebugEngine(const std::string &cmd)
-{
-    if (cmd == LLSE_DEBUG_CMD)
-    {
-        if (isInConsoleDebugMode)
-        {
-            //EndDebug
-            logger.info("Debug mode ended");
-            isInConsoleDebugMode = false;
-        }
-        else
-        {
-            //StartDebug
-            logger.info("Debug mode begins");
-            codeBlockBuffer.clear();
-            isInsideCodeBlock = false;
-            isInConsoleDebugMode = true;
-            OUTPUT_DEBUG_SIGN();
-        }
-        return false;
-    }
-    if (isInConsoleDebugMode)
-    {
-        EngineScope enter(debugEngine);
-        if (cmd == "stop")
-        {
-            return true;
-        }
-        else
-        {
-            try {
-                Local<Value> result;
-                if(isInsideCodeBlock)
-                {
-                    // is in code block mode
-                    if(cmd.empty())
-                    {
-                        // exit code block
-                        isInsideCodeBlock = false;
-                        result = debugEngine->eval(codeBlockBuffer);
-                        codeBlockBuffer = "";
-                    }
-                    else
-                    {
-                        // add a new line to buffer
-                        codeBlockBuffer += cmd + "\n";
-                        OUTPUT_DEBUG_NEED_MORE_CODE_SIGN();
-                        return false;
-                    }
-                }
-                else
-                {
-                    // not in code block mode
-                    if(EndsWith(cmd, ":"))
-                    {
-                        // begin code block mode
-                        isInsideCodeBlock = true;
-                        codeBlockBuffer = cmd + "\n";
-                        OUTPUT_DEBUG_NEED_MORE_CODE_SIGN();
-                        return false;
-                    }
-                    else
-                    {
-                        result = debugEngine->eval(cmd);
-                    }
-                }
-
-                if(result.isNull())
-                {
-                    // No result output
-                    OUTPUT_DEBUG_SIGN();
-                }
-                else
-                {
-                    PrintValue(std::cout, result);
-                    cout << endl;
-                    OUTPUT_DEBUG_SIGN();
-                }
-            } catch(const Exception &e) {
-                isInsideCodeBlock = false;
-                codeBlockBuffer.clear();
-                PrintException(e);
-                OUTPUT_DEBUG_SIGN();
-            }
-        }
-        return false;
-    }
-    return true;
-}
-#endif
-
+#define OUTPUT_DEBUG_SIGN() std::cout << "> " << std::flush
 
 bool ProcessDebugEngine(const std::string& cmd)
 {
 #ifdef LLSE_BACKEND_PYTHON
-    return ProcessPythonDebugEngine(cmd);
+    // process python debug seperately
+    return PythonHelper::processPythonDebugEngine(cmd);
 #endif
 
     if (cmd == LLSE_DEBUG_CMD)

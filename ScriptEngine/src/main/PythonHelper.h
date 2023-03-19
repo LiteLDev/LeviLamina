@@ -18,6 +18,8 @@ std::string findEntryScript(const std::string& dirPath);
 std::string getPluginPackageName(const std::string& dirPath);
 std::string getPluginPackDependencyFilePath(const std::string& dirPath);
 
+bool processPythonDebugEngine(const std::string &cmd);
+
 bool processConsolePipCmd(const std::string& cmd);
 int executePipCommand(std::string cmd, std::string workingDir = LLSE_PLUGINS_ROOT_DIR);
 

@@ -15,9 +15,13 @@
 #include "engine/EngineManager.h"
 #include "engine/EngineOwnData.h"
 #include <tomlplusplus/toml.hpp>
+#include <Python.h>
 
 // pre-declare
 extern void BindAPIs(ScriptEngine* engine);
+extern Logger logger;
+extern bool isInConsoleDebugMode;
+extern ScriptEngine* debugEngine;
 
 namespace PythonHelper {
 
@@ -299,6 +303,102 @@ std::string getPluginPackDependencyFilePath(const std::string& dirPath)
         return UTF82String(requirementsTmpFilePath.make_preferred().u8string());
     else
         return "";
+}
+
+#define OUTPUT_DEBUG_SIGN() std::cout << ">>> " << std::flush
+#define OUTPUT_DEBUG_NEED_MORE_CODE_SIGN() std::cout << "... " << std::flush
+std::string codeBuffer = "";
+bool isInsideCodeBlock = false;
+
+static PyObject* getPyGlobalDict() {
+  PyObject* m = PyImport_AddModule("__main__");
+  if (m == nullptr) {
+    throw Exception("can't find __main__ module");
+  }
+  return PyModule_GetDict(m);
+}
+
+bool processPythonDebugEngine(const std::string &cmd)
+{
+    if (cmd == LLSE_DEBUG_CMD)
+    {
+        if (isInConsoleDebugMode)
+        {
+            //EndDebug
+            logger.info("Debug mode ended");
+            isInConsoleDebugMode = false;
+        }
+        else
+        {
+            //StartDebug
+            logger.info("Debug mode begins");
+            codeBuffer.clear();
+            isInsideCodeBlock = false;
+            isInConsoleDebugMode = true;
+            OUTPUT_DEBUG_SIGN();
+        }
+        return false;
+    }
+    if (isInConsoleDebugMode)
+    {
+        EngineScope enter(debugEngine);
+        if (cmd == "stop")
+        {
+            return true;
+        }
+        else
+        {
+            try {
+                if(isInsideCodeBlock)
+                {
+                    // is in code block mode
+                    if(cmd.empty())
+                    {
+                        // exit code block
+                        isInsideCodeBlock = false;
+                    }
+                    else
+                    {
+                        // add a new line to buffer
+                        codeBuffer += cmd + "\n";
+                        OUTPUT_DEBUG_NEED_MORE_CODE_SIGN();
+                        return false;
+                    }
+                }
+                else
+                {
+                    // not in code block mode
+                    if(EndsWith(cmd, ":"))
+                    {
+                        // begin code block mode
+                        isInsideCodeBlock = true;
+                        codeBuffer = cmd + "\n";
+                        OUTPUT_DEBUG_NEED_MORE_CODE_SIGN();
+                        return false;
+                    }
+                    else
+                    {
+                        codeBuffer = cmd;
+                    }
+                }
+
+                PyRun_StringFlags(codeBuffer.c_str(), Py_single_input, getPyGlobalDict(), nullptr, nullptr);
+                codeBuffer.clear();
+                if(script::py_interop::hasException())
+                {
+                    auto exp = script::py_interop::getAndClearLastException();
+                    throw exp;
+                }
+            } catch(const Exception &e) {
+                isInsideCodeBlock = false;
+                codeBuffer.clear();
+                logger.error("Exception:\n" + e.stacktrace() + "\n" + e.message());
+            }
+        }
+        OUTPUT_DEBUG_SIGN();
+        return false;
+    }
+    return true;
 }
 
 bool processConsolePipCmd(const std::string& cmd)
