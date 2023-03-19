@@ -361,7 +361,7 @@ bool Player::refreshAttributes(std::vector<Attribute const*> const& attributes) 
         wp.writeString((*attribute).getName().getString());
     }
     wp.writeUnsignedVarInt64(0);
-    NetworkPacket<0x1D> pkt(wp.getAndReleaseData());
+    NetworkPacket<(int)MinecraftPacketIds::UpdateAttributes> pkt(wp.getAndReleaseData());
     sendNetworkPacket(pkt);
     return true;
 }
@@ -692,7 +692,7 @@ bool Player::sendAddItemEntityPacket(unsigned long long runtimeID, Item const& i
 
     wp.writeBool(false);
 
-    NetworkPacket<15> pkt(wp.getAndReleaseData());
+    NetworkPacket<(int)MinecraftPacketIds::AddItemActor> pkt(wp.getAndReleaseData());
     sendNetworkPacket(pkt);
     return true;
 }
@@ -720,7 +720,7 @@ bool Player::sendAddEntityPacket(unsigned long long runtimeID, string entityType
     // Links
     bs.writeUnsignedVarInt(0);
 
-    NetworkPacket<13> pkt(bs.getAndReleaseData());
+    NetworkPacket<(int)MinecraftPacketIds::AddActor> pkt(bs.getAndReleaseData());
     sendNetworkPacket(pkt);
     return true;
 }
