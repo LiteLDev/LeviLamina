@@ -266,9 +266,9 @@ unsigned int Player::clearItem(std::string_view typeName, unsigned int num) {
     auto reduceItemCount = [&typeName, &clearedCount, num](Player* player, ItemStack* item) {
         if (item->getTypeName() == typeName) {
             auto itemCount = item->getCount();
-            if (itemCount >= num - clearedCount) {
+            if (itemCount >= int(num) - int(clearedCount)) {
                 item->setNull({});
-                clearedCount += out;
+                clearedCount += itemCount;
             }
             else {
                 item->remove(num - clearedCount);
@@ -322,7 +322,7 @@ unsigned int Player::clearItem(std::string_view typeName, unsigned int num) {
     }
 
     refreshInventory();
-    return res;
+    return clearedCount;
 }
 
 string Player::getName() {
