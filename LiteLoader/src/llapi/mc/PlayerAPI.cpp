@@ -361,7 +361,7 @@ bool Player::refreshAttributes(std::vector<Attribute const*> const& attributes) 
         wp.writeString((*attribute).getName().getString());
     }
     wp.writeUnsignedVarInt64(0);
-    auto pkt = MinecraftPackets::createPacket(0x1D);
+    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::UpdateAttributes);
     pkt->read(wp);
     sendNetworkPacket(*pkt);
     return true;
