@@ -66,11 +66,11 @@
 using ll::logger;
 
 NetworkIdentifier* Player::getNetworkIdentifier() {
-    return (NetworkIdentifier*)(getUserEntityIdentifierComponent());
+    return (NetworkIdentifier*)(tryGetComponent<UserEntityIdentifierComponent>());
 }
 
 Certificate* Player::getCertificate() {
-    UserEntityIdentifierComponent* ueic = getUserEntityIdentifierComponent();
+    UserEntityIdentifierComponent* ueic = tryGetComponent<UserEntityIdentifierComponent>();
     if (ueic) {
         return ueic->mCertificate.get();
     }
@@ -392,14 +392,14 @@ bool Player::refreshAttributes(std::vector<Attribute const*> const& attributes) 
 }
 
 string Player::getUuid() {
-    auto ueic = getUserEntityIdentifierComponent();
+    auto ueic = tryGetComponent<UserEntityIdentifierComponent>();
     if (!ueic)
         return "";
     return ueic->mUUID.asString();
 }
 
 unsigned char Player::getClientSubId() {
-    auto ueic = getUserEntityIdentifierComponent();
+    auto ueic = tryGetComponent<UserEntityIdentifierComponent>();
     if (!ueic)
         return -1;
     return ueic->mClientSubId;
@@ -695,7 +695,7 @@ bool Player::sendSpawnParticleEffectPacket(Vec3 spawnPos, int dimID, string Part
     // built-in, or to one implemented by behaviour packs.
     wp.writeString(ParticleName);
 
-   auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::SpawnParticleEffect);
+    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::SpawnParticleEffect);
     pkt->read(wp);
     sendNetworkPacket(*pkt);
     return true;

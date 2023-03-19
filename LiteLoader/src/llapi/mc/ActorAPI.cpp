@@ -33,10 +33,8 @@
 
 class UserEntityIdentifierComponent;
 
-UserEntityIdentifierComponent* Actor::getUserEntityIdentifierComponent() const {
-    return SymCall(
-        "??$tryGetComponent@VUserEntityIdentifierComponent@@@Actor@@QEAAPEAVUserEntityIdentifierComponent@@XZ",
-        UserEntityIdentifierComponent*, Actor*)((Actor*)this);
+EntityContext& Actor::getEntityContext() const {
+    return *dAccess<EntityContext*, 8>((Actor*)this);
 }
 
 float Actor::getRealSpeed() const {
@@ -72,10 +70,11 @@ bool Actor::isPlayer(bool allowSimulatedPlayer) const {
 bool Actor::isItemActor() const {
     return hasCategory(ActorCategory::Item); // IDA Player::take
 }
+
 #include "llapi/mc/ActorCollision.hpp"
 
 bool Actor::isOnGround() const {
-    return ActorCollision::isOnGround(*dAccess<EntityContext*, 8>(this)); // IDA DirectActorProxyImpl<IMobMovementProxy>::isOnGround
+    return ActorCollision::isOnGround(getEntityContext()); // IDA DirectActorProxyImpl<IMobMovementProxy>::isOnGround
 }
 
 std::string Actor::getTypeName() const {
