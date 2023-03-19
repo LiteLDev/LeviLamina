@@ -1,4 +1,4 @@
-﻿#include <bitset>
+#include <bitset>
 #include "magic_enum/magic_enum.hpp"
 
 #include "llapi/mc/Minecraft.hpp"
@@ -251,90 +251,75 @@ bool Player::giveItem(string typeName, int amount) {
     return true;
 }
 
-int Player::clearItem(string typeName, int num) {
-    int res = 0;
+
+int Player::clearItem(string typeName){
+    return this->clearItem(typeName, 2^32);
+}
+
+unsigned int Player::clearItem(string_view typeName, unsigned int num) {
+    unsigned int clearedCount = 0;
     if (num < 0) {
         return 0;
     }
-    // Hand
-    ItemStack* item = getHandSlot();
-    if (item->getTypeName() == typeName) {
-        auto out = item->getCount();
-        if (out >= num - res) {
-            item->setNull({});
-            res += out;
-        }
-        else {
-            item->remove(num - res);
-            res = num;
-        }
-        if (res >= num) {
-            refreshInventory();
-            return res;
-        }
-    }
 
-    // OffHand
-    item = (ItemStack*)&getOffhandSlot();
-    if (item->getTypeName() == typeName) {
-        auto out = item->getCount();
-        if (out >= num - res) {
-            item->setNull({});
-            res += out;
-        }
-        else {
-            item->remove(num - res);
-            res = num;
-        }
-        if (res >= num) {
-            refreshInventory();
-            return res;
-        }
-    }
-
-    // Inventory
-    Container* container = &getInventory();
-    auto items = container->getAllSlots();
-    int size = container->getSize();
-    for (int i = 0; i < size; ++i) {
-        if (items[i]->getTypeName() == typeName) {
-            int cnt = items[i]->getCount();
-            if (cnt >= num - res) {
-                container->removeItem(i, cnt);
-                res += cnt;
+    auto reduceItemCount = [&typeName, &clearedCount, num](Player* player, ItemStack* item) {
+        if (item->getTypeName() == typeName) {
+            auto itemCount = item->getCount();
+            if (itemCount >= num - clearedCount) {
+                item->setNull({});
+                clearedCount += out;
             }
             else {
-                container->removeItem(i, num - res);
-                res = num;
+                item->remove(num - clearedCount);
+                clearedCount = num;
             }
-            if (res >= num) {
+        }
+    }
+
+    // Hand
+    reduceItemCount(this, getHandSlot());
+    if (clearedCount >= num) { // > case should never happen
+        refreshInventory();
+        return clearedCount;
+    }
+    
+
+    // OffHand
+    reduceItemCount(this, (ItemStack*)&getOffhandSlot());
+    if (clearedCount >= num) { // > case should never happen
+        refreshInventory();
+        return clearedCount;
+    }
+    
+
+    // Inventory
+    {
+        Container* container = &getInventory();
+        auto items = container->getAllSlots();
+        auto size = container->getSize();
+        for (int i = 0; i < size; ++i) {
+            reduceItemCount(this, items[i]);
+            if (clearedCount >= num) { // > case should never happen
                 refreshInventory();
-                return res;
+                return clearedCount;
             }
         }
     }
 
     // Armor
-    auto& armor = getArmorContainer();
-    items = armor.getAllSlots();
-    size = armor.getSize();
-    for (int i = 0; i < size; ++i) {
-        if (items[i]->getTypeName() == typeName) {
-            int cnt = items[i]->getCount();
-            if (cnt >= num - res) {
-                container->removeItem(i, cnt);
-                res += cnt;
-            }
-            else {
-                container->removeItem(i, num - res);
-                res = num;
-            }
-            if (res >= num) {
+    {
+        Container* armor = &getArmorContainer();
+        auto items = armor.getAllSlots();
+        auto size = armor.getSize();
+        for (int i = 0; i < size; ++i) {
+            reduceItemCount(this, items[i]);
+            if (clearedCount >= num) { // > case should never happen
                 refreshInventory();
-                return res;
+                return clearedCount;
             }
         }
     }
+
     refreshInventory();
     return res;
 }
