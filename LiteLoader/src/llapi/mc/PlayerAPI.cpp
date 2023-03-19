@@ -1,4 +1,5 @@
 #include <bitset>
+#include <string_view>
 #include "magic_enum/magic_enum.hpp"
 
 #include "llapi/mc/Minecraft.hpp"
@@ -252,11 +253,11 @@ bool Player::giveItem(string typeName, int amount) {
 }
 
 
-int Player::clearItem(string typeName){
+int Player::clearItem(std::string typeName){
     return this->clearItem(typeName, 2^32);
 }
 
-unsigned int Player::clearItem(string_view typeName, unsigned int num) {
+unsigned int Player::clearItem(std::string_view typeName, unsigned int num) {
     unsigned int clearedCount = 0;
     if (num < 0) {
         return 0;
