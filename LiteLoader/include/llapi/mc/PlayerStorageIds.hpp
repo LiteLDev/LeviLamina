@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1PlayerStorageIds\@\@QEAA\@XZ
+     * @symbol ??1PlayerStorageIds\@\@QEAA\@XZ
      */
     MCAPI ~PlayerStorageIds();
 

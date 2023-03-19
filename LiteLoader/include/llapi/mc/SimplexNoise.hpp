@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @symbol  ??0SimplexNoise\@\@QEAA\@AEAVIRandom\@\@_N\@Z
+     * @symbol ??0SimplexNoise\@\@QEAA\@AEAVIRandom\@\@_N\@Z
      */
     MCAPI SimplexNoise(class IRandom &, bool);
     /**
-     * @symbol  ?_add\@SimplexNoise\@\@QEBAXPEAMMMHHMMM\@Z
+     * @symbol ?_add\@SimplexNoise\@\@QEBAXPEAMMMHHMMM\@Z
      */
     MCAPI void _add(float *, float, float, int, int, float, float, float) const;
     /**
-     * @symbol  ?_getValue\@SimplexNoise\@\@QEBAMAEBVVec2\@\@\@Z
+     * @symbol ?_getValue\@SimplexNoise\@\@QEBAMAEBVVec2\@\@\@Z
      */
     MCAPI float _getValue(class Vec2 const &) const;
     /**
-     * @symbol  ?_getValue\@SimplexNoise\@\@QEBAMAEBVVec3\@\@\@Z
+     * @symbol ?_getValue\@SimplexNoise\@\@QEBAMAEBVVec3\@\@\@Z
      */
     MCAPI float _getValue(class Vec3 const &) const;
 

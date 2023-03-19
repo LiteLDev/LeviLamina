@@ -31,31 +31,31 @@ public:
 
 public:
     /**
-     * @symbol  ??0IntRange\@\@QEAA\@H\@Z
-     */
-    MCAPI IntRange(int);
-    /**
-     * @symbol  ??0IntRange\@\@QEAA\@HH\@Z
+     * @symbol ??0IntRange\@\@QEAA\@HH\@Z
      */
     MCAPI IntRange(int, int);
     /**
-     * @symbol  ?getValue\@IntRange\@\@QEBAHAEAVRandom\@\@\@Z
+     * @symbol ??0IntRange\@\@QEAA\@H\@Z
+     */
+    MCAPI IntRange(int);
+    /**
+     * @symbol ?getValue\@IntRange\@\@QEBAHAEAVRandom\@\@\@Z
      */
     MCAPI int getValue(class Random &) const;
     /**
-     * @symbol  ?getValueInclusive\@IntRange\@\@QEBAHAEAVRandom\@\@\@Z
+     * @symbol ?getValueInclusive\@IntRange\@\@QEBAHAEAVRandom\@\@\@Z
      */
     MCAPI int getValueInclusive(class Random &) const;
     /**
-     * @symbol  ?isInRangeInclusive\@IntRange\@\@QEBA_NH\@Z
+     * @symbol ?isInRangeInclusive\@IntRange\@\@QEBA_NH\@Z
      */
     MCAPI bool isInRangeInclusive(int) const;
     /**
-     * @symbol  ?parseJson\@IntRange\@\@QEAA_NVValue\@Json\@\@HH\@Z
+     * @symbol ?parseJson\@IntRange\@\@QEAA_NVValue\@Json\@\@HH\@Z
      */
     MCAPI bool parseJson(class Json::Value, int, int);
     /**
-     * @symbol  ?ZERO\@IntRange\@\@2U1\@B
+     * @symbol ?ZERO\@IntRange\@\@2U1\@B
      */
     MCAPI static struct IntRange const ZERO;
 

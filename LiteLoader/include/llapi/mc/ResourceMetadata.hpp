@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ResourceMetadata\@\@QEAA\@XZ
+     * @symbol ??1ResourceMetadata\@\@QEAA\@XZ
      */
     MCAPI ~ResourceMetadata();
 

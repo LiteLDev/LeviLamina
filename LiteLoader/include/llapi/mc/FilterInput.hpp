@@ -29,19 +29,19 @@ public:
 
 public:
     /**
-     * @symbol  ??0FilterInput\@\@QEAA\@H\@Z
+     * @symbol ??0FilterInput\@\@QEAA\@H\@Z
      */
     MCAPI FilterInput(int);
     /**
-     * @symbol  ??4FilterInput\@\@QEAAAEAV0\@AEBV0\@\@Z
-     */
-    MCAPI class FilterInput & operator=(class FilterInput const &);
-    /**
-     * @symbol  ??4FilterInput\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     * @symbol ??4FilterInput\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class FilterInput & operator=(class FilterInput &&);
     /**
-     * @symbol  ??1FilterInput\@\@QEAA\@XZ
+     * @symbol ??4FilterInput\@\@QEAAAEAV0\@AEBV0\@\@Z
+     */
+    MCAPI class FilterInput & operator=(class FilterInput const &);
+    /**
+     * @symbol ??1FilterInput\@\@QEAA\@XZ
      */
     MCAPI ~FilterInput();
 

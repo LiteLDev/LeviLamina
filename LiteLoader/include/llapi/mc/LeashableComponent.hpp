@@ -30,15 +30,15 @@ public:
 
 public:
     /**
-     * @symbol  ?getInteraction\@LeashableComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
+     * @symbol ?getInteraction\@LeashableComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     /**
-     * @symbol  ?leash\@LeashableComponent\@\@QEAAXAEAVActor\@\@0\@Z
+     * @symbol ?leash\@LeashableComponent\@\@QEAAXAEAVActor\@\@0\@Z
      */
     MCAPI void leash(class Actor &, class Actor &);
     /**
-     * @symbol  ?unleash\@LeashableComponent\@\@QEAAXAEAVActor\@\@\@Z
+     * @symbol ?unleash\@LeashableComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void unleash(class Actor &);
 

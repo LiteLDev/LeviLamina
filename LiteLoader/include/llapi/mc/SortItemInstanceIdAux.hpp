@@ -12,7 +12,7 @@
 #undef BEFORE_EXTRA
 
 
-struct SortItemInstanceIdAux {
+class SortItemInstanceIdAux {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -20,14 +20,14 @@ struct SortItemInstanceIdAux {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SORTITEMINSTANCEIDAUX
 public:
-    struct SortItemInstanceIdAux& operator=(struct SortItemInstanceIdAux const &) = delete;
-    SortItemInstanceIdAux(struct SortItemInstanceIdAux const &) = delete;
+    class SortItemInstanceIdAux& operator=(class SortItemInstanceIdAux const &) = delete;
+    SortItemInstanceIdAux(class SortItemInstanceIdAux const &) = delete;
     SortItemInstanceIdAux() = delete;
 #endif
 
 public:
     /**
-     * @symbol  ??RSortItemInstanceIdAux\@\@QEBA_NAEBVItemInstance\@\@0\@Z
+     * @symbol ??RSortItemInstanceIdAux\@\@QEBA_NAEBVItemInstance\@\@0\@Z
      */
     MCAPI bool operator()(class ItemInstance const &, class ItemInstance const &) const;
 

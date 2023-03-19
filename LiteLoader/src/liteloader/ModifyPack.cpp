@@ -14,6 +14,7 @@
 #include "llapi/mc/PackInstance.hpp"
 #include "llapi/mc/IResourcePackRepository.hpp"
 #include "llapi/mc/PackIdVersion.hpp"
+#include "llapi/mc/PackSourceReport.hpp"
 
 namespace ModifyPack {
     vector<PackIdVersion> PackListCache;

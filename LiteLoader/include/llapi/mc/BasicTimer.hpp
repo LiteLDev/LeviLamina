@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @symbol  ??0BasicTimer\@\@QEAA\@NV?$function\@$$A6ANXZ\@std\@\@\@Z
+     * @symbol ??0BasicTimer\@\@QEAA\@NV?$function\@$$A6ANXZ\@std\@\@\@Z
      */
     MCAPI BasicTimer(double, class std::function<double (void)>);
     /**
-     * @symbol  ?isFinished\@BasicTimer\@\@QEBA_NXZ
+     * @symbol ?isFinished\@BasicTimer\@\@QEBA_NXZ
      */
     MCAPI bool isFinished() const;
     /**
-     * @symbol  ?resetTime\@BasicTimer\@\@QEAAXXZ
+     * @symbol ?resetTime\@BasicTimer\@\@QEAAXXZ
      */
     MCAPI void resetTime();
     /**
-     * @symbol  ??1BasicTimer\@\@QEAA\@XZ
+     * @symbol ??1BasicTimer\@\@QEAA\@XZ
      */
     MCAPI ~BasicTimer();
 

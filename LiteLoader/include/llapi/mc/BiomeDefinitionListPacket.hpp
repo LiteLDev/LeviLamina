@@ -30,37 +30,43 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BiomeDefinitionListPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?getId\@BiomeDefinitionListPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@BiomeDefinitionListPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @vftbl  2
-     * @symbol  ?getName\@BiomeDefinitionListPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@BiomeDefinitionListPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @vftbl  3
-     * @symbol  ?write\@BiomeDefinitionListPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@BiomeDefinitionListPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl  4
-     * @symbol  ?readExtended\@BiomeDefinitionListPacket\@\@UEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 4
+     * @symbol ?readExtended\@BiomeDefinitionListPacket\@\@UEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /**
-     * @vftbl  6
-     * @symbol  ?_read\@BiomeDefinitionListPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 6
+     * @symbol ?_read\@BiomeDefinitionListPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEDEFINITIONLISTPACKET
     /**
-     * @symbol  ??0BiomeDefinitionListPacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~BiomeDefinitionListPacket();
+#endif
+    /**
+     * @symbol ??0BiomeDefinitionListPacket\@\@QEAA\@XZ
      */
     MCAPI BiomeDefinitionListPacket();
 

@@ -29,17 +29,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~WeightedRandomFeature();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?place\@WeightedRandomFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
+     * @vftbl 1
+     * @symbol ?place\@WeightedRandomFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     /**
-     * @symbol  ??0WeightedRandomFeature\@\@QEAA\@XZ
+     * @symbol ??0WeightedRandomFeature\@\@QEAA\@XZ
      */
     MCAPI WeightedRandomFeature();
 

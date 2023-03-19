@@ -31,12 +31,12 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BlastFurnaceContainerManagerModel();
+    virtual void __unk_vfn_0();
     /**
-     * @symbol  ??0BlastFurnaceContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
+     * @symbol ??0BlastFurnaceContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI BlastFurnaceContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
 

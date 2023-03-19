@@ -29,79 +29,83 @@ public:
 
 public:
     /**
-     * @symbol  ??0PackReport\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0PackReport\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI PackReport(class PackReport &&);
+    /**
+     * @symbol ??0PackReport\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI PackReport(class PackReport const &);
     /**
-     * @symbol  ??0PackReport\@\@QEAA\@XZ
+     * @symbol ??0PackReport\@\@QEAA\@XZ
      */
     MCAPI PackReport();
     /**
-     * @symbol  ?getErrors\@PackReport\@\@QEBAAEBV?$vector\@V?$shared_ptr\@VPackError\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VPackError\@\@\@std\@\@\@2\@\@std\@\@XZ
+     * @symbol ?getErrors\@PackReport\@\@QEBAAEBV?$vector\@V?$shared_ptr\@VPackError\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VPackError\@\@\@std\@\@\@2\@\@std\@\@XZ
      */
     MCAPI std::vector<class std::shared_ptr<class PackError>> const & getErrors() const;
     /**
-     * @symbol  ?getIdentity\@PackReport\@\@QEBAAEBUPackIdVersion\@\@XZ
+     * @symbol ?getIdentity\@PackReport\@\@QEBAAEBUPackIdVersion\@\@XZ
      */
     MCAPI struct PackIdVersion const & getIdentity() const;
     /**
-     * @symbol  ?getLocation\@PackReport\@\@QEBAAEBVResourceLocation\@\@XZ
+     * @symbol ?getLocation\@PackReport\@\@QEBAAEBVResourceLocation\@\@XZ
      */
     MCAPI class ResourceLocation const & getLocation() const;
     /**
-     * @symbol  ?getOriginalName\@PackReport\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getOriginalName\@PackReport\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string const & getOriginalName() const;
     /**
-     * @symbol  ?getOriginalVersion\@PackReport\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getOriginalVersion\@PackReport\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string const & getOriginalVersion() const;
     /**
-     * @symbol  ?getPackType\@PackReport\@\@QEBA?AW4PackType\@\@XZ
+     * @symbol ?getPackType\@PackReport\@\@QEBA?AW4PackType\@\@XZ
      */
     MCAPI enum class PackType getPackType() const;
     /**
-     * @symbol  ?hasErrors\@PackReport\@\@QEAA_NW4PackErrorType\@\@\@Z
+     * @symbol ?hasErrors\@PackReport\@\@QEAA_NW4PackErrorType\@\@\@Z
      */
     MCAPI bool hasErrors(enum class PackErrorType);
     /**
-     * @symbol  ?hasErrors\@PackReport\@\@QEBA_NXZ
+     * @symbol ?hasErrors\@PackReport\@\@QEBA_NXZ
      */
     MCAPI bool hasErrors() const;
     /**
-     * @symbol  ?serialize\@PackReport\@\@QEAAXAEAVValue\@Json\@\@\@Z
+     * @symbol ?serialize\@PackReport\@\@QEAAXAEAVValue\@Json\@\@\@Z
      */
     MCAPI void serialize(class Json::Value &);
     /**
-     * @symbol  ?setAttemptedUpgrade\@PackReport\@\@QEAAXXZ
+     * @symbol ?setAttemptedUpgrade\@PackReport\@\@QEAAXXZ
      */
     MCAPI void setAttemptedUpgrade();
     /**
-     * @symbol  ?setIdentity\@PackReport\@\@QEAAXAEBUPackIdVersion\@\@\@Z
+     * @symbol ?setIdentity\@PackReport\@\@QEAAXAEBUPackIdVersion\@\@\@Z
      */
     MCAPI void setIdentity(struct PackIdVersion const &);
     /**
-     * @symbol  ?setLocation\@PackReport\@\@QEAAXAEBVResourceLocation\@\@\@Z
+     * @symbol ?setLocation\@PackReport\@\@QEAAXAEBVResourceLocation\@\@\@Z
      */
     MCAPI void setLocation(class ResourceLocation const &);
     /**
-     * @symbol  ?setOriginalIdentity\@PackReport\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
+     * @symbol ?setOriginalIdentity\@PackReport\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
     MCAPI void setOriginalIdentity(std::string const &, std::string const &);
     /**
-     * @symbol  ?setPackType\@PackReport\@\@QEAAXW4PackType\@\@\@Z
+     * @symbol ?setPackType\@PackReport\@\@QEAAXW4PackType\@\@\@Z
      */
     MCAPI void setPackType(enum class PackType);
     /**
-     * @symbol  ?setUpgradeSuccess\@PackReport\@\@QEAAXXZ
+     * @symbol ?setUpgradeSuccess\@PackReport\@\@QEAAXXZ
      */
     MCAPI void setUpgradeSuccess();
     /**
-     * @symbol  ?wasUpgraded\@PackReport\@\@QEBA_NXZ
+     * @symbol ?wasUpgraded\@PackReport\@\@QEBA_NXZ
      */
     MCAPI bool wasUpgraded() const;
     /**
-     * @symbol  ??1PackReport\@\@QEAA\@XZ
+     * @symbol ??1PackReport\@\@QEAA\@XZ
      */
     MCAPI ~PackReport();
 

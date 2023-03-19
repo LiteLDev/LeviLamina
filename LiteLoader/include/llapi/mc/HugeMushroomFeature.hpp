@@ -30,31 +30,37 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~HugeMushroomFeature();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  3
-     * @symbol  ?place\@HugeMushroomFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @vftbl 3
+     * @symbol ?place\@HugeMushroomFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUGEMUSHROOMFEATURE
     /**
-     * @symbol  ??0HugeMushroomFeature\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI HugeMushroomFeature();
+    MCVAPI ~HugeMushroomFeature();
+#endif
     /**
-     * @symbol  ??0HugeMushroomFeature\@\@QEAA\@H\@Z
+     * @symbol ??0HugeMushroomFeature\@\@QEAA\@H\@Z
      */
     MCAPI HugeMushroomFeature(int);
     /**
-     * @symbol  ?placeFixed\@HugeMushroomFeature\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@HH\@Z
+     * @symbol ??0HugeMushroomFeature\@\@QEAA\@XZ
+     */
+    MCAPI HugeMushroomFeature();
+    /**
+     * @symbol ?placeFixed\@HugeMushroomFeature\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@HH\@Z
      */
     MCAPI bool placeFixed(class BlockSource &, class BlockPos const &, int, int) const;
 
 //private:
     /**
-     * @symbol  ?_canSurvive\@HugeMushroomFeature\@\@AEBA_NAEBVBlock\@\@\@Z
+     * @symbol ?_canSurvive\@HugeMushroomFeature\@\@AEBA_NAEBVBlock\@\@\@Z
      */
     MCAPI bool _canSurvive(class Block const &) const;
 

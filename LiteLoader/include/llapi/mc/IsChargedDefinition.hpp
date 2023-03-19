@@ -31,15 +31,15 @@ public:
 
 public:
     /**
-     * @symbol  ?initialize\@IsChargedDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
+     * @symbol ?initialize\@IsChargedDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
     MCAPI void initialize(class EntityContext &) const;
     /**
-     * @symbol  ?uninitialize\@IsChargedDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
+     * @symbol ?uninitialize\@IsChargedDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
     MCAPI void uninitialize(class EntityContext &) const;
     /**
-     * @symbol  ?buildSchema\@IsChargedDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UIsChargedDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
+     * @symbol ?buildSchema\@IsChargedDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UIsChargedDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsChargedDefinition>> &);
 

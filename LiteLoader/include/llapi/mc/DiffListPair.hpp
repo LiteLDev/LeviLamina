@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??0DiffListPair\@\@QEAA\@_NPEAVActorDefinitionDescriptor\@\@\@Z
+     * @symbol ??0DiffListPair\@\@QEAA\@_NPEAVActorDefinitionDescriptor\@\@\@Z
      */
     MCAPI DiffListPair(bool, class ActorDefinitionDescriptor *);
 

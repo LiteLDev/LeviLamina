@@ -32,204 +32,204 @@ public:
 
 public:
     /**
-     * @vftbl  10
-     * @symbol  ?reloadHardcoded\@FallingBlock\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
+     * @vftbl 10
+     * @symbol ?reloadHardcoded\@FallingBlock\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vftbl  16
-     * @symbol  __unk_destructor_16
+     * @vftbl 16
+     * @symbol __unk_vfn_16
      */
-    virtual ~FallingBlock();
+    virtual void __unk_vfn_16();
     /**
-     * @vftbl  41
-     * @symbol  __unk_vfn_41
+     * @vftbl 41
+     * @symbol __unk_vfn_41
      */
     virtual void __unk_vfn_41();
     /**
-     * @vftbl  44
-     * @symbol  ?teleportTo\@FallingBlock\@\@UEAAXAEBVVec3\@\@_NHH1\@Z
+     * @vftbl 44
+     * @symbol ?teleportTo\@FallingBlock\@\@UEAAXAEBVVec3\@\@_NHH1\@Z
      */
     virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
     /**
-     * @vftbl  49
-     * @symbol  ?normalTick\@FallingBlock\@\@UEAAXXZ
+     * @vftbl 49
+     * @symbol ?normalTick\@FallingBlock\@\@UEAAXXZ
      */
     virtual void normalTick();
     /**
-     * @vftbl  62
-     * @symbol  __unk_vfn_62
+     * @vftbl 62
+     * @symbol __unk_vfn_62
      */
     virtual void __unk_vfn_62();
     /**
-     * @vftbl  69
-     * @symbol  __unk_vfn_69
+     * @vftbl 69
+     * @symbol __unk_vfn_69
      */
     virtual void __unk_vfn_69();
     /**
-     * @vftbl  80
-     * @symbol  ?getShadowHeightOffs\@FallingBlock\@\@UEAAMXZ
+     * @vftbl 79
+     * @symbol ?getShadowHeightOffs\@FallingBlock\@\@UEAAMXZ
      */
     virtual float getShadowHeightOffs();
     /**
-     * @vftbl  81
-     * @symbol  ?getShadowRadius\@FallingBlock\@\@UEBAMXZ
+     * @vftbl 80
+     * @symbol ?getShadowRadius\@FallingBlock\@\@UEBAMXZ
      */
     virtual float getShadowRadius() const;
     /**
-     * @vftbl  83
-     * @symbol  __unk_vfn_83
+     * @vftbl 82
+     * @symbol __unk_vfn_82
      */
-    virtual void __unk_vfn_83();
+    virtual void __unk_vfn_82();
     /**
-     * @vftbl  86
-     * @symbol  __unk_vfn_86
+     * @vftbl 85
+     * @symbol __unk_vfn_85
      */
-    virtual void __unk_vfn_86();
+    virtual void __unk_vfn_85();
     /**
-     * @vftbl  89
-     * @symbol  __unk_vfn_89
+     * @vftbl 88
+     * @symbol __unk_vfn_88
      */
-    virtual void __unk_vfn_89();
+    virtual void __unk_vfn_88();
     /**
-     * @vftbl  96
-     * @symbol  ?isPickable\@FallingBlock\@\@UEAA_NXZ
+     * @vftbl 95
+     * @symbol ?isPickable\@FallingBlock\@\@UEAA_NXZ
      */
     virtual bool isPickable();
     /**
-     * @vftbl  97
-     * @symbol  __unk_vfn_97
+     * @vftbl 96
+     * @symbol __unk_vfn_96
      */
-    virtual void __unk_vfn_97();
+    virtual void __unk_vfn_96();
     /**
-     * @vftbl  100
-     * @symbol  __unk_vfn_100
+     * @vftbl 99
+     * @symbol __unk_vfn_99
      */
-    virtual void __unk_vfn_100();
+    virtual void __unk_vfn_99();
     /**
-     * @vftbl  107
-     * @symbol  __unk_vfn_107
+     * @vftbl 106
+     * @symbol __unk_vfn_106
      */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_106();
     /**
-     * @vftbl  109
-     * @symbol  __unk_vfn_109
+     * @vftbl 108
+     * @symbol __unk_vfn_108
+     */
+    virtual void __unk_vfn_108();
+    /**
+     * @vftbl 109
+     * @symbol __unk_vfn_109
      */
     virtual void __unk_vfn_109();
     /**
-     * @vftbl  110
-     * @symbol  __unk_vfn_110
+     * @vftbl 111
+     * @symbol __unk_vfn_111
      */
-    virtual void __unk_vfn_110();
+    virtual void __unk_vfn_111();
     /**
-     * @vftbl  112
-     * @symbol  __unk_vfn_112
-     */
-    virtual void __unk_vfn_112();
-    /**
-     * @vftbl  178
-     * @symbol  ?canChangeDimensionsUsingPortal\@FallingBlock\@\@UEBA_NXZ
+     * @vftbl 177
+     * @symbol ?canChangeDimensionsUsingPortal\@FallingBlock\@\@UEBA_NXZ
      */
     virtual bool canChangeDimensionsUsingPortal() const;
     /**
-     * @vftbl  179
-     * @symbol  __unk_vfn_179
+     * @vftbl 178
+     * @symbol __unk_vfn_178
      */
-    virtual void __unk_vfn_179();
+    virtual void __unk_vfn_178();
     /**
-     * @vftbl  183
-     * @symbol  ?causeFallDamage\@FallingBlock\@\@UEAAXMMVActorDamageSource\@\@\@Z
+     * @vftbl 182
+     * @symbol ?causeFallDamage\@FallingBlock\@\@UEAAXMMVActorDamageSource\@\@\@Z
      */
     virtual void causeFallDamage(float, float, class ActorDamageSource);
     /**
-     * @vftbl  188
-     * @symbol  ?onSynchedDataUpdate\@FallingBlock\@\@UEAAXH\@Z
+     * @vftbl 187
+     * @symbol ?onSynchedDataUpdate\@FallingBlock\@\@UEAAXH\@Z
      */
     virtual void onSynchedDataUpdate(int);
     /**
-     * @vftbl  193
-     * @symbol  __unk_vfn_193
+     * @vftbl 192
+     * @symbol __unk_vfn_192
      */
-    virtual void __unk_vfn_193();
+    virtual void __unk_vfn_192();
     /**
-     * @vftbl  218
-     * @symbol  __unk_vfn_218
+     * @vftbl 217
+     * @symbol __unk_vfn_217
+     */
+    virtual void __unk_vfn_217();
+    /**
+     * @vftbl 218
+     * @symbol __unk_vfn_218
      */
     virtual void __unk_vfn_218();
     /**
-     * @vftbl  219
-     * @symbol  __unk_vfn_219
+     * @vftbl 240
+     * @symbol __unk_vfn_240
      */
-    virtual void __unk_vfn_219();
+    virtual void __unk_vfn_240();
     /**
-     * @vftbl  241
-     * @symbol  __unk_vfn_241
+     * @vftbl 243
+     * @symbol __unk_vfn_243
      */
-    virtual void __unk_vfn_241();
+    virtual void __unk_vfn_243();
     /**
-     * @vftbl  244
-     * @symbol  __unk_vfn_244
+     * @vftbl 260
+     * @symbol __unk_vfn_260
      */
-    virtual void __unk_vfn_244();
+    virtual void __unk_vfn_260();
     /**
-     * @vftbl  262
-     * @symbol  __unk_vfn_262
-     */
-    virtual void __unk_vfn_262();
-    /**
-     * @vftbl  263
-     * @symbol  ?_hurt\@FallingBlock\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
+     * @vftbl 261
+     * @symbol ?_hurt\@FallingBlock\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vftbl  266
-     * @symbol  ?readAdditionalSaveData\@FallingBlock\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
+     * @vftbl 264
+     * @symbol ?readAdditionalSaveData\@FallingBlock\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vftbl  267
-     * @symbol  ?addAdditionalSaveData\@FallingBlock\@\@MEBAXAEAVCompoundTag\@\@\@Z
+     * @vftbl 265
+     * @symbol ?addAdditionalSaveData\@FallingBlock\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vftbl  270
-     * @symbol  __unk_vfn_270
+     * @vftbl 268
+     * @symbol __unk_vfn_268
      */
-    virtual void __unk_vfn_270();
+    virtual void __unk_vfn_268();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FALLINGBLOCK
     /**
-     * @symbol  ?getDeletionDelayTimeSeconds\@FallingBlock\@\@UEBAMXZ
+     * @symbol ?getDeletionDelayTimeSeconds\@FallingBlock\@\@UEBAMXZ
      */
     MCVAPI float getDeletionDelayTimeSeconds() const;
 #endif
     /**
-     * @symbol  ??0FallingBlock\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
+     * @symbol ??0FallingBlock\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI FallingBlock(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @symbol  ?breakBlock\@FallingBlock\@\@QEAAXXZ
+     * @symbol ?breakBlock\@FallingBlock\@\@QEAAXXZ
      */
     MCAPI void breakBlock();
     /**
-     * @symbol  ?doNormalTick\@FallingBlock\@\@QEAAXAEAVITickDelegate\@\@\@Z
+     * @symbol ?doNormalTick\@FallingBlock\@\@QEAAXAEAVITickDelegate\@\@\@Z
      */
     MCAPI void doNormalTick(class ITickDelegate &);
     /**
-     * @symbol  ?getFallingBlock\@FallingBlock\@\@QEBAAEBVBlock\@\@XZ
+     * @symbol ?getFallingBlock\@FallingBlock\@\@QEBAAEBVBlock\@\@XZ
      */
     MCAPI class Block const & getFallingBlock() const;
     /**
-     * @symbol  ?setFallDamageAmount\@FallingBlock\@\@QEAAXM\@Z
+     * @symbol ?setFallDamageAmount\@FallingBlock\@\@QEAAXM\@Z
      */
     MCAPI void setFallDamageAmount(float);
     /**
-     * @symbol  ?setFallingBlock\@FallingBlock\@\@QEAAXAEBVBlock\@\@_N\@Z
+     * @symbol ?setFallingBlock\@FallingBlock\@\@QEAAXAEBVBlock\@\@_N\@Z
      */
     MCAPI void setFallingBlock(class Block const &, bool);
 
 //private:
     /**
-     * @symbol  ?_waitRemoval\@FallingBlock\@\@AEAAXXZ
+     * @symbol ?_waitRemoval\@FallingBlock\@\@AEAAXXZ
      */
     MCAPI void _waitRemoval();
 

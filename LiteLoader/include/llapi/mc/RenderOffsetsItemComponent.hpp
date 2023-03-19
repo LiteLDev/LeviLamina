@@ -41,61 +41,61 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~RenderOffsetsItemComponent();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?isNetworkComponent\@?$NetworkedItemComponent\@VRenderOffsetsItemComponent\@\@\@\@UEBA_NXZ
+     * @vftbl 1
+     * @symbol ?isNetworkComponent\@?$NetworkedItemComponent\@VRenderOffsetsItemComponent\@\@\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @symbol  ?_fromString\@RenderOffsetsItemComponent\@\@CAXAEAV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?_fromString\@RenderOffsetsItemComponent\@\@CAXAEAV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI static void _fromString(class RenderOffsetsItemComponent &, std::string const &);
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  __unk_vfn_4
+     * @vftbl 4
+     * @symbol __unk_vfn_4
      */
     virtual void __unk_vfn_4();
     /**
-     * @vftbl  5
-     * @symbol  ?buildNetworkTag\@?$NetworkedItemComponent\@VRenderOffsetsItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 5
+     * @symbol ?buildNetworkTag\@?$NetworkedItemComponent\@VRenderOffsetsItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vftbl  6
-     * @symbol  ?initializeFromNetwork\@?$NetworkedItemComponent\@VRenderOffsetsItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
+     * @vftbl 6
+     * @symbol ?initializeFromNetwork\@?$NetworkedItemComponent\@VRenderOffsetsItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
-     * @symbol  ?bindType\@RenderOffsetsItemComponent\@\@SAXXZ
+     * @symbol ?bindType\@RenderOffsetsItemComponent\@\@SAXXZ
      */
     MCAPI static void bindType();
     /**
-     * @symbol  ?getIdentifier\@RenderOffsetsItemComponent\@\@SAAEBVHashedString\@\@XZ
+     * @symbol ?getIdentifier\@RenderOffsetsItemComponent\@\@SAAEBVHashedString\@\@XZ
      */
     MCAPI static class HashedString const & getIdentifier();
 
 //private:
     /**
-     * @symbol  ?_fromString\@RenderOffsetsItemComponent\@\@CAXAEAV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?_fromString\@RenderOffsetsItemComponent\@\@CAXAEAV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI static void _fromString(class RenderOffsetsItemComponent &, std::string const &);
 
 private:
     /**
-     * @symbol  ?Main_Hand_Defaults\@RenderOffsetsItemComponent\@\@0UItemTransforms\@1\@A
+     * @symbol ?Main_Hand_Defaults\@RenderOffsetsItemComponent\@\@0UItemTransforms\@1\@A
      */
     MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Main_Hand_Defaults;
     /**
-     * @symbol  ?Off_Hand_Defaults\@RenderOffsetsItemComponent\@\@0UItemTransforms\@1\@A
+     * @symbol ?Off_Hand_Defaults\@RenderOffsetsItemComponent\@\@0UItemTransforms\@1\@A
      */
     MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Off_Hand_Defaults;
 

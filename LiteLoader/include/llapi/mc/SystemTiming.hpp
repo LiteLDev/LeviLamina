@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1SystemTiming\@\@QEAA\@XZ
+     * @symbol ??1SystemTiming\@\@QEAA\@XZ
      */
     MCAPI ~SystemTiming();
 

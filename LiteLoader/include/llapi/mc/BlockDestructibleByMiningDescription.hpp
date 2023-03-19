@@ -10,68 +10,65 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC structure BlockDestructibleByMiningDescription.
- *
- */
-struct BlockDestructibleByMiningDescription {
+
+class BlockDestructibleByMiningDescription {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKDESTRUCTIBLEBYMININGDESCRIPTION
 public:
-    struct BlockDestructibleByMiningDescription& operator=(struct BlockDestructibleByMiningDescription const &) = delete;
-    BlockDestructibleByMiningDescription(struct BlockDestructibleByMiningDescription const &) = delete;
+    class BlockDestructibleByMiningDescription& operator=(class BlockDestructibleByMiningDescription const &) = delete;
+    BlockDestructibleByMiningDescription(class BlockDestructibleByMiningDescription const &) = delete;
     BlockDestructibleByMiningDescription() = delete;
 #endif
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BlockDestructibleByMiningDescription();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?getName\@BlockDestructibleByMiningDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 1
+     * @symbol ?getName\@BlockDestructibleByMiningDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string const & getName() const;
     /**
-     * @vftbl  2
-     * @symbol  ?initializeComponent\@BlockDestructibleByMiningDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
+     * @vftbl 2
+     * @symbol ?initializeComponent\@BlockDestructibleByMiningDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  ?isNetworkComponent\@BlockDestructibleByMiningDescription\@\@UEBA_NXZ
+     * @vftbl 4
+     * @symbol ?isNetworkComponent\@BlockDestructibleByMiningDescription\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl  5
-     * @symbol  ?buildNetworkTag\@BlockDestructibleByMiningDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 5
+     * @symbol ?buildNetworkTag\@BlockDestructibleByMiningDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vftbl  6
-     * @symbol  ?initializeFromNetwork\@BlockDestructibleByMiningDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
+     * @vftbl 6
+     * @symbol ?initializeFromNetwork\@BlockDestructibleByMiningDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
-     * @symbol  ?NameID\@BlockDestructibleByMiningDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?NameID\@BlockDestructibleByMiningDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NameID;
     /**
-     * @symbol  ?bindType\@BlockDestructibleByMiningDescription\@\@SAXXZ
+     * @symbol ?bindType\@BlockDestructibleByMiningDescription\@\@SAXXZ
      */
     MCAPI static void bindType();
     /**
-     * @symbol  ?registerVersionUpgrades\@BlockDestructibleByMiningDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
+     * @symbol ?registerVersionUpgrades\@BlockDestructibleByMiningDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

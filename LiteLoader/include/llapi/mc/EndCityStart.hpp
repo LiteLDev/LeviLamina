@@ -31,21 +31,21 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~EndCityStart();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  2
-     * @symbol  ?isValid\@EndCityStart\@\@UEBA_NXZ
+     * @vftbl 2
+     * @symbol ?isValid\@EndCityStart\@\@UEBA_NXZ
      */
     virtual bool isValid() const;
     /**
-     * @symbol  ??0EndCityStart\@\@QEAA\@AEAVDimension\@\@AEAVRandom\@\@AEBVChunkPos\@\@\@Z
+     * @symbol ??0EndCityStart\@\@QEAA\@AEAVDimension\@\@AEAVRandom\@\@AEBVChunkPos\@\@\@Z
      */
     MCAPI EndCityStart(class Dimension &, class Random &, class ChunkPos const &);
     /**
-     * @symbol  ?getYPositionForFeature\@EndCityStart\@\@SAHAEBVChunkPos\@\@AEAVDimension\@\@\@Z
+     * @symbol ?getYPositionForFeature\@EndCityStart\@\@SAHAEBVChunkPos\@\@AEAVDimension\@\@\@Z
      */
     MCAPI static int getYPositionForFeature(class ChunkPos const &, class Dimension &);
 

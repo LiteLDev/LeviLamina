@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1NamedMolangScript\@\@QEAA\@XZ
+     * @symbol ??1NamedMolangScript\@\@QEAA\@XZ
      */
     MCAPI ~NamedMolangScript();
 

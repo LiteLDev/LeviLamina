@@ -28,19 +28,19 @@ public:
 
 public:
     /**
-     * @symbol  ?clearSuspiciousPos\@SuspectTrackingComponent\@\@QEAAXXZ
+     * @symbol ?clearSuspiciousPos\@SuspectTrackingComponent\@\@QEAAXXZ
      */
     MCAPI void clearSuspiciousPos();
     /**
-     * @symbol  ?getSuspiciousPos\@SuspectTrackingComponent\@\@QEBA?AV?$optional\@VBlockPos\@\@\@std\@\@XZ
+     * @symbol ?getSuspiciousPos\@SuspectTrackingComponent\@\@QEBA?AV?$optional\@VBlockPos\@\@\@std\@\@XZ
      */
     MCAPI class std::optional<class BlockPos> getSuspiciousPos() const;
     /**
-     * @symbol  ?getTicksSinceLastSuspect\@SuspectTrackingComponent\@\@QEBA?AV?$optional\@_K\@std\@\@AEBVILevel\@\@\@Z
+     * @symbol ?getTicksSinceLastSuspect\@SuspectTrackingComponent\@\@QEBA?AV?$optional\@_K\@std\@\@AEBVILevel\@\@\@Z
      */
     MCAPI class std::optional<unsigned __int64> getTicksSinceLastSuspect(class ILevel const &) const;
     /**
-     * @symbol  ?setSuspiciousPos\@SuspectTrackingComponent\@\@QEAAXV?$optional\@VBlockPos\@\@\@std\@\@UTick\@\@\@Z
+     * @symbol ?setSuspiciousPos\@SuspectTrackingComponent\@\@QEAAXV?$optional\@VBlockPos\@\@\@std\@\@UTick\@\@\@Z
      */
     MCAPI void setSuspiciousPos(class std::optional<class BlockPos>, struct Tick);
 

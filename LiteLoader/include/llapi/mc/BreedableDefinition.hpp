@@ -30,31 +30,39 @@ public:
 
 public:
     /**
-     * @symbol  ??0BreedableDefinition\@\@QEAA\@XZ
+     * @symbol ??0BreedableDefinition\@\@QEAA\@XZ
      */
     MCAPI BreedableDefinition();
     /**
-     * @symbol  ?addBreedItem\@BreedableDefinition\@\@QEAAXAEBVItemDescriptor\@\@\@Z
+     * @symbol ?addBreedItem\@BreedableDefinition\@\@QEAAXAEBVItemDescriptor\@\@\@Z
      */
     MCAPI void addBreedItem(class ItemDescriptor const &);
     /**
-     * @symbol  ?addBreedableType\@BreedableDefinition\@\@QEAAXAEBUBreedableType\@\@\@Z
+     * @symbol ?addBreedableType\@BreedableDefinition\@\@QEAAXAEBUBreedableType\@\@\@Z
      */
     MCAPI void addBreedableType(struct BreedableType const &);
     /**
-     * @symbol  ?addEnvironmentRequirement\@BreedableDefinition\@\@QEAAXAEBUEnvironmentRequirement\@\@\@Z
+     * @symbol ?addEnvironmentRequirement\@BreedableDefinition\@\@QEAAXAEBUEnvironmentRequirement\@\@\@Z
      */
     MCAPI void addEnvironmentRequirement(struct EnvironmentRequirement const &);
     /**
-     * @symbol  ?initialize\@BreedableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVBreedableComponent\@\@\@Z
+     * @symbol ?addParentCentricAttributeBlending\@BreedableDefinition\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI void addParentCentricAttributeBlending(std::string const &);
+    /**
+     * @symbol ?initialize\@BreedableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVBreedableComponent\@\@\@Z
      */
     MCAPI void initialize(class EntityContext &, class BreedableComponent &) const;
     /**
-     * @symbol  ??1BreedableDefinition\@\@QEAA\@XZ
+     * @symbol ?setMutationStrategy\@BreedableDefinition\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI void setMutationStrategy(std::string const &);
+    /**
+     * @symbol ??1BreedableDefinition\@\@QEAA\@XZ
      */
     MCAPI ~BreedableDefinition();
     /**
-     * @symbol  ?buildSchema\@BreedableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VBreedableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
+     * @symbol ?buildSchema\@BreedableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VBreedableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BreedableDefinition>> &);
 

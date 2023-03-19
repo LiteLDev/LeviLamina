@@ -28,8 +28,12 @@ public:
 
 public:
     /**
-     * @symbol  ?create\@ServerPlayerInputSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?create\@ServerPlayerInputSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo create();
+    /**
+     * @symbol ?onPlayerAuthInputPacket\@ServerPlayerInputSystem\@\@SAXAEAUServerPlayerMovementComponent\@\@AEBVPlayerAuthInputPacket\@\@\@Z
+     */
+    MCAPI static void onPlayerAuthInputPacket(struct ServerPlayerMovementComponent &, class PlayerAuthInputPacket const &);
 
 };

@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ModuleIdentifier\@\@QEAA\@XZ
+     * @symbol ??1ModuleIdentifier\@\@QEAA\@XZ
      */
     MCAPI ~ModuleIdentifier();
 

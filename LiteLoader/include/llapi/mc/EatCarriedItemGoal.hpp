@@ -30,47 +30,47 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~EatCarriedItemGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?canUse\@EatCarriedItemGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@EatCarriedItemGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@EatCarriedItemGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@EatCarriedItemGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  ?start\@EatCarriedItemGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@EatCarriedItemGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @vftbl  5
-     * @symbol  ?stop\@EatCarriedItemGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@EatCarriedItemGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @vftbl  6
-     * @symbol  ?tick\@EatCarriedItemGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@EatCarriedItemGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@EatCarriedItemGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@EatCarriedItemGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @symbol  ??0EatCarriedItemGoal\@\@QEAA\@AEAVMob\@\@H\@Z
+     * @symbol ??0EatCarriedItemGoal\@\@QEAA\@AEAVMob\@\@H\@Z
      */
     MCAPI EatCarriedItemGoal(class Mob &, int);
 
@@ -78,11 +78,11 @@ public:
 
 private:
     /**
-     * @symbol  ?CHEW_CHANCE\@EatCarriedItemGoal\@\@0HB
+     * @symbol ?CHEW_CHANCE\@EatCarriedItemGoal\@\@0HB
      */
     MCAPI static int const CHEW_CHANCE;
     /**
-     * @symbol  ?EATING_TIME\@EatCarriedItemGoal\@\@0HB
+     * @symbol ?EATING_TIME\@EatCarriedItemGoal\@\@0HB
      */
     MCAPI static int const EATING_TIME;
 

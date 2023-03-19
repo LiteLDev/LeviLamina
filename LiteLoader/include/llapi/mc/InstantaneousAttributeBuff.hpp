@@ -31,27 +31,33 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~InstantaneousAttributeBuff();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?isInstantaneous\@InstantaneousAttributeBuff\@\@UEBA_NXZ
+     * @vftbl 1
+     * @symbol ?isInstantaneous\@InstantaneousAttributeBuff\@\@UEBA_NXZ
      */
     virtual bool isInstantaneous() const;
     /**
-     * @vftbl  2
-     * @symbol  ?isSerializable\@InstantaneousAttributeBuff\@\@UEBA_NXZ
+     * @vftbl 2
+     * @symbol ?isSerializable\@InstantaneousAttributeBuff\@\@UEBA_NXZ
      */
     virtual bool isSerializable() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSTANTANEOUSATTRIBUTEBUFF
     /**
-     * @symbol  ??0InstantaneousAttributeBuff\@\@QEAA\@MW4AttributeBuffType\@\@\@Z
+     * @symbol __unk_destructor_-1
      */
-    MCAPI InstantaneousAttributeBuff(float, enum class AttributeBuffType);
+    MCVAPI ~InstantaneousAttributeBuff();
+#endif
     /**
-     * @symbol  ??0InstantaneousAttributeBuff\@\@QEAA\@MAEBVActorDamageSource\@\@\@Z
+     * @symbol ??0InstantaneousAttributeBuff\@\@QEAA\@MAEBVActorDamageSource\@\@\@Z
      */
     MCAPI InstantaneousAttributeBuff(float, class ActorDamageSource const &);
+    /**
+     * @symbol ??0InstantaneousAttributeBuff\@\@QEAA\@MW4AttributeBuffType\@\@\@Z
+     */
+    MCAPI InstantaneousAttributeBuff(float, enum class AttributeBuffType);
 
 };

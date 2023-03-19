@@ -31,67 +31,73 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~NearestAttackableTargetGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?canUse\@NearestAttackableTargetGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@NearestAttackableTargetGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@NearestAttackableTargetGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@NearestAttackableTargetGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  4
-     * @symbol  ?start\@NearestAttackableTargetGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@NearestAttackableTargetGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@NearestAttackableTargetGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@NearestAttackableTargetGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @vftbl  8
-     * @symbol  __unk_vfn_8
+     * @vftbl 8
+     * @symbol __unk_vfn_8
      */
     virtual void __unk_vfn_8();
     /**
-     * @vftbl  9
-     * @symbol  __unk_vfn_9
+     * @vftbl 9
+     * @symbol __unk_vfn_9
      */
     virtual void __unk_vfn_9();
     /**
-     * @vftbl  11
-     * @symbol  ?_findTarget\@NearestAttackableTargetGoal\@\@MEAA?AUActorUniqueID\@\@PEAPEBUMobDescriptor\@\@\@Z
+     * @vftbl 11
+     * @symbol ?_findTarget\@NearestAttackableTargetGoal\@\@MEAA?AUActorUniqueID\@\@PEAPEBUMobDescriptor\@\@\@Z
      */
     virtual struct ActorUniqueID _findTarget(struct MobDescriptor const **);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NEARESTATTACKABLETARGETGOAL
     /**
-     * @symbol  ??0NearestAttackableTargetGoal\@\@QEAA\@AEAVMob\@\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~NearestAttackableTargetGoal();
+#endif
+    /**
+     * @symbol ??0NearestAttackableTargetGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI NearestAttackableTargetGoal(class Mob &);
 
 //protected:
     /**
-     * @symbol  ?_canStartSearching\@NearestAttackableTargetGoal\@\@IEAA_NXZ
+     * @symbol ?_canStartSearching\@NearestAttackableTargetGoal\@\@IEAA_NXZ
      */
     MCAPI bool _canStartSearching();
     /**
-     * @symbol  ?_getNearbyActors\@NearestAttackableTargetGoal\@\@IEAA?AV?$vector\@UDistanceSortedActor\@\@V?$allocator\@UDistanceSortedActor\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?_getNearbyActors\@NearestAttackableTargetGoal\@\@IEAA?AV?$vector\@UDistanceSortedActor\@\@V?$allocator\@UDistanceSortedActor\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::vector<struct DistanceSortedActor> _getNearbyActors();
     /**
-     * @symbol  ?_isTargetVisible\@NearestAttackableTargetGoal\@\@IEBA_NAEBVMob\@\@MM\@Z
+     * @symbol ?_isTargetVisible\@NearestAttackableTargetGoal\@\@IEBA_NAEBVMob\@\@MM\@Z
      */
     MCAPI bool _isTargetVisible(class Mob const &, float, float) const;
 
 //private:
     /**
-     * @symbol  ?_selectTarget\@NearestAttackableTargetGoal\@\@AEAA_NXZ
+     * @symbol ?_selectTarget\@NearestAttackableTargetGoal\@\@AEAA_NXZ
      */
     MCAPI bool _selectTarget();
 

@@ -29,22 +29,22 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~FindBlockNode();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?tick\@FindBlockNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
+     * @vftbl 1
+     * @symbol ?tick\@FindBlockNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
-     * @vftbl  2
-     * @symbol  ?initializeFromDefinition\@FindBlockNode\@\@EEAAXAEAVActor\@\@\@Z
+     * @vftbl 2
+     * @symbol ?initializeFromDefinition\@FindBlockNode\@\@EEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
-     * @symbol  ??0FindBlockNode\@\@QEAA\@XZ
+     * @symbol ??0FindBlockNode\@\@QEAA\@XZ
      */
     MCAPI FindBlockNode();
 

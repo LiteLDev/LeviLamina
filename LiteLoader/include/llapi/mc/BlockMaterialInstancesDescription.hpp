@@ -11,11 +11,8 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC structure BlockMaterialInstancesDescription.
- *
- */
-struct BlockMaterialInstancesDescription {
+
+class BlockMaterialInstancesDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -23,56 +20,56 @@ struct BlockMaterialInstancesDescription {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKMATERIALINSTANCESDESCRIPTION
 public:
-    struct BlockMaterialInstancesDescription& operator=(struct BlockMaterialInstancesDescription const &) = delete;
-    BlockMaterialInstancesDescription(struct BlockMaterialInstancesDescription const &) = delete;
+    class BlockMaterialInstancesDescription& operator=(class BlockMaterialInstancesDescription const &) = delete;
+    BlockMaterialInstancesDescription(class BlockMaterialInstancesDescription const &) = delete;
 #endif
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BlockMaterialInstancesDescription();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?getName\@BlockMaterialInstancesDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 1
+     * @symbol ?getName\@BlockMaterialInstancesDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string const & getName() const;
     /**
-     * @vftbl  2
-     * @symbol  ?initializeComponent\@BlockMaterialInstancesDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
+     * @vftbl 2
+     * @symbol ?initializeComponent\@BlockMaterialInstancesDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  ?isNetworkComponent\@BlockMaterialInstancesDescription\@\@UEBA_NXZ
+     * @vftbl 4
+     * @symbol ?isNetworkComponent\@BlockMaterialInstancesDescription\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl  5
-     * @symbol  ?buildNetworkTag\@BlockMaterialInstancesDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 5
+     * @symbol ?buildNetworkTag\@BlockMaterialInstancesDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vftbl  6
-     * @symbol  ?initializeFromNetwork\@BlockMaterialInstancesDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
+     * @vftbl 6
+     * @symbol ?initializeFromNetwork\@BlockMaterialInstancesDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
-     * @symbol  ??0BlockMaterialInstancesDescription\@\@QEAA\@XZ
+     * @symbol ??0BlockMaterialInstancesDescription\@\@QEAA\@XZ
      */
     MCAPI BlockMaterialInstancesDescription();
     /**
-     * @symbol  ?NameID\@BlockMaterialInstancesDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?NameID\@BlockMaterialInstancesDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NameID;
     /**
-     * @symbol  ?bindType\@BlockMaterialInstancesDescription\@\@SAXXZ
+     * @symbol ?bindType\@BlockMaterialInstancesDescription\@\@SAXXZ
      */
     MCAPI static void bindType();
 

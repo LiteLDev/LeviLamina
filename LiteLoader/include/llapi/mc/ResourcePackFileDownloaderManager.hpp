@@ -30,11 +30,11 @@ public:
 
 public:
     /**
-     * @symbol  ?cleanup\@ResourcePackFileDownloaderManager\@\@QEAAXXZ
+     * @symbol ?cleanup\@ResourcePackFileDownloaderManager\@\@QEAAXXZ
      */
     MCAPI void cleanup();
     /**
-     * @symbol  ?update\@ResourcePackFileDownloaderManager\@\@QEAAXXZ
+     * @symbol ?update\@ResourcePackFileDownloaderManager\@\@QEAAXXZ
      */
     MCAPI void update();
 
@@ -42,7 +42,7 @@ public:
 
 private:
     /**
-     * @symbol  ?MAX_CHUNK_ATTEMPTS\@ResourcePackFileDownloaderManager\@\@0HB
+     * @symbol ?MAX_CHUNK_ATTEMPTS\@ResourcePackFileDownloaderManager\@\@0HB
      */
     MCAPI static int const MAX_CHUNK_ATTEMPTS;
 

@@ -30,15 +30,15 @@ public:
 
 public:
     /**
-     * @symbol  ??0StructurePoolBlockRule\@\@QEAA\@$$QEAV?$unique_ptr\@VIStructurePoolBlockPredicate\@\@U?$default_delete\@VIStructurePoolBlockPredicate\@\@\@std\@\@\@std\@\@0PEBVBlock\@\@\@Z
+     * @symbol ??0StructurePoolBlockRule\@\@QEAA\@$$QEAV?$unique_ptr\@VIStructurePoolBlockPredicate\@\@U?$default_delete\@VIStructurePoolBlockPredicate\@\@\@std\@\@\@std\@\@0PEBVBlock\@\@\@Z
      */
     MCAPI StructurePoolBlockRule(std::unique_ptr<class IStructurePoolBlockPredicate> &&, std::unique_ptr<class IStructurePoolBlockPredicate> &&, class Block const *);
     /**
-     * @symbol  ??0StructurePoolBlockRule\@\@QEAA\@$$QEAV?$unique_ptr\@VIStructurePoolBlockPredicate\@\@U?$default_delete\@VIStructurePoolBlockPredicate\@\@\@std\@\@\@std\@\@00PEBVBlock\@\@\@Z
+     * @symbol ??0StructurePoolBlockRule\@\@QEAA\@$$QEAV?$unique_ptr\@VIStructurePoolBlockPredicate\@\@U?$default_delete\@VIStructurePoolBlockPredicate\@\@\@std\@\@\@std\@\@00PEBVBlock\@\@\@Z
      */
     MCAPI StructurePoolBlockRule(std::unique_ptr<class IStructurePoolBlockPredicate> &&, std::unique_ptr<class IStructurePoolBlockPredicate> &&, std::unique_ptr<class IStructurePoolBlockPredicate> &&, class Block const *);
     /**
-     * @symbol  ?processRule\@StructurePoolBlockRule\@\@QEBA_NAEBVBlock\@\@0AEAVRandom\@\@AEAPEBV2\@AEBVBlockPos\@\@3\@Z
+     * @symbol ?processRule\@StructurePoolBlockRule\@\@QEBA_NAEBVBlock\@\@0AEAVRandom\@\@AEAPEBV2\@AEBVBlockPos\@\@3\@Z
      */
     MCAPI bool processRule(class Block const &, class Block const &, class Random &, class Block const *&, class BlockPos const &, class BlockPos const &) const;
 

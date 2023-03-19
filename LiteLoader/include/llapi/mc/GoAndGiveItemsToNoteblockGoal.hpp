@@ -28,47 +28,47 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~GoAndGiveItemsToNoteblockGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?canUse\@GoAndGiveItemsToNoteblockGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@GoAndGiveItemsToNoteblockGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@GoAndGiveItemsToNoteblockGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@GoAndGiveItemsToNoteblockGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  ?start\@GoAndGiveItemsToNoteblockGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@GoAndGiveItemsToNoteblockGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @vftbl  5
-     * @symbol  ?stop\@GoAndGiveItemsToNoteblockGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@GoAndGiveItemsToNoteblockGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @vftbl  6
-     * @symbol  ?tick\@GoAndGiveItemsToNoteblockGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@GoAndGiveItemsToNoteblockGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@GoAndGiveItemsToNoteblockGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@GoAndGiveItemsToNoteblockGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @symbol  ??0GoAndGiveItemsToNoteblockGoal\@\@QEAA\@AEAVMob\@\@\@Z
+     * @symbol ??0GoAndGiveItemsToNoteblockGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI GoAndGiveItemsToNoteblockGoal(class Mob &);
 

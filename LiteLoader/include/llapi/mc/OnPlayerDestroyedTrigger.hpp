@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1OnPlayerDestroyedTrigger\@\@QEAA\@XZ
+     * @symbol ??1OnPlayerDestroyedTrigger\@\@QEAA\@XZ
      */
     MCAPI ~OnPlayerDestroyedTrigger();
 

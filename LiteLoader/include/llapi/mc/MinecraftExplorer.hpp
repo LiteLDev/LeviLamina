@@ -17,7 +17,7 @@ namespace MinecraftExplorer {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?registerGeneratedBlocks\@MinecraftExplorer\@\@YAXXZ
+     * @symbol ?registerGeneratedBlocks\@MinecraftExplorer\@\@YAXXZ
      */
     MCAPI void registerGeneratedBlocks();
 

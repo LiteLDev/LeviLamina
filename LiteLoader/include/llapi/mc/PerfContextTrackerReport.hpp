@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1PerfContextTrackerReport\@\@QEAA\@XZ
+     * @symbol ??1PerfContextTrackerReport\@\@QEAA\@XZ
      */
     MCAPI ~PerfContextTrackerReport();
 

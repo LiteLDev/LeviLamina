@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1FogCommandSettings\@\@QEAA\@XZ
+     * @symbol ??1FogCommandSettings\@\@QEAA\@XZ
      */
     MCAPI ~FogCommandSettings();
 

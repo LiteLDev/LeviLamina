@@ -30,27 +30,33 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ContainerScreenValidatorBase();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?postCommitItemRemoved\@ContainerScreenValidatorBase\@\@UEAA?AV?$shared_ptr\@VContainerValidationCommitObject\@\@\@std\@\@W4ContainerEnumName\@\@HAEBVItemStack\@\@\@Z
+     * @vftbl 1
+     * @symbol ?postCommitItemRemoved\@ContainerScreenValidatorBase\@\@UEAA?AV?$shared_ptr\@VContainerValidationCommitObject\@\@\@std\@\@W4ContainerEnumName\@\@HAEBVItemStack\@\@\@Z
      */
     virtual class std::shared_ptr<class ContainerValidationCommitObject> postCommitItemRemoved(enum class ContainerEnumName, int, class ItemStack const &);
     /**
-     * @vftbl  2
-     * @symbol  ?isCraftingImplemented\@ContainerScreenValidatorBase\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?isCraftingImplemented\@ContainerScreenValidatorBase\@\@UEAA_NXZ
      */
     virtual bool isCraftingImplemented();
     /**
-     * @vftbl  3
-     * @symbol  ?getCraftResult\@ContainerScreenValidatorBase\@\@UEAA?AUContainerValidationCraftResult\@\@AEBVContainerScreenContext\@\@AEAVContainerScreenValidation\@\@V?$unique_ptr\@UContainerValidationCraftInputs\@\@U?$default_delete\@UContainerValidationCraftInputs\@\@\@std\@\@\@std\@\@\@Z
+     * @vftbl 3
+     * @symbol ?getCraftResult\@ContainerScreenValidatorBase\@\@UEAA?AUContainerValidationCraftResult\@\@AEBVContainerScreenContext\@\@AEAVContainerScreenValidation\@\@V?$unique_ptr\@UContainerValidationCraftInputs\@\@U?$default_delete\@UContainerValidationCraftInputs\@\@\@std\@\@\@std\@\@\@Z
      */
     virtual struct ContainerValidationCraftResult getCraftResult(class ContainerScreenContext const &, class ContainerScreenValidation &, std::unique_ptr<struct ContainerValidationCraftInputs>);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSCREENVALIDATORBASE
     /**
-     * @symbol  ?isValidContainerForScreen\@ContainerScreenValidatorBase\@\@QEBA_NW4ContainerEnumName\@\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~ContainerScreenValidatorBase();
+#endif
+    /**
+     * @symbol ?isValidContainerForScreen\@ContainerScreenValidatorBase\@\@QEBA_NW4ContainerEnumName\@\@\@Z
      */
     MCAPI bool isValidContainerForScreen(enum class ContainerEnumName) const;
 

@@ -17,7 +17,7 @@ namespace ChiseledBookshelfSlotUtils {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?calculateHitSlot\@ChiseledBookshelfSlotUtils\@\@YA?AV?$optional\@H\@std\@\@AEBVVec3\@\@AEBVBlock\@\@E\@Z
+     * @symbol ?calculateHitSlot\@ChiseledBookshelfSlotUtils\@\@YA?AV?$optional\@H\@std\@\@AEBVVec3\@\@AEBVBlock\@\@E\@Z
      */
     MCAPI class std::optional<int> calculateHitSlot(class Vec3 const &, class Block const &, unsigned char);
 

@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?createSystem\@VehicleInputSwitchRequestSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@VehicleInputSwitchRequestSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

@@ -1288,7 +1288,7 @@ inline bool CallTickEvent() {
 }
 
 // 植入tick
-TClasslessInstanceHook(void, "?tick@ServerLevel@@UEAAXXZ") {
+TClasslessInstanceHook(void, "?tick@Level@@UEAAXXZ") {
 #ifndef LLSE_BACKEND_NODEJS
     try {
         std::list<ScriptEngine*> tmpList;

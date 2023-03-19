@@ -30,11 +30,11 @@ public:
 
 public:
     /**
-     * @symbol  ?getBehaviorPackSize\@PacksInfoData\@\@QEBA_KXZ
+     * @symbol ?getBehaviorPackSize\@PacksInfoData\@\@QEBA_KXZ
      */
     MCAPI unsigned __int64 getBehaviorPackSize() const;
     /**
-     * @symbol  ?getResourcePackSize\@PacksInfoData\@\@QEBA_KXZ
+     * @symbol ?getResourcePackSize\@PacksInfoData\@\@QEBA_KXZ
      */
     MCAPI unsigned __int64 getResourcePackSize() const;
 

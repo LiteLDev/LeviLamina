@@ -30,17 +30,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~NullLogger();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?Logv\@NullLogger\@\@UEAAXPEBDPEAD\@Z
+     * @vftbl 1
+     * @symbol ?Logv\@NullLogger\@\@UEAAXPEBDPEAD\@Z
      */
     virtual void Logv(char const *, char *);
     /**
-     * @symbol  ?instance\@NullLogger\@\@2V1\@A
+     * @symbol ?instance\@NullLogger\@\@2V1\@A
      */
     MCAPI static class NullLogger instance;
 

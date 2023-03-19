@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1WorldGenContext\@\@QEAA\@XZ
+     * @symbol ??1WorldGenContext\@\@QEAA\@XZ
      */
     MCAPI ~WorldGenContext();
 

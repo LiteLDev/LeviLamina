@@ -21,15 +21,15 @@ namespace ScriptUtils {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?functionError\@ScriptUtils\@\@YA?AUError\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?functionError\@ScriptUtils\@\@YA?AUError\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI struct Scripting::Error functionError(std::string const &);
     /**
-     * @symbol  ?getPropertyError\@ScriptUtils\@\@YA?AUError\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?getPropertyError\@ScriptUtils\@\@YA?AUError\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI struct Scripting::Error getPropertyError(std::string const &);
     /**
-     * @symbol  ?setPropertyError\@ScriptUtils\@\@YA?AUError\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?setPropertyError\@ScriptUtils\@\@YA?AUError\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI struct Scripting::Error setPropertyError(std::string const &);
 

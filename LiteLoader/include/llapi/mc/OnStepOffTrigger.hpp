@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1OnStepOffTrigger\@\@QEAA\@XZ
+     * @symbol ??1OnStepOffTrigger\@\@QEAA\@XZ
      */
     MCAPI ~OnStepOffTrigger();
 

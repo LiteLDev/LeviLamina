@@ -31,17 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~IsSummonableDescription();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?getJsonName\@IsSummonableDescription\@\@UEBAPEBDXZ
+     * @vftbl 1
+     * @symbol ?getJsonName\@IsSummonableDescription\@\@UEBAPEBDXZ
      */
     virtual char const * getJsonName() const;
     /**
-     * @symbol  ?parse\@IsSummonableDescription\@\@QEAAXAEBVValue\@Json\@\@\@Z
+     * @symbol ?parse\@IsSummonableDescription\@\@QEAAXAEBVValue\@Json\@\@\@Z
      */
     MCAPI void parse(class Json::Value const &);
 

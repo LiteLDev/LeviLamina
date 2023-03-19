@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1MolangContextVariableMapWithCleanup\@\@QEAA\@XZ
+     * @symbol ??1MolangContextVariableMapWithCleanup\@\@QEAA\@XZ
      */
     MCAPI ~MolangContextVariableMapWithCleanup();
 

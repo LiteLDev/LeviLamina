@@ -26,26 +26,29 @@ class BiomeFilterGroup : public FilterGroup {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMEFILTERGROUP
 public:
     class BiomeFilterGroup& operator=(class BiomeFilterGroup const &) = delete;
+    BiomeFilterGroup(class BiomeFilterGroup const &) = delete;
     BiomeFilterGroup() = delete;
 #endif
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BiomeFilterGroup();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?_createSubgroup\@BiomeFilterGroup\@\@MEBA?AV?$shared_ptr\@VFilterGroup\@\@\@std\@\@W4CollectionType\@FilterGroup\@\@\@Z
+     * @vftbl 1
+     * @symbol ?_createSubgroup\@BiomeFilterGroup\@\@MEBA?AV?$shared_ptr\@VFilterGroup\@\@\@std\@\@W4CollectionType\@FilterGroup\@\@\@Z
      */
     virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum class FilterGroup::CollectionType) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEFILTERGROUP
     /**
-     * @symbol  ??0BiomeFilterGroup\@\@QEAA\@AEBV0\@\@Z
+     * @symbol __unk_destructor_-1
      */
-    MCAPI BiomeFilterGroup(class BiomeFilterGroup const &);
+    MCVAPI ~BiomeFilterGroup();
+#endif
     /**
-     * @symbol  ?finalizeParsedValue\@BiomeFilterGroup\@\@QEAAXAEAVIWorldRegistriesProvider\@\@\@Z
+     * @symbol ?finalizeParsedValue\@BiomeFilterGroup\@\@QEAAXAEAVIWorldRegistriesProvider\@\@\@Z
      */
     MCAPI void finalizeParsedValue(class IWorldRegistriesProvider &);
 

@@ -369,8 +369,9 @@ void liteloaderMain() {
 
     // Register Started
     Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent) {
+        logger.info("Repository: https://github.com/LiteLDev/LiteLoaderBDS");
         logger.info(tr("ll.notice.license", "LGPLv3"));
-        logger.info(tr("ll.notice.newForum", "https://forum.litebds.com"));
+        logger.info(tr("ll.notice.newForum", "https://litebds.com"));
         logger.info(tr("ll.notice.translateText", "https://crowdin.com/project/liteloaderbds"));
         logger.info("Thanks to RhyMC(rhymc.com) for the support");
         return true;

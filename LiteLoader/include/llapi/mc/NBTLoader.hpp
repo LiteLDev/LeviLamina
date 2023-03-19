@@ -29,8 +29,14 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTLOADER
     /**
-     * @symbol  ??0NBTLoader\@\@QEAA\@V?$not_null\@PEBVCompoundTag\@\@\@gsl\@\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~NBTLoader();
+#endif
+    /**
+     * @symbol ??0NBTLoader\@\@QEAA\@V?$not_null\@PEBVCompoundTag\@\@\@gsl\@\@\@Z
      */
     MCAPI NBTLoader(class gsl::not_null<class CompoundTag const *>);
 

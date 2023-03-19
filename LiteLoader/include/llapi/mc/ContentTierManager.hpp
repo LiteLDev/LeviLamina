@@ -25,22 +25,29 @@ class ContentTierManager {
 public:
     class ContentTierManager& operator=(class ContentTierManager const &) = delete;
     ContentTierManager(class ContentTierManager const &) = delete;
+    ContentTierManager() = delete;
 #endif
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ContentTierManager();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?getContentTierInfo\@ContentTierManager\@\@UEBA?AVContentTierInfo\@\@XZ
+     * @vftbl 1
+     * @symbol ?getContentTierInfo\@ContentTierManager\@\@UEBA?AVContentTierInfo\@\@XZ
      */
     virtual class ContentTierInfo getContentTierInfo() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTTIERMANAGER
     /**
-     * @symbol  ??0ContentTierManager\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI ContentTierManager();
+    MCVAPI ~ContentTierManager();
+#endif
+    /**
+     * @symbol ??0ContentTierManager\@\@QEAA\@V?$function\@$$A6A_NXZ\@std\@\@\@Z
+     */
+    MCAPI ContentTierManager(class std::function<bool (void)>);
 
 };

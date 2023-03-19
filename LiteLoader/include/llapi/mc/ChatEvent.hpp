@@ -27,11 +27,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0ChatEvent\@\@QEAA\@AEBU0\@\@Z
+     * @symbol ??0ChatEvent\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI ChatEvent(struct ChatEvent const &);
     /**
-     * @symbol  ??1ChatEvent\@\@QEAA\@XZ
+     * @symbol ??1ChatEvent\@\@QEAA\@XZ
      */
     MCAPI ~ChatEvent();
 

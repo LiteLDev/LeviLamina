@@ -20,15 +20,15 @@ namespace MineshaftUtil {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?_isLava\@MineshaftUtil\@\@YA_NAEBVBlockLegacy\@\@\@Z
+     * @symbol ?_isLava\@MineshaftUtil\@\@YA_NAEBVBlockLegacy\@\@\@Z
      */
     MCAPI bool _isLava(class BlockLegacy const &);
     /**
-     * @symbol  ?fillColumnBetween\@MineshaftUtil\@\@YAXAEAVBlockSource\@\@AEBVBlock\@\@AEBVBlockPos\@\@HH\@Z
+     * @symbol ?fillColumnBetween\@MineshaftUtil\@\@YAXAEAVBlockSource\@\@AEBVBlock\@\@AEBVBlockPos\@\@HH\@Z
      */
     MCAPI void fillColumnBetween(class BlockSource &, class Block const &, class BlockPos const &, int, int);
     /**
-     * @symbol  ?isCavesAndCliffs\@MineshaftUtil\@\@YA_NAEBVLevel\@\@\@Z
+     * @symbol ?isCavesAndCliffs\@MineshaftUtil\@\@YA_NAEBVLevel\@\@\@Z
      */
     MCAPI bool isCavesAndCliffs(class Level const &);
 

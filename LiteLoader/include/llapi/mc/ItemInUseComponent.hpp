@@ -28,11 +28,11 @@ public:
 
 public:
     /**
-     * @symbol  ??4ItemInUseComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
+     * @symbol ??4ItemInUseComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct ItemInUseComponent & operator=(struct ItemInUseComponent &&);
     /**
-     * @symbol  ??1ItemInUseComponent\@\@QEAA\@XZ
+     * @symbol ??1ItemInUseComponent\@\@QEAA\@XZ
      */
     MCAPI ~ItemInUseComponent();
 

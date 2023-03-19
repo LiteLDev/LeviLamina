@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1SynchedActorDataComponent\@\@QEAA\@XZ
+     * @symbol ??1SynchedActorDataComponent\@\@QEAA\@XZ
      */
     MCAPI ~SynchedActorDataComponent();
 

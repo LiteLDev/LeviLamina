@@ -28,12 +28,18 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  ?doValidate\@SemVersionConstraint\@\@EEBA_NAEBVmeta_any\@entt\@\@AEAVSerializerContext\@\@\@Z
+     * @vftbl 0
+     * @symbol ?doValidate\@SemVersionConstraint\@\@EEBA_NAEBVmeta_any\@entt\@\@AEAVSerializerContext\@\@\@Z
      */
     virtual bool doValidate(class entt::meta_any const &, class SerializerContext &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEMVERSIONCONSTRAINT
     /**
-     * @symbol  ?min\@SemVersionConstraint\@\@QEAAAEAV1\@AEBVSemVersion\@\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~SemVersionConstraint();
+#endif
+    /**
+     * @symbol ?min\@SemVersionConstraint\@\@QEAAAEAV1\@AEBVSemVersion\@\@\@Z
      */
     MCAPI class SemVersionConstraint & min(class SemVersion const &);
 

@@ -12,11 +12,8 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC structure ActorAliasDescription.
- *
- */
-struct ActorAliasDescription {
+
+class ActorAliasDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -24,31 +21,34 @@ struct ActorAliasDescription {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORALIASDESCRIPTION
 public:
-    ActorAliasDescription(struct ActorAliasDescription const &) = delete;
+    class ActorAliasDescription& operator=(class ActorAliasDescription const &) = delete;
+    ActorAliasDescription(class ActorAliasDescription const &) = delete;
     ActorAliasDescription() = delete;
 #endif
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ActorAliasDescription();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?getJsonName\@ActorAliasDescription\@\@UEBAPEBDXZ
+     * @vftbl 1
+     * @symbol ?getJsonName\@ActorAliasDescription\@\@UEBAPEBDXZ
      */
     virtual char const * getJsonName() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORALIASDESCRIPTION
     /**
-     * @symbol  ?getAliasInfo\@ActorAliasDescription\@\@QEBAPEBUAliasInfoDescription\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~ActorAliasDescription();
+#endif
+    /**
+     * @symbol ?getAliasInfo\@ActorAliasDescription\@\@QEBAPEBUAliasInfoDescription\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI struct AliasInfoDescription const * getAliasInfo(std::string const &) const;
     /**
-     * @symbol  ??4ActorAliasDescription\@\@QEAAAEAU0\@AEBU0\@\@Z
-     */
-    MCAPI struct ActorAliasDescription & operator=(struct ActorAliasDescription const &);
-    /**
-     * @symbol  ?parse\@ActorAliasDescription\@\@QEAAXAEAVValue\@Json\@\@_N\@Z
+     * @symbol ?parse\@ActorAliasDescription\@\@QEAAXAEAVValue\@Json\@\@_N\@Z
      */
     MCAPI void parse(class Json::Value &, bool);
 

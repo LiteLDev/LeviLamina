@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ActorAttackEvent\@\@QEAA\@XZ
+     * @symbol ??1ActorAttackEvent\@\@QEAA\@XZ
      */
     MCAPI ~ActorAttackEvent();
 

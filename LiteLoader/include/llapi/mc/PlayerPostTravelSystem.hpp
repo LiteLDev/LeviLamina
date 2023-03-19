@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ?create\@PlayerPostTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?create\@PlayerPostTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo create();
 

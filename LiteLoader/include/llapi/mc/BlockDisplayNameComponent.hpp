@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1BlockDisplayNameComponent\@\@QEAA\@XZ
+     * @symbol ??1BlockDisplayNameComponent\@\@QEAA\@XZ
      */
     MCAPI ~BlockDisplayNameComponent();
 

@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ChunkRecyclerTelemetryOutput\@\@QEAA\@XZ
+     * @symbol ??1ChunkRecyclerTelemetryOutput\@\@QEAA\@XZ
      */
     MCAPI ~ChunkRecyclerTelemetryOutput();
 

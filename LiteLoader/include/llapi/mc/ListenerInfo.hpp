@@ -34,7 +34,7 @@ public:
 
 private:
     /**
-     * @symbol  ?SQRT_FLT_MAX\@ListenerInfo\@\@0MB
+     * @symbol ?SQRT_FLT_MAX\@ListenerInfo\@\@0MB
      */
     MCAPI static float const SQRT_FLT_MAX;
 

@@ -29,31 +29,27 @@ public:
 
 public:
     /**
-     * @symbol  ??0VolumeDefinition\@\@QEAA\@XZ
+     * @symbol ??0VolumeDefinition\@\@QEAA\@XZ
      */
     MCAPI VolumeDefinition();
     /**
-     * @symbol  ??0VolumeDefinition\@\@QEAA\@$$QEAU0\@\@Z
-     */
-    MCAPI VolumeDefinition(struct VolumeDefinition &&);
-    /**
-     * @symbol  ??1VolumeDefinition\@\@QEAA\@XZ
+     * @symbol ??1VolumeDefinition\@\@QEAA\@XZ
      */
     MCAPI ~VolumeDefinition();
     /**
-     * @symbol  ?NAME\@VolumeDefinition\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?NAME\@VolumeDefinition\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NAME;
     /**
-     * @symbol  ?bindType\@VolumeDefinition\@\@SAXXZ
+     * @symbol ?bindType\@VolumeDefinition\@\@SAXXZ
      */
     MCAPI static void bindType();
     /**
-     * @symbol  ?getMaxSupportedVersion\@VolumeDefinition\@\@SAAEBVSemVersion\@\@XZ
+     * @symbol ?getMaxSupportedVersion\@VolumeDefinition\@\@SAAEBVSemVersion\@\@XZ
      */
     MCAPI static class SemVersion const & getMaxSupportedVersion();
     /**
-     * @symbol  ?getMinSupportedVersion\@VolumeDefinition\@\@SAAEBVSemVersion\@\@XZ
+     * @symbol ?getMinSupportedVersion\@VolumeDefinition\@\@SAAEBVSemVersion\@\@XZ
      */
     MCAPI static class SemVersion const & getMinSupportedVersion();
 

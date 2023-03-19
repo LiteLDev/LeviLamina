@@ -29,22 +29,22 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~FlyNode();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?tick\@FlyNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
+     * @vftbl 1
+     * @symbol ?tick\@FlyNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
-     * @vftbl  2
-     * @symbol  ?initializeFromDefinition\@FlyNode\@\@EEAAXAEAVActor\@\@\@Z
+     * @vftbl 2
+     * @symbol ?initializeFromDefinition\@FlyNode\@\@EEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
-     * @symbol  ??0FlyNode\@\@QEAA\@XZ
+     * @symbol ??0FlyNode\@\@QEAA\@XZ
      */
     MCAPI FlyNode();
 

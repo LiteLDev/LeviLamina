@@ -30,15 +30,15 @@ public:
 
 public:
     /**
-     * @symbol  ?sendLevelAddedPlayer\@ServerLevelEventCoordinator\@\@QEAAXAEAVLevel\@\@AEAVPlayer\@\@\@Z
+     * @symbol ?sendLevelAddedPlayer\@ServerLevelEventCoordinator\@\@QEAAXAEAVLevel\@\@AEAVPlayer\@\@\@Z
      */
     MCAPI void sendLevelAddedPlayer(class Level &, class Player &);
     /**
-     * @symbol  ?sendLevelRemovedPlayer\@ServerLevelEventCoordinator\@\@QEAAXAEAVLevel\@\@AEAVPlayer\@\@\@Z
+     * @symbol ?sendLevelRemovedPlayer\@ServerLevelEventCoordinator\@\@QEAAXAEAVLevel\@\@AEAVPlayer\@\@\@Z
      */
     MCAPI void sendLevelRemovedPlayer(class Level &, class Player &);
     /**
-     * @symbol  ?sendLevelSaveData\@ServerLevelEventCoordinator\@\@QEAAXAEAVLevel\@\@AEAVCompoundTag\@\@\@Z
+     * @symbol ?sendLevelSaveData\@ServerLevelEventCoordinator\@\@QEAAXAEAVLevel\@\@AEAVCompoundTag\@\@\@Z
      */
     MCAPI void sendLevelSaveData(class Level &, class CompoundTag &);
 

@@ -29,17 +29,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~AgentBodyControl();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?clientTick\@AgentBodyControl\@\@UEAAXAEAVMob\@\@\@Z
+     * @vftbl 1
+     * @symbol ?clientTick\@AgentBodyControl\@\@UEAAXAEAVMob\@\@\@Z
      */
     virtual void clientTick(class Mob &);
     /**
-     * @symbol  ??0AgentBodyControl\@\@QEAA\@XZ
+     * @symbol ??0AgentBodyControl\@\@QEAA\@XZ
      */
     MCAPI AgentBodyControl();
 

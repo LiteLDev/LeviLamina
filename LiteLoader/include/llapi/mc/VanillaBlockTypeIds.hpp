@@ -20,2588 +20,2664 @@ namespace VanillaBlockTypeIds {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?AcaciaButton\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?AcaciaButton\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const AcaciaButton;
     /**
-     * @symbol  ?AcaciaDoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?AcaciaDoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const AcaciaDoor;
     /**
-     * @symbol  ?AcaciaFenceGate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?AcaciaFenceGate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const AcaciaFenceGate;
     /**
-     * @symbol  ?AcaciaHangingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?AcaciaHangingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const AcaciaHangingSign;
     /**
-     * @symbol  ?AcaciaPressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?AcaciaPressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const AcaciaPressurePlate;
     /**
-     * @symbol  ?AcaciaStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?AcaciaStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const AcaciaStairs;
     /**
-     * @symbol  ?AcaciaStandingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?AcaciaStandingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const AcaciaStandingSign;
     /**
-     * @symbol  ?AcaciaTrapdoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?AcaciaTrapdoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const AcaciaTrapdoor;
     /**
-     * @symbol  ?AcaciaWallSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?AcaciaWallSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const AcaciaWallSign;
     /**
-     * @symbol  ?ActivatorRail\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?ActivatorRail\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ActivatorRail;
     /**
-     * @symbol  ?Allow\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Allow\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Allow;
     /**
-     * @symbol  ?AmethystBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?AmethystBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const AmethystBlock;
     /**
-     * @symbol  ?AmethystCluster\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?AmethystCluster\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const AmethystCluster;
     /**
-     * @symbol  ?AncientDebris\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?AncientDebris\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const AncientDebris;
     /**
-     * @symbol  ?AndesiteStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?AndesiteStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const AndesiteStairs;
     /**
-     * @symbol  ?Anvil\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Anvil\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Anvil;
     /**
-     * @symbol  ?Azalea\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Azalea\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Azalea;
     /**
-     * @symbol  ?AzaleaLeaves\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?AzaleaLeaves\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const AzaleaLeaves;
     /**
-     * @symbol  ?AzaleaLeavesFlowered\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?AzaleaLeavesFlowered\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const AzaleaLeavesFlowered;
     /**
-     * @symbol  ?Bamboo\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Bamboo\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Bamboo;
     /**
-     * @symbol  ?BambooBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BambooBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BambooBlock;
     /**
-     * @symbol  ?BambooButton\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BambooButton\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BambooButton;
     /**
-     * @symbol  ?BambooDoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BambooDoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BambooDoor;
     /**
-     * @symbol  ?BambooDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BambooDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BambooDoubleSlab;
     /**
-     * @symbol  ?BambooFence\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BambooFence\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BambooFence;
     /**
-     * @symbol  ?BambooFenceGate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BambooFenceGate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BambooFenceGate;
     /**
-     * @symbol  ?BambooHangingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BambooHangingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BambooHangingSign;
     /**
-     * @symbol  ?BambooMosaic\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BambooMosaic\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BambooMosaic;
     /**
-     * @symbol  ?BambooMosaicDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BambooMosaicDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BambooMosaicDoubleSlab;
     /**
-     * @symbol  ?BambooMosaicSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BambooMosaicSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BambooMosaicSlab;
     /**
-     * @symbol  ?BambooMosaicStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BambooMosaicStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BambooMosaicStairs;
     /**
-     * @symbol  ?BambooPlanks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BambooPlanks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BambooPlanks;
     /**
-     * @symbol  ?BambooPressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BambooPressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BambooPressurePlate;
     /**
-     * @symbol  ?BambooSapling\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BambooSapling\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BambooSapling;
     /**
-     * @symbol  ?BambooSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BambooSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BambooSlab;
     /**
-     * @symbol  ?BambooStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BambooStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BambooStairs;
     /**
-     * @symbol  ?BambooStandingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BambooStandingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BambooStandingSign;
     /**
-     * @symbol  ?BambooTrapdoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BambooTrapdoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BambooTrapdoor;
     /**
-     * @symbol  ?BambooWallSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BambooWallSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BambooWallSign;
     /**
-     * @symbol  ?Barrel\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Barrel\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Barrel;
     /**
-     * @symbol  ?Barrier\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Barrier\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Barrier;
     /**
-     * @symbol  ?Basalt\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Basalt\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Basalt;
     /**
-     * @symbol  ?Beacon\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Beacon\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Beacon;
     /**
-     * @symbol  ?Bed\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Bed\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Bed;
     /**
-     * @symbol  ?Bedrock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Bedrock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Bedrock;
     /**
-     * @symbol  ?BeeNest\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BeeNest\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BeeNest;
     /**
-     * @symbol  ?Beehive\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Beehive\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Beehive;
     /**
-     * @symbol  ?Beetroot\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Beetroot\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Beetroot;
     /**
-     * @symbol  ?Bell\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Bell\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Bell;
     /**
-     * @symbol  ?BigDripleaf\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BigDripleaf\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BigDripleaf;
     /**
-     * @symbol  ?BirchButton\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BirchButton\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BirchButton;
     /**
-     * @symbol  ?BirchDoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BirchDoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BirchDoor;
     /**
-     * @symbol  ?BirchFenceGate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BirchFenceGate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BirchFenceGate;
     /**
-     * @symbol  ?BirchHangingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BirchHangingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BirchHangingSign;
     /**
-     * @symbol  ?BirchPressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BirchPressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BirchPressurePlate;
     /**
-     * @symbol  ?BirchStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BirchStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BirchStairs;
     /**
-     * @symbol  ?BirchStandingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BirchStandingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BirchStandingSign;
     /**
-     * @symbol  ?BirchTrapdoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BirchTrapdoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BirchTrapdoor;
     /**
-     * @symbol  ?BirchWallSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BirchWallSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BirchWallSign;
     /**
-     * @symbol  ?BlackCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BlackCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BlackCandle;
     /**
-     * @symbol  ?BlackCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BlackCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BlackCandleCake;
     /**
-     * @symbol  ?BlackGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BlackGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BlackGlazedTerracotta;
     /**
-     * @symbol  ?Blackstone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BlackWool\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const BlackWool;
+    /**
+     * @symbol ?Blackstone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Blackstone;
     /**
-     * @symbol  ?BlackstoneDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BlackstoneDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BlackstoneDoubleSlab;
     /**
-     * @symbol  ?BlackstoneSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BlackstoneSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BlackstoneSlab;
     /**
-     * @symbol  ?BlackstoneStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BlackstoneStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BlackstoneStairs;
     /**
-     * @symbol  ?BlackstoneWall\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BlackstoneWall\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BlackstoneWall;
     /**
-     * @symbol  ?BlastFurnace\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BlastFurnace\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BlastFurnace;
     /**
-     * @symbol  ?BlueCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BlueCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BlueCandle;
     /**
-     * @symbol  ?BlueCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BlueCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BlueCandleCake;
     /**
-     * @symbol  ?BlueGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BlueGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BlueGlazedTerracotta;
     /**
-     * @symbol  ?BlueIce\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BlueIce\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BlueIce;
     /**
-     * @symbol  ?BoneBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BlueWool\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const BlueWool;
+    /**
+     * @symbol ?BoneBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BoneBlock;
     /**
-     * @symbol  ?Bookshelf\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Bookshelf\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Bookshelf;
     /**
-     * @symbol  ?BorderBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BorderBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BorderBlock;
     /**
-     * @symbol  ?BrewingStand\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BrewingStand\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BrewingStand;
     /**
-     * @symbol  ?BrickBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BrickBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BrickBlock;
     /**
-     * @symbol  ?BrickStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BrickStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BrickStairs;
     /**
-     * @symbol  ?BrownCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BrownCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BrownCandle;
     /**
-     * @symbol  ?BrownCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BrownCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BrownCandleCake;
     /**
-     * @symbol  ?BrownGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BrownGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BrownGlazedTerracotta;
     /**
-     * @symbol  ?BrownMushroom\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BrownMushroom\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BrownMushroom;
     /**
-     * @symbol  ?BrownMushroomBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BrownMushroomBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BrownMushroomBlock;
     /**
-     * @symbol  ?BubbleColumn\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BrownWool\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const BrownWool;
+    /**
+     * @symbol ?BubbleColumn\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BubbleColumn;
     /**
-     * @symbol  ?BuddingAmethyst\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?BuddingAmethyst\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BuddingAmethyst;
     /**
-     * @symbol  ?Cactus\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Cactus\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Cactus;
     /**
-     * @symbol  ?Cake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Cake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Cake;
     /**
-     * @symbol  ?Calcite\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Calcite\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Calcite;
     /**
-     * @symbol  ?Camera\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Camera\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Camera;
     /**
-     * @symbol  ?CampFire\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CampFire\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CampFire;
     /**
-     * @symbol  ?Candle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Candle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Candle;
     /**
-     * @symbol  ?CandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CandleCake;
     /**
-     * @symbol  ?Carpet\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Carpet\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Carpet;
     /**
-     * @symbol  ?Carrots\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Carrots\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Carrots;
     /**
-     * @symbol  ?CartographyTable\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CartographyTable\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CartographyTable;
     /**
-     * @symbol  ?CarvedPumpkin\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CarvedPumpkin\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CarvedPumpkin;
     /**
-     * @symbol  ?Cauldron\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Cauldron\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Cauldron;
     /**
-     * @symbol  ?CaveVines\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CaveVines\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CaveVines;
     /**
-     * @symbol  ?CaveVinesBodyWithBerries\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CaveVinesBodyWithBerries\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CaveVinesBodyWithBerries;
     /**
-     * @symbol  ?CaveVinesHeadWithBerries\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CaveVinesHeadWithBerries\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CaveVinesHeadWithBerries;
     /**
-     * @symbol  ?Chain\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Chain\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Chain;
     /**
-     * @symbol  ?ChainCommandBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?ChainCommandBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ChainCommandBlock;
     /**
-     * @symbol  ?Chalkboard\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Chalkboard\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Chalkboard;
     /**
-     * @symbol  ?ChemicalHeat\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?ChemicalHeat\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ChemicalHeat;
     /**
-     * @symbol  ?ChemistryTable\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?ChemistryTable\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ChemistryTable;
     /**
-     * @symbol  ?Chest\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Chest\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Chest;
     /**
-     * @symbol  ?ChiseledBookshelf\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?ChiseledBookshelf\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ChiseledBookshelf;
     /**
-     * @symbol  ?ChiseledDeepslate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?ChiseledDeepslate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ChiseledDeepslate;
     /**
-     * @symbol  ?ChiseledNetherBricks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?ChiseledNetherBricks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ChiseledNetherBricks;
     /**
-     * @symbol  ?ChiseledPolishedBlackstone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?ChiseledPolishedBlackstone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ChiseledPolishedBlackstone;
     /**
-     * @symbol  ?ChorusFlower\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?ChorusFlower\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ChorusFlower;
     /**
-     * @symbol  ?ChorusPlant\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?ChorusPlant\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ChorusPlant;
     /**
-     * @symbol  ?Clay\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Clay\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Clay;
     /**
-     * @symbol  ?ClientRequestPlaceholderBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?ClientRequestPlaceholderBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ClientRequestPlaceholderBlock;
     /**
-     * @symbol  ?CoalBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CoalBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CoalBlock;
     /**
-     * @symbol  ?CoalOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CoalOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CoalOre;
     /**
-     * @symbol  ?CobbledDeepslate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CobbledDeepslate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CobbledDeepslate;
     /**
-     * @symbol  ?CobbledDeepslateDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CobbledDeepslateDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CobbledDeepslateDoubleSlab;
     /**
-     * @symbol  ?CobbledDeepslateSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CobbledDeepslateSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CobbledDeepslateSlab;
     /**
-     * @symbol  ?CobbledDeepslateStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CobbledDeepslateStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CobbledDeepslateStairs;
     /**
-     * @symbol  ?CobbledDeepslateWall\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CobbledDeepslateWall\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CobbledDeepslateWall;
     /**
-     * @symbol  ?Cobblestone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Cobblestone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Cobblestone;
     /**
-     * @symbol  ?CobblestoneWall\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CobblestoneWall\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CobblestoneWall;
     /**
-     * @symbol  ?Cocoa\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Cocoa\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Cocoa;
     /**
-     * @symbol  ?ColoredTorchBp\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?ColoredTorchBp\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ColoredTorchBp;
     /**
-     * @symbol  ?ColoredTorchRg\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?ColoredTorchRg\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ColoredTorchRg;
     /**
-     * @symbol  ?CommandBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CommandBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CommandBlock;
     /**
-     * @symbol  ?Composter\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Composter\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Composter;
     /**
-     * @symbol  ?Concrete\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Concrete\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Concrete;
     /**
-     * @symbol  ?ConcretePowder\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?ConcretePowder\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ConcretePowder;
     /**
-     * @symbol  ?Conduit\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Conduit\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Conduit;
     /**
-     * @symbol  ?CopperBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CopperBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CopperBlock;
     /**
-     * @symbol  ?CopperOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CopperOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CopperOre;
     /**
-     * @symbol  ?Coral\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Coral\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Coral;
     /**
-     * @symbol  ?CoralBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CoralBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CoralBlock;
     /**
-     * @symbol  ?CoralFan\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CoralFan\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CoralFan;
     /**
-     * @symbol  ?CoralFanDead\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CoralFanDead\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CoralFanDead;
     /**
-     * @symbol  ?CoralFanHang\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CoralFanHang\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CoralFanHang;
     /**
-     * @symbol  ?CoralFanHang2\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CoralFanHang2\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CoralFanHang2;
     /**
-     * @symbol  ?CoralFanHang3\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CoralFanHang3\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CoralFanHang3;
     /**
-     * @symbol  ?CrackedDeepslateBricks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CrackedDeepslateBricks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CrackedDeepslateBricks;
     /**
-     * @symbol  ?CrackedDeepslateTiles\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CrackedDeepslateTiles\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CrackedDeepslateTiles;
     /**
-     * @symbol  ?CrackedNetherBricks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CrackedNetherBricks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CrackedNetherBricks;
     /**
-     * @symbol  ?CrackedPolishedBlackstoneBricks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CrackedPolishedBlackstoneBricks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CrackedPolishedBlackstoneBricks;
     /**
-     * @symbol  ?CraftingTable\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CraftingTable\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CraftingTable;
     /**
-     * @symbol  ?CrimsonButton\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CrimsonButton\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CrimsonButton;
     /**
-     * @symbol  ?CrimsonDoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CrimsonDoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CrimsonDoor;
     /**
-     * @symbol  ?CrimsonDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CrimsonDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CrimsonDoubleSlab;
     /**
-     * @symbol  ?CrimsonFence\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CrimsonFence\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CrimsonFence;
     /**
-     * @symbol  ?CrimsonFenceGate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CrimsonFenceGate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CrimsonFenceGate;
     /**
-     * @symbol  ?CrimsonFungus\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CrimsonFungus\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CrimsonFungus;
     /**
-     * @symbol  ?CrimsonHangingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CrimsonHangingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CrimsonHangingSign;
     /**
-     * @symbol  ?CrimsonHyphae\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CrimsonHyphae\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CrimsonHyphae;
     /**
-     * @symbol  ?CrimsonNylium\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CrimsonNylium\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CrimsonNylium;
     /**
-     * @symbol  ?CrimsonPlanks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CrimsonPlanks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CrimsonPlanks;
     /**
-     * @symbol  ?CrimsonPressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CrimsonPressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CrimsonPressurePlate;
     /**
-     * @symbol  ?CrimsonRoots\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CrimsonRoots\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CrimsonRoots;
     /**
-     * @symbol  ?CrimsonSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CrimsonSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CrimsonSlab;
     /**
-     * @symbol  ?CrimsonStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CrimsonStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CrimsonStairs;
     /**
-     * @symbol  ?CrimsonStandingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CrimsonStandingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CrimsonStandingSign;
     /**
-     * @symbol  ?CrimsonStem\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CrimsonStem\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CrimsonStem;
     /**
-     * @symbol  ?CrimsonTrapdoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CrimsonTrapdoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CrimsonTrapdoor;
     /**
-     * @symbol  ?CrimsonWallSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CrimsonWallSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CrimsonWallSign;
     /**
-     * @symbol  ?CryingObsidian\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CryingObsidian\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CryingObsidian;
     /**
-     * @symbol  ?CutCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CutCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CutCopper;
     /**
-     * @symbol  ?CutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CutCopperSlab;
     /**
-     * @symbol  ?CutCopperStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CutCopperStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CutCopperStairs;
     /**
-     * @symbol  ?CyanCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CyanCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CyanCandle;
     /**
-     * @symbol  ?CyanCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CyanCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CyanCandleCake;
     /**
-     * @symbol  ?CyanGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CyanGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CyanGlazedTerracotta;
     /**
-     * @symbol  ?DarkOakButton\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?CyanWool\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const CyanWool;
+    /**
+     * @symbol ?DarkOakButton\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DarkOakButton;
     /**
-     * @symbol  ?DarkOakDoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DarkOakDoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DarkOakDoor;
     /**
-     * @symbol  ?DarkOakFenceGate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DarkOakFenceGate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DarkOakFenceGate;
     /**
-     * @symbol  ?DarkOakPressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DarkOakPressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DarkOakPressurePlate;
     /**
-     * @symbol  ?DarkOakStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DarkOakStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DarkOakStairs;
     /**
-     * @symbol  ?DarkOakTrapdoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DarkOakTrapdoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DarkOakTrapdoor;
     /**
-     * @symbol  ?DarkPrismarineStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DarkPrismarineStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DarkPrismarineStairs;
     /**
-     * @symbol  ?DarkoakHangingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DarkoakHangingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DarkoakHangingSign;
     /**
-     * @symbol  ?DarkoakStandingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DarkoakStandingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DarkoakStandingSign;
     /**
-     * @symbol  ?DarkoakWallSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DarkoakWallSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DarkoakWallSign;
     /**
-     * @symbol  ?DaylightDetector\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DaylightDetector\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DaylightDetector;
     /**
-     * @symbol  ?DaylightDetectorInverted\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DaylightDetectorInverted\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DaylightDetectorInverted;
     /**
-     * @symbol  ?Deadbush\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Deadbush\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Deadbush;
     /**
-     * @symbol  ?Deepslate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DecoratedPot\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const DecoratedPot;
+    /**
+     * @symbol ?Deepslate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Deepslate;
     /**
-     * @symbol  ?DeepslateBrickDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DeepslateBrickDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DeepslateBrickDoubleSlab;
     /**
-     * @symbol  ?DeepslateBrickSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DeepslateBrickSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DeepslateBrickSlab;
     /**
-     * @symbol  ?DeepslateBrickStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DeepslateBrickStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DeepslateBrickStairs;
     /**
-     * @symbol  ?DeepslateBrickWall\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DeepslateBrickWall\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DeepslateBrickWall;
     /**
-     * @symbol  ?DeepslateBricks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DeepslateBricks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DeepslateBricks;
     /**
-     * @symbol  ?DeepslateCoalOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DeepslateCoalOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DeepslateCoalOre;
     /**
-     * @symbol  ?DeepslateCopperOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DeepslateCopperOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DeepslateCopperOre;
     /**
-     * @symbol  ?DeepslateDiamondOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DeepslateDiamondOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DeepslateDiamondOre;
     /**
-     * @symbol  ?DeepslateEmeraldOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DeepslateEmeraldOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DeepslateEmeraldOre;
     /**
-     * @symbol  ?DeepslateGoldOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DeepslateGoldOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DeepslateGoldOre;
     /**
-     * @symbol  ?DeepslateIronOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DeepslateIronOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DeepslateIronOre;
     /**
-     * @symbol  ?DeepslateLapisOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DeepslateLapisOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DeepslateLapisOre;
     /**
-     * @symbol  ?DeepslateRedstoneOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DeepslateRedstoneOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DeepslateRedstoneOre;
     /**
-     * @symbol  ?DeepslateTileDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DeepslateTileDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DeepslateTileDoubleSlab;
     /**
-     * @symbol  ?DeepslateTileSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DeepslateTileSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DeepslateTileSlab;
     /**
-     * @symbol  ?DeepslateTileStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DeepslateTileStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DeepslateTileStairs;
     /**
-     * @symbol  ?DeepslateTileWall\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DeepslateTileWall\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DeepslateTileWall;
     /**
-     * @symbol  ?DeepslateTiles\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DeepslateTiles\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DeepslateTiles;
     /**
-     * @symbol  ?Deny\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Deny\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Deny;
     /**
-     * @symbol  ?DetectorRail\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DetectorRail\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DetectorRail;
     /**
-     * @symbol  ?DiamondBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DiamondBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DiamondBlock;
     /**
-     * @symbol  ?DiamondOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DiamondOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DiamondOre;
     /**
-     * @symbol  ?DioriteStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DioriteStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DioriteStairs;
     /**
-     * @symbol  ?Dirt\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Dirt\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Dirt;
     /**
-     * @symbol  ?DirtWithRoots\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DirtWithRoots\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DirtWithRoots;
     /**
-     * @symbol  ?Dispenser\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Dispenser\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Dispenser;
     /**
-     * @symbol  ?DoubleCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DoubleCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DoubleCutCopperSlab;
     /**
-     * @symbol  ?DoublePlant\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DoublePlant\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DoublePlant;
     /**
-     * @symbol  ?DoubleStoneSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DoubleStoneSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DoubleStoneSlab;
     /**
-     * @symbol  ?DoubleStoneSlab2\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DoubleStoneSlab2\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DoubleStoneSlab2;
     /**
-     * @symbol  ?DoubleStoneSlab3\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DoubleStoneSlab3\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DoubleStoneSlab3;
     /**
-     * @symbol  ?DoubleStoneSlab4\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DoubleStoneSlab4\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DoubleStoneSlab4;
     /**
-     * @symbol  ?DoubleWoodenSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DoubleWoodenSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DoubleWoodenSlab;
     /**
-     * @symbol  ?DragonEgg\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DragonEgg\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DragonEgg;
     /**
-     * @symbol  ?DriedKelpBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?DriedKelpBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DriedKelpBlock;
     /**
-     * @symbol  ?Dripstone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Dripstone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Dripstone;
     /**
-     * @symbol  ?Dropper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Dropper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Dropper;
     /**
-     * @symbol  ?Elements\@VanillaBlockTypeIds\@\@3V?$array\@$$CBVHashedString\@\@$0HH\@\@std\@\@B
+     * @symbol ?Elements\@VanillaBlockTypeIds\@\@3V?$array\@$$CBVHashedString\@\@$0HH\@\@std\@\@B
      */
     MCAPI extern class std::array<class HashedString const, 119> const Elements;
     /**
-     * @symbol  ?EmeraldBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?EmeraldBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const EmeraldBlock;
     /**
-     * @symbol  ?EmeraldOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?EmeraldOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const EmeraldOre;
     /**
-     * @symbol  ?EnchantingTable\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?EnchantingTable\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const EnchantingTable;
     /**
-     * @symbol  ?EndBrickStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?EndBrickStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const EndBrickStairs;
     /**
-     * @symbol  ?EndBricks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?EndBricks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const EndBricks;
     /**
-     * @symbol  ?EndGateway\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?EndGateway\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const EndGateway;
     /**
-     * @symbol  ?EndPortal\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?EndPortal\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const EndPortal;
     /**
-     * @symbol  ?EndPortalFrame\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?EndPortalFrame\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const EndPortalFrame;
     /**
-     * @symbol  ?EndRod\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?EndRod\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const EndRod;
     /**
-     * @symbol  ?EndStone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?EndStone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const EndStone;
     /**
-     * @symbol  ?EnderChest\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?EnderChest\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const EnderChest;
     /**
-     * @symbol  ?ExposedCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?ExposedCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ExposedCopper;
     /**
-     * @symbol  ?ExposedCutCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?ExposedCutCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ExposedCutCopper;
     /**
-     * @symbol  ?ExposedCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?ExposedCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ExposedCutCopperSlab;
     /**
-     * @symbol  ?ExposedCutCopperStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?ExposedCutCopperStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ExposedCutCopperStairs;
     /**
-     * @symbol  ?ExposedDoubleCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?ExposedDoubleCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ExposedDoubleCutCopperSlab;
     /**
-     * @symbol  ?FarmlandBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?FarmlandBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const FarmlandBlock;
     /**
-     * @symbol  ?Fence\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Fence\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Fence;
     /**
-     * @symbol  ?FenceGate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?FenceGate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const FenceGate;
     /**
-     * @symbol  ?Fire\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Fire\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Fire;
     /**
-     * @symbol  ?FletchingTable\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?FletchingTable\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const FletchingTable;
     /**
-     * @symbol  ?FlowerPot\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?FlowerPot\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const FlowerPot;
     /**
-     * @symbol  ?FloweringAzalea\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?FloweringAzalea\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const FloweringAzalea;
     /**
-     * @symbol  ?FlowingLava\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?FlowingLava\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const FlowingLava;
     /**
-     * @symbol  ?FlowingWater\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?FlowingWater\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const FlowingWater;
     /**
-     * @symbol  ?FrogSpawn\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?FrogSpawn\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const FrogSpawn;
     /**
-     * @symbol  ?FrostedIce\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?FrostedIce\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const FrostedIce;
     /**
-     * @symbol  ?Furnace\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Furnace\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Furnace;
     /**
-     * @symbol  ?GildedBlackstone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?GildedBlackstone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const GildedBlackstone;
     /**
-     * @symbol  ?Glass\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Glass\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Glass;
     /**
-     * @symbol  ?GlassPane\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?GlassPane\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const GlassPane;
     /**
-     * @symbol  ?GlowItemFrame\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?GlowItemFrame\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const GlowItemFrame;
     /**
-     * @symbol  ?GlowLichen\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?GlowLichen\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const GlowLichen;
     /**
-     * @symbol  ?Glowingobsidian\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?GlowingObsidian\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
-    MCAPI extern class HashedString const Glowingobsidian;
+    MCAPI extern class HashedString const GlowingObsidian;
     /**
-     * @symbol  ?Glowstone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Glowstone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Glowstone;
     /**
-     * @symbol  ?GoldBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?GoldBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const GoldBlock;
     /**
-     * @symbol  ?GoldOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?GoldOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const GoldOre;
     /**
-     * @symbol  ?GoldenRail\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?GoldenRail\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const GoldenRail;
     /**
-     * @symbol  ?GraniteStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?GraniteStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const GraniteStairs;
     /**
-     * @symbol  ?Grass\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Grass\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Grass;
     /**
-     * @symbol  ?GrassPath\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?GrassPath\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const GrassPath;
     /**
-     * @symbol  ?Gravel\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Gravel\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Gravel;
     /**
-     * @symbol  ?GrayCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?GrayCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const GrayCandle;
     /**
-     * @symbol  ?GrayCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?GrayCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const GrayCandleCake;
     /**
-     * @symbol  ?GrayGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?GrayGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const GrayGlazedTerracotta;
     /**
-     * @symbol  ?GreenCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?GrayWool\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const GrayWool;
+    /**
+     * @symbol ?GreenCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const GreenCandle;
     /**
-     * @symbol  ?GreenCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?GreenCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const GreenCandleCake;
     /**
-     * @symbol  ?GreenGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?GreenGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const GreenGlazedTerracotta;
     /**
-     * @symbol  ?Grindstone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?GreenWool\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const GreenWool;
+    /**
+     * @symbol ?Grindstone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Grindstone;
     /**
-     * @symbol  ?HangingRoots\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?HangingRoots\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const HangingRoots;
     /**
-     * @symbol  ?HardGlass\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?HardGlass\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const HardGlass;
     /**
-     * @symbol  ?HardGlassPane\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?HardGlassPane\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const HardGlassPane;
     /**
-     * @symbol  ?HardStainedGlass\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?HardStainedGlass\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const HardStainedGlass;
     /**
-     * @symbol  ?HardStainedGlassPane\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?HardStainedGlassPane\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const HardStainedGlassPane;
     /**
-     * @symbol  ?HardenedClay\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?HardenedClay\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const HardenedClay;
     /**
-     * @symbol  ?HayBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?HayBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const HayBlock;
     /**
-     * @symbol  ?HeavyWeightedPressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?HeavyWeightedPressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const HeavyWeightedPressurePlate;
     /**
-     * @symbol  ?HoneyBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?HoneyBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const HoneyBlock;
     /**
-     * @symbol  ?HoneycombBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?HoneycombBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const HoneycombBlock;
     /**
-     * @symbol  ?Hopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Hopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Hopper;
     /**
-     * @symbol  ?Ice\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Ice\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Ice;
     /**
-     * @symbol  ?InfestedDeepslate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?InfestedDeepslate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const InfestedDeepslate;
     /**
-     * @symbol  ?InfoUpdate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?InfoUpdate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const InfoUpdate;
     /**
-     * @symbol  ?InfoUpdate2\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?InfoUpdate2\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const InfoUpdate2;
     /**
-     * @symbol  ?InvisibleBedrock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?InvisibleBedrock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const InvisibleBedrock;
     /**
-     * @symbol  ?IronBars\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?IronBars\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const IronBars;
     /**
-     * @symbol  ?IronBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?IronBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const IronBlock;
     /**
-     * @symbol  ?IronDoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?IronDoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const IronDoor;
     /**
-     * @symbol  ?IronOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?IronOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const IronOre;
     /**
-     * @symbol  ?IronTrapdoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?IronTrapdoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const IronTrapdoor;
     /**
-     * @symbol  ?ItemFrame\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?ItemFrame\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ItemFrame;
     /**
-     * @symbol  ?Jigsaw\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Jigsaw\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Jigsaw;
     /**
-     * @symbol  ?Jukebox\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Jukebox\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Jukebox;
     /**
-     * @symbol  ?JungleButton\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?JungleButton\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const JungleButton;
     /**
-     * @symbol  ?JungleDoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?JungleDoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const JungleDoor;
     /**
-     * @symbol  ?JungleFenceGate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?JungleFenceGate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const JungleFenceGate;
     /**
-     * @symbol  ?JungleHangingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?JungleHangingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const JungleHangingSign;
     /**
-     * @symbol  ?JunglePressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?JunglePressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const JunglePressurePlate;
     /**
-     * @symbol  ?JungleStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?JungleStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const JungleStairs;
     /**
-     * @symbol  ?JungleStandingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?JungleStandingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const JungleStandingSign;
     /**
-     * @symbol  ?JungleTrapdoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?JungleTrapdoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const JungleTrapdoor;
     /**
-     * @symbol  ?JungleWallSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?JungleWallSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const JungleWallSign;
     /**
-     * @symbol  ?Kelp\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Kelp\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Kelp;
     /**
-     * @symbol  ?Ladder\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Ladder\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Ladder;
     /**
-     * @symbol  ?Lantern\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Lantern\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Lantern;
     /**
-     * @symbol  ?LapisBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?LapisBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LapisBlock;
     /**
-     * @symbol  ?LapisOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?LapisOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LapisOre;
     /**
-     * @symbol  ?LargeAmethystBud\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?LargeAmethystBud\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LargeAmethystBud;
     /**
-     * @symbol  ?Lava\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Lava\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Lava;
     /**
-     * @symbol  ?LavaCauldron\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?LavaCauldron\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LavaCauldron;
     /**
-     * @symbol  ?Leaves\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Leaves\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Leaves;
     /**
-     * @symbol  ?Leaves2\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Leaves2\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Leaves2;
     /**
-     * @symbol  ?Lectern\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Lectern\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Lectern;
     /**
-     * @symbol  ?Lever\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Lever\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Lever;
     /**
-     * @symbol  ?LightBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?LightBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LightBlock;
     /**
-     * @symbol  ?LightBlueCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?LightBlueCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LightBlueCandle;
     /**
-     * @symbol  ?LightBlueCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?LightBlueCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LightBlueCandleCake;
     /**
-     * @symbol  ?LightBlueGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?LightBlueGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LightBlueGlazedTerracotta;
     /**
-     * @symbol  ?LightGrayCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?LightBlueWool\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const LightBlueWool;
+    /**
+     * @symbol ?LightGrayCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LightGrayCandle;
     /**
-     * @symbol  ?LightGrayCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?LightGrayCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LightGrayCandleCake;
     /**
-     * @symbol  ?LightWeightedPressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?LightGrayWool\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const LightGrayWool;
+    /**
+     * @symbol ?LightWeightedPressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LightWeightedPressurePlate;
     /**
-     * @symbol  ?LightningRod\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?LightningRod\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LightningRod;
     /**
-     * @symbol  ?LimeCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?LimeCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LimeCandle;
     /**
-     * @symbol  ?LimeCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?LimeCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LimeCandleCake;
     /**
-     * @symbol  ?LimeGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?LimeGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LimeGlazedTerracotta;
     /**
-     * @symbol  ?LitBlastFurnace\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?LimeWool\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const LimeWool;
+    /**
+     * @symbol ?LitBlastFurnace\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LitBlastFurnace;
     /**
-     * @symbol  ?LitDeepslateRedstoneOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?LitDeepslateRedstoneOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LitDeepslateRedstoneOre;
     /**
-     * @symbol  ?LitFurnace\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?LitFurnace\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LitFurnace;
     /**
-     * @symbol  ?LitPumpkin\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?LitPumpkin\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LitPumpkin;
     /**
-     * @symbol  ?LitRedstoneLamp\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?LitRedstoneLamp\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LitRedstoneLamp;
     /**
-     * @symbol  ?LitRedstoneOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?LitRedstoneOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LitRedstoneOre;
     /**
-     * @symbol  ?LitSmoker\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?LitSmoker\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LitSmoker;
     /**
-     * @symbol  ?Lodestone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Lodestone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Lodestone;
     /**
-     * @symbol  ?Log\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Log\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Log;
     /**
-     * @symbol  ?Log2\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Log2\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Log2;
     /**
-     * @symbol  ?Loom\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Loom\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Loom;
     /**
-     * @symbol  ?MagentaCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MagentaCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MagentaCandle;
     /**
-     * @symbol  ?MagentaCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MagentaCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MagentaCandleCake;
     /**
-     * @symbol  ?MagentaGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MagentaGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MagentaGlazedTerracotta;
     /**
-     * @symbol  ?Magma\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MagentaWool\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const MagentaWool;
+    /**
+     * @symbol ?Magma\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Magma;
     /**
-     * @symbol  ?MangroveButton\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MangroveButton\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MangroveButton;
     /**
-     * @symbol  ?MangroveDoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MangroveDoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MangroveDoor;
     /**
-     * @symbol  ?MangroveDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MangroveDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MangroveDoubleSlab;
     /**
-     * @symbol  ?MangroveFence\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MangroveFence\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MangroveFence;
     /**
-     * @symbol  ?MangroveFenceGate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MangroveFenceGate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MangroveFenceGate;
     /**
-     * @symbol  ?MangroveHangingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MangroveHangingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MangroveHangingSign;
     /**
-     * @symbol  ?MangroveLeaves\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MangroveLeaves\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MangroveLeaves;
     /**
-     * @symbol  ?MangroveLog\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MangroveLog\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MangroveLog;
     /**
-     * @symbol  ?MangrovePlanks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MangrovePlanks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MangrovePlanks;
     /**
-     * @symbol  ?MangrovePressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MangrovePressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MangrovePressurePlate;
     /**
-     * @symbol  ?MangrovePropagule\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MangrovePropagule\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MangrovePropagule;
     /**
-     * @symbol  ?MangroveRoots\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MangroveRoots\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MangroveRoots;
     /**
-     * @symbol  ?MangroveSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MangroveSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MangroveSlab;
     /**
-     * @symbol  ?MangroveStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MangroveStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MangroveStairs;
     /**
-     * @symbol  ?MangroveStandingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MangroveStandingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MangroveStandingSign;
     /**
-     * @symbol  ?MangroveTrapdoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MangroveTrapdoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MangroveTrapdoor;
     /**
-     * @symbol  ?MangroveWallSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MangroveWallSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MangroveWallSign;
     /**
-     * @symbol  ?MangroveWood\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MangroveWood\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MangroveWood;
     /**
-     * @symbol  ?MediumAmethystBud\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MediumAmethystBud\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MediumAmethystBud;
     /**
-     * @symbol  ?MelonBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MelonBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MelonBlock;
     /**
-     * @symbol  ?MelonStem\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MelonStem\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MelonStem;
     /**
-     * @symbol  ?MobSpawner\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MobSpawner\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MobSpawner;
     /**
-     * @symbol  ?MonsterEgg\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MonsterEgg\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MonsterEgg;
     /**
-     * @symbol  ?MossBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MossBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MossBlock;
     /**
-     * @symbol  ?MossCarpet\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MossCarpet\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MossCarpet;
     /**
-     * @symbol  ?MossyCobblestone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MossyCobblestone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MossyCobblestone;
     /**
-     * @symbol  ?MossyCobblestoneStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MossyCobblestoneStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MossyCobblestoneStairs;
     /**
-     * @symbol  ?MossyStoneBrickStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MossyStoneBrickStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MossyStoneBrickStairs;
     /**
-     * @symbol  ?MovingBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MovingBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MovingBlock;
     /**
-     * @symbol  ?Mud\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Mud\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Mud;
     /**
-     * @symbol  ?MudBrickDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MudBrickDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MudBrickDoubleSlab;
     /**
-     * @symbol  ?MudBrickSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MudBrickSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MudBrickSlab;
     /**
-     * @symbol  ?MudBrickStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MudBrickStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MudBrickStairs;
     /**
-     * @symbol  ?MudBrickWall\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MudBrickWall\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MudBrickWall;
     /**
-     * @symbol  ?MudBricks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MudBricks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MudBricks;
     /**
-     * @symbol  ?MuddyMangroveRoots\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MuddyMangroveRoots\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MuddyMangroveRoots;
     /**
-     * @symbol  ?Mycelium\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Mycelium\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Mycelium;
     /**
-     * @symbol  ?MysteriousFrame\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MysteriousFrame\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MysteriousFrame;
     /**
-     * @symbol  ?MysteriousFrameSlot\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?MysteriousFrameSlot\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MysteriousFrameSlot;
     /**
-     * @symbol  ?NetherBrickBlockName\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?NetherBrickBlockName\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const NetherBrickBlockName;
     /**
-     * @symbol  ?NetherBrickFence\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?NetherBrickFence\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const NetherBrickFence;
     /**
-     * @symbol  ?NetherBrickStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?NetherBrickStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const NetherBrickStairs;
     /**
-     * @symbol  ?NetherGoldOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?NetherGoldOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const NetherGoldOre;
     /**
-     * @symbol  ?NetherSprouts\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?NetherSprouts\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const NetherSprouts;
     /**
-     * @symbol  ?NetherWart\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?NetherWart\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const NetherWart;
     /**
-     * @symbol  ?NetherWartBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?NetherWartBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const NetherWartBlock;
     /**
-     * @symbol  ?NetheriteBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?NetheriteBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const NetheriteBlock;
     /**
-     * @symbol  ?Netherrack\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Netherrack\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Netherrack;
     /**
-     * @symbol  ?Netherreactor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Netherreactor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Netherreactor;
     /**
-     * @symbol  ?NormalStoneStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?NormalStoneStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const NormalStoneStairs;
     /**
-     * @symbol  ?Noteblock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Noteblock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Noteblock;
     /**
-     * @symbol  ?OakHangingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?OakHangingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const OakHangingSign;
     /**
-     * @symbol  ?OakStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?OakStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const OakStairs;
     /**
-     * @symbol  ?Observer\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Observer\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Observer;
     /**
-     * @symbol  ?Obsidian\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Obsidian\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Obsidian;
     /**
-     * @symbol  ?OchreFroglight\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?OchreFroglight\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const OchreFroglight;
     /**
-     * @symbol  ?OrangeCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?OrangeCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const OrangeCandle;
     /**
-     * @symbol  ?OrangeCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?OrangeCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const OrangeCandleCake;
     /**
-     * @symbol  ?OrangeGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?OrangeGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const OrangeGlazedTerracotta;
     /**
-     * @symbol  ?OxidizedCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?OrangeWool\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const OrangeWool;
+    /**
+     * @symbol ?OxidizedCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const OxidizedCopper;
     /**
-     * @symbol  ?OxidizedCutCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?OxidizedCutCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const OxidizedCutCopper;
     /**
-     * @symbol  ?OxidizedCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?OxidizedCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const OxidizedCutCopperSlab;
     /**
-     * @symbol  ?OxidizedCutCopperStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?OxidizedCutCopperStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const OxidizedCutCopperStairs;
     /**
-     * @symbol  ?OxidizedDoubleCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?OxidizedDoubleCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const OxidizedDoubleCutCopperSlab;
     /**
-     * @symbol  ?PackedIce\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PackedIce\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PackedIce;
     /**
-     * @symbol  ?PackedMud\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PackedMud\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PackedMud;
     /**
-     * @symbol  ?PearlescentFroglight\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PearlescentFroglight\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PearlescentFroglight;
     /**
-     * @symbol  ?PinkCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PinkCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PinkCandle;
     /**
-     * @symbol  ?PinkCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PinkCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PinkCandleCake;
     /**
-     * @symbol  ?PinkGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PinkGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PinkGlazedTerracotta;
     /**
-     * @symbol  ?Piston\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PinkWool\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const PinkWool;
+    /**
+     * @symbol ?Piston\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Piston;
     /**
-     * @symbol  ?PistonArmCollision\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PistonArmCollision\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PistonArmCollision;
     /**
-     * @symbol  ?Planks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Planks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Planks;
     /**
-     * @symbol  ?Podzol\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Podzol\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Podzol;
     /**
-     * @symbol  ?PointedDripstone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PointedDripstone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PointedDripstone;
     /**
-     * @symbol  ?PolishedAndesiteStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PolishedAndesiteStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PolishedAndesiteStairs;
     /**
-     * @symbol  ?PolishedBasalt\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PolishedBasalt\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PolishedBasalt;
     /**
-     * @symbol  ?PolishedBlackstone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PolishedBlackstone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PolishedBlackstone;
     /**
-     * @symbol  ?PolishedBlackstoneBrickDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PolishedBlackstoneBrickDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PolishedBlackstoneBrickDoubleSlab;
     /**
-     * @symbol  ?PolishedBlackstoneBrickSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PolishedBlackstoneBrickSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PolishedBlackstoneBrickSlab;
     /**
-     * @symbol  ?PolishedBlackstoneBrickStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PolishedBlackstoneBrickStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PolishedBlackstoneBrickStairs;
     /**
-     * @symbol  ?PolishedBlackstoneBrickWall\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PolishedBlackstoneBrickWall\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PolishedBlackstoneBrickWall;
     /**
-     * @symbol  ?PolishedBlackstoneBricks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PolishedBlackstoneBricks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PolishedBlackstoneBricks;
     /**
-     * @symbol  ?PolishedBlackstoneButton\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PolishedBlackstoneButton\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PolishedBlackstoneButton;
     /**
-     * @symbol  ?PolishedBlackstoneDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PolishedBlackstoneDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PolishedBlackstoneDoubleSlab;
     /**
-     * @symbol  ?PolishedBlackstonePressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PolishedBlackstonePressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PolishedBlackstonePressurePlate;
     /**
-     * @symbol  ?PolishedBlackstoneSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PolishedBlackstoneSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PolishedBlackstoneSlab;
     /**
-     * @symbol  ?PolishedBlackstoneStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PolishedBlackstoneStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PolishedBlackstoneStairs;
     /**
-     * @symbol  ?PolishedBlackstoneWall\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PolishedBlackstoneWall\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PolishedBlackstoneWall;
     /**
-     * @symbol  ?PolishedDeepslate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PolishedDeepslate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PolishedDeepslate;
     /**
-     * @symbol  ?PolishedDeepslateDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PolishedDeepslateDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PolishedDeepslateDoubleSlab;
     /**
-     * @symbol  ?PolishedDeepslateSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PolishedDeepslateSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PolishedDeepslateSlab;
     /**
-     * @symbol  ?PolishedDeepslateStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PolishedDeepslateStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PolishedDeepslateStairs;
     /**
-     * @symbol  ?PolishedDeepslateWall\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PolishedDeepslateWall\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PolishedDeepslateWall;
     /**
-     * @symbol  ?PolishedDioriteStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PolishedDioriteStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PolishedDioriteStairs;
     /**
-     * @symbol  ?PolishedGraniteStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PolishedGraniteStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PolishedGraniteStairs;
     /**
-     * @symbol  ?Portal\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Portal\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Portal;
     /**
-     * @symbol  ?Potatoes\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Potatoes\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Potatoes;
     /**
-     * @symbol  ?PowderSnow\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PowderSnow\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PowderSnow;
     /**
-     * @symbol  ?PoweredComparator\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PoweredComparator\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PoweredComparator;
     /**
-     * @symbol  ?PoweredRepeater\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PoweredRepeater\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PoweredRepeater;
     /**
-     * @symbol  ?Prismarine\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Prismarine\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Prismarine;
     /**
-     * @symbol  ?PrismarineBricksStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PrismarineBricksStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PrismarineBricksStairs;
     /**
-     * @symbol  ?PrismarineStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PrismarineStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PrismarineStairs;
     /**
-     * @symbol  ?Pumpkin\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Pumpkin\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Pumpkin;
     /**
-     * @symbol  ?PumpkinStem\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PumpkinStem\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PumpkinStem;
     /**
-     * @symbol  ?PurpleCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PurpleCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PurpleCandle;
     /**
-     * @symbol  ?PurpleCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PurpleCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PurpleCandleCake;
     /**
-     * @symbol  ?PurpleGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PurpleGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PurpleGlazedTerracotta;
     /**
-     * @symbol  ?PurpurBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PurpleWool\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const PurpleWool;
+    /**
+     * @symbol ?PurpurBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PurpurBlock;
     /**
-     * @symbol  ?PurpurStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?PurpurStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PurpurStairs;
     /**
-     * @symbol  ?QuartzBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?QuartzBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const QuartzBlock;
     /**
-     * @symbol  ?QuartzBricks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?QuartzBricks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const QuartzBricks;
     /**
-     * @symbol  ?QuartzOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?QuartzOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const QuartzOre;
     /**
-     * @symbol  ?QuartzStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?QuartzStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const QuartzStairs;
     /**
-     * @symbol  ?Rail\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Rail\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Rail;
     /**
-     * @symbol  ?RawCopperBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?RawCopperBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const RawCopperBlock;
     /**
-     * @symbol  ?RawGoldBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?RawGoldBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const RawGoldBlock;
     /**
-     * @symbol  ?RawIronBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?RawIronBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const RawIronBlock;
     /**
-     * @symbol  ?RedCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?RedCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const RedCandle;
     /**
-     * @symbol  ?RedCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?RedCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const RedCandleCake;
     /**
-     * @symbol  ?RedFlower\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?RedFlower\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const RedFlower;
     /**
-     * @symbol  ?RedGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?RedGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const RedGlazedTerracotta;
     /**
-     * @symbol  ?RedMushroom\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?RedMushroom\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const RedMushroom;
     /**
-     * @symbol  ?RedMushroomBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?RedMushroomBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const RedMushroomBlock;
     /**
-     * @symbol  ?RedNetherBrick\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?RedNetherBrick\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const RedNetherBrick;
     /**
-     * @symbol  ?RedNetherBrickStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?RedNetherBrickStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const RedNetherBrickStairs;
     /**
-     * @symbol  ?RedSandstone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?RedSandstone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const RedSandstone;
     /**
-     * @symbol  ?RedSandstoneStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?RedSandstoneStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const RedSandstoneStairs;
     /**
-     * @symbol  ?RedstoneBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?RedWool\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const RedWool;
+    /**
+     * @symbol ?RedstoneBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const RedstoneBlock;
     /**
-     * @symbol  ?RedstoneLamp\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?RedstoneLamp\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const RedstoneLamp;
     /**
-     * @symbol  ?RedstoneOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?RedstoneOre\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const RedstoneOre;
     /**
-     * @symbol  ?RedstoneTorch\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?RedstoneTorch\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const RedstoneTorch;
     /**
-     * @symbol  ?RedstoneWire\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?RedstoneWire\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const RedstoneWire;
     /**
-     * @symbol  ?Reeds\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Reeds\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Reeds;
     /**
-     * @symbol  ?ReinforcedDeepslate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?ReinforcedDeepslate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ReinforcedDeepslate;
     /**
-     * @symbol  ?RepeatingCommandBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?RepeatingCommandBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const RepeatingCommandBlock;
     /**
-     * @symbol  ?Reserved6\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Reserved6\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Reserved6;
     /**
-     * @symbol  ?RespawnAnchor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?RespawnAnchor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const RespawnAnchor;
     /**
-     * @symbol  ?Sand\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Sand\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Sand;
     /**
-     * @symbol  ?Sandstone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Sandstone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Sandstone;
     /**
-     * @symbol  ?SandstoneStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SandstoneStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SandstoneStairs;
     /**
-     * @symbol  ?Sapling\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Sapling\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Sapling;
     /**
-     * @symbol  ?Scaffolding\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Scaffolding\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Scaffolding;
     /**
-     * @symbol  ?Sculk\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Sculk\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Sculk;
     /**
-     * @symbol  ?SculkCatalyst\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SculkCatalyst\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SculkCatalyst;
     /**
-     * @symbol  ?SculkSensor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SculkSensor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SculkSensor;
     /**
-     * @symbol  ?SculkShrieker\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SculkShrieker\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SculkShrieker;
     /**
-     * @symbol  ?SculkVein\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SculkVein\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SculkVein;
     /**
-     * @symbol  ?SeaLantern\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SeaLantern\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SeaLantern;
     /**
-     * @symbol  ?SeaPickle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SeaPickle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SeaPickle;
     /**
-     * @symbol  ?Seagrass\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Seagrass\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Seagrass;
     /**
-     * @symbol  ?Shroomlight\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Shroomlight\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Shroomlight;
     /**
-     * @symbol  ?ShulkerBox\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?ShulkerBox\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ShulkerBox;
     /**
-     * @symbol  ?SilverGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SilverGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SilverGlazedTerracotta;
     /**
-     * @symbol  ?Skull\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Skull\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Skull;
     /**
-     * @symbol  ?SlimeBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SlimeBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SlimeBlock;
     /**
-     * @symbol  ?SmallAmethystBud\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SmallAmethystBud\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SmallAmethystBud;
     /**
-     * @symbol  ?SmallDripleaf\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SmallDripleaf\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SmallDripleaf;
     /**
-     * @symbol  ?SmithingTable\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SmithingTable\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SmithingTable;
     /**
-     * @symbol  ?Smoker\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Smoker\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Smoker;
     /**
-     * @symbol  ?SmoothBasalt\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SmoothBasalt\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SmoothBasalt;
     /**
-     * @symbol  ?SmoothQuartzStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SmoothQuartzStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SmoothQuartzStairs;
     /**
-     * @symbol  ?SmoothRedSandstoneStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SmoothRedSandstoneStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SmoothRedSandstoneStairs;
     /**
-     * @symbol  ?SmoothSandstoneStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SmoothSandstoneStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SmoothSandstoneStairs;
     /**
-     * @symbol  ?SmoothStone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SmoothStone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SmoothStone;
     /**
-     * @symbol  ?Snow\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Snow\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Snow;
     /**
-     * @symbol  ?SnowLayer\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SnowLayer\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SnowLayer;
     /**
-     * @symbol  ?SoulCampfire\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SoulCampfire\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SoulCampfire;
     /**
-     * @symbol  ?SoulFire\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SoulFire\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SoulFire;
     /**
-     * @symbol  ?SoulLantern\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SoulLantern\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SoulLantern;
     /**
-     * @symbol  ?SoulSand\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SoulSand\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SoulSand;
     /**
-     * @symbol  ?SoulSoil\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SoulSoil\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SoulSoil;
     /**
-     * @symbol  ?SoulTorch\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SoulTorch\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SoulTorch;
     /**
-     * @symbol  ?Sponge\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Sponge\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Sponge;
     /**
-     * @symbol  ?SporeBlossom\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SporeBlossom\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SporeBlossom;
     /**
-     * @symbol  ?SpruceButton\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SpruceButton\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SpruceButton;
     /**
-     * @symbol  ?SpruceDoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SpruceDoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SpruceDoor;
     /**
-     * @symbol  ?SpruceFenceGate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SpruceFenceGate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SpruceFenceGate;
     /**
-     * @symbol  ?SpruceHangingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SpruceHangingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SpruceHangingSign;
     /**
-     * @symbol  ?SprucePressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SprucePressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SprucePressurePlate;
     /**
-     * @symbol  ?SpruceStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SpruceStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SpruceStairs;
     /**
-     * @symbol  ?SpruceStandingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SpruceStandingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SpruceStandingSign;
     /**
-     * @symbol  ?SpruceTrapdoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SpruceTrapdoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SpruceTrapdoor;
     /**
-     * @symbol  ?SpruceWallSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SpruceWallSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SpruceWallSign;
     /**
-     * @symbol  ?StainedGlass\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StainedGlass\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StainedGlass;
     /**
-     * @symbol  ?StainedGlassPane\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StainedGlassPane\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StainedGlassPane;
     /**
-     * @symbol  ?StainedHardenedClay\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StainedHardenedClay\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StainedHardenedClay;
     /**
-     * @symbol  ?StandingBanner\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StandingBanner\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StandingBanner;
     /**
-     * @symbol  ?StandingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StandingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StandingSign;
     /**
-     * @symbol  ?StickyPiston\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StickyPiston\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StickyPiston;
     /**
-     * @symbol  ?StickyPistonArmCollision\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StickyPistonArmCollision\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StickyPistonArmCollision;
     /**
-     * @symbol  ?Stone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Stone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Stone;
     /**
-     * @symbol  ?StoneBrickStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StoneBrickStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StoneBrickStairs;
     /**
-     * @symbol  ?StoneBricks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StoneBricks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StoneBricks;
     /**
-     * @symbol  ?StoneButton\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StoneButton\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StoneButton;
     /**
-     * @symbol  ?StonePressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StonePressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StonePressurePlate;
     /**
-     * @symbol  ?StoneSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StoneSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StoneSlab;
     /**
-     * @symbol  ?StoneSlab2\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StoneSlab2\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StoneSlab2;
     /**
-     * @symbol  ?StoneSlab3\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StoneSlab3\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StoneSlab3;
     /**
-     * @symbol  ?StoneSlab4\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StoneSlab4\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StoneSlab4;
     /**
-     * @symbol  ?StoneStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StoneStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StoneStairs;
     /**
-     * @symbol  ?Stonecutter\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Stonecutter\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Stonecutter;
     /**
-     * @symbol  ?StonecutterBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StonecutterBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StonecutterBlock;
     /**
-     * @symbol  ?StrippedAcaciaLog\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StrippedAcaciaLog\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StrippedAcaciaLog;
     /**
-     * @symbol  ?StrippedBambooBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StrippedBambooBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StrippedBambooBlock;
     /**
-     * @symbol  ?StrippedBirchLog\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StrippedBirchLog\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StrippedBirchLog;
     /**
-     * @symbol  ?StrippedCrimsonHyphae\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StrippedCrimsonHyphae\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StrippedCrimsonHyphae;
     /**
-     * @symbol  ?StrippedCrimsonStem\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StrippedCrimsonStem\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StrippedCrimsonStem;
     /**
-     * @symbol  ?StrippedDarkOakLog\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StrippedDarkOakLog\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StrippedDarkOakLog;
     /**
-     * @symbol  ?StrippedJungleLog\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StrippedJungleLog\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StrippedJungleLog;
     /**
-     * @symbol  ?StrippedMangroveLog\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StrippedMangroveLog\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StrippedMangroveLog;
     /**
-     * @symbol  ?StrippedMangroveWood\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StrippedMangroveWood\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StrippedMangroveWood;
     /**
-     * @symbol  ?StrippedOakLog\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StrippedOakLog\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StrippedOakLog;
     /**
-     * @symbol  ?StrippedSpruceLog\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StrippedSpruceLog\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StrippedSpruceLog;
     /**
-     * @symbol  ?StrippedWarpedHyphae\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StrippedWarpedHyphae\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StrippedWarpedHyphae;
     /**
-     * @symbol  ?StrippedWarpedStem\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StrippedWarpedStem\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StrippedWarpedStem;
     /**
-     * @symbol  ?StructureBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StructureBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StructureBlock;
     /**
-     * @symbol  ?StructureVoid\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?StructureVoid\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const StructureVoid;
     /**
-     * @symbol  ?SweetBerryBush\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?SuspiciousSand\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const SuspiciousSand;
+    /**
+     * @symbol ?SweetBerryBush\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SweetBerryBush;
     /**
-     * @symbol  ?TallGrass\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?TallGrass\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const TallGrass;
     /**
-     * @symbol  ?Target\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Target\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Target;
     /**
-     * @symbol  ?TintedGlass\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?TintedGlass\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const TintedGlass;
     /**
-     * @symbol  ?Tnt\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Tnt\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Tnt;
     /**
-     * @symbol  ?Torch\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Torch\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Torch;
     /**
-     * @symbol  ?Trapdoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Torchflower\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const Torchflower;
+    /**
+     * @symbol ?TorchflowerCrop\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const TorchflowerCrop;
+    /**
+     * @symbol ?Trapdoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Trapdoor;
     /**
-     * @symbol  ?TrappedChest\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?TrappedChest\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const TrappedChest;
     /**
-     * @symbol  ?TripWire\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?TripWire\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const TripWire;
     /**
-     * @symbol  ?TripWireHook\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?TripWireHook\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const TripWireHook;
     /**
-     * @symbol  ?Tuff\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Tuff\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Tuff;
     /**
-     * @symbol  ?TurtleEgg\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?TurtleEgg\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const TurtleEgg;
     /**
-     * @symbol  ?TwistingVines\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?TwistingVines\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const TwistingVines;
     /**
-     * @symbol  ?UnderwaterTorch\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?UnderwaterTorch\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const UnderwaterTorch;
     /**
-     * @symbol  ?UndyedShulkerBox\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?UndyedShulkerBox\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const UndyedShulkerBox;
     /**
-     * @symbol  ?UnlitRedstoneTorch\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?UnlitRedstoneTorch\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const UnlitRedstoneTorch;
     /**
-     * @symbol  ?UnpoweredComparator\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?UnpoweredComparator\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const UnpoweredComparator;
     /**
-     * @symbol  ?UnpoweredRepeater\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?UnpoweredRepeater\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const UnpoweredRepeater;
     /**
-     * @symbol  ?VerdantFroglight\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?VerdantFroglight\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const VerdantFroglight;
     /**
-     * @symbol  ?Vine\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Vine\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Vine;
     /**
-     * @symbol  ?WallBanner\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WallBanner\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WallBanner;
     /**
-     * @symbol  ?WallSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WallSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WallSign;
     /**
-     * @symbol  ?WarpedButton\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WarpedButton\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WarpedButton;
     /**
-     * @symbol  ?WarpedDoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WarpedDoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WarpedDoor;
     /**
-     * @symbol  ?WarpedDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WarpedDoubleSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WarpedDoubleSlab;
     /**
-     * @symbol  ?WarpedFence\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WarpedFence\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WarpedFence;
     /**
-     * @symbol  ?WarpedFenceGate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WarpedFenceGate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WarpedFenceGate;
     /**
-     * @symbol  ?WarpedFungus\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WarpedFungus\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WarpedFungus;
     /**
-     * @symbol  ?WarpedHangingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WarpedHangingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WarpedHangingSign;
     /**
-     * @symbol  ?WarpedHyphae\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WarpedHyphae\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WarpedHyphae;
     /**
-     * @symbol  ?WarpedNylium\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WarpedNylium\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WarpedNylium;
     /**
-     * @symbol  ?WarpedPlanks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WarpedPlanks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WarpedPlanks;
     /**
-     * @symbol  ?WarpedPressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WarpedPressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WarpedPressurePlate;
     /**
-     * @symbol  ?WarpedRoots\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WarpedRoots\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WarpedRoots;
     /**
-     * @symbol  ?WarpedSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WarpedSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WarpedSlab;
     /**
-     * @symbol  ?WarpedStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WarpedStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WarpedStairs;
     /**
-     * @symbol  ?WarpedStandingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WarpedStandingSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WarpedStandingSign;
     /**
-     * @symbol  ?WarpedStem\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WarpedStem\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WarpedStem;
     /**
-     * @symbol  ?WarpedTrapdoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WarpedTrapdoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WarpedTrapdoor;
     /**
-     * @symbol  ?WarpedWallSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WarpedWallSign\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WarpedWallSign;
     /**
-     * @symbol  ?WarpedWartBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WarpedWartBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WarpedWartBlock;
     /**
-     * @symbol  ?Water\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Water\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Water;
     /**
-     * @symbol  ?WaterLily\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WaterLily\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WaterLily;
     /**
-     * @symbol  ?WaxedCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WaxedCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WaxedCopper;
     /**
-     * @symbol  ?WaxedCutCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WaxedCutCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WaxedCutCopper;
     /**
-     * @symbol  ?WaxedCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WaxedCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WaxedCutCopperSlab;
     /**
-     * @symbol  ?WaxedCutCopperStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WaxedCutCopperStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WaxedCutCopperStairs;
     /**
-     * @symbol  ?WaxedDoubleCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WaxedDoubleCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WaxedDoubleCutCopperSlab;
     /**
-     * @symbol  ?WaxedExposedCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WaxedExposedCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WaxedExposedCopper;
     /**
-     * @symbol  ?WaxedExposedCutCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WaxedExposedCutCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WaxedExposedCutCopper;
     /**
-     * @symbol  ?WaxedExposedCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WaxedExposedCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WaxedExposedCutCopperSlab;
     /**
-     * @symbol  ?WaxedExposedCutCopperStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WaxedExposedCutCopperStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WaxedExposedCutCopperStairs;
     /**
-     * @symbol  ?WaxedExposedDoubleCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WaxedExposedDoubleCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WaxedExposedDoubleCutCopperSlab;
     /**
-     * @symbol  ?WaxedOxidizedCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WaxedOxidizedCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WaxedOxidizedCopper;
     /**
-     * @symbol  ?WaxedOxidizedCutCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WaxedOxidizedCutCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WaxedOxidizedCutCopper;
     /**
-     * @symbol  ?WaxedOxidizedCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WaxedOxidizedCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WaxedOxidizedCutCopperSlab;
     /**
-     * @symbol  ?WaxedOxidizedCutCopperStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WaxedOxidizedCutCopperStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WaxedOxidizedCutCopperStairs;
     /**
-     * @symbol  ?WaxedOxidizedDoubleCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WaxedOxidizedDoubleCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WaxedOxidizedDoubleCutCopperSlab;
     /**
-     * @symbol  ?WaxedWeatheredCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WaxedWeatheredCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WaxedWeatheredCopper;
     /**
-     * @symbol  ?WaxedWeatheredCutCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WaxedWeatheredCutCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WaxedWeatheredCutCopper;
     /**
-     * @symbol  ?WaxedWeatheredCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WaxedWeatheredCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WaxedWeatheredCutCopperSlab;
     /**
-     * @symbol  ?WaxedWeatheredCutCopperStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WaxedWeatheredCutCopperStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WaxedWeatheredCutCopperStairs;
     /**
-     * @symbol  ?WaxedWeatheredDoubleCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WaxedWeatheredDoubleCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WaxedWeatheredDoubleCutCopperSlab;
     /**
-     * @symbol  ?WeatheredCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WeatheredCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WeatheredCopper;
     /**
-     * @symbol  ?WeatheredCutCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WeatheredCutCopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WeatheredCutCopper;
     /**
-     * @symbol  ?WeatheredCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WeatheredCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WeatheredCutCopperSlab;
     /**
-     * @symbol  ?WeatheredCutCopperStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WeatheredCutCopperStairs\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WeatheredCutCopperStairs;
     /**
-     * @symbol  ?WeatheredDoubleCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WeatheredDoubleCutCopperSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WeatheredDoubleCutCopperSlab;
     /**
-     * @symbol  ?Web\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Web\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Web;
     /**
-     * @symbol  ?WeepingVines\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WeepingVines\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WeepingVines;
     /**
-     * @symbol  ?Wheat\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Wheat\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Wheat;
     /**
-     * @symbol  ?WhiteCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WhiteCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WhiteCandle;
     /**
-     * @symbol  ?WhiteCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WhiteCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WhiteCandleCake;
     /**
-     * @symbol  ?WhiteGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WhiteGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WhiteGlazedTerracotta;
     /**
-     * @symbol  ?WitherRose\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WhiteWool\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const WhiteWool;
+    /**
+     * @symbol ?WitherRose\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WitherRose;
     /**
-     * @symbol  ?Wood\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?Wood\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Wood;
     /**
-     * @symbol  ?WoodenButton\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WoodenButton\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WoodenButton;
     /**
-     * @symbol  ?WoodenDoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WoodenDoor\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WoodenDoor;
     /**
-     * @symbol  ?WoodenPressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WoodenPressurePlate\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WoodenPressurePlate;
     /**
-     * @symbol  ?WoodenSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?WoodenSlab\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WoodenSlab;
     /**
-     * @symbol  ?Wool\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
-     */
-    MCAPI extern class HashedString const Wool;
-    /**
-     * @symbol  ?YellowCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?YellowCandle\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const YellowCandle;
     /**
-     * @symbol  ?YellowCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?YellowCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const YellowCandleCake;
     /**
-     * @symbol  ?YellowFlower\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?YellowFlower\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const YellowFlower;
     /**
-     * @symbol  ?YellowGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     * @symbol ?YellowGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const YellowGlazedTerracotta;
+    /**
+     * @symbol ?YellowWool\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const YellowWool;
 
 };

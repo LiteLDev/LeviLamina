@@ -29,23 +29,23 @@ public:
 
 public:
     /**
-     * @symbol  ??0LegacyStructureBlockPalette\@\@QEAA\@XZ
+     * @symbol ??0LegacyStructureBlockPalette\@\@QEAA\@XZ
      */
     MCAPI LegacyStructureBlockPalette();
     /**
-     * @symbol  ?addMapping\@LegacyStructureBlockPalette\@\@QEAAXHAEBVBlock\@\@\@Z
+     * @symbol ?addMapping\@LegacyStructureBlockPalette\@\@QEAAXHAEBVBlock\@\@\@Z
      */
     MCAPI void addMapping(int, class Block const &);
     /**
-     * @symbol  ?clearMap\@LegacyStructureBlockPalette\@\@QEAAXXZ
+     * @symbol ?clearMap\@LegacyStructureBlockPalette\@\@QEAAXXZ
      */
     MCAPI void clearMap();
     /**
-     * @symbol  ?getBlock\@LegacyStructureBlockPalette\@\@QEAAAEBVBlock\@\@H\@Z
+     * @symbol ?getBlock\@LegacyStructureBlockPalette\@\@QEAAAEBVBlock\@\@H\@Z
      */
     MCAPI class Block const & getBlock(int);
     /**
-     * @symbol  ??1LegacyStructureBlockPalette\@\@QEAA\@XZ
+     * @symbol ??1LegacyStructureBlockPalette\@\@QEAA\@XZ
      */
     MCAPI ~LegacyStructureBlockPalette();
 

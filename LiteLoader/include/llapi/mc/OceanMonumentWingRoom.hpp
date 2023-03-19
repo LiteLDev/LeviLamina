@@ -31,23 +31,23 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~OceanMonumentWingRoom();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  2
-     * @symbol  ?getType\@OceanMonumentWingRoom\@\@UEBA?AW4StructurePieceType\@\@XZ
+     * @vftbl 2
+     * @symbol ?getType\@OceanMonumentWingRoom\@\@UEBA?AW4StructurePieceType\@\@XZ
      */
     virtual enum class StructurePieceType getType() const;
     /**
-     * @vftbl  4
-     * @symbol  ?postProcess\@OceanMonumentWingRoom\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
+     * @vftbl 4
+     * @symbol ?postProcess\@OceanMonumentWingRoom\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /**
-     * @vftbl  5
-     * @symbol  ?postProcessMobsAt\@OceanMonumentWingRoom\@\@UEAAXAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
+     * @vftbl 5
+     * @symbol ?postProcessMobsAt\@OceanMonumentWingRoom\@\@UEAAXAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
     virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
 

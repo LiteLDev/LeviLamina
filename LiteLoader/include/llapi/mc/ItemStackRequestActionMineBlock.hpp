@@ -31,53 +31,53 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ItemStackRequestActionMineBlock();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  __unk_vfn_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
     virtual void __unk_vfn_1();
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  ?_write\@ItemStackRequestActionMineBlock\@\@MEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 4
+     * @symbol ?_write\@ItemStackRequestActionMineBlock\@\@MEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void _write(class BinaryStream &) const;
     /**
-     * @vftbl  5
-     * @symbol  ?_read\@ItemStackRequestActionMineBlock\@\@MEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 5
+     * @symbol ?_read\@ItemStackRequestActionMineBlock\@\@MEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
-     * @symbol  ??0ItemStackRequestActionMineBlock\@\@QEAA\@XZ
+     * @symbol ??0ItemStackRequestActionMineBlock\@\@QEAA\@XZ
      */
     MCAPI ItemStackRequestActionMineBlock();
     /**
-     * @symbol  ?getPreValidationStatus\@ItemStackRequestActionMineBlock\@\@QEBA?AW4PreValidationStatus\@1\@XZ
+     * @symbol ?getPreValidationStatus\@ItemStackRequestActionMineBlock\@\@QEBA?AW4PreValidationStatus\@1\@XZ
      */
     MCAPI enum class ItemStackRequestActionMineBlock::PreValidationStatus getPreValidationStatus() const;
     /**
-     * @symbol  ?getPredictedDurability\@ItemStackRequestActionMineBlock\@\@QEBAHXZ
+     * @symbol ?getPredictedDurability\@ItemStackRequestActionMineBlock\@\@QEBAHXZ
      */
     MCAPI int getPredictedDurability() const;
     /**
-     * @symbol  ?getSrc\@ItemStackRequestActionMineBlock\@\@QEBA?AUItemStackRequestSlotInfo\@\@XZ
+     * @symbol ?getSrc\@ItemStackRequestActionMineBlock\@\@QEBA?AUItemStackRequestSlotInfo\@\@XZ
      */
     MCAPI struct ItemStackRequestSlotInfo getSrc() const;
     /**
-     * @symbol  ?setPreValidationStatus\@ItemStackRequestActionMineBlock\@\@QEBAXW4PreValidationStatus\@1\@\@Z
+     * @symbol ?setPreValidationStatus\@ItemStackRequestActionMineBlock\@\@QEBAXW4PreValidationStatus\@1\@\@Z
      */
     MCAPI void setPreValidationStatus(enum class ItemStackRequestActionMineBlock::PreValidationStatus) const;
 

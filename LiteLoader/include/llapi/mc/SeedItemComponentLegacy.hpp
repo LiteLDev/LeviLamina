@@ -31,29 +31,29 @@ public:
 
 public:
     /**
-     * @symbol  ??0SeedItemComponentLegacy\@\@QEAA\@AEAVItem\@\@\@Z
+     * @symbol ??0SeedItemComponentLegacy\@\@QEAA\@AEAVItem\@\@\@Z
      */
     MCAPI SeedItemComponentLegacy(class Item &);
     /**
-     * @symbol  ?init\@SeedItemComponentLegacy\@\@QEAA_NAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
+     * @symbol ?init\@SeedItemComponentLegacy\@\@QEAA_NAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
     MCAPI bool init(class Json::Value &, class SemVersion const &);
     /**
-     * @symbol  ?isPlanting\@SeedItemComponentLegacy\@\@QEBA_NXZ
+     * @symbol ?isPlanting\@SeedItemComponentLegacy\@\@QEBA_NXZ
      */
     MCAPI bool isPlanting() const;
     /**
-     * @symbol  ?setPlanting\@SeedItemComponentLegacy\@\@QEAAX_N\@Z
+     * @symbol ?setPlanting\@SeedItemComponentLegacy\@\@QEAAX_N\@Z
      */
     MCAPI void setPlanting(bool);
     /**
-     * @symbol  ?useOn\@SeedItemComponentLegacy\@\@QEAA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
+     * @symbol ?useOn\@SeedItemComponentLegacy\@\@QEAA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     MCAPI bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &);
 
 //private:
     /**
-     * @symbol  ?_canPlant\@SeedItemComponentLegacy\@\@AEBA_NAEBVBlock\@\@\@Z
+     * @symbol ?_canPlant\@SeedItemComponentLegacy\@\@AEBA_NAEBVBlock\@\@\@Z
      */
     MCAPI bool _canPlant(class Block const &) const;
 

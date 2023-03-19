@@ -26,15 +26,15 @@ public:
 
 public:
     /**
-     * @symbol  ??0ThirdPartyInfo\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0ThirdPartyInfo\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI ThirdPartyInfo(class ThirdPartyInfo const &);
     /**
-     * @symbol  ??0ThirdPartyInfo\@\@QEAA\@XZ
+     * @symbol ??0ThirdPartyInfo\@\@QEAA\@XZ
      */
     MCAPI ThirdPartyInfo();
     /**
-     * @symbol  ??1ThirdPartyInfo\@\@QEAA\@XZ
+     * @symbol ??1ThirdPartyInfo\@\@QEAA\@XZ
      */
     MCAPI ~ThirdPartyInfo();
 

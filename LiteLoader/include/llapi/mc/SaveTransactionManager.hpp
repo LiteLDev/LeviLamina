@@ -30,25 +30,25 @@ public:
 
 public:
     /**
-     * @symbol  ??0SaveTransactionManager\@\@QEAA\@AEAVWorkerPool\@\@AEAVScheduler\@\@V?$function\@$$A6AX_N\@Z\@std\@\@\@Z
+     * @symbol ??0SaveTransactionManager\@\@QEAA\@AEAVWorkerPool\@\@AEAVScheduler\@\@V?$function\@$$A6AX_N\@Z\@std\@\@\@Z
      */
     MCAPI SaveTransactionManager(class WorkerPool &, class Scheduler &, class std::function<void (bool)>);
     /**
-     * @symbol  ?onBeginCompaction\@SaveTransactionManager\@\@QEAAXXZ
+     * @symbol ?onBeginCompaction\@SaveTransactionManager\@\@QEAAXXZ
      */
     MCAPI void onBeginCompaction();
     /**
-     * @symbol  ?onEndCompaction\@SaveTransactionManager\@\@QEAAXXZ
+     * @symbol ?onEndCompaction\@SaveTransactionManager\@\@QEAAXXZ
      */
     MCAPI void onEndCompaction();
 
 //private:
     /**
-     * @symbol  ?_hideGlobalSaveIcon\@SaveTransactionManager\@\@AEAAXXZ
+     * @symbol ?_hideGlobalSaveIcon\@SaveTransactionManager\@\@AEAAXXZ
      */
     MCAPI void _hideGlobalSaveIcon();
     /**
-     * @symbol  ?_showGlobalSaveIcon\@SaveTransactionManager\@\@AEAAXXZ
+     * @symbol ?_showGlobalSaveIcon\@SaveTransactionManager\@\@AEAAXXZ
      */
     MCAPI void _showGlobalSaveIcon();
 

@@ -28,11 +28,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0HeartbeatServerComponent\@\@QEAA\@$$QEAV0\@\@Z
+     * @symbol ??0HeartbeatServerComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI HeartbeatServerComponent(class HeartbeatServerComponent &&);
     /**
-     * @symbol  ??1HeartbeatServerComponent\@\@QEAA\@XZ
+     * @symbol ??1HeartbeatServerComponent\@\@QEAA\@XZ
      */
     MCAPI ~HeartbeatServerComponent();
 

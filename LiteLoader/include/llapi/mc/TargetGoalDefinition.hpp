@@ -29,8 +29,14 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TARGETGOALDEFINITION
     /**
-     * @symbol  ?initialize\@TargetGoalDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVTargetGoal\@\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~TargetGoalDefinition();
+#endif
+    /**
+     * @symbol ?initialize\@TargetGoalDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVTargetGoal\@\@\@Z
      */
     MCAPI void initialize(class EntityContext &, class TargetGoal &) const;
 

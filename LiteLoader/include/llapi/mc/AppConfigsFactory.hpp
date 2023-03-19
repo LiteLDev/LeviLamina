@@ -30,7 +30,7 @@ public:
 
 public:
     /**
-     * @symbol  ?createAppConfigs\@AppConfigsFactory\@\@SA?AV?$unique_ptr\@VAppConfigs\@\@U?$default_delete\@VAppConfigs\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?createAppConfigs\@AppConfigsFactory\@\@SA?AV?$unique_ptr\@VAppConfigs\@\@U?$default_delete\@VAppConfigs\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI static std::unique_ptr<class AppConfigs> createAppConfigs();
 

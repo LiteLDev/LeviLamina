@@ -78,7 +78,7 @@ public:
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?INVALID_CONNECTION\@Social\@\@3VGameConnectionInfo\@1\@B
+     * @symbol ?INVALID_CONNECTION\@Social\@\@3VGameConnectionInfo\@1\@B
      */
     MCAPI extern class Social::GameConnectionInfo const INVALID_CONNECTION;
 

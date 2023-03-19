@@ -27,43 +27,43 @@ public:
 
 public:
     /**
-     * @symbol  ??0RakWebSocketDataFrameHeader\@\@QEAA\@_N0000W4OpCode\@\@E\@Z
+     * @symbol ??0RakWebSocketDataFrameHeader\@\@QEAA\@_N0000W4OpCode\@\@E\@Z
      */
     MCAPI RakWebSocketDataFrameHeader(bool, bool, bool, bool, bool, enum class OpCode, unsigned char);
     /**
-     * @symbol  ??0RakWebSocketDataFrameHeader\@\@QEAA\@XZ
+     * @symbol ??0RakWebSocketDataFrameHeader\@\@QEAA\@XZ
      */
     MCAPI RakWebSocketDataFrameHeader();
     /**
-     * @symbol  ?getFinBit\@RakWebSocketDataFrameHeader\@\@QEBAHXZ
+     * @symbol ?getFinBit\@RakWebSocketDataFrameHeader\@\@QEBAHXZ
      */
     MCAPI int getFinBit() const;
     /**
-     * @symbol  ?getMaskBit\@RakWebSocketDataFrameHeader\@\@QEBAHXZ
+     * @symbol ?getMaskBit\@RakWebSocketDataFrameHeader\@\@QEBAHXZ
      */
     MCAPI int getMaskBit() const;
     /**
-     * @symbol  ?getOpCode\@RakWebSocketDataFrameHeader\@\@QEBA?AW4OpCode\@\@XZ
+     * @symbol ?getOpCode\@RakWebSocketDataFrameHeader\@\@QEBA?AW4OpCode\@\@XZ
      */
     MCAPI enum class OpCode getOpCode() const;
     /**
-     * @symbol  ?getPayloadLength\@RakWebSocketDataFrameHeader\@\@QEBAEXZ
+     * @symbol ?getPayloadLength\@RakWebSocketDataFrameHeader\@\@QEBAEXZ
      */
     MCAPI unsigned char getPayloadLength() const;
     /**
-     * @symbol  ?getRSV1Bit\@RakWebSocketDataFrameHeader\@\@QEBAHXZ
+     * @symbol ?getRSV1Bit\@RakWebSocketDataFrameHeader\@\@QEBAHXZ
      */
     MCAPI int getRSV1Bit() const;
     /**
-     * @symbol  ?getRSV2Bit\@RakWebSocketDataFrameHeader\@\@QEBAHXZ
+     * @symbol ?getRSV2Bit\@RakWebSocketDataFrameHeader\@\@QEBAHXZ
      */
     MCAPI int getRSV2Bit() const;
     /**
-     * @symbol  ?getRSV3Bit\@RakWebSocketDataFrameHeader\@\@QEBAHXZ
+     * @symbol ?getRSV3Bit\@RakWebSocketDataFrameHeader\@\@QEBAHXZ
      */
     MCAPI int getRSV3Bit() const;
     /**
-     * @symbol  ??1RakWebSocketDataFrameHeader\@\@QEAA\@XZ
+     * @symbol ??1RakWebSocketDataFrameHeader\@\@QEAA\@XZ
      */
     MCAPI ~RakWebSocketDataFrameHeader();
 

@@ -31,19 +31,19 @@ public:
 
 public:
     /**
-     * @symbol  ??0BiomeComponentFactory\@\@QEAA\@W4FactoryScope\@0\@\@Z
+     * @symbol ??0BiomeComponentFactory\@\@QEAA\@W4FactoryScope\@0\@\@Z
      */
     MCAPI BiomeComponentFactory(enum class BiomeComponentFactory::FactoryScope);
     /**
-     * @symbol  ?processDataComponents\@BiomeComponentFactory\@\@QEBAXAEAVBiome\@\@AEAVIWorldRegistriesProvider\@\@AEAVCompoundTag\@\@\@Z
+     * @symbol ?processDataComponents\@BiomeComponentFactory\@\@QEBAXAEAVBiome\@\@AEAVIWorldRegistriesProvider\@\@AEAVCompoundTag\@\@\@Z
      */
     MCAPI void processDataComponents(class Biome &, class IWorldRegistriesProvider &, class CompoundTag &) const;
     /**
-     * @symbol  ?processDataComponents\@BiomeComponentFactory\@\@QEBAXAEAVBiome\@\@AEAVIWorldRegistriesProvider\@\@AEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
+     * @symbol ?processDataComponents\@BiomeComponentFactory\@\@QEBAXAEAVBiome\@\@AEAVIWorldRegistriesProvider\@\@AEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
     MCAPI void processDataComponents(class Biome &, class IWorldRegistriesProvider &, class Json::Value &, class SemVersion const &) const;
     /**
-     * @symbol  ?registrationFinished\@BiomeComponentFactory\@\@QEAAXXZ
+     * @symbol ?registrationFinished\@BiomeComponentFactory\@\@QEAAXXZ
      */
     MCAPI void registrationFinished();
 

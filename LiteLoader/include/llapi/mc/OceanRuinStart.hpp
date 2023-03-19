@@ -31,12 +31,12 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~OceanRuinStart();
+    virtual void __unk_vfn_0();
     /**
-     * @symbol  ?createRuin\@OceanRuinStart\@\@QEAAXAEAVDimension\@\@AEAVRandom\@\@HH\@Z
+     * @symbol ?createRuin\@OceanRuinStart\@\@QEAAXAEAVDimension\@\@AEAVRandom\@\@HH\@Z
      */
     MCAPI void createRuin(class Dimension &, class Random &, int, int);
 

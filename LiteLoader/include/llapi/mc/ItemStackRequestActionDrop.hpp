@@ -29,41 +29,41 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ItemStackRequestActionDrop();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  __unk_vfn_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
     virtual void __unk_vfn_1();
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  ?_write\@ItemStackRequestActionDrop\@\@MEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 4
+     * @symbol ?_write\@ItemStackRequestActionDrop\@\@MEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void _write(class BinaryStream &) const;
     /**
-     * @vftbl  5
-     * @symbol  ?_read\@ItemStackRequestActionDrop\@\@MEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 5
+     * @symbol ?_read\@ItemStackRequestActionDrop\@\@MEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
-     * @symbol  ??0ItemStackRequestActionDrop\@\@QEAA\@XZ
+     * @symbol ??0ItemStackRequestActionDrop\@\@QEAA\@XZ
      */
     MCAPI ItemStackRequestActionDrop();
     /**
-     * @symbol  ?getRandomly\@ItemStackRequestActionDrop\@\@QEBA_NXZ
+     * @symbol ?getRandomly\@ItemStackRequestActionDrop\@\@QEBA_NXZ
      */
     MCAPI bool getRandomly() const;
 

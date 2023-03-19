@@ -43,7 +43,7 @@ BlockSource* Level::getBlockSource(Actor* ac) {
 }
 
 Dimension* Level::getDimensionPtr(class AutomaticID<class Dimension, int> dimId) {
-    return (Dimension*)Global<Level>->getDimension(dimId).mHandle.lock().get();
+    return Global<Level>->getDimension(dimId).mHandle.lock().get();
 }
 
 Block* Level::getBlock(BlockPos* pos, int dimId) {

@@ -31,41 +31,49 @@ public:
 
 public:
     /**
-     * @symbol  ?addItemLockMode\@ItemLockHelper\@\@SA_NAEAVItemStackBase\@\@AEBVValue\@Json\@\@\@Z
+     * @symbol ?addItemLockMode\@ItemLockHelper\@\@SA_NAEAVItemStackBase\@\@AEBVValue\@Json\@\@\@Z
      */
     MCAPI static bool addItemLockMode(class ItemStackBase &, class Json::Value const &);
     /**
-     * @symbol  ?addKeepOnDeath\@ItemLockHelper\@\@SA_NAEAVItemStackBase\@\@AEBVValue\@Json\@\@\@Z
+     * @symbol ?addKeepOnDeath\@ItemLockHelper\@\@SA_NAEAVItemStackBase\@\@AEBVValue\@Json\@\@\@Z
      */
     MCAPI static bool addKeepOnDeath(class ItemStackBase &, class Json::Value const &);
     /**
-     * @symbol  ?canMoveItemSlots\@ItemLockHelper\@\@SA_NAEBVActor\@\@AEBVItemStackBase\@\@\@Z
+     * @symbol ?canMoveItemSlots\@ItemLockHelper\@\@SA_NAEBVActor\@\@AEBVItemStackBase\@\@\@Z
      */
     MCAPI static bool canMoveItemSlots(class Actor const &, class ItemStackBase const &);
     /**
-     * @symbol  ?getItemLockMode\@ItemLockHelper\@\@SA?AW4ItemLockMode\@\@AEBVItemStackBase\@\@\@Z
+     * @symbol ?getItemLockMode\@ItemLockHelper\@\@SA?AW4ItemLockMode\@\@AEBVItemStackBase\@\@\@Z
      */
     MCAPI static enum class ItemLockMode getItemLockMode(class ItemStackBase const &);
     /**
-     * @symbol  ?isItemLocked\@ItemLockHelper\@\@SA_NAEBVItemStackBase\@\@\@Z
+     * @symbol ?isItemLocked\@ItemLockHelper\@\@SA_NAEBVItemStackBase\@\@\@Z
      */
     MCAPI static bool isItemLocked(class ItemStackBase const &);
     /**
-     * @symbol  ?isItemLockedInSlot\@ItemLockHelper\@\@SA_NAEBVItemStackBase\@\@\@Z
+     * @symbol ?isItemLockedInSlot\@ItemLockHelper\@\@SA_NAEBVItemStackBase\@\@\@Z
      */
     MCAPI static bool isItemLockedInSlot(class ItemStackBase const &);
     /**
-     * @symbol  ?shouldKeepOnDeath\@ItemLockHelper\@\@SA_NAEBVActor\@\@AEBVItemStackBase\@\@\@Z
+     * @symbol ?setItemLockMode\@ItemLockHelper\@\@SAXAEAVItemStackBase\@\@W4ItemLockMode\@\@\@Z
      */
-    MCAPI static bool shouldKeepOnDeath(class Actor const &, class ItemStackBase const &);
+    MCAPI static void setItemLockMode(class ItemStackBase &, enum class ItemLockMode);
     /**
-     * @symbol  ?shouldKeepOnDeath\@ItemLockHelper\@\@SA_NAEBVItemStackBase\@\@\@Z
+     * @symbol ?setKeepOnDeath\@ItemLockHelper\@\@SAXAEAVItemStackBase\@\@_N\@Z
+     */
+    MCAPI static void setKeepOnDeath(class ItemStackBase &, bool);
+    /**
+     * @symbol ?shouldKeepOnDeath\@ItemLockHelper\@\@SA_NAEBVItemStackBase\@\@\@Z
      */
     MCAPI static bool shouldKeepOnDeath(class ItemStackBase const &);
+    /**
+     * @symbol ?shouldKeepOnDeath\@ItemLockHelper\@\@SA_NAEBVActor\@\@AEBVItemStackBase\@\@\@Z
+     */
+    MCAPI static bool shouldKeepOnDeath(class Actor const &, class ItemStackBase const &);
 
 //private:
     /**
-     * @symbol  ?_parseItemLockMode\@ItemLockHelper\@\@CA_NAEAVItemStackBase\@\@AEBVValue\@Json\@\@\@Z
+     * @symbol ?_parseItemLockMode\@ItemLockHelper\@\@CA_NAEAVItemStackBase\@\@AEBVValue\@Json\@\@\@Z
      */
     MCAPI static bool _parseItemLockMode(class ItemStackBase &, class Json::Value const &);
 

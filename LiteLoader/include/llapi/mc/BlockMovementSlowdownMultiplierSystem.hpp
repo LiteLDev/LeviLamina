@@ -28,43 +28,43 @@ public:
 
 public:
     /**
-     * @symbol  ?_adjustFallDistance\@BlockMovementSlowdownMultiplierSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUBlockMovementSlowdownAppliedComponent\@\@AEAUFallDistanceComponent\@\@\@Z
+     * @symbol ?_adjustFallDistance\@BlockMovementSlowdownMultiplierSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUBlockMovementSlowdownAppliedComponent\@\@AEAUFallDistanceComponent\@\@\@Z
      */
     MCAPI static void _adjustFallDistance(class StrictEntityContext const &, struct BlockMovementSlowdownAppliedComponent const &, struct FallDistanceComponent &);
     /**
-     * @symbol  ?_applySlowdownOnMove\@BlockMovementSlowdownMultiplierSystem\@\@SAXAEBVStrictEntityContext\@\@AEAUBlockMovementSlowdownMultiplierComponent\@\@AEAUMoveRequestComponent\@\@AEAUStateVectorComponent\@\@\@Z
+     * @symbol ?_applySlowdownOnMove\@BlockMovementSlowdownMultiplierSystem\@\@SAXAEBVStrictEntityContext\@\@AEAUBlockMovementSlowdownMultiplierComponent\@\@AEAUMoveRequestComponent\@\@AEAUStateVectorComponent\@\@\@Z
      */
     MCAPI static void _applySlowdownOnMove(class StrictEntityContext const &, struct BlockMovementSlowdownMultiplierComponent &, struct MoveRequestComponent &, struct StateVectorComponent &);
     /**
-     * @symbol  ?_immunePlayer\@BlockMovementSlowdownMultiplierSystem\@\@SAXAEBVStrictEntityContext\@\@AEAUBlockMovementSlowdownMultiplierComponent\@\@AEBUAbilitiesComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UBlockMovementSlowdownAppliedComponent\@\@\@\@\@Z
+     * @symbol ?_immunePlayer\@BlockMovementSlowdownMultiplierSystem\@\@SAXAEBVStrictEntityContext\@\@AEAUBlockMovementSlowdownMultiplierComponent\@\@AEBUAbilitiesComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UBlockMovementSlowdownAppliedComponent\@\@\@\@\@Z
      */
     MCAPI static void _immunePlayer(class StrictEntityContext const &, struct BlockMovementSlowdownMultiplierComponent &, struct AbilitiesComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct BlockMovementSlowdownAppliedComponent>);
     /**
-     * @symbol  ?_immuneSlowdown\@BlockMovementSlowdownMultiplierSystem\@\@SAXAEBVStrictEntityContext\@\@AEAUBlockMovementSlowdownMultiplierComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UBlockMovementSlowdownAppliedComponent\@\@\@\@\@Z
+     * @symbol ?_immuneSlowdown\@BlockMovementSlowdownMultiplierSystem\@\@SAXAEBVStrictEntityContext\@\@AEAUBlockMovementSlowdownMultiplierComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UBlockMovementSlowdownAppliedComponent\@\@\@\@\@Z
      */
     MCAPI static void _immuneSlowdown(class StrictEntityContext const &, struct BlockMovementSlowdownMultiplierComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct BlockMovementSlowdownAppliedComponent>);
     /**
-     * @symbol  ?createAdjustFallDistanceSystem\@BlockMovementSlowdownMultiplierSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createAdjustFallDistanceSystem\@BlockMovementSlowdownMultiplierSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createAdjustFallDistanceSystem();
     /**
-     * @symbol  ?createApplySlowdownOnMoveSystem\@BlockMovementSlowdownMultiplierSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createApplySlowdownOnMoveSystem\@BlockMovementSlowdownMultiplierSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createApplySlowdownOnMoveSystem();
     /**
-     * @symbol  ?createCleanupSystem\@BlockMovementSlowdownMultiplierSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createCleanupSystem\@BlockMovementSlowdownMultiplierSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createCleanupSystem();
     /**
-     * @symbol  ?createImmunePlayerSystem\@BlockMovementSlowdownMultiplierSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createImmunePlayerSystem\@BlockMovementSlowdownMultiplierSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createImmunePlayerSystem();
     /**
-     * @symbol  ?createImmuneSpiderSystem\@BlockMovementSlowdownMultiplierSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createImmuneSpiderSystem\@BlockMovementSlowdownMultiplierSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createImmuneSpiderSystem();
     /**
-     * @symbol  ?createImmuneWitherBossSystem\@BlockMovementSlowdownMultiplierSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createImmuneWitherBossSystem\@BlockMovementSlowdownMultiplierSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createImmuneWitherBossSystem();
 

@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1OptionalString\@\@QEAA\@XZ
+     * @symbol ??1OptionalString\@\@QEAA\@XZ
      */
     MCAPI ~OptionalString();
 

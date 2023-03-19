@@ -20,7 +20,7 @@ namespace ItemDescriptorSerializer {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?fromString\@ItemDescriptorSerializer\@\@YAXAEAVItemDescriptor\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?fromString\@ItemDescriptorSerializer\@\@YAXAEAVItemDescriptor\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void fromString(class ItemDescriptor &, std::string const &);
 

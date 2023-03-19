@@ -30,11 +30,11 @@ public:
 
 public:
     /**
-     * @symbol  ?getNextPosition\@PlayerRespawnBlockRadiusRandomizer\@\@QEAA_NAEAVVec3\@\@_N\@Z
+     * @symbol ?getNextPosition\@PlayerRespawnBlockRadiusRandomizer\@\@QEAA_NAEAVVec3\@\@_N\@Z
      */
     MCAPI bool getNextPosition(class Vec3 &, bool);
     /**
-     * @symbol  ?init\@PlayerRespawnBlockRadiusRandomizer\@\@QEAAXIAEAVRandom\@\@\@Z
+     * @symbol ?init\@PlayerRespawnBlockRadiusRandomizer\@\@QEAAXIAEAVRandom\@\@\@Z
      */
     MCAPI void init(unsigned int, class Random &);
 

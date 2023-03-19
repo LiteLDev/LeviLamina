@@ -28,47 +28,47 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SonicBoomGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?canUse\@SonicBoomGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@SonicBoomGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@SonicBoomGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@SonicBoomGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  ?start\@SonicBoomGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@SonicBoomGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @vftbl  5
-     * @symbol  ?stop\@SonicBoomGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@SonicBoomGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @vftbl  6
-     * @symbol  ?tick\@SonicBoomGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@SonicBoomGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@SonicBoomGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@SonicBoomGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @symbol  ??0SonicBoomGoal\@\@QEAA\@AEAVMob\@\@\@Z
+     * @symbol ??0SonicBoomGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI SonicBoomGoal(class Mob &);
 

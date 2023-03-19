@@ -25,41 +25,41 @@ public:
 
 public:
     /**
-     * @symbol  ?endLevel\@ChunkRecyclerTelemetryData\@\@QEAAXAEAVLevel\@\@\@Z
+     * @symbol ?endLevel\@ChunkRecyclerTelemetryData\@\@QEAAXAEAVLevel\@\@\@Z
      */
     MCAPI void endLevel(class Level &);
     /**
-     * @symbol  ?recordCacheCheck\@ChunkRecyclerTelemetryData\@\@QEAAXAEBVLevelChunk\@\@\@Z
+     * @symbol ?recordCacheCheck\@ChunkRecyclerTelemetryData\@\@QEAAXAEBVLevelChunk\@\@\@Z
      */
     MCAPI void recordCacheCheck(class LevelChunk const &);
     /**
-     * @symbol  ?recordChunkDeleted\@ChunkRecyclerTelemetryData\@\@QEAAXAEBVLevelChunk\@\@\@Z
+     * @symbol ?recordChunkDeleted\@ChunkRecyclerTelemetryData\@\@QEAAXAEBVLevelChunk\@\@\@Z
      */
     MCAPI void recordChunkDeleted(class LevelChunk const &);
     /**
-     * @symbol  ?recordTaskCompleted\@ChunkRecyclerTelemetryData\@\@QEAAXAEBVLevelChunk\@\@AEBVTaskInfo\@1\@\@Z
+     * @symbol ?recordTaskCompleted\@ChunkRecyclerTelemetryData\@\@QEAAXAEBVLevelChunk\@\@AEBVTaskInfo\@1\@\@Z
      */
     MCAPI void recordTaskCompleted(class LevelChunk const &, class ChunkRecyclerTelemetryData::TaskInfo const &);
     /**
-     * @symbol  ?startLevel\@ChunkRecyclerTelemetryData\@\@QEAAXAEBVLevel\@\@\@Z
+     * @symbol ?startLevel\@ChunkRecyclerTelemetryData\@\@QEAAXAEBVLevel\@\@\@Z
      */
     MCAPI void startLevel(class Level const &);
     /**
-     * @symbol  ?tickLevel\@ChunkRecyclerTelemetryData\@\@QEAAXAEBVLevel\@\@\@Z
+     * @symbol ?tickLevel\@ChunkRecyclerTelemetryData\@\@QEAAXAEBVLevel\@\@\@Z
      */
     MCAPI void tickLevel(class Level const &);
     /**
-     * @symbol  ?taskStarted\@ChunkRecyclerTelemetryData\@\@SA?AVTaskInfo\@1\@XZ
+     * @symbol ?taskStarted\@ChunkRecyclerTelemetryData\@\@SA?AVTaskInfo\@1\@XZ
      */
     MCAPI static class ChunkRecyclerTelemetryData::TaskInfo taskStarted();
 
 //private:
     /**
-     * @symbol  ?_reset\@ChunkRecyclerTelemetryData\@\@AEAAXXZ
+     * @symbol ?_reset\@ChunkRecyclerTelemetryData\@\@AEAAXXZ
      */
     MCAPI void _reset();
     /**
-     * @symbol  ?_setIsLocked\@ChunkRecyclerTelemetryData\@\@AEAAXXZ
+     * @symbol ?_setIsLocked\@ChunkRecyclerTelemetryData\@\@AEAAXXZ
      */
     MCAPI void _setIsLocked();
 

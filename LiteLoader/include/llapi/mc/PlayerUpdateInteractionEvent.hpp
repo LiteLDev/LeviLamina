@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1PlayerUpdateInteractionEvent\@\@QEAA\@XZ
+     * @symbol ??1PlayerUpdateInteractionEvent\@\@QEAA\@XZ
      */
     MCAPI ~PlayerUpdateInteractionEvent();
 

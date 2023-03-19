@@ -27,7 +27,7 @@ public:
 
 public:
     /**
-     * @symbol  ??0AllWorkerConfigurations\@\@QEAA\@XZ
+     * @symbol ??0AllWorkerConfigurations\@\@QEAA\@XZ
      */
     MCAPI AllWorkerConfigurations();
 

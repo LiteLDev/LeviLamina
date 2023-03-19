@@ -29,20 +29,20 @@ public:
 
 public:
     /**
-     * @symbol  ??0ClockSpriteCalculator\@\@QEAA\@XZ
+     * @symbol ??0ClockSpriteCalculator\@\@QEAA\@XZ
      */
     MCAPI ClockSpriteCalculator();
     /**
-     * @symbol  ?getFrame\@ClockSpriteCalculator\@\@QEBAHXZ
+     * @symbol ?getFrame\@ClockSpriteCalculator\@\@QEBAHXZ
      */
     MCAPI int getFrame() const;
     /**
-     * @symbol  ?update\@ClockSpriteCalculator\@\@QEAAHAEAVActor\@\@_N\@Z
-     */
-    MCAPI int update(class Actor &, bool);
-    /**
-     * @symbol  ?update\@ClockSpriteCalculator\@\@QEAAHAEBVBlockSource\@\@AEBVVec3\@\@_N\@Z
+     * @symbol ?update\@ClockSpriteCalculator\@\@QEAAHAEBVBlockSource\@\@AEBVVec3\@\@_N\@Z
      */
     MCAPI int update(class BlockSource const &, class Vec3 const &, bool);
+    /**
+     * @symbol ?update\@ClockSpriteCalculator\@\@QEAAHAEAVActor\@\@_N\@Z
+     */
+    MCAPI int update(class Actor &, bool);
 
 };

@@ -30,43 +30,51 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ServerMoveInputHandler();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  5
-     * @symbol  __unk_vfn_5
+     * @vftbl 5
+     * @symbol __unk_vfn_5
      */
     virtual void __unk_vfn_5();
     /**
-     * @vftbl  14
-     * @symbol  __unk_vfn_14
+     * @vftbl 14
+     * @symbol __unk_vfn_14
      */
     virtual void __unk_vfn_14();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERMOVEINPUTHANDLER
     /**
-     * @symbol  ?registerInputHandlers\@ServerMoveInputHandler\@\@UEAAXAEAVInputHandler\@\@\@Z
+     * @symbol ?registerInputHandlers\@ServerMoveInputHandler\@\@UEAAXAEAVInputHandler\@\@\@Z
      */
     MCVAPI void registerInputHandlers(class InputHandler &);
 #endif
     /**
-     * @symbol  ??0ServerMoveInputHandler\@\@QEAA\@XZ
+     * @symbol ??0ServerMoveInputHandler\@\@QEAA\@XZ
      */
     MCAPI ServerMoveInputHandler();
     /**
-     * @symbol  ?digestPlayerInputPacket\@ServerMoveInputHandler\@\@QEAAXAEBVPlayerAuthInputPacket\@\@\@Z
+     * @symbol ?calculateServerMoveVector\@ServerMoveInputHandler\@\@QEAAXAEAUIPlayerMovementProxy\@\@\@Z
+     */
+    MCAPI void calculateServerMoveVector(struct IPlayerMovementProxy &);
+    /**
+     * @symbol ?digestPlayerInputPacket\@ServerMoveInputHandler\@\@QEAAXAEBVPlayerAuthInputPacket\@\@\@Z
      */
     MCAPI void digestPlayerInputPacket(class PlayerAuthInputPacket const &);
+    /**
+     * @symbol ?getInputState\@ServerMoveInputHandler\@\@QEAAAEAUMoveInputState\@\@XZ
+     */
+    MCAPI struct MoveInputState & getInputState();
 
 };

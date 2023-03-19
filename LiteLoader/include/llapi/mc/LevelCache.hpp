@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1LevelCache\@\@QEAA\@XZ
+     * @symbol ??1LevelCache\@\@QEAA\@XZ
      */
     MCAPI ~LevelCache();
 

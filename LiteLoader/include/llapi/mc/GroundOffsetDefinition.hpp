@@ -31,11 +31,11 @@ public:
 
 public:
     /**
-     * @symbol  ?initialize\@GroundOffsetDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
+     * @symbol ?initialize\@GroundOffsetDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
     MCAPI void initialize(class EntityContext &) const;
     /**
-     * @symbol  ?buildSchema\@GroundOffsetDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UGroundOffsetDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
+     * @symbol ?buildSchema\@GroundOffsetDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UGroundOffsetDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct GroundOffsetDefinition>> &);
 

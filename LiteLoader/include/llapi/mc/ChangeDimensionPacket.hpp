@@ -9,6 +9,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "Vec3.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -38,36 +39,42 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ChangeDimensionPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?getId\@ChangeDimensionPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@ChangeDimensionPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @vftbl  2
-     * @symbol  ?getName\@ChangeDimensionPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@ChangeDimensionPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @vftbl  3
-     * @symbol  ?write\@ChangeDimensionPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@ChangeDimensionPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl  6
-     * @symbol  ?_read\@ChangeDimensionPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 6
+     * @symbol ?_read\@ChangeDimensionPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHANGEDIMENSIONPACKET
     /**
-     * @symbol  ??0ChangeDimensionPacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~ChangeDimensionPacket();
+#endif
+    /**
+     * @symbol ??0ChangeDimensionPacket\@\@QEAA\@XZ
      */
     MCAPI ChangeDimensionPacket();
     /**
-     * @symbol  ??0ChangeDimensionPacket\@\@QEAA\@V?$AutomaticID\@VDimension\@\@H\@\@VVec3\@\@_N\@Z
+     * @symbol ??0ChangeDimensionPacket\@\@QEAA\@V?$AutomaticID\@VDimension\@\@H\@\@VVec3\@\@_N\@Z
      */
     MCAPI ChangeDimensionPacket(class AutomaticID<class Dimension, int>, class Vec3, bool);
 

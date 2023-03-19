@@ -31,37 +31,37 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~PermissionCommand();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?execute\@PermissionCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @vftbl 1
+     * @symbol ?execute\@PermissionCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @symbol  ?setup\@PermissionCommand\@\@SAXAEAVCommandRegistry\@\@PEAVPermissionsFile\@\@\@Z
+     * @symbol ?setup\@PermissionCommand\@\@SAXAEAVCommandRegistry\@\@PEAVPermissionsFile\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &, class PermissionsFile *);
 
 //private:
     /**
-     * @symbol  ?list\@PermissionCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @symbol ?list\@PermissionCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     MCAPI void list(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @symbol  ?reload\@PermissionCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @symbol ?reload\@PermissionCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     MCAPI void reload(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @symbol  ?set\@PermissionCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @symbol ?set\@PermissionCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     MCAPI void set(class CommandOrigin const &, class CommandOutput &) const;
 
 private:
     /**
-     * @symbol  ?mPermissionsFile\@PermissionCommand\@\@0PEAVPermissionsFile\@\@EA
+     * @symbol ?mPermissionsFile\@PermissionCommand\@\@0PEAVPermissionsFile\@\@EA
      */
     MCAPI static class PermissionsFile * mPermissionsFile;
 

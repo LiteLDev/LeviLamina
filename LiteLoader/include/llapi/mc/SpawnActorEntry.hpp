@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1SpawnActorEntry\@\@QEAA\@XZ
+     * @symbol ??1SpawnActorEntry\@\@QEAA\@XZ
      */
     MCAPI ~SpawnActorEntry();
 

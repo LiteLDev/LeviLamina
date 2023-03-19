@@ -33,7 +33,7 @@ public:
 
     MCAPI static void bindType();
 
-    constexpr int& operator[](size_t index) {
+    [[nodiscard]] constexpr int& operator[](size_t index) {
         switch (index) {
             case 1:
                 return y;
@@ -44,7 +44,7 @@ public:
         }
     }
 
-    constexpr int operator[](size_t index) const {
+    [[nodiscard]] constexpr int operator[](size_t index) const {
         switch (index) {
             case 1:
                 return y;
@@ -55,16 +55,16 @@ public:
         }
     }
 
-    inline bool containedWithin(BlockPos const& a, BlockPos const& b) const {
+    [[nodiscard]] inline bool containedWithin(BlockPos const& a, BlockPos const& b) const {
         return x >= a.x && y >= a.y && z >= a.z && x <= b.x && y <= b.y && z <= b.z;
     }
 
-    LIAPI Vec3 toVec3() const;
-    LIAPI class BoundingBox toBoundingBox() const;
-    LIAPI class AABB toAABB() const;
-    LIAPI Vec3 bottomCenter() const;
-    LIAPI Vec3 center() const;
-    LIAPI bool containedWithin(class BoundingBox const&) const;
+    [[nodiscard]] LIAPI Vec3 toVec3() const;
+    [[nodiscard]] LIAPI class BoundingBox toBoundingBox() const;
+    [[nodiscard]] LIAPI class AABB toAABB() const;
+    [[nodiscard]] LIAPI Vec3 bottomCenter() const;
+    [[nodiscard]] LIAPI Vec3 center() const;
+    [[nodiscard]] LIAPI bool containedWithin(class BoundingBox const&) const;
 
     FAKE_CRTP(BlockPos, int, 3);
 };

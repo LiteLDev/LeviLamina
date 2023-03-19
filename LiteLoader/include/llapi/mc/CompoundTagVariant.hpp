@@ -90,23 +90,23 @@ public:
 
 public:
     /**
-     * @symbol  ??0CompoundTagVariant\@\@QEAA\@$$QEAVTag\@\@\@Z
+     * @symbol ??0CompoundTagVariant\@\@QEAA\@$$QEAVTag\@\@\@Z
      */
     MCAPI CompoundTagVariant(class Tag &&);
     /**
-     * @symbol  ?emplace\@CompoundTagVariant\@\@QEAAAEAVTag\@\@$$QEAV2\@\@Z
+     * @symbol ?emplace\@CompoundTagVariant\@\@QEAAAEAVTag\@\@$$QEAV2\@\@Z
      */
     MCAPI class Tag & emplace(class Tag &&);
     /**
-     * @symbol  ?get\@CompoundTagVariant\@\@QEAAPEAVTag\@\@XZ
+     * @symbol ?get\@CompoundTagVariant\@\@QEAAPEAVTag\@\@XZ
      */
     MCAPI class Tag * get();
     /**
-     * @symbol  ?get\@CompoundTagVariant\@\@QEBAPEBVTag\@\@XZ
+     * @symbol ?get\@CompoundTagVariant\@\@QEBAPEBVTag\@\@XZ
      */
     MCAPI class Tag const * get() const;
     /**
-     * @symbol  ??1CompoundTagVariant\@\@QEAA\@XZ
+     * @symbol ??1CompoundTagVariant\@\@QEAA\@XZ
      */
     MCAPI ~CompoundTagVariant();
 

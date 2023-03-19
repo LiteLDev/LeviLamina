@@ -29,31 +29,31 @@ public:
 
 public:
     /**
-     * @symbol  ??0AABBBucket\@\@QEAA\@XZ
+     * @symbol ??0AABBBucket\@\@QEAA\@XZ
      */
     MCAPI AABBBucket();
     /**
-     * @symbol  ?clearDirty\@AABBBucket\@\@QEAAXXZ
+     * @symbol ?clearDirty\@AABBBucket\@\@QEAAXXZ
      */
     MCAPI void clearDirty();
     /**
-     * @symbol  ?clearNeedsFinalize\@AABBBucket\@\@QEAAXXZ
+     * @symbol ?clearNeedsFinalize\@AABBBucket\@\@QEAAXXZ
      */
     MCAPI void clearNeedsFinalize();
     /**
-     * @symbol  ?isDirty\@AABBBucket\@\@QEAA_NXZ
+     * @symbol ?isDirty\@AABBBucket\@\@QEAA_NXZ
      */
     MCAPI bool isDirty();
     /**
-     * @symbol  ?markDirty\@AABBBucket\@\@QEAAXXZ
+     * @symbol ?markDirty\@AABBBucket\@\@QEAAXXZ
      */
     MCAPI void markDirty();
     /**
-     * @symbol  ?mergeAABBs\@AABBBucket\@\@QEAAXXZ
+     * @symbol ?mergeAABBs\@AABBBucket\@\@QEAAXXZ
      */
     MCAPI void mergeAABBs();
     /**
-     * @symbol  ?needsFinalize\@AABBBucket\@\@QEBA_NXZ
+     * @symbol ?needsFinalize\@AABBBucket\@\@QEBA_NXZ
      */
     MCAPI bool needsFinalize() const;
 

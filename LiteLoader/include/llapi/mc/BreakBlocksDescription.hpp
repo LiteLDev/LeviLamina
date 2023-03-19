@@ -5,18 +5,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC class BreakBlocksDescription.
- *
- */
-class BreakBlocksDescription {
+
+struct BreakBlocksDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -24,33 +20,34 @@ class BreakBlocksDescription {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREAKBLOCKSDESCRIPTION
 public:
-    class BreakBlocksDescription& operator=(class BreakBlocksDescription const &) = delete;
-    BreakBlocksDescription(class BreakBlocksDescription const &) = delete;
+    struct BreakBlocksDescription& operator=(struct BreakBlocksDescription const &) = delete;
+    BreakBlocksDescription(struct BreakBlocksDescription const &) = delete;
 #endif
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  ?getJsonName\@BreakBlocksDescription\@\@UEBAPEBDXZ
+     * @vftbl 0
+     * @symbol ?getJsonName\@BreakBlocksDescription\@\@UEBAPEBDXZ
      */
     virtual char const * getJsonName() const;
     /**
-     * @vftbl  1
-     * @symbol  __unk_destructor_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
-    virtual ~BreakBlocksDescription();
+    virtual void __unk_vfn_1();
     /**
-     * @vftbl  2
-     * @symbol  ?deserializeData\@BreakBlocksDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
+     * @vftbl 2
+     * @symbol ?deserializeData\@BreakBlocksDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BREAKBLOCKSDESCRIPTION
     /**
-     * @vftbl  3
-     * @symbol  ?serializeData\@BreakBlocksDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
+     * @symbol __unk_destructor_-1
      */
-    virtual void serializeData(class Json::Value &) const;
+    MCVAPI ~BreakBlocksDescription();
+#endif
     /**
-     * @symbol  ??0BreakBlocksDescription\@\@QEAA\@XZ
+     * @symbol ??0BreakBlocksDescription\@\@QEAA\@XZ
      */
     MCAPI BreakBlocksDescription();
 

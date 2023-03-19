@@ -30,38 +30,38 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~RandomThreadCheckManager();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  __unk_vfn_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
     virtual void __unk_vfn_1();
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  __unk_vfn_4
+     * @vftbl 4
+     * @symbol __unk_vfn_4
      */
     virtual void __unk_vfn_4();
     /**
-     * @vftbl  5
-     * @symbol  __unk_vfn_5
+     * @vftbl 5
+     * @symbol __unk_vfn_5
      */
     virtual void __unk_vfn_5();
     /**
-     * @vftbl  6
-     * @symbol  ?onAppResumed\@RandomThreadCheckManager\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?onAppResumed\@RandomThreadCheckManager\@\@UEAAXXZ
      */
     virtual void onAppResumed();
 
@@ -69,11 +69,11 @@ public:
 
 private:
     /**
-     * @symbol  ?mInstance\@RandomThreadCheckManager\@\@0V?$unique_ptr\@VRandomThreadCheckManager\@\@U?$default_delete\@VRandomThreadCheckManager\@\@\@std\@\@\@std\@\@A
+     * @symbol ?mInstance\@RandomThreadCheckManager\@\@0V?$unique_ptr\@VRandomThreadCheckManager\@\@U?$default_delete\@VRandomThreadCheckManager\@\@\@std\@\@\@std\@\@A
      */
     MCAPI static std::unique_ptr<class RandomThreadCheckManager> mInstance;
     /**
-     * @symbol  ?mMutex\@RandomThreadCheckManager\@\@0Vrecursive_mutex\@std\@\@A
+     * @symbol ?mMutex\@RandomThreadCheckManager\@\@0Vrecursive_mutex\@std\@\@A
      */
     MCAPI static class std::recursive_mutex mMutex;
 

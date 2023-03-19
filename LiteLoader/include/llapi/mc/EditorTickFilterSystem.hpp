@@ -28,15 +28,15 @@ public:
 
 public:
     /**
-     * @symbol  ?_addPauseTickNeeded\@EditorTickFilterSystem\@\@SAXAEAVStrictEntityContext\@\@AEAVActorTickNeededComponent\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UEditorActorPauseTickNeededFlag\@\@\@\@\@\@\@Z
+     * @symbol ?_addPauseTickNeeded\@EditorTickFilterSystem\@\@SAXAEAVStrictEntityContext\@\@AEAVActorTickNeededComponent\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UEditorActorPauseTickNeededFlag\@\@\@\@\@\@\@Z
      */
     MCAPI static void _addPauseTickNeeded(class StrictEntityContext &, class ActorTickNeededComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct EditorActorPauseTickNeededFlag>> &);
     /**
-     * @symbol  ?createAddPauseTickNeeded\@EditorTickFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createAddPauseTickNeeded\@EditorTickFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createAddPauseTickNeeded();
     /**
-     * @symbol  ?createRemoveActorTickNeeded\@EditorTickFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createRemoveActorTickNeeded\@EditorTickFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createRemoveActorTickNeeded();
 

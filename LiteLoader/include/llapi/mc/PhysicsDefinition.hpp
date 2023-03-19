@@ -30,15 +30,15 @@ public:
 
 public:
     /**
-     * @symbol  ??0PhysicsDefinition\@\@QEAA\@XZ
+     * @symbol ??0PhysicsDefinition\@\@QEAA\@XZ
      */
     MCAPI PhysicsDefinition();
     /**
-     * @symbol  ?initialize\@PhysicsDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVPhysicsComponent\@\@\@Z
+     * @symbol ?initialize\@PhysicsDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVPhysicsComponent\@\@\@Z
      */
     MCAPI void initialize(class EntityContext &, class PhysicsComponent &) const;
     /**
-     * @symbol  ?buildSchema\@PhysicsDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VPhysicsDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
+     * @symbol ?buildSchema\@PhysicsDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VPhysicsDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class PhysicsDefinition>> &);
 

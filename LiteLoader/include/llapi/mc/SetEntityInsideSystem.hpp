@@ -28,15 +28,15 @@ public:
 
 public:
     /**
-     * @symbol  ?createCleanupSystem\@SetEntityInsideSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createCleanupSystem\@SetEntityInsideSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createCleanupSystem();
     /**
-     * @symbol  ?createSpectatorFilter\@SetEntityInsideSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSpectatorFilter\@SetEntityInsideSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSpectatorFilter();
     /**
-     * @symbol  ?createSystem\@SetEntityInsideSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@SetEntityInsideSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

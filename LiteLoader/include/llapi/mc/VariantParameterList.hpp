@@ -29,11 +29,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0VariantParameterList\@\@QEAA\@XZ
+     * @symbol ??0VariantParameterList\@\@QEAA\@XZ
      */
     MCAPI VariantParameterList();
     /**
-     * @symbol  ?hasParameter\@VariantParameterList\@\@QEBA_NW4FilterSubject\@\@\@Z
+     * @symbol ?hasParameter\@VariantParameterList\@\@QEBA_NW4FilterSubject\@\@\@Z
      */
     MCAPI bool hasParameter(enum class FilterSubject) const;
 

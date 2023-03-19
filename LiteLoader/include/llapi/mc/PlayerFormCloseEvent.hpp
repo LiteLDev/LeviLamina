@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1PlayerFormCloseEvent\@\@QEAA\@XZ
+     * @symbol ??1PlayerFormCloseEvent\@\@QEAA\@XZ
      */
     MCAPI ~PlayerFormCloseEvent();
 

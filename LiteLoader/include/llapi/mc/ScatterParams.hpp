@@ -37,37 +37,37 @@ public:
 
 public:
     /**
-     * @symbol  ?addAdditionalSaveData\@ScatterParams\@\@QEBAXAEAVCompoundTag\@\@\@Z
+     * @symbol ?addAdditionalSaveData\@ScatterParams\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @symbol  ?readAdditionalSaveData\@ScatterParams\@\@QEAAXAEBVCompoundTag\@\@\@Z
+     * @symbol ?readAdditionalSaveData\@ScatterParams\@\@QEAAXAEBVCompoundTag\@\@\@Z
      */
     MCAPI void readAdditionalSaveData(class CompoundTag const &);
     /**
-     * @symbol  ?scatter\@ScatterParams\@\@QEBA?AVScatteredPositions\@1\@AEAVRenderParams\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @symbol ?scatter\@ScatterParams\@\@QEBA?AVScatteredPositions\@1\@AEAVRenderParams\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     MCAPI class ScatterParams::ScatteredPositions scatter(class RenderParams &, class BlockPos const &, class Random &) const;
     /**
-     * @symbol  ??1ScatterParams\@\@QEAA\@XZ
+     * @symbol ??1ScatterParams\@\@QEAA\@XZ
      */
     MCAPI ~ScatterParams();
     /**
-     * @symbol  ?initMolangParams\@ScatterParams\@\@SAXAEAVRenderParams\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @symbol ?initMolangParams\@ScatterParams\@\@SAXAEAVRenderParams\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     MCAPI static void initMolangParams(class RenderParams &, class BlockPos const &, class Random &);
     /**
-     * @symbol  ?initScatterParamIndices\@ScatterParams\@\@SAXXZ
+     * @symbol ?initScatterParamIndices\@ScatterParams\@\@SAXXZ
      */
     MCAPI static void initScatterParamIndices();
 
 //private:
     /**
-     * @symbol  ?_getPos\@ScatterParams\@\@AEBA?AVBlockPos\@\@IAEBV2\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
+     * @symbol ?_getPos\@ScatterParams\@\@AEBA?AVBlockPos\@\@IAEBV2\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */
     MCAPI class BlockPos _getPos(unsigned int, class BlockPos const &, class Random &, class RenderParams &) const;
     /**
-     * @symbol  ?_parseExpressionNodeFloat\@ScatterParams\@\@AEAAXAEBVCompoundTag\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1AEAVExpressionNode\@\@M\@Z
+     * @symbol ?_parseExpressionNodeFloat\@ScatterParams\@\@AEAAXAEBVCompoundTag\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1AEAVExpressionNode\@\@M\@Z
      */
     MCAPI void _parseExpressionNodeFloat(class CompoundTag const &, std::string const &, std::string const &, class ExpressionNode &, float);
 

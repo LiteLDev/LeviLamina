@@ -29,22 +29,22 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~CraftHandlerSmithingTable();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  4
-     * @symbol  ?_handleCraftAction\@CraftHandlerSmithingTable\@\@EEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionCraftBase\@\@\@Z
+     * @vftbl 4
+     * @symbol ?_handleCraftAction\@CraftHandlerSmithingTable\@\@EEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionCraftBase\@\@\@Z
      */
     virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /**
-     * @vftbl  6
-     * @symbol  ?_getLevelRecipes\@CraftHandlerSmithingTable\@\@EEBAPEBVRecipes\@\@XZ
+     * @vftbl 6
+     * @symbol ?_getLevelRecipes\@CraftHandlerSmithingTable\@\@EEBAPEBVRecipes\@\@XZ
      */
     virtual class Recipes const * _getLevelRecipes() const;
     /**
-     * @symbol  ??0CraftHandlerSmithingTable\@\@QEAA\@AEAVPlayer\@\@AEAVItemStackRequestActionCraftHandler\@\@\@Z
+     * @symbol ??0CraftHandlerSmithingTable\@\@QEAA\@AEAVPlayer\@\@AEAVItemStackRequestActionCraftHandler\@\@\@Z
      */
     MCAPI CraftHandlerSmithingTable(class Player &, class ItemStackRequestActionCraftHandler &);
 

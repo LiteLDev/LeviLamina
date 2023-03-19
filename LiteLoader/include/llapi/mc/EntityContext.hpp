@@ -3,25 +3,24 @@
  *
  */
 #pragma once
-#define AUTO_GENERATED
+
 #include "llapi/Global.h"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-template <>
-class WeakRefT<struct EntityRefTraits> {
-    char filler[24];
-};
+#include "EntityContextBase.hpp"
+
 #undef BEFORE_EXTRA
 
 /**
  * @brief MC class EntityContext.
  *
  */
-class EntityContext {
+class EntityContext : public EntityContextBase {
 
 #define AFTER_EXTRA
 // Add Member There
+#define DISABLE_CONSTRUCTOR_PREVENTION_ENTITYCONTEXT
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYCONTEXT
 public:

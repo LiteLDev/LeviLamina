@@ -3,10 +3,12 @@
  *
  */
 #pragma once
-#define AUTO_GENERATED
+
 #include "llapi/Global.h"
 
 #define BEFORE_EXTRA
+
+#include "EntityRegistryBase.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -14,19 +16,17 @@
  * @brief MC class EntityRegistry.
  *
  */
-class EntityRegistry {
-
+class EntityRegistry : public EntityRegistryBase, public std::enable_shared_from_this<EntityRegistry> {
 #define AFTER_EXTRA
-
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYREGISTRY
-public:
-    class EntityRegistry& operator=(class EntityRegistry const &) = delete;
-    EntityRegistry(class EntityRegistry const &) = delete;
+   public:
+    class EntityRegistry& operator=(class EntityRegistry const&) = delete;
+    EntityRegistry(class EntityRegistry const&) = delete;
     EntityRegistry() = delete;
 #endif
 
-public:
+   public:
     /**
      * @symbol  ?getWeakRef\@EntityRegistry\@\@QEAA?AV?$WeakRefT\@UEntityRegistryRefTraits\@\@\@\@XZ
      */
@@ -36,13 +36,13 @@ public:
      */
     MCAPI ~EntityRegistry();
 
-//protected:
+    // protected:
     /**
      * @symbol  ??0EntityRegistry\@\@IEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI EntityRegistry(std::string);
 
-//private:
+    // private:
     /**
      * @symbol  ?_createEntity\@EntityRegistry\@\@AEAA?AVEntityContext\@\@XZ
      */
@@ -52,8 +52,8 @@ public:
      */
     MCAPI void _destroyEntity(class EntityContext);
 
-protected:
-
-private:
-
+   protected:
+   private:
 };
+
+#include "EntityRegistryRefTraits.hpp"

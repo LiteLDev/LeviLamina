@@ -30,7 +30,7 @@ public:
 
 public:
     /**
-     * @symbol  ?_serverGetEntityNetId\@EntityNetId\@\@SA?AV1\@AEBVEntityContext\@\@\@Z
+     * @symbol ?_serverGetEntityNetId\@EntityNetId\@\@SA?AV1\@AEBVEntityContext\@\@\@Z
      */
     MCAPI static class EntityNetId _serverGetEntityNetId(class EntityContext const &);
 

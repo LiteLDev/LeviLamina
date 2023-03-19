@@ -29,22 +29,22 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~LookAtActorNode();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?tick\@LookAtActorNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
+     * @vftbl 1
+     * @symbol ?tick\@LookAtActorNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
-     * @vftbl  2
-     * @symbol  ?initializeFromDefinition\@LookAtActorNode\@\@EEAAXAEAVActor\@\@\@Z
+     * @vftbl 2
+     * @symbol ?initializeFromDefinition\@LookAtActorNode\@\@EEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
-     * @symbol  ??0LookAtActorNode\@\@QEAA\@XZ
+     * @symbol ??0LookAtActorNode\@\@QEAA\@XZ
      */
     MCAPI LookAtActorNode();
 

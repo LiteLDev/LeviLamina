@@ -28,13 +28,13 @@ public:
 
 public:
     /**
-     * @symbol  ?_remapContext\@SideBySideCrossEntityRemapSystem\@\@SAXAEAVStrictEntityContext\@\@AEBUSideBySideRemappingComponent\@\@\@Z
+     * @symbol ?_remapContext\@SideBySideCrossEntityRemapSystem\@\@SAXAEAVStrictEntityContext\@\@AEBUSideBySideRemappingComponent\@\@\@Z
      */
     MCAPI static void _remapContext(class StrictEntityContext &, struct SideBySideRemappingComponent const &);
 
 //private:
     /**
-     * @symbol  ?_removeNullStrictActorIDEntityContextPairs\@SideBySideCrossEntityRemapSystem\@\@CAXAEAV?$vector\@UStrictActorIDEntityContextPair\@\@V?$allocator\@UStrictActorIDEntityContextPair\@\@\@std\@\@\@std\@\@\@Z
+     * @symbol ?_removeNullStrictActorIDEntityContextPairs\@SideBySideCrossEntityRemapSystem\@\@CAXAEAV?$vector\@UStrictActorIDEntityContextPair\@\@V?$allocator\@UStrictActorIDEntityContextPair\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI static void _removeNullStrictActorIDEntityContextPairs(std::vector<struct StrictActorIDEntityContextPair> &);
 

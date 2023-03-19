@@ -28,22 +28,28 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ScriptPluginPackSourceEnumerator();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?getFullPackStack\@ScriptPluginPackSourceEnumerator\@\@UEBAAEBV?$vector\@UPackIdVersion\@\@V?$allocator\@UPackIdVersion\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 1
+     * @symbol ?getFullPackStack\@ScriptPluginPackSourceEnumerator\@\@UEBAAEBV?$vector\@UPackIdVersion\@\@V?$allocator\@UPackIdVersion\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::vector<struct PackIdVersion> const & getFullPackStack() const;
     /**
-     * @vftbl  2
-     * @symbol  ?getPluginSources\@ScriptPluginPackSourceEnumerator\@\@UEBAAEBV?$vector\@V?$unique_ptr\@VIScriptPluginSource\@\@U?$default_delete\@VIScriptPluginSource\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VIScriptPluginSource\@\@U?$default_delete\@VIScriptPluginSource\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getPluginSources\@ScriptPluginPackSourceEnumerator\@\@UEBAAEBV?$vector\@V?$unique_ptr\@VIScriptPluginSource\@\@U?$default_delete\@VIScriptPluginSource\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VIScriptPluginSource\@\@U?$default_delete\@VIScriptPluginSource\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@XZ
      */
     virtual std::vector<std::unique_ptr<class IScriptPluginSource>> const & getPluginSources() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINPACKSOURCEENUMERATOR
     /**
-     * @symbol  ??0ScriptPluginPackSourceEnumerator\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@VPackInstance\@\@V?$allocator\@VPackInstance\@\@\@std\@\@\@2\@1\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~ScriptPluginPackSourceEnumerator();
+#endif
+    /**
+     * @symbol ??0ScriptPluginPackSourceEnumerator\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@VPackInstance\@\@V?$allocator\@VPackInstance\@\@\@std\@\@\@2\@1\@Z
      */
     MCAPI ScriptPluginPackSourceEnumerator(std::string const &, std::vector<class PackInstance> const &, std::vector<class PackInstance> const &);
 

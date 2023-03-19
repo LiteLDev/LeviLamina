@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1OnPlacedTrigger\@\@QEAA\@XZ
+     * @symbol ??1OnPlacedTrigger\@\@QEAA\@XZ
      */
     MCAPI ~OnPlacedTrigger();
 

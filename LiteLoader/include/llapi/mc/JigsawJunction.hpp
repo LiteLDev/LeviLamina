@@ -28,11 +28,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0JigsawJunction\@\@QEAA\@HHHHW4Projection\@\@0\@Z
+     * @symbol ??0JigsawJunction\@\@QEAA\@HHHHW4Projection\@\@0\@Z
      */
     MCAPI JigsawJunction(int, int, int, int, enum class Projection, enum class Projection);
     /**
-     * @symbol  ?getDeltaTargetY\@JigsawJunction\@\@QEBAHXZ
+     * @symbol ?getDeltaTargetY\@JigsawJunction\@\@QEBAHXZ
      */
     MCAPI int getDeltaTargetY() const;
 

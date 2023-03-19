@@ -30,18 +30,18 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BlockStateVariant();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?toNBT\@BlockStateVariant\@\@UEBAXAEAVCompoundTag\@\@H\@Z
+     * @vftbl 1
+     * @symbol ?toNBT\@BlockStateVariant\@\@UEBAXAEAVCompoundTag\@\@H\@Z
      */
     virtual void toNBT(class CompoundTag &, int) const;
     /**
-     * @vftbl  2
-     * @symbol  ?fromNBT\@BlockStateVariant\@\@UEBA_NAEBVCompoundTag\@\@AEAH\@Z
+     * @vftbl 2
+     * @symbol ?fromNBT\@BlockStateVariant\@\@UEBA_NAEBVCompoundTag\@\@AEAH\@Z
      */
     virtual bool fromNBT(class CompoundTag const &, int &) const;
 

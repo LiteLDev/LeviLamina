@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1MaterialReducerDataEntry\@\@QEAA\@XZ
+     * @symbol ??1MaterialReducerDataEntry\@\@QEAA\@XZ
      */
     MCAPI ~MaterialReducerDataEntry();
 

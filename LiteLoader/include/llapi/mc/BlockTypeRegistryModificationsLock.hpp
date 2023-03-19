@@ -28,13 +28,13 @@ public:
 
 public:
     /**
-     * @symbol  ??1BlockTypeRegistryModificationsLock\@\@QEAA\@XZ
+     * @symbol ??1BlockTypeRegistryModificationsLock\@\@QEAA\@XZ
      */
     MCAPI ~BlockTypeRegistryModificationsLock();
 
 //private:
     /**
-     * @symbol  ??0BlockTypeRegistryModificationsLock\@\@AEAA\@V?$shared_ptr\@VBlockTypeRegistryRWLock\@\@\@std\@\@\@Z
+     * @symbol ??0BlockTypeRegistryModificationsLock\@\@AEAA\@V?$shared_ptr\@VBlockTypeRegistryRWLock\@\@\@std\@\@\@Z
      */
     MCAPI BlockTypeRegistryModificationsLock(class std::shared_ptr<class BlockTypeRegistryRWLock>);
 

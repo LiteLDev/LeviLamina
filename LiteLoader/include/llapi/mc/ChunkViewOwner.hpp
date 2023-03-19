@@ -24,15 +24,15 @@ public:
 
 public:
     /**
-     * @symbol  ??0ChunkViewOwner\@\@QEAA\@AEBVNetworkIdentifier\@\@W4SubClientId\@\@\@Z
+     * @symbol ??0ChunkViewOwner\@\@QEAA\@AEBVNetworkIdentifier\@\@W4SubClientId\@\@\@Z
      */
     MCAPI ChunkViewOwner(class NetworkIdentifier const &, enum class SubClientId);
     /**
-     * @symbol  ??0ChunkViewOwner\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0ChunkViewOwner\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI ChunkViewOwner(class ChunkViewOwner const &);
     /**
-     * @symbol  ?getHash\@ChunkViewOwner\@\@QEBA_KXZ
+     * @symbol ?getHash\@ChunkViewOwner\@\@QEBA_KXZ
      */
     MCAPI unsigned __int64 getHash() const;
 

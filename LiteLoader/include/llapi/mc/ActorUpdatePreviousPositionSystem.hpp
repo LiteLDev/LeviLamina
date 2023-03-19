@@ -30,7 +30,7 @@ public:
 
 public:
     /**
-     * @symbol  ?create\@ActorUpdatePreviousPositionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?create\@ActorUpdatePreviousPositionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo create();
 

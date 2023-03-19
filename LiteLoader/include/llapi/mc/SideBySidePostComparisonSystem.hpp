@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?createSideBySideCleanupCopyComponentSystem\@SideBySidePostComparisonSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSideBySideCleanupCopyComponentSystem\@SideBySidePostComparisonSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSideBySideCleanupCopyComponentSystem();
 

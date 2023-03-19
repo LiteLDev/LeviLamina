@@ -31,16 +31,16 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYCOMPONENTFACTORYBASE
     /**
-     * @symbol  __unk_destructor_-1
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~EntityComponentFactoryBase();
 #endif
     /**
-     * @symbol  ?addComponents\@EntityComponentFactoryBase\@\@QEBAXAEAVEntityRegistry\@\@AEAVEntityContext\@\@AEBVDefinitionInstanceGroup\@\@\@Z
+     * @symbol ?addComponents\@EntityComponentFactoryBase\@\@QEBAXAEAVEntityRegistry\@\@AEAVEntityContext\@\@AEBVDefinitionInstanceGroup\@\@\@Z
      */
     MCAPI void addComponents(class EntityRegistry &, class EntityContext &, class DefinitionInstanceGroup const &) const;
     /**
-     * @symbol  ?removeComponents\@EntityComponentFactoryBase\@\@QEBAXAEAVEntityRegistry\@\@AEAVEntityContext\@\@AEBVDefinitionInstanceGroup\@\@\@Z
+     * @symbol ?removeComponents\@EntityComponentFactoryBase\@\@QEBAXAEAVEntityRegistry\@\@AEAVEntityContext\@\@AEBVDefinitionInstanceGroup\@\@\@Z
      */
     MCAPI void removeComponents(class EntityRegistry &, class EntityContext &, class DefinitionInstanceGroup const &) const;
 
