@@ -152,21 +152,77 @@ Local<Value> PyEngine::eval(const Local<String>& script, const Local<String>& so
   return eval(script, sourceFile.asValue());
 }
 
+//
+// Attention! CPython's eval is much different from other languages. We have not found a perfect way
+// to solve the problem of eval yet. There is still room for improvement here.
+// - Reason: Python has three different types of "eval" c-api, but none of them is perfect:
+//   1. "Py_eval_input" can only execute simple expression code like "2+3" or "funcname(a,b)". Something
+//      like assignments (a=3) or definitions (def func():xxx) are not supported.
+//   2. "Py_file_input" can execute any type and any length of Python code, but it returns nothing!
+//      It means that the return value will always be None, no matter what you actually eval.
+//   3. "Py_single_input" cannot be used here. It is used for CPython interactive console and will print 
+//      anything returned directly to console.
+// - Because of the deliberate design of CPython, we can only use some rule to "guess" which mode is the
+//   most suitable, and try our best to get the return value while ensuring that the code can be executed 
+//   properly.
+// - Logic we use below in eval:
+//   1. Firstly, we check that if the code contains something like "\n" (multi-line) or " = " (assignments).
+//     If found, we can only execute this code in "Py_file_input" mode, and returns None.
+//   2. Secondly, we try to eval the code in "Py_eval_input" mode. It may fail. If eval succeeds, we can 
+//     get return value and return directly.
+//   3. If eval in "Py_eval_input" mode fails (get exception), and get a SyntaxError, we can reasonably  
+//     guess that the cause of this exception is that the code is not a conforming expression. So we clear
+//     this exception and try to eval it in "Py_file_input" mode again. (Goto 5)
+//     (When we get a SyntexError, the code have not been actually executed, and will not have any 
+//     side-effect. So re-eval is ok)
+//   4. If we got an exception but it is not a SyntaxError, we must throw it out because the problems is 
+//     not related to "Py_eval_input" mode.
+//   5. If eval in "Py_file_input" mode succeeds, just return None directly. If the eval still fails, we
+//     throw out the exception got here.
+// - See more docs at docs/en/Python.md. There is still room for improvement in this logic. 
+//
 Local<Value> PyEngine::eval(const Local<String>& script, const Local<Value>& sourceFile) {
-  // Only if code to eval is an expression (no "\n", no "=") can eval() return its result,
-  // otherwise eval() will always return None. It is the deliberate design of CPython.
-  // See more info at docs/en/Python.md
   Tracer tracer(this, "PyEngine::eval");
   const char* source = script.toStringHolder().c_str();
-  bool oneLine = true;
+
+  bool mayCodeBeExpression = true;
+  // Use simple rules to find out the input that cannot be an expression
   if (strchr(source, '\n') != nullptr)
-    oneLine = false;
+    mayCodeBeExpression = false;
   else if (strstr(source, " = ") != nullptr)
-    oneLine = false;
-  PyObject* result = PyRun_StringFlags(source, oneLine ? Py_eval_input : Py_file_input,
-                                       getGlobalDict(), nullptr, nullptr);
-  checkAndThrowError();
-  return py_interop::asLocal<Value>(result);
+    mayCodeBeExpression = false;
+
+  if(!mayCodeBeExpression)
+  {
+    // No way to get return value. result value is always Py_None
+    PyObject* result = PyRun_StringFlags(source, Py_file_input, getGlobalDict(), nullptr, nullptr);
+    return py_interop::asLocal<Value>(result);
+  }
+  // Try to eval in "Py_eval_input" mode
+  PyObject* result = PyRun_StringFlags(source, Py_eval_input, getGlobalDict(), nullptr, nullptr);
+  if (PyErr_Occurred()) {
+    // Get exception
+    PyTypeObject *pType;
+    PyObject *pValue, *pTraceback;
+    PyErr_Fetch((PyObject**)(&pType), &pValue, &pTraceback);
+    PyErr_NormalizeException((PyObject**)(&pType), &pValue, &pTraceback);
+
+    // is SyntaxError?
+    std::string typeName{pType->tp_name};
+    if(typeName.find("SyntaxError") != std::string::npos)
+    {
+      // Code is not actually executed now. Try Py_file_input again.
+      PyObject* result = PyRun_StringFlags(source, Py_file_input, getGlobalDict(), nullptr, nullptr);
+      checkAndThrowError();     // If get exception again, just throw it
+      return py_interop::asLocal<Value>(result);    // Succeed in Py_file_input. Return None.
+    }
+    else {
+      // Not SyntaxError. Must throw out here
+      throw Exception(py_interop::asLocal<Value>(newExceptionInstance(pType, pValue, pTraceback)));
+    }
+  }
+  else
+    return py_interop::asLocal<Value>(result);    // No exception. Return the value got.
 }
 
 Local<Value> PyEngine::loadFile(const Local<String>& scriptFile) {
@@ -188,7 +244,11 @@ Local<Value> PyEngine::loadFile(const Local<String>& scriptFile) {
     if (pathSymbol != std::string::npos) sourceFilePath = sourceFilePath.substr(pathSymbol + 1);
   }
   Local<String> sourceFileName = String::newString(sourceFilePath);
-  return eval(content.asString(), sourceFileName);
+
+  const char* source = content.asString().toStringHolder().c_str();
+  PyObject* result = PyRun_StringFlags(source, Py_file_input, getGlobalDict(), nullptr, nullptr);
+  checkAndThrowError();
+  return py_interop::asLocal<Value>(result);
 }
 
 std::shared_ptr<utils::MessageQueue> PyEngine::messageQueue() { return queue_; }
