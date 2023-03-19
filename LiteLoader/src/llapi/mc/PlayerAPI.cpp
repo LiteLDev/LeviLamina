@@ -252,9 +252,8 @@ bool Player::giveItem(string typeName, int amount) {
     return true;
 }
 
-
-int Player::clearItem(std::string typeName){
-    return this->clearItem(typeName, 2^32);
+int Player::clearItem(std::string typeName) {
+    return this->clearItem(typeName, 2 ^ 32);
 }
 
 unsigned int Player::clearItem(std::string_view typeName, unsigned int num) {
@@ -269,13 +268,12 @@ unsigned int Player::clearItem(std::string_view typeName, unsigned int num) {
             if (itemCount >= int(num) - int(clearedCount)) {
                 item->setNull({});
                 clearedCount += itemCount;
-            }
-            else {
+            } else {
                 item->remove(num - clearedCount);
                 clearedCount = num;
             }
         }
-    }
+    };
 
     // Hand
     reduceItemCount(this, getHandSlot());
@@ -283,7 +281,6 @@ unsigned int Player::clearItem(std::string_view typeName, unsigned int num) {
         refreshInventory();
         return clearedCount;
     }
-    
 
     // OffHand
     reduceItemCount(this, (ItemStack*)&getOffhandSlot());
@@ -291,7 +288,6 @@ unsigned int Player::clearItem(std::string_view typeName, unsigned int num) {
         refreshInventory();
         return clearedCount;
     }
-    
 
     // Inventory
     {
@@ -299,7 +295,7 @@ unsigned int Player::clearItem(std::string_view typeName, unsigned int num) {
         auto items = container->getAllSlots();
         auto size = container->getSize();
         for (int i = 0; i < size; ++i) {
-            reduceItemCount(this, items[i]);
+            reduceItemCount(this, (ItemStack*)items[i]);
             if (clearedCount >= num) { // > case should never happen
                 refreshInventory();
                 return clearedCount;
@@ -310,10 +306,10 @@ unsigned int Player::clearItem(std::string_view typeName, unsigned int num) {
     // Armor
     {
         Container* armor = &getArmorContainer();
-        auto items = armor.getAllSlots();
-        auto size = armor.getSize();
+        auto items = armor->getAllSlots();
+        auto size = armor->getSize();
         for (int i = 0; i < size; ++i) {
-            reduceItemCount(this, items[i]);
+            reduceItemCount(this, (ItemStack*)items[i]);
             if (clearedCount >= num) { // > case should never happen
                 refreshInventory();
                 return clearedCount;
@@ -836,7 +832,6 @@ bool Player::sendBossEventPacket(BossEvent type, string name, float percent, Bos
     sendNetworkPacket(pkt);
     return true;
 }
-
 
 bool Player::sendCommandRequestPacket(const string& cmd) {
     auto packet = MinecraftPackets::createPacket(0x4d);
