@@ -2557,7 +2557,7 @@ Local<Value> PlayerClass::clearItem(const Arguments& args) {
             return Local<Value>();
         }
         return Number::newNumber(
-            player->clearItem(args[0].toStr(), args.size() == 1 ? 1 : args[1].asNumber().toInt32()));
+            (int32_t)player->clearItem(args[0].toStr(), args.size() == 1 ? 1 : args[1].asNumber().toInt32()));
     }
     CATCH("Fail in clearItem!");
 }
