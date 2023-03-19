@@ -55,7 +55,7 @@ jobs:
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           export sha_short=$(git rev-parse --short HEAD)
-          sed -r -i "s/#define\s+LITELOADER_VERSION_COMMIT_SHA\s+.*/#define LITELOADER_VERSION_COMMIT_SHA \$sha_short\r/" LiteLoader/include/liteloader/Version.h
+          sed -r -i "s/#define\s+LITELOADER_VERSION_COMMIT_SHA\s+.*/#define LITELOADER_VERSION_COMMIT_SHA $sha_short\r/" LiteLoader/include/liteloader/Version.h
         shell: bash
 
       - name: Configure CMake (MSVC)
