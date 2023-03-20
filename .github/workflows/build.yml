@@ -127,9 +127,7 @@ jobs:
             ${{ github.workspace }}\build\output\plugins\lib\
             ${{ github.workspace }}\build\output\plugins\LiteLoader\LangPack\
             ${{ github.workspace }}\build\output\plugins\LiteLoader\CrashLogger_Daemon.exe
-            ${{ github.workspace }}\build\output\plugins\LiteLoader\LiteLoader.Js.dll
-            ${{ github.workspace }}\build\output\plugins\LiteLoader\LiteLoader.Lua.dll
-            ${{ github.workspace }}\build\output\plugins\LiteLoader\LiteLoader.NodeJs.dll
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\LiteLoader.*.dll
             ${{ github.workspace }}\build\output\plugins\LiteLoader\7z\
             ${{ github.workspace }}\build\output\plugins\LiteLoader\ParticleAPI.dll
             ${{ github.workspace }}\build\output\plugins\LiteLoader\ResourcePacks\LiteLoaderBDS-CUI.tar
@@ -163,10 +161,8 @@ jobs:
         with:
           name: ScriptEngine
           path: |
-            ${{ github.workspace }}\build\output\plugins\LiteLoader\LiteLoader.Js.dll
-            ${{ github.workspace }}\build\output\plugins\LiteLoader\LiteLoader.Lua.dll
-            ${{ github.workspace }}\build\output\plugins\LiteLoader\LiteLoader.NodeJs.dll
-            ${{ github.workspace }}\build\output\plugins\lib\node_modules.tar
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\LiteLoader.*.dll
+            ${{ github.workspace }}\build\output\plugins\lib\*.zip
             ${{ github.workspace }}\build\output\plugins\lib\package.json
       
       - name: Upload LLParticle
