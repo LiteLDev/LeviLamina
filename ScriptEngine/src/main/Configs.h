@@ -60,7 +60,7 @@
 // All backends information
 #define LLSE_MODULE_TYPE LLSE_BACKEND_TYPE
 #define LLSE_VALID_BACKENDS std::vector<std::string>({"Js", "Lua", "NodeJs", "Python"})
-#define LLSE_VALID_PLUGIN_EXTENSIONS std::vector<std::string>({".js", ".lua", "", ""})
+#define LLSE_VALID_PLUGIN_EXTENSIONS std::vector<std::string>({".js", ".lua", "", ".py"})
 #define LLSE_VALID_PLUGIN_PACKAGE_IDENTIFIER \
 	std::vector<std::string>({"", "", "package.json", "pyproject.toml"})
 #define LLSE_VALID_BACKENDS_COUNT LLSE_VALID_BACKENDS.size()

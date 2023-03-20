@@ -196,6 +196,15 @@ void LoadMain_Python() {
         }
     }
 
+    // Load single-file plugin
+    files = std::filesystem::directory_iterator(LLSE_PLUGINS_LOAD_DIR);
+    for (auto& i : files) {
+        if (i.is_regular_file() && i.path().extension() == LLSE_SOURCE_FILE_EXTENSION) {
+            if (PluginManager::loadPlugin(UTF82String(i.path().generic_u8string()), false, true))
+                ++count;
+        }
+    }
+
     logger.info(tr("llse.loader.loadMain.done",
                    fmt::arg("count", count),
                    fmt::arg("type", "Python")));
