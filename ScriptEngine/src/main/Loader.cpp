@@ -145,6 +145,7 @@ void LoadMain_NodeJs() {
             if (!PluginManager::loadPlugin(UTF82String(pth.u8string()), false, true)) {
                 logger.error(tr("llse.loader.loadMain.nodejs.installPack.fail"));
             }
+            ++count;
             ++installCount;
         }
     }
@@ -190,6 +191,7 @@ void LoadMain_Python() {
             if (!PluginManager::loadPlugin(UTF82String(pth.u8string()), false, true)) {
                 logger.error(tr("llse.loader.loadMain.python.installPack.fail"));
             }
+            ++count;
             ++installCount;
         }
     }
