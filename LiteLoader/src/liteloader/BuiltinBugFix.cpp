@@ -155,7 +155,8 @@ inline bool Interval(int a1) {
     return false;
 }
 
-template <typename T> inline bool validPosition(T const& pos) {
+template <typename T>
+inline bool validPosition(T const& pos) {
     if (isnan(static_cast<float>(pos.x)) || isnan(static_cast<float>(pos.z)))
         return false;
     return Interval(static_cast<int>(pos.x)) && Interval(static_cast<int>(pos.y)) && Interval(static_cast<int>(pos.z));
@@ -181,11 +182,10 @@ TInstanceHook(void, "?moveSpawnView@Player@@QEAAXAEBVVec3@@V?$AutomaticID@VDimen
     fixPlayerPosition(this, false);
 }
 
-
-TClasslessInstanceHook(
-    __int64,
-    "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NW4ChunkSourceViewGenerateMode@@V?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@@Z",
-    BlockPos a2, int a3, unsigned __int8 a4, int a5, __int64 a6) {
+TClasslessInstanceHook(__int64,
+                       "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NW4ChunkSourceViewGenerateMode@@V?$function@$$"
+                       "A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@@Z",
+                       BlockPos a2, int a3, unsigned __int8 a4, int a5, __int64 a6) {
     if (validPosition(a2))
         return original(this, a2, a3, a4, a5, a6);
     fixPlayerPosition(movingViewPlayer);
@@ -277,8 +277,7 @@ THook(std::wistream&,
 TInstanceHook(LevelData*,
               "??0LevelData@@QEAA@AEBVLevelSettings@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@"
               "W4GeneratorType@@AEBVBlockPos@@_NW4EducationEditionOffer@@MM@Z",
-              LevelData, void* a2, __int64 a3, unsigned int a4, BlockPos* a5, char a6, int a7, int a8,
-              int a9) {
+              LevelData, void* a2, __int64 a3, unsigned int a4, BlockPos* a5, char a6, int a7, int a8, int a9) {
     if (ll::globalConfig.enableFixBroadcastBug) {
         auto data = original(this, a2, a3, a4, a5, a6, a7, a8, a9);
         data->setLANBroadcast(true);
@@ -352,6 +351,7 @@ TInstanceHook(BlockSource*, "?getDimensionBlockSourceConst@Actor@@QEBAAEBVBlockS
 
 enum class AbilitiesLayer;
 enum class SubClientId;
+
 TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRequestAbilityPacket@@@Z",
               ServerNetworkHandler, class NetworkIdentifier const& nid, class RequestAbilityPacket const& pkt) {
     original(this, nid, pkt);
@@ -398,16 +398,16 @@ TInstanceHook(void, "?tickWorld@Player@@UEAAXAEBUTick@@@Z", Player, struct Tick 
     //  _updateChunkPublisherView will be called after Player::tick in ServerPlayer::tick
     if (isSimulatedPlayer()) {
         // Force to call the implementation of ServerPlayer
-        ((ServerPlayer*)this)->_updateChunkPublisherView(getPos(), 16.0f * Global<PropertiesSettings>->getServerTickRange());
+        ((ServerPlayer*)this)
+            ->_updateChunkPublisherView(getPos(), 16.0f * Global<PropertiesSettings>->getServerTickRange());
     }
 }
 
 // fix chunk load and tick - ChunkSource load mode
-static_assert(sizeof(ChunkSource) == 0x50); // 88
-static_assert(sizeof(ChunkViewSource) == 0x1d8);//472
+static_assert(sizeof(ChunkSource) == 0x50);      // 88
+static_assert(sizeof(ChunkViewSource) == 0x1d8); // 472
 
-TInstanceHook(
-    std::shared_ptr<class ChunkViewSource>,
+TInstanceHook(std::shared_ptr<class ChunkViewSource>,
               "?_createChunkSource@SimulatedPlayer@@MEAA?AV?$shared_ptr@VChunkViewSource@@@std@@AEAVChunkSource@@@Z",
               SimulatedPlayer, ChunkSource& chunkSource) {
     auto result = ChunkViewSource(chunkSource, ChunkSource::LoadMode::Deferred);
@@ -418,7 +418,8 @@ TInstanceHook(
 // fix armor display
 #include "llapi/mc/WeakStorageEntity.hpp"
 #include "llapi/mc/WeakEntityRef.hpp"
-//void sendEvent(class EventRef<struct ActorGameplayEvent<void>> const &);
+
+// void sendEvent(class EventRef<struct ActorGameplayEvent<void>> const &);
 TClasslessInstanceHook(void, "?sendEvent@ActorEventCoordinator@@QEAAXAEBV?$EventRef@U?$ActorGameplayEvent@X@@@@@Z",
                        void* a2) {
     original(this, a2);

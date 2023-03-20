@@ -21,7 +21,14 @@ class StackResultStorageEntity {
 // Add Member There
 public:
     std::optional<EntityContext> mContext;
-    inline class EntityContext& getStackRef() { return _getStackRef(); }
+
+    template <class Entity, bool Unknown = false>
+    inline Entity* tryUnwrap() {
+        if (_hasValue()) {
+            return Entity::tryGetFromEntity(_getStackRef(), Unknown);
+        }
+        return nullptr;
+    }
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STACKRESULTSTORAGEENTITY

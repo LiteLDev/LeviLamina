@@ -695,7 +695,7 @@ bool Player::sendSpawnParticleEffectPacket(Vec3 spawnPos, int dimID, string Part
     // built-in, or to one implemented by behaviour packs.
     wp.writeString(ParticleName);
 
-   auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::SpawnParticleEffect);
+    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::SpawnParticleEffect);
     pkt->read(wp);
     sendNetworkPacket(*pkt);
     return true;

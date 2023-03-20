@@ -13,47 +13,74 @@
 #include "entt/entity/entity.hpp"
 #include "mce.hpp"
 #include "Ref.hpp"
+#include <initializer_list>
 
-class EntityId : public entt::internal::entt_traits<std::uint32_t> {
-   public:
-    uint32_t mRawId;
+class EntityId : public entt::entt_traits<std::uint32_t> {
+public:
+    entity_type mRawId;
+
+    constexpr EntityId(EntityId&&) = default;
+
+    constexpr EntityId(const EntityId&) = default;
+
+    constexpr EntityId& operator=(const EntityId&) = default;
+
+    template <class T, std::enable_if_t<!(std::is_same_v<T, std::allocator<EntityId>> ||
+                                          std::is_same_v<T, entt::null_t> || std::is_same_v<T, entt::tombstone_t>),
+                                        int> = 0>
+    constexpr EntityId(T rawId) : mRawId(static_cast<entity_type>(rawId)) {}
+
+    constexpr operator entity_type() const {
+        return mRawId;
+    }
 };
 
 class ActorRuntimeID {
-   public:
+public:
     unsigned long long id;
 
-    inline unsigned long long get() const { return id; }
+    inline unsigned long long get() const {
+        return id;
+    }
 
-    inline operator unsigned long long() const { return id; }
+    inline operator unsigned long long() const {
+        return id;
+    }
 };
 
 typedef std::string xuid_t;
 typedef unsigned long long QWORD;
 
 namespace reflection {
-    struct Schema {};
-}  // namespace reflection
+struct Schema {};
+} // namespace reflection
 
 template <typename A, typename T>
 class AutomaticID {
     T id;
 
-   public:
-    AutomaticID() { id = 0; }
+public:
+    AutomaticID() {
+        id = 0;
+    }
 
-    AutomaticID(T x) { id = x; }
+    AutomaticID(T x) {
+        id = x;
+    }
 
-    inline operator T() const { return id; }
+    inline operator T() const {
+        return id;
+    }
 };
 
 #include "ActorUniqueID.hpp"
 
 // static_assert(!std::is_pod_v<ActorUniqueID>);
 class NetherNet {
-   public:
+public:
     struct NetworkID;
 };
+
 // static_assert(std::is_pod_v<ActorRuntimeID>);
 
 // namespace Core {
@@ -81,40 +108,40 @@ class NetherNet {
 // }; // namespace Core
 
 namespace gametest {
-    class BaseGameTestBatchRunner;
+class BaseGameTestBatchRunner;
 
-    class BaseGameTestFunction;
+class BaseGameTestFunction;
 
-    class BaseGameTestHelper;
+class BaseGameTestHelper;
 
-    class BaseGameTestInstance;
+class BaseGameTestInstance;
 
-    class GameTestBatch;
+class GameTestBatch;
 
-    struct GameTestError;
+struct GameTestError;
 
-    class GameTestRegistry;
+class GameTestRegistry;
 
-    class GameTestTicker;
+class GameTestTicker;
 
-    class IGameTestFunctionContext;
+class IGameTestFunctionContext;
 
-    class IGameTestHelperProvider;
+class IGameTestHelperProvider;
 
-    struct TestParameters;
-};  // namespace gametest
+struct TestParameters;
+}; // namespace gametest
 
 namespace DBHelpers {
-    enum class Category;
-};  // namespace DBHelpers
+enum class Category;
+}; // namespace DBHelpers
 
 class AgentCommands {
-   public:
+public:
     class Command;
 };
 
 class ClientBlobCache {
-   public:
+public:
     struct Server {
         class TransferBuilder;
 
@@ -126,7 +153,7 @@ template <typename T1, typename T2, typename T3>
 class OwnerPtrFactory {};
 
 class ClientBlockPipeline {
-   public:
+public:
     template <typename T>
     class VolumeOf;
 
@@ -170,7 +197,7 @@ struct CanyonFeatureUtils {
 };
 
 class IInPackagePacks {
-   public:
+public:
     struct MetaData;
 };
 
@@ -183,8 +210,9 @@ struct GameEventConfig {
 struct OperationNodeValues {
     enum class Terrain;
 };
+
 class Editor {
-   public:
+public:
     class IEditorManager;
     class IEditorPlayer;
 };
@@ -196,14 +224,17 @@ struct SubChunkStorageUnit {
 // Templates
 template <typename T, typename T2, int unk>
 class TypedServerNetId {
-   public:
+public:
     T2 netId;
-    inline operator T2() { return netId; }
+
+    inline operator T2() {
+        return netId;
+    }
 };
 
 template <typename T, typename T2, int unk>
 class TypedClientNetId {
-   public:
+public:
     T2 netId;
 
     virtual void clientInit(TypedClientNetId<T, T2, unk>);
@@ -212,7 +243,7 @@ class TypedClientNetId {
 
 template <typename T, typename T2, int unk>
 class TypedRuntimeId {
-   public:
+public:
     T2 netId;
 };
 
@@ -221,7 +252,7 @@ class AutomaticID;
 
 template <typename T, typename T2>
 class BidirectionalUnorderedMap {
-   public:
+public:
     std::unordered_map<T, T2> mMap1;
     std::unordered_map<T2, T> mMap2;
 };
@@ -288,23 +319,32 @@ template <typename T>
 class optional_ref {
     T* value;
 
-   public:
+public:
     inline T* get() const {
         if (*this)
             return value;
         return nullptr;
     }
+
     // inline T* set(T const& val)
     //{
     //     *value = &val;
     // }
-    inline T& operator*() const { return *value; }
-    inline T* operator->() const { return value; }
-    inline operator bool() const { return value != nullptr; }
+    inline T& operator*() const {
+        return *value;
+    }
+
+    inline T* operator->() const {
+        return value;
+    }
+
+    inline operator bool() const {
+        return value != nullptr;
+    }
 };
 
 namespace cg {
-    class ImageBuffer;
+class ImageBuffer;
 };
 
 template <int a>
@@ -339,16 +379,24 @@ struct InvertableFilter {
 
 template <typename T>
 class CommandSelectorResults {
-   public:
+public:
     std::shared_ptr<std::vector<T*>> data;
 
-    auto begin() { return data->begin(); }
+    auto begin() {
+        return data->begin();
+    }
 
-    auto end() { return data->end(); }
+    auto end() {
+        return data->end();
+    }
 
-    auto count() const { return data->size(); }
+    auto count() const {
+        return data->size();
+    }
 
-    auto empty() const { return data->empty(); }
+    auto empty() const {
+        return data->empty();
+    }
 };
 
 enum class ActorType : __int32 {

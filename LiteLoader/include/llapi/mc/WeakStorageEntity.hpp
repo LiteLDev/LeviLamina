@@ -34,11 +34,7 @@ public:
 
     template <class Entity, bool Unknown = false>
     inline Entity* tryUnwrap() {
-        StackResultStorageEntity ref(*this);
-        if (!ref._hasValue()) {
-            return nullptr;
-        }
-        return Entity::tryGetFromEntity(ref._getStackRef(), Unknown);
+        return StackResultStorageEntity(*this).tryUnwrap<Entity, Unknown>();
     }
 
 #undef AFTER_EXTRA
