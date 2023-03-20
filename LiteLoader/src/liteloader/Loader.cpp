@@ -155,8 +155,8 @@ inline void initPythonDirectories() {
     // Check & Create python directories
     if (!filesystem::exists(LLSE_PYTHON_ROOT_DIR)) {
         filesystem::create_directories(LLSE_PYTHON_ROOT_DIR);
+        ll::logger.warn(tr("ll.loader.initPythonDirectories.created"));
     }
-    ll::logger.warn(tr("ll.loader.initPythonDirectories.created"));
 }
 
 inline void loadScriptEngine() {

@@ -21,7 +21,7 @@ std::string getPluginPackDependencyFilePath(const std::string& dirPath);
 bool processPythonDebugEngine(const std::string &cmd);
 
 bool processConsolePipCmd(const std::string& cmd);
-int executePipCommand(std::string cmd, std::string workingDir = LLSE_PLUGINS_ROOT_DIR);
+int executePipCommand(std::string cmd);
 
 }
 

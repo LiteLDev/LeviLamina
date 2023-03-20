@@ -11,17 +11,22 @@
 #include <engine/TimeTaskSystem.h>
 #include <llapi/LLAPI.h>
 #include <llapi/utils/StringHelper.h>
+#include <llapi/utils/WinHelper.h>
+#include "utils/Utils.h"
 #include "PythonHelper.h"
 #include "engine/EngineManager.h"
 #include "engine/EngineOwnData.h"
 #include <tomlplusplus/toml.hpp>
 #include <Python.h>
 
+#define PIP_EXECUTE_TIMEOUT 1800 * 1000
+
 // pre-declare
 extern void BindAPIs(ScriptEngine* engine);
 extern Logger logger;
 extern bool isInConsoleDebugMode;
 extern ScriptEngine* debugEngine;
+
 
 namespace PythonHelper {
 
@@ -91,7 +96,8 @@ bool loadPythonPlugin(std::string dirPath, const std::string& packagePath, bool 
     std::string pluginName = PythonHelper::getPluginPackageName(dirPath);
 
     // Run "pip install" if needed
-    if(!filesystem::exists(filesystem::path(dirPath) / "site-packages"))
+    auto realPackageInstallDir = (filesystem::path(dirPath) / "site-packages").make_preferred();
+    if(!filesystem::exists(realPackageInstallDir))
     {
         std::string dependTmpFilePath = PythonHelper::getPluginPackDependencyFilePath(dirPath);
         if (!dependTmpFilePath.empty())
@@ -100,8 +106,11 @@ bool loadPythonPlugin(std::string dirPath, const std::string& packagePath, bool 
             logger.info(tr("llse.loader.python.executePipInstall.start",
                 fmt::arg("name", UTF82String(filesystem::path(dirPath).filename().u8string()))));
             
-            if ((exitCode = PythonHelper::executePipCommand("pip install -r " + dependTmpFilePath + " -t " + dirPath)) == 0)
+            if ((exitCode = PythonHelper::executePipCommand("pip install -r \"" + dependTmpFilePath
+                + "\" -t \"" + UTF82String(realPackageInstallDir.u8string()) + "\" --disable-pip-version-check")) == 0)
+            {
                 logger.info(tr("llse.loader.python.executePipInstall.success"));
+            }
             else
                 logger.error(tr("llse.loader.python.executePipInstall.fail", fmt::arg("code", exitCode)));
             
@@ -416,9 +425,39 @@ bool processConsolePipCmd(const std::string& cmd)
 #endif
 }
 
-int executePipCommand(std::string cmd, std::string workingDir)
+// if no -t in cmd, packages will install to default global embedding site-package dir 
+// (./plugins/lib/python-env/Lib/site-packages)
+int executePipCommand(std::string cmd)
 {
-    return 0;
+    if(cmd.find("--disable-pip-version-check") == std::string::npos)
+        cmd += " --disable-pip-version-check";
+    cmd =  ".\\plugins\\lib\\python-env\\python.exe -m " + cmd;  
+
+    SECURITY_ATTRIBUTES sa;
+    sa.nLength = sizeof(SECURITY_ATTRIBUTES);
+    sa.lpSecurityDescriptor = nullptr;
+    sa.bInheritHandle = TRUE;
+
+    STARTUPINFOW si = {0};
+    PROCESS_INFORMATION pi;
+    si.cb = sizeof(STARTUPINFO);
+    GetStartupInfoW(&si);
+
+    auto wCmd = str2cwstr(cmd);
+    if (!CreateProcessW(nullptr, wCmd, nullptr, nullptr, TRUE, 0, nullptr, nullptr, &si, &pi)) {
+        delete [] wCmd;
+        return -1;
+    }
+    CloseHandle(pi.hThread);
+
+    if(WaitForSingleObject(pi.hProcess, PIP_EXECUTE_TIMEOUT) == WAIT_TIMEOUT)
+        TerminateProcess(pi.hProcess, -1);
+
+    DWORD exitCode = 0;
+    GetExitCodeProcess(pi.hProcess, &exitCode);
+    CloseHandle(pi.hProcess);
+    delete [] wCmd;
+    return exitCode;
 }
 
 } // namespace PythonHelper
