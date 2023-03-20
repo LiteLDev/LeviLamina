@@ -26,7 +26,11 @@ private:
     char filler[128];
 
 public:
-LIAPI int getCount() const;
+    LIAPI int getCount() const;
+
+    inline int getCountNoCheck() const {
+        return dAccess<unsigned char, 34>(this);
+    }
 
 #undef AFTER_EXTRA
 public:
