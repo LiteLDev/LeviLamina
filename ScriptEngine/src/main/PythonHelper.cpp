@@ -134,9 +134,11 @@ bool loadPythonPlugin(std::string dirPath, const std::string& packagePath, bool 
         ENGINE_OWN_DATA()->pluginFileOrDirPath = dirPath;
         ENGINE_OWN_DATA()->logger.title = pluginName;
 
-        // add plugin-own site-packages to sys.path
+        // add plugin-own site-packages & plugin source dir to sys.path
+        string sourceDirFormatted = UTF82String(filesystem::path(dirPath).make_preferred().u8string());
         engine->eval("import sys as _llse_py_sys_module\n"
-            "_llse_py_sys_module.path.insert(0, '" + realPackageInstallDirStr + "')");
+            "_llse_py_sys_module.path.insert(0, '" + realPackageInstallDirStr + "')\n"
+            "_llse_py_sys_module.path.insert(0, '" + sourceDirFormatted + "')");
 
         // bindAPIs
         try {
