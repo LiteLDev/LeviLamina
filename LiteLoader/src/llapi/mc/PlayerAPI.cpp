@@ -631,9 +631,8 @@ bool Player::sendTextPacket(string text, TextType Type) const {
     wp.writeString("");
     wp.writeString("");
 
-    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::Text);
-    pkt->read(wp);
-    sendNetworkPacket(*pkt);
+    NetworkPacket<(int)MinecraftPacketIds::Text> pkt(wp.getAndReleaseData());
+    sendNetworkPacket(pkt);
     return true;
 }
 
@@ -885,9 +884,8 @@ bool Player::sendRawFormPacket(unsigned formId, const string& data) const {
     wp.writeUnsignedVarInt(formId);
     wp.writeString(data);
 
-    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::ModalFormRequest);
-    pkt->read(wp);
-    sendNetworkPacket(*pkt);
+    NetworkPacket<(int)MinecraftPacketIds::ModalFormRequest> pkt(wp.getAndReleaseData());
+    sendNetworkPacket(pkt);
     return true;
 }
 
