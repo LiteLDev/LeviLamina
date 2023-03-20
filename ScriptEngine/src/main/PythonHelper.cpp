@@ -97,6 +97,7 @@ bool loadPythonPlugin(std::string dirPath, const std::string& packagePath, bool 
 
     // Run "pip install" if needed
     auto realPackageInstallDir = (filesystem::path(dirPath) / "site-packages").make_preferred();
+    std::string realPackageInstallDirStr = UTF82String(realPackageInstallDir.u8string());
     if(!filesystem::exists(realPackageInstallDir))
     {
         std::string dependTmpFilePath = PythonHelper::getPluginPackDependencyFilePath(dirPath);
@@ -107,7 +108,7 @@ bool loadPythonPlugin(std::string dirPath, const std::string& packagePath, bool 
                 fmt::arg("name", UTF82String(filesystem::path(dirPath).filename().u8string()))));
             
             if ((exitCode = PythonHelper::executePipCommand("pip install -r \"" + dependTmpFilePath
-                + "\" -t \"" + UTF82String(realPackageInstallDir.u8string()) + "\" --disable-pip-version-check")) == 0)
+                + "\" -t \"" + realPackageInstallDirStr + "\" --disable-pip-version-check")) == 0)
             {
                 logger.info(tr("llse.loader.python.executePipInstall.success"));
             }
@@ -124,19 +125,23 @@ bool loadPythonPlugin(std::string dirPath, const std::string& packagePath, bool 
     ScriptEngine* engine = nullptr;
     try {
         engine = EngineManager::newEngine();
-        {
-            EngineScope enter(engine);
-            // setData
-            ENGINE_OWN_DATA()->pluginName = pluginName;
-            ENGINE_OWN_DATA()->pluginFileOrDirPath = dirPath;
-            ENGINE_OWN_DATA()->logger.title = pluginName;
-            // bindAPIs
-            try {
-                BindAPIs(engine);
-            } catch (const Exception& e) {
-                logger.error("Fail in Binding APIs!\n");
-                throw;
-            }
+        EngineScope enter(engine);
+
+        // setData
+        ENGINE_OWN_DATA()->pluginName = pluginName;
+        ENGINE_OWN_DATA()->pluginFileOrDirPath = dirPath;
+        ENGINE_OWN_DATA()->logger.title = pluginName;
+
+        // add plugin-own site-packages to sys.path
+        engine->eval("import sys as _llse_py_sys_module\n"
+            "_llse_py_sys_module.path.insert(0, '" + realPackageInstallDirStr + "')");
+
+        // bindAPIs
+        try {
+            BindAPIs(engine);
+        } catch (const Exception& e) {
+            logger.error("Fail in Binding APIs!\n");
+            throw;
         }
 
         // Load depend libs
