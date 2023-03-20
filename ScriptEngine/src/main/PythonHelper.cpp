@@ -38,6 +38,8 @@ bool initPythonRuntime() {
         script::py_interop::setPythonHomePath(L".\\plugins\\lib\\python-env");
         script::py_interop::setModuleSearchPaths({
             L".\\plugins\\lib\\python-env\\python310.zip",
+            L".\\plugins\\lib\\python-env\\DLLs",
+            L".\\plugins\\lib\\python-env\\Lib",
             L".\\plugins\\lib\\python-env\\Lib\\site-packages",
         });
         pythonInited = true;
