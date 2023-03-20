@@ -361,7 +361,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
             auto sp = getServerPlayer(nid, pkt.clientSubId);
             if (!sp)
                 return;
-            if (!sp->tryGetComponent<UserEntityIdentifierComponent>())
+            if (!sp->getUserEntityIdentifierComponent())
                 return;
             bool flying;
             if (!pkt.tryGetBool(flying))

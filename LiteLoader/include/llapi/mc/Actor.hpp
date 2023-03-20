@@ -53,6 +53,7 @@ public:
     LIAPI std::vector<std::string> getAllTags();
     LIAPI BlockInstance getBlockFromViewVector(bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false) const;
     LIAPI BlockInstance getBlockFromViewVector(FaceID& face, bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false) const;
+    LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent() const;
     LIAPI Actor* getActorFromViewVector(float maxDistance);
     LIAPI BlockPos getBlockPos();
     LIAPI BlockInstance getBlockStandingOn() const;
@@ -76,7 +77,7 @@ public:
     LIAPI float quickEvalMolangScript(const string& expression);
     LIAPI Biome* getBiome();
     LIAPI float getRealSpeed() const;
-    LIAPI class EntityContext& getEntityContext() const;
+    LIAPI class EntityContext* getEntityContext() const;
     //LIAPI Json::Value quickEvalMolangScriptAsJson(const string& expression);
 
     inline Vec3 getPos()
@@ -96,11 +97,11 @@ public:
         return getDimensionBlockSourceConst();
     }
 
-template<class T>
-    inline T* tryGetComponent() const {
-        auto& entityContext = getEntityContext();
-        return entityContext._enttRegistry().try_get<T>(entityContext._getEntityId());
-    }
+    // template<class T>
+    // inline T* tryGetComponent() const {
+    //     auto* entityContext = getEntityContext();
+    //     return entityContext->_enttRegistry().try_get<T>(entityContext->_getEntityId());
+    // }
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOR

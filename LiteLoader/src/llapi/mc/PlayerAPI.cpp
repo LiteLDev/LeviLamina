@@ -66,11 +66,11 @@
 using ll::logger;
 
 NetworkIdentifier* Player::getNetworkIdentifier() {
-    return (NetworkIdentifier*)(tryGetComponent<UserEntityIdentifierComponent>());
+    return (NetworkIdentifier*)(getUserEntityIdentifierComponent());
 }
 
 Certificate* Player::getCertificate() {
-    UserEntityIdentifierComponent* ueic = tryGetComponent<UserEntityIdentifierComponent>();
+    UserEntityIdentifierComponent* ueic = getUserEntityIdentifierComponent();
     if (ueic) {
         return ueic->mCertificate.get();
     }
@@ -392,14 +392,14 @@ bool Player::refreshAttributes(std::vector<Attribute const*> const& attributes) 
 }
 
 string Player::getUuid() {
-    auto ueic = tryGetComponent<UserEntityIdentifierComponent>();
+    auto ueic = getUserEntityIdentifierComponent();
     if (!ueic)
         return "";
     return ueic->mUUID.asString();
 }
 
 unsigned char Player::getClientSubId() {
-    auto ueic = tryGetComponent<UserEntityIdentifierComponent>();
+    auto ueic = getUserEntityIdentifierComponent();
     if (!ueic)
         return -1;
     return ueic->mClientSubId;
