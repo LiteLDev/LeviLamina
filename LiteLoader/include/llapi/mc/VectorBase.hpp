@@ -171,7 +171,7 @@ constexpr void unroll(Fn fn) {
     [[nodiscard]] inline T add(_t_type_ first, Args... args) const {                                                   \
         static_assert(sizeof...(args) <= N - 1, "too many arguments!");                                                \
         T tmp = (*this);                                                                                               \
-        const std::array<_t_type_> vec = {first, args...};                                                             \
+        const std::array<_t_type_, sizeof...(args) + 1> vec = {first, args...};                                        \
         unroll<vec.size()>([&](size_t iter) { tmp[iter] += vec[iter]; });                                              \
         return tmp;                                                                                                    \
     }                                                                                                                  \
@@ -179,7 +179,7 @@ constexpr void unroll(Fn fn) {
     [[nodiscard]] inline T sub(_t_type_ first, Args... args) const {                                                   \
         static_assert(sizeof...(args) <= N - 1, "too many arguments!");                                                \
         T tmp = (*this);                                                                                               \
-        const std::array<_t_type_> vec = {first, args...};                                                             \
+        const std::array<_t_type_, sizeof...(args) + 1> vec = {first, args...};                                        \
         unroll<vec.size()>([&](size_t iter) { tmp[iter] -= vec[iter]; });                                              \
         return tmp;                                                                                                    \
     }                                                                                                                  \
@@ -187,7 +187,7 @@ constexpr void unroll(Fn fn) {
     [[nodiscard]] inline T mul(_t_type_ first, Args... args) const {                                                   \
         static_assert(sizeof...(args) <= N - 1, "too many arguments!");                                                \
         T tmp = (*this);                                                                                               \
-        const std::array<_t_type_> vec = {first, args...};                                                             \
+        const std::array<_t_type_, sizeof...(args) + 1> vec = {first, args...};                                        \
         unroll<vec.size()>([&](size_t iter) { tmp[iter] *= vec[iter]; });                                              \
         return tmp;                                                                                                    \
     }                                                                                                                  \
@@ -195,7 +195,7 @@ constexpr void unroll(Fn fn) {
     [[nodiscard]] inline T div(_t_type_ first, Args... args) const {                                                   \
         static_assert(sizeof...(args) <= N - 1, "too many arguments!");                                                \
         T tmp = (*this);                                                                                               \
-        const std::array<_t_type_> vec = {first, args...};                                                             \
+        const std::array<_t_type_, sizeof...(args) + 1> vec = {first, args...};                                        \
         unroll<vec.size()>([&](size_t iter) { tmp[iter] /= vec[iter]; });                                              \
         return tmp;                                                                                                    \
     }                                                                                                                  \

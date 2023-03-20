@@ -14,7 +14,6 @@
 #include "ActorDamageSource.hpp"
 #include "EntityRegistryRefTraits.hpp"
 #include "VehicleUtils.hpp"
-#include "EntityContext.hpp"
 #include "Vec3.hpp"
 #include "Ref.hpp"
 class Actor;
