@@ -26,7 +26,7 @@ struct ArgumentsData {
   size_t size;
 };
 
-struct JscScriptClassState {
+struct ScriptClassState {
   ScriptEngine* scriptEngine_ = nullptr;
   Weak<Object> weakRef_;
 };
@@ -40,7 +40,7 @@ struct internal::ImplType<::script::Arguments> {
 
 template <>
 struct internal::ImplType<::script::ScriptClass> {
-  using type = template_backend::JscScriptClassState;
+  using type = template_backend::ScriptClassState;
 };
 
 }  // namespace script

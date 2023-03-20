@@ -66,7 +66,7 @@ class DestructWithGc : public ScriptClass {
  public:
   explicit DestructWithGc(const Local<Object>& thiz) : ScriptClass(thiz) {}
 
- protected:
+// protected:
   ~DestructWithGc() override { getScriptEngine()->gc(); }
 };
 

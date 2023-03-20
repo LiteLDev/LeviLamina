@@ -22,7 +22,7 @@ std::unordered_map<std::string, std::string> depends;
 
 // Debug engine
 ScriptEngine* debugEngine;
-bool globalDebug = false;
+bool isInConsoleDebugMode = false;
 
 // Pre-declared
 extern void BindAPIs(ScriptEngine* engine);
@@ -35,7 +35,7 @@ void LoadDepends() {
 
     std::filesystem::directory_iterator deps(LLSE_DEPENDS_DIR);
     for (auto& i : deps) {
-        if (i.is_regular_file() && i.path().filename() == string("BaseLib") + LLSE_PLUGINS_EXTENSION) {
+        if (i.is_regular_file() && i.path().filename() == string("BaseLib") + LLSE_SOURCE_FILE_EXTENSION) {
             try {
                 auto path = UTF82String(i.path().generic_u8string());
                 auto content = ReadAllFile(path);
@@ -74,7 +74,8 @@ void LoadDebugEngine() {
     // Load baselibs
     try {
         for (auto& [path, content] : depends) {
-            debugEngine->eval(content, path);
+            if(!content.empty())
+                debugEngine->eval(content, path);
         }
     } catch (const Exception& e) {
         logger.error("Fail in Loading Dependence Lib!\n");
@@ -98,7 +99,7 @@ void LoadMain() {
     int count = 0;
     std::filesystem::directory_iterator files(LLSE_PLUGINS_LOAD_DIR);
     for (auto& i : files) {
-        if (i.is_regular_file() && i.path().extension() == LLSE_PLUGINS_EXTENSION) {
+        if (i.is_regular_file() && i.path().extension() == LLSE_SOURCE_FILE_EXTENSION) {
             if (PluginManager::loadPlugin(UTF82String(i.path().generic_u8string()), false, true))
                 ++count;
         }
@@ -108,7 +109,6 @@ void LoadMain() {
                    fmt::arg("type", LLSE_MODULE_TYPE)));
 #endif
 }
-
 
 
 #ifdef LLSE_BACKEND_NODEJS
@@ -145,6 +145,7 @@ void LoadMain_NodeJs() {
             if (!PluginManager::loadPlugin(UTF82String(pth.u8string()), false, true)) {
                 logger.error(tr("llse.loader.loadMain.nodejs.installPack.fail"));
             }
+            ++count;
             ++installCount;
         }
     }
@@ -155,11 +156,62 @@ void LoadMain_NodeJs() {
 }
 #endif
 
+
+#ifdef LLSE_BACKEND_PYTHON
+// Python后端 - 主加载
+void LoadMain_Python() {
+    logger.info(tr("llse.loader.loadMain.start", fmt::arg("type", "Python")));
+    int installCount = 0;
+    int count = 0;
+
+    // Load plugins in PYTHON_ROOT_DIR
+    std::filesystem::directory_iterator files(LLSE_PLUGINS_ROOT_DIR);
+    for (auto& i : files) {
+        std::filesystem::path pth = i.path();
+        if (i.is_directory() && pth.filename() != "site-packages") {
+            if (std::filesystem::exists(pth / "pyproject.toml")) {
+                if (PluginManager::loadPlugin(UTF82String(pth.u8string()), false, true)) {
+                    ++count;
+                }
+            }
+            else {
+                logger.warn(tr("llse.loader.loadMain.python.ignored", UTF82String(pth.filename().u8string())));
+            }
+        }
+    }
+
+    // Unpack .llplugin & install
+    // Tips: Must after plugins loaded in PYTHON_ROOT_DIR
+    files = std::filesystem::directory_iterator(LLSE_PLUGINS_LOAD_DIR);
+    for (auto& i : files) {
+        std::filesystem::path pth = i.path();
+        if (i.is_regular_file() && EndsWith(UTF82String(pth.u8string()), LLSE_PLUGIN_PACKAGE_EXTENSION)) {
+            logger.info(tr("llse.loader.loadMain.python.installPack.start",
+                           fmt::arg("path", UTF82String(pth.u8string()))));
+            if (!PluginManager::loadPlugin(UTF82String(pth.u8string()), false, true)) {
+                logger.error(tr("llse.loader.loadMain.python.installPack.fail"));
+            }
+            ++count;
+            ++installCount;
+        }
+    }
+
+    logger.info(tr("llse.loader.loadMain.done",
+                   fmt::arg("count", count),
+                   fmt::arg("type", "Python")));
+}
+#endif
+
+
 void LoadMain_Package()
 {
 #ifdef LLSE_BACKEND_NODEJS
     // Process NodeJs backend's plugin load separately
     LoadMain_NodeJs();
+    return;
+#elif defined(LLSE_BACKEND_PYTHON)
+    // Process Python backend's plugin load separately
+    LoadMain_Python();
     return;
 #endif
 }

@@ -91,3 +91,14 @@ add_custom_command(
         COMMENT "Copying LiteLoader Lib to SDK directory"
         VERBATIM
 )
+
+# copy target DLL and PDB to local bds dev directory
+if(NOT "${BDS_LOCAL_DEV_ENVIRONMENT_DIR}" STREQUAL "")
+        add_custom_command(
+                TARGET LiteLoader POST_BUILD
+                COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:LiteLoader> ${BDS_LOCAL_DEV_ENVIRONMENT_DIR}/
+                COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_PDB_FILE:LiteLoader> ${BDS_LOCAL_DEV_ENVIRONMENT_DIR}/plugins/LiteLoader/pdb/
+                COMMENT "Copying ${PROJECT_NAME} DLL and PDB to local bds dev directory"
+                VERBATIM
+        )
+endif()

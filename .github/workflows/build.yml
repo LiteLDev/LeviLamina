@@ -91,7 +91,7 @@ jobs:
         if: github.event_name == 'push'
         run: |
           cd build/output/plugins/LiteLoader/ResourcePacks
-          7z a LiteLoaderBDS-CUI.tar LiteLoaderBDS-CUI
+          7z a LiteLoaderBDS-CUI.zip LiteLoaderBDS-CUI
           rm -r LiteLoaderBDS-CUI
         shell: bash
 

@@ -164,6 +164,29 @@ function API.sendMessage(to, message) _sendMessage(to, message); end
 
 )"sv;
 
+#elif defined(SCRIPTX_LANG_PYTHON)
+  return R"(
+class API_Class(object):
+  pass
+
+def createImage_Func(self, src):
+  img = Image()
+  img.src = src
+  return img
+
+def drawImage_Func(self, img):
+  _drawImage(img)
+
+def sendMessage_Func(self, to, message):
+  _sendMessage(to, message)
+
+API = API_Class()
+import types
+API.createImage = types.MethodType(createImage_Func, API)
+API.drawImage = types.MethodType(drawImage_Func, API)
+API.sendMessage = types.MethodType(sendMessage_Func, API)
+)"sv;
+
 #else
   throw std::logic_error("add for script language");
 #endif
@@ -187,6 +210,14 @@ std::string_view downloadGameScript() {
     img:drop();
 
     API.sendMessage("jenny", "hello there!");
+)";
+#elif defined(SCRIPTX_LANG_PYTHON)
+  return R"(
+img = API.createImage("https://landerlyoung.github.io/images/profile.png")
+API.drawImage(img)
+img.drop()
+
+API.sendMessage("jenny", "hello there!")
 )";
 #else
   throw std::logic_error("add for script language");

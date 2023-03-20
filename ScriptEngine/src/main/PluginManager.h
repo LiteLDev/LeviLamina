@@ -8,7 +8,7 @@ class PluginManager
 {
 private:
     static bool unRegisterPlugin(std::string name);
-    static bool loadPluginPackage(const std::string& dirPath, const std::string& packagePath, bool isHotLoad = false);
+    static bool loadPluginPackage(const std::string& dirPath, const std::string& packagePath, bool isHotLoad, bool isUncompressedFirstTime);
 
 public:
     static bool loadPlugin(const std::string& fileOrDirPath, bool isHotLoad = false, bool mustBeCurrectModule = false);

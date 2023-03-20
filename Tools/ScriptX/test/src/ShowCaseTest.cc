@@ -82,6 +82,14 @@ TEST_F(ShowCaseTest, SetTimeout) {
         end,
        0);
       )")
+      .py(u8R"(
+def func2():
+  setMark(2)
+def func1():
+  setMark(1);
+  test_setTimeout(func2, 0)
+test_setTimeout(func1, 0)
+)")
                      .select());
     auto&& queue = engine->messageQueue();
     ASSERT_EQ(mark, 0);

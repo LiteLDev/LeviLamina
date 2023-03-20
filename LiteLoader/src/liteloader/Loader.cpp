@@ -119,6 +119,21 @@ inline bool isExistNodeJsPlugin() {
     return exist;
 }
 
+inline bool isExistPythonPlugin() {
+    if (!filesystem::exists(LLSE_PYTHON_ROOT_DIR))
+        return false;
+
+    bool exist = false;
+    filesystem::directory_iterator ent(LLSE_PYTHON_ROOT_DIR);
+    for (auto& file : ent) {
+        if (file.is_directory() && filesystem::exists(file.path() / "pyproject.toml")) {
+            exist = true;
+            break;
+        }
+    }
+    return exist;
+}
+
 inline void initNodeJsDirectories() {
     // Check & Create nodejs directories
     if (!filesystem::exists(LLSE_NODEJS_ROOT_DIR)) {
@@ -133,6 +148,14 @@ inline void initNodeJsDirectories() {
         ofstream fout(package_json_path.c_str());
         fout << DEFAULT_ROOT_PACKAGE_JSON;
         ll::logger.warn(tr("ll.loader.initNodeJsDirectories.created"));
+    }
+}
+
+inline void initPythonDirectories() {
+    // Check & Create python directories
+    if (!filesystem::exists(LLSE_PYTHON_ROOT_DIR)) {
+        filesystem::create_directories(LLSE_PYTHON_ROOT_DIR);
+        ll::logger.warn(tr("ll.loader.initPythonDirectories.created"));
     }
 }
 
@@ -302,7 +325,10 @@ void ll::LoadMain() {
     // Load ScriptEngine
     if (ll::globalConfig.enableScriptEngine) {
         initNodeJsDirectories();
-        if (ll::globalConfig.alwaysLaunchScriptEngine || isExistNodeJsPlugin() || isExistScriptPlugin()) {
+        initPythonDirectories();
+        if (ll::globalConfig.alwaysLaunchScriptEngine || isExistNodeJsPlugin() || isExistPythonPlugin() 
+            || isExistScriptPlugin())
+        {
             loadScriptEngine();
         }
     }

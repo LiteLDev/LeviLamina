@@ -7,6 +7,7 @@ such as:
 1. `V8` -> `script::v8_interop`
 1. `JavaScriptCore` -> `script::jsc_interop`
 1. `Lua` -> `script::lua_interop`
+1. `Python` -> `script::py_interop`
 
 Mainly provide capabilities:
 1. Get the internal native engine instance from the engine pointer

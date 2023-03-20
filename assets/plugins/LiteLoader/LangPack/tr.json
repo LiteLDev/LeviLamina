@@ -29,7 +29,11 @@
         }
       },
       "bstats": {
-        "enabled": "bStats has been enabled, you can edit plugins/bStats/config.json to disable it"
+        "enabled": "bStats etkinleştirildi, devre dışı bırakmak için plugins/bStats/config.json dosyasını düzenleyebilirsiniz"
+      },
+      "unpackResources": {
+        "begin": "Unpacking LiteLoaderBDS runtime resources. Please wait patiently...",
+        "end": "Unpacked."
       }
     },
     "antiAbnormalItem": {
@@ -215,6 +219,9 @@
       },
       "initNodeJsDirectories": {
         "created": "Node.js runtime dizini bulunamadı, oluşturuldu."
+      },
+      "initPythonDirectories": {
+        "created": "Python runtime directory no found, created."
       }
     },
     "notice": {
@@ -241,6 +248,9 @@
     },
     "unzipNodeModules": {
       "fail": "node_modules.tar sıkıştırması açılamadı."
+    },
+    "unzipPythonModules": {
+      "fail": "Failed to unzip python-env.zip"
     }
   },
   "llse": {
@@ -284,6 +294,13 @@
         "loadedPlugin": "{type} eklenti <{name}> yüklendi.",
         "installPluginPack": {
           "done": "{count} tane {type} eklenti paket(ler) indirildi."
+        },
+        "python": {
+          "ignored": "No pyproject.toml file found in directory {path}, ignored.",
+          "installPack": {
+            "start": "Found Python plugin pack \"{path}\"! Try installing...",
+            "fail": "Failed to install plugin pack {}, please check the source files!"
+          }
         }
       },
       "nodejs": {
@@ -294,6 +311,13 @@
         },
         "register": {
           "fail": "Eklenti {name} kaydedilmesine yardımcı olunamıyor!"
+        }
+      },
+      "python": {
+        "executePipInstall": {
+          "start": "Executing \"pip install\" for plugin {name}...",
+          "success": "Pip finished successfully.",
+          "fail": "Error occurred. Exit code: {code}"
         }
       }
     }
