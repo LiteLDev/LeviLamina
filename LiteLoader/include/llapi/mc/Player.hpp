@@ -106,7 +106,7 @@ public:
     LIAPI bool sendText(const std::string& text, TextType type = TextType::RAW);
 
     template <TextType ttype = TextType::RAW, typename... Args>
-    inline bool sendText(const std::string& text, Args&&... args) {
+    inline bool trSendText(const std::string& text, Args&&... args) {
         return sendText(this->tr(text, std::forward<Args>(args)...), ttype);
     }
     template <typename... Args>
