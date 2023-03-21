@@ -133,8 +133,8 @@ bool loadPythonPlugin(std::string dirPath, const std::string& packagePath, bool 
         ENGINE_OWN_DATA()->pluginFileOrDirPath = dirPath;
         ENGINE_OWN_DATA()->logger.title = pluginName;
 
-        // add plugin-own site-packages & plugin source dir to sys.path
         try {
+            // add plugin-own site-packages & plugin source dir to sys.path
             string pluginSitePackageFormatted = UTF82String(
                 std::filesystem::canonical(realPackageInstallDir.make_preferred()).u8string());
             string sourceDirFormatted = UTF82String(
@@ -142,6 +142,11 @@ bool loadPythonPlugin(std::string dirPath, const std::string& packagePath, bool 
             engine->eval("import sys as _llse_py_sys_module\n"
                 "_llse_py_sys_module.path.insert(0, r'" + pluginSitePackageFormatted + "')\n"
                 "_llse_py_sys_module.path.insert(0, r'" + sourceDirFormatted + "')");
+
+            // add __file__ to engine
+            string entryPathFormatted = UTF82String(
+                std::filesystem::canonical(filesystem::path(entryPath).make_preferred()).u8string());
+            engine->set("__file__", entryPathFormatted);
         }
         catch (const Exception& e) {
             logger.error("Fail in setting sys.path!\n");
