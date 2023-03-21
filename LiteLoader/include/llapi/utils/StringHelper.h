@@ -65,3 +65,7 @@ std::string IntToHexStr(const T& value, bool upper = true, bool no0x = true,
     }
     return result;
 }
+
+inline std::string asString(std::string_view v) {
+    return {v.data(), v.size()};
+}

@@ -220,6 +220,14 @@ namespace mce {
         inline static Color min(const Color& k, const Color& l) {
             return {std::min(k.r, l.r), std::min(k.g, l.g), std::min(k.b, l.b), std::min(k.a, l.a)};
         }
+
+        inline static Color lerp(const Color& k, const Color& l, float m) {
+            return k * (1.0f - m) + l * m;
+        }
+
+        inline static Color mix(const Color& k, const Color& l, float m) {
+            return lerp(k, l, m);
+        }
     };
 
     static std::unordered_map<ColorPalette, std::pair<char, Color>> const particleColors = {

@@ -20,6 +20,11 @@ class Hopper {
 #define AFTER_EXTRA
 // Add Member There
 
+public:
+    inline bool isEntity() {
+        return dAccess<bool>(this, 5);
+    }
+
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOPPER
 public:
