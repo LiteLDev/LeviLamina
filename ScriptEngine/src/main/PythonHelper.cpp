@@ -143,10 +143,11 @@ bool loadPythonPlugin(std::string dirPath, const std::string& packagePath, bool 
                 "_llse_py_sys_module.path.insert(0, r'" + pluginSitePackageFormatted + "')\n"
                 "_llse_py_sys_module.path.insert(0, r'" + sourceDirFormatted + "')");
 
-            // add __file__ to engine
+            // set __file__ and __name__
             string entryPathFormatted = UTF82String(
                 std::filesystem::canonical(filesystem::path(entryPath).make_preferred()).u8string());
             engine->set("__file__", entryPathFormatted);
+            // engine->set("__name__", String::newString("__main__"));
         }
         catch (const Exception& e) {
             logger.error("Fail in setting sys.path!\n");

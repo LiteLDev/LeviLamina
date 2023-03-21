@@ -128,7 +128,10 @@ PyEngine* currentEngine();
 PyEngine* currentEngineChecked();
 
 // @return borrowed ref
-PyObject* getGlobalDict();
+PyObject* getGlobalMain();
+
+// @return borrowed ref
+PyObject* getGlobalBuiltin();
 
 void extendLifeTimeToNextLoop(PyEngine* engine, PyObject* obj);
 }  // namespace script::py_backend

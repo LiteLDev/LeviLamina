@@ -280,8 +280,7 @@ PyObject* newExceptionInstance(PyTypeObject *pType, PyObject* pValue, PyObject* 
 
   // set traceback if exists
   if(pTraceback && pTraceback != Py_None)
-    PyException_SetTraceback(exceptionObj, pTraceback);  // no need to incref
-
+    PyException_SetTraceback(exceptionObj, Py_NewRef(pTraceback));
   return exceptionObj;
 }
 
@@ -324,7 +323,11 @@ PyObject* checkAndGetException() {
     PyObject *pValue, *pTraceback;
     PyErr_Fetch((PyObject**)(&pType), &pValue, &pTraceback);
     PyErr_NormalizeException((PyObject**)(&pType), &pValue, &pTraceback);
-    return newExceptionInstance(pType, pValue, pTraceback);
+    PyObject* exceptionObj = newExceptionInstance(pType, pValue, pTraceback);
+    Py_XDECREF(pType);
+    Py_XDECREF(pValue);
+    Py_XDECREF(pTraceback);
+    return exceptionObj;
   }
   return Py_NewRef(Py_None);
 }
@@ -333,10 +336,18 @@ PyEngine* currentEngine() { return EngineScope::currentEngineAs<PyEngine>(); }
 
 PyEngine* currentEngineChecked() { return &EngineScope::currentEngineCheckedAs<PyEngine>(); }
 
-PyObject* getGlobalDict() {
+PyObject* getGlobalMain() {
   PyObject* m = PyImport_AddModule("__main__");
   if (m == nullptr) {
     throw Exception("can't find __main__ module");
+  }
+  return PyModule_GetDict(m);
+}
+
+PyObject* getGlobalBuiltin() {
+  PyObject* m = PyImport_AddModule("builtins");
+  if (m == nullptr) {
+    throw Exception("can't find builtins module");
   }
   return PyModule_GetDict(m);
 }

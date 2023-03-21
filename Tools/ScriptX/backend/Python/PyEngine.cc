@@ -134,15 +134,23 @@ void PyEngine::destroy() noexcept {
 }
 
 Local<Value> PyEngine::get(const Local<String>& key) {
-  PyObject* item = getDictItem(getGlobalDict(), key.toStringHolder().c_str());
+  // First find in __builtins__
+  PyObject* item = getDictItem(getGlobalBuiltin(), key.toStringHolder().c_str());
   if (item)
     return py_interop::toLocal<Value>(item);
   else
-    return py_interop::toLocal<Value>(Py_None);
+  {
+    // No found. Find in __main__
+    item = getDictItem(getGlobalMain(), key.toStringHolder().c_str());
+    if (item)
+      return py_interop::toLocal<Value>(item);
+    else
+      return py_interop::toLocal<Value>(Py_None);
+  }
 }
 
 void PyEngine::set(const Local<String>& key, const Local<Value>& value) {
-  setDictItem(getGlobalDict(), key.toStringHolder().c_str(), value.val_);
+  setDictItem(getGlobalBuiltin(), key.toStringHolder().c_str(), value.val_);
   //Py_DECREF(value.val_);
 }
 
@@ -195,11 +203,11 @@ Local<Value> PyEngine::eval(const Local<String>& script, const Local<Value>& sou
   if(!mayCodeBeExpression)
   {
     // No way to get return value. result value is always Py_None
-    PyObject* result = PyRun_StringFlags(source, Py_file_input, getGlobalDict(), nullptr, nullptr);
+    PyObject* result = PyRun_StringFlags(source, Py_file_input, getGlobalMain(), nullptr, nullptr);
     return py_interop::asLocal<Value>(result);
   }
   // Try to eval in "Py_eval_input" mode
-  PyObject* result = PyRun_StringFlags(source, Py_eval_input, getGlobalDict(), nullptr, nullptr);
+  PyObject* result = PyRun_StringFlags(source, Py_eval_input, getGlobalMain(), nullptr, nullptr);
   if (PyErr_Occurred()) {
     // Get exception
     PyTypeObject *pType;
@@ -209,19 +217,23 @@ Local<Value> PyEngine::eval(const Local<String>& script, const Local<Value>& sou
 
     // is SyntaxError?
     std::string typeName{pType->tp_name};
-    Py_XDECREF(pType);
-    Py_XDECREF(pValue);
-    Py_XDECREF(pTraceback);
     if(typeName.find("SyntaxError") != std::string::npos)
     {
+      Py_XDECREF(pType);
+      Py_XDECREF(pValue);
+      Py_XDECREF(pTraceback);
       // Code is not actually executed now. Try Py_file_input again.
-      PyObject* result = PyRun_StringFlags(source, Py_file_input, getGlobalDict(), nullptr, nullptr);
+      PyObject* result = PyRun_StringFlags(source, Py_file_input, getGlobalMain(), nullptr, nullptr);
       checkAndThrowException();     // If get exception again, just throw it
       return py_interop::asLocal<Value>(result);    // Succeed in Py_file_input. Return None.
     }
     else {
       // Not SyntaxError. Must throw out here
-      throw Exception(py_interop::asLocal<Value>(newExceptionInstance(pType, pValue, pTraceback)));
+      Exception e(py_interop::asLocal<Value>(newExceptionInstance(pType, pValue, pTraceback)));
+      Py_XDECREF(pType);
+      Py_XDECREF(pValue);
+      Py_XDECREF(pTraceback);
+      throw e;
     }
   }
   else
@@ -249,7 +261,7 @@ Local<Value> PyEngine::loadFile(const Local<String>& scriptFile) {
   Local<String> sourceFileName = String::newString(sourceFilePath);
 
   const char* source = content.asString().toStringHolder().c_str();
-  PyObject* result = PyRun_StringFlags(source, Py_file_input, getGlobalDict(), nullptr, nullptr);
+  PyObject* result = PyRun_StringFlags(source, Py_file_input, getGlobalMain(), nullptr, nullptr);
   checkAndThrowException();
   return py_interop::asLocal<Value>(result);
 }
