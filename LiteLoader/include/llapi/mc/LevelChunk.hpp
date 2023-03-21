@@ -351,13 +351,13 @@ public:
      */
     MCAPI class ChunkPos const & getPosition() const;
     /**
-     * @symbol ?getPreWorldGenHeightmap\@LevelChunk\@\@QEBA?AVHeightmapWrapper\@\@XZ
-     */
-    MCAPI class HeightmapWrapper getPreWorldGenHeightmap() const;
-    /**
      * @symbol ?getPreWorldGenHeightmap\@LevelChunk\@\@QEBA?AVChunkLocalHeight\@\@AEBVChunkBlockPos\@\@\@Z
      */
     MCAPI class ChunkLocalHeight getPreWorldGenHeightmap(class ChunkBlockPos const &) const;
+    /**
+     * @symbol ?getPreWorldGenHeightmap\@LevelChunk\@\@QEBA?AVHeightmapWrapper\@\@XZ
+     */
+    MCAPI class HeightmapWrapper getPreWorldGenHeightmap() const;
     /**
      * @symbol ?getPreservedBlockEntities\@LevelChunk\@\@QEBAAEBV?$vector\@V?$shared_ptr\@VBlockActor\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VBlockActor\@\@\@std\@\@\@2\@\@std\@\@XZ
      */
@@ -379,25 +379,25 @@ public:
      */
     MCAPI struct std::atomic<enum class ChunkState> const & getState() const;
     /**
-     * @symbol ?getSubChunk\@LevelChunk\@\@QEBAPEBUSubChunk\@\@F\@Z
-     */
-    MCAPI struct SubChunk const * getSubChunk(short) const;
-    /**
      * @symbol ?getSubChunk\@LevelChunk\@\@QEAAPEAUSubChunk\@\@F\@Z
      */
     MCAPI struct SubChunk * getSubChunk(short);
+    /**
+     * @symbol ?getSubChunk\@LevelChunk\@\@QEBAPEBUSubChunk\@\@F\@Z
+     */
+    MCAPI struct SubChunk const * getSubChunk(short) const;
     /**
      * @symbol ?getSurfaceBiome\@LevelChunk\@\@QEBAAEBVBiome\@\@VChunkBlockPos\@\@\@Z
      */
     MCAPI class Biome const & getSurfaceBiome(class ChunkBlockPos) const;
     /**
-     * @symbol ?getTickQueue\@LevelChunk\@\@QEBAAEBVBlockTickingQueue\@\@XZ
-     */
-    MCAPI class BlockTickingQueue const & getTickQueue() const;
-    /**
      * @symbol ?getTickQueue\@LevelChunk\@\@QEAAAEAVBlockTickingQueue\@\@XZ
      */
     MCAPI class BlockTickingQueue & getTickQueue();
+    /**
+     * @symbol ?getTickQueue\@LevelChunk\@\@QEBAAEBVBlockTickingQueue\@\@XZ
+     */
+    MCAPI class BlockTickingQueue const & getTickQueue() const;
     /**
      * @symbol ?getTopRainBlockPos\@LevelChunk\@\@QEAA?BVBlockPos\@\@AEBVChunkBlockPos\@\@\@Z
      */

@@ -33,13 +33,13 @@ public:
      */
     MCAPI FilterInput(int);
     /**
-     * @symbol ??4FilterInput\@\@QEAAAEAV0\@$$QEAV0\@\@Z
-     */
-    MCAPI class FilterInput & operator=(class FilterInput &&);
-    /**
      * @symbol ??4FilterInput\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
     MCAPI class FilterInput & operator=(class FilterInput const &);
+    /**
+     * @symbol ??4FilterInput\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     */
+    MCAPI class FilterInput & operator=(class FilterInput &&);
     /**
      * @symbol ??1FilterInput\@\@QEAA\@XZ
      */

@@ -332,13 +332,13 @@ public:
      */
     MCVAPI void fireEventEntitySpawned(class Player *, int, unsigned int);
     /**
-     * @symbol ?fireEventGameRulesUpdated\@MinecraftEventing\@\@UEAAXMMAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCVAPI void fireEventGameRulesUpdated(float, float, std::string const &);
-    /**
      * @symbol ?fireEventGameRulesUpdated\@MinecraftEventing\@\@UEAAXHHAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCVAPI void fireEventGameRulesUpdated(int, int, std::string const &);
+    /**
+     * @symbol ?fireEventGameRulesUpdated\@MinecraftEventing\@\@UEAAXMMAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCVAPI void fireEventGameRulesUpdated(float, float, std::string const &);
     /**
      * @symbol ?fireEventGameRulesUpdated\@MinecraftEventing\@\@UEAAX_N0AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -568,13 +568,13 @@ public:
      */
     MCVAPI void fireEventPlayerDamaged(class Player *, enum class ActorDamageCause);
     /**
-     * @symbol ?fireEventPlayerJoinWorld\@MinecraftEventing\@\@UEAAXAEBIW4SubClientId\@\@W4PlayerJoinWorldAttemptState\@IConnectionEventing\@\@HW4DisconnectFailReason\@Connection\@\@W4TransportLayer\@\@\@Z
-     */
-    MCVAPI void fireEventPlayerJoinWorld(unsigned int const &, enum class SubClientId, enum class IConnectionEventing::PlayerJoinWorldAttemptState, int, enum class Connection::DisconnectFailReason, enum class TransportLayer);
-    /**
      * @symbol ?fireEventPlayerJoinWorld\@MinecraftEventing\@\@UEAAXAEBIW4SubClientId\@\@W4PlayerJoinWorldAttemptState\@IConnectionEventing\@\@HW4TransportLayer\@\@\@Z
      */
     MCVAPI void fireEventPlayerJoinWorld(unsigned int const &, enum class SubClientId, enum class IConnectionEventing::PlayerJoinWorldAttemptState, int, enum class TransportLayer);
+    /**
+     * @symbol ?fireEventPlayerJoinWorld\@MinecraftEventing\@\@UEAAXAEBIW4SubClientId\@\@W4PlayerJoinWorldAttemptState\@IConnectionEventing\@\@HW4DisconnectFailReason\@Connection\@\@W4TransportLayer\@\@\@Z
+     */
+    MCVAPI void fireEventPlayerJoinWorld(unsigned int const &, enum class SubClientId, enum class IConnectionEventing::PlayerJoinWorldAttemptState, int, enum class Connection::DisconnectFailReason, enum class TransportLayer);
     /**
      * @symbol ?fireEventPlayerKicked\@MinecraftEventing\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */

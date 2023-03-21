@@ -45,6 +45,10 @@ public:
      */
     MCAPI std::vector<struct ScoreboardId> getAllScoreboardIds() const;
     /**
+     * @symbol ?getScoreboardId\@IdentityDictionary\@\@QEBAAEBUScoreboardId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI struct ScoreboardId const & getScoreboardId(std::string const &) const;
+    /**
      * @symbol ?getScoreboardId\@IdentityDictionary\@\@QEBAAEBUScoreboardId\@\@AEBUPlayerScoreboardId\@\@\@Z
      */
     MCAPI struct ScoreboardId const & getScoreboardId(struct PlayerScoreboardId const &) const;
@@ -53,14 +57,6 @@ public:
      */
     MCAPI struct ScoreboardId const & getScoreboardId(struct ActorUniqueID const &) const;
     /**
-     * @symbol ?getScoreboardId\@IdentityDictionary\@\@QEBAAEBUScoreboardId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI struct ScoreboardId const & getScoreboardId(std::string const &) const;
-    /**
-     * @symbol ?registerIdentity\@IdentityDictionary\@\@QEAAAEBUScoreboardId\@\@AEBU2\@AEBUActorUniqueID\@\@\@Z
-     */
-    MCAPI struct ScoreboardId const & registerIdentity(struct ScoreboardId const &, struct ActorUniqueID const &);
-    /**
      * @symbol ?registerIdentity\@IdentityDictionary\@\@QEAAAEBUScoreboardId\@\@AEBU2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI struct ScoreboardId const & registerIdentity(struct ScoreboardId const &, std::string const &);
@@ -68,6 +64,10 @@ public:
      * @symbol ?registerIdentity\@IdentityDictionary\@\@QEAAAEBUScoreboardId\@\@AEBU2\@AEBUPlayerScoreboardId\@\@\@Z
      */
     MCAPI struct ScoreboardId const & registerIdentity(struct ScoreboardId const &, struct PlayerScoreboardId const &);
+    /**
+     * @symbol ?registerIdentity\@IdentityDictionary\@\@QEAAAEBUScoreboardId\@\@AEBU2\@AEBUActorUniqueID\@\@\@Z
+     */
+    MCAPI struct ScoreboardId const & registerIdentity(struct ScoreboardId const &, struct ActorUniqueID const &);
     /**
      * @symbol ?shouldConvertFakePlayer\@IdentityDictionary\@\@QEAA_NAEBUPlayerScoreboardId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */

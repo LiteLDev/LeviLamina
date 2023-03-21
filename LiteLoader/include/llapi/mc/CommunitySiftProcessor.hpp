@@ -87,13 +87,13 @@ public:
      */
     MCAPI void _processEvent(class Player const &, enum class TextProcessingEventOrigin, class UserEntityIdentifierComponent const *, std::string const &);
     /**
-     * @symbol ?_processMessages\@CommunitySiftProcessor\@\@AEAA?AVCallbackToken\@\@AEBVPlayer\@\@_NW4TextProcessingEventOrigin\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@6\@V?$function\@$$A6AXAEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@0\@Z\@6\@\@Z
-     */
-    MCAPI class CallbackToken _processMessages(class Player const &, bool, enum class TextProcessingEventOrigin, std::vector<std::string> const &, std::string const &, class std::function<void (std::vector<std::string> const &, std::vector<std::string> const &)>);
-    /**
      * @symbol ?_processMessages\@CommunitySiftProcessor\@\@AEAA?AVCallbackToken\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0PEAVIMinecraftEventing\@\@_NW4TextProcessingEventOrigin\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@4\@AEBV34\@V?$function\@$$A6AXAEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@0\@Z\@4\@\@Z
      */
     MCAPI class CallbackToken _processMessages(std::string, std::string, class IMinecraftEventing *, bool, enum class TextProcessingEventOrigin, std::vector<std::string> const &, std::string const &, class std::function<void (std::vector<std::string> const &, std::vector<std::string> const &)>);
+    /**
+     * @symbol ?_processMessages\@CommunitySiftProcessor\@\@AEAA?AVCallbackToken\@\@AEBVPlayer\@\@_NW4TextProcessingEventOrigin\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@6\@V?$function\@$$A6AXAEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@0\@Z\@6\@\@Z
+     */
+    MCAPI class CallbackToken _processMessages(class Player const &, bool, enum class TextProcessingEventOrigin, std::vector<std::string> const &, std::string const &, class std::function<void (std::vector<std::string> const &, std::vector<std::string> const &)>);
     /**
      * @symbol ?_validateCommunitySiftConfiguration\@CommunitySiftProcessor\@\@AEAA_NXZ
      */

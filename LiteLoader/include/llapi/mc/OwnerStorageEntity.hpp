@@ -54,13 +54,13 @@ public:
 
 //protected:
     /**
-     * @symbol ??0OwnerStorageEntity\@\@IEAA\@W4VariadicInit\@0\@AEAVEntityRegistry\@\@\@Z
-     */
-    MCAPI OwnerStorageEntity(enum class OwnerStorageEntity::VariadicInit, class EntityRegistry &);
-    /**
      * @symbol ??0OwnerStorageEntity\@\@IEAA\@$$QEAV0\@\@Z
      */
     MCAPI OwnerStorageEntity(class OwnerStorageEntity &&);
+    /**
+     * @symbol ??0OwnerStorageEntity\@\@IEAA\@W4VariadicInit\@0\@AEAVEntityRegistry\@\@\@Z
+     */
+    MCAPI OwnerStorageEntity(enum class OwnerStorageEntity::VariadicInit, class EntityRegistry &);
     /**
      * @symbol ??0OwnerStorageEntity\@\@IEAA\@W4EmptyInit\@0\@\@Z
      */

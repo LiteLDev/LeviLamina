@@ -29,6 +29,10 @@ public:
 
 public:
     /**
+     * @symbol ??0PerlinNoise\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI PerlinNoise(class PerlinNoise const &);
+    /**
      * @symbol ??0PerlinNoise\@\@QEAA\@AEAVIRandom\@\@UYBlendingBugSettings\@\@HH\@Z
      */
     MCAPI PerlinNoise(class IRandom &, struct YBlendingBugSettings, int, int);
@@ -40,10 +44,6 @@ public:
      * @symbol ??0PerlinNoise\@\@QEAA\@IHH\@Z
      */
     MCAPI PerlinNoise(unsigned int, int, int);
-    /**
-     * @symbol ??0PerlinNoise\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI PerlinNoise(class PerlinNoise const &);
     /**
      * @symbol ?getRegion\@PerlinNoise\@\@QEBAXPEAMAEBVVec3\@\@HHH1\@Z
      */

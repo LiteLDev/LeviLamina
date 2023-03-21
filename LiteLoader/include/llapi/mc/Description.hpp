@@ -31,7 +31,7 @@ public:
 public:
     /**
      * @vftbl 0
-     * @symbol ?getJsonName\@ManagedWanderingTraderDescription\@\@UEBAPEBDXZ
+     * @symbol ?getJsonName\@BehaviorTreeDescription\@\@UEBAPEBDXZ
      */
     virtual char const * getJsonName() const = 0;
     /**

@@ -66,7 +66,7 @@ public:
     virtual void tick();
     /**
      * @vftbl 7
-     * @symbol ?appendDebugInfo\@RaidGardenGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?appendDebugInfo\@LayEggGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const = 0;
     /**
@@ -86,7 +86,7 @@ public:
     virtual bool hasReachedTarget() const;
     /**
      * @vftbl 11
-     * @symbol ?isValidTarget\@RaidGardenGoal\@\@UEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     * @symbol ?isValidTarget\@LayEggGoal\@\@UEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &) = 0;
     /**

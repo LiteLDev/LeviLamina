@@ -100,13 +100,13 @@ public:
      */
     MCAPI class AttributeModifier getModifier(class mce::UUID const &) const;
     /**
-     * @symbol ?getModifiers\@AttributeInstance\@\@QEBA?AV?$vector\@VAttributeModifier\@\@V?$allocator\@VAttributeModifier\@\@\@std\@\@\@std\@\@XZ
-     */
-    MCAPI std::vector<class AttributeModifier> getModifiers() const;
-    /**
      * @symbol ?getModifiers\@AttributeInstance\@\@QEBA?AV?$vector\@VAttributeModifier\@\@V?$allocator\@VAttributeModifier\@\@\@std\@\@\@std\@\@H\@Z
      */
     MCAPI std::vector<class AttributeModifier> getModifiers(int) const;
+    /**
+     * @symbol ?getModifiers\@AttributeInstance\@\@QEBA?AV?$vector\@VAttributeModifier\@\@V?$allocator\@VAttributeModifier\@\@\@std\@\@\@std\@\@XZ
+     */
+    MCAPI std::vector<class AttributeModifier> getModifiers() const;
     /**
      * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NAEBVUUID\@mce\@\@\@Z
      */
@@ -160,6 +160,10 @@ public:
      */
     MCAPI void removeBuffs();
     /**
+     * @symbol ?removeModifier\@AttributeInstance\@\@QEAA_NAEBVUUID\@mce\@\@\@Z
+     */
+    MCAPI bool removeModifier(class mce::UUID const &);
+    /**
      * @symbol ?removeModifier\@AttributeInstance\@\@QEAAXV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@\@Z
      */
     MCAPI void removeModifier(class std::shared_ptr<class AttributeModifier>);
@@ -167,10 +171,6 @@ public:
      * @symbol ?removeModifier\@AttributeInstance\@\@QEAAXAEBVAttributeModifier\@\@\@Z
      */
     MCAPI void removeModifier(class AttributeModifier const &);
-    /**
-     * @symbol ?removeModifier\@AttributeInstance\@\@QEAA_NAEBVUUID\@mce\@\@\@Z
-     */
-    MCAPI bool removeModifier(class mce::UUID const &);
     /**
      * @symbol ?removeModifiers\@AttributeInstance\@\@QEAAXXZ
      */

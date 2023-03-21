@@ -51,7 +51,7 @@ public:
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?_read\@CommandRequestPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
@@ -62,13 +62,13 @@ public:
     MCVAPI ~CommandRequestPacket();
 #endif
     /**
-     * @symbol ??0CommandRequestPacket\@\@QEAA\@XZ
-     */
-    MCAPI CommandRequestPacket();
-    /**
      * @symbol ??0CommandRequestPacket\@\@QEAA\@AEAVCommandContext\@\@_N\@Z
      */
     MCAPI CommandRequestPacket(class CommandContext &, bool);
+    /**
+     * @symbol ??0CommandRequestPacket\@\@QEAA\@XZ
+     */
+    MCAPI CommandRequestPacket();
     /**
      * @symbol ?createCommandContext\@CommandRequestPacket\@\@QEBA?AV?$unique_ptr\@VCommandContext\@\@U?$default_delete\@VCommandContext\@\@\@std\@\@\@std\@\@AEBVNetworkIdentifier\@\@AEBV?$NonOwnerPointer\@VILevel\@\@\@Bedrock\@\@\@Z
      */

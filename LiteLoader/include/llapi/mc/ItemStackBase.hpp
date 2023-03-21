@@ -84,13 +84,13 @@ public:
      */
     MCAPI bool addComponents(class Json::Value const &, std::string &);
     /**
-     * @symbol ?addCustomUserData\@ItemStackBase\@\@QEAAXAEAVBlockActor\@\@AEAVBlockSource\@\@\@Z
-     */
-    MCAPI void addCustomUserData(class BlockActor &, class BlockSource &);
-    /**
      * @symbol ?addCustomUserData\@ItemStackBase\@\@QEAAXAEAVContainerComponent\@\@\@Z
      */
     MCAPI void addCustomUserData(class ContainerComponent &);
+    /**
+     * @symbol ?addCustomUserData\@ItemStackBase\@\@QEAAXAEAVBlockActor\@\@AEAVBlockSource\@\@\@Z
+     */
+    MCAPI void addCustomUserData(class BlockActor &, class BlockSource &);
     /**
      * @symbol ?canBeCharged\@ItemStackBase\@\@QEBA_NXZ
      */
@@ -264,13 +264,13 @@ public:
      */
     MCAPI enum class UseAnimation getUseAnimation() const;
     /**
-     * @symbol ?getUserData\@ItemStackBase\@\@QEBAPEBVCompoundTag\@\@XZ
-     */
-    MCAPI class CompoundTag const * getUserData() const;
-    /**
      * @symbol ?getUserData\@ItemStackBase\@\@QEAAPEAVCompoundTag\@\@XZ
      */
     MCAPI class CompoundTag * getUserData();
+    /**
+     * @symbol ?getUserData\@ItemStackBase\@\@QEBAPEBVCompoundTag\@\@XZ
+     */
+    MCAPI class CompoundTag const * getUserData() const;
     /**
      * @symbol ?getWasPickedUp\@ItemStackBase\@\@QEBA_NXZ
      */
@@ -304,13 +304,13 @@ public:
      */
     MCAPI bool hasSameUserData(class ItemStackBase const &) const;
     /**
-     * @symbol ?hasTag\@ItemStackBase\@\@QEBA_NAEBUItemTag\@\@\@Z
-     */
-    MCAPI bool hasTag(struct ItemTag const &) const;
-    /**
      * @symbol ?hasTag\@ItemStackBase\@\@QEBA_NAEB_K\@Z
      */
     MCAPI bool hasTag(unsigned __int64 const &) const;
+    /**
+     * @symbol ?hasTag\@ItemStackBase\@\@QEBA_NAEBUItemTag\@\@\@Z
+     */
+    MCAPI bool hasTag(struct ItemTag const &) const;
     /**
      * @symbol ?hasUserData\@ItemStackBase\@\@QEBA_NXZ
      */
@@ -480,13 +480,13 @@ public:
      */
     MCAPI void resetHoverName();
     /**
-     * @symbol ?sameItem\@ItemStackBase\@\@QEBA_NHH\@Z
-     */
-    MCAPI bool sameItem(int, int) const;
-    /**
      * @symbol ?sameItem\@ItemStackBase\@\@QEBA_NAEBV1\@\@Z
      */
     MCAPI bool sameItem(class ItemStackBase const &) const;
+    /**
+     * @symbol ?sameItem\@ItemStackBase\@\@QEBA_NHH\@Z
+     */
+    MCAPI bool sameItem(int, int) const;
     /**
      * @symbol ?sameItemAndAux\@ItemStackBase\@\@QEBA_NAEBV1\@\@Z
      */
@@ -634,21 +634,21 @@ public:
      */
     MCAPI ItemStackBase(class BlockLegacy const &, int);
     /**
-     * @symbol ??0ItemStackBase\@\@IEAA\@XZ
+     * @symbol ??0ItemStackBase\@\@IEAA\@AEBVBlock\@\@HPEBVCompoundTag\@\@\@Z
      */
-    MCAPI ItemStackBase();
+    MCAPI ItemStackBase(class Block const &, int, class CompoundTag const *);
     /**
      * @symbol ??0ItemStackBase\@\@IEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@HHPEBVCompoundTag\@\@\@Z
      */
     MCAPI ItemStackBase(class std::basic_string_view<char, struct std::char_traits<char>>, int, int, class CompoundTag const *);
     /**
-     * @symbol ??0ItemStackBase\@\@IEAA\@AEBVBlock\@\@HPEBVCompoundTag\@\@\@Z
-     */
-    MCAPI ItemStackBase(class Block const &, int, class CompoundTag const *);
-    /**
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBVRecipeIngredient\@\@\@Z
      */
     MCAPI ItemStackBase(class RecipeIngredient const &);
+    /**
+     * @symbol ??0ItemStackBase\@\@IEAA\@XZ
+     */
+    MCAPI ItemStackBase();
     /**
      * @symbol ?_getHoverFormattingPrefix\@ItemStackBase\@\@IEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
@@ -658,13 +658,13 @@ public:
      */
     MCAPI bool _setItem(int, bool);
     /**
-     * @symbol ?init\@ItemStackBase\@\@IEAAXAEBVBlockLegacy\@\@H\@Z
-     */
-    MCAPI void init(class BlockLegacy const &, int);
-    /**
      * @symbol ?init\@ItemStackBase\@\@IEAAXHHH_N\@Z
      */
     MCAPI void init(int, int, int, bool);
+    /**
+     * @symbol ?init\@ItemStackBase\@\@IEAAXAEBVBlockLegacy\@\@H\@Z
+     */
+    MCAPI void init(class BlockLegacy const &, int);
     /**
      * @symbol ?init\@ItemStackBase\@\@IEAAXAEBVItem\@\@HHPEBVCompoundTag\@\@_N\@Z
      */

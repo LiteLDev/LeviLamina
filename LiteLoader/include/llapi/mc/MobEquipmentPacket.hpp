@@ -53,7 +53,7 @@ public:
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?_read\@MobEquipmentPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
@@ -68,12 +68,12 @@ public:
      */
     MCAPI MobEquipmentPacket(class ActorRuntimeID, class ItemStack const &, int, int, enum class ContainerID);
     /**
-     * @symbol ??0MobEquipmentPacket\@\@QEAA\@XZ
-     */
-    MCAPI MobEquipmentPacket();
-    /**
      * @symbol ??0MobEquipmentPacket\@\@QEAA\@VActorRuntimeID\@\@AEBVNetworkItemStackDescriptor\@\@HHW4ContainerID\@\@\@Z
      */
     MCAPI MobEquipmentPacket(class ActorRuntimeID, class NetworkItemStackDescriptor const &, int, int, enum class ContainerID);
+    /**
+     * @symbol ??0MobEquipmentPacket\@\@QEAA\@XZ
+     */
+    MCAPI MobEquipmentPacket();
 
 };

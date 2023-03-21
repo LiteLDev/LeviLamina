@@ -41,13 +41,13 @@ public:
      */
     MCAPI GameRule(class GameRule &&);
     /**
-     * @symbol ??0GameRule\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
-     */
-    MCAPI GameRule(std::string const &, bool);
-    /**
      * @symbol ??0GameRule\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI GameRule(class GameRule const &);
+    /**
+     * @symbol ??0GameRule\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
+     */
+    MCAPI GameRule(std::string const &, bool);
     /**
      * @symbol ?allowUseInCommand\@GameRule\@\@QEBA_NXZ
      */

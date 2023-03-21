@@ -193,13 +193,13 @@ public:
     MCVAPI ~LevelStorage();
 #endif
     /**
-     * @symbol ?getServerId\@LevelStorage\@\@QEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPlayer\@\@_N\@Z
-     */
-    MCAPI std::string getServerId(class Player const &, bool);
-    /**
      * @symbol ?getServerId\@LevelStorage\@\@QEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUPlayerStorageIds\@\@\@Z
      */
     MCAPI std::string getServerId(struct PlayerStorageIds const &);
+    /**
+     * @symbol ?getServerId\@LevelStorage\@\@QEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPlayer\@\@_N\@Z
+     */
+    MCAPI std::string getServerId(class Player const &, bool);
     /**
      * @symbol ?loadAllPlayerIDs\@LevelStorage\@\@QEBA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@_N\@Z
      */

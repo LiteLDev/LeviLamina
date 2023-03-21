@@ -50,7 +50,7 @@ public:
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?_read\@MobArmorEquipmentPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
@@ -61,12 +61,12 @@ public:
     MCVAPI ~MobArmorEquipmentPacket();
 #endif
     /**
-     * @symbol ??0MobArmorEquipmentPacket\@\@QEAA\@XZ
-     */
-    MCAPI MobArmorEquipmentPacket();
-    /**
      * @symbol ??0MobArmorEquipmentPacket\@\@QEAA\@AEBVActor\@\@\@Z
      */
     MCAPI MobArmorEquipmentPacket(class Actor const &);
+    /**
+     * @symbol ??0MobArmorEquipmentPacket\@\@QEAA\@XZ
+     */
+    MCAPI MobArmorEquipmentPacket();
 
 };

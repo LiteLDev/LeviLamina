@@ -157,13 +157,13 @@ public:
     MCVAPI ~CompoundTag();
 #endif
     /**
-     * @symbol ??0CompoundTag\@\@QEAA\@XZ
-     */
-    MCAPI CompoundTag();
-    /**
      * @symbol ??0CompoundTag\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI CompoundTag(class CompoundTag &&);
+    /**
+     * @symbol ??0CompoundTag\@\@QEAA\@XZ
+     */
+    MCAPI CompoundTag();
     /**
      * @symbol ?append\@CompoundTag\@\@QEAAXAEBV1\@\@Z
      */
@@ -197,13 +197,13 @@ public:
      */
     MCAPI class std::_Tree_const_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, class CompoundTagVariant>>>> end() const;
     /**
-     * @symbol ?get\@CompoundTag\@\@QEBAPEBVTag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
-     */
-    MCAPI class Tag const * get(class std::basic_string_view<char, struct std::char_traits<char>>) const;
-    /**
      * @symbol ?get\@CompoundTag\@\@QEAAPEAVTag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
     MCAPI class Tag * get(class std::basic_string_view<char, struct std::char_traits<char>>);
+    /**
+     * @symbol ?get\@CompoundTag\@\@QEBAPEBVTag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
+     */
+    MCAPI class Tag const * get(class std::basic_string_view<char, struct std::char_traits<char>>) const;
     /**
      * @symbol ?getBoolean\@CompoundTag\@\@QEBA_NV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
@@ -257,13 +257,13 @@ public:
      */
     MCAPI class IntTag const * getIntTag(class std::basic_string_view<char, struct std::char_traits<char>>) const;
     /**
-     * @symbol ?getList\@CompoundTag\@\@QEAAPEAVListTag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
-     */
-    MCAPI class ListTag * getList(class std::basic_string_view<char, struct std::char_traits<char>>);
-    /**
      * @symbol ?getList\@CompoundTag\@\@QEBAPEBVListTag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
     MCAPI class ListTag const * getList(class std::basic_string_view<char, struct std::char_traits<char>>) const;
+    /**
+     * @symbol ?getList\@CompoundTag\@\@QEAAPEAVListTag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
+     */
+    MCAPI class ListTag * getList(class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
      * @symbol ?getShort\@CompoundTag\@\@QEBAFV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
@@ -309,13 +309,13 @@ public:
      */
     MCAPI struct TagMemoryChunk & putByteArray(std::string, struct TagMemoryChunk);
     /**
-     * @symbol ?putCompound\@CompoundTag\@\@QEAAPEAV1\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@3\@\@Z
-     */
-    MCAPI class CompoundTag * putCompound(std::string, std::unique_ptr<class CompoundTag>);
-    /**
      * @symbol ?putCompound\@CompoundTag\@\@QEAAAEAV1\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V1\@\@Z
      */
     MCAPI class CompoundTag & putCompound(std::string, class CompoundTag);
+    /**
+     * @symbol ?putCompound\@CompoundTag\@\@QEAAPEAV1\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@3\@\@Z
+     */
+    MCAPI class CompoundTag * putCompound(std::string, std::unique_ptr<class CompoundTag>);
     /**
      * @symbol ?putFloat\@CompoundTag\@\@QEAAAEAMV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@M\@Z
      */

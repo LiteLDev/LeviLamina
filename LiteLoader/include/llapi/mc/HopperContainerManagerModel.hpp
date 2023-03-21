@@ -41,12 +41,12 @@ public:
      */
     virtual class ContainerScreenContext _postInit();
     /**
-     * @symbol ??0HopperContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI HopperContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
-    /**
      * @symbol ??0HopperContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBUActorUniqueID\@\@\@Z
      */
     MCAPI HopperContainerManagerModel(enum class ContainerID, class Player &, struct ActorUniqueID const &);
+    /**
+     * @symbol ??0HopperContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI HopperContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
 
 };

@@ -50,7 +50,7 @@ public:
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?_read\@LevelEventPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
@@ -65,12 +65,12 @@ public:
      */
     MCAPI LevelEventPacket(enum class LevelEvent, float, float, float, int);
     /**
-     * @symbol ??0LevelEventPacket\@\@QEAA\@W4LevelEvent\@\@AEBVVec3\@\@H\@Z
-     */
-    MCAPI LevelEventPacket(enum class LevelEvent, class Vec3 const &, int);
-    /**
      * @symbol ??0LevelEventPacket\@\@QEAA\@XZ
      */
     MCAPI LevelEventPacket();
+    /**
+     * @symbol ??0LevelEventPacket\@\@QEAA\@W4LevelEvent\@\@AEBVVec3\@\@H\@Z
+     */
+    MCAPI LevelEventPacket(enum class LevelEvent, class Vec3 const &, int);
 
 };

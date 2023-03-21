@@ -30,13 +30,13 @@ public:
 
 public:
     /**
-     * @symbol ??0ContainerValidationResult\@\@QEAA\@W4ContainerValidationOutcome\@\@\@Z
-     */
-    MCAPI ContainerValidationResult(enum class ContainerValidationOutcome);
-    /**
      * @symbol ??0ContainerValidationResult\@\@QEAA\@$$QEAV?$vector\@UContainerValidationOperation\@\@V?$allocator\@UContainerValidationOperation\@\@\@std\@\@\@std\@\@W4ContainerValidationOutcome\@\@W4ContainerScreenRequestActionType\@\@\@Z
      */
     MCAPI ContainerValidationResult(std::vector<struct ContainerValidationOperation> &&, enum class ContainerValidationOutcome, enum class ContainerScreenRequestActionType);
+    /**
+     * @symbol ??0ContainerValidationResult\@\@QEAA\@W4ContainerValidationOutcome\@\@\@Z
+     */
+    MCAPI ContainerValidationResult(enum class ContainerValidationOutcome);
     /**
      * @symbol ?isSuccess\@ContainerValidationResult\@\@QEBA_NXZ
      */

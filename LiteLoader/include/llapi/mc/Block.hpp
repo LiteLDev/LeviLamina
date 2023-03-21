@@ -75,13 +75,13 @@ public:
      */
     virtual enum class BlockRenderLayer getRenderLayer() const;
     /**
-     * @symbol ??0Block\@\@QEAA\@GV?$not_null\@PEAVBlockLegacy\@\@\@gsl\@\@VCompoundTag\@\@AEBI\@Z
-     */
-    MCAPI Block(unsigned short, class gsl::not_null<class BlockLegacy *>, class CompoundTag, unsigned int const &);
-    /**
      * @symbol ??0Block\@\@QEAA\@GV?$not_null\@PEAVBlockLegacy\@\@\@gsl\@\@\@Z
      */
     MCAPI Block(unsigned short, class gsl::not_null<class BlockLegacy *>);
+    /**
+     * @symbol ??0Block\@\@QEAA\@GV?$not_null\@PEAVBlockLegacy\@\@\@gsl\@\@VCompoundTag\@\@AEBI\@Z
+     */
+    MCAPI Block(unsigned short, class gsl::not_null<class BlockLegacy *>, class CompoundTag, unsigned int const &);
     /**
      * @symbol ?addAABBs\@Block\@\@QEBAXAEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@\@Z
      */
@@ -135,13 +135,13 @@ public:
      */
     MCAPI bool canBeBrokenFromFalling() const;
     /**
-     * @symbol ?canBeBuiltOver\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlockItem\@\@\@Z
-     */
-    MCAPI bool canBeBuiltOver(class BlockSource &, class BlockPos const &, class BlockItem const &) const;
-    /**
      * @symbol ?canBeBuiltOver\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool canBeBuiltOver(class BlockSource &, class BlockPos const &) const;
+    /**
+     * @symbol ?canBeBuiltOver\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlockItem\@\@\@Z
+     */
+    MCAPI bool canBeBuiltOver(class BlockSource &, class BlockPos const &, class BlockItem const &) const;
     /**
      * @symbol ?canBeFertilized\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBV1\@\@Z
      */
@@ -259,13 +259,13 @@ public:
      */
     MCAPI bool getCollisionShape(class AABB &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
-     * @symbol ?getColor\@Block\@\@QEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI int getColor(class BlockSource &, class BlockPos const &) const;
-    /**
      * @symbol ?getColor\@Block\@\@QEBAHXZ
      */
     MCAPI int getColor() const;
+    /**
+     * @symbol ?getColor\@Block\@\@QEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI int getColor(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?getComparatorSignal\@Block\@\@QEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -571,13 +571,13 @@ public:
      */
     MCAPI bool mayPick() const;
     /**
-     * @symbol ?mayPlace\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
-     */
-    MCAPI bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
-    /**
      * @symbol ?mayPlace\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool mayPlace(class BlockSource &, class BlockPos const &) const;
+    /**
+     * @symbol ?mayPlace\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
+     */
+    MCAPI bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @symbol ?mayPlaceOn\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */

@@ -79,12 +79,12 @@ public:
      */
     virtual unsigned __int64 hash() const;
     /**
-     * @symbol ??0ShortTag\@\@QEAA\@F\@Z
-     */
-    MCAPI ShortTag(short);
-    /**
      * @symbol ??0ShortTag\@\@QEAA\@XZ
      */
     MCAPI ShortTag();
+    /**
+     * @symbol ??0ShortTag\@\@QEAA\@F\@Z
+     */
+    MCAPI ShortTag(short);
 
 };

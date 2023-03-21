@@ -32,17 +32,17 @@ public:
      */
     MCAPI GameVersion(class GameVersion const &);
     /**
-     * @symbol ??0GameVersion\@\@QEAA\@AEBVListTag\@\@\@Z
+     * @symbol ??0GameVersion\@\@QEAA\@IIIII\@Z
      */
-    MCAPI GameVersion(class ListTag const &);
+    MCAPI GameVersion(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int);
     /**
      * @symbol ??0GameVersion\@\@QEAA\@XZ
      */
     MCAPI GameVersion();
     /**
-     * @symbol ??0GameVersion\@\@QEAA\@IIIII\@Z
+     * @symbol ??0GameVersion\@\@QEAA\@AEBVListTag\@\@\@Z
      */
-    MCAPI GameVersion(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int);
+    MCAPI GameVersion(class ListTag const &);
     /**
      * @symbol ?asString\@GameVersion\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */

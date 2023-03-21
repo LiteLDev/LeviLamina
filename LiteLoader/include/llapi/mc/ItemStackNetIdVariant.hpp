@@ -59,6 +59,10 @@ public:
      */
     MCAPI bool isValid() const;
     /**
+     * @symbol ??4ItemStackNetIdVariant\@\@QEAAAEAU0\@AEBV?$TypedClientNetId\@UItemStackLegacyRequestIdTag\@\@H$0A\@\@\@\@Z
+     */
+    MCAPI struct ItemStackNetIdVariant & operator=(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &);
+    /**
      * @symbol ??4ItemStackNetIdVariant\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct ItemStackNetIdVariant & operator=(struct ItemStackNetIdVariant &&);
@@ -66,10 +70,6 @@ public:
      * @symbol ??4ItemStackNetIdVariant\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
     MCAPI struct ItemStackNetIdVariant & operator=(struct ItemStackNetIdVariant const &);
-    /**
-     * @symbol ??4ItemStackNetIdVariant\@\@QEAAAEAU0\@AEBV?$TypedClientNetId\@UItemStackLegacyRequestIdTag\@\@H$0A\@\@\@\@Z
-     */
-    MCAPI struct ItemStackNetIdVariant & operator=(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &);
     /**
      * @symbol ??4ItemStackNetIdVariant\@\@QEAAAEAU0\@AEBV?$TypedServerNetId\@UItemStackNetIdTag\@\@H$0A\@\@\@\@Z
      */

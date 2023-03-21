@@ -28,13 +28,13 @@ public:
 
 public:
     /**
-     * @symbol ??0SerializerContext\@\@QEAA\@XZ
-     */
-    MCAPI SerializerContext();
-    /**
      * @symbol ??0SerializerContext\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI SerializerContext(class SerializerContext const &);
+    /**
+     * @symbol ??0SerializerContext\@\@QEAA\@XZ
+     */
+    MCAPI SerializerContext();
     /**
      * @symbol ?clear\@SerializerContext\@\@QEAAXXZ
      */

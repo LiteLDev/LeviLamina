@@ -42,13 +42,13 @@ public:
      */
     MCAPI static bool getPosInDirection(class Vec3 &, class Mob &, int, int, int, bool, bool, class Vec3 *, struct IntRange const &, int, enum class SolidityCheckType);
     /**
-     * @symbol ?getPosTowards\@RandomPos\@\@SA_NAEAVVec3\@\@AEAVMob\@\@HHAEBV2\@\@Z
-     */
-    MCAPI static bool getPosTowards(class Vec3 &, class Mob &, int, int, class Vec3 const &);
-    /**
      * @symbol ?getPosTowards\@RandomPos\@\@SA_NAEAVRandom\@\@AEAVVec3\@\@AEAVMob\@\@HHAEBV3\@\@Z
      */
     MCAPI static bool getPosTowards(class Random &, class Vec3 &, class Mob &, int, int, class Vec3 const &);
+    /**
+     * @symbol ?getPosTowards\@RandomPos\@\@SA_NAEAVVec3\@\@AEAVMob\@\@HHAEBV2\@\@Z
+     */
+    MCAPI static bool getPosTowards(class Vec3 &, class Mob &, int, int, class Vec3 const &);
     /**
      * @symbol ?getSpawnPos\@RandomPos\@\@SA_NAEAVBlockSource\@\@AEAVRandom\@\@AEAVVec3\@\@HHH\@Z
      */

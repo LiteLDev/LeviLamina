@@ -36,13 +36,13 @@ public:
      */
     MCAPI WeakStorageFeature(enum class WeakStorageFeature::EmptyInit);
     /**
-     * @symbol ??0WeakStorageFeature\@\@IEAA\@AEBVOwnerStorageFeature\@\@\@Z
-     */
-    MCAPI WeakStorageFeature(class OwnerStorageFeature const &);
-    /**
      * @symbol ??0WeakStorageFeature\@\@IEAA\@$$QEAV0\@\@Z
      */
     MCAPI WeakStorageFeature(class WeakStorageFeature &&);
+    /**
+     * @symbol ??0WeakStorageFeature\@\@IEAA\@AEBVOwnerStorageFeature\@\@\@Z
+     */
+    MCAPI WeakStorageFeature(class OwnerStorageFeature const &);
     /**
      * @symbol ?_isSet\@WeakStorageFeature\@\@IEBA_NXZ
      */

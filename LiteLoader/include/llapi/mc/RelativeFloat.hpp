@@ -42,13 +42,13 @@ public:
 
 public:
     /**
-     * @symbol ??0RelativeFloat\@\@QEAA\@XZ
-     */
-    MCAPI RelativeFloat();
-    /**
      * @symbol ??0RelativeFloat\@\@QEAA\@M_N\@Z
      */
     MCAPI RelativeFloat(float, bool);
+    /**
+     * @symbol ??0RelativeFloat\@\@QEAA\@XZ
+     */
+    MCAPI RelativeFloat();
     /**
      * @symbol ?getValue\@RelativeFloat\@\@QEBAMM\@Z
      */

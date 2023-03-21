@@ -26,13 +26,13 @@ namespace ActorContainerDiffHelperImpl {
      */
     MCAPI void _applyDiff(class BaseAttributeMap &, std::vector<class gsl::not_null<class AttributeInstance const *>> const &);
     /**
-     * @symbol ?_createListOfPointers\@ActorContainerDiffHelperImpl\@\@YA?BV?$vector\@V?$not_null\@PEBVDataItem\@\@\@gsl\@\@V?$allocator\@V?$not_null\@PEBVDataItem\@\@\@gsl\@\@\@std\@\@\@std\@\@AEBVSynchedActorData\@\@\@Z
-     */
-    MCAPI std::vector<class gsl::not_null<class DataItem const *>> const _createListOfPointers(class SynchedActorData const &);
-    /**
      * @symbol ?_createListOfPointers\@ActorContainerDiffHelperImpl\@\@YA?BV?$vector\@V?$not_null\@PEBVAttributeInstance\@\@\@gsl\@\@V?$allocator\@V?$not_null\@PEBVAttributeInstance\@\@\@gsl\@\@\@std\@\@\@std\@\@AEBVBaseAttributeMap\@\@\@Z
      */
     MCAPI std::vector<class gsl::not_null<class AttributeInstance const *>> const _createListOfPointers(class BaseAttributeMap const &);
+    /**
+     * @symbol ?_createListOfPointers\@ActorContainerDiffHelperImpl\@\@YA?BV?$vector\@V?$not_null\@PEBVDataItem\@\@\@gsl\@\@V?$allocator\@V?$not_null\@PEBVDataItem\@\@\@gsl\@\@\@std\@\@\@std\@\@AEBVSynchedActorData\@\@\@Z
+     */
+    MCAPI std::vector<class gsl::not_null<class DataItem const *>> const _createListOfPointers(class SynchedActorData const &);
     /**
      * @symbol ?_createListOfPointers\@ActorContainerDiffHelperImpl\@\@YA?BV?$vector\@V?$not_null\@PEBVMobEffectInstance\@\@\@gsl\@\@V?$allocator\@V?$not_null\@PEBVMobEffectInstance\@\@\@gsl\@\@\@std\@\@\@std\@\@AEBV?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@3\@\@Z
      */

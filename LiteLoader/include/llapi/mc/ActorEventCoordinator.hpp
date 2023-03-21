@@ -82,12 +82,12 @@ public:
      */
     MCAPI enum class CoordinatorResult sendEvent(class EventRef<struct MutableActorGameplayEvent<enum class CoordinatorResult>>);
     /**
-     * @symbol ?sendEvent\@ActorEventCoordinator\@\@QEAA?AW4CoordinatorResult\@\@AEBV?$EventRef\@U?$ActorGameplayEvent\@W4CoordinatorResult\@\@\@\@\@\@\@Z
-     */
-    MCAPI enum class CoordinatorResult sendEvent(class EventRef<struct ActorGameplayEvent<enum class CoordinatorResult>> const &);
-    /**
      * @symbol ?sendEvent\@ActorEventCoordinator\@\@QEAAXAEBV?$EventRef\@U?$ActorGameplayEvent\@X\@\@\@\@\@Z
      */
     MCAPI void sendEvent(class EventRef<struct ActorGameplayEvent<void>> const &);
+    /**
+     * @symbol ?sendEvent\@ActorEventCoordinator\@\@QEAA?AW4CoordinatorResult\@\@AEBV?$EventRef\@U?$ActorGameplayEvent\@W4CoordinatorResult\@\@\@\@\@\@\@Z
+     */
+    MCAPI enum class CoordinatorResult sendEvent(class EventRef<struct ActorGameplayEvent<enum class CoordinatorResult>> const &);
 
 };

@@ -113,13 +113,13 @@ public:
      */
     MCAPI LevelContainerModel(enum class ContainerEnumName, int, class Player &, struct ActorUniqueID, enum class ContainerCategory);
     /**
-     * @symbol ?getContainerHelper\@LevelContainerModel\@\@SAPEAVContainer\@\@AEAVPlayer\@\@AEBUActorUniqueID\@\@\@Z
-     */
-    MCAPI static class Container * getContainerHelper(class Player &, struct ActorUniqueID const &);
-    /**
      * @symbol ?getContainerHelper\@LevelContainerModel\@\@SAPEAVContainer\@\@AEAVPlayer\@\@W4BlockActorType\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static class Container * getContainerHelper(class Player &, enum class BlockActorType, class BlockPos const &);
+    /**
+     * @symbol ?getContainerHelper\@LevelContainerModel\@\@SAPEAVContainer\@\@AEAVPlayer\@\@AEBUActorUniqueID\@\@\@Z
+     */
+    MCAPI static class Container * getContainerHelper(class Player &, struct ActorUniqueID const &);
 
 //private:
     /**

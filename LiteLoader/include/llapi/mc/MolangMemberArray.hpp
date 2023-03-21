@@ -46,6 +46,10 @@ public:
      */
     MCAPI MolangMemberArray(enum class MolangStruct_XYZ, class Vec3 const &);
     /**
+     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_RGBA\@\@AEBVColor\@mce\@\@\@Z
+     */
+    MCAPI MolangMemberArray(enum class MolangStruct_RGBA, class mce::Color const &);
+    /**
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_SpeedAndDirection\@\@MAEBVVec3\@\@\@Z
      */
     MCAPI MolangMemberArray(enum class MolangStruct_SpeedAndDirection, float, class Vec3 const &);
@@ -69,10 +73,6 @@ public:
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_PoseIndexAndHurtTime\@\@HH\@Z
      */
     MCAPI MolangMemberArray(enum class MolangStruct_PoseIndexAndHurtTime, int, int);
-    /**
-     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_RGBA\@\@AEBVColor\@mce\@\@\@Z
-     */
-    MCAPI MolangMemberArray(enum class MolangStruct_RGBA, class mce::Color const &);
     /**
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_UV\@\@MM\@Z
      */

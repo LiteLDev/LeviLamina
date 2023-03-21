@@ -67,13 +67,13 @@ public:
      */
     virtual int size() const;
     /**
-     * @symbol ??0BannerAddPatternRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
-     */
-    MCAPI BannerAddPatternRecipe(class std::basic_string_view<char, struct std::char_traits<char>>);
-    /**
      * @symbol ??0BannerAddPatternRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@AEBVUUID\@mce\@\@\@Z
      */
     MCAPI BannerAddPatternRecipe(class std::basic_string_view<char, struct std::char_traits<char>>, class mce::UUID const &);
+    /**
+     * @symbol ??0BannerAddPatternRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
+     */
+    MCAPI BannerAddPatternRecipe(class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
      * @symbol ?matchPatterns\@BannerAddPatternRecipe\@\@QEBA?BV?$NonOwnerPointer\@$$CBVBannerPattern\@\@\@Bedrock\@\@AEAVCraftingContainer\@\@\@Z
      */

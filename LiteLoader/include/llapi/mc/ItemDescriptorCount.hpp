@@ -54,6 +54,10 @@ public:
      */
     MCAPI ItemDescriptorCount(class ReadOnlyBinaryStream &);
     /**
+     * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBVBlockLegacy\@\@G\@Z
+     */
+    MCAPI ItemDescriptorCount(class BlockLegacy const &, unsigned short);
+    /**
      * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBVBlock\@\@G\@Z
      */
     MCAPI ItemDescriptorCount(class Block const &, unsigned short);
@@ -70,17 +74,13 @@ public:
      */
     MCAPI ItemDescriptorCount(struct ItemTag const &, unsigned short);
     /**
-     * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBVBlockLegacy\@\@G\@Z
+     * @symbol ??0ItemDescriptorCount\@\@QEAA\@XZ
      */
-    MCAPI ItemDescriptorCount(class BlockLegacy const &, unsigned short);
+    MCAPI ItemDescriptorCount();
     /**
      * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBVItemDescriptor\@\@G\@Z
      */
     MCAPI ItemDescriptorCount(class ItemDescriptor const &, unsigned short);
-    /**
-     * @symbol ??0ItemDescriptorCount\@\@QEAA\@XZ
-     */
-    MCAPI ItemDescriptorCount();
     /**
      * @symbol ?getStackSize\@ItemDescriptorCount\@\@QEBAFXZ
      */

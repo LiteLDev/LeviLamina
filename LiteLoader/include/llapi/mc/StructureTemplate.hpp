@@ -91,10 +91,7 @@ public:
      * @symbol __unk_vfn_8
      */
     virtual void __unk_vfn_8();
-    /**
-     * @symbol ?getName\@StructureTemplate\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string const & getName() const;
+
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETEMPLATE
     /**
      * @symbol __unk_destructor_-1
@@ -121,6 +118,10 @@ public:
      * @symbol ?getJigsawMarkers\@StructureTemplate\@\@QEBA?AV?$vector\@VJigsawStructureBlockInfo\@\@V?$allocator\@VJigsawStructureBlockInfo\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::vector<class JigsawStructureBlockInfo> getJigsawMarkers() const;
+    /**
+     * @symbol ?getName\@StructureTemplate\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     */
+    MCAPI std::string const & getName() const;
     /**
      * @symbol ?getSize\@StructureTemplate\@\@QEBAAEBVBlockPos\@\@XZ
      */

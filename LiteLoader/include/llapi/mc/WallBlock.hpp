@@ -330,13 +330,13 @@ public:
     MCVAPI ~WallBlock();
 #endif
     /**
-     * @symbol ??0WallBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
-     */
-    MCAPI WallBlock(std::string const &, int, class Material const &);
-    /**
      * @symbol ??0WallBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVBlockLegacy\@\@\@Z
      */
     MCAPI WallBlock(std::string const &, int, class BlockLegacy const &);
+    /**
+     * @symbol ??0WallBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
+     */
+    MCAPI WallBlock(std::string const &, int, class Material const &);
     /**
      * @symbol ?tryFixWallStates\@WallBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */

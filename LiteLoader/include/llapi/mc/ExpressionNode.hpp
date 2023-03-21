@@ -55,21 +55,17 @@ public:
      */
     MCAPI ExpressionNode(std::string const &, class SemVersion const &, class gsl::span<class HashedString const, -1>);
     /**
-     * @symbol ??0ExpressionNode\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI ExpressionNode(class ExpressionNode const &);
-    /**
      * @symbol ??0ExpressionNode\@\@QEAA\@AEBVValue\@Json\@\@W4MolangVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z
      */
     MCAPI ExpressionNode(class Json::Value const &, enum class MolangVersion, class gsl::span<class HashedString const, -1>);
     /**
-     * @symbol ??0ExpressionNode\@\@QEAA\@M\@Z
-     */
-    MCAPI ExpressionNode(float);
-    /**
      * @symbol ??0ExpressionNode\@\@QEAA\@AEAUMolangScriptArg\@\@W4ExpressionOp\@\@\@Z
      */
     MCAPI ExpressionNode(struct MolangScriptArg &, enum class ExpressionOp);
+    /**
+     * @symbol ??0ExpressionNode\@\@QEAA\@M\@Z
+     */
+    MCAPI ExpressionNode(float);
     /**
      * @symbol ??0ExpressionNode\@\@QEAA\@$$QEAV0\@\@Z
      */
@@ -78,6 +74,10 @@ public:
      * @symbol ??0ExpressionNode\@\@QEAA\@AEBVValue\@Json\@\@AEBVSemVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z
      */
     MCAPI ExpressionNode(class Json::Value const &, class SemVersion const &, class gsl::span<class HashedString const, -1>);
+    /**
+     * @symbol ??0ExpressionNode\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI ExpressionNode(class ExpressionNode const &);
     /**
      * @symbol ?clear\@ExpressionNode\@\@QEAAXXZ
      */
@@ -131,25 +131,25 @@ public:
      */
     MCAPI bool isValid() const;
     /**
-     * @symbol ?link\@ExpressionNode\@\@QEBA?AW4MolangCompileResult\@\@W4MolangVersion\@\@\@Z
-     */
-    MCAPI enum class MolangCompileResult link(enum class MolangVersion) const;
-    /**
      * @symbol ?link\@ExpressionNode\@\@QEBA?AW4MolangCompileResult\@\@XZ
      */
     MCAPI enum class MolangCompileResult link() const;
+    /**
+     * @symbol ?link\@ExpressionNode\@\@QEBA?AW4MolangCompileResult\@\@W4MolangVersion\@\@\@Z
+     */
+    MCAPI enum class MolangCompileResult link(enum class MolangVersion) const;
     /**
      * @symbol ?moveConstantChildToValueIfFloatOrHashType\@ExpressionNode\@\@QEAAXH\@Z
      */
     MCAPI void moveConstantChildToValueIfFloatOrHashType(int);
     /**
-     * @symbol ??4ExpressionNode\@\@QEAAAEAV0\@AEBV0\@\@Z
-     */
-    MCAPI class ExpressionNode & operator=(class ExpressionNode const &);
-    /**
      * @symbol ??4ExpressionNode\@\@QEAAAEAV0\@M\@Z
      */
     MCAPI class ExpressionNode & operator=(float);
+    /**
+     * @symbol ??4ExpressionNode\@\@QEAAAEAV0\@AEBV0\@\@Z
+     */
+    MCAPI class ExpressionNode & operator=(class ExpressionNode const &);
     /**
      * @symbol ??8ExpressionNode\@\@QEBA_NAEBV0\@\@Z
      */

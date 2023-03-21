@@ -77,13 +77,13 @@ public:
      */
     MCAPI class Abilities & operator=(class Abilities const &);
     /**
-     * @symbol ?setAbility\@Abilities\@\@QEAAXW4AbilitiesIndex\@\@M\@Z
-     */
-    MCAPI void setAbility(enum class AbilitiesIndex, float);
-    /**
      * @symbol ?setAbility\@Abilities\@\@QEAAXW4AbilitiesIndex\@\@AEBVAbility\@\@\@Z
      */
     MCAPI void setAbility(enum class AbilitiesIndex, class Ability const &);
+    /**
+     * @symbol ?setAbility\@Abilities\@\@QEAAXW4AbilitiesIndex\@\@M\@Z
+     */
+    MCAPI void setAbility(enum class AbilitiesIndex, float);
     /**
      * @symbol ?setAbility\@Abilities\@\@QEAAXW4AbilitiesIndex\@\@_N\@Z
      */

@@ -118,13 +118,13 @@ public:
      */
     MCAPI float getTemperatureWorldGen(class BlockPos const &, short) const;
     /**
-     * @symbol ?hasTag\@Biome\@\@QEBA_N_KAEBV?$TagRegistry\@U?$IDType\@UBiomeTagIDType\@\@\@\@U?$IDType\@UBiomeTagSetIDType\@\@\@\@\@\@\@Z
-     */
-    MCAPI bool hasTag(unsigned __int64, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const &) const;
-    /**
      * @symbol ?hasTag\@Biome\@\@QEBA_NAEBU?$IDType\@UBiomeTagIDType\@\@\@\@AEBV?$TagRegistry\@U?$IDType\@UBiomeTagIDType\@\@\@\@U?$IDType\@UBiomeTagSetIDType\@\@\@\@\@\@\@Z
      */
     MCAPI bool hasTag(struct IDType<struct BiomeTagIDType> const &, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const &) const;
+    /**
+     * @symbol ?hasTag\@Biome\@\@QEBA_N_KAEBV?$TagRegistry\@U?$IDType\@UBiomeTagIDType\@\@\@\@U?$IDType\@UBiomeTagSetIDType\@\@\@\@\@\@\@Z
+     */
+    MCAPI bool hasTag(unsigned __int64, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const &) const;
     /**
      * @symbol ?hasTag\@Biome\@\@QEBA_NAEBVWellKnownTagID\@\@\@Z
      */
@@ -142,13 +142,13 @@ public:
      */
     MCAPI bool isSnowCovered() const;
     /**
-     * @symbol ?setColor\@Biome\@\@QEAAAEAV1\@H_N\@Z
-     */
-    MCAPI class Biome & setColor(int, bool);
-    /**
      * @symbol ?setColor\@Biome\@\@QEAAAEAV1\@H\@Z
      */
     MCAPI class Biome & setColor(int);
+    /**
+     * @symbol ?setColor\@Biome\@\@QEAAAEAV1\@H_N\@Z
+     */
+    MCAPI class Biome & setColor(int, bool);
     /**
      * @symbol ?setDepthAndScale\@Biome\@\@QEAAAEAV1\@AEBUBiomeHeight\@\@\@Z
      */

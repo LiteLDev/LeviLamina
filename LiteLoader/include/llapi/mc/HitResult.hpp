@@ -72,25 +72,25 @@ public:
      */
     MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Actor &);
     /**
-     * @symbol ??0HitResult\@\@QEAA\@AEBVVec3\@\@0AEAVActor\@\@0\@Z
-     */
-    MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Actor &, class Vec3 const &);
-    /**
      * @symbol ??0HitResult\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI HitResult(class HitResult const &);
     /**
-     * @symbol ??0HitResult\@\@QEAA\@AEBVVec3\@\@00\@Z
+     * @symbol ??0HitResult\@\@QEAA\@XZ
      */
-    MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Vec3 const &);
+    MCAPI HitResult();
+    /**
+     * @symbol ??0HitResult\@\@QEAA\@AEBVVec3\@\@0AEAVActor\@\@0\@Z
+     */
+    MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Actor &, class Vec3 const &);
     /**
      * @symbol ??0HitResult\@\@QEAA\@AEBVVec3\@\@0AEBVBlockPos\@\@E0\@Z
      */
     MCAPI HitResult(class Vec3 const &, class Vec3 const &, class BlockPos const &, unsigned char, class Vec3 const &);
     /**
-     * @symbol ??0HitResult\@\@QEAA\@XZ
+     * @symbol ??0HitResult\@\@QEAA\@AEBVVec3\@\@00\@Z
      */
-    MCAPI HitResult();
+    MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Vec3 const &);
     /**
      * @symbol ??0HitResult\@\@QEAA\@$$QEAV0\@\@Z
      */

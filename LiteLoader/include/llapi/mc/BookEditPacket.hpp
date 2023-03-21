@@ -49,7 +49,7 @@ public:
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?_read\@BookEditPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
@@ -60,13 +60,13 @@ public:
     MCVAPI ~BookEditPacket();
 #endif
     /**
-     * @symbol ??0BookEditPacket\@\@QEAA\@XZ
-     */
-    MCAPI BookEditPacket();
-    /**
      * @symbol ??0BookEditPacket\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI BookEditPacket(class BookEditPacket const &);
+    /**
+     * @symbol ??0BookEditPacket\@\@QEAA\@XZ
+     */
+    MCAPI BookEditPacket();
     /**
      * @symbol ?getPage\@BookEditPacket\@\@QEBA?AUPageContent\@\@XZ
      */

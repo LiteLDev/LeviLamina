@@ -49,7 +49,7 @@ public:
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?_read\@CommandBlockUpdatePacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
@@ -60,12 +60,12 @@ public:
     MCVAPI ~CommandBlockUpdatePacket();
 #endif
     /**
-     * @symbol ??0CommandBlockUpdatePacket\@\@QEAA\@XZ
-     */
-    MCAPI CommandBlockUpdatePacket();
-    /**
      * @symbol ??0CommandBlockUpdatePacket\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI CommandBlockUpdatePacket(class CommandBlockUpdatePacket const &);
+    /**
+     * @symbol ??0CommandBlockUpdatePacket\@\@QEAA\@XZ
+     */
+    MCAPI CommandBlockUpdatePacket();
 
 };

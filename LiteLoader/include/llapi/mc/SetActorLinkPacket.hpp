@@ -50,7 +50,7 @@ public:
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?_read\@SetActorLinkPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
@@ -61,12 +61,12 @@ public:
     MCVAPI ~SetActorLinkPacket();
 #endif
     /**
-     * @symbol ??0SetActorLinkPacket\@\@QEAA\@AEBUActorLink\@\@\@Z
-     */
-    MCAPI SetActorLinkPacket(struct ActorLink const &);
-    /**
      * @symbol ??0SetActorLinkPacket\@\@QEAA\@XZ
      */
     MCAPI SetActorLinkPacket();
+    /**
+     * @symbol ??0SetActorLinkPacket\@\@QEAA\@AEBUActorLink\@\@\@Z
+     */
+    MCAPI SetActorLinkPacket(struct ActorLink const &);
 
 };

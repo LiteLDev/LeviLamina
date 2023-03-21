@@ -32,13 +32,13 @@ public:
      */
     MCAPI BaseGameVersion(class SemVersion const &);
     /**
-     * @symbol ??0BaseGameVersion\@\@QEAA\@XZ
-     */
-    MCAPI BaseGameVersion();
-    /**
      * @symbol ??0BaseGameVersion\@\@QEAA\@GII\@Z
      */
     MCAPI BaseGameVersion(unsigned short, unsigned int, unsigned int);
+    /**
+     * @symbol ??0BaseGameVersion\@\@QEAA\@XZ
+     */
+    MCAPI BaseGameVersion();
     /**
      * @symbol ?asSemVersion\@BaseGameVersion\@\@QEBAAEBVSemVersion\@\@XZ
      */

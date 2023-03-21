@@ -52,6 +52,10 @@ public:
     MCVAPI ~ItemDescriptor();
 #endif
     /**
+     * @symbol ??0ItemDescriptor\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@H\@Z
+     */
+    MCAPI ItemDescriptor(class std::basic_string_view<char, struct std::char_traits<char>>, int);
+    /**
      * @symbol ??0ItemDescriptor\@\@QEAA\@XZ
      */
     MCAPI ItemDescriptor();
@@ -63,14 +67,6 @@ public:
      * @symbol ??0ItemDescriptor\@\@QEAA\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     MCAPI ItemDescriptor(class ReadOnlyBinaryStream &);
-    /**
-     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVItem\@\@H\@Z
-     */
-    MCAPI ItemDescriptor(class Item const &, int);
-    /**
-     * @symbol ??0ItemDescriptor\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@H\@Z
-     */
-    MCAPI ItemDescriptor(class std::basic_string_view<char, struct std::char_traits<char>>, int);
     /**
      * @symbol ??0ItemDescriptor\@\@QEAA\@AEBUItemTag\@\@\@Z
      */
@@ -84,13 +80,17 @@ public:
      */
     MCAPI ItemDescriptor(class Json::Value const &, class SemVersion const &);
     /**
-     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVBlock\@\@\@Z
+     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVItem\@\@H\@Z
      */
-    MCAPI ItemDescriptor(class Block const &);
+    MCAPI ItemDescriptor(class Item const &, int);
     /**
      * @symbol ??0ItemDescriptor\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI ItemDescriptor(class ItemDescriptor &&);
+    /**
+     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVBlock\@\@\@Z
+     */
+    MCAPI ItemDescriptor(class Block const &);
     /**
      * @symbol ?forEachItemUntil\@ItemDescriptor\@\@QEBA_NV?$function\@$$A6A_NAEBVItem\@\@F\@Z\@std\@\@\@Z
      */

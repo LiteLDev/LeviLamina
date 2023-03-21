@@ -29,13 +29,13 @@ public:
 
 public:
     /**
-     * @symbol ??0ContainerScreenContext\@\@QEAA\@AEAVPlayer\@\@W4ContainerType\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI ContainerScreenContext(class Player &, enum class ContainerType, class BlockPos const &);
-    /**
      * @symbol ??0ContainerScreenContext\@\@QEAA\@AEAVPlayer\@\@W4ContainerType\@\@AEBUActorUniqueID\@\@\@Z
      */
     MCAPI ContainerScreenContext(class Player &, enum class ContainerType, struct ActorUniqueID const &);
+    /**
+     * @symbol ??0ContainerScreenContext\@\@QEAA\@AEAVPlayer\@\@W4ContainerType\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI ContainerScreenContext(class Player &, enum class ContainerType, class BlockPos const &);
     /**
      * @symbol ??0ContainerScreenContext\@\@QEAA\@XZ
      */

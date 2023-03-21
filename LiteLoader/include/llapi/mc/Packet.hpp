@@ -74,17 +74,17 @@ public:
     virtual ~Packet();
     /**
      * @vftbl 1
-     * @symbol ?getId\@UpdateBlockSyncedPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @symbol ?getId\@ChangeMobPropertyPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const = 0;
     /**
      * @vftbl 2
-     * @symbol ?getName\@UpdateBlockSyncedPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getName\@ChangeMobPropertyPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const = 0;
     /**
      * @vftbl 3
-     * @symbol ?write\@UpdateBlockSyncedPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @symbol ?write\@ChangeMobPropertyPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const = 0;
     /**
@@ -99,7 +99,12 @@ public:
     virtual bool disallowBatching() const;
     /**
      * @vftbl 6
-     * @symbol ?_read\@UpdateBlockSyncedPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?isValid\@Packet\@\@UEBA_NXZ
+     */
+    virtual bool isValid() const;
+    /**
+     * @vftbl 7
+     * @symbol ?_read\@ChangeMobPropertyPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &) = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKET

@@ -49,52 +49,52 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?getRequestId\@VirtualCommandOrigin\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getRequestId\@ActorCommandOrigin\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string const & getRequestId() const = 0;
     /**
      * @vftbl 2
-     * @symbol ?getName\@VirtualCommandOrigin\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getName\@ActorCommandOrigin\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const = 0;
     /**
      * @vftbl 3
-     * @symbol ?getBlockPosition\@VirtualCommandOrigin\@\@UEBA?AVBlockPos\@\@XZ
+     * @symbol ?getBlockPosition\@ActorCommandOrigin\@\@UEBA?AVBlockPos\@\@XZ
      */
     virtual class BlockPos getBlockPosition() const = 0;
     /**
      * @vftbl 4
-     * @symbol ?getWorldPosition\@VirtualCommandOrigin\@\@UEBA?AVVec3\@\@XZ
+     * @symbol ?getWorldPosition\@ActorCommandOrigin\@\@UEBA?AVVec3\@\@XZ
      */
     virtual class Vec3 getWorldPosition() const = 0;
     /**
      * @vftbl 5
-     * @symbol ?getRotation\@VirtualCommandOrigin\@\@UEBA?AV?$optional\@VVec2\@\@\@std\@\@XZ
+     * @symbol ?getRotation\@ActorCommandOrigin\@\@UEBA?AV?$optional\@VVec2\@\@\@std\@\@XZ
      */
     virtual class std::optional<class Vec2> getRotation() const = 0;
     /**
      * @vftbl 6
-     * @symbol ?getLevel\@VirtualCommandOrigin\@\@UEBAPEAVLevel\@\@XZ
+     * @symbol ?getLevel\@ActorCommandOrigin\@\@UEBAPEAVLevel\@\@XZ
      */
     virtual class Level * getLevel() const = 0;
     /**
      * @vftbl 7
-     * @symbol ?getDimension\@VirtualCommandOrigin\@\@UEBAPEAVDimension\@\@XZ
+     * @symbol ?getDimension\@ActorCommandOrigin\@\@UEBAPEAVDimension\@\@XZ
      */
     virtual class Dimension * getDimension() const = 0;
     /**
      * @vftbl 8
-     * @symbol ?getEntity\@VirtualCommandOrigin\@\@UEBAPEAVActor\@\@XZ
+     * @symbol ?getEntity\@ActorCommandOrigin\@\@UEBAPEAVActor\@\@XZ
      */
     virtual class Actor * getEntity() const = 0;
     /**
      * @vftbl 9
-     * @symbol ?getPermissionsLevel\@VirtualCommandOrigin\@\@UEBA?AW4CommandPermissionLevel\@\@XZ
+     * @symbol ?getPermissionsLevel\@ActorCommandOrigin\@\@UEBA?AW4CommandPermissionLevel\@\@XZ
      */
     virtual enum class CommandPermissionLevel getPermissionsLevel() const = 0;
     /**
      * @vftbl 10
-     * @symbol ?clone\@VirtualCommandOrigin\@\@UEBA?AV?$unique_ptr\@VCommandOrigin\@\@U?$default_delete\@VCommandOrigin\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?clone\@ActorCommandOrigin\@\@UEBA?AV?$unique_ptr\@VCommandOrigin\@\@U?$default_delete\@VCommandOrigin\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CommandOrigin> clone() const = 0;
     /**
@@ -159,7 +159,7 @@ public:
     virtual struct CommandOriginIdentity getIdentity() const;
     /**
      * @vftbl 23
-     * @symbol ?getOriginType\@VirtualCommandOrigin\@\@UEBA?AW4CommandOriginType\@\@XZ
+     * @symbol ?getOriginType\@ActorCommandOrigin\@\@UEBA?AW4CommandOriginType\@\@XZ
      */
     virtual enum class CommandOriginType getOriginType() const = 0;
     /**
@@ -194,7 +194,7 @@ public:
     virtual class CompoundTag serialize() const;
     /**
      * @vftbl 30
-     * @symbol ?isValid\@VirtualCommandOrigin\@\@UEBA_NXZ
+     * @symbol ?isValid\@ActorCommandOrigin\@\@UEBA_NXZ
      */
     virtual bool isValid() const = 0;
     /**
@@ -215,13 +215,13 @@ public:
      */
     MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const &, int) const;
     /**
-     * @symbol ?getAreaAtWithBuffer\@CommandOrigin\@\@QEBA?AV?$unique_ptr\@VCommandArea\@\@U?$default_delete\@VCommandArea\@\@\@std\@\@\@std\@\@AEBVBlockPos\@\@H\@Z
-     */
-    MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const &, int) const;
-    /**
      * @symbol ?getAreaAtWithBuffer\@CommandOrigin\@\@QEBA?AV?$unique_ptr\@VCommandArea\@\@U?$default_delete\@VCommandArea\@\@\@std\@\@\@std\@\@AEBVBlockPos\@\@0H_N\@Z
      */
     MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const &, class BlockPos const &, int, bool) const;
+    /**
+     * @symbol ?getAreaAtWithBuffer\@CommandOrigin\@\@QEBA?AV?$unique_ptr\@VCommandArea\@\@U?$default_delete\@VCommandArea\@\@\@std\@\@\@std\@\@AEBVBlockPos\@\@H\@Z
+     */
+    MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const &, int) const;
     /**
      * @symbol ?isEditorWorld\@CommandOrigin\@\@QEBA_NXZ
      */

@@ -29,10 +29,6 @@ public:
 
 public:
     /**
-     * @symbol ??0LevelSettings\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI LevelSettings(class LevelSettings const &);
-    /**
      * @symbol ??0LevelSettings\@\@QEAA\@AEBVLevelData\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
     MCAPI LevelSettings(class LevelData const &, class AutomaticID<class Dimension, int>);
@@ -40,6 +36,10 @@ public:
      * @symbol ??0LevelSettings\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI LevelSettings(class LevelSettings &&);
+    /**
+     * @symbol ??0LevelSettings\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI LevelSettings(class LevelSettings const &);
     /**
      * @symbol ??0LevelSettings\@\@QEAA\@XZ
      */

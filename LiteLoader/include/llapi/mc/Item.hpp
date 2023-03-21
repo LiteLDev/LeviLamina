@@ -769,13 +769,13 @@ public:
      */
     MCAPI void addOnResetBAIcallback(class std::function<void (void)> const &);
     /**
-     * @symbol ?addTag\@Item\@\@QEAAAEAV1\@AEBVHashedString\@\@\@Z
-     */
-    MCAPI class Item & addTag(class HashedString const &);
-    /**
      * @symbol ?addTag\@Item\@\@QEAAAEAV1\@AEBUItemTag\@\@\@Z
      */
     MCAPI class Item & addTag(struct ItemTag const &);
+    /**
+     * @symbol ?addTag\@Item\@\@QEAAAEAV1\@AEBVHashedString\@\@\@Z
+     */
+    MCAPI class Item & addTag(class HashedString const &);
     /**
      * @symbol ?addTags\@Item\@\@QEAAAEAV1\@V?$initializer_list\@V?$reference_wrapper\@$$CBUItemTag\@\@\@std\@\@\@std\@\@\@Z
      */
@@ -797,13 +797,13 @@ public:
      */
     MCAPI float destroySpeedBonus(class ItemStackBase const &) const;
     /**
-     * @symbol ?fixupOnLoad\@Item\@\@QEBAXAEAVItemStackBase\@\@\@Z
-     */
-    MCAPI void fixupOnLoad(class ItemStackBase &) const;
-    /**
      * @symbol ?fixupOnLoad\@Item\@\@QEBAXAEAVItemStackBase\@\@AEAVLevel\@\@\@Z
      */
     MCAPI void fixupOnLoad(class ItemStackBase &, class Level &) const;
+    /**
+     * @symbol ?fixupOnLoad\@Item\@\@QEBAXAEAVItemStackBase\@\@\@Z
+     */
+    MCAPI void fixupOnLoad(class ItemStackBase &) const;
     /**
      * @symbol ?getCommandNames\@Item\@\@QEBA?AV?$vector\@UCommandName\@\@V?$allocator\@UCommandName\@\@\@std\@\@\@std\@\@XZ
      */

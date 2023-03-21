@@ -28,13 +28,13 @@ public:
 
 public:
     /**
-     * @symbol ??0ResourceDropsContext\@\@QEAA\@MAEBVItemStack\@\@AEBVBlockSource\@\@\@Z
-     */
-    MCAPI ResourceDropsContext(float, class ItemStack const &, class BlockSource const &);
-    /**
      * @symbol ??0ResourceDropsContext\@\@QEAA\@MAEBVItemStack\@\@AEAVILevel\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
     MCAPI ResourceDropsContext(float, class ItemStack const &, class ILevel &, class AutomaticID<class Dimension, int>);
+    /**
+     * @symbol ??0ResourceDropsContext\@\@QEAA\@MAEBVItemStack\@\@AEBVBlockSource\@\@\@Z
+     */
+    MCAPI ResourceDropsContext(float, class ItemStack const &, class BlockSource const &);
     /**
      * @symbol ?getRandom\@ResourceDropsContext\@\@QEBAAEAVRandom\@\@XZ
      */

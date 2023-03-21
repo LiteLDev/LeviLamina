@@ -38,12 +38,12 @@ public:
      */
     MCAPI bool roll(class Random &) const;
     /**
-     * @symbol ?set\@ChanceInformation\@\@QEAAXII\@Z
-     */
-    MCAPI void set(unsigned int, unsigned int);
-    /**
      * @symbol ?set\@ChanceInformation\@\@QEAAXM\@Z
      */
     MCAPI void set(float);
+    /**
+     * @symbol ?set\@ChanceInformation\@\@QEAAXII\@Z
+     */
+    MCAPI void set(unsigned int, unsigned int);
 
 };

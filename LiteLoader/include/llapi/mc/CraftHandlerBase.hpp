@@ -52,7 +52,7 @@ public:
     virtual void endRequestBatch();
     /**
      * @vftbl 4
-     * @symbol ?_handleCraftAction\@CraftHandlerEnchant\@\@MEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionCraftBase\@\@\@Z
+     * @symbol ?_handleCraftAction\@CraftHandleNonImplemented_DEPRECATEDASKTYLAING\@\@MEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionCraftBase\@\@\@Z
      */
     virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &) = 0;
     /**

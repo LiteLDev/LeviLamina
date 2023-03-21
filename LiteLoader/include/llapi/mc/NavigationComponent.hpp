@@ -176,17 +176,17 @@ public:
      */
     MCAPI bool moveTo(class Mob &, class Actor &, float);
     /**
-     * @symbol ?moveTo\@NavigationComponent\@\@QEAA_NAEAVMob\@\@AEBVVec3\@\@M\@Z
+     * @symbol ?moveTo\@NavigationComponent\@\@QEAA_NAEAVMob\@\@AEBVVec3\@\@M1\@Z
      */
-    MCAPI bool moveTo(class Mob &, class Vec3 const &, float);
+    MCAPI bool moveTo(class Mob &, class Vec3 const &, float, class Vec3 const &);
     /**
      * @symbol ?moveTo\@NavigationComponent\@\@QEAA_NAEAVMob\@\@V?$unique_ptr\@VPath\@\@U?$default_delete\@VPath\@\@\@std\@\@\@std\@\@M\@Z
      */
     MCAPI bool moveTo(class Mob &, std::unique_ptr<class Path>, float);
     /**
-     * @symbol ?moveTo\@NavigationComponent\@\@QEAA_NAEAVMob\@\@AEBVVec3\@\@M1\@Z
+     * @symbol ?moveTo\@NavigationComponent\@\@QEAA_NAEAVMob\@\@AEBVVec3\@\@M\@Z
      */
-    MCAPI bool moveTo(class Mob &, class Vec3 const &, float, class Vec3 const &);
+    MCAPI bool moveTo(class Mob &, class Vec3 const &, float);
     /**
      * @symbol ??4NavigationComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */

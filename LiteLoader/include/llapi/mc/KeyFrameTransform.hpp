@@ -50,13 +50,13 @@ public:
      */
     MCAPI void set(class ExpressionNode const &, int);
     /**
-     * @symbol ?set\@KeyFrameTransform\@\@QEAAXAEBVExpressionNode\@\@AEBVVec3\@\@\@Z
-     */
-    MCAPI void set(class ExpressionNode const &, class Vec3 const &);
-    /**
      * @symbol ?set\@KeyFrameTransform\@\@QEAAXAEBVExpressionNode\@\@\@Z
      */
     MCAPI void set(class ExpressionNode const &);
+    /**
+     * @symbol ?set\@KeyFrameTransform\@\@QEAAXAEBVExpressionNode\@\@AEBVVec3\@\@\@Z
+     */
+    MCAPI void set(class ExpressionNode const &, class Vec3 const &);
     /**
      * @symbol ?setPost\@KeyFrameTransform\@\@QEAAXAEBVExpressionNode\@\@H\@Z
      */

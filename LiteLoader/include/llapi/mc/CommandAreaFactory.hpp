@@ -34,13 +34,13 @@ public:
      */
     MCAPI CommandAreaFactory(class Dimension &);
     /**
-     * @symbol ?findArea\@CommandAreaFactory\@\@QEBA?AV?$unique_ptr\@VCommandArea\@\@U?$default_delete\@VCommandArea\@\@\@std\@\@\@std\@\@AEBVBlockPos\@\@0H_N1\@Z
-     */
-    MCAPI std::unique_ptr<class CommandArea> findArea(class BlockPos const &, class BlockPos const &, int, bool, bool) const;
-    /**
      * @symbol ?findArea\@CommandAreaFactory\@\@QEBA?AV?$unique_ptr\@VCommandArea\@\@U?$default_delete\@VCommandArea\@\@\@std\@\@\@std\@\@AEBVBlockPos\@\@0_N11\@Z
      */
     MCAPI std::unique_ptr<class CommandArea> findArea(class BlockPos const &, class BlockPos const &, bool, bool, bool) const;
+    /**
+     * @symbol ?findArea\@CommandAreaFactory\@\@QEBA?AV?$unique_ptr\@VCommandArea\@\@U?$default_delete\@VCommandArea\@\@\@std\@\@\@std\@\@AEBVBlockPos\@\@0H_N1\@Z
+     */
+    MCAPI std::unique_ptr<class CommandArea> findArea(class BlockPos const &, class BlockPos const &, int, bool, bool) const;
     /**
      * @symbol ?findArea\@CommandAreaFactory\@\@QEBA?AV?$unique_ptr\@VCommandArea\@\@U?$default_delete\@VCommandArea\@\@\@std\@\@\@std\@\@AEBVBlockPos\@\@H_N1\@Z
      */

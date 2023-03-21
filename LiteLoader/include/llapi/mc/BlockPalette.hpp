@@ -50,13 +50,13 @@ public:
      */
     MCAPI bool convertLegacyBlocks(class buffer_span_mut<class Block const *>, class buffer_span<struct BlockID>, class buffer_span<struct NibblePair>, unsigned __int64) const;
     /**
-     * @symbol ?getBlock\@BlockPalette\@\@QEBAAEBVBlock\@\@AEBI\@Z
-     */
-    MCAPI class Block const & getBlock(unsigned int const &) const;
-    /**
      * @symbol ?getBlock\@BlockPalette\@\@QEBAAEBVBlock\@\@AEBVCompoundTag\@\@\@Z
      */
     MCAPI class Block const & getBlock(class CompoundTag const &) const;
+    /**
+     * @symbol ?getBlock\@BlockPalette\@\@QEBAAEBVBlock\@\@AEBI\@Z
+     */
+    MCAPI class Block const & getBlock(unsigned int const &) const;
     /**
      * @symbol ?getBlockFromLegacyData\@BlockPalette\@\@QEBAAEBVBlock\@\@UNewBlockID\@\@I\@Z
      */

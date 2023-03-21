@@ -48,13 +48,13 @@ public:
      */
     MCAPI std::string effectPotencyToString(class MobEffectInstance const &) const;
     /**
-     * @symbol ?getDescriptionId\@Potion\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string getDescriptionId() const;
-    /**
      * @symbol ?getDescriptionId\@Potion\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4PotionType\@1\@\@Z
      */
     MCAPI std::string getDescriptionId(enum class Potion::PotionType) const;
+    /**
+     * @symbol ?getDescriptionId\@Potion\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     */
+    MCAPI std::string getDescriptionId() const;
     /**
      * @symbol ?getMobEffect\@Potion\@\@QEBAAEBVMobEffectInstance\@\@XZ
      */
@@ -68,13 +68,13 @@ public:
      */
     MCAPI std::vector<class MobEffectInstance> const & getMobEffects() const;
     /**
-     * @symbol ?getPotentencyDescription\@Potion\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4PotionType\@1\@M\@Z
-     */
-    MCAPI std::string getPotentencyDescription(enum class Potion::PotionType, float) const;
-    /**
      * @symbol ?getPotentencyDescription\@Potion\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4PotionType\@1\@MV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@3\@AEBVMobEffectInstance\@\@\@Z
      */
     MCAPI std::string getPotentencyDescription(enum class Potion::PotionType, float, class std::basic_string_view<char, struct std::char_traits<char>>, class MobEffectInstance const &) const;
+    /**
+     * @symbol ?getPotentencyDescription\@Potion\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4PotionType\@1\@M\@Z
+     */
+    MCAPI std::string getPotentencyDescription(enum class Potion::PotionType, float) const;
     /**
      * @symbol ?getPotionId\@Potion\@\@QEBAHXZ
      */

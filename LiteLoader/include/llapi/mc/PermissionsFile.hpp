@@ -52,13 +52,13 @@ public:
      */
     MCAPI bool isPermissionsSet(std::string const &, enum class PlayerPermissionLevel) const;
     /**
-     * @symbol ?persistPlayerPermissionsToDisk\@PermissionsFile\@\@QEAAXAEBVUserEntityIdentifierComponent\@\@W4PlayerPermissionLevel\@\@\@Z
-     */
-    MCAPI void persistPlayerPermissionsToDisk(class UserEntityIdentifierComponent const &, enum class PlayerPermissionLevel);
-    /**
      * @symbol ?persistPlayerPermissionsToDisk\@PermissionsFile\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4PlayerPermissionLevel\@\@\@Z
      */
     MCAPI void persistPlayerPermissionsToDisk(std::string const &, enum class PlayerPermissionLevel);
+    /**
+     * @symbol ?persistPlayerPermissionsToDisk\@PermissionsFile\@\@QEAAXAEBVUserEntityIdentifierComponent\@\@W4PlayerPermissionLevel\@\@\@Z
+     */
+    MCAPI void persistPlayerPermissionsToDisk(class UserEntityIdentifierComponent const &, enum class PlayerPermissionLevel);
     /**
      * @symbol ?reload\@PermissionsFile\@\@QEAA?AW4FileReadResult\@\@XZ
      */
