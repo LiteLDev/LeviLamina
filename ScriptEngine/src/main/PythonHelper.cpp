@@ -99,7 +99,6 @@ bool loadPythonPlugin(std::string dirPath, const std::string& packagePath, bool 
 
     // Run "pip install" if needed
     auto realPackageInstallDir = (filesystem::path(dirPath) / "site-packages").make_preferred();
-    std::string realPackageInstallDirStr = UTF82String(realPackageInstallDir.u8string());
     if(!filesystem::exists(realPackageInstallDir))
     {
         std::string dependTmpFilePath = PythonHelper::getPluginPackDependencyFilePath(dirPath);
@@ -110,7 +109,7 @@ bool loadPythonPlugin(std::string dirPath, const std::string& packagePath, bool 
                 fmt::arg("name", UTF82String(filesystem::path(dirPath).filename().u8string()))));
             
             if ((exitCode = PythonHelper::executePipCommand("pip install -r \"" + dependTmpFilePath
-                + "\" -t \"" + realPackageInstallDirStr + "\" --disable-pip-version-check")) == 0)
+                + "\" -t \"" + UTF82String(realPackageInstallDir.u8string()) + "\" --disable-pip-version-check")) == 0)
             {
                 logger.info(tr("llse.loader.python.executePipInstall.success"));
             }
@@ -135,10 +134,19 @@ bool loadPythonPlugin(std::string dirPath, const std::string& packagePath, bool 
         ENGINE_OWN_DATA()->logger.title = pluginName;
 
         // add plugin-own site-packages & plugin source dir to sys.path
-        string sourceDirFormatted = UTF82String(filesystem::path(dirPath).make_preferred().u8string());
-        engine->eval("import sys as _llse_py_sys_module\n"
-            "_llse_py_sys_module.path.insert(0, '" + realPackageInstallDirStr + "')\n"
-            "_llse_py_sys_module.path.insert(0, '" + sourceDirFormatted + "')");
+        try {
+            string pluginSitePackageFormatted = UTF82String(
+                std::filesystem::canonical(realPackageInstallDir.make_preferred()).u8string());
+            string sourceDirFormatted = UTF82String(
+                std::filesystem::canonical(filesystem::path(dirPath).make_preferred()).u8string());
+            engine->eval("import sys as _llse_py_sys_module\n"
+                "_llse_py_sys_module.path.insert(0, r'" + pluginSitePackageFormatted + "')\n"
+                "_llse_py_sys_module.path.insert(0, r'" + sourceDirFormatted + "')");
+        }
+        catch (const Exception& e) {
+            logger.error("Fail in setting sys.path!\n");
+            throw;
+        }
 
         // bindAPIs
         try {
