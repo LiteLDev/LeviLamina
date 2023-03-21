@@ -101,7 +101,7 @@ private:
   template <typename T>
   void nameSpaceSet(const ClassDefine<T>* classDefine, const std::string& name, PyObject* type) {
     std::string nameSpace = classDefine->getNameSpace();
-    PyObject* nameSpaceObj = getGlobalDict();
+    PyObject* nameSpaceObj = getGlobalBuiltin();
 
     if (nameSpace.empty()) {
       setDictItem(nameSpaceObj, name.c_str(), type);
