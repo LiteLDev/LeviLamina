@@ -41,6 +41,7 @@ string RemoveRealAllExtension(string fileName) {
 // - This function must be called in correct backend
 // - "filePath" can be a single-file plugin path, or a .llplugin compressed package path
 // or a dir path which contains uncompressed plugin package
+// * if mustBeCurrectModule == true and not-current-module plugin is found, will throw exception
 bool PluginManager::loadPlugin(const std::string& fileOrDirPath, bool isHotLoad, bool mustBeCurrentModule) {
     if (fileOrDirPath == LLSE_DEBUG_ENGINE_NAME)
         return true;
@@ -94,7 +95,8 @@ bool PluginManager::loadPlugin(const std::string& fileOrDirPath, bool isHotLoad,
     else if (backendType != LLSE_BACKEND_TYPE)
     {
         // Unmatched backend
-        // logger.error(pluginFileName + " is not a plugin of " + LLSE_BACKEND_TYPE + " engine!");
+        if(mustBeCurrentModule)
+            throw Exception("Plugin of not matched backend given!");
         return false;
     }
     
@@ -280,7 +282,11 @@ bool PluginManager::reloadPlugin(const std::string& name) {
     string filePath = plugin->filePath;
     if (!PluginManager::unloadPlugin(name))
         return false;
-    return PluginManager::loadPlugin(filePath, true, true);
+    try{
+        return PluginManager::loadPlugin(filePath, true, true);
+    }catch(...){
+        return false;
+    }
 }
 
 // Reload all plugins

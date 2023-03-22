@@ -1241,8 +1241,10 @@ void InitBasicEventListeners() {
             case ScriptPluginManagerEvent::Operation::Load:
                 // ev.pluginType is not used
                 // since in loadPlugin there will be check
-                if (PluginManager::loadPlugin(ev.target, true, true))
-                    ev.success = true;
+                try {
+                    if (PluginManager::loadPlugin(ev.target, true, true))
+                        ev.success = true;
+                } catch(...) {}
                 break;
 
             case ScriptPluginManagerEvent::Operation::Unload:

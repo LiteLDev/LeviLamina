@@ -100,8 +100,10 @@ void LoadMain() {
     std::filesystem::directory_iterator files(LLSE_PLUGINS_LOAD_DIR);
     for (auto& i : files) {
         if (i.is_regular_file() && i.path().extension() == LLSE_SOURCE_FILE_EXTENSION) {
-            if (PluginManager::loadPlugin(UTF82String(i.path().generic_u8string()), false, true))
-                ++count;
+            try{
+                if (PluginManager::loadPlugin(UTF82String(i.path().generic_u8string()), false, true))
+                    ++count;
+            }catch(...){}
         }
     }
     logger.info(tr("llse.loader.loadMain.done",
@@ -122,14 +124,18 @@ void LoadMain_NodeJs() {
     std::filesystem::directory_iterator files(LLSE_PLUGINS_ROOT_DIR);
     for (auto& i : files) {
         std::filesystem::path pth = i.path();
+        std::string targetDirStr = UTF82String(pth.make_preferred().u8string());
         if (i.is_directory() && pth.filename() != "node_modules") {
             if (std::filesystem::exists(pth / "package.json")) {
-                if (PluginManager::loadPlugin(UTF82String(pth.u8string()), false, true)) {
-                    ++count;
-                }
+                try{
+                    if (PluginManager::loadPlugin(targetDirStr, false, true)) {
+                        ++count;
+                    }
+                }catch(...){}
             }
             else {
-                logger.warn(tr("llse.loader.loadMain.nodejs.ignored", UTF82String(pth.filename().u8string())));
+                logger.warn(tr("llse.loader.loadMain.nodejs.ignored", 
+                    fmt::arg("path", targetDirStr)));
             }
         }
     }
@@ -139,14 +145,21 @@ void LoadMain_NodeJs() {
     files = std::filesystem::directory_iterator(LLSE_PLUGINS_LOAD_DIR);
     for (auto& i : files) {
         std::filesystem::path pth = i.path();
-        if (i.is_regular_file() && EndsWith(UTF82String(pth.u8string()), LLSE_PLUGIN_PACKAGE_EXTENSION)) {
+        std::string packFilePathStr = UTF82String(pth.make_preferred().u8string());
+        if (i.is_regular_file() && EndsWith(packFilePathStr, LLSE_PLUGIN_PACKAGE_EXTENSION)) {
             logger.info(tr("llse.loader.loadMain.nodejs.installPack.start",
-                           fmt::arg("path", UTF82String(pth.u8string()))));
-            if (!PluginManager::loadPlugin(UTF82String(pth.u8string()), false, true)) {
-                logger.error(tr("llse.loader.loadMain.nodejs.installPack.fail"));
+                           fmt::arg("path", packFilePathStr)));
+            try{
+                if (!PluginManager::loadPlugin(packFilePathStr, false, true)) {
+                    logger.error(tr("llse.loader.loadMain.nodejs.installPack.fail", packFilePathStr));
+                }
+                ++count;
+                ++installCount;
+            }catch(...) {
+                // not matched backend type
+                logger.warn(tr("llse.loader.loadMain.nodejs.ignored", 
+                    fmt::arg("path", packFilePathStr)));
             }
-            ++count;
-            ++installCount;
         }
     }
 
@@ -168,14 +181,18 @@ void LoadMain_Python() {
     std::filesystem::directory_iterator files(LLSE_PLUGINS_ROOT_DIR);
     for (auto& i : files) {
         std::filesystem::path pth = i.path();
+        std::string targetDirStr = UTF82String(pth.make_preferred().u8string());
         if (i.is_directory() && pth.filename() != "site-packages") {
             if (std::filesystem::exists(pth / "pyproject.toml")) {
-                if (PluginManager::loadPlugin(UTF82String(pth.u8string()), false, true)) {
-                    ++count;
-                }
+                try{
+                    if (PluginManager::loadPlugin(targetDirStr, false, true)) {
+                        ++count;
+                    }
+                }catch(...) {}
             }
             else {
-                logger.warn(tr("llse.loader.loadMain.python.ignored", UTF82String(pth.filename().u8string())));
+                logger.warn(tr("llse.loader.loadMain.python.ignored", 
+                    fmt::arg("path", targetDirStr)));
             }
         }
     }
@@ -185,14 +202,20 @@ void LoadMain_Python() {
     files = std::filesystem::directory_iterator(LLSE_PLUGINS_LOAD_DIR);
     for (auto& i : files) {
         std::filesystem::path pth = i.path();
-        if (i.is_regular_file() && EndsWith(UTF82String(pth.u8string()), LLSE_PLUGIN_PACKAGE_EXTENSION)) {
+        std::string packFilePathStr = UTF82String(pth.make_preferred().u8string());
+        if (i.is_regular_file() && EndsWith(packFilePathStr, LLSE_PLUGIN_PACKAGE_EXTENSION)) {
             logger.info(tr("llse.loader.loadMain.python.installPack.start",
-                           fmt::arg("path", UTF82String(pth.u8string()))));
-            if (!PluginManager::loadPlugin(UTF82String(pth.u8string()), false, true)) {
-                logger.error(tr("llse.loader.loadMain.python.installPack.fail"));
+                           fmt::arg("path", packFilePathStr)));
+            try{
+                if (!PluginManager::loadPlugin(packFilePathStr, false, true)) {
+                    logger.error(tr("llse.loader.loadMain.python.installPack.fail", packFilePathStr));
+                }
+                ++count;
+                ++installCount;
+            }catch(...) {
+                // not matched backend type
+                logger.warn(tr("llse.loader.loadMain.python.ignored", packFilePathStr));
             }
-            ++count;
-            ++installCount;
         }
     }
 
@@ -200,8 +223,10 @@ void LoadMain_Python() {
     files = std::filesystem::directory_iterator(LLSE_PLUGINS_LOAD_DIR);
     for (auto& i : files) {
         if (i.is_regular_file() && i.path().extension() == LLSE_SOURCE_FILE_EXTENSION) {
-            if (PluginManager::loadPlugin(UTF82String(i.path().generic_u8string()), false, true))
-                ++count;
+            try {
+                if (PluginManager::loadPlugin(UTF82String(i.path().generic_u8string()), false, true))
+                    ++count;
+            }catch(...){}
         }
     }
 
