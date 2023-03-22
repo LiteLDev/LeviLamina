@@ -30,43 +30,43 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ToastRequestPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1461233790
-     * @vftbl  1
-     * @symbol  ?getId\@ToastRequestPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@ToastRequestPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   -1464666325
-     * @vftbl  2
-     * @symbol  ?getName\@ToastRequestPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@ToastRequestPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   233734428
-     * @vftbl  3
-     * @symbol  ?write\@ToastRequestPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@ToastRequestPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   1719053372
-     * @vftbl  6
-     * @symbol  ?_read\@ToastRequestPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@ToastRequestPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TOASTREQUESTPACKET
     /**
-     * @hash   -634723508
-     * @symbol  ??0ToastRequestPacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI ToastRequestPacket();
+    MCVAPI ~ToastRequestPacket();
+#endif
     /**
-     * @hash   386614771
-     * @symbol  ??0ToastRequestPacket\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
+     * @symbol ??0ToastRequestPacket\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
     MCAPI ToastRequestPacket(std::string const &, std::string const &);
+    /**
+     * @symbol ??0ToastRequestPacket\@\@QEAA\@XZ
+     */
+    MCAPI ToastRequestPacket();
 
 };

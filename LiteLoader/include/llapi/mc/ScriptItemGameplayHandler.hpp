@@ -30,83 +30,77 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ScriptItemGameplayHandler();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?handleEvent\@?$Impl\@U?$type_list\@$$CBU?$ItemGameplayEvent\@X\@\@U?$MutableItemGameplayEvent\@W4CoordinatorResult\@\@\@\@\@entt\@\@\@?$EventHandlerDispatcher\@VItemGameplayHandler\@\@\@Details\@\@MEAA?AW4HandlerResult\@\@AEBU?$ItemGameplayEvent\@X\@\@\@Z
+     * @vftbl 1
+     * @symbol ?handleEvent\@?$Impl\@U?$type_list\@$$CBU?$ItemGameplayEvent\@X\@\@U?$MutableItemGameplayEvent\@W4CoordinatorResult\@\@\@\@\@entt\@\@\@?$EventHandlerDispatcher\@VItemGameplayHandler\@\@\@Details\@\@MEAA?AW4HandlerResult\@\@AEBU?$ItemGameplayEvent\@X\@\@\@Z
      */
     virtual enum class HandlerResult handleEvent(struct ItemGameplayEvent<void> const &);
     /**
-     * @vftbl  2
-     * @symbol  ?handleEvent\@?$Impl\@U?$type_list\@U?$MutableItemGameplayEvent\@W4CoordinatorResult\@\@\@\@\@entt\@\@\@?$EventHandlerDispatcher\@VItemGameplayHandler\@\@\@Details\@\@MEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAU?$MutableItemGameplayEvent\@W4CoordinatorResult\@\@\@\@\@Z
+     * @vftbl 2
+     * @symbol ?handleEvent\@?$Impl\@U?$type_list\@U?$MutableItemGameplayEvent\@W4CoordinatorResult\@\@\@\@\@entt\@\@\@?$EventHandlerDispatcher\@VItemGameplayHandler\@\@\@Details\@\@MEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAU?$MutableItemGameplayEvent\@W4CoordinatorResult\@\@\@\@\@Z
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct MutableItemGameplayEvent<enum class CoordinatorResult> &);
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  __unk_vfn_4
+     * @vftbl 4
+     * @symbol __unk_vfn_4
      */
     virtual void __unk_vfn_4();
     /**
-     * @vftbl  5
-     * @symbol  __unk_vfn_5
+     * @vftbl 5
+     * @symbol __unk_vfn_5
      */
     virtual void __unk_vfn_5();
     /**
-     * @vftbl  6
-     * @symbol  __unk_vfn_6
+     * @vftbl 6
+     * @symbol __unk_vfn_6
      */
     virtual void __unk_vfn_6();
     /**
-     * @vftbl  7
-     * @symbol  __unk_vfn_7
+     * @vftbl 7
+     * @symbol __unk_vfn_7
      */
     virtual void __unk_vfn_7();
     /**
-     * @vftbl  8
-     * @symbol  __unk_vfn_8
+     * @vftbl 8
+     * @symbol __unk_vfn_8
      */
     virtual void __unk_vfn_8();
     /**
-     * @hash   475079878
-     * @vftbl  9
-     * @symbol  ?handleEvent\@ScriptItemGameplayHandler\@\@UEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAUItemDefinitionEventTriggeredEvent\@\@\@Z
+     * @vftbl 9
+     * @symbol ?handleEvent\@ScriptItemGameplayHandler\@\@UEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAUItemDefinitionEventTriggeredEvent\@\@\@Z
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct ItemDefinitionEventTriggeredEvent &);
     /**
-     * @hash   -224603928
-     * @vftbl  10
-     * @symbol  ?handleEvent\@ScriptItemGameplayHandler\@\@UEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAUItemUseOnEvent\@\@\@Z
+     * @vftbl 10
+     * @symbol ?handleEvent\@ScriptItemGameplayHandler\@\@UEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAUItemUseOnEvent\@\@\@Z
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct ItemUseOnEvent &);
     /**
-     * @hash   -377711623
-     * @vftbl  11
-     * @symbol  ?handleEvent\@ScriptItemGameplayHandler\@\@UEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAUItemUseEvent\@\@\@Z
+     * @vftbl 11
+     * @symbol ?handleEvent\@ScriptItemGameplayHandler\@\@UEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAUItemUseEvent\@\@\@Z
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct ItemUseEvent &);
 
 //private:
     /**
-     * @hash   143493799
-     * @symbol  ?_handleItemDefinitionEventTriggered\@ScriptItemGameplayHandler\@\@AEAA_NAEAUItemDefinitionEventTriggeredEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VScriptWorldEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
+     * @symbol ?_handleItemDefinitionEventTriggered\@ScriptItemGameplayHandler\@\@AEAA_NAEAUItemDefinitionEventTriggeredEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VScriptWorldEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
      */
     MCAPI bool _handleItemDefinitionEventTriggered(struct ItemDefinitionEventTriggeredEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldEvents>);
     /**
-     * @hash   -1475826609
-     * @symbol  ?_handleItemUseEvent\@ScriptItemGameplayHandler\@\@AEAA_NAEAUItemUseEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VScriptWorldEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
+     * @symbol ?_handleItemUseEvent\@ScriptItemGameplayHandler\@\@AEAA_NAEAUItemUseEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VScriptWorldEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
      */
     MCAPI bool _handleItemUseEvent(struct ItemUseEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldEvents>);
     /**
-     * @hash   -2035677459
-     * @symbol  ?_handleItemUseOnEvent\@ScriptItemGameplayHandler\@\@AEAA_NAEAUItemUseOnEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VScriptWorldEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
+     * @symbol ?_handleItemUseOnEvent\@ScriptItemGameplayHandler\@\@AEAA_NAEAUItemUseOnEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VScriptWorldEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
      */
     MCAPI bool _handleItemUseOnEvent(struct ItemUseOnEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldEvents>);
 

@@ -30,69 +30,65 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~XoroshiroRandom();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -901128584
-     * @vftbl  1
-     * @symbol  ?nextInt\@XoroshiroRandom\@\@UEAAHXZ
+     * @vftbl 1
+     * @symbol ?nextInt\@XoroshiroRandom\@\@UEAAHXZ
      */
     virtual int nextInt();
     /**
-     * @hash   -505469673
-     * @vftbl  2
-     * @symbol  ?nextInt\@XoroshiroRandom\@\@UEAAHH\@Z
+     * @vftbl 2
+     * @symbol ?nextInt\@XoroshiroRandom\@\@UEAAHH\@Z
      */
     virtual int nextInt(int);
     /**
-     * @hash   -2034721723
-     * @vftbl  3
-     * @symbol  ?nextLong\@XoroshiroRandom\@\@UEAA_JXZ
+     * @vftbl 3
+     * @symbol ?nextLong\@XoroshiroRandom\@\@UEAA_JXZ
      */
     virtual __int64 nextLong();
     /**
-     * @hash   -1330125298
-     * @vftbl  4
-     * @symbol  ?nextBoolean\@XoroshiroRandom\@\@UEAA_NXZ
+     * @vftbl 4
+     * @symbol ?nextBoolean\@XoroshiroRandom\@\@UEAA_NXZ
      */
     virtual bool nextBoolean();
     /**
-     * @hash   -616467288
-     * @vftbl  5
-     * @symbol  ?nextFloat\@XoroshiroRandom\@\@UEAAMXZ
+     * @vftbl 5
+     * @symbol ?nextFloat\@XoroshiroRandom\@\@UEAAMXZ
      */
     virtual float nextFloat();
     /**
-     * @hash   2056862254
-     * @vftbl  6
-     * @symbol  ?nextDouble\@XoroshiroRandom\@\@UEAANXZ
+     * @vftbl 6
+     * @symbol ?nextDouble\@XoroshiroRandom\@\@UEAANXZ
      */
     virtual double nextDouble();
     /**
-     * @hash   -1426037527
-     * @vftbl  7
-     * @symbol  ?nextGaussianDouble\@XoroshiroRandom\@\@UEAANXZ
+     * @vftbl 7
+     * @symbol ?nextGaussianDouble\@XoroshiroRandom\@\@UEAANXZ
      */
     virtual double nextGaussianDouble();
     /**
-     * @hash   98978464
-     * @vftbl  8
-     * @symbol  ?consumeCount\@XoroshiroRandom\@\@UEAAXI\@Z
+     * @vftbl 8
+     * @symbol ?consumeCount\@XoroshiroRandom\@\@UEAAXI\@Z
      */
     virtual void consumeCount(unsigned int);
     /**
-     * @hash   -1505546158
-     * @vftbl  9
-     * @symbol  ?fork\@XoroshiroRandom\@\@UEAA?AV?$unique_ptr\@VIRandom\@\@U?$default_delete\@VIRandom\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 9
+     * @symbol ?fork\@XoroshiroRandom\@\@UEAA?AV?$unique_ptr\@VIRandom\@\@U?$default_delete\@VIRandom\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class IRandom> fork();
     /**
-     * @hash   1477837280
-     * @vftbl  10
-     * @symbol  ?forkPositional\@XoroshiroRandom\@\@UEAA?AV?$unique_ptr\@VIPositionalRandomFactory\@\@U?$default_delete\@VIPositionalRandomFactory\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 10
+     * @symbol ?forkPositional\@XoroshiroRandom\@\@UEAA?AV?$unique_ptr\@VIPositionalRandomFactory\@\@U?$default_delete\@VIPositionalRandomFactory\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_XOROSHIRORANDOM
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~XoroshiroRandom();
+#endif
 
 };

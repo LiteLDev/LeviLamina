@@ -30,43 +30,43 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~MultiplayerSettingsPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1376038985
-     * @vftbl  1
-     * @symbol  ?getId\@MultiplayerSettingsPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@MultiplayerSettingsPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   1678412534
-     * @vftbl  2
-     * @symbol  ?getName\@MultiplayerSettingsPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@MultiplayerSettingsPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   -1012469007
-     * @vftbl  3
-     * @symbol  ?write\@MultiplayerSettingsPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@MultiplayerSettingsPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   -2052756031
-     * @vftbl  6
-     * @symbol  ?_read\@MultiplayerSettingsPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@MultiplayerSettingsPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTIPLAYERSETTINGSPACKET
     /**
-     * @hash   1687906305
-     * @symbol  ??0MultiplayerSettingsPacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI MultiplayerSettingsPacket();
+    MCVAPI ~MultiplayerSettingsPacket();
+#endif
     /**
-     * @hash   -646143636
-     * @symbol  ??0MultiplayerSettingsPacket\@\@QEAA\@W4MultiplayerSettingsPacketType\@\@\@Z
+     * @symbol ??0MultiplayerSettingsPacket\@\@QEAA\@W4MultiplayerSettingsPacketType\@\@\@Z
      */
     MCAPI MultiplayerSettingsPacket(enum class MultiplayerSettingsPacketType);
+    /**
+     * @symbol ??0MultiplayerSettingsPacket\@\@QEAA\@XZ
+     */
+    MCAPI MultiplayerSettingsPacket();
 
 };

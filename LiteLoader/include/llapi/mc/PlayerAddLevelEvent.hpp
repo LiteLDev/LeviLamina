@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1PlayerAddLevelEvent\@\@QEAA\@XZ
+     * @symbol ??1PlayerAddLevelEvent\@\@QEAA\@XZ
      */
     MCAPI ~PlayerAddLevelEvent();
 

@@ -31,74 +31,69 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~FurnaceContainerManagerModel();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1315136282
-     * @vftbl  6
-     * @symbol  ?getItemCopies\@FurnaceContainerManagerModel\@\@UEBA?AV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 6
+     * @symbol ?getItemCopies\@FurnaceContainerManagerModel\@\@UEBA?AV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
-     * @hash   -392174811
-     * @vftbl  7
-     * @symbol  ?setSlot\@FurnaceContainerManagerModel\@\@UEAAXHAEBVItemStack\@\@_N\@Z
+     * @vftbl 7
+     * @symbol ?setSlot\@FurnaceContainerManagerModel\@\@UEAAXHAEBVItemStack\@\@_N\@Z
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
-     * @hash   950797790
-     * @vftbl  8
-     * @symbol  ?getSlot\@FurnaceContainerManagerModel\@\@UEBAAEBVItemStack\@\@H\@Z
+     * @vftbl 8
+     * @symbol ?getSlot\@FurnaceContainerManagerModel\@\@UEBAAEBVItemStack\@\@H\@Z
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
-     * @hash   -1829247202
-     * @vftbl  9
-     * @symbol  ?setData\@FurnaceContainerManagerModel\@\@UEAAXHH\@Z
+     * @vftbl 9
+     * @symbol ?setData\@FurnaceContainerManagerModel\@\@UEAAXHH\@Z
      */
     virtual void setData(int, int);
     /**
-     * @hash   2038041508
-     * @vftbl  10
-     * @symbol  ?broadcastChanges\@FurnaceContainerManagerModel\@\@UEAAXXZ
+     * @vftbl 10
+     * @symbol ?broadcastChanges\@FurnaceContainerManagerModel\@\@UEAAXXZ
      */
     virtual void broadcastChanges();
     /**
-     * @hash   -1668848196
-     * @vftbl  16
-     * @symbol  ?isValid\@FurnaceContainerManagerModel\@\@UEAA_NM\@Z
+     * @vftbl 16
+     * @symbol ?isValid\@FurnaceContainerManagerModel\@\@UEAA_NM\@Z
      */
     virtual bool isValid(float);
     /**
-     * @hash   160203697
-     * @vftbl  17
-     * @symbol  ?_postInit\@FurnaceContainerManagerModel\@\@MEAA?AVContainerScreenContext\@\@XZ
+     * @vftbl 17
+     * @symbol ?_postInit\@FurnaceContainerManagerModel\@\@MEAA?AVContainerScreenContext\@\@XZ
      */
     virtual class ContainerScreenContext _postInit();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FURNACECONTAINERMANAGERMODEL
     /**
-     * @hash   -1513646576
-     * @symbol  ??0FurnaceContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~FurnaceContainerManagerModel();
+#endif
+    /**
+     * @symbol ??0FurnaceContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI FurnaceContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
 
 //protected:
     /**
-     * @hash   -550905598
-     * @symbol  ??0FurnaceContainerManagerModel\@\@IEAA\@AEBVHashedString\@\@W4ContainerType\@\@W4BlockActorType\@\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
+     * @symbol ??0FurnaceContainerManagerModel\@\@IEAA\@AEBVHashedString\@\@W4ContainerType\@\@W4BlockActorType\@\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI FurnaceContainerManagerModel(class HashedString const &, enum class ContainerType, enum class BlockActorType, enum class ContainerID, class Player &, class BlockPos const &);
 
 //private:
     /**
-     * @hash   -348890887
-     * @symbol  ?_getFurnaceEntity\@FurnaceContainerManagerModel\@\@AEAAPEAVFurnaceBlockActor\@\@XZ
+     * @symbol ?_getFurnaceEntity\@FurnaceContainerManagerModel\@\@AEAAPEAVFurnaceBlockActor\@\@XZ
      */
     MCAPI class FurnaceBlockActor * _getFurnaceEntity();
     /**
-     * @hash   -234254968
-     * @symbol  ?_updateResultSlotInfo\@FurnaceContainerManagerModel\@\@AEAAXXZ
+     * @symbol ?_updateResultSlotInfo\@FurnaceContainerManagerModel\@\@AEAAXXZ
      */
     MCAPI void _updateResultSlotInfo();
 

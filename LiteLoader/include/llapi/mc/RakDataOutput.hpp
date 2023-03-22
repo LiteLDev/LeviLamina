@@ -30,63 +30,60 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~RakDataOutput();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1139473245
-     * @vftbl  1
-     * @symbol  ?writeString\@BytesDataOutput\@\@UEAAXV?$basic_string_span\@$$CBD$0?0\@gsl\@\@\@Z
+     * @vftbl 1
+     * @symbol ?writeString\@BytesDataOutput\@\@UEAAXV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    virtual void writeString(class gsl::basic_string_span<char const, -1>);
+    virtual void writeString(class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
-     * @hash   -385427401
-     * @vftbl  2
-     * @symbol  ?writeLongString\@BytesDataOutput\@\@UEAAXV?$basic_string_span\@$$CBD$0?0\@gsl\@\@\@Z
+     * @vftbl 2
+     * @symbol ?writeLongString\@BytesDataOutput\@\@UEAAXV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    virtual void writeLongString(class gsl::basic_string_span<char const, -1>);
+    virtual void writeLongString(class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
-     * @hash   -1594132379
-     * @vftbl  3
-     * @symbol  ?writeFloat\@BytesDataOutput\@\@UEAAXM\@Z
+     * @vftbl 3
+     * @symbol ?writeFloat\@BytesDataOutput\@\@UEAAXM\@Z
      */
     virtual void writeFloat(float);
     /**
-     * @hash   -475571331
-     * @vftbl  4
-     * @symbol  ?writeDouble\@BytesDataOutput\@\@UEAAXN\@Z
+     * @vftbl 4
+     * @symbol ?writeDouble\@BytesDataOutput\@\@UEAAXN\@Z
      */
     virtual void writeDouble(double);
     /**
-     * @hash   990995873
-     * @vftbl  5
-     * @symbol  ?writeByte\@BytesDataOutput\@\@UEAAXD\@Z
+     * @vftbl 5
+     * @symbol ?writeByte\@BytesDataOutput\@\@UEAAXD\@Z
      */
     virtual void writeByte(char);
     /**
-     * @hash   889325701
-     * @vftbl  6
-     * @symbol  ?writeShort\@BytesDataOutput\@\@UEAAXF\@Z
+     * @vftbl 6
+     * @symbol ?writeShort\@BytesDataOutput\@\@UEAAXF\@Z
      */
     virtual void writeShort(short);
     /**
-     * @hash   -905747745
-     * @vftbl  7
-     * @symbol  ?writeInt\@BytesDataOutput\@\@UEAAXH\@Z
+     * @vftbl 7
+     * @symbol ?writeInt\@BytesDataOutput\@\@UEAAXH\@Z
      */
     virtual void writeInt(int);
     /**
-     * @hash   -1324673486
-     * @vftbl  8
-     * @symbol  ?writeLongLong\@BytesDataOutput\@\@UEAAX_J\@Z
+     * @vftbl 8
+     * @symbol ?writeLongLong\@BytesDataOutput\@\@UEAAX_J\@Z
      */
     virtual void writeLongLong(__int64);
     /**
-     * @hash   99441567
-     * @vftbl  9
-     * @symbol  ?writeBytes\@RakDataOutput\@\@UEAAXPEBX_K\@Z
+     * @vftbl 9
+     * @symbol ?writeBytes\@RakDataOutput\@\@UEAAXPEBX_K\@Z
      */
     virtual void writeBytes(void const *, unsigned __int64);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKDATAOUTPUT
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~RakDataOutput();
+#endif
 
 };

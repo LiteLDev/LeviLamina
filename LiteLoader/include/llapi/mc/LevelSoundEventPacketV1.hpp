@@ -30,37 +30,32 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~LevelSoundEventPacketV1();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1071844404
-     * @vftbl  1
-     * @symbol  ?getId\@LevelSoundEventPacketV1\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@LevelSoundEventPacketV1\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   1986747081
-     * @vftbl  2
-     * @symbol  ?getName\@LevelSoundEventPacketV1\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@LevelSoundEventPacketV1\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   -1228891202
-     * @vftbl  3
-     * @symbol  ?write\@LevelSoundEventPacketV1\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@LevelSoundEventPacketV1\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   -1938936370
-     * @vftbl  6
-     * @symbol  ?_read\@LevelSoundEventPacketV1\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@LevelSoundEventPacketV1\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   -2030615202
-     * @symbol  ??0LevelSoundEventPacketV1\@\@QEAA\@XZ
+     * @symbol ??0LevelSoundEventPacketV1\@\@QEAA\@XZ
      */
     MCAPI LevelSoundEventPacketV1();
 

@@ -28,53 +28,47 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~CroakGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   638505859
-     * @vftbl  1
-     * @symbol  ?canUse\@CroakGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@CroakGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   410317473
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@CroakGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@CroakGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   -441325188
-     * @vftbl  4
-     * @symbol  ?start\@CroakGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@CroakGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   1903619612
-     * @vftbl  5
-     * @symbol  ?stop\@CroakGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@CroakGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @vftbl  6
-     * @symbol  __unk_vfn_6
+     * @vftbl 6
+     * @symbol __unk_vfn_6
      */
     virtual void __unk_vfn_6();
     /**
-     * @hash   -1023725795
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@CroakGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@CroakGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   -12646304
-     * @symbol  ??0CroakGoal\@\@QEAA\@AEAVMob\@\@\@Z
+     * @symbol ??0CroakGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI CroakGoal(class Mob &);
 

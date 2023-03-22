@@ -30,13 +30,11 @@ public:
 
 public:
     /**
-     * @hash   -1916232523
-     * @symbol  ?AddRef\@WSAStartupSingleton\@\@SAXXZ
+     * @symbol ?AddRef\@WSAStartupSingleton\@\@SAXXZ
      */
     MCAPI static void AddRef();
     /**
-     * @hash   -1543892937
-     * @symbol  ?Deref\@WSAStartupSingleton\@\@SAXXZ
+     * @symbol ?Deref\@WSAStartupSingleton\@\@SAXXZ
      */
     MCAPI static void Deref();
 
@@ -44,8 +42,7 @@ public:
 
 protected:
     /**
-     * @hash   1059225114
-     * @symbol  ?refCount\@WSAStartupSingleton\@\@1HA
+     * @symbol ?refCount\@WSAStartupSingleton\@\@1HA
      */
     MCAPI static int refCount;
 

@@ -31,88 +31,77 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~LayEggGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1556741820
-     * @vftbl  1
-     * @symbol  ?canUse\@LayEggGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@LayEggGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   2029596314
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@LayEggGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@LayEggGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   -706432379
-     * @vftbl  4
-     * @symbol  ?start\@LayEggGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@LayEggGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   -911889024
-     * @vftbl  6
-     * @symbol  ?tick\@LayEggGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@LayEggGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -230628332
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@LayEggGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@LayEggGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @vftbl  8
-     * @symbol  __unk_vfn_8
+     * @vftbl 8
+     * @symbol __unk_vfn_8
      */
     virtual void __unk_vfn_8();
     /**
-     * @vftbl  9
-     * @symbol  __unk_vfn_9
+     * @vftbl 9
+     * @symbol __unk_vfn_9
      */
     virtual void __unk_vfn_9();
     /**
-     * @hash   -2121573618
-     * @vftbl  11
-     * @symbol  ?isValidTarget\@LayEggGoal\@\@UEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     * @vftbl 11
+     * @symbol ?isValidTarget\@LayEggGoal\@\@UEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /**
-     * @hash   -689173698
-     * @vftbl  14
-     * @symbol  ?_moveToBlock\@LayEggGoal\@\@MEAAXXZ
+     * @vftbl 14
+     * @symbol ?_moveToBlock\@LayEggGoal\@\@MEAAXXZ
      */
     virtual void _moveToBlock();
     /**
-     * @hash   -718547544
-     * @vftbl  17
-     * @symbol  ?findTargetBlock\@LayEggGoal\@\@UEAA_NXZ
+     * @vftbl 17
+     * @symbol ?findTargetBlock\@LayEggGoal\@\@UEAA_NXZ
      */
     virtual bool findTargetBlock();
     /**
-     * @hash   -1807765377
-     * @symbol  ??0LayEggGoal\@\@QEAA\@AEAVMob\@\@MHHMAEBV?$vector\@VItemDescriptor\@\@V?$allocator\@VItemDescriptor\@\@\@std\@\@\@std\@\@AEBV?$vector\@W4MaterialType\@\@V?$allocator\@W4MaterialType\@\@\@std\@\@\@3\@_N3MAEBVItemDescriptor\@\@AEBVActorDefinitionTrigger\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
+     * @symbol ??0LayEggGoal\@\@QEAA\@AEAVMob\@\@MHHMAEBV?$vector\@VItemDescriptor\@\@V?$allocator\@VItemDescriptor\@\@\@std\@\@\@std\@\@AEBV?$vector\@W4MaterialType\@\@V?$allocator\@W4MaterialType\@\@\@std\@\@\@3\@_N3MAEBVItemDescriptor\@\@AEBVActorDefinitionTrigger\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
      */
     MCAPI LayEggGoal(class Mob &, float, int, int, float, std::vector<class ItemDescriptor> const &, std::vector<enum class MaterialType> const &, bool, bool, float, class ItemDescriptor const &, class ActorDefinitionTrigger const &, std::string const &);
 
 //protected:
     /**
-     * @hash   -137399418
-     * @symbol  ?_isTargetBlock\@LayEggGoal\@\@IEBA_NAEBVBlockLegacy\@\@\@Z
+     * @symbol ?_isTargetBlock\@LayEggGoal\@\@IEBA_NAEBVBlockLegacy\@\@\@Z
      */
     MCAPI bool _isTargetBlock(class BlockLegacy const &) const;
     /**
-     * @hash   1464134515
-     * @symbol  ?_layEgg\@LayEggGoal\@\@IEAAXAEBVBlockPos\@\@\@Z
+     * @symbol ?_layEgg\@LayEggGoal\@\@IEAAXAEBVBlockPos\@\@\@Z
      */
     MCAPI void _layEgg(class BlockPos const &);
 

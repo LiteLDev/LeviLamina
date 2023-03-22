@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   -417660761
-     * @symbol  ??1ActorDefinitionTriggeredEvent\@\@QEAA\@XZ
+     * @symbol ??1ActorDefinitionTriggeredEvent\@\@QEAA\@XZ
      */
     MCAPI ~ActorDefinitionTriggeredEvent();
 

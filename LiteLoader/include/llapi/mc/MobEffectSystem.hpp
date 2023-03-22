@@ -30,25 +30,24 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~MobEffectSystem();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  __unk_vfn_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   978664304
-     * @vftbl  2
-     * @symbol  ?tick\@MobEffectSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
+     * @vftbl 2
+     * @symbol ?tick\@MobEffectSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
     virtual void tick(class EntityRegistry &);
 
 //private:
     /**
-     * @symbol  ?_tickComponent\@MobEffectSystem\@\@CAXAEAVActorOwnerComponent\@\@AEAVMobEffectComponent\@\@\@Z
+     * @symbol ?_tickComponent\@MobEffectSystem\@\@CAXAEAVActorOwnerComponent\@\@AEAVMobEffectComponent\@\@\@Z
      */
     MCAPI static void _tickComponent(class ActorOwnerComponent &, class MobEffectComponent &);
 

@@ -30,18 +30,15 @@ public:
 
 public:
     /**
-     * @hash   1215492708
-     * @symbol  ??0ItemStackNetManagerScreen\@\@QEAA\@AEAVEntityRegistry\@\@\@Z
+     * @symbol ??0ItemStackNetManagerScreen\@\@QEAA\@AEAVEntityRegistry\@\@\@Z
      */
     MCAPI ItemStackNetManagerScreen(class EntityRegistry &);
     /**
-     * @hash   -1859870174
-     * @symbol  ?getEntity\@ItemStackNetManagerScreen\@\@QEAAAEAVEntityContext\@\@XZ
+     * @symbol ?getEntity\@ItemStackNetManagerScreen\@\@QEAAAEAVEntityContext\@\@XZ
      */
     MCAPI class EntityContext & getEntity();
     /**
-     * @hash   -1528660260
-     * @symbol  ?getEntity\@ItemStackNetManagerScreen\@\@QEBAAEBVEntityContext\@\@XZ
+     * @symbol ?getEntity\@ItemStackNetManagerScreen\@\@QEBAAEBVEntityContext\@\@XZ
      */
     MCAPI class EntityContext const & getEntity() const;
 

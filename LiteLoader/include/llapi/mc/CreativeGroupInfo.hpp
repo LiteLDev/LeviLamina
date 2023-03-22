@@ -28,34 +28,34 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATIVEGROUPINFO
     /**
-     * @hash   1070140540
-     * @symbol  ??0CreativeGroupInfo\@\@QEAA\@PEAVCreativeItemRegistry\@\@W4CreativeItemCategory\@\@AEBVHashedString\@\@IAEBVItemInstance\@\@\@Z
+     * @symbol __unk_destructor_-1
      */
-    MCAPI CreativeGroupInfo(class CreativeItemRegistry *, enum class CreativeItemCategory, class HashedString const &, unsigned int, class ItemInstance const &);
+    MCVAPI ~CreativeGroupInfo();
+#endif
     /**
-     * @hash   -1128175711
-     * @symbol  ??0CreativeGroupInfo\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0CreativeGroupInfo\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI CreativeGroupInfo(class CreativeGroupInfo const &);
     /**
-     * @hash   -652731253
-     * @symbol  ?addCreativeItem\@CreativeGroupInfo\@\@QEAAXPEAVCreativeItemEntry\@\@\@Z
+     * @symbol ??0CreativeGroupInfo\@\@QEAA\@PEAVCreativeItemRegistry\@\@W4CreativeItemCategory\@\@AEBVHashedString\@\@IAEBVItemInstance\@\@\@Z
+     */
+    MCAPI CreativeGroupInfo(class CreativeItemRegistry *, enum class CreativeItemCategory, class HashedString const &, unsigned int, class ItemInstance const &);
+    /**
+     * @symbol ?addCreativeItem\@CreativeGroupInfo\@\@QEAAXPEAVCreativeItemEntry\@\@\@Z
      */
     MCAPI void addCreativeItem(class CreativeItemEntry *);
     /**
-     * @hash   472193836
-     * @symbol  ?getIcon\@CreativeGroupInfo\@\@QEBA?BVItemInstance\@\@XZ
+     * @symbol ?getIcon\@CreativeGroupInfo\@\@QEBA?BVItemInstance\@\@XZ
      */
     MCAPI class ItemInstance const getIcon() const;
     /**
-     * @hash   -1726101320
-     * @symbol  ?getIndex\@CreativeGroupInfo\@\@QEBAIXZ
+     * @symbol ?getIndex\@CreativeGroupInfo\@\@QEBAIXZ
      */
     MCAPI unsigned int getIndex() const;
     /**
-     * @hash   -1680700612
-     * @symbol  ?getName\@CreativeGroupInfo\@\@QEBA?BV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getName\@CreativeGroupInfo\@\@QEBA?BV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string const getName() const;
 

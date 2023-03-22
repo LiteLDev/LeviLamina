@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   1526142417
-     * @symbol  ??1EntitiesExitedVolumeComponent\@\@QEAA\@XZ
+     * @symbol ??1EntitiesExitedVolumeComponent\@\@QEAA\@XZ
      */
     MCAPI ~EntitiesExitedVolumeComponent();
 

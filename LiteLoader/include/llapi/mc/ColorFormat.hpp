@@ -50,128 +50,103 @@ LIAPI std::string& transferColorCodeToConsole(std::string& str, bool keepColorCo
 
 #undef AFTER_EXTRA
     /**
-     * @hash   1404042331
-     * @symbol  ?AQUA\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?AQUA\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const AQUA;
     /**
-     * @hash   -590278535
-     * @symbol  ?BLACK\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?BLACK\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const BLACK;
     /**
-     * @hash   -384053925
-     * @symbol  ?BLUE\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?BLUE\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const BLUE;
     /**
-     * @hash   1111872923
-     * @symbol  ?BOLD\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?BOLD\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const BOLD;
     /**
-     * @hash   963537512
-     * @symbol  ?ColorCodeFromColor\@ColorFormat\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVColor\@mce\@\@\@Z
+     * @symbol ?ColorCodeFromColor\@ColorFormat\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVColor\@mce\@\@\@Z
      */
     MCAPI std::string ColorCodeFromColor(class mce::Color const &);
     /**
-     * @hash   -1863519155
-     * @symbol  ?ColorFromColorCode\@ColorFormat\@\@YAPEBVColor\@mce\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?ColorFromColorCode\@ColorFormat\@\@YAPEBVColor\@mce\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class mce::Color const * ColorFromColorCode(std::string const &);
     /**
-     * @hash   -1543655015
-     * @symbol  ?DARK_AQUA\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?DARK_AQUA\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const DARK_AQUA;
     /**
-     * @hash   963216025
-     * @symbol  ?DARK_BLUE\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?DARK_BLUE\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const DARK_BLUE;
     /**
-     * @hash   -2008157223
-     * @symbol  ?DARK_GRAY\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?DARK_GRAY\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const DARK_GRAY;
     /**
-     * @hash   753919931
-     * @symbol  ?DARK_GREEN\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?DARK_GREEN\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const DARK_GREEN;
     /**
-     * @hash   1504056857
-     * @symbol  ?DARK_PURPLE\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?DARK_PURPLE\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const DARK_PURPLE;
     /**
-     * @hash   202465147
-     * @symbol  ?DARK_RED\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?DARK_RED\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const DARK_RED;
     /**
-     * @hash   -2057248389
-     * @symbol  ?ESCAPE\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?ESCAPE\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const ESCAPE;
     /**
-     * @hash   -12035082
-     * @symbol  ?FromString\@ColorFormat\@\@YA?BV?$basic_string_span\@$$CBD$0?0\@gsl\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?FromString\@ColorFormat\@\@YA?BV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
      */
-    MCAPI class gsl::basic_string_span<char const, -1> const FromString(std::string const &);
+    MCAPI class std::basic_string_view<char, struct std::char_traits<char>> const FromString(std::string const &);
     /**
-     * @hash   -1894689477
-     * @symbol  ?GOLD\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?GOLD\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const GOLD;
     /**
-     * @hash   939263355
-     * @symbol  ?GRAY\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?GRAY\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const GRAY;
     /**
-     * @hash   1930843961
-     * @symbol  ?GREEN\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?GREEN\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const GREEN;
     /**
-     * @hash   1342789787
-     * @symbol  ?ITALIC\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?ITALIC\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const ITALIC;
     /**
-     * @hash   -984750085
-     * @symbol  ?LIGHT_PURPLE\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?LIGHT_PURPLE\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const LIGHT_PURPLE;
     /**
-     * @hash   2052611577
-     * @symbol  ?MINECOIN_GOLD\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?MINECOIN_GOLD\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const MINECOIN_GOLD;
     /**
-     * @hash   -715789477
-     * @symbol  ?OBFUSCATED\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?OBFUSCATED\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const OBFUSCATED;
     /**
-     * @hash   -949135751
-     * @symbol  ?RED\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?RED\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const RED;
     /**
-     * @hash   -929070855
-     * @symbol  ?RESET\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?RESET\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const RESET;
     /**
-     * @hash   -1632031719
-     * @symbol  ?WHITE\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?WHITE\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const WHITE;
     /**
-     * @hash   2040401275
-     * @symbol  ?YELLOW\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?YELLOW\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const YELLOW;
 

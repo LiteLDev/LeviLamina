@@ -30,66 +30,60 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SquidOutOfWaterGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  __unk_vfn_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
     virtual void __unk_vfn_1();
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   933452146
-     * @vftbl  4
-     * @symbol  ?start\@SquidOutOfWaterGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@SquidOutOfWaterGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @vftbl  5
-     * @symbol  __unk_vfn_5
+     * @vftbl 5
+     * @symbol __unk_vfn_5
      */
     virtual void __unk_vfn_5();
     /**
-     * @vftbl  6
-     * @symbol  __unk_vfn_6
+     * @vftbl 6
+     * @symbol __unk_vfn_6
      */
     virtual void __unk_vfn_6();
     /**
-     * @hash   -2072911385
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@SquidOutOfWaterGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@SquidOutOfWaterGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SQUIDOUTOFWATERGOAL
     /**
-     * @hash   -1271515049
-     * @symbol  ?canContinueToUse\@SquidOutOfWaterGoal\@\@UEAA_NXZ
+     * @symbol ?canContinueToUse\@SquidOutOfWaterGoal\@\@UEAA_NXZ
      */
     MCVAPI bool canContinueToUse();
     /**
-     * @hash   -2107574151
-     * @symbol  ?canUse\@SquidOutOfWaterGoal\@\@UEAA_NXZ
+     * @symbol ?canUse\@SquidOutOfWaterGoal\@\@UEAA_NXZ
      */
     MCVAPI bool canUse();
     /**
-     * @hash   1114091058
-     * @symbol  ?stop\@SquidOutOfWaterGoal\@\@UEAAXXZ
+     * @symbol ?stop\@SquidOutOfWaterGoal\@\@UEAAXXZ
      */
     MCVAPI void stop();
     /**
-     * @hash   -13911315
-     * @symbol  ?tick\@SquidOutOfWaterGoal\@\@UEAAXXZ
+     * @symbol ?tick\@SquidOutOfWaterGoal\@\@UEAAXXZ
      */
     MCVAPI void tick();
 #endif

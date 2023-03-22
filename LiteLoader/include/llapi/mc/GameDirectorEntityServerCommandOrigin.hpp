@@ -32,48 +32,41 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~GameDirectorEntityServerCommandOrigin();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -403479297
-     * @vftbl  9
-     * @symbol  ?getPermissionsLevel\@GameDirectorEntityServerCommandOrigin\@\@UEBA?AW4CommandPermissionLevel\@\@XZ
+     * @vftbl 9
+     * @symbol ?getPermissionsLevel\@GameDirectorEntityServerCommandOrigin\@\@UEBA?AW4CommandPermissionLevel\@\@XZ
      */
     virtual enum class CommandPermissionLevel getPermissionsLevel() const;
     /**
-     * @hash   -1565459563
-     * @vftbl  10
-     * @symbol  ?clone\@GameDirectorEntityServerCommandOrigin\@\@UEBA?AV?$unique_ptr\@VCommandOrigin\@\@U?$default_delete\@VCommandOrigin\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 10
+     * @symbol ?clone\@GameDirectorEntityServerCommandOrigin\@\@UEBA?AV?$unique_ptr\@VCommandOrigin\@\@U?$default_delete\@VCommandOrigin\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
     /**
-     * @hash   170886643
-     * @vftbl  17
-     * @symbol  ?canUseCommandsWithoutCheatsEnabled\@GameDirectorEntityServerCommandOrigin\@\@UEBA_NXZ
+     * @vftbl 17
+     * @symbol ?canUseCommandsWithoutCheatsEnabled\@GameDirectorEntityServerCommandOrigin\@\@UEBA_NXZ
      */
     virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /**
-     * @hash   1044274765
-     * @vftbl  18
-     * @symbol  ?isSelectorExpansionAllowed\@GameDirectorEntityServerCommandOrigin\@\@UEBA_NXZ
+     * @vftbl 18
+     * @symbol ?isSelectorExpansionAllowed\@GameDirectorEntityServerCommandOrigin\@\@UEBA_NXZ
      */
     virtual bool isSelectorExpansionAllowed() const;
     /**
-     * @hash   -1654142972
-     * @vftbl  23
-     * @symbol  ?getOriginType\@GameDirectorEntityServerCommandOrigin\@\@UEBA?AW4CommandOriginType\@\@XZ
+     * @vftbl 23
+     * @symbol ?getOriginType\@GameDirectorEntityServerCommandOrigin\@\@UEBA?AW4CommandOriginType\@\@XZ
      */
     virtual enum class CommandOriginType getOriginType() const;
     /**
-     * @hash   -1535517354
-     * @symbol  ??0GameDirectorEntityServerCommandOrigin\@\@QEAA\@AEAVActor\@\@\@Z
+     * @symbol ??0GameDirectorEntityServerCommandOrigin\@\@QEAA\@AEAVActor\@\@\@Z
      */
     MCAPI GameDirectorEntityServerCommandOrigin(class Actor &);
     /**
-     * @hash   1004245886
-     * @symbol  ?load\@GameDirectorEntityServerCommandOrigin\@\@SA?AV?$unique_ptr\@VGameDirectorEntityServerCommandOrigin\@\@U?$default_delete\@VGameDirectorEntityServerCommandOrigin\@\@\@std\@\@\@std\@\@AEBVCompoundTag\@\@AEAVLevel\@\@\@Z
+     * @symbol ?load\@GameDirectorEntityServerCommandOrigin\@\@SA?AV?$unique_ptr\@VGameDirectorEntityServerCommandOrigin\@\@U?$default_delete\@VGameDirectorEntityServerCommandOrigin\@\@\@std\@\@\@std\@\@AEBVCompoundTag\@\@AEAVLevel\@\@\@Z
      */
     MCAPI static std::unique_ptr<class GameDirectorEntityServerCommandOrigin> load(class CompoundTag const &, class Level &);
 

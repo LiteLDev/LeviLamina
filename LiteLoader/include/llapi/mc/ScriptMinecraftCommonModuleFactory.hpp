@@ -28,18 +28,15 @@ public:
 
 public:
     /**
-     * @hash   -1993211779
-     * @symbol  ??0ScriptMinecraftCommonModuleFactory\@\@QEAA\@XZ
+     * @symbol ??0ScriptMinecraftCommonModuleFactory\@\@QEAA\@XZ
      */
     MCAPI ScriptMinecraftCommonModuleFactory();
     /**
-     * @hash   1205706162
-     * @symbol  ?addCommon\@ScriptMinecraftCommonModuleFactory\@\@QEAAXAEAVModuleBindingBuilder\@Scripting\@\@\@Z
+     * @symbol ?addCommon\@ScriptMinecraftCommonModuleFactory\@\@QEAAXAEAVModuleBindingBuilder\@Scripting\@\@\@Z
      */
     MCAPI void addCommon(class Scripting::ModuleBindingBuilder &);
     /**
-     * @hash   2009341275
-     * @symbol  ??1ScriptMinecraftCommonModuleFactory\@\@QEAA\@XZ
+     * @symbol ??1ScriptMinecraftCommonModuleFactory\@\@QEAA\@XZ
      */
     MCAPI ~ScriptMinecraftCommonModuleFactory();
 

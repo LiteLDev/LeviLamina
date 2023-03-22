@@ -31,57 +31,48 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ActorSpawnRuleGroup();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1077142780
-     * @vftbl  1
-     * @symbol  ?getRootKey\@ActorSpawnRuleGroup\@\@MEAAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 1
+     * @symbol ?getRootKey\@ActorSpawnRuleGroup\@\@MEAAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string const & getRootKey();
     /**
-     * @hash   1410968561
-     * @vftbl  2
-     * @symbol  ?getFileType\@ActorSpawnRuleGroup\@\@MEAAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getFileType\@ActorSpawnRuleGroup\@\@MEAAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string const & getFileType();
     /**
-     * @hash   -849105371
-     * @vftbl  3
-     * @symbol  ?processPopulationControl\@ActorSpawnRuleGroup\@\@MEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVValue\@Json\@\@\@Z
+     * @vftbl 3
+     * @symbol ?processPopulationControl\@ActorSpawnRuleGroup\@\@MEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVValue\@Json\@\@\@Z
      */
     virtual bool processPopulationControl(std::string const &, class Json::Value &);
     /**
-     * @hash   475483561
-     * @vftbl  4
-     * @symbol  ?readResourceFiles\@ActorSpawnRuleGroup\@\@MEAAXAEAVResourcePackManager\@\@AEAV?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UActorSpawnRuleDefinition\@\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UActorSpawnRuleDefinition\@\@\@std\@\@\@2\@\@std\@\@\@Z
+     * @vftbl 4
+     * @symbol ?readResourceFiles\@ActorSpawnRuleGroup\@\@MEAAXAEAVResourcePackManager\@\@AEAV?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UActorSpawnRuleDefinition\@\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UActorSpawnRuleDefinition\@\@\@std\@\@\@2\@\@std\@\@\@Z
      */
     virtual void readResourceFiles(class ResourcePackManager &, class std::unordered_map<std::string, struct ActorSpawnRuleDefinition, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, struct ActorSpawnRuleDefinition>>> &);
     /**
-     * @hash   -513075083
-     * @symbol  ??0ActorSpawnRuleGroup\@\@QEAA\@AEAVResourcePackManager\@\@AEAVIWorldRegistriesProvider\@\@\@Z
+     * @symbol ??0ActorSpawnRuleGroup\@\@QEAA\@AEAVResourcePackManager\@\@AEAVIWorldRegistriesProvider\@\@\@Z
      */
     MCAPI ActorSpawnRuleGroup(class ResourcePackManager &, class IWorldRegistriesProvider &);
     /**
-     * @hash   -1911988357
-     * @symbol  ?getActorSpawnPool\@ActorSpawnRuleGroup\@\@QEBAHAEBUActorDefinitionIdentifier\@\@\@Z
+     * @symbol ?getActorSpawnPool\@ActorSpawnRuleGroup\@\@QEBAHAEBUActorDefinitionIdentifier\@\@\@Z
      */
     MCAPI int getActorSpawnPool(struct ActorDefinitionIdentifier const &) const;
     /**
-     * @hash   1204276043
-     * @symbol  ?getDelayEnd\@ActorSpawnRuleGroup\@\@QEBAHAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?getDelayEnd\@ActorSpawnRuleGroup\@\@QEBAHAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI int getDelayEnd(std::string const &) const;
     /**
-     * @hash   849938502
-     * @symbol  ?offSetDelayByCurrentTick\@ActorSpawnRuleGroup\@\@QEAAXAEBUTick\@\@\@Z
+     * @symbol ?offSetDelayByCurrentTick\@ActorSpawnRuleGroup\@\@QEAAXAEBUTick\@\@\@Z
      */
     MCAPI void offSetDelayByCurrentTick(struct Tick const &);
     /**
-     * @hash   -753006871
-     * @symbol  ?resetDelayEnd\@ActorSpawnRuleGroup\@\@QEAAXVMobSpawnRules\@\@_KAEAVRandom\@\@\@Z
+     * @symbol ?resetDelayEnd\@ActorSpawnRuleGroup\@\@QEAAXVMobSpawnRules\@\@_KAEAVRandom\@\@\@Z
      */
     MCAPI void resetDelayEnd(class MobSpawnRules, unsigned __int64, class Random &);
 

@@ -31,19 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~DedicatedWSServerCommand();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -394929994
-     * @vftbl  1
-     * @symbol  ?execute\@DedicatedWSServerCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @vftbl 1
+     * @symbol ?execute\@DedicatedWSServerCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   289238335
-     * @symbol  ?setup\@DedicatedWSServerCommand\@\@SAXAEAVCommandRegistry\@\@AEAVIMinecraftApp\@\@\@Z
+     * @symbol ?setup\@DedicatedWSServerCommand\@\@SAXAEAVCommandRegistry\@\@AEAVIMinecraftApp\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &, class IMinecraftApp &);
 
@@ -51,8 +49,7 @@ public:
 
 private:
     /**
-     * @hash   -999935246
-     * @symbol  ?mApp\@DedicatedWSServerCommand\@\@0PEAVIMinecraftApp\@\@EA
+     * @symbol ?mApp\@DedicatedWSServerCommand\@\@0PEAVIMinecraftApp\@\@EA
      */
     MCAPI static class IMinecraftApp * mApp;
 

@@ -31,28 +31,23 @@ public:
 
 public:
     /**
-     * @hash   -958484912
-     * @symbol  ?deserialize\@RandomValueBounds\@\@QEAAXAEBVValue\@Json\@\@\@Z
+     * @symbol ?deserialize\@RandomValueBounds\@\@QEAAXAEBVValue\@Json\@\@\@Z
      */
     MCAPI void deserialize(class Json::Value const &);
     /**
-     * @hash   -98294757
-     * @symbol  ?getFloat\@RandomValueBounds\@\@QEBAMAEAVRandom\@\@\@Z
+     * @symbol ?getFloat\@RandomValueBounds\@\@QEBAMAEAVRandom\@\@\@Z
      */
     MCAPI float getFloat(class Random &) const;
     /**
-     * @hash   -115284669
-     * @symbol  ?getInt\@RandomValueBounds\@\@QEBAHAEAVRandom\@\@\@Z
+     * @symbol ?getInt\@RandomValueBounds\@\@QEBAHAEAVRandom\@\@\@Z
      */
     MCAPI int getInt(class Random &) const;
     /**
-     * @hash   1487371840
-     * @symbol  ?getMax\@RandomValueBounds\@\@QEBAMXZ
+     * @symbol ?getMax\@RandomValueBounds\@\@QEBAMXZ
      */
     MCAPI float getMax() const;
     /**
-     * @hash   -838366196
-     * @symbol  ?getMin\@RandomValueBounds\@\@QEBAMXZ
+     * @symbol ?getMin\@RandomValueBounds\@\@QEBAMXZ
      */
     MCAPI float getMin() const;
 

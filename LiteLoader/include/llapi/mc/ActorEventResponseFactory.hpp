@@ -25,18 +25,25 @@ class ActorEventResponseFactory {
 public:
     class ActorEventResponseFactory& operator=(class ActorEventResponseFactory const &) = delete;
     ActorEventResponseFactory(class ActorEventResponseFactory const &) = delete;
-    ActorEventResponseFactory() = delete;
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTRESPONSEFACTORY
     /**
-     * @hash   1327993685
-     * @symbol  ?initSchema\@ActorEventResponseFactory\@\@QEAAXXZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~ActorEventResponseFactory();
+#endif
+    /**
+     * @symbol ??0ActorEventResponseFactory\@\@QEAA\@XZ
+     */
+    MCAPI ActorEventResponseFactory();
+    /**
+     * @symbol ?initSchema\@ActorEventResponseFactory\@\@QEAAXXZ
      */
     MCAPI void initSchema();
     /**
-     * @hash   1755464496
-     * @symbol  ?initializeFactory\@ActorEventResponseFactory\@\@QEAAXAEBVExperiments\@\@\@Z
+     * @symbol ?initializeFactory\@ActorEventResponseFactory\@\@QEAAXAEBVExperiments\@\@\@Z
      */
     MCAPI void initializeFactory(class Experiments const &);
 

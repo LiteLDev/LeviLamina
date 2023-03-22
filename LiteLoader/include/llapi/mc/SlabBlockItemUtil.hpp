@@ -22,8 +22,7 @@ namespace SlabBlockItemUtil {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   854088906
-     * @symbol  ?convertToDoubleBlock\@SlabBlockItemUtil\@\@YAXAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
+     * @symbol ?convertToDoubleBlock\@SlabBlockItemUtil\@\@YAXAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     MCAPI void convertToDoubleBlock(class ItemStack &, class Actor &, class BlockPos const &, class Block const &);
 

@@ -30,23 +30,19 @@ public:
 
 public:
     /**
-     * @hash   -1058108081
-     * @symbol  ?initialize\@OnActorLeaveVolumeDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVOnActorLeaveVolumeComponent\@\@\@Z
+     * @symbol ?initialize\@OnActorLeaveVolumeDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVOnActorLeaveVolumeComponent\@\@\@Z
      */
     MCAPI void initialize(class EntityContext &, class OnActorLeaveVolumeComponent &) const;
     /**
-     * @hash   1836393976
-     * @symbol  ??1OnActorLeaveVolumeDefinition\@\@QEAA\@XZ
+     * @symbol ??1OnActorLeaveVolumeDefinition\@\@QEAA\@XZ
      */
     MCAPI ~OnActorLeaveVolumeDefinition();
     /**
-     * @hash   -1137107515
-     * @symbol  ?NAME\@OnActorLeaveVolumeDefinition\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?NAME\@OnActorLeaveVolumeDefinition\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NAME;
     /**
-     * @hash   1061005843
-     * @symbol  ?bindType\@OnActorLeaveVolumeDefinition\@\@SAXXZ
+     * @symbol ?bindType\@OnActorLeaveVolumeDefinition\@\@SAXXZ
      */
     MCAPI static void bindType();
 

@@ -20,7 +20,7 @@ namespace VibrationListenerSystemInternal {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?tickComponent\@VibrationListenerSystemInternal\@\@YAXAEAVActorOwnerComponent\@\@AEAVVibrationListenerComponent\@\@\@Z
+     * @symbol ?tickComponent\@VibrationListenerSystemInternal\@\@YAXAEAVActorOwnerComponent\@\@AEAVVibrationListenerComponent\@\@\@Z
      */
     MCAPI void tickComponent(class ActorOwnerComponent &, class VibrationListenerComponent &);
 

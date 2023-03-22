@@ -20,8 +20,7 @@ namespace VanillaServerCommands {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -1063630779
-     * @symbol  ?setup\@VanillaServerCommands\@\@YAXAEAVCommandRegistry\@\@\@Z
+     * @symbol ?setup\@VanillaServerCommands\@\@YAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI void setup(class CommandRegistry &);
 

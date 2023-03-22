@@ -27,13 +27,11 @@ public:
 
 public:
     /**
-     * @hash   896860312
-     * @symbol  ??0LevelChunkBuilderData\@\@QEAA\@XZ
+     * @symbol ??0LevelChunkBuilderData\@\@QEAA\@XZ
      */
     MCAPI LevelChunkBuilderData();
     /**
-     * @hash   243694856
-     * @symbol  ??1LevelChunkBuilderData\@\@QEAA\@XZ
+     * @symbol ??1LevelChunkBuilderData\@\@QEAA\@XZ
      */
     MCAPI ~LevelChunkBuilderData();
 

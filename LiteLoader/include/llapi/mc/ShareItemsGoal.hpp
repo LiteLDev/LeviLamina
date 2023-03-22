@@ -30,61 +30,53 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ShareItemsGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   86689916
-     * @vftbl  1
-     * @symbol  ?canUse\@ShareItemsGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@ShareItemsGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   144300122
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@ShareItemsGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@ShareItemsGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   1455175381
-     * @vftbl  4
-     * @symbol  ?start\@ShareItemsGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@ShareItemsGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   -1584575659
-     * @vftbl  5
-     * @symbol  ?stop\@ShareItemsGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@ShareItemsGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @hash   -1790318656
-     * @vftbl  6
-     * @symbol  ?tick\@ShareItemsGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@ShareItemsGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -1517000556
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@ShareItemsGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@ShareItemsGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   -2094910359
-     * @symbol  ??0ShareItemsGoal\@\@QEAA\@AEAVMob\@\@AEBV?$vector\@UMobDescriptor\@\@V?$allocator\@UMobDescriptor\@\@\@std\@\@\@std\@\@MHM\@Z
+     * @symbol ??0ShareItemsGoal\@\@QEAA\@AEAVMob\@\@AEBV?$vector\@UMobDescriptor\@\@V?$allocator\@UMobDescriptor\@\@\@std\@\@\@std\@\@MHM\@Z
      */
     MCAPI ShareItemsGoal(class Mob &, std::vector<struct MobDescriptor> const &, float, int, float);
 
 //protected:
     /**
-     * @hash   1985296982
-     * @symbol  ?selectEntityToShareWith\@ShareItemsGoal\@\@IEAA?AU?$pair\@HVItemStack\@\@\@std\@\@AEBV?$vector\@U?$pair\@HVItemStack\@\@\@std\@\@V?$allocator\@U?$pair\@HVItemStack\@\@\@std\@\@\@2\@\@3\@\@Z
+     * @symbol ?selectEntityToShareWith\@ShareItemsGoal\@\@IEAA?AU?$pair\@HVItemStack\@\@\@std\@\@AEBV?$vector\@U?$pair\@HVItemStack\@\@\@std\@\@V?$allocator\@U?$pair\@HVItemStack\@\@\@std\@\@\@2\@\@3\@\@Z
      */
     MCAPI struct std::pair<int, class ItemStack> selectEntityToShareWith(std::vector<struct std::pair<int, class ItemStack>> const &);
 

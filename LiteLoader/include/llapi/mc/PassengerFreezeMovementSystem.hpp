@@ -28,13 +28,11 @@ public:
 
 public:
     /**
-     * @hash   1734761200
-     * @symbol  ?createSystem\@PassengerFreezeMovementSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@PassengerFreezeMovementSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
     /**
-     * @hash   2048339789
-     * @symbol  ?freezeMovement\@PassengerFreezeMovementSystem\@\@SAXAEAVStrictEntityContext\@\@AEAUStateVectorComponent\@\@\@Z
+     * @symbol ?freezeMovement\@PassengerFreezeMovementSystem\@\@SAXAEAVStrictEntityContext\@\@AEAUStateVectorComponent\@\@\@Z
      */
     MCAPI static void freezeMovement(class StrictEntityContext &, struct StateVectorComponent &);
 

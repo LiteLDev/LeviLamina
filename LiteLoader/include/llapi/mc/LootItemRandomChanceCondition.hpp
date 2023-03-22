@@ -31,19 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~LootItemRandomChanceCondition();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   606484294
-     * @vftbl  1
-     * @symbol  ?applies\@LootItemRandomChanceCondition\@\@UEAA_NAEAVRandom\@\@AEAVLootTableContext\@\@\@Z
+     * @vftbl 1
+     * @symbol ?applies\@LootItemRandomChanceCondition\@\@UEAA_NAEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
     virtual bool applies(class Random &, class LootTableContext &);
     /**
-     * @hash   -1985448241
-     * @symbol  ?deserialize\@LootItemRandomChanceCondition\@\@SA?AV?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@VValue\@Json\@\@\@Z
+     * @symbol ?deserialize\@LootItemRandomChanceCondition\@\@SA?AV?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@VValue\@Json\@\@\@Z
      */
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
 

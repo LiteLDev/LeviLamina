@@ -30,31 +30,27 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~PlayerContainerSetter();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   583592970
-     * @vftbl  1
-     * @symbol  ?setArmor\@PlayerContainerSetter\@\@UEAAXHAEBVItemStack\@\@\@Z
+     * @vftbl 1
+     * @symbol ?setArmor\@PlayerContainerSetter\@\@UEAAXHAEBVItemStack\@\@\@Z
      */
     virtual void setArmor(int, class ItemStack const &);
     /**
-     * @hash   1949976594
-     * @vftbl  2
-     * @symbol  ?setOffhandSlot\@PlayerContainerSetter\@\@UEAAXAEBVItemStack\@\@\@Z
+     * @vftbl 2
+     * @symbol ?setOffhandSlot\@PlayerContainerSetter\@\@UEAAXAEBVItemStack\@\@\@Z
      */
     virtual void setOffhandSlot(class ItemStack const &);
     /**
-     * @hash   -568606185
-     * @vftbl  3
-     * @symbol  ?setPlayerUIItem\@PlayerContainerSetter\@\@UEAAXHAEBVItemStack\@\@\@Z
+     * @vftbl 3
+     * @symbol ?setPlayerUIItem\@PlayerContainerSetter\@\@UEAAXHAEBVItemStack\@\@\@Z
      */
     virtual void setPlayerUIItem(int, class ItemStack const &);
     /**
-     * @hash   663019552
-     * @symbol  ??0PlayerContainerSetter\@\@QEAA\@AEAVPlayer\@\@\@Z
+     * @symbol ??0PlayerContainerSetter\@\@QEAA\@AEAVPlayer\@\@\@Z
      */
     MCAPI PlayerContainerSetter(class Player &);
 

@@ -31,47 +31,42 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SilverfishMergeWithStoneGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -2001182703
-     * @vftbl  1
-     * @symbol  ?canUse\@SilverfishMergeWithStoneGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@SilverfishMergeWithStoneGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   1575396447
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@SilverfishMergeWithStoneGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@SilverfishMergeWithStoneGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @hash   -113399350
-     * @vftbl  4
-     * @symbol  ?start\@SilverfishMergeWithStoneGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@SilverfishMergeWithStoneGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   -1591238641
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@SilverfishMergeWithStoneGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@SilverfishMergeWithStoneGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @vftbl  8
-     * @symbol  __unk_vfn_8
+     * @vftbl 8
+     * @symbol __unk_vfn_8
      */
     virtual void __unk_vfn_8();
     /**
-     * @vftbl  9
-     * @symbol  __unk_vfn_9
+     * @vftbl 9
+     * @symbol __unk_vfn_9
      */
     virtual void __unk_vfn_9();
     /**
-     * @hash   466506248
-     * @symbol  ??0SilverfishMergeWithStoneGoal\@\@QEAA\@AEAVSilverfish\@\@\@Z
+     * @symbol ??0SilverfishMergeWithStoneGoal\@\@QEAA\@AEAVSilverfish\@\@\@Z
      */
     MCAPI SilverfishMergeWithStoneGoal(class Silverfish &);
 

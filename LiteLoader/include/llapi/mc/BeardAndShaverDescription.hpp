@@ -30,18 +30,15 @@ public:
 
 public:
     /**
-     * @hash   847107118
-     * @symbol  ??0BeardAndShaverDescription\@\@QEAA\@VBeardingDescriptionCache\@\@AEBUBeardKernel\@\@MM\@Z
+     * @symbol ??0BeardAndShaverDescription\@\@QEAA\@VBeardingDescriptionCache\@\@AEBUBeardKernel\@\@MM\@Z
      */
     MCAPI BeardAndShaverDescription(class BeardingDescriptionCache, struct BeardKernel const &, float, float);
     /**
-     * @hash   -1840001911
-     * @symbol  ?calculateContribution\@BeardAndShaverDescription\@\@QEBAMAEBVBlockPos\@\@\@Z
+     * @symbol ?calculateContribution\@BeardAndShaverDescription\@\@QEBAMAEBVBlockPos\@\@\@Z
      */
     MCAPI float calculateContribution(class BlockPos const &) const;
     /**
-     * @hash   662855392
-     * @symbol  ?getCache\@BeardAndShaverDescription\@\@QEBAAEBVBeardingDescriptionCache\@\@XZ
+     * @symbol ?getCache\@BeardAndShaverDescription\@\@QEBAAEBVBeardingDescriptionCache\@\@XZ
      */
     MCAPI class BeardingDescriptionCache const & getCache() const;
 

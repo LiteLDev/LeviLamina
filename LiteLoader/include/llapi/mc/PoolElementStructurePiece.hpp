@@ -31,76 +31,70 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~PoolElementStructurePiece();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1663881587
-     * @vftbl  1
-     * @symbol  ?moveBoundingBox\@PoolElementStructurePiece\@\@UEAAXHHH\@Z
+     * @vftbl 1
+     * @symbol ?moveBoundingBox\@PoolElementStructurePiece\@\@UEAAXHHH\@Z
      */
     virtual void moveBoundingBox(int, int, int);
     /**
-     * @hash   935722328
-     * @vftbl  4
-     * @symbol  ?postProcess\@PoolElementStructurePiece\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
+     * @vftbl 4
+     * @symbol ?postProcess\@PoolElementStructurePiece\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
     /**
-     * @hash   1995379300
-     * @vftbl  5
-     * @symbol  ?postProcessMobsAt\@PoolElementStructurePiece\@\@UEAAXAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
+     * @vftbl 5
+     * @symbol ?postProcessMobsAt\@PoolElementStructurePiece\@\@UEAAXAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
     virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
     /**
-     * @hash   830669207
-     * @vftbl  13
-     * @symbol  ?generateHeightAtPosition\@VillagePiece\@\@UEBAHAEBVBlockPos\@\@AEAVDimension\@\@AEAVBlockVolume\@\@AEAV?$unordered_map\@VChunkPos\@\@V?$unique_ptr\@V?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@U?$default_delete\@V?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@\@2\@\@std\@\@U?$hash\@VChunkPos\@\@\@3\@U?$equal_to\@VChunkPos\@\@\@3\@V?$allocator\@U?$pair\@$$CBVChunkPos\@\@V?$unique_ptr\@V?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@U?$default_delete\@V?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@\@2\@\@std\@\@\@std\@\@\@3\@\@std\@\@\@Z
+     * @vftbl 13
+     * @symbol ?generateHeightAtPosition\@VillagePiece\@\@UEBAHAEBVBlockPos\@\@AEAVDimension\@\@AEAVBlockVolume\@\@AEAV?$unordered_map\@VChunkPos\@\@V?$unique_ptr\@V?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@U?$default_delete\@V?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@\@2\@\@std\@\@U?$hash\@VChunkPos\@\@\@3\@U?$equal_to\@VChunkPos\@\@\@3\@V?$allocator\@U?$pair\@$$CBVChunkPos\@\@V?$unique_ptr\@V?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@U?$default_delete\@V?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@\@2\@\@std\@\@\@std\@\@\@3\@\@std\@\@\@Z
      */
     virtual int generateHeightAtPosition(class BlockPos const &, class Dimension &, class BlockVolume &, class std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<std::vector<short>>>>> &) const = 0;
     /**
-     * @hash   -347100614
-     * @vftbl  14
-     * @symbol  ?getSupportBlock\@VillagePiece\@\@UEBAPEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBV2\@\@Z
+     * @vftbl 14
+     * @symbol ?getSupportBlock\@VillagePiece\@\@UEBAPEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBV2\@\@Z
      */
     virtual class Block const * getSupportBlock(class BlockSource &, class BlockPos const &, class Block const &) const = 0;
     /**
-     * @hash   598200728
-     * @vftbl  15
-     * @symbol  ?getBeardStabilizeBlock\@VillagePiece\@\@UEBAAEBVBlock\@\@AEBV2\@\@Z
+     * @vftbl 15
+     * @symbol ?getBeardStabilizeBlock\@VillagePiece\@\@UEBAAEBVBlock\@\@AEBV2\@\@Z
      */
     virtual class Block const & getBeardStabilizeBlock(class Block const &) const = 0;
     /**
-     * @hash   1228253391
-     * @vftbl  16
-     * @symbol  ?getTerrainAdjustmentEffect\@VillagePiece\@\@UEBA?AW4AdjustmentEffect\@\@XZ
+     * @vftbl 16
+     * @symbol ?getTerrainAdjustmentEffect\@VillagePiece\@\@UEBA?AW4AdjustmentEffect\@\@XZ
      */
     virtual enum class AdjustmentEffect getTerrainAdjustmentEffect() const = 0;
     /**
-     * @hash   -933071252
-     * @vftbl  17
-     * @symbol  ?_needsPostProcessing\@PoolElementStructurePiece\@\@MEAA_NAEAVBlockSource\@\@\@Z
+     * @vftbl 17
+     * @symbol ?_needsPostProcessing\@PoolElementStructurePiece\@\@MEAA_NAEAVBlockSource\@\@\@Z
      */
     virtual bool _needsPostProcessing(class BlockSource &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_POOLELEMENTSTRUCTUREPIECE
     /**
-     * @hash   -775385532
-     * @symbol  ??0PoolElementStructurePiece\@\@QEAA\@AEBVStructurePoolElement\@\@VBlockPos\@\@W4Rotation\@\@HAEAUJigsawJunction\@\@AEBVBoundingBox\@\@1\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~PoolElementStructurePiece();
+#endif
+    /**
+     * @symbol ??0PoolElementStructurePiece\@\@QEAA\@AEBVStructurePoolElement\@\@VBlockPos\@\@W4Rotation\@\@HAEAUJigsawJunction\@\@AEBVBoundingBox\@\@1\@Z
      */
     MCAPI PoolElementStructurePiece(class StructurePoolElement const &, class BlockPos, enum class Rotation, int, struct JigsawJunction &, class BoundingBox const &, class BlockPos);
     /**
-     * @hash   -256534628
-     * @symbol  ?getElement\@PoolElementStructurePiece\@\@QEBAAEBVStructurePoolElement\@\@XZ
+     * @symbol ?getElement\@PoolElementStructurePiece\@\@QEBAAEBVStructurePoolElement\@\@XZ
      */
     MCAPI class StructurePoolElement const & getElement() const;
     /**
-     * @hash   -64785354
-     * @symbol  ?getPosition\@PoolElementStructurePiece\@\@QEBAAEBVBlockPos\@\@XZ
+     * @symbol ?getPosition\@PoolElementStructurePiece\@\@QEBAAEBVBlockPos\@\@XZ
      */
     MCAPI class BlockPos const & getPosition() const;
     /**
-     * @hash   732468048
-     * @symbol  ?setReferencePosition\@PoolElementStructurePiece\@\@QEAAXAEBVBlockPos\@\@\@Z
+     * @symbol ?setReferencePosition\@PoolElementStructurePiece\@\@QEAAXAEBVBlockPos\@\@\@Z
      */
     MCAPI void setReferencePosition(class BlockPos const &);
 

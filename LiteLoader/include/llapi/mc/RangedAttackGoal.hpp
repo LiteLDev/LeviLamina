@@ -30,60 +30,60 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~RangedAttackGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   292370430
-     * @vftbl  1
-     * @symbol  ?canUse\@RangedAttackGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@RangedAttackGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   736261100
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@RangedAttackGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@RangedAttackGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   494313623
-     * @vftbl  4
-     * @symbol  ?start\@RangedAttackGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@RangedAttackGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   -1362481049
-     * @vftbl  5
-     * @symbol  ?stop\@RangedAttackGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@RangedAttackGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @hash   -141685646
-     * @vftbl  6
-     * @symbol  ?tick\@RangedAttackGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@RangedAttackGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   288935298
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@RangedAttackGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@RangedAttackGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   1513174779
-     * @symbol  ??0RangedAttackGoal\@\@QEAA\@AEAVMob\@\@\@Z
+     * @symbol ??0RangedAttackGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI RangedAttackGoal(class Mob &);
     /**
-     * @hash   2048422108
-     * @symbol  ?handleAttackBehavior\@RangedAttackGoal\@\@QEAAXPEAVActor\@\@AEBVVec3\@\@M_N\@Z
+     * @symbol ?handleAttackBehavior\@RangedAttackGoal\@\@QEAAXPEAVActor\@\@AEBVVec3\@\@M_N\@Z
      */
     MCAPI void handleAttackBehavior(class Actor *, class Vec3 const &, float, bool);
+
+//private:
+    /**
+     * @symbol ?_dischargeCarriedItem\@RangedAttackGoal\@\@AEAAXXZ
+     */
+    MCAPI void _dischargeCarriedItem();
+
+private:
 
 };

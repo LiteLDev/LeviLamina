@@ -31,26 +31,23 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~StrongholdStart();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1026169026
-     * @vftbl  2
-     * @symbol  ?isValid\@StrongholdStart\@\@UEBA_NXZ
+     * @vftbl 2
+     * @symbol ?isValid\@StrongholdStart\@\@UEBA_NXZ
      */
     virtual bool isValid() const;
     /**
-     * @hash   144539194
-     * @symbol  ??0StrongholdStart\@\@QEAA\@AEAVDimension\@\@AEAVRandom\@\@HH\@Z
+     * @symbol ??0StrongholdStart\@\@QEAA\@AEAVDimension\@\@AEAVRandom\@\@HH\@Z
      */
     MCAPI StrongholdStart(class Dimension &, class Random &, int, int);
 
 //private:
     /**
-     * @hash   -2122889930
-     * @symbol  ?_initializePieceSet\@StrongholdStart\@\@AEAAXAEAVRandom\@\@\@Z
+     * @symbol ?_initializePieceSet\@StrongholdStart\@\@AEAAXAEAVRandom\@\@\@Z
      */
     MCAPI void _initializePieceSet(class Random &);
 

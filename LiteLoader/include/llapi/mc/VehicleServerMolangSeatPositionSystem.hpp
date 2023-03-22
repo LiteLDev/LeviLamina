@@ -28,13 +28,11 @@ public:
 
 public:
     /**
-     * @hash   -1196392987
-     * @symbol  ?_tickActor\@VehicleServerMolangSeatPositionSystem\@\@SAXAEAVStrictEntityContext\@\@AEBUPassengerComponent\@\@AEAVActorOwnerComponent\@\@AEAUPositionPassengerRequestComponent\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBVRideableComponent\@\@$$CBUVehicleComponent\@\@\@\@\@Z
+     * @symbol ?_tickActor\@VehicleServerMolangSeatPositionSystem\@\@SAXAEAVStrictEntityContext\@\@AEBUPassengerComponent\@\@AEAVActorOwnerComponent\@\@AEAUPositionPassengerRequestComponent\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBVRideableComponent\@\@$$CBUVehicleComponent\@\@\@\@\@Z
      */
     MCAPI static void _tickActor(class StrictEntityContext &, struct PassengerComponent const &, class ActorOwnerComponent &, struct PositionPassengerRequestComponent &, class ViewT<class StrictEntityContext, class EntityRegistryBase, class RideableComponent const, struct VehicleComponent const>);
     /**
-     * @hash   -6668026
-     * @symbol  ?createSystem\@VehicleServerMolangSeatPositionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@VehicleServerMolangSeatPositionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

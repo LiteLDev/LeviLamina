@@ -30,13 +30,11 @@ public:
 
 public:
     /**
-     * @hash   1741479858
-     * @symbol  ??RListTagFloatAdder\@\@QEAAAEAV0\@M\@Z
+     * @symbol ??RListTagFloatAdder\@\@QEAAAEAV0\@M\@Z
      */
     MCAPI class ListTagFloatAdder & operator()(float);
     /**
-     * @hash   1652261658
-     * @symbol  ??1ListTagFloatAdder\@\@QEAA\@XZ
+     * @symbol ??1ListTagFloatAdder\@\@QEAA\@XZ
      */
     MCAPI ~ListTagFloatAdder();
 

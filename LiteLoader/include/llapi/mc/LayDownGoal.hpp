@@ -30,54 +30,47 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~LayDownGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1087075399
-     * @vftbl  1
-     * @symbol  ?canUse\@LayDownGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@LayDownGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   1815577573
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@LayDownGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@LayDownGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   1040516176
-     * @vftbl  4
-     * @symbol  ?start\@LayDownGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@LayDownGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   -1470602176
-     * @vftbl  5
-     * @symbol  ?stop\@LayDownGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@LayDownGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @hash   -592323157
-     * @vftbl  6
-     * @symbol  ?tick\@LayDownGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@LayDownGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -1043725495
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@LayDownGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@LayDownGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   1146128036
-     * @symbol  ??0LayDownGoal\@\@QEAA\@AEAVMob\@\@HH\@Z
+     * @symbol ??0LayDownGoal\@\@QEAA\@AEAVMob\@\@HH\@Z
      */
     MCAPI LayDownGoal(class Mob &, int, int);
 

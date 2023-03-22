@@ -68,63 +68,51 @@ public:
 #undef AFTER_EXTRA
 public:
     /**
-     * @hash   740188092
-     * @symbol  ??0HitResult\@\@QEAA\@XZ
-     */
-    MCAPI HitResult();
-    /**
-     * @hash   1150215588
-     * @symbol  ??0HitResult\@\@QEAA\@AEBVVec3\@\@0AEBVBlockPos\@\@E0\@Z
-     */
-    MCAPI HitResult(class Vec3 const &, class Vec3 const &, class BlockPos const &, unsigned char, class Vec3 const &);
-    /**
-     * @hash   1394176772
-     * @symbol  ??0HitResult\@\@QEAA\@AEBVVec3\@\@0AEAVActor\@\@\@Z
+     * @symbol ??0HitResult\@\@QEAA\@AEBVVec3\@\@0AEAVActor\@\@\@Z
      */
     MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Actor &);
     /**
-     * @hash   1532462482
-     * @symbol  ??0HitResult\@\@QEAA\@AEBVVec3\@\@0AEAVActor\@\@0\@Z
-     */
-    MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Actor &, class Vec3 const &);
-    /**
-     * @hash   -892890061
-     * @symbol  ??0HitResult\@\@QEAA\@AEBVVec3\@\@00\@Z
-     */
-    MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Vec3 const &);
-    /**
-     * @hash   -1786876023
-     * @symbol  ??0HitResult\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI HitResult(class HitResult &&);
-    /**
-     * @hash   282592097
-     * @symbol  ??0HitResult\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0HitResult\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI HitResult(class HitResult const &);
     /**
-     * @hash   1532606245
-     * @symbol  ?distanceTo\@HitResult\@\@QEBAMAEBVActor\@\@\@Z
+     * @symbol ??0HitResult\@\@QEAA\@XZ
+     */
+    MCAPI HitResult();
+    /**
+     * @symbol ??0HitResult\@\@QEAA\@AEBVVec3\@\@0AEAVActor\@\@0\@Z
+     */
+    MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Actor &, class Vec3 const &);
+    /**
+     * @symbol ??0HitResult\@\@QEAA\@AEBVVec3\@\@0AEBVBlockPos\@\@E0\@Z
+     */
+    MCAPI HitResult(class Vec3 const &, class Vec3 const &, class BlockPos const &, unsigned char, class Vec3 const &);
+    /**
+     * @symbol ??0HitResult\@\@QEAA\@AEBVVec3\@\@00\@Z
+     */
+    MCAPI HitResult(class Vec3 const &, class Vec3 const &, class Vec3 const &);
+    /**
+     * @symbol ??0HitResult\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI HitResult(class HitResult &&);
+    /**
+     * @symbol ?distanceTo\@HitResult\@\@QEBAMAEBVActor\@\@\@Z
      */
     MCAPI float distanceTo(class Actor const &) const;
     /**
-     * @hash   -1798157605
-     * @symbol  ?getEntity\@HitResult\@\@QEBAPEAVActor\@\@XZ
+     * @symbol ?getEntity\@HitResult\@\@QEBAPEAVActor\@\@XZ
      */
     MCAPI class Actor * getEntity() const;
     /**
-     * @hash   -776575164
-     * @symbol  ??4HitResult\@\@QEAAAEAV0\@$$QEAV0\@\@Z
-     */
-    MCAPI class HitResult & operator=(class HitResult &&);
-    /**
-     * @hash   213314316
-     * @symbol  ??4HitResult\@\@QEAAAEAV0\@AEBV0\@\@Z
+     * @symbol ??4HitResult\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
     MCAPI class HitResult & operator=(class HitResult const &);
     /**
-     * @hash   -225621156
-     * @symbol  ??1HitResult\@\@QEAA\@XZ
+     * @symbol ??4HitResult\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     */
+    MCAPI class HitResult & operator=(class HitResult &&);
+    /**
+     * @symbol ??1HitResult\@\@QEAA\@XZ
      */
     MCAPI ~HitResult();
 

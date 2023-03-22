@@ -22,8 +22,7 @@ namespace TrustedKeys {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -2121339599
-     * @symbol  ?AuthServicePublicKey\@TrustedKeys\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?AuthServicePublicKey\@TrustedKeys\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const AuthServicePublicKey;
 

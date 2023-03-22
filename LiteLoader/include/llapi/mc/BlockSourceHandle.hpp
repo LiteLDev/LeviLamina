@@ -31,29 +31,28 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BlockSourceHandle();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  __unk_vfn_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   788811310
-     * @vftbl  2
-     * @symbol  ?onSourceDestroyed\@BlockSourceHandle\@\@UEAAXAEAVBlockSource\@\@\@Z
+     * @vftbl 2
+     * @symbol ?onSourceDestroyed\@BlockSourceHandle\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
     virtual void onSourceDestroyed(class BlockSource &);
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  __unk_vfn_4
+     * @vftbl 4
+     * @symbol __unk_vfn_4
      */
     virtual void __unk_vfn_4();
 

@@ -30,13 +30,12 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~LoomContainerScreenValidator();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1354296446
-     * @symbol  ??0LoomContainerScreenValidator\@\@QEAA\@XZ
+     * @symbol ??0LoomContainerScreenValidator\@\@QEAA\@XZ
      */
     MCAPI LoomContainerScreenValidator();
 

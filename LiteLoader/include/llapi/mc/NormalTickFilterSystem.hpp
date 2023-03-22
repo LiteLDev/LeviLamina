@@ -28,12 +28,11 @@ public:
 
 public:
     /**
-     * @hash   -648544948
-     * @symbol  ?createGenericSystem\@NormalTickFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createGenericSystem\@NormalTickFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createGenericSystem();
     /**
-     * @symbol  ?createLocalPlayerSystem\@NormalTickFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createLocalPlayerSystem\@NormalTickFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createLocalPlayerSystem();
 

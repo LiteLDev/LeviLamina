@@ -29,73 +29,67 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~MoveControl();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -700614023
-     * @vftbl  1
-     * @symbol  ?initializeInternal\@MoveControl\@\@UEAAXAEAVMob\@\@PEAUMoveControlDescription\@\@\@Z
+     * @vftbl 1
+     * @symbol ?initializeInternal\@MoveControl\@\@UEAAXAEAVMob\@\@PEAUMoveControlDescription\@\@\@Z
      */
     virtual void initializeInternal(class Mob &, struct MoveControlDescription *);
     /**
-     * @hash   1400468506
-     * @vftbl  2
-     * @symbol  ?tick\@MoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
+     * @vftbl 2
+     * @symbol ?tick\@MoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
     /**
-     * @hash   714705319
-     * @vftbl  3
-     * @symbol  ?setWantedPosition\@MoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@AEBVVec3\@\@M\@Z
+     * @vftbl 3
+     * @symbol ?setWantedPosition\@MoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@AEBVVec3\@\@M\@Z
      */
     virtual void setWantedPosition(class MoveControlComponent &, class Mob &, class Vec3 const &, float);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROL
     /**
-     * @hash   -1659997320
-     * @symbol  ??0MoveControl\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~MoveControl();
+#endif
+    /**
+     * @symbol ??0MoveControl\@\@QEAA\@XZ
      */
     MCAPI MoveControl();
     /**
-     * @hash   -46294319
-     * @symbol  ?MIN_DELTA_TO_JUMP\@MoveControl\@\@2MB
+     * @symbol ?MIN_DELTA_TO_JUMP\@MoveControl\@\@2MB
      */
     MCAPI static float const MIN_DELTA_TO_JUMP;
     /**
-     * @hash   -1073285833
-     * @symbol  ?MIN_DELTA_TO_JUMP_UNDERWATER\@MoveControl\@\@2MB
+     * @symbol ?MIN_DELTA_TO_JUMP_UNDERWATER\@MoveControl\@\@2MB
      */
     MCAPI static float const MIN_DELTA_TO_JUMP_UNDERWATER;
     /**
-     * @hash   -1667887405
-     * @symbol  ?MIN_DELTA_TO_MOVE\@MoveControl\@\@2MB
+     * @symbol ?MIN_DELTA_TO_MOVE\@MoveControl\@\@2MB
      */
     MCAPI static float const MIN_DELTA_TO_MOVE;
     /**
-     * @hash   -2033941379
-     * @symbol  ?MIN_SPEED\@MoveControl\@\@2MB
+     * @symbol ?MIN_SPEED\@MoveControl\@\@2MB
      */
     MCAPI static float const MIN_SPEED;
     /**
-     * @hash   -1697043157
-     * @symbol  ?MIN_SPEED_SQR\@MoveControl\@\@2MB
+     * @symbol ?MIN_SPEED_SQR\@MoveControl\@\@2MB
      */
     MCAPI static float const MIN_SPEED_SQR;
     /**
-     * @hash   -1479217065
-     * @symbol  ?getDiffVector\@MoveControl\@\@SA?AVVec3\@\@AEBV2\@AEBVMob\@\@\@Z
+     * @symbol ?getDiffVector\@MoveControl\@\@SA?AVVec3\@\@AEBV2\@AEBVMob\@\@\@Z
      */
     MCAPI static class Vec3 getDiffVector(class Vec3 const &, class Mob const &);
 
 //protected:
     /**
-     * @hash   -315707541
-     * @symbol  ?calculateMoveSpeed\@MoveControl\@\@IEAAMAEBVMoveControlComponent\@\@AEAVMob\@\@AEBVVec3\@\@M\@Z
+     * @symbol ?calculateMoveSpeed\@MoveControl\@\@IEAAMAEBVMoveControlComponent\@\@AEAVMob\@\@AEBVVec3\@\@M\@Z
      */
     MCAPI float calculateMoveSpeed(class MoveControlComponent const &, class Mob &, class Vec3 const &, float);
     /**
-     * @hash   -1157076119
-     * @symbol  ?calculateYRotation\@MoveControl\@\@IEAAMAEBVMoveControlComponent\@\@AEBVMob\@\@AEBVVec3\@\@M\@Z
+     * @symbol ?calculateYRotation\@MoveControl\@\@IEAAMAEBVMoveControlComponent\@\@AEBVMob\@\@AEBVVec3\@\@M\@Z
      */
     MCAPI float calculateYRotation(class MoveControlComponent const &, class Mob const &, class Vec3 const &, float);
 

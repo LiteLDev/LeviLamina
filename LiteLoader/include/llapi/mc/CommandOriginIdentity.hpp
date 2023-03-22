@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   -1362140165
-     * @symbol  ??1CommandOriginIdentity\@\@QEAA\@XZ
+     * @symbol ??1CommandOriginIdentity\@\@QEAA\@XZ
      */
     MCAPI ~CommandOriginIdentity();
 

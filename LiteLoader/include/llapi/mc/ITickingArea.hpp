@@ -29,9 +29,14 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITICKINGAREA
     /**
-     * @hash   -1957883710
-     * @symbol  ?serialize\@ITickingArea\@\@QEBA?AVCompoundTag\@\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~ITickingArea();
+#endif
+    /**
+     * @symbol ?serialize\@ITickingArea\@\@QEBA?AVCompoundTag\@\@XZ
      */
     MCAPI class CompoundTag serialize() const;
 

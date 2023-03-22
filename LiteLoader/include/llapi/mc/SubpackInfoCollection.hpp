@@ -28,28 +28,23 @@ public:
 
 public:
     /**
-     * @hash   2044534268
-     * @symbol  ?addSubpackInfo\@SubpackInfoCollection\@\@QEAAX$$QEAUSubpackInfo\@\@\@Z
+     * @symbol ?addSubpackInfo\@SubpackInfoCollection\@\@QEAAX$$QEAUSubpackInfo\@\@\@Z
      */
     MCAPI void addSubpackInfo(struct SubpackInfo &&);
     /**
-     * @hash   1521866949
-     * @symbol  ?getSubpackContentTier\@SubpackInfoCollection\@\@QEBA?AVContentTierInfo\@\@H\@Z
+     * @symbol ?getSubpackContentTier\@SubpackInfoCollection\@\@QEBA?AVContentTierInfo\@\@H\@Z
      */
     MCAPI class ContentTierInfo getSubpackContentTier(int) const;
     /**
-     * @hash   1367030693
-     * @symbol  ?getSubpackFolderName\@SubpackInfoCollection\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
+     * @symbol ?getSubpackFolderName\@SubpackInfoCollection\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI std::string const & getSubpackFolderName(int) const;
     /**
-     * @hash   -772840910
-     * @symbol  ?getSubpackInfo\@SubpackInfoCollection\@\@QEBAAEBV?$vector\@USubpackInfo\@\@V?$allocator\@USubpackInfo\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?getSubpackInfo\@SubpackInfoCollection\@\@QEBAAEBV?$vector\@USubpackInfo\@\@V?$allocator\@USubpackInfo\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::vector<struct SubpackInfo> const & getSubpackInfo() const;
     /**
-     * @hash   -622209964
-     * @symbol  ?hasSubpacks\@SubpackInfoCollection\@\@QEBA_NXZ
+     * @symbol ?hasSubpacks\@SubpackInfoCollection\@\@QEBA_NXZ
      */
     MCAPI bool hasSubpacks() const;
 

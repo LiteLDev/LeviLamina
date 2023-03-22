@@ -28,19 +28,16 @@ public:
 
 public:
     /**
-     * @hash   -1383188479
-     * @vftbl  0
-     * @symbol  ?containerContentChanged\@LegacyActorArmorChangedListener\@\@UEAAXH\@Z
+     * @vftbl 0
+     * @symbol ?containerContentChanged\@LegacyActorArmorChangedListener\@\@UEAAXH\@Z
      */
     virtual void containerContentChanged(int);
     /**
-     * @hash   1905625896
-     * @symbol  ?containerContentChanged\@LegacyActorArmorChangedListener\@\@SAXAEAVActor\@\@\@Z
+     * @symbol ?containerContentChanged\@LegacyActorArmorChangedListener\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI static void containerContentChanged(class Actor &);
+    MCAPI void containerContentChanged(class Actor &);
     /**
-     * @hash   -1004154210
-     * @symbol  ?initializeEntity\@LegacyActorArmorChangedListener\@\@SAXAEAVEntityContext\@\@\@Z
+     * @symbol ?initializeEntity\@LegacyActorArmorChangedListener\@\@SAXAEAVEntityContext\@\@\@Z
      */
     MCAPI static void initializeEntity(class EntityContext &);
 

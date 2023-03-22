@@ -30,13 +30,12 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SmokerContainerScreenValidator();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -142187388
-     * @symbol  ??0SmokerContainerScreenValidator\@\@QEAA\@XZ
+     * @symbol ??0SmokerContainerScreenValidator\@\@QEAA\@XZ
      */
     MCAPI SmokerContainerScreenValidator();
 

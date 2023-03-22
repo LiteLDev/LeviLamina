@@ -16,6 +16,7 @@
 #include "main/BuiltinCommands.h"
 #include "api/APIHelp.h"
 #include "main/NodeJsHelper.h"
+#include "main/PythonHelper.h"
 #include "api/BaseAPI.h"
 #include "api/BlockAPI.h"
 #include "api/GuiAPI.h"
@@ -400,7 +401,7 @@ void EnableEventListener(int eventId) {
             Event::PlayerAttackEvent::subscribe([](const PlayerAttackEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onAttackEntity) {
                     if (ev.mTarget) {
-                        CallEvent(EVENT_TYPES::onAttackEntity, PlayerClass::newPlayer(ev.mPlayer), EntityClass::newEntity(ev.mTarget));
+                        CallEvent(EVENT_TYPES::onAttackEntity, PlayerClass::newPlayer(ev.mPlayer), EntityClass::newEntity(ev.mTarget), Number::newNumber(ev.mAttackDamage));
                     }
                 }
                 IF_LISTENED_END(EVENT_TYPES::onAttackEntity);
@@ -984,12 +985,8 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onHopperSearchItem:
             Event::HopperSearchItemEvent::subscribe([](const HopperSearchItemEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onHopperSearchItem) {
-                    if (ev.isMinecart) {
-                        CallEvent(EVENT_TYPES::onHopperSearchItem, FloatPos::newPos(ev.mMinecartPos, ev.mDimensionId), Boolean::newBoolean(ev.isMinecart));
-                    } else {
-                        BlockInstance bl = ev.mHopperBlock;
-                        CallEvent(EVENT_TYPES::onHopperSearchItem, FloatPos::newPos(bl.getPosition().toVec3(), ev.mDimensionId), Boolean::newBoolean(ev.isMinecart));
-                    }
+                    CallEvent(EVENT_TYPES::onHopperSearchItem, FloatPos::newPos(ev.mPos, ev.mDimensionId),
+                              Boolean::newBoolean(ev.isMinecart), ItemClass::newItem(ev.mItemStack));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onHopperSearchItem);
             });
@@ -998,7 +995,8 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onHopperPushOut:
             Event::HopperPushOutEvent::subscribe([](const HopperPushOutEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onHopperPushOut) {
-                    CallEvent(EVENT_TYPES::onHopperPushOut, FloatPos::newPos(ev.mPos, ev.mDimensionId));
+                    CallEvent(EVENT_TYPES::onHopperPushOut, FloatPos::newPos(ev.mPos, ev.mDimensionId),
+                              Boolean::newBoolean(ev.isMinecart), ItemClass::newItem(ev.mItemStack));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onHopperPushOut);
             });
@@ -1202,8 +1200,10 @@ void InitBasicEventListeners() {
 #ifdef LLSE_BACKEND_NODEJS
         if (!NodeJsHelper::processConsoleNpmCmd(ev.mCommand))
             return false;
+#elif defined(LLSE_BACKEND_PYTHON)
+        if (!PythonHelper::processConsolePipCmd(ev.mCommand))
+            return false;
 #endif
-
         // CallEvents
         vector<string> paras;
         bool isFromOtherEngine = false;
@@ -1291,7 +1291,7 @@ inline bool CallTickEvent() {
 }
 
 // 植入tick
-TClasslessInstanceHook(void, "?tick@ServerLevel@@UEAAXXZ") {
+TClasslessInstanceHook(void, "?tick@Level@@UEAAXXZ") {
 #ifndef LLSE_BACKEND_NODEJS
     try {
         std::list<ScriptEngine*> tmpList;

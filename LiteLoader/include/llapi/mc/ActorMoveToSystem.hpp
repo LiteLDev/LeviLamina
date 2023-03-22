@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   1228375260
-     * @symbol  ?createActorMoveToSystem\@ActorMoveToSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createActorMoveToSystem\@ActorMoveToSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createActorMoveToSystem();
 

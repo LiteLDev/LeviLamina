@@ -29,35 +29,29 @@ public:
 
 public:
     /**
-     * @hash   -1914926750
-     * @symbol  ??0OpenDoorAnnotationComponent\@\@QEAA\@XZ
+     * @symbol ??0OpenDoorAnnotationComponent\@\@QEAA\@XZ
      */
     MCAPI OpenDoorAnnotationComponent();
     /**
-     * @hash   1556531461
-     * @symbol  ??0OpenDoorAnnotationComponent\@\@QEAA\@$$QEAV0\@\@Z
+     * @symbol ??0OpenDoorAnnotationComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI OpenDoorAnnotationComponent(class OpenDoorAnnotationComponent &&);
     /**
-     * @hash   -1243615910
-     * @symbol  ?checkPath\@OpenDoorAnnotationComponent\@\@QEAAXAEAVMob\@\@\@Z
+     * @symbol ?checkPath\@OpenDoorAnnotationComponent\@\@QEAAXAEAVMob\@\@\@Z
      */
     MCAPI void checkPath(class Mob &);
     /**
-     * @hash   232513026
-     * @symbol  ?initFromDefinition\@OpenDoorAnnotationComponent\@\@QEAAXAEAVActor\@\@\@Z
+     * @symbol ?initFromDefinition\@OpenDoorAnnotationComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
-     * @hash   -1530892806
-     * @symbol  ?onComponentRemoved\@OpenDoorAnnotationComponent\@\@QEAAXAEAVEntityContext\@\@\@Z
+     * @symbol ?onComponentRemoved\@OpenDoorAnnotationComponent\@\@QEAAXAEAVEntityContext\@\@\@Z
      */
     MCAPI void onComponentRemoved(class EntityContext &);
 
 //private:
     /**
-     * @hash   1049616689
-     * @symbol  ?_cleanUp\@OpenDoorAnnotationComponent\@\@AEAAXAEAVMob\@\@\@Z
+     * @symbol ?_cleanUp\@OpenDoorAnnotationComponent\@\@AEAAXAEAVMob\@\@\@Z
      */
     MCAPI void _cleanUp(class Mob &);
 

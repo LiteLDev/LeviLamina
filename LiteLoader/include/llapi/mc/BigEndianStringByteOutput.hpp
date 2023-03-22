@@ -29,39 +29,40 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BigEndianStringByteOutput();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1884461315
-     * @vftbl  3
-     * @symbol  ?writeFloat\@BigEndianStringByteOutput\@\@UEAAXM\@Z
+     * @vftbl 3
+     * @symbol ?writeFloat\@BigEndianStringByteOutput\@\@UEAAXM\@Z
      */
     virtual void writeFloat(float);
     /**
-     * @hash   -1812170741
-     * @vftbl  4
-     * @symbol  ?writeDouble\@BigEndianStringByteOutput\@\@UEAAXN\@Z
+     * @vftbl 4
+     * @symbol ?writeDouble\@BigEndianStringByteOutput\@\@UEAAXN\@Z
      */
     virtual void writeDouble(double);
     /**
-     * @hash   1762944307
-     * @vftbl  6
-     * @symbol  ?writeShort\@BigEndianStringByteOutput\@\@UEAAXF\@Z
+     * @vftbl 6
+     * @symbol ?writeShort\@BigEndianStringByteOutput\@\@UEAAXF\@Z
      */
     virtual void writeShort(short);
     /**
-     * @hash   1796032397
-     * @vftbl  7
-     * @symbol  ?writeInt\@BigEndianStringByteOutput\@\@UEAAXH\@Z
+     * @vftbl 7
+     * @symbol ?writeInt\@BigEndianStringByteOutput\@\@UEAAXH\@Z
      */
     virtual void writeInt(int);
     /**
-     * @hash   -796884176
-     * @vftbl  8
-     * @symbol  ?writeLongLong\@BigEndianStringByteOutput\@\@UEAAX_J\@Z
+     * @vftbl 8
+     * @symbol ?writeLongLong\@BigEndianStringByteOutput\@\@UEAAX_J\@Z
      */
     virtual void writeLongLong(__int64);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIGENDIANSTRINGBYTEOUTPUT
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~BigEndianStringByteOutput();
+#endif
 
 };

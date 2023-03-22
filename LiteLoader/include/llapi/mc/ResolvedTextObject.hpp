@@ -30,13 +30,11 @@ public:
 
 public:
     /**
-     * @hash   -1289423832
-     * @symbol  ?getAsJsonString\@ResolvedTextObject\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getAsJsonString\@ResolvedTextObject\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string getAsJsonString() const;
     /**
-     * @hash   912386414
-     * @symbol  ??1ResolvedTextObject\@\@QEAA\@XZ
+     * @symbol ??1ResolvedTextObject\@\@QEAA\@XZ
      */
     MCAPI ~ResolvedTextObject();
 

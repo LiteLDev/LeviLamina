@@ -31,360 +31,331 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ButtonBlock();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   2122009841
-     * @vftbl  5
-     * @symbol  ?getCollisionShape\@ButtonBlock\@\@UEBA_NAEAVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
+     * @vftbl 5
+     * @symbol ?getCollisionShape\@ButtonBlock\@\@UEBA_NAEAVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
-     * @vftbl  19
-     * @symbol  __unk_vfn_19
+     * @vftbl 19
+     * @symbol __unk_vfn_19
      */
     virtual void __unk_vfn_19();
     /**
-     * @vftbl  29
-     * @symbol  __unk_vfn_29
+     * @vftbl 29
+     * @symbol __unk_vfn_29
      */
     virtual void __unk_vfn_29();
     /**
-     * @vftbl  30
-     * @symbol  __unk_vfn_30
+     * @vftbl 30
+     * @symbol __unk_vfn_30
      */
     virtual void __unk_vfn_30();
     /**
-     * @vftbl  32
-     * @symbol  __unk_vfn_32
+     * @vftbl 32
+     * @symbol __unk_vfn_32
      */
     virtual void __unk_vfn_32();
     /**
-     * @vftbl  33
-     * @symbol  __unk_vfn_33
+     * @vftbl 33
+     * @symbol __unk_vfn_33
      */
     virtual void __unk_vfn_33();
     /**
-     * @vftbl  34
-     * @symbol  __unk_vfn_34
+     * @vftbl 34
+     * @symbol __unk_vfn_34
      */
     virtual void __unk_vfn_34();
     /**
-     * @vftbl  36
-     * @symbol  __unk_vfn_36
+     * @vftbl 36
+     * @symbol __unk_vfn_36
      */
     virtual void __unk_vfn_36();
     /**
-     * @vftbl  37
-     * @symbol  __unk_vfn_37
+     * @vftbl 37
+     * @symbol __unk_vfn_37
      */
     virtual void __unk_vfn_37();
     /**
-     * @vftbl  38
-     * @symbol  __unk_vfn_38
+     * @vftbl 38
+     * @symbol __unk_vfn_38
      */
     virtual void __unk_vfn_38();
     /**
-     * @vftbl  39
-     * @symbol  __unk_vfn_39
+     * @vftbl 39
+     * @symbol __unk_vfn_39
      */
     virtual void __unk_vfn_39();
     /**
-     * @vftbl  40
-     * @symbol  __unk_vfn_40
+     * @vftbl 40
+     * @symbol __unk_vfn_40
      */
     virtual void __unk_vfn_40();
     /**
-     * @vftbl  41
-     * @symbol  __unk_vfn_41
+     * @vftbl 41
+     * @symbol __unk_vfn_41
      */
     virtual void __unk_vfn_41();
     /**
-     * @vftbl  42
-     * @symbol  __unk_vfn_42
+     * @vftbl 42
+     * @symbol __unk_vfn_42
      */
     virtual void __unk_vfn_42();
     /**
-     * @vftbl  44
-     * @symbol  __unk_vfn_44
+     * @vftbl 44
+     * @symbol __unk_vfn_44
      */
     virtual void __unk_vfn_44();
     /**
-     * @vftbl  45
-     * @symbol  __unk_vfn_45
+     * @vftbl 45
+     * @symbol __unk_vfn_45
      */
     virtual void __unk_vfn_45();
     /**
-     * @vftbl  46
-     * @symbol  __unk_vfn_46
+     * @vftbl 46
+     * @symbol __unk_vfn_46
      */
     virtual void __unk_vfn_46();
     /**
-     * @vftbl  47
-     * @symbol  __unk_vfn_47
+     * @vftbl 47
+     * @symbol __unk_vfn_47
      */
     virtual void __unk_vfn_47();
     /**
-     * @vftbl  48
-     * @symbol  __unk_vfn_48
+     * @vftbl 48
+     * @symbol __unk_vfn_48
      */
     virtual void __unk_vfn_48();
     /**
-     * @vftbl  49
-     * @symbol  __unk_vfn_49
+     * @vftbl 49
+     * @symbol __unk_vfn_49
      */
     virtual void __unk_vfn_49();
     /**
-     * @hash   -1953725670
-     * @vftbl  51
-     * @symbol  ?isSignalSource\@ButtonBlock\@\@UEBA_NXZ
+     * @vftbl 51
+     * @symbol ?isSignalSource\@ButtonBlock\@\@UEBA_NXZ
      */
     virtual bool isSignalSource() const;
     /**
-     * @vftbl  54
-     * @symbol  __unk_vfn_54
+     * @vftbl 54
+     * @symbol __unk_vfn_54
      */
     virtual void __unk_vfn_54();
     /**
-     * @vftbl  60
-     * @symbol  __unk_vfn_60
+     * @vftbl 60
+     * @symbol __unk_vfn_60
      */
     virtual void __unk_vfn_60();
     /**
-     * @vftbl  61
-     * @symbol  __unk_vfn_61
+     * @vftbl 61
+     * @symbol __unk_vfn_61
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -440415180
-     * @vftbl  64
-     * @symbol  ?shouldConnectToRedstone\@ButtonBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
+     * @vftbl 64
+     * @symbol ?shouldConnectToRedstone\@ButtonBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /**
-     * @hash   1203664607
-     * @vftbl  69
-     * @symbol  ?checkIsPathable\@ButtonBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
+     * @vftbl 69
+     * @symbol ?checkIsPathable\@ButtonBlock\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @hash   202741242
-     * @vftbl  73
-     * @symbol  ?onRedstoneUpdate\@ButtonBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
+     * @vftbl 73
+     * @symbol ?onRedstoneUpdate\@ButtonBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /**
-     * @vftbl  75
-     * @symbol  __unk_vfn_75
+     * @vftbl 75
+     * @symbol __unk_vfn_75
      */
     virtual void __unk_vfn_75();
     /**
-     * @hash   1010800125
-     * @vftbl  79
-     * @symbol  ?setupRedstoneComponent\@ButtonBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     * @vftbl 79
+     * @symbol ?setupRedstoneComponent\@ButtonBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl  82
-     * @symbol  __unk_vfn_82
+     * @vftbl 82
+     * @symbol __unk_vfn_82
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -721523786
-     * @vftbl  91
-     * @symbol  ?mayPlace\@ButtonBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
+     * @vftbl 91
+     * @symbol ?mayPlace\@ButtonBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   346512405
-     * @vftbl  92
-     * @symbol  ?mayPlace\@ButtonBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     * @vftbl 92
+     * @symbol ?mayPlace\@ButtonBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -1827020387
-     * @vftbl  99
-     * @symbol  ?neighborChanged\@ButtonBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
+     * @vftbl 99
+     * @symbol ?neighborChanged\@ButtonBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @vftbl  105
-     * @symbol  __unk_vfn_105
+     * @vftbl 105
+     * @symbol __unk_vfn_105
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   1909397994
-     * @vftbl  106
-     * @symbol  ?getPlacementBlock\@ButtonBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
+     * @vftbl 106
+     * @symbol ?getPlacementBlock\@ButtonBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
-     * @hash   -540895041
-     * @vftbl  108
-     * @symbol  ?isAttachedTo\@ButtonBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAV3\@\@Z
+     * @vftbl 108
+     * @symbol ?isAttachedTo\@ButtonBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAV3\@\@Z
      */
     virtual bool isAttachedTo(class BlockSource &, class BlockPos const &, class BlockPos &) const;
     /**
-     * @hash   2040468965
-     * @vftbl  113
-     * @symbol  ?entityInside\@ButtonBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
+     * @vftbl 113
+     * @symbol ?entityInside\@ButtonBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
     virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
-     * @vftbl  123
-     * @symbol  __unk_vfn_123
+     * @vftbl 123
+     * @symbol __unk_vfn_123
      */
     virtual void __unk_vfn_123();
     /**
-     * @vftbl  125
-     * @symbol  __unk_vfn_125
+     * @vftbl 125
+     * @symbol __unk_vfn_125
      */
     virtual void __unk_vfn_125();
     /**
-     * @vftbl  126
-     * @symbol  __unk_vfn_126
+     * @vftbl 126
+     * @symbol __unk_vfn_126
      */
     virtual void __unk_vfn_126();
     /**
-     * @vftbl  131
-     * @symbol  __unk_vfn_131
+     * @vftbl 131
+     * @symbol __unk_vfn_131
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   810499157
-     * @vftbl  143
-     * @symbol  ?getVisualShape\@ButtonBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
+     * @vftbl 143
+     * @symbol ?getVisualShape\@ButtonBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
-     * @hash   1473678257
-     * @vftbl  144
-     * @symbol  ?getUIShape\@ButtonBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@\@Z
+     * @vftbl 144
+     * @symbol ?getUIShape\@ButtonBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@\@Z
      */
     virtual class AABB const & getUIShape(class Block const &, class AABB &) const;
     /**
-     * @hash   1117433227
-     * @vftbl  146
-     * @symbol  ?getVariant\@ButtonBlock\@\@UEBAHAEBVBlock\@\@\@Z
+     * @vftbl 146
+     * @symbol ?getVariant\@ButtonBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @hash   -1728616662
-     * @vftbl  147
-     * @symbol  ?canSpawnOn\@ButtonBlock\@\@UEBA_NPEAVActor\@\@\@Z
+     * @vftbl 147
+     * @symbol ?canSpawnOn\@ButtonBlock\@\@UEBA_NPEAVActor\@\@\@Z
      */
     virtual bool canSpawnOn(class Actor *) const;
     /**
-     * @vftbl  156
-     * @symbol  __unk_vfn_156
+     * @vftbl 156
+     * @symbol __unk_vfn_156
      */
     virtual void __unk_vfn_156();
     /**
-     * @vftbl  165
-     * @symbol  __unk_vfn_165
+     * @vftbl 165
+     * @symbol __unk_vfn_165
      */
     virtual void __unk_vfn_165();
     /**
-     * @vftbl  166
-     * @symbol  __unk_vfn_166
+     * @vftbl 166
+     * @symbol __unk_vfn_166
      */
     virtual void __unk_vfn_166();
     /**
-     * @vftbl  167
-     * @symbol  __unk_vfn_167
+     * @vftbl 167
+     * @symbol __unk_vfn_167
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   1909032633
-     * @vftbl  168
-     * @symbol  ?onPlace\@ButtonBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     * @vftbl 168
+     * @symbol ?onPlace\@ButtonBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl  170
-     * @symbol  __unk_vfn_170
+     * @vftbl 170
+     * @symbol __unk_vfn_170
      */
     virtual void __unk_vfn_170();
     /**
-     * @hash   328761793
-     * @vftbl  171
-     * @symbol  ?tick\@ButtonBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @vftbl 171
+     * @symbol ?tick\@ButtonBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @vftbl  174
-     * @symbol  __unk_vfn_174
+     * @vftbl 174
+     * @symbol __unk_vfn_174
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1678838096
-     * @vftbl  177
-     * @symbol  ?use\@ButtonBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
+     * @vftbl 177
+     * @symbol ?use\@ButtonBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @hash   -1561339378
-     * @vftbl  178
-     * @symbol  ?canSurvive\@ButtonBlock\@\@MEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     * @vftbl 178
+     * @symbol __unk_vfn_178
+     */
+    virtual void __unk_vfn_178();
+    /**
+     * @vftbl 179
+     * @symbol ?canSurvive\@ButtonBlock\@\@MEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl  185
-     * @symbol  __unk_vfn_185
+     * @vftbl 186
+     * @symbol __unk_vfn_186
      */
-    virtual void __unk_vfn_185();
-    /**
-     * @hash   579714105
-     * @vftbl  187
-     * @symbol  ?getResourceItem\@ButtonBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
-     */
-    virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+    virtual void __unk_vfn_186();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUTTONBLOCK
     /**
-     * @hash   -915730530
-     * @symbol  ?isButtonBlock\@ButtonBlock\@\@UEBA_NXZ
+     * @symbol ?isButtonBlock\@ButtonBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isButtonBlock() const;
     /**
-     * @hash   1360323842
-     * @symbol  ?isInteractiveBlock\@ButtonBlock\@\@UEBA_NXZ
+     * @symbol ?isInteractiveBlock\@ButtonBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isInteractiveBlock() const;
 #endif
     /**
-     * @hash   1236008384
-     * @symbol  ?buttonPressed\@ButtonBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlock\@\@AEBVVec3\@\@PEAVActor\@\@\@Z
+     * @symbol ?buttonPressed\@ButtonBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlock\@\@AEBVVec3\@\@PEAVActor\@\@\@Z
      */
     MCAPI void buttonPressed(class BlockSource &, class Block const &, class Vec3 const &, class Actor *) const;
     /**
-     * @hash   1314315676
-     * @symbol  ?canAttachTo\@ButtonBlock\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
+     * @symbol ?canAttachTo\@ButtonBlock\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     MCAPI static bool canAttachTo(class BlockSource &, class BlockPos const &, unsigned char);
 
 //protected:
     /**
-     * @hash   1330344072
-     * @symbol  ??0ButtonBlock\@\@IEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@_N\@Z
+     * @symbol ??0ButtonBlock\@\@IEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@_N\@Z
      */
     MCAPI ButtonBlock(std::string const &, int, class Material const &, bool);
 
 //private:
     /**
-     * @hash   1057520025
-     * @symbol  ?_buttonUnpressed\@ButtonBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlock\@\@AEBVVec3\@\@PEAVActor\@\@\@Z
+     * @symbol ?_buttonUnpressed\@ButtonBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlock\@\@AEBVVec3\@\@PEAVActor\@\@\@Z
      */
     MCAPI void _buttonUnpressed(class BlockSource &, class Block const &, class Vec3 const &, class Actor *) const;
     /**
-     * @hash   1821628151
-     * @symbol  ?_checkPressed\@ButtonBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     * @symbol ?_checkPressed\@ButtonBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _checkPressed(class BlockSource &, class BlockPos const &) const;
     /**
-     * @hash   -488608759
-     * @symbol  ?_getShape\@ButtonBlock\@\@AEBAXAEAVAABB\@\@_NE1\@Z
+     * @symbol ?_getShape\@ButtonBlock\@\@AEBAXAEAVAABB\@\@_NE1\@Z
      */
     MCAPI void _getShape(class AABB &, bool, unsigned char, bool) const;
 

@@ -47,43 +47,43 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~PlayStatusPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   463118944
-     * @vftbl  1
-     * @symbol  ?getId\@PlayStatusPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@PlayStatusPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   -796923283
-     * @vftbl  2
-     * @symbol  ?getName\@PlayStatusPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@PlayStatusPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   -259675334
-     * @vftbl  3
-     * @symbol  ?write\@PlayStatusPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@PlayStatusPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   1935573450
-     * @vftbl  6
-     * @symbol  ?_read\@PlayStatusPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@PlayStatusPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYSTATUSPACKET
     /**
-     * @hash   -976062982
-     * @symbol  ??0PlayStatusPacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI PlayStatusPacket();
+    MCVAPI ~PlayStatusPacket();
+#endif
     /**
-     * @hash   -817608687
-     * @symbol  ??0PlayStatusPacket\@\@QEAA\@W4PlayStatus\@\@\@Z
+     * @symbol ??0PlayStatusPacket\@\@QEAA\@W4PlayStatus\@\@\@Z
      */
     MCAPI PlayStatusPacket(enum class PlayStatus);
+    /**
+     * @symbol ??0PlayStatusPacket\@\@QEAA\@XZ
+     */
+    MCAPI PlayStatusPacket();
 
 };

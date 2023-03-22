@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   -1121200540
-     * @symbol  ?create\@SprintTriggerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?create\@SprintTriggerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo create();
 

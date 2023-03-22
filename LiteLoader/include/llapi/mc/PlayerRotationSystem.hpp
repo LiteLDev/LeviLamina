@@ -10,27 +10,15 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC class PlayerRotationSystem.
- *
- */
-class PlayerRotationSystem {
+
+namespace PlayerRotationSystem {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERROTATIONSYSTEM
-public:
-    class PlayerRotationSystem& operator=(class PlayerRotationSystem const &) = delete;
-    PlayerRotationSystem(class PlayerRotationSystem const &) = delete;
-    PlayerRotationSystem() = delete;
-#endif
-
-public:
     /**
-     * @hash   -888516492
-     * @symbol  ?createPlayerRotationSystem\@PlayerRotationSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@PlayerRotationSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createPlayerRotationSystem();
+    MCAPI struct TickingSystemWithInfo createSystem();
 
 };

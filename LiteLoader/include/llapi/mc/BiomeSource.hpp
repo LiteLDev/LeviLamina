@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   -554257458
-     * @symbol  ?getAreaIterator\@BiomeSource\@\@SA?AVBlockPosIterator\@\@AEBVBoundingBox\@\@I\@Z
+     * @symbol ?getAreaIterator\@BiomeSource\@\@SA?AVBlockPosIterator\@\@AEBVBoundingBox\@\@I\@Z
      */
     MCAPI static class BlockPosIterator getAreaIterator(class BoundingBox const &, unsigned int);
 

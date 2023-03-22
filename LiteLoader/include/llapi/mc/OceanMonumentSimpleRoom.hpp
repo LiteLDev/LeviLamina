@@ -31,20 +31,18 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~OceanMonumentSimpleRoom();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1773869561
-     * @vftbl  2
-     * @symbol  ?getType\@OceanMonumentSimpleRoom\@\@UEBA?AW4StructurePieceType\@\@XZ
+     * @vftbl 2
+     * @symbol ?getType\@OceanMonumentSimpleRoom\@\@UEBA?AW4StructurePieceType\@\@XZ
      */
     virtual enum class StructurePieceType getType() const;
     /**
-     * @hash   -1694184289
-     * @vftbl  4
-     * @symbol  ?postProcess\@OceanMonumentSimpleRoom\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
+     * @vftbl 4
+     * @symbol ?postProcess\@OceanMonumentSimpleRoom\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
 

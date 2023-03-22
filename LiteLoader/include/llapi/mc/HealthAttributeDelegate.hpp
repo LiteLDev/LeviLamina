@@ -30,42 +30,37 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~HealthAttributeDelegate();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -165593953
-     * @vftbl  1
-     * @symbol  ?tick\@HealthAttributeDelegate\@\@UEAAXXZ
+     * @vftbl 1
+     * @symbol ?tick\@HealthAttributeDelegate\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
-     * @hash   947633668
-     * @vftbl  3
-     * @symbol  ?willChange\@HealthAttributeDelegate\@\@UEAA_NMMAEBVAttributeBuff\@\@\@Z
+     * @vftbl 3
+     * @symbol ?willChange\@HealthAttributeDelegate\@\@UEAA_NMMAEBVAttributeBuff\@\@\@Z
      */
     virtual bool willChange(float, float, class AttributeBuff const &);
     /**
-     * @hash   996951472
-     * @vftbl  4
-     * @symbol  ?change\@HealthAttributeDelegate\@\@UEAAMMMAEBVAttributeBuff\@\@\@Z
+     * @vftbl 4
+     * @symbol ?change\@HealthAttributeDelegate\@\@UEAAMMMAEBVAttributeBuff\@\@\@Z
      */
     virtual float change(float, float, class AttributeBuff const &);
     /**
-     * @hash   -1006447119
-     * @vftbl  5
-     * @symbol  ?getBuffValueWithModifiers\@HealthAttributeDelegate\@\@UEBAMAEBVAttributeBuff\@\@\@Z
+     * @vftbl 5
+     * @symbol ?getBuffValueWithModifiers\@HealthAttributeDelegate\@\@UEBAMAEBVAttributeBuff\@\@\@Z
      */
     virtual float getBuffValueWithModifiers(class AttributeBuff const &) const;
     /**
-     * @hash   -691387604
-     * @symbol  ??0HealthAttributeDelegate\@\@QEAA\@AEBVAttributeInstance\@\@PEAVMob\@\@\@Z
+     * @symbol ??0HealthAttributeDelegate\@\@QEAA\@AEBVAttributeInstance\@\@PEAVMob\@\@\@Z
      */
     MCAPI HealthAttributeDelegate(class AttributeInstance const &, class Mob *);
 

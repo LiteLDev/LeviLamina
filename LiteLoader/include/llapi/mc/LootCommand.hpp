@@ -30,45 +30,39 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~LootCommand();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -379317696
-     * @vftbl  1
-     * @symbol  ?execute\@LootCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @vftbl 1
+     * @symbol ?execute\@LootCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   -1592760728
-     * @symbol  ?getToolItemStack\@LootCommand\@\@QEBA?AVItemStack\@\@AEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @symbol ?getToolItemStack\@LootCommand\@\@QEBA?AVItemStack\@\@AEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     MCAPI class ItemStack getToolItemStack(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @symbol  ?setup\@LootCommand\@\@SAXAEAVCommandRegistry\@\@VItemRegistryRef\@\@\@Z
+     * @symbol ?setup\@LootCommand\@\@SAXAEAVCommandRegistry\@\@VItemRegistryRef\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &, class ItemRegistryRef);
 
 //private:
     /**
-     * @hash   -1173276738
-     * @symbol  ?_getItemsFromSource\@LootCommand\@\@AEBA?AV?$optional\@V?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@\@std\@\@AEBVCommandOrigin\@\@AEAVCommandOutput\@\@AEBVItemStack\@\@AEAVLevel\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
+     * @symbol ?_getItemsFromSource\@LootCommand\@\@AEBA?AV?$optional\@V?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@\@std\@\@AEBVCommandOrigin\@\@AEAVCommandOutput\@\@AEBVItemStack\@\@AEAVLevel\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
     MCAPI class std::optional<std::vector<class ItemStack>> _getItemsFromSource(class CommandOrigin const &, class CommandOutput &, class ItemStack const &, class Level &, class AutomaticID<class Dimension, int>) const;
     /**
-     * @hash   219772436
-     * @symbol  ?_outputError\@LootCommand\@\@AEBAXAEAVCommandOutput\@\@UReplacementResults\@Util\@\@PEBVActor\@\@\@Z
+     * @symbol ?_outputError\@LootCommand\@\@AEBAXAEAVCommandOutput\@\@UReplacementResults\@Util\@\@PEBVActor\@\@\@Z
      */
     MCAPI void _outputError(class CommandOutput &, struct Util::ReplacementResults, class Actor const *) const;
     /**
-     * @hash   -1547263382
-     * @symbol  ?_outputSuccess\@LootCommand\@\@AEBAXAEAVCommandOutput\@\@H\@Z
+     * @symbol ?_outputSuccess\@LootCommand\@\@AEBAXAEAVCommandOutput\@\@H\@Z
      */
     MCAPI void _outputSuccess(class CommandOutput &, int) const;
     /**
-     * @hash   1200581568
-     * @symbol  ?_placeItemsInTarget\@LootCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@AEAV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@\@Z
+     * @symbol ?_placeItemsInTarget\@LootCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@AEAV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI void _placeItemsInTarget(class CommandOrigin const &, class CommandOutput &, std::vector<class ItemStack> &) const;
 

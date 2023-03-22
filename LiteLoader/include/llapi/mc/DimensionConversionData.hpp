@@ -30,18 +30,15 @@ public:
 
 public:
     /**
-     * @hash   1826942170
-     * @symbol  ??0DimensionConversionData\@\@QEAA\@AEBVVec3\@\@H\@Z
+     * @symbol ??0DimensionConversionData\@\@QEAA\@AEBVVec3\@\@H\@Z
      */
     MCAPI DimensionConversionData(class Vec3 const &, int);
     /**
-     * @hash   2069715998
-     * @symbol  ?getNetherScale\@DimensionConversionData\@\@QEBAHXZ
+     * @symbol ?getNetherScale\@DimensionConversionData\@\@QEBAHXZ
      */
     MCAPI int getNetherScale() const;
     /**
-     * @hash   461732002
-     * @symbol  ?getOverworldSpawnPoint\@DimensionConversionData\@\@QEBAAEBVVec3\@\@XZ
+     * @symbol ?getOverworldSpawnPoint\@DimensionConversionData\@\@QEBAAEBVVec3\@\@XZ
      */
     MCAPI class Vec3 const & getOverworldSpawnPoint() const;
 

@@ -21,19 +21,20 @@ struct SummonSpellData {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUMMONSPELLDATA
 public:
-    struct SummonSpellData& operator=(struct SummonSpellData const &) = delete;
     SummonSpellData() = delete;
 #endif
 
 public:
     /**
-     * @hash   2135933925
-     * @symbol  ??0SummonSpellData\@\@QEAA\@AEBU0\@\@Z
+     * @symbol ??0SummonSpellData\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI SummonSpellData(struct SummonSpellData const &);
     /**
-     * @hash   -1789803939
-     * @symbol  ??1SummonSpellData\@\@QEAA\@XZ
+     * @symbol ??4SummonSpellData\@\@QEAAAEAU0\@AEBU0\@\@Z
+     */
+    MCAPI struct SummonSpellData & operator=(struct SummonSpellData const &);
+    /**
+     * @symbol ??1SummonSpellData\@\@QEAA\@XZ
      */
     MCAPI ~SummonSpellData();
 

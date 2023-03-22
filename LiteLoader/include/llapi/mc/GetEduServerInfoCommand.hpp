@@ -31,19 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~GetEduServerInfoCommand();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   807364025
-     * @vftbl  1
-     * @symbol  ?execute\@GetEduServerInfoCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @vftbl 1
+     * @symbol ?execute\@GetEduServerInfoCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   -175640816
-     * @symbol  ?setup\@GetEduServerInfoCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
+     * @symbol ?setup\@GetEduServerInfoCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);
 

@@ -30,8 +30,7 @@ public:
 
 public:
     /**
-     * @hash   -1713380610
-     * @symbol  ?cacheComponentData\@CachedComponentData\@\@QEAAXAEBVBlock\@\@\@Z
+     * @symbol ?cacheComponentData\@CachedComponentData\@\@QEAAXAEBVBlock\@\@\@Z
      */
     MCAPI void cacheComponentData(class Block const &);
 

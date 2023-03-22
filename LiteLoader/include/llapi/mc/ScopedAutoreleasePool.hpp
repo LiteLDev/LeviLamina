@@ -29,28 +29,23 @@ public:
 
 public:
     /**
-     * @hash   -1926859536
-     * @symbol  ??0ScopedAutoreleasePool\@\@QEAA\@XZ
+     * @symbol ??0ScopedAutoreleasePool\@\@QEAA\@XZ
      */
     MCAPI ScopedAutoreleasePool();
     /**
-     * @hash   -1959467947
-     * @symbol  ?drain\@ScopedAutoreleasePool\@\@QEAAXXZ
+     * @symbol ?drain\@ScopedAutoreleasePool\@\@QEAAXXZ
      */
     MCAPI void drain();
     /**
-     * @hash   -1429751041
-     * @symbol  ?drainNow\@ScopedAutoreleasePool\@\@QEAAXXZ
+     * @symbol ?drainNow\@ScopedAutoreleasePool\@\@QEAAXXZ
      */
     MCAPI void drainNow();
     /**
-     * @hash   2012842883
-     * @symbol  ?reset\@ScopedAutoreleasePool\@\@QEAAXXZ
+     * @symbol ?reset\@ScopedAutoreleasePool\@\@QEAAXXZ
      */
     MCAPI void reset();
     /**
-     * @hash   1673873008
-     * @symbol  ??1ScopedAutoreleasePool\@\@QEAA\@XZ
+     * @symbol ??1ScopedAutoreleasePool\@\@QEAA\@XZ
      */
     MCAPI ~ScopedAutoreleasePool();
 

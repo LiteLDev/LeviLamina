@@ -28,13 +28,11 @@ public:
 
 public:
     /**
-     * @hash   131696869
-     * @symbol  ??0MobSpawnHerdInfo\@\@QEAA\@IIAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@I0I\@Z
+     * @symbol ??0MobSpawnHerdInfo\@\@QEAA\@IIAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@I0I\@Z
      */
     MCAPI MobSpawnHerdInfo(unsigned int, unsigned int, std::string const &, unsigned int, std::string const &, unsigned int);
     /**
-     * @hash   656749874
-     * @symbol  ??1MobSpawnHerdInfo\@\@QEAA\@XZ
+     * @symbol ??1MobSpawnHerdInfo\@\@QEAA\@XZ
      */
     MCAPI ~MobSpawnHerdInfo();
 

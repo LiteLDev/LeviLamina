@@ -28,12 +28,11 @@ public:
 
 public:
     /**
-     * @symbol  ?_checkCanSnapOnRail\@MinecartCanSnapOnRailSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUStateVectorComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@USnapOnRailComponent\@\@\@\@AEBVIConstBlockSource\@\@\@Z
+     * @symbol ?_checkCanSnapOnRail\@MinecartCanSnapOnRailSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUStateVectorComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@USnapOnRailComponent\@\@\@\@AEBVIConstBlockSource\@\@\@Z
      */
     MCAPI static void _checkCanSnapOnRail(class StrictEntityContext const &, struct StateVectorComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct SnapOnRailComponent>, class IConstBlockSource const &);
     /**
-     * @hash   949665104
-     * @symbol  ?createSystem\@MinecartCanSnapOnRailSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@MinecartCanSnapOnRailSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

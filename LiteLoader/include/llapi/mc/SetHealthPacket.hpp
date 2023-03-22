@@ -31,42 +31,42 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SetHealthPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   785571688
-     * @vftbl  1
-     * @symbol  ?getId\@SetHealthPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@SetHealthPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   373922325
-     * @vftbl  2
-     * @symbol  ?getName\@SetHealthPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@SetHealthPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   1087721234
-     * @vftbl  3
-     * @symbol  ?write\@SetHealthPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@SetHealthPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   -285102558
-     * @vftbl  6
-     * @symbol  ?_read\@SetHealthPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@SetHealthPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETHEALTHPACKET
     /**
-     * @hash   1237792578
-     * @symbol  ??0SetHealthPacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~SetHealthPacket();
+#endif
+    /**
+     * @symbol ??0SetHealthPacket\@\@QEAA\@XZ
      */
     MCAPI SetHealthPacket();
     /**
-     * @hash   -1771061143
-     * @symbol  ??0SetHealthPacket\@\@QEAA\@H\@Z
+     * @symbol ??0SetHealthPacket\@\@QEAA\@H\@Z
      */
     MCAPI SetHealthPacket(int);
 

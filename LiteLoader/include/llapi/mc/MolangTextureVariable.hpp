@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   225813459
-     * @symbol  ??1MolangTextureVariable\@\@QEAA\@XZ
+     * @symbol ??1MolangTextureVariable\@\@QEAA\@XZ
      */
     MCAPI ~MolangTextureVariable();
 

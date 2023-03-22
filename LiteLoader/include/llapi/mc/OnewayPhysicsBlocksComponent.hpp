@@ -28,12 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??4OnewayPhysicsBlocksComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
-     */
-    MCAPI struct OnewayPhysicsBlocksComponent & operator=(struct OnewayPhysicsBlocksComponent &&);
-    /**
-     * @hash   1746155475
-     * @symbol  ??1OnewayPhysicsBlocksComponent\@\@QEAA\@XZ
+     * @symbol ??1OnewayPhysicsBlocksComponent\@\@QEAA\@XZ
      */
     MCAPI ~OnewayPhysicsBlocksComponent();
 

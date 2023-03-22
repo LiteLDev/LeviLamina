@@ -25,28 +25,27 @@ class JigsawStructureElementRegistry {
 public:
     class JigsawStructureElementRegistry& operator=(class JigsawStructureElementRegistry const &) = delete;
     JigsawStructureElementRegistry(class JigsawStructureElementRegistry const &) = delete;
-    JigsawStructureElementRegistry() = delete;
 #endif
 
 public:
     /**
-     * @hash   72200147
-     * @symbol  ?clear\@JigsawStructureElementRegistry\@\@QEAAXXZ
+     * @symbol ??0JigsawStructureElementRegistry\@\@QEAA\@XZ
+     */
+    MCAPI JigsawStructureElementRegistry();
+    /**
+     * @symbol ?clear\@JigsawStructureElementRegistry\@\@QEAAXXZ
      */
     MCAPI void clear();
     /**
-     * @hash   -163370040
-     * @symbol  ?lookupByName\@JigsawStructureElementRegistry\@\@QEBAPEBVStructurePoolElement\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?lookupByName\@JigsawStructureElementRegistry\@\@QEBAPEBVStructurePoolElement\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class StructurePoolElement const * lookupByName(std::string) const;
     /**
-     * @hash   1246334433
-     * @symbol  ?registerStructureElement\@JigsawStructureElementRegistry\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEAV?$unique_ptr\@VStructurePoolElement\@\@U?$default_delete\@VStructurePoolElement\@\@\@std\@\@\@3\@\@Z
+     * @symbol ?registerStructureElement\@JigsawStructureElementRegistry\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEAV?$unique_ptr\@VStructurePoolElement\@\@U?$default_delete\@VStructurePoolElement\@\@\@std\@\@\@3\@\@Z
      */
     MCAPI void registerStructureElement(std::string, std::unique_ptr<class StructurePoolElement> &&);
     /**
-     * @hash   1614871569
-     * @symbol  ??1JigsawStructureElementRegistry\@\@QEAA\@XZ
+     * @symbol ??1JigsawStructureElementRegistry\@\@QEAA\@XZ
      */
     MCAPI ~JigsawStructureElementRegistry();
 

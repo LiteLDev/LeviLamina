@@ -30,13 +30,11 @@ public:
 
 public:
     /**
-     * @hash   840489058
-     * @symbol  ?setCraftInto\@Shareable\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?setCraftInto\@Shareable\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void setCraftInto(std::string const &);
     /**
-     * @hash   1082404018
-     * @symbol  ?setItem\@Shareable\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?setItem\@Shareable\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void setItem(std::string const &);
 

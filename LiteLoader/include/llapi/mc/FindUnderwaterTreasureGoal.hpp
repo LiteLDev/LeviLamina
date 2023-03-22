@@ -30,55 +30,47 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~FindUnderwaterTreasureGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1063913226
-     * @vftbl  1
-     * @symbol  ?canUse\@FindUnderwaterTreasureGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@FindUnderwaterTreasureGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   136666372
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@FindUnderwaterTreasureGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@FindUnderwaterTreasureGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @hash   -674706706
-     * @vftbl  3
-     * @symbol  ?canBeInterrupted\@FindUnderwaterTreasureGoal\@\@UEAA_NXZ
+     * @vftbl 3
+     * @symbol ?canBeInterrupted\@FindUnderwaterTreasureGoal\@\@UEAA_NXZ
      */
     virtual bool canBeInterrupted();
     /**
-     * @hash   -564110417
-     * @vftbl  4
-     * @symbol  ?start\@FindUnderwaterTreasureGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@FindUnderwaterTreasureGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   -1591522225
-     * @vftbl  5
-     * @symbol  ?stop\@FindUnderwaterTreasureGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@FindUnderwaterTreasureGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @hash   -335839206
-     * @vftbl  6
-     * @symbol  ?tick\@FindUnderwaterTreasureGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@FindUnderwaterTreasureGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -82248182
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@FindUnderwaterTreasureGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@FindUnderwaterTreasureGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   -875154610
-     * @symbol  ??0FindUnderwaterTreasureGoal\@\@QEAA\@AEAVMob\@\@MHH\@Z
+     * @symbol ??0FindUnderwaterTreasureGoal\@\@QEAA\@AEAVMob\@\@MHH\@Z
      */
     MCAPI FindUnderwaterTreasureGoal(class Mob &, float, int, int);
 

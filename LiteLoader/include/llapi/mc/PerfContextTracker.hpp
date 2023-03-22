@@ -29,30 +29,25 @@ public:
 
 public:
     /**
-     * @hash   -1655037378
-     * @symbol  ??0PerfContextTracker\@\@QEAA\@XZ
+     * @symbol ??0PerfContextTracker\@\@QEAA\@XZ
      */
     MCAPI PerfContextTracker();
     /**
-     * @hash   963725666
-     * @symbol  ?incrementPacketReceivedInfo\@PerfContextTracker\@\@QEAAXI\@Z
+     * @symbol ?incrementPacketReceivedInfo\@PerfContextTracker\@\@QEAAXI\@Z
      */
     MCAPI void incrementPacketReceivedInfo(unsigned int);
     /**
-     * @hash   -1989190126
-     * @symbol  ?incrementPacketSentInfo\@PerfContextTracker\@\@QEAAXI\@Z
+     * @symbol ?incrementPacketSentInfo\@PerfContextTracker\@\@QEAAXI\@Z
      */
     MCAPI void incrementPacketSentInfo(unsigned int);
     /**
-     * @hash   -1249261191
-     * @symbol  ?getInstance\@PerfContextTracker\@\@SAAEAV1\@XZ
+     * @symbol ?getInstance\@PerfContextTracker\@\@SAAEAV1\@XZ
      */
     MCAPI static class PerfContextTracker & getInstance();
 
 //private:
     /**
-     * @hash   529711273
-     * @symbol  ?_resetStats\@PerfContextTracker\@\@AEAAXXZ
+     * @symbol ?_resetStats\@PerfContextTracker\@\@AEAAXXZ
      */
     MCAPI void _resetStats();
 

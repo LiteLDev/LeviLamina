@@ -38,36 +38,31 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~GameRuleCommand();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -542575658
-     * @vftbl  1
-     * @symbol  ?execute\@GameRuleCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @vftbl 1
+     * @symbol ?execute\@GameRuleCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   -1989267635
-     * @symbol  ?setup\@GameRuleCommand\@\@SAXAEAVCommandRegistry\@\@$$QEAUInitProxy\@1\@\@Z
+     * @symbol ?setup\@GameRuleCommand\@\@SAXAEAVCommandRegistry\@\@$$QEAUInitProxy\@1\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &, struct GameRuleCommand::InitProxy &&);
 
 //private:
     /**
-     * @hash   -1469905574
-     * @symbol  ?getGameRule\@GameRuleCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @symbol ?getGameRule\@GameRuleCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     MCAPI void getGameRule(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   435417526
-     * @symbol  ?setGameRule\@GameRuleCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @symbol ?setGameRule\@GameRuleCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     MCAPI void setGameRule(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   -1016937240
-     * @symbol  ?createJsonIndex\@GameRuleCommand\@\@CAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVGameRule\@\@AEAVValue\@Json\@\@PEAV23\@\@Z
+     * @symbol ?createJsonIndex\@GameRuleCommand\@\@CAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVGameRule\@\@AEAVValue\@Json\@\@PEAV23\@\@Z
      */
     MCAPI static void createJsonIndex(std::string const &, class GameRule const &, class Json::Value &, std::string *);
 

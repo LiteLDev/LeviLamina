@@ -28,38 +28,31 @@ public:
 
 public:
     /**
-     * @hash   -1200089797
-     * @symbol  ??0EntitySet\@\@QEAA\@XZ
-     */
-    MCAPI EntitySet();
-    /**
-     * @hash   561204849
-     * @symbol  ??0EntitySet\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI EntitySet(class EntitySet const &);
-    /**
-     * @hash   1216399911
-     * @symbol  ??0EntitySet\@\@QEAA\@$$QEAV0\@\@Z
+     * @symbol ??0EntitySet\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI EntitySet(class EntitySet &&);
     /**
-     * @hash   1045889565
-     * @symbol  ?add\@EntitySet\@\@QEAA_NAEBVEntityContext\@\@\@Z
+     * @symbol ??0EntitySet\@\@QEAA\@XZ
+     */
+    MCAPI EntitySet();
+    /**
+     * @symbol ??0EntitySet\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI EntitySet(class EntitySet const &);
+    /**
+     * @symbol ?add\@EntitySet\@\@QEAA_NAEBVEntityContext\@\@\@Z
      */
     MCAPI bool add(class EntityContext const &);
     /**
-     * @hash   1099565522
-     * @symbol  ?erase\@EntitySet\@\@QEAA?AV?$_List_const_iterator\@V?$_List_val\@U?$_List_simple_types\@U?$pair\@$$CB_KVWeakEntityRef\@\@\@std\@\@\@std\@\@\@std\@\@\@std\@\@V23\@\@Z
+     * @symbol ?erase\@EntitySet\@\@QEAA?AV?$_List_const_iterator\@V?$_List_val\@U?$_List_simple_types\@U?$pair\@$$CB_KVWeakEntityRef\@\@\@std\@\@\@std\@\@\@std\@\@\@std\@\@V23\@\@Z
      */
     MCAPI class std::_List_const_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<unsigned __int64 const, class WeakEntityRef>>>> erase(class std::_List_const_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<unsigned __int64 const, class WeakEntityRef>>>>);
     /**
-     * @hash   208232983
-     * @symbol  ?find\@EntitySet\@\@QEBA?AVWeakEntityRef\@\@AEBVEntityContext\@\@\@Z
+     * @symbol ?find\@EntitySet\@\@QEBA?AVWeakEntityRef\@\@AEBVEntityContext\@\@\@Z
      */
     MCAPI class WeakEntityRef find(class EntityContext const &) const;
     /**
-     * @hash   -1850835758
-     * @symbol  ??4EntitySet\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     * @symbol ??4EntitySet\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class EntitySet & operator=(class EntitySet &&);
 

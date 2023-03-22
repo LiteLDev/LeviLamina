@@ -90,28 +90,23 @@ public:
 
 public:
     /**
-     * @hash   1193097021
-     * @symbol  ??0CompoundTagVariant\@\@QEAA\@$$QEAVTag\@\@\@Z
+     * @symbol ??0CompoundTagVariant\@\@QEAA\@$$QEAVTag\@\@\@Z
      */
     MCAPI CompoundTagVariant(class Tag &&);
     /**
-     * @hash   -1424362375
-     * @symbol  ?emplace\@CompoundTagVariant\@\@QEAAAEAVTag\@\@$$QEAV2\@\@Z
+     * @symbol ?emplace\@CompoundTagVariant\@\@QEAAAEAVTag\@\@$$QEAV2\@\@Z
      */
     MCAPI class Tag & emplace(class Tag &&);
     /**
-     * @hash   -940695121
-     * @symbol  ?get\@CompoundTagVariant\@\@QEAAPEAVTag\@\@XZ
+     * @symbol ?get\@CompoundTagVariant\@\@QEAAPEAVTag\@\@XZ
      */
     MCAPI class Tag * get();
     /**
-     * @hash   333035113
-     * @symbol  ?get\@CompoundTagVariant\@\@QEBAPEBVTag\@\@XZ
+     * @symbol ?get\@CompoundTagVariant\@\@QEBAPEBVTag\@\@XZ
      */
     MCAPI class Tag const * get() const;
     /**
-     * @hash   -501864688
-     * @symbol  ??1CompoundTagVariant\@\@QEAA\@XZ
+     * @symbol ??1CompoundTagVariant\@\@QEAA\@XZ
      */
     MCAPI ~CompoundTagVariant();
 

@@ -30,36 +30,31 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ScriptDebuggerWatchdog();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1325254882
-     * @vftbl  1
-     * @symbol  ?requireClose\@ScriptDebuggerWatchdog\@\@UEBA_NXZ
+     * @vftbl 1
+     * @symbol ?requireClose\@ScriptDebuggerWatchdog\@\@UEBA_NXZ
      */
     virtual bool requireClose() const;
     /**
-     * @hash   -1605407498
-     * @vftbl  2
-     * @symbol  ?startListenTimeout\@ScriptDebuggerWatchdog\@\@UEAAXXZ
+     * @vftbl 2
+     * @symbol ?startListenTimeout\@ScriptDebuggerWatchdog\@\@UEAAXXZ
      */
     virtual void startListenTimeout();
     /**
-     * @hash   1313102682
-     * @vftbl  3
-     * @symbol  ?listenTimeoutExpired\@ScriptDebuggerWatchdog\@\@UEBA_NXZ
+     * @vftbl 3
+     * @symbol ?listenTimeoutExpired\@ScriptDebuggerWatchdog\@\@UEBA_NXZ
      */
     virtual bool listenTimeoutExpired() const;
     /**
-     * @hash   -1935910505
-     * @symbol  ??0ScriptDebuggerWatchdog\@\@QEAA\@V?$duration\@HU?$ratio\@$0DM\@$00\@std\@\@\@chrono\@std\@\@\@Z
+     * @symbol ??0ScriptDebuggerWatchdog\@\@QEAA\@V?$duration\@HU?$ratio\@$0DM\@$00\@std\@\@\@chrono\@std\@\@\@Z
      */
     MCAPI ScriptDebuggerWatchdog(class std::chrono::duration<int, struct std::ratio<60, 1>>);
     /**
-     * @hash   90492773
-     * @symbol  ?startLeaveGame\@ScriptDebuggerWatchdog\@\@QEAAXXZ
+     * @symbol ?startLeaveGame\@ScriptDebuggerWatchdog\@\@QEAAXXZ
      */
     MCAPI void startLeaveGame();
 

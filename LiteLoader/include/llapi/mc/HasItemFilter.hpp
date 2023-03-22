@@ -28,13 +28,11 @@ public:
 
 public:
     /**
-     * @hash   11358849
-     * @symbol  ??0HasItemFilter\@\@QEAA\@$$QEAU0\@\@Z
+     * @symbol ??0HasItemFilter\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI HasItemFilter(struct HasItemFilter &&);
     /**
-     * @hash   -1595506735
-     * @symbol  ??1HasItemFilter\@\@QEAA\@XZ
+     * @symbol ??1HasItemFilter\@\@QEAA\@XZ
      */
     MCAPI ~HasItemFilter();
 

@@ -27,8 +27,7 @@ public:
 
 public:
     /**
-     * @hash   718366658
-     * @symbol  ??0AppLifecycleContext\@\@QEAA\@XZ
+     * @symbol ??0AppLifecycleContext\@\@QEAA\@XZ
      */
     MCAPI AppLifecycleContext();
 

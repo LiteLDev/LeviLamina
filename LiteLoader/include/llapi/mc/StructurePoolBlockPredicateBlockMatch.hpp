@@ -30,25 +30,22 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~StructurePoolBlockPredicateBlockMatch();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1124250632
-     * @vftbl  1
-     * @symbol  ?test\@StructurePoolBlockPredicateBlockMatch\@\@UEBA_NAEBVBlock\@\@AEAVRandomize\@\@\@Z
+     * @vftbl 1
+     * @symbol ?test\@StructurePoolBlockPredicateBlockMatch\@\@UEBA_NAEBVBlock\@\@AEAVRandomize\@\@\@Z
      */
     virtual bool test(class Block const &, class Randomize &) const;
     /**
-     * @hash   512591112
-     * @vftbl  2
-     * @symbol  ?test\@StructurePoolBlockPredicateBlockMatch\@\@UEBA_NAEBVBlockPos\@\@0AEAVRandomize\@\@\@Z
+     * @vftbl 2
+     * @symbol ?test\@StructurePoolBlockPredicateBlockMatch\@\@UEBA_NAEBVBlockPos\@\@0AEAVRandomize\@\@\@Z
      */
     virtual bool test(class BlockPos const &, class BlockPos const &, class Randomize &) const;
     /**
-     * @hash   -1763107042
-     * @symbol  ??0StructurePoolBlockPredicateBlockMatch\@\@QEAA\@AEBVBlock\@\@\@Z
+     * @symbol ??0StructurePoolBlockPredicateBlockMatch\@\@QEAA\@AEBVBlock\@\@\@Z
      */
     MCAPI StructurePoolBlockPredicateBlockMatch(class Block const &);
 

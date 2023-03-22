@@ -32,38 +32,31 @@ public:
 
 public:
     /**
-     * @hash   1465916922
-     * @symbol  ??0HttpHeaders\@\@QEAA\@XZ
+     * @symbol ??0HttpHeaders\@\@QEAA\@XZ
      */
     MCAPI HttpHeaders();
     /**
-     * @hash   806288431
-     * @symbol  ?clear\@HttpHeaders\@\@QEAAXXZ
+     * @symbol ?clear\@HttpHeaders\@\@QEAAXXZ
      */
     MCAPI void clear();
     /**
-     * @hash   -1141290378
-     * @symbol  ?getHeader\@HttpHeaders\@\@QEBA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV23\@\@Z
+     * @symbol ?getHeader\@HttpHeaders\@\@QEBA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV23\@\@Z
      */
     MCAPI bool getHeader(std::string const &, std::string &) const;
     /**
-     * @hash   -1566362797
-     * @symbol  ?getState\@HttpHeaders\@\@QEAA?AW4ParseState\@1\@XZ
+     * @symbol ?getState\@HttpHeaders\@\@QEAA?AW4ParseState\@1\@XZ
      */
     MCAPI enum class HttpHeaders::ParseState getState();
     /**
-     * @hash   767856560
-     * @symbol  ?getStatusCode\@HttpHeaders\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getStatusCode\@HttpHeaders\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string getStatusCode() const;
     /**
-     * @hash   426001818
-     * @symbol  ?parse\@HttpHeaders\@\@QEAA?AW4ParseState\@1\@AEAVBitStream\@RakNet\@\@\@Z
+     * @symbol ?parse\@HttpHeaders\@\@QEAA?AW4ParseState\@1\@AEAVBitStream\@RakNet\@\@\@Z
      */
     MCAPI enum class HttpHeaders::ParseState parse(class RakNet::BitStream &);
     /**
-     * @hash   1268227754
-     * @symbol  ??1HttpHeaders\@\@QEAA\@XZ
+     * @symbol ??1HttpHeaders\@\@QEAA\@XZ
      */
     MCAPI ~HttpHeaders();
 

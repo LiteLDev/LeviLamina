@@ -30,48 +30,47 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~LabTablePacket();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   432792949
-     * @vftbl  1
-     * @symbol  ?getId\@LabTablePacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@LabTablePacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   1591841826
-     * @vftbl  2
-     * @symbol  ?getName\@LabTablePacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@LabTablePacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   2019113093
-     * @vftbl  3
-     * @symbol  ?write\@LabTablePacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@LabTablePacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   975790453
-     * @vftbl  6
-     * @symbol  ?_read\@LabTablePacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@LabTablePacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LABTABLEPACKET
     /**
-     * @hash   2075825189
-     * @symbol  ??0LabTablePacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~LabTablePacket();
+#endif
+    /**
+     * @symbol ??0LabTablePacket\@\@QEAA\@XZ
      */
     MCAPI LabTablePacket();
     /**
-     * @hash   1901948532
-     * @symbol  ??0LabTablePacket\@\@QEAA\@W4Type\@0\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI LabTablePacket(enum class LabTablePacket::Type, class BlockPos const &);
-    /**
-     * @hash   727643267
-     * @symbol  ??0LabTablePacket\@\@QEAA\@AEBVBlockPos\@\@W4LabTableReactionType\@\@\@Z
+     * @symbol ??0LabTablePacket\@\@QEAA\@AEBVBlockPos\@\@W4LabTableReactionType\@\@\@Z
      */
     MCAPI LabTablePacket(class BlockPos const &, enum class LabTableReactionType);
+    /**
+     * @symbol ??0LabTablePacket\@\@QEAA\@W4Type\@0\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI LabTablePacket(enum class LabTablePacket::Type, class BlockPos const &);
 
 };

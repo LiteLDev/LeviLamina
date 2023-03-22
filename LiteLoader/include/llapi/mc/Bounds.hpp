@@ -30,18 +30,15 @@ public:
 
 public:
     /**
-     * @hash   1544085702
-     * @symbol  ??0Bounds\@\@QEAA\@AEBVChunkPos\@\@0\@Z
+     * @symbol ??0Bounds\@\@QEAA\@AEBVChunkPos\@\@0\@Z
      */
     MCAPI Bounds(class ChunkPos const &, class ChunkPos const &);
     /**
-     * @hash   -51730093
-     * @symbol  ??0Bounds\@\@QEAA\@AEBVBlockPos\@\@0HW4Option\@0\@\@Z
+     * @symbol ??0Bounds\@\@QEAA\@AEBVBlockPos\@\@0HW4Option\@0\@\@Z
      */
     MCAPI Bounds(class BlockPos const &, class BlockPos const &, int, enum class Bounds::Option);
     /**
-     * @hash   930743352
-     * @symbol  ??0Bounds\@\@QEAA\@AEBVBlockPos\@\@HHFF\@Z
+     * @symbol ??0Bounds\@\@QEAA\@AEBVBlockPos\@\@HHFF\@Z
      */
     MCAPI Bounds(class BlockPos const &, int, int, short, short);
 

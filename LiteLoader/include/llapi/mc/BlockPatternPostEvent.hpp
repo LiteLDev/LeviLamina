@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1BlockPatternPostEvent\@\@QEAA\@XZ
+     * @symbol ??1BlockPatternPostEvent\@\@QEAA\@XZ
      */
     MCAPI ~BlockPatternPostEvent();
 

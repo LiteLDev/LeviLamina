@@ -28,13 +28,11 @@ public:
 
 public:
     /**
-     * @hash   -1087156203
-     * @symbol  ??1PersonaAnimationDefinition\@\@QEAA\@XZ
+     * @symbol ??1PersonaAnimationDefinition\@\@QEAA\@XZ
      */
     MCAPI ~PersonaAnimationDefinition();
     /**
-     * @hash   669044451
-     * @symbol  ?INVALID_ANIMATION_DEFINITION\@PersonaAnimationDefinition\@\@2U1\@B
+     * @symbol ?INVALID_ANIMATION_DEFINITION\@PersonaAnimationDefinition\@\@2U1\@B
      */
     MCAPI static struct PersonaAnimationDefinition const INVALID_ANIMATION_DEFINITION;
 

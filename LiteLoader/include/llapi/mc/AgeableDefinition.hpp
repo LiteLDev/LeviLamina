@@ -31,37 +31,31 @@ public:
 
 public:
     /**
-     * @hash   8797214
-     * @symbol  ?addDropItem\@AgeableDefinition\@\@QEAAXAEBVItemDescriptor\@\@\@Z
+     * @symbol ?addDropItem\@AgeableDefinition\@\@QEAAXAEBVItemDescriptor\@\@\@Z
      */
     MCAPI void addDropItem(class ItemDescriptor const &);
     /**
-     * @hash   1796431132
-     * @symbol  ?addFeedItem\@AgeableDefinition\@\@QEAAXAEBUActorDefinitionFeedItem\@\@\@Z
+     * @symbol ?addFeedItem\@AgeableDefinition\@\@QEAAXAEBUActorDefinitionFeedItem\@\@\@Z
      */
     MCAPI void addFeedItem(struct ActorDefinitionFeedItem const &);
     /**
-     * @hash   1341011604
-     * @symbol  ?addFeedItemByName\@AgeableDefinition\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?addFeedItemByName\@AgeableDefinition\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void addFeedItemByName(std::string const &);
     /**
-     * @hash   -1379369130
-     * @symbol  ?canGrowUp\@AgeableDefinition\@\@QEBA_NXZ
+     * @symbol ?canGrowUp\@AgeableDefinition\@\@QEBA_NXZ
      */
     MCAPI bool canGrowUp() const;
     /**
-     * @hash   -1656791322
-     * @symbol  ?getTicksAsBaby\@AgeableDefinition\@\@QEBAHXZ
+     * @symbol ?getTicksAsBaby\@AgeableDefinition\@\@QEBAHXZ
      */
     MCAPI int getTicksAsBaby() const;
     /**
-     * @symbol  ?initialize\@AgeableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVAgeableComponent\@\@\@Z
+     * @symbol ?initialize\@AgeableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVAgeableComponent\@\@\@Z
      */
     MCAPI void initialize(class EntityContext &, class AgeableComponent &) const;
     /**
-     * @hash   -1943109686
-     * @symbol  ?buildSchema\@AgeableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VAgeableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
+     * @symbol ?buildSchema\@AgeableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VAgeableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AgeableDefinition>> &);
 

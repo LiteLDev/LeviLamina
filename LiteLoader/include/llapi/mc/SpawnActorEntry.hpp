@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   1441691572
-     * @symbol  ??1SpawnActorEntry\@\@QEAA\@XZ
+     * @symbol ??1SpawnActorEntry\@\@QEAA\@XZ
      */
     MCAPI ~SpawnActorEntry();
 

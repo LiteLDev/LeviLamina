@@ -27,6 +27,13 @@
           "1": "La version du protocole ne correspond pas, la version cible : {}, la version actuelle : {}.",
           "2": "Cela va probablement planter le serveur, veuillez utiliser la version de LiteLoader qui correspond à la version du BDS !"
         }
+      },
+      "bstats": {
+        "enabled": "bStats a été activé, vous pouvez modifier plugins/bStats/config.json pour le désactiver"
+      },
+      "unpackResources": {
+        "begin": "Unpacking LiteLoaderBDS runtime resources. Please wait patiently...",
+        "end": "Unpacked."
       }
     },
     "antiAbnormalItem": {
@@ -212,6 +219,9 @@
       },
       "initNodeJsDirectories": {
         "created": "Création du répertoire d'exécution de Node.js car il est introuvable."
+      },
+      "initPythonDirectories": {
+        "created": "Python runtime directory no found, created."
       }
     },
     "notice": {
@@ -238,6 +248,9 @@
     },
     "unzipNodeModules": {
       "fail": "Échec de la décompression de node_modules.tar"
+    },
+    "unzipPythonModules": {
+      "fail": "Failed to unzip python-env.zip"
     }
   },
   "llse": {
@@ -281,6 +294,13 @@
         "loadedPlugin": "Plugin {type} <{name}> chargé.",
         "installPluginPack": {
           "done": "{count} pack(s) de plugins {type} chargé(s)."
+        },
+        "python": {
+          "ignored": "No pyproject.toml file found in directory {path}, ignored.",
+          "installPack": {
+            "start": "Found Python plugin pack \"{path}\"! Try installing...",
+            "fail": "Failed to install plugin pack {}, please check the source files!"
+          }
         }
       },
       "nodejs": {
@@ -291,6 +311,13 @@
         },
         "register": {
           "fail": "Échec de l'enregistrement du plugin {name} !"
+        }
+      },
+      "python": {
+        "executePipInstall": {
+          "start": "Executing \"pip install\" for plugin {name}...",
+          "success": "Pip finished successfully.",
+          "fail": "Error occurred. Exit code: {code}"
         }
       }
     }

@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   1185279827
-     * @symbol  ??0TargetPoint\@\@QEAA\@MMMMMM\@Z
+     * @symbol ??0TargetPoint\@\@QEAA\@MMMMMM\@Z
      */
     MCAPI TargetPoint(float, float, float, float, float, float);
 

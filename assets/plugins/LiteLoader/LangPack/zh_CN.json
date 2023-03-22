@@ -27,6 +27,13 @@
           "1": "协议版本不匹配，目标版本：{}，当前版本：{}。",
           "2": "这很可能会使服务器崩溃，请使用与BDS版本匹配的LiteLoaderBDS！"
         }
+      },
+      "bstats": {
+        "enabled": "bStats已启用，你可以通过编辑 plugins/bStats/config.json 来禁用它"
+      },
+      "unpackResources": {
+        "begin": "正在解包LiteLoaderBDS运行时资源，请耐心等待...",
+        "end": "解包完毕。"
       }
     },
     "antiAbnormalItem": {
@@ -212,6 +219,9 @@
       },
       "initNodeJsDirectories": {
         "created": "NodeJs运行库文件夹未找到，已自动创建"
+      },
+      "initPythonDirectories": {
+        "created": "Python运行库文件夹未找到，已自动创建"
       }
     },
     "notice": {
@@ -238,6 +248,9 @@
     },
     "unzipNodeModules": {
       "fail": "解压缩node_modules.tar失败"
+    },
+    "unzipPythonModules": {
+      "fail": "解压 python-env.zip 失败"
     }
   },
   "llse": {
@@ -281,6 +294,13 @@
         "loadedPlugin": "{type} 插件 <{name}> 已加载。",
         "installPluginPack": {
           "done": "{count} 个 {type} 插件包已安装。"
+        },
+        "python": {
+          "ignored": "在目录 {path} 中没有找到 pyproject.toml 文件，已忽略。",
+          "installPack": {
+            "start": "找到 Python 插件包 \"{path}\"！尝试安装...",
+            "fail": "安装插件包 {} 失败，请检查插件源文件！"
+          }
         }
       },
       "nodejs": {
@@ -291,6 +311,13 @@
         },
         "register": {
           "fail": "插件 {name} 注册失败！"
+        }
+      },
+      "python": {
+        "executePipInstall": {
+          "start": "为插件 {name} 执行 \"pip install\"...",
+          "success": "Pip 命令成功完成",
+          "fail": "发生错误。退出代码： {code}"
         }
       }
     }

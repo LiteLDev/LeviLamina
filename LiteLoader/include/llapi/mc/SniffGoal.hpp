@@ -28,66 +28,57 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SniffGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -2070552257
-     * @vftbl  1
-     * @symbol  ?canUse\@SniffGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@SniffGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   1996349661
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@SniffGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@SniffGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   -2052139064
-     * @vftbl  4
-     * @symbol  ?start\@SniffGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@SniffGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   292698104
-     * @vftbl  5
-     * @symbol  ?stop\@SniffGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@SniffGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @hash   -1894543517
-     * @vftbl  6
-     * @symbol  ?tick\@SniffGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@SniffGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -1440805615
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@SniffGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@SniffGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   -2112383380
-     * @symbol  ??0SniffGoal\@\@QEAA\@AEAVMob\@\@\@Z
+     * @symbol ??0SniffGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI SniffGoal(class Mob &);
 
 //private:
     /**
-     * @hash   1335551612
-     * @symbol  ?_fetchNearbySniffableActors\@SniffGoal\@\@AEBA?AV?$vector\@UDistanceSortedActor\@\@V?$allocator\@UDistanceSortedActor\@\@\@std\@\@\@std\@\@W4ActorType\@\@\@Z
+     * @symbol ?_fetchNearbySniffableActors\@SniffGoal\@\@AEBA?AV?$vector\@UDistanceSortedActor\@\@V?$allocator\@UDistanceSortedActor\@\@\@std\@\@\@std\@\@W4ActorType\@\@\@Z
      */
     MCAPI std::vector<struct DistanceSortedActor> _fetchNearbySniffableActors(enum class ActorType) const;
     /**
-     * @hash   -981894474
-     * @symbol  ?_fetchNearestSniffableActor\@SniffGoal\@\@AEBA?AV?$optional\@UDistanceSortedActor\@\@\@std\@\@XZ
+     * @symbol ?_fetchNearestSniffableActor\@SniffGoal\@\@AEBA?AV?$optional\@UDistanceSortedActor\@\@\@std\@\@XZ
      */
     MCAPI class std::optional<struct DistanceSortedActor> _fetchNearestSniffableActor() const;
 

@@ -31,77 +31,72 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~JigsawBlockActor();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   688888640
-     * @vftbl  1
-     * @symbol  ?load\@JigsawBlockActor\@\@UEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
+     * @vftbl 1
+     * @symbol ?load\@JigsawBlockActor\@\@UEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   1056020015
-     * @vftbl  2
-     * @symbol  ?save\@JigsawBlockActor\@\@UEBA_NAEAVCompoundTag\@\@\@Z
+     * @vftbl 2
+     * @symbol ?save\@JigsawBlockActor\@\@UEBA_NAEAVCompoundTag\@\@\@Z
      */
     virtual bool save(class CompoundTag &) const;
     /**
-     * @vftbl  12
-     * @symbol  __unk_vfn_12
+     * @vftbl 12
+     * @symbol __unk_vfn_12
      */
     virtual void __unk_vfn_12();
     /**
-     * @vftbl  18
-     * @symbol  __unk_vfn_18
+     * @vftbl 18
+     * @symbol __unk_vfn_18
      */
     virtual void __unk_vfn_18();
     /**
-     * @vftbl  31
-     * @symbol  __unk_vfn_31
+     * @vftbl 31
+     * @symbol __unk_vfn_31
      */
     virtual void __unk_vfn_31();
     /**
-     * @vftbl  32
-     * @symbol  __unk_vfn_32
+     * @vftbl 32
+     * @symbol __unk_vfn_32
      */
     virtual void __unk_vfn_32();
     /**
-     * @vftbl  33
-     * @symbol  __unk_vfn_33
+     * @vftbl 33
+     * @symbol __unk_vfn_33
      */
     virtual void __unk_vfn_33();
     /**
-     * @vftbl  34
-     * @symbol  __unk_vfn_34
+     * @vftbl 34
+     * @symbol __unk_vfn_34
      */
     virtual void __unk_vfn_34();
     /**
-     * @vftbl  35
-     * @symbol  __unk_vfn_35
+     * @vftbl 35
+     * @symbol __unk_vfn_35
      */
     virtual void __unk_vfn_35();
     /**
-     * @vftbl  36
-     * @symbol  __unk_vfn_36
+     * @vftbl 36
+     * @symbol __unk_vfn_36
      */
     virtual void __unk_vfn_36();
     /**
-     * @hash   -1503819358
-     * @vftbl  37
-     * @symbol  ?_getUpdatePacket\@JigsawBlockActor\@\@MEAA?AV?$unique_ptr\@VBlockActorDataPacket\@\@U?$default_delete\@VBlockActorDataPacket\@\@\@std\@\@\@std\@\@AEAVBlockSource\@\@\@Z
+     * @vftbl 37
+     * @symbol ?_getUpdatePacket\@JigsawBlockActor\@\@MEAA?AV?$unique_ptr\@VBlockActorDataPacket\@\@U?$default_delete\@VBlockActorDataPacket\@\@\@std\@\@\@std\@\@AEAVBlockSource\@\@\@Z
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @hash   -1716090928
-     * @vftbl  38
-     * @symbol  ?_onUpdatePacket\@JigsawBlockActor\@\@MEAAXAEBVCompoundTag\@\@AEAVBlockSource\@\@\@Z
+     * @vftbl 38
+     * @symbol ?_onUpdatePacket\@JigsawBlockActor\@\@MEAAXAEBVCompoundTag\@\@AEAVBlockSource\@\@\@Z
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
-     * @hash   -2031208276
-     * @symbol  ??0JigsawBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
+     * @symbol ??0JigsawBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
     MCAPI JigsawBlockActor(class BlockPos const &);
 

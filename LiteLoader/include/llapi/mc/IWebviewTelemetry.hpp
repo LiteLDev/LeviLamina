@@ -30,61 +30,57 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~IWebviewTelemetry();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  __unk_vfn_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
     virtual void __unk_vfn_1();
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  __unk_vfn_4
+     * @vftbl 4
+     * @symbol __unk_vfn_4
      */
     virtual void __unk_vfn_4();
     /**
-     * @vftbl  5
-     * @symbol  __unk_vfn_5
+     * @vftbl 5
+     * @symbol __unk_vfn_5
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   -1792787123
-     * @vftbl  6
-     * @symbol  ?onDownloadBegin\@IWebviewTelemetry\@\@UEAAXAEBUWebviewDownloadInfo\@\@\@Z
+     * @vftbl 6
+     * @symbol ?onDownloadBegin\@IWebviewTelemetry\@\@UEAAXAEBUWebviewDownloadInfo\@\@\@Z
      */
     virtual void onDownloadBegin(struct WebviewDownloadInfo const &);
     /**
-     * @vftbl  7
-     * @symbol  __unk_vfn_7
+     * @vftbl 7
+     * @symbol __unk_vfn_7
      */
     virtual void __unk_vfn_7();
     /**
-     * @hash   -1478958017
-     * @vftbl  8
-     * @symbol  ?onDownloadComplete\@IWebviewTelemetry\@\@UEAAXAEBUWebviewDownloadInfo\@\@\@Z
+     * @vftbl 8
+     * @symbol ?onDownloadComplete\@IWebviewTelemetry\@\@UEAAXAEBUWebviewDownloadInfo\@\@\@Z
      */
     virtual void onDownloadComplete(struct WebviewDownloadInfo const &);
     /**
-     * @hash   -441648049
-     * @vftbl  9
-     * @symbol  ?onDownloadCanceled\@IWebviewTelemetry\@\@UEAAXAEBUWebviewDownloadInfo\@\@\@Z
+     * @vftbl 9
+     * @symbol ?onDownloadCanceled\@IWebviewTelemetry\@\@UEAAXAEBUWebviewDownloadInfo\@\@\@Z
      */
     virtual void onDownloadCanceled(struct WebviewDownloadInfo const &);
     /**
-     * @hash   2139821506
-     * @symbol  ??0IWebviewTelemetry\@\@QEAA\@AEBVIMinecraftEventing\@\@\@Z
+     * @symbol ??0IWebviewTelemetry\@\@QEAA\@AEBVIMinecraftEventing\@\@\@Z
      */
     MCAPI IWebviewTelemetry(class IMinecraftEventing const &);
 

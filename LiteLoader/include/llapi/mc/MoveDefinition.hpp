@@ -32,15 +32,20 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~MoveDefinition();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -2048317168
-     * @vftbl  1
-     * @symbol  ?load\@MoveDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
+     * @vftbl 1
+     * @symbol ?load\@MoveDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */
     virtual void load(class Json::Value, class BehaviorFactory const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEDEFINITION
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~MoveDefinition();
+#endif
 
 };

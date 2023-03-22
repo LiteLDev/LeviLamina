@@ -27,13 +27,11 @@ public:
 
 public:
     /**
-     * @hash   -549194603
-     * @symbol  ??0ItemDefinitionEventTriggeredEvent\@\@QEAA\@AEBU0\@\@Z
+     * @symbol ??0ItemDefinitionEventTriggeredEvent\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI ItemDefinitionEventTriggeredEvent(struct ItemDefinitionEventTriggeredEvent const &);
     /**
-     * @hash   -1644971069
-     * @symbol  ??1ItemDefinitionEventTriggeredEvent\@\@QEAA\@XZ
+     * @symbol ??1ItemDefinitionEventTriggeredEvent\@\@QEAA\@XZ
      */
     MCAPI ~ItemDefinitionEventTriggeredEvent();
 

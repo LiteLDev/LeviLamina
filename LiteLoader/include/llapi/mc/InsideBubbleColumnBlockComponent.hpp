@@ -28,13 +28,11 @@ public:
 
 public:
     /**
-     * @hash   -1913860720
-     * @symbol  ??4InsideBubbleColumnBlockComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
+     * @symbol ??4InsideBubbleColumnBlockComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct InsideBubbleColumnBlockComponent & operator=(struct InsideBubbleColumnBlockComponent &&);
     /**
-     * @hash   -1255617848
-     * @symbol  ??1InsideBubbleColumnBlockComponent\@\@QEAA\@XZ
+     * @symbol ??1InsideBubbleColumnBlockComponent\@\@QEAA\@XZ
      */
     MCAPI ~InsideBubbleColumnBlockComponent();
 

@@ -41,28 +41,23 @@ public:
 
 public:
     /**
-     * @hash   1346174844
-     * @symbol  ??0PlayerScoreboardId\@\@QEAA\@XZ
+     * @symbol ??0PlayerScoreboardId\@\@QEAA\@XZ
      */
     MCAPI PlayerScoreboardId();
     /**
-     * @hash   1462011894
-     * @symbol  ??0PlayerScoreboardId\@\@QEAA\@_J\@Z
+     * @symbol ??0PlayerScoreboardId\@\@QEAA\@_J\@Z
      */
     MCAPI PlayerScoreboardId(__int64);
     /**
-     * @hash   2047706355
-     * @symbol  ?getHash\@PlayerScoreboardId\@\@QEBA_KXZ
+     * @symbol ?getHash\@PlayerScoreboardId\@\@QEBA_KXZ
      */
     MCAPI unsigned __int64 getHash() const;
     /**
-     * @hash   -1750191467
-     * @symbol  ??8PlayerScoreboardId\@\@QEBA_NAEBU0\@\@Z
+     * @symbol ??8PlayerScoreboardId\@\@QEBA_NAEBU0\@\@Z
      */
     MCAPI bool operator==(struct PlayerScoreboardId const &) const;
     /**
-     * @hash   -1015004428
-     * @symbol  ?INVALID\@PlayerScoreboardId\@\@2U1\@B
+     * @symbol ?INVALID\@PlayerScoreboardId\@\@2U1\@B
      */
     MCAPI static struct PlayerScoreboardId const INVALID;
 

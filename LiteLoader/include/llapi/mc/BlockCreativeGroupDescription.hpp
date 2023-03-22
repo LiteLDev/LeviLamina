@@ -11,11 +11,8 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC structure BlockCreativeGroupDescription.
- *
- */
-struct BlockCreativeGroupDescription {
+
+class BlockCreativeGroupDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -23,31 +20,28 @@ struct BlockCreativeGroupDescription {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCREATIVEGROUPDESCRIPTION
 public:
-    struct BlockCreativeGroupDescription& operator=(struct BlockCreativeGroupDescription const &) = delete;
-    BlockCreativeGroupDescription(struct BlockCreativeGroupDescription const &) = delete;
+    class BlockCreativeGroupDescription& operator=(class BlockCreativeGroupDescription const &) = delete;
+    BlockCreativeGroupDescription(class BlockCreativeGroupDescription const &) = delete;
     BlockCreativeGroupDescription() = delete;
 #endif
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BlockCreativeGroupDescription();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1478547360
-     * @vftbl  1
-     * @symbol  ?getName\@BlockCreativeGroupDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 1
+     * @symbol ?getName\@BlockCreativeGroupDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string const & getName() const;
     /**
-     * @hash   1643750611
-     * @symbol  ?NameID\@BlockCreativeGroupDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?NameID\@BlockCreativeGroupDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NameID;
     /**
-     * @hash   -1195073926
-     * @symbol  ?registerVersionUpgrades\@BlockCreativeGroupDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
+     * @symbol ?registerVersionUpgrades\@BlockCreativeGroupDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

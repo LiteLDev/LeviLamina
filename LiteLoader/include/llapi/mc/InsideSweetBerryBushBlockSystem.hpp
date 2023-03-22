@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   -2036429926
-     * @symbol  ?createSystem\@InsideSweetBerryBushBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@InsideSweetBerryBushBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

@@ -27,28 +27,23 @@ public:
 
 public:
     /**
-     * @hash   -919704371
-     * @symbol  ??0VibrationSelector\@\@QEAA\@XZ
+     * @symbol ??0VibrationSelector\@\@QEAA\@XZ
      */
     MCAPI VibrationSelector();
     /**
-     * @hash   -211031755
-     * @symbol  ?addCandidate\@VibrationSelector\@\@QEAAXUTick\@\@AEBVGameEvent\@\@AEBUGameEventContext\@\@AEBVBlockPos\@\@\@Z
+     * @symbol ?addCandidate\@VibrationSelector\@\@QEAAXUTick\@\@AEBVGameEvent\@\@AEBUGameEventContext\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void addCandidate(struct Tick, class GameEvent const &, struct GameEventContext const &, class BlockPos const &);
     /**
-     * @hash   -813588756
-     * @symbol  ?consumeBestCandidate\@VibrationSelector\@\@QEAA?AV?$optional\@VVibrationInfo\@\@\@std\@\@UTick\@\@\@Z
+     * @symbol ?consumeBestCandidate\@VibrationSelector\@\@QEAA?AV?$optional\@VVibrationInfo\@\@\@std\@\@UTick\@\@\@Z
      */
     MCAPI class std::optional<class VibrationInfo> consumeBestCandidate(struct Tick);
     /**
-     * @hash   1733351689
-     * @symbol  ?load\@VibrationSelector\@\@QEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
+     * @symbol ?load\@VibrationSelector\@\@QEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     MCAPI void load(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   390133678
-     * @symbol  ?save\@VibrationSelector\@\@QEBAXAEAVCompoundTag\@\@\@Z
+     * @symbol ?save\@VibrationSelector\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
     MCAPI void save(class CompoundTag &) const;
 

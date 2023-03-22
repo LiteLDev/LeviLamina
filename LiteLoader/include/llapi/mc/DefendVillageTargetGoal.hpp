@@ -31,47 +31,42 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~DefendVillageTargetGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -691684378
-     * @vftbl  1
-     * @symbol  ?canUse\@DefendVillageTargetGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@DefendVillageTargetGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   456504164
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@DefendVillageTargetGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@DefendVillageTargetGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @hash   -916825073
-     * @vftbl  4
-     * @symbol  ?start\@DefendVillageTargetGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@DefendVillageTargetGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   -395430150
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@DefendVillageTargetGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@DefendVillageTargetGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @vftbl  8
-     * @symbol  __unk_vfn_8
+     * @vftbl 8
+     * @symbol __unk_vfn_8
      */
     virtual void __unk_vfn_8();
     /**
-     * @vftbl  9
-     * @symbol  __unk_vfn_9
+     * @vftbl 9
+     * @symbol __unk_vfn_9
      */
     virtual void __unk_vfn_9();
     /**
-     * @hash   1232961267
-     * @symbol  ??0DefendVillageTargetGoal\@\@QEAA\@AEAVMob\@\@\@Z
+     * @symbol ??0DefendVillageTargetGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI DefendVillageTargetGoal(class Mob &);
 

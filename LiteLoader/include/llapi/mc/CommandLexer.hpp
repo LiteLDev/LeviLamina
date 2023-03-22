@@ -30,28 +30,23 @@ public:
 
 public:
     /**
-     * @hash   -1340903404
-     * @symbol  ??0CommandLexer\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ??0CommandLexer\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI CommandLexer(std::string const &);
     /**
-     * @hash   1969052884
-     * @symbol  ?next\@CommandLexer\@\@QEBAAEBUToken\@1\@XZ
+     * @symbol ?next\@CommandLexer\@\@QEBAAEBUToken\@1\@XZ
      */
     MCAPI struct CommandLexer::Token const & next() const;
     /**
-     * @hash   1304957125
-     * @symbol  ?step\@CommandLexer\@\@QEAAXXZ
+     * @symbol ?step\@CommandLexer\@\@QEAAXXZ
      */
     MCAPI void step();
     /**
-     * @hash   -1144158450
-     * @symbol  ?isDigit\@CommandLexer\@\@SA_ND\@Z
+     * @symbol ?isDigit\@CommandLexer\@\@SA_ND\@Z
      */
     MCAPI static bool isDigit(char);
     /**
-     * @hash   -293725352
-     * @symbol  ?isFilePathCharacter\@CommandLexer\@\@SA_ND\@Z
+     * @symbol ?isFilePathCharacter\@CommandLexer\@\@SA_ND\@Z
      */
     MCAPI static bool isFilePathCharacter(char);
 

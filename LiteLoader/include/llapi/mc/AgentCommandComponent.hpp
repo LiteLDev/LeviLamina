@@ -29,28 +29,23 @@ public:
 
 public:
     /**
-     * @hash   -1732196653
-     * @symbol  ??0AgentCommandComponent\@\@QEAA\@XZ
+     * @symbol ??0AgentCommandComponent\@\@QEAA\@XZ
      */
     MCAPI AgentCommandComponent();
     /**
-     * @hash   20755813
-     * @symbol  ?addCommand\@AgentCommandComponent\@\@QEAA_NV?$unique_ptr\@VCommand\@AgentCommands\@\@U?$default_delete\@VCommand\@AgentCommands\@\@\@std\@\@\@std\@\@\@Z
+     * @symbol ?addCommand\@AgentCommandComponent\@\@QEAA_NV?$unique_ptr\@VCommand\@AgentCommands\@\@U?$default_delete\@VCommand\@AgentCommands\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI bool addCommand(std::unique_ptr<class AgentCommands::Command>);
     /**
-     * @hash   -1581622734
-     * @symbol  ?getCurrentCommand\@AgentCommandComponent\@\@QEBAAEBV?$unique_ptr\@VCommand\@AgentCommands\@\@U?$default_delete\@VCommand\@AgentCommands\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?getCurrentCommand\@AgentCommandComponent\@\@QEBAAEBV?$unique_ptr\@VCommand\@AgentCommands\@\@U?$default_delete\@VCommand\@AgentCommands\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::unique_ptr<class AgentCommands::Command> const & getCurrentCommand() const;
     /**
-     * @hash   -776091902
-     * @symbol  ?initFromDefinition\@AgentCommandComponent\@\@QEAAXAEAVActor\@\@\@Z
+     * @symbol ?initFromDefinition\@AgentCommandComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
-     * @hash   -512557184
-     * @symbol  ?setCurrentCommand\@AgentCommandComponent\@\@QEAAXV?$unique_ptr\@VCommand\@AgentCommands\@\@U?$default_delete\@VCommand\@AgentCommands\@\@\@std\@\@\@std\@\@\@Z
+     * @symbol ?setCurrentCommand\@AgentCommandComponent\@\@QEAAXV?$unique_ptr\@VCommand\@AgentCommands\@\@U?$default_delete\@VCommand\@AgentCommands\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI void setCurrentCommand(std::unique_ptr<class AgentCommands::Command>);
 

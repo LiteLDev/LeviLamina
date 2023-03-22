@@ -29,25 +29,22 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~InverterNode();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   165492898
-     * @vftbl  1
-     * @symbol  ?tick\@InverterNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
+     * @vftbl 1
+     * @symbol ?tick\@InverterNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
-     * @hash   -1205598561
-     * @vftbl  2
-     * @symbol  ?initializeFromDefinition\@InverterNode\@\@MEAAXAEAVActor\@\@\@Z
+     * @vftbl 2
+     * @symbol ?initializeFromDefinition\@InverterNode\@\@MEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
-     * @hash   -1274142255
-     * @symbol  ??0InverterNode\@\@QEAA\@XZ
+     * @symbol ??0InverterNode\@\@QEAA\@XZ
      */
     MCAPI InverterNode();
 

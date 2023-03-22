@@ -30,27 +30,23 @@ public:
 
 public:
     /**
-     * @hash   1293795370
-     * @symbol  ??0SchedulerDefinition\@\@QEAA\@XZ
+     * @symbol ??0SchedulerDefinition\@\@QEAA\@XZ
      */
     MCAPI SchedulerDefinition();
     /**
-     * @symbol  ?initialize\@SchedulerDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVSchedulerComponent\@\@\@Z
+     * @symbol ?initialize\@SchedulerDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVSchedulerComponent\@\@\@Z
      */
     MCAPI void initialize(class EntityContext &, class SchedulerComponent &) const;
     /**
-     * @hash   -1490185271
-     * @symbol  ?setMaxDelayTicks\@SchedulerDefinition\@\@QEAAXAEBM\@Z
+     * @symbol ?setMaxDelayTicks\@SchedulerDefinition\@\@QEAAXAEBM\@Z
      */
     MCAPI void setMaxDelayTicks(float const &);
     /**
-     * @hash   507454761
-     * @symbol  ?setMinDelayTicks\@SchedulerDefinition\@\@QEAAXAEBM\@Z
+     * @symbol ?setMinDelayTicks\@SchedulerDefinition\@\@QEAAXAEBM\@Z
      */
     MCAPI void setMinDelayTicks(float const &);
     /**
-     * @hash   1319297742
-     * @symbol  ?buildSchema\@SchedulerDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VSchedulerDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
+     * @symbol ?buildSchema\@SchedulerDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VSchedulerDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SchedulerDefinition>> &);
 

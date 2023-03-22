@@ -30,24 +30,27 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ActorPropertiesDescription();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -715420960
-     * @vftbl  1
-     * @symbol  ?getJsonName\@ActorPropertiesDescription\@\@UEBAPEBDXZ
+     * @vftbl 1
+     * @symbol ?getJsonName\@ActorPropertiesDescription\@\@UEBAPEBDXZ
      */
     virtual char const * getJsonName() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORPROPERTIESDESCRIPTION
     /**
-     * @hash   1346514806
-     * @symbol  ??4ActorPropertiesDescription\@\@QEAAAEAU0\@AEBU0\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~ActorPropertiesDescription();
+#endif
+    /**
+     * @symbol ??4ActorPropertiesDescription\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
     MCAPI struct ActorPropertiesDescription & operator=(struct ActorPropertiesDescription const &);
     /**
-     * @hash   -1430262353
-     * @symbol  ?parse\@ActorPropertiesDescription\@\@QEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
+     * @symbol ?parse\@ActorPropertiesDescription\@\@QEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
     MCAPI void parse(class Json::Value &, class SemVersion const &);
 

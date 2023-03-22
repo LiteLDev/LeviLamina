@@ -29,13 +29,11 @@ public:
 
 public:
     /**
-     * @hash   1144298287
-     * @symbol  ?_tryBake\@BlockCollisionBoxProcessor\@\@SAXPEBUBlockRotationComponent\@\@PEAUBlockCollisionBoxComponent\@\@\@Z
+     * @symbol ?_tryBake\@BlockCollisionBoxProcessor\@\@SAXPEBUBlockRotationComponent\@\@PEAUBlockCollisionBoxComponent\@\@\@Z
      */
     MCAPI static void _tryBake(struct BlockRotationComponent const *, struct BlockCollisionBoxComponent *);
     /**
-     * @hash   -934665418
-     * @symbol  ?getProcessor\@BlockCollisionBoxProcessor\@\@SA?AV?$unique_ptr\@VEntityComponentProcessor\@Util\@\@U?$default_delete\@VEntityComponentProcessor\@Util\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?getProcessor\@BlockCollisionBoxProcessor\@\@SA?AV?$unique_ptr\@VEntityComponentProcessor\@Util\@\@U?$default_delete\@VEntityComponentProcessor\@Util\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI static std::unique_ptr<class Util::EntityComponentProcessor> getProcessor();
 

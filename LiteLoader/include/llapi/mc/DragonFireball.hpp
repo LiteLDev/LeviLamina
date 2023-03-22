@@ -32,153 +32,147 @@ public:
 
 public:
     /**
-     * @vftbl  16
-     * @symbol  __unk_destructor_16
+     * @vftbl 16
+     * @symbol __unk_vfn_16
      */
-    virtual ~DragonFireball();
+    virtual void __unk_vfn_16();
     /**
-     * @vftbl  41
-     * @symbol  __unk_vfn_41
+     * @vftbl 41
+     * @symbol __unk_vfn_41
      */
     virtual void __unk_vfn_41();
     /**
-     * @vftbl  62
-     * @symbol  __unk_vfn_62
+     * @vftbl 62
+     * @symbol __unk_vfn_62
      */
     virtual void __unk_vfn_62();
     /**
-     * @vftbl  69
-     * @symbol  __unk_vfn_69
+     * @vftbl 69
+     * @symbol __unk_vfn_69
      */
     virtual void __unk_vfn_69();
     /**
-     * @vftbl  83
-     * @symbol  __unk_vfn_83
+     * @vftbl 82
+     * @symbol __unk_vfn_82
      */
-    virtual void __unk_vfn_83();
+    virtual void __unk_vfn_82();
     /**
-     * @vftbl  86
-     * @symbol  __unk_vfn_86
+     * @vftbl 85
+     * @symbol __unk_vfn_85
      */
-    virtual void __unk_vfn_86();
+    virtual void __unk_vfn_85();
     /**
-     * @vftbl  89
-     * @symbol  __unk_vfn_89
+     * @vftbl 88
+     * @symbol __unk_vfn_88
      */
-    virtual void __unk_vfn_89();
+    virtual void __unk_vfn_88();
     /**
-     * @hash   1092649430
-     * @vftbl  96
-     * @symbol  ?isPickable\@DragonFireball\@\@UEAA_NXZ
+     * @vftbl 95
+     * @symbol ?isPickable\@DragonFireball\@\@UEAA_NXZ
      */
     virtual bool isPickable();
     /**
-     * @vftbl  97
-     * @symbol  __unk_vfn_97
+     * @vftbl 96
+     * @symbol __unk_vfn_96
      */
-    virtual void __unk_vfn_97();
+    virtual void __unk_vfn_96();
     /**
-     * @vftbl  100
-     * @symbol  __unk_vfn_100
+     * @vftbl 99
+     * @symbol __unk_vfn_99
      */
-    virtual void __unk_vfn_100();
+    virtual void __unk_vfn_99();
     /**
-     * @vftbl  107
-     * @symbol  __unk_vfn_107
+     * @vftbl 106
+     * @symbol __unk_vfn_106
      */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_106();
     /**
-     * @vftbl  109
-     * @symbol  __unk_vfn_109
+     * @vftbl 108
+     * @symbol __unk_vfn_108
+     */
+    virtual void __unk_vfn_108();
+    /**
+     * @vftbl 109
+     * @symbol __unk_vfn_109
      */
     virtual void __unk_vfn_109();
     /**
-     * @vftbl  110
-     * @symbol  __unk_vfn_110
+     * @vftbl 111
+     * @symbol __unk_vfn_111
      */
-    virtual void __unk_vfn_110();
+    virtual void __unk_vfn_111();
     /**
-     * @vftbl  112
-     * @symbol  __unk_vfn_112
+     * @vftbl 178
+     * @symbol __unk_vfn_178
      */
-    virtual void __unk_vfn_112();
+    virtual void __unk_vfn_178();
     /**
-     * @vftbl  179
-     * @symbol  __unk_vfn_179
+     * @vftbl 192
+     * @symbol __unk_vfn_192
      */
-    virtual void __unk_vfn_179();
+    virtual void __unk_vfn_192();
     /**
-     * @vftbl  193
-     * @symbol  __unk_vfn_193
+     * @vftbl 217
+     * @symbol __unk_vfn_217
      */
-    virtual void __unk_vfn_193();
+    virtual void __unk_vfn_217();
     /**
-     * @vftbl  218
-     * @symbol  __unk_vfn_218
+     * @vftbl 218
+     * @symbol __unk_vfn_218
      */
     virtual void __unk_vfn_218();
     /**
-     * @vftbl  219
-     * @symbol  __unk_vfn_219
+     * @vftbl 240
+     * @symbol __unk_vfn_240
      */
-    virtual void __unk_vfn_219();
+    virtual void __unk_vfn_240();
     /**
-     * @vftbl  241
-     * @symbol  __unk_vfn_241
+     * @vftbl 243
+     * @symbol __unk_vfn_243
      */
-    virtual void __unk_vfn_241();
+    virtual void __unk_vfn_243();
     /**
-     * @vftbl  244
-     * @symbol  __unk_vfn_244
+     * @vftbl 260
+     * @symbol __unk_vfn_260
      */
-    virtual void __unk_vfn_244();
+    virtual void __unk_vfn_260();
     /**
-     * @vftbl  262
-     * @symbol  __unk_vfn_262
-     */
-    virtual void __unk_vfn_262();
-    /**
-     * @hash   -931007432
-     * @vftbl  263
-     * @symbol  ?_hurt\@DragonFireball\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
+     * @vftbl 261
+     * @symbol ?_hurt\@DragonFireball\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vftbl  270
-     * @symbol  __unk_vfn_270
+     * @vftbl 268
+     * @symbol __unk_vfn_268
      */
-    virtual void __unk_vfn_270();
+    virtual void __unk_vfn_268();
     /**
-     * @vftbl  277
-     * @symbol  __unk_vfn_277
+     * @vftbl 275
+     * @symbol __unk_vfn_275
+     */
+    virtual void __unk_vfn_275();
+    /**
+     * @vftbl 277
+     * @symbol __unk_vfn_277
      */
     virtual void __unk_vfn_277();
     /**
-     * @vftbl  279
-     * @symbol  __unk_vfn_279
-     */
-    virtual void __unk_vfn_279();
-    /**
-     * @hash   -1622893112
-     * @vftbl  280
-     * @symbol  ?getTrailParticle\@DragonFireball\@\@MEAA?AW4ParticleType\@\@XZ
+     * @vftbl 278
+     * @symbol ?getTrailParticle\@DragonFireball\@\@MEAA?AW4ParticleType\@\@XZ
      */
     virtual enum class ParticleType getTrailParticle();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DRAGONFIREBALL
     /**
-     * @hash   -430645108
-     * @symbol  ?shouldBurn\@DragonFireball\@\@MEAA_NXZ
+     * @symbol ?shouldBurn\@DragonFireball\@\@MEAA_NXZ
      */
     MCVAPI bool shouldBurn();
 #endif
     /**
-     * @hash   575710196
-     * @symbol  ??0DragonFireball\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
+     * @symbol ??0DragonFireball\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI DragonFireball(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   -1813873091
-     * @symbol  ?SPLASH_RANGE\@DragonFireball\@\@2MA
+     * @symbol ?SPLASH_RANGE\@DragonFireball\@\@2MA
      */
     MCAPI static float SPLASH_RANGE;
 

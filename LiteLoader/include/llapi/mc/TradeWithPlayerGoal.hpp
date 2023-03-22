@@ -30,52 +30,47 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~TradeWithPlayerGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   904181538
-     * @vftbl  1
-     * @symbol  ?canUse\@TradeWithPlayerGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@TradeWithPlayerGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   1740163760
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@TradeWithPlayerGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@TradeWithPlayerGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   1592334347
-     * @vftbl  4
-     * @symbol  ?start\@TradeWithPlayerGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@TradeWithPlayerGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @vftbl  5
-     * @symbol  __unk_vfn_5
+     * @vftbl 5
+     * @symbol __unk_vfn_5
      */
     virtual void __unk_vfn_5();
     /**
-     * @vftbl  6
-     * @symbol  __unk_vfn_6
+     * @vftbl 6
+     * @symbol __unk_vfn_6
      */
     virtual void __unk_vfn_6();
     /**
-     * @hash   -1087695618
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@TradeWithPlayerGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@TradeWithPlayerGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   -1214439569
-     * @symbol  ??0TradeWithPlayerGoal\@\@QEAA\@AEAVMob\@\@\@Z
+     * @symbol ??0TradeWithPlayerGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI TradeWithPlayerGoal(class Mob &);
 

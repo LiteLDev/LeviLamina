@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   530270242
-     * @symbol  ??0LegacyStructureBlockInfo\@\@QEAA\@AEBVBlockPos\@\@V?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@AEBVBlock\@\@2\@Z
+     * @symbol ??0LegacyStructureBlockInfo\@\@QEAA\@AEBVBlockPos\@\@V?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@AEBVBlock\@\@2\@Z
      */
     MCAPI LegacyStructureBlockInfo(class BlockPos const &, std::unique_ptr<class CompoundTag>, class Block const &, class Block const &);
 

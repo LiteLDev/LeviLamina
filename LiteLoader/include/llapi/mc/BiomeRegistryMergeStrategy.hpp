@@ -30,15 +30,20 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BiomeRegistryMergeStrategy();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1979174903
-     * @vftbl  1
-     * @symbol  ?mergeFiles\@BiomeRegistryMergeStrategy\@\@UEAAXAEBV?$vector\@VLoadedResourceData\@\@V?$allocator\@VLoadedResourceData\@\@\@std\@\@\@std\@\@\@Z
+     * @vftbl 1
+     * @symbol ?mergeFiles\@BiomeRegistryMergeStrategy\@\@UEAAXAEBV?$vector\@VLoadedResourceData\@\@V?$allocator\@VLoadedResourceData\@\@\@std\@\@\@std\@\@\@Z
      */
     virtual void mergeFiles(std::vector<class LoadedResourceData> const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEREGISTRYMERGESTRATEGY
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~BiomeRegistryMergeStrategy();
+#endif
 
 };

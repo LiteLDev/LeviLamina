@@ -31,19 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~CentralSpikedFeature();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1628442205
-     * @vftbl  3
-     * @symbol  ?place\@CentralSpikedFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @vftbl 3
+     * @symbol ?place\@CentralSpikedFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   530869772
-     * @symbol  ??0CentralSpikedFeature\@\@QEAA\@AEBVBlock\@\@\@Z
+     * @symbol ??0CentralSpikedFeature\@\@QEAA\@AEBVBlock\@\@\@Z
      */
     MCAPI CentralSpikedFeature(class Block const &);
 

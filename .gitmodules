@@ -1,9 +1,9 @@
-[submodule "assets/plugins/LiteLoader/ResourcePacks/LiteLoaderBDS-CUI"]
-	path = assets/plugins/LiteLoader/ResourcePacks/LiteLoaderBDS-CUI
-	url = https://github.com/OEOTYAN/LiteLoaderBDS-CUI.git
 [submodule "PermissionAPI"]
 	path = PermissionAPI
 	url = https://github.com/LiteLDev/PermissionAPI.git
 [submodule "ParticleAPI"]
 	path = ParticleAPI
 	url = https://github.com/LiteLDev/ParticleAPI.git
+[submodule "assets/plugins/LiteLoader/ResourcePacks/LiteLoaderBDS-CUI"]
+	path = assets/plugins/LiteLoader/ResourcePacks/LiteLoaderBDS-CUI
+	url = https://github.com/OEOTYAN/LiteLoaderBDS-CUI.git

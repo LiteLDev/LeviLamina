@@ -30,8 +30,7 @@ public:
 
 public:
     /**
-     * @hash   -969460175
-     * @symbol  ?EDUResourcePack\@EduAppConfigs\@\@2UPackIdVersion\@\@B
+     * @symbol ?EDUResourcePack\@EduAppConfigs\@\@2UPackIdVersion\@\@B
      */
     MCAPI static struct PackIdVersion const EDUResourcePack;
 

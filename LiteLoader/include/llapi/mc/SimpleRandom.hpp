@@ -30,69 +30,65 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SimpleRandom();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -763450541
-     * @vftbl  1
-     * @symbol  ?nextInt\@SimpleRandom\@\@UEAAHXZ
+     * @vftbl 1
+     * @symbol ?nextInt\@SimpleRandom\@\@UEAAHXZ
      */
     virtual int nextInt();
     /**
-     * @hash   -2039585188
-     * @vftbl  2
-     * @symbol  ?nextInt\@SimpleRandom\@\@UEAAHH\@Z
+     * @vftbl 2
+     * @symbol ?nextInt\@SimpleRandom\@\@UEAAHH\@Z
      */
     virtual int nextInt(int);
     /**
-     * @hash   -887801088
-     * @vftbl  3
-     * @symbol  ?nextLong\@SimpleRandom\@\@UEAA_JXZ
+     * @vftbl 3
+     * @symbol ?nextLong\@SimpleRandom\@\@UEAA_JXZ
      */
     virtual __int64 nextLong();
     /**
-     * @hash   -547800151
-     * @vftbl  4
-     * @symbol  ?nextBoolean\@SimpleRandom\@\@UEAA_NXZ
+     * @vftbl 4
+     * @symbol ?nextBoolean\@SimpleRandom\@\@UEAA_NXZ
      */
     virtual bool nextBoolean();
     /**
-     * @hash   -942791437
-     * @vftbl  5
-     * @symbol  ?nextFloat\@SimpleRandom\@\@UEAAMXZ
+     * @vftbl 5
+     * @symbol ?nextFloat\@SimpleRandom\@\@UEAAMXZ
      */
     virtual float nextFloat();
     /**
-     * @hash   1208362169
-     * @vftbl  6
-     * @symbol  ?nextDouble\@SimpleRandom\@\@UEAANXZ
+     * @vftbl 6
+     * @symbol ?nextDouble\@SimpleRandom\@\@UEAANXZ
      */
     virtual double nextDouble();
     /**
-     * @hash   1712880148
-     * @vftbl  7
-     * @symbol  ?nextGaussianDouble\@SimpleRandom\@\@UEAANXZ
+     * @vftbl 7
+     * @symbol ?nextGaussianDouble\@SimpleRandom\@\@UEAANXZ
      */
     virtual double nextGaussianDouble();
     /**
-     * @hash   145436997
-     * @vftbl  8
-     * @symbol  ?consumeCount\@SimpleRandom\@\@UEAAXI\@Z
+     * @vftbl 8
+     * @symbol ?consumeCount\@SimpleRandom\@\@UEAAXI\@Z
      */
     virtual void consumeCount(unsigned int);
     /**
-     * @hash   144329869
-     * @vftbl  9
-     * @symbol  ?fork\@SimpleRandom\@\@UEAA?AV?$unique_ptr\@VIRandom\@\@U?$default_delete\@VIRandom\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 9
+     * @symbol ?fork\@SimpleRandom\@\@UEAA?AV?$unique_ptr\@VIRandom\@\@U?$default_delete\@VIRandom\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class IRandom> fork();
     /**
-     * @hash   -604886821
-     * @vftbl  10
-     * @symbol  ?forkPositional\@SimpleRandom\@\@UEAA?AV?$unique_ptr\@VIPositionalRandomFactory\@\@U?$default_delete\@VIPositionalRandomFactory\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 10
+     * @symbol ?forkPositional\@SimpleRandom\@\@UEAA?AV?$unique_ptr\@VIPositionalRandomFactory\@\@U?$default_delete\@VIPositionalRandomFactory\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLERANDOM
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~SimpleRandom();
+#endif
 
 };

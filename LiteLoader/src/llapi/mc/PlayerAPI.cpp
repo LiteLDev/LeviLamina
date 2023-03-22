@@ -1,4 +1,5 @@
-﻿#include <bitset>
+#include <bitset>
+#include <string_view>
 #include "magic_enum/magic_enum.hpp"
 
 #include "llapi/mc/Minecraft.hpp"
@@ -9,12 +10,12 @@
 #include "llapi/mc/Certificate.hpp"
 #include "llapi/mc/CompoundTag.hpp"
 
-#include "llapi/mc/NetworkHandler.hpp"
 #include "llapi/mc/ServerNetworkHandler.hpp"
 #include "llapi/mc/NetworkIdentifier.hpp"
 #include "llapi/mc/NetworkPeer.hpp"
 #include "llapi/mc/ToastRequestPacket.hpp"
 
+#include "llapi/mc/NetworkSystem.hpp"
 #include "llapi/mc/ExtendedCertificate.hpp"
 #include "llapi/mc/ConnectionRequest.hpp"
 #include "llapi/mc/MinecraftPackets.hpp"
@@ -117,13 +118,13 @@ std::string Player::getRealName() {
 int Player::getAvgPing() {
     if (isSimulatedPlayer())
         return -1;
-    return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().mAveragePing;
+    return Global<Minecraft>->getNetworkSystem().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().mAveragePing;
 }
 
 int Player::getLastPing() {
     if (isSimulatedPlayer())
         return -1;
-    return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().mCurrentPing;
+    return Global<Minecraft>->getNetworkSystem().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().mCurrentPing;
 }
 
 string Player::getIP() {
@@ -251,50 +252,73 @@ bool Player::giveItem(string typeName, int amount) {
     return true;
 }
 
-int Player::clearItem(string typeName) {
-    int res = 0;
+int Player::clearItem(std::string typeName) {
+    return this->clearItem(typeName, 2 ^ 32);
+}
+
+unsigned int Player::clearItem(std::string_view typeName, unsigned int num) {
+    unsigned int clearedCount = 0;
+    if (num < 0) {
+        return 0;
+    }
+
+    auto reduceItemCount = [&typeName, &clearedCount, num](Player* player, ItemStack* item) {
+        if (item->getTypeName() == typeName) {
+            auto itemCount = item->getCount();
+            if (itemCount >= int(num) - int(clearedCount)) {
+                item->setNull({});
+                clearedCount += itemCount;
+            } else {
+                item->remove(num - clearedCount);
+                clearedCount = num;
+            }
+        }
+    };
 
     // Hand
-    ItemStack* item = getHandSlot();
-    if (item->getTypeName() == typeName) {
-        auto out = item->getCount();
-        item->setNull({});
-        res += out;
+    reduceItemCount(this, getHandSlot());
+    if (clearedCount >= num) { // > case should never happen
+        refreshInventory();
+        return clearedCount;
     }
 
     // OffHand
-    item = (ItemStack*)&getOffhandSlot();
-    if (item->getTypeName() == typeName) {
-        auto out = item->getCount();
-        item->setNull({});
-        res += out;
+    reduceItemCount(this, (ItemStack*)&getOffhandSlot());
+    if (clearedCount >= num) { // > case should never happen
+        refreshInventory();
+        return clearedCount;
     }
 
     // Inventory
-    Container* container = &getInventory();
-    auto items = container->getAllSlots();
-    int size = container->getSize();
-    for (int i = 0; i < size; ++i) {
-        if (items[i]->getTypeName() == typeName) {
-            int cnt = items[i]->getCount();
-            container->removeItem(i, cnt);
-            res += cnt;
+    {
+        Container* container = &getInventory();
+        auto items = container->getAllSlots();
+        auto size = container->getSize();
+        for (int i = 0; i < size; ++i) {
+            reduceItemCount(this, (ItemStack*)items[i]);
+            if (clearedCount >= num) { // > case should never happen
+                refreshInventory();
+                return clearedCount;
+            }
         }
     }
 
     // Armor
-    auto& armor = getArmorContainer();
-    items = armor.getAllSlots();
-    size = armor.getSize();
-    for (int i = 0; i < size; ++i) {
-        if (items[i]->getTypeName() == typeName) {
-            int cnt = items[i]->getCount();
-            armor.removeItem(i, cnt);
-            res += cnt;
+    {
+        Container* armor = &getArmorContainer();
+        auto items = armor->getAllSlots();
+        auto size = armor->getSize();
+        for (int i = 0; i < size; ++i) {
+            reduceItemCount(this, (ItemStack*)items[i]);
+            if (clearedCount >= num) { // > case should never happen
+                refreshInventory();
+                return clearedCount;
+            }
         }
     }
+
     refreshInventory();
-    return res;
+    return clearedCount;
 }
 
 string Player::getName() {
@@ -306,7 +330,7 @@ bool Player::runcmd(const string& cmd) {
 }
 
 Container* Player::getEnderChestContainer() {
-    return dAccess<Container*>(this, 3792); // IDA Player::Player() 782
+    return dAccess<Container*>(this, 3800); // IDA Player::Player() 782
 }
 
 bool Player::transferServer(const string& address, unsigned short port) {
@@ -361,7 +385,7 @@ bool Player::refreshAttributes(std::vector<Attribute const*> const& attributes) 
         wp.writeString((*attribute).getName().getString());
     }
     wp.writeUnsignedVarInt64(0);
-    auto pkt = MinecraftPackets::createPacket(0x1D);
+    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::UpdateAttributes);
     pkt->read(wp);
     sendNetworkPacket(*pkt);
     return true;
@@ -384,14 +408,14 @@ unsigned char Player::getClientSubId() {
 float Player::getAvgPacketLoss() {
     if (isSimulatedPlayer())
         return 0.f;
-    return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().mAveragePacketLoss;
+    return Global<Minecraft>->getNetworkSystem().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().mAveragePacketLoss;
 }
 
 float Player::getLastPacketLoss() {
     if (isSimulatedPlayer()) {
         return 0.f;
     }
-    return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().mCurrentPacketLoss;
+    return Global<Minecraft>->getNetworkSystem().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().mCurrentPacketLoss;
 }
 
 string Player::getClientId() {
@@ -582,7 +606,7 @@ static_assert(sizeof(TransferPacket) == 88);
 
 bool Player::sendTextPacket(string text, TextType Type) const {
     BinaryStream wp;
-    wp.reserve(8 + text.size());
+    wp.reserve(40 + text.size());
     wp.writeUnsignedChar((char)Type);
     wp.writeBool(true);
     switch (Type) {
@@ -622,7 +646,7 @@ bool Player::sendToastPacket(string title, string msg) {
 bool Player::sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration,
                              int FadeOutDuration) const {
     BinaryStream wp;
-    wp.reserve(8 + text.size());
+    wp.reserve(16 + text.size());
     wp.writeVarInt((int)Type);
     wp.writeString(text);
     wp.writeVarInt(FadeInDuration);
@@ -631,9 +655,8 @@ bool Player::sendTitlePacket(string text, TitleType Type, int FadeInDuration, in
     wp.writeString(getXuid());
     wp.writeString("");
 
-    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::SetTitle);
-    pkt->read(wp);
-    sendNetworkPacket(*pkt);
+    NetworkPacket<(int)MinecraftPacketIds::SetTitle> pkt(wp.getAndReleaseData());
+    sendNetworkPacket(pkt);
     return true;
 }
 
@@ -699,7 +722,7 @@ bool Player::sendAddItemEntityPacket(unsigned long long runtimeID, Item const& i
 
     wp.writeBool(false);
 
-    NetworkPacket<15> pkt(wp.getRaw());
+    NetworkPacket<(int)MinecraftPacketIds::AddItemActor> pkt(wp.getAndReleaseData());
     sendNetworkPacket(pkt);
     return true;
 }
@@ -727,7 +750,7 @@ bool Player::sendAddEntityPacket(unsigned long long runtimeID, string entityType
     // Links
     bs.writeUnsignedVarInt(0);
 
-    NetworkPacket<13> pkt(bs.getAndReleaseData());
+    NetworkPacket<(int)MinecraftPacketIds::AddActor> pkt(bs.getAndReleaseData());
     sendNetworkPacket(pkt);
     return true;
 }
@@ -818,7 +841,6 @@ bool Player::sendBossEventPacket(BossEvent type, string name, float percent, Bos
     return true;
 }
 
-
 bool Player::sendCommandRequestPacket(const string& cmd) {
     auto packet = MinecraftPackets::createPacket(0x4d);
     dAccess<string, 48>(packet.get()) = cmd;
@@ -859,7 +881,7 @@ bool Player::sendTextTalkPacket(const string& msg, Player* target) {
 
 bool Player::sendRawFormPacket(unsigned formId, const string& data) const {
     BinaryStream wp;
-    wp.reserve(32 + data.size());
+    wp.reserve(8 + data.size());
     wp.writeUnsignedVarInt(formId);
     wp.writeString(data);
 

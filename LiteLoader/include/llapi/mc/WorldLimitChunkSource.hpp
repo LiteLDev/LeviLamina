@@ -31,37 +31,37 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~WorldLimitChunkSource();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1835063141
-     * @vftbl  3
-     * @symbol  ?getExistingChunk\@WorldLimitChunkSource\@\@UEAA?AV?$shared_ptr\@VLevelChunk\@\@\@std\@\@AEBVChunkPos\@\@\@Z
+     * @vftbl 3
+     * @symbol ?getExistingChunk\@WorldLimitChunkSource\@\@UEAA?AV?$shared_ptr\@VLevelChunk\@\@\@std\@\@AEBVChunkPos\@\@\@Z
      */
     virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const &);
     /**
-     * @hash   -325426061
-     * @vftbl  7
-     * @symbol  ?createNewChunk\@WorldLimitChunkSource\@\@UEAA?AV?$shared_ptr\@VLevelChunk\@\@\@std\@\@AEBVChunkPos\@\@W4LoadMode\@ChunkSource\@\@_N\@Z
+     * @vftbl 7
+     * @symbol ?createNewChunk\@WorldLimitChunkSource\@\@UEAA?AV?$shared_ptr\@VLevelChunk\@\@\@std\@\@AEBVChunkPos\@\@W4LoadMode\@ChunkSource\@\@_N\@Z
      */
     virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const &, enum class ChunkSource::LoadMode, bool);
     /**
-     * @hash   -1485636767
-     * @vftbl  22
-     * @symbol  ?isWithinWorldLimit\@WorldLimitChunkSource\@\@UEBA_NAEBVChunkPos\@\@\@Z
+     * @vftbl 22
+     * @symbol ?isWithinWorldLimit\@WorldLimitChunkSource\@\@UEBA_NAEBVChunkPos\@\@\@Z
      */
     virtual bool isWithinWorldLimit(class ChunkPos const &) const;
     /**
-     * @hash   2144261771
-     * @vftbl  26
-     * @symbol  ?canCreateViews\@WorldLimitChunkSource\@\@UEBA_NXZ
+     * @vftbl 23
+     * @symbol ?getChunkMap\@WorldLimitChunkSource\@\@UEAAPEBV?$unordered_map\@VChunkPos\@\@V?$weak_ptr\@VLevelChunk\@\@\@std\@\@U?$hash\@VChunkPos\@\@\@3\@U?$equal_to\@VChunkPos\@\@\@3\@V?$allocator\@U?$pair\@$$CBVChunkPos\@\@V?$weak_ptr\@VLevelChunk\@\@\@std\@\@\@std\@\@\@3\@\@std\@\@XZ
+     */
+    virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const * getChunkMap();
+    /**
+     * @vftbl 26
+     * @symbol ?canCreateViews\@WorldLimitChunkSource\@\@UEBA_NXZ
      */
     virtual bool canCreateViews() const;
     /**
-     * @hash   27775543
-     * @symbol  ??0WorldLimitChunkSource\@\@QEAA\@V?$unique_ptr\@VChunkSource\@\@U?$default_delete\@VChunkSource\@\@\@std\@\@\@std\@\@AEBVBlockPos\@\@HH\@Z
+     * @symbol ??0WorldLimitChunkSource\@\@QEAA\@V?$unique_ptr\@VChunkSource\@\@U?$default_delete\@VChunkSource\@\@\@std\@\@\@std\@\@AEBVBlockPos\@\@HH\@Z
      */
     MCAPI WorldLimitChunkSource(std::unique_ptr<class ChunkSource>, class BlockPos const &, int, int);
 

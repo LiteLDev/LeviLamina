@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   652598648
-     * @symbol  ??1DamageCondition\@\@QEAA\@XZ
+     * @symbol ??1DamageCondition\@\@QEAA\@XZ
      */
     MCAPI ~DamageCondition();
 

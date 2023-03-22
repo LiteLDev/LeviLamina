@@ -28,13 +28,11 @@ public:
 
 public:
     /**
-     * @hash   1979166626
-     * @symbol  ??4MoveRequestComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
+     * @symbol ??4MoveRequestComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct MoveRequestComponent & operator=(struct MoveRequestComponent &&);
     /**
-     * @hash   852125001
-     * @symbol  ??1MoveRequestComponent\@\@QEAA\@XZ
+     * @symbol ??1MoveRequestComponent\@\@QEAA\@XZ
      */
     MCAPI ~MoveRequestComponent();
 

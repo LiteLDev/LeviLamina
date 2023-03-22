@@ -29,19 +29,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~PlaceBlockNode();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1743528085
-     * @vftbl  1
-     * @symbol  ?tick\@PlaceBlockNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
+     * @vftbl 1
+     * @symbol ?tick\@PlaceBlockNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
-     * @hash   -1984150876
-     * @symbol  ??0PlaceBlockNode\@\@QEAA\@XZ
+     * @symbol ??0PlaceBlockNode\@\@QEAA\@XZ
      */
     MCAPI PlaceBlockNode();
 

@@ -29,24 +29,26 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARDEVENTCOORDINATOR
     /**
-     * @hash   -1941315588
-     * @symbol  ?sendOnObjectiveAdded\@ScoreboardEventCoordinator\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~ScoreboardEventCoordinator();
+#endif
+    /**
+     * @symbol ?sendOnObjectiveAdded\@ScoreboardEventCoordinator\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void sendOnObjectiveAdded(std::string const &);
     /**
-     * @hash   797254828
-     * @symbol  ?sendOnObjectiveRemoved\@ScoreboardEventCoordinator\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?sendOnObjectiveRemoved\@ScoreboardEventCoordinator\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void sendOnObjectiveRemoved(std::string const &);
     /**
-     * @hash   -263879738
-     * @symbol  ?sendOnScoreChanged\@ScoreboardEventCoordinator\@\@QEAAXAEBUScoreboardId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
+     * @symbol ?sendOnScoreChanged\@ScoreboardEventCoordinator\@\@QEAAXAEBUScoreboardId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI void sendOnScoreChanged(struct ScoreboardId const &, std::string const &, int);
     /**
-     * @hash   -1093604706
-     * @symbol  ?sendOnScoreboardIdentityRemoved\@ScoreboardEventCoordinator\@\@QEAAXAEBUScoreboardId\@\@\@Z
+     * @symbol ?sendOnScoreboardIdentityRemoved\@ScoreboardEventCoordinator\@\@QEAAXAEBUScoreboardId\@\@\@Z
      */
     MCAPI void sendOnScoreboardIdentityRemoved(struct ScoreboardId const &);
 

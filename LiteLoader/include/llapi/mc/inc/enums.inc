@@ -602,10 +602,14 @@ enum class MinecraftPacketIds : int {
     EditorNetwork                     = 0xBE,
     FeatureRegistry                   = 0xBF,
     ServerStats                       = 0xC0,
-	RequestNetworkSettings            = 0xC1,
-	GameTestRequest                   = 0XC2,
-	GameTestResults                   = 0xC3
-	
+    RequestNetworkSettings            = 0xC1,
+    GameTestRequest                   = 0XC2,
+    GameTestResults                   = 0xC3,
+    UpdateClientInputLocks            = 0xC4,
+    ClientCheatAbility                = 0xC5,
+    CameraPresets                     = 0xC6,
+    UnlockedRecipes                   = 0xC7,
+    CameraInstruction                 = 0x12C // 300
 };
 
 enum class ItemStackNetResult : unsigned char {
@@ -684,22 +688,22 @@ enum class ItemStackNetResult : unsigned char {
 // };
 
 enum class ClientPlayMode {
-	Normal              = 0,
-	Teaser              = 1,
-	Screen              = 2,
-	Viewer              = 3,
-	VR                  = 4,
-	Placement           = 5,
-	LivingRoom          = 6,
-	ExitLevel           = 7,
-	ExitLevelLivingRoom = 8
+    Normal              = 0,
+    Teaser              = 1,
+    Screen              = 2,
+    Viewer              = 3,
+    VR                  = 4,
+    Placement           = 5,
+    LivingRoom          = 6,
+    ExitLevel           = 7,
+    ExitLevelLivingRoom = 8
 };
 
 enum class InputMode {
-	Mouse            = 1,
-	Touch            = 2,
-	GamePad          = 3,
-	MotionController = 4
+    Mouse            = 1,
+    Touch            = 2,
+    GamePad          = 3,
+    MotionController = 4
 };
 
 enum class InventoryTransactionError {
@@ -725,13 +729,13 @@ enum class InventorySourceType {
 };
 
 enum class Mirror : unsigned char {
-    None_15=0,
+    None=0,
     X,
     Z,
     XZ,
 };
 enum class Rotation : unsigned char {
-    None_14=0,
+    None=0,
     Rotate90,
     Rotate180,
     Rotate270,
@@ -861,6 +865,36 @@ enum class AdventureFlag : int
 enum class TargetSelectionMethod {
     Nearest = 0,
     Random = 1,
+};
+
+enum class ActorCategory {
+    None = 0,
+    Player = 1,
+    Mob = 2,
+    Monster = 4,
+    Humandoid = 8,
+    HumanoidMonster = 12,
+    Animal = 16,
+    WaterSpawning = 32,
+    WaterAnimal = 48,
+    Pathable = 64,
+    Tamable = 128,
+    TamableAnimal = 144,
+    Ridable = 256,
+    Item = 1024,
+    Ambient = 2048,
+    Villager = 4096,
+    EvocationIllagerMonster = 4108,
+    Arthropod = 8192,
+    Undead = 16384,
+    UndeadMob = 16388,
+    Zombie = 32768,
+    ZombieMonster = 32772,
+    Minecart = 65536,
+    MinecartRidable = 65792,
+    Boat = 131072,
+    BoatRideable = 131328,
+    NonTargetable = 262144,
 };
 
 // clang-format on

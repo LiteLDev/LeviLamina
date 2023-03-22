@@ -3,22 +3,25 @@
  *
  */
 #pragma once
-#define AUTO_GENERATED
+
 #include "llapi/Global.h"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "EntityRefTraits.hpp"
+
 #undef BEFORE_EXTRA
 
 /**
  * @brief MC class WeakEntityRef.
  *
  */
-class WeakEntityRef {
+class WeakEntityRef : public WeakRefT<struct EntityRefTraits> {
 
 #define AFTER_EXTRA
 // Add Member There
-    char filler[32];
+
+#define DISABLE_CONSTRUCTOR_PREVENTION_WEAKENTITYREF
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEAKENTITYREF
 public:
@@ -29,28 +32,23 @@ public:
 
 public:
     /**
-     * @hash   1588471742
-     * @symbol  ??0WeakEntityRef\@\@QEAA\@V?$WeakRefT\@UEntityRefTraits\@\@\@\@\@Z
+     * @symbol ??0WeakEntityRef\@\@QEAA\@V?$WeakRefT\@UEntityRefTraits\@\@\@\@\@Z
      */
     MCAPI WeakEntityRef(class WeakRefT<struct EntityRefTraits>);
     /**
-     * @hash   -1385648892
-     * @symbol  ??4WeakEntityRef\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     * @symbol ??4WeakEntityRef\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class WeakEntityRef & operator=(class WeakEntityRef &&);
     /**
-     * @hash   -1478353300
-     * @symbol  ??8WeakEntityRef\@\@QEBA_NV?$WeakRefT\@UEntityRefTraits\@\@\@\@\@Z
+     * @symbol ??8WeakEntityRef\@\@QEBA_NV?$WeakRefT\@UEntityRefTraits\@\@\@\@\@Z
      */
     MCAPI bool operator==(class WeakRefT<struct EntityRefTraits>) const;
     /**
-     * @hash   -900635137
-     * @symbol  ??8WeakEntityRef\@\@QEBA_NV0\@\@Z
+     * @symbol ??8WeakEntityRef\@\@QEBA_NV0\@\@Z
      */
     MCAPI bool operator==(class WeakEntityRef) const;
     /**
-     * @hash   -331487308
-     * @symbol  ??1WeakEntityRef\@\@QEAA\@XZ
+     * @symbol ??1WeakEntityRef\@\@QEAA\@XZ
      */
     MCAPI ~WeakEntityRef();
 

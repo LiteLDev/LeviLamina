@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   -1924370253
-     * @symbol  ??1SubpackInfo\@\@QEAA\@XZ
+     * @symbol ??1SubpackInfo\@\@QEAA\@XZ
      */
     MCAPI ~SubpackInfo();
 

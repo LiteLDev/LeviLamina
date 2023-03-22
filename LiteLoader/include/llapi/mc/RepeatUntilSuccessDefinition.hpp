@@ -32,14 +32,13 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~RepeatUntilSuccessDefinition();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1991153087
-     * @vftbl  1
-     * @symbol  ?load\@RepeatUntilSuccessDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
+     * @vftbl 1
+     * @symbol ?load\@RepeatUntilSuccessDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */
     virtual void load(class Json::Value, class BehaviorFactory const &);
 

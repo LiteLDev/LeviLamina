@@ -28,13 +28,11 @@ public:
 
 public:
     /**
-     * @hash   174240374
-     * @symbol  ??4SideBySideResultComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
+     * @symbol ??4SideBySideResultComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct SideBySideResultComponent & operator=(struct SideBySideResultComponent &&);
     /**
-     * @hash   -1313788457
-     * @symbol  ??1SideBySideResultComponent\@\@QEAA\@XZ
+     * @symbol ??1SideBySideResultComponent\@\@QEAA\@XZ
      */
     MCAPI ~SideBySideResultComponent();
 

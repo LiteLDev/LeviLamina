@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -30,31 +29,28 @@ public:
 
 public:
     /**
-     * @hash   276849838
-     * @vftbl  0
-     * @symbol  ?getJsonName\@PreferredPathDescription\@\@UEBAPEBDXZ
+     * @vftbl 0
+     * @symbol ?getJsonName\@PreferredPathDescription\@\@UEBAPEBDXZ
      */
     virtual char const * getJsonName() const;
     /**
-     * @vftbl  1
-     * @symbol  __unk_destructor_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
-    virtual ~PreferredPathDescription();
+    virtual void __unk_vfn_1();
     /**
-     * @hash   2052664789
-     * @vftbl  2
-     * @symbol  ?deserializeData\@PreferredPathDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
+     * @vftbl 2
+     * @symbol ?deserializeData\@PreferredPathDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PREFERREDPATHDESCRIPTION
     /**
-     * @hash   -766214033
-     * @vftbl  3
-     * @symbol  ?serializeData\@PreferredPathDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
+     * @symbol __unk_destructor_-1
      */
-    virtual void serializeData(class Json::Value &) const;
+    MCVAPI ~PreferredPathDescription();
+#endif
     /**
-     * @hash   -1468306078
-     * @symbol  ??0PreferredPathDescription\@\@QEAA\@XZ
+     * @symbol ??0PreferredPathDescription\@\@QEAA\@XZ
      */
     MCAPI PreferredPathDescription();
 

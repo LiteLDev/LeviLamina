@@ -30,60 +30,53 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SwimWanderGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -447192472
-     * @vftbl  1
-     * @symbol  ?canUse\@SwimWanderGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@SwimWanderGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   -389566890
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@SwimWanderGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@SwimWanderGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   580336945
-     * @vftbl  4
-     * @symbol  ?start\@SwimWanderGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@SwimWanderGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @vftbl  5
-     * @symbol  __unk_vfn_5
+     * @vftbl 5
+     * @symbol __unk_vfn_5
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   1869614300
-     * @vftbl  6
-     * @symbol  ?tick\@SwimWanderGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@SwimWanderGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -548531384
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@SwimWanderGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@SwimWanderGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   117641925
-     * @symbol  ??0SwimWanderGoal\@\@QEAA\@AEAVMob\@\@\@Z
+     * @symbol ??0SwimWanderGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI SwimWanderGoal(class Mob &);
 
 //protected:
     /**
-     * @hash   1950558176
-     * @symbol  ?_setWantedPosition\@SwimWanderGoal\@\@IEAA_NXZ
+     * @symbol ?_setWantedPosition\@SwimWanderGoal\@\@IEAA_NXZ
      */
     MCAPI bool _setWantedPosition();
 

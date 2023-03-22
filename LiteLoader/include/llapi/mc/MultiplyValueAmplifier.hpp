@@ -30,19 +30,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~MultiplyValueAmplifier();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1049185083
-     * @vftbl  1
-     * @symbol  ?getAmount\@MultiplyValueAmplifier\@\@UEBAMHM\@Z
+     * @vftbl 1
+     * @symbol ?getAmount\@MultiplyValueAmplifier\@\@UEBAMHM\@Z
      */
     virtual float getAmount(int, float) const;
     /**
-     * @hash   -1530221079
-     * @symbol  ??0MultiplyValueAmplifier\@\@QEAA\@M\@Z
+     * @symbol ??0MultiplyValueAmplifier\@\@QEAA\@M\@Z
      */
     MCAPI MultiplyValueAmplifier(float);
 

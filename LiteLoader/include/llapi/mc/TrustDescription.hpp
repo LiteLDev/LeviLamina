@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -31,21 +30,20 @@ public:
 
 public:
     /**
-     * @hash   -600582992
-     * @vftbl  0
-     * @symbol  ?getJsonName\@TrustDescription\@\@UEBAPEBDXZ
+     * @vftbl 0
+     * @symbol ?getJsonName\@TrustDescription\@\@UEBAPEBDXZ
      */
     virtual char const * getJsonName() const;
     /**
-     * @vftbl  1
-     * @symbol  __unk_destructor_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
-    virtual ~TrustDescription();
+    virtual void __unk_vfn_1();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRUSTDESCRIPTION
     /**
-     * @hash   495897197
-     * @vftbl  3
-     * @symbol  ?serializeData\@TrustDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
+     * @symbol __unk_destructor_-1
      */
-    virtual void serializeData(class Json::Value &) const;
+    MCVAPI ~TrustDescription();
+#endif
 
 };

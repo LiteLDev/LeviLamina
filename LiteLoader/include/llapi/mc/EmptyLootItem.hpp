@@ -30,9 +30,8 @@ public:
 
 public:
     /**
-     * @hash   884742554
-     * @vftbl  0
-     * @symbol  ?_createItem\@EmptyLootItem\@\@MEAA_NAEAV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
+     * @vftbl 0
+     * @symbol ?_createItem\@EmptyLootItem\@\@MEAA_NAEAV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
     virtual bool _createItem(std::vector<class ItemStack> &, class Random &, class LootTableContext &);
 

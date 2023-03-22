@@ -20,8 +20,7 @@ namespace ActorEventVersions {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -1373765371
-     * @symbol  ?ACTOR_EVENT_RESPONSE_VERSION_1_16_100\@ActorEventVersions\@\@3VSemVersion\@\@A
+     * @symbol ?ACTOR_EVENT_RESPONSE_VERSION_1_16_100\@ActorEventVersions\@\@3VSemVersion\@\@A
      */
     MCAPI extern class SemVersion ACTOR_EVENT_RESPONSE_VERSION_1_16_100;
 

@@ -29,30 +29,26 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~AgentLookControl();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1456549455
-     * @vftbl  1
-     * @symbol  ?initializeInternal\@AgentLookControl\@\@UEAAXAEAVMob\@\@\@Z
+     * @vftbl 1
+     * @symbol ?initializeInternal\@AgentLookControl\@\@UEAAXAEAVMob\@\@\@Z
      */
     virtual void initializeInternal(class Mob &);
     /**
-     * @hash   -1820137791
-     * @vftbl  2
-     * @symbol  ?tick\@AgentLookControl\@\@UEAAXAEAVMob\@\@\@Z
+     * @vftbl 2
+     * @symbol ?tick\@AgentLookControl\@\@UEAAXAEAVMob\@\@\@Z
      */
     virtual void tick(class Mob &);
     /**
-     * @hash   -680242699
-     * @symbol  ??0AgentLookControl\@\@QEAA\@XZ
+     * @symbol ??0AgentLookControl\@\@QEAA\@XZ
      */
     MCAPI AgentLookControl();
     /**
-     * @hash   852126315
-     * @symbol  ?sBaseYMax\@AgentLookControl\@\@2MA
+     * @symbol ?sBaseYMax\@AgentLookControl\@\@2MA
      */
     MCAPI static float sBaseYMax;
 

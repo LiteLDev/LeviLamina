@@ -31,30 +31,26 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~CompositeDefinition();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   2001877974
-     * @symbol  ??0CompositeDefinition\@\@QEAA\@XZ
+     * @symbol ??0CompositeDefinition\@\@QEAA\@XZ
      */
     MCAPI CompositeDefinition();
     /**
-     * @hash   -789109481
-     * @symbol  ?get\@CompositeDefinition\@\@QEBAPEBVBehaviorDefinition\@\@_K\@Z
+     * @symbol ?get\@CompositeDefinition\@\@QEBAPEBVBehaviorDefinition\@\@_K\@Z
      */
     MCAPI class BehaviorDefinition const * get(unsigned __int64) const;
     /**
-     * @hash   1747757335
-     * @symbol  ?getCount\@CompositeDefinition\@\@QEBA_KXZ
+     * @symbol ?getCount\@CompositeDefinition\@\@QEBA_KXZ
      */
     MCAPI unsigned __int64 getCount() const;
 
 //protected:
     /**
-     * @hash   1030245228
-     * @symbol  ?_compositeLoadChildrenBehaviors\@CompositeDefinition\@\@KAXVValue\@Json\@\@AEAV?$vector\@V?$unique_ptr\@VBehaviorDefinition\@\@U?$default_delete\@VBehaviorDefinition\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VBehaviorDefinition\@\@U?$default_delete\@VBehaviorDefinition\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEBVBehaviorFactory\@\@VBehaviorTreeDefinitionPtr\@\@\@Z
+     * @symbol ?_compositeLoadChildrenBehaviors\@CompositeDefinition\@\@KAXVValue\@Json\@\@AEAV?$vector\@V?$unique_ptr\@VBehaviorDefinition\@\@U?$default_delete\@VBehaviorDefinition\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VBehaviorDefinition\@\@U?$default_delete\@VBehaviorDefinition\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEBVBehaviorFactory\@\@VBehaviorTreeDefinitionPtr\@\@\@Z
      */
     MCAPI static void _compositeLoadChildrenBehaviors(class Json::Value, std::vector<std::unique_ptr<class BehaviorDefinition>> &, class BehaviorFactory const &, class BehaviorTreeDefinitionPtr);
 

@@ -29,25 +29,22 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ActivateToolNode();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1699959062
-     * @vftbl  1
-     * @symbol  ?tick\@ActivateToolNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
+     * @vftbl 1
+     * @symbol ?tick\@ActivateToolNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
-     * @hash   -1639765026
-     * @vftbl  2
-     * @symbol  ?initializeFromDefinition\@ActivateToolNode\@\@EEAAXAEAVActor\@\@\@Z
+     * @vftbl 2
+     * @symbol ?initializeFromDefinition\@ActivateToolNode\@\@EEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
-     * @hash   -1666205111
-     * @symbol  ??0ActivateToolNode\@\@QEAA\@XZ
+     * @symbol ??0ActivateToolNode\@\@QEAA\@XZ
      */
     MCAPI ActivateToolNode();
 

@@ -30,28 +30,23 @@ public:
 
 public:
     /**
-     * @hash   -1893249581
-     * @symbol  ??0ConditionalBandwidthOptimizationComponent\@\@QEAA\@$$QEAV0\@\@Z
+     * @symbol ??0ConditionalBandwidthOptimizationComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI ConditionalBandwidthOptimizationComponent(class ConditionalBandwidthOptimizationComponent &&);
     /**
-     * @hash   -377710147
-     * @symbol  ?getCurrentOptimizationValues\@ConditionalBandwidthOptimizationComponent\@\@QEAA?AUConditionalBandwidthOptimization\@\@AEAVActor\@\@\@Z
+     * @symbol ?getCurrentOptimizationValues\@ConditionalBandwidthOptimizationComponent\@\@QEAA?AUConditionalBandwidthOptimization\@\@AEAVActor\@\@\@Z
      */
     MCAPI struct ConditionalBandwidthOptimization getCurrentOptimizationValues(class Actor &);
     /**
-     * @hash   392158835
-     * @symbol  ?initFromDefinition\@ConditionalBandwidthOptimizationComponent\@\@QEAAXAEAVActor\@\@AEBVConditionalBandwidthOptimizationDefinition\@\@\@Z
+     * @symbol ?initFromDefinition\@ConditionalBandwidthOptimizationComponent\@\@QEAAXAEAVActor\@\@AEBVConditionalBandwidthOptimizationDefinition\@\@\@Z
      */
     MCAPI void initFromDefinition(class Actor &, class ConditionalBandwidthOptimizationDefinition const &);
     /**
-     * @hash   665936862
-     * @symbol  ??4ConditionalBandwidthOptimizationComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     * @symbol ??4ConditionalBandwidthOptimizationComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class ConditionalBandwidthOptimizationComponent & operator=(class ConditionalBandwidthOptimizationComponent &&);
     /**
-     * @hash   385444481
-     * @symbol  ??1ConditionalBandwidthOptimizationComponent\@\@QEAA\@XZ
+     * @symbol ??1ConditionalBandwidthOptimizationComponent\@\@QEAA\@XZ
      */
     MCAPI ~ConditionalBandwidthOptimizationComponent();
 

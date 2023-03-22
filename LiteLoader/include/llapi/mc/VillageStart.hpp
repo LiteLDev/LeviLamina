@@ -31,19 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~VillageStart();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -224692012
-     * @vftbl  2
-     * @symbol  ?isValid\@VillageStart\@\@UEBA_NXZ
+     * @vftbl 2
+     * @symbol ?isValid\@VillageStart\@\@UEBA_NXZ
      */
     virtual bool isValid() const;
     /**
-     * @hash   -1088159690
-     * @symbol  ??0VillageStart\@\@QEAA\@AEAVDimension\@\@AEBVBiomeSource\@\@AEAVRandom\@\@HHAEBVIPreliminarySurfaceProvider\@\@\@Z
+     * @symbol ??0VillageStart\@\@QEAA\@AEAVDimension\@\@AEBVBiomeSource\@\@AEAVRandom\@\@HHAEBVIPreliminarySurfaceProvider\@\@\@Z
      */
     MCAPI VillageStart(class Dimension &, class BiomeSource const &, class Random &, int, int, class IPreliminarySurfaceProvider const &);
 

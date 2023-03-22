@@ -29,33 +29,27 @@ public:
 
 public:
     /**
-     * @hash   -1376321500
-     * @symbol  ??0MobEvent\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0_N\@Z
+     * @symbol ??0MobEvent\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0_N\@Z
      */
     MCAPI MobEvent(std::string, std::string, bool);
     /**
-     * @hash   149004849
-     * @symbol  ??0MobEvent\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0MobEvent\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI MobEvent(class MobEvent const &);
     /**
-     * @hash   -423615186
-     * @symbol  ?getLocalizableName\@MobEvent\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getLocalizableName\@MobEvent\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string const & getLocalizableName() const;
     /**
-     * @hash   -1771281092
-     * @symbol  ?getName\@MobEvent\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getName\@MobEvent\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string const & getName() const;
     /**
-     * @hash   401886538
-     * @symbol  ?isEnabled\@MobEvent\@\@QEBA_NXZ
+     * @symbol ?isEnabled\@MobEvent\@\@QEBA_NXZ
      */
     MCAPI bool isEnabled() const;
     /**
-     * @hash   -912497692
-     * @symbol  ??1MobEvent\@\@QEAA\@XZ
+     * @symbol ??1MobEvent\@\@QEAA\@XZ
      */
     MCAPI ~MobEvent();
 

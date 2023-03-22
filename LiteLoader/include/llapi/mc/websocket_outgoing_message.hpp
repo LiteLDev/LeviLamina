@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   -17081098
-     * @symbol  ??1websocket_outgoing_message\@\@QEAA\@XZ
+     * @symbol ??1websocket_outgoing_message\@\@QEAA\@XZ
      */
     MCAPI ~websocket_outgoing_message();
 

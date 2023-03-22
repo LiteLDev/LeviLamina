@@ -30,37 +30,32 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ParticleOnHitSubcomponent();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1300497155
-     * @vftbl  1
-     * @symbol  ?readfromJSON\@ParticleOnHitSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
+     * @vftbl 1
+     * @symbol ?readfromJSON\@ParticleOnHitSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
-     * @hash   1762759324
-     * @vftbl  2
-     * @symbol  ?writetoJSON\@ParticleOnHitSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
+     * @vftbl 2
+     * @symbol ?writetoJSON\@ParticleOnHitSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
-     * @hash   1596886503
-     * @vftbl  3
-     * @symbol  ?doOnHitEffect\@ParticleOnHitSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
+     * @vftbl 3
+     * @symbol ?doOnHitEffect\@ParticleOnHitSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @hash   -1731322350
-     * @vftbl  4
-     * @symbol  ?getName\@ParticleOnHitSubcomponent\@\@UEAAPEBDXZ
+     * @vftbl 4
+     * @symbol ?getName\@ParticleOnHitSubcomponent\@\@UEAAPEBDXZ
      */
     virtual char const * getName();
     /**
-     * @hash   1359444375
-     * @symbol  ??0ParticleOnHitSubcomponent\@\@QEAA\@XZ
+     * @symbol ??0ParticleOnHitSubcomponent\@\@QEAA\@XZ
      */
     MCAPI ParticleOnHitSubcomponent();
 

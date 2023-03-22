@@ -30,32 +30,28 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~VanillaGameModuleDedicatedServer();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   793407262
-     * @vftbl  1
-     * @symbol  ?createGameModuleServer\@VanillaGameModuleDedicatedServer\@\@UEAA?AV?$unique_ptr\@VGameModuleServer\@\@U?$default_delete\@VGameModuleServer\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 1
+     * @symbol ?createGameModuleServer\@VanillaGameModuleDedicatedServer\@\@UEAA?AV?$unique_ptr\@VGameModuleServer\@\@U?$default_delete\@VGameModuleServer\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class GameModuleServer> createGameModuleServer();
     /**
-     * @hash   -2116725989
-     * @vftbl  2
-     * @symbol  ?createInPackagePacks\@VanillaGameModuleDedicatedServer\@\@UEAA?AV?$shared_ptr\@VIInPackagePacks\@\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?createInPackagePacks\@VanillaGameModuleDedicatedServer\@\@UEAA?AV?$shared_ptr\@VIInPackagePacks\@\@\@std\@\@XZ
      */
     virtual class std::shared_ptr<class IInPackagePacks> createInPackagePacks();
     /**
-     * @hash   414487537
-     * @vftbl  3
-     * @symbol  ?registerMolangQueries\@VanillaGameModuleDedicatedServer\@\@UEAAXXZ
+     * @vftbl 3
+     * @symbol ?registerMolangQueries\@VanillaGameModuleDedicatedServer\@\@UEAAXXZ
      */
     virtual void registerMolangQueries();
     /**
-     * @hash   952154729
-     * @vftbl  4
-     * @symbol  ?registerServerInstanceHandler\@VanillaGameModuleDedicatedServer\@\@UEAAXAEAVServerInstanceEventCoordinator\@\@\@Z
+     * @vftbl 4
+     * @symbol ?registerServerInstanceHandler\@VanillaGameModuleDedicatedServer\@\@UEAAXAEAVServerInstanceEventCoordinator\@\@\@Z
      */
     virtual void registerServerInstanceHandler(class ServerInstanceEventCoordinator &);
 

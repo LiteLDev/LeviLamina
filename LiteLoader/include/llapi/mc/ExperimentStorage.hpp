@@ -29,23 +29,19 @@ public:
 
 public:
     /**
-     * @hash   -944851468
-     * @symbol  ?isAnyToggleEnabled\@ExperimentStorage\@\@QEBA_NXZ
+     * @symbol ?isAnyToggleEnabled\@ExperimentStorage\@\@QEBA_NXZ
      */
     MCAPI bool isAnyToggleEnabled() const;
     /**
-     * @hash   -591760228
-     * @symbol  ??4ExperimentStorage\@\@QEAAAEAV0\@AEBV0\@\@Z
+     * @symbol ??4ExperimentStorage\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
     MCAPI class ExperimentStorage & operator=(class ExperimentStorage const &);
     /**
-     * @hash   -1622548606
-     * @symbol  ?wereAnyExperimentsEverToggled\@ExperimentStorage\@\@QEBA_NXZ
+     * @symbol ?wereAnyExperimentsEverToggled\@ExperimentStorage\@\@QEBA_NXZ
      */
     MCAPI bool wereAnyExperimentsEverToggled() const;
     /**
-     * @hash   294285322
-     * @symbol  ??1ExperimentStorage\@\@QEAA\@XZ
+     * @symbol ??1ExperimentStorage\@\@QEAA\@XZ
      */
     MCAPI ~ExperimentStorage();
 

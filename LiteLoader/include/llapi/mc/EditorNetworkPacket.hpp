@@ -28,37 +28,32 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~EditorNetworkPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1380244235
-     * @vftbl  1
-     * @symbol  ?getId\@EditorNetworkPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@EditorNetworkPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   -994377822
-     * @vftbl  2
-     * @symbol  ?getName\@EditorNetworkPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@EditorNetworkPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   1660317317
-     * @vftbl  3
-     * @symbol  ?write\@EditorNetworkPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@EditorNetworkPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   -1732055787
-     * @vftbl  6
-     * @symbol  ?_read\@EditorNetworkPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@EditorNetworkPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   266043285
-     * @symbol  ??0EditorNetworkPacket\@\@QEAA\@XZ
+     * @symbol ??0EditorNetworkPacket\@\@QEAA\@XZ
      */
     MCAPI EditorNetworkPacket();
 

@@ -30,25 +30,22 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~InMemorySequentialFile();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1618730565
-     * @vftbl  1
-     * @symbol  ?Read\@InMemorySequentialFile\@\@UEAA?AVStatus\@leveldb\@\@_KPEAVSlice\@3\@PEAD\@Z
+     * @vftbl 1
+     * @symbol ?Read\@InMemorySequentialFile\@\@UEAA?AVStatus\@leveldb\@\@_KPEAVSlice\@3\@PEAD\@Z
      */
     virtual class leveldb::Status Read(unsigned __int64, class leveldb::Slice *, char *);
     /**
-     * @hash   1023338394
-     * @vftbl  2
-     * @symbol  ?Skip\@InMemorySequentialFile\@\@UEAA?AVStatus\@leveldb\@\@_K\@Z
+     * @vftbl 2
+     * @symbol ?Skip\@InMemorySequentialFile\@\@UEAA?AVStatus\@leveldb\@\@_K\@Z
      */
     virtual class leveldb::Status Skip(unsigned __int64);
     /**
-     * @hash   1440796209
-     * @symbol  ??0InMemorySequentialFile\@\@QEAA\@V?$shared_ptr\@VInMemoryFile\@\@\@std\@\@\@Z
+     * @symbol ??0InMemorySequentialFile\@\@QEAA\@V?$shared_ptr\@VInMemoryFile\@\@\@std\@\@\@Z
      */
     MCAPI InMemorySequentialFile(class std::shared_ptr<class InMemoryFile>);
 

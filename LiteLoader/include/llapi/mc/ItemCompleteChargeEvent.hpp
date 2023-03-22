@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ItemCompleteChargeEvent\@\@QEAA\@XZ
+     * @symbol ??1ItemCompleteChargeEvent\@\@QEAA\@XZ
      */
     MCAPI ~ItemCompleteChargeEvent();
 

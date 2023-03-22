@@ -22,19 +22,16 @@ namespace ActorContainerDiffHelper {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -1742849787
-     * @symbol  ?applyIfChanged\@ActorContainerDiffHelper\@\@YAXAEAV?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@std\@\@AEBV23\@1\@Z
-     */
-    MCAPI void applyIfChanged(std::vector<class MobEffectInstance> &, std::vector<class MobEffectInstance> const &, std::vector<class MobEffectInstance> const &);
-    /**
-     * @hash   -279325100
-     * @symbol  ?applyIfChanged\@ActorContainerDiffHelper\@\@YAXAEAVBaseAttributeMap\@\@AEBV2\@1\@Z
+     * @symbol ?applyIfChanged\@ActorContainerDiffHelper\@\@YAXAEAVBaseAttributeMap\@\@AEBV2\@1\@Z
      */
     MCAPI void applyIfChanged(class BaseAttributeMap &, class BaseAttributeMap const &, class BaseAttributeMap const &);
     /**
-     * @hash   -403417404
-     * @symbol  ?applyIfChanged\@ActorContainerDiffHelper\@\@YAXAEAVSynchedActorData\@\@AEBV2\@1PEAVActor\@\@\@Z
+     * @symbol ?applyIfChanged\@ActorContainerDiffHelper\@\@YAXAEAVSynchedActorData\@\@AEBV2\@1PEAVActor\@\@\@Z
      */
     MCAPI void applyIfChanged(class SynchedActorData &, class SynchedActorData const &, class SynchedActorData const &, class Actor *);
+    /**
+     * @symbol ?applyIfChanged\@ActorContainerDiffHelper\@\@YAXAEAV?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@std\@\@AEBV23\@1\@Z
+     */
+    MCAPI void applyIfChanged(std::vector<class MobEffectInstance> &, std::vector<class MobEffectInstance> const &, std::vector<class MobEffectInstance> const &);
 
 };

@@ -30,8 +30,7 @@ public:
 
 public:
     /**
-     * @hash   156633820
-     * @symbol  ?lookupForEntity\@SurfaceBuilderRegistry\@\@QEBAPEAVISurfaceBuilder\@\@AEAVEntityContext\@\@\@Z
+     * @symbol ?lookupForEntity\@SurfaceBuilderRegistry\@\@QEBAPEAVISurfaceBuilder\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI class ISurfaceBuilder * lookupForEntity(class EntityContext &) const;
 

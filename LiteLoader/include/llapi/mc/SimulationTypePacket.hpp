@@ -30,37 +30,32 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SimulationTypePacket();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1902190427
-     * @vftbl  1
-     * @symbol  ?getId\@SimulationTypePacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@SimulationTypePacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   -822014126
-     * @vftbl  2
-     * @symbol  ?getName\@SimulationTypePacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@SimulationTypePacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   117008117
-     * @vftbl  3
-     * @symbol  ?write\@SimulationTypePacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@SimulationTypePacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   -280037339
-     * @vftbl  6
-     * @symbol  ?_read\@SimulationTypePacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@SimulationTypePacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   -1109012779
-     * @symbol  ??0SimulationTypePacket\@\@QEAA\@XZ
+     * @symbol ??0SimulationTypePacket\@\@QEAA\@XZ
      */
     MCAPI SimulationTypePacket();
 

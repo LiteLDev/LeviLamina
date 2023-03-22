@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -31,15 +30,20 @@ public:
 
 public:
     /**
-     * @hash   -760754137
-     * @vftbl  0
-     * @symbol  ?getJsonName\@NavigationFlyDescription\@\@UEBAPEBDXZ
+     * @vftbl 0
+     * @symbol ?getJsonName\@NavigationFlyDescription\@\@UEBAPEBDXZ
      */
     virtual char const * getJsonName() const;
     /**
-     * @vftbl  1
-     * @symbol  __unk_destructor_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
-    virtual ~NavigationFlyDescription();
+    virtual void __unk_vfn_1();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONFLYDESCRIPTION
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~NavigationFlyDescription();
+#endif
 
 };

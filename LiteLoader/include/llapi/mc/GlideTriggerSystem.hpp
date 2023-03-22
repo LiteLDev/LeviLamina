@@ -28,16 +28,15 @@ public:
 
 public:
     /**
-     * @symbol  ?_tickGlideTriggerSystem\@GlideTriggerSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUAABBShapeComponent\@\@AEBUAbilitiesComponent\@\@AEBUFallFlyTicksComponent\@\@AEBUMoveInputComponent\@\@AEBUStateVectorComponent\@\@AEBUSynchedActorDataComponent\@\@AEBUVanillaClientGameplayComponent\@\@V?$Optional\@$$CBV?$FlagComponent\@UArmorFlyEnabledFlag\@\@\@\@\@\@V?$Optional\@$$CBV?$FlagComponent\@UInWaterFlag\@\@\@\@\@\@V?$Optional\@$$CBV?$FlagComponent\@UCanStandOnSnowFlag\@\@\@\@\@\@V?$Optional\@$$CBV?$FlagComponent\@UHasLightweightFamilyFlag\@\@\@\@\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UStopGlidingRequestFlag\@\@\@\@\@\@AEBVIConstBlockSource\@\@\@Z
+     * @symbol ?_tickGlideTriggerSystem\@GlideTriggerSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUAABBShapeComponent\@\@AEBUAbilitiesComponent\@\@AEBUFallFlyTicksComponent\@\@AEBUMoveInputComponent\@\@AEBUStateVectorComponent\@\@AEBUSynchedActorDataComponent\@\@AEBUVanillaClientGameplayComponent\@\@V?$Optional\@$$CBV?$FlagComponent\@UArmorFlyEnabledFlag\@\@\@\@\@\@V?$Optional\@$$CBV?$FlagComponent\@UInWaterFlag\@\@\@\@\@\@V?$Optional\@$$CBV?$FlagComponent\@UCanStandOnSnowFlag\@\@\@\@\@\@V?$Optional\@$$CBV?$FlagComponent\@UHasLightweightFamilyFlag\@\@\@\@\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UStopGlidingRequestFlag\@\@\@\@\@\@AEBVIConstBlockSource\@\@\@Z
      */
     MCAPI static void _tickGlideTriggerSystem(class StrictEntityContext const &, struct AABBShapeComponent const &, struct AbilitiesComponent const &, struct FallFlyTicksComponent const &, struct MoveInputComponent const &, struct StateVectorComponent const &, struct SynchedActorDataComponent const &, struct VanillaClientGameplayComponent const &, class Optional<class FlagComponent<struct ArmorFlyEnabledFlag> const>, class Optional<class FlagComponent<struct InWaterFlag> const>, class Optional<class FlagComponent<struct CanStandOnSnowFlag> const>, class Optional<class FlagComponent<struct HasLightweightFamilyFlag> const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct StopGlidingRequestFlag>> &, class IConstBlockSource const &);
     /**
-     * @symbol  ?createSideBySideSystem\@GlideTriggerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSideBySideSystem\@GlideTriggerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSideBySideSystem();
     /**
-     * @hash   -1621121778
-     * @symbol  ?createSystem\@GlideTriggerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@GlideTriggerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

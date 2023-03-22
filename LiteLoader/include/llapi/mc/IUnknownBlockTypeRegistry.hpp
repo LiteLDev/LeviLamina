@@ -31,8 +31,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IUNKNOWNBLOCKTYPEREGISTRY
     /**
-     * @hash   -863773736
-     * @symbol  __unk_destructor_-1
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~IUnknownBlockTypeRegistry();
 #endif

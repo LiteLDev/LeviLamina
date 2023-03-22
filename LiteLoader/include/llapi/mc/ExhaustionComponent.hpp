@@ -28,43 +28,35 @@ public:
 
 public:
     /**
-     * @hash   123063066
-     * @symbol  ?getAttackValue\@ExhaustionComponent\@\@QEBAMXZ
+     * @symbol ?getAttackValue\@ExhaustionComponent\@\@QEBAMXZ
      */
     MCAPI float getAttackValue() const;
     /**
-     * @hash   437491706
-     * @symbol  ?getHealValue\@ExhaustionComponent\@\@QEBAMXZ
+     * @symbol ?getHealValue\@ExhaustionComponent\@\@QEBAMXZ
      */
     MCAPI float getHealValue() const;
     /**
-     * @hash   -1575427970
-     * @symbol  ?getJumpValue\@ExhaustionComponent\@\@QEBAMXZ
+     * @symbol ?getJumpValue\@ExhaustionComponent\@\@QEBAMXZ
      */
     MCAPI float getJumpValue() const;
     /**
-     * @hash   -1295575926
-     * @symbol  ?getMiningValue\@ExhaustionComponent\@\@QEBAMXZ
+     * @symbol ?getMiningValue\@ExhaustionComponent\@\@QEBAMXZ
      */
     MCAPI float getMiningValue() const;
     /**
-     * @hash   -767889206
-     * @symbol  ?getSprintJumpValue\@ExhaustionComponent\@\@QEBAMXZ
+     * @symbol ?getSprintJumpValue\@ExhaustionComponent\@\@QEBAMXZ
      */
     MCAPI float getSprintJumpValue() const;
     /**
-     * @hash   -972783066
-     * @symbol  ?getSprintValue\@ExhaustionComponent\@\@QEBAMXZ
+     * @symbol ?getSprintValue\@ExhaustionComponent\@\@QEBAMXZ
      */
     MCAPI float getSprintValue() const;
     /**
-     * @hash   -212454742
-     * @symbol  ?getSwimValue\@ExhaustionComponent\@\@QEBAMXZ
+     * @symbol ?getSwimValue\@ExhaustionComponent\@\@QEBAMXZ
      */
     MCAPI float getSwimValue() const;
     /**
-     * @hash   -997455336
-     * @symbol  ?getWalkValue\@ExhaustionComponent\@\@QEBAMXZ
+     * @symbol ?getWalkValue\@ExhaustionComponent\@\@QEBAMXZ
      */
     MCAPI float getWalkValue() const;
 

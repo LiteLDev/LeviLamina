@@ -30,43 +30,43 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~PlaySoundPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1716146773
-     * @vftbl  1
-     * @symbol  ?getId\@PlaySoundPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@PlaySoundPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   594036824
-     * @vftbl  2
-     * @symbol  ?getName\@PlaySoundPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@PlaySoundPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   -964065681
-     * @vftbl  3
-     * @symbol  ?write\@PlaySoundPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@PlaySoundPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   1237383935
-     * @vftbl  6
-     * @symbol  ?_read\@PlaySoundPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@PlaySoundPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYSOUNDPACKET
     /**
-     * @hash   532896751
-     * @symbol  ??0PlaySoundPacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI PlaySoundPacket();
+    MCVAPI ~PlaySoundPacket();
+#endif
     /**
-     * @hash   884253251
-     * @symbol  ??0PlaySoundPacket\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVVec3\@\@MM\@Z
+     * @symbol ??0PlaySoundPacket\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVVec3\@\@MM\@Z
      */
     MCAPI PlaySoundPacket(std::string, class Vec3 const &, float, float);
+    /**
+     * @symbol ??0PlaySoundPacket\@\@QEAA\@XZ
+     */
+    MCAPI PlaySoundPacket();
 
 };

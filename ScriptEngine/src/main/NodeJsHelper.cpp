@@ -128,6 +128,7 @@ bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath, s
         string executeJs =
             "const __LLSE_PublicRequire = require('module').createRequire(process.cwd() + '/" + pluginDirPath + "');"
             + "const __LLSE_PublicModule = require('module'); __LLSE_PublicModule.exports = {};"
+            + "ll.export = ll.exports; ll.import = ll.imports; "
 
             + "(function (exports, require, module, __filename, __dirname) { "
             + *mainScripts + "\n})({}, __LLSE_PublicRequire, __LLSE_PublicModule, '"

@@ -28,33 +28,27 @@ public:
 
 public:
     /**
-     * @hash   -1764910671
-     * @symbol  ??0ActorDefinitionPtr\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI ActorDefinitionPtr(class ActorDefinitionPtr const &);
-    /**
-     * @hash   -219786954
-     * @symbol  ??0ActorDefinitionPtr\@\@QEAA\@AEAVActorDefinitionGroup\@\@AEAVActorDefinition\@\@\@Z
+     * @symbol ??0ActorDefinitionPtr\@\@QEAA\@AEAVActorDefinitionGroup\@\@AEAVActorDefinition\@\@\@Z
      */
     MCAPI ActorDefinitionPtr(class ActorDefinitionGroup &, class ActorDefinition &);
     /**
-     * @hash   1870797938
-     * @symbol  ??0ActorDefinitionPtr\@\@QEAA\@XZ
+     * @symbol ??0ActorDefinitionPtr\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI ActorDefinitionPtr(class ActorDefinitionPtr const &);
+    /**
+     * @symbol ??0ActorDefinitionPtr\@\@QEAA\@XZ
      */
     MCAPI ActorDefinitionPtr();
     /**
-     * @hash   1180025176
-     * @symbol  ??4ActorDefinitionPtr\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     * @symbol ??4ActorDefinitionPtr\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class ActorDefinitionPtr & operator=(class ActorDefinitionPtr &&);
     /**
-     * @hash   -1108958016
-     * @symbol  ??1ActorDefinitionPtr\@\@QEAA\@XZ
+     * @symbol ??1ActorDefinitionPtr\@\@QEAA\@XZ
      */
     MCAPI ~ActorDefinitionPtr();
     /**
-     * @hash   1171393732
-     * @symbol  ?NONE\@ActorDefinitionPtr\@\@2V1\@B
+     * @symbol ?NONE\@ActorDefinitionPtr\@\@2V1\@B
      */
     MCAPI static class ActorDefinitionPtr const NONE;
 

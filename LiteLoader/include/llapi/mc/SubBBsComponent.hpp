@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   1359001926
-     * @symbol  ??1SubBBsComponent\@\@QEAA\@XZ
+     * @symbol ??1SubBBsComponent\@\@QEAA\@XZ
      */
     MCAPI ~SubBBsComponent();
 

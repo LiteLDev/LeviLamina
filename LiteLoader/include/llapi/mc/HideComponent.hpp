@@ -29,48 +29,39 @@ public:
 
 public:
     /**
-     * @hash   1533541847
-     * @symbol  ??0HideComponent\@\@QEAA\@XZ
+     * @symbol ??0HideComponent\@\@QEAA\@XZ
      */
     MCAPI HideComponent();
     /**
-     * @hash   1945080552
-     * @symbol  ?addAdditionalSaveData\@HideComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
+     * @symbol ?addAdditionalSaveData\@HideComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @hash   -702980958
-     * @symbol  ?initFromDefinition\@HideComponent\@\@QEAAXAEAVActor\@\@\@Z
+     * @symbol ?initFromDefinition\@HideComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
-     * @hash   280152746
-     * @symbol  ?isInRaid\@HideComponent\@\@QEAA_NXZ
+     * @symbol ?isInRaid\@HideComponent\@\@QEAA_NXZ
      */
     MCAPI bool isInRaid();
     /**
-     * @hash   -1827608886
-     * @symbol  ?isReactingToBell\@HideComponent\@\@QEAA_NXZ
+     * @symbol ?isReactingToBell\@HideComponent\@\@QEAA_NXZ
      */
     MCAPI bool isReactingToBell();
     /**
-     * @hash   1328610725
-     * @symbol  ?readAdditionalSaveData\@HideComponent\@\@QEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
+     * @symbol ?readAdditionalSaveData\@HideComponent\@\@QEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     MCAPI void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   -10471001
-     * @symbol  ?setInRaid\@HideComponent\@\@QEAAXXZ
+     * @symbol ?setInRaid\@HideComponent\@\@QEAAXXZ
      */
     MCAPI void setInRaid();
     /**
-     * @hash   56571795
-     * @symbol  ?setNotHiding\@HideComponent\@\@QEAAXXZ
+     * @symbol ?setNotHiding\@HideComponent\@\@QEAAXXZ
      */
     MCAPI void setNotHiding();
     /**
-     * @hash   1092218155
-     * @symbol  ?setReactingToBell\@HideComponent\@\@QEAAXXZ
+     * @symbol ?setReactingToBell\@HideComponent\@\@QEAAXXZ
      */
     MCAPI void setReactingToBell();
 

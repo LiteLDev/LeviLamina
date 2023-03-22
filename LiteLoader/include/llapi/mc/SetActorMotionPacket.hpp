@@ -30,43 +30,43 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SetActorMotionPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -790379427
-     * @vftbl  1
-     * @symbol  ?getId\@SetActorMotionPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@SetActorMotionPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   1319160346
-     * @vftbl  2
-     * @symbol  ?getName\@SetActorMotionPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@SetActorMotionPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   956336525
-     * @vftbl  3
-     * @symbol  ?write\@SetActorMotionPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@SetActorMotionPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   1476173965
-     * @vftbl  6
-     * @symbol  ?_read\@SetActorMotionPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@SetActorMotionPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETACTORMOTIONPACKET
     /**
-     * @hash   -754154691
-     * @symbol  ??0SetActorMotionPacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI SetActorMotionPacket();
+    MCVAPI ~SetActorMotionPacket();
+#endif
     /**
-     * @hash   944720670
-     * @symbol  ??0SetActorMotionPacket\@\@QEAA\@AEBVActor\@\@\@Z
+     * @symbol ??0SetActorMotionPacket\@\@QEAA\@AEBVActor\@\@\@Z
      */
     MCAPI SetActorMotionPacket(class Actor const &);
+    /**
+     * @symbol ??0SetActorMotionPacket\@\@QEAA\@XZ
+     */
+    MCAPI SetActorMotionPacket();
 
 };

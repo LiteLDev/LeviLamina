@@ -30,43 +30,43 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~CommandOutputPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1064806218
-     * @vftbl  1
-     * @symbol  ?getId\@CommandOutputPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@CommandOutputPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   -997809673
-     * @vftbl  2
-     * @symbol  ?getName\@CommandOutputPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@CommandOutputPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   -2053942576
-     * @vftbl  3
-     * @symbol  ?write\@CommandOutputPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@CommandOutputPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   -1776678640
-     * @vftbl  6
-     * @symbol  ?_read\@CommandOutputPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@CommandOutputPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDOUTPUTPACKET
     /**
-     * @hash   -218312032
-     * @symbol  ??0CommandOutputPacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI CommandOutputPacket();
+    MCVAPI ~CommandOutputPacket();
+#endif
     /**
-     * @hash   -793666510
-     * @symbol  ??0CommandOutputPacket\@\@QEAA\@AEBVCommandOrigin\@\@AEBVCommandOutput\@\@\@Z
+     * @symbol ??0CommandOutputPacket\@\@QEAA\@AEBVCommandOrigin\@\@AEBVCommandOutput\@\@\@Z
      */
     MCAPI CommandOutputPacket(class CommandOrigin const &, class CommandOutput const &);
+    /**
+     * @symbol ??0CommandOutputPacket\@\@QEAA\@XZ
+     */
+    MCAPI CommandOutputPacket();
 
 };

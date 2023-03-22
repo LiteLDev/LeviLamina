@@ -31,65 +31,63 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SimpleContainer();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -981255352
-     * @vftbl  2
-     * @symbol  ?serverInitItemStackIds\@SimpleContainer\@\@UEAAXHHV?$function\@$$A6AXHAEBVItemStack\@\@\@Z\@std\@\@\@Z
+     * @vftbl 2
+     * @symbol ?serverInitItemStackIds\@SimpleContainer\@\@UEAAXHHV?$function\@$$A6AXHAEBVItemStack\@\@\@Z\@std\@\@\@Z
      */
     virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /**
-     * @hash   1409815251
-     * @vftbl  5
-     * @symbol  ?getItem\@SimpleContainer\@\@UEBAAEBVItemStack\@\@H\@Z
+     * @vftbl 5
+     * @symbol ?getItem\@SimpleContainer\@\@UEBAAEBVItemStack\@\@H\@Z
      */
     virtual class ItemStack const & getItem(int) const;
     /**
-     * @hash   1322672402
-     * @vftbl  9
-     * @symbol  ?setItem\@SimpleContainer\@\@UEAAXHAEBVItemStack\@\@\@Z
+     * @vftbl 9
+     * @symbol ?setItem\@SimpleContainer\@\@UEAAXHAEBVItemStack\@\@\@Z
      */
     virtual void setItem(int, class ItemStack const &);
     /**
-     * @hash   131692936
-     * @vftbl  14
-     * @symbol  ?getContainerSize\@SimpleContainer\@\@UEBAHXZ
+     * @vftbl 14
+     * @symbol ?getContainerSize\@SimpleContainer\@\@UEBAHXZ
      */
     virtual int getContainerSize() const;
     /**
-     * @hash   -1758124617
-     * @vftbl  15
-     * @symbol  ?getMaxStackSize\@SimpleContainer\@\@UEBAHXZ
+     * @vftbl 15
+     * @symbol ?getMaxStackSize\@SimpleContainer\@\@UEBAHXZ
      */
     virtual int getMaxStackSize() const;
     /**
-     * @hash   -1731904369
-     * @vftbl  16
-     * @symbol  ?startOpen\@SimpleContainer\@\@UEAAXAEAVPlayer\@\@\@Z
+     * @vftbl 16
+     * @symbol ?startOpen\@SimpleContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
     virtual void startOpen(class Player &);
     /**
-     * @hash   2100567343
-     * @vftbl  17
-     * @symbol  ?stopOpen\@SimpleContainer\@\@UEAAXAEAVPlayer\@\@\@Z
+     * @vftbl 17
+     * @symbol ?stopOpen\@SimpleContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
     virtual void stopOpen(class Player &);
     /**
-     * @vftbl  22
-     * @symbol  __unk_vfn_22
-     */
-    virtual void __unk_vfn_22();
-    /**
-     * @vftbl  23
-     * @symbol  __unk_vfn_23
+     * @vftbl 23
+     * @symbol __unk_vfn_23
      */
     virtual void __unk_vfn_23();
     /**
-     * @hash   1746514977
-     * @symbol  ??0SimpleContainer\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_NHW4ContainerType\@\@\@Z
+     * @vftbl 24
+     * @symbol __unk_vfn_24
+     */
+    virtual void __unk_vfn_24();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLECONTAINER
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~SimpleContainer();
+#endif
+    /**
+     * @symbol ??0SimpleContainer\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_NHW4ContainerType\@\@\@Z
      */
     MCAPI SimpleContainer(std::string const &, bool, int, enum class ContainerType);
 

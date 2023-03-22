@@ -100,7 +100,8 @@ void inline to_json(nlohmann::json& j, const LLConfig& conf) {
             {"DisableAutoCompactionLog", {
                 {"enabled", conf.disableAutoCompactionLog}
             }},
-        }}
+        }},
+        {"ResourcePackEncryption", conf.resourcePackEncryptionMap},
     };
     // clang-format on
 }
@@ -114,6 +115,15 @@ void inline from_json(const nlohmann::json& j, LLConfig& conf) {
     conf.version = j.value("Version", 1);
     conf.logLevel = j.value("LogLevel", 4);
     conf.language = j.value("Language", "system");
+    conf.resourcePackEncryptionMap = j.value("ResourcePackEncryption", map<string, string>{{"UUID", "KEY"}});
+
+    auto& tempMap = conf.resourcePackEncryptionMap;
+    for (auto x : tempMap) {
+        string tempUuid = x.first;
+        transform(tempUuid.begin(), tempUuid.end(), tempUuid.begin(), ::toupper);
+        tempMap.erase(x.first);
+        tempMap.insert({tempUuid, x.second});
+    }
 
     if (j.find("ScriptEngine") != j.end()) {
         const nlohmann::json& scriptEngine = j.at("ScriptEngine");

@@ -29,18 +29,15 @@ public:
 
 public:
     /**
-     * @hash   1090112101
-     * @symbol  ??0DamageSensorTrigger\@\@QEAA\@AEBU0\@\@Z
+     * @symbol ??0DamageSensorTrigger\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI DamageSensorTrigger(struct DamageSensorTrigger const &);
     /**
-     * @hash   -1994278848
-     * @symbol  ?setCause\@DamageSensorTrigger\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?setCause\@DamageSensorTrigger\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void setCause(std::string const &);
     /**
-     * @hash   -1458202453
-     * @symbol  ??1DamageSensorTrigger\@\@QEAA\@XZ
+     * @symbol ??1DamageSensorTrigger\@\@QEAA\@XZ
      */
     MCAPI ~DamageSensorTrigger();
 

@@ -21,6 +21,10 @@
 #include <llapi/utils/FileHelper.h>
 #include "utils/JsonHelper.h"
 #include "main/EconomicSystem.h"
+
+#ifdef LLSE_BACKEND_PYTHON
+#include "PythonHelper.h"
+#endif
 using namespace std;
 
 // Global vars
@@ -59,6 +63,10 @@ void entry() {
     if (ll::globalConfig.enableEconomyCore) {
         EconomySystem::init();
     }
+
+#ifdef LLSE_BACKEND_PYTHON
+    PythonHelper::initPythonRuntime();
+#endif
 
     // Pre-load depending libs
     LoadDepends();

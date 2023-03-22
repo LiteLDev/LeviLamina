@@ -30,43 +30,38 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ScreenHandlerBeacon();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1762577952
-     * @vftbl  1
-     * @symbol  ?handleAction\@ScreenHandlerBeacon\@\@MEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestAction\@\@\@Z
+     * @vftbl 1
+     * @symbol ?handleAction\@ScreenHandlerBeacon\@\@MEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestAction\@\@\@Z
      */
     virtual enum class ItemStackNetResult handleAction(class ItemStackRequestAction const &);
     /**
-     * @hash   1404235159
-     * @vftbl  2
-     * @symbol  ?endRequest\@ScreenHandlerBeacon\@\@MEAA?AW4ItemStackNetResult\@\@XZ
+     * @vftbl 2
+     * @symbol ?endRequest\@ScreenHandlerBeacon\@\@MEAA?AW4ItemStackNetResult\@\@XZ
      */
     virtual enum class ItemStackNetResult endRequest();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   1442863103
-     * @vftbl  4
-     * @symbol  ?postRequest\@ScreenHandlerBeacon\@\@MEAAX_N\@Z
+     * @vftbl 4
+     * @symbol ?postRequest\@ScreenHandlerBeacon\@\@MEAAX_N\@Z
      */
     virtual void postRequest(bool);
     /**
-     * @hash   1429411294
-     * @symbol  ??0ScreenHandlerBeacon\@\@QEAA\@AEBVContainerScreenContext\@\@AEAVItemStackRequestActionHandler\@\@\@Z
+     * @symbol ??0ScreenHandlerBeacon\@\@QEAA\@AEBVContainerScreenContext\@\@AEAVItemStackRequestActionHandler\@\@\@Z
      */
     MCAPI ScreenHandlerBeacon(class ContainerScreenContext const &, class ItemStackRequestActionHandler &);
 
 //private:
     /**
-     * @hash   1561943743
-     * @symbol  ?_handleBeaconPaymentAction\@ScreenHandlerBeacon\@\@AEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionBeaconPayment\@\@\@Z
+     * @symbol ?_handleBeaconPaymentAction\@ScreenHandlerBeacon\@\@AEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionBeaconPayment\@\@\@Z
      */
     MCAPI enum class ItemStackNetResult _handleBeaconPaymentAction(class ItemStackRequestActionBeaconPayment const &);
 

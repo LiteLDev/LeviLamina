@@ -29,14 +29,13 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~AncientCityStart();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1858242763
-     * @vftbl  2
-     * @symbol  ?isValid\@AncientCityStart\@\@UEBA_NXZ
+     * @vftbl 2
+     * @symbol ?isValid\@AncientCityStart\@\@UEBA_NXZ
      */
     virtual bool isValid() const;
 

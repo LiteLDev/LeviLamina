@@ -11,11 +11,8 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC structure DefaultScreenCapabilities.
- *
- */
-struct DefaultScreenCapabilities {
+
+class DefaultScreenCapabilities {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -23,21 +20,20 @@ struct DefaultScreenCapabilities {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFAULTSCREENCAPABILITIES
 public:
-    struct DefaultScreenCapabilities& operator=(struct DefaultScreenCapabilities const &) = delete;
-    DefaultScreenCapabilities(struct DefaultScreenCapabilities const &) = delete;
+    class DefaultScreenCapabilities& operator=(class DefaultScreenCapabilities const &) = delete;
+    DefaultScreenCapabilities(class DefaultScreenCapabilities const &) = delete;
     DefaultScreenCapabilities() = delete;
 #endif
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~DefaultScreenCapabilities();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1768517804
-     * @vftbl  1
-     * @symbol  ?isOfType\@?$TypedScreenCapabilities\@UDefaultScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
+     * @vftbl 1
+     * @symbol ?isOfType\@?$TypedScreenCapabilities\@UDefaultScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
      */
     virtual bool isOfType(class typeid_t<class IScreenCapabilities>) const;
 

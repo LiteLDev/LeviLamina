@@ -30,67 +30,57 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ActorSkeletalAnimationPlayer();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   500584739
-     * @vftbl  1
-     * @symbol  ?applyToPose\@ActorSkeletalAnimationPlayer\@\@UEAAXAEAVRenderParams\@\@AEAV?$unordered_map\@W4SkeletalHierarchyIndex\@\@V?$vector\@VBoneOrientation\@\@V?$allocator\@VBoneOrientation\@\@\@std\@\@\@std\@\@U?$hash\@W4SkeletalHierarchyIndex\@\@\@3\@U?$equal_to\@W4SkeletalHierarchyIndex\@\@\@3\@V?$allocator\@U?$pair\@$$CBW4SkeletalHierarchyIndex\@\@V?$vector\@VBoneOrientation\@\@V?$allocator\@VBoneOrientation\@\@\@std\@\@\@std\@\@\@std\@\@\@3\@\@std\@\@M\@Z
+     * @vftbl 1
+     * @symbol ?applyToPose\@ActorSkeletalAnimationPlayer\@\@UEAAXAEAVRenderParams\@\@AEAV?$unordered_map\@W4SkeletalHierarchyIndex\@\@V?$vector\@VBoneOrientation\@\@V?$allocator\@VBoneOrientation\@\@\@std\@\@\@std\@\@U?$hash\@W4SkeletalHierarchyIndex\@\@\@3\@U?$equal_to\@W4SkeletalHierarchyIndex\@\@\@3\@V?$allocator\@U?$pair\@$$CBW4SkeletalHierarchyIndex\@\@V?$vector\@VBoneOrientation\@\@V?$allocator\@VBoneOrientation\@\@\@std\@\@\@std\@\@\@std\@\@\@3\@\@std\@\@M\@Z
      */
     virtual void applyToPose(class RenderParams &, class std::unordered_map<enum class SkeletalHierarchyIndex, std::vector<class BoneOrientation>, struct std::hash<enum class SkeletalHierarchyIndex>, struct std::equal_to<enum class SkeletalHierarchyIndex>, class std::allocator<struct std::pair<enum class SkeletalHierarchyIndex const, std::vector<class BoneOrientation>>>> &, float);
     /**
-     * @hash   1242590405
-     * @vftbl  2
-     * @symbol  ?resetAnimation\@ActorSkeletalAnimationPlayer\@\@UEAAXXZ
+     * @vftbl 2
+     * @symbol ?resetAnimation\@ActorSkeletalAnimationPlayer\@\@UEAAXXZ
      */
     virtual void resetAnimation();
     /**
-     * @hash   -228113539
-     * @vftbl  3
-     * @symbol  ?buildBoneToPartMapping\@ActorSkeletalAnimationPlayer\@\@UEAAXAEAVAnimationComponent\@\@\@Z
+     * @vftbl 3
+     * @symbol ?buildBoneToPartMapping\@ActorSkeletalAnimationPlayer\@\@UEAAXAEAVAnimationComponent\@\@\@Z
      */
     virtual void buildBoneToPartMapping(class AnimationComponent &);
     /**
-     * @hash   458915395
-     * @vftbl  4
-     * @symbol  ?bindParticleEffects\@ActorSkeletalAnimationPlayer\@\@UEAAXAEBV?$unordered_map\@VHashedString\@\@V1\@U?$hash\@VHashedString\@\@\@std\@\@U?$equal_to\@VHashedString\@\@\@3\@V?$allocator\@U?$pair\@$$CBVHashedString\@\@V1\@\@std\@\@\@3\@\@std\@\@\@Z
+     * @vftbl 4
+     * @symbol ?bindParticleEffects\@ActorSkeletalAnimationPlayer\@\@UEAAXAEBV?$unordered_map\@VHashedString\@\@V1\@U?$hash\@VHashedString\@\@\@std\@\@U?$equal_to\@VHashedString\@\@\@3\@V?$allocator\@U?$pair\@$$CBVHashedString\@\@V1\@\@std\@\@\@3\@\@std\@\@\@Z
      */
     virtual void bindParticleEffects(class std::unordered_map<class HashedString, class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class HashedString>>> const &);
     /**
-     * @hash   2013551288
-     * @vftbl  5
-     * @symbol  ?bindSoundEffects\@ActorSkeletalAnimationPlayer\@\@UEAAXAEBV?$unordered_map\@VHashedString\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@U?$hash\@VHashedString\@\@\@3\@U?$equal_to\@VHashedString\@\@\@3\@V?$allocator\@U?$pair\@$$CBVHashedString\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@3\@\@std\@\@\@Z
+     * @vftbl 5
+     * @symbol ?bindSoundEffects\@ActorSkeletalAnimationPlayer\@\@UEAAXAEBV?$unordered_map\@VHashedString\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@U?$hash\@VHashedString\@\@\@3\@U?$equal_to\@VHashedString\@\@\@3\@V?$allocator\@U?$pair\@$$CBVHashedString\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@3\@\@std\@\@\@Z
      */
     virtual void bindSoundEffects(class std::unordered_map<class HashedString, std::string, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, std::string>>> const &);
     /**
-     * @hash   -1792135043
-     * @vftbl  6
-     * @symbol  ?hasAnimationFinished\@ActorSkeletalAnimationPlayer\@\@UEBA_NXZ
+     * @vftbl 6
+     * @symbol ?hasAnimationFinished\@ActorSkeletalAnimationPlayer\@\@UEBA_NXZ
      */
     virtual bool hasAnimationFinished() const;
     /**
-     * @hash   -1735481664
-     * @vftbl  7
-     * @symbol  ?findAnimation\@ActorSkeletalAnimationPlayer\@\@UEAA?AV?$shared_ptr\@VActorAnimationPlayer\@\@\@std\@\@AEBVHashedString\@\@\@Z
+     * @vftbl 7
+     * @symbol ?findAnimation\@ActorSkeletalAnimationPlayer\@\@UEAA?AV?$shared_ptr\@VActorAnimationPlayer\@\@\@std\@\@AEBVHashedString\@\@\@Z
      */
     virtual class std::shared_ptr<class ActorAnimationPlayer> findAnimation(class HashedString const &);
     /**
-     * @hash   -355141240
-     * @vftbl  8
-     * @symbol  ?getAnimationType\@ActorSkeletalAnimationPlayer\@\@UEBA?AW4ActorAnimationType\@\@XZ
+     * @vftbl 8
+     * @symbol ?getAnimationType\@ActorSkeletalAnimationPlayer\@\@UEBA?AW4ActorAnimationType\@\@XZ
      */
     virtual enum class ActorAnimationType getAnimationType() const;
     /**
-     * @hash   1699729941
-     * @vftbl  9
-     * @symbol  ?getRawName\@ActorSkeletalAnimationPlayer\@\@UEBAAEBVHashedString\@\@XZ
+     * @vftbl 9
+     * @symbol ?getRawName\@ActorSkeletalAnimationPlayer\@\@UEBAAEBVHashedString\@\@XZ
      */
     virtual class HashedString const & getRawName() const;
     /**
-     * @hash   -1741393237
-     * @symbol  ??0ActorSkeletalAnimationPlayer\@\@QEAA\@AEBVHashedString\@\@VActorSkeletalAnimationPtr\@\@AEAVAnimationComponent\@\@AEBVExpressionNode\@\@\@Z
+     * @symbol ??0ActorSkeletalAnimationPlayer\@\@QEAA\@AEBVHashedString\@\@VActorSkeletalAnimationPtr\@\@AEAVAnimationComponent\@\@AEBVExpressionNode\@\@\@Z
      */
     MCAPI ActorSkeletalAnimationPlayer(class HashedString const &, class ActorSkeletalAnimationPtr, class AnimationComponent &, class ExpressionNode const &);
 

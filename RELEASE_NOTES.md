@@ -1,23 +1,33 @@
-# Release 2.10.0
+# Release 2.12.0-beta.1
 
-![BDS 1.19.61.01](https://img.shields.io/badge/BDS-1.19.61.01-blue?style=for-the-badge)&emsp;![Protocol 567](https://img.shields.io/badge/Protocol-567-orange?style=for-the-badge)
+![BDS 1.19.63.01](https://img.shields.io/badge/BDS-1.19.71.02-blue?style=for-the-badge)&emsp;![Protocol 568](https://img.shields.io/badge/Protocol-575-orange?style=for-the-badge)
+
+# Warning
+![BDS 1.19.63.01](https://img.shields.io/badge/NoSupport-1.19.70.02-red?style=for-the-badge)&emsp;
+
+## New Feature
+
+- ⭐LLSE Support Python plugins (by @yqs112358 @twoone-3)
+- More docs to see: [📋 Multi Development Language Support (litebds.com)](https://docs.litebds.com/en/#/LLSEPluginDevelopment/LanguageSupport?id=python-language-support-description)
+
+## Adaptation
+
+- feat: adapt to 1.19.70/71 (#1126) (by @dreamguxiang)
 
 ## Added
 
-* Release package containing all modules seperately (by @Futrime)
-* Throwing original exception when fail to load plugin (by @yqs112358)
+- feat: add templates and update StaticVanillaBlocks (#1116) (by @OEOTYAN)
+- feat: #1112 (#1118) (by 3 people)
+- feat: complete Ref.hpp & EntityId (by @OEOTYAN)
+- feat: add some common functions (#1138)  (by @OEOTYAN)
 
 ## Changed
 
-* Adapt to 1.19.61 (by @dreamguxiang)
-* Update README to latest documentation (by @Futrime)
+- refactor: remove built-in packet filter  (by @ShrBox)
+- refactor: update MinecraftPacketIds (by @dreamguxiang)
 
 ## Fixed
 
-* Small bugs in vectors (by @OEOTYAN)
-* Simplayer problem (by @ShrBox)
-* Strict mode error of some LLSE quickjs plugins (by @yqs112358)
-* QuickJS ESM bugs (by @yqs112358)
+- fix: fix queryEntities (#1123)  (by @OEOTYAN)
 
-
-**Full Changelog**: https://github.com/LiteLDev/LiteLoaderBDS/compare/2.9.3...2.10.0
+**Full Changelog**: https://github.com/LiteLDev/LiteLoaderBDS/compare/2.11.1...2.12.0-beta.1

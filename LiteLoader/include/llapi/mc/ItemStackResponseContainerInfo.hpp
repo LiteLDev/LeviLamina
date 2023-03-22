@@ -28,13 +28,11 @@ public:
 
 public:
     /**
-     * @hash   -415218372
-     * @symbol  ??0ItemStackResponseContainerInfo\@\@QEAA\@W4ContainerEnumName\@\@\@Z
+     * @symbol ??0ItemStackResponseContainerInfo\@\@QEAA\@W4ContainerEnumName\@\@\@Z
      */
     MCAPI ItemStackResponseContainerInfo(enum class ContainerEnumName);
     /**
-     * @hash   -302543117
-     * @symbol  ??1ItemStackResponseContainerInfo\@\@QEAA\@XZ
+     * @symbol ??1ItemStackResponseContainerInfo\@\@QEAA\@XZ
      */
     MCAPI ~ItemStackResponseContainerInfo();
 

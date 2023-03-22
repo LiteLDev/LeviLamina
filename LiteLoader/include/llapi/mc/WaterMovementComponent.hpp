@@ -29,23 +29,23 @@ public:
 
 public:
     /**
-     * @hash   -1306982333
-     * @symbol  ??0WaterMovementComponent\@\@QEAA\@XZ
+     * @symbol ??0WaterMovementComponent\@\@QEAA\@XZ
      */
     MCAPI WaterMovementComponent();
     /**
-     * @hash   -218439180
-     * @symbol  ?getDragFactor\@WaterMovementComponent\@\@QEBAMXZ
+     * @symbol ?getDragFactor\@WaterMovementComponent\@\@QEBAMXZ
      */
     MCAPI float getDragFactor() const;
     /**
-     * @hash   452939290
-     * @symbol  ?initFromDefinition\@WaterMovementComponent\@\@QEAAXAEAVActor\@\@\@Z
+     * @symbol ?initFromDefinition\@WaterMovementComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
-     * @hash   1432802486
-     * @symbol  ?getDefaultDragFactor\@WaterMovementComponent\@\@SAMXZ
+     * @symbol ??8WaterMovementComponent\@\@QEBA_NAEBV0\@\@Z
+     */
+    MCAPI bool operator==(class WaterMovementComponent const &) const;
+    /**
+     * @symbol ?getDefaultDragFactor\@WaterMovementComponent\@\@SAMXZ
      */
     MCAPI static float getDefaultDragFactor();
 

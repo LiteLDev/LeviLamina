@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   -1310898901
-     * @symbol  ??1SideBySideValidationFailureComponent\@\@QEAA\@XZ
+     * @symbol ??1SideBySideValidationFailureComponent\@\@QEAA\@XZ
      */
     MCAPI ~SideBySideValidationFailureComponent();
 

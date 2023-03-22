@@ -30,25 +30,22 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~StructurePoolBlockPredicateAxisAlignedPosition();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   865515446
-     * @vftbl  1
-     * @symbol  ?test\@StructurePoolBlockPredicateAxisAlignedPosition\@\@UEBA_NAEBVBlock\@\@AEAVRandomize\@\@\@Z
+     * @vftbl 1
+     * @symbol ?test\@StructurePoolBlockPredicateAxisAlignedPosition\@\@UEBA_NAEBVBlock\@\@AEAVRandomize\@\@\@Z
      */
     virtual bool test(class Block const &, class Randomize &) const;
     /**
-     * @hash   -1609893766
-     * @vftbl  2
-     * @symbol  ?test\@StructurePoolBlockPredicateAxisAlignedPosition\@\@UEBA_NAEBVBlockPos\@\@0AEAVRandomize\@\@\@Z
+     * @vftbl 2
+     * @symbol ?test\@StructurePoolBlockPredicateAxisAlignedPosition\@\@UEBA_NAEBVBlockPos\@\@0AEAVRandomize\@\@\@Z
      */
     virtual bool test(class BlockPos const &, class BlockPos const &, class Randomize &) const;
     /**
-     * @hash   82021309
-     * @symbol  ??0StructurePoolBlockPredicateAxisAlignedPosition\@\@QEAA\@MMHHE\@Z
+     * @symbol ??0StructurePoolBlockPredicateAxisAlignedPosition\@\@QEAA\@MMHHE\@Z
      */
     MCAPI StructurePoolBlockPredicateAxisAlignedPosition(float, float, int, int, unsigned char);
 

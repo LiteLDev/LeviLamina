@@ -27,13 +27,11 @@ public:
 
 public:
     /**
-     * @hash   766358597
-     * @symbol  ??0BlockPatternEvent\@\@QEAA\@AEBU0\@\@Z
+     * @symbol ??0BlockPatternEvent\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI BlockPatternEvent(struct BlockPatternEvent const &);
     /**
-     * @hash   1239590739
-     * @symbol  ??1BlockPatternEvent\@\@QEAA\@XZ
+     * @symbol ??1BlockPatternEvent\@\@QEAA\@XZ
      */
     MCAPI ~BlockPatternEvent();
 

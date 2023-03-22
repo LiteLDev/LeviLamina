@@ -30,29 +30,25 @@ public:
 
 public:
     /**
-     * @hash   1224094833
-     * @symbol  ?getCooldownCounter\@InteractComponent\@\@QEBAFXZ
+     * @symbol ?getCooldownCounter\@InteractComponent\@\@QEBAFXZ
      */
     MCAPI short getCooldownCounter() const;
     /**
-     * @hash   625772465
-     * @symbol  ?getInteraction\@InteractComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
+     * @symbol ?getInteraction\@InteractComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     /**
-     * @hash   100197039
-     * @symbol  ?setCooldownCounter\@InteractComponent\@\@QEAAXF\@Z
+     * @symbol ?setCooldownCounter\@InteractComponent\@\@QEAAXF\@Z
      */
     MCAPI void setCooldownCounter(short);
 
 //private:
     /**
-     * @hash   -1138108244
-     * @symbol  ?_runInteraction\@InteractComponent\@\@AEAA_NAEAVActor\@\@AEBUInteraction\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
+     * @symbol ?_runInteraction\@InteractComponent\@\@AEAA_NAEAVActor\@\@AEBUInteraction\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
     MCAPI bool _runInteraction(class Actor &, struct Interaction const &, class Player &, class ActorInteraction &);
     /**
-     * @symbol  ?_tryEquipitem\@InteractComponent\@\@CAXAEAVActor\@\@AEAVPlayer\@\@AEAVItemStack\@\@AEBV4\@HAEA_N4\@Z
+     * @symbol ?_tryEquipitem\@InteractComponent\@\@CAXAEAVActor\@\@AEAVPlayer\@\@AEAVItemStack\@\@AEBV4\@HAEA_N4\@Z
      */
     MCAPI static void _tryEquipitem(class Actor &, class Player &, class ItemStack &, class ItemStack const &, int, bool &, bool &);
 

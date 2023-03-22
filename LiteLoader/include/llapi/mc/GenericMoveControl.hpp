@@ -30,25 +30,28 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~GenericMoveControl();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -626632976
-     * @vftbl  1
-     * @symbol  ?initializeInternal\@GenericMoveControl\@\@UEAAXAEAVMob\@\@PEAUMoveControlDescription\@\@\@Z
+     * @vftbl 1
+     * @symbol ?initializeInternal\@GenericMoveControl\@\@UEAAXAEAVMob\@\@PEAUMoveControlDescription\@\@\@Z
      */
     virtual void initializeInternal(class Mob &, struct MoveControlDescription *);
     /**
-     * @hash   452850609
-     * @vftbl  2
-     * @symbol  ?tick\@GenericMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
+     * @vftbl 2
+     * @symbol ?tick\@GenericMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENERICMOVECONTROL
     /**
-     * @hash   -633643087
-     * @symbol  ??0GenericMoveControl\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~GenericMoveControl();
+#endif
+    /**
+     * @symbol ??0GenericMoveControl\@\@QEAA\@XZ
      */
     MCAPI GenericMoveControl();
 

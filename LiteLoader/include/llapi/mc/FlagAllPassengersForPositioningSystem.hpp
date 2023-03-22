@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ?create\@FlagAllPassengersForPositioningSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?create\@FlagAllPassengersForPositioningSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo create();
 

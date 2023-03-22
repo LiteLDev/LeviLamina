@@ -29,40 +29,33 @@ public:
 
 public:
     /**
-     * @hash   -513025564
-     * @symbol  ??0CSHA1\@\@QEAA\@XZ
+     * @symbol ??0CSHA1\@\@QEAA\@XZ
      */
     MCAPI CSHA1();
     /**
-     * @hash   -922021135
-     * @symbol  ?Final\@CSHA1\@\@QEAAXXZ
+     * @symbol ?Final\@CSHA1\@\@QEAAXXZ
      */
     MCAPI void Final();
     /**
-     * @hash   -1855737969
-     * @symbol  ?GetHash\@CSHA1\@\@QEBAPEAEXZ
+     * @symbol ?GetHash\@CSHA1\@\@QEBAPEAEXZ
      */
     MCAPI unsigned char * GetHash() const;
     /**
-     * @hash   -1056133133
-     * @symbol  ?Reset\@CSHA1\@\@QEAAXXZ
+     * @symbol ?Reset\@CSHA1\@\@QEAAXXZ
      */
     MCAPI void Reset();
     /**
-     * @hash   -706585662
-     * @symbol  ?Update\@CSHA1\@\@QEAAXPEBEI\@Z
+     * @symbol ?Update\@CSHA1\@\@QEAAXPEBEI\@Z
      */
     MCAPI void Update(unsigned char const *, unsigned int);
     /**
-     * @hash   1728414244
-     * @symbol  ??1CSHA1\@\@QEAA\@XZ
+     * @symbol ??1CSHA1\@\@QEAA\@XZ
      */
     MCAPI ~CSHA1();
 
 //private:
     /**
-     * @hash   -1619971648
-     * @symbol  ?Transform\@CSHA1\@\@AEAAXPEAIPEBE\@Z
+     * @symbol ?Transform\@CSHA1\@\@AEAAXPEAIPEBE\@Z
      */
     MCAPI void Transform(unsigned int *, unsigned char const *);
 

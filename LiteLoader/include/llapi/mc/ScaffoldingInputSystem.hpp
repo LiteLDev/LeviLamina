@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   221014996
-     * @symbol  ?createScaffoldingInputSystem\@ScaffoldingInputSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createScaffoldingInputSystem\@ScaffoldingInputSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createScaffoldingInputSystem();
 

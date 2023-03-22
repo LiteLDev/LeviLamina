@@ -28,21 +28,15 @@ public:
 
 public:
     /**
-     * @hash   -119556790
-     * @symbol  ?createSystem\@VariableMaxAutoStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@VariableMaxAutoStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
-     * @hash   192470747
-     * @symbol  ?_tickEntity\@VariableMaxAutoStepSystem\@\@CAXAEBVStrictEntityContext\@\@AEBUVariableMaxAutoStepComponent\@\@AEAUMaxAutoStepComponent\@\@AEBUAABBShapeComponent\@\@AEBUStateVectorComponent\@\@AEBVActorMovementProxyComponent\@\@\@Z
+     * @symbol ?_tickEntity\@VariableMaxAutoStepSystem\@\@CAXAEBVStrictEntityContext\@\@V?$Optional\@$$CBUVehicleComponent\@\@\@\@AEBUVariableMaxAutoStepComponent\@\@AEAUMaxAutoStepComponent\@\@AEBUAABBShapeComponent\@\@AEBUStateVectorComponent\@\@AEBUSynchedActorDataComponent\@\@AEBVActorMovementProxyComponent\@\@\@Z
      */
-    MCAPI static void _tickEntity(class StrictEntityContext const &, struct VariableMaxAutoStepComponent const &, struct MaxAutoStepComponent &, struct AABBShapeComponent const &, struct StateVectorComponent const &, class ActorMovementProxyComponent const &);
-    /**
-     * @symbol  ?_tickSystem\@VariableMaxAutoStepSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@VActorTickNeededComponent\@\@\@\@$$CBUVariableMaxAutoStepComponent\@\@UMaxAutoStepComponent\@\@$$CBUAABBShapeComponent\@\@$$CBUStateVectorComponent\@\@$$CBVActorMovementProxyComponent\@\@\@\@\@Z
-     */
-    MCAPI static void _tickSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class ActorTickNeededComponent>, struct VariableMaxAutoStepComponent const, struct MaxAutoStepComponent, struct AABBShapeComponent const, struct StateVectorComponent const, class ActorMovementProxyComponent const>);
+    MCAPI static void _tickEntity(class StrictEntityContext const &, class Optional<struct VehicleComponent const>, struct VariableMaxAutoStepComponent const &, struct MaxAutoStepComponent &, struct AABBShapeComponent const &, struct StateVectorComponent const &, struct SynchedActorDataComponent const &, class ActorMovementProxyComponent const &);
 
 private:
 

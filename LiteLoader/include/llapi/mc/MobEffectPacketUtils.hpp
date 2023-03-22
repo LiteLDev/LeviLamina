@@ -20,8 +20,7 @@ namespace MobEffectPacketUtils {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   1155772538
-     * @symbol  ?shouldAlwaysSendToClient\@MobEffectPacketUtils\@\@YA_NI\@Z
+     * @symbol ?shouldAlwaysSendToClient\@MobEffectPacketUtils\@\@YA_NI\@Z
      */
     MCAPI bool shouldAlwaysSendToClient(unsigned int);
 

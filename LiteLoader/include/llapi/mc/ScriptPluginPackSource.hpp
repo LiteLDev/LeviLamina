@@ -29,33 +29,29 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ScriptPluginPackSource();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -723958503
-     * @vftbl  1
-     * @symbol  ?getManifest\@ScriptPluginPackSource\@\@UEAAAEBVPackManifest\@\@XZ
+     * @vftbl 1
+     * @symbol ?getManifest\@ScriptPluginPackSource\@\@UEAAAEBVPackManifest\@\@XZ
      */
     virtual class PackManifest const & getManifest();
     /**
-     * @hash   1268116909
-     * @vftbl  2
-     * @symbol  ?loadScripts\@ScriptPluginPackSource\@\@UEAA?AV?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@\@std\@\@\@2\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
+     * @vftbl 2
+     * @symbol ?loadScripts\@ScriptPluginPackSource\@\@UEAA?AV?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@\@std\@\@\@2\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
      */
     virtual class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> loadScripts(std::string const &);
     /**
-     * @hash   1886113198
-     * @vftbl  3
-     * @symbol  ?removeRootFromPath\@ScriptPluginPackSource\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@\@Z
+     * @vftbl 3
+     * @symbol ?removeRootFromPath\@ScriptPluginPackSource\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@\@Z
      */
     virtual std::string removeRootFromPath(std::string const &);
 
 //private:
     /**
-     * @hash   -807118446
-     * @symbol  ?_removeRootFromPath\@ScriptPluginPackSource\@\@AEAA?AVPath\@Core\@\@AEBV23\@\@Z
+     * @symbol ?_removeRootFromPath\@ScriptPluginPackSource\@\@AEAA?AVPath\@Core\@\@AEBV23\@\@Z
      */
     MCAPI class Core::Path _removeRootFromPath(class Core::Path const &);
 

@@ -30,30 +30,25 @@ public:
 
 public:
     /**
-     * @hash   -1594419784
-     * @symbol  ??0BlockStateCommandParam\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0W4Type\@0\@\@Z
+     * @symbol ??0BlockStateCommandParam\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0W4Type\@0\@\@Z
      */
     MCAPI BlockStateCommandParam(std::string, std::string, enum class BlockStateCommandParam::Type);
     /**
-     * @hash   -1651249384
-     * @symbol  ?getNameAndValue\@BlockStateCommandParam\@\@QEBA?AV?$optional\@U?$pair\@VHashedString\@\@H\@std\@\@\@std\@\@AEAVCommandOutput\@\@\@Z
+     * @symbol ?getNameAndValue\@BlockStateCommandParam\@\@QEBA?AV?$optional\@U?$pair\@VHashedString\@\@H\@std\@\@\@std\@\@AEAVCommandOutput\@\@\@Z
      */
     MCAPI class std::optional<struct std::pair<class HashedString, int>> getNameAndValue(class CommandOutput &) const;
     /**
-     * @hash   1419768061
-     * @symbol  ?setBlockState\@BlockStateCommandParam\@\@QEBA_NPEAPEBVBlock\@\@AEAVCommandOutput\@\@\@Z
+     * @symbol ?setBlockState\@BlockStateCommandParam\@\@QEBA_NPEAPEBVBlock\@\@AEAVCommandOutput\@\@\@Z
      */
     MCAPI bool setBlockState(class Block const **, class CommandOutput &) const;
     /**
-     * @hash   -1693735216
-     * @symbol  ??1BlockStateCommandParam\@\@QEAA\@XZ
+     * @symbol ??1BlockStateCommandParam\@\@QEAA\@XZ
      */
     MCAPI ~BlockStateCommandParam();
 
 //private:
     /**
-     * @hash   -1311989354
-     * @symbol  ?_createCompoundTag\@BlockStateCommandParam\@\@AEBA_NAEAVCompoundTag\@\@AEAVCommandOutput\@\@\@Z
+     * @symbol ?_createCompoundTag\@BlockStateCommandParam\@\@AEBA_NAEAVCompoundTag\@\@AEAVCommandOutput\@\@\@Z
      */
     MCAPI bool _createCompoundTag(class CompoundTag &, class CommandOutput &) const;
 

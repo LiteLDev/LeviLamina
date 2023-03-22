@@ -30,33 +30,29 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~NpcI18nObserver();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   943866527
-     * @vftbl  1
-     * @symbol  ?onLanguageChanged\@NpcI18nObserver\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
+     * @vftbl 1
+     * @symbol ?onLanguageChanged\@NpcI18nObserver\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
     virtual void onLanguageChanged(std::string const &, bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCI18NOBSERVER
     /**
-     * @hash   654028462
-     * @symbol  ?onLanguageKeywordsLoadedFromPack\@NpcI18nObserver\@\@UEAAXAEBVPackManifest\@\@\@Z
+     * @symbol ?onLanguageKeywordsLoadedFromPack\@NpcI18nObserver\@\@UEAAXAEBVPackManifest\@\@\@Z
      */
     MCVAPI void onLanguageKeywordsLoadedFromPack(class PackManifest const &);
     /**
-     * @hash   1602274163
-     * @symbol  ?onLanguagesLoaded\@NpcI18nObserver\@\@UEAAXXZ
+     * @symbol ?onLanguagesLoaded\@NpcI18nObserver\@\@UEAAXXZ
      */
     MCVAPI void onLanguagesLoaded();
 #endif
 
 //private:
     /**
-     * @hash   166465341
-     * @symbol  ?_loadNpcData\@NpcI18nObserver\@\@AEAAXXZ
+     * @symbol ?_loadNpcData\@NpcI18nObserver\@\@AEAAXXZ
      */
     MCAPI void _loadNpcData();
 

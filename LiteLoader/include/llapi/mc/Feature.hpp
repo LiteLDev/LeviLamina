@@ -31,43 +31,43 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~Feature();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1360691287
-     * @vftbl  1
-     * @symbol  ?place\@Feature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
+     * @vftbl 1
+     * @symbol ?place\@Feature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &) const;
     /**
-     * @hash   -624447802
-     * @vftbl  2
-     * @symbol  ?isValidPlacement\@IFeature\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 2
+     * @symbol ?isValidPlacement\@IFeature\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual bool isValidPlacement(std::string const &);
     /**
-     * @hash   -1632410085
-     * @vftbl  3
-     * @symbol  ?place\@WeepingVinesClusterFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @vftbl 3
+     * @symbol ?place\@CoralHangFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const = 0;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATURE
     /**
-     * @hash   -55776406
-     * @symbol  ??0Feature\@\@QEAA\@PEAVActor\@\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~Feature();
+#endif
+    /**
+     * @symbol ??0Feature\@\@QEAA\@PEAVActor\@\@\@Z
      */
     MCAPI Feature(class Actor *);
 
 //protected:
     /**
-     * @hash   -501857343
-     * @symbol  ?_placeBlock\@Feature\@\@IEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
+     * @symbol ?_placeBlock\@Feature\@\@IEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     MCAPI bool _placeBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @hash   -1630496317
-     * @symbol  ?_setManuallyPlaced\@Feature\@\@IEAAXPEAVActor\@\@\@Z
+     * @symbol ?_setManuallyPlaced\@Feature\@\@IEAAXPEAVActor\@\@\@Z
      */
     MCAPI void _setManuallyPlaced(class Actor *);
 

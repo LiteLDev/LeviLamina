@@ -28,15 +28,13 @@ public:
 
 public:
     /**
-     * @hash   2018947950
-     * @symbol  ?createSystem\@ChickenPostAIStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@ChickenPostAIStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
-     * @hash   725419597
-     * @symbol  ?_doChickenPostAIStepSystem\@ChickenPostAIStepSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
+     * @symbol ?_doChickenPostAIStepSystem\@ChickenPostAIStepSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
      */
     MCAPI static void _doChickenPostAIStepSystem(class StrictEntityContext const &, class ActorOwnerComponent &);
 

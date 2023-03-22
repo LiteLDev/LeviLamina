@@ -25,28 +25,27 @@ class JigsawStructureBlockTagRulesRegistry {
 public:
     class JigsawStructureBlockTagRulesRegistry& operator=(class JigsawStructureBlockTagRulesRegistry const &) = delete;
     JigsawStructureBlockTagRulesRegistry(class JigsawStructureBlockTagRulesRegistry const &) = delete;
-    JigsawStructureBlockTagRulesRegistry() = delete;
 #endif
 
 public:
     /**
-     * @hash   -108198637
-     * @symbol  ?clear\@JigsawStructureBlockTagRulesRegistry\@\@QEAAXXZ
+     * @symbol ??0JigsawStructureBlockTagRulesRegistry\@\@QEAA\@XZ
+     */
+    MCAPI JigsawStructureBlockTagRulesRegistry();
+    /**
+     * @symbol ?clear\@JigsawStructureBlockTagRulesRegistry\@\@QEAAXXZ
      */
     MCAPI void clear();
     /**
-     * @hash   1198162757
-     * @symbol  ?lookupByName\@JigsawStructureBlockTagRulesRegistry\@\@QEBAPEBV?$vector\@V?$unique_ptr\@VStructurePoolBlockTagRule\@\@U?$default_delete\@VStructurePoolBlockTagRule\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePoolBlockTagRule\@\@U?$default_delete\@VStructurePoolBlockTagRule\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
+     * @symbol ?lookupByName\@JigsawStructureBlockTagRulesRegistry\@\@QEBAPEBV?$vector\@V?$unique_ptr\@VStructurePoolBlockTagRule\@\@U?$default_delete\@VStructurePoolBlockTagRule\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePoolBlockTagRule\@\@U?$default_delete\@VStructurePoolBlockTagRule\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
      */
     MCAPI std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const * lookupByName(std::string) const;
     /**
-     * @hash   -2079456122
-     * @symbol  ?registerBlockTagRules\@JigsawStructureBlockTagRulesRegistry\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEAV?$unique_ptr\@V?$vector\@V?$unique_ptr\@VStructurePoolBlockTagRule\@\@U?$default_delete\@VStructurePoolBlockTagRule\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePoolBlockTagRule\@\@U?$default_delete\@VStructurePoolBlockTagRule\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@U?$default_delete\@V?$vector\@V?$unique_ptr\@VStructurePoolBlockTagRule\@\@U?$default_delete\@VStructurePoolBlockTagRule\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePoolBlockTagRule\@\@U?$default_delete\@VStructurePoolBlockTagRule\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@\@2\@\@3\@\@Z
+     * @symbol ?registerBlockTagRules\@JigsawStructureBlockTagRulesRegistry\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEAV?$unique_ptr\@V?$vector\@V?$unique_ptr\@VStructurePoolBlockTagRule\@\@U?$default_delete\@VStructurePoolBlockTagRule\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePoolBlockTagRule\@\@U?$default_delete\@VStructurePoolBlockTagRule\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@U?$default_delete\@V?$vector\@V?$unique_ptr\@VStructurePoolBlockTagRule\@\@U?$default_delete\@VStructurePoolBlockTagRule\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePoolBlockTagRule\@\@U?$default_delete\@VStructurePoolBlockTagRule\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@\@2\@\@3\@\@Z
      */
     MCAPI void registerBlockTagRules(std::string, std::unique_ptr<std::vector<class std::unique_ptr<class StructurePoolBlockTagRule, struct std::default_delete<class StructurePoolBlockTagRule>>>> &&);
     /**
-     * @hash   1114418847
-     * @symbol  ??1JigsawStructureBlockTagRulesRegistry\@\@QEAA\@XZ
+     * @symbol ??1JigsawStructureBlockTagRulesRegistry\@\@QEAA\@XZ
      */
     MCAPI ~JigsawStructureBlockTagRulesRegistry();
 

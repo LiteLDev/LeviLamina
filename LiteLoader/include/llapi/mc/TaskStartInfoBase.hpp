@@ -30,8 +30,7 @@ public:
 
 public:
     /**
-     * @hash   210048209
-     * @symbol  ?NoAffinity\@TaskStartInfoBase\@\@2Vid\@thread\@std\@\@B
+     * @symbol ?NoAffinity\@TaskStartInfoBase\@\@2Vid\@thread\@std\@\@B
      */
     MCAPI static class std::thread::id const NoAffinity;
 

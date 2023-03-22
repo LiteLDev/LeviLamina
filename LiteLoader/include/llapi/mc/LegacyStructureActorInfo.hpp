@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   88857622
-     * @symbol  ??0LegacyStructureActorInfo\@\@QEAA\@AEBVVec3\@\@AEBVBlockPos\@\@VCompoundTag\@\@\@Z
+     * @symbol ??0LegacyStructureActorInfo\@\@QEAA\@AEBVVec3\@\@AEBVBlockPos\@\@VCompoundTag\@\@\@Z
      */
     MCAPI LegacyStructureActorInfo(class Vec3 const &, class BlockPos const &, class CompoundTag);
 

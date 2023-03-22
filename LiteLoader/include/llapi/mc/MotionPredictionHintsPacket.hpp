@@ -30,42 +30,42 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~MotionPredictionHintsPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   721853487
-     * @vftbl  1
-     * @symbol  ?getId\@MotionPredictionHintsPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@MotionPredictionHintsPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   110409436
-     * @vftbl  2
-     * @symbol  ?getName\@MotionPredictionHintsPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@MotionPredictionHintsPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   1030955211
-     * @vftbl  3
-     * @symbol  ?write\@MotionPredictionHintsPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@MotionPredictionHintsPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   -839058261
-     * @vftbl  6
-     * @symbol  ?_read\@MotionPredictionHintsPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@MotionPredictionHintsPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOTIONPREDICTIONHINTSPACKET
     /**
-     * @hash   -748136389
-     * @symbol  ??0MotionPredictionHintsPacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~MotionPredictionHintsPacket();
+#endif
+    /**
+     * @symbol ??0MotionPredictionHintsPacket\@\@QEAA\@XZ
      */
     MCAPI MotionPredictionHintsPacket();
     /**
-     * @hash   696740448
-     * @symbol  ??0MotionPredictionHintsPacket\@\@QEAA\@AEBVActor\@\@\@Z
+     * @symbol ??0MotionPredictionHintsPacket\@\@QEAA\@AEBVActor\@\@\@Z
      */
     MCAPI MotionPredictionHintsPacket(class Actor const &);
 

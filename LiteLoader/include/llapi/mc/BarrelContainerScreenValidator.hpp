@@ -30,13 +30,12 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BarrelContainerScreenValidator();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1050762537
-     * @symbol  ??0BarrelContainerScreenValidator\@\@QEAA\@XZ
+     * @symbol ??0BarrelContainerScreenValidator\@\@QEAA\@XZ
      */
     MCAPI BarrelContainerScreenValidator();
 

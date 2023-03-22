@@ -30,27 +30,23 @@ public:
 
 public:
     /**
-     * @hash   1655136873
-     * @symbol  ??0BreathableDefinition\@\@QEAA\@XZ
+     * @symbol ??0BreathableDefinition\@\@QEAA\@XZ
      */
     MCAPI BreathableDefinition();
     /**
-     * @hash   1111749432
-     * @symbol  ?addBreathableBlockDescriptor\@BreathableDefinition\@\@QEAAXAEBVBlockDescriptor\@\@\@Z
+     * @symbol ?addBreathableBlockDescriptor\@BreathableDefinition\@\@QEAAXAEBVBlockDescriptor\@\@\@Z
      */
     MCAPI void addBreathableBlockDescriptor(class BlockDescriptor const &);
     /**
-     * @hash   1540314938
-     * @symbol  ?addNonBreathableBlockDescriptor\@BreathableDefinition\@\@QEAAXAEBVBlockDescriptor\@\@\@Z
+     * @symbol ?addNonBreathableBlockDescriptor\@BreathableDefinition\@\@QEAAXAEBVBlockDescriptor\@\@\@Z
      */
     MCAPI void addNonBreathableBlockDescriptor(class BlockDescriptor const &);
     /**
-     * @symbol  ?initialize\@BreathableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVBreathableComponent\@\@\@Z
+     * @symbol ?initialize\@BreathableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVBreathableComponent\@\@\@Z
      */
     MCAPI void initialize(class EntityContext &, class BreathableComponent &) const;
     /**
-     * @hash   -1707242074
-     * @symbol  ?buildSchema\@BreathableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VBreathableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
+     * @symbol ?buildSchema\@BreathableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VBreathableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BreathableDefinition>> &);
 

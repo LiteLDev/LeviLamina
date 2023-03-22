@@ -31,19 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~WSServerCommand();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1680134953
-     * @vftbl  1
-     * @symbol  ?execute\@WSServerCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @vftbl 1
+     * @symbol ?execute\@WSServerCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   -2105648496
-     * @symbol  ?setup\@WSServerCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
+     * @symbol ?setup\@WSServerCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);
 

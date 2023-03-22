@@ -12,11 +12,8 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC structure ClimateParameters.
- *
- */
-struct ClimateParameters {
+
+class ClimateParameters {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -24,20 +21,18 @@ struct ClimateParameters {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIMATEPARAMETERS
 public:
-    struct ClimateParameters& operator=(struct ClimateParameters const &) = delete;
-    ClimateParameters(struct ClimateParameters const &) = delete;
+    class ClimateParameters& operator=(class ClimateParameters const &) = delete;
+    ClimateParameters(class ClimateParameters const &) = delete;
     ClimateParameters() = delete;
 #endif
 
 public:
     /**
-     * @hash   -828920042
-     * @symbol  ??0ClimateParameters\@\@QEAA\@UParameter\@ClimateUtils\@\@00000M\@Z
+     * @symbol ??0ClimateParameters\@\@QEAA\@UParameter\@ClimateUtils\@\@00000M\@Z
      */
     MCAPI ClimateParameters(struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, struct ClimateUtils::Parameter, float);
     /**
-     * @hash   757352822
-     * @symbol  ?fitness\@ClimateParameters\@\@QEBA_JAEBUTargetPoint\@\@\@Z
+     * @symbol ?fitness\@ClimateParameters\@\@QEBA_JAEBUTargetPoint\@\@\@Z
      */
     MCAPI __int64 fitness(struct TargetPoint const &) const;
 

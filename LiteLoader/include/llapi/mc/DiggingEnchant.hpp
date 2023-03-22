@@ -31,66 +31,60 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~DiggingEnchant();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1241984699
-     * @vftbl  2
-     * @symbol  ?getMinCost\@DiggingEnchant\@\@UEBAHH\@Z
+     * @vftbl 2
+     * @symbol ?getMinCost\@DiggingEnchant\@\@UEBAHH\@Z
      */
     virtual int getMinCost(int) const;
     /**
-     * @hash   -2000764957
-     * @vftbl  3
-     * @symbol  ?getMaxCost\@DiggingEnchant\@\@UEBAHH\@Z
+     * @vftbl 3
+     * @symbol ?getMaxCost\@DiggingEnchant\@\@UEBAHH\@Z
      */
     virtual int getMaxCost(int) const;
     /**
-     * @hash   -703711675
-     * @vftbl  5
-     * @symbol  ?getMaxLevel\@DiggingEnchant\@\@UEBAHXZ
+     * @vftbl 5
+     * @symbol ?getMaxLevel\@DiggingEnchant\@\@UEBAHXZ
      */
     virtual int getMaxLevel() const;
     /**
-     * @vftbl  10
-     * @symbol  __unk_vfn_10
+     * @vftbl 10
+     * @symbol __unk_vfn_10
      */
     virtual void __unk_vfn_10();
     /**
-     * @vftbl  11
-     * @symbol  __unk_vfn_11
+     * @vftbl 11
+     * @symbol __unk_vfn_11
      */
     virtual void __unk_vfn_11();
     /**
-     * @vftbl  12
-     * @symbol  __unk_vfn_12
+     * @vftbl 12
+     * @symbol __unk_vfn_12
      */
     virtual void __unk_vfn_12();
     /**
-     * @vftbl  13
-     * @symbol  __unk_vfn_13
+     * @vftbl 13
+     * @symbol __unk_vfn_13
      */
     virtual void __unk_vfn_13();
     /**
-     * @hash   776768534
-     * @vftbl  14
-     * @symbol  ?_isValidEnchantmentTypeForCategory\@DiggingEnchant\@\@EEBA_NW4Type\@Enchant\@\@\@Z
+     * @vftbl 14
+     * @symbol ?_isValidEnchantmentTypeForCategory\@DiggingEnchant\@\@EEBA_NW4Type\@Enchant\@\@\@Z
      */
     virtual bool _isValidEnchantmentTypeForCategory(enum class Enchant::Type) const;
     /**
-     * @hash   781166829
-     * @symbol  ??0DiggingEnchant\@\@QEAA\@W4Type\@Enchant\@\@W4Frequency\@2\@V?$basic_string_span\@$$CBD$0?0\@gsl\@\@2HH\@Z
+     * @symbol ??0DiggingEnchant\@\@QEAA\@W4Type\@Enchant\@\@W4Frequency\@2\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@2HH\@Z
      */
-    MCAPI DiggingEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int);
+    MCAPI DiggingEnchant(enum class Enchant::Type, enum class Enchant::Frequency, class std::basic_string_view<char, struct std::char_traits<char>>, class std::basic_string_view<char, struct std::char_traits<char>>, int, int);
 
 //private:
 
 private:
     /**
-     * @hash   -736723307
-     * @symbol  ?VALID_ENCHANTMENTS\@DiggingEnchant\@\@0V?$vector\@W4Type\@Enchant\@\@V?$allocator\@W4Type\@Enchant\@\@\@std\@\@\@std\@\@B
+     * @symbol ?VALID_ENCHANTMENTS\@DiggingEnchant\@\@0V?$vector\@W4Type\@Enchant\@\@V?$allocator\@W4Type\@Enchant\@\@\@std\@\@\@std\@\@B
      */
     MCAPI static std::vector<enum class Enchant::Type> const VALID_ENCHANTMENTS;
 

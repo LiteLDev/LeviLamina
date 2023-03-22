@@ -31,26 +31,23 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~RotateState();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1271745198
-     * @vftbl  1
-     * @symbol  ?tick\@RotateState\@\@UEAAXXZ
+     * @vftbl 1
+     * @symbol ?tick\@RotateState\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -408737741
-     * @vftbl  2
-     * @symbol  ?start\@PetSleepWithOwnerState\@\@UEAAXXZ
+     * @vftbl 2
+     * @symbol ?start\@PetSleepWithOwnerState\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   989215827
-     * @vftbl  3
-     * @symbol  ?stop\@PetSleepWithOwnerState\@\@UEAAXXZ
+     * @vftbl 3
+     * @symbol ?stop\@PetSleepWithOwnerState\@\@UEAAXXZ
      */
     virtual void stop();
 

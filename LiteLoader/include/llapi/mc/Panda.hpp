@@ -32,193 +32,172 @@ public:
 
 public:
     /**
-     * @vftbl  16
-     * @symbol  __unk_destructor_16
+     * @vftbl 16
+     * @symbol __unk_vfn_16
      */
-    virtual ~Panda();
+    virtual void __unk_vfn_16();
     /**
-     * @vftbl  41
-     * @symbol  __unk_vfn_41
+     * @vftbl 41
+     * @symbol __unk_vfn_41
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   1361210369
-     * @vftbl  49
-     * @symbol  ?normalTick\@Panda\@\@UEAAXXZ
-     */
-    virtual void normalTick();
-    /**
-     * @vftbl  62
-     * @symbol  __unk_vfn_62
+     * @vftbl 62
+     * @symbol __unk_vfn_62
      */
     virtual void __unk_vfn_62();
     /**
-     * @vftbl  69
-     * @symbol  __unk_vfn_69
+     * @vftbl 69
+     * @symbol __unk_vfn_69
      */
     virtual void __unk_vfn_69();
     /**
-     * @vftbl  83
-     * @symbol  __unk_vfn_83
+     * @vftbl 82
+     * @symbol __unk_vfn_82
      */
-    virtual void __unk_vfn_83();
+    virtual void __unk_vfn_82();
     /**
-     * @vftbl  86
-     * @symbol  __unk_vfn_86
+     * @vftbl 85
+     * @symbol __unk_vfn_85
      */
-    virtual void __unk_vfn_86();
+    virtual void __unk_vfn_85();
     /**
-     * @vftbl  89
-     * @symbol  __unk_vfn_89
+     * @vftbl 88
+     * @symbol __unk_vfn_88
      */
-    virtual void __unk_vfn_89();
+    virtual void __unk_vfn_88();
     /**
-     * @vftbl  97
-     * @symbol  __unk_vfn_97
+     * @vftbl 96
+     * @symbol __unk_vfn_96
      */
-    virtual void __unk_vfn_97();
+    virtual void __unk_vfn_96();
     /**
-     * @vftbl  100
-     * @symbol  __unk_vfn_100
+     * @vftbl 99
+     * @symbol __unk_vfn_99
      */
-    virtual void __unk_vfn_100();
+    virtual void __unk_vfn_99();
     /**
-     * @vftbl  107
-     * @symbol  __unk_vfn_107
+     * @vftbl 106
+     * @symbol __unk_vfn_106
      */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_106();
     /**
-     * @vftbl  109
-     * @symbol  __unk_vfn_109
+     * @vftbl 108
+     * @symbol __unk_vfn_108
+     */
+    virtual void __unk_vfn_108();
+    /**
+     * @vftbl 109
+     * @symbol __unk_vfn_109
      */
     virtual void __unk_vfn_109();
     /**
-     * @vftbl  110
-     * @symbol  __unk_vfn_110
+     * @vftbl 111
+     * @symbol __unk_vfn_111
      */
-    virtual void __unk_vfn_110();
+    virtual void __unk_vfn_111();
     /**
-     * @vftbl  112
-     * @symbol  __unk_vfn_112
-     */
-    virtual void __unk_vfn_112();
-    /**
-     * @hash   555176714
-     * @vftbl  134
-     * @symbol  ?getAmbientSound\@Panda\@\@UEBA?AW4LevelSoundEvent\@\@XZ
+     * @vftbl 133
+     * @symbol ?getAmbientSound\@Panda\@\@UEBA?AW4LevelSoundEvent\@\@XZ
      */
     virtual enum class LevelSoundEvent getAmbientSound() const;
     /**
-     * @vftbl  179
-     * @symbol  __unk_vfn_179
+     * @vftbl 178
+     * @symbol __unk_vfn_178
      */
-    virtual void __unk_vfn_179();
+    virtual void __unk_vfn_178();
     /**
-     * @vftbl  193
-     * @symbol  __unk_vfn_193
+     * @vftbl 192
+     * @symbol __unk_vfn_192
      */
-    virtual void __unk_vfn_193();
+    virtual void __unk_vfn_192();
     /**
-     * @vftbl  218
-     * @symbol  __unk_vfn_218
+     * @vftbl 217
+     * @symbol __unk_vfn_217
+     */
+    virtual void __unk_vfn_217();
+    /**
+     * @vftbl 218
+     * @symbol __unk_vfn_218
      */
     virtual void __unk_vfn_218();
     /**
-     * @vftbl  219
-     * @symbol  __unk_vfn_219
+     * @vftbl 240
+     * @symbol __unk_vfn_240
      */
-    virtual void __unk_vfn_219();
+    virtual void __unk_vfn_240();
     /**
-     * @vftbl  241
-     * @symbol  __unk_vfn_241
+     * @vftbl 243
+     * @symbol __unk_vfn_243
      */
-    virtual void __unk_vfn_241();
+    virtual void __unk_vfn_243();
     /**
-     * @vftbl  244
-     * @symbol  __unk_vfn_244
+     * @vftbl 260
+     * @symbol __unk_vfn_260
      */
-    virtual void __unk_vfn_244();
+    virtual void __unk_vfn_260();
     /**
-     * @vftbl  262
-     * @symbol  __unk_vfn_262
-     */
-    virtual void __unk_vfn_262();
-    /**
-     * @hash   1604068797
-     * @vftbl  266
-     * @symbol  ?readAdditionalSaveData\@Panda\@\@UEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
+     * @vftbl 264
+     * @symbol ?readAdditionalSaveData\@Panda\@\@UEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vftbl  270
-     * @symbol  __unk_vfn_270
+     * @vftbl 268
+     * @symbol __unk_vfn_268
      */
-    virtual void __unk_vfn_270();
+    virtual void __unk_vfn_268();
     /**
-     * @hash   3807161
-     * @vftbl  276
-     * @symbol  ?_onSizeUpdated\@Panda\@\@UEAAXXZ
+     * @vftbl 274
+     * @symbol ?_onSizeUpdated\@Panda\@\@UEAAXXZ
      */
     virtual void _onSizeUpdated();
     /**
-     * @vftbl  277
-     * @symbol  __unk_vfn_277
+     * @vftbl 275
+     * @symbol __unk_vfn_275
      */
-    virtual void __unk_vfn_277();
+    virtual void __unk_vfn_275();
     /**
-     * @vftbl  285
-     * @symbol  __unk_vfn_285
+     * @vftbl 301
+     * @symbol __unk_vfn_301
      */
-    virtual void __unk_vfn_285();
+    virtual void __unk_vfn_301();
     /**
-     * @vftbl  304
-     * @symbol  __unk_vfn_304
+     * @vftbl 305
+     * @symbol __unk_vfn_305
      */
-    virtual void __unk_vfn_304();
+    virtual void __unk_vfn_305();
     /**
-     * @vftbl  308
-     * @symbol  __unk_vfn_308
-     */
-    virtual void __unk_vfn_308();
-    /**
-     * @hash   1418166222
-     * @vftbl  337
-     * @symbol  ?setTransitioningSitting\@Panda\@\@UEAAX_N\@Z
+     * @vftbl 334
+     * @symbol ?setTransitioningSitting\@Panda\@\@UEAAX_N\@Z
      */
     virtual void setTransitioningSitting(bool);
     /**
-     * @vftbl  354
-     * @symbol  __unk_vfn_354
+     * @vftbl 351
+     * @symbol __unk_vfn_351
      */
-    virtual void __unk_vfn_354();
+    virtual void __unk_vfn_351();
     /**
-     * @hash   964414966
-     * @symbol  ??0Panda\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
+     * @symbol ??0Panda\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Panda(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   232344435
-     * @symbol  ?getLieOnBackAmount\@Panda\@\@QEBAMM\@Z
+     * @symbol ?getLieOnBackAmount\@Panda\@\@QEBAMM\@Z
      */
     MCAPI float getLieOnBackAmount(float) const;
     /**
-     * @hash   -1443221469
-     * @symbol  ?getSitAmount\@Panda\@\@QEBAMM\@Z
+     * @symbol ?getSitAmount\@Panda\@\@QEBAMM\@Z
      */
     MCAPI float getSitAmount(float) const;
     /**
-     * @hash   656126838
-     * @symbol  ?getSneezeCounter\@Panda\@\@QEBAHXZ
+     * @symbol ?getSneezeCounter\@Panda\@\@QEBAHXZ
      */
     MCAPI int getSneezeCounter() const;
     /**
-     * @hash   1970356862
-     * @symbol  ?getUnhappyCounter\@Panda\@\@QEBAHXZ
+     * @symbol ?getUnhappyCounter\@Panda\@\@QEBAHXZ
      */
     MCAPI int getUnhappyCounter() const;
     /**
-     * @hash   -49811589
-     * @symbol  ?postNormalTick\@Panda\@\@QEAAXXZ
+     * @symbol ?postNormalTick\@Panda\@\@QEAAXXZ
      */
     MCAPI void postNormalTick();
 

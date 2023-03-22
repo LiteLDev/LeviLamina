@@ -43,24 +43,24 @@ private:
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYACTION
 public:
-    class InventoryAction& operator=(class InventoryAction const &) = delete;
     InventoryAction() = delete;
 #endif
 
 public:
     /**
-     * @hash   -158385615
-     * @symbol  ??0InventoryAction\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0InventoryAction\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI InventoryAction(class InventoryAction const &);
     /**
-     * @hash   -125567695
-     * @symbol  ?postLoadItems\@InventoryAction\@\@QEAAXAEAVBlockPalette\@\@_N\@Z
+     * @symbol ??4InventoryAction\@\@QEAAAEAV0\@AEBV0\@\@Z
+     */
+    MCAPI class InventoryAction & operator=(class InventoryAction const &);
+    /**
+     * @symbol ?postLoadItems\@InventoryAction\@\@QEAAXAEAVBlockPalette\@\@_N\@Z
      */
     MCAPI void postLoadItems(class BlockPalette &, bool);
     /**
-     * @hash   160091950
-     * @symbol  ??1InventoryAction\@\@QEAA\@XZ
+     * @symbol ??1InventoryAction\@\@QEAA\@XZ
      */
     MCAPI ~InventoryAction();
 

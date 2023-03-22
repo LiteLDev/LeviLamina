@@ -28,21 +28,19 @@ public:
 
 public:
     /**
-     * @hash   -1612885493
-     * @symbol  ??0CommandArea\@\@QEAA\@V?$unique_ptr\@VChunkViewSource\@\@U?$default_delete\@VChunkViewSource\@\@\@std\@\@\@std\@\@\@Z
+     * @symbol ??0CommandArea\@\@QEAA\@V?$unique_ptr\@VChunkViewSource\@\@U?$default_delete\@VChunkViewSource\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI CommandArea(std::unique_ptr<class ChunkViewSource>);
     /**
-     * @symbol  ?getDimensionBlockSource\@CommandArea\@\@QEAAAEAVBlockSource\@\@XZ
+     * @symbol ?getDimensionBlockSource\@CommandArea\@\@QEAAAEAVBlockSource\@\@XZ
      */
     MCAPI class BlockSource & getDimensionBlockSource();
     /**
-     * @symbol  ?getDimensionBlockSource\@CommandArea\@\@QEBAAEBVBlockSource\@\@XZ
+     * @symbol ?getDimensionBlockSource\@CommandArea\@\@QEBAAEBVBlockSource\@\@XZ
      */
     MCAPI class BlockSource const & getDimensionBlockSource() const;
     /**
-     * @hash   1971547684
-     * @symbol  ??1CommandArea\@\@QEAA\@XZ
+     * @symbol ??1CommandArea\@\@QEAA\@XZ
      */
     MCAPI ~CommandArea();
 

@@ -29,47 +29,42 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~TeleportToSubcomponent();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  __unk_vfn_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
     virtual void __unk_vfn_1();
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
-     * @hash   -296305729
-     * @vftbl  3
-     * @symbol  ?doOnHitEffect\@TeleportToSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
+     * @vftbl 3
+     * @symbol ?doOnHitEffect\@TeleportToSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @hash   -425895190
-     * @vftbl  4
-     * @symbol  ?getName\@TeleportToSubcomponent\@\@UEAAPEBDXZ
+     * @vftbl 4
+     * @symbol ?getName\@TeleportToSubcomponent\@\@UEAAPEBDXZ
      */
     virtual char const * getName();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TELEPORTTOSUBCOMPONENT
     /**
-     * @hash   -1419936059
-     * @symbol  ?readfromJSON\@TeleportToSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
+     * @symbol ?readfromJSON\@TeleportToSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
     MCVAPI void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
-     * @hash   -1335638060
-     * @symbol  ?writetoJSON\@TeleportToSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
+     * @symbol ?writetoJSON\@TeleportToSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
     MCVAPI void writetoJSON(class Json::Value &) const;
 #endif
     /**
-     * @hash   1128518479
-     * @symbol  ??0TeleportToSubcomponent\@\@QEAA\@XZ
+     * @symbol ??0TeleportToSubcomponent\@\@QEAA\@XZ
      */
     MCAPI TeleportToSubcomponent();
 

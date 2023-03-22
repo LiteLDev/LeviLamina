@@ -11,11 +11,8 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC structure LibraryScreenCapabilities.
- *
- */
-struct LibraryScreenCapabilities {
+
+class LibraryScreenCapabilities {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -23,22 +20,27 @@ struct LibraryScreenCapabilities {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LIBRARYSCREENCAPABILITIES
 public:
-    struct LibraryScreenCapabilities& operator=(struct LibraryScreenCapabilities const &) = delete;
-    LibraryScreenCapabilities(struct LibraryScreenCapabilities const &) = delete;
+    class LibraryScreenCapabilities& operator=(class LibraryScreenCapabilities const &) = delete;
+    LibraryScreenCapabilities(class LibraryScreenCapabilities const &) = delete;
     LibraryScreenCapabilities() = delete;
 #endif
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~LibraryScreenCapabilities();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1089007670
-     * @vftbl  1
-     * @symbol  ?isOfType\@?$TypedScreenCapabilities\@ULibraryScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
+     * @vftbl 1
+     * @symbol ?isOfType\@?$TypedScreenCapabilities\@ULibraryScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
      */
     virtual bool isOfType(class typeid_t<class IScreenCapabilities>) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LIBRARYSCREENCAPABILITIES
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~LibraryScreenCapabilities();
+#endif
 
 };

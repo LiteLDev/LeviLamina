@@ -32,38 +32,38 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~NetworkItemInstanceDescriptor();
+    virtual void __unk_vfn_0();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKITEMINSTANCEDESCRIPTOR
     /**
-     * @hash   -99591396
-     * @symbol  ??0NetworkItemInstanceDescriptor\@\@QEAA\@AEBVItemStackDescriptor\@\@\@Z
+     * @symbol __unk_destructor_-1
      */
-    MCAPI NetworkItemInstanceDescriptor(class ItemStackDescriptor const &);
+    MCVAPI ~NetworkItemInstanceDescriptor();
+#endif
     /**
-     * @hash   -777832554
-     * @symbol  ??0NetworkItemInstanceDescriptor\@\@QEAA\@AEBVItemInstance\@\@\@Z
+     * @symbol ??0NetworkItemInstanceDescriptor\@\@QEAA\@AEBVItemInstance\@\@\@Z
      */
     MCAPI NetworkItemInstanceDescriptor(class ItemInstance const &);
     /**
-     * @hash   -265776109
-     * @symbol  ??0NetworkItemInstanceDescriptor\@\@QEAA\@$$QEAV0\@\@Z
+     * @symbol ??0NetworkItemInstanceDescriptor\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI NetworkItemInstanceDescriptor(class NetworkItemInstanceDescriptor &&);
     /**
-     * @hash   -1523630815
-     * @symbol  ?getItemInstance\@NetworkItemInstanceDescriptor\@\@QEBA?AVItemInstance\@\@AEBVBlockPalette\@\@\@Z
+     * @symbol ??0NetworkItemInstanceDescriptor\@\@QEAA\@AEBVItemStackDescriptor\@\@\@Z
+     */
+    MCAPI NetworkItemInstanceDescriptor(class ItemStackDescriptor const &);
+    /**
+     * @symbol ?getItemInstance\@NetworkItemInstanceDescriptor\@\@QEBA?AVItemInstance\@\@AEBVBlockPalette\@\@\@Z
      */
     MCAPI class ItemInstance getItemInstance(class BlockPalette const &) const;
     /**
-     * @hash   -44296498
-     * @symbol  ?read\@NetworkItemInstanceDescriptor\@\@QEAAXAEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?read\@NetworkItemInstanceDescriptor\@\@QEAAXAEAVReadOnlyBinaryStream\@\@\@Z
      */
     MCAPI void read(class ReadOnlyBinaryStream &);
     /**
-     * @hash   79225842
-     * @symbol  ?write\@NetworkItemInstanceDescriptor\@\@QEBAXAEAVBinaryStream\@\@\@Z
+     * @symbol ?write\@NetworkItemInstanceDescriptor\@\@QEBAXAEAVBinaryStream\@\@\@Z
      */
     MCAPI void write(class BinaryStream &) const;
 

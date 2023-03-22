@@ -34,23 +34,19 @@ public:
 
 public:
     /**
-     * @hash   2135046607
-     * @symbol  ??0FeedItem\@\@QEAA\@AEBU0\@\@Z
+     * @symbol ??0FeedItem\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI FeedItem(struct FeedItem const &);
     /**
-     * @hash   839427822
-     * @symbol  ?addEffect\@FeedItem\@\@QEAAXAEBUEffect\@1\@\@Z
+     * @symbol ?addEffect\@FeedItem\@\@QEAAXAEBUEffect\@1\@\@Z
      */
     MCAPI void addEffect(struct FeedItem::Effect const &);
     /**
-     * @hash   1743406886
-     * @symbol  ??4FeedItem\@\@QEAAAEAU0\@$$QEAU0\@\@Z
+     * @symbol ??4FeedItem\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct FeedItem & operator=(struct FeedItem &&);
     /**
-     * @hash   -93694053
-     * @symbol  ??1FeedItem\@\@QEAA\@XZ
+     * @symbol ??1FeedItem\@\@QEAA\@XZ
      */
     MCAPI ~FeedItem();
 

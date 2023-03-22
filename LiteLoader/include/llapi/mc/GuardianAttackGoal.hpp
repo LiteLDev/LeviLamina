@@ -30,54 +30,47 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~GuardianAttackGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   337867588
-     * @vftbl  1
-     * @symbol  ?canUse\@GuardianAttackGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@GuardianAttackGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   -1679723806
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@GuardianAttackGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@GuardianAttackGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   190066029
-     * @vftbl  4
-     * @symbol  ?start\@GuardianAttackGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@GuardianAttackGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   1445560685
-     * @vftbl  5
-     * @symbol  ?stop\@GuardianAttackGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@GuardianAttackGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @hash   -731179720
-     * @vftbl  6
-     * @symbol  ?tick\@GuardianAttackGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@GuardianAttackGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   893604684
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@GuardianAttackGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@GuardianAttackGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   -881161183
-     * @symbol  ??0GuardianAttackGoal\@\@QEAA\@AEAVMob\@\@\@Z
+     * @symbol ??0GuardianAttackGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI GuardianAttackGoal(class Mob &);
 

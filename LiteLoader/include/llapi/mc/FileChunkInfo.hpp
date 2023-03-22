@@ -30,18 +30,15 @@ public:
 
 public:
     /**
-     * @hash   -514826350
-     * @symbol  ??0FileChunkInfo\@\@QEAA\@H_K0\@Z
+     * @symbol ??0FileChunkInfo\@\@QEAA\@H_K0\@Z
      */
     MCAPI FileChunkInfo(int, unsigned __int64, unsigned __int64);
     /**
-     * @hash   1899092784
-     * @symbol  ?isValid\@FileChunkInfo\@\@QEBA_NXZ
+     * @symbol ?isValid\@FileChunkInfo\@\@QEBA_NXZ
      */
     MCAPI bool isValid() const;
     /**
-     * @hash   -1900604056
-     * @symbol  ?size\@FileChunkInfo\@\@QEBAHXZ
+     * @symbol ?size\@FileChunkInfo\@\@QEBAHXZ
      */
     MCAPI int size() const;
 

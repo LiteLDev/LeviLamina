@@ -11,11 +11,8 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC structure HudScreenCapabilities.
- *
- */
-struct HudScreenCapabilities {
+
+class HudScreenCapabilities {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -23,21 +20,20 @@ struct HudScreenCapabilities {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HUDSCREENCAPABILITIES
 public:
-    struct HudScreenCapabilities& operator=(struct HudScreenCapabilities const &) = delete;
-    HudScreenCapabilities(struct HudScreenCapabilities const &) = delete;
+    class HudScreenCapabilities& operator=(class HudScreenCapabilities const &) = delete;
+    HudScreenCapabilities(class HudScreenCapabilities const &) = delete;
     HudScreenCapabilities() = delete;
 #endif
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~HudScreenCapabilities();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -270923934
-     * @vftbl  1
-     * @symbol  ?isOfType\@?$TypedScreenCapabilities\@UHudScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
+     * @vftbl 1
+     * @symbol ?isOfType\@?$TypedScreenCapabilities\@UHudScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
      */
     virtual bool isOfType(class typeid_t<class IScreenCapabilities>) const;
 

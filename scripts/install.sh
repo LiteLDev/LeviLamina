@@ -1,8 +1,8 @@
 #!/bin/bash
-# Install wine
 codename=$(lsb_release -c --short)
-BDSVER="1.19.51.01"
-LLVER="2.9.3"
+lip_version=0.12.0
+
+# Install wine
 sudo apt install -y wget unzip
 sudo dpkg --add-architecture i386
 sudo mkdir -pm755 /etc/apt/keyrings
@@ -11,19 +11,18 @@ sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/
 sudo apt update
 sudo apt install winehq-stable -y
 
-# Install Bedrock Dedicated Server
-wget https://minecraft.azureedge.net/bin-win/bedrock-server-${BDSVER}.zip
-unzip bedrock-server-${BDSVER}.zip -d bedrock_server
+# Install Lip
+wget https://github.com/LiteLDev/Lip/releases/download/v0.12.0/lip-${lip_version}-linux-amd64.tar.gz
+tar -xvf lip-${lip_version}-linux-amd64.tar.gz
+chmod +x lip-${lip_version}-linux-amd64/lip
+
+# Install BDS
+mkdir bedrock_server
 cd bedrock_server
-wget https://github.com/LiteLDev/liteloaderbds-docker/raw/main/vcruntime140_1.dll
-cd ..
-rm bedrock-server-${BDSVER}.zip
+./../lip-${lip_version}-linux-amd64/lip install -y bds
 
 # Install LiteLoaderBDS
-wget https://github.com/LiteLDev/LiteLoaderBDS/releases/download/${LLVER}/LiteLoader-${LLVER}.zip
-unzip LiteLoader-${LLVER}.zip -d bedrock_server
-rm LiteLoader-${LLVER}.zip
-cd bedrock_server
-wine LLPeEditor.exe
+./../lip-${lip_version}-linux-amd64/lip install ll
+WINEDEBUG=-all wine LLPeEditor.exe
 
 echo Done!

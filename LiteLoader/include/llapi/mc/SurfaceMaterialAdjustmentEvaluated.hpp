@@ -30,18 +30,15 @@ public:
 
 public:
     /**
-     * @hash   -1396844794
-     * @symbol  ?empty\@SurfaceMaterialAdjustmentEvaluated\@\@QEBA_NXZ
+     * @symbol ?empty\@SurfaceMaterialAdjustmentEvaluated\@\@QEBA_NXZ
      */
     MCAPI bool empty() const;
     /**
-     * @hash   -1337500323
-     * @symbol  ?makeAdjustments\@SurfaceMaterialAdjustmentEvaluated\@\@QEBAXAEAUSurfaceMaterialBlocks\@\@H\@Z
+     * @symbol ?makeAdjustments\@SurfaceMaterialAdjustmentEvaluated\@\@QEBAXAEAUSurfaceMaterialBlocks\@\@H\@Z
      */
     MCAPI void makeAdjustments(struct SurfaceMaterialBlocks &, int) const;
     /**
-     * @hash   -387234572
-     * @symbol  ??1SurfaceMaterialAdjustmentEvaluated\@\@QEAA\@XZ
+     * @symbol ??1SurfaceMaterialAdjustmentEvaluated\@\@QEAA\@XZ
      */
     MCAPI ~SurfaceMaterialAdjustmentEvaluated();
 

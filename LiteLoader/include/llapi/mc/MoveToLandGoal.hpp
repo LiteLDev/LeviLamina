@@ -31,58 +31,52 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~MoveToLandGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -185174282
-     * @vftbl  1
-     * @symbol  ?canUse\@MoveToLandGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@MoveToLandGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   -127502572
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@MoveToLandGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@MoveToLandGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   -2048761542
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@MoveToLandGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@MoveToLandGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @vftbl  8
-     * @symbol  __unk_vfn_8
+     * @vftbl 8
+     * @symbol __unk_vfn_8
      */
     virtual void __unk_vfn_8();
     /**
-     * @vftbl  9
-     * @symbol  __unk_vfn_9
+     * @vftbl 9
+     * @symbol __unk_vfn_9
      */
     virtual void __unk_vfn_9();
     /**
-     * @hash   1582323624
-     * @vftbl  11
-     * @symbol  ?isValidTarget\@MoveToLandGoal\@\@UEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     * @vftbl 11
+     * @symbol ?isValidTarget\@MoveToLandGoal\@\@UEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &);
     /**
-     * @hash   -1335344920
-     * @vftbl  14
-     * @symbol  ?_moveToBlock\@MoveToLandGoal\@\@MEAAXXZ
+     * @vftbl 14
+     * @symbol ?_moveToBlock\@MoveToLandGoal\@\@MEAAXXZ
      */
     virtual void _moveToBlock();
     /**
-     * @hash   913858316
-     * @symbol  ??0MoveToLandGoal\@\@QEAA\@AEAVMob\@\@MHHHM\@Z
+     * @symbol ??0MoveToLandGoal\@\@QEAA\@AEAVMob\@\@MHHHM\@Z
      */
     MCAPI MoveToLandGoal(class Mob &, float, int, int, int, float);
 

@@ -31,33 +31,35 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~PlayerEnchantOptionsPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -644790304
-     * @vftbl  1
-     * @symbol  ?getId\@PlayerEnchantOptionsPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@PlayerEnchantOptionsPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   670811853
-     * @vftbl  2
-     * @symbol  ?getName\@PlayerEnchantOptionsPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@PlayerEnchantOptionsPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   -491040918
-     * @vftbl  3
-     * @symbol  ?write\@PlayerEnchantOptionsPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@PlayerEnchantOptionsPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   -1128409606
-     * @vftbl  6
-     * @symbol  ?_read\@PlayerEnchantOptionsPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@PlayerEnchantOptionsPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERENCHANTOPTIONSPACKET
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~PlayerEnchantOptionsPacket();
+#endif
 
 };

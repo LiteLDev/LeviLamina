@@ -25,44 +25,50 @@ class PlayerScoreboardEventListener {
 public:
     class PlayerScoreboardEventListener& operator=(class PlayerScoreboardEventListener const &) = delete;
     PlayerScoreboardEventListener(class PlayerScoreboardEventListener const &) = delete;
-    PlayerScoreboardEventListener() = delete;
 #endif
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~PlayerScoreboardEventListener();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  __unk_vfn_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
     virtual void __unk_vfn_1();
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   -288797702
-     * @vftbl  4
-     * @symbol  ?onScoreChanged\@PlayerScoreboardEventListener\@\@UEAA?AW4EventResult\@\@AEBUScoreboardId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
+     * @vftbl 4
+     * @symbol ?onScoreChanged\@PlayerScoreboardEventListener\@\@UEAA?AW4EventResult\@\@AEBUScoreboardId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     virtual enum class EventResult onScoreChanged(struct ScoreboardId const &, std::string const &, int);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERSCOREBOARDEVENTLISTENER
     /**
-     * @hash   -1228493826
-     * @symbol  ?getPlayerSubscriptions\@PlayerScoreboardEventListener\@\@QEAAAEAVSubscribedObjectives\@\@AEBUScoreboardId\@\@AEBVPlayer\@\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~PlayerScoreboardEventListener();
+#endif
+    /**
+     * @symbol ??0PlayerScoreboardEventListener\@\@QEAA\@XZ
+     */
+    MCAPI PlayerScoreboardEventListener();
+    /**
+     * @symbol ?getPlayerSubscriptions\@PlayerScoreboardEventListener\@\@QEAAAEAVSubscribedObjectives\@\@AEBUScoreboardId\@\@AEBVPlayer\@\@\@Z
      */
     MCAPI class SubscribedObjectives & getPlayerSubscriptions(struct ScoreboardId const &, class Player const &);
     /**
-     * @hash   1853435036
-     * @symbol  ?removePlayerSubscriptions\@PlayerScoreboardEventListener\@\@QEAAXAEBUScoreboardId\@\@\@Z
+     * @symbol ?removePlayerSubscriptions\@PlayerScoreboardEventListener\@\@QEAAXAEBUScoreboardId\@\@\@Z
      */
     MCAPI void removePlayerSubscriptions(struct ScoreboardId const &);
 

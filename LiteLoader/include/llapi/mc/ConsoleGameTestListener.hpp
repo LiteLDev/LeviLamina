@@ -30,26 +30,23 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ConsoleGameTestListener();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   2047910271
-     * @vftbl  1
-     * @symbol  ?onTestStructureLoaded\@ConsoleGameTestListener\@\@UEAAXAEAVBaseGameTestInstance\@gametest\@\@\@Z
+     * @vftbl 1
+     * @symbol ?onTestStructureLoaded\@ConsoleGameTestListener\@\@UEAAXAEAVBaseGameTestInstance\@gametest\@\@\@Z
      */
     virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance &);
     /**
-     * @hash   -1100721787
-     * @vftbl  2
-     * @symbol  ?onTestPassed\@ConsoleGameTestListener\@\@UEAAXAEAVBaseGameTestInstance\@gametest\@\@\@Z
+     * @vftbl 2
+     * @symbol ?onTestPassed\@ConsoleGameTestListener\@\@UEAAXAEAVBaseGameTestInstance\@gametest\@\@\@Z
      */
     virtual void onTestPassed(class gametest::BaseGameTestInstance &);
     /**
-     * @hash   -1698285992
-     * @vftbl  3
-     * @symbol  ?onTestFailed\@ConsoleGameTestListener\@\@UEAAXAEAVBaseGameTestInstance\@gametest\@\@\@Z
+     * @vftbl 3
+     * @symbol ?onTestFailed\@ConsoleGameTestListener\@\@UEAAXAEAVBaseGameTestInstance\@gametest\@\@\@Z
      */
     virtual void onTestFailed(class gametest::BaseGameTestInstance &);
 

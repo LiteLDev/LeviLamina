@@ -31,19 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~LevelDbRandomAccessFile();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1389349750
-     * @vftbl  1
-     * @symbol  ?Read\@LevelDbRandomAccessFile\@\@UEBA?AVStatus\@leveldb\@\@_K0PEAVSlice\@3\@PEAD\@Z
+     * @vftbl 1
+     * @symbol ?Read\@LevelDbRandomAccessFile\@\@UEBA?AVStatus\@leveldb\@\@_K0PEAVSlice\@3\@PEAD\@Z
      */
     virtual class leveldb::Status Read(unsigned __int64, unsigned __int64, class leveldb::Slice *, char *) const;
     /**
-     * @hash   -1904547994
-     * @symbol  ??0LevelDbRandomAccessFile\@\@QEAA\@$$QEAVFile\@Core\@\@\@Z
+     * @symbol ??0LevelDbRandomAccessFile\@\@QEAA\@$$QEAVFile\@Core\@\@\@Z
      */
     MCAPI LevelDbRandomAccessFile(class Core::File &&);
 

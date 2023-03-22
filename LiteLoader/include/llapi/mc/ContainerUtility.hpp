@@ -22,8 +22,7 @@ namespace ContainerUtility {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -1565981980
-     * @symbol  ?getNotNoneTypeContainerComponentFromActor\@ContainerUtility\@\@YAPEAVContainerComponent\@\@PEAVActor\@\@\@Z
+     * @symbol ?getNotNoneTypeContainerComponentFromActor\@ContainerUtility\@\@YAPEAVContainerComponent\@\@PEAVActor\@\@\@Z
      */
     MCAPI class ContainerComponent * getNotNoneTypeContainerComponentFromActor(class Actor *);
 

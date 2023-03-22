@@ -31,19 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SHStartPiece();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1658171142
-     * @vftbl  2
-     * @symbol  ?getType\@SHStartPiece\@\@UEBA?AW4StructurePieceType\@\@XZ
+     * @vftbl 2
+     * @symbol ?getType\@SHStartPiece\@\@UEBA?AW4StructurePieceType\@\@XZ
      */
     virtual enum class StructurePieceType getType() const;
     /**
-     * @hash   -1687033455
-     * @symbol  ??0SHStartPiece\@\@QEAA\@HAEAVRandom\@\@HH\@Z
+     * @symbol ??0SHStartPiece\@\@QEAA\@HAEAVRandom\@\@HH\@Z
      */
     MCAPI SHStartPiece(int, class Random &, int, int);
 

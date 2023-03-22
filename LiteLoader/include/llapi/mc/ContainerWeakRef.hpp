@@ -29,28 +29,23 @@ public:
 
 public:
     /**
-     * @hash   -1282238394
-     * @symbol  ??0ContainerWeakRef\@\@QEAA\@XZ
-     */
-    MCAPI ContainerWeakRef();
-    /**
-     * @hash   1909060373
-     * @symbol  ??0ContainerWeakRef\@\@QEAA\@AEBVBlockPos\@\@AEBV?$TypedRuntimeId\@UContainerRuntimeIdTag\@\@I$0A\@\@\@\@Z
-     */
-    MCAPI ContainerWeakRef(class BlockPos const &, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
-    /**
-     * @hash   151619182
-     * @symbol  ??0ContainerWeakRef\@\@QEAA\@AEBUActorUniqueID\@\@W4ActorContainerType\@\@AEBV?$TypedRuntimeId\@UContainerRuntimeIdTag\@\@I$0A\@\@\@\@Z
+     * @symbol ??0ContainerWeakRef\@\@QEAA\@AEBUActorUniqueID\@\@W4ActorContainerType\@\@AEBV?$TypedRuntimeId\@UContainerRuntimeIdTag\@\@I$0A\@\@\@\@Z
      */
     MCAPI ContainerWeakRef(struct ActorUniqueID const &, enum class ActorContainerType, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
     /**
-     * @hash   -1638600276
-     * @symbol  ??BContainerWeakRef\@\@QEBA_NXZ
+     * @symbol ??0ContainerWeakRef\@\@QEAA\@AEBVBlockPos\@\@AEBV?$TypedRuntimeId\@UContainerRuntimeIdTag\@\@I$0A\@\@\@\@Z
+     */
+    MCAPI ContainerWeakRef(class BlockPos const &, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
+    /**
+     * @symbol ??0ContainerWeakRef\@\@QEAA\@XZ
+     */
+    MCAPI ContainerWeakRef();
+    /**
+     * @symbol ??BContainerWeakRef\@\@QEBA_NXZ
      */
     MCAPI operator bool() const;
     /**
-     * @hash   -441737836
-     * @symbol  ??1ContainerWeakRef\@\@QEAA\@XZ
+     * @symbol ??1ContainerWeakRef\@\@QEAA\@XZ
      */
     MCAPI ~ContainerWeakRef();
 

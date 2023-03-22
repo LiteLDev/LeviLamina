@@ -31,24 +31,21 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~UnderwaterCaveFeature();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -386866619
-     * @vftbl  5
-     * @symbol  ?carveEllipsoidVolume\@UnderwaterCaveFeature\@\@MEBA_NAEAVIBlockWorldGenAPI\@\@AEBUCarverConfiguration\@CaveFeatureUtils\@\@AEAVRandom\@\@AEBVChunkPos\@\@AEBVVec3\@\@AEBVBoundingBox\@\@MMAEBUCarvingParameters\@4\@\@Z
+     * @vftbl 5
+     * @symbol ?carveEllipsoidVolume\@UnderwaterCaveFeature\@\@MEBA_NAEAVIBlockWorldGenAPI\@\@AEBUCarverConfiguration\@CaveFeatureUtils\@\@AEAVRandom\@\@AEBVChunkPos\@\@AEBVVec3\@\@AEBVBoundingBox\@\@MMAEBUCarvingParameters\@4\@\@Z
      */
     virtual bool carveEllipsoidVolume(class IBlockWorldGenAPI &, struct CaveFeatureUtils::CarverConfiguration const &, class Random &, class ChunkPos const &, class Vec3 const &, class BoundingBox const &, float, float, struct CaveFeatureUtils::CarvingParameters const &) const;
     /**
-     * @hash   2122776022
-     * @symbol  ??0UnderwaterCaveFeature\@\@QEAA\@XZ
+     * @symbol ??0UnderwaterCaveFeature\@\@QEAA\@XZ
      */
     MCAPI UnderwaterCaveFeature();
     /**
-     * @hash   -1617885847
-     * @symbol  ?isDiggable\@UnderwaterCaveFeature\@\@SA_NAEBVBlock\@\@\@Z
+     * @symbol ?isDiggable\@UnderwaterCaveFeature\@\@SA_NAEBVBlock\@\@\@Z
      */
     MCAPI static bool isDiggable(class Block const &);
 

@@ -32,64 +32,54 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BannerAddPatternRecipe();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   588916967
-     * @vftbl  1
-     * @symbol  ?assemble\@BannerAddPatternRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@\@Z
+     * @vftbl 1
+     * @symbol ?assemble\@BannerAddPatternRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@\@Z
      */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
     /**
-     * @hash   506854219
-     * @vftbl  2
-     * @symbol  ?getCraftingSize\@BannerAddPatternRecipe\@\@UEBAHXZ
+     * @vftbl 2
+     * @symbol ?getCraftingSize\@BannerAddPatternRecipe\@\@UEBAHXZ
      */
     virtual int getCraftingSize() const;
     /**
-     * @hash   1579713836
-     * @vftbl  3
-     * @symbol  ?getIngredient\@BannerAddPatternRecipe\@\@UEBAAEBVRecipeIngredient\@\@HH\@Z
+     * @vftbl 3
+     * @symbol ?getIngredient\@BannerAddPatternRecipe\@\@UEBAAEBVRecipeIngredient\@\@HH\@Z
      */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
     /**
-     * @hash   -1714578376
-     * @vftbl  4
-     * @symbol  ?getResultItem\@BannerAddPatternRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 4
+     * @symbol ?getResultItem\@BannerAddPatternRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
     /**
-     * @hash   -1291774419
-     * @vftbl  6
-     * @symbol  ?matches\@BannerAddPatternRecipe\@\@UEBA_NAEAVCraftingContainer\@\@AEAVLevel\@\@\@Z
+     * @vftbl 6
+     * @symbol ?matches\@BannerAddPatternRecipe\@\@UEBA_NAEAVCraftingContainer\@\@AEAVLevel\@\@\@Z
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
-     * @hash   -398562781
-     * @vftbl  7
-     * @symbol  ?size\@BannerAddPatternRecipe\@\@UEBAHXZ
+     * @vftbl 7
+     * @symbol ?size\@BannerAddPatternRecipe\@\@UEBAHXZ
      */
     virtual int size() const;
     /**
-     * @hash   2059286513
-     * @symbol  ??0BannerAddPatternRecipe\@\@QEAA\@V?$basic_string_span\@$$CBD$0?0\@gsl\@\@AEBVUUID\@mce\@\@\@Z
+     * @symbol ??0BannerAddPatternRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@AEBVUUID\@mce\@\@\@Z
      */
-    MCAPI BannerAddPatternRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
+    MCAPI BannerAddPatternRecipe(class std::basic_string_view<char, struct std::char_traits<char>>, class mce::UUID const &);
     /**
-     * @hash   122061142
-     * @symbol  ??0BannerAddPatternRecipe\@\@QEAA\@V?$basic_string_span\@$$CBD$0?0\@gsl\@\@\@Z
+     * @symbol ??0BannerAddPatternRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI BannerAddPatternRecipe(class gsl::basic_string_span<char const, -1>);
+    MCAPI BannerAddPatternRecipe(class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
-     * @hash   -1035938712
-     * @symbol  ?matchPatterns\@BannerAddPatternRecipe\@\@QEBA?BV?$NonOwnerPointer\@$$CBVBannerPattern\@\@\@Bedrock\@\@AEAVCraftingContainer\@\@\@Z
+     * @symbol ?matchPatterns\@BannerAddPatternRecipe\@\@QEBA?BV?$NonOwnerPointer\@$$CBVBannerPattern\@\@\@Bedrock\@\@AEAVCraftingContainer\@\@\@Z
      */
     MCAPI class Bedrock::NonOwnerPointer<class BannerPattern const> const matchPatterns(class CraftingContainer &) const;
     /**
-     * @hash   -1003477269
-     * @symbol  ?ID\@BannerAddPatternRecipe\@\@2VUUID\@mce\@\@B
+     * @symbol ?ID\@BannerAddPatternRecipe\@\@2VUUID\@mce\@\@B
      */
     MCAPI static class mce::UUID const ID;
 

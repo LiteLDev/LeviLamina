@@ -31,19 +31,17 @@ public:
 
 public:
     /**
-     * @hash   473592854
-     * @symbol  ?findValidators\@ValidatorRegistry\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVValidatorRegistryValidators\@1\@\@Z
+     * @symbol ?findValidators\@ValidatorRegistry\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVValidatorRegistryValidators\@1\@\@Z
      */
     MCAPI static bool findValidators(std::string const &, class ValidatorRegistry::ValidatorRegistryValidators &);
     /**
-     * @hash   1260101760
-     * @symbol  ?registerValidators\@ValidatorRegistry\@\@SAXV?$basic_string_span\@$$CBD$0?0\@gsl\@\@V?$function\@$$A6A?AVContentTierIncompatibleReason\@\@AEBVPackInstance\@\@AEBVContentTierInfo\@\@\@Z\@std\@\@V?$function\@$$A6A?AVContentTierIncompatibleReason\@\@AEBUSubpackInfo\@\@AEBVContentTierInfo\@\@\@Z\@5\@\@Z
+     * @symbol ?registerValidators\@ValidatorRegistry\@\@SAXV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@V?$function\@$$A6A?AVContentTierIncompatibleReason\@\@AEBVPackInstance\@\@AEBVContentTierInfo\@\@\@Z\@3\@V?$function\@$$A6A?AVContentTierIncompatibleReason\@\@AEBUSubpackInfo\@\@AEBVContentTierInfo\@\@\@Z\@3\@\@Z
      */
-    MCAPI static void registerValidators(class gsl::basic_string_span<char const, -1>, class std::function<class ContentTierIncompatibleReason (class PackInstance const &, class ContentTierInfo const &)>, class std::function<class ContentTierIncompatibleReason (struct SubpackInfo const &, class ContentTierInfo const &)>);
+    MCAPI static void registerValidators(class std::basic_string_view<char, struct std::char_traits<char>>, class std::function<class ContentTierIncompatibleReason (class PackInstance const &, class ContentTierInfo const &)>, class std::function<class ContentTierIncompatibleReason (struct SubpackInfo const &, class ContentTierInfo const &)>);
 
 //private:
     /**
-     * @symbol  ?_get\@ValidatorRegistry\@\@CA?AV?$NonOwnerPointer\@VValidatorRegistry\@\@\@Bedrock\@\@XZ
+     * @symbol ?_get\@ValidatorRegistry\@\@CA?AV?$NonOwnerPointer\@VValidatorRegistry\@\@\@Bedrock\@\@XZ
      */
     MCAPI static class Bedrock::NonOwnerPointer<class ValidatorRegistry> _get();
 

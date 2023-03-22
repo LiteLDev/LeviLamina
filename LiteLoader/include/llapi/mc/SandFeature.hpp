@@ -31,19 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SandFeature();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1222959572
-     * @vftbl  3
-     * @symbol  ?place\@SandFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @vftbl 3
+     * @symbol ?place\@SandFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   2141201446
-     * @symbol  ??0SandFeature\@\@QEAA\@AEBVBlock\@\@H\@Z
+     * @symbol ??0SandFeature\@\@QEAA\@AEBVBlock\@\@H\@Z
      */
     MCAPI SandFeature(class Block const &, int);
 

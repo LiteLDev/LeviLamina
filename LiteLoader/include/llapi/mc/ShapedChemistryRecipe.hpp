@@ -31,25 +31,22 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ShapedChemistryRecipe();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1401093481
-     * @vftbl  6
-     * @symbol  ?matches\@ShapedChemistryRecipe\@\@UEBA_NAEAVCraftingContainer\@\@AEAVLevel\@\@\@Z
+     * @vftbl 6
+     * @symbol ?matches\@ShapedChemistryRecipe\@\@UEBA_NAEAVCraftingContainer\@\@AEAVLevel\@\@\@Z
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
-     * @hash   -908633227
-     * @vftbl  8
-     * @symbol  ?getId\@ShapedChemistryRecipe\@\@UEBAAEBVUUID\@mce\@\@XZ
+     * @vftbl 8
+     * @symbol ?getId\@ShapedChemistryRecipe\@\@UEBAAEBVUUID\@mce\@\@XZ
      */
     virtual class mce::UUID const & getId() const;
     /**
-     * @hash   -377625649
-     * @symbol  ?ID\@ShapedChemistryRecipe\@\@2VUUID\@mce\@\@B
+     * @symbol ?ID\@ShapedChemistryRecipe\@\@2VUUID\@mce\@\@B
      */
     MCAPI static class mce::UUID const ID;
 

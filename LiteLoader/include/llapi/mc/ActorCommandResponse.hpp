@@ -29,26 +29,23 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ActorCommandResponse();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1717293138
-     * @vftbl  1
-     * @symbol  ?getName\@ActorCommandResponse\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 1
+     * @symbol ?getName\@ActorCommandResponse\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string const & getName() const;
     /**
-     * @hash   -207034324
-     * @vftbl  2
-     * @symbol  ?executeAction\@ActorCommandResponse\@\@UEBAXAEAVRenderParams\@\@\@Z
+     * @vftbl 2
+     * @symbol ?executeAction\@ActorCommandResponse\@\@UEBAXAEAVRenderParams\@\@\@Z
      */
     virtual void executeAction(class RenderParams &) const;
     /**
-     * @hash   349963400
-     * @vftbl  3
-     * @symbol  ?buildSchema\@ActorCommandResponse\@\@UEBAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UActorEventResponseCollection\@\@\@JsonUtil\@\@\@std\@\@AEBV?$Factory\@VActorEventResponse\@\@$$V\@\@\@Z
+     * @vftbl 3
+     * @symbol ?buildSchema\@ActorCommandResponse\@\@UEBAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UActorEventResponseCollection\@\@\@JsonUtil\@\@\@std\@\@AEBV?$Factory\@VActorEventResponse\@\@$$V\@\@\@Z
      */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ActorEventResponseCollection>> &, class Factory<class ActorEventResponse> const &) const;
 

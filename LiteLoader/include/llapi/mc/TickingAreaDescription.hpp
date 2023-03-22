@@ -30,13 +30,11 @@ public:
 
 public:
     /**
-     * @hash   576377966
-     * @symbol  ?asString\@TickingAreaDescription\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?asString\@TickingAreaDescription\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string asString() const;
     /**
-     * @hash   662321188
-     * @symbol  ??1TickingAreaDescription\@\@QEAA\@XZ
+     * @symbol ??1TickingAreaDescription\@\@QEAA\@XZ
      */
     MCAPI ~TickingAreaDescription();
 

@@ -27,13 +27,11 @@ public:
 
 public:
     /**
-     * @hash   855461882
-     * @symbol  ??0CommandSyntaxInformation\@\@QEAA\@XZ
+     * @symbol ??0CommandSyntaxInformation\@\@QEAA\@XZ
      */
     MCAPI CommandSyntaxInformation();
     /**
-     * @hash   -1071481560
-     * @symbol  ??1CommandSyntaxInformation\@\@QEAA\@XZ
+     * @symbol ??1CommandSyntaxInformation\@\@QEAA\@XZ
      */
     MCAPI ~CommandSyntaxInformation();
 

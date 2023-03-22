@@ -30,76 +30,66 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~RepeaterCapacitor();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1635285672
-     * @vftbl  1
-     * @symbol  ?getStrength\@RepeaterCapacitor\@\@UEBAHXZ
+     * @vftbl 1
+     * @symbol ?getStrength\@RepeaterCapacitor\@\@UEBAHXZ
      */
     virtual int getStrength() const;
     /**
-     * @hash   -1091888801
-     * @vftbl  3
-     * @symbol  ?setStrength\@RepeaterCapacitor\@\@UEAAXH\@Z
+     * @vftbl 3
+     * @symbol ?setStrength\@RepeaterCapacitor\@\@UEAAXH\@Z
      */
     virtual void setStrength(int);
     /**
-     * @hash   13223282
-     * @vftbl  11
-     * @symbol  ?addSource\@RepeaterCapacitor\@\@UEAA_NAEAVCircuitSceneGraph\@\@AEBVCircuitTrackingInfo\@\@AEAHAEA_N\@Z
+     * @vftbl 11
+     * @symbol ?addSource\@RepeaterCapacitor\@\@UEAA_NAEAVCircuitSceneGraph\@\@AEBVCircuitTrackingInfo\@\@AEAHAEA_N\@Z
      */
     virtual bool addSource(class CircuitSceneGraph &, class CircuitTrackingInfo const &, int &, bool &);
     /**
-     * @hash   -795011690
-     * @vftbl  13
-     * @symbol  ?checkLock\@RepeaterCapacitor\@\@UEAAXAEAVCircuitSystem\@\@AEBVBlockPos\@\@\@Z
+     * @vftbl 13
+     * @symbol ?checkLock\@RepeaterCapacitor\@\@UEAAXAEAVCircuitSystem\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void checkLock(class CircuitSystem &, class BlockPos const &);
     /**
-     * @hash   423238654
-     * @vftbl  14
-     * @symbol  ?evaluate\@RepeaterCapacitor\@\@UEAA_NAEAVCircuitSystem\@\@AEBVBlockPos\@\@\@Z
+     * @vftbl 14
+     * @symbol ?evaluate\@RepeaterCapacitor\@\@UEAA_NAEAVCircuitSystem\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool evaluate(class CircuitSystem &, class BlockPos const &);
     /**
-     * @hash   -1167480041
-     * @vftbl  15
-     * @symbol  ?cacheValues\@RepeaterCapacitor\@\@UEAAXAEAVCircuitSystem\@\@AEBVBlockPos\@\@\@Z
+     * @vftbl 15
+     * @symbol ?cacheValues\@RepeaterCapacitor\@\@UEAAXAEAVCircuitSystem\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void cacheValues(class CircuitSystem &, class BlockPos const &);
     /**
-     * @hash   335807048
-     * @vftbl  16
-     * @symbol  ?updateDependencies\@RepeaterCapacitor\@\@UEAAXAEAVCircuitSceneGraph\@\@AEBVBlockPos\@\@\@Z
+     * @vftbl 16
+     * @symbol ?updateDependencies\@RepeaterCapacitor\@\@UEAAXAEAVCircuitSceneGraph\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void updateDependencies(class CircuitSceneGraph &, class BlockPos const &);
     /**
-     * @vftbl  17
-     * @symbol  __unk_vfn_17
+     * @vftbl 17
+     * @symbol __unk_vfn_17
      */
     virtual void __unk_vfn_17();
     /**
-     * @vftbl  20
-     * @symbol  __unk_vfn_20
+     * @vftbl 20
+     * @symbol __unk_vfn_20
      */
     virtual void __unk_vfn_20();
     /**
-     * @hash   1629467436
-     * @vftbl  23
-     * @symbol  ?getCircuitComponentType\@RepeaterCapacitor\@\@UEBA?AW4CircuitComponentType\@\@XZ
+     * @vftbl 23
+     * @symbol ?getCircuitComponentType\@RepeaterCapacitor\@\@UEBA?AW4CircuitComponentType\@\@XZ
      */
     virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
-     * @hash   -799795482
-     * @symbol  ??0RepeaterCapacitor\@\@QEAA\@XZ
+     * @symbol ??0RepeaterCapacitor\@\@QEAA\@XZ
      */
     MCAPI RepeaterCapacitor();
     /**
-     * @hash   813123270
-     * @symbol  ?setDelay\@RepeaterCapacitor\@\@QEAAXH\@Z
+     * @symbol ?setDelay\@RepeaterCapacitor\@\@QEAAXH\@Z
      */
     MCAPI void setDelay(int);
 

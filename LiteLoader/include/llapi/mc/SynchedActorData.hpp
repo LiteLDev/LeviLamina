@@ -166,120 +166,101 @@ public:
 
 public:
     /**
-     * @hash   -515764305
-     * @symbol  ??0SynchedActorData\@\@QEAA\@XZ
+     * @symbol ??0SynchedActorData\@\@QEAA\@XZ
      */
     MCAPI SynchedActorData();
     /**
-     * @hash   -881479729
-     * @symbol  ??0SynchedActorData\@\@QEAA\@$$QEAV0\@\@Z
+     * @symbol ??0SynchedActorData\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI SynchedActorData(class SynchedActorData &&);
     /**
-     * @hash   -666152466
-     * @symbol  ?_clone\@SynchedActorData\@\@QEBA?AV1\@XZ
+     * @symbol ?_clone\@SynchedActorData\@\@QEBA?AV1\@XZ
      */
     MCAPI class SynchedActorData _clone() const;
     /**
-     * @hash   -380803360
-     * @symbol  ?assignValues\@SynchedActorData\@\@QEAA_NAEBV?$vector\@V?$unique_ptr\@VDataItem\@\@U?$default_delete\@VDataItem\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VDataItem\@\@U?$default_delete\@VDataItem\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@PEAVActor\@\@\@Z
+     * @symbol ?assignValues\@SynchedActorData\@\@QEAA_NAEBV?$vector\@V?$unique_ptr\@VDataItem\@\@U?$default_delete\@VDataItem\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VDataItem\@\@U?$default_delete\@VDataItem\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@PEAVActor\@\@\@Z
      */
     MCAPI bool assignValues(std::vector<std::unique_ptr<class DataItem>> const &, class Actor *);
     /**
-     * @hash   1909377053
-     * @symbol  ?forEachDataItem\@SynchedActorData\@\@QEBAXAEBV?$function\@$$A6AXAEBV?$unique_ptr\@VDataItem\@\@U?$default_delete\@VDataItem\@\@\@std\@\@\@std\@\@\@Z\@std\@\@\@Z
+     * @symbol ?forEachDataItem\@SynchedActorData\@\@QEBAXAEBV?$function\@$$A6AXAEBV?$unique_ptr\@VDataItem\@\@U?$default_delete\@VDataItem\@\@\@std\@\@\@std\@\@\@Z\@std\@\@\@Z
      */
     MCAPI void forEachDataItem(class std::function<void (std::unique_ptr<class DataItem> const &)> const &) const;
     /**
-     * @hash   -445234734
-     * @symbol  ?getFloat\@SynchedActorData\@\@QEBAMG\@Z
+     * @symbol ?getFloat\@SynchedActorData\@\@QEBAMG\@Z
      */
     MCAPI float getFloat(unsigned short) const;
     /**
-     * @hash   -838526911
-     * @symbol  ?getInt64\@SynchedActorData\@\@QEBA_JG\@Z
+     * @symbol ?getInt\@SynchedActorData\@\@QEBAHG\@Z
+     */
+    MCAPI int getInt(unsigned short) const;
+    /**
+     * @symbol ?getInt64\@SynchedActorData\@\@QEBA_JG\@Z
      */
     MCAPI __int64 getInt64(unsigned short) const;
     /**
-     * @hash   -577166328
-     * @symbol  ?getInt8\@SynchedActorData\@\@QEBACG\@Z
+     * @symbol ?getInt8\@SynchedActorData\@\@QEBACG\@Z
      */
     MCAPI signed char getInt8(unsigned short) const;
     /**
-     * @hash   -589809077
-     * @symbol  ?getStatusFlag\@SynchedActorData\@\@QEBA_NW4ActorFlags\@\@\@Z
+     * @symbol ?getStatusFlag\@SynchedActorData\@\@QEBA_NW4ActorFlags\@\@\@Z
      */
     MCAPI bool getStatusFlag(enum class ActorFlags) const;
     /**
-     * @hash   -2058191107
-     * @symbol  ?getValidDataItemCount\@SynchedActorData\@\@QEBA_KXZ
+     * @symbol ?getValidDataItemCount\@SynchedActorData\@\@QEBA_KXZ
      */
     MCAPI unsigned __int64 getValidDataItemCount() const;
     /**
-     * @hash   -1574400536
-     * @symbol  ?getVec3\@SynchedActorData\@\@QEBA?AVVec3\@\@G\@Z
+     * @symbol ?getVec3\@SynchedActorData\@\@QEBA?AVVec3\@\@G\@Z
      */
     MCAPI class Vec3 getVec3(unsigned short) const;
     /**
-     * @hash   -248351092
-     * @symbol  ?markDirty\@SynchedActorData\@\@QEAAXAEAVDataItem\@\@\@Z
+     * @symbol ?markDirty\@SynchedActorData\@\@QEAAXAEAVDataItem\@\@\@Z
      */
     MCAPI void markDirty(class DataItem &);
     /**
-     * @hash   -359230729
-     * @symbol  ?markDirty\@SynchedActorData\@\@QEAAXG\@Z
+     * @symbol ?markDirty\@SynchedActorData\@\@QEAAXG\@Z
      */
     MCAPI void markDirty(unsigned short);
     /**
-     * @hash   867960322
-     * @symbol  ??4SynchedActorData\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     * @symbol ??4SynchedActorData\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class SynchedActorData & operator=(class SynchedActorData &&);
     /**
-     * @hash   -56560761
-     * @symbol  ?setStatusFlag\@SynchedActorData\@\@QEAAXW4ActorFlags\@\@_N\@Z
+     * @symbol ?setStatusFlag\@SynchedActorData\@\@QEAAXW4ActorFlags\@\@_N\@Z
      */
     MCAPI void setStatusFlag(enum class ActorFlags, bool);
     /**
-     * @hash   -1481005811
-     * @symbol  ??1SynchedActorData\@\@QEAA\@XZ
+     * @symbol ??1SynchedActorData\@\@QEAA\@XZ
      */
     MCAPI ~SynchedActorData();
     /**
-     * @hash   1237979081
-     * @symbol  ?DIFF_ITEM\@SynchedActorData\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?DIFF_ITEM\@SynchedActorData\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const DIFF_ITEM;
     /**
-     * @hash   875479331
-     * @symbol  ?DIFF_ITEMS_SIZE\@SynchedActorData\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?DIFF_ITEMS_SIZE\@SynchedActorData\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const DIFF_ITEMS_SIZE;
     /**
-     * @hash   557439199
-     * @symbol  ?DIFF_ITEM_NULL\@SynchedActorData\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?DIFF_ITEM_NULL\@SynchedActorData\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const DIFF_ITEM_NULL;
     /**
-     * @hash   1942224124
-     * @symbol  ?getDiff\@SynchedActorData\@\@SA?AV?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@AEBV1\@0\@Z
+     * @symbol ?getDiff\@SynchedActorData\@\@SA?AV?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@AEBV1\@0\@Z
      */
     MCAPI static class std::optional<std::string> getDiff(class SynchedActorData const &, class SynchedActorData const &);
 
 //private:
     /**
-     * @hash   711895162
-     * @symbol  ?_find\@SynchedActorData\@\@AEBAPEAVDataItem\@\@G\@Z
+     * @symbol ?_find\@SynchedActorData\@\@AEBAPEAVDataItem\@\@G\@Z
      */
     MCAPI class DataItem * _find(unsigned short) const;
     /**
-     * @hash   -1633640136
-     * @symbol  ?_get\@SynchedActorData\@\@AEAAAEAVDataItem\@\@G\@Z
+     * @symbol ?_get\@SynchedActorData\@\@AEAAAEAVDataItem\@\@G\@Z
      */
     MCAPI class DataItem & _get(unsigned short);
     /**
-     * @hash   -311178290
-     * @symbol  ?_resizeToContain\@SynchedActorData\@\@AEAAXG\@Z
+     * @symbol ?_resizeToContain\@SynchedActorData\@\@AEAAXG\@Z
      */
     MCAPI void _resizeToContain(unsigned short);
 

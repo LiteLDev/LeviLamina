@@ -29,25 +29,28 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~LookControl();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -836297834
-     * @vftbl  1
-     * @symbol  ?initializeInternal\@LookControl\@\@UEAAXAEAVMob\@\@\@Z
+     * @vftbl 1
+     * @symbol ?initializeInternal\@LookControl\@\@UEAAXAEAVMob\@\@\@Z
      */
     virtual void initializeInternal(class Mob &);
     /**
-     * @hash   -2085148874
-     * @vftbl  2
-     * @symbol  ?tick\@LookControl\@\@UEAAXAEAVMob\@\@\@Z
+     * @vftbl 2
+     * @symbol ?tick\@LookControl\@\@UEAAXAEAVMob\@\@\@Z
      */
     virtual void tick(class Mob &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOKCONTROL
     /**
-     * @hash   -1253409110
-     * @symbol  ??0LookControl\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~LookControl();
+#endif
+    /**
+     * @symbol ??0LookControl\@\@QEAA\@XZ
      */
     MCAPI LookControl();
 

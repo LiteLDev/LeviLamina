@@ -25,22 +25,22 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~AddActorEntityProxy();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?initializeActor\@AddActorEntityProxy\@\@UEAAXAEAVActor\@\@\@Z
+     * @vftbl 1
+     * @symbol ?initializeActor\@AddActorEntityProxy\@\@UEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeActor(class Actor &);
     /**
-     * @vftbl  2
-     * @symbol  ?reloadActor\@AddActorEntityProxy\@\@UEAAXAEAVActor\@\@\@Z
+     * @vftbl 2
+     * @symbol ?reloadActor\@AddActorEntityProxy\@\@UEAAXAEAVActor\@\@\@Z
      */
     virtual void reloadActor(class Actor &);
     /**
-     * @symbol  ??0AddActorEntityProxy\@\@QEAA\@AEAVDimension\@\@\@Z
+     * @symbol ??0AddActorEntityProxy\@\@QEAA\@AEAVDimension\@\@\@Z
      */
     MCAPI AddActorEntityProxy(class Dimension &);
 

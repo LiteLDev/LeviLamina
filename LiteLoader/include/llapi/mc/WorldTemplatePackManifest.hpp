@@ -29,34 +29,35 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~WorldTemplatePackManifest();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   976196210
-     * @vftbl  1
-     * @symbol  ?clone\@WorldTemplatePackManifest\@\@UEBA?AV?$unique_ptr\@VPackManifest\@\@U?$default_delete\@VPackManifest\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 1
+     * @symbol ?clone\@WorldTemplatePackManifest\@\@UEBA?AV?$unique_ptr\@VPackManifest\@\@U?$default_delete\@VPackManifest\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class PackManifest> clone() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDTEMPLATEPACKMANIFEST
     /**
-     * @hash   275791952
-     * @symbol  ??0WorldTemplatePackManifest\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~WorldTemplatePackManifest();
+#endif
+    /**
+     * @symbol ??0WorldTemplatePackManifest\@\@QEAA\@XZ
      */
     MCAPI WorldTemplatePackManifest();
     /**
-     * @hash   -513512755
-     * @symbol  ??0WorldTemplatePackManifest\@\@QEAA\@$$QEAVPackManifest\@\@\@Z
+     * @symbol ??0WorldTemplatePackManifest\@\@QEAA\@$$QEAVPackManifest\@\@\@Z
      */
     MCAPI WorldTemplatePackManifest(class PackManifest &&);
     /**
-     * @hash   -806328202
-     * @symbol  ?getGameType\@WorldTemplatePackManifest\@\@QEBA?AW4GameType\@\@XZ
+     * @symbol ?getGameType\@WorldTemplatePackManifest\@\@QEBA?AW4GameType\@\@XZ
      */
     MCAPI enum class GameType getGameType() const;
     /**
-     * @hash   1718499672
-     * @symbol  ?setGameType\@WorldTemplatePackManifest\@\@QEAAXW4GameType\@\@\@Z
+     * @symbol ?setGameType\@WorldTemplatePackManifest\@\@QEAAXW4GameType\@\@\@Z
      */
     MCAPI void setGameType(enum class GameType);
 

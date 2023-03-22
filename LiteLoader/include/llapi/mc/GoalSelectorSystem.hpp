@@ -30,25 +30,24 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~GoalSelectorSystem();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  __unk_vfn_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   1460159825
-     * @vftbl  2
-     * @symbol  ?tick\@GoalSelectorSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
+     * @vftbl 2
+     * @symbol ?tick\@GoalSelectorSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
     virtual void tick(class EntityRegistry &);
 
 //private:
     /**
-     * @symbol  ?_tickGoalSelectorComponent\@GoalSelectorSystem\@\@CAXAEAVActorOwnerComponent\@\@\@Z
+     * @symbol ?_tickGoalSelectorComponent\@GoalSelectorSystem\@\@CAXAEAVActorOwnerComponent\@\@\@Z
      */
     MCAPI static void _tickGoalSelectorComponent(class ActorOwnerComponent &);
 

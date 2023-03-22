@@ -19,31 +19,31 @@ namespace Common {
 
 #define AFTER_EXTRA
 // Add Member There
+struct BuildInfo {};
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -540976911
-     * @symbol  ?getGameDevVersionString\@Common\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getBuildInfo\@Common\@\@YA?AUBuildInfo\@1\@XZ
+     */
+    MCAPI struct Common::BuildInfo getBuildInfo();
+    /**
+     * @symbol ?getGameDevVersionString\@Common\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string getGameDevVersionString();
     /**
-     * @hash   960909243
-     * @symbol  ?getGameSemVerString\@Common\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getGameSemVerString\@Common\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string getGameSemVerString();
     /**
-     * @hash   790865289
-     * @symbol  ?getGameVersionString\@Common\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getGameVersionString\@Common\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string getGameVersionString();
     /**
-     * @hash   -629688927
-     * @symbol  ?getGameVersionStringNet\@Common\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getGameVersionStringNet\@Common\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string getGameVersionStringNet();
     /**
-     * @hash   1588369943
-     * @symbol  ?getServerVersionString\@Common\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getServerVersionString\@Common\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string getServerVersionString();
 

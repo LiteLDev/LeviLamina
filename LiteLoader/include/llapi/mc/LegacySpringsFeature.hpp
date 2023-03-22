@@ -31,19 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~LegacySpringsFeature();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -161232781
-     * @vftbl  3
-     * @symbol  ?place\@LegacySpringsFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @vftbl 3
+     * @symbol ?place\@LegacySpringsFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   196253865
-     * @symbol  ??0LegacySpringsFeature\@\@QEAA\@AEBVFeatureRegistry\@\@AEBVBaseGameVersion\@\@\@Z
+     * @symbol ??0LegacySpringsFeature\@\@QEAA\@AEBVFeatureRegistry\@\@AEBVBaseGameVersion\@\@\@Z
      */
     MCAPI LegacySpringsFeature(class FeatureRegistry const &, class BaseGameVersion const &);
 

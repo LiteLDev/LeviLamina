@@ -30,42 +30,42 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SplashPotionEffectSubcomponent();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1377071600
-     * @vftbl  1
-     * @symbol  ?readfromJSON\@SplashPotionEffectSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
+     * @vftbl 1
+     * @symbol ?readfromJSON\@SplashPotionEffectSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
-     * @hash   1202411817
-     * @vftbl  2
-     * @symbol  ?writetoJSON\@SplashPotionEffectSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
+     * @vftbl 2
+     * @symbol ?writetoJSON\@SplashPotionEffectSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
-     * @hash   407182378
-     * @vftbl  3
-     * @symbol  ?doOnHitEffect\@SplashPotionEffectSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
+     * @vftbl 3
+     * @symbol ?doOnHitEffect\@SplashPotionEffectSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @hash   1672136613
-     * @vftbl  4
-     * @symbol  ?getName\@SplashPotionEffectSubcomponent\@\@UEAAPEBDXZ
+     * @vftbl 4
+     * @symbol ?getName\@SplashPotionEffectSubcomponent\@\@UEAAPEBDXZ
      */
     virtual char const * getName();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPLASHPOTIONEFFECTSUBCOMPONENT
     /**
-     * @hash   1572462580
-     * @symbol  ??0SplashPotionEffectSubcomponent\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~SplashPotionEffectSubcomponent();
+#endif
+    /**
+     * @symbol ??0SplashPotionEffectSubcomponent\@\@QEAA\@XZ
      */
     MCAPI SplashPotionEffectSubcomponent();
     /**
-     * @hash   69400544
-     * @symbol  ?applyMobEffects\@SplashPotionEffectSubcomponent\@\@QEAAXAEBVMobEffectInstance\@\@AEBV?$vector\@PEAVActor\@\@V?$allocator\@PEAVActor\@\@\@std\@\@\@std\@\@AEAVActor\@\@AEBV?$shared_ptr\@$$CBVPotion\@\@\@4\@MPEAVMobEffect\@\@AEAVHitResult\@\@H\@Z
+     * @symbol ?applyMobEffects\@SplashPotionEffectSubcomponent\@\@QEAAXAEBVMobEffectInstance\@\@AEBV?$vector\@PEAVActor\@\@V?$allocator\@PEAVActor\@\@\@std\@\@\@std\@\@AEAVActor\@\@AEBV?$shared_ptr\@$$CBVPotion\@\@\@4\@MPEAVMobEffect\@\@AEAVHitResult\@\@H\@Z
      */
     MCAPI void applyMobEffects(class MobEffectInstance const &, std::vector<class Actor *> const &, class Actor &, class std::shared_ptr<class Potion const> const &, float, class MobEffect *, class HitResult &, int);
 

@@ -11,21 +11,21 @@
 #undef BEFORE_EXTRA
 
 
-struct ExternalLinkSettings {
+class ExternalLinkSettings {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXTERNALLINKSETTINGS
 public:
-    struct ExternalLinkSettings& operator=(struct ExternalLinkSettings const &) = delete;
-    ExternalLinkSettings(struct ExternalLinkSettings const &) = delete;
+    class ExternalLinkSettings& operator=(class ExternalLinkSettings const &) = delete;
+    ExternalLinkSettings(class ExternalLinkSettings const &) = delete;
     ExternalLinkSettings() = delete;
 #endif
 
 public:
     /**
-     * @symbol  ??1ExternalLinkSettings\@\@QEAA\@XZ
+     * @symbol ??1ExternalLinkSettings\@\@QEAA\@XZ
      */
     MCAPI ~ExternalLinkSettings();
 

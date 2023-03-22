@@ -30,13 +30,12 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BeaconContainerScreenValidator();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   485207157
-     * @symbol  ??0BeaconContainerScreenValidator\@\@QEAA\@XZ
+     * @symbol ??0BeaconContainerScreenValidator\@\@QEAA\@XZ
      */
     MCAPI BeaconContainerScreenValidator();
 

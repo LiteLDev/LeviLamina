@@ -30,59 +30,53 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~EquipItemGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -2007307878
-     * @vftbl  1
-     * @symbol  ?canUse\@EquipItemGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@EquipItemGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   -1583156872
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@EquipItemGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@EquipItemGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  __unk_vfn_4
+     * @vftbl 4
+     * @symbol __unk_vfn_4
      */
     virtual void __unk_vfn_4();
     /**
-     * @vftbl  5
-     * @symbol  __unk_vfn_5
+     * @vftbl 5
+     * @symbol __unk_vfn_5
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   -246836466
-     * @vftbl  6
-     * @symbol  ?tick\@EquipItemGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@EquipItemGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -110826234
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@EquipItemGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@EquipItemGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   -408280617
-     * @symbol  ??0EquipItemGoal\@\@QEAA\@AEAVMob\@\@\@Z
+     * @symbol ??0EquipItemGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI EquipItemGoal(class Mob &);
 
 //private:
     /**
-     * @hash   958594588
-     * @symbol  ?_dropItem\@EquipItemGoal\@\@AEBAXAEBVItemStack\@\@\@Z
+     * @symbol ?_dropItem\@EquipItemGoal\@\@AEBAXAEBVItemStack\@\@\@Z
      */
     MCAPI void _dropItem(class ItemStack const &) const;
 

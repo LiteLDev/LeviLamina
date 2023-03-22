@@ -31,46 +31,42 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~StrollTowardsVillageGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -2076301105
-     * @vftbl  1
-     * @symbol  ?canUse\@StrollTowardsVillageGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@StrollTowardsVillageGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   -186915167
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@StrollTowardsVillageGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@StrollTowardsVillageGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @vftbl  8
-     * @symbol  __unk_vfn_8
+     * @vftbl 8
+     * @symbol __unk_vfn_8
      */
     virtual void __unk_vfn_8();
     /**
-     * @vftbl  9
-     * @symbol  __unk_vfn_9
+     * @vftbl 9
+     * @symbol __unk_vfn_9
      */
     virtual void __unk_vfn_9();
     /**
-     * @hash   344686546
-     * @vftbl  17
-     * @symbol  ?_selectRandomPosInVillage\@StrollTowardsVillageGoal\@\@MEAA?AVBlockPos\@\@XZ
+     * @vftbl 17
+     * @symbol ?_selectRandomPosInVillage\@StrollTowardsVillageGoal\@\@MEAA?AVBlockPos\@\@XZ
      */
     virtual class BlockPos _selectRandomPosInVillage();
     /**
-     * @hash   1245577091
-     * @symbol  ??0StrollTowardsVillageGoal\@\@QEAA\@AEAVMob\@\@MMMHM\@Z
+     * @symbol ??0StrollTowardsVillageGoal\@\@QEAA\@AEAVMob\@\@MMMHM\@Z
      */
     MCAPI StrollTowardsVillageGoal(class Mob &, float, float, float, int, float);
 

@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   409679315
-     * @symbol  ?Release\@AsyncState\@\@QEAAXXZ
+     * @symbol ?Release\@AsyncState\@\@QEAAXXZ
      */
     MCAPI void Release();
 

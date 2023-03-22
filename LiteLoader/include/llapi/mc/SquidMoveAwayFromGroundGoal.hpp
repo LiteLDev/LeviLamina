@@ -30,66 +30,60 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SquidMoveAwayFromGroundGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  __unk_vfn_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
     virtual void __unk_vfn_1();
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   2041386340
-     * @vftbl  4
-     * @symbol  ?start\@SquidMoveAwayFromGroundGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@SquidMoveAwayFromGroundGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @vftbl  5
-     * @symbol  __unk_vfn_5
+     * @vftbl 5
+     * @symbol __unk_vfn_5
      */
     virtual void __unk_vfn_5();
     /**
-     * @vftbl  6
-     * @symbol  __unk_vfn_6
+     * @vftbl 6
+     * @symbol __unk_vfn_6
      */
     virtual void __unk_vfn_6();
     /**
-     * @hash   2050732261
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@SquidMoveAwayFromGroundGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@SquidMoveAwayFromGroundGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SQUIDMOVEAWAYFROMGROUNDGOAL
     /**
-     * @hash   92671113
-     * @symbol  ?canContinueToUse\@SquidMoveAwayFromGroundGoal\@\@UEAA_NXZ
+     * @symbol ?canContinueToUse\@SquidMoveAwayFromGroundGoal\@\@UEAA_NXZ
      */
     MCVAPI bool canContinueToUse();
     /**
-     * @hash   -1719104341
-     * @symbol  ?canUse\@SquidMoveAwayFromGroundGoal\@\@UEAA_NXZ
+     * @symbol ?canUse\@SquidMoveAwayFromGroundGoal\@\@UEAA_NXZ
      */
     MCVAPI bool canUse();
     /**
-     * @hash   136328948
-     * @symbol  ?stop\@SquidMoveAwayFromGroundGoal\@\@UEAAXXZ
+     * @symbol ?stop\@SquidMoveAwayFromGroundGoal\@\@UEAAXXZ
      */
     MCVAPI void stop();
     /**
-     * @hash   -1960729681
-     * @symbol  ?tick\@SquidMoveAwayFromGroundGoal\@\@UEAAXXZ
+     * @symbol ?tick\@SquidMoveAwayFromGroundGoal\@\@UEAAXXZ
      */
     MCVAPI void tick();
 #endif

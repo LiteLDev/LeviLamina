@@ -22,12 +22,11 @@ namespace CelebrateHuntSystemInternal {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -2120679484
-     * @symbol  ?_stopCelebrating\@CelebrateHuntSystemInternal\@\@YAXAEAVActor\@\@AEAVCelebrateHuntComponent\@\@\@Z
+     * @symbol ?_stopCelebrating\@CelebrateHuntSystemInternal\@\@YAXAEAVActor\@\@AEAVCelebrateHuntComponent\@\@\@Z
      */
     MCAPI void _stopCelebrating(class Actor &, class CelebrateHuntComponent &);
     /**
-     * @symbol  ?_tickCelebrateHuntComponent\@CelebrateHuntSystemInternal\@\@YAXAEAVActorOwnerComponent\@\@AEAVCelebrateHuntComponent\@\@\@Z
+     * @symbol ?_tickCelebrateHuntComponent\@CelebrateHuntSystemInternal\@\@YAXAEAVActorOwnerComponent\@\@AEAVCelebrateHuntComponent\@\@\@Z
      */
     MCAPI void _tickCelebrateHuntComponent(class ActorOwnerComponent &, class CelebrateHuntComponent &);
 

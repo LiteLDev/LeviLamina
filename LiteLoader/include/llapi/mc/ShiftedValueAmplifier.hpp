@@ -30,19 +30,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ShiftedValueAmplifier();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -178969138
-     * @vftbl  1
-     * @symbol  ?getAmount\@ShiftedValueAmplifier\@\@UEBAMHM\@Z
+     * @vftbl 1
+     * @symbol ?getAmount\@ShiftedValueAmplifier\@\@UEBAMHM\@Z
      */
     virtual float getAmount(int, float) const;
     /**
-     * @hash   -566906365
-     * @symbol  ??0ShiftedValueAmplifier\@\@QEAA\@HM\@Z
+     * @symbol ??0ShiftedValueAmplifier\@\@QEAA\@HM\@Z
      */
     MCAPI ShiftedValueAmplifier(int, float);
 

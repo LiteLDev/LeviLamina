@@ -30,51 +30,47 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SlimeRandomDirectionGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1364870071
-     * @vftbl  1
-     * @symbol  ?canUse\@SlimeRandomDirectionGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@SlimeRandomDirectionGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  __unk_vfn_4
+     * @vftbl 4
+     * @symbol __unk_vfn_4
      */
     virtual void __unk_vfn_4();
     /**
-     * @vftbl  5
-     * @symbol  __unk_vfn_5
+     * @vftbl 5
+     * @symbol __unk_vfn_5
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   2069533341
-     * @vftbl  6
-     * @symbol  ?tick\@SlimeRandomDirectionGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@SlimeRandomDirectionGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -408531305
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@SlimeRandomDirectionGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@SlimeRandomDirectionGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   1754364822
-     * @symbol  ??0SlimeRandomDirectionGoal\@\@QEAA\@AEAVMob\@\@\@Z
+     * @symbol ??0SlimeRandomDirectionGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI SlimeRandomDirectionGoal(class Mob &);
 

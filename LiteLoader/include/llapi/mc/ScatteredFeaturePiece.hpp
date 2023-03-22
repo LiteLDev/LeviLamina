@@ -31,26 +31,26 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ScatteredFeaturePiece();
+    virtual void __unk_vfn_0();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCATTEREDFEATUREPIECE
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~ScatteredFeaturePiece();
+#endif
 
 //protected:
     /**
-     * @symbol  ??0ScatteredFeaturePiece\@\@IEAA\@HHHHHH\@Z
+     * @symbol ??0ScatteredFeaturePiece\@\@IEAA\@HHHHHH\@Z
      */
     MCAPI ScatteredFeaturePiece(int, int, int, int, int, int);
     /**
-     * @hash   -1057168153
-     * @symbol  ?updateAverageGroundHeight\@ScatteredFeaturePiece\@\@IEAA_NAEAVBlockSource\@\@AEBVBoundingBox\@\@H\@Z
+     * @symbol ?updateAverageGroundHeight\@ScatteredFeaturePiece\@\@IEAA_NAEAVBlockSource\@\@AEBVBoundingBox\@\@H\@Z
      */
     MCAPI bool updateAverageGroundHeight(class BlockSource &, class BoundingBox const &, int);
-    /**
-     * @hash   1926100101
-     * @symbol  ?updateHeightPositionToLowestGroundHeight\@ScatteredFeaturePiece\@\@IEAA_NAEAVBlockSource\@\@AEBVBoundingBox\@\@H\@Z
-     */
-    MCAPI bool updateHeightPositionToLowestGroundHeight(class BlockSource &, class BoundingBox const &, int);
 
 protected:
 

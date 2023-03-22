@@ -30,8 +30,7 @@ public:
 
 public:
     /**
-     * @hash   638264141
-     * @symbol  ?getVersion\@MolangVersionMapping\@\@SA?BW4MolangVersion\@\@AEBVSemVersion\@\@\@Z
+     * @symbol ?getVersion\@MolangVersionMapping\@\@SA?BW4MolangVersion\@\@AEBVSemVersion\@\@\@Z
      */
     MCAPI static enum class MolangVersion const getVersion(class SemVersion const &);
 

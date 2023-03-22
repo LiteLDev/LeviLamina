@@ -22,23 +22,17 @@ struct SideBySidePlaybackBlocksComponent {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIDEBYSIDEPLAYBACKBLOCKSCOMPONENT
 public:
     struct SideBySidePlaybackBlocksComponent& operator=(struct SideBySidePlaybackBlocksComponent const &) = delete;
+    SideBySidePlaybackBlocksComponent(struct SideBySidePlaybackBlocksComponent const &) = delete;
     SideBySidePlaybackBlocksComponent() = delete;
 #endif
 
 public:
     /**
-     * @hash   -132752123
-     * @symbol  ??0SideBySidePlaybackBlocksComponent\@\@QEAA\@AEBU0\@\@Z
-     */
-    MCAPI SideBySidePlaybackBlocksComponent(struct SideBySidePlaybackBlocksComponent const &);
-    /**
-     * @hash   482905198
-     * @symbol  ??4SideBySidePlaybackBlocksComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
+     * @symbol ??4SideBySidePlaybackBlocksComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct SideBySidePlaybackBlocksComponent & operator=(struct SideBySidePlaybackBlocksComponent &&);
     /**
-     * @hash   -1558923021
-     * @symbol  ??1SideBySidePlaybackBlocksComponent\@\@QEAA\@XZ
+     * @symbol ??1SideBySidePlaybackBlocksComponent\@\@QEAA\@XZ
      */
     MCAPI ~SideBySidePlaybackBlocksComponent();
 

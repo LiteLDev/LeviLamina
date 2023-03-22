@@ -29,19 +29,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~CommandDispatcher();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -576098019
-     * @vftbl  1
-     * @symbol  ?performCommand\@CommandDispatcher\@\@UEAAHAEBVCommandOrigin\@\@AEAVCommand\@\@\@Z
+     * @vftbl 1
+     * @symbol ?performCommand\@CommandDispatcher\@\@UEAAHAEBVCommandOrigin\@\@AEAVCommand\@\@\@Z
      */
     virtual int performCommand(class CommandOrigin const &, class Command &);
     /**
-     * @hash   -2014892178
-     * @symbol  ??0CommandDispatcher\@\@QEAA\@XZ
+     * @symbol ??0CommandDispatcher\@\@QEAA\@XZ
      */
     MCAPI CommandDispatcher();
 

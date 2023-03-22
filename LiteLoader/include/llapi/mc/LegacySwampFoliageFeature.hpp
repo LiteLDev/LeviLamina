@@ -31,19 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~LegacySwampFoliageFeature();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1806657566
-     * @vftbl  3
-     * @symbol  ?place\@LegacySwampFoliageFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @vftbl 3
+     * @symbol ?place\@LegacySwampFoliageFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   -160849213
-     * @symbol  ??0LegacySwampFoliageFeature\@\@QEAA\@AEAVFeatureRegistry\@\@\@Z
+     * @symbol ??0LegacySwampFoliageFeature\@\@QEAA\@AEAVFeatureRegistry\@\@\@Z
      */
     MCAPI LegacySwampFoliageFeature(class FeatureRegistry &);
 

@@ -52,6 +52,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
 
         .instanceProperty("name", &PlayerClass::getName)
         .instanceProperty("pos", &PlayerClass::getPos)
+        .instanceProperty("feetPos", &PlayerClass::getFeetPos)
         .instanceProperty("blockPos", &PlayerClass::getBlockPos)
         .instanceProperty("lastDeathPos", &PlayerClass::getLastDeathPos)
         .instanceProperty("realName", &PlayerClass::getRealName)
@@ -78,7 +79,6 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceProperty("inWaterOrRain", &PlayerClass::getInWaterOrRain)
         .instanceProperty("inWorld", &PlayerClass::getInWorld)
         .instanceProperty("inClouds", &PlayerClass::getInClouds)
-        .instanceProperty("sneaking", &PlayerClass::getSneaking)
         .instanceProperty("speed", &PlayerClass::getSpeed)
         .instanceProperty("direction", &PlayerClass::getDirection)
         .instanceProperty("uniqueId", &PlayerClass::getUniqueID)
@@ -104,6 +104,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceProperty("isFlying", &PlayerClass::isFlying)
         .instanceProperty("isSleeping", &PlayerClass::isSleeping)
         .instanceProperty("isMoving", &PlayerClass::isMoving)
+        .instanceProperty("isSneaking", &PlayerClass::isSneaking)
 
         .instanceFunction("isOP", &PlayerClass::isOP)
         .instanceFunction("setPermLevel", &PlayerClass::setPermLevel)
@@ -183,6 +184,10 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("getBiomeId", &PlayerClass::getBiomeId)
         .instanceFunction("getBiomeName", &PlayerClass::getBiomeName)
 
+        .instanceFunction("getAllEffects", &PlayerClass::getAllEffects)
+        .instanceFunction("addEffect", &PlayerClass::addEffect)
+        .instanceFunction("removeEffect", &PlayerClass::removeEffect)
+
         .instanceFunction("sendSimpleForm", &PlayerClass::sendSimpleForm)
         .instanceFunction("sendModalForm", &PlayerClass::sendModalForm)
         .instanceFunction("sendCustomForm", &PlayerClass::sendCustomForm)
@@ -236,6 +241,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("simulateStopSneaking", &PlayerClass::simulateStopSneaking)
 
         // For Compatibility
+        .instanceProperty("sneaking", &PlayerClass::isSneaking)
         .instanceProperty("ip", &PlayerClass::getIP)
         .instanceFunction("setTag", &PlayerClass::setNbt)
         .instanceFunction("getTag", &PlayerClass::getNbt)
@@ -504,6 +510,17 @@ Local<Value> PlayerClass::getPos() {
     CATCH("Fail in getPlayerPos!")
 }
 
+Local<Value> PlayerClass::getFeetPos() {
+    try {
+        Player* player = get();
+        if (!player)
+            return Local<Value>();
+
+        return FloatPos::newPos(player->getFeetPosition(), player->getDimensionId());
+    }
+    CATCH("Fail in getPlayerFeetPos!")
+}
+
 Local<Value> PlayerClass::getBlockPos() {
     try {
         Player* player = get();
@@ -704,7 +721,7 @@ Local<Value> PlayerClass::getCanPickupItems() {
     CATCH("Fail in getCanPickupItems!")
 }
 
-Local<Value> PlayerClass::getSneaking() {
+Local<Value> PlayerClass::isSneaking() {
     try {
         Player* player = get();
         if (!player)
@@ -712,7 +729,7 @@ Local<Value> PlayerClass::getSneaking() {
 
         return Boolean::newBoolean(player->isSneaking());
     }
-    CATCH("Fail in getSneaking!")
+    CATCH("Fail in isSneaking!")
 }
 
 Local<Value> PlayerClass::getSpeed() {
@@ -2532,13 +2549,15 @@ Local<Value> PlayerClass::giveItem(const Arguments& args) {
 Local<Value> PlayerClass::clearItem(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
+    CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
 
     try {
         Player* player = get();
-        if (!player)
+        if (!player) {
             return Local<Value>();
-
-        return Number::newNumber(player->clearItem(args[0].toStr()));
+        }
+        return Number::newNumber(
+            (int32_t)player->clearItem(args[0].toStr(), args.size() == 1 ? 1 : args[1].asNumber().toInt32()));
     }
     CATCH("Fail in clearItem!");
 }
@@ -3140,4 +3159,59 @@ Local<Value> PlayerClass::getBiomeName() {
         return String::newString(bio->getName());
     }
     CATCH("Fail in getBiomeName!");
+}
+
+Local<Value> PlayerClass::getAllEffects() {
+    try {
+        Player* player = get();
+        if (!player) {
+            return Local<Value>();
+        }
+        auto effects = player->getAllEffects();
+        if (effects.size() == 0) {
+            return Local<Value>();
+        }
+        Local<Array> effectList = Array::newArray();
+        for (auto effect : effects)
+            effectList.add(Number::newNumber((int)effect.getId()));
+        return effectList;
+    }
+    CATCH("Fail in getAllEffects!")
+}
+
+Local<Value> PlayerClass::addEffect(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 4);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+    CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+    CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+    CHECK_ARG_TYPE(args[3], ValueKind::kBoolean);
+    try {
+        Player* player = get();
+        if (!player) {
+            return Boolean::newBoolean(false);
+        }
+        unsigned int id = args[0].asNumber().toInt32();
+        int tick = args[1].asNumber().toInt32();
+        int level = args[2].asNumber().toInt32();
+        bool showParticles = args[3].asBoolean().value();
+        MobEffectInstance effect = MobEffectInstance(id, tick, level, false, showParticles, false);
+        player->addEffect(effect);
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in addEffect!");
+}
+
+Local<Value> PlayerClass::removeEffect(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+    try {
+        Player* player = get();
+        if (!player) {
+            return Boolean::newBoolean(false);
+        }
+        int id = args[0].asNumber().toInt32();
+        player->removeEffect(id);
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in removeEffect!");
 }

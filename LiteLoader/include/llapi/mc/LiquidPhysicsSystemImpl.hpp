@@ -28,23 +28,19 @@ public:
 
 public:
     /**
-     * @hash   -1390618158
-     * @symbol  ?_applyFlow\@LiquidPhysicsSystemImpl\@\@SAXAEAUStateVectorComponent\@\@VVec3\@\@W4MaterialType\@\@\@Z
+     * @symbol ?_applyFlow\@LiquidPhysicsSystemImpl\@\@SAXAEAUStateVectorComponent\@\@VVec3\@\@W4MaterialType\@\@\@Z
      */
     MCAPI static void _applyFlow(struct StateVectorComponent &, class Vec3, enum class MaterialType);
     /**
-     * @hash   -1941654387
-     * @symbol  ?_getLiquidBlocksInAABB\@LiquidPhysicsSystemImpl\@\@SAXAEAV?$vector\@ULiquidBlockEntry\@\@V?$allocator\@ULiquidBlockEntry\@\@\@std\@\@\@std\@\@AEBVIConstBlockSource\@\@AEBVAABB\@\@W4MaterialType\@\@\@Z
+     * @symbol ?_getLiquidBlocksInAABB\@LiquidPhysicsSystemImpl\@\@SAXAEAV?$vector\@ULiquidBlockEntry\@\@V?$allocator\@ULiquidBlockEntry\@\@\@std\@\@\@std\@\@AEBVIConstBlockSource\@\@AEBVAABB\@\@W4MaterialType\@\@\@Z
      */
     MCAPI static void _getLiquidBlocksInAABB(std::vector<struct LiquidBlockEntry> &, class IConstBlockSource const &, class AABB const &, enum class MaterialType);
     /**
-     * @hash   -854565873
-     * @symbol  ?_hasAdjacentFlowingBlock\@LiquidPhysicsSystemImpl\@\@SA_NAEBV?$vector\@ULiquidBlockEntry\@\@V?$allocator\@ULiquidBlockEntry\@\@\@std\@\@\@std\@\@AEBVIConstBlockSource\@\@W4MaterialType\@\@\@Z
+     * @symbol ?_hasAdjacentFlowingBlock\@LiquidPhysicsSystemImpl\@\@SA_NAEBV?$vector\@ULiquidBlockEntry\@\@V?$allocator\@ULiquidBlockEntry\@\@\@std\@\@\@std\@\@AEBVIConstBlockSource\@\@W4MaterialType\@\@\@Z
      */
     MCAPI static bool _hasAdjacentFlowingBlock(std::vector<struct LiquidBlockEntry> const &, class IConstBlockSource const &, enum class MaterialType);
     /**
-     * @hash   152448587
-     * @symbol  ?_hasFlowingBlock\@LiquidPhysicsSystemImpl\@\@SA_NAEBV?$vector\@ULiquidBlockEntry\@\@V?$allocator\@ULiquidBlockEntry\@\@\@std\@\@\@std\@\@\@Z
+     * @symbol ?_hasFlowingBlock\@LiquidPhysicsSystemImpl\@\@SA_NAEBV?$vector\@ULiquidBlockEntry\@\@V?$allocator\@ULiquidBlockEntry\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI static bool _hasFlowingBlock(std::vector<struct LiquidBlockEntry> const &);
 

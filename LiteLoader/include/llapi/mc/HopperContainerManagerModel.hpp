@@ -31,25 +31,22 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~HopperContainerManagerModel();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   895702493
-     * @vftbl  17
-     * @symbol  ?_postInit\@HopperContainerManagerModel\@\@MEAA?AVContainerScreenContext\@\@XZ
+     * @vftbl 17
+     * @symbol ?_postInit\@HopperContainerManagerModel\@\@MEAA?AVContainerScreenContext\@\@XZ
      */
     virtual class ContainerScreenContext _postInit();
     /**
-     * @hash   -1565435252
-     * @symbol  ??0HopperContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI HopperContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
-    /**
-     * @hash   707995174
-     * @symbol  ??0HopperContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBUActorUniqueID\@\@\@Z
+     * @symbol ??0HopperContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBUActorUniqueID\@\@\@Z
      */
     MCAPI HopperContainerManagerModel(enum class ContainerID, class Player &, struct ActorUniqueID const &);
+    /**
+     * @symbol ??0HopperContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI HopperContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
 
 };

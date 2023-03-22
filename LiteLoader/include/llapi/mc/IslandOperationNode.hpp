@@ -30,19 +30,18 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~IslandOperationNode();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
-     * @hash   -2029899070
-     * @vftbl  3
-     * @symbol  ?_fillArea\@IslandOperationNode\@\@EEBAXAEAV?$WorkingData\@W4Terrain\@OperationNodeValues\@\@D\@OperationNodeDetails\@\@AEBVPos2d\@\@1\@Z
+     * @vftbl 3
+     * @symbol ?_fillArea\@IslandOperationNode\@\@EEBAXAEAV?$WorkingData\@W4Terrain\@OperationNodeValues\@\@D\@OperationNodeDetails\@\@AEBVPos2d\@\@1\@Z
      */
     virtual void _fillArea(class OperationNodeDetails::WorkingData<enum class OperationNodeValues::Terrain, char> &, class Pos2d const &, class Pos2d const &) const;
 

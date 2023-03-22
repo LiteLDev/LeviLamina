@@ -22,13 +22,11 @@ namespace PacketUtil {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -1587581446
-     * @symbol  ?byteToDegrees\@PacketUtil\@\@YAMC\@Z
+     * @symbol ?byteToDegrees\@PacketUtil\@\@YAMC\@Z
      */
     MCAPI float byteToDegrees(signed char);
     /**
-     * @hash   -2010070366
-     * @symbol  ?degreesToByte\@PacketUtil\@\@YACM\@Z
+     * @symbol ?degreesToByte\@PacketUtil\@\@YACM\@Z
      */
     MCAPI signed char degreesToByte(float);
 

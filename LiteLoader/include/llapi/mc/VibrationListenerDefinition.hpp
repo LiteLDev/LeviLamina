@@ -29,12 +29,11 @@ public:
 
 public:
     /**
-     * @symbol  ?initialize\@VibrationListenerDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
+     * @symbol ?initialize\@VibrationListenerDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
     MCAPI void initialize(class EntityContext &) const;
     /**
-     * @hash   -991214620
-     * @symbol  ?buildSchema\@VibrationListenerDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VVibrationListenerDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
+     * @symbol ?buildSchema\@VibrationListenerDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VVibrationListenerDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class VibrationListenerDefinition>> &);
 

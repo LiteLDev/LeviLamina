@@ -30,13 +30,11 @@ public:
 
 public:
     /**
-     * @hash   -1342863843
-     * @symbol  ?cleanup\@ResourcePackFileDownloaderManager\@\@QEAAXXZ
+     * @symbol ?cleanup\@ResourcePackFileDownloaderManager\@\@QEAAXXZ
      */
     MCAPI void cleanup();
     /**
-     * @hash   -1602251083
-     * @symbol  ?update\@ResourcePackFileDownloaderManager\@\@QEAAXXZ
+     * @symbol ?update\@ResourcePackFileDownloaderManager\@\@QEAAXXZ
      */
     MCAPI void update();
 
@@ -44,8 +42,7 @@ public:
 
 private:
     /**
-     * @hash   1620975078
-     * @symbol  ?MAX_CHUNK_ATTEMPTS\@ResourcePackFileDownloaderManager\@\@0HB
+     * @symbol ?MAX_CHUNK_ATTEMPTS\@ResourcePackFileDownloaderManager\@\@0HB
      */
     MCAPI static int const MAX_CHUNK_ATTEMPTS;
 

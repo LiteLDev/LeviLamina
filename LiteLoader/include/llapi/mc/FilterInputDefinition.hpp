@@ -10,31 +10,26 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC structure FilterInputDefinition.
- *
- */
-struct FilterInputDefinition {
+
+class FilterInputDefinition {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERINPUTDEFINITION
 public:
-    struct FilterInputDefinition& operator=(struct FilterInputDefinition const &) = delete;
-    FilterInputDefinition(struct FilterInputDefinition const &) = delete;
+    class FilterInputDefinition& operator=(class FilterInputDefinition const &) = delete;
+    FilterInputDefinition(class FilterInputDefinition const &) = delete;
     FilterInputDefinition() = delete;
 #endif
 
 public:
     /**
-     * @hash   -1584690897
-     * @symbol  ??0FilterInputDefinition\@\@QEAA\@VFilterInput\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ??0FilterInputDefinition\@\@QEAA\@VFilterInput\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI FilterInputDefinition(class FilterInput, std::string const &);
     /**
-     * @hash   1724060737
-     * @symbol  ??1FilterInputDefinition\@\@QEAA\@XZ
+     * @symbol ??1FilterInputDefinition\@\@QEAA\@XZ
      */
     MCAPI ~FilterInputDefinition();
 

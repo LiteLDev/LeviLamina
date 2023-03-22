@@ -31,19 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~WeatherCommand();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1659426780
-     * @vftbl  1
-     * @symbol  ?execute\@WeatherCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @vftbl 1
+     * @symbol ?execute\@WeatherCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   -1519064132
-     * @symbol  ?setup\@WeatherCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
+     * @symbol ?setup\@WeatherCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);
 

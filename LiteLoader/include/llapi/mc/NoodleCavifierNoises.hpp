@@ -29,18 +29,15 @@ public:
 
 public:
     /**
-     * @hash   731248753
-     * @symbol  ??0NoodleCavifierNoises\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0NoodleCavifierNoises\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI NoodleCavifierNoises(class NoodleCavifierNoises const &);
     /**
-     * @hash   584269091
-     * @symbol  ??1NoodleCavifierNoises\@\@QEAA\@XZ
+     * @symbol ??1NoodleCavifierNoises\@\@QEAA\@XZ
      */
     MCAPI ~NoodleCavifierNoises();
     /**
-     * @hash   1049505411
-     * @symbol  ?make\@NoodleCavifierNoises\@\@SA?AV1\@AEBVXoroshiroPositionalRandomFactory\@\@\@Z
+     * @symbol ?make\@NoodleCavifierNoises\@\@SA?AV1\@AEBVXoroshiroPositionalRandomFactory\@\@\@Z
      */
     MCAPI static class NoodleCavifierNoises make(class XoroshiroPositionalRandomFactory const &);
 

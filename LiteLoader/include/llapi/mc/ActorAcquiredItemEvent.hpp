@@ -27,13 +27,11 @@ public:
 
 public:
     /**
-     * @hash   227345583
-     * @symbol  ??0ActorAcquiredItemEvent\@\@QEAA\@AEBU0\@\@Z
+     * @symbol ??0ActorAcquiredItemEvent\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI ActorAcquiredItemEvent(struct ActorAcquiredItemEvent const &);
     /**
-     * @hash   1141886478
-     * @symbol  ??1ActorAcquiredItemEvent\@\@QEAA\@XZ
+     * @symbol ??1ActorAcquiredItemEvent\@\@QEAA\@XZ
      */
     MCAPI ~ActorAcquiredItemEvent();
 

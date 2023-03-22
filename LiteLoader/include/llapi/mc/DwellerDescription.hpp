@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -31,27 +30,25 @@ public:
 
 public:
     /**
-     * @hash   -1395211273
-     * @vftbl  0
-     * @symbol  ?getJsonName\@DwellerDescription\@\@UEBAPEBDXZ
+     * @vftbl 0
+     * @symbol ?getJsonName\@DwellerDescription\@\@UEBAPEBDXZ
      */
     virtual char const * getJsonName() const;
     /**
-     * @vftbl  1
-     * @symbol  __unk_destructor_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
-    virtual ~DwellerDescription();
+    virtual void __unk_vfn_1();
     /**
-     * @hash   2080323996
-     * @vftbl  2
-     * @symbol  ?deserializeData\@DwellerDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
+     * @vftbl 2
+     * @symbol ?deserializeData\@DwellerDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DWELLERDESCRIPTION
     /**
-     * @hash   242812758
-     * @vftbl  3
-     * @symbol  ?serializeData\@DwellerDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
+     * @symbol __unk_destructor_-1
      */
-    virtual void serializeData(class Json::Value &) const;
+    MCVAPI ~DwellerDescription();
+#endif
 
 };

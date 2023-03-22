@@ -32,228 +32,201 @@ public:
 
 public:
     /**
-     * @vftbl  16
-     * @symbol  __unk_destructor_16
+     * @vftbl 16
+     * @symbol __unk_vfn_16
      */
-    virtual ~EnderMan();
+    virtual void __unk_vfn_16();
     /**
-     * @vftbl  41
-     * @symbol  __unk_vfn_41
+     * @vftbl 41
+     * @symbol __unk_vfn_41
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   1456831881
-     * @vftbl  49
-     * @symbol  ?normalTick\@EnderMan\@\@UEAAXXZ
+     * @vftbl 49
+     * @symbol ?normalTick\@EnderMan\@\@UEAAXXZ
      */
     virtual void normalTick();
     /**
-     * @vftbl  62
-     * @symbol  __unk_vfn_62
+     * @vftbl 62
+     * @symbol __unk_vfn_62
      */
     virtual void __unk_vfn_62();
     /**
-     * @vftbl  69
-     * @symbol  __unk_vfn_69
+     * @vftbl 69
+     * @symbol __unk_vfn_69
      */
     virtual void __unk_vfn_69();
     /**
-     * @vftbl  83
-     * @symbol  __unk_vfn_83
+     * @vftbl 82
+     * @symbol __unk_vfn_82
      */
-    virtual void __unk_vfn_83();
+    virtual void __unk_vfn_82();
     /**
-     * @vftbl  86
-     * @symbol  __unk_vfn_86
+     * @vftbl 85
+     * @symbol __unk_vfn_85
      */
-    virtual void __unk_vfn_86();
+    virtual void __unk_vfn_85();
     /**
-     * @vftbl  89
-     * @symbol  __unk_vfn_89
+     * @vftbl 88
+     * @symbol __unk_vfn_88
      */
-    virtual void __unk_vfn_89();
+    virtual void __unk_vfn_88();
     /**
-     * @vftbl  97
-     * @symbol  __unk_vfn_97
+     * @vftbl 96
+     * @symbol __unk_vfn_96
      */
-    virtual void __unk_vfn_97();
+    virtual void __unk_vfn_96();
     /**
-     * @vftbl  100
-     * @symbol  __unk_vfn_100
+     * @vftbl 99
+     * @symbol __unk_vfn_99
      */
-    virtual void __unk_vfn_100();
+    virtual void __unk_vfn_99();
     /**
-     * @vftbl  107
-     * @symbol  __unk_vfn_107
+     * @vftbl 106
+     * @symbol __unk_vfn_106
      */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_106();
     /**
-     * @vftbl  109
-     * @symbol  __unk_vfn_109
+     * @vftbl 108
+     * @symbol __unk_vfn_108
+     */
+    virtual void __unk_vfn_108();
+    /**
+     * @vftbl 109
+     * @symbol __unk_vfn_109
      */
     virtual void __unk_vfn_109();
     /**
-     * @vftbl  110
-     * @symbol  __unk_vfn_110
+     * @vftbl 111
+     * @symbol __unk_vfn_111
      */
-    virtual void __unk_vfn_110();
+    virtual void __unk_vfn_111();
     /**
-     * @vftbl  112
-     * @symbol  __unk_vfn_112
-     */
-    virtual void __unk_vfn_112();
-    /**
-     * @hash   -1621960545
-     * @vftbl  132
-     * @symbol  ?shouldRender\@EnderMan\@\@UEBA_NXZ
+     * @vftbl 131
+     * @symbol ?shouldRender\@EnderMan\@\@UEBA_NXZ
      */
     virtual bool shouldRender() const;
     /**
-     * @hash   -1686642510
-     * @vftbl  134
-     * @symbol  ?getAmbientSound\@EnderMan\@\@UEBA?AW4LevelSoundEvent\@\@XZ
+     * @vftbl 133
+     * @symbol ?getAmbientSound\@EnderMan\@\@UEBA?AW4LevelSoundEvent\@\@XZ
      */
     virtual enum class LevelSoundEvent getAmbientSound() const;
     /**
-     * @vftbl  179
-     * @symbol  __unk_vfn_179
+     * @vftbl 178
+     * @symbol __unk_vfn_178
      */
-    virtual void __unk_vfn_179();
+    virtual void __unk_vfn_178();
     /**
-     * @vftbl  193
-     * @symbol  __unk_vfn_193
+     * @vftbl 192
+     * @symbol __unk_vfn_192
      */
-    virtual void __unk_vfn_193();
+    virtual void __unk_vfn_192();
     /**
-     * @hash   -2093851120
-     * @vftbl  209
-     * @symbol  ?canBeAffectedByArrow\@EnderMan\@\@UEBA_NAEBVMobEffectInstance\@\@\@Z
+     * @vftbl 208
+     * @symbol ?canBeAffectedByArrow\@EnderMan\@\@UEBA_NAEBVMobEffectInstance\@\@\@Z
      */
     virtual bool canBeAffectedByArrow(class MobEffectInstance const &) const;
     /**
-     * @vftbl  218
-     * @symbol  __unk_vfn_218
+     * @vftbl 217
+     * @symbol __unk_vfn_217
+     */
+    virtual void __unk_vfn_217();
+    /**
+     * @vftbl 218
+     * @symbol __unk_vfn_218
      */
     virtual void __unk_vfn_218();
     /**
-     * @vftbl  219
-     * @symbol  __unk_vfn_219
+     * @vftbl 240
+     * @symbol __unk_vfn_240
      */
-    virtual void __unk_vfn_219();
+    virtual void __unk_vfn_240();
     /**
-     * @vftbl  241
-     * @symbol  __unk_vfn_241
+     * @vftbl 243
+     * @symbol __unk_vfn_243
      */
-    virtual void __unk_vfn_241();
+    virtual void __unk_vfn_243();
     /**
-     * @vftbl  244
-     * @symbol  __unk_vfn_244
+     * @vftbl 260
+     * @symbol __unk_vfn_260
      */
-    virtual void __unk_vfn_244();
+    virtual void __unk_vfn_260();
     /**
-     * @vftbl  262
-     * @symbol  __unk_vfn_262
-     */
-    virtual void __unk_vfn_262();
-    /**
-     * @hash   -1653229746
-     * @vftbl  263
-     * @symbol  ?_hurt\@EnderMan\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
+     * @vftbl 261
+     * @symbol ?_hurt\@EnderMan\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @hash   -370193106
-     * @vftbl  266
-     * @symbol  ?readAdditionalSaveData\@EnderMan\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
+     * @vftbl 264
+     * @symbol ?readAdditionalSaveData\@EnderMan\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   1027978383
-     * @vftbl  267
-     * @symbol  ?addAdditionalSaveData\@EnderMan\@\@MEBAXAEAVCompoundTag\@\@\@Z
+     * @vftbl 265
+     * @symbol ?addAdditionalSaveData\@EnderMan\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vftbl  270
-     * @symbol  __unk_vfn_270
+     * @vftbl 268
+     * @symbol __unk_vfn_268
      */
-    virtual void __unk_vfn_270();
+    virtual void __unk_vfn_268();
     /**
-     * @vftbl  277
-     * @symbol  __unk_vfn_277
+     * @vftbl 275
+     * @symbol __unk_vfn_275
      */
-    virtual void __unk_vfn_277();
+    virtual void __unk_vfn_275();
     /**
-     * @vftbl  285
-     * @symbol  __unk_vfn_285
-     */
-    virtual void __unk_vfn_285();
-    /**
-     * @hash   -1858139992
-     * @vftbl  286
-     * @symbol  ?hurtEffects\@EnderMan\@\@UEAAXAEBVActorDamageSource\@\@M_N1\@Z
+     * @vftbl 283
+     * @symbol ?hurtEffects\@EnderMan\@\@UEAAXAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual void hurtEffects(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @hash   273365049
-     * @vftbl  291
-     * @symbol  ?aiStep\@EnderMan\@\@UEAAXXZ
+     * @vftbl 301
+     * @symbol __unk_vfn_301
      */
-    virtual void aiStep();
+    virtual void __unk_vfn_301();
     /**
-     * @vftbl  304
-     * @symbol  __unk_vfn_304
+     * @vftbl 305
+     * @symbol __unk_vfn_305
      */
-    virtual void __unk_vfn_304();
+    virtual void __unk_vfn_305();
     /**
-     * @vftbl  308
-     * @symbol  __unk_vfn_308
-     */
-    virtual void __unk_vfn_308();
-    /**
-     * @hash   554644652
-     * @vftbl  349
-     * @symbol  ?newServerAiStep\@EnderMan\@\@UEAAXXZ
+     * @vftbl 346
+     * @symbol ?newServerAiStep\@EnderMan\@\@UEAAXXZ
      */
     virtual void newServerAiStep();
     /**
-     * @vftbl  354
-     * @symbol  __unk_vfn_354
+     * @vftbl 351
+     * @symbol __unk_vfn_351
      */
-    virtual void __unk_vfn_354();
+    virtual void __unk_vfn_351();
     /**
-     * @hash   6982398
-     * @symbol  ??0EnderMan\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
+     * @symbol ??0EnderMan\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI EnderMan(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   -149759704
-     * @symbol  ?getCarryingBlock\@EnderMan\@\@QEBAAEBVBlock\@\@XZ
+     * @symbol ?getCarryingBlock\@EnderMan\@\@QEBAAEBVBlock\@\@XZ
      */
     MCAPI class Block const & getCarryingBlock() const;
     /**
-     * @hash   -1468162602
-     * @symbol  ?setCarryingBlock\@EnderMan\@\@QEAAXAEBVBlock\@\@\@Z
+     * @symbol ?setCarryingBlock\@EnderMan\@\@QEAAXAEBVBlock\@\@\@Z
      */
     MCAPI void setCarryingBlock(class Block const &);
     /**
-     * @hash   527577324
-     * @symbol  ?SPEED_MODIFIER_ATTACKING\@EnderMan\@\@2V?$shared_ptr\@VAttributeModifier\@\@\@std\@\@A
+     * @symbol ?SPEED_MODIFIER_ATTACKING\@EnderMan\@\@2V?$shared_ptr\@VAttributeModifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_ATTACKING;
     /**
-     * @hash   -1795624527
-     * @symbol  ?SPEED_MODIFIER_ATTACKING_UUID\@EnderMan\@\@2VUUID\@mce\@\@B
+     * @symbol ?SPEED_MODIFIER_ATTACKING_UUID\@EnderMan\@\@2VUUID\@mce\@\@B
      */
     MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACKING_UUID;
     /**
-     * @hash   1580626
-     * @symbol  ?mMayTake\@EnderMan\@\@2V?$set\@PEBVBlock\@\@U?$less\@PEBVBlock\@\@\@std\@\@V?$allocator\@PEBVBlock\@\@\@3\@\@std\@\@A
+     * @symbol ?mMayTake\@EnderMan\@\@2V?$set\@PEBVBlock\@\@U?$less\@PEBVBlock\@\@\@std\@\@V?$allocator\@PEBVBlock\@\@\@3\@\@std\@\@A
      */
     MCAPI static class std::set<class Block const *, struct std::less<class Block const *>, class std::allocator<class Block const *>> mMayTake;
     /**
-     * @hash   1848456211
-     * @symbol  ?shutdown\@EnderMan\@\@SAXXZ
+     * @symbol ?shutdown\@EnderMan\@\@SAXXZ
      */
     MCAPI static void shutdown();
 
@@ -261,8 +234,7 @@ public:
 
 private:
     /**
-     * @hash   -1101133354
-     * @symbol  ?mMayTakeIsSetup\@EnderMan\@\@0_NA
+     * @symbol ?mMayTakeIsSetup\@EnderMan\@\@0_NA
      */
     MCAPI static bool mMayTakeIsSetup;
 

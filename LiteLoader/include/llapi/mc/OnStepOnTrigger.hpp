@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   -143180822
-     * @symbol  ??1OnStepOnTrigger\@\@QEAA\@XZ
+     * @symbol ??1OnStepOnTrigger\@\@QEAA\@XZ
      */
     MCAPI ~OnStepOnTrigger();
 

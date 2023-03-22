@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   -440087220
-     * @symbol  ??1MolangQueryFunction\@\@QEAA\@XZ
+     * @symbol ??1MolangQueryFunction\@\@QEAA\@XZ
      */
     MCAPI ~MolangQueryFunction();
 

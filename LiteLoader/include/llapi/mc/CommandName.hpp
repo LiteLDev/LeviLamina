@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   1288184690
-     * @symbol  ??1CommandName\@\@QEAA\@XZ
+     * @symbol ??1CommandName\@\@QEAA\@XZ
      */
     MCAPI ~CommandName();
 

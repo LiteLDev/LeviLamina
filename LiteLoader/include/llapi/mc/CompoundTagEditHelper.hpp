@@ -30,25 +30,21 @@ public:
 
 public:
     /**
-     * @hash   -1733752319
-     * @symbol  ?getParent\@CompoundTagEditHelper\@\@QEBAPEBVCompoundTag\@\@XZ
+     * @symbol ?getParent\@CompoundTagEditHelper\@\@QEBAPEBVCompoundTag\@\@XZ
      */
     MCAPI class CompoundTag const * getParent() const;
     /**
-     * @hash   -2039708477
-     * @symbol  ?replaceWith\@CompoundTagEditHelper\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VTag\@\@U?$default_delete\@VTag\@\@\@std\@\@\@3\@\@Z
+     * @symbol ?replaceWith\@CompoundTagEditHelper\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VTag\@\@U?$default_delete\@VTag\@\@\@std\@\@\@3\@\@Z
      */
     MCAPI void replaceWith(std::string const &, std::unique_ptr<class Tag>);
     /**
-     * @hash   -772581709
-     * @symbol  ??1CompoundTagEditHelper\@\@QEAA\@XZ
+     * @symbol ??1CompoundTagEditHelper\@\@QEAA\@XZ
      */
     MCAPI ~CompoundTagEditHelper();
 
 //private:
     /**
-     * @hash   -944802315
-     * @symbol  ?pushChild\@CompoundTagEditHelper\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?pushChild\@CompoundTagEditHelper\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void pushChild(std::string const &);
 

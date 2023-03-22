@@ -30,14 +30,13 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~MockUnknownBlockTypeRegistry();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   467120956
-     * @vftbl  1
-     * @symbol  ?getUnknownBlock\@MockUnknownBlockTypeRegistry\@\@UEAAAEBVBlock\@\@AEBVCompoundTag\@\@\@Z
+     * @vftbl 1
+     * @symbol ?getUnknownBlock\@MockUnknownBlockTypeRegistry\@\@UEAAAEBVBlock\@\@AEBVCompoundTag\@\@\@Z
      */
     virtual class Block const & getUnknownBlock(class CompoundTag const &);
 

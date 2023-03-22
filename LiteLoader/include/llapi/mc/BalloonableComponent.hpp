@@ -30,15 +30,13 @@ public:
 
 public:
     /**
-     * @hash   1931091477
-     * @symbol  ?getInteraction\@BalloonableComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
+     * @symbol ?getInteraction\@BalloonableComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
 
 //private:
     /**
-     * @hash   57248224
-     * @symbol  ?attach\@BalloonableComponent\@\@AEAA_NAEAVActor\@\@0AEAVItemStack\@\@\@Z
+     * @symbol ?attach\@BalloonableComponent\@\@AEAA_NAEAVActor\@\@0AEAVItemStack\@\@\@Z
      */
     MCAPI bool attach(class Actor &, class Actor &, class ItemStack &);
 

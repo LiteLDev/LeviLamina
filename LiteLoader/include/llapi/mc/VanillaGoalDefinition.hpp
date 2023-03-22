@@ -22,8 +22,7 @@ namespace VanillaGoalDefinition {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   492009372
-     * @symbol  ?init\@VanillaGoalDefinition\@\@YAXXZ
+     * @symbol ?init\@VanillaGoalDefinition\@\@YAXXZ
      */
     MCAPI void init();
 

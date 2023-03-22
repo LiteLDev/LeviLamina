@@ -30,61 +30,53 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~TradeInterestGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1544230047
-     * @vftbl  1
-     * @symbol  ?canUse\@TradeInterestGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@TradeInterestGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   1372839421
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@TradeInterestGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@TradeInterestGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   373827400
-     * @vftbl  4
-     * @symbol  ?start\@TradeInterestGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@TradeInterestGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   -714544152
-     * @vftbl  5
-     * @symbol  ?stop\@TradeInterestGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@TradeInterestGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @hash   400249315
-     * @vftbl  6
-     * @symbol  ?tick\@TradeInterestGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@TradeInterestGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   412963505
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@TradeInterestGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@TradeInterestGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   -514966283
-     * @symbol  ??0TradeInterestGoal\@\@QEAA\@AEAVMob\@\@MMMMM\@Z
+     * @symbol ??0TradeInterestGoal\@\@QEAA\@AEAVMob\@\@MMMMM\@Z
      */
     MCAPI TradeInterestGoal(class Mob &, float, float, float, float, float);
 
 //private:
     /**
-     * @hash   -960235491
-     * @symbol  ?_isLookingAtMe\@TradeInterestGoal\@\@AEBA_NAEBVPlayer\@\@\@Z
+     * @symbol ?_isLookingAtMe\@TradeInterestGoal\@\@AEBA_NAEBVPlayer\@\@\@Z
      */
     MCAPI bool _isLookingAtMe(class Player const &) const;
 

@@ -30,17 +30,15 @@ public:
 
 public:
     /**
-     * @hash   -265954004
-     * @symbol  ??0EntitySensorDefinition\@\@QEAA\@XZ
+     * @symbol ??0EntitySensorDefinition\@\@QEAA\@XZ
      */
     MCAPI EntitySensorDefinition();
     /**
-     * @symbol  ?initialize\@EntitySensorDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVEntitySensorComponent\@\@\@Z
+     * @symbol ?initialize\@EntitySensorDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVEntitySensorComponent\@\@\@Z
      */
     MCAPI void initialize(class EntityContext &, class EntitySensorComponent &) const;
     /**
-     * @hash   -964809498
-     * @symbol  ?buildSchema\@EntitySensorDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VEntitySensorDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
+     * @symbol ?buildSchema\@EntitySensorDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VEntitySensorDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EntitySensorDefinition>> &);
 

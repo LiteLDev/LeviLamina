@@ -28,13 +28,11 @@ public:
 
 public:
     /**
-     * @hash   317931419
-     * @symbol  ??1EntitySystemsInfo\@\@QEAA\@XZ
+     * @symbol ??1EntitySystemsInfo\@\@QEAA\@XZ
      */
     MCAPI ~EntitySystemsInfo();
     /**
-     * @hash   -1719782833
-     * @symbol  ?bindType\@EntitySystemsInfo\@\@SAXXZ
+     * @symbol ?bindType\@EntitySystemsInfo\@\@SAXXZ
      */
     MCAPI static void bindType();
 

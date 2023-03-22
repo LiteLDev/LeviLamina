@@ -28,13 +28,11 @@ public:
 
 public:
     /**
-     * @hash   -346519227
-     * @symbol  ??0MolangTempVariable\@\@QEAA\@AEBVHashedString\@\@\@Z
+     * @symbol ??0MolangTempVariable\@\@QEAA\@AEBVHashedString\@\@\@Z
      */
     MCAPI MolangTempVariable(class HashedString const &);
     /**
-     * @hash   -659493622
-     * @symbol  ??1MolangTempVariable\@\@QEAA\@XZ
+     * @symbol ??1MolangTempVariable\@\@QEAA\@XZ
      */
     MCAPI ~MolangTempVariable();
 

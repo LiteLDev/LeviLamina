@@ -30,13 +30,11 @@ public:
 
 public:
     /**
-     * @hash   958212112
-     * @symbol  ??0DepthBasedBlockSupplier\@\@QEAA\@VXoroshiroPositionalRandomFactory\@\@PEBVBlock\@\@\@Z
+     * @symbol ??0DepthBasedBlockSupplier\@\@QEAA\@VXoroshiroPositionalRandomFactory\@\@PEBVBlock\@\@\@Z
      */
     MCAPI DepthBasedBlockSupplier(class XoroshiroPositionalRandomFactory, class Block const *);
     /**
-     * @hash   -1833300263
-     * @symbol  ?getBlock\@DepthBasedBlockSupplier\@\@QEBAPEBVBlock\@\@AEBVBlockPos\@\@PEBV2\@\@Z
+     * @symbol ?getBlock\@DepthBasedBlockSupplier\@\@QEBAPEBVBlock\@\@AEBVBlockPos\@\@PEBV2\@\@Z
      */
     MCAPI class Block const * getBlock(class BlockPos const &, class Block const *) const;
 

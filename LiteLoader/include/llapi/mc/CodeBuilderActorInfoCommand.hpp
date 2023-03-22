@@ -29,19 +29,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~CodeBuilderActorInfoCommand();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -756169779
-     * @vftbl  1
-     * @symbol  ?execute\@CodeBuilderActorInfoCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @vftbl 1
+     * @symbol ?execute\@CodeBuilderActorInfoCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   148604080
-     * @symbol  ?setup\@CodeBuilderActorInfoCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
+     * @symbol ?setup\@CodeBuilderActorInfoCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);
 

@@ -31,19 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~DispenserContainerManagerModel();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -855187970
-     * @vftbl  17
-     * @symbol  ?_postInit\@DispenserContainerManagerModel\@\@MEAA?AVContainerScreenContext\@\@XZ
+     * @vftbl 17
+     * @symbol ?_postInit\@DispenserContainerManagerModel\@\@MEAA?AVContainerScreenContext\@\@XZ
      */
     virtual class ContainerScreenContext _postInit();
     /**
-     * @hash   1315250765
-     * @symbol  ??0DispenserContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
+     * @symbol ??0DispenserContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI DispenserContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
 

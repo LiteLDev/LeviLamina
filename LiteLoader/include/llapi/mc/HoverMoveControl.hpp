@@ -30,19 +30,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~HoverMoveControl();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1110534950
-     * @vftbl  2
-     * @symbol  ?tick\@HoverMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
+     * @vftbl 2
+     * @symbol ?tick\@HoverMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
     /**
-     * @hash   -352545508
-     * @symbol  ??0HoverMoveControl\@\@QEAA\@XZ
+     * @symbol ??0HoverMoveControl\@\@QEAA\@XZ
      */
     MCAPI HoverMoveControl();
 

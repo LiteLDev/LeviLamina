@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   505188762
-     * @symbol  ??1MobSpawnerPermutation\@\@QEAA\@XZ
+     * @symbol ??1MobSpawnerPermutation\@\@QEAA\@XZ
      */
     MCAPI ~MobSpawnerPermutation();
 

@@ -30,22 +30,19 @@ public:
 
 public:
     /**
-     * @symbol  ??0BlendedMultiNoiseBiomeProvider\@\@QEAA\@AEBUOverworldNoises3d\@\@VParameterList\@\@AEAVChunkBlenderFactory\@\@AEBVBiomeRegistry\@\@\@Z
+     * @symbol ??0BlendedMultiNoiseBiomeProvider\@\@QEAA\@AEBUOverworldNoises3d\@\@VParameterList\@\@AEAVChunkBlenderFactory\@\@AEBVBiomeRegistry\@\@\@Z
      */
     MCAPI BlendedMultiNoiseBiomeProvider(struct OverworldNoises3d const &, class ParameterList, class ChunkBlenderFactory &, class BiomeRegistry const &);
     /**
-     * @hash   845087200
-     * @symbol  ?tryGetBiome\@BlendedMultiNoiseBiomeProvider\@\@QEBAPEBVBiome\@\@AEBUGetBiomeOptions\@\@\@Z
-     */
-    MCAPI class Biome const * tryGetBiome(struct GetBiomeOptions const &) const;
-    /**
-     * @hash   -264406517
-     * @symbol  ?tryGetBiome\@BlendedMultiNoiseBiomeProvider\@\@QEBAPEBVBiome\@\@AEBUGetBiomeOptions\@\@AEBUCacheEntry\@ChunkLocalNoiseCache\@\@PEAUHint\@RTree\@\@\@Z
+     * @symbol ?tryGetBiome\@BlendedMultiNoiseBiomeProvider\@\@QEBAPEBVBiome\@\@AEBUGetBiomeOptions\@\@AEBUCacheEntry\@ChunkLocalNoiseCache\@\@PEAUHint\@RTree\@\@\@Z
      */
     MCAPI class Biome const * tryGetBiome(struct GetBiomeOptions const &, struct ChunkLocalNoiseCache::CacheEntry const &, struct RTree::Hint *) const;
     /**
-     * @hash   -221372758
-     * @symbol  ??1BlendedMultiNoiseBiomeProvider\@\@QEAA\@XZ
+     * @symbol ?tryGetBiome\@BlendedMultiNoiseBiomeProvider\@\@QEBAPEBVBiome\@\@AEBUGetBiomeOptions\@\@\@Z
+     */
+    MCAPI class Biome const * tryGetBiome(struct GetBiomeOptions const &) const;
+    /**
+     * @symbol ??1BlendedMultiNoiseBiomeProvider\@\@QEAA\@XZ
      */
     MCAPI ~BlendedMultiNoiseBiomeProvider();
 

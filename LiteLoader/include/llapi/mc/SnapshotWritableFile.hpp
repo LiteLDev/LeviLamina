@@ -30,37 +30,32 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SnapshotWritableFile();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1588759211
-     * @vftbl  1
-     * @symbol  ?Append\@SnapshotWritableFile\@\@UEAA?AVStatus\@leveldb\@\@AEBVSlice\@3\@\@Z
+     * @vftbl 1
+     * @symbol ?Append\@SnapshotWritableFile\@\@UEAA?AVStatus\@leveldb\@\@AEBVSlice\@3\@\@Z
      */
     virtual class leveldb::Status Append(class leveldb::Slice const &);
     /**
-     * @hash   -259267372
-     * @vftbl  2
-     * @symbol  ?Close\@SnapshotWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
+     * @vftbl 2
+     * @symbol ?Close\@SnapshotWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
      */
     virtual class leveldb::Status Close();
     /**
-     * @hash   1557995984
-     * @vftbl  3
-     * @symbol  ?Flush\@SnapshotWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
+     * @vftbl 3
+     * @symbol ?Flush\@SnapshotWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
      */
     virtual class leveldb::Status Flush();
     /**
-     * @hash   213464375
-     * @vftbl  4
-     * @symbol  ?Sync\@SnapshotWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
+     * @vftbl 4
+     * @symbol ?Sync\@SnapshotWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
      */
     virtual class leveldb::Status Sync();
     /**
-     * @hash   -1989487568
-     * @symbol  ??0SnapshotWritableFile\@\@QEAA\@$$QEAPEAVWritableFile\@leveldb\@\@AEAVshared_mutex\@std\@\@\@Z
+     * @symbol ??0SnapshotWritableFile\@\@QEAA\@$$QEAPEAVWritableFile\@leveldb\@\@AEAVshared_mutex\@std\@\@\@Z
      */
     MCAPI SnapshotWritableFile(class leveldb::WritableFile *&&, class std::shared_mutex &);
 

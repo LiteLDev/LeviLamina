@@ -27,13 +27,11 @@ public:
 
 public:
     /**
-     * @hash   -168021009
-     * @symbol  ??0ProjectileHitEvent\@\@QEAA\@AEBU0\@\@Z
+     * @symbol ??0ProjectileHitEvent\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI ProjectileHitEvent(struct ProjectileHitEvent const &);
     /**
-     * @hash   1077948474
-     * @symbol  ??1ProjectileHitEvent\@\@QEAA\@XZ
+     * @symbol ??1ProjectileHitEvent\@\@QEAA\@XZ
      */
     MCAPI ~ProjectileHitEvent();
 

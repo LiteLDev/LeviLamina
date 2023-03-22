@@ -28,13 +28,11 @@ public:
 
 public:
     /**
-     * @hash   70364128
-     * @symbol  ?_checkFallDamage\@CheckFallDamageSystem\@\@SAXAEAVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@AEAUCheckFallDamageRequestComponent\@\@\@Z
+     * @symbol ?_checkFallDamage\@CheckFallDamageSystem\@\@SAXAEAVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@AEAUCheckFallDamageRequestComponent\@\@\@Z
      */
     MCAPI static void _checkFallDamage(class StrictEntityContext &, class ActorOwnerComponent &, struct CheckFallDamageRequestComponent &);
     /**
-     * @hash   -748933316
-     * @symbol  ?createSystem\@CheckFallDamageSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@CheckFallDamageSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

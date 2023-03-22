@@ -30,28 +30,23 @@ public:
 
 public:
     /**
-     * @hash   1965687183
-     * @symbol  ?getRequests\@ItemStackRequestBatch\@\@QEBAAEBV?$vector\@V?$unique_ptr\@VItemStackRequestData\@\@U?$default_delete\@VItemStackRequestData\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VItemStackRequestData\@\@U?$default_delete\@VItemStackRequestData\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@XZ
+     * @symbol ?getRequests\@ItemStackRequestBatch\@\@QEBAAEBV?$vector\@V?$unique_ptr\@VItemStackRequestData\@\@U?$default_delete\@VItemStackRequestData\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VItemStackRequestData\@\@U?$default_delete\@VItemStackRequestData\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@XZ
      */
     MCAPI std::vector<std::unique_ptr<class ItemStackRequestData>> const & getRequests() const;
     /**
-     * @hash   -2016090133
-     * @symbol  ?takeRequests\@ItemStackRequestBatch\@\@QEBA?AV?$vector\@V?$unique_ptr\@VItemStackRequestData\@\@U?$default_delete\@VItemStackRequestData\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VItemStackRequestData\@\@U?$default_delete\@VItemStackRequestData\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@XZ
+     * @symbol ?takeRequests\@ItemStackRequestBatch\@\@QEBA?AV?$vector\@V?$unique_ptr\@VItemStackRequestData\@\@U?$default_delete\@VItemStackRequestData\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VItemStackRequestData\@\@U?$default_delete\@VItemStackRequestData\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@XZ
      */
     MCAPI std::vector<std::unique_ptr<class ItemStackRequestData>> takeRequests() const;
     /**
-     * @hash   -154310408
-     * @symbol  ?write\@ItemStackRequestBatch\@\@QEBAXAEAVBinaryStream\@\@\@Z
+     * @symbol ?write\@ItemStackRequestBatch\@\@QEBAXAEAVBinaryStream\@\@\@Z
      */
     MCAPI void write(class BinaryStream &) const;
     /**
-     * @hash   -2002429396
-     * @symbol  ??1ItemStackRequestBatch\@\@QEAA\@XZ
+     * @symbol ??1ItemStackRequestBatch\@\@QEAA\@XZ
      */
     MCAPI ~ItemStackRequestBatch();
     /**
-     * @hash   96796041
-     * @symbol  ?read\@ItemStackRequestBatch\@\@SA?AV?$unique_ptr\@VItemStackRequestBatch\@\@U?$default_delete\@VItemStackRequestBatch\@\@\@std\@\@\@std\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?read\@ItemStackRequestBatch\@\@SA?AV?$unique_ptr\@VItemStackRequestBatch\@\@U?$default_delete\@VItemStackRequestBatch\@\@\@std\@\@\@std\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     MCAPI static std::unique_ptr<class ItemStackRequestBatch> read(class ReadOnlyBinaryStream &);
 

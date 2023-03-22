@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   -908827450
-     * @symbol  ??1KeyOrNameResult\@\@QEAA\@XZ
+     * @symbol ??1KeyOrNameResult\@\@QEAA\@XZ
      */
     MCAPI ~KeyOrNameResult();
 

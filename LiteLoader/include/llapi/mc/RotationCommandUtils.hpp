@@ -7,6 +7,7 @@
 #include "llapi/Global.h"
 
 #define BEFORE_EXTRA
+#include "llapi/mc/RelativeFloat.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -31,23 +32,19 @@ class RotationData {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   25984602
-     * @symbol  ?ComputeFacingRotation\@RotationCommandUtils\@\@YA?AVVec2\@\@AEBVActor\@\@VVec3\@\@AEBV4\@H\@Z
+     * @symbol ?ComputeFacingRotation\@RotationCommandUtils\@\@YA?AVVec2\@\@AEBVActor\@\@VVec3\@\@AEBV4\@H\@Z
      */
     MCAPI class Vec2 ComputeFacingRotation(class Actor const &, class Vec3, class Vec3 const &, int);
     /**
-     * @hash   1468665757
-     * @symbol  ?ComputeRotation\@RotationCommandUtils\@\@YA?AVVec2\@\@AEBVActor\@\@AEBV?$optional\@VRotationData\@RotationCommandUtils\@\@\@std\@\@H\@Z
+     * @symbol ?ComputeRotation\@RotationCommandUtils\@\@YA?AVVec2\@\@AEBVActor\@\@AEBV?$optional\@VRotationData\@RotationCommandUtils\@\@\@std\@\@H\@Z
      */
     MCAPI class Vec2 ComputeRotation(class Actor const &, class std::optional<class RotationCommandUtils::RotationData> const &, int);
     /**
-     * @hash   1894363891
-     * @symbol  ?getFacingDirectionFacingEntity\@RotationCommandUtils\@\@YA?AVVec3\@\@PEAVActor\@\@\@Z
+     * @symbol ?getFacingDirectionFacingEntity\@RotationCommandUtils\@\@YA?AVVec3\@\@PEAVActor\@\@\@Z
      */
     MCAPI class Vec3 getFacingDirectionFacingEntity(class Actor *);
     /**
-     * @hash   1439631488
-     * @symbol  ?getFacingDirectionFacingPosition\@RotationCommandUtils\@\@YA?AVVec3\@\@HAEBVCommandOrigin\@\@VCommandPositionFloat\@\@\@Z
+     * @symbol ?getFacingDirectionFacingPosition\@RotationCommandUtils\@\@YA?AVVec3\@\@HAEBVCommandOrigin\@\@VCommandPositionFloat\@\@\@Z
      */
     MCAPI class Vec3 getFacingDirectionFacingPosition(int, class CommandOrigin const &, class CommandPositionFloat);
 

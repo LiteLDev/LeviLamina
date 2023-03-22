@@ -30,13 +30,12 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ElementConstructorContainerScreenValidator();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1130323809
-     * @symbol  ??0ElementConstructorContainerScreenValidator\@\@QEAA\@XZ
+     * @symbol ??0ElementConstructorContainerScreenValidator\@\@QEAA\@XZ
      */
     MCAPI ElementConstructorContainerScreenValidator();
 

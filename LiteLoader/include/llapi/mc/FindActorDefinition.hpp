@@ -32,14 +32,13 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~FindActorDefinition();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   726524613
-     * @vftbl  1
-     * @symbol  ?load\@FindActorDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
+     * @vftbl 1
+     * @symbol ?load\@FindActorDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */
     virtual void load(class Json::Value, class BehaviorFactory const &);
 

@@ -29,19 +29,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~DeferredCommandBlockCommand();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1714856347
-     * @vftbl  1
-     * @symbol  ?execute\@DeferredCommandBlockCommand\@\@UEAAXAEAVMinecraftCommands\@\@\@Z
+     * @vftbl 1
+     * @symbol ?execute\@DeferredCommandBlockCommand\@\@UEAAXAEAVMinecraftCommands\@\@\@Z
      */
     virtual void execute(class MinecraftCommands &);
     /**
-     * @hash   1880833124
-     * @symbol  ??0DeferredCommandBlockCommand\@\@QEAA\@VBlockPos\@\@AEAVBlockSource\@\@\@Z
+     * @symbol ??0DeferredCommandBlockCommand\@\@QEAA\@VBlockPos\@\@AEAVBlockSource\@\@\@Z
      */
     MCAPI DeferredCommandBlockCommand(class BlockPos, class BlockSource &);
 

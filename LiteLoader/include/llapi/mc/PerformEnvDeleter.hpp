@@ -10,26 +10,22 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC structure PerformEnvDeleter.
- *
- */
-struct PerformEnvDeleter {
+
+class PerformEnvDeleter {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERFORMENVDELETER
 public:
-    struct PerformEnvDeleter& operator=(struct PerformEnvDeleter const &) = delete;
-    PerformEnvDeleter(struct PerformEnvDeleter const &) = delete;
+    class PerformEnvDeleter& operator=(class PerformEnvDeleter const &) = delete;
+    PerformEnvDeleter(class PerformEnvDeleter const &) = delete;
     PerformEnvDeleter() = delete;
 #endif
 
 public:
     /**
-     * @hash   1962953936
-     * @symbol  ??RPerformEnvDeleter\@\@QEAAXPEAUHC_PERFORM_ENV\@\@\@Z
+     * @symbol ??RPerformEnvDeleter\@\@QEAAXPEAUHC_PERFORM_ENV\@\@\@Z
      */
     MCAPI void operator()(struct HC_PERFORM_ENV *);
 

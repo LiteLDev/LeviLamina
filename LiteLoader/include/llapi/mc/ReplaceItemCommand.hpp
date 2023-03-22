@@ -32,26 +32,23 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ReplaceItemCommand();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1255632177
-     * @vftbl  1
-     * @symbol  ?execute\@ReplaceItemCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @vftbl 1
+     * @symbol ?execute\@ReplaceItemCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   -608145428
-     * @symbol  ?setup\@ReplaceItemCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
+     * @symbol ?setup\@ReplaceItemCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
     /**
-     * @hash   707422833
-     * @symbol  ?_outputError\@ReplaceItemCommand\@\@AEBAXAEAVCommandOutput\@\@UReplacementResults\@Util\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?_outputError\@ReplaceItemCommand\@\@AEBAXAEAVCommandOutput\@\@UReplacementResults\@Util\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void _outputError(class CommandOutput &, struct Util::ReplacementResults, std::string const &) const;
 

@@ -31,19 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~StopSoundCommand();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1765046949
-     * @vftbl  1
-     * @symbol  ?execute\@StopSoundCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @vftbl 1
+     * @symbol ?execute\@StopSoundCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   1461633116
-     * @symbol  ?setup\@StopSoundCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
+     * @symbol ?setup\@StopSoundCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);
 

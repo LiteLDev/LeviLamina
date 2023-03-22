@@ -27,6 +27,13 @@
           "1": "協議版本不匹配，目標版本：{}，當前版本：{}。",
           "2": "這很可能會使服務器崩潰，請使用與BDS版本匹配的LiteLoader！"
         }
+      },
+      "bstats": {
+        "enabled": "bStats已啟用，你可以通過編輯 plugins/bStats/config.json 來禁用它"
+      },
+      "unpackResources": {
+        "begin": "Unpacking LiteLoaderBDS runtime resources. Please wait patiently...",
+        "end": "Unpacked."
       }
     },
     "antiAbnormalItem": {
@@ -212,6 +219,9 @@
       },
       "initNodeJsDirectories": {
         "created": "無法找到NodeJS運行文件，已自動創建。"
+      },
+      "initPythonDirectories": {
+        "created": "Python runtime directory no found, created."
       }
     },
     "notice": {
@@ -238,6 +248,9 @@
     },
     "unzipNodeModules": {
       "fail": "解壓 node_modules.tar 失敗"
+    },
+    "unzipPythonModules": {
+      "fail": "Failed to unzip python-env.zip"
     }
   },
   "llse": {
@@ -281,6 +294,13 @@
         "loadedPlugin": "{type} 插件 <{name}> 已加載。",
         "installPluginPack": {
           "done": "已安裝 {count} 個 {type} 插件包"
+        },
+        "python": {
+          "ignored": "No pyproject.toml file found in directory {path}, ignored.",
+          "installPack": {
+            "start": "Found Python plugin pack \"{path}\"! Try installing...",
+            "fail": "Failed to install plugin pack {}, please check the source files!"
+          }
         }
       },
       "nodejs": {
@@ -291,6 +311,13 @@
         },
         "register": {
           "fail": "無法讓插件 {name} 被註冊！"
+        }
+      },
+      "python": {
+        "executePipInstall": {
+          "start": "Executing \"pip install\" for plugin {name}...",
+          "success": "Pip finished successfully.",
+          "fail": "Error occurred. Exit code: {code}"
         }
       }
     }
@@ -311,7 +338,7 @@
       "error": {
         "invalidCommand": "未知的指令。輸入'/help perm' 來取得更多幫助。",
         "internal": "發生內部錯誤，請稍後再嘗試。",
-        "roleAlreadyExists": "角色已存在",
+        "roleAlreadyExists": "身分組已存在",
         "permissionAlreadyExists": "權限已存在",
         "invalidPermissionName": "無效的權限名稱.",
         "roleNotFound": "找不到此身分組.",
@@ -409,28 +436,28 @@
             },
             "priority": {
               "set": {
-                "success": "Priority of Role {roleDisplayName}§r set to {priority}."
+                "success": "身分組 {roleDisplayName} §r的優先級已被設為 {priority}。"
               }
             },
             "displayName": {
               "set": {
-                "success": "Display name of Role <{roleName}§r> set to {displayName}§r."
+                "success": "身分組 <{roleName}§r> 的顯示名稱已設置為 {displayName}§r。"
               }
             }
           },
           "player": {
             "role": {
               "add": {
-                "success": "Player {name}§r({xuid}) added to Role {roleDisplayName}§r."
+                "success": "玩家 {name}§r({xuid}) 已添加到身分組 {roleDisplayName}§r。"
               },
               "remove": {
-                "success": "Player {name}§r({xuid}) removed from Role {roleDisplayName}§r."
+                "success": "玩家 {name}§r({xuid}) 已從身分組 {roleDisplayName}§r 移除。"
               }
             }
           }
         },
         "noDesc": "[沒有說明]",
-        "permissionNameExamples": "Permission name examples: 'Namespace:PermissionName', 'a:b:c:d_e_f.g'"
+        "permissionNameExamples": "權限名稱示例：“命名空間:權限名稱”、“a:b:c:d_e_f.g”"
       }
     }
   }

@@ -22,13 +22,11 @@ namespace FlowerHelper {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   1473766430
-     * @symbol  ?getRandomFlowerBlock\@FlowerHelper\@\@YAAEBVBlock\@\@AEBVBiome\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVBiomeRegistry\@\@AEBVPerlinSimplexNoise\@\@\@Z
+     * @symbol ?getRandomFlowerBlock\@FlowerHelper\@\@YAAEBVBlock\@\@AEBVBiome\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVBiomeRegistry\@\@AEBVPerlinSimplexNoise\@\@\@Z
      */
     MCAPI class Block const & getRandomFlowerBlock(class Biome const &, class BlockPos const &, class Random &, class BiomeRegistry &, class PerlinSimplexNoise const &);
     /**
-     * @hash   -41458075
-     * @symbol  ?getRandomFlowerBlock\@FlowerHelper\@\@YAAEBVBlock\@\@W4FlowerPlacementType\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEBVPerlinSimplexNoise\@\@\@Z
+     * @symbol ?getRandomFlowerBlock\@FlowerHelper\@\@YAAEBVBlock\@\@W4FlowerPlacementType\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEBVPerlinSimplexNoise\@\@\@Z
      */
     MCAPI class Block const & getRandomFlowerBlock(enum class FlowerPlacementType, class BlockPos const &, class Random &, class PerlinSimplexNoise const &);
 

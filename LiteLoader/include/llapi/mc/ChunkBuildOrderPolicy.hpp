@@ -29,49 +29,42 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ChunkBuildOrderPolicy();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -368702156
-     * @vftbl  1
-     * @symbol  ?getChunkRebuildPriority\@ChunkBuildOrderPolicy\@\@UEBAHAEBVChunkPos\@\@\@Z
+     * @vftbl 1
+     * @symbol ?getChunkRebuildPriority\@ChunkBuildOrderPolicy\@\@UEBAHAEBVChunkPos\@\@\@Z
      */
     virtual int getChunkRebuildPriority(class ChunkPos const &) const;
     /**
-     * @hash   -509789876
-     * @vftbl  2
-     * @symbol  ?registerForUpdates\@ChunkBuildOrderPolicy\@\@UEAAIXZ
+     * @vftbl 2
+     * @symbol ?registerForUpdates\@ChunkBuildOrderPolicy\@\@UEAAIXZ
      */
     virtual unsigned int registerForUpdates();
     /**
-     * @hash   -696695579
-     * @vftbl  3
-     * @symbol  ?unregisterForUpdates\@ChunkBuildOrderPolicy\@\@UEAAXI\@Z
+     * @vftbl 3
+     * @symbol ?unregisterForUpdates\@ChunkBuildOrderPolicy\@\@UEAAXI\@Z
      */
     virtual void unregisterForUpdates(unsigned int);
     /**
-     * @hash   175918632
-     * @vftbl  4
-     * @symbol  ?setPlayerInfluence\@ChunkBuildOrderPolicy\@\@UEAAXIAEBVChunkPos\@\@AEBVVec3\@\@\@Z
+     * @vftbl 4
+     * @symbol ?setPlayerInfluence\@ChunkBuildOrderPolicy\@\@UEAAXIAEBVChunkPos\@\@AEBVVec3\@\@\@Z
      */
     virtual void setPlayerInfluence(unsigned int, class ChunkPos const &, class Vec3 const &);
     /**
-     * @hash   523421861
-     * @vftbl  5
-     * @symbol  ?setTickingAreaInfluence\@ChunkBuildOrderPolicy\@\@UEAAXIAEBVChunkPos\@\@HH_N1\@Z
+     * @vftbl 5
+     * @symbol ?setTickingAreaInfluence\@ChunkBuildOrderPolicy\@\@UEAAXIAEBVChunkPos\@\@HH_N1\@Z
      */
     virtual void setTickingAreaInfluence(unsigned int, class ChunkPos const &, int, int, bool, bool);
     /**
-     * @hash   599801791
-     * @vftbl  6
-     * @symbol  ?updateInfluences\@ChunkBuildOrderPolicy\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?updateInfluences\@ChunkBuildOrderPolicy\@\@UEAAXXZ
      */
     virtual void updateInfluences();
     /**
-     * @hash   -80776421
-     * @symbol  ??0ChunkBuildOrderPolicy\@\@QEAA\@XZ
+     * @symbol ??0ChunkBuildOrderPolicy\@\@QEAA\@XZ
      */
     MCAPI ChunkBuildOrderPolicy();
 

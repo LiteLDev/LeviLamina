@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   665887832
-     * @symbol  ??8OffsetsComponent\@\@QEBA_NAEBU0\@\@Z
+     * @symbol ??8OffsetsComponent\@\@QEBA_NAEBU0\@\@Z
      */
     MCAPI bool operator==(struct OffsetsComponent const &) const;
 

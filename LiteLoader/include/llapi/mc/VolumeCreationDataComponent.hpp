@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   -748418682
-     * @symbol  ??1VolumeCreationDataComponent\@\@QEAA\@XZ
+     * @symbol ??1VolumeCreationDataComponent\@\@QEAA\@XZ
      */
     MCAPI ~VolumeCreationDataComponent();
 

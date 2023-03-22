@@ -26,7 +26,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1PackCapability\@\@QEAA\@XZ
+     * @symbol ??1PackCapability\@\@QEAA\@XZ
      */
     MCAPI ~PackCapability();
 

@@ -30,18 +30,15 @@ public:
 
 public:
     /**
-     * @hash   120377847
-     * @symbol  ??0NpcDialogueButton\@\@QEAA\@XZ
+     * @symbol ??0NpcDialogueButton\@\@QEAA\@XZ
      */
     MCAPI NpcDialogueButton();
     /**
-     * @hash   -1783308921
-     * @symbol  ??1NpcDialogueButton\@\@QEAA\@XZ
+     * @symbol ??1NpcDialogueButton\@\@QEAA\@XZ
      */
     MCAPI ~NpcDialogueButton();
     /**
-     * @hash   477232905
-     * @symbol  ?parse\@NpcDialogueButton\@\@SA?AU1\@AEBVValue\@Json\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
+     * @symbol ?parse\@NpcDialogueButton\@\@SA?AU1\@AEBVValue\@Json\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI static struct NpcDialogueButton parse(class Json::Value const &, std::string const &, int);
 

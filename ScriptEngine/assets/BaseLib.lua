@@ -20,3 +20,5 @@ LXL_CustomForm = LLSE_CustomForm
 LXL_Item = LLSE_Item
 LXL_Player = LLSE_Player
 LXL_Objective = LLSE_Objective
+ll.export = ll.exports
+ll.import = ll.imports

@@ -30,19 +30,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SlimeMoveControl();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1577507966
-     * @vftbl  2
-     * @symbol  ?tick\@SlimeMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
+     * @vftbl 2
+     * @symbol ?tick\@SlimeMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
     /**
-     * @hash   837082336
-     * @symbol  ??0SlimeMoveControl\@\@QEAA\@XZ
+     * @symbol ??0SlimeMoveControl\@\@QEAA\@XZ
      */
     MCAPI SlimeMoveControl();
 

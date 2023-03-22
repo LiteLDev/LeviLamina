@@ -28,37 +28,32 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~MinecraftScriptTelemetryLogger();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -527728846
-     * @vftbl  1
-     * @symbol  ?onPluginDiscovery\@MinecraftScriptTelemetryLogger\@\@UEAAXAEBVScriptPluginResult\@\@\@Z
+     * @vftbl 1
+     * @symbol ?onPluginDiscovery\@MinecraftScriptTelemetryLogger\@\@UEAAXAEBVScriptPluginResult\@\@\@Z
      */
     virtual void onPluginDiscovery(class ScriptPluginResult const &);
     /**
-     * @hash   -885765944
-     * @vftbl  2
-     * @symbol  ?onPluginRun\@MinecraftScriptTelemetryLogger\@\@UEAAXAEBVScriptPluginResult\@\@V?$duration\@_JU?$ratio\@$00$0PECEA\@\@std\@\@\@chrono\@std\@\@\@Z
+     * @vftbl 2
+     * @symbol ?onPluginRun\@MinecraftScriptTelemetryLogger\@\@UEAAXAEBVScriptPluginResult\@\@V?$duration\@_JU?$ratio\@$00$0PECEA\@\@std\@\@\@chrono\@std\@\@\@Z
      */
     virtual void onPluginRun(class ScriptPluginResult const &, class std::chrono::duration<__int64, struct std::ratio<1, 1000000>>);
     /**
-     * @hash   -1069045555
-     * @vftbl  3
-     * @symbol  ?onDebuggerListen\@MinecraftScriptTelemetryLogger\@\@UEAAXXZ
+     * @vftbl 3
+     * @symbol ?onDebuggerListen\@MinecraftScriptTelemetryLogger\@\@UEAAXXZ
      */
     virtual void onDebuggerListen();
     /**
-     * @hash   -2023914384
-     * @vftbl  4
-     * @symbol  ?onDebuggerConnect\@MinecraftScriptTelemetryLogger\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?onDebuggerConnect\@MinecraftScriptTelemetryLogger\@\@UEAAXXZ
      */
     virtual void onDebuggerConnect();
     /**
-     * @hash   73216229
-     * @symbol  ??0MinecraftScriptTelemetryLogger\@\@QEAA\@AEAVIMinecraftEventing\@\@_N\@Z
+     * @symbol ??0MinecraftScriptTelemetryLogger\@\@QEAA\@AEAVIMinecraftEventing\@\@_N\@Z
      */
     MCAPI MinecraftScriptTelemetryLogger(class IMinecraftEventing &, bool);
 

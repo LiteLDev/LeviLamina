@@ -28,19 +28,16 @@ public:
 
 public:
     /**
-     * @hash   -1598154396
-     * @symbol  ??0ActorMovementProxyComponent\@\@QEAA\@V?$not_null\@V?$shared_ptr\@UIActorMovementProxy\@\@\@std\@\@\@gsl\@\@\@Z
+     * @symbol ??0ActorMovementProxyComponent\@\@QEAA\@V?$not_null\@V?$shared_ptr\@UIActorMovementProxy\@\@\@std\@\@\@gsl\@\@\@Z
      */
     MCAPI ActorMovementProxyComponent(class gsl::not_null<class std::shared_ptr<struct IActorMovementProxy>>);
     /**
-     * @hash   1290677619
-     * @symbol  ?getMovementProxy\@ActorMovementProxyComponent\@\@QEAA?AV?$shared_ptr\@UIActorMovementProxy\@\@\@std\@\@XZ
-     */
-    MCAPI class std::shared_ptr<struct IActorMovementProxy> getMovementProxy();
-    /**
-     * @hash   1325065847
-     * @symbol  ?getMovementProxy\@ActorMovementProxyComponent\@\@QEBA?AV?$shared_ptr\@$$CBUIActorMovementProxy\@\@\@std\@\@XZ
+     * @symbol ?getMovementProxy\@ActorMovementProxyComponent\@\@QEBA?AV?$shared_ptr\@$$CBUIActorMovementProxy\@\@\@std\@\@XZ
      */
     MCAPI class std::shared_ptr<struct IActorMovementProxy const> getMovementProxy() const;
+    /**
+     * @symbol ?getMovementProxy\@ActorMovementProxyComponent\@\@QEAA?AV?$shared_ptr\@UIActorMovementProxy\@\@\@std\@\@XZ
+     */
+    MCAPI class std::shared_ptr<struct IActorMovementProxy> getMovementProxy();
 
 };

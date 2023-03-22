@@ -32,26 +32,23 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ArrowEffectSubcomponent();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   351983432
-     * @vftbl  2
-     * @symbol  ?writetoJSON\@ArrowEffectSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
+     * @vftbl 2
+     * @symbol ?writetoJSON\@ArrowEffectSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
-     * @hash   -1679244629
-     * @vftbl  3
-     * @symbol  ?doOnHitEffect\@ArrowEffectSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
+     * @vftbl 3
+     * @symbol ?doOnHitEffect\@ArrowEffectSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @hash   1239582358
-     * @vftbl  4
-     * @symbol  ?getName\@ArrowEffectSubcomponent\@\@UEAAPEBDXZ
+     * @vftbl 4
+     * @symbol ?getName\@ArrowEffectSubcomponent\@\@UEAAPEBDXZ
      */
     virtual char const * getName();
 

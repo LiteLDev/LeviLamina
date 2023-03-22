@@ -28,13 +28,18 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOWARDSRESTRICTIONDEFINITION
     /**
-     * @hash   1158388928
-     * @symbol  ??0MoveTowardsRestrictionDefinition\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~MoveTowardsRestrictionDefinition();
+#endif
+    /**
+     * @symbol ??0MoveTowardsRestrictionDefinition\@\@QEAA\@XZ
      */
     MCAPI MoveTowardsRestrictionDefinition();
     /**
-     * @symbol  ?initialize\@MoveTowardsRestrictionDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVMoveTowardsRestrictionGoal\@\@\@Z
+     * @symbol ?initialize\@MoveTowardsRestrictionDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVMoveTowardsRestrictionGoal\@\@\@Z
      */
     MCAPI void initialize(class EntityContext &, class MoveTowardsRestrictionGoal &) const;
 

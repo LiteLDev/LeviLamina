@@ -27,18 +27,15 @@ public:
 
 public:
     /**
-     * @hash   1293778943
-     * @symbol  ??0BlockMaterialInstanceProxy\@\@QEAA\@AEBU0\@\@Z
+     * @symbol ??0BlockMaterialInstanceProxy\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI BlockMaterialInstanceProxy(struct BlockMaterialInstanceProxy const &);
     /**
-     * @hash   1782045519
-     * @symbol  ??1BlockMaterialInstanceProxy\@\@QEAA\@XZ
+     * @symbol ??1BlockMaterialInstanceProxy\@\@QEAA\@XZ
      */
     MCAPI ~BlockMaterialInstanceProxy();
     /**
-     * @hash   -924236093
-     * @symbol  ?bindType\@BlockMaterialInstanceProxy\@\@SAXXZ
+     * @symbol ?bindType\@BlockMaterialInstanceProxy\@\@SAXXZ
      */
     MCAPI static void bindType();
 

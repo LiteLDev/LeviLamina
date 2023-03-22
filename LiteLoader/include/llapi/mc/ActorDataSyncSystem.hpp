@@ -30,8 +30,7 @@ public:
 
 public:
     /**
-     * @hash   1668368282
-     * @symbol  ?createActorDataSyncSystem\@ActorDataSyncSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createActorDataSyncSystem\@ActorDataSyncSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createActorDataSyncSystem();
 

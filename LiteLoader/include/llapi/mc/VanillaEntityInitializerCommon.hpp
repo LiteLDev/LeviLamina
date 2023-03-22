@@ -28,29 +28,28 @@ public:
 
 public:
     /**
-     * @hash   170455852
-     * @symbol  ?createFromFunction\@VanillaEntityInitializerCommon\@\@SA?AV?$unique_ptr\@VIEntityInitializer\@\@U?$default_delete\@VIEntityInitializer\@\@\@std\@\@\@std\@\@V?$not_null\@P6AXV?$unique_ptr\@VActor\@\@U?$default_delete\@VActor\@\@\@std\@\@\@std\@\@AEAVEntityContext\@\@AEBV3\@\@Z\@gsl\@\@\@Z
+     * @symbol ?createFromFunction\@VanillaEntityInitializerCommon\@\@SA?AV?$unique_ptr\@VIEntityInitializer\@\@U?$default_delete\@VIEntityInitializer\@\@\@std\@\@\@std\@\@V?$not_null\@P6AXV?$unique_ptr\@VActor\@\@U?$default_delete\@VActor\@\@\@std\@\@\@std\@\@AEAVEntityContext\@\@AEBV3\@\@Z\@gsl\@\@\@Z
      */
     MCAPI static std::unique_ptr<class IEntityInitializer> createFromFunction(class gsl::not_null<void ( *)(std::unique_ptr<class Actor>, class EntityContext &, class EntityContext const &)>);
     /**
-     * @hash   2117616388
-     * @symbol  ?initActorComponents\@VanillaEntityInitializerCommon\@\@SAXW4EntityHost\@\@V?$unique_ptr\@VActor\@\@U?$default_delete\@VActor\@\@\@std\@\@\@std\@\@AEAVEntityContext\@\@AEBV5\@\@Z
+     * @symbol ?initActorComponents\@VanillaEntityInitializerCommon\@\@SAXW4EntityHost\@\@V?$unique_ptr\@VActor\@\@U?$default_delete\@VActor\@\@\@std\@\@\@std\@\@AEAVEntityContext\@\@AEBV5\@\@Z
      */
     MCAPI static void initActorComponents(enum class EntityHost, std::unique_ptr<class Actor>, class EntityContext &, class EntityContext const &);
     /**
-     * @hash   -402123827
-     * @symbol  ?initECSMovement\@VanillaEntityInitializerCommon\@\@SAXAEAVEntityContext\@\@AEBV2\@\@Z
+     * @symbol ?initECSMovement\@VanillaEntityInitializerCommon\@\@SAXAEAVEntityContext\@\@AEBV2\@\@Z
      */
     MCAPI static void initECSMovement(class EntityContext &, class EntityContext const &);
     /**
-     * @hash   1840793841
-     * @symbol  ?initExperimentalMovement\@VanillaEntityInitializerCommon\@\@SAXAEAVEntityContext\@\@AEBV2\@\@Z
+     * @symbol ?initExperimentalMovement\@VanillaEntityInitializerCommon\@\@SAXAEAVEntityContext\@\@AEBV2\@\@Z
      */
     MCAPI static void initExperimentalMovement(class EntityContext &, class EntityContext const &);
     /**
-     * @hash   -928883713
-     * @symbol  ?initSideBySideComparison\@VanillaEntityInitializerCommon\@\@SAXAEAVEntityContext\@\@AEBV2\@\@Z
+     * @symbol ?initSideBySideComparison\@VanillaEntityInitializerCommon\@\@SAXAEAVEntityContext\@\@AEBV2\@\@Z
      */
     MCAPI static void initSideBySideComparison(class EntityContext &, class EntityContext const &);
+    /**
+     * @symbol ?initVanilla\@VanillaEntityInitializerCommon\@\@SAXAEAVEntityContext\@\@AEBV2\@\@Z
+     */
+    MCAPI static void initVanilla(class EntityContext &, class EntityContext const &);
 
 };

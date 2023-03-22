@@ -28,15 +28,13 @@ public:
 
 public:
     /**
-     * @hash   1620499088
-     * @symbol  ?createSystem\@MobResetPassengerYRotLimitSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@MobResetPassengerYRotLimitSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
-     * @hash   1115980910
-     * @symbol  ?_tickPassengerView\@MobResetPassengerYRotLimitSystem\@\@CAXAEAVStrictEntityContext\@\@AEAUPassengerYRotLimitComponent\@\@\@Z
+     * @symbol ?_tickPassengerView\@MobResetPassengerYRotLimitSystem\@\@CAXAEAVStrictEntityContext\@\@AEAUPassengerYRotLimitComponent\@\@\@Z
      */
     MCAPI static void _tickPassengerView(class StrictEntityContext &, struct PassengerYRotLimitComponent &);
 

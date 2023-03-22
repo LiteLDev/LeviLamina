@@ -30,14 +30,13 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ScreenHandlerHUD();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1216619289
-     * @vftbl  1
-     * @symbol  ?handleAction\@ScreenHandlerHUD\@\@MEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestAction\@\@\@Z
+     * @vftbl 1
+     * @symbol ?handleAction\@ScreenHandlerHUD\@\@MEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestAction\@\@\@Z
      */
     virtual enum class ItemStackNetResult handleAction(class ItemStackRequestAction const &);
 

@@ -29,17 +29,15 @@ public:
 
 public:
     /**
-     * @hash   -1511734967
-     * @symbol  ??0GrowsCropComponent\@\@QEAA\@XZ
+     * @symbol ??0GrowsCropComponent\@\@QEAA\@XZ
      */
     MCAPI GrowsCropComponent();
     /**
-     * @symbol  ?addAdditionalSaveData\@GrowsCropComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
+     * @symbol ?addAdditionalSaveData\@GrowsCropComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @hash   1208905844
-     * @symbol  ?readAdditionalSaveData\@GrowsCropComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
+     * @symbol ?readAdditionalSaveData\@GrowsCropComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
 

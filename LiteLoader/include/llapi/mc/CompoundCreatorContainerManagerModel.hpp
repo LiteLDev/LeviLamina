@@ -31,55 +31,47 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~CompoundCreatorContainerManagerModel();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1601052595
-     * @vftbl  6
-     * @symbol  ?getItemCopies\@CompoundCreatorContainerManagerModel\@\@UEBA?AV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 6
+     * @symbol ?getItemCopies\@CompoundCreatorContainerManagerModel\@\@UEBA?AV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
-     * @hash   -2060112164
-     * @vftbl  7
-     * @symbol  ?setSlot\@CompoundCreatorContainerManagerModel\@\@UEAAXHAEBVItemStack\@\@_N\@Z
+     * @vftbl 7
+     * @symbol ?setSlot\@CompoundCreatorContainerManagerModel\@\@UEAAXHAEBVItemStack\@\@_N\@Z
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
-     * @hash   -1894233579
-     * @vftbl  8
-     * @symbol  ?getSlot\@CompoundCreatorContainerManagerModel\@\@UEBAAEBVItemStack\@\@H\@Z
+     * @vftbl 8
+     * @symbol ?getSlot\@CompoundCreatorContainerManagerModel\@\@UEBAAEBVItemStack\@\@H\@Z
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
-     * @hash   44648631
-     * @vftbl  9
-     * @symbol  ?setData\@CompoundCreatorContainerManagerModel\@\@UEAAXHH\@Z
+     * @vftbl 9
+     * @symbol ?setData\@CompoundCreatorContainerManagerModel\@\@UEAAXHH\@Z
      */
     virtual void setData(int, int);
     /**
-     * @hash   495969453
-     * @vftbl  10
-     * @symbol  ?broadcastChanges\@CompoundCreatorContainerManagerModel\@\@UEAAXXZ
+     * @vftbl 10
+     * @symbol ?broadcastChanges\@CompoundCreatorContainerManagerModel\@\@UEAAXXZ
      */
     virtual void broadcastChanges();
     /**
-     * @hash   1221148467
-     * @vftbl  16
-     * @symbol  ?isValid\@CompoundCreatorContainerManagerModel\@\@UEAA_NM\@Z
+     * @vftbl 16
+     * @symbol ?isValid\@CompoundCreatorContainerManagerModel\@\@UEAA_NM\@Z
      */
     virtual bool isValid(float);
     /**
-     * @hash   530445370
-     * @vftbl  17
-     * @symbol  ?_postInit\@CompoundCreatorContainerManagerModel\@\@MEAA?AVContainerScreenContext\@\@XZ
+     * @vftbl 17
+     * @symbol ?_postInit\@CompoundCreatorContainerManagerModel\@\@MEAA?AVContainerScreenContext\@\@XZ
      */
     virtual class ContainerScreenContext _postInit();
     /**
-     * @hash   -1145677975
-     * @symbol  ??0CompoundCreatorContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
+     * @symbol ??0CompoundCreatorContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI CompoundCreatorContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &);
 

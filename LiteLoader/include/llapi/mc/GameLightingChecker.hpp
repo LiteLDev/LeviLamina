@@ -20,8 +20,7 @@ namespace GameLightingChecker {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   640207062
-     * @symbol  ?checkAreaForLighting\@GameLightingChecker\@\@YAXAEAVBlockSource\@\@AEBVBlockPos\@\@1AEAUCheckAreaForLightingResults\@1\@\@Z
+     * @symbol ?checkAreaForLighting\@GameLightingChecker\@\@YAXAEAVBlockSource\@\@AEBVBlockPos\@\@1AEAUCheckAreaForLightingResults\@1\@\@Z
      */
     MCAPI void checkAreaForLighting(class BlockSource &, class BlockPos const &, class BlockPos const &, struct GameLightingChecker::CheckAreaForLightingResults &);
 

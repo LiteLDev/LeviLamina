@@ -1,4 +1,5 @@
 #include "llapi/Global.h"
+#include "llapi/mc/AABB.hpp"
 #include "llapi/mc/Actor.hpp"
 #include "llapi/mc/ActorDamageSource.hpp"
 #include "llapi/mc/Block.hpp"
@@ -26,8 +27,15 @@
 #include "llapi/mc/ActorDefinitionIdentifier.hpp"
 #include "llapi/mc/ActorDamageSource.hpp"
 #include "llapi/mc/Vec2.hpp"
-#include "llapi/mc/AABB.hpp"
 #include "llapi/mc/RotationCommandUtils.hpp"
+#include "llapi/mc/WeakEntityRef.hpp"
+#include "llapi/mc/WeakStorageEntity.hpp"
+
+class UserEntityIdentifierComponent;
+
+EntityContext* Actor::getEntityContext() const {
+    return dAccess<EntityContext*, 8>((Actor*)this);
+}
 
 class UserEntityIdentifierComponent;
 
@@ -35,6 +43,10 @@ UserEntityIdentifierComponent* Actor::getUserEntityIdentifierComponent() const {
     return SymCall(
         "??$tryGetComponent@VUserEntityIdentifierComponent@@@Actor@@QEAAPEAVUserEntityIdentifierComponent@@XZ",
         UserEntityIdentifierComponent*, Actor*)((Actor*)this);
+}
+
+float Actor::getRealSpeed() const {
+    return (float)(getPosDelta().length() * 20.0);
 }
 
 MCINLINE Vec3 Actor::getFeetPosition() const {
@@ -64,11 +76,13 @@ bool Actor::isPlayer(bool allowSimulatedPlayer) const {
 }
 
 bool Actor::isItemActor() const {
-    return hasCategory((ActorCategory)1024); // IDA Player::take
+    return hasCategory(ActorCategory::Item); // IDA Player::take
 }
 
+#include "llapi/mc/ActorCollision.hpp"
+
 bool Actor::isOnGround() const {
-    return (dAccess<bool, 392>(this)); // IDA DirectActorProxyImpl<IMobMovementProxy>::isOnGround
+    return ActorCollision::isOnGround(*getEntityContext()); // IDA DirectActorProxyImpl<IMobMovementProxy>::isOnGround
 }
 
 std::string Actor::getTypeName() const {
@@ -88,7 +102,7 @@ Vec2* Actor::getDirection() const {
 }
 
 BlockPos Actor::getBlockPos() {
-    return getPosition().add(0, -1.0, 0).toBlockPos();
+    return getFeetPosition().toBlockPos();
 }
 
 BlockInstance Actor::getBlockStandingOn() const {
@@ -164,11 +178,11 @@ bool Actor::stopFire() {
 }
 
 Vec3 Actor::getCameraPos() const {
-    auto& pos = this->getPosition();
+    Vec3 pos = this->getPosition();
     if (isSneaking()) {
-        pos.add(0, -0.125, 0);
+        pos.y -= 0.125;
     } else {
-        pos.add(0, ((Player*)this)->getCameraOffset(), 0);
+        pos.y += ((Player*)this)->getCameraOffset();
     }
     return pos;
 }
@@ -232,7 +246,7 @@ Actor* Actor::getActorFromViewVector(float maxDistance) {
 bool Actor::addEffect(MobEffect::EffectType type, int tick, int level, bool ambient, bool showParticles,
                       bool showAnimation) {
     MobEffectInstance ins = MobEffectInstance((unsigned int)type, tick, level, ambient, showParticles, showAnimation);
-    ins.applyEffects(this);
+    this->addEffect(ins);
     return true;
 };
 

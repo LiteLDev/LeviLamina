@@ -31,19 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~IcePatchFeature();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1053935555
-     * @vftbl  3
-     * @symbol  ?place\@IcePatchFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @vftbl 3
+     * @symbol ?place\@IcePatchFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   1463591702
-     * @symbol  ??0IcePatchFeature\@\@QEAA\@H\@Z
+     * @symbol ??0IcePatchFeature\@\@QEAA\@H\@Z
      */
     MCAPI IcePatchFeature(int);
 

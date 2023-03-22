@@ -30,51 +30,50 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~EmotePacket();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   951253390
-     * @vftbl  1
-     * @symbol  ?getId\@EmotePacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@EmotePacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   149976123
-     * @vftbl  2
-     * @symbol  ?getName\@EmotePacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@EmotePacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   1154585164
-     * @vftbl  3
-     * @symbol  ?write\@EmotePacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@EmotePacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   940483132
-     * @vftbl  6
-     * @symbol  ?_read\@EmotePacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@EmotePacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EMOTEPACKET
     /**
-     * @hash   -1420787396
-     * @symbol  ??0EmotePacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~EmotePacket();
+#endif
+    /**
+     * @symbol ??0EmotePacket\@\@QEAA\@XZ
      */
     MCAPI EmotePacket();
     /**
-     * @hash   -673818032
-     * @symbol  ?isServerSide\@EmotePacket\@\@QEBA_NXZ
+     * @symbol ?isServerSide\@EmotePacket\@\@QEBA_NXZ
      */
     MCAPI bool isServerSide() const;
     /**
-     * @symbol  ?setEmoteChatMute\@EmotePacket\@\@QEAAXXZ
+     * @symbol ?setEmoteChatMute\@EmotePacket\@\@QEAAXXZ
      */
     MCAPI void setEmoteChatMute();
     /**
-     * @hash   -1396689651
-     * @symbol  ?setServerSide\@EmotePacket\@\@QEAAXXZ
+     * @symbol ?setServerSide\@EmotePacket\@\@QEAAXXZ
      */
     MCAPI void setServerSide();
 

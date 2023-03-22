@@ -26,35 +26,29 @@ public:
 
 public:
     /**
-     * @hash   -133714515
-     * @symbol  ??0ActorDefinitionEvent\@\@QEAA\@$$QEAV0\@\@Z
+     * @symbol ??0ActorDefinitionEvent\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI ActorDefinitionEvent(class ActorDefinitionEvent &&);
     /**
-     * @hash   -262163311
-     * @symbol  ??0ActorDefinitionEvent\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0ActorDefinitionEvent\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI ActorDefinitionEvent(class ActorDefinitionEvent const &);
     /**
-     * @hash   -1597616090
-     * @symbol  ?evaluateGroups\@ActorDefinitionEvent\@\@QEBAXAEAVActor\@\@AEAV?$vector\@UActorDefinitionModifier\@\@V?$allocator\@UActorDefinitionModifier\@\@\@std\@\@\@std\@\@AEBVVariantParameterList\@\@\@Z
+     * @symbol ?evaluateGroups\@ActorDefinitionEvent\@\@QEBAXAEAVActor\@\@AEAV?$vector\@UActorDefinitionModifier\@\@V?$allocator\@UActorDefinitionModifier\@\@\@std\@\@\@std\@\@AEBVVariantParameterList\@\@\@Z
      */
     MCAPI void evaluateGroups(class Actor &, std::vector<struct ActorDefinitionModifier> &, class VariantParameterList const &) const;
     /**
-     * @hash   808730532
-     * @symbol  ??4ActorDefinitionEvent\@\@QEAAAEAV0\@AEBV0\@\@Z
+     * @symbol ??4ActorDefinitionEvent\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
     MCAPI class ActorDefinitionEvent & operator=(class ActorDefinitionEvent const &);
     /**
-     * @hash   -161141732
-     * @symbol  ??1ActorDefinitionEvent\@\@QEAA\@XZ
+     * @symbol ??1ActorDefinitionEvent\@\@QEAA\@XZ
      */
     MCAPI ~ActorDefinitionEvent();
 
 //private:
     /**
-     * @hash   1825090397
-     * @symbol  ?_evaluateGroups\@ActorDefinitionEvent\@\@AEBAXAEAVActor\@\@AEAV?$vector\@UActorDefinitionModifier\@\@V?$allocator\@UActorDefinitionModifier\@\@\@std\@\@\@std\@\@AEBVVariantParameterList\@\@\@Z
+     * @symbol ?_evaluateGroups\@ActorDefinitionEvent\@\@AEBAXAEAVActor\@\@AEAV?$vector\@UActorDefinitionModifier\@\@V?$allocator\@UActorDefinitionModifier\@\@\@std\@\@\@std\@\@AEBVVariantParameterList\@\@\@Z
      */
     MCAPI void _evaluateGroups(class Actor &, std::vector<struct ActorDefinitionModifier> &, class VariantParameterList const &) const;
 

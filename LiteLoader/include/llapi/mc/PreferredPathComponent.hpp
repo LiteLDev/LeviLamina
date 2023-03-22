@@ -30,14 +30,12 @@ public:
 
 public:
     /**
-     * @hash   1955153041
-     * @symbol  ?getPreferredPath\@PreferredPathComponent\@\@QEAAAEBUPreferredPathDescription\@\@AEAVActor\@\@\@Z
-     */
-    MCAPI struct PreferredPathDescription const & getPreferredPath(class Actor &);
-    /**
-     * @hash   681162426
-     * @symbol  ?initFromDefinition\@PreferredPathComponent\@\@QEAAXAEAVActor\@\@\@Z
+     * @symbol ?initFromDefinition\@PreferredPathComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void initFromDefinition(class Actor &);
+    /**
+     * @symbol ?getPreferredPath\@PreferredPathComponent\@\@SAAEBUPreferredPathDescription\@\@AEBVActor\@\@\@Z
+     */
+    MCAPI static struct PreferredPathDescription const & getPreferredPath(class Actor const &);
 
 };

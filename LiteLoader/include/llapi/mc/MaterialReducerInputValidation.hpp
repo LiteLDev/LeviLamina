@@ -31,70 +31,62 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~MaterialReducerInputValidation();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -740873502
-     * @vftbl  1
-     * @symbol  ?isValidSlotForContainer\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVContainer\@\@H\@Z
+     * @vftbl 1
+     * @symbol ?isValidSlotForContainer\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVContainer\@\@H\@Z
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
-     * @hash   -148767468
-     * @vftbl  2
-     * @symbol  ?isItemAllowedInSlot\@MaterialReducerInputValidation\@\@UEBA_NAEBVContainerScreenContext\@\@HAEBVItemStackBase\@\@H\@Z
+     * @vftbl 2
+     * @symbol ?isItemAllowedInSlot\@MaterialReducerInputValidation\@\@UEBA_NAEBVContainerScreenContext\@\@HAEBVItemStackBase\@\@H\@Z
      */
     virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   -253397283
-     * @vftbl  4
-     * @symbol  ?isItemAllowedToAdd\@MaterialReducerInputValidation\@\@UEBA_NAEBVItemStack\@\@\@Z
+     * @vftbl 4
+     * @symbol ?isItemAllowedToAdd\@MaterialReducerInputValidation\@\@UEBA_NAEBVItemStack\@\@\@Z
      */
     virtual bool isItemAllowedToAdd(class ItemStack const &) const;
     /**
-     * @vftbl  5
-     * @symbol  __unk_vfn_5
+     * @vftbl 5
+     * @symbol __unk_vfn_5
      */
     virtual void __unk_vfn_5();
     /**
-     * @hash   -278423131
-     * @vftbl  6
-     * @symbol  ?canItemMoveToContainer\@ContainerValidationBase\@\@UEBA_NAEBVItemStackBase\@\@\@Z
+     * @vftbl 6
+     * @symbol ?canItemMoveToContainer\@ContainerValidationBase\@\@UEBA_NAEBVItemStackBase\@\@\@Z
      */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
-     * @vftbl  7
-     * @symbol  __unk_vfn_7
+     * @vftbl 7
+     * @symbol __unk_vfn_7
      */
     virtual void __unk_vfn_7();
     /**
-     * @hash   -1943931774
-     * @vftbl  8
-     * @symbol  ?getContainerOffset\@MaterialReducerInputValidation\@\@UEBAHAEBVContainerScreenContext\@\@\@Z
+     * @vftbl 8
+     * @symbol ?getContainerOffset\@MaterialReducerInputValidation\@\@UEBAHAEBVContainerScreenContext\@\@\@Z
      */
     virtual int getContainerOffset(class ContainerScreenContext const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MATERIALREDUCERINPUTVALIDATION
     /**
-     * @hash   286828073
-     * @symbol  ?canDestroy\@MaterialReducerInputValidation\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
+     * @symbol ?canDestroy\@MaterialReducerInputValidation\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
      */
     MCVAPI bool canDestroy(class ContainerScreenContext const &) const;
     /**
-     * @hash   1152055521
-     * @symbol  ?getAvailableSetCount\@MaterialReducerInputValidation\@\@UEBAHHAEBVItemStackBase\@\@\@Z
+     * @symbol ?getAvailableSetCount\@MaterialReducerInputValidation\@\@UEBAHHAEBVItemStackBase\@\@\@Z
      */
     MCVAPI int getAvailableSetCount(int, class ItemStackBase const &) const;
 #endif
     /**
-     * @hash   1290209611
-     * @symbol  ??0MaterialReducerInputValidation\@\@QEAA\@AEBVContainerScreenContext\@\@\@Z
+     * @symbol ??0MaterialReducerInputValidation\@\@QEAA\@AEBVContainerScreenContext\@\@\@Z
      */
     MCAPI MaterialReducerInputValidation(class ContainerScreenContext const &);
 

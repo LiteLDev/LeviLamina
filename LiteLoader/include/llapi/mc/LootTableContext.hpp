@@ -30,88 +30,71 @@ public:
 
 public:
     /**
-     * @hash   -1698175687
-     * @symbol  ??0LootTableContext\@\@QEAA\@MPEAVILevel\@\@UActorUniqueID\@\@PEAVPlayer\@\@PEAVActor\@\@PEBVActorDamageSource\@\@MV?$AutomaticID\@VDimension\@\@H\@\@PEBVItemStack\@\@\@Z
+     * @symbol ??0LootTableContext\@\@QEAA\@MPEAVILevel\@\@UActorUniqueID\@\@PEAVPlayer\@\@PEAVActor\@\@PEBVActorDamageSource\@\@MV?$AutomaticID\@VDimension\@\@H\@\@PEBVItemStack\@\@\@Z
      */
     MCAPI LootTableContext(float, class ILevel *, struct ActorUniqueID, class Player *, class Actor *, class ActorDamageSource const *, float, class AutomaticID<class Dimension, int>, class ItemStack const *);
     /**
-     * @hash   1973397166
-     * @symbol  ?addVisitedTable\@LootTableContext\@\@QEAA_NPEBVLootTable\@\@\@Z
+     * @symbol ?addVisitedTable\@LootTableContext\@\@QEAA_NPEBVLootTable\@\@\@Z
      */
     MCAPI bool addVisitedTable(class LootTable const *);
     /**
-     * @hash   -809556176
-     * @symbol  ?getDimensionId\@LootTableContext\@\@QEBA?AV?$AutomaticID\@VDimension\@\@H\@\@XZ
+     * @symbol ?getDimensionId\@LootTableContext\@\@QEBA?AV?$AutomaticID\@VDimension\@\@H\@\@XZ
      */
     MCAPI class AutomaticID<class Dimension, int> getDimensionId() const;
     /**
-     * @hash   955525686
-     * @symbol  ?getEntity\@LootTableContext\@\@QEBAPEAVActor\@\@W4ActorTarget\@\@\@Z
+     * @symbol ?getEntity\@LootTableContext\@\@QEBAPEAVActor\@\@W4ActorTarget\@\@\@Z
      */
     MCAPI class Actor * getEntity(enum class ActorTarget) const;
     /**
-     * @hash   1570993622
-     * @symbol  ?getExplosionRadius\@LootTableContext\@\@QEBAMXZ
+     * @symbol ?getExplosionRadius\@LootTableContext\@\@QEBAMXZ
      */
     MCAPI float getExplosionRadius() const;
     /**
-     * @hash   932591447
-     * @symbol  ?getKilledEntity\@LootTableContext\@\@QEBAPEAVActor\@\@XZ
+     * @symbol ?getKilledEntity\@LootTableContext\@\@QEBAPEAVActor\@\@XZ
      */
     MCAPI class Actor * getKilledEntity() const;
     /**
-     * @hash   641225047
-     * @symbol  ?getKillerEntity\@LootTableContext\@\@QEBAPEAVActor\@\@XZ
+     * @symbol ?getKillerEntity\@LootTableContext\@\@QEBAPEAVActor\@\@XZ
      */
     MCAPI class Actor * getKillerEntity() const;
     /**
-     * @hash   -1761241127
-     * @symbol  ?getKillerPet\@LootTableContext\@\@QEBAPEAVActor\@\@XZ
+     * @symbol ?getKillerPet\@LootTableContext\@\@QEBAPEAVActor\@\@XZ
      */
     MCAPI class Actor * getKillerPet() const;
     /**
-     * @hash   554960391
-     * @symbol  ?getKillerPlayer\@LootTableContext\@\@QEBAPEAVActor\@\@XZ
+     * @symbol ?getKillerPlayer\@LootTableContext\@\@QEBAPEAVActor\@\@XZ
      */
     MCAPI class Actor * getKillerPlayer() const;
     /**
-     * @hash   -1236824629
-     * @symbol  ?getLevel\@LootTableContext\@\@QEBAPEAVLevel\@\@XZ
+     * @symbol ?getLevel\@LootTableContext\@\@QEBAPEAVLevel\@\@XZ
      */
     MCAPI class Level * getLevel() const;
     /**
-     * @hash   294827700
-     * @symbol  ?getLuck\@LootTableContext\@\@QEBAMXZ
+     * @symbol ?getLuck\@LootTableContext\@\@QEBAMXZ
      */
     MCAPI float getLuck() const;
     /**
-     * @hash   1580389350
-     * @symbol  ?getOriginalItemName\@LootTableContext\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getOriginalItemName\@LootTableContext\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string getOriginalItemName() const;
     /**
-     * @hash   -2038204281
-     * @symbol  ?getThisEntity\@LootTableContext\@\@QEBAPEAVActor\@\@XZ
+     * @symbol ?getThisEntity\@LootTableContext\@\@QEBAPEAVActor\@\@XZ
      */
     MCAPI class Actor * getThisEntity() const;
     /**
-     * @hash   388225155
-     * @symbol  ?getTool\@LootTableContext\@\@QEBAPEBVItemStack\@\@XZ
+     * @symbol ?getTool\@LootTableContext\@\@QEBAPEBVItemStack\@\@XZ
      */
     MCAPI class ItemStack const * getTool() const;
     /**
-     * @hash   -1807120799
-     * @symbol  ?removeVisitedTable\@LootTableContext\@\@QEAAXPEBVLootTable\@\@\@Z
+     * @symbol ?removeVisitedTable\@LootTableContext\@\@QEAAXPEBVLootTable\@\@\@Z
      */
     MCAPI void removeVisitedTable(class LootTable const *);
     /**
-     * @hash   402812222
-     * @symbol  ?setOriginalItemName\@LootTableContext\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?setOriginalItemName\@LootTableContext\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void setOriginalItemName(std::string const &);
     /**
-     * @hash   600026115
-     * @symbol  ??1LootTableContext\@\@QEAA\@XZ
+     * @symbol ??1LootTableContext\@\@QEAA\@XZ
      */
     MCAPI ~LootTableContext();
 

@@ -10,26 +10,22 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC structure ChemistryIngredient.
- *
- */
-struct ChemistryIngredient {
+
+class ChemistryIngredient {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHEMISTRYINGREDIENT
 public:
-    struct ChemistryIngredient& operator=(struct ChemistryIngredient const &) = delete;
-    ChemistryIngredient(struct ChemistryIngredient const &) = delete;
+    class ChemistryIngredient& operator=(class ChemistryIngredient const &) = delete;
+    ChemistryIngredient(class ChemistryIngredient const &) = delete;
     ChemistryIngredient() = delete;
 #endif
 
 public:
     /**
-     * @hash   1985811217
-     * @symbol  ??1ChemistryIngredient\@\@QEAA\@XZ
+     * @symbol ??1ChemistryIngredient\@\@QEAA\@XZ
      */
     MCAPI ~ChemistryIngredient();
 

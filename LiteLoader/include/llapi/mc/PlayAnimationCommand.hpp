@@ -31,19 +31,23 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~PlayAnimationCommand();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1812509736
-     * @vftbl  1
-     * @symbol  ?execute\@PlayAnimationCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @vftbl 1
+     * @symbol ?execute\@PlayAnimationCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYANIMATIONCOMMAND
     /**
-     * @hash   1330561804
-     * @symbol  ?setup\@PlayAnimationCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~PlayAnimationCommand();
+#endif
+    /**
+     * @symbol ?setup\@PlayAnimationCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);
 
@@ -51,8 +55,7 @@ public:
 
 private:
     /**
-     * @hash   -1368837375
-     * @symbol  ?mStopExpressionVersion\@PlayAnimationCommand\@\@0W4MolangVersion\@\@B
+     * @symbol ?mStopExpressionVersion\@PlayAnimationCommand\@\@0W4MolangVersion\@\@B
      */
     MCAPI static enum class MolangVersion const mStopExpressionVersion;
 

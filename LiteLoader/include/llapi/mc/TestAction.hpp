@@ -30,25 +30,22 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~TestAction();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   437074527
-     * @vftbl  1
-     * @symbol  ?execute\@TestAction\@\@UEAAXAEAVServerLevel\@\@AEAVDimension\@\@\@Z
+     * @vftbl 1
+     * @symbol ?execute\@TestAction\@\@UEAAXAEAVServerLevel\@\@AEAVDimension\@\@\@Z
      */
     virtual void execute(class ServerLevel &, class Dimension &);
     /**
-     * @hash   -1468046363
-     * @vftbl  3
-     * @symbol  ??8TestAction\@\@UEBA_NAEAVIRequestAction\@\@\@Z
+     * @vftbl 3
+     * @symbol ??8TestAction\@\@UEBA_NAEAVIRequestAction\@\@\@Z
      */
     virtual bool operator==(class IRequestAction &) const;
     /**
-     * @hash   2074977764
-     * @symbol  ??0TestAction\@\@QEAA\@XZ
+     * @symbol ??0TestAction\@\@QEAA\@XZ
      */
     MCAPI TestAction();
 

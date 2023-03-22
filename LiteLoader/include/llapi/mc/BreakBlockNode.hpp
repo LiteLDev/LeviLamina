@@ -29,25 +29,22 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BreakBlockNode();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -2035642819
-     * @vftbl  1
-     * @symbol  ?tick\@BreakBlockNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
+     * @vftbl 1
+     * @symbol ?tick\@BreakBlockNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
-     * @hash   1033383793
-     * @vftbl  2
-     * @symbol  ?initializeFromDefinition\@BreakBlockNode\@\@EEAAXAEAVActor\@\@\@Z
+     * @vftbl 2
+     * @symbol ?initializeFromDefinition\@BreakBlockNode\@\@EEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
-     * @hash   623118428
-     * @symbol  ??0BreakBlockNode\@\@QEAA\@XZ
+     * @symbol ??0BreakBlockNode\@\@QEAA\@XZ
      */
     MCAPI BreakBlockNode();
 

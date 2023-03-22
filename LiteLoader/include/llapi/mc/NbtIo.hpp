@@ -30,13 +30,11 @@ public:
 
 public:
     /**
-     * @hash   -814844015
-     * @symbol  ?read\@NbtIo\@\@SA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@AEAVIDataInput\@\@\@Z
+     * @symbol ?read\@NbtIo\@\@SA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@AEAVIDataInput\@\@\@Z
      */
     MCAPI static std::unique_ptr<class CompoundTag> read(class IDataInput &);
     /**
-     * @hash   824392566
-     * @symbol  ?write\@NbtIo\@\@SAXPEBVCompoundTag\@\@AEAVIDataOutput\@\@\@Z
+     * @symbol ?write\@NbtIo\@\@SAXPEBVCompoundTag\@\@AEAVIDataOutput\@\@\@Z
      */
     MCAPI static void write(class CompoundTag const *, class IDataOutput &);
 

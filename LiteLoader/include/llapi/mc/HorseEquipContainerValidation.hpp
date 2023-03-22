@@ -31,66 +31,57 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~HorseEquipContainerValidation();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   226706347
-     * @vftbl  1
-     * @symbol  ?isValidSlotForContainer\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVContainer\@\@H\@Z
+     * @vftbl 1
+     * @symbol ?isValidSlotForContainer\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVContainer\@\@H\@Z
      */
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
-     * @hash   -956894869
-     * @vftbl  2
-     * @symbol  ?isItemAllowedInSlot\@HorseEquipContainerValidation\@\@UEBA_NAEBVContainerScreenContext\@\@HAEBVItemStackBase\@\@H\@Z
+     * @vftbl 2
+     * @symbol ?isItemAllowedInSlot\@HorseEquipContainerValidation\@\@UEBA_NAEBVContainerScreenContext\@\@HAEBVItemStackBase\@\@H\@Z
      */
     virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /**
-     * @hash   -1569570280
-     * @vftbl  3
-     * @symbol  ?getAvailableSetCount\@HorseEquipContainerValidation\@\@UEBAHHAEBVItemStackBase\@\@\@Z
+     * @vftbl 3
+     * @symbol ?getAvailableSetCount\@HorseEquipContainerValidation\@\@UEBAHHAEBVItemStackBase\@\@\@Z
      */
     virtual int getAvailableSetCount(int, class ItemStackBase const &) const;
     /**
-     * @hash   -692377018
-     * @vftbl  4
-     * @symbol  ?isItemAllowedToAdd\@HorseEquipContainerValidation\@\@UEBA_NAEBVItemStack\@\@\@Z
+     * @vftbl 4
+     * @symbol ?isItemAllowedToAdd\@HorseEquipContainerValidation\@\@UEBA_NAEBVItemStack\@\@\@Z
      */
     virtual bool isItemAllowedToAdd(class ItemStack const &) const;
     /**
-     * @hash   917565999
-     * @vftbl  5
-     * @symbol  ?isItemAllowedToRemove\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVItemStackBase\@\@\@Z
+     * @vftbl 5
+     * @symbol ?isItemAllowedToRemove\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVItemStackBase\@\@\@Z
      */
     virtual bool isItemAllowedToRemove(class ContainerScreenContext const &, class ItemStackBase const &) const;
     /**
-     * @hash   -1046130514
-     * @vftbl  6
-     * @symbol  ?canItemMoveToContainer\@ContainerValidationBase\@\@UEBA_NAEBVItemStackBase\@\@\@Z
+     * @vftbl 6
+     * @symbol ?canItemMoveToContainer\@ContainerValidationBase\@\@UEBA_NAEBVItemStackBase\@\@\@Z
      */
     virtual bool canItemMoveToContainer(class ItemStackBase const &) const;
     /**
-     * @hash   172232194
-     * @vftbl  7
-     * @symbol  ?canDestroy\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
+     * @vftbl 7
+     * @symbol ?canDestroy\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
      */
     virtual bool canDestroy(class ContainerScreenContext const &) const;
     /**
-     * @vftbl  8
-     * @symbol  __unk_vfn_8
+     * @vftbl 8
+     * @symbol __unk_vfn_8
      */
     virtual void __unk_vfn_8();
     /**
-     * @hash   -1904622503
-     * @vftbl  9
-     * @symbol  ?getContainerSize\@HorseEquipContainerValidation\@\@UEBAHAEBVContainerScreenContext\@\@AEBVContainer\@\@\@Z
+     * @vftbl 9
+     * @symbol ?getContainerSize\@HorseEquipContainerValidation\@\@UEBAHAEBVContainerScreenContext\@\@AEBVContainer\@\@\@Z
      */
     virtual int getContainerSize(class ContainerScreenContext const &, class Container const &) const;
     /**
-     * @hash   1124047076
-     * @symbol  ??0HorseEquipContainerValidation\@\@QEAA\@AEBVContainerScreenContext\@\@\@Z
+     * @symbol ??0HorseEquipContainerValidation\@\@QEAA\@AEBVContainerScreenContext\@\@\@Z
      */
     MCAPI HorseEquipContainerValidation(class ContainerScreenContext const &);
 

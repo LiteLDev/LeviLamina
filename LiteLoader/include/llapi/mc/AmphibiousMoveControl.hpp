@@ -30,19 +30,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~AmphibiousMoveControl();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1059769010
-     * @vftbl  2
-     * @symbol  ?tick\@AmphibiousMoveControl\@\@UEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
+     * @vftbl 2
+     * @symbol ?tick\@AmphibiousMoveControl\@\@UEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
     /**
-     * @hash   856343511
-     * @symbol  ??0AmphibiousMoveControl\@\@QEAA\@XZ
+     * @symbol ??0AmphibiousMoveControl\@\@QEAA\@XZ
      */
     MCAPI AmphibiousMoveControl();
 

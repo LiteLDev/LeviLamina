@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   -876161560
-     * @symbol  ??1PlayerStorageIds\@\@QEAA\@XZ
+     * @symbol ??1PlayerStorageIds\@\@QEAA\@XZ
      */
     MCAPI ~PlayerStorageIds();
 

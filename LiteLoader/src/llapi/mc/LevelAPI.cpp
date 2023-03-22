@@ -34,13 +34,16 @@ Actor* Level::getEntity(ActorUniqueID uniqueId) {
 }
 
 BlockSource* Level::getBlockSource(int dimID) {
-    // auto dim = Global<Level>->createDimension(dimID);
-    auto dim = (Dimension*)Global<Level>->getDimension(dimID).mHandle.lock().get();
+    auto dim = Level::getDimensionPtr(dimID);
     return &dim->getBlockSourceFromMainChunkSource();
 }
 
 BlockSource* Level::getBlockSource(Actor* ac) {
     return const_cast<BlockSource*>(&ac->getRegionConst());
+}
+
+Dimension* Level::getDimensionPtr(class AutomaticID<class Dimension, int> dimId) {
+    return Global<Level>->getDimension(dimId).get();
 }
 
 Block* Level::getBlock(BlockPos* pos, int dimId) {
@@ -61,7 +64,7 @@ Block* Level::getBlock(const BlockPos& pos, BlockSource* blockSource) {
 
 // Return nullptr when failing to get block
 Block* Level::getBlockEx(const BlockPos& pos, int dimId) {
-    auto dim = (Dimension*)Global<Level>->getDimension(dimId).mHandle.lock().get();
+    auto dim = Level::getDimensionPtr(dimId);
     if (!dim)
         return nullptr;
 
@@ -208,7 +211,7 @@ std::vector<Player*> Level::getAllPlayers() {
 std::vector<Actor*> Level::getAllEntities(int dimId) {
     try {
         Level* lv = Global<Level>;
-        Dimension* dim = (Dimension*)lv->getDimension(dimId).mHandle.lock().get();
+        Dimension* dim = Level::getDimensionPtr(dimId);
         if (!dim)
             return {};
         auto& list =
@@ -216,10 +219,8 @@ std::vector<Actor*> Level::getAllEntities(int dimId) {
 
         // Check Valid
         std::vector<Actor*> result;
-        auto currTick = SymCall("?getCurrentTick@Level@@UEBAAEBUTick@@XZ", Tick*, Level*)(lv)->t;
+        auto currTick = lv->getCurrentTick().t;
         for (auto& i : list) {
-            // auto entity = SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ",
-            //     Actor*, void*)(&i.second);
             auto entity = getEntity(i.first);
             if (!entity)
                 continue;

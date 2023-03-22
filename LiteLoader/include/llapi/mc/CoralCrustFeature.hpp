@@ -31,46 +31,39 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~CoralCrustFeature();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   747426602
-     * @vftbl  3
-     * @symbol  ?place\@CoralCrustFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @vftbl 3
+     * @symbol ?place\@CoralCrustFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
 //private:
     /**
-     * @hash   -210216752
-     * @symbol  ?_canOverwrite\@CoralCrustFeature\@\@AEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     * @symbol ?_canOverwrite\@CoralCrustFeature\@\@AEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool _canOverwrite(class BlockSource const &, class BlockPos const &) const;
     /**
-     * @hash   189818656
-     * @symbol  ?_getCropOffsetFromRot\@CoralCrustFeature\@\@AEBA?AVBlockPos\@\@HH\@Z
+     * @symbol ?_getCropOffsetFromRot\@CoralCrustFeature\@\@AEBA?AVBlockPos\@\@HH\@Z
      */
     MCAPI class BlockPos _getCropOffsetFromRot(int, int) const;
     /**
-     * @hash   544054416
-     * @symbol  ?_getOffsetFromRot\@CoralCrustFeature\@\@AEBA?AVBlockPos\@\@HH\@Z
+     * @symbol ?_getOffsetFromRot\@CoralCrustFeature\@\@AEBA?AVBlockPos\@\@HH\@Z
      */
     MCAPI class BlockPos _getOffsetFromRot(int, int) const;
     /**
-     * @hash   -1217489220
-     * @symbol  ?_placeCoral\@CoralCrustFeature\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAV?$vector\@VBlockPos\@\@V?$allocator\@VBlockPos\@\@\@std\@\@\@std\@\@AEAV?$vector\@U?$pair\@VBlockPos\@\@E\@std\@\@V?$allocator\@U?$pair\@VBlockPos\@\@E\@std\@\@\@2\@\@6\@H\@Z
+     * @symbol ?_placeCoral\@CoralCrustFeature\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAV?$vector\@VBlockPos\@\@V?$allocator\@VBlockPos\@\@\@std\@\@\@std\@\@AEAV?$vector\@U?$pair\@VBlockPos\@\@E\@std\@\@V?$allocator\@U?$pair\@VBlockPos\@\@E\@std\@\@\@2\@\@6\@H\@Z
      */
     MCAPI void _placeCoral(class BlockSource &, class BlockPos const &, class Random &, std::vector<class BlockPos> &, std::vector<struct std::pair<class BlockPos, unsigned char>> &, int) const;
     /**
-     * @hash   -652714085
-     * @symbol  ?_placeCoralBase\@CoralCrustFeature\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVLegacyStructureTemplate\@\@AEAVLegacyStructureSettings\@\@\@Z
+     * @symbol ?_placeCoralBase\@CoralCrustFeature\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVLegacyStructureTemplate\@\@AEAVLegacyStructureSettings\@\@\@Z
      */
     MCAPI void _placeCoralBase(class BlockSource &, class BlockPos const &, class Random &, class LegacyStructureTemplate &, class LegacyStructureSettings &) const;
     /**
-     * @hash   -1744835279
-     * @symbol  ?_placeSideDecorations\@CoralCrustFeature\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@E\@Z
+     * @symbol ?_placeSideDecorations\@CoralCrustFeature\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@E\@Z
      */
     MCAPI void _placeSideDecorations(class BlockSource &, class BlockPos const &, class Random &, unsigned char) const;
 

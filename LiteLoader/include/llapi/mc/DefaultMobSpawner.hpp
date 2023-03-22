@@ -31,14 +31,13 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~DefaultMobSpawner();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -938747508
-     * @vftbl  4
-     * @symbol  ?getPos\@DefaultMobSpawner\@\@UEAAAEBVBlockPos\@\@XZ
+     * @vftbl 4
+     * @symbol ?getPos\@DefaultMobSpawner\@\@UEAAAEBVBlockPos\@\@XZ
      */
     virtual class BlockPos const & getPos();
 

@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   -2128923930
-     * @symbol  ??1SynchedActorDataComponent\@\@QEAA\@XZ
+     * @symbol ??1SynchedActorDataComponent\@\@QEAA\@XZ
      */
     MCAPI ~SynchedActorDataComponent();
 

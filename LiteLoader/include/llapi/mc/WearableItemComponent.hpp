@@ -30,61 +30,54 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~WearableItemComponent();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -2083233072
-     * @vftbl  1
-     * @symbol  ?isNetworkComponent\@?$NetworkedItemComponent\@VWearableItemComponent\@\@\@\@UEBA_NXZ
+     * @vftbl 1
+     * @symbol ?isNetworkComponent\@?$NetworkedItemComponent\@VWearableItemComponent\@\@\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  __unk_vfn_4
+     * @vftbl 4
+     * @symbol __unk_vfn_4
      */
     virtual void __unk_vfn_4();
     /**
-     * @hash   1181003666
-     * @vftbl  5
-     * @symbol  ?buildNetworkTag\@?$NetworkedItemComponent\@VWearableItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 5
+     * @symbol ?buildNetworkTag\@?$NetworkedItemComponent\@VWearableItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @hash   -1984960018
-     * @vftbl  6
-     * @symbol  ?initializeFromNetwork\@?$NetworkedItemComponent\@VWearableItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
+     * @vftbl 6
+     * @symbol ?initializeFromNetwork\@?$NetworkedItemComponent\@VWearableItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
-     * @hash   -1914602134
-     * @symbol  ?getSlot\@WearableItemComponent\@\@QEBA?AW4EquipmentSlot\@\@XZ
+     * @symbol ?getSlot\@WearableItemComponent\@\@QEBA?AW4EquipmentSlot\@\@XZ
      */
     MCAPI enum class EquipmentSlot getSlot() const;
     /**
-     * @hash   -1262493784
-     * @symbol  ?use\@WearableItemComponent\@\@QEBA_NAEAVItemStack\@\@AEAVPlayer\@\@\@Z
+     * @symbol ?use\@WearableItemComponent\@\@QEBA_NAEAVItemStack\@\@AEAVPlayer\@\@\@Z
      */
     MCAPI bool use(class ItemStack &, class Player &) const;
     /**
-     * @hash   1201883471
-     * @symbol  ?bindType\@WearableItemComponent\@\@SAXXZ
+     * @symbol ?bindType\@WearableItemComponent\@\@SAXXZ
      */
     MCAPI static void bindType();
     /**
-     * @hash   313027286
-     * @symbol  ?getIdentifier\@WearableItemComponent\@\@SAAEBVHashedString\@\@XZ
+     * @symbol ?getIdentifier\@WearableItemComponent\@\@SAAEBVHashedString\@\@XZ
      */
     MCAPI static class HashedString const & getIdentifier();
 

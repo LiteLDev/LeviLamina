@@ -30,42 +30,42 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~AddPlayerPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   2004388484
-     * @vftbl  1
-     * @symbol  ?getId\@AddPlayerPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@AddPlayerPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   234145073
-     * @vftbl  2
-     * @symbol  ?getName\@AddPlayerPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@AddPlayerPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   -328400202
-     * @vftbl  3
-     * @symbol  ?write\@AddPlayerPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@AddPlayerPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   389194838
-     * @vftbl  6
-     * @symbol  ?_read\@AddPlayerPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@AddPlayerPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDPLAYERPACKET
     /**
-     * @hash   -826256746
-     * @symbol  ??0AddPlayerPacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~AddPlayerPacket();
+#endif
+    /**
+     * @symbol ??0AddPlayerPacket\@\@QEAA\@XZ
      */
     MCAPI AddPlayerPacket();
     /**
-     * @hash   -1108310837
-     * @symbol  ??0AddPlayerPacket\@\@QEAA\@AEAVPlayer\@\@\@Z
+     * @symbol ??0AddPlayerPacket\@\@QEAA\@AEAVPlayer\@\@\@Z
      */
     MCAPI AddPlayerPacket(class Player &);
 

@@ -29,45 +29,37 @@ public:
 
 public:
     /**
-     * @hash   1967501432
-     * @symbol  ??0FileChunkManager\@\@QEAA\@XZ
+     * @symbol ??0FileChunkManager\@\@QEAA\@XZ
      */
     MCAPI FileChunkManager();
     /**
-     * @hash   -507636237
-     * @symbol  ?getChunkInfo\@FileChunkManager\@\@QEBA?AUFileChunkInfo\@\@H\@Z
+     * @symbol ?getChunkInfo\@FileChunkManager\@\@QEBA?AUFileChunkInfo\@\@H\@Z
      */
     MCAPI struct FileChunkInfo getChunkInfo(int) const;
     /**
-     * @hash   436007324
-     * @symbol  ?getChunks\@FileChunkManager\@\@QEBAAEBV?$vector\@UFileChunkInfo\@\@V?$allocator\@UFileChunkInfo\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?getChunks\@FileChunkManager\@\@QEBAAEBV?$vector\@UFileChunkInfo\@\@V?$allocator\@UFileChunkInfo\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::vector<struct FileChunkInfo> const & getChunks() const;
     /**
-     * @hash   1177939514
-     * @symbol  ?getTotalNumberOfChunks\@FileChunkManager\@\@QEAAHXZ
+     * @symbol ?getTotalNumberOfChunks\@FileChunkManager\@\@QEAAHXZ
      */
     MCAPI int getTotalNumberOfChunks();
     /**
-     * @hash   892605923
-     * @symbol  ?reset\@FileChunkManager\@\@QEAAXXZ
+     * @symbol ?reset\@FileChunkManager\@\@QEAAXXZ
      */
     MCAPI void reset();
     /**
-     * @hash   425855052
-     * @symbol  ?reset\@FileChunkManager\@\@QEAAX_KI\@Z
+     * @symbol ?reset\@FileChunkManager\@\@QEAAX_KI\@Z
      */
     MCAPI void reset(unsigned __int64, unsigned int);
     /**
-     * @hash   1111009782
-     * @symbol  ??1FileChunkManager\@\@QEAA\@XZ
+     * @symbol ??1FileChunkManager\@\@QEAA\@XZ
      */
     MCAPI ~FileChunkManager();
 
 //private:
     /**
-     * @hash   1836833959
-     * @symbol  ?_generateChunkInfo\@FileChunkManager\@\@AEAAXXZ
+     * @symbol ?_generateChunkInfo\@FileChunkManager\@\@AEAAXXZ
      */
     MCAPI void _generateChunkInfo();
 

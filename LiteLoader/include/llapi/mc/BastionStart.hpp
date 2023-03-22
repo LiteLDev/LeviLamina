@@ -31,14 +31,13 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BastionStart();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   2062814928
-     * @vftbl  2
-     * @symbol  ?isValid\@BastionStart\@\@UEBA_NXZ
+     * @vftbl 2
+     * @symbol ?isValid\@BastionStart\@\@UEBA_NXZ
      */
     virtual bool isValid() const;
 

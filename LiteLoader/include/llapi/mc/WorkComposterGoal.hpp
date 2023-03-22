@@ -29,52 +29,47 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~WorkComposterGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   1237282313
-     * @vftbl  4
-     * @symbol  ?start\@WorkComposterGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@WorkComposterGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @vftbl  8
-     * @symbol  __unk_vfn_8
+     * @vftbl 8
+     * @symbol __unk_vfn_8
      */
     virtual void __unk_vfn_8();
     /**
-     * @vftbl  9
-     * @symbol  __unk_vfn_9
+     * @vftbl 9
+     * @symbol __unk_vfn_9
      */
     virtual void __unk_vfn_9();
     /**
-     * @hash   -1631224109
-     * @vftbl  18
-     * @symbol  ?useWorkstation\@WorkComposterGoal\@\@UEAAXXZ
+     * @vftbl 18
+     * @symbol ?useWorkstation\@WorkComposterGoal\@\@UEAAXXZ
      */
     virtual void useWorkstation();
     /**
-     * @hash   -245432387
-     * @symbol  ??0WorkComposterGoal\@\@QEAA\@AEAVMob\@\@\@Z
+     * @symbol ??0WorkComposterGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI WorkComposterGoal(class Mob &);
 
 //private:
     /**
-     * @hash   651339585
-     * @symbol  ?_tryCompostItems\@WorkComposterGoal\@\@AEAA_NXZ
+     * @symbol ?_tryCompostItems\@WorkComposterGoal\@\@AEAA_NXZ
      */
     MCAPI bool _tryCompostItems();
     /**
-     * @hash   853273491
-     * @symbol  ?_tryEmptyComposter\@WorkComposterGoal\@\@AEAA_NXZ
+     * @symbol ?_tryEmptyComposter\@WorkComposterGoal\@\@AEAA_NXZ
      */
     MCAPI bool _tryEmptyComposter();
 

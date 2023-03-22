@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   1703335618
-     * @symbol  ??1DynamicAmbientSound\@\@QEAA\@XZ
+     * @symbol ??1DynamicAmbientSound\@\@QEAA\@XZ
      */
     MCAPI ~DynamicAmbientSound();
 

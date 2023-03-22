@@ -30,33 +30,27 @@ public:
 
 public:
     /**
-     * @hash   -1603547976
-     * @symbol  ?addAdditionalSaveData\@InsomniaComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
+     * @symbol ?addAdditionalSaveData\@InsomniaComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @hash   -223616758
-     * @symbol  ?getInsomniaTimerTicks\@InsomniaComponent\@\@QEBAHXZ
+     * @symbol ?getInsomniaTimerTicks\@InsomniaComponent\@\@QEBAHXZ
      */
     MCAPI int getInsomniaTimerTicks() const;
     /**
-     * @hash   1009888536
-     * @symbol  ?getTicksUntilInsomnia\@InsomniaComponent\@\@QEBAHXZ
+     * @symbol ?getTicksUntilInsomnia\@InsomniaComponent\@\@QEBAHXZ
      */
     MCAPI int getTicksUntilInsomnia() const;
     /**
-     * @hash   1061058844
-     * @symbol  ?incrementTimeSinceRest\@InsomniaComponent\@\@QEAAHXZ
+     * @symbol ?incrementTimeSinceRest\@InsomniaComponent\@\@QEAAHXZ
      */
     MCAPI int incrementTimeSinceRest();
     /**
-     * @hash   1410755334
-     * @symbol  ?readAdditionalSaveData\@InsomniaComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
+     * @symbol ?readAdditionalSaveData\@InsomniaComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   1424770319
-     * @symbol  ?restartTimer\@InsomniaComponent\@\@QEAAXXZ
+     * @symbol ?restartTimer\@InsomniaComponent\@\@QEAAXXZ
      */
     MCAPI void restartTimer();
 

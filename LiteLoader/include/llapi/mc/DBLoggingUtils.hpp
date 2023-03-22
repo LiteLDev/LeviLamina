@@ -20,9 +20,8 @@ namespace DBLoggingUtils {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -729630010
-     * @symbol  ?toPrintableDBKey\@DBLoggingUtils\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$basic_string_span\@$$CBD$0?0\@gsl\@\@\@Z
+     * @symbol ?toPrintableDBKey\@DBLoggingUtils\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@3\@\@Z
      */
-    MCAPI std::string toPrintableDBKey(class gsl::basic_string_span<char const, -1> const &);
+    MCAPI std::string toPrintableDBKey(class std::basic_string_view<char, struct std::char_traits<char>> const &);
 
 };

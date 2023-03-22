@@ -27,6 +27,13 @@
           "1": "Protocol version not match, target version: {}, current version: {}.",
           "2": "This will most likely crash the server, please use the LiteLoader that matches the BDS version!"
         }
+      },
+      "bstats": {
+        "enabled": "bStats has been enabled, you can edit plugins/bStats/config.json to disable it"
+      },
+      "unpackResources": {
+        "begin": "Unpacking LiteLoaderBDS runtime resources. Please wait patiently...",
+        "end": "Unpacked."
       }
     },
     "antiAbnormalItem": {
@@ -212,6 +219,9 @@
       },
       "initNodeJsDirectories": {
         "created": "Node.js runtime directory no found, created."
+      },
+      "initPythonDirectories": {
+        "created": "Python runtime directory no found, created."
       }
     },
     "notice": {
@@ -238,6 +248,9 @@
     },
     "unzipNodeModules": {
       "fail": "Failed to unzip node_modules.tar"
+    },
+    "unzipPythonModules": {
+      "fail": "Failed to unzip python-env.zip"
     }
   },
   "llse": {
@@ -281,6 +294,13 @@
         "loadedPlugin": "{type} plugin <{name}> loaded.",
         "installPluginPack": {
           "done": "{count} {type} plugin pack(s) installed."
+        },
+        "python": {
+          "ignored": "No pyproject.toml file found in directory {path}, ignored.",
+          "installPack": {
+            "start": "Found Python plugin pack \"{path}\"! Try installing...",
+            "fail": "Failed to install plugin pack {}, please check the source files!"
+          }
         }
       },
       "nodejs": {
@@ -291,6 +311,13 @@
         },
         "register": {
           "fail": "Fail to help plugin {name} get registered!"
+        }
+      },
+      "python": {
+        "executePipInstall": {
+          "start": "Executing \"pip install\" for plugin {name}...",
+          "success": "Pip finished successfully.",
+          "fail": "Error occurred. Exit code: {code}"
         }
       }
     }

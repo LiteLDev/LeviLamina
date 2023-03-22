@@ -31,19 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~LegacySmallMushroomsFeature();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1584484307
-     * @vftbl  3
-     * @symbol  ?place\@LegacySmallMushroomsFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @vftbl 3
+     * @symbol ?place\@LegacySmallMushroomsFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   1053920138
-     * @symbol  ??0LegacySmallMushroomsFeature\@\@QEAA\@AEBVFeatureRegistry\@\@\@Z
+     * @symbol ??0LegacySmallMushroomsFeature\@\@QEAA\@AEBVFeatureRegistry\@\@\@Z
      */
     MCAPI LegacySmallMushroomsFeature(class FeatureRegistry const &);
 

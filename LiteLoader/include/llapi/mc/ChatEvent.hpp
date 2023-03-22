@@ -27,13 +27,11 @@ public:
 
 public:
     /**
-     * @hash   -1326178907
-     * @symbol  ??0ChatEvent\@\@QEAA\@AEBU0\@\@Z
+     * @symbol ??0ChatEvent\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI ChatEvent(struct ChatEvent const &);
     /**
-     * @hash   631358686
-     * @symbol  ??1ChatEvent\@\@QEAA\@XZ
+     * @symbol ??1ChatEvent\@\@QEAA\@XZ
      */
     MCAPI ~ChatEvent();
 

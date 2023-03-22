@@ -27,23 +27,19 @@ public:
 
 public:
     /**
-     * @hash   1293683126
-     * @symbol  ??4Dependencies\@\@QEAAAEAU0\@AEBU0\@\@Z
+     * @symbol ??4Dependencies\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
     MCAPI struct Dependencies & operator=(struct Dependencies const &);
     /**
-     * @hash   1969000054
-     * @symbol  ??4Dependencies\@\@QEAAAEAU0\@$$QEAU0\@\@Z
+     * @symbol ??4Dependencies\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct Dependencies & operator=(struct Dependencies &&);
     /**
-     * @hash   358043475
-     * @symbol  ??1Dependencies\@\@QEAA\@XZ
+     * @symbol ??1Dependencies\@\@QEAA\@XZ
      */
     MCAPI ~Dependencies();
     /**
-     * @hash   -1161437341
-     * @symbol  ?bindType\@Dependencies\@\@SAXXZ
+     * @symbol ?bindType\@Dependencies\@\@SAXXZ
      */
     MCAPI static void bindType();
 

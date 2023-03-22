@@ -31,276 +31,268 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ConcretePowderBlock();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  19
-     * @symbol  __unk_vfn_19
+     * @vftbl 19
+     * @symbol __unk_vfn_19
      */
     virtual void __unk_vfn_19();
     /**
-     * @vftbl  29
-     * @symbol  __unk_vfn_29
+     * @vftbl 29
+     * @symbol __unk_vfn_29
      */
     virtual void __unk_vfn_29();
     /**
-     * @vftbl  30
-     * @symbol  __unk_vfn_30
+     * @vftbl 30
+     * @symbol __unk_vfn_30
      */
     virtual void __unk_vfn_30();
     /**
-     * @vftbl  32
-     * @symbol  __unk_vfn_32
+     * @vftbl 32
+     * @symbol __unk_vfn_32
      */
     virtual void __unk_vfn_32();
     /**
-     * @vftbl  33
-     * @symbol  __unk_vfn_33
+     * @vftbl 33
+     * @symbol __unk_vfn_33
      */
     virtual void __unk_vfn_33();
     /**
-     * @vftbl  34
-     * @symbol  __unk_vfn_34
+     * @vftbl 34
+     * @symbol __unk_vfn_34
      */
     virtual void __unk_vfn_34();
     /**
-     * @vftbl  36
-     * @symbol  __unk_vfn_36
+     * @vftbl 36
+     * @symbol __unk_vfn_36
      */
     virtual void __unk_vfn_36();
     /**
-     * @vftbl  37
-     * @symbol  __unk_vfn_37
+     * @vftbl 37
+     * @symbol __unk_vfn_37
      */
     virtual void __unk_vfn_37();
     /**
-     * @vftbl  38
-     * @symbol  __unk_vfn_38
+     * @vftbl 38
+     * @symbol __unk_vfn_38
      */
     virtual void __unk_vfn_38();
     /**
-     * @vftbl  39
-     * @symbol  __unk_vfn_39
+     * @vftbl 39
+     * @symbol __unk_vfn_39
      */
     virtual void __unk_vfn_39();
     /**
-     * @vftbl  40
-     * @symbol  __unk_vfn_40
+     * @vftbl 40
+     * @symbol __unk_vfn_40
      */
     virtual void __unk_vfn_40();
     /**
-     * @vftbl  41
-     * @symbol  __unk_vfn_41
+     * @vftbl 41
+     * @symbol __unk_vfn_41
      */
     virtual void __unk_vfn_41();
     /**
-     * @vftbl  42
-     * @symbol  __unk_vfn_42
+     * @vftbl 42
+     * @symbol __unk_vfn_42
      */
     virtual void __unk_vfn_42();
     /**
-     * @vftbl  44
-     * @symbol  __unk_vfn_44
+     * @vftbl 44
+     * @symbol __unk_vfn_44
      */
     virtual void __unk_vfn_44();
     /**
-     * @vftbl  45
-     * @symbol  __unk_vfn_45
+     * @vftbl 45
+     * @symbol __unk_vfn_45
      */
     virtual void __unk_vfn_45();
     /**
-     * @vftbl  46
-     * @symbol  __unk_vfn_46
+     * @vftbl 46
+     * @symbol __unk_vfn_46
      */
     virtual void __unk_vfn_46();
     /**
-     * @vftbl  47
-     * @symbol  __unk_vfn_47
+     * @vftbl 47
+     * @symbol __unk_vfn_47
      */
     virtual void __unk_vfn_47();
     /**
-     * @vftbl  48
-     * @symbol  __unk_vfn_48
+     * @vftbl 48
+     * @symbol __unk_vfn_48
      */
     virtual void __unk_vfn_48();
     /**
-     * @vftbl  49
-     * @symbol  __unk_vfn_49
+     * @vftbl 49
+     * @symbol __unk_vfn_49
      */
     virtual void __unk_vfn_49();
     /**
-     * @vftbl  54
-     * @symbol  __unk_vfn_54
+     * @vftbl 54
+     * @symbol __unk_vfn_54
      */
     virtual void __unk_vfn_54();
     /**
-     * @hash   -1675348299
-     * @vftbl  55
-     * @symbol  ?isValidAuxValue\@ConcretePowderBlock\@\@UEBA_NH\@Z
+     * @vftbl 55
+     * @symbol ?isValidAuxValue\@ConcretePowderBlock\@\@UEBA_NH\@Z
      */
     virtual bool isValidAuxValue(int) const;
     /**
-     * @vftbl  60
-     * @symbol  __unk_vfn_60
+     * @vftbl 60
+     * @symbol __unk_vfn_60
      */
     virtual void __unk_vfn_60();
     /**
-     * @vftbl  61
-     * @symbol  __unk_vfn_61
+     * @vftbl 61
+     * @symbol __unk_vfn_61
      */
     virtual void __unk_vfn_61();
     /**
-     * @vftbl  75
-     * @symbol  __unk_vfn_75
+     * @vftbl 75
+     * @symbol __unk_vfn_75
      */
     virtual void __unk_vfn_75();
     /**
-     * @vftbl  82
-     * @symbol  __unk_vfn_82
+     * @vftbl 82
+     * @symbol __unk_vfn_82
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -1586078799
-     * @vftbl  99
-     * @symbol  ?neighborChanged\@ConcretePowderBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
+     * @vftbl 99
+     * @symbol ?neighborChanged\@ConcretePowderBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @vftbl  103
-     * @symbol  ?asItemInstance\@ConcretePowderBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
+     * @vftbl 103
+     * @symbol ?asItemInstance\@ConcretePowderBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
-     * @vftbl  105
-     * @symbol  __unk_vfn_105
+     * @vftbl 105
+     * @symbol __unk_vfn_105
      */
     virtual void __unk_vfn_105();
     /**
-     * @hash   1410883738
-     * @vftbl  122
-     * @symbol  ?shouldStopFalling\@ConcretePowderBlock\@\@UEBA_NAEAVActor\@\@\@Z
+     * @vftbl 122
+     * @symbol ?shouldStopFalling\@ConcretePowderBlock\@\@UEBA_NAEAVActor\@\@\@Z
      */
     virtual bool shouldStopFalling(class Actor &) const;
     /**
-     * @vftbl  123
-     * @symbol  __unk_vfn_123
+     * @vftbl 123
+     * @symbol __unk_vfn_123
      */
     virtual void __unk_vfn_123();
     /**
-     * @vftbl  125
-     * @symbol  __unk_vfn_125
+     * @vftbl 125
+     * @symbol __unk_vfn_125
      */
     virtual void __unk_vfn_125();
     /**
-     * @vftbl  126
-     * @symbol  __unk_vfn_126
+     * @vftbl 126
+     * @symbol __unk_vfn_126
      */
     virtual void __unk_vfn_126();
     /**
-     * @vftbl  131
-     * @symbol  __unk_vfn_131
+     * @vftbl 131
+     * @symbol __unk_vfn_131
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   1364875174
-     * @vftbl  133
-     * @symbol  ?buildDescriptionId\@ConcretePowderBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
+     * @vftbl 133
+     * @symbol ?buildDescriptionId\@ConcretePowderBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @hash   -909496187
-     * @vftbl  134
-     * @symbol  ?isAuxValueRelevantForPicking\@ConcretePowderBlock\@\@UEBA_NXZ
+     * @vftbl 134
+     * @symbol ?isAuxValueRelevantForPicking\@ConcretePowderBlock\@\@UEBA_NXZ
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @vftbl  156
-     * @symbol  __unk_vfn_156
+     * @vftbl 156
+     * @symbol __unk_vfn_156
      */
     virtual void __unk_vfn_156();
     /**
-     * @vftbl  165
-     * @symbol  __unk_vfn_165
+     * @vftbl 165
+     * @symbol __unk_vfn_165
      */
     virtual void __unk_vfn_165();
     /**
-     * @vftbl  166
-     * @symbol  __unk_vfn_166
+     * @vftbl 166
+     * @symbol __unk_vfn_166
      */
     virtual void __unk_vfn_166();
     /**
-     * @vftbl  167
-     * @symbol  __unk_vfn_167
+     * @vftbl 167
+     * @symbol __unk_vfn_167
      */
     virtual void __unk_vfn_167();
     /**
-     * @hash   19081381
-     * @vftbl  168
-     * @symbol  ?onPlace\@ConcretePowderBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     * @vftbl 168
+     * @symbol ?onPlace\@ConcretePowderBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl  170
-     * @symbol  __unk_vfn_170
+     * @vftbl 170
+     * @symbol __unk_vfn_170
      */
     virtual void __unk_vfn_170();
     /**
-     * @vftbl  174
-     * @symbol  __unk_vfn_174
+     * @vftbl 174
+     * @symbol __unk_vfn_174
      */
     virtual void __unk_vfn_174();
     /**
-     * @hash   1467307379
-     * @vftbl  184
-     * @symbol  ?getMapColor\@ConcretePowderBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
+     * @vftbl 178
+     * @symbol __unk_vfn_178
+     */
+    virtual void __unk_vfn_178();
+    /**
+     * @vftbl 185
+     * @symbol ?getMapColor\@ConcretePowderBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @vftbl  185
-     * @symbol  __unk_vfn_185
+     * @vftbl 186
+     * @symbol __unk_vfn_186
      */
-    virtual void __unk_vfn_185();
+    virtual void __unk_vfn_186();
     /**
-     * @hash   -1155935811
-     * @vftbl  187
-     * @symbol  ?getResourceItem\@ConcretePowderBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
+     * @vftbl 188
+     * @symbol ?getResourceItem\@ConcretePowderBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @hash   1036600934
-     * @vftbl  189
-     * @symbol  ?getSilkTouchItemInstance\@ConcretePowderBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
+     * @vftbl 190
+     * @symbol ?getSilkTouchItemInstance\@ConcretePowderBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @hash   -2108726789
-     * @vftbl  193
-     * @symbol  ?getDustColor\@ConcretePowderBlock\@\@UEBA?AVColor\@mce\@\@AEBVBlock\@\@\@Z
+     * @vftbl 194
+     * @symbol ?getDustColor\@ConcretePowderBlock\@\@UEBA?AVColor\@mce\@\@AEBVBlock\@\@\@Z
      */
     virtual class mce::Color getDustColor(class Block const &) const;
     /**
-     * @hash   -1912367034
-     * @vftbl  194
-     * @symbol  ?getDustParticleName\@ConcretePowderBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
+     * @vftbl 195
+     * @symbol ?getDustParticleName\@ConcretePowderBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string getDustParticleName(class Block const &) const;
     /**
-     * @vftbl  195
-     * @symbol  __unk_vfn_195
+     * @vftbl 196
+     * @symbol __unk_vfn_196
      */
-    virtual void __unk_vfn_195();
+    virtual void __unk_vfn_196();
     /**
-     * @hash   -365268947
-     * @symbol  ??0ConcretePowderBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
+     * @symbol ??0ConcretePowderBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI ConcretePowderBlock(std::string const &, int);
 
 //private:
     /**
-     * @hash   424449735
-     * @symbol  ?_tryTouchWater\@ConcretePowderBlock\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@V?$optional\@W4BlockColor\@\@\@std\@\@\@Z
+     * @symbol ?_tryTouchWater\@ConcretePowderBlock\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@V?$optional\@W4BlockColor\@\@\@std\@\@\@Z
      */
     MCAPI bool _tryTouchWater(class BlockSource &, class BlockPos const &, class std::optional<enum class BlockColor>) const;
 

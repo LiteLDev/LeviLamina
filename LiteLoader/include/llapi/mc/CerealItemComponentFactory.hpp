@@ -36,38 +36,31 @@ public:
 
 public:
     /**
-     * @hash   868966730
-     * @symbol  ?addAllComponentUpgrades\@CerealItemComponentFactory\@\@SAXAEAVCerealDocumentUpgrader\@\@\@Z
+     * @symbol ?addAllComponentUpgrades\@CerealItemComponentFactory\@\@SAXAEAVCerealDocumentUpgrader\@\@\@Z
      */
     MCAPI static void addAllComponentUpgrades(class CerealDocumentUpgrader &);
     /**
-     * @hash   1422091015
-     * @symbol  ?bindAllComponentSchemas\@CerealItemComponentFactory\@\@SAXAEAVSchemaFactory\@reflection\@\@AEBVSemVersion\@\@\@Z
+     * @symbol ?bindAllComponentSchemas\@CerealItemComponentFactory\@\@SAXAEAVSchemaFactory\@reflection\@\@AEBVSemVersion\@\@\@Z
      */
     MCAPI static void bindAllComponentSchemas(class reflection::SchemaFactory &, class SemVersion const &);
     /**
-     * @hash   -1584407066
-     * @symbol  ?constructItemComponent\@CerealItemComponentFactory\@\@SA?AV?$shared_ptr\@VItemComponent\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
+     * @symbol ?constructItemComponent\@CerealItemComponentFactory\@\@SA?AV?$shared_ptr\@VItemComponent\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
      */
     MCAPI static class std::shared_ptr<class ItemComponent> constructItemComponent(std::string const &);
     /**
-     * @hash   -612509645
-     * @symbol  ?getItemContext\@CerealItemComponentFactory\@\@SAPEAVComponentItem\@\@XZ
+     * @symbol ?getItemContext\@CerealItemComponentFactory\@\@SAPEAVComponentItem\@\@XZ
      */
     MCAPI static class ComponentItem * getItemContext();
     /**
-     * @hash   -1175132311
-     * @symbol  ?isRegisteredComponent\@CerealItemComponentFactory\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?isRegisteredComponent\@CerealItemComponentFactory\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI static bool isRegisteredComponent(std::string const &);
     /**
-     * @hash   -1893909117
-     * @symbol  ?resetItemContext\@CerealItemComponentFactory\@\@SAXXZ
+     * @symbol ?resetItemContext\@CerealItemComponentFactory\@\@SAXXZ
      */
     MCAPI static void resetItemContext();
     /**
-     * @hash   -2070844857
-     * @symbol  ?setItemContext\@CerealItemComponentFactory\@\@SAXPEAVComponentItem\@\@\@Z
+     * @symbol ?setItemContext\@CerealItemComponentFactory\@\@SAXPEAVComponentItem\@\@\@Z
      */
     MCAPI static void setItemContext(class ComponentItem *);
 
@@ -75,13 +68,11 @@ public:
 
 private:
     /**
-     * @hash   440508359
-     * @symbol  ?mItemContext\@CerealItemComponentFactory\@\@0PEAVComponentItem\@\@EA
+     * @symbol ?mItemContext\@CerealItemComponentFactory\@\@0PEAVComponentItem\@\@EA
      */
     MCAPI static class ComponentItem * mItemContext;
     /**
-     * @hash   965915975
-     * @symbol  ?mRegisteredComponents\@CerealItemComponentFactory\@\@0V?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UConstructor\@CerealItemComponentFactory\@\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UConstructor\@CerealItemComponentFactory\@\@\@std\@\@\@2\@\@std\@\@A
+     * @symbol ?mRegisteredComponents\@CerealItemComponentFactory\@\@0V?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UConstructor\@CerealItemComponentFactory\@\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UConstructor\@CerealItemComponentFactory\@\@\@std\@\@\@2\@\@std\@\@A
      */
     MCAPI static class std::unordered_map<std::string, struct CerealItemComponentFactory::Constructor, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, struct CerealItemComponentFactory::Constructor>>> mRegisteredComponents;
 

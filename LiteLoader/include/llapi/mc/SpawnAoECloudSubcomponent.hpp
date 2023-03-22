@@ -30,37 +30,32 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SpawnAoECloudSubcomponent();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1468383870
-     * @vftbl  1
-     * @symbol  ?readfromJSON\@SpawnAoECloudSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
+     * @vftbl 1
+     * @symbol ?readfromJSON\@SpawnAoECloudSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
-     * @hash   949827127
-     * @vftbl  2
-     * @symbol  ?writetoJSON\@SpawnAoECloudSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
+     * @vftbl 2
+     * @symbol ?writetoJSON\@SpawnAoECloudSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
-     * @hash   -538954836
-     * @vftbl  3
-     * @symbol  ?doOnHitEffect\@SpawnAoECloudSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
+     * @vftbl 3
+     * @symbol ?doOnHitEffect\@SpawnAoECloudSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @hash   1911785991
-     * @vftbl  4
-     * @symbol  ?getName\@SpawnAoECloudSubcomponent\@\@UEAAPEBDXZ
+     * @vftbl 4
+     * @symbol ?getName\@SpawnAoECloudSubcomponent\@\@UEAAPEBDXZ
      */
     virtual char const * getName();
     /**
-     * @hash   1042943490
-     * @symbol  ??0SpawnAoECloudSubcomponent\@\@QEAA\@XZ
+     * @symbol ??0SpawnAoECloudSubcomponent\@\@QEAA\@XZ
      */
     MCAPI SpawnAoECloudSubcomponent();
 

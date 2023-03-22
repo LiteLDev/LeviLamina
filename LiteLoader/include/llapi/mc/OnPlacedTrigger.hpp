@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   1889516920
-     * @symbol  ??1OnPlacedTrigger\@\@QEAA\@XZ
+     * @symbol ??1OnPlacedTrigger\@\@QEAA\@XZ
      */
     MCAPI ~OnPlacedTrigger();
 

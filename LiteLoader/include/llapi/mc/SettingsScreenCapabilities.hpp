@@ -29,19 +29,23 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SettingsScreenCapabilities();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1462409346
-     * @vftbl  1
-     * @symbol  ?isOfType\@?$TypedScreenCapabilities\@USettingsScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
+     * @vftbl 1
+     * @symbol ?isOfType\@?$TypedScreenCapabilities\@USettingsScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
      */
     virtual bool isOfType(class typeid_t<class IScreenCapabilities>) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETTINGSSCREENCAPABILITIES
     /**
-     * @hash   1206436783
-     * @symbol  ??0SettingsScreenCapabilities\@\@QEAA\@AEBU0\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~SettingsScreenCapabilities();
+#endif
+    /**
+     * @symbol ??0SettingsScreenCapabilities\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI SettingsScreenCapabilities(struct SettingsScreenCapabilities const &);
 

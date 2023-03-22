@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   -1568014216
-     * @symbol  ?createSendPacketsSystem\@SendPacketsSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSendPacketsSystem\@SendPacketsSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSendPacketsSystem();
 

@@ -30,13 +30,11 @@ public:
 
 public:
     /**
-     * @hash   -1332309506
-     * @symbol  ??4BlockEventDispatcherToken\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     * @symbol ??4BlockEventDispatcherToken\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class BlockEventDispatcherToken & operator=(class BlockEventDispatcherToken &&);
     /**
-     * @hash   1973420945
-     * @symbol  ??1BlockEventDispatcherToken\@\@QEAA\@XZ
+     * @symbol ??1BlockEventDispatcherToken\@\@QEAA\@XZ
      */
     MCAPI ~BlockEventDispatcherToken();
 

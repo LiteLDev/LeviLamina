@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -30,31 +29,28 @@ public:
 
 public:
     /**
-     * @hash   -243967871
-     * @vftbl  0
-     * @symbol  ?getJsonName\@ProjectileDescription\@\@UEBAPEBDXZ
+     * @vftbl 0
+     * @symbol ?getJsonName\@ProjectileDescription\@\@UEBAPEBDXZ
      */
     virtual char const * getJsonName() const;
     /**
-     * @vftbl  1
-     * @symbol  __unk_destructor_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
-    virtual ~ProjectileDescription();
+    virtual void __unk_vfn_1();
     /**
-     * @hash   -1698737854
-     * @vftbl  2
-     * @symbol  ?deserializeData\@ProjectileDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
+     * @vftbl 2
+     * @symbol ?deserializeData\@ProjectileDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PROJECTILEDESCRIPTION
     /**
-     * @hash   1635461292
-     * @vftbl  3
-     * @symbol  ?serializeData\@ProjectileDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
+     * @symbol __unk_destructor_-1
      */
-    virtual void serializeData(class Json::Value &) const;
+    MCVAPI ~ProjectileDescription();
+#endif
     /**
-     * @hash   2017088831
-     * @symbol  ??0ProjectileDescription\@\@QEAA\@XZ
+     * @symbol ??0ProjectileDescription\@\@QEAA\@XZ
      */
     MCAPI ProjectileDescription();
 

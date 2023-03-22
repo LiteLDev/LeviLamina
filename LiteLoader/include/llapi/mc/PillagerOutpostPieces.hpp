@@ -31,43 +31,36 @@ public:
 
 public:
     /**
-     * @hash   136235498
-     * @symbol  ?addPieces\@PillagerOutpostPieces\@\@SAXV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEBVBlockPos\@\@AEBW4Rotation\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@AEAVDimension\@\@\@Z
+     * @symbol ?addPieces\@PillagerOutpostPieces\@\@SAXV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEBVBlockPos\@\@AEBW4Rotation\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@AEAVDimension\@\@\@Z
      */
     MCAPI static void addPieces(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class BlockPos const &, enum class Rotation const &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, class Dimension &);
 
 //private:
     /**
-     * @hash   282305415
-     * @symbol  ?_addPiece\@PillagerOutpostPieces\@\@CAXV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEBVBlockPos\@\@AEBW4Rotation\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@AEAVDimension\@\@\@Z
+     * @symbol ?_addPiece\@PillagerOutpostPieces\@\@CAXV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEBVBlockPos\@\@AEBW4Rotation\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@AEAVDimension\@\@\@Z
      */
     MCAPI static void _addPiece(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class BlockPos const &, enum class Rotation const &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, class Dimension &);
     /**
-     * @hash   -173630335
-     * @symbol  ?_addScatteredPieces\@PillagerOutpostPieces\@\@CAXV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEAVRandom\@\@AEBW4Rotation\@\@AEBVBlockPos\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVDimension\@\@\@Z
+     * @symbol ?_addScatteredPieces\@PillagerOutpostPieces\@\@CAXV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEAVRandom\@\@AEBW4Rotation\@\@AEBVBlockPos\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVDimension\@\@\@Z
      */
     MCAPI static void _addScatteredPieces(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class Random &, enum class Rotation const &, class BlockPos const &, std::vector<std::unique_ptr<class StructurePiece>> &, class Dimension &);
 
 private:
     /**
-     * @hash   1377788778
-     * @symbol  ?MSC_FEATURES\@PillagerOutpostPieces\@\@0V?$array\@V?$basic_string_span\@$$CBD$0?0\@gsl\@\@$06\@std\@\@A
+     * @symbol ?MSC_FEATURES\@PillagerOutpostPieces\@\@0V?$array\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@$06\@std\@\@A
      */
-    MCAPI static class std::array<class gsl::basic_string_span<char const, -1>, 7> MSC_FEATURES;
+    MCAPI static class std::array<class std::basic_string_view<char, struct std::char_traits<char>>, 7> MSC_FEATURES;
     /**
-     * @hash   -859363153
-     * @symbol  ?PILLAGER_LOOT\@PillagerOutpostPieces\@\@0V?$basic_string_span\@$$CBD$0?0\@gsl\@\@A
+     * @symbol ?PILLAGER_LOOT\@PillagerOutpostPieces\@\@0V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@A
      */
-    MCAPI static class gsl::basic_string_span<char const, -1> PILLAGER_LOOT;
+    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> PILLAGER_LOOT;
     /**
-     * @hash   -722476166
-     * @symbol  ?STRUCTURE_WATCHTOWER\@PillagerOutpostPieces\@\@0V?$basic_string_span\@$$CBD$0?0\@gsl\@\@A
+     * @symbol ?STRUCTURE_WATCHTOWER\@PillagerOutpostPieces\@\@0V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@A
      */
-    MCAPI static class gsl::basic_string_span<char const, -1> STRUCTURE_WATCHTOWER;
+    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> STRUCTURE_WATCHTOWER;
     /**
-     * @hash   -982372942
-     * @symbol  ?STRUCTURE_WATCHTOWER_OVERGROWN\@PillagerOutpostPieces\@\@0V?$basic_string_span\@$$CBD$0?0\@gsl\@\@A
+     * @symbol ?STRUCTURE_WATCHTOWER_OVERGROWN\@PillagerOutpostPieces\@\@0V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@A
      */
-    MCAPI static class gsl::basic_string_span<char const, -1> STRUCTURE_WATCHTOWER_OVERGROWN;
+    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> STRUCTURE_WATCHTOWER_OVERGROWN;
 
 };

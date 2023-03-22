@@ -51,8 +51,7 @@ public:
 
 public:
     /**
-     * @hash   1129833999
-     * @symbol  ?INVALID_ID\@ActorUniqueID\@\@2U1\@B
+     * @symbol ?INVALID_ID\@ActorUniqueID\@\@2U1\@B
      */
     MCAPI static struct ActorUniqueID const INVALID_ID;
 

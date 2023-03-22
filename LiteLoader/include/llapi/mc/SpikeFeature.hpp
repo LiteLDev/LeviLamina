@@ -38,39 +38,39 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SpikeFeature();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1042246598
-     * @vftbl  3
-     * @symbol  ?place\@SpikeFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @vftbl 3
+     * @symbol ?place\@SpikeFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPIKEFEATURE
     /**
-     * @hash   663282377
-     * @symbol  ??0SpikeFeature\@\@QEAA\@AEBVEndSpike\@0\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~SpikeFeature();
+#endif
+    /**
+     * @symbol ??0SpikeFeature\@\@QEAA\@AEBVEndSpike\@0\@\@Z
      */
     MCAPI SpikeFeature(class SpikeFeature::EndSpike const &);
     /**
-     * @hash   1508114739
-     * @symbol  ?placeManually\@SpikeFeature\@\@QEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@PEAVActor\@\@\@Z
+     * @symbol ?placeManually\@SpikeFeature\@\@QEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@PEAVActor\@\@\@Z
      */
     MCAPI bool placeManually(class BlockSource &, class BlockPos const &, class Random &, class Actor *);
     /**
-     * @hash   -361806318
-     * @symbol  ?postProcessMobsAt\@SpikeFeature\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @symbol ?postProcessMobsAt\@SpikeFeature\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     MCAPI void postProcessMobsAt(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @hash   -424570652
-     * @symbol  ?setCrystalBeamTarget\@SpikeFeature\@\@QEAAXAEBVBlockPos\@\@\@Z
+     * @symbol ?setCrystalBeamTarget\@SpikeFeature\@\@QEAAXAEBVBlockPos\@\@\@Z
      */
     MCAPI void setCrystalBeamTarget(class BlockPos const &);
     /**
-     * @hash   156514188
-     * @symbol  ?setCrystalInvulnerable\@SpikeFeature\@\@QEAAX_N\@Z
+     * @symbol ?setCrystalInvulnerable\@SpikeFeature\@\@QEAAX_N\@Z
      */
     MCAPI void setCrystalInvulnerable(bool);
 

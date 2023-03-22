@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1BlockSet\@\@QEAA\@XZ
+     * @symbol ??1BlockSet\@\@QEAA\@XZ
      */
     MCAPI ~BlockSet();
 

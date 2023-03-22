@@ -30,43 +30,43 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~PlayerSkinPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1889998760
-     * @vftbl  1
-     * @symbol  ?getId\@PlayerSkinPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@PlayerSkinPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   64104021
-     * @vftbl  2
-     * @symbol  ?getName\@PlayerSkinPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@PlayerSkinPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   -1417701950
-     * @vftbl  3
-     * @symbol  ?write\@PlayerSkinPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@PlayerSkinPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   -979002313
-     * @vftbl  4
-     * @symbol  ?readExtended\@PlayerSkinPacket\@\@UEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 4
+     * @symbol ?readExtended\@PlayerSkinPacket\@\@UEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /**
-     * @hash   -775396318
-     * @vftbl  6
-     * @symbol  ?_read\@PlayerSkinPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@PlayerSkinPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERSKINPACKET
     /**
-     * @hash   1381772050
-     * @symbol  ??0PlayerSkinPacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~PlayerSkinPacket();
+#endif
+    /**
+     * @symbol ??0PlayerSkinPacket\@\@QEAA\@XZ
      */
     MCAPI PlayerSkinPacket();
 

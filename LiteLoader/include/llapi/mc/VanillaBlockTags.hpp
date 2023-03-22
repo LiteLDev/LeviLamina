@@ -30,38 +30,31 @@ public:
 
 public:
     /**
-     * @hash   -596054453
-     * @symbol  ?Acacia\@VanillaBlockTags\@\@2QBDB
+     * @symbol ?Acacia\@VanillaBlockTags\@\@2QBDB
      */
     MCAPI static char const Acacia[];
     /**
-     * @hash   1678486513
-     * @symbol  ?Birch\@VanillaBlockTags\@\@2QBDB
+     * @symbol ?Birch\@VanillaBlockTags\@\@2QBDB
      */
     MCAPI static char const Birch[];
     /**
-     * @hash   190537561
-     * @symbol  ?DarkOak\@VanillaBlockTags\@\@2QBDB
+     * @symbol ?DarkOak\@VanillaBlockTags\@\@2QBDB
      */
     MCAPI static char const DarkOak[];
     /**
-     * @hash   -1244399161
-     * @symbol  ?Jungle\@VanillaBlockTags\@\@2QBDB
+     * @symbol ?Jungle\@VanillaBlockTags\@\@2QBDB
      */
     MCAPI static char const Jungle[];
     /**
-     * @hash   1283020877
-     * @symbol  ?Log\@VanillaBlockTags\@\@2QBDB
+     * @symbol ?Log\@VanillaBlockTags\@\@2QBDB
      */
     MCAPI static char const Log[];
     /**
-     * @hash   -436689615
-     * @symbol  ?Oak\@VanillaBlockTags\@\@2QBDB
+     * @symbol ?Oak\@VanillaBlockTags\@\@2QBDB
      */
     MCAPI static char const Oak[];
     /**
-     * @hash   -566698569
-     * @symbol  ?Spruce\@VanillaBlockTags\@\@2QBDB
+     * @symbol ?Spruce\@VanillaBlockTags\@\@2QBDB
      */
     MCAPI static char const Spruce[];
 

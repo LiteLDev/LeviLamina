@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   -730375812
-     * @symbol  ?ZERO_SETTING\@FogSetting\@\@2U1\@B
+     * @symbol ?ZERO_SETTING\@FogSetting\@\@2U1\@B
      */
     MCAPI static struct FogSetting const ZERO_SETTING;
 

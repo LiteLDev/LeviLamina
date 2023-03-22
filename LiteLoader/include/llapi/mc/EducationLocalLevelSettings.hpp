@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   136273824
-     * @symbol  ??1EducationLocalLevelSettings\@\@QEAA\@XZ
+     * @symbol ??1EducationLocalLevelSettings\@\@QEAA\@XZ
      */
     MCAPI ~EducationLocalLevelSettings();
 

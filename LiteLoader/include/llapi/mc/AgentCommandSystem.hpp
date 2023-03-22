@@ -30,36 +30,34 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~AgentCommandSystem();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  __unk_vfn_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
     virtual void __unk_vfn_1();
     /**
-     * @hash   -218352395
-     * @vftbl  2
-     * @symbol  ?tick\@AgentCommandSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
+     * @vftbl 2
+     * @symbol ?tick\@AgentCommandSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
     virtual void tick(class EntityRegistry &);
     /**
-     * @hash   1884383969
-     * @symbol  ?cleanUp\@AgentCommandSystem\@\@SAXAEAVEntityContext\@\@M\@Z
+     * @symbol ?cleanUp\@AgentCommandSystem\@\@SAXAEAVEntityContext\@\@M\@Z
      */
     MCAPI static void cleanUp(class EntityContext &, float);
     /**
-     * @symbol  ?initialize\@AgentCommandSystem\@\@SAXAEAVEntityContext\@\@\@Z
+     * @symbol ?initialize\@AgentCommandSystem\@\@SAXAEAVEntityContext\@\@\@Z
      */
     MCAPI static void initialize(class EntityContext &);
     /**
-     * @symbol  ?tickAgentCooldown\@AgentCommandSystem\@\@SAXAEAVEntityContext\@\@AEAVCommandCooldown\@AgentComponents\@\@\@Z
+     * @symbol ?tickAgentCooldown\@AgentCommandSystem\@\@SAXAEAVEntityContext\@\@AEAVCommandCooldown\@AgentComponents\@\@\@Z
      */
     MCAPI static void tickAgentCooldown(class EntityContext &, class AgentComponents::CommandCooldown &);
     /**
-     * @symbol  ?tickLegacy\@AgentCommandSystem\@\@SAXAEAVEntityContext\@\@AEAVAgentCommandComponent\@\@\@Z
+     * @symbol ?tickLegacy\@AgentCommandSystem\@\@SAXAEAVEntityContext\@\@AEAVAgentCommandComponent\@\@\@Z
      */
     MCAPI static void tickLegacy(class EntityContext &, class AgentCommandComponent &);
 

@@ -20,8 +20,7 @@ namespace CanyonFeatureUtils {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   336256502
-     * @symbol  ?getCurrentConfiguration\@CanyonFeatureUtils\@\@YAAEBUCanyonConfiguration\@1\@W4TerrainGenVersion\@1\@\@Z
+     * @symbol ?getCurrentConfiguration\@CanyonFeatureUtils\@\@YAAEBUCanyonConfiguration\@1\@W4TerrainGenVersion\@1\@\@Z
      */
     MCAPI struct CanyonFeatureUtils::CanyonConfiguration const & getCurrentConfiguration(enum class CanyonFeatureUtils::TerrainGenVersion);
 

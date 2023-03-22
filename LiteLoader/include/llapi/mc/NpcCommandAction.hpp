@@ -36,40 +36,34 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~NpcCommandAction();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -2064780694
-     * @vftbl  1
-     * @symbol  ?toJson\@NpcCommandAction\@\@UEAA?AVValue\@Json\@\@XZ
+     * @vftbl 1
+     * @symbol ?toJson\@NpcCommandAction\@\@UEAA?AVValue\@Json\@\@XZ
      */
     virtual class Json::Value toJson();
     /**
-     * @hash   -603318227
-     * @vftbl  2
-     * @symbol  ?fromJson\@NpcCommandAction\@\@UEAA_NAEBVValue\@Json\@\@\@Z
+     * @vftbl 2
+     * @symbol ?fromJson\@NpcCommandAction\@\@UEAA_NAEBVValue\@Json\@\@\@Z
      */
     virtual bool fromJson(class Json::Value const &);
     /**
-     * @hash   -982489428
-     * @symbol  ??0NpcCommandAction\@\@QEAA\@XZ
+     * @symbol ??0NpcCommandAction\@\@QEAA\@XZ
      */
     MCAPI NpcCommandAction();
     /**
-     * @hash   2020908252
-     * @symbol  ?getCommands\@NpcCommandAction\@\@QEAAAEAV?$vector\@USavedCommand\@NpcCommandAction\@\@V?$allocator\@USavedCommand\@NpcCommandAction\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?getCommands\@NpcCommandAction\@\@QEAAAEAV?$vector\@USavedCommand\@NpcCommandAction\@\@V?$allocator\@USavedCommand\@NpcCommandAction\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::vector<struct NpcCommandAction::SavedCommand> & getCommands();
     /**
-     * @hash   -2108554306
-     * @symbol  ?setCommands\@NpcCommandAction\@\@QEAAX$$QEAV?$vector\@USavedCommand\@NpcCommandAction\@\@V?$allocator\@USavedCommand\@NpcCommandAction\@\@\@std\@\@\@std\@\@\@Z
+     * @symbol ?setCommands\@NpcCommandAction\@\@QEAAX$$QEAV?$vector\@USavedCommand\@NpcCommandAction\@\@V?$allocator\@USavedCommand\@NpcCommandAction\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI void setCommands(std::vector<struct NpcCommandAction::SavedCommand> &&);
     /**
-     * @hash   -184038028
-     * @symbol  ?COMMAND_DELIMITER\@NpcCommandAction\@\@2DB
+     * @symbol ?COMMAND_DELIMITER\@NpcCommandAction\@\@2DB
      */
     MCAPI static char const COMMAND_DELIMITER;
 
@@ -77,13 +71,11 @@ public:
 
 private:
     /**
-     * @hash   1106522059
-     * @symbol  ?COMMAND_LINE_KEY\@NpcCommandAction\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?COMMAND_LINE_KEY\@NpcCommandAction\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const COMMAND_LINE_KEY;
     /**
-     * @hash   -2139663545
-     * @symbol  ?COMMAND_VERSION_KEY\@NpcCommandAction\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?COMMAND_VERSION_KEY\@NpcCommandAction\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const COMMAND_VERSION_KEY;
 

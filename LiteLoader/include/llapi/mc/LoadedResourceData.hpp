@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   754127271
-     * @symbol  ??1LoadedResourceData\@\@QEAA\@XZ
+     * @symbol ??1LoadedResourceData\@\@QEAA\@XZ
      */
     MCAPI ~LoadedResourceData();
 

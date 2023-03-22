@@ -29,25 +29,21 @@ public:
 
 public:
     /**
-     * @hash   1994572641
-     * @symbol  ??0AquiferNoises\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0AquiferNoises\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI AquiferNoises(class AquiferNoises const &);
     /**
-     * @hash   -644508252
-     * @symbol  ??1AquiferNoises\@\@QEAA\@XZ
+     * @symbol ??1AquiferNoises\@\@QEAA\@XZ
      */
     MCAPI ~AquiferNoises();
     /**
-     * @hash   -2079868694
-     * @symbol  ?make\@AquiferNoises\@\@SA?AV1\@AEBVXoroshiroPositionalRandomFactory\@\@\@Z
+     * @symbol ?make\@AquiferNoises\@\@SA?AV1\@AEBVXoroshiroPositionalRandomFactory\@\@\@Z
      */
     MCAPI static class AquiferNoises make(class XoroshiroPositionalRandomFactory const &);
 
 //private:
     /**
-     * @hash   -1825647183
-     * @symbol  ??0AquiferNoises\@\@AEAA\@V?$NormalNoiseImpl\@$0A\@V?$MultiOctaveNoiseImpl\@$0A\@V?$ParityImprovedNoiseImpl\@$0A\@\@\@\@\@\@\@000VXoroshiroPositionalRandomFactory\@\@\@Z
+     * @symbol ??0AquiferNoises\@\@AEAA\@V?$NormalNoiseImpl\@$0A\@V?$MultiOctaveNoiseImpl\@$0A\@V?$ParityImprovedNoiseImpl\@$0A\@\@\@\@\@\@\@000VXoroshiroPositionalRandomFactory\@\@\@Z
      */
     MCAPI AquiferNoises(class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>, class XoroshiroPositionalRandomFactory);
 

@@ -22,12 +22,11 @@ namespace FreezingSystemInternal {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   1580629448
-     * @symbol  ?processFreezeEffect\@FreezingSystemInternal\@\@YAXAEAVActor\@\@AEBVFreezingComponent\@\@\@Z
+     * @symbol ?processFreezeEffect\@FreezingSystemInternal\@\@YAXAEAVActor\@\@AEBVFreezingComponent\@\@\@Z
      */
     MCAPI void processFreezeEffect(class Actor &, class FreezingComponent const &);
     /**
-     * @symbol  ?tickFreezeComponent\@FreezingSystemInternal\@\@YAXAEAVEntityContext\@\@AEAVActorOwnerComponent\@\@AEAVFreezingComponent\@\@\@Z
+     * @symbol ?tickFreezeComponent\@FreezingSystemInternal\@\@YAXAEAVEntityContext\@\@AEAVActorOwnerComponent\@\@AEAVFreezingComponent\@\@\@Z
      */
     MCAPI void tickFreezeComponent(class EntityContext &, class ActorOwnerComponent &, class FreezingComponent &);
 

@@ -31,13 +31,12 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ShipwreckStart();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -253902372
-     * @symbol  ??0ShipwreckStart\@\@QEAA\@AEBVBiomeSource\@\@AEAVRandom\@\@HHF\@Z
+     * @symbol ??0ShipwreckStart\@\@QEAA\@AEBVBiomeSource\@\@AEAVRandom\@\@HHF\@Z
      */
     MCAPI ShipwreckStart(class BiomeSource const &, class Random &, int, int, short);
 

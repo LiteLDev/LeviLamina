@@ -31,19 +31,23 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~HugeFungusFeature();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -2087267649
-     * @vftbl  3
-     * @symbol  ?place\@HugeFungusFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @vftbl 3
+     * @symbol ?place\@HugeFungusFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUGEFUNGUSFEATURE
     /**
-     * @hash   343357354
-     * @symbol  ??0HugeFungusFeature\@\@QEAA\@_N\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~HugeFungusFeature();
+#endif
+    /**
+     * @symbol ??0HugeFungusFeature\@\@QEAA\@_N\@Z
      */
     MCAPI HugeFungusFeature(bool);
 

@@ -28,18 +28,15 @@ public:
 
 public:
     /**
-     * @hash   -1873666722
-     * @symbol  ?empty\@HeightmapWrapper\@\@QEBA_NXZ
+     * @symbol ?empty\@HeightmapWrapper\@\@QEBA_NXZ
      */
     MCAPI bool empty() const;
     /**
-     * @hash   -366668416
-     * @symbol  ?getHeightAt\@HeightmapWrapper\@\@QEBAFAEBVPos\@\@\@Z
+     * @symbol ?getHeightAt\@HeightmapWrapper\@\@QEBAFAEBVPos\@\@\@Z
      */
     MCAPI short getHeightAt(class Pos const &) const;
     /**
-     * @hash   -642032301
-     * @symbol  ?create\@HeightmapWrapper\@\@SA?AV1\@PEBV?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@F\@Z
+     * @symbol ?create\@HeightmapWrapper\@\@SA?AV1\@PEBV?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@F\@Z
      */
     MCAPI static class HeightmapWrapper create(std::vector<short> const *, short);
 

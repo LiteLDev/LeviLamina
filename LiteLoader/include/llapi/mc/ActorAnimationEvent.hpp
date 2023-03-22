@@ -30,23 +30,19 @@ public:
 
 public:
     /**
-     * @hash   1085436341
-     * @symbol  ??0ActorAnimationEvent\@\@QEAA\@MAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4CurrentCmdVersion\@\@W4MolangVersion\@\@\@Z
-     */
-    MCAPI ActorAnimationEvent(float, std::string const &, enum class CurrentCmdVersion, enum class MolangVersion);
-    /**
-     * @hash   -140600737
-     * @symbol  ??0ActorAnimationEvent\@\@QEAA\@$$QEAV0\@\@Z
+     * @symbol ??0ActorAnimationEvent\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI ActorAnimationEvent(class ActorAnimationEvent &&);
     /**
-     * @hash   -1522072244
-     * @symbol  ?fire\@ActorAnimationEvent\@\@QEBAXAEAVRenderParams\@\@PEAVActor\@\@\@Z
+     * @symbol ??0ActorAnimationEvent\@\@QEAA\@MAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4CurrentCmdVersion\@\@W4MolangVersion\@\@\@Z
+     */
+    MCAPI ActorAnimationEvent(float, std::string const &, enum class CurrentCmdVersion, enum class MolangVersion);
+    /**
+     * @symbol ?fire\@ActorAnimationEvent\@\@QEBAXAEAVRenderParams\@\@PEAVActor\@\@\@Z
      */
     MCAPI void fire(class RenderParams &, class Actor *) const;
     /**
-     * @hash   -1818639449
-     * @symbol  ??1ActorAnimationEvent\@\@QEAA\@XZ
+     * @symbol ??1ActorAnimationEvent\@\@QEAA\@XZ
      */
     MCAPI ~ActorAnimationEvent();
 

@@ -30,31 +30,33 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~AddEntityPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1388654914
-     * @vftbl  1
-     * @symbol  ?getId\@AddEntityPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@AddEntityPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   1402743791
-     * @vftbl  2
-     * @symbol  ?getName\@AddEntityPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@AddEntityPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDENTITYPACKET
     /**
-     * @hash   -1706917464
-     * @symbol  ??0AddEntityPacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI AddEntityPacket();
+    MCVAPI ~AddEntityPacket();
+#endif
     /**
-     * @hash   1409778133
-     * @symbol  ??0AddEntityPacket\@\@QEAA\@AEBVEntityContext\@\@\@Z
+     * @symbol ??0AddEntityPacket\@\@QEAA\@AEBVEntityContext\@\@\@Z
      */
     MCAPI AddEntityPacket(class EntityContext const &);
+    /**
+     * @symbol ??0AddEntityPacket\@\@QEAA\@XZ
+     */
+    MCAPI AddEntityPacket();
 
 };

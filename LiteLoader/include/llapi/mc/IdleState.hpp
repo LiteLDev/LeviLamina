@@ -31,31 +31,27 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~IdleState();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   2042853159
-     * @vftbl  1
-     * @symbol  ?tick\@IdleState\@\@UEAAXXZ
+     * @vftbl 1
+     * @symbol ?tick\@IdleState\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -175275556
-     * @vftbl  2
-     * @symbol  ?start\@IdleState\@\@UEAAXXZ
+     * @vftbl 2
+     * @symbol ?start\@IdleState\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   -1579867252
-     * @vftbl  3
-     * @symbol  ?stop\@PetSleepWithOwnerState\@\@UEAAXXZ
+     * @vftbl 3
+     * @symbol ?stop\@PetSleepWithOwnerState\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @hash   -826989519
-     * @symbol  ?create\@IdleState\@\@SA?AV?$unique_ptr\@VIdleState\@\@U?$default_delete\@VIdleState\@\@\@std\@\@\@std\@\@AEAVPetSleepWithOwnerGoal\@\@\@Z
+     * @symbol ?create\@IdleState\@\@SA?AV?$unique_ptr\@VIdleState\@\@U?$default_delete\@VIdleState\@\@\@std\@\@\@std\@\@AEAVPetSleepWithOwnerGoal\@\@\@Z
      */
     MCAPI static std::unique_ptr<class IdleState> create(class PetSleepWithOwnerGoal &);
 

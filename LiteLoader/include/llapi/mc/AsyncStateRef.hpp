@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   1781352186
-     * @symbol  ??1AsyncStateRef\@\@QEAA\@XZ
+     * @symbol ??1AsyncStateRef\@\@QEAA\@XZ
      */
     MCAPI ~AsyncStateRef();
 

@@ -32,14 +32,13 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ActivateToolDefinition();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -562508250
-     * @vftbl  1
-     * @symbol  ?load\@ActivateToolDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
+     * @vftbl 1
+     * @symbol ?load\@ActivateToolDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */
     virtual void load(class Json::Value, class BehaviorFactory const &);
 

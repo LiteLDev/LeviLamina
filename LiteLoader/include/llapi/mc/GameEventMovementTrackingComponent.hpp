@@ -28,23 +28,19 @@ public:
 
 public:
     /**
-     * @hash   77981717
-     * @symbol  ?initializeFromCode\@GameEventMovementTrackingComponent\@\@QEAAXAEAVActor\@\@_N\@Z
+     * @symbol ?initializeFromCode\@GameEventMovementTrackingComponent\@\@QEAAXAEAVActor\@\@_N\@Z
      */
     MCAPI void initializeFromCode(class Actor &, bool);
     /**
-     * @hash   46110158
-     * @symbol  ?shouldEmitEntityMoveGameEvent\@GameEventMovementTrackingComponent\@\@QEAA_NXZ
+     * @symbol ?shouldEmitEntityMoveGameEvent\@GameEventMovementTrackingComponent\@\@QEAA_NXZ
      */
     MCAPI bool shouldEmitEntityMoveGameEvent();
     /**
-     * @hash   -992962596
-     * @symbol  ?shouldEmitFlapGameEvent\@GameEventMovementTrackingComponent\@\@QEAA_NXZ
+     * @symbol ?shouldEmitFlapGameEvent\@GameEventMovementTrackingComponent\@\@QEAA_NXZ
      */
     MCAPI bool shouldEmitFlapGameEvent();
     /**
-     * @hash   -933213370
-     * @symbol  ?shouldEmitSwimGameEvent\@GameEventMovementTrackingComponent\@\@QEAA_NXZ
+     * @symbol ?shouldEmitSwimGameEvent\@GameEventMovementTrackingComponent\@\@QEAA_NXZ
      */
     MCAPI bool shouldEmitSwimGameEvent();
 

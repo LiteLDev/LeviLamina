@@ -30,53 +30,47 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~AgentCommandExecutionGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1577408341
-     * @vftbl  1
-     * @symbol  ?canUse\@AgentCommandExecutionGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@AgentCommandExecutionGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
-     * @hash   -514932253
-     * @vftbl  3
-     * @symbol  ?canBeInterrupted\@AgentCommandExecutionGoal\@\@UEAA_NXZ
+     * @vftbl 3
+     * @symbol ?canBeInterrupted\@AgentCommandExecutionGoal\@\@UEAA_NXZ
      */
     virtual bool canBeInterrupted();
     /**
-     * @hash   1575982484
-     * @vftbl  4
-     * @symbol  ?start\@AgentCommandExecutionGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@AgentCommandExecutionGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   413809076
-     * @vftbl  5
-     * @symbol  ?stop\@AgentCommandExecutionGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@AgentCommandExecutionGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @vftbl  6
-     * @symbol  __unk_vfn_6
+     * @vftbl 6
+     * @symbol __unk_vfn_6
      */
     virtual void __unk_vfn_6();
     /**
-     * @hash   2021408005
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@AgentCommandExecutionGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@AgentCommandExecutionGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   399418376
-     * @symbol  ??0AgentCommandExecutionGoal\@\@QEAA\@AEAVMob\@\@\@Z
+     * @symbol ??0AgentCommandExecutionGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI AgentCommandExecutionGoal(class Mob &);
 

@@ -27,6 +27,13 @@
           "1": "Versi protokol tidak cocok, versi target: {}, versi saat ini: {}.",
           "2": "Ini kemungkinan besar akan membuat server crash, silakan gunakan LiteLoader yang cocok dengan versi BDS!"
         }
+      },
+      "bstats": {
+        "enabled": "bStats has been enabled, you can edit plugins/bStats/config.json to disable it"
+      },
+      "unpackResources": {
+        "begin": "Unpacking LiteLoaderBDS runtime resources. Please wait patiently...",
+        "end": "Unpacked."
       }
     },
     "antiAbnormalItem": {
@@ -212,6 +219,9 @@
       },
       "initNodeJsDirectories": {
         "created": "Direktori runtime Node.js tidak dapat ditemukan, dibuat."
+      },
+      "initPythonDirectories": {
+        "created": "Python runtime directory no found, created."
       }
     },
     "notice": {
@@ -238,6 +248,9 @@
     },
     "unzipNodeModules": {
       "fail": "Failed to unzip node_modules.tar"
+    },
+    "unzipPythonModules": {
+      "fail": "Failed to unzip python-env.zip"
     }
   },
   "llse": {
@@ -281,6 +294,13 @@
         "loadedPlugin": "{type} plugin <{name}> telah dimuat.",
         "installPluginPack": {
           "done": "{type} {count} paket plugin terpasang."
+        },
+        "python": {
+          "ignored": "No pyproject.toml file found in directory {path}, ignored.",
+          "installPack": {
+            "start": "Found Python plugin pack \"{path}\"! Try installing...",
+            "fail": "Failed to install plugin pack {}, please check the source files!"
+          }
         }
       },
       "nodejs": {
@@ -291,6 +311,13 @@
         },
         "register": {
           "fail": "Gagal membantu plugin {name} terdaftar!"
+        }
+      },
+      "python": {
+        "executePipInstall": {
+          "start": "Executing \"pip install\" for plugin {name}...",
+          "success": "Pip finished successfully.",
+          "fail": "Error occurred. Exit code: {code}"
         }
       }
     }

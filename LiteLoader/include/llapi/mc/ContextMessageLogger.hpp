@@ -28,13 +28,11 @@ public:
 
 public:
     /**
-     * @hash   -1510438499
-     * @symbol  ?log\@ContextMessageLogger\@\@QEAAXW4LogArea\@\@W4LogLevel\@\@PEBD\@Z
+     * @symbol ?log\@ContextMessageLogger\@\@QEAAXW4LogArea\@\@W4LogLevel\@\@PEBD\@Z
      */
     MCAPI void log(enum class LogArea, enum class LogLevel, char const *);
     /**
-     * @hash   474229274
-     * @symbol  ?shouldMessagePostToParentMessageLoggers\@ContextMessageLogger\@\@QEAA_NXZ
+     * @symbol ?shouldMessagePostToParentMessageLoggers\@ContextMessageLogger\@\@QEAA_NXZ
      */
     MCAPI bool shouldMessagePostToParentMessageLoggers();
 

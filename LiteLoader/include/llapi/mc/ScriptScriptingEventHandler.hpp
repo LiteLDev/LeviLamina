@@ -30,36 +30,34 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ScriptScriptingEventHandler();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?handleEvent\@?$Impl\@U?$type_list\@U?$MutableScriptingGameplayEvent\@W4CoordinatorResult\@\@\@\@$$CBU?$ScriptingGameplayEvent\@W4CoordinatorResult\@\@\@\@\@entt\@\@\@?$EventHandlerDispatcher\@VScriptingEventHandler\@\@\@Details\@\@MEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAU?$MutableScriptingGameplayEvent\@W4CoordinatorResult\@\@\@\@\@Z
+     * @vftbl 1
+     * @symbol ?handleEvent\@?$Impl\@U?$type_list\@U?$MutableScriptingGameplayEvent\@W4CoordinatorResult\@\@\@\@$$CBU?$ScriptingGameplayEvent\@W4CoordinatorResult\@\@\@\@\@entt\@\@\@?$EventHandlerDispatcher\@VScriptingEventHandler\@\@\@Details\@\@MEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAU?$MutableScriptingGameplayEvent\@W4CoordinatorResult\@\@\@\@\@Z
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct MutableScriptingGameplayEvent<enum class CoordinatorResult> &);
     /**
-     * @vftbl  2
-     * @symbol  ?handleEvent\@?$Impl\@U?$type_list\@$$CBU?$ScriptingGameplayEvent\@W4CoordinatorResult\@\@\@\@\@entt\@\@\@?$EventHandlerDispatcher\@VScriptingEventHandler\@\@\@Details\@\@MEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEBU?$ScriptingGameplayEvent\@W4CoordinatorResult\@\@\@\@\@Z
+     * @vftbl 2
+     * @symbol ?handleEvent\@?$Impl\@U?$type_list\@$$CBU?$ScriptingGameplayEvent\@W4CoordinatorResult\@\@\@\@\@entt\@\@\@?$EventHandlerDispatcher\@VScriptingEventHandler\@\@\@Details\@\@MEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEBU?$ScriptingGameplayEvent\@W4CoordinatorResult\@\@\@\@\@Z
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct ScriptingGameplayEvent<enum class CoordinatorResult> const &);
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   1441172400
-     * @vftbl  4
-     * @symbol  ?handleEvent\@ScriptScriptingEventHandler\@\@UEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAUBeforeWatchdogTerminateEvent\@\@\@Z
+     * @vftbl 4
+     * @symbol ?handleEvent\@ScriptScriptingEventHandler\@\@UEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAUBeforeWatchdogTerminateEvent\@\@\@Z
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct BeforeWatchdogTerminateEvent &);
 
 //private:
     /**
-     * @hash   -1996450394
-     * @symbol  ?_handleWatchdogTerminateEvent\@ScriptScriptingEventHandler\@\@AEBA_NAEAUBeforeWatchdogTerminateEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VScriptSystemEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
+     * @symbol ?_handleWatchdogTerminateEvent\@ScriptScriptingEventHandler\@\@AEBA_NAEAUBeforeWatchdogTerminateEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VScriptSystemEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
      */
     MCAPI bool _handleWatchdogTerminateEvent(struct BeforeWatchdogTerminateEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptSystemEvents>) const;
 

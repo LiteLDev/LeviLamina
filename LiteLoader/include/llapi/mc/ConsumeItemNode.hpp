@@ -29,19 +29,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ConsumeItemNode();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1358235406
-     * @vftbl  1
-     * @symbol  ?tick\@ConsumeItemNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
+     * @vftbl 1
+     * @symbol ?tick\@ConsumeItemNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
-     * @hash   1684570941
-     * @symbol  ??0ConsumeItemNode\@\@QEAA\@XZ
+     * @symbol ??0ConsumeItemNode\@\@QEAA\@XZ
      */
     MCAPI ConsumeItemNode();
 

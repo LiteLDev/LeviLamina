@@ -30,48 +30,48 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ItemComponentPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1426358044
-     * @vftbl  1
-     * @symbol  ?getId\@ItemComponentPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@ItemComponentPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   1303951817
-     * @vftbl  2
-     * @symbol  ?getName\@ItemComponentPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@ItemComponentPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   414067886
-     * @vftbl  3
-     * @symbol  ?write\@ItemComponentPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@ItemComponentPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   920033283
-     * @vftbl  4
-     * @symbol  ?readExtended\@ItemComponentPacket\@\@UEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 4
+     * @symbol ?readExtended\@ItemComponentPacket\@\@UEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /**
-     * @hash   801559438
-     * @vftbl  6
-     * @symbol  ?_read\@ItemComponentPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@ItemComponentPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMCOMPONENTPACKET
     /**
-     * @hash   1591807262
-     * @symbol  ??0ItemComponentPacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI ItemComponentPacket();
+    MCVAPI ~ItemComponentPacket();
+#endif
     /**
-     * @symbol  ??0ItemComponentPacket\@\@QEAA\@VItemRegistryRef\@\@\@Z
+     * @symbol ??0ItemComponentPacket\@\@QEAA\@VItemRegistryRef\@\@\@Z
      */
     MCAPI ItemComponentPacket(class ItemRegistryRef);
+    /**
+     * @symbol ??0ItemComponentPacket\@\@QEAA\@XZ
+     */
+    MCAPI ItemComponentPacket();
 
 };

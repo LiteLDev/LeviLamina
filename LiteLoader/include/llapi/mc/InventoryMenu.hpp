@@ -31,44 +31,36 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INVENTORYMENU
     /**
-     * @hash   414077755
-     * @symbol  ?_getContainer\@InventoryMenu\@\@MEBAPEAVContainer\@\@XZ
+     * @symbol ?_getContainer\@InventoryMenu\@\@MEBAPEAVContainer\@\@XZ
      */
     MCVAPI class Container * _getContainer() const;
     /**
-     * @hash   1505215988
-     * @symbol  ?getItemCopies\@InventoryMenu\@\@UEBA?AV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?getItemCopies\@InventoryMenu\@\@UEBA?AV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@XZ
      */
     MCVAPI std::vector<class ItemStack> getItemCopies() const;
     /**
-     * @hash   -562923324
-     * @symbol  ?getSlot\@InventoryMenu\@\@UEBAAEBVItemStack\@\@H\@Z
+     * @symbol ?getSlot\@InventoryMenu\@\@UEBAAEBVItemStack\@\@H\@Z
      */
     MCVAPI class ItemStack const & getSlot(int) const;
     /**
-     * @hash   -2093482994
-     * @symbol  ?removeSlot\@InventoryMenu\@\@UEAAXHH\@Z
+     * @symbol ?removeSlot\@InventoryMenu\@\@UEAAXHH\@Z
      */
     MCVAPI void removeSlot(int, int);
     /**
-     * @hash   -56509566
-     * @symbol  ?serverInitItemStackIds\@InventoryMenu\@\@UEAAXXZ
+     * @symbol ?serverInitItemStackIds\@InventoryMenu\@\@UEAAXXZ
      */
     MCVAPI void serverInitItemStackIds();
     /**
-     * @hash   -1988950997
-     * @symbol  ?setSlot\@InventoryMenu\@\@UEAAXHAEBVItemStack\@\@_N\@Z
+     * @symbol ?setSlot\@InventoryMenu\@\@UEAAXHAEBVItemStack\@\@_N\@Z
      */
     MCVAPI void setSlot(int, class ItemStack const &, bool);
     /**
-     * @hash   -884306328
-     * @symbol  __unk_destructor_-1
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~InventoryMenu();
 #endif
     /**
-     * @hash   1066446240
-     * @symbol  ??0InventoryMenu\@\@QEAA\@AEAVPlayer\@\@PEAVContainer\@\@\@Z
+     * @symbol ??0InventoryMenu\@\@QEAA\@AEAVPlayer\@\@PEAVContainer\@\@\@Z
      */
     MCAPI InventoryMenu(class Player &, class Container *);
 

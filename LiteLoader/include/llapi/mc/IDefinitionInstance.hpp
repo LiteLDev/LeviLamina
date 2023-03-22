@@ -23,51 +23,57 @@ class IDefinitionInstance {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IDEFINITIONINSTANCE
 public:
+    class IDefinitionInstance& operator=(class IDefinitionInstance const &) = delete;
     IDefinitionInstance(class IDefinitionInstance const &) = delete;
     IDefinitionInstance() = delete;
 #endif
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_vfn_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0() = 0;
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  __unk_vfn_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
     virtual void __unk_vfn_1() = 0;
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2() = 0;
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3() = 0;
     /**
-     * @vftbl  4
-     * @symbol  __unk_vfn_4
+     * @vftbl 4
+     * @symbol __unk_vfn_4
      */
     virtual void __unk_vfn_4() = 0;
     /**
-     * @vftbl  5
-     * @symbol  __unk_destructor_5
+     * @vftbl 5
+     * @symbol __unk_vfn_5
      */
-    virtual ~IDefinitionInstance();
+    virtual void __unk_vfn_5() = 0;
     /**
-     * @hash   -1700071409
-     * @vftbl  6
-     * @symbol  ?getRuntimeTypeId\@IDefinitionInstance\@\@UEBAGXZ
+     * @vftbl 6
+     * @symbol ?getDefinitionTypeId\@?$DefinitionInstance\@UPushThroughDefinition\@\@\@\@UEBAGXZ
+     */
+    virtual unsigned short getDefinitionTypeId() const = 0;
+    /**
+     * @vftbl 7
+     * @symbol ?getRuntimeTypeId\@IDefinitionInstance\@\@UEBAGXZ
      */
     virtual unsigned short getRuntimeTypeId() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDEFINITIONINSTANCE
     /**
-     * @hash   -1095093012
-     * @symbol  ??4IDefinitionInstance\@\@QEAAAEAV0\@AEBV0\@\@Z
+     * @symbol __unk_destructor_-1
      */
-    MCAPI class IDefinitionInstance & operator=(class IDefinitionInstance const &);
+    MCVAPI ~IDefinitionInstance();
+#endif
 
 };

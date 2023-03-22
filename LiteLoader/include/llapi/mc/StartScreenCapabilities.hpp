@@ -11,11 +11,8 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC structure StartScreenCapabilities.
- *
- */
-struct StartScreenCapabilities {
+
+class StartScreenCapabilities {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -23,21 +20,20 @@ struct StartScreenCapabilities {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STARTSCREENCAPABILITIES
 public:
-    struct StartScreenCapabilities& operator=(struct StartScreenCapabilities const &) = delete;
-    StartScreenCapabilities(struct StartScreenCapabilities const &) = delete;
+    class StartScreenCapabilities& operator=(class StartScreenCapabilities const &) = delete;
+    StartScreenCapabilities(class StartScreenCapabilities const &) = delete;
     StartScreenCapabilities() = delete;
 #endif
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~StartScreenCapabilities();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -980015763
-     * @vftbl  1
-     * @symbol  ?isOfType\@?$TypedScreenCapabilities\@UStartScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
+     * @vftbl 1
+     * @symbol ?isOfType\@?$TypedScreenCapabilities\@UStartScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
      */
     virtual bool isOfType(class typeid_t<class IScreenCapabilities>) const;
 

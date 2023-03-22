@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ActorDefinitionAttribute\@\@QEAA\@XZ
+     * @symbol ??1ActorDefinitionAttribute\@\@QEAA\@XZ
      */
     MCAPI ~ActorDefinitionAttribute();
 

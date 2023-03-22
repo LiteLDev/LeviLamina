@@ -30,8 +30,7 @@ public:
 
 public:
     /**
-     * @hash   -827359639
-     * @symbol  ?ZERO_SETTING\@FogVolumetricCoefficientSetting\@\@2U1\@B
+     * @symbol ?ZERO_SETTING\@FogVolumetricCoefficientSetting\@\@2U1\@B
      */
     MCAPI static struct FogVolumetricCoefficientSetting const ZERO_SETTING;
 

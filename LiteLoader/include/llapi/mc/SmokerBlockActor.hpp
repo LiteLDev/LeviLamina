@@ -31,14 +31,12 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMOKERBLOCKACTOR
     /**
-     * @hash   1239663616
-     * @symbol  ?getName\@SmokerBlockActor\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getName\@SmokerBlockActor\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCVAPI std::string getName() const;
 #endif
     /**
-     * @hash   1731094894
-     * @symbol  ??0SmokerBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
+     * @symbol ??0SmokerBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
     MCAPI SmokerBlockActor(class BlockPos const &);
 

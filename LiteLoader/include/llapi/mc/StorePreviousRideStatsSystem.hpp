@@ -28,13 +28,11 @@ public:
 
 public:
     /**
-     * @hash   -1537515228
-     * @symbol  ?_storePreviousRideStats\@StorePreviousRideStatsSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUStateVectorComponent\@\@AEAUVanillaClientGameplayComponent\@\@\@Z
+     * @symbol ?_storePreviousRideStats\@StorePreviousRideStatsSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUStateVectorComponent\@\@AEAUVanillaClientGameplayComponent\@\@\@Z
      */
     MCAPI static void _storePreviousRideStats(class StrictEntityContext const &, struct StateVectorComponent const &, struct VanillaClientGameplayComponent &);
     /**
-     * @hash   735362454
-     * @symbol  ?createSystem\@StorePreviousRideStatsSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@StorePreviousRideStatsSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   2113664870
-     * @symbol  ??0GameRuleId\@\@QEAA\@H\@Z
+     * @symbol ??0GameRuleId\@\@QEAA\@H\@Z
      */
     MCAPI GameRuleId(int);
 

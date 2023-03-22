@@ -31,14 +31,13 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~NetherBrightnessRamp();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -611452013
-     * @vftbl  2
-     * @symbol  ?getBaseAmbientValue\@NetherBrightnessRamp\@\@UEBAMXZ
+     * @vftbl 2
+     * @symbol ?getBaseAmbientValue\@NetherBrightnessRamp\@\@UEBAMXZ
      */
     virtual float getBaseAmbientValue() const;
 

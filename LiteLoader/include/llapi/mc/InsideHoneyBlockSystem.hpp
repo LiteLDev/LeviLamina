@@ -28,13 +28,11 @@ public:
 
 public:
     /**
-     * @hash   -592954054
-     * @symbol  ?createEventsSystem\@InsideHoneyBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createEventsSystem\@InsideHoneyBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createEventsSystem();
     /**
-     * @hash   -1055698698
-     * @symbol  ?createMovementSystem\@InsideHoneyBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createMovementSystem\@InsideHoneyBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createMovementSystem();
 

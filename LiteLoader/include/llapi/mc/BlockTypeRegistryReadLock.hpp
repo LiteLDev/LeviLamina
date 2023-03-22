@@ -28,15 +28,13 @@ public:
 
 public:
     /**
-     * @hash   -719369551
-     * @symbol  ??1BlockTypeRegistryReadLock\@\@QEAA\@XZ
+     * @symbol ??1BlockTypeRegistryReadLock\@\@QEAA\@XZ
      */
     MCAPI ~BlockTypeRegistryReadLock();
 
 //private:
     /**
-     * @hash   1265614736
-     * @symbol  ??0BlockTypeRegistryReadLock\@\@AEAA\@V?$shared_ptr\@VBlockTypeRegistryRWLock\@\@\@std\@\@\@Z
+     * @symbol ??0BlockTypeRegistryReadLock\@\@AEAA\@V?$shared_ptr\@VBlockTypeRegistryRWLock\@\@\@std\@\@\@Z
      */
     MCAPI BlockTypeRegistryReadLock(class std::shared_ptr<class BlockTypeRegistryRWLock>);
 

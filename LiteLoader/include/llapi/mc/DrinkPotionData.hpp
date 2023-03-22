@@ -21,15 +21,17 @@ struct DrinkPotionData {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRINKPOTIONDATA
 public:
-    struct DrinkPotionData& operator=(struct DrinkPotionData const &) = delete;
     DrinkPotionData(struct DrinkPotionData const &) = delete;
     DrinkPotionData() = delete;
 #endif
 
 public:
     /**
-     * @hash   1893148081
-     * @symbol  ??1DrinkPotionData\@\@QEAA\@XZ
+     * @symbol ??4DrinkPotionData\@\@QEAAAEAU0\@AEBU0\@\@Z
+     */
+    MCAPI struct DrinkPotionData & operator=(struct DrinkPotionData const &);
+    /**
+     * @symbol ??1DrinkPotionData\@\@QEAA\@XZ
      */
     MCAPI ~DrinkPotionData();
 

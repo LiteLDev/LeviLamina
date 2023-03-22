@@ -22,18 +22,15 @@ namespace BiomeIdCompatibility {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -341143301
-     * @symbol  ?MAX_CUSTOM_BIOMES\@BiomeIdCompatibility\@\@3IB
+     * @symbol ?MAX_CUSTOM_BIOMES\@BiomeIdCompatibility\@\@3IB
      */
     MCAPI extern unsigned int const MAX_CUSTOM_BIOMES;
     /**
-     * @hash   -1431535537
-     * @symbol  ?adjustForReservedRanges\@BiomeIdCompatibility\@\@YAIIAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?adjustForReservedRanges\@BiomeIdCompatibility\@\@YAIIAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI unsigned int adjustForReservedRanges(unsigned int, std::string const &);
     /**
-     * @hash   -799871520
-     * @symbol  ?isReserved\@BiomeIdCompatibility\@\@YA_NI\@Z
+     * @symbol ?isReserved\@BiomeIdCompatibility\@\@YA_NI\@Z
      */
     MCAPI bool isReserved(unsigned int);
 

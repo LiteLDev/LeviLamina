@@ -29,65 +29,53 @@ public:
 
 public:
     /**
-     * @hash   -1605255634
-     * @symbol  ??0MountTamingComponent\@\@QEAA\@XZ
+     * @symbol ??0MountTamingComponent\@\@QEAA\@XZ
      */
     MCAPI MountTamingComponent();
     /**
-     * @hash   1040886216
-     * @symbol  ?addAdditionalSaveData\@MountTamingComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
+     * @symbol ?addAdditionalSaveData\@MountTamingComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @hash   325832809
-     * @symbol  ?becomeTame\@MountTamingComponent\@\@QEAAXAEAVActor\@\@_N\@Z
+     * @symbol ?becomeTame\@MountTamingComponent\@\@QEAAXAEAVActor\@\@_N\@Z
      */
     MCAPI void becomeTame(class Actor &, bool);
     /**
-     * @hash   -854447541
-     * @symbol  ?getCounter\@MountTamingComponent\@\@QEAAAEAHXZ
+     * @symbol ?getCounter\@MountTamingComponent\@\@QEAAAEAHXZ
      */
     MCAPI int & getCounter();
     /**
-     * @hash   1635675601
-     * @symbol  ?getInteraction\@MountTamingComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
+     * @symbol ?getInteraction\@MountTamingComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     /**
-     * @hash   -765615585
-     * @symbol  ?getTemper\@MountTamingComponent\@\@QEAAAEAHXZ
+     * @symbol ?getTemper\@MountTamingComponent\@\@QEAAAEAHXZ
      */
     MCAPI int & getTemper();
     /**
-     * @hash   -1172845976
-     * @symbol  ?getTemperMod\@MountTamingComponent\@\@QEBAHXZ
+     * @symbol ?getTemperMod\@MountTamingComponent\@\@QEBAHXZ
      */
     MCAPI int getTemperMod() const;
     /**
-     * @hash   -2144707448
-     * @symbol  ?getWaitCount\@MountTamingComponent\@\@QEBAHXZ
+     * @symbol ?getWaitCount\@MountTamingComponent\@\@QEBAHXZ
      */
     MCAPI int getWaitCount() const;
     /**
-     * @hash   -1796936882
-     * @symbol  ?readAdditionalSaveData\@MountTamingComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
+     * @symbol ?readAdditionalSaveData\@MountTamingComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   1515878570
-     * @symbol  ?tameToPlayer\@MountTamingComponent\@\@QEAAXAEAVActor\@\@AEAVPlayer\@\@_N\@Z
+     * @symbol ?tameToPlayer\@MountTamingComponent\@\@QEAAXAEAVActor\@\@AEAVPlayer\@\@_N\@Z
      */
     MCAPI void tameToPlayer(class Actor &, class Player &, bool);
 
 //private:
     /**
-     * @hash   -610224047
-     * @symbol  ?_feedItem\@MountTamingComponent\@\@AEAAXAEAVActor\@\@AEAVPlayer\@\@H\@Z
+     * @symbol ?_feedItem\@MountTamingComponent\@\@AEAAXAEAVActor\@\@AEAVPlayer\@\@H\@Z
      */
     MCAPI void _feedItem(class Actor &, class Player &, int);
     /**
-     * @hash   422954363
-     * @symbol  ?_autoReject\@MountTamingComponent\@\@CA_NAEBVItemStack\@\@PEBVMountTameableDefinition\@\@\@Z
+     * @symbol ?_autoReject\@MountTamingComponent\@\@CA_NAEBVItemStack\@\@PEBVMountTameableDefinition\@\@\@Z
      */
     MCAPI static bool _autoReject(class ItemStack const &, class MountTameableDefinition const *);
 

@@ -22,8 +22,7 @@ namespace ReplayStatePolicy {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   1560068010
-     * @symbol  ?createServerContext\@ReplayStatePolicy\@\@YA?AV?$unique_ptr\@UIReplayStatePolicy\@\@U?$default_delete\@UIReplayStatePolicy\@\@\@std\@\@\@std\@\@AEBUReplayStateConfig\@\@\@Z
+     * @symbol ?createServerContext\@ReplayStatePolicy\@\@YA?AV?$unique_ptr\@UIReplayStatePolicy\@\@U?$default_delete\@UIReplayStatePolicy\@\@\@std\@\@\@std\@\@AEBUReplayStateConfig\@\@\@Z
      */
     MCAPI std::unique_ptr<struct IReplayStatePolicy> createServerContext(struct ReplayStateConfig const &);
 

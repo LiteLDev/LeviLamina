@@ -28,13 +28,11 @@ public:
 
 public:
     /**
-     * @hash   -2092944828
-     * @symbol  ?createMoveHitboxSystem\@MoveHitboxSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createMoveHitboxSystem\@MoveHitboxSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createMoveHitboxSystem();
     /**
-     * @hash   1384716253
-     * @symbol  ?moveHitboxTo\@MoveHitboxSystem\@\@SAXAEBVVec3\@\@AEAV?$vector\@UHitbox\@\@V?$allocator\@UHitbox\@\@\@std\@\@\@std\@\@\@Z
+     * @symbol ?moveHitboxTo\@MoveHitboxSystem\@\@SAXAEBVVec3\@\@AEAV?$vector\@UHitbox\@\@V?$allocator\@UHitbox\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI static void moveHitboxTo(class Vec3 const &, std::vector<struct Hitbox> &);
 

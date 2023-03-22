@@ -15,10 +15,14 @@
 #include "api/CommandAPI.h"
 #include "api/EventAPI.h"
 #include <llapi/utils/Hash.h>
+
 #ifdef LLSE_BACKEND_NODEJS
 #pragma warning(disable : 4251)
 #include "main/NodeJsHelper.h"
+#elif defined(LLSE_BACKEND_PYTHON)
+#include "main/PythonHelper.h"
 #endif
+
 #define H(x) do_hash(x)
 using namespace std;
 
@@ -97,7 +101,8 @@ bool PluginManager::loadPlugin(const std::string& fileOrDirPath, bool isHotLoad,
     // Plugin package
     if (isPluginPackage)
     {
-        return loadPluginPackage(realPath, fileOrDirPath, isHotLoad);
+        bool isUncompressedFirstTime = (realPath != fileOrDirPath);
+        return loadPluginPackage(realPath, fileOrDirPath, isHotLoad, isUncompressedFirstTime);
     }
 
     // Single file plugin
@@ -128,7 +133,8 @@ bool PluginManager::loadPlugin(const std::string& fileOrDirPath, bool isHotLoad,
         // Load depend libs
         try {
             for (auto& [path, content] : depends) {
-                engine->eval(content, path);
+                if(!content.empty())
+                    engine->eval(content, path);
             }
         } catch (const Exception& e) {
             logger.error("Fail in Loading Dependence Lib!\n");
@@ -202,18 +208,21 @@ bool PluginManager::loadPlugin(const std::string& fileOrDirPath, bool isHotLoad,
 
 // Load plugin package
 // This function must be called in correct backend
-bool PluginManager::loadPluginPackage(const std::string& dirPath, const std::string& packagePath, bool isHotLoad)
+bool PluginManager::loadPluginPackage(const std::string& dirPath, const std::string& packagePath, bool isHotLoad, bool isUncompressedFirstTime)
 {
-    // "dirPath" is always public temp dir (LLSE_PLUGIN_PACKAGE_TEMP_DIR)
+    // "dirPath" is public temp dir (LLSE_PLUGIN_PACKAGE_TEMP_DIR) or normal plugin dir
+    // "packagePath" will point to plugin package path if isUncompressedFirstTime == true
     if (!filesystem::is_directory(dirPath))
         return false;
     bool result = false;
 
 #ifdef LLSE_BACKEND_NODEJS
     result = NodeJsHelper::loadNodeJsPlugin(dirPath, packagePath, isHotLoad);
+#elif defined(LLSE_BACKEND_PYTHON)
+    result = PythonHelper::loadPythonPlugin(dirPath, packagePath, isHotLoad);
 #endif
 
-    if (result)
+    if (result && isUncompressedFirstTime)
     {
         // OK now. Delete installed plugin package
         std::error_code ec;

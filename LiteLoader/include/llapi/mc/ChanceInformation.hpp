@@ -30,24 +30,20 @@ public:
 
 public:
     /**
-     * @hash   1562769966
-     * @symbol  ?isValid\@ChanceInformation\@\@QEBA_NXZ
+     * @symbol ?isValid\@ChanceInformation\@\@QEBA_NXZ
      */
     MCAPI bool isValid() const;
     /**
-     * @hash   -1186187469
-     * @symbol  ?roll\@ChanceInformation\@\@QEBA_NAEAVRandom\@\@\@Z
+     * @symbol ?roll\@ChanceInformation\@\@QEBA_NAEAVRandom\@\@\@Z
      */
     MCAPI bool roll(class Random &) const;
     /**
-     * @hash   -1444883359
-     * @symbol  ?set\@ChanceInformation\@\@QEAAXII\@Z
-     */
-    MCAPI void set(unsigned int, unsigned int);
-    /**
-     * @hash   1353180592
-     * @symbol  ?set\@ChanceInformation\@\@QEAAXM\@Z
+     * @symbol ?set\@ChanceInformation\@\@QEAAXM\@Z
      */
     MCAPI void set(float);
+    /**
+     * @symbol ?set\@ChanceInformation\@\@QEAAXII\@Z
+     */
+    MCAPI void set(unsigned int, unsigned int);
 
 };

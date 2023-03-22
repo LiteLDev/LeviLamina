@@ -29,25 +29,22 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SelectorBehaviorNode();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   132458320
-     * @vftbl  1
-     * @symbol  ?tick\@SelectorBehaviorNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
+     * @vftbl 1
+     * @symbol ?tick\@SelectorBehaviorNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
-     * @hash   704533293
-     * @vftbl  2
-     * @symbol  ?initializeFromDefinition\@SelectorBehaviorNode\@\@MEAAXAEAVActor\@\@\@Z
+     * @vftbl 2
+     * @symbol ?initializeFromDefinition\@SelectorBehaviorNode\@\@MEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
-     * @hash   72356367
-     * @symbol  ??0SelectorBehaviorNode\@\@QEAA\@XZ
+     * @symbol ??0SelectorBehaviorNode\@\@QEAA\@XZ
      */
     MCAPI SelectorBehaviorNode();
 

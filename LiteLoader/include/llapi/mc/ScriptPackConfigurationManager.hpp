@@ -27,23 +27,19 @@ public:
 
 public:
     /**
-     * @hash   614784119
-     * @symbol  ??0ScriptPackConfigurationManager\@\@QEAA\@XZ
-     */
-    MCAPI ScriptPackConfigurationManager();
-    /**
-     * @hash   1740834577
-     * @symbol  ??0ScriptPackConfigurationManager\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0ScriptPackConfigurationManager\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI ScriptPackConfigurationManager(class ScriptPackConfigurationManager const &);
     /**
-     * @hash   1783938993
-     * @symbol  ?getPackConfiguration\@ScriptPackConfigurationManager\@\@QEBAAEBVScriptPackConfiguration\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ??0ScriptPackConfigurationManager\@\@QEAA\@XZ
+     */
+    MCAPI ScriptPackConfigurationManager();
+    /**
+     * @symbol ?getPackConfiguration\@ScriptPackConfigurationManager\@\@QEBAAEBVScriptPackConfiguration\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class ScriptPackConfiguration const & getPackConfiguration(std::string const &) const;
     /**
-     * @hash   1991974404
-     * @symbol  ?loadPackConfigs\@ScriptPackConfigurationManager\@\@QEAAXAEBVPath\@Core\@\@\@Z
+     * @symbol ?loadPackConfigs\@ScriptPackConfigurationManager\@\@QEAAXAEBVPath\@Core\@\@\@Z
      */
     MCAPI void loadPackConfigs(class Core::Path const &);
 
@@ -51,8 +47,7 @@ public:
 
 private:
     /**
-     * @hash   -1147680661
-     * @symbol  ?sDefaultConfigurationName\@ScriptPackConfigurationManager\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?sDefaultConfigurationName\@ScriptPackConfigurationManager\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const sDefaultConfigurationName;
 

@@ -30,18 +30,15 @@ public:
 
 public:
     /**
-     * @hash   1421664364
-     * @symbol  ??0GameTestClearTask\@\@QEAA\@AEAVDimension\@\@AEBVBoundingBox\@\@\@Z
+     * @symbol ??0GameTestClearTask\@\@QEAA\@AEAVDimension\@\@AEBVBoundingBox\@\@\@Z
      */
     MCAPI GameTestClearTask(class Dimension &, class BoundingBox const &);
     /**
-     * @hash   1258804676
-     * @symbol  ?isDone\@GameTestClearTask\@\@QEBA_NXZ
+     * @symbol ?isDone\@GameTestClearTask\@\@QEBA_NXZ
      */
     MCAPI bool isDone() const;
     /**
-     * @hash   1929908093
-     * @symbol  ?tick\@GameTestClearTask\@\@QEAAXXZ
+     * @symbol ?tick\@GameTestClearTask\@\@QEAAXXZ
      */
     MCAPI void tick();
 

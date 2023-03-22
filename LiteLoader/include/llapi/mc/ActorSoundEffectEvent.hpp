@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   -553074213
-     * @symbol  ??1ActorSoundEffectEvent\@\@QEAA\@XZ
+     * @symbol ??1ActorSoundEffectEvent\@\@QEAA\@XZ
      */
     MCAPI ~ActorSoundEffectEvent();
 

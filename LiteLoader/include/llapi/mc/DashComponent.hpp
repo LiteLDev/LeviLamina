@@ -28,18 +28,15 @@ public:
 
 public:
     /**
-     * @hash   1916837582
-     * @symbol  ?getCooldownTime\@DashComponent\@\@QEBA?BIXZ
+     * @symbol ?getCooldownTime\@DashComponent\@\@QEBA?BIXZ
      */
     MCAPI unsigned int const getCooldownTime() const;
     /**
-     * @hash   386835370
-     * @symbol  ?getHorizontalMomentum\@DashComponent\@\@QEBA?BMXZ
+     * @symbol ?getHorizontalMomentum\@DashComponent\@\@QEBA?BMXZ
      */
     MCAPI float const getHorizontalMomentum() const;
     /**
-     * @hash   1674616846
-     * @symbol  ?getVerticalMomentum\@DashComponent\@\@QEBA?BMXZ
+     * @symbol ?getVerticalMomentum\@DashComponent\@\@QEBA?BMXZ
      */
     MCAPI float const getVerticalMomentum() const;
 

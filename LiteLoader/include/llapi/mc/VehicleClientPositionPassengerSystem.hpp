@@ -28,18 +28,19 @@ public:
 
 public:
     /**
-     * @hash   -1151417976
-     * @symbol  ?createSetPositionRequestSystem\@VehicleClientPositionPassengerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?_setRotationLockSystem\@VehicleClientPositionPassengerSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UMobFlag\@\@\@\@\@\@$$CBUSynchedActorDataComponent\@\@$$CBUActorHeadRotationComponent\@\@UMobBodyRotationComponent\@\@UPassengerYRotLimitComponent\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBURenderRotationComponent\@\@\@\@V?$OptionalGlobalT\@UPassengersToPositionComponent\@\@VEntityRegistryBase\@\@\@\@\@Z
+     */
+    MCAPI static void _setRotationLockSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct MobFlag>>, struct SynchedActorDataComponent const, struct ActorHeadRotationComponent const, struct MobBodyRotationComponent, struct PassengerYRotLimitComponent>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct RenderRotationComponent const>, class OptionalGlobalT<struct PassengersToPositionComponent, class EntityRegistryBase>);
+    /**
+     * @symbol ?createSetPositionRequestSystem\@VehicleClientPositionPassengerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSetPositionRequestSystem();
     /**
-     * @hash   495463354
-     * @symbol  ?createSetPreviousPosRotSystem\@VehicleClientPositionPassengerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSetPreviousPosRotSystem\@VehicleClientPositionPassengerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSetPreviousPosRotSystem();
     /**
-     * @hash   -1321445830
-     * @symbol  ?createSetRotationLock\@VehicleClientPositionPassengerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSetRotationLock\@VehicleClientPositionPassengerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSetRotationLock();
 

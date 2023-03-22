@@ -30,13 +30,12 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~GrindstoneContainerScreenValidator();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1152348594
-     * @symbol  ??0GrindstoneContainerScreenValidator\@\@QEAA\@XZ
+     * @symbol ??0GrindstoneContainerScreenValidator\@\@QEAA\@XZ
      */
     MCAPI GrindstoneContainerScreenValidator();
 

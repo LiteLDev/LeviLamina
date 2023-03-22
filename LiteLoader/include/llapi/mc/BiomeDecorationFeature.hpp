@@ -27,18 +27,15 @@ public:
 
 public:
     /**
-     * @hash   662799625
-     * @symbol  ??0BiomeDecorationFeature\@\@QEAA\@$$QEAU0\@\@Z
-     */
-    MCAPI BiomeDecorationFeature(struct BiomeDecorationFeature &&);
-    /**
-     * @hash   1592890303
-     * @symbol  ??0BiomeDecorationFeature\@\@QEAA\@AEBU0\@\@Z
+     * @symbol ??0BiomeDecorationFeature\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI BiomeDecorationFeature(struct BiomeDecorationFeature const &);
     /**
-     * @hash   -17017712
-     * @symbol  ??1BiomeDecorationFeature\@\@QEAA\@XZ
+     * @symbol ??0BiomeDecorationFeature\@\@QEAA\@$$QEAU0\@\@Z
+     */
+    MCAPI BiomeDecorationFeature(struct BiomeDecorationFeature &&);
+    /**
+     * @symbol ??1BiomeDecorationFeature\@\@QEAA\@XZ
      */
     MCAPI ~BiomeDecorationFeature();
 

@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   198352527
-     * @symbol  ?_tickInsideEndPortalBlockSystem\@InsideEndPortalBlockSystemImpl\@\@SAXAEAVStrictEntityContext\@\@AEBU?$InsideBlockWithPosAndBlockComponent\@UEndPortalBlockFlag\@\@\@\@AEAVActorOwnerComponent\@\@\@Z
+     * @symbol ?_tickInsideEndPortalBlockSystem\@InsideEndPortalBlockSystemImpl\@\@SAXAEAVStrictEntityContext\@\@AEBU?$InsideBlockWithPosAndBlockComponent\@UEndPortalBlockFlag\@\@\@\@AEAVActorOwnerComponent\@\@\@Z
      */
     MCAPI static void _tickInsideEndPortalBlockSystem(class StrictEntityContext &, struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag> const &, class ActorOwnerComponent &);
 

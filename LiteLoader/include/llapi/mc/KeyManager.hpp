@@ -31,29 +31,31 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~KeyManager();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1671407236
-     * @vftbl  1
-     * @symbol  ?isValid\@KeyManager\@\@UEBA_NXZ
+     * @vftbl 1
+     * @symbol ?isValid\@KeyManager\@\@UEBA_NXZ
      */
     virtual bool isValid() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_KEYMANAGER
     /**
-     * @hash   693039186
-     * @symbol  ??0KeyManager\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4System\@Asymmetric\@Crypto\@\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~KeyManager();
+#endif
+    /**
+     * @symbol ??0KeyManager\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4System\@Asymmetric\@Crypto\@\@\@Z
      */
     MCAPI KeyManager(std::string const &, enum class Crypto::Asymmetric::System);
     /**
-     * @hash   167343696
-     * @symbol  ?getPublicKey\@KeyManager\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getPublicKey\@KeyManager\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string getPublicKey() const;
     /**
-     * @hash   -835471558
-     * @symbol  ?verify\@KeyManager\@\@QEBA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0W4HashType\@Hash\@Crypto\@\@\@Z
+     * @symbol ?verify\@KeyManager\@\@QEBA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0W4HashType\@Hash\@Crypto\@\@\@Z
      */
     MCAPI bool verify(std::string const &, std::string const &, enum class Crypto::Hash::HashType) const;
 

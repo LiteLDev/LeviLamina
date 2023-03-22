@@ -31,38 +31,33 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~WallClimberPathNavigation();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   225882885
-     * @vftbl  2
-     * @symbol  ?tick\@WallClimberPathNavigation\@\@MEAAXAEAVNavigationComponent\@\@AEAVMob\@\@\@Z
+     * @vftbl 2
+     * @symbol ?tick\@WallClimberPathNavigation\@\@MEAAXAEAVNavigationComponent\@\@AEAVMob\@\@\@Z
      */
     virtual void tick(class NavigationComponent &, class Mob &);
     /**
-     * @hash   -832828362
-     * @vftbl  4
-     * @symbol  ?createPath\@WallClimberPathNavigation\@\@MEAA?AV?$unique_ptr\@VPath\@\@U?$default_delete\@VPath\@\@\@std\@\@\@std\@\@AEAVNavigationComponent\@\@AEAVMob\@\@AEBVVec3\@\@\@Z
+     * @vftbl 4
+     * @symbol ?createPath\@WallClimberPathNavigation\@\@MEAA?AV?$unique_ptr\@VPath\@\@U?$default_delete\@VPath\@\@\@std\@\@\@std\@\@AEAVNavigationComponent\@\@AEAVMob\@\@AEBVVec3\@\@\@Z
      */
     virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Vec3 const &);
     /**
-     * @hash   1516556955
-     * @vftbl  5
-     * @symbol  ?createPath\@WallClimberPathNavigation\@\@MEAA?AV?$unique_ptr\@VPath\@\@U?$default_delete\@VPath\@\@\@std\@\@\@std\@\@AEAVNavigationComponent\@\@AEAVMob\@\@AEAVActor\@\@\@Z
+     * @vftbl 5
+     * @symbol ?createPath\@WallClimberPathNavigation\@\@MEAA?AV?$unique_ptr\@VPath\@\@U?$default_delete\@VPath\@\@\@std\@\@\@std\@\@AEAVNavigationComponent\@\@AEAVMob\@\@AEAVActor\@\@\@Z
      */
     virtual std::unique_ptr<class Path> createPath(class NavigationComponent &, class Mob &, class Actor &);
     /**
-     * @hash   -352856911
-     * @vftbl  7
-     * @symbol  ?moveTo\@WallClimberPathNavigation\@\@MEAA_NAEAVNavigationComponent\@\@AEAVMob\@\@AEAVActor\@\@M\@Z
+     * @vftbl 7
+     * @symbol ?moveTo\@WallClimberPathNavigation\@\@MEAA_NAEAVNavigationComponent\@\@AEAVMob\@\@AEAVActor\@\@M\@Z
      */
     virtual bool moveTo(class NavigationComponent &, class Mob &, class Actor &, float);
     /**
-     * @hash   -500821671
-     * @vftbl  11
-     * @symbol  ?canUpdatePath\@WallClimberPathNavigation\@\@MEBA_NAEBVMob\@\@\@Z
+     * @vftbl 11
+     * @symbol ?canUpdatePath\@WallClimberPathNavigation\@\@MEBA_NAEBVMob\@\@\@Z
      */
     virtual bool canUpdatePath(class Mob const &) const;
 

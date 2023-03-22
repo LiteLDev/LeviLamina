@@ -3,33 +3,42 @@
 #include <llapi/utils/StringHelper.h>
 #include <string>
 #include <llapi/LoggerAPI.h>
+#ifdef LLSE_BACKEND_PYTHON
+#include "PythonHelper.h"
+#endif
 using namespace std;
+
 extern Logger logger;
+extern bool isInConsoleDebugMode;
+extern ScriptEngine* debugEngine;
+
+#define OUTPUT_DEBUG_SIGN() std::cout << "> " << std::flush
 
 bool ProcessDebugEngine(const std::string& cmd)
 {
-#define OUTPUT_DEBUG_SIGN() std::cout << "> " << std::flush
-    extern bool globalDebug;
-    extern ScriptEngine* debugEngine;
+#ifdef LLSE_BACKEND_PYTHON
+    // process python debug seperately
+    return PythonHelper::processPythonDebugEngine(cmd);
+#endif
 
     if (cmd == LLSE_DEBUG_CMD)
     {
-        if (globalDebug)
+        if (isInConsoleDebugMode)
         {
             //EndDebug
             logger.info("Debug mode ended");
-            globalDebug = false;
+            isInConsoleDebugMode = false;
         }
         else
         {
             //StartDebug
             logger.info("Debug mode begins");
-            globalDebug = true;
+            isInConsoleDebugMode = true;
             OUTPUT_DEBUG_SIGN();
         }
         return false;
     }
-    if (globalDebug)
+    if (isInConsoleDebugMode)
     {
         EngineScope enter(debugEngine);
         try

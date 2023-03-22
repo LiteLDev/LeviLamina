@@ -30,46 +30,39 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~InternalComponentRegistry();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   597218659
-     * @vftbl  1
-     * @symbol  ?registerComponents\@InternalComponentRegistry\@\@UEAAXXZ
+     * @vftbl 1
+     * @symbol ?registerComponents\@InternalComponentRegistry\@\@UEAAXXZ
      */
     virtual void registerComponents();
     /**
-     * @hash   -1477127151
-     * @symbol  ?addComponentSaveData\@InternalComponentRegistry\@\@QEAAXAEBVActor\@\@AEAVCompoundTag\@\@\@Z
+     * @symbol ?addComponentSaveData\@InternalComponentRegistry\@\@QEAAXAEBVActor\@\@AEAVCompoundTag\@\@\@Z
      */
     MCAPI void addComponentSaveData(class Actor const &, class CompoundTag &);
     /**
-     * @hash   -1996827128
-     * @symbol  ?initializeComponents\@InternalComponentRegistry\@\@QEBAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
+     * @symbol ?initializeComponents\@InternalComponentRegistry\@\@QEBAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     MCAPI void initializeComponents(class Actor &, class CompoundTag const &, class DataLoadHelper &) const;
     /**
-     * @hash   -198239367
-     * @symbol  ?INTERNAL_COMPONENTS\@InternalComponentRegistry\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?INTERNAL_COMPONENTS\@InternalComponentRegistry\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const INTERNAL_COMPONENTS;
 
 //protected:
     /**
-     * @hash   -1259632257
-     * @symbol  ?_initializeComponents\@InternalComponentRegistry\@\@IEBAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
+     * @symbol ?_initializeComponents\@InternalComponentRegistry\@\@IEBAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     MCAPI void _initializeComponents(class Actor &, class CompoundTag const &, class DataLoadHelper &) const;
     /**
-     * @hash   -1091082634
-     * @symbol  ?_getComponentScope\@InternalComponentRegistry\@\@KAPEBVCompoundTag\@\@AEBV2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?_getComponentScope\@InternalComponentRegistry\@\@KAPEBVCompoundTag\@\@AEBV2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI static class CompoundTag const * _getComponentScope(class CompoundTag const &, std::string const &);
     /**
-     * @hash   -1871113207
-     * @symbol  ?_getOrCreateComponentScope\@InternalComponentRegistry\@\@KAAEAVCompoundTag\@\@AEAV2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?_getOrCreateComponentScope\@InternalComponentRegistry\@\@KAAEAVCompoundTag\@\@AEAV2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI static class CompoundTag & _getOrCreateComponentScope(class CompoundTag &, std::string const &);
 

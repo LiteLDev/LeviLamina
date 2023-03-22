@@ -31,54 +31,46 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~Trade2ContainerManagerModel();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1479100096
-     * @vftbl  6
-     * @symbol  ?getItemCopies\@Trade2ContainerManagerModel\@\@UEBA?AV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 6
+     * @symbol ?getItemCopies\@Trade2ContainerManagerModel\@\@UEBA?AV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::vector<class ItemStack> getItemCopies() const;
     /**
-     * @hash   -1629908785
-     * @vftbl  7
-     * @symbol  ?setSlot\@Trade2ContainerManagerModel\@\@UEAAXHAEBVItemStack\@\@_N\@Z
+     * @vftbl 7
+     * @symbol ?setSlot\@Trade2ContainerManagerModel\@\@UEAAXHAEBVItemStack\@\@_N\@Z
      */
     virtual void setSlot(int, class ItemStack const &, bool);
     /**
-     * @hash   1537794520
-     * @vftbl  8
-     * @symbol  ?getSlot\@Trade2ContainerManagerModel\@\@UEBAAEBVItemStack\@\@H\@Z
+     * @vftbl 8
+     * @symbol ?getSlot\@Trade2ContainerManagerModel\@\@UEBAAEBVItemStack\@\@H\@Z
      */
     virtual class ItemStack const & getSlot(int) const;
     /**
-     * @hash   -1600087206
-     * @vftbl  10
-     * @symbol  ?broadcastChanges\@Trade2ContainerManagerModel\@\@UEAAXXZ
+     * @vftbl 10
+     * @symbol ?broadcastChanges\@Trade2ContainerManagerModel\@\@UEAAXXZ
      */
     virtual void broadcastChanges();
     /**
-     * @hash   764876086
-     * @vftbl  16
-     * @symbol  ?isValid\@Trade2ContainerManagerModel\@\@UEAA_NM\@Z
+     * @vftbl 16
+     * @symbol ?isValid\@Trade2ContainerManagerModel\@\@UEAA_NM\@Z
      */
     virtual bool isValid(float);
     /**
-     * @hash   1249966535
-     * @vftbl  17
-     * @symbol  ?_postInit\@Trade2ContainerManagerModel\@\@MEAA?AVContainerScreenContext\@\@XZ
+     * @vftbl 17
+     * @symbol ?_postInit\@Trade2ContainerManagerModel\@\@MEAA?AVContainerScreenContext\@\@XZ
      */
     virtual class ContainerScreenContext _postInit();
     /**
-     * @hash   -611014148
-     * @symbol  ??0Trade2ContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBUActorUniqueID\@\@\@Z
+     * @symbol ??0Trade2ContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBUActorUniqueID\@\@\@Z
      */
     MCAPI Trade2ContainerManagerModel(enum class ContainerID, class Player &, struct ActorUniqueID const &);
     /**
-     * @hash   -1359479365
-     * @symbol  ?getEntity\@Trade2ContainerManagerModel\@\@QEBAPEAVActor\@\@XZ
+     * @symbol ?getEntity\@Trade2ContainerManagerModel\@\@QEBAPEAVActor\@\@XZ
      */
     MCAPI class Actor * getEntity() const;
 

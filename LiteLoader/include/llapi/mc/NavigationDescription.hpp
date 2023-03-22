@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -30,31 +29,28 @@ public:
 
 public:
     /**
-     * @hash   716389959
-     * @vftbl  0
-     * @symbol  ?getJsonName\@NavigationWalkDescription\@\@UEBAPEBDXZ
+     * @vftbl 0
+     * @symbol ?getJsonName\@NavigationFlyDescription\@\@UEBAPEBDXZ
      */
     virtual char const * getJsonName() const = 0;
     /**
-     * @vftbl  1
-     * @symbol  __unk_destructor_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
-    virtual ~NavigationDescription();
+    virtual void __unk_vfn_1();
     /**
-     * @hash   -1084516153
-     * @vftbl  2
-     * @symbol  ?deserializeData\@NavigationDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
+     * @vftbl 2
+     * @symbol ?deserializeData\@NavigationDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONDESCRIPTION
     /**
-     * @hash   -1301819791
-     * @vftbl  3
-     * @symbol  ?serializeData\@NavigationDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
+     * @symbol __unk_destructor_-1
      */
-    virtual void serializeData(class Json::Value &) const;
+    MCVAPI ~NavigationDescription();
+#endif
     /**
-     * @hash   -606548124
-     * @symbol  ??0NavigationDescription\@\@QEAA\@XZ
+     * @symbol ??0NavigationDescription\@\@QEAA\@XZ
      */
     MCAPI NavigationDescription();
 

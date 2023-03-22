@@ -29,32 +29,28 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~MoveNode();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1806951584
-     * @vftbl  1
-     * @symbol  ?tick\@MoveNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
+     * @vftbl 1
+     * @symbol ?tick\@MoveNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
-     * @hash   1621465428
-     * @vftbl  2
-     * @symbol  ?initializeFromDefinition\@MoveNode\@\@EEAAXAEAVActor\@\@\@Z
+     * @vftbl 2
+     * @symbol ?initializeFromDefinition\@MoveNode\@\@EEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
-     * @hash   -1741221313
-     * @symbol  ??0MoveNode\@\@QEAA\@XZ
+     * @symbol ??0MoveNode\@\@QEAA\@XZ
      */
     MCAPI MoveNode();
 
 //private:
     /**
-     * @hash   -1186573170
-     * @symbol  ?convertDirectionStringToKeyPress\@MoveNode\@\@AEAAEV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?convertDirectionStringToKeyPress\@MoveNode\@\@AEAAEV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI unsigned char convertDirectionStringToKeyPress(std::string);
 

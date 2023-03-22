@@ -22,8 +22,7 @@ namespace LightningBoltUtil {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   -444185534
-     * @symbol  ?_clearCopperOnLightningStrike\@LightningBoltUtil\@\@YAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     * @symbol ?_clearCopperOnLightningStrike\@LightningBoltUtil\@\@YAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _clearCopperOnLightningStrike(class BlockSource &, class BlockPos const &);
 

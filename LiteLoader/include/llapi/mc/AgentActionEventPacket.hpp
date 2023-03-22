@@ -29,43 +29,43 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~AgentActionEventPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -383600057
-     * @vftbl  1
-     * @symbol  ?getId\@AgentActionEventPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@AgentActionEventPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   509847796
-     * @vftbl  2
-     * @symbol  ?getName\@AgentActionEventPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@AgentActionEventPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   1726333443
-     * @vftbl  3
-     * @symbol  ?write\@AgentActionEventPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@AgentActionEventPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   -1930850765
-     * @vftbl  6
-     * @symbol  ?_read\@AgentActionEventPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@AgentActionEventPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENTACTIONEVENTPACKET
     /**
-     * @hash   985437459
-     * @symbol  ??0AgentActionEventPacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI AgentActionEventPacket();
+    MCVAPI ~AgentActionEventPacket();
+#endif
     /**
-     * @hash   -1710674682
-     * @symbol  ??0AgentActionEventPacket\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4AgentActionType\@\@AEBVValue\@Json\@\@\@Z
+     * @symbol ??0AgentActionEventPacket\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4AgentActionType\@\@AEBVValue\@Json\@\@\@Z
      */
     MCAPI AgentActionEventPacket(std::string const &, enum class AgentActionType, class Json::Value const &);
+    /**
+     * @symbol ??0AgentActionEventPacket\@\@QEAA\@XZ
+     */
+    MCAPI AgentActionEventPacket();
 
 };

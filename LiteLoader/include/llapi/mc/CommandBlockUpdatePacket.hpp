@@ -29,43 +29,43 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~CommandBlockUpdatePacket();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1577784053
-     * @vftbl  1
-     * @symbol  ?getId\@CommandBlockUpdatePacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@CommandBlockUpdatePacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   1962400696
-     * @vftbl  2
-     * @symbol  ?getName\@CommandBlockUpdatePacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@CommandBlockUpdatePacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   2026084143
-     * @vftbl  3
-     * @symbol  ?write\@CommandBlockUpdatePacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@CommandBlockUpdatePacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   -590430929
-     * @vftbl  6
-     * @symbol  ?_read\@CommandBlockUpdatePacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@CommandBlockUpdatePacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMANDBLOCKUPDATEPACKET
     /**
-     * @hash   -140120449
-     * @symbol  ??0CommandBlockUpdatePacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI CommandBlockUpdatePacket();
+    MCVAPI ~CommandBlockUpdatePacket();
+#endif
     /**
-     * @hash   934347985
-     * @symbol  ??0CommandBlockUpdatePacket\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0CommandBlockUpdatePacket\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI CommandBlockUpdatePacket(class CommandBlockUpdatePacket const &);
+    /**
+     * @symbol ??0CommandBlockUpdatePacket\@\@QEAA\@XZ
+     */
+    MCAPI CommandBlockUpdatePacket();
 
 };

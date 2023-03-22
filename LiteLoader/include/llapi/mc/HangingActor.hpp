@@ -31,258 +31,240 @@ public:
 
 public:
     /**
-     * @hash   1287337656
-     * @vftbl  10
-     * @symbol  ?reloadHardcoded\@HangingActor\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
+     * @vftbl 10
+     * @symbol ?reloadHardcoded\@HangingActor\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @hash   179647907
-     * @vftbl  11
-     * @symbol  ?reloadHardcodedClient\@HangingActor\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
+     * @vftbl 11
+     * @symbol ?reloadHardcodedClient\@HangingActor\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
     virtual void reloadHardcodedClient(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vftbl  16
-     * @symbol  __unk_destructor_16
+     * @vftbl 16
+     * @symbol __unk_vfn_16
      */
-    virtual ~HangingActor();
+    virtual void __unk_vfn_16();
     /**
-     * @hash   -1941953969
-     * @vftbl  28
-     * @symbol  ?move\@HangingActor\@\@UEAAXAEBVVec3\@\@\@Z
+     * @vftbl 28
+     * @symbol ?move\@HangingActor\@\@UEAAXAEBVVec3\@\@\@Z
      */
     virtual void move(class Vec3 const &);
     /**
-     * @vftbl  41
-     * @symbol  __unk_vfn_41
+     * @vftbl 41
+     * @symbol __unk_vfn_41
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   -1268187402
-     * @vftbl  49
-     * @symbol  ?normalTick\@HangingActor\@\@UEAAXXZ
+     * @vftbl 49
+     * @symbol ?normalTick\@HangingActor\@\@UEAAXXZ
      */
     virtual void normalTick();
     /**
-     * @vftbl  62
-     * @symbol  __unk_vfn_62
+     * @vftbl 62
+     * @symbol __unk_vfn_62
      */
     virtual void __unk_vfn_62();
     /**
-     * @vftbl  69
-     * @symbol  __unk_vfn_69
+     * @vftbl 69
+     * @symbol __unk_vfn_69
      */
     virtual void __unk_vfn_69();
     /**
-     * @vftbl  83
-     * @symbol  __unk_vfn_83
+     * @vftbl 82
+     * @symbol __unk_vfn_82
      */
-    virtual void __unk_vfn_83();
+    virtual void __unk_vfn_82();
     /**
-     * @vftbl  86
-     * @symbol  __unk_vfn_86
+     * @vftbl 85
+     * @symbol __unk_vfn_85
      */
-    virtual void __unk_vfn_86();
+    virtual void __unk_vfn_85();
     /**
-     * @vftbl  88
-     * @symbol  ?getBrightness\@HangingActor\@\@UEBAMMAEBVIConstBlockSource\@\@\@Z
+     * @vftbl 87
+     * @symbol ?getBrightness\@HangingActor\@\@UEBAMMAEBVIConstBlockSource\@\@\@Z
      */
     virtual float getBrightness(float, class IConstBlockSource const &) const;
     /**
-     * @vftbl  89
-     * @symbol  __unk_vfn_89
+     * @vftbl 88
+     * @symbol __unk_vfn_88
      */
-    virtual void __unk_vfn_89();
+    virtual void __unk_vfn_88();
     /**
-     * @hash   1741606921
-     * @vftbl  96
-     * @symbol  ?isPickable\@HangingActor\@\@UEAA_NXZ
+     * @vftbl 95
+     * @symbol ?isPickable\@HangingActor\@\@UEAA_NXZ
      */
     virtual bool isPickable();
     /**
-     * @vftbl  97
-     * @symbol  __unk_vfn_97
+     * @vftbl 96
+     * @symbol __unk_vfn_96
      */
-    virtual void __unk_vfn_97();
+    virtual void __unk_vfn_96();
     /**
-     * @vftbl  100
-     * @symbol  __unk_vfn_100
+     * @vftbl 99
+     * @symbol __unk_vfn_99
      */
-    virtual void __unk_vfn_100();
+    virtual void __unk_vfn_99();
     /**
-     * @vftbl  107
-     * @symbol  __unk_vfn_107
+     * @vftbl 106
+     * @symbol __unk_vfn_106
      */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_106();
     /**
-     * @vftbl  109
-     * @symbol  __unk_vfn_109
+     * @vftbl 108
+     * @symbol __unk_vfn_108
+     */
+    virtual void __unk_vfn_108();
+    /**
+     * @vftbl 109
+     * @symbol __unk_vfn_109
      */
     virtual void __unk_vfn_109();
     /**
-     * @vftbl  110
-     * @symbol  __unk_vfn_110
+     * @vftbl 111
+     * @symbol __unk_vfn_111
      */
-    virtual void __unk_vfn_110();
+    virtual void __unk_vfn_111();
     /**
-     * @vftbl  112
-     * @symbol  __unk_vfn_112
-     */
-    virtual void __unk_vfn_112();
-    /**
-     * @hash   171507603
-     * @vftbl  135
-     * @symbol  ?isInvulnerableTo\@HangingActor\@\@UEBA_NAEBVActorDamageSource\@\@\@Z
+     * @vftbl 134
+     * @symbol ?isInvulnerableTo\@HangingActor\@\@UEBA_NAEBVActorDamageSource\@\@\@Z
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
-     * @vftbl  179
-     * @symbol  __unk_vfn_179
+     * @vftbl 178
+     * @symbol __unk_vfn_178
      */
-    virtual void __unk_vfn_179();
+    virtual void __unk_vfn_178();
     /**
-     * @vftbl  193
-     * @symbol  __unk_vfn_193
+     * @vftbl 192
+     * @symbol __unk_vfn_192
      */
-    virtual void __unk_vfn_193();
+    virtual void __unk_vfn_192();
     /**
-     * @vftbl  218
-     * @symbol  __unk_vfn_218
+     * @vftbl 217
+     * @symbol __unk_vfn_217
+     */
+    virtual void __unk_vfn_217();
+    /**
+     * @vftbl 218
+     * @symbol __unk_vfn_218
      */
     virtual void __unk_vfn_218();
     /**
-     * @vftbl  219
-     * @symbol  __unk_vfn_219
-     */
-    virtual void __unk_vfn_219();
-    /**
-     * @hash   1298541381
-     * @vftbl  234
-     * @symbol  ?setSize\@HangingActor\@\@UEAAXMM\@Z
+     * @vftbl 233
+     * @symbol ?setSize\@HangingActor\@\@UEAAXMM\@Z
      */
     virtual void setSize(float, float);
     /**
-     * @vftbl  241
-     * @symbol  __unk_vfn_241
+     * @vftbl 240
+     * @symbol __unk_vfn_240
      */
-    virtual void __unk_vfn_241();
+    virtual void __unk_vfn_240();
     /**
-     * @vftbl  244
-     * @symbol  __unk_vfn_244
+     * @vftbl 243
+     * @symbol __unk_vfn_243
      */
-    virtual void __unk_vfn_244();
+    virtual void __unk_vfn_243();
     /**
-     * @vftbl  262
-     * @symbol  __unk_vfn_262
+     * @vftbl 260
+     * @symbol __unk_vfn_260
      */
-    virtual void __unk_vfn_262();
+    virtual void __unk_vfn_260();
     /**
-     * @hash   -422590261
-     * @vftbl  263
-     * @symbol  ?_hurt\@HangingActor\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
+     * @vftbl 261
+     * @symbol ?_hurt\@HangingActor\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @hash   1864877499
-     * @vftbl  266
-     * @symbol  ?readAdditionalSaveData\@HangingActor\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
+     * @vftbl 264
+     * @symbol ?readAdditionalSaveData\@HangingActor\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   1516709586
-     * @vftbl  267
-     * @symbol  ?addAdditionalSaveData\@HangingActor\@\@MEBAXAEAVCompoundTag\@\@\@Z
+     * @vftbl 265
+     * @symbol ?addAdditionalSaveData\@HangingActor\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vftbl  270
-     * @symbol  __unk_vfn_270
+     * @vftbl 268
+     * @symbol __unk_vfn_268
      */
-    virtual void __unk_vfn_270();
+    virtual void __unk_vfn_268();
     /**
-     * @vftbl  277
-     * @symbol  __unk_vfn_277
+     * @vftbl 275
+     * @symbol __unk_vfn_275
      */
-    virtual void __unk_vfn_277();
+    virtual void __unk_vfn_275();
     /**
-     * @hash   -896574670
-     * @vftbl  278
-     * @symbol  ?setDir\@HangingActor\@\@UEAAXH\@Z
+     * @vftbl 276
+     * @symbol ?setDir\@HangingActor\@\@UEAAXH\@Z
      */
     virtual void setDir(int);
     /**
-     * @hash   1171034321
-     * @vftbl  279
-     * @symbol  ?getWidth\@Painting\@\@UEBAHXZ
+     * @vftbl 277
+     * @symbol ?getWidth\@LeashFenceKnotActor\@\@UEBAHXZ
      */
     virtual int getWidth() const = 0;
     /**
-     * @hash   -1936156610
-     * @vftbl  280
-     * @symbol  ?getHeight\@Painting\@\@UEBAHXZ
+     * @vftbl 278
+     * @symbol ?getHeight\@LeashFenceKnotActor\@\@UEBAHXZ
      */
     virtual int getHeight() const = 0;
     /**
-     * @hash   1871553759
-     * @vftbl  281
-     * @symbol  ?dropItem\@Painting\@\@UEAAXXZ
+     * @vftbl 279
+     * @symbol ?dropItem\@LeashFenceKnotActor\@\@UEAAXXZ
      */
     virtual void dropItem() = 0;
     /**
-     * @hash   -714675621
-     * @vftbl  282
-     * @symbol  ?placeHangingEntity\@HangingActor\@\@UEAA_NAEAVBlockSource\@\@H\@Z
+     * @vftbl 280
+     * @symbol ?placeHangingEntity\@HangingActor\@\@UEAA_NAEAVBlockSource\@\@H\@Z
      */
     virtual bool placeHangingEntity(class BlockSource &, int);
     /**
-     * @hash   1214005667
-     * @vftbl  283
-     * @symbol  ?wouldSurvive\@HangingActor\@\@UEAA_NAEAVBlockSource\@\@\@Z
+     * @vftbl 281
+     * @symbol ?wouldSurvive\@HangingActor\@\@UEAA_NAEAVBlockSource\@\@\@Z
      */
     virtual bool wouldSurvive(class BlockSource &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HANGINGACTOR
     /**
-     * @hash   2127167569
-     * @symbol  ??0HangingActor\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~HangingActor();
+#endif
+    /**
+     * @symbol ??0HangingActor\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI HangingActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   1449362488
-     * @symbol  ?getDirection\@HangingActor\@\@QEBAHXZ
+     * @symbol ?getDirection\@HangingActor\@\@QEBAHXZ
      */
     MCAPI int getDirection() const;
 
 //protected:
     /**
-     * @hash   257254229
-     * @symbol  ?_calculateAABB\@HangingActor\@\@IEAAXXZ
+     * @symbol ?_calculateAABB\@HangingActor\@\@IEAAXXZ
      */
     MCAPI void _calculateAABB();
     /**
-     * @hash   -429065929
-     * @symbol  ?_calculateActorPositionFromPlacementPosition\@HangingActor\@\@IEAAXAEBVBlockPos\@\@\@Z
+     * @symbol ?_calculateActorPositionFromPlacementPosition\@HangingActor\@\@IEAAXAEBVBlockPos\@\@\@Z
      */
     MCAPI void _calculateActorPositionFromPlacementPosition(class BlockPos const &);
     /**
-     * @hash   1211552514
-     * @symbol  ?_wouldSurvive\@HangingActor\@\@IEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@_N\@Z
+     * @symbol ?_wouldSurvive\@HangingActor\@\@IEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@_N\@Z
      */
     MCAPI bool _wouldSurvive(class BlockSource &, class BlockPos const &, bool);
 
 //private:
     /**
-     * @hash   -250101852
-     * @symbol  ?_blockContainsObstruction\@HangingActor\@\@AEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     * @symbol ?_blockContainsObstruction\@HangingActor\@\@AEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool _blockContainsObstruction(class BlockSource const &, class BlockPos const &) const;
     /**
-     * @hash   1626627785
-     * @symbol  ?_blockIsObstruction\@HangingActor\@\@AEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     * @symbol ?_blockIsObstruction\@HangingActor\@\@AEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool _blockIsObstruction(class BlockSource const &, class BlockPos const &) const;
     /**
-     * @hash   105244420
-     * @symbol  ?_canSurviveOnBlock\@HangingActor\@\@AEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@_N\@Z
+     * @symbol ?_canSurviveOnBlock\@HangingActor\@\@AEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@_N\@Z
      */
     MCAPI bool _canSurviveOnBlock(class BlockSource const &, class BlockPos const &, bool) const;
 
@@ -290,8 +272,7 @@ protected:
 
 private:
     /**
-     * @hash   959750064
-     * @symbol  ?HANGING_OFFSET\@HangingActor\@\@0MB
+     * @symbol ?HANGING_OFFSET\@HangingActor\@\@0MB
      */
     MCAPI static float const HANGING_OFFSET;
 

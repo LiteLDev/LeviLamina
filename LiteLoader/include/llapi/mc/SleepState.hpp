@@ -30,25 +30,23 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SleepState();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -2094182006
-     * @vftbl  1
-     * @symbol  ?tick\@SleepState\@\@UEAAXXZ
+     * @vftbl 1
+     * @symbol ?tick\@SleepState\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
-     * @hash   1521443663
-     * @vftbl  3
-     * @symbol  ?stop\@SleepState\@\@UEAAXXZ
+     * @vftbl 3
+     * @symbol ?stop\@SleepState\@\@UEAAXXZ
      */
     virtual void stop();
 

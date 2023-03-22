@@ -30,42 +30,42 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~UpdateBlockPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1617773342
-     * @vftbl  1
-     * @symbol  ?getId\@UpdateBlockPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@UpdateBlockPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   1901606799
-     * @vftbl  2
-     * @symbol  ?getName\@UpdateBlockPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@UpdateBlockPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   -273301608
-     * @vftbl  3
-     * @symbol  ?write\@UpdateBlockPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@UpdateBlockPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   1042861985
-     * @vftbl  6
-     * @symbol  ?_read\@UpdateBlockPacket\@\@MEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@UpdateBlockPacket\@\@MEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATEBLOCKPACKET
     /**
-     * @hash   115193800
-     * @symbol  ??0UpdateBlockPacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~UpdateBlockPacket();
+#endif
+    /**
+     * @symbol ??0UpdateBlockPacket\@\@QEAA\@XZ
      */
     MCAPI UpdateBlockPacket();
     /**
-     * @hash   1789045909
-     * @symbol  ??0UpdateBlockPacket\@\@QEAA\@AEBVBlockPos\@\@IIE\@Z
+     * @symbol ??0UpdateBlockPacket\@\@QEAA\@AEBVBlockPos\@\@IIE\@Z
      */
     MCAPI UpdateBlockPacket(class BlockPos const &, unsigned int, unsigned int, unsigned char);
 

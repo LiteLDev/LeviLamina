@@ -30,14 +30,13 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~LevelDbLogger();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -152380100
-     * @vftbl  1
-     * @symbol  ?Logv\@LevelDbLogger\@\@EEAAXPEBDPEAD\@Z
+     * @vftbl 1
+     * @symbol ?Logv\@LevelDbLogger\@\@EEAAXPEBDPEAD\@Z
      */
     virtual void Logv(char const *, char *);
 

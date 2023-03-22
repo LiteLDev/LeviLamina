@@ -28,18 +28,15 @@ public:
 
 public:
     /**
-     * @hash   464892692
-     * @symbol  ?createBoatInsideBubbleColumnSystem\@InsideBubbleColumnSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createBoatInsideBubbleColumnSystem\@InsideBubbleColumnSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createBoatInsideBubbleColumnSystem();
     /**
-     * @hash   1430189066
-     * @symbol  ?createBubbleColumnMovementSystem\@InsideBubbleColumnSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createBubbleColumnMovementSystem\@InsideBubbleColumnSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createBubbleColumnMovementSystem();
     /**
-     * @hash   -586078504
-     * @symbol  ?createSpawnBubbleColumnParticlesSystem\@InsideBubbleColumnSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSpawnBubbleColumnParticlesSystem\@InsideBubbleColumnSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSpawnBubbleColumnParticlesSystem();
 

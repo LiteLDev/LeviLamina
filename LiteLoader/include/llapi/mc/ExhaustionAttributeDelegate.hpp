@@ -31,19 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ExhaustionAttributeDelegate();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   776350065
-     * @vftbl  1
-     * @symbol  ?tick\@ExhaustionAttributeDelegate\@\@UEAAXXZ
+     * @vftbl 1
+     * @symbol ?tick\@ExhaustionAttributeDelegate\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   1043433684
-     * @symbol  ??0ExhaustionAttributeDelegate\@\@QEAA\@AEBVAttributeInstance\@\@\@Z
+     * @symbol ??0ExhaustionAttributeDelegate\@\@QEAA\@AEBVAttributeInstance\@\@\@Z
      */
     MCAPI ExhaustionAttributeDelegate(class AttributeInstance const &);
 

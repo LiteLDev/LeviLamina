@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?_removePassengersSystem\@RemovePassengersSystemImpl\@\@SAXAEAVStrictEntityContext\@\@AEAURemovePassengersComponent\@\@AEAUVehicleComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UVehicleComponent\@\@V?$FlagComponent\@URecalculateControlledByLocalInstanceRequestFlag\@\@\@\@V?$FlagComponent\@UPassengersChangedFlag\@\@\@\@\@\@\@Z
+     * @symbol ?_removePassengersSystem\@RemovePassengersSystemImpl\@\@SAXAEAVStrictEntityContext\@\@AEAURemovePassengersComponent\@\@AEAUVehicleComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UVehicleComponent\@\@V?$FlagComponent\@URecalculateControlledByLocalInstanceRequestFlag\@\@\@\@V?$FlagComponent\@UPassengersChangedFlag\@\@\@\@\@\@\@Z
      */
     MCAPI static void _removePassengersSystem(class StrictEntityContext &, struct RemovePassengersComponent &, struct VehicleComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct VehicleComponent, class FlagComponent<struct RecalculateControlledByLocalInstanceRequestFlag>, class FlagComponent<struct PassengersChangedFlag>>);
 

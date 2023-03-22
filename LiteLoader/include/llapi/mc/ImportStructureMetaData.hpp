@@ -10,36 +10,30 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC structure ImportStructureMetaData.
- *
- */
-struct ImportStructureMetaData {
+
+class ImportStructureMetaData {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IMPORTSTRUCTUREMETADATA
 public:
-    struct ImportStructureMetaData& operator=(struct ImportStructureMetaData const &) = delete;
-    ImportStructureMetaData(struct ImportStructureMetaData const &) = delete;
+    class ImportStructureMetaData& operator=(class ImportStructureMetaData const &) = delete;
+    ImportStructureMetaData(class ImportStructureMetaData const &) = delete;
     ImportStructureMetaData() = delete;
 #endif
 
 public:
     /**
-     * @hash   1807361570
-     * @symbol  ?getStructure\@ImportStructureMetaData\@\@QEAAPEBVStructureTemplate\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?getStructure\@ImportStructureMetaData\@\@QEAAPEBVStructureTemplate\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class StructureTemplate const * getStructure(std::string const &);
     /**
-     * @hash   -629923919
-     * @symbol  ?isSpecificStructureDirty\@ImportStructureMetaData\@\@QEAA?B_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?isSpecificStructureDirty\@ImportStructureMetaData\@\@QEAA?B_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI bool const isSpecificStructureDirty(std::string const &);
     /**
-     * @hash   -1871280717
-     * @symbol  ?setSpecificStructureDirty\@ImportStructureMetaData\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
+     * @symbol ?setSpecificStructureDirty\@ImportStructureMetaData\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
     MCAPI void setSpecificStructureDirty(std::string const &, bool);
 

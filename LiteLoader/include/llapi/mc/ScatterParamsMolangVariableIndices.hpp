@@ -30,8 +30,7 @@ public:
 
 public:
     /**
-     * @hash   32823781
-     * @symbol  ?initialize\@ScatterParamsMolangVariableIndices\@\@QEAAXXZ
+     * @symbol ?initialize\@ScatterParamsMolangVariableIndices\@\@QEAAXXZ
      */
     MCAPI void initialize();
 

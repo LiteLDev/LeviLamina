@@ -30,50 +30,51 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ItemStackRequestActionTransferBase();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  __unk_vfn_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
     virtual void __unk_vfn_1();
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   -1225182290
-     * @vftbl  4
-     * @symbol  ?_write\@ItemStackRequestActionTransferBase\@\@MEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 4
+     * @symbol ?_write\@ItemStackRequestActionTransferBase\@\@MEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void _write(class BinaryStream &) const;
     /**
-     * @hash   -1466289466
-     * @vftbl  5
-     * @symbol  ?_read\@ItemStackRequestActionTransferBase\@\@MEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 5
+     * @symbol ?_read\@ItemStackRequestActionTransferBase\@\@MEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONTRANSFERBASE
     /**
-     * @hash   -1475508233
-     * @symbol  ?getAmount\@ItemStackRequestActionTransferBase\@\@QEBAEXZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~ItemStackRequestActionTransferBase();
+#endif
+    /**
+     * @symbol ?getAmount\@ItemStackRequestActionTransferBase\@\@QEBAEXZ
      */
     MCAPI unsigned char getAmount() const;
     /**
-     * @hash   1138506242
-     * @symbol  ?getDst\@ItemStackRequestActionTransferBase\@\@QEBAAEBUItemStackRequestSlotInfo\@\@XZ
+     * @symbol ?getDst\@ItemStackRequestActionTransferBase\@\@QEBAAEBUItemStackRequestSlotInfo\@\@XZ
      */
     MCAPI struct ItemStackRequestSlotInfo const & getDst() const;
     /**
-     * @hash   -1036984048
-     * @symbol  ?getSrc\@ItemStackRequestActionTransferBase\@\@QEBAAEBUItemStackRequestSlotInfo\@\@XZ
+     * @symbol ?getSrc\@ItemStackRequestActionTransferBase\@\@QEBAAEBUItemStackRequestSlotInfo\@\@XZ
      */
     MCAPI struct ItemStackRequestSlotInfo const & getSrc() const;
 

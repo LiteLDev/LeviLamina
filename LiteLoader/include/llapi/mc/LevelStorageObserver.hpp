@@ -30,12 +30,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0LevelStorageObserver\@\@QEAA\@V?$function\@$$A6AXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z\@std\@\@\@Z
+     * @symbol ??0LevelStorageObserver\@\@QEAA\@V?$function\@$$A6AXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z\@std\@\@\@Z
      */
     MCAPI LevelStorageObserver(class std::function<void (std::string const &)>);
     /**
-     * @hash   560366268
-     * @symbol  ?onSave\@LevelStorageObserver\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?onSave\@LevelStorageObserver\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void onSave(std::string const &);
 

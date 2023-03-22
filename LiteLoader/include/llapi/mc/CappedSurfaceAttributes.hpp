@@ -35,33 +35,27 @@ public:
 
 public:
     /**
-     * @hash   -1844416068
-     * @symbol  ?getCeilingMaterial\@CappedSurfaceAttributes\@\@QEBAPEBVBlock\@\@AEBVVec3\@\@\@Z
+     * @symbol ?getCeilingMaterial\@CappedSurfaceAttributes\@\@QEBAPEBVBlock\@\@AEBVVec3\@\@\@Z
      */
     MCAPI class Block const * getCeilingMaterial(class Vec3 const &) const;
     /**
-     * @hash   971557292
-     * @symbol  ?getFloorMaterial\@CappedSurfaceAttributes\@\@QEBAPEBVBlock\@\@AEBVVec3\@\@\@Z
+     * @symbol ?getFloorMaterial\@CappedSurfaceAttributes\@\@QEBAPEBVBlock\@\@AEBVVec3\@\@\@Z
      */
     MCAPI class Block const * getFloorMaterial(class Vec3 const &) const;
     /**
-     * @hash   780524748
-     * @symbol  ?initializeNoise\@CappedSurfaceAttributes\@\@QEAAXI\@Z
+     * @symbol ?initializeNoise\@CappedSurfaceAttributes\@\@QEAAXI\@Z
      */
     MCAPI void initializeNoise(unsigned int);
     /**
-     * @hash   -1679019906
-     * @symbol  ??4CappedSurfaceAttributes\@\@QEAAAEAU0\@$$QEAU0\@\@Z
+     * @symbol ??4CappedSurfaceAttributes\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct CappedSurfaceAttributes & operator=(struct CappedSurfaceAttributes &&);
     /**
-     * @hash   -475595741
-     * @symbol  ??1CappedSurfaceAttributes\@\@QEAA\@XZ
+     * @symbol ??1CappedSurfaceAttributes\@\@QEAA\@XZ
      */
     MCAPI ~CappedSurfaceAttributes();
     /**
-     * @hash   -543575691
-     * @symbol  ?getRandomBlock\@CappedSurfaceAttributes\@\@SAPEBVBlock\@\@AEBV?$vector\@UMaterialLayer\@CappedSurfaceAttributes\@\@V?$allocator\@UMaterialLayer\@CappedSurfaceAttributes\@\@\@std\@\@\@std\@\@AEBVVec3\@\@\@Z
+     * @symbol ?getRandomBlock\@CappedSurfaceAttributes\@\@SAPEBVBlock\@\@AEBV?$vector\@UMaterialLayer\@CappedSurfaceAttributes\@\@V?$allocator\@UMaterialLayer\@CappedSurfaceAttributes\@\@\@std\@\@\@std\@\@AEBVVec3\@\@\@Z
      */
     MCAPI static class Block const * getRandomBlock(std::vector<struct CappedSurfaceAttributes::MaterialLayer> const &, class Vec3 const &);
 

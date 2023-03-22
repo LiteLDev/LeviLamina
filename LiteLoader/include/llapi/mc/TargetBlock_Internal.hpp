@@ -22,9 +22,12 @@ namespace TargetBlock_Internal {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   546634086
-     * @symbol  ?createPoweredBlockComponentAtPos\@TargetBlock_Internal\@\@YAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     * @symbol ?createPoweredBlockComponentAtPos\@TargetBlock_Internal\@\@YAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void createPoweredBlockComponentAtPos(class BlockSource &, class BlockPos const &);
+    /**
+     * @symbol ?sendTargetBlockHitTelemetryEvent\@TargetBlock_Internal\@\@YAXAEAVBlockSource\@\@AEBVActor\@\@H\@Z
+     */
+    MCAPI void sendTargetBlockHitTelemetryEvent(class BlockSource &, class Actor const &, int);
 
 };

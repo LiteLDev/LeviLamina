@@ -30,48 +30,39 @@ public:
 
 public:
     /**
-     * @hash   1129928916
-     * @symbol  ?getDescription\@PendingArea\@\@QEBA?AUTickingAreaDescription\@\@XZ
+     * @symbol ?getDescription\@PendingArea\@\@QEBA?AUTickingAreaDescription\@\@XZ
      */
     MCAPI struct TickingAreaDescription getDescription() const;
     /**
-     * @hash   -2007857818
-     * @symbol  ?isEntityOwned\@PendingArea\@\@QEBA_NXZ
+     * @symbol ?isEntityOwned\@PendingArea\@\@QEBA_NXZ
      */
     MCAPI bool isEntityOwned() const;
     /**
-     * @hash   1343514968
-     * @symbol  ??4PendingArea\@\@QEAAAEAU0\@$$QEAU0\@\@Z
+     * @symbol ??4PendingArea\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct PendingArea & operator=(struct PendingArea &&);
     /**
-     * @hash   -153584937
-     * @symbol  ?serialize\@PendingArea\@\@QEBA?AVCompoundTag\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
+     * @symbol ?serialize\@PendingArea\@\@QEBA?AVCompoundTag\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
     MCAPI class CompoundTag serialize(class AutomaticID<class Dimension, int>) const;
     /**
-     * @hash   1777088048
-     * @symbol  ??1PendingArea\@\@QEAA\@XZ
+     * @symbol ??1PendingArea\@\@QEAA\@XZ
      */
     MCAPI ~PendingArea();
     /**
-     * @hash   -2012708938
-     * @symbol  ?createEntityTickingArea\@PendingArea\@\@SA?AU1\@VUUID\@mce\@\@UActorUniqueID\@\@AEBUBounds\@\@_NM\@Z
+     * @symbol ?createEntityTickingArea\@PendingArea\@\@SA?AU1\@VUUID\@mce\@\@UActorUniqueID\@\@AEBUBounds\@\@_NM\@Z
      */
     MCAPI static struct PendingArea createEntityTickingArea(class mce::UUID, struct ActorUniqueID, struct Bounds const &, bool, float);
     /**
-     * @hash   148685776
-     * @symbol  ?createTickingArea\@PendingArea\@\@SA?AU1\@VUUID\@mce\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUBounds\@\@_NW4TickingAreaLoadMode\@\@\@Z
+     * @symbol ?createTickingArea\@PendingArea\@\@SA?AU1\@VUUID\@mce\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUBounds\@\@_NW4TickingAreaLoadMode\@\@\@Z
      */
     MCAPI static struct PendingArea createTickingArea(class mce::UUID, std::string const &, struct Bounds const &, bool, enum class TickingAreaLoadMode);
     /**
-     * @hash   -943713543
-     * @symbol  ?load\@PendingArea\@\@SA?AU1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVCompoundTag\@\@\@Z
+     * @symbol ?load\@PendingArea\@\@SA?AU1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVCompoundTag\@\@\@Z
      */
     MCAPI static struct PendingArea load(std::string const &, class CompoundTag const &);
     /**
-     * @hash   -2097947639
-     * @symbol  ?validTag\@PendingArea\@\@SA_NAEBVCompoundTag\@\@\@Z
+     * @symbol ?validTag\@PendingArea\@\@SA_NAEBVCompoundTag\@\@\@Z
      */
     MCAPI static bool validTag(class CompoundTag const &);
 

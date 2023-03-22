@@ -30,13 +30,12 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ShulkerBoxContainerScreenValidator();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -725910336
-     * @symbol  ??0ShulkerBoxContainerScreenValidator\@\@QEAA\@XZ
+     * @symbol ??0ShulkerBoxContainerScreenValidator\@\@QEAA\@XZ
      */
     MCAPI ShulkerBoxContainerScreenValidator();
 

@@ -30,13 +30,11 @@ public:
 
 public:
     /**
-     * @hash   -1645930535
-     * @symbol  ??0JigsawBlockInfo\@\@QEAA\@AEBVBlockPos\@\@PEBVBlock\@\@1VJigsawEditorData\@\@\@Z
+     * @symbol ??0JigsawBlockInfo\@\@QEAA\@AEBVBlockPos\@\@PEBVBlock\@\@1VJigsawEditorData\@\@\@Z
      */
     MCAPI JigsawBlockInfo(class BlockPos const &, class Block const *, class Block const *, class JigsawEditorData);
     /**
-     * @hash   432939960
-     * @symbol  ??4JigsawBlockInfo\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     * @symbol ??4JigsawBlockInfo\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class JigsawBlockInfo & operator=(class JigsawBlockInfo &&);
 

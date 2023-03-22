@@ -30,46 +30,39 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~DolphinMoveControl();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1769752728
-     * @vftbl  2
-     * @symbol  ?tick\@DolphinMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
+     * @vftbl 2
+     * @symbol ?tick\@DolphinMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
      */
     virtual void tick(class MoveControlComponent &, class Mob &);
     /**
-     * @hash   -2142259142
-     * @symbol  ??0DolphinMoveControl\@\@QEAA\@XZ
+     * @symbol ??0DolphinMoveControl\@\@QEAA\@XZ
      */
     MCAPI DolphinMoveControl();
 
 //private:
     /**
-     * @hash   1768324375
-     * @symbol  ?_calcRotX\@DolphinMoveControl\@\@AEAAMMMM\@Z
+     * @symbol ?_calcRotX\@DolphinMoveControl\@\@AEAAMMMM\@Z
      */
     MCAPI float _calcRotX(float, float, float);
     /**
-     * @hash   -555475652
-     * @symbol  ?_calcRotY\@DolphinMoveControl\@\@AEAAMMM\@Z
+     * @symbol ?_calcRotY\@DolphinMoveControl\@\@AEAAMMM\@Z
      */
     MCAPI float _calcRotY(float, float);
     /**
-     * @hash   1771073388
-     * @symbol  ?_clearOfObstacles\@DolphinMoveControl\@\@AEBA_NAEBVMob\@\@MMH\@Z
+     * @symbol ?_clearOfObstacles\@DolphinMoveControl\@\@AEBA_NAEBVMob\@\@MMH\@Z
      */
     MCAPI bool _clearOfObstacles(class Mob const &, float, float, int) const;
     /**
-     * @hash   1561684983
-     * @symbol  ?_isInWater\@DolphinMoveControl\@\@AEBA_NAEBVMob\@\@\@Z
+     * @symbol ?_isInWater\@DolphinMoveControl\@\@AEBA_NAEBVMob\@\@\@Z
      */
     MCAPI bool _isInWater(class Mob const &) const;
     /**
-     * @hash   451688719
-     * @symbol  ?_setupBreach\@DolphinMoveControl\@\@AEAAXAEAVMob\@\@\@Z
+     * @symbol ?_setupBreach\@DolphinMoveControl\@\@AEAAXAEAVMob\@\@\@Z
      */
     MCAPI void _setupBreach(class Mob &);
 

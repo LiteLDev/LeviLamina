@@ -32,23 +32,26 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ItemStackDescriptor();
+    virtual void __unk_vfn_0();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKDESCRIPTOR
     /**
-     * @hash   676351920
-     * @symbol  ??0ItemStackDescriptor\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI ItemStackDescriptor();
+    MCVAPI ~ItemStackDescriptor();
+#endif
     /**
-     * @hash   299481758
-     * @symbol  ??0ItemStackDescriptor\@\@QEAA\@AEBVItem\@\@HGPEBVCompoundTag\@\@\@Z
+     * @symbol ??0ItemStackDescriptor\@\@QEAA\@AEBVItem\@\@HGPEBVCompoundTag\@\@\@Z
      */
     MCAPI ItemStackDescriptor(class Item const &, int, unsigned short, class CompoundTag const *);
     /**
-     * @hash   1862203484
-     * @symbol  ??4ItemStackDescriptor\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     * @symbol ??0ItemStackDescriptor\@\@QEAA\@XZ
+     */
+    MCAPI ItemStackDescriptor();
+    /**
+     * @symbol ??4ItemStackDescriptor\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class ItemStackDescriptor & operator=(class ItemStackDescriptor &&);
 

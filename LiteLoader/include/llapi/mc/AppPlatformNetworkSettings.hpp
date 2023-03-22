@@ -27,19 +27,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~AppPlatformNetworkSettings();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -505556626
-     * @vftbl  1
-     * @symbol  ?requiresNetworkOutageMessaging\@AppPlatformNetworkSettings\@\@UEBA_NXZ
+     * @vftbl 1
+     * @symbol ?requiresNetworkOutageMessaging\@AppPlatformNetworkSettings\@\@UEBA_NXZ
      */
     virtual bool requiresNetworkOutageMessaging() const;
     /**
-     * @hash   2011878169
-     * @symbol  ??0AppPlatformNetworkSettings\@\@QEAA\@XZ
+     * @symbol ??0AppPlatformNetworkSettings\@\@QEAA\@XZ
      */
     MCAPI AppPlatformNetworkSettings();
 

@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   -1415954610
-     * @symbol  ??1PropertyMetadata\@\@QEAA\@XZ
+     * @symbol ??1PropertyMetadata\@\@QEAA\@XZ
      */
     MCAPI ~PropertyMetadata();
 

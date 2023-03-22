@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   -1717193088
-     * @symbol  ??1TagUpdateToken\@\@QEAA\@XZ
+     * @symbol ??1TagUpdateToken\@\@QEAA\@XZ
      */
     MCAPI ~TagUpdateToken();
 

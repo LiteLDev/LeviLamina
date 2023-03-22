@@ -15,11 +15,13 @@
 #include "llapi/mc/LevelData.hpp"
 #include "llapi/EventAPI.h"
 #include "llapi/mc/NetworkConnection.hpp"
+#include "llapi/mc/SimulatedPlayer.hpp"
+#include "llapi/mc/MinecraftPackets.hpp"
+#include "llapi/mc/MobEquipmentPacket.hpp"
 
 #include "llapi/mc/LevelChunk.hpp"
 #include "llapi/mc/ChunkSource.hpp"
 
-#include "llapi/mc/NetworkHandler.hpp"
 #include "llapi/mc/NetworkPeer.hpp"
 #include "llapi/mc/ReadOnlyBinaryStream.hpp"
 
@@ -153,7 +155,8 @@ inline bool Interval(int a1) {
     return false;
 }
 
-template <typename T> inline bool validPosition(T const& pos) {
+template <typename T>
+inline bool validPosition(T const& pos) {
     if (isnan(static_cast<float>(pos.x)) || isnan(static_cast<float>(pos.z)))
         return false;
     return Interval(static_cast<int>(pos.x)) && Interval(static_cast<int>(pos.y)) && Interval(static_cast<int>(pos.z));
@@ -179,11 +182,10 @@ TInstanceHook(void, "?moveSpawnView@Player@@QEAAXAEBVVec3@@V?$AutomaticID@VDimen
     fixPlayerPosition(this, false);
 }
 
-
-TClasslessInstanceHook(
-    __int64,
-    "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NW4ChunkSourceViewGenerateMode@@V?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@@Z",
-    BlockPos a2, int a3, unsigned __int8 a4, int a5, __int64 a6) {
+TClasslessInstanceHook(__int64,
+                       "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NW4ChunkSourceViewGenerateMode@@V?$function@$$"
+                       "A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@@Z",
+                       BlockPos a2, int a3, unsigned __int8 a4, int a5, __int64 a6) {
     if (validPosition(a2))
         return original(this, a2, a3, a4, a5, a6);
     fixPlayerPosition(movingViewPlayer);
@@ -196,56 +198,6 @@ TInstanceHook(void, "?move@Player@@UEAAXAEBVVec3@@@Z", Player, Vec3 pos) {
     logger.warn << "Player(" << this->getRealName() << ") sent invalid Move Packet!" << Logger::endl;
     this->kick("error move");
 }
-
-static inline bool checkPktId(unsigned int id) {
-    id &= 0x3ff;
-    return id==0 || id == 0x01 || id == 0x5e || id == 0xc1;
-}
-
-static inline bool& connState(void* conn) {
-    return *((bool*)conn + 362);
-}
-
-
-
-TInstanceHook(NetworkPeer::DataStatus,
-      "?receivePacket@NetworkConnection@@QEAA?AW4DataStatus@NetworkPeer@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$"
-      "allocator@D@2@@std@@AEAVNetworkHandler@@AEBV?$shared_ptr@V?$time_point@Usteady_clock@chrono@std@@V?$duration@_"
-      "JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@std@@@5@@Z",
-    NetworkConnection, string* data, __int64 a3, __int64** a4) {
-    auto status = original(this, data, a3, a4);
-    if (status == NetworkPeer::DataStatus::HasData) {
-        auto stream = ReadOnlyBinaryStream(*data, false);
-        auto packetId = stream.getUnsignedVarInt();
-        if (packetId == 0) {
-            data->clear();
-            return NetworkPeer::DataStatus::NoData;
-        }
-        if (!data->empty()) {
-            if (checkPktId(packetId)) {
-                connState(this) = true;
-            } else {
-                if (!connState(this)) {
-                    data->clear();
-                    return NetworkPeer::DataStatus::NoData;
-                }
-            }
-        }
-    }
-    return status;
-}
-
-THook(void*,
-      "??0NetworkConnection@@QEAA@AEBVNetworkIdentifier@@V?$shared_ptr@VNetworkPeer@@@std@@V?$time_point@Usteady_clock@"
-      "chrono@std@@V?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@23@@chrono@3@_NV?$NonOwnerPointer@VIPacketObserver@@@"
-      "Bedrock@@AEAVScheduler@@@Z",
-      void* thi, void* a1, void* a2, void* a3, void* a4, void* a5, void* a6, void* a7) {
-    auto res = original(thi, a1, a2, a3, a4, a5, a6,a7);
-    connState(thi) = false;
-    return res;
-}
-
-
 
 // Fix wine stop
 TClasslessInstanceHook(void, "?leaveGameSync@ServerInstance@@QEAAXXZ") {
@@ -325,8 +277,7 @@ THook(std::wistream&,
 TInstanceHook(LevelData*,
               "??0LevelData@@QEAA@AEBVLevelSettings@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@"
               "W4GeneratorType@@AEBVBlockPos@@_NW4EducationEditionOffer@@MM@Z",
-              LevelData, void* a2, __int64 a3, unsigned int a4, BlockPos* a5, char a6, int a7, int a8,
-              int a9) {
+              LevelData, void* a2, __int64 a3, unsigned int a4, BlockPos* a5, char a6, int a7, int a8, int a9) {
     if (ll::globalConfig.enableFixBroadcastBug) {
         auto data = original(this, a2, a3, a4, a5, a6, a7, a8, a9);
         data->setLANBroadcast(true);
@@ -398,9 +349,9 @@ TInstanceHook(BlockSource*, "?getDimensionBlockSourceConst@Actor@@QEBAAEBVBlockS
     return bs;
 }
 
-//From https://github.com/dreamguxiang/BETweaker
 enum class AbilitiesLayer;
 enum class SubClientId;
+
 TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRequestAbilityPacket@@@Z",
               ServerNetworkHandler, class NetworkIdentifier const& nid, class RequestAbilityPacket const& pkt) {
     original(this, nid, pkt);
@@ -427,6 +378,99 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
             abilities.setAbility(AbilitiesIndex::Flying, flying);
             sp->sendNetworkPacket(pkt2);
             sp->sendNetworkPacket(packet);
+        }
+    }
+}
+
+// Fix SimulatedPlayer Bugs
+namespace SimulatedPlayerClient {
+template <typename T>
+void send(Player* sp, T& packet) {
+    packet.clientSubId = sp->getClientSubId();
+    ServerNetworkHandler* handler = Global<ServerNetworkHandler> + 16;
+    handler->handle(*sp->getNetworkIdentifier(), packet);
+}
+} // namespace SimulatedPlayerClient
+
+TInstanceHook(void, "?tickWorld@Player@@UEAAXAEBUTick@@@Z", Player, struct Tick const& tick) {
+    original(this, tick);
+
+    //  _updateChunkPublisherView will be called after Player::tick in ServerPlayer::tick
+    if (isSimulatedPlayer()) {
+        // Force to call the implementation of ServerPlayer
+        ((ServerPlayer*)this)
+            ->_updateChunkPublisherView(getPos(), 16.0f * Global<PropertiesSettings>->getServerTickRange());
+    }
+}
+
+// fix chunk load and tick - ChunkSource load mode
+static_assert(sizeof(ChunkSource) == 0x50);      // 88
+static_assert(sizeof(ChunkViewSource) == 0x1d8); // 472
+
+TInstanceHook(std::shared_ptr<class ChunkViewSource>,
+              "?_createChunkSource@SimulatedPlayer@@MEAA?AV?$shared_ptr@VChunkViewSource@@@std@@AEAVChunkSource@@@Z",
+              SimulatedPlayer, ChunkSource& chunkSource) {
+    auto result = ChunkViewSource(chunkSource, ChunkSource::LoadMode::Deferred);
+    return std::make_shared<ChunkViewSource>(result);
+}
+
+// fix carried item display
+// fix armor display
+#include "llapi/mc/WeakStorageEntity.hpp"
+#include "llapi/mc/WeakEntityRef.hpp"
+
+// void sendEvent(class EventRef<struct ActorGameplayEvent<void>> const &);
+TClasslessInstanceHook(void, "?sendEvent@ActorEventCoordinator@@QEAAXAEBV?$EventRef@U?$ActorGameplayEvent@X@@@@@Z",
+                       void* a2) {
+    original(this, a2);
+    if (a2) {
+        auto type = dAccess<char, 312>(a2);
+        // sendActorCarriedItemChanged
+        if (type == 4) {
+            auto v56 = dAccess<char, 304>(a2);
+            WeakStorageEntity* v59;
+            if (v56) {
+                if (v56 != 1) {
+                    return;
+                }
+                v59 = (WeakStorageEntity*)a2;
+            } else {
+                v59 = *(WeakStorageEntity**)a2;
+            }
+            if (v59) {
+                Actor* actor = v59->tryUnwrap<Actor>();
+                if (actor->isSimulatedPlayer()) {
+                    ItemInstance const& newItem = dAccess<ItemInstance, 160>(v59);
+                    int slot = dAccess<int, 296>(v59);
+                    // Force to call the implementation of ServerPlayer
+                    MobEquipmentPacket pkt(actor->getRuntimeID(), newItem, (int)slot, (int)slot,
+                                           ContainerID::Inventory);
+                    SimulatedPlayerClient::send((SimulatedPlayer*)actor, pkt);
+                }
+            }
+        }
+        // sendActorEquippedArmor
+        else if (type == 8) {
+            auto v30 = dAccess<char, 168>(a2);
+            WeakStorageEntity* v31;
+            if (v30) {
+                if (v30 != 1) {
+                    return;
+                }
+                v31 = (WeakStorageEntity*)a2;
+            } else {
+                v31 = *(WeakStorageEntity**)a2;
+            }
+            if (v31) {
+                Actor* actor = v31->tryUnwrap<Actor>();
+                if (actor->isSimulatedPlayer()) {
+                    int slot = dAccess<int, 160>(v31);
+                    ItemInstance const& item = dAccess<ItemInstance, 24>(v31);
+                    // Force to call the implementation of ServerPlayer
+                    MobEquipmentPacket pkt(actor->getRuntimeID(), item, (int)slot, (int)slot, ContainerID::Armor);
+                    SimulatedPlayerClient::send((SimulatedPlayer*)actor, pkt);
+                }
+            }
         }
     }
 }

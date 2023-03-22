@@ -30,19 +30,18 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~AddOceanTemperatureOperationNode();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
-     * @hash   1689941497
-     * @vftbl  3
-     * @symbol  ?_fillArea\@AddOceanTemperatureOperationNode\@\@MEBAXAEAV?$WorkingData\@W4BiomeTemperatureCategory\@\@D\@OperationNodeDetails\@\@AEBVPos2d\@\@1\@Z
+     * @vftbl 3
+     * @symbol ?_fillArea\@AddOceanTemperatureOperationNode\@\@MEBAXAEAV?$WorkingData\@W4BiomeTemperatureCategory\@\@D\@OperationNodeDetails\@\@AEBVPos2d\@\@1\@Z
      */
     virtual void _fillArea(class OperationNodeDetails::WorkingData<enum class BiomeTemperatureCategory, char> &, class Pos2d const &, class Pos2d const &) const;
 

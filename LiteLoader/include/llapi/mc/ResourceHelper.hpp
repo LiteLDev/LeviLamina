@@ -23,13 +23,11 @@ namespace ResourceHelper {
 
 #undef AFTER_EXTRA
     /**
-     * @hash   352660216
-     * @symbol  ?deserializePackStackEntry\@ResourceHelper\@\@YA_NAEBVValue\@Json\@\@AEAUPackInstanceId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?deserializePackStackEntry\@ResourceHelper\@\@YA_NAEBVValue\@Json\@\@AEAUPackInstanceId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI bool deserializePackStackEntry(class Json::Value const &, struct PackInstanceId &, std::string const &);
     /**
-     * @hash   267506778
-     * @symbol  ?stringifyResourceMetadataGeneratedWith\@ResourceHelper\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVResourceMetadata\@\@\@Z
+     * @symbol ?stringifyResourceMetadataGeneratedWith\@ResourceHelper\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVResourceMetadata\@\@\@Z
      */
     MCAPI std::string stringifyResourceMetadataGeneratedWith(class ResourceMetadata const &);
 

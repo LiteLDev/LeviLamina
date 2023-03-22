@@ -30,13 +30,12 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~HorseContainerScreenValidator();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1470605218
-     * @symbol  ??0HorseContainerScreenValidator\@\@QEAA\@XZ
+     * @symbol ??0HorseContainerScreenValidator\@\@QEAA\@XZ
      */
     MCAPI HorseContainerScreenValidator();
 

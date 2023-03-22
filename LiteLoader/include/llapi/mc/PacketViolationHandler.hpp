@@ -29,20 +29,17 @@ public:
 
 public:
     /**
-     * @hash   -1233531191
-     * @symbol  ??0PacketViolationHandler\@\@QEAA\@XZ
+     * @symbol ??0PacketViolationHandler\@\@QEAA\@XZ
      */
     MCAPI PacketViolationHandler();
     /**
-     * @hash   -51597810
-     * @symbol  ?checkForViolation\@PacketViolationHandler\@\@QEAA?AW4PacketViolationResponse\@\@W4MinecraftPacketIds\@\@W4StreamReadResult\@\@AEBVNetworkIdentifier\@\@PEA_N\@Z
+     * @symbol ?checkForViolation\@PacketViolationHandler\@\@QEAA?AW4PacketViolationResponse\@\@W4MinecraftPacketIds\@\@W4StreamReadResult\@\@AEBVNetworkIdentifier\@\@PEA_N\@Z
      */
     MCAPI enum class PacketViolationResponse checkForViolation(enum class MinecraftPacketIds, enum class StreamReadResult, class NetworkIdentifier const &, bool *);
 
 //private:
     /**
-     * @hash   743749875
-     * @symbol  ?_handleViolation\@PacketViolationHandler\@\@AEAA?AW4PacketViolationResponse\@\@W4MinecraftPacketIds\@\@W4StreamReadResult\@\@AEBVNetworkIdentifier\@\@PEA_N\@Z
+     * @symbol ?_handleViolation\@PacketViolationHandler\@\@AEAA?AW4PacketViolationResponse\@\@W4MinecraftPacketIds\@\@W4StreamReadResult\@\@AEBVNetworkIdentifier\@\@PEA_N\@Z
      */
     MCAPI enum class PacketViolationResponse _handleViolation(enum class MinecraftPacketIds, enum class StreamReadResult, class NetworkIdentifier const &, bool *);
 

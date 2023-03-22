@@ -11,11 +11,8 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC structure ActiveDirectoryScreenCapabilities.
- *
- */
-struct ActiveDirectoryScreenCapabilities {
+
+class ActiveDirectoryScreenCapabilities {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -23,22 +20,27 @@ struct ActiveDirectoryScreenCapabilities {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTIVEDIRECTORYSCREENCAPABILITIES
 public:
-    struct ActiveDirectoryScreenCapabilities& operator=(struct ActiveDirectoryScreenCapabilities const &) = delete;
-    ActiveDirectoryScreenCapabilities(struct ActiveDirectoryScreenCapabilities const &) = delete;
+    class ActiveDirectoryScreenCapabilities& operator=(class ActiveDirectoryScreenCapabilities const &) = delete;
+    ActiveDirectoryScreenCapabilities(class ActiveDirectoryScreenCapabilities const &) = delete;
     ActiveDirectoryScreenCapabilities() = delete;
 #endif
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ActiveDirectoryScreenCapabilities();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1368447806
-     * @vftbl  1
-     * @symbol  ?isOfType\@?$TypedScreenCapabilities\@UActiveDirectoryScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
+     * @vftbl 1
+     * @symbol ?isOfType\@?$TypedScreenCapabilities\@UActiveDirectoryScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
      */
     virtual bool isOfType(class typeid_t<class IScreenCapabilities>) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTIVEDIRECTORYSCREENCAPABILITIES
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~ActiveDirectoryScreenCapabilities();
+#endif
 
 };

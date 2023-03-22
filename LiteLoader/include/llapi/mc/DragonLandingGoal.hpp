@@ -30,61 +30,53 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~DragonLandingGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1905410311
-     * @vftbl  1
-     * @symbol  ?canUse\@DragonLandingGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@DragonLandingGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   -2075370969
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@DragonLandingGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@DragonLandingGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   -1361126590
-     * @vftbl  4
-     * @symbol  ?start\@DragonLandingGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@DragonLandingGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   1845423026
-     * @vftbl  5
-     * @symbol  ?stop\@DragonLandingGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@DragonLandingGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @hash   -1334966067
-     * @vftbl  6
-     * @symbol  ?tick\@DragonLandingGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@DragonLandingGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -1650287993
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@DragonLandingGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@DragonLandingGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   -25384256
-     * @symbol  ??0DragonLandingGoal\@\@QEAA\@AEAVEnderDragon\@\@\@Z
+     * @symbol ??0DragonLandingGoal\@\@QEAA\@AEAVEnderDragon\@\@\@Z
      */
     MCAPI DragonLandingGoal(class EnderDragon &);
 
 //private:
     /**
-     * @hash   -2053426083
-     * @symbol  ?findNewTarget\@DragonLandingGoal\@\@AEAAXXZ
+     * @symbol ?findNewTarget\@DragonLandingGoal\@\@AEAAXXZ
      */
     MCAPI void findNewTarget();
 

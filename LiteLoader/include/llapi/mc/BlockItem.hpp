@@ -32,127 +32,132 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BlockItem();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  7
-     * @symbol  __unk_vfn_7
+     * @vftbl 7
+     * @symbol __unk_vfn_7
      */
     virtual void __unk_vfn_7();
     /**
-     * @vftbl  11
-     * @symbol  __unk_vfn_11
+     * @vftbl 11
+     * @symbol __unk_vfn_11
      */
     virtual void __unk_vfn_11();
     /**
-     * @vftbl  14
-     * @symbol  __unk_vfn_14
+     * @vftbl 14
+     * @symbol __unk_vfn_14
      */
     virtual void __unk_vfn_14();
     /**
-     * @vftbl  16
-     * @symbol  __unk_vfn_16
+     * @vftbl 16
+     * @symbol __unk_vfn_16
      */
     virtual void __unk_vfn_16();
     /**
-     * @vftbl  51
-     * @symbol  __unk_vfn_51
+     * @vftbl 51
+     * @symbol __unk_vfn_51
      */
     virtual void __unk_vfn_51();
     /**
-     * @vftbl  53
-     * @symbol  __unk_vfn_53
+     * @vftbl 53
+     * @symbol __unk_vfn_53
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   -1323040915
-     * @vftbl  56
-     * @symbol  ?isDestructive\@BlockItem\@\@UEBA_NH\@Z
+     * @vftbl 56
+     * @symbol ?isDestructive\@BlockItem\@\@UEBA_NH\@Z
      */
     virtual bool isDestructive(int) const;
     /**
-     * @vftbl  66
-     * @symbol  __unk_vfn_66
+     * @vftbl 66
+     * @symbol __unk_vfn_66
      */
     virtual void __unk_vfn_66();
     /**
-     * @hash   -1201188410
-     * @vftbl  67
-     * @symbol  ?isValidAuxValue\@BlockItem\@\@UEBA_NH\@Z
+     * @vftbl 67
+     * @symbol ?isValidAuxValue\@BlockItem\@\@UEBA_NH\@Z
      */
     virtual bool isValidAuxValue(int) const;
     /**
-     * @vftbl  70
-     * @symbol  __unk_vfn_70
+     * @vftbl 70
+     * @symbol __unk_vfn_70
      */
     virtual void __unk_vfn_70();
     /**
-     * @vftbl  71
-     * @symbol  __unk_vfn_71
+     * @vftbl 71
+     * @symbol __unk_vfn_71
      */
     virtual void __unk_vfn_71();
     /**
-     * @vftbl  72
-     * @symbol  __unk_vfn_72
+     * @vftbl 72
+     * @symbol __unk_vfn_72
      */
     virtual void __unk_vfn_72();
     /**
-     * @vftbl  75
-     * @symbol  __unk_vfn_75
+     * @vftbl 75
+     * @symbol __unk_vfn_75
      */
     virtual void __unk_vfn_75();
     /**
-     * @vftbl  79
-     * @symbol  __unk_vfn_79
+     * @vftbl 79
+     * @symbol __unk_vfn_79
      */
     virtual void __unk_vfn_79();
     /**
-     * @vftbl  80
-     * @symbol  __unk_vfn_80
+     * @vftbl 80
+     * @symbol __unk_vfn_80
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   -743939078
-     * @vftbl  95
-     * @symbol  ?buildDescriptionId\@BlockItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
+     * @vftbl 95
+     * @symbol ?buildDescriptionId\@BlockItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @hash   709408439
-     * @vftbl  118
-     * @symbol  ?getIconInfo\@BlockItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
+     * @vftbl 118
+     * @symbol ?getIconInfo\@BlockItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
-     * @hash   2007807979
-     * @vftbl  122
-     * @symbol  ?getLightEmission\@BlockItem\@\@UEBA?AUBrightness\@\@H\@Z
+     * @vftbl 122
+     * @symbol ?getLightEmission\@BlockItem\@\@UEBA?AUBrightness\@\@H\@Z
      */
     virtual struct Brightness getLightEmission(int) const;
     /**
-     * @hash   -1577317368
-     * @vftbl  123
-     * @symbol  ?getIconYOffset\@BlockItem\@\@UEBAHXZ
+     * @vftbl 123
+     * @symbol ?getIconYOffset\@BlockItem\@\@UEBAHXZ
      */
     virtual int getIconYOffset() const;
     /**
-     * @hash   1687964648
-     * @vftbl  131
-     * @symbol  ?_calculatePlacePos\@BlockItem\@\@MEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
+     * @vftbl 131
+     * @symbol ?_calculatePlacePos\@BlockItem\@\@MEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
      */
     virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
-     * @hash   1416088551
-     * @vftbl  132
-     * @symbol  ?_useOn\@BlockItem\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
+     * @vftbl 132
+     * @symbol ?_useOn\@BlockItem\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKITEM
     /**
-     * @hash   -1125688018
-     * @symbol  ??0BlockItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~BlockItem();
+#endif
+    /**
+     * @symbol ??0BlockItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI BlockItem(std::string const &, int);
+
+//protected:
+    /**
+     * @symbol ?_displayHeightLimitErrorMessages\@BlockItem\@\@IEBAXAEAVActor\@\@H_N\@Z
+     */
+    MCAPI void _displayHeightLimitErrorMessages(class Actor &, int, bool) const;
+
+protected:
 
 };

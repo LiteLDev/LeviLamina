@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   953699198
-     * @symbol  ?create\@MoveSpeedCapSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?create\@MoveSpeedCapSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo create();
 

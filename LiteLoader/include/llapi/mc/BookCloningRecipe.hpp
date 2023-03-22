@@ -31,59 +31,50 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BookCloningRecipe();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1998866259
-     * @vftbl  1
-     * @symbol  ?assemble\@BookCloningRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@\@Z
+     * @vftbl 1
+     * @symbol ?assemble\@BookCloningRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@\@Z
      */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
     /**
-     * @hash   935850197
-     * @vftbl  2
-     * @symbol  ?getCraftingSize\@BookCloningRecipe\@\@UEBAHXZ
+     * @vftbl 2
+     * @symbol ?getCraftingSize\@BookCloningRecipe\@\@UEBAHXZ
      */
     virtual int getCraftingSize() const;
     /**
-     * @hash   295446070
-     * @vftbl  3
-     * @symbol  ?getIngredient\@BookCloningRecipe\@\@UEBAAEBVRecipeIngredient\@\@HH\@Z
+     * @vftbl 3
+     * @symbol ?getIngredient\@BookCloningRecipe\@\@UEBAAEBVRecipeIngredient\@\@HH\@Z
      */
     virtual class RecipeIngredient const & getIngredient(int, int) const;
     /**
-     * @hash   -1698927742
-     * @vftbl  4
-     * @symbol  ?getResultItem\@BookCloningRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 4
+     * @symbol ?getResultItem\@BookCloningRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
     /**
-     * @hash   878124471
-     * @vftbl  6
-     * @symbol  ?matches\@BookCloningRecipe\@\@UEBA_NAEAVCraftingContainer\@\@AEAVLevel\@\@\@Z
+     * @vftbl 6
+     * @symbol ?matches\@BookCloningRecipe\@\@UEBA_NAEAVCraftingContainer\@\@AEAVLevel\@\@\@Z
      */
     virtual bool matches(class CraftingContainer &, class Level &) const;
     /**
-     * @hash   726112349
-     * @vftbl  7
-     * @symbol  ?size\@BookCloningRecipe\@\@UEBAHXZ
+     * @vftbl 7
+     * @symbol ?size\@BookCloningRecipe\@\@UEBAHXZ
      */
     virtual int size() const;
     /**
-     * @hash   1287203255
-     * @symbol  ??0BookCloningRecipe\@\@QEAA\@V?$basic_string_span\@$$CBD$0?0\@gsl\@\@AEBVUUID\@mce\@\@\@Z
+     * @symbol ??0BookCloningRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@AEBVUUID\@mce\@\@\@Z
      */
-    MCAPI BookCloningRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const &);
+    MCAPI BookCloningRecipe(class std::basic_string_view<char, struct std::char_traits<char>>, class mce::UUID const &);
     /**
-     * @hash   2034428956
-     * @symbol  ??0BookCloningRecipe\@\@QEAA\@V?$basic_string_span\@$$CBD$0?0\@gsl\@\@\@Z
+     * @symbol ??0BookCloningRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI BookCloningRecipe(class gsl::basic_string_span<char const, -1>);
+    MCAPI BookCloningRecipe(class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
-     * @hash   -1839622609
-     * @symbol  ?ID\@BookCloningRecipe\@\@2VUUID\@mce\@\@B
+     * @symbol ?ID\@BookCloningRecipe\@\@2VUUID\@mce\@\@B
      */
     MCAPI static class mce::UUID const ID;
 

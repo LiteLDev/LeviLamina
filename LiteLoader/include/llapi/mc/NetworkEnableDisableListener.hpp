@@ -30,44 +30,42 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKENABLEDISABLELISTENER
     /**
-     * @hash   1439800957
-     * @symbol  ??0NetworkEnableDisableListener\@\@QEAA\@AEBV?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~NetworkEnableDisableListener();
+#endif
+    /**
+     * @symbol ??0NetworkEnableDisableListener\@\@QEAA\@AEBV?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@\@Z
      */
     MCAPI NetworkEnableDisableListener(class Bedrock::NonOwnerPointer<class AppPlatform> const &);
     /**
-     * @hash   953823603
-     * @symbol  ?disable\@NetworkEnableDisableListener\@\@QEAAXXZ
+     * @symbol ?disable\@NetworkEnableDisableListener\@\@QEAAXXZ
      */
     MCAPI void disable();
     /**
-     * @hash   -1893107644
-     * @symbol  ?isDisabled\@NetworkEnableDisableListener\@\@QEBA_NXZ
+     * @symbol ?isDisabled\@NetworkEnableDisableListener\@\@QEBA_NXZ
      */
     MCAPI bool isDisabled() const;
     /**
-     * @hash   -2057846824
-     * @symbol  ?isEnabled\@NetworkEnableDisableListener\@\@QEBA_NXZ
+     * @symbol ?isEnabled\@NetworkEnableDisableListener\@\@QEBA_NXZ
      */
     MCAPI bool isEnabled() const;
     /**
-     * @hash   558680928
-     * @symbol  ?isNetworkAllowed\@NetworkEnableDisableListener\@\@QEBA_NXZ
+     * @symbol ?isNetworkAllowed\@NetworkEnableDisableListener\@\@QEBA_NXZ
      */
     MCAPI bool isNetworkAllowed() const;
     /**
-     * @hash   -253806068
-     * @symbol  ?isUninitialized\@NetworkEnableDisableListener\@\@QEBA_NXZ
+     * @symbol ?isUninitialized\@NetworkEnableDisableListener\@\@QEBA_NXZ
      */
     MCAPI bool isUninitialized() const;
     /**
-     * @hash   -737636733
-     * @symbol  ?tryEnable\@NetworkEnableDisableListener\@\@QEAAXXZ
+     * @symbol ?tryEnable\@NetworkEnableDisableListener\@\@QEAAXXZ
      */
     MCAPI void tryEnable();
     /**
-     * @hash   -1597189595
-     * @symbol  ?uninitialize\@NetworkEnableDisableListener\@\@QEAAXXZ
+     * @symbol ?uninitialize\@NetworkEnableDisableListener\@\@QEAAXXZ
      */
     MCAPI void uninitialize();
 

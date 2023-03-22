@@ -28,35 +28,32 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~CapacitorComponent();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  17
-     * @symbol  __unk_vfn_17
+     * @vftbl 17
+     * @symbol __unk_vfn_17
      */
     virtual void __unk_vfn_17();
     /**
-     * @vftbl  20
-     * @symbol  __unk_vfn_20
+     * @vftbl 20
+     * @symbol __unk_vfn_20
      */
     virtual void __unk_vfn_20();
     /**
-     * @hash   443899739
-     * @vftbl  23
-     * @symbol  ?getCircuitComponentType\@CapacitorComponent\@\@UEBA?AW4CircuitComponentType\@\@XZ
+     * @vftbl 23
+     * @symbol ?getCircuitComponentType\@CapacitorComponent\@\@UEBA?AW4CircuitComponentType\@\@XZ
      */
     virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
-     * @hash   -1301715554
-     * @vftbl  25
-     * @symbol  ?getPoweroutDirection\@CapacitorComponent\@\@UEBAEXZ
+     * @vftbl 25
+     * @symbol ?getPoweroutDirection\@CapacitorComponent\@\@UEBAEXZ
      */
     virtual unsigned char getPoweroutDirection() const;
     /**
-     * @hash   1461810039
-     * @symbol  ??0CapacitorComponent\@\@QEAA\@XZ
+     * @symbol ??0CapacitorComponent\@\@QEAA\@XZ
      */
     MCAPI CapacitorComponent();
 

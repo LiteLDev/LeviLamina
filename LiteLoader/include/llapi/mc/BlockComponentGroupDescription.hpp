@@ -28,38 +28,31 @@ public:
 
 public:
     /**
-     * @hash   -1541506455
-     * @symbol  ??0BlockComponentGroupDescription\@\@QEAA\@XZ
-     */
-    MCAPI BlockComponentGroupDescription();
-    /**
-     * @hash   1333555519
-     * @symbol  ??0BlockComponentGroupDescription\@\@QEAA\@AEBU0\@\@Z
+     * @symbol ??0BlockComponentGroupDescription\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription const &);
     /**
-     * @hash   405163719
-     * @symbol  ??0BlockComponentGroupDescription\@\@QEAA\@$$QEAU0\@\@Z
+     * @symbol ??0BlockComponentGroupDescription\@\@QEAA\@XZ
+     */
+    MCAPI BlockComponentGroupDescription();
+    /**
+     * @symbol ??0BlockComponentGroupDescription\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription &&);
     /**
-     * @hash   1164163149
-     * @symbol  ?foreachDescription\@BlockComponentGroupDescription\@\@QEBAXV?$function\@$$A6AXAEBUBlockComponentDescription\@\@\@Z\@std\@\@\@Z
+     * @symbol ?foreachDescription\@BlockComponentGroupDescription\@\@QEBAXV?$function\@$$A6AXAEBUBlockComponentDescription\@\@\@Z\@std\@\@\@Z
      */
     MCAPI void foreachDescription(class std::function<void (struct BlockComponentDescription const &)>) const;
     /**
-     * @hash   -467429292
-     * @symbol  ?getComponentDescription\@BlockComponentGroupDescription\@\@QEBAPEAUBlockComponentDescription\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?getComponentDescription\@BlockComponentGroupDescription\@\@QEBAPEAUBlockComponentDescription\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI struct BlockComponentDescription * getComponentDescription(std::string const &) const;
     /**
-     * @hash   431284366
-     * @symbol  ??4BlockComponentGroupDescription\@\@QEAAAEAU0\@$$QEAU0\@\@Z
+     * @symbol ??4BlockComponentGroupDescription\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct BlockComponentGroupDescription & operator=(struct BlockComponentGroupDescription &&);
     /**
-     * @hash   932054087
-     * @symbol  ??1BlockComponentGroupDescription\@\@QEAA\@XZ
+     * @symbol ??1BlockComponentGroupDescription\@\@QEAA\@XZ
      */
     MCAPI ~BlockComponentGroupDescription();
 

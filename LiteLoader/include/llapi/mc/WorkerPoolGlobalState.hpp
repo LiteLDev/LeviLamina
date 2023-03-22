@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   775089168
-     * @symbol  ??1WorkerPoolGlobalState\@\@QEAA\@XZ
+     * @symbol ??1WorkerPoolGlobalState\@\@QEAA\@XZ
      */
     MCAPI ~WorkerPoolGlobalState();
 

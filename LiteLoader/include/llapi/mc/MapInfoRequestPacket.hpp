@@ -30,57 +30,54 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~MapInfoRequestPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1029670945
-     * @vftbl  1
-     * @symbol  ?getId\@MapInfoRequestPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@MapInfoRequestPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @hash   365115086
-     * @vftbl  2
-     * @symbol  ?getName\@MapInfoRequestPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@MapInfoRequestPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @hash   -305714983
-     * @vftbl  3
-     * @symbol  ?write\@MapInfoRequestPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@MapInfoRequestPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   -1048294119
-     * @vftbl  6
-     * @symbol  ?_read\@MapInfoRequestPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@MapInfoRequestPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MAPINFOREQUESTPACKET
     /**
-     * @hash   -739101511
-     * @symbol  ??0MapInfoRequestPacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~MapInfoRequestPacket();
+#endif
+    /**
+     * @symbol ??0MapInfoRequestPacket\@\@QEAA\@XZ
      */
     MCAPI MapInfoRequestPacket();
     /**
-     * @hash   -1826475665
-     * @symbol  ??0MapInfoRequestPacket\@\@QEAA\@UActorUniqueID\@\@AEAVMapItemSavedData\@\@\@Z
-     */
-    MCAPI MapInfoRequestPacket(struct ActorUniqueID, class MapItemSavedData &);
-    /**
-     * @hash   584983414
-     * @symbol  ??0MapInfoRequestPacket\@\@QEAA\@UActorUniqueID\@\@\@Z
+     * @symbol ??0MapInfoRequestPacket\@\@QEAA\@UActorUniqueID\@\@\@Z
      */
     MCAPI MapInfoRequestPacket(struct ActorUniqueID);
     /**
-     * @hash   -1979832792
-     * @symbol  ?getMapId\@MapInfoRequestPacket\@\@QEBA?AUActorUniqueID\@\@XZ
+     * @symbol ??0MapInfoRequestPacket\@\@QEAA\@UActorUniqueID\@\@AEAVMapItemSavedData\@\@\@Z
+     */
+    MCAPI MapInfoRequestPacket(struct ActorUniqueID, class MapItemSavedData &);
+    /**
+     * @symbol ?getMapId\@MapInfoRequestPacket\@\@QEBA?AUActorUniqueID\@\@XZ
      */
     MCAPI struct ActorUniqueID getMapId() const;
     /**
-     * @hash   1444092527
-     * @symbol  ?replaceServerPixels\@MapInfoRequestPacket\@\@QEBA_NAEAVMapItemSavedData\@\@\@Z
+     * @symbol ?replaceServerPixels\@MapInfoRequestPacket\@\@QEBA_NAEAVMapItemSavedData\@\@\@Z
      */
     MCAPI bool replaceServerPixels(class MapItemSavedData &) const;
 

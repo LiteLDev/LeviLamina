@@ -27,13 +27,11 @@ public:
 
 public:
     /**
-     * @hash   671276736
-     * @symbol  ??0ItemStackResponseInfo\@\@QEAA\@XZ
+     * @symbol ??0ItemStackResponseInfo\@\@QEAA\@XZ
      */
     MCAPI ItemStackResponseInfo();
     /**
-     * @hash   18172784
-     * @symbol  ??1ItemStackResponseInfo\@\@QEAA\@XZ
+     * @symbol ??1ItemStackResponseInfo\@\@QEAA\@XZ
      */
     MCAPI ~ItemStackResponseInfo();
 

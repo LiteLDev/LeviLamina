@@ -31,266 +31,258 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ThinFenceBlock();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -935540395
-     * @vftbl  9
-     * @symbol  ?addAABBs\@ThinFenceBlock\@\@UEBAXAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@\@Z
+     * @vftbl 9
+     * @symbol ?addAABBs\@ThinFenceBlock\@\@UEBAXAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@\@Z
      */
     virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
     /**
-     * @hash   -1069697147
-     * @vftbl  10
-     * @symbol  ?getAABB\@ThinFenceBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
+     * @vftbl 10
+     * @symbol ?getAABB\@ThinFenceBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
-     * @hash   2094870824
-     * @vftbl  11
-     * @symbol  ?addCollisionShapes\@ThinFenceBlock\@\@UEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
+     * @vftbl 11
+     * @symbol ?addCollisionShapes\@ThinFenceBlock\@\@UEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
     virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
-     * @hash   -297264563
-     * @vftbl  14
-     * @symbol  ?getLiquidClipVolume\@ThinFenceBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVAABB\@\@\@Z
+     * @vftbl 14
+     * @symbol ?getLiquidClipVolume\@ThinFenceBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVAABB\@\@\@Z
      */
     virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
     /**
-     * @vftbl  19
-     * @symbol  __unk_vfn_19
+     * @vftbl 19
+     * @symbol __unk_vfn_19
      */
     virtual void __unk_vfn_19();
     /**
-     * @hash   -994620364
-     * @vftbl  22
-     * @symbol  ?canProvideSupport\@ThinFenceBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
+     * @vftbl 22
+     * @symbol ?canProvideSupport\@ThinFenceBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
-     * @hash   -1947368596
-     * @vftbl  25
-     * @symbol  ?canConnect\@ThinFenceBlock\@\@UEBA_NAEBVBlock\@\@E0\@Z
+     * @vftbl 25
+     * @symbol ?canConnect\@ThinFenceBlock\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
     virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
     /**
-     * @vftbl  29
-     * @symbol  __unk_vfn_29
+     * @vftbl 29
+     * @symbol __unk_vfn_29
      */
     virtual void __unk_vfn_29();
     /**
-     * @vftbl  30
-     * @symbol  __unk_vfn_30
+     * @vftbl 30
+     * @symbol __unk_vfn_30
      */
     virtual void __unk_vfn_30();
     /**
-     * @vftbl  32
-     * @symbol  __unk_vfn_32
+     * @vftbl 32
+     * @symbol __unk_vfn_32
      */
     virtual void __unk_vfn_32();
     /**
-     * @vftbl  33
-     * @symbol  __unk_vfn_33
+     * @vftbl 33
+     * @symbol __unk_vfn_33
      */
     virtual void __unk_vfn_33();
     /**
-     * @vftbl  34
-     * @symbol  __unk_vfn_34
+     * @vftbl 34
+     * @symbol __unk_vfn_34
      */
     virtual void __unk_vfn_34();
     /**
-     * @vftbl  36
-     * @symbol  __unk_vfn_36
+     * @vftbl 36
+     * @symbol __unk_vfn_36
      */
     virtual void __unk_vfn_36();
     /**
-     * @vftbl  37
-     * @symbol  __unk_vfn_37
+     * @vftbl 37
+     * @symbol __unk_vfn_37
      */
     virtual void __unk_vfn_37();
     /**
-     * @vftbl  38
-     * @symbol  __unk_vfn_38
+     * @vftbl 38
+     * @symbol __unk_vfn_38
      */
     virtual void __unk_vfn_38();
     /**
-     * @vftbl  39
-     * @symbol  __unk_vfn_39
+     * @vftbl 39
+     * @symbol __unk_vfn_39
      */
     virtual void __unk_vfn_39();
     /**
-     * @vftbl  40
-     * @symbol  __unk_vfn_40
+     * @vftbl 40
+     * @symbol __unk_vfn_40
      */
     virtual void __unk_vfn_40();
     /**
-     * @vftbl  41
-     * @symbol  __unk_vfn_41
+     * @vftbl 41
+     * @symbol __unk_vfn_41
      */
     virtual void __unk_vfn_41();
     /**
-     * @vftbl  42
-     * @symbol  __unk_vfn_42
+     * @vftbl 42
+     * @symbol __unk_vfn_42
      */
     virtual void __unk_vfn_42();
     /**
-     * @vftbl  44
-     * @symbol  __unk_vfn_44
+     * @vftbl 44
+     * @symbol __unk_vfn_44
      */
     virtual void __unk_vfn_44();
     /**
-     * @vftbl  45
-     * @symbol  __unk_vfn_45
+     * @vftbl 45
+     * @symbol __unk_vfn_45
      */
     virtual void __unk_vfn_45();
     /**
-     * @vftbl  46
-     * @symbol  __unk_vfn_46
+     * @vftbl 46
+     * @symbol __unk_vfn_46
      */
     virtual void __unk_vfn_46();
     /**
-     * @vftbl  47
-     * @symbol  __unk_vfn_47
+     * @vftbl 47
+     * @symbol __unk_vfn_47
      */
     virtual void __unk_vfn_47();
     /**
-     * @vftbl  48
-     * @symbol  __unk_vfn_48
+     * @vftbl 48
+     * @symbol __unk_vfn_48
      */
     virtual void __unk_vfn_48();
     /**
-     * @vftbl  49
-     * @symbol  __unk_vfn_49
+     * @vftbl 49
+     * @symbol __unk_vfn_49
      */
     virtual void __unk_vfn_49();
     /**
-     * @vftbl  54
-     * @symbol  __unk_vfn_54
+     * @vftbl 54
+     * @symbol __unk_vfn_54
      */
     virtual void __unk_vfn_54();
     /**
-     * @vftbl  60
-     * @symbol  __unk_vfn_60
+     * @vftbl 60
+     * @symbol __unk_vfn_60
      */
     virtual void __unk_vfn_60();
     /**
-     * @vftbl  61
-     * @symbol  __unk_vfn_61
+     * @vftbl 61
+     * @symbol __unk_vfn_61
      */
     virtual void __unk_vfn_61();
     /**
-     * @hash   -1201709133
-     * @vftbl  62
-     * @symbol  ?canContainLiquid\@ThinFenceBlock\@\@UEBA_NXZ
+     * @vftbl 62
+     * @symbol ?canContainLiquid\@ThinFenceBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @hash   1884210002
-     * @vftbl  66
-     * @symbol  ?canBeUsedInCommands\@ThinFenceBlock\@\@UEBA_NAEBVBaseGameVersion\@\@\@Z
+     * @vftbl 66
+     * @symbol ?canBeUsedInCommands\@ThinFenceBlock\@\@UEBA_NAEBVBaseGameVersion\@\@\@Z
      */
     virtual bool canBeUsedInCommands(class BaseGameVersion const &) const;
     /**
-     * @vftbl  75
-     * @symbol  __unk_vfn_75
+     * @vftbl 75
+     * @symbol __unk_vfn_75
      */
     virtual void __unk_vfn_75();
     /**
-     * @vftbl  82
-     * @symbol  __unk_vfn_82
+     * @vftbl 82
+     * @symbol __unk_vfn_82
      */
     virtual void __unk_vfn_82();
     /**
-     * @hash   -438724474
-     * @vftbl  96
-     * @symbol  ?breaksFallingBlocks\@ThinFenceBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
+     * @vftbl 96
+     * @symbol ?breaksFallingBlocks\@ThinFenceBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
-     * @vftbl  105
-     * @symbol  __unk_vfn_105
+     * @vftbl 105
+     * @symbol __unk_vfn_105
      */
     virtual void __unk_vfn_105();
     /**
-     * @vftbl  123
-     * @symbol  __unk_vfn_123
+     * @vftbl 123
+     * @symbol __unk_vfn_123
      */
     virtual void __unk_vfn_123();
     /**
-     * @vftbl  125
-     * @symbol  __unk_vfn_125
+     * @vftbl 125
+     * @symbol __unk_vfn_125
      */
     virtual void __unk_vfn_125();
     /**
-     * @vftbl  126
-     * @symbol  __unk_vfn_126
+     * @vftbl 126
+     * @symbol __unk_vfn_126
      */
     virtual void __unk_vfn_126();
     /**
-     * @vftbl  131
-     * @symbol  __unk_vfn_131
+     * @vftbl 131
+     * @symbol __unk_vfn_131
      */
     virtual void __unk_vfn_131();
     /**
-     * @hash   376381911
-     * @vftbl  142
-     * @symbol  ?getVisualShapeInWorld\@ThinFenceBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEAV2\@_N\@Z
+     * @vftbl 142
+     * @symbol ?getVisualShapeInWorld\@ThinFenceBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &, bool) const;
     /**
-     * @vftbl  156
-     * @symbol  __unk_vfn_156
+     * @vftbl 156
+     * @symbol __unk_vfn_156
      */
     virtual void __unk_vfn_156();
     /**
-     * @vftbl  165
-     * @symbol  __unk_vfn_165
+     * @vftbl 165
+     * @symbol __unk_vfn_165
      */
     virtual void __unk_vfn_165();
     /**
-     * @vftbl  166
-     * @symbol  __unk_vfn_166
+     * @vftbl 166
+     * @symbol __unk_vfn_166
      */
     virtual void __unk_vfn_166();
     /**
-     * @vftbl  167
-     * @symbol  __unk_vfn_167
+     * @vftbl 167
+     * @symbol __unk_vfn_167
      */
     virtual void __unk_vfn_167();
     /**
-     * @vftbl  170
-     * @symbol  __unk_vfn_170
+     * @vftbl 170
+     * @symbol __unk_vfn_170
      */
     virtual void __unk_vfn_170();
     /**
-     * @vftbl  174
-     * @symbol  __unk_vfn_174
+     * @vftbl 174
+     * @symbol __unk_vfn_174
      */
     virtual void __unk_vfn_174();
     /**
-     * @vftbl  185
-     * @symbol  __unk_vfn_185
+     * @vftbl 178
+     * @symbol __unk_vfn_178
      */
-    virtual void __unk_vfn_185();
+    virtual void __unk_vfn_178();
     /**
-     * @hash   208032939
-     * @vftbl  188
-     * @symbol  ?getResourceCount\@ThinFenceBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
+     * @vftbl 186
+     * @symbol __unk_vfn_186
+     */
+    virtual void __unk_vfn_186();
+    /**
+     * @vftbl 189
+     * @symbol ?getResourceCount\@ThinFenceBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_THINFENCEBLOCK
     /**
-     * @hash   1314688306
-     * @symbol  ?isThinFenceBlock\@ThinFenceBlock\@\@UEBA_NXZ
+     * @symbol ?isThinFenceBlock\@ThinFenceBlock\@\@UEBA_NXZ
      */
     MCVAPI bool isThinFenceBlock() const;
 #endif
     /**
-     * @hash   -1122955097
-     * @symbol  ??0ThinFenceBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@_N22\@Z
+     * @symbol ??0ThinFenceBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@_N22\@Z
      */
     MCAPI ThinFenceBlock(std::string const &, int, class Material const &, bool, bool, bool);
 
@@ -298,8 +290,7 @@ public:
 
 private:
     /**
-     * @hash   -790197064
-     * @symbol  ?THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION\@ThinFenceBlock\@\@0VBaseGameVersion\@\@B
+     * @symbol ?THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION\@ThinFenceBlock\@\@0VBaseGameVersion\@\@B
      */
     MCAPI static class BaseGameVersion const THIN_FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION;
 

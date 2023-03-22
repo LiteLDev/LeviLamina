@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   -1828799136
-     * @symbol  ??1NetworkAddress\@\@QEAA\@XZ
+     * @symbol ??1NetworkAddress\@\@QEAA\@XZ
      */
     MCAPI ~NetworkAddress();
 

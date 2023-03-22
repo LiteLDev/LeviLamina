@@ -29,33 +29,35 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BodyControl();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   2132704376
-     * @vftbl  1
-     * @symbol  ?clientTick\@BodyControl\@\@UEAAXAEAVMob\@\@\@Z
+     * @vftbl 1
+     * @symbol ?clientTick\@BodyControl\@\@UEAAXAEAVMob\@\@\@Z
      */
     virtual void clientTick(class Mob &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BODYCONTROL
     /**
-     * @hash   1365371591
-     * @symbol  ??0BodyControl\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~BodyControl();
+#endif
+    /**
+     * @symbol ??0BodyControl\@\@QEAA\@XZ
      */
     MCAPI BodyControl();
 
 //private:
     /**
-     * @hash   1876403930
-     * @symbol  ?_allowUpdateBodyRotation\@BodyControl\@\@AEBA_NAEBVMob\@\@\@Z
+     * @symbol ?_allowUpdateBodyRotation\@BodyControl\@\@AEBA_NAEBVMob\@\@\@Z
      */
     MCAPI bool _allowUpdateBodyRotation(class Mob const &) const;
 
 private:
     /**
-     * @hash   -1812019476
-     * @symbol  ?MAX_CLAMP_ANGLE\@BodyControl\@\@0MB
+     * @symbol ?MAX_CLAMP_ANGLE\@BodyControl\@\@0MB
      */
     MCAPI static float const MAX_CLAMP_ANGLE;
 

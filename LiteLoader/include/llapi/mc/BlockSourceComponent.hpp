@@ -30,12 +30,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0BlockSourceComponent\@\@QEAA\@V?$WeakRefT\@U?$SharePtrRefTraits\@VBlockSource\@\@\@\@\@\@\@Z
+     * @symbol ??0BlockSourceComponent\@\@QEAA\@V?$WeakRefT\@U?$SharePtrRefTraits\@VBlockSource\@\@\@\@\@\@\@Z
      */
     MCAPI BlockSourceComponent(class WeakRefT<struct SharePtrRefTraits<class BlockSource>>);
     /**
-     * @hash   -1772379002
-     * @symbol  ?tryGetBlockSource\@BlockSourceComponent\@\@QEBA?AV?$StackRefResultT\@U?$SharePtrRefTraits\@VBlockSource\@\@\@\@\@\@XZ
+     * @symbol ?tryGetBlockSource\@BlockSourceComponent\@\@QEBA?AV?$StackRefResultT\@U?$SharePtrRefTraits\@VBlockSource\@\@\@\@\@\@XZ
      */
     MCAPI class StackRefResultT<struct SharePtrRefTraits<class BlockSource>> tryGetBlockSource() const;
 

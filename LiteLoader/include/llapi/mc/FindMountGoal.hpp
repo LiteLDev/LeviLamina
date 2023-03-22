@@ -30,59 +30,51 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~FindMountGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1794717811
-     * @vftbl  1
-     * @symbol  ?canUse\@FindMountGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@FindMountGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   -927891765
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@FindMountGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@FindMountGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   -342304346
-     * @vftbl  4
-     * @symbol  ?start\@FindMountGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@FindMountGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   -737906058
-     * @vftbl  5
-     * @symbol  ?stop\@FindMountGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@FindMountGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @hash   -1222243359
-     * @vftbl  6
-     * @symbol  ?tick\@FindMountGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@FindMountGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -1003108509
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@FindMountGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@FindMountGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   -1093459314
-     * @symbol  ??0FindMountGoal\@\@QEAA\@AEAVMob\@\@MH_N1MH\@Z
+     * @symbol ??0FindMountGoal\@\@QEAA\@AEAVMob\@\@MH_N1MH\@Z
      */
     MCAPI FindMountGoal(class Mob &, float, int, bool, bool, float, int);
     /**
-     * @hash   1672096490
-     * @symbol  ?isInMountRange\@FindMountGoal\@\@QEAA_NXZ
+     * @symbol ?isInMountRange\@FindMountGoal\@\@QEAA_NXZ
      */
     MCAPI bool isInMountRange();
 

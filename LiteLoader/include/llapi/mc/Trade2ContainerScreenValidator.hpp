@@ -28,13 +28,12 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~Trade2ContainerScreenValidator();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -716862913
-     * @symbol  ??0Trade2ContainerScreenValidator\@\@QEAA\@XZ
+     * @symbol ??0Trade2ContainerScreenValidator\@\@QEAA\@XZ
      */
     MCAPI Trade2ContainerScreenValidator();
 

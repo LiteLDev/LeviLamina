@@ -29,33 +29,27 @@ public:
 
 public:
     /**
-     * @hash   -1035724147
-     * @symbol  ??0BlockBreakSensorComponent\@\@QEAA\@XZ
+     * @symbol ??0BlockBreakSensorComponent\@\@QEAA\@XZ
      */
     MCAPI BlockBreakSensorComponent();
     /**
-     * @hash   -507169445
-     * @symbol  ??0BlockBreakSensorComponent\@\@QEAA\@$$QEAV0\@\@Z
+     * @symbol ??0BlockBreakSensorComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI BlockBreakSensorComponent(class BlockBreakSensorComponent &&);
     /**
-     * @hash   -1748106836
-     * @symbol  ?initialize\@BlockBreakSensorComponent\@\@QEAAXAEAVActor\@\@\@Z
+     * @symbol ?initialize\@BlockBreakSensorComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void initialize(class Actor &);
     /**
-     * @hash   58126470
-     * @symbol  ??4BlockBreakSensorComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     * @symbol ??4BlockBreakSensorComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class BlockBreakSensorComponent & operator=(class BlockBreakSensorComponent &&);
     /**
-     * @hash   -1599457330
-     * @symbol  ?updateSensorPos\@BlockBreakSensorComponent\@\@QEAAXAEBVVec3\@\@\@Z
+     * @symbol ?updateSensorPos\@BlockBreakSensorComponent\@\@QEAAXAEBVVec3\@\@\@Z
      */
     MCAPI void updateSensorPos(class Vec3 const &);
     /**
-     * @hash   1575669613
-     * @symbol  ??1BlockBreakSensorComponent\@\@QEAA\@XZ
+     * @symbol ??1BlockBreakSensorComponent\@\@QEAA\@XZ
      */
     MCAPI ~BlockBreakSensorComponent();
 

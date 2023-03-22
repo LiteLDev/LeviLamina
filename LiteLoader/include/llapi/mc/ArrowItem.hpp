@@ -32,139 +32,128 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ArrowItem();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  7
-     * @symbol  __unk_vfn_7
+     * @vftbl 7
+     * @symbol __unk_vfn_7
      */
     virtual void __unk_vfn_7();
     /**
-     * @vftbl  11
-     * @symbol  __unk_vfn_11
+     * @vftbl 11
+     * @symbol __unk_vfn_11
      */
     virtual void __unk_vfn_11();
     /**
-     * @vftbl  14
-     * @symbol  __unk_vfn_14
+     * @vftbl 14
+     * @symbol __unk_vfn_14
      */
     virtual void __unk_vfn_14();
     /**
-     * @vftbl  16
-     * @symbol  __unk_vfn_16
+     * @vftbl 16
+     * @symbol __unk_vfn_16
      */
     virtual void __unk_vfn_16();
     /**
-     * @vftbl  51
-     * @symbol  __unk_vfn_51
+     * @vftbl 51
+     * @symbol __unk_vfn_51
      */
     virtual void __unk_vfn_51();
     /**
-     * @vftbl  53
-     * @symbol  __unk_vfn_53
+     * @vftbl 53
+     * @symbol __unk_vfn_53
      */
     virtual void __unk_vfn_53();
     /**
-     * @hash   -1800933901
-     * @vftbl  60
-     * @symbol  ?appendFormattedHovertext\@ArrowItem\@\@UEBAXAEBVItemStackBase\@\@AEAVLevel\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
+     * @vftbl 60
+     * @symbol ?appendFormattedHovertext\@ArrowItem\@\@UEBAXAEBVItemStackBase\@\@AEAVLevel\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
     virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
     /**
-     * @vftbl  66
-     * @symbol  __unk_vfn_66
+     * @vftbl 66
+     * @symbol __unk_vfn_66
      */
     virtual void __unk_vfn_66();
     /**
-     * @hash   760403138
-     * @vftbl  67
-     * @symbol  ?isValidAuxValue\@ArrowItem\@\@UEBA_NH\@Z
+     * @vftbl 67
+     * @symbol ?isValidAuxValue\@ArrowItem\@\@UEBA_NH\@Z
      */
     virtual bool isValidAuxValue(int) const;
     /**
-     * @vftbl  70
-     * @symbol  __unk_vfn_70
+     * @vftbl 70
+     * @symbol __unk_vfn_70
      */
     virtual void __unk_vfn_70();
     /**
-     * @vftbl  71
-     * @symbol  __unk_vfn_71
+     * @vftbl 71
+     * @symbol __unk_vfn_71
      */
     virtual void __unk_vfn_71();
     /**
-     * @vftbl  72
-     * @symbol  __unk_vfn_72
+     * @vftbl 72
+     * @symbol __unk_vfn_72
      */
     virtual void __unk_vfn_72();
     /**
-     * @vftbl  75
-     * @symbol  __unk_vfn_75
+     * @vftbl 75
+     * @symbol __unk_vfn_75
      */
     virtual void __unk_vfn_75();
     /**
-     * @vftbl  79
-     * @symbol  __unk_vfn_79
+     * @vftbl 79
+     * @symbol __unk_vfn_79
      */
     virtual void __unk_vfn_79();
     /**
-     * @vftbl  80
-     * @symbol  __unk_vfn_80
+     * @vftbl 80
+     * @symbol __unk_vfn_80
      */
     virtual void __unk_vfn_80();
     /**
-     * @hash   1139489672
-     * @vftbl  85
-     * @symbol  ?dispense\@ArrowItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
+     * @vftbl 85
+     * @symbol ?dispense\@ArrowItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
-     * @hash   -1560735922
-     * @vftbl  95
-     * @symbol  ?buildDescriptionId\@ArrowItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
+     * @vftbl 95
+     * @symbol ?buildDescriptionId\@ArrowItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @hash   -1676179749
-     * @vftbl  96
-     * @symbol  ?buildEffectDescriptionName\@ArrowItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemStackBase\@\@\@Z
+     * @vftbl 96
+     * @symbol ?buildEffectDescriptionName\@ArrowItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemStackBase\@\@\@Z
      */
     virtual std::string buildEffectDescriptionName(class ItemStackBase const &) const;
     /**
-     * @hash   -804703842
-     * @vftbl  117
-     * @symbol  ?setIconInfo\@ArrowItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
+     * @vftbl 117
+     * @symbol ?setIconInfo\@ArrowItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     virtual class Item & setIconInfo(std::string const &, int);
     /**
-     * @hash   659459235
-     * @vftbl  118
-     * @symbol  ?getIconInfo\@ArrowItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
+     * @vftbl 118
+     * @symbol ?getIconInfo\@ArrowItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
-     * @hash   -467833350
-     * @symbol  ??0ArrowItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
+     * @symbol ??0ArrowItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI ArrowItem(std::string const &, int);
     /**
-     * @hash   1383130446
-     * @symbol  ?applyEffect\@ArrowItem\@\@QEBAXPEAVArrow\@\@AEBVItemInstance\@\@\@Z
+     * @symbol ?applyEffect\@ArrowItem\@\@QEBAXPEAVArrow\@\@AEBVItemInstance\@\@\@Z
      */
     MCAPI void applyEffect(class Arrow *, class ItemInstance const &) const;
 
 //protected:
     /**
-     * @hash   673349396
-     * @symbol  ?getMobEffects\@ArrowItem\@\@IEBA?AV?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@std\@\@H\@Z
+     * @symbol ?getMobEffects\@ArrowItem\@\@IEBA?AV?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@std\@\@H\@Z
      */
     MCAPI std::vector<class MobEffectInstance> getMobEffects(int) const;
 
 //private:
     /**
-     * @hash   903328192
-     * @symbol  ?_potionExistsOrContentError\@ArrowItem\@\@AEBA?AV?$shared_ptr\@$$CBVPotion\@\@\@std\@\@H\@Z
+     * @symbol ?_potionExistsOrContentError\@ArrowItem\@\@AEBA?AV?$shared_ptr\@$$CBVPotion\@\@\@std\@\@H\@Z
      */
     MCAPI class std::shared_ptr<class Potion const> _potionExistsOrContentError(int) const;
 

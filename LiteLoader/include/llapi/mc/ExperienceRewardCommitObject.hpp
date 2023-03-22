@@ -28,31 +28,27 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ExperienceRewardCommitObject();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1340175132
-     * @vftbl  1
-     * @symbol  ?append\@ExperienceRewardCommitObject\@\@UEAA_NPEAVContainerValidationCommitObject\@\@\@Z
+     * @vftbl 1
+     * @symbol ?append\@ExperienceRewardCommitObject\@\@UEAA_NPEAVContainerValidationCommitObject\@\@\@Z
      */
     virtual bool append(class ContainerValidationCommitObject *);
     /**
-     * @hash   -1412678307
-     * @vftbl  2
-     * @symbol  ?canCommit\@ExperienceRewardCommitObject\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
+     * @vftbl 2
+     * @symbol ?canCommit\@ExperienceRewardCommitObject\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
      */
     virtual bool canCommit(class ContainerScreenContext const &) const;
     /**
-     * @hash   -1938967600
-     * @vftbl  3
-     * @symbol  ?commit\@ExperienceRewardCommitObject\@\@UEAAXAEBVContainerScreenContext\@\@\@Z
+     * @vftbl 3
+     * @symbol ?commit\@ExperienceRewardCommitObject\@\@UEAAXAEBVContainerScreenContext\@\@\@Z
      */
     virtual void commit(class ContainerScreenContext const &);
     /**
-     * @hash   571778480
-     * @symbol  ??0ExperienceRewardCommitObject\@\@QEAA\@H\@Z
+     * @symbol ??0ExperienceRewardCommitObject\@\@QEAA\@H\@Z
      */
     MCAPI ExperienceRewardCommitObject(int);
 

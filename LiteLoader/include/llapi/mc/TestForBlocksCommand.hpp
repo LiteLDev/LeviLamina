@@ -31,19 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~TestForBlocksCommand();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1777392683
-     * @vftbl  1
-     * @symbol  ?execute\@TestForBlocksCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @vftbl 1
+     * @symbol ?execute\@TestForBlocksCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @hash   251506268
-     * @symbol  ?setup\@TestForBlocksCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
+     * @symbol ?setup\@TestForBlocksCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);
 

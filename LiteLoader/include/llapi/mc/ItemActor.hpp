@@ -35,253 +35,223 @@ public:
 
 public:
     /**
-     * @hash   -1819501653
-     * @vftbl  10
-     * @symbol  ?reloadHardcoded\@ItemActor\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
+     * @vftbl 10
+     * @symbol ?reloadHardcoded\@ItemActor\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
     virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
     /**
-     * @vftbl  16
-     * @symbol  __unk_destructor_16
+     * @vftbl 16
+     * @symbol __unk_vfn_16
      */
-    virtual ~ItemActor();
+    virtual void __unk_vfn_16();
     /**
-     * @hash   969554894
-     * @vftbl  21
-     * @symbol  ?isRuntimePredictedMovementEnabled\@ItemActor\@\@UEBA_NXZ
+     * @vftbl 21
+     * @symbol ?isRuntimePredictedMovementEnabled\@ItemActor\@\@UEBA_NXZ
      */
     virtual bool isRuntimePredictedMovementEnabled() const;
     /**
-     * @hash   1648268873
-     * @vftbl  40
-     * @symbol  ?isFireImmune\@ItemActor\@\@UEBA_NXZ
+     * @vftbl 40
+     * @symbol ?isFireImmune\@ItemActor\@\@UEBA_NXZ
      */
     virtual bool isFireImmune() const;
     /**
-     * @vftbl  41
-     * @symbol  __unk_vfn_41
+     * @vftbl 41
+     * @symbol __unk_vfn_41
      */
     virtual void __unk_vfn_41();
     /**
-     * @hash   1161518411
-     * @vftbl  48
-     * @symbol  ?tryCreateAddActorPacket\@ItemActor\@\@UEAA?AV?$unique_ptr\@VAddActorBasePacket\@\@U?$default_delete\@VAddActorBasePacket\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 48
+     * @symbol ?tryCreateAddActorPacket\@ItemActor\@\@UEAA?AV?$unique_ptr\@VAddActorBasePacket\@\@U?$default_delete\@VAddActorBasePacket\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket();
     /**
-     * @hash   1530112905
-     * @vftbl  49
-     * @symbol  ?normalTick\@ItemActor\@\@UEAAXXZ
-     */
-    virtual void normalTick();
-    /**
-     * @vftbl  62
-     * @symbol  __unk_vfn_62
+     * @vftbl 62
+     * @symbol __unk_vfn_62
      */
     virtual void __unk_vfn_62();
     /**
-     * @vftbl  69
-     * @symbol  __unk_vfn_69
+     * @vftbl 69
+     * @symbol __unk_vfn_69
      */
     virtual void __unk_vfn_69();
     /**
-     * @vftbl  83
-     * @symbol  __unk_vfn_83
+     * @vftbl 82
+     * @symbol __unk_vfn_82
      */
-    virtual void __unk_vfn_83();
+    virtual void __unk_vfn_82();
     /**
-     * @vftbl  86
-     * @symbol  __unk_vfn_86
+     * @vftbl 85
+     * @symbol __unk_vfn_85
      */
-    virtual void __unk_vfn_86();
+    virtual void __unk_vfn_85();
     /**
-     * @vftbl  89
-     * @symbol  __unk_vfn_89
+     * @vftbl 88
+     * @symbol __unk_vfn_88
      */
-    virtual void __unk_vfn_89();
+    virtual void __unk_vfn_88();
     /**
-     * @hash   -1675745264
-     * @vftbl  90
-     * @symbol  ?playerTouch\@ItemActor\@\@UEAAXAEAVPlayer\@\@\@Z
+     * @vftbl 89
+     * @symbol ?playerTouch\@ItemActor\@\@UEAAXAEAVPlayer\@\@\@Z
      */
     virtual void playerTouch(class Player &);
     /**
-     * @vftbl  97
-     * @symbol  __unk_vfn_97
+     * @vftbl 96
+     * @symbol __unk_vfn_96
      */
-    virtual void __unk_vfn_97();
+    virtual void __unk_vfn_96();
     /**
-     * @vftbl  100
-     * @symbol  __unk_vfn_100
+     * @vftbl 99
+     * @symbol __unk_vfn_99
      */
-    virtual void __unk_vfn_100();
+    virtual void __unk_vfn_99();
     /**
-     * @vftbl  107
-     * @symbol  __unk_vfn_107
+     * @vftbl 106
+     * @symbol __unk_vfn_106
      */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_106();
     /**
-     * @vftbl  109
-     * @symbol  __unk_vfn_109
+     * @vftbl 108
+     * @symbol __unk_vfn_108
+     */
+    virtual void __unk_vfn_108();
+    /**
+     * @vftbl 109
+     * @symbol __unk_vfn_109
      */
     virtual void __unk_vfn_109();
     /**
-     * @vftbl  110
-     * @symbol  __unk_vfn_110
+     * @vftbl 111
+     * @symbol __unk_vfn_111
      */
-    virtual void __unk_vfn_110();
+    virtual void __unk_vfn_111();
     /**
-     * @vftbl  112
-     * @symbol  __unk_vfn_112
-     */
-    virtual void __unk_vfn_112();
-    /**
-     * @hash   -51058608
-     * @vftbl  135
-     * @symbol  ?isInvulnerableTo\@ItemActor\@\@UEBA_NAEBVActorDamageSource\@\@\@Z
+     * @vftbl 134
+     * @symbol ?isInvulnerableTo\@ItemActor\@\@UEBA_NAEBVActorDamageSource\@\@\@Z
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
-     * @hash   2022346804
-     * @vftbl  142
-     * @symbol  ?handleEntityEvent\@ItemActor\@\@UEAAXW4ActorEvent\@\@H\@Z
+     * @vftbl 141
+     * @symbol ?handleEntityEvent\@ItemActor\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
-     * @hash   -352184108
-     * @vftbl  170
-     * @symbol  ?getSourceUniqueID\@ItemActor\@\@UEBA?AUActorUniqueID\@\@XZ
+     * @vftbl 169
+     * @symbol ?getSourceUniqueID\@ItemActor\@\@UEBA?AUActorUniqueID\@\@XZ
      */
     virtual struct ActorUniqueID getSourceUniqueID() const;
     /**
-     * @hash   -710772654
-     * @vftbl  174
-     * @symbol  ?getLiquidAABB\@ItemActor\@\@UEBA?AVAABB\@\@W4MaterialType\@\@\@Z
+     * @vftbl 173
+     * @symbol ?getLiquidAABB\@ItemActor\@\@UEBA?AVAABB\@\@W4MaterialType\@\@\@Z
      */
     virtual class AABB getLiquidAABB(enum class MaterialType) const;
     /**
-     * @vftbl  179
-     * @symbol  __unk_vfn_179
+     * @vftbl 178
+     * @symbol __unk_vfn_178
      */
-    virtual void __unk_vfn_179();
+    virtual void __unk_vfn_178();
     /**
-     * @vftbl  193
-     * @symbol  __unk_vfn_193
+     * @vftbl 192
+     * @symbol __unk_vfn_192
      */
-    virtual void __unk_vfn_193();
+    virtual void __unk_vfn_192();
     /**
-     * @hash   1134049513
-     * @vftbl  196
-     * @symbol  ?canSynchronizeNewEntity\@ItemActor\@\@UEBA_NXZ
+     * @vftbl 195
+     * @symbol ?canSynchronizeNewEntity\@ItemActor\@\@UEBA_NXZ
      */
     virtual bool canSynchronizeNewEntity() const;
     /**
-     * @vftbl  218
-     * @symbol  __unk_vfn_218
+     * @vftbl 217
+     * @symbol __unk_vfn_217
+     */
+    virtual void __unk_vfn_217();
+    /**
+     * @vftbl 218
+     * @symbol __unk_vfn_218
      */
     virtual void __unk_vfn_218();
     /**
-     * @vftbl  219
-     * @symbol  __unk_vfn_219
+     * @vftbl 240
+     * @symbol __unk_vfn_240
      */
-    virtual void __unk_vfn_219();
+    virtual void __unk_vfn_240();
     /**
-     * @vftbl  241
-     * @symbol  __unk_vfn_241
+     * @vftbl 243
+     * @symbol __unk_vfn_243
      */
-    virtual void __unk_vfn_241();
+    virtual void __unk_vfn_243();
     /**
-     * @vftbl  244
-     * @symbol  __unk_vfn_244
+     * @vftbl 260
+     * @symbol __unk_vfn_260
      */
-    virtual void __unk_vfn_244();
+    virtual void __unk_vfn_260();
     /**
-     * @vftbl  262
-     * @symbol  __unk_vfn_262
-     */
-    virtual void __unk_vfn_262();
-    /**
-     * @hash   2032465102
-     * @vftbl  263
-     * @symbol  ?_hurt\@ItemActor\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
+     * @vftbl 261
+     * @symbol ?_hurt\@ItemActor\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @hash   -1560776594
-     * @vftbl  266
-     * @symbol  ?readAdditionalSaveData\@ItemActor\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
+     * @vftbl 264
+     * @symbol ?readAdditionalSaveData\@ItemActor\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @hash   1558371343
-     * @vftbl  267
-     * @symbol  ?addAdditionalSaveData\@ItemActor\@\@MEBAXAEAVCompoundTag\@\@\@Z
+     * @vftbl 265
+     * @symbol ?addAdditionalSaveData\@ItemActor\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vftbl  270
-     * @symbol  __unk_vfn_270
+     * @vftbl 268
+     * @symbol __unk_vfn_268
      */
-    virtual void __unk_vfn_270();
+    virtual void __unk_vfn_268();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMACTOR
     /**
-     * @hash   1710858683
-     * @symbol  ?canMakeStepSound\@ItemActor\@\@UEBA_NXZ
+     * @symbol ?canMakeStepSound\@ItemActor\@\@UEBA_NXZ
      */
     MCVAPI bool canMakeStepSound() const;
 #endif
     /**
-     * @hash   2114863278
-     * @symbol  ??0ItemActor\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
+     * @symbol ??0ItemActor\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI ItemActor(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @hash   1386009147
-     * @symbol  ?postNormalTick\@ItemActor\@\@QEAAXXZ
+     * @symbol ?postNormalTick\@ItemActor\@\@QEAAXXZ
      */
     MCAPI void postNormalTick();
     /**
-     * @hash   1906381843
-     * @symbol  ?setSourceEntity\@ItemActor\@\@QEAAXPEBVActor\@\@\@Z
+     * @symbol ?setSourceEntity\@ItemActor\@\@QEAAXPEBVActor\@\@\@Z
      */
     MCAPI void setSourceEntity(class Actor const *);
     /**
-     * @hash   694083721
-     * @symbol  ?getLiquidAABB\@ItemActor\@\@SA?AVAABB\@\@AEBUAABBShapeComponent\@\@\@Z
+     * @symbol ?getLiquidAABB\@ItemActor\@\@SA?AVAABB\@\@AEBUAABBShapeComponent\@\@\@Z
      */
     MCAPI static class AABB getLiquidAABB(struct AABBShapeComponent const &);
     /**
-     * @hash   1441080952
-     * @symbol  ?tryGetFromEntity\@ItemActor\@\@SAPEAV1\@AEAVEntityContext\@\@_N\@Z
+     * @symbol ?tryGetFromEntity\@ItemActor\@\@SAPEAV1\@AEAVEntityContext\@\@_N\@Z
      */
     MCAPI static class ItemActor * tryGetFromEntity(class EntityContext &, bool);
 
 //private:
     /**
-     * @hash   393176610
-     * @symbol  ?_addComponents\@ItemActor\@\@AEAAXXZ
+     * @symbol ?_addComponents\@ItemActor\@\@AEAAXXZ
      */
     MCAPI void _addComponents();
     /**
-     * @hash   -321513886
-     * @symbol  ?_dropContents\@ItemActor\@\@AEAAXXZ
+     * @symbol ?_dropContents\@ItemActor\@\@AEAAXXZ
      */
     MCAPI void _dropContents();
     /**
-     * @hash   -44842007
-     * @symbol  ?_merge\@ItemActor\@\@AEAA_NPEAV1\@\@Z
+     * @symbol ?_merge\@ItemActor\@\@AEAA_NPEAV1\@\@Z
      */
     MCAPI bool _merge(class ItemActor *);
     /**
-     * @hash   1782447522
-     * @symbol  ?_validateItem\@ItemActor\@\@AEAAXXZ
+     * @symbol ?_validateItem\@ItemActor\@\@AEAAXXZ
      */
     MCAPI void _validateItem();
 
 private:
     /**
-     * @hash   1581500431
-     * @symbol  ?LIFETIME\@ItemActor\@\@0HB
+     * @symbol ?LIFETIME\@ItemActor\@\@0HB
      */
     MCAPI static int const LIFETIME;
 

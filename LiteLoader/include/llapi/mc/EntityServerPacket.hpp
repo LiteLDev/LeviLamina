@@ -30,31 +30,33 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~EntityServerPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   504064762
-     * @vftbl  3
-     * @symbol  ?write\@EntityServerPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@EntityServerPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @hash   846995043
-     * @vftbl  6
-     * @symbol  ?_read\@EntityServerPacket\@\@MEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@EntityServerPacket\@\@MEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSERVERPACKET
     /**
-     * @hash   370954010
-     * @symbol  ??0EntityServerPacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI EntityServerPacket();
+    MCVAPI ~EntityServerPacket();
+#endif
     /**
-     * @hash   1191201635
-     * @symbol  ??0EntityServerPacket\@\@QEAA\@AEBVEntityContext\@\@\@Z
+     * @symbol ??0EntityServerPacket\@\@QEAA\@AEBVEntityContext\@\@\@Z
      */
     MCAPI EntityServerPacket(class EntityContext const &);
+    /**
+     * @symbol ??0EntityServerPacket\@\@QEAA\@XZ
+     */
+    MCAPI EntityServerPacket();
 
 };

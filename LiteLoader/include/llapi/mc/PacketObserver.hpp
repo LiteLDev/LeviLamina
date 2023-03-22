@@ -30,49 +30,44 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~PacketObserver();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1527944927
-     * @vftbl  1
-     * @symbol  ?packetSentTo\@PacketObserver\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVPacket\@\@I\@Z
+     * @vftbl 1
+     * @symbol ?packetSentTo\@PacketObserver\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVPacket\@\@I\@Z
      */
     virtual void packetSentTo(class NetworkIdentifier const &, class Packet const &, unsigned int);
     /**
-     * @hash   -517675081
-     * @vftbl  2
-     * @symbol  ?packetReceivedFrom\@PacketObserver\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVPacket\@\@I\@Z
+     * @vftbl 2
+     * @symbol ?packetReceivedFrom\@PacketObserver\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVPacket\@\@I\@Z
      */
     virtual void packetReceivedFrom(class NetworkIdentifier const &, class Packet const &, unsigned int);
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  __unk_vfn_4
+     * @vftbl 4
+     * @symbol __unk_vfn_4
      */
     virtual void __unk_vfn_4();
     /**
-     * @hash   -949294088
-     * @vftbl  5
-     * @symbol  ?reset\@PacketObserver\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?reset\@PacketObserver\@\@UEAAXXZ
      */
     virtual void reset();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKETOBSERVER
     /**
-     * @hash   -1031730440
-     * @symbol  ?dataReceivedFrom\@PacketObserver\@\@UEAAXAEBVNetworkIdentifier\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?dataReceivedFrom\@PacketObserver\@\@UEAAXAEBVNetworkIdentifier\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCVAPI void dataReceivedFrom(class NetworkIdentifier const &, std::string const &);
     /**
-     * @hash   -1179223417
-     * @symbol  ?dataSentTo\@PacketObserver\@\@UEAAXAEBVNetworkIdentifier\@\@V?$basic_string_span\@$$CBD$0?0\@gsl\@\@\@Z
+     * @symbol ?dataSentTo\@PacketObserver\@\@UEAAXAEBVNetworkIdentifier\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCVAPI void dataSentTo(class NetworkIdentifier const &, class gsl::basic_string_span<char const, -1>);
+    MCVAPI void dataSentTo(class NetworkIdentifier const &, class std::basic_string_view<char, struct std::char_traits<char>>);
 #endif
 
 };

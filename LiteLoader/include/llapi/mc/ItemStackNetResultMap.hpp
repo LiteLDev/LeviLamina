@@ -34,8 +34,7 @@ public:
 
 public:
     /**
-     * @hash   1478700573
-     * @symbol  ?getItemStackNetResultName\@ItemStackNetResultMap\@\@SAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ItemStackNetResult\@\@\@Z
+     * @symbol ?getItemStackNetResultName\@ItemStackNetResultMap\@\@SAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ItemStackNetResult\@\@\@Z
      */
     MCAPI static std::string const & getItemStackNetResultName(enum class ItemStackNetResult);
 
@@ -43,8 +42,7 @@ public:
 
 private:
     /**
-     * @hash   1850166650
-     * @symbol  ?mMap\@ItemStackNetResultMap\@\@0V?$BidirectionalUnorderedMap\@W4ItemStackNetResult\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@\@B
+     * @symbol ?mMap\@ItemStackNetResultMap\@\@0V?$BidirectionalUnorderedMap\@W4ItemStackNetResult\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@\@B
      */
     MCAPI static class BidirectionalUnorderedMap<enum class ItemStackNetResult, std::string> const mMap;
 

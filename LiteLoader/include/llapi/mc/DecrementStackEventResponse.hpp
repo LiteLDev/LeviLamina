@@ -31,31 +31,27 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~DecrementStackEventResponse();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -595292877
-     * @vftbl  1
-     * @symbol  ?getName\@DecrementStackEventResponse\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 1
+     * @symbol ?getName\@DecrementStackEventResponse\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string const & getName() const;
     /**
-     * @hash   761097147
-     * @vftbl  2
-     * @symbol  ?executeAction\@DecrementStackEventResponse\@\@UEBAXAEAVRenderParams\@\@\@Z
+     * @vftbl 2
+     * @symbol ?executeAction\@DecrementStackEventResponse\@\@UEBAXAEAVRenderParams\@\@\@Z
      */
     virtual void executeAction(class RenderParams &) const;
     /**
-     * @hash   1742917025
-     * @vftbl  3
-     * @symbol  ?buildSchema\@DecrementStackEventResponse\@\@UEBAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UEventResponseCollection\@\@\@JsonUtil\@\@\@std\@\@AEBV?$Factory\@VEventResponse\@\@$$V\@\@\@Z
+     * @vftbl 3
+     * @symbol ?buildSchema\@DecrementStackEventResponse\@\@UEBAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UEventResponseCollection\@\@\@JsonUtil\@\@\@std\@\@AEBV?$Factory\@VEventResponse\@\@$$V\@\@\@Z
      */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> &, class Factory<class EventResponse> const &) const;
     /**
-     * @hash   -1649279447
-     * @symbol  ?NameID\@DecrementStackEventResponse\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?NameID\@DecrementStackEventResponse\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NameID;
 

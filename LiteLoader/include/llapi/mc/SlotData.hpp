@@ -29,18 +29,15 @@ public:
 
 public:
     /**
-     * @hash   1980436436
-     * @symbol  ??0SlotData\@\@QEAA\@XZ
+     * @symbol ??0SlotData\@\@QEAA\@XZ
      */
     MCAPI SlotData();
     /**
-     * @hash   482655042
-     * @symbol  ??1SlotData\@\@QEAA\@XZ
+     * @symbol ??1SlotData\@\@QEAA\@XZ
      */
     MCAPI ~SlotData();
     /**
-     * @hash   662753954
-     * @symbol  ?UNKNOWN_LOCATION\@SlotData\@\@2U1\@A
+     * @symbol ?UNKNOWN_LOCATION\@SlotData\@\@2U1\@A
      */
     MCAPI static struct SlotData UNKNOWN_LOCATION;
 

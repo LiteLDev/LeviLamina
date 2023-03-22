@@ -31,27 +31,24 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~MegaTreeTrunk();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   424814384
-     * @vftbl  1
-     * @symbol  ?placeTrunk\@MegaTreeTrunk\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@HAEAVRenderParams\@\@AEBUTreeParams\@TreeHelper\@\@PEBVITreeCanopy\@\@\@Z
+     * @vftbl 1
+     * @symbol ?placeTrunk\@MegaTreeTrunk\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@HAEAVRenderParams\@\@AEBUTreeParams\@TreeHelper\@\@PEBVITreeCanopy\@\@\@Z
      */
     virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, int, class RenderParams &, struct TreeHelper::TreeParams const &, class ITreeCanopy const *) const;
     /**
-     * @hash   -1857327619
-     * @vftbl  2
-     * @symbol  ?getTreeHeight\@MegaTreeTrunk\@\@UEBAHAEAVRandom\@\@\@Z
+     * @vftbl 2
+     * @symbol ?getTreeHeight\@MegaTreeTrunk\@\@UEBAHAEAVRandom\@\@\@Z
      */
     virtual int getTreeHeight(class Random &) const;
 
 //private:
     /**
-     * @hash   -1387778503
-     * @symbol  ?_prepareSpawn\@MegaTreeTrunk\@\@AEBA_NAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@HAEBUTreeParams\@TreeHelper\@\@\@Z
+     * @symbol ?_prepareSpawn\@MegaTreeTrunk\@\@AEBA_NAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@HAEBUTreeParams\@TreeHelper\@\@\@Z
      */
     MCAPI bool _prepareSpawn(class IBlockWorldGenAPI &, class BlockPos const &, int, struct TreeHelper::TreeParams const &) const;
 

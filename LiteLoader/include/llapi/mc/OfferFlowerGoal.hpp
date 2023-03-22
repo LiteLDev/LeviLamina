@@ -30,59 +30,51 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~OfferFlowerGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1757074742
-     * @vftbl  1
-     * @symbol  ?canUse\@OfferFlowerGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@OfferFlowerGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   -1797092172
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@OfferFlowerGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@OfferFlowerGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   -2043940769
-     * @vftbl  4
-     * @symbol  ?start\@OfferFlowerGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@OfferFlowerGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   -1154604913
-     * @vftbl  5
-     * @symbol  ?stop\@OfferFlowerGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@OfferFlowerGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @hash   -1315781078
-     * @vftbl  6
-     * @symbol  ?tick\@OfferFlowerGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@OfferFlowerGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   267025850
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@OfferFlowerGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@OfferFlowerGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   950956403
-     * @symbol  ??0OfferFlowerGoal\@\@QEAA\@AEAVMob\@\@\@Z
+     * @symbol ??0OfferFlowerGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI OfferFlowerGoal(class Mob &);
     /**
-     * @hash   581777240
-     * @symbol  ?getMaxOfferFlowerDurationTicks\@OfferFlowerGoal\@\@QEBAHXZ
+     * @symbol ?getMaxOfferFlowerDurationTicks\@OfferFlowerGoal\@\@QEBAHXZ
      */
     MCAPI int getMaxOfferFlowerDurationTicks() const;
 

@@ -28,9 +28,14 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFILEACCESS
     /**
-     * @hash   -2132945979
-     * @symbol  ??0IFileAccess\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~IFileAccess();
+#endif
+    /**
+     * @symbol ??0IFileAccess\@\@QEAA\@XZ
      */
     MCAPI IFileAccess();
 

@@ -28,28 +28,32 @@ public:
 
 public:
     /**
-     * @hash   -1223049943
-     * @symbol  ??1CommandResponseBase\@\@QEAA\@XZ
+     * @symbol ??1CommandResponseBase\@\@QEAA\@XZ
      */
     MCAPI ~CommandResponseBase();
     /**
-     * @hash   279823883
-     * @symbol  ?NameID\@CommandResponseBase\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?NameID\@CommandResponseBase\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NameID;
 
 //protected:
     /**
-     * @hash   -1195764659
-     * @symbol  ?_addCommand\@CommandResponseBase\@\@IEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?_addCommand\@CommandResponseBase\@\@IEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void _addCommand(std::string const &);
     /**
-     * @hash   1098278909
-     * @symbol  ?_executeAction\@CommandResponseBase\@\@IEBAXAEAVRenderParams\@\@\@Z
+     * @symbol ?_executeAction\@CommandResponseBase\@\@IEBAXAEAVRenderParams\@\@\@Z
      */
     MCAPI void _executeAction(class RenderParams &) const;
 
+//private:
+    /**
+     * @symbol ?_compileCommands\@CommandResponseBase\@\@AEBAXAEAVLevel\@\@\@Z
+     */
+    MCAPI void _compileCommands(class Level &) const;
+
 protected:
+
+private:
 
 };

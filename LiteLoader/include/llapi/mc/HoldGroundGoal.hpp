@@ -30,54 +30,47 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~HoldGroundGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1443145047
-     * @vftbl  1
-     * @symbol  ?canUse\@HoldGroundGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@HoldGroundGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   1500709125
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@HoldGroundGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@HoldGroundGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   34562176
-     * @vftbl  4
-     * @symbol  ?start\@HoldGroundGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@HoldGroundGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   1290024448
-     * @vftbl  5
-     * @symbol  ?stop\@HoldGroundGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@HoldGroundGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @hash   1084788859
-     * @vftbl  6
-     * @symbol  ?tick\@HoldGroundGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@HoldGroundGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -489963159
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@HoldGroundGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@HoldGroundGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   -640221308
-     * @symbol  ??0HoldGroundGoal\@\@QEAA\@AEAVMob\@\@M_NMAEBVActorDefinitionTrigger\@\@\@Z
+     * @symbol ??0HoldGroundGoal\@\@QEAA\@AEAVMob\@\@M_NMAEBVActorDefinitionTrigger\@\@\@Z
      */
     MCAPI HoldGroundGoal(class Mob &, float, bool, float, class ActorDefinitionTrigger const &);
 

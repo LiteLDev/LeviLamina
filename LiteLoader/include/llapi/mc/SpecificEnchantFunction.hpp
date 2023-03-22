@@ -32,32 +32,28 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SpecificEnchantFunction();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -2015593285
-     * @vftbl  1
-     * @symbol  ?apply\@SpecificEnchantFunction\@\@UEAAXAEAVItemStack\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
+     * @vftbl 1
+     * @symbol ?apply\@SpecificEnchantFunction\@\@UEAAXAEAVItemStack\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
     virtual void apply(class ItemStack &, class Random &, class LootTableContext &);
     /**
-     * @hash   -1981185168
-     * @vftbl  3
-     * @symbol  ?apply\@SpecificEnchantFunction\@\@UEAAXAEAVItemInstance\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
+     * @vftbl 3
+     * @symbol ?apply\@SpecificEnchantFunction\@\@UEAAXAEAVItemInstance\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
     virtual void apply(class ItemInstance &, class Random &, class LootTableContext &);
     /**
-     * @hash   -1157537649
-     * @symbol  ?deserialize\@SpecificEnchantFunction\@\@SA?AV?$unique_ptr\@VLootItemFunction\@\@U?$default_delete\@VLootItemFunction\@\@\@std\@\@\@std\@\@VValue\@Json\@\@AEAV?$vector\@V?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@\@2\@\@3\@\@Z
+     * @symbol ?deserialize\@SpecificEnchantFunction\@\@SA?AV?$unique_ptr\@VLootItemFunction\@\@U?$default_delete\@VLootItemFunction\@\@\@std\@\@\@std\@\@VValue\@Json\@\@AEAV?$vector\@V?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@\@2\@\@3\@\@Z
      */
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>> &);
 
 //private:
     /**
-     * @hash   -1329717624
-     * @symbol  ?_applyInner\@SpecificEnchantFunction\@\@AEAAXAEAVItemStackBase\@\@AEAVRandom\@\@AEAVLootTableContext\@\@_N\@Z
+     * @symbol ?_applyInner\@SpecificEnchantFunction\@\@AEAAXAEAVItemStackBase\@\@AEAVRandom\@\@AEAVLootTableContext\@\@_N\@Z
      */
     MCAPI void _applyInner(class ItemStackBase &, class Random &, class LootTableContext &, bool);
 

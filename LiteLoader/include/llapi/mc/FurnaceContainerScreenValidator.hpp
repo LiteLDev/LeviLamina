@@ -30,19 +30,23 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~FurnaceContainerScreenValidator();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -1006404932
-     * @vftbl  1
-     * @symbol  ?postCommitItemRemoved\@FurnaceContainerScreenValidator\@\@UEAA?AV?$shared_ptr\@VContainerValidationCommitObject\@\@\@std\@\@W4ContainerEnumName\@\@HAEBVItemStack\@\@\@Z
+     * @vftbl 1
+     * @symbol ?postCommitItemRemoved\@FurnaceContainerScreenValidator\@\@UEAA?AV?$shared_ptr\@VContainerValidationCommitObject\@\@\@std\@\@W4ContainerEnumName\@\@HAEBVItemStack\@\@\@Z
      */
     virtual class std::shared_ptr<class ContainerValidationCommitObject> postCommitItemRemoved(enum class ContainerEnumName, int, class ItemStack const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FURNACECONTAINERSCREENVALIDATOR
     /**
-     * @hash   -1366755671
-     * @symbol  ??0FurnaceContainerScreenValidator\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~FurnaceContainerScreenValidator();
+#endif
+    /**
+     * @symbol ??0FurnaceContainerScreenValidator\@\@QEAA\@XZ
      */
     MCAPI FurnaceContainerScreenValidator();
 

@@ -11,11 +11,8 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC structure EDUWorldsScreenCapabilities.
- *
- */
-struct EDUWorldsScreenCapabilities {
+
+class EDUWorldsScreenCapabilities {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -23,21 +20,20 @@ struct EDUWorldsScreenCapabilities {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDUWORLDSSCREENCAPABILITIES
 public:
-    struct EDUWorldsScreenCapabilities& operator=(struct EDUWorldsScreenCapabilities const &) = delete;
-    EDUWorldsScreenCapabilities(struct EDUWorldsScreenCapabilities const &) = delete;
+    class EDUWorldsScreenCapabilities& operator=(class EDUWorldsScreenCapabilities const &) = delete;
+    EDUWorldsScreenCapabilities(class EDUWorldsScreenCapabilities const &) = delete;
     EDUWorldsScreenCapabilities() = delete;
 #endif
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~EDUWorldsScreenCapabilities();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   296047698
-     * @vftbl  1
-     * @symbol  ?isOfType\@?$TypedScreenCapabilities\@UEDUWorldsScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
+     * @vftbl 1
+     * @symbol ?isOfType\@?$TypedScreenCapabilities\@UEDUWorldsScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
      */
     virtual bool isOfType(class typeid_t<class IScreenCapabilities>) const;
 

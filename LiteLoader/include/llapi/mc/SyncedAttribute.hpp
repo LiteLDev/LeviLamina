@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1SyncedAttribute\@\@QEAA\@XZ
+     * @symbol ??1SyncedAttribute\@\@QEAA\@XZ
      */
     MCAPI ~SyncedAttribute();
 

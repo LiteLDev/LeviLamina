@@ -30,38 +30,31 @@ public:
 
 public:
     /**
-     * @hash   447988503
-     * @symbol  ??0BlockStateGroup\@\@QEAA\@XZ
+     * @symbol ??0BlockStateGroup\@\@QEAA\@XZ
      */
     MCAPI BlockStateGroup();
     /**
-     * @hash   982127514
-     * @symbol  ?getBlockStateFromHash\@BlockStateGroup\@\@QEBAPEBVBlockStateMeta\@\@AEB_K\@Z
+     * @symbol ?getBlockStateFromHash\@BlockStateGroup\@\@QEBAPEBVBlockStateMeta\@\@AEB_K\@Z
      */
     MCAPI class BlockStateMeta const * getBlockStateFromHash(unsigned __int64 const &) const;
     /**
-     * @hash   -1109488334
-     * @symbol  ?getBlockStateFromName\@BlockStateGroup\@\@QEBAPEBVBlockStateMeta\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?getBlockStateFromName\@BlockStateGroup\@\@QEBAPEBVBlockStateMeta\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class BlockStateMeta const * getBlockStateFromName(std::string const &) const;
     /**
-     * @hash   -923239810
-     * @symbol  ?registerBlockStateDefinition\@BlockStateGroup\@\@QEAAXAEBUBlockStateDefinition\@\@\@Z
+     * @symbol ?registerBlockStateDefinition\@BlockStateGroup\@\@QEAAXAEBUBlockStateDefinition\@\@\@Z
      */
     MCAPI void registerBlockStateDefinition(struct BlockStateDefinition const &);
     /**
-     * @hash   -1269851606
-     * @symbol  ?registerToBlock\@BlockStateGroup\@\@QEAAXAEAVBlockLegacy\@\@\@Z
+     * @symbol ?registerToBlock\@BlockStateGroup\@\@QEAAXAEAVBlockLegacy\@\@\@Z
      */
     MCAPI void registerToBlock(class BlockLegacy &);
     /**
-     * @hash   410891321
-     * @symbol  ?MAX_ENUM_SIZE\@BlockStateGroup\@\@2HB
+     * @symbol ?MAX_ENUM_SIZE\@BlockStateGroup\@\@2HB
      */
     MCAPI static int const MAX_ENUM_SIZE;
     /**
-     * @hash   1341550587
-     * @symbol  ?loadBlockStateFromJson\@BlockStateGroup\@\@SA_NAEAUBlockStateDefinition\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVValue\@Json\@\@\@Z
+     * @symbol ?loadBlockStateFromJson\@BlockStateGroup\@\@SA_NAEAUBlockStateDefinition\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVValue\@Json\@\@\@Z
      */
     MCAPI static bool loadBlockStateFromJson(struct BlockStateDefinition &, std::string const &, class Json::Value const &);
 

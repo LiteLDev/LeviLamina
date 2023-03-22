@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   293330652
-     * @symbol  ?createFlySpeedControlSystem\@FlySpeedControlSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createFlySpeedControlSystem\@FlySpeedControlSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createFlySpeedControlSystem();
 

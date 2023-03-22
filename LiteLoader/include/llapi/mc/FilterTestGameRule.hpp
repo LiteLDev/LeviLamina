@@ -32,33 +32,35 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~FilterTestGameRule();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1130532514
-     * @vftbl  1
-     * @symbol  ?setup\@FilterTestGameRule\@\@UEAA_NAEBUDefinition\@FilterTest\@\@AEBUFilterInputs\@\@\@Z
+     * @vftbl 1
+     * @symbol ?setup\@FilterTestGameRule\@\@UEAA_NAEBUDefinition\@FilterTest\@\@AEBUFilterInputs\@\@\@Z
      */
     virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
     /**
-     * @hash   1245297210
-     * @vftbl  2
-     * @symbol  ?evaluate\@FilterTestGameRule\@\@UEBA_NAEBUFilterContext\@\@\@Z
+     * @vftbl 2
+     * @symbol ?evaluate\@FilterTestGameRule\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const;
     /**
-     * @hash   832247416
-     * @vftbl  4
-     * @symbol  ?getName\@FilterTestGameRule\@\@UEBA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@XZ
+     * @vftbl 4
+     * @symbol ?getName\@FilterTestGameRule\@\@UEBA?AV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@XZ
      */
-    virtual class gsl::basic_string_span<char const, -1> getName() const;
+    virtual class std::basic_string_view<char, struct std::char_traits<char>> getName() const;
     /**
-     * @hash   1258998823
-     * @vftbl  6
-     * @symbol  ?_serializeValue\@FilterTestGameRule\@\@MEBA?AVValue\@Json\@\@XZ
+     * @vftbl 6
+     * @symbol ?_serializeValue\@FilterTestGameRule\@\@MEBA?AVValue\@Json\@\@XZ
      */
     virtual class Json::Value _serializeValue() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTGAMERULE
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~FilterTestGameRule();
+#endif
 
 };

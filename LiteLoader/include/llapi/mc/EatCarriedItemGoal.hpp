@@ -30,54 +30,47 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~EatCarriedItemGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   -150038344
-     * @vftbl  1
-     * @symbol  ?canUse\@EatCarriedItemGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@EatCarriedItemGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   2127414438
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@EatCarriedItemGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@EatCarriedItemGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   993601377
-     * @vftbl  4
-     * @symbol  ?start\@EatCarriedItemGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@EatCarriedItemGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   -2046009647
-     * @vftbl  5
-     * @symbol  ?stop\@EatCarriedItemGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@EatCarriedItemGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @hash   72186492
-     * @vftbl  6
-     * @symbol  ?tick\@EatCarriedItemGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@EatCarriedItemGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -1642792344
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@EatCarriedItemGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@EatCarriedItemGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @hash   -677399234
-     * @symbol  ??0EatCarriedItemGoal\@\@QEAA\@AEAVMob\@\@H\@Z
+     * @symbol ??0EatCarriedItemGoal\@\@QEAA\@AEAVMob\@\@H\@Z
      */
     MCAPI EatCarriedItemGoal(class Mob &, int);
 
@@ -85,13 +78,11 @@ public:
 
 private:
     /**
-     * @hash   -1014319344
-     * @symbol  ?CHEW_CHANCE\@EatCarriedItemGoal\@\@0HB
+     * @symbol ?CHEW_CHANCE\@EatCarriedItemGoal\@\@0HB
      */
     MCAPI static int const CHEW_CHANCE;
     /**
-     * @hash   -875820654
-     * @symbol  ?EATING_TIME\@EatCarriedItemGoal\@\@0HB
+     * @symbol ?EATING_TIME\@EatCarriedItemGoal\@\@0HB
      */
     MCAPI static int const EATING_TIME;
 

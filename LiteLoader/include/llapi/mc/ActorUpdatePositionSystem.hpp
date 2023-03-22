@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   652587744
-     * @symbol  ?createActorUpdatePositionSystem\@ActorUpdatePositionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createActorUpdatePositionSystem\@ActorUpdatePositionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createActorUpdatePositionSystem();
 

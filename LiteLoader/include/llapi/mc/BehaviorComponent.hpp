@@ -29,23 +29,19 @@ public:
 
 public:
     /**
-     * @hash   -580644457
-     * @symbol  ??0BehaviorComponent\@\@QEAA\@XZ
-     */
-    MCAPI BehaviorComponent();
-    /**
-     * @hash   1142750287
-     * @symbol  ??0BehaviorComponent\@\@QEAA\@$$QEAV0\@\@Z
+     * @symbol ??0BehaviorComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI BehaviorComponent(class BehaviorComponent &&);
     /**
-     * @hash   -1555665750
-     * @symbol  ??4BehaviorComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     * @symbol ??0BehaviorComponent\@\@QEAA\@XZ
+     */
+    MCAPI BehaviorComponent();
+    /**
+     * @symbol ??4BehaviorComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class BehaviorComponent & operator=(class BehaviorComponent &&);
     /**
-     * @hash   -696036329
-     * @symbol  ??1BehaviorComponent\@\@QEAA\@XZ
+     * @symbol ??1BehaviorComponent\@\@QEAA\@XZ
      */
     MCAPI ~BehaviorComponent();
 

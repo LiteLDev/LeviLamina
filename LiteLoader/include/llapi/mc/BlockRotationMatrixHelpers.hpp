@@ -17,7 +17,7 @@ namespace BlockRotationMatrixHelpers {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?bakeRotationMatrix\@BlockRotationMatrixHelpers\@\@YA?BVMatrix\@\@HHH\@Z
+     * @symbol ?bakeRotationMatrix\@BlockRotationMatrixHelpers\@\@YA?BVMatrix\@\@HHH\@Z
      */
     MCAPI class Matrix const bakeRotationMatrix(int, int, int);
 

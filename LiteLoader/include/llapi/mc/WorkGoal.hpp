@@ -31,94 +31,88 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~WorkGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @hash   1033821708
-     * @vftbl  1
-     * @symbol  ?canUse\@WorkGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@WorkGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @hash   -879485462
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@WorkGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@WorkGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @hash   -237952667
-     * @vftbl  4
-     * @symbol  ?start\@WorkGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@WorkGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @hash   1895345477
-     * @vftbl  5
-     * @symbol  ?stop\@WorkGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@WorkGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @hash   -10499632
-     * @vftbl  6
-     * @symbol  ?tick\@WorkGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@WorkGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @hash   -1087479948
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@WorkGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@WorkGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @vftbl  8
-     * @symbol  __unk_vfn_8
+     * @vftbl 8
+     * @symbol __unk_vfn_8
      */
     virtual void __unk_vfn_8();
     /**
-     * @vftbl  9
-     * @symbol  __unk_vfn_9
+     * @vftbl 9
+     * @symbol __unk_vfn_9
      */
     virtual void __unk_vfn_9();
     /**
-     * @hash   -234739361
-     * @vftbl  18
-     * @symbol  ?useWorkstation\@WorkGoal\@\@UEAAXXZ
+     * @vftbl 18
+     * @symbol ?useWorkstation\@WorkGoal\@\@UEAAXXZ
      */
     virtual void useWorkstation();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKGOAL
     /**
-     * @hash   79944361
-     * @symbol  ??0WorkGoal\@\@QEAA\@AEAVMob\@\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~WorkGoal();
+#endif
+    /**
+     * @symbol ??0WorkGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI WorkGoal(class Mob &);
     /**
-     * @hash   -184102879
-     * @symbol  ?playPOISoundEvent\@WorkGoal\@\@QEBAXXZ
+     * @symbol ?playPOISoundEvent\@WorkGoal\@\@QEBAXXZ
      */
     MCAPI void playPOISoundEvent() const;
 
 //private:
     /**
-     * @hash   -1863900225
-     * @symbol  ?_isInsideOrIsNotRaining\@WorkGoal\@\@AEAA_NXZ
+     * @symbol ?_isInsideOrIsNotRaining\@WorkGoal\@\@AEAA_NXZ
      */
     MCAPI bool _isInsideOrIsNotRaining();
 
 private:
     /**
-     * @hash   1934465980
-     * @symbol  ?RAIN_CHECK_MAX_COOLDOWN\@WorkGoal\@\@0HB
+     * @symbol ?RAIN_CHECK_MAX_COOLDOWN\@WorkGoal\@\@0HB
      */
     MCAPI static int const RAIN_CHECK_MAX_COOLDOWN;
     /**
-     * @hash   -2095659014
-     * @symbol  ?WORK_TIMESTAMP_UPDATE_INVERVAL\@WorkGoal\@\@0HB
+     * @symbol ?WORK_TIMESTAMP_UPDATE_INVERVAL\@WorkGoal\@\@0HB
      */
     MCAPI static int const WORK_TIMESTAMP_UPDATE_INVERVAL;
 

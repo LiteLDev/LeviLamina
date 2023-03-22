@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   1164365936
-     * @symbol  ?createSystem\@DashSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@DashSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

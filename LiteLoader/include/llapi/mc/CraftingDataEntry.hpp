@@ -30,23 +30,19 @@ public:
 
 public:
     /**
-     * @hash   -1578616002
-     * @symbol  ?fillFromMultiRecipe\@CraftingDataEntry\@\@QEAAXAEBVMultiRecipe\@\@\@Z
+     * @symbol ?fillFromMultiRecipe\@CraftingDataEntry\@\@QEAAXAEBVMultiRecipe\@\@\@Z
      */
     MCAPI void fillFromMultiRecipe(class MultiRecipe const &);
     /**
-     * @hash   542117752
-     * @symbol  ?fillFromRecipe\@CraftingDataEntry\@\@QEAAXAEBVRecipe\@\@\@Z
+     * @symbol ?fillFromRecipe\@CraftingDataEntry\@\@QEAAXAEBVRecipe\@\@\@Z
      */
     MCAPI void fillFromRecipe(class Recipe const &);
     /**
-     * @hash   -241394140
-     * @symbol  ?write\@CraftingDataEntry\@\@QEBAXAEAVBinaryStream\@\@\@Z
+     * @symbol ?write\@CraftingDataEntry\@\@QEBAXAEAVBinaryStream\@\@\@Z
      */
     MCAPI void write(class BinaryStream &) const;
     /**
-     * @hash   -631414846
-     * @symbol  ??1CraftingDataEntry\@\@QEAA\@XZ
+     * @symbol ??1CraftingDataEntry\@\@QEAA\@XZ
      */
     MCAPI ~CraftingDataEntry();
 

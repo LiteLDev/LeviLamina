@@ -27,6 +27,13 @@
           "1": "La versione del protocollo non corrisponde, versione di destinazione: {}, versione corrente: {}.",
           "2": "Questo probabilmente crasherà il server, si prega di usare la versione di LiteLoader che corrisponde alla versione del BDS!"
         }
+      },
+      "bstats": {
+        "enabled": "bStats has been enabled, you can edit plugins/bStats/config.json to disable it"
+      },
+      "unpackResources": {
+        "begin": "Unpacking LiteLoaderBDS runtime resources. Please wait patiently...",
+        "end": "Unpacked."
       }
     },
     "antiAbnormalItem": {
@@ -212,6 +219,9 @@
       },
       "initNodeJsDirectories": {
         "created": "Cartella del runtime Node.js non trovata, creata una nuova cartella."
+      },
+      "initPythonDirectories": {
+        "created": "Python runtime directory no found, created."
       }
     },
     "notice": {
@@ -238,6 +248,9 @@
     },
     "unzipNodeModules": {
       "fail": "Impossibile decomprimere node_modules.tar"
+    },
+    "unzipPythonModules": {
+      "fail": "Failed to unzip python-env.zip"
     }
   },
   "llse": {
@@ -281,6 +294,13 @@
         "loadedPlugin": "Plugin {type} <{name}> caricato.",
         "installPluginPack": {
           "done": "{count} pacchetti plugin {type} installati."
+        },
+        "python": {
+          "ignored": "No pyproject.toml file found in directory {path}, ignored.",
+          "installPack": {
+            "start": "Found Python plugin pack \"{path}\"! Try installing...",
+            "fail": "Failed to install plugin pack {}, please check the source files!"
+          }
         }
       },
       "nodejs": {
@@ -291,6 +311,13 @@
         },
         "register": {
           "fail": "Impossibile aiutare il plugin {name} a registrarsi!"
+        }
+      },
+      "python": {
+        "executePipInstall": {
+          "start": "Executing \"pip install\" for plugin {name}...",
+          "success": "Pip finished successfully.",
+          "fail": "Error occurred. Exit code: {code}"
         }
       }
     }

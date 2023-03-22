@@ -28,8 +28,7 @@ public:
 
 public:
     /**
-     * @hash   2069875357
-     * @symbol  ??1LevelDataValue\@\@QEAA\@XZ
+     * @symbol ??1LevelDataValue\@\@QEAA\@XZ
      */
     MCAPI ~LevelDataValue();
 

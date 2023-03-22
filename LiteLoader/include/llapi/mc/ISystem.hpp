@@ -31,8 +31,7 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISYSTEM
     /**
-     * @hash   933948356
-     * @symbol  ?registerEvents\@ISystem\@\@UEAAXAEAV?$basic_dispatcher\@V?$allocator\@X\@std\@\@\@entt\@\@\@Z
+     * @symbol ?registerEvents\@ISystem\@\@UEAAXAEAV?$basic_dispatcher\@V?$allocator\@X\@std\@\@\@entt\@\@\@Z
      */
     MCVAPI void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
 #endif
