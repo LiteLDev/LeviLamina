@@ -58,14 +58,6 @@ public:
      */
     MCAPI ItemInstance(class std::basic_string_view<char, struct std::char_traits<char>>, int, int, class CompoundTag const *);
     /**
-     * @symbol ??0ItemInstance\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI ItemInstance(class ItemInstance const &);
-    /**
-     * @symbol ??0ItemInstance\@\@QEAA\@AEBVItemStackBase\@\@\@Z
-     */
-    MCAPI ItemInstance(class ItemStackBase const &);
-    /**
      * @symbol ??0ItemInstance\@\@QEAA\@AEBVBlock\@\@HPEBVCompoundTag\@\@\@Z
      */
     MCAPI ItemInstance(class Block const &, int, class CompoundTag const *);
@@ -77,6 +69,14 @@ public:
      * @symbol ??0ItemInstance\@\@QEAA\@AEBVItem\@\@HHPEBVCompoundTag\@\@\@Z
      */
     MCAPI ItemInstance(class Item const &, int, int, class CompoundTag const *);
+    /**
+     * @symbol ??0ItemInstance\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI ItemInstance(class ItemInstance const &);
+    /**
+     * @symbol ??0ItemInstance\@\@QEAA\@AEBVItemStackBase\@\@\@Z
+     */
+    MCAPI ItemInstance(class ItemStackBase const &);
     /**
      * @symbol ?clone\@ItemInstance\@\@QEBA?AV1\@XZ
      */

@@ -66,7 +66,7 @@ public:
      */
     virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?_read\@PlayerListPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);

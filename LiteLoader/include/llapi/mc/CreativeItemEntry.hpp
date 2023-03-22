@@ -30,13 +30,13 @@ public:
 
 public:
     /**
-     * @symbol ??0CreativeItemEntry\@\@QEAA\@PEAVCreativeItemRegistry\@\@AEBV?$TypedServerNetId\@UCreativeItemNetIdTag\@\@I$0A\@\@\@AEBVItemInstance\@\@I\@Z
-     */
-    MCAPI CreativeItemEntry(class CreativeItemRegistry *, class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const &, class ItemInstance const &, unsigned int);
-    /**
      * @symbol ??0CreativeItemEntry\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI CreativeItemEntry(class CreativeItemEntry &&);
+    /**
+     * @symbol ??0CreativeItemEntry\@\@QEAA\@PEAVCreativeItemRegistry\@\@AEBV?$TypedServerNetId\@UCreativeItemNetIdTag\@\@I$0A\@\@\@AEBVItemInstance\@\@I\@Z
+     */
+    MCAPI CreativeItemEntry(class CreativeItemRegistry *, class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const &, class ItemInstance const &, unsigned int);
     /**
      * @symbol ?getCreativeNetId\@CreativeItemEntry\@\@QEBAAEBV?$TypedServerNetId\@UCreativeItemNetIdTag\@\@I$0A\@\@\@XZ
      */

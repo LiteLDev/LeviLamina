@@ -48,7 +48,7 @@ public:
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?_read\@RequestAbilityPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
@@ -59,13 +59,13 @@ public:
     MCVAPI ~RequestAbilityPacket();
 #endif
     /**
-     * @symbol ??0RequestAbilityPacket\@\@QEAA\@XZ
-     */
-    MCAPI RequestAbilityPacket();
-    /**
      * @symbol ??0RequestAbilityPacket\@\@QEAA\@W4AbilitiesIndex\@\@_N\@Z
      */
     MCAPI RequestAbilityPacket(enum class AbilitiesIndex, bool);
+    /**
+     * @symbol ??0RequestAbilityPacket\@\@QEAA\@XZ
+     */
+    MCAPI RequestAbilityPacket();
     /**
      * @symbol ?getAbility\@RequestAbilityPacket\@\@QEBA?AW4AbilitiesIndex\@\@XZ
      */

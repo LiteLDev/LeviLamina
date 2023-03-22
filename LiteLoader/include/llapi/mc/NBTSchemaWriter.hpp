@@ -130,6 +130,14 @@ public:
      */
     MCVAPI bool write(__int64);
     /**
+     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NH\@Z
+     */
+    MCVAPI bool write(int);
+    /**
+     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NI\@Z
+     */
+    MCVAPI bool write(unsigned int);
+    /**
      * @symbol ?write\@NBTSchemaWriter\@\@UEAA_N_N\@Z
      */
     MCVAPI bool write(bool);
@@ -141,14 +149,6 @@ public:
      * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NC\@Z
      */
     MCVAPI bool write(signed char);
-    /**
-     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NH\@Z
-     */
-    MCVAPI bool write(int);
-    /**
-     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NI\@Z
-     */
-    MCVAPI bool write(unsigned int);
     /**
      * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NF\@Z
      */

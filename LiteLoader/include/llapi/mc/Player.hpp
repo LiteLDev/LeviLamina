@@ -106,7 +106,7 @@ public:
     LIAPI bool sendText(const std::string& text, TextType type = TextType::RAW);
 
     template <TextType ttype = TextType::RAW, typename... Args>
-    inline bool sendText(const std::string& text, Args&&... args) {
+    inline bool trSendText(const std::string& text, Args&&... args) {
         return sendText(this->tr(text, std::forward<Args>(args)...), ttype);
     }
     template <typename... Args>
@@ -1588,13 +1588,13 @@ public:
      */
     MCAPI class BlockPos const & getSpawnPosition() const;
     /**
-     * @symbol ?getSupplies\@Player\@\@QEAAAEAVPlayerInventory\@\@XZ
-     */
-    MCAPI class PlayerInventory & getSupplies();
-    /**
      * @symbol ?getSupplies\@Player\@\@QEBAAEBVPlayerInventory\@\@XZ
      */
     MCAPI class PlayerInventory const & getSupplies() const;
+    /**
+     * @symbol ?getSupplies\@Player\@\@QEAAAEAVPlayerInventory\@\@XZ
+     */
+    MCAPI class PlayerInventory & getSupplies();
     /**
      * @symbol ?getTrackedBosses\@Player\@\@QEAAAEBV?$vector\@UActorUniqueID\@\@V?$allocator\@UActorUniqueID\@\@\@std\@\@\@std\@\@XZ
      */
@@ -2052,6 +2052,10 @@ public:
      */
     MCAPI static class Player * tryGetFromComponent(class FlagComponent<struct PlayerComponentFlag> const &, class ActorOwnerComponent &, bool);
     /**
+     * @symbol ?tryGetFromEntity\@Player\@\@SAPEAV1\@AEAVEntityContext\@\@_N\@Z
+     */
+    MCAPI static class Player * tryGetFromEntity(class EntityContext &, bool);
+    /**
      * @symbol ?tryGetFromEntity\@Player\@\@SAPEBV1\@AEBVEntityContext\@\@_N\@Z
      */
     MCAPI static class Player const * tryGetFromEntity(class EntityContext const &, bool);
@@ -2059,10 +2063,6 @@ public:
      * @symbol ?tryGetFromEntity\@Player\@\@SAPEAV1\@V?$StackRefResultT\@UEntityRefTraits\@\@\@\@_N\@Z
      */
     MCAPI static class Player * tryGetFromEntity(class StackRefResultT<struct EntityRefTraits>, bool);
-    /**
-     * @symbol ?tryGetFromEntity\@Player\@\@SAPEAV1\@AEAVEntityContext\@\@_N\@Z
-     */
-    MCAPI static class Player * tryGetFromEntity(class EntityContext &, bool);
 
 //protected:
     /**

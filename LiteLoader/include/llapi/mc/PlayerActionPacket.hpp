@@ -6,7 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Packet.hpp"
-#include "BlockPos.hpp"
+
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 // Refer to https://github.com/LiteLDev/BEProtocolGolang/blob/master/minecraft/protocol/player.go
@@ -93,7 +93,7 @@ public:
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?_read\@PlayerActionPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);

@@ -53,6 +53,11 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 6
+     * @symbol ?isValid\@PlayerAuthInputPacket\@\@UEBA_NXZ
+     */
+    virtual bool isValid() const;
+    /**
+     * @vftbl 7
      * @symbol ?_read\@PlayerAuthInputPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);

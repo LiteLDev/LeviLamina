@@ -231,13 +231,13 @@ public:
      */
     MCAPI Container(enum class ContainerType, std::string const &, bool);
     /**
-     * @symbol ??0Container\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI Container(class Container const &);
-    /**
      * @symbol ??0Container\@\@QEAA\@W4ContainerType\@\@\@Z
      */
     MCAPI Container(enum class ContainerType);
+    /**
+     * @symbol ??0Container\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI Container(class Container const &);
     /**
      * @symbol ?getContainerType\@Container\@\@QEBA?AW4ContainerType\@\@XZ
      */

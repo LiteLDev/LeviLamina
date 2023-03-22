@@ -465,13 +465,13 @@ public:
      */
     MCAPI void transferEntity(class ChunkPos const &, class Vec3 const &, std::unique_ptr<class CompoundTag>, bool);
     /**
-     * @symbol ?transferEntityToUnloadedChunk\@Dimension\@\@QEAAXAEAVActor\@\@PEAVLevelChunk\@\@\@Z
-     */
-    MCAPI void transferEntityToUnloadedChunk(class Actor &, class LevelChunk *);
-    /**
      * @symbol ?transferEntityToUnloadedChunk\@Dimension\@\@QEAAXAEBVChunkPos\@\@0V?$AutomaticID\@VDimension\@\@H\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@5\@\@Z
      */
     MCAPI void transferEntityToUnloadedChunk(class ChunkPos const &, class ChunkPos const &, class AutomaticID<class Dimension, int>, std::string &, std::unique_ptr<class CompoundTag>);
+    /**
+     * @symbol ?transferEntityToUnloadedChunk\@Dimension\@\@QEAAXAEAVActor\@\@PEAVLevelChunk\@\@\@Z
+     */
+    MCAPI void transferEntityToUnloadedChunk(class Actor &, class LevelChunk *);
     /**
      * @symbol ?tryGarbageCollectStructures\@Dimension\@\@QEAAXXZ
      */

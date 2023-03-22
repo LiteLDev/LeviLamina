@@ -26,13 +26,13 @@ namespace PlayerMovement {
      */
     MCAPI void applyInputLocks(struct ClientInputLockComponent const &, struct MoveInputState &);
     /**
-     * @symbol ?calculateMoveVector\@PlayerMovement\@\@YA?AVVec2\@\@AEBUMoveInputState\@\@AEBVLayeredAbilities\@\@AEBVSynchedActorData\@\@_NPEBUSneakingComponent\@\@\@Z
-     */
-    MCAPI class Vec2 calculateMoveVector(struct MoveInputState const &, class LayeredAbilities const &, class SynchedActorData const &, bool, struct SneakingComponent const *);
-    /**
      * @symbol ?calculateMoveVector\@PlayerMovement\@\@YA?AVVec2\@\@AEBUMoveInputState\@\@AEAUIPlayerMovementProxy\@\@\@Z
      */
     MCAPI class Vec2 calculateMoveVector(struct MoveInputState const &, struct IPlayerMovementProxy &);
+    /**
+     * @symbol ?calculateMoveVector\@PlayerMovement\@\@YA?AVVec2\@\@AEBUMoveInputState\@\@AEBVLayeredAbilities\@\@AEBVSynchedActorData\@\@_NPEBUSneakingComponent\@\@\@Z
+     */
+    MCAPI class Vec2 calculateMoveVector(struct MoveInputState const &, class LayeredAbilities const &, class SynchedActorData const &, bool, struct SneakingComponent const *);
     /**
      * @symbol ?getControllingPassengerID\@PlayerMovement\@\@YA?AUActorUniqueID\@\@AEBV?$vector\@UStrictActorIDEntityContextPair\@\@V?$allocator\@UStrictActorIDEntityContextPair\@\@\@std\@\@\@std\@\@H\@Z
      */

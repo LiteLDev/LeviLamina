@@ -83,13 +83,13 @@ struct FormattedString {
      */
     MCAPI std::string base64_decode(std::string const &);
     /**
-     * @symbol ?base64_encode\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEBE_K_N\@Z
-     */
-    MCAPI std::string base64_encode(unsigned char const *, unsigned __int64, bool);
-    /**
      * @symbol ?base64_encode\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@_N\@Z
      */
     MCAPI std::string base64_encode(std::string const &, bool);
+    /**
+     * @symbol ?base64_encode\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEBE_K_N\@Z
+     */
+    MCAPI std::string base64_encode(unsigned char const *, unsigned __int64, bool);
     /**
      * @symbol ?base64url_decode\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V23\@\@Z
      */
@@ -311,13 +311,13 @@ struct FormattedString {
      */
     MCAPI enum class Util::NumberConversionResult toIntWithMinMax(class std::basic_string_view<char, struct std::char_traits<char>>, int &, int, int);
     /**
-     * @symbol ?toLower\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEBD\@Z
-     */
-    MCAPI std::string toLower(char const *);
-    /**
      * @symbol ?toLower\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@3\@\@Z
      */
     MCAPI std::string toLower(class std::basic_string_view<char, struct std::char_traits<char>> const &);
+    /**
+     * @symbol ?toLower\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEBD\@Z
+     */
+    MCAPI std::string toLower(char const *);
     /**
      * @symbol ?toLowerInPlace\@Util\@\@YAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */

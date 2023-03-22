@@ -48,13 +48,13 @@ public:
      */
     MCAPI struct MolangScriptArg const & getMolangVariable(enum class MolangVariableIndex const &, bool &) const;
     /**
-     * @symbol ?getMolangVariable\@MolangVariableMap\@\@QEBAAEBUMolangScriptArg\@\@AEB_KAEA_N\@Z
-     */
-    MCAPI struct MolangScriptArg const & getMolangVariable(unsigned __int64 const &, bool &) const;
-    /**
      * @symbol ?getMolangVariable\@MolangVariableMap\@\@QEBAAEBUMolangScriptArg\@\@_KPEBD\@Z
      */
     MCAPI struct MolangScriptArg const & getMolangVariable(unsigned __int64, char const *) const;
+    /**
+     * @symbol ?getMolangVariable\@MolangVariableMap\@\@QEBAAEBUMolangScriptArg\@\@AEB_KAEA_N\@Z
+     */
+    MCAPI struct MolangScriptArg const & getMolangVariable(unsigned __int64 const &, bool &) const;
     /**
      * @symbol ?getNonConstScriptArgReference\@MolangVariableMap\@\@QEAAPEAUMolangScriptArg\@\@AEBW4MolangVariableIndex\@\@\@Z
      */

@@ -51,7 +51,7 @@ public:
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?_read\@SetTitlePacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
@@ -74,6 +74,10 @@ public:
      */
     MCAPI SetTitlePacket(enum class SetTitlePacket::TitleType);
     /**
+     * @symbol ??0SetTitlePacket\@\@QEAA\@HHH\@Z
+     */
+    MCAPI SetTitlePacket(int, int, int);
+    /**
      * @symbol ??0SetTitlePacket\@\@QEAA\@W4TitleType\@0\@AEBVResolvedTextObject\@\@\@Z
      */
     MCAPI SetTitlePacket(enum class SetTitlePacket::TitleType, class ResolvedTextObject const &);
@@ -81,10 +85,6 @@ public:
      * @symbol ??0SetTitlePacket\@\@QEAA\@W4TitleType\@0\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI SetTitlePacket(enum class SetTitlePacket::TitleType, std::string const &);
-    /**
-     * @symbol ??0SetTitlePacket\@\@QEAA\@HHH\@Z
-     */
-    MCAPI SetTitlePacket(int, int, int);
     /**
      * @symbol ??4SetTitlePacket\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */

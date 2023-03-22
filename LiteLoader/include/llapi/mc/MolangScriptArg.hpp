@@ -28,13 +28,13 @@ public:
 
 public:
     /**
-     * @symbol ??0MolangScriptArg\@\@QEAA\@AEBU0\@\@Z
-     */
-    MCAPI MolangScriptArg(struct MolangScriptArg const &);
-    /**
      * @symbol ??0MolangScriptArg\@\@QEAA\@H\@Z
      */
     MCAPI MolangScriptArg(int);
+    /**
+     * @symbol ??0MolangScriptArg\@\@QEAA\@AEBU0\@\@Z
+     */
+    MCAPI MolangScriptArg(struct MolangScriptArg const &);
     /**
      * @symbol ??0MolangScriptArg\@\@QEAA\@M\@Z
      */

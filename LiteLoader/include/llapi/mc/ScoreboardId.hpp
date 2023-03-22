@@ -25,13 +25,13 @@ public:
 #undef AFTER_EXTRA
 public:
     /**
-     * @symbol ??0ScoreboardId\@\@QEAA\@_J\@Z
-     */
-    MCAPI ScoreboardId(__int64);
-    /**
      * @symbol ??0ScoreboardId\@\@QEAA\@XZ
      */
     MCAPI ScoreboardId();
+    /**
+     * @symbol ??0ScoreboardId\@\@QEAA\@_J\@Z
+     */
+    MCAPI ScoreboardId(__int64);
     /**
      * @symbol ??0ScoreboardId\@\@QEAA\@AEBU0\@\@Z
      */

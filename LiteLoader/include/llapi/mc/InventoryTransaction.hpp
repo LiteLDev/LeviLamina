@@ -100,17 +100,9 @@ public:
 
 //private:
     /**
-     * @symbol ?_dropCreatedItems\@InventoryTransaction\@\@AEBAXAEAVPlayer\@\@\@Z
-     */
-    MCAPI void _dropCreatedItems(class Player &) const;
-    /**
      * @symbol ?addItemToContent\@InventoryTransaction\@\@AEAAXAEBVItemStack\@\@H\@Z
      */
     MCAPI void addItemToContent(class ItemStack const &, int);
-    /**
-     * @symbol ?_isAllowedUIOpenForNonImplementedSource\@InventoryTransaction\@\@CA_NAEBVPlayer\@\@\@Z
-     */
-    MCAPI static bool _isAllowedUIOpenForNonImplementedSource(class Player const &);
 
 private:
     /**

@@ -72,13 +72,13 @@ public:
      */
     MCAPI bool isValid() const;
     /**
-     * @symbol ?matches\@BlockDescriptor\@\@QEBA_NAEBVBlock\@\@\@Z
-     */
-    MCAPI bool matches(class Block const &) const;
-    /**
      * @symbol ?matches\@BlockDescriptor\@\@QEBA_NAEBV1\@\@Z
      */
     MCAPI bool matches(class BlockDescriptor const &) const;
+    /**
+     * @symbol ?matches\@BlockDescriptor\@\@QEBA_NAEBVBlock\@\@\@Z
+     */
+    MCAPI bool matches(class Block const &) const;
     /**
      * @symbol ??4BlockDescriptor\@\@QEAAXAEBV0\@\@Z
      */

@@ -39,13 +39,13 @@ public:
 
 public:
     /**
-     * @symbol ??0StructureSettings\@\@QEAA\@XZ
-     */
-    MCAPI StructureSettings();
-    /**
      * @symbol ??0StructureSettings\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI StructureSettings(class StructureSettings &&);
+    /**
+     * @symbol ??0StructureSettings\@\@QEAA\@XZ
+     */
+    MCAPI StructureSettings();
     /**
      * @symbol ?getAnimationMode\@StructureSettings\@\@QEBA?AW4AnimationMode\@\@XZ
      */
@@ -119,13 +119,13 @@ public:
      */
     MCAPI bool isAnimated() const;
     /**
-     * @symbol ??4StructureSettings\@\@QEAAAEAV0\@AEBV0\@\@Z
-     */
-    MCAPI class StructureSettings & operator=(class StructureSettings const &);
-    /**
      * @symbol ??4StructureSettings\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class StructureSettings & operator=(class StructureSettings &&);
+    /**
+     * @symbol ??4StructureSettings\@\@QEAAAEAV0\@AEBV0\@\@Z
+     */
+    MCAPI class StructureSettings & operator=(class StructureSettings const &);
     /**
      * @symbol ?setAllowNonTickingPlayerAndTickingAreaChunks\@StructureSettings\@\@QEAAX_N\@Z
      */

@@ -50,7 +50,7 @@ public:
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?_read\@MapInfoRequestPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
@@ -61,17 +61,17 @@ public:
     MCVAPI ~MapInfoRequestPacket();
 #endif
     /**
-     * @symbol ??0MapInfoRequestPacket\@\@QEAA\@UActorUniqueID\@\@AEAVMapItemSavedData\@\@\@Z
+     * @symbol ??0MapInfoRequestPacket\@\@QEAA\@XZ
      */
-    MCAPI MapInfoRequestPacket(struct ActorUniqueID, class MapItemSavedData &);
+    MCAPI MapInfoRequestPacket();
     /**
      * @symbol ??0MapInfoRequestPacket\@\@QEAA\@UActorUniqueID\@\@\@Z
      */
     MCAPI MapInfoRequestPacket(struct ActorUniqueID);
     /**
-     * @symbol ??0MapInfoRequestPacket\@\@QEAA\@XZ
+     * @symbol ??0MapInfoRequestPacket\@\@QEAA\@UActorUniqueID\@\@AEAVMapItemSavedData\@\@\@Z
      */
-    MCAPI MapInfoRequestPacket();
+    MCAPI MapInfoRequestPacket(struct ActorUniqueID, class MapItemSavedData &);
     /**
      * @symbol ?getMapId\@MapInfoRequestPacket\@\@QEBA?AUActorUniqueID\@\@XZ
      */

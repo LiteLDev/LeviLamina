@@ -28,13 +28,13 @@ public:
 
 public:
     /**
-     * @symbol ??0BuoyancyComponent\@\@QEAA\@XZ
-     */
-    MCAPI BuoyancyComponent();
-    /**
      * @symbol ??0BuoyancyComponent\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI BuoyancyComponent(class BuoyancyComponent const &);
+    /**
+     * @symbol ??0BuoyancyComponent\@\@QEAA\@XZ
+     */
+    MCAPI BuoyancyComponent();
     /**
      * @symbol ?canFloat\@BuoyancyComponent\@\@QEBA_NAEBVActor\@\@\@Z
      */

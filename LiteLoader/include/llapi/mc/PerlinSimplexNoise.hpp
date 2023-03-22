@@ -53,13 +53,13 @@ public:
      */
     MCAPI float getValue(float, float) const;
     /**
-     * @symbol ?getValueNormalized\@PerlinSimplexNoise\@\@QEBAMAEBVVec3\@\@\@Z
-     */
-    MCAPI float getValueNormalized(class Vec3 const &) const;
-    /**
      * @symbol ?getValueNormalized\@PerlinSimplexNoise\@\@QEBAMMM\@Z
      */
     MCAPI float getValueNormalized(float, float) const;
+    /**
+     * @symbol ?getValueNormalized\@PerlinSimplexNoise\@\@QEBAMAEBVVec3\@\@\@Z
+     */
+    MCAPI float getValueNormalized(class Vec3 const &) const;
     /**
      * @symbol ??1PerlinSimplexNoise\@\@QEAA\@XZ
      */

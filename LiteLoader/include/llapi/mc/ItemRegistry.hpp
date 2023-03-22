@@ -169,13 +169,13 @@ public:
      */
     MCAPI bool isServerInitializingCreativeItems() const;
     /**
-     * @symbol ?lookupByName\@ItemRegistry\@\@AEBA?AV?$WeakPtr\@VItem\@\@\@\@AEBVHashedString\@\@\@Z
-     */
-    MCAPI class WeakPtr<class Item> lookupByName(class HashedString const &) const;
-    /**
      * @symbol ?lookupByName\@ItemRegistry\@\@AEBA?AV?$WeakPtr\@VItem\@\@\@\@AEAH0V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
     MCAPI class WeakPtr<class Item> lookupByName(int &, int &, class std::basic_string_view<char, struct std::char_traits<char>>) const;
+    /**
+     * @symbol ?lookupByName\@ItemRegistry\@\@AEBA?AV?$WeakPtr\@VItem\@\@\@\@AEBVHashedString\@\@\@Z
+     */
+    MCAPI class WeakPtr<class Item> lookupByName(class HashedString const &) const;
     /**
      * @symbol ?lookupByName\@ItemRegistry\@\@AEBA?AV?$WeakPtr\@VItem\@\@\@\@AEAHV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */

@@ -50,7 +50,7 @@ public:
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?_read\@UpdateBlockPacket\@\@MEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
@@ -61,12 +61,12 @@ public:
     MCVAPI ~UpdateBlockPacket();
 #endif
     /**
-     * @symbol ??0UpdateBlockPacket\@\@QEAA\@AEBVBlockPos\@\@IIE\@Z
-     */
-    MCAPI UpdateBlockPacket(class BlockPos const &, unsigned int, unsigned int, unsigned char);
-    /**
      * @symbol ??0UpdateBlockPacket\@\@QEAA\@XZ
      */
     MCAPI UpdateBlockPacket();
+    /**
+     * @symbol ??0UpdateBlockPacket\@\@QEAA\@AEBVBlockPos\@\@IIE\@Z
+     */
+    MCAPI UpdateBlockPacket(class BlockPos const &, unsigned int, unsigned int, unsigned char);
 
 };

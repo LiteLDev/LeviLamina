@@ -36,12 +36,12 @@ public:
      */
     MCAPI void registerScriptingEventHandler(std::unique_ptr<class ScriptingEventHandler> &&);
     /**
-     * @symbol ?sendEvent\@ScriptingEventCoordinator\@\@QEAA?AW4CoordinatorResult\@\@V?$EventRef\@U?$ScriptingGameplayEvent\@W4CoordinatorResult\@\@\@\@\@\@\@Z
-     */
-    MCAPI enum class CoordinatorResult sendEvent(class EventRef<struct ScriptingGameplayEvent<enum class CoordinatorResult>>);
-    /**
      * @symbol ?sendEvent\@ScriptingEventCoordinator\@\@QEAA?AW4CoordinatorResult\@\@V?$EventRef\@U?$MutableScriptingGameplayEvent\@W4CoordinatorResult\@\@\@\@\@\@\@Z
      */
     MCAPI enum class CoordinatorResult sendEvent(class EventRef<struct MutableScriptingGameplayEvent<enum class CoordinatorResult>>);
+    /**
+     * @symbol ?sendEvent\@ScriptingEventCoordinator\@\@QEAA?AW4CoordinatorResult\@\@V?$EventRef\@U?$ScriptingGameplayEvent\@W4CoordinatorResult\@\@\@\@\@\@\@Z
+     */
+    MCAPI enum class CoordinatorResult sendEvent(class EventRef<struct ScriptingGameplayEvent<enum class CoordinatorResult>>);
 
 };

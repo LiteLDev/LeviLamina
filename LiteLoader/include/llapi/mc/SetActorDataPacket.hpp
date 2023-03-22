@@ -50,7 +50,7 @@ public:
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?_read\@SetActorDataPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
@@ -61,12 +61,12 @@ public:
     MCVAPI ~SetActorDataPacket();
 #endif
     /**
-     * @symbol ??0SetActorDataPacket\@\@QEAA\@VActorRuntimeID\@\@AEAVSynchedActorDataEntityWrapper\@\@PEAVPropertyComponent\@\@_K_N\@Z
-     */
-    MCAPI SetActorDataPacket(class ActorRuntimeID, class SynchedActorDataEntityWrapper &, class PropertyComponent *, unsigned __int64, bool);
-    /**
      * @symbol ??0SetActorDataPacket\@\@QEAA\@XZ
      */
     MCAPI SetActorDataPacket();
+    /**
+     * @symbol ??0SetActorDataPacket\@\@QEAA\@VActorRuntimeID\@\@AEAVSynchedActorDataEntityWrapper\@\@PEAVPropertyComponent\@\@_K_N\@Z
+     */
+    MCAPI SetActorDataPacket(class ActorRuntimeID, class SynchedActorDataEntityWrapper &, class PropertyComponent *, unsigned __int64, bool);
 
 };

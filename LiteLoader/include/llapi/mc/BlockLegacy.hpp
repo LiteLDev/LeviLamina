@@ -1311,13 +1311,13 @@ public:
      */
     MCAPI bool hasState(class ItemState const &) const;
     /**
-     * @symbol ?hasTag\@BlockLegacy\@\@QEBA_NAEB_K\@Z
-     */
-    MCAPI bool hasTag(unsigned __int64 const &) const;
-    /**
      * @symbol ?hasTag\@BlockLegacy\@\@QEBA_NAEBVHashedString\@\@\@Z
      */
     MCAPI bool hasTag(class HashedString const &) const;
+    /**
+     * @symbol ?hasTag\@BlockLegacy\@\@QEBA_NAEB_K\@Z
+     */
+    MCAPI bool hasTag(unsigned __int64 const &) const;
     /**
      * @symbol ?initEntity\@BlockLegacy\@\@QEAAXAEAVEntityRegistry\@\@\@Z
      */

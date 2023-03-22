@@ -103,7 +103,7 @@ public:
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?_read\@EventPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
@@ -122,21 +122,25 @@ public:
      */
     MCAPI EventPacket(class Player const &, enum class MovementEventType, float, float, float, float, float);
     /**
-     * @symbol ??0EventPacket\@\@QEAA\@PEBVPlayer\@\@V?$not_null\@PEBVMob\@\@\@gsl\@\@\@Z
+     * @symbol ??0EventPacket\@\@QEAA\@PEBVPlayer\@\@PEBVActor\@\@V?$not_null\@PEBVMob\@\@\@gsl\@\@W4ActorDamageCause\@\@W4ActorType\@\@\@Z
      */
-    MCAPI EventPacket(class Player const *, class gsl::not_null<class Mob const *>);
+    MCAPI EventPacket(class Player const *, class Actor const *, class gsl::not_null<class Mob const *>, enum class ActorDamageCause, enum class ActorType);
     /**
      * @symbol ??0EventPacket\@\@QEAA\@PEBVPlayer\@\@V?$not_null\@PEBVActor\@\@\@gsl\@\@W4InteractionType\@MinecraftEventing\@\@\@Z
      */
     MCAPI EventPacket(class Player const *, class gsl::not_null<class Actor const *>, enum class MinecraftEventing::InteractionType);
     /**
+     * @symbol ??0EventPacket\@\@QEAA\@AEBVPlayer\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
+     */
+    MCAPI EventPacket(class Player const &, std::string const &, int);
+    /**
      * @symbol ??0EventPacket\@\@QEAA\@PEBVPlayer\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
     MCAPI EventPacket(class Player const *, class AutomaticID<class Dimension, int>);
     /**
-     * @symbol ??0EventPacket\@\@QEAA\@PEBVPlayer\@\@HV?$not_null\@PEBVActor\@\@\@gsl\@\@\@Z
+     * @symbol ??0EventPacket\@\@QEAA\@PEBVPlayer\@\@FIF\@Z
      */
-    MCAPI EventPacket(class Player const *, int, class gsl::not_null<class Actor const *>);
+    MCAPI EventPacket(class Player const *, short, unsigned int, short);
     /**
      * @symbol ??0EventPacket\@\@QEAA\@PEBVPlayer\@\@HHW4ActorDamageCause\@\@_N\@Z
      */
@@ -154,21 +158,21 @@ public:
      */
     MCAPI EventPacket(class Player const *, enum class MinecraftEventing::AchievementIds, bool);
     /**
-     * @symbol ??0EventPacket\@\@QEAA\@AEBVPlayer\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
+     * @symbol ??0EventPacket\@\@QEAA\@PEBVPlayer\@\@AEBVRaid\@\@_N\@Z
      */
-    MCAPI EventPacket(class Player const &, std::string const &, int);
+    MCAPI EventPacket(class Player const *, class Raid const &, bool);
     /**
-     * @symbol ??0EventPacket\@\@QEAA\@PEBVPlayer\@\@FIF\@Z
+     * @symbol ??0EventPacket\@\@QEAA\@PEBVPlayer\@\@V?$not_null\@PEBVMob\@\@\@gsl\@\@\@Z
      */
-    MCAPI EventPacket(class Player const *, short, unsigned int, short);
+    MCAPI EventPacket(class Player const *, class gsl::not_null<class Mob const *>);
     /**
      * @symbol ??0EventPacket\@\@QEAA\@PEBVPlayer\@\@V?$AutomaticID\@VDimension\@\@H\@\@1\@Z
      */
     MCAPI EventPacket(class Player const *, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>);
     /**
-     * @symbol ??0EventPacket\@\@QEAA\@PEBVPlayer\@\@PEBVActor\@\@V?$not_null\@PEBVMob\@\@\@gsl\@\@W4ActorDamageCause\@\@W4ActorType\@\@\@Z
+     * @symbol ??0EventPacket\@\@QEAA\@PEBVPlayer\@\@HV?$not_null\@PEBVActor\@\@\@gsl\@\@\@Z
      */
-    MCAPI EventPacket(class Player const *, class Actor const *, class gsl::not_null<class Mob const *>, enum class ActorDamageCause, enum class ActorType);
+    MCAPI EventPacket(class Player const *, int, class gsl::not_null<class Actor const *>);
     /**
      * @symbol ??0EventPacket\@\@QEAA\@PEBVPlayer\@\@AEBUData\@0\@\@Z
      */
@@ -177,10 +181,6 @@ public:
      * @symbol ??0EventPacket\@\@QEAA\@PEBVPlayer\@\@PEBVActor\@\@V?$not_null\@PEBVMob\@\@\@gsl\@\@W4ActorDamageCause\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4ActorType\@\@\@Z
      */
     MCAPI EventPacket(class Player const *, class Actor const *, class gsl::not_null<class Mob const *>, enum class ActorDamageCause, std::string, int, enum class ActorType);
-    /**
-     * @symbol ??0EventPacket\@\@QEAA\@PEBVPlayer\@\@AEBVRaid\@\@_N\@Z
-     */
-    MCAPI EventPacket(class Player const *, class Raid const &, bool);
     /**
      * @symbol ??4EventPacket\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */

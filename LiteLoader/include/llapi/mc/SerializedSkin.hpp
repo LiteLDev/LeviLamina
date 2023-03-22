@@ -24,13 +24,13 @@ class SerializedSkin {
 #undef AFTER_EXTRA
 public:
     /**
-     * @symbol ??0SerializedSkin\@\@QEAA\@AEBVSubClientConnectionRequest\@\@\@Z
-     */
-    MCAPI SerializedSkin(class SubClientConnectionRequest const &);
-    /**
      * @symbol ??0SerializedSkin\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI SerializedSkin(class SerializedSkin const &);
+    /**
+     * @symbol ??0SerializedSkin\@\@QEAA\@AEBVSubClientConnectionRequest\@\@\@Z
+     */
+    MCAPI SerializedSkin(class SubClientConnectionRequest const &);
     /**
      * @symbol ??0SerializedSkin\@\@QEAA\@XZ
      */

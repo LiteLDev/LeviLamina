@@ -50,7 +50,7 @@ public:
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?_read\@EduUriResourcePacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
@@ -61,12 +61,12 @@ public:
     MCVAPI ~EduUriResourcePacket();
 #endif
     /**
-     * @symbol ??0EduUriResourcePacket\@\@QEAA\@AEBUEduSharedUriResource\@\@\@Z
-     */
-    MCAPI EduUriResourcePacket(struct EduSharedUriResource const &);
-    /**
      * @symbol ??0EduUriResourcePacket\@\@QEAA\@XZ
      */
     MCAPI EduUriResourcePacket();
+    /**
+     * @symbol ??0EduUriResourcePacket\@\@QEAA\@AEBUEduSharedUriResource\@\@\@Z
+     */
+    MCAPI EduUriResourcePacket(struct EduSharedUriResource const &);
 
 };

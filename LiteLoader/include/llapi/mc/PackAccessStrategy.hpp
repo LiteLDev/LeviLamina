@@ -101,7 +101,7 @@ public:
     virtual void forEachInAssetSet(class Core::Path const &, class std::function<void (class Core::Path const &)>) const;
     /**
      * @vftbl 14
-     * @symbol ?getStrategyType\@DirectoryPackWithEncryptionAccessStrategy\@\@UEBA?AW4PackAccessStrategyType\@\@XZ
+     * @symbol ?getStrategyType\@ZipPackAccessStrategy\@\@UEBA?AW4PackAccessStrategyType\@\@XZ
      */
     virtual enum class PackAccessStrategyType getStrategyType() const = 0;
     /**

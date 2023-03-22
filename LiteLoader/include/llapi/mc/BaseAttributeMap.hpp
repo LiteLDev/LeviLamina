@@ -57,13 +57,13 @@ public:
      */
     MCAPI std::vector<class AttributeInstanceHandle> const & getDirtyAttributes() const;
     /**
-     * @symbol ?getInstance\@BaseAttributeMap\@\@QEBAAEBVAttributeInstance\@\@AEBVAttribute\@\@\@Z
-     */
-    MCAPI class AttributeInstance const & getInstance(class Attribute const &) const;
-    /**
      * @symbol ?getInstance\@BaseAttributeMap\@\@QEBAAEBVAttributeInstance\@\@I\@Z
      */
     MCAPI class AttributeInstance const & getInstance(unsigned int) const;
+    /**
+     * @symbol ?getInstance\@BaseAttributeMap\@\@QEBAAEBVAttributeInstance\@\@AEBVAttribute\@\@\@Z
+     */
+    MCAPI class AttributeInstance const & getInstance(class Attribute const &) const;
     /**
      * @symbol ?getMutableInstance\@BaseAttributeMap\@\@QEAAPEAVAttributeInstance\@\@AEBVHashedString\@\@\@Z
      */

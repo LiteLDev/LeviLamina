@@ -52,12 +52,12 @@ public:
     MCVAPI ~InstantaneousAttributeBuff();
 #endif
     /**
-     * @symbol ??0InstantaneousAttributeBuff\@\@QEAA\@MAEBVActorDamageSource\@\@\@Z
-     */
-    MCAPI InstantaneousAttributeBuff(float, class ActorDamageSource const &);
-    /**
      * @symbol ??0InstantaneousAttributeBuff\@\@QEAA\@MW4AttributeBuffType\@\@\@Z
      */
     MCAPI InstantaneousAttributeBuff(float, enum class AttributeBuffType);
+    /**
+     * @symbol ??0InstantaneousAttributeBuff\@\@QEAA\@MAEBVActorDamageSource\@\@\@Z
+     */
+    MCAPI InstantaneousAttributeBuff(float, class ActorDamageSource const &);
 
 };

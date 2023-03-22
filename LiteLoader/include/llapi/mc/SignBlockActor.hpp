@@ -165,13 +165,13 @@ public:
 
 //private:
     /**
-     * @symbol ?_setMessage\@SignBlockActor\@\@AEAAXVTextObjectRoot\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI void _setMessage(class TextObjectRoot, std::string);
-    /**
      * @symbol ?_setMessage\@SignBlockActor\@\@AEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
     MCAPI void _setMessage(std::string, std::string);
+    /**
+     * @symbol ?_setMessage\@SignBlockActor\@\@AEAAXVTextObjectRoot\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI void _setMessage(class TextObjectRoot, std::string);
 
 private:
 

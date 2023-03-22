@@ -217,7 +217,7 @@ public:
     virtual void destroy(class ActorDamageSource const &, bool);
     /**
      * @vftbl 277
-     * @symbol ?getType\@MinecartTNT\@\@UEAA?AW4MinecartType\@\@XZ
+     * @symbol ?getType\@MinecartRideable\@\@UEAA?AW4MinecartType\@\@XZ
      */
     virtual enum class MinecartType getType() = 0;
     /**

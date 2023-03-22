@@ -52,7 +52,7 @@ public:
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?_read\@SubChunkPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
@@ -63,12 +63,12 @@ public:
     MCVAPI ~SubChunkPacket();
 #endif
     /**
-     * @symbol ??0SubChunkPacket\@\@QEAA\@XZ
-     */
-    MCAPI SubChunkPacket();
-    /**
      * @symbol ??0SubChunkPacket\@\@QEAA\@AEBV?$AutomaticID\@VDimension\@\@H\@\@AEBVSubChunkPos\@\@_N\@Z
      */
     MCAPI SubChunkPacket(class AutomaticID<class Dimension, int> const &, class SubChunkPos const &, bool);
+    /**
+     * @symbol ??0SubChunkPacket\@\@QEAA\@XZ
+     */
+    MCAPI SubChunkPacket();
 
 };

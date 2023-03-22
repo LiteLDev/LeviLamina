@@ -63,7 +63,7 @@ public:
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?_read\@ShowCreditsPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
@@ -74,12 +74,12 @@ public:
     MCVAPI ~ShowCreditsPacket();
 #endif
     /**
-     * @symbol ??0ShowCreditsPacket\@\@QEAA\@VActorRuntimeID\@\@W4CreditsState\@0\@\@Z
-     */
-    MCAPI ShowCreditsPacket(class ActorRuntimeID, enum class ShowCreditsPacket::CreditsState);
-    /**
      * @symbol ??0ShowCreditsPacket\@\@QEAA\@XZ
      */
     MCAPI ShowCreditsPacket();
+    /**
+     * @symbol ??0ShowCreditsPacket\@\@QEAA\@VActorRuntimeID\@\@W4CreditsState\@0\@\@Z
+     */
+    MCAPI ShowCreditsPacket(class ActorRuntimeID, enum class ShowCreditsPacket::CreditsState);
 
 };

@@ -53,13 +53,13 @@ public:
     MCVAPI ~PackManifest();
 #endif
     /**
-     * @symbol ??0PackManifest\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI PackManifest(class PackManifest const &);
-    /**
      * @symbol ??0PackManifest\@\@QEAA\@W4ManifestType\@\@\@Z
      */
     MCAPI PackManifest(enum class ManifestType);
+    /**
+     * @symbol ??0PackManifest\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI PackManifest(class PackManifest const &);
     /**
      * @symbol ?addLegacyModuleDependency\@PackManifest\@\@QEAAXAEBULegacyPackIdVersion\@\@\@Z
      */

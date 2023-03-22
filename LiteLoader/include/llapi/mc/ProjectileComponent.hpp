@@ -182,13 +182,13 @@ public:
      */
     MCAPI void setSplashRange(float);
     /**
-     * @symbol ?shoot\@ProjectileComponent\@\@QEAAXAEAVActor\@\@0\@Z
-     */
-    MCAPI void shoot(class Actor &, class Actor &);
-    /**
      * @symbol ?shoot\@ProjectileComponent\@\@QEAAXAEAVActor\@\@AEBVVec3\@\@MM1PEAV2\@\@Z
      */
     MCAPI void shoot(class Actor &, class Vec3 const &, float, float, class Vec3 const &, class Actor *);
+    /**
+     * @symbol ?shoot\@ProjectileComponent\@\@QEAAXAEAVActor\@\@0\@Z
+     */
+    MCAPI void shoot(class Actor &, class Actor &);
     /**
      * @symbol ??1ProjectileComponent\@\@QEAA\@XZ
      */

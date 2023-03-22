@@ -33,10 +33,6 @@ public:
 
 public:
     /**
-     * @symbol ??0LevelData\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI LevelData(class LevelData &&);
-    /**
      * @symbol ??0LevelData\@\@QEAA\@_N\@Z
      */
     MCAPI LevelData(bool);
@@ -44,6 +40,10 @@ public:
      * @symbol ??0LevelData\@\@QEAA\@AEBVLevelSettings\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4GeneratorType\@\@AEBVBlockPos\@\@_NW4EducationEditionOffer\@\@MM\@Z
      */
     MCAPI LevelData(class LevelSettings const &, std::string const &, enum class GeneratorType, class BlockPos const &, bool, enum class EducationEditionOffer, float, float);
+    /**
+     * @symbol ??0LevelData\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI LevelData(class LevelData &&);
     /**
      * @symbol ?_getValue\@LevelData\@\@QEBAPEBULevelDataValue\@\@AEBVHashedString\@\@\@Z
      */
@@ -65,13 +65,13 @@ public:
      */
     MCAPI bool educationFeaturesEnabled() const;
     /**
-     * @symbol ?getAdventureSettings\@LevelData\@\@QEAAAEAUAdventureSettings\@\@XZ
-     */
-    MCAPI struct AdventureSettings & getAdventureSettings();
-    /**
      * @symbol ?getAdventureSettings\@LevelData\@\@QEBAAEBUAdventureSettings\@\@XZ
      */
     MCAPI struct AdventureSettings const & getAdventureSettings() const;
+    /**
+     * @symbol ?getAdventureSettings\@LevelData\@\@QEAAAEAUAdventureSettings\@\@XZ
+     */
+    MCAPI struct AdventureSettings & getAdventureSettings();
     /**
      * @symbol ?getBaseGameVersion\@LevelData\@\@QEBAAEBVBaseGameVersion\@\@XZ
      */
@@ -101,13 +101,13 @@ public:
      */
     MCAPI class Abilities & getDefaultAbilities();
     /**
-     * @symbol ?getDefaultPermissions\@LevelData\@\@QEBAAEBVPermissionsHandler\@\@XZ
-     */
-    MCAPI class PermissionsHandler const & getDefaultPermissions() const;
-    /**
      * @symbol ?getDefaultPermissions\@LevelData\@\@QEAAAEAVPermissionsHandler\@\@XZ
      */
     MCAPI class PermissionsHandler & getDefaultPermissions();
+    /**
+     * @symbol ?getDefaultPermissions\@LevelData\@\@QEBAAEBVPermissionsHandler\@\@XZ
+     */
+    MCAPI class PermissionsHandler const & getDefaultPermissions() const;
     /**
      * @symbol ?getEduSharedUriResource\@LevelData\@\@QEBAAEBVCompoundTag\@\@XZ
      */

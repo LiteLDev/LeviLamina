@@ -28,10 +28,6 @@ public:
 
 public:
     /**
-     * @symbol ??0Interaction\@\@QEAA\@XZ
-     */
-    MCAPI Interaction();
-    /**
      * @symbol ??0Interaction\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI Interaction(struct Interaction &&);
@@ -39,6 +35,10 @@ public:
      * @symbol ??0Interaction\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI Interaction(struct Interaction const &);
+    /**
+     * @symbol ??0Interaction\@\@QEAA\@XZ
+     */
+    MCAPI Interaction();
     /**
      * @symbol ?addActorDefinitionIdentifierByName\@Interaction\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */

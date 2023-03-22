@@ -63,6 +63,14 @@ public:
      */
     MCVAPI class GameSpecificNetEventCallback * getGameSpecificNetEventCallback();
     /**
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVMapCreateLockedCopyPacket\@\@\@Z
+     */
+    MCVAPI void handle(class NetworkIdentifier const &, class MapCreateLockedCopyPacket const &);
+    /**
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVResourcePackChunkRequestPacket\@\@\@Z
+     */
+    MCVAPI void handle(class NetworkIdentifier const &, class ResourcePackChunkRequestPacket const &);
+    /**
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVChangeMobPropertyPacket\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ChangeMobPropertyPacket const &);
@@ -87,81 +95,89 @@ public:
      */
     MCVAPI void handle(class NetworkIdentifier const &, class CompletedUsingItemPacket const &);
     /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVActorPickRequestPacket\@\@\@Z
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVItemStackRequestPacket\@\@\@Z
      */
-    MCVAPI void handle(class NetworkIdentifier const &, class ActorPickRequestPacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class ItemStackRequestPacket const &);
+    /**
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVInventoryTransactionPacket\@\@\@Z
+     */
+    MCVAPI void handle(class NetworkIdentifier const &, class InventoryTransactionPacket const &);
+    /**
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVTextPacket\@\@\@Z
+     */
+    MCVAPI void handle(class NetworkIdentifier const &, class TextPacket const &);
+    /**
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVRequestPermissionsPacket\@\@\@Z
+     */
+    MCVAPI void handle(class NetworkIdentifier const &, class RequestPermissionsPacket const &);
     /**
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVPlayerSkinPacket\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PlayerSkinPacket const &);
     /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVClientCacheBlobStatusPacket\@\@\@Z
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVLabTablePacket\@\@\@Z
      */
-    MCVAPI void handle(class NetworkIdentifier const &, class ClientCacheBlobStatusPacket const &);
-    /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVPlayerInputPacket\@\@\@Z
-     */
-    MCVAPI void handle(class NetworkIdentifier const &, class PlayerInputPacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class LabTablePacket const &);
     /**
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVCodeBuilderSourcePacket\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class CodeBuilderSourcePacket const &);
     /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVSpawnExperienceOrbPacket\@\@\@Z
-     */
-    MCVAPI void handle(class NetworkIdentifier const &, class SpawnExperienceOrbPacket const &);
-    /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVMapCreateLockedCopyPacket\@\@\@Z
-     */
-    MCVAPI void handle(class NetworkIdentifier const &, class MapCreateLockedCopyPacket const &);
-    /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVClientCacheStatusPacket\@\@\@Z
-     */
-    MCVAPI void handle(class NetworkIdentifier const &, class ClientCacheStatusPacket const &);
-    /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVLabTablePacket\@\@\@Z
-     */
-    MCVAPI void handle(class NetworkIdentifier const &, class LabTablePacket const &);
-    /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVResourcePackChunkRequestPacket\@\@\@Z
-     */
-    MCVAPI void handle(class NetworkIdentifier const &, class ResourcePackChunkRequestPacket const &);
-    /**
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVNpcRequestPacket\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class NpcRequestPacket const &);
-    /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVRequestChunkRadiusPacket\@\@\@Z
-     */
-    MCVAPI void handle(class NetworkIdentifier const &, class RequestChunkRadiusPacket const &);
     /**
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVMovePlayerPacket\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class MovePlayerPacket const &);
     /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVSetPlayerGameTypePacket\@\@\@Z
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVClientCacheStatusPacket\@\@\@Z
      */
-    MCVAPI void handle(class NetworkIdentifier const &, class SetPlayerGameTypePacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class ClientCacheStatusPacket const &);
     /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVItemFrameDropItemPacket\@\@\@Z
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVPlayerInputPacket\@\@\@Z
      */
-    MCVAPI void handle(class NetworkIdentifier const &, class ItemFrameDropItemPacket const &);
-    /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@V?$shared_ptr\@VBlockActorDataPacket\@\@\@std\@\@\@Z
-     */
-    MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class BlockActorDataPacket>);
+    MCVAPI void handle(class NetworkIdentifier const &, class PlayerInputPacket const &);
     /**
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVBlockPickRequestPacket\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class BlockPickRequestPacket const &);
     /**
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVMapInfoRequestPacket\@\@\@Z
+     */
+    MCVAPI void handle(class NetworkIdentifier const &, class MapInfoRequestPacket const &);
+    /**
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVRequestAbilityPacket\@\@\@Z
+     */
+    MCVAPI void handle(class NetworkIdentifier const &, class RequestAbilityPacket const &);
+    /**
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVPlayerAuthInputPacket\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PlayerAuthInputPacket const &);
     /**
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVItemFrameDropItemPacket\@\@\@Z
+     */
+    MCVAPI void handle(class NetworkIdentifier const &, class ItemFrameDropItemPacket const &);
+    /**
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVBossEventPacket\@\@\@Z
+     */
+    MCVAPI void handle(class NetworkIdentifier const &, class BossEventPacket const &);
+    /**
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVMobEquipmentPacket\@\@\@Z
+     */
+    MCVAPI void handle(class NetworkIdentifier const &, class MobEquipmentPacket const &);
+    /**
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVPassengerJumpPacket\@\@\@Z
+     */
+    MCVAPI void handle(class NetworkIdentifier const &, class PassengerJumpPacket const &);
+    /**
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVUpdatePlayerGameTypePacket\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class UpdatePlayerGameTypePacket const &);
+    /**
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVRequestChunkRadiusPacket\@\@\@Z
+     */
+    MCVAPI void handle(class NetworkIdentifier const &, class RequestChunkRadiusPacket const &);
     /**
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVLevelSoundEventPacket\@\@\@Z
      */
@@ -171,21 +187,13 @@ public:
      */
     MCVAPI void handle(class NetworkIdentifier const &, class LevelSoundEventPacketV2 const &);
     /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVRequestAbilityPacket\@\@\@Z
-     */
-    MCVAPI void handle(class NetworkIdentifier const &, class RequestAbilityPacket const &);
-    /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVMultiplayerSettingsPacket\@\@\@Z
-     */
-    MCVAPI void handle(class NetworkIdentifier const &, class MultiplayerSettingsPacket const &);
-    /**
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVPlayerHotbarPacket\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PlayerHotbarPacket const &);
     /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVRespawnPacket\@\@\@Z
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVCommandBlockUpdatePacket\@\@\@Z
      */
-    MCVAPI void handle(class NetworkIdentifier const &, class RespawnPacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class CommandBlockUpdatePacket const &);
     /**
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVEmotePacket\@\@\@Z
      */
@@ -195,13 +203,21 @@ public:
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SubChunkRequestPacket const &);
     /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVInventoryTransactionPacket\@\@\@Z
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVClientCacheBlobStatusPacket\@\@\@Z
      */
-    MCVAPI void handle(class NetworkIdentifier const &, class InventoryTransactionPacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class ClientCacheBlobStatusPacket const &);
     /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVBossEventPacket\@\@\@Z
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVScriptMessagePacket\@\@\@Z
      */
-    MCVAPI void handle(class NetworkIdentifier const &, class BossEventPacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class ScriptMessagePacket const &);
+    /**
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVActorEventPacket\@\@\@Z
+     */
+    MCVAPI void handle(class NetworkIdentifier const &, class ActorEventPacket const &);
+    /**
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVSpawnExperienceOrbPacket\@\@\@Z
+     */
+    MCVAPI void handle(class NetworkIdentifier const &, class SpawnExperienceOrbPacket const &);
     /**
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVCommandRequestPacket\@\@\@Z
      */
@@ -215,6 +231,10 @@ public:
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetDifficultyPacket const &);
     /**
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVContainerClosePacket\@\@\@Z
+     */
+    MCVAPI void handle(class NetworkIdentifier const &, class ContainerClosePacket const &);
+    /**
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVEmoteListPacket\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class EmoteListPacket const &);
@@ -222,10 +242,6 @@ public:
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVSetLocalPlayerAsInitializedPacket\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetLocalPlayerAsInitializedPacket const &);
-    /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVPassengerJumpPacket\@\@\@Z
-     */
-    MCVAPI void handle(class NetworkIdentifier const &, class PassengerJumpPacket const &);
     /**
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVSimpleEventPacket\@\@\@Z
      */
@@ -235,25 +251,17 @@ public:
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ModalFormResponsePacket const &);
     /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVMapInfoRequestPacket\@\@\@Z
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@V?$shared_ptr\@VBlockActorDataPacket\@\@\@std\@\@\@Z
      */
-    MCVAPI void handle(class NetworkIdentifier const &, class MapInfoRequestPacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class BlockActorDataPacket>);
     /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVMobEquipmentPacket\@\@\@Z
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVStructureTemplateDataRequestPacket\@\@\@Z
      */
-    MCVAPI void handle(class NetworkIdentifier const &, class MobEquipmentPacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class StructureTemplateDataRequestPacket const &);
     /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVScriptMessagePacket\@\@\@Z
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVSetPlayerGameTypePacket\@\@\@Z
      */
-    MCVAPI void handle(class NetworkIdentifier const &, class ScriptMessagePacket const &);
-    /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVRequestPermissionsPacket\@\@\@Z
-     */
-    MCVAPI void handle(class NetworkIdentifier const &, class RequestPermissionsPacket const &);
-    /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVContainerClosePacket\@\@\@Z
-     */
-    MCVAPI void handle(class NetworkIdentifier const &, class ContainerClosePacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class SetPlayerGameTypePacket const &);
     /**
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVBookEditPacket\@\@\@Z
      */
@@ -267,25 +275,29 @@ public:
      */
     MCVAPI void handle(class NetworkIdentifier const &, class CraftingEventPacket const &);
     /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVTextPacket\@\@\@Z
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVStructureBlockUpdatePacket\@\@\@Z
      */
-    MCVAPI void handle(class NetworkIdentifier const &, class TextPacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class StructureBlockUpdatePacket const &);
     /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVSettingsCommandPacket\@\@\@Z
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVRespawnPacket\@\@\@Z
      */
-    MCVAPI void handle(class NetworkIdentifier const &, class SettingsCommandPacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class RespawnPacket const &);
     /**
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVAnvilDamagePacket\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class AnvilDamagePacket const &);
     /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVActorEventPacket\@\@\@Z
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVSettingsCommandPacket\@\@\@Z
      */
-    MCVAPI void handle(class NetworkIdentifier const &, class ActorEventPacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class SettingsCommandPacket const &);
     /**
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVRequestNetworkSettingsPacket\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class RequestNetworkSettingsPacket const &);
+    /**
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVNetworkStackLatencyPacket\@\@\@Z
+     */
+    MCVAPI void handle(class NetworkIdentifier const &, class NetworkStackLatencyPacket const &);
     /**
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVPositionTrackingDBClientRequestPacket\@\@\@Z
      */
@@ -294,10 +306,6 @@ public:
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVClientToServerHandshakePacket\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ClientToServerHandshakePacket const &);
-    /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVSubClientLoginPacket\@\@\@Z
-     */
-    MCVAPI void handle(class NetworkIdentifier const &, class SubClientLoginPacket const &);
     /**
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVTickSyncPacket\@\@\@Z
      */
@@ -311,17 +319,13 @@ public:
      */
     MCVAPI void handle(class NetworkIdentifier const &, class DebugInfoPacket const &);
     /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVItemStackRequestPacket\@\@\@Z
-     */
-    MCVAPI void handle(class NetworkIdentifier const &, class ItemStackRequestPacket const &);
-    /**
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVLevelSoundEventPacketV1\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class LevelSoundEventPacketV1 const &);
     /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVStructureBlockUpdatePacket\@\@\@Z
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVActorPickRequestPacket\@\@\@Z
      */
-    MCVAPI void handle(class NetworkIdentifier const &, class StructureBlockUpdatePacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class ActorPickRequestPacket const &);
     /**
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVFilterTextPacket\@\@\@Z
      */
@@ -331,17 +335,17 @@ public:
      */
     MCVAPI void handle(class NetworkIdentifier const &, class LoginPacket const &);
     /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVCommandBlockUpdatePacket\@\@\@Z
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVGameTestRequestPacket\@\@\@Z
      */
-    MCVAPI void handle(class NetworkIdentifier const &, class CommandBlockUpdatePacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class GameTestRequestPacket const &);
     /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVStructureTemplateDataRequestPacket\@\@\@Z
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVMultiplayerSettingsPacket\@\@\@Z
      */
-    MCVAPI void handle(class NetworkIdentifier const &, class StructureTemplateDataRequestPacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class MultiplayerSettingsPacket const &);
     /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVNetworkStackLatencyPacket\@\@\@Z
+     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVSubClientLoginPacket\@\@\@Z
      */
-    MCVAPI void handle(class NetworkIdentifier const &, class NetworkStackLatencyPacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class SubClientLoginPacket const &);
     /**
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVAnimatePacket\@\@\@Z
      */
@@ -354,10 +358,6 @@ public:
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVShowCreditsPacket\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ShowCreditsPacket const &);
-    /**
-     * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVGameTestRequestPacket\@\@\@Z
-     */
-    MCVAPI void handle(class NetworkIdentifier const &, class GameTestRequestPacket const &);
     /**
      * @symbol ?handle\@ServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVLecternUpdatePacket\@\@\@Z
      */

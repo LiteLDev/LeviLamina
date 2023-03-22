@@ -38,13 +38,13 @@ public:
      */
     MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> getSoundPlayer() const;
     /**
-     * @symbol ?handleSoundEvent\@LevelSoundManager\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVVec3\@\@MM\@Z
-     */
-    MCAPI void handleSoundEvent(std::string const &, class Vec3 const &, float, float);
-    /**
      * @symbol ?handleSoundEvent\@LevelSoundManager\@\@QEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@HAEBUActorDefinitionIdentifier\@\@_N3\@Z
      */
     MCAPI void handleSoundEvent(enum class LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
+    /**
+     * @symbol ?handleSoundEvent\@LevelSoundManager\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVVec3\@\@MM\@Z
+     */
+    MCAPI void handleSoundEvent(std::string const &, class Vec3 const &, float, float);
     /**
      * @symbol ?handleStopAllSounds\@LevelSoundManager\@\@QEAAXXZ
      */
@@ -54,13 +54,13 @@ public:
      */
     MCAPI void handleStopSoundEvent(std::string const &);
     /**
-     * @symbol ?playSound\@LevelSoundManager\@\@QEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@MM\@Z
-     */
-    MCAPI void playSound(enum class LevelSoundEvent, class Vec3 const &, float, float);
-    /**
      * @symbol ?playSound\@LevelSoundManager\@\@QEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@HAEBUActorDefinitionIdentifier\@\@_N3\@Z
      */
     MCAPI void playSound(enum class LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
+    /**
+     * @symbol ?playSound\@LevelSoundManager\@\@QEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@MM\@Z
+     */
+    MCAPI void playSound(enum class LevelSoundEvent, class Vec3 const &, float, float);
     /**
      * @symbol ?playSoundForPlayerInDimension\@LevelSoundManager\@\@QEAAXV?$AutomaticID\@VDimension\@\@H\@\@W4LevelSoundEvent\@\@AEBVVec3\@\@HAEBUActorDefinitionIdentifier\@\@_N4PEAVPlayer\@\@\@Z
      */

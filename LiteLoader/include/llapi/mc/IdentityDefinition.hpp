@@ -36,25 +36,25 @@ public:
 
 public:
     /**
-     * @symbol ??0IdentityDefinition\@\@QEAA\@AEBUScoreboardId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI IdentityDefinition(struct ScoreboardId const &, std::string const &);
-    /**
      * @symbol ??0IdentityDefinition\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI IdentityDefinition(class IdentityDefinition const &);
     /**
-     * @symbol ??0IdentityDefinition\@\@QEAA\@AEBUScoreboardId\@\@AEBUPlayerScoreboardId\@\@\@Z
+     * @symbol ??0IdentityDefinition\@\@QEAA\@AEBUScoreboardId\@\@AEBUActorUniqueID\@\@\@Z
      */
-    MCAPI IdentityDefinition(struct ScoreboardId const &, struct PlayerScoreboardId const &);
+    MCAPI IdentityDefinition(struct ScoreboardId const &, struct ActorUniqueID const &);
+    /**
+     * @symbol ??0IdentityDefinition\@\@QEAA\@AEBUScoreboardId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI IdentityDefinition(struct ScoreboardId const &, std::string const &);
     /**
      * @symbol ??0IdentityDefinition\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI IdentityDefinition(class IdentityDefinition &&);
     /**
-     * @symbol ??0IdentityDefinition\@\@QEAA\@AEBUScoreboardId\@\@AEBUActorUniqueID\@\@\@Z
+     * @symbol ??0IdentityDefinition\@\@QEAA\@AEBUScoreboardId\@\@AEBUPlayerScoreboardId\@\@\@Z
      */
-    MCAPI IdentityDefinition(struct ScoreboardId const &, struct ActorUniqueID const &);
+    MCAPI IdentityDefinition(struct ScoreboardId const &, struct PlayerScoreboardId const &);
     /**
      * @symbol ?getEntityId\@IdentityDefinition\@\@QEBAAEBUActorUniqueID\@\@XZ
      */

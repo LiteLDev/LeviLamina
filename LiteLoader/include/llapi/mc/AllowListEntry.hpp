@@ -52,12 +52,12 @@ public:
     MCVAPI ~AllowListEntry();
 #endif
     /**
-     * @symbol ??0AllowListEntry\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI AllowListEntry(std::string);
-    /**
      * @symbol ??0AllowListEntry\@\@QEAA\@AEAVValue\@Json\@\@\@Z
      */
     MCAPI AllowListEntry(class Json::Value &);
+    /**
+     * @symbol ??0AllowListEntry\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI AllowListEntry(std::string);
 
 };

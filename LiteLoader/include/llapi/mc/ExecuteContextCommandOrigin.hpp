@@ -118,13 +118,13 @@ public:
      */
     MCAPI class Actor const * getPositionEntity();
     /**
-     * @symbol ?setDimension\@ExecuteContextCommandOrigin\@\@QEAAXAEBVDimension\@\@\@Z
-     */
-    MCAPI void setDimension(class Dimension const &);
-    /**
      * @symbol ?setDimension\@ExecuteContextCommandOrigin\@\@QEAAXAEBV?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
     MCAPI void setDimension(class AutomaticID<class Dimension, int> const &);
+    /**
+     * @symbol ?setDimension\@ExecuteContextCommandOrigin\@\@QEAAXAEBVDimension\@\@\@Z
+     */
+    MCAPI void setDimension(class Dimension const &);
     /**
      * @symbol ?setExecutionEntity\@ExecuteContextCommandOrigin\@\@QEAAXAEBVActor\@\@\@Z
      */

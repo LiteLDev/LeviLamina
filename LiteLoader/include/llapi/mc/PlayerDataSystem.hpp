@@ -59,12 +59,12 @@ namespace PlayerDataSystem {
      */
     MCAPI std::string playerKey(class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
-     * @symbol ?serverKey\@PlayerDataSystem\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVLevelStorage\@\@AEBVPlayer\@\@\@Z
-     */
-    MCAPI std::string serverKey(class LevelStorage &, class Player const &);
-    /**
      * @symbol ?serverKey\@PlayerDataSystem\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVLevelStorage\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@3\@\@Z
      */
     MCAPI std::string serverKey(class LevelStorage &, class std::basic_string_view<char, struct std::char_traits<char>>);
+    /**
+     * @symbol ?serverKey\@PlayerDataSystem\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVLevelStorage\@\@AEBVPlayer\@\@\@Z
+     */
+    MCAPI std::string serverKey(class LevelStorage &, class Player const &);
 
 };

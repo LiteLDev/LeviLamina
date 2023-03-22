@@ -50,7 +50,7 @@ public:
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?_read\@StopSoundPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
@@ -61,12 +61,12 @@ public:
     MCVAPI ~StopSoundPacket();
 #endif
     /**
-     * @symbol ??0StopSoundPacket\@\@QEAA\@XZ
-     */
-    MCAPI StopSoundPacket();
-    /**
      * @symbol ??0StopSoundPacket\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
     MCAPI StopSoundPacket(std::string const &, bool);
+    /**
+     * @symbol ??0StopSoundPacket\@\@QEAA\@XZ
+     */
+    MCAPI StopSoundPacket();
 
 };

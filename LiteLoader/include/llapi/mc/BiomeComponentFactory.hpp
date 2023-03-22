@@ -35,13 +35,13 @@ public:
      */
     MCAPI BiomeComponentFactory(enum class BiomeComponentFactory::FactoryScope);
     /**
-     * @symbol ?processDataComponents\@BiomeComponentFactory\@\@QEBAXAEAVBiome\@\@AEAVIWorldRegistriesProvider\@\@AEAVCompoundTag\@\@\@Z
-     */
-    MCAPI void processDataComponents(class Biome &, class IWorldRegistriesProvider &, class CompoundTag &) const;
-    /**
      * @symbol ?processDataComponents\@BiomeComponentFactory\@\@QEBAXAEAVBiome\@\@AEAVIWorldRegistriesProvider\@\@AEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
     MCAPI void processDataComponents(class Biome &, class IWorldRegistriesProvider &, class Json::Value &, class SemVersion const &) const;
+    /**
+     * @symbol ?processDataComponents\@BiomeComponentFactory\@\@QEBAXAEAVBiome\@\@AEAVIWorldRegistriesProvider\@\@AEAVCompoundTag\@\@\@Z
+     */
+    MCAPI void processDataComponents(class Biome &, class IWorldRegistriesProvider &, class CompoundTag &) const;
     /**
      * @symbol ?registrationFinished\@BiomeComponentFactory\@\@QEAAXXZ
      */

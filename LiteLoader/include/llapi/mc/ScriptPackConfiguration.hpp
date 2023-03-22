@@ -27,17 +27,17 @@ public:
 
 public:
     /**
-     * @symbol ??0ScriptPackConfiguration\@\@QEAA\@$$QEAV0\@\@Z
+     * @symbol ??0ScriptPackConfiguration\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI ScriptPackConfiguration(class ScriptPackConfiguration &&);
+    MCAPI ScriptPackConfiguration(class ScriptPackConfiguration const &);
     /**
      * @symbol ??0ScriptPackConfiguration\@\@QEAA\@XZ
      */
     MCAPI ScriptPackConfiguration();
     /**
-     * @symbol ??0ScriptPackConfiguration\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0ScriptPackConfiguration\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI ScriptPackConfiguration(class ScriptPackConfiguration const &);
+    MCAPI ScriptPackConfiguration(class ScriptPackConfiguration &&);
     /**
      * @symbol ?getPermissions\@ScriptPackConfiguration\@\@QEAAAEAVScriptPackPermissions\@\@XZ
      */

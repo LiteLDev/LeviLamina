@@ -50,7 +50,7 @@ public:
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?_read\@SetActorMotionPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
@@ -61,12 +61,12 @@ public:
     MCVAPI ~SetActorMotionPacket();
 #endif
     /**
-     * @symbol ??0SetActorMotionPacket\@\@QEAA\@XZ
-     */
-    MCAPI SetActorMotionPacket();
-    /**
      * @symbol ??0SetActorMotionPacket\@\@QEAA\@AEBVActor\@\@\@Z
      */
     MCAPI SetActorMotionPacket(class Actor const &);
+    /**
+     * @symbol ??0SetActorMotionPacket\@\@QEAA\@XZ
+     */
+    MCAPI SetActorMotionPacket();
 
 };

@@ -539,13 +539,13 @@ struct CachedItemStateMapPtr {
      */
     MCAPI extern class ItemStateVariant<enum class WoodType> const WoodType;
     /**
-     * @symbol ?getState\@VanillaStates\@\@YAPEBVItemState\@\@AEBVHashedString\@\@AEAUCachedItemStateMapPtr\@1\@\@Z
-     */
-    MCAPI class ItemState const * getState(class HashedString const &, struct VanillaStates::CachedItemStateMapPtr &);
-    /**
      * @symbol ?getState\@VanillaStates\@\@YAPEBVItemState\@\@AEBVHashedString\@\@\@Z
      */
     MCAPI class ItemState const * getState(class HashedString const &);
+    /**
+     * @symbol ?getState\@VanillaStates\@\@YAPEBVItemState\@\@AEBVHashedString\@\@AEAUCachedItemStateMapPtr\@1\@\@Z
+     */
+    MCAPI class ItemState const * getState(class HashedString const &, struct VanillaStates::CachedItemStateMapPtr &);
     /**
      * @symbol ?registerStates\@VanillaStates\@\@YAXXZ
      */

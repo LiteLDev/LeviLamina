@@ -50,7 +50,7 @@ public:
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?_read\@CompletedUsingItemPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
@@ -61,12 +61,12 @@ public:
     MCVAPI ~CompletedUsingItemPacket();
 #endif
     /**
-     * @symbol ??0CompletedUsingItemPacket\@\@QEAA\@FH\@Z
-     */
-    MCAPI CompletedUsingItemPacket(short, int);
-    /**
      * @symbol ??0CompletedUsingItemPacket\@\@QEAA\@XZ
      */
     MCAPI CompletedUsingItemPacket();
+    /**
+     * @symbol ??0CompletedUsingItemPacket\@\@QEAA\@FH\@Z
+     */
+    MCAPI CompletedUsingItemPacket(short, int);
 
 };

@@ -330,13 +330,13 @@ public:
      */
     MCAPI static bool addItem(class Container &, int, class ItemStack &, class BlockSource &, class Block const &, class BlockPos const &);
     /**
-     * @symbol ?addItems\@ComposterBlock\@\@SAHAEBVItemStack\@\@HAEAVBlockSource\@\@AEBVBlock\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI static int addItems(class ItemStack const &, int, class BlockSource &, class Block const &, class BlockPos const &);
-    /**
      * @symbol ?addItems\@ComposterBlock\@\@SA_NAEAVContainer\@\@HAEAVItemStack\@\@HAEAVBlockSource\@\@AEBVBlock\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static bool addItems(class Container &, int, class ItemStack &, int, class BlockSource &, class Block const &, class BlockPos const &);
+    /**
+     * @symbol ?addItems\@ComposterBlock\@\@SAHAEBVItemStack\@\@HAEAVBlockSource\@\@AEBVBlock\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI static int addItems(class ItemStack const &, int, class BlockSource &, class Block const &, class BlockPos const &);
     /**
      * @symbol ?empty\@ComposterBlock\@\@SAXAEAVBlockSource\@\@AEBVBlock\@\@AEBVBlockPos\@\@\@Z
      */

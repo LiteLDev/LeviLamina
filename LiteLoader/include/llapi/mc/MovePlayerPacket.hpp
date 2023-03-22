@@ -82,6 +82,11 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 6
+     * @symbol ?isValid\@MovePlayerPacket\@\@UEBA_NXZ
+     */
+    virtual bool isValid() const;
+    /**
+     * @vftbl 7
      * @symbol ?_read\@MovePlayerPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
@@ -96,12 +101,12 @@ public:
      */
     MCAPI MovePlayerPacket(class Player const &, enum class PlayerPositionModeComponent::PositionMode, int, int);
     /**
-     * @symbol ??0MovePlayerPacket\@\@QEAA\@XZ
-     */
-    MCAPI MovePlayerPacket();
-    /**
      * @symbol ??0MovePlayerPacket\@\@QEAA\@AEBVPlayer\@\@AEBVVec3\@\@\@Z
      */
     MCAPI MovePlayerPacket(class Player const &, class Vec3 const &);
+    /**
+     * @symbol ??0MovePlayerPacket\@\@QEAA\@XZ
+     */
+    MCAPI MovePlayerPacket();
 
 };

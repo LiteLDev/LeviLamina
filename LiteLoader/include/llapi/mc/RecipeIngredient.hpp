@@ -45,17 +45,21 @@ public:
     MCVAPI ~RecipeIngredient();
 #endif
     /**
-     * @symbol ??0RecipeIngredient\@\@QEAA\@XZ
-     */
-    MCAPI RecipeIngredient();
-    /**
      * @symbol ??0RecipeIngredient\@\@QEAA\@AEBVBlock\@\@G\@Z
      */
     MCAPI RecipeIngredient(class Block const &, unsigned short);
     /**
+     * @symbol ??0RecipeIngredient\@\@QEAA\@AEBVBlockLegacy\@\@G\@Z
+     */
+    MCAPI RecipeIngredient(class BlockLegacy const &, unsigned short);
+    /**
      * @symbol ??0RecipeIngredient\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI RecipeIngredient(class RecipeIngredient const &);
+    /**
+     * @symbol ??0RecipeIngredient\@\@QEAA\@XZ
+     */
+    MCAPI RecipeIngredient();
     /**
      * @symbol ??0RecipeIngredient\@\@QEAA\@AEBUItemTag\@\@G\@Z
      */
@@ -65,14 +69,6 @@ public:
      */
     MCAPI RecipeIngredient(class Item const &, int, unsigned short);
     /**
-     * @symbol ??0RecipeIngredient\@\@QEAA\@AEAVReadOnlyBinaryStream\@\@\@Z
-     */
-    MCAPI RecipeIngredient(class ReadOnlyBinaryStream &);
-    /**
-     * @symbol ??0RecipeIngredient\@\@QEAA\@AEBVBlockLegacy\@\@G\@Z
-     */
-    MCAPI RecipeIngredient(class BlockLegacy const &, unsigned short);
-    /**
      * @symbol ??0RecipeIngredient\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI RecipeIngredient(class RecipeIngredient &&);
@@ -80,6 +76,10 @@ public:
      * @symbol ??0RecipeIngredient\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@HG\@Z
      */
     MCAPI RecipeIngredient(class std::basic_string_view<char, struct std::char_traits<char>>, int, unsigned short);
+    /**
+     * @symbol ??0RecipeIngredient\@\@QEAA\@AEAVReadOnlyBinaryStream\@\@\@Z
+     */
+    MCAPI RecipeIngredient(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?EMPTY_INGREDIENT\@RecipeIngredient\@\@2V1\@A
      */

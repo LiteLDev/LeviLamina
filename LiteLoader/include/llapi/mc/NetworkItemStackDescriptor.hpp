@@ -49,21 +49,21 @@ public:
      */
     MCAPI NetworkItemStackDescriptor(class ItemStack const &);
     /**
-     * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@AEBVItemStackDescriptor\@\@\@Z
+     * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@XZ
      */
-    MCAPI NetworkItemStackDescriptor(class ItemStackDescriptor const &);
+    MCAPI NetworkItemStackDescriptor();
     /**
      * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor const &);
     /**
-     * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@XZ
-     */
-    MCAPI NetworkItemStackDescriptor();
-    /**
      * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor &&);
+    /**
+     * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@AEBVItemStackDescriptor\@\@\@Z
+     */
+    MCAPI NetworkItemStackDescriptor(class ItemStackDescriptor const &);
     /**
      * @symbol ?read\@NetworkItemStackDescriptor\@\@QEAAXAEAVReadOnlyBinaryStream\@\@\@Z
      */

@@ -50,13 +50,13 @@ public:
      */
     MCAPI bool isReadyForMatch();
     /**
-     * @symbol ?match\@BlockPatternBuilder\@\@QEAA?AUBuildMatch\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI struct BuildMatch match(class BlockPos const &);
-    /**
      * @symbol ?match\@BlockPatternBuilder\@\@QEAA?AUBuildMatch\@\@AEBVBlockPos\@\@HHEE\@Z
      */
     MCAPI struct BuildMatch match(class BlockPos const &, int, int, unsigned char, unsigned char);
+    /**
+     * @symbol ?match\@BlockPatternBuilder\@\@QEAA?AUBuildMatch\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI struct BuildMatch match(class BlockPos const &);
     /**
      * @symbol ?match\@BlockPatternBuilder\@\@QEAA?AUBuildMatch\@\@AEBVBlockPos\@\@HH\@Z
      */
