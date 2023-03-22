@@ -257,6 +257,7 @@ jobs:
           tag: ${{ github.event.inputs.tag }}
           bodyFile: RELEASE_NOTES.md
           artifacts: |
+            build/LiteLoaderBDS.zip
             build/Modules.zip
             build/PDB.zip
         env:
