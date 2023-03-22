@@ -20,7 +20,7 @@ class SerializedSkin {
 
 #define AFTER_EXTRA
 // Add Member There
-    char filler[620];
+    char filler[0x250];
 #undef AFTER_EXTRA
 public:
     /**

@@ -21,12 +21,13 @@ class PlayerListEntry {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    ActorUniqueID uid;
-    mce::UUID uuid;
-    std::string name, xuid, platform_online_id;
-    enum class BuildPlatform platform;
-    SerializedSkin skin;
-    bool teacher, host;
+    ActorUniqueID mId;
+    mce::UUID mUUID;
+    std::string mName, mXUID, mPlatformOnlineId;
+    BuildPlatform mBuildPlatform;
+    char filler[4];
+    SerializedSkin mSkin;
+    bool mIsTeacher, mIsHost;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERLISTENTRY
