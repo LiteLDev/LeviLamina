@@ -134,14 +134,20 @@ bool loadPythonPlugin(std::string dirPath, const std::string& packagePath, bool 
         ENGINE_OWN_DATA()->logger.title = pluginName;
 
         try {
-            // add plugin-own site-packages & plugin source dir to sys.path
+            engine->eval("import sys as _llse_py_sys_module");
+            std::error_code ec;
+
+            // add plugin-own site-packages to sys.path
             string pluginSitePackageFormatted = UTF82String(
-                std::filesystem::canonical(realPackageInstallDir.make_preferred()).u8string());
+                std::filesystem::canonical(realPackageInstallDir.make_preferred(), ec).u8string());
+            if(!ec)
+            {
+                engine->eval("_llse_py_sys_module.path.insert(0, r'" + pluginSitePackageFormatted + "')");
+            }
+            // add plugin source dir to sys.path
             string sourceDirFormatted = UTF82String(
                 std::filesystem::canonical(filesystem::path(dirPath).make_preferred()).u8string());
-            engine->eval("import sys as _llse_py_sys_module\n"
-                "_llse_py_sys_module.path.insert(0, r'" + pluginSitePackageFormatted + "')\n"
-                "_llse_py_sys_module.path.insert(0, r'" + sourceDirFormatted + "')");
+            engine->eval("_llse_py_sys_module.path.insert(0, r'" + sourceDirFormatted + "')");
 
             // set __file__ and __name__
             string entryPathFormatted = UTF82String(
@@ -267,23 +273,27 @@ std::string findEntryScript(const std::string& dirPath)
 std::string getPluginPackageName(const std::string& dirPath)
 {
     auto dirPath_obj = std::filesystem::path(dirPath);
+    std::string defaultReturnName = UTF82String(filesystem::path(dirPath).filename().u8string());
 
     std::filesystem::path packageFilePath = dirPath_obj / std::filesystem::path("pyproject.toml");
     if (!std::filesystem::exists(packageFilePath))
-        return "";
+        return defaultReturnName;
     
     try {
         string packageFilePathStr = UTF82String(packageFilePath.make_preferred().u8string());
         toml::table configData = toml::parse_file(packageFilePathStr);
         auto projectNode = configData["project"];
         if(!projectNode["name"])
-            return "";
+            return defaultReturnName;
         std::optional<std::string> packageName = projectNode["name"].value<std::string>();
-        return packageName ? *packageName : "";
+        if (packageName && !packageName->empty())
+            return *packageName;
+        else
+            return defaultReturnName;
     }
     catch (...)
     {
-        return "";
+        return defaultReturnName;
     }
 }
 
