@@ -70,10 +70,6 @@ namespace py_backend {
 
 SCRIPTX_BEGIN_IGNORE_DEPRECARED
 
-// static vars impl
-std::mutex EngineLockerHelper::engineSwitchSharedLocker;
-int EngineLockerHelper::allPyEnginesEnterCount = 0;
-
 EngineLockerHelper::EngineLockerHelper(PyEngine* currentEngine)
   :engine(currentEngine)
 {}
@@ -84,8 +80,6 @@ EngineLockerHelper::~EngineLockerHelper() {
 
 void EngineLockerHelper::waitToEnterEngine() {
   engineLocker.lock();
-  engineSwitchSharedLocker.lock();
-
   if(engine->isDestroying())
     return;
 
@@ -96,18 +90,13 @@ void EngineLockerHelper::waitToEnterEngine() {
   ++EngineLockerHelper::allPyEnginesEnterCount;
 }
 
-void EngineLockerHelper::finishEngineSwitch() {
-  engineSwitchSharedLocker.unlock();
-}
+void EngineLockerHelper::finishEngineSwitch() {}
 
-void EngineLockerHelper::waitToExitEngine() {
-  engineSwitchSharedLocker.lock();
-}
+void EngineLockerHelper::waitToExitEngine() {}
 
 void EngineLockerHelper::finishExitEngine() {
   if(engine->isDestroying())
   {
-    engineSwitchSharedLocker.unlock();
     engineLocker.unlock();
     return;
   }
@@ -117,14 +106,11 @@ void EngineLockerHelper::finishExitEngine() {
     // The last EngineScope exited. Unlock GIL
     PyEval_ReleaseLock();
   }
-  engineSwitchSharedLocker.unlock();
   engineLocker.unlock();
 }
 
 void EngineLockerHelper::startDestroyEngine() {
   engineLocker.lock();
-  engineSwitchSharedLocker.lock();
-
   if (EngineLockerHelper::allPyEnginesEnterCount == 0) {
     // GIL is not locked. Just lock it
     PyEval_AcquireLock();
@@ -138,8 +124,6 @@ void EngineLockerHelper::endDestroyEngine() {
       // Unlock the GIL because it is not locked before
       PyEval_ReleaseLock();
   }
-
-  engineSwitchSharedLocker.unlock();
   engineLocker.unlock();
 }
 

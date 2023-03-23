@@ -54,17 +54,16 @@ struct GeneralObject : PyObject {
 //
 // - Locker Helper:
 //   1. In CPython3.12, it will be changed to per sub-interpreter per GIL, it is great. But in 3.10 
-//      now GIL is global, so we have to use our own lockers instead.
-//   2. This class is used for PyEngine and EngineScope to protect their process. Every PyEngine owns
-//      an instance of EngineLockerHelper.
-//   3. Two lockers are stored in EngineLockerHelper:
-//   - The locker named "engineLocker" is used to mutually exclude multi-threaded access to the same 
-//     engine, just like what GIL does in the single-interpreter environment.
-//   - The locker named "engineSwitchSharedLocker" is shared globally. It is used to protect threadstate
-//     switching and GIL locking/unlocking because they are all "global states" of CPython.
-//   4. "allPyEnginesEnterCount" is shared globally. It stores the number of all entered PyEngines to 
-//      determine whether the GIL is needed to lock/unlock. If any engine is entered, GIL must be locked;
-//      after all engines is exited, GIL is need to be unlocked.
+//      now GIL is global, and we have to use our own lockers instead as GIL cannot be recursive 
+//      locking.
+//   2. This class is used for PyEngine and EngineScope to protect their process. It works like what
+//      GIL does: Keeping at one time only one thread can get access to engines. But unlike GIL, 
+//      recursive_mutex supports re-entry.
+//   3. The locker named "engineLocker" is used to mutually exclude multi-threaded access to the same 
+//      engine, just like what GIL does in the single-interpreter environment.
+//   4. "allPyEnginesEnterCount" stores the number of all entered PyEngines to determine whether 
+//      the GIL is needed to lock/unlock. If any engine is entered, GIL must be locked; after all 
+//      engines are exited, GIL is need to be unlocked.
 //   5. Read more docs about locker usage in "PyScope.cc"
 //
 
@@ -72,9 +71,8 @@ class PyEngine;
 class EngineLockerHelper {
 private:
   PyEngine* engine;
-  std::recursive_mutex engineLocker;
-  static std::mutex engineSwitchSharedLocker;
-  static int allPyEnginesEnterCount;
+  inline static std::recursive_mutex engineLocker;
+  inline static int allPyEnginesEnterCount = 0;
 
 public:
   EngineLockerHelper(PyEngine* currentEngine);
