@@ -42,11 +42,11 @@ private:
   friend class GlobalRefState;
   friend class WeakRefState;
 
-  // Global thread state of main interpreter
-  inline static PyThreadState* mainThreadState_ = nullptr;
-  // Sub interpreter storage
+  // Main interpreter's InterpreterState & ThreadState(in TLS)
+  inline static PyInterpreterState* mainInterpreterState_;
+  inline static TssStorage<PyThreadState> mainThreadStateInTLS_;
+  // Sub interpreter's InterpreterState & ThreadState(in TLS)
   PyInterpreterState* subInterpreterState_;
-  // Sub thread state of this sub interpreter (in TLS)
   TssStorage<PyThreadState> subThreadStateInTLS_;
   // Locker used by EngineScope
   // -- see more comments of EngineLockerHelper in "PyHelper.h" and "PyScope.cc"

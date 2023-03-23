@@ -18,6 +18,7 @@
 #include "PyEngine.h"
 #include "PyInternalHelper.h"
 #include "PyRuntimeSettings.h"
+#include "PyReference.hpp"
 #include <cstring>
 #include "../../src/Utils.h"
 #include "../../src/utils/Helper.hpp"
@@ -51,10 +52,12 @@ PyEngine::PyEngine(std::shared_ptr<utils::MessageQueue> queue)
 
     PyEval_ReleaseLock();   // release GIL
 
-    // PyThreadState_GET will cause FATAL error if oldState is NULL
-    // so here get mainThreadState_ by swap twice
-    mainThreadState_ = PyThreadState_Swap(NULL);
-    PyThreadState_Swap(mainThreadState_);
+    // PyThreadState_GET will cause FATAL error so here use PyThreadState_Swap instead
+    // Store mainInterpreterState and mainThreadState
+    PyThreadState* mainThreadState = PyThreadState_Swap(NULL);
+    mainInterpreterState_ = mainThreadState->interp;
+    mainThreadStateInTLS_.set(mainThreadState);
+    PyThreadState_Swap(mainThreadState);
 
     // After this, thread state of main interpreter is loaded, and GIL is released.
     // Any code will run in sub-interpreters. The main interpreter just keeps the runtime environment.
@@ -63,8 +66,28 @@ PyEngine::PyEngine(std::shared_ptr<utils::MessageQueue> queue)
   // Use here to protect thread state switch
   engineLockHelper.waitToEnterEngine();
 
+  // Record existing thread state into oldState
+  // PyThreadState_GET may cause FATAL error, so use PyThreadState_Swap instead
+  PyThreadState* oldState = PyThreadState_Swap(NULL);
+
   // Resume main thread state (to execute Py_NewInterpreter)
-  PyThreadState* oldState = PyThreadState_Swap(mainThreadState_);
+  PyThreadState *mainThreadState = mainThreadStateInTLS_.get();
+  if (mainThreadState == NULL) {
+    // Main-interpreter enter this thread first time with no thread state
+    // Create a new thread state for the main interpreter in the new thread
+    mainThreadState = PyThreadState_New(mainInterpreterState_);
+    // Save to TLS storage
+    mainThreadStateInTLS_.set(mainThreadState);
+
+    // Load the thread state created just now
+    PyThreadState_Swap(mainThreadState);
+  }
+  else
+  {
+    // Thread state of main-interpreter on current thread is inited & saved in TLS
+    // Just load it
+    PyThreadState_Swap(mainThreadState);
+  }
 
   // Create new interpreter
   PyThreadState* newSubState = Py_NewInterpreter();
