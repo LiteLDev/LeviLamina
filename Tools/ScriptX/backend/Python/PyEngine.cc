@@ -78,7 +78,8 @@ PyEngine::PyEngine(std::shared_ptr<utils::MessageQueue> queue)
     "Exception from ScriptX", PyExc_Exception, NULL);
 
   // Store created new sub thread state & recover old thread state stored before
-  subThreadStateInTLS_.set(PyThreadState_Swap(oldState));
+  subThreadStateInTLS_.set(newSubState);
+  PyThreadState_Swap(oldState);
 
   // Exit engine locker
   engineLockHelper.finishExitEngine();
