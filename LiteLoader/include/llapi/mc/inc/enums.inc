@@ -216,7 +216,7 @@ enum class ContainerEnumName : int8_t {
     RecipeSearchContainer               = 18,
     RecipeSearchBarContainer            = 19,
     RecipeEquipmentContainer            = 20,
-    unkownrecipebook=21,
+    //UnkownRecipeBook            = 21,
     EnchantingInputContainer            = 22,
     EnchantingMaterialContainer         = 23,
     FurnaceFuelContainer                = 24,
