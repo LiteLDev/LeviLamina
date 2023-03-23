@@ -73,8 +73,6 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceProperty("isAngry", &EntityClass::isAngry)
         .instanceProperty("isBaby", &EntityClass::isBaby)
         .instanceProperty("isMoving", &EntityClass::isMoving)
-        .instanceProperty("getBiomeName", &EntityClass::getBiomeName)
-        .instanceProperty("getBiomeId", &EntityClass::getBiomeId)
 
         .instanceFunction("teleport", &EntityClass::teleport)
         .instanceFunction("kill", &EntityClass::kill)
@@ -116,6 +114,8 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("getAllTags", &EntityClass::getAllTags)
         .instanceFunction("getEntityFromViewVector", &EntityClass::getEntityFromViewVector)
         .instanceFunction("getBlockFromViewVector", &EntityClass::getBlockFromViewVector)
+        .instanceFunction("getBiomeName", &EntityClass::getBiomeName)
+        .instanceFunction("getBiomeId", &EntityClass::getBiomeId)
         .instanceFunction("quickEvalMolangScript", &EntityClass::quickEvalMolangScript)
 
         // For Compatibility
