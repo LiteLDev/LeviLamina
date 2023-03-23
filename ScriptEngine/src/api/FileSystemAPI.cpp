@@ -256,6 +256,7 @@ Local<Value> FileClass::read(const Arguments& args) {
 
         pool.enqueue([cnt, fp{&file}, isBinary{isBinary}, lock{&lock},
                       callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}]() {
+            SetCurrentThreadDescription(L"LLSE_FileRead_" _CRT_WIDE(LLSE_MODULE_TYPE));
             if (ll::isServerStopping())
                 return;
             if (!EngineManager::isValid(engine))
@@ -275,6 +276,7 @@ Local<Value> FileClass::read(const Arguments& args) {
                 NewTimeout(callback.get(), {res}, 1);
             }
             CATCH_IN_CALLBACK("ReadFile")
+            SetCurrentThreadDescription(L"LLSE_ThreadPool_Idle_" _CRT_WIDE(LLSE_MODULE_TYPE));
         });
         return Boolean::newBoolean(true);
     }
@@ -290,6 +292,7 @@ Local<Value> FileClass::readLine(const Arguments& args) {
 
         pool.enqueue([fp{&file}, lock{&lock},
                       callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}]() {
+            SetCurrentThreadDescription(L"LLSE_FileReadLine_" _CRT_WIDE(LLSE_MODULE_TYPE));
             if (ll::isServerStopping())
                 return;
             if (!EngineManager::isValid(engine))
@@ -305,6 +308,7 @@ Local<Value> FileClass::readLine(const Arguments& args) {
                 NewTimeout(callback.get(), {String::newString(buf)}, 1);
             }
             CATCH_IN_CALLBACK("FileReadLine")
+            SetCurrentThreadDescription(L"LLSE_ThreadPool_Idle_" _CRT_WIDE(LLSE_MODULE_TYPE));
         });
         return Boolean::newBoolean(true);
     }
@@ -320,6 +324,7 @@ Local<Value> FileClass::readAll(const Arguments& args) {
 
         pool.enqueue([fp{&file}, isBinary{isBinary}, lock{&lock},
                       callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}]() {
+            SetCurrentThreadDescription(L"LLSE_FileReadAll_" _CRT_WIDE(LLSE_MODULE_TYPE));
             if (ll::isServerStopping())
                 return;
             if (!EngineManager::isValid(engine))
@@ -335,6 +340,7 @@ Local<Value> FileClass::readAll(const Arguments& args) {
                 NewTimeout(callback.get(), {readed}, 1);
             }
             CATCH_IN_CALLBACK("FileReadAll")
+            SetCurrentThreadDescription(L"LLSE_ThreadPool_Idle_" _CRT_WIDE(LLSE_MODULE_TYPE));
         });
         return Boolean::newBoolean(true);
     }
@@ -365,6 +371,7 @@ Local<Value> FileClass::write(const Arguments& args) {
 
         pool.enqueue([fp{&file}, lock{&lock}, data{std::move(data)}, isString,
                       callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}]() {
+            SetCurrentThreadDescription(L"LLSE_FileWrite_" _CRT_WIDE(LLSE_MODULE_TYPE));
             if (ll::isServerStopping())
                 return;
             if (!EngineManager::isValid(engine))
@@ -385,6 +392,7 @@ Local<Value> FileClass::write(const Arguments& args) {
                 }
                 CATCH_IN_CALLBACK("WriteFile")
             }
+            SetCurrentThreadDescription(L"LLSE_ThreadPool_Idle_" _CRT_WIDE(LLSE_MODULE_TYPE));
         });
         return Boolean::newBoolean(true);
     }
@@ -406,6 +414,7 @@ Local<Value> FileClass::writeLine(const Arguments& args) {
 
         pool.enqueue([fp{&file}, lock{&lock}, data{std::move(data)},
                       callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}]() {
+            SetCurrentThreadDescription(L"LLSE_FileWriteLine_" _CRT_WIDE(LLSE_MODULE_TYPE));
             if (ll::isServerStopping())
                 return;
             if (!EngineManager::isValid(engine))
@@ -423,6 +432,7 @@ Local<Value> FileClass::writeLine(const Arguments& args) {
                 }
                 CATCH_IN_CALLBACK("FileWriteLine")
             }
+            SetCurrentThreadDescription(L"LLSE_ThreadPool_Idle_" _CRT_WIDE(LLSE_MODULE_TYPE));
         });
         return Boolean::newBoolean(true);
     }
@@ -486,9 +496,11 @@ Local<Value> FileClass::isEOF(const Arguments& args) {
 Local<Value> FileClass::flush(const Arguments& args) {
     try {
         pool.enqueue([fp{&file}, lock{&lock}]() {
+            SetCurrentThreadDescription(L"LLSE_FileFlush_" _CRT_WIDE(LLSE_MODULE_TYPE));
             lock->lock();
             fp->flush();
             lock->unlock();
+            SetCurrentThreadDescription(L"LLSE_ThreadPool_Idle_" _CRT_WIDE(LLSE_MODULE_TYPE));
         });
         return Boolean::newBoolean(true);
     }

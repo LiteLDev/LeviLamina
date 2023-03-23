@@ -312,9 +312,8 @@ void InitMessageSystem() {
 
     // dangerous?
     std::thread([]() {
-#ifdef DEBUG
-        SetThreadDescription(GetCurrentThread(), L"LLSE MessageSystem " _CRT_WIDE(LLSE_MODULE_TYPE));
-#endif // DEBUG
+        SetCurrentThreadDescription(L"LLSE_MessageSystemLoop_" _CRT_WIDE(LLSE_MODULE_TYPE));
+
        // Set global SEH-Exception handler
         if (!ll::isDebugMode())
             _set_se_translator(seh_exception::TranslateSEHtoCE);

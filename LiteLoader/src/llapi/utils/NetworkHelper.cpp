@@ -44,6 +44,7 @@ bool HttpGet(const string& url, const httplib::Headers& headers, const function<
         cli->set_connection_timeout(timeout, 0);
 
     std::thread([cli, headers, callback, path{std::move(path)}]() {
+        SetCurrentThreadDescription(L"LL_HttpGet_Thread");
         if (!ll::isDebugMode())
             _set_se_translator(seh_exception::TranslateSEHtoCE);
         try {
@@ -90,6 +91,7 @@ bool HttpPost(const string& url, const httplib::Headers& headers, const string& 
         cli->set_connection_timeout(timeout, 0);
 
     std::thread([cli, headers, data, type, callback, path{std::move(path)}]() {
+        SetCurrentThreadDescription(L"LL_HttpPost_Thread");
         if (!ll::isDebugMode())
             _set_se_translator(seh_exception::TranslateSEHtoCE);
         try {
