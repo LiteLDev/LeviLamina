@@ -44,6 +44,8 @@ add_link_options(
         /DEBUG:FULL /DLL /MACHINE:X64 /OPT:REF /INCREMENTAL:NO
         /SUBSYSTEM:WINDOWS /MANIFESTUAC:NO
         /OPT:ICF /ERRORREPORT:PROMPT /NOLOGO /TLBID:1
+        /NODEFAULTLIB:libc.lib /NODEFAULTLIB:libcmt.lib /NODEFAULTLIB:libcd.lib 
+        /NODEFAULTLIB:libcmtd.lib /NODEFAULTLIB:msvcrtd.lib
         /DELAYLOAD:bedrock_server.dll # use delayload to import BDS APIs manually(bedrock_server.dll does not need to exist)
 )
 
