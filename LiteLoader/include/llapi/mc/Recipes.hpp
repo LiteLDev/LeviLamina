@@ -13,7 +13,7 @@
 #include "Item.hpp"
 #include "Block.hpp"
 #include  "HashedString.hpp"
-
+#include "RecipeUnlockingRequirement.hpp"
 #undef BEFORE_EXTRA
 
 /**
@@ -24,7 +24,6 @@ class Recipes {
 
 #define AFTER_EXTRA
 // Add Member There
-public:
 public:
 struct FurnaceRecipeKey {
 public:

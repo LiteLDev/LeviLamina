@@ -14,7 +14,10 @@
 class RecipeUnlockingRequirement {
 
 #define AFTER_EXTRA
+    char filler[32];
 
+public:
+    enum class UnlockingContext;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RECIPEUNLOCKINGREQUIREMENT
 public:
