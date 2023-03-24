@@ -31,53 +31,56 @@ struct LegacyMapping {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORFILTERGROUP
 public:
+    ActorFilterGroup(class ActorFilterGroup const &) = delete;
     ActorFilterGroup() = delete;
 #endif
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ActorFilterGroup();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?_createSubgroup\@ActorFilterGroup\@\@MEBA?AV?$shared_ptr\@VFilterGroup\@\@\@std\@\@W4CollectionType\@FilterGroup\@\@\@Z
+     * @vftbl 1
+     * @symbol ?_createSubgroup\@ActorFilterGroup\@\@MEBA?AV?$shared_ptr\@VFilterGroup\@\@\@std\@\@W4CollectionType\@FilterGroup\@\@\@Z
      */
     virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum class FilterGroup::CollectionType) const;
     /**
-     * @vftbl  3
-     * @symbol  ?_handleUnknownMember\@ActorFilterGroup\@\@MEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVValue\@Json\@\@\@Z
+     * @vftbl 3
+     * @symbol ?_handleUnknownMember\@ActorFilterGroup\@\@MEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVValue\@Json\@\@\@Z
      */
     virtual bool _handleUnknownMember(std::string const &, class Json::Value const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORFILTERGROUP
     /**
-     * @symbol  ??0ActorFilterGroup\@\@QEAA\@AEBV0\@\@Z
+     * @symbol __unk_destructor_-1
      */
-    MCAPI ActorFilterGroup(class ActorFilterGroup const &);
+    MCVAPI ~ActorFilterGroup();
+#endif
     /**
-     * @symbol  ?evaluateActor\@ActorFilterGroup\@\@QEBA_NAEBVActor\@\@AEBVVariantParameterList\@\@\@Z
+     * @symbol ?evaluateActor\@ActorFilterGroup\@\@QEBA_NAEBVActor\@\@AEBVVariantParameterList\@\@\@Z
      */
     MCAPI bool evaluateActor(class Actor const &, class VariantParameterList const &) const;
     /**
-     * @symbol  ??4ActorFilterGroup\@\@QEAAAEAV0\@AEBV0\@\@Z
+     * @symbol ??4ActorFilterGroup\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
     MCAPI class ActorFilterGroup & operator=(class ActorFilterGroup const &);
     /**
-     * @symbol  ?initialize\@ActorFilterGroup\@\@SAXXZ
+     * @symbol ?initialize\@ActorFilterGroup\@\@SAXXZ
      */
     MCAPI static void initialize();
 
 //protected:
     /**
-     * @symbol  ?_addLegacyFilter\@ActorFilterGroup\@\@IEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBULegacyMapping\@1\@AEBVFilterInput\@\@\@Z
+     * @symbol ?_addLegacyFilter\@ActorFilterGroup\@\@IEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBULegacyMapping\@1\@AEBVFilterInput\@\@\@Z
      */
     MCAPI bool _addLegacyFilter(std::string const &, struct ActorFilterGroup::LegacyMapping const &, class FilterInput const &);
     /**
-     * @symbol  ?_processLegacyArray\@ActorFilterGroup\@\@IEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVValue\@Json\@\@AEBULegacyMapping\@1\@\@Z
+     * @symbol ?_processLegacyArray\@ActorFilterGroup\@\@IEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVValue\@Json\@\@AEBULegacyMapping\@1\@\@Z
      */
     MCAPI bool _processLegacyArray(std::string const &, class Json::Value const &, struct ActorFilterGroup::LegacyMapping const &);
     /**
-     * @symbol  ?_processLegacyMember\@ActorFilterGroup\@\@IEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVValue\@Json\@\@AEBULegacyMapping\@1\@\@Z
+     * @symbol ?_processLegacyMember\@ActorFilterGroup\@\@IEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVValue\@Json\@\@AEBULegacyMapping\@1\@\@Z
      */
     MCAPI bool _processLegacyMember(std::string const &, class Json::Value const &, struct ActorFilterGroup::LegacyMapping const &);
 

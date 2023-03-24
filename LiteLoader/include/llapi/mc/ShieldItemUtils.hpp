@@ -30,7 +30,7 @@ public:
 
 public:
     /**
-     * @symbol  ?isBlockedDamageCause\@ShieldItemUtils\@\@SA_NAEBVActorDamageSource\@\@\@Z
+     * @symbol ?isBlockedDamageCause\@ShieldItemUtils\@\@SA_NAEBVActorDamageSource\@\@\@Z
      */
     MCAPI static bool isBlockedDamageCause(class ActorDamageSource const &);
 
@@ -38,7 +38,7 @@ public:
 
 private:
     /**
-     * @symbol  ?mAlwaysBlockableDamageCauses\@ShieldItemUtils\@\@0V?$vector\@W4ActorDamageCause\@\@V?$allocator\@W4ActorDamageCause\@\@\@std\@\@\@std\@\@B
+     * @symbol ?mAlwaysBlockableDamageCauses\@ShieldItemUtils\@\@0V?$vector\@W4ActorDamageCause\@\@V?$allocator\@W4ActorDamageCause\@\@\@std\@\@\@std\@\@B
      */
     MCAPI static std::vector<enum class ActorDamageCause> const mAlwaysBlockableDamageCauses;
 

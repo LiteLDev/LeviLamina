@@ -30,15 +30,15 @@ public:
 
 public:
     /**
-     * @symbol  ?resetAll\@DBStoragePerformanceData\@\@QEAAXXZ
+     * @symbol ?resetAll\@DBStoragePerformanceData\@\@QEAAXXZ
      */
     MCAPI void resetAll();
     /**
-     * @symbol  ?CATEGORY_NAMES\@DBStoragePerformanceData\@\@2V?$array\@PEBD$0M\@\@std\@\@A
+     * @symbol ?CATEGORY_NAMES\@DBStoragePerformanceData\@\@2V?$array\@PEBD$0M\@\@std\@\@A
      */
     MCAPI static class std::array<char const *, 12> CATEGORY_NAMES;
     /**
-     * @symbol  ?OPERATION_NAMES\@DBStoragePerformanceData\@\@2V?$array\@PEBD$03\@std\@\@A
+     * @symbol ?OPERATION_NAMES\@DBStoragePerformanceData\@\@2V?$array\@PEBD$03\@std\@\@A
      */
     MCAPI static class std::array<char const *, 4> OPERATION_NAMES;
 

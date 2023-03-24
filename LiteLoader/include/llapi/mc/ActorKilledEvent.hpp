@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ActorKilledEvent\@\@QEAA\@XZ
+     * @symbol ??1ActorKilledEvent\@\@QEAA\@XZ
      */
     MCAPI ~ActorKilledEvent();
 

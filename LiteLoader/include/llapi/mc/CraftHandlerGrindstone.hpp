@@ -31,40 +31,40 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~CraftHandlerGrindstone();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  4
-     * @symbol  ?_handleCraftAction\@CraftHandlerGrindstone\@\@MEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionCraftBase\@\@\@Z
+     * @vftbl 4
+     * @symbol ?_handleCraftAction\@CraftHandlerGrindstone\@\@MEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionCraftBase\@\@\@Z
      */
     virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
     /**
-     * @vftbl  5
-     * @symbol  ?_postCraftRequest\@CraftHandlerGrindstone\@\@EEAAX_N\@Z
+     * @vftbl 5
+     * @symbol ?_postCraftRequest\@CraftHandlerGrindstone\@\@EEAAX_N\@Z
      */
     virtual void _postCraftRequest(bool);
     /**
-     * @symbol  ??0CraftHandlerGrindstone\@\@QEAA\@AEAVPlayer\@\@AEAVItemStackRequestActionCraftHandler\@\@\@Z
+     * @symbol ??0CraftHandlerGrindstone\@\@QEAA\@AEAVPlayer\@\@AEAVItemStackRequestActionCraftHandler\@\@\@Z
      */
     MCAPI CraftHandlerGrindstone(class Player &, class ItemStackRequestActionCraftHandler &);
 
 //private:
     /**
-     * @symbol  ?_createResultItem\@CraftHandlerGrindstone\@\@AEAA?AVItemStack\@\@AEBV2\@0\@Z
+     * @symbol ?_createResultItem\@CraftHandlerGrindstone\@\@AEAA?AVItemStack\@\@AEBV2\@0\@Z
      */
     MCAPI class ItemStack _createResultItem(class ItemStack const &, class ItemStack const &);
     /**
-     * @symbol  ?_getExperienceFromItem\@CraftHandlerGrindstone\@\@AEBAHAEBVItemStack\@\@\@Z
+     * @symbol ?_getExperienceFromItem\@CraftHandlerGrindstone\@\@AEBAHAEBVItemStack\@\@\@Z
      */
     MCAPI int _getExperienceFromItem(class ItemStack const &) const;
     /**
-     * @symbol  ?_getResultItemWithNoEnchants\@CraftHandlerGrindstone\@\@AEAA?AVItemStack\@\@AEBV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEA_N\@Z
+     * @symbol ?_getResultItemWithNoEnchants\@CraftHandlerGrindstone\@\@AEAA?AVItemStack\@\@AEBV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEA_N\@Z
      */
     MCAPI class ItemStack _getResultItemWithNoEnchants(std::vector<class ItemStack> const &, bool &);
     /**
-     * @symbol  ?_resolveNetIdAndValidate\@CraftHandlerGrindstone\@\@AEAA_NW4ContainerEnumName\@\@EAEBUItemStackNetIdVariant\@\@\@Z
+     * @symbol ?_resolveNetIdAndValidate\@CraftHandlerGrindstone\@\@AEAA_NW4ContainerEnumName\@\@EAEBUItemStackNetIdVariant\@\@\@Z
      */
     MCAPI bool _resolveNetIdAndValidate(enum class ContainerEnumName, unsigned char, struct ItemStackNetIdVariant const &);
 

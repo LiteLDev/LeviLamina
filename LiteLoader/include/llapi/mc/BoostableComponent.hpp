@@ -29,39 +29,39 @@ public:
 
 public:
     /**
-     * @symbol  ??0BoostableComponent\@\@QEAA\@XZ
+     * @symbol ??0BoostableComponent\@\@QEAA\@XZ
      */
     MCAPI BoostableComponent();
     /**
-     * @symbol  ?getBoostTime\@BoostableComponent\@\@QEBAHXZ
+     * @symbol ?getBoostTime\@BoostableComponent\@\@QEBAHXZ
      */
     MCAPI int getBoostTime() const;
     /**
-     * @symbol  ?getBoostTimeTotal\@BoostableComponent\@\@QEBAHXZ
+     * @symbol ?getBoostTimeTotal\@BoostableComponent\@\@QEBAHXZ
      */
     MCAPI int getBoostTimeTotal() const;
     /**
-     * @symbol  ?getIsBoosting\@BoostableComponent\@\@QEBA_NXZ
+     * @symbol ?getIsBoosting\@BoostableComponent\@\@QEBA_NXZ
      */
     MCAPI bool getIsBoosting() const;
     /**
-     * @symbol  ?itemUseText\@BoostableComponent\@\@QEAA_NAEBVPlayer\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?itemUseText\@BoostableComponent\@\@QEAA_NAEBVPlayer\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI bool itemUseText(class Player const &, std::string &);
     /**
-     * @symbol  ?onItemInteract\@BoostableComponent\@\@QEAA_NAEAVActor\@\@AEAVItemStack\@\@AEAVPlayer\@\@\@Z
+     * @symbol ?onItemInteract\@BoostableComponent\@\@QEAA_NAEAVActor\@\@AEAVItemStack\@\@AEAVPlayer\@\@\@Z
      */
     MCAPI bool onItemInteract(class Actor &, class ItemStack &, class Player &);
     /**
-     * @symbol  ?setBoostTime\@BoostableComponent\@\@QEAAXH\@Z
+     * @symbol ?setBoostTime\@BoostableComponent\@\@QEAAXH\@Z
      */
     MCAPI void setBoostTime(int);
     /**
-     * @symbol  ?setIsBoosting\@BoostableComponent\@\@QEAAX_N\@Z
+     * @symbol ?setIsBoosting\@BoostableComponent\@\@QEAAX_N\@Z
      */
     MCAPI void setIsBoosting(bool);
     /**
-     * @symbol  ?getSpeedModifierBoosting\@BoostableComponent\@\@SA?AV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@XZ
+     * @symbol ?getSpeedModifierBoosting\@BoostableComponent\@\@SA?AV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@XZ
      */
     MCAPI static class std::shared_ptr<class AttributeModifier> getSpeedModifierBoosting();
 
@@ -69,11 +69,11 @@ public:
 
 private:
     /**
-     * @symbol  ?SPEED_MODIFIER_BOOSTING\@BoostableComponent\@\@0V?$shared_ptr\@VAttributeModifier\@\@\@std\@\@A
+     * @symbol ?SPEED_MODIFIER_BOOSTING\@BoostableComponent\@\@0V?$shared_ptr\@VAttributeModifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_BOOSTING;
     /**
-     * @symbol  ?SPEED_MODIFIER_BOOSTING_UUID\@BoostableComponent\@\@0VUUID\@mce\@\@B
+     * @symbol ?SPEED_MODIFIER_BOOSTING_UUID\@BoostableComponent\@\@0VUUID\@mce\@\@B
      */
     MCAPI static class mce::UUID const SPEED_MODIFIER_BOOSTING_UUID;
 

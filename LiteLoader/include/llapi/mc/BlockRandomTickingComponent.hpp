@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1BlockRandomTickingComponent\@\@QEAA\@XZ
+     * @symbol ??1BlockRandomTickingComponent\@\@QEAA\@XZ
      */
     MCAPI ~BlockRandomTickingComponent();
 

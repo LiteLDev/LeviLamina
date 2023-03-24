@@ -29,31 +29,31 @@ public:
 
 public:
     /**
-     * @symbol  ??0ContainerScreenContext\@\@QEAA\@XZ
-     */
-    MCAPI ContainerScreenContext();
-    /**
-     * @symbol  ??0ContainerScreenContext\@\@QEAA\@AEAVPlayer\@\@W4ContainerType\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI ContainerScreenContext(class Player &, enum class ContainerType, class BlockPos const &);
-    /**
-     * @symbol  ??0ContainerScreenContext\@\@QEAA\@AEAVPlayer\@\@W4ContainerType\@\@AEBUActorUniqueID\@\@\@Z
+     * @symbol ??0ContainerScreenContext\@\@QEAA\@AEAVPlayer\@\@W4ContainerType\@\@AEBUActorUniqueID\@\@\@Z
      */
     MCAPI ContainerScreenContext(class Player &, enum class ContainerType, struct ActorUniqueID const &);
     /**
-     * @symbol  ?getPlayer\@ContainerScreenContext\@\@QEBAAEAVPlayer\@\@XZ
+     * @symbol ??0ContainerScreenContext\@\@QEAA\@AEAVPlayer\@\@W4ContainerType\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI ContainerScreenContext(class Player &, enum class ContainerType, class BlockPos const &);
+    /**
+     * @symbol ??0ContainerScreenContext\@\@QEAA\@XZ
+     */
+    MCAPI ContainerScreenContext();
+    /**
+     * @symbol ?getPlayer\@ContainerScreenContext\@\@QEBAAEAVPlayer\@\@XZ
      */
     MCAPI class Player & getPlayer() const;
     /**
-     * @symbol  ?getScreenContainerType\@ContainerScreenContext\@\@QEBA?AW4ContainerType\@\@XZ
+     * @symbol ?getScreenContainerType\@ContainerScreenContext\@\@QEBA?AW4ContainerType\@\@XZ
      */
     MCAPI enum class ContainerType getScreenContainerType() const;
     /**
-     * @symbol  ?tryGetActor\@ContainerScreenContext\@\@QEBAPEAVActor\@\@XZ
+     * @symbol ?tryGetActor\@ContainerScreenContext\@\@QEBAPEAVActor\@\@XZ
      */
     MCAPI class Actor * tryGetActor() const;
     /**
-     * @symbol  ?tryGetBlockActor\@ContainerScreenContext\@\@QEBAPEAVBlockActor\@\@XZ
+     * @symbol ?tryGetBlockActor\@ContainerScreenContext\@\@QEBAPEAVBlockActor\@\@XZ
      */
     MCAPI class BlockActor * tryGetBlockActor() const;
 

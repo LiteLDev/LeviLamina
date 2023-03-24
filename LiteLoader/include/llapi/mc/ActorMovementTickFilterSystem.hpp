@@ -30,11 +30,11 @@ public:
 
 public:
     /**
-     * @symbol  ?createBase\@ActorMovementTickFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createBase\@ActorMovementTickFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createBase();
     /**
-     * @symbol  ?createInputPacketDependentFilter\@ActorMovementTickFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createInputPacketDependentFilter\@ActorMovementTickFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createInputPacketDependentFilter();
 

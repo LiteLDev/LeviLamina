@@ -18,14 +18,17 @@ struct SummonSpellStage {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUMMONSPELLSTAGE
 public:
-    struct SummonSpellStage& operator=(struct SummonSpellStage const &) = delete;
     SummonSpellStage(struct SummonSpellStage const &) = delete;
     SummonSpellStage() = delete;
 #endif
 
 public:
     /**
-     * @symbol  ??1SummonSpellStage\@\@QEAA\@XZ
+     * @symbol ??4SummonSpellStage\@\@QEAAAEAU0\@AEBU0\@\@Z
+     */
+    MCAPI struct SummonSpellStage & operator=(struct SummonSpellStage const &);
+    /**
+     * @symbol ??1SummonSpellStage\@\@QEAA\@XZ
      */
     MCAPI ~SummonSpellStage();
 

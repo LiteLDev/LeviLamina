@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1OverworldBlendRules\@\@QEAA\@XZ
+     * @symbol ??1OverworldBlendRules\@\@QEAA\@XZ
      */
     MCAPI ~OverworldBlendRules();
 

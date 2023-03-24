@@ -189,12 +189,16 @@ TEST_F(ReferenceTest, WeakGc) {
     engine->gc();
   }
 
+#ifndef SCRIPTX_LANG_PYTHON
+  // Python's weak refs to Object(dict) works like strong refs, so cannot test here
+  // See docs/en/Python.md for more information
   {
     EngineScope engineScope(engine);
     EXPECT_TRUE(std::find_if(weaks.begin(), weaks.end(),
                              [](auto& w) { return w.getValue().isNull(); }) != weaks.end());
     weaks.clear();
   }
+#endif
 }
 
 TEST_F(ReferenceTest, WeakGlobal) {
@@ -220,7 +224,7 @@ TEST_F(ReferenceTest, WeakGlobal) {
   }
 }
 
-TEST_F(ReferenceTest, WeakNotClrear) {
+TEST_F(ReferenceTest, WeakNotClear) {
   Weak<String> weak;
   {
     EngineScope engineScope(engine);

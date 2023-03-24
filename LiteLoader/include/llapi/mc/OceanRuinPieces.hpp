@@ -31,84 +31,84 @@ public:
 
 public:
     /**
-     * @symbol  ?addPieces\@OceanRuinPieces\@\@SAXV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEBVBlockPos\@\@AEBW4Rotation\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@AEBUOceanRuinConfiguration\@\@\@Z
+     * @symbol ?addPieces\@OceanRuinPieces\@\@SAXV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEBVBlockPos\@\@AEBW4Rotation\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@AEBUOceanRuinConfiguration\@\@\@Z
      */
     MCAPI static void addPieces(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class BlockPos const &, enum class Rotation const &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, struct OceanRuinConfiguration const &);
 
 //private:
     /**
-     * @symbol  ?_addClusterRuins\@OceanRuinPieces\@\@CAXV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEAVRandom\@\@AEBW4Rotation\@\@AEBVBlockPos\@\@AEBUOceanRuinConfiguration\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@\@Z
+     * @symbol ?_addClusterRuins\@OceanRuinPieces\@\@CAXV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEAVRandom\@\@AEBW4Rotation\@\@AEBVBlockPos\@\@AEBUOceanRuinConfiguration\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@\@Z
      */
     MCAPI static void _addClusterRuins(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class Random &, enum class Rotation const &, class BlockPos const &, struct OceanRuinConfiguration const &, std::vector<std::unique_ptr<class StructurePiece>> &);
     /**
-     * @symbol  ?_addPiece\@OceanRuinPieces\@\@CAXV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEBVBlockPos\@\@AEBW4Rotation\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@AEBUOceanRuinConfiguration\@\@_NM\@Z
+     * @symbol ?_addPiece\@OceanRuinPieces\@\@CAXV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEBVBlockPos\@\@AEBW4Rotation\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@AEBUOceanRuinConfiguration\@\@_NM\@Z
      */
     MCAPI static void _addPiece(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class BlockPos const &, enum class Rotation const &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, struct OceanRuinConfiguration const &, bool, float);
     /**
-     * @symbol  ?_allPositions\@OceanRuinPieces\@\@CA?AV?$vector\@VBlockPos\@\@V?$allocator\@VBlockPos\@\@\@std\@\@\@std\@\@AEAVRandom\@\@HHH\@Z
+     * @symbol ?_allPositions\@OceanRuinPieces\@\@CA?AV?$vector\@VBlockPos\@\@V?$allocator\@VBlockPos\@\@\@std\@\@\@std\@\@AEAVRandom\@\@HHH\@Z
      */
     MCAPI static std::vector<class BlockPos> _allPositions(class Random &, int, int, int);
 
 private:
     /**
-     * @symbol  ?BIG_RUIN_LOOT\@OceanRuinPieces\@\@0V?$basic_string_span\@$$CBD$0?0\@gsl\@\@A
+     * @symbol ?BIG_RUIN_LOOT\@OceanRuinPieces\@\@0V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@A
      */
-    MCAPI static class gsl::basic_string_span<char const, -1> BIG_RUIN_LOOT;
+    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> BIG_RUIN_LOOT;
     /**
-     * @symbol  ?RUIN_LOOT\@OceanRuinPieces\@\@0V?$basic_string_span\@$$CBD$0?0\@gsl\@\@A
+     * @symbol ?RUIN_LOOT\@OceanRuinPieces\@\@0V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@A
      */
-    MCAPI static class gsl::basic_string_span<char const, -1> RUIN_LOOT;
+    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> RUIN_LOOT;
     /**
-     * @symbol  ?STRUCTURE_BIG_RUIN1_BRICK\@OceanRuinPieces\@\@0V?$basic_string_span\@$$CBD$0?0\@gsl\@\@A
+     * @symbol ?STRUCTURE_BIG_RUIN1_BRICK\@OceanRuinPieces\@\@0V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@A
      */
-    MCAPI static class gsl::basic_string_span<char const, -1> STRUCTURE_BIG_RUIN1_BRICK;
+    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> STRUCTURE_BIG_RUIN1_BRICK;
     /**
-     * @symbol  ?STRUCTURE_BIG_RUIN8_BRICK\@OceanRuinPieces\@\@0V?$basic_string_span\@$$CBD$0?0\@gsl\@\@A
+     * @symbol ?STRUCTURE_BIG_RUIN8_BRICK\@OceanRuinPieces\@\@0V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@A
      */
-    MCAPI static class gsl::basic_string_span<char const, -1> STRUCTURE_BIG_RUIN8_BRICK;
+    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> STRUCTURE_BIG_RUIN8_BRICK;
     /**
-     * @symbol  ?STRUCTURE_RUIN_2_BRICK\@OceanRuinPieces\@\@0V?$basic_string_span\@$$CBD$0?0\@gsl\@\@A
+     * @symbol ?STRUCTURE_RUIN_2_BRICK\@OceanRuinPieces\@\@0V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@A
      */
-    MCAPI static class gsl::basic_string_span<char const, -1> STRUCTURE_RUIN_2_BRICK;
+    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> STRUCTURE_RUIN_2_BRICK;
     /**
-     * @symbol  ?STRUCTURE_RUIN_3_BRICK\@OceanRuinPieces\@\@0V?$basic_string_span\@$$CBD$0?0\@gsl\@\@A
+     * @symbol ?STRUCTURE_RUIN_3_BRICK\@OceanRuinPieces\@\@0V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@A
      */
-    MCAPI static class gsl::basic_string_span<char const, -1> STRUCTURE_RUIN_3_BRICK;
+    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> STRUCTURE_RUIN_3_BRICK;
     /**
-     * @symbol  ?bigRuinsBrick\@OceanRuinPieces\@\@0PAV?$basic_string_span\@$$CBD$0?0\@gsl\@\@A
+     * @symbol ?bigRuinsBrick\@OceanRuinPieces\@\@0PAV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@A
      */
-    MCAPI static class gsl::basic_string_span<char const, -1> bigRuinsBrick[];
+    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> bigRuinsBrick[];
     /**
-     * @symbol  ?bigRuinsCracked\@OceanRuinPieces\@\@0PAV?$basic_string_span\@$$CBD$0?0\@gsl\@\@A
+     * @symbol ?bigRuinsCracked\@OceanRuinPieces\@\@0PAV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@A
      */
-    MCAPI static class gsl::basic_string_span<char const, -1> bigRuinsCracked[];
+    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> bigRuinsCracked[];
     /**
-     * @symbol  ?bigRuinsMossy\@OceanRuinPieces\@\@0PAV?$basic_string_span\@$$CBD$0?0\@gsl\@\@A
+     * @symbol ?bigRuinsMossy\@OceanRuinPieces\@\@0PAV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@A
      */
-    MCAPI static class gsl::basic_string_span<char const, -1> bigRuinsMossy[];
+    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> bigRuinsMossy[];
     /**
-     * @symbol  ?bigWarmRuins\@OceanRuinPieces\@\@0PAV?$basic_string_span\@$$CBD$0?0\@gsl\@\@A
+     * @symbol ?bigWarmRuins\@OceanRuinPieces\@\@0PAV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@A
      */
-    MCAPI static class gsl::basic_string_span<char const, -1> bigWarmRuins[];
+    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> bigWarmRuins[];
     /**
-     * @symbol  ?mSettings\@OceanRuinPieces\@\@0VLegacyStructureSettings\@\@A
+     * @symbol ?mSettings\@OceanRuinPieces\@\@0VLegacyStructureSettings\@\@A
      */
     MCAPI static class LegacyStructureSettings mSettings;
     /**
-     * @symbol  ?ruinsBrick\@OceanRuinPieces\@\@0PAV?$basic_string_span\@$$CBD$0?0\@gsl\@\@A
+     * @symbol ?ruinsBrick\@OceanRuinPieces\@\@0PAV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@A
      */
-    MCAPI static class gsl::basic_string_span<char const, -1> ruinsBrick[];
+    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> ruinsBrick[];
     /**
-     * @symbol  ?ruinsCracked\@OceanRuinPieces\@\@0PAV?$basic_string_span\@$$CBD$0?0\@gsl\@\@A
+     * @symbol ?ruinsCracked\@OceanRuinPieces\@\@0PAV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@A
      */
-    MCAPI static class gsl::basic_string_span<char const, -1> ruinsCracked[];
+    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> ruinsCracked[];
     /**
-     * @symbol  ?ruinsMossy\@OceanRuinPieces\@\@0PAV?$basic_string_span\@$$CBD$0?0\@gsl\@\@A
+     * @symbol ?ruinsMossy\@OceanRuinPieces\@\@0PAV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@A
      */
-    MCAPI static class gsl::basic_string_span<char const, -1> ruinsMossy[];
+    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> ruinsMossy[];
     /**
-     * @symbol  ?warmRuins\@OceanRuinPieces\@\@0PAV?$basic_string_span\@$$CBD$0?0\@gsl\@\@A
+     * @symbol ?warmRuins\@OceanRuinPieces\@\@0PAV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@A
      */
-    MCAPI static class gsl::basic_string_span<char const, -1> warmRuins[];
+    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> warmRuins[];
 
 };

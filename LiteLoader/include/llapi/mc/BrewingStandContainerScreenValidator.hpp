@@ -30,12 +30,12 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BrewingStandContainerScreenValidator();
+    virtual void __unk_vfn_0();
     /**
-     * @symbol  ??0BrewingStandContainerScreenValidator\@\@QEAA\@XZ
+     * @symbol ??0BrewingStandContainerScreenValidator\@\@QEAA\@XZ
      */
     MCAPI BrewingStandContainerScreenValidator();
 

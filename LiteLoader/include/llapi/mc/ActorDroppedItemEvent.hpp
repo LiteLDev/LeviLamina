@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ActorDroppedItemEvent\@\@QEAA\@XZ
+     * @symbol ??1ActorDroppedItemEvent\@\@QEAA\@XZ
      */
     MCAPI ~ActorDroppedItemEvent();
 

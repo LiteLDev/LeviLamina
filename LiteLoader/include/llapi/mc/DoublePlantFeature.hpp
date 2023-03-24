@@ -31,17 +31,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~DoublePlantFeature();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  3
-     * @symbol  ?place\@DoublePlantFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @vftbl 3
+     * @symbol ?place\@DoublePlantFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @symbol  ?place\@DoublePlantFeature\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@W4DoublePlantType\@\@\@Z
+     * @symbol ?place\@DoublePlantFeature\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@W4DoublePlantType\@\@\@Z
      */
     MCAPI bool place(class BlockSource &, class BlockPos const &, class Random &, enum class DoublePlantType) const;
 

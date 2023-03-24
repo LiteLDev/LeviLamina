@@ -28,27 +28,27 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~WardenVibrationConfig();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?onSignalReceive\@WardenVibrationConfig\@\@UEAAXAEAVBlockSource\@\@VBlockPos\@\@AEBVGameEvent\@\@PEAVActor\@\@M3\@Z
+     * @vftbl 1
+     * @symbol ?onSignalReceive\@WardenVibrationConfig\@\@UEAAXAEAVBlockSource\@\@VBlockPos\@\@AEBVGameEvent\@\@PEAVActor\@\@M3\@Z
      */
     virtual void onSignalReceive(class BlockSource &, class BlockPos, class GameEvent const &, class Actor *, float, class Actor *);
     /**
-     * @vftbl  2
-     * @symbol  ?isValidVibration\@WardenVibrationConfig\@\@UEAA_NAEBVGameEvent\@\@\@Z
+     * @vftbl 2
+     * @symbol ?isValidVibration\@WardenVibrationConfig\@\@UEAA_NAEBVGameEvent\@\@\@Z
      */
     virtual bool isValidVibration(class GameEvent const &);
     /**
-     * @vftbl  3
-     * @symbol  ?shouldListen\@WardenVibrationConfig\@\@UEAA_NAEAVBlockSource\@\@AEBVGameEvent\@\@AEBUGameEventContext\@\@\@Z
+     * @vftbl 3
+     * @symbol ?shouldListen\@WardenVibrationConfig\@\@UEAA_NAEAVBlockSource\@\@AEBVGameEvent\@\@AEBUGameEventContext\@\@\@Z
      */
     virtual bool shouldListen(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
     /**
-     * @symbol  ??0WardenVibrationConfig\@\@QEAA\@AEAVActor\@\@G\@Z
+     * @symbol ??0WardenVibrationConfig\@\@QEAA\@AEAVActor\@\@G\@Z
      */
     MCAPI WardenVibrationConfig(class Actor &, unsigned short);
 

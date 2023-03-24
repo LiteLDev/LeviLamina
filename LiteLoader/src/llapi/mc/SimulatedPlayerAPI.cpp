@@ -38,39 +38,6 @@ bool SimulatedPlayer::simulateStopSneaking() {
     return !isSneaking();
 }
 
-template <>
-class OwnerPtrT<struct EntityRefTraits> {
-    char filler[24];
-
-public:
-    MCAPI ~OwnerPtrT();
-
-    inline OwnerPtrT(OwnerPtrT&& right) noexcept {
-        void (OwnerPtrT::*rv)(OwnerPtrT && right);
-        *((void**)&rv) = dlsym("??0OwnerStorageEntity@@IEAA@$$QEAV0@@Z");
-        (this->*rv)(std::move(right));
-    }
-
-    inline OwnerPtrT& operator=(OwnerPtrT&& right) noexcept {
-        void (OwnerPtrT::*rv)(OwnerPtrT && right);
-        *((void**)&rv) = dlsym("??4OwnerStorageEntity@@IEAAAEAV0@$$QEAV0@@Z");
-        (this->*rv)(std::move(right));
-    }
-
-    inline SimulatedPlayer* tryGetSimulatedPlayer(bool b = false) {
-        auto& context = dAccess<StackResultStorageEntity, 0>(this).getStackRef();
-        return SimulatedPlayer::tryGetFromEntity(context, b);
-    }
-
-    inline bool hasValue() const {
-        if (!this)
-            return false;
-        return dAccess<bool, 16>(this);
-    }
-
-    // inline bool isValid()
-};
-
 #include "llapi/mc/HashedString.hpp"
 
 class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class Vec3 const& pos,
@@ -79,7 +46,7 @@ class SimulatedPlayer* SimulatedPlayer::create(std::string const& name, class Ve
     // return create(name, position, dimensionId, Global<Minecraft>->getServerNetworkHandler());
     OwnerPtrT<EntityRefTraits> ownerPtr = Global<ServerNetworkHandler>->createSimulatedPlayer(
         name, '-' + std::to_string(HashedString::computeHash(name) ^ RNG::rand<uint64_t>()));
-    auto player = ownerPtr.tryGetSimulatedPlayer();
+    auto player = ownerPtr.tryUnwrap<SimulatedPlayer>();
 
     if (player /* && player->isSimulatedPlayer() */) {
         // player->changeDimension(dimensionId);
@@ -107,7 +74,7 @@ class SimulatedPlayer* SimulatedPlayer::create(std::string const& name,
                                                class AutomaticID<class Dimension, int> dimensionId) {
     OwnerPtrT<EntityRefTraits> ownerPtr = Global<ServerNetworkHandler>->createSimulatedPlayer(
         name, '-' + std::to_string(HashedString::computeHash(name) ^ RNG::rand<uint64_t>()));
-    auto player = ownerPtr.tryGetSimulatedPlayer();
+    auto player = ownerPtr.tryUnwrap<SimulatedPlayer>();
 
     if (player /* && player->isSimulatedPlayer() */) {
         // player->changeDimension(dimensionId);

@@ -31,80 +31,86 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~OceanMonumentPiece();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  5
-     * @symbol  ?postProcessMobsAt\@OceanMonumentPiece\@\@UEAAXAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
+     * @vftbl 5
+     * @symbol ?postProcessMobsAt\@OceanMonumentPiece\@\@UEAAXAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
     virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
     /**
-     * @vftbl  7
-     * @symbol  ?getWorldX\@OceanMonumentPiece\@\@UEAAHHH\@Z
+     * @vftbl 7
+     * @symbol ?getWorldX\@OceanMonumentPiece\@\@UEAAHHH\@Z
      */
     virtual int getWorldX(int, int);
     /**
-     * @vftbl  8
-     * @symbol  ?getWorldZ\@OceanMonumentPiece\@\@UEAAHHH\@Z
+     * @vftbl 8
+     * @symbol ?getWorldZ\@OceanMonumentPiece\@\@UEAAHHH\@Z
      */
     virtual int getWorldZ(int, int);
     /**
-     * @vftbl  12
-     * @symbol  ?addHardcodedSpawnAreas\@OceanMonumentPiece\@\@UEBAXAEAVLevelChunk\@\@\@Z
+     * @vftbl 12
+     * @symbol ?addHardcodedSpawnAreas\@OceanMonumentPiece\@\@UEBAXAEAVLevelChunk\@\@\@Z
      */
     virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANMONUMENTPIECE
     /**
-     * @symbol  ??0OceanMonumentPiece\@\@QEAA\@AEAHAEAVBoundingBox\@\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~OceanMonumentPiece();
+#endif
+    /**
+     * @symbol ??0OceanMonumentPiece\@\@QEAA\@AEAHAEAVBoundingBox\@\@\@Z
      */
     MCAPI OceanMonumentPiece(int &, class BoundingBox &);
 
 //protected:
     /**
-     * @symbol  ??0OceanMonumentPiece\@\@IEAA\@HAEAHV?$shared_ptr\@VRoomDefinition\@\@\@std\@\@HHH\@Z
+     * @symbol ??0OceanMonumentPiece\@\@IEAA\@HAEAHV?$shared_ptr\@VRoomDefinition\@\@\@std\@\@HHH\@Z
      */
     MCAPI OceanMonumentPiece(int, int &, class std::shared_ptr<class RoomDefinition>, int, int, int);
     /**
-     * @symbol  ?chunkIntersects\@OceanMonumentPiece\@\@IEAA_NAEBVBoundingBox\@\@HHHH\@Z
+     * @symbol ?chunkIntersects\@OceanMonumentPiece\@\@IEAA_NAEBVBoundingBox\@\@HHHH\@Z
      */
     MCAPI bool chunkIntersects(class BoundingBox const &, int, int, int, int);
     /**
-     * @symbol  ?generateDefaultFloor\@OceanMonumentPiece\@\@IEAAXAEAVBlockSource\@\@AEBVBoundingBox\@\@HH_N\@Z
+     * @symbol ?generateDefaultFloor\@OceanMonumentPiece\@\@IEAAXAEAVBlockSource\@\@AEBVBoundingBox\@\@HH_N\@Z
      */
     MCAPI void generateDefaultFloor(class BlockSource &, class BoundingBox const &, int, int, bool);
     /**
-     * @symbol  ?spawnElder\@OceanMonumentPiece\@\@IEAAXAEAVBlockSource\@\@AEBVBoundingBox\@\@HHH\@Z
+     * @symbol ?spawnElder\@OceanMonumentPiece\@\@IEAAXAEAVBlockSource\@\@AEBVBoundingBox\@\@HHH\@Z
      */
     MCAPI void spawnElder(class BlockSource &, class BoundingBox const &, int, int, int);
 
 protected:
     /**
-     * @symbol  ?mGridroomLeftWingConnectIndex\@OceanMonumentPiece\@\@1HA
+     * @symbol ?mGridroomLeftWingConnectIndex\@OceanMonumentPiece\@\@1HA
      */
     MCAPI static int mGridroomLeftWingConnectIndex;
     /**
-     * @symbol  ?mGridroomRightWingConnectIndex\@OceanMonumentPiece\@\@1HA
+     * @symbol ?mGridroomRightWingConnectIndex\@OceanMonumentPiece\@\@1HA
      */
     MCAPI static int mGridroomRightWingConnectIndex;
     /**
-     * @symbol  ?mGridroomSourceIndex\@OceanMonumentPiece\@\@1HA
+     * @symbol ?mGridroomSourceIndex\@OceanMonumentPiece\@\@1HA
      */
     MCAPI static int mGridroomSourceIndex;
     /**
-     * @symbol  ?mGridroomTopConnectIndex\@OceanMonumentPiece\@\@1HA
+     * @symbol ?mGridroomTopConnectIndex\@OceanMonumentPiece\@\@1HA
      */
     MCAPI static int mGridroomTopConnectIndex;
     /**
-     * @symbol  ?mLeftWingIndex\@OceanMonumentPiece\@\@1HB
+     * @symbol ?mLeftWingIndex\@OceanMonumentPiece\@\@1HB
      */
     MCAPI static int const mLeftWingIndex;
     /**
-     * @symbol  ?mPenthouseIndex\@OceanMonumentPiece\@\@1HB
+     * @symbol ?mPenthouseIndex\@OceanMonumentPiece\@\@1HB
      */
     MCAPI static int const mPenthouseIndex;
     /**
-     * @symbol  ?mRightWingIndex\@OceanMonumentPiece\@\@1HB
+     * @symbol ?mRightWingIndex\@OceanMonumentPiece\@\@1HB
      */
     MCAPI static int const mRightWingIndex;
 

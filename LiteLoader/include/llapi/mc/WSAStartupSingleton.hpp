@@ -30,11 +30,11 @@ public:
 
 public:
     /**
-     * @symbol  ?AddRef\@WSAStartupSingleton\@\@SAXXZ
+     * @symbol ?AddRef\@WSAStartupSingleton\@\@SAXXZ
      */
     MCAPI static void AddRef();
     /**
-     * @symbol  ?Deref\@WSAStartupSingleton\@\@SAXXZ
+     * @symbol ?Deref\@WSAStartupSingleton\@\@SAXXZ
      */
     MCAPI static void Deref();
 
@@ -42,7 +42,7 @@ public:
 
 protected:
     /**
-     * @symbol  ?refCount\@WSAStartupSingleton\@\@1HA
+     * @symbol ?refCount\@WSAStartupSingleton\@\@1HA
      */
     MCAPI static int refCount;
 

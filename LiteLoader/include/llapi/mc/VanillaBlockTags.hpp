@@ -30,31 +30,31 @@ public:
 
 public:
     /**
-     * @symbol  ?Acacia\@VanillaBlockTags\@\@2QBDB
+     * @symbol ?Acacia\@VanillaBlockTags\@\@2QBDB
      */
     MCAPI static char const Acacia[];
     /**
-     * @symbol  ?Birch\@VanillaBlockTags\@\@2QBDB
+     * @symbol ?Birch\@VanillaBlockTags\@\@2QBDB
      */
     MCAPI static char const Birch[];
     /**
-     * @symbol  ?DarkOak\@VanillaBlockTags\@\@2QBDB
+     * @symbol ?DarkOak\@VanillaBlockTags\@\@2QBDB
      */
     MCAPI static char const DarkOak[];
     /**
-     * @symbol  ?Jungle\@VanillaBlockTags\@\@2QBDB
+     * @symbol ?Jungle\@VanillaBlockTags\@\@2QBDB
      */
     MCAPI static char const Jungle[];
     /**
-     * @symbol  ?Log\@VanillaBlockTags\@\@2QBDB
+     * @symbol ?Log\@VanillaBlockTags\@\@2QBDB
      */
     MCAPI static char const Log[];
     /**
-     * @symbol  ?Oak\@VanillaBlockTags\@\@2QBDB
+     * @symbol ?Oak\@VanillaBlockTags\@\@2QBDB
      */
     MCAPI static char const Oak[];
     /**
-     * @symbol  ?Spruce\@VanillaBlockTags\@\@2QBDB
+     * @symbol ?Spruce\@VanillaBlockTags\@\@2QBDB
      */
     MCAPI static char const Spruce[];
 

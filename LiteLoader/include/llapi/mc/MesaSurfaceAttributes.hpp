@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1MesaSurfaceAttributes\@\@QEAA\@XZ
+     * @symbol ??1MesaSurfaceAttributes\@\@QEAA\@XZ
      */
     MCAPI ~MesaSurfaceAttributes();
 

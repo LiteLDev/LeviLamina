@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??0GameRuleId\@\@QEAA\@H\@Z
+     * @symbol ??0GameRuleId\@\@QEAA\@H\@Z
      */
     MCAPI GameRuleId(int);
 

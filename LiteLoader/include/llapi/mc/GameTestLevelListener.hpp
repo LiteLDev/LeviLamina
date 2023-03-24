@@ -30,62 +30,67 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~GameTestLevelListener();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  __unk_vfn_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
     virtual void __unk_vfn_1();
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  __unk_vfn_4
+     * @vftbl 4
+     * @symbol __unk_vfn_4
      */
     virtual void __unk_vfn_4();
     /**
-     * @vftbl  5
-     * @symbol  __unk_vfn_5
+     * @vftbl 5
+     * @symbol __unk_vfn_5
      */
     virtual void __unk_vfn_5();
     /**
-     * @vftbl  6
-     * @symbol  __unk_vfn_6
+     * @vftbl 6
+     * @symbol __unk_vfn_6
      */
     virtual void __unk_vfn_6();
     /**
-     * @vftbl  7
-     * @symbol  ?onLevelScriptTick\@GameTestLevelListener\@\@UEAA?AW4EventResult\@\@AEAVLevel\@\@\@Z
+     * @vftbl 7
+     * @symbol __unk_vfn_7
      */
-    virtual enum class EventResult onLevelScriptTick(class Level &);
+    virtual void __unk_vfn_7();
     /**
-     * @vftbl  8
-     * @symbol  __unk_vfn_8
+     * @vftbl 8
+     * @symbol ?onLevelTickEnd\@GameTestLevelListener\@\@UEAA?AW4EventResult\@\@AEAVLevel\@\@\@Z
      */
-    virtual void __unk_vfn_8();
+    virtual enum class EventResult onLevelTickEnd(class Level &);
     /**
-     * @vftbl  9
-     * @symbol  __unk_vfn_9
+     * @vftbl 9
+     * @symbol __unk_vfn_9
      */
     virtual void __unk_vfn_9();
     /**
-     * @vftbl  10
-     * @symbol  ?onEvent\@GameTestLevelListener\@\@UEAA?AW4EventResult\@\@AEBULevelNotificationEvent\@\@\@Z
+     * @vftbl 10
+     * @symbol __unk_vfn_10
+     */
+    virtual void __unk_vfn_10();
+    /**
+     * @vftbl 11
+     * @symbol ?onEvent\@GameTestLevelListener\@\@UEAA?AW4EventResult\@\@AEBULevelNotificationEvent\@\@\@Z
      */
     virtual enum class EventResult onEvent(struct LevelNotificationEvent const &);
     /**
-     * @symbol  ??0GameTestLevelListener\@\@QEAA\@AEAVGameTestTicker\@gametest\@\@\@Z
+     * @symbol ??0GameTestLevelListener\@\@QEAA\@AEAVGameTestTicker\@gametest\@\@\@Z
      */
     MCAPI GameTestLevelListener(class gametest::GameTestTicker &);
 

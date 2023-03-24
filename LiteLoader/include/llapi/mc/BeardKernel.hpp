@@ -29,17 +29,17 @@ public:
 
 public:
     /**
-     * @symbol  ??0BeardKernel\@\@QEAA\@XZ
+     * @symbol ??0BeardKernel\@\@QEAA\@XZ
      */
     MCAPI BeardKernel();
     /**
-     * @symbol  ?getContribution\@BeardKernel\@\@QEBAMHHH\@Z
+     * @symbol ?getContribution\@BeardKernel\@\@QEBAMHHH\@Z
      */
     MCAPI float getContribution(int, int, int) const;
 
 //private:
     /**
-     * @symbol  ?createBeardKernel\@BeardKernel\@\@AEAA?BV?$array\@M$0DGAA\@\@std\@\@XZ
+     * @symbol ?createBeardKernel\@BeardKernel\@\@AEAA?BV?$array\@M$0DGAA\@\@std\@\@XZ
      */
     MCAPI class std::array<float, 13824> const createBeardKernel();
 

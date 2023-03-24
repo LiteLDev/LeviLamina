@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ItemNotificationEvent\@\@QEAA\@XZ
+     * @symbol ??1ItemNotificationEvent\@\@QEAA\@XZ
      */
     MCAPI ~ItemNotificationEvent();
 

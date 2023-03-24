@@ -30,57 +30,63 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~MoveTowardsRestrictionGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?canUse\@MoveTowardsHomeRestrictionGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@MoveTowardsDwellingRestrictionGoal\@\@UEAA_NXZ
      */
     virtual bool canUse() = 0;
     /**
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@MoveTowardsRestrictionGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@MoveTowardsRestrictionGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  ?start\@MoveTowardsRestrictionGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@MoveTowardsRestrictionGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @vftbl  5
-     * @symbol  __unk_vfn_5
+     * @vftbl 5
+     * @symbol __unk_vfn_5
      */
     virtual void __unk_vfn_5();
     /**
-     * @vftbl  6
-     * @symbol  __unk_vfn_6
+     * @vftbl 6
+     * @symbol __unk_vfn_6
      */
     virtual void __unk_vfn_6();
     /**
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@MoveTowardsHomeRestrictionGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@MoveTowardsDwellingRestrictionGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const = 0;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOWARDSRESTRICTIONGOAL
     /**
-     * @symbol  ??0MoveTowardsRestrictionGoal\@\@QEAA\@AEAVMob\@\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~MoveTowardsRestrictionGoal();
+#endif
+    /**
+     * @symbol ??0MoveTowardsRestrictionGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI MoveTowardsRestrictionGoal(class Mob &);
 
 //protected:
     /**
-     * @symbol  ?_getMob\@MoveTowardsRestrictionGoal\@\@IEBAAEBVMob\@\@XZ
+     * @symbol ?_getMob\@MoveTowardsRestrictionGoal\@\@IEBAAEBVMob\@\@XZ
      */
     MCAPI class Mob const & _getMob() const;
     /**
-     * @symbol  ?_randomizeWantedPositionTowardsRestriction\@MoveTowardsRestrictionGoal\@\@IEAA_NAEBVVec3\@\@\@Z
+     * @symbol ?_randomizeWantedPositionTowardsRestriction\@MoveTowardsRestrictionGoal\@\@IEAA_NAEBVVec3\@\@\@Z
      */
     MCAPI bool _randomizeWantedPositionTowardsRestriction(class Vec3 const &);
 

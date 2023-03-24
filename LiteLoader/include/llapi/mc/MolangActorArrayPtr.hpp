@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1MolangActorArrayPtr\@\@QEAA\@XZ
+     * @symbol ??1MolangActorArrayPtr\@\@QEAA\@XZ
      */
     MCAPI ~MolangActorArrayPtr();
 

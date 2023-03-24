@@ -27,15 +27,15 @@ public:
 
 public:
     /**
-     * @symbol  ??0DimensionDocument\@\@QEAA\@XZ
+     * @symbol ??0DimensionDocument\@\@QEAA\@XZ
      */
     MCAPI DimensionDocument();
     /**
-     * @symbol  ??1DimensionDocument\@\@QEAA\@XZ
+     * @symbol ??1DimensionDocument\@\@QEAA\@XZ
      */
     MCAPI ~DimensionDocument();
     /**
-     * @symbol  ?bindType\@DimensionDocument\@\@SAXXZ
+     * @symbol ?bindType\@DimensionDocument\@\@SAXXZ
      */
     MCAPI static void bindType();
 

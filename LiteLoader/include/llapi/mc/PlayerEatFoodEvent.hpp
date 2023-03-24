@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1PlayerEatFoodEvent\@\@QEAA\@XZ
+     * @symbol ??1PlayerEatFoodEvent\@\@QEAA\@XZ
      */
     MCAPI ~PlayerEatFoodEvent();
 

@@ -34,31 +34,31 @@ public:
 
 public:
     /**
-     * @symbol  ??0CommandVersion\@\@QEAA\@HH\@Z
+     * @symbol ??0CommandVersion\@\@QEAA\@HH\@Z
      */
     MCAPI CommandVersion(int, int);
     /**
-     * @symbol  ?covers\@CommandVersion\@\@QEBA_NAEBV1\@\@Z
+     * @symbol ?covers\@CommandVersion\@\@QEBA_NAEBV1\@\@Z
      */
     MCAPI bool covers(class CommandVersion const &) const;
     /**
-     * @symbol  ?getSemVersionFromCommandVersion\@CommandVersion\@\@QEBA?AVSemVersion\@\@XZ
+     * @symbol ?getSemVersionFromCommandVersion\@CommandVersion\@\@QEBA?AVSemVersion\@\@XZ
      */
     MCAPI class SemVersion getSemVersionFromCommandVersion() const;
     /**
-     * @symbol  ?isCompatible\@CommandVersion\@\@QEBA_NH\@Z
+     * @symbol ?isCompatible\@CommandVersion\@\@QEBA_NH\@Z
      */
     MCAPI bool isCompatible(int) const;
     /**
-     * @symbol  ?CurrentVersion\@CommandVersion\@\@2HB
+     * @symbol ?CurrentVersion\@CommandVersion\@\@2HB
      */
     MCAPI static int const CurrentVersion;
     /**
-     * @symbol  ?getSemVersionFromCommandVersion\@CommandVersion\@\@SA?AVSemVersion\@\@H\@Z
+     * @symbol ?getSemVersionFromCommandVersion\@CommandVersion\@\@SA?AVSemVersion\@\@H\@Z
      */
     MCAPI static class SemVersion getSemVersionFromCommandVersion(int);
     /**
-     * @symbol  ?getVersionMapping\@CommandVersion\@\@SA?BW4CurrentCmdVersion\@\@AEBVSemVersion\@\@\@Z
+     * @symbol ?getVersionMapping\@CommandVersion\@\@SA?BW4CurrentCmdVersion\@\@AEBVSemVersion\@\@\@Z
      */
     MCAPI static enum class CurrentCmdVersion const getVersionMapping(class SemVersion const &);
 

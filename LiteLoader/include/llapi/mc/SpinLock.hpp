@@ -29,29 +29,29 @@ public:
 
 public:
     /**
-     * @symbol  ??0SpinLock\@\@QEAA\@XZ
+     * @symbol ??0SpinLock\@\@QEAA\@XZ
      */
     MCAPI SpinLock();
     /**
-     * @symbol  ?lock\@SpinLock\@\@QEAAXXZ
+     * @symbol ?lock\@SpinLock\@\@QEAAXXZ
      */
     MCAPI void lock();
     /**
-     * @symbol  ?try_lock\@SpinLock\@\@QEAA_NXZ
+     * @symbol ?try_lock\@SpinLock\@\@QEAA_NXZ
      */
     MCAPI bool try_lock();
     /**
-     * @symbol  ?unlock\@SpinLock\@\@QEAAXXZ
+     * @symbol ?unlock\@SpinLock\@\@QEAAXXZ
      */
     MCAPI void unlock();
     /**
-     * @symbol  ??1SpinLock\@\@QEAA\@XZ
+     * @symbol ??1SpinLock\@\@QEAA\@XZ
      */
     MCAPI ~SpinLock();
 
 //private:
     /**
-     * @symbol  ?_getThreadId\@SpinLock\@\@AEAA_KXZ
+     * @symbol ?_getThreadId\@SpinLock\@\@AEAA_KXZ
      */
     MCAPI unsigned __int64 _getThreadId();
 

@@ -29,11 +29,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0CallbackTokenCancelState\@\@QEAA\@XZ
+     * @symbol ??0CallbackTokenCancelState\@\@QEAA\@XZ
      */
     MCAPI CallbackTokenCancelState();
     /**
-     * @symbol  ?wasCanceled\@CallbackTokenCancelState\@\@QEBA_NXZ
+     * @symbol ?wasCanceled\@CallbackTokenCancelState\@\@QEBA_NXZ
      */
     MCAPI bool wasCanceled() const;
 

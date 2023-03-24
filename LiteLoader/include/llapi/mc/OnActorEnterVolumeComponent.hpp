@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1OnActorEnterVolumeComponent\@\@QEAA\@XZ
+     * @symbol ??1OnActorEnterVolumeComponent\@\@QEAA\@XZ
      */
     MCAPI ~OnActorEnterVolumeComponent();
 

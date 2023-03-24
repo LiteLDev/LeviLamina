@@ -28,7 +28,15 @@ public:
 
 public:
     /**
-     * @symbol  ??1VibrationListenerComponent\@\@QEAA\@XZ
+     * @symbol ?addAdditionalSaveData\@VibrationListenerComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
+     */
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
+    /**
+     * @symbol ?readAdditionalSaveData\@VibrationListenerComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
+     */
+    MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
+    /**
+     * @symbol ??1VibrationListenerComponent\@\@QEAA\@XZ
      */
     MCAPI ~VibrationListenerComponent();
 

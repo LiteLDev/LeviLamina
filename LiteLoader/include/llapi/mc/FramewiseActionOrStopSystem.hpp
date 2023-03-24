@@ -28,15 +28,15 @@ public:
 
 public:
     /**
-     * @symbol  ?createFramewiseActionOrStopSystem\@FramewiseActionOrStopSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createFramewiseActionOrStopSystem\@FramewiseActionOrStopSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createFramewiseActionOrStopSystem();
 
 //private:
     /**
-     * @symbol  ?doFramewiseActionOrStopSystem\@FramewiseActionOrStopSystem\@\@CAXAEAVStrictEntityContext\@\@AEBULocalMoveVelocityComponent\@\@AEAUActionOrStopComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UHasMoveInputFlag\@\@\@\@\@\@\@Z
+     * @symbol ?doFramewiseActionOrStopSystem\@FramewiseActionOrStopSystem\@\@CAXAEBULocalMoveVelocityComponent\@\@AEAUActionOrStopComponent\@\@\@Z
      */
-    MCAPI static void doFramewiseActionOrStopSystem(class StrictEntityContext &, struct LocalMoveVelocityComponent const &, struct ActionOrStopComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct HasMoveInputFlag>>);
+    MCAPI static void doFramewiseActionOrStopSystem(struct LocalMoveVelocityComponent const &, struct ActionOrStopComponent &);
 
 private:
 

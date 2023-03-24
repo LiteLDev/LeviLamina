@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ServerInstanceRequestResourceReload\@\@QEAA\@XZ
+     * @symbol ??1ServerInstanceRequestResourceReload\@\@QEAA\@XZ
      */
     MCAPI ~ServerInstanceRequestResourceReload();
 

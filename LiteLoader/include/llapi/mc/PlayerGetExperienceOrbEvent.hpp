@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1PlayerGetExperienceOrbEvent\@\@QEAA\@XZ
+     * @symbol ??1PlayerGetExperienceOrbEvent\@\@QEAA\@XZ
      */
     MCAPI ~PlayerGetExperienceOrbEvent();
 

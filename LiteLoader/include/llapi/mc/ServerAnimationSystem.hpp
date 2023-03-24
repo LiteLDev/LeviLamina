@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?createServerAnimationSystem\@ServerAnimationSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createServerAnimationSystem\@ServerAnimationSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createServerAnimationSystem();
 

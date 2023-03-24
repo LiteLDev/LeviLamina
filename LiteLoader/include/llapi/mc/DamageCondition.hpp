@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1DamageCondition\@\@QEAA\@XZ
+     * @symbol ??1DamageCondition\@\@QEAA\@XZ
      */
     MCAPI ~DamageCondition();
 

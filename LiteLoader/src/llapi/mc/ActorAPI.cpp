@@ -1,4 +1,5 @@
 #include "llapi/Global.h"
+#include "llapi/mc/AABB.hpp"
 #include "llapi/mc/Actor.hpp"
 #include "llapi/mc/ActorDamageSource.hpp"
 #include "llapi/mc/Block.hpp"
@@ -26,17 +27,14 @@
 #include "llapi/mc/ActorDefinitionIdentifier.hpp"
 #include "llapi/mc/ActorDamageSource.hpp"
 #include "llapi/mc/Vec2.hpp"
-#include "llapi/mc/AABB.hpp"
 #include "llapi/mc/RotationCommandUtils.hpp"
 #include "llapi/mc/WeakEntityRef.hpp"
 #include "llapi/mc/WeakStorageEntity.hpp"
 
-Actor* WeakStorageEntity::tryUnwrap() {
-    return SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ", Actor*,void*)(this);
-}
+class UserEntityIdentifierComponent;
 
-Actor* WeakEntityRef::tryUnwrap() {
-    return SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ", Actor*, void*)(this);
+EntityContext* Actor::getEntityContext() const {
+    return dAccess<EntityContext*, 8>((Actor*)this);
 }
 
 class UserEntityIdentifierComponent;
@@ -81,8 +79,10 @@ bool Actor::isItemActor() const {
     return hasCategory(ActorCategory::Item); // IDA Player::take
 }
 
+#include "llapi/mc/ActorCollision.hpp"
+
 bool Actor::isOnGround() const {
-    return (dAccess<bool, 392>(this)); // IDA DirectActorProxyImpl<IMobMovementProxy>::isOnGround
+    return ActorCollision::isOnGround(*getEntityContext()); // IDA DirectActorProxyImpl<IMobMovementProxy>::isOnGround
 }
 
 std::string Actor::getTypeName() const {

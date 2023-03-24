@@ -16,6 +16,7 @@
 #include "main/BuiltinCommands.h"
 #include "api/APIHelp.h"
 #include "main/NodeJsHelper.h"
+#include "main/PythonHelper.h"
 #include "api/BaseAPI.h"
 #include "api/BlockAPI.h"
 #include "api/GuiAPI.h"
@@ -1199,8 +1200,10 @@ void InitBasicEventListeners() {
 #ifdef LLSE_BACKEND_NODEJS
         if (!NodeJsHelper::processConsoleNpmCmd(ev.mCommand))
             return false;
+#elif defined(LLSE_BACKEND_PYTHON)
+        if (!PythonHelper::processConsolePipCmd(ev.mCommand))
+            return false;
 #endif
-
         // CallEvents
         vector<string> paras;
         bool isFromOtherEngine = false;
@@ -1238,8 +1241,10 @@ void InitBasicEventListeners() {
             case ScriptPluginManagerEvent::Operation::Load:
                 // ev.pluginType is not used
                 // since in loadPlugin there will be check
-                if (PluginManager::loadPlugin(ev.target, true, true))
-                    ev.success = true;
+                try {
+                    if (PluginManager::loadPlugin(ev.target, true, true))
+                        ev.success = true;
+                } catch(...) {}
                 break;
 
             case ScriptPluginManagerEvent::Operation::Unload:
@@ -1278,38 +1283,34 @@ void InitBasicEventListeners() {
         IF_LISTENED_END(EVENT_TYPES::onServerStarted);
         return true;
     });
-}
 
-inline bool CallTickEvent() {
-    IF_LISTENED(EVENT_TYPES::onTick) {
-        CallEvent(EVENT_TYPES::onTick);
-    }
-    IF_LISTENED_END(EVENT_TYPES::onTick);
-}
-
-// 植入tick
-TClasslessInstanceHook(void, "?tick@ServerLevel@@UEAAXXZ") {
+    // 植入tick
+    Schedule::repeat([](){
 #ifndef LLSE_BACKEND_NODEJS
-    try {
-        std::list<ScriptEngine*> tmpList;
-        {
-            SRWLockSharedHolder lock(globalShareData->engineListLock);
-            // low efficiency
-            tmpList = globalShareData->globalEngineList;
-        }
-        for (auto engine : tmpList) {
-            if (EngineManager::isValid(engine) && EngineManager::getEngineType(engine) == LLSE_BACKEND_TYPE) {
-                EngineScope enter(engine);
-                engine->messageQueue()->loopQueue(script::utils::MessageQueue::LoopType::kLoopOnce);
+        try {
+            std::list<ScriptEngine*> tmpList;
+            {
+                SRWLockSharedHolder lock(globalShareData->engineListLock);
+                // low efficiency
+                tmpList = globalShareData->globalEngineList;
             }
+            for (auto engine : tmpList) {
+                if (EngineManager::isValid(engine) && EngineManager::getEngineType(engine) == LLSE_BACKEND_TYPE) {
+                    EngineScope enter(engine);
+                    engine->messageQueue()->loopQueue(script::utils::MessageQueue::LoopType::kLoopOnce);
+                }
+            }
+        } catch (...) {
+            logger.error("Error occurred in Engine Message Loop!");
+            logger.error("Uncaught Exception Detected!");
         }
-    } catch (...) {
-        logger.error("Error occurred in Engine Message Loop!");
-        logger.error("Uncaught Exception Detected!");
-    }
 #endif
-    CallTickEvent();
-    return original(this);
+        // Call tick event
+        IF_LISTENED(EVENT_TYPES::onTick) {
+            CallEvent(EVENT_TYPES::onTick);
+        }
+        IF_LISTENED_END(EVENT_TYPES::onTick);
+    }, 1);
 }
 
 /* onTurnLectern // 由于还是不能拦截掉书，暂时注释

@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1PlayerInitialSpawnEvent\@\@QEAA\@XZ
+     * @symbol ??1PlayerInitialSpawnEvent\@\@QEAA\@XZ
      */
     MCAPI ~PlayerInitialSpawnEvent();
 

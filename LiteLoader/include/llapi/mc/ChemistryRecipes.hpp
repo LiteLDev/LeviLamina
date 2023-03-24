@@ -30,7 +30,7 @@ public:
 
 public:
     /**
-     * @symbol  ?addRecipes\@ChemistryRecipes\@\@SAXAEAVRecipes\@\@\@Z
+     * @symbol ?addRecipes\@ChemistryRecipes\@\@SAXAEAVRecipes\@\@\@Z
      */
     MCAPI static void addRecipes(class Recipes &);
 

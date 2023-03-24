@@ -28,32 +28,38 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CREATIVEITEMGROUPCATEGORY
     /**
-     * @symbol  ??0CreativeItemGroupCategory\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI CreativeItemGroupCategory();
+    MCVAPI ~CreativeItemGroupCategory();
+#endif
     /**
-     * @symbol  ??0CreativeItemGroupCategory\@\@QEAA\@PEAVCreativeItemRegistry\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4CreativeItemCategory\@\@\@Z
+     * @symbol ??0CreativeItemGroupCategory\@\@QEAA\@PEAVCreativeItemRegistry\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4CreativeItemCategory\@\@\@Z
      */
     MCAPI CreativeItemGroupCategory(class CreativeItemRegistry *, std::string const &, enum class CreativeItemCategory);
     /**
-     * @symbol  ?addAnonymousGroup\@CreativeItemGroupCategory\@\@QEAAPEAVCreativeGroupInfo\@\@XZ
+     * @symbol ??0CreativeItemGroupCategory\@\@QEAA\@XZ
+     */
+    MCAPI CreativeItemGroupCategory();
+    /**
+     * @symbol ?addAnonymousGroup\@CreativeItemGroupCategory\@\@QEAAPEAVCreativeGroupInfo\@\@XZ
      */
     MCAPI class CreativeGroupInfo * addAnonymousGroup();
     /**
-     * @symbol  ?addChildGroup\@CreativeItemGroupCategory\@\@QEAAPEAVCreativeGroupInfo\@\@AEBVHashedString\@\@AEBVItemInstance\@\@\@Z
+     * @symbol ?addChildGroup\@CreativeItemGroupCategory\@\@QEAAPEAVCreativeGroupInfo\@\@AEBVHashedString\@\@AEBVItemInstance\@\@\@Z
      */
     MCAPI class CreativeGroupInfo * addChildGroup(class HashedString const &, class ItemInstance const &);
     /**
-     * @symbol  ?getChildGroup\@CreativeItemGroupCategory\@\@QEAAPEAVCreativeGroupInfo\@\@AEBVHashedString\@\@\@Z
+     * @symbol ?getChildGroup\@CreativeItemGroupCategory\@\@QEAAPEAVCreativeGroupInfo\@\@AEBVHashedString\@\@\@Z
      */
     MCAPI class CreativeGroupInfo * getChildGroup(class HashedString const &);
     /**
-     * @symbol  ?getCreativeCategory\@CreativeItemGroupCategory\@\@QEAA?AW4CreativeItemCategory\@\@XZ
+     * @symbol ?getCreativeCategory\@CreativeItemGroupCategory\@\@QEAA?AW4CreativeItemCategory\@\@XZ
      */
     MCAPI enum class CreativeItemCategory getCreativeCategory();
     /**
-     * @symbol  ?getOrAddTailAnonymousGroup\@CreativeItemGroupCategory\@\@QEAAPEAVCreativeGroupInfo\@\@XZ
+     * @symbol ?getOrAddTailAnonymousGroup\@CreativeItemGroupCategory\@\@QEAAPEAVCreativeGroupInfo\@\@XZ
      */
     MCAPI class CreativeGroupInfo * getOrAddTailAnonymousGroup();
 

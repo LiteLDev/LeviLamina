@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ItemData\@\@QEAA\@XZ
+     * @symbol ??1ItemData\@\@QEAA\@XZ
      */
     MCAPI ~ItemData();
 

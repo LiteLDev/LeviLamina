@@ -25,8 +25,16 @@ public:
 
 public:
     /**
-     * @symbol  ?clear\@MoveInputState\@\@QEAAX_N\@Z
+     * @symbol ?clear\@MoveInputState\@\@QEAAX_N\@Z
      */
     MCAPI void clear(bool);
+    /**
+     * @symbol ??8MoveInputState\@\@QEBA_NAEBU0\@\@Z
+     */
+    MCAPI bool operator==(struct MoveInputState const &) const;
+    /**
+     * @symbol ?wantsSneak\@MoveInputState\@\@QEBA_NXZ
+     */
+    MCAPI bool wantsSneak() const;
 
 };

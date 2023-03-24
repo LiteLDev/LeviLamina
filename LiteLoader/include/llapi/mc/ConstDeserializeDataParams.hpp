@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ConstDeserializeDataParams\@\@QEAA\@XZ
+     * @symbol ??1ConstDeserializeDataParams\@\@QEAA\@XZ
      */
     MCAPI ~ConstDeserializeDataParams();
 

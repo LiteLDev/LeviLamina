@@ -27,11 +27,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0ActorInsideBlockEvent\@\@QEAA\@AEBU0\@\@Z
+     * @symbol ??0ActorInsideBlockEvent\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI ActorInsideBlockEvent(struct ActorInsideBlockEvent const &);
     /**
-     * @symbol  ??1ActorInsideBlockEvent\@\@QEAA\@XZ
+     * @symbol ??1ActorInsideBlockEvent\@\@QEAA\@XZ
      */
     MCAPI ~ActorInsideBlockEvent();
 

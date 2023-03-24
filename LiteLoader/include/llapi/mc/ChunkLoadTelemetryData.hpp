@@ -31,11 +31,11 @@ public:
 
 public:
     /**
-     * @symbol  ?recordLoadedChunk\@ChunkLoadTelemetryData\@\@QEAAXAEBVLevelChunk\@\@\@Z
+     * @symbol ?recordLoadedChunk\@ChunkLoadTelemetryData\@\@QEAAXAEBVLevelChunk\@\@\@Z
      */
     MCAPI void recordLoadedChunk(class LevelChunk const &);
     /**
-     * @symbol  ?toJson\@ChunkLoadTelemetryData\@\@QEBA?AVValue\@Json\@\@XZ
+     * @symbol ?toJson\@ChunkLoadTelemetryData\@\@QEBA?AVValue\@Json\@\@XZ
      */
     MCAPI class Json::Value toJson() const;
 

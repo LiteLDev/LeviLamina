@@ -20,39 +20,49 @@
 #define LLSE_BACKEND_NODEJS_NAME "NodeJs"
 #define LLSE_BACKEND_JS_NAME "Js"
 #define LLSE_BACKEND_LUA_NAME "Lua"
+#define LLSE_BACKEND_PYTHON_NAME "Python"
 
 #if defined(LLSE_BACKEND_QUICKJS)
 // QuickJs
 	#define LLSE_BACKEND_TYPE LLSE_BACKEND_JS_NAME
-	#define LLSE_PLUGINS_EXTENSION ".js"
+	#define LLSE_SOURCE_FILE_EXTENSION ".js"
 	#define LLSE_PLUGINS_ROOT_DIR "plugins"
 	#define LLSE_IS_PLUGIN_PACKAGE 0
 
 #elif defined(LLSE_BACKEND_LUA)
 // Lua
 	#define LLSE_BACKEND_TYPE LLSE_BACKEND_LUA_NAME
-	#define LLSE_PLUGINS_EXTENSION ".lua"
+	#define LLSE_SOURCE_FILE_EXTENSION ".lua"
 	#define LLSE_PLUGINS_ROOT_DIR "plugins"
 	#define LLSE_IS_PLUGIN_PACKAGE 0
 
 #elif defined(LLSE_BACKEND_NODEJS)
 // NodeJs
 	#define LLSE_BACKEND_TYPE LLSE_BACKEND_NODEJS_NAME
-	#define LLSE_PLUGINS_EXTENSION LLSE_PLUGIN_PACKAGE_EXTENSION
+	#define LLSE_SOURCE_FILE_EXTENSION ".js"
 	#define LLSE_PLUGINS_ROOT_DIR "plugins/nodejs"
+	#define LLSE_IS_PLUGIN_PACKAGE 1
+
+#elif defined(LLSE_BACKEND_PYTHON)
+// Python
+	#define LLSE_BACKEND_TYPE LLSE_BACKEND_PYTHON_NAME
+	#define LLSE_SOURCE_FILE_EXTENSION ".py"
+	#define LLSE_PLUGINS_ROOT_DIR "plugins/python"
 	#define LLSE_IS_PLUGIN_PACKAGE 1
 #endif
 
 
 // Language specific information
 #define LLSE_NODEJS_ROOT_DIR "plugins/nodejs"
+#define LLSE_PYTHON_ROOT_DIR "plugins/python"
 
 
 // All backends information
 #define LLSE_MODULE_TYPE LLSE_BACKEND_TYPE
-#define LLSE_VALID_BACKENDS std::vector<std::string>({"Js", "Lua", "NodeJs"})
-#define LLSE_VALID_PLUGIN_EXTENSIONS std::vector<std::string>({".js", ".lua", ""})
-#define LLSE_VALID_PLUGIN_PACKAGE_IDENTIFIER std::vector<std::string>({"", "", "package.json"})
+#define LLSE_VALID_BACKENDS std::vector<std::string>({"Js", "Lua", "NodeJs", "Python"})
+#define LLSE_VALID_PLUGIN_EXTENSIONS std::vector<std::string>({".js", ".lua", "", ".py"})
+#define LLSE_VALID_PLUGIN_PACKAGE_IDENTIFIER \
+	std::vector<std::string>({"", "", "package.json", "pyproject.toml"})
 #define LLSE_VALID_BACKENDS_COUNT LLSE_VALID_BACKENDS.size()
 
 
@@ -66,6 +76,9 @@
 #elif defined(LLSE_BACKEND_LUA)
 	#define LLSE_LOADER_NAME "ScriptEngine-Lua"
 	#define LLSE_LOADER_DESCRIPTION "Lua ScriptEngine for LiteLoaderBDS"
+#elif defined(LLSE_BACKEND_PYTHON)
+	#define LLSE_LOADER_NAME "ScriptEngine-Python"
+	#define LLSE_LOADER_DESCRIPTION "Python ScriptEngine for LiteLoaderBDS"
 #endif
 
 
@@ -76,6 +89,8 @@
 	#define LLSE_DEBUG_CMD "jsdebug"
 #elif defined(LLSE_BACKEND_LUA)
 	#define LLSE_DEBUG_CMD "luadebug"
+#elif defined(LLSE_BACKEND_PYTHON)
+	#define LLSE_DEBUG_CMD "pydebug"
 #endif
 #define LLSE_DEBUG_ENGINE_NAME "__LLSE_DEBUG_ENGINE__"
 

@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1EducationLocalLevelSettings\@\@QEAA\@XZ
+     * @symbol ??1EducationLocalLevelSettings\@\@QEAA\@XZ
      */
     MCAPI ~EducationLocalLevelSettings();
 

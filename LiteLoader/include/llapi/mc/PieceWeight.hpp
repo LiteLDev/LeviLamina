@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1PieceWeight\@\@QEAA\@XZ
+     * @symbol ??1PieceWeight\@\@QEAA\@XZ
      */
     MCAPI ~PieceWeight();
 

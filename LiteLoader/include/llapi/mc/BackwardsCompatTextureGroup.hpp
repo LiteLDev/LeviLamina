@@ -34,7 +34,7 @@ public:
 
 private:
     /**
-     * @symbol  ?invalidInfo\@BackwardsCompatTextureGroup\@\@0VBackwardsCompatTextureInfo\@\@B
+     * @symbol ?invalidInfo\@BackwardsCompatTextureGroup\@\@0VBackwardsCompatTextureInfo\@\@B
      */
     MCAPI static class BackwardsCompatTextureInfo const invalidInfo;
 

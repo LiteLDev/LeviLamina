@@ -28,11 +28,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0RecipeCraftInputs\@\@QEAA\@AEBV?$TypedServerNetId\@URecipeNetIdTag\@\@I$0A\@\@\@\@Z
+     * @symbol ??0RecipeCraftInputs\@\@QEAA\@AEBV?$TypedServerNetId\@URecipeNetIdTag\@\@I$0A\@\@\@\@Z
      */
     MCAPI RecipeCraftInputs(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &);
     /**
-     * @symbol  ??1RecipeCraftInputs\@\@QEAA\@XZ
+     * @symbol ??1RecipeCraftInputs\@\@QEAA\@XZ
      */
     MCAPI ~RecipeCraftInputs();
 

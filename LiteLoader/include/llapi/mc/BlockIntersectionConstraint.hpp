@@ -30,17 +30,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BlockIntersectionConstraint();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?isSatisfied\@BlockIntersectionConstraint\@\@UEBA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEBW4Rotation\@\@\@Z
+     * @vftbl 1
+     * @symbol ?isSatisfied\@BlockIntersectionConstraint\@\@UEBA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEBW4Rotation\@\@\@Z
      */
     virtual bool isSatisfied(class IBlockWorldGenAPI const &, class BlockPos const &, enum class Rotation const &) const;
     /**
-     * @symbol  ??0BlockIntersectionConstraint\@\@QEAA\@AEAVStructureTemplate\@\@\@Z
+     * @symbol ??0BlockIntersectionConstraint\@\@QEAA\@AEAVStructureTemplate\@\@\@Z
      */
     MCAPI BlockIntersectionConstraint(class StructureTemplate &);
 

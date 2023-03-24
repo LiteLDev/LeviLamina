@@ -65,13 +65,16 @@ void ScriptXTestFixture::SetUp() {
     using script::String;
 
     EngineScope engineScope(engine);
+#if defined(SCRIPTX_LANG_JAVASCRIPT) && !defined(SCRIPTX_BACKEND_WEBASSEMBLY)
     auto log = Function::newFunction(consoleLog);
-#ifndef SCRIPTX_BACKEND_WEBASSEMBLY
     auto console = Object::newObject();
     console.set(String::newString(u8"log"), log);
     engine->set(String::newString(u8"console"), console);
 #endif
+#ifdef SCRIPTX_BACKEND_LUA
+    auto log = Function::newFunction(consoleLog);
     engine->set(String::newString(u8"print"), log);
+#endif
   }
 }
 

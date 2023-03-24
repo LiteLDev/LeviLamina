@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1LoadedResourceData\@\@QEAA\@XZ
+     * @symbol ??1LoadedResourceData\@\@QEAA\@XZ
      */
     MCAPI ~LoadedResourceData();
 

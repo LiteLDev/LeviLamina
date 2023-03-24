@@ -31,54 +31,54 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASECONTAINERMENU
     /**
-     * @symbol  ?broadcastChanges\@BaseContainerMenu\@\@UEAAXXZ
+     * @symbol ?broadcastChanges\@BaseContainerMenu\@\@UEAAXXZ
      */
     MCVAPI void broadcastChanges();
     /**
-     * @symbol  ?containerContentChanged\@BaseContainerMenu\@\@UEAAXH\@Z
+     * @symbol ?containerContentChanged\@BaseContainerMenu\@\@UEAAXH\@Z
      */
     MCVAPI void containerContentChanged(int);
     /**
-     * @symbol  ?getContainerId\@BaseContainerMenu\@\@UEBA?AW4ContainerID\@\@XZ
+     * @symbol ?getContainerId\@BaseContainerMenu\@\@UEBA?AW4ContainerID\@\@XZ
      */
     MCVAPI enum class ContainerID getContainerId() const;
     /**
-     * @symbol  ?getContainerType\@BaseContainerMenu\@\@UEBA?AW4ContainerType\@\@XZ
+     * @symbol ?getContainerType\@BaseContainerMenu\@\@UEBA?AW4ContainerType\@\@XZ
      */
     MCVAPI enum class ContainerType getContainerType() const;
     /**
-     * @symbol  ?isResultSlot\@BaseContainerMenu\@\@UEAA_NH\@Z
+     * @symbol ?isResultSlot\@BaseContainerMenu\@\@UEAA_NH\@Z
      */
     MCVAPI bool isResultSlot(int);
     /**
-     * @symbol  ?isSlotDirty\@BaseContainerMenu\@\@UEAA_NH\@Z
+     * @symbol ?isSlotDirty\@BaseContainerMenu\@\@UEAA_NH\@Z
      */
     MCVAPI bool isSlotDirty(int);
     /**
-     * @symbol  ?setContainerId\@BaseContainerMenu\@\@UEAAXW4ContainerID\@\@\@Z
+     * @symbol ?setContainerId\@BaseContainerMenu\@\@UEAAXW4ContainerID\@\@\@Z
      */
     MCVAPI void setContainerId(enum class ContainerID);
     /**
-     * @symbol  ?setContainerType\@BaseContainerMenu\@\@UEAAXW4ContainerType\@\@\@Z
+     * @symbol ?setContainerType\@BaseContainerMenu\@\@UEAAXW4ContainerType\@\@\@Z
      */
     MCVAPI void setContainerType(enum class ContainerType);
     /**
-     * @symbol  ?setData\@BaseContainerMenu\@\@UEAAXHH\@Z
+     * @symbol ?setData\@BaseContainerMenu\@\@UEAAXHH\@Z
      */
     MCVAPI void setData(int, int);
     /**
-     * @symbol  __unk_destructor_-1
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~BaseContainerMenu();
 #endif
     /**
-     * @symbol  ??0BaseContainerMenu\@\@QEAA\@AEAVPlayer\@\@W4ContainerType\@\@\@Z
+     * @symbol ??0BaseContainerMenu\@\@QEAA\@AEAVPlayer\@\@W4ContainerType\@\@\@Z
      */
     MCAPI BaseContainerMenu(class Player &, enum class ContainerType);
 
 //protected:
     /**
-     * @symbol  ?_saveLastSlots\@BaseContainerMenu\@\@IEAAXPEAVContainer\@\@\@Z
+     * @symbol ?_saveLastSlots\@BaseContainerMenu\@\@IEAAXPEAVContainer\@\@\@Z
      */
     MCAPI void _saveLastSlots(class Container *);
 

@@ -43,7 +43,7 @@ BlockSource* Level::getBlockSource(Actor* ac) {
 }
 
 Dimension* Level::getDimensionPtr(class AutomaticID<class Dimension, int> dimId) {
-    return (Dimension*)Global<Level>->getDimension(dimId).mHandle.lock().get();
+    return Global<Level>->getDimension(dimId).get();
 }
 
 Block* Level::getBlock(BlockPos* pos, int dimId) {
@@ -211,7 +211,7 @@ std::vector<Player*> Level::getAllPlayers() {
 std::vector<Actor*> Level::getAllEntities(int dimId) {
     try {
         Level* lv = Global<Level>;
-        Dimension* dim = (Dimension*)lv->getDimension(dimId).mHandle.lock().get();
+        Dimension* dim = Level::getDimensionPtr(dimId);
         if (!dim)
             return {};
         auto& list =
@@ -219,7 +219,7 @@ std::vector<Actor*> Level::getAllEntities(int dimId) {
 
         // Check Valid
         std::vector<Actor*> result;
-        auto currTick = SymCall("?getCurrentTick@Level@@UEBAAEBUTick@@XZ", Tick*, Level*)(lv)->t;
+        auto currTick = lv->getCurrentTick().t;
         for (auto& i : list) {
             auto entity = getEntity(i.first);
             if (!entity)

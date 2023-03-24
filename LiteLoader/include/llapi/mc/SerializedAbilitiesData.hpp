@@ -28,23 +28,23 @@ public:
 
 public:
     /**
-     * @symbol  ??0SerializedAbilitiesData\@\@QEAA\@XZ
+     * @symbol ??0SerializedAbilitiesData\@\@QEAA\@XZ
      */
     MCAPI SerializedAbilitiesData();
     /**
-     * @symbol  ??0SerializedAbilitiesData\@\@QEAA\@UActorUniqueID\@\@AEBVLayeredAbilities\@\@\@Z
+     * @symbol ??0SerializedAbilitiesData\@\@QEAA\@UActorUniqueID\@\@AEBVLayeredAbilities\@\@\@Z
      */
     MCAPI SerializedAbilitiesData(struct ActorUniqueID, class LayeredAbilities const &);
     /**
-     * @symbol  ?fillIn\@SerializedAbilitiesData\@\@QEBAXAEAVLayeredAbilities\@\@\@Z
+     * @symbol ?fillIn\@SerializedAbilitiesData\@\@QEBAXAEAVLayeredAbilities\@\@\@Z
      */
     MCAPI void fillIn(class LayeredAbilities &) const;
     /**
-     * @symbol  ?getTargetPlayer\@SerializedAbilitiesData\@\@QEBA?AUActorUniqueID\@\@XZ
+     * @symbol ?getTargetPlayer\@SerializedAbilitiesData\@\@QEBA?AUActorUniqueID\@\@XZ
      */
     MCAPI struct ActorUniqueID getTargetPlayer() const;
     /**
-     * @symbol  ??1SerializedAbilitiesData\@\@QEAA\@XZ
+     * @symbol ??1SerializedAbilitiesData\@\@QEAA\@XZ
      */
     MCAPI ~SerializedAbilitiesData();
 

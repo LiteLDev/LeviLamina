@@ -27,11 +27,11 @@ public:
 
 public:
     /**
-     * @symbol  ?setReplacementItemDescriptor\@BoostItem\@\@QEAAXAEBVItemDescriptor\@\@\@Z
+     * @symbol ?setReplacementItemDescriptor\@BoostItem\@\@QEAAXAEBVItemDescriptor\@\@\@Z
      */
     MCAPI void setReplacementItemDescriptor(class ItemDescriptor const &);
     /**
-     * @symbol  ??1BoostItem\@\@QEAA\@XZ
+     * @symbol ??1BoostItem\@\@QEAA\@XZ
      */
     MCAPI ~BoostItem();
 

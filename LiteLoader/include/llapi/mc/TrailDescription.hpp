@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -30,27 +29,28 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  ?getJsonName\@TrailDescription\@\@UEBAPEBDXZ
+     * @vftbl 0
+     * @symbol ?getJsonName\@TrailDescription\@\@UEBAPEBDXZ
      */
     virtual char const * getJsonName() const;
     /**
-     * @vftbl  1
-     * @symbol  __unk_destructor_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
-    virtual ~TrailDescription();
+    virtual void __unk_vfn_1();
     /**
-     * @vftbl  2
-     * @symbol  ?deserializeData\@TrailDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
+     * @vftbl 2
+     * @symbol ?deserializeData\@TrailDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
     virtual void deserializeData(struct DeserializeDataParams);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRAILDESCRIPTION
     /**
-     * @vftbl  3
-     * @symbol  ?serializeData\@TrailDescription\@\@UEBAXAEAVValue\@Json\@\@\@Z
+     * @symbol __unk_destructor_-1
      */
-    virtual void serializeData(class Json::Value &) const;
+    MCVAPI ~TrailDescription();
+#endif
     /**
-     * @symbol  ??0TrailDescription\@\@QEAA\@XZ
+     * @symbol ??0TrailDescription\@\@QEAA\@XZ
      */
     MCAPI TrailDescription();
 

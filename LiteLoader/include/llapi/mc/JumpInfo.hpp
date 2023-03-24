@@ -30,27 +30,27 @@ public:
 
 public:
     /**
-     * @symbol  ??0JumpInfo\@\@QEAA\@MMHH\@Z
+     * @symbol ??0JumpInfo\@\@QEAA\@MMHH\@Z
      */
     MCAPI JumpInfo(float, float, int, int);
     /**
-     * @symbol  ?getAnimDuration\@JumpInfo\@\@QEBAHXZ
+     * @symbol ?getAnimDuration\@JumpInfo\@\@QEBAHXZ
      */
     MCAPI int getAnimDuration() const;
     /**
-     * @symbol  ?getDistanceScale\@JumpInfo\@\@QEBAMXZ
+     * @symbol ?getDistanceScale\@JumpInfo\@\@QEBAMXZ
      */
     MCAPI float getDistanceScale() const;
     /**
-     * @symbol  ?getHeight\@JumpInfo\@\@QEBAMXZ
+     * @symbol ?getHeight\@JumpInfo\@\@QEBAMXZ
      */
     MCAPI float getHeight() const;
     /**
-     * @symbol  ?getJumpDelay\@JumpInfo\@\@QEBAHXZ
+     * @symbol ?getJumpDelay\@JumpInfo\@\@QEBAHXZ
      */
     MCAPI int getJumpDelay() const;
     /**
-     * @symbol  ??9JumpInfo\@\@QEBA_NAEBV0\@\@Z
+     * @symbol ??9JumpInfo\@\@QEBA_NAEBV0\@\@Z
      */
     MCAPI bool operator!=(class JumpInfo const &) const;
 

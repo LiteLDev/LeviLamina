@@ -31,75 +31,75 @@ public:
 
 public:
     /**
-     * @symbol  ?ASYNC\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
+     * @symbol ?ASYNC\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
     MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> ASYNC;
     /**
-     * @symbol  ?CONNECTEDSTORAGE\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
+     * @symbol ?CONNECTEDSTORAGE\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
     MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> CONNECTEDSTORAGE;
     /**
-     * @symbol  ?DISK\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
+     * @symbol ?DISK\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
     MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> DISK;
     /**
-     * @symbol  ?GAMEFACE_LAYOUT\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
+     * @symbol ?GAMEFACE_LAYOUT\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
     MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> GAMEFACE_LAYOUT;
     /**
-     * @symbol  ?INPUT\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
+     * @symbol ?INPUT\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
     MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> INPUT;
     /**
-     * @symbol  ?LEVELDB\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
+     * @symbol ?LEVELDB\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
     MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> LEVELDB;
     /**
-     * @symbol  ?LEVELDB_COMPACTION\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
+     * @symbol ?LEVELDB_COMPACTION\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
     MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> LEVELDB_COMPACTION;
     /**
-     * @symbol  ?NETWORK\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
+     * @symbol ?NETWORK\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
     MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> NETWORK;
     /**
-     * @symbol  ?PYTHONRUNTIME\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
+     * @symbol ?PYTHONRUNTIME\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
     MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> PYTHONRUNTIME;
     /**
-     * @symbol  ?RENDERING\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
+     * @symbol ?RENDERING\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
     MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> RENDERING;
     /**
-     * @symbol  ?VR\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
+     * @symbol ?VR\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
     MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> VR;
     /**
-     * @symbol  ?WATCHDOG\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
+     * @symbol ?WATCHDOG\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
     MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> WATCHDOG;
     /**
-     * @symbol  ?configureMainThread\@MinecraftWorkerPool\@\@SAXXZ
+     * @symbol ?configureMainThread\@MinecraftWorkerPool\@\@SAXXZ
      */
     MCAPI static void configureMainThread();
     /**
-     * @symbol  ?configureServerThread\@MinecraftWorkerPool\@\@SAXXZ
+     * @symbol ?configureServerThread\@MinecraftWorkerPool\@\@SAXXZ
      */
     MCAPI static void configureServerThread();
     /**
-     * @symbol  ?createSingletons\@MinecraftWorkerPool\@\@SAXXZ
+     * @symbol ?createSingletons\@MinecraftWorkerPool\@\@SAXXZ
      */
     MCAPI static void createSingletons();
     /**
-     * @symbol  ?destroySingletons\@MinecraftWorkerPool\@\@SAXXZ
+     * @symbol ?destroySingletons\@MinecraftWorkerPool\@\@SAXXZ
      */
     MCAPI static void destroySingletons();
     /**
-     * @symbol  ?initializeDefaults\@MinecraftWorkerPool\@\@SAXXZ
+     * @symbol ?initializeDefaults\@MinecraftWorkerPool\@\@SAXXZ
      */
     MCAPI static void initializeDefaults();
     /**
-     * @symbol  ?loadWorkerConfigurations\@MinecraftWorkerPool\@\@SAXII\@Z
+     * @symbol ?loadWorkerConfigurations\@MinecraftWorkerPool\@\@SAXII\@Z
      */
     MCAPI static void loadWorkerConfigurations(unsigned int, unsigned int);
 

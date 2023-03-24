@@ -273,11 +273,10 @@ Local<Value> WSClientClass::connectAsync(const Arguments& args) {
         RecordOperation(ENGINE_OWN_DATA()->pluginName, "ConnectToWebsocketServer", target);
 
         script::Global<Function> callbackFunc{args[1].asFunction()};
-        thread(
+        std::thread(
             [ws{this->ws}, target, callback{std::move(callbackFunc)}, engine{EngineScope::currentEngine()}, pluginName{ENGINE_OWN_DATA()->pluginName}]() mutable {
-#ifdef DEBUG
-                SetThreadDescription(GetCurrentThread(), L"LLSE Connect WebSocket");
-#endif // DEBUG
+
+                SetCurrentThreadDescription(L"LLSE_WebSocket_Connect_Thread");
                 if (!ll::isDebugMode())
                     _set_se_translator(seh_exception::TranslateSEHtoCE);
                 try {
@@ -682,7 +681,8 @@ Local<Value> HttpServerClass::listen(const Arguments& args) {
 
         RecordOperation(ENGINE_OWN_DATA()->pluginName, "StartHttpServer", fmt::format("on {}:{}", addr, port));
 
-        thread th([this](string addr, int port) {
+        std::thread th([this](string addr, int port) {
+            SetCurrentThreadDescription(L"LLSE_HttpServer_Listen_Thread");
             svr->listen(addr.c_str(), port);
         },
                   addr, port);

@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ?_wasControlledByLocalInstanceSystem\@ControlledByLocalInstanceSystemImpl\@\@SAXAEBVStrictEntityContext\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UWasControlledByLocalInstanceFlag\@\@\@\@\@\@\@Z
+     * @symbol ?_wasControlledByLocalInstanceSystem\@ControlledByLocalInstanceSystemImpl\@\@SAXAEBVStrictEntityContext\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UWasControlledByLocalInstanceFlag\@\@\@\@\@\@\@Z
      */
     MCAPI static void _wasControlledByLocalInstanceSystem(class StrictEntityContext const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct WasControlledByLocalInstanceFlag>>);
 

@@ -30,17 +30,23 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~MonsterRoomFeature();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  3
-     * @symbol  ?place\@MonsterRoomFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @vftbl 3
+     * @symbol ?place\@MonsterRoomFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MONSTERROOMFEATURE
     /**
-     * @symbol  ??0MonsterRoomFeature\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~MonsterRoomFeature();
+#endif
+    /**
+     * @symbol ??0MonsterRoomFeature\@\@QEAA\@XZ
      */
     MCAPI MonsterRoomFeature();
 

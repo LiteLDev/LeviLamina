@@ -31,28 +31,28 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~FreezeOnHitSubcomponent();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?readfromJSON\@FreezeOnHitSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
+     * @vftbl 1
+     * @symbol ?readfromJSON\@FreezeOnHitSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
     virtual void readfromJSON(class Json::Value &, class SemVersion const &);
     /**
-     * @vftbl  2
-     * @symbol  ?writetoJSON\@FreezeOnHitSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
+     * @vftbl 2
+     * @symbol ?writetoJSON\@FreezeOnHitSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
     virtual void writetoJSON(class Json::Value &) const;
     /**
-     * @vftbl  3
-     * @symbol  ?doOnHitEffect\@FreezeOnHitSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
+     * @vftbl 3
+     * @symbol ?doOnHitEffect\@FreezeOnHitSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
      */
     virtual void doOnHitEffect(class Actor &, class ProjectileComponent &);
     /**
-     * @vftbl  4
-     * @symbol  ?getName\@FreezeOnHitSubcomponent\@\@UEAAPEBDXZ
+     * @vftbl 4
+     * @symbol ?getName\@FreezeOnHitSubcomponent\@\@UEAAPEBDXZ
      */
     virtual char const * getName();
 

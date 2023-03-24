@@ -31,19 +31,25 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BonusChestFeature();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  3
-     * @symbol  ?place\@BonusChestFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @vftbl 3
+     * @symbol ?place\@BonusChestFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BONUSCHESTFEATURE
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~BonusChestFeature();
+#endif
 
 //private:
     /**
-     * @symbol  ?_place\@BonusChestFeature\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @symbol ?_place\@BonusChestFeature\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     MCAPI bool _place(class BlockSource &, class BlockPos const &, class Random &) const;
 

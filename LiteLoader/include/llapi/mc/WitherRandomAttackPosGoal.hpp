@@ -31,42 +31,42 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~WitherRandomAttackPosGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?canUse\@WitherRandomAttackPosGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@WitherRandomAttackPosGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@WitherRandomAttackPosGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@WitherRandomAttackPosGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  4
-     * @symbol  ?start\@WitherRandomAttackPosGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@WitherRandomAttackPosGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @vftbl  5
-     * @symbol  ?stop\@WitherRandomAttackPosGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@WitherRandomAttackPosGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @vftbl  8
-     * @symbol  __unk_vfn_8
+     * @vftbl 8
+     * @symbol __unk_vfn_8
      */
     virtual void __unk_vfn_8();
     /**
-     * @vftbl  9
-     * @symbol  __unk_vfn_9
+     * @vftbl 9
+     * @symbol __unk_vfn_9
      */
     virtual void __unk_vfn_9();
     /**
-     * @symbol  ??0WitherRandomAttackPosGoal\@\@QEAA\@AEAVMob\@\@MHH\@Z
+     * @symbol ??0WitherRandomAttackPosGoal\@\@QEAA\@AEAVMob\@\@MHH\@Z
      */
     MCAPI WitherRandomAttackPosGoal(class Mob &, float, int, int);
 

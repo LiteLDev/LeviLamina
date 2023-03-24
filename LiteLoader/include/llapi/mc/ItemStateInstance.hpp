@@ -30,11 +30,11 @@ public:
 
 public:
     /**
-     * @symbol  ?initState\@ItemStateInstance\@\@QEAAXAEAIIIAEBVItemState\@\@\@Z
+     * @symbol ?initState\@ItemStateInstance\@\@QEAAXAEAIIIAEBVItemState\@\@\@Z
      */
     MCAPI void initState(unsigned int &, unsigned int, unsigned int, class ItemState const &);
     /**
-     * @symbol  ?isValidData\@ItemStateInstance\@\@QEBA_NI\@Z
+     * @symbol ?isValidData\@ItemStateInstance\@\@QEBA_NI\@Z
      */
     MCAPI bool isValidData(unsigned int) const;
 

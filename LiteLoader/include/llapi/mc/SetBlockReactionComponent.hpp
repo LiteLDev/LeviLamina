@@ -30,23 +30,23 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SetBlockReactionComponent();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  __unk_vfn_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
     virtual void __unk_vfn_1();
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
-     * @vftbl  3
-     * @symbol  ?_onEnd\@SetBlockReactionComponent\@\@UEAAXAEAVLabTableReaction\@\@AEAVBlockSource\@\@\@Z
+     * @vftbl 3
+     * @symbol ?_onEnd\@SetBlockReactionComponent\@\@UEAAXAEAVLabTableReaction\@\@AEAVBlockSource\@\@\@Z
      */
     virtual void _onEnd(class LabTableReaction &, class BlockSource &);
 

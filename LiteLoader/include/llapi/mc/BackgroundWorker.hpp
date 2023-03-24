@@ -33,82 +33,88 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BackgroundWorker();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?isAsync\@BackgroundWorker\@\@UEBA_NXZ
+     * @vftbl 1
+     * @symbol ?isAsync\@BackgroundWorker\@\@UEBA_NXZ
      */
     virtual bool isAsync() const;
     /**
-     * @vftbl  2
-     * @symbol  ?canTaskRunAgain\@BackgroundWorker\@\@UEBA_NXZ
+     * @vftbl 2
+     * @symbol ?canTaskRunAgain\@BackgroundWorker\@\@UEBA_NXZ
      */
     virtual bool canTaskRunAgain() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BACKGROUNDWORKER
     /**
-     * @symbol  ??0BackgroundWorker\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_NAEBVOSThreadPriority\@Threading\@Bedrock\@\@V?$optional\@_K\@2\@V?$optional\@H\@2\@AEAVWorkerPool\@\@1\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~BackgroundWorker();
+#endif
+    /**
+     * @symbol ??0BackgroundWorker\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_NAEBVOSThreadPriority\@Threading\@Bedrock\@\@V?$optional\@_K\@2\@V?$optional\@H\@2\@AEAVWorkerPool\@\@1\@Z
      */
     MCAPI BackgroundWorker(std::string, bool, class Bedrock::Threading::OSThreadPriority const &, class std::optional<unsigned __int64>, class std::optional<int>, class WorkerPool &, bool);
     /**
-     * @symbol  ?getApproximateTaskCount\@BackgroundWorker\@\@QEBA_KXZ
+     * @symbol ?getApproximateTaskCount\@BackgroundWorker\@\@QEBA_KXZ
      */
     MCAPI unsigned __int64 getApproximateTaskCount() const;
     /**
-     * @symbol  ?getThreadId\@BackgroundWorker\@\@QEBA?AVid\@thread\@std\@\@XZ
+     * @symbol ?getThreadId\@BackgroundWorker\@\@QEBA?AVid\@thread\@std\@\@XZ
      */
     MCAPI class std::thread::id getThreadId() const;
     /**
-     * @symbol  ?isIdle\@BackgroundWorker\@\@QEBA_NXZ
+     * @symbol ?isIdle\@BackgroundWorker\@\@QEBA_NXZ
      */
     MCAPI bool isIdle() const;
     /**
-     * @symbol  ?processTaskSync\@BackgroundWorker\@\@QEAA_NXZ
+     * @symbol ?processTaskSync\@BackgroundWorker\@\@QEAA_NXZ
      */
     MCAPI bool processTaskSync();
     /**
-     * @symbol  ?queue\@BackgroundWorker\@\@QEAAXV?$shared_ptr\@VBackgroundTaskBase\@\@\@std\@\@\@Z
+     * @symbol ?queue\@BackgroundWorker\@\@QEAAXV?$shared_ptr\@VBackgroundTaskBase\@\@\@std\@\@\@Z
      */
     MCAPI void queue(class std::shared_ptr<class BackgroundTaskBase>);
     /**
-     * @symbol  ?requestStop\@BackgroundWorker\@\@QEAAX_N\@Z
+     * @symbol ?requestStop\@BackgroundWorker\@\@QEAAX_N\@Z
      */
     MCAPI void requestStop(bool);
     /**
-     * @symbol  ?resetWorkerThreadID\@BackgroundWorker\@\@QEAAXXZ
+     * @symbol ?resetWorkerThreadID\@BackgroundWorker\@\@QEAAXXZ
      */
     MCAPI void resetWorkerThreadID();
     /**
-     * @symbol  ?resortPriorityQueue\@BackgroundWorker\@\@QEAAXXZ
+     * @symbol ?resortPriorityQueue\@BackgroundWorker\@\@QEAAXXZ
      */
     MCAPI void resortPriorityQueue();
     /**
-     * @symbol  ?start\@BackgroundWorker\@\@QEAAXXZ
+     * @symbol ?start\@BackgroundWorker\@\@QEAAXXZ
      */
     MCAPI void start();
     /**
-     * @symbol  ?wake\@BackgroundWorker\@\@QEAAXXZ
+     * @symbol ?wake\@BackgroundWorker\@\@QEAAXXZ
      */
     MCAPI void wake();
     /**
-     * @symbol  ?getLocal\@BackgroundWorker\@\@SAPEAV1\@XZ
+     * @symbol ?getLocal\@BackgroundWorker\@\@SAPEAV1\@XZ
      */
     MCAPI static class BackgroundWorker * getLocal();
 
 //private:
     /**
-     * @symbol  ?_processNextTask\@BackgroundWorker\@\@AEAA_NXZ
+     * @symbol ?_processNextTask\@BackgroundWorker\@\@AEAA_NXZ
      */
     MCAPI bool _processNextTask();
     /**
-     * @symbol  ?_runOneTask\@BackgroundWorker\@\@AEAA?AW4RunOneResult\@1\@XZ
+     * @symbol ?_runOneTask\@BackgroundWorker\@\@AEAA?AW4RunOneResult\@1\@XZ
      */
     MCAPI enum class BackgroundWorker::RunOneResult _runOneTask();
 
 private:
     /**
-     * @symbol  ?gLocalWorkerMappingSingleton\@BackgroundWorker\@\@0PEAV1\@EA
+     * @symbol ?gLocalWorkerMappingSingleton\@BackgroundWorker\@\@0PEAV1\@EA
      */
     MCAPI static class BackgroundWorker * gLocalWorkerMappingSingleton;
 

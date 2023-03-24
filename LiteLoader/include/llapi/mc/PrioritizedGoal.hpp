@@ -30,27 +30,27 @@ public:
 
 public:
     /**
-     * @symbol  ?getPriority\@PrioritizedGoal\@\@QEBAHXZ
+     * @symbol ?getPriority\@PrioritizedGoal\@\@QEBAHXZ
      */
     MCAPI int getPriority() const;
     /**
-     * @symbol  ?getToStart\@PrioritizedGoal\@\@QEBA_NXZ
+     * @symbol ?getToStart\@PrioritizedGoal\@\@QEBA_NXZ
      */
     MCAPI bool getToStart() const;
     /**
-     * @symbol  ?getUsed\@PrioritizedGoal\@\@QEBA_NXZ
+     * @symbol ?getUsed\@PrioritizedGoal\@\@QEBA_NXZ
      */
     MCAPI bool getUsed() const;
     /**
-     * @symbol  ?setToStart\@PrioritizedGoal\@\@QEAAX_N\@Z
+     * @symbol ?setToStart\@PrioritizedGoal\@\@QEAAX_N\@Z
      */
     MCAPI void setToStart(bool);
     /**
-     * @symbol  ?setUsed\@PrioritizedGoal\@\@QEAAX_N\@Z
+     * @symbol ?setUsed\@PrioritizedGoal\@\@QEAAX_N\@Z
      */
     MCAPI void setUsed(bool);
     /**
-     * @symbol  ??1PrioritizedGoal\@\@QEAA\@XZ
+     * @symbol ??1PrioritizedGoal\@\@QEAA\@XZ
      */
     MCAPI ~PrioritizedGoal();
 

@@ -1,23 +1,35 @@
-# Release 2.11.1
+# Release 2.12.0
 
-![BDS 1.19.63.01](https://img.shields.io/badge/BDS-1.19.63.01-blue?style=for-the-badge)&emsp;![Protocol 568](https://img.shields.io/badge/Protocol-568-orange?style=for-the-badge)
+![BDS 1.19.72.01](https://img.shields.io/badge/BDS-1.19.72.01-blue?style=for-the-badge)&emsp;![Protocol 575](https://img.shields.io/badge/Protocol-575-orange?style=for-the-badge)
+
+# Warning
+![BDS 1.19.70.02](https://img.shields.io/badge/NoSupport-1.19.70.02-red?style=for-the-badge)&emsp;
+
+## New Feature
+
+- ⭐LLSE Support Python plugins (by @yqs112358 @twoone-3)
+- More docs to see: [📋 Multi Development Language Support (litebds.com)](https://docs.litebds.com/en/#/LLSEPluginDevelopment/LanguageSupport?id=python-language-support-description)
+
+## Adaptation
+
+- feat: adapt to 1.19.72/71 (#1126) (by @dreamguxiang)
 
 ## Added
 
-* feat: add PosDelta for entity in LLSE (by OEOTYAN)
-* feat: rename pl.sneaking & add be.name for LLSE (by @shishkevichd @OEOTYAN)
-* feat: add Level::getDimensionPtr (by @OEOTYAN)
+- feat: add templates and update StaticVanillaBlocks (#1116) (by @OEOTYAN)
+- feat: #1112 (#1118) (by 3 people)
+- feat: complete Ref.hpp & EntityId (by @OEOTYAN)
+- feat: add some common functions (#1138)  (by @OEOTYAN)
+- feat: add SetCurrentThreadDescriptions to help debug (by @yqs112358)
 
 ## Changed
 
-* feat: update WeakEntityRef.hpp (by @OEOTYAN)
-* fix: fix a problem caused by HopperEvents (by @OEOTYAN)
+- refactor: remove built-in packet filter  (by @ShrBox)
+- refactor: update MinecraftPacketIds (by @dreamguxiang)
 
 ## Fixed
 
-* fix: Fix AddEfect #1100 (by @Tsubasa6848 @RimuruChan)
-* fix: #1088 (by @Tsubasa6848 @OEOTYAN)
-* fix: #959 (by @Tsubasa6848)
-* feat: #1011 (by @Tsubasa6848 @Jasonzyt)
+- fix: fix queryEntities (#1123)  (by @OEOTYAN)
+- fix: fix #1150  (by @dreamguxiang)
 
-**Full Changelog**: https://github.com/LiteLDev/LiteLoaderBDS/compare/2.11.0...2.11.1
+**Full Changelog**: https://github.com/LiteLDev/LiteLoaderBDS/compare/2.11.1...2.12.0-beta.1

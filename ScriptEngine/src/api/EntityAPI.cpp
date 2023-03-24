@@ -21,6 +21,8 @@
 #include <llapi/mc/Attribute.hpp>
 #include <llapi/mc/AttributeInstance.hpp>
 #include <llapi/mc/Biome.hpp>
+#include <llapi/mc/AABB.hpp>
+#include <llapi/mc/BlockSource.hpp>
 #include <magic_enum/magic_enum.hpp>
 
 using magic_enum::enum_integer;
@@ -71,8 +73,6 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceProperty("isAngry", &EntityClass::isAngry)
         .instanceProperty("isBaby", &EntityClass::isBaby)
         .instanceProperty("isMoving", &EntityClass::isMoving)
-        .instanceProperty("getBiomeName", &EntityClass::getBiomeName)
-        .instanceProperty("getBiomeId", &EntityClass::getBiomeId)
 
         .instanceFunction("teleport", &EntityClass::teleport)
         .instanceFunction("kill", &EntityClass::kill)
@@ -114,6 +114,8 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("getAllTags", &EntityClass::getAllTags)
         .instanceFunction("getEntityFromViewVector", &EntityClass::getEntityFromViewVector)
         .instanceFunction("getBlockFromViewVector", &EntityClass::getBlockFromViewVector)
+        .instanceFunction("getBiomeName", &EntityClass::getBiomeName)
+        .instanceFunction("getBiomeId", &EntityClass::getBiomeId)
         .instanceFunction("quickEvalMolangScript", &EntityClass::quickEvalMolangScript)
 
         // For Compatibility
@@ -188,9 +190,7 @@ std::optional<Actor*> EntityClass::tryExtractActor(Local<Value> v) {
 void EntityClass::set(Actor* actor) {
     __try {
         id = actor->getUniqueID();
-    } __except (EXCEPTION_EXECUTE_HANDLER) {
-        isValid = false;
-    }
+    } __except (EXCEPTION_EXECUTE_HANDLER) { isValid = false; }
 }
 
 Actor* EntityClass::get() {
@@ -982,8 +982,7 @@ Local<Value> EntityClass::getBlockStandingOn(const Arguments& args) {
         if (!entity)
             return Local<Value>();
 
-        return BlockClass::newBlock(entity->getBlockPosCurrentlyStandingOn(nullptr),
-                                    (int)entity->getDimensionId());
+        return BlockClass::newBlock(entity->getBlockPosCurrentlyStandingOn(nullptr), (int)entity->getDimensionId());
     }
     CATCH("Fail in getBlockStandingOn!");
 }
@@ -1516,6 +1515,89 @@ Local<Value> McClass::getAllEntities(const Arguments& args) {
     CATCH("Fail in GetAllEntities");
 }
 
+Local<Value> McClass::getEntities(const Arguments& args) {
+    try {
+        int dim;
+        float dis = 2.0f;
+        AABB aabb;
+        if (args.size() > 0) {
+
+            if (IsInstanceOf<IntPos>(args[0])) {
+                // IntPos
+                IntPos* posObj = IntPos::extractPos(args[0]);
+
+                aabb.min = posObj->getBlockPos().toVec3();
+                dim = posObj->dim;
+
+            } else if (IsInstanceOf<FloatPos>(args[0])) {
+                // FloatPos
+                FloatPos* posObj = FloatPos::extractPos(args[0]);
+                aabb.min = posObj->getVec3();
+                dim = posObj->dim;
+            } else {
+                LOG_WRONG_ARG_TYPE();
+                return Local<Value>();
+            }
+            if (args.size() > 1) {
+                if (IsInstanceOf<IntPos>(args[1])) {
+                    // IntPos
+                    IntPos* posObj = IntPos::extractPos(args[1]);
+                    if (dim != posObj->dim) {
+                        LOG_ERROR_WITH_SCRIPT_INFO("Wrong Dimension!");
+                        return Local<Value>();
+                    }
+                    aabb.max = posObj->getBlockPos().toVec3()+1;
+                    dim = posObj->dim;
+
+                } else if (IsInstanceOf<FloatPos>(args[1])) {
+                    // FloatPos
+                    FloatPos* posObj = FloatPos::extractPos(args[1]);
+                    if(dim != posObj->dim){
+                        LOG_ERROR_WITH_SCRIPT_INFO("Wrong Dimension!");
+                        return Local<Value>();
+                    }
+                    aabb.max = posObj->getVec3();
+                    dim = posObj->dim;
+                } else if (args[1].getKind() == ValueKind::kNumber) {
+                    aabb.max = aabb.min + 1;
+                    dis = args[1].asNumber().toFloat();
+                } else {
+                    LOG_WRONG_ARG_TYPE();
+                    return Local<Value>();
+                }
+                if (args.size() > 2) {
+                    if (args[2].getKind() == ValueKind::kNumber) {
+                    dis = args[1].asNumber().toFloat();
+                    } else {
+                        LOG_WRONG_ARG_TYPE();
+                        return Local<Value>();
+                    }
+                } else {
+                    aabb.max = aabb.min + 1;
+                }
+            } else {
+                aabb.max = aabb.min + 1;
+            }
+        } else {
+            LOG_TOO_FEW_ARGS();
+            return Local<Value>();
+        }
+
+        auto arr = Array::newArray();
+        auto* bs = Level::getBlockSource(dim);
+        if(bs == nullptr) {
+            LOG_ERROR_WITH_SCRIPT_INFO("Wrong Dimension!");
+            return Local<Value>();
+        }
+        auto entityList = bs->getEntities(aabb, dis);
+        for (auto i : entityList) {
+            arr.add(EntityClass::newEntity(i));
+        }
+        return arr;
+    }
+    CATCH("Fail in GetAllEntities");
+}
+
 Local<Value> McClass::cloneMob(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2);
 
@@ -1668,7 +1750,8 @@ Local<Value> McClass::explode(const Arguments& args) {
             CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
-            pos = {args[0].asNumber().toFloat(), args[1].asNumber().toFloat(), args[2].asNumber().toFloat(), args[3].toInt()};
+            pos = {args[0].asNumber().toFloat(), args[1].asNumber().toFloat(), args[2].asNumber().toFloat(),
+                   args[3].toInt()};
         } else {
             LOG_WRONG_ARGS_COUNT();
             return Local<Value>();

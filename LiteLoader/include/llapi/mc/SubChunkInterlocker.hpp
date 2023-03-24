@@ -28,11 +28,11 @@ public:
 
 public:
     /**
-     * @symbol  ?tryLock3x3xN\@SubChunkInterlocker\@\@QEAA_NAEBVSubChunkPos\@\@H\@Z
+     * @symbol ?tryLock3x3xN\@SubChunkInterlocker\@\@QEAA_NAEBVSubChunkPos\@\@H\@Z
      */
     MCAPI bool tryLock3x3xN(class SubChunkPos const &, int);
     /**
-     * @symbol  ?unlock3x3xN\@SubChunkInterlocker\@\@QEAAXAEBVSubChunkPos\@\@H\@Z
+     * @symbol ?unlock3x3xN\@SubChunkInterlocker\@\@QEAAXAEBVSubChunkPos\@\@H\@Z
      */
     MCAPI void unlock3x3xN(class SubChunkPos const &, int);
 

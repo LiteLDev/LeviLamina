@@ -27,18 +27,21 @@ class InventoryTransactionItemGroup {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYTRANSACTIONITEMGROUP
 public:
-    class InventoryTransactionItemGroup& operator=(class InventoryTransactionItemGroup const &) = delete;
     InventoryTransactionItemGroup(class InventoryTransactionItemGroup const &) = delete;
     InventoryTransactionItemGroup() = delete;
 #endif
 
 public:
     /**
-     * @symbol  ?getItemInstance\@InventoryTransactionItemGroup\@\@QEBA?AVItemStack\@\@XZ
+     * @symbol ?getItemInstance\@InventoryTransactionItemGroup\@\@QEBA?AVItemStack\@\@XZ
      */
     MCAPI class ItemStack getItemInstance() const;
     /**
-     * @symbol  ??1InventoryTransactionItemGroup\@\@QEAA\@XZ
+     * @symbol ??4InventoryTransactionItemGroup\@\@QEAAAEAV0\@AEBV0\@\@Z
+     */
+    MCAPI class InventoryTransactionItemGroup & operator=(class InventoryTransactionItemGroup const &);
+    /**
+     * @symbol ??1InventoryTransactionItemGroup\@\@QEAA\@XZ
      */
     MCAPI ~InventoryTransactionItemGroup();
 

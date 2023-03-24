@@ -29,22 +29,22 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SubtreeNode();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?tick\@SubtreeNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
+     * @vftbl 1
+     * @symbol ?tick\@SubtreeNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
     virtual enum class BehaviorStatus tick(class Actor &);
     /**
-     * @vftbl  2
-     * @symbol  ?initializeFromDefinition\@SubtreeNode\@\@MEAAXAEAVActor\@\@\@Z
+     * @vftbl 2
+     * @symbol ?initializeFromDefinition\@SubtreeNode\@\@MEAAXAEAVActor\@\@\@Z
      */
     virtual void initializeFromDefinition(class Actor &);
     /**
-     * @symbol  ??0SubtreeNode\@\@QEAA\@XZ
+     * @symbol ??0SubtreeNode\@\@QEAA\@XZ
      */
     MCAPI SubtreeNode();
 

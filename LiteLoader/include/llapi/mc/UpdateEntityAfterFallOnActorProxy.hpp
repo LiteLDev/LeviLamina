@@ -28,37 +28,37 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~UpdateEntityAfterFallOnActorProxy();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?getPosDeltaNonConst\@UpdateEntityAfterFallOnActorProxy\@\@UEAAAEAVVec3\@\@XZ
+     * @vftbl 1
+     * @symbol ?getPosDeltaNonConst\@UpdateEntityAfterFallOnActorProxy\@\@UEAAAEAVVec3\@\@XZ
      */
     virtual class Vec3 & getPosDeltaNonConst();
     /**
-     * @vftbl  2
-     * @symbol  ?isSneaking\@UpdateEntityAfterFallOnActorProxy\@\@UEBA_NXZ
+     * @vftbl 2
+     * @symbol ?isSneaking\@UpdateEntityAfterFallOnActorProxy\@\@UEBA_NXZ
      */
     virtual bool isSneaking() const;
     /**
-     * @vftbl  3
-     * @symbol  ?onBounceStarted\@UpdateEntityAfterFallOnActorProxy\@\@UEAAXAEBVBlockPos\@\@AEBVBlock\@\@\@Z
+     * @vftbl 3
+     * @symbol ?onBounceStarted\@UpdateEntityAfterFallOnActorProxy\@\@UEAAXAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual void onBounceStarted(class BlockPos const &, class Block const &);
     /**
-     * @vftbl  4
-     * @symbol  ?getPosition\@UpdateEntityAfterFallOnActorProxy\@\@UEBA?AVVec3\@\@XZ
+     * @vftbl 4
+     * @symbol ?getPosition\@UpdateEntityAfterFallOnActorProxy\@\@UEBA?AVVec3\@\@XZ
      */
     virtual class Vec3 getPosition() const;
     /**
-     * @vftbl  5
-     * @symbol  ?getDimensionBlockSource\@UpdateEntityAfterFallOnActorProxy\@\@UEBAAEBVIConstBlockSource\@\@XZ
+     * @vftbl 5
+     * @symbol ?getDimensionBlockSource\@UpdateEntityAfterFallOnActorProxy\@\@UEBAAEBVIConstBlockSource\@\@XZ
      */
     virtual class IConstBlockSource const & getDimensionBlockSource() const;
     /**
-     * @symbol  ??0UpdateEntityAfterFallOnActorProxy\@\@QEAA\@AEAUIActorMovementProxy\@\@\@Z
+     * @symbol ??0UpdateEntityAfterFallOnActorProxy\@\@QEAA\@AEAUIActorMovementProxy\@\@\@Z
      */
     MCAPI UpdateEntityAfterFallOnActorProxy(struct IActorMovementProxy &);
 

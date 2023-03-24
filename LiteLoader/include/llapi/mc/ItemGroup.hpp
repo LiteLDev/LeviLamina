@@ -30,19 +30,15 @@ public:
 
 public:
     /**
-     * @symbol  ??0ItemGroup\@\@QEAA\@AEBVItemInstance\@\@\@Z
+     * @symbol ??0ItemGroup\@\@QEAA\@AEBVItemInstance\@\@\@Z
      */
     MCAPI ItemGroup(class ItemInstance const &);
     /**
-     * @symbol  ?isEmpty\@ItemGroup\@\@QEBA_NXZ
+     * @symbol ?isEmpty\@ItemGroup\@\@QEBA_NXZ
      */
     MCAPI bool isEmpty() const;
     /**
-     * @symbol  ??4ItemGroup\@\@QEAAAEAV0\@$$QEAV0\@\@Z
-     */
-    MCAPI class ItemGroup & operator=(class ItemGroup &&);
-    /**
-     * @symbol  ??1ItemGroup\@\@QEAA\@XZ
+     * @symbol ??1ItemGroup\@\@QEAA\@XZ
      */
     MCAPI ~ItemGroup();
 

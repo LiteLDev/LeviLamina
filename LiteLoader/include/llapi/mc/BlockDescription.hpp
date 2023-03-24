@@ -27,11 +27,11 @@ public:
 
 public:
     /**
-     * @symbol  ??4BlockDescription\@\@QEAAAEAU0\@AEBU0\@\@Z
+     * @symbol ??4BlockDescription\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
     MCAPI struct BlockDescription & operator=(struct BlockDescription const &);
     /**
-     * @symbol  ??1BlockDescription\@\@QEAA\@XZ
+     * @symbol ??1BlockDescription\@\@QEAA\@XZ
      */
     MCAPI ~BlockDescription();
 

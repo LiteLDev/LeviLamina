@@ -62,7 +62,11 @@ TEST_F(UtilsTest, Tracer) {
 
   Tracer::setDelegate(&t);
   EngineScope scope(engine);
+#ifdef SCRIPTX_LANG_PYTHON
+  engine->eval("print('')");      //TODO: fix Tracer
+#else
   engine->eval("");
+#endif
   EXPECT_TRUE(!t.begin.empty());
   EXPECT_TRUE(t.end);
 

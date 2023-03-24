@@ -30,15 +30,15 @@ public:
 
 public:
     /**
-     * @symbol  ??0CircleAroundAnchorDefinition\@\@QEAA\@XZ
+     * @symbol ??0CircleAroundAnchorDefinition\@\@QEAA\@XZ
      */
     MCAPI CircleAroundAnchorDefinition();
     /**
-     * @symbol  ?initialize\@CircleAroundAnchorDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVCircleAroundAnchorGoal\@\@\@Z
+     * @symbol ?initialize\@CircleAroundAnchorDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVCircleAroundAnchorGoal\@\@\@Z
      */
     MCAPI void initialize(class EntityContext &, class CircleAroundAnchorGoal &) const;
     /**
-     * @symbol  ?buildSchema\@CircleAroundAnchorDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VCircleAroundAnchorDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
+     * @symbol ?buildSchema\@CircleAroundAnchorDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VCircleAroundAnchorDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class CircleAroundAnchorDefinition>> &);
 

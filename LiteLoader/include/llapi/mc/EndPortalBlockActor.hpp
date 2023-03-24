@@ -31,52 +31,52 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~EndPortalBlockActor();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  12
-     * @symbol  __unk_vfn_12
+     * @vftbl 12
+     * @symbol __unk_vfn_12
      */
     virtual void __unk_vfn_12();
     /**
-     * @vftbl  18
-     * @symbol  __unk_vfn_18
+     * @vftbl 18
+     * @symbol __unk_vfn_18
      */
     virtual void __unk_vfn_18();
     /**
-     * @vftbl  31
-     * @symbol  __unk_vfn_31
+     * @vftbl 31
+     * @symbol __unk_vfn_31
      */
     virtual void __unk_vfn_31();
     /**
-     * @vftbl  32
-     * @symbol  __unk_vfn_32
+     * @vftbl 32
+     * @symbol __unk_vfn_32
      */
     virtual void __unk_vfn_32();
     /**
-     * @vftbl  33
-     * @symbol  __unk_vfn_33
+     * @vftbl 33
+     * @symbol __unk_vfn_33
      */
     virtual void __unk_vfn_33();
     /**
-     * @vftbl  34
-     * @symbol  __unk_vfn_34
+     * @vftbl 34
+     * @symbol __unk_vfn_34
      */
     virtual void __unk_vfn_34();
     /**
-     * @vftbl  35
-     * @symbol  __unk_vfn_35
+     * @vftbl 35
+     * @symbol __unk_vfn_35
      */
     virtual void __unk_vfn_35();
     /**
-     * @vftbl  36
-     * @symbol  __unk_vfn_36
+     * @vftbl 36
+     * @symbol __unk_vfn_36
      */
     virtual void __unk_vfn_36();
     /**
-     * @symbol  ??0EndPortalBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
+     * @symbol ??0EndPortalBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
     MCAPI EndPortalBlockActor(class BlockPos const &);
 

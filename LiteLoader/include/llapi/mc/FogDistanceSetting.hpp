@@ -30,7 +30,7 @@ public:
 
 public:
     /**
-     * @symbol  ?ZERO_SETTING\@FogDistanceSetting\@\@2U1\@B
+     * @symbol ?ZERO_SETTING\@FogDistanceSetting\@\@2U1\@B
      */
     MCAPI static struct FogDistanceSetting const ZERO_SETTING;
 

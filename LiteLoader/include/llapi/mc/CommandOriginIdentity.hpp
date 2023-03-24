@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1CommandOriginIdentity\@\@QEAA\@XZ
+     * @symbol ??1CommandOriginIdentity\@\@QEAA\@XZ
      */
     MCAPI ~CommandOriginIdentity();
 

@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1MessageEvent\@\@QEAA\@XZ
+     * @symbol ??1MessageEvent\@\@QEAA\@XZ
      */
     MCAPI ~MessageEvent();
 

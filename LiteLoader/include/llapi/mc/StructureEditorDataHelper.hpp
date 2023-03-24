@@ -22,7 +22,7 @@ namespace StructureEditorDataHelper {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?calculateMaxStructureSize\@StructureEditorDataHelper\@\@YA?AVBlockPos\@\@FF\@Z
+     * @symbol ?calculateMaxStructureSize\@StructureEditorDataHelper\@\@YA?AVBlockPos\@\@FF\@Z
      */
     MCAPI class BlockPos calculateMaxStructureSize(short, short);
 

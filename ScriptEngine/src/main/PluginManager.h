@@ -8,9 +8,10 @@ class PluginManager
 {
 private:
     static bool unRegisterPlugin(std::string name);
-    static bool loadPluginPackage(const std::string& dirPath, const std::string& packagePath, bool isHotLoad = false);
+    static bool loadPluginPackage(const std::string& dirPath, const std::string& packagePath, bool isHotLoad, bool isUncompressedFirstTime);
 
 public:
+    // if mustBeCurrectModule == true and not-current-module plugin is found, will throw exception
     static bool loadPlugin(const std::string& fileOrDirPath, bool isHotLoad = false, bool mustBeCurrectModule = false);
     static bool unloadPlugin(const std::string& name);
     static bool reloadPlugin(const std::string& name);

@@ -31,11 +31,11 @@ public:
 
 public:
     /**
-     * @symbol  ?set\@PackSetting\@\@QEAAXAEBVValue\@Json\@\@\@Z
+     * @symbol ?set\@PackSetting\@\@QEAAXAEBVValue\@Json\@\@\@Z
      */
     MCAPI void set(class Json::Value const &);
     /**
-     * @symbol  ??1PackSetting\@\@QEAA\@XZ
+     * @symbol ??1PackSetting\@\@QEAA\@XZ
      */
     MCAPI ~PackSetting();
 

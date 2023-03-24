@@ -28,37 +28,43 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~TickingAreasLoadStatusPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?getId\@TickingAreasLoadStatusPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@TickingAreasLoadStatusPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @vftbl  2
-     * @symbol  ?getName\@TickingAreasLoadStatusPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@TickingAreasLoadStatusPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @vftbl  3
-     * @symbol  ?write\@TickingAreasLoadStatusPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@TickingAreasLoadStatusPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl  6
-     * @symbol  ?_read\@TickingAreasLoadStatusPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@TickingAreasLoadStatusPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKINGAREASLOADSTATUSPACKET
     /**
-     * @symbol  ??0TickingAreasLoadStatusPacket\@\@QEAA\@_N\@Z
+     * @symbol __unk_destructor_-1
      */
-    MCAPI TickingAreasLoadStatusPacket(bool);
+    MCVAPI ~TickingAreasLoadStatusPacket();
+#endif
     /**
-     * @symbol  ??0TickingAreasLoadStatusPacket\@\@QEAA\@XZ
+     * @symbol ??0TickingAreasLoadStatusPacket\@\@QEAA\@XZ
      */
     MCAPI TickingAreasLoadStatusPacket();
+    /**
+     * @symbol ??0TickingAreasLoadStatusPacket\@\@QEAA\@_N\@Z
+     */
+    MCAPI TickingAreasLoadStatusPacket(bool);
 
 };

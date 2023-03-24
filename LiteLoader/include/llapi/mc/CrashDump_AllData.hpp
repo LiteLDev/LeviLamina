@@ -27,7 +27,7 @@ public:
 
 public:
     /**
-     * @symbol  ??0CrashDump_AllData\@\@QEAA\@XZ
+     * @symbol ??0CrashDump_AllData\@\@QEAA\@XZ
      */
     MCAPI CrashDump_AllData();
 

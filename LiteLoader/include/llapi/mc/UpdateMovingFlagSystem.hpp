@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?createUpdateMovingFlagSystem\@UpdateMovingFlagSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createUpdateMovingFlagSystem\@UpdateMovingFlagSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createUpdateMovingFlagSystem();
 

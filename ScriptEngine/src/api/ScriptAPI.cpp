@@ -106,8 +106,10 @@ Local<Value> FastLog(const Arguments& args) {
             PrintValue(sout, args[i]);
 
         pool.enqueue([str{sout.str()}, pluginName{ENGINE_OWN_DATA()->pluginName}]() {
+            SetCurrentThreadDescription(L"LLSE_FastLog_" _CRT_WIDE(LLSE_MODULE_TYPE));
             Logger fastLogger(pluginName);
             fastLogger.info(str);
+            SetCurrentThreadDescription(L"LLSE_ThreadPool_Idle_" _CRT_WIDE(LLSE_MODULE_TYPE));
         });
         return Boolean::newBoolean(true);
     }

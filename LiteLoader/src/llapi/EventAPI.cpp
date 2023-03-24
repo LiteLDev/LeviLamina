@@ -431,14 +431,14 @@ TClasslessInstanceHook(bool,
 int num = 0;
 
 /////////////////// PlayerJump ///////////////////
-TInstanceHook(void, "?jumpFromGround@Player@@UEAAXXZ", Player) {
+TInstanceHook(void, "?jumpFromGround@Player@@UEAAXAEBVIConstBlockSource@@@Z", Player, void* a2) {
     IF_LISTENED(PlayerJumpEvent) {
         PlayerJumpEvent ev{};
         ev.mPlayer = this;
         ev.call();
     }
     IF_LISTENED_END(PlayerJumpEvent)
-    return original(this);
+    return original(this, a2);
 }
 
 /////////////////// PlayerSneak ///////////////////
@@ -671,7 +671,7 @@ TClasslessInstanceHook(void,
 TClasslessInstanceHook(
     __int64, "?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerOpenContainerEvent@@@Z",
     void* a2) {
-    Actor* player = ((class WeakEntityRef*)(a2))->tryUnwrap();
+    Actor* player = ((class WeakEntityRef*)(a2))->tryUnwrap<Actor>();
     if (player->isPlayer()) {
         IF_LISTENED(PlayerOpenContainerEvent) {
             BlockPos blockPosPtr = dAccess<BlockPos>(a2, 28);
@@ -1843,8 +1843,7 @@ TInstanceHook(void,
         // IDA NpcComponent::executeCommandAction
         // NpcSceneDialogueData data(*this, *ac, a5);
 
-        auto ec = (EntityContext*)((char*)ac + 8);
-        NpcSceneDialogueData data(WeakEntityRef(ec->getWeakRef()), a5);
+        NpcSceneDialogueData data(WeakEntityRef(ac->getEntityContext()->getWeakRef()), a5);
 
         auto container = data.getActionsContainer();
         auto actionAt = container->getActionAt(a4);

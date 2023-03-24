@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ?getDiff\@Vec2Component\@\@SA?AV?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@AEBU1\@0\@Z
+     * @symbol ?getDiff\@Vec2Component\@\@SA?AV?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@AEBU1\@0\@Z
      */
     MCAPI static class std::optional<std::string> getDiff(struct Vec2Component const &, struct Vec2Component const &);
 

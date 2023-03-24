@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?createSpawnConditionsWithSpawnRules\@SpawnConditions\@\@SA?AV1\@AEBV1\@AEBVMobSpawnRules\@\@\@Z
+     * @symbol ?createSpawnConditionsWithSpawnRules\@SpawnConditions\@\@SA?AV1\@AEBV1\@AEBVMobSpawnRules\@\@\@Z
      */
     MCAPI static class SpawnConditions createSpawnConditionsWithSpawnRules(class SpawnConditions const &, class MobSpawnRules const &);
 

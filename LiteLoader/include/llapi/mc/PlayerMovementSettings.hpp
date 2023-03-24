@@ -30,11 +30,11 @@ public:
 
 public:
     /**
-     * @symbol  ?INVALID\@PlayerMovementSettings\@\@2U1\@B
+     * @symbol ?INVALID\@PlayerMovementSettings\@\@2U1\@B
      */
     MCAPI static struct PlayerMovementSettings const INVALID;
     /**
-     * @symbol  ?getDefault\@PlayerMovementSettings\@\@SA?AU1\@XZ
+     * @symbol ?getDefault\@PlayerMovementSettings\@\@SA?AU1\@XZ
      */
     MCAPI static struct PlayerMovementSettings getDefault();
 

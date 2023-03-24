@@ -30,29 +30,29 @@ public:
 
 public:
     /**
-     * @symbol  ?extinguishFire\@OnFireSystem\@\@SAXAEAVActor\@\@\@Z
+     * @symbol ?extinguishFire\@OnFireSystem\@\@SAXAEAVActor\@\@\@Z
      */
     MCAPI static void extinguishFire(class Actor &);
     /**
-     * @symbol  ?onFireChanged\@OnFireSystem\@\@SAXAEAVActor\@\@\@Z
+     * @symbol ?onFireChanged\@OnFireSystem\@\@SAXAEAVActor\@\@\@Z
      */
     MCAPI static void onFireChanged(class Actor &);
     /**
-     * @symbol  ?setOnFire\@OnFireSystem\@\@SAXAEAVActor\@\@H\@Z
+     * @symbol ?setOnFire\@OnFireSystem\@\@SAXAEAVActor\@\@H\@Z
      */
     MCAPI static void setOnFire(class Actor &, int);
     /**
-     * @symbol  ?setOnFireNoEffects\@OnFireSystem\@\@SAXAEAVActor\@\@H\@Z
+     * @symbol ?setOnFireNoEffects\@OnFireSystem\@\@SAXAEAVActor\@\@H\@Z
      */
     MCAPI static void setOnFireNoEffects(class Actor &, int);
     /**
-     * @symbol  ?stopFire\@OnFireSystem\@\@SAXAEAVActor\@\@\@Z
+     * @symbol ?stopFire\@OnFireSystem\@\@SAXAEAVActor\@\@\@Z
      */
     MCAPI static void stopFire(class Actor &);
 
 //protected:
     /**
-     * @symbol  ?_extinguishFireIfInWater\@OnFireSystem\@\@KA_NAEAVActor\@\@\@Z
+     * @symbol ?_extinguishFireIfInWater\@OnFireSystem\@\@KA_NAEAVActor\@\@\@Z
      */
     MCAPI static bool _extinguishFireIfInWater(class Actor &);
 

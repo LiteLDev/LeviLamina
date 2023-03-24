@@ -31,22 +31,22 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~AbsorptionMobEffect();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?applyEffects\@AbsorptionMobEffect\@\@UEBAXPEAVActor\@\@HH\@Z
+     * @vftbl 1
+     * @symbol ?applyEffects\@AbsorptionMobEffect\@\@UEBAXPEAVActor\@\@HH\@Z
      */
     virtual void applyEffects(class Actor *, int, int) const;
     /**
-     * @vftbl  2
-     * @symbol  ?removeEffects\@AbsorptionMobEffect\@\@UEAAXPEAVActor\@\@\@Z
+     * @vftbl 2
+     * @symbol ?removeEffects\@AbsorptionMobEffect\@\@UEAAXPEAVActor\@\@\@Z
      */
     virtual void removeEffects(class Actor *);
     /**
-     * @symbol  ??0AbsorptionMobEffect\@\@QEAA\@HAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0_NHH\@Z
+     * @symbol ??0AbsorptionMobEffect\@\@QEAA\@HAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0_NHH\@Z
      */
     MCAPI AbsorptionMobEffect(int, std::string const &, std::string const &, bool, int, int);
 

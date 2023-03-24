@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1SubBBsComponent\@\@QEAA\@XZ
+     * @symbol ??1SubBBsComponent\@\@QEAA\@XZ
      */
     MCAPI ~SubBBsComponent();
 

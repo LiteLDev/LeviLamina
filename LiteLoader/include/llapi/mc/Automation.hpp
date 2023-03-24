@@ -23,11 +23,11 @@ namespace Automation {
     enum class MessagePurpose;
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?BodyData\@Automation\@\@3PEBDEB
+     * @symbol ?BodyData\@Automation\@\@3PEBDEB
      */
     MCAPI extern char const * BodyData;
     /**
-     * @symbol  ?HeaderData\@Automation\@\@3PEBDEB
+     * @symbol ?HeaderData\@Automation\@\@3PEBDEB
      */
     MCAPI extern char const * HeaderData;
 

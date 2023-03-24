@@ -30,16 +30,16 @@ public:
 
 public:
     /**
-     * @symbol  ?breakNearbyBlocks\@BreakBlocksComponent\@\@QEAAXAEAVActor\@\@\@Z
+     * @symbol ?breakNearbyBlocks\@BreakBlocksComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void breakNearbyBlocks(class Actor &);
     /**
-     * @symbol  ?initFromDefinition\@BreakBlocksComponent\@\@QEAAXAEAVActor\@\@\@Z
+     * @symbol ?initFromDefinition\@BreakBlocksComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
-     * @symbol  ?isBreakable\@BreakBlocksComponent\@\@QEBA_NAEAVActor\@\@AEBVBlockLegacy\@\@\@Z
+     * @symbol ?isBreakable\@BreakBlocksComponent\@\@SA_NPEBUBreakBlocksDescription\@\@AEBVBlockLegacy\@\@\@Z
      */
-    MCAPI bool isBreakable(class Actor &, class BlockLegacy const &) const;
+    MCAPI static bool isBreakable(struct BreakBlocksDescription const *, class BlockLegacy const &);
 
 };

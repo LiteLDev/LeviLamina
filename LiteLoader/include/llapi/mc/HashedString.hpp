@@ -3,7 +3,7 @@
  *
  */
 #pragma once
-#define AUTO_GENERATED
+
 #include "llapi/Global.h"
 
 #define BEFORE_EXTRA
@@ -19,11 +19,11 @@ class HashedString {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
     uint64_t hash;
     std::string str;
     int64_t unk;
 
-public:
     //HashedString(HashedString const& hstr)
     //    : str(hstr.getString())
     //    , unk(0)
@@ -135,3 +135,12 @@ public:
     MCAPI static class HashedString const & getEmptyString();
 
 };
+
+namespace std {
+
+    template <>
+    struct hash<HashedString> {
+        std::size_t operator()(HashedString const& str) const noexcept { return str.getHash(); }
+    };
+
+}  // namespace std

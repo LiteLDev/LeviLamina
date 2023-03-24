@@ -27,11 +27,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0CommunitySiftConfig\@\@QEAA\@XZ
+     * @symbol ??0CommunitySiftConfig\@\@QEAA\@XZ
      */
     MCAPI CommunitySiftConfig();
     /**
-     * @symbol  ??1CommunitySiftConfig\@\@QEAA\@XZ
+     * @symbol ??1CommunitySiftConfig\@\@QEAA\@XZ
      */
     MCAPI ~CommunitySiftConfig();
 

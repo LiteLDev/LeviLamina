@@ -23,7 +23,7 @@ namespace TheEndSpikeHelper {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?getSpikesForLevel\@TheEndSpikeHelper\@\@YA?AV?$vector\@VEndSpike\@SpikeFeature\@\@V?$allocator\@VEndSpike\@SpikeFeature\@\@\@std\@\@\@std\@\@AEAVLevel\@\@\@Z
+     * @symbol ?getSpikesForLevel\@TheEndSpikeHelper\@\@YA?AV?$vector\@VEndSpike\@SpikeFeature\@\@V?$allocator\@VEndSpike\@SpikeFeature\@\@\@std\@\@\@std\@\@AEAVLevel\@\@\@Z
      */
     MCAPI std::vector<class SpikeFeature::EndSpike> getSpikesForLevel(class Level &);
 

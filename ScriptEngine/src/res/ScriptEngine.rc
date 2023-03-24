@@ -55,7 +55,10 @@ END
 #define LLSE_FILE_DESCRIPTION "A Lua Script Plugin Engine for LiteLoader"
 #elif defined LLSE_BACKEND_NODEJS
 #define LLSE_OUTPUT_FILE_NAME "LiteLoader.NodeJs.dll"
-#define LLSE_FILE_DESCRIPTION "A NodeJs Script Plugin Engine for LiteLoader"
+#define LLSE_FILE_DESCRIPTION "A Node.Js Script Plugin Engine for LiteLoader"
+#elif defined LLSE_BACKEND_PYTHON
+#define LLSE_OUTPUT_FILE_NAME "LiteLoader.Python.dll"
+#define LLSE_FILE_DESCRIPTION "A Python Script Plugin Engine for LiteLoader"
 #endif
 
 /////////////////////////////////////////////////////////////////////////////

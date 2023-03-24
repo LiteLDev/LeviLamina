@@ -26,33 +26,33 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SmithingTransformRecipe();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?assemble\@SmithingTransformRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@\@Z
+     * @vftbl 1
+     * @symbol ?assemble\@SmithingTransformRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@\@Z
      */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
     /**
-     * @symbol  ??0SmithingTransformRecipe\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVRecipeIngredient\@\@1AEBVItemInstance\@\@AEBVHashedString\@\@\@Z
+     * @symbol ??0SmithingTransformRecipe\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVRecipeIngredient\@\@1AEBVItemInstance\@\@AEBVHashedString\@\@\@Z
      */
     MCAPI SmithingTransformRecipe(std::string const &, class RecipeIngredient const &, class RecipeIngredient const &, class ItemInstance const &, class HashedString const &);
     /**
-     * @symbol  ?getAddition\@SmithingTransformRecipe\@\@QEBAAEBVRecipeIngredient\@\@XZ
+     * @symbol ?getAddition\@SmithingTransformRecipe\@\@QEBAAEBVRecipeIngredient\@\@XZ
      */
     MCAPI class RecipeIngredient const & getAddition() const;
     /**
-     * @symbol  ?getBase\@SmithingTransformRecipe\@\@QEBAAEBVRecipeIngredient\@\@XZ
+     * @symbol ?getBase\@SmithingTransformRecipe\@\@QEBAAEBVRecipeIngredient\@\@XZ
      */
     MCAPI class RecipeIngredient const & getBase() const;
     /**
-     * @symbol  ?getResult\@SmithingTransformRecipe\@\@QEBAAEBVItemInstance\@\@XZ
+     * @symbol ?getResult\@SmithingTransformRecipe\@\@QEBAAEBVItemInstance\@\@XZ
      */
     MCAPI class ItemInstance const & getResult() const;
     /**
-     * @symbol  ?ID\@SmithingTransformRecipe\@\@2VUUID\@mce\@\@B
+     * @symbol ?ID\@SmithingTransformRecipe\@\@2VUUID\@mce\@\@B
      */
     MCAPI static class mce::UUID const ID;
 

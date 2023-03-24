@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1BossbarManager\@\@QEAA\@XZ
+     * @symbol ??1BossbarManager\@\@QEAA\@XZ
      */
     MCAPI ~BossbarManager();
 

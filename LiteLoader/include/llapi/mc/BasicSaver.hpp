@@ -29,10 +29,16 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASICSAVER
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~BasicSaver();
+#endif
 
 //private:
     /**
-     * @symbol  ?saveImpl\@BasicSaver\@\@AEAA_NAEAUSchemaWriter\@reflection\@\@Umeta_handle\@entt\@\@AEBVBasicSchema\@internal\@3\@\@Z
+     * @symbol ?saveImpl\@BasicSaver\@\@AEAA_NAEAUSchemaWriter\@reflection\@\@Umeta_handle\@entt\@\@AEBVBasicSchema\@internal\@3\@\@Z
      */
     MCAPI bool saveImpl(struct reflection::SchemaWriter &, struct entt::meta_handle, class reflection::internal::BasicSchema const &);
 

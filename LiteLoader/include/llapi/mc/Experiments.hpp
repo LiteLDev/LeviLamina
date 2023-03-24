@@ -29,67 +29,71 @@ public:
 
 public:
     /**
-     * @symbol  ?DataDrivenBiomes\@Experiments\@\@QEBA_NXZ
+     * @symbol ?DataDrivenBiomes\@Experiments\@\@QEBA_NXZ
      */
     MCAPI bool DataDrivenBiomes() const;
     /**
-     * @symbol  ?DataDrivenItems\@Experiments\@\@QEBA_NXZ
+     * @symbol ?DataDrivenItems\@Experiments\@\@QEBA_NXZ
      */
     MCAPI bool DataDrivenItems() const;
     /**
-     * @symbol  ??0Experiments\@\@QEAA\@XZ
+     * @symbol ??0Experiments\@\@QEAA\@XZ
      */
     MCAPI Experiments();
     /**
-     * @symbol  ?Gametest\@Experiments\@\@QEBA_NXZ
+     * @symbol ?Gametest\@Experiments\@\@QEBA_NXZ
      */
     MCAPI bool Gametest() const;
     /**
-     * @symbol  ?NextMajorUpdate\@Experiments\@\@QEBA_NXZ
+     * @symbol ?NextMajorUpdate\@Experiments\@\@QEBA_NXZ
      */
     MCAPI bool NextMajorUpdate() const;
     /**
-     * @symbol  ?UpcomingCreatorFeatures\@Experiments\@\@QEBA_NXZ
+     * @symbol ?Sniffer\@Experiments\@\@QEBA_NXZ
+     */
+    MCAPI bool Sniffer() const;
+    /**
+     * @symbol ?UpcomingCreatorFeatures\@Experiments\@\@QEBA_NXZ
      */
     MCAPI bool UpcomingCreatorFeatures() const;
     /**
-     * @symbol  ?getExperimentsActiveAsJSONList\@Experiments\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getExperimentsActiveAsJSONList\@Experiments\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string getExperimentsActiveAsJSONList() const;
     /**
-     * @symbol  ?getExperimentsActiveForTelemetry\@Experiments\@\@QEBA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
+     * @symbol ?getExperimentsActiveForTelemetry\@Experiments\@\@QEBA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
      */
     MCAPI std::vector<std::string> getExperimentsActiveForTelemetry() const;
     /**
-     * @symbol  ?getTagData\@Experiments\@\@QEAAXAEBVCompoundTag\@\@\@Z
+     * @symbol ?getTagData\@Experiments\@\@QEAAXAEBVCompoundTag\@\@\@Z
      */
     MCAPI void getTagData(class CompoundTag const &);
     /**
-     * @symbol  ?isExperimentEnabled\@Experiments\@\@QEBA_NW4AllExperiments\@\@\@Z
+     * @symbol ?isExperimentEnabled\@Experiments\@\@QEBA_NW4AllExperiments\@\@\@Z
      */
     MCAPI bool isExperimentEnabled(enum class AllExperiments) const;
     /**
-     * @symbol  ?setExperimentEnabled\@Experiments\@\@QEAAXW4AllExperiments\@\@_N\@Z
+     * @symbol ?setExperimentEnabled\@Experiments\@\@QEAAXW4AllExperiments\@\@_N\@Z
      */
     MCAPI void setExperimentEnabled(enum class AllExperiments, bool);
     /**
-     * @symbol  ?setTagData\@Experiments\@\@QEBAXAEAVCompoundTag\@\@\@Z
+     * @symbol ?setTagData\@Experiments\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
     MCAPI void setTagData(class CompoundTag &) const;
     /**
-     * @symbol  ??1Experiments\@\@QEAA\@XZ
+     * @symbol ??1Experiments\@\@QEAA\@XZ
      */
     MCAPI ~Experiments();
     /**
-     * @symbol  ?MinecraftExplorer\@Experiments\@\@SA_NXZ
+     * @symbol ?MinecraftExplorer\@Experiments\@\@SA_NXZ
      */
     MCAPI static bool MinecraftExplorer();
     /**
-     * @symbol  ?getExperimentTextID\@Experiments\@\@SAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4AllExperiments\@\@\@Z
+     * @symbol ?getExperimentTextID\@Experiments\@\@SAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4AllExperiments\@\@\@Z
      */
     MCAPI static std::string const & getExperimentTextID(enum class AllExperiments);
     /**
-     * @symbol  ?getToggleNames\@Experiments\@\@SAAEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
+     * @symbol ?getToggleNames\@Experiments\@\@SAAEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
      */
     MCAPI static std::vector<std::string> const & getToggleNames();
 

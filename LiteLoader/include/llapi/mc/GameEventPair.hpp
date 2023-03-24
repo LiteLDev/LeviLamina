@@ -10,25 +10,22 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC structure GameEventPair.
- *
- */
-struct GameEventPair {
+
+class GameEventPair {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEEVENTPAIR
 public:
-    struct GameEventPair& operator=(struct GameEventPair const &) = delete;
-    GameEventPair(struct GameEventPair const &) = delete;
+    class GameEventPair& operator=(class GameEventPair const &) = delete;
+    GameEventPair(class GameEventPair const &) = delete;
     GameEventPair() = delete;
 #endif
 
 public:
     /**
-     * @symbol  ??1GameEventPair\@\@QEAA\@XZ
+     * @symbol ??1GameEventPair\@\@QEAA\@XZ
      */
     MCAPI ~GameEventPair();
 

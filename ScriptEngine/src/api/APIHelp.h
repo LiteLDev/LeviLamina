@@ -18,7 +18,7 @@
 // 输出异常信息
 inline void PrintException(const script::Exception& e) {
     ostringstream sout;
-    sout << "script::Exception ";
+    sout << "script::Exception: ";
     sout << e;
     logger.error(sout.str());
 }

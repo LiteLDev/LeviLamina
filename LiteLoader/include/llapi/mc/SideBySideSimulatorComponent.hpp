@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1SideBySideSimulatorComponent\@\@QEAA\@XZ
+     * @symbol ??1SideBySideSimulatorComponent\@\@QEAA\@XZ
      */
     MCAPI ~SideBySideSimulatorComponent();
 

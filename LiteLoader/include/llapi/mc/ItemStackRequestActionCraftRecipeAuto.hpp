@@ -29,45 +29,45 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ItemStackRequestActionCraftRecipeAuto();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  __unk_vfn_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
     virtual void __unk_vfn_1();
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  ?_write\@ItemStackRequestActionCraftRecipeAuto\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 4
+     * @symbol ?_write\@ItemStackRequestActionCraftRecipeAuto\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void _write(class BinaryStream &) const;
     /**
-     * @vftbl  5
-     * @symbol  ?_read\@ItemStackRequestActionCraftRecipeAuto\@\@UEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 5
+     * @symbol ?_read\@ItemStackRequestActionCraftRecipeAuto\@\@UEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
-     * @symbol  ??0ItemStackRequestActionCraftRecipeAuto\@\@QEAA\@XZ
+     * @symbol ??0ItemStackRequestActionCraftRecipeAuto\@\@QEAA\@XZ
      */
     MCAPI ItemStackRequestActionCraftRecipeAuto();
     /**
-     * @symbol  ?getIngredients\@ItemStackRequestActionCraftRecipeAuto\@\@QEBAPEBV?$vector\@VRecipeIngredient\@\@V?$allocator\@VRecipeIngredient\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?getIngredients\@ItemStackRequestActionCraftRecipeAuto\@\@QEBAPEBV?$vector\@VRecipeIngredient\@\@V?$allocator\@VRecipeIngredient\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::vector<class RecipeIngredient> const * getIngredients() const;
     /**
-     * @symbol  ?getNumCrafts\@ItemStackRequestActionCraftRecipeAuto\@\@QEBAEXZ
+     * @symbol ?getNumCrafts\@ItemStackRequestActionCraftRecipeAuto\@\@QEBAEXZ
      */
     MCAPI unsigned char getNumCrafts() const;
 

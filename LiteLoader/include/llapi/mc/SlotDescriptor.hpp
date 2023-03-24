@@ -21,26 +21,25 @@ struct SlotDescriptor {
 // Add Member There
 
 #undef AFTER_EXTRA
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLOTDESCRIPTOR
-public:
-    struct SlotDescriptor& operator=(struct SlotDescriptor const &) = delete;
-#endif
-
 public:
     /**
-     * @symbol  ??0SlotDescriptor\@\@QEAA\@XZ
-     */
-    MCAPI SlotDescriptor();
-    /**
-     * @symbol  ??0SlotDescriptor\@\@QEAA\@AEBU0\@\@Z
+     * @symbol ??0SlotDescriptor\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI SlotDescriptor(struct SlotDescriptor const &);
     /**
-     * @symbol  ?addAcceptedItem\@SlotDescriptor\@\@QEAAXAEBVItemDescriptor\@\@\@Z
+     * @symbol ??0SlotDescriptor\@\@QEAA\@XZ
+     */
+    MCAPI SlotDescriptor();
+    /**
+     * @symbol ?addAcceptedItem\@SlotDescriptor\@\@QEAAXAEBVItemDescriptor\@\@\@Z
      */
     MCAPI void addAcceptedItem(class ItemDescriptor const &);
     /**
-     * @symbol  ??1SlotDescriptor\@\@QEAA\@XZ
+     * @symbol ??4SlotDescriptor\@\@QEAAAEAU0\@AEBU0\@\@Z
+     */
+    MCAPI struct SlotDescriptor & operator=(struct SlotDescriptor const &);
+    /**
+     * @symbol ??1SlotDescriptor\@\@QEAA\@XZ
      */
     MCAPI ~SlotDescriptor();
 

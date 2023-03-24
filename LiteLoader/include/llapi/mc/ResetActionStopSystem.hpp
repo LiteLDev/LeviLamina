@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?createResetActionStopSystem\@ResetActionStopSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createResetActionStopSystem\@ResetActionStopSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createResetActionStopSystem();
 

@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1BlockNotificationEvent\@\@QEAA\@XZ
+     * @symbol ??1BlockNotificationEvent\@\@QEAA\@XZ
      */
     MCAPI ~BlockNotificationEvent();
 

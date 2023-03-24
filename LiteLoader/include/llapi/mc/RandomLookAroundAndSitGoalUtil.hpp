@@ -17,7 +17,7 @@ namespace RandomLookAroundAndSitGoalUtil {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?_isMobPulledByLeash\@RandomLookAroundAndSitGoalUtil\@\@YA_NAEBVMob\@\@\@Z
+     * @symbol ?_isMobPulledByLeash\@RandomLookAroundAndSitGoalUtil\@\@YA_NAEBVMob\@\@\@Z
      */
     MCAPI bool _isMobPulledByLeash(class Mob const &);
 

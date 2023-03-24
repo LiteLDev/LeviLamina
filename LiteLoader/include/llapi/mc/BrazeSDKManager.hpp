@@ -29,23 +29,23 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BRAZESDKMANAGER
     /**
-     * @symbol  ?_disableBrazeSDK\@BrazeSDKManager\@\@MEAAXXZ
+     * @symbol ?_disableBrazeSDK\@BrazeSDKManager\@\@MEAAXXZ
      */
     MCVAPI void _disableBrazeSDK();
     /**
-     * @symbol  ?_enableBrazeSDK\@BrazeSDKManager\@\@MEAAXXZ
+     * @symbol ?_enableBrazeSDK\@BrazeSDKManager\@\@MEAAXXZ
      */
     MCVAPI void _enableBrazeSDK();
     /**
-     * @symbol  ?disableBrazeSDK\@BrazeSDKManager\@\@UEAAXXZ
+     * @symbol ?disableBrazeSDK\@BrazeSDKManager\@\@UEAAXXZ
      */
     MCVAPI void disableBrazeSDK();
     /**
-     * @symbol  ?enableBrazeSDK\@BrazeSDKManager\@\@UEAAXXZ
+     * @symbol ?enableBrazeSDK\@BrazeSDKManager\@\@UEAAXXZ
      */
     MCVAPI void enableBrazeSDK();
     /**
-     * @symbol  ?setBrazeId\@BrazeSDKManager\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?setBrazeId\@BrazeSDKManager\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCVAPI void setBrazeId(std::string const &);
 #endif

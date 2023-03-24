@@ -30,23 +30,23 @@ public:
 
 public:
     /**
-     * @symbol  ??0ContainerValidationResult\@\@QEAA\@W4ContainerValidationOutcome\@\@\@Z
-     */
-    MCAPI ContainerValidationResult(enum class ContainerValidationOutcome);
-    /**
-     * @symbol  ??0ContainerValidationResult\@\@QEAA\@$$QEAV?$vector\@UContainerValidationOperation\@\@V?$allocator\@UContainerValidationOperation\@\@\@std\@\@\@std\@\@W4ContainerValidationOutcome\@\@W4ContainerScreenRequestActionType\@\@\@Z
+     * @symbol ??0ContainerValidationResult\@\@QEAA\@$$QEAV?$vector\@UContainerValidationOperation\@\@V?$allocator\@UContainerValidationOperation\@\@\@std\@\@\@std\@\@W4ContainerValidationOutcome\@\@W4ContainerScreenRequestActionType\@\@\@Z
      */
     MCAPI ContainerValidationResult(std::vector<struct ContainerValidationOperation> &&, enum class ContainerValidationOutcome, enum class ContainerScreenRequestActionType);
     /**
-     * @symbol  ?isSuccess\@ContainerValidationResult\@\@QEBA_NXZ
+     * @symbol ??0ContainerValidationResult\@\@QEAA\@W4ContainerValidationOutcome\@\@\@Z
+     */
+    MCAPI ContainerValidationResult(enum class ContainerValidationOutcome);
+    /**
+     * @symbol ?isSuccess\@ContainerValidationResult\@\@QEBA_NXZ
      */
     MCAPI bool isSuccess() const;
     /**
-     * @symbol  ?tryGetOperation\@ContainerValidationResult\@\@QEBAPEBUContainerValidationOperation\@\@W4ContainerValidationOperationType\@\@\@Z
+     * @symbol ?tryGetOperation\@ContainerValidationResult\@\@QEBAPEBUContainerValidationOperation\@\@W4ContainerValidationOperationType\@\@\@Z
      */
     MCAPI struct ContainerValidationOperation const * tryGetOperation(enum class ContainerValidationOperationType) const;
     /**
-     * @symbol  ??1ContainerValidationResult\@\@QEAA\@XZ
+     * @symbol ??1ContainerValidationResult\@\@QEAA\@XZ
      */
     MCAPI ~ContainerValidationResult();
 

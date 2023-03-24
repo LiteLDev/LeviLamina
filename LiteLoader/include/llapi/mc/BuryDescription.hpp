@@ -28,11 +28,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0BuryDescription\@\@QEAA\@AEBVBoundingBox\@\@\@Z
+     * @symbol ??0BuryDescription\@\@QEAA\@AEBVBoundingBox\@\@\@Z
      */
     MCAPI BuryDescription(class BoundingBox const &);
     /**
-     * @symbol  ?calculateContribution\@BuryDescription\@\@QEBAMAEBVBlockPos\@\@\@Z
+     * @symbol ?calculateContribution\@BuryDescription\@\@QEBAMAEBVBlockPos\@\@\@Z
      */
     MCAPI float calculateContribution(class BlockPos const &) const;
 

@@ -29,38 +29,44 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~OnHitSubcomponent();
+    virtual void __unk_vfn_0() = 0;
     /**
-     * @vftbl  1
-     * @symbol  __unk_vfn_1
+     * @vftbl 1
+     * @symbol __unk_vfn_1
      */
     virtual void __unk_vfn_1() = 0;
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2() = 0;
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3() = 0;
+    virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  ?getName\@OnHitSubcomponent\@\@UEAAPEBDXZ
+     * @vftbl 4
+     * @symbol ?getName\@OnHitSubcomponent\@\@UEAAPEBDXZ
      */
     virtual char const * getName();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONHITSUBCOMPONENT
     /**
-     * @symbol  ??0OnHitSubcomponent\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~OnHitSubcomponent();
+#endif
+    /**
+     * @symbol ??0OnHitSubcomponent\@\@QEAA\@XZ
      */
     MCAPI OnHitSubcomponent();
 
 //protected:
     /**
-     * @symbol  ?_canAttack\@OnHitSubcomponent\@\@IEBA_NPEAVActor\@\@0\@Z
+     * @symbol ?_canAttack\@OnHitSubcomponent\@\@IEBA_NPEAVActor\@\@0\@Z
      */
     MCAPI bool _canAttack(class Actor *, class Actor *) const;
 

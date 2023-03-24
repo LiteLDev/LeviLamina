@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?createAddLocalPlayerEntityMovedSystem\@AddLocalPlayerEntityMovedSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createAddLocalPlayerEntityMovedSystem\@AddLocalPlayerEntityMovedSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createAddLocalPlayerEntityMovedSystem();
 

@@ -30,16 +30,16 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTLOGENDPOINT
     /**
-     * @symbol  ?log\@ContentLogEndPoint\@\@UEAAXPEBD\@Z
+     * @symbol ?log\@ContentLogEndPoint\@\@UEAAXPEBD\@Z
      */
     MCVAPI void log(char const *);
     /**
-     * @symbol  __unk_destructor_-1
+     * @symbol __unk_destructor_-1
      */
     MCVAPI ~ContentLogEndPoint();
 #endif
     /**
-     * @symbol  ??0ContentLogEndPoint\@\@QEAA\@XZ
+     * @symbol ??0ContentLogEndPoint\@\@QEAA\@XZ
      */
     MCAPI ContentLogEndPoint();
 

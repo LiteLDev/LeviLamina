@@ -17,11 +17,11 @@ namespace HorseMovement {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?allowStandSliding\@HorseMovement\@\@YA_NAEBVEntityContext\@\@\@Z
+     * @symbol ?allowStandSliding\@HorseMovement\@\@YA_NAEBVEntityContext\@\@\@Z
      */
     MCAPI bool allowStandSliding(class EntityContext const &);
     /**
-     * @symbol  ?setAllowStandSliding\@HorseMovement\@\@YAXAEAVEntityContext\@\@_N\@Z
+     * @symbol ?setAllowStandSliding\@HorseMovement\@\@YAXAEAVEntityContext\@\@_N\@Z
      */
     MCAPI void setAllowStandSliding(class EntityContext &, bool);
 

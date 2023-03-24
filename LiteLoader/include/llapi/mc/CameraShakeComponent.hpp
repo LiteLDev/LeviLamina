@@ -30,7 +30,7 @@ public:
 
 public:
     /**
-     * @symbol  ?getMaxIntensity\@CameraShakeComponent\@\@SAMXZ
+     * @symbol ?getMaxIntensity\@CameraShakeComponent\@\@SAMXZ
      */
     MCAPI static float getMaxIntensity();
 

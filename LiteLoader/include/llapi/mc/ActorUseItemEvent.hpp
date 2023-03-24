@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ActorUseItemEvent\@\@QEAA\@XZ
+     * @symbol ??1ActorUseItemEvent\@\@QEAA\@XZ
      */
     MCAPI ~ActorUseItemEvent();
 

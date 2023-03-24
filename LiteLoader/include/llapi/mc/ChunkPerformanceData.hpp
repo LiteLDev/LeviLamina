@@ -29,15 +29,15 @@ public:
 
 public:
     /**
-     * @symbol  ??0ChunkPerformanceData\@\@QEAA\@XZ
+     * @symbol ??0ChunkPerformanceData\@\@QEAA\@XZ
      */
     MCAPI ChunkPerformanceData();
     /**
-     * @symbol  ?recordLoadedChunk\@ChunkPerformanceData\@\@QEAAXAEBVLevelChunk\@\@\@Z
+     * @symbol ?recordLoadedChunk\@ChunkPerformanceData\@\@QEAAXAEBVLevelChunk\@\@\@Z
      */
     MCAPI void recordLoadedChunk(class LevelChunk const &);
     /**
-     * @symbol  ?resetAll\@ChunkPerformanceData\@\@QEAAXXZ
+     * @symbol ?resetAll\@ChunkPerformanceData\@\@QEAAXXZ
      */
     MCAPI void resetAll();
 

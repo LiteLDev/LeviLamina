@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?createScaffoldingSensingSystem\@ScaffoldingSensingSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createScaffoldingSensingSystem\@ScaffoldingSensingSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createScaffoldingSensingSystem();
 

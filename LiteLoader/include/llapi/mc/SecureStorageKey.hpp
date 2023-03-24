@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1SecureStorageKey\@\@QEAA\@XZ
+     * @symbol ??1SecureStorageKey\@\@QEAA\@XZ
      */
     MCAPI ~SecureStorageKey();
 

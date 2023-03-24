@@ -139,6 +139,7 @@ void exportTestSimulatedPlayerLL() {
 #include "llapi/EventAPI.h"
 auto TestRemoteCall = ([]() -> bool {
     std::thread([]() {
+        SetCurrentThreadDescription(L"LL_Test_RemoteCall_Thread");
         Sleep(5000);
         Schedule::nextTick([]() {
             RemoteCall::exportAs("TestNameSpace", "StrSize", [](std::string arg) -> size_t {

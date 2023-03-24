@@ -105,3 +105,12 @@ TInstanceHook(int, "?reload@AllowListFile@@QEAA?AW4FileReadResult@@XZ", AllowLis
 }
 // PropertiesSettings
 // -> BuiltinBugFix.cpp
+
+//StructureManager
+#include "llapi/mc/StructureManager.hpp"
+TInstanceHook(StructureManager*, "??0StructureManager@@QEAA@AEAVResourcePackManager@@@Z", StructureManager,
+    void* a1) {
+    StructureManager* result = original(this, a1);
+    Global<StructureManager> = result;
+    return result;
+}

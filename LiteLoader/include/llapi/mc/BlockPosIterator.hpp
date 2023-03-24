@@ -30,27 +30,27 @@ public:
 
 public:
     /**
-     * @symbol  ??0BlockPosIterator\@\@QEAA\@AEBVBlockPos\@\@0\@Z
+     * @symbol ??0BlockPosIterator\@\@QEAA\@AEBVBlockPos\@\@0\@Z
      */
     MCAPI BlockPosIterator(class BlockPos const &, class BlockPos const &);
     /**
-     * @symbol  ?begin\@BlockPosIterator\@\@QEBA?AV1\@XZ
+     * @symbol ?begin\@BlockPosIterator\@\@QEBA?AV1\@XZ
      */
     MCAPI class BlockPosIterator begin() const;
     /**
-     * @symbol  ?end\@BlockPosIterator\@\@QEBA?AV1\@XZ
+     * @symbol ?end\@BlockPosIterator\@\@QEBA?AV1\@XZ
      */
     MCAPI class BlockPosIterator end() const;
     /**
-     * @symbol  ??9BlockPosIterator\@\@QEBA_NAEBV0\@\@Z
+     * @symbol ??9BlockPosIterator\@\@QEBA_NAEBV0\@\@Z
      */
     MCAPI bool operator!=(class BlockPosIterator const &) const;
     /**
-     * @symbol  ??DBlockPosIterator\@\@QEAAAEBVBlockPos\@\@XZ
+     * @symbol ??DBlockPosIterator\@\@QEAAAEBVBlockPos\@\@XZ
      */
     MCAPI class BlockPos const & operator*();
     /**
-     * @symbol  ??EBlockPosIterator\@\@QEAAAEAV0\@XZ
+     * @symbol ??EBlockPosIterator\@\@QEAAAEAV0\@XZ
      */
     MCAPI class BlockPosIterator & operator++();
 

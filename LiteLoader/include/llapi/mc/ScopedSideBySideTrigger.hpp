@@ -28,15 +28,15 @@ public:
 
 public:
     /**
-     * @symbol  ?end\@ScopedSideBySideTrigger\@\@QEAA_NXZ
+     * @symbol ?end\@ScopedSideBySideTrigger\@\@QEAA_NXZ
      */
     MCAPI bool end();
     /**
-     * @symbol  ??1ScopedSideBySideTrigger\@\@QEAA\@XZ
+     * @symbol ??1ScopedSideBySideTrigger\@\@QEAA\@XZ
      */
     MCAPI ~ScopedSideBySideTrigger();
     /**
-     * @symbol  ?tryTriggerIf\@ScopedSideBySideTrigger\@\@SA?AV1\@_NAEAUIActorMovementProxy\@\@W4SideBySideExtractionId\@\@\@Z
+     * @symbol ?tryTriggerIf\@ScopedSideBySideTrigger\@\@SA?AV1\@_NAEAUIActorMovementProxy\@\@W4SideBySideExtractionId\@\@\@Z
      */
     MCAPI static class ScopedSideBySideTrigger tryTriggerIf(bool, struct IActorMovementProxy &, enum class SideBySideExtractionId);
 

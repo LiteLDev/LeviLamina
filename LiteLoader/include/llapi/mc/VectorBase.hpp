@@ -29,7 +29,7 @@ constexpr void unroll(Fn fn) {
 // }
 
 #define FAKE_CRTP(T, _t_type_, N)                                                                                      \
-    inline std::vector<T> getNeighbors() const {                                                                       \
+    [[nodiscard]] inline std::vector<T> getNeighbors() const {                                                         \
         std::vector<T> res;                                                                                            \
         res.clear();                                                                                                   \
         unroll<N * 2>([&](size_t iter) {                                                                               \
@@ -40,20 +40,20 @@ constexpr void unroll(Fn fn) {
         return res;                                                                                                    \
     }                                                                                                                  \
                                                                                                                        \
-    inline std::string toString() const {                                                                              \
+    [[nodiscard]] inline std::string toString() const {                                                                \
         std::string res("(");                                                                                          \
         unroll<N - 1>([&](size_t iter) { res += std::to_string(operator[](iter)) + ", "; });                           \
         res += std::to_string(operator[](N - 1)) + ')';                                                                \
         return res;                                                                                                    \
     }                                                                                                                  \
                                                                                                                        \
-    constexpr bool operator==(T const& b) const {                                                                      \
+    [[nodiscard]] constexpr bool operator==(T const& b) const {                                                        \
         bool res = true;                                                                                               \
         unroll<N>([&](size_t iter) { res = res && (b[iter] == operator[](iter)); });                                   \
         return res;                                                                                                    \
     }                                                                                                                  \
                                                                                                                        \
-    constexpr bool operator!=(T const& b) const { return !((*this) == b); }                                            \
+    [[nodiscard]] constexpr bool operator!=(T const& b) const { return !((*this) == b); }                              \
                                                                                                                        \
     constexpr T& operator+=(T const& b) {                                                                              \
         unroll<N>([&](size_t iter) { operator[](iter) += b[iter]; });                                                  \
@@ -75,25 +75,25 @@ constexpr void unroll(Fn fn) {
         return static_cast<T&>((*this));                                                                               \
     }                                                                                                                  \
                                                                                                                        \
-    inline T operator+(T const& b) const {                                                                             \
+    [[nodiscard]] inline T operator+(T const& b) const {                                                               \
         T tmp = (*this);                                                                                               \
         tmp += b;                                                                                                      \
         return tmp;                                                                                                    \
     }                                                                                                                  \
                                                                                                                        \
-    inline T operator-(T const& b) const {                                                                             \
+    [[nodiscard]] inline T operator-(T const& b) const {                                                               \
         T tmp = (*this);                                                                                               \
         tmp -= b;                                                                                                      \
         return tmp;                                                                                                    \
     }                                                                                                                  \
                                                                                                                        \
-    inline T operator*(T const& b) const {                                                                             \
+    [[nodiscard]] inline T operator*(T const& b) const {                                                               \
         T tmp = (*this);                                                                                               \
         tmp *= b;                                                                                                      \
         return tmp;                                                                                                    \
     }                                                                                                                  \
                                                                                                                        \
-    inline T operator/(T const& b) const {                                                                             \
+    [[nodiscard]] inline T operator/(T const& b) const {                                                               \
         T tmp = (*this);                                                                                               \
         tmp /= b;                                                                                                      \
         return tmp;                                                                                                    \
@@ -119,108 +119,108 @@ constexpr void unroll(Fn fn) {
         return static_cast<T&>((*this));                                                                               \
     }                                                                                                                  \
                                                                                                                        \
-    inline T operator+(_t_type_ b) const {                                                                             \
+    [[nodiscard]] inline T operator+(_t_type_ b) const {                                                               \
         T tmp = (*this);                                                                                               \
         tmp += b;                                                                                                      \
         return tmp;                                                                                                    \
     }                                                                                                                  \
                                                                                                                        \
-    inline T operator-(_t_type_ b) const {                                                                             \
+    [[nodiscard]] inline T operator-(_t_type_ b) const {                                                               \
         T tmp = (*this);                                                                                               \
         tmp -= b;                                                                                                      \
         return tmp;                                                                                                    \
     }                                                                                                                  \
                                                                                                                        \
-    inline T operator*(_t_type_ b) const {                                                                             \
+    [[nodiscard]] inline T operator*(_t_type_ b) const {                                                               \
         T tmp = (*this);                                                                                               \
         tmp *= b;                                                                                                      \
         return tmp;                                                                                                    \
     }                                                                                                                  \
                                                                                                                        \
-    inline T operator/(_t_type_ b) const {                                                                             \
+    [[nodiscard]] inline T operator/(_t_type_ b) const {                                                               \
         T tmp = (*this);                                                                                               \
         tmp /= b;                                                                                                      \
         return tmp;                                                                                                    \
     }                                                                                                                  \
                                                                                                                        \
-    inline double dot(T const& b) const {                                                                              \
+    [[nodiscard]] inline double dot(T const& b) const {                                                                \
         double res = 0.0;                                                                                              \
         unroll<N>([&](size_t iter) { res += (double)(operator[](iter)) * b[iter]; });                                  \
         return res;                                                                                                    \
     }                                                                                                                  \
                                                                                                                        \
-    inline double lengthSqr() const { return dot((*this)); }                                                           \
+    [[nodiscard]] inline double lengthSqr() const { return dot((*this)); }                                             \
                                                                                                                        \
-    inline double length() const { return sqrt(static_cast<double>(lengthSqr())); }                                    \
+    [[nodiscard]] inline double length() const { return sqrt(static_cast<double>(lengthSqr())); }                      \
                                                                                                                        \
-    inline double distanceTo(T const& b) const { return ((*this) - b).length(); }                                      \
+    [[nodiscard]] inline double distanceTo(T const& b) const { return ((*this) - b).length(); }                        \
                                                                                                                        \
-    inline double distanceToSqr(T const& b) const { return ((*this) - b).lengthSqr(); }                                \
+    [[nodiscard]] inline double distanceToSqr(T const& b) const { return ((*this) - b).lengthSqr(); }                  \
                                                                                                                        \
-    inline T normalize() const { return (*this) / static_cast<_t_type_>(length()); }                                   \
+    [[nodiscard]] inline T normalize() const { return (*this) / static_cast<_t_type_>(length()); }                     \
                                                                                                                        \
-    inline T add(T const& b) const { return (*this) + b; }                                                             \
+    [[nodiscard]] inline T add(T const& b) const { return (*this) + b; }                                               \
                                                                                                                        \
-    inline T sub(T const& b) const { return (*this) - b; }                                                             \
+    [[nodiscard]] inline T sub(T const& b) const { return (*this) - b; }                                               \
                                                                                                                        \
-    inline T mul(T const& b) const { return (*this) * b; }                                                             \
+    [[nodiscard]] inline T mul(T const& b) const { return (*this) * b; }                                               \
                                                                                                                        \
-    inline T div(T const& b) const { return (*this) / b; }                                                             \
+    [[nodiscard]] inline T div(T const& b) const { return (*this) / b; }                                               \
                                                                                                                        \
     template <typename... Args>                                                                                        \
-    inline T add(_t_type_ first, Args... args) const {                                                                 \
+    [[nodiscard]] inline T add(_t_type_ first, Args... args) const {                                                   \
         static_assert(sizeof...(args) <= N - 1, "too many arguments!");                                                \
         T tmp = (*this);                                                                                               \
-        const std::array<_t_type_> vec = {first, args...};                                                             \
+        const std::array<_t_type_, sizeof...(args) + 1> vec = {first, args...};                                        \
         unroll<vec.size()>([&](size_t iter) { tmp[iter] += vec[iter]; });                                              \
         return tmp;                                                                                                    \
     }                                                                                                                  \
     template <typename... Args>                                                                                        \
-    inline T sub(_t_type_ first, Args... args) const {                                                                 \
+    [[nodiscard]] inline T sub(_t_type_ first, Args... args) const {                                                   \
         static_assert(sizeof...(args) <= N - 1, "too many arguments!");                                                \
         T tmp = (*this);                                                                                               \
-        const std::array<_t_type_> vec = {first, args...};                                                             \
+        const std::array<_t_type_, sizeof...(args) + 1> vec = {first, args...};                                        \
         unroll<vec.size()>([&](size_t iter) { tmp[iter] -= vec[iter]; });                                              \
         return tmp;                                                                                                    \
     }                                                                                                                  \
     template <typename... Args>                                                                                        \
-    inline T mul(_t_type_ first, Args... args) const {                                                                 \
+    [[nodiscard]] inline T mul(_t_type_ first, Args... args) const {                                                   \
         static_assert(sizeof...(args) <= N - 1, "too many arguments!");                                                \
         T tmp = (*this);                                                                                               \
-        const std::array<_t_type_> vec = {first, args...};                                                             \
+        const std::array<_t_type_, sizeof...(args) + 1> vec = {first, args...};                                        \
         unroll<vec.size()>([&](size_t iter) { tmp[iter] *= vec[iter]; });                                              \
         return tmp;                                                                                                    \
     }                                                                                                                  \
     template <typename... Args>                                                                                        \
-    inline T div(_t_type_ first, Args... args) const {                                                                 \
+    [[nodiscard]] inline T div(_t_type_ first, Args... args) const {                                                   \
         static_assert(sizeof...(args) <= N - 1, "too many arguments!");                                                \
         T tmp = (*this);                                                                                               \
-        const std::array<_t_type_> vec = {first, args...};                                                             \
+        const std::array<_t_type_, sizeof...(args) + 1> vec = {first, args...};                                        \
         unroll<vec.size()>([&](size_t iter) { tmp[iter] /= vec[iter]; });                                              \
         return tmp;                                                                                                    \
     }                                                                                                                  \
                                                                                                                        \
-    inline static T min(T const& a, T const& b) {                                                                      \
+    [[nodiscard]] inline static T min(T const& a, T const& b) {                                                        \
         T tmp;                                                                                                         \
         unroll<N>([&](size_t iter) { tmp[iter] = std::min<_t_type_>(a[iter], b[iter]); });                             \
         return tmp;                                                                                                    \
     }                                                                                                                  \
                                                                                                                        \
-    inline static T max(T const& a, T const& b) {                                                                      \
+    [[nodiscard]] inline static T max(T const& a, T const& b) {                                                        \
         T tmp;                                                                                                         \
         unroll<N>([&](size_t iter) { tmp[iter] = std::max<_t_type_>(a[iter], b[iter]); });                             \
         return tmp;                                                                                                    \
     }                                                                                                                  \
                                                                                                                        \
-    inline bool operator<(const T& b) const { return lengthSqr() < b.lengthSqr(); }                                    \
+    [[nodiscard]] inline bool operator<(const T& b) const { return lengthSqr() < b.lengthSqr(); }                      \
                                                                                                                        \
-    inline bool operator>(const T& b) const { return lengthSqr() > b.lengthSqr(); }                                    \
+    [[nodiscard]] inline bool operator>(const T& b) const { return lengthSqr() > b.lengthSqr(); }                      \
                                                                                                                        \
-    inline std::size_t hash() const {                                                                                  \
+    [[nodiscard]] inline std::size_t hash() const {                                                                    \
         std::size_t res = 0;                                                                                           \
         unroll<N>(                                                                                                     \
             [&](size_t iter) { res ^= std::hash<_t_type_>()(operator[](iter)) + (res << 3) + (res >> 7) - res; });     \
         return res;                                                                                                    \
     }                                                                                                                  \
                                                                                                                        \
-    constexpr size_t size() const { return N; }
+    [[nodiscard]] constexpr size_t size() const { return N; }

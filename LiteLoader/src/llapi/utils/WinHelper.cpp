@@ -7,6 +7,7 @@
 
 #include "llapi/LoggerAPI.h"
 #include "llapi/I18nAPI.h"
+#include "llapi/LLAPI.h"
 
 #include "liteloader/Config.h"
 #include "liteloader/LiteLoader.h"
@@ -79,6 +80,7 @@ bool NewProcess(const std::string& process, std::function<void(int, std::string)
 
     std::thread([hRead{hRead}, hProcess{pi.hProcess},
                  callback{std::move(callback)}, timeLimit{timeLimit}, wCmd{wCmd}]() {
+        SetCurrentThreadDescription(L"LL_NewProcess_Thread");
         if (!ll::isDebugMode())
             _set_se_translator(seh_exception::TranslateSEHtoCE);
         if (timeLimit == -1)
@@ -202,4 +204,10 @@ inline bool isWine() {
 bool IsWineEnvironment() {
     static bool result = isWine();
     return result;
+}
+
+void SetCurrentThreadDescription(PCWSTR desc)
+{
+    if(ll::isDebugMode())
+        SetThreadDescription(GetCurrentThread(), desc);
 }

@@ -31,17 +31,23 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~HellSpringFeature();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  3
-     * @symbol  ?place\@HellSpringFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @vftbl 3
+     * @symbol ?place\@HellSpringFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HELLSPRINGFEATURE
     /**
-     * @symbol  ??0HellSpringFeature\@\@QEAA\@AEBVBlock\@\@_N\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~HellSpringFeature();
+#endif
+    /**
+     * @symbol ??0HellSpringFeature\@\@QEAA\@AEBVBlock\@\@_N\@Z
      */
     MCAPI HellSpringFeature(class Block const &, bool);
 

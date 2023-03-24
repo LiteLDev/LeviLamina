@@ -9,6 +9,8 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "Vec3.hpp"
+
 enum class PlayerRespawnState :char {
     SERVER_SEARCHING = 0,
     SERVER_READY,
@@ -56,37 +58,43 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~RespawnPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?getId\@RespawnPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@RespawnPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @vftbl  2
-     * @symbol  ?getName\@RespawnPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@RespawnPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @vftbl  3
-     * @symbol  ?write\@RespawnPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@RespawnPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl  6
-     * @symbol  ?_read\@RespawnPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@RespawnPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESPAWNPACKET
     /**
-     * @symbol  ??0RespawnPacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI RespawnPacket();
+    MCVAPI ~RespawnPacket();
+#endif
     /**
-     * @symbol  ??0RespawnPacket\@\@QEAA\@AEBVVec3\@\@AEBW4PlayerRespawnState\@\@\@Z
+     * @symbol ??0RespawnPacket\@\@QEAA\@AEBVVec3\@\@AEBW4PlayerRespawnState\@\@\@Z
      */
     MCAPI RespawnPacket(class Vec3 const &, enum class PlayerRespawnState const &);
+    /**
+     * @symbol ??0RespawnPacket\@\@QEAA\@XZ
+     */
+    MCAPI RespawnPacket();
 
 };

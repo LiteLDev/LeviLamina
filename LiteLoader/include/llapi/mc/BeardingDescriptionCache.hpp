@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??0BeardingDescriptionCache\@\@QEAA\@AEBVBoundingBox\@\@H\@Z
+     * @symbol ??0BeardingDescriptionCache\@\@QEAA\@AEBVBoundingBox\@\@H\@Z
      */
     MCAPI BeardingDescriptionCache(class BoundingBox const &, int);
 

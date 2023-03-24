@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ButtonPushEvent\@\@QEAA\@XZ
+     * @symbol ??1ButtonPushEvent\@\@QEAA\@XZ
      */
     MCAPI ~ButtonPushEvent();
 

@@ -28,47 +28,47 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~EmergeGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?canUse\@EmergeGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@EmergeGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@EmergeGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@EmergeGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  ?start\@EmergeGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@EmergeGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @vftbl  5
-     * @symbol  ?stop\@EmergeGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@EmergeGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @vftbl  6
-     * @symbol  ?tick\@EmergeGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@EmergeGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@EmergeGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@EmergeGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @symbol  ??0EmergeGoal\@\@QEAA\@AEAVMob\@\@\@Z
+     * @symbol ??0EmergeGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI EmergeGoal(class Mob &);
 

@@ -234,7 +234,7 @@ inline T& DataItem::getData() {
 
 template <typename T>
 inline bool DataItem::setData(T const& value) {
-    if (this->mType == DataItem2<T>::DATA_ITEM_TYPE)
+    if (this->mType != DataItem2<T>::DATA_ITEM_TYPE)
         return false;
     ((DataItem2<T>*)this)->setData(value);
     return true;
