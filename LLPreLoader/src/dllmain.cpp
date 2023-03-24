@@ -20,6 +20,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
 
         loadConfig();
         fixUpLibDir();
+        SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX | SEM_NOALIGNMENTFAULTEXCEPT);
         loadDlls();
     }
     if (ul_reason_for_call == DLL_PROCESS_DETACH) {}
