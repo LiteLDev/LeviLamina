@@ -578,10 +578,40 @@ private:
       if (classDefine->instanceDefine.constructor)
       {
         Tracer tracer(engine, classDefine->getClassName());
-        reinterpret_cast<GeneralObject*>(self)->instance =
-            classDefine->instanceDefine.constructor(py_interop::makeArguments(engine, self, args));
+        GeneralObject* cppSelf = reinterpret_cast<GeneralObject*>(self);
+
+        if(!PyTuple_Check(args))
+        {
+          throw Exception(std::string("Can't create class ") + Py_TYPE(self)->tp_name);
+          return -1;
+        }
+
+        if(PyTuple_Size(args) == 1)
+        {
+          PyObject* maybeCapsule = PyTuple_GetItem(args, 0);
+          if(PyCapsule_CheckExact(maybeCapsule))
+          {
+            // Passed a cpp this in capsule
+            // Logic for ScriptClass(const ScriptClass::ConstructFromCpp<T>)
+            cppSelf->instance = (void*)PyCapsule_GetPointer(maybeCapsule, nullptr);
+          }
+        }
+
+        if(cppSelf->instance == nullptr)
+        {
+          // Python-side constructor
+          // Logic for ScriptClass::ScriptClass(const Local<Object>& thiz)
+          cppSelf->instance =
+              classDefine->instanceDefine.constructor(py_interop::makeArguments(engine, self, args));
+          if(cppSelf->instance == nullptr)
+          {
+            throw Exception(std::string("Can't create class ") + Py_TYPE(self)->tp_name);
+            return -1;
+          }
+        }
       } else {
-        throw Exception(std::string("Class ") + Py_TYPE(self)->tp_name + " has no constructor");
+        // Will never reach here. If pass nullptr to constructor(), ScriptX will make 
+        // constructor to be a function that always returns nullptr.
         return -1;
       }
       return 0;

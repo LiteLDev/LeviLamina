@@ -27,7 +27,12 @@ ScriptClass::ScriptClass(const ScriptClass::ConstructFromCpp<T>) : internalState
   auto engine = py_backend::currentEngineChecked();
   internalState_.scriptEngine_ = engine;
 
-  auto ref = engine->newNativeClass<T>({});
+  // pass "this" through into tp_init by wrapped in a capsule
+  PyCapsule_Destructor destructor = [](PyObject* cap) {};
+  PyObject* capsule =
+      PyCapsule_New(this, nullptr, destructor);
+
+  auto ref = engine->newNativeClass<T>({py_interop::asLocal<Value>(capsule)});
   internalState_.weakRef_ = ref;
 
   py_backend::extendLifeTimeToNextLoop(engine, py_interop::getPy(ref.asValue()));
