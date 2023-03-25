@@ -1843,7 +1843,7 @@ TInstanceHook(void,
         // IDA NpcComponent::executeCommandAction
         // NpcSceneDialogueData data(*this, *ac, a5);
 
-        NpcSceneDialogueData data(WeakEntityRef(ac->getEntityContext()->getWeakRef()), a5);
+        NpcSceneDialogueData data(WeakEntityRef(ac->getEntityContext().getWeakRef()), a5);
 
         auto container = data.getActionsContainer();
         auto actionAt = container->getActionAt(a4);
