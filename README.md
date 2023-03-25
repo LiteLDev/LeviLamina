@@ -22,7 +22,7 @@ infrastructure interfaces, providing a solid foundation for extending the Bedroc
 functionality. With plugins, it is easy to extend the functionality of BDS, the associated development is easy to learn,
 and the development approach is flexible.
 
-Writing plugins in **C++, JavaScript, Lua, C#**  and other languages, which allows developers to easily extend and
+Writing plugins in **C++, JavaScript, Lua, Python, C#**  and other languages, which allows developers to easily extend and
 customize **BDS** functionality,
 making it easy to learn and extremely flexible.
 
@@ -88,9 +88,9 @@ mc.listen("onServerStarted", () => {
 
 - 💻 Support for developing plugins in many different languages, Keeping the API uniform
 
-| Supported languages              | `C++`, `JavaScript(NodeJs)`, `Lua`, `Python`,`.NET` |
-| -------------------------------- | --------------------------------------------------- |
-| **Upcoming supported languages** | `Ruby`, `TypeScript`, `Golang`                      |
+| Supported languages              | `C++`, `JavaScript(Node.js)`, `Lua`, `Python`,`.NET` |
+| -------------------------------- | ---------------------------------------------------- |
+| **Upcoming supported languages** | `Ruby`, `TypeScript`, `Go`                           |
 
 - 📕 Smooth development experience with great compatibility
     - Auto-generated C++ headers, access to all `BDS` classes and functions, full toolchain support and evolving
