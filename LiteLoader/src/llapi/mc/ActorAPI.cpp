@@ -33,8 +33,8 @@
 
 class UserEntityIdentifierComponent;
 
-EntityContext* Actor::getEntityContext() const {
-    return dAccess<EntityContext*, 8>((Actor*)this);
+class EntityContext& Actor::getEntityContext() const {
+    return dAccess<EntityContext, 8>((Actor*)this);
 }
 
 class UserEntityIdentifierComponent;
@@ -82,7 +82,7 @@ bool Actor::isItemActor() const {
 #include "llapi/mc/ActorCollision.hpp"
 
 bool Actor::isOnGround() const {
-    return ActorCollision::isOnGround(*getEntityContext()); // IDA DirectActorProxyImpl<IMobMovementProxy>::isOnGround
+    return ActorCollision::isOnGround(getEntityContext()); // IDA DirectActorProxyImpl<IMobMovementProxy>::isOnGround
 }
 
 std::string Actor::getTypeName() const {

@@ -200,6 +200,7 @@ bool IsWineEnvironment() {
 
 void SetCurrentThreadDescription(PCWSTR desc)
 {
-    if(ll::isDebugMode())
-        SetThreadDescription(GetCurrentThread(), desc);
+#ifdef DEBUG
+    SetThreadDescription(GetCurrentThread(), desc);
+#endif
 }
