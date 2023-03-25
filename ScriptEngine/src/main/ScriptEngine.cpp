@@ -65,6 +65,15 @@ void entry() {
     }
 
 #ifdef LLSE_BACKEND_PYTHON
+    // This fix is used for Python3.10's bug: 
+    // The thread will freeze when creating a new engine while another thread is blocking to read stdin
+    // Side effects: sys.stdin cannot be used after this patch.
+    // More info to see: https://github.com/python/cpython/issues/83526
+    //
+    // Attention! When CPython is upgraded, this fix must be re-adapted or removed!!
+    // 
+    PythonHelper::FixPython310Stdin::patchPython310CreateStdio();
+    
     PythonHelper::initPythonRuntime();
 #endif
 

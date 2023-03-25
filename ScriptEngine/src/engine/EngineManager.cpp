@@ -4,9 +4,6 @@
 #include "main/NodeJsHelper.h"
 #include <llapi/utils/STLHelper.h>
 #include <map>
-#ifdef LLSE_BACKEND_PYTHON
-#include <main/PythonHelper.h>
-#endif
 using namespace std;
 using namespace script;
 
@@ -33,25 +30,6 @@ ScriptEngine* EngineManager::newEngine(string pluginName, bool isHotLoad) {
 
 #if defined(LLSE_BACKEND_NODEJS)
     engine = NodeJsHelper::newEngine();
-
-#elif defined(LLSE_BACKEND_PYTHON)
-    // This fix is used for Python3.10's bug: 
-    // The thread will freeze when creating a new engine while another thread is blocking to read stdin
-    // Side effects: sys.stdin cannot be used after this patch.
-    // More info to see: https://github.com/python/cpython/issues/83526
-    //
-    // Attention! When CPython is upgraded, this fix must be re-adapted or removed!!
-    // 
-    if (isHotLoad)
-    {
-        PythonHelper::FixPython310Stdin::patchPython310CreateStdio();
-    }
-    engine = new ScriptEngineImpl();
-    if (isHotLoad)
-    {
-        PythonHelper::FixPython310Stdin::unpatchPython310CreateStdio();
-    }
-
 #elif !defined(SCRIPTX_BACKEND_WEBASSEMBLY)
     engine = new ScriptEngineImpl();
 #else
