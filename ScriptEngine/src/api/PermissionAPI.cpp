@@ -40,6 +40,7 @@ ClassDefine<void> PermissionClassBuilder =
         .function("roleExists", &PermissionClass::roleExists)
         .function("getRole", &PermissionClass::getRole)
         .function("getOrCreateRole", &PermissionClass::getOrCreateRole)
+        .function("deleteRole", &PermissionClass::deleteRole)
         .function("registerPermission", &PermissionClass::registerPermission)
         .function("deletePermission", &PermissionClass::deletePermission)
         .function("permissionExists", &PermissionClass::permissionExists)
@@ -324,6 +325,17 @@ Local<Value> PermissionClass::getOrCreateRole(const Arguments& args) {
     try {
         auto res = new RoleClass(Permission::getOrCreateRole(args[0].toStr()));
         return res->getScriptObject();
+    }
+    CATCH_AND_THROW;
+    return Local<Value>();
+}
+
+Local<Value> PermissionClass::deleteRole(const Arguments& args) {
+    CHECK_ARGS_COUNT(1);
+    CHECK_ARG_TYPE(0, kString);
+
+    try {
+        Permission::deleteRole(args[0].toStr());
     }
     CATCH_AND_THROW;
     return Local<Value>();
