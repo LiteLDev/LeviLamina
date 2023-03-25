@@ -525,7 +525,7 @@ PyObject* create_stdio_hooked(const PyConfig *config, PyObject* io,
     return create_stdio_original(config, io, fd, write_mode, name, encoding, errors);
 }
 
-bool hookPython310CreateStdio()
+bool patchPython310CreateStdio()
 {
     if(create_stdio_original == nullptr)
     {
@@ -548,7 +548,7 @@ bool hookPython310CreateStdio()
     return true;
 }
 
-bool unhookPython310CreateStdio()
+bool unpatchPython310CreateStdio()
 {
     if (DetourTransactionBegin() != NO_ERROR)
         return false;

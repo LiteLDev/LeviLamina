@@ -44,12 +44,12 @@ ScriptEngine* EngineManager::newEngine(string pluginName, bool isHotLoad) {
     // 
     if (isHotLoad)
     {
-        PythonHelper::FixPython310Stdin::hookPython310CreateStdio();
+        PythonHelper::FixPython310Stdin::patchPython310CreateStdio();
     }
     engine = new ScriptEngineImpl();
     if (isHotLoad)
     {
-        PythonHelper::FixPython310Stdin::unhookPython310CreateStdio();
+        PythonHelper::FixPython310Stdin::unpatchPython310CreateStdio();
     }
 
 #elif !defined(SCRIPTX_BACKEND_WEBASSEMBLY)

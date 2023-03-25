@@ -32,8 +32,8 @@ int executePipCommand(std::string cmd);
 //
 namespace FixPython310Stdin {
 
-bool hookPython310CreateStdio();
-bool unhookPython310CreateStdio();
+bool patchPython310CreateStdio();
+bool unpatchPython310CreateStdio();
 
 }
 
