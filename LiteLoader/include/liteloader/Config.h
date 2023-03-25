@@ -34,10 +34,8 @@ struct LLConfig {
 
     bool enableCrashLogger = true;
     std::string crashLoggerPath = ".\\plugins\\LiteLoader\\CrashLogger_Daemon.exe";
-    std::string antiGiveCommand = "kick {player}";
     bool enableSimpleServerLogger = true;
     bool enableFixListenPort = false;
-    bool enableAntiGive = true;
     bool enableUnlockCmd = true;
     bool enableErrorStackTraceback = true;
     bool cacheErrorStackTracebackSymbol = false;
