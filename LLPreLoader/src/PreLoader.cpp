@@ -59,7 +59,7 @@ bool loadLib(const string& libName, bool showFailInfo = true) {
             Error("Error code: {} !", error_message_id);
             LPWSTR message_buffer = nullptr;
             FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM,
-                          nullptr, error_message_id, MAKELANGID(0x09, SUBLANG_DEFAULT), (LPWSTR)&message_buffer, 0,
+                          nullptr, error_message_id, NULL, (LPWSTR)&message_buffer, NULL,
                           nullptr);
             Error("{}", wstr2str(message_buffer));
             LocalFree(message_buffer);
