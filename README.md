@@ -22,7 +22,7 @@ infrastructure interfaces, providing a solid foundation for extending the Bedroc
 functionality. With plugins, it is easy to extend the functionality of BDS, the associated development is easy to learn,
 and the development approach is flexible.
 
-Writing plugins in **C++, JavaScript, Lua, C#**  and other languages, which allows developers to easily extend and
+Writing plugins in **C++, JavaScript, Lua, Python**  and other languages, which allows developers to easily extend and
 customize **BDS** functionality,
 making it easy to learn and extremely flexible.
 
