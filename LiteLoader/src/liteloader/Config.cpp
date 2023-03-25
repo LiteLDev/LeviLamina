@@ -48,10 +48,6 @@ void inline to_json(nlohmann::json& j, const LLConfig& conf) {
             {"FixListenPort", {
                 {"enabled", conf.enableFixListenPort}
             }},
-            {"AntiGive", {
-                {"enabled", conf.enableAntiGive},
-                {"command", conf.antiGiveCommand}
-            }},
             {"ErrorStackTraceback", {
                 {"enabled", conf.enableErrorStackTraceback},
                 {"cacheSymbol", conf.cacheErrorStackTracebackSymbol}
@@ -157,11 +153,6 @@ void inline from_json(const nlohmann::json& j, LLConfig& conf) {
             const nlohmann::json& setting = modules.at("AddonsHelper");
             conf.enableAddonsHelper = setting.value("enabled", true);
             conf.addonsInstallPath = setting.value("autoInstallPath", "plugins/AddonsHelper");
-        }
-        if (modules.find("AntiGive") != modules.end()) {
-            const nlohmann::json& setting = modules.at("AntiGive");
-            conf.enableAntiGive = setting.value("enabled", true);
-            conf.antiGiveCommand = setting.value("command", "kick {player}");
         }
         if (modules.find("UnoccupyPort19132") != modules.end()) {
             const nlohmann::json& setting = modules.at("UnoccupyPort19132");
