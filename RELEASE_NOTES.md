@@ -18,7 +18,6 @@
 ## Fixed
 
 - fix: fix NpcCmd(#1158) & Actor::isOnGround (by @OEOTYAN)
-- fix: update data structure StringByteInput for CompoundTag::fromBinaryNBT(by @WangYneos)
 - fix: fix hot load/reload of python plugins (by @yqs112358)
 - fix: add some missing LLSE apis (by @yqs112358)
 - fix: add SetThreadDescription to DEBUG compile mode (by @yqs112358)
