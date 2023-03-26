@@ -1899,9 +1899,9 @@ TClasslessInstanceHook(void, "?onScoreChanged@ServerScoreboard@@UEAAXAEBUScorebo
 
         Player* player = nullptr;
         auto pls = Level::getAllPlayers();
-        for (auto& player : pls) {
+        for (auto& iPlayer : pls) {
             if (Global<Scoreboard>->getScoreboardId(*player).id == id) {
-                player = player;
+                player = iPlayer;
                 break;
             }
         }
