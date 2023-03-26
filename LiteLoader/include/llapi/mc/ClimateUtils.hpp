@@ -25,9 +25,12 @@ struct TargetSpace {
     TargetSpace(TargetSpace const&&) = delete;
 };
 struct Parameter {
-    Parameter() = delete;
-    Parameter(Parameter const&) = delete;
-    Parameter(Parameter const&&) = delete;
+    long long max, min;
+    inline Parameter(float _max, float _min)
+    {
+        max = _max * 10000;
+        min = _min * 10000;
+    }
 };
 
 #undef AFTER_EXTRA
