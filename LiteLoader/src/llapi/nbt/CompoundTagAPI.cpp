@@ -305,7 +305,7 @@ std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(std::string_view dataVie
         
     tStringByteInput.mOffset = offset;
     tStringByteInput.mBuffer = dataView;
-    auto rtn = NbtIo::read(reinterpret_cast<IDataInput>(tStringByteInput));
+    auto rtn = NbtIo::read(*reinterpret_cast<IDataInput*>(&tStringByteInput));
 
     //update currentOffset
     offset = tStringByteInput.mOffset;
@@ -313,7 +313,7 @@ std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(std::string_view dataVie
 }
 
 std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(void* data, size_t len, size_t& offset, bool isLittleEndian) {
-    return fromBinaryNBT(std::string_view(data, len), offset, isLittleEndian);
+    return fromBinaryNBT(std::string_view((char*)data, len), offset, isLittleEndian);
 }
 
 std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(void* data, size_t len, bool isLittleEndian) {
