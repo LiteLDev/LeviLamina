@@ -8,6 +8,7 @@
 ## Added
 
 - feat: add patch to fix LevelChunkPacket crash (by @ShrBox)
+- feat: optimize error messages (by @StarsDream00)
 
 ## Changed
 
@@ -17,7 +18,8 @@
 ## Fixed
 
 - fix: fix NpcCmd(#1158) & Actor::isOnGround (by @OEOTYAN)
-- fix: fix hot load/reload of python backend (by @yqs112358)
+- fix: update data structure StringByteInput for CompoundTag::fromBinaryNBT(by @WangYneos)
+- fix: fix hot load/reload of python plugins (by @yqs112358)
 - fix: add some missing LLSE apis (by @yqs112358)
 - fix: add SetThreadDescription to DEBUG compile mode (by @yqs112358)
 - fix: update ScriptX to fix a serious Python constructor bug (by @yqs112358)
