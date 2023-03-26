@@ -300,12 +300,12 @@ std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(std::string_view dataVie
         std::string_view mBuffer;
     } tStringByteInput;
 
-    if (isLittleEndian) tStringByteInput.mVtbl = dlsym("??_7StringByteInput@@6B@");
-    else tStringByteInput.mVtbl = dlsym("??_7BigEndianStringByteInput@@6B@");
+    if (isLittleEndian) tStringByteInput.mVtbl = (__int64*)dlsym("??_7StringByteInput@@6B@");
+    else tStringByteInput.mVtbl = (__int64*)dlsym("??_7BigEndianStringByteInput@@6B@");
         
     tStringByteInput.mOffset = offset;
     tStringByteInput.mBuffer = dataView;
-    auto rtn = NbtIo::read(reinterpret_cast<IDataInput&>(&tStringByteInput));
+    auto rtn = NbtIo::read(reinterpret_cast<IDataInput>(tStringByteInput));
 
     //update currentOffset
     offset = tStringByteInput.mOffset;
