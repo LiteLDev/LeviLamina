@@ -21,6 +21,12 @@ class PoweredBlockComponent : public BaseCircuitComponent {
 #define AFTER_EXTRA
 // Add Member There
 
+public:
+    bool mPromotedToProducer;
+    bool mAllowAsPowerSource;
+    const CircuitComponentType mCircuitComponentType = CircuitComponentType::PoweredBlockComponent;
+
+#define DISABLE_CONSTRUCTOR_PREVENTION_POWEREDBLOCKCOMPONENT
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_POWEREDBLOCKCOMPONENT
 public:

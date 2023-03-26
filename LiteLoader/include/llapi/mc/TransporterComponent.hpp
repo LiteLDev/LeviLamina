@@ -21,6 +21,11 @@ class TransporterComponent : public BaseCircuitComponent {
 #define AFTER_EXTRA
 // Add Member There
 
+public:
+    int mNextStrength;
+    const CircuitComponentType mCircuitComponentType = CircuitComponentType::TransporterComponent;
+
+#define DISABLE_CONSTRUCTOR_PREVENTION_TRANSPORTERCOMPONENT
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRANSPORTERCOMPONENT
 public:

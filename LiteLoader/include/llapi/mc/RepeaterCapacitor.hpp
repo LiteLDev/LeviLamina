@@ -20,7 +20,24 @@ class RepeaterCapacitor : public SidePoweredComponent {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    enum class States{
+        Off = 0x0,
+        On = 0x1,
+        OffLocked = 0x2,
+        Onlocked = 0x3,
+    };
+    States mOnStates[5];
+    int mInsertAt;
+    bool mPowered;
+    bool mNextPower;
+    bool mLocked;
+    int mPulseCount;
+    bool mPulse;
+    bool mNextPulse;
+    const CircuitComponentType mCircuitComponentType = CircuitComponentType::RepeaterCapacitor;
 
+#define DISABLE_CONSTRUCTOR_PREVENTION_REPEATERCAPACITOR
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REPEATERCAPACITOR
 public:

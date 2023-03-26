@@ -21,6 +21,11 @@ class PistonConsumer : public ConsumerComponent {
 #define AFTER_EXTRA
 // Add Member There
 
+public:
+    FaceID mBlockedFace;
+    const CircuitComponentType mCircuitComponentType = CircuitComponentType::PistonConsumer;
+
+#define DISABLE_CONSTRUCTOR_PREVENTION_PISTONCONSUMER
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PISTONCONSUMER
 public:

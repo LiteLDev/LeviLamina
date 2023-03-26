@@ -31,7 +31,6 @@ public:
 
     std::optional<EntityContext> mContext;
 
-    
     template <class Entity, bool Unknown = false>
     inline Entity* tryUnwrap() {
         if (_hasValue()) {

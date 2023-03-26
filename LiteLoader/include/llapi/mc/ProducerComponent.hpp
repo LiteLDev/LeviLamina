@@ -21,6 +21,13 @@ class ProducerComponent : public BaseCircuitComponent {
 #define AFTER_EXTRA
 // Add Member There
 
+public:
+    int mNextStrength;
+    bool mAttachedAllowed;
+    bool mStopPower;
+    const CircuitComponentType mCircuitComponentType = CircuitComponentType::ProducerComponent;
+
+#define DISABLE_CONSTRUCTOR_PREVENTION_PRODUCERCOMPONENT
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PRODUCERCOMPONENT
 public:

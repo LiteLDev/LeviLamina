@@ -20,7 +20,15 @@ class ConsumerComponent : public BaseCircuitComponent {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    bool mSecondaryPowered;
+    bool mPropagatePower;
+    bool mPromotedToProducer;
+    bool mAcceptHalfPulse;
+    bool mAcceptSameDirection;
+    const CircuitComponentType mCircuitComponentType = CircuitComponentType::ConsumerComponent;
 
+#define DISABLE_CONSTRUCTOR_PREVENTION_CONSUMERCOMPONENT
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONSUMERCOMPONENT
 public:

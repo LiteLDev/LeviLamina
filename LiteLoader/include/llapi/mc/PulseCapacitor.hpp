@@ -3,9 +3,9 @@
  *
  */
 #pragma once
-#define AUTO_GENERATED
+
 #include "llapi/Global.h"
-#include "ProducerComponent.hpp"
+#include "CapacitorComponent.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,11 +16,17 @@
  * @brief MC class PulseCapacitor.
  *
  */
-class PulseCapacitor : public ProducerComponent {
+class PulseCapacitor : public CapacitorComponent {
 
 #define AFTER_EXTRA
 // Add Member There
 
+public:
+    bool mPowered;
+    bool mNewPowered;
+    const CircuitComponentType mCircuitComponentType = CircuitComponentType::PulseCapacitor;
+
+#define DISABLE_CONSTRUCTOR_PREVENTION_PULSECAPACITOR
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PULSECAPACITOR
 public:
@@ -88,5 +94,4 @@ public:
      * @symbol ??0PulseCapacitor\@\@QEAA\@XZ
      */
     MCAPI PulseCapacitor();
-
 };

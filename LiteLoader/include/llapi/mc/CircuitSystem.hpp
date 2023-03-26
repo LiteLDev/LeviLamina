@@ -8,6 +8,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "CircuitSceneGraph.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -20,6 +21,17 @@ class CircuitSystem {
 #define AFTER_EXTRA
 // Add Member There
 
+public:
+    class LevelChunkTracking {
+    public:
+        BlockPos mChunkPos;
+    };
+    bool mLockGraph;
+    CircuitSceneGraph mSceneGraph;
+    std::vector<CircuitSystem::LevelChunkTracking> mAddedLevelChunk;
+    bool mHasBeenEvaluated;
+
+#define DISABLE_CONSTRUCTOR_PREVENTION_CIRCUITSYSTEM
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CIRCUITSYSTEM
 public:
