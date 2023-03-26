@@ -25,7 +25,7 @@ bool EngineManager::registerEngine(ScriptEngine* engine) {
     return true;
 }
 
-ScriptEngine* EngineManager::newEngine(string pluginName) {
+ScriptEngine* EngineManager::newEngine(string pluginName, bool isHotLoad) {
     ScriptEngine* engine = nullptr;
 
 #if defined(LLSE_BACKEND_NODEJS)

@@ -20,6 +20,12 @@ class EntityContext : public EntityContextBase {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    template <class T>
+    inline T* tryGetComponent() const {
+        return const_cast<T*>(_enttRegistry().try_get<T>(_getEntityId()));
+    }
+
 #define DISABLE_CONSTRUCTOR_PREVENTION_ENTITYCONTEXT
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYCONTEXT

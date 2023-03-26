@@ -117,7 +117,7 @@ bool PluginManager::loadPlugin(const std::string& fileOrDirPath, bool isHotLoad,
     ScriptEngine* engine = nullptr;
     try {
         // Create script engine
-        engine = EngineManager::newEngine();
+        engine = EngineManager::newEngine("", isHotLoad);
         EngineScope enter(engine);
 
         // setData

@@ -76,7 +76,7 @@ public:
     LIAPI float quickEvalMolangScript(const string& expression);
     LIAPI Biome* getBiome();
     LIAPI float getRealSpeed() const;
-    LIAPI class EntityContext* getEntityContext() const;
+    LIAPI class EntityContext& getEntityContext() const;
     //LIAPI Json::Value quickEvalMolangScriptAsJson(const string& expression);
 
     inline Vec3 getPos()
@@ -98,8 +98,7 @@ public:
 
     // template<class T>
     // inline T* tryGetComponent() const {
-    //     auto* entityContext = getEntityContext();
-    //     return entityContext->_enttRegistry().try_get<T>(entityContext->_getEntityId());
+    //     return getEntityContext().tryGetComponent<T>();
     // }
 
 #undef AFTER_EXTRA

@@ -292,18 +292,28 @@ std::string CompoundTag::nbtListToBinary(std::vector<std::unique_ptr<CompoundTag
 
 #pragma region From Binary
 //////////////////// From Binary ////////////////////
-std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(void* data, size_t len, size_t& offset, bool isLittleEndian) {
-    void* vtbl;
-    if (isLittleEndian)
-        vtbl = dlsym("??_7StringByteInput@@6B@");
-    else
-        vtbl = dlsym("??_7BigEndianStringByteInput@@6B@");
 
-    uintptr_t iDataInput[4] = {(uintptr_t)vtbl, offset, len, (uintptr_t)data};
-    auto rtn = NbtIo::read((IDataInput&)iDataInput);
+std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(std::string_view dataView, size_t& offset, bool isLittleEndian) {
+    struct {
+        __int64* mVtbl;
+        size_t mOffset;
+        std::string_view mBuffer;
+    } tStringByteInput;
 
-    offset = iDataInput[1];
+    if (isLittleEndian) tStringByteInput.mVtbl = (__int64*)dlsym("??_7StringByteInput@@6B@");
+    else tStringByteInput.mVtbl = (__int64*)dlsym("??_7BigEndianStringByteInput@@6B@");
+        
+    tStringByteInput.mOffset = offset;
+    tStringByteInput.mBuffer = dataView;
+    auto rtn = NbtIo::read(*reinterpret_cast<IDataInput*>(&tStringByteInput));
+
+    //update currentOffset
+    offset = tStringByteInput.mOffset;
     return rtn;
+}
+
+std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(void* data, size_t len, size_t& offset, bool isLittleEndian) {
+    return fromBinaryNBT(std::string_view((char*)data, len), offset, isLittleEndian);
 }
 
 std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(void* data, size_t len, bool isLittleEndian) {

@@ -1843,7 +1843,7 @@ TInstanceHook(void,
         // IDA NpcComponent::executeCommandAction
         // NpcSceneDialogueData data(*this, *ac, a5);
 
-        NpcSceneDialogueData data(WeakEntityRef(ac->getEntityContext()->getWeakRef()), a5);
+        NpcSceneDialogueData data(WeakEntityRef(ac->getEntityContext().getWeakRef()), a5);
 
         auto container = data.getActionsContainer();
         auto actionAt = container->getActionAt(a4);
@@ -1899,9 +1899,9 @@ TClasslessInstanceHook(void, "?onScoreChanged@ServerScoreboard@@UEAAXAEBUScorebo
 
         Player* player = nullptr;
         auto pls = Level::getAllPlayers();
-        for (auto& player : pls) {
-            if (Global<Scoreboard>->getScoreboardId(*player).id == id) {
-                player = player;
+        for (auto& iPlayer : pls) {
+            if (Global<Scoreboard>->getScoreboardId(*iPlayer).id == id) {
+                player = iPlayer;
                 break;
             }
         }

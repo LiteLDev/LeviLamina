@@ -8,7 +8,7 @@ Local<Value> PermInstanceToObject(const PermInstance& perm) {
     obj.set("name", String::newString(perm.name));
     obj.set("enabled", Boolean::newBoolean(perm.enabled));
     if (!perm.extra.is_object()) {
-        obj.set("extra", Local<Value>());
+        obj.set("extra", {});
     } else {
         obj.set("extra", JsonToValue(fifo_json(perm.extra)));
     }
@@ -40,6 +40,7 @@ ClassDefine<void> PermissionClassBuilder =
         .function("roleExists", &PermissionClass::roleExists)
         .function("getRole", &PermissionClass::getRole)
         .function("getOrCreateRole", &PermissionClass::getOrCreateRole)
+        .function("deleteRole", &PermissionClass::deleteRole)
         .function("registerPermission", &PermissionClass::registerPermission)
         .function("deletePermission", &PermissionClass::deletePermission)
         .function("permissionExists", &PermissionClass::permissionExists)
@@ -52,12 +53,12 @@ ClassDefine<void> PermissionClassBuilder =
 
 RoleClass::RoleClass(const Local<Object>& scriptObj, std::weak_ptr<ll::perm::Role> role)
 : ScriptClass(scriptObj)
-, role(role) {
+, role(std::move(role)) {
 }
 
 RoleClass::RoleClass(std::weak_ptr<ll::perm::Role> role)
 : ScriptClass(ScriptClass::ConstructFromCpp<RoleClass>())
-, role(role) {
+, role(std::move(role)) {
 }
 
 RoleClass* RoleClass::constructor(const Arguments& args) {
@@ -188,7 +189,7 @@ Local<Value> RoleClass::hasMember(const Arguments& args) {
         return Boolean::newBoolean(lock()->hasMember(args[0].toStr()));
     }
     CATCH_AND_THROW;
-    return Local<Value>();
+    return {};
 }
 
 Local<Value> RoleClass::addMember(const Arguments& args) {
@@ -199,7 +200,7 @@ Local<Value> RoleClass::addMember(const Arguments& args) {
         lock()->addMember(args[0].toStr());
     }
     CATCH_AND_THROW;
-    return Local<Value>();
+    return {};
 }
 
 Local<Value> RoleClass::removeMember(const Arguments& args) {
@@ -210,7 +211,7 @@ Local<Value> RoleClass::removeMember(const Arguments& args) {
         lock()->removeMember(args[0].toStr());
     }
     CATCH_AND_THROW;
-    return Local<Value>();
+    return {};
 }
 
 Local<Value> RoleClass::hasPermission(const Arguments& args) {
@@ -221,7 +222,7 @@ Local<Value> RoleClass::hasPermission(const Arguments& args) {
         return Boolean::newBoolean(lock()->hasPermission(args[0].toStr()));
     }
     CATCH_AND_THROW;
-    return Local<Value>();
+    return {};
 }
 
 Local<Value> RoleClass::setPermission(const Arguments& args) {
@@ -246,7 +247,7 @@ Local<Value> RoleClass::setPermission(const Arguments& args) {
         lock()->setPermission(name, enabled, extra);
     }
     CATCH_AND_THROW;
-    return Local<Value>();
+    return {};
 }
 
 Local<Value> RoleClass::removePermission(const Arguments& args) {
@@ -257,7 +258,7 @@ Local<Value> RoleClass::removePermission(const Arguments& args) {
         lock()->removePermission(args[0].toStr());
     }
     CATCH_AND_THROW;
-    return Local<Value>();
+    return {};
 }
 
 Local<Value> RoleClass::permissionExists(const Arguments& args) {
@@ -268,7 +269,7 @@ Local<Value> RoleClass::permissionExists(const Arguments& args) {
         return Boolean::newBoolean(lock()->permissionExists(args[0].toStr()));
     }
     CATCH_AND_THROW;
-    return Local<Value>();
+    return {};
 }
 
 Local<Value> RoleClass::isValid(const Arguments& args) {
@@ -278,7 +279,7 @@ Local<Value> RoleClass::isValid(const Arguments& args) {
         return Boolean::newBoolean(!role.expired());
     }
     CATCH_AND_THROW;
-    return Local<Value>();
+    return {};
 }
 
 
@@ -288,10 +289,10 @@ Local<Value> PermissionClass::createRole(const Arguments& args) {
         if (res) {
             return res->getScriptObject();
         }
-        return Local<Value>();
+        return {};
     }
     CATCH_AND_THROW;
-    return Local<Value>();
+    return {};
 }
 
 Local<Value> PermissionClass::roleExists(const Arguments& args) {
@@ -302,7 +303,7 @@ Local<Value> PermissionClass::roleExists(const Arguments& args) {
         return Boolean::newBoolean(Permission::roleExists(args[0].toStr()));
     }
     CATCH_AND_THROW;
-    return Local<Value>();
+    return {};
 }
 
 Local<Value> PermissionClass::getRole(const Arguments& args) {
@@ -314,7 +315,7 @@ Local<Value> PermissionClass::getRole(const Arguments& args) {
         return res->getScriptObject();
     }
     CATCH_AND_THROW;
-    return Local<Value>();
+    return {};
 }
 
 Local<Value> PermissionClass::getOrCreateRole(const Arguments& args) {
@@ -326,7 +327,18 @@ Local<Value> PermissionClass::getOrCreateRole(const Arguments& args) {
         return res->getScriptObject();
     }
     CATCH_AND_THROW;
-    return Local<Value>();
+    return {};
+}
+
+Local<Value> PermissionClass::deleteRole(const Arguments& args) {
+    CHECK_ARGS_COUNT(1);
+    CHECK_ARG_TYPE(0, kString);
+
+    try {
+        Permission::deleteRole(args[0].toStr());
+    }
+    CATCH_AND_THROW;
+    return {};
 }
 
 Local<Value> PermissionClass::registerPermission(const Arguments& args) {
@@ -338,7 +350,7 @@ Local<Value> PermissionClass::registerPermission(const Arguments& args) {
         Permission::registerPermission(args[0].toStr(), args[1].toStr());
     }
     CATCH_AND_THROW;
-    return Local<Value>();
+    return {};
 }
 
 Local<Value> PermissionClass::deletePermission(const Arguments& args) {
@@ -349,7 +361,7 @@ Local<Value> PermissionClass::deletePermission(const Arguments& args) {
         Permission::deletePermission(args[0].toStr());
     }
     CATCH_AND_THROW;
-    return Local<Value>();
+    return {};
 }
 
 Local<Value> PermissionClass::permissionExists(const Arguments& args) {
@@ -360,7 +372,7 @@ Local<Value> PermissionClass::permissionExists(const Arguments& args) {
         return Boolean::newBoolean(Permission::permissionExists(args[0].toStr()));
     }
     CATCH_AND_THROW;
-    return Local<Value>();
+    return {};
 }
 
 Local<Value> PermissionClass::checkPermission(const Arguments& args) {
@@ -372,7 +384,7 @@ Local<Value> PermissionClass::checkPermission(const Arguments& args) {
         return Boolean::newBoolean(Permission::checkPermission(args[0].toStr(), args[1].toStr()));
     }
     CATCH_AND_THROW;
-    return Local<Value>();
+    return {};
 }
 
 Local<Value> PermissionClass::isMemberOf(const Arguments& args) {
@@ -384,7 +396,7 @@ Local<Value> PermissionClass::isMemberOf(const Arguments& args) {
         return Boolean::newBoolean(Permission::isMemberOf(args[0].toStr(), args[1].toStr()));
     }
     CATCH_AND_THROW;
-    return Local<Value>();
+    return {};
 }
 
 Local<Value> PermissionClass::getPlayerRoles(const Arguments& args) {
@@ -400,7 +412,7 @@ Local<Value> PermissionClass::getPlayerRoles(const Arguments& args) {
         return res;
     }
     CATCH_AND_THROW;
-    return Local<Value>();
+    return {};
 }
 
 Local<Value> PermissionClass::getPlayerPermissions(const Arguments& args) {
@@ -416,7 +428,7 @@ Local<Value> PermissionClass::getPlayerPermissions(const Arguments& args) {
         return res;
     }
     CATCH_AND_THROW;
-    return Local<Value>();
+    return {};
 }
 
 Local<Value> PermissionClass::saveData(const Arguments& args) {
@@ -426,5 +438,5 @@ Local<Value> PermissionClass::saveData(const Arguments& args) {
         Permission::saveData();
     }
     CATCH_AND_THROW;
-    return Local<Value>();
+    return {};
 }

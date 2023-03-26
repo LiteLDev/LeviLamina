@@ -4,7 +4,6 @@
 #include "liteloader/LiteLoader.h"
 #include "llapi/HookAPI.h"
 #include "llapi/LoggerAPI.h"
-
 #include "llapi/mc/InventoryTransactionPacket.hpp"
 #include "llapi/mc/NetworkIdentifier.hpp"
 #include "llapi/mc/Player.hpp"
@@ -14,21 +13,13 @@
 #include "llapi/mc/BinaryStream.hpp"
 #include "llapi/mc/LevelData.hpp"
 #include "llapi/EventAPI.h"
-#include "llapi/mc/NetworkConnection.hpp"
 #include "llapi/mc/SimulatedPlayer.hpp"
-#include "llapi/mc/MinecraftPackets.hpp"
 #include "llapi/mc/MobEquipmentPacket.hpp"
-
 #include "llapi/mc/LevelChunk.hpp"
 #include "llapi/mc/ChunkSource.hpp"
-
-#include "llapi/mc/NetworkPeer.hpp"
-#include "llapi/mc/ReadOnlyBinaryStream.hpp"
-
 #include "llapi/mc/SharedConstants.hpp"
 #include "llapi/mc/PropertiesSettings.hpp"
 #include "llapi/ScheduleAPI.h"
-
 #include "llapi/mc/UpdateAdventureSettingsPacket.hpp"
 #include "llapi/mc/UpdateAbilitiesPacket.hpp"
 #include "llapi/mc/LayeredAbilities.hpp"
@@ -64,9 +55,8 @@ TClasslessInstanceHook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXW4PeerPurpose
 }
 
 // Fix abnormal items
-#include "llapi/mc/InventoryTransaction.hpp"
+/*
 #include "llapi/mc/InventoryAction.hpp"
-#include "llapi/mc/Level.hpp"
 #include "llapi/mc/ElementBlock.hpp"
 #include "llapi/mc/IContainerManager.hpp"
 
@@ -118,6 +108,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
     }
     return original(this, netid, pk);
 }
+ */
 
 TInstanceHook(size_t, "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
               PropertiesSettings, const std::string& file) {
@@ -148,6 +139,7 @@ TInstanceHook(void, "?moveView@Player@@UEAAXXZ", Player) {
 }
 
 #include "llapi/mc/ChunkViewSource.hpp"
+#include "llapi/mc/Level.hpp"
 
 inline bool Interval(int a1) {
     if (a1 < 0x5ffffff && a1 > -0x5ffffff)
@@ -473,4 +465,25 @@ TClasslessInstanceHook(void, "?sendEvent@ActorEventCoordinator@@QEAAXAEBV?$Event
             }
         }
     }
+}
+
+// Fix LevelChunkPacket crash
+#include "llapi/mc/LevelChunkPacket.hpp"
+TInstanceHook(StreamReadResult, "?_read@LevelChunkPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z", LevelChunkPacket, ReadOnlyBinaryStream* bs) {
+    size_t readPointer = bs->getReadPointer();
+    bs->getVarInt();
+    bs->getVarInt();
+    unsigned int varInt = bs->getUnsignedVarInt();
+    if (varInt != -2) {
+        bs->getUnsignedVarInt();
+    }
+    bool boolean = bs->getBool();
+    if (boolean) {
+        varInt = bs->getUnsignedVarInt();
+        if (varInt > 10000) {
+            return StreamReadResult::Valid;
+        }
+    }
+    bs->setReadPointer(readPointer);
+    return original(this, bs);
 }
