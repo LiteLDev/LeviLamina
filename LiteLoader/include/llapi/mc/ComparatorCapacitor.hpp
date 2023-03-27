@@ -21,8 +21,22 @@ class ComparatorCapacitor : public SidePoweredComponent {
 #define AFTER_EXTRA
 // Add Member There
 public:
-enum class Mode;
+    enum class Mode{
+        CompareMode = 0x0,
+        SubtractMode = 0x1,
+    };
 
+    int mRearAnalogStrength;
+    int mSideAnalogStrengthRight;
+    int mSideAnalogStrengthLeft;
+    int mOldStrength;
+    Mode mMode;
+    int mRearStrength;
+    int mSideStrengths;
+    bool mHasAnalogBeenSet;
+    const CircuitComponentType mCircuitComponentType = CircuitComponentType::ComparatorCapacitor;
+
+#define DISABLE_CONSTRUCTOR_PREVENTION_COMPARATORCAPACITOR
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPARATORCAPACITOR
 public:

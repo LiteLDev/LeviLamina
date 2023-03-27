@@ -19,6 +19,10 @@ class CapacitorComponent : public ProducerComponent {
 
 #define AFTER_EXTRA
 
+public:
+    const CircuitComponentType mCircuitComponentType = CircuitComponentType::CapacitorComponent;
+
+#define DISABLE_CONSTRUCTOR_PREVENTION_CAPACITORCOMPONENT
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAPACITORCOMPONENT
 public:

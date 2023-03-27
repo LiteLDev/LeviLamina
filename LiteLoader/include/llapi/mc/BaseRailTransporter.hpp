@@ -21,6 +21,15 @@ class BaseRailTransporter : public BaseCircuitComponent {
 #define AFTER_EXTRA
 // Add Member There
 
+public:
+    enum class RailType {
+        Activator = 0x0,
+        Power     = 0x1,
+    } mRailType;
+
+const CircuitComponentType mCircuitComponentType = CircuitComponentType::BaseRailTransporter;
+
+#define DISABLE_CONSTRUCTOR_PREVENTION_BASERAILTRANSPORTER
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASERAILTRANSPORTER
 public:

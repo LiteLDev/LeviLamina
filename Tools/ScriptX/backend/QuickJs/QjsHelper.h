@@ -21,6 +21,7 @@
 
 SCRIPTX_BEGIN_INCLUDE_LIBRARY
 #include <quickjs.h>
+#include <quickjs-libc.h>
 SCRIPTX_END_INCLUDE_LIBRARY
 
 namespace script::qjs_backend {

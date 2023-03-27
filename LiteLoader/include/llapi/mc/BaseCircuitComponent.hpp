@@ -9,22 +9,24 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+#include "BlockPos.hpp"
 // clang-format off
-enum class CircuitComponentType : uint64_t {
-    UNDEFINED        = 0LL,
-    CAPACITOR        = 1129530177LL,
-    CONSUMER         = 1129530179LL,
-    POWERED_BLOCK    = 1129533506LL,
-    PRODUCER         = 1129533507LL,
-    BASE             = 1129534275LL,
-    TRANSPORTER      = 1129534546LL,
-    COMPARATOR       = 1296253778LL,
-    PULSE_CAPACITOR  = 1296257091LL,
-    PISTON           = 1296257097LL,
-    RAIL_TRANSPORTER = 1296257106LL,
-    REPEATER         = 1296257618LL,
-    REDSTONE_TORCH   = 1296258115LL,
+enum class CircuitComponentType {
+    Unknown                =        0x0,
+    Undefined              =        0x1,
+    Mask                   = 0xFFFF0000,
+    BaseCircuitComponent   = 0x80000000,
+    BaseRailTransporter    =    0x10000,
+    ConsumerComponent      =    0x20000,
+    PistonConsumer         =    0x20001,
+    PoweredBlockComponent  =    0x40000,
+    ProducerComponent      =    0x80000,
+    TransporterComponent   =   0x100000,
+    CapacitorComponent     =   0x200000,
+    ComparatorCapacitor    =   0x200001,
+    PulseCapacitor         =   0x200002,
+    RedstoneTorchCapacitor =   0x200003,
+    RepeaterCapacitor      =   0x200004,
 };
 // clang-format on
 
@@ -37,8 +39,23 @@ enum class CircuitComponentType : uint64_t {
 class BaseCircuitComponent {
 
 #define AFTER_EXTRA
-// Add Member There
-
+    // Add Member There
+public:
+    CircuitComponentList mSources;
+    std::map<BaseCircuitComponent*, int> mDestinations;
+    bool mIgnoreFirstUpdate;
+    bool mIsFirstTime;
+    bool mNeedsUpdate;
+    BlockPos mPos;
+    BlockPos mChunkPosition;
+    bool mShouldEvaluate;
+    int mStrength;
+    FaceID mDirection;
+    bool mAllowPowerUp;
+    bool mAllowPowerDown;
+    bool mRemoved;
+    bool mConsumePowerAnyDirection;
+    CircuitComponentType mCircuitComponentType;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASECIRCUITCOMPONENT
 public:

@@ -20,12 +20,10 @@ class EntityRegistryBase {
 #define AFTER_EXTRA
     // Add Member There
 public:
-    struct ICanModifyComponentPoolDuringView {};
-
+    bool (*mUnknownFunc)(entt::id_type);
     entt::basic_registry<EntityId>* mRegistry;
-    std::optional<EntityId> mViewedEntity;
-    std::unique_ptr<EntityRegistryBase::ICanModifyComponentPoolDuringView> mCanModifyDuringView;
-    bool mViewUsesViewedContext;
+    EntityId mViewedEntity;
+    entt::id_type mId;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYREGISTRYBASE

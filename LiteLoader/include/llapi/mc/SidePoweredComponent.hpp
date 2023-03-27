@@ -19,7 +19,10 @@
 class SidePoweredComponent : public ProducerComponent {
 
 #define AFTER_EXTRA
+public:
+    CircuitComponentList mSideComponents;
 
+#define DISABLE_CONSTRUCTOR_PREVENTION_SIDEPOWEREDCOMPONENT
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIDEPOWEREDCOMPONENT
 public:

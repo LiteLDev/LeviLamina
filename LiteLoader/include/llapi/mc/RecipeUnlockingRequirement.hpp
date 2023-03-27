@@ -5,19 +5,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-
+#include "RecipeIngredient.hpp"
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
-
 class RecipeUnlockingRequirement {
 
 #define AFTER_EXTRA
-    char filler[32];
+public:
+    enum class UnlockingContext : int {
+        None = 0x0,
+        AlwaysUnlocked = 0x1,
+        PlayerInWater = 0x2,
+        PlayerHasManyItems = 0x3,
+    };
+
+    int unk0;
+    UnlockingContext mContext;
+    std::vector<RecipeIngredient> mValid;
 
 public:
-    enum class UnlockingContext;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RECIPEUNLOCKINGREQUIREMENT
 public:

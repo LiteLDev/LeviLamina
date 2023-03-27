@@ -21,6 +21,19 @@ class RedstoneTorchCapacitor : public ProducerComponent {
 #define AFTER_EXTRA
 // Add Member There
 
+public:
+   class State {
+        bool mOn;
+        bool mHalfFrame;
+        bool mChanged;
+    };
+    RedstoneTorchCapacitor* mNextOrder;
+    int mSelfPowerCount;
+    State mState[2];
+    bool mCanReigniteFromBurnout;
+    const CircuitComponentType mCircuitComponentType = CircuitComponentType::RedstoneTorchCapacitor;
+
+#define DISABLE_CONSTRUCTOR_PREVENTION_REDSTONETORCHCAPACITOR
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_REDSTONETORCHCAPACITOR
 public:
