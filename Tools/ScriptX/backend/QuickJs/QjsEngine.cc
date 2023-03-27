@@ -95,6 +95,9 @@ QjsEngine::QjsEngine(std::shared_ptr<utils::MessageQueue> queue, const QjsFactor
   }
 
   initEngineResource();
+
+  /* set default loader for ES6 modules */
+  JS_SetModuleLoaderFunc(runtime_, NULL, js_module_loader, NULL);  
 }
 
 void QjsEngine::initEngineResource() {
@@ -270,6 +273,7 @@ Local<Value> QjsEngine::eval(const Local<String>& script, const Local<Value>& so
 }
 
 Local<Value> QjsEngine::loadFile(const Local<String>& scriptFile) {
+  Tracer trace(this, "QjsEngine::loadFile");
   if(scriptFile.toString().empty())
     throw Exception("script file no found");
   Local<Value> content = internal::readAllFileContent(scriptFile);
@@ -287,7 +291,16 @@ Local<Value> QjsEngine::loadFile(const Local<String>& scriptFile) {
       sourceFilePath = sourceFilePath.substr(pathSymbol + 1);
   }
   Local<String> sourceFileName = String::newString(sourceFilePath);
-  return eval(content.asString(), sourceFileName);
+
+  StringHolder contentStr(content.asString());
+  StringHolder fileNameStr(sourceFileName);
+  JSValue ret = JS_Eval(context_, contentStr.c_str(), contentStr.length(), fileNameStr.c_str(),
+      JS_EVAL_TYPE_MODULE);
+    
+  qjs_backend::checkException(ret);
+  scheduleTick();
+
+  return Local<Value>(ret);
 }
 
 std::shared_ptr<utils::MessageQueue> QjsEngine::messageQueue() { return queue_; }
