@@ -90,7 +90,7 @@ MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandIntegerRange>();
 
 template <>
 inline typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>() {
-    static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)ll::memory::getPtr("?id@?1???$type_id@VCommandRegistry@@PEBUActorDefinitionIdentifier@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
+    static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)ll::memory::resolveSymbol("?id@?1???$type_id@VCommandRegistry@@PEBUActorDefinitionIdentifier@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
     // static typeid_t<CommandRegistry> id = ([]() -> typeid_t<CommandRegistry> {
     //    CommandParameterData data = SymCall("??$mandatory@VRideCommand@@PEBUActorDefinitionIdentifier@@@commands@@YA?AVCommandParameterData@@PEQRideCommand@@PEBUActorDefinitionIdentifier@@PEBDPEQ2@_N@Z",
     //             CommandParameterData, void*, char const*, uintptr_t)(nullptr, "entityType", 0);
@@ -101,18 +101,18 @@ inline typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentif
 
 template <>
 inline typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>() {
-    static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)ll::memory::getPtr("?id@?1???$type_id@VCommandRegistry@@VCommandItem@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
+    static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)ll::memory::resolveSymbol("?id@?1???$type_id@VCommandRegistry@@VCommandItem@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
     return id;
 };
 
 template <>
 inline typeid_t<CommandRegistry> type_id<CommandRegistry, bool>() {
-    static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)ll::memory::getPtr("?id@?1???$type_id@VCommandRegistry@@_N@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
+    static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)ll::memory::resolveSymbol("?id@?1???$type_id@VCommandRegistry@@_N@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
     return id;
 };
 
 template <>
 inline typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandBlockName>() {
-    static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)ll::memory::getPtr("?id@?1???$type_id@VCommandRegistry@@VCommandBlockName@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
+    static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)ll::memory::resolveSymbol("?id@?1???$type_id@VCommandRegistry@@VCommandBlockName@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
     return id;
 };

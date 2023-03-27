@@ -1,20 +1,22 @@
 ﻿#include "llapi/utils/DbgHelper.h"
 
-#include <thread>
-#include <string>
 #include <map>
+#include <string>
+#include <thread>
 
-#include <windows.h>
-#include <Psapi.h>
-
-#include <dbghelp/dbghelp.h>
-
-#include "llapi/utils/WinHelper.h"
-#include "llapi/utils/StringHelper.h"
 #include "llapi/LoggerAPI.h"
+#include "llapi/utils/StringHelper.h"
+#include "llapi/utils/WinHelper.h"
 
 #include "liteloader/Config.h"
 #include "liteloader/LiteLoader.h"
+
+#include <Psapi.h>
+#include <windows.h>
+
+#include <dbghelp.h>
+
+#pragma comment(lib, "dbghelp.lib")
 
 using namespace std;
 
@@ -25,7 +27,7 @@ using ll::logger;
 /////////////////////////////////// Symbol Loader ///////////////////////////////////
 
 std::set<std::wstring> loadedSymbolDir;
-bool symbolsLoaded = false;
+bool                   symbolsLoaded = false;
 
 void FindSymbols(wstring& collection, const string& nowPath, bool recursion = false) {
     filesystem::directory_iterator list(nowPath);
@@ -33,8 +35,8 @@ void FindSymbols(wstring& collection, const string& nowPath, bool recursion = fa
         if (it.is_directory() && recursion) {
             FindSymbols(collection, it.path().string(), recursion);
         } else if (it.path().extension() == ".pdb") {
-            filesystem::path dir = filesystem::canonical(it.path());
-            wstring dirPath = dir.remove_filename().native();
+            filesystem::path dir     = filesystem::canonical(it.path());
+            wstring          dirPath = dir.remove_filename().native();
 
             if (loadedSymbolDir.find(dirPath) == loadedSymbolDir.end()) {
                 collection = collection + L";" + dirPath.substr(0, dirPath.size() - 1);
@@ -75,7 +77,7 @@ std::map<DWORD, std::wstring> moduleMap;
 PSYMBOL_INFOW GetSymbolInfo(HANDLE hProcess, void* address) {
     PSYMBOL_INFOW pSymbol = (SYMBOL_INFOW*)new char[sizeof(SYMBOL_INFOW) + MAX_SYM_NAME * sizeof(TCHAR)];
     pSymbol->SizeOfStruct = sizeof(SYMBOL_INFOW);
-    pSymbol->MaxNameLen = MAX_SYM_NAME;
+    pSymbol->MaxNameLen   = MAX_SYM_NAME;
 
     DWORD64 displacement = 0;
     if (SymFromAddrW(hProcess, (DWORD64)address, &displacement, pSymbol))
@@ -84,14 +86,12 @@ PSYMBOL_INFOW GetSymbolInfo(HANDLE hProcess, void* address) {
         return NULL;
 }
 
-void CleanSymbolInfo(PSYMBOL_INFOW pSymbol) {
-    delete[]((char*)pSymbol);
-}
+void CleanSymbolInfo(PSYMBOL_INFOW pSymbol) { delete[] ((char*)pSymbol); }
 
 BOOL CALLBACK EnumerateModuleCallBack(PCTSTR ModuleName, DWORD64 ModuleBase, ULONG ModuleSize, PVOID UserContext) {
     std::map<DWORD, std::wstring>* pModuleMap = (std::map<DWORD, std::wstring>*)UserContext;
-    LPCWSTR name = wcsrchr(ModuleName, TEXT('\\')) + 1;
-    (*pModuleMap)[(DWORD)ModuleBase] = name;
+    LPCWSTR                        name       = wcsrchr(ModuleName, TEXT('\\')) + 1;
+    (*pModuleMap)[(DWORD)ModuleBase]          = name;
     return TRUE;
 }
 
@@ -118,11 +118,11 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l) {
         return true;
     }
 
-    HANDLE hProcess = GetCurrentProcess();
-    HANDLE hThread = GetCurrentThread();
-    DWORD threadId = GetCurrentThreadId();
-    bool cacheSymbol = ll::globalConfig.cacheErrorStackTracebackSymbol;
-    bool res = false;
+    HANDLE hProcess    = GetCurrentProcess();
+    HANDLE hThread     = GetCurrentThread();
+    DWORD  threadId    = GetCurrentThreadId();
+    bool   cacheSymbol = ll::globalConfig.cacheErrorStackTracebackSymbol;
+    bool   res         = false;
 
     std::thread printThread([e, hProcess, hThread, threadId, cacheSymbol, &res, &debugLogger]() {
         // Set global SEH-Exception handler
@@ -132,7 +132,7 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l) {
         CreateModuleMap(hProcess);
 
         PCONTEXT pContext;
-        CONTEXT context{};
+        CONTEXT  context{};
         if (e)
             pContext = e->ContextRecord;
         else {
@@ -149,23 +149,32 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l) {
             pContext = &context;
         }
 
-        STACKFRAME64 stackFrame = {0};
-        stackFrame.AddrPC.Mode = AddrModeFlat;
-        stackFrame.AddrPC.Offset = pContext->Rip;
-        stackFrame.AddrStack.Mode = AddrModeFlat;
+        STACKFRAME64 stackFrame     = {0};
+        stackFrame.AddrPC.Mode      = AddrModeFlat;
+        stackFrame.AddrPC.Offset    = pContext->Rip;
+        stackFrame.AddrStack.Mode   = AddrModeFlat;
         stackFrame.AddrStack.Offset = pContext->Rsp;
-        stackFrame.AddrFrame.Mode = AddrModeFlat;
+        stackFrame.AddrFrame.Mode   = AddrModeFlat;
         stackFrame.AddrFrame.Offset = pContext->Rbp;
 
         bool skipingPrintFunctionsStack = true;
 
-        while (StackWalk64(MACHINE_TYPE, hProcess, hThread, &stackFrame, pContext,
-                           NULL, SymFunctionTableAccess64, SymGetModuleBase64, NULL)) {
+        while (StackWalk64(
+            MACHINE_TYPE,
+            hProcess,
+            hThread,
+            &stackFrame,
+            pContext,
+            NULL,
+            SymFunctionTableAccess64,
+            SymGetModuleBase64,
+            NULL
+        )) {
             DWORD64 address = stackFrame.AddrPC.Offset;
 
             // Function
             PSYMBOL_INFOW info;
-            auto moduleName = wstr2str(MapModuleFromAddr(hProcess, (void*)address).c_str());
+            auto          moduleName = wstr2str(MapModuleFromAddr(hProcess, (void*)address).c_str());
             if (info = GetSymbolInfo(hProcess, (void*)address)) {
                 if (skipingPrintFunctionsStack) {
                     if (wcscmp(info->Name, L"PrintCurrentStackTraceback") == 0) // Skiping these print functions' stack
@@ -173,11 +182,10 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l) {
                     continue;
                 }
 
-                debugLogger.error("at {} (0x{:X})  [{}]",
-                                  wstr2str(info->Name), info->Address, moduleName);
+                debugLogger.error("at {} (0x{:X})  [{}]", wstr2str(info->Name), info->Address, moduleName);
 
                 // Line
-                DWORD displacement = 0;
+                DWORD            displacement = 0;
                 IMAGEHLP_LINEW64 line{};
                 line.SizeOfStruct = sizeof(IMAGEHLP_LINEW64);
 
@@ -202,30 +210,38 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l) {
 
 HMODULE GetCallerModule(unsigned long FramesToSkip) {
     static const int maxFrameCount = 1;
-    void* frames[maxFrameCount];
-    int frameCount = CaptureStackBackTrace(FramesToSkip + 2, maxFrameCount, frames, NULL);
+    void*            frames[maxFrameCount];
+    int              frameCount = CaptureStackBackTrace(FramesToSkip + 2, maxFrameCount, frames, NULL);
 
     std::string name;
     if (0 < frameCount) {
         HMODULE hModule;
-        GetModuleHandleEx(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
-                          (LPCWSTR)frames[0], &hModule);
+        GetModuleHandleEx(
+            GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
+            (LPCWSTR)frames[0],
+            &hModule
+        );
         return hModule;
     }
     return HMODULE();
 }
 
-std::string GetCallerModuleFileName(unsigned long FramesToSkip) {
-    return GetModuleName(GetCallerModule(FramesToSkip));
-}
+std::string GetCallerModuleFileName(unsigned long FramesToSkip) { return GetModuleName(GetCallerModule(FramesToSkip)); }
 
-bool GetFileVersion(const wchar_t* filePath, unsigned short* ver1, unsigned short* ver2, unsigned short* ver3, unsigned short* ver4, unsigned int* flag) {
+bool GetFileVersion(
+    const wchar_t*  filePath,
+    unsigned short* ver1,
+    unsigned short* ver2,
+    unsigned short* ver3,
+    unsigned short* ver4,
+    unsigned int*   flag
+) {
 
     DWORD dwLen = GetFileVersionInfoSizeW(filePath, nullptr);
     if (!dwLen) {
         return false;
     }
-    auto* pBlock = new(std::nothrow) wchar_t[dwLen];
+    auto* pBlock = new (std::nothrow) wchar_t[dwLen];
     if (nullptr == pBlock) {
         return false;
     }
@@ -235,7 +251,7 @@ bool GetFileVersion(const wchar_t* filePath, unsigned short* ver1, unsigned shor
     }
 
     VS_FIXEDFILEINFO* lpBuffer = nullptr;
-    unsigned int uLen = 0;
+    unsigned int      uLen     = 0;
     if (!VerQueryValueW(pBlock, L"\\", (void**)&lpBuffer, &uLen)) {
         delete[] pBlock;
         return false;
@@ -256,7 +272,13 @@ bool GetFileVersion(const wchar_t* filePath, unsigned short* ver1, unsigned shor
     return true;
 }
 
-inline std::string VersionToString(unsigned short major_ver, unsigned short minor_ver, unsigned short revision_ver, unsigned short build_ver, unsigned int flag = 0) {
+inline std::string VersionToString(
+    unsigned short major_ver,
+    unsigned short minor_ver,
+    unsigned short revision_ver,
+    unsigned short build_ver,
+    unsigned int   flag = 0
+) {
     std::string flagStr = "";
     if (flag & VS_FF_DEBUG)
         flagStr += " DEBUG";
@@ -275,8 +297,8 @@ inline std::string VersionToString(unsigned short major_ver, unsigned short mino
 
 std::string GetFileVersionString(HMODULE hModule, bool includeFlag) {
     unsigned short major_ver, minor_ver, revision_ver, build_ver;
-    unsigned int flag;
-    wchar_t filePath[MAX_PATH] = {0};
+    unsigned int   flag;
+    wchar_t        filePath[MAX_PATH] = {0};
     GetModuleFileNameEx(GetCurrentProcess(), hModule, filePath, MAX_PATH);
     if (GetFileVersion(filePath, &major_ver, &minor_ver, &revision_ver, &build_ver, &flag)) {
         return VersionToString(major_ver, minor_ver, revision_ver, build_ver, includeFlag ? flag : 0);
@@ -286,8 +308,8 @@ std::string GetFileVersionString(HMODULE hModule, bool includeFlag) {
 
 std::string GetFileVersionString(std::string const& filePath, bool includeFlag) {
     unsigned short major_ver, minor_ver, revision_ver, build_ver;
-    unsigned int flag;
-    std::wstring wFilePath = str2wstr(filePath);
+    unsigned int   flag;
+    std::wstring   wFilePath = str2wstr(filePath);
     if (GetFileVersion(wFilePath.c_str(), &major_ver, &minor_ver, &revision_ver, &build_ver, &flag)) {
         return VersionToString(major_ver, minor_ver, revision_ver, build_ver, includeFlag ? flag : 0);
     }

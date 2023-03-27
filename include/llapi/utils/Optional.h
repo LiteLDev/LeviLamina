@@ -1,4 +1,7 @@
 ﻿#pragma once
+
+#include <exception>
+
 struct Ioptional {};
 template <typename T>
 struct optional : Ioptional {

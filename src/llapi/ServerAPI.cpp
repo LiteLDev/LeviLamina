@@ -20,13 +20,3 @@ bool setServerMotd(const std::string& motd) {
     return true;
 }
 } // namespace ll
-
-// for abi compatibility
-
-namespace LL {
-std::string getBdsVersion() { return ll::getBdsVersion(); }
-
-int getServerProtocolVersion() { return ll::getServerProtocolVersion(); }
-
-bool setServerMotd(const std::string& motd) { return ll::setServerMotd(motd); }
-} // namespace LL

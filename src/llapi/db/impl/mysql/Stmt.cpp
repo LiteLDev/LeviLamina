@@ -1,4 +1,4 @@
-#include <mysql/mysql.h>
+#include <mariadb/mysql.h>
 #include "llapi/db/impl/mysql/Stmt.h"
 #include "llapi/db/impl/mysql/Session.h"
 #include "llapi/utils/StringReader.h"
@@ -311,9 +311,9 @@ void MySQLStmt::bindResult() {
         auto& data = result[i];
 
         data.buffer_type = field.type; // Set the type
-        data.is_null = &rec.isNull;    // Set the isNull receiver
+        data.is_null = reinterpret_cast<my_bool*>(&rec.isNull);    // Set the isNull receiver
         data.is_unsigned = field.flags & UNSIGNED_FLAG;
-        data.error = &rec.error;   // Set the error receiver
+        data.error = reinterpret_cast<my_bool*>(&rec.error);   // Set the error receiver
         data.length = &rec.length; // Set the length receiver
 
         auto&& [buffer, len] = AllocateBuffer(field); // Allocate buffer

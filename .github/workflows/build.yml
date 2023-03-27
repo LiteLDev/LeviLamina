@@ -1,92 +1,136 @@
-name: build
+name: Build
 
 on:
   push:
     paths:
-      - '**.cpp'
-      - '**.cc'
-      - '**.cxx'
-      - '**.c'
-      - '**.hpp'
-      - '**.hh'
-      - '**.hxx'
-      - '**.h'
-      - '.github/workflows/build.yml'
-      - '**/CMakeLists.txt'
-
-env:
-  BUILD_TYPE: Release
+      - "**.cpp"
+      - "**.cc"
+      - "**.cxx"
+      - "**.c"
+      - "**.hpp"
+      - "**.hh"
+      - "**.hxx"
+      - "**.h"
+      - ".github/workflows/build.yml"
+      - "**/*.lua"
+  pull_request:
+  release:
+    types:
+      - created
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: windows-2022
-
+    name: Build
+    runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3.2.0
+      - uses: actions/checkout@v3
         with:
-          fetch-depth: 1
-          submodules: 'recursive'
+          submodules: true
+          fetch-depth: 0
 
-      - name: Cache Bedrock Dedicated Server Library
-        id: cache-bds-lib
+      - name: Setup XMake
+        uses: xmake-io/github-action-setup-xmake@v1
+        with:
+          xmake-version: latest
+
+      - name: Cache XMake
         uses: actions/cache@v3
-        env:
-          cache-name: cache-bds-lib
         with:
           path: |
-            ${{ env.GITHUB_WORKSPACE }}lib/bds/bedrock_server_api.lib
-            ${{ env.GITHUB_WORKSPACE }}lib/bds/bedrock_server_var.lib
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('assets/link.txt') }}
+            ~/AppData/Local/.xmake
+            ./.xmake
+          key: ${{ runner.os }}-xmake-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-xmake-
 
-      - name: Download Server
-        if: steps.cache-bds-lib.outputs.cache-hit != 'true'
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
+      - name: Update XMake Repository
+        run: xmake repo -u
+
+      - name: Get Release Version Tag
+        if: github.event_name == 'release'
+        run: echo "VERSION=${{ github.ref_name }}" >> $env:GITHUB_ENV
+
+      - name: Get Previous Tag
+        if: github.event_name != 'release'
+        id: previoustag
+        uses: "WyriHaximus/github-action-get-previous-tag@v1"
+        with:
+          fallback: "v0.0.0"
+
+      - name: Set Pseudo Version
+        if: github.event_name != 'release'
         run: |
-          mkdir prebuilt/tools/server
-          server_link=$(cat 'assets/link.txt')
-          curl -L -o prebuilt/tools/server/server.zip "$server_link"
-          unzip prebuilt/tools/server/server.zip -d prebuilt/tools/server/ > /dev/null
+          $date = (Get-Date -Format "yyyyMMddHHmmss")
+          $commit = git rev-parse --short HEAD
+          $previous_tag = "${{ steps.previoustag.outputs.tag }}"
+          echo "VERSION=$previous_tag-$date-$commit" >> $env:GITHUB_ENV
+
+      - name: Build liteloader
+        run: |
+          xmake f -p windows -m release -a x64 --ccache=n -y
+          xmake -w -y
+
+      - name: Prepare Artifacts
+        run: |
+          mkdir artifacts
+          cp build/windows/x64/release/LiteLoader.dll artifacts
+          cp build/windows/x64/release/LiteLoader.lib artifacts
+          cp build/windows/x64/release/LiteLoader.pdb artifacts
+          mv artifacts liteloader-${{ env.VERSION }}-windows-amd64
+          mkdir artifacts
+          mv liteloader-${{ env.VERSION }}-windows-amd64 artifacts/
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: liteloader-${{ env.VERSION }}-windows-amd64
+          path: artifacts
+
+  upload-to-release:
+    name: Upload to Release
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'release'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Get Version
+        run: echo "VERSION=${{ github.ref_name }}" >> $GITHUB_ENV
+
+      - name: Download Artifacts
+        uses: actions/download-artifact@v3
+
+      - name: Compress Artifacts
+        id: compress
+        run: |
+          mv liteloader-${{ env.VERSION }}-windows-amd64 artifacts
+          mv artifacts/liteloader-${{ env.VERSION }}-windows-amd64 .
+          cp -r include liteloader-${{ env.VERSION }}-windows-amd64/
+          zip -r liteloader-${{ env.VERSION }}-windows-amd64.zip liteloader-${{ env.VERSION }}-windows-amd64
+          echo "ZIP_SHA256=$(sha256sum liteloader-${{ env.VERSION }}-windows-amd64.zip | cut -d ' ' -f 1)" >> $GITHUB_ENV
+          echo "DLL_SHA256=$(sha256sum liteloader-${{ env.VERSION }}-windows-amd64/LiteLoader.dll | cut -d ' ' -f 1)" >> $GITHUB_ENV
+          echo "LIB_SHA256=$(sha256sum liteloader-${{ env.VERSION }}-windows-amd64/LiteLoader.lib | cut -d ' ' -f 1)" >> $GITHUB_ENV
+          echo "PDB_SHA256=$(sha256sum liteloader-${{ env.VERSION }}-windows-amd64/LiteLoader.pdb | cut -d ' ' -f 1)" >> $GITHUB_ENV
         shell: bash
 
-      - name: Build Library
-        if: steps.cache-bds-lib.outputs.cache-hit != 'true'
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        run: |
-          cd prebuilt/tools
-          LibraryBuilder.exe server
-          move bedrock_server_api.lib ..\..\lib\bds\
-          move bedrock_server_var.lib ..\..\lib\bds\
-        shell: cmd
-
-      - name: Get Short Sha
-        id: sha_short
-        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
-
-      - name: Change LITELOADER_VERSION_COMMIT_SHA
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        run: |
-          sed -r -i 's/#define\s+LITELOADER_VERSION_COMMIT_SHA\s+.*/#define LITELOADER_VERSION_COMMIT_SHA  ${{ steps.sha_short.outputs.sha_short }}\r/' include/liteloader/Version.h
-        shell: bash
-
-      - name: Configure CMake
-        run: |
-          cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
-        shell: cmd
-
-      - name: Build
-        run: |
-          cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
-        shell: cmd
-
-
-      - name: Upload LiteLoader
-        uses: actions/upload-artifact@v3.1.0
+      - name: Upload Release Assets
+        uses: softprops/action-gh-release@v1
         with:
-          name: LiteLoader
-          path: ${{ github.workspace }}\build\Release\LiteLoader.dll
-
-      - name: Upload PDB
-        uses: actions/upload-artifact@v3.1.0
-        with:
-          name: PDB
-          path: ${{ github.workspace }}\build\Release\LiteLoader.pdb
+          append_body: true
+          files: |
+            liteloader-${{ env.VERSION }}-windows-amd64.zip
+            liteloader-${{ env.VERSION }}-windows-amd64/LiteLoader.dll
+            liteloader-${{ env.VERSION }}-windows-amd64/LiteLoader.lib
+            liteloader-${{ env.VERSION }}-windows-amd64/LiteLoader.pdb
+          body: |
+            | File                                           | SHA256                |
+            | :--------------------------------------------- | :-------------------- |
+            | liteloader-${{ env.VERSION }}-windows-amd64.zip | ${{ env.ZIP_SHA256 }} |
+            | LiteLoader.dll                                  | ${{ env.DLL_SHA256 }} |
+            | LiteLoader.lib                                  | ${{ env.LIB_SHA256 }} |
+            | LiteLoader.pdb                                  | ${{ env.PDB_SHA256 }} |

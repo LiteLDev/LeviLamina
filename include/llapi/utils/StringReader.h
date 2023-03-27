@@ -2,21 +2,20 @@
 #include "llapi/Global.h"
 
 class StringReader {
-
-    const std::string str;
+    std::string str;
     size_t len = 0;
     std::string::const_iterator begin;
     std::string::const_iterator end;
     std::string::const_iterator it;
 
 public:
-    LLAPI StringReader(const std::string& str);
-    LLAPI StringReader(const char* str);
+    LLAPI explicit StringReader(const std::string& str);
+    LLAPI explicit StringReader(const char* str);
     LLAPI StringReader(const char* str, size_t len);
-    LLAPI StringReader(const StringReader& other) = default;
-    LLAPI StringReader(StringReader&& other) = default;
-    LLAPI StringReader& operator=(const StringReader& other) = default;
-    LLAPI StringReader& operator=(StringReader&& other) = default;
+    LLAPI StringReader(const StringReader& other);
+    LLAPI StringReader(StringReader&& other) noexcept;
+    LLAPI StringReader& operator=(const StringReader& other);
+    LLAPI StringReader& operator=(StringReader&& other) noexcept;
 
     LLAPI bool isEmpty() const;
     LLAPI bool isEnd() const;

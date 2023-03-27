@@ -10,7 +10,8 @@
 
 #include <random>
 
-#include <pcg_random.hpp>
+#include <pcg_cpp/pcg_random.hpp>
+
 namespace RNG {
 
 template <class T>

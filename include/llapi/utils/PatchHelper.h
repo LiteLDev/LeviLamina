@@ -15,7 +15,7 @@
 //    constexpr size_t max_step = 0x300;
 //    constexpr size_t ori_size = 11;
 //
-//    unsigned char* begin = (unsigned char*)ll::memory::getPtr("?useOn@Item@@QEBA_NAEAVItemStack@@AEAVActor@@HHHEAEBVVec3@@@Z");
+//    unsigned char* begin = (unsigned char*)ll::memory::resolveSymbol("?useOn@Item@@QEBA_NAEAVItemStack@@AEAVActor@@HHHEAEBVVec3@@@Z");
 //    unsigned char* end = begin + max_step;
 //
 //    PatchHelper<ori_size> ori({

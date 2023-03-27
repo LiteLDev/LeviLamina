@@ -19,6 +19,14 @@ LLAPI int hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPriori
 
 LLAPI bool unhook(FuncPtr target, FuncPtr detour);
 
+/**
+ * @brief Get the pointer of a function by identifier.
+ *
+ * @param identifier symbol or signature
+ * @return FuncPtr
+ */
+LLAPI FuncPtr resolveIdentifier(const char* identifier);
+
 // Use a individual struct to register hook, in case DefType can't be constructed.
 template <typename T>
 struct HookAutoRegister {
@@ -49,17 +57,17 @@ struct HookAutoRegister {
         StaticDescriptor Ret detour(__VA_ARGS__);                                                                      \
                                                                                                                        \
         static int hook() {                                                                                            \
-            target = ll::memory::getPtr(identifier);                                                                   \
+            target = ll::memory::resolveIdentifier(identifier);                                                        \
                                                                                                                        \
             if (target == nullptr) {                                                                                   \
                 return -1;                                                                                             \
             }                                                                                                          \
             return ll::memory::hook(                                                                                   \
-                target, ll::memory::getPtr(&DefType::detour), reinterpret_cast<FuncPtr*>(&originFunc), priority        \
+                target, ll::memory::toFuncPtr(&DefType::detour), reinterpret_cast<FuncPtr*>(&originFunc), priority     \
             );                                                                                                         \
         }                                                                                                              \
                                                                                                                        \
-        static bool unhook() { return ll::memory::unhook(target, ll::memory::getPtr(&DefType::detour)); }              \
+        static bool unhook() { return ll::memory::unhook(target, ll::memory::toFuncPtr(&DefType::detour)); }           \
     };                                                                                                                 \
     Register;                                                                                                          \
     Ret DefType::detour(__VA_ARGS__)

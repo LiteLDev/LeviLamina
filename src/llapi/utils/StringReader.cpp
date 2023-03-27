@@ -11,6 +11,11 @@ StringReader::StringReader(const char* cstr)
 StringReader::StringReader(const char* cstr, size_t len)
 : str(cstr, len), len(len), begin(str.begin()), end(str.end()), it(begin) {}
 
+StringReader::StringReader(const StringReader& other)                = default;
+StringReader::StringReader(StringReader&& other) noexcept            = default;
+StringReader& StringReader::operator=(const StringReader& other)     = default;
+StringReader& StringReader::operator=(StringReader&& other) noexcept = default;
+
 //////////////////////////////// GET ////////////////////////////////
 
 bool StringReader::isEmpty() const { return len == 0; }

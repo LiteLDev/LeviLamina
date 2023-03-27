@@ -1,7 +1,7 @@
 #pragma once
 #include "llapi/db/Stmt.h"
 
-struct MYSQL_STMT;
+#include "mariadb/mysql.h"
 
 namespace DB
 {

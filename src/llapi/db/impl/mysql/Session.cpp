@@ -1,4 +1,4 @@
-#include <mysql/mysql.h>
+#include <mariadb/mysql.h>
 #include "llapi/db/impl/mysql/Session.h"
 #include "llapi/db/impl/mysql/Stmt.h"
 #include "llapi/LoggerAPI.h"

@@ -66,61 +66,61 @@ inline DataItem2<signed char>::DataItem2(unsigned short key, signed char const& 
     : DataItem(DATA_ITEM_TYPE, key)
     , mValue(value)
 {
-    //*(void**)this = ll::memory::getPtr("??_7?$DataItem2@C@@6B@");
+    //*(void**)this = ll::memory::resolveSymbol("??_7?$DataItem2@C@@6B@");
 }
 template <>
 inline DataItem2<short>::DataItem2(unsigned short key, short const& value)
     : DataItem(DATA_ITEM_TYPE, key)
     , mValue(value)
 {
-    //*(void**)this = ll::memory::getPtr("??_7?$DataItem2@F@@6B@");
+    //*(void**)this = ll::memory::resolveSymbol("??_7?$DataItem2@F@@6B@");
 }
 template <>
 inline DataItem2<int>::DataItem2(unsigned short key, int const& value)
     : DataItem(DATA_ITEM_TYPE, key)
     , mValue(value)
 {
-    //*(void**)this = ll::memory::getPtr("??_7?$DataItem2@M@@6B@");
+    //*(void**)this = ll::memory::resolveSymbol("??_7?$DataItem2@M@@6B@");
 }
 template <>
 inline DataItem2<float>::DataItem2(unsigned short key, float const& value)
     : DataItem(DATA_ITEM_TYPE, key)
     , mValue(value)
 {
-    //*(void**)this = ll::memory::getPtr("??_7?$DataItem2@M@@6B@");
+    //*(void**)this = ll::memory::resolveSymbol("??_7?$DataItem2@M@@6B@");
 }
 template <>
 inline DataItem2<std::string>::DataItem2(unsigned short key, std::string const& value)
     : DataItem(DATA_ITEM_TYPE, key)
     , mValue(value)
 {
-    //*(void**)this = ll::memory::getPtr("??_7?$DataItem2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@6B@");
+    //*(void**)this = ll::memory::resolveSymbol("??_7?$DataItem2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@6B@");
 }
 template <>
 inline DataItem2<class CompoundTag>::DataItem2(unsigned short key, class CompoundTag const& value)
     : DataItem(DATA_ITEM_TYPE, key)
 {
     mValue.deepCopy(value);
-    //*(void**)this = ll::memory::getPtr("??_7?$DataItem2@VCompoundTag@@@@6B@");
+    //*(void**)this = ll::memory::resolveSymbol("??_7?$DataItem2@VCompoundTag@@@@6B@");
 }
 template <>
 inline DataItem2<BlockPos>::DataItem2(unsigned short key, BlockPos const& value)
     : DataItem(DATA_ITEM_TYPE, key)
     , mValue(value)
 {
-    //*(void**)this = ll::memory::getPtr("??_7?$DataItem2@VBlockPos@@@@6B@");
+    //*(void**)this = ll::memory::resolveSymbol("??_7?$DataItem2@VBlockPos@@@@6B@");
 }
 template <>
 inline DataItem2<__int64>::DataItem2(unsigned short key, __int64 const& value)
     : DataItem(DATA_ITEM_TYPE, key)
     , mValue(value)
 {
-    //*(void**)this = ll::memory::getPtr("??_7?$DataItem2@_J@@6B@");
+    //*(void**)this = ll::memory::resolveSymbol("??_7?$DataItem2@_J@@6B@");
 }
 template <>
 inline DataItem2<Vec3>::DataItem2(unsigned short key, Vec3 const& value)
     : DataItem(DATA_ITEM_TYPE, key)
     , mValue(value)
 {
-    //*(void**)this = ll::memory::getPtr("??_7?$DataItem2@VVec3@@@@6B@");
+    //*(void**)this = ll::memory::resolveSymbol("??_7?$DataItem2@VVec3@@@@6B@");
 }

@@ -6,6 +6,8 @@
 
 #include <ShlObj.h>
 
+#pragma comment(lib, "Ole32.lib")
+
 constexpr int MAX_PATH_LENGTH = 8192;
 
 void ShellLinkFile::_Init() {

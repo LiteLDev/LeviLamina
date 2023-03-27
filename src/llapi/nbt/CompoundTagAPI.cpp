@@ -1,6 +1,6 @@
 ﻿#include <magic_enum.hpp>
 #include <map>
-#include <nbt.hpp>
+#include <nbt_cpp/nbt.hpp>
 #include <sstream>
 #include <vector>
 

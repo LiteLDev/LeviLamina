@@ -1,7 +1,7 @@
 #pragma once
 #include "llapi/db/Session.h"
 
-struct MYSQL;
+#include "mariadb/mysql.h"
 
 namespace DB
 {

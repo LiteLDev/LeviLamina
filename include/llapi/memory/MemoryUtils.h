@@ -10,7 +10,9 @@ namespace ll::memory {
 using FuncPtr = void*;
 
 template <typename T>
-inline constexpr FuncPtr getPtr(T t) {
+constexpr FuncPtr toFuncPtr(T t)
+    requires(sizeof(T) == sizeof(FuncPtr))
+{
     union {
         T       t;
         FuncPtr fp;
@@ -20,16 +22,22 @@ inline constexpr FuncPtr getPtr(T t) {
 }
 
 /**
- * @brief Get pointer from symbol name or signature
- * @param t Symbol / Signature
- * @return pointer to resolved object. E.g. function pointer, vtable pointer, etc.
+ * @brief resolve symbol to function pointer
+ * @param symbol Symbol
+ * @return function pointer
  */
-template <>
-LLAPI FuncPtr getPtr(const char* t);
+LLAPI FuncPtr resolveSymbol(const char* symbol);
+
+/**
+ * @brief resolve signature to function pointer
+ * @param t Signature
+ * @return function pointer
+ */
+LLAPI FuncPtr resolveSignature(const char* signature);
 
 template <uintptr_t off, typename RTN = void, typename... Args>
-auto inline virtualCall(void const* _this, Args... args) -> RTN {
-    return (*(RTN(**)(void const*, Args...))(*(uintptr_t*)_this + off))(_this, args...);
+auto inline virtualCall(void const* _this, Args&&... args) -> RTN {
+    return (*(RTN(**)(void const*, Args&&...))(*(uintptr_t*)_this + off))(_this, std::forward<Args>(args)...);
 }
 
 template <typename T, uintptr_t off>
@@ -52,8 +60,11 @@ inline const T& dAccess(void const* ptr, uintptr_t off) {
     return *(T*)(((uintptr_t)ptr) + off);
 }
 
-template <FixedString Fn>
-inline FuncPtr symbolCache = getPtr((const char*)Fn);
+template <FixedString symbol>
+inline FuncPtr symbolCache = resolveSymbol(symbol);
+
+template <FixedString signature>
+inline FuncPtr signatureCache = resolveSignature(signature);
 
 } // namespace ll::memory
 
@@ -67,4 +78,4 @@ inline FuncPtr symbolCache = getPtr((const char*)Fn);
 
 #define LL_RESOLVE_SYMBOL(symbol) ll::memory::symbolCache<symbol>
 
-#define LL_RESOLVE_SIGNATURE(signature) ll::memory::symbolCache<signature>
+#define LL_RESOLVE_SIGNATURE(signature) ll::memory::signatureCache<signature>
