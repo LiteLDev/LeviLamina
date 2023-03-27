@@ -1,4 +1,4 @@
-# Release 2.12.1
+# Release 2.12.2
 
 ![BDS 1.19.72.01](https://img.shields.io/badge/BDS-1.19.72.01-blue?style=for-the-badge)&emsp;![Protocol 575](https://img.shields.io/badge/Protocol-575-orange?style=for-the-badge)
 
@@ -7,22 +7,18 @@
 
 ## Added
 
-- feat: add patch to fix LevelChunkPacket crash (by @ShrBox)
-- feat: optimize error messages (by @StarsDream00)
+- refactor: add struct ClimateUtils::Parameter (#1169) (by @killcerr)
+- feat: add BlockActorType (by @OEOTYAN)
+- feat: add members to RedstoneSystem (by @OEOTYAN)
+- feat: add members to RecipeUnlockingRequirement (by @qingyu)
 
 ## Changed
 
-- refactor: remove AntiGive because it has been fixed by Mojang (by @ShrBox)
-- feat: optimize error messages (#1159) (by @@StarsDream00)
+- chore: update PeEditor to v3.1.1
+- refractor: change hash function (by @OEOTYAN)
 
 ## Fixed
 
-- fix: fix NpcCmd(#1158) & Actor::isOnGround (by @OEOTYAN)
-- fix: fix hot load/reload of python plugins (by @yqs112358)
-- fix: add some missing LLSE apis (by @yqs112358)
-- fix: add SetThreadDescription to DEBUG compile mode (by @yqs112358)
-- fix: update ScriptX to fix a serious Python constructor bug (by @yqs112358)
-- fix: error in Schedule task will not cause the repeat stopped (by @yqs112358)
-- fix: disable all python's sys.stdin to fix stdin hijack (by @yqs112358)
-- fix: update data structure StringByteInput for CompoundTag::fromBinaryNBT (#1166) (by @WangYneos)
-- fix: PlayerScoreChangedEvent #1165 (by @ShrBox)
+- fix: reuse SymCall for tryUnwrap (by @OEOTYAN)
+- fix: update ScriptX to re-support ESM modules (by @yqs112358)
+- fix: remove bad static_assert in RecipeUnlockingRequirement (by @yqs112358)
