@@ -159,52 +159,6 @@ jobs:
             ${{ github.workspace }}\build\output\plugins\LiteLoader\ResourcePacks\LiteLoaderBDS-CUI.tar
             ${{ github.workspace }}\build\output\plugins\LiteLoader\PermissionAPI.dll
 
-      - name: Upload PeEditor
-        uses: actions/upload-artifact@v3.1.0
-        with:
-          name: PeEditor
-          path: ${{ github.workspace }}\build\output\LLPeEditor.exe
-
-      - name: Upload PreLoader
-        uses: actions/upload-artifact@v3.1.0
-        with:
-          name: PreLoader
-          path: ${{ github.workspace }}\build\output\LLPreLoader.dll
-
-      - name: Upload LiteLoader
-        uses: actions/upload-artifact@v3.1.0
-        with:
-          name: LiteLoader
-          path: |
-            ${{ github.workspace }}\build\output\LiteLoader.dll
-            ${{ github.workspace }}\build\output\plugins\lib\*.dll
-            ${{ github.workspace }}\build\output\plugins\LiteLoader\LangPack\
-            ${{ github.workspace }}\build\output\plugins\LiteLoader\7z\
-            ${{ github.workspace }}\build\output\plugins\LiteLoader\CrashLogger_Daemon.exe
-
-      - name: Upload ScriptEngine
-        uses: actions/upload-artifact@v3.1.0
-        with:
-          name: ScriptEngine
-          path: |
-            ${{ github.workspace }}\build\output\plugins\LiteLoader\LiteLoader.*.dll
-            ${{ github.workspace }}\build\output\plugins\lib\*.zip
-            ${{ github.workspace }}\build\output\plugins\lib\package.json
-      
-      - name: Upload LLParticle
-        uses: actions/upload-artifact@v3.1.0
-        with:
-          name: LLParticle
-          path: |
-            ${{ github.workspace }}\build\output\plugins\LiteLoader\ParticleAPI.dll
-            ${{ github.workspace }}\build\output\plugins\LiteLoader\ResourcePacks\LiteLoaderBDS-CUI.tar
-
-      - name: Upload LLPermission
-        uses: actions/upload-artifact@v3.1.0
-        with:
-          name: LLPermission
-          path: ${{ github.workspace }}\build\output\plugins\LiteLoader\PermissionAPI.dll
-
       - name: Upload PDB files
         uses: actions/upload-artifact@v3.1.0
         with:
@@ -229,7 +183,7 @@ jobs:
           cd build/
           zip -9r LiteLoaderBDS.zip LiteLoaderBDS/*
           zip -9r PDB.zip PDB/*
-          zip -9r Modules.zip PeEditor PreLoader LiteLoader ScriptEngine LLParticle LLPermission
+          zip -9r Modules.zip PreLoader LiteLoader ScriptEngine LLParticle LLPermission
         shell: bash
 
       - name: Create release
