@@ -59,11 +59,9 @@ jobs:
         if: steps.cache-bds-lib.outputs.cache-hit != 'true'
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
+          mkdir LiteLoader\lib
           cd Tools
-          LibraryBuilder.exe Server
-          mkdir ..\LiteLoader\lib
-          move bedrock_server_api.lib ..\LiteLoader\lib
-          move bedrock_server_var.lib ..\LiteLoader\lib
+          LLPeEditor.exe -l --pdb Server/bedrock_server.pdb -o ../LiteLoader/lib
         shell: cmd
 
       - name: Set LITELOADER_VERSION_COMMIT_SHA
