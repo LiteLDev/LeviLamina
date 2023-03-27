@@ -10,8 +10,6 @@
 
 #undef BEFORE_EXTRA
 
-static_assert(sizeof(RecipeUnlockingRequirement) == 32);
-
 class RecipeUnlockingRequirement {
 
 #define AFTER_EXTRA
