@@ -3,13 +3,14 @@
 #include "../Global.h"
 #include "VectorBase.hpp"
 
-class Vec2 {
-   public:
+class Vec2 : public VectorBase<Vec2, float, float> {
+public:
     float x, y;
     Vec2() = default;
     Vec2(float a, float b) : x(a), y(b){};
 
-    [[nodiscard]] constexpr float& operator[](size_t index) {
+    template <typename T>
+    [[nodiscard]] constexpr T& get(size_t index) {
         switch (index) {
             case 1:
                 return y;
@@ -18,7 +19,8 @@ class Vec2 {
         }
     }
 
-    [[nodiscard]] constexpr float operator[](size_t index) const {
+    template <typename T>
+    [[nodiscard]] constexpr T get(size_t index) const {
         switch (index) {
             case 1:
                 return y;
@@ -36,14 +38,15 @@ class Vec2 {
     MCAPI static class Vec2 const UNIT_X;
     MCAPI static class Vec2 const UNIT_Y;
     MCAPI static class Vec2 const ZERO;
-
-    FAKE_CRTP(Vec2, float, 2);
 };
+
 namespace std {
 
-    template <>
-    struct hash<Vec2> {
-        std::size_t operator()(Vec2 const& pos) const noexcept { return pos.hash(); }
-    };
+template <>
+struct hash<Vec2> {
+    std::size_t operator()(Vec2 const& pos) const noexcept {
+        return pos.hash();
+    }
+};
 
-}  // namespace std
+} // namespace std

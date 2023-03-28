@@ -3,7 +3,7 @@
  *
  */
 #pragma once
-#define AUTO_GENERATED
+
 #include "llapi/Global.h"
 
 #define BEFORE_EXTRA
@@ -23,8 +23,7 @@ public:
  * @brief MC class ChunkBlockPos.
  *
  */
-class ChunkBlockPos {
-
+class ChunkBlockPos : public VectorBase<ChunkBlockPos, char, short, char> {
 #define AFTER_EXTRA
 // Add Member There
 #define DISABLE_CONSTRUCTOR_PREVENTION_CHUNKBLOCKPOS
@@ -40,13 +39,29 @@ public:
         return (y.mVal & 0xF) + 16 * (z + 16 * x);
     }
 
-#undef AFTER_EXTRA
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKBLOCKPOS
-public:
-    class ChunkBlockPos& operator=(class ChunkBlockPos const &) = delete;
-    ChunkBlockPos(class ChunkBlockPos const &) = delete;
-    ChunkBlockPos() = delete;
-#endif
+    template <typename T>
+    [[nodiscard]] constexpr T& get(size_t index) {
+        switch (index) {
+            case 1:
+                return (T&)y.mVal;
+            case 2:
+                return (T&)z;
+            default:
+                return (T&)x;
+        }
+    }
+
+    template <typename T>
+    [[nodiscard]] constexpr T get(size_t index) const {
+        switch (index) {
+            case 1:
+                return (T)y.mVal;
+            case 2:
+                return (T)z;
+            default:
+                return (T)x;
+        }
+    }
 
 public:
     /**
@@ -56,11 +71,11 @@ public:
     /**
      * @symbol ??0ChunkBlockPos\@\@QEAA\@AEBVBlockPos\@\@F\@Z
      */
-    MCAPI ChunkBlockPos(class BlockPos const &, short);
+    MCAPI ChunkBlockPos(class BlockPos const&, short);
     /**
      * @symbol ?toPos\@ChunkBlockPos\@\@QEBA?AVPos\@\@XZ
      */
-    MCAPI class Pos toPos() const;
+    // MCAPI class Pos toPos() const;
     /**
      * @symbol ?from2D\@ChunkBlockPos\@\@SA?AV1\@EE\@Z
      */
@@ -69,5 +84,15 @@ public:
      * @symbol ?fromLegacyIndex\@ChunkBlockPos\@\@SA?AV1\@G\@Z
      */
     MCAPI static class ChunkBlockPos fromLegacyIndex(unsigned short);
-
 };
+
+namespace std {
+
+template <>
+struct hash<ChunkBlockPos> {
+    std::size_t operator()(ChunkBlockPos const& pos) const noexcept {
+        return pos.hash();
+    }
+};
+
+} // namespace std

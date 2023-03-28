@@ -3,7 +3,7 @@
  *
  */
 #pragma once
-#define AUTO_GENERATED
+
 #include "llapi/Global.h"
 
 #define BEFORE_EXTRA
@@ -16,8 +16,7 @@
  * @brief MC class SubChunkPos.
  *
  */
-class SubChunkPos {
-
+class SubChunkPos : public VectorBase<SubChunkPos, int, int, int> {
 #define AFTER_EXTRA
     // Add Member There
 public:
@@ -28,7 +27,8 @@ public:
 
     inline SubChunkPos(int ix, int iy, int iz) : x(ix), y(iy), z(iz) {}
 
-    [[nodiscard]] constexpr int& operator[](size_t index) {
+    template <typename T>
+    [[nodiscard]] constexpr T& get(size_t index) {
         switch (index) {
             case 1:
                 return y;
@@ -39,7 +39,8 @@ public:
         }
     }
 
-    [[nodiscard]] constexpr int operator[](size_t index) const {
+    template <typename T>
+    [[nodiscard]] constexpr T get(size_t index) const {
         switch (index) {
             case 1:
                 return y;
@@ -49,23 +50,12 @@ public:
                 return x;
         }
     }
-
-#define DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKPOS
-
-    FAKE_CRTP(SubChunkPos, int, 3);
-#undef AFTER_EXTRA
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKPOS
-public:
-    class SubChunkPos& operator=(class SubChunkPos const &) = delete;
-    SubChunkPos(class SubChunkPos const &) = delete;
-    SubChunkPos() = delete;
-#endif
 
 public:
     /**
      * @symbol ??0SubChunkPos\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI SubChunkPos(class BlockPos const &);
+    MCAPI SubChunkPos(class BlockPos const&);
     /**
      * @symbol ??BSubChunkPos\@\@QEBA?AVBlockPos\@\@XZ
      */
@@ -86,5 +76,15 @@ public:
      * @symbol ?ZERO\@SubChunkPos\@\@2V1\@B
      */
     MCAPI static class SubChunkPos const ZERO;
-
 };
+
+namespace std {
+
+template <>
+struct hash<SubChunkPos> {
+    std::size_t operator()(SubChunkPos const& pos) const noexcept {
+        return pos.hash();
+    }
+};
+
+} // namespace std
