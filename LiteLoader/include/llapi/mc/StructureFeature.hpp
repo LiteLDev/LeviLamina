@@ -19,7 +19,23 @@ class StructureFeature {
 
 #define AFTER_EXTRA
 // Add Member There
-
+    enum class StructureFeatureType : char {
+        EndCity = 1,
+        NetherFortress = 2,
+        Mineshaft = 3,
+        Monument = 4,
+        Stronghold = 5,
+        Temple = 6,
+        Village = 7,
+        WoodlandMansion = 8,
+        ShipWreck = 9,
+        BuriedTreasure = 10,
+        Ruin = 11,
+        PillagerOutpost = 12,
+        RuinedPortal = 13,
+        Bastion = 14,
+        AncientCity = 15,
+    };
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREFEATURE
 public:
