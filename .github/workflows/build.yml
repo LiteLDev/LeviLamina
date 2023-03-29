@@ -56,7 +56,7 @@ jobs:
           if ($tag -eq "" -or $tag -eq $null) {
             $tag = "v0.0.0"
           }
-          echo "tag=$tag" >> $env:GITHUB_ENV
+          echo "tag=$tag" >> $env:GITHUB_OUTPUT
 
       - name: Set Pseudo Version
         if: github.event_name != 'release'
