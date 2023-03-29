@@ -405,7 +405,7 @@ TInstanceHook(std::shared_ptr<class ChunkViewSource>,
     auto result = ChunkViewSource(chunkSource, ChunkSource::LoadMode::Deferred);
     return std::make_shared<ChunkViewSource>(result);
 }
-
+/*
 // Fix carried item display
 // Fix armor display
 #include "llapi/mc/WeakStorageEntity.hpp"
@@ -462,7 +462,7 @@ TClasslessInstanceHook(void, "?sendEvent@ActorEventCoordinator@@QEAAXAEBV?$Event
         }
     }
 }
-
+*/
 // Fix LevelChunkPacket crash
 #include "llapi/mc/LevelChunkPacket.hpp"
 
