@@ -451,7 +451,7 @@ TClasslessInstanceHook(void, "?sendEvent@ActorEventCoordinator@@QEAAXAEBV?$Event
             weakStorageEntity = (WeakStorageEntity*)a2;
             if (weakStorageEntity) {
                 auto* actor = weakStorageEntity->tryUnwrap<Actor>();
-                if (actor && actor->isSimulatedPlayer()) {
+                if (actor->isSimulatedPlayer()) {
                     int slot = dAccess<int, 160>(weakStorageEntity);
                     ItemInstance const& item = dAccess<ItemInstance, 24>(weakStorageEntity);
                     // Force to call the implementation of ServerPlayer
