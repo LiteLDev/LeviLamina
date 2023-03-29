@@ -4,8 +4,8 @@
 #include "BlockPos.hpp"
 #include "VectorBase.hpp"
 
-class Vec3 {
-   public:
+class Vec3 : public VectorBase<Vec3, float, float, float> {
+public:
     float x{}, y{}, z{};
 
     inline Vec3() = default;
@@ -68,7 +68,8 @@ class Vec3 {
 
     [[nodiscard]] LIAPI BlockPos toBlockPos() const;
 
-    [[nodiscard]] constexpr float& operator[](size_t index) {
+    template <typename T>
+    [[nodiscard]] constexpr T& get(size_t index) {
         switch (index) {
             case 1:
                 return y;
@@ -79,7 +80,8 @@ class Vec3 {
         }
     }
 
-    [[nodiscard]] constexpr float operator[](size_t index) const {
+    template <typename T>
+    [[nodiscard]] constexpr T get(size_t index) const {
         switch (index) {
             case 1:
                 return y;
@@ -93,17 +95,15 @@ class Vec3 {
     [[nodiscard]] inline Vec3 cross(const Vec3& b) const {
         return {y * b.z - z * b.y, z * b.x - x * b.z, x * b.y - y * b.x};
     }
-
-    FAKE_CRTP(Vec3, float, 3);
 };
 
 namespace std {
 
-    template <>
-    struct hash<Vec3> {
-        std::size_t operator()(Vec3 const& pos) const noexcept {
-            return pos.hash();
-        }
-    };
+template <>
+struct hash<Vec3> {
+    std::size_t operator()(Vec3 const& pos) const noexcept {
+        return pos.hash();
+    }
+};
 
-}  // namespace std
+} // namespace std

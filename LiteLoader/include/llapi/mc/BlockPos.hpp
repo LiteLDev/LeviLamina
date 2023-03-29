@@ -4,7 +4,7 @@
 
 class Vec3;
 
-class BlockPos {
+class BlockPos : public VectorBase<BlockPos, int, int, int> {
 public:
     int x, y, z;
     inline BlockPos() : BlockPos(0, 0, 0){};
@@ -33,7 +33,8 @@ public:
 
     MCAPI static void bindType();
 
-    [[nodiscard]] constexpr int& operator[](size_t index) {
+    template <typename T>
+    [[nodiscard]] constexpr T& get(size_t index) {
         switch (index) {
             case 1:
                 return y;
@@ -44,7 +45,8 @@ public:
         }
     }
 
-    [[nodiscard]] constexpr int operator[](size_t index) const {
+    template <typename T>
+    [[nodiscard]] constexpr T get(size_t index) const {
         switch (index) {
             case 1:
                 return y;
@@ -65,8 +67,6 @@ public:
     [[nodiscard]] LIAPI Vec3 bottomCenter() const;
     [[nodiscard]] LIAPI Vec3 center() const;
     [[nodiscard]] LIAPI bool containedWithin(class BoundingBox const&) const;
-
-    FAKE_CRTP(BlockPos, int, 3);
 };
 
 namespace std {
@@ -74,32 +74,7 @@ namespace std {
 template <>
 struct hash<BlockPos> {
     std::size_t operator()(BlockPos const& pos) const noexcept {
-        //??$hash3@HHH@Math@mce@@SA_KAEBH00@Z
-        unsigned __int64 t1; // r8
-        unsigned __int64 t2; // r8
-
-        t1 = *((unsigned __int8*)&pos.x + 3) ^
-             (0x100000001B3i64 *
-              (*((unsigned __int8*)&pos.x + 2) ^
-               (0x100000001B3i64 * (*((unsigned __int8*)&pos.x + 1) ^
-                                    (0x100000001B3i64 * (*(unsigned __int8*)&pos.x ^ 0xCBF29CE484222325ui64))))));
-        t2 =
-            (((0x100000001B3i64 * t1 + 2654435769u) >> 2) + 2654435769u + ((0x100000001B3i64 * t1 + 2654435769u) << 6) +
-             0x100000001B3i64 * (*((unsigned __int8*)&pos.y + 3) ^
-                                 (0x100000001B3i64 *
-                                  (*((unsigned __int8*)&pos.y + 2) ^
-                                   (0x100000001B3i64 *
-                                    (*((unsigned __int8*)&pos.y + 1) ^
-                                     (0x100000001B3i64 * (*(unsigned __int8*)&pos.y ^ 0xCBF29CE484222325ui64)))))))) ^
-            (0x100000001B3i64 * t1 + 2654435769u);
-        return t2 ^ ((t2 << 6) +
-                     0x100000001B3i64 *
-                         (*((unsigned __int8*)&pos.z + 3) ^
-                          (0x100000001B3i64 * (*((unsigned __int8*)&pos.z + 2) ^
-                                               (0x100000001B3i64 * (*((unsigned __int8*)&pos.z + 1) ^
-                                                                    (0x100000001B3i64 * (*(unsigned __int8*)&pos.z ^
-                                                                                         0xCBF29CE484222325ui64))))))) +
-                     (t2 >> 2) + 2654435769u);
+        return pos.hash();
     }
 };
 

@@ -405,9 +405,9 @@ TInstanceHook(std::shared_ptr<class ChunkViewSource>,
     auto result = ChunkViewSource(chunkSource, ChunkSource::LoadMode::Deferred);
     return std::make_shared<ChunkViewSource>(result);
 }
-
-// fix carried item display
-// fix armor display
+/*
+// Fix carried item display
+// Fix armor display
 #include "llapi/mc/WeakStorageEntity.hpp"
 #include "llapi/mc/WeakEntityRef.hpp"
 
@@ -420,21 +420,18 @@ TClasslessInstanceHook(void, "?sendEvent@ActorEventCoordinator@@QEAAXAEBV?$Event
         // sendActorCarriedItemChanged
         if (type == 4) {
             auto v56 = dAccess<char, 304>(a2);
-            WeakStorageEntity* v59;
+            WeakStorageEntity* weakStorageEntity;
             if (v56) {
                 if (v56 != 1) {
                     return;
                 }
-                v59 = (WeakStorageEntity*)a2;
-            } else {
-                v59 = *(WeakStorageEntity**)a2;
             }
-            if (v59) {
-                Actor* actor = SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ", Actor*,
-                                       WeakStorageEntity*)(v59);
+            weakStorageEntity = (WeakStorageEntity*)a2;
+            if (weakStorageEntity) {
+                auto* actor = weakStorageEntity->tryUnwrap<Actor>();
                 if (actor->isSimulatedPlayer()) {
-                    ItemInstance const& newItem = dAccess<ItemInstance, 160>(v59);
-                    int slot = dAccess<int, 296>(v59);
+                    ItemInstance const& newItem = dAccess<ItemInstance, 160>(weakStorageEntity);
+                    int slot = dAccess<int, 296>(weakStorageEntity);
                     // Force to call the implementation of ServerPlayer
                     MobEquipmentPacket pkt(actor->getRuntimeID(), newItem, (int)slot, (int)slot,
                                            ContainerID::Inventory);
@@ -445,21 +442,18 @@ TClasslessInstanceHook(void, "?sendEvent@ActorEventCoordinator@@QEAAXAEBV?$Event
         // sendActorEquippedArmor
         else if (type == 8) {
             auto v30 = dAccess<char, 168>(a2);
-            WeakStorageEntity* v31;
+            WeakStorageEntity* weakStorageEntity;
             if (v30) {
                 if (v30 != 1) {
                     return;
                 }
-                v31 = (WeakStorageEntity*)a2;
-            } else {
-                v31 = *(WeakStorageEntity**)a2;
             }
-            if (v31) {
-                Actor* actor = SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ", Actor*,
-                                       WeakStorageEntity*)(v31);
+            weakStorageEntity = (WeakStorageEntity*)a2;
+            if (weakStorageEntity) {
+                auto* actor = weakStorageEntity->tryUnwrap<Actor>();
                 if (actor->isSimulatedPlayer()) {
-                    int slot = dAccess<int, 160>(v31);
-                    ItemInstance const& item = dAccess<ItemInstance, 24>(v31);
+                    int slot = dAccess<int, 160>(weakStorageEntity);
+                    ItemInstance const& item = dAccess<ItemInstance, 24>(weakStorageEntity);
                     // Force to call the implementation of ServerPlayer
                     MobEquipmentPacket pkt(actor->getRuntimeID(), item, (int)slot, (int)slot, ContainerID::Armor);
                     SimulatedPlayerClient::send((SimulatedPlayer*)actor, pkt);
@@ -468,7 +462,7 @@ TClasslessInstanceHook(void, "?sendEvent@ActorEventCoordinator@@QEAAXAEBV?$Event
         }
     }
 }
-
+*/
 // Fix LevelChunkPacket crash
 #include "llapi/mc/LevelChunkPacket.hpp"
 

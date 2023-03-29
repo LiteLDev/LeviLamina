@@ -11,7 +11,7 @@
 // Include Headers or Declare Types Here
 #include "BlockPos.hpp"
 // clang-format off
-enum class CircuitComponentType {
+enum class CircuitComponentType : int64_t {
     Unknown                =        0x0,
     Undefined              =        0x1,
     Mask                   = 0xFFFF0000,
@@ -56,6 +56,7 @@ public:
     bool mRemoved;
     bool mConsumePowerAnyDirection;
     CircuitComponentType mCircuitComponentType;
+#define ENABLE_VIRTUAL_FAKESYMBOL_BASECIRCUITCOMPONENT
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASECIRCUITCOMPONENT
 public:

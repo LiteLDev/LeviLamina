@@ -37,7 +37,7 @@ public:
     }
 
     inline class BlockLegacy const* getLegacyBlockPtr() const {
-        return &dAccess<BlockLegacy, 16>(this);
+        return dAccess<BlockLegacy*, 16>(this);
     }
 
     inline bool operator==(class Block const& block) const {
