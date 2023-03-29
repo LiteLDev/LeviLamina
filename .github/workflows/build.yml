@@ -25,9 +25,6 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          submodules: true
-          fetch-depth: 0
 
       - name: Setup XMake
         uses: xmake-io/github-action-setup-xmake@v1
