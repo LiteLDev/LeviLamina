@@ -78,10 +78,6 @@ if "%LL_SDK_NOW_STATUS%" neq "" (
         git push origin %LL_SDK_NOW_BRANCH%
         git push --tags origin %LL_SDK_NOW_BRANCH%
     ) else (
-        mkdir %USERPROFILE%\.ssh
-        echo "-----BEGIN OPENSSH PRIVATE KEY-----" >> %USERPROFILE%\.ssh\id_rsa
-        echo %DEPLOY_KEY% >> ~\.ssh\id_rsa
-        echo "-----END OPENSSH PRIVATE KEY-----" >> %USERPROFILE%\.ssh\id_rsa
         git push git@github.com:LiteLDev/SDK-CPP.git %LL_SDK_NOW_BRANCH%
         git push --tags git@github.com:LiteLDev/SDK-CPP.git %LL_SDK_NOW_BRANCH%
     )

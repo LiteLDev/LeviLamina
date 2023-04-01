@@ -44,10 +44,10 @@ jobs:
         if: steps.cache-bds-lib.outputs.cache-hit != 'true'
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
-          mkdir LiteLoader\lib
-          cd Tools
-          LLPeEditor.exe -l --pdb Server/bedrock_server.pdb -o ../LiteLoader/lib
-        shell: cmd
+          mkdir LiteLoader/lib
+          cd tools
+          ./LLPeEditor.exe -l --pdb Server/bedrock_server.pdb -o ../LiteLoader/lib
+        shell: bash
 
       - name: Set LITELOADER_VERSION_COMMIT_SHA
         working-directory: ${{ env.GITHUB_WORKSPACE }}
@@ -99,13 +99,17 @@ jobs:
         if: github.event_name == 'push'
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
+          mkdir ~/.ssh
+          ssh-keygen -R github.com
+          curl -L https://api.github.com/meta | jq -r '.ssh_keys | .[]' | sed -e 's/^/github.com /' >> ~/.ssh/known_hosts
+          echo "-----BEGIN OPENSSH PRIVATE KEY-----" >> ~/.ssh/id_rsa
+          echo ${{secrets.DEPLOY_KEY}} >> ~/.ssh/id_rsa
+          echo "-----END OPENSSH PRIVATE KEY-----" >> ~/.ssh/id_rsa
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           cd scripts
-          ./UploadSDK.cmd action
-        env:
-          DEPLOY_KEY: ${{secrets.DEPLOY_KEY}}
-        shell: cmd
+          cmd /c "UpdateSDK.cmd action"
+        shell: bash
 
       - name: Download LLMoney
         working-directory: ${{ env.GITHUB_WORKSPACE }}
