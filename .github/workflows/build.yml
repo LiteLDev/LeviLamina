@@ -104,8 +104,7 @@ jobs:
           cd scripts
           ./UploadSDK.cmd action
         env:
-          REPO_KEY: ${{secrets.PUSH_TOKEN}}
-          USERNAME: github-actions[bot]
+          DEPLOY_KEY: ${{secrets.DEPLOY_KEY}}
         shell: cmd
 
       - name: Download LLMoney

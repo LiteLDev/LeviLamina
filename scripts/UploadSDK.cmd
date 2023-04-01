@@ -78,8 +78,10 @@ if "%LL_SDK_NOW_STATUS%" neq "" (
         git push origin %LL_SDK_NOW_BRANCH%
         git push --tags origin %LL_SDK_NOW_BRANCH%
     ) else (
-        git push https://%USERNAME%:%REPO_KEY%@github.com/LiteLDev/SDK-CPP.git %LL_SDK_NOW_BRANCH%
-        git push --tags https://%USERNAME%:%REPO_KEY%@github.com/LiteLDev/SDK-CPP.git %LL_SDK_NOW_BRANCH%
+        mkdir ~\.ssh
+        echo %DEPLOY_KEY% > ~\.ssh\id_rsa
+        git push git@github.com:LiteLDev/SDK-CPP.git %LL_SDK_NOW_BRANCH%
+        git push --tags git@github.com:LiteLDev/SDK-CPP.git %LL_SDK_NOW_BRANCH%
     )
     cd ..
     echo.
