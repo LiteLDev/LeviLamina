@@ -100,6 +100,7 @@ jobs:
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           mkdir ~/.ssh
+          touch ~/.ssh/known_hosts
           ssh-keygen -R github.com
           curl -L https://api.github.com/meta | jq -r '.ssh_keys | .[]' | sed -e 's/^/github.com /' >> ~/.ssh/known_hosts
           echo "-----BEGIN OPENSSH PRIVATE KEY-----" >> ~/.ssh/id_rsa
