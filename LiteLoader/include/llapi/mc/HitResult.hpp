@@ -10,7 +10,7 @@
 // Include Headers or Declare Types Here
 #include "Vec3.hpp"
 #include "BlockPos.hpp"
-
+#include "WeakEntityRef.hpp"
 class StackResultStorageEntity;
 
 enum class HitResultType:int {
@@ -32,22 +32,18 @@ class HitResult {
 // Add Member There
 
     //char filler[112];
-    Vec3 startPos;       //0
-    Vec3 rayDir;         //12
-    HitResultType type;  //24
-    FaceID face;         //28
-    BlockPos endBpos;    //32
-    Vec3 endPos;         //44
-    uintptr_t actorRef; //56
-    uintptr_t unk64;
-    int unk72;
-    int unk76;           //76
-    bool hitLiquid;      //80
-    FaceID liquidFace;   //81
-    BlockPos liquidBpos; //84
-    Vec3 liquidPos;      //96
-    bool indirectHit;    //108
-    //112
+    Vec3 mStartPos;      // 0
+    Vec3 mRayDir;       // 12
+    HitResultType mType; // 24
+    FaceID mFace;      // 28
+    BlockPos mEndBlockPos;     // 32
+    Vec3 mEndPos;         //44
+    WeakEntityRef mEntity;
+    bool mIsHitLiquid;   // 80
+    FaceID mLiquidFace; // 81
+    BlockPos mLiquidBlockPos;    // 84
+    Vec3 mLiquidPos;     // 96
+    bool mIndirectHit;           // 108
 
 public:
     inline bool __fastcall isHit() {
