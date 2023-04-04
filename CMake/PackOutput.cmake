@@ -19,11 +19,3 @@ add_custom_command(
         COMMENT "Copying ScriptEngine BaseLib to output"
         VERBATIM
 )
-
-# Copy LLPeEditor to output after build all.
-add_custom_command(
-        TARGET PackOutput POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/Tools/LLPeEditor.exe ${CMAKE_BINARY_DIR}/output/
-        COMMENT "Copying LLPeEditor to output"
-        VERBATIM
-)

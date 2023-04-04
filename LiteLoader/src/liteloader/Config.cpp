@@ -135,7 +135,7 @@ void inline from_json(const nlohmann::json& j, LLConfig& conf) {
         if (modules.find("CrashLogger") != modules.end()) {
             const nlohmann::json& setting = modules.at("CrashLogger");
             conf.enableCrashLogger = setting.value("enabled", true);
-            conf.crashLoggerPath = setting.value("path", "plugins\\LiteLoader\\CrashLogger_Daemon.exe");
+            conf.crashLoggerPath = setting.value("path", "plugins\\LiteLoader\\CrashLogger.exe");
         }
         if (modules.find("SimpleServerLogger") != modules.end()) {
             const nlohmann::json& setting = modules.at("SimpleServerLogger");

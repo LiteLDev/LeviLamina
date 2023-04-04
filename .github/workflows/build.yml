@@ -46,7 +46,7 @@ jobs:
         run: |
           mkdir LiteLoader/lib
           cd tools
-          ./LLPeEditor.exe -l --pdb Server/bedrock_server.pdb -o ../LiteLoader/lib
+          ./PeEditor.exe -l --pdb Server/bedrock_server.pdb -o ../LiteLoader/lib
         shell: bash
 
       - name: Set LITELOADER_VERSION_COMMIT_SHA
@@ -95,6 +95,19 @@ jobs:
           rm -r LiteLoaderBDS-CUI
         shell: bash
 
+      - name: Download Dependencies
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          mkdir LL-Dependencies
+          git clone https://github.com/Tooth-Hub/LLMoney.git LL-Dependencies/LLMoney-bin
+          cp LL-Dependencies/LLMoney-bin/LLMoney.dll build/output/plugins/
+          git clone https://github.com/Tooth-Hub/CrashLogger.git LL-Dependencies/CrashLogger-bin
+          cp LL-Dependencies/CrashLogger-bin/CrashLogger.exe build/output/plugins/LiteLoader/
+          cp LL-Dependencies/CrashLogger-bin/*.dll build/output/plugins/LiteLoader/
+          git clone https://github.com/Tooth-Hub/PeEditor.git LL-Dependencies/PeEditor-bin
+          cp LL-Dependencies/PeEditor-bin/PeEditor.exe build/output/
+        shell: bash
+
       - name: Update C++ SDK on push event
         if: github.event_name == 'push'
         working-directory: ${{ env.GITHUB_WORKSPACE }}
@@ -112,25 +125,18 @@ jobs:
           cmd //c "UpdateSDK.cmd action"
         shell: bash
 
-      - name: Download LLMoney
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        run: |
-          git clone https://github.com/Tooth-Hub/LLMoney.git LLMoney-bin
-          cp LLMoney-bin/LLMoney.dll build/output/plugins/
-        shell: bash
-
       - name: Upload LiteLoaderBDS
         uses: actions/upload-artifact@v3.1.0
         with:
           name: LiteLoaderBDS
           path: |
-            ${{ github.workspace }}\build\output\LLPeEditor.exe
+            ${{ github.workspace }}\build\output\PeEditor.exe
             ${{ github.workspace }}\build\output\LLPreLoader.dll
             ${{ github.workspace }}\build\output\LiteLoader.dll
             ${{ github.workspace }}\build\output\plugins\LLMoney.dll
             ${{ github.workspace }}\build\output\plugins\lib\
             ${{ github.workspace }}\build\output\plugins\LiteLoader\LangPack\
-            ${{ github.workspace }}\build\output\plugins\LiteLoader\CrashLogger_Daemon.exe
+            ${{ github.workspace }}\build\output\plugins\LiteLoader\CrashLogger.exe
             ${{ github.workspace }}\build\output\plugins\LiteLoader\LiteLoader.*.dll
             ${{ github.workspace }}\build\output\plugins\LiteLoader\7z\
             ${{ github.workspace }}\build\output\plugins\LiteLoader\ParticleAPI.dll
