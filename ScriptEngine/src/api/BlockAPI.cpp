@@ -110,8 +110,8 @@ Block* BlockClass::extract(Local<Value> v) {
 
 // member function
 void BlockClass::preloadData(BlockPos bp, int dim) {
-    name = block->getTypeName(); // TODO
-    type = block->getTypeName();
+    name = block->getName(); // TODO
+    type = block->getName();
     id = block->getId();
     pos = {bp.x, bp.y, bp.z, dim};
 }

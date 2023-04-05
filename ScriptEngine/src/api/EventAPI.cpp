@@ -751,7 +751,7 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onRespawnAnchorExplode:
             Event::BlockExplodeEvent::subscribe([](const BlockExplodeEvent& ev) {
                 BlockInstance bl(ev.mBlockInstance);
-                if (bl.getBlock()->getTypeName() == "minecraft:respawn_anchor") {
+                if (bl.getBlock()->getName() == "minecraft:respawn_anchor") {
                     IF_LISTENED(EVENT_TYPES::onRespawnAnchorExplode) {
                         CallEvent(EVENT_TYPES::onRespawnAnchorExplode, IntPos::newPos(bl.getPosition(), bl.getDimensionId()),
                                   Local<Value>());
@@ -1135,7 +1135,7 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onBedExplode:
             Event::BlockExplodeEvent::subscribe([](const BlockExplodeEvent& ev) {
                 BlockInstance bl(ev.mBlockInstance);
-                if (bl.getBlock()->getTypeName() == "minecraft:bed") {
+                if (bl.getBlock()->getName() == "minecraft:bed") {
                     IF_LISTENED(EVENT_TYPES::onBedExplode) {
                         CallEvent(EVENT_TYPES::onBedExplode, IntPos::newPos(bl.getPosition(), bl.getDimensionId()));
                     }
