@@ -1044,7 +1044,7 @@ TInstanceHook(void, "?onProjectileHit@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@
     if ((blockPosPtr->x | blockPosPtr->y | blockPosPtr->z) == 0) // actor->getPos().distanceTo(blockPosPtr->center())>5)
         return original(this, blockSource, blockPosPtr, actor);
     IF_LISTENED(ProjectileHitBlockEvent) {
-        if (this->getTypeName() != "minecraft:air") {
+        if (this->getName() != "minecraft:air") {
             ProjectileHitBlockEvent ev{};
             ev.mBlockInstance = Level::getBlockInstance(blockPosPtr, blockSource);
             ev.mSource = actor;
@@ -1190,7 +1190,7 @@ TInstanceHook(bool, "?_attachedBlockWalker@PistonBlockActor@@AEAA_NAEAVBlockSour
     IF_LISTENED(PistonTryPushEvent) {
         PistonTryPushEvent ev{};
         ev.mTargetBlockInstance = Level::getBlockInstance(blockPosPtr, blockSource);
-        if (ev.mTargetBlockInstance.getBlock()->getTypeName() == "minecraft:air")
+        if (ev.mTargetBlockInstance.getBlock()->getName() == "minecraft:air")
             return original(this, blockSource, blockPosPtr, a3, a4);
 
         ev.mPistonBlockInstance = Level::getBlockInstance(this->getPosition(), blockSource);
@@ -1207,7 +1207,7 @@ TInstanceHook(bool, "?_attachedBlockWalker@PistonBlockActor@@AEAA_NAEAVBlockSour
     IF_LISTENED(PistonPushEvent) {
         PistonPushEvent ev{};
         ev.mTargetBlockInstance = Level::getBlockInstance(blockPosPtr, blockSource);
-        if (ev.mTargetBlockInstance.getBlock()->getTypeName() == "minecraft:air")
+        if (ev.mTargetBlockInstance.getBlock()->getName() == "minecraft:air")
             return true;
 
         ev.mPistonBlockInstance = Level::getBlockInstance(this->getPosition(), blockSource);
@@ -1292,7 +1292,7 @@ TInstanceHook(bool, "?_canSpreadTo@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AE
 //         ev.mTarget = *to;
 //         ev.mDimensionId = blockSource->getDimensionId();
 //         logger.warn("LiquidSpreadEvent - {} - {} -> {}",
-//                     ev.mBlockInstance.getBlock()->getTypeName(), from->toString(), to->toString());
+//                     ev.mBlockInstance.getBlock()->getName(), from->toString(), to->toString());
 //         if (!ev.call())
 //             return;
 //     }
@@ -1822,7 +1822,7 @@ TClasslessInstanceHook(void, "?releaseUsing@TridentItem@@UEBAXAEAVItemStack@@PEA
         ProjectileSpawnEvent ev{};
         ev.mShooter = a3;
         ev.mIdentifier = &identifier;
-        ev.mType = a2->getTypeName();
+        ev.mType = a2->getName();
 
         if (!ev.call())
             return;

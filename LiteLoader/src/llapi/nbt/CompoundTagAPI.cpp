@@ -146,7 +146,7 @@ std::unique_ptr<CompoundTag> CompoundTag::fromBlock(Block* block) {
 }
 
 void CompoundTag::setBlock(Block* block) {
-    const_cast<CompoundTag&>(block->getSerializationId()).deepCopy(*this);
+    const_cast<CompoundTag&>(block->getSerializationId()).deepCopy(const_cast<CompoundTag&>(*this));
 }
 
 std::unique_ptr<CompoundTag> CompoundTag::fromActor(Actor* actor) {
