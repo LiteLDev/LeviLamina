@@ -192,6 +192,9 @@ public:
     MCAPI bool contains(class std::basic_string_view<char, struct std::char_traits<char>>) const;
     /**
      * @symbol ?deepCopy\@CompoundTag\@\@QEAAXAEBV1\@\@Z
+     * @brief This function performs a deep copy of a CompoundTag object.
+     * @param[in] tag A constant reference to a CompoundTag object to be copied.
+     * @details A CompoundTag object contains a collection of key-value pairs, where each value can be of various data types. A deep copy of a CompoundTag object creates a new object with a separate memory location that contains the same values and structure as the original object. This function takes a constant reference to a CompoundTag object and performs a deep copy of it. The copied object is not shared with the original object and any changes made to the copied object will not affect the original object.
      */
     MCAPI void deepCopy(class CompoundTag const &);
     /**

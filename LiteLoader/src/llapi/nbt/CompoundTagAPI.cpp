@@ -142,13 +142,11 @@ void CompoundTag::setItemStack(ItemStack* item) {
 }
 
 std::unique_ptr<CompoundTag> CompoundTag::fromBlock(Block* block) {
-    auto tag = block->getSerializationId();
-    return tag.clone();
+    return block->getSerializationId().clone();
 }
 
-void CompoundTag::setBlock(Block* blk) {
-    auto tag = block->getSerializationId();
-    tag.deepCopy(*this);
+void CompoundTag::setBlock(Block* block) {
+    const_cast<CompoundTag&>(block->getSerializationId()).deepCopy(*this);
 }
 
 std::unique_ptr<CompoundTag> CompoundTag::fromActor(Actor* actor) {
