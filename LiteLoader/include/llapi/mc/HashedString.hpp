@@ -16,13 +16,17 @@
  *
  */
 class HashedString {
-
+#if _MSVC_LANG > 201703L
+#define HASHEDSTR_CONSTEXPR20 constexpr
+#else
+#define HASHEDSTR_CONSTEXPR20 inline
+#endif
 public:
     uint64_t hash;
     std::string str;
     class HashedString* lastMatch;
 
-    constexpr static unsigned long long computeHash(std::string_view str){
+    HASHEDSTR_CONSTEXPR20 static unsigned long long computeHash(std::string_view str){
         unsigned long long hash = 0xCBF29CE484222325ULL;
         for(char s : str){
             hash = s ^ (0x100000001B3ULL * hash);
@@ -31,28 +35,35 @@ public:
     }
     
     // Constructors
-    constexpr HashedString(std::nullptr_t = nullptr) noexcept : hash(0), lastMatch(nullptr) {}
+    HASHEDSTR_CONSTEXPR20 HashedString(std::nullptr_t = nullptr) noexcept : 
+        hash(0), lastMatch(nullptr) {}
     
-    constexpr HashedString(uint64_t h, const char* str) noexcept : hash(h), str(str), lastMatch(nullptr) {}
+    HASHEDSTR_CONSTEXPR20 HashedString(uint64_t h, const char* str) noexcept : 
+        hash(h), str(str), lastMatch(nullptr) {}
     
-    constexpr HashedString(const char* str) noexcept : hash(computeHash(str)), str(str), lastMatch(nullptr) {}
+    HASHEDSTR_CONSTEXPR20 HashedString(const char* str) noexcept : 
+        hash(computeHash(str)), str(str), lastMatch(nullptr) {}
     
-    constexpr HashedString(const std::string& str) noexcept : hash(computeHash(str)), str(str), lastMatch(nullptr) {}
+    HASHEDSTR_CONSTEXPR20 HashedString(const std::string& str) noexcept : 
+        hash(computeHash(str)), str(str), lastMatch(nullptr) {}
     
-    constexpr HashedString(const HashedString& other) noexcept : hash(other.hash), str(other.str), lastMatch(nullptr) {}
+    HASHEDSTR_CONSTEXPR20 HashedString(const HashedString& other) noexcept : 
+        hash(other.hash), str(other.str), lastMatch(nullptr) {}
     
-    constexpr HashedString(HashedString&& other) noexcept : hash(other.hash), str(std::move(other.str)), lastMatch(other.lastMatch) {
+    HASHEDSTR_CONSTEXPR20 HashedString(HashedString&& other) noexcept : 
+        hash(other.hash), str(std::move(other.str)), lastMatch(other.lastMatch) {
         other.hash = 0;
         other.lastMatch = nullptr;
     }
     
-    inline HashedString& operator=(const HashedString& other) noexcept {
+    HASHEDSTR_CONSTEXPR20 [[nodiscard]] HashedString& operator=(const HashedString& other) noexcept {
         hash = other.hash;
         str = other.str;
         lastMatch = nullptr;
         return *this;
     }
-    inline HashedString& operator=(HashedString&& other) noexcept {
+
+    HASHEDSTR_CONSTEXPR20 [[nodiscard]] HashedString& operator=(HashedString&& other) noexcept {
         hash = other.hash;
         str = std::move(other.str);
         lastMatch = other.lastMatch;
@@ -62,52 +73,54 @@ public:
     }
     
     // Accessors
-    constexpr const char* c_str() const noexcept {
+    inline [[nodiscard]] const char* c_str() const noexcept {
         return str.c_str();
     }
-    constexpr const std::string& getString() const noexcept {
+    HASHEDSTR_CONSTEXPR20 [[nodiscard]] const std::string& getString() const noexcept {
         return str;
     }
-    constexpr uint64_t getHash() const noexcept { 
+    HASHEDSTR_CONSTEXPR20 [[nodiscard]] uint64_t getHash() const noexcept { 
         return hash;
     }
-    constexpr bool isEmpty() const noexcept { 
+    HASHEDSTR_CONSTEXPR20 [[nodiscard]] bool isEmpty() const noexcept { 
         return str.empty(); 
     }
 
     // Mutators
-    inline void clear() noexcept { hash = 0; str.clear(); lastMatch = nullptr; }
+    HASHEDSTR_CONSTEXPR20 void clear() noexcept { hash = 0; str.clear(); lastMatch = nullptr; }
     
     // Operators
     template<typename StringType>
-    constexpr bool operator==(StringType const& rhs) const noexcept {
+    HASHEDSTR_CONSTEXPR20 [[nodiscard]] bool operator==(StringType const& rhs) const noexcept {
         return str == rhs;
     }
-    constexpr bool operator==(const HashedString& other) const noexcept { 
+    HASHEDSTR_CONSTEXPR20 [[nodiscard]] bool operator==(const HashedString& other) const noexcept { 
         return hash == other.hash;
     }
 
     template<typename StringType>
-    constexpr bool operator!=(StringType const& rhs) const noexcept {
+    HASHEDSTR_CONSTEXPR20 [[nodiscard]] bool operator!=(StringType const& rhs) const noexcept {
         return str != rhs;
     }
-    constexpr bool operator!=(const HashedString& other) const noexcept { 
+    HASHEDSTR_CONSTEXPR20 [[nodiscard]] bool operator!=(const HashedString& other) const noexcept { 
         return hash != other.hash;
     }
 
+#if _MSVC_LANG > 201703L
     template<typename StringType>
-    constexpr std::strong_ordering operator<(const StringType& other) const noexcept {
+    HASHEDSTR_CONSTEXPR20 std::strong_ordering operator<=>(const StringType& other) const noexcept {
         return str <=> other.str;
     }
-    constexpr std::strong_ordering operator<=>(const HashedString& other) const noexcept {
+    HASHEDSTR_CONSTEXPR20 std::strong_ordering operator<=>(const HashedString& other) const noexcept {
         return str <=> other.str;
     }
+#endif
 
     //Convertors
-    inline constexpr operator std::string() const {
+    inline operator std::string() const {
         return str;
     }
-    inline constexpr operator std::string_view() const {
+    inline operator std::string_view() const {
         return std::string_view(str);
     }
     /**
@@ -126,7 +139,8 @@ public:
      * @symbol  ?getEmptyString\@HashedString\@\@SAAEBV1\@XZ
      */
     MCAPI static class HashedString const & getEmptyString();
-
+    
+#undef HASHEDSTR_CONSTEXPR20
 };
 
 namespace std {
