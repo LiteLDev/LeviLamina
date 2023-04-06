@@ -41,8 +41,9 @@ public:
         return dAccess<unsigned short, 8>(this);
     }
 
+    [[deprecated("Use MCAPI getLegacyBlock() instead.")]]
     inline class BlockLegacy const* getLegacyBlockPtr() const {
-        return dAccess<BlockLegacy*, 16>(this);
+        return reinterpret_cast<class BlockLegacy const*>(&this->getLegacyBlock());
     }
 
     inline bool operator==(class Block const& block) const {
