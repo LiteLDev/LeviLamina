@@ -47,16 +47,16 @@ public:
     }
 
     inline bool operator==(class Block const& block) const {
-        class BlockLegacy const* p1 = getLegacyBlockPtr();
-        class BlockLegacy const* p2 = block.getLegacyBlockPtr();
+        class BlockLegacy const* p1 = &this->getLegacyBlock();
+        class BlockLegacy const* p2 = &block.getLegacyBlock();
         if (!p1 || !p2)
             return false;
         return p1 == p2 && getData() == block.getData();
     }
 
     inline bool operator!=(class Block const& block) const {
-        class BlockLegacy const* p1 = getLegacyBlockPtr();
-        class BlockLegacy const* p2 = block.getLegacyBlockPtr();
+        class BlockLegacy const* p1 = &this->getLegacyBlock();
+        class BlockLegacy const* p2 = &block.getLegacyBlock();
         if (!p1 || !p2)
             return false;
         return p1 != p2 || getData() != block.getData();
