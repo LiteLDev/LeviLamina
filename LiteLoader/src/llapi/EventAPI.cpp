@@ -9,6 +9,7 @@
 
 #include "llapi/mc/ActorDamageSource.hpp"
 #include "llapi/mc/BaseCommandBlock.hpp"
+#include "llapi/mc/BedrockBlocks.hpp"
 #include "llapi/mc/Block.hpp"
 #include "llapi/mc/BlockActor.hpp"
 #include "llapi/mc/BlockSource.hpp"
@@ -1044,7 +1045,7 @@ TInstanceHook(void, "?onProjectileHit@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@
     if ((blockPosPtr->x | blockPosPtr->y | blockPosPtr->z) == 0) // actor->getPos().distanceTo(blockPosPtr->center())>5)
         return original(this, blockSource, blockPosPtr, actor);
     IF_LISTENED(ProjectileHitBlockEvent) {
-        if (this->getName() != "minecraft:air") {
+        if (this != BedrockBlocks::mAir) {
             ProjectileHitBlockEvent ev{};
             ev.mBlockInstance = Level::getBlockInstance(blockPosPtr, blockSource);
             ev.mSource = actor;
@@ -1190,7 +1191,7 @@ TInstanceHook(bool, "?_attachedBlockWalker@PistonBlockActor@@AEAA_NAEAVBlockSour
     IF_LISTENED(PistonTryPushEvent) {
         PistonTryPushEvent ev{};
         ev.mTargetBlockInstance = Level::getBlockInstance(blockPosPtr, blockSource);
-        if (ev.mTargetBlockInstance.getBlock()->getName() == "minecraft:air")
+        if (ev.mTargetBlockInstance.getBlock() == BedrockBlocks::mAir)
             return original(this, blockSource, blockPosPtr, a3, a4);
 
         ev.mPistonBlockInstance = Level::getBlockInstance(this->getPosition(), blockSource);
@@ -1207,7 +1208,7 @@ TInstanceHook(bool, "?_attachedBlockWalker@PistonBlockActor@@AEAA_NAEAVBlockSour
     IF_LISTENED(PistonPushEvent) {
         PistonPushEvent ev{};
         ev.mTargetBlockInstance = Level::getBlockInstance(blockPosPtr, blockSource);
-        if (ev.mTargetBlockInstance.getBlock()->getName() == "minecraft:air")
+        if (ev.mTargetBlockInstance.getBlock() == BedrockBlocks::mAir)
             return true;
 
         ev.mPistonBlockInstance = Level::getBlockInstance(this->getPosition(), blockSource);
