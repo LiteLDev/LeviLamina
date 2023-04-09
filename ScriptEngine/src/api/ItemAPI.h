@@ -5,6 +5,7 @@
 
 //////////////////// Classes ////////////////////
 class ItemStack;
+
 class ItemClass : public ScriptClass {
 private:
     ItemStack* item;
@@ -33,6 +34,7 @@ public:
     Local<Value> getDamage();
     Local<Value> getAttackDamage();
     Local<Value> getMaxDamage();
+    Local<Value> getMaxStackSize();
     Local<Value> getLore();
 
     Local<Value> isArmorItem();
@@ -65,4 +67,5 @@ public:
 
     Local<Value> match(const Arguments& args);
 };
+
 extern ClassDefine<ItemClass> ItemClassBuilder;
