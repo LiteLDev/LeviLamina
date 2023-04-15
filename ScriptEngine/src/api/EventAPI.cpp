@@ -87,6 +87,7 @@ enum class EVENT_TYPES : int {
     onOpenInventory,
     /* Entity Events */
     onMobDie,
+    onDeathMessage,
     onMobHurt,
     onEntityExplode,
     onProjectileHitEntity,
@@ -861,6 +862,26 @@ void EnableEventListener(int eventId) {
                               (source ? EntityClass::newEntity(source) : Local<Value>()), Number::newNumber((int)ev.mDamageSource->getCause()));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onMobDie);
+            });
+            break;
+
+        case EVENT_TYPES::onDeathMessage:
+            Event::DeathMessageEvent::subscribe([](const DeathMessageEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onDeathMessage) {
+                    Actor* source = nullptr;
+                    if (ev.mDamageSource->isEntitySource()) {
+                        source = Level::getEntity(ev.mDamageSource->getDamagingEntityUniqueID());
+                        if (ev.mDamageSource->isChildEntitySource()) {
+                            source = source->getOwner();
+                        }    
+                    }
+                    Local<Array> arr = Array::newArray();
+                    for (auto& key : ev.mParameter) {
+                        arr.add(String::newString(key));
+                    }
+                    CallEvent(EVENT_TYPES::onDeathMessage, EntityClass::newEntity(ev.mActor), (source ? EntityClass::newEntity(source) : Local<Value>()), String::newString(ev.mDeathMessage), arr);
+                }
+                IF_LISTENED_END(EVENT_TYPES::onDeathMessage);
             });
             break;
 
