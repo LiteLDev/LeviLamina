@@ -306,6 +306,7 @@ DECLARE_EVENT_DATA(FormResponsePacketEvent);
 DECLARE_EVENT_DATA(ResourcePackInitEvent);
 DECLARE_EVENT_DATA(PlayerOpenInventoryEvent);
 DECLARE_EVENT_DATA(PlayerSwingEvent);
+DECLARE_EVENT_DATA(DeathMessageEvent);
 
 #define IF_LISTENED(EVENT)                                                                                             \
     if (EVENT::hasListener()) {                                                                                        \
@@ -2194,4 +2195,64 @@ TInstanceHook(void, "?openInventory@ServerPlayer@@UEAAXXZ", ServerPlayer) {
     }
     IF_LISTENED_END(PlayerOpenInventoryEvent)
     original(this);
+}
+
+#include "llapi/mc/ActorDamageByActorSource.hpp"
+#include "llapi/mc/ActorDamageByBlockSource.hpp"
+#include "llapi/mc/ActorDamageByChildActorSource.hpp"
+#define DRES struct std::pair<std::string, std::vector<std::string>>
+TInstanceHook(DRES, "?getDeathMessage@ActorDamageSource@@UEBA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@PEAVActor@@@Z", ActorDamageSource, string a1, Actor* a2) {
+    auto res = original(this, a1, a2);
+    IF_LISTENED(DeathMessageEvent) {
+        DeathMessageEvent ev{};
+        ev.mActor = a2;
+        ev.mDamageSource = this;
+        ev.mDeathMessage = res.first;
+        ev.mParameter = res.second;
+        ev.call();
+    }
+    IF_LISTENED_END(DeathMessageEvent)
+    return res;
+}
+
+TInstanceHook(DRES, "?getDeathMessage@ActorDamageByActorSource@@UEBA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@PEAVActor@@@Z", ActorDamageByActorSource, string a1, Actor* a2) {
+    auto res = original(this, a1, a2);
+    IF_LISTENED(DeathMessageEvent) {
+        DeathMessageEvent ev{};
+        ev.mActor = a2;
+        ev.mDamageSource = (ActorDamageSource*)this;
+        ev.mDeathMessage = res.first;
+        ev.mParameter = res.second;
+        ev.call();
+    }
+    IF_LISTENED_END(DeathMessageEvent)
+    return res;
+}
+
+TInstanceHook(DRES, "?getDeathMessage@ActorDamageByBlockSource@@UEBA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@PEAVActor@@@Z", ActorDamageByBlockSource, string a1, Actor* a2) {
+    auto res = original(this, a1, a2);
+    IF_LISTENED(DeathMessageEvent) {
+        DeathMessageEvent ev{};
+        ev.mActor = a2;
+        ev.mDamageSource = (ActorDamageSource*)this;
+        ev.mDeathMessage = res.first;
+        ev.mParameter = res.second;
+        ev.call();
+    }
+    IF_LISTENED_END(DeathMessageEvent)
+    return res;
+}
+
+TInstanceHook(DRES, "?getDeathMessage@ActorDamageByChildActorSource@@UEBA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@PEAVActor@@@Z", ActorDamageByChildActorSource, string a1, Actor* a2) {
+    auto res = original(this, a1, a2);
+    IF_LISTENED(DeathMessageEvent) {
+        DeathMessageEvent ev{};
+        ev.mActor = a2;
+        ev.mDamageSource = (ActorDamageSource*)this;
+        ev.mDeathMessage = res.first;
+        ev.mParameter = res.second;
+        ev.call();
+    }
+    IF_LISTENED_END(DeathMessageEvent)
+    return res;
 }

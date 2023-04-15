@@ -625,6 +625,14 @@ public:
     ActorDamageSource* mDamageSource = nullptr;
 };
 
+class DeathMessageEvent : public EventTemplate<DeathMessageEvent> {
+public:
+    Actor* mActor = nullptr;
+    ActorDamageSource* mDamageSource = nullptr;
+    std::string mDeathMessage;
+    std::vector<std::string> mParameter;
+};
+
 class ProjectileHitEntityEvent : public EventTemplate<ProjectileHitEntityEvent> {
 public:
     Actor* mTarget = nullptr;
