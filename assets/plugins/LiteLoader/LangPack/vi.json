@@ -29,11 +29,11 @@
         }
       },
       "bstats": {
-        "enabled": "bStats has been enabled, you can edit plugins/bStats/config.json to disable it"
+        "enabled": "bStats đã được bật, bạn có thể chỉnh sửa plugins/bStats/config.json để tắt nó"
       },
       "unpackResources": {
-        "begin": "Unpacking LiteLoaderBDS runtime resources. Please wait patiently...",
-        "end": "Unpacked."
+        "begin": "Giải nén tài nguyên thời gian LiteLoaderBDS. Xin hãy kiên nhẫn chờ đợi...",
+        "end": "Giải nén thành công."
       }
     },
     "antiAbnormalItem": {
@@ -221,7 +221,7 @@
         "created": "Không tìm thấy thư mục để chạy Node.js, tạo."
       },
       "initPythonDirectories": {
-        "created": "Python runtime directory no found, created."
+        "created": "Không tìm thấy thư mục thời gian chạy Python, đã tạo một cái mới."
       }
     },
     "notice": {
@@ -250,7 +250,7 @@
       "fail": "Không thể giải nén node_modules.tar"
     },
     "unzipPythonModules": {
-      "fail": "Failed to unzip python-env.zip"
+      "fail": "Không thể giải nén python-env.zip"
     }
   },
   "llse": {
@@ -296,10 +296,10 @@
           "done": "Đã cài đặt gói plugin {count} {type}."
         },
         "python": {
-          "ignored": "No pyproject.toml file found in directory {path}, ignored.",
+          "ignored": "Không tìm thấy tệp pyproject.toml trong thư mục {path}, đã bỏ qua.",
           "installPack": {
-            "start": "Found Python plugin pack \"{path}\"! Try installing...",
-            "fail": "Failed to install plugin pack {}, please check the source files!"
+            "start": "Đã tìm thấy gói plugin Python \"{path}\"! Đang thử cài đặt...",
+            "fail": "Không thể cài đặt gói plugin {}, vui lòng kiểm tra các tệp nguồn!"
           }
         }
       },
@@ -315,9 +315,9 @@
       },
       "python": {
         "executePipInstall": {
-          "start": "Executing \"pip install\" for plugin {name}...",
-          "success": "Pip finished successfully.",
-          "fail": "Error occurred. Exit code: {code}"
+          "start": "Đang thực thi \"pip install\" cho plugin {name}...",
+          "success": "Pip kết thúc thành công.",
+          "fail": "Xảy ra lỗi. Mã thoát: {code}"
         }
       }
     }
@@ -458,6 +458,18 @@
         },
         "noDesc": "[Không có mô tả]",
         "permissionNameExamples": "Ví dụ về tên quyền: 'Namespace:PermissionName', 'a:b:c:d_e_f.g'"
+      }
+    }
+  },
+  "llseapi": {
+    "require": {
+      "fail": "Plugin which is required by {0} not found.",
+      "success": "Plugin named {0} which is required by {1} loaded.",
+      "network": {
+        "fail": "Error occurred when download plugin which is required by {0}, http code: {1}"
+      },
+      "download": {
+        "success": "Download plugin which is required by {0} successfully, path {1}."
       }
     }
   }
