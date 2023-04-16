@@ -1253,6 +1253,7 @@ Local<Value> PlayerClass::isOP(const Arguments& args) {
 }
 
 #include <llapi/mc/UpdateAbilitiesPacket.hpp>
+#include <llapi/mc/MinecraftPackets.hpp>
 Local<Value> PlayerClass::setPermLevel(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
@@ -1268,8 +1269,15 @@ Local<Value> PlayerClass::setPermLevel(const Arguments& args) {
             RecordOperation(ENGINE_OWN_DATA()->pluginName, "Set Permission Level",
                             fmt::format("Set Player {} Permission Level as {}.", player->getRealName(), newPerm));
             player->setPermissions((CommandPermissionLevel)newPerm);
-            UpdateAbilitiesPacket pkt(player->getUniqueID(), player->getAbilities());
-            player->sendNetworkPacket(pkt);
+            UpdateAbilitiesPacket uPkt(player->getUniqueID(), player->getAbilities());
+            player->sendNetworkPacket(uPkt);
+            BinaryStream bs;
+            bs.writeUnsignedInt64(player->getUniqueID().id);
+            bs.writeVarInt((int)player->getPlayerPermissionLevel());
+            bs.writeUnsignedShort(114514);
+            auto rPkt = MinecraftPackets::createPacket(MinecraftPacketIds::RequestPermissions);
+            rPkt->read(bs);
+            player->sendNetworkPacket(*rPkt);
             res = true;
         }
         return Boolean::newBoolean(res);
