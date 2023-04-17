@@ -47,6 +47,10 @@ public:
      */
     MCAPI class BlockPos calculateConnectedPosition(class LegacyStructureSettings const &, class BlockPos const &, class LegacyStructureSettings const &, class BlockPos const &) const;
     /**
+     * @symbol ?finalizeBlockRules\@LegacyStructureTemplate\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVLegacyStructureSettings\@\@AEAVRandom\@\@\@Z
+     */
+    MCAPI void finalizeBlockRules(class BlockSource &, class BlockPos const &, class LegacyStructureSettings &, class Random &) const;
+    /**
      * @symbol ?getJigsawMarkers\@LegacyStructureTemplate\@\@QEBA?AV?$vector\@VJigsawStructureBlockInfo\@\@V?$allocator\@VJigsawStructureBlockInfo\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::vector<class JigsawStructureBlockInfo> getJigsawMarkers() const;

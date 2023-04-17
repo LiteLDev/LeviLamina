@@ -68,12 +68,12 @@ public:
     MCVAPI ~ResourcePackDataInfoPacket();
 #endif
     /**
-     * @symbol ??0ResourcePackDataInfoPacket\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@IH_K0_NW4PackType\@\@\@Z
-     */
-    MCAPI ResourcePackDataInfoPacket(std::string const &, unsigned int, int, unsigned __int64, std::string const &, bool, enum class PackType);
-    /**
      * @symbol ??0ResourcePackDataInfoPacket\@\@QEAA\@XZ
      */
     MCAPI ResourcePackDataInfoPacket();
+    /**
+     * @symbol ??0ResourcePackDataInfoPacket\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@IH_K0_NW4PackType\@\@\@Z
+     */
+    MCAPI ResourcePackDataInfoPacket(std::string const &, unsigned int, int, unsigned __int64, std::string const &, bool, enum class PackType);
 
 };

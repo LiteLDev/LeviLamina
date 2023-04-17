@@ -57,13 +57,13 @@ public:
      */
     MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor const &);
     /**
-     * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor &&);
-    /**
      * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@AEBVItemStackDescriptor\@\@\@Z
      */
     MCAPI NetworkItemStackDescriptor(class ItemStackDescriptor const &);
+    /**
+     * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor &&);
     /**
      * @symbol ?read\@NetworkItemStackDescriptor\@\@QEAAXAEAVReadOnlyBinaryStream\@\@\@Z
      */

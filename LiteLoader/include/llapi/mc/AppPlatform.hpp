@@ -715,6 +715,10 @@ public:
      */
     MCVAPI bool restartRequested();
     /**
+     * @symbol ?sendIntegrityCheckTelemetry\@AppPlatform\@\@UEAAXAEAVIMinecraftEventing\@\@\@Z
+     */
+    MCVAPI void sendIntegrityCheckTelemetry(class IMinecraftEventing &);
+    /**
      * @symbol ?setARVRPlatform\@AppPlatform\@\@UEAAXW4ARVRPlatform\@\@\@Z
      */
     MCVAPI void setARVRPlatform(enum class ARVRPlatform);

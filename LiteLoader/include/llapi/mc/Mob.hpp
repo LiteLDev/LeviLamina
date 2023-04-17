@@ -901,13 +901,13 @@ public:
      */
     MCAPI float getJumpEffectAmplifierValue();
     /**
-     * @symbol ?getJumpMultiplier\@Mob\@\@QEAAMAEBVIConstBlockSource\@\@\@Z
-     */
-    MCAPI float getJumpMultiplier(class IConstBlockSource const &);
-    /**
      * @symbol ?getJumpMultiplier\@Mob\@\@QEAAMXZ
      */
     MCAPI float getJumpMultiplier();
+    /**
+     * @symbol ?getJumpMultiplier\@Mob\@\@QEAAMAEBVIConstBlockSource\@\@\@Z
+     */
+    MCAPI float getJumpMultiplier(class IConstBlockSource const &);
     /**
      * @symbol ?getJumpPower\@Mob\@\@QEBAMXZ
      */

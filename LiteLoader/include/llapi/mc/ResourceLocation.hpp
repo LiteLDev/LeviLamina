@@ -31,6 +31,10 @@ public:
 
 public:
     /**
+     * @symbol ??0ResourceLocation\@\@QEAA\@AEBVPath\@Core\@\@W4ResourceFileSystem\@\@\@Z
+     */
+    MCAPI ResourceLocation(class Core::Path const &, enum class ResourceFileSystem);
+    /**
      * @symbol ??0ResourceLocation\@\@QEAA\@AEBVPath\@Core\@\@\@Z
      */
     MCAPI ResourceLocation(class Core::Path const &);
@@ -38,10 +42,6 @@ public:
      * @symbol ??0ResourceLocation\@\@QEAA\@XZ
      */
     MCAPI ResourceLocation();
-    /**
-     * @symbol ??0ResourceLocation\@\@QEAA\@AEBVPath\@Core\@\@W4ResourceFileSystem\@\@\@Z
-     */
-    MCAPI ResourceLocation(class Core::Path const &, enum class ResourceFileSystem);
     /**
      * @symbol ?getFullPath\@ResourceLocation\@\@QEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
@@ -70,5 +70,13 @@ public:
      * @symbol ?getEmptyLocation\@ResourceLocation\@\@SAAEBV1\@XZ
      */
     MCAPI static class ResourceLocation const & getEmptyLocation();
+
+//private:
+    /**
+     * @symbol ?_computeHashes\@ResourceLocation\@\@AEAAXXZ
+     */
+    MCAPI void _computeHashes();
+
+private:
 
 };

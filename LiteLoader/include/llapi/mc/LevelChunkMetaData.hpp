@@ -31,17 +31,9 @@ public:
      */
     MCAPI LevelChunkMetaData(class LevelChunkMetaData const &);
     /**
-     * @symbol ??0LevelChunkMetaData\@\@QEAA\@AEAVIDataInput\@\@\@Z
-     */
-    MCAPI LevelChunkMetaData(class IDataInput &);
-    /**
      * @symbol ?getCurrentHash\@LevelChunkMetaData\@\@QEBA_KXZ
      */
     MCAPI unsigned __int64 getCurrentHash() const;
-    /**
-     * @symbol ?serialize\@LevelChunkMetaData\@\@QEBAXAEAVIDataOutput\@\@\@Z
-     */
-    MCAPI void serialize(class IDataOutput &) const;
     /**
      * @symbol ??1LevelChunkMetaData\@\@QEAA\@XZ
      */

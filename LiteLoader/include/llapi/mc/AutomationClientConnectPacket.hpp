@@ -61,12 +61,12 @@ public:
     MCVAPI ~AutomationClientConnectPacket();
 #endif
     /**
-     * @symbol ??0AutomationClientConnectPacket\@\@QEAA\@XZ
-     */
-    MCAPI AutomationClientConnectPacket();
-    /**
      * @symbol ??0AutomationClientConnectPacket\@\@QEAA\@UWebSocketPacketData\@\@\@Z
      */
     MCAPI AutomationClientConnectPacket(struct WebSocketPacketData);
+    /**
+     * @symbol ??0AutomationClientConnectPacket\@\@QEAA\@XZ
+     */
+    MCAPI AutomationClientConnectPacket();
 
 };

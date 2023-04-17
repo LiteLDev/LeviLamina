@@ -183,10 +183,6 @@ public:
      */
     MCAPI bool _pingServerV4(std::string const &, int);
     /**
-     * @symbol ?_pingServerV6\@RakNetServerLocator\@\@AEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
-     */
-    MCAPI bool _pingServerV6(std::string const &, int);
-    /**
      * @symbol ?_setPingResponder\@RakNetServerLocator\@\@AEAAXAEBUAnnounceServerData\@1\@\@Z
      */
     MCAPI void _setPingResponder(struct RakNetServerLocator::AnnounceServerData const &);

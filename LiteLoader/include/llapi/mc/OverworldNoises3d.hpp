@@ -34,10 +34,6 @@ public:
      */
     MCAPI OverworldNoises3d(struct OverworldNoises3d const &);
     /**
-     * @symbol ?computeErosionAndDepth\@OverworldNoises3d\@\@QEBA?AU?$pair\@MM\@std\@\@VBlockPos\@\@\@Z
-     */
-    MCAPI struct std::pair<float, float> computeErosionAndDepth(class BlockPos) const;
-    /**
      * @symbol ?computeNoiseValues\@OverworldNoises3d\@\@QEBA?AUCacheEntry\@ChunkLocalNoiseCache\@\@AEBV?$DividedPos2d\@$03\@\@\@Z
      */
     MCAPI struct ChunkLocalNoiseCache::CacheEntry computeNoiseValues(class DividedPos2d<4> const &) const;
@@ -46,13 +42,13 @@ public:
      */
     MCAPI struct TerrainInfo computeOffsetAndFactor(class DividedPos2d<4> const &) const;
     /**
-     * @symbol ?sample\@OverworldNoises3d\@\@QEBA?AUTargetPoint\@\@VBlockPos\@\@\@Z
-     */
-    MCAPI struct TargetPoint sample(class BlockPos) const;
-    /**
      * @symbol ?sample\@OverworldNoises3d\@\@QEBA?AUTargetPoint\@\@HAEBUCacheEntry\@ChunkLocalNoiseCache\@\@\@Z
      */
     MCAPI struct TargetPoint sample(int, struct ChunkLocalNoiseCache::CacheEntry const &) const;
+    /**
+     * @symbol ?sample\@OverworldNoises3d\@\@QEBA?AUTargetPoint\@\@VBlockPos\@\@\@Z
+     */
+    MCAPI struct TargetPoint sample(class BlockPos) const;
     /**
      * @symbol ??1OverworldNoises3d\@\@QEAA\@XZ
      */

@@ -41,10 +41,6 @@ public:
      */
     MCAPI PackReport();
     /**
-     * @symbol ?getErrors\@PackReport\@\@QEBAAEBV?$vector\@V?$shared_ptr\@VPackError\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VPackError\@\@\@std\@\@\@2\@\@std\@\@XZ
-     */
-    MCAPI std::vector<class std::shared_ptr<class PackError>> const & getErrors() const;
-    /**
      * @symbol ?getIdentity\@PackReport\@\@QEBAAEBUPackIdVersion\@\@XZ
      */
     MCAPI struct PackIdVersion const & getIdentity() const;
@@ -65,10 +61,6 @@ public:
      */
     MCAPI enum class PackType getPackType() const;
     /**
-     * @symbol ?hasErrors\@PackReport\@\@QEAA_NW4PackErrorType\@\@\@Z
-     */
-    MCAPI bool hasErrors(enum class PackErrorType);
-    /**
      * @symbol ?hasErrors\@PackReport\@\@QEBA_NXZ
      */
     MCAPI bool hasErrors() const;
@@ -77,29 +69,9 @@ public:
      */
     MCAPI void serialize(class Json::Value &);
     /**
-     * @symbol ?setAttemptedUpgrade\@PackReport\@\@QEAAXXZ
-     */
-    MCAPI void setAttemptedUpgrade();
-    /**
-     * @symbol ?setIdentity\@PackReport\@\@QEAAXAEBUPackIdVersion\@\@\@Z
-     */
-    MCAPI void setIdentity(struct PackIdVersion const &);
-    /**
      * @symbol ?setLocation\@PackReport\@\@QEAAXAEBVResourceLocation\@\@\@Z
      */
     MCAPI void setLocation(class ResourceLocation const &);
-    /**
-     * @symbol ?setOriginalIdentity\@PackReport\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
-     */
-    MCAPI void setOriginalIdentity(std::string const &, std::string const &);
-    /**
-     * @symbol ?setPackType\@PackReport\@\@QEAAXW4PackType\@\@\@Z
-     */
-    MCAPI void setPackType(enum class PackType);
-    /**
-     * @symbol ?setUpgradeSuccess\@PackReport\@\@QEAAXXZ
-     */
-    MCAPI void setUpgradeSuccess();
     /**
      * @symbol ?wasUpgraded\@PackReport\@\@QEBA_NXZ
      */

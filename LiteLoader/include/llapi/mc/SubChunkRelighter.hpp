@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "SubChunkBrightnessStorage.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here

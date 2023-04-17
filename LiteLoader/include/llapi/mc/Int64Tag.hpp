@@ -35,6 +35,7 @@ public:
 public:
     class Int64Tag& operator=(class Int64Tag const &) = delete;
     Int64Tag(class Int64Tag const &) = delete;
+    Int64Tag() = delete;
 #endif
 
 public:
@@ -82,9 +83,5 @@ public:
      * @symbol ??0Int64Tag\@\@QEAA\@_J\@Z
      */
     MCAPI Int64Tag(__int64);
-    /**
-     * @symbol ??0Int64Tag\@\@QEAA\@XZ
-     */
-    MCAPI Int64Tag();
 
 };

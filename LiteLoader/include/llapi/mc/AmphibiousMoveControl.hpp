@@ -5,7 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "GenericMoveControl.hpp"
+#include "MoveControl.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +16,7 @@
  * @brief MC class AmphibiousMoveControl.
  *
  */
-class AmphibiousMoveControl : public GenericMoveControl {
+class AmphibiousMoveControl : public MoveControl {
 
 #define AFTER_EXTRA
 // Add Member There

@@ -34,7 +34,6 @@ public:
 public:
     class PlayerListEntry& operator=(class PlayerListEntry const &) = delete;
     PlayerListEntry(class PlayerListEntry const &) = delete;
-    PlayerListEntry() = delete;
 #endif
 
 public:
@@ -47,6 +46,10 @@ public:
      */
     MCAPI PlayerListEntry(class Player const &);
     /**
+     * @symbol ??0PlayerListEntry\@\@QEAA\@XZ
+     */
+    MCAPI PlayerListEntry();
+    /**
      * @symbol ?clone\@PlayerListEntry\@\@QEBA?AV1\@XZ
      */
     MCAPI class PlayerListEntry clone() const;
@@ -54,6 +57,18 @@ public:
      * @symbol ?read\@PlayerListEntry\@\@QEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
      */
     MCAPI bool read(class ReadOnlyBinaryStream &);
+    /**
+     * @symbol ?readRemove\@PlayerListEntry\@\@QEAAXAEAVReadOnlyBinaryStream\@\@\@Z
+     */
+    MCAPI void readRemove(class ReadOnlyBinaryStream &);
+    /**
+     * @symbol ?write\@PlayerListEntry\@\@QEBAXAEAVBinaryStream\@\@\@Z
+     */
+    MCAPI void write(class BinaryStream &) const;
+    /**
+     * @symbol ?writeRemove\@PlayerListEntry\@\@QEBAXAEAVBinaryStream\@\@\@Z
+     */
+    MCAPI void writeRemove(class BinaryStream &) const;
     /**
      * @symbol ??1PlayerListEntry\@\@QEAA\@XZ
      */

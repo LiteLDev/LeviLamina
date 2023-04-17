@@ -30,13 +30,13 @@ public:
 
 public:
     /**
-     * @symbol ?getCountToPickUp\@ShareableComponent\@\@QEBAHAEBVActor\@\@AEBVItemActor\@\@\@Z
-     */
-    MCAPI int getCountToPickUp(class Actor const &, class ItemActor const &) const;
-    /**
      * @symbol ?getCountToPickUp\@ShareableComponent\@\@QEBAHAEBVActor\@\@AEBVItemStack\@\@\@Z
      */
     MCAPI int getCountToPickUp(class Actor const &, class ItemStack const &) const;
+    /**
+     * @symbol ?getCountToPickUp\@ShareableComponent\@\@QEBAHAEBVActor\@\@AEBVItemActor\@\@\@Z
+     */
+    MCAPI int getCountToPickUp(class Actor const &, class ItemActor const &) const;
     /**
      * @symbol ?getSlotToSwap\@ShareableComponent\@\@QEBAHAEAVActor\@\@AEBVItemActor\@\@\@Z
      */

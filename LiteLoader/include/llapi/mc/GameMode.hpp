@@ -92,9 +92,9 @@ public:
     virtual bool useItem(class ItemStack &);
     /**
      * @vftbl 12
-     * @symbol ?useItemOn\@GameMode\@\@UEAA_NAEAVItemStack\@\@AEBVBlockPos\@\@EAEBVVec3\@\@PEBVBlock\@\@\@Z
+     * @symbol ?useItemOn\@GameMode\@\@UEAA?AVInteractionResult\@\@AEAVItemStack\@\@AEBVBlockPos\@\@EAEBVVec3\@\@PEBVBlock\@\@\@Z
      */
-    virtual bool useItemOn(class ItemStack &, class BlockPos const &, unsigned char, class Vec3 const &, class Block const *);
+    virtual class InteractionResult useItemOn(class ItemStack &, class BlockPos const &, unsigned char, class Vec3 const &, class Block const *);
     /**
      * @vftbl 13
      * @symbol ?interact\@GameMode\@\@UEAA_NAEAVActor\@\@AEBVVec3\@\@\@Z
@@ -125,12 +125,6 @@ public:
      * @symbol ?registerUpsellScreenCallback\@GameMode\@\@UEAAXV?$function\@$$A6AX_N\@Z\@std\@\@\@Z
      */
     virtual void registerUpsellScreenCallback(class std::function<void (bool)>);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEMODE
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~GameMode();
-#endif
     /**
      * @symbol ??0GameMode\@\@QEAA\@AEAVPlayer\@\@V?$unique_ptr\@UIGameModeTimer\@\@U?$default_delete\@UIGameModeTimer\@\@\@std\@\@\@std\@\@V?$unique_ptr\@UIGameModeMessenger\@\@U?$default_delete\@UIGameModeMessenger\@\@\@std\@\@\@3\@\@Z
      */
@@ -159,10 +153,6 @@ public:
      * @symbol ?getDestroyBlockPos\@GameMode\@\@QEBAAEBVBlockPos\@\@XZ
      */
     MCAPI class BlockPos const & getDestroyBlockPos() const;
-    /**
-     * @symbol ?getDestroyProgress\@GameMode\@\@QEAAMXZ
-     */
-    MCAPI float getDestroyProgress();
     /**
      * @symbol ?getDestroyRate\@GameMode\@\@QEAAMAEBVBlock\@\@\@Z
      */

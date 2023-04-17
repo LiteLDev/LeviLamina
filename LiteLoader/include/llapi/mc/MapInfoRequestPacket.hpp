@@ -61,17 +61,17 @@ public:
     MCVAPI ~MapInfoRequestPacket();
 #endif
     /**
-     * @symbol ??0MapInfoRequestPacket\@\@QEAA\@XZ
+     * @symbol ??0MapInfoRequestPacket\@\@QEAA\@UActorUniqueID\@\@AEAVMapItemSavedData\@\@\@Z
      */
-    MCAPI MapInfoRequestPacket();
+    MCAPI MapInfoRequestPacket(struct ActorUniqueID, class MapItemSavedData &);
     /**
      * @symbol ??0MapInfoRequestPacket\@\@QEAA\@UActorUniqueID\@\@\@Z
      */
     MCAPI MapInfoRequestPacket(struct ActorUniqueID);
     /**
-     * @symbol ??0MapInfoRequestPacket\@\@QEAA\@UActorUniqueID\@\@AEAVMapItemSavedData\@\@\@Z
+     * @symbol ??0MapInfoRequestPacket\@\@QEAA\@XZ
      */
-    MCAPI MapInfoRequestPacket(struct ActorUniqueID, class MapItemSavedData &);
+    MCAPI MapInfoRequestPacket();
     /**
      * @symbol ?getMapId\@MapInfoRequestPacket\@\@QEBA?AUActorUniqueID\@\@XZ
      */

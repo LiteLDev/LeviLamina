@@ -151,10 +151,6 @@ public:
      */
     MCAPI bool hasErrorMessage() const;
     /**
-     * @symbol ?hasPlayerText\@CommandOutput\@\@QEBA_NXZ
-     */
-    MCAPI bool hasPlayerText() const;
-    /**
      * @symbol ?load\@CommandOutput\@\@QEAAXW4CommandOutputType\@\@H$$QEAV?$vector\@VCommandOutputMessage\@\@V?$allocator\@VCommandOutputMessage\@\@\@std\@\@\@std\@\@$$QEAV?$unique_ptr\@VCommandPropertyBag\@\@U?$default_delete\@VCommandPropertyBag\@\@\@std\@\@\@4\@\@Z
      */
     MCAPI void load(enum class CommandOutputType, int, std::vector<class CommandOutputMessage> &&, std::unique_ptr<class CommandPropertyBag> &&);

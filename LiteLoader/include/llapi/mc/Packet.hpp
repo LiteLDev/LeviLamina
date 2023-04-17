@@ -71,20 +71,20 @@ public:
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual ~Packet();
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?getId\@ChangeMobPropertyPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @symbol ?getId\@ClientCheatAbilityPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const = 0;
     /**
      * @vftbl 2
-     * @symbol ?getName\@ChangeMobPropertyPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getName\@ClientCheatAbilityPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const = 0;
     /**
      * @vftbl 3
-     * @symbol ?write\@ChangeMobPropertyPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @symbol ?write\@ClientCheatAbilityPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const = 0;
     /**
@@ -104,7 +104,7 @@ public:
     virtual bool isValid() const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@ChangeMobPropertyPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@ClientCheatAbilityPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &) = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKET

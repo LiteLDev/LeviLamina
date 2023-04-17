@@ -217,7 +217,7 @@ public:
     virtual void destroy(class ActorDamageSource const &, bool);
     /**
      * @vftbl 277
-     * @symbol ?getType\@MinecartRideable\@\@UEAA?AW4MinecartType\@\@XZ
+     * @symbol ?getType\@MinecartChest\@\@UEAA?AW4MinecartType\@\@XZ
      */
     virtual enum class MinecartType getType() = 0;
     /**
@@ -275,10 +275,6 @@ public:
      * @symbol ?preNormalTick\@Minecart\@\@QEAA?AVBlockPos\@\@XZ
      */
     MCAPI class BlockPos preNormalTick();
-    /**
-     * @symbol ?setCustomDisplay\@Minecart\@\@QEAAX_N\@Z
-     */
-    MCAPI void setCustomDisplay(bool);
     /**
      * @symbol ?setDisplayBlock\@Minecart\@\@QEAAXAEBVBlock\@\@\@Z
      */

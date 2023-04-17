@@ -26,10 +26,6 @@ public:
 
 public:
     /**
-     * @symbol ??0ChunkBlender\@\@QEAA\@VChunkPos\@\@$$QEAV?$vector\@V?$array\@UAttenuationData\@ChunkBlenderUtil\@\@$03\@std\@\@V?$allocator\@V?$array\@UAttenuationData\@ChunkBlenderUtil\@\@$03\@std\@\@\@2\@\@std\@\@F\@Z
-     */
-    MCAPI ChunkBlender(class ChunkPos, std::vector<class std::array<struct ChunkBlenderUtil::AttenuationData, 4>> &&, short);
-    /**
      * @symbol ?attenuateDensity\@ChunkBlender\@\@QEBAMAEBV?$DividedPos2d\@$03\@\@HM\@Z
      */
     MCAPI float attenuateDensity(class DividedPos2d<4> const &, int, float) const;

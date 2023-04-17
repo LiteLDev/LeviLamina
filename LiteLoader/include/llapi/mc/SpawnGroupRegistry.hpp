@@ -58,61 +58,6 @@ public:
      */
     virtual void readResourceFiles(class ResourcePackManager &, class std::unordered_map<std::string, struct ActorSpawnRuleDefinition, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, struct ActorSpawnRuleDefinition>>> &);
     /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
-    virtual void __unk_vfn_5();
-    /**
-     * @vftbl 6
-     * @symbol __unk_vfn_6
-     */
-    virtual void __unk_vfn_6();
-    /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
-     */
-    virtual void __unk_vfn_7();
-    /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
-    /**
-     * @vftbl 9
-     * @symbol __unk_vfn_9
-     */
-    virtual void __unk_vfn_9();
-    /**
-     * @vftbl 10
-     * @symbol ?_Get\@?$_Func_impl_no_alloc\@V?$_Fake_no_copy_callable_adapter\@P8thread\@std\@\@EAAXXZPEAV12\@\@std\@\@X$$V\@std\@\@EEBAPEBXXZ
-     */
-    virtual void const * _Get() const;
-    /**
-     * @vftbl 11
-     * @symbol __unk_vfn_11
-     */
-    virtual void __unk_vfn_11();
-    /**
-     * @vftbl 12
-     * @symbol __unk_vfn_12
-     */
-    virtual void __unk_vfn_12();
-    /**
-     * @vftbl 13
-     * @symbol __unk_vfn_13
-     */
-    virtual void __unk_vfn_13();
-    /**
-     * @vftbl 14
-     * @symbol __unk_vfn_14
-     */
-    virtual void __unk_vfn_14();
-    /**
-     * @vftbl 15
-     * @symbol ?_Delete_this\@?$_Func_impl_no_alloc\@V?$_Fake_no_copy_callable_adapter\@P8thread\@std\@\@EAAXXZPEAV12\@\@std\@\@X$$V\@std\@\@EEAAX_N\@Z
-     */
-    virtual void _Delete_this(bool);
-    /**
      * @symbol ??0SpawnGroupRegistry\@\@QEAA\@AEAVResourcePackManager\@\@\@Z
      */
     MCAPI SpawnGroupRegistry(class ResourcePackManager &);

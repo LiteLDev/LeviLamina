@@ -84,17 +84,13 @@ public:
 
 //protected:
     /**
-     * @symbol ?_testValuesWithOperator\@FilterTest\@\@IEBA_N_N0\@Z
-     */
-    MCAPI bool _testValuesWithOperator(bool, bool) const;
-    /**
      * @symbol ?_testValuesWithOperator\@FilterTest\@\@IEBA_NMM\@Z
      */
     MCAPI bool _testValuesWithOperator(float, float) const;
     /**
-     * @symbol ?_testValuesWithOperator\@FilterTest\@\@IEBA_NAEBVHashedString\@\@0\@Z
+     * @symbol ?_testValuesWithOperator\@FilterTest\@\@IEBA_N_N0\@Z
      */
-    MCAPI bool _testValuesWithOperator(class HashedString const &, class HashedString const &) const;
+    MCAPI bool _testValuesWithOperator(bool, bool) const;
     /**
      * @symbol ?_testValuesWithOperator\@FilterTest\@\@IEBA_NHH\@Z
      */

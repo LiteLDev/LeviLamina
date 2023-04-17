@@ -22,6 +22,10 @@ namespace LevelDataKeys {
 
 #undef AFTER_EXTRA
     /**
+     * @symbol ?DAYLIGHT_CYCLE\@LevelDataKeys\@\@3VHashedString\@\@A
+     */
+    MCAPI extern class HashedString DAYLIGHT_CYCLE;
+    /**
      * @symbol ?EDUCATION_OID\@LevelDataKeys\@\@3VHashedString\@\@A
      */
     MCAPI extern class HashedString EDUCATION_OID;

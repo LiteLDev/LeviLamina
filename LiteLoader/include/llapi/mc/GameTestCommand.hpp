@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "gametest.hpp"
 #include "Command.hpp"
 
 #define BEFORE_EXTRA
@@ -67,9 +68,9 @@ public:
      */
     MCAPI void _handleRunNearbyTests(class MinecraftGameTest &, class BlockSource &, class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @symbol ?_handleRunSet\@GameTestCommand\@\@AEBAXAEAVMinecraftGameTest\@\@AEAVBlockSource\@\@AEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @symbol ?_handleRunSet\@GameTestCommand\@\@AEBAXAEAVMinecraftGameTest\@\@AEAVBlockSource\@\@AEBVCommandOrigin\@\@AEAVCommandOutput\@\@_N\@Z
      */
-    MCAPI void _handleRunSet(class MinecraftGameTest &, class BlockSource &, class CommandOrigin const &, class CommandOutput &) const;
+    MCAPI void _handleRunSet(class MinecraftGameTest &, class BlockSource &, class CommandOrigin const &, class CommandOutput &, bool) const;
     /**
      * @symbol ?_handleRunThis\@GameTestCommand\@\@AEBAXAEAVMinecraftGameTest\@\@AEAVBlockSource\@\@AEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */

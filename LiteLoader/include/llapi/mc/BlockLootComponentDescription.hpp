@@ -11,15 +11,15 @@
 #undef BEFORE_EXTRA
 
 
-class BlockLootComponentDescription {
+struct BlockLootComponentDescription {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKLOOTCOMPONENTDESCRIPTION
 public:
-    class BlockLootComponentDescription& operator=(class BlockLootComponentDescription const &) = delete;
-    BlockLootComponentDescription(class BlockLootComponentDescription const &) = delete;
+    struct BlockLootComponentDescription& operator=(struct BlockLootComponentDescription const &) = delete;
+    BlockLootComponentDescription(struct BlockLootComponentDescription const &) = delete;
     BlockLootComponentDescription() = delete;
 #endif
 
@@ -47,9 +47,5 @@ public:
      * @symbol ?bindType\@BlockLootComponentDescription\@\@SAXXZ
      */
     MCAPI static void bindType();
-    /**
-     * @symbol ?registerVersionUpgrades\@BlockLootComponentDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
-     */
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

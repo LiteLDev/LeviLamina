@@ -35,10 +35,6 @@ public:
      */
     MCAPI ZlibFileAccessWrapper(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>>);
     /**
-     * @symbol ?getZipFunctions\@ZlibFileAccessWrapper\@\@QEBAPEAUzlib_filefunc64_32_def_s\@\@XZ
-     */
-    MCAPI struct zlib_filefunc64_32_def_s * getZipFunctions() const;
-    /**
      * @symbol ??1ZlibFileAccessWrapper\@\@QEAA\@XZ
      */
     MCAPI ~ZlibFileAccessWrapper();

@@ -37,6 +37,10 @@ public:
      */
     MCAPI void addChunkLoadedRequest(class ChunkLoadedRequest, std::string const &, enum class ChunksLoadedStatus, class LevelStorage &);
     /**
+     * @symbol ?loadRequest\@ChunkLoadActionList\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVCompoundTag\@\@AEAVICommandOriginLoader\@\@0\@Z
+     */
+    MCAPI void loadRequest(std::string const &, class CompoundTag const &, class ICommandOriginLoader &, std::string const &);
+    /**
      * @symbol ?loadRequests\@ChunkLoadActionList\@\@QEAAXAEAVLevelStorage\@\@AEAVICommandOriginLoader\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void loadRequests(class LevelStorage &, class ICommandOriginLoader &, std::string const &);

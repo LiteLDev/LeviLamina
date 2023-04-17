@@ -12,7 +12,7 @@
 #undef BEFORE_EXTRA
 
 
-class ActorMapping {
+struct ActorMapping {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -20,8 +20,8 @@ class ActorMapping {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORMAPPING
 public:
-    class ActorMapping& operator=(class ActorMapping const &) = delete;
-    ActorMapping(class ActorMapping const &) = delete;
+    struct ActorMapping& operator=(struct ActorMapping const &) = delete;
+    ActorMapping(struct ActorMapping const &) = delete;
     ActorMapping() = delete;
 #endif
 

@@ -242,11 +242,6 @@ public:
      */
     virtual void travel(float, float, float, bool);
     /**
-     * @vftbl 288
-     * @symbol ?aiStep\@Horse\@\@UEAAXXZ
-     */
-    virtual void aiStep();
-    /**
      * @vftbl 301
      * @symbol __unk_vfn_301
      */
@@ -303,16 +298,11 @@ public:
     virtual bool isMouthOpen() const;
     /**
      * @vftbl 360
-     * @symbol ?isTailMoving\@Horse\@\@UEBA_NXZ
-     */
-    virtual bool isTailMoving() const;
-    /**
-     * @vftbl 361
      * @symbol ?makeMad\@Horse\@\@UEAAXXZ
      */
     virtual void makeMad();
     /**
-     * @vftbl 362
+     * @vftbl 361
      * @symbol ?tameToPlayer\@Horse\@\@UEAA_NAEAVPlayer\@\@_N\@Z
      */
     virtual bool tameToPlayer(class Player &, bool);
@@ -337,13 +327,13 @@ public:
      */
     MCAPI void postTravel(class Actor *, bool, enum class HorsePostTravelType);
     /**
-     * @symbol ?getInterpolatedRidingOffset\@Horse\@\@SA?AVVec3\@\@AEBVVec2\@\@MMM\@Z
-     */
-    MCAPI static class Vec3 getInterpolatedRidingOffset(class Vec2 const &, float, float, float);
-    /**
      * @symbol ?getInterpolatedRidingOffset\@Horse\@\@SA?AVVec3\@\@AEBURenderRotationComponent\@\@AEBUStandAnimationComponent\@\@M\@Z
      */
     MCAPI static class Vec3 getInterpolatedRidingOffset(struct RenderRotationComponent const &, struct StandAnimationComponent const &, float);
+    /**
+     * @symbol ?getInterpolatedRidingOffset\@Horse\@\@SA?AVVec3\@\@AEBVVec2\@\@MMM\@Z
+     */
+    MCAPI static class Vec3 getInterpolatedRidingOffset(class Vec2 const &, float, float, float);
     /**
      * @symbol ?getNewPassengerPos\@Horse\@\@SA?AVVec3\@\@AEBURenderPositionComponent\@\@AEBURenderRotationComponent\@\@AEBUStandAnimationComponent\@\@MM\@Z
      */

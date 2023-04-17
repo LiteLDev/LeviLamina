@@ -25,6 +25,7 @@ class AppPlatformWindows {
 public:
     class AppPlatformWindows& operator=(class AppPlatformWindows const &) = delete;
     AppPlatformWindows(class AppPlatformWindows const &) = delete;
+    AppPlatformWindows() = delete;
 #endif
 
 public:
@@ -102,10 +103,6 @@ public:
      */
     MCVAPI ~AppPlatformWindows();
 #endif
-    /**
-     * @symbol ??0AppPlatformWindows\@\@QEAA\@XZ
-     */
-    MCAPI AppPlatformWindows();
     /**
      * @symbol ?EXPERIMENTS_ACTIVE_KEY\@AppPlatformWindows\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */

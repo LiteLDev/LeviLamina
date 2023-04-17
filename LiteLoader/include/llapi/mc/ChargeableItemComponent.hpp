@@ -67,14 +67,6 @@ public:
      */
     MCAPI float getMovementModifier() const;
     /**
-     * @symbol ?use\@ChargeableItemComponent\@\@QEBA_NAEAVItemStack\@\@AEAVPlayer\@\@\@Z
-     */
-    MCAPI bool use(class ItemStack &, class Player &) const;
-    /**
-     * @symbol ?useTimeDepleted\@ChargeableItemComponent\@\@QEBAXAEAVItemStack\@\@AEAVPlayer\@\@AEAVLevel\@\@\@Z
-     */
-    MCAPI void useTimeDepleted(class ItemStack &, class Player &, class Level &) const;
-    /**
      * @symbol ?bindType\@ChargeableItemComponent\@\@SAXXZ
      */
     MCAPI static void bindType();

@@ -168,9 +168,9 @@ public:
      */
     MCAPI void _checkMapRemoval(class BlockSource &, class ItemInstance &);
     /**
-     * @symbol ?_updateBit\@ItemFrameBlockActor\@\@AEAAXAEAVBlockSource\@\@AEBV?$ItemStateVariant\@_N\@\@AEBVHashedString\@\@\@Z
+     * @symbol ?_updateBit\@ItemFrameBlockActor\@\@AEAAXAEAVBlockSource\@\@AEBV?$BlockStateVariant\@_N\@\@AEBVHashedString\@\@\@Z
      */
-    MCAPI void _updateBit(class BlockSource &, class ItemStateVariant<bool> const &, class HashedString const &);
+    MCAPI void _updateBit(class BlockSource &, class BlockStateVariant<bool> const &, class HashedString const &);
 
 private:
 

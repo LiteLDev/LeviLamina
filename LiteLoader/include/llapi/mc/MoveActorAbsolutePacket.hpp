@@ -61,12 +61,12 @@ public:
     MCVAPI ~MoveActorAbsolutePacket();
 #endif
     /**
-     * @symbol ??0MoveActorAbsolutePacket\@\@QEAA\@XZ
-     */
-    MCAPI MoveActorAbsolutePacket();
-    /**
      * @symbol ??0MoveActorAbsolutePacket\@\@QEAA\@AEBVMoveActorAbsoluteData\@\@\@Z
      */
     MCAPI MoveActorAbsolutePacket(class MoveActorAbsoluteData const &);
+    /**
+     * @symbol ??0MoveActorAbsolutePacket\@\@QEAA\@XZ
+     */
+    MCAPI MoveActorAbsolutePacket();
 
 };

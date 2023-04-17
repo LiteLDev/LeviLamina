@@ -46,13 +46,13 @@ public:
      */
     MCAPI Path();
     /**
-     * @symbol ?currentPos\@Path\@\@QEBAAEBVBlockPos\@\@XZ
-     */
-    MCAPI class BlockPos const & currentPos() const;
-    /**
      * @symbol ?currentPos\@Path\@\@QEBA?AVVec3\@\@PEBVActor\@\@\@Z
      */
     MCAPI class Vec3 currentPos(class Actor const *) const;
+    /**
+     * @symbol ?currentPos\@Path\@\@QEBAAEBVBlockPos\@\@XZ
+     */
+    MCAPI class BlockPos const & currentPos() const;
     /**
      * @symbol ?endsInXZ\@Path\@\@QEAA_NAEBVVec3\@\@\@Z
      */

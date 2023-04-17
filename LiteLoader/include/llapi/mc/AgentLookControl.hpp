@@ -25,6 +25,7 @@ class AgentLookControl {
 public:
     class AgentLookControl& operator=(class AgentLookControl const &) = delete;
     AgentLookControl(class AgentLookControl const &) = delete;
+    AgentLookControl() = delete;
 #endif
 
 public:
@@ -43,10 +44,6 @@ public:
      * @symbol ?tick\@AgentLookControl\@\@UEAAXAEAVMob\@\@\@Z
      */
     virtual void tick(class Mob &);
-    /**
-     * @symbol ??0AgentLookControl\@\@QEAA\@XZ
-     */
-    MCAPI AgentLookControl();
     /**
      * @symbol ?sBaseYMax\@AgentLookControl\@\@2MA
      */

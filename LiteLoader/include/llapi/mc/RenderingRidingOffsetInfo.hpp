@@ -11,15 +11,15 @@
 #undef BEFORE_EXTRA
 
 
-class RenderingRidingOffsetInfo {
+struct RenderingRidingOffsetInfo {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RENDERINGRIDINGOFFSETINFO
 public:
-    class RenderingRidingOffsetInfo& operator=(class RenderingRidingOffsetInfo const &) = delete;
-    RenderingRidingOffsetInfo(class RenderingRidingOffsetInfo const &) = delete;
+    struct RenderingRidingOffsetInfo& operator=(struct RenderingRidingOffsetInfo const &) = delete;
+    RenderingRidingOffsetInfo(struct RenderingRidingOffsetInfo const &) = delete;
     RenderingRidingOffsetInfo() = delete;
 #endif
 

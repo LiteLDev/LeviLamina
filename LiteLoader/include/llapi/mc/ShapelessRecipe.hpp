@@ -37,9 +37,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?assemble\@ShapelessRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@\@Z
+     * @symbol ?assemble\@ShapelessRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@AEBUCraftingContext\@\@\@Z
      */
-    virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
+    virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &, struct CraftingContext const &) const;
     /**
      * @vftbl 2
      * @symbol ?getCraftingSize\@ShapelessRecipe\@\@UEBAHXZ
@@ -57,9 +57,9 @@ public:
     virtual std::vector<class ItemInstance> const & getResultItem() const;
     /**
      * @vftbl 5
-     * @symbol ?isShapeless\@ShapelessRecipe\@\@UEBA_NXZ
+     * @symbol __unk_vfn_5
      */
-    virtual bool isShapeless() const;
+    virtual void __unk_vfn_5();
     /**
      * @vftbl 6
      * @symbol ?matches\@ShapelessRecipe\@\@UEBA_NAEAVCraftingContainer\@\@AEAVLevel\@\@\@Z
@@ -71,11 +71,15 @@ public:
      */
     virtual int size() const;
     /**
-     * @vftbl 14
+     * @vftbl 15
      * @symbol ?loadResultList\@ShapelessRecipe\@\@UEBAXAEBVBlockPalette\@\@\@Z
      */
     virtual void loadResultList(class BlockPalette const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHAPELESSRECIPE
+    /**
+     * @symbol ?isShapeless\@ShapelessRecipe\@\@UEBA_NXZ
+     */
+    MCVAPI bool isShapeless() const;
     /**
      * @symbol __unk_destructor_-1
      */
@@ -85,9 +89,5 @@ public:
      * @symbol ??0ShapelessRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@AEBV?$vector\@VRecipeIngredient\@\@V?$allocator\@VRecipeIngredient\@\@\@std\@\@\@2\@AEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@2\@VHashedString\@\@HPEBVUUID\@mce\@\@V?$optional\@VRecipeUnlockingRequirement\@\@\@2\@\@Z
      */
     MCAPI ShapelessRecipe(class std::basic_string_view<char, struct std::char_traits<char>>, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString, int, class mce::UUID const *, class std::optional<class RecipeUnlockingRequirement>);
-    /**
-     * @symbol ?generateUUID\@ShapelessRecipe\@\@QEAAXXZ
-     */
-    MCAPI void generateUUID();
 
 };

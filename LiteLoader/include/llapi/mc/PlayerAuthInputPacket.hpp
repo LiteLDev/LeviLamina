@@ -68,13 +68,13 @@ public:
     MCVAPI ~PlayerAuthInputPacket();
 #endif
     /**
-     * @symbol ??0PlayerAuthInputPacket\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI PlayerAuthInputPacket(class PlayerAuthInputPacket &&);
-    /**
      * @symbol ??0PlayerAuthInputPacket\@\@QEAA\@XZ
      */
     MCAPI PlayerAuthInputPacket();
+    /**
+     * @symbol ??0PlayerAuthInputPacket\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI PlayerAuthInputPacket(class PlayerAuthInputPacket &&);
     /**
      * @symbol ?getInput\@PlayerAuthInputPacket\@\@QEBA_NW4InputData\@1\@\@Z
      */

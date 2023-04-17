@@ -54,9 +54,5 @@ public:
      * @symbol ?computeSecret\@PrivateKeyManager\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVKeyManager\@\@\@Z
      */
     MCAPI std::string computeSecret(class KeyManager const &) const;
-    /**
-     * @symbol ?sign\@PrivateKeyManager\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@W4HashType\@Hash\@Crypto\@\@\@Z
-     */
-    MCAPI std::string sign(std::string const &, enum class Crypto::Hash::HashType) const;
 
 };

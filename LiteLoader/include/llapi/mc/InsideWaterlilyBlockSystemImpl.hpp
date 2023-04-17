@@ -31,5 +31,13 @@ public:
      * @symbol ?_tickMovementSystem\@InsideWaterlilyBlockSystemImpl\@\@SAXAEBVStrictEntityContext\@\@AEBU?$InsideBlockWithPosComponent\@UWaterlilyBlockFlag\@\@\@\@AEAUStateVectorComponent\@\@\@Z
      */
     MCAPI static void _tickMovementSystem(class StrictEntityContext const &, struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag> const &, struct StateVectorComponent &);
+    /**
+     * @symbol ?tickDestroyWaterlilySystem\@InsideWaterlilyBlockSystemImpl\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UBoatFlag\@\@\@\@\@\@$$CBU?$InsideBlockWithPosComponent\@UWaterlilyBlockFlag\@\@\@\@VActorOwnerComponent\@\@\@\@\@Z
+     */
+    MCAPI static void tickDestroyWaterlilySystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct BoatFlag>>, struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag> const, class ActorOwnerComponent>);
+    /**
+     * @symbol ?tickMovementSystem\@InsideWaterlilyBlockSystemImpl\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UBoatFlag\@\@\@\@\@\@$$CBU?$InsideBlockWithPosComponent\@UWaterlilyBlockFlag\@\@\@\@UStateVectorComponent\@\@\@\@\@Z
+     */
+    MCAPI static void tickMovementSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct BoatFlag>>, struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag> const, struct StateVectorComponent>);
 
 };

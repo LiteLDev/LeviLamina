@@ -13,15 +13,15 @@
 #undef BEFORE_EXTRA
 
 
-class InternalItemDescriptor {
+struct InternalItemDescriptor {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTERNALITEMDESCRIPTOR
 public:
-    class InternalItemDescriptor& operator=(class InternalItemDescriptor const &) = delete;
-    InternalItemDescriptor(class InternalItemDescriptor const &) = delete;
+    struct InternalItemDescriptor& operator=(struct InternalItemDescriptor const &) = delete;
+    InternalItemDescriptor(struct InternalItemDescriptor const &) = delete;
     InternalItemDescriptor() = delete;
 #endif
 

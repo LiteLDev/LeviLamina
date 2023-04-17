@@ -69,7 +69,7 @@ public:
     virtual void removeContentChangeListener(class ContainerContentChangeListener *);
     /**
      * @vftbl 5
-     * @symbol ?getItem\@FillingContainer\@\@UEBAAEBVItemStack\@\@H\@Z
+     * @symbol ?getItem\@SimpleContainer\@\@UEBAAEBVItemStack\@\@H\@Z
      */
     virtual class ItemStack const & getItem(int) const = 0;
     /**
@@ -84,84 +84,84 @@ public:
     virtual bool addItem(class ItemStack &);
     /**
      * @vftbl 8
+     * @symbol ?addItemWithForceBalance\@Container\@\@UEAA_NAEAVItemStack\@\@\@Z
+     */
+    virtual bool addItemWithForceBalance(class ItemStack &);
+    /**
+     * @vftbl 9
      * @symbol ?addItemToFirstEmptySlot\@Container\@\@UEAA_NAEBVItemStack\@\@\@Z
      */
     virtual bool addItemToFirstEmptySlot(class ItemStack const &);
     /**
-     * @vftbl 9
+     * @vftbl 10
      * @symbol ?setItem\@Inventory\@\@UEAAXHAEBVItemStack\@\@\@Z
      */
     virtual void setItem(int, class ItemStack const &) = 0;
     /**
-     * @vftbl 10
+     * @vftbl 11
      * @symbol ?setItemWithForceBalance\@Container\@\@UEAAXHAEBVItemStack\@\@_N\@Z
      */
     virtual void setItemWithForceBalance(int, class ItemStack const &, bool);
     /**
-     * @vftbl 11
+     * @vftbl 12
      * @symbol ?removeItem\@Container\@\@UEAAXHH\@Z
      */
     virtual void removeItem(int, int);
     /**
-     * @vftbl 12
+     * @vftbl 13
      * @symbol ?removeAllItems\@Container\@\@UEAAXXZ
      */
     virtual void removeAllItems();
     /**
-     * @vftbl 13
+     * @vftbl 14
      * @symbol ?dropContents\@Container\@\@UEAAXAEAVBlockSource\@\@AEBVVec3\@\@_N\@Z
      */
     virtual void dropContents(class BlockSource &, class Vec3 const &, bool);
     /**
-     * @vftbl 14
+     * @vftbl 15
      * @symbol ?getContainerSize\@FillingContainer\@\@UEBAHXZ
      */
     virtual int getContainerSize() const = 0;
     /**
-     * @vftbl 15
+     * @vftbl 16
      * @symbol ?getMaxStackSize\@SimpleContainer\@\@UEBAHXZ
      */
     virtual int getMaxStackSize() const = 0;
     /**
-     * @vftbl 16
+     * @vftbl 17
      * @symbol ?startOpen\@FillingContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
     virtual void startOpen(class Player &) = 0;
     /**
-     * @vftbl 17
+     * @vftbl 18
      * @symbol ?stopOpen\@CraftingContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
     virtual void stopOpen(class Player &) = 0;
     /**
-     * @vftbl 18
+     * @vftbl 19
      * @symbol ?getSlotCopies\@Container\@\@UEBA?AV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::vector<class ItemStack> getSlotCopies() const;
     /**
-     * @vftbl 19
+     * @vftbl 20
      * @symbol ?getSlots\@Container\@\@UEBA?BV?$vector\@PEBVItemStack\@\@V?$allocator\@PEBVItemStack\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::vector<class ItemStack const *> const getSlots() const;
     /**
-     * @vftbl 20
+     * @vftbl 21
      * @symbol ?getEmptySlotsCount\@Container\@\@UEBAHXZ
      */
     virtual int getEmptySlotsCount() const;
     /**
-     * @vftbl 21
+     * @vftbl 22
      * @symbol ?getItemCount\@Container\@\@UEBAHAEBVItemStack\@\@\@Z
      */
     virtual int getItemCount(class ItemStack const &) const;
     /**
-     * @vftbl 22
+     * @vftbl 23
      * @symbol ?findFirstSlotForItem\@Container\@\@UEBAHAEBVItemStack\@\@\@Z
      */
     virtual int findFirstSlotForItem(class ItemStack const &) const;
-    /**
-     * @vftbl 23
-     * @symbol __unk_vfn_23
-     */
-    virtual void __unk_vfn_23();
     /**
      * @vftbl 24
      * @symbol __unk_vfn_24
@@ -169,46 +169,51 @@ public:
     virtual void __unk_vfn_24();
     /**
      * @vftbl 25
+     * @symbol __unk_vfn_25
+     */
+    virtual void __unk_vfn_25();
+    /**
+     * @vftbl 26
      * @symbol ?setContainerChanged\@Container\@\@UEAAXH\@Z
      */
     virtual void setContainerChanged(int);
     /**
-     * @vftbl 26
+     * @vftbl 27
      * @symbol ?setContainerMoved\@Container\@\@UEAAXXZ
      */
     virtual void setContainerMoved();
     /**
-     * @vftbl 27
+     * @vftbl 28
      * @symbol ?setCustomName\@Container\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void setCustomName(std::string const &);
     /**
-     * @vftbl 28
+     * @vftbl 29
      * @symbol ?hasCustomName\@Container\@\@UEBA_NXZ
      */
     virtual bool hasCustomName() const;
     /**
-     * @vftbl 29
+     * @vftbl 30
      * @symbol ?readAdditionalSaveData\@Container\@\@UEAAXAEBVCompoundTag\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &);
     /**
-     * @vftbl 30
+     * @vftbl 31
      * @symbol ?addAdditionalSaveData\@Container\@\@UEAAXAEAVCompoundTag\@\@\@Z
      */
     virtual void addAdditionalSaveData(class CompoundTag &);
     /**
-     * @vftbl 31
+     * @vftbl 32
      * @symbol ?createTransactionContext\@Container\@\@UEAAXV?$function\@$$A6AXAEAVContainer\@\@HAEBVItemStack\@\@1\@Z\@std\@\@V?$function\@$$A6AXXZ\@3\@\@Z
      */
     virtual void createTransactionContext(class std::function<void (class Container &, int, class ItemStack const &, class ItemStack const &)>, class std::function<void (void)>);
     /**
-     * @vftbl 32
+     * @vftbl 33
      * @symbol ?initializeContainerContents\@Container\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
     virtual void initializeContainerContents(class BlockSource &);
     /**
-     * @vftbl 33
+     * @vftbl 34
      * @symbol ?isEmpty\@Container\@\@UEBA_NXZ
      */
     virtual bool isEmpty() const;
@@ -227,13 +232,13 @@ public:
     MCVAPI ~Container();
 #endif
     /**
-     * @symbol ??0Container\@\@QEAA\@W4ContainerType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
-     */
-    MCAPI Container(enum class ContainerType, std::string const &, bool);
-    /**
      * @symbol ??0Container\@\@QEAA\@W4ContainerType\@\@\@Z
      */
     MCAPI Container(enum class ContainerType);
+    /**
+     * @symbol ??0Container\@\@QEAA\@W4ContainerType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
+     */
+    MCAPI Container(enum class ContainerType, std::string const &, bool);
     /**
      * @symbol ??0Container\@\@QEAA\@AEBV0\@\@Z
      */

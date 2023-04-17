@@ -11,15 +11,15 @@
 #undef BEFORE_EXTRA
 
 
-class AverageTracker {
+struct AverageTracker {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AVERAGETRACKER
 public:
-    class AverageTracker& operator=(class AverageTracker const &) = delete;
-    AverageTracker(class AverageTracker const &) = delete;
+    struct AverageTracker& operator=(struct AverageTracker const &) = delete;
+    AverageTracker(struct AverageTracker const &) = delete;
     AverageTracker() = delete;
 #endif
 

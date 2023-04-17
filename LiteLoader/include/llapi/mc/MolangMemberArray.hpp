@@ -54,10 +54,6 @@ public:
      */
     MCAPI MolangMemberArray(enum class MolangStruct_SpeedAndDirection, float, class Vec3 const &);
     /**
-     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_TentacleAngleAndSwimRotation\@\@MM\@Z
-     */
-    MCAPI MolangMemberArray(enum class MolangStruct_TentacleAngleAndSwimRotation, float, float);
-    /**
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_RotYAndPosY\@\@MM\@Z
      */
     MCAPI MolangMemberArray(enum class MolangStruct_RotYAndPosY, float, float);
@@ -74,6 +70,10 @@ public:
      */
     MCAPI MolangMemberArray(enum class MolangStruct_PoseIndexAndHurtTime, int, int);
     /**
+     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_TentacleAngleAndSwimRotation\@\@MM\@Z
+     */
+    MCAPI MolangMemberArray(enum class MolangStruct_TentacleAngleAndSwimRotation, float, float);
+    /**
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_UV\@\@MM\@Z
      */
     MCAPI MolangMemberArray(enum class MolangStruct_UV, float, float);
@@ -85,10 +85,6 @@ public:
      * @symbol ?get\@MolangMemberArray\@\@QEBAPEBUMolangScriptArg\@\@AEBVHashedString\@\@\@Z
      */
     MCAPI struct MolangScriptArg const * get(class HashedString const &) const;
-    /**
-     * @symbol ?getMembers\@MolangMemberArray\@\@QEBAPEBV?$vector\@UMolangMemberVariable\@\@V?$allocator\@UMolangMemberVariable\@\@\@std\@\@\@std\@\@XZ
-     */
-    MCAPI std::vector<struct MolangMemberVariable> const * getMembers() const;
     /**
      * @symbol ?getOrAdd\@MolangMemberArray\@\@QEAAAEAUMolangScriptArg\@\@AEBVHashedString\@\@\@Z
      */

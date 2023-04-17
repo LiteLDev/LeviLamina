@@ -130,13 +130,13 @@ public:
      */
     MCAPI bool _findResource(std::string const &, class Core::PathBuffer<class Core::StackString<char, 1024>> const &, class Core::PathBuffer<class Core::StackString<char, 1024>> const &, class PackInstance const &, std::string &);
     /**
-     * @symbol ?_placeSegment\@StructureManager\@\@AEAA_NAEAVStructureAnimationData\@\@\@Z
-     */
-    MCAPI bool _placeSegment(class StructureAnimationData &);
-    /**
      * @symbol ?_placeSegment\@StructureManager\@\@AEAA_NAEAVDimension\@\@AEAVStructureAnimationData\@\@AEAVChunkLoadActionList\@\@AEBVBoundingBox\@\@AEBV?$function\@$$A6A?AW4ChunksLoadedStatus\@\@UTick\@\@\@Z\@std\@\@\@Z
      */
     MCAPI bool _placeSegment(class Dimension &, class StructureAnimationData &, class ChunkLoadActionList &, class BoundingBox const &, class std::function<enum class ChunksLoadedStatus (struct Tick)> const &);
+    /**
+     * @symbol ?_placeSegment\@StructureManager\@\@AEAA_NAEAVStructureAnimationData\@\@\@Z
+     */
+    MCAPI bool _placeSegment(class StructureAnimationData &);
     /**
      * @symbol ?_readLegacyStructure\@StructureManager\@\@AEAAPEAVLegacyStructureTemplate\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */

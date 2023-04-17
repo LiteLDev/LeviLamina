@@ -102,10 +102,6 @@ public:
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
-     * @symbol ??0BellBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI BellBlockActor(class BlockPos const &);
-    /**
      * @symbol ?ejectItem\@BellBlockActor\@\@QEBAXAEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
     MCAPI void ejectItem(class BlockPos const &, class Actor &) const;

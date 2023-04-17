@@ -72,9 +72,5 @@ public:
      * @symbol ??0TemptGoal\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI TemptGoal(class TemptGoal const &);
-    /**
-     * @symbol ??0TemptGoal\@\@QEAA\@AEAVMob\@\@MAEBV?$vector\@VItemDescriptor\@\@V?$allocator\@VItemDescriptor\@\@\@std\@\@\@std\@\@W4LevelSoundEvent\@\@UFloatRange\@\@_NM44\@Z
-     */
-    MCAPI TemptGoal(class Mob &, float, std::vector<class ItemDescriptor> const &, enum class LevelSoundEvent, struct FloatRange, bool, float, bool, bool);
 
 };

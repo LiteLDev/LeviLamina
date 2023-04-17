@@ -74,18 +74,6 @@ public:
      */
     MCAPI PetSleepWithOwnerGoal(class Mob &, float, int, int, float);
     /**
-     * @symbol ?getBedTargetPos\@PetSleepWithOwnerGoal\@\@QEBA?AVVec3\@\@XZ
-     */
-    MCAPI class Vec3 getBedTargetPos() const;
-    /**
-     * @symbol ?getData\@PetSleepWithOwnerGoal\@\@QEBA?AUPetSleepWithOwnerGoalData\@\@XZ
-     */
-    MCAPI struct PetSleepWithOwnerGoalData getData() const;
-    /**
-     * @symbol ?getMob\@PetSleepWithOwnerGoal\@\@QEBAAEAVMob\@\@XZ
-     */
-    MCAPI class Mob & getMob() const;
-    /**
      * @symbol ?setState\@PetSleepWithOwnerGoal\@\@QEAAXV?$unique_ptr\@VPetSleepWithOwnerState\@\@U?$default_delete\@VPetSleepWithOwnerState\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI void setState(std::unique_ptr<class PetSleepWithOwnerState>);

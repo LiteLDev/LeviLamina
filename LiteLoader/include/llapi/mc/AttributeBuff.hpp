@@ -24,6 +24,7 @@ class AttributeBuff {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTRIBUTEBUFF
 public:
     class AttributeBuff& operator=(class AttributeBuff const &) = delete;
+    AttributeBuff(class AttributeBuff const &) = delete;
     AttributeBuff() = delete;
 #endif
 
@@ -55,17 +56,9 @@ public:
     MCVAPI ~AttributeBuff();
 #endif
     /**
-     * @symbol ??0AttributeBuff\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI AttributeBuff(class AttributeBuff const &);
-    /**
      * @symbol ?getAmount\@AttributeBuff\@\@QEBAMXZ
      */
     MCAPI float getAmount() const;
-    /**
-     * @symbol ?getCause\@AttributeBuff\@\@QEBA?AW4ActorDamageCause\@\@XZ
-     */
-    MCAPI enum class ActorDamageCause getCause() const;
     /**
      * @symbol ?getId\@AttributeBuff\@\@QEBA_KXZ
      */
@@ -74,10 +67,6 @@ public:
      * @symbol ?getOperand\@AttributeBuff\@\@QEBAHXZ
      */
     MCAPI int getOperand() const;
-    /**
-     * @symbol ?getSource\@AttributeBuff\@\@QEBAAEBVActorDamageSource\@\@XZ
-     */
-    MCAPI class ActorDamageSource const & getSource() const;
     /**
      * @symbol ?getType\@AttributeBuff\@\@QEBA?AW4AttributeBuffType\@\@XZ
      */
@@ -113,13 +102,13 @@ public:
 
 //protected:
     /**
-     * @symbol ??0AttributeBuff\@\@IEAA\@MHAEBVActorDamageSource\@\@W4AttributeBuffType\@\@\@Z
-     */
-    MCAPI AttributeBuff(float, int, class ActorDamageSource const &, enum class AttributeBuffType);
-    /**
      * @symbol ??0AttributeBuff\@\@IEAA\@MHW4AttributeBuffType\@\@\@Z
      */
     MCAPI AttributeBuff(float, int, enum class AttributeBuffType);
+    /**
+     * @symbol ??0AttributeBuff\@\@IEAA\@MHAEBVActorDamageSource\@\@W4AttributeBuffType\@\@\@Z
+     */
+    MCAPI AttributeBuff(float, int, class ActorDamageSource const &, enum class AttributeBuffType);
 
 protected:
 

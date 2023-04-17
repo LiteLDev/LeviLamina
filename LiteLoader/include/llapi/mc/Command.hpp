@@ -56,18 +56,16 @@ public:
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual ~Command();
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?collectOptionalArguments\@Command\@\@MEAA_NXZ
      */
-protected:
     virtual bool collectOptionalArguments();
     /**
      * @vftbl 2
-     * @symbol ?execute\@PlaySoundCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @symbol ?execute\@GetChunkDataCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-public:
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMAND
     /**
@@ -104,13 +102,13 @@ public:
      */
     MCAPI static bool shouldUseCommandOriginRotation(class CommandOrigin const &, int);
     /**
-     * @symbol ?validRange\@Command\@\@SA_NMMMAEAVCommandOutput\@\@\@Z
-     */
-    MCAPI static bool validRange(float, float, float, class CommandOutput &);
-    /**
      * @symbol ?validRange\@Command\@\@SA_NHHHAEAVCommandOutput\@\@\@Z
      */
     MCAPI static bool validRange(int, int, int, class CommandOutput &);
+    /**
+     * @symbol ?validRange\@Command\@\@SA_NMMMAEAVCommandOutput\@\@\@Z
+     */
+    MCAPI static bool validRange(float, float, float, class CommandOutput &);
 
 //protected:
     /**

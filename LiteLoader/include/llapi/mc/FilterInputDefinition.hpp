@@ -11,15 +11,15 @@
 #undef BEFORE_EXTRA
 
 
-class FilterInputDefinition {
+struct FilterInputDefinition {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERINPUTDEFINITION
 public:
-    class FilterInputDefinition& operator=(class FilterInputDefinition const &) = delete;
-    FilterInputDefinition(class FilterInputDefinition const &) = delete;
+    struct FilterInputDefinition& operator=(struct FilterInputDefinition const &) = delete;
+    FilterInputDefinition(struct FilterInputDefinition const &) = delete;
     FilterInputDefinition() = delete;
 #endif
 

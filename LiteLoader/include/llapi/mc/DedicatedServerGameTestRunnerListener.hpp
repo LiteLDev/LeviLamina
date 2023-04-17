@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "gametest.hpp"
 
 #define BEFORE_EXTRA
 

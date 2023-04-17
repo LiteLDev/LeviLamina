@@ -70,13 +70,13 @@ public:
      */
     MCAPI static std::vector<std::string> findAvailableLanguages(class ResourcePackManager &);
     /**
-     * @symbol ?get\@I18n\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@PEBVLocalization\@\@\@Z
-     */
-    MCAPI static std::string get(std::string const &, class Localization const *);
-    /**
      * @symbol ?get\@I18n\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@PEBVLocalization\@\@\@Z
      */
     MCAPI static std::string get(std::string const &, std::vector<std::string> const &, class Localization const *);
+    /**
+     * @symbol ?get\@I18n\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@PEBVLocalization\@\@\@Z
+     */
+    MCAPI static std::string get(std::string const &, class Localization const *);
     /**
      * @symbol ?getCurrentLanguage\@I18n\@\@SA?AV?$optional_ref\@$$CBVLocalization\@\@\@\@XZ
      */
@@ -85,6 +85,10 @@ public:
      * @symbol ?getLanguageCodesFromPack\@I18n\@\@SA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEBVPackAccessStrategy\@\@\@Z
      */
     MCAPI static std::vector<std::string> getLanguageCodesFromPack(class PackAccessStrategy const &);
+    /**
+     * @symbol ?getLocaleCodeFor\@I18n\@\@SAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@\@Z
+     */
+    MCAPI static std::string const & getLocaleCodeFor(std::string const &);
     /**
      * @symbol ?getLocaleFor\@I18n\@\@SAAEBVLocalization\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -131,10 +135,6 @@ public:
      * @symbol ?_getAdditionalTranslationsBackupLocale\@I18n\@\@CAPEAVLocalization\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
     MCAPI static class Localization * _getAdditionalTranslationsBackupLocale(std::string const &, bool);
-    /**
-     * @symbol ?_getLocaleCodeFor\@I18n\@\@CAAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@\@Z
-     */
-    MCAPI static std::string & _getLocaleCodeFor(std::string const &);
     /**
      * @symbol ?_getPackKeywordLocale\@I18n\@\@CAAEAVLocalization\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */

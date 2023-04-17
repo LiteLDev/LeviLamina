@@ -106,10 +106,6 @@ public:
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
-     * @symbol ??0BannerBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI BannerBlockActor(class BlockPos const &);
-    /**
      * @symbol ?getBaseColorInt\@BannerBlockActor\@\@QEBAEXZ
      */
     MCAPI unsigned char getBaseColorInt() const;

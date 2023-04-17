@@ -191,13 +191,13 @@ public:
      */
     MCAPI TickingArea(class Dimension &, class mce::UUID, struct Bounds const &, struct ActorUniqueID, float);
     /**
-     * @symbol ??0TickingArea\@\@QEAA\@AEAVDimension\@\@VUUID\@mce\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUBounds\@\@_NW4TickingAreaLoadMode\@\@\@Z
-     */
-    MCAPI TickingArea(class Dimension &, class mce::UUID, std::string const &, struct Bounds const &, bool, enum class TickingAreaLoadMode);
-    /**
      * @symbol ??0TickingArea\@\@QEAA\@AEAVDimension\@\@VUUID\@mce\@\@AEBUBounds\@\@UActorUniqueID\@\@\@Z
      */
     MCAPI TickingArea(class Dimension &, class mce::UUID, struct Bounds const &, struct ActorUniqueID);
+    /**
+     * @symbol ??0TickingArea\@\@QEAA\@AEAVDimension\@\@VUUID\@mce\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUBounds\@\@_NW4TickingAreaLoadMode\@\@\@Z
+     */
+    MCAPI TickingArea(class Dimension &, class mce::UUID, std::string const &, struct Bounds const &, bool, enum class TickingAreaLoadMode);
 
 //private:
     /**

@@ -11,15 +11,15 @@
 #undef BEFORE_EXTRA
 
 
-class DeserializeDataParams {
+struct DeserializeDataParams {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DESERIALIZEDATAPARAMS
 public:
-    class DeserializeDataParams& operator=(class DeserializeDataParams const &) = delete;
-    DeserializeDataParams(class DeserializeDataParams const &) = delete;
+    struct DeserializeDataParams& operator=(struct DeserializeDataParams const &) = delete;
+    DeserializeDataParams(struct DeserializeDataParams const &) = delete;
     DeserializeDataParams() = delete;
 #endif
 

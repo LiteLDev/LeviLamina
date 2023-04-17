@@ -66,32 +66,6 @@ public:
      * @symbol ?_allowReadActor\@StructureTemplate\@\@MEBA_NAEBVActor\@\@\@Z
      */
     virtual bool _allowReadActor(class Actor const &) const;
-    /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4();
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
-    virtual void __unk_vfn_5();
-    /**
-     * @vftbl 6
-     * @symbol __unk_vfn_6
-     */
-    virtual void __unk_vfn_6();
-    /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
-     */
-    virtual void __unk_vfn_7();
-    /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
-
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETEMPLATE
     /**
      * @symbol __unk_destructor_-1
@@ -102,10 +76,6 @@ public:
      * @symbol ??0StructureTemplate\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@V?$NonOwnerPointer\@VIUnknownBlockTypeRegistry\@\@\@Bedrock\@\@\@Z
      */
     MCAPI StructureTemplate(class std::basic_string_view<char, struct std::char_traits<char>>, class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry>);
-    /**
-     * @symbol ??0StructureTemplate\@\@QEAA\@AEBV0\@V?$NonOwnerPointer\@VIUnknownBlockTypeRegistry\@\@\@Bedrock\@\@\@Z
-     */
-    MCAPI StructureTemplate(class StructureTemplate const &, class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry>);
     /**
      * @symbol ?fillFromWorld\@StructureTemplate\@\@QEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVStructureSettings\@\@\@Z
      */
@@ -127,10 +97,6 @@ public:
      */
     MCAPI class BlockPos const & getSize() const;
     /**
-     * @symbol ?getStructureVersion\@StructureTemplate\@\@QEBAEXZ
-     */
-    MCAPI unsigned char getStructureVersion() const;
-    /**
      * @symbol ?getTransformedBounds\@StructureTemplate\@\@QEBA?AVBoundingBox\@\@VBlockPos\@\@AEBVStructureSettings\@\@\@Z
      */
     MCAPI class BoundingBox getTransformedBounds(class BlockPos, class StructureSettings const &) const;
@@ -138,10 +104,6 @@ public:
      * @symbol ?isLoaded\@StructureTemplate\@\@QEBA_NXZ
      */
     MCAPI bool isLoaded() const;
-    /**
-     * @symbol ?load\@StructureTemplate\@\@QEAA_NAEBVCompoundTag\@\@\@Z
-     */
-    MCAPI bool load(class CompoundTag const &);
     /**
      * @symbol ?placeInWorld\@StructureTemplate\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPalette\@\@AEBVBlockPos\@\@AEBVStructureSettings\@\@PEAVStructureTelemetryServerData\@\@_N\@Z
      */

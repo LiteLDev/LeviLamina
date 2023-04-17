@@ -123,13 +123,13 @@ public:
      */
     MCAPI class PackSourceReport const * getPackSourceReport() const;
     /**
-     * @symbol ?getResourcesOfGroup\@ResourcePackManager\@\@QEBA?AV?$vector\@V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@V?$allocator\@V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@\@std\@\@\@std\@\@AEBVPackInstance\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
-     */
-    MCAPI std::vector<class Core::PathBuffer<std::string>> getResourcesOfGroup(class PackInstance const &, std::string const &) const;
-    /**
      * @symbol ?getResourcesOfGroup\@ResourcePackManager\@\@QEBA?AV?$vector\@V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@V?$allocator\@V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@\@std\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
      */
     MCAPI std::vector<class Core::PathBuffer<std::string>> getResourcesOfGroup(std::string const &) const;
+    /**
+     * @symbol ?getResourcesOfGroup\@ResourcePackManager\@\@QEBA?AV?$vector\@V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@V?$allocator\@V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@\@std\@\@\@std\@\@AEBVPackInstance\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
+     */
+    MCAPI std::vector<class Core::PathBuffer<std::string>> getResourcesOfGroup(class PackInstance const &, std::string const &) const;
     /**
      * @symbol ?getStack\@ResourcePackManager\@\@QEBAAEBVResourcePackStack\@\@W4ResourcePackStackType\@\@\@Z
      */
@@ -180,6 +180,10 @@ public:
      * @symbol ?_composeFullStack\@ResourcePackManager\@\@AEAAXXZ
      */
     MCAPI void _composeFullStack();
+    /**
+     * @symbol ?_getPackForResource\@ResourcePackManager\@\@AEBAPEAVPackInstance\@\@AEBVPath\@Core\@\@\@Z
+     */
+    MCAPI class PackInstance * _getPackForResource(class Core::Path const &) const;
     /**
      * @symbol ?_getResourcesOfGroup\@ResourcePackManager\@\@AEBAXAEBVPackInstance\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$vector\@V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@V?$allocator\@V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@\@std\@\@\@4\@\@Z
      */

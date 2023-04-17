@@ -12,7 +12,7 @@
 #undef BEFORE_EXTRA
 
 
-class BlockFrictionDescription {
+struct BlockFrictionDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -20,8 +20,8 @@ class BlockFrictionDescription {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKFRICTIONDESCRIPTION
 public:
-    class BlockFrictionDescription& operator=(class BlockFrictionDescription const &) = delete;
-    BlockFrictionDescription(class BlockFrictionDescription const &) = delete;
+    struct BlockFrictionDescription& operator=(struct BlockFrictionDescription const &) = delete;
+    BlockFrictionDescription(struct BlockFrictionDescription const &) = delete;
     BlockFrictionDescription() = delete;
 #endif
 
@@ -69,9 +69,5 @@ public:
      * @symbol ?bindType\@BlockFrictionDescription\@\@SAXXZ
      */
     MCAPI static void bindType();
-    /**
-     * @symbol ?registerVersionUpgrades\@BlockFrictionDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
-     */
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

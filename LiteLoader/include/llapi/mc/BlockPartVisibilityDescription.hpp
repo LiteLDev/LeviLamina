@@ -22,59 +22,13 @@ class BlockPartVisibilityDescription {
 public:
     class BlockPartVisibilityDescription& operator=(class BlockPartVisibilityDescription const &) = delete;
     BlockPartVisibilityDescription(class BlockPartVisibilityDescription const &) = delete;
+    BlockPartVisibilityDescription() = delete;
 #endif
 
 public:
     /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
-    virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol ?getName\@BlockPartVisibilityDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    virtual std::string const & getName() const;
-    /**
-     * @vftbl 2
-     * @symbol ?initializeComponent\@BlockPartVisibilityDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
-     */
-    virtual void initializeComponent(class EntityContext &) const;
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol ?isNetworkComponent\@BlockPartVisibilityDescription\@\@UEBA_NXZ
-     */
-    virtual bool isNetworkComponent() const;
-    /**
-     * @vftbl 5
-     * @symbol ?buildNetworkTag\@BlockPartVisibilityDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
-     */
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /**
-     * @vftbl 6
-     * @symbol ?initializeFromNetwork\@BlockPartVisibilityDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
-     */
-    virtual void initializeFromNetwork(class CompoundTag const &);
-    /**
-     * @symbol ??0BlockPartVisibilityDescription\@\@QEAA\@XZ
-     */
-    MCAPI BlockPartVisibilityDescription();
-    /**
      * @symbol ?NameID\@BlockPartVisibilityDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NameID;
-    /**
-     * @symbol ?bindType\@BlockPartVisibilityDescription\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
-     * @symbol ?registerVersionUpgrades\@BlockPartVisibilityDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
-     */
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

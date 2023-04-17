@@ -41,10 +41,6 @@ public:
      * @symbol ?registerNodePair\@BehaviorFactory\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$function\@$$A6A?AV?$unique_ptr\@VBehaviorDefinition\@\@U?$default_delete\@VBehaviorDefinition\@\@\@std\@\@\@std\@\@XZ\@3\@V?$function\@$$A6A?AV?$unique_ptr\@VBehaviorNode\@\@U?$default_delete\@VBehaviorNode\@\@\@std\@\@\@std\@\@XZ\@3\@\@Z
      */
     MCAPI void registerNodePair(std::string const &, class std::function<std::unique_ptr<class BehaviorDefinition> (void)>, class std::function<std::unique_ptr<class BehaviorNode> (void)>);
-    /**
-     * @symbol ?tryGetNode\@BehaviorFactory\@\@QEBA?AV?$unique_ptr\@VBehaviorNode\@\@U?$default_delete\@VBehaviorNode\@\@\@std\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
-     */
-    MCAPI std::unique_ptr<class BehaviorNode> tryGetNode(std::string const &) const;
 
 //private:
     /**

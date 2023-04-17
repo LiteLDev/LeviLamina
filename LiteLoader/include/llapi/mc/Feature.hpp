@@ -47,7 +47,7 @@ public:
     virtual bool isValidPlacement(std::string const &);
     /**
      * @vftbl 3
-     * @symbol ?place\@CoralHangFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     * @symbol ?place\@LegacySmallMushroomsFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATURE

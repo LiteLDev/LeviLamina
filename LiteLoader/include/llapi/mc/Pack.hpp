@@ -64,10 +64,6 @@ public:
      */
     MCAPI void notifyDeleted();
     /**
-     * @symbol ?notifyUpdated\@Pack\@\@QEAAXXZ
-     */
-    MCAPI void notifyUpdated();
-    /**
      * @symbol ?registerPackDeletedCallback\@Pack\@\@QEAAXPEAXV?$function\@$$A6AXAEAVPack\@\@\@Z\@std\@\@\@Z
      */
     MCAPI void registerPackDeletedCallback(void *, class std::function<void (class Pack &)>);

@@ -211,13 +211,13 @@ public:
      */
     MCVAPI void sendInput();
     /**
-     * @symbol ?sendPacket\@DirectPlayerMovementProxy\@\@UEAAXAEAVPassengerJumpPacket\@\@\@Z
-     */
-    MCVAPI void sendPacket(class PassengerJumpPacket &);
-    /**
      * @symbol ?sendPacket\@DirectPlayerMovementProxy\@\@UEAAXAEAVPlayerActionPacket\@\@\@Z
      */
     MCVAPI void sendPacket(class PlayerActionPacket &);
+    /**
+     * @symbol ?sendPacket\@DirectPlayerMovementProxy\@\@UEAAXAEAVPassengerJumpPacket\@\@\@Z
+     */
+    MCVAPI void sendPacket(class PassengerJumpPacket &);
     /**
      * @symbol ?sendPlayerInput\@DirectPlayerMovementProxy\@\@UEAAXXZ
      */
@@ -299,13 +299,13 @@ public:
      */
     MCVAPI void stopGliding();
     /**
-     * @symbol ?tryAsPlayer\@DirectPlayerMovementProxy\@\@UEAAPEAUIPlayerMovementProxy\@\@XZ
-     */
-    MCVAPI struct IPlayerMovementProxy * tryAsPlayer();
-    /**
      * @symbol ?tryAsPlayer\@DirectPlayerMovementProxy\@\@UEBAPEBUIPlayerMovementProxy\@\@XZ
      */
     MCVAPI struct IPlayerMovementProxy const * tryAsPlayer() const;
+    /**
+     * @symbol ?tryAsPlayer\@DirectPlayerMovementProxy\@\@UEAAPEAUIPlayerMovementProxy\@\@XZ
+     */
+    MCVAPI struct IPlayerMovementProxy * tryAsPlayer();
     /**
      * @symbol ?tryGetPlayerActionComponent\@DirectPlayerMovementProxy\@\@UEAAPEAUPlayerActionComponent\@\@XZ
      */

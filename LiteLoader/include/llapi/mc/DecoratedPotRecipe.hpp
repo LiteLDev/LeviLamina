@@ -32,9 +32,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?assemble\@DecoratedPotRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@\@Z
+     * @symbol ?assemble\@DecoratedPotRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@AEBUCraftingContext\@\@\@Z
      */
-    virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
+    virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &, struct CraftingContext const &) const;
     /**
      * @vftbl 2
      * @symbol ?getCraftingSize\@DecoratedPotRecipe\@\@UEBAHXZ
@@ -51,6 +51,11 @@ public:
      */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
     /**
+     * @vftbl 5
+     * @symbol __unk_vfn_5
+     */
+    virtual void __unk_vfn_5();
+    /**
      * @vftbl 6
      * @symbol ?matches\@DecoratedPotRecipe\@\@UEBA_NAEAVCraftingContainer\@\@AEAVLevel\@\@\@Z
      */
@@ -61,13 +66,13 @@ public:
      */
     virtual int size() const;
     /**
-     * @symbol ??0DecoratedPotRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
-     */
-    MCAPI DecoratedPotRecipe(class std::basic_string_view<char, struct std::char_traits<char>>);
-    /**
      * @symbol ??0DecoratedPotRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@AEBVUUID\@mce\@\@\@Z
      */
     MCAPI DecoratedPotRecipe(class std::basic_string_view<char, struct std::char_traits<char>>, class mce::UUID const &);
+    /**
+     * @symbol ??0DecoratedPotRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
+     */
+    MCAPI DecoratedPotRecipe(class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
      * @symbol ?ID\@DecoratedPotRecipe\@\@2VUUID\@mce\@\@B
      */

@@ -37,6 +37,10 @@ public:
      */
     MCAPI void addChannelTransform(class ExpressionNode const &, int);
     /**
+     * @symbol ?addChannelTransform\@KeyFrameTransformData\@\@QEAAXAEBVExpressionNode\@\@AEBVVec3\@\@\@Z
+     */
+    MCAPI void addChannelTransform(class ExpressionNode const &, class Vec3 const &);
+    /**
      * @symbol ??8KeyFrameTransformData\@\@QEBA_NAEBV0\@\@Z
      */
     MCAPI bool operator==(class KeyFrameTransformData const &) const;

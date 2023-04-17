@@ -30,10 +30,6 @@ public:
 
 public:
     /**
-     * @symbol ??0ScriptPluginResult\@\@QEAA\@AEBUModuleDescriptor\@Scripting\@\@\@Z
-     */
-    MCAPI ScriptPluginResult(struct Scripting::ModuleDescriptor const &);
-    /**
      * @symbol ??0ScriptPluginResult\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI ScriptPluginResult(class ScriptPluginResult const &);
@@ -41,10 +37,6 @@ public:
      * @symbol ?addError\@ScriptPluginResult\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void addError(std::string const &);
-    /**
-     * @symbol ?addErrors\@ScriptPluginResult\@\@QEAAXAEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
-     */
-    MCAPI void addErrors(std::vector<std::string> const &);
     /**
      * @symbol ?addInfo\@ScriptPluginResult\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -58,10 +50,6 @@ public:
      */
     MCAPI std::vector<struct ScriptPluginResult::Error> const & getErrors() const;
     /**
-     * @symbol ?getInfos\@ScriptPluginResult\@\@QEBAAEBV?$vector\@UInfo\@ScriptPluginResult\@\@V?$allocator\@UInfo\@ScriptPluginResult\@\@\@std\@\@\@std\@\@XZ
-     */
-    MCAPI std::vector<struct ScriptPluginResult::Info> const & getInfos() const;
-    /**
      * @symbol ?getModuleDescriptor\@ScriptPluginResult\@\@QEBAAEBUModuleDescriptor\@Scripting\@\@XZ
      */
     MCAPI struct Scripting::ModuleDescriptor const & getModuleDescriptor() const;
@@ -69,10 +57,6 @@ public:
      * @symbol ?getWarnings\@ScriptPluginResult\@\@QEBAAEBV?$vector\@UWarning\@ScriptPluginResult\@\@V?$allocator\@UWarning\@ScriptPluginResult\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::vector<struct ScriptPluginResult::Warning> const & getWarnings() const;
-    /**
-     * @symbol ?hasErrors\@ScriptPluginResult\@\@QEBA_NXZ
-     */
-    MCAPI bool hasErrors() const;
     /**
      * @symbol ??1ScriptPluginResult\@\@QEAA\@XZ
      */

@@ -26,6 +26,7 @@ class CommandPropertyBag {
 public:
     class CommandPropertyBag& operator=(class CommandPropertyBag const &) = delete;
     CommandPropertyBag(class CommandPropertyBag const &) = delete;
+    CommandPropertyBag() = delete;
 #endif
 
 public:
@@ -34,17 +35,9 @@ public:
      */
     MCAPI CommandPropertyBag(class Json::Value const &);
     /**
-     * @symbol ??0CommandPropertyBag\@\@QEAA\@XZ
-     */
-    MCAPI CommandPropertyBag();
-    /**
      * @symbol ?addToResultList\@CommandPropertyBag\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
     MCAPI void addToResultList(std::string const &, std::string const &);
-    /**
-     * @symbol ?clone\@CommandPropertyBag\@\@QEBA?AV?$unique_ptr\@VCommandPropertyBag\@\@U?$default_delete\@VCommandPropertyBag\@\@\@std\@\@\@std\@\@XZ
-     */
-    MCAPI std::unique_ptr<class CommandPropertyBag> clone() const;
     /**
      * @symbol ?set\@CommandPropertyBag\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VVec3\@\@\@Z
      */

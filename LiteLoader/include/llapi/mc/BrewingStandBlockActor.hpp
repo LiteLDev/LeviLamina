@@ -104,10 +104,6 @@ public:
     MCVAPI void tick(class BlockSource &);
 #endif
     /**
-     * @symbol ??0BrewingStandBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI BrewingStandBlockActor(class BlockPos const &);
-    /**
      * @symbol ?brew\@BrewingStandBlockActor\@\@QEAAXXZ
      */
     MCAPI void brew();

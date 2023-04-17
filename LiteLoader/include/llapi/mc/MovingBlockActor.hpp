@@ -129,40 +129,12 @@ public:
      */
     MCAPI bool _validPistonPos(class IConstBlockSource const &) const;
     /**
-     * @symbol ?aquireWrappedBlockActor\@MovingBlockActor\@\@QEAA?AV?$shared_ptr\@VBlockActor\@\@\@std\@\@XZ
-     */
-    MCAPI class std::shared_ptr<class BlockActor> aquireWrappedBlockActor();
-    /**
      * @symbol ?getDrawPos\@MovingBlockActor\@\@QEBA?AVVec3\@\@AEBVIConstBlockSource\@\@M\@Z
      */
     MCAPI class Vec3 getDrawPos(class IConstBlockSource const &, float) const;
     /**
-     * @symbol ?getWrappedBlock\@MovingBlockActor\@\@QEBAAEBVBlock\@\@XZ
-     */
-    MCAPI class Block const & getWrappedBlock() const;
-    /**
-     * @symbol ?getWrappedExtraBlock\@MovingBlockActor\@\@QEAAAEBVBlock\@\@XZ
-     */
-    MCAPI class Block const & getWrappedExtraBlock();
-    /**
      * @symbol ?moveCollidedEntities\@MovingBlockActor\@\@QEAAXAEAVPistonBlockActor\@\@AEAVBlockSource\@\@\@Z
      */
     MCAPI void moveCollidedEntities(class PistonBlockActor &, class BlockSource &);
-    /**
-     * @symbol ?registerPiston\@MovingBlockActor\@\@QEAAXAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI void registerPiston(class BlockSource const &, class BlockPos const &);
-    /**
-     * @symbol ?setWrappedBlock\@MovingBlockActor\@\@QEAAXAEBVBlock\@\@\@Z
-     */
-    MCAPI void setWrappedBlock(class Block const &);
-    /**
-     * @symbol ?setWrappedBlockActor\@MovingBlockActor\@\@QEAAXV?$shared_ptr\@VBlockActor\@\@\@std\@\@\@Z
-     */
-    MCAPI void setWrappedBlockActor(class std::shared_ptr<class BlockActor>);
-    /**
-     * @symbol ?setWrappedExtraBlock\@MovingBlockActor\@\@QEAAXAEBVBlock\@\@\@Z
-     */
-    MCAPI void setWrappedExtraBlock(class Block const &);
 
 };

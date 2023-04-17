@@ -33,10 +33,6 @@ public:
      */
     MCAPI JigsawStructureBlockRulesRegistry();
     /**
-     * @symbol ?clear\@JigsawStructureBlockRulesRegistry\@\@QEAAXXZ
-     */
-    MCAPI void clear();
-    /**
      * @symbol ?lookupByName\@JigsawStructureBlockRulesRegistry\@\@QEBAPEBV?$vector\@V?$unique_ptr\@VStructurePoolBlockRule\@\@U?$default_delete\@VStructurePoolBlockRule\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePoolBlockRule\@\@U?$default_delete\@VStructurePoolBlockRule\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
      */
     MCAPI std::vector<std::unique_ptr<class StructurePoolBlockRule>> const * lookupByName(std::string) const;

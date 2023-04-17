@@ -28,8 +28,8 @@ public:
 
 public:
     /**
-     * @symbol ??1OnActorLeaveVolumeComponent\@\@QEAA\@XZ
+     * @symbol ??4OnActorLeaveVolumeComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI ~OnActorLeaveVolumeComponent();
+    MCAPI class OnActorLeaveVolumeComponent & operator=(class OnActorLeaveVolumeComponent &&);
 
 };

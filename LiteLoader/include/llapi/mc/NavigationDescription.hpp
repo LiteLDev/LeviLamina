@@ -30,7 +30,7 @@ public:
 public:
     /**
      * @vftbl 0
-     * @symbol ?getJsonName\@NavigationFlyDescription\@\@UEBAPEBDXZ
+     * @symbol ?getJsonName\@NavigationHoverDescription\@\@UEBAPEBDXZ
      */
     virtual char const * getJsonName() const = 0;
     /**

@@ -30,9 +30,9 @@ public:
 
 public:
     /**
-     * @symbol ?initialize\@OnActorEnterVolumeDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVOnActorEnterVolumeComponent\@\@\@Z
+     * @symbol ??4OnActorEnterVolumeDefinition\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI void initialize(class EntityContext &, class OnActorEnterVolumeComponent &) const;
+    MCAPI struct OnActorEnterVolumeDefinition & operator=(struct OnActorEnterVolumeDefinition &&);
     /**
      * @symbol ??1OnActorEnterVolumeDefinition\@\@QEAA\@XZ
      */

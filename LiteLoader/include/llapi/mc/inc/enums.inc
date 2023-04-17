@@ -1132,4 +1132,5 @@ enum class BlockProperty : int64_t {
     CanHaltWhenClimbing          = 0x1000000000000,
 };
 
+
 // clang-format on

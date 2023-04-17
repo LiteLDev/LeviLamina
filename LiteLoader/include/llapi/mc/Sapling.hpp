@@ -201,35 +201,35 @@ public:
      */
     virtual void __unk_vfn_126();
     /**
-     * @vftbl 131
-     * @symbol __unk_vfn_131
+     * @vftbl 129
+     * @symbol __unk_vfn_129
      */
-    virtual void __unk_vfn_131();
+    virtual void __unk_vfn_129();
     /**
-     * @vftbl 133
+     * @vftbl 132
+     * @symbol __unk_vfn_132
+     */
+    virtual void __unk_vfn_132();
+    /**
+     * @vftbl 134
      * @symbol ?buildDescriptionId\@Sapling\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @vftbl 134
+     * @vftbl 135
      * @symbol ?isAuxValueRelevantForPicking\@Sapling\@\@UEBA_NXZ
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @vftbl 146
+     * @vftbl 147
      * @symbol ?getVariant\@Sapling\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @vftbl 156
-     * @symbol __unk_vfn_156
+     * @vftbl 157
+     * @symbol __unk_vfn_157
      */
-    virtual void __unk_vfn_156();
-    /**
-     * @vftbl 165
-     * @symbol __unk_vfn_165
-     */
-    virtual void __unk_vfn_165();
+    virtual void __unk_vfn_157();
     /**
      * @vftbl 166
      * @symbol __unk_vfn_166
@@ -241,47 +241,52 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @vftbl 170
-     * @symbol __unk_vfn_170
+     * @vftbl 168
+     * @symbol __unk_vfn_168
      */
-    virtual void __unk_vfn_170();
+    virtual void __unk_vfn_168();
     /**
-     * @vftbl 172
+     * @vftbl 171
+     * @symbol __unk_vfn_171
+     */
+    virtual void __unk_vfn_171();
+    /**
+     * @vftbl 173
      * @symbol ?randomTick\@Sapling\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @vftbl 174
-     * @symbol __unk_vfn_174
+     * @vftbl 175
+     * @symbol __unk_vfn_175
      */
-    virtual void __unk_vfn_174();
+    virtual void __unk_vfn_175();
     /**
-     * @vftbl 178
-     * @symbol __unk_vfn_178
+     * @vftbl 179
+     * @symbol __unk_vfn_179
      */
-    virtual void __unk_vfn_178();
+    virtual void __unk_vfn_179();
     /**
-     * @vftbl 180
+     * @vftbl 181
      * @symbol ?getRenderLayer\@Sapling\@\@UEBA?AW4BlockRenderLayer\@\@XZ
      */
     virtual enum class BlockRenderLayer getRenderLayer() const;
     /**
-     * @vftbl 181
+     * @vftbl 182
      * @symbol ?getRenderLayer\@Sapling\@\@UEBA?AW4BlockRenderLayer\@\@AEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 186
-     * @symbol __unk_vfn_186
+     * @vftbl 187
+     * @symbol __unk_vfn_187
      */
-    virtual void __unk_vfn_186();
+    virtual void __unk_vfn_187();
     /**
-     * @vftbl 188
+     * @vftbl 189
      * @symbol ?getResourceItem\@Sapling\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @vftbl 190
+     * @vftbl 191
      * @symbol ?getSilkTouchItemInstance\@Sapling\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
@@ -304,10 +309,6 @@ public:
 
 //private:
     /**
-     * @symbol ?_generateBirchTree\@Sapling\@\@AEBA?AV?$WeakRefT\@UFeatureRefTraits\@\@\@\@AEBVFeatureRegistry\@\@AEBVBlockPos\@\@AEAVBlockSource\@\@AEAVRandom\@\@_N\@Z
-     */
-    MCAPI class WeakRefT<struct FeatureRefTraits> _generateBirchTree(class FeatureRegistry const &, class BlockPos const &, class BlockSource &, class Random &, bool) const;
-    /**
      * @symbol ?_generateJungleTree\@Sapling\@\@AEBA?AV?$WeakRefT\@UFeatureRefTraits\@\@\@\@AEAH0AEA_NAEBVBlockPos\@\@AEAVBlockSource\@\@AEBVFeatureRegistry\@\@\@Z
      */
     MCAPI class WeakRefT<struct FeatureRefTraits> _generateJungleTree(int &, int &, bool &, class BlockPos const &, class BlockSource &, class FeatureRegistry const &) const;
@@ -327,14 +328,6 @@ public:
      * @symbol ?_growTree\@Sapling\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@_N\@Z
      */
     MCAPI bool _growTree(class BlockSource &, class BlockPos const &, class Random &, bool) const;
-    /**
-     * @symbol ?_isNearFlowerBlock\@Sapling\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI bool _isNearFlowerBlock(class BlockSource &, class BlockPos const &) const;
-    /**
-     * @symbol ?_shouldContainBeehive\@Sapling\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
-     */
-    MCAPI bool _shouldContainBeehive(class BlockSource &, class BlockPos const &, class Random &) const;
 
 protected:
 

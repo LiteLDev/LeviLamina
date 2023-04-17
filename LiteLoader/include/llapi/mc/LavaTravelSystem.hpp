@@ -28,5 +28,9 @@ public:
      * @symbol ?createLavaTravelSystem\@LavaTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createLavaTravelSystem();
+    /**
+     * @symbol ?tickLavaTravelSystem\@LavaTravelSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UUsesECSMovementFlag\@\@\@\@V?$FlagComponent\@ULavaTravelFlag\@\@\@\@\@\@$$CBUAttributesComponent\@\@UMobTravelComponent\@\@\@\@\@Z
+     */
+    MCAPI static void tickLavaTravelSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct UsesECSMovementFlag>, class FlagComponent<struct LavaTravelFlag>>, struct AttributesComponent const, struct MobTravelComponent>);
 
 };

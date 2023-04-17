@@ -80,14 +80,6 @@ public:
      */
     MCVAPI void levelEvent(enum class LevelEvent, class Vec3 const &, int);
     /**
-     * @symbol ?levelSoundEvent\@LevelListener\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVVec3\@\@MM\@Z
-     */
-    MCVAPI void levelSoundEvent(std::string const &, class Vec3 const &, float, float);
-    /**
-     * @symbol ?levelSoundEvent\@LevelListener\@\@UEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@HAEBUActorDefinitionIdentifier\@\@_N3\@Z
-     */
-    MCVAPI void levelSoundEvent(enum class LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
-    /**
      * @symbol ?onChunkLoaded\@LevelListener\@\@UEAAXAEAVChunkSource\@\@AEAVLevelChunk\@\@\@Z
      */
     MCVAPI void onChunkLoaded(class ChunkSource &, class LevelChunk &);
@@ -131,14 +123,6 @@ public:
      * @symbol ?sendServerLegacyParticle\@LevelListener\@\@UEAAXW4ParticleType\@\@AEBVVec3\@\@1H\@Z
      */
     MCVAPI void sendServerLegacyParticle(enum class ParticleType, class Vec3 const &, class Vec3 const &, int);
-    /**
-     * @symbol ?stopAllSounds\@LevelListener\@\@UEAAXXZ
-     */
-    MCVAPI void stopAllSounds();
-    /**
-     * @symbol ?stopSoundEvent\@LevelListener\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCVAPI void stopSoundEvent(std::string const &);
     /**
      * @symbol ?takePicture\@LevelListener\@\@UEAAXAEAVImageBuffer\@cg\@\@PEAVActor\@\@1AEAUScreenshotOptions\@\@\@Z
      */

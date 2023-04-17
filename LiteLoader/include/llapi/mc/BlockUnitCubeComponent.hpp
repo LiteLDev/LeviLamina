@@ -12,7 +12,7 @@
 #undef BEFORE_EXTRA
 
 
-class BlockUnitCubeComponent {
+struct BlockUnitCubeComponent {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -20,8 +20,8 @@ class BlockUnitCubeComponent {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKUNITCUBECOMPONENT
 public:
-    class BlockUnitCubeComponent& operator=(class BlockUnitCubeComponent const &) = delete;
-    BlockUnitCubeComponent(class BlockUnitCubeComponent const &) = delete;
+    struct BlockUnitCubeComponent& operator=(struct BlockUnitCubeComponent const &) = delete;
+    BlockUnitCubeComponent(struct BlockUnitCubeComponent const &) = delete;
     BlockUnitCubeComponent() = delete;
 #endif
 

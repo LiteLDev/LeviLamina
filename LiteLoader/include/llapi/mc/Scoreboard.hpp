@@ -427,13 +427,13 @@ public:
      */
     MCAPI class ScoreboardEventCoordinator & getScoreboardEventCoordinator();
     /**
-     * @symbol ?getScoreboardId\@Scoreboard\@\@QEBAAEBUScoreboardId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI struct ScoreboardId const & getScoreboardId(std::string const &) const;
-    /**
      * @symbol ?getScoreboardId\@Scoreboard\@\@QEBAAEBUScoreboardId\@\@AEBVActor\@\@\@Z
      */
     MCAPI struct ScoreboardId const & getScoreboardId(class Actor const &) const;
+    /**
+     * @symbol ?getScoreboardId\@Scoreboard\@\@QEBAAEBUScoreboardId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI struct ScoreboardId const & getScoreboardId(std::string const &) const;
     /**
      * @symbol ?getScoreboardId\@Scoreboard\@\@QEBAAEBUScoreboardId\@\@AEBVPlayer\@\@\@Z
      */
@@ -487,13 +487,13 @@ public:
      */
     MCAPI bool removeObjective(class Objective *);
     /**
-     * @symbol ?removeScoreListener\@Scoreboard\@\@QEAAXAEBVPlayer\@\@\@Z
-     */
-    MCAPI void removeScoreListener(class Player const &);
-    /**
      * @symbol ?removeScoreListener\@Scoreboard\@\@QEAAXAEBVPlayer\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void removeScoreListener(class Player const &, std::string const &);
+    /**
+     * @symbol ?removeScoreListener\@Scoreboard\@\@QEAAXAEBVPlayer\@\@\@Z
+     */
+    MCAPI void removeScoreListener(class Player const &);
     /**
      * @symbol ?replaceFakePlayer\@Scoreboard\@\@QEAAXAEBUScoreboardId\@\@AEBUPlayerScoreboardId\@\@\@Z
      */

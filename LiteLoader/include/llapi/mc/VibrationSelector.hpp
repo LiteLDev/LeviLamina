@@ -23,28 +23,13 @@ class VibrationSelector {
 public:
     class VibrationSelector& operator=(class VibrationSelector const &) = delete;
     VibrationSelector(class VibrationSelector const &) = delete;
+    VibrationSelector() = delete;
 #endif
 
 public:
     /**
-     * @symbol ??0VibrationSelector\@\@QEAA\@XZ
-     */
-    MCAPI VibrationSelector();
-    /**
      * @symbol ?addCandidate\@VibrationSelector\@\@QEAAXUTick\@\@AEBVGameEvent\@\@AEBUGameEventContext\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void addCandidate(struct Tick, class GameEvent const &, struct GameEventContext const &, class BlockPos const &);
-    /**
-     * @symbol ?consumeBestCandidate\@VibrationSelector\@\@QEAA?AV?$optional\@VVibrationInfo\@\@\@std\@\@UTick\@\@\@Z
-     */
-    MCAPI class std::optional<class VibrationInfo> consumeBestCandidate(struct Tick);
-    /**
-     * @symbol ?load\@VibrationSelector\@\@QEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
-     */
-    MCAPI void load(class CompoundTag const &, class DataLoadHelper &);
-    /**
-     * @symbol ?save\@VibrationSelector\@\@QEBAXAEAVCompoundTag\@\@\@Z
-     */
-    MCAPI void save(class CompoundTag &) const;
 
 };

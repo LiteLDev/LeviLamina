@@ -33,12 +33,12 @@ public:
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0() = 0;
     /**
      * @vftbl 1
-     * @symbol ?canUse\@MoveTowardsDwellingRestrictionGoal\@\@UEAA_NXZ
+     * @symbol __unk_vfn_1
      */
-    virtual bool canUse() = 0;
+    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol ?canContinueToUse\@MoveTowardsRestrictionGoal\@\@UEAA_NXZ
@@ -54,37 +54,8 @@ public:
      * @symbol ?start\@MoveTowardsRestrictionGoal\@\@UEAAXXZ
      */
     virtual void start();
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
-    virtual void __unk_vfn_5();
-    /**
-     * @vftbl 6
-     * @symbol __unk_vfn_6
-     */
-    virtual void __unk_vfn_6();
-    /**
-     * @vftbl 7
-     * @symbol ?appendDebugInfo\@MoveTowardsDwellingRestrictionGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    virtual void appendDebugInfo(std::string &) const = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOWARDSRESTRICTIONGOAL
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~MoveTowardsRestrictionGoal();
-#endif
-    /**
-     * @symbol ??0MoveTowardsRestrictionGoal\@\@QEAA\@AEAVMob\@\@\@Z
-     */
-    MCAPI MoveTowardsRestrictionGoal(class Mob &);
 
 //protected:
-    /**
-     * @symbol ?_getMob\@MoveTowardsRestrictionGoal\@\@IEBAAEBVMob\@\@XZ
-     */
-    MCAPI class Mob const & _getMob() const;
     /**
      * @symbol ?_randomizeWantedPositionTowardsRestriction\@MoveTowardsRestrictionGoal\@\@IEAA_NAEBVVec3\@\@\@Z
      */

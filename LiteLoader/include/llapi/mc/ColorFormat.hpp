@@ -126,6 +126,46 @@ LIAPI std::string& transferColorCodeToConsole(std::string& str, bool keepColorCo
      */
     MCAPI extern std::string const LIGHT_PURPLE;
     /**
+     * @symbol ?MATERIAL_AMETHYST\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     */
+    MCAPI extern std::string const MATERIAL_AMETHYST;
+    /**
+     * @symbol ?MATERIAL_COPPER\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     */
+    MCAPI extern std::string const MATERIAL_COPPER;
+    /**
+     * @symbol ?MATERIAL_DIAMOND\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     */
+    MCAPI extern std::string const MATERIAL_DIAMOND;
+    /**
+     * @symbol ?MATERIAL_EMERALD\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     */
+    MCAPI extern std::string const MATERIAL_EMERALD;
+    /**
+     * @symbol ?MATERIAL_GOLD\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     */
+    MCAPI extern std::string const MATERIAL_GOLD;
+    /**
+     * @symbol ?MATERIAL_IRON\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     */
+    MCAPI extern std::string const MATERIAL_IRON;
+    /**
+     * @symbol ?MATERIAL_LAPIS\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     */
+    MCAPI extern std::string const MATERIAL_LAPIS;
+    /**
+     * @symbol ?MATERIAL_NETHERITE\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     */
+    MCAPI extern std::string const MATERIAL_NETHERITE;
+    /**
+     * @symbol ?MATERIAL_QUARTZ\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     */
+    MCAPI extern std::string const MATERIAL_QUARTZ;
+    /**
+     * @symbol ?MATERIAL_REDSTONE\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     */
+    MCAPI extern std::string const MATERIAL_REDSTONE;
+    /**
      * @symbol ?MINECOIN_GOLD\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const MINECOIN_GOLD;

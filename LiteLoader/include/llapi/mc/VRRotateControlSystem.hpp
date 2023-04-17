@@ -31,5 +31,9 @@ public:
      * @symbol ?create\@VRRotateControlSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo create();
+    /**
+     * @symbol ?tick\@VRRotateControlSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@UPlayerInputRequestComponent\@\@\@\@$$CBUMoveInputComponent\@\@$$CBUPlayerInputModeComponent\@\@$$CBUVRMoveAdjustAngleComponent\@\@ULocalMoveVelocityComponent\@\@\@\@\@Z
+     */
+    MCAPI static void tick(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct PlayerInputRequestComponent>, struct MoveInputComponent const, struct PlayerInputModeComponent const, struct VRMoveAdjustAngleComponent const, struct LocalMoveVelocityComponent>);
 
 };

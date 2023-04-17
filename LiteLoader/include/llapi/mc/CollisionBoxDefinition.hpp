@@ -31,6 +31,10 @@ public:
 
 public:
     /**
+     * @symbol ?initialize\@CollisionBoxDefinition\@\@QEBAXAEAVEntityContext\@\@AEAUCollisionBoxDefinitionComponent\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext &, struct CollisionBoxDefinitionComponent &) const;
+    /**
      * @symbol ?setHeight\@CollisionBoxDefinition\@\@QEAAXAEBM\@Z
      */
     MCAPI void setHeight(float const &);

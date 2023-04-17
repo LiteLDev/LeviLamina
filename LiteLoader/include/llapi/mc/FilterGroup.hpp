@@ -39,7 +39,7 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?_createSubgroup\@ActorFilterGroup\@\@MEBA?AV?$shared_ptr\@VFilterGroup\@\@\@std\@\@W4CollectionType\@FilterGroup\@\@\@Z
+     * @symbol ?_createSubgroup\@BiomeFilterGroup\@\@MEBA?AV?$shared_ptr\@VFilterGroup\@\@\@std\@\@W4CollectionType\@FilterGroup\@\@\@Z
      */
     virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum class FilterGroup::CollectionType) const = 0;
     /**
@@ -57,13 +57,13 @@ public:
      */
     MCAPI FilterGroup(class FilterGroup const &);
     /**
-     * @symbol ?addFilterTest\@FilterGroup\@\@QEAA_NAEBUDefinition\@FilterTest\@\@AEBUFilterInputs\@\@\@Z
-     */
-    MCAPI bool addFilterTest(struct FilterTest::Definition const &, struct FilterInputs const &);
-    /**
      * @symbol ?addFilterTest\@FilterGroup\@\@QEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUFilterInputs\@\@\@Z
      */
     MCAPI bool addFilterTest(std::string const &, struct FilterInputs const &);
+    /**
+     * @symbol ?addFilterTest\@FilterGroup\@\@QEAA_NAEBUDefinition\@FilterTest\@\@AEBUFilterInputs\@\@\@Z
+     */
+    MCAPI bool addFilterTest(struct FilterTest::Definition const &, struct FilterInputs const &);
     /**
      * @symbol ?empty\@FilterGroup\@\@QEBA_NXZ
      */

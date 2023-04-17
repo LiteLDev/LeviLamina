@@ -128,10 +128,6 @@ public:
     MCVAPI void upgradeLevelChunk(class ChunkSource &, class LevelChunk &, class LevelChunk &);
 #endif
     /**
-     * @symbol ??0TheEndDimension\@\@QEAA\@AEAVILevel\@\@AEAVScheduler\@\@\@Z
-     */
-    MCAPI TheEndDimension(class ILevel &, class Scheduler &);
-    /**
      * @symbol ?AMBIENT_MULTIPLIER\@TheEndDimension\@\@2MB
      */
     MCAPI static float const AMBIENT_MULTIPLIER;

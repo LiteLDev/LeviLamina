@@ -64,10 +64,6 @@ public:
      * @symbol ?_getLevelRecipes\@CraftHandlerCrafting\@\@EEBAPEBVRecipes\@\@XZ
      */
     virtual class Recipes const * _getLevelRecipes() const;
-    /**
-     * @symbol ??0CraftHandlerCrafting\@\@QEAA\@_NAEAVPlayer\@\@AEAVItemStackRequestActionCraftHandler\@\@\@Z
-     */
-    MCAPI CraftHandlerCrafting(bool, class Player &, class ItemStackRequestActionCraftHandler &);
 
 //private:
     /**

@@ -32,10 +32,6 @@ public:
 
 public:
     /**
-     * @symbol ??0PackIdVersion\@\@QEAA\@AEBVUUID\@mce\@\@AEBVSemVersion\@\@W4PackType\@\@\@Z
-     */
-    MCAPI PackIdVersion(class mce::UUID const &, class SemVersion const &, enum class PackType);
-    /**
      * @symbol ??0PackIdVersion\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI PackIdVersion(struct PackIdVersion const &);
@@ -43,6 +39,10 @@ public:
      * @symbol ??0PackIdVersion\@\@QEAA\@XZ
      */
     MCAPI PackIdVersion();
+    /**
+     * @symbol ??0PackIdVersion\@\@QEAA\@AEBVUUID\@mce\@\@AEBVSemVersion\@\@W4PackType\@\@\@Z
+     */
+    MCAPI PackIdVersion(class mce::UUID const &, class SemVersion const &, enum class PackType);
     /**
      * @symbol ?asString\@PackIdVersion\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
@@ -55,10 +55,6 @@ public:
      * @symbol ??MPackIdVersion\@\@QEBA_NAEBU0\@\@Z
      */
     MCAPI bool operator<(struct PackIdVersion const &) const;
-    /**
-     * @symbol ??4PackIdVersion\@\@QEAAAEAU0\@$$QEAU0\@\@Z
-     */
-    MCAPI struct PackIdVersion & operator=(struct PackIdVersion &&);
     /**
      * @symbol ??8PackIdVersion\@\@QEBA_NAEBU0\@\@Z
      */

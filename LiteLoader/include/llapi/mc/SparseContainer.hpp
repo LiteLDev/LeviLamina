@@ -30,10 +30,6 @@ public:
 
 public:
     /**
-     * @symbol ?_isSlotInRange\@SparseContainer\@\@QEBA_NH\@Z
-     */
-    MCAPI bool _isSlotInRange(int) const;
-    /**
      * @symbol ?addItemNetworkChangedCallback\@SparseContainer\@\@QEAAXW4ContainerEnumName\@\@V?$function\@$$A6AXHAEBVItemStack\@\@0\@Z\@std\@\@\@Z
      */
     MCAPI void addItemNetworkChangedCallback(enum class ContainerEnumName, class std::function<void (int, class ItemStack const &, class ItemStack const &)>);

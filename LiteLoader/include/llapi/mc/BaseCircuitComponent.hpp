@@ -215,18 +215,6 @@ public:
      * @symbol ?hasDirectPower\@BaseCircuitComponent\@\@QEAA_NXZ
      */
     MCAPI bool hasDirectPower();
-    /**
-     * @symbol ?isRemoved\@BaseCircuitComponent\@\@QEBA_NXZ
-     */
-    MCAPI bool isRemoved() const;
-    /**
-     * @symbol ?removeFromSourceAndDestinationList\@BaseCircuitComponent\@\@QEAA?AV?$_Vector_iterator\@V?$_Vector_val\@U?$_Simple_types\@VItem\@CircuitComponentList\@\@\@std\@\@\@std\@\@\@std\@\@V23\@\@Z
-     */
-    MCAPI class std::_Vector_iterator<class std::_Vector_val<struct std::_Simple_types<class CircuitComponentList::Item>>> removeFromSourceAndDestinationList(class std::_Vector_iterator<class std::_Vector_val<struct std::_Simple_types<class CircuitComponentList::Item>>>);
-    /**
-     * @symbol ?setRemoved\@BaseCircuitComponent\@\@QEAAXXZ
-     */
-    MCAPI void setRemoved();
 
 //protected:
     /**

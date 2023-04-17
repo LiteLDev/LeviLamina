@@ -76,10 +76,6 @@ public:
      */
     MCAPI Random();
     /**
-     * @symbol ??0Random\@\@QEAA\@I_N\@Z
-     */
-    MCAPI Random(unsigned int, bool);
-    /**
      * @symbol ?nextFloat\@Random\@\@QEAAMMM\@Z
      */
     MCAPI float nextFloat(float, float);

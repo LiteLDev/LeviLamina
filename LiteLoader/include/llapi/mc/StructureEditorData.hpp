@@ -32,6 +32,10 @@ public:
      */
     MCAPI StructureEditorData(class StructureEditorData const &);
     /**
+     * @symbol ??0StructureEditorData\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI StructureEditorData(class StructureEditorData &&);
+    /**
      * @symbol ??0StructureEditorData\@\@QEAA\@XZ
      */
     MCAPI StructureEditorData();
@@ -217,10 +221,6 @@ public:
     MCAPI static class BlockPos getOrientedBounds(class BlockPos const &, enum class Rotation);
 
 //private:
-    /**
-     * @symbol ?_setPivotFromStructureSize\@StructureEditorData\@\@AEAAXXZ
-     */
-    MCAPI void _setPivotFromStructureSize();
 
 private:
     /**

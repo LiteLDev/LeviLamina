@@ -25,6 +25,7 @@ class ItemStackRequestActionCreate {
 public:
     class ItemStackRequestActionCreate& operator=(class ItemStackRequestActionCreate const &) = delete;
     ItemStackRequestActionCreate(class ItemStackRequestActionCreate const &) = delete;
+    ItemStackRequestActionCreate() = delete;
 #endif
 
 public:
@@ -58,10 +59,6 @@ public:
      * @symbol ?_read\@ItemStackRequestActionCreate\@\@MEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
-    /**
-     * @symbol ??0ItemStackRequestActionCreate\@\@QEAA\@XZ
-     */
-    MCAPI ItemStackRequestActionCreate();
     /**
      * @symbol ?getResultsIndex\@ItemStackRequestActionCreate\@\@QEBAEXZ
      */

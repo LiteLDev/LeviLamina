@@ -40,10 +40,6 @@ public:
      */
     MCAPI int execute(class FunctionEntry &, class CommandOrigin const &, enum class FunctionQueueOrder);
     /**
-     * @symbol ?getCommandDispatcher\@FunctionManager\@\@QEAAAEAVICommandDispatcher\@\@XZ
-     */
-    MCAPI class ICommandDispatcher & getCommandDispatcher();
-    /**
      * @symbol ?getFunction\@FunctionManager\@\@QEAAPEAVFunctionEntry\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class FunctionEntry * getFunction(std::string const &);
@@ -51,10 +47,6 @@ public:
      * @symbol ?load\@FunctionManager\@\@QEAAXAEAVResourcePackManager\@\@AEAVCommandRegistry\@\@\@Z
      */
     MCAPI void load(class ResourcePackManager &, class CommandRegistry &);
-    /**
-     * @symbol ?queueCommands\@FunctionManager\@\@QEAAXAEBV?$vector\@V?$unique_ptr\@VIFunctionEntry\@\@U?$default_delete\@VIFunctionEntry\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VIFunctionEntry\@\@U?$default_delete\@VIFunctionEntry\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEBVCommandOrigin\@\@W4FunctionQueueOrder\@\@\@Z
-     */
-    MCAPI void queueCommands(std::vector<std::unique_ptr<class IFunctionEntry>> const &, class CommandOrigin const &, enum class FunctionQueueOrder);
     /**
      * @symbol ?tick\@FunctionManager\@\@QEAAXXZ
      */

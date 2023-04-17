@@ -25,6 +25,7 @@ class AnvilContainerScreenValidator {
 public:
     class AnvilContainerScreenValidator& operator=(class AnvilContainerScreenValidator const &) = delete;
     AnvilContainerScreenValidator(class AnvilContainerScreenValidator const &) = delete;
+    AnvilContainerScreenValidator() = delete;
 #endif
 
 public:
@@ -48,9 +49,5 @@ public:
      * @symbol ?getCraftResult\@AnvilContainerScreenValidator\@\@UEAA?AUContainerValidationCraftResult\@\@AEBVContainerScreenContext\@\@AEAVContainerScreenValidation\@\@V?$unique_ptr\@UContainerValidationCraftInputs\@\@U?$default_delete\@UContainerValidationCraftInputs\@\@\@std\@\@\@std\@\@\@Z
      */
     virtual struct ContainerValidationCraftResult getCraftResult(class ContainerScreenContext const &, class ContainerScreenValidation &, std::unique_ptr<struct ContainerValidationCraftInputs>);
-    /**
-     * @symbol ??0AnvilContainerScreenValidator\@\@QEAA\@XZ
-     */
-    MCAPI AnvilContainerScreenValidator();
 
 };

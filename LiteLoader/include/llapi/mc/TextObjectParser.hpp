@@ -86,6 +86,10 @@ public:
      */
     MCAPI static std::string const RAW_TEXT_ERROR_WITH_NOT_ARRAY_OR_RAW_TEXT;
     /**
+     * @symbol ?textObjectFromJson\@TextObjectParser\@\@SA_NAEBVValue\@Json\@\@AEAVTextObjectRoot\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static bool textObjectFromJson(class Json::Value const &, class TextObjectRoot &, std::string &);
+    /**
      * @symbol ?textObjectFromJsonServer\@TextObjectParser\@\@SA_NAEBVValue\@Json\@\@AEAVTextObjectRoot\@\@UServerData\@1\@AEAUErrorLocalization\@1\@\@Z
      */
     MCAPI static bool textObjectFromJsonServer(class Json::Value const &, class TextObjectRoot &, struct TextObjectParser::ServerData, struct TextObjectParser::ErrorLocalization &);

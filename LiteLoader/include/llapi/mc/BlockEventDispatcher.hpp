@@ -38,10 +38,6 @@ public:
      */
     MCAPI class BlockEventDispatcherToken registerListener(class Vec3 const &, float, class std::function<void (class BlockPos const &, unsigned int, class Block const &, class Actor *)>);
     /**
-     * @symbol ?removeListener\@BlockEventDispatcher\@\@QEAAXH\@Z
-     */
-    MCAPI void removeListener(int);
-    /**
      * @symbol ?updatePosition\@BlockEventDispatcher\@\@QEAAXHAEBVVec3\@\@\@Z
      */
     MCAPI void updatePosition(int, class Vec3 const &);

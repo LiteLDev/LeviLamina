@@ -222,9 +222,33 @@ public:
      */
     MCAPI static struct ItemTag const Tool;
     /**
+     * @symbol ?TransformMaterials\@VanillaItemTags\@\@2UItemTag\@\@B
+     */
+    MCAPI static struct ItemTag const TransformMaterials;
+    /**
+     * @symbol ?TransformTemplates\@VanillaItemTags\@\@2UItemTag\@\@B
+     */
+    MCAPI static struct ItemTag const TransformTemplates;
+    /**
+     * @symbol ?TransformableItems\@VanillaItemTags\@\@2UItemTag\@\@B
+     */
+    MCAPI static struct ItemTag const TransformableItems;
+    /**
      * @symbol ?Trident\@VanillaItemTags\@\@2UItemTag\@\@B
      */
     MCAPI static struct ItemTag const Trident;
+    /**
+     * @symbol ?TrimMaterials\@VanillaItemTags\@\@2UItemTag\@\@B
+     */
+    MCAPI static struct ItemTag const TrimMaterials;
+    /**
+     * @symbol ?TrimTemplates\@VanillaItemTags\@\@2UItemTag\@\@B
+     */
+    MCAPI static struct ItemTag const TrimTemplates;
+    /**
+     * @symbol ?TrimmableArmors\@VanillaItemTags\@\@2UItemTag\@\@B
+     */
+    MCAPI static struct ItemTag const TrimmableArmors;
     /**
      * @symbol ?VibrationDamper\@VanillaItemTags\@\@2UItemTag\@\@B
      */

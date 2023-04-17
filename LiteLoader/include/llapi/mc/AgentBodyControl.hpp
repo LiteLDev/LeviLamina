@@ -25,6 +25,7 @@ class AgentBodyControl {
 public:
     class AgentBodyControl& operator=(class AgentBodyControl const &) = delete;
     AgentBodyControl(class AgentBodyControl const &) = delete;
+    AgentBodyControl() = delete;
 #endif
 
 public:
@@ -38,9 +39,5 @@ public:
      * @symbol ?clientTick\@AgentBodyControl\@\@UEAAXAEAVMob\@\@\@Z
      */
     virtual void clientTick(class Mob &);
-    /**
-     * @symbol ??0AgentBodyControl\@\@QEAA\@XZ
-     */
-    MCAPI AgentBodyControl();
 
 };

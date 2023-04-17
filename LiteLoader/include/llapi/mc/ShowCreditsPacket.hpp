@@ -74,12 +74,12 @@ public:
     MCVAPI ~ShowCreditsPacket();
 #endif
     /**
-     * @symbol ??0ShowCreditsPacket\@\@QEAA\@XZ
-     */
-    MCAPI ShowCreditsPacket();
-    /**
      * @symbol ??0ShowCreditsPacket\@\@QEAA\@VActorRuntimeID\@\@W4CreditsState\@0\@\@Z
      */
     MCAPI ShowCreditsPacket(class ActorRuntimeID, enum class ShowCreditsPacket::CreditsState);
+    /**
+     * @symbol ??0ShowCreditsPacket\@\@QEAA\@XZ
+     */
+    MCAPI ShowCreditsPacket();
 
 };

@@ -34,6 +34,10 @@ public:
      */
     MCAPI class BlockEventDispatcherToken & operator=(class BlockEventDispatcherToken &&);
     /**
+     * @symbol ?unregister\@BlockEventDispatcherToken\@\@QEAAXXZ
+     */
+    MCAPI void unregister();
+    /**
      * @symbol ??1BlockEventDispatcherToken\@\@QEAA\@XZ
      */
     MCAPI ~BlockEventDispatcherToken();

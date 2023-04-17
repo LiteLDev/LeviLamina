@@ -31,10 +31,6 @@ public:
 
 public:
     /**
-     * @symbol ??0BlockStateMeta\@\@QEAA\@AEBVItemState\@\@AEBUBlockStateDefinition\@\@\@Z
-     */
-    MCAPI BlockStateMeta(class ItemState const &, struct BlockStateDefinition const &);
-    /**
      * @symbol ?getBool\@BlockStateMeta\@\@QEBA?B_NH\@Z
      */
     MCAPI bool const getBool(int) const;
@@ -51,9 +47,9 @@ public:
      */
     MCAPI std::string const & getName() const;
     /**
-     * @symbol ?getState\@BlockStateMeta\@\@QEBAAEBVItemState\@\@XZ
+     * @symbol ?getState\@BlockStateMeta\@\@QEBAAEBVBlockState\@\@XZ
      */
-    MCAPI class ItemState const & getState() const;
+    MCAPI class BlockState const & getState() const;
     /**
      * @symbol ?getString\@BlockStateMeta\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */

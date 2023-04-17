@@ -31,5 +31,9 @@ public:
      * @symbol ?createSystem\@InsideCactusBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
+    /**
+     * @symbol ?tick\@InsideCactusBlockSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBU?$InsideBlockWithPosAndBlockComponent\@UCactusBlockFlag\@\@\@\@UInsideBlockComponent\@\@\@\@\@Z
+     */
+    MCAPI static void tick(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct InsideBlockWithPosAndBlockComponent<struct CactusBlockFlag> const, struct InsideBlockComponent>);
 
 };

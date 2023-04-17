@@ -26,10 +26,13 @@ enum class UserType;
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDUCATIONMETADATA
 public:
     struct EducationMetadata& operator=(struct EducationMetadata const &) = delete;
-    EducationMetadata(struct EducationMetadata const &) = delete;
 #endif
 
 public:
+    /**
+     * @symbol ??0EducationMetadata\@\@QEAA\@AEBU0\@\@Z
+     */
+    MCAPI EducationMetadata(struct EducationMetadata const &);
     /**
      * @symbol ??0EducationMetadata\@\@QEAA\@XZ
      */

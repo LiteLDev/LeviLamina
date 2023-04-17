@@ -30,6 +30,10 @@ public:
 
 public:
     /**
+     * @symbol ??0BannerPattern\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0VItemStack\@\@F_N\@Z
+     */
+    MCAPI BannerPattern(std::string const &, std::string const &, class ItemStack, short, bool);
+    /**
      * @symbol ?getIgnoreAux\@BannerPattern\@\@QEBA_NXZ
      */
     MCAPI bool getIgnoreAux() const;
@@ -158,6 +162,10 @@ public:
      */
     MCAPI static class BannerPattern * mHalfVerticalRight;
     /**
+     * @symbol ?mIllager\@BannerPattern\@\@2PEAV1\@EA
+     */
+    MCAPI static class BannerPattern * mIllager;
+    /**
      * @symbol ?mMojang\@BannerPattern\@\@2PEAV1\@EA
      */
     MCAPI static class BannerPattern * mMojang;
@@ -249,5 +257,9 @@ public:
      * @symbol ?mTrianglesTop\@BannerPattern\@\@2PEAV1\@EA
      */
     MCAPI static class BannerPattern * mTrianglesTop;
+    /**
+     * @symbol ?tryGetPatternDataFromTag\@BannerPattern\@\@SAPEBVCompoundTag\@\@PEBVTag\@\@\@Z
+     */
+    MCAPI static class CompoundTag const * tryGetPatternDataFromTag(class Tag const *);
 
 };

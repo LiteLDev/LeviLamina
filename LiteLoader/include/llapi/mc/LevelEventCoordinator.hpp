@@ -63,10 +63,6 @@ public:
      */
     MCAPI void sendLevelTick(class Level &);
     /**
-     * @symbol ?sendLevelTickEnd\@LevelEventCoordinator\@\@QEAAXAEAVLevel\@\@\@Z
-     */
-    MCAPI void sendLevelTickEnd(class Level &);
-    /**
      * @symbol ?sendLevelTickStart\@LevelEventCoordinator\@\@QEAAXAEAVLevel\@\@\@Z
      */
     MCAPI void sendLevelTickStart(class Level &);

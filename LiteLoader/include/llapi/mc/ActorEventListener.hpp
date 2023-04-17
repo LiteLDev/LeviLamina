@@ -39,6 +39,10 @@ public:
      */
     MCVAPI enum class EventResult onActorCreated(class Actor &);
     /**
+     * @symbol ?onActorCreationAttemptFailed\@ActorEventListener\@\@UEAA?AW4EventResult\@\@AEAVActor\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
+     */
+    MCVAPI enum class EventResult onActorCreationAttemptFailed(class Actor &, class std::basic_string_view<char, struct std::char_traits<char>>);
+    /**
      * @symbol ?onActorDefinitionEvent\@ActorEventListener\@\@UEAA?AW4EventResult\@\@AEAVActor\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$vector\@UActorDefinitionModifier\@\@V?$allocator\@UActorDefinitionModifier\@\@\@std\@\@\@5\@\@Z
      */
     MCVAPI enum class EventResult onActorDefinitionEvent(class Actor &, std::string const &, std::vector<struct ActorDefinitionModifier> &);

@@ -32,10 +32,8 @@
 #include "llapi/mc/PlayerActionPacket.hpp"
 #include "llapi/mc/RespawnPacket.hpp"
 #include "llapi/mc/Scoreboard.hpp"
-#include "llapi/mc/NpcActionsContainer.hpp"
 #include "llapi/mc/NpcSceneDialogueData.hpp"
 #include "llapi/mc/ArmorStand.hpp"
-#include "llapi/mc/NpcAction.hpp"
 #include "llapi/mc/NpcComponent.hpp"
 #include "llapi/mc/Container.hpp"
 #include "llapi/mc/ScoreboardId.hpp"
@@ -1834,11 +1832,11 @@ TClasslessInstanceHook(void, "?releaseUsing@TridentItem@@UEBAXAEAVItemStack@@PEA
 
 #include "llapi/mc/WeakEntityRef.hpp"
 #include "llapi/mc/EntityContext.hpp"
+#include "llapi/mc/Npc.hpp"
 
 ////////////// NpcCmd //////////////
 TInstanceHook(void,
-              "?executeCommandAction@NpcComponent@@QEAAXAEAVActor@@AEAVPlayer@@HAEBV?$basic_string@DU?$char_traits@D@"
-              "std@@V?$allocator@D@2@@std@@@Z",
+              "?executeCommandAction@NpcComponent@@QEAAXAEAVActor@@AEAVPlayer@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
               NpcComponent, Actor* ac, Player* player, int a4, string& a5) {
     IF_LISTENED(NpcCmdEvent) {
         // IDA NpcComponent::executeCommandAction
@@ -1847,15 +1845,19 @@ TInstanceHook(void,
         NpcSceneDialogueData data(WeakEntityRef(ac->getEntityContext().getWeakRef()), a5);
 
         auto container = data.getActionsContainer();
-        auto actionAt = container->getActionAt(a4);
-        if (actionAt && dAccess<char>(actionAt, 8) == (char)1) {
-
-            NpcCmdEvent ev{};
-            ev.mPlayer = player;
-            ev.mNpc = ac;
-            ev.mCommand = actionAt->getText();
-            if (!ev.call())
-                return;
+        if (container) {
+            auto actionAt = container->at(a4);
+            if (actionAt) {
+                if (auto* command = std::get_if<npc::CommandAction>(actionAt)) {
+                    NpcCmdEvent ev{};
+                    ev.mPlayer = player;
+                    ev.mNpc = ac;
+                    ev.mCommand = command->mActionValue.mText;
+                    if (!ev.call())
+                        return;
+                }
+               
+            }
         }
     }
     IF_LISTENED_END(NpcCmdEvent)

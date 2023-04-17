@@ -29,9 +29,9 @@ public:
 
 public:
     /**
-     * @symbol ??0PerlinNoise\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0PerlinNoise\@\@QEAA\@IHH\@Z
      */
-    MCAPI PerlinNoise(class PerlinNoise const &);
+    MCAPI PerlinNoise(unsigned int, int, int);
     /**
      * @symbol ??0PerlinNoise\@\@QEAA\@AEAVIRandom\@\@UYBlendingBugSettings\@\@HH\@Z
      */
@@ -41,9 +41,9 @@ public:
      */
     MCAPI PerlinNoise(class IRandom &, int, int);
     /**
-     * @symbol ??0PerlinNoise\@\@QEAA\@IHH\@Z
+     * @symbol ??0PerlinNoise\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI PerlinNoise(unsigned int, int, int);
+    MCAPI PerlinNoise(class PerlinNoise const &);
     /**
      * @symbol ?getRegion\@PerlinNoise\@\@QEBAXPEAMAEBVVec3\@\@HHH1\@Z
      */

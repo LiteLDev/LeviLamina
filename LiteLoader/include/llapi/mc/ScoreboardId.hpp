@@ -25,13 +25,13 @@ public:
 #undef AFTER_EXTRA
 public:
     /**
-     * @symbol ??0ScoreboardId\@\@QEAA\@XZ
-     */
-    MCAPI ScoreboardId();
-    /**
      * @symbol ??0ScoreboardId\@\@QEAA\@_J\@Z
      */
     MCAPI ScoreboardId(__int64);
+    /**
+     * @symbol ??0ScoreboardId\@\@QEAA\@XZ
+     */
+    MCAPI ScoreboardId();
     /**
      * @symbol ??0ScoreboardId\@\@QEAA\@AEBU0\@\@Z
      */
@@ -56,10 +56,6 @@ public:
      * @symbol ??9ScoreboardId\@\@QEBA_NAEBU0\@\@Z
      */
     MCAPI bool operator!=(struct ScoreboardId const &) const;
-    /**
-     * @symbol ??EScoreboardId\@\@QEAAAEAU0\@XZ
-     */
-    MCAPI struct ScoreboardId & operator++();
     /**
      * @symbol ??4ScoreboardId\@\@QEAAAEAU0\@AEBU0\@\@Z
      */

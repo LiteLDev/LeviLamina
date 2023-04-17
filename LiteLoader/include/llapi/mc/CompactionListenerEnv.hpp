@@ -130,10 +130,6 @@ public:
      */
     virtual void SleepForMicroseconds(int);
     /**
-     * @symbol ??0CompactionListenerEnv\@\@QEAA\@PEAVEnv\@leveldb\@\@\@Z
-     */
-    MCAPI CompactionListenerEnv(class leveldb::Env *);
-    /**
      * @symbol ?setCompactionCallback\@CompactionListenerEnv\@\@QEAAXV?$function\@$$A6AXW4CompactionStatus\@\@\@Z\@std\@\@\@Z
      */
     MCAPI void setCompactionCallback(class std::function<void (enum class CompactionStatus)>);

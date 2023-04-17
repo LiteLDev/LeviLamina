@@ -34,9 +34,9 @@ public:
      */
     MCAPI EconomyTradeableComponent(class Actor &);
     /**
-     * @symbol ?addAdditionalSaveData\@EconomyTradeableComponent\@\@QEAAXAEAVCompoundTag\@\@\@Z
+     * @symbol ?addAdditionalSaveData\@EconomyTradeableComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag &);
+    MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
      * @symbol ?createDataPacket\@EconomyTradeableComponent\@\@QEAA?AVUpdateTradePacket\@\@W4ContainerID\@\@\@Z
      */

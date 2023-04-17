@@ -25,7 +25,6 @@ class ContainerScreenValidatorBase {
 public:
     class ContainerScreenValidatorBase& operator=(class ContainerScreenValidatorBase const &) = delete;
     ContainerScreenValidatorBase(class ContainerScreenValidatorBase const &) = delete;
-    ContainerScreenValidatorBase() = delete;
 #endif
 
 public:
@@ -55,6 +54,10 @@ public:
      */
     MCVAPI ~ContainerScreenValidatorBase();
 #endif
+    /**
+     * @symbol ??0ContainerScreenValidatorBase\@\@QEAA\@XZ
+     */
+    MCAPI ContainerScreenValidatorBase();
     /**
      * @symbol ?isValidContainerForScreen\@ContainerScreenValidatorBase\@\@QEBA_NW4ContainerEnumName\@\@\@Z
      */

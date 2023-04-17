@@ -68,29 +68,29 @@ public:
      */
     MCAPI ItemDescriptor(class ReadOnlyBinaryStream &);
     /**
+     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVItem\@\@H\@Z
+     */
+    MCAPI ItemDescriptor(class Item const &, int);
+    /**
      * @symbol ??0ItemDescriptor\@\@QEAA\@AEBUItemTag\@\@\@Z
      */
     MCAPI ItemDescriptor(struct ItemTag const &);
-    /**
-     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVBlockLegacy\@\@\@Z
-     */
-    MCAPI ItemDescriptor(class BlockLegacy const &);
     /**
      * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
     MCAPI ItemDescriptor(class Json::Value const &, class SemVersion const &);
     /**
-     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVItem\@\@H\@Z
+     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVBlockLegacy\@\@\@Z
      */
-    MCAPI ItemDescriptor(class Item const &, int);
-    /**
-     * @symbol ??0ItemDescriptor\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI ItemDescriptor(class ItemDescriptor &&);
+    MCAPI ItemDescriptor(class BlockLegacy const &);
     /**
      * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVBlock\@\@\@Z
      */
     MCAPI ItemDescriptor(class Block const &);
+    /**
+     * @symbol ??0ItemDescriptor\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI ItemDescriptor(class ItemDescriptor &&);
     /**
      * @symbol ?forEachItemUntil\@ItemDescriptor\@\@QEBA_NV?$function\@$$A6A_NAEBVItem\@\@F\@Z\@std\@\@\@Z
      */

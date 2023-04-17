@@ -54,9 +54,5 @@ public:
      * @symbol ??0TextObjectLocalizedTextWithParams\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@2\@\@Z
      */
     MCAPI TextObjectLocalizedTextWithParams(std::string, std::vector<std::string> const &);
-    /**
-     * @symbol ??0TextObjectLocalizedTextWithParams\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VTextObjectRoot\@\@U?$default_delete\@VTextObjectRoot\@\@\@std\@\@\@2\@\@Z
-     */
-    MCAPI TextObjectLocalizedTextWithParams(std::string, std::unique_ptr<class TextObjectRoot>);
 
 };

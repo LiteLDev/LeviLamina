@@ -20,13 +20,13 @@ namespace ActorValueValidation {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?_fireTelemetryEvent\@ActorValueValidation\@\@YAXAEBVBlockPos\@\@PEBD\@Z
-     */
-    MCAPI void _fireTelemetryEvent(class BlockPos const &, char const *);
-    /**
      * @symbol ?_fireTelemetryEvent\@ActorValueValidation\@\@YAXAEBVVec3\@\@PEBD\@Z
      */
     MCAPI void _fireTelemetryEvent(class Vec3 const &, char const *);
+    /**
+     * @symbol ?_fireTelemetryEvent\@ActorValueValidation\@\@YAXAEBVBlockPos\@\@PEBD\@Z
+     */
+    MCAPI void _fireTelemetryEvent(class BlockPos const &, char const *);
     /**
      * @symbol ?_fireTelemetryEvent\@ActorValueValidation\@\@YAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEBD\@Z
      */

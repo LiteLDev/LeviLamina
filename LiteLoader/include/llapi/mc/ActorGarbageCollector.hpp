@@ -46,10 +46,6 @@ public:
      */
     MCAPI void garbageCollectEntity(class OwnerPtrT<struct EntityRefTraits>);
     /**
-     * @symbol ?garbageCollectEntityWhenChunkDiscarded\@ActorGarbageCollector\@\@QEAAXV?$OwnerPtrT\@UEntityRefTraits\@\@\@\@\@Z
-     */
-    MCAPI void garbageCollectEntityWhenChunkDiscarded(class OwnerPtrT<struct EntityRefTraits>);
-    /**
      * @symbol ?update\@ActorGarbageCollector\@\@QEAAXXZ
      */
     MCAPI void update();

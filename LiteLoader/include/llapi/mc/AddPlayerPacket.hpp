@@ -61,12 +61,12 @@ public:
     MCVAPI ~AddPlayerPacket();
 #endif
     /**
-     * @symbol ??0AddPlayerPacket\@\@QEAA\@XZ
-     */
-    MCAPI AddPlayerPacket();
-    /**
      * @symbol ??0AddPlayerPacket\@\@QEAA\@AEAVPlayer\@\@\@Z
      */
     MCAPI AddPlayerPacket(class Player &);
+    /**
+     * @symbol ??0AddPlayerPacket\@\@QEAA\@XZ
+     */
+    MCAPI AddPlayerPacket();
 
 };

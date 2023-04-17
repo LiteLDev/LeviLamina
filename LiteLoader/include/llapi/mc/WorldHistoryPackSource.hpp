@@ -6,7 +6,6 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
-#include "Core.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -71,18 +70,6 @@ public:
      */
     MCVAPI void forEachPackConst(class std::function<void (class Pack const &)>) const;
 #endif
-    /**
-     * @symbol ??0WorldHistoryPackSource\@\@QEAA\@AEBVPath\@Core\@\@W4PackType\@\@\@Z
-     */
-    MCAPI WorldHistoryPackSource(class Core::Path const &, enum class PackType);
-    /**
-     * @symbol ?getPathToWorld\@WorldHistoryPackSource\@\@QEBAAEBV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
-     */
-    MCAPI class Core::PathBuffer<std::string> const & getPathToWorld() const;
-    /**
-     * @symbol ?generateHistoryFilePath\@WorldHistoryPackSource\@\@SA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@AEBVPath\@3\@W4PackType\@\@\@Z
-     */
-    MCAPI static class Core::PathBuffer<std::string> generateHistoryFilePath(class Core::Path const &, enum class PackType);
 
 //private:
     /**

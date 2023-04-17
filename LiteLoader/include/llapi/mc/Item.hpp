@@ -699,9 +699,9 @@ public:
     virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
      * @vftbl 132
-     * @symbol ?_useOn\@Item\@\@EEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
+     * @symbol ?_useOn\@Item\@\@EEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
-    virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEM
     /**
      * @symbol ?getBaseColor\@Item\@\@UEBA?AVColor\@mce\@\@AEBVItemStack\@\@\@Z
@@ -781,10 +781,6 @@ public:
      */
     MCAPI class Item & addTags(class std::initializer_list<class std::reference_wrapper<struct ItemTag const>>);
     /**
-     * @symbol ?allowOffhand\@Item\@\@QEBA_NXZ
-     */
-    MCAPI bool allowOffhand() const;
-    /**
      * @symbol ?buildDescriptor\@Item\@\@QEBA?AVItemDescriptor\@\@FPEBVCompoundTag\@\@\@Z
      */
     MCAPI class ItemDescriptor buildDescriptor(short, class CompoundTag const *) const;
@@ -796,14 +792,6 @@ public:
      * @symbol ?destroySpeedBonus\@Item\@\@QEBAMAEBVItemStackBase\@\@\@Z
      */
     MCAPI float destroySpeedBonus(class ItemStackBase const &) const;
-    /**
-     * @symbol ?fixupOnLoad\@Item\@\@QEBAXAEAVItemStackBase\@\@AEAVLevel\@\@\@Z
-     */
-    MCAPI void fixupOnLoad(class ItemStackBase &, class Level &) const;
-    /**
-     * @symbol ?fixupOnLoad\@Item\@\@QEBAXAEAVItemStackBase\@\@\@Z
-     */
-    MCAPI void fixupOnLoad(class ItemStackBase &) const;
     /**
      * @symbol ?getCommandNames\@Item\@\@QEBA?AV?$vector\@UCommandName\@\@V?$allocator\@UCommandName\@\@\@std\@\@\@std\@\@XZ
      */
@@ -857,18 +845,6 @@ public:
      */
     MCAPI std::string getSerializedName() const;
     /**
-     * @symbol ?getUseAnimation\@Item\@\@QEBA?AW4UseAnimation\@\@XZ
-     */
-    MCAPI enum class UseAnimation getUseAnimation() const;
-    /**
-     * @symbol ?hasDamageValue\@Item\@\@QEBA_NPEBVCompoundTag\@\@\@Z
-     */
-    MCAPI bool hasDamageValue(class CompoundTag const *) const;
-    /**
-     * @symbol ?hasTag\@Item\@\@QEBA_NAEB_K\@Z
-     */
-    MCAPI bool hasTag(unsigned __int64 const &) const;
-    /**
      * @symbol ?isCommandOnly\@Item\@\@QEBA_NAEBVBaseGameVersion\@\@\@Z
      */
     MCAPI bool isCommandOnly(class BaseGameVersion const &) const;
@@ -876,14 +852,6 @@ public:
      * @symbol ?isElytra\@Item\@\@QEBA_NXZ
      */
     MCAPI bool isElytra() const;
-    /**
-     * @symbol ?isExplodable\@Item\@\@QEBA_NXZ
-     */
-    MCAPI bool isExplodable() const;
-    /**
-     * @symbol ?isFireResistant\@Item\@\@QEBA_NXZ
-     */
-    MCAPI bool isFireResistant() const;
     /**
      * @symbol ?isNameTag\@Item\@\@QEBA_NXZ
      */
@@ -896,10 +864,6 @@ public:
      * @symbol ??8Item\@\@QEBA_NAEBV0\@\@Z
      */
     MCAPI bool operator==(class Item const &) const;
-    /**
-     * @symbol ?removeDamageValue\@Item\@\@QEBAXAEAVItemStackBase\@\@\@Z
-     */
-    MCAPI void removeDamageValue(class ItemStackBase &) const;
     /**
      * @symbol ?setAllowOffhand\@Item\@\@QEAAAEAV1\@_N\@Z
      */
@@ -937,9 +901,9 @@ public:
      */
     MCAPI bool updateCustomBlockEntityTag(class BlockSource &, class ItemStackBase &, class BlockPos const &) const;
     /**
-     * @symbol ?useOn\@Item\@\@QEBA_NAEAVItemStack\@\@AEAVActor\@\@HHHEAEBVVec3\@\@\@Z
+     * @symbol ?useOn\@Item\@\@QEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@HHHEAEBVVec3\@\@\@Z
      */
-    MCAPI bool useOn(class ItemStack &, class Actor &, int, int, int, unsigned char, class Vec3 const &) const;
+    MCAPI class InteractionResult useOn(class ItemStack &, class Actor &, int, int, int, unsigned char, class Vec3 const &) const;
     /**
      * @symbol ?ICON_DESCRIPTION_PREFIX\@Item\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */

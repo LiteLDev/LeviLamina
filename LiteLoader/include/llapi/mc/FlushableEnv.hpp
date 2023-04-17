@@ -135,9 +135,5 @@ public:
      */
     MCVAPI ~FlushableEnv();
 #endif
-    /**
-     * @symbol ??0FlushableEnv\@\@QEAA\@PEAVEnv\@leveldb\@\@\@Z
-     */
-    MCAPI FlushableEnv(class leveldb::Env *);
 
 };

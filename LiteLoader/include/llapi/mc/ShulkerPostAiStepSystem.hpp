@@ -31,6 +31,10 @@ public:
      * @symbol ?createSystem\@ShulkerPostAiStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
+    /**
+     * @symbol ?tick\@ShulkerPostAiStepSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UShulkerFlag\@\@\@\@\@\@UActorRotationComponent\@\@UMobBodyRotationComponent\@\@UStateVectorComponent\@\@\@\@\@Z
+     */
+    MCAPI static void tick(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct ShulkerFlag>>, struct ActorRotationComponent, struct MobBodyRotationComponent, struct StateVectorComponent>);
 
 //private:
     /**

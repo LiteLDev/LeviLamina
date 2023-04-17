@@ -22,13 +22,13 @@ namespace KnockbackRules {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?doKnockbackAttack\@KnockbackRules\@\@YAXAEAVMob\@\@0AEBVVec2\@\@MM\@Z
-     */
-    MCAPI void doKnockbackAttack(class Mob &, class Mob &, class Vec2 const &, float, float);
-    /**
      * @symbol ?doKnockbackAttack\@KnockbackRules\@\@YAXAEAVMob\@\@0AEBVVec3\@\@MM\@Z
      */
     MCAPI void doKnockbackAttack(class Mob &, class Mob &, class Vec3 const &, float, float);
+    /**
+     * @symbol ?doKnockbackAttack\@KnockbackRules\@\@YAXAEAVMob\@\@0AEBVVec2\@\@MM\@Z
+     */
+    MCAPI void doKnockbackAttack(class Mob &, class Mob &, class Vec2 const &, float, float);
     /**
      * @symbol ?getScaledKnockbackForce\@KnockbackRules\@\@YAMAEBVActor\@\@M\@Z
      */
@@ -37,10 +37,6 @@ namespace KnockbackRules {
      * @symbol ?isKnockbackResistant\@KnockbackRules\@\@YA_NAEBVActor\@\@\@Z
      */
     MCAPI bool isKnockbackResistant(class Actor const &);
-    /**
-     * @symbol ?shouldApplyKnockback\@KnockbackRules\@\@YA_NAEBVMob\@\@\@Z
-     */
-    MCAPI bool shouldApplyKnockback(class Mob const &);
     /**
      * @symbol ?useLegacyKnockback\@KnockbackRules\@\@YA_NAEBVLevel\@\@\@Z
      */

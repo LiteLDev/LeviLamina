@@ -64,13 +64,13 @@ public:
     MCVAPI ~TemporalAttributeBuff();
 #endif
     /**
-     * @symbol ??0TemporalAttributeBuff\@\@QEAA\@MHW4AttributeBuffType\@\@_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI TemporalAttributeBuff(float, int, enum class AttributeBuffType, bool, std::string const &);
-    /**
      * @symbol ??0TemporalAttributeBuff\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI TemporalAttributeBuff(class TemporalAttributeBuff const &);
+    /**
+     * @symbol ??0TemporalAttributeBuff\@\@QEAA\@MHW4AttributeBuffType\@\@_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI TemporalAttributeBuff(float, int, enum class AttributeBuffType, bool, std::string const &);
     /**
      * @symbol ?getBaseAmount\@TemporalAttributeBuff\@\@QEBAMXZ
      */
@@ -91,9 +91,5 @@ public:
      * @symbol ?serializationSetLifeTime\@TemporalAttributeBuff\@\@QEAAXH\@Z
      */
     MCAPI void serializationSetLifeTime(int);
-    /**
-     * @symbol ?tick\@TemporalAttributeBuff\@\@QEAAXXZ
-     */
-    MCAPI void tick();
 
 };

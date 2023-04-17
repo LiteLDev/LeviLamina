@@ -39,13 +39,13 @@ public:
 
 public:
     /**
-     * @symbol ??0StructureSettings\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI StructureSettings(class StructureSettings &&);
-    /**
      * @symbol ??0StructureSettings\@\@QEAA\@XZ
      */
     MCAPI StructureSettings();
+    /**
+     * @symbol ??0StructureSettings\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI StructureSettings(class StructureSettings &&);
     /**
      * @symbol ?getAnimationMode\@StructureSettings\@\@QEBA?AW4AnimationMode\@\@XZ
      */
@@ -67,10 +67,6 @@ public:
      */
     MCAPI bool getIgnoreEntities() const;
     /**
-     * @symbol ?getIgnoreJigsawBlocks\@StructureSettings\@\@QEBA_NXZ
-     */
-    MCAPI bool getIgnoreJigsawBlocks() const;
-    /**
      * @symbol ?getIntegritySeed\@StructureSettings\@\@QEBAIXZ
      */
     MCAPI unsigned int getIntegritySeed() const;
@@ -78,10 +74,6 @@ public:
      * @symbol ?getIntegrityValue\@StructureSettings\@\@QEBAMXZ
      */
     MCAPI float getIntegrityValue() const;
-    /**
-     * @symbol ?getIsWaterLogged\@StructureSettings\@\@QEBA_NXZ
-     */
-    MCAPI bool getIsWaterLogged() const;
     /**
      * @symbol ?getLastTouchedByPlayerID\@StructureSettings\@\@QEBA?AUActorUniqueID\@\@XZ
      */
@@ -99,10 +91,6 @@ public:
      */
     MCAPI class Vec3 const & getPivot() const;
     /**
-     * @symbol ?getReloadActorEquipment\@StructureSettings\@\@QEBA_NXZ
-     */
-    MCAPI bool getReloadActorEquipment() const;
-    /**
      * @symbol ?getRotation\@StructureSettings\@\@QEBA?AW4Rotation\@\@XZ
      */
     MCAPI enum class Rotation getRotation() const;
@@ -119,13 +107,13 @@ public:
      */
     MCAPI bool isAnimated() const;
     /**
-     * @symbol ??4StructureSettings\@\@QEAAAEAV0\@$$QEAV0\@\@Z
-     */
-    MCAPI class StructureSettings & operator=(class StructureSettings &&);
-    /**
      * @symbol ??4StructureSettings\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
     MCAPI class StructureSettings & operator=(class StructureSettings const &);
+    /**
+     * @symbol ??4StructureSettings\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     */
+    MCAPI class StructureSettings & operator=(class StructureSettings &&);
     /**
      * @symbol ?setAllowNonTickingPlayerAndTickingAreaChunks\@StructureSettings\@\@QEAAX_N\@Z
      */
@@ -138,10 +126,6 @@ public:
      * @symbol ?setAnimationSeconds\@StructureSettings\@\@QEAAXM\@Z
      */
     MCAPI void setAnimationSeconds(float);
-    /**
-     * @symbol ?setAnimationTicks\@StructureSettings\@\@QEAAXI\@Z
-     */
-    MCAPI void setAnimationTicks(unsigned int);
     /**
      * @symbol ?setIgnoreBlocks\@StructureSettings\@\@QEAAX_N\@Z
      */
@@ -162,10 +146,6 @@ public:
      * @symbol ?setIntegrityValue\@StructureSettings\@\@QEAAXM\@Z
      */
     MCAPI void setIntegrityValue(float);
-    /**
-     * @symbol ?setIsWaterLogged\@StructureSettings\@\@QEAAX_N\@Z
-     */
-    MCAPI void setIsWaterLogged(bool);
     /**
      * @symbol ?setLastTouchedByPlayerID\@StructureSettings\@\@QEAAXUActorUniqueID\@\@\@Z
      */

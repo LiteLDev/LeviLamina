@@ -31,10 +31,6 @@ public:
 
 public:
     /**
-     * @symbol ?addItemLockMode\@ItemLockHelper\@\@SA_NAEAVItemStackBase\@\@AEBVValue\@Json\@\@\@Z
-     */
-    MCAPI static bool addItemLockMode(class ItemStackBase &, class Json::Value const &);
-    /**
      * @symbol ?addKeepOnDeath\@ItemLockHelper\@\@SA_NAEAVItemStackBase\@\@AEBVValue\@Json\@\@\@Z
      */
     MCAPI static bool addKeepOnDeath(class ItemStackBase &, class Json::Value const &);

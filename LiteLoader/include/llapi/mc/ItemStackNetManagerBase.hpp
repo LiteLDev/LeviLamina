@@ -95,10 +95,6 @@ public:
      */
     MCAPI ItemStackNetManagerBase(class Player &, bool, bool);
     /**
-     * @symbol ?_getScreenStack\@ItemStackNetManagerBase\@\@QEAAAEAVItemStackNetManagerScreenStack\@\@XZ
-     */
-    MCAPI class ItemStackNetManagerScreenStack & _getScreenStack();
-    /**
      * @symbol ?getScreenContext\@ItemStackNetManagerBase\@\@QEBAAEBVContainerScreenContext\@\@XZ
      */
     MCAPI class ContainerScreenContext const & getScreenContext() const;
@@ -125,6 +121,14 @@ public:
      */
     MCAPI bool _isRequestActionAllowed(class ItemStackRequestAction const &);
 
+//private:
+    /**
+     * @symbol ?_pushScreen\@ItemStackNetManagerBase\@\@AEAAXVContainerScreenContext\@\@\@Z
+     */
+    MCAPI void _pushScreen(class ContainerScreenContext);
+
 protected:
+
+private:
 
 };

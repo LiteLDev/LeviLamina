@@ -29,13 +29,13 @@ public:
 
 public:
     /**
-     * @symbol ??0PackedItemUseLegacyInventoryTransaction\@\@QEAA\@XZ
-     */
-    MCAPI PackedItemUseLegacyInventoryTransaction();
-    /**
      * @symbol ??0PackedItemUseLegacyInventoryTransaction\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI PackedItemUseLegacyInventoryTransaction(struct PackedItemUseLegacyInventoryTransaction &&);
+    /**
+     * @symbol ??0PackedItemUseLegacyInventoryTransaction\@\@QEAA\@XZ
+     */
+    MCAPI PackedItemUseLegacyInventoryTransaction();
     /**
      * @symbol ??1PackedItemUseLegacyInventoryTransaction\@\@QEAA\@XZ
      */

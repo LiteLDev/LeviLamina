@@ -37,6 +37,10 @@ public:
      */
     MCAPI bool hasLockType(enum class ClientInputLockType) const;
     /**
+     * @symbol ?serialize\@ClientInputLockComponent\@\@QEBAIXZ
+     */
+    MCAPI unsigned int serialize() const;
+    /**
      * @symbol ?setLockCategory\@ClientInputLockComponent\@\@QEAAXW4ClientInputLockCategory\@\@_N\@Z
      */
     MCAPI void setLockCategory(enum class ClientInputLockCategory, bool);

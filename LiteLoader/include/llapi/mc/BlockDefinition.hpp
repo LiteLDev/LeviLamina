@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Core.hpp"
 
 #define BEFORE_EXTRA
 
@@ -50,10 +49,6 @@ public:
      * @symbol ?registerBlockDefinitionTypes\@BlockDefinition\@\@SAXXZ
      */
     MCAPI static void registerBlockDefinitionTypes();
-    /**
-     * @symbol ?upgradeJson\@BlockDefinition\@\@SA?AU?$pair\@_NVSemVersion\@\@\@std\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@AEBVPath\@Core\@\@V?$optional\@VSemVersion\@\@\@3\@\@Z
-     */
-    MCAPI static struct std::pair<bool, class SemVersion> upgradeJson(std::string &, class Core::Path const &, class std::optional<class SemVersion>);
 
 //private:
 

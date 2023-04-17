@@ -28,6 +28,10 @@ public:
 
 public:
     /**
+     * @symbol ??0TagUpdateToken\@\@QEAA\@V?$weak_ptr\@U?$atomic\@H\@std\@\@\@std\@\@\@Z
+     */
+    MCAPI TagUpdateToken(class std::weak_ptr<struct std::atomic<int>>);
+    /**
      * @symbol ??1TagUpdateToken\@\@QEAA\@XZ
      */
     MCAPI ~TagUpdateToken();

@@ -100,12 +100,6 @@ public:
      * @symbol ?_onItemChanged\@PlayerUIContainerModelBase\@\@MEAAXHAEBVItemStack\@\@0\@Z
      */
     virtual void _onItemChanged(int, class ItemStack const &, class ItemStack const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERUICONTAINERMODELBASE
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~PlayerUIContainerModelBase();
-#endif
     /**
      * @symbol ??0PlayerUIContainerModelBase\@\@QEAA\@W4ContainerEnumName\@\@AEAVPlayer\@\@HW4ContainerCategory\@\@\@Z
      */

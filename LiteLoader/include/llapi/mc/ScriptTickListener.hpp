@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Scripting.hpp"
 
 #define BEFORE_EXTRA
 
@@ -28,54 +27,15 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTTICKLISTENER
     /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
-    virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
-    virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
      * @symbol ?onLevelRemovedPlayer\@ScriptTickListener\@\@UEAA?AW4EventResult\@\@AEAVLevel\@\@AEAVPlayer\@\@\@Z
      */
-    virtual enum class EventResult onLevelRemovedPlayer(class Level &, class Player &);
+    MCVAPI enum class EventResult onLevelRemovedPlayer(class Level &, class Player &);
     /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
+     * @symbol ?onLevelTickEnd\@ScriptTickListener\@\@UEAAXXZ
      */
-    virtual void __unk_vfn_5();
-    /**
-     * @vftbl 6
-     * @symbol __unk_vfn_6
-     */
-    virtual void __unk_vfn_6();
-    /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
-     */
-    virtual void __unk_vfn_7();
-    /**
-     * @vftbl 8
-     * @symbol ?onLevelTickEnd\@ScriptTickListener\@\@UEAA?AW4EventResult\@\@AEAVLevel\@\@\@Z
-     */
-    virtual enum class EventResult onLevelTickEnd(class Level &);
-    /**
-     * @symbol ??0ScriptTickListener\@\@QEAA\@AEAVScriptEngine\@Scripting\@\@AEAVScriptFormPromiseTracker\@\@AEAVScriptDeferredActionManager\@\@\@Z
-     */
-    MCAPI ScriptTickListener(class Scripting::ScriptEngine &, class ScriptFormPromiseTracker &, class ScriptDeferredActionManager &);
+    MCVAPI void onLevelTickEnd();
+#endif
 
 };

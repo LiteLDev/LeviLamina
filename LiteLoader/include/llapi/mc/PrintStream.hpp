@@ -39,5 +39,15 @@ public:
      * @symbol ?print\@PrintStream\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void print(std::string const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRINTSTREAM
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~PrintStream();
+#endif
+    /**
+     * @symbol ?println\@PrintStream\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI void println(std::string const &);
 
 };

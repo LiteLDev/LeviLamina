@@ -11,15 +11,15 @@
 #undef BEFORE_EXTRA
 
 
-class BlockCraftingTableDescription {
+struct BlockCraftingTableDescription {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCRAFTINGTABLEDESCRIPTION
 public:
-    class BlockCraftingTableDescription& operator=(class BlockCraftingTableDescription const &) = delete;
-    BlockCraftingTableDescription(class BlockCraftingTableDescription const &) = delete;
+    struct BlockCraftingTableDescription& operator=(struct BlockCraftingTableDescription const &) = delete;
+    BlockCraftingTableDescription(struct BlockCraftingTableDescription const &) = delete;
     BlockCraftingTableDescription() = delete;
 #endif
 
@@ -67,9 +67,5 @@ public:
      * @symbol ?bindType\@BlockCraftingTableDescription\@\@SAXXZ
      */
     MCAPI static void bindType();
-    /**
-     * @symbol ?registerVersionUpgrades\@BlockCraftingTableDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
-     */
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

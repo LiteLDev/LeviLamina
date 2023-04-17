@@ -24,15 +24,14 @@ struct ContainerValidationResult {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERVALIDATIONRESULT
 public:
     struct ContainerValidationResult& operator=(struct ContainerValidationResult const &) = delete;
-    ContainerValidationResult(struct ContainerValidationResult const &) = delete;
     ContainerValidationResult() = delete;
 #endif
 
 public:
     /**
-     * @symbol ??0ContainerValidationResult\@\@QEAA\@$$QEAV?$vector\@UContainerValidationOperation\@\@V?$allocator\@UContainerValidationOperation\@\@\@std\@\@\@std\@\@W4ContainerValidationOutcome\@\@W4ContainerScreenRequestActionType\@\@\@Z
+     * @symbol ??0ContainerValidationResult\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI ContainerValidationResult(std::vector<struct ContainerValidationOperation> &&, enum class ContainerValidationOutcome, enum class ContainerScreenRequestActionType);
+    MCAPI ContainerValidationResult(struct ContainerValidationResult const &);
     /**
      * @symbol ??0ContainerValidationResult\@\@QEAA\@W4ContainerValidationOutcome\@\@\@Z
      */

@@ -36,7 +36,7 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?canUse\@DefendVillageTargetGoal\@\@UEAA_NXZ
+     * @symbol ?canUse\@OwnerHurtByTargetGoal\@\@UEAA_NXZ
      */
     virtual bool canUse() = 0;
     /**

@@ -35,13 +35,13 @@ public:
      */
     MCAPI ResolvedItemIconInfo(std::string const &, int, enum class ItemIconInfoType);
     /**
-     * @symbol ??0ResolvedItemIconInfo\@\@QEAA\@XZ
-     */
-    MCAPI ResolvedItemIconInfo();
-    /**
      * @symbol ??0ResolvedItemIconInfo\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@MMMMGG\@Z
      */
     MCAPI ResolvedItemIconInfo(std::string const &, float, float, float, float, unsigned short, unsigned short);
+    /**
+     * @symbol ??0ResolvedItemIconInfo\@\@QEAA\@XZ
+     */
+    MCAPI ResolvedItemIconInfo();
     /**
      * @symbol ??1ResolvedItemIconInfo\@\@QEAA\@XZ
      */

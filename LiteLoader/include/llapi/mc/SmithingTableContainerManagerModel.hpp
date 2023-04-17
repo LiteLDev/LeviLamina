@@ -86,5 +86,9 @@ public:
      * @symbol ?RESULT_SLOT\@SmithingTableContainerManagerModel\@\@2HB
      */
     MCAPI static int const RESULT_SLOT;
+    /**
+     * @symbol ?TEMPLATE_SLOT\@SmithingTableContainerManagerModel\@\@2HB
+     */
+    MCAPI static int const TEMPLATE_SLOT;
 
 };

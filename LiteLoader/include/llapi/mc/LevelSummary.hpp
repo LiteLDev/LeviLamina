@@ -42,14 +42,6 @@ public:
      */
     MCAPI struct LevelSummary & operator=(struct LevelSummary const &);
     /**
-     * @symbol ?reinitializeWorldIconPath\@LevelSummary\@\@QEAAXAEBVPath\@Core\@\@\@Z
-     */
-    MCAPI void reinitializeWorldIconPath(class Core::Path const &);
-    /**
-     * @symbol ?reinitializeWorldSize\@LevelSummary\@\@QEAAXAEBVPath\@Core\@\@\@Z
-     */
-    MCAPI void reinitializeWorldSize(class Core::Path const &);
-    /**
      * @symbol ?setName\@LevelSummary\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void setName(std::string);

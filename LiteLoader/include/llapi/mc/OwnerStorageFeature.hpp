@@ -30,13 +30,13 @@ public:
 
 //protected:
     /**
-     * @symbol ??0OwnerStorageFeature\@\@IEAA\@W4VariadicInit\@0\@AEAVFeatureRegistry\@\@\@Z
-     */
-    MCAPI OwnerStorageFeature(enum class OwnerStorageFeature::VariadicInit, class FeatureRegistry &);
-    /**
      * @symbol ??0OwnerStorageFeature\@\@IEAA\@$$QEAV0\@\@Z
      */
     MCAPI OwnerStorageFeature(class OwnerStorageFeature &&);
+    /**
+     * @symbol ??0OwnerStorageFeature\@\@IEAA\@W4VariadicInit\@0\@AEAVFeatureRegistry\@\@\@Z
+     */
+    MCAPI OwnerStorageFeature(enum class OwnerStorageFeature::VariadicInit, class FeatureRegistry &);
     /**
      * @symbol ?_getStackRef\@OwnerStorageFeature\@\@IEBAAEAVIFeature\@\@XZ
      */

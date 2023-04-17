@@ -61,12 +61,12 @@ public:
     MCVAPI ~MobEffectPacket();
 #endif
     /**
-     * @symbol ??0MobEffectPacket\@\@QEAA\@XZ
-     */
-    MCAPI MobEffectPacket();
-    /**
      * @symbol ??0MobEffectPacket\@\@QEAA\@VActorRuntimeID\@\@W4Event\@0\@HHH_N\@Z
      */
     MCAPI MobEffectPacket(class ActorRuntimeID, enum class MobEffectPacket::Event, int, int, int, bool);
+    /**
+     * @symbol ??0MobEffectPacket\@\@QEAA\@XZ
+     */
+    MCAPI MobEffectPacket();
 
 };

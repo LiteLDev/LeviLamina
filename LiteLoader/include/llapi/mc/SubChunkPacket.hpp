@@ -63,12 +63,12 @@ public:
     MCVAPI ~SubChunkPacket();
 #endif
     /**
-     * @symbol ??0SubChunkPacket\@\@QEAA\@AEBV?$AutomaticID\@VDimension\@\@H\@\@AEBVSubChunkPos\@\@_N\@Z
-     */
-    MCAPI SubChunkPacket(class AutomaticID<class Dimension, int> const &, class SubChunkPos const &, bool);
-    /**
      * @symbol ??0SubChunkPacket\@\@QEAA\@XZ
      */
     MCAPI SubChunkPacket();
+    /**
+     * @symbol ??0SubChunkPacket\@\@QEAA\@AEBV?$AutomaticID\@VDimension\@\@H\@\@AEBVSubChunkPos\@\@_N\@Z
+     */
+    MCAPI SubChunkPacket(class AutomaticID<class Dimension, int> const &, class SubChunkPos const &, bool);
 
 };

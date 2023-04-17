@@ -56,6 +56,10 @@ public:
      */
     MCVAPI void fileEventCloudWorldPullFailed(std::string const &, std::string const &, bool);
     /**
+     * @symbol ?fireBannedSkinVerificationEvent\@MinecraftEventing\@\@UEAAXAEBIAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1_N\@Z
+     */
+    MCVAPI void fireBannedSkinVerificationEvent(unsigned int const &, std::string const &, std::string const &, bool);
+    /**
      * @symbol ?fireChatUsedEvent\@MinecraftEventing\@\@UEAAXI_N\@Z
      */
     MCVAPI void fireChatUsedEvent(unsigned int, bool);
@@ -72,9 +76,9 @@ public:
      */
     MCVAPI void fireClubsEngagementEvent(enum class IMinecraftEventing::ClubsEngagementAction, enum class IMinecraftEventing::ClubsEngagementTargetType, char const *, struct Realms::RealmId, std::string const &);
     /**
-     * @symbol ?fireClubsOpenFeedScreenEvent\@MinecraftEventing\@\@UEAAXW4ClubsFeedScreenSource\@IMinecraftEventing\@\@URealmId\@Realms\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?fireClubsOpenFeedScreenEvent\@MinecraftEventing\@\@UEAAXW4ClubsFeedScreenSource\@IMinecraftEventing\@\@URealmId\@Realms\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCVAPI void fireClubsOpenFeedScreenEvent(enum class IMinecraftEventing::ClubsFeedScreenSource, struct Realms::RealmId, std::string const &);
+    MCVAPI void fireClubsOpenFeedScreenEvent(enum class IMinecraftEventing::ClubsFeedScreenSource, struct Realms::RealmId, std::string const &, int);
     /**
      * @symbol ?fireCodeCommandButtonPressed\@MinecraftEventing\@\@UEAAXXZ
      */
@@ -332,10 +336,6 @@ public:
      */
     MCVAPI void fireEventEntitySpawned(class Player *, int, unsigned int);
     /**
-     * @symbol ?fireEventGameRulesUpdated\@MinecraftEventing\@\@UEAAXHHAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCVAPI void fireEventGameRulesUpdated(int, int, std::string const &);
-    /**
      * @symbol ?fireEventGameRulesUpdated\@MinecraftEventing\@\@UEAAXMMAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCVAPI void fireEventGameRulesUpdated(float, float, std::string const &);
@@ -343,6 +343,10 @@ public:
      * @symbol ?fireEventGameRulesUpdated\@MinecraftEventing\@\@UEAAX_N0AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCVAPI void fireEventGameRulesUpdated(bool, bool, std::string const &);
+    /**
+     * @symbol ?fireEventGameRulesUpdated\@MinecraftEventing\@\@UEAAXHHAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCVAPI void fireEventGameRulesUpdated(int, int, std::string const &);
     /**
      * @symbol ?fireEventGoogleAccountHoldWarning\@MinecraftEventing\@\@UEAAX_N\@Z
      */
@@ -355,6 +359,10 @@ public:
      * @symbol ?fireEventHowToPlayTopicChanged\@MinecraftEventing\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4InputMode\@\@\@Z
      */
     MCVAPI void fireEventHowToPlayTopicChanged(std::string const &, enum class InputMode);
+    /**
+     * @symbol ?fireEventHttpClientError\@MinecraftEventing\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCVAPI void fireEventHttpClientError(std::string const &);
     /**
      * @symbol ?fireEventIAPPurchaseAttempt\@MinecraftEventing\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0AEAVOffer\@\@W4PurchasePath\@\@\@Z
      */
@@ -708,9 +716,9 @@ public:
      */
     MCVAPI void fireEventScreenChanged(unsigned int const &, std::string const &, class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> const &);
     /**
-     * @symbol ?fireEventScreenLoaded\@MinecraftEventing\@\@UEAAXAEBIAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@NNN\@Z
+     * @symbol ?fireEventScreenLoaded\@MinecraftEventing\@\@UEAAXAEBIAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@NNNN\@Z
      */
-    MCVAPI void fireEventScreenLoaded(unsigned int const &, std::string const &, double, double, double);
+    MCVAPI void fireEventScreenLoaded(unsigned int const &, std::string const &, double, double, double, double);
     /**
      * @symbol ?fireEventScriptDebuggerConnect\@MinecraftEventing\@\@UEAAX_N\@Z
      */
@@ -975,6 +983,10 @@ public:
      * @symbol ?fireIDESelected\@MinecraftEventing\@\@UEBAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCVAPI void fireIDESelected(std::string const &) const;
+    /**
+     * @symbol ?fireIgnoredNotificationsEvent\@MinecraftEventing\@\@UEAAXW4IgnoredNotificationsType\@IMinecraftEventing\@\@HV?$set\@W4IgnoredNotificationSource\@IMinecraftEventing\@\@U?$less\@W4IgnoredNotificationSource\@IMinecraftEventing\@\@\@std\@\@V?$allocator\@W4IgnoredNotificationSource\@IMinecraftEventing\@\@\@4\@\@std\@\@\@Z
+     */
+    MCVAPI void fireIgnoredNotificationsEvent(enum class IMinecraftEventing::IgnoredNotificationsType, int, class std::set<enum class IMinecraftEventing::IgnoredNotificationSource, struct std::less<enum class IMinecraftEventing::IgnoredNotificationSource>, class std::allocator<enum class IMinecraftEventing::IgnoredNotificationSource>>);
     /**
      * @symbol ?fireInAppCodeBuilderActivated\@MinecraftEventing\@\@UEBAXW4OpenCodeMethod\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -1356,6 +1368,10 @@ private:
      * @symbol ?mUseMethodMap\@MinecraftEventing\@\@0V?$unordered_map\@W4ItemUseMethod\@\@W4UseMethod\@MinecraftEventing\@\@U?$hash\@W4ItemUseMethod\@\@\@std\@\@U?$equal_to\@W4ItemUseMethod\@\@\@5\@V?$allocator\@U?$pair\@$$CBW4ItemUseMethod\@\@W4UseMethod\@MinecraftEventing\@\@\@std\@\@\@5\@\@std\@\@B
      */
     MCAPI static class std::unordered_map<enum class ItemUseMethod, enum class MinecraftEventing::UseMethod, struct std::hash<enum class ItemUseMethod>, struct std::equal_to<enum class ItemUseMethod>, class std::allocator<struct std::pair<enum class ItemUseMethod const, enum class MinecraftEventing::UseMethod>>> const mUseMethodMap;
+    /**
+     * @symbol ?sHeartbeatMutex\@MinecraftEventing\@\@0Vmutex\@std\@\@A
+     */
+    MCAPI static class std::mutex sHeartbeatMutex;
     /**
      * @symbol ?sMutex\@MinecraftEventing\@\@0Vmutex\@std\@\@A
      */

@@ -41,13 +41,13 @@ public:
      */
     MCAPI enum class AddTickingAreaStatus addArea(class AutomaticID<class Dimension, int>, std::string const &, class BlockPos const &, class BlockPos const &, enum class TickingAreasManager::AreaLimitCheck, bool, enum class TickingAreaLoadMode, class LevelStorage &);
     /**
-     * @symbol ?addEntityArea\@TickingAreasManager\@\@QEAAXV?$AutomaticID\@VDimension\@\@H\@\@AEBVActor\@\@AEAVLevelStorage\@\@\@Z
-     */
-    MCAPI void addEntityArea(class AutomaticID<class Dimension, int>, class Actor const &, class LevelStorage &);
-    /**
      * @symbol ?addEntityArea\@TickingAreasManager\@\@QEAAXV?$AutomaticID\@VDimension\@\@H\@\@AEBUActorUniqueID\@\@AEBUBounds\@\@_NMAEAVLevelStorage\@\@\@Z
      */
     MCAPI void addEntityArea(class AutomaticID<class Dimension, int>, struct ActorUniqueID const &, struct Bounds const &, bool, float, class LevelStorage &);
+    /**
+     * @symbol ?addEntityArea\@TickingAreasManager\@\@QEAAXV?$AutomaticID\@VDimension\@\@H\@\@AEBVActor\@\@AEAVLevelStorage\@\@\@Z
+     */
+    MCAPI void addEntityArea(class AutomaticID<class Dimension, int>, class Actor const &, class LevelStorage &);
     /**
      * @symbol ?addTickingAreaListForDimension\@TickingAreasManager\@\@QEAAXV?$AutomaticID\@VDimension\@\@H\@\@AEBV?$shared_ptr\@VTickingAreaList\@\@\@std\@\@\@Z
      */
@@ -126,6 +126,10 @@ public:
      * @symbol ?_deletePendingArea\@TickingAreasManager\@\@AEAAXAEAVLevelStorage\@\@AEBUPendingArea\@\@\@Z
      */
     MCAPI void _deletePendingArea(class LevelStorage &, struct PendingArea const &);
+    /**
+     * @symbol ?_findUsableDefaultName\@TickingAreasManager\@\@AEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVTickingAreaList\@\@AEBV?$vector\@UPendingArea\@\@V?$allocator\@UPendingArea\@\@\@std\@\@\@3\@\@Z
+     */
+    MCAPI std::string _findUsableDefaultName(class TickingAreaList const &, std::vector<struct PendingArea> const &) const;
     /**
      * @symbol ?_getPendingAreaDescriptionsFiltered\@TickingAreasManager\@\@AEBA?AV?$vector\@UTickingAreaDescription\@\@V?$allocator\@UTickingAreaDescription\@\@\@std\@\@\@std\@\@V?$AutomaticID\@VDimension\@\@H\@\@V?$function\@$$A6A_NAEBUPendingArea\@\@\@Z\@3\@\@Z
      */

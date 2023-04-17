@@ -11,15 +11,15 @@
 #undef BEFORE_EXTRA
 
 
-class InterpolatedRidingPositionCalculationHelper {
+struct InterpolatedRidingPositionCalculationHelper {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTERPOLATEDRIDINGPOSITIONCALCULATIONHELPER
 public:
-    class InterpolatedRidingPositionCalculationHelper& operator=(class InterpolatedRidingPositionCalculationHelper const &) = delete;
-    InterpolatedRidingPositionCalculationHelper(class InterpolatedRidingPositionCalculationHelper const &) = delete;
+    struct InterpolatedRidingPositionCalculationHelper& operator=(struct InterpolatedRidingPositionCalculationHelper const &) = delete;
+    InterpolatedRidingPositionCalculationHelper(struct InterpolatedRidingPositionCalculationHelper const &) = delete;
     InterpolatedRidingPositionCalculationHelper() = delete;
 #endif
 

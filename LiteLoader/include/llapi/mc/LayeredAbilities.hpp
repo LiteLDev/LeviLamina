@@ -23,25 +23,25 @@ private:
 #undef AFTER_EXTRA
 public:
     /**
-     * @symbol ??0LayeredAbilities\@\@QEAA\@XZ
-     */
-    MCAPI LayeredAbilities();
-    /**
      * @symbol ??0LayeredAbilities\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI LayeredAbilities(class LayeredAbilities const &);
+    /**
+     * @symbol ??0LayeredAbilities\@\@QEAA\@XZ
+     */
+    MCAPI LayeredAbilities();
     /**
      * @symbol ?addSaveData\@LayeredAbilities\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
     MCAPI void addSaveData(class CompoundTag &) const;
     /**
-     * @symbol ?forEachAbility\@LayeredAbilities\@\@QEBAXAEBV?$function\@$$A6AXAEBVAbility\@\@PEBD\@Z\@std\@\@W4Options\@Ability\@\@\@Z
-     */
-    MCAPI void forEachAbility(class std::function<void (class Ability const &, char const *)> const &, enum class Ability::Options) const;
-    /**
      * @symbol ?forEachAbility\@LayeredAbilities\@\@QEBAXAEBV?$function\@$$A6AXAEBVAbility\@\@W4AbilitiesIndex\@\@\@Z\@std\@\@W4Options\@Ability\@\@\@Z
      */
     MCAPI void forEachAbility(class std::function<void (class Ability const &, enum class AbilitiesIndex)> const &, enum class Ability::Options) const;
+    /**
+     * @symbol ?forEachAbility\@LayeredAbilities\@\@QEBAXAEBV?$function\@$$A6AXAEBVAbility\@\@PEBD\@Z\@std\@\@W4Options\@Ability\@\@\@Z
+     */
+    MCAPI void forEachAbility(class std::function<void (class Ability const &, char const *)> const &, enum class Ability::Options) const;
     /**
      * @symbol ?forEachLayer\@LayeredAbilities\@\@QEAAXAEBV?$function\@$$A6AXW4AbilitiesLayer\@\@AEAVAbilities\@\@\@Z\@std\@\@\@Z
      */
@@ -51,13 +51,13 @@ public:
      */
     MCAPI void forEachLayer(class std::function<void (enum class AbilitiesLayer, class Abilities const &)> const &) const;
     /**
-     * @symbol ?getAbility\@LayeredAbilities\@\@QEBAAEBVAbility\@\@W4AbilitiesIndex\@\@\@Z
-     */
-    MCAPI class Ability const & getAbility(enum class AbilitiesIndex) const;
-    /**
      * @symbol ?getAbility\@LayeredAbilities\@\@QEAAAEAVAbility\@\@W4AbilitiesLayer\@\@W4AbilitiesIndex\@\@\@Z
      */
     MCAPI class Ability & getAbility(enum class AbilitiesLayer, enum class AbilitiesIndex);
+    /**
+     * @symbol ?getAbility\@LayeredAbilities\@\@QEBAAEBVAbility\@\@W4AbilitiesIndex\@\@\@Z
+     */
+    MCAPI class Ability const & getAbility(enum class AbilitiesIndex) const;
     /**
      * @symbol ?getBool\@LayeredAbilities\@\@QEBA_NW4AbilitiesIndex\@\@\@Z
      */
@@ -83,29 +83,21 @@ public:
      */
     MCAPI enum class PlayerPermissionLevel getPlayerPermissions() const;
     /**
-     * @symbol ?loadSaveData\@LayeredAbilities\@\@QEAA_NAEBVCompoundTag\@\@\@Z
-     */
-    MCAPI bool loadSaveData(class CompoundTag const &);
-    /**
      * @symbol ??4LayeredAbilities\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
     MCAPI class LayeredAbilities & operator=(class LayeredAbilities const &);
-    /**
-     * @symbol ?setAbility\@LayeredAbilities\@\@QEAAXW4AbilitiesIndex\@\@_N\@Z
-     */
-    MCAPI void setAbility(enum class AbilitiesIndex, bool);
     /**
      * @symbol ?setAbility\@LayeredAbilities\@\@QEAAXW4AbilitiesIndex\@\@M\@Z
      */
     MCAPI void setAbility(enum class AbilitiesIndex, float);
     /**
+     * @symbol ?setAbility\@LayeredAbilities\@\@QEAAXW4AbilitiesIndex\@\@_N\@Z
+     */
+    MCAPI void setAbility(enum class AbilitiesIndex, bool);
+    /**
      * @symbol ?setCommandPermissions\@LayeredAbilities\@\@QEAAXW4CommandPermissionLevel\@\@\@Z
      */
     MCAPI void setCommandPermissions(enum class CommandPermissionLevel);
-    /**
-     * @symbol ?setPermissions\@LayeredAbilities\@\@QEAAXAEBVPermissionsHandler\@\@\@Z
-     */
-    MCAPI void setPermissions(class PermissionsHandler const &);
     /**
      * @symbol ?setPlayerPermissions\@LayeredAbilities\@\@QEAAXW4PlayerPermissionLevel\@\@\@Z
      */

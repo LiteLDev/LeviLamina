@@ -62,13 +62,13 @@ public:
     MCVAPI ~SetScorePacket();
 #endif
     /**
-     * @symbol ?change\@SetScorePacket\@\@SA?AV1\@AEBUScoreboardId\@\@AEBVObjective\@\@\@Z
-     */
-    MCAPI static class SetScorePacket change(struct ScoreboardId const &, class Objective const &);
-    /**
      * @symbol ?change\@SetScorePacket\@\@SA?AV1\@V?$vector\@UScorePacketInfo\@\@V?$allocator\@UScorePacketInfo\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI static class SetScorePacket change(std::vector<struct ScorePacketInfo>);
+    /**
+     * @symbol ?change\@SetScorePacket\@\@SA?AV1\@AEBUScoreboardId\@\@AEBVObjective\@\@\@Z
+     */
+    MCAPI static class SetScorePacket change(struct ScoreboardId const &, class Objective const &);
     /**
      * @symbol ?remove\@SetScorePacket\@\@SA?AV1\@AEBUScoreboardId\@\@AEBVObjective\@\@\@Z
      */

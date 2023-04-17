@@ -43,10 +43,6 @@ public:
      */
     MCAPI bool addEnchant(class EnchantmentInstance, bool);
     /**
-     * @symbol ?addEnchants\@ItemEnchants\@\@QEAAHAEBV1\@_N\@Z
-     */
-    MCAPI int addEnchants(class ItemEnchants const &, bool);
-    /**
      * @symbol ?canEnchant\@ItemEnchants\@\@QEAA?AUEnchantResult\@\@VEnchantmentInstance\@\@_N\@Z
      */
     MCAPI struct EnchantResult canEnchant(class EnchantmentInstance, bool);

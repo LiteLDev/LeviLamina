@@ -11,15 +11,15 @@
 #undef BEFORE_EXTRA
 
 
-class POIBlueprint {
+struct POIBlueprint {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_POIBLUEPRINT
 public:
-    class POIBlueprint& operator=(class POIBlueprint const &) = delete;
-    POIBlueprint(class POIBlueprint const &) = delete;
+    struct POIBlueprint& operator=(struct POIBlueprint const &) = delete;
+    POIBlueprint(struct POIBlueprint const &) = delete;
     POIBlueprint() = delete;
 #endif
 

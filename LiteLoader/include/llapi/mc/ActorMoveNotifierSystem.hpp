@@ -31,5 +31,9 @@ public:
      * @symbol ?createActorMoveNotifierSystem\@ActorMoveNotifierSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createActorMoveNotifierSystem();
+    /**
+     * @symbol ?tickActorMoveNotifierSystem\@ActorMoveNotifierSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBUMoveRequestComponent\@\@VActorMovementProxyComponent\@\@\@\@\@Z
+     */
+    MCAPI static void tickActorMoveNotifierSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct MoveRequestComponent const, class ActorMovementProxyComponent>);
 
 };

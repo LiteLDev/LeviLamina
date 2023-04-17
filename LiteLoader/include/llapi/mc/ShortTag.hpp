@@ -35,6 +35,7 @@ public:
 public:
     class ShortTag& operator=(class ShortTag const &) = delete;
     ShortTag(class ShortTag const &) = delete;
+    ShortTag() = delete;
 #endif
 
 public:
@@ -78,10 +79,6 @@ public:
      * @symbol ?hash\@ShortTag\@\@UEBA_KXZ
      */
     virtual unsigned __int64 hash() const;
-    /**
-     * @symbol ??0ShortTag\@\@QEAA\@XZ
-     */
-    MCAPI ShortTag();
     /**
      * @symbol ??0ShortTag\@\@QEAA\@F\@Z
      */
