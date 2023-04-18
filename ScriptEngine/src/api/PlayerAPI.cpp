@@ -35,6 +35,7 @@
 #include <llapi/mc/SynchedActorDataEntityWrapper.hpp>
 #include <llapi/PlayerInfoAPI.h>
 #include <llapi/mc/Biome.hpp>
+#include <llapi/mc/UpdateAbilitiesPacket.hpp>
 #include "main/SafeGuardRecord.h"
 #include <string>
 #include <vector>
@@ -1267,6 +1268,8 @@ Local<Value> PlayerClass::setPermLevel(const Arguments& args) {
             RecordOperation(ENGINE_OWN_DATA()->pluginName, "Set Permission Level",
                             fmt::format("Set Player {} Permission Level as {}.", player->getRealName(), newPerm));
             player->setPermissions((CommandPermissionLevel)newPerm);
+            UpdateAbilitiesPacket pkt(player->getUniqueID(), player->getAbilities());
+            player->sendNetworkPacket(pkt);
             res = true;
         }
         return Boolean::newBoolean(res);
