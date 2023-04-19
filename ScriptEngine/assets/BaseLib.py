@@ -1,4 +1,4 @@
-def _llse_python_base_lib_listener(event):
+def _llse_python_base_lib_handle(event):
     def wrapper(func):
         __builtins__.mc.listen(event, func)
         return func
@@ -6,10 +6,15 @@ def _llse_python_base_lib_listener(event):
     return wrapper
 
 
-def _llse_python_base_lib_command_callback(self, func):
-    self.setCallback(func)
-    return func
+def _llse_python_base_lib_command_handle(self, func=None):
+    def wrapper(func):
+        self.setCallback(func)
+        return func
+    
+    if func:
+        return wrapper(func)
+    return wrapper
 
 
-setattr(__builtins__, "listener", _llse_python_base_lib_listener)
-setattr(__builtins__.LLSE_Command, "callback", _llse_python_base_lib_command_callback)
+setattr(__builtins__, "handle", _llse_python_base_lib_listener)
+setattr(__builtins__.LLSE_Command, "handle", _llse_python_base_lib_command_callback)
