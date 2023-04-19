@@ -16,5 +16,5 @@ def _llse_python_base_lib_command_handle(self, func=None):
     return wrapper
 
 
-setattr(__builtins__, "handle", _llse_python_base_lib_listener)
-setattr(__builtins__.LLSE_Command, "handle", _llse_python_base_lib_command_callback)
+setattr(__builtins__, "handle", _llse_python_base_lib_handle)
+setattr(__builtins__.LLSE_Command, "handle", _llse_python_base_lib_command_handle)
