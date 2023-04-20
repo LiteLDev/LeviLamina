@@ -2197,16 +2197,16 @@ TInstanceHook(void, "?openInventory@ServerPlayer@@UEAAXXZ", ServerPlayer) {
     original(this);
 }
 
-TInstanceHook(void, "?_pullCloser@FishingHook@@IEAAXAEAVActor@@M@Z", FishingHook, Actor* a, float b) {
+TInstanceHook(void, "?_pullCloser@FishingHook@@IEAAXAEAVActor@@M@Z", FishingHook, Actor* item, float b) {
     if (this->getPlayerOwner()) {
         IF_LISTENED(PlayerPullFishingHookEvent) {
             PlayerPullFishingHookEvent ev{};
             ev.mPlayer = this->getPlayerOwner();
             ev.mFishingHook = this;
-            ev.mActor = a;
+            ev.mActor = item;
             if (a->isItemActor()) {
-                ev.mItemActor = (ItemActor*)a;
-                ev.mItemStack = ((ItemActor*)a)->getItemStack();
+                ev.mItemActor = (ItemActor*)item;
+                ev.mItemStack = ((ItemActor*)item)->getItemStack();
             }
             if (!ev.call()) {
                 return;
@@ -2214,5 +2214,5 @@ TInstanceHook(void, "?_pullCloser@FishingHook@@IEAAXAEAVActor@@M@Z", FishingHook
         }
         IF_LISTENED_END(PlayerPullFishingHookEvent)
     }
-	return original(this, a, b);
+    return original(this, item, b);
 }
