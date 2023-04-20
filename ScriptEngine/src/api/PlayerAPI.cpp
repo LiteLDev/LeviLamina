@@ -1269,15 +1269,10 @@ Local<Value> PlayerClass::setPermLevel(const Arguments& args) {
             RecordOperation(ENGINE_OWN_DATA()->pluginName, "Set Permission Level",
                             fmt::format("Set Player {} Permission Level as {}.", player->getRealName(), newPerm));
             player->setPermissions((CommandPermissionLevel)newPerm);
-            UpdateAbilitiesPacket uPkt(player->getUniqueID(), player->getAbilities());
+            auto abilities = player->getAbilities();
+            abilities.setPlayerPermissions((PlayerPermissionLevel)newPerm);
+            UpdateAbilitiesPacket uPkt(player->getUniqueID(), abilities);
             player->sendNetworkPacket(uPkt);
-            BinaryStream bs;
-            bs.writeUnsignedInt64(player->getUniqueID().id);
-            bs.writeVarInt((int)player->getPlayerPermissionLevel());
-            bs.writeUnsignedShort(114514);
-            auto rPkt = MinecraftPackets::createPacket(MinecraftPacketIds::RequestPermissions);
-            rPkt->read(bs);
-            player->sendNetworkPacket(*rPkt);
             res = true;
         }
         return Boolean::newBoolean(res);
