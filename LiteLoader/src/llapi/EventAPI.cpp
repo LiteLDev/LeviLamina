@@ -2204,7 +2204,7 @@ TInstanceHook(void, "?_pullCloser@FishingHook@@IEAAXAEAVActor@@M@Z", FishingHook
             ev.mPlayer = this->getPlayerOwner();
             ev.mFishingHook = this;
             ev.mActor = item;
-            if (a->isItemActor()) {
+            if (item->isItemActor()) {
                 ev.mItemActor = (ItemActor*)item;
                 ev.mItemStack = ((ItemActor*)item)->getItemStack();
             }
