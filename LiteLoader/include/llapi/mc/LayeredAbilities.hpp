@@ -6,6 +6,8 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Ability.hpp"
+#include "Abilities.hpp"
+#include "PermissionsHandler.hpp"
 
 #define BEFORE_EXTRA
 
@@ -18,8 +20,8 @@
 class LayeredAbilities {
 
 #define AFTER_EXTRA
-private:
-    char filler[32];
+    PermissionsHandler mPermissions;
+    std::array<Abilities,1> mLayers; // May not correct
 #undef AFTER_EXTRA
 public:
     /**
