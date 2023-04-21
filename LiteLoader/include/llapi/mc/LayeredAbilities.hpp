@@ -20,9 +20,8 @@
 class LayeredAbilities {
 
 #define AFTER_EXTRA
-private:
     PermissionsHandler mPermissions;
-    std::array<Abilities,5> mLayers;
+    std::array<Abilities,1> mLayers; // May not correct
 #undef AFTER_EXTRA
 public:
     /**
