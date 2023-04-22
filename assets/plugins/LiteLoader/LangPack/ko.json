@@ -32,8 +32,8 @@
         "enabled": "bStats 가 활성화 되었습니다. plugins/bStats/config.json 에서 비활성화 할 수 있습니다."
       },
       "unpackResources": {
-        "begin": "Unpacking LiteLoaderBDS runtime resources. Please wait patiently...",
-        "end": "Unpacked."
+        "begin": "LiteLoaderBDS 런타임 리소스 파일을 풀고 있습니다. 시간이 많이 걸릴 수 있으며 잠시만 기다려주세요.",
+        "end": "성공적으로 파일을 풀었습니다"
       }
     },
     "antiAbnormalItem": {
@@ -221,7 +221,7 @@
         "created": "Node.js 런타임 경로를 찾을 수 없으므로 생성합니다."
       },
       "initPythonDirectories": {
-        "created": "Python runtime directory no found, created."
+        "created": "Python 런타임 폴더를 찾을 수 없어, 새로 생성했습니다."
       }
     },
     "notice": {
@@ -250,7 +250,7 @@
       "fail": "node_modules.tar 파일의 압축을 해제하지 못했습니다."
     },
     "unzipPythonModules": {
-      "fail": "Failed to unzip python-env.zip"
+      "fail": "python-env.zip 을 압축해제 하는데 실패했습니다"
     }
   },
   "llse": {
@@ -296,10 +296,10 @@
           "done": "{count} 개의 {type} 플러그인 팩이 로드됐습니다."
         },
         "python": {
-          "ignored": "No pyproject.toml file found in directory {path}, ignored.",
+          "ignored": "{path} 경로에서 pyproject.toml 파일을 찾지 못하여 무시합니다",
           "installPack": {
-            "start": "Found Python plugin pack \"{path}\"! Try installing...",
-            "fail": "Failed to install plugin pack {}, please check the source files!"
+            "start": "\"{path}\"에 있는 파이썬 플러그인팩을 찾았습니다! 설치를 시도합니다...",
+            "fail": "플러그인 팩 {} 을(를) 설치하는데 실패했습니다. 소스 파일을 확인해주세요!"
           }
         }
       },
@@ -315,9 +315,9 @@
       },
       "python": {
         "executePipInstall": {
-          "start": "Executing \"pip install\" for plugin {name}...",
-          "success": "Pip finished successfully.",
-          "fail": "Error occurred. Exit code: {code}"
+          "start": "{name} 플러그인에 대하여 pip install 명령어를 실행중입니다",
+          "success": "pip가 성공적으로 실행됐습니다",
+          "fail": "에러가 발생했습니다. 종료 코드: {code}"
         }
       }
     }
@@ -458,6 +458,18 @@
         },
         "noDesc": "[설명 없음]",
         "permissionNameExamples": "권한 이름 예시: 'Namespace:PermissionName', 'a:b:c:d_e_f.g'"
+      }
+    }
+  },
+  "llseapi": {
+    "require": {
+      "fail": "Plugin which is required by {0} not found.",
+      "success": "Plugin named {0} which is required by {1} loaded.",
+      "network": {
+        "fail": "Error occurred when download plugin which is required by {0}, http code: {1}"
+      },
+      "download": {
+        "success": "Download plugin which is required by {0} successfully, path {1}."
       }
     }
   }

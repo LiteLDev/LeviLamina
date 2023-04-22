@@ -29,11 +29,11 @@
         }
       },
       "bstats": {
-        "enabled": "bStats has been enabled, you can edit plugins/bStats/config.json to disable it"
+        "enabled": "bStats telah diaktifkan, kamu bisa edit di plugins/bStats/config.json untuk menonaktifkan"
       },
       "unpackResources": {
-        "begin": "Unpacking LiteLoaderBDS runtime resources. Please wait patiently...",
-        "end": "Unpacked."
+        "begin": "Mengekstrak runtime runtime LiteLoaderBDS. Harap sabar dengan penuh kesabaran...",
+        "end": "Terekstrak."
       }
     },
     "antiAbnormalItem": {
@@ -83,25 +83,25 @@
       },
       "settings": {
         "set": {
-          "success": "Settings set {} to {} successfully."
+          "success": "Setelan diset {} ke {} berhasil."
         },
         "get": {
           "success": "Settings get {} successfully. Value: "
         },
         "delete": {
-          "success": "Settings delete {} successfully.",
+          "success": "Setelan dihapus {} berhasil.",
           "error": {
-            "emptyKey": "JsonPointer cannot be empty!"
+            "emptyKey": "JsonPointer tidak dapat kosong begitu saja!"
           }
         },
         "reload": {
-          "success": "Settings reloaded successfully."
+          "success": "Setelan direload berhasil."
         },
         "save": {
-          "success": "Settings saved successfully."
+          "success": "Setelan berhasil disimpan."
         },
         "list": {
-          "success": "Settings list:"
+          "success": "Daftar Setelan:"
         }
       },
       "error": {
@@ -221,7 +221,7 @@
         "created": "Direktori runtime Node.js tidak dapat ditemukan, dibuat."
       },
       "initPythonDirectories": {
-        "created": "Python runtime directory no found, created."
+        "created": "Direktori runtime Python tidak ditemukan, dibuat."
       }
     },
     "notice": {
@@ -247,10 +247,10 @@
       }
     },
     "unzipNodeModules": {
-      "fail": "Failed to unzip node_modules.tar"
+      "fail": "Gagal unzip node_modules.tar"
     },
     "unzipPythonModules": {
-      "fail": "Failed to unzip python-env.zip"
+      "fail": "Gagal unzip python-env.zip"
     }
   },
   "llse": {
@@ -296,10 +296,10 @@
           "done": "{type} {count} paket plugin terpasang."
         },
         "python": {
-          "ignored": "No pyproject.toml file found in directory {path}, ignored.",
+          "ignored": "Tidak ada file pyproject.toml yang ditemukan di direktori {path}, diabaikan.",
           "installPack": {
-            "start": "Found Python plugin pack \"{path}\"! Try installing...",
-            "fail": "Failed to install plugin pack {}, please check the source files!"
+            "start": "Menemukan paket plugin Python \"{path}\"! Sedang mencoba install...",
+            "fail": "Gagal menginstal paket plugin {}, silakan periksa sumber filenya!"
           }
         }
       },
@@ -315,9 +315,9 @@
       },
       "python": {
         "executePipInstall": {
-          "start": "Executing \"pip install\" for plugin {name}...",
-          "success": "Pip finished successfully.",
-          "fail": "Error occurred. Exit code: {code}"
+          "start": "Menjalankan perintah \"pip install\" untuk plugin {name}...",
+          "success": "Pip selesai secara sukses.",
+          "fail": "Sepertinya ada kesalahan. Kode Exit: {code}"
         }
       }
     }
@@ -325,89 +325,89 @@
   "permapi": {
     "data": {
       "process": {
-        "fail": "Failed to process the data file: {}"
+        "fail": "Gagal memproses file data: {}"
       },
       "read": {
-        "fail": "Failed to read the data file at {}"
+        "fail": "Gagal membaca file data di: {}"
       },
       "save": {
-        "fail": "Failed to save the data file: {}"
+        "fail": "Gagal menyimpan file data: {}"
       }
     },
     "cmd": {
       "error": {
-        "invalidCommand": "Invalid command. Type '/help perm' to get help.",
-        "internal": "Internal error. Please try again later.",
-        "roleAlreadyExists": "Role already exists.",
-        "permissionAlreadyExists": "Permission already exists.",
-        "invalidPermissionName": "Invalid permission name.",
-        "roleNotFound": "Role not found.",
-        "permissionNotFound": "Permission not found.",
-        "playerNotFound": "Player not found.",
-        "modifyMembersOfEveryone": "The role is a everyone role. You cannot modify the members of it.",
-        "jsonParsingError": "JSON parsing error: {}",
-        "missingArgument": "Missing argument: {}",
-        "permissionDenied": "You don't have permission to use this command."
+        "invalidCommand": "Perintah tidak diketahui. Ketik '/help perm' untuk mendapatkan bantuan.",
+        "internal": "Kesalahan internal. Silakan coba lagi nanti.",
+        "roleAlreadyExists": "Role sudah ada.",
+        "permissionAlreadyExists": "Permission sudah ada.",
+        "invalidPermissionName": "Nama permission tidak valid.",
+        "roleNotFound": "Role tidak ditemukan.",
+        "permissionNotFound": "Permission tidak ditemukan.",
+        "playerNotFound": "Player tidak ditemukan.",
+        "modifyMembersOfEveryone": "Role adalah role semua orang. Anda tidak dapat mengubah anggotanya.",
+        "jsonParsingError": "Kesalahan penguraian JSON: {}",
+        "missingArgument": "Ada argumen yang hilang: {}",
+        "permissionDenied": "Anda tidak memiliki izin untuk menggunakan perintah ini."
       },
       "output": {
         "create": {
           "role": {
-            "success": "Role created."
+            "success": "Role dibuat."
           },
           "perm": {
-            "success": "Permission created."
+            "success": "Permission dibuat."
           }
         },
         "delete": {
           "role": {
-            "success": "Role deleted."
+            "success": "Role dihapus."
           },
           "perm": {
-            "success": "Permission deleted."
+            "success": "Permission dihapus."
           }
         },
         "list": {
           "role": {
-            "none": "No roles to display.",
-            "header": "§b§lRole List:",
-            "isMember": "§r(§eMember§r)"
+            "none": "Tidak ada role untuk ditampilkan.",
+            "header": "§b§lDaftar Role:",
+            "isMember": "§r(§eAnggota§r)"
           },
           "perm": {
-            "none": "No permissions to display.",
-            "header": "§b§lPermission List:"
+            "none": "Tidak ada permission untuk ditampilkan.",
+            "header": "§b§lDaftar Permission:"
           }
         },
         "view": {
           "player": {
-            "yourStatus": "§b§lYour current permission status:",
-            "status": "§b§l{}'s current permission status:",
-            "rolesTitle": "- §eRoles:",
+            "yourStatus": "§b§lStatus permission anda saat ini:",
+            "status": "§b§l{} status permission saat ini:",
+            "rolesTitle": "- §eRole:",
             "permissionsTitle": "- §ePermissions:"
           },
           "role": {
             "header": "§b§lRole Info:",
             "info": {
-              "name": "+ §eName§r: {roleName}",
-              "displayName": "+ §eDisplayName§r: {}",
-              "priority": "+ §ePriority§r: {}",
-              "membersNone": "+ §eMembers§r: None",
-              "members": "+ §eMembers§r:",
+              "name": "+ §eNama§r: {roleName}",
+              "displayName": "+ §eNamaTampilan§r: {}",
+              "priority": "+ §ePrioritas§r: {}",
+              "membersNone": "+ §eAnggota§r: None",
+              "members": "+ §eAnggota§r:",
               "permissionsNone": "+ §ePermissions§r: None",
               "permissions": "+ §ePermissions§r:"
             },
             "note": {
-              "admin": "※ {}§r is a special role. All permissions will be enabled by default.",
-              "everyone": "※ {}§r is a special role. All players are members of this role."
+              "admin": "※ {}§r adalah role khusus. Semua izin akan diaktifkan secara default.",
+              "everyone": "※ {}§r adalah role khusus. Semua pemain adalah anggota dari role ini."
             },
-            "enabled": "§a(Enabled)§r",
-            "disabled": "§c(Disabled)§r",
-            "enabledWithExtra": "§b(Enabled with extra restrictions)§r"
+            "enabled": "§a(Diaktifkan)§r",
+            "disabled": "§c(Dinonaktifkan)§r",
+            "enabledWithExtra": "§b(Diaktifkan dengan batasan tambahan)§r"
           },
           "perm": {
             "header": "§b§lPermission Info:",
             "info": {
-              "name": "+ §eName§r: {permissionName}",
-              "desc": "+ §eDescription§r: {}"
+              "name": "+ §eNama§r: {permissionName}",
+              "desc": "+ §eDeskripsi§r: {}"
             }
           }
         },
@@ -415,49 +415,61 @@
           "role": {
             "member": {
               "add": {
-                "success": "Member {name}§r({xuid}) added to Role {roleDisplayName}§r."
+                "success": "Anggota {name}§r({xuid}) ditambahkan ke Role {roleDisplayName}§r."
               },
               "remove": {
-                "success": "Member {name}§r({xuid}) removed from Role {roleDisplayName}§r."
+                "success": "Anggota {name}§r({xuid}) dihapus dari Role {roleDisplayName}§r."
               }
             },
             "perm": {
               "add": {
-                "success": "Permission {name}§r added to Role {roleDisplayName}§r."
+                "success": "Permission {name}§r ditambahkan ke Role {roleDisplayName}§r."
               },
               "remove": {
-                "success": "Permission {name}§r removed from Role {roleDisplayName}§r."
+                "success": "Permission {name}§r dihapus dari Role {roleDisplayName}§r."
               },
               "set": {
-                "enabled": "§aenabled§r",
-                "disabled": "§cdisabled§r",
-                "success": "Permission {name}§r of Role {roleDisplayName}§r set to {enable}."
+                "enabled": "§adiaktifkan§r",
+                "disabled": "§cdinonaktifkan§r",
+                "success": "Permission {name}§r dari Role {roleDisplayName}§r diatur ke {enable}."
               }
             },
             "priority": {
               "set": {
-                "success": "Priority of Role {roleDisplayName}§r set to {priority}."
+                "success": "Prioritas Peran {roleDisplayName}§r diatur ke {priority}."
               }
             },
             "displayName": {
               "set": {
-                "success": "Display name of Role <{roleName}§r> set to {displayName}§r."
+                "success": "Nama tampilan Role <{roleName}§r> diatur ke {displayName}§r."
               }
             }
           },
           "player": {
             "role": {
               "add": {
-                "success": "Player {name}§r({xuid}) added to Role {roleDisplayName}§r."
+                "success": "Player {name}§r({xuid}) ditambahkan ke Role {roleDisplayName}§r."
               },
               "remove": {
-                "success": "Player {name}§r({xuid}) removed from Role {roleDisplayName}§r."
+                "success": "Player {name}§r({xuid}) dihapus dari Role {roleDisplayName}§r."
               }
             }
           }
         },
-        "noDesc": "[No description]",
-        "permissionNameExamples": "Permission name examples: 'Namespace:PermissionName', 'a:b:c:d_e_f.g'"
+        "noDesc": "[Tidak ada deskripsi]",
+        "permissionNameExamples": "Contoh nama izin: 'Namaspasi:NamaPermission', 'a:b:c:d_e_f.g'"
+      }
+    }
+  },
+  "llseapi": {
+    "require": {
+      "fail": "Plugin which is required by {0} not found.",
+      "success": "Plugin named {0} which is required by {1} loaded.",
+      "network": {
+        "fail": "Error occurred when download plugin which is required by {0}, http code: {1}"
+      },
+      "download": {
+        "success": "Download plugin which is required by {0} successfully, path {1}."
       }
     }
   }

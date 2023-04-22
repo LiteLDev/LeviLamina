@@ -32,8 +32,8 @@
         "enabled": "bStats已啟用，你可以通過編輯 plugins/bStats/config.json 來禁用它"
       },
       "unpackResources": {
-        "begin": "Unpacking LiteLoaderBDS runtime resources. Please wait patiently...",
-        "end": "Unpacked."
+        "begin": "正在解壓LiteLoaderBDS運行時資源，請耐心等待...",
+        "end": "解壓完畢"
       }
     },
     "antiAbnormalItem": {
@@ -221,7 +221,7 @@
         "created": "無法找到NodeJS運行文件，已自動創建。"
       },
       "initPythonDirectories": {
-        "created": "Python runtime directory no found, created."
+        "created": "Pyhthon運行庫文件夾未找到，已自動創建"
       }
     },
     "notice": {
@@ -250,7 +250,7 @@
       "fail": "解壓 node_modules.tar 失敗"
     },
     "unzipPythonModules": {
-      "fail": "Failed to unzip python-env.zip"
+      "fail": "解壓 python-env.zip 失敗"
     }
   },
   "llse": {
@@ -296,10 +296,10 @@
           "done": "已安裝 {count} 個 {type} 插件包"
         },
         "python": {
-          "ignored": "No pyproject.toml file found in directory {path}, ignored.",
+          "ignored": "在目錄 {path} 中找不到 pyproject.toml 文件, 已忽略",
           "installPack": {
-            "start": "Found Python plugin pack \"{path}\"! Try installing...",
-            "fail": "Failed to install plugin pack {}, please check the source files!"
+            "start": "找到 Python 插件包 \"{path}\"！嘗試安裝...",
+            "fail": "安裝插件 {} 失敗，請檢查插件源文件！"
           }
         }
       },
@@ -315,9 +315,9 @@
       },
       "python": {
         "executePipInstall": {
-          "start": "Executing \"pip install\" for plugin {name}...",
-          "success": "Pip finished successfully.",
-          "fail": "Error occurred. Exit code: {code}"
+          "start": "正在為 {name} 插件執行 “pip install”...",
+          "success": "Pip 命令已成功完成",
+          "fail": "發生錯誤. 退出代碼: {code}"
         }
       }
     }
@@ -458,6 +458,18 @@
         },
         "noDesc": "[沒有說明]",
         "permissionNameExamples": "權限名稱示例：“命名空間:權限名稱”、“a:b:c:d_e_f.g”"
+      }
+    }
+  },
+  "llseapi": {
+    "require": {
+      "fail": "Plugin which is required by {0} not found.",
+      "success": "Plugin named {0} which is required by {1} loaded.",
+      "network": {
+        "fail": "Error occurred when download plugin which is required by {0}, http code: {1}"
+      },
+      "download": {
+        "success": "Download plugin which is required by {0} successfully, path {1}."
       }
     }
   }

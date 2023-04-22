@@ -361,10 +361,10 @@ Local<Value> LlClass::require(const Arguments& args) {
         if (existing) {
             bool success = PluginManager::loadPlugin(requirePath);
             if (success) {
-                logger.info(thisName + tr("llseapi.require.success") + require);
+                logger.info( tr("llseapi.require.success", require, thisName));
                 return Boolean::newBoolean(true);
             } else {
-                logger.error(thisName + tr("llseapi.require.fail"));
+                logger.error(tr("llseapi.require.fail", thisName));
                 return Boolean::newBoolean(false);
             }
         }
@@ -381,17 +381,17 @@ Local<Value> LlClass::require(const Arguments& args) {
         if (existing) {
             bool success = PluginManager::loadPlugin(string(LLSE_DEPENDS_DIR) + "/" + require);
             if (success) {
-                logger.info(thisName + tr("llseapi.require.success") + require);
+                logger.info(tr("llseapi.require.success", require, thisName));
                 return Boolean::newBoolean(true);
             } else {
-                logger.error(thisName + tr("llseapi.require.fail"));
+                logger.error(tr("llseapi.require.fail", thisName));
                 return Boolean::newBoolean(false);
             }
         }
 
         // HTTP(s)下载
         if (args.size() == 1) {
-            logger.error(thisName + tr("llseapi.require.fail"));
+            logger.error(tr("llseapi.require.fail", thisName));
             return Boolean::newBoolean(false);
         }
 
@@ -400,20 +400,20 @@ Local<Value> LlClass::require(const Arguments& args) {
         string result, downloadPath = string(LLSE_DEPENDS_DIR) + "/" + require;
 
         if (!HttpGetSync(remotePath, &status, &result) || status != 200) {
-            logger.error(thisName + tr("llseapi.require.network.fail") + to_string(status));
+            logger.error(tr("llseapi.require.network.fail", thisName, status));
             return Boolean::newBoolean(false);
         }
         WriteAllFile(downloadPath, result, false);
 
-        logger.info(thisName + tr("llseapi.require.download.success") + downloadPath);
+        logger.info(tr("llseapi.require.download.success", thisName, downloadPath));
 
         //下载完毕安装
         bool success = PluginManager::loadPlugin(downloadPath);
         if (success) {
-            logger.info(thisName + tr("llseapi.require.success") + require);
+            logger.info(tr("llseapi.require.success", require, thisName));
             return Boolean::newBoolean(true);
         } else {
-            logger.error(thisName + tr("llseapi.require.fail"));
+            logger.error(tr("llseapi.require.fail", thisName));
             return Boolean::newBoolean(false);
         }
     }

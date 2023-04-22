@@ -460,5 +460,17 @@
         "permissionNameExamples": "权限名称示例：“命名空间:权限名称”、“a:b:c:d_e_f.g”"
       }
     }
+  },
+  "llseapi": {
+    "require": {
+      "fail": "未找到被 {0} 依赖的插件",
+      "success": "名为 {0} 被 {1} 依赖的插件已加载",
+      "network": {
+        "fail": "下载插件 {0} 时发生错误，http code: {1}"
+      },
+      "download": {
+        "success": "{0} 依赖的插件下载成功，路径: {1}"
+      }
+    }
   }
 }

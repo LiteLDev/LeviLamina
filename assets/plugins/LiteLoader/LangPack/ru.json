@@ -460,5 +460,17 @@
         "permissionNameExamples": "Примеры имен прав: 'Namespace:PermissionName', 'a:b:c:d_e_f.g'"
       }
     }
+  },
+  "llseapi": {
+    "require": {
+      "fail": "Plugin which is required by {0} not found.",
+      "success": "Plugin named {0} which is required by {1} loaded.",
+      "network": {
+        "fail": "Error occurred when download plugin which is required by {0}, http code: {1}"
+      },
+      "download": {
+        "success": "Download plugin which is required by {0} successfully, path {1}."
+      }
+    }
   }
 }
