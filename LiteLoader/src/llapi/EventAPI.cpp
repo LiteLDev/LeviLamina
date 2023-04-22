@@ -307,6 +307,7 @@ DECLARE_EVENT_DATA(ResourcePackInitEvent);
 DECLARE_EVENT_DATA(PlayerOpenInventoryEvent);
 DECLARE_EVENT_DATA(PlayerSwingEvent);
 DECLARE_EVENT_DATA(DeathMessageEvent);
+DECLARE_EVENT_DATA(PlayerPullFishingHookEvent);
 
 #define IF_LISTENED(EVENT)                                                                                             \
     if (EVENT::hasListener()) {                                                                                        \
@@ -2197,6 +2198,7 @@ TInstanceHook(void, "?openInventory@ServerPlayer@@UEAAXXZ", ServerPlayer) {
     original(this);
 }
 
+
 #include "llapi/mc/ActorDamageByActorSource.hpp"
 #include "llapi/mc/ActorDamageByBlockSource.hpp"
 #include "llapi/mc/ActorDamageByChildActorSource.hpp"
@@ -2255,4 +2257,24 @@ TInstanceHook(DRES, "?getDeathMessage@ActorDamageByChildActorSource@@UEBA?AU?$pa
     }
     IF_LISTENED_END(DeathMessageEvent)
     return res;
+}
+
+TInstanceHook(void, "?_pullCloser@FishingHook@@IEAAXAEAVActor@@M@Z", FishingHook, Actor* item, float b) {
+    if (this->getPlayerOwner()) {
+        IF_LISTENED(PlayerPullFishingHookEvent) {
+            PlayerPullFishingHookEvent ev{};
+            ev.mPlayer = this->getPlayerOwner();
+            ev.mFishingHook = this;
+            ev.mActor = item;
+            if (item->isItemActor()) {
+                ev.mItemActor = (ItemActor*)item;
+                ev.mItemStack = ((ItemActor*)item)->getItemStack();
+            }
+            if (!ev.call()) {
+                return;
+            }
+        }
+        IF_LISTENED_END(PlayerPullFishingHookEvent)
+    }
+    return original(this, item, b);
 }
