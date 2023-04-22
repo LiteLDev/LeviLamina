@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1LevelDataValue\@\@QEAA\@XZ
+     * @symbol ??1LevelDataValue\@\@QEAA\@XZ
      */
     MCAPI ~LevelDataValue();
 

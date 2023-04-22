@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1RideableComponentData\@\@QEAA\@XZ
+     * @symbol ??1RideableComponentData\@\@QEAA\@XZ
      */
     MCAPI ~RideableComponentData();
 

@@ -30,7 +30,7 @@ public:
 
 public:
     /**
-     * @symbol  ?ejectAllPassengers\@RailActivatorComponent\@\@QEAAXAEAVActor\@\@\@Z
+     * @symbol ?ejectAllPassengers\@RailActivatorComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void ejectAllPassengers(class Actor &);
 

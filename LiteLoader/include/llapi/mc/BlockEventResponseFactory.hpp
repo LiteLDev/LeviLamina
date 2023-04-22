@@ -30,19 +30,25 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BlockEventResponseFactory();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?initializeFactory\@BlockEventResponseFactory\@\@UEAAXAEBVExperiments\@\@\@Z
+     * @vftbl 1
+     * @symbol ?initializeFactory\@BlockEventResponseFactory\@\@UEAAXAEBVExperiments\@\@\@Z
      */
     virtual void initializeFactory(class Experiments const &);
     /**
-     * @vftbl  2
-     * @symbol  ?initSchema\@BlockEventResponseFactory\@\@UEAAXXZ
+     * @vftbl 2
+     * @symbol ?initSchema\@BlockEventResponseFactory\@\@UEAAXXZ
      */
     virtual void initSchema();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKEVENTRESPONSEFACTORY
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~BlockEventResponseFactory();
+#endif
 
 };

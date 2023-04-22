@@ -23,23 +23,23 @@ struct RepairItemEntry {
 #undef AFTER_EXTRA
 public:
     /**
-     * @symbol  ??0RepairItemEntry\@\@QEAA\@XZ
-     */
-    MCAPI RepairItemEntry();
-    /**
-     * @symbol  ??0RepairItemEntry\@\@QEAA\@AEBU0\@\@Z
+     * @symbol ??0RepairItemEntry\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI RepairItemEntry(struct RepairItemEntry const &);
     /**
-     * @symbol  ??4RepairItemEntry\@\@QEAAAEAU0\@$$QEAU0\@\@Z
+     * @symbol ??0RepairItemEntry\@\@QEAA\@XZ
+     */
+    MCAPI RepairItemEntry();
+    /**
+     * @symbol ??4RepairItemEntry\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct RepairItemEntry & operator=(struct RepairItemEntry &&);
     /**
-     * @symbol  ??4RepairItemEntry\@\@QEAAAEAU0\@AEBU0\@\@Z
+     * @symbol ??4RepairItemEntry\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
     MCAPI struct RepairItemEntry & operator=(struct RepairItemEntry const &);
     /**
-     * @symbol  ??1RepairItemEntry\@\@QEAA\@XZ
+     * @symbol ??1RepairItemEntry\@\@QEAA\@XZ
      */
     MCAPI ~RepairItemEntry();
 

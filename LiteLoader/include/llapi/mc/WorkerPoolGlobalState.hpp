@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1WorkerPoolGlobalState\@\@QEAA\@XZ
+     * @symbol ??1WorkerPoolGlobalState\@\@QEAA\@XZ
      */
     MCAPI ~WorkerPoolGlobalState();
 

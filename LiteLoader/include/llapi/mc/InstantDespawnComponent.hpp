@@ -30,11 +30,11 @@ public:
 
 public:
     /**
-     * @symbol  ?onDespawn\@InstantDespawnComponent\@\@QEAAXAEAVActor\@\@\@Z
+     * @symbol ?onDespawn\@InstantDespawnComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void onDespawn(class Actor &);
     /**
-     * @symbol  ?tick\@InstantDespawnComponent\@\@QEAAXAEAVActor\@\@\@Z
+     * @symbol ?tick\@InstantDespawnComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void tick(class Actor &);
 

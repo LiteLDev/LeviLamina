@@ -30,11 +30,11 @@ public:
 
 public:
     /**
-     * @symbol  ?client\@MinecraftScheduler\@\@SAAEAVScheduler\@\@XZ
+     * @symbol ?client\@MinecraftScheduler\@\@SAAEAVScheduler\@\@XZ
      */
     MCAPI static class Scheduler & client();
     /**
-     * @symbol  ?destroyClientSingleton\@MinecraftScheduler\@\@SAXXZ
+     * @symbol ?destroyClientSingleton\@MinecraftScheduler\@\@SAXXZ
      */
     MCAPI static void destroyClientSingleton();
 
@@ -42,7 +42,7 @@ public:
 
 private:
     /**
-     * @symbol  ?mInstance\@MinecraftScheduler\@\@0V?$unique_ptr\@VScheduler\@\@U?$default_delete\@VScheduler\@\@\@std\@\@\@std\@\@A
+     * @symbol ?mInstance\@MinecraftScheduler\@\@0V?$unique_ptr\@VScheduler\@\@U?$default_delete\@VScheduler\@\@\@std\@\@\@std\@\@A
      */
     MCAPI static std::unique_ptr<class Scheduler> mInstance;
 

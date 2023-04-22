@@ -30,11 +30,11 @@ public:
 
 public:
     /**
-     * @symbol  ??8VolumeIdentifier\@\@QEBA_NAEBU0\@\@Z
+     * @symbol ??8VolumeIdentifier\@\@QEBA_NAEBU0\@\@Z
      */
     MCAPI bool operator==(struct VolumeIdentifier const &) const;
     /**
-     * @symbol  ?bindType\@VolumeIdentifier\@\@SAXXZ
+     * @symbol ?bindType\@VolumeIdentifier\@\@SAXXZ
      */
     MCAPI static void bindType();
 

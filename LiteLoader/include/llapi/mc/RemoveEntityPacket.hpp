@@ -30,27 +30,33 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~RemoveEntityPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?getId\@RemoveEntityPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@RemoveEntityPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @vftbl  2
-     * @symbol  ?getName\@RemoveEntityPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@RemoveEntityPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEENTITYPACKET
     /**
-     * @symbol  ??0RemoveEntityPacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI RemoveEntityPacket();
+    MCVAPI ~RemoveEntityPacket();
+#endif
     /**
-     * @symbol  ??0RemoveEntityPacket\@\@QEAA\@AEAVEntityContext\@\@\@Z
+     * @symbol ??0RemoveEntityPacket\@\@QEAA\@AEAVEntityContext\@\@\@Z
      */
     MCAPI RemoveEntityPacket(class EntityContext &);
+    /**
+     * @symbol ??0RemoveEntityPacket\@\@QEAA\@XZ
+     */
+    MCAPI RemoveEntityPacket();
 
 };

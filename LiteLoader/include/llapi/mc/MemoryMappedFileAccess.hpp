@@ -32,51 +32,51 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~MemoryMappedFileAccess();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?fopen\@MemoryMappedFileAccess\@\@UEAAPEAXAEBVPath\@Core\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 1
+     * @symbol ?fopen\@MemoryMappedFileAccess\@\@UEAAPEAXAEBVPath\@Core\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void * fopen(class Core::Path const &, std::string const &);
     /**
-     * @vftbl  2
-     * @symbol  ?fclose\@MemoryMappedFileAccess\@\@UEAAHPEAX\@Z
+     * @vftbl 2
+     * @symbol ?fclose\@MemoryMappedFileAccess\@\@UEAAHPEAX\@Z
      */
     virtual int fclose(void *);
     /**
-     * @vftbl  3
-     * @symbol  ?fseek\@MemoryMappedFileAccess\@\@UEAAHPEAX_JH\@Z
+     * @vftbl 3
+     * @symbol ?fseek\@MemoryMappedFileAccess\@\@UEAAHPEAX_JH\@Z
      */
     virtual int fseek(void *, __int64, int);
     /**
-     * @vftbl  4
-     * @symbol  ?ftell\@MemoryMappedFileAccess\@\@UEAA_JPEAX\@Z
+     * @vftbl 4
+     * @symbol ?ftell\@MemoryMappedFileAccess\@\@UEAA_JPEAX\@Z
      */
     virtual __int64 ftell(void *);
     /**
-     * @vftbl  5
-     * @symbol  ?getReadInterface\@MemoryMappedFileAccess\@\@UEBAPEBVIFileReadAccess\@\@XZ
+     * @vftbl 5
+     * @symbol ?getReadInterface\@MemoryMappedFileAccess\@\@UEBAPEBVIFileReadAccess\@\@XZ
      */
     virtual class IFileReadAccess const * getReadInterface() const;
     /**
-     * @vftbl  6
-     * @symbol  ?getWriteInterface\@MemoryMappedFileAccess\@\@UEAAPEAVIFileWriteAccess\@\@XZ
+     * @vftbl 6
+     * @symbol ?getWriteInterface\@MemoryMappedFileAccess\@\@UEAAPEAVIFileWriteAccess\@\@XZ
      */
     virtual class IFileWriteAccess * getWriteInterface();
     /**
-     * @vftbl  7
-     * @symbol  ?unload\@MemoryMappedFileAccess\@\@UEAAXXZ
+     * @vftbl 7
+     * @symbol ?unload\@MemoryMappedFileAccess\@\@UEAAXXZ
      */
     virtual void unload();
     /**
-     * @symbol  ??0MemoryMappedFileAccess\@\@QEAA\@AEBV?$not_null\@V?$NonOwnerPointer\@VIFileAccess\@\@\@Bedrock\@\@\@gsl\@\@V?$unique_ptr\@VFileAccessTransforms\@\@U?$default_delete\@VFileAccessTransforms\@\@\@std\@\@\@std\@\@\@Z
+     * @symbol ??0MemoryMappedFileAccess\@\@QEAA\@AEBV?$not_null\@V?$NonOwnerPointer\@VIFileAccess\@\@\@Bedrock\@\@\@gsl\@\@V?$unique_ptr\@VFileAccessTransforms\@\@U?$default_delete\@VFileAccessTransforms\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI MemoryMappedFileAccess(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>> const &, std::unique_ptr<class FileAccessTransforms>);
     /**
-     * @symbol  ?EMPTY_TRANSFORMS\@MemoryMappedFileAccess\@\@2VFileAccessTransforms\@\@B
+     * @symbol ?EMPTY_TRANSFORMS\@MemoryMappedFileAccess\@\@2VFileAccessTransforms\@\@B
      */
     MCAPI static class FileAccessTransforms const EMPTY_TRANSFORMS;
 

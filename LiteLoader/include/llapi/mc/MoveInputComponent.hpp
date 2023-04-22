@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??4MoveInputComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
+     * @symbol ??4MoveInputComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct MoveInputComponent & operator=(struct MoveInputComponent &&);
 

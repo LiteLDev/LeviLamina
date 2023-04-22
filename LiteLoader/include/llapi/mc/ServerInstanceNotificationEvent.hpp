@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ServerInstanceNotificationEvent\@\@QEAA\@XZ
+     * @symbol ??1ServerInstanceNotificationEvent\@\@QEAA\@XZ
      */
     MCAPI ~ServerInstanceNotificationEvent();
 

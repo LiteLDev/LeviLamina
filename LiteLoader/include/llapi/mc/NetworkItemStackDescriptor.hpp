@@ -34,50 +34,56 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~NetworkItemStackDescriptor();
+    virtual void __unk_vfn_0();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKITEMSTACKDESCRIPTOR
     /**
-     * @symbol  ??0NetworkItemStackDescriptor\@\@QEAA\@AEBVItemStackDescriptor\@\@\@Z
+     * @symbol __unk_destructor_-1
      */
-    MCAPI NetworkItemStackDescriptor(class ItemStackDescriptor const &);
+    MCVAPI ~NetworkItemStackDescriptor();
+#endif
     /**
-     * @symbol  ??0NetworkItemStackDescriptor\@\@QEAA\@AEBVItemStack\@\@\@Z
+     * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@AEBVItemStack\@\@\@Z
      */
     MCAPI NetworkItemStackDescriptor(class ItemStack const &);
     /**
-     * @symbol  ??0NetworkItemStackDescriptor\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor &&);
-    /**
-     * @symbol  ??0NetworkItemStackDescriptor\@\@QEAA\@XZ
+     * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@XZ
      */
     MCAPI NetworkItemStackDescriptor();
     /**
-     * @symbol  ??0NetworkItemStackDescriptor\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor const &);
     /**
-     * @symbol  ?read\@NetworkItemStackDescriptor\@\@QEAAXAEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor &&);
+    /**
+     * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@AEBVItemStackDescriptor\@\@\@Z
+     */
+    MCAPI NetworkItemStackDescriptor(class ItemStackDescriptor const &);
+    /**
+     * @symbol ?read\@NetworkItemStackDescriptor\@\@QEAAXAEAVReadOnlyBinaryStream\@\@\@Z
      */
     MCAPI void read(class ReadOnlyBinaryStream &);
     /**
-     * @symbol  ?setIncludeNetIds\@NetworkItemStackDescriptor\@\@QEBAX_N\@Z
+     * @symbol ?setIncludeNetIds\@NetworkItemStackDescriptor\@\@QEBAX_N\@Z
      */
     MCAPI void setIncludeNetIds(bool) const;
     /**
-     * @symbol  ?tryGetServerNetId\@NetworkItemStackDescriptor\@\@QEBAPEBV?$TypedServerNetId\@UItemStackNetIdTag\@\@H$0A\@\@\@XZ
+     * @symbol ?tryGetServerNetId\@NetworkItemStackDescriptor\@\@QEBAPEBV?$TypedServerNetId\@UItemStackNetIdTag\@\@H$0A\@\@\@XZ
      */
     MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const * tryGetServerNetId() const;
     /**
-     * @symbol  ?write\@NetworkItemStackDescriptor\@\@QEBAXAEAVBinaryStream\@\@\@Z
+     * @symbol ?write\@NetworkItemStackDescriptor\@\@QEBAXAEAVBinaryStream\@\@\@Z
      */
     MCAPI void write(class BinaryStream &) const;
 
 //private:
     /**
-     * @symbol  ?getItemStack\@NetworkItemStackDescriptor\@\@AEBA?AVItemStack\@\@AEBVBlockPalette\@\@\@Z
+     * @symbol ?getItemStack\@NetworkItemStackDescriptor\@\@AEBA?AVItemStack\@\@AEBVBlockPalette\@\@\@Z
      */
     MCAPI class ItemStack getItemStack(class BlockPalette const &) const;
 

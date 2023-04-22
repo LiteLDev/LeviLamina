@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1KnockBackEvent\@\@QEAA\@XZ
+     * @symbol ??1KnockBackEvent\@\@QEAA\@XZ
      */
     MCAPI ~KnockBackEvent();
 

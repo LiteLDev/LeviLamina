@@ -30,47 +30,47 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ExploreOutskirtsGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?canUse\@ExploreOutskirtsGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@ExploreOutskirtsGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@ExploreOutskirtsGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@ExploreOutskirtsGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  ?start\@ExploreOutskirtsGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@ExploreOutskirtsGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @vftbl  5
-     * @symbol  ?stop\@ExploreOutskirtsGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@ExploreOutskirtsGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @vftbl  6
-     * @symbol  ?tick\@ExploreOutskirtsGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@ExploreOutskirtsGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@ExploreOutskirtsGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@ExploreOutskirtsGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @symbol  ??0ExploreOutskirtsGoal\@\@QEAA\@AEAVMob\@\@\@Z
+     * @symbol ??0ExploreOutskirtsGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI ExploreOutskirtsGoal(class Mob &);
 

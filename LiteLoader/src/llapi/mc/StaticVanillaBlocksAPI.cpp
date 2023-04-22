@@ -2,12 +2,21 @@
 #include "llapi/mc/BlockTypeRegistry.hpp"
 #include "llapi/mc/HashedString.hpp"
 #include "llapi/mc/VanillaBlockTypeIds.hpp"
+#include "llapi/mc/Experiments.hpp"
+
+THook(void, "?assignBlocks@VanillaBlocks@@YAXAEBVExperiments@@@Z", Experiments const& exp) {
+    original(exp);
+    StaticVanillaBlocks::assignBlocks();
+}
 
 namespace StaticVanillaBlocks {
+
+Block const* mElements[119];
 
 Block const* mAcaciaButton;
 Block const* mAcaciaDoor;
 Block const* mAcaciaFenceGate;
+Block const* mAcaciaHangingSign;
 Block const* mAcaciaPressurePlate;
 Block const* mAcaciaStairs;
 Block const* mAcaciaStandingSign;
@@ -24,7 +33,25 @@ Block const* mAzalea;
 Block const* mAzaleaLeaves;
 Block const* mAzaleaLeavesFlowered;
 Block const* mBamboo;
+Block const* mBambooBlock;
+Block const* mBambooButton;
+Block const* mBambooDoor;
+Block const* mBambooDoubleSlab;
+Block const* mBambooFence;
+Block const* mBambooFenceGate;
+Block const* mBambooHangingSign;
+Block const* mBambooMosaic;
+Block const* mBambooMosaicDoubleSlab;
+Block const* mBambooMosaicSlab;
+Block const* mBambooMosaicStairs;
+Block const* mBambooPlanks;
+Block const* mBambooPressurePlate;
 Block const* mBambooSapling;
+Block const* mBambooSlab;
+Block const* mBambooStairs;
+Block const* mBambooStandingSign;
+Block const* mBambooTrapdoor;
+Block const* mBambooWallSign;
 Block const* mBarrel;
 Block const* mBarrier;
 Block const* mBasalt;
@@ -39,6 +66,7 @@ Block const* mBigDripleaf;
 Block const* mBirchButton;
 Block const* mBirchDoor;
 Block const* mBirchFenceGate;
+Block const* mBirchHangingSign;
 Block const* mBirchPressurePlate;
 Block const* mBirchStairs;
 Block const* mBirchStandingSign;
@@ -47,6 +75,7 @@ Block const* mBirchWallSign;
 Block const* mBlackCandle;
 Block const* mBlackCandleCake;
 Block const* mBlackGlazedTerracotta;
+Block const* mBlackWool;
 Block const* mBlackstone;
 Block const* mBlackstoneDoubleSlab;
 Block const* mBlackstoneSlab;
@@ -57,6 +86,7 @@ Block const* mBlueCandle;
 Block const* mBlueCandleCake;
 Block const* mBlueGlazedTerracotta;
 Block const* mBlueIce;
+Block const* mBlueWool;
 Block const* mBoneBlock;
 Block const* mBookshelf;
 Block const* mBorderBlock;
@@ -68,6 +98,7 @@ Block const* mBrownCandleCake;
 Block const* mBrownGlazedTerracotta;
 Block const* mBrownMushroom;
 Block const* mBrownMushroomBlock;
+Block const* mBrownWool;
 Block const* mBubbleColumn;
 Block const* mBuddingAmethyst;
 Block const* mCactus;
@@ -91,6 +122,7 @@ Block const* mChalkboard;
 Block const* mChemicalHeat;
 Block const* mChemistryTable;
 Block const* mChest;
+Block const* mChiseledBookshelf;
 Block const* mChiseledDeepslate;
 Block const* mChiseledNetherBricks;
 Block const* mChiseledPolishedBlackstone;
@@ -135,6 +167,7 @@ Block const* mCrimsonDoubleSlab;
 Block const* mCrimsonFence;
 Block const* mCrimsonFenceGate;
 Block const* mCrimsonFungus;
+Block const* mCrimsonHangingSign;
 Block const* mCrimsonHyphae;
 Block const* mCrimsonNylium;
 Block const* mCrimsonPlanks;
@@ -153,6 +186,7 @@ Block const* mCutCopperStairs;
 Block const* mCyanCandle;
 Block const* mCyanCandleCake;
 Block const* mCyanGlazedTerracotta;
+Block const* mCyanWool;
 Block const* mDarkOakButton;
 Block const* mDarkOakDoor;
 Block const* mDarkOakFenceGate;
@@ -160,11 +194,13 @@ Block const* mDarkOakPressurePlate;
 Block const* mDarkOakStairs;
 Block const* mDarkOakTrapdoor;
 Block const* mDarkPrismarineStairs;
+Block const* mDarkoakHangingSign;
 Block const* mDarkoakStandingSign;
 Block const* mDarkoakWallSign;
 Block const* mDaylightDetector;
 Block const* mDaylightDetectorInverted;
 Block const* mDeadbush;
+Block const* mDecoratedPot;
 Block const* mDeepslate;
 Block const* mDeepslateBrickDoubleSlab;
 Block const* mDeepslateBrickSlab;
@@ -203,7 +239,6 @@ Block const* mDragonEgg;
 Block const* mDriedKelpBlock;
 Block const* mDripstone;
 Block const* mDropper;
-Block const* mElements[119];
 Block const* mEmeraldBlock;
 Block const* mEmeraldOre;
 Block const* mEnchantingTable;
@@ -237,7 +272,7 @@ Block const* mGlass;
 Block const* mGlassPane;
 Block const* mGlowItemFrame;
 Block const* mGlowLichen;
-Block const* mGlowingobsidian;
+Block const* mGlowingObsidian;
 Block const* mGlowstone;
 Block const* mGoldBlock;
 Block const* mGoldOre;
@@ -249,9 +284,11 @@ Block const* mGravel;
 Block const* mGrayCandle;
 Block const* mGrayCandleCake;
 Block const* mGrayGlazedTerracotta;
+Block const* mGrayWool;
 Block const* mGreenCandle;
 Block const* mGreenCandleCake;
 Block const* mGreenGlazedTerracotta;
+Block const* mGreenWool;
 Block const* mGrindstone;
 Block const* mHangingRoots;
 Block const* mHardGlass;
@@ -280,6 +317,7 @@ Block const* mJukebox;
 Block const* mJungleButton;
 Block const* mJungleDoor;
 Block const* mJungleFenceGate;
+Block const* mJungleHangingSign;
 Block const* mJunglePressurePlate;
 Block const* mJungleStairs;
 Block const* mJungleStandingSign;
@@ -301,13 +339,16 @@ Block const* mLightBlock;
 Block const* mLightBlueCandle;
 Block const* mLightBlueCandleCake;
 Block const* mLightBlueGlazedTerracotta;
+Block const* mLightBlueWool;
 Block const* mLightGrayCandle;
 Block const* mLightGrayCandleCake;
+Block const* mLightGrayWool;
 Block const* mLightWeightedPressurePlate;
 Block const* mLightningRod;
 Block const* mLimeCandle;
 Block const* mLimeCandleCake;
 Block const* mLimeGlazedTerracotta;
+Block const* mLimeWool;
 Block const* mLitBlastFurnace;
 Block const* mLitDeepslateRedstoneOre;
 Block const* mLitFurnace;
@@ -322,12 +363,14 @@ Block const* mLoom;
 Block const* mMagentaCandle;
 Block const* mMagentaCandleCake;
 Block const* mMagentaGlazedTerracotta;
+Block const* mMagentaWool;
 Block const* mMagma;
 Block const* mMangroveButton;
 Block const* mMangroveDoor;
 Block const* mMangroveDoubleSlab;
 Block const* mMangroveFence;
 Block const* mMangroveFenceGate;
+Block const* mMangroveHangingSign;
 Block const* mMangroveLeaves;
 Block const* mMangroveLog;
 Block const* mMangrovePlanks;
@@ -373,6 +416,7 @@ Block const* mNetherrack;
 Block const* mNetherreactor;
 Block const* mNormalStoneStairs;
 Block const* mNoteblock;
+Block const* mOakHangingSign;
 Block const* mOakStairs;
 Block const* mObserver;
 Block const* mObsidian;
@@ -380,6 +424,7 @@ Block const* mOchreFroglight;
 Block const* mOrangeCandle;
 Block const* mOrangeCandleCake;
 Block const* mOrangeGlazedTerracotta;
+Block const* mOrangeWool;
 Block const* mOxidizedCopper;
 Block const* mOxidizedCutCopper;
 Block const* mOxidizedCutCopperSlab;
@@ -391,6 +436,7 @@ Block const* mPearlescentFroglight;
 Block const* mPinkCandle;
 Block const* mPinkCandleCake;
 Block const* mPinkGlazedTerracotta;
+Block const* mPinkWool;
 Block const* mPiston;
 Block const* mPistonArmCollision;
 Block const* mPlanks;
@@ -430,6 +476,7 @@ Block const* mPumpkinStem;
 Block const* mPurpleCandle;
 Block const* mPurpleCandleCake;
 Block const* mPurpleGlazedTerracotta;
+Block const* mPurpleWool;
 Block const* mPurpurBlock;
 Block const* mPurpurStairs;
 Block const* mQuartzBlock;
@@ -450,6 +497,7 @@ Block const* mRedNetherBrick;
 Block const* mRedNetherBrickStairs;
 Block const* mRedSandstone;
 Block const* mRedSandstoneStairs;
+Block const* mRedWool;
 Block const* mRedstoneBlock;
 Block const* mRedstoneLamp;
 Block const* mRedstoneOre;
@@ -500,6 +548,7 @@ Block const* mSporeBlossom;
 Block const* mSpruceButton;
 Block const* mSpruceDoor;
 Block const* mSpruceFenceGate;
+Block const* mSpruceHangingSign;
 Block const* mSprucePressurePlate;
 Block const* mSpruceStairs;
 Block const* mSpruceStandingSign;
@@ -525,6 +574,7 @@ Block const* mStoneStairs;
 Block const* mStonecutter;
 Block const* mStonecutterBlock;
 Block const* mStrippedAcaciaLog;
+Block const* mStrippedBambooBlock;
 Block const* mStrippedBirchLog;
 Block const* mStrippedCrimsonHyphae;
 Block const* mStrippedCrimsonStem;
@@ -538,12 +588,15 @@ Block const* mStrippedWarpedHyphae;
 Block const* mStrippedWarpedStem;
 Block const* mStructureBlock;
 Block const* mStructureVoid;
+Block const* mSuspiciousSand;
 Block const* mSweetBerryBush;
 Block const* mTallGrass;
 Block const* mTarget;
 Block const* mTintedGlass;
 Block const* mTnt;
 Block const* mTorch;
+Block const* mTorchflower;
+Block const* mTorchflowerCrop;
 Block const* mTrapdoor;
 Block const* mTrappedChest;
 Block const* mTripWire;
@@ -566,6 +619,7 @@ Block const* mWarpedDoubleSlab;
 Block const* mWarpedFence;
 Block const* mWarpedFenceGate;
 Block const* mWarpedFungus;
+Block const* mWarpedHangingSign;
 Block const* mWarpedHyphae;
 Block const* mWarpedNylium;
 Block const* mWarpedPlanks;
@@ -611,22 +665,27 @@ Block const* mWheat;
 Block const* mWhiteCandle;
 Block const* mWhiteCandleCake;
 Block const* mWhiteGlazedTerracotta;
+Block const* mWhiteWool;
 Block const* mWitherRose;
 Block const* mWood;
 Block const* mWoodenButton;
 Block const* mWoodenDoor;
 Block const* mWoodenPressurePlate;
 Block const* mWoodenSlab;
-Block const* mWool;
 Block const* mYellowCandle;
 Block const* mYellowCandleCake;
 Block const* mYellowFlower;
 Block const* mYellowGlazedTerracotta;
+Block const* mYellowWool;
 
 void assignBlocks() {
+    for (int i = 0; i < 119; ++i) {
+        mElements[i] = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Elements[i], true);
+    }
     mAcaciaButton = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::AcaciaButton, true);
     mAcaciaDoor = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::AcaciaDoor, true);
     mAcaciaFenceGate = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::AcaciaFenceGate, true);
+    mAcaciaHangingSign = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::AcaciaHangingSign, true);
     mAcaciaPressurePlate = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::AcaciaPressurePlate, true);
     mAcaciaStairs = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::AcaciaStairs, true);
     mAcaciaStandingSign = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::AcaciaStandingSign, true);
@@ -643,7 +702,26 @@ void assignBlocks() {
     mAzaleaLeaves = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::AzaleaLeaves, true);
     mAzaleaLeavesFlowered = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::AzaleaLeavesFlowered, true);
     mBamboo = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Bamboo, true);
+    mBambooBlock = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BambooBlock, true);
+    mBambooButton = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BambooButton, true);
+    mBambooDoor = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BambooDoor, true);
+    mBambooDoubleSlab = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BambooDoubleSlab, true);
+    mBambooFence = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BambooFence, true);
+    mBambooFenceGate = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BambooFenceGate, true);
+    mBambooHangingSign = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BambooHangingSign, true);
+    mBambooMosaic = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BambooMosaic, true);
+    mBambooMosaicDoubleSlab =
+        &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BambooMosaicDoubleSlab, true);
+    mBambooMosaicSlab = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BambooMosaicSlab, true);
+    mBambooMosaicStairs = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BambooMosaicStairs, true);
+    mBambooPlanks = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BambooPlanks, true);
+    mBambooPressurePlate = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BambooPressurePlate, true);
     mBambooSapling = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BambooSapling, true);
+    mBambooSlab = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BambooSlab, true);
+    mBambooStairs = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BambooStairs, true);
+    mBambooStandingSign = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BambooStandingSign, true);
+    mBambooTrapdoor = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BambooTrapdoor, true);
+    mBambooWallSign = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BambooWallSign, true);
     mBarrel = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Barrel, true);
     mBarrier = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Barrier, true);
     mBasalt = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Basalt, true);
@@ -658,6 +736,7 @@ void assignBlocks() {
     mBirchButton = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BirchButton, true);
     mBirchDoor = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BirchDoor, true);
     mBirchFenceGate = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BirchFenceGate, true);
+    mBirchHangingSign = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BirchHangingSign, true);
     mBirchPressurePlate = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BirchPressurePlate, true);
     mBirchStairs = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BirchStairs, true);
     mBirchStandingSign = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BirchStandingSign, true);
@@ -666,6 +745,7 @@ void assignBlocks() {
     mBlackCandle = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BlackCandle, true);
     mBlackCandleCake = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BlackCandleCake, true);
     mBlackGlazedTerracotta = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BlackGlazedTerracotta, true);
+    mBlackWool = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BlackWool, true);
     mBlackstone = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Blackstone, true);
     mBlackstoneDoubleSlab = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BlackstoneDoubleSlab, true);
     mBlackstoneSlab = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BlackstoneSlab, true);
@@ -676,6 +756,7 @@ void assignBlocks() {
     mBlueCandleCake = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BlueCandleCake, true);
     mBlueGlazedTerracotta = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BlueGlazedTerracotta, true);
     mBlueIce = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BlueIce, true);
+    mBlueWool = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BlueWool, true);
     mBoneBlock = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BoneBlock, true);
     mBookshelf = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Bookshelf, true);
     mBorderBlock = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BorderBlock, true);
@@ -687,6 +768,7 @@ void assignBlocks() {
     mBrownGlazedTerracotta = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BrownGlazedTerracotta, true);
     mBrownMushroom = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BrownMushroom, true);
     mBrownMushroomBlock = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BrownMushroomBlock, true);
+    mBrownWool = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BrownWool, true);
     mBubbleColumn = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BubbleColumn, true);
     mBuddingAmethyst = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::BuddingAmethyst, true);
     mCactus = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Cactus, true);
@@ -712,6 +794,7 @@ void assignBlocks() {
     mChemicalHeat = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::ChemicalHeat, true);
     mChemistryTable = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::ChemistryTable, true);
     mChest = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Chest, true);
+    mChiseledBookshelf = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::ChiseledBookshelf, true);
     mChiseledDeepslate = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::ChiseledDeepslate, true);
     mChiseledNetherBricks = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::ChiseledNetherBricks, true);
     mChiseledPolishedBlackstone =
@@ -762,6 +845,7 @@ void assignBlocks() {
     mCrimsonFence = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::CrimsonFence, true);
     mCrimsonFenceGate = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::CrimsonFenceGate, true);
     mCrimsonFungus = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::CrimsonFungus, true);
+    mCrimsonHangingSign = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::CrimsonHangingSign, true);
     mCrimsonHyphae = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::CrimsonHyphae, true);
     mCrimsonNylium = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::CrimsonNylium, true);
     mCrimsonPlanks = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::CrimsonPlanks, true);
@@ -780,6 +864,7 @@ void assignBlocks() {
     mCyanCandle = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::CyanCandle, true);
     mCyanCandleCake = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::CyanCandleCake, true);
     mCyanGlazedTerracotta = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::CyanGlazedTerracotta, true);
+    mCyanWool = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::CyanWool, true);
     mDarkOakButton = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::DarkOakButton, true);
     mDarkOakDoor = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::DarkOakDoor, true);
     mDarkOakFenceGate = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::DarkOakFenceGate, true);
@@ -787,12 +872,14 @@ void assignBlocks() {
     mDarkOakStairs = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::DarkOakStairs, true);
     mDarkOakTrapdoor = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::DarkOakTrapdoor, true);
     mDarkPrismarineStairs = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::DarkPrismarineStairs, true);
+    mDarkoakHangingSign = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::DarkoakHangingSign, true);
     mDarkoakStandingSign = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::DarkoakStandingSign, true);
     mDarkoakWallSign = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::DarkoakWallSign, true);
     mDaylightDetector = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::DaylightDetector, true);
     mDaylightDetectorInverted =
         &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::DaylightDetectorInverted, true);
     mDeadbush = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Deadbush, true);
+    mDecoratedPot = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::DecoratedPot, true);
     mDeepslate = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Deepslate, true);
     mDeepslateBrickDoubleSlab =
         &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::DeepslateBrickDoubleSlab, true);
@@ -833,9 +920,6 @@ void assignBlocks() {
     mDriedKelpBlock = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::DriedKelpBlock, true);
     mDripstone = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Dripstone, true);
     mDropper = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Dropper, true);
-    for (int i = 0; i < 119; ++i) {
-        mElements[i] = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Elements[i], true);
-    }
     mEmeraldBlock = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::EmeraldBlock, true);
     mEmeraldOre = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::EmeraldOre, true);
     mEnchantingTable = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::EnchantingTable, true);
@@ -871,7 +955,7 @@ void assignBlocks() {
     mGlassPane = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::GlassPane, true);
     mGlowItemFrame = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::GlowItemFrame, true);
     mGlowLichen = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::GlowLichen, true);
-    mGlowingobsidian = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Glowingobsidian, true);
+    mGlowingObsidian = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::GlowingObsidian, true);
     mGlowstone = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Glowstone, true);
     mGoldBlock = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::GoldBlock, true);
     mGoldOre = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::GoldOre, true);
@@ -883,9 +967,11 @@ void assignBlocks() {
     mGrayCandle = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::GrayCandle, true);
     mGrayCandleCake = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::GrayCandleCake, true);
     mGrayGlazedTerracotta = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::GrayGlazedTerracotta, true);
+    mGrayWool = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::GrayWool, true);
     mGreenCandle = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::GreenCandle, true);
     mGreenCandleCake = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::GreenCandleCake, true);
     mGreenGlazedTerracotta = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::GreenGlazedTerracotta, true);
+    mGreenWool = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::GreenWool, true);
     mGrindstone = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Grindstone, true);
     mHangingRoots = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::HangingRoots, true);
     mHardGlass = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::HardGlass, true);
@@ -915,6 +1001,7 @@ void assignBlocks() {
     mJungleButton = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::JungleButton, true);
     mJungleDoor = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::JungleDoor, true);
     mJungleFenceGate = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::JungleFenceGate, true);
+    mJungleHangingSign = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::JungleHangingSign, true);
     mJunglePressurePlate = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::JunglePressurePlate, true);
     mJungleStairs = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::JungleStairs, true);
     mJungleStandingSign = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::JungleStandingSign, true);
@@ -937,14 +1024,17 @@ void assignBlocks() {
     mLightBlueCandleCake = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::LightBlueCandleCake, true);
     mLightBlueGlazedTerracotta =
         &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::LightBlueGlazedTerracotta, true);
+    mLightBlueWool = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::LightBlueWool, true);
     mLightGrayCandle = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::LightGrayCandle, true);
     mLightGrayCandleCake = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::LightGrayCandleCake, true);
+    mLightGrayWool = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::LightGrayWool, true);
     mLightWeightedPressurePlate =
         &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::LightWeightedPressurePlate, true);
     mLightningRod = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::LightningRod, true);
     mLimeCandle = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::LimeCandle, true);
     mLimeCandleCake = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::LimeCandleCake, true);
     mLimeGlazedTerracotta = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::LimeGlazedTerracotta, true);
+    mLimeWool = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::LimeWool, true);
     mLitBlastFurnace = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::LitBlastFurnace, true);
     mLitDeepslateRedstoneOre =
         &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::LitDeepslateRedstoneOre, true);
@@ -961,12 +1051,14 @@ void assignBlocks() {
     mMagentaCandleCake = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::MagentaCandleCake, true);
     mMagentaGlazedTerracotta =
         &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::MagentaGlazedTerracotta, true);
+    mMagentaWool = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::MagentaWool, true);
     mMagma = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Magma, true);
     mMangroveButton = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::MangroveButton, true);
     mMangroveDoor = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::MangroveDoor, true);
     mMangroveDoubleSlab = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::MangroveDoubleSlab, true);
     mMangroveFence = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::MangroveFence, true);
     mMangroveFenceGate = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::MangroveFenceGate, true);
+    mMangroveHangingSign = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::MangroveHangingSign, true);
     mMangroveLeaves = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::MangroveLeaves, true);
     mMangroveLog = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::MangroveLog, true);
     mMangrovePlanks = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::MangrovePlanks, true);
@@ -1013,6 +1105,7 @@ void assignBlocks() {
     mNetherreactor = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Netherreactor, true);
     mNormalStoneStairs = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::NormalStoneStairs, true);
     mNoteblock = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Noteblock, true);
+    mOakHangingSign = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::OakHangingSign, true);
     mOakStairs = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::OakStairs, true);
     mObserver = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Observer, true);
     mObsidian = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Obsidian, true);
@@ -1021,6 +1114,7 @@ void assignBlocks() {
     mOrangeCandleCake = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::OrangeCandleCake, true);
     mOrangeGlazedTerracotta =
         &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::OrangeGlazedTerracotta, true);
+    mOrangeWool = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::OrangeWool, true);
     mOxidizedCopper = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::OxidizedCopper, true);
     mOxidizedCutCopper = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::OxidizedCutCopper, true);
     mOxidizedCutCopperSlab = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::OxidizedCutCopperSlab, true);
@@ -1034,6 +1128,7 @@ void assignBlocks() {
     mPinkCandle = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::PinkCandle, true);
     mPinkCandleCake = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::PinkCandleCake, true);
     mPinkGlazedTerracotta = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::PinkGlazedTerracotta, true);
+    mPinkWool = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::PinkWool, true);
     mPiston = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Piston, true);
     mPistonArmCollision = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::PistonArmCollision, true);
     mPlanks = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Planks, true);
@@ -1089,6 +1184,7 @@ void assignBlocks() {
     mPurpleCandleCake = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::PurpleCandleCake, true);
     mPurpleGlazedTerracotta =
         &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::PurpleGlazedTerracotta, true);
+    mPurpleWool = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::PurpleWool, true);
     mPurpurBlock = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::PurpurBlock, true);
     mPurpurStairs = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::PurpurStairs, true);
     mQuartzBlock = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::QuartzBlock, true);
@@ -1109,6 +1205,7 @@ void assignBlocks() {
     mRedNetherBrickStairs = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::RedNetherBrickStairs, true);
     mRedSandstone = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::RedSandstone, true);
     mRedSandstoneStairs = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::RedSandstoneStairs, true);
+    mRedWool = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::RedWool, true);
     mRedstoneBlock = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::RedstoneBlock, true);
     mRedstoneLamp = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::RedstoneLamp, true);
     mRedstoneOre = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::RedstoneOre, true);
@@ -1161,6 +1258,7 @@ void assignBlocks() {
     mSpruceButton = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::SpruceButton, true);
     mSpruceDoor = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::SpruceDoor, true);
     mSpruceFenceGate = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::SpruceFenceGate, true);
+    mSpruceHangingSign = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::SpruceHangingSign, true);
     mSprucePressurePlate = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::SprucePressurePlate, true);
     mSpruceStairs = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::SpruceStairs, true);
     mSpruceStandingSign = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::SpruceStandingSign, true);
@@ -1187,6 +1285,7 @@ void assignBlocks() {
     mStonecutter = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Stonecutter, true);
     mStonecutterBlock = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::StonecutterBlock, true);
     mStrippedAcaciaLog = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::StrippedAcaciaLog, true);
+    mStrippedBambooBlock = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::StrippedBambooBlock, true);
     mStrippedBirchLog = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::StrippedBirchLog, true);
     mStrippedCrimsonHyphae = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::StrippedCrimsonHyphae, true);
     mStrippedCrimsonStem = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::StrippedCrimsonStem, true);
@@ -1200,12 +1299,15 @@ void assignBlocks() {
     mStrippedWarpedStem = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::StrippedWarpedStem, true);
     mStructureBlock = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::StructureBlock, true);
     mStructureVoid = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::StructureVoid, true);
+    mSuspiciousSand = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::SuspiciousSand, true);
     mSweetBerryBush = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::SweetBerryBush, true);
     mTallGrass = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::TallGrass, true);
     mTarget = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Target, true);
     mTintedGlass = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::TintedGlass, true);
     mTnt = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Tnt, true);
     mTorch = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Torch, true);
+    mTorchflower = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Torchflower, true);
+    mTorchflowerCrop = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::TorchflowerCrop, true);
     mTrapdoor = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Trapdoor, true);
     mTrappedChest = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::TrappedChest, true);
     mTripWire = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::TripWire, true);
@@ -1228,6 +1330,7 @@ void assignBlocks() {
     mWarpedFence = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::WarpedFence, true);
     mWarpedFenceGate = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::WarpedFenceGate, true);
     mWarpedFungus = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::WarpedFungus, true);
+    mWarpedHangingSign = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::WarpedHangingSign, true);
     mWarpedHyphae = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::WarpedHyphae, true);
     mWarpedNylium = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::WarpedNylium, true);
     mWarpedPlanks = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::WarpedPlanks, true);
@@ -1288,22 +1391,18 @@ void assignBlocks() {
     mWhiteCandle = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::WhiteCandle, true);
     mWhiteCandleCake = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::WhiteCandleCake, true);
     mWhiteGlazedTerracotta = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::WhiteGlazedTerracotta, true);
+    mWhiteWool = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::WhiteWool, true);
     mWitherRose = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::WitherRose, true);
     mWood = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Wood, true);
     mWoodenButton = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::WoodenButton, true);
     mWoodenDoor = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::WoodenDoor, true);
     mWoodenPressurePlate = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::WoodenPressurePlate, true);
     mWoodenSlab = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::WoodenSlab, true);
-    mWool = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Wool, true);
     mYellowCandle = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::YellowCandle, true);
     mYellowCandleCake = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::YellowCandleCake, true);
     mYellowFlower = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::YellowFlower, true);
     mYellowGlazedTerracotta =
         &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::YellowGlazedTerracotta, true);
+    mYellowWool = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::YellowWool, true);
 }
 }; // namespace StaticVanillaBlocks
-
-THook(void, "?assignBlocks@VanillaBlocks@@YAXAEBVExperiments@@@Z", class Experiments const& exp) {
-    StaticVanillaBlocks::assignBlocks();
-    return original(exp);
-}

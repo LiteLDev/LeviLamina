@@ -30,11 +30,11 @@ public:
 
 public:
     /**
-     * @symbol  ?onBarterItemPickedUp\@BarterComponent\@\@QEAAXAEBVActor\@\@UActorUniqueID\@\@F\@Z
+     * @symbol ?onBarterItemPickedUp\@BarterComponent\@\@QEAAXAEBVActor\@\@UActorUniqueID\@\@F\@Z
      */
     MCAPI void onBarterItemPickedUp(class Actor const &, struct ActorUniqueID, short);
     /**
-     * @symbol  ?stopBarter\@BarterComponent\@\@QEAAXXZ
+     * @symbol ?stopBarter\@BarterComponent\@\@QEAAXXZ
      */
     MCAPI void stopBarter();
 

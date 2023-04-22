@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1PropertyMetadata\@\@QEAA\@XZ
+     * @symbol ??1PropertyMetadata\@\@QEAA\@XZ
      */
     MCAPI ~PropertyMetadata();
 

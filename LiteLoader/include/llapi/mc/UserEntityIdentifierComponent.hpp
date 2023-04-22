@@ -38,28 +38,32 @@ public:
 
 public:
     /**
-     * @symbol  ??0UserEntityIdentifierComponent\@\@QEAA\@AEBVNetworkIdentifier\@\@W4SubClientId\@\@VUUID\@mce\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VCertificate\@\@U?$default_delete\@VCertificate\@\@\@std\@\@\@6\@\@Z
-     */
-    MCAPI UserEntityIdentifierComponent(class NetworkIdentifier const &, enum class SubClientId, class mce::UUID, std::string const &, std::unique_ptr<class Certificate>);
-    /**
-     * @symbol  ??0UserEntityIdentifierComponent\@\@QEAA\@$$QEAV0\@\@Z
+     * @symbol ??0UserEntityIdentifierComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI UserEntityIdentifierComponent(class UserEntityIdentifierComponent &&);
     /**
-     * @symbol  ?isPrimaryClient\@UserEntityIdentifierComponent\@\@QEBA_NXZ
+     * @symbol ??0UserEntityIdentifierComponent\@\@QEAA\@AEBVNetworkIdentifier\@\@W4SubClientId\@\@VUUID\@mce\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VCertificate\@\@U?$default_delete\@VCertificate\@\@\@std\@\@\@6\@\@Z
+     */
+    MCAPI UserEntityIdentifierComponent(class NetworkIdentifier const &, enum class SubClientId, class mce::UUID, std::string const &, std::unique_ptr<class Certificate>);
+    /**
+     * @symbol ?isPrimaryClient\@UserEntityIdentifierComponent\@\@QEBA_NXZ
      */
     MCAPI bool isPrimaryClient() const;
     /**
-     * @symbol  ??4UserEntityIdentifierComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     * @symbol ??4UserEntityIdentifierComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class UserEntityIdentifierComponent & operator=(class UserEntityIdentifierComponent &&);
     /**
-     * @symbol  ??1UserEntityIdentifierComponent\@\@QEAA\@XZ
+     * @symbol ??1UserEntityIdentifierComponent\@\@QEAA\@XZ
      */
     MCAPI ~UserEntityIdentifierComponent();
     /**
-     * @symbol  ?tryGetFromEntity\@UserEntityIdentifierComponent\@\@SAPEAV1\@AEAVEntityContext\@\@\@Z
+     * @symbol ?tryGetFromEntity\@UserEntityIdentifierComponent\@\@SAPEAV1\@AEAVEntityContext\@\@\@Z
      */
     MCAPI static class UserEntityIdentifierComponent * tryGetFromEntity(class EntityContext &);
+    /**
+     * @symbol ?tryGetFromEntity\@UserEntityIdentifierComponent\@\@SAPEBV1\@AEBVEntityContext\@\@\@Z
+     */
+    MCAPI static class UserEntityIdentifierComponent const * tryGetFromEntity(class EntityContext const &);
 
 };

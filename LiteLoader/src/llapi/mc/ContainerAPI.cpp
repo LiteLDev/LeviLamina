@@ -5,7 +5,6 @@
 #include "llapi/mc/Vec3.hpp"
 
 LIAPI std::string Container::getTypeName() {
-    // ContainerType type = dAccess<ContainerType>(this, 8); //IDA Container::Container
     ContainerType type = getContainerType();
     return getContainerTypeName(type);
 }

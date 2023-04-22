@@ -29,13 +29,13 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ContainerScreenValidationActivate();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  3
-     * @symbol  ?tryActivate\@ContainerScreenValidationActivate\@\@EEAA?AUContainerValidationResult\@\@XZ
+     * @vftbl 3
+     * @symbol ?tryActivate\@ContainerScreenValidationActivate\@\@EEAA?AUContainerValidationResult\@\@XZ
      */
     virtual struct ContainerValidationResult tryActivate();
 

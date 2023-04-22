@@ -27,23 +27,23 @@ public:
 
 public:
     /**
-     * @symbol  ??0VibrationSelector\@\@QEAA\@XZ
+     * @symbol ??0VibrationSelector\@\@QEAA\@XZ
      */
     MCAPI VibrationSelector();
     /**
-     * @symbol  ?addCandidate\@VibrationSelector\@\@QEAAXUTick\@\@AEBVGameEvent\@\@AEBUGameEventContext\@\@AEBVBlockPos\@\@\@Z
+     * @symbol ?addCandidate\@VibrationSelector\@\@QEAAXUTick\@\@AEBVGameEvent\@\@AEBUGameEventContext\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void addCandidate(struct Tick, class GameEvent const &, struct GameEventContext const &, class BlockPos const &);
     /**
-     * @symbol  ?consumeBestCandidate\@VibrationSelector\@\@QEAA?AV?$optional\@VVibrationInfo\@\@\@std\@\@UTick\@\@\@Z
+     * @symbol ?consumeBestCandidate\@VibrationSelector\@\@QEAA?AV?$optional\@VVibrationInfo\@\@\@std\@\@UTick\@\@\@Z
      */
     MCAPI class std::optional<class VibrationInfo> consumeBestCandidate(struct Tick);
     /**
-     * @symbol  ?load\@VibrationSelector\@\@QEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
+     * @symbol ?load\@VibrationSelector\@\@QEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     MCAPI void load(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @symbol  ?save\@VibrationSelector\@\@QEBAXAEAVCompoundTag\@\@\@Z
+     * @symbol ?save\@VibrationSelector\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
     MCAPI void save(class CompoundTag &) const;
 

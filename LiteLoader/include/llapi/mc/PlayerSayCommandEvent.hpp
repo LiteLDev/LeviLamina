@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1PlayerSayCommandEvent\@\@QEAA\@XZ
+     * @symbol ??1PlayerSayCommandEvent\@\@QEAA\@XZ
      */
     MCAPI ~PlayerSayCommandEvent();
 

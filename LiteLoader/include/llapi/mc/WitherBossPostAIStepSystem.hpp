@@ -28,13 +28,13 @@ public:
 
 public:
     /**
-     * @symbol  ?createSystem\@WitherBossPostAIStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@WitherBossPostAIStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
 //private:
     /**
-     * @symbol  ?_doWitherBossPostAIStepSystem\@WitherBossPostAIStepSystem\@\@CAXAEBVStrictEntityContext\@\@AEBUWitherBossPreAIStepResultComponent\@\@AEAVActorOwnerComponent\@\@\@Z
+     * @symbol ?_doWitherBossPostAIStepSystem\@WitherBossPostAIStepSystem\@\@CAXAEBVStrictEntityContext\@\@AEBUWitherBossPreAIStepResultComponent\@\@AEAVActorOwnerComponent\@\@\@Z
      */
     MCAPI static void _doWitherBossPostAIStepSystem(class StrictEntityContext const &, struct WitherBossPreAIStepResultComponent const &, class ActorOwnerComponent &);
 

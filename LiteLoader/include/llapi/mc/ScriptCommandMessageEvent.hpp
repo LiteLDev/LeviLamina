@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ScriptCommandMessageEvent\@\@QEAA\@XZ
+     * @symbol ??1ScriptCommandMessageEvent\@\@QEAA\@XZ
      */
     MCAPI ~ScriptCommandMessageEvent();
 

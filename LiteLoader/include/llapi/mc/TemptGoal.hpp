@@ -29,51 +29,51 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~TemptGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?canUse\@TemptGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@TemptGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@TemptGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@TemptGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  ?start\@TemptGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@TemptGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @vftbl  5
-     * @symbol  ?stop\@TemptGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@TemptGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @vftbl  6
-     * @symbol  ?tick\@TemptGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@TemptGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@TemptGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@TemptGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @symbol  ??0TemptGoal\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0TemptGoal\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI TemptGoal(class TemptGoal const &);
     /**
-     * @symbol  ??0TemptGoal\@\@QEAA\@AEAVMob\@\@MAEBV?$vector\@VItemDescriptor\@\@V?$allocator\@VItemDescriptor\@\@\@std\@\@\@std\@\@W4LevelSoundEvent\@\@UFloatRange\@\@_NM44\@Z
+     * @symbol ??0TemptGoal\@\@QEAA\@AEAVMob\@\@MAEBV?$vector\@VItemDescriptor\@\@V?$allocator\@VItemDescriptor\@\@\@std\@\@\@std\@\@W4LevelSoundEvent\@\@UFloatRange\@\@_NM44\@Z
      */
     MCAPI TemptGoal(class Mob &, float, std::vector<class ItemDescriptor> const &, enum class LevelSoundEvent, struct FloatRange, bool, float, bool, bool);
 

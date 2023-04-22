@@ -30,12 +30,12 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BlastFurnaceContainerScreenValidator();
+    virtual void __unk_vfn_0();
     /**
-     * @symbol  ??0BlastFurnaceContainerScreenValidator\@\@QEAA\@XZ
+     * @symbol ??0BlastFurnaceContainerScreenValidator\@\@QEAA\@XZ
      */
     MCAPI BlastFurnaceContainerScreenValidator();
 

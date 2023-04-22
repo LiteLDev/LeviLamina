@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1FilterInputs\@\@QEAA\@XZ
+     * @symbol ??1FilterInputs\@\@QEAA\@XZ
      */
     MCAPI ~FilterInputs();
 

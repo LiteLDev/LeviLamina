@@ -30,11 +30,11 @@ public:
 
 public:
     /**
-     * @symbol  ?addGeneticVariant\@GeneDefinition\@\@QEAAXAEBUGeneticVariant\@\@\@Z
+     * @symbol ?addGeneticVariant\@GeneDefinition\@\@QEAAXAEBUGeneticVariant\@\@\@Z
      */
     MCAPI void addGeneticVariant(struct GeneticVariant const &);
     /**
-     * @symbol  ??1GeneDefinition\@\@QEAA\@XZ
+     * @symbol ??1GeneDefinition\@\@QEAA\@XZ
      */
     MCAPI ~GeneDefinition();
 

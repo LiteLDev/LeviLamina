@@ -30,23 +30,23 @@ public:
 
 public:
     /**
-     * @symbol  ??0LegacyBlockPlacementProcessor\@\@QEAA\@AEBVLegacyStructureSettings\@\@\@Z
+     * @symbol ??0LegacyBlockPlacementProcessor\@\@QEAA\@AEBVLegacyStructureSettings\@\@\@Z
      */
     MCAPI LegacyBlockPlacementProcessor(class LegacyStructureSettings const &);
     /**
-     * @symbol  ?applyBlockRules\@LegacyBlockPlacementProcessor\@\@QEAAPEBVBlock\@\@AEAVBlockSource\@\@AEAVBlockPos\@\@PEBV2\@AEBV4\@\@Z
+     * @symbol ?applyBlockRules\@LegacyBlockPlacementProcessor\@\@QEAAPEBVBlock\@\@AEAVBlockSource\@\@AEAVBlockPos\@\@PEBV2\@AEBV4\@\@Z
      */
     MCAPI class Block const * applyBlockRules(class BlockSource &, class BlockPos &, class Block const *, class BlockPos const &);
     /**
-     * @symbol  ?applyGravity\@LegacyBlockPlacementProcessor\@\@QEBAAEAVBlockPos\@\@AEAVBlockSource\@\@HAEAV2\@\@Z
+     * @symbol ?applyGravity\@LegacyBlockPlacementProcessor\@\@QEBAAEAVBlockPos\@\@AEAVBlockSource\@\@HAEAV2\@\@Z
      */
     MCAPI class BlockPos & applyGravity(class BlockSource &, int, class BlockPos &) const;
     /**
-     * @symbol  ?canPlace\@LegacyBlockPlacementProcessor\@\@QEAA_NXZ
+     * @symbol ?canPlace\@LegacyBlockPlacementProcessor\@\@QEAA_NXZ
      */
     MCAPI bool canPlace();
     /**
-     * @symbol  ??1LegacyBlockPlacementProcessor\@\@QEAA\@XZ
+     * @symbol ??1LegacyBlockPlacementProcessor\@\@QEAA\@XZ
      */
     MCAPI ~LegacyBlockPlacementProcessor();
 

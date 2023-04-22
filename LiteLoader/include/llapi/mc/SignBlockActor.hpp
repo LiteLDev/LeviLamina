@@ -33,120 +33,146 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~SignBlockActor();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?load\@SignBlockActor\@\@UEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
+     * @vftbl 1
+     * @symbol ?load\@SignBlockActor\@\@UEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vftbl  2
-     * @symbol  ?save\@SignBlockActor\@\@UEBA_NAEAVCompoundTag\@\@\@Z
+     * @vftbl 2
+     * @symbol ?save\@SignBlockActor\@\@UEBA_NAEAVCompoundTag\@\@\@Z
      */
     virtual bool save(class CompoundTag &) const;
     /**
-     * @vftbl  8
-     * @symbol  ?onChanged\@SignBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
+     * @vftbl 8
+     * @symbol ?onChanged\@SignBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
     virtual void onChanged(class BlockSource &);
     /**
-     * @vftbl  12
-     * @symbol  __unk_vfn_12
+     * @vftbl 12
+     * @symbol __unk_vfn_12
      */
     virtual void __unk_vfn_12();
     /**
-     * @vftbl  18
-     * @symbol  __unk_vfn_18
+     * @vftbl 18
+     * @symbol __unk_vfn_18
      */
     virtual void __unk_vfn_18();
     /**
-     * @vftbl  19
-     * @symbol  ?getShadowRadius\@SignBlockActor\@\@UEBAMAEAVBlockSource\@\@\@Z
+     * @vftbl 19
+     * @symbol ?getShadowRadius\@SignBlockActor\@\@UEBAMAEAVBlockSource\@\@\@Z
      */
     virtual float getShadowRadius(class BlockSource &) const;
     /**
-     * @vftbl  28
-     * @symbol  ?getImmersiveReaderText\@SignBlockActor\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVBlockSource\@\@\@Z
+     * @vftbl 28
+     * @symbol ?getImmersiveReaderText\@SignBlockActor\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVBlockSource\@\@\@Z
      */
     virtual std::string getImmersiveReaderText(class BlockSource &);
     /**
-     * @vftbl  31
-     * @symbol  __unk_vfn_31
+     * @vftbl 31
+     * @symbol __unk_vfn_31
      */
     virtual void __unk_vfn_31();
     /**
-     * @vftbl  32
-     * @symbol  __unk_vfn_32
+     * @vftbl 32
+     * @symbol __unk_vfn_32
      */
     virtual void __unk_vfn_32();
     /**
-     * @vftbl  33
-     * @symbol  __unk_vfn_33
+     * @vftbl 33
+     * @symbol __unk_vfn_33
      */
     virtual void __unk_vfn_33();
     /**
-     * @vftbl  34
-     * @symbol  __unk_vfn_34
+     * @vftbl 34
+     * @symbol __unk_vfn_34
      */
     virtual void __unk_vfn_34();
     /**
-     * @vftbl  35
-     * @symbol  __unk_vfn_35
+     * @vftbl 35
+     * @symbol __unk_vfn_35
      */
     virtual void __unk_vfn_35();
     /**
-     * @vftbl  36
-     * @symbol  __unk_vfn_36
+     * @vftbl 36
+     * @symbol __unk_vfn_36
      */
     virtual void __unk_vfn_36();
     /**
-     * @vftbl  37
-     * @symbol  ?_getUpdatePacket\@SignBlockActor\@\@MEAA?AV?$unique_ptr\@VBlockActorDataPacket\@\@U?$default_delete\@VBlockActorDataPacket\@\@\@std\@\@\@std\@\@AEAVBlockSource\@\@\@Z
+     * @vftbl 37
+     * @symbol ?_getUpdatePacket\@SignBlockActor\@\@MEAA?AV?$unique_ptr\@VBlockActorDataPacket\@\@U?$default_delete\@VBlockActorDataPacket\@\@\@std\@\@\@std\@\@AEAVBlockSource\@\@\@Z
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @vftbl  38
-     * @symbol  ?_onUpdatePacket\@SignBlockActor\@\@MEAAXAEBVCompoundTag\@\@AEAVBlockSource\@\@\@Z
+     * @vftbl 38
+     * @symbol ?_onUpdatePacket\@SignBlockActor\@\@MEAAXAEBVCompoundTag\@\@AEAVBlockSource\@\@\@Z
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIGNBLOCKACTOR
     /**
-     * @symbol  ??0SignBlockActor\@\@QEAA\@AEBVBlockPos\@\@W4BlockActorType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~SignBlockActor();
+#endif
+    /**
+     * @symbol ??0SignBlockActor\@\@QEAA\@AEBVBlockPos\@\@W4BlockActorType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI SignBlockActor(class BlockPos const &, enum class BlockActorType, std::string const &);
     /**
-     * @symbol  ?getMessage\@SignBlockActor\@\@QEAAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getMessage\@SignBlockActor\@\@QEAAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string const & getMessage();
     /**
-     * @symbol  ?getSignTextColor\@SignBlockActor\@\@QEBAAEBVColor\@mce\@\@XZ
+     * @symbol ?getSignTextColor\@SignBlockActor\@\@QEBAAEBVColor\@mce\@\@XZ
      */
     MCAPI class mce::Color const & getSignTextColor() const;
     /**
-     * @symbol  ?isBug471852Resolved\@SignBlockActor\@\@QEBA_NXZ
+     * @symbol ?isBug471852Resolved\@SignBlockActor\@\@QEBA_NXZ
      */
     MCAPI bool isBug471852Resolved() const;
     /**
-     * @symbol  ?resolveBug471852\@SignBlockActor\@\@QEAAXXZ
+     * @symbol ?load\@SignBlockActor\@\@QEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@_N\@Z
+     */
+    MCAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &, bool);
+    /**
+     * @symbol ?resolveBug471852\@SignBlockActor\@\@QEAAXXZ
      */
     MCAPI void resolveBug471852();
     /**
-     * @symbol  ?setMessage\@SignBlockActor\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
-     */
-    MCAPI void setMessage(std::string, std::string);
-    /**
-     * @symbol  ?setMessage\@SignBlockActor\@\@QEAAXVTextObjectRoot\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?setMessage\@SignBlockActor\@\@QEAAXVTextObjectRoot\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void setMessage(class TextObjectRoot, std::string);
     /**
-     * @symbol  ?setSignTextColor\@SignBlockActor\@\@QEAAXAEBVColor\@mce\@\@\@Z
+     * @symbol ?setMessage\@SignBlockActor\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
+     */
+    MCAPI void setMessage(std::string, std::string);
+    /**
+     * @symbol ?setSignTextColor\@SignBlockActor\@\@QEAAXAEBVColor\@mce\@\@\@Z
      */
     MCAPI void setSignTextColor(class mce::Color const &);
     /**
-     * @symbol  ?setType\@SignBlockActor\@\@QEAAXW4SignType\@1\@\@Z
+     * @symbol ?setTextLocked\@SignBlockActor\@\@QEAAX_N\@Z
+     */
+    MCAPI void setTextLocked(bool);
+    /**
+     * @symbol ?setType\@SignBlockActor\@\@QEAAXW4SignType\@1\@\@Z
      */
     MCAPI void setType(enum class SignBlockActor::SignType);
+
+//private:
+    /**
+     * @symbol ?_setMessage\@SignBlockActor\@\@AEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
+     */
+    MCAPI void _setMessage(std::string, std::string);
+    /**
+     * @symbol ?_setMessage\@SignBlockActor\@\@AEAAXVTextObjectRoot\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI void _setMessage(class TextObjectRoot, std::string);
+
+private:
 
 };

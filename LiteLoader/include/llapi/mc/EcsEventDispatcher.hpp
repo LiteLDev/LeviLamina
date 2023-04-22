@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?update\@EcsEventDispatcher\@\@QEAAXXZ
+     * @symbol ?update\@EcsEventDispatcher\@\@QEAAXXZ
      */
     MCAPI void update();
 

@@ -22,7 +22,7 @@ namespace BehaviorNodeUtils {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?lookAt\@BehaviorNodeUtils\@\@YAXAEAVActor\@\@AEBVVec3\@\@MM\@Z
+     * @symbol ?lookAt\@BehaviorNodeUtils\@\@YAXAEAVActor\@\@AEBVVec3\@\@MM\@Z
      */
     MCAPI void lookAt(class Actor &, class Vec3 const &, float, float);
 

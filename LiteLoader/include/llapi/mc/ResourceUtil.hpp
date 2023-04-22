@@ -30,12 +30,12 @@ public:
 
 public:
     /**
-     * @symbol  ?pathFromString\@ResourceUtil\@\@SA?AW4ResourceFileSystem\@\@V?$basic_string_span\@$$CBD$0?0\@gsl\@\@\@Z
+     * @symbol ?pathFromString\@ResourceUtil\@\@SA?AW4ResourceFileSystem\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI static enum class ResourceFileSystem pathFromString(class gsl::basic_string_span<char const, -1>);
+    MCAPI static enum class ResourceFileSystem pathFromString(class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
-     * @symbol  ?stringFromPath\@ResourceUtil\@\@SA?AV?$basic_string_span\@$$CBD$0?0\@gsl\@\@W4ResourceFileSystem\@\@\@Z
+     * @symbol ?stringFromPath\@ResourceUtil\@\@SA?AV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@W4ResourceFileSystem\@\@\@Z
      */
-    MCAPI static class gsl::basic_string_span<char const, -1> stringFromPath(enum class ResourceFileSystem);
+    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> stringFromPath(enum class ResourceFileSystem);
 
 };

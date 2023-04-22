@@ -28,11 +28,11 @@ public:
 
 public:
     /**
-     * @symbol  ?getProperty\@BlockPropertyComponent\@\@QEBA_NW4BlockProperty\@\@\@Z
+     * @symbol ?getProperty\@BlockPropertyComponent\@\@QEBA_NW4BlockProperty\@\@\@Z
      */
     MCAPI bool getProperty(enum class BlockProperty) const;
     /**
-     * @symbol  ?hasProperty\@BlockPropertyComponent\@\@QEBA_NW4BlockProperty\@\@\@Z
+     * @symbol ?hasProperty\@BlockPropertyComponent\@\@QEBA_NW4BlockProperty\@\@\@Z
      */
     MCAPI bool hasProperty(enum class BlockProperty) const;
 

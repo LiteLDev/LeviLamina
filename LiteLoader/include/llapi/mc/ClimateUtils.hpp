@@ -25,14 +25,17 @@ struct TargetSpace {
     TargetSpace(TargetSpace const&&) = delete;
 };
 struct Parameter {
-    Parameter() = delete;
-    Parameter(Parameter const&) = delete;
-    Parameter(Parameter const&&) = delete;
+    long long max, min;
+    inline Parameter(float _max, float _min)
+    {
+        max = _max * 10000;
+        min = _min * 10000;
+    }
 };
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?squareDistance\@ClimateUtils\@\@YA_JAEBV?$array\@UParameter\@ClimateUtils\@\@$06\@std\@\@AEBUTargetSpace\@1\@\@Z
+     * @symbol ?squareDistance\@ClimateUtils\@\@YA_JAEBV?$array\@UParameter\@ClimateUtils\@\@$06\@std\@\@AEBUTargetSpace\@1\@\@Z
      */
     MCAPI __int64 squareDistance(class std::array<struct ClimateUtils::Parameter, 7> const &, struct ClimateUtils::TargetSpace const &);
 

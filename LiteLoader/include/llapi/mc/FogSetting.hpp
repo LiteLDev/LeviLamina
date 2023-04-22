@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?ZERO_SETTING\@FogSetting\@\@2U1\@B
+     * @symbol ?ZERO_SETTING\@FogSetting\@\@2U1\@B
      */
     MCAPI static struct FogSetting const ZERO_SETTING;
 

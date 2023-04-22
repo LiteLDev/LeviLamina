@@ -20,7 +20,7 @@ namespace websocketpp {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?base64_encode\@websocketpp\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEBE_K\@Z
+     * @symbol ?base64_encode\@websocketpp\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEBE_K\@Z
      */
     MCAPI std::string base64_encode(unsigned char const *, unsigned __int64);
 

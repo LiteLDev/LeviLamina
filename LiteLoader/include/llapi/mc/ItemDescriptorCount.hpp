@@ -34,53 +34,59 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ItemDescriptorCount();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  2
-     * @symbol  ?serialize\@ItemDescriptorCount\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 2
+     * @symbol ?serialize\@ItemDescriptorCount\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void serialize(class BinaryStream &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMDESCRIPTORCOUNT
     /**
-     * @symbol  ??0ItemDescriptorCount\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI ItemDescriptorCount();
+    MCVAPI ~ItemDescriptorCount();
+#endif
     /**
-     * @symbol  ??0ItemDescriptorCount\@\@QEAA\@V?$basic_string_span\@$$CBD$0?0\@gsl\@\@HG\@Z
-     */
-    MCAPI ItemDescriptorCount(class gsl::basic_string_span<char const, -1>, int, unsigned short);
-    /**
-     * @symbol  ??0ItemDescriptorCount\@\@QEAA\@AEBVItemDescriptor\@\@G\@Z
-     */
-    MCAPI ItemDescriptorCount(class ItemDescriptor const &, unsigned short);
-    /**
-     * @symbol  ??0ItemDescriptorCount\@\@QEAA\@AEBVItem\@\@HG\@Z
-     */
-    MCAPI ItemDescriptorCount(class Item const &, int, unsigned short);
-    /**
-     * @symbol  ??0ItemDescriptorCount\@\@QEAA\@AEBVBlockLegacy\@\@G\@Z
-     */
-    MCAPI ItemDescriptorCount(class BlockLegacy const &, unsigned short);
-    /**
-     * @symbol  ??0ItemDescriptorCount\@\@QEAA\@AEBVBlock\@\@G\@Z
-     */
-    MCAPI ItemDescriptorCount(class Block const &, unsigned short);
-    /**
-     * @symbol  ??0ItemDescriptorCount\@\@QEAA\@AEBUItemTag\@\@G\@Z
-     */
-    MCAPI ItemDescriptorCount(struct ItemTag const &, unsigned short);
-    /**
-     * @symbol  ??0ItemDescriptorCount\@\@QEAA\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     MCAPI ItemDescriptorCount(class ReadOnlyBinaryStream &);
     /**
-     * @symbol  ?getStackSize\@ItemDescriptorCount\@\@QEBAFXZ
+     * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBVBlockLegacy\@\@G\@Z
+     */
+    MCAPI ItemDescriptorCount(class BlockLegacy const &, unsigned short);
+    /**
+     * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBVBlock\@\@G\@Z
+     */
+    MCAPI ItemDescriptorCount(class Block const &, unsigned short);
+    /**
+     * @symbol ??0ItemDescriptorCount\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@HG\@Z
+     */
+    MCAPI ItemDescriptorCount(class std::basic_string_view<char, struct std::char_traits<char>>, int, unsigned short);
+    /**
+     * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBVItem\@\@HG\@Z
+     */
+    MCAPI ItemDescriptorCount(class Item const &, int, unsigned short);
+    /**
+     * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBUItemTag\@\@G\@Z
+     */
+    MCAPI ItemDescriptorCount(struct ItemTag const &, unsigned short);
+    /**
+     * @symbol ??0ItemDescriptorCount\@\@QEAA\@XZ
+     */
+    MCAPI ItemDescriptorCount();
+    /**
+     * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBVItemDescriptor\@\@G\@Z
+     */
+    MCAPI ItemDescriptorCount(class ItemDescriptor const &, unsigned short);
+    /**
+     * @symbol ?getStackSize\@ItemDescriptorCount\@\@QEBAFXZ
      */
     MCAPI short getStackSize() const;
     /**
-     * @symbol  ?setStackSize\@ItemDescriptorCount\@\@QEAAXF\@Z
+     * @symbol ?setStackSize\@ItemDescriptorCount\@\@QEAAXF\@Z
      */
     MCAPI void setStackSize(short);
 

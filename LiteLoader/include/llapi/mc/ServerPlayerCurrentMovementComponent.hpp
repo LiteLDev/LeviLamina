@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ServerPlayerCurrentMovementComponent\@\@QEAA\@XZ
+     * @symbol ??1ServerPlayerCurrentMovementComponent\@\@QEAA\@XZ
      */
     MCAPI ~ServerPlayerCurrentMovementComponent();
 

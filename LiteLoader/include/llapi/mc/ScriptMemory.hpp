@@ -21,7 +21,7 @@ namespace ScriptMemory {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?getQuickJSMallocFunctions\@ScriptMemory\@\@YA?AV?$unique_ptr\@UMallocFunctions\@QuickJS\@Scripting\@\@U?$default_delete\@UMallocFunctions\@QuickJS\@Scripting\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?getQuickJSMallocFunctions\@ScriptMemory\@\@YA?AV?$unique_ptr\@UMallocFunctions\@QuickJS\@Scripting\@\@U?$default_delete\@UMallocFunctions\@QuickJS\@Scripting\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::unique_ptr<struct Scripting::QuickJS::MallocFunctions> getQuickJSMallocFunctions();
 

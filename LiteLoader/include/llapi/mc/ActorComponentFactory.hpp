@@ -32,7 +32,7 @@ public:
 
 //private:
     /**
-     * @symbol  ?_initialize\@ActorComponentFactory\@\@AEAAXAEBVExperiments\@\@\@Z
+     * @symbol ?_initialize\@ActorComponentFactory\@\@AEAAXAEBVExperiments\@\@\@Z
      */
     MCAPI void _initialize(class Experiments const &);
 

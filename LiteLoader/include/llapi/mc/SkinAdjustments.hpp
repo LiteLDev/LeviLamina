@@ -27,7 +27,7 @@ public:
 
 public:
     /**
-     * @symbol  ??0SkinAdjustments\@\@QEAA\@XZ
+     * @symbol ??0SkinAdjustments\@\@QEAA\@XZ
      */
     MCAPI SkinAdjustments();
 

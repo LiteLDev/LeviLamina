@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?_initializeBedrock\@ActorGoalFactory\@\@QEAAXXZ
+     * @symbol ?_initializeBedrock\@ActorGoalFactory\@\@QEAAXXZ
      */
     MCAPI void _initializeBedrock();
 

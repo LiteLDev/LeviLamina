@@ -71,20 +71,21 @@ inline map<std::string, CompoundTagVariant>& CompoundTag::value() {
 }
 
 // get value
-double CompoundTag::getDouble(class gsl::basic_string_span<char const, -1> key) const {
+double CompoundTag::getDouble(std::string_view key) const {
     auto tag = const_cast<Tag*>(get(key))->asDoubleTag();
     if (tag)
         return tag->value();
     // TODO
     return 0.0;
 };
-struct TagMemoryChunk const& CompoundTag::getIntArray(class gsl::basic_string_span<char const, -1> key) const {
+
+struct TagMemoryChunk const& CompoundTag::getIntArray(std::string_view key) const {
     auto tag = const_cast<Tag*>(get(key))->asIntArrayTag();
     return tag->value();
 };
 
 // get tag
-class ByteTag const* CompoundTag::getByteTag(class gsl::basic_string_span<char const, -1> key) const {
+class ByteTag const* CompoundTag::getByteTag(std::string_view key) const {
     return const_cast<Tag*>(get(key))->asByteTag();
 };
 
@@ -94,19 +95,19 @@ class ByteTag const* CompoundTag::getByteTag(class gsl::basic_string_span<char c
 //    return const_cast<Tag*>(get(key))->asShortTag();
 //};
 
-class FloatTag const* CompoundTag::getFloatTag(class gsl::basic_string_span<char const, -1> key) const {
+class FloatTag const* CompoundTag::getFloatTag(std::string_view key) const {
     return const_cast<Tag*>(get(key))->asFloatTag();
 };
 
-class DoubleTag const* CompoundTag::getDoubleTag(class gsl::basic_string_span<char const, -1> key) const {
+class DoubleTag const* CompoundTag::getDoubleTag(std::string_view key) const {
     return const_cast<Tag*>(get(key))->asDoubleTag();
 };
 
-class ByteArrayTag const* CompoundTag::getByteArrayTag(class gsl::basic_string_span<char const, -1> key) const {
+class ByteArrayTag const* CompoundTag::getByteArrayTag(std::string_view key) const {
     return const_cast<Tag*>(get(key))->asByteArrayTag();
 };
 
-class IntArrayTag const* CompoundTag::getIntArrayTag(class gsl::basic_string_span<char const, -1> key) const {
+class IntArrayTag const* CompoundTag::getIntArrayTag(std::string_view key) const {
     return const_cast<Tag*>(get(key))->asIntArrayTag();
 };
 
@@ -114,15 +115,15 @@ class IntArrayTag const* CompoundTag::getIntArrayTag(class gsl::basic_string_spa
 //     return const_cast<Tag*>(get(key))->asStringTag();
 // };
 
-class ListTag const* CompoundTag::getListTag(class gsl::basic_string_span<char const, -1> key) const {
+class ListTag const* CompoundTag::getListTag(std::string_view key) const {
     return getList(key);
 };
 
-class CompoundTag const* CompoundTag::getCompoundTag(class gsl::basic_string_span<char const, -1> key) const {
+class CompoundTag const* CompoundTag::getCompoundTag(std::string_view key) const {
     return getCompound(key);
 };
 
-Tag* CompoundTag::operator[](class gsl::basic_string_span<char const, -1> key) {
+Tag* CompoundTag::operator[](std::string_view key) {
     return get(key);
 }
 
@@ -232,13 +233,14 @@ class BigEndianStringByteOutput {
 public:
     virtual ~BigEndianStringByteOutput() = default;
     ;
-    virtual void* writeString(gsl::basic_string_span<char const, -1> string_span) {
-        return SymCall("?writeString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z",
-                       void*, void*, gsl::basic_string_span<char const, -1>)((void*)this, std::move(string_span));
+    virtual void* writeString(std::string_view string_span) {
+        return SymCall("?writeString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z", void*,
+                       void*, std::string_view)((void*)this, std::move(string_span));
     }
-    virtual void* writeLongString(gsl::basic_string_span<char const, -1> string_span) {
-        return SymCall("?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z",
-                       void*, void*, gsl::basic_string_span<char const, -1>)((void*)this, std::move(string_span));
+
+    virtual void* writeLongString(std::string_view string_span) {
+        return SymCall("?writeLongString@BytesDataOutput@@UEAAXV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z", void*, void*,
+                       std::string_view)((void*)this, std::move(string_span));
     }
     virtual void writeFloat(float data) {
         writeBigEndianBytes((byte*)&data, 4);
@@ -290,18 +292,28 @@ std::string CompoundTag::nbtListToBinary(std::vector<std::unique_ptr<CompoundTag
 
 #pragma region From Binary
 //////////////////// From Binary ////////////////////
-std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(void* data, size_t len, size_t& offset, bool isLittleEndian) {
-    void* vtbl;
-    if (isLittleEndian)
-        vtbl = dlsym("??_7StringByteInput@@6B@");
-    else
-        vtbl = dlsym("??_7BigEndianStringByteInput@@6B@");
 
-    uintptr_t iDataInput[4] = {(uintptr_t)vtbl, offset, len, (uintptr_t)data};
-    auto rtn = NbtIo::read((IDataInput&)iDataInput);
+std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(std::string_view dataView, size_t& offset, bool isLittleEndian) {
+    struct {
+        __int64* mVtbl;
+        size_t mOffset;
+        std::string_view mBuffer;
+    } tStringByteInput;
 
-    offset = iDataInput[1];
+    if (isLittleEndian) tStringByteInput.mVtbl = (__int64*)dlsym("??_7StringByteInput@@6B@");
+    else tStringByteInput.mVtbl = (__int64*)dlsym("??_7BigEndianStringByteInput@@6B@");
+        
+    tStringByteInput.mOffset = offset;
+    tStringByteInput.mBuffer = dataView;
+    auto rtn = NbtIo::read(*reinterpret_cast<IDataInput*>(&tStringByteInput));
+
+    //update currentOffset
+    offset = tStringByteInput.mOffset;
     return rtn;
+}
+
+std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(void* data, size_t len, size_t& offset, bool isLittleEndian) {
+    return fromBinaryNBT(std::string_view((char*)data, len), offset, isLittleEndian);
 }
 
 std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(void* data, size_t len, bool isLittleEndian) {

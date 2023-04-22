@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1SoundDefinition\@\@QEAA\@XZ
+     * @symbol ??1SoundDefinition\@\@QEAA\@XZ
      */
     MCAPI ~SoundDefinition();
 

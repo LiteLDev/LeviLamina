@@ -14,7 +14,7 @@ target_sources(${PROJECT_NAME} PRIVATE
 
 if (${SCRIPTX_FEATURE_INSPECTOR})
 
-    target_sources(${PROJECT_NAME} PRIVATE
+    target_sources(ScriptX PRIVATE
             ${CMAKE_CURRENT_LIST_DIR}/V8Inspector.cc
             )
 

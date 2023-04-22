@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1PistonActionEvent\@\@QEAA\@XZ
+     * @symbol ??1PistonActionEvent\@\@QEAA\@XZ
      */
     MCAPI ~PistonActionEvent();
 

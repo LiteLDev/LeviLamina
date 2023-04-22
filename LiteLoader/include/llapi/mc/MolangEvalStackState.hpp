@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??0MolangEvalStackState\@\@QEAA\@AEAUMolangEvalParams\@\@\@Z
+     * @symbol ??0MolangEvalStackState\@\@QEAA\@AEAUMolangEvalParams\@\@\@Z
      */
     MCAPI MolangEvalStackState(struct MolangEvalParams &);
 

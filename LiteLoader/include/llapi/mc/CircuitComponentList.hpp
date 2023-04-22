@@ -19,7 +19,25 @@ class CircuitComponentList {
 
 #define AFTER_EXTRA
 // Add Member There
-public: class Item {};
+public:
+    class Item {
+    public:
+        class BaseCircuitComponent* mComponent;
+        int mDampening;
+        BlockPos mPos;
+        FaceID mDirection;
+        bool mDirectlyPowered;
+        int mData;
+
+        inline Item() = default;
+
+        inline Item(BaseCircuitComponent* component, int dampening, const BlockPos& pos)
+        : mComponent(component), mDampening(dampening), mPos(pos) {}
+    };
+
+    std::vector<Item> mComponents;
+
+#define DISABLE_CONSTRUCTOR_PREVENTION_CIRCUITCOMPONENTLIST
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CIRCUITCOMPONENTLIST
 public:
@@ -30,11 +48,11 @@ public:
 
 public:
     /**
-     * @symbol  ?removeSource\@CircuitComponentList\@\@QEAA_NAEBVBlockPos\@\@PEBVBaseCircuitComponent\@\@\@Z
+     * @symbol ?removeSource\@CircuitComponentList\@\@QEAA_NAEBVBlockPos\@\@PEBVBaseCircuitComponent\@\@\@Z
      */
     MCAPI bool removeSource(class BlockPos const &, class BaseCircuitComponent const *);
     /**
-     * @symbol  ??1CircuitComponentList\@\@QEAA\@XZ
+     * @symbol ??1CircuitComponentList\@\@QEAA\@XZ
      */
     MCAPI ~CircuitComponentList();
 

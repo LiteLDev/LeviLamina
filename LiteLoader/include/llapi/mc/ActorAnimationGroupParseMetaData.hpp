@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ActorAnimationGroupParseMetaData\@\@QEAA\@XZ
+     * @symbol ??1ActorAnimationGroupParseMetaData\@\@QEAA\@XZ
      */
     MCAPI ~ActorAnimationGroupParseMetaData();
 

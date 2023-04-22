@@ -11,21 +11,21 @@
 #undef BEFORE_EXTRA
 
 
-struct MolangArrayVariable {
+class MolangArrayVariable {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGARRAYVARIABLE
 public:
-    struct MolangArrayVariable& operator=(struct MolangArrayVariable const &) = delete;
-    MolangArrayVariable(struct MolangArrayVariable const &) = delete;
+    class MolangArrayVariable& operator=(class MolangArrayVariable const &) = delete;
+    MolangArrayVariable(class MolangArrayVariable const &) = delete;
     MolangArrayVariable() = delete;
 #endif
 
 public:
     /**
-     * @symbol  ??1MolangArrayVariable\@\@QEAA\@XZ
+     * @symbol ??1MolangArrayVariable\@\@QEAA\@XZ
      */
     MCAPI ~MolangArrayVariable();
 

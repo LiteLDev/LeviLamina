@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1LocalConstBlockSource\@\@QEAA\@XZ
+     * @symbol ??1LocalConstBlockSource\@\@QEAA\@XZ
      */
     MCAPI ~LocalConstBlockSource();
 

@@ -11,11 +11,8 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC structure BlockBreathabilityDescription.
- *
- */
-struct BlockBreathabilityDescription {
+
+class BlockBreathabilityDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -23,57 +20,57 @@ struct BlockBreathabilityDescription {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKBREATHABILITYDESCRIPTION
 public:
-    struct BlockBreathabilityDescription& operator=(struct BlockBreathabilityDescription const &) = delete;
-    BlockBreathabilityDescription(struct BlockBreathabilityDescription const &) = delete;
+    class BlockBreathabilityDescription& operator=(class BlockBreathabilityDescription const &) = delete;
+    BlockBreathabilityDescription(class BlockBreathabilityDescription const &) = delete;
     BlockBreathabilityDescription() = delete;
 #endif
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BlockBreathabilityDescription();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?getName\@BlockBreathabilityDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 1
+     * @symbol ?getName\@BlockBreathabilityDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string const & getName() const;
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  ?isNetworkComponent\@BlockBreathabilityDescription\@\@UEBA_NXZ
+     * @vftbl 4
+     * @symbol ?isNetworkComponent\@BlockBreathabilityDescription\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl  5
-     * @symbol  ?buildNetworkTag\@BlockBreathabilityDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 5
+     * @symbol ?buildNetworkTag\@BlockBreathabilityDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vftbl  6
-     * @symbol  ?initializeFromNetwork\@BlockBreathabilityDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
+     * @vftbl 6
+     * @symbol ?initializeFromNetwork\@BlockBreathabilityDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
-     * @symbol  ?NameID\@BlockBreathabilityDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?NameID\@BlockBreathabilityDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NameID;
     /**
-     * @symbol  ?bindType\@BlockBreathabilityDescription\@\@SAXXZ
+     * @symbol ?bindType\@BlockBreathabilityDescription\@\@SAXXZ
      */
     MCAPI static void bindType();
     /**
-     * @symbol  ?registerVersionUpgrades\@BlockBreathabilityDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
+     * @symbol ?registerVersionUpgrades\@BlockBreathabilityDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 

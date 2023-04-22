@@ -28,25 +28,25 @@ public:
 
 public:
     /**
-     * @symbol  ??0BlockStateDefinition\@\@QEAA\@AEBU0\@\@Z
+     * @symbol ??0BlockStateDefinition\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI BlockStateDefinition(struct BlockStateDefinition const &);
     /**
-     * @symbol  ??4BlockStateDefinition\@\@QEAAAEAU0\@AEBU0\@\@Z
-     */
-    MCAPI struct BlockStateDefinition & operator=(struct BlockStateDefinition const &);
-    /**
-     * @symbol  ??4BlockStateDefinition\@\@QEAAAEAU0\@$$QEAU0\@\@Z
+     * @symbol ??4BlockStateDefinition\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct BlockStateDefinition & operator=(struct BlockStateDefinition &&);
     /**
-     * @symbol  ??1BlockStateDefinition\@\@QEAA\@XZ
+     * @symbol ??4BlockStateDefinition\@\@QEAAAEAU0\@AEBU0\@\@Z
+     */
+    MCAPI struct BlockStateDefinition & operator=(struct BlockStateDefinition const &);
+    /**
+     * @symbol ??1BlockStateDefinition\@\@QEAA\@XZ
      */
     MCAPI ~BlockStateDefinition();
 
 //private:
     /**
-     * @symbol  ?_copy\@BlockStateDefinition\@\@AEAAXAEBU1\@\@Z
+     * @symbol ?_copy\@BlockStateDefinition\@\@AEAAXAEBU1\@\@Z
      */
     MCAPI void _copy(struct BlockStateDefinition const &);
 

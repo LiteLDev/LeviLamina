@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1CraftUISetResultNameEvent\@\@QEAA\@XZ
+     * @symbol ??1CraftUISetResultNameEvent\@\@QEAA\@XZ
      */
     MCAPI ~CraftUISetResultNameEvent();
 

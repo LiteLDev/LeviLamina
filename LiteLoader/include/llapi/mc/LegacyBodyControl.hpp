@@ -29,17 +29,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~LegacyBodyControl();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?clientTick\@LegacyBodyControl\@\@UEAAXAEAVMob\@\@\@Z
+     * @vftbl 1
+     * @symbol ?clientTick\@LegacyBodyControl\@\@UEAAXAEAVMob\@\@\@Z
      */
     virtual void clientTick(class Mob &);
     /**
-     * @symbol  ??0LegacyBodyControl\@\@QEAA\@XZ
+     * @symbol ??0LegacyBodyControl\@\@QEAA\@XZ
      */
     MCAPI LegacyBodyControl();
 

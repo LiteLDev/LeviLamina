@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1LevelAddedActorEvent\@\@QEAA\@XZ
+     * @symbol ??1LevelAddedActorEvent\@\@QEAA\@XZ
      */
     MCAPI ~LevelAddedActorEvent();
 

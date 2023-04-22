@@ -29,7 +29,7 @@ public:
 
 public:
     /**
-     * @symbol  ??0ScriptBindingReleaseList\@\@QEAA\@V?$vector\@U?$pair\@PEBQEBDUVersion\@Scripting\@\@\@std\@\@V?$allocator\@U?$pair\@PEBQEBDUVersion\@Scripting\@\@\@std\@\@\@2\@\@std\@\@\@Z
+     * @symbol ??0ScriptBindingReleaseList\@\@QEAA\@V?$vector\@U?$pair\@PEBQEBDUVersion\@Scripting\@\@\@std\@\@V?$allocator\@U?$pair\@PEBQEBDUVersion\@Scripting\@\@\@std\@\@\@2\@\@std\@\@\@Z
      */
     MCAPI ScriptBindingReleaseList(std::vector<struct std::pair<char const *const *, struct Scripting::Version>>);
 

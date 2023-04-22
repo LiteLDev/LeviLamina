@@ -28,13 +28,13 @@ public:
 
 public:
     /**
-     * @symbol  ?create\@ClientPlayerInputFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?create\@ClientPlayerInputFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo create();
 
 //private:
     /**
-     * @symbol  ?tickSystem\@ClientPlayerInputFilterSystem\@\@CAXAEAVStrictEntityContext\@\@AEBVLoadingStateComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UPlayerInputRequestComponent\@\@\@\@\@Z
+     * @symbol ?tickSystem\@ClientPlayerInputFilterSystem\@\@CAXAEAVStrictEntityContext\@\@AEBVLoadingStateComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UPlayerInputRequestComponent\@\@\@\@\@Z
      */
     MCAPI static void tickSystem(class StrictEntityContext &, class LoadingStateComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct PlayerInputRequestComponent>);
 

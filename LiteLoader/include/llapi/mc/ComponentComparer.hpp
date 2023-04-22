@@ -20,15 +20,15 @@ namespace ComponentComparer {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?GETDIFF_NOT_IMPLEMENTED\@ComponentComparer\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?GETDIFF_NOT_IMPLEMENTED\@ComponentComparer\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const GETDIFF_NOT_IMPLEMENTED;
     /**
-     * @symbol  ?TOSTRING_NOT_IMPLEMENTED\@ComponentComparer\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?TOSTRING_NOT_IMPLEMENTED\@ComponentComparer\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI extern std::string const TOSTRING_NOT_IMPLEMENTED;
     /**
-     * @symbol  ?getDiffMessage\@ComponentComparer\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEBDAEBV23\@1\@Z
+     * @symbol ?getDiffMessage\@ComponentComparer\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEBDAEBV23\@1\@Z
      */
     MCAPI std::string getDiffMessage(char const *, std::string const &, std::string const &);
 

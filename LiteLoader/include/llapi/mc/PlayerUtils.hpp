@@ -17,11 +17,11 @@ namespace PlayerUtils {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?addItem\@PlayerUtils\@\@YAXAEAVPlayer\@\@AEAVItemStack\@\@\@Z
+     * @symbol ?addItem\@PlayerUtils\@\@YAXAEAVPlayer\@\@AEAVItemStack\@\@\@Z
      */
     MCAPI void addItem(class Player &, class ItemStack &);
     /**
-     * @symbol  ?replaceCurrentItem\@PlayerUtils\@\@YAXAEAVPlayer\@\@AEAVItemStack\@\@\@Z
+     * @symbol ?replaceCurrentItem\@PlayerUtils\@\@YAXAEAVPlayer\@\@AEAVItemStack\@\@\@Z
      */
     MCAPI void replaceCurrentItem(class Player &, class ItemStack &);
 

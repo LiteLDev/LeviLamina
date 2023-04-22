@@ -24,7 +24,11 @@ DEFINE_ENGINE_TEST(ByteBufferTest);
 TEST_F(ByteBufferTest, Type) {
   EngineScope scope(engine);
 
-  auto ret = engine->eval(TS().js("new ArrayBuffer()").lua("return ByteBuffer(4)").select());
+  auto ret = engine->eval(TS()
+    .js("new ArrayBuffer()")
+    .lua("return ByteBuffer(4)")
+    .py("bytearray(4)")
+  .select());
   ASSERT_TRUE(ret.isByteBuffer()) << ret.describeUtf8();
 
 #ifdef SCRIPTX_LANG_JAVASCRIPT
@@ -79,6 +83,7 @@ void testByteBufferReadWrite(ScriptEngine* engine, const Local<Value>& buf) {
                        .lua(R"(
 return view:readInt8(5) == 2 and view:readInt8(6) == 0 and view:readInt8(7) == 4 and view:readInt8(8) == 8
 )")
+                        .py("view[4] == 2 and view[5] == 0 and view[6] == 4 and view[7] == 8")
                        .select());
   ASSERT_TRUE(success.isBoolean()) << success.describeUtf8();
   ASSERT_TRUE(success.asBoolean().value());
@@ -99,6 +104,17 @@ return view:readInt8(5) == 2 and view:readInt8(6) == 0 and view:readInt8(7) == 4
 
 TEST_F(ByteBufferTest, Data) {
   EngineScope engineScope(engine);
+#ifdef SCRIPTX_LANG_PYTHON
+  engine->eval(R"(
+view = bytearray(8)
+view[0] = 1
+view[1] = 0
+view[2] = 2
+view[3] = 4
+)");
+  auto ret = engine->eval("view");
+
+#else
   auto ret = engine->eval(TS().js(R"(
         ab = new ArrayBuffer(8);
         view = new Int8Array(ab);
@@ -118,6 +134,7 @@ return view
 
 )")
                               .select());
+#endif
   testByteBufferReadWrite(engine, ret);
 }
 
@@ -167,6 +184,13 @@ TEST_F(ByteBufferTest, CreateShared) {
   auto shared = std::shared_ptr<uint8_t>(new uint8_t[8], std::default_delete<uint8_t[]>());
   auto ptr = shared.get();
 
+#ifdef SCRIPTX_LANG_PYTHON
+  // Python does not support sharing buffer pointer,
+  // will throw exception and exit here
+  EXPECT_THROW({ ByteBuffer::newByteBuffer(shared, 8); }, Exception);
+  return;
+#endif
+
   auto buffer = ByteBuffer::newByteBuffer(shared, 8);
   ASSERT_EQ(buffer.getRawBytes(), ptr);
   ASSERT_EQ(buffer.getRawBytesShared().get(), ptr);
@@ -176,6 +200,18 @@ TEST_F(ByteBufferTest, CreateShared) {
   ptr[7] = 8;
 
   engine->set("buffer", buffer);
+
+#ifdef SCRIPTX_LANG_PYTHON
+  engine->eval(R"(
+view = buffer
+view[0] = 1
+view[1] = 0
+view[2] = 2
+view[3] = 4
+)");
+
+#else
+
   engine->eval(TS().js(
 #ifdef SCRIPTX_BACKEND_WEBASSEMBLY
                        "view = new Int8Array(buffer.buffer, buffer.byteOffset, buffer.byteLength);"
@@ -197,6 +233,8 @@ view:writeInt8(4, 4)
 return view
 )")
                    .select());
+#endif
+
   EXPECT_EQ(ptr[0], 1);
   EXPECT_EQ(ptr[1], 0);
   EXPECT_EQ(ptr[2], 2);
@@ -207,6 +245,7 @@ return view
                        .lua(R"(
 return buffer:readInt8(5) == 2 and buffer:readInt8(6) == 0 and buffer:readInt8(7) == 4 and buffer:readInt8(8) == 8
 )")
+                        .py("view[4] == 2 and view[5] == 0 and view[6] == 4 and view[7] == 8")
                        .select());
   ASSERT_TRUE(success.isBoolean()) << success.describeUtf8();
   ASSERT_TRUE(success.asBoolean().value());
@@ -224,6 +263,7 @@ TEST_F(ByteBufferTest, IsInstance) {
 
   auto ret = engine->eval(TS().js("buffer instanceof ArrayBuffer")
                               .lua("return ScriptX.isInstanceOf(buffer, ByteBuffer)")
+                              .py("isinstance(buffer, bytearray)")
                               .select());
 
   ASSERT_TRUE(ret.isBoolean());

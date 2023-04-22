@@ -1,6 +1,6 @@
 #!/bin/bash
 codename=$(lsb_release -c --short)
-lip_version=0.12.0
+lip_version=0.14.0
 
 # Install wine
 sudo apt install -y wget unzip
@@ -23,5 +23,6 @@ cd bedrock_server
 
 # Install LiteLoaderBDS
 ./../lip-${lip_version}-linux-amd64/lip install ll
+WINEDEBUG=-all wine LLPeEditor.exe
 
 echo Done!

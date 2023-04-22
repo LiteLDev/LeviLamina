@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?_sendPacketsSystem\@SendPacketsSystemImpl\@\@SAXAEAVStrictEntityContext\@\@AEBVActorOwnerComponent\@\@AEAUSendPacketsComponent\@\@\@Z
+     * @symbol ?_sendPacketsSystem\@SendPacketsSystemImpl\@\@SAXAEAVStrictEntityContext\@\@AEBVActorOwnerComponent\@\@AEAUSendPacketsComponent\@\@\@Z
      */
     MCAPI static void _sendPacketsSystem(class StrictEntityContext &, class ActorOwnerComponent const &, struct SendPacketsComponent &);
 

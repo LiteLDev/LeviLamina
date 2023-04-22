@@ -31,92 +31,92 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LECTERNBLOCKACTOR
     /**
-     * @symbol  ?_getUpdatePacket\@LecternBlockActor\@\@MEAA?AV?$unique_ptr\@VBlockActorDataPacket\@\@U?$default_delete\@VBlockActorDataPacket\@\@\@std\@\@\@std\@\@AEAVBlockSource\@\@\@Z
+     * @symbol ?_getUpdatePacket\@LecternBlockActor\@\@MEAA?AV?$unique_ptr\@VBlockActorDataPacket\@\@U?$default_delete\@VBlockActorDataPacket\@\@\@std\@\@\@std\@\@AEAVBlockSource\@\@\@Z
      */
     MCVAPI std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @symbol  ?_onUpdatePacket\@LecternBlockActor\@\@MEAAXAEBVCompoundTag\@\@AEAVBlockSource\@\@\@Z
+     * @symbol ?_onUpdatePacket\@LecternBlockActor\@\@MEAAXAEBVCompoundTag\@\@AEAVBlockSource\@\@\@Z
      */
     MCVAPI void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
-     * @symbol  ?getContainer\@LecternBlockActor\@\@UEAAPEAVContainer\@\@XZ
+     * @symbol ?getContainer\@LecternBlockActor\@\@UEAAPEAVContainer\@\@XZ
      */
     MCVAPI class Container * getContainer();
     /**
-     * @symbol  ?getContainer\@LecternBlockActor\@\@UEBAPEBVContainer\@\@XZ
+     * @symbol ?getContainer\@LecternBlockActor\@\@UEBAPEBVContainer\@\@XZ
      */
     MCVAPI class Container const * getContainer() const;
     /**
-     * @symbol  ?getContainerSize\@LecternBlockActor\@\@UEBAHXZ
+     * @symbol ?getContainerSize\@LecternBlockActor\@\@UEBAHXZ
      */
     MCVAPI int getContainerSize() const;
     /**
-     * @symbol  ?getItem\@LecternBlockActor\@\@UEBAAEBVItemStack\@\@H\@Z
+     * @symbol ?getItem\@LecternBlockActor\@\@UEBAAEBVItemStack\@\@H\@Z
      */
     MCVAPI class ItemStack const & getItem(int) const;
     /**
-     * @symbol  ?getMaxStackSize\@LecternBlockActor\@\@UEBAHXZ
+     * @symbol ?getMaxStackSize\@LecternBlockActor\@\@UEBAHXZ
      */
     MCVAPI int getMaxStackSize() const;
     /**
-     * @symbol  ?load\@LecternBlockActor\@\@UEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
+     * @symbol ?load\@LecternBlockActor\@\@UEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @symbol  ?onChanged\@LecternBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
+     * @symbol ?onChanged\@LecternBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
     MCVAPI void onChanged(class BlockSource &);
     /**
-     * @symbol  ?save\@LecternBlockActor\@\@UEBA_NAEAVCompoundTag\@\@\@Z
+     * @symbol ?save\@LecternBlockActor\@\@UEBA_NAEAVCompoundTag\@\@\@Z
      */
     MCVAPI bool save(class CompoundTag &) const;
     /**
-     * @symbol  ?serverInitItemStackIds\@LecternBlockActor\@\@UEAAXHHV?$function\@$$A6AXHAEBVItemStack\@\@\@Z\@std\@\@\@Z
+     * @symbol ?serverInitItemStackIds\@LecternBlockActor\@\@UEAAXHHV?$function\@$$A6AXHAEBVItemStack\@\@\@Z\@std\@\@\@Z
      */
     MCVAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>);
     /**
-     * @symbol  ?setItem\@LecternBlockActor\@\@UEAAXHAEBVItemStack\@\@\@Z
+     * @symbol ?setItem\@LecternBlockActor\@\@UEAAXHAEBVItemStack\@\@\@Z
      */
     MCVAPI void setItem(int, class ItemStack const &);
     /**
-     * @symbol  ?startOpen\@LecternBlockActor\@\@UEAAXAEAVPlayer\@\@\@Z
+     * @symbol ?startOpen\@LecternBlockActor\@\@UEAAXAEAVPlayer\@\@\@Z
      */
     MCVAPI void startOpen(class Player &);
     /**
-     * @symbol  ?stopOpen\@LecternBlockActor\@\@UEAAXAEAVPlayer\@\@\@Z
+     * @symbol ?stopOpen\@LecternBlockActor\@\@UEAAXAEAVPlayer\@\@\@Z
      */
     MCVAPI void stopOpen(class Player &);
 #endif
     /**
-     * @symbol  ??0LecternBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
+     * @symbol ??0LecternBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
     MCAPI LecternBlockActor(class BlockPos const &);
     /**
-     * @symbol  ?dropBook\@LecternBlockActor\@\@QEAAXAEAVBlockSource\@\@\@Z
+     * @symbol ?dropBook\@LecternBlockActor\@\@QEAAXAEAVBlockSource\@\@\@Z
      */
     MCAPI void dropBook(class BlockSource &);
     /**
-     * @symbol  ?getPage\@LecternBlockActor\@\@QEBAHXZ
+     * @symbol ?getPage\@LecternBlockActor\@\@QEBAHXZ
      */
     MCAPI int getPage() const;
     /**
-     * @symbol  ?getTotalPages\@LecternBlockActor\@\@QEBAHXZ
+     * @symbol ?getTotalPages\@LecternBlockActor\@\@QEBAHXZ
      */
     MCAPI int getTotalPages() const;
     /**
-     * @symbol  ?hasBook\@LecternBlockActor\@\@QEBA_NXZ
+     * @symbol ?hasBook\@LecternBlockActor\@\@QEBA_NXZ
      */
     MCAPI bool hasBook() const;
     /**
-     * @symbol  ?setItemFromBlock\@LecternBlockActor\@\@QEAAXHAEBVItemStack\@\@\@Z
+     * @symbol ?setItemFromBlock\@LecternBlockActor\@\@QEAAXHAEBVItemStack\@\@\@Z
      */
     MCAPI void setItemFromBlock(int, class ItemStack const &);
     /**
-     * @symbol  ?setPageOnServer\@LecternBlockActor\@\@QEAAXHAEAVBlockSource\@\@\@Z
+     * @symbol ?setPageOnServer\@LecternBlockActor\@\@QEAAXHAEAVBlockSource\@\@\@Z
      */
     MCAPI void setPageOnServer(int, class BlockSource &);
     /**
-     * @symbol  ?setTotalPages\@LecternBlockActor\@\@QEAAXH\@Z
+     * @symbol ?setTotalPages\@LecternBlockActor\@\@QEAAXH\@Z
      */
     MCAPI void setTotalPages(int);
 

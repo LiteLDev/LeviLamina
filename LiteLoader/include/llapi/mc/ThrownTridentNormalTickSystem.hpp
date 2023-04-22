@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ?createSystem\@ThrownTridentNormalTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@ThrownTridentNormalTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

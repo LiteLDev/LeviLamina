@@ -28,11 +28,11 @@ public:
 
 public:
     /**
-     * @symbol  ?_minecartComeOffRailSystem\@MinecartComeOffRailSystem\@\@SAXAEAVStrictEntityContext\@\@AEBVRailMovementComponent\@\@AEAUStateVectorComponent\@\@V?$Optional\@$$CBV?$FlagComponent\@UOnGroundFlag\@\@\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UMoveRequestComponent\@\@\@\@\@Z
+     * @symbol ?_minecartComeOffRailSystem\@MinecartComeOffRailSystem\@\@SAXAEAVStrictEntityContext\@\@AEBVRailMovementComponent\@\@AEAUStateVectorComponent\@\@V?$Optional\@$$CBV?$FlagComponent\@UOnGroundFlag\@\@\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UMoveRequestComponent\@\@\@\@\@Z
      */
     MCAPI static void _minecartComeOffRailSystem(class StrictEntityContext &, class RailMovementComponent const &, struct StateVectorComponent &, class Optional<class FlagComponent<struct OnGroundFlag> const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MoveRequestComponent>);
     /**
-     * @symbol  ?createSystem\@MinecartComeOffRailSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@MinecartComeOffRailSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 

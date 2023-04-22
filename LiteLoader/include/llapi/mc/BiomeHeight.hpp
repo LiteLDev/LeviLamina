@@ -30,7 +30,7 @@ public:
 
 public:
     /**
-     * @symbol  ?MIN_DEPTH\@BiomeHeight\@\@2MB
+     * @symbol ?MIN_DEPTH\@BiomeHeight\@\@2MB
      */
     MCAPI static float const MIN_DEPTH;
 

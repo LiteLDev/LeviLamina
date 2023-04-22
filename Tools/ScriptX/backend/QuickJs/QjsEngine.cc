@@ -274,22 +274,20 @@ Local<Value> QjsEngine::eval(const Local<String>& script, const Local<Value>& so
 
 Local<Value> QjsEngine::loadFile(const Local<String>& scriptFile) {
   Tracer trace(this, "QjsEngine::loadFile");
-
   if(scriptFile.toString().empty())
     throw Exception("script file no found");
   Local<Value> content = internal::readAllFileContent(scriptFile);
   if(content.isNull())
     throw Exception("can't load script file");
 
-  // get source file name
   std::string sourceFilePath = scriptFile.toString();
   std::size_t pathSymbol = sourceFilePath.rfind("/");
-  if(pathSymbol != -1)
+  if(pathSymbol != std::string::npos)
     sourceFilePath = sourceFilePath.substr(pathSymbol + 1);
   else
   {
     pathSymbol = sourceFilePath.rfind("\\");
-    if(pathSymbol != -1)
+    if(pathSymbol != std::string::npos)
       sourceFilePath = sourceFilePath.substr(pathSymbol + 1);
   }
   Local<String> sourceFileName = String::newString(sourceFilePath);

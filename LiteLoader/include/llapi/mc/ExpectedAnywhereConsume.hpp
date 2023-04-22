@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??0ExpectedAnywhereConsume\@\@QEAA\@AEBVItemStack\@\@I\@Z
+     * @symbol ??0ExpectedAnywhereConsume\@\@QEAA\@AEBVItemStack\@\@I\@Z
      */
     MCAPI ExpectedAnywhereConsume(class ItemStack const &, unsigned int);
 

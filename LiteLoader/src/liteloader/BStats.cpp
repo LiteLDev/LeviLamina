@@ -262,6 +262,7 @@ void submitTask() {
     }
 
     std::thread a([] {
+        SetCurrentThreadDescription(L"LL_BStat_Report_Thread");
         auto json = createJson();
         httplib::Headers headers = {
             {"Accept-Encoding", "gzip"},

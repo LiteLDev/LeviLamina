@@ -28,8 +28,12 @@ public:
 
 public:
     /**
-     * @symbol  ?create\@ClientInputUpdateSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?create\@ClientInputUpdateSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo create();
+    /**
+     * @symbol ?extractRawHIDInput\@ClientInputUpdateSystem\@\@SAXAEBVLayeredAbilities\@\@AEBVSynchedActorData\@\@_NAEAURawMoveInputComponent\@\@AEBVMoveInputHandler\@\@PEBUSneakingComponent\@\@\@Z
+     */
+    MCAPI static void extractRawHIDInput(class LayeredAbilities const &, class SynchedActorData const &, bool, struct RawMoveInputComponent &, class MoveInputHandler const &, struct SneakingComponent const *);
 
 };

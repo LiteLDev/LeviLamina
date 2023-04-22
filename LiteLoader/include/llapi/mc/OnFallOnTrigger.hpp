@@ -28,11 +28,11 @@ public:
 
 public:
     /**
-     * @symbol  ??0OnFallOnTrigger\@\@QEAA\@$$QEAV0\@\@Z
+     * @symbol ??0OnFallOnTrigger\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI OnFallOnTrigger(class OnFallOnTrigger &&);
     /**
-     * @symbol  ??1OnFallOnTrigger\@\@QEAA\@XZ
+     * @symbol ??1OnFallOnTrigger\@\@QEAA\@XZ
      */
     MCAPI ~OnFallOnTrigger();
 

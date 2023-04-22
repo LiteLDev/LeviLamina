@@ -31,7 +31,7 @@ public:
 
 public:
     /**
-     * @symbol  ?getValidator\@PackSettingsJsonValidator\@\@SA?AVProperty\@JsonValidator\@\@XZ
+     * @symbol ?getValidator\@PackSettingsJsonValidator\@\@SA?AVProperty\@JsonValidator\@\@XZ
      */
     MCAPI static class JsonValidator::Property getValidator();
 

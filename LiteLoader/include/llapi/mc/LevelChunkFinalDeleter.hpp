@@ -11,11 +11,8 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC structure LevelChunkFinalDeleter.
- *
- */
-struct LevelChunkFinalDeleter {
+
+class LevelChunkFinalDeleter {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -23,14 +20,14 @@ struct LevelChunkFinalDeleter {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCHUNKFINALDELETER
 public:
-    struct LevelChunkFinalDeleter& operator=(struct LevelChunkFinalDeleter const &) = delete;
-    LevelChunkFinalDeleter(struct LevelChunkFinalDeleter const &) = delete;
+    class LevelChunkFinalDeleter& operator=(class LevelChunkFinalDeleter const &) = delete;
+    LevelChunkFinalDeleter(class LevelChunkFinalDeleter const &) = delete;
     LevelChunkFinalDeleter() = delete;
 #endif
 
 public:
     /**
-     * @symbol  ??RLevelChunkFinalDeleter\@\@QEAAXPEAVLevelChunk\@\@\@Z
+     * @symbol ??RLevelChunkFinalDeleter\@\@QEAAXPEAVLevelChunk\@\@\@Z
      */
     MCAPI void operator()(class LevelChunk *);
 

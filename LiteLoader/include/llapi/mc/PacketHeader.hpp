@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?getChannel\@PacketHeader\@\@QEBAIXZ
+     * @symbol ?getChannel\@PacketHeader\@\@QEBAIXZ
      */
     MCAPI unsigned int getChannel() const;
 

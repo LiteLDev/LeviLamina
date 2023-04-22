@@ -28,20 +28,12 @@ public:
 
 public:
     /**
-     * @symbol  ?createOnGroundPostTickSystem\@MovementInterpolatorSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createOnGroundPostTickSystem\@MovementInterpolatorSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createOnGroundPostTickSystem();
     /**
-     * @symbol  ?createTickSystem\@MovementInterpolatorSystem\@\@SA?AUTickingSystemWithInfo\@\@_N\@Z
+     * @symbol ?createTickSystem\@MovementInterpolatorSystem\@\@SA?AUTickingSystemWithInfo\@\@_N\@Z
      */
     MCAPI static struct TickingSystemWithInfo createTickSystem(bool);
-    /**
-     * @symbol  ?onGroundPostTick\@MovementInterpolatorSystem\@\@SAXAEBUMovementInterpolatorComponent\@\@AEAUStateVectorComponent\@\@\@Z
-     */
-    MCAPI static void onGroundPostTick(struct MovementInterpolatorComponent const &, struct StateVectorComponent &);
-    /**
-     * @symbol  ?tick\@MovementInterpolatorSystem\@\@SAXAEAVActor\@\@\@Z
-     */
-    MCAPI static void tick(class Actor &);
 
 };

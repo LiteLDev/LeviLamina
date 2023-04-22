@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1MolangMemberAccessor\@\@QEAA\@XZ
+     * @symbol ??1MolangMemberAccessor\@\@QEAA\@XZ
      */
     MCAPI ~MolangMemberAccessor();
 

@@ -22,18 +22,21 @@ class AnimatedImageData {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANIMATEDIMAGEDATA
 public:
-    class AnimatedImageData& operator=(class AnimatedImageData const &) = delete;
     AnimatedImageData() = delete;
 #endif
 
 public:
     /**
-     * @symbol  ??0AnimatedImageData\@\@QEAA\@W4AnimatedTextureType\@persona\@\@W4AnimationExpression\@2\@AEBUImage\@mce\@\@M\@Z
+     * @symbol ??0AnimatedImageData\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI AnimatedImageData(class AnimatedImageData const &);
+    /**
+     * @symbol ??0AnimatedImageData\@\@QEAA\@W4AnimatedTextureType\@persona\@\@W4AnimationExpression\@2\@AEBUImage\@mce\@\@M\@Z
      */
     MCAPI AnimatedImageData(enum class persona::AnimatedTextureType, enum class persona::AnimationExpression, struct mce::Image const &, float);
     /**
-     * @symbol  ??0AnimatedImageData\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??4AnimatedImageData\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
-    MCAPI AnimatedImageData(class AnimatedImageData const &);
+    MCAPI class AnimatedImageData & operator=(class AnimatedImageData const &);
 
 };

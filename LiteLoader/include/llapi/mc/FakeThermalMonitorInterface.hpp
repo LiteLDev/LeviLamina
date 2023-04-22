@@ -29,27 +29,27 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~FakeThermalMonitorInterface();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?getThermalState\@FakeThermalMonitorInterface\@\@UEBA?AW4ThermalState\@\@XZ
+     * @vftbl 1
+     * @symbol ?getThermalState\@FakeThermalMonitorInterface\@\@UEBA?AW4ThermalState\@\@XZ
      */
     virtual enum class ThermalState getThermalState() const;
     /**
-     * @vftbl  2
-     * @symbol  ?getThermalValueCelsius\@FakeThermalMonitorInterface\@\@UEBAMXZ
+     * @vftbl 2
+     * @symbol ?getThermalValueCelsius\@FakeThermalMonitorInterface\@\@UEBAMXZ
      */
     virtual float getThermalValueCelsius() const;
     /**
-     * @vftbl  3
-     * @symbol  ?isLowBatteryModeEnabled\@FakeThermalMonitorInterface\@\@UEBA_NXZ
+     * @vftbl 3
+     * @symbol ?isLowBatteryModeEnabled\@FakeThermalMonitorInterface\@\@UEBA_NXZ
      */
     virtual bool isLowBatteryModeEnabled() const;
     /**
-     * @symbol  ??0FakeThermalMonitorInterface\@\@QEAA\@XZ
+     * @symbol ??0FakeThermalMonitorInterface\@\@QEAA\@XZ
      */
     MCAPI FakeThermalMonitorInterface();
 

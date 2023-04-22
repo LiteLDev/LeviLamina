@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1PlayerFormResponseEvent\@\@QEAA\@XZ
+     * @symbol ??1PlayerFormResponseEvent\@\@QEAA\@XZ
      */
     MCAPI ~PlayerFormResponseEvent();
 

@@ -29,17 +29,17 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~AllowListCommand();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?execute\@AllowListCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @vftbl 1
+     * @symbol ?execute\@AllowListCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @symbol  ?setup\@AllowListCommand\@\@SAXAEAVCommandRegistry\@\@AEAVAllowListFile\@\@\@Z
+     * @symbol ?setup\@AllowListCommand\@\@SAXAEAVCommandRegistry\@\@AEAVAllowListFile\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &, class AllowListFile &);
 
@@ -47,7 +47,7 @@ public:
 
 private:
     /**
-     * @symbol  ?mAllowListFile\@AllowListCommand\@\@0PEAVAllowListFile\@\@EA
+     * @symbol ?mAllowListFile\@AllowListCommand\@\@0PEAVAllowListFile\@\@EA
      */
     MCAPI static class AllowListFile * mAllowListFile;
 

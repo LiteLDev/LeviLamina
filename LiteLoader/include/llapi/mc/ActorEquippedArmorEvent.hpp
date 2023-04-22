@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ActorEquippedArmorEvent\@\@QEAA\@XZ
+     * @symbol ??1ActorEquippedArmorEvent\@\@QEAA\@XZ
      */
     MCAPI ~ActorEquippedArmorEvent();
 

@@ -30,11 +30,11 @@ public:
 
 public:
     /**
-     * @symbol  ?addBlockDescriptor\@EnvironmentRequirement\@\@QEAAXAEBVBlockDescriptor\@\@\@Z
+     * @symbol ?addBlockDescriptor\@EnvironmentRequirement\@\@QEAAXAEBVBlockDescriptor\@\@\@Z
      */
     MCAPI void addBlockDescriptor(class BlockDescriptor const &);
     /**
-     * @symbol  ??1EnvironmentRequirement\@\@QEAA\@XZ
+     * @symbol ??1EnvironmentRequirement\@\@QEAA\@XZ
      */
     MCAPI ~EnvironmentRequirement();
 

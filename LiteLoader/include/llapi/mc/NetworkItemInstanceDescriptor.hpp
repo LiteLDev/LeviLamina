@@ -32,32 +32,38 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~NetworkItemInstanceDescriptor();
+    virtual void __unk_vfn_0();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKITEMINSTANCEDESCRIPTOR
     /**
-     * @symbol  ??0NetworkItemInstanceDescriptor\@\@QEAA\@AEBVItemStackDescriptor\@\@\@Z
+     * @symbol __unk_destructor_-1
      */
-    MCAPI NetworkItemInstanceDescriptor(class ItemStackDescriptor const &);
+    MCVAPI ~NetworkItemInstanceDescriptor();
+#endif
     /**
-     * @symbol  ??0NetworkItemInstanceDescriptor\@\@QEAA\@AEBVItemInstance\@\@\@Z
+     * @symbol ??0NetworkItemInstanceDescriptor\@\@QEAA\@AEBVItemInstance\@\@\@Z
      */
     MCAPI NetworkItemInstanceDescriptor(class ItemInstance const &);
     /**
-     * @symbol  ??0NetworkItemInstanceDescriptor\@\@QEAA\@$$QEAV0\@\@Z
+     * @symbol ??0NetworkItemInstanceDescriptor\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI NetworkItemInstanceDescriptor(class NetworkItemInstanceDescriptor &&);
     /**
-     * @symbol  ?getItemInstance\@NetworkItemInstanceDescriptor\@\@QEBA?AVItemInstance\@\@AEBVBlockPalette\@\@\@Z
+     * @symbol ??0NetworkItemInstanceDescriptor\@\@QEAA\@AEBVItemStackDescriptor\@\@\@Z
+     */
+    MCAPI NetworkItemInstanceDescriptor(class ItemStackDescriptor const &);
+    /**
+     * @symbol ?getItemInstance\@NetworkItemInstanceDescriptor\@\@QEBA?AVItemInstance\@\@AEBVBlockPalette\@\@\@Z
      */
     MCAPI class ItemInstance getItemInstance(class BlockPalette const &) const;
     /**
-     * @symbol  ?read\@NetworkItemInstanceDescriptor\@\@QEAAXAEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?read\@NetworkItemInstanceDescriptor\@\@QEAAXAEAVReadOnlyBinaryStream\@\@\@Z
      */
     MCAPI void read(class ReadOnlyBinaryStream &);
     /**
-     * @symbol  ?write\@NetworkItemInstanceDescriptor\@\@QEBAXAEAVBinaryStream\@\@\@Z
+     * @symbol ?write\@NetworkItemInstanceDescriptor\@\@QEBAXAEAVBinaryStream\@\@\@Z
      */
     MCAPI void write(class BinaryStream &) const;
 

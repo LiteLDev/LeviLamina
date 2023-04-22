@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @symbol  ?getMirrorEditCount\@StructureTelemetryClientData\@\@QEBAIXZ
+     * @symbol ?getMirrorEditCount\@StructureTelemetryClientData\@\@QEBAIXZ
      */
     MCAPI unsigned int getMirrorEditCount() const;
     /**
-     * @symbol  ?getOffsetEditCount\@StructureTelemetryClientData\@\@QEBAIXZ
+     * @symbol ?getOffsetEditCount\@StructureTelemetryClientData\@\@QEBAIXZ
      */
     MCAPI unsigned int getOffsetEditCount() const;
     /**
-     * @symbol  ?getRotationEditCount\@StructureTelemetryClientData\@\@QEBAIXZ
+     * @symbol ?getRotationEditCount\@StructureTelemetryClientData\@\@QEBAIXZ
      */
     MCAPI unsigned int getRotationEditCount() const;
     /**
-     * @symbol  ?getSizeEditCount\@StructureTelemetryClientData\@\@QEBAIXZ
+     * @symbol ?getSizeEditCount\@StructureTelemetryClientData\@\@QEBAIXZ
      */
     MCAPI unsigned int getSizeEditCount() const;
 

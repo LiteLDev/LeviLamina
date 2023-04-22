@@ -31,12 +31,12 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~BuriedTreasureStart();
+    virtual void __unk_vfn_0();
     /**
-     * @symbol  ??0BuriedTreasureStart\@\@QEAA\@AEAVDimension\@\@AEAVRandom\@\@HH\@Z
+     * @symbol ??0BuriedTreasureStart\@\@QEAA\@AEAVDimension\@\@AEAVRandom\@\@HH\@Z
      */
     MCAPI BuriedTreasureStart(class Dimension &, class Random &, int, int);
 

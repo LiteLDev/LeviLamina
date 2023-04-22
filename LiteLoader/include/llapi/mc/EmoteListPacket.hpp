@@ -30,40 +30,46 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~EmoteListPacket();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?getId\@EmoteListPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
+     * @vftbl 1
+     * @symbol ?getId\@EmoteListPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
     virtual enum class MinecraftPacketIds getId() const;
     /**
-     * @vftbl  2
-     * @symbol  ?getName\@EmoteListPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @vftbl 2
+     * @symbol ?getName\@EmoteListPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const;
     /**
-     * @vftbl  3
-     * @symbol  ?write\@EmoteListPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
+     * @vftbl 3
+     * @symbol ?write\@EmoteListPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl  6
-     * @symbol  ?_read\@EmoteListPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 7
+     * @symbol ?_read\@EmoteListPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EMOTELISTPACKET
     /**
-     * @symbol  ??0EmoteListPacket\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI EmoteListPacket();
+    MCVAPI ~EmoteListPacket();
+#endif
     /**
-     * @symbol  ??0EmoteListPacket\@\@QEAA\@VActorRuntimeID\@\@\@Z
+     * @symbol ??0EmoteListPacket\@\@QEAA\@VActorRuntimeID\@\@\@Z
      */
     MCAPI EmoteListPacket(class ActorRuntimeID);
     /**
-     * @symbol  ?MAX_EMOTE_PIECE_IDS\@EmoteListPacket\@\@2HB
+     * @symbol ??0EmoteListPacket\@\@QEAA\@XZ
+     */
+    MCAPI EmoteListPacket();
+    /**
+     * @symbol ?MAX_EMOTE_PIECE_IDS\@EmoteListPacket\@\@2HB
      */
     MCAPI static int const MAX_EMOTE_PIECE_IDS;
 

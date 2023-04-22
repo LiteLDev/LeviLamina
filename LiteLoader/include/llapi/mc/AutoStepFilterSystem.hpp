@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?createAutoStepFilterSystem\@AutoStepFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createAutoStepFilterSystem\@AutoStepFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createAutoStepFilterSystem();
 

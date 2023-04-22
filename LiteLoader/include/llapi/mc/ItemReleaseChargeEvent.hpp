@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ItemReleaseChargeEvent\@\@QEAA\@XZ
+     * @symbol ??1ItemReleaseChargeEvent\@\@QEAA\@XZ
      */
     MCAPI ~ItemReleaseChargeEvent();
 

@@ -37,3 +37,5 @@ LIAPI std::string GetModuleName(HMODULE handle);
 LIAPI std::string GetSystemLocaleName();
 
 LIAPI bool IsWineEnvironment();
+
+LIAPI void SetCurrentThreadDescription(PCWSTR desc);

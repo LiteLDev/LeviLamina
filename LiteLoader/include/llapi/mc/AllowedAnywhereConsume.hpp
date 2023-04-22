@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??0AllowedAnywhereConsume\@\@QEAA\@W4ContainerEnumName\@\@EE\@Z
+     * @symbol ??0AllowedAnywhereConsume\@\@QEAA\@W4ContainerEnumName\@\@EE\@Z
      */
     MCAPI AllowedAnywhereConsume(enum class ContainerEnumName, unsigned char, unsigned char);
 

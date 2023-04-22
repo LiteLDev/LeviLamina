@@ -4,10 +4,12 @@
 #include "llapi/mc/StructureSettings.hpp"
 #include "llapi/mc/StructureTemplate.hpp"
 #include "llapi/mc/StructureTemplateData.hpp"
-static_assert(sizeof(StructureTemplate) == 224);
+static_assert(sizeof(StructureTemplate) == 240);
 
 StructureTemplate* StructureTemplate::fromTag(std::string name, CompoundTag const& tag) {
-    StructureTemplate* st = new StructureTemplate(name);
+    auto& unBlockType =
+        dAccess<Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry>, 192>(Global<StructureManager>);
+    StructureTemplate* st = new StructureTemplate(name, unBlockType);
     // st.getName(name_span)
     st->getData()->load(tag);
     return st;
@@ -19,7 +21,9 @@ std::unique_ptr<CompoundTag> StructureTemplate::toTag() {
 
 StructureTemplate* StructureTemplate::fromWorld(std::string name, int dimID, BlockPos p1, BlockPos p2,
                                                 bool ignoreBlocks, bool ignoreEntities) {
-    auto st = new StructureTemplate(name);
+    auto& unBlockType =
+        dAccess<Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry>, 192>(Global<StructureManager>);
+    auto st = new StructureTemplate(name, unBlockType);
     BlockPos start = {std::min(p1.x, p2.x), std::min(p1.y, p2.y), std::min(p1.z, p2.z)};
     BlockPos size = {std::abs(p1.x - p2.x) + 1, std::abs(p1.y - p2.y) + 1, std::abs(p1.z - p2.z) + 1};
     auto setting = StructureSettings();

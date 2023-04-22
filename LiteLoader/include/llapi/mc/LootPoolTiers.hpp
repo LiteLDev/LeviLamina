@@ -29,7 +29,7 @@ public:
 
 public:
     /**
-     * @symbol  ?deserialize\@LootPoolTiers\@\@SA?AV?$unique_ptr\@VLootPoolTiers\@\@U?$default_delete\@VLootPoolTiers\@\@\@std\@\@\@std\@\@VValue\@Json\@\@\@Z
+     * @symbol ?deserialize\@LootPoolTiers\@\@SA?AV?$unique_ptr\@VLootPoolTiers\@\@U?$default_delete\@VLootPoolTiers\@\@\@std\@\@\@std\@\@VValue\@Json\@\@\@Z
      */
     MCAPI static std::unique_ptr<class LootPoolTiers> deserialize(class Json::Value);
 

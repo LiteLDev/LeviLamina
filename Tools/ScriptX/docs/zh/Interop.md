@@ -7,6 +7,7 @@ ScriptX提供一些基础的接口，以便和原生引擎API互相操作。
 1. `V8` -> `script::v8_interop`
 1. `JavaScriptCore` -> `script::jsc_interop`
 1. `Lua` -> `script::lua_interop`
+1. `Python` -> `script::py_interop`
 
 主要提供能力：
 1. 从引擎指针获取内部原生引擎实例

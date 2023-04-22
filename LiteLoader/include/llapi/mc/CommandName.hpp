@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1CommandName\@\@QEAA\@XZ
+     * @symbol ??1CommandName\@\@QEAA\@XZ
      */
     MCAPI ~CommandName();
 

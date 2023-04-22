@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ActorStandOnBlockEvent\@\@QEAA\@XZ
+     * @symbol ??1ActorStandOnBlockEvent\@\@QEAA\@XZ
      */
     MCAPI ~ActorStandOnBlockEvent();
 

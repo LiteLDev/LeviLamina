@@ -29,15 +29,15 @@ public:
 
 public:
     /**
-     * @symbol  ??0RopeParams\@\@QEAA\@XZ
+     * @symbol ??0RopeParams\@\@QEAA\@XZ
      */
     MCAPI RopeParams();
     /**
-     * @symbol  ??0RopeParams\@\@QEAA\@AEBVVec3\@\@0M\@Z
+     * @symbol ??0RopeParams\@\@QEAA\@AEBVVec3\@\@0M\@Z
      */
     MCAPI RopeParams(class Vec3 const &, class Vec3 const &, float);
     /**
-     * @symbol  ?leadInit\@RopeParams\@\@QEAAXXZ
+     * @symbol ?leadInit\@RopeParams\@\@QEAAXXZ
      */
     MCAPI void leadInit();
 

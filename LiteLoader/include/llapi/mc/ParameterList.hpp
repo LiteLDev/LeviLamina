@@ -29,19 +29,19 @@ public:
 
 public:
     /**
-     * @symbol  ??0ParameterList\@\@QEAA\@AEBV?$vector\@UBiomeNoiseTarget\@\@V?$allocator\@UBiomeNoiseTarget\@\@\@std\@\@\@std\@\@\@Z
-     */
-    MCAPI ParameterList(std::vector<struct BiomeNoiseTarget> const &);
-    /**
-     * @symbol  ??0ParameterList\@\@QEAA\@$$QEAV0\@\@Z
+     * @symbol ??0ParameterList\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI ParameterList(class ParameterList &&);
     /**
-     * @symbol  ?findTarget\@ParameterList\@\@QEBAPEAVBiome\@\@AEBUTargetPoint\@\@PEAUHint\@RTree\@\@\@Z
+     * @symbol ??0ParameterList\@\@QEAA\@AEBV?$vector\@UBiomeNoiseTarget\@\@V?$allocator\@UBiomeNoiseTarget\@\@\@std\@\@\@std\@\@\@Z
+     */
+    MCAPI ParameterList(std::vector<struct BiomeNoiseTarget> const &);
+    /**
+     * @symbol ?findTarget\@ParameterList\@\@QEBAPEAVBiome\@\@AEBUTargetPoint\@\@PEAUHint\@RTree\@\@\@Z
      */
     MCAPI class Biome * findTarget(struct TargetPoint const &, struct RTree::Hint *) const;
     /**
-     * @symbol  ??1ParameterList\@\@QEAA\@XZ
+     * @symbol ??1ParameterList\@\@QEAA\@XZ
      */
     MCAPI ~ParameterList();
 

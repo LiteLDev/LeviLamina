@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1OSInformation\@\@QEAA\@XZ
+     * @symbol ??1OSInformation\@\@QEAA\@XZ
      */
     MCAPI ~OSInformation();
 

@@ -31,22 +31,22 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~HungerAttributeDelegate();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?tick\@HungerAttributeDelegate\@\@UEAAXXZ
+     * @vftbl 1
+     * @symbol ?tick\@HungerAttributeDelegate\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @vftbl  2
-     * @symbol  ?notify\@HungerAttributeDelegate\@\@UEAAX_J\@Z
+     * @vftbl 2
+     * @symbol ?notify\@HungerAttributeDelegate\@\@UEAAX_J\@Z
      */
     virtual void notify(__int64);
     /**
-     * @symbol  ??0HungerAttributeDelegate\@\@QEAA\@AEBVAttributeInstance\@\@PEAVPlayer\@\@\@Z
+     * @symbol ??0HungerAttributeDelegate\@\@QEAA\@AEBVAttributeInstance\@\@PEAVPlayer\@\@\@Z
      */
     MCAPI HungerAttributeDelegate(class AttributeInstance const &, class Player *);
 

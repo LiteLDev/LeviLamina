@@ -26,16 +26,25 @@ class EventResponseFactory {
 public:
     class EventResponseFactory& operator=(class EventResponseFactory const &) = delete;
     EventResponseFactory(class EventResponseFactory const &) = delete;
-    EventResponseFactory() = delete;
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_EVENTRESPONSEFACTORY
     /**
-     * @symbol  ?getSchema\@EventResponseFactory\@\@QEBAAEBV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UEventResponseCollection\@\@\@JsonUtil\@\@\@std\@\@XZ
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~EventResponseFactory();
+#endif
+    /**
+     * @symbol ??0EventResponseFactory\@\@QEAA\@XZ
+     */
+    MCAPI EventResponseFactory();
+    /**
+     * @symbol ?getSchema\@EventResponseFactory\@\@QEBAAEBV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UEventResponseCollection\@\@\@JsonUtil\@\@\@std\@\@XZ
      */
     MCAPI class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> const & getSchema() const;
     /**
-     * @symbol  ?initSchema\@EventResponseFactory\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVSemVersion\@\@\@Z
+     * @symbol ?initSchema\@EventResponseFactory\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVSemVersion\@\@\@Z
      */
     MCAPI void initSchema(std::string const &, class SemVersion const &);
 

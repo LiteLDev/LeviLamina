@@ -28,11 +28,11 @@ public:
 
 public:
     /**
-     * @symbol  ?reloadComponent\@AddRiderComponent\@\@QEAAXAEAVActor\@\@\@Z
+     * @symbol ?reloadComponent\@AddRiderComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void reloadComponent(class Actor &);
     /**
-     * @symbol  ??1AddRiderComponent\@\@QEAA\@XZ
+     * @symbol ??1AddRiderComponent\@\@QEAA\@XZ
      */
     MCAPI ~AddRiderComponent();
 

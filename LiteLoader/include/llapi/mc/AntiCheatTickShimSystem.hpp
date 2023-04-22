@@ -25,11 +25,11 @@ public:
 
 public:
     /**
-     * @symbol  ?_tickOne\@AntiCheatTickShimSystem\@\@SAXAEBVStrictEntityContext\@\@AEAVActorMovementProxyComponent\@\@\@Z
+     * @symbol ?_tickOne\@AntiCheatTickShimSystem\@\@SAXAEBVStrictEntityContext\@\@AEAVActorMovementProxyComponent\@\@\@Z
      */
     MCAPI static void _tickOne(class StrictEntityContext const &, class ActorMovementProxyComponent &);
     /**
-     * @symbol  ?create\@AntiCheatTickShimSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?create\@AntiCheatTickShimSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo create();
 

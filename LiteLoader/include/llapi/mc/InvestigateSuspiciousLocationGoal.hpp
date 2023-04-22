@@ -28,47 +28,47 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~InvestigateSuspiciousLocationGoal();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?canUse\@InvestigateSuspiciousLocationGoal\@\@UEAA_NXZ
+     * @vftbl 1
+     * @symbol ?canUse\@InvestigateSuspiciousLocationGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
     /**
-     * @vftbl  2
-     * @symbol  ?canContinueToUse\@InvestigateSuspiciousLocationGoal\@\@UEAA_NXZ
+     * @vftbl 2
+     * @symbol ?canContinueToUse\@InvestigateSuspiciousLocationGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  ?start\@InvestigateSuspiciousLocationGoal\@\@UEAAXXZ
+     * @vftbl 4
+     * @symbol ?start\@InvestigateSuspiciousLocationGoal\@\@UEAAXXZ
      */
     virtual void start();
     /**
-     * @vftbl  5
-     * @symbol  ?stop\@InvestigateSuspiciousLocationGoal\@\@UEAAXXZ
+     * @vftbl 5
+     * @symbol ?stop\@InvestigateSuspiciousLocationGoal\@\@UEAAXXZ
      */
     virtual void stop();
     /**
-     * @vftbl  6
-     * @symbol  ?tick\@InvestigateSuspiciousLocationGoal\@\@UEAAXXZ
+     * @vftbl 6
+     * @symbol ?tick\@InvestigateSuspiciousLocationGoal\@\@UEAAXXZ
      */
     virtual void tick();
     /**
-     * @vftbl  7
-     * @symbol  ?appendDebugInfo\@InvestigateSuspiciousLocationGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 7
+     * @symbol ?appendDebugInfo\@InvestigateSuspiciousLocationGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
     /**
-     * @symbol  ??0InvestigateSuspiciousLocationGoal\@\@QEAA\@AEAVMob\@\@\@Z
+     * @symbol ??0InvestigateSuspiciousLocationGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
     MCAPI InvestigateSuspiciousLocationGoal(class Mob &);
 

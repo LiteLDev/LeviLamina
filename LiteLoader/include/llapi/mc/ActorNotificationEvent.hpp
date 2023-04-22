@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ActorNotificationEvent\@\@QEAA\@XZ
+     * @symbol ??1ActorNotificationEvent\@\@QEAA\@XZ
      */
     MCAPI ~ActorNotificationEvent();
 

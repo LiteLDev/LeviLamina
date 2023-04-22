@@ -29,22 +29,22 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~FakeBatteryMonitorInterface();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?getBatteryStatus\@FakeBatteryMonitorInterface\@\@UEBA?AW4BatteryStatus\@\@XZ
+     * @vftbl 1
+     * @symbol ?getBatteryStatus\@FakeBatteryMonitorInterface\@\@UEBA?AW4BatteryStatus\@\@XZ
      */
     virtual enum class BatteryStatus getBatteryStatus() const;
     /**
-     * @vftbl  2
-     * @symbol  ?getBatteryLevel\@FakeBatteryMonitorInterface\@\@UEBAMXZ
+     * @vftbl 2
+     * @symbol ?getBatteryLevel\@FakeBatteryMonitorInterface\@\@UEBAMXZ
      */
     virtual float getBatteryLevel() const;
     /**
-     * @symbol  ??0FakeBatteryMonitorInterface\@\@QEAA\@XZ
+     * @symbol ??0FakeBatteryMonitorInterface\@\@QEAA\@XZ
      */
     MCAPI FakeBatteryMonitorInterface();
 

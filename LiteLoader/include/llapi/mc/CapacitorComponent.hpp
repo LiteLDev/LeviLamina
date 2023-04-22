@@ -19,6 +19,10 @@ class CapacitorComponent : public ProducerComponent {
 
 #define AFTER_EXTRA
 
+public:
+    const CircuitComponentType mCircuitComponentType = CircuitComponentType::CapacitorComponent;
+
+#define DISABLE_CONSTRUCTOR_PREVENTION_CAPACITORCOMPONENT
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAPACITORCOMPONENT
 public:
@@ -28,32 +32,32 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~CapacitorComponent();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  17
-     * @symbol  __unk_vfn_17
+     * @vftbl 17
+     * @symbol __unk_vfn_17
      */
     virtual void __unk_vfn_17();
     /**
-     * @vftbl  20
-     * @symbol  __unk_vfn_20
+     * @vftbl 20
+     * @symbol __unk_vfn_20
      */
     virtual void __unk_vfn_20();
     /**
-     * @vftbl  23
-     * @symbol  ?getCircuitComponentType\@CapacitorComponent\@\@UEBA?AW4CircuitComponentType\@\@XZ
+     * @vftbl 23
+     * @symbol ?getCircuitComponentType\@CapacitorComponent\@\@UEBA?AW4CircuitComponentType\@\@XZ
      */
     virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
-     * @vftbl  25
-     * @symbol  ?getPoweroutDirection\@CapacitorComponent\@\@UEBAEXZ
+     * @vftbl 25
+     * @symbol ?getPoweroutDirection\@CapacitorComponent\@\@UEBAEXZ
      */
     virtual unsigned char getPoweroutDirection() const;
     /**
-     * @symbol  ??0CapacitorComponent\@\@QEAA\@XZ
+     * @symbol ??0CapacitorComponent\@\@QEAA\@XZ
      */
     MCAPI CapacitorComponent();
 

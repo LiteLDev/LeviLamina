@@ -29,31 +29,31 @@ public:
 
 public:
     /**
-     * @symbol  ??0DirtyTicksCounter\@\@QEAA\@XZ
+     * @symbol ??0DirtyTicksCounter\@\@QEAA\@XZ
      */
     MCAPI DirtyTicksCounter();
     /**
-     * @symbol  ?getTicksSinceLastChange\@DirtyTicksCounter\@\@QEBAHXZ
+     * @symbol ?getTicksSinceLastChange\@DirtyTicksCounter\@\@QEBAHXZ
      */
     MCAPI int getTicksSinceLastChange() const;
     /**
-     * @symbol  ?getTotalDirtyTicks\@DirtyTicksCounter\@\@QEBAHXZ
+     * @symbol ?getTotalDirtyTicks\@DirtyTicksCounter\@\@QEBAHXZ
      */
     MCAPI int getTotalDirtyTicks() const;
     /**
-     * @symbol  ??EDirtyTicksCounter\@\@QEAAAEAU0\@XZ
+     * @symbol ??EDirtyTicksCounter\@\@QEAAAEAU0\@XZ
      */
     MCAPI struct DirtyTicksCounter & operator++();
     /**
-     * @symbol  ?reset\@DirtyTicksCounter\@\@QEAAXXZ
+     * @symbol ?reset\@DirtyTicksCounter\@\@QEAAXXZ
      */
     MCAPI void reset();
     /**
-     * @symbol  ?touch\@DirtyTicksCounter\@\@QEAAXXZ
+     * @symbol ?touch\@DirtyTicksCounter\@\@QEAAXXZ
      */
     MCAPI void touch();
     /**
-     * @symbol  ?max\@DirtyTicksCounter\@\@SA?AU1\@XZ
+     * @symbol ?max\@DirtyTicksCounter\@\@SA?AU1\@XZ
      */
     MCAPI static struct DirtyTicksCounter max();
 

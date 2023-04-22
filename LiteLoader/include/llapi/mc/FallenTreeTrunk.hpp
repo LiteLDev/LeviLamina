@@ -31,18 +31,18 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~FallenTreeTrunk();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?placeTrunk\@FallenTreeTrunk\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@HAEAVRenderParams\@\@AEBUTreeParams\@TreeHelper\@\@PEBVITreeCanopy\@\@\@Z
+     * @vftbl 1
+     * @symbol ?placeTrunk\@FallenTreeTrunk\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@HAEAVRenderParams\@\@AEBUTreeParams\@TreeHelper\@\@PEBVITreeCanopy\@\@\@Z
      */
     virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, int, class RenderParams &, struct TreeHelper::TreeParams const &, class ITreeCanopy const *) const;
     /**
-     * @vftbl  2
-     * @symbol  ?getTreeHeight\@FallenTreeTrunk\@\@UEBAHAEAVRandom\@\@\@Z
+     * @vftbl 2
+     * @symbol ?getTreeHeight\@FallenTreeTrunk\@\@UEBAHAEAVRandom\@\@\@Z
      */
     virtual int getTreeHeight(class Random &) const;
 

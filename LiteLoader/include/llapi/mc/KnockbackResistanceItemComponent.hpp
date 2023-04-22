@@ -30,50 +30,50 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~KnockbackResistanceItemComponent();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?isNetworkComponent\@?$NetworkedItemComponent\@VKnockbackResistanceItemComponent\@\@\@\@UEBA_NXZ
+     * @vftbl 1
+     * @symbol ?isNetworkComponent\@?$NetworkedItemComponent\@VKnockbackResistanceItemComponent\@\@\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl  2
-     * @symbol  __unk_vfn_2
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
-     * @vftbl  3
-     * @symbol  __unk_vfn_3
+     * @vftbl 3
+     * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
     /**
-     * @vftbl  4
-     * @symbol  __unk_vfn_4
+     * @vftbl 4
+     * @symbol __unk_vfn_4
      */
     virtual void __unk_vfn_4();
     /**
-     * @vftbl  5
-     * @symbol  ?buildNetworkTag\@?$NetworkedItemComponent\@VKnockbackResistanceItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 5
+     * @symbol ?buildNetworkTag\@?$NetworkedItemComponent\@VKnockbackResistanceItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vftbl  6
-     * @symbol  ?initializeFromNetwork\@?$NetworkedItemComponent\@VKnockbackResistanceItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
+     * @vftbl 6
+     * @symbol ?initializeFromNetwork\@?$NetworkedItemComponent\@VKnockbackResistanceItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
-     * @symbol  ?getProtectionValue\@KnockbackResistanceItemComponent\@\@QEBAMXZ
+     * @symbol ?getProtectionValue\@KnockbackResistanceItemComponent\@\@QEBAMXZ
      */
     MCAPI float getProtectionValue() const;
     /**
-     * @symbol  ?bindType\@KnockbackResistanceItemComponent\@\@SAXXZ
+     * @symbol ?bindType\@KnockbackResistanceItemComponent\@\@SAXXZ
      */
     MCAPI static void bindType();
     /**
-     * @symbol  ?getIdentifier\@KnockbackResistanceItemComponent\@\@SAAEBVHashedString\@\@XZ
+     * @symbol ?getIdentifier\@KnockbackResistanceItemComponent\@\@SAAEBVHashedString\@\@XZ
      */
     MCAPI static class HashedString const & getIdentifier();
 

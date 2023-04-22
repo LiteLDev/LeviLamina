@@ -29,23 +29,23 @@ public:
 
 public:
     /**
-     * @symbol  ??0EntitySensorComponent\@\@QEAA\@XZ
+     * @symbol ??0EntitySensorComponent\@\@QEAA\@XZ
      */
     MCAPI EntitySensorComponent();
     /**
-     * @symbol  ??0EntitySensorComponent\@\@QEAA\@$$QEAV0\@\@Z
+     * @symbol ??0EntitySensorComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI EntitySensorComponent(class EntitySensorComponent &&);
     /**
-     * @symbol  ?evaluateActor\@EntitySensorComponent\@\@QEAAXAEAVActor\@\@\@Z
+     * @symbol ?evaluateActor\@EntitySensorComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void evaluateActor(class Actor &);
     /**
-     * @symbol  ??4EntitySensorComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     * @symbol ??4EntitySensorComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class EntitySensorComponent & operator=(class EntitySensorComponent &&);
     /**
-     * @symbol  ??1EntitySensorComponent\@\@QEAA\@XZ
+     * @symbol ??1EntitySensorComponent\@\@QEAA\@XZ
      */
     MCAPI ~EntitySensorComponent();
 
@@ -53,7 +53,7 @@ public:
 
 private:
     /**
-     * @symbol  ?NO_MAX_COUNT\@EntitySensorComponent\@\@0HB
+     * @symbol ?NO_MAX_COUNT\@EntitySensorComponent\@\@0HB
      */
     MCAPI static int const NO_MAX_COUNT;
 

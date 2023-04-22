@@ -45,9 +45,8 @@ return f;
 
 )";
 
-TEST_F(ValueTest, Object_NewObject) {
-  EngineScope engineScope(engine);
-  Local<Value> func = engine->eval(TS().js(u8R"(
+constexpr auto kJsClassScript =
+    u8R"(
 function f(name, age) {
     this.name = name;
     this.age = age;
@@ -61,10 +60,17 @@ f.prototype.greet = function() {
 
 f;
 
-)")
-                                       .lua(kLuaClassScript)
-                                       .select());
+)";
 
+const auto kPyClassScript =
+    "{'name':'my name', 'age': 11, 'greet': lambda self : 'Hello, I\\'m '+self['name']+' "
+    "'+str(self['age'])+' years old.'}";
+
+#ifndef SCRIPTX_LANG_PYTHON
+TEST_F(ValueTest, Object_NewObject) {
+  EngineScope engineScope(engine);
+  Local<Value> func =
+      engine->eval(TS().js(kJsClassScript).lua(kLuaClassScript).py(kPyClassScript).select());
   ASSERT_TRUE(func.isObject());
 
   std::initializer_list<Local<Object>> jennyList{
@@ -95,6 +101,7 @@ f;
     ASSERT_STREQ(greetRet.asString().toString().c_str(), "Hello, I'm Jenny 5 years old.");
   }
 }
+#endif
 
 TEST_F(ValueTest, Object) {
   EngineScope engineScope(engine);
@@ -180,7 +187,10 @@ TEST_F(ValueTest, String) {
   EXPECT_STREQ(string, str.describeUtf8().c_str());
   EXPECT_EQ(strVal, str);
 
-  str = engine->eval(TS().js("'hello world'").lua("return 'hello world'").select()).asString();
+  str =
+      engine
+          ->eval(TS().js("'hello world'").lua("return 'hello world'").py("'hello world'").select())
+          .asString();
   EXPECT_STREQ(string, str.toString().c_str());
 }
 
@@ -193,7 +203,11 @@ TEST_F(ValueTest, U8String) {
   auto str = String::newString(string);
   EXPECT_EQ(string, str.toU8string());
 
-  str = engine->eval(TS().js(u8"'你好, 世界'").lua(u8"return '你好, 世界'").select()).asString();
+  str =
+      engine
+          ->eval(
+              TS().js(u8"'你好, 世界'").lua(u8"return '你好, 世界'").py(u8"'你好, 世界'").select())
+          .asString();
   EXPECT_EQ(string, str.toU8string());
 }
 
@@ -209,6 +223,10 @@ TEST_F(ValueTest, InstanceOf) {
 #elif defined(SCRIPTX_LANG_LUA)
     auto f = engine->eval(kLuaClassScript);
     auto ins = engine->eval("return f()");
+    EXPECT_TRUE(ins.asObject().instanceOf(f));
+#elif defined(SCRIPTX_LANG_PYTHON)
+    auto f = engine->eval("{}");
+    auto ins = engine->eval("dict()");
     EXPECT_TRUE(ins.asObject().instanceOf(f));
 #else
     FAIL() << "add test impl here";
@@ -310,6 +328,8 @@ TEST_F(ValueTest, FunctionReceiver) {
 }
 
 TEST_F(ValueTest, FunctionCall) {
+#ifndef SCRIPTX_LANG_PYTHON
+
   EngineScope engineScope(engine);
   engine->eval(TS().js(R"(
 function unitTestFuncCall(arg1, arg2) {
@@ -328,6 +348,7 @@ function unitTestFuncCall(arg1, arg2)
   end
 end
 )")
+                   .py(R"(lambda arg1,arg2:)")
                    .select());
 
   auto func = engine->get("unitTestFuncCall").asFunction();
@@ -339,6 +360,7 @@ end
   ret = func.call({}, 1, "x");
   ASSERT_TRUE(ret.isString());
   EXPECT_STREQ(ret.asString().toString().c_str(), "hello X");
+#endif
 }
 
 TEST_F(ValueTest, FunctionReturn) {
@@ -391,7 +413,7 @@ TEST_F(ValueTest, FunctionHasALotOfArguments) {
     return Number::newNumber(total);
   });
 
-  for (int j = 0; j < 100; ++j) {
+  for (int j = 0; j < 100; ++j) { 
     StackFrameScope stack;
     std::vector<Local<Value>> args;
     args.reserve(j);
@@ -413,14 +435,18 @@ TEST_F(ValueTest, FunctionHasThiz) {
 
   engine->set("func", func);
   auto hasThiz =
-      engine->eval(TS().js("var x = {func: func}; x.func()").lua("return func()").select())
+      engine
+          ->eval(
+              TS().js("var x = {func: func}; x.func()").lua("return func()").py("func()").select())
           .asBoolean()
           .value();
 
 #ifdef SCRIPTX_LANG_JAVASCRIPT
   EXPECT_TRUE(hasThiz);
-#elif SCRIPTX_LANG_Lua
+#elif defined(SCRIPTX_LANG_LUA)
   EXPECT_FALSE(hasThiz);
+#elif defined(SCRIPTX_LANG_PYTHON)
+  EXPECT_TRUE(hasThiz);
 #endif
 }
 
@@ -429,9 +455,11 @@ TEST_F(ValueTest, EngineEvalReturnValue) {
   Local<Value> val;
 
 #if defined(SCRIPTX_LANG_JAVASCRIPT)
-  val = engine->eval(R"(3.14)");
+  val = engine->eval("3.14");
 #elif defined(SCRIPTX_LANG_LUA)
-  val = engine->eval(R"(return 3.14)");
+  val = engine->eval("return 3.14");
+#elif defined(SCRIPTX_LANG_PYTHON)
+  val = engine->eval("3.14");
 #else
   FAIL();
 #endif
@@ -483,6 +511,8 @@ TEST_F(ValueTest, Array) {
   EXPECT_EQ(arr.asValue().getKind(), ValueKind::kArray);
 #elif defined(SCRIPTX_LANG_LUA)
   EXPECT_EQ(arr.asValue().getKind(), ValueKind::kObject);
+#elif defined(SCRIPTX_LANG_PYTHON)
+  EXPECT_EQ(arr.asValue().getKind(), ValueKind::kArray);
 #endif
 
 #ifndef SCRIPTX_BACKEND_LUA
@@ -631,6 +661,8 @@ TEST_F(ValueTest, Unsupported) {
   auto lua = lua_interop::currentEngineLua();
   lua_newuserdata(lua, 4);
   auto strange = lua_interop::makeLocal<Value>(lua_gettop(lua));
+#elif defined(SCRIPTX_LANG_PYTHON)
+  auto strange = py_interop::toLocal<Value>(PyImport_AddModule("__main__"));    // return borrowed ref
 #else
   FAIL() << "add test here";
   auto strange = Local<Value>();

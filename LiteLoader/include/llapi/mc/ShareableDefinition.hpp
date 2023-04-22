@@ -30,19 +30,19 @@ public:
 
 public:
     /**
-     * @symbol  ??0ShareableDefinition\@\@QEAA\@XZ
+     * @symbol ??0ShareableDefinition\@\@QEAA\@XZ
      */
     MCAPI ShareableDefinition();
     /**
-     * @symbol  ?addShareable\@ShareableDefinition\@\@QEAAXAEBUShareable\@\@\@Z
+     * @symbol ?addShareable\@ShareableDefinition\@\@QEAAXAEBUShareable\@\@\@Z
      */
     MCAPI void addShareable(struct Shareable const &);
     /**
-     * @symbol  ?addShareableByName\@ShareableDefinition\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?addShareableByName\@ShareableDefinition\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void addShareableByName(std::string const &);
     /**
-     * @symbol  ?buildSchema\@ShareableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VShareableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
+     * @symbol ?buildSchema\@ShareableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VShareableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ShareableDefinition>> &);
 

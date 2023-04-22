@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1DynamicPropertyDefinition\@\@QEAA\@XZ
+     * @symbol ??1DynamicPropertyDefinition\@\@QEAA\@XZ
      */
     MCAPI ~DynamicPropertyDefinition();
 

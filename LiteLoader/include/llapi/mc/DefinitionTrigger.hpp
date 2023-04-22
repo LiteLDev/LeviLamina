@@ -30,15 +30,15 @@ public:
 
 public:
     /**
-     * @symbol  ?canTrigger\@DefinitionTrigger\@\@QEBA_NAEAVRenderParams\@\@\@Z
+     * @symbol ?canTrigger\@DefinitionTrigger\@\@QEBA_NAEAVRenderParams\@\@\@Z
      */
     MCAPI bool canTrigger(class RenderParams &) const;
     /**
-     * @symbol  ??1DefinitionTrigger\@\@QEAA\@XZ
+     * @symbol ??1DefinitionTrigger\@\@QEAA\@XZ
      */
     MCAPI ~DefinitionTrigger();
     /**
-     * @symbol  ?bindType\@DefinitionTrigger\@\@SAXXZ
+     * @symbol ?bindType\@DefinitionTrigger\@\@SAXXZ
      */
     MCAPI static void bindType();
 

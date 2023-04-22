@@ -31,77 +31,77 @@ public:
 
 public:
     /**
-     * @vftbl  0
-     * @symbol  __unk_destructor_0
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual ~ComparatorBlockActor();
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl  1
-     * @symbol  ?load\@ComparatorBlockActor\@\@UEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
+     * @vftbl 1
+     * @symbol ?load\@ComparatorBlockActor\@\@UEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vftbl  2
-     * @symbol  ?save\@ComparatorBlockActor\@\@UEBA_NAEAVCompoundTag\@\@\@Z
+     * @vftbl 2
+     * @symbol ?save\@ComparatorBlockActor\@\@UEBA_NAEAVCompoundTag\@\@\@Z
      */
     virtual bool save(class CompoundTag &) const;
     /**
-     * @vftbl  7
-     * @symbol  ?tick\@ComparatorBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
+     * @vftbl 7
+     * @symbol ?tick\@ComparatorBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
     virtual void tick(class BlockSource &);
     /**
-     * @vftbl  12
-     * @symbol  __unk_vfn_12
+     * @vftbl 12
+     * @symbol __unk_vfn_12
      */
     virtual void __unk_vfn_12();
     /**
-     * @vftbl  18
-     * @symbol  __unk_vfn_18
+     * @vftbl 18
+     * @symbol __unk_vfn_18
      */
     virtual void __unk_vfn_18();
     /**
-     * @vftbl  31
-     * @symbol  __unk_vfn_31
+     * @vftbl 31
+     * @symbol __unk_vfn_31
      */
     virtual void __unk_vfn_31();
     /**
-     * @vftbl  32
-     * @symbol  __unk_vfn_32
+     * @vftbl 32
+     * @symbol __unk_vfn_32
      */
     virtual void __unk_vfn_32();
     /**
-     * @vftbl  33
-     * @symbol  __unk_vfn_33
+     * @vftbl 33
+     * @symbol __unk_vfn_33
      */
     virtual void __unk_vfn_33();
     /**
-     * @vftbl  34
-     * @symbol  __unk_vfn_34
+     * @vftbl 34
+     * @symbol __unk_vfn_34
      */
     virtual void __unk_vfn_34();
     /**
-     * @vftbl  35
-     * @symbol  __unk_vfn_35
+     * @vftbl 35
+     * @symbol __unk_vfn_35
      */
     virtual void __unk_vfn_35();
     /**
-     * @vftbl  36
-     * @symbol  __unk_vfn_36
+     * @vftbl 36
+     * @symbol __unk_vfn_36
      */
     virtual void __unk_vfn_36();
     /**
-     * @vftbl  40
-     * @symbol  ?getOutputSignal\@ComparatorBlockActor\@\@UEAAHXZ
+     * @vftbl 40
+     * @symbol ?getOutputSignal\@ComparatorBlockActor\@\@UEAAHXZ
      */
     virtual int getOutputSignal();
     /**
-     * @vftbl  41
-     * @symbol  ?setOutputSignal\@ComparatorBlockActor\@\@UEAAXH\@Z
+     * @vftbl 41
+     * @symbol ?setOutputSignal\@ComparatorBlockActor\@\@UEAAXH\@Z
      */
     virtual void setOutputSignal(int);
     /**
-     * @symbol  ??0ComparatorBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
+     * @symbol ??0ComparatorBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
     MCAPI ComparatorBlockActor(class BlockPos const &);
 

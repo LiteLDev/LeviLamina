@@ -25,7 +25,7 @@ public:
 
 public:
     /**
-     * @symbol  ??1ScriptingInitializeEvent\@\@QEAA\@XZ
+     * @symbol ??1ScriptingInitializeEvent\@\@QEAA\@XZ
      */
     MCAPI ~ScriptingInitializeEvent();
 

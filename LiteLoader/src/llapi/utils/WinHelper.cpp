@@ -7,6 +7,7 @@
 
 #include "llapi/LoggerAPI.h"
 #include "llapi/I18nAPI.h"
+#include "llapi/LLAPI.h"
 
 #include "liteloader/Config.h"
 #include "liteloader/LiteLoader.h"
@@ -22,7 +23,7 @@ string GetLastErrorMessage(DWORD error_message_id) {
 
     LPWSTR message_buffer = nullptr;
     FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM,
-                  nullptr, error_message_id, MAKELANGID(0x09, SUBLANG_DEFAULT), (LPWSTR)&message_buffer, 0, nullptr);
+                  nullptr, error_message_id, NULL, (LPWSTR)&message_buffer, NULL, nullptr);
     string res = wstr2str(wstring(message_buffer));
     LocalFree(message_buffer);
     return res;
@@ -30,15 +31,7 @@ string GetLastErrorMessage(DWORD error_message_id) {
 
 string GetLastErrorMessage() {
     DWORD error_message_id = ::GetLastError();
-    if (error_message_id == 0)
-        return "";
-
-    LPWSTR message_buffer = nullptr;
-    FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM,
-                  nullptr, error_message_id, MAKELANGID(0x09, SUBLANG_DEFAULT), (LPWSTR)&message_buffer, 0, nullptr);
-    string res = wstr2str(wstring(message_buffer));
-    LocalFree(message_buffer);
-    return res;
+    return GetLastErrorMessage(error_message_id);
 }
 
 // Tool
@@ -79,6 +72,7 @@ bool NewProcess(const std::string& process, std::function<void(int, std::string)
 
     std::thread([hRead{hRead}, hProcess{pi.hProcess},
                  callback{std::move(callback)}, timeLimit{timeLimit}, wCmd{wCmd}]() {
+        SetCurrentThreadDescription(L"LL_NewProcess_Thread");
         if (!ll::isDebugMode())
             _set_se_translator(seh_exception::TranslateSEHtoCE);
         if (timeLimit == -1)
@@ -202,4 +196,11 @@ inline bool isWine() {
 bool IsWineEnvironment() {
     static bool result = isWine();
     return result;
+}
+
+void SetCurrentThreadDescription(PCWSTR desc)
+{
+#ifdef DEBUG
+    SetThreadDescription(GetCurrentThread(), desc);
+#endif
 }

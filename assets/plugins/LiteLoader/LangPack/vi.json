@@ -30,6 +30,10 @@
       },
       "bstats": {
         "enabled": "bStats has been enabled, you can edit plugins/bStats/config.json to disable it"
+      },
+      "unpackResources": {
+        "begin": "Unpacking LiteLoaderBDS runtime resources. Please wait patiently...",
+        "end": "Unpacked."
       }
     },
     "antiAbnormalItem": {
@@ -215,6 +219,9 @@
       },
       "initNodeJsDirectories": {
         "created": "Không tìm thấy thư mục để chạy Node.js, tạo."
+      },
+      "initPythonDirectories": {
+        "created": "Python runtime directory no found, created."
       }
     },
     "notice": {
@@ -241,6 +248,9 @@
     },
     "unzipNodeModules": {
       "fail": "Không thể giải nén node_modules.tar"
+    },
+    "unzipPythonModules": {
+      "fail": "Failed to unzip python-env.zip"
     }
   },
   "llse": {
@@ -284,6 +294,13 @@
         "loadedPlugin": "Đã tải {type} plugin <{name}>.",
         "installPluginPack": {
           "done": "Đã cài đặt gói plugin {count} {type}."
+        },
+        "python": {
+          "ignored": "No pyproject.toml file found in directory {path}, ignored.",
+          "installPack": {
+            "start": "Found Python plugin pack \"{path}\"! Try installing...",
+            "fail": "Failed to install plugin pack {}, please check the source files!"
+          }
         }
       },
       "nodejs": {
@@ -294,6 +311,13 @@
         },
         "register": {
           "fail": "Không thể giúp plugin {name} được đăng ký!"
+        }
+      },
+      "python": {
+        "executePipInstall": {
+          "start": "Executing \"pip install\" for plugin {name}...",
+          "success": "Pip finished successfully.",
+          "fail": "Error occurred. Exit code: {code}"
         }
       }
     }

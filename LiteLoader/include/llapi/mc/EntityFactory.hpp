@@ -28,15 +28,15 @@ public:
 
 public:
     /**
-     * @symbol  ??0EntityFactory\@\@QEAA\@V?$not_null\@PEAVEntityRegistryBase\@\@\@gsl\@\@\@Z
+     * @symbol ??0EntityFactory\@\@QEAA\@V?$not_null\@PEAVEntityRegistryBase\@\@\@gsl\@\@\@Z
      */
     MCAPI EntityFactory(class gsl::not_null<class EntityRegistryBase *>);
     /**
-     * @symbol  ?create\@EntityFactory\@\@QEAA?AVStrictEntityContextOwner\@\@XZ
+     * @symbol ?create\@EntityFactory\@\@QEAA?AVStrictEntityContextOwner\@\@XZ
      */
     MCAPI class StrictEntityContextOwner create();
     /**
-     * @symbol  ?destroy\@EntityFactory\@\@QEAAX$$QEAVStrictEntityContextOwner\@\@\@Z
+     * @symbol ?destroy\@EntityFactory\@\@QEAAX$$QEAVStrictEntityContextOwner\@\@\@Z
      */
     MCAPI void destroy(class StrictEntityContextOwner &&);
 

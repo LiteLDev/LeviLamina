@@ -28,11 +28,11 @@ public:
 
 public:
     /**
-     * @symbol  ?_afterMovementSimulation\@ServerPlayerMovementCorrectionSystem\@\@SAXAEAVPlayer\@\@AEBVPlayerAuthInputPacket\@\@AEBVReplayStateComponent\@\@\@Z
+     * @symbol ?_afterMovementSimulation\@ServerPlayerMovementCorrectionSystem\@\@SAXAEAVPlayer\@\@AEBVPlayerAuthInputPacket\@\@AEBVReplayStateComponent\@\@\@Z
      */
     MCAPI static void _afterMovementSimulation(class Player &, class PlayerAuthInputPacket const &, class ReplayStateComponent const &);
     /**
-     * @symbol  ?create\@ServerPlayerMovementCorrectionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?create\@ServerPlayerMovementCorrectionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo create();
 

@@ -27,33 +27,33 @@ public:
 
 public:
     /**
-     * @symbol  ??0LevelChunkMetaData\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0LevelChunkMetaData\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI LevelChunkMetaData(class LevelChunkMetaData const &);
     /**
-     * @symbol  ??0LevelChunkMetaData\@\@QEAA\@AEAVIDataInput\@\@\@Z
+     * @symbol ??0LevelChunkMetaData\@\@QEAA\@AEAVIDataInput\@\@\@Z
      */
     MCAPI LevelChunkMetaData(class IDataInput &);
     /**
-     * @symbol  ?getCurrentHash\@LevelChunkMetaData\@\@QEBA_KXZ
+     * @symbol ?getCurrentHash\@LevelChunkMetaData\@\@QEBA_KXZ
      */
     MCAPI unsigned __int64 getCurrentHash() const;
     /**
-     * @symbol  ?serialize\@LevelChunkMetaData\@\@QEBAXAEAVIDataOutput\@\@\@Z
+     * @symbol ?serialize\@LevelChunkMetaData\@\@QEBAXAEAVIDataOutput\@\@\@Z
      */
     MCAPI void serialize(class IDataOutput &) const;
     /**
-     * @symbol  ??1LevelChunkMetaData\@\@QEAA\@XZ
+     * @symbol ??1LevelChunkMetaData\@\@QEAA\@XZ
      */
     MCAPI ~LevelChunkMetaData();
     /**
-     * @symbol  ?INVALID_META_DATA\@LevelChunkMetaData\@\@2_KB
+     * @symbol ?INVALID_META_DATA\@LevelChunkMetaData\@\@2_KB
      */
     MCAPI static unsigned __int64 const INVALID_META_DATA;
 
 //protected:
     /**
-     * @symbol  ?_recomputeHash\@LevelChunkMetaData\@\@IEBAXXZ
+     * @symbol ?_recomputeHash\@LevelChunkMetaData\@\@IEBAXXZ
      */
     MCAPI void _recomputeHash() const;
 

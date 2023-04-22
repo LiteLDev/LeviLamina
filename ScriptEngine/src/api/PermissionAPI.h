@@ -69,6 +69,8 @@ public:
 
     static Local<Value> getOrCreateRole(const Arguments& args);
 
+    static Local<Value> deleteRole(const Arguments& args);
+
     static Local<Value> registerPermission(const Arguments& args);
 
     static Local<Value> deletePermission(const Arguments& args);

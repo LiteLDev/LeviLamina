@@ -20,7 +20,7 @@ namespace DepthBasedBlockSupplierUtils {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol  ?getDepthBasedBlock\@DepthBasedBlockSupplierUtils\@\@YAPEBVBlock\@\@HAEAVIRandom\@\@PEBV2\@1\@Z
+     * @symbol ?getDepthBasedBlock\@DepthBasedBlockSupplierUtils\@\@YAPEBVBlock\@\@HAEAVIRandom\@\@PEBV2\@1\@Z
      */
     MCAPI class Block const * getDepthBasedBlock(int, class IRandom &, class Block const *, class Block const *);
 

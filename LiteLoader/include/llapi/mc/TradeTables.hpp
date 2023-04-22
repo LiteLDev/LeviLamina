@@ -31,21 +31,21 @@ public:
 
 public:
     /**
-     * @symbol  ?fetchTable\@TradeTables\@\@QEAAPEAUTradeTable\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?fetchTable\@TradeTables\@\@QEAAPEAUTradeTable\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI struct TradeTable * fetchTable(std::string const &);
     /**
-     * @symbol  ?reload\@TradeTables\@\@QEAAXAEAVLevel\@\@\@Z
+     * @symbol ?reload\@TradeTables\@\@QEAAXAEAVLevel\@\@\@Z
      */
     MCAPI void reload(class Level &);
     /**
-     * @symbol  ??1TradeTables\@\@QEAA\@XZ
+     * @symbol ??1TradeTables\@\@QEAA\@XZ
      */
     MCAPI ~TradeTables();
 
 //private:
     /**
-     * @symbol  ?_parseAndStoreTradeTable\@TradeTables\@\@AEAAXVItemRegistryRef\@\@PEAVResourcePackManager\@\@AEBVPath\@Core\@\@\@Z
+     * @symbol ?_parseAndStoreTradeTable\@TradeTables\@\@AEAAXVItemRegistryRef\@\@PEAVResourcePackManager\@\@AEBVPath\@Core\@\@\@Z
      */
     MCAPI void _parseAndStoreTradeTable(class ItemRegistryRef, class ResourcePackManager *, class Core::Path const &);
 

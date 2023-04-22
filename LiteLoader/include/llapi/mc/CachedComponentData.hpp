@@ -30,7 +30,7 @@ public:
 
 public:
     /**
-     * @symbol  ?cacheComponentData\@CachedComponentData\@\@QEAAXAEBVBlock\@\@\@Z
+     * @symbol ?cacheComponentData\@CachedComponentData\@\@QEAAXAEBVBlock\@\@\@Z
      */
     MCAPI void cacheComponentData(class Block const &);
 

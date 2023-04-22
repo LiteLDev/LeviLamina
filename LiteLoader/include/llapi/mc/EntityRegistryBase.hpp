@@ -18,7 +18,12 @@
 class EntityRegistryBase {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
+public:
+    bool (*mUnknownFunc)(entt::id_type);
+    entt::basic_registry<EntityId>* mRegistry;
+    EntityId mViewedEntity;
+    entt::id_type mId;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYREGISTRYBASE
@@ -30,23 +35,23 @@ public:
 
 public:
     /**
-     * @symbol  ??0EntityRegistryBase\@\@QEAA\@AEAV?$basic_registry\@VEntityId\@\@V?$allocator\@VEntityId\@\@\@std\@\@\@entt\@\@\@Z
+     * @symbol ??0EntityRegistryBase\@\@QEAA\@AEAV?$basic_registry\@VEntityId\@\@V?$allocator\@VEntityId\@\@\@std\@\@\@entt\@\@\@Z
      */
     MCAPI EntityRegistryBase(class entt::basic_registry<class EntityId, class std::allocator<class EntityId>> &);
     /**
-     * @symbol  ?isValidEntity\@EntityRegistryBase\@\@QEBA_NAEBVEntityContextBase\@\@\@Z
+     * @symbol ?isValidEntity\@EntityRegistryBase\@\@QEBA_NAEBVEntityContextBase\@\@\@Z
      */
     MCAPI bool isValidEntity(class EntityContextBase const &) const;
 
 //protected:
     /**
-     * @symbol  ?_assertValidRegistry\@EntityRegistryBase\@\@IEBAXAEBVEntityContextBase\@\@\@Z
+     * @symbol ?_assertValidRegistry\@EntityRegistryBase\@\@IEBAXAEBVEntityContextBase\@\@\@Z
      */
     MCAPI void _assertValidRegistry(class EntityContextBase const &) const;
 
 protected:
     /**
-     * @symbol  ?mRegistryCount\@EntityRegistryBase\@\@1U?$atomic\@I\@std\@\@A
+     * @symbol ?mRegistryCount\@EntityRegistryBase\@\@1U?$atomic\@I\@std\@\@A
      */
     MCAPI static struct std::atomic<unsigned int> mRegistryCount;
 

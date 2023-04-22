@@ -28,7 +28,7 @@ public:
 
 public:
     /**
-     * @symbol  ?createGlideInputSystem\@GlideInputSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createGlideInputSystem\@GlideInputSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createGlideInputSystem();
 
