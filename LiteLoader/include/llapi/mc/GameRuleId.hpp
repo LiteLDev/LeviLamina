@@ -17,7 +17,8 @@
 struct GameRuleId {
 
 #define AFTER_EXTRA
-
+private:
+    int val;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMERULEID
 public:

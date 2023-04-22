@@ -6,11 +6,10 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Ability.hpp"
-#include "Abilities.hpp"
-#include "PermissionsHandler.hpp"
 
 #define BEFORE_EXTRA
-
+#include "Abilities.hpp"
+#include "PermissionsHandler.hpp"
 #undef BEFORE_EXTRA
 
 /**
