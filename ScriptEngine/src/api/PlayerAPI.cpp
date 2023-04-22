@@ -1270,6 +1270,8 @@ Local<Value> PlayerClass::setPermLevel(const Arguments& args) {
             player->setPermissions((CommandPermissionLevel)newPerm);
             if (newPerm >= 1) {
                 player->getAbilities().setPlayerPermissions(PlayerPermissionLevel::PlayerPermissionLevelOperator);
+            } else {
+                player->getAbilities().setPlayerPermissions(PlayerPermissionLevel::PlayerPermissionLevelMember);
             }
             UpdateAbilitiesPacket uPkt(player->getUniqueID(), player->getAbilities());
             player->sendNetworkPacket(uPkt);

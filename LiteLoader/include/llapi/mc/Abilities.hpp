@@ -19,6 +19,7 @@
 class Abilities {
 
 #define AFTER_EXTRA
+    // Add Member There
     std::array<Ability,19> mAbilities;
 
 #undef AFTER_EXTRA
