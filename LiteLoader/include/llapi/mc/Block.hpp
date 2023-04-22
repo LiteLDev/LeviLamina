@@ -21,14 +21,19 @@ class Block {
 #define AFTER_EXTRA
     // Add new members to class
 public:
-    LIAPI static Block* create(const string& str, unsigned short tileData);
+    LIAPI static Block* create(const std::string& str, unsigned short tileData);
     LIAPI static Block* create(CompoundTag* nbt);
 
-    LIAPI string getTypeName() const;
+    [[deprecated("Use MCAPI getName() instead.")]]
+    LIAPI std::string getTypeName() const;
     LIAPI int getId() const;
     inline unsigned short getTileData(){
         return static_cast<unsigned short>(getVariant());
     }
+
+    /**
+     * @brief Obtain a copy of the NBT associated with this block. To obtain a reference to the original instance, use block->getSerializationId().
+     */
     LIAPI std::unique_ptr<CompoundTag> getNbt();
     LIAPI bool setNbt(CompoundTag* nbt);
 
@@ -36,21 +41,22 @@ public:
         return dAccess<unsigned short, 8>(this);
     }
 
+    [[deprecated("Use MCAPI getLegacyBlock() instead.")]]
     inline class BlockLegacy const* getLegacyBlockPtr() const {
-        return dAccess<BlockLegacy*, 16>(this);
+        return reinterpret_cast<class BlockLegacy const*>(&this->getLegacyBlock());
     }
 
     inline bool operator==(class Block const& block) const {
-        class BlockLegacy const* p1 = getLegacyBlockPtr();
-        class BlockLegacy const* p2 = block.getLegacyBlockPtr();
+        class BlockLegacy const* p1 = &this->getLegacyBlock();
+        class BlockLegacy const* p2 = &block.getLegacyBlock();
         if (!p1 || !p2)
             return false;
         return p1 == p2 && getData() == block.getData();
     }
 
     inline bool operator!=(class Block const& block) const {
-        class BlockLegacy const* p1 = getLegacyBlockPtr();
-        class BlockLegacy const* p2 = block.getLegacyBlockPtr();
+        class BlockLegacy const* p1 = &this->getLegacyBlock();
+        class BlockLegacy const* p2 = &block.getLegacyBlock();
         if (!p1 || !p2)
             return false;
         return p1 != p2 || getData() != block.getData();

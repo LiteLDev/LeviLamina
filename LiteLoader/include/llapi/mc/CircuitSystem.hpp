@@ -31,7 +31,22 @@ public:
     std::vector<CircuitSystem::LevelChunkTracking> mAddedLevelChunk;
     bool mHasBeenEvaluated;
 
-#define DISABLE_CONSTRUCTOR_PREVENTION_CIRCUITSYSTEM
+    template <typename Component>
+    Component* create(class BlockPos const& pos, class BlockSource* pSource, enum class CircuitComponentType type,
+                      enum class FaceID direction) {
+        if (mLockGraph) {
+            if (!mSceneGraph.getComponent(pos, type))
+                return (Component*)mSceneGraph.getFromPendingAdd(pos, type);
+        }
+        auto* pComponent = createComponent(pos, (unsigned char)direction, std::unique_ptr<BaseCircuitComponent>());
+
+        if (pComponent) {
+            pComponent->mChunkPosition.x = pos.x >> 4;
+            pComponent->mChunkPosition.z = pos.z >> 4;
+        }
+        return (Component*)pComponent;
+    }
+
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CIRCUITSYSTEM
 public:

@@ -77,6 +77,7 @@ enum class EVENT_TYPES : int {
     onOpenContainer,
     onCloseContainer,
     onInventoryChange,
+    onPlayerPullFishingHook,
     //onMove,
     onChangeSprinting,
     onSetArmor,
@@ -751,7 +752,7 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onRespawnAnchorExplode:
             Event::BlockExplodeEvent::subscribe([](const BlockExplodeEvent& ev) {
                 BlockInstance bl(ev.mBlockInstance);
-                if (bl.getBlock()->getTypeName() == "minecraft:respawn_anchor") {
+                if (bl.getBlock()->getName() == "minecraft:respawn_anchor") {
                     IF_LISTENED(EVENT_TYPES::onRespawnAnchorExplode) {
                         CallEvent(EVENT_TYPES::onRespawnAnchorExplode, IntPos::newPos(bl.getPosition(), bl.getDimensionId()),
                                   Local<Value>());
@@ -1135,12 +1136,23 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onBedExplode:
             Event::BlockExplodeEvent::subscribe([](const BlockExplodeEvent& ev) {
                 BlockInstance bl(ev.mBlockInstance);
-                if (bl.getBlock()->getTypeName() == "minecraft:bed") {
+                if (bl.getBlock()->getName() == "minecraft:bed") {
                     IF_LISTENED(EVENT_TYPES::onBedExplode) {
                         CallEvent(EVENT_TYPES::onBedExplode, IntPos::newPos(bl.getPosition(), bl.getDimensionId()));
                     }
                     IF_LISTENED_END(EVENT_TYPES::onBedExplode);
                 }
+                return true;
+            });
+            break;
+
+        case EVENT_TYPES::onPlayerPullFishingHook:
+            Event::PlayerPullFishingHookEvent::subscribe([](const PlayerPullFishingHookEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onPlayerPullFishingHook) {
+                    CallEvent(EVENT_TYPES::onPlayerPullFishingHook, PlayerClass::newPlayer(ev.mPlayer), 
+                              ev.mActor ? EntityClass::newEntity(ev.mActor) : Local<Value>(), ev.mItemStack ? ItemClass::newItem(ev.mItemStack) : Local<Value>());
+                }
+                IF_LISTENED_END(EVENT_TYPES::onPlayerPullFishingHook);
                 return true;
             });
             break;

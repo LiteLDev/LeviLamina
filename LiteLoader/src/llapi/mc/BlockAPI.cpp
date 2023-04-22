@@ -23,7 +23,7 @@ Block* Block::create(CompoundTag* nbt) {
 }
 
 string Block::getTypeName() const {
-    return Block::getName().getString();
+    return this->getName().getString();
 }
 
 int Block::getId() const {

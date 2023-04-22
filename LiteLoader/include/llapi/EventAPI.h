@@ -30,6 +30,8 @@ copies or substantial portions of the Software.
 #include "llapi/mc/AABB.hpp"
 #include "llapi/mc/EnderDragon.hpp"
 #include "llapi/mc/BlockLegacy.hpp"
+#include "llapi/mc/ItemActor.hpp"
+#include "llapi/mc/FishingHook.hpp"
 
 class Actor;
 class ServerPlayer;
@@ -227,6 +229,16 @@ public:
     BlockInstance mBlockInstance;
     unsigned char mFace = 0;
     Vec3 mClickPos;
+};
+
+class PlayerPullFishingHookEvent : public EventTemplate<PlayerPullFishingHookEvent> {
+public:
+    
+    Player* mPlayer = nullptr;
+    FishingHook* mFishingHook = nullptr;
+    Actor* mActor = nullptr;
+    ItemActor* mItemActor = nullptr;
+    ItemStack* mItemStack = nullptr;
 };
 
 /**

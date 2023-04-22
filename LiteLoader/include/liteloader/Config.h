@@ -33,7 +33,7 @@ struct LLConfig {
     std::string addonsInstallPath = ".\\plugins\\AddonsHelper\\";
 
     bool enableCrashLogger = true;
-    std::string crashLoggerPath = ".\\plugins\\LiteLoader\\CrashLogger_Daemon.exe";
+    std::string crashLoggerPath = ".\\plugins\\LiteLoader\\CrashLogger.exe";
     bool enableSimpleServerLogger = true;
     bool enableFixListenPort = false;
     bool enableUnlockCmd = true;

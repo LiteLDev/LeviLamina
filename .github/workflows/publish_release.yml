@@ -60,9 +60,9 @@ jobs:
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           mkdir LiteLoader\lib
-          cd Tools
-          LLPeEditor.exe -l --pdb Server/bedrock_server.pdb -o ../LiteLoader/lib
-        shell: cmd
+          cd tools
+          ./PeEditor.exe -l --pdb Server/bedrock_server.pdb -o ../LiteLoader/lib
+        shell: bash
 
       - name: Set LITELOADER_VERSION_COMMIT_SHA
         working-directory: ${{ env.GITHUB_WORKSPACE }}
@@ -120,23 +120,33 @@ jobs:
           rm -r LiteLoaderBDS-CUI
         shell: bash
 
+      - name: Download Dependencies
+        working-directory: ${{ env.GITHUB_WORKSPACE }}
+        run: |
+          mkdir LL-Dependencies
+          git clone https://github.com/Tooth-Hub/LLMoney.git LL-Dependencies/LLMoney-bin
+          cp LL-Dependencies/LLMoney-bin/LLMoney.dll build/output/plugins/
+          git clone https://github.com/Tooth-Hub/CrashLogger.git LL-Dependencies/CrashLogger-bin
+          cp LL-Dependencies/CrashLogger-bin/CrashLogger.exe build/output/plugins/LiteLoader/
+          cp LL-Dependencies/CrashLogger-bin/*.dll build/output/plugins/LiteLoader/
+          git clone https://github.com/Tooth-Hub/PeEditor.git LL-Dependencies/PeEditor-bin
+          cp LL-Dependencies/PeEditor-bin/PeEditor.exe build/output/
+        shell: bash
+
       - name: Update C++ SDK
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
+          mkdir ~/.ssh
+          touch ~/.ssh/known_hosts
+          ssh-keygen -R github.com
+          curl -L https://api.github.com/meta | jq -r '.ssh_keys | .[]' | sed -e 's/^/github.com /' >> ~/.ssh/known_hosts
+          echo "-----BEGIN OPENSSH PRIVATE KEY-----" >> ~/.ssh/id_rsa
+          echo ${{secrets.DEPLOY_KEY}} >> ~/.ssh/id_rsa
+          echo "-----END OPENSSH PRIVATE KEY-----" >> ~/.ssh/id_rsa
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           cd scripts
-          ./UploadSDK.cmd action release
-        env:
-          REPO_KEY: ${{secrets.PUSH_TOKEN}}
-          USERNAME: github-actions[bot]
-        shell: cmd
-
-      - name: Download LLMoney
-        working-directory: ${{ env.GITHUB_WORKSPACE }}
-        run: |
-          git clone https://github.com/Tooth-Hub/LLMoney.git LLMoney-bin
-          cp LLMoney-bin/LLMoney.dll build/output/plugins/
+          cmd //c "UpdateSDK.cmd action"
         shell: bash
 
       - name: Upload LiteLoaderBDS
@@ -144,18 +154,7 @@ jobs:
         with:
           name: LiteLoaderBDS
           path: |
-            ${{ github.workspace }}\build\output\LLPeEditor.exe
-            ${{ github.workspace }}\build\output\LLPreLoader.dll
-            ${{ github.workspace }}\build\output\LiteLoader.dll
-            ${{ github.workspace }}\build\output\plugins\LLMoney.dll
-            ${{ github.workspace }}\build\output\plugins\lib\
-            ${{ github.workspace }}\build\output\plugins\LiteLoader\LangPack\
-            ${{ github.workspace }}\build\output\plugins\LiteLoader\CrashLogger_Daemon.exe
-            ${{ github.workspace }}\build\output\plugins\LiteLoader\LiteLoader.*.dll
-            ${{ github.workspace }}\build\output\plugins\LiteLoader\7z\
-            ${{ github.workspace }}\build\output\plugins\LiteLoader\ParticleAPI.dll
-            ${{ github.workspace }}\build\output\plugins\LiteLoader\ResourcePacks\LiteLoaderBDS-CUI.tar
-            ${{ github.workspace }}\build\output\plugins\LiteLoader\PermissionAPI.dll
+            ${{ github.workspace }}\build\output\
 
       - name: Upload PDB files
         uses: actions/upload-artifact@v3.1.0

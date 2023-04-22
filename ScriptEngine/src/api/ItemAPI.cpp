@@ -27,6 +27,7 @@ ClassDefine<ItemClass> ItemClassBuilder =
         .instanceProperty("lore", &ItemClass::getLore)
         .instanceProperty("attackDamage", &ItemClass::getAttackDamage)
         .instanceProperty("maxDamage", &ItemClass::getMaxDamage)
+        .instanceProperty("maxStackSize", &ItemClass::getMaxStackSize)
         .instanceProperty("isArmorItem", &ItemClass::isArmorItem)
         .instanceProperty("isBlock", &ItemClass::isBlock)
         .instanceProperty("isDamageableItem", &ItemClass::isDamageableItem)
@@ -62,19 +63,18 @@ ClassDefine<ItemClass> ItemClassBuilder =
         .instanceFunction("getTag", &ItemClass::getNbt)
         .build();
 
-
 //////////////////// Classes ////////////////////
 
-ItemClass::ItemClass(ItemStack* p)
-: ScriptClass(ScriptClass::ConstructFromCpp<ItemClass>{}), item(p) {
+ItemClass::ItemClass(ItemStack* p) : ScriptClass(ScriptClass::ConstructFromCpp<ItemClass>{}), item(p) {
     preloadData();
 }
 
-//生成函数
+// 生成函数
 Local<Object> ItemClass::newItem(ItemStack* p) {
     auto newp = new ItemClass(p);
     return newp->getScriptObject();
 }
+
 ItemStack* ItemClass::extract(Local<Value> v) {
     if (EngineScope::currentEngine()->isInstanceOf<ItemClass>(v))
         return EngineScope::currentEngine()->getNativeInstance<ItemClass>(v)->get();
@@ -82,7 +82,7 @@ ItemStack* ItemClass::extract(Local<Value> v) {
         return nullptr;
 }
 
-//成员函数
+// 成员函数
 void ItemClass::preloadData() {
     name = item->getCustomName();
     if (name.empty())
@@ -96,7 +96,7 @@ void ItemClass::preloadData() {
 
 Local<Value> ItemClass::getName() {
     try {
-        //已预加载
+        // 已预加载
         return String::newString(name);
     }
     CATCH("Fail in GetItemName!");
@@ -104,7 +104,7 @@ Local<Value> ItemClass::getName() {
 
 Local<Value> ItemClass::getType() {
     try {
-        //已预加载
+        // 已预加载
         return String::newString(type);
     }
     CATCH("Fail in GetType!");
@@ -112,7 +112,7 @@ Local<Value> ItemClass::getType() {
 
 Local<Value> ItemClass::getId() {
     try {
-        //已预加载
+        // 已预加载
         return Number::newNumber(id);
     }
     CATCH("Fail in GetType!");
@@ -120,7 +120,7 @@ Local<Value> ItemClass::getId() {
 
 Local<Value> ItemClass::getCount() {
     try {
-        //已预加载
+        // 已预加载
         return Number::newNumber(count);
     }
     CATCH("Fail in GetCount!");
@@ -128,7 +128,7 @@ Local<Value> ItemClass::getCount() {
 
 Local<Value> ItemClass::getAux() {
     try {
-        //已预加载
+        // 已预加载
         return Number::newNumber(aux);
     }
     CATCH("Fail in GetAux!");
@@ -155,6 +155,13 @@ Local<Value> ItemClass::getMaxDamage() {
     CATCH("Fail in GetMaxDamage!");
 }
 
+Local<Value> ItemClass::getMaxStackSize() {
+    try {
+        return Number::newNumber(item->getMaxStackSize());
+    }
+    CATCH("Fail in GetMaxStackSize!");
+}
+
 Local<Value> ItemClass::getLore() {
     try {
         std::vector<std::string> loreArray = item->getCustomLore();
@@ -164,12 +171,11 @@ Local<Value> ItemClass::getLore() {
         for (std::string lore : loreArray) {
             loreValueList.add(String::newString(lore));
         }
-        
+
         return loreValueList;
     }
     CATCH("Fail in GetLore!");
 }
-
 
 Local<Value> ItemClass::isArmorItem() {
     try {
@@ -481,7 +487,8 @@ Local<Value> McClass::spawnItem(const Arguments& args) {
             CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[4], ValueKind::kNumber);
-            pos = {args[1].asNumber().toFloat(), args[2].asNumber().toFloat(), args[3].asNumber().toFloat(), args[4].toInt()};
+            pos = {args[1].asNumber().toFloat(), args[2].asNumber().toFloat(), args[3].asNumber().toFloat(),
+                   args[4].toInt()};
         } else {
             LOG_WRONG_ARGS_COUNT();
             return Local<Value>();

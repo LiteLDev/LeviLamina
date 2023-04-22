@@ -192,7 +192,7 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("sendModalForm", &PlayerClass::sendModalForm)
         .instanceFunction("sendCustomForm", &PlayerClass::sendCustomForm)
         .instanceFunction("sendForm", &PlayerClass::sendForm)
-        .instanceFunction("sendPacket",&PlayerClass::sendPacket)
+        .instanceFunction("sendPacket", &PlayerClass::sendPacket)
 
         .instanceFunction("setExtraData", &PlayerClass::setExtraData)
         .instanceFunction("getExtraData", &PlayerClass::getExtraData)
@@ -252,18 +252,18 @@ ClassDefine<PlayerClass> PlayerClassBuilder =
         .instanceFunction("distanceToPos", &PlayerClass::distanceTo)
         .build();
 
-
 //////////////////// Classes ////////////////////
 
-//生成函数
-PlayerClass::PlayerClass(Player* p)
-: ScriptClass(ScriptClass::ConstructFromCpp<PlayerClass>{}) {
+// 生成函数
+PlayerClass::PlayerClass(Player* p) : ScriptClass(ScriptClass::ConstructFromCpp<PlayerClass>{}) {
     set(p);
 }
+
 Local<Object> PlayerClass::newPlayer(Player* p) {
     auto newp = new PlayerClass(p);
     return newp->getScriptObject();
 }
+
 Player* PlayerClass::extract(Local<Value> v) {
     if (EngineScope::currentEngine()->isInstanceOf<PlayerClass>(v))
         return EngineScope::currentEngine()->getNativeInstance<PlayerClass>(v)->get();
@@ -271,7 +271,7 @@ Player* PlayerClass::extract(Local<Value> v) {
         return nullptr;
 }
 
-//公用API
+// 公用API
 Local<Value> McClass::getPlayerNbt(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
@@ -280,8 +280,7 @@ Local<Value> McClass::getPlayerNbt(const Arguments& args) {
         auto nbt = Player::getPlayerNbt(uuid);
         if (nbt != nullptr) {
             return NbtCompoundClass::pack(Player::getPlayerNbt(uuid));
-        }
-        else {
+        } else {
             return Local<Value>();
         }
     }
@@ -339,7 +338,7 @@ Local<Value> McClass::getPlayerScore(const Arguments& args) {
     try {
         auto uuid = mce::UUID::fromString(args[0].asString().toString());
         auto obj = args[1].asString().toString();
-        auto scorev = Scoreboard::queryPlayerScore(uuid,obj);
+        auto scorev = Scoreboard::queryPlayerScore(uuid, obj);
         if (scorev.has_value())
             return Number::newNumber(scorev.value());
         else
@@ -472,13 +471,11 @@ Local<Value> McClass::broadcast(const Arguments& args) {
     CATCH("Fail in Broadcast!")
 }
 
-//成员函数
+// 成员函数
 void PlayerClass::set(Player* player) {
     __try {
         id = player->getUniqueID();
-    } __except (EXCEPTION_EXECUTE_HANDLER) {
-        isValid = false;
-    }
+    } __except (EXCEPTION_EXECUTE_HANDLER) { isValid = false; }
 }
 
 Player* PlayerClass::get() {
@@ -1255,6 +1252,7 @@ Local<Value> PlayerClass::isOP(const Arguments& args) {
     CATCH("Fail in IsOP!")
 }
 
+#include <llapi/mc/UpdateAbilitiesPacket.hpp>
 Local<Value> PlayerClass::setPermLevel(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
@@ -1270,6 +1268,13 @@ Local<Value> PlayerClass::setPermLevel(const Arguments& args) {
             RecordOperation(ENGINE_OWN_DATA()->pluginName, "Set Permission Level",
                             fmt::format("Set Player {} Permission Level as {}.", player->getRealName(), newPerm));
             player->setPermissions((CommandPermissionLevel)newPerm);
+            if (newPerm >= 1) {
+                player->getAbilities().setPlayerPermissions(PlayerPermissionLevel::PlayerPermissionLevelOperator);
+            } else {
+                player->getAbilities().setPlayerPermissions(PlayerPermissionLevel::PlayerPermissionLevelMember);
+            }
+            UpdateAbilitiesPacket uPkt(player->getUniqueID(), player->getAbilities());
+            player->sendNetworkPacket(uPkt);
             res = true;
         }
         return Boolean::newBoolean(res);
@@ -1366,18 +1371,15 @@ Local<Value> PlayerClass::setTitle(const Arguments& args) {
         int stayTime = 70;
         int fadeOutTime = 20;
 
-        if (args.size() >= 1)
-        {
+        if (args.size() >= 1) {
             CHECK_ARG_TYPE(args[0], ValueKind::kString);
             content = args[0].toStr();
         }
-        if (args.size() >= 2)
-        {
+        if (args.size() >= 2) {
             CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
             type = (TitleType)args[1].toInt();
         }
-        if (args.size() >= 5)
-        {
+        if (args.size() >= 5) {
             CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
             CHECK_ARG_TYPE(args[4], ValueKind::kNumber);
@@ -1386,7 +1388,7 @@ Local<Value> PlayerClass::setTitle(const Arguments& args) {
             fadeOutTime = args[4].toInt();
         }
 
-        return Boolean::newBoolean(player->sendTitlePacket(content,type,fadeInTime,stayTime,fadeOutTime));
+        return Boolean::newBoolean(player->sendTitlePacket(content, type, fadeInTime, stayTime, fadeOutTime));
     }
     CATCH("Fail in setTitle!");
 }
@@ -2023,7 +2025,8 @@ Local<Value> PlayerClass::sendSimpleForm(const Arguments& args) {
                                          EngineScope scope(engine);
                                          try {
                                              callback.get().call({}, PlayerClass::newPlayer(pl),
-                                                                 chosen >= 0 ? Number::newNumber(chosen) : Local<Value>());
+                                                                 chosen >= 0 ? Number::newNumber(chosen)
+                                                                             : Local<Value>());
                                          }
                                          CATCH_IN_CALLBACK("sendSimpleForm")
                                      });
@@ -2061,7 +2064,8 @@ Local<Value> PlayerClass::sendModalForm(const Arguments& args) {
                                         EngineScope scope(engine);
                                         try {
                                             callback.get().call({}, PlayerClass::newPlayer(pl),
-                                                                chosen >= 0 ? Boolean::newBoolean(chosen) : Local<Value>());
+                                                                chosen >= 0 ? Boolean::newBoolean(chosen)
+                                                                            : Local<Value>());
                                         }
                                         CATCH_IN_CALLBACK("sendModalForm")
                                     });
@@ -2083,25 +2087,24 @@ Local<Value> PlayerClass::sendCustomForm(const Arguments& args) {
 
         string data = fifo_json::parse(args[0].toStr()).dump();
 
-        player->sendCustomFormPacket(data,
-                                     [id{player->getUniqueID()}, engine{EngineScope::currentEngine()},
-                                      callback{script::Global(args[1].asFunction())}](string result) {
-                                         if (ll::isServerStopping())
-                                             return;
-                                         if (!EngineManager::isValid(engine))
-                                             return;
+        player->sendCustomFormPacket(data, [id{player->getUniqueID()}, engine{EngineScope::currentEngine()},
+                                            callback{script::Global(args[1].asFunction())}](string result) {
+            if (ll::isServerStopping())
+                return;
+            if (!EngineManager::isValid(engine))
+                return;
 
-                                         Player* pl = Global<Level>->getPlayer(id);
-                                         if (!pl)
-                                             return;
+            Player* pl = Global<Level>->getPlayer(id);
+            if (!pl)
+                return;
 
-                                         EngineScope scope(engine);
-                                         try {
-                                             callback.get().call({}, PlayerClass::newPlayer(pl),
-                                                                 result != "null" ? JsonToValue(result) : Local<Value>());
-                                         }
-                                         CATCH_IN_CALLBACK("sendCustomForm")
-                                     });
+            EngineScope scope(engine);
+            try {
+                callback.get().call({}, PlayerClass::newPlayer(pl),
+                                    result != "null" ? JsonToValue(result) : Local<Value>());
+            }
+            CATCH_IN_CALLBACK("sendCustomForm")
+        });
         return Number::newNumber(3);
     } catch (const fifo_json::exception& e) {
         logger.error("Fail to parse Json string in sendCustomForm!");
@@ -2139,19 +2142,17 @@ Local<Value> PlayerClass::sendForm(const Arguments& args) {
     CATCH("Fail in sendForm!");
 }
 
-Local<Value> PlayerClass::sendPacket(const Arguments& args)
-{
+Local<Value> PlayerClass::sendPacket(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kObject);
 
-    try
-    {
+    try {
         Player* player = get();
         if (!player)
             return Local<Value>();
         auto pkt = PacketClass::extract(args[0]);
-		if (!pkt)
-            return Boolean::newBoolean(false);  
+        if (!pkt)
+            return Boolean::newBoolean(false);
         player->sendNetworkPacket(*pkt);
         return Boolean::newBoolean(true);
     }
@@ -2366,7 +2367,8 @@ Local<Value> PlayerClass::setKnockbackResistance(const Arguments& args) {
         if (!player)
             return Local<Value>();
 
-        AttributeInstance* knockbackResistanceAttribute = player->getMutableAttribute(Global<SharedAttributes>->KNOCKBACK_RESISTANCE);
+        AttributeInstance* knockbackResistanceAttribute =
+            player->getMutableAttribute(Global<SharedAttributes>->KNOCKBACK_RESISTANCE);
 
         knockbackResistanceAttribute->setCurrentValue(args[0].asNumber().toFloat());
 
@@ -2402,7 +2404,8 @@ Local<Value> PlayerClass::setMovementSpeed(const Arguments& args) {
         if (!player)
             return Local<Value>();
 
-        AttributeInstance* movementSpeedAttribute = player->getMutableAttribute(Global<SharedAttributes>->MOVEMENT_SPEED);
+        AttributeInstance* movementSpeedAttribute =
+            player->getMutableAttribute(Global<SharedAttributes>->MOVEMENT_SPEED);
 
         movementSpeedAttribute->setCurrentValue(args[0].asNumber().toFloat());
 
@@ -2420,7 +2423,8 @@ Local<Value> PlayerClass::setUnderwaterMovementSpeed(const Arguments& args) {
         if (!player)
             return Local<Value>();
 
-        AttributeInstance* underwaterMovementSpeedAttribute = player->getMutableAttribute(Global<SharedAttributes>->UNDERWATER_MOVEMENT_SPEED);
+        AttributeInstance* underwaterMovementSpeedAttribute =
+            player->getMutableAttribute(Global<SharedAttributes>->UNDERWATER_MOVEMENT_SPEED);
 
         underwaterMovementSpeedAttribute->setCurrentValue(args[0].asNumber().toFloat());
 
@@ -2438,7 +2442,8 @@ Local<Value> PlayerClass::setLavaMovementSpeed(const Arguments& args) {
         if (!player)
             return Local<Value>();
 
-        AttributeInstance* lavaMovementSpeedAttribute = player->getMutableAttribute(Global<SharedAttributes>->LAVA_MOVEMENT_SPEED);
+        AttributeInstance* lavaMovementSpeedAttribute =
+            player->getMutableAttribute(Global<SharedAttributes>->LAVA_MOVEMENT_SPEED);
 
         lavaMovementSpeedAttribute->setCurrentValue(args[0].asNumber().toFloat());
 
@@ -2536,8 +2541,7 @@ Local<Value> PlayerClass::giveItem(const Arguments& args) {
         auto item = ItemClass::extract(args[0]);
         if (!item)
             return Local<Value>(); // Null
-        if (args.size() >= 2)
-        {
+        if (args.size() >= 2) {
             CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
             return Boolean::newBoolean(player->giveItem(item, args[1].toInt()));
         }
@@ -2549,15 +2553,18 @@ Local<Value> PlayerClass::giveItem(const Arguments& args) {
 Local<Value> PlayerClass::clearItem(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
-    CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
 
     try {
         Player* player = get();
         if (!player) {
-            return Local<Value>();
+            return {};
         }
-        return Number::newNumber(
-            (int32_t)player->clearItem(args[0].toStr(), args.size() == 1 ? 1 : args[1].asNumber().toInt32()));
+        unsigned int clearCount = 1;
+        if (args.size() > 1) {
+            CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+            clearCount = args[1].asNumber().toInt32();
+        }
+        return Number::newNumber((int32_t)player->clearItem(args[0].toStr(), clearCount));
     }
     CATCH("Fail in clearItem!");
 }
@@ -2684,9 +2691,7 @@ Local<Value> PlayerClass::getAbilities(const Arguments& args) {
         auto list = player->getNbt();
         try {
             return Tag2Value((Tag*)list->getCompoundTag("abilities"), true);
-        } catch (...) {
-            return Object::newObject();
-        }
+        } catch (...) { return Object::newObject(); }
     }
     CATCH("Fail in getAbilities!");
 }
@@ -2708,9 +2713,7 @@ Local<Value> PlayerClass::getAttributes(const Arguments& args) {
                 arr.add(Tag2Value(tag, true));
             }
             return arr;
-        } catch (...) {
-            return Array::newArray();
-        }
+        } catch (...) { return Array::newArray(); }
     }
     CATCH("Fail in getAttributes!");
 }
@@ -2760,7 +2763,8 @@ Local<Value> PlayerClass::getBlockFromViewVector(const Arguments& args) {
             CHECK_ARG_TYPE(args[3], ValueKind::kBoolean);
             fullOnly = args[3].asBoolean().value();
         }
-        auto blockInstance = player->getBlockFromViewVector(includeLiquid, solidOnly, maxDistance, ignoreBorderBlocks, fullOnly);
+        auto blockInstance =
+            player->getBlockFromViewVector(includeLiquid, solidOnly, maxDistance, ignoreBorderBlocks, fullOnly);
         if (blockInstance.isNull())
             return Local<Value>();
         return BlockClass::newBlock(std::move(blockInstance));
@@ -2809,11 +2813,8 @@ Local<Value> PlayerClass::reduceMoney(const Arguments& args) {
         if (!player)
             return Local<Value>();
         auto xuid = player->getXuid();
-        return xuid.empty() ? Local<Value>() : Boolean::newBoolean(
-                                                   EconomySystem::reduceMoney(
-                                                       xuid,
-                                                       args[0].asNumber().toInt64())
-                                                   );
+        return xuid.empty() ? Local<Value>()
+                            : Boolean::newBoolean(EconomySystem::reduceMoney(xuid, args[0].asNumber().toInt64()));
     }
     CATCH("Fail in reduceMoney!");
 }
@@ -2827,10 +2828,8 @@ Local<Value> PlayerClass::setMoney(const Arguments& args) {
         if (!player)
             return Local<Value>();
         auto xuid = player->getXuid();
-        return xuid.empty() ? Local<Value>() : Boolean::newBoolean(
-                                                   EconomySystem::setMoney(
-                                                       xuid,args[0].asNumber().toInt64())
-                                                   );
+        return xuid.empty() ? Local<Value>()
+                            : Boolean::newBoolean(EconomySystem::setMoney(xuid, args[0].asNumber().toInt64()));
     }
     CATCH("Fail in setMoney!");
 }
@@ -2844,11 +2843,8 @@ Local<Value> PlayerClass::addMoney(const Arguments& args) {
         if (!player)
             return Local<Value>();
         auto xuid = player->getXuid();
-        return xuid.empty() ? Local<Value>() : Boolean::newBoolean(
-                                                   EconomySystem::addMoney(
-                                                       xuid,
-                                                       args[0].asNumber().toInt64())
-                                                   );
+        return xuid.empty() ? Local<Value>()
+                            : Boolean::newBoolean(EconomySystem::addMoney(xuid, args[0].asNumber().toInt64()));
     }
     CATCH("Fail in addMoney!");
 }
@@ -2869,17 +2865,13 @@ Local<Value> PlayerClass::transMoney(const Arguments& args) {
             targetXuid = args[0].toStr();
         else
             targetXuid = PlayerClass::extract(args[0])->getXuid();
-        if (args.size() >= 3)
-        {
+        if (args.size() >= 3) {
             CHECK_ARG_TYPE(args[2], ValueKind::kString);
             note = args[2].toStr();
         }
-        return xuid.empty() ? Local<Value>() : Boolean::newBoolean(
-                                                   EconomySystem::transMoney(
-                                                       xuid,
-                                                       targetXuid,args[0].asNumber().toInt64(),
-                                                       note)
-                                                   );
+        return xuid.empty() ? Local<Value>()
+                            : Boolean::newBoolean(
+                                  EconomySystem::transMoney(xuid, targetXuid, args[0].asNumber().toInt64(), note));
     }
     CATCH("Fail in transMoney!");
 }
@@ -2893,7 +2885,8 @@ Local<Value> PlayerClass::getMoneyHistory(const Arguments& args) {
         if (!player)
             return Local<Value>();
         auto xuid = player->getXuid();
-        return xuid.empty() ? Local<Value>() : objectificationMoneyHistory(EconomySystem::getMoneyHist(xuid,args[0].toInt()));
+        return xuid.empty() ? Local<Value>()
+                            : objectificationMoneyHistory(EconomySystem::getMoneyHist(xuid, args[0].toInt()));
     }
     CATCH("Fail in getMoneyHistory!");
 }
@@ -2964,7 +2957,6 @@ Local<Value> PlayerClass::removeItem(const Arguments& args) {
     }
     CATCH("Fail in removeItem!")
 }
-
 
 Local<Value> PlayerClass::sendToast(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2);

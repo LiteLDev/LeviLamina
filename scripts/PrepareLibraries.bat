@@ -6,6 +6,6 @@ goto end
 
 :process
 if not exist %1\LiteLoader\lib\ mkdir %1\LiteLoader\lib
-%1\Tools\LLPeEditor.exe -c -l -o %1\LiteLoader\lib\
+%1\Tools\PeEditor.exe -c -l -o %1\LiteLoader\lib\
 
 :end

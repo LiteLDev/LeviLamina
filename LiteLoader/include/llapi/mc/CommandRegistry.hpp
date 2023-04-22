@@ -97,7 +97,7 @@ public:
         CommandVersion version;                   // 0
         FactoryFn factory;                        // 8
         std::vector<CommandParameterData> params; // 16
-        unsigned char unk;                        // 40
+        int versionOffset;                        // 40
         std::vector<Symbol> syms = {};            // 48
 
         LIAPI Overload(CommandVersion version,
@@ -123,6 +123,7 @@ public:
         int firstFactorization;
         int firstOptional;
         bool runnable;
+        size_t ruleCounter;
 
         inline Signature(std::string_view name,
                          std::string_view desc,

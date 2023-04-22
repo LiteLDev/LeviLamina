@@ -42,7 +42,6 @@ class BaseCircuitComponent {
     // Add Member There
 public:
     CircuitComponentList mSources;
-    std::map<BaseCircuitComponent*, int> mDestinations;
     bool mIgnoreFirstUpdate;
     bool mIsFirstTime;
     bool mNeedsUpdate;

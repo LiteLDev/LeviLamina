@@ -7,7 +7,7 @@
 #include "llapi/Global.h"
 
 #define BEFORE_EXTRA
-
+#include "ItemStackNetIdVariant.hpp"
 #undef BEFORE_EXTRA
 
 /**
@@ -17,7 +17,10 @@
 struct ItemStackRequestSlotInfo {
 
 #define AFTER_EXTRA
-
+private:
+    ContainerEnumName mId;
+    uint8_t mSlot;
+    ItemStackNetIdVariant mType;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTSLOTINFO
 public:

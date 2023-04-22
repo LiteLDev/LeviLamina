@@ -609,7 +609,7 @@ void autoFill() {
 #define AUTO_FILL(type) \
     __autoFill<type>(#type);
     ForEachPacket(AUTO_FILL);
-#undef AUTO_FILL;
+#undef AUTO_FILL
 
 #endif // FILL_PACKET
 }

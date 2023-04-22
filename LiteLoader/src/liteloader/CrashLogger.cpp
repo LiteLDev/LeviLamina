@@ -35,7 +35,7 @@ bool ll::CrashLogger::startCrashLoggerProcess() {
     wchar_t daemonCmd[MAX_PATH];
     std::string serverVersion =
         fmt::format("{}.{:0>2}", Common::getGameVersionStringNet(), SharedConstants::RevisionVersion);
-    wsprintf(daemonCmd, L"%ls %u \"%ls\"", str2wstr(globalConfig.crashLoggerPath).c_str(), GetCurrentProcessId(),
+    wsprintf(daemonCmd, L"%ls -p %u -b \"%ls\"", str2wstr(globalConfig.crashLoggerPath).c_str(), GetCurrentProcessId(),
              str2wstr(serverVersion).c_str());
     if (!CreateProcess(nullptr, daemonCmd, &sa, &sa, TRUE, 0, nullptr, nullptr, &si, &pi)) {
         crashLogger.error(tr("ll.crashLogger.error.cannotCreateDaemonProcess"));

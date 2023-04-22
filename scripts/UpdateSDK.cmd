@@ -3,7 +3,7 @@
 cd %~dp0..
 setlocal enabledelayedexpansion
 
-set LL_SDK_REMOTE_PATH=https://github.com/LiteLDev/LiteLoaderSDK.git
+set LL_SDK_REMOTE_PATH=https://github.com/LiteLDev/SDK-CPP.git
 
 @REM rem Process System Proxy
 @REM for /f "tokens=3* delims= " %%i in ('Reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyEnable') do (
@@ -18,7 +18,7 @@ set LL_SDK_REMOTE_PATH=https://github.com/LiteLDev/LiteLoaderSDK.git
 @REM )
 
 
-echo [INFO] Fetching LiteLoaderSDK to GitHub ...
+echo [INFO] Fetching SDK-CPP to GitHub ...
 echo.
 
 for /f "delims=" %%i in ('git rev-parse --abbrev-ref HEAD') do set LL_SDK_NOW_BRANCH=%%i
@@ -30,34 +30,34 @@ echo LL_NOW_TAG_LONG %LL_NOW_TAG_LONG%
 echo LL_NOW_TAG %LL_NOW_TAG%
 echo.
 
-if not exist LiteLoaderSDK/Header/ (
-    echo [WARNING] LiteLoaderSDK files no found. Pulling from remote...
+if not exist SDK-CPP/header/ (
+    echo [WARNING] SDK-CPP files no found. Pulling from remote...
     echo.
     git clone %LL_SDK_REMOTE_PATH%
 )
 
-cd LiteLoaderSDK
+cd SDK-CPP
 git fetch --all
 git reset --hard origin/%LL_SDK_NOW_BRANCH%
 git checkout %LL_SDK_NOW_BRANCH%
 cd ..
 
 echo.
-echo [INFO] Fetching LiteLoaderSDK to GitHub finished
+echo [INFO] Fetching SDK-CPP to GitHub finished
 echo.
 
-@REM remove all directory except .git in LiteLoaderSDK
-for /f "delims=" %%i in ('dir /b /ad LiteLoaderSDK') do (
+@REM remove all directory except .git in SDK-CPP
+for /f "delims=" %%i in ('dir /b /ad SDK-CPP') do (
     if not "%%i"==".git" (
-        echo [INFO] Removing LiteLoaderSDK\%%i
-        rd /s /q LiteLoaderSDK\%%i
+        echo [INFO] Removing SDK-CPP\%%i
+        rd /s /q SDK-CPP\%%i
     )
 )
 
-@REM copy all from build/sdk to LiteLoaderSDK
-xcopy /e /y /i /q build\SDK\* LiteLoaderSDK
+@REM copy all from build/sdk to SDK-CPP
+xcopy /e /y /i /q build\SDK\* SDK-CPP
 
-cd LiteLoaderSDK
+cd SDK-CPP
 for /f "delims=" %%i in ('git status . -s') do set LL_SDK_NOW_STATUS=%%i
 if "%LL_SDK_NOW_STATUS%" neq "" (
     echo [INFO] Modified files found.
@@ -78,8 +78,8 @@ if "%LL_SDK_NOW_STATUS%" neq "" (
         git push origin %LL_SDK_NOW_BRANCH%
         git push --tags origin %LL_SDK_NOW_BRANCH%
     ) else (
-        git push https://%USERNAME%:%REPO_KEY%@github.com/LiteLDev/LiteLoaderSDK.git %LL_SDK_NOW_BRANCH%
-        git push --tags https://%USERNAME%:%REPO_KEY%@github.com/LiteLDev/LiteLoaderSDK.git %LL_SDK_NOW_BRANCH%
+        git push git@github.com:LiteLDev/SDK-CPP.git %LL_SDK_NOW_BRANCH%
+        git push --tags git@github.com:LiteLDev/SDK-CPP.git %LL_SDK_NOW_BRANCH%
     )
     cd ..
     echo.
@@ -91,7 +91,7 @@ if "%LL_SDK_NOW_STATUS%" neq "" (
     echo.
     echo.
     echo [INFO] No modified files found.
-    echo [INFO] No need to Upgrade LiteLoaderSDK.
+    echo [INFO] No need to Upgrade SDK-CPP.
     goto Finish
 )
 

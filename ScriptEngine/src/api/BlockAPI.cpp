@@ -7,6 +7,7 @@
 #include "api/BlockEntityAPI.h"
 #include "api/NbtAPI.h"
 #include "api/NativeAPI.h"
+#include <llapi/mc/HashedString.hpp>
 #include <llapi/mc/Level.hpp>
 #include <llapi/mc/Block.hpp>
 #include <llapi/mc/CompoundTag.hpp>
@@ -110,8 +111,8 @@ Block* BlockClass::extract(Local<Value> v) {
 
 // member function
 void BlockClass::preloadData(BlockPos bp, int dim) {
-    name = block->getTypeName(); // TODO
-    type = block->getTypeName();
+    name = block->getName().getString(); // TODO
+    type = block->getName().getString();
     id = block->getId();
     pos = {bp.x, bp.y, bp.z, dim};
 }

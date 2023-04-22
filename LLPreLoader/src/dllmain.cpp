@@ -8,8 +8,12 @@ void loadDlls();
 
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserved) {
     if (ul_reason_for_call == DLL_PROCESS_ATTACH) {
-        // Do not use SetConsoleOutputCP here, it will cause color output to be broken
-        system("chcp 65001 > nul");
+        SetConsoleCP(CP_UTF8);
+        SetConsoleOutputCP(CP_UTF8);
+
+        DWORD mode;
+        GetConsoleMode(GetStdHandle(STD_OUTPUT_HANDLE), &mode);
+        SetConsoleMode(GetStdHandle(STD_OUTPUT_HANDLE), mode | ENABLE_VIRTUAL_TERMINAL_PROCESSING);
         // For #683, Change CWD to current module path
         auto buffer = new wchar_t[MAX_PATH];
         GetModuleFileName(hModule, buffer, MAX_PATH);

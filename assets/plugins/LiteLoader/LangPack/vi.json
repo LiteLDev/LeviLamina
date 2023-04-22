@@ -3,7 +3,7 @@
     "getDimName": {
       "0": "Thế giới chính",
       "1": "Địa ngục",
-      "2": "Kết thúc",
+      "2": "The End",
       "unknown": "Không gian khác"
     }
   },
@@ -29,11 +29,11 @@
         }
       },
       "bstats": {
-        "enabled": "bStats has been enabled, you can edit plugins/bStats/config.json to disable it"
+        "enabled": "bStats đã được bật, bạn có thể chỉnh sửa plugins/bStats/config.json để tắt nó"
       },
       "unpackResources": {
-        "begin": "Unpacking LiteLoaderBDS runtime resources. Please wait patiently...",
-        "end": "Unpacked."
+        "begin": "Giải nén tài nguyên thời gian LiteLoaderBDS. Xin hãy kiên nhẫn chờ đợi...",
+        "end": "Giải nén thành công."
       }
     },
     "antiAbnormalItem": {
@@ -135,9 +135,9 @@
         "conflicts": {
           "1": "Builtin CrashLogger không được bật vì plugin <{}> xung đột với nó",
           "2": "Sẽ không có nhật ký sự cố khi ngoại lệ được xử lý xảy ra",
-          "3": "điều này khiến cho việc tìm ra lý do của sự cố và nguồn gốc của sự cố gần như không thể.",
+          "3": "điều này gần như làm cho việc tìm ra nguyên nhân và nguồn gốc của sự cố trở nên khó khăn gần như là không thể.",
           "4": "Vì CrashLogger là một thành phần quan trọng đảm bảo sự ổn định của máy chủ",
-          "5": "Chúng tôi khuyên bạn nên suy nghĩ kỹ về việc sử dụng plugin <{}>"
+          "5": "Chúng tôi khuyên bạn nên suy nghĩ kỹ trước khi sử dụng plugin <{}>"
         }
       },
       "init": {
@@ -221,7 +221,7 @@
         "created": "Không tìm thấy thư mục để chạy Node.js, tạo."
       },
       "initPythonDirectories": {
-        "created": "Python runtime directory no found, created."
+        "created": "Không tìm thấy thư mục thời gian chạy Python, đã tạo một cái mới."
       }
     },
     "notice": {
@@ -250,7 +250,7 @@
       "fail": "Không thể giải nén node_modules.tar"
     },
     "unzipPythonModules": {
-      "fail": "Failed to unzip python-env.zip"
+      "fail": "Không thể giải nén python-env.zip"
     }
   },
   "llse": {
@@ -296,10 +296,10 @@
           "done": "Đã cài đặt gói plugin {count} {type}."
         },
         "python": {
-          "ignored": "No pyproject.toml file found in directory {path}, ignored.",
+          "ignored": "Không tìm thấy tệp pyproject.toml trong thư mục {path}, đã bỏ qua.",
           "installPack": {
-            "start": "Found Python plugin pack \"{path}\"! Try installing...",
-            "fail": "Failed to install plugin pack {}, please check the source files!"
+            "start": "Đã tìm thấy gói plugin Python \"{path}\"! Đang thử cài đặt...",
+            "fail": "Không thể cài đặt gói plugin {}, vui lòng kiểm tra các tệp nguồn!"
           }
         }
       },
@@ -315,9 +315,9 @@
       },
       "python": {
         "executePipInstall": {
-          "start": "Executing \"pip install\" for plugin {name}...",
-          "success": "Pip finished successfully.",
-          "fail": "Error occurred. Exit code: {code}"
+          "start": "Đang thực thi \"pip install\" cho plugin {name}...",
+          "success": "Pip kết thúc thành công.",
+          "fail": "Xảy ra lỗi. Mã thoát: {code}"
         }
       }
     }
@@ -415,7 +415,7 @@
           "role": {
             "member": {
               "add": {
-                "success": "Đã thêm thành viên {name}§r({xuid}) vào Vai trò {roleDisplayName}§r."
+                "success": "Thành viên {name}§r({xuid}) đã được thêm vào vai trò {roleDisplayName}§r."
               },
               "remove": {
                 "success": "Đã xóa thành viên {name}§r({xuid}) khỏi Vai trò {roleDisplayName}§r."
@@ -458,6 +458,18 @@
         },
         "noDesc": "[Không có mô tả]",
         "permissionNameExamples": "Ví dụ về tên quyền: 'Namespace:PermissionName', 'a:b:c:d_e_f.g'"
+      }
+    }
+  },
+  "llseapi": {
+    "require": {
+      "fail": "Không tìm thấy plugin cần thiết cho {0}.",
+      "success": "Plugin có tên {0} cần thiết cho {1} đã được tải.",
+      "network": {
+        "fail": "Đã xảy ra lỗi khi tải plugin cần thiết cho {0}, mã http: {1}"
+      },
+      "download": {
+        "success": "Tải plugin cần thiết cho {0} thành công, đường dẫn {1}."
       }
     }
   }
