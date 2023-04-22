@@ -19,7 +19,7 @@
 class Abilities {
 
 #define AFTER_EXTRA
-    // Add Member There
+    std::array<Ability,19> mAbilities;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ABILITIES
