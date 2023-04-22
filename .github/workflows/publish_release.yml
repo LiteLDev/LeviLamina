@@ -59,7 +59,7 @@ jobs:
         if: steps.cache-bds-lib.outputs.cache-hit != 'true'
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
-          mkdir LiteLoader\lib
+          mkdir LiteLoader/lib
           cd tools
           ./PeEditor.exe -l --pdb Server/bedrock_server.pdb -o ../LiteLoader/lib
         shell: bash
