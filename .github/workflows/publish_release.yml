@@ -146,7 +146,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           cd scripts
-          cmd //c "UpdateSDK.cmd action"
+          cmd //c "UpdateSDK.cmd action release"
         shell: bash
 
       - name: Upload LiteLoaderBDS
