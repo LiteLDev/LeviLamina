@@ -149,11 +149,13 @@ Local<Value> LoggerClass::setConsole(const Arguments& args) {
         CHECK_ARG_TYPE(args[1], ValueKind::kNumber)
 
     try {
-        ENGINE_OWN_DATA()->toConsole = args[0].asBoolean().value();
         if (args.size() >= 2) {
             ENGINE_OWN_DATA()->logger.consoleLevel = args[1].toInt();
-            UpdateMaxLogLevel();
         }
+        if (!args[0].asBoolean().value()) {
+            ENGINE_OWN_DATA()->logger.consoleLevel = 0;
+        }
+        UpdateMaxLogLevel();
         return Boolean::newBoolean(true);
     }
     CATCH("Fail in LoggerSetConsole!")

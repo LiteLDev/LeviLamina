@@ -73,7 +73,6 @@ struct EngineOwnData {
     I18nBase* i18n = nullptr;
 
     // LoggerAPI
-    bool toConsole = true;
     ::Logger logger = ::Logger("");
     int maxLogLevel = 4;
 

@@ -1252,6 +1252,7 @@ Local<Value> PlayerClass::isOP(const Arguments& args) {
     CATCH("Fail in IsOP!")
 }
 
+#include <llapi/mc/UpdateAbilitiesPacket.hpp>
 Local<Value> PlayerClass::setPermLevel(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
@@ -1267,6 +1268,13 @@ Local<Value> PlayerClass::setPermLevel(const Arguments& args) {
             RecordOperation(ENGINE_OWN_DATA()->pluginName, "Set Permission Level",
                             fmt::format("Set Player {} Permission Level as {}.", player->getRealName(), newPerm));
             player->setPermissions((CommandPermissionLevel)newPerm);
+            if (newPerm >= 1) {
+                player->getAbilities().setPlayerPermissions(PlayerPermissionLevel::PlayerPermissionLevelOperator);
+            } else {
+                player->getAbilities().setPlayerPermissions(PlayerPermissionLevel::PlayerPermissionLevelMember);
+            }
+            UpdateAbilitiesPacket uPkt(player->getUniqueID(), player->getAbilities());
+            player->sendNetworkPacket(uPkt);
             res = true;
         }
         return Boolean::newBoolean(res);
