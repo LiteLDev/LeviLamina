@@ -142,14 +142,15 @@ typeid_t<T> type_id() {
     return id;
 }
 
-template <>
-class typeid_t<CommandRegistry> {
-public:
-    MCAPI static unsigned short count;
-    unsigned short value;
-    typeid_t<CommandRegistry>(typeid_t<CommandRegistry> const& id) : value(id.value){};
-    typeid_t<CommandRegistry>(unsigned short value) : value(value){};
-};
+// 这个上面我看有同样的模板类，就注释了，无用请删掉
+//template <>
+//class typeid_t<CommandRegistry> {
+//public:
+//    inline static unsigned short count = 0;
+//    unsigned short value;
+//    typeid_t<CommandRegistry>(typeid_t<CommandRegistry> const& id) : value(id.value){};
+//    typeid_t<CommandRegistry>(unsigned short value) : value(value){};
+//};
 
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDamageCause>();
@@ -167,8 +168,9 @@ template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPositionFloat>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPositionFloat>();
-template <>
-MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<class Actor>>();
+// 编译说已经在bedrock_server.lib中定义，我就注释了
+//template <>
+//MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<class Actor>>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<class Player>>();
 template <>
@@ -190,7 +192,7 @@ MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, std::string>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, std::unique_ptr<class Command>>();
 template <>
-MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class WildcardCommandSelector<Actor>>();
+MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class WildcardCommandSelector<class Actor>>();
 // template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandIntegerRange>();

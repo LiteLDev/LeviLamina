@@ -43,7 +43,7 @@ struct ActionValue {
 public:
     struct ActionValue& operator=(struct ActionValue const&) = delete;
     ActionValue(struct ActionValue const&) = delete;
-    ActionValue() = delete;
+//    ActionValue() = delete;
 
 public:
     /**
@@ -89,7 +89,7 @@ struct Button {
 public:
     struct Button& operator=(struct Button const&) = delete;
     Button(struct Button const&) = delete;
-    Button() = delete;
+//    Button() = delete;
 
 public:
     /**

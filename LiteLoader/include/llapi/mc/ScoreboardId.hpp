@@ -22,6 +22,10 @@ struct ScoreboardId {
 public:
     __int64 id;
     void* null;
+    ScoreboardId & operator++(){
+        ++id;
+        return *this;
+    }
 #undef AFTER_EXTRA
 public:
     /**
