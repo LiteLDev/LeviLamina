@@ -1051,7 +1051,7 @@ std::string getServerId(mce::UUID const& uuid) {
 bool Player::deletePlayerNbt(mce::UUID const& uuid) {
     try {
         auto& dbStorage = *Global<DBStorage>;
-        auto serverId = getServerId(uuid);
+        auto serverId = ::getServerId(uuid);
         if (serverId.empty())
             return false;
         if (!dbStorage.hasKey(serverId, playerCategory)) {
@@ -1065,7 +1065,7 @@ bool Player::deletePlayerNbt(mce::UUID const& uuid) {
 }
 
 std::unique_ptr<CompoundTag> getOfflineNbt(mce::UUID const& uuid) {
-    auto serverId = getServerId(uuid);
+    auto serverId = ::getServerId(uuid);
     if (serverId.empty()) {
         return nullptr;
     }
@@ -1085,7 +1085,7 @@ std::unique_ptr<CompoundTag> Player::getPlayerNbt(mce::UUID const& uuid) {
 bool setOfflineNbt(mce::UUID const& uuid, CompoundTag* nbt) {
     try {
         auto& data = *nbt;
-        auto serverId = getServerId(uuid);
+        auto serverId = ::getServerId(uuid);
         if (serverId.empty()) {
             return false;
         }
@@ -1097,7 +1097,7 @@ bool setOfflineNbt(mce::UUID const& uuid, CompoundTag* nbt) {
 
 bool Player::setPlayerNbt(mce::UUID const& uuid, CompoundTag* nbt) {
     try {
-        auto serverId = getServerId(uuid);
+        auto serverId = ::getServerId(uuid);
         if (serverId.empty()) {
             return false;
         }
@@ -1114,7 +1114,7 @@ bool Player::setPlayerNbt(mce::UUID const& uuid, CompoundTag* nbt) {
 bool Player::setPlayerNbtTags(mce::UUID const& uuid, CompoundTag* nbt, const vector<string>& tags) {
     try {
         auto& data = *nbt;
-        auto serverId = getServerId(uuid);
+        auto serverId = ::getServerId(uuid);
         if (serverId.empty()) {
             return false;
         }

@@ -7,6 +7,7 @@
 #include "api/NativeAPI.h"
 #include <llapi/mc/CompoundTag.hpp>
 #include <llapi/mc/ItemStack.hpp>
+#include <llapi/mc/Item.hpp>
 #include <vector>
 #include <string>
 
@@ -256,7 +257,7 @@ Local<Value> ItemClass::isLiquidClipItem() {
 
 Local<Value> ItemClass::isMusicDiscItem() {
     try {
-        return Boolean::newBoolean(item->isMusicDiscItem());
+        return Boolean::newBoolean(item->getItem()->isMusicDisk());
     }
     CATCH("Fail in isMusicDiscItem!");
 }

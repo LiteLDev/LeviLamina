@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
+#include "PlayerCapabilities.hpp"
 
 #define BEFORE_EXTRA
 // Add include headers & pre-declares
@@ -28,17 +29,6 @@ class Container;
 class Dimension;
 struct ActorUniqueID;
 class Packet;
-
-class PlayerCapabilities {
-public:
-    struct ISharedController {
-        void** vtable;
-    };
-
-    struct IPlayerData {
-
-    };
-};
 
 
 #undef BEFORE_EXTRA

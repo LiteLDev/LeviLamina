@@ -71,7 +71,7 @@ public:
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual ~Packet();
     /**
      * @vftbl 1
      * @symbol ?getId\@ClientCheatAbilityPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
