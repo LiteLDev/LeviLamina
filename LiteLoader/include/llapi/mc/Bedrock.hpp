@@ -142,15 +142,14 @@ typeid_t<T> type_id() {
     return id;
 }
 
-// 这个上面我看有同样的模板类，就注释了，无用请删掉
-//template <>
-//class typeid_t<CommandRegistry> {
-//public:
-//    inline static unsigned short count = 0;
-//    unsigned short value;
-//    typeid_t<CommandRegistry>(typeid_t<CommandRegistry> const& id) : value(id.value){};
-//    typeid_t<CommandRegistry>(unsigned short value) : value(value){};
-//};
+template <>
+class typeid_t<CommandRegistry> {
+public:
+    inline static unsigned short count = 0;
+    unsigned short value;
+    typeid_t<CommandRegistry>(typeid_t<CommandRegistry> const& id) : value(id.value){};
+    typeid_t<CommandRegistry>(unsigned short value) : value(value){};
+};
 
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDamageCause>();
