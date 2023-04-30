@@ -34,18 +34,21 @@ public:
 public:
     class PlayerListEntry& operator=(class PlayerListEntry const &) = delete;
     PlayerListEntry(class PlayerListEntry const &) = delete;
-    PlayerListEntry() = delete;
 #endif
 
 public:
     /**
-     * @symbol ??0PlayerListEntry\@\@QEAA\@VUUID\@mce\@\@\@Z
+     * @symbol ??0PlayerListEntry\@\@QEAA\@XZ
      */
-    MCAPI PlayerListEntry(class mce::UUID);
+    MCAPI PlayerListEntry();
     /**
      * @symbol ??0PlayerListEntry\@\@QEAA\@AEBVPlayer\@\@\@Z
      */
     MCAPI PlayerListEntry(class Player const &);
+    /**
+     * @symbol ??0PlayerListEntry\@\@QEAA\@VUUID\@mce\@\@\@Z
+     */
+    MCAPI PlayerListEntry(class mce::UUID);
     /**
      * @symbol ?clone\@PlayerListEntry\@\@QEBA?AV1\@XZ
      */
@@ -54,6 +57,18 @@ public:
      * @symbol ?read\@PlayerListEntry\@\@QEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
      */
     MCAPI bool read(class ReadOnlyBinaryStream &);
+    /**
+     * @symbol ?readRemove\@PlayerListEntry\@\@QEAAXAEAVReadOnlyBinaryStream\@\@\@Z
+     */
+    MCAPI void readRemove(class ReadOnlyBinaryStream &);
+    /**
+     * @symbol ?write\@PlayerListEntry\@\@QEBAXAEAVBinaryStream\@\@\@Z
+     */
+    MCAPI void write(class BinaryStream &) const;
+    /**
+     * @symbol ?writeRemove\@PlayerListEntry\@\@QEBAXAEAVBinaryStream\@\@\@Z
+     */
+    MCAPI void writeRemove(class BinaryStream &) const;
     /**
      * @symbol ??1PlayerListEntry\@\@QEAA\@XZ
      */

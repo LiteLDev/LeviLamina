@@ -22,6 +22,7 @@ class ScriptFormPromiseTracker {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTFORMPROMISETRACKER
 public:
+    class ScriptFormPromiseTracker& operator=(class ScriptFormPromiseTracker const &) = delete;
     ScriptFormPromiseTracker(class ScriptFormPromiseTracker const &) = delete;
 #endif
 
@@ -48,10 +49,6 @@ public:
      * @symbol ?handlePlayerQuit\@ScriptFormPromiseTracker\@\@QEAAXAEBVNetworkIdentifier\@\@\@Z
      */
     MCAPI void handlePlayerQuit(class NetworkIdentifier const &);
-    /**
-     * @symbol ??4ScriptFormPromiseTracker\@\@QEAAAEAV0\@AEBV0\@\@Z
-     */
-    MCAPI class ScriptFormPromiseTracker & operator=(class ScriptFormPromiseTracker const &);
     /**
      * @symbol ?rejectAllForShutdown\@ScriptFormPromiseTracker\@\@QEAAXXZ
      */

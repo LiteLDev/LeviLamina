@@ -206,6 +206,9 @@ using ll::logger;
 #include "llapi/mc/CameraPresetsPacket.hpp"
 #include "llapi/mc/UnlockedRecipesPacket.hpp"
 #include "llapi/mc/CameraInstructionPacket.hpp"
+#include "llapi/mc/CompressedBiomeDefinitionListPacket.hpp"
+#include "llapi/mc/TrimDataPacket.hpp"
+#include "llapi/mc/OpenSignPacket.hpp"
 
 #endif INCLUDE_ALL_PACKET
 
@@ -406,7 +409,10 @@ using ll::logger;
     Func(ClientCheatAbilityPacket)                 \
     Func(CameraPresetsPacket)                      \
     Func(UnlockedRecipesPacket)                    \
-    Func(CameraInstructionPacket)                  
+    Func(CameraInstructionPacket)                  \
+    Func(CompressedBiomeDefinitionListPacket)      \
+    Func(TrimDataPacket)                           \
+    Func(OpenSignPacket) 
 
 
 #define DeclearClass(packet) class packet;
@@ -832,6 +838,9 @@ static_assert(sizeof(ClientCheatAbilityPacket) == 0x58, "size of ClientCheatAbil
 static_assert(sizeof(CameraPresetsPacket) == 0x48, "size of CameraPresetsPacket should be 72");
 static_assert(sizeof(UnlockedRecipesPacket) == 0x50, "size of UnlockedRecipesPacket should be 80");
 static_assert(sizeof(CameraInstructionPacket) == 0x48, "size of CameraInstructionPacket should be 72");
+static_assert(sizeof(CompressedBiomeDefinitionListPacket) == 0x48, "size of CompressedBiomeDefinitionListPacket should be 72");
+static_assert(sizeof(TrimDataPacket) == 0x60, "size of TrimDataPacket should be 96");
+static_assert(sizeof(OpenSignPacket) == 0x40, "size of OpenSignPacket should be 64");
 
 #endif // SIZE_STATIC_ASSERT
 
@@ -1030,5 +1039,8 @@ static_assert(sizeof(ClientCheatAbilityPacket) == 0x58 || sizeof(ClientCheatAbil
 static_assert(sizeof(CameraPresetsPacket) == 0x48 || sizeof(CameraPresetsPacket) == 48, "size of CameraPresetsPacket should be 72 or 48(default)");
 static_assert(sizeof(UnlockedRecipesPacket) == 0x50 || sizeof(UnlockedRecipesPacket) == 48, "size of UnlockedRecipesPacket should be 80 or 48(default)");
 static_assert(sizeof(CameraInstructionPacket) == 0x48 || sizeof(CameraInstructionPacket) == 48, "size of CameraInstructionPacket should be 72 or 48(default)");
+static_assert(sizeof(CompressedBiomeDefinitionListPacket) == 0x48 || sizeof(CompressedBiomeDefinitionListPacket) == 48, "size of CompressedBiomeDefinitionListPacket should be 72 or 48(default)");
+static_assert(sizeof(TrimDataPacket) == 0x60 || sizeof(TrimDataPacket) == 48, "size of TrimDataPacket should be 96 or 48(default)");
+static_assert(sizeof(OpenSignPacket) == 0x40 || sizeof(OpenSignPacket) == 48, "size of OpenSignPacket should be 64 or 48(default)");
 
 #endif // SIZE_STATIC_ASSERT_IF_DEFINE

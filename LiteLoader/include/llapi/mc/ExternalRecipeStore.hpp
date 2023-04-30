@@ -30,10 +30,6 @@ public:
 
 public:
     /**
-     * @symbol ?registerBlockReduction\@ExternalRecipeStore\@\@QEAAXAEBVItemStack\@\@$$QEAV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@\@Z
-     */
-    MCAPI void registerBlockReduction(class ItemStack const &, std::vector<class ItemStack> &&);
-    /**
      * @symbol ?setBlockReducer\@ExternalRecipeStore\@\@QEAAXPEAVBlockReducer\@\@\@Z
      */
     MCAPI void setBlockReducer(class BlockReducer *);

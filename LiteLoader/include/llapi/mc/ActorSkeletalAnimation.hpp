@@ -50,64 +50,8 @@ public:
      */
     MCAPI class ActorSoundEffectEvent & addSoundEffectEvent(float);
     /**
-     * @symbol ?calculateAnimationLength\@ActorSkeletalAnimation\@\@QEAAXXZ
-     */
-    MCAPI void calculateAnimationLength();
-    /**
-     * @symbol ?getBoneAnimations\@ActorSkeletalAnimation\@\@QEAAAEAV?$vector\@VBoneAnimation\@\@V?$allocator\@VBoneAnimation\@\@\@std\@\@\@std\@\@XZ
-     */
-    MCAPI std::vector<class BoneAnimation> & getBoneAnimations();
-    /**
-     * @symbol ?initPrecomputedInterpolation\@ActorSkeletalAnimation\@\@QEAAXXZ
-     */
-    MCAPI void initPrecomputedInterpolation();
-    /**
      * @symbol ?removeIrrelevantKeyFramesAndConvertAllFloatKeyFramesToSimplifiedVersion\@ActorSkeletalAnimation\@\@QEAAXXZ
      */
     MCAPI void removeIrrelevantKeyFramesAndConvertAllFloatKeyFramesToSimplifiedVersion();
-    /**
-     * @symbol ?setAnimTimeUpdate\@ActorSkeletalAnimation\@\@QEAAXAEBVExpressionNode\@\@\@Z
-     */
-    MCAPI void setAnimTimeUpdate(class ExpressionNode const &);
-    /**
-     * @symbol ?setAnimationLength\@ActorSkeletalAnimation\@\@QEAAXM\@Z
-     */
-    MCAPI void setAnimationLength(float);
-    /**
-     * @symbol ?setBlendWeight\@ActorSkeletalAnimation\@\@QEAAXAEBVExpressionNode\@\@\@Z
-     */
-    MCAPI void setBlendWeight(class ExpressionNode const &);
-    /**
-     * @symbol ?setLoopDelay\@ActorSkeletalAnimation\@\@QEAAXAEBVExpressionNode\@\@\@Z
-     */
-    MCAPI void setLoopDelay(class ExpressionNode const &);
-    /**
-     * @symbol ?setLoopMode\@ActorSkeletalAnimation\@\@QEAAXW4AnimationLoopMode\@\@\@Z
-     */
-    MCAPI void setLoopMode(enum class AnimationLoopMode);
-    /**
-     * @symbol ?setShouldOverridePreviousAnimation\@ActorSkeletalAnimation\@\@QEAAX_N\@Z
-     */
-    MCAPI void setShouldOverridePreviousAnimation(bool);
-    /**
-     * @symbol ?setStartDelay\@ActorSkeletalAnimation\@\@QEAAXAEBVExpressionNode\@\@\@Z
-     */
-    MCAPI void setStartDelay(class ExpressionNode const &);
-    /**
-     * @symbol ?sortEvents\@ActorSkeletalAnimation\@\@QEAAXXZ
-     */
-    MCAPI void sortEvents();
-    /**
-     * @symbol ?sortParticleEffectEvents\@ActorSkeletalAnimation\@\@QEAAXXZ
-     */
-    MCAPI void sortParticleEffectEvents();
-    /**
-     * @symbol ?sortSoundEffectEvents\@ActorSkeletalAnimation\@\@QEAAXXZ
-     */
-    MCAPI void sortSoundEffectEvents();
-    /**
-     * @symbol ??1ActorSkeletalAnimation\@\@QEAA\@XZ
-     */
-    MCAPI ~ActorSkeletalAnimation();
 
 };

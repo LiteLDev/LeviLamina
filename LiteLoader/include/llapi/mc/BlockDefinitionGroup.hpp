@@ -61,10 +61,6 @@ public:
      */
     MCAPI std::vector<struct BlockDefinition const *> getBlockDefinitions() const;
     /**
-     * @symbol ?initBlockLegacyFromDefinition\@BlockDefinitionGroup\@\@QEAAXAEAVBlockLegacy\@\@AEBUBlockDefinition\@\@\@Z
-     */
-    MCAPI void initBlockLegacyFromDefinition(class BlockLegacy &, struct BlockDefinition const &);
-    /**
      * @symbol ?initializeBlockFromDefinition\@BlockDefinitionGroup\@\@QEAAXAEBUBlockDefinition\@\@AEAVEntityRegistry\@\@AEAVLevel\@\@\@Z
      */
     MCAPI void initializeBlockFromDefinition(struct BlockDefinition const &, class EntityRegistry &, class Level &);
@@ -76,6 +72,10 @@ public:
      * @symbol ?loadResources\@BlockDefinitionGroup\@\@QEAAXAEAVResourcePackManager\@\@AEBVBlockComponentFactory\@\@AEBVExperiments\@\@\@Z
      */
     MCAPI void loadResources(class ResourcePackManager &, class BlockComponentFactory const &, class Experiments const &);
+    /**
+     * @symbol ?postProcessComponents\@BlockDefinitionGroup\@\@QEAAXAEAVBlockLegacy\@\@\@Z
+     */
+    MCAPI void postProcessComponents(class BlockLegacy &);
     /**
      * @symbol ?registerBlockDefinition\@BlockDefinitionGroup\@\@QEAAXV?$unique_ptr\@UBlockDefinition\@\@U?$default_delete\@UBlockDefinition\@\@\@std\@\@\@std\@\@\@Z
      */
@@ -106,6 +106,10 @@ public:
      * @symbol ?_buildBlockMenuCategorySchema\@BlockDefinitionGroup\@\@AEAAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UBlockDescription\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI void _buildBlockMenuCategorySchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockDescription>> &);
+    /**
+     * @symbol ?_initializeComponentPostProcessors\@BlockDefinitionGroup\@\@AEAAXXZ
+     */
+    MCAPI void _initializeComponentPostProcessors();
     /**
      * @symbol ?_loadBlockDescription\@BlockDefinitionGroup\@\@AEAA_NAEBVValue\@Json\@\@AEAUBlockDescription\@\@\@Z
      */

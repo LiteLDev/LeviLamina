@@ -32,10 +32,6 @@ public:
      * @symbol ??0BeardKernel\@\@QEAA\@XZ
      */
     MCAPI BeardKernel();
-    /**
-     * @symbol ?getContribution\@BeardKernel\@\@QEBAMHHH\@Z
-     */
-    MCAPI float getContribution(int, int, int) const;
 
 //private:
     /**

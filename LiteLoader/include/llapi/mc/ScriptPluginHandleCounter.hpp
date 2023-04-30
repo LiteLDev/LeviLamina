@@ -71,18 +71,6 @@ public:
      */
     MCVAPI void onPreLifetimeScopeDestroy(class Scripting::LifetimeRegistry &);
 #endif
-    /**
-     * @symbol ??0ScriptPluginHandleCounter\@\@QEAA\@AEAVScriptPlugin\@\@\@Z
-     */
-    MCAPI ScriptPluginHandleCounter(class ScriptPlugin &);
-    /**
-     * @symbol ?getName\@ScriptPluginHandleCounter\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string getName() const;
-    /**
-     * @symbol ?getScriptPlugin\@ScriptPluginHandleCounter\@\@QEAAAEAVScriptPlugin\@\@XZ
-     */
-    MCAPI class ScriptPlugin & getScriptPlugin();
 
 //private:
     /**

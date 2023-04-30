@@ -59,10 +59,6 @@ public:
      */
     MCAPI class PropertyMetadata const * getPropertyMetadata(unsigned __int64) const;
     /**
-     * @symbol ?getPropertyMetadataByString\@PropertyGroup\@\@QEBAPEBVPropertyMetadata\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI class PropertyMetadata const * getPropertyMetadataByString(std::string const &) const;
-    /**
      * @symbol ?hasAnyClientSyncProperties\@PropertyGroup\@\@QEBA_NXZ
      */
     MCAPI bool hasAnyClientSyncProperties() const;

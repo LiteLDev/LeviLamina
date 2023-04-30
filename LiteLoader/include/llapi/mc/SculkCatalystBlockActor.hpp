@@ -82,9 +82,9 @@ public:
 
 //private:
     /**
-     * @symbol ?_trySendItSpreadsEventPacket\@SculkCatalystBlockActor\@\@CAXAEAVActor\@\@\@Z
+     * @symbol ?_tryConsumeOnDeathExperience\@SculkCatalystBlockActor\@\@AEAAXAEAVLevel\@\@AEAVActor\@\@\@Z
      */
-    MCAPI static void _trySendItSpreadsEventPacket(class Actor &);
+    MCAPI void _tryConsumeOnDeathExperience(class Level &, class Actor &);
 
 private:
 

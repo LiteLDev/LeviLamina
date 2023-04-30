@@ -62,6 +62,10 @@ public:
      */
     MCAPI bool isUnassigned() const;
     /**
+     * @symbol ??8NetworkIdentifier\@\@QEBA_NAEBV0\@\@Z
+     */
+    MCAPI bool operator==(class NetworkIdentifier const &) const;
+    /**
      * @symbol ?toString\@NetworkIdentifier\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string toString() const;

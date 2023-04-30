@@ -31,9 +31,5 @@ public:
      * @symbol ??0EventingRequestQueueComponent\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI EventingRequestQueueComponent(struct EventingRequestQueueComponent &&);
-    /**
-     * @symbol ??1EventingRequestQueueComponent\@\@QEAA\@XZ
-     */
-    MCAPI ~EventingRequestQueueComponent();
 
 };

@@ -1724,13 +1724,13 @@ public:
      */
     MCAPI float distanceTo(class Actor const &) const;
     /**
-     * @symbol ?distanceToSqr\@Actor\@\@QEBAMAEBVVec3\@\@\@Z
-     */
-    MCAPI float distanceToSqr(class Vec3 const &) const;
-    /**
      * @symbol ?distanceToSqr\@Actor\@\@QEBAMAEBV1\@\@Z
      */
     MCAPI float distanceToSqr(class Actor const &) const;
+    /**
+     * @symbol ?distanceToSqr\@Actor\@\@QEBAMAEBVVec3\@\@\@Z
+     */
+    MCAPI float distanceToSqr(class Vec3 const &) const;
     /**
      * @symbol ?dropLeash\@Actor\@\@QEAAX_N0\@Z
      */
@@ -1740,9 +1740,9 @@ public:
      */
     MCAPI void dropTowards(class ItemStack const &, class Vec3);
     /**
-     * @symbol ?evaluateSeatRotation\@Actor\@\@QEAAMAEBVRideableComponent\@\@\@Z
+     * @symbol ?evaluateSeatRotation\@Actor\@\@QEAAMAEBVRideableComponent\@\@_N\@Z
      */
-    MCAPI float evaluateSeatRotation(class RideableComponent const &);
+    MCAPI float evaluateSeatRotation(class RideableComponent const &, bool);
     /**
      * @symbol ?executeEvent\@Actor\@\@QEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVVariantParameterList\@\@\@Z
      */
@@ -1824,10 +1824,6 @@ public:
      */
     MCAPI class ItemStack const & getCarriedItemInSlotPreferredBy(class ItemStack const &) const;
     /**
-     * @symbol ?getCategories\@Actor\@\@QEBA?AW4ActorCategory\@\@XZ
-     */
-    MCAPI enum class ActorCategory getCategories() const;
-    /**
      * @symbol ?getChainedDamageEffects\@Actor\@\@QEBA_NXZ
      */
     MCAPI bool getChainedDamageEffects() const;
@@ -1884,21 +1880,21 @@ public:
      */
     MCAPI class EconomyTradeableComponent * getEconomyTradeableComponent() const;
     /**
-     * @symbol ?getEffect\@Actor\@\@QEBAPEBVMobEffectInstance\@\@I\@Z
-     */
-    MCAPI class MobEffectInstance const * getEffect(unsigned int) const;
-    /**
      * @symbol ?getEffect\@Actor\@\@QEBAPEBVMobEffectInstance\@\@AEBVMobEffect\@\@\@Z
      */
     MCAPI class MobEffectInstance const * getEffect(class MobEffect const &) const;
     /**
-     * @symbol ?getEntityData\@Actor\@\@QEBAAEBVSynchedActorDataEntityWrapper\@\@XZ
+     * @symbol ?getEffect\@Actor\@\@QEBAPEBVMobEffectInstance\@\@I\@Z
      */
-    MCAPI class SynchedActorDataEntityWrapper const & getEntityData() const;
+    MCAPI class MobEffectInstance const * getEffect(unsigned int) const;
     /**
      * @symbol ?getEntityData\@Actor\@\@QEAAAEAVSynchedActorDataEntityWrapper\@\@XZ
      */
     MCAPI class SynchedActorDataEntityWrapper & getEntityData();
+    /**
+     * @symbol ?getEntityData\@Actor\@\@QEBAAEBVSynchedActorDataEntityWrapper\@\@XZ
+     */
+    MCAPI class SynchedActorDataEntityWrapper const & getEntityData() const;
     /**
      * @symbol ?getEntityRegistry\@Actor\@\@QEAA?AV?$StackRefResultT\@UEntityRegistryRefTraits\@\@\@\@XZ
      */
@@ -1992,13 +1988,13 @@ public:
      */
     MCAPI struct ActorUniqueID getLeashHolder() const;
     /**
-     * @symbol ?getLevel\@Actor\@\@QEBAAEBVLevel\@\@XZ
-     */
-    MCAPI class Level const & getLevel() const;
-    /**
      * @symbol ?getLevel\@Actor\@\@QEAAAEAVLevel\@\@XZ
      */
     MCAPI class Level & getLevel();
+    /**
+     * @symbol ?getLevel\@Actor\@\@QEBAAEBVLevel\@\@XZ
+     */
+    MCAPI class Level const & getLevel() const;
     /**
      * @symbol ?getLevelTimeStamp\@Actor\@\@QEBA_KXZ
      */
@@ -2588,13 +2584,13 @@ public:
      */
     MCAPI bool isWalker() const;
     /**
-     * @symbol ?lerpTo\@Actor\@\@QEAAXAEBVVec3\@\@AEBVVec2\@\@MH\@Z
-     */
-    MCAPI void lerpTo(class Vec3 const &, class Vec2 const &, float, int);
-    /**
      * @symbol ?lerpTo\@Actor\@\@QEAAXAEBVVec3\@\@AEBVVec2\@\@H\@Z
      */
     MCAPI void lerpTo(class Vec3 const &, class Vec2 const &, int);
+    /**
+     * @symbol ?lerpTo\@Actor\@\@QEAAXAEBVVec3\@\@AEBVVec2\@\@MH\@Z
+     */
+    MCAPI void lerpTo(class Vec3 const &, class Vec2 const &, float, int);
     /**
      * @symbol ?lerpToRotation\@Actor\@\@QEAAXAEBVVec2\@\@H\@Z
      */
@@ -2656,6 +2652,10 @@ public:
      */
     MCAPI void playMovementSound();
     /**
+     * @symbol ?playSound\@Actor\@\@QEAAXAEBVIConstBlockSource\@\@W4LevelSoundEvent\@\@AEBVVec3\@\@H\@Z
+     */
+    MCAPI void playSound(class IConstBlockSource const &, enum class LevelSoundEvent, class Vec3 const &, int);
+    /**
      * @symbol ?playSound\@Actor\@\@QEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@AEBVBlock\@\@\@Z
      */
     MCAPI void playSound(enum class LevelSoundEvent, class Vec3 const &, class Block const &);
@@ -2663,10 +2663,6 @@ public:
      * @symbol ?playSound\@Actor\@\@QEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@H\@Z
      */
     MCAPI void playSound(enum class LevelSoundEvent, class Vec3 const &, int);
-    /**
-     * @symbol ?playSound\@Actor\@\@QEAAXAEBVIConstBlockSource\@\@W4LevelSoundEvent\@\@AEBVVec3\@\@H\@Z
-     */
-    MCAPI void playSound(class IConstBlockSource const &, enum class LevelSoundEvent, class Vec3 const &, int);
     /**
      * @symbol ?positionAllPassengers\@Actor\@\@QEAAXXZ
      */
@@ -3076,6 +3072,10 @@ public:
      */
     MCAPI bool tick(class BlockSource &);
     /**
+     * @symbol ?tickBlockDamage\@Actor\@\@QEAAXXZ
+     */
+    MCAPI void tickBlockDamage();
+    /**
      * @symbol ?transferTickingArea\@Actor\@\@QEAAXAEAVDimension\@\@\@Z
      */
     MCAPI void transferTickingArea(class Dimension &);
@@ -3262,6 +3262,10 @@ public:
      */
     MCAPI void _initializeMaxAutoStep(float);
     /**
+     * @symbol ?_isDeathLootAllowed\@Actor\@\@IEBA_NXZ
+     */
+    MCAPI bool _isDeathLootAllowed() const;
+    /**
      * @symbol ?_isHeadInWater\@Actor\@\@IEBA_NXZ
      */
     MCAPI bool _isHeadInWater() const;
@@ -3331,6 +3335,10 @@ public:
      * @symbol ?_defaultInitEquipmentDropChances\@Actor\@\@AEAAXXZ
      */
     MCAPI void _defaultInitEquipmentDropChances();
+    /**
+     * @symbol ?_initAliasProperties\@Actor\@\@AEAAXXZ
+     */
+    MCAPI void _initAliasProperties();
     /**
      * @symbol ?_initializeLeashRopeSystem\@Actor\@\@AEAAXPEAV1\@\@Z
      */

@@ -47,53 +47,13 @@ public:
     MCVAPI ~ScriptPlugin();
 #endif
     /**
-     * @symbol ??0ScriptPlugin\@\@QEAA\@$$QEAUModuleDescriptor\@Scripting\@\@$$QEAV?$vector\@UModuleDescriptor\@Scripting\@\@V?$allocator\@UModuleDescriptor\@Scripting\@\@\@std\@\@\@std\@\@$$QEAUCapabilities\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@4\@33$$QEAV?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@\@std\@\@\@2\@\@4\@\@Z
-     */
-    MCAPI ScriptPlugin(struct Scripting::ModuleDescriptor &&, std::vector<struct Scripting::ModuleDescriptor> &&, struct Scripting::Capabilities &&, std::string const &, std::string const &, std::string const &, class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> &&);
-    /**
-     * @symbol ?getCapabilities\@ScriptPlugin\@\@QEBAAEBUCapabilities\@Scripting\@\@XZ
-     */
-    MCAPI struct Scripting::Capabilities const & getCapabilities() const;
-    /**
-     * @symbol ?getEngineVersion\@ScriptPlugin\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string const & getEngineVersion() const;
-    /**
-     * @symbol ?getModuleDependencies\@ScriptPlugin\@\@QEBAAEBV?$vector\@UModuleDescriptor\@Scripting\@\@V?$allocator\@UModuleDescriptor\@Scripting\@\@\@std\@\@\@std\@\@XZ
-     */
-    MCAPI std::vector<struct Scripting::ModuleDescriptor> const & getModuleDependencies() const;
-    /**
-     * @symbol ?getModuleDescriptor\@ScriptPlugin\@\@QEBAAEBUModuleDescriptor\@Scripting\@\@XZ
-     */
-    MCAPI struct Scripting::ModuleDescriptor const & getModuleDescriptor() const;
-    /**
-     * @symbol ?getRuntimeName\@ScriptPlugin\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string const & getRuntimeName() const;
-    /**
-     * @symbol ?getScriptContext\@ScriptPlugin\@\@QEAAAEAVScriptContext\@Scripting\@\@XZ
-     */
-    MCAPI class Scripting::ScriptContext & getScriptContext();
-    /**
-     * @symbol ?getScriptMainName\@ScriptPlugin\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string const & getScriptMainName() const;
-    /**
      * @symbol ?hasErrors\@ScriptPlugin\@\@QEBA_NXZ
      */
     MCAPI bool hasErrors() const;
     /**
-     * @symbol ?loadScriptMain\@ScriptPlugin\@\@QEAA?AV?$optional\@UScriptData\@Scripting\@\@\@std\@\@XZ
-     */
-    MCAPI class std::optional<struct Scripting::ScriptData> loadScriptMain();
-    /**
      * @symbol ?reportErrors\@ScriptPlugin\@\@QEBA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
      */
     MCAPI std::vector<std::string> reportErrors() const;
-    /**
-     * @symbol ?setScriptContext\@ScriptPlugin\@\@QEAAX$$QEAVScriptContext\@Scripting\@\@\@Z
-     */
-    MCAPI void setScriptContext(class Scripting::ScriptContext &&);
 
 //private:
     /**

@@ -219,9 +219,9 @@ public:
      */
     virtual float getArmorKnockbackResistance() const;
     /**
-     * @symbol ??0ArmorItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVArmorMaterial\@0\@HW4ArmorSlot\@\@\@Z
+     * @symbol ??0ArmorItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVArmorMaterial\@0\@HW4ArmorSlot\@\@_N\@Z
      */
-    MCAPI ArmorItem(std::string const &, int, class ArmorItem::ArmorMaterial const &, int, enum class ArmorSlot);
+    MCAPI ArmorItem(std::string const &, int, class ArmorItem::ArmorMaterial const &, int, enum class ArmorSlot, bool);
     /**
      * @symbol ?CHAIN\@ArmorItem\@\@2VArmorMaterial\@1\@B
      */

@@ -55,9 +55,5 @@ public:
      * @symbol ?postProcess\@MineshaftRoom\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-    /**
-     * @symbol ??0MineshaftRoom\@\@QEAA\@AEAUMineshaftData\@\@HAEAVRandom\@\@HH\@Z
-     */
-    MCAPI MineshaftRoom(struct MineshaftData &, int, class Random &, int, int);
 
 };

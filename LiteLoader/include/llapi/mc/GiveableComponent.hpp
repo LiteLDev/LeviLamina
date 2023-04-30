@@ -33,9 +33,5 @@ public:
      * @symbol ?getInteraction\@GiveableComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
-    /**
-     * @symbol ??1GiveableComponent\@\@QEAA\@XZ
-     */
-    MCAPI ~GiveableComponent();
 
 };

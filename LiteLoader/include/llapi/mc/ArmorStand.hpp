@@ -158,6 +158,11 @@ public:
      */
     virtual void __unk_vfn_243();
     /**
+     * @vftbl 244
+     * @symbol ?kill\@ArmorStand\@\@UEAAXXZ
+     */
+    virtual void kill();
+    /**
      * @vftbl 245
      * @symbol ?die\@ArmorStand\@\@UEAAXAEBVActorDamageSource\@\@\@Z
      */
@@ -227,10 +232,6 @@ public:
      * @symbol ??0ArmorStand\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI ArmorStand(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-    /**
-     * @symbol ?setPoseIndex\@ArmorStand\@\@QEAAXH\@Z
-     */
-    MCAPI void setPoseIndex(int);
 
 //private:
     /**

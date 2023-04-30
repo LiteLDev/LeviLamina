@@ -32,10 +32,6 @@ public:
      */
     MCAPI static void _tickGlideTriggerSystem(class StrictEntityContext const &, struct AABBShapeComponent const &, struct AbilitiesComponent const &, struct FallFlyTicksComponent const &, struct MoveInputComponent const &, struct StateVectorComponent const &, struct SynchedActorDataComponent const &, struct VanillaClientGameplayComponent const &, class Optional<class FlagComponent<struct ArmorFlyEnabledFlag> const>, class Optional<class FlagComponent<struct InWaterFlag> const>, class Optional<class FlagComponent<struct CanStandOnSnowFlag> const>, class Optional<class FlagComponent<struct HasLightweightFamilyFlag> const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct StopGlidingRequestFlag>> &, class IConstBlockSource const &);
     /**
-     * @symbol ?createSideBySideSystem\@GlideTriggerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI static struct TickingSystemWithInfo createSideBySideSystem();
-    /**
      * @symbol ?createSystem\@GlideTriggerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();

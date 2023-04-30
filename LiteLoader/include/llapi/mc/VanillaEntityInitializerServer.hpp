@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "VanillaSystemsRegistration.hpp"
 
 #define BEFORE_EXTRA
 
@@ -28,10 +27,6 @@ public:
 #endif
 
 public:
-    /**
-     * @symbol ?create\@VanillaEntityInitializerServer\@\@SA?AV?$unique_ptr\@VIEntityInitializer\@\@U?$default_delete\@VIEntityInitializer\@\@\@std\@\@\@std\@\@AEBURegistrationOptions\@VanillaSystemsRegistration\@\@\@Z
-     */
-    MCAPI static std::unique_ptr<class IEntityInitializer> create(struct VanillaSystemsRegistration::RegistrationOptions const &);
     /**
      * @symbol ?initECSMovement\@VanillaEntityInitializerServer\@\@SAXV?$unique_ptr\@VActor\@\@U?$default_delete\@VActor\@\@\@std\@\@\@std\@\@AEAVEntityContext\@\@AEBV4\@\@Z
      */

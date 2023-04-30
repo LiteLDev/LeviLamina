@@ -58,10 +58,6 @@ public:
      */
     MCAPI StructureAnimationAction(class StructureSettings const &, class AutomaticID<class Dimension, int>, class BlockPos const &, std::string const &);
     /**
-     * @symbol ?isValidTag\@StructureAnimationAction\@\@SA_NAEBVCompoundTag\@\@\@Z
-     */
-    MCAPI static bool isValidTag(class CompoundTag const &);
-    /**
      * @symbol ?load\@StructureAnimationAction\@\@SA?AV?$unique_ptr\@VStructureAnimationAction\@\@U?$default_delete\@VStructureAnimationAction\@\@\@std\@\@\@std\@\@AEBVCompoundTag\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
      */
     MCAPI static std::unique_ptr<class StructureAnimationAction> load(class CompoundTag const &, std::string const &);

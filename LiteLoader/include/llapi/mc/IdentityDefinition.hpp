@@ -40,21 +40,9 @@ public:
      */
     MCAPI IdentityDefinition(class IdentityDefinition const &);
     /**
-     * @symbol ??0IdentityDefinition\@\@QEAA\@AEBUScoreboardId\@\@AEBUActorUniqueID\@\@\@Z
-     */
-    MCAPI IdentityDefinition(struct ScoreboardId const &, struct ActorUniqueID const &);
-    /**
-     * @symbol ??0IdentityDefinition\@\@QEAA\@AEBUScoreboardId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI IdentityDefinition(struct ScoreboardId const &, std::string const &);
-    /**
      * @symbol ??0IdentityDefinition\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI IdentityDefinition(class IdentityDefinition &&);
-    /**
-     * @symbol ??0IdentityDefinition\@\@QEAA\@AEBUScoreboardId\@\@AEBUPlayerScoreboardId\@\@\@Z
-     */
-    MCAPI IdentityDefinition(struct ScoreboardId const &, struct PlayerScoreboardId const &);
     /**
      * @symbol ?getEntityId\@IdentityDefinition\@\@QEBAAEBUActorUniqueID\@\@XZ
      */
@@ -84,14 +72,6 @@ public:
      */
     MCAPI bool isEntityType() const;
     /**
-     * @symbol ?isFakeType\@IdentityDefinition\@\@QEBA_NXZ
-     */
-    MCAPI bool isFakeType() const;
-    /**
-     * @symbol ?isHiddenFakePlayerType\@IdentityDefinition\@\@QEBA_NXZ
-     */
-    MCAPI bool isHiddenFakePlayerType() const;
-    /**
      * @symbol ?isPlayerType\@IdentityDefinition\@\@QEBA_NXZ
      */
     MCAPI bool isPlayerType() const;
@@ -99,10 +79,6 @@ public:
      * @symbol ?isValid\@IdentityDefinition\@\@QEBA_NXZ
      */
     MCAPI bool isValid() const;
-    /**
-     * @symbol ??BIdentityDefinition\@\@QEBA_NXZ
-     */
-    MCAPI operator bool() const;
     /**
      * @symbol ??4IdentityDefinition\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
@@ -119,13 +95,5 @@ public:
      * @symbol ?Invalid\@IdentityDefinition\@\@2V1\@B
      */
     MCAPI static class IdentityDefinition const Invalid;
-    /**
-     * @symbol ?convertFakeToReal\@IdentityDefinition\@\@SA_NAEAV1\@AEBUPlayerScoreboardId\@\@\@Z
-     */
-    MCAPI static bool convertFakeToReal(class IdentityDefinition &, struct PlayerScoreboardId const &);
-    /**
-     * @symbol ?isHiddenFakePlayerNameString\@IdentityDefinition\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static bool isHiddenFakePlayerNameString(std::string const &);
 
 };

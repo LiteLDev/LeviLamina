@@ -44,9 +44,9 @@ public:
      */
     MCAPI std::vector<class Actor *> getRuntimeActorList() const;
     /**
-     * @symbol ?initialize\@ActorRuntimeIDManager\@\@QEAAXAEAVActorManager\@\@\@Z
+     * @symbol ?initialize\@ActorRuntimeIDManager\@\@QEAAXAEAVActorManager\@\@AEAVGameplayUserManager\@\@\@Z
      */
-    MCAPI void initialize(class ActorManager &);
+    MCAPI void initialize(class ActorManager &, class GameplayUserManager &);
     /**
      * @symbol ?removeRuntimeActorEntity\@ActorRuntimeIDManager\@\@QEAAXVActorRuntimeID\@\@\@Z
      */
@@ -58,6 +58,10 @@ public:
 
 //private:
     /**
+     * @symbol ?_addEntity\@ActorRuntimeIDManager\@\@AEAAXAEBVEntityContext\@\@\@Z
+     */
+    MCAPI void _addEntity(class EntityContext const &);
+    /**
      * @symbol ?_onActorAdded\@ActorRuntimeIDManager\@\@AEAAXAEAVActor\@\@\@Z
      */
     MCAPI void _onActorAdded(class Actor &);
@@ -65,6 +69,10 @@ public:
      * @symbol ?_onRemoveActorEntityReferences\@ActorRuntimeIDManager\@\@AEAAXAEAVActor\@\@\@Z
      */
     MCAPI void _onRemoveActorEntityReferences(class Actor &);
+    /**
+     * @symbol ?_removeEntity\@ActorRuntimeIDManager\@\@AEAAXAEBVEntityContext\@\@\@Z
+     */
+    MCAPI void _removeEntity(class EntityContext const &);
 
 private:
 

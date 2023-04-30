@@ -44,6 +44,11 @@ public:
     virtual void __unk_vfn_2();
     /**
      * @vftbl 3
+     * @symbol __unk_vfn_3
+     */
+    virtual void __unk_vfn_3();
+    /**
+     * @vftbl 4
      * @symbol ?tick\@SneakingSystem\@\@EEAAXAEAV?$StrictExecutionContext\@U?$Filter\@V?$FlagComponent\@UActorTickedFlag\@\@\@\@\@\@U?$Read\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@\@\@U?$Write\@USneakingComponent\@\@VActorOwnerComponent\@\@\@\@U?$AddRemove\@$$V\@\@U?$GlobalRead\@$$V\@\@U?$GlobalWrite\@$$V\@\@U?$EntityFactoryT\@$$V\@\@\@\@\@Z
      */
     virtual void tick(class StrictExecutionContext<struct Filter<class FlagComponent<struct ActorTickedFlag>>, struct Read<class FlagComponent<struct PlayerComponentFlag>>, struct Write<struct SneakingComponent, class ActorOwnerComponent>, struct AddRemove<>, struct GlobalRead<>, struct GlobalWrite<>, struct EntityFactoryT<>> &);

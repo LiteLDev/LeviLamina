@@ -26,6 +26,7 @@ class BeaconContainerScreenValidator : public ContainerScreenValidatorBase {
 public:
     class BeaconContainerScreenValidator& operator=(class BeaconContainerScreenValidator const &) = delete;
     BeaconContainerScreenValidator(class BeaconContainerScreenValidator const &) = delete;
+    BeaconContainerScreenValidator() = delete;
 #endif
 
 public:
@@ -34,9 +35,5 @@ public:
      * @symbol __unk_vfn_0
      */
     virtual void __unk_vfn_0();
-    /**
-     * @symbol ??0BeaconContainerScreenValidator\@\@QEAA\@XZ
-     */
-    MCAPI BeaconContainerScreenValidator();
 
 };

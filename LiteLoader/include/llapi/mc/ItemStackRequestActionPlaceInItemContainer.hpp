@@ -24,6 +24,7 @@ class ItemStackRequestActionPlaceInItemContainer : public ItemStackRequestAction
 public:
     class ItemStackRequestActionPlaceInItemContainer& operator=(class ItemStackRequestActionPlaceInItemContainer const &) = delete;
     ItemStackRequestActionPlaceInItemContainer(class ItemStackRequestActionPlaceInItemContainer const &) = delete;
+    ItemStackRequestActionPlaceInItemContainer() = delete;
 #endif
 
 public:
@@ -48,8 +49,14 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @symbol ??0ItemStackRequestActionPlaceInItemContainer\@\@QEAA\@XZ
+     * @vftbl 4
+     * @symbol ?_write\@ItemStackRequestActionTransferBase\@\@MEBAXAEAVBinaryStream\@\@\@Z
      */
-    MCAPI ItemStackRequestActionPlaceInItemContainer();
+    virtual void _write(class BinaryStream &) const;
+    /**
+     * @vftbl 5
+     * @symbol ?_read\@ItemStackRequestActionTransferBase\@\@MEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
+     */
+    virtual bool _read(class ReadOnlyBinaryStream &);
 
 };

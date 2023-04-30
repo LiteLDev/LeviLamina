@@ -11,15 +11,15 @@
 #undef BEFORE_EXTRA
 
 
-class MonsterAiStepSystem {
+struct MonsterAiStepSystem {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MONSTERAISTEPSYSTEM
 public:
-    class MonsterAiStepSystem& operator=(class MonsterAiStepSystem const &) = delete;
-    MonsterAiStepSystem(class MonsterAiStepSystem const &) = delete;
+    struct MonsterAiStepSystem& operator=(struct MonsterAiStepSystem const &) = delete;
+    MonsterAiStepSystem(struct MonsterAiStepSystem const &) = delete;
     MonsterAiStepSystem() = delete;
 #endif
 
@@ -41,6 +41,11 @@ public:
     virtual void __unk_vfn_2();
     /**
      * @vftbl 3
+     * @symbol __unk_vfn_3
+     */
+    virtual void __unk_vfn_3();
+    /**
+     * @vftbl 4
      * @symbol ?tick\@MonsterAiStepSystem\@\@UEAAXAEAV?$StrictExecutionContext\@U?$Filter\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UBlazeFlag\@\@\@\@V?$FlagComponent\@ULavaSlimeFlag\@\@\@\@V?$FlagComponent\@UMonsterFlag\@\@\@\@\@\@U?$Read\@UAABBShapeComponent\@\@UDimensionTypeComponent\@\@UOffsetsComponent\@\@UStateVectorComponent\@\@\@\@U?$Write\@UNoActionTimeComponent\@\@\@\@U?$AddRemove\@$$V\@\@U?$GlobalRead\@ULocalConstBlockSourceFactoryComponent\@\@\@\@U?$GlobalWrite\@$$V\@\@U?$EntityFactoryT\@$$V\@\@\@\@\@Z
      */
     virtual void tick(class StrictExecutionContext<struct Filter<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct BlazeFlag>, class FlagComponent<struct LavaSlimeFlag>, class FlagComponent<struct MonsterFlag>>, struct Read<struct AABBShapeComponent, struct DimensionTypeComponent, struct OffsetsComponent, struct StateVectorComponent>, struct Write<struct NoActionTimeComponent>, struct AddRemove<>, struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>, struct GlobalWrite<>, struct EntityFactoryT<>> &);

@@ -25,13 +25,10 @@ class BlockBreakSensorComponent {
 public:
     class BlockBreakSensorComponent& operator=(class BlockBreakSensorComponent const &) = delete;
     BlockBreakSensorComponent(class BlockBreakSensorComponent const &) = delete;
+    BlockBreakSensorComponent() = delete;
 #endif
 
 public:
-    /**
-     * @symbol ??0BlockBreakSensorComponent\@\@QEAA\@XZ
-     */
-    MCAPI BlockBreakSensorComponent();
     /**
      * @symbol ??0BlockBreakSensorComponent\@\@QEAA\@$$QEAV0\@\@Z
      */

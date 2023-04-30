@@ -50,6 +50,10 @@ public:
      */
     MCAPI bool isCompatible(int) const;
     /**
+     * @symbol ??9CommandVersion\@\@QEBA_NAEBV0\@\@Z
+     */
+    MCAPI bool operator!=(class CommandVersion const &) const;
+    /**
      * @symbol ?CurrentVersion\@CommandVersion\@\@2HB
      */
     MCAPI static int const CurrentVersion;

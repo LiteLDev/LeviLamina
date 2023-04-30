@@ -30,6 +30,10 @@ namespace CerealHelpers {
      */
     MCAPI void bindColor();
     /**
+     * @symbol ?bindGlmVec2\@CerealHelpers\@\@YAXXZ
+     */
+    MCAPI void bindGlmVec2();
+    /**
      * @symbol ?bindHelpers\@CerealHelpers\@\@YAXXZ
      */
     MCAPI void bindHelpers();
@@ -42,9 +46,17 @@ namespace CerealHelpers {
      */
     MCAPI void bindIntRange();
     /**
+     * @symbol ?bindLocIdString\@CerealHelpers\@\@YAXXZ
+     */
+    MCAPI void bindLocIdString();
+    /**
      * @symbol ?bindMceUUID\@CerealHelpers\@\@YAXXZ
      */
     MCAPI void bindMceUUID();
+    /**
+     * @symbol ?bindResourcePath\@CerealHelpers\@\@YAXXZ
+     */
+    MCAPI void bindResourcePath();
     /**
      * @symbol ?bindVec2\@CerealHelpers\@\@YAXXZ
      */
@@ -98,6 +110,10 @@ namespace CerealHelpers {
      */
     MCAPI class std::array<int, 4> colorToIntArray4(class mce::Color const &);
     /**
+     * @symbol ?glmVec2FromArray\@CerealHelpers\@\@YAXAEAU?$vec\@$01M$0A\@\@glm\@\@V?$array\@M$01\@std\@\@\@Z
+     */
+    MCAPI void glmVec2FromArray(struct glm::vec<2, float, 0> &, class std::array<float, 2>);
+    /**
      * @symbol ?hashedStringFromString\@CerealHelpers\@\@YAXAEAVHashedString\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void hashedStringFromString(class HashedString &, std::string const &);
@@ -106,9 +122,9 @@ namespace CerealHelpers {
      */
     MCAPI void identifierStringFromString(struct CerealHelpers::IdentifierString &, std::string const &);
     /**
-     * @symbol ?vec2FromArray\@CerealHelpers\@\@YAXAEAU?$vec\@$01M$0A\@\@glm\@\@V?$array\@M$01\@std\@\@\@Z
+     * @symbol ?vec2FromArray\@CerealHelpers\@\@YAXAEAVVec2\@\@V?$array\@M$01\@std\@\@\@Z
      */
-    MCAPI void vec2FromArray(struct glm::vec<2, float, 0> &, class std::array<float, 2>);
+    MCAPI void vec2FromArray(class Vec2 &, class std::array<float, 2>);
     /**
      * @symbol ?vec3AsArray\@CerealHelpers\@\@YA?AV?$array\@M$02\@std\@\@AEBVVec3\@\@\@Z
      */

@@ -167,6 +167,10 @@ public:
      */
     MCAPI bool isClientThirdPartyNameOnly() const;
     /**
+     * @symbol ?isCompatibleWithClientSideChunkGen\@ConnectionRequest\@\@QEBA_NXZ
+     */
+    MCAPI bool isCompatibleWithClientSideChunkGen() const;
+    /**
      * @symbol ?isEduMode\@ConnectionRequest\@\@QEBA_NXZ
      */
     MCAPI bool isEduMode() const;

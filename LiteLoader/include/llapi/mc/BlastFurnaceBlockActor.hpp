@@ -35,9 +35,5 @@ public:
      */
     MCVAPI std::string getName() const;
 #endif
-    /**
-     * @symbol ??0BlastFurnaceBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI BlastFurnaceBlockActor(class BlockPos const &);
 
 };

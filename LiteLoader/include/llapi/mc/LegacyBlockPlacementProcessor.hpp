@@ -42,10 +42,6 @@ public:
      */
     MCAPI class BlockPos & applyGravity(class BlockSource &, int, class BlockPos &) const;
     /**
-     * @symbol ?canPlace\@LegacyBlockPlacementProcessor\@\@QEAA_NXZ
-     */
-    MCAPI bool canPlace();
-    /**
      * @symbol ??1LegacyBlockPlacementProcessor\@\@QEAA\@XZ
      */
     MCAPI ~LegacyBlockPlacementProcessor();

@@ -25,6 +25,7 @@
 #include "llapi/mc/LoopbackPacketSender.hpp"
 #include "llapi/mc/ServerCommandOrigin.hpp"
 #include "llapi/mc/PlayerCommandOrigin.hpp"
+#include "llapi/mc/CommandOriginLoader.hpp"
 
 Actor* Level::getEntity(ActorUniqueID uniqueId) {
     try {
@@ -173,14 +174,14 @@ std::unique_ptr<CompoundTag> getPlayerOriginTag(Player& player) {
 }
 
 bool Level::executeCommand(const string& cmd) {
-    auto origin = ::ServerCommandOrigin::load(getServerOriginTag(), *Global<ServerLevel>);
+    auto origin = CommandOriginLoader::load(getServerOriginTag(), *Global<ServerLevel>);
     return MinecraftCommands::_runcmd(std::move(origin), cmd);
 }
 
 std::unordered_map<CommandOrigin const*, string*> resultOfOrigin = {};
 
 std::pair<bool, string> Level::executeCommandEx(const string& cmd) {
-    auto origin = ::ServerCommandOrigin::load(getServerOriginTag(), *Global<ServerLevel>);
+    auto origin = CommandOriginLoader::load(getServerOriginTag(), *Global<ServerLevel>);
     string val;
     auto ptr = origin.get();
     resultOfOrigin[ptr] = &val;
@@ -192,7 +193,7 @@ std::pair<bool, string> Level::executeCommandEx(const string& cmd) {
 
 bool Level::executeCommandAs(Player* pl, const string& cmd) {
     auto tag = getPlayerOriginTag(*pl);
-    auto origin = PlayerCommandOrigin::load(*tag, *Global<Level>);
+    auto origin = CommandOriginLoader::load(*tag, *Global<ServerLevel>);
     return MinecraftCommands::_runcmd(std::move(origin), cmd);
 }
 

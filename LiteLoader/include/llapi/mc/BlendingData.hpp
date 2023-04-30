@@ -28,10 +28,6 @@ public:
 
 public:
     /**
-     * @symbol ?createDataForStorage\@BlendingData\@\@QEBA?AUPersistentBlendData\@\@W4BlendVersion\@\@\@Z
-     */
-    MCAPI struct PersistentBlendData createDataForStorage(enum class BlendVersion) const;
-    /**
      * @symbol ?getBiome\@BlendingData\@\@QEBA?AV?$ScalarOptional\@E\@\@HHH\@Z
      */
     MCAPI class ScalarOptional<unsigned char> getBiome(int, int, int) const;

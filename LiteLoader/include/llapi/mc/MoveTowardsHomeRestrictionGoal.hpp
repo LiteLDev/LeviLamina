@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "MoveTowardsRestrictionGoal.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +15,7 @@
  * @brief MC class MoveTowardsHomeRestrictionGoal.
  *
  */
-class MoveTowardsHomeRestrictionGoal : public MoveTowardsRestrictionGoal {
+class MoveTowardsHomeRestrictionGoal {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -41,10 +40,20 @@ public:
      */
     virtual bool canUse();
     /**
+     * @vftbl 2
+     * @symbol __unk_vfn_2
+     */
+    virtual void __unk_vfn_2();
+    /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
+    /**
+     * @vftbl 4
+     * @symbol __unk_vfn_4
+     */
+    virtual void __unk_vfn_4();
     /**
      * @vftbl 5
      * @symbol __unk_vfn_5

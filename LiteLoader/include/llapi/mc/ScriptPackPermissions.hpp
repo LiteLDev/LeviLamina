@@ -19,11 +19,6 @@ class ScriptPackPermissions {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPACKPERMISSIONS
-public:
-    class ScriptPackPermissions& operator=(class ScriptPackPermissions const &) = delete;
-#endif
-
 public:
     /**
      * @symbol ??0ScriptPackPermissions\@\@QEAA\@XZ
@@ -34,13 +29,9 @@ public:
      */
     MCAPI ScriptPackPermissions(class ScriptPackPermissions const &);
     /**
-     * @symbol ?isModuleAllowed\@ScriptPackPermissions\@\@QEBA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ??4ScriptPackPermissions\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
-    MCAPI bool isModuleAllowed(std::string const &) const;
-    /**
-     * @symbol ??4ScriptPackPermissions\@\@QEAAAEAV0\@$$QEAV0\@\@Z
-     */
-    MCAPI class ScriptPackPermissions & operator=(class ScriptPackPermissions &&);
+    MCAPI class ScriptPackPermissions & operator=(class ScriptPackPermissions const &);
 
 //private:
 

@@ -32,4 +32,12 @@ public:
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
+//private:
+    /**
+     * @symbol ?_tickLiquidSplash\@LiquidSplashSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UWaterSplashEffectRequestFlag\@\@\@\@\@\@VActorOwnerComponent\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UPostSplashGameEventRequestFlag\@\@\@\@\@\@VActorOwnerComponent\@\@\@\@\@Z
+     */
+    MCAPI static void _tickLiquidSplash(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct WaterSplashEffectRequestFlag>>, class ActorOwnerComponent>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PostSplashGameEventRequestFlag>>, class ActorOwnerComponent>);
+
+private:
+
 };

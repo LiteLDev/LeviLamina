@@ -11,15 +11,15 @@
 #undef BEFORE_EXTRA
 
 
-class MolangArrayVariable {
+struct MolangArrayVariable {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGARRAYVARIABLE
 public:
-    class MolangArrayVariable& operator=(class MolangArrayVariable const &) = delete;
-    MolangArrayVariable(class MolangArrayVariable const &) = delete;
+    struct MolangArrayVariable& operator=(struct MolangArrayVariable const &) = delete;
+    MolangArrayVariable(struct MolangArrayVariable const &) = delete;
     MolangArrayVariable() = delete;
 #endif
 

@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "gametest.hpp"
 #include "ScriptModuleMinecraft.hpp"
 #include "Bedrock.hpp"
 
@@ -346,10 +347,6 @@ public:
      * @symbol ?onPlayerJump\@MinecraftGameTestHelper\@\@UEAA?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@AEAVMob\@\@H\@Z
      */
     virtual class std::optional<struct gametest::GameTestError> onPlayerJump(class Mob &, int);
-    /**
-     * @symbol ??0MinecraftGameTestHelper\@\@QEAA\@AEAVMinecraftGameTestInstance\@\@\@Z
-     */
-    MCAPI MinecraftGameTestHelper(class MinecraftGameTestInstance &);
 
 //private:
     /**

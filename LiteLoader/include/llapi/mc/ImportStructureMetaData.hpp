@@ -11,15 +11,15 @@
 #undef BEFORE_EXTRA
 
 
-class ImportStructureMetaData {
+struct ImportStructureMetaData {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_IMPORTSTRUCTUREMETADATA
 public:
-    class ImportStructureMetaData& operator=(class ImportStructureMetaData const &) = delete;
-    ImportStructureMetaData(class ImportStructureMetaData const &) = delete;
+    struct ImportStructureMetaData& operator=(struct ImportStructureMetaData const &) = delete;
+    ImportStructureMetaData(struct ImportStructureMetaData const &) = delete;
     ImportStructureMetaData() = delete;
 #endif
 

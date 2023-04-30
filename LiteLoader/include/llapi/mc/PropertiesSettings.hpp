@@ -35,6 +35,10 @@ public:
      */
     MCAPI PropertiesSettings(std::string const &);
     /**
+     * @symbol ?adventureModeOverridesEnabled\@PropertiesSettings\@\@QEBA_NXZ
+     */
+    MCAPI bool adventureModeOverridesEnabled() const;
+    /**
      * @symbol ?allowCheats\@PropertiesSettings\@\@QEBA_NXZ
      */
     MCAPI bool allowCheats() const;
@@ -42,6 +46,10 @@ public:
      * @symbol ?areCustomSkinsDisabled\@PropertiesSettings\@\@QEBA_NXZ
      */
     MCAPI bool areCustomSkinsDisabled() const;
+    /**
+     * @symbol ?blockNetworkIdsAreHashes\@PropertiesSettings\@\@QEBA_NXZ
+     */
+    MCAPI bool blockNetworkIdsAreHashes() const;
     /**
      * @symbol ?canEmitTelemetryEvents\@PropertiesSettings\@\@QEBA_NXZ
      */
@@ -62,6 +70,14 @@ public:
      * @symbol ?getChatRestrictionLevel\@PropertiesSettings\@\@QEBA?AW4ChatRestrictionLevel\@\@XZ
      */
     MCAPI enum class ChatRestrictionLevel getChatRestrictionLevel() const;
+    /**
+     * @symbol ?getClientThrottleScalar\@PropertiesSettings\@\@QEBAMXZ
+     */
+    MCAPI float getClientThrottleScalar() const;
+    /**
+     * @symbol ?getClientThrottleThreshold\@PropertiesSettings\@\@QEBAHXZ
+     */
+    MCAPI int getClientThrottleThreshold() const;
     /**
      * @symbol ?getCompressionAlgorithm\@PropertiesSettings\@\@QEBA?AW4PacketCompressionAlgorithm\@\@XZ
      */
@@ -131,6 +147,10 @@ public:
      */
     MCAPI std::string const & getMotd() const;
     /**
+     * @symbol ?getNetworkPermissions\@PropertiesSettings\@\@QEBAAEBUNetworkPermissions\@\@XZ
+     */
+    MCAPI struct NetworkPermissions const & getNetworkPermissions() const;
+    /**
      * @symbol ?getOpPermissionLevel\@PropertiesSettings\@\@QEBA?AW4CommandPermissionLevel\@\@XZ
      */
     MCAPI enum class CommandPermissionLevel getOpPermissionLevel() const;
@@ -146,6 +166,10 @@ public:
      * @symbol ?getScriptSettings\@PropertiesSettings\@\@QEBAAEBUScriptSettings\@\@XZ
      */
     MCAPI struct ScriptSettings const & getScriptSettings() const;
+    /**
+     * @symbol ?getServerBuildRatioOverride\@PropertiesSettings\@\@QEBA?AV?$optional\@M\@std\@\@XZ
+     */
+    MCAPI class std::optional<float> getServerBuildRatioOverride() const;
     /**
      * @symbol ?getServerId\@PropertiesSettings\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */

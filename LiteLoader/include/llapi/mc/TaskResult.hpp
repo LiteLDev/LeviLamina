@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -34,14 +33,6 @@ public:
      */
     MCAPI TaskResult();
     /**
-     * @symbol ?getRunAtTime\@TaskResult\@\@QEBA?AV?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@std\@\@XZ
-     */
-    MCAPI class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> getRunAtTime() const;
-    /**
-     * @symbol ?getWaitingOperation\@TaskResult\@\@QEBA?AV?$shared_ptr\@V?$IAsyncResult\@X\@Threading\@Bedrock\@\@\@std\@\@XZ
-     */
-    MCAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> getWaitingOperation() const;
-    /**
      * @symbol ?hasDelay\@TaskResult\@\@QEBA_NXZ
      */
     MCAPI bool hasDelay() const;
@@ -53,10 +44,6 @@ public:
      * @symbol ?isWaiting\@TaskResult\@\@QEBA_NXZ
      */
     MCAPI bool isWaiting() const;
-    /**
-     * @symbol ?isWaitingOperationLinked\@TaskResult\@\@QEBA_NXZ
-     */
-    MCAPI bool isWaitingOperationLinked() const;
     /**
      * @symbol ??1TaskResult\@\@QEAA\@XZ
      */

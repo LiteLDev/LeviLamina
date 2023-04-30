@@ -58,10 +58,6 @@ public:
      * @symbol ?useWorkstation\@WorkComposterGoal\@\@UEAAXXZ
      */
     virtual void useWorkstation();
-    /**
-     * @symbol ??0WorkComposterGoal\@\@QEAA\@AEAVMob\@\@\@Z
-     */
-    MCAPI WorkComposterGoal(class Mob &);
 
 //private:
     /**

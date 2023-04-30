@@ -28,13 +28,13 @@ public:
 
 public:
     /**
-     * @symbol ??0StrictEntityContext\@\@QEAA\@AEAVEntityRegistryBase\@\@VEntityId\@\@\@Z
-     */
-    MCAPI StrictEntityContext(class EntityRegistryBase &, class EntityId);
-    /**
      * @symbol ??0StrictEntityContext\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI StrictEntityContext(class StrictEntityContext &&);
+    /**
+     * @symbol ??0StrictEntityContext\@\@QEAA\@AEAVEntityRegistryBase\@\@VEntityId\@\@\@Z
+     */
+    MCAPI StrictEntityContext(class EntityRegistryBase &, class EntityId);
     /**
      * @symbol ??0StrictEntityContext\@\@QEAA\@AEBVEntityContextBase\@\@\@Z
      */

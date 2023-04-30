@@ -26,10 +26,6 @@ public:
      */
     MCAPI LevelSummary(std::string const &, std::string const &, __int64, enum class GameType, enum class Difficulty, class LevelSeed64, int, unsigned __int64, bool, bool, enum class Social::GamePublishSetting, bool, enum class EducationEditionOffer, class GameVersion const &, class GameVersion const &, enum class StorageVersion, class Core::Path const &, class ContentIdentity const &, std::string const &, bool, struct EduSharedUriResource const &, class Experiments const &, class BaseGameVersion const &, bool);
     /**
-     * @symbol ??0LevelSummary\@\@QEAA\@AEBU0\@\@Z
-     */
-    MCAPI LevelSummary(struct LevelSummary const &);
-    /**
      * @symbol ??0LevelSummary\@\@QEAA\@XZ
      */
     MCAPI LevelSummary();
@@ -38,17 +34,13 @@ public:
      */
     MCAPI LevelSummary(std::string const &, class LevelData const &, class Core::Path const &, class Core::Path const &, bool);
     /**
+     * @symbol ??0LevelSummary\@\@QEAA\@AEBU0\@\@Z
+     */
+    MCAPI LevelSummary(struct LevelSummary const &);
+    /**
      * @symbol ??4LevelSummary\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
     MCAPI struct LevelSummary & operator=(struct LevelSummary const &);
-    /**
-     * @symbol ?reinitializeWorldIconPath\@LevelSummary\@\@QEAAXAEBVPath\@Core\@\@\@Z
-     */
-    MCAPI void reinitializeWorldIconPath(class Core::Path const &);
-    /**
-     * @symbol ?reinitializeWorldSize\@LevelSummary\@\@QEAAXAEBVPath\@Core\@\@\@Z
-     */
-    MCAPI void reinitializeWorldSize(class Core::Path const &);
     /**
      * @symbol ?setName\@LevelSummary\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */

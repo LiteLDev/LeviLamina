@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "SubChunkBrightnessStorage.hpp"
 #include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
@@ -35,13 +34,13 @@ public:
      */
     MCAPI SubChunk(class Block const *, bool, bool, class SpinLock &, signed char);
     /**
-     * @symbol ??0SubChunk\@\@QEAA\@XZ
-     */
-    MCAPI SubChunk();
-    /**
      * @symbol ??0SubChunk\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI SubChunk(struct SubChunk &&);
+    /**
+     * @symbol ??0SubChunk\@\@QEAA\@XZ
+     */
+    MCAPI SubChunk();
     /**
      * @symbol ?deserialize\@SubChunk\@\@QEAAXAEAVIDataInput\@\@AEBVBlockPalette\@\@AEBVSubChunkPos\@\@V?$optional\@PEAUDeserializationChanges\@\@\@std\@\@\@Z
      */
@@ -142,14 +141,6 @@ public:
      * @symbol ?setSkyLight\@SubChunk\@\@QEAAXGE\@Z
      */
     MCAPI void setSkyLight(unsigned short, unsigned char);
-    /**
-     * @symbol ?setSubChunkState\@SubChunk\@\@QEAAXW4SubChunkState\@1\@\@Z
-     */
-    MCAPI void setSubChunkState(enum class SubChunk::SubChunkState);
-    /**
-     * @symbol ?shutdown\@SubChunk\@\@QEAAXXZ
-     */
-    MCAPI void shutdown();
     /**
      * @symbol ??1SubChunk\@\@QEAA\@XZ
      */

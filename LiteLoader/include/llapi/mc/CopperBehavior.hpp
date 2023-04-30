@@ -30,18 +30,6 @@ public:
 
 public:
     /**
-     * @symbol ??0CopperBehavior\@\@QEAA\@W4CopperType\@\@AEBVHashedString\@\@11AEBV?$function\@$$A6AAEBVBlock\@\@AEBVHashedString\@\@AEBV1\@\@Z\@std\@\@\@Z
-     */
-    MCAPI CopperBehavior(enum class CopperType, class HashedString const &, class HashedString const &, class HashedString const &, class std::function<class Block const & (class HashedString const &, class Block const &)> const &);
-    /**
-     * @symbol ??0CopperBehavior\@\@QEAA\@W4CopperType\@\@AEBVHashedString\@\@AEBV?$function\@$$A6AAEBVBlock\@\@AEBVHashedString\@\@AEBV1\@\@Z\@std\@\@\@Z
-     */
-    MCAPI CopperBehavior(enum class CopperType, class HashedString const &, class std::function<class Block const & (class HashedString const &, class Block const &)> const &);
-    /**
-     * @symbol ?canDecrementAge\@CopperBehavior\@\@QEBA_NXZ
-     */
-    MCAPI bool canDecrementAge() const;
-    /**
      * @symbol ?getCorrespondingWaxedBlock\@CopperBehavior\@\@QEBAAEBVBlock\@\@AEBV2\@\@Z
      */
     MCAPI class Block const & getCorrespondingWaxedBlock(class Block const &) const;

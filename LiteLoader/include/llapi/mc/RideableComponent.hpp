@@ -28,6 +28,10 @@ public:
 
 public:
     /**
+     * @symbol ??0RideableComponent\@\@QEAA\@XZ
+     */
+    MCAPI RideableComponent();
+    /**
      * @symbol ??0RideableComponent\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI RideableComponent(class RideableComponent const &);
@@ -35,10 +39,6 @@ public:
      * @symbol ??0RideableComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI RideableComponent(class RideableComponent &&);
-    /**
-     * @symbol ??0RideableComponent\@\@QEAA\@XZ
-     */
-    MCAPI RideableComponent();
     /**
      * @symbol ?areSeatsFull\@RideableComponent\@\@QEBA_NAEBVActor\@\@\@Z
      */
@@ -79,13 +79,5 @@ public:
      * @symbol ??1RideableComponent\@\@QEAA\@XZ
      */
     MCAPI ~RideableComponent();
-
-//private:
-    /**
-     * @symbol ?_setCanPlayerRide\@RideableComponent\@\@AEBAXAEAVPlayer\@\@_N\@Z
-     */
-    MCAPI void _setCanPlayerRide(class Player &, bool) const;
-
-private:
 
 };

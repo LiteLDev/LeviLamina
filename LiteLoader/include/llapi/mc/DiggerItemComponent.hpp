@@ -24,6 +24,7 @@ class DiggerItemComponent {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIGGERITEMCOMPONENT
 public:
     class DiggerItemComponent& operator=(class DiggerItemComponent const &) = delete;
+    DiggerItemComponent(class DiggerItemComponent const &) = delete;
     DiggerItemComponent() = delete;
 #endif
 
@@ -63,18 +64,6 @@ public:
      * @symbol ?initializeFromNetwork\@?$NetworkedItemComponent\@VDiggerItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
-    /**
-     * @symbol ??0DiggerItemComponent\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI DiggerItemComponent(class DiggerItemComponent const &);
-    /**
-     * @symbol ?canDestroySpecial\@DiggerItemComponent\@\@QEBA_NAEBVBlock\@\@\@Z
-     */
-    MCAPI bool canDestroySpecial(class Block const &) const;
-    /**
-     * @symbol ?getDestroySpeed\@DiggerItemComponent\@\@QEAAMAEBVItemStackBase\@\@AEBVBlock\@\@\@Z
-     */
-    MCAPI float getDestroySpeed(class ItemStackBase const &, class Block const &);
     /**
      * @symbol ?mineBlock\@DiggerItemComponent\@\@QEAA_NAEAVItemStack\@\@AEBVBlock\@\@HHHPEAVActor\@\@\@Z
      */

@@ -187,9 +187,9 @@ public:
     virtual void __unk_vfn_105();
     /**
      * @vftbl 106
-     * @symbol ?getPlacementBlock\@LeafBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
+     * @symbol ?getPlacementBlock\@LeafBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
-    virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
+    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -206,40 +206,40 @@ public:
      */
     virtual void __unk_vfn_126();
     /**
-     * @vftbl 131
-     * @symbol __unk_vfn_131
+     * @vftbl 129
+     * @symbol __unk_vfn_129
      */
-    virtual void __unk_vfn_131();
+    virtual void __unk_vfn_129();
     /**
-     * @vftbl 136
+     * @vftbl 132
+     * @symbol __unk_vfn_132
+     */
+    virtual void __unk_vfn_132();
+    /**
+     * @vftbl 137
      * @symbol ?getColor\@LeafBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @vftbl 139
+     * @vftbl 140
      * @symbol ?isSeasonTinted\@LeafBlock\@\@UEBA_NAEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool isSeasonTinted(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 140
+     * @vftbl 141
      * @symbol ?onGraphicsModeChanged\@LeafBlock\@\@UEAAXAEBUBlockGraphicsModeChangeContext\@\@\@Z
      */
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
     /**
-     * @vftbl 156
-     * @symbol __unk_vfn_156
+     * @vftbl 157
+     * @symbol __unk_vfn_157
      */
-    virtual void __unk_vfn_156();
+    virtual void __unk_vfn_157();
     /**
-     * @vftbl 162
+     * @vftbl 163
      * @symbol ?onRemove\@LeafBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
-    /**
-     * @vftbl 165
-     * @symbol __unk_vfn_165
-     */
-    virtual void __unk_vfn_165();
     /**
      * @vftbl 166
      * @symbol __unk_vfn_166
@@ -251,52 +251,57 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @vftbl 170
-     * @symbol __unk_vfn_170
+     * @vftbl 168
+     * @symbol __unk_vfn_168
      */
-    virtual void __unk_vfn_170();
+    virtual void __unk_vfn_168();
     /**
-     * @vftbl 172
+     * @vftbl 171
+     * @symbol __unk_vfn_171
+     */
+    virtual void __unk_vfn_171();
+    /**
+     * @vftbl 173
      * @symbol ?randomTick\@LeafBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @vftbl 174
-     * @symbol __unk_vfn_174
+     * @vftbl 175
+     * @symbol __unk_vfn_175
      */
-    virtual void __unk_vfn_174();
+    virtual void __unk_vfn_175();
     /**
-     * @vftbl 178
-     * @symbol __unk_vfn_178
+     * @vftbl 179
+     * @symbol __unk_vfn_179
      */
-    virtual void __unk_vfn_178();
+    virtual void __unk_vfn_179();
     /**
-     * @vftbl 181
+     * @vftbl 182
      * @symbol ?getRenderLayer\@LeafBlock\@\@UEBA?AW4BlockRenderLayer\@\@AEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 185
+     * @vftbl 186
      * @symbol ?getMapColor\@LeafBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @vftbl 186
-     * @symbol __unk_vfn_186
-     */
-    virtual void __unk_vfn_186();
-    /**
      * @vftbl 187
+     * @symbol __unk_vfn_187
+     */
+    virtual void __unk_vfn_187();
+    /**
+     * @vftbl 188
      * @symbol ?playerDestroy\@LeafBlock\@\@UEBAXAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
-     * @vftbl 189
+     * @vftbl 190
      * @symbol ?getResourceCount\@LeafBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @vftbl 194
+     * @vftbl 195
      * @symbol ?getExtraResourceItem\@LeafBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getExtraResourceItem(class Block const &) const;
@@ -324,10 +329,6 @@ public:
      * @symbol ?_getSapling\@LeafBlock\@\@IEBAAEBVBlock\@\@XZ
      */
     MCAPI class Block const & _getSapling() const;
-    /**
-     * @symbol ?_isTransparent\@LeafBlock\@\@KA_NAEBVBlock\@\@AEBW4BlockProperty\@\@\@Z
-     */
-    MCAPI static bool _isTransparent(class Block const &, enum class BlockProperty const &);
 
 protected:
 

@@ -51,10 +51,6 @@ public:
      */
     MCAPI class CreativeItemGroupCategory * getCreativeCategory(enum class CreativeItemCategory);
     /**
-     * @symbol ?getCreativeGroup\@CreativeItemRegistry\@\@QEAAPEAVCreativeGroupInfo\@\@I\@Z
-     */
-    MCAPI class CreativeGroupInfo * getCreativeGroup(unsigned int);
-    /**
      * @symbol ?getCreativeItemEntries\@CreativeItemRegistry\@\@QEAAAEBV?$vector\@VCreativeItemEntry\@\@V?$allocator\@VCreativeItemEntry\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::vector<class CreativeItemEntry> const & getCreativeItemEntries();
@@ -98,10 +94,6 @@ public:
      * @symbol ?mCreativeListMutex\@CreativeItemRegistry\@\@2Vmutex\@std\@\@A
      */
     MCAPI static class std::mutex mCreativeListMutex;
-    /**
-     * @symbol ?reset\@CreativeItemRegistry\@\@SAXXZ
-     */
-    MCAPI static void reset();
     /**
      * @symbol ?setCurrentRegistry\@CreativeItemRegistry\@\@SAX$$QEAV?$unique_ptr\@VCreativeItemRegistry\@\@U?$default_delete\@VCreativeItemRegistry\@\@\@std\@\@\@std\@\@\@Z
      */

@@ -61,12 +61,12 @@ public:
     MCVAPI ~ServerToClientHandshakePacket();
 #endif
     /**
-     * @symbol ??0ServerToClientHandshakePacket\@\@QEAA\@XZ
-     */
-    MCAPI ServerToClientHandshakePacket();
-    /**
      * @symbol ??0ServerToClientHandshakePacket\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI ServerToClientHandshakePacket(std::string const &);
+    /**
+     * @symbol ??0ServerToClientHandshakePacket\@\@QEAA\@XZ
+     */
+    MCAPI ServerToClientHandshakePacket();
 
 };

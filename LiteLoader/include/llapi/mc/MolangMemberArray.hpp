@@ -30,6 +30,10 @@ public:
 
 public:
     /**
+     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_TentacleAngleAndSwimRotation\@\@MM\@Z
+     */
+    MCAPI MolangMemberArray(enum class MolangStruct_TentacleAngleAndSwimRotation, float, float);
+    /**
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_BaseAndPattern\@\@HH\@Z
      */
     MCAPI MolangMemberArray(enum class MolangStruct_BaseAndPattern, int, int);
@@ -54,14 +58,6 @@ public:
      */
     MCAPI MolangMemberArray(enum class MolangStruct_SpeedAndDirection, float, class Vec3 const &);
     /**
-     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_TentacleAngleAndSwimRotation\@\@MM\@Z
-     */
-    MCAPI MolangMemberArray(enum class MolangStruct_TentacleAngleAndSwimRotation, float, float);
-    /**
-     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_RotYAndPosY\@\@MM\@Z
-     */
-    MCAPI MolangMemberArray(enum class MolangStruct_RotYAndPosY, float, float);
-    /**
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_TRS\@\@$$QEAU0\@11\@Z
      */
     MCAPI MolangMemberArray(enum class MolangStruct_TRS, struct MolangMemberArray &&, struct MolangMemberArray &&, struct MolangMemberArray &&);
@@ -78,6 +74,10 @@ public:
      */
     MCAPI MolangMemberArray(enum class MolangStruct_UV, float, float);
     /**
+     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_RotYAndPosY\@\@MM\@Z
+     */
+    MCAPI MolangMemberArray(enum class MolangStruct_RotYAndPosY, float, float);
+    /**
      * @symbol ?add\@MolangMemberArray\@\@QEAAXAEBVHashedString\@\@AEBUMolangScriptArg\@\@\@Z
      */
     MCAPI void add(class HashedString const &, struct MolangScriptArg const &);
@@ -85,10 +85,6 @@ public:
      * @symbol ?get\@MolangMemberArray\@\@QEBAPEBUMolangScriptArg\@\@AEBVHashedString\@\@\@Z
      */
     MCAPI struct MolangScriptArg const * get(class HashedString const &) const;
-    /**
-     * @symbol ?getMembers\@MolangMemberArray\@\@QEBAPEBV?$vector\@UMolangMemberVariable\@\@V?$allocator\@UMolangMemberVariable\@\@\@std\@\@\@std\@\@XZ
-     */
-    MCAPI std::vector<struct MolangMemberVariable> const * getMembers() const;
     /**
      * @symbol ?getOrAdd\@MolangMemberArray\@\@QEAAAEAUMolangScriptArg\@\@AEBVHashedString\@\@\@Z
      */

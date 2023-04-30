@@ -32,10 +32,8 @@
 #include "llapi/mc/PlayerActionPacket.hpp"
 #include "llapi/mc/RespawnPacket.hpp"
 #include "llapi/mc/Scoreboard.hpp"
-#include "llapi/mc/NpcActionsContainer.hpp"
 #include "llapi/mc/NpcSceneDialogueData.hpp"
 #include "llapi/mc/ArmorStand.hpp"
-#include "llapi/mc/NpcAction.hpp"
 #include "llapi/mc/NpcComponent.hpp"
 #include "llapi/mc/Container.hpp"
 #include "llapi/mc/ScoreboardId.hpp"
@@ -1364,7 +1362,7 @@ TInstanceHook(bool, "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z", GameMode,
 }
 
 /////////////////// PlayerUseItemOn ///////////////////
-TInstanceHook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z", GameMode,
+TInstanceHook(bool, "?useItemOn@GameMode@@UEAA?AVInteractionResult@@AEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z", GameMode,
               ItemStack& item, BlockPos blockPosPtr, unsigned char side, Vec3* clickPos, void* a6_block) {
     IF_LISTENED(PlayerUseItemOnEvent) {
         PlayerUseItemOnEvent ev{};
@@ -1436,7 +1434,7 @@ struct BucketPlayerAndActor {
 };
 
 // 也许这个结构体可以用偏移获取替代？
-THook(void, "<lambda_5478cd0ac89791b5579ee785b32a789a>::operator()", BucketPlayerAndActor* a1) {
+THook(void, "<lambda_7e34d7d5fccf0904e478400d9cd01bf3>::operator()", BucketPlayerAndActor* a1) {
     IF_LISTENED(PlayerUseBucketEvent) {
         BucketPlayerAndActor mBucketPlayerAndActor = *a1;
         if (mBucketPlayerAndActor.owner->getTypeName() == "minecraft:cow" ||
@@ -1487,7 +1485,7 @@ THook(void, "?implInteraction@BucketableComponent@@SAXAEAVActor@@AEAVPlayer@@@Z"
     return original(actor, player);
 }
 
-TInstanceHook(bool, "?useOn@ItemStack@@QEAA_NAEAVActor@@HHHEAEBVVec3@@@Z", ItemStack, Actor* actor, int x, int y, int z,
+TInstanceHook(bool, "?useOn@ItemStack@@QEAA?AVInteractionResult@@AEAVActor@@HHHEAEBVVec3@@@Z", ItemStack, Actor* actor, int x, int y, int z,
               unsigned char face, Vec3 clickPos) {
     IF_LISTENED(PlayerUseBucketEvent) {
         if (actor->getTypeName() != "minecraft:player") {
@@ -1835,11 +1833,11 @@ TClasslessInstanceHook(void, "?releaseUsing@TridentItem@@UEBAXAEAVItemStack@@PEA
 
 #include "llapi/mc/WeakEntityRef.hpp"
 #include "llapi/mc/EntityContext.hpp"
+#include "llapi/mc/Npc.hpp"
 
 ////////////// NpcCmd //////////////
 TInstanceHook(void,
-              "?executeCommandAction@NpcComponent@@QEAAXAEAVActor@@AEAVPlayer@@HAEBV?$basic_string@DU?$char_traits@D@"
-              "std@@V?$allocator@D@2@@std@@@Z",
+              "?executeCommandAction@NpcComponent@@QEAAXAEAVActor@@AEAVPlayer@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
               NpcComponent, Actor* ac, Player* player, int a4, string& a5) {
     IF_LISTENED(NpcCmdEvent) {
         // IDA NpcComponent::executeCommandAction
@@ -1848,15 +1846,19 @@ TInstanceHook(void,
         NpcSceneDialogueData data(WeakEntityRef(ac->getEntityContext().getWeakRef()), a5);
 
         auto container = data.getActionsContainer();
-        auto actionAt = container->getActionAt(a4);
-        if (actionAt && dAccess<char>(actionAt, 8) == (char)1) {
-
-            NpcCmdEvent ev{};
-            ev.mPlayer = player;
-            ev.mNpc = ac;
-            ev.mCommand = actionAt->getText();
-            if (!ev.call())
-                return;
+        if (container) {
+            auto actionAt = container->at(a4);
+            if (actionAt) {
+                if (auto* command = std::get_if<npc::CommandAction>(actionAt)) {
+                    NpcCmdEvent ev{};
+                    ev.mPlayer = player;
+                    ev.mNpc = ac;
+                    ev.mCommand = command->mActionValue.mText;
+                    if (!ev.call())
+                        return;
+                }
+               
+            }
         }
     }
     IF_LISTENED_END(NpcCmdEvent)

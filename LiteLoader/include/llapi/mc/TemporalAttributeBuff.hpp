@@ -91,9 +91,5 @@ public:
      * @symbol ?serializationSetLifeTime\@TemporalAttributeBuff\@\@QEAAXH\@Z
      */
     MCAPI void serializationSetLifeTime(int);
-    /**
-     * @symbol ?tick\@TemporalAttributeBuff\@\@QEAAXXZ
-     */
-    MCAPI void tick();
 
 };

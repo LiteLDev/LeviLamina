@@ -309,9 +309,9 @@ public:
      */
     MCAPI enum class BlockActorType const & getType() const;
     /**
-     * @symbol ?ignoreLighting\@BlockActor\@\@QEBA?B_NXZ
+     * @symbol ?isChanged\@BlockActor\@\@QEBA_NXZ
      */
-    MCAPI bool const ignoreLighting() const;
+    MCAPI bool isChanged() const;
     /**
      * @symbol ?isType\@BlockActor\@\@QEBA_NW4BlockActorType\@\@\@Z
      */
@@ -325,10 +325,6 @@ public:
      */
     MCAPI bool onUpdatePacket(class CompoundTag const &, class BlockSource &, class Player const *);
     /**
-     * @symbol ?setBB\@BlockActor\@\@QEAAXVAABB\@\@\@Z
-     */
-    MCAPI void setBB(class AABB);
-    /**
      * @symbol ?setChanged\@BlockActor\@\@QEAAXXZ
      */
     MCAPI void setChanged();
@@ -336,10 +332,6 @@ public:
      * @symbol ?setCustomNameSaved\@BlockActor\@\@QEAAX_N\@Z
      */
     MCAPI void setCustomNameSaved(bool);
-    /**
-     * @symbol ?setIgnoreLighting\@BlockActor\@\@QEAAX_N\@Z
-     */
-    MCAPI void setIgnoreLighting(bool);
     /**
      * @symbol ?setMovable\@BlockActor\@\@QEAAX_N\@Z
      */

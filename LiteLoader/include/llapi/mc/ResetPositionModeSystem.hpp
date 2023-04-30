@@ -31,5 +31,9 @@ public:
      * @symbol ?createResetPositionModeSystem\@ResetPositionModeSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createResetPositionModeSystem();
+    /**
+     * @symbol ?tickResetPositionModeSystem\@ResetPositionModeSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@\@\@UPlayerPositionModeComponent\@\@\@\@\@Z
+     */
+    MCAPI static void tickResetPositionModeSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>, struct PlayerPositionModeComponent>);
 
 };

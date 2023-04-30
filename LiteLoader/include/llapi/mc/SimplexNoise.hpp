@@ -34,10 +34,6 @@ public:
      */
     MCAPI SimplexNoise(class IRandom &, bool);
     /**
-     * @symbol ?_add\@SimplexNoise\@\@QEBAXPEAMMMHHMMM\@Z
-     */
-    MCAPI void _add(float *, float, float, int, int, float, float, float) const;
-    /**
      * @symbol ?_getValue\@SimplexNoise\@\@QEBAMAEBVVec2\@\@\@Z
      */
     MCAPI float _getValue(class Vec2 const &) const;

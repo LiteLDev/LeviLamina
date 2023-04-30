@@ -212,11 +212,6 @@ public:
      */
     virtual void travel(float, float, float, bool);
     /**
-     * @vftbl 288
-     * @symbol ?aiStep\@Shulker\@\@UEAAXXZ
-     */
-    virtual void aiStep();
-    /**
      * @vftbl 293
      * @symbol ?checkSpawnRules\@Shulker\@\@UEAA_N_N\@Z
      */
@@ -313,10 +308,6 @@ public:
      * @symbol ?_peekAmountTick\@Shulker\@\@AEAAXXZ
      */
     MCAPI void _peekAmountTick();
-    /**
-     * @symbol ?_setAttachFace\@Shulker\@\@AEAAXE\@Z
-     */
-    MCAPI void _setAttachFace(unsigned char);
     /**
      * @symbol ?_tryAttachingToNeighbouringFaces\@Shulker\@\@AEAA_NVBlockPos\@\@\@Z
      */

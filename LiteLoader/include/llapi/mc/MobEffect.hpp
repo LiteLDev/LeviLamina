@@ -122,14 +122,6 @@ public:
      */
     MCAPI void addAttributeModifier(class Attribute const &, class std::shared_ptr<class AttributeModifier>);
     /**
-     * @symbol ?getColor\@MobEffect\@\@QEBAAEBVColor\@mce\@\@XZ
-     */
-    MCAPI class mce::Color const & getColor() const;
-    /**
-     * @symbol ?getComponentName\@MobEffect\@\@QEBAAEBVHashedString\@\@XZ
-     */
-    MCAPI class HashedString const & getComponentName() const;
-    /**
      * @symbol ?getDescriptionId\@MobEffect\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string const & getDescriptionId() const;
@@ -137,10 +129,6 @@ public:
      * @symbol ?getDurationModifier\@MobEffect\@\@QEBAMXZ
      */
     MCAPI float getDurationModifier() const;
-    /**
-     * @symbol ?getFactorCalculationData\@MobEffect\@\@QEBAAEBUFactorCalculationData\@1\@XZ
-     */
-    MCAPI struct MobEffect::FactorCalculationData const & getFactorCalculationData() const;
     /**
      * @symbol ?getId\@MobEffect\@\@QEBAIXZ
      */

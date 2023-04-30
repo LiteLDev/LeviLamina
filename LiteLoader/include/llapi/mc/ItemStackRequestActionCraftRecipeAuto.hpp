@@ -62,13 +62,5 @@ public:
      * @symbol ??0ItemStackRequestActionCraftRecipeAuto\@\@QEAA\@XZ
      */
     MCAPI ItemStackRequestActionCraftRecipeAuto();
-    /**
-     * @symbol ?getIngredients\@ItemStackRequestActionCraftRecipeAuto\@\@QEBAPEBV?$vector\@VRecipeIngredient\@\@V?$allocator\@VRecipeIngredient\@\@\@std\@\@\@std\@\@XZ
-     */
-    MCAPI std::vector<class RecipeIngredient> const * getIngredients() const;
-    /**
-     * @symbol ?getNumCrafts\@ItemStackRequestActionCraftRecipeAuto\@\@QEBAEXZ
-     */
-    MCAPI unsigned char getNumCrafts() const;
 
 };

@@ -12,7 +12,7 @@
 #undef BEFORE_EXTRA
 
 
-class BlockQueuedTickingDescription {
+struct BlockQueuedTickingDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -20,8 +20,8 @@ class BlockQueuedTickingDescription {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKQUEUEDTICKINGDESCRIPTION
 public:
-    class BlockQueuedTickingDescription& operator=(class BlockQueuedTickingDescription const &) = delete;
-    BlockQueuedTickingDescription(class BlockQueuedTickingDescription const &) = delete;
+    struct BlockQueuedTickingDescription& operator=(struct BlockQueuedTickingDescription const &) = delete;
+    BlockQueuedTickingDescription(struct BlockQueuedTickingDescription const &) = delete;
     BlockQueuedTickingDescription() = delete;
 #endif
 

@@ -12,7 +12,7 @@
 #undef BEFORE_EXTRA
 
 
-class BlockMapColorDescription {
+struct BlockMapColorDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -20,8 +20,8 @@ class BlockMapColorDescription {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKMAPCOLORDESCRIPTION
 public:
-    class BlockMapColorDescription& operator=(class BlockMapColorDescription const &) = delete;
-    BlockMapColorDescription(class BlockMapColorDescription const &) = delete;
+    struct BlockMapColorDescription& operator=(struct BlockMapColorDescription const &) = delete;
+    BlockMapColorDescription(struct BlockMapColorDescription const &) = delete;
     BlockMapColorDescription() = delete;
 #endif
 
@@ -49,9 +49,5 @@ public:
      * @symbol ?bindType\@BlockMapColorDescription\@\@SAXXZ
      */
     MCAPI static void bindType();
-    /**
-     * @symbol ?registerVersionUpgrades\@BlockMapColorDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
-     */
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

@@ -35,12 +35,6 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKCHUNKPUBLISHER
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~NetworkChunkPublisher();
-#endif
     /**
      * @symbol ??0NetworkChunkPublisher\@\@QEAA\@AEAVLevel\@\@AEBVNetworkIdentifier\@\@W4SubClientId\@\@\@Z
      */

@@ -31,5 +31,9 @@ public:
      * @symbol ?createSprintTimerSystem\@SprintTimerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSprintTimerSystem();
+    /**
+     * @symbol ?tickSprintTimerSystem\@SprintTimerSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@ULocalPlayerComponentFlag\@\@\@\@\@\@$$CBUMoveInputComponent\@\@UPlayerInputRequestComponent\@\@UVanillaClientGameplayComponent\@\@\@\@\@Z
+     */
+    MCAPI static void tickSprintTimerSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct LocalPlayerComponentFlag>>, struct MoveInputComponent const, struct PlayerInputRequestComponent, struct VanillaClientGameplayComponent>);
 
 };

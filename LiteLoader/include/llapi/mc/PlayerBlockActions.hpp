@@ -30,22 +30,6 @@ public:
 
 public:
     /**
-     * @symbol ?addAbortDestroyBlock\@PlayerBlockActions\@\@QEAAXAEBVBlockPos\@\@H\@Z
-     */
-    MCAPI void addAbortDestroyBlock(class BlockPos const &, int);
-    /**
-     * @symbol ?addContinueDestroyBlock\@PlayerBlockActions\@\@QEAAXAEBVBlockPos\@\@H\@Z
-     */
-    MCAPI void addContinueDestroyBlock(class BlockPos const &, int);
-    /**
-     * @symbol ?addStartDestroyBlock\@PlayerBlockActions\@\@QEAAXAEBVBlockPos\@\@H\@Z
-     */
-    MCAPI void addStartDestroyBlock(class BlockPos const &, int);
-    /**
-     * @symbol ?addStopDestroyBlock\@PlayerBlockActions\@\@QEAAXXZ
-     */
-    MCAPI void addStopDestroyBlock();
-    /**
      * @symbol ?findFirstOfType\@PlayerBlockActions\@\@QEBAPEBUPlayerBlockActionData\@\@W4PlayerActionType\@\@\@Z
      */
     MCAPI struct PlayerBlockActionData const * findFirstOfType(enum class PlayerActionType) const;

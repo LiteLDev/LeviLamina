@@ -132,10 +132,6 @@ public:
      */
     virtual std::string getInteractText(class Player const &) const;
     /**
-     * @symbol ??0WrittenBookItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
-     */
-    MCAPI WrittenBookItem(std::string const &, int);
-    /**
      * @symbol ?MAX_GENERATION\@WrittenBookItem\@\@2HB
      */
     MCAPI static int const MAX_GENERATION;

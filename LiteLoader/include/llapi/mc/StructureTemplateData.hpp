@@ -52,41 +52,13 @@ public:
      */
     MCAPI void addEntityData(std::unique_ptr<class CompoundTag>);
     /**
-     * @symbol ?addPalette\@StructureTemplateData\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VStructureBlockPalette\@\@\@Z
-     */
-    MCAPI void addPalette(std::string const &, class StructureBlockPalette);
-    /**
      * @symbol ?clear\@StructureTemplateData\@\@QEAAXXZ
      */
     MCAPI void clear();
     /**
-     * @symbol ?getAllPalettes\@StructureTemplateData\@\@QEBAAEBV?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VStructureBlockPalette\@\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VStructureBlockPalette\@\@\@std\@\@\@2\@\@std\@\@XZ
-     */
-    MCAPI class std::unordered_map<std::string, class StructureBlockPalette, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, class StructureBlockPalette>>> const & getAllPalettes() const;
-    /**
-     * @symbol ?getBlockIndices\@StructureTemplateData\@\@QEBAAEBV?$vector\@HV?$allocator\@H\@std\@\@\@std\@\@XZ
-     */
-    MCAPI std::vector<int> const & getBlockIndices() const;
-    /**
-     * @symbol ?getEntityData\@StructureTemplateData\@\@QEBAAEBV?$vector\@V?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@XZ
-     */
-    MCAPI std::vector<std::unique_ptr<class CompoundTag>> const & getEntityData() const;
-    /**
-     * @symbol ?getExtraBlockIndices\@StructureTemplateData\@\@QEBAAEBV?$vector\@HV?$allocator\@H\@std\@\@\@std\@\@XZ
-     */
-    MCAPI std::vector<int> const & getExtraBlockIndices() const;
-    /**
      * @symbol ?getPalette\@StructureTemplateData\@\@QEBAPEBVStructureBlockPalette\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class StructureBlockPalette const * getPalette(std::string const &) const;
-    /**
-     * @symbol ?getSize\@StructureTemplateData\@\@QEBAAEBVBlockPos\@\@XZ
-     */
-    MCAPI class BlockPos const & getSize() const;
-    /**
-     * @symbol ?getStructureWorldOrigin\@StructureTemplateData\@\@QEBAAEBVBlockPos\@\@XZ
-     */
-    MCAPI class BlockPos const & getStructureWorldOrigin() const;
     /**
      * @symbol ?load\@StructureTemplateData\@\@QEAA_NAEBVCompoundTag\@\@\@Z
      */
@@ -103,14 +75,6 @@ public:
      * @symbol ?setExtraBlockIndices\@StructureTemplateData\@\@QEAAXV?$vector\@HV?$allocator\@H\@std\@\@\@std\@\@\@Z
      */
     MCAPI void setExtraBlockIndices(std::vector<int>);
-    /**
-     * @symbol ?setSize\@StructureTemplateData\@\@QEAAXAEBVBlockPos\@\@\@Z
-     */
-    MCAPI void setSize(class BlockPos const &);
-    /**
-     * @symbol ?setStructureWorldOrigin\@StructureTemplateData\@\@QEAAXAEBVBlockPos\@\@\@Z
-     */
-    MCAPI void setStructureWorldOrigin(class BlockPos const &);
     /**
      * @symbol ?DEFAULT_PALETTE_NAME\@StructureTemplateData\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */

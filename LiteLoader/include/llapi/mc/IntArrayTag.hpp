@@ -37,6 +37,7 @@ public:
 public:
     class IntArrayTag& operator=(class IntArrayTag const &) = delete;
     IntArrayTag(class IntArrayTag const &) = delete;
+    IntArrayTag() = delete;
 #endif
 
 public:
@@ -80,9 +81,5 @@ public:
      * @symbol ?hash\@IntArrayTag\@\@UEBA_KXZ
      */
     virtual unsigned __int64 hash() const;
-    /**
-     * @symbol ??0IntArrayTag\@\@QEAA\@XZ
-     */
-    MCAPI IntArrayTag();
 
 };

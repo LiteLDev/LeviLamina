@@ -39,13 +39,17 @@ public:
      */
     MCAPI struct SerializerTraits & name(std::string);
     /**
+     * @symbol ??4SerializerTraits\@\@QEAAAEAU0\@AEBU0\@\@Z
+     */
+    MCAPI struct SerializerTraits & operator=(struct SerializerTraits const &);
+    /**
      * @symbol ??4SerializerTraits\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct SerializerTraits & operator=(struct SerializerTraits &&);
     /**
-     * @symbol ??4SerializerTraits\@\@QEAAAEAU0\@AEBU0\@\@Z
+     * @symbol ?setEnumDocumentation\@SerializerTraits\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI struct SerializerTraits & operator=(struct SerializerTraits const &);
+    MCAPI void setEnumDocumentation(std::string);
     /**
      * @symbol ?validate\@SerializerTraits\@\@QEAAAEAU1\@V?$function\@$$A6A_NAEAVmeta_any\@entt\@\@AEAVSerializerContext\@\@\@Z\@std\@\@\@Z
      */

@@ -25,13 +25,10 @@ struct RopeParams {
 public:
     struct RopeParams& operator=(struct RopeParams const &) = delete;
     RopeParams(struct RopeParams const &) = delete;
+    RopeParams() = delete;
 #endif
 
 public:
-    /**
-     * @symbol ??0RopeParams\@\@QEAA\@XZ
-     */
-    MCAPI RopeParams();
     /**
      * @symbol ??0RopeParams\@\@QEAA\@AEBVVec3\@\@0M\@Z
      */

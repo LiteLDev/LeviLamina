@@ -31,5 +31,9 @@ public:
      * @symbol ?_sendPacketsSystem\@SendPacketsSystemImpl\@\@SAXAEAVStrictEntityContext\@\@AEBVActorOwnerComponent\@\@AEAUSendPacketsComponent\@\@\@Z
      */
     MCAPI static void _sendPacketsSystem(class StrictEntityContext &, class ActorOwnerComponent const &, struct SendPacketsComponent &);
+    /**
+     * @symbol ?sendPacketsSystem\@SendPacketsSystemImpl\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBVActorOwnerComponent\@\@USendPacketsComponent\@\@\@\@\@Z
+     */
+    MCAPI static void sendPacketsSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, class ActorOwnerComponent const, struct SendPacketsComponent>);
 
 };

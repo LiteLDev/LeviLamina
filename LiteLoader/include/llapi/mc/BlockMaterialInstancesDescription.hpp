@@ -12,7 +12,7 @@
 #undef BEFORE_EXTRA
 
 
-class BlockMaterialInstancesDescription {
+struct BlockMaterialInstancesDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -20,8 +20,8 @@ class BlockMaterialInstancesDescription {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKMATERIALINSTANCESDESCRIPTION
 public:
-    class BlockMaterialInstancesDescription& operator=(class BlockMaterialInstancesDescription const &) = delete;
-    BlockMaterialInstancesDescription(class BlockMaterialInstancesDescription const &) = delete;
+    struct BlockMaterialInstancesDescription& operator=(struct BlockMaterialInstancesDescription const &) = delete;
+    BlockMaterialInstancesDescription(struct BlockMaterialInstancesDescription const &) = delete;
 #endif
 
 public:

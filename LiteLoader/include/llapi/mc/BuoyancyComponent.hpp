@@ -24,13 +24,10 @@ class BuoyancyComponent {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BUOYANCYCOMPONENT
 public:
     class BuoyancyComponent& operator=(class BuoyancyComponent const &) = delete;
+    BuoyancyComponent(class BuoyancyComponent const &) = delete;
 #endif
 
 public:
-    /**
-     * @symbol ??0BuoyancyComponent\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI BuoyancyComponent(class BuoyancyComponent const &);
     /**
      * @symbol ??0BuoyancyComponent\@\@QEAA\@XZ
      */
@@ -67,10 +64,6 @@ public:
      * @symbol ?needToResurface\@BuoyancyComponent\@\@QEBA_NAEBVActor\@\@\@Z
      */
     MCAPI bool needToResurface(class Actor const &) const;
-    /**
-     * @symbol ??4BuoyancyComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
-     */
-    MCAPI class BuoyancyComponent & operator=(class BuoyancyComponent &&);
     /**
      * @symbol ?shouldApplyGravity\@BuoyancyComponent\@\@QEBA_NXZ
      */

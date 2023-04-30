@@ -63,10 +63,6 @@ public:
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
-     * @symbol ?getDamageChance\@DurabilityItemComponent\@\@QEBAHH\@Z
-     */
-    MCAPI int getDamageChance(int) const;
-    /**
      * @symbol ?getDamageChanceRange\@DurabilityItemComponent\@\@QEBA?AUIntRange\@\@XZ
      */
     MCAPI struct IntRange getDamageChanceRange() const;
@@ -75,10 +71,6 @@ public:
      */
     MCAPI int getMaxDamage() const;
     /**
-     * @symbol ?setMaxDamage\@DurabilityItemComponent\@\@QEAAXH\@Z
-     */
-    MCAPI void setMaxDamage(int);
-    /**
      * @symbol ?bindType\@DurabilityItemComponent\@\@SAXXZ
      */
     MCAPI static void bindType();
@@ -86,9 +78,5 @@ public:
      * @symbol ?getIdentifier\@DurabilityItemComponent\@\@SAAEBVHashedString\@\@XZ
      */
     MCAPI static class HashedString const & getIdentifier();
-    /**
-     * @symbol ?registerVersionUpgrades\@DurabilityItemComponent\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
-     */
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

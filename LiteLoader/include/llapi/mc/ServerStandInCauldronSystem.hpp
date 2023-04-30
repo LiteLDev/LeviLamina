@@ -32,6 +32,10 @@ public:
      */
     MCAPI static void _checkInsideCauldron(class StrictEntityContext &, class ActorOwnerComponent &);
     /**
+     * @symbol ?_tickSystem\@ServerStandInCauldronSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@UUpdateWaterStateRequestComponent\@\@\@\@VActorOwnerComponent\@\@\@\@\@Z
+     */
+    MCAPI static void _tickSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct UpdateWaterStateRequestComponent>, class ActorOwnerComponent>);
+    /**
      * @symbol ?createSystem\@ServerStandInCauldronSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();

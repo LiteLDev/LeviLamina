@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Util.hpp"
 
 #define BEFORE_EXTRA
 
@@ -29,12 +28,8 @@ public:
 
 public:
     /**
-     * @symbol ?_tryBake\@BlockSelectionBoxProcessor\@\@SAXPEBUBlockRotationComponent\@\@PEAUBlockSelectionBoxComponent\@\@\@Z
+     * @symbol ?_tryBake\@BlockSelectionBoxProcessor\@\@SAXAEBVMatrix\@\@PEAUBlockSelectionBoxComponent\@\@\@Z
      */
-    MCAPI static void _tryBake(struct BlockRotationComponent const *, struct BlockSelectionBoxComponent *);
-    /**
-     * @symbol ?getProcessor\@BlockSelectionBoxProcessor\@\@SA?AV?$unique_ptr\@VEntityComponentProcessor\@Util\@\@U?$default_delete\@VEntityComponentProcessor\@Util\@\@\@std\@\@\@std\@\@XZ
-     */
-    MCAPI static std::unique_ptr<class Util::EntityComponentProcessor> getProcessor();
+    MCAPI static void _tryBake(class Matrix const &, struct BlockSelectionBoxComponent *);
 
 };

@@ -175,71 +175,23 @@ public:
      */
     MCAPI ContainerModel(enum class ContainerEnumName, int, enum class ContainerCategory, bool);
     /**
-     * @symbol ?_useLegacyTransactions\@ContainerModel\@\@QEBA_NXZ
-     */
-    MCAPI bool _useLegacyTransactions() const;
-    /**
-     * @symbol ?getContainerEnumName\@ContainerModel\@\@QEBA?AW4ContainerEnumName\@\@XZ
-     */
-    MCAPI enum class ContainerEnumName getContainerEnumName() const;
-    /**
-     * @symbol ?getContainerSlot\@ContainerModel\@\@QEBAHH\@Z
-     */
-    MCAPI int getContainerSlot(int) const;
-    /**
-     * @symbol ?getContainerStringName\@ContainerModel\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string const & getContainerStringName() const;
-    /**
-     * @symbol ?getModelSlot\@ContainerModel\@\@QEBAHH\@Z
-     */
-    MCAPI int getModelSlot(int) const;
-    /**
-     * @symbol ?initContainerRuntimeId\@ContainerModel\@\@QEAAXXZ
-     */
-    MCAPI void initContainerRuntimeId();
-    /**
      * @symbol ?isContainerSlotInRange\@ContainerModel\@\@QEBA_NH\@Z
      */
     MCAPI bool isContainerSlotInRange(int) const;
-    /**
-     * @symbol ?isIntermediaryCategory\@ContainerModel\@\@QEBA_NXZ
-     */
-    MCAPI bool isIntermediaryCategory() const;
     /**
      * @symbol ?networkUpdateItem\@ContainerModel\@\@QEAAXHAEBVItemStack\@\@0\@Z
      */
     MCAPI void networkUpdateItem(int, class ItemStack const &, class ItemStack const &);
     /**
-     * @symbol ?registerOnContainerChangedCallback\@ContainerModel\@\@QEAAXV?$function\@$$A6AXHAEBVItemStack\@\@0\@Z\@std\@\@\@Z
-     */
-    MCAPI void registerOnContainerChangedCallback(class std::function<void (int, class ItemStack const &, class ItemStack const &)>);
-    /**
      * @symbol ?registerPlayerNotificationCallback\@ContainerModel\@\@QEAAXV?$function\@$$A6AXHAEBVItemStack\@\@0\@Z\@std\@\@\@Z
      */
     MCAPI void registerPlayerNotificationCallback(class std::function<void (int, class ItemStack const &, class ItemStack const &)>);
-    /**
-     * @symbol ?serverInitItemStackIds\@ContainerModel\@\@QEAAXXZ
-     */
-    MCAPI void serverInitItemStackIds();
-    /**
-     * @symbol ?setClientUIContainer\@ContainerModel\@\@QEAAXPEAVSparseContainerClient\@\@\@Z
-     */
-    MCAPI void setClientUIContainer(class SparseContainerClient *);
-    /**
-     * @symbol ?setItemSource\@ContainerModel\@\@QEAAXHAEBUSlotData\@\@\@Z
-     */
-    MCAPI void setItemSource(int, struct SlotData const &);
 
 //protected:
     /**
      * @symbol ?_init\@ContainerModel\@\@IEAAXXZ
      */
     MCAPI void _init();
-    /**
-     * @symbol ?_notifyPlayer\@ContainerModel\@\@IEAAXHAEBVItemStack\@\@0\@Z
-     */
-    MCAPI void _notifyPlayer(int, class ItemStack const &, class ItemStack const &);
 
 //private:
     /**

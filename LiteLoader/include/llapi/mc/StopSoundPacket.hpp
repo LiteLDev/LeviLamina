@@ -61,12 +61,12 @@ public:
     MCVAPI ~StopSoundPacket();
 #endif
     /**
-     * @symbol ??0StopSoundPacket\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
-     */
-    MCAPI StopSoundPacket(std::string const &, bool);
-    /**
      * @symbol ??0StopSoundPacket\@\@QEAA\@XZ
      */
     MCAPI StopSoundPacket();
+    /**
+     * @symbol ??0StopSoundPacket\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
+     */
+    MCAPI StopSoundPacket(std::string const &, bool);
 
 };

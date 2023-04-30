@@ -41,13 +41,13 @@ public:
      */
     MCAPI void acquireAllRandomTicks(class LevelChunk &);
     /**
-     * @symbol ?acquireAllTicks\@BlockTickingQueue\@\@QEAAXAEAV1\@\@Z
-     */
-    MCAPI void acquireAllTicks(class BlockTickingQueue &);
-    /**
      * @symbol ?acquireAllTicks\@BlockTickingQueue\@\@QEAAXAEAVLevelChunk\@\@\@Z
      */
     MCAPI void acquireAllTicks(class LevelChunk &);
+    /**
+     * @symbol ?acquireAllTicks\@BlockTickingQueue\@\@QEAAXAEAV1\@\@Z
+     */
+    MCAPI void acquireAllTicks(class BlockTickingQueue &);
     /**
      * @symbol ?add\@BlockTickingQueue\@\@QEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@HH\@Z
      */
@@ -65,6 +65,10 @@ public:
      */
     MCAPI void eliminateDuplicatesOf(class BlockLegacy const &);
     /**
+     * @symbol ?finishInstaticking\@BlockTickingQueue\@\@QEAAXXZ
+     */
+    MCAPI void finishInstaticking();
+    /**
      * @symbol ?getNextUpdateForPos\@BlockTickingQueue\@\@QEBA_NAEBVBlockPos\@\@AEAUTick\@\@\@Z
      */
     MCAPI bool getNextUpdateForPos(class BlockPos const &, struct Tick &) const;
@@ -77,41 +81,21 @@ public:
      */
     MCAPI class std::unordered_multimap<class BlockPos, struct TickDelayBlock, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, struct TickDelayBlock>>> getTickDelaysInArea(class BoundingBox const &) const;
     /**
-     * @symbol ?hasTickInCurrentTick\@BlockTickingQueue\@\@QEBA_NAEBVBlockPos\@\@\@Z
-     */
-    MCAPI bool hasTickInCurrentTick(class BlockPos const &) const;
-    /**
      * @symbol ?hasTickInPendingTicks\@BlockTickingQueue\@\@QEBA_NAEBVBlockPos\@\@\@Z
      */
     MCAPI bool hasTickInPendingTicks(class BlockPos const &) const;
-    /**
-     * @symbol ?isBlockInPendingTick\@BlockTickingQueue\@\@QEBA_NAEBVBlockPos\@\@AEBVBlock\@\@\@Z
-     */
-    MCAPI bool isBlockInPendingTick(class BlockPos const &, class Block const &) const;
-    /**
-     * @symbol ?isBlockInPendingTick\@BlockTickingQueue\@\@QEBA_NAEBVBlockPos\@\@AEBVBlockLegacy\@\@\@Z
-     */
-    MCAPI bool isBlockInPendingTick(class BlockPos const &, class BlockLegacy const &) const;
     /**
      * @symbol ?isEmpty\@BlockTickingQueue\@\@QEBA_NXZ
      */
     MCAPI bool isEmpty() const;
     /**
-     * @symbol ?isInstaticking\@BlockTickingQueue\@\@QEBA_NXZ
-     */
-    MCAPI bool isInstaticking() const;
-    /**
      * @symbol ?load\@BlockTickingQueue\@\@QEAAXAEBVCompoundTag\@\@AEBVBlockPalette\@\@\@Z
      */
     MCAPI void load(class CompoundTag const &, class BlockPalette const &);
     /**
-     * @symbol ?remove\@BlockTickingQueue\@\@QEAAXAEBVBlockPos\@\@AEBVBlock\@\@\@Z
+     * @symbol ?remove\@BlockTickingQueue\@\@QEAAXAEBV?$function\@$$A6A_NAEBVTickNextTickData\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI void remove(class BlockPos const &, class Block const &);
-    /**
-     * @symbol ?remove\@BlockTickingQueue\@\@QEAAX$$QEAV?$function\@$$A6A_NAEBVTickNextTickData\@\@\@Z\@std\@\@\@Z
-     */
-    MCAPI void remove(class std::function<bool (class TickNextTickData const &)> &&);
+    MCAPI void remove(class std::function<bool (class TickNextTickData const &)> const &);
     /**
      * @symbol ?save\@BlockTickingQueue\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -152,6 +136,10 @@ public:
      * @symbol ?_addToNextTickQueue\@BlockTickingQueue\@\@AEAAXAEBVBlockPos\@\@AEBVBlock\@\@HH\@Z
      */
     MCAPI void _addToNextTickQueue(class BlockPos const &, class Block const &, int, int);
+    /**
+     * @symbol ?_eliminateTicksForZeroAndAbove\@BlockTickingQueue\@\@AEAAXAEAVTickDataSet\@1\@\@Z
+     */
+    MCAPI void _eliminateTicksForZeroAndAbove(class BlockTickingQueue::TickDataSet &);
 
 protected:
 

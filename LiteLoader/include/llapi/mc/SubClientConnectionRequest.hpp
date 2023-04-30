@@ -146,6 +146,10 @@ public:
      */
     MCAPI bool isCapeOnClassicSkin() const;
     /**
+     * @symbol ?isCompatibleWithClientSideChunkGen\@SubClientConnectionRequest\@\@QEBA_NXZ
+     */
+    MCAPI bool isCompatibleWithClientSideChunkGen() const;
+    /**
      * @symbol ?isOverrideSkin\@SubClientConnectionRequest\@\@QEBA_NXZ
      */
     MCAPI bool isOverrideSkin() const;

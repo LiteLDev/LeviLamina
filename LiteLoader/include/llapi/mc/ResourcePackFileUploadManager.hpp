@@ -49,10 +49,6 @@ public:
     MCVAPI ~ResourcePackFileUploadManager();
 #endif
     /**
-     * @symbol ??0ResourcePackFileUploadManager\@\@QEAA\@AEAVTaskGroup\@\@V?$shared_ptr\@VIFileChunkUploader\@\@\@std\@\@\@Z
-     */
-    MCAPI ResourcePackFileUploadManager(class TaskGroup &, class std::shared_ptr<class IFileChunkUploader>);
-    /**
      * @symbol ?uploadResourcePack\@ResourcePackFileUploadManager\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVResourceLocation\@\@_N2W4PackType\@\@\@Z
      */
     MCAPI void uploadResourcePack(std::string const &, class ResourceLocation const &, bool, bool, enum class PackType);

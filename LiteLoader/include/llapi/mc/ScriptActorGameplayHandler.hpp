@@ -59,9 +59,9 @@ public:
 
 //private:
     /**
-     * @symbol ?_handleActorDefinitionStartedEvent\@ScriptActorGameplayHandler\@\@AEBA_NAEAUActorDefinitionStartedEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VScriptWorldEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
+     * @symbol ?_handleActorDefinitionStartedEvent\@ScriptActorGameplayHandler\@\@AEBA_NAEAUActorDefinitionStartedEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VIScriptBeforeEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
      */
-    MCAPI bool _handleActorDefinitionStartedEvent(struct ActorDefinitionStartedEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldEvents>) const;
+    MCAPI bool _handleActorDefinitionStartedEvent(struct ActorDefinitionStartedEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptBeforeEvents>) const;
 
 private:
 

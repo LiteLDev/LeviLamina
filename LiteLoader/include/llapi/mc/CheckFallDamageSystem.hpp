@@ -32,6 +32,10 @@ public:
      */
     MCAPI static void _checkFallDamage(class StrictEntityContext &, class ActorOwnerComponent &, struct CheckFallDamageRequestComponent &);
     /**
+     * @symbol ?_tickCheckFallDamageSystem\@CheckFallDamageSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@VActorOwnerComponent\@\@UCheckFallDamageRequestComponent\@\@\@\@\@Z
+     */
+    MCAPI static void _tickCheckFallDamageSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, class ActorOwnerComponent, struct CheckFallDamageRequestComponent>);
+    /**
      * @symbol ?createSystem\@CheckFallDamageSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();

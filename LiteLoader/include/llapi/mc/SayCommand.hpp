@@ -36,7 +36,7 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 1
+     * @vftbl 2
      * @symbol ?execute\@SayCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -47,13 +47,13 @@ public:
 
 //private:
     /**
-     * @symbol ?_sendMessage\@SayCommand\@\@AEBAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0AEBUCommandOriginIdentity\@\@AEAVLevel\@\@\@Z
+     * @symbol ?_sendMessage\@SayCommand\@\@CAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0AEBUCommandOriginIdentity\@\@AEAVLevel\@\@\@Z
      */
-    MCAPI void _sendMessage(std::string const &, std::string const &, struct CommandOriginIdentity const &, class Level &) const;
+    MCAPI static void _sendMessage(std::string const &, std::string const &, struct CommandOriginIdentity const &, class Level &);
     /**
-     * @symbol ?_trySendSayCommandEvent\@SayCommand\@\@AEBA_NAEBVPlayer\@\@AEAVLevel\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?_trySendSayCommandEvent\@SayCommand\@\@CA_NAEBVPlayer\@\@AEAVLevel\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI bool _trySendSayCommandEvent(class Player const &, class Level &, std::string const &) const;
+    MCAPI static bool _trySendSayCommandEvent(class Player const &, class Level &, std::string const &);
 
 private:
 

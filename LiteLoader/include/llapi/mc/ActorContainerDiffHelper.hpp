@@ -22,10 +22,6 @@ namespace ActorContainerDiffHelper {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?applyIfChanged\@ActorContainerDiffHelper\@\@YAXAEAVBaseAttributeMap\@\@AEBV2\@1\@Z
-     */
-    MCAPI void applyIfChanged(class BaseAttributeMap &, class BaseAttributeMap const &, class BaseAttributeMap const &);
-    /**
      * @symbol ?applyIfChanged\@ActorContainerDiffHelper\@\@YAXAEAVSynchedActorData\@\@AEBV2\@1PEAVActor\@\@\@Z
      */
     MCAPI void applyIfChanged(class SynchedActorData &, class SynchedActorData const &, class SynchedActorData const &, class Actor *);

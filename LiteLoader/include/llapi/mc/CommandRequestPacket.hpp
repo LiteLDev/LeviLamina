@@ -62,13 +62,13 @@ public:
     MCVAPI ~CommandRequestPacket();
 #endif
     /**
-     * @symbol ??0CommandRequestPacket\@\@QEAA\@AEAVCommandContext\@\@_N\@Z
-     */
-    MCAPI CommandRequestPacket(class CommandContext &, bool);
-    /**
      * @symbol ??0CommandRequestPacket\@\@QEAA\@XZ
      */
     MCAPI CommandRequestPacket();
+    /**
+     * @symbol ??0CommandRequestPacket\@\@QEAA\@AEAVCommandContext\@\@_N\@Z
+     */
+    MCAPI CommandRequestPacket(class CommandContext &, bool);
     /**
      * @symbol ?createCommandContext\@CommandRequestPacket\@\@QEBA?AV?$unique_ptr\@VCommandContext\@\@U?$default_delete\@VCommandContext\@\@\@std\@\@\@std\@\@AEBVNetworkIdentifier\@\@AEBV?$NonOwnerPointer\@VILevel\@\@\@Bedrock\@\@\@Z
      */

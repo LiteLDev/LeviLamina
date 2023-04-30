@@ -11,15 +11,15 @@
 #undef BEFORE_EXTRA
 
 
-class WebSocketPacketData {
+struct WebSocketPacketData {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEBSOCKETPACKETDATA
 public:
-    class WebSocketPacketData& operator=(class WebSocketPacketData const &) = delete;
-    WebSocketPacketData(class WebSocketPacketData const &) = delete;
+    struct WebSocketPacketData& operator=(struct WebSocketPacketData const &) = delete;
+    WebSocketPacketData(struct WebSocketPacketData const &) = delete;
     WebSocketPacketData() = delete;
 #endif
 

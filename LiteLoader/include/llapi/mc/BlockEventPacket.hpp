@@ -61,12 +61,12 @@ public:
     MCVAPI ~BlockEventPacket();
 #endif
     /**
-     * @symbol ??0BlockEventPacket\@\@QEAA\@VBlockPos\@\@HH\@Z
-     */
-    MCAPI BlockEventPacket(class BlockPos, int, int);
-    /**
      * @symbol ??0BlockEventPacket\@\@QEAA\@XZ
      */
     MCAPI BlockEventPacket();
+    /**
+     * @symbol ??0BlockEventPacket\@\@QEAA\@VBlockPos\@\@HH\@Z
+     */
+    MCAPI BlockEventPacket(class BlockPos, int, int);
 
 };

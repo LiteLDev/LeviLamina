@@ -56,16 +56,6 @@ public:
      * @symbol ?load\@Option\@\@UEAAXAEBVValue\@Json\@\@\@Z
      */
     virtual void load(class Json::Value const &);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_OPTION
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~Option();
-#endif
-    /**
-     * @symbol ??0Option\@\@QEAA\@W4OptionID\@\@W4OptionOwnerType\@\@W4OptionResetFlags\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@3W4OptionType\@\@\@Z
-     */
-    MCAPI Option(enum class OptionID, enum class OptionOwnerType, enum class OptionResetFlags, std::string const &, std::string const &, enum class OptionType);
     /**
      * @symbol ?canModify\@Option\@\@QEBA_NXZ
      */
@@ -74,10 +64,6 @@ public:
      * @symbol ?getBool\@Option\@\@QEBA_NXZ
      */
     MCAPI bool getBool() const;
-    /**
-     * @symbol ?hasOverrideSource\@Option\@\@QEBA_NXZ
-     */
-    MCAPI bool hasOverrideSource() const;
     /**
      * @symbol ?notifyOptionValueChanged\@Option\@\@QEAAX_N\@Z
      */
@@ -90,10 +76,6 @@ public:
      * @symbol ?registerObserver\@Option\@\@QEAA?AVSubscription\@PubSub\@Bedrock\@\@V?$function\@$$A6AXAEBVOption\@\@\@Z\@std\@\@\@Z
      */
     MCAPI class Bedrock::PubSub::Subscription registerObserver(class std::function<void (class Option const &)>);
-    /**
-     * @symbol ?setRequestSaveCallback\@Option\@\@QEAAXV?$function\@$$A6AX_N\@Z\@std\@\@\@Z
-     */
-    MCAPI void setRequestSaveCallback(class std::function<void (bool)>);
     /**
      * @symbol ?read\@Option\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEA_N\@Z
      */

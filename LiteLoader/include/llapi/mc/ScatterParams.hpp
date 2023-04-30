@@ -56,10 +56,6 @@ public:
      * @symbol ?initMolangParams\@ScatterParams\@\@SAXAEAVRenderParams\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     MCAPI static void initMolangParams(class RenderParams &, class BlockPos const &, class Random &);
-    /**
-     * @symbol ?initScatterParamIndices\@ScatterParams\@\@SAXXZ
-     */
-    MCAPI static void initScatterParamIndices();
 
 //private:
     /**

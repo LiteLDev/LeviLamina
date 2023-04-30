@@ -67,9 +67,9 @@ public:
     virtual bool useItem(class ItemStack &);
     /**
      * @vftbl 12
-     * @symbol ?useItemOn\@SurvivalMode\@\@UEAA_NAEAVItemStack\@\@AEBVBlockPos\@\@EAEBVVec3\@\@PEBVBlock\@\@\@Z
+     * @symbol ?useItemOn\@SurvivalMode\@\@UEAA?AVInteractionResult\@\@AEAVItemStack\@\@AEBVBlockPos\@\@EAEBVVec3\@\@PEBVBlock\@\@\@Z
      */
-    virtual bool useItemOn(class ItemStack &, class BlockPos const &, unsigned char, class Vec3 const &, class Block const *);
+    virtual class InteractionResult useItemOn(class ItemStack &, class BlockPos const &, unsigned char, class Vec3 const &, class Block const *);
     /**
      * @vftbl 13
      * @symbol ?interact\@SurvivalMode\@\@UEAA_NAEAVActor\@\@AEBVVec3\@\@\@Z

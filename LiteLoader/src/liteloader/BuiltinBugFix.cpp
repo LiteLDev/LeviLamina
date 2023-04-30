@@ -173,16 +173,16 @@ TInstanceHook(void, "?moveSpawnView@Player@@QEAAXAEBVVec3@@V?$AutomaticID@VDimen
         return original(this, pos, dimid);
     fixPlayerPosition(this, false);
 }
-
-TClasslessInstanceHook(__int64,
-                       "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NW4ChunkSourceViewGenerateMode@@V?$function@$$"
-                       "A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@@Z",
-                       BlockPos a2, int a3, unsigned __int8 a4, int a5, __int64 a6) {
-    if (validPosition(a2))
-        return original(this, a2, a3, a4, a5, a6);
-    fixPlayerPosition(movingViewPlayer);
-    return 0;
-}
+// 这个函数没有了，我也不知这个修的是啥，就注释了
+//TClasslessInstanceHook(__int64,
+//                       "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NW4ChunkSourceViewGenerateMode@@V?$function@$$"
+//                       "A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@@Z",
+//                       BlockPos a2, int a3, unsigned __int8 a4, int a5, __int64 a6) {
+//    if (validPosition(a2))
+//        return original(this, a2, a3, a4, a5, a6);
+//    fixPlayerPosition(movingViewPlayer);
+//    return 0;
+//}
 
 TInstanceHook(void, "?move@Player@@UEAAXAEBVVec3@@@Z", Player, Vec3 pos) {
     if (validPosition(pos))
@@ -282,7 +282,7 @@ TInstanceHook(LevelData*,
 // Disable 'Running AutoCompaction...' log.
 bool pauseBLogging = false;
 
-THook(__int64, "std::_Func_impl_no_alloc<<lambda_2381ef31a87ebf59a36ffb68603804e4>,TaskResult>::_Do_call", __int64 a1,
+THook(__int64, "std::_Func_impl_no_alloc<<lambda_9b9237010867a1f09dca3a15f1f59320>,TaskResult>::_Do_call", __int64 a1,
       __int64 a2) {
     if (ll::globalConfig.disableAutoCompactionLog) {
         pauseBLogging = true;

@@ -12,7 +12,7 @@
 #undef BEFORE_EXTRA
 
 
-class BlockLightEmissionDescription {
+struct BlockLightEmissionDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -20,8 +20,8 @@ class BlockLightEmissionDescription {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKLIGHTEMISSIONDESCRIPTION
 public:
-    class BlockLightEmissionDescription& operator=(class BlockLightEmissionDescription const &) = delete;
-    BlockLightEmissionDescription(class BlockLightEmissionDescription const &) = delete;
+    struct BlockLightEmissionDescription& operator=(struct BlockLightEmissionDescription const &) = delete;
+    BlockLightEmissionDescription(struct BlockLightEmissionDescription const &) = delete;
     BlockLightEmissionDescription() = delete;
 #endif
 
@@ -69,9 +69,5 @@ public:
      * @symbol ?bindType\@BlockLightEmissionDescription\@\@SAXXZ
      */
     MCAPI static void bindType();
-    /**
-     * @symbol ?registerVersionUpgrades\@BlockLightEmissionDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
-     */
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

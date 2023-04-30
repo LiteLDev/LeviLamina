@@ -31,10 +31,6 @@ public:
 
 public:
     /**
-     * @symbol ??0FlatWorldGeneratorOptions\@\@QEAA\@AEBVValue\@Json\@\@AEBVBlockPalette\@\@AEBVLevelData\@\@\@Z
-     */
-    MCAPI FlatWorldGeneratorOptions(class Json::Value const &, class BlockPalette const &, class LevelData const &);
-    /**
      * @symbol ??1FlatWorldGeneratorOptions\@\@QEAA\@XZ
      */
     MCAPI ~FlatWorldGeneratorOptions();

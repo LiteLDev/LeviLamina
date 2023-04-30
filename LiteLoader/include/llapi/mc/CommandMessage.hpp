@@ -8,7 +8,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+#include "CommandSelector.hpp"
 #undef BEFORE_EXTRA
 
 /**
@@ -21,7 +21,7 @@ class CommandMessage {
 // Add Member There
     struct MessageComponent {
     std::string string;
-    std::unique_ptr<CommandSelector<Actor>> selection;
+    std::unique_ptr<CommandSelector<class Actor>> selection;
     };
     /*{
         char filler[200];

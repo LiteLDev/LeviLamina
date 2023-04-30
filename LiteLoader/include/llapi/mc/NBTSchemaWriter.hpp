@@ -130,14 +130,6 @@ public:
      */
     MCVAPI bool write(__int64);
     /**
-     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NH\@Z
-     */
-    MCVAPI bool write(int);
-    /**
-     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NI\@Z
-     */
-    MCVAPI bool write(unsigned int);
-    /**
      * @symbol ?write\@NBTSchemaWriter\@\@UEAA_N_N\@Z
      */
     MCVAPI bool write(bool);
@@ -157,6 +149,14 @@ public:
      * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NG\@Z
      */
     MCVAPI bool write(unsigned short);
+    /**
+     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NH\@Z
+     */
+    MCVAPI bool write(int);
+    /**
+     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NI\@Z
+     */
+    MCVAPI bool write(unsigned int);
     /**
      * @symbol __unk_destructor_-1
      */

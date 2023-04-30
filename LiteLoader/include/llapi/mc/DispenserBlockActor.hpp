@@ -100,10 +100,6 @@ public:
     MCVAPI ~DispenserBlockActor();
 #endif
     /**
-     * @symbol ??0DispenserBlockActor\@\@QEAA\@VBlockPos\@\@\@Z
-     */
-    MCAPI DispenserBlockActor(class BlockPos);
-    /**
      * @symbol ??0DispenserBlockActor\@\@QEAA\@VBlockPos\@\@W4BlockActorType\@\@\@Z
      */
     MCAPI DispenserBlockActor(class BlockPos, enum class BlockActorType);

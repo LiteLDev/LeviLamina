@@ -38,9 +38,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?assemble\@BannerAddPatternRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@\@Z
+     * @symbol ?assemble\@BannerAddPatternRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@AEBUCraftingContext\@\@\@Z
      */
-    virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
+    virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &, struct CraftingContext const &) const;
     /**
      * @vftbl 2
      * @symbol ?getCraftingSize\@BannerAddPatternRecipe\@\@UEBAHXZ
@@ -56,6 +56,11 @@ public:
      * @symbol ?getResultItem\@BannerAddPatternRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::vector<class ItemInstance> const & getResultItem() const;
+    /**
+     * @vftbl 5
+     * @symbol __unk_vfn_5
+     */
+    virtual void __unk_vfn_5();
     /**
      * @vftbl 6
      * @symbol ?matches\@BannerAddPatternRecipe\@\@UEBA_NAEAVCraftingContainer\@\@AEAVLevel\@\@\@Z

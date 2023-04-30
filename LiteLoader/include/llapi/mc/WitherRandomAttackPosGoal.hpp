@@ -65,9 +65,5 @@ public:
      * @symbol __unk_vfn_9
      */
     virtual void __unk_vfn_9();
-    /**
-     * @symbol ??0WitherRandomAttackPosGoal\@\@QEAA\@AEAVMob\@\@MHH\@Z
-     */
-    MCAPI WitherRandomAttackPosGoal(class Mob &, float, int, int);
 
 };

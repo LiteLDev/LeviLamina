@@ -62,10 +62,6 @@ public:
     MCVAPI ~SetTitlePacket();
 #endif
     /**
-     * @symbol ??0SetTitlePacket\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI SetTitlePacket(class SetTitlePacket const &);
-    /**
      * @symbol ??0SetTitlePacket\@\@QEAA\@XZ
      */
     MCAPI SetTitlePacket();
@@ -77,6 +73,10 @@ public:
      * @symbol ??0SetTitlePacket\@\@QEAA\@HHH\@Z
      */
     MCAPI SetTitlePacket(int, int, int);
+    /**
+     * @symbol ??0SetTitlePacket\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI SetTitlePacket(class SetTitlePacket const &);
     /**
      * @symbol ??0SetTitlePacket\@\@QEAA\@W4TitleType\@0\@AEBVResolvedTextObject\@\@\@Z
      */

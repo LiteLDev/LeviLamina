@@ -187,6 +187,16 @@ public:
      * @symbol ?setLevelChunk\@ChunkSource\@\@UEAAXV?$shared_ptr\@VLevelChunk\@\@\@std\@\@\@Z
      */
     virtual void setLevelChunk(class std::shared_ptr<class LevelChunk>);
+    /**
+     * @vftbl 30
+     * @symbol ?canLaunchTasks\@ChunkSource\@\@UEBA_NXZ
+     */
+    virtual bool canLaunchTasks() const;
+    /**
+     * @vftbl 31
+     * @symbol ?chunkPosNeedsBlending\@ChunkSource\@\@UEAA_NAEBVChunkPos\@\@\@Z
+     */
+    virtual bool chunkPosNeedsBlending(class ChunkPos const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHUNKSOURCE
     /**
      * @symbol __unk_destructor_-1
@@ -206,9 +216,9 @@ public:
      */
     MCAPI void checkAndLaunchChunkGenerationTasks(bool);
     /**
-     * @symbol ?createEmptyView\@ChunkSource\@\@QEAA?AV?$GridArea\@V?$shared_ptr\@VLevelChunk\@\@\@std\@\@\@\@W4LoadMode\@1\@_NV?$function\@$$A6AXV?$buffer_span_mut\@V?$shared_ptr\@VLevelChunk\@\@\@std\@\@\@\@V?$buffer_span\@I\@\@\@Z\@std\@\@W4ChunkSourceViewGenerateMode\@\@\@Z
+     * @symbol ?createEmptyView\@ChunkSource\@\@QEAA?AV?$GridArea\@V?$shared_ptr\@VLevelChunk\@\@\@std\@\@\@\@W4LoadMode\@1\@_NV?$function\@$$A6AXV?$buffer_span_mut\@V?$shared_ptr\@VLevelChunk\@\@\@std\@\@\@\@V?$buffer_span\@I\@\@\@Z\@std\@\@W4ChunkSourceViewGenerateMode\@\@PEBM\@Z
      */
-    MCAPI class GridArea<class std::shared_ptr<class LevelChunk>> createEmptyView(enum class ChunkSource::LoadMode, bool, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>, enum class ChunkSourceViewGenerateMode);
+    MCAPI class GridArea<class std::shared_ptr<class LevelChunk>> createEmptyView(enum class ChunkSource::LoadMode, bool, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>, enum class ChunkSourceViewGenerateMode, float const *);
     /**
      * @symbol ?getAvailableChunk\@ChunkSource\@\@QEAA?AV?$shared_ptr\@VLevelChunk\@\@\@std\@\@AEBVChunkPos\@\@\@Z
      */
@@ -238,9 +248,9 @@ public:
      */
     MCAPI void setShuttingDown(bool);
     /**
-     * @symbol ?shouldServerGeneratePos\@ChunkSource\@\@QEAA_NAEBVChunkPos\@\@\@Z
+     * @symbol ?shouldServerGeneratePos\@ChunkSource\@\@QEAA_NAEBVChunkPos\@\@MH\@Z
      */
-    MCAPI bool shouldServerGeneratePos(class ChunkPos const &);
+    MCAPI bool shouldServerGeneratePos(class ChunkPos const &, float, int);
     /**
      * @symbol ?gPerfIsClientSide\@ChunkSource\@\@2_NA
      */

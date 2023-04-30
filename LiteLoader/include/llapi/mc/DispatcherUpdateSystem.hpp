@@ -12,7 +12,7 @@
 #undef BEFORE_EXTRA
 
 
-class DispatcherUpdateSystem {
+struct DispatcherUpdateSystem {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -20,8 +20,8 @@ class DispatcherUpdateSystem {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DISPATCHERUPDATESYSTEM
 public:
-    class DispatcherUpdateSystem& operator=(class DispatcherUpdateSystem const &) = delete;
-    DispatcherUpdateSystem(class DispatcherUpdateSystem const &) = delete;
+    struct DispatcherUpdateSystem& operator=(struct DispatcherUpdateSystem const &) = delete;
+    DispatcherUpdateSystem(struct DispatcherUpdateSystem const &) = delete;
     DispatcherUpdateSystem() = delete;
 #endif
 

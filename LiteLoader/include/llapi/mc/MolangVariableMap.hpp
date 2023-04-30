@@ -40,37 +40,9 @@ public:
      */
     MCAPI class MolangVariableMap & clear();
     /**
-     * @symbol ?getConstScriptArgReference\@MolangVariableMap\@\@QEBAPEBUMolangScriptArg\@\@AEBW4MolangVariableIndex\@\@\@Z
-     */
-    MCAPI struct MolangScriptArg const * getConstScriptArgReference(enum class MolangVariableIndex const &) const;
-    /**
-     * @symbol ?getMolangVariable\@MolangVariableMap\@\@QEBAAEBUMolangScriptArg\@\@AEBW4MolangVariableIndex\@\@AEA_N\@Z
-     */
-    MCAPI struct MolangScriptArg const & getMolangVariable(enum class MolangVariableIndex const &, bool &) const;
-    /**
      * @symbol ?getMolangVariable\@MolangVariableMap\@\@QEBAAEBUMolangScriptArg\@\@_KPEBD\@Z
      */
     MCAPI struct MolangScriptArg const & getMolangVariable(unsigned __int64, char const *) const;
-    /**
-     * @symbol ?getMolangVariable\@MolangVariableMap\@\@QEBAAEBUMolangScriptArg\@\@AEB_KAEA_N\@Z
-     */
-    MCAPI struct MolangScriptArg const & getMolangVariable(unsigned __int64 const &, bool &) const;
-    /**
-     * @symbol ?getNonConstScriptArgReference\@MolangVariableMap\@\@QEAAPEAUMolangScriptArg\@\@AEBW4MolangVariableIndex\@\@\@Z
-     */
-    MCAPI struct MolangScriptArg * getNonConstScriptArgReference(enum class MolangVariableIndex const &);
-    /**
-     * @symbol ?getOrAddNonConstScriptArgReference\@MolangVariableMap\@\@QEAAPEAUMolangScriptArg\@\@AEBW4MolangVariableIndex\@\@\@Z
-     */
-    MCAPI struct MolangScriptArg * getOrAddNonConstScriptArgReference(enum class MolangVariableIndex const &);
-    /**
-     * @symbol ?getPublicMolangVariable\@MolangVariableMap\@\@QEBAAEBUMolangScriptArg\@\@AEBW4MolangVariableIndex\@\@AEA_N\@Z
-     */
-    MCAPI struct MolangScriptArg const & getPublicMolangVariable(enum class MolangVariableIndex const &, bool &) const;
-    /**
-     * @symbol ?getVariables\@MolangVariableMap\@\@QEBAAEBV?$vector\@V?$unique_ptr\@VMolangVariable\@\@U?$default_delete\@VMolangVariable\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VMolangVariable\@\@U?$default_delete\@VMolangVariable\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@XZ
-     */
-    MCAPI std::vector<std::unique_ptr<class MolangVariable>> const & getVariables() const;
     /**
      * @symbol ??4MolangVariableMap\@\@QEAAAEAV0\@AEBV0\@\@Z
      */

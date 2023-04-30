@@ -40,10 +40,6 @@ public:
      */
     MCAPI CommandItem(int, short, bool);
     /**
-     * @symbol ??0CommandItem\@\@QEAA\@_K\@Z
-     */
-    MCAPI CommandItem(unsigned __int64);
-    /**
      * @symbol ?createInstance\@CommandItem\@\@QEBA?AV?$optional\@VItemInstance\@\@\@std\@\@HHPEAVCommandOutput\@\@_N\@Z
      */
     MCAPI class std::optional<class ItemInstance> createInstance(int, int, class CommandOutput *, bool) const;
@@ -55,9 +51,5 @@ public:
      * @symbol ??BCommandItem\@\@QEBA_NXZ
      */
     MCAPI operator bool() const;
-    /**
-     * @symbol ??BCommandItem\@\@QEBA_KXZ
-     */
-    MCAPI operator unsigned __int64() const;
 
 };

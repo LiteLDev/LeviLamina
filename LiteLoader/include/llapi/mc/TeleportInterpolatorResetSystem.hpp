@@ -31,5 +31,9 @@ public:
      * @symbol ?createTeleportInterpolatorResetSystem\@TeleportInterpolatorResetSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createTeleportInterpolatorResetSystem();
+    /**
+     * @symbol ?tickTeleportInterpolatorResetSystem\@TeleportInterpolatorResetSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UServerPlayerComponentFlag\@\@\@\@\@\@V?$Optional\@UMovementInterpolatorComponent\@\@\@\@$$CBUPlayerPositionModeComponent\@\@UFallDistanceComponent\@\@UStateVectorComponent\@\@\@\@\@Z
+     */
+    MCAPI static void tickTeleportInterpolatorResetSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct ServerPlayerComponentFlag>>, class Optional<struct MovementInterpolatorComponent>, struct PlayerPositionModeComponent const, struct FallDistanceComponent, struct StateVectorComponent>);
 
 };

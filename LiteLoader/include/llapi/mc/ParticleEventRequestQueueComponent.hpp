@@ -31,9 +31,5 @@ public:
      * @symbol ??0ParticleEventRequestQueueComponent\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI ParticleEventRequestQueueComponent(struct ParticleEventRequestQueueComponent &&);
-    /**
-     * @symbol ??1ParticleEventRequestQueueComponent\@\@QEAA\@XZ
-     */
-    MCAPI ~ParticleEventRequestQueueComponent();
 
 };

@@ -33,6 +33,10 @@ public:
      */
     MCAPI LevelSettings(class LevelData const &, class AutomaticID<class Dimension, int>);
     /**
+     * @symbol ??0LevelSettings\@\@QEAA\@XZ
+     */
+    MCAPI LevelSettings();
+    /**
      * @symbol ??0LevelSettings\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI LevelSettings(class LevelSettings &&);
@@ -40,10 +44,6 @@ public:
      * @symbol ??0LevelSettings\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI LevelSettings(class LevelSettings const &);
-    /**
-     * @symbol ??0LevelSettings\@\@QEAA\@XZ
-     */
-    MCAPI LevelSettings();
     /**
      * @symbol ?achievementsWillBeDisabledOnLoad\@LevelSettings\@\@QEBA_NXZ
      */
@@ -61,6 +61,10 @@ public:
      */
     MCAPI bool forceGameType() const;
     /**
+     * @symbol ?getAdventureModeOverridesEnabled\@LevelSettings\@\@QEBA_NXZ
+     */
+    MCAPI bool getAdventureModeOverridesEnabled() const;
+    /**
      * @symbol ?getBaseGameVersion\@LevelSettings\@\@QEBAAEBVBaseGameVersion\@\@XZ
      */
     MCAPI class BaseGameVersion const & getBaseGameVersion() const;
@@ -77,13 +81,13 @@ public:
      */
     MCAPI bool getCustomSkinsDisabled() const;
     /**
+     * @symbol ?getDaylightCycle\@LevelSettings\@\@QEBA?AW4DaylightCycle\@\@XZ
+     */
+    MCAPI enum class DaylightCycle getDaylightCycle() const;
+    /**
      * @symbol ?getDefaultPermissions\@LevelSettings\@\@QEBAAEBVPermissionsHandler\@\@XZ
      */
     MCAPI class PermissionsHandler const & getDefaultPermissions() const;
-    /**
-     * @symbol ?getDefaultSpawn\@LevelSettings\@\@QEBAAEBVBlockPos\@\@XZ
-     */
-    MCAPI class BlockPos const & getDefaultSpawn() const;
     /**
      * @symbol ?getDisablePlayerInteractions\@LevelSettings\@\@QEBA_NXZ
      */
@@ -92,10 +96,6 @@ public:
      * @symbol ?getEduSharedUriResource\@LevelSettings\@\@QEBAAEBUEduSharedUriResource\@\@XZ
      */
     MCAPI struct EduSharedUriResource const & getEduSharedUriResource() const;
-    /**
-     * @symbol ?getEducationEditionOffer\@LevelSettings\@\@QEBA?AW4EducationEditionOffer\@\@XZ
-     */
-    MCAPI enum class EducationEditionOffer getEducationEditionOffer() const;
     /**
      * @symbol ?getEducationLevelSettings\@LevelSettings\@\@QEBAAEBV?$optional\@UEducationLevelSettings\@\@\@std\@\@XZ
      */
@@ -121,10 +121,6 @@ public:
      */
     MCAPI enum class GameType getGameType() const;
     /**
-     * @symbol ?getGenerator\@LevelSettings\@\@QEBA?AW4GeneratorType\@\@XZ
-     */
-    MCAPI enum class GeneratorType getGenerator() const;
-    /**
      * @symbol ?getImmutableWorld\@LevelSettings\@\@QEBA_NXZ
      */
     MCAPI bool getImmutableWorld() const;
@@ -132,10 +128,6 @@ public:
      * @symbol ?getLanBroadcastIntent\@LevelSettings\@\@QEBA_NXZ
      */
     MCAPI bool getLanBroadcastIntent() const;
-    /**
-     * @symbol ?getLightningLevel\@LevelSettings\@\@QEBAMXZ
-     */
-    MCAPI float getLightningLevel() const;
     /**
      * @symbol ?getLimitedWorldDepth\@LevelSettings\@\@QEBAHXZ
      */
@@ -165,10 +157,6 @@ public:
      */
     MCAPI enum class Social::GamePublishSetting getPlatformBroadcastIntent() const;
     /**
-     * @symbol ?getRainLevel\@LevelSettings\@\@QEBAMXZ
-     */
-    MCAPI float getRainLevel() const;
-    /**
      * @symbol ?getSeed\@LevelSettings\@\@QEBA?AVLevelSeed64\@\@XZ
      */
     MCAPI class LevelSeed64 getSeed() const;
@@ -193,13 +181,13 @@ public:
      */
     MCAPI enum class Social::GamePublishSetting getXBLBroadcastIntent() const;
     /**
-     * @symbol ?hasAchievementsDisabled\@LevelSettings\@\@QEBA_NXZ
-     */
-    MCAPI bool hasAchievementsDisabled() const;
-    /**
      * @symbol ?hasBonusChestEnabled\@LevelSettings\@\@QEBA_NXZ
      */
     MCAPI bool hasBonusChestEnabled() const;
+    /**
+     * @symbol ?hasCheatsEnabled\@LevelSettings\@\@QEBA_NXZ
+     */
+    MCAPI bool hasCheatsEnabled() const;
     /**
      * @symbol ?hasCommandsEnabled\@LevelSettings\@\@QEBA_NXZ
      */
@@ -221,9 +209,17 @@ public:
      */
     MCAPI bool hasStartWithMapEnabled() const;
     /**
+     * @symbol ?isCreatedInEditor\@LevelSettings\@\@QEBA_NXZ
+     */
+    MCAPI bool isCreatedInEditor() const;
+    /**
      * @symbol ?isEditorWorld\@LevelSettings\@\@QEBA_NXZ
      */
     MCAPI bool isEditorWorld() const;
+    /**
+     * @symbol ?isExportedFromEditor\@LevelSettings\@\@QEBA_NXZ
+     */
+    MCAPI bool isExportedFromEditor() const;
     /**
      * @symbol ?isFromLockedTemplate\@LevelSettings\@\@QEBA_NXZ
      */
@@ -245,9 +241,9 @@ public:
      */
     MCAPI class LevelSettings & operator=(class LevelSettings &&);
     /**
-     * @symbol ?overrideSavedSettings\@LevelSettings\@\@QEBAXAEAVLevelData\@\@\@Z
+     * @symbol ?setAdventureModeOverridesEnabled\@LevelSettings\@\@QEAAAEAV1\@_N\@Z
      */
-    MCAPI void overrideSavedSettings(class LevelData &) const;
+    MCAPI class LevelSettings & setAdventureModeOverridesEnabled(bool);
     /**
      * @symbol ?setBaseGameVersion\@LevelSettings\@\@QEAAAEAV1\@AEBVBaseGameVersion\@\@\@Z
      */

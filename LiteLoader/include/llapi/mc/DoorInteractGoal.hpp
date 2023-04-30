@@ -81,19 +81,11 @@ public:
      */
     MCAPI DoorInteractGoal(class Mob &);
 
-//protected:
-    /**
-     * @symbol ?_doorBlocksPath\@DoorInteractGoal\@\@IEBA_NXZ
-     */
-    MCAPI bool _doorBlocksPath() const;
-
 //private:
     /**
      * @symbol ?_findBlockingDoorAtPos\@DoorInteractGoal\@\@CAPEBVDoorBlock\@\@AEBVBlockPos\@\@AEBVMob\@\@PEAVPath\@\@AEAW4Type\@Direction\@\@3\@Z
      */
     MCAPI static class DoorBlock const * _findBlockingDoorAtPos(class BlockPos const &, class Mob const &, class Path *, enum class Direction::Type &, enum class Direction::Type &);
-
-protected:
 
 private:
 

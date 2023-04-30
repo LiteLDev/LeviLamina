@@ -42,10 +42,6 @@ public:
      */
     MCAPI int update(class Actor &, bool);
     /**
-     * @symbol ?updateFromPosition\@CompassSpriteCalculator\@\@QEAAHPEBVBlockSource\@\@AEBVBlockPos\@\@MMM_N22\@Z
-     */
-    MCAPI int updateFromPosition(class BlockSource const *, class BlockPos const &, float, float, float, bool, bool, bool);
-    /**
      * @symbol ?updateFromPosition\@CompassSpriteCalculator\@\@QEAAHPEBVBlockSource\@\@PEAVActor\@\@MMM_N2\@Z
      */
     MCAPI int updateFromPosition(class BlockSource const *, class Actor *, float, float, float, bool, bool);

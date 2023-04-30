@@ -44,10 +44,6 @@ public:
     MCVAPI ~ActorAliasDescription();
 #endif
     /**
-     * @symbol ?getAliasInfo\@ActorAliasDescription\@\@QEBAPEBUAliasInfoDescription\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI struct AliasInfoDescription const * getAliasInfo(std::string const &) const;
-    /**
      * @symbol ?parse\@ActorAliasDescription\@\@QEAAXAEAVValue\@Json\@\@_N\@Z
      */
     MCAPI void parse(class Json::Value &, bool);

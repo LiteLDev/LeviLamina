@@ -28,9 +28,5 @@ public:
      * @symbol ??4GetAttachPosRequestComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct GetAttachPosRequestComponent & operator=(struct GetAttachPosRequestComponent &&);
-    /**
-     * @symbol ??1GetAttachPosRequestComponent\@\@QEAA\@XZ
-     */
-    MCAPI ~GetAttachPosRequestComponent();
 
 };

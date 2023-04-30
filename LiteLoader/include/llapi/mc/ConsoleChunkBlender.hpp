@@ -28,21 +28,10 @@ enum class BlenderMode;
 public:
     class ConsoleChunkBlender& operator=(class ConsoleChunkBlender const &) = delete;
     ConsoleChunkBlender(class ConsoleChunkBlender const &) = delete;
+    ConsoleChunkBlender() = delete;
 #endif
 
 public:
-    /**
-     * @symbol ??0ConsoleChunkBlender\@\@QEAA\@XZ
-     */
-    MCAPI ConsoleChunkBlender();
-    /**
-     * @symbol ?blendChunk\@ConsoleChunkBlender\@\@QEAAXAEAVLevelChunk\@\@0W4BlenderMode\@1\@\@Z
-     */
-    MCAPI void blendChunk(class LevelChunk &, class LevelChunk &, enum class ConsoleChunkBlender::BlenderMode);
-    /**
-     * @symbol ?setInterpolants\@ConsoleChunkBlender\@\@QEAAXMMMM\@Z
-     */
-    MCAPI void setInterpolants(float, float, float, float);
     /**
      * @symbol ??1ConsoleChunkBlender\@\@QEAA\@XZ
      */

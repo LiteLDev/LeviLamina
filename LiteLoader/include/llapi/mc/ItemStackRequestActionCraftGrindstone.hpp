@@ -67,9 +67,5 @@ public:
      * @symbol ??0ItemStackRequestActionCraftGrindstone\@\@QEAA\@XZ
      */
     MCAPI ItemStackRequestActionCraftGrindstone();
-    /**
-     * @symbol ?getRepairCost\@ItemStackRequestActionCraftGrindstone\@\@QEBAHXZ
-     */
-    MCAPI int getRepairCost() const;
 
 };

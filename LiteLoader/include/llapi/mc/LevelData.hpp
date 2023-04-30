@@ -33,10 +33,6 @@ public:
 
 public:
     /**
-     * @symbol ??0LevelData\@\@QEAA\@_N\@Z
-     */
-    MCAPI LevelData(bool);
-    /**
      * @symbol ??0LevelData\@\@QEAA\@AEBVLevelSettings\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4GeneratorType\@\@AEBVBlockPos\@\@_NW4EducationEditionOffer\@\@MM\@Z
      */
     MCAPI LevelData(class LevelSettings const &, std::string const &, enum class GeneratorType, class BlockPos const &, bool, enum class EducationEditionOffer, float, float);
@@ -45,9 +41,9 @@ public:
      */
     MCAPI LevelData(class LevelData &&);
     /**
-     * @symbol ?_getValue\@LevelData\@\@QEBAPEBULevelDataValue\@\@AEBVHashedString\@\@\@Z
+     * @symbol ??0LevelData\@\@QEAA\@_N\@Z
      */
-    MCAPI struct LevelDataValue const * _getValue(class HashedString const &) const;
+    MCAPI LevelData(bool);
     /**
      * @symbol ?achievementsWillBeDisabledOnLoad\@LevelData\@\@QEBA_NXZ
      */
@@ -65,13 +61,17 @@ public:
      */
     MCAPI bool educationFeaturesEnabled() const;
     /**
-     * @symbol ?getAdventureSettings\@LevelData\@\@QEBAAEBUAdventureSettings\@\@XZ
+     * @symbol ?getAdventureModeOverridesEnabled\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI struct AdventureSettings const & getAdventureSettings() const;
+    MCAPI bool getAdventureModeOverridesEnabled() const;
     /**
      * @symbol ?getAdventureSettings\@LevelData\@\@QEAAAEAUAdventureSettings\@\@XZ
      */
     MCAPI struct AdventureSettings & getAdventureSettings();
+    /**
+     * @symbol ?getAdventureSettings\@LevelData\@\@QEBAAEBUAdventureSettings\@\@XZ
+     */
+    MCAPI struct AdventureSettings const & getAdventureSettings() const;
     /**
      * @symbol ?getBaseGameVersion\@LevelData\@\@QEBAAEBVBaseGameVersion\@\@XZ
      */
@@ -96,6 +96,10 @@ public:
      * @symbol ?getCustomSkinsDisabled\@LevelData\@\@QEBA_NXZ
      */
     MCAPI bool getCustomSkinsDisabled() const;
+    /**
+     * @symbol ?getDaylightCycle\@LevelData\@\@QEBA?AW4DaylightCycle\@\@XZ
+     */
+    MCAPI enum class DaylightCycle getDaylightCycle() const;
     /**
      * @symbol ?getDefaultAbilities\@LevelData\@\@QEAAAEAVAbilities\@\@XZ
      */
@@ -165,10 +169,6 @@ public:
      */
     MCAPI enum class GeneratorType getGenerator() const;
     /**
-     * @symbol ?getIsSingleUseWorld\@LevelData\@\@QEBA?B_NXZ
-     */
-    MCAPI bool const getIsSingleUseWorld() const;
-    /**
      * @symbol ?getLANBroadcast\@LevelData\@\@QEBA_NXZ
      */
     MCAPI bool getLANBroadcast() const;
@@ -176,10 +176,6 @@ public:
      * @symbol ?getLANBroadcastIntent\@LevelData\@\@QEBA_NXZ
      */
     MCAPI bool getLANBroadcastIntent() const;
-    /**
-     * @symbol ?getLastPlayed\@LevelData\@\@QEBA_JXZ
-     */
-    MCAPI __int64 getLastPlayed() const;
     /**
      * @symbol ?getLevelName\@LevelData\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
@@ -201,14 +197,6 @@ public:
      */
     MCAPI int getLimitedWorldWidth() const;
     /**
-     * @symbol ?getLoadedPlayerTag\@LevelData\@\@QEAAAEAVCompoundTag\@\@XZ
-     */
-    MCAPI class CompoundTag & getLoadedPlayerTag();
-    /**
-     * @symbol ?getMinCompatibleClientVersion\@LevelData\@\@QEBAAEBVGameVersion\@\@XZ
-     */
-    MCAPI class GameVersion const & getMinCompatibleClientVersion() const;
-    /**
      * @symbol ?getMultiplayerGameIntent\@LevelData\@\@QEBA_NXZ
      */
     MCAPI bool getMultiplayerGameIntent() const;
@@ -220,10 +208,6 @@ public:
      * @symbol ?getNetherType\@LevelData\@\@QEBA?AW4NetherWorldType\@\@XZ
      */
     MCAPI enum class NetherWorldType getNetherType() const;
-    /**
-     * @symbol ?getNetworkVersion\@LevelData\@\@QEBAHXZ
-     */
-    MCAPI int getNetworkVersion() const;
     /**
      * @symbol ?getOnlySpawnV1Villagers\@LevelData\@\@QEBA_NXZ
      */
@@ -321,6 +305,10 @@ public:
      */
     MCAPI bool hasBonusChestEnabled() const;
     /**
+     * @symbol ?hasCheatsEnabled\@LevelData\@\@QEBA_NXZ
+     */
+    MCAPI bool hasCheatsEnabled() const;
+    /**
      * @symbol ?hasCommandsEnabled\@LevelData\@\@QEBA_NXZ
      */
     MCAPI bool hasCommandsEnabled() const;
@@ -349,6 +337,10 @@ public:
      */
     MCAPI void incrementTick();
     /**
+     * @symbol ?isCreatedInEditor\@LevelData\@\@QEBA_NXZ
+     */
+    MCAPI bool isCreatedInEditor() const;
+    /**
      * @symbol ?isEditorWorld\@LevelData\@\@QEBA_NXZ
      */
     MCAPI bool isEditorWorld() const;
@@ -356,6 +348,10 @@ public:
      * @symbol ?isEducationEditionLevel\@LevelData\@\@QEBA_NXZ
      */
     MCAPI bool isEducationEditionLevel() const;
+    /**
+     * @symbol ?isExportedFromEditor\@LevelData\@\@QEBA_NXZ
+     */
+    MCAPI bool isExportedFromEditor() const;
     /**
      * @symbol ?isFromLockedTemplate\@LevelData\@\@QEBA_NXZ
      */
@@ -400,6 +396,10 @@ public:
      * @symbol ?recordStartUp\@LevelData\@\@QEAAXXZ
      */
     MCAPI void recordStartUp();
+    /**
+     * @symbol ?setAdventureModeOverridesEnabled\@LevelData\@\@QEAAX_N\@Z
+     */
+    MCAPI void setAdventureModeOverridesEnabled(bool);
     /**
      * @symbol ?setBaseGameVersion\@LevelData\@\@QEAAXAEBVBaseGameVersion\@\@\@Z
      */
@@ -598,6 +598,10 @@ public:
     MCAPI ~LevelData();
 
 //private:
+    /**
+     * @symbol ?_determineMaxBaseGameVersion\@LevelData\@\@AEAAXXZ
+     */
+    MCAPI void _determineMaxBaseGameVersion();
     /**
      * @symbol ?_setValue\@LevelData\@\@AEAAXAEBVHashedString\@\@$$QEAULevelDataValue\@\@\@Z
      */

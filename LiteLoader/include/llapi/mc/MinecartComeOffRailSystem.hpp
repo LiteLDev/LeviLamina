@@ -36,4 +36,12 @@ public:
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
+//private:
+    /**
+     * @symbol ?_tickMinecartComeOffRailSystem\@MinecartComeOffRailSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Exclude\@USnapOnRailComponent\@\@\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@\@\@$$CBVRailMovementComponent\@\@UStateVectorComponent\@\@V?$Optional\@$$CBV?$FlagComponent\@UOnGroundFlag\@\@\@\@\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UMoveRequestComponent\@\@\@\@\@Z
+     */
+    MCAPI static void _tickMinecartComeOffRailSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Exclude<struct SnapOnRailComponent>, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>, class RailMovementComponent const, struct StateVectorComponent, class Optional<class FlagComponent<struct OnGroundFlag> const>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MoveRequestComponent>);
+
+private:
+
 };

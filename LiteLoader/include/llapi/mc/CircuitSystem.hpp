@@ -64,6 +64,10 @@ public:
      */
     MCAPI void evaluate(class BlockSource *);
     /**
+     * @symbol ?getDirection\@CircuitSystem\@\@QEAAEAEBVBlockPos\@\@\@Z
+     */
+    MCAPI unsigned char getDirection(class BlockPos const &);
+    /**
      * @symbol ?getStrength\@CircuitSystem\@\@QEAAHAEBVBlockPos\@\@\@Z
      */
     MCAPI int getStrength(class BlockPos const &);

@@ -63,10 +63,6 @@ public:
      */
     MCAPI void add(class PackInstance, class IResourcePackRepository const &, bool);
     /**
-     * @symbol ?generateAssetSet\@ResourcePackStack\@\@QEAAXXZ
-     */
-    MCAPI void generateAssetSet();
-    /**
      * @symbol ?getSplitStacks\@ResourcePackStack\@\@QEBAXAEAV1\@0\@Z
      */
     MCAPI void getSplitStacks(class ResourcePackStack &, class ResourcePackStack &) const;
@@ -78,10 +74,6 @@ public:
      * @symbol ?hasPlatformLockedContent\@ResourcePackStack\@\@QEBA_NXZ
      */
     MCAPI bool hasPlatformLockedContent() const;
-    /**
-     * @symbol ?iteratePacks\@ResourcePackStack\@\@QEBAXAEBV?$function\@$$A6AXAEBVPackInstance\@\@\@Z\@std\@\@\@Z
-     */
-    MCAPI void iteratePacks(class std::function<void (class PackInstance const &)> const &) const;
     /**
      * @symbol ?removeDuplicates\@ResourcePackStack\@\@QEAAXXZ
      */

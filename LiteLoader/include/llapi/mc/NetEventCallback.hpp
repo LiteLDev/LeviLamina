@@ -575,6 +575,10 @@ public:
      */
     MCVAPI void handle(class NetworkIdentifier const &, class BookDeletePagePacket const &);
     /**
+     * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVTrimDataPacket\@\@\@Z
+     */
+    MCVAPI void handle(class NetworkIdentifier const &, class TrimDataPacket const &);
+    /**
      * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVNpcDialoguePacket\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class NpcDialoguePacket const &);
@@ -783,6 +787,10 @@ public:
      */
     MCVAPI void handle(class NetworkIdentifier const &, class EditorNetworkPacket const &);
     /**
+     * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVCompressedBiomeDefinitionListPacket\@\@\@Z
+     */
+    MCVAPI void handle(class NetworkIdentifier const &, class CompressedBiomeDefinitionListPacket const &);
+    /**
      * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVDimensionDataPacket\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class DimensionDataPacket const &);
@@ -838,6 +846,10 @@ public:
      * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVAnvilDamagePacket\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class AnvilDamagePacket const &);
+    /**
+     * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVOpenSignPacket\@\@\@Z
+     */
+    MCVAPI void handle(class NetworkIdentifier const &, class OpenSignPacket const &);
     /**
      * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVSubChunkPacket\@\@\@Z
      */

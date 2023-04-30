@@ -11,15 +11,15 @@
 #undef BEFORE_EXTRA
 
 
-class BlockDestructibleByExplosionDescription {
+struct BlockDestructibleByExplosionDescription {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKDESTRUCTIBLEBYEXPLOSIONDESCRIPTION
 public:
-    class BlockDestructibleByExplosionDescription& operator=(class BlockDestructibleByExplosionDescription const &) = delete;
-    BlockDestructibleByExplosionDescription(class BlockDestructibleByExplosionDescription const &) = delete;
+    struct BlockDestructibleByExplosionDescription& operator=(struct BlockDestructibleByExplosionDescription const &) = delete;
+    BlockDestructibleByExplosionDescription(struct BlockDestructibleByExplosionDescription const &) = delete;
     BlockDestructibleByExplosionDescription() = delete;
 #endif
 
@@ -47,9 +47,5 @@ public:
      * @symbol ?bindType\@BlockDestructibleByExplosionDescription\@\@SAXXZ
      */
     MCAPI static void bindType();
-    /**
-     * @symbol ?registerVersionUpgrades\@BlockDestructibleByExplosionDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
-     */
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

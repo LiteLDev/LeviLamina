@@ -69,9 +69,5 @@ public:
      * @symbol ?appendDebugInfo\@SwellGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
-    /**
-     * @symbol ??0SwellGoal\@\@QEAA\@PEAVCreeper\@\@MM\@Z
-     */
-    MCAPI SwellGoal(class Creeper *, float, float);
 
 };

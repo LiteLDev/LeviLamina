@@ -182,9 +182,9 @@ public:
     virtual void __unk_vfn_105();
     /**
      * @vftbl 106
-     * @symbol ?getPlacementBlock\@DiodeBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
+     * @symbol ?getPlacementBlock\@DiodeBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
-    virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
+    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -201,30 +201,30 @@ public:
      */
     virtual void __unk_vfn_126();
     /**
-     * @vftbl 131
-     * @symbol __unk_vfn_131
+     * @vftbl 129
+     * @symbol __unk_vfn_129
      */
-    virtual void __unk_vfn_131();
+    virtual void __unk_vfn_129();
     /**
-     * @vftbl 146
+     * @vftbl 132
+     * @symbol __unk_vfn_132
+     */
+    virtual void __unk_vfn_132();
+    /**
+     * @vftbl 147
      * @symbol ?getVariant\@DiodeBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @vftbl 147
+     * @vftbl 148
      * @symbol ?canSpawnOn\@DiodeBlock\@\@UEBA_NPEAVActor\@\@\@Z
      */
     virtual bool canSpawnOn(class Actor *) const;
     /**
-     * @vftbl 156
-     * @symbol __unk_vfn_156
+     * @vftbl 157
+     * @symbol __unk_vfn_157
      */
-    virtual void __unk_vfn_156();
-    /**
-     * @vftbl 165
-     * @symbol __unk_vfn_165
-     */
-    virtual void __unk_vfn_165();
+    virtual void __unk_vfn_157();
     /**
      * @vftbl 166
      * @symbol __unk_vfn_166
@@ -236,97 +236,102 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @vftbl 170
-     * @symbol __unk_vfn_170
+     * @vftbl 168
+     * @symbol __unk_vfn_168
      */
-    virtual void __unk_vfn_170();
+    virtual void __unk_vfn_168();
     /**
-     * @vftbl 174
-     * @symbol __unk_vfn_174
+     * @vftbl 171
+     * @symbol __unk_vfn_171
      */
-    virtual void __unk_vfn_174();
+    virtual void __unk_vfn_171();
     /**
-     * @vftbl 178
-     * @symbol __unk_vfn_178
+     * @vftbl 175
+     * @symbol __unk_vfn_175
      */
-    virtual void __unk_vfn_178();
+    virtual void __unk_vfn_175();
     /**
      * @vftbl 179
+     * @symbol __unk_vfn_179
+     */
+    virtual void __unk_vfn_179();
+    /**
+     * @vftbl 180
      * @symbol ?canSurvive\@DiodeBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 186
-     * @symbol __unk_vfn_186
+     * @vftbl 187
+     * @symbol __unk_vfn_187
      */
-    virtual void __unk_vfn_186();
+    virtual void __unk_vfn_187();
     /**
-     * @vftbl 194
+     * @vftbl 195
      * @symbol ?getSignal\@DiodeBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     virtual int getSignal(class BlockSource &, class BlockPos const &, int) const;
     /**
-     * @vftbl 195
+     * @vftbl 196
      * @symbol ?isLocked\@DiodeBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool isLocked(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 196
+     * @vftbl 197
      * @symbol ?isSameDiode\@DiodeBlock\@\@UEBA_NAEBVBlock\@\@\@Z
      */
     virtual bool isSameDiode(class Block const &) const;
     /**
-     * @vftbl 197
+     * @vftbl 198
      * @symbol ?shouldPrioritize\@DiodeBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool shouldPrioritize(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 198
+     * @vftbl 199
      * @symbol ?isOn\@DiodeBlock\@\@MEBA_NXZ
      */
     virtual bool isOn() const;
     /**
-     * @vftbl 199
+     * @vftbl 200
      * @symbol ?shouldTurnOn\@DiodeBlock\@\@MEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool shouldTurnOn(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 200
+     * @vftbl 201
      * @symbol ?getInputSignal\@DiodeBlock\@\@MEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual int getInputSignal(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 201
+     * @vftbl 202
      * @symbol ?isAlternateInput\@DiodeBlock\@\@MEBA_NAEBVBlock\@\@\@Z
      */
     virtual bool isAlternateInput(class Block const &) const;
     /**
-     * @vftbl 202
+     * @vftbl 203
      * @symbol ?getAlternateSignal\@DiodeBlock\@\@MEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual int getAlternateSignal(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 203
+     * @vftbl 204
      * @symbol ?getOutputSignal\@DiodeBlock\@\@MEBAHAEBVBlock\@\@\@Z
      */
     virtual int getOutputSignal(class Block const &) const;
     /**
-     * @vftbl 204
+     * @vftbl 205
      * @symbol ?getTurnOffDelay\@DiodeBlock\@\@MEBAHAEBVBlock\@\@\@Z
      */
     virtual int getTurnOffDelay(class Block const &) const;
     /**
-     * @vftbl 205
+     * @vftbl 206
      * @symbol ?getTurnOnDelay\@RepeaterBlock\@\@MEBAHAEBVBlock\@\@\@Z
      */
     virtual int getTurnOnDelay(class Block const &) const = 0;
     /**
-     * @vftbl 206
+     * @vftbl 207
      * @symbol ?getOnBlock\@RepeaterBlock\@\@MEBAPEBVBlock\@\@PEBV2\@\@Z
      */
     virtual class Block const * getOnBlock(class Block const *) const = 0;
     /**
-     * @vftbl 207
+     * @vftbl 208
      * @symbol ?getOffBlock\@RepeaterBlock\@\@MEBAPEBVBlock\@\@PEBV2\@\@Z
      */
     virtual class Block const * getOffBlock(class Block const *) const = 0;

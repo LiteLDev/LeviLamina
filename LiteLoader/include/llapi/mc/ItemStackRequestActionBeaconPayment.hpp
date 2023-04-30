@@ -25,6 +25,7 @@ class ItemStackRequestActionBeaconPayment {
 public:
     class ItemStackRequestActionBeaconPayment& operator=(class ItemStackRequestActionBeaconPayment const &) = delete;
     ItemStackRequestActionBeaconPayment(class ItemStackRequestActionBeaconPayment const &) = delete;
+    ItemStackRequestActionBeaconPayment() = delete;
 #endif
 
 public:
@@ -58,10 +59,6 @@ public:
      * @symbol ?_read\@ItemStackRequestActionBeaconPayment\@\@MEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
-    /**
-     * @symbol ??0ItemStackRequestActionBeaconPayment\@\@QEAA\@XZ
-     */
-    MCAPI ItemStackRequestActionBeaconPayment();
     /**
      * @symbol ?getPrimaryEffectId\@ItemStackRequestActionBeaconPayment\@\@QEBAHXZ
      */

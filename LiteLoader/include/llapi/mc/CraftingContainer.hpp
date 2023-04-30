@@ -46,35 +46,30 @@ public:
      */
     virtual class ItemStack const & getItem(int) const;
     /**
-     * @vftbl 9
+     * @vftbl 10
      * @symbol ?setItem\@CraftingContainer\@\@UEAAXHAEBVItemStack\@\@\@Z
      */
     virtual void setItem(int, class ItemStack const &);
     /**
-     * @vftbl 14
+     * @vftbl 15
      * @symbol ?getContainerSize\@CraftingContainer\@\@UEBAHXZ
      */
     virtual int getContainerSize() const;
     /**
-     * @vftbl 15
+     * @vftbl 16
      * @symbol ?getMaxStackSize\@CraftingContainer\@\@UEBAHXZ
      */
     virtual int getMaxStackSize() const;
     /**
-     * @vftbl 16
+     * @vftbl 17
      * @symbol ?startOpen\@CraftingContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
     virtual void startOpen(class Player &);
     /**
-     * @vftbl 17
+     * @vftbl 18
      * @symbol ?stopOpen\@CraftingContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
     virtual void stopOpen(class Player &);
-    /**
-     * @vftbl 23
-     * @symbol __unk_vfn_23
-     */
-    virtual void __unk_vfn_23();
     /**
      * @vftbl 24
      * @symbol __unk_vfn_24
@@ -82,6 +77,11 @@ public:
     virtual void __unk_vfn_24();
     /**
      * @vftbl 25
+     * @symbol __unk_vfn_25
+     */
+    virtual void __unk_vfn_25();
+    /**
+     * @vftbl 26
      * @symbol ?setContainerChanged\@CraftingContainer\@\@UEAAXH\@Z
      */
     virtual void setContainerChanged(int);

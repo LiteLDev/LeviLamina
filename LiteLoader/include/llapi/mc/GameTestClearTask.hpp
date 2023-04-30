@@ -34,10 +34,6 @@ public:
      */
     MCAPI GameTestClearTask(class Dimension &, class BoundingBox const &);
     /**
-     * @symbol ?isDone\@GameTestClearTask\@\@QEBA_NXZ
-     */
-    MCAPI bool isDone() const;
-    /**
      * @symbol ?tick\@GameTestClearTask\@\@QEAAXXZ
      */
     MCAPI void tick();

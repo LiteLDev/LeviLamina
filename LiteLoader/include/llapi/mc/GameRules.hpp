@@ -29,13 +29,13 @@ public:
 
 public:
     /**
-     * @symbol ??0GameRules\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI GameRules(class GameRules const &);
-    /**
      * @symbol ??0GameRules\@\@QEAA\@XZ
      */
     MCAPI GameRules();
+    /**
+     * @symbol ??0GameRules\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI GameRules(class GameRules const &);
     /**
      * @symbol ?createAllGameRulesPacket\@GameRules\@\@QEBA?AV?$unique_ptr\@VGameRulesChangedPacket\@\@U?$default_delete\@VGameRulesChangedPacket\@\@\@std\@\@\@std\@\@XZ
      */
@@ -142,6 +142,10 @@ public:
      * @symbol ?_setRule\@GameRules\@\@AEAA?AV?$unique_ptr\@VGameRulesChangedPacket\@\@U?$default_delete\@VGameRulesChangedPacket\@\@\@std\@\@\@std\@\@UGameRuleId\@\@TValue\@GameRule\@\@W4Type\@6\@_NPEA_N4PEAVValidationError\@6\@\@Z
      */
     MCAPI std::unique_ptr<class GameRulesChangedPacket> _setRule(struct GameRuleId, union GameRule::Value, enum class GameRule::Type, bool, bool *, bool *, class GameRule::ValidationError *);
+    /**
+     * @symbol ?_getMarketplaceGameRulesDefaultMap\@GameRules\@\@CAAEBV?$map\@UGameRuleId\@\@VGameRule\@\@U?$less\@UGameRuleId\@\@\@std\@\@V?$allocator\@U?$pair\@$$CBUGameRuleId\@\@VGameRule\@\@\@std\@\@\@4\@\@std\@\@XZ
+     */
+    MCAPI static class std::map<struct GameRuleId, class GameRule, struct std::less<struct GameRuleId>, class std::allocator<struct std::pair<struct GameRuleId const, class GameRule>>> const & _getMarketplaceGameRulesDefaultMap();
 
 private:
 

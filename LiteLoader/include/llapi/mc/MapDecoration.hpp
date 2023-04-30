@@ -27,13 +27,10 @@ enum class Type;
 public:
     class MapDecoration& operator=(class MapDecoration const &) = delete;
     MapDecoration(class MapDecoration const &) = delete;
+    MapDecoration() = delete;
 #endif
 
 public:
-    /**
-     * @symbol ??0MapDecoration\@\@QEAA\@XZ
-     */
-    MCAPI MapDecoration();
     /**
      * @symbol ??0MapDecoration\@\@QEAA\@W4Type\@0\@CCCAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVColor\@mce\@\@\@Z
      */
@@ -62,14 +59,6 @@ public:
      * @symbol ?getY\@MapDecoration\@\@QEBACXZ
      */
     MCAPI signed char getY() const;
-    /**
-     * @symbol ?load\@MapDecoration\@\@QEAAXAEBVCompoundTag\@\@\@Z
-     */
-    MCAPI void load(class CompoundTag const &);
-    /**
-     * @symbol ?save\@MapDecoration\@\@QEAAXAEAVCompoundTag\@\@\@Z
-     */
-    MCAPI void save(class CompoundTag &);
     /**
      * @symbol ??1MapDecoration\@\@QEAA\@XZ
      */

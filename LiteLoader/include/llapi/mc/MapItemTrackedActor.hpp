@@ -44,10 +44,6 @@ public:
      */
     MCAPI float getDecorationRotation(class BlockSource &);
     /**
-     * @symbol ?getEntity\@MapItemTrackedActor\@\@QEAAPEAVActor\@\@AEAVBlockSource\@\@\@Z
-     */
-    MCAPI class Actor * getEntity(class BlockSource &);
-    /**
      * @symbol ?nextUpdatePacket\@MapItemTrackedActor\@\@QEAA?AV?$unique_ptr\@VPacket\@\@U?$default_delete\@VPacket\@\@\@std\@\@\@std\@\@AEBVMapItemSavedData\@\@\@Z
      */
     MCAPI std::unique_ptr<class Packet> nextUpdatePacket(class MapItemSavedData const &);
@@ -55,9 +51,5 @@ public:
      * @symbol ?setNeedsResend\@MapItemTrackedActor\@\@QEAAXXZ
      */
     MCAPI void setNeedsResend();
-    /**
-     * @symbol ?setPixelDirty\@MapItemTrackedActor\@\@QEAAXII\@Z
-     */
-    MCAPI void setPixelDirty(unsigned int, unsigned int);
 
 };

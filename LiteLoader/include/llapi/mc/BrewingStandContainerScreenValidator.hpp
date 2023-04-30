@@ -26,6 +26,7 @@ class BrewingStandContainerScreenValidator : public ContainerScreenValidatorBase
 public:
     class BrewingStandContainerScreenValidator& operator=(class BrewingStandContainerScreenValidator const &) = delete;
     BrewingStandContainerScreenValidator(class BrewingStandContainerScreenValidator const &) = delete;
+    BrewingStandContainerScreenValidator() = delete;
 #endif
 
 public:
@@ -34,9 +35,5 @@ public:
      * @symbol __unk_vfn_0
      */
     virtual void __unk_vfn_0();
-    /**
-     * @symbol ??0BrewingStandContainerScreenValidator\@\@QEAA\@XZ
-     */
-    MCAPI BrewingStandContainerScreenValidator();
 
 };

@@ -44,13 +44,13 @@ public:
      */
     MCAPI static int getEvergreenColor(float, float);
     /**
-     * @symbol ?getFoliageColor\@FoliageColor\@\@SAHW4PaletteName\@1\@MM\@Z
-     */
-    MCAPI static int getFoliageColor(enum class FoliageColor::PaletteName, float, float);
-    /**
      * @symbol ?getFoliageColor\@FoliageColor\@\@SAHMM\@Z
      */
     MCAPI static int getFoliageColor(float, float);
+    /**
+     * @symbol ?getFoliageColor\@FoliageColor\@\@SAHW4PaletteName\@1\@MM\@Z
+     */
+    MCAPI static int getFoliageColor(enum class FoliageColor::PaletteName, float, float);
     /**
      * @symbol ?getMapBirchColor\@FoliageColor\@\@SAHMM\@Z
      */

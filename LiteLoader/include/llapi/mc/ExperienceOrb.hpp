@@ -195,10 +195,6 @@ public:
      */
     MCAPI void postNormalTick();
     /**
-     * @symbol ?setValue\@ExperienceOrb\@\@QEAAXH\@Z
-     */
-    MCAPI void setValue(int);
-    /**
      * @symbol ?spawnOrbs\@ExperienceOrb\@\@SAXAEAVBlockSource\@\@AEBVVec3\@\@HHW4DropType\@1\@PEAVPlayer\@\@\@Z
      */
     MCAPI static void spawnOrbs(class BlockSource &, class Vec3 const &, int, int, enum class ExperienceOrb::DropType, class Player *);

@@ -59,10 +59,6 @@ public:
      * @symbol ?_postCraftRequest\@CraftHandlerTrade\@\@EEAAX_N\@Z
      */
     virtual void _postCraftRequest(bool);
-    /**
-     * @symbol ??0CraftHandlerTrade\@\@QEAA\@AEBVContainerScreenContext\@\@AEAVItemStackRequestActionCraftHandler\@\@\@Z
-     */
-    MCAPI CraftHandlerTrade(class ContainerScreenContext const &, class ItemStackRequestActionCraftHandler &);
 
 //private:
     /**

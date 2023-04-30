@@ -49,52 +49,52 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?getRequestId\@ActorCommandOrigin\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getRequestId\@VirtualCommandOrigin\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string const & getRequestId() const = 0;
     /**
      * @vftbl 2
-     * @symbol ?getName\@ActorCommandOrigin\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getName\@VirtualCommandOrigin\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getName() const = 0;
     /**
      * @vftbl 3
-     * @symbol ?getBlockPosition\@ActorCommandOrigin\@\@UEBA?AVBlockPos\@\@XZ
+     * @symbol ?getBlockPosition\@VirtualCommandOrigin\@\@UEBA?AVBlockPos\@\@XZ
      */
     virtual class BlockPos getBlockPosition() const = 0;
     /**
      * @vftbl 4
-     * @symbol ?getWorldPosition\@ActorCommandOrigin\@\@UEBA?AVVec3\@\@XZ
+     * @symbol ?getWorldPosition\@VirtualCommandOrigin\@\@UEBA?AVVec3\@\@XZ
      */
     virtual class Vec3 getWorldPosition() const = 0;
     /**
      * @vftbl 5
-     * @symbol ?getRotation\@ActorCommandOrigin\@\@UEBA?AV?$optional\@VVec2\@\@\@std\@\@XZ
+     * @symbol ?getRotation\@VirtualCommandOrigin\@\@UEBA?AV?$optional\@VVec2\@\@\@std\@\@XZ
      */
     virtual class std::optional<class Vec2> getRotation() const = 0;
     /**
      * @vftbl 6
-     * @symbol ?getLevel\@ActorCommandOrigin\@\@UEBAPEAVLevel\@\@XZ
+     * @symbol ?getLevel\@VirtualCommandOrigin\@\@UEBAPEAVLevel\@\@XZ
      */
     virtual class Level * getLevel() const = 0;
     /**
      * @vftbl 7
-     * @symbol ?getDimension\@ActorCommandOrigin\@\@UEBAPEAVDimension\@\@XZ
+     * @symbol ?getDimension\@VirtualCommandOrigin\@\@UEBAPEAVDimension\@\@XZ
      */
     virtual class Dimension * getDimension() const = 0;
     /**
      * @vftbl 8
-     * @symbol ?getEntity\@ActorCommandOrigin\@\@UEBAPEAVActor\@\@XZ
+     * @symbol ?getEntity\@VirtualCommandOrigin\@\@UEBAPEAVActor\@\@XZ
      */
     virtual class Actor * getEntity() const = 0;
     /**
      * @vftbl 9
-     * @symbol ?getPermissionsLevel\@ActorCommandOrigin\@\@UEBA?AW4CommandPermissionLevel\@\@XZ
+     * @symbol ?getPermissionsLevel\@VirtualCommandOrigin\@\@UEBA?AW4CommandPermissionLevel\@\@XZ
      */
     virtual enum class CommandPermissionLevel getPermissionsLevel() const = 0;
     /**
      * @vftbl 10
-     * @symbol ?clone\@ActorCommandOrigin\@\@UEBA?AV?$unique_ptr\@VCommandOrigin\@\@U?$default_delete\@VCommandOrigin\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?clone\@VirtualCommandOrigin\@\@UEBA?AV?$unique_ptr\@VCommandOrigin\@\@U?$default_delete\@VCommandOrigin\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CommandOrigin> clone() const = 0;
     /**
@@ -159,7 +159,7 @@ public:
     virtual struct CommandOriginIdentity getIdentity() const;
     /**
      * @vftbl 23
-     * @symbol ?getOriginType\@ActorCommandOrigin\@\@UEBA?AW4CommandOriginType\@\@XZ
+     * @symbol ?getOriginType\@VirtualCommandOrigin\@\@UEBA?AW4CommandOriginType\@\@XZ
      */
     virtual enum class CommandOriginType getOriginType() const = 0;
     /**
@@ -194,7 +194,7 @@ public:
     virtual class CompoundTag serialize() const;
     /**
      * @vftbl 30
-     * @symbol ?isValid\@ActorCommandOrigin\@\@UEBA_NXZ
+     * @symbol ?isValid\@VirtualCommandOrigin\@\@UEBA_NXZ
      */
     virtual bool isValid() const = 0;
     /**

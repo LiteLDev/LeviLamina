@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "JsonUtil.hpp"
 
 #define BEFORE_EXTRA
 
@@ -22,7 +21,6 @@ class WorkDefinition {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORKDEFINITION
 public:
-    class WorkDefinition& operator=(class WorkDefinition const &) = delete;
     WorkDefinition(class WorkDefinition const &) = delete;
 #endif
 
@@ -38,12 +36,8 @@ public:
      */
     MCAPI WorkDefinition();
     /**
-     * @symbol ?initialize\@WorkDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVWorkGoal\@\@\@Z
+     * @symbol ??4WorkDefinition\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
-    MCAPI void initialize(class EntityContext &, class WorkGoal &) const;
-    /**
-     * @symbol ?buildSchema\@WorkDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VWorkDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
-     */
-    MCAPI static void buildSchema(std::string const &, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class WorkDefinition>> &);
+    MCAPI class WorkDefinition & operator=(class WorkDefinition const &);
 
 };

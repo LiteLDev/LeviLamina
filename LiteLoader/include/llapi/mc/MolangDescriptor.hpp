@@ -13,15 +13,15 @@
 #undef BEFORE_EXTRA
 
 
-class MolangDescriptor {
+struct MolangDescriptor {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGDESCRIPTOR
 public:
-    class MolangDescriptor& operator=(class MolangDescriptor const &) = delete;
-    MolangDescriptor(class MolangDescriptor const &) = delete;
+    struct MolangDescriptor& operator=(struct MolangDescriptor const &) = delete;
+    MolangDescriptor(struct MolangDescriptor const &) = delete;
     MolangDescriptor() = delete;
 #endif
 

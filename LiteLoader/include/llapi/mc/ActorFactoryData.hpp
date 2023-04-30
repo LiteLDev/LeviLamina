@@ -22,10 +22,13 @@ struct ActorFactoryData {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORFACTORYDATA
 public:
     ActorFactoryData(struct ActorFactoryData const &) = delete;
-    ActorFactoryData() = delete;
 #endif
 
 public:
+    /**
+     * @symbol ??0ActorFactoryData\@\@QEAA\@XZ
+     */
+    MCAPI ActorFactoryData();
     /**
      * @symbol ??4ActorFactoryData\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
