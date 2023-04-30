@@ -623,7 +623,7 @@ enum class MinecraftPacketIds : int {
     ClientCheatAbility                = 0xC5,
     CameraPresets                     = 0xC6,
     UnlockedRecipes                   = 0xC7,
-    CameraInstruction                 = 0x12C // 300
+    CameraInstruction                 = 0x12C, // 300
     CompressedBiomeDefinitionList     = 0x12D,
     TrimData                          = 0x12E,
     OpenSign                          = 0x12F,
