@@ -17,8 +17,19 @@
 struct SerializedAbilitiesData {
 
 #define AFTER_EXTRA
-    ActorUniqueID mUid;
-    char filler[32];
+    struct SerializedAbilitiesLayer {};
+    struct SerializedLayer
+    {
+        SerializedAbilitiesLayer mAbilitiesLayer;
+        uint32_t mAbilitiesSize;
+        uint32_t mAbility;
+        float mFlyingSpeed;
+        float mWalkingSpeed;
+    };
+    ActorUniqueID mUniqueID;
+    CommandPermissionLevel mCommandPermissionLevel;
+    PlayerPermissionLevel mPlayerPermissionLevel;
+    std::vector<SerializedAbilitiesData::SerializedLayer> mLayers;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERIALIZEDABILITIESDATA
 public:
