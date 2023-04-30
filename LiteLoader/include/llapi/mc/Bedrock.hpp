@@ -167,7 +167,6 @@ template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPositionFloat>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPositionFloat>();
-// 编译说已经在bedrock_server.lib中定义，我就注释了
 //template <>
 //MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<class Actor>>();
 template <>
@@ -203,12 +202,12 @@ inline typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentif
     static typeid_t<CommandRegistry> id =
         *(typeid_t<CommandRegistry>*)dlsym_real("?id@?1???$type_id@VCommandRegistry@@PEBUActorDefinitionIdentifier@@@@"
                                                 "YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
-    // static typeid_t<CommandRegistry> id = ([]() -> typeid_t<CommandRegistry> {
-    //    CommandParameterData data =
-    //    SymCall("??$mandatory@VRideCommand@@PEBUActorDefinitionIdentifier@@@commands@@YA?AVCommandParameterData@@PEQRideCommand@@PEBUActorDefinitionIdentifier@@PEBDPEQ2@_N@Z",
-    //             CommandParameterData, void*, char const*, uintptr_t)(nullptr, "entityType", 0);
-    //     return data.tid;
-    //     })();
+//     static typeid_t<CommandRegistry> id = ([]() -> typeid_t<CommandRegistry> {
+//        CommandParameterData data =
+//        SymCall("??$mandatory@VRideCommand@@PEBUActorDefinitionIdentifier@@@commands@@YA?AVCommandParameterData@@PEQRideCommand@@PEBUActorDefinitionIdentifier@@PEBDPEQ2@_N@Z",
+//                 CommandParameterData, void*, char const*, uintptr_t)(nullptr, "entityType", 0);
+//         return data.tid;
+//         })();
     return id;
 };
 
@@ -222,7 +221,7 @@ inline typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>() {
 template <>
 inline typeid_t<CommandRegistry> type_id<CommandRegistry, bool>() {
     static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)dlsym_real(
-        "?id@?1???$type_id@VCommandRegistry@@_N@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
+        "??$type_id@VCommandRegistry@@H@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@@@0@XZ");
     return id;
 };
 
