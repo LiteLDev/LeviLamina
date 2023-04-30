@@ -18,7 +18,7 @@ struct SerializedAbilitiesData {
 
 #define AFTER_EXTRA
     ActorUniqueID mUid;
-    LayeredAbilities mAbilities;
+    char filler[32];
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERIALIZEDABILITIESDATA
 public:
