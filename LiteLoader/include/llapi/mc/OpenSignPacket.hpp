@@ -56,12 +56,12 @@ public:
     MCVAPI ~OpenSignPacket();
 #endif
     /**
-     * @symbol ??0OpenSignPacket\@\@QEAA\@XZ
-     */
-    MCAPI OpenSignPacket();
-    /**
      * @symbol ??0OpenSignPacket\@\@QEAA\@AEBVBlockPos\@\@_N\@Z
      */
     MCAPI OpenSignPacket(class BlockPos const &, bool);
+    /**
+     * @symbol ??0OpenSignPacket\@\@QEAA\@XZ
+     */
+    MCAPI OpenSignPacket();
 
 };

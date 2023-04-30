@@ -322,13 +322,13 @@ public:
      */
     MCAPI void setGameType(enum class GameType);
     /**
-     * @symbol ?setMoveTarget\@Agent\@\@QEAAXVVec2\@\@\@Z
-     */
-    MCAPI void setMoveTarget(class Vec2);
-    /**
      * @symbol ?setMoveTarget\@Agent\@\@QEAAXM\@Z
      */
     MCAPI void setMoveTarget(float);
+    /**
+     * @symbol ?setMoveTarget\@Agent\@\@QEAAXVVec2\@\@\@Z
+     */
+    MCAPI void setMoveTarget(class Vec2);
     /**
      * @symbol ?setNameTagFromOwner\@Agent\@\@QEAAXAEBVPlayer\@\@\@Z
      */

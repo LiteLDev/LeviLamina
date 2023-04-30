@@ -1385,13 +1385,13 @@ public:
      */
     MCAPI void dropCursorSelectedItemOnDeath();
     /**
-     * @symbol ?eat\@Player\@\@QEAAXAEBVItemStack\@\@\@Z
-     */
-    MCAPI void eat(class ItemStack const &);
-    /**
      * @symbol ?eat\@Player\@\@QEAAXHM\@Z
      */
     MCAPI void eat(int, float);
+    /**
+     * @symbol ?eat\@Player\@\@QEAAXAEBVItemStack\@\@\@Z
+     */
+    MCAPI void eat(class ItemStack const &);
     /**
      * @symbol ?equippedArmorItemCanBeMoved\@Player\@\@QEBA_NAEBVItemStack\@\@\@Z
      */
@@ -1405,13 +1405,13 @@ public:
      */
     MCAPI bool forceAllowEating() const;
     /**
-     * @symbol ?getAbilities\@Player\@\@QEAAAEAVLayeredAbilities\@\@XZ
-     */
-    MCAPI class LayeredAbilities & getAbilities();
-    /**
      * @symbol ?getAbilities\@Player\@\@QEBAAEBVLayeredAbilities\@\@XZ
      */
     MCAPI class LayeredAbilities const & getAbilities() const;
+    /**
+     * @symbol ?getAbilities\@Player\@\@QEAAAEAVLayeredAbilities\@\@XZ
+     */
+    MCAPI class LayeredAbilities & getAbilities();
     /**
      * @symbol ?getAgent\@Player\@\@QEBAPEAVAgent\@\@XZ
      */

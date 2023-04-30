@@ -106,13 +106,13 @@ public:
     MCVAPI ~ItemStack();
 #endif
     /**
-     * @symbol ??0ItemStack\@\@QEAA\@AEBVItemInstance\@\@\@Z
-     */
-    MCAPI ItemStack(class ItemInstance const &);
-    /**
      * @symbol ??0ItemStack\@\@QEAA\@AEBVRecipeIngredient\@\@\@Z
      */
     MCAPI ItemStack(class RecipeIngredient const &);
+    /**
+     * @symbol ??0ItemStack\@\@QEAA\@AEBVItemInstance\@\@\@Z
+     */
+    MCAPI ItemStack(class ItemInstance const &);
     /**
      * @symbol ??0ItemStack\@\@QEAA\@XZ
      */
@@ -126,6 +126,10 @@ public:
      */
     MCAPI ItemStack(class Item const &, int, int, class CompoundTag const *);
     /**
+     * @symbol ??0ItemStack\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI ItemStack(class ItemStack const &);
+    /**
      * @symbol ??0ItemStack\@\@QEAA\@AEBVBlockLegacy\@\@H\@Z
      */
     MCAPI ItemStack(class BlockLegacy const &, int);
@@ -133,10 +137,6 @@ public:
      * @symbol ??0ItemStack\@\@QEAA\@AEBVBlock\@\@HPEBVCompoundTag\@\@\@Z
      */
     MCAPI ItemStack(class Block const &, int, class CompoundTag const *);
-    /**
-     * @symbol ??0ItemStack\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI ItemStack(class ItemStack const &);
     /**
      * @symbol ?_assignNetIdVariant\@ItemStack\@\@QEBAXAEBV1\@\@Z
      */

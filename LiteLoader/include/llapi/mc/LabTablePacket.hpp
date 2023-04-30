@@ -65,12 +65,12 @@ public:
      */
     MCAPI LabTablePacket();
     /**
-     * @symbol ??0LabTablePacket\@\@QEAA\@AEBVBlockPos\@\@W4LabTableReactionType\@\@\@Z
-     */
-    MCAPI LabTablePacket(class BlockPos const &, enum class LabTableReactionType);
-    /**
      * @symbol ??0LabTablePacket\@\@QEAA\@W4Type\@0\@AEBVBlockPos\@\@\@Z
      */
     MCAPI LabTablePacket(enum class LabTablePacket::Type, class BlockPos const &);
+    /**
+     * @symbol ??0LabTablePacket\@\@QEAA\@AEBVBlockPos\@\@W4LabTableReactionType\@\@\@Z
+     */
+    MCAPI LabTablePacket(class BlockPos const &, enum class LabTableReactionType);
 
 };

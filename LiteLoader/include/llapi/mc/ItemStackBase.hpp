@@ -252,13 +252,13 @@ public:
      */
     MCAPI enum class UseAnimation getUseAnimation() const;
     /**
-     * @symbol ?getUserData\@ItemStackBase\@\@QEBAPEBVCompoundTag\@\@XZ
-     */
-    MCAPI class CompoundTag const * getUserData() const;
-    /**
      * @symbol ?getUserData\@ItemStackBase\@\@QEAAPEAVCompoundTag\@\@XZ
      */
     MCAPI class CompoundTag * getUserData();
+    /**
+     * @symbol ?getUserData\@ItemStackBase\@\@QEBAPEBVCompoundTag\@\@XZ
+     */
+    MCAPI class CompoundTag const * getUserData() const;
     /**
      * @symbol ?getWasPickedUp\@ItemStackBase\@\@QEBA_NXZ
      */
@@ -464,13 +464,13 @@ public:
      */
     MCAPI void resetHoverName();
     /**
-     * @symbol ?sameItem\@ItemStackBase\@\@QEBA_NAEBV1\@\@Z
-     */
-    MCAPI bool sameItem(class ItemStackBase const &) const;
-    /**
      * @symbol ?sameItem\@ItemStackBase\@\@QEBA_NHH\@Z
      */
     MCAPI bool sameItem(int, int) const;
+    /**
+     * @symbol ?sameItem\@ItemStackBase\@\@QEBA_NAEBV1\@\@Z
+     */
+    MCAPI bool sameItem(class ItemStackBase const &) const;
     /**
      * @symbol ?sameItemAndAux\@ItemStackBase\@\@QEBA_NAEBV1\@\@Z
      */
@@ -602,10 +602,6 @@ public:
 
 //protected:
     /**
-     * @symbol ??0ItemStackBase\@\@IEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@HHPEBVCompoundTag\@\@\@Z
-     */
-    MCAPI ItemStackBase(class std::basic_string_view<char, struct std::char_traits<char>>, int, int, class CompoundTag const *);
-    /**
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBVItem\@\@HHPEBVCompoundTag\@\@\@Z
      */
     MCAPI ItemStackBase(class Item const &, int, int, class CompoundTag const *);
@@ -614,10 +610,6 @@ public:
      */
     MCAPI ItemStackBase(class ItemStackBase const &);
     /**
-     * @symbol ??0ItemStackBase\@\@IEAA\@AEBVBlockLegacy\@\@H\@Z
-     */
-    MCAPI ItemStackBase(class BlockLegacy const &, int);
-    /**
      * @symbol ??0ItemStackBase\@\@IEAA\@XZ
      */
     MCAPI ItemStackBase();
@@ -625,6 +617,14 @@ public:
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBVBlock\@\@HPEBVCompoundTag\@\@\@Z
      */
     MCAPI ItemStackBase(class Block const &, int, class CompoundTag const *);
+    /**
+     * @symbol ??0ItemStackBase\@\@IEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@HHPEBVCompoundTag\@\@\@Z
+     */
+    MCAPI ItemStackBase(class std::basic_string_view<char, struct std::char_traits<char>>, int, int, class CompoundTag const *);
+    /**
+     * @symbol ??0ItemStackBase\@\@IEAA\@AEBVBlockLegacy\@\@H\@Z
+     */
+    MCAPI ItemStackBase(class BlockLegacy const &, int);
     /**
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBVRecipeIngredient\@\@\@Z
      */
@@ -638,10 +638,6 @@ public:
      */
     MCAPI bool _setItem(int, bool);
     /**
-     * @symbol ?init\@ItemStackBase\@\@IEAAXHHH_N\@Z
-     */
-    MCAPI void init(int, int, int, bool);
-    /**
      * @symbol ?init\@ItemStackBase\@\@IEAAXAEBVBlockLegacy\@\@H\@Z
      */
     MCAPI void init(class BlockLegacy const &, int);
@@ -649,6 +645,10 @@ public:
      * @symbol ?init\@ItemStackBase\@\@IEAAXAEBVItem\@\@HHPEBVCompoundTag\@\@_N\@Z
      */
     MCAPI void init(class Item const &, int, int, class CompoundTag const *, bool);
+    /**
+     * @symbol ?init\@ItemStackBase\@\@IEAAXHHH_N\@Z
+     */
+    MCAPI void init(int, int, int, bool);
     /**
      * @symbol ??4ItemStackBase\@\@IEAAAEAV0\@AEBV0\@\@Z
      */

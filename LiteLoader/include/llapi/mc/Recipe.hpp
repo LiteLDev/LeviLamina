@@ -36,12 +36,12 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?assemble\@ShulkerBoxRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@AEBUCraftingContext\@\@\@Z
+     * @symbol ?assemble\@ShapelessRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@AEBUCraftingContext\@\@\@Z
      */
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &, struct CraftingContext const &) const = 0;
     /**
      * @vftbl 2
-     * @symbol ?getCraftingSize\@BookCloningRecipe\@\@UEBAHXZ
+     * @symbol ?getCraftingSize\@BannerAddPatternRecipe\@\@UEBAHXZ
      */
     virtual int getCraftingSize() const = 0;
     /**
@@ -66,7 +66,7 @@ public:
     virtual bool matches(class CraftingContainer &, class Level &) const = 0;
     /**
      * @vftbl 7
-     * @symbol ?size\@BookCloningRecipe\@\@UEBAHXZ
+     * @symbol ?size\@BannerAddPatternRecipe\@\@UEBAHXZ
      */
     virtual int size() const = 0;
     /**

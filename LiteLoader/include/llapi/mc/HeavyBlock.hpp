@@ -247,12 +247,12 @@ public:
     virtual void __unk_vfn_187();
     /**
      * @vftbl 195
-     * @symbol ?getDustColor\@DragonEggBlock\@\@UEBA?AVColor\@mce\@\@AEBVBlock\@\@\@Z
+     * @symbol ?getDustColor\@ConcretePowderBlock\@\@UEBA?AVColor\@mce\@\@AEBVBlock\@\@\@Z
      */
     virtual class mce::Color getDustColor(class Block const &) const = 0;
     /**
      * @vftbl 196
-     * @symbol ?getDustParticleName\@DragonEggBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
+     * @symbol ?getDustParticleName\@ConcretePowderBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string getDustParticleName(class Block const &) const = 0;
     /**

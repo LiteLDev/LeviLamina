@@ -65,7 +65,7 @@ protected:
     virtual bool collectOptionalArguments();
     /**
      * @vftbl 2
-     * @symbol ?execute\@GetChunkDataCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @symbol ?execute\@SetMaxPlayersCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
 public:
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const = 0;

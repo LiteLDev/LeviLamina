@@ -59,12 +59,12 @@ public:
     MCVAPI ~UpdateAbilitiesPacket();
 #endif
     /**
-     * @symbol ??0UpdateAbilitiesPacket\@\@QEAA\@UActorUniqueID\@\@AEBVLayeredAbilities\@\@\@Z
-     */
-    MCAPI UpdateAbilitiesPacket(struct ActorUniqueID, class LayeredAbilities const &);
-    /**
      * @symbol ??0UpdateAbilitiesPacket\@\@QEAA\@XZ
      */
     MCAPI UpdateAbilitiesPacket();
+    /**
+     * @symbol ??0UpdateAbilitiesPacket\@\@QEAA\@UActorUniqueID\@\@AEBVLayeredAbilities\@\@\@Z
+     */
+    MCAPI UpdateAbilitiesPacket(struct ActorUniqueID, class LayeredAbilities const &);
 
 };

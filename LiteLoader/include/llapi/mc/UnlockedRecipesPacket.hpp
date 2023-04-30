@@ -56,12 +56,12 @@ public:
     MCVAPI ~UnlockedRecipesPacket();
 #endif
     /**
-     * @symbol ??0UnlockedRecipesPacket\@\@QEAA\@XZ
-     */
-    MCAPI UnlockedRecipesPacket();
-    /**
      * @symbol ??0UnlockedRecipesPacket\@\@QEAA\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@_N\@Z
      */
     MCAPI UnlockedRecipesPacket(std::vector<std::string> const &, bool);
+    /**
+     * @symbol ??0UnlockedRecipesPacket\@\@QEAA\@XZ
+     */
+    MCAPI UnlockedRecipesPacket();
 
 };

@@ -222,13 +222,13 @@ public:
      */
     MCAPI class Json::Value toJson(struct npc::ActionContainer const &);
     /**
-     * @symbol ?toJson\@npc\@\@YA?AVValue\@Json\@\@AEBUUrlAction\@1\@\@Z
-     */
-    MCAPI class Json::Value toJson(struct npc::UrlAction const &);
-    /**
      * @symbol ?toJson\@npc\@\@YA?AVValue\@Json\@\@AEBUCommandAction\@1\@\@Z
      */
     MCAPI class Json::Value toJson(struct npc::CommandAction const &);
+    /**
+     * @symbol ?toJson\@npc\@\@YA?AVValue\@Json\@\@AEBUUrlAction\@1\@\@Z
+     */
+    MCAPI class Json::Value toJson(struct npc::UrlAction const &);
     /**
      * @symbol ?toString\@npc\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUActionContainer\@1\@\@Z
      */

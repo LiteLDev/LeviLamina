@@ -34,13 +34,13 @@ public:
      */
     MCAPI ProjectileComponent();
     /**
-     * @symbol ??0ProjectileComponent\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI ProjectileComponent(class ProjectileComponent const &);
-    /**
      * @symbol ??0ProjectileComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI ProjectileComponent(class ProjectileComponent &&);
+    /**
+     * @symbol ??0ProjectileComponent\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI ProjectileComponent(class ProjectileComponent const &);
     /**
      * @symbol ?addAdditionalSaveData\@ProjectileComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */

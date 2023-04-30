@@ -101,7 +101,7 @@ public:
     virtual bool _canReach(class BlockPos const &);
     /**
      * @vftbl 14
-     * @symbol ?_moveToBlock\@LayEggGoal\@\@MEAAXXZ
+     * @symbol ?_moveToBlock\@BaseMoveToBlockGoal\@\@MEAAXXZ
      */
     virtual void _moveToBlock() = 0;
     /**

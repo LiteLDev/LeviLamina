@@ -32,13 +32,13 @@ public:
      */
     MCAPI BlockDescriptor(class BlockDescriptor const &);
     /**
-     * @symbol ??0BlockDescriptor\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI BlockDescriptor(class BlockDescriptor &&);
-    /**
      * @symbol ??0BlockDescriptor\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEBV?$vector\@VState\@BlockDescriptor\@\@V?$allocator\@VState\@BlockDescriptor\@\@\@std\@\@\@2\@\@Z
      */
     MCAPI BlockDescriptor(std::string const &, std::vector<class BlockDescriptor::State> const &&);
+    /**
+     * @symbol ??0BlockDescriptor\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI BlockDescriptor(class BlockDescriptor &&);
     /**
      * @symbol ??0BlockDescriptor\@\@QEAA\@XZ
      */

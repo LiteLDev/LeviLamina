@@ -61,13 +61,13 @@ public:
     MCVAPI ~ClientboundDebugRendererPacket();
 #endif
     /**
-     * @symbol ??0ClientboundDebugRendererPacket\@\@QEAA\@XZ
-     */
-    MCAPI ClientboundDebugRendererPacket();
-    /**
      * @symbol ??0ClientboundDebugRendererPacket\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVColor\@mce\@\@AEBVVec3\@\@V?$duration\@_JU?$ratio\@$00$0DOI\@\@std\@\@\@chrono\@2\@\@Z
      */
     MCAPI ClientboundDebugRendererPacket(std::string, class mce::Color const &, class Vec3 const &, class std::chrono::duration<__int64, struct std::ratio<1, 1000>>);
+    /**
+     * @symbol ??0ClientboundDebugRendererPacket\@\@QEAA\@XZ
+     */
+    MCAPI ClientboundDebugRendererPacket();
     /**
      * @symbol ??0ClientboundDebugRendererPacket\@\@QEAA\@W4Type\@0\@\@Z
      */

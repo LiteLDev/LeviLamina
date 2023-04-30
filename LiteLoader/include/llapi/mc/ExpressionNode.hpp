@@ -50,6 +50,10 @@ public:
      */
     MCAPI ExpressionNode(std::string const &, enum class MolangVersion, class gsl::span<class HashedString const, -1>);
     /**
+     * @symbol ??0ExpressionNode\@\@QEAA\@XZ
+     */
+    MCAPI ExpressionNode();
+    /**
      * @symbol ??0ExpressionNode\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI ExpressionNode(class ExpressionNode const &);
@@ -66,9 +70,9 @@ public:
      */
     MCAPI ExpressionNode(struct MolangScriptArg &, enum class ExpressionOp);
     /**
-     * @symbol ??0ExpressionNode\@\@QEAA\@XZ
+     * @symbol ??0ExpressionNode\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI ExpressionNode();
+    MCAPI ExpressionNode(class ExpressionNode &&);
     /**
      * @symbol ??0ExpressionNode\@\@QEAA\@M\@Z
      */
@@ -77,10 +81,6 @@ public:
      * @symbol ??0ExpressionNode\@\@QEAA\@AEBVValue\@Json\@\@AEBVSemVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z
      */
     MCAPI ExpressionNode(class Json::Value const &, class SemVersion const &, class gsl::span<class HashedString const, -1>);
-    /**
-     * @symbol ??0ExpressionNode\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI ExpressionNode(class ExpressionNode &&);
     /**
      * @symbol ?clear\@ExpressionNode\@\@QEAAXXZ
      */
@@ -94,13 +94,13 @@ public:
      */
     MCAPI struct MolangScriptArg const & evalGeneric(class RenderParams &) const;
     /**
-     * @symbol ?getExpressionString\@ExpressionNode\@\@QEAAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string const & getExpressionString();
-    /**
      * @symbol ?getExpressionString\@ExpressionNode\@\@QEBA?BV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string const getExpressionString() const;
+    /**
+     * @symbol ?getExpressionString\@ExpressionNode\@\@QEAAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     */
+    MCAPI std::string const & getExpressionString();
     /**
      * @symbol ?getMolangVersion\@ExpressionNode\@\@QEBA?BW4MolangVersion\@\@XZ
      */

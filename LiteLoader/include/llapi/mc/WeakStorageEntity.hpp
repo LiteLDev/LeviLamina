@@ -53,6 +53,10 @@ public:
 
 //protected:
     /**
+     * @symbol ??0WeakStorageEntity\@\@IEAA\@W4EmptyInit\@0\@\@Z
+     */
+    MCAPI WeakStorageEntity(enum class WeakStorageEntity::EmptyInit);
+    /**
      * @symbol ??0WeakStorageEntity\@\@IEAA\@AEBVStackResultStorageEntity\@\@\@Z
      */
     MCAPI WeakStorageEntity(class StackResultStorageEntity const &);
@@ -60,10 +64,6 @@ public:
      * @symbol ??0WeakStorageEntity\@\@IEAA\@AEBVOwnerStorageEntity\@\@\@Z
      */
     MCAPI WeakStorageEntity(class OwnerStorageEntity const &);
-    /**
-     * @symbol ??0WeakStorageEntity\@\@IEAA\@W4EmptyInit\@0\@\@Z
-     */
-    MCAPI WeakStorageEntity(enum class WeakStorageEntity::EmptyInit);
     /**
      * @symbol ?_reset\@WeakStorageEntity\@\@IEAAXXZ
      */

@@ -65,13 +65,13 @@ public:
      */
     MCAPI class AttributeInstance const & getInstance(unsigned int) const;
     /**
-     * @symbol ?getMutableInstance\@BaseAttributeMap\@\@QEAAPEAVAttributeInstance\@\@AEBVHashedString\@\@\@Z
-     */
-    MCAPI class AttributeInstance * getMutableInstance(class HashedString const &);
-    /**
      * @symbol ?getMutableInstance\@BaseAttributeMap\@\@QEAAPEAVAttributeInstance\@\@AEBVAttribute\@\@\@Z
      */
     MCAPI class AttributeInstance * getMutableInstance(class Attribute const &);
+    /**
+     * @symbol ?getMutableInstance\@BaseAttributeMap\@\@QEAAPEAVAttributeInstance\@\@AEBVHashedString\@\@\@Z
+     */
+    MCAPI class AttributeInstance * getMutableInstance(class HashedString const &);
     /**
      * @symbol ?getMutableInstance\@BaseAttributeMap\@\@QEAAPEAVAttributeInstance\@\@I\@Z
      */

@@ -61,12 +61,12 @@ public:
     MCVAPI ~SetActorDataPacket();
 #endif
     /**
-     * @symbol ??0SetActorDataPacket\@\@QEAA\@XZ
-     */
-    MCAPI SetActorDataPacket();
-    /**
      * @symbol ??0SetActorDataPacket\@\@QEAA\@VActorRuntimeID\@\@AEAVSynchedActorDataEntityWrapper\@\@PEAVPropertyComponent\@\@_K_N\@Z
      */
     MCAPI SetActorDataPacket(class ActorRuntimeID, class SynchedActorDataEntityWrapper &, class PropertyComponent *, unsigned __int64, bool);
+    /**
+     * @symbol ??0SetActorDataPacket\@\@QEAA\@XZ
+     */
+    MCAPI SetActorDataPacket();
 
 };

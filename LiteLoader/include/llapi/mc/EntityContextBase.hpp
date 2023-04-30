@@ -5,11 +5,10 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "EntityRegistryBase.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+#include "EntityRegistryBase.hpp"
 #undef BEFORE_EXTRA
 
 /**

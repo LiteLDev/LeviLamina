@@ -48,7 +48,7 @@ public:
     virtual bool setup(struct FilterTest::Definition const &, struct FilterInputs const &);
     /**
      * @vftbl 2
-     * @symbol ?evaluate\@FilterTestGameRule\@\@UEBA_NAEBUFilterContext\@\@\@Z
+     * @symbol ?evaluate\@ActorInWeatherTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const &) const = 0;
     /**
@@ -58,7 +58,7 @@ public:
     virtual void finalizeParsedValue(class IWorldRegistriesProvider &);
     /**
      * @vftbl 4
-     * @symbol ?getName\@FilterTestGameRule\@\@UEBA?AV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@XZ
+     * @symbol ?getName\@ActorInWeatherTest\@\@UEBA?AV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@XZ
      */
     virtual class std::basic_string_view<char, struct std::char_traits<char>> getName() const = 0;
     /**
@@ -68,7 +68,7 @@ public:
     virtual class Json::Value _serializeDomain() const;
     /**
      * @vftbl 6
-     * @symbol ?_serializeValue\@FilterTestGameRule\@\@MEBA?AVValue\@Json\@\@XZ
+     * @symbol ?_serializeValue\@ActorInWeatherTest\@\@MEBA?AVValue\@Json\@\@XZ
      */
     virtual class Json::Value _serializeValue() const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTEST
@@ -84,6 +84,10 @@ public:
 
 //protected:
     /**
+     * @symbol ?_testValuesWithOperator\@FilterTest\@\@IEBA_NHH\@Z
+     */
+    MCAPI bool _testValuesWithOperator(int, int) const;
+    /**
      * @symbol ?_testValuesWithOperator\@FilterTest\@\@IEBA_NMM\@Z
      */
     MCAPI bool _testValuesWithOperator(float, float) const;
@@ -91,10 +95,6 @@ public:
      * @symbol ?_testValuesWithOperator\@FilterTest\@\@IEBA_N_N0\@Z
      */
     MCAPI bool _testValuesWithOperator(bool, bool) const;
-    /**
-     * @symbol ?_testValuesWithOperator\@FilterTest\@\@IEBA_NHH\@Z
-     */
-    MCAPI bool _testValuesWithOperator(int, int) const;
 
 protected:
 

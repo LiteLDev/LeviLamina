@@ -1192,13 +1192,13 @@ public:
      */
     MCAPI class BlockLegacy & addTag(class HashedString const &);
     /**
-     * @symbol ?anyOf\@BlockLegacy\@\@QEBA_NV?$initializer_list\@$$CBVHashedString\@\@\@std\@\@\@Z
-     */
-    MCAPI bool anyOf(class std::initializer_list<class HashedString const>) const;
-    /**
      * @symbol ?anyOf\@BlockLegacy\@\@QEBA_NAEBV?$vector\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@V?$allocator\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@\@2\@\@std\@\@\@Z
      */
     MCAPI bool anyOf(std::vector<class std::reference_wrapper<class HashedString const>> const &) const;
+    /**
+     * @symbol ?anyOf\@BlockLegacy\@\@QEBA_NV?$initializer_list\@$$CBVHashedString\@\@\@std\@\@\@Z
+     */
+    MCAPI bool anyOf(class std::initializer_list<class HashedString const>) const;
     /**
      * @symbol ?createBlockPermutations\@BlockLegacy\@\@QEAAXI\@Z
      */
@@ -1292,13 +1292,13 @@ public:
      */
     MCAPI bool hasProperty(enum class BlockProperty) const;
     /**
-     * @symbol ?hasState\@BlockLegacy\@\@QEBA_NAEBVHashedString\@\@\@Z
-     */
-    MCAPI bool hasState(class HashedString const &) const;
-    /**
      * @symbol ?hasState\@BlockLegacy\@\@QEBA_NAEBVBlockState\@\@\@Z
      */
     MCAPI bool hasState(class BlockState const &) const;
+    /**
+     * @symbol ?hasState\@BlockLegacy\@\@QEBA_NAEBVHashedString\@\@\@Z
+     */
+    MCAPI bool hasState(class HashedString const &) const;
     /**
      * @symbol ?hasTag\@BlockLegacy\@\@QEBA_NAEBVHashedString\@\@\@Z
      */

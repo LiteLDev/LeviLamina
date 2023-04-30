@@ -159,13 +159,13 @@ public:
      */
     MCAPI void setHasPlayerText();
     /**
-     * @symbol ?success\@CommandOutput\@\@QEAAXXZ
-     */
-    MCAPI void success();
-    /**
      * @symbol ?success\@CommandOutput\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@VCommandOutputParameter\@\@V?$allocator\@VCommandOutputParameter\@\@\@std\@\@\@3\@\@Z
      */
     MCAPI void success(std::string const &, std::vector<class CommandOutputParameter> const &);
+    /**
+     * @symbol ?success\@CommandOutput\@\@QEAAXXZ
+     */
+    MCAPI void success();
     /**
      * @symbol ?wantsData\@CommandOutput\@\@QEBA_NXZ
      */

@@ -23,13 +23,13 @@ struct SlotDescriptor {
 #undef AFTER_EXTRA
 public:
     /**
-     * @symbol ??0SlotDescriptor\@\@QEAA\@AEBU0\@\@Z
-     */
-    MCAPI SlotDescriptor(struct SlotDescriptor const &);
-    /**
      * @symbol ??0SlotDescriptor\@\@QEAA\@XZ
      */
     MCAPI SlotDescriptor();
+    /**
+     * @symbol ??0SlotDescriptor\@\@QEAA\@AEBU0\@\@Z
+     */
+    MCAPI SlotDescriptor(struct SlotDescriptor const &);
     /**
      * @symbol ?addAcceptedItem\@SlotDescriptor\@\@QEAAXAEBVItemDescriptor\@\@\@Z
      */

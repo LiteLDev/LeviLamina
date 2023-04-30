@@ -35,13 +35,13 @@ public:
      */
     MCAPI SerializedSkin(class SerializedSkin const &);
     /**
-     * @symbol ??0SerializedSkin\@\@QEAA\@AEBVConnectionRequest\@\@\@Z
-     */
-    MCAPI SerializedSkin(class ConnectionRequest const &);
-    /**
      * @symbol ??0SerializedSkin\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI SerializedSkin(class SerializedSkin &&);
+    /**
+     * @symbol ??0SerializedSkin\@\@QEAA\@AEBVConnectionRequest\@\@\@Z
+     */
+    MCAPI SerializedSkin(class ConnectionRequest const &);
     /**
      * @symbol ?getName\@SerializedSkin\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */

@@ -38,17 +38,17 @@ public:
 
 public:
     /**
-     * @symbol ??0PlayerListEntry\@\@QEAA\@VUUID\@mce\@\@\@Z
+     * @symbol ??0PlayerListEntry\@\@QEAA\@XZ
      */
-    MCAPI PlayerListEntry(class mce::UUID);
+    MCAPI PlayerListEntry();
     /**
      * @symbol ??0PlayerListEntry\@\@QEAA\@AEBVPlayer\@\@\@Z
      */
     MCAPI PlayerListEntry(class Player const &);
     /**
-     * @symbol ??0PlayerListEntry\@\@QEAA\@XZ
+     * @symbol ??0PlayerListEntry\@\@QEAA\@VUUID\@mce\@\@\@Z
      */
-    MCAPI PlayerListEntry();
+    MCAPI PlayerListEntry(class mce::UUID);
     /**
      * @symbol ?clone\@PlayerListEntry\@\@QEBA?AV1\@XZ
      */

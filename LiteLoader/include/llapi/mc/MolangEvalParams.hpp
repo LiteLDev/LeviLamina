@@ -83,13 +83,13 @@ public:
      */
     MCAPI void pushValue(float);
     /**
-     * @symbol ?renderParams\@MolangEvalParams\@\@QEBAAEBVRenderParams\@\@XZ
-     */
-    MCAPI class RenderParams const & renderParams() const;
-    /**
      * @symbol ?renderParams\@MolangEvalParams\@\@QEAAAEAVRenderParams\@\@XZ
      */
     MCAPI class RenderParams & renderParams();
+    /**
+     * @symbol ?renderParams\@MolangEvalParams\@\@QEBAAEBVRenderParams\@\@XZ
+     */
+    MCAPI class RenderParams const & renderParams() const;
     /**
      * @symbol ?restoreAndPopStackState\@MolangEvalParams\@\@QEAAXXZ
      */

@@ -39,13 +39,13 @@ public:
 
 public:
     /**
-     * @symbol ??0StructureSettings\@\@QEAA\@XZ
-     */
-    MCAPI StructureSettings();
-    /**
      * @symbol ??0StructureSettings\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI StructureSettings(class StructureSettings &&);
+    /**
+     * @symbol ??0StructureSettings\@\@QEAA\@XZ
+     */
+    MCAPI StructureSettings();
     /**
      * @symbol ?getAnimationMode\@StructureSettings\@\@QEBA?AW4AnimationMode\@\@XZ
      */

@@ -70,13 +70,13 @@ public:
      */
     MCAPI void sendBlockPlacedByPlayer(class Player &, class Block const &, class BlockPos const &, bool);
     /**
-     * @symbol ?sendEvent\@BlockEventCoordinator\@\@QEAAXAEBV?$EventRef\@U?$BlockGameplayEvent\@X\@\@\@\@\@Z
-     */
-    MCAPI void sendEvent(class EventRef<struct BlockGameplayEvent<void>> const &);
-    /**
      * @symbol ?sendEvent\@BlockEventCoordinator\@\@QEAA?AW4CoordinatorResult\@\@V?$EventRef\@U?$MutableBlockGameplayEvent\@W4CoordinatorResult\@\@\@\@\@\@\@Z
      */
     MCAPI enum class CoordinatorResult sendEvent(class EventRef<struct MutableBlockGameplayEvent<enum class CoordinatorResult>>);
+    /**
+     * @symbol ?sendEvent\@BlockEventCoordinator\@\@QEAAXAEBV?$EventRef\@U?$BlockGameplayEvent\@X\@\@\@\@\@Z
+     */
+    MCAPI void sendEvent(class EventRef<struct BlockGameplayEvent<void>> const &);
     /**
      * @symbol ?sendEvent\@BlockEventCoordinator\@\@QEAA?AW4CoordinatorResult\@\@AEBV?$EventRef\@U?$BlockGameplayEvent\@W4CoordinatorResult\@\@\@\@\@\@\@Z
      */

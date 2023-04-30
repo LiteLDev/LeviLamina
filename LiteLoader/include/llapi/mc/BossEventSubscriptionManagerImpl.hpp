@@ -37,13 +37,13 @@ public:
      */
     MCVAPI void broadcastBossEvent(enum class BossEventUpdateType, struct ActorUniqueID const &, class BossEventPacket const &);
     /**
-     * @symbol ?subscribeToBossEvent\@BossEventSubscriptionManagerImpl\@\@UEAA?AVSubscription\@PubSub\@Bedrock\@\@V?$function\@$$A6AXW4BossEventUpdateType\@\@AEBUActorUniqueID\@\@AEBVBossEventPacket\@\@\@Z\@std\@\@\@Z
-     */
-    MCVAPI class Bedrock::PubSub::Subscription subscribeToBossEvent(class std::function<void (enum class BossEventUpdateType, struct ActorUniqueID const &, class BossEventPacket const &)>);
-    /**
      * @symbol ?subscribeToBossEvent\@BossEventSubscriptionManagerImpl\@\@UEAA?AVSubscription\@PubSub\@Bedrock\@\@V?$function\@$$A6AXW4BossEventUpdateType\@\@\@Z\@std\@\@\@Z
      */
     MCVAPI class Bedrock::PubSub::Subscription subscribeToBossEvent(class std::function<void (enum class BossEventUpdateType)>);
+    /**
+     * @symbol ?subscribeToBossEvent\@BossEventSubscriptionManagerImpl\@\@UEAA?AVSubscription\@PubSub\@Bedrock\@\@V?$function\@$$A6AXW4BossEventUpdateType\@\@AEBUActorUniqueID\@\@AEBVBossEventPacket\@\@\@Z\@std\@\@\@Z
+     */
+    MCVAPI class Bedrock::PubSub::Subscription subscribeToBossEvent(class std::function<void (enum class BossEventUpdateType, struct ActorUniqueID const &, class BossEventPacket const &)>);
 #endif
     /**
      * @symbol ??0BossEventSubscriptionManagerImpl\@\@QEAA\@XZ

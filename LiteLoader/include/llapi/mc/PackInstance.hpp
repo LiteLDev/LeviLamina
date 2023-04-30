@@ -5,8 +5,8 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Bedrock.hpp"
 #include "Core.hpp"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here

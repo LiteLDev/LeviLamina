@@ -46,13 +46,13 @@ public:
      */
     MCAPI class std::unordered_map<std::string, class Json::Value, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, class Json::Value>>> const & getVariables() const;
     /**
-     * @symbol ??4ScriptPackConfiguration\@\@QEAAAEAV0\@$$QEAV0\@\@Z
-     */
-    MCAPI class ScriptPackConfiguration & operator=(class ScriptPackConfiguration &&);
-    /**
      * @symbol ??4ScriptPackConfiguration\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
     MCAPI class ScriptPackConfiguration & operator=(class ScriptPackConfiguration const &);
+    /**
+     * @symbol ??4ScriptPackConfiguration\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     */
+    MCAPI class ScriptPackConfiguration & operator=(class ScriptPackConfiguration &&);
     /**
      * @symbol ??1ScriptPackConfiguration\@\@QEAA\@XZ
      */

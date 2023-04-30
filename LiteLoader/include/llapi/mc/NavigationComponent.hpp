@@ -36,13 +36,13 @@ public:
      */
     MCAPI NavigationComponent();
     /**
-     * @symbol ?createPath\@NavigationComponent\@\@QEAA?AV?$unique_ptr\@VPath\@\@U?$default_delete\@VPath\@\@\@std\@\@\@std\@\@AEAVMob\@\@AEAVActor\@\@\@Z
-     */
-    MCAPI std::unique_ptr<class Path> createPath(class Mob &, class Actor &);
-    /**
      * @symbol ?createPath\@NavigationComponent\@\@QEAA?AV?$unique_ptr\@VPath\@\@U?$default_delete\@VPath\@\@\@std\@\@\@std\@\@AEAVMob\@\@AEBVVec3\@\@\@Z
      */
     MCAPI std::unique_ptr<class Path> createPath(class Mob &, class Vec3 const &);
+    /**
+     * @symbol ?createPath\@NavigationComponent\@\@QEAA?AV?$unique_ptr\@VPath\@\@U?$default_delete\@VPath\@\@\@std\@\@\@std\@\@AEAVMob\@\@AEAVActor\@\@\@Z
+     */
+    MCAPI std::unique_ptr<class Path> createPath(class Mob &, class Actor &);
     /**
      * @symbol ?getAvoidDamageBlocks\@NavigationComponent\@\@QEBA_NXZ
      */
@@ -172,6 +172,10 @@ public:
      */
     MCAPI bool isStuck(int) const;
     /**
+     * @symbol ?moveTo\@NavigationComponent\@\@QEAA_NAEAVMob\@\@AEBVVec3\@\@M\@Z
+     */
+    MCAPI bool moveTo(class Mob &, class Vec3 const &, float);
+    /**
      * @symbol ?moveTo\@NavigationComponent\@\@QEAA_NAEAVMob\@\@AEAVActor\@\@M\@Z
      */
     MCAPI bool moveTo(class Mob &, class Actor &, float);
@@ -183,10 +187,6 @@ public:
      * @symbol ?moveTo\@NavigationComponent\@\@QEAA_NAEAVMob\@\@V?$unique_ptr\@VPath\@\@U?$default_delete\@VPath\@\@\@std\@\@\@std\@\@M\@Z
      */
     MCAPI bool moveTo(class Mob &, std::unique_ptr<class Path>, float);
-    /**
-     * @symbol ?moveTo\@NavigationComponent\@\@QEAA_NAEAVMob\@\@AEBVVec3\@\@M\@Z
-     */
-    MCAPI bool moveTo(class Mob &, class Vec3 const &, float);
     /**
      * @symbol ??4NavigationComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */

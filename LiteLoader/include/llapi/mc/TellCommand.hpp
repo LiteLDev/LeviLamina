@@ -36,7 +36,7 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 1
+     * @vftbl 2
      * @symbol ?execute\@TellCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -47,9 +47,9 @@ public:
 
 //private:
     /**
-     * @symbol ?_sendMessageToPlayers\@TellCommand\@\@AEBAXAEBV?$CommandSelectorResults\@VPlayer\@\@\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1AEBUCommandOriginIdentity\@\@AEAVLevel\@\@\@Z
+     * @symbol ?_sendMessageToPlayer\@TellCommand\@\@CAXAEAVPlayer\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1AEBUCommandOriginIdentity\@\@AEAVLevel\@\@\@Z
      */
-    MCAPI void _sendMessageToPlayers(class CommandSelectorResults<class Player> const &, std::string const &, std::string const &, struct CommandOriginIdentity const &, class Level &) const;
+    MCAPI static void _sendMessageToPlayer(class Player &, std::string const &, std::string const &, struct CommandOriginIdentity const &, class Level &);
 
 private:
 

@@ -74,9 +74,9 @@ public:
     virtual int getMaxUseDuration(class ItemStack const *) const;
     /**
      * @vftbl 7
-     * @symbol ?isMusicDisk@Item@@UEBA_NXZ
+     * @symbol __unk_vfn_7
      */
-    virtual bool isMusicDisk() const;
+    virtual void __unk_vfn_7();
     /**
      * @vftbl 8
      * @symbol ?hasTag\@Item\@\@UEBA_NAEBVHashedString\@\@\@Z

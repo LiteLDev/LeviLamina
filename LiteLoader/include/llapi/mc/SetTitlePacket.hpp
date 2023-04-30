@@ -66,21 +66,21 @@ public:
      */
     MCAPI SetTitlePacket();
     /**
-     * @symbol ??0SetTitlePacket\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0SetTitlePacket\@\@QEAA\@W4TitleType\@0\@\@Z
      */
-    MCAPI SetTitlePacket(class SetTitlePacket const &);
+    MCAPI SetTitlePacket(enum class SetTitlePacket::TitleType);
     /**
      * @symbol ??0SetTitlePacket\@\@QEAA\@HHH\@Z
      */
     MCAPI SetTitlePacket(int, int, int);
     /**
+     * @symbol ??0SetTitlePacket\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI SetTitlePacket(class SetTitlePacket const &);
+    /**
      * @symbol ??0SetTitlePacket\@\@QEAA\@W4TitleType\@0\@AEBVResolvedTextObject\@\@\@Z
      */
     MCAPI SetTitlePacket(enum class SetTitlePacket::TitleType, class ResolvedTextObject const &);
-    /**
-     * @symbol ??0SetTitlePacket\@\@QEAA\@W4TitleType\@0\@\@Z
-     */
-    MCAPI SetTitlePacket(enum class SetTitlePacket::TitleType);
     /**
      * @symbol ??0SetTitlePacket\@\@QEAA\@W4TitleType\@0\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */

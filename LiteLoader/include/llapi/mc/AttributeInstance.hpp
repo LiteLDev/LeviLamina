@@ -105,13 +105,13 @@ public:
      */
     MCAPI bool hasModifier(class std::shared_ptr<class AttributeModifier>) const;
     /**
-     * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NAEBVUUID\@mce\@\@\@Z
-     */
-    MCAPI bool hasModifier(class mce::UUID const &) const;
-    /**
      * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NAEBVAttributeModifier\@\@\@Z
      */
     MCAPI bool hasModifier(class AttributeModifier const &) const;
+    /**
+     * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NAEBVUUID\@mce\@\@\@Z
+     */
+    MCAPI bool hasModifier(class mce::UUID const &) const;
     /**
      * @symbol ?hasModifiers\@AttributeInstance\@\@QEBA_NXZ
      */
@@ -153,10 +153,6 @@ public:
      */
     MCAPI void removeBuffs();
     /**
-     * @symbol ?removeModifier\@AttributeInstance\@\@QEAAXV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@\@Z
-     */
-    MCAPI void removeModifier(class std::shared_ptr<class AttributeModifier>);
-    /**
      * @symbol ?removeModifier\@AttributeInstance\@\@QEAA_NAEBVUUID\@mce\@\@\@Z
      */
     MCAPI bool removeModifier(class mce::UUID const &);
@@ -164,6 +160,10 @@ public:
      * @symbol ?removeModifier\@AttributeInstance\@\@QEAAXAEBVAttributeModifier\@\@\@Z
      */
     MCAPI void removeModifier(class AttributeModifier const &);
+    /**
+     * @symbol ?removeModifier\@AttributeInstance\@\@QEAAXV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@\@Z
+     */
+    MCAPI void removeModifier(class std::shared_ptr<class AttributeModifier>);
     /**
      * @symbol ?removeModifiers\@AttributeInstance\@\@QEAAXXZ
      */

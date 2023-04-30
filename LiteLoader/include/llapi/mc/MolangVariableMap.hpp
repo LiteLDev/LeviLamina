@@ -60,13 +60,13 @@ public:
      */
     MCAPI void setMolangVariable(class HashedString const &, struct MolangScriptArg const &);
     /**
-     * @symbol ?setMolangVariable\@MolangVariableMap\@\@QEAAXW4MolangVariableIndex\@\@AEBUMolangScriptArg\@\@\@Z
-     */
-    MCAPI void setMolangVariable(enum class MolangVariableIndex, struct MolangScriptArg const &);
-    /**
      * @symbol ?setMolangVariable\@MolangVariableMap\@\@QEAAX_KPEBDAEBUMolangScriptArg\@\@\@Z
      */
     MCAPI void setMolangVariable(unsigned __int64, char const *, struct MolangScriptArg const &);
+    /**
+     * @symbol ?setMolangVariable\@MolangVariableMap\@\@QEAAXW4MolangVariableIndex\@\@AEBUMolangScriptArg\@\@\@Z
+     */
+    MCAPI void setMolangVariable(enum class MolangVariableIndex, struct MolangScriptArg const &);
     /**
      * @symbol ?setMolangVariableSettings\@MolangVariableMap\@\@QEAAXAEBUMolangVariableSettings\@\@\@Z
      */

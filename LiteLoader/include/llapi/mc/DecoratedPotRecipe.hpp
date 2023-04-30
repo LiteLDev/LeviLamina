@@ -66,13 +66,13 @@ public:
      */
     virtual int size() const;
     /**
-     * @symbol ??0DecoratedPotRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@AEBVUUID\@mce\@\@\@Z
-     */
-    MCAPI DecoratedPotRecipe(class std::basic_string_view<char, struct std::char_traits<char>>, class mce::UUID const &);
-    /**
      * @symbol ??0DecoratedPotRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
     MCAPI DecoratedPotRecipe(class std::basic_string_view<char, struct std::char_traits<char>>);
+    /**
+     * @symbol ??0DecoratedPotRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@AEBVUUID\@mce\@\@\@Z
+     */
+    MCAPI DecoratedPotRecipe(class std::basic_string_view<char, struct std::char_traits<char>>, class mce::UUID const &);
     /**
      * @symbol ?ID\@DecoratedPotRecipe\@\@2VUUID\@mce\@\@B
      */

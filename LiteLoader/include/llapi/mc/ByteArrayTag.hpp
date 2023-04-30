@@ -81,12 +81,12 @@ public:
      */
     virtual unsigned __int64 hash() const;
     /**
-     * @symbol ??0ByteArrayTag\@\@QEAA\@XZ
-     */
-    MCAPI ByteArrayTag();
-    /**
      * @symbol ??0ByteArrayTag\@\@QEAA\@UTagMemoryChunk\@\@\@Z
      */
     MCAPI ByteArrayTag(struct TagMemoryChunk);
+    /**
+     * @symbol ??0ByteArrayTag\@\@QEAA\@XZ
+     */
+    MCAPI ByteArrayTag();
 
 };

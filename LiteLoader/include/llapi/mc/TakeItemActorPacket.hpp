@@ -61,12 +61,12 @@ public:
     MCVAPI ~TakeItemActorPacket();
 #endif
     /**
-     * @symbol ??0TakeItemActorPacket\@\@QEAA\@XZ
-     */
-    MCAPI TakeItemActorPacket();
-    /**
      * @symbol ??0TakeItemActorPacket\@\@QEAA\@VActorRuntimeID\@\@0\@Z
      */
     MCAPI TakeItemActorPacket(class ActorRuntimeID, class ActorRuntimeID);
+    /**
+     * @symbol ??0TakeItemActorPacket\@\@QEAA\@XZ
+     */
+    MCAPI TakeItemActorPacket();
 
 };
