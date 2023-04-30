@@ -9,7 +9,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+#define ENABLE_VIRTUAL_FAKESYMBOL_ITEM
 #undef BEFORE_EXTRA
 
 /**
