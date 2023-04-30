@@ -11,7 +11,7 @@
 #include <functional>
 #include "ActorDefinitionIdentifier.hpp"
 #include "CommandPosition.hpp"
-#include "BlockPos.hpp"
+#include "Vec3.hpp"
 class CommandOrigin;
 class Actor;
 class Player;
@@ -36,19 +36,20 @@ public:
     std::vector<InvertableFilter<std::string>> mTagFilters;
     std::vector<std::function<bool(CommandOrigin const&, Actor const&)>> mFilterChain;
     CommandPosition mPosition;
-    BlockPos mBoxDeltas;
+    Vec3 mBoxDeltas;
     float mRadiusMin;
     float mRadiusMax;
     uint64_t mCount;
     bool mIncludeDeadPlayers;
     bool mIsPositionBound;
     bool mDistanceFiltered;
+    bool mPositionFiltered;
+    bool mCountFiltered;
     bool mHaveDeltas;
     bool mForcePlayer;
+    bool mExcludeAgents;
     bool mIsExplicitIdSelector;
 
-    // c++ buffer, issue #1006.
-    char unk[8];
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDSELECTORBASE

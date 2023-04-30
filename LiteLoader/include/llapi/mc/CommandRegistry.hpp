@@ -145,7 +145,7 @@ public:
 
     struct Enum {
         std::string name;                                                                           // 0
-        Bedrock::typeid_t<CommandRegistry> type;                                                             // 32
+        Bedrock::typeid_t<CommandRegistry> type;                                                     // 32
         ParseFn parse;                                                                              // 40
         std::vector<std::tuple<unsigned long, unsigned long, unsigned long, unsigned long>> values; // 48
 

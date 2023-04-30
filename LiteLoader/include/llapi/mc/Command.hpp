@@ -11,6 +11,7 @@
 #include "CommandRegistry.hpp"
 #include "CommandParameterData.hpp"
 #include "CommandFlag.hpp"
+#include "Bedrock.hpp"
 class CommandRegistry;
 
 class CommandOutput;

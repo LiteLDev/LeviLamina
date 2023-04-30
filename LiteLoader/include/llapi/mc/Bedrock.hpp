@@ -138,15 +138,21 @@ public:
 
 template <typename T, typename T2>
 typeid_t<T> type_id() {
-    static typeid_t<T> id = typeid_t<T>::count++;
+    static typeid_t<T> id = typeid_t<T>::_getCounter().fetch_add(1);
     return id;
 }
 
 template <>
 class typeid_t<CommandRegistry> {
 public:
-    inline static unsigned short count = 0;
     unsigned short value;
+
+    inline static std::atomic<unsigned short>& _getCounter(){
+         std::atomic<unsigned short>& id = *(std::atomic<unsigned short>*)dlsym_real(
+            "?storage@?1??_getCounter@?$typeid_t@VCommandRegistry@@@Bedrock@@CAAEAU?$atomic@G@std@@XZ@4U45@A");
+        return id;
+    }
+    
     typeid_t<CommandRegistry>(typeid_t<CommandRegistry> const& id) : value(id.value){};
     typeid_t<CommandRegistry>(unsigned short value) : value(value){};
 };
@@ -156,7 +162,8 @@ MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDamageCause>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, AutomaticID<class Dimension, int>>();
 // template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class Block const*>();
-// template MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, bool>();
+template<>
+MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, bool>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandMessage>();
 template <>
@@ -218,12 +225,12 @@ inline typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>() {
     return id;
 };
 
-template <>
-inline typeid_t<CommandRegistry> type_id<CommandRegistry, bool>() {
-    static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)dlsym_real(
-        "??$type_id@VCommandRegistry@@H@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@@@0@XZ");
-    return id;
-};
+//template <>
+//inline typeid_t<CommandRegistry> type_id<CommandRegistry, bool>() {
+//    static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)dlsym_real(
+//        "??$type_id@VCommandRegistry@@H@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@@@0@XZ");
+//    return id;
+//};
 
 template <>
 inline typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandBlockName>() {
