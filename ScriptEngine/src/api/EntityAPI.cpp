@@ -118,6 +118,10 @@ ClassDefine<EntityClass> EntityClassBuilder =
         .instanceFunction("getBiomeId", &EntityClass::getBiomeId)
         .instanceFunction("quickEvalMolangScript", &EntityClass::quickEvalMolangScript)
 
+        .instanceFunction("getAllEffects", &EntityClass::getAllEffects)
+        .instanceFunction("addEffect", &EntityClass::addEffect)
+        .instanceFunction("removeEffect", &EntityClass::removeEffect)
+
         // For Compatibility
         .instanceFunction("setTag", &EntityClass::setNbt)
         .instanceFunction("setOnFire", &EntityClass::setOnFire)
@@ -1501,6 +1505,61 @@ Local<Value> EntityClass::getBiomeName() {
         return String::newString(bio->getName());
     }
     CATCH("Fail in getBiomeName!");
+}
+
+Local<Value> EntityClass::getAllEffects() {
+    try {
+        Actor* actor = get();
+        if (!actor) {
+            return Local<Value>();
+        }
+        auto effects = actor->getAllEffects();
+        if (effects.size() == 0) {
+            return Local<Value>();
+        }
+        Local<Array> effectList = Array::newArray();
+        for (auto effect : effects)
+            effectList.add(Number::newNumber((int)effect.getId()));
+        return effectList;
+    }
+    CATCH("Fail in getAllEffects!")
+}
+
+Local<Value> EntityClass::addEffect(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 4);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+    CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+    CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
+    CHECK_ARG_TYPE(args[3], ValueKind::kBoolean);
+    try {
+        Actor* actor = get();
+        if (!actor) {
+            return Boolean::newBoolean(false);
+        }
+        unsigned int id = args[0].asNumber().toInt32();
+        int tick = args[1].asNumber().toInt32();
+        int level = args[2].asNumber().toInt32();
+        bool showParticles = args[3].asBoolean().value();
+        MobEffectInstance effect = MobEffectInstance(id, tick, level, false, showParticles, false);
+        actor->addEffect(effect);
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in addEffect!");
+}
+
+Local<Value> EntityClass::removeEffect(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 1);
+    CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
+    try {
+        Actor* actor = get();
+        if (!actor) {
+            return Boolean::newBoolean(false);
+        }
+        int id = args[0].asNumber().toInt32();
+        actor->removeEffect(id);
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in removeEffect!");
 }
 
 Local<Value> McClass::getAllEntities(const Arguments& args) {

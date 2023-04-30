@@ -111,6 +111,11 @@ public:
     Local<Value> getBlockFromViewVector(const Arguments& args);
 
     Local<Value> quickEvalMolangScript(const Arguments& args);
+
+    Local<Value> getAllEffects();
+    Local<Value> addEffect(const Arguments& args);
+    Local<Value> removeEffect(const Arguments& args);
+
 };
 extern ClassDefine<EntityClass> EntityClassBuilder;
 extern ClassDefine<void> ActorDamageCauseBuilder;
