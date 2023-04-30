@@ -32,6 +32,10 @@ public:
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
     /**
+     * @symbol ?tick\@UpdateBoundingBoxSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@\@\@$$CBUShouldUpdateBoundingBoxRequestComponent\@\@VActorOwnerComponent\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Exclude\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@\@\@$$CBUShouldUpdateBoundingBoxRequestComponent\@\@VActorOwnerComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UShouldUpdateBoundingBoxRequestComponent\@\@\@\@\@Z
+     */
+    MCAPI static void tick(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PlayerComponentFlag>>, struct ShouldUpdateBoundingBoxRequestComponent const, class ActorOwnerComponent>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Exclude<class FlagComponent<struct PlayerComponentFlag>>, struct ShouldUpdateBoundingBoxRequestComponent const, class ActorOwnerComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct ShouldUpdateBoundingBoxRequestComponent>);
+    /**
      * @symbol ?updateBoundingBoxFromDefinition\@UpdateBoundingBoxSystem\@\@SAXAEAVActor\@\@\@Z
      */
     MCAPI static void updateBoundingBoxFromDefinition(class Actor &);

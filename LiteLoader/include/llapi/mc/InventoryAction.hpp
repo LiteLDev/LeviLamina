@@ -56,10 +56,6 @@ public:
      */
     MCAPI class InventoryAction & operator=(class InventoryAction const &);
     /**
-     * @symbol ?postLoadItems\@InventoryAction\@\@QEAAXAEAVBlockPalette\@\@_N\@Z
-     */
-    MCAPI void postLoadItems(class BlockPalette &, bool);
-    /**
      * @symbol ??1InventoryAction\@\@QEAA\@XZ
      */
     MCAPI ~InventoryAction();

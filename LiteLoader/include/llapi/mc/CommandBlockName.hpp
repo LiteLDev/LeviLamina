@@ -45,6 +45,10 @@ public:
      */
     MCAPI operator unsigned __int64() const;
     /**
+     * @symbol ?resolveBlock\@CommandBlockName\@\@QEBA?AVCommandBlockNameResult\@\@AEBV?$vector\@VBlockStateCommandParam\@\@V?$allocator\@VBlockStateCommandParam\@\@\@std\@\@\@std\@\@AEAVCommandOutput\@\@\@Z
+     */
+    MCAPI class CommandBlockNameResult resolveBlock(std::vector<class BlockStateCommandParam> const &, class CommandOutput &) const;
+    /**
      * @symbol ?resolveBlock\@CommandBlockName\@\@QEBA?AVCommandBlockNameResult\@\@AEBV?$vector\@VBlockStateCommandParam\@\@V?$allocator\@VBlockStateCommandParam\@\@\@std\@\@\@std\@\@HAEAVCommandOutput\@\@\@Z
      */
     MCAPI class CommandBlockNameResult resolveBlock(std::vector<class BlockStateCommandParam> const &, int, class CommandOutput &) const;
@@ -52,9 +56,5 @@ public:
      * @symbol ?resolveBlock\@CommandBlockName\@\@QEBA?AVCommandBlockNameResult\@\@H\@Z
      */
     MCAPI class CommandBlockNameResult resolveBlock(int) const;
-    /**
-     * @symbol ?resolveBlock\@CommandBlockName\@\@QEBA?AVCommandBlockNameResult\@\@AEBV?$vector\@VBlockStateCommandParam\@\@V?$allocator\@VBlockStateCommandParam\@\@\@std\@\@\@std\@\@AEAVCommandOutput\@\@\@Z
-     */
-    MCAPI class CommandBlockNameResult resolveBlock(std::vector<class BlockStateCommandParam> const &, class CommandOutput &) const;
 
 };

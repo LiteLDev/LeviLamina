@@ -342,14 +342,6 @@ public:
      */
     MCAPI void stopCommandMode();
     /**
-     * @symbol ?swingAnimationCompleted\@Agent\@\@QEAA_NXZ
-     */
-    MCAPI bool swingAnimationCompleted();
-    /**
-     * @symbol ?swingArm\@Agent\@\@QEAAXXZ
-     */
-    MCAPI void swingArm();
-    /**
      * @symbol ?tryFireCreateEvent\@Agent\@\@QEAAXAEAVPlayer\@\@\@Z
      */
     MCAPI void tryFireCreateEvent(class Player &);

@@ -42,9 +42,9 @@ public:
      */
     MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class FileArchiver>> getFileArchiver() const;
     /**
-     * @symbol ?getGameModule\@DedicatedServer\@\@EEAAAEAVIGameModuleShared\@\@XZ
+     * @symbol ?getGameModuleShared\@DedicatedServer\@\@EEAAAEAVIGameModuleShared\@\@XZ
      */
-    MCVAPI class IGameModuleShared & getGameModule();
+    MCVAPI class IGameModuleShared & getGameModuleShared();
     /**
      * @symbol ?getPrimaryMinecraft\@DedicatedServer\@\@EEAA?AV?$not_null\@V?$NonOwnerPointer\@VMinecraft\@\@\@Bedrock\@\@\@gsl\@\@XZ
      */

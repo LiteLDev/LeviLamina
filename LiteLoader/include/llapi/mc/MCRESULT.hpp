@@ -42,5 +42,9 @@ public:
      * @symbol ?isSuccess\@MCRESULT\@\@QEBA_NXZ
      */
     MCAPI bool isSuccess() const;
+    /**
+     * @symbol ??8MCRESULT\@\@QEBA_NAEBU0\@\@Z
+     */
+    MCAPI bool operator==(struct MCRESULT const &) const;
 
 };

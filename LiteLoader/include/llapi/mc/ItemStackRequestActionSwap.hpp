@@ -26,6 +26,7 @@ class ItemStackRequestActionSwap : public ItemStackRequestActionTransferBase {
 public:
     class ItemStackRequestActionSwap& operator=(class ItemStackRequestActionSwap const &) = delete;
     ItemStackRequestActionSwap(class ItemStackRequestActionSwap const &) = delete;
+    ItemStackRequestActionSwap() = delete;
 #endif
 
 public:
@@ -50,8 +51,14 @@ public:
      */
     virtual void __unk_vfn_3();
     /**
-     * @symbol ??0ItemStackRequestActionSwap\@\@QEAA\@XZ
+     * @vftbl 4
+     * @symbol ?_write\@ItemStackRequestActionTransferBase\@\@MEBAXAEAVBinaryStream\@\@\@Z
      */
-    MCAPI ItemStackRequestActionSwap();
+    virtual void _write(class BinaryStream &) const;
+    /**
+     * @vftbl 5
+     * @symbol ?_read\@ItemStackRequestActionTransferBase\@\@MEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
+     */
+    virtual bool _read(class ReadOnlyBinaryStream &);
 
 };

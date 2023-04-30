@@ -49,9 +49,9 @@ public:
 
 //private:
     /**
-     * @symbol ?_handleChat\@ScriptServerNetworkEventHandler\@\@AEBA_NAEAUChatEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VScriptWorldEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
+     * @symbol ?_handleChat\@ScriptServerNetworkEventHandler\@\@AEBA_NAEAUChatEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VIScriptBeforeEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
      */
-    MCAPI bool _handleChat(struct ChatEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldEvents>) const;
+    MCAPI bool _handleChat(struct ChatEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptBeforeEvents>) const;
 
 private:
 

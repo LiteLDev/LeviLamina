@@ -11,15 +11,15 @@
 #undef BEFORE_EXTRA
 
 
-class ChemistryIngredient {
+struct ChemistryIngredient {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHEMISTRYINGREDIENT
 public:
-    class ChemistryIngredient& operator=(class ChemistryIngredient const &) = delete;
-    ChemistryIngredient(class ChemistryIngredient const &) = delete;
+    struct ChemistryIngredient& operator=(struct ChemistryIngredient const &) = delete;
+    ChemistryIngredient(struct ChemistryIngredient const &) = delete;
     ChemistryIngredient() = delete;
 #endif
 

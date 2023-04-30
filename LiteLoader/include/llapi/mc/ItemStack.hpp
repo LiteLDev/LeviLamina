@@ -106,13 +106,13 @@ public:
     MCVAPI ~ItemStack();
 #endif
     /**
-     * @symbol ??0ItemStack\@\@QEAA\@AEBVItemInstance\@\@\@Z
-     */
-    MCAPI ItemStack(class ItemInstance const &);
-    /**
      * @symbol ??0ItemStack\@\@QEAA\@AEBVRecipeIngredient\@\@\@Z
      */
     MCAPI ItemStack(class RecipeIngredient const &);
+    /**
+     * @symbol ??0ItemStack\@\@QEAA\@AEBVItemInstance\@\@\@Z
+     */
+    MCAPI ItemStack(class ItemInstance const &);
     /**
      * @symbol ??0ItemStack\@\@QEAA\@XZ
      */
@@ -126,17 +126,17 @@ public:
      */
     MCAPI ItemStack(class Item const &, int, int, class CompoundTag const *);
     /**
-     * @symbol ??0ItemStack\@\@QEAA\@AEBVBlock\@\@HPEBVCompoundTag\@\@\@Z
+     * @symbol ??0ItemStack\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI ItemStack(class Block const &, int, class CompoundTag const *);
+    MCAPI ItemStack(class ItemStack const &);
     /**
      * @symbol ??0ItemStack\@\@QEAA\@AEBVBlockLegacy\@\@H\@Z
      */
     MCAPI ItemStack(class BlockLegacy const &, int);
     /**
-     * @symbol ??0ItemStack\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0ItemStack\@\@QEAA\@AEBVBlock\@\@HPEBVCompoundTag\@\@\@Z
      */
-    MCAPI ItemStack(class ItemStack const &);
+    MCAPI ItemStack(class Block const &, int, class CompoundTag const *);
     /**
      * @symbol ?_assignNetIdVariant\@ItemStack\@\@QEBAXAEBV1\@\@Z
      */
@@ -218,9 +218,9 @@ public:
      */
     MCAPI void useAsFuel();
     /**
-     * @symbol ?useOn\@ItemStack\@\@QEAA_NAEAVActor\@\@HHHEAEBVVec3\@\@\@Z
+     * @symbol ?useOn\@ItemStack\@\@QEAA?AVInteractionResult\@\@AEAVActor\@\@HHHEAEBVVec3\@\@\@Z
      */
-    MCAPI bool useOn(class Actor &, int, int, int, unsigned char, class Vec3 const &);
+    MCAPI class InteractionResult useOn(class Actor &, int, int, int, unsigned char, class Vec3 const &);
     /**
      * @symbol ?useTimeDepleted\@ItemStack\@\@QEAA?AW4ItemUseMethod\@\@PEAVLevel\@\@PEAVPlayer\@\@\@Z
      */

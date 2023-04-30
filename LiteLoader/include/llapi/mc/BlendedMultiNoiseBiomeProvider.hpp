@@ -46,4 +46,12 @@ public:
      */
     MCAPI ~BlendedMultiNoiseBiomeProvider();
 
+//private:
+    /**
+     * @symbol ?_selectBestFittingBiome\@BlendedMultiNoiseBiomeProvider\@\@AEBAPEBVBiome\@\@AEBUTargetPoint\@\@PEAUHint\@RTree\@\@\@Z
+     */
+    MCAPI class Biome const * _selectBestFittingBiome(struct TargetPoint const &, struct RTree::Hint *) const;
+
+private:
+
 };

@@ -49,16 +49,8 @@ public:
      */
     MCAPI WorldTemplatePackManifest();
     /**
-     * @symbol ??0WorldTemplatePackManifest\@\@QEAA\@$$QEAVPackManifest\@\@\@Z
-     */
-    MCAPI WorldTemplatePackManifest(class PackManifest &&);
-    /**
      * @symbol ?getGameType\@WorldTemplatePackManifest\@\@QEBA?AW4GameType\@\@XZ
      */
     MCAPI enum class GameType getGameType() const;
-    /**
-     * @symbol ?setGameType\@WorldTemplatePackManifest\@\@QEAAXW4GameType\@\@\@Z
-     */
-    MCAPI void setGameType(enum class GameType);
 
 };

@@ -55,10 +55,6 @@ public:
      * @symbol ?addHardcodedSpawnAreas\@SwamplandHut\@\@UEBAXAEAVLevelChunk\@\@\@Z
      */
     virtual void addHardcodedSpawnAreas(class LevelChunk &) const;
-    /**
-     * @symbol ??0SwamplandHut\@\@QEAA\@FHH\@Z
-     */
-    MCAPI SwamplandHut(short, int, int);
 
 //protected:
     /**

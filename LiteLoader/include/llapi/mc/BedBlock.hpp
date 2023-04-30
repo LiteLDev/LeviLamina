@@ -232,39 +232,39 @@ public:
     virtual void __unk_vfn_126();
     /**
      * @vftbl 129
+     * @symbol __unk_vfn_129
+     */
+    virtual void __unk_vfn_129();
+    /**
+     * @vftbl 130
      * @symbol ?canSpawnAt\@BedBlock\@\@UEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool canSpawnAt(class BlockSource const &, class BlockPos const &) const;
     /**
-     * @vftbl 131
-     * @symbol __unk_vfn_131
+     * @vftbl 132
+     * @symbol __unk_vfn_132
      */
-    virtual void __unk_vfn_131();
+    virtual void __unk_vfn_132();
     /**
-     * @vftbl 145
+     * @vftbl 146
      * @symbol ?telemetryVariant\@BedBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual int telemetryVariant(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 146
+     * @vftbl 147
      * @symbol ?getVariant\@BedBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @vftbl 149
+     * @vftbl 150
      * @symbol ?getMappedFace\@BedBlock\@\@UEBAEEAEBVBlock\@\@\@Z
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
-     * @vftbl 156
-     * @symbol __unk_vfn_156
+     * @vftbl 157
+     * @symbol __unk_vfn_157
      */
-    virtual void __unk_vfn_156();
-    /**
-     * @vftbl 165
-     * @symbol __unk_vfn_165
-     */
-    virtual void __unk_vfn_165();
+    virtual void __unk_vfn_157();
     /**
      * @vftbl 166
      * @symbol __unk_vfn_166
@@ -277,44 +277,49 @@ public:
     virtual void __unk_vfn_167();
     /**
      * @vftbl 168
+     * @symbol __unk_vfn_168
+     */
+    virtual void __unk_vfn_168();
+    /**
+     * @vftbl 169
      * @symbol ?onPlace\@BedBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 169
+     * @vftbl 170
      * @symbol ?onFallOn\@BedBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@M\@Z
      */
     virtual void onFallOn(class BlockSource &, class BlockPos const &, class Actor &, float) const;
     /**
-     * @vftbl 170
-     * @symbol __unk_vfn_170
+     * @vftbl 171
+     * @symbol __unk_vfn_171
      */
-    virtual void __unk_vfn_170();
+    virtual void __unk_vfn_171();
     /**
-     * @vftbl 174
-     * @symbol __unk_vfn_174
+     * @vftbl 175
+     * @symbol __unk_vfn_175
      */
-    virtual void __unk_vfn_174();
+    virtual void __unk_vfn_175();
     /**
-     * @vftbl 177
+     * @vftbl 178
      * @symbol ?use\@BedBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @vftbl 178
-     * @symbol __unk_vfn_178
+     * @vftbl 179
+     * @symbol __unk_vfn_179
      */
-    virtual void __unk_vfn_178();
+    virtual void __unk_vfn_179();
     /**
-     * @vftbl 185
+     * @vftbl 186
      * @symbol ?getMapColor\@BedBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @vftbl 186
-     * @symbol __unk_vfn_186
+     * @vftbl 187
+     * @symbol __unk_vfn_187
      */
-    virtual void __unk_vfn_186();
+    virtual void __unk_vfn_187();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDBLOCK
     /**
      * @symbol ?canBeSilkTouched\@BedBlock\@\@MEBA_NXZ
@@ -342,13 +347,9 @@ public:
      */
     MCAPI static unsigned short const OCCUPIED_DATA;
     /**
-     * @symbol ?findWakeupPosition\@BedBlock\@\@SA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@_NAEBV?$optional\@VVec3\@\@\@3\@\@Z
+     * @symbol ?findWakeupPosition\@BedBlock\@\@SA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBV?$optional\@VVec3\@\@\@3\@\@Z
      */
-    MCAPI static class std::optional<class BlockPos> findWakeupPosition(class BlockSource &, class BlockPos const &, bool, class std::optional<class Vec3> const &);
-    /**
-     * @symbol ?isDangerousSpawnPosition\@BedBlock\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI static bool isDangerousSpawnPosition(class BlockSource &, class BlockPos const &);
+    MCAPI static class std::optional<class BlockPos> findWakeupPosition(class BlockSource &, class BlockPos const &, class std::optional<class Vec3> const &);
     /**
      * @symbol ?isValidStandUpPosition\@BedBlock\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -357,5 +358,13 @@ public:
      * @symbol ?setOccupied\@BedBlock\@\@SAXAEAVBlockSource\@\@AEBVBlockPos\@\@_N\@Z
      */
     MCAPI static void setOccupied(class BlockSource &, class BlockPos const &, bool);
+
+//private:
+    /**
+     * @symbol ?_isDangerousSpawnBlock\@BedBlock\@\@CA_NAEBVBlock\@\@\@Z
+     */
+    MCAPI static bool _isDangerousSpawnBlock(class Block const &);
+
+private:
 
 };

@@ -159,13 +159,13 @@ public:
     MCVAPI ~CompoundTag();
 #endif
     /**
-     * @symbol ??0CompoundTag\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI CompoundTag(class CompoundTag &&);
-    /**
      * @symbol ??0CompoundTag\@\@QEAA\@XZ
      */
     MCAPI CompoundTag();
+    /**
+     * @symbol ??0CompoundTag\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI CompoundTag(class CompoundTag &&);
     /**
      * @symbol ?append\@CompoundTag\@\@QEAAXAEBV1\@\@Z
      */
@@ -192,6 +192,8 @@ public:
     MCAPI bool contains(class std::basic_string_view<char, struct std::char_traits<char>>) const;
     /**
      * @symbol ?deepCopy\@CompoundTag\@\@QEAAXAEBV1\@\@Z
+     *
+     *
      * @brief This function performs a deep copy of a CompoundTag object.
      * @param[in] tag A constant reference to a CompoundTag object to be copied.
      * @details A CompoundTag object contains a collection of key-value pairs, where each value can be of various data types. A deep copy of a CompoundTag object creates a new object with a separate memory location that contains the same values and structure as the original object. This function takes a constant reference to a CompoundTag object and performs a deep copy of it. The copied object is not shared with the original object and any changes made to the copied object will not affect the original object.
@@ -294,13 +296,13 @@ public:
      */
     MCAPI class CompoundTag & operator=(class CompoundTag &&);
     /**
-     * @symbol ?put\@CompoundTag\@\@QEAAAEAVTag\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEAV2\@\@Z
-     */
-    MCAPI class Tag & put(std::string, class Tag &&);
-    /**
      * @symbol ?put\@CompoundTag\@\@QEAAPEAVTag\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VTag\@\@U?$default_delete\@VTag\@\@\@std\@\@\@4\@\@Z
      */
     MCAPI class Tag * put(std::string, std::unique_ptr<class Tag>);
+    /**
+     * @symbol ?put\@CompoundTag\@\@QEAAAEAVTag\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEAV2\@\@Z
+     */
+    MCAPI class Tag & put(std::string, class Tag &&);
     /**
      * @symbol ?putBoolean\@CompoundTag\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */

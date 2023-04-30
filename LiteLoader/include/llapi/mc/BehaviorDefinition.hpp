@@ -51,9 +51,5 @@ public:
      */
     MCVAPI ~BehaviorDefinition();
 #endif
-    /**
-     * @symbol ?getTreeDefinition\@BehaviorDefinition\@\@QEBA?AVBehaviorTreeDefinitionPtr\@\@XZ
-     */
-    MCAPI class BehaviorTreeDefinitionPtr getTreeDefinition() const;
 
 };

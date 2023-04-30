@@ -60,13 +60,13 @@ public:
      */
     MCAPI bool addItem(class ItemActor &);
     /**
-     * @symbol ?addItem\@ContainerComponent\@\@QEAA_NAEAVItemStack\@\@\@Z
-     */
-    MCAPI bool addItem(class ItemStack &);
-    /**
      * @symbol ?addItem\@ContainerComponent\@\@QEAA_NAEAVItemStack\@\@HH\@Z
      */
     MCAPI bool addItem(class ItemStack &, int, int);
+    /**
+     * @symbol ?addItem\@ContainerComponent\@\@QEAA_NAEAVItemStack\@\@\@Z
+     */
+    MCAPI bool addItem(class ItemStack &);
     /**
      * @symbol ?canBeSiphonedFrom\@ContainerComponent\@\@QEBA_NXZ
      */

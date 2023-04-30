@@ -12,7 +12,7 @@
 #undef BEFORE_EXTRA
 
 
-class BlockPlacementFilterDescription {
+struct BlockPlacementFilterDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -20,8 +20,8 @@ class BlockPlacementFilterDescription {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPLACEMENTFILTERDESCRIPTION
 public:
-    class BlockPlacementFilterDescription& operator=(class BlockPlacementFilterDescription const &) = delete;
-    BlockPlacementFilterDescription(class BlockPlacementFilterDescription const &) = delete;
+    struct BlockPlacementFilterDescription& operator=(struct BlockPlacementFilterDescription const &) = delete;
+    BlockPlacementFilterDescription(struct BlockPlacementFilterDescription const &) = delete;
     BlockPlacementFilterDescription() = delete;
 #endif
 

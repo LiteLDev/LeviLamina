@@ -35,6 +35,7 @@ public:
 public:
     class DoubleTag& operator=(class DoubleTag const &) = delete;
     DoubleTag(class DoubleTag const &) = delete;
+    DoubleTag() = delete;
 #endif
 
 public:
@@ -78,9 +79,5 @@ public:
      * @symbol ?hash\@DoubleTag\@\@UEBA_KXZ
      */
     virtual unsigned __int64 hash() const;
-    /**
-     * @symbol ??0DoubleTag\@\@QEAA\@XZ
-     */
-    MCAPI DoubleTag();
 
 };

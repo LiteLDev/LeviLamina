@@ -32,9 +32,9 @@ class RotationData {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?ComputeFacingRotation\@RotationCommandUtils\@\@YA?AVVec2\@\@AEBVActor\@\@VVec3\@\@AEBV4\@H\@Z
+     * @symbol ?ComputeFacingRotation\@RotationCommandUtils\@\@YA?AVVec2\@\@VVec3\@\@AEBV3\@H\@Z
      */
-    MCAPI class Vec2 ComputeFacingRotation(class Actor const &, class Vec3, class Vec3 const &, int);
+    MCAPI class Vec2 ComputeFacingRotation(class Vec3, class Vec3 const &, int);
     /**
      * @symbol ?ComputeRotation\@RotationCommandUtils\@\@YA?AVVec2\@\@AEBVActor\@\@AEBV?$optional\@VRotationData\@RotationCommandUtils\@\@\@std\@\@H\@Z
      */

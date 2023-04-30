@@ -34,10 +34,6 @@ public:
      */
     MCAPI LootTableContext(float, class ILevel *, struct ActorUniqueID, class Player *, class Actor *, class ActorDamageSource const *, float, class AutomaticID<class Dimension, int>, class ItemStack const *);
     /**
-     * @symbol ?addVisitedTable\@LootTableContext\@\@QEAA_NPEBVLootTable\@\@\@Z
-     */
-    MCAPI bool addVisitedTable(class LootTable const *);
-    /**
      * @symbol ?getDimensionId\@LootTableContext\@\@QEBA?AV?$AutomaticID\@VDimension\@\@H\@\@XZ
      */
     MCAPI class AutomaticID<class Dimension, int> getDimensionId() const;
@@ -45,10 +41,6 @@ public:
      * @symbol ?getEntity\@LootTableContext\@\@QEBAPEAVActor\@\@W4ActorTarget\@\@\@Z
      */
     MCAPI class Actor * getEntity(enum class ActorTarget) const;
-    /**
-     * @symbol ?getExplosionRadius\@LootTableContext\@\@QEBAMXZ
-     */
-    MCAPI float getExplosionRadius() const;
     /**
      * @symbol ?getKilledEntity\@LootTableContext\@\@QEBAPEAVActor\@\@XZ
      */

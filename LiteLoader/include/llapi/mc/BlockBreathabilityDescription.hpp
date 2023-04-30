@@ -12,7 +12,7 @@
 #undef BEFORE_EXTRA
 
 
-class BlockBreathabilityDescription {
+struct BlockBreathabilityDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -20,8 +20,8 @@ class BlockBreathabilityDescription {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKBREATHABILITYDESCRIPTION
 public:
-    class BlockBreathabilityDescription& operator=(class BlockBreathabilityDescription const &) = delete;
-    BlockBreathabilityDescription(class BlockBreathabilityDescription const &) = delete;
+    struct BlockBreathabilityDescription& operator=(struct BlockBreathabilityDescription const &) = delete;
+    BlockBreathabilityDescription(struct BlockBreathabilityDescription const &) = delete;
     BlockBreathabilityDescription() = delete;
 #endif
 
@@ -69,9 +69,5 @@ public:
      * @symbol ?bindType\@BlockBreathabilityDescription\@\@SAXXZ
      */
     MCAPI static void bindType();
-    /**
-     * @symbol ?registerVersionUpgrades\@BlockBreathabilityDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
-     */
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

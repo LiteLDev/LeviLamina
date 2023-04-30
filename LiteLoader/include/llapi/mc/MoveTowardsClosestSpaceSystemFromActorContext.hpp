@@ -32,4 +32,12 @@ public:
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
+//private:
+    /**
+     * @symbol ?tickSystem\@MoveTowardsClosestSpaceSystemFromActorContext\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@UShouldMoveTowardClosestSpaceFlagComponent\@\@\@\@VActorOwnerComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UShouldMoveTowardClosestSpaceFlagComponent\@\@\@\@\@Z
+     */
+    MCAPI static void tickSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, struct ShouldMoveTowardClosestSpaceFlagComponent>, class ActorOwnerComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct ShouldMoveTowardClosestSpaceFlagComponent>);
+
+private:
+
 };

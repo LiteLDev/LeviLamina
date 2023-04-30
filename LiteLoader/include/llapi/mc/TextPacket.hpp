@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "PlayerCapabilities.hpp"
 #include "Packet.hpp"
 
 #define BEFORE_EXTRA
@@ -66,6 +67,10 @@ public:
      */
     MCAPI TextPacket();
     /**
+     * @symbol ?_shouldHandleTextPacketForPlayer\@TextPacket\@\@SA?B_NAEBV1\@AEAUIPlayerData\@PlayerCapabilities\@\@AEBUISharedController\@3\@\@Z
+     */
+    MCAPI static bool const _shouldHandleTextPacketForPlayer(class TextPacket const &, struct PlayerCapabilities::IPlayerData &, struct PlayerCapabilities::ISharedController const &);
+    /**
      * @symbol ?createAnnouncement\@TextPacket\@\@SA?AV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@000\@Z
      */
     MCAPI static class TextPacket createAnnouncement(std::string const &, std::string const &, std::string const &, std::string const &);
@@ -90,13 +95,13 @@ public:
      */
     MCAPI static class TextPacket createTextObjectMessage(class ResolvedTextObject const &, std::string, std::string);
     /**
-     * @symbol ?createTextObjectWhisperMessage\@TextPacket\@\@SA?AV1\@AEBVResolvedTextObject\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1\@Z
-     */
-    MCAPI static class TextPacket createTextObjectWhisperMessage(class ResolvedTextObject const &, std::string const &, std::string const &);
-    /**
      * @symbol ?createTextObjectWhisperMessage\@TextPacket\@\@SA?AV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@00\@Z
      */
     MCAPI static class TextPacket createTextObjectWhisperMessage(std::string const &, std::string const &, std::string const &);
+    /**
+     * @symbol ?createTextObjectWhisperMessage\@TextPacket\@\@SA?AV1\@AEBVResolvedTextObject\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1\@Z
+     */
+    MCAPI static class TextPacket createTextObjectWhisperMessage(class ResolvedTextObject const &, std::string const &, std::string const &);
     /**
      * @symbol ?createTranslated\@TextPacket\@\@SA?AV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@\@Z
      */
@@ -109,13 +114,5 @@ public:
      * @symbol ?createWhisper\@TextPacket\@\@SA?AV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@000\@Z
      */
     MCAPI static class TextPacket createWhisper(std::string const &, std::string const &, std::string const &, std::string const &);
-
-//private:
-    /**
-     * @symbol ??0TextPacket\@\@AEAA\@W4TextPacketType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@_N11\@Z
-     */
-    MCAPI TextPacket(enum class TextPacketType, std::string const &, std::string const &, std::vector<std::string> const &, bool, std::string const &, std::string const &);
-
-private:
 
 };

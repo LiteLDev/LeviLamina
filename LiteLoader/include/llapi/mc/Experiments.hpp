@@ -24,7 +24,6 @@ class Experiments {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPERIMENTS
 public:
     class Experiments& operator=(class Experiments const &) = delete;
-    Experiments(class Experiments const &) = delete;
 #endif
 
 public:
@@ -37,6 +36,10 @@ public:
      */
     MCAPI bool DataDrivenItems() const;
     /**
+     * @symbol ??0Experiments\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI Experiments(class Experiments const &);
+    /**
      * @symbol ??0Experiments\@\@QEAA\@XZ
      */
     MCAPI Experiments();
@@ -48,6 +51,10 @@ public:
      * @symbol ?NextMajorUpdate\@Experiments\@\@QEBA_NXZ
      */
     MCAPI bool NextMajorUpdate() const;
+    /**
+     * @symbol ?ShortSneaking\@Experiments\@\@QEBA_NXZ
+     */
+    MCAPI bool ShortSneaking() const;
     /**
      * @symbol ?Sniffer\@Experiments\@\@QEBA_NXZ
      */

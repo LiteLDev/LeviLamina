@@ -12,7 +12,7 @@
 #undef BEFORE_EXTRA
 
 
-class BlockGeometryDescription {
+struct BlockGeometryDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -20,9 +20,8 @@ class BlockGeometryDescription {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKGEOMETRYDESCRIPTION
 public:
-    class BlockGeometryDescription& operator=(class BlockGeometryDescription const &) = delete;
-    BlockGeometryDescription(class BlockGeometryDescription const &) = delete;
-    BlockGeometryDescription() = delete;
+    struct BlockGeometryDescription& operator=(struct BlockGeometryDescription const &) = delete;
+    BlockGeometryDescription(struct BlockGeometryDescription const &) = delete;
 #endif
 
 public:
@@ -67,6 +66,10 @@ public:
      */
     virtual void handleVersionBasedInitialization(class SemVersion const &);
     /**
+     * @symbol ??0BlockGeometryDescription\@\@QEAA\@XZ
+     */
+    MCAPI BlockGeometryDescription();
+    /**
      * @symbol ?NameID\@BlockGeometryDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NameID;
@@ -74,9 +77,5 @@ public:
      * @symbol ?bindType\@BlockGeometryDescription\@\@SAXXZ
      */
     MCAPI static void bindType();
-    /**
-     * @symbol ?registerVersionUpgrades\@BlockGeometryDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
-     */
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

@@ -51,37 +51,13 @@ public:
      */
     MCAPI bool areaContainsChunk(class LevelChunk const &) const;
     /**
-     * @symbol ?executeAction\@ChunkLoadedRequest\@\@QEAAXAEAVServerLevel\@\@AEAVDimension\@\@\@Z
-     */
-    MCAPI void executeAction(class ServerLevel &, class Dimension &);
-    /**
-     * @symbol ?getSerializationId\@ChunkLoadedRequest\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string const & getSerializationId() const;
-    /**
-     * @symbol ?isValid\@ChunkLoadedRequest\@\@QEBA_NXZ
-     */
-    MCAPI bool isValid() const;
-    /**
      * @symbol ?serialize\@ChunkLoadedRequest\@\@QEAA?AVCompoundTag\@\@W4ChunkRequestListType\@\@\@Z
      */
     MCAPI class CompoundTag serialize(enum class ChunkRequestListType);
     /**
-     * @symbol ?setSerializationId\@ChunkLoadedRequest\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI void setSerializationId(std::string const &);
-    /**
-     * @symbol ?tickingAreaMatches\@ChunkLoadedRequest\@\@QEBA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI bool tickingAreaMatches(std::string const &) const;
-    /**
      * @symbol ??1ChunkLoadedRequest\@\@QEAA\@XZ
      */
     MCAPI ~ChunkLoadedRequest();
-    /**
-     * @symbol ?isValidTag\@ChunkLoadedRequest\@\@SA_NAEBVCompoundTag\@\@\@Z
-     */
-    MCAPI static bool isValidTag(class CompoundTag const &);
     /**
      * @symbol ?load\@ChunkLoadedRequest\@\@SA?AUDeserializedChunkLoadedRequest\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVCompoundTag\@\@AEAVICommandOriginLoader\@\@0\@Z
      */

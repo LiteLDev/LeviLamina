@@ -12,7 +12,7 @@
 #undef BEFORE_EXTRA
 
 
-class LevelChunkFinalDeleter {
+struct LevelChunkFinalDeleter {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -20,8 +20,8 @@ class LevelChunkFinalDeleter {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCHUNKFINALDELETER
 public:
-    class LevelChunkFinalDeleter& operator=(class LevelChunkFinalDeleter const &) = delete;
-    LevelChunkFinalDeleter(class LevelChunkFinalDeleter const &) = delete;
+    struct LevelChunkFinalDeleter& operator=(struct LevelChunkFinalDeleter const &) = delete;
+    LevelChunkFinalDeleter(struct LevelChunkFinalDeleter const &) = delete;
     LevelChunkFinalDeleter() = delete;
 #endif
 

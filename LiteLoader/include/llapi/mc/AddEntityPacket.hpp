@@ -51,10 +51,6 @@ public:
     MCVAPI ~AddEntityPacket();
 #endif
     /**
-     * @symbol ??0AddEntityPacket\@\@QEAA\@AEBVEntityContext\@\@\@Z
-     */
-    MCAPI AddEntityPacket(class EntityContext const &);
-    /**
      * @symbol ??0AddEntityPacket\@\@QEAA\@XZ
      */
     MCAPI AddEntityPacket();

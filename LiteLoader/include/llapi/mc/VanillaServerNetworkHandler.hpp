@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -40,9 +39,5 @@ public:
      * @symbol ?handle\@VanillaServerNetworkHandler\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVResourcePackClientResponsePacket\@\@\@Z
      */
     virtual void handle(class NetworkIdentifier const &, class ResourcePackClientResponsePacket const &);
-    /**
-     * @symbol ??0VanillaServerNetworkHandler\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VServerNetworkHandler\@\@\@Bedrock\@\@\@gsl\@\@AEAVServerInstance\@\@\@Z
-     */
-    MCAPI VanillaServerNetworkHandler(class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>, class ServerInstance &);
 
 };

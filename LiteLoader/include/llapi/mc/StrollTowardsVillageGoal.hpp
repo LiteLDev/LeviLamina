@@ -65,9 +65,5 @@ public:
      * @symbol ?_selectRandomPosInVillage\@StrollTowardsVillageGoal\@\@MEAA?AVBlockPos\@\@XZ
      */
     virtual class BlockPos _selectRandomPosInVillage();
-    /**
-     * @symbol ??0StrollTowardsVillageGoal\@\@QEAA\@AEAVMob\@\@MMMHM\@Z
-     */
-    MCAPI StrollTowardsVillageGoal(class Mob &, float, float, float, int, float);
 
 };

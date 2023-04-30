@@ -41,6 +41,10 @@ public:
 
 //private:
     /**
+     * @symbol ?_canPlaceRoot\@MangroveTreeRoots\@\@AEBA_NAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI bool _canPlaceRoot(class IBlockWorldGenAPI &, class BlockPos const &) const;
+    /**
      * @symbol ?_placeRoot\@MangroveTreeRoots\@\@AEBAXAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     MCAPI void _placeRoot(class IBlockWorldGenAPI &, class BlockPos const &, class Random &) const;

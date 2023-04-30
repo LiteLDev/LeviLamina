@@ -27,9 +27,5 @@ namespace MineshaftUtil {
      * @symbol ?fillColumnBetween\@MineshaftUtil\@\@YAXAEAVBlockSource\@\@AEBVBlock\@\@AEBVBlockPos\@\@HH\@Z
      */
     MCAPI void fillColumnBetween(class BlockSource &, class Block const &, class BlockPos const &, int, int);
-    /**
-     * @symbol ?isCavesAndCliffs\@MineshaftUtil\@\@YA_NAEBVLevel\@\@\@Z
-     */
-    MCAPI bool isCavesAndCliffs(class Level const &);
 
 };

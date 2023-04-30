@@ -43,10 +43,6 @@ namespace PlayerDataSystem {
      */
     MCAPI std::unique_ptr<class CompoundTag> legacyLoadPlayer(class LevelStorage &, std::string const &);
     /**
-     * @symbol ?loadLocalPlayerData\@PlayerDataSystem\@\@YA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@AEAVLevelStorage\@\@\@Z
-     */
-    MCAPI std::unique_ptr<class CompoundTag> loadLocalPlayerData(class LevelStorage &);
-    /**
      * @symbol ?loadPlayerData\@PlayerDataSystem\@\@YA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@AEAVLevelStorage\@\@AEBUPlayerStorageIds\@\@_N\@Z
      */
     MCAPI std::unique_ptr<class CompoundTag> loadPlayerData(class LevelStorage &, struct PlayerStorageIds const &, bool);
@@ -59,12 +55,12 @@ namespace PlayerDataSystem {
      */
     MCAPI std::string playerKey(class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
-     * @symbol ?serverKey\@PlayerDataSystem\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVLevelStorage\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@3\@\@Z
-     */
-    MCAPI std::string serverKey(class LevelStorage &, class std::basic_string_view<char, struct std::char_traits<char>>);
-    /**
      * @symbol ?serverKey\@PlayerDataSystem\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVLevelStorage\@\@AEBVPlayer\@\@\@Z
      */
     MCAPI std::string serverKey(class LevelStorage &, class Player const &);
+    /**
+     * @symbol ?serverKey\@PlayerDataSystem\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVLevelStorage\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@3\@\@Z
+     */
+    MCAPI std::string serverKey(class LevelStorage &, class std::basic_string_view<char, struct std::char_traits<char>>);
 
 };

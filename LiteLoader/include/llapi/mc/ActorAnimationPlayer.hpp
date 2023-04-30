@@ -47,9 +47,5 @@ public:
      */
     MCVAPI ~ActorAnimationPlayer();
 #endif
-    /**
-     * @symbol ??0ActorAnimationPlayer\@\@QEAA\@AEBVHashedString\@\@AEBVExpressionNode\@\@\@Z
-     */
-    MCAPI ActorAnimationPlayer(class HashedString const &, class ExpressionNode const &);
 
 };

@@ -62,9 +62,5 @@ public:
      * @symbol ??0ItemStackRequestActionCraftRecipeOptional\@\@QEAA\@XZ
      */
     MCAPI ItemStackRequestActionCraftRecipeOptional();
-    /**
-     * @symbol ?getRecipeNetId\@ItemStackRequestActionCraftRecipeOptional\@\@QEBAAEBV?$TypedServerNetId\@URecipeNetIdTag\@\@I$0A\@\@\@XZ
-     */
-    MCAPI class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const & getRecipeNetId() const;
 
 };

@@ -89,5 +89,9 @@ namespace VanillaGameVersions {
      * @symbol ?WildUpdateVersion_U6\@VanillaGameVersions\@\@3VBaseGameVersion\@\@B
      */
     MCAPI extern class BaseGameVersion const WildUpdateVersion_U6;
+    /**
+     * @symbol ?WildUpdateVersion_U8\@VanillaGameVersions\@\@3VBaseGameVersion\@\@B
+     */
+    MCAPI extern class BaseGameVersion const WildUpdateVersion_U8;
 
 };

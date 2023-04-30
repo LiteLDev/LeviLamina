@@ -84,10 +84,6 @@ public:
     MCVAPI void tick(class BlockSource &);
 #endif
     /**
-     * @symbol ??0ChemistryTableBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI ChemistryTableBlockActor(class BlockPos const &);
-    /**
      * @symbol ?isSameType\@ChemistryTableBlockActor\@\@QEBA_NW4ChemistryTableType\@\@\@Z
      */
     MCAPI bool isSameType(enum class ChemistryTableType) const;

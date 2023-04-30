@@ -114,6 +114,10 @@ public:
      */
     MCAPI void updateBossBarStats(class Actor &, class Raid const &);
     /**
+     * @symbol ?updateHealthBarVisible\@RaidBossComponent\@\@QEAAX_NAEAVActor\@\@\@Z
+     */
+    MCAPI void updateHealthBarVisible(bool, class Actor &);
+    /**
      * @symbol ??1RaidBossComponent\@\@QEAA\@XZ
      */
     MCAPI ~RaidBossComponent();

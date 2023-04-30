@@ -4,7 +4,7 @@
  */
 #pragma once
 #define AUTO_GENERATED
-#include "../Global.h"
+#include "llapi/Global.h"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here

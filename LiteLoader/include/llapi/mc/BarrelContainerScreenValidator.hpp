@@ -26,6 +26,7 @@ class BarrelContainerScreenValidator : public ContainerScreenValidatorBase {
 public:
     class BarrelContainerScreenValidator& operator=(class BarrelContainerScreenValidator const &) = delete;
     BarrelContainerScreenValidator(class BarrelContainerScreenValidator const &) = delete;
+    BarrelContainerScreenValidator() = delete;
 #endif
 
 public:
@@ -34,9 +35,5 @@ public:
      * @symbol __unk_vfn_0
      */
     virtual void __unk_vfn_0();
-    /**
-     * @symbol ??0BarrelContainerScreenValidator\@\@QEAA\@XZ
-     */
-    MCAPI BarrelContainerScreenValidator();
 
 };

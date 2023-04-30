@@ -31,9 +31,5 @@ public:
      * @symbol ??0ServerPlayerMovementComponent\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI ServerPlayerMovementComponent(struct ServerPlayerMovementComponent &&);
-    /**
-     * @symbol ??1ServerPlayerMovementComponent\@\@QEAA\@XZ
-     */
-    MCAPI ~ServerPlayerMovementComponent();
 
 };

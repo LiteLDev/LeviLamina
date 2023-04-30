@@ -21,14 +21,11 @@ class BlockListEventMap {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKLISTEVENTMAP
 public:
+    BlockListEventMap(class BlockListEventMap const &) = delete;
     BlockListEventMap() = delete;
 #endif
 
 public:
-    /**
-     * @symbol ??0BlockListEventMap\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI BlockListEventMap(class BlockListEventMap const &);
     /**
      * @symbol ??4BlockListEventMap\@\@QEAAAEAV0\@AEBV0\@\@Z
      */

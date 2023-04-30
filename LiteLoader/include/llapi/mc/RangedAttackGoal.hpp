@@ -78,12 +78,4 @@ public:
      */
     MCAPI void handleAttackBehavior(class Actor *, class Vec3 const &, float, bool);
 
-//private:
-    /**
-     * @symbol ?_dischargeCarriedItem\@RangedAttackGoal\@\@AEAAXXZ
-     */
-    MCAPI void _dischargeCarriedItem();
-
-private:
-
 };

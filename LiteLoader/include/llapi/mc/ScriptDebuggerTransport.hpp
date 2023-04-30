@@ -84,9 +84,5 @@ public:
      * @symbol ?send\@ScriptDebuggerTransport\@\@UEAAXPEBD_K\@Z
      */
     virtual void send(char const *, unsigned __int64);
-    /**
-     * @symbol ??0ScriptDebuggerTransport\@\@QEAA\@AEAVIScriptDebuggerWatchdog\@\@\@Z
-     */
-    MCAPI ScriptDebuggerTransport(class IScriptDebuggerWatchdog &);
 
 };

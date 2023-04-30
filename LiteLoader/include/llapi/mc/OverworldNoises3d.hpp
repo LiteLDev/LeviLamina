@@ -34,10 +34,6 @@ public:
      */
     MCAPI OverworldNoises3d(struct OverworldNoises3d const &);
     /**
-     * @symbol ?computeErosionAndDepth\@OverworldNoises3d\@\@QEBA?AU?$pair\@MM\@std\@\@VBlockPos\@\@\@Z
-     */
-    MCAPI struct std::pair<float, float> computeErosionAndDepth(class BlockPos) const;
-    /**
      * @symbol ?computeNoiseValues\@OverworldNoises3d\@\@QEBA?AUCacheEntry\@ChunkLocalNoiseCache\@\@AEBV?$DividedPos2d\@$03\@\@\@Z
      */
     MCAPI struct ChunkLocalNoiseCache::CacheEntry computeNoiseValues(class DividedPos2d<4> const &) const;

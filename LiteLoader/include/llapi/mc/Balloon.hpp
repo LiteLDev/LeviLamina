@@ -160,9 +160,5 @@ public:
      * @symbol ??0Balloon\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Balloon(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-    /**
-     * @symbol ?remove\@Balloon\@\@QEAAX_N\@Z
-     */
-    MCAPI void remove(bool);
 
 };

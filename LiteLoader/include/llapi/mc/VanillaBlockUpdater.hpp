@@ -87,6 +87,10 @@ public:
      * @symbol ?addUpdaters_1_19_70\@VanillaBlockUpdater\@\@CAXAEAVCompoundTagUpdaterContext\@\@\@Z
      */
     MCAPI static void addUpdaters_1_19_70(class CompoundTagUpdaterContext &);
+    /**
+     * @symbol ?addUpdaters_1_19_80\@VanillaBlockUpdater\@\@CAXAEAVCompoundTagUpdaterContext\@\@\@Z
+     */
+    MCAPI static void addUpdaters_1_19_80(class CompoundTagUpdaterContext &);
 
 private:
     /**

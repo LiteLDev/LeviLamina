@@ -36,6 +36,11 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
+     * @vftbl 5
+     * @symbol __unk_vfn_5
+     */
+    virtual void __unk_vfn_5();
+    /**
      * @vftbl 6
      * @symbol ?matches\@ShapelessChemistryRecipe\@\@UEBA_NAEAVCraftingContainer\@\@AEAVLevel\@\@\@Z
      */

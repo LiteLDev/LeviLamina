@@ -34,29 +34,9 @@ namespace VanillaBlocks {
      */
     MCAPI extern class Block const * mAmethystCluster;
     /**
-     * @symbol ?mAnvil\@VanillaBlocks\@\@3PEBVBlock\@\@EB
-     */
-    MCAPI extern class Block const * mAnvil;
-    /**
-     * @symbol ?mBamboo\@VanillaBlocks\@\@3PEBVBlock\@\@EB
-     */
-    MCAPI extern class Block const * mBamboo;
-    /**
      * @symbol ?mBambooSapling\@VanillaBlocks\@\@3PEBVBlock\@\@EB
      */
     MCAPI extern class Block const * mBambooSapling;
-    /**
-     * @symbol ?mBasalt\@VanillaBlocks\@\@3PEBVBlock\@\@EB
-     */
-    MCAPI extern class Block const * mBasalt;
-    /**
-     * @symbol ?mBeacon\@VanillaBlocks\@\@3PEBVBlock\@\@EB
-     */
-    MCAPI extern class Block const * mBeacon;
-    /**
-     * @symbol ?mBlackstone\@VanillaBlocks\@\@3PEBVBlock\@\@EB
-     */
-    MCAPI extern class Block const * mBlackstone;
     /**
      * @symbol ?mBlackstoneDoubleSlab\@VanillaBlocks\@\@3PEBVBlock\@\@EB
      */
@@ -66,14 +46,6 @@ namespace VanillaBlocks {
      */
     MCAPI extern class Block const * mBlackstoneSlab;
     /**
-     * @symbol ?mBookshelf\@VanillaBlocks\@\@3PEBVBlock\@\@EB
-     */
-    MCAPI extern class Block const * mBookshelf;
-    /**
-     * @symbol ?mBrewingStand\@VanillaBlocks\@\@3PEBVBlock\@\@EB
-     */
-    MCAPI extern class Block const * mBrewingStand;
-    /**
      * @symbol ?mBuddingAmethyst\@VanillaBlocks\@\@3PEBVBlock\@\@EB
      */
     MCAPI extern class Block const * mBuddingAmethyst;
@@ -82,10 +54,6 @@ namespace VanillaBlocks {
      */
     MCAPI extern class Block const * mCalcite;
     /**
-     * @symbol ?mCauldron\@VanillaBlocks\@\@3PEBVBlock\@\@EB
-     */
-    MCAPI extern class Block const * mCauldron;
-    /**
      * @symbol ?mChest\@VanillaBlocks\@\@3PEBVBlock\@\@EB
      */
     MCAPI extern class Block const * mChest;
@@ -93,10 +61,6 @@ namespace VanillaBlocks {
      * @symbol ?mChiseledDeepslate\@VanillaBlocks\@\@3PEBVBlock\@\@EB
      */
     MCAPI extern class Block const * mChiseledDeepslate;
-    /**
-     * @symbol ?mChiseledPolishedBlackstone\@VanillaBlocks\@\@3PEBVBlock\@\@EB
-     */
-    MCAPI extern class Block const * mChiseledPolishedBlackstone;
     /**
      * @symbol ?mChorusPlantBlock\@VanillaBlocks\@\@3PEBVBlock\@\@EB
      */
@@ -109,10 +73,6 @@ namespace VanillaBlocks {
      * @symbol ?mCobbledDeepslateSlab\@VanillaBlocks\@\@3PEBVBlock\@\@EB
      */
     MCAPI extern class Block const * mCobbledDeepslateSlab;
-    /**
-     * @symbol ?mConduitBlock\@VanillaBlocks\@\@3PEBVBlock\@\@EB
-     */
-    MCAPI extern class Block const * mConduitBlock;
     /**
      * @symbol ?mCrackedDeepslateTiles\@VanillaBlocks\@\@3PEBVBlock\@\@EB
      */
@@ -186,10 +146,6 @@ namespace VanillaBlocks {
      */
     MCAPI extern class Block const * mDripstone;
     /**
-     * @symbol ?mEnchantingTable\@VanillaBlocks\@\@3PEBVBlock\@\@EB
-     */
-    MCAPI extern class Block const * mEnchantingTable;
-    /**
      * @symbol ?mExposedCutCopperSlab\@VanillaBlocks\@\@3PEBVBlock\@\@EB
      */
     MCAPI extern class Block const * mExposedCutCopperSlab;
@@ -214,25 +170,9 @@ namespace VanillaBlocks {
      */
     MCAPI extern class Block const * mInfestedDeepslate;
     /**
-     * @symbol ?mInfoReserved6\@VanillaBlocks\@\@3PEBVBlock\@\@EB
-     */
-    MCAPI extern class Block const * mInfoReserved6;
-    /**
-     * @symbol ?mInfoUpdateGame1\@VanillaBlocks\@\@3PEBVBlock\@\@EB
-     */
-    MCAPI extern class Block const * mInfoUpdateGame1;
-    /**
-     * @symbol ?mInfoUpdateGame2\@VanillaBlocks\@\@3PEBVBlock\@\@EB
-     */
-    MCAPI extern class Block const * mInfoUpdateGame2;
-    /**
      * @symbol ?mLargeAmethystBud\@VanillaBlocks\@\@3PEBVBlock\@\@EB
      */
     MCAPI extern class Block const * mLargeAmethystBud;
-    /**
-     * @symbol ?mLavaCauldron\@VanillaBlocks\@\@3PEBVBlock\@\@EB
-     */
-    MCAPI extern class Block const * mLavaCauldron;
     /**
      * @symbol ?mLodestoneBlock\@VanillaBlocks\@\@3PEBVBlock\@\@EB
      */
@@ -266,10 +206,6 @@ namespace VanillaBlocks {
      */
     MCAPI extern class Block const * mMediumAmethystBud;
     /**
-     * @symbol ?mMovingBlock\@VanillaBlocks\@\@3PEBVBlock\@\@EB
-     */
-    MCAPI extern class Block const * mMovingBlock;
-    /**
      * @symbol ?mMudBrickDoubleSlab\@VanillaBlocks\@\@3PEBVBlock\@\@EB
      */
     MCAPI extern class Block const * mMudBrickDoubleSlab;
@@ -301,10 +237,6 @@ namespace VanillaBlocks {
      * @symbol ?mPointedDripstone\@VanillaBlocks\@\@3PEBVBlock\@\@EB
      */
     MCAPI extern class Block const * mPointedDripstone;
-    /**
-     * @symbol ?mPolishedBasalt\@VanillaBlocks\@\@3PEBVBlock\@\@EB
-     */
-    MCAPI extern class Block const * mPolishedBasalt;
     /**
      * @symbol ?mPolishedBlackstone\@VanillaBlocks\@\@3PEBVBlock\@\@EB
      */
@@ -342,21 +274,9 @@ namespace VanillaBlocks {
      */
     MCAPI extern class Block const * mPortal;
     /**
-     * @symbol ?mPrismarine\@VanillaBlocks\@\@3PEBVBlock\@\@EB
-     */
-    MCAPI extern class Block const * mPrismarine;
-    /**
-     * @symbol ?mPurpurBlock\@VanillaBlocks\@\@3PEBVBlock\@\@EB
-     */
-    MCAPI extern class Block const * mPurpurBlock;
-    /**
      * @symbol ?mQuartzBricks\@VanillaBlocks\@\@3PEBVBlock\@\@EB
      */
     MCAPI extern class Block const * mQuartzBricks;
-    /**
-     * @symbol ?mReeds\@VanillaBlocks\@\@3PEBVBlock\@\@EB
-     */
-    MCAPI extern class Block const * mReeds;
     /**
      * @symbol ?mReinforcedDeepslate\@VanillaBlocks\@\@3PEBVBlock\@\@EB
      */
@@ -390,10 +310,6 @@ namespace VanillaBlocks {
      */
     MCAPI extern class Block const * mSmallAmethystBud;
     /**
-     * @symbol ?mSmoothBasalt\@VanillaBlocks\@\@3PEBVBlock\@\@EB
-     */
-    MCAPI extern class Block const * mSmoothBasalt;
-    /**
      * @symbol ?mSmoothStone\@VanillaBlocks\@\@3PEBVBlock\@\@EB
      */
     MCAPI extern class Block const * mSmoothStone;
@@ -417,10 +333,6 @@ namespace VanillaBlocks {
      * @symbol ?mStrippedMangroveWood\@VanillaBlocks\@\@3PEBVBlock\@\@EB
      */
     MCAPI extern class Block const * mStrippedMangroveWood;
-    /**
-     * @symbol ?mSweetBerryBushBlock\@VanillaBlocks\@\@3PEBVBlock\@\@EB
-     */
-    MCAPI extern class Block const * mSweetBerryBushBlock;
     /**
      * @symbol ?mTuff\@VanillaBlocks\@\@3PEBVBlock\@\@EB
      */
@@ -493,10 +405,6 @@ namespace VanillaBlocks {
      * @symbol ?mWeatheredDoubleCutCopperSlab\@VanillaBlocks\@\@3PEBVBlock\@\@EB
      */
     MCAPI extern class Block const * mWeatheredDoubleCutCopperSlab;
-    /**
-     * @symbol ?mWitherRose\@VanillaBlocks\@\@3PEBVBlock\@\@EB
-     */
-    MCAPI extern class Block const * mWitherRose;
     /**
      * @symbol ?mWoodenSlab\@VanillaBlocks\@\@3PEBVBlock\@\@EB
      */

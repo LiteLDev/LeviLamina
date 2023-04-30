@@ -51,10 +51,6 @@ public:
      */
     MCAPI struct CappedSurfaceAttributes & operator=(struct CappedSurfaceAttributes &&);
     /**
-     * @symbol ??1CappedSurfaceAttributes\@\@QEAA\@XZ
-     */
-    MCAPI ~CappedSurfaceAttributes();
-    /**
      * @symbol ?getRandomBlock\@CappedSurfaceAttributes\@\@SAPEBVBlock\@\@AEBV?$vector\@UMaterialLayer\@CappedSurfaceAttributes\@\@V?$allocator\@UMaterialLayer\@CappedSurfaceAttributes\@\@\@std\@\@\@std\@\@AEBVVec3\@\@\@Z
      */
     MCAPI static class Block const * getRandomBlock(std::vector<struct CappedSurfaceAttributes::MaterialLayer> const &, class Vec3 const &);

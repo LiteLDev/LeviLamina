@@ -32,12 +32,4 @@ public:
      */
     MCAPI ~BlockTypeRegistryModificationsLock();
 
-//private:
-    /**
-     * @symbol ??0BlockTypeRegistryModificationsLock\@\@AEAA\@V?$shared_ptr\@VBlockTypeRegistryRWLock\@\@\@std\@\@\@Z
-     */
-    MCAPI BlockTypeRegistryModificationsLock(class std::shared_ptr<class BlockTypeRegistryRWLock>);
-
-private:
-
 };

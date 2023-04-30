@@ -121,9 +121,5 @@ public:
      * @symbol ?releaseUsing\@SpyglassItem\@\@UEBAXAEAVItemStack\@\@PEAVPlayer\@\@H\@Z
      */
     virtual void releaseUsing(class ItemStack &, class Player *, int) const;
-    /**
-     * @symbol ??0SpyglassItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@F\@Z
-     */
-    MCAPI SpyglassItem(std::string const &, short);
 
 };

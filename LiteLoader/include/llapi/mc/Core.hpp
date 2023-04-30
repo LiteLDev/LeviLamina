@@ -150,6 +150,14 @@ enum class FileAccessType;
      */
     MCAPI enum class Core::DirectoryIterationFlags operator|(enum class Core::DirectoryIterationFlags, enum class Core::DirectoryIterationFlags);
     /**
+     * @symbol ?sLockBlobName\@Core\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     */
+    MCAPI extern std::string const sLockBlobName;
+    /**
+     * @symbol ?sMultiChunkTag\@Core\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     */
+    MCAPI extern std::string const sMultiChunkTag;
+    /**
      * @symbol ?sRootStorageArea\@Core\@\@3V?$shared_ptr\@VFileStorageArea\@Core\@\@\@std\@\@A
      */
     MCAPI extern class std::shared_ptr<class Core::FileStorageArea> sRootStorageArea;

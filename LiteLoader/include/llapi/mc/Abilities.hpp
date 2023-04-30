@@ -50,14 +50,6 @@ public:
      */
     MCAPI void forEachAbility(class std::function<void (class Ability const &, enum class AbilitiesIndex)> const &, enum class Ability::Options) const;
     /**
-     * @symbol ?getAbility\@Abilities\@\@QEAAAEAVAbility\@\@W4AbilitiesIndex\@\@\@Z
-     */
-    MCAPI class Ability & getAbility(enum class AbilitiesIndex);
-    /**
-     * @symbol ?getAbility\@Abilities\@\@QEBAAEBVAbility\@\@W4AbilitiesIndex\@\@\@Z
-     */
-    MCAPI class Ability const & getAbility(enum class AbilitiesIndex) const;
-    /**
      * @symbol ?getBool\@Abilities\@\@QEBA_NW4AbilitiesIndex\@\@\@Z
      */
     MCAPI bool getBool(enum class AbilitiesIndex) const;
@@ -77,14 +69,6 @@ public:
      * @symbol ??4Abilities\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
     MCAPI class Abilities & operator=(class Abilities const &);
-    /**
-     * @symbol ?setAbility\@Abilities\@\@QEAAXW4AbilitiesIndex\@\@AEBVAbility\@\@\@Z
-     */
-    MCAPI void setAbility(enum class AbilitiesIndex, class Ability const &);
-    /**
-     * @symbol ?setAbility\@Abilities\@\@QEAAXW4AbilitiesIndex\@\@M\@Z
-     */
-    MCAPI void setAbility(enum class AbilitiesIndex, float);
     /**
      * @symbol ?setAbility\@Abilities\@\@QEAAXW4AbilitiesIndex\@\@_N\@Z
      */

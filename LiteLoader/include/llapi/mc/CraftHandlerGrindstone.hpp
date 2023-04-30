@@ -45,10 +45,6 @@ public:
      * @symbol ?_postCraftRequest\@CraftHandlerGrindstone\@\@EEAAX_N\@Z
      */
     virtual void _postCraftRequest(bool);
-    /**
-     * @symbol ??0CraftHandlerGrindstone\@\@QEAA\@AEAVPlayer\@\@AEAVItemStackRequestActionCraftHandler\@\@\@Z
-     */
-    MCAPI CraftHandlerGrindstone(class Player &, class ItemStackRequestActionCraftHandler &);
 
 //private:
     /**

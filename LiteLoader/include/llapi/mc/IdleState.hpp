@@ -50,9 +50,5 @@ public:
      * @symbol ?stop\@PetSleepWithOwnerState\@\@UEAAXXZ
      */
     virtual void stop();
-    /**
-     * @symbol ?create\@IdleState\@\@SA?AV?$unique_ptr\@VIdleState\@\@U?$default_delete\@VIdleState\@\@\@std\@\@\@std\@\@AEAVPetSleepWithOwnerGoal\@\@\@Z
-     */
-    MCAPI static std::unique_ptr<class IdleState> create(class PetSleepWithOwnerGoal &);
 
 };

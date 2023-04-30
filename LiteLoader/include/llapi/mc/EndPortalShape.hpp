@@ -34,10 +34,6 @@ public:
      */
     MCAPI EndPortalShape(class BlockSource &, class BlockPos);
     /**
-     * @symbol ?getOrigin\@EndPortalShape\@\@QEBA?AVBlockPos\@\@XZ
-     */
-    MCAPI class BlockPos getOrigin() const;
-    /**
      * @symbol ?isValid\@EndPortalShape\@\@QEAA_NAEAVBlockSource\@\@\@Z
      */
     MCAPI bool isValid(class BlockSource &);

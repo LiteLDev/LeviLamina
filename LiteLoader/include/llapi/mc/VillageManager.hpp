@@ -42,13 +42,14 @@ public:
      */
     virtual class std::weak_ptr<class Village> fetchClosestVillage(class BlockPos const &, int, unsigned int) const;
     /**
+     * @vftbl 2
+     * @symbol ?getVillageByID\@VillageManager\@\@UEBA?AV?$weak_ptr\@VVillage\@\@\@std\@\@AEBVUUID\@mce\@\@\@Z
+     */
+    virtual class std::weak_ptr<class Village> getVillageByID(class mce::UUID const &) const;
+    /**
      * @symbol ??0VillageManager\@\@QEAA\@AEAVDimension\@\@\@Z
      */
     MCAPI VillageManager(class Dimension &);
-    /**
-     * @symbol ?applyHeroOfTheVillageEffect\@VillageManager\@\@QEAAXAEAVActor\@\@\@Z
-     */
-    MCAPI void applyHeroOfTheVillageEffect(class Actor &);
     /**
      * @symbol ?fetchClosestVillageMostSuitableForDweller\@VillageManager\@\@QEBA?AV?$weak_ptr\@VVillage\@\@\@std\@\@AEBVBlockPos\@\@HI\@Z
      */
@@ -66,21 +67,9 @@ public:
      */
     MCAPI class HashedString getPOIInitEventFromName(class HashedString const &) const;
     /**
-     * @symbol ?getVillageByID\@VillageManager\@\@QEBA?AV?$weak_ptr\@VVillage\@\@\@std\@\@AEBVUUID\@mce\@\@\@Z
-     */
-    MCAPI class std::weak_ptr<class Village> getVillageByID(class mce::UUID const &) const;
-    /**
-     * @symbol ?hasPOI\@VillageManager\@\@QEBA_NAEBVBlockPos\@\@W4POIType\@\@\@Z
-     */
-    MCAPI bool hasPOI(class BlockPos const &, enum class POIType) const;
-    /**
      * @symbol ?insertPOI\@VillageManager\@\@QEAAX$$QEAV?$shared_ptr\@VPOIInstance\@\@\@std\@\@\@Z
      */
     MCAPI void insertPOI(class std::shared_ptr<class POIInstance> &&);
-    /**
-     * @symbol ?isRegisteredPOI\@VillageManager\@\@QEBA_NAEBVBlock\@\@\@Z
-     */
-    MCAPI bool isRegisteredPOI(class Block const &) const;
     /**
      * @symbol ?isValidPOIType\@VillageManager\@\@QEBA_NAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
@@ -147,6 +136,10 @@ public:
      * @symbol ?_loadPOIBlueprints\@VillageManager\@\@AEAAXXZ
      */
     MCAPI void _loadPOIBlueprints();
+    /**
+     * @symbol ?_removeVillage\@VillageManager\@\@AEAAXAEAVVillage\@\@\@Z
+     */
+    MCAPI void _removeVillage(class Village &);
     /**
      * @symbol ?_tryAssignPOIOrCreateVillage\@VillageManager\@\@AEAAX$$QEAV?$shared_ptr\@VPOIInstance\@\@\@std\@\@\@Z
      */

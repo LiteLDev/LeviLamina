@@ -241,35 +241,35 @@ public:
      */
     virtual void __unk_vfn_126();
     /**
-     * @vftbl 131
-     * @symbol __unk_vfn_131
+     * @vftbl 129
+     * @symbol __unk_vfn_129
      */
-    virtual void __unk_vfn_131();
+    virtual void __unk_vfn_129();
     /**
-     * @vftbl 143
+     * @vftbl 132
+     * @symbol __unk_vfn_132
+     */
+    virtual void __unk_vfn_132();
+    /**
+     * @vftbl 144
      * @symbol ?getVisualShape\@SweetBerryBushBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
-     * @vftbl 146
+     * @vftbl 147
      * @symbol ?getVariant\@SweetBerryBushBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @vftbl 156
-     * @symbol __unk_vfn_156
+     * @vftbl 157
+     * @symbol __unk_vfn_157
      */
-    virtual void __unk_vfn_156();
+    virtual void __unk_vfn_157();
     /**
-     * @vftbl 158
+     * @vftbl 159
      * @symbol ?dealsContactDamage\@SweetBerryBushBlock\@\@UEBA_NAEBVActor\@\@AEBVBlock\@\@_N\@Z
      */
     virtual bool dealsContactDamage(class Actor const &, class Block const &, bool) const;
-    /**
-     * @vftbl 165
-     * @symbol __unk_vfn_165
-     */
-    virtual void __unk_vfn_165();
     /**
      * @vftbl 166
      * @symbol __unk_vfn_166
@@ -281,52 +281,57 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @vftbl 170
-     * @symbol __unk_vfn_170
+     * @vftbl 168
+     * @symbol __unk_vfn_168
      */
-    virtual void __unk_vfn_170();
+    virtual void __unk_vfn_168();
     /**
-     * @vftbl 172
+     * @vftbl 171
+     * @symbol __unk_vfn_171
+     */
+    virtual void __unk_vfn_171();
+    /**
+     * @vftbl 173
      * @symbol ?randomTick\@SweetBerryBushBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @vftbl 174
-     * @symbol __unk_vfn_174
+     * @vftbl 175
+     * @symbol __unk_vfn_175
      */
-    virtual void __unk_vfn_174();
+    virtual void __unk_vfn_175();
     /**
-     * @vftbl 177
+     * @vftbl 178
      * @symbol ?use\@SweetBerryBushBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @vftbl 178
-     * @symbol __unk_vfn_178
-     */
-    virtual void __unk_vfn_178();
-    /**
      * @vftbl 179
+     * @symbol __unk_vfn_179
+     */
+    virtual void __unk_vfn_179();
+    /**
+     * @vftbl 180
      * @symbol ?canSurvive\@SweetBerryBushBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 180
+     * @vftbl 181
      * @symbol ?getRenderLayer\@SweetBerryBushBlock\@\@UEBA?AW4BlockRenderLayer\@\@XZ
      */
     virtual enum class BlockRenderLayer getRenderLayer() const;
     /**
-     * @vftbl 181
+     * @vftbl 182
      * @symbol ?getRenderLayer\@SweetBerryBushBlock\@\@UEBA?AW4BlockRenderLayer\@\@AEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 186
-     * @symbol __unk_vfn_186
+     * @vftbl 187
+     * @symbol __unk_vfn_187
      */
-    virtual void __unk_vfn_186();
+    virtual void __unk_vfn_187();
     /**
-     * @vftbl 189
+     * @vftbl 190
      * @symbol ?getResourceCount\@SweetBerryBushBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;

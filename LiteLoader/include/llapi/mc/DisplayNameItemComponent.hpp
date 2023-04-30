@@ -65,10 +65,6 @@ public:
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
-     * @symbol ?getDescriptionId\@DisplayNameItemComponent\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string const & getDescriptionId() const;
-    /**
      * @symbol ?bindType\@DisplayNameItemComponent\@\@SAXXZ
      */
     MCAPI static void bindType();

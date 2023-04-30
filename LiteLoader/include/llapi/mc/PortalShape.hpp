@@ -51,10 +51,6 @@ public:
      */
     MCAPI int getNumberOfPortalBlocks() const;
     /**
-     * @symbol ?getPortalBlockAABB\@PortalShape\@\@QEBA?AVAABB\@\@XZ
-     */
-    MCAPI class AABB getPortalBlockAABB() const;
-    /**
      * @symbol ?isFilled\@PortalShape\@\@QEBA_NXZ
      */
     MCAPI bool isFilled() const;

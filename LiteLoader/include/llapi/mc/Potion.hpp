@@ -48,13 +48,13 @@ public:
      */
     MCAPI std::string effectPotencyToString(class MobEffectInstance const &) const;
     /**
-     * @symbol ?getDescriptionId\@Potion\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4PotionType\@1\@\@Z
-     */
-    MCAPI std::string getDescriptionId(enum class Potion::PotionType) const;
-    /**
      * @symbol ?getDescriptionId\@Potion\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string getDescriptionId() const;
+    /**
+     * @symbol ?getDescriptionId\@Potion\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4PotionType\@1\@\@Z
+     */
+    MCAPI std::string getDescriptionId(enum class Potion::PotionType) const;
     /**
      * @symbol ?getMobEffect\@Potion\@\@QEBAAEBVMobEffectInstance\@\@XZ
      */

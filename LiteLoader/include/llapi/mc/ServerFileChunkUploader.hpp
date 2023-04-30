@@ -100,9 +100,5 @@ public:
      */
     MCVAPI void update();
 #endif
-    /**
-     * @symbol ??0ServerFileChunkUploader\@\@QEAA\@AEAVPacketSender\@\@AEBVNetworkIdentifier\@\@\@Z
-     */
-    MCAPI ServerFileChunkUploader(class PacketSender &, class NetworkIdentifier const &);
 
 };

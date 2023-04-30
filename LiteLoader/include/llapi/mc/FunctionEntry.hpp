@@ -40,14 +40,6 @@ public:
      */
     virtual void execute(class FunctionManager &, class CommandOrigin const &, enum class FunctionQueueOrder);
     /**
-     * @symbol ??0FunctionEntry\@\@QEAA\@$$QEAV?$vector\@V?$unique_ptr\@VIFunctionEntry\@\@U?$default_delete\@VIFunctionEntry\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VIFunctionEntry\@\@U?$default_delete\@VIFunctionEntry\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@W4FunctionState\@\@\@Z
-     */
-    MCAPI FunctionEntry(std::vector<std::unique_ptr<class IFunctionEntry>> &&, enum class FunctionState);
-    /**
-     * @symbol ??0FunctionEntry\@\@QEAA\@W4FunctionState\@\@\@Z
-     */
-    MCAPI FunctionEntry(enum class FunctionState);
-    /**
      * @symbol ?getErrorState\@FunctionEntry\@\@QEBA?AW4FunctionState\@\@XZ
      */
     MCAPI enum class FunctionState getErrorState() const;

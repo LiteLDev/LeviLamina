@@ -51,6 +51,10 @@ public:
 
 public:
     /**
+     * @symbol ?getHash\@ActorUniqueID\@\@QEBA_KXZ
+     */
+    MCAPI unsigned __int64 getHash() const;
+    /**
      * @symbol ?INVALID_ID\@ActorUniqueID\@\@2U1\@B
      */
     MCAPI static struct ActorUniqueID const INVALID_ID;

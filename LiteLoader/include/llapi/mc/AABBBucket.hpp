@@ -25,36 +25,13 @@ struct AABBBucket {
 public:
     struct AABBBucket& operator=(struct AABBBucket const &) = delete;
     AABBBucket(struct AABBBucket const &) = delete;
+    AABBBucket() = delete;
 #endif
 
 public:
     /**
-     * @symbol ??0AABBBucket\@\@QEAA\@XZ
-     */
-    MCAPI AABBBucket();
-    /**
-     * @symbol ?clearDirty\@AABBBucket\@\@QEAAXXZ
-     */
-    MCAPI void clearDirty();
-    /**
-     * @symbol ?clearNeedsFinalize\@AABBBucket\@\@QEAAXXZ
-     */
-    MCAPI void clearNeedsFinalize();
-    /**
-     * @symbol ?isDirty\@AABBBucket\@\@QEAA_NXZ
-     */
-    MCAPI bool isDirty();
-    /**
-     * @symbol ?markDirty\@AABBBucket\@\@QEAAXXZ
-     */
-    MCAPI void markDirty();
-    /**
      * @symbol ?mergeAABBs\@AABBBucket\@\@QEAAXXZ
      */
     MCAPI void mergeAABBs();
-    /**
-     * @symbol ?needsFinalize\@AABBBucket\@\@QEBA_NXZ
-     */
-    MCAPI bool needsFinalize() const;
 
 };

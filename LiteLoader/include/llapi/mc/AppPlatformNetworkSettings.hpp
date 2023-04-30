@@ -23,6 +23,7 @@ class AppPlatformNetworkSettings {
 public:
     class AppPlatformNetworkSettings& operator=(class AppPlatformNetworkSettings const &) = delete;
     AppPlatformNetworkSettings(class AppPlatformNetworkSettings const &) = delete;
+    AppPlatformNetworkSettings() = delete;
 #endif
 
 public:
@@ -36,9 +37,5 @@ public:
      * @symbol ?requiresNetworkOutageMessaging\@AppPlatformNetworkSettings\@\@UEBA_NXZ
      */
     virtual bool requiresNetworkOutageMessaging() const;
-    /**
-     * @symbol ??0AppPlatformNetworkSettings\@\@QEAA\@XZ
-     */
-    MCAPI AppPlatformNetworkSettings();
 
 };

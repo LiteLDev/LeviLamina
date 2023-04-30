@@ -107,16 +107,8 @@ enum class Axis;
      */
     MCAPI bool upgradeArmorStandComponents(class CompoundTag &);
     /**
-     * @symbol ?upgradeLevelChunk\@VanillaLevelChunkUpgrade\@\@YAXAEAVLevelChunk\@\@0AEAVBlockSource\@\@\@Z
-     */
-    MCAPI void upgradeLevelChunk(class LevelChunk &, class LevelChunk &, class BlockSource &);
-    /**
      * @symbol ?upgradeOldLimboEntity\@VanillaLevelChunkUpgrade\@\@YAXAEAVCompoundTag\@\@W4LimboEntitiesVersion\@\@_N\@Z
      */
     MCAPI void upgradeOldLimboEntity(class CompoundTag &, enum class LimboEntitiesVersion, bool);
-    /**
-     * @symbol ?upgradeWorldHeight\@VanillaLevelChunkUpgrade\@\@YAXAEAVLevelChunk\@\@0AEAVBlockSource\@\@\@Z
-     */
-    MCAPI void upgradeWorldHeight(class LevelChunk &, class LevelChunk &, class BlockSource &);
 
 };

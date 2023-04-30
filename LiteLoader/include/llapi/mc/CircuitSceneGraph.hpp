@@ -76,14 +76,6 @@ public:
      */
     MCAPI void preSetupPoweredBlocks(class ChunkPos const &);
     /**
-     * @symbol ?remove\@CircuitSceneGraph\@\@QEAAXAEBVBlockPos\@\@PEAVBaseCircuitComponent\@\@\@Z
-     */
-    MCAPI void remove(class BlockPos const &, class BaseCircuitComponent *);
-    /**
-     * @symbol ?update\@CircuitSceneGraph\@\@QEAAXPEAVBlockSource\@\@\@Z
-     */
-    MCAPI void update(class BlockSource *);
-    /**
      * @symbol ??1CircuitSceneGraph\@\@QEAA\@XZ
      */
     MCAPI ~CircuitSceneGraph();

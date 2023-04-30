@@ -85,9 +85,5 @@ public:
      * @symbol ?bindType\@BlockComponentDescription\@\@SAXXZ
      */
     MCAPI static void bindType();
-    /**
-     * @symbol ?registerVersionUpgrades\@BlockComponentDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
-     */
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

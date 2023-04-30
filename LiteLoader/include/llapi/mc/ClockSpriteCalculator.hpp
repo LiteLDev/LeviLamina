@@ -33,10 +33,6 @@ public:
      */
     MCAPI ClockSpriteCalculator();
     /**
-     * @symbol ?getFrame\@ClockSpriteCalculator\@\@QEBAHXZ
-     */
-    MCAPI int getFrame() const;
-    /**
      * @symbol ?update\@ClockSpriteCalculator\@\@QEAAHAEBVBlockSource\@\@AEBVVec3\@\@_N\@Z
      */
     MCAPI int update(class BlockSource const &, class Vec3 const &, bool);

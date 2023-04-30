@@ -28,10 +28,6 @@ public:
 
 public:
     /**
-     * @symbol ??0PositionTrackingId\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI PositionTrackingId(std::string const &);
-    /**
      * @symbol ??0PositionTrackingId\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI PositionTrackingId(class PositionTrackingId &&);
@@ -47,10 +43,6 @@ public:
      * @symbol ?getTag\@PositionTrackingId\@\@QEBA?AV?$unique_ptr\@VTag\@\@U?$default_delete\@VTag\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::unique_ptr<class Tag> getTag() const;
-    /**
-     * @symbol ?init\@PositionTrackingId\@\@QEAAXXZ
-     */
-    MCAPI void init();
     /**
      * @symbol ??4PositionTrackingId\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */

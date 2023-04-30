@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -34,10 +33,6 @@ public:
      * @symbol ??0BiomeComponentFactory\@\@QEAA\@W4FactoryScope\@0\@\@Z
      */
     MCAPI BiomeComponentFactory(enum class BiomeComponentFactory::FactoryScope);
-    /**
-     * @symbol ?processDataComponents\@BiomeComponentFactory\@\@QEBAXAEAVBiome\@\@AEAVIWorldRegistriesProvider\@\@AEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
-     */
-    MCAPI void processDataComponents(class Biome &, class IWorldRegistriesProvider &, class Json::Value &, class SemVersion const &) const;
     /**
      * @symbol ?processDataComponents\@BiomeComponentFactory\@\@QEBAXAEAVBiome\@\@AEAVIWorldRegistriesProvider\@\@AEAVCompoundTag\@\@\@Z
      */

@@ -32,5 +32,9 @@ public:
      * @symbol ?tickEntity\@StoreLocalMovementVelocitySystem\@\@SAXAEAVStrictEntityContext\@\@AEBUMobTravelComponent\@\@AEAUCurrentLocalMoveVelocityComponent\@\@\@Z
      */
     MCAPI static void tickEntity(class StrictEntityContext &, struct MobTravelComponent const &, struct CurrentLocalMoveVelocityComponent &);
+    /**
+     * @symbol ?tickStoreLocalMovementVelocitySystem\@StoreLocalMovementVelocitySystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@ULocalPlayerComponentFlag\@\@\@\@\@\@$$CBUMobTravelComponent\@\@UCurrentLocalMoveVelocityComponent\@\@\@\@\@Z
+     */
+    MCAPI static void tickStoreLocalMovementVelocitySystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct LocalPlayerComponentFlag>>, struct MobTravelComponent const, struct CurrentLocalMoveVelocityComponent>);
 
 };

@@ -56,6 +56,14 @@ public:
      */
     MCVAPI class LevelEventCoordinator & getLevelEventCoordinator();
     /**
+     * @symbol ?getPlayerSleepManager\@ServerLevel\@\@UEAAAEAVPlayerSleepManager\@\@XZ
+     */
+    MCVAPI class PlayerSleepManager & getPlayerSleepManager();
+    /**
+     * @symbol ?getPlayerSleepManager\@ServerLevel\@\@UEBAAEBVPlayerSleepManager\@\@XZ
+     */
+    MCVAPI class PlayerSleepManager const & getPlayerSleepManager() const;
+    /**
      * @symbol ?getPositionTrackerDBServer\@ServerLevel\@\@UEBAPEAVPositionTrackingDBServer\@PositionTrackingDB\@\@XZ
      */
     MCVAPI class PositionTrackingDB::PositionTrackingDBServer * getPositionTrackerDBServer() const;
@@ -124,18 +132,14 @@ public:
      */
     MCVAPI void setWorldTemplateOptionsUnlocked();
     /**
-     * @symbol ?updateSleepingPlayerList\@ServerLevel\@\@UEAAXXZ
-     */
-    MCVAPI void updateSleepingPlayerList();
-    /**
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~ServerLevel();
 #endif
     /**
-     * @symbol ??0ServerLevel\@\@QEAA\@AEBV?$not_null\@V?$NonOwnerPointer\@VSoundPlayerInterface\@\@\@Bedrock\@\@\@gsl\@\@V?$unique_ptr\@VLevelStorage\@\@U?$default_delete\@VLevelStorage\@\@\@std\@\@\@std\@\@V?$unique_ptr\@VLevelLooseFileStorage\@\@U?$default_delete\@VLevelLooseFileStorage\@\@\@std\@\@\@4\@AEAVIMinecraftEventing\@\@AEAVResourcePackManager\@\@4V?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@2\@AEAVMinecraftCommands\@\@AEAVScheduler\@\@AEBV?$not_null\@V?$NonOwnerPointer\@VIEntityRegistryOwner\@\@\@Bedrock\@\@\@2\@V?$WeakRefT\@UEntityRefTraits\@\@\@\@V?$unique_ptr\@VBlockComponentFactory\@\@U?$default_delete\@VBlockComponentFactory\@\@\@std\@\@\@4\@V?$unique_ptr\@VBlockDefinitionGroup\@\@U?$default_delete\@VBlockDefinitionGroup\@\@\@std\@\@\@4\@VItemRegistryRef\@\@_NV?$weak_ptr\@VBlockTypeRegistry\@\@\@4\@\@Z
+     * @symbol ??0ServerLevel\@\@QEAA\@AEBV?$not_null\@V?$NonOwnerPointer\@VSoundPlayerInterface\@\@\@Bedrock\@\@\@gsl\@\@V?$unique_ptr\@VLevelStorage\@\@U?$default_delete\@VLevelStorage\@\@\@std\@\@\@std\@\@V?$unique_ptr\@VLevelLooseFileStorage\@\@U?$default_delete\@VLevelLooseFileStorage\@\@\@std\@\@\@4\@AEAVIMinecraftEventing\@\@AEAVResourcePackManager\@\@4V?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@2\@AEAVMinecraftCommands\@\@AEAVScheduler\@\@AEBV?$not_null\@V?$NonOwnerPointer\@VIEntityRegistryOwner\@\@\@Bedrock\@\@\@2\@V?$WeakRefT\@UEntityRefTraits\@\@\@\@V?$unique_ptr\@VBlockComponentFactory\@\@U?$default_delete\@VBlockComponentFactory\@\@\@std\@\@\@4\@V?$unique_ptr\@VBlockDefinitionGroup\@\@U?$default_delete\@VBlockDefinitionGroup\@\@\@std\@\@\@4\@VItemRegistryRef\@\@_N_NV?$weak_ptr\@VBlockTypeRegistry\@\@\@4\@\@Z
      */
-    MCAPI ServerLevel(class gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> const &, std::unique_ptr<class LevelStorage>, std::unique_ptr<class LevelLooseFileStorage>, class IMinecraftEventing &, class ResourcePackManager &, class ResourcePackManager &, class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class MinecraftCommands &, class Scheduler &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntityRegistryOwner>> const &, class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>, class ItemRegistryRef, bool, class std::weak_ptr<class BlockTypeRegistry>);
+    MCAPI ServerLevel(class gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> const &, std::unique_ptr<class LevelStorage>, std::unique_ptr<class LevelLooseFileStorage>, class IMinecraftEventing &, class ResourcePackManager &, class ResourcePackManager &, class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class MinecraftCommands &, class Scheduler &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntityRegistryOwner>> const &, class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>, class ItemRegistryRef, bool, bool, class std::weak_ptr<class BlockTypeRegistry>);
     /**
      * @symbol ?addServerChunksToPacket\@ServerLevel\@\@QEAAXAEBVNetworkIdentifier\@\@W4SubClientId\@\@AEAVNetworkChunkPublisherUpdatePacket\@\@\@Z
      */
@@ -145,17 +149,13 @@ public:
      */
     MCAPI void clearAllGenerationRequests(class NetworkIdentifier const &, enum class SubClientId);
     /**
-     * @symbol ?getCommands\@ServerLevel\@\@QEAAAEAVMinecraftCommands\@\@XZ
+     * @symbol ?getCommandManager\@ServerLevel\@\@QEAAAEAVCommandManager\@\@XZ
      */
-    MCAPI class MinecraftCommands & getCommands();
+    MCAPI class CommandManager & getCommandManager();
     /**
      * @symbol ?getDynamicPropertiesDefinition\@ServerLevel\@\@QEAAAEAVDynamicPropertiesDefinition\@\@XZ
      */
     MCAPI class DynamicPropertiesDefinition & getDynamicPropertiesDefinition();
-    /**
-     * @symbol ?getFunctionManager\@ServerLevel\@\@QEAAAEAVFunctionManager\@\@XZ
-     */
-    MCAPI class FunctionManager & getFunctionManager();
     /**
      * @symbol ?getMobEvents\@ServerLevel\@\@QEAAAEAVMobEvents\@\@XZ
      */
@@ -199,17 +199,37 @@ public:
      */
     MCAPI void _initializeActorManager();
     /**
+     * @symbol ?_initializePlayerSleepManager\@ServerLevel\@\@AEAAXXZ
+     */
+    MCAPI void _initializePlayerSleepManager();
+    /**
      * @symbol ?_onActorEntityAdded\@ServerLevel\@\@AEAAXAEAVActor\@\@\@Z
      */
     MCAPI void _onActorEntityAdded(class Actor &);
+    /**
+     * @symbol ?_onGameplayUserAdded\@ServerLevel\@\@AEAAXAEAVEntityContext\@\@\@Z
+     */
+    MCAPI void _onGameplayUserAdded(class EntityContext &);
     /**
      * @symbol ?_onNewDimensionCreated\@ServerLevel\@\@AEAAXAEAVDimension\@\@\@Z
      */
     MCAPI void _onNewDimensionCreated(class Dimension &);
     /**
+     * @symbol ?_onPlayerWakeUp\@ServerLevel\@\@AEAAXAEAVPlayer\@\@\@Z
+     */
+    MCAPI void _onPlayerWakeUp(class Player &);
+    /**
      * @symbol ?_onRemoveActorEntityReferences\@ServerLevel\@\@AEAAXAEAVActor\@\@\@Z
      */
     MCAPI void _onRemoveActorEntityReferences(class Actor &);
+    /**
+     * @symbol ?_onSleepingPlayerListUpdated\@ServerLevel\@\@AEAAXAEBUPlayerSleepStatus\@\@\@Z
+     */
+    MCAPI void _onSleepingPlayerListUpdated(struct PlayerSleepStatus const &);
+    /**
+     * @symbol ?_onWakeUpAllPlayers\@ServerLevel\@\@AEAAXXZ
+     */
+    MCAPI void _onWakeUpAllPlayers();
     /**
      * @symbol ?_postReloadActorAdded\@ServerLevel\@\@AEAAXAEAVActor\@\@\@Z
      */

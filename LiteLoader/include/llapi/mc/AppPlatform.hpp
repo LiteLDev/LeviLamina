@@ -135,13 +135,13 @@ public:
      */
     MCVAPI class std::shared_ptr<class Core::FileStorageArea> createLoggingStorageArea(enum class Core::FileAccessType, class Core::Path const &);
     /**
-     * @symbol ?createUserInput\@AppPlatform\@\@UEAAXXZ
-     */
-    MCVAPI void createUserInput();
-    /**
      * @symbol ?createUserInput\@AppPlatform\@\@UEAAXH\@Z
      */
     MCVAPI void createUserInput(int);
+    /**
+     * @symbol ?createUserInput\@AppPlatform\@\@UEAAXXZ
+     */
+    MCVAPI void createUserInput();
     /**
      * @symbol ?createWebview\@AppPlatform\@\@UEBA?AV?$shared_ptr\@VWebviewInterface\@\@\@std\@\@$$QEAVPlatformArguments\@Webview\@\@\@Z
      */
@@ -714,6 +714,10 @@ public:
      * @symbol ?restartRequested\@AppPlatform\@\@UEAA_NXZ
      */
     MCVAPI bool restartRequested();
+    /**
+     * @symbol ?sendIntegrityCheckTelemetry\@AppPlatform\@\@UEAAXAEAVIMinecraftEventing\@\@\@Z
+     */
+    MCVAPI void sendIntegrityCheckTelemetry(class IMinecraftEventing &);
     /**
      * @symbol ?setARVRPlatform\@AppPlatform\@\@UEAAXW4ARVRPlatform\@\@\@Z
      */

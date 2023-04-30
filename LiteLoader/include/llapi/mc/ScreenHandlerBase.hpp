@@ -63,12 +63,4 @@ public:
      */
     MCAPI ScreenHandlerBase(class ItemStackRequestActionHandler &);
 
-//protected:
-    /**
-     * @symbol ?_tryGetSparseContainer\@ScreenHandlerBase\@\@IEAA?AV?$shared_ptr\@VSimpleSparseContainer\@\@\@std\@\@W4ContainerEnumName\@\@\@Z
-     */
-    MCAPI class std::shared_ptr<class SimpleSparseContainer> _tryGetSparseContainer(enum class ContainerEnumName);
-
-protected:
-
 };

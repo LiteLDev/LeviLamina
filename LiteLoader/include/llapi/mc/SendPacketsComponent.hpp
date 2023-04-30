@@ -31,9 +31,5 @@ public:
      * @symbol ??4SendPacketsComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct SendPacketsComponent & operator=(struct SendPacketsComponent &&);
-    /**
-     * @symbol ??1SendPacketsComponent\@\@QEAA\@XZ
-     */
-    MCAPI ~SendPacketsComponent();
 
 };

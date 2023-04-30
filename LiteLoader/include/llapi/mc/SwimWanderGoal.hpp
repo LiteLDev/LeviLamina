@@ -69,10 +69,6 @@ public:
      * @symbol ?appendDebugInfo\@SwimWanderGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const;
-    /**
-     * @symbol ??0SwimWanderGoal\@\@QEAA\@AEAVMob\@\@\@Z
-     */
-    MCAPI SwimWanderGoal(class Mob &);
 
 //protected:
     /**

@@ -80,9 +80,5 @@ public:
      * @symbol __unk_vfn_36
      */
     virtual void __unk_vfn_36();
-    /**
-     * @symbol ??0DaylightDetectorBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI DaylightDetectorBlockActor(class BlockPos const &);
 
 };

@@ -201,35 +201,35 @@ public:
      */
     virtual void __unk_vfn_126();
     /**
-     * @vftbl 131
-     * @symbol __unk_vfn_131
+     * @vftbl 129
+     * @symbol __unk_vfn_129
      */
-    virtual void __unk_vfn_131();
+    virtual void __unk_vfn_129();
     /**
-     * @vftbl 133
+     * @vftbl 132
+     * @symbol __unk_vfn_132
+     */
+    virtual void __unk_vfn_132();
+    /**
+     * @vftbl 134
      * @symbol ?buildDescriptionId\@SandBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @vftbl 134
+     * @vftbl 135
      * @symbol ?isAuxValueRelevantForPicking\@SandBlock\@\@UEBA_NXZ
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @vftbl 146
+     * @vftbl 147
      * @symbol ?getVariant\@SandBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @vftbl 156
-     * @symbol __unk_vfn_156
+     * @vftbl 157
+     * @symbol __unk_vfn_157
      */
-    virtual void __unk_vfn_156();
-    /**
-     * @vftbl 165
-     * @symbol __unk_vfn_165
-     */
-    virtual void __unk_vfn_165();
+    virtual void __unk_vfn_157();
     /**
      * @vftbl 166
      * @symbol __unk_vfn_166
@@ -241,55 +241,60 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @vftbl 170
-     * @symbol __unk_vfn_170
+     * @vftbl 168
+     * @symbol __unk_vfn_168
      */
-    virtual void __unk_vfn_170();
+    virtual void __unk_vfn_168();
     /**
-     * @vftbl 174
-     * @symbol __unk_vfn_174
+     * @vftbl 171
+     * @symbol __unk_vfn_171
      */
-    virtual void __unk_vfn_174();
+    virtual void __unk_vfn_171();
     /**
-     * @vftbl 178
-     * @symbol __unk_vfn_178
+     * @vftbl 175
+     * @symbol __unk_vfn_175
      */
-    virtual void __unk_vfn_178();
+    virtual void __unk_vfn_175();
     /**
-     * @vftbl 185
+     * @vftbl 179
+     * @symbol __unk_vfn_179
+     */
+    virtual void __unk_vfn_179();
+    /**
+     * @vftbl 186
      * @symbol ?getMapColor\@SandBlock\@\@UEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @vftbl 186
-     * @symbol __unk_vfn_186
+     * @vftbl 187
+     * @symbol __unk_vfn_187
      */
-    virtual void __unk_vfn_186();
+    virtual void __unk_vfn_187();
     /**
-     * @vftbl 188
+     * @vftbl 189
      * @symbol ?getResourceItem\@SandBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @vftbl 190
+     * @vftbl 191
      * @symbol ?getSilkTouchItemInstance\@SandBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @vftbl 194
+     * @vftbl 195
      * @symbol ?getDustColor\@SandBlock\@\@UEBA?AVColor\@mce\@\@AEBVBlock\@\@\@Z
      */
     virtual class mce::Color getDustColor(class Block const &) const;
     /**
-     * @vftbl 195
+     * @vftbl 196
      * @symbol ?getDustParticleName\@SandBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string getDustParticleName(class Block const &) const;
     /**
-     * @vftbl 196
-     * @symbol __unk_vfn_196
+     * @vftbl 197
+     * @symbol __unk_vfn_197
      */
-    virtual void __unk_vfn_196();
+    virtual void __unk_vfn_197();
     /**
      * @symbol ??0SandBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */

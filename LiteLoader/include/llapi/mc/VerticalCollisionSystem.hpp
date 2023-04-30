@@ -44,6 +44,11 @@ public:
     virtual void __unk_vfn_2();
     /**
      * @vftbl 3
+     * @symbol __unk_vfn_3
+     */
+    virtual void __unk_vfn_3();
+    /**
+     * @vftbl 4
      * @symbol ?tick\@VerticalCollisionSystem\@\@EEAAXAEAV?$StrictExecutionContext\@U?$Filter\@V?$FlagComponent\@UMinecartFlag\@\@\@\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@V?$FlagComponent\@UVerticalCollisionFlag\@\@\@\@\@\@U?$Read\@USynchedActorDataComponent\@\@UMoveRequestComponent\@\@UAABBShapeComponent\@\@UDimensionTypeComponent\@\@UStateVectorComponent\@\@\@\@U?$Write\@UStateVectorComponent\@\@UWalkDistComponent\@\@USideBySidePlaybackBlocksComponent\@\@\@\@U?$AddRemove\@UBounceComponent\@\@\@\@U?$GlobalRead\@ULocalConstBlockSourceFactoryComponent\@\@\@\@U?$GlobalWrite\@$$V\@\@U?$EntityFactoryT\@$$V\@\@\@\@\@Z
      */
     virtual void tick(class StrictExecutionContext<struct Filter<class FlagComponent<struct MinecartFlag>, class FlagComponent<struct PlayerComponentFlag>, class FlagComponent<struct VerticalCollisionFlag>>, struct Read<struct SynchedActorDataComponent, struct MoveRequestComponent, struct AABBShapeComponent, struct DimensionTypeComponent, struct StateVectorComponent>, struct Write<struct StateVectorComponent, struct WalkDistComponent, struct SideBySidePlaybackBlocksComponent>, struct AddRemove<struct BounceComponent>, struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>, struct GlobalWrite<>, struct EntityFactoryT<>> &);

@@ -186,25 +186,25 @@ public:
      */
     virtual void __unk_vfn_126();
     /**
-     * @vftbl 131
-     * @symbol __unk_vfn_131
+     * @vftbl 129
+     * @symbol __unk_vfn_129
      */
-    virtual void __unk_vfn_131();
+    virtual void __unk_vfn_129();
     /**
-     * @vftbl 143
+     * @vftbl 132
+     * @symbol __unk_vfn_132
+     */
+    virtual void __unk_vfn_132();
+    /**
+     * @vftbl 144
      * @symbol ?getVisualShape\@CandleBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
-     * @vftbl 156
-     * @symbol __unk_vfn_156
+     * @vftbl 157
+     * @symbol __unk_vfn_157
      */
-    virtual void __unk_vfn_156();
-    /**
-     * @vftbl 165
-     * @symbol __unk_vfn_165
-     */
-    virtual void __unk_vfn_165();
+    virtual void __unk_vfn_157();
     /**
      * @vftbl 166
      * @symbol __unk_vfn_166
@@ -216,80 +216,60 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @vftbl 170
-     * @symbol __unk_vfn_170
+     * @vftbl 168
+     * @symbol __unk_vfn_168
      */
-    virtual void __unk_vfn_170();
+    virtual void __unk_vfn_168();
     /**
-     * @vftbl 174
-     * @symbol __unk_vfn_174
+     * @vftbl 171
+     * @symbol __unk_vfn_171
      */
-    virtual void __unk_vfn_174();
+    virtual void __unk_vfn_171();
     /**
-     * @vftbl 177
+     * @vftbl 175
+     * @symbol __unk_vfn_175
+     */
+    virtual void __unk_vfn_175();
+    /**
+     * @vftbl 178
      * @symbol ?use\@CandleBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @vftbl 178
-     * @symbol __unk_vfn_178
+     * @vftbl 179
+     * @symbol __unk_vfn_179
      */
-    virtual void __unk_vfn_178();
+    virtual void __unk_vfn_179();
     /**
-     * @vftbl 186
-     * @symbol __unk_vfn_186
+     * @vftbl 187
+     * @symbol __unk_vfn_187
      */
-    virtual void __unk_vfn_186();
+    virtual void __unk_vfn_187();
     /**
-     * @vftbl 188
+     * @vftbl 189
      * @symbol ?getResourceItem\@CandleBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @vftbl 189
+     * @vftbl 190
      * @symbol ?getResourceCount\@CandleBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @vftbl 194
+     * @vftbl 195
      * @symbol ?_getNumCandles\@CandleBlock\@\@MEBAHAEBVBlock\@\@\@Z
      */
     virtual int _getNumCandles(class Block const &) const;
     /**
-     * @vftbl 195
+     * @vftbl 196
      * @symbol ?_iterateCandles\@CandleBlock\@\@MEBAXAEBVBlock\@\@AEBVBlockPos\@\@V?$function\@$$A6AXAEBVVec3\@\@H\@Z\@std\@\@\@Z
      */
     virtual void _iterateCandles(class Block const &, class BlockPos const &, class std::function<void (class Vec3 const &, int)>) const;
     /**
-     * @vftbl 196
+     * @vftbl 197
      * @symbol ?_tryLightOnFire\@CandleBlock\@\@MEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@\@Z
      */
     virtual void _tryLightOnFire(class BlockSource &, class BlockPos const &, class Actor *) const;
-    /**
-     * @vftbl 197
-     * @symbol __unk_vfn_197
-     */
-    virtual void __unk_vfn_197();
-    /**
-     * @vftbl 198
-     * @symbol __unk_vfn_198
-     */
-    virtual void __unk_vfn_198();
-    /**
-     * @vftbl 199
-     * @symbol __unk_vfn_199
-     */
-    virtual void __unk_vfn_199();
-    /**
-     * @vftbl 200
-     * @symbol __unk_vfn_200
-     */
-    virtual void __unk_vfn_200();
-    /**
-     * @vftbl 201
-     * @symbol __unk_vfn_201
-     */
-    virtual void __unk_vfn_201();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CANDLEBLOCK
     /**
      * @symbol ?isInteractiveBlock\@CandleBlock\@\@UEBA_NXZ

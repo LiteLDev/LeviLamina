@@ -118,9 +118,9 @@ public:
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
      * @vftbl 132
-     * @symbol ?_useOn\@FertilizerItem\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
+     * @symbol ?_useOn\@FertilizerItem\@\@MEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
-    virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FERTILIZERITEM
     /**
      * @symbol __unk_destructor_-1

@@ -11,23 +11,31 @@
 #undef BEFORE_EXTRA
 
 
-class NetherNetConnector {
+struct NetherNetConnector {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERNETCONNECTOR
 public:
-    class NetherNetConnector& operator=(class NetherNetConnector const &) = delete;
-    NetherNetConnector(class NetherNetConnector const &) = delete;
+    struct NetherNetConnector& operator=(struct NetherNetConnector const &) = delete;
+    NetherNetConnector(struct NetherNetConnector const &) = delete;
     NetherNetConnector() = delete;
 #endif
 
 public:
     /**
+     * @symbol ?disableBroadcastDiscovery\@NetherNetConnector\@\@QEAAXXZ
+     */
+    MCAPI void disableBroadcastDiscovery();
+    /**
      * @symbol ?enableBroadcastDiscovery\@NetherNetConnector\@\@QEAAXXZ
      */
     MCAPI void enableBroadcastDiscovery();
+    /**
+     * @symbol ?isBroadcastDiscoveryEnabled\@NetherNetConnector\@\@QEAA_NXZ
+     */
+    MCAPI bool isBroadcastDiscoveryEnabled();
     /**
      * @symbol ?setBroadcastRequestCallback\@NetherNetConnector\@\@QEAAX$$QEAV?$function\@$$A6A_NPEAXPEAH\@Z\@std\@\@\@Z
      */

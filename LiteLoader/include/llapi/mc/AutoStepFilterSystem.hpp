@@ -31,5 +31,9 @@ public:
      * @symbol ?createAutoStepFilterSystem\@AutoStepFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createAutoStepFilterSystem();
+    /**
+     * @symbol ?tickAutoStepFilterSystem\@AutoStepFilterSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBUMoveRequestComponent\@\@$$CBUMaxAutoStepComponent\@\@V?$Optional\@$$CBV?$FlagComponent\@UOnGroundFlag\@\@\@\@\@\@V?$Optional\@$$CBUAbilitiesComponent\@\@\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UAutoStepRequestFlag\@\@\@\@\@\@\@Z
+     */
+    MCAPI static void tickAutoStepFilterSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct MoveRequestComponent const, struct MaxAutoStepComponent const, class Optional<class FlagComponent<struct OnGroundFlag> const>, class Optional<struct AbilitiesComponent const>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct AutoStepRequestFlag>>);
 
 };

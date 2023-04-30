@@ -5,12 +5,12 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 #include "CommandRegistry.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include <string_view>
-#include "typeid_t.hpp"
 #include "CommandRegistry.hpp"
 
 #undef BEFORE_EXTRA
@@ -29,22 +29,22 @@ class CommandParameterData {
         std::vector<std::string>&) const;
 
 public:
-    typeid_t<CommandRegistry> tid; // 0
-    ParseFn parser;                // 8
-    std::string name;              // 16
-    char const* desc;              // 48
-    int unk56;                     // 56
-    CommandParameterDataType type; // 60
-    int offset;                    // 64
-    int flag_offset;               // 68
-    bool mand;                     // 72
-    unsigned char options;         // 73
+    Bedrock::typeid_t<CommandRegistry> tid; // 0
+    ParseFn parser;                         // 8
+    std::string name;                       // 16
+    char const* desc;                       // 48
+    int unk56;                              // 56
+    CommandParameterDataType type;          // 60
+    int offset;                             // 64
+    int flag_offset;                        // 68
+    bool mand;                              // 72
+    unsigned char options;                  // 73
 
     CommandParameterData()
         : tid(tid){};
 
     CommandParameterData(
-        typeid_t<CommandRegistry> tid, ParseFn parser, std::string_view describe,
+        Bedrock::typeid_t<CommandRegistry> tid, ParseFn parser, std::string_view describe,
         CommandParameterDataType type, char const* enumName, int offset, bool optional, int flag_offset)
         : tid(tid)
         , parser(parser)
@@ -66,9 +66,9 @@ public:
 
 public:
     /**
-     * @symbol ??0CommandParameterData\@\@QEAA\@V?$typeid_t\@VCommandRegistry\@\@\@\@P8CommandRegistry\@\@EBA_NPEAXAEBUParseToken\@2\@AEBVCommandOrigin\@\@HAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@6\@\@ZPEBDW4CommandParameterDataType\@\@7H_NH\@Z
+     * @symbol ??0CommandParameterData\@\@QEAA\@V?$typeid_t\@VCommandRegistry\@\@\@Bedrock\@\@P8CommandRegistry\@\@EBA_NPEAXAEBUParseToken\@3\@AEBVCommandOrigin\@\@HAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@7\@\@ZPEBDW4CommandParameterDataType\@\@7H_NH\@Z
      */
-    MCAPI CommandParameterData(class typeid_t<class CommandRegistry>, bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const, char const *, enum class CommandParameterDataType, char const *, int, bool, int);
+    MCAPI CommandParameterData(class Bedrock::typeid_t<class CommandRegistry>, bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const, char const *, enum class CommandParameterDataType, char const *, int, bool, int);
     /**
      * @symbol ??0CommandParameterData\@\@QEAA\@AEBV0\@\@Z
      */

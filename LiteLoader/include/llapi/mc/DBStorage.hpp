@@ -204,10 +204,6 @@ public:
      */
     MCAPI DBStorage(struct DBStorageConfig, class gsl::not_null<class Bedrock::NonOwnerPointer<class LevelDbEnv>>);
     /**
-     * @symbol ?_notifyChunkStorageDestroyed\@DBStorage\@\@QEAAXAEAVDBChunkStorage\@\@\@Z
-     */
-    MCAPI void _notifyChunkStorageDestroyed(class DBChunkStorage &);
-    /**
      * @symbol ?tryRepair\@DBStorage\@\@QEBA_NAEBVPath\@Core\@\@\@Z
      */
     MCAPI bool tryRepair(class Core::Path const &) const;
@@ -225,6 +221,10 @@ public:
      * @symbol ?_handleErrorStatus\@DBStorage\@\@IEAAXAEBVStatus\@leveldb\@\@\@Z
      */
     MCAPI void _handleErrorStatus(class leveldb::Status const &);
+    /**
+     * @symbol ?_mergeIntoDeleteCache\@DBStorage\@\@IEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4Category\@DBHelpers\@\@\@Z
+     */
+    MCAPI void _mergeIntoDeleteCache(std::string const &, enum class DBHelpers::Category);
     /**
      * @symbol ?_mergeIntoWriteCache\@DBStorage\@\@IEAAXAEBVLevelStorageWriteBatch\@\@\@Z
      */

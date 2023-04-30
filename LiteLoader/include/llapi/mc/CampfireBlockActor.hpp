@@ -111,10 +111,6 @@ public:
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
-     * @symbol ??0CampfireBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI CampfireBlockActor(class BlockPos const &);
-    /**
      * @symbol ?dropAllItems\@CampfireBlockActor\@\@QEAAXAEAVBlockSource\@\@\@Z
      */
     MCAPI void dropAllItems(class BlockSource &);
@@ -144,10 +140,6 @@ public:
      * @symbol ?_finishCooking\@CampfireBlockActor\@\@AEAAXAEAVBlockSource\@\@H\@Z
      */
     MCAPI void _finishCooking(class BlockSource &, int);
-    /**
-     * @symbol ?_removeItem\@CampfireBlockActor\@\@AEAAXH\@Z
-     */
-    MCAPI void _removeItem(int);
 
 private:
 

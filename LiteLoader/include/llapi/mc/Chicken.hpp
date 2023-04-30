@@ -152,11 +152,6 @@ public:
      */
     virtual void __unk_vfn_275();
     /**
-     * @vftbl 288
-     * @symbol ?aiStep\@Chicken\@\@UEAAXXZ
-     */
-    virtual void aiStep();
-    /**
      * @vftbl 301
      * @symbol __unk_vfn_301
      */
@@ -176,8 +171,8 @@ public:
      */
     MCAPI Chicken(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
     /**
-     * @symbol ?postAIStep\@Chicken\@\@QEAAXXZ
+     * @symbol ?postAiStep\@Chicken\@\@QEAAXXZ
      */
-    MCAPI void postAIStep();
+    MCAPI void postAiStep();
 
 };

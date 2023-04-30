@@ -50,4 +50,20 @@ public:
     MCVAPI void setBrazeId(std::string const &);
 #endif
 
+//private:
+
+private:
+    /**
+     * @symbol ?mInitialized\@BrazeSDKManager\@\@0_NA
+     */
+    MCAPI static bool mInitialized;
+    /**
+     * @symbol ?mInstance\@BrazeSDKManager\@\@0V?$shared_ptr\@VBrazeSDKManager\@\@\@std\@\@A
+     */
+    MCAPI static class std::shared_ptr<class BrazeSDKManager> mInstance;
+    /**
+     * @symbol ?mIsReady\@BrazeSDKManager\@\@0_NA
+     */
+    MCAPI static bool mIsReady;
+
 };

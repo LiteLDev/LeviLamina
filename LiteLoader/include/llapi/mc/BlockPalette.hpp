@@ -19,6 +19,11 @@ class BlockPalette {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    enum class PaletteType : int {
+        Sequential = 0x0,
+        Hashed = 0x1,
+    };
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPALETTE
@@ -29,6 +34,37 @@ public:
 #endif
 
 public:
+    /**
+     * @vftbl 0
+     * @symbol __unk_vfn_0
+     */
+    virtual void __unk_vfn_0();
+    /**
+     * @vftbl 1
+     * @symbol ?getPaletteType\@BlockPalette\@\@UEAA?AW4PaletteType\@1\@XZ
+     */
+    virtual enum class BlockPalette::PaletteType getPaletteType();
+    /**
+     * @vftbl 2
+     * @symbol ?appendBlock\@BlockPalette\@\@UEAAXAEBVBlock\@\@\@Z
+     */
+    virtual void appendBlock(class Block const &);
+    /**
+     * @vftbl 3
+     * @symbol ?getBlock\@BlockPalette\@\@UEBAAEBVBlock\@\@AEBI\@Z
+     */
+    virtual class Block const & getBlock(unsigned int const &) const;
+    /**
+     * @vftbl 4
+     * @symbol ?assignBlockNetworkId\@BlockPalette\@\@MEBAXAEBVBlock\@\@_K\@Z
+     */
+    virtual void assignBlockNetworkId(class Block const &, unsigned __int64) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKPALETTE
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~BlockPalette();
+#endif
     /**
      * @symbol ??0BlockPalette\@\@QEAA\@UConstructorToken\@0\@\@Z
      */
@@ -54,10 +90,6 @@ public:
      */
     MCAPI class Block const & getBlock(class CompoundTag const &) const;
     /**
-     * @symbol ?getBlock\@BlockPalette\@\@QEBAAEBVBlock\@\@AEBI\@Z
-     */
-    MCAPI class Block const & getBlock(unsigned int const &) const;
-    /**
      * @symbol ?getBlockFromLegacyData\@BlockPalette\@\@QEBAAEBVBlock\@\@UNewBlockID\@\@I\@Z
      */
     MCAPI class Block const & getBlockFromLegacyData(struct NewBlockID, unsigned int) const;
@@ -73,17 +105,13 @@ public:
      * @symbol ?switchBlock\@BlockPalette\@\@QEBAAEBVBlock\@\@AEBV2\@AEBVBlockLegacy\@\@\@Z
      */
     MCAPI class Block const & switchBlock(class Block const &, class BlockLegacy const &) const;
-    /**
-     * @symbol ??1BlockPalette\@\@QEAA\@XZ
-     */
-    MCAPI ~BlockPalette();
 
-//private:
+//protected:
     /**
-     * @symbol ?shouldWarnFor\@BlockPalette\@\@AEBA_NUNewBlockID\@\@G\@Z
+     * @symbol ?shouldWarnFor\@BlockPalette\@\@IEBA_NUNewBlockID\@\@G\@Z
      */
     MCAPI bool shouldWarnFor(struct NewBlockID, unsigned short) const;
 
-private:
+protected:
 
 };

@@ -36,9 +36,5 @@ public:
      * @symbol ??4KeyFrameLerpMode\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
     MCAPI class KeyFrameLerpMode & operator=(class KeyFrameLerpMode const &);
-    /**
-     * @symbol ?setLerpStyle\@KeyFrameLerpMode\@\@QEAAXW4KeyFrameLerpStyle\@\@\@Z
-     */
-    MCAPI void setLerpStyle(enum class KeyFrameLerpStyle);
 
 };

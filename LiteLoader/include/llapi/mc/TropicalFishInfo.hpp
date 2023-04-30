@@ -11,15 +11,15 @@
 #undef BEFORE_EXTRA
 
 
-class TropicalFishInfo {
+struct TropicalFishInfo {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TROPICALFISHINFO
 public:
-    class TropicalFishInfo& operator=(class TropicalFishInfo const &) = delete;
-    TropicalFishInfo(class TropicalFishInfo const &) = delete;
+    struct TropicalFishInfo& operator=(struct TropicalFishInfo const &) = delete;
+    TropicalFishInfo(struct TropicalFishInfo const &) = delete;
     TropicalFishInfo() = delete;
 #endif
 

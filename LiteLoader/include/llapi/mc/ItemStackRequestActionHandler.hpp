@@ -78,17 +78,9 @@ public:
      */
     MCAPI void addFilteredStrings(class TypedClientNetId<struct ItemStackRequestIdTag, int, 0>, std::vector<std::string>);
     /**
-     * @symbol ?beginRequest\@ItemStackRequestActionHandler\@\@QEAAXAEBV?$TypedClientNetId\@UItemStackRequestIdTag\@\@H$0A\@\@\@AEAVItemStackNetManagerScreen\@\@\@Z
-     */
-    MCAPI void beginRequest(class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> const &, class ItemStackNetManagerScreen &);
-    /**
      * @symbol ?endRequest\@ItemStackRequestActionHandler\@\@QEAA?AV?$tuple\@W4ItemStackNetResult\@\@V?$vector\@UItemStackResponseContainerInfo\@\@V?$allocator\@UItemStackResponseContainerInfo\@\@\@std\@\@\@std\@\@\@std\@\@W4ItemStackNetResult\@\@\@Z
      */
     MCAPI class std::tuple<enum class ItemStackNetResult, std::vector<struct ItemStackResponseContainerInfo>> endRequest(enum class ItemStackNetResult);
-    /**
-     * @symbol ?endRequestBatch\@ItemStackRequestActionHandler\@\@QEAAXXZ
-     */
-    MCAPI void endRequestBatch();
     /**
      * @symbol ?getFilteredStrings\@ItemStackRequestActionHandler\@\@QEBAAEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@V?$TypedClientNetId\@UItemStackRequestIdTag\@\@H$0A\@\@\@\@Z
      */
@@ -106,25 +98,13 @@ public:
      */
     MCAPI enum class ItemStackNetResult handleRequestAction(class ItemStackRequestAction const &);
     /**
-     * @symbol ?hasFilteredStrings\@ItemStackRequestActionHandler\@\@QEBA_NV?$TypedClientNetId\@UItemStackRequestIdTag\@\@H$0A\@\@\@\@Z
-     */
-    MCAPI bool hasFilteredStrings(class TypedClientNetId<struct ItemStackRequestIdTag, int, 0>) const;
-    /**
      * @symbol ?isValidationCraftingImplemented\@ItemStackRequestActionHandler\@\@QEAA_NXZ
      */
     MCAPI bool isValidationCraftingImplemented();
     /**
-     * @symbol ?normalTick\@ItemStackRequestActionHandler\@\@QEAAXXZ
-     */
-    MCAPI void normalTick();
-    /**
      * @symbol ?tryCraft\@ItemStackRequestActionHandler\@\@QEAA?AV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@V?$unique_ptr\@UContainerValidationCraftInputs\@\@U?$default_delete\@UContainerValidationCraftInputs\@\@\@std\@\@\@3\@\@Z
      */
     MCAPI std::vector<class ItemInstance> tryCraft(std::unique_ptr<struct ContainerValidationCraftInputs>);
-    /**
-     * @symbol ??1ItemStackRequestActionHandler\@\@QEAA\@XZ
-     */
-    MCAPI ~ItemStackRequestActionHandler();
 
 //private:
     /**
@@ -143,10 +123,6 @@ public:
      * @symbol ?_handleTransfer\@ItemStackRequestActionHandler\@\@AEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionTransferBase\@\@_N11\@Z
      */
     MCAPI enum class ItemStackNetResult _handleTransfer(class ItemStackRequestActionTransferBase const &, bool, bool, bool);
-    /**
-     * @symbol ?_initScreenValidation\@ItemStackRequestActionHandler\@\@AEAAXXZ
-     */
-    MCAPI void _initScreenValidation();
     /**
      * @symbol ?_resolveSlotIdAssignment\@ItemStackRequestActionHandler\@\@AEAA?AV?$optional\@URequestSlotIdAssignment\@ItemStackRequestActionHandler\@\@\@std\@\@AEBUItemStackRequestSlotInfo\@\@AEBV?$TypedRuntimeId\@UContainerRuntimeIdTag\@\@I$0A\@\@\@\@Z
      */

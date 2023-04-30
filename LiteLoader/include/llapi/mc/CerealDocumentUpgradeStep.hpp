@@ -32,10 +32,6 @@ public:
     MCVAPI ~CerealDocumentUpgradeStep();
 #endif
     /**
-     * @symbol ??0CerealDocumentUpgradeStep\@\@QEAA\@AEBVSemVersion\@\@\@Z
-     */
-    MCAPI CerealDocumentUpgradeStep(class SemVersion const &);
-    /**
      * @symbol ??0CerealDocumentUpgradeStep\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI CerealDocumentUpgradeStep(class CerealDocumentUpgradeStep const &);
@@ -48,20 +44,8 @@ public:
      */
     MCAPI bool apply(class rapidjson::GenericDocument<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>, class rapidjson::CrtAllocator> &, class SemVersion const &);
     /**
-     * @symbol ?canUpgrade\@CerealDocumentUpgradeStep\@\@QEBA_NAEBVSemVersion\@\@\@Z
-     */
-    MCAPI bool canUpgrade(class SemVersion const &) const;
-    /**
-     * @symbol ?getTargetVersion\@CerealDocumentUpgradeStep\@\@QEBAAEBVSemVersion\@\@XZ
-     */
-    MCAPI class SemVersion const & getTargetVersion() const;
-    /**
      * @symbol ??4CerealDocumentUpgradeStep\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
     MCAPI class CerealDocumentUpgradeStep & operator=(class CerealDocumentUpgradeStep const &);
-    /**
-     * @symbol ?setSchema\@CerealDocumentUpgradeStep\@\@QEAAXAEBUSchema\@reflection\@\@\@Z
-     */
-    MCAPI void setSchema(struct reflection::Schema const &);
 
 };

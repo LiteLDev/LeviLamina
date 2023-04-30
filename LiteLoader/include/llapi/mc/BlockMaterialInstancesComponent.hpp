@@ -41,9 +41,5 @@ public:
      * @symbol ??4BlockMaterialInstancesComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct BlockMaterialInstancesComponent & operator=(struct BlockMaterialInstancesComponent &&);
-    /**
-     * @symbol ??1BlockMaterialInstancesComponent\@\@QEAA\@XZ
-     */
-    MCAPI ~BlockMaterialInstancesComponent();
 
 };

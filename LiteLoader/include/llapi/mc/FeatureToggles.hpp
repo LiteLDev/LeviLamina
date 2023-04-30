@@ -50,17 +50,9 @@ public:
 
 //private:
     /**
-     * @symbol ?_getDisableIfOtherOptionDisabledSetupCallback\@FeatureToggles\@\@AEBA?AV?$function\@$$A6AXAEAVOption\@\@\@Z\@std\@\@W4FeatureOptionID\@\@\@Z
-     */
-    MCAPI class std::function<void (class Option &)> _getDisableIfOtherOptionDisabledSetupCallback(enum class FeatureOptionID) const;
-    /**
      * @symbol ?_getDisabledIfOptionExpectationsNotMetSetupCallback\@FeatureToggles\@\@AEAA?AV?$function\@$$A6AXAEAVOption\@\@\@Z\@std\@\@V?$vector\@W4FeatureOptionID\@\@V?$allocator\@W4FeatureOptionID\@\@\@std\@\@\@3\@0\@Z
      */
     MCAPI class std::function<void (class Option &)> _getDisabledIfOptionExpectationsNotMetSetupCallback(std::vector<enum class FeatureOptionID>, std::vector<enum class FeatureOptionID>);
-    /**
-     * @symbol ?_getDisabledIfOtherOptionsEnabledSetupCallback\@FeatureToggles\@\@AEAA?AV?$function\@$$A6AXAEAVOption\@\@\@Z\@std\@\@V?$vector\@W4FeatureOptionID\@\@V?$allocator\@W4FeatureOptionID\@\@\@std\@\@\@3\@\@Z
-     */
-    MCAPI class std::function<void (class Option &)> _getDisabledIfOtherOptionsEnabledSetupCallback(std::vector<enum class FeatureOptionID>);
     /**
      * @symbol ?_getLockIfInGameOrOptionExpectationsNotMetLockCallback\@FeatureToggles\@\@AEAA?AV?$function\@$$A6AXAEA_N\@Z\@std\@\@V?$vector\@W4FeatureOptionID\@\@V?$allocator\@W4FeatureOptionID\@\@\@std\@\@\@3\@0\@Z
      */

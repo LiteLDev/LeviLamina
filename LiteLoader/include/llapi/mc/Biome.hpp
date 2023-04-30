@@ -60,10 +60,6 @@ public:
 
 public:
     /**
-     * @symbol ??0Biome\@\@QEAA\@H\@Z
-     */
-    MCAPI Biome(int);
-    /**
      * @symbol ?addTag\@Biome\@\@QEAAAEAV1\@VHashedString\@\@AEAV?$TagRegistry\@U?$IDType\@UBiomeTagIDType\@\@\@\@U?$IDType\@UBiomeTagSetIDType\@\@\@\@\@\@\@Z
      */
     MCAPI class Biome & addTag(class HashedString, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> &);
@@ -140,21 +136,17 @@ public:
      */
     MCAPI float getTemperatureWorldGen(class BlockPos const &, short) const;
     /**
-     * @symbol ?hasTag\@Biome\@\@QEBA_NAEBU?$IDType\@UBiomeTagIDType\@\@\@\@AEBV?$TagRegistry\@U?$IDType\@UBiomeTagIDType\@\@\@\@U?$IDType\@UBiomeTagSetIDType\@\@\@\@\@\@\@Z
-     */
-    MCAPI bool hasTag(struct IDType<struct BiomeTagIDType> const &, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const &) const;
-    /**
      * @symbol ?hasTag\@Biome\@\@QEBA_N_KAEBV?$TagRegistry\@U?$IDType\@UBiomeTagIDType\@\@\@\@U?$IDType\@UBiomeTagSetIDType\@\@\@\@\@\@\@Z
      */
     MCAPI bool hasTag(unsigned __int64, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const &) const;
     /**
+     * @symbol ?hasTag\@Biome\@\@QEBA_NAEBU?$IDType\@UBiomeTagIDType\@\@\@\@AEBV?$TagRegistry\@U?$IDType\@UBiomeTagIDType\@\@\@\@U?$IDType\@UBiomeTagSetIDType\@\@\@\@\@\@\@Z
+     */
+    MCAPI bool hasTag(struct IDType<struct BiomeTagIDType> const &, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const &) const;
+    /**
      * @symbol ?hasTag\@Biome\@\@QEBA_NAEBVWellKnownTagID\@\@\@Z
      */
     MCAPI bool hasTag(class WellKnownTagID const &) const;
-    /**
-     * @symbol ?initEntity\@Biome\@\@QEAAXAEAVEntityRegistry\@\@\@Z
-     */
-    MCAPI void initEntity(class EntityRegistry &);
     /**
      * @symbol ?isHumid\@Biome\@\@QEBA_NXZ
      */
@@ -164,25 +156,17 @@ public:
      */
     MCAPI bool isSnowCovered() const;
     /**
-     * @symbol ?setColor\@Biome\@\@QEAAAEAV1\@H\@Z
-     */
-    MCAPI class Biome & setColor(int);
-    /**
      * @symbol ?setColor\@Biome\@\@QEAAAEAV1\@H_N\@Z
      */
     MCAPI class Biome & setColor(int, bool);
     /**
-     * @symbol ?setDepthAndScale\@Biome\@\@QEAAAEAV1\@AEBUBiomeHeight\@\@\@Z
+     * @symbol ?setColor\@Biome\@\@QEAAAEAV1\@H\@Z
      */
-    MCAPI class Biome & setDepthAndScale(struct BiomeHeight const &);
+    MCAPI class Biome & setColor(int);
     /**
      * @symbol ?setMapWaterColor\@Biome\@\@QEAAAEAV1\@H\@Z
      */
     MCAPI class Biome & setMapWaterColor(int);
-    /**
-     * @symbol ?setName\@Biome\@\@QEAAAEAV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI class Biome & setName(std::string const &);
     /**
      * @symbol ?setNoRain\@Biome\@\@QEAAAEAV1\@XZ
      */
@@ -195,10 +179,6 @@ public:
      * @symbol ?setOddColor\@Biome\@\@QEAAAEAV1\@H\@Z
      */
     MCAPI class Biome & setOddColor(int);
-    /**
-     * @symbol ?setSnowAccumulation\@Biome\@\@QEAAAEAV1\@MM\@Z
-     */
-    MCAPI class Biome & setSnowAccumulation(float, float);
     /**
      * @symbol ?writePacketData\@Biome\@\@QEAAXAEAVCompoundTag\@\@AEAV?$TagRegistry\@U?$IDType\@UBiomeTagIDType\@\@\@\@U?$IDType\@UBiomeTagSetIDType\@\@\@\@\@\@\@Z
      */

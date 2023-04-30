@@ -1016,9 +1016,9 @@ public:
     virtual int getPreviousTickSleepTimer() const;
     /**
      * @vftbl 395
-     * @symbol __unk_vfn_395
+     * @symbol ?openSign\@Player\@\@UEAAXAEBVBlockPos\@\@_N\@Z
      */
-    virtual void __unk_vfn_395();
+    virtual void openSign(class BlockPos const &, bool);
     /**
      * @vftbl 396
      * @symbol __unk_vfn_396
@@ -1226,26 +1226,31 @@ public:
     virtual void __unk_vfn_436();
     /**
      * @vftbl 437
+     * @symbol ?getMaxChunkBuildRadius\@Player\@\@UEBAEXZ
+     */
+    virtual unsigned char getMaxChunkBuildRadius() const;
+    /**
+     * @vftbl 438
      * @symbol ?onMovePlayerPacketNormal\@Player\@\@MEAAXAEBVVec3\@\@AEBVVec2\@\@M\@Z
      */
     virtual void onMovePlayerPacketNormal(class Vec3 const &, class Vec2 const &, float);
     /**
-     * @vftbl 438
+     * @vftbl 439
      * @symbol ?_createChunkSource\@Player\@\@MEAA?AV?$shared_ptr\@VChunkViewSource\@\@\@std\@\@AEAVChunkSource\@\@\@Z
      */
     virtual class std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource &);
     /**
-     * @vftbl 439
+     * @vftbl 440
      * @symbol ?setAbilities\@Player\@\@UEAAXAEBVLayeredAbilities\@\@\@Z
      */
     virtual void setAbilities(class LayeredAbilities const &);
     /**
-     * @vftbl 440
+     * @vftbl 441
      * @symbol ?getEditorPlayer\@ServerPlayer\@\@UEBA?AV?$NonOwnerPointer\@VIEditorPlayer\@Editor\@\@\@Bedrock\@\@XZ
      */
     virtual class Bedrock::NonOwnerPointer<class Editor::IEditorPlayer> getEditorPlayer() const = 0;
     /**
-     * @vftbl 441
+     * @vftbl 442
      * @symbol ?destroyEditorPlayer\@ServerPlayer\@\@UEAAXXZ
      */
     virtual void destroyEditorPlayer() = 0;
@@ -1315,10 +1320,6 @@ public:
      */
     MCVAPI void openPortfolio();
     /**
-     * @symbol ?openSign\@Player\@\@UEAAXAEBVBlockPos\@\@\@Z
-     */
-    MCVAPI void openSign(class BlockPos const &);
-    /**
      * @symbol ?playEmote\@Player\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
     MCVAPI void playEmote(std::string const &, bool);
@@ -1379,6 +1380,10 @@ public:
      * @symbol ?clearRespawnPosition\@Player\@\@QEAAXXZ
      */
     MCAPI void clearRespawnPosition();
+    /**
+     * @symbol ?dropCursorSelectedItemOnDeath\@Player\@\@QEAAXXZ
+     */
+    MCAPI void dropCursorSelectedItemOnDeath();
     /**
      * @symbol ?eat\@Player\@\@QEAAXHM\@Z
      */
@@ -1492,13 +1497,13 @@ public:
      */
     MCAPI std::string getItemInteractText(class Item const &) const;
     /**
-     * @symbol ?getItemStackNetManager\@Player\@\@QEBAPEBVItemStackNetManagerBase\@\@XZ
-     */
-    MCAPI class ItemStackNetManagerBase const * getItemStackNetManager() const;
-    /**
      * @symbol ?getItemStackNetManager\@Player\@\@QEAAPEAVItemStackNetManagerBase\@\@XZ
      */
     MCAPI class ItemStackNetManagerBase * getItemStackNetManager();
+    /**
+     * @symbol ?getItemStackNetManager\@Player\@\@QEBAPEBVItemStackNetManagerBase\@\@XZ
+     */
+    MCAPI class ItemStackNetManagerBase const * getItemStackNetManager() const;
     /**
      * @symbol ?getLuck\@Player\@\@QEAAMXZ
      */
@@ -1568,13 +1573,17 @@ public:
      */
     MCAPI int getSelectedItemSlot() const;
     /**
-     * @symbol ?getSkin\@Player\@\@QEBAAEBVSerializedSkin\@\@XZ
+     * @symbol ?getServerId\@Player\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI class SerializedSkin const & getSkin() const;
+    MCAPI std::string const & getServerId() const;
     /**
      * @symbol ?getSkin\@Player\@\@QEAAAEAVSerializedSkin\@\@XZ
      */
     MCAPI class SerializedSkin & getSkin();
+    /**
+     * @symbol ?getSkin\@Player\@\@QEBAAEBVSerializedSkin\@\@XZ
+     */
+    MCAPI class SerializedSkin const & getSkin() const;
     /**
      * @symbol ?getSleepRotation\@Player\@\@QEBAMXZ
      */
@@ -1588,13 +1597,13 @@ public:
      */
     MCAPI class BlockPos const & getSpawnPosition() const;
     /**
-     * @symbol ?getSupplies\@Player\@\@QEBAAEBVPlayerInventory\@\@XZ
-     */
-    MCAPI class PlayerInventory const & getSupplies() const;
-    /**
      * @symbol ?getSupplies\@Player\@\@QEAAAEAVPlayerInventory\@\@XZ
      */
     MCAPI class PlayerInventory & getSupplies();
+    /**
+     * @symbol ?getSupplies\@Player\@\@QEBAAEBVPlayerInventory\@\@XZ
+     */
+    MCAPI class PlayerInventory const & getSupplies() const;
     /**
      * @symbol ?getTrackedBosses\@Player\@\@QEAAAEBV?$vector\@UActorUniqueID\@\@V?$allocator\@UActorUniqueID\@\@\@std\@\@\@std\@\@XZ
      */
@@ -1784,6 +1793,14 @@ public:
      */
     MCAPI void setHasSeenCredits(bool);
     /**
+     * @symbol ?setLastDeathDimension\@Player\@\@QEAAXV?$AutomaticID\@VDimension\@\@H\@\@\@Z
+     */
+    MCAPI void setLastDeathDimension(class AutomaticID<class Dimension, int>);
+    /**
+     * @symbol ?setLastDeathPos\@Player\@\@QEAAXVBlockPos\@\@\@Z
+     */
+    MCAPI void setLastDeathPos(class BlockPos);
+    /**
      * @symbol ?setLastHurtBy\@Player\@\@QEAAXW4ActorType\@\@\@Z
      */
     MCAPI void setLastHurtBy(enum class ActorType);
@@ -1928,21 +1945,9 @@ public:
      */
     MCAPI static class Attribute const HUNGER;
     /**
-     * @symbol ?ITEM_USE_INTERVAL_COUNT\@Player\@\@2HB
-     */
-    MCAPI static int const ITEM_USE_INTERVAL_COUNT;
-    /**
-     * @symbol ?ITEM_USE_INTERVAL_DURATION\@Player\@\@2HB
-     */
-    MCAPI static int const ITEM_USE_INTERVAL_DURATION;
-    /**
      * @symbol ?LEVEL\@Player\@\@2VAttribute\@\@B
      */
     MCAPI static class Attribute const LEVEL;
-    /**
-     * @symbol ?MAX_ITEM_USE_DURATION\@Player\@\@2HB
-     */
-    MCAPI static int const MAX_ITEM_USE_DURATION;
     /**
      * @symbol ?PLAYER_ALIVE_HEIGHT\@Player\@\@2MB
      */

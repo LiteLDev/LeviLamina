@@ -28,13 +28,10 @@ enum class ParseState;
 public:
     class HttpHeaders& operator=(class HttpHeaders const &) = delete;
     HttpHeaders(class HttpHeaders const &) = delete;
+    HttpHeaders() = delete;
 #endif
 
 public:
-    /**
-     * @symbol ??0HttpHeaders\@\@QEAA\@XZ
-     */
-    MCAPI HttpHeaders();
     /**
      * @symbol ?clear\@HttpHeaders\@\@QEAAXXZ
      */
@@ -43,10 +40,6 @@ public:
      * @symbol ?getHeader\@HttpHeaders\@\@QEBA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV23\@\@Z
      */
     MCAPI bool getHeader(std::string const &, std::string &) const;
-    /**
-     * @symbol ?getState\@HttpHeaders\@\@QEAA?AW4ParseState\@1\@XZ
-     */
-    MCAPI enum class HttpHeaders::ParseState getState();
     /**
      * @symbol ?getStatusCode\@HttpHeaders\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */

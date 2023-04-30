@@ -30,7 +30,7 @@ template <typename Command, typename Type>
 static CommandParameterData makeMandatory(Type Command::*field, std::string name, bool Command::*isSet = nullptr) {
 
     return {
-        type_id<CommandRegistry, Type>(),
+        Bedrock::type_id<CommandRegistry, Type>(),
         CommandRegistry::getParseFn<Type>(),
         name,
         CommandParameterDataType::NORMAL,
@@ -44,7 +44,7 @@ template <CommandParameterDataType DataType, typename Command, typename Type>
 static CommandParameterData
     makeMandatory(Type Command::*field, std::string name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
     return {
-        type_id<CommandRegistry, Type>(),
+        Bedrock::type_id<CommandRegistry, Type>(),
         CommandRegistry::getParseFn<Type>(),
         name,
         DataType,
@@ -56,10 +56,10 @@ static CommandParameterData
 }
 template <typename Command, typename Type>
 static CommandParameterData makeOptional(Type Command::*field, std::string name, bool Command::*isSet = nullptr) {
-    typeid_t<CommandRegistry> tpid{0};
+    Bedrock::typeid_t<CommandRegistry> tpid{0};
 
     return {
-        type_id<CommandRegistry, Type>(),
+        Bedrock::type_id<CommandRegistry, Type>(),
         CommandRegistry::getParseFn<Type>(),
         name,
         CommandParameterDataType::NORMAL,
@@ -74,7 +74,7 @@ static CommandParameterData
     makeOptional(Type Command::*field, std::string name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
 
     return {
-        type_id<CommandRegistry, Type>(),
+        Bedrock::type_id<CommandRegistry, Type>(),
         CommandRegistry::getParseFn<Type>(),
         name,
         DataType,

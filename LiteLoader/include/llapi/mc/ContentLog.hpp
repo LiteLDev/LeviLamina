@@ -33,6 +33,10 @@ public:
      */
     MCAPI ContentLog();
     /**
+     * @symbol ?getScope\@ContentLog\@\@QEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     */
+    MCAPI std::string getScope();
+    /**
      * @symbol ?isEnabled\@ContentLog\@\@QEBA_NXZ
      */
     MCAPI bool isEnabled() const;
@@ -41,10 +45,6 @@ public:
      */
     MCAPI void log(bool, enum class LogLevel, enum class LogArea, ...);
     /**
-     * @symbol ?unregisterEndPoint\@ContentLog\@\@QEAAXV?$not_null\@PEAVContentLogEndPoint\@\@\@gsl\@\@\@Z
-     */
-    MCAPI void unregisterEndPoint(class gsl::not_null<class ContentLogEndPoint *>);
-    /**
      * @symbol ?updateEnabledStatus\@ContentLog\@\@QEAAXXZ
      */
     MCAPI void updateEnabledStatus();
@@ -52,10 +52,6 @@ public:
      * @symbol ?getLogAreaName\@ContentLog\@\@SAPEBDW4LogArea\@\@\@Z
      */
     MCAPI static char const * getLogAreaName(enum class LogArea);
-    /**
-     * @symbol ?getLogLevelName\@ContentLog\@\@SAPEBDW4LogLevel\@\@\@Z
-     */
-    MCAPI static char const * getLogLevelName(enum class LogLevel);
 
 //private:
     /**

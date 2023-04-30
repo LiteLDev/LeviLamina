@@ -116,8 +116,8 @@ public:
     MCVAPI ~ScriptCommandOrigin();
 #endif
     /**
-     * @symbol ??0ScriptCommandOrigin\@\@QEAA\@AEAVServerLevel\@\@PEAVDimension\@\@V?$function\@$$A6AXH$$QEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEAVValue\@Json\@\@\@Z\@std\@\@\@Z
+     * @symbol ??0ScriptCommandOrigin\@\@QEAA\@AEAVServerLevel\@\@PEAVDimension\@\@V?$function\@$$A6AXH$$QEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEAVValue\@Json\@\@\@Z\@std\@\@V?$optional\@W4CommandPermissionLevel\@\@\@4\@\@Z
      */
-    MCAPI ScriptCommandOrigin(class ServerLevel &, class Dimension *, class std::function<void (int, std::string &&, class Json::Value &&)>);
+    MCAPI ScriptCommandOrigin(class ServerLevel &, class Dimension *, class std::function<void (int, std::string &&, class Json::Value &&)>, class std::optional<enum class CommandPermissionLevel>);
 
 };

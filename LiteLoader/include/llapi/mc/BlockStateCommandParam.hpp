@@ -30,13 +30,9 @@ public:
 
 public:
     /**
-     * @symbol ??0BlockStateCommandParam\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0W4Type\@0\@\@Z
+     * @symbol ?getNameAndValue\@BlockStateCommandParam\@\@QEBA?AV?$optional\@U?$pair\@VHashedString\@\@H\@std\@\@\@std\@\@AEAVCommandOutput\@\@AEBVBlock\@\@\@Z
      */
-    MCAPI BlockStateCommandParam(std::string, std::string, enum class BlockStateCommandParam::Type);
-    /**
-     * @symbol ?getNameAndValue\@BlockStateCommandParam\@\@QEBA?AV?$optional\@U?$pair\@VHashedString\@\@H\@std\@\@\@std\@\@AEAVCommandOutput\@\@\@Z
-     */
-    MCAPI class std::optional<struct std::pair<class HashedString, int>> getNameAndValue(class CommandOutput &) const;
+    MCAPI class std::optional<struct std::pair<class HashedString, int>> getNameAndValue(class CommandOutput &, class Block const &) const;
     /**
      * @symbol ?setBlockState\@BlockStateCommandParam\@\@QEBA_NPEAPEBVBlock\@\@AEAVCommandOutput\@\@\@Z
      */
@@ -51,6 +47,10 @@ public:
      * @symbol ?_createCompoundTag\@BlockStateCommandParam\@\@AEBA_NAEAVCompoundTag\@\@AEAVCommandOutput\@\@\@Z
      */
     MCAPI bool _createCompoundTag(class CompoundTag &, class CommandOutput &) const;
+    /**
+     * @symbol ?_getBlockState\@BlockStateCommandParam\@\@AEBAPEBVBlockState\@\@AEBVBlock\@\@\@Z
+     */
+    MCAPI class BlockState const * _getBlockState(class Block const &) const;
 
 private:
 

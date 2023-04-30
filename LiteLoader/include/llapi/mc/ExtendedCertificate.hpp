@@ -38,10 +38,6 @@ public:
      */
     MCAPI static std::string getIdentityName(class Certificate const &);
     /**
-     * @symbol ?getXuid\@ExtendedCertificate\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEBVCertificate\@\@\@Z
-     */
-    MCAPI static std::string getXuid(class Certificate const *);
-    /**
      * @symbol ?getXuid\@ExtendedCertificate\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVCertificate\@\@\@Z
      */
     MCAPI static std::string getXuid(class Certificate const &);

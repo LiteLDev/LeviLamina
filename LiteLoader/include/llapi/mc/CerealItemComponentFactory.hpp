@@ -55,14 +55,6 @@ public:
      * @symbol ?isRegisteredComponent\@CerealItemComponentFactory\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI static bool isRegisteredComponent(std::string const &);
-    /**
-     * @symbol ?resetItemContext\@CerealItemComponentFactory\@\@SAXXZ
-     */
-    MCAPI static void resetItemContext();
-    /**
-     * @symbol ?setItemContext\@CerealItemComponentFactory\@\@SAXPEAVComponentItem\@\@\@Z
-     */
-    MCAPI static void setItemContext(class ComponentItem *);
 
 //private:
 

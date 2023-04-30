@@ -45,9 +45,5 @@ public:
      * @symbol ?postProcess\@DesertPyramidPiece\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &);
-    /**
-     * @symbol ??0DesertPyramidPiece\@\@QEAA\@FHH\@Z
-     */
-    MCAPI DesertPyramidPiece(short, int, int);
 
 };

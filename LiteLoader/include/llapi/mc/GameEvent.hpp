@@ -30,14 +30,6 @@ public:
 
 public:
     /**
-     * @symbol ?getRadius\@GameEvent\@\@QEBAMXZ
-     */
-    MCAPI float getRadius() const;
-    /**
-     * @symbol ?getRadiusSqrd\@GameEvent\@\@QEBAMXZ
-     */
-    MCAPI float getRadiusSqrd() const;
-    /**
      * @symbol ?getType\@GameEvent\@\@QEBA?BW4GameEventType\@GameEventConfig\@\@XZ
      */
     MCAPI enum class GameEventConfig::GameEventType const getType() const;

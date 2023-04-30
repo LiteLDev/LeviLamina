@@ -31,10 +31,6 @@ public:
 
 public:
     /**
-     * @symbol ?areKnownFilesValid\@ResourceSignature\@\@QEAA_NAEBVPackAccessStrategy\@\@\@Z
-     */
-    MCAPI bool areKnownFilesValid(class PackAccessStrategy const &);
-    /**
      * @symbol ??1ResourceSignature\@\@QEAA\@XZ
      */
     MCAPI ~ResourceSignature();

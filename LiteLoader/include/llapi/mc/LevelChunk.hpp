@@ -251,13 +251,13 @@ public:
      */
     MCAPI class Dimension & getDimension() const;
     /**
-     * @symbol ?getEntities\@LevelChunk\@\@QEBAXV?$span\@V?$not_null\@PEBVActor\@\@\@gsl\@\@$0?0\@gsl\@\@AEBVAABB\@\@AEAV?$vector\@PEAVActor\@\@V?$allocator\@PEAVActor\@\@\@std\@\@\@std\@\@_N\@Z
-     */
-    MCAPI void getEntities(class gsl::span<class gsl::not_null<class Actor const *>, -1>, class AABB const &, std::vector<class Actor *> &, bool) const;
-    /**
      * @symbol ?getEntities\@LevelChunk\@\@QEBAXW4ActorType\@\@AEBVAABB\@\@AEAV?$vector\@PEAVActor\@\@V?$allocator\@PEAVActor\@\@\@std\@\@\@std\@\@_N\@Z
      */
     MCAPI void getEntities(enum class ActorType, class AABB const &, std::vector<class Actor *> &, bool) const;
+    /**
+     * @symbol ?getEntities\@LevelChunk\@\@QEBAXV?$span\@V?$not_null\@PEBVActor\@\@\@gsl\@\@$0?0\@gsl\@\@AEBVAABB\@\@AEAV?$vector\@PEAVActor\@\@V?$allocator\@PEAVActor\@\@\@std\@\@\@std\@\@_N\@Z
+     */
+    MCAPI void getEntities(class gsl::span<class gsl::not_null<class Actor const *>, -1>, class AABB const &, std::vector<class Actor *> &, bool) const;
     /**
      * @symbol ?getEntity\@LevelChunk\@\@QEBAPEAVActor\@\@AEBUActorUniqueID\@\@\@Z
      */
@@ -351,13 +351,13 @@ public:
      */
     MCAPI class ChunkPos const & getPosition() const;
     /**
-     * @symbol ?getPreWorldGenHeightmap\@LevelChunk\@\@QEBA?AVChunkLocalHeight\@\@AEBVChunkBlockPos\@\@\@Z
-     */
-    MCAPI class ChunkLocalHeight getPreWorldGenHeightmap(class ChunkBlockPos const &) const;
-    /**
      * @symbol ?getPreWorldGenHeightmap\@LevelChunk\@\@QEBA?AVHeightmapWrapper\@\@XZ
      */
     MCAPI class HeightmapWrapper getPreWorldGenHeightmap() const;
+    /**
+     * @symbol ?getPreWorldGenHeightmap\@LevelChunk\@\@QEBA?AVChunkLocalHeight\@\@AEBVChunkBlockPos\@\@\@Z
+     */
+    MCAPI class ChunkLocalHeight getPreWorldGenHeightmap(class ChunkBlockPos const &) const;
     /**
      * @symbol ?getPreservedBlockEntities\@LevelChunk\@\@QEBAAEBV?$vector\@V?$shared_ptr\@VBlockActor\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VBlockActor\@\@\@std\@\@\@2\@\@std\@\@XZ
      */
@@ -379,13 +379,13 @@ public:
      */
     MCAPI struct std::atomic<enum class ChunkState> const & getState() const;
     /**
-     * @symbol ?getSubChunk\@LevelChunk\@\@QEAAPEAUSubChunk\@\@F\@Z
-     */
-    MCAPI struct SubChunk * getSubChunk(short);
-    /**
      * @symbol ?getSubChunk\@LevelChunk\@\@QEBAPEBUSubChunk\@\@F\@Z
      */
     MCAPI struct SubChunk const * getSubChunk(short) const;
+    /**
+     * @symbol ?getSubChunk\@LevelChunk\@\@QEAAPEAUSubChunk\@\@F\@Z
+     */
+    MCAPI struct SubChunk * getSubChunk(short);
     /**
      * @symbol ?getSurfaceBiome\@LevelChunk\@\@QEBAAEBVBiome\@\@VChunkBlockPos\@\@\@Z
      */
@@ -427,6 +427,10 @@ public:
      */
     MCAPI bool hasEntity(class WeakEntityRef);
     /**
+     * @symbol ?isAnyBlockEntityDirty\@LevelChunk\@\@QEAA_NXZ
+     */
+    MCAPI bool isAnyBlockEntityDirty();
+    /**
      * @symbol ?isBlockInChunk\@LevelChunk\@\@QEBA_NAEBVBlockPos\@\@\@Z
      */
     MCAPI bool isBlockInChunk(class BlockPos const &) const;
@@ -450,10 +454,6 @@ public:
      * @symbol ?isReadOnly\@LevelChunk\@\@QEBA_NXZ
      */
     MCAPI bool isReadOnly() const;
-    /**
-     * @symbol ?isServerGeneratedClientChunk\@LevelChunk\@\@QEBA_NXZ
-     */
-    MCAPI bool isServerGeneratedClientChunk() const;
     /**
      * @symbol ?isSkyLit\@LevelChunk\@\@QEBA_NAEBVChunkBlockPos\@\@\@Z
      */
@@ -514,14 +514,6 @@ public:
      * @symbol ?populateHeightMapDataForSubChunkPacket\@LevelChunk\@\@QEBAXFAEAUSubChunkPacketData\@SubChunkPacket\@\@\@Z
      */
     MCAPI void populateHeightMapDataForSubChunkPacket(short, struct SubChunkPacket::SubChunkPacketData &) const;
-    /**
-     * @symbol ?pruneBiomesAboveHeightmap\@LevelChunk\@\@QEAAXXZ
-     */
-    MCAPI void pruneBiomesAboveHeightmap();
-    /**
-     * @symbol ?recalculateSubchunkHashes\@LevelChunk\@\@QEAAX_N\@Z
-     */
-    MCAPI void recalculateSubchunkHashes(bool);
     /**
      * @symbol ?recomputeHeightMap\@LevelChunk\@\@QEAAX_N\@Z
      */
@@ -655,10 +647,6 @@ public:
      */
     MCAPI void setHadSerializedEntities();
     /**
-     * @symbol ?setIsClientGeneratedChunk\@LevelChunk\@\@QEAAX_N\@Z
-     */
-    MCAPI void setIsClientGeneratedChunk(bool);
-    /**
      * @symbol ?setMetaData\@LevelChunk\@\@QEAAXV?$shared_ptr\@VLevelChunkMetaData\@\@\@std\@\@\@Z
      */
     MCAPI void setMetaData(class std::shared_ptr<class LevelChunkMetaData>);
@@ -710,10 +698,6 @@ public:
      * @symbol ?toWorldPos\@LevelChunk\@\@QEBA?AVBlockPos\@\@AEBVChunkBlockPos\@\@\@Z
      */
     MCAPI class BlockPos toWorldPos(class ChunkBlockPos const &) const;
-    /**
-     * @symbol ?tryChangeState\@LevelChunk\@\@QEAA_NW4ChunkState\@\@0\@Z
-     */
-    MCAPI bool tryChangeState(enum class ChunkState, enum class ChunkState);
     /**
      * @symbol ?trySpawnSkeletonTrap\@LevelChunk\@\@QEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */

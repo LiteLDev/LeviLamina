@@ -403,8 +403,8 @@ public:
         }
         template <ParameterType type, typename T>
         CommandParameterData makeParameterData() const {
-            CommandParameterData param{
-                type == ParameterType::Enum ? typeid_t<CommandRegistry>::count++ : type_id<CommandRegistry, T>(),
+            CommandParameterData param{type == ParameterType::Enum ? Bedrock::typeid_t<CommandRegistry>::count++
+                                                                   : Bedrock::type_id<CommandRegistry, T>(),
                 type == ParameterType::Enum ? &CommandRegistry::fakeParse<T> : CommandRegistry::getParseFn<T>(),
                 name,
                 getCommandParameterDataType<type>(),

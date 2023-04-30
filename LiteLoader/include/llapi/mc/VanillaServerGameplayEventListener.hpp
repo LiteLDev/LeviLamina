@@ -31,6 +31,10 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLASERVERGAMEPLAYEVENTLISTENER
     /**
+     * @symbol ?onActorCreationAttemptFailed\@VanillaServerGameplayEventListener\@\@UEAA?AW4EventResult\@\@AEAVActor\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
+     */
+    MCVAPI enum class EventResult onActorCreationAttemptFailed(class Actor &, class std::basic_string_view<char, struct std::char_traits<char>>);
+    /**
      * @symbol ?onBlockInteractedWith\@VanillaServerGameplayEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
     MCVAPI enum class EventResult onBlockInteractedWith(class Player &, class BlockPos const &);

@@ -30,10 +30,6 @@ public:
 
 public:
     /**
-     * @symbol ??0DisplayObjective\@\@QEAA\@AEBVObjective\@\@W4ObjectiveSortOrder\@\@\@Z
-     */
-    MCAPI DisplayObjective(class Objective const &, enum class ObjectiveSortOrder);
-    /**
      * @symbol ?getBelowNameStringForId\@DisplayObjective\@\@QEBA?BV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUScoreboardId\@\@\@Z
      */
     MCAPI std::string const getBelowNameStringForId(struct ScoreboardId const &) const;

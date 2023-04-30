@@ -60,13 +60,13 @@ public:
     MCVAPI ~BookEditPacket();
 #endif
     /**
-     * @symbol ??0BookEditPacket\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI BookEditPacket(class BookEditPacket const &);
-    /**
      * @symbol ??0BookEditPacket\@\@QEAA\@XZ
      */
     MCAPI BookEditPacket();
+    /**
+     * @symbol ??0BookEditPacket\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI BookEditPacket(class BookEditPacket const &);
     /**
      * @symbol ?getPage\@BookEditPacket\@\@QEBA?AUPageContent\@\@XZ
      */

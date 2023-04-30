@@ -48,9 +48,9 @@ public:
      */
     MCAPI static class HashedString const & getBlockNameFromNameHash(unsigned __int64);
     /**
-     * @symbol ?getComplexAliasPostSplitBlockNames\@BlockTypeRegistry\@\@SAAEBV?$vector\@VHashedString\@\@V?$allocator\@VHashedString\@\@\@std\@\@\@std\@\@AEBVHashedString\@\@\@Z
+     * @symbol ?getComplexAliasPostSplitBlockNames\@BlockTypeRegistry\@\@SAAEBV?$vector\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@V?$allocator\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@\@2\@\@std\@\@AEBVHashedString\@\@\@Z
      */
-    MCAPI static std::vector<class HashedString> const & getComplexAliasPostSplitBlockNames(class HashedString const &);
+    MCAPI static std::vector<class std::reference_wrapper<class HashedString const>> const & getComplexAliasPostSplitBlockNames(class HashedString const &);
     /**
      * @symbol ?getDefaultBlockState\@BlockTypeRegistry\@\@SAAEBVBlock\@\@AEBVHashedString\@\@_N\@Z
      */
@@ -84,13 +84,13 @@ public:
      */
     MCAPI static class WeakPtr<class BlockLegacy> lookupByName(class HashedString const &, bool);
     /**
-     * @symbol ?lookupByName\@BlockTypeRegistry\@\@SAPEBVBlock\@\@AEBVHashedString\@\@AEBV?$vector\@UBlockComplexAliasBlockState\@BlockTypeRegistry\@\@V?$allocator\@UBlockComplexAliasBlockState\@BlockTypeRegistry\@\@\@std\@\@\@std\@\@_N\@Z
-     */
-    MCAPI static class Block const * lookupByName(class HashedString const &, std::vector<struct BlockTypeRegistry::BlockComplexAliasBlockState> const &, bool);
-    /**
      * @symbol ?lookupByName\@BlockTypeRegistry\@\@SAPEBVBlock\@\@AEBVHashedString\@\@H_N\@Z
      */
     MCAPI static class Block const * lookupByName(class HashedString const &, int, bool);
+    /**
+     * @symbol ?lookupByName\@BlockTypeRegistry\@\@SAPEBVBlock\@\@AEBVHashedString\@\@AEBV?$vector\@UBlockComplexAliasBlockState\@BlockTypeRegistry\@\@V?$allocator\@UBlockComplexAliasBlockState\@BlockTypeRegistry\@\@\@std\@\@\@std\@\@_N\@Z
+     */
+    MCAPI static class Block const * lookupByName(class HashedString const &, std::vector<struct BlockTypeRegistry::BlockComplexAliasBlockState> const &, bool);
     /**
      * @symbol ?prepareBlocks\@BlockTypeRegistry\@\@SAXI\@Z
      */
@@ -100,9 +100,9 @@ public:
      */
     MCAPI static void registerAlias(class HashedString const &, class HashedString const &);
     /**
-     * @symbol ?registerComplexAlias\@BlockTypeRegistry\@\@SAXAEBVHashedString\@\@V?$function\@$$A6APEBVBlock\@\@H\@Z\@std\@\@AEBV?$vector\@VHashedString\@\@V?$allocator\@VHashedString\@\@\@std\@\@\@4\@AEBVBaseGameVersion\@\@\@Z
+     * @symbol ?registerComplexAlias\@BlockTypeRegistry\@\@SAXAEBVHashedString\@\@V?$function\@$$A6APEBVBlock\@\@H\@Z\@std\@\@AEBV?$vector\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@V?$allocator\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@\@2\@\@4\@AEBVBaseGameVersion\@\@\@Z
      */
-    MCAPI static void registerComplexAlias(class HashedString const &, class std::function<class Block const * (int)>, std::vector<class HashedString> const &, class BaseGameVersion const &);
+    MCAPI static void registerComplexAlias(class HashedString const &, class std::function<class Block const * (int)>, std::vector<class std::reference_wrapper<class HashedString const>> const &, class BaseGameVersion const &);
     /**
      * @symbol ?unregisterBlock\@BlockTypeRegistry\@\@SAXAEBVHashedString\@\@\@Z
      */
@@ -117,10 +117,6 @@ public:
      * @symbol ?_lookupByNameImpl\@BlockTypeRegistry\@\@CA?AULookupByNameImplReturnType\@1\@AEBVHashedString\@\@HW4LookupByNameImplResolve\@1\@_N\@Z
      */
     MCAPI static struct BlockTypeRegistry::LookupByNameImplReturnType _lookupByNameImpl(class HashedString const &, int, enum class BlockTypeRegistry::LookupByNameImplResolve, bool);
-    /**
-     * @symbol ?_lookupByNameImplSetNewBlockStates\@BlockTypeRegistry\@\@CAPEBVBlock\@\@AEBV2\@AEBV?$vector\@UBlockComplexAliasBlockState\@BlockTypeRegistry\@\@V?$allocator\@UBlockComplexAliasBlockState\@BlockTypeRegistry\@\@\@std\@\@\@std\@\@\@Z
-     */
-    MCAPI static class Block const * _lookupByNameImplSetNewBlockStates(class Block const &, std::vector<struct BlockTypeRegistry::BlockComplexAliasBlockState> const &);
 
 private:
     /**
@@ -132,9 +128,9 @@ private:
      */
     MCAPI static class std::unordered_map<class HashedString, class BlockTypeRegistry::BlockComplexAliasContent, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class BlockTypeRegistry::BlockComplexAliasContent>>> mBlockComplexAliasLookupMap;
     /**
-     * @symbol ?mBlockComplexAliasPostSplitBlockNamesLookupMap\@BlockTypeRegistry\@\@0V?$map\@VHashedString\@\@V?$vector\@VHashedString\@\@V?$allocator\@VHashedString\@\@\@std\@\@\@std\@\@U?$less\@VHashedString\@\@\@3\@V?$allocator\@U?$pair\@$$CBVHashedString\@\@V?$vector\@VHashedString\@\@V?$allocator\@VHashedString\@\@\@std\@\@\@std\@\@\@std\@\@\@3\@\@std\@\@A
+     * @symbol ?mBlockComplexAliasPostSplitBlockNamesLookupMap\@BlockTypeRegistry\@\@0V?$map\@VHashedString\@\@V?$vector\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@V?$allocator\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@\@2\@\@std\@\@U?$less\@VHashedString\@\@\@3\@V?$allocator\@U?$pair\@$$CBVHashedString\@\@V?$vector\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@V?$allocator\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@\@2\@\@std\@\@\@std\@\@\@3\@\@std\@\@A
      */
-    MCAPI static class std::map<class HashedString, std::vector<class HashedString>, struct std::less<class HashedString>, class std::allocator<struct std::pair<class HashedString const, std::vector<class HashedString>>>> mBlockComplexAliasPostSplitBlockNamesLookupMap;
+    MCAPI static class std::map<class HashedString, std::vector<class std::reference_wrapper<class HashedString const>>, struct std::less<class HashedString>, class std::allocator<struct std::pair<class HashedString const, std::vector<class std::reference_wrapper<class HashedString const>>>>> mBlockComplexAliasPostSplitBlockNamesLookupMap;
     /**
      * @symbol ?mBlockLookupMap\@BlockTypeRegistry\@\@0V?$map\@VHashedString\@\@V?$SharedPtr\@VBlockLegacy\@\@\@\@U?$less\@VHashedString\@\@\@std\@\@V?$allocator\@U?$pair\@$$CBVHashedString\@\@V?$SharedPtr\@VBlockLegacy\@\@\@\@\@std\@\@\@4\@\@std\@\@A
      */

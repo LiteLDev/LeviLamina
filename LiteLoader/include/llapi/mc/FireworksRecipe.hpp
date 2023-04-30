@@ -37,9 +37,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?assemble\@FireworksRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@\@Z
+     * @symbol ?assemble\@FireworksRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@AEBUCraftingContext\@\@\@Z
      */
-    virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &) const;
+    virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &, struct CraftingContext const &) const;
     /**
      * @vftbl 2
      * @symbol ?getCraftingSize\@FireworksRecipe\@\@UEBAHXZ
@@ -57,9 +57,9 @@ public:
     virtual std::vector<class ItemInstance> const & getResultItem() const;
     /**
      * @vftbl 5
-     * @symbol ?isShapeless\@FireworksRecipe\@\@UEBA_NXZ
+     * @symbol __unk_vfn_5
      */
-    virtual bool isShapeless() const;
+    virtual void __unk_vfn_5();
     /**
      * @vftbl 6
      * @symbol ?matches\@FireworksRecipe\@\@UEBA_NAEAVCraftingContainer\@\@AEAVLevel\@\@\@Z
@@ -70,6 +70,12 @@ public:
      * @symbol ?size\@FireworksRecipe\@\@UEBAHXZ
      */
     virtual int size() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FIREWORKSRECIPE
+    /**
+     * @symbol ?isShapeless\@FireworksRecipe\@\@UEBA_NXZ
+     */
+    MCVAPI bool isShapeless() const;
+#endif
     /**
      * @symbol ??0FireworksRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@PEBVUUID\@mce\@\@\@Z
      */
