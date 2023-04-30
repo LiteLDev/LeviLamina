@@ -111,7 +111,6 @@ bool loadPluginCode(script::ScriptEngine* engine, std::string entryScriptPath, s
     if (!EndsWith(pluginDirPath, "/"))
         pluginDirPath += "/";
     pluginDirPath = ReplaceStr(pluginDirPath, "\\", "/");
-    entryScriptPath = ReplaceStr(entryScriptPath, "\\", "/");
 
     // Find setup
     auto it = setups->find(engine);
