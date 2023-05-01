@@ -1363,8 +1363,9 @@ TInstanceHook(bool, "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z", GameMode,
 }
 
 /////////////////// PlayerUseItemOn ///////////////////
-TInstanceHook(bool, "?useItemOn@GameMode@@UEAA?AVInteractionResult@@AEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z", GameMode,
-              ItemStack& item, BlockPos blockPosPtr, unsigned char side, Vec3* clickPos, void* a6_block) {
+TInstanceHook(InteractionResult,
+              "?useItemOn@GameMode@@UEAA?AVInteractionResult@@AEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z",
+              GameMode, ItemStack& item, BlockPos& blockPosPtr, unsigned char side, Vec3* clickPos, Block* block) {
     IF_LISTENED(PlayerUseItemOnEvent) {
         PlayerUseItemOnEvent ev{};
         ev.mPlayer = this->getPlayer();
@@ -1373,10 +1374,10 @@ TInstanceHook(bool, "?useItemOn@GameMode@@UEAA?AVInteractionResult@@AEAVItemStac
         ev.mFace = side;
         ev.mClickPos = *clickPos;
         if (!ev.call())
-            return false;
+            return InteractionResult { InteractionResult::Fail };
     }
     IF_LISTENED_END(PlayerUseItemOnEvent)
-    return original(this, item, blockPosPtr, side, clickPos, a6_block);
+    return original(this, item, blockPosPtr, side, clickPos, block);
 }
 
 /////////////////// PlayerUseBucket ///////////////////
@@ -1486,8 +1487,8 @@ THook(void, "?implInteraction@BucketableComponent@@SAXAEAVActor@@AEAVPlayer@@@Z"
     return original(actor, player);
 }
 
-TInstanceHook(bool, "?useOn@ItemStack@@QEAA?AVInteractionResult@@AEAVActor@@HHHEAEBVVec3@@@Z", ItemStack, Actor* actor, int x, int y, int z,
-              unsigned char face, Vec3 clickPos) {
+TInstanceHook(InteractionResult, "?useOn@ItemStack@@QEAA?AVInteractionResult@@AEAVActor@@HHHEAEBVVec3@@@Z", ItemStack, Actor* actor,
+              int x, int y, int z, unsigned char face, Vec3 clickPos) {
     IF_LISTENED(PlayerUseBucketEvent) {
         if (actor->getTypeName() != "minecraft:player") {
             PlayerUseBucketEvent ev{};
@@ -1498,7 +1499,7 @@ TInstanceHook(bool, "?useOn@ItemStack@@QEAA?AVInteractionResult@@AEAVActor@@HHHE
             ev.mTargetActor = actor;
             ev.mFace = face;
             if (!ev.call())
-                return false;
+                return InteractionResult { InteractionResult::Fail };
         }
     }
     IF_LISTENED_END(PlayerUseBucketEvent)
@@ -1838,7 +1839,8 @@ TClasslessInstanceHook(void, "?releaseUsing@TridentItem@@UEBAXAEAVItemStack@@PEA
 
 ////////////// NpcCmd //////////////
 TInstanceHook(void,
-              "?executeCommandAction@NpcComponent@@QEAAXAEAVActor@@AEAVPlayer@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+              "?executeCommandAction@NpcComponent@@QEAAXAEAVActor@@AEAVPlayer@@HAEBV?$basic_string@DU?$char_traits@D@"
+              "std@@V?$allocator@D@2@@std@@@Z",
               NpcComponent, Actor* ac, Player* player, int a4, string& a5) {
     IF_LISTENED(NpcCmdEvent) {
         // IDA NpcComponent::executeCommandAction
@@ -1858,7 +1860,6 @@ TInstanceHook(void,
                     if (!ev.call())
                         return;
                 }
-               
             }
         }
     }
@@ -2132,11 +2133,15 @@ TClasslessInstanceHook(void, "?_setRespawnStage@EndDragonFight@@AEAAXW4RespawnAn
         IF_LISTENED_END(MobSpawnedEvent)
     }
 }
+
 #include "llapi/mc/Village.hpp"
-TInstanceHook(void,"?_spawnRaidGroup@Village@@AEBA_NVVec3@@EAEAV?$unordered_set@UActorUniqueID@@U?$hash@UActorUniqueID@@@std@@U?$equal_to@UActorUniqueID@@@3@V?$allocator@UActorUniqueID@@@3@@std@@@Z",
-              Village, Vec3 pos, unsigned char num, std::unordered_set<long long> &actorIDs){
+
+TInstanceHook(void,
+              "?_spawnRaidGroup@Village@@AEBA_NVVec3@@EAEAV?$unordered_set@UActorUniqueID@@U?$hash@UActorUniqueID@@@"
+              "std@@U?$equal_to@UActorUniqueID@@@3@V?$allocator@UActorUniqueID@@@3@@std@@@Z",
+              Village, Vec3 pos, unsigned char num, std::unordered_set<long long>& actorIDs) {
     // actorIDs其实是std::unordered_set<ActorUniqueID>，懒得写hash函数
-    original(this,pos,num,actorIDs);
+    original(this, pos, num, actorIDs);
     IF_LISTENED(RaidMobSpawnEvent) {
         RaidMobSpawnEvent ev{};
         ev.mVillageCenter = this->getCenter();

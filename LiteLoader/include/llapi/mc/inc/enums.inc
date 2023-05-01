@@ -1170,5 +1170,14 @@ enum class BlockProperty : int64_t {
     CanHaltWhenClimbing          = 0x1000000000000,
 };
 
+#include <type_traits>
+class InteractionResult {
+public:
+    enum Result : __int32 {
+        Success = 0x1,
+        Fail = 0x2,
+    };
+    std::underlying_type_t<InteractionResult::Result> mResult;
+};
 
 // clang-format on
