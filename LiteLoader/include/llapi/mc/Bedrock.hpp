@@ -207,8 +207,7 @@ MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandIntegerRange>();
 template <>
 inline typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>() {
     static typeid_t<CommandRegistry> id =
-        *(typeid_t<CommandRegistry>*)dlsym_real("?id@?1???$type_id@VCommandRegistry@@PEBUActorDefinitionIdentifier@@@@"
-                                                "YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
+        *(typeid_t<CommandRegistry>*)dlsym_real("??$type_id@VCommandRegistry@@PEBUActorDefinitionIdentifier@@@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@@@0@XZ");
 //     static typeid_t<CommandRegistry> id = ([]() -> typeid_t<CommandRegistry> {
 //        CommandParameterData data =
 //        SymCall("??$mandatory@VRideCommand@@PEBUActorDefinitionIdentifier@@@commands@@YA?AVCommandParameterData@@PEQRideCommand@@PEBUActorDefinitionIdentifier@@PEBDPEQ2@_N@Z",
@@ -221,7 +220,7 @@ inline typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentif
 template <>
 inline typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>() {
     static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)dlsym_real(
-        "?id@?1???$type_id@VCommandRegistry@@VCommandItem@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
+        "??$type_id@VCommandRegistry@@VCommandItem@@@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@@@0@XZ");
     return id;
 };
 
@@ -235,7 +234,7 @@ inline typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>() {
 template <>
 inline typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandBlockName>() {
     static typeid_t<CommandRegistry> id = *(typeid_t<CommandRegistry>*)dlsym_real(
-        "?id@?1???$type_id@VCommandRegistry@@VCommandBlockName@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
+        "??$type_id@VCommandRegistry@@VCommandBlockName@@@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@@@0@XZ");
     return id;
 };
 
