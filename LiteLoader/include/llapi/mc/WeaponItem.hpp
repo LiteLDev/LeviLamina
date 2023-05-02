@@ -156,9 +156,5 @@ public:
      * @symbol ?hurtActor\@WeaponItem\@\@UEBAXAEAVItemStack\@\@AEAVActor\@\@AEAVMob\@\@\@Z
      */
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
-    /**
-     * @symbol ??0WeaponItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVTier\@Item\@\@\@Z
-     */
-    MCAPI WeaponItem(std::string const &, int, class Item::Tier const &);
 
 };

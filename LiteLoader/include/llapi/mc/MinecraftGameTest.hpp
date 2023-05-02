@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "gametest.hpp"
 #include "BlockSourceListener.hpp"
 
 #define BEFORE_EXTRA
@@ -184,6 +185,10 @@ public:
      * @symbol ?runTests\@MinecraftGameTest\@\@QEAAAEBV?$vector\@V?$shared_ptr\@VBaseGameTestInstance\@gametest\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VBaseGameTestInstance\@gametest\@\@\@std\@\@\@2\@\@std\@\@AEAVDimension\@\@$$QEAUTestParameters\@gametest\@\@\@Z
      */
     MCAPI std::vector<class std::shared_ptr<class gametest::BaseGameTestInstance>> const & runTests(class Dimension &, struct gametest::TestParameters &&);
+    /**
+     * @symbol ?stopAllTests\@MinecraftGameTest\@\@QEAAXXZ
+     */
+    MCAPI void stopAllTests();
 
 //private:
     /**

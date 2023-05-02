@@ -51,9 +51,10 @@ public:
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @symbol ?_fromString\@RenderOffsetsItemComponent\@\@CAXAEAV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
-    MCAPI static void _fromString(class RenderOffsetsItemComponent &, std::string const &);
+    virtual void __unk_vfn_2();
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
@@ -84,10 +85,6 @@ public:
     MCAPI static class HashedString const & getIdentifier();
 
 //private:
-    /**
-     * @symbol ?_fromString\@RenderOffsetsItemComponent\@\@CAXAEAV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static void _fromString(class RenderOffsetsItemComponent &, std::string const &);
 
 private:
     /**

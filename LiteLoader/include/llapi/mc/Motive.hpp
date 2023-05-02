@@ -30,21 +30,9 @@ public:
 
 public:
     /**
-     * @symbol ?getHeight\@Motive\@\@QEBAHXZ
-     */
-    MCAPI int getHeight() const;
-    /**
      * @symbol ?getName\@Motive\@\@QEBA?BV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string const getName() const;
-    /**
-     * @symbol ?getWidth\@Motive\@\@QEBAHXZ
-     */
-    MCAPI int getWidth() const;
-    /**
-     * @symbol ?isPublic\@Motive\@\@QEBA_NXZ
-     */
-    MCAPI bool isPublic() const;
     /**
      * @symbol ?getAllMotivesAsList\@Motive\@\@SA?AV?$vector\@PEBVMotive\@\@V?$allocator\@PEBVMotive\@\@\@std\@\@\@std\@\@XZ
      */

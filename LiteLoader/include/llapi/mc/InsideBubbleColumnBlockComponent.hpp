@@ -31,9 +31,5 @@ public:
      * @symbol ??4InsideBubbleColumnBlockComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct InsideBubbleColumnBlockComponent & operator=(struct InsideBubbleColumnBlockComponent &&);
-    /**
-     * @symbol ??1InsideBubbleColumnBlockComponent\@\@QEAA\@XZ
-     */
-    MCAPI ~InsideBubbleColumnBlockComponent();
 
 };

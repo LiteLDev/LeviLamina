@@ -56,10 +56,6 @@ public:
      */
     MCAPI ItemDescriptor(class std::basic_string_view<char, struct std::char_traits<char>>, int);
     /**
-     * @symbol ??0ItemDescriptor\@\@QEAA\@XZ
-     */
-    MCAPI ItemDescriptor();
-    /**
      * @symbol ??0ItemDescriptor\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI ItemDescriptor(class ItemDescriptor const &);
@@ -68,13 +64,13 @@ public:
      */
     MCAPI ItemDescriptor(class ReadOnlyBinaryStream &);
     /**
+     * @symbol ??0ItemDescriptor\@\@QEAA\@XZ
+     */
+    MCAPI ItemDescriptor();
+    /**
      * @symbol ??0ItemDescriptor\@\@QEAA\@AEBUItemTag\@\@\@Z
      */
     MCAPI ItemDescriptor(struct ItemTag const &);
-    /**
-     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVBlockLegacy\@\@\@Z
-     */
-    MCAPI ItemDescriptor(class BlockLegacy const &);
     /**
      * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
@@ -87,6 +83,10 @@ public:
      * @symbol ??0ItemDescriptor\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI ItemDescriptor(class ItemDescriptor &&);
+    /**
+     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVBlockLegacy\@\@\@Z
+     */
+    MCAPI ItemDescriptor(class BlockLegacy const &);
     /**
      * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVBlock\@\@\@Z
      */

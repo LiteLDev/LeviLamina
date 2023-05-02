@@ -57,10 +57,6 @@ public:
      */
     MCAPI std::string const & getTarget() const;
     /**
-     * @symbol ?getTargetPool\@JigsawEditorData\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string const & getTargetPool() const;
-    /**
      * @symbol ?load\@JigsawEditorData\@\@QEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     MCAPI void load(class CompoundTag const &, class DataLoadHelper &);

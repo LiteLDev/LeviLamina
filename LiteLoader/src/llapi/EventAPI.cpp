@@ -32,10 +32,8 @@
 #include "llapi/mc/PlayerActionPacket.hpp"
 #include "llapi/mc/RespawnPacket.hpp"
 #include "llapi/mc/Scoreboard.hpp"
-#include "llapi/mc/NpcActionsContainer.hpp"
 #include "llapi/mc/NpcSceneDialogueData.hpp"
 #include "llapi/mc/ArmorStand.hpp"
-#include "llapi/mc/NpcAction.hpp"
 #include "llapi/mc/NpcComponent.hpp"
 #include "llapi/mc/Container.hpp"
 #include "llapi/mc/ScoreboardId.hpp"
@@ -302,6 +300,7 @@ DECLARE_EVENT_DATA(PlayerBedEnterEvent);
 DECLARE_EVENT_DATA(ScriptPluginManagerEvent);
 DECLARE_EVENT_DATA(MobTrySpawnEvent);
 DECLARE_EVENT_DATA(MobSpawnedEvent);
+DECLARE_EVENT_DATA(RaidMobSpawnEvent);
 DECLARE_EVENT_DATA(FormResponsePacketEvent);
 DECLARE_EVENT_DATA(ResourcePackInitEvent);
 DECLARE_EVENT_DATA(PlayerOpenInventoryEvent);
@@ -1364,8 +1363,9 @@ TInstanceHook(bool, "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z", GameMode,
 }
 
 /////////////////// PlayerUseItemOn ///////////////////
-TInstanceHook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z", GameMode,
-              ItemStack& item, BlockPos blockPosPtr, unsigned char side, Vec3* clickPos, void* a6_block) {
+TInstanceHook(InteractionResult,
+              "?useItemOn@GameMode@@UEAA?AVInteractionResult@@AEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z",
+              GameMode, ItemStack& item, BlockPos& blockPosPtr, unsigned char side, Vec3* clickPos, Block* block) {
     IF_LISTENED(PlayerUseItemOnEvent) {
         PlayerUseItemOnEvent ev{};
         ev.mPlayer = this->getPlayer();
@@ -1374,10 +1374,10 @@ TInstanceHook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAE
         ev.mFace = side;
         ev.mClickPos = *clickPos;
         if (!ev.call())
-            return false;
+            return InteractionResult { InteractionResult::Fail };
     }
     IF_LISTENED_END(PlayerUseItemOnEvent)
-    return original(this, item, blockPosPtr, side, clickPos, a6_block);
+    return original(this, item, blockPosPtr, side, clickPos, block);
 }
 
 /////////////////// PlayerUseBucket ///////////////////
@@ -1436,7 +1436,7 @@ struct BucketPlayerAndActor {
 };
 
 // 也许这个结构体可以用偏移获取替代？
-THook(void, "<lambda_5478cd0ac89791b5579ee785b32a789a>::operator()", BucketPlayerAndActor* a1) {
+THook(void, "<lambda_7e34d7d5fccf0904e478400d9cd01bf3>::operator()", BucketPlayerAndActor* a1) {
     IF_LISTENED(PlayerUseBucketEvent) {
         BucketPlayerAndActor mBucketPlayerAndActor = *a1;
         if (mBucketPlayerAndActor.owner->getTypeName() == "minecraft:cow" ||
@@ -1487,8 +1487,8 @@ THook(void, "?implInteraction@BucketableComponent@@SAXAEAVActor@@AEAVPlayer@@@Z"
     return original(actor, player);
 }
 
-TInstanceHook(bool, "?useOn@ItemStack@@QEAA_NAEAVActor@@HHHEAEBVVec3@@@Z", ItemStack, Actor* actor, int x, int y, int z,
-              unsigned char face, Vec3 clickPos) {
+TInstanceHook(InteractionResult, "?useOn@ItemStack@@QEAA?AVInteractionResult@@AEAVActor@@HHHEAEBVVec3@@@Z", ItemStack, Actor* actor,
+              int x, int y, int z, unsigned char face, Vec3 clickPos) {
     IF_LISTENED(PlayerUseBucketEvent) {
         if (actor->getTypeName() != "minecraft:player") {
             PlayerUseBucketEvent ev{};
@@ -1499,7 +1499,7 @@ TInstanceHook(bool, "?useOn@ItemStack@@QEAA_NAEAVActor@@HHHEAEBVVec3@@@Z", ItemS
             ev.mTargetActor = actor;
             ev.mFace = face;
             if (!ev.call())
-                return false;
+                return InteractionResult { InteractionResult::Fail };
         }
     }
     IF_LISTENED_END(PlayerUseBucketEvent)
@@ -1835,6 +1835,7 @@ TClasslessInstanceHook(void, "?releaseUsing@TridentItem@@UEBAXAEAVItemStack@@PEA
 
 #include "llapi/mc/WeakEntityRef.hpp"
 #include "llapi/mc/EntityContext.hpp"
+#include "llapi/mc/Npc.hpp"
 
 ////////////// NpcCmd //////////////
 TInstanceHook(void,
@@ -1848,15 +1849,18 @@ TInstanceHook(void,
         NpcSceneDialogueData data(WeakEntityRef(ac->getEntityContext().getWeakRef()), a5);
 
         auto container = data.getActionsContainer();
-        auto actionAt = container->getActionAt(a4);
-        if (actionAt && dAccess<char>(actionAt, 8) == (char)1) {
-
-            NpcCmdEvent ev{};
-            ev.mPlayer = player;
-            ev.mNpc = ac;
-            ev.mCommand = actionAt->getText();
-            if (!ev.call())
-                return;
+        if (container) {
+            auto actionAt = container->at(a4);
+            if (actionAt) {
+                if (auto* command = std::get_if<npc::CommandAction>(actionAt)) {
+                    NpcCmdEvent ev{};
+                    ev.mPlayer = player;
+                    ev.mNpc = ac;
+                    ev.mCommand = command->mActionValue.mText;
+                    if (!ev.call())
+                        return;
+                }
+            }
         }
     }
     IF_LISTENED_END(NpcCmdEvent)
@@ -2128,6 +2132,25 @@ TClasslessInstanceHook(void, "?_setRespawnStage@EndDragonFight@@AEAAXW4RespawnAn
         }
         IF_LISTENED_END(MobSpawnedEvent)
     }
+}
+
+#include "llapi/mc/Village.hpp"
+
+TInstanceHook(void,
+              "?_spawnRaidGroup@Village@@AEBA_NVVec3@@EAEAV?$unordered_set@UActorUniqueID@@U?$hash@UActorUniqueID@@@"
+              "std@@U?$equal_to@UActorUniqueID@@@3@V?$allocator@UActorUniqueID@@@3@@std@@@Z",
+              Village, Vec3 pos, unsigned char num, std::unordered_set<long long>& actorIDs) {
+    // actorIDs其实是std::unordered_set<ActorUniqueID>，懒得写hash函数
+    original(this, pos, num, actorIDs);
+    IF_LISTENED(RaidMobSpawnEvent) {
+        RaidMobSpawnEvent ev{};
+        ev.mVillageCenter = this->getCenter();
+        ev.mPos = pos;
+        ev.mWaveNum = num;
+        ev.mActorNum = actorIDs.size();
+        ev.call();
+    }
+    IF_LISTENED_END(RaidMobSpawnEvent)
 }
 
 #include "llapi/impl/FormPacketHelper.h"

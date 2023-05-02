@@ -23,22 +23,16 @@ struct BlockStateDefinition {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSTATEDEFINITION
 public:
+    struct BlockStateDefinition& operator=(struct BlockStateDefinition const &) = delete;
+    BlockStateDefinition(struct BlockStateDefinition const &) = delete;
     BlockStateDefinition() = delete;
 #endif
 
 public:
     /**
-     * @symbol ??0BlockStateDefinition\@\@QEAA\@AEBU0\@\@Z
-     */
-    MCAPI BlockStateDefinition(struct BlockStateDefinition const &);
-    /**
      * @symbol ??4BlockStateDefinition\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct BlockStateDefinition & operator=(struct BlockStateDefinition &&);
-    /**
-     * @symbol ??4BlockStateDefinition\@\@QEAAAEAU0\@AEBU0\@\@Z
-     */
-    MCAPI struct BlockStateDefinition & operator=(struct BlockStateDefinition const &);
     /**
      * @symbol ??1BlockStateDefinition\@\@QEAA\@XZ
      */

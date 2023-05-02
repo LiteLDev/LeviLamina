@@ -54,6 +54,10 @@ public:
      */
     MCAPI unsigned __int64 getRemainingRaiders() const;
     /**
+     * @symbol ?isRaider\@Raid\@\@QEBA_NUActorUniqueID\@\@\@Z
+     */
+    MCAPI bool isRaider(struct ActorUniqueID) const;
+    /**
      * @symbol ?readAdditionalSaveData\@Raid\@\@QEAAXAEBVCompoundTag\@\@\@Z
      */
     MCAPI void readAdditionalSaveData(class CompoundTag const &);

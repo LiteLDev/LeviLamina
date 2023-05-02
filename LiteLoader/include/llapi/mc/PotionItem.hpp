@@ -58,11 +58,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @vftbl 50
-     * @symbol ?isGlint\@PotionItem\@\@MEBA_NAEBVItemStackBase\@\@\@Z
-     */
-    virtual bool isGlint(class ItemStackBase const &) const;
-    /**
      * @vftbl 51
      * @symbol __unk_vfn_51
      */
@@ -159,9 +154,9 @@ public:
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
      * @vftbl 132
-     * @symbol ?_useOn\@PotionItem\@\@EEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
+     * @symbol ?_useOn\@PotionItem\@\@EEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
-    virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
      * @vftbl 133
      * @symbol ?getPotionType\@PotionItem\@\@UEBA?AW4PotionType\@Potion\@\@XZ

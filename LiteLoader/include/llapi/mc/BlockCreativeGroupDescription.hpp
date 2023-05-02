@@ -12,7 +12,7 @@
 #undef BEFORE_EXTRA
 
 
-class BlockCreativeGroupDescription {
+struct BlockCreativeGroupDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -20,8 +20,8 @@ class BlockCreativeGroupDescription {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCREATIVEGROUPDESCRIPTION
 public:
-    class BlockCreativeGroupDescription& operator=(class BlockCreativeGroupDescription const &) = delete;
-    BlockCreativeGroupDescription(class BlockCreativeGroupDescription const &) = delete;
+    struct BlockCreativeGroupDescription& operator=(struct BlockCreativeGroupDescription const &) = delete;
+    BlockCreativeGroupDescription(struct BlockCreativeGroupDescription const &) = delete;
     BlockCreativeGroupDescription() = delete;
 #endif
 
@@ -40,9 +40,5 @@ public:
      * @symbol ?NameID\@BlockCreativeGroupDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NameID;
-    /**
-     * @symbol ?registerVersionUpgrades\@BlockCreativeGroupDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
-     */
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

@@ -59,7 +59,7 @@ TInstanceHook(void, "?setPermissions@Player@@QEAAXW4CommandPermissionLevel@@@Z",
 
 void LogCommandRegistration(std::string const& name, char const* description, enum CommandPermissionLevel perm,
                             short flag1, short flag2) {
-    static Logger logger("RegsterCommand");
+    static Logger logger("RegisterCommand");
     logger.consoleLevel = logger.debug.level;
     logger.debug("{:<18} - {:<12} - 0x{:<5x} - {}", name, magic_enum::enum_name(perm), flag1 | flag2, I18n::get(description));
 }

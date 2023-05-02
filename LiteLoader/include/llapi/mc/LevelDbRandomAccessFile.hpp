@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Core.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -40,9 +39,5 @@ public:
      * @symbol ?Read\@LevelDbRandomAccessFile\@\@UEBA?AVStatus\@leveldb\@\@_K0PEAVSlice\@3\@PEAD\@Z
      */
     virtual class leveldb::Status Read(unsigned __int64, unsigned __int64, class leveldb::Slice *, char *) const;
-    /**
-     * @symbol ??0LevelDbRandomAccessFile\@\@QEAA\@$$QEAVFile\@Core\@\@\@Z
-     */
-    MCAPI LevelDbRandomAccessFile(class Core::File &&);
 
 };

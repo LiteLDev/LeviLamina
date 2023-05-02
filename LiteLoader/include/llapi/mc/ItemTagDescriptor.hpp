@@ -13,15 +13,15 @@
 #undef BEFORE_EXTRA
 
 
-class ItemTagDescriptor {
+struct ItemTagDescriptor {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMTAGDESCRIPTOR
 public:
-    class ItemTagDescriptor& operator=(class ItemTagDescriptor const &) = delete;
-    ItemTagDescriptor(class ItemTagDescriptor const &) = delete;
+    struct ItemTagDescriptor& operator=(struct ItemTagDescriptor const &) = delete;
+    ItemTagDescriptor(struct ItemTagDescriptor const &) = delete;
     ItemTagDescriptor() = delete;
 #endif
 

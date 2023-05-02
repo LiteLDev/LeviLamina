@@ -52,17 +52,13 @@ public:
      */
     MCAPI MerchantRecipe(class ItemInstance const &, class ItemInstance const &, class ItemInstance const &);
     /**
-     * @symbol ??0MerchantRecipe\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI MerchantRecipe(class MerchantRecipe const &);
-    /**
-     * @symbol ??0MerchantRecipe\@\@QEAA\@PEBVCompoundTag\@\@\@Z
-     */
-    MCAPI MerchantRecipe(class CompoundTag const *);
-    /**
      * @symbol ??0MerchantRecipe\@\@QEAA\@AEBVItemInstance\@\@0\@Z
      */
     MCAPI MerchantRecipe(class ItemInstance const &, class ItemInstance const &);
+    /**
+     * @symbol ??0MerchantRecipe\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI MerchantRecipe(class MerchantRecipe const &);
     /**
      * @symbol ?calculateDemandPrices\@MerchantRecipe\@\@QEAAXHHH_N\@Z
      */
@@ -95,10 +91,6 @@ public:
      * @symbol ?getMaxUses\@MerchantRecipe\@\@QEBAHXZ
      */
     MCAPI int getMaxUses() const;
-    /**
-     * @symbol ?getNetId\@MerchantRecipe\@\@QEBAAEBV?$TypedServerNetId\@URecipeNetIdTag\@\@I$0A\@\@\@XZ
-     */
-    MCAPI class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const & getNetId() const;
     /**
      * @symbol ?getSellItem\@MerchantRecipe\@\@QEBAAEBVItemInstance\@\@XZ
      */
@@ -140,10 +132,6 @@ public:
      */
     MCAPI bool isSame(class MerchantRecipe const &) const;
     /**
-     * @symbol ?isSameButBetter\@MerchantRecipe\@\@QEBA_NAEAV1\@\@Z
-     */
-    MCAPI bool isSameButBetter(class MerchantRecipe &) const;
-    /**
      * @symbol ?legacyCalculateDemandPrices\@MerchantRecipe\@\@QEAAXHH\@Z
      */
     MCAPI void legacyCalculateDemandPrices(int, int);
@@ -163,10 +151,6 @@ public:
      * @symbol ?setMaxUses\@MerchantRecipe\@\@QEAAXH\@Z
      */
     MCAPI void setMaxUses(int);
-    /**
-     * @symbol ?setNetId\@MerchantRecipe\@\@QEAAXAEBV?$TypedServerNetId\@URecipeNetIdTag\@\@I$0A\@\@\@\@Z
-     */
-    MCAPI void setNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &);
     /**
      * @symbol ?setPriceMultiplierA\@MerchantRecipe\@\@QEAAXM\@Z
      */

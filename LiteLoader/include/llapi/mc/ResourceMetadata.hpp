@@ -23,10 +23,13 @@ class ResourceMetadata {
 public:
     class ResourceMetadata& operator=(class ResourceMetadata const &) = delete;
     ResourceMetadata(class ResourceMetadata const &) = delete;
-    ResourceMetadata() = delete;
 #endif
 
 public:
+    /**
+     * @symbol ??0ResourceMetadata\@\@QEAA\@XZ
+     */
+    MCAPI ResourceMetadata();
     /**
      * @symbol ??1ResourceMetadata\@\@QEAA\@XZ
      */

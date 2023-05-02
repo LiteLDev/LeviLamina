@@ -31,5 +31,9 @@ public:
      * @symbol ?createSystem\@InsideSweetBerryBushBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
+    /**
+     * @symbol ?tick\@InsideSweetBerryBushBlockSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBU?$InsideBlockWithPosAndBlockComponent\@USweetBerryBushBlockFlag\@\@\@\@VActorOwnerComponent\@\@\@\@\@Z
+     */
+    MCAPI static void tick(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag> const, class ActorOwnerComponent>);
 
 };

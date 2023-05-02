@@ -52,6 +52,10 @@ namespace VanillaBiomeNames {
      */
     MCAPI extern class HashedString const BirchForestMutated;
     /**
+     * @symbol ?CherryGrove\@VanillaBiomeNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const CherryGrove;
+    /**
      * @symbol ?ColdBeach\@VanillaBiomeNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ColdBeach;

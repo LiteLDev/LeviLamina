@@ -128,31 +128,6 @@ public:
      */
     virtual class ContentIdentity readContentIdentity() const;
     /**
-     * @vftbl 22
-     * @symbol __unk_vfn_22
-     */
-    virtual void __unk_vfn_22();
-    /**
-     * @vftbl 23
-     * @symbol __unk_vfn_23
-     */
-    virtual void __unk_vfn_23();
-    /**
-     * @vftbl 24
-     * @symbol __unk_vfn_24
-     */
-    virtual void __unk_vfn_24();
-    /**
-     * @vftbl 25
-     * @symbol __unk_vfn_25
-     */
-    virtual void __unk_vfn_25();
-    /**
-     * @vftbl 26
-     * @symbol ?_Delete_this\@?$_Func_impl_no_alloc\@V?$_Fake_no_copy_callable_adapter\@P8thread\@std\@\@EAAXXZPEAV12\@\@std\@\@X$$V\@std\@\@EEAAX_N\@Z
-     */
-    virtual void _Delete_this(bool);
-    /**
      * @symbol ??0DirectoryPackWithEncryptionAccessStrategy\@\@QEAA\@AEBVResourceLocation\@\@0AEBV?$not_null\@V?$NonOwnerPointer\@$$CBVIContentKeyProvider\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
     MCAPI DirectoryPackWithEncryptionAccessStrategy(class ResourceLocation const &, class ResourceLocation const &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const &);

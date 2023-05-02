@@ -59,27 +59,5 @@ public:
      * @symbol ?getBuffValueWithModifiers\@AttributeInstanceDelegate\@\@UEBAMAEBVAttributeBuff\@\@\@Z
      */
     virtual float getBuffValueWithModifiers(class AttributeBuff const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ATTRIBUTEINSTANCEDELEGATE
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~AttributeInstanceDelegate();
-#endif
-    /**
-     * @symbol ??0AttributeInstanceDelegate\@\@QEAA\@AEBVAttributeInstance\@\@\@Z
-     */
-    MCAPI AttributeInstanceDelegate(class AttributeInstance const &);
-
-//protected:
-    /**
-     * @symbol ?_getInstance\@AttributeInstanceDelegate\@\@IEBAAEBVAttributeInstance\@\@XZ
-     */
-    MCAPI class AttributeInstance const & _getInstance() const;
-    /**
-     * @symbol ?_getMutableInstance\@AttributeInstanceDelegate\@\@IEBAPEAVAttributeInstance\@\@XZ
-     */
-    MCAPI class AttributeInstance * _getMutableInstance() const;
-
-protected:
 
 };

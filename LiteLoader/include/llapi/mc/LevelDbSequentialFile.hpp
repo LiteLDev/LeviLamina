@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Core.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -45,9 +44,5 @@ public:
      * @symbol ?Skip\@LevelDbSequentialFile\@\@UEAA?AVStatus\@leveldb\@\@_K\@Z
      */
     virtual class leveldb::Status Skip(unsigned __int64);
-    /**
-     * @symbol ??0LevelDbSequentialFile\@\@QEAA\@$$QEAVFile\@Core\@\@\@Z
-     */
-    MCAPI LevelDbSequentialFile(class Core::File &&);
 
 };

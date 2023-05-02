@@ -54,9 +54,5 @@ public:
      * @symbol ?Sync\@SnapshotWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
      */
     virtual class leveldb::Status Sync();
-    /**
-     * @symbol ??0SnapshotWritableFile\@\@QEAA\@$$QEAPEAVWritableFile\@leveldb\@\@AEAVshared_mutex\@std\@\@\@Z
-     */
-    MCAPI SnapshotWritableFile(class leveldb::WritableFile *&&, class std::shared_mutex &);
 
 };

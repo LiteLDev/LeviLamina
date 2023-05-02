@@ -26,6 +26,7 @@ class RakTcpProxy {
 public:
     class RakTcpProxy& operator=(class RakTcpProxy const &) = delete;
     RakTcpProxy(class RakTcpProxy const &) = delete;
+    RakTcpProxy() = delete;
 #endif
 
 public:
@@ -84,9 +85,5 @@ public:
      * @symbol ?nextLostConnection\@RakTcpProxy\@\@UEAA?AUSystemAddress\@RakNet\@\@XZ
      */
     virtual struct RakNet::SystemAddress nextLostConnection();
-    /**
-     * @symbol ??0RakTcpProxy\@\@QEAA\@XZ
-     */
-    MCAPI RakTcpProxy();
 
 };

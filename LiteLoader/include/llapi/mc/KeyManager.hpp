@@ -54,9 +54,5 @@ public:
      * @symbol ?getPublicKey\@KeyManager\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string getPublicKey() const;
-    /**
-     * @symbol ?verify\@KeyManager\@\@QEBA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0W4HashType\@Hash\@Crypto\@\@\@Z
-     */
-    MCAPI bool verify(std::string const &, std::string const &, enum class Crypto::Hash::HashType) const;
 
 };

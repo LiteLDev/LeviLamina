@@ -66,7 +66,7 @@ public:
     virtual void tick();
     /**
      * @vftbl 7
-     * @symbol ?appendDebugInfo\@LayEggGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?appendDebugInfo\@StrollTowardsVillageGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string &) const = 0;
     /**

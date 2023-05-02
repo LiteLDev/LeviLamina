@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -22,14 +23,6 @@ namespace DebugUtils {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?DEFAULT_ASSERT_HANDLER\@DebugUtils\@\@YA_NAEBUAssertHandlerContext\@\@AEA_N\@Z
-     */
-    MCAPI bool DEFAULT_ASSERT_HANDLER(struct AssertHandlerContext const &, bool &);
-    /**
-     * @symbol ?SET_THREAD_NAME\@DebugUtils\@\@YAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI void SET_THREAD_NAME(std::string const &);
-    /**
      * @symbol ?debugUtilMutex\@DebugUtils\@\@3Vmutex\@std\@\@A
      */
     MCAPI extern class std::mutex debugUtilMutex;
@@ -42,13 +35,13 @@ namespace DebugUtils {
      */
     MCAPI extern bool gBreakpadSetupFailed;
     /**
-     * @symbol ?gDebugAssertCallbacks\@DebugUtils\@\@3V?$vector\@V?$weak_ptr\@V?$function\@$$A6AXAEBUAssertHandlerContext\@\@\@Z\@std\@\@\@std\@\@V?$allocator\@V?$weak_ptr\@V?$function\@$$A6AXAEBUAssertHandlerContext\@\@\@Z\@std\@\@\@std\@\@\@2\@\@std\@\@A
+     * @symbol ?gDebugAssertCallbacks\@DebugUtils\@\@3V?$Publisher\@$$A6AXAEBUAssertHandlerContext\@\@\@ZUMultiThreaded\@ThreadModel\@PubSub\@Bedrock\@\@\@PubSub\@Bedrock\@\@A
      */
-    MCAPI extern std::vector<class std::weak_ptr<class std::function<void (struct AssertHandlerContext const &)>>> gDebugAssertCallbacks;
+    MCAPI extern class Bedrock::PubSub::Publisher<void (struct AssertHandlerContext const &), struct Bedrock::PubSub::ThreadModel::MultiThreaded> gDebugAssertCallbacks;
     /**
-     * @symbol ?gFireAssertTelemetry\@DebugUtils\@\@3V?$function\@$$A6AXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z\@std\@\@A
+     * @symbol ?gFireAssertTelemetry\@DebugUtils\@\@3V?$Publisher\@$$A6AXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@ZUMultiThreaded\@ThreadModel\@PubSub\@Bedrock\@\@\@PubSub\@Bedrock\@\@A
      */
-    MCAPI extern class std::function<void (std::string const &, std::string const &)> gFireAssertTelemetry;
+    MCAPI extern class Bedrock::PubSub::Publisher<void (std::string const &, std::string const &), struct Bedrock::PubSub::ThreadModel::MultiThreaded> gFireAssertTelemetry;
     /**
      * @symbol ?gPublishAssertFullMessage\@DebugUtils\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@A
      */
@@ -66,8 +59,24 @@ namespace DebugUtils {
      */
     MCAPI extern class ServiceOverrider<bool ( *)(struct AssertHandlerContext const &, bool &)> gp_assert_handler;
     /**
+     * @symbol ?handleAssert\@DebugUtils\@\@YA_NPEBD0AEA_NH00ZZ
+     */
+    MCAPI bool handleAssert(char const *, char const *, bool &, int, char const *, char const *, ...);
+    /**
      * @symbol ?isDebuggerAttached\@DebugUtils\@\@YA_NXZ
      */
     MCAPI bool isDebuggerAttached();
+    /**
+     * @symbol ?optimizedAssertHandler\@DebugUtils\@\@YA_NAEBUAssertHandlerContext\@\@AEA_N\@Z
+     */
+    MCAPI bool optimizedAssertHandler(struct AssertHandlerContext const &, bool &);
+    /**
+     * @symbol ?runAssertHandler\@DebugUtils\@\@YA_NAEBV?$bitset\@$06\@std\@\@AEBUAssertHandlerContext\@\@AEA_N\@Z
+     */
+    MCAPI bool runAssertHandler(class std::bitset<7> const &, struct AssertHandlerContext const &, bool &);
+    /**
+     * @symbol ?setThreadName\@DebugUtils\@\@YAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI void setThreadName(std::string const &);
 
 };

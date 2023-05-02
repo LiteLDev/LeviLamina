@@ -95,9 +95,5 @@ public:
      * @symbol ??0MinecartBlockCommandOrigin\@\@QEAA\@AEAVBlockSource\@\@AEBUActorUniqueID\@\@\@Z
      */
     MCAPI MinecartBlockCommandOrigin(class BlockSource &, struct ActorUniqueID const &);
-    /**
-     * @symbol ?load\@MinecartBlockCommandOrigin\@\@SA?AV?$unique_ptr\@VMinecartBlockCommandOrigin\@\@U?$default_delete\@VMinecartBlockCommandOrigin\@\@\@std\@\@\@std\@\@AEBVCompoundTag\@\@AEAVLevel\@\@\@Z
-     */
-    MCAPI static std::unique_ptr<class MinecartBlockCommandOrigin> load(class CompoundTag const &, class Level &);
 
 };

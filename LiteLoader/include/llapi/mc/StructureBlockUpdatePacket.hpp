@@ -54,12 +54,12 @@ public:
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
-     * @symbol ??0StructureBlockUpdatePacket\@\@QEAA\@XZ
-     */
-    MCAPI StructureBlockUpdatePacket();
-    /**
      * @symbol ??0StructureBlockUpdatePacket\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI StructureBlockUpdatePacket(class StructureBlockUpdatePacket const &);
+    /**
+     * @symbol ??0StructureBlockUpdatePacket\@\@QEAA\@XZ
+     */
+    MCAPI StructureBlockUpdatePacket();
 
 };

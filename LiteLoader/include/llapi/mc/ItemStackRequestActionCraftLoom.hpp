@@ -62,9 +62,5 @@ public:
      * @symbol ??0ItemStackRequestActionCraftLoom\@\@QEAA\@XZ
      */
     MCAPI ItemStackRequestActionCraftLoom();
-    /**
-     * @symbol ?getPatternNameId\@ItemStackRequestActionCraftLoom\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string const & getPatternNameId() const;
 
 };

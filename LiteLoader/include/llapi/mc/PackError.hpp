@@ -25,6 +25,7 @@ class PackError {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKERROR
 public:
     class PackError& operator=(class PackError const &) = delete;
+    PackError(class PackError const &) = delete;
     PackError() = delete;
 #endif
 
@@ -53,10 +54,6 @@ public:
      * @symbol ??0PackError\@\@QEAA\@W4PackErrorType\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
      */
     MCAPI PackError(enum class PackErrorType, std::vector<std::string> const &);
-    /**
-     * @symbol ??0PackError\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI PackError(class PackError const &);
     /**
      * @symbol ?getErrorParameters\@PackError\@\@QEBAAEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
      */

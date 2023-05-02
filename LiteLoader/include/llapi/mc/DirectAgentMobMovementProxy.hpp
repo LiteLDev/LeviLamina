@@ -11,15 +11,15 @@
 #undef BEFORE_EXTRA
 
 
-class DirectAgentMobMovementProxy {
+struct DirectAgentMobMovementProxy {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIRECTAGENTMOBMOVEMENTPROXY
 public:
-    class DirectAgentMobMovementProxy& operator=(class DirectAgentMobMovementProxy const &) = delete;
-    DirectAgentMobMovementProxy(class DirectAgentMobMovementProxy const &) = delete;
+    struct DirectAgentMobMovementProxy& operator=(struct DirectAgentMobMovementProxy const &) = delete;
+    DirectAgentMobMovementProxy(struct DirectAgentMobMovementProxy const &) = delete;
     DirectAgentMobMovementProxy() = delete;
 #endif
 

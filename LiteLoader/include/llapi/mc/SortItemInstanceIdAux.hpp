@@ -12,7 +12,7 @@
 #undef BEFORE_EXTRA
 
 
-class SortItemInstanceIdAux {
+struct SortItemInstanceIdAux {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -20,8 +20,8 @@ class SortItemInstanceIdAux {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SORTITEMINSTANCEIDAUX
 public:
-    class SortItemInstanceIdAux& operator=(class SortItemInstanceIdAux const &) = delete;
-    SortItemInstanceIdAux(class SortItemInstanceIdAux const &) = delete;
+    struct SortItemInstanceIdAux& operator=(struct SortItemInstanceIdAux const &) = delete;
+    SortItemInstanceIdAux(struct SortItemInstanceIdAux const &) = delete;
     SortItemInstanceIdAux() = delete;
 #endif
 

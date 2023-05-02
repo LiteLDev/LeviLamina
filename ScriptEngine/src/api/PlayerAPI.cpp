@@ -1269,9 +1269,9 @@ Local<Value> PlayerClass::setPermLevel(const Arguments& args) {
                             fmt::format("Set Player {} Permission Level as {}.", player->getRealName(), newPerm));
             player->setPermissions((CommandPermissionLevel)newPerm);
             if (newPerm >= 1) {
-                player->getAbilities().setPlayerPermissions(PlayerPermissionLevel::PlayerPermissionLevelOperator);
+                player->getAbilities().setPlayerPermissions(PlayerPermissionLevel::Operator);
             } else {
-                player->getAbilities().setPlayerPermissions(PlayerPermissionLevel::PlayerPermissionLevelMember);
+                player->getAbilities().setPlayerPermissions(PlayerPermissionLevel::Member);
             }
             UpdateAbilitiesPacket uPkt(player->getUniqueID(), player->getAbilities());
             player->sendNetworkPacket(uPkt);

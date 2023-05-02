@@ -48,6 +48,11 @@ public:
      */
     virtual bool save(class CompoundTag &) const;
     /**
+     * @vftbl 7
+     * @symbol ?tick\@SignBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
+     */
+    virtual void tick(class BlockSource &);
+    /**
      * @vftbl 8
      * @symbol ?onChanged\@SignBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
@@ -112,6 +117,11 @@ public:
      * @symbol ?_onUpdatePacket\@SignBlockActor\@\@MEAAXAEBVCompoundTag\@\@AEAVBlockSource\@\@\@Z
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
+    /**
+     * @vftbl 39
+     * @symbol ?_playerCanUpdate\@SignBlockActor\@\@MEBA_NAEBVPlayer\@\@\@Z
+     */
+    virtual bool _playerCanUpdate(class Player const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIGNBLOCKACTOR
     /**
      * @symbol __unk_destructor_-1
@@ -123,55 +133,71 @@ public:
      */
     MCAPI SignBlockActor(class BlockPos const &, enum class BlockActorType, std::string const &);
     /**
-     * @symbol ?getMessage\@SignBlockActor\@\@QEAAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getIsGlowing\@SignBlockActor\@\@QEBA_NW4SignTextSide\@\@\@Z
      */
-    MCAPI std::string const & getMessage();
+    MCAPI bool getIsGlowing(enum class SignTextSide) const;
     /**
-     * @symbol ?getSignTextColor\@SignBlockActor\@\@QEBAAEBVColor\@mce\@\@XZ
+     * @symbol ?getIsLockedForEditing\@SignBlockActor\@\@QEAA_NAEAVILevel\@\@\@Z
      */
-    MCAPI class mce::Color const & getSignTextColor() const;
+    MCAPI bool getIsLockedForEditing(class ILevel &);
     /**
-     * @symbol ?isBug471852Resolved\@SignBlockActor\@\@QEBA_NXZ
+     * @symbol ?getIsWaxed\@SignBlockActor\@\@QEBA_NXZ
      */
-    MCAPI bool isBug471852Resolved() const;
+    MCAPI bool getIsWaxed() const;
     /**
-     * @symbol ?load\@SignBlockActor\@\@QEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@_N\@Z
+     * @symbol ?getMessage\@SignBlockActor\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4SignTextSide\@\@\@Z
      */
-    MCAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &, bool);
+    MCAPI std::string const & getMessage(enum class SignTextSide) const;
     /**
-     * @symbol ?resolveBug471852\@SignBlockActor\@\@QEAAXXZ
+     * @symbol ?getSideFacingPlayer\@SignBlockActor\@\@QEBA?AW4SignTextSide\@\@AEBVPlayer\@\@\@Z
      */
-    MCAPI void resolveBug471852();
+    MCAPI enum class SignTextSide getSideFacingPlayer(class Player const &) const;
     /**
-     * @symbol ?setMessage\@SignBlockActor\@\@QEAAXVTextObjectRoot\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?getSignTextColor\@SignBlockActor\@\@QEBAAEBVColor\@mce\@\@W4SignTextSide\@\@\@Z
      */
-    MCAPI void setMessage(class TextObjectRoot, std::string);
+    MCAPI class mce::Color const & getSignTextColor(enum class SignTextSide) const;
     /**
-     * @symbol ?setMessage\@SignBlockActor\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
+     * @symbol ?getTextObject\@SignBlockActor\@\@QEBAAEBVTextObjectRoot\@\@W4SignTextSide\@\@\@Z
      */
-    MCAPI void setMessage(std::string, std::string);
+    MCAPI class TextObjectRoot const & getTextObject(enum class SignTextSide) const;
     /**
-     * @symbol ?setSignTextColor\@SignBlockActor\@\@QEAAXAEBVColor\@mce\@\@\@Z
+     * @symbol ?isStringMessage\@SignBlockActor\@\@QEBA_NW4SignTextSide\@\@\@Z
      */
-    MCAPI void setSignTextColor(class mce::Color const &);
+    MCAPI bool isStringMessage(enum class SignTextSide) const;
     /**
-     * @symbol ?setTextLocked\@SignBlockActor\@\@QEAAX_N\@Z
+     * @symbol ?serverOnlySetIsLockedForEditing\@SignBlockActor\@\@QEAAXAEAVPlayer\@\@\@Z
      */
-    MCAPI void setTextLocked(bool);
+    MCAPI void serverOnlySetIsLockedForEditing(class Player &);
+    /**
+     * @symbol ?setIsGlowing\@SignBlockActor\@\@QEAAXW4SignTextSide\@\@_N\@Z
+     */
+    MCAPI void setIsGlowing(enum class SignTextSide, bool);
+    /**
+     * @symbol ?setMessageForServerScripingOnly\@SignBlockActor\@\@QEAAXW4SignTextSide\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1\@Z
+     */
+    MCAPI void setMessageForServerScripingOnly(enum class SignTextSide, std::string, std::string);
+    /**
+     * @symbol ?setMessageForServerScripingOnly\@SignBlockActor\@\@QEAAXW4SignTextSide\@\@VTextObjectRoot\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI void setMessageForServerScripingOnly(enum class SignTextSide, class TextObjectRoot, std::string);
+    /**
+     * @symbol ?setSignTextColor\@SignBlockActor\@\@QEAAXW4SignTextSide\@\@AEBVColor\@mce\@\@\@Z
+     */
+    MCAPI void setSignTextColor(enum class SignTextSide, class mce::Color const &);
     /**
      * @symbol ?setType\@SignBlockActor\@\@QEAAXW4SignType\@1\@\@Z
      */
     MCAPI void setType(enum class SignBlockActor::SignType);
+    /**
+     * @symbol ?setWaxed\@SignBlockActor\@\@QEAAXXZ
+     */
+    MCAPI void setWaxed();
 
 //private:
     /**
-     * @symbol ?_setMessage\@SignBlockActor\@\@AEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
+     * @symbol ?_updateTextFromClient\@SignBlockActor\@\@AEAAXAEBVCompoundTag\@\@AEBVBlockSource\@\@\@Z
      */
-    MCAPI void _setMessage(std::string, std::string);
-    /**
-     * @symbol ?_setMessage\@SignBlockActor\@\@AEAAXVTextObjectRoot\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI void _setMessage(class TextObjectRoot, std::string);
+    MCAPI void _updateTextFromClient(class CompoundTag const &, class BlockSource const &);
 
 private:
 

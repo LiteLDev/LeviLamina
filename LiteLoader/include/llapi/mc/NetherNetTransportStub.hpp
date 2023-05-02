@@ -58,9 +58,9 @@ public:
      */
     MCVAPI bool GetSessionState(struct NetherNet::NetworkID, struct NetherNet::SessionState *);
     /**
-     * @symbol ?IsLANBroadcastModeAvailable\@NetherNetTransportStub\@\@UEBA_NXZ
+     * @symbol ?IsBroadcastDiscoveryEnabled\@NetherNetTransportStub\@\@UEAA_NXZ
      */
-    MCVAPI bool IsLANBroadcastModeAvailable() const;
+    MCVAPI bool IsBroadcastDiscoveryEnabled();
     /**
      * @symbol ?IsPacketAvailable\@NetherNetTransportStub\@\@UEAA_NUNetworkID\@NetherNet\@\@PEAI\@Z
      */

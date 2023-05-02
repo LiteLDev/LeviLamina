@@ -87,10 +87,6 @@ struct LogDetails {
      */
     MCAPI void createLog(class Core::Path const &, std::string const &, std::string const &, enum class BedrockLog::LogCategory, class std::bitset<3>, bool, class LogSettingsUpdater *, double);
     /**
-     * @symbol ?flushAllLogs\@BedrockLog\@\@YAXXZ
-     */
-    MCAPI void flushAllLogs();
-    /**
      * @symbol ?initialize\@BedrockLog\@\@YA?AVScopeExit\@Bedrock\@\@XZ
      */
     MCAPI class Bedrock::ScopeExit initialize();

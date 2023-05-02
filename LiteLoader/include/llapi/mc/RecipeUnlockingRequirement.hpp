@@ -5,10 +5,11 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "RecipeIngredient.hpp"
+
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
+
 
 class RecipeUnlockingRequirement {
 
@@ -35,17 +36,29 @@ public:
 
 public:
     /**
-     * @symbol ??0RecipeUnlockingRequirement\@\@QEAA\@W4UnlockingContext\@0\@\@Z
+     * @symbol ??0RecipeUnlockingRequirement\@\@QEAA\@V?$vector\@VRecipeIngredient\@\@V?$allocator\@VRecipeIngredient\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI RecipeUnlockingRequirement(enum class RecipeUnlockingRequirement::UnlockingContext);
+    MCAPI RecipeUnlockingRequirement(std::vector<class RecipeIngredient>);
     /**
      * @symbol ??0RecipeUnlockingRequirement\@\@QEAA\@XZ
      */
     MCAPI RecipeUnlockingRequirement();
     /**
-     * @symbol ??0RecipeUnlockingRequirement\@\@QEAA\@V?$vector\@VRecipeIngredient\@\@V?$allocator\@VRecipeIngredient\@\@\@std\@\@\@std\@\@\@Z
+     * @symbol ??0RecipeUnlockingRequirement\@\@QEAA\@W4UnlockingContext\@0\@\@Z
      */
-    MCAPI RecipeUnlockingRequirement(std::vector<class RecipeIngredient>);
+    MCAPI RecipeUnlockingRequirement(enum class RecipeUnlockingRequirement::UnlockingContext);
+    /**
+     * @symbol ?canBeUnlockedByContext\@RecipeUnlockingRequirement\@\@QEBA_NW4UnlockingContext\@1\@\@Z
+     */
+    MCAPI bool canBeUnlockedByContext(enum class RecipeUnlockingRequirement::UnlockingContext) const;
+    /**
+     * @symbol ?canBeUnlockedByIngredient\@RecipeUnlockingRequirement\@\@QEBA_NAEBVRecipeIngredient\@\@\@Z
+     */
+    MCAPI bool canBeUnlockedByIngredient(class RecipeIngredient const &) const;
+    /**
+     * @symbol ?isUnlockedByIngredients\@RecipeUnlockingRequirement\@\@QEBA_NXZ
+     */
+    MCAPI bool isUnlockedByIngredients() const;
     /**
      * @symbol ?isValid\@RecipeUnlockingRequirement\@\@QEBA_NXZ
      */

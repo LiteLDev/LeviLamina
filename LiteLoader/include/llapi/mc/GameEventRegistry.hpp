@@ -172,6 +172,66 @@ namespace GameEventRegistry {
      */
     MCAPI extern class GameEvent const projectileShoot;
     /**
+     * @symbol ?resonate1\@GameEventRegistry\@\@3VGameEvent\@\@B
+     */
+    MCAPI extern class GameEvent const resonate1;
+    /**
+     * @symbol ?resonate10\@GameEventRegistry\@\@3VGameEvent\@\@B
+     */
+    MCAPI extern class GameEvent const resonate10;
+    /**
+     * @symbol ?resonate11\@GameEventRegistry\@\@3VGameEvent\@\@B
+     */
+    MCAPI extern class GameEvent const resonate11;
+    /**
+     * @symbol ?resonate12\@GameEventRegistry\@\@3VGameEvent\@\@B
+     */
+    MCAPI extern class GameEvent const resonate12;
+    /**
+     * @symbol ?resonate13\@GameEventRegistry\@\@3VGameEvent\@\@B
+     */
+    MCAPI extern class GameEvent const resonate13;
+    /**
+     * @symbol ?resonate14\@GameEventRegistry\@\@3VGameEvent\@\@B
+     */
+    MCAPI extern class GameEvent const resonate14;
+    /**
+     * @symbol ?resonate15\@GameEventRegistry\@\@3VGameEvent\@\@B
+     */
+    MCAPI extern class GameEvent const resonate15;
+    /**
+     * @symbol ?resonate2\@GameEventRegistry\@\@3VGameEvent\@\@B
+     */
+    MCAPI extern class GameEvent const resonate2;
+    /**
+     * @symbol ?resonate3\@GameEventRegistry\@\@3VGameEvent\@\@B
+     */
+    MCAPI extern class GameEvent const resonate3;
+    /**
+     * @symbol ?resonate4\@GameEventRegistry\@\@3VGameEvent\@\@B
+     */
+    MCAPI extern class GameEvent const resonate4;
+    /**
+     * @symbol ?resonate5\@GameEventRegistry\@\@3VGameEvent\@\@B
+     */
+    MCAPI extern class GameEvent const resonate5;
+    /**
+     * @symbol ?resonate6\@GameEventRegistry\@\@3VGameEvent\@\@B
+     */
+    MCAPI extern class GameEvent const resonate6;
+    /**
+     * @symbol ?resonate7\@GameEventRegistry\@\@3VGameEvent\@\@B
+     */
+    MCAPI extern class GameEvent const resonate7;
+    /**
+     * @symbol ?resonate8\@GameEventRegistry\@\@3VGameEvent\@\@B
+     */
+    MCAPI extern class GameEvent const resonate8;
+    /**
+     * @symbol ?resonate9\@GameEventRegistry\@\@3VGameEvent\@\@B
+     */
+    MCAPI extern class GameEvent const resonate9;
+    /**
      * @symbol ?sculkSensorTendrilsClicking\@GameEventRegistry\@\@3VGameEvent\@\@B
      */
     MCAPI extern class GameEvent const sculkSensorTendrilsClicking;

@@ -123,15 +123,15 @@ public:
     virtual bool _checkUseOnPermissions(class Actor &, class ItemStackBase &, unsigned char const &, class BlockPos const &) const;
     /**
      * @vftbl 132
-     * @symbol ?_useOn\@BedItem\@\@EEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
+     * @symbol ?_useOn\@BedItem\@\@EEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
-    virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 
 //private:
     /**
-     * @symbol ?_tryUseOn\@BedItem\@\@AEBA_NAEAVItemStackBase\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
+     * @symbol ?_tryUseOn\@BedItem\@\@AEBA?AVInteractionResult\@\@AEAVItemStackBase\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
-    MCAPI bool _tryUseOn(class ItemStackBase &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+    MCAPI class InteractionResult _tryUseOn(class ItemStackBase &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 
 private:
 

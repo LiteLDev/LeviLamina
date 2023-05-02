@@ -42,9 +42,9 @@ public:
     virtual bool isValidSlotForContainer(class ContainerScreenContext const &, class Container const &, int) const;
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?isItemAllowedInSlot\@SmithingTableMaterialContainerValidation\@\@UEBA_NAEBVContainerScreenContext\@\@HAEBVItemStackBase\@\@H\@Z
      */
-    virtual void __unk_vfn_2();
+    virtual bool isItemAllowedInSlot(class ContainerScreenContext const &, int, class ItemStackBase const &, int) const;
     /**
      * @vftbl 3
      * @symbol ?getAvailableSetCount\@ContainerValidationBase\@\@UEBAHHAEBVItemStackBase\@\@\@Z

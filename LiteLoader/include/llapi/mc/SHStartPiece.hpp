@@ -40,9 +40,5 @@ public:
      * @symbol ?getType\@SHStartPiece\@\@UEBA?AW4StructurePieceType\@\@XZ
      */
     virtual enum class StructurePieceType getType() const;
-    /**
-     * @symbol ??0SHStartPiece\@\@QEAA\@HAEAVRandom\@\@HH\@Z
-     */
-    MCAPI SHStartPiece(int, class Random &, int, int);
 
 };

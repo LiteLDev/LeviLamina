@@ -31,5 +31,9 @@ public:
      * @symbol ?_tickInsideEndPortalBlockSystem\@InsideEndPortalBlockSystemImpl\@\@SAXAEAVStrictEntityContext\@\@AEBU?$InsideBlockWithPosAndBlockComponent\@UEndPortalBlockFlag\@\@\@\@AEAVActorOwnerComponent\@\@\@Z
      */
     MCAPI static void _tickInsideEndPortalBlockSystem(class StrictEntityContext &, struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag> const &, class ActorOwnerComponent &);
+    /**
+     * @symbol ?tickInsideEndPortalBlockSystem\@InsideEndPortalBlockSystemImpl\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBU?$InsideBlockWithPosAndBlockComponent\@UEndPortalBlockFlag\@\@\@\@VActorOwnerComponent\@\@\@\@\@Z
+     */
+    MCAPI static void tickInsideEndPortalBlockSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag> const, class ActorOwnerComponent>);
 
 };

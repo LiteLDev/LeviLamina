@@ -30,6 +30,7 @@ public:
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RECIPEINGREDIENT
 public:
     class RecipeIngredient& operator=(class RecipeIngredient const &) = delete;
+    RecipeIngredient() = delete;
 #endif
 
 public:
@@ -45,25 +46,29 @@ public:
     MCVAPI ~RecipeIngredient();
 #endif
     /**
+     * @symbol ??0RecipeIngredient\@\@QEAA\@AEBVItemDescriptor\@\@G\@Z
+     */
+    MCAPI RecipeIngredient(class ItemDescriptor const &, unsigned short);
+    /**
      * @symbol ??0RecipeIngredient\@\@QEAA\@AEBVBlock\@\@G\@Z
      */
     MCAPI RecipeIngredient(class Block const &, unsigned short);
-    /**
-     * @symbol ??0RecipeIngredient\@\@QEAA\@AEBVBlockLegacy\@\@G\@Z
-     */
-    MCAPI RecipeIngredient(class BlockLegacy const &, unsigned short);
     /**
      * @symbol ??0RecipeIngredient\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI RecipeIngredient(class RecipeIngredient const &);
     /**
-     * @symbol ??0RecipeIngredient\@\@QEAA\@XZ
+     * @symbol ??0RecipeIngredient\@\@QEAA\@AEBVBlockLegacy\@\@G\@Z
      */
-    MCAPI RecipeIngredient();
+    MCAPI RecipeIngredient(class BlockLegacy const &, unsigned short);
     /**
      * @symbol ??0RecipeIngredient\@\@QEAA\@AEBUItemTag\@\@G\@Z
      */
     MCAPI RecipeIngredient(struct ItemTag const &, unsigned short);
+    /**
+     * @symbol ??0RecipeIngredient\@\@QEAA\@AEAVReadOnlyBinaryStream\@\@\@Z
+     */
+    MCAPI RecipeIngredient(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0RecipeIngredient\@\@QEAA\@AEBVItem\@\@HG\@Z
      */
@@ -77,9 +82,9 @@ public:
      */
     MCAPI RecipeIngredient(class std::basic_string_view<char, struct std::char_traits<char>>, int, unsigned short);
     /**
-     * @symbol ??0RecipeIngredient\@\@QEAA\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?isEmpty\@RecipeIngredient\@\@QEBA_NXZ
      */
-    MCAPI RecipeIngredient(class ReadOnlyBinaryStream &);
+    MCAPI bool isEmpty() const;
     /**
      * @symbol ?EMPTY_INGREDIENT\@RecipeIngredient\@\@2V1\@A
      */

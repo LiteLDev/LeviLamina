@@ -75,13 +75,13 @@ public:
     MCVAPI ~AnimatePacket();
 #endif
     /**
-     * @symbol ??0AnimatePacket\@\@QEAA\@W4Action\@0\@AEAVActor\@\@\@Z
-     */
-    MCAPI AnimatePacket(enum class AnimatePacket::Action, class Actor &);
-    /**
      * @symbol ??0AnimatePacket\@\@QEAA\@XZ
      */
     MCAPI AnimatePacket();
+    /**
+     * @symbol ??0AnimatePacket\@\@QEAA\@W4Action\@0\@AEAVActor\@\@\@Z
+     */
+    MCAPI AnimatePacket(enum class AnimatePacket::Action, class Actor &);
     /**
      * @symbol ??0AnimatePacket\@\@QEAA\@W4Action\@0\@VActorRuntimeID\@\@M\@Z
      */

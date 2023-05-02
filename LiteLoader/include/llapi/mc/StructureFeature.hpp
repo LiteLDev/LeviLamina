@@ -85,61 +85,6 @@ public:
      * @symbol ?getStructureAt\@StructureFeature\@\@MEAAPEAVStructureStart\@\@HHH\@Z
      */
     virtual class StructureStart * getStructureAt(int, int, int);
-    /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
-    /**
-     * @vftbl 9
-     * @symbol __unk_vfn_9
-     */
-    virtual void __unk_vfn_9();
-    /**
-     * @vftbl 10
-     * @symbol __unk_vfn_10
-     */
-    virtual void __unk_vfn_10();
-    /**
-     * @vftbl 11
-     * @symbol __unk_vfn_11
-     */
-    virtual void __unk_vfn_11();
-    /**
-     * @vftbl 12
-     * @symbol __unk_vfn_12
-     */
-    virtual void __unk_vfn_12();
-    /**
-     * @vftbl 13
-     * @symbol ?_Get\@?$_Func_impl_no_alloc\@V?$_Fake_no_copy_callable_adapter\@P8thread\@std\@\@EAAXXZPEAV12\@\@std\@\@X$$V\@std\@\@EEBAPEBXXZ
-     */
-    virtual void const * _Get() const;
-    /**
-     * @vftbl 14
-     * @symbol __unk_vfn_14
-     */
-    virtual void __unk_vfn_14();
-    /**
-     * @vftbl 15
-     * @symbol __unk_vfn_15
-     */
-    virtual void __unk_vfn_15();
-    /**
-     * @vftbl 16
-     * @symbol __unk_vfn_16
-     */
-    virtual void __unk_vfn_16();
-    /**
-     * @vftbl 17
-     * @symbol __unk_vfn_17
-     */
-    virtual void __unk_vfn_17();
-    /**
-     * @vftbl 18
-     * @symbol ?_Delete_this\@?$_Func_impl_no_alloc\@V?$_Fake_no_copy_callable_adapter\@P8thread\@std\@\@EAAXXZPEAV12\@\@std\@\@X$$V\@std\@\@EEAAX_N\@Z
-     */
-    virtual void _Delete_this(bool);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREFEATURE
     /**
      * @symbol __unk_destructor_-1
@@ -178,10 +123,6 @@ public:
      * @symbol ?garbageCollectBlueprints\@StructureFeature\@\@QEAAXV?$buffer_span\@VChunkPos\@\@\@\@I\@Z
      */
     MCAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos>, unsigned int);
-    /**
-     * @symbol ?getType\@StructureFeature\@\@QEBA?AW4StructureFeatureType\@\@XZ
-     */
-    MCAPI enum class StructureFeatureType getType() const;
     /**
      * @symbol ?isInsideBoundingFeature\@StructureFeature\@\@QEAA_NHHH\@Z
      */

@@ -72,10 +72,6 @@ public:
      * @symbol ?verifyExitPositions\@EndDragonFight\@\@QEAAXAEAVEndGatewayBlockActor\@\@\@Z
      */
     MCAPI void verifyExitPositions(class EndGatewayBlockActor &);
-    /**
-     * @symbol ??1EndDragonFight\@\@QEAA\@XZ
-     */
-    MCAPI ~EndDragonFight();
 
 //private:
     /**

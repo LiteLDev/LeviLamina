@@ -134,10 +134,6 @@ public:
     MCVAPI ~AccessRecordingConstBlockSource();
 #endif
     /**
-     * @symbol ??0AccessRecordingConstBlockSource\@\@QEAA\@V?$not_null\@PEBVIConstBlockSource\@\@\@gsl\@\@\@Z
-     */
-    MCAPI AccessRecordingConstBlockSource(class gsl::not_null<class IConstBlockSource const *>);
-    /**
      * @symbol ?takeAccessedBlocks\@AccessRecordingConstBlockSource\@\@QEHAA?AUAccessedBlockSourceBlocks\@\@XZ
      */
     MCAPI struct AccessedBlockSourceBlocks takeAccessedBlocks();

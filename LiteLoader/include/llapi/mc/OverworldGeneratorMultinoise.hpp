@@ -36,6 +36,10 @@ public:
      */
     MCVAPI void _prepareHeights(class BlockVolume &, class ChunkPos const &, class WorldGenCache const &, class Aquifer *, class std::function<void (class BlockPos const &, class Block const &, int)> &&, bool, std::vector<short> *, int);
     /**
+     * @symbol ?chunkPosNeedsBlending\@OverworldGeneratorMultinoise\@\@UEAA_NAEBVChunkPos\@\@\@Z
+     */
+    MCVAPI bool chunkPosNeedsBlending(class ChunkPos const &);
+    /**
      * @symbol ?createNoiseCache\@OverworldGeneratorMultinoise\@\@EEBA?AVChunkLocalNoiseCache\@\@VChunkPos\@\@\@Z
      */
     MCVAPI class ChunkLocalNoiseCache createNoiseCache(class ChunkPos) const;

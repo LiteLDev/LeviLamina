@@ -26,17 +26,10 @@ class SwimWithEntityDefinition {
 public:
     class SwimWithEntityDefinition& operator=(class SwimWithEntityDefinition const &) = delete;
     SwimWithEntityDefinition(class SwimWithEntityDefinition const &) = delete;
+    SwimWithEntityDefinition() = delete;
 #endif
 
 public:
-    /**
-     * @symbol ??0SwimWithEntityDefinition\@\@QEAA\@XZ
-     */
-    MCAPI SwimWithEntityDefinition();
-    /**
-     * @symbol ?initialize\@SwimWithEntityDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVSwimWithEntityGoal\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext &, class SwimWithEntityGoal &) const;
     /**
      * @symbol ?buildSchema\@SwimWithEntityDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VSwimWithEntityDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */

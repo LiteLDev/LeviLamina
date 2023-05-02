@@ -56,21 +56,9 @@ public:
      */
     MCAPI void addVillager(struct ActorUniqueID const &);
     /**
-     * @symbol ?alwaysTickRaid\@Village\@\@QEBA_NXZ
-     */
-    MCAPI bool alwaysTickRaid() const;
-    /**
-     * @symbol ?canRemove\@Village\@\@QEBA_NXZ
-     */
-    MCAPI bool canRemove() const;
-    /**
      * @symbol ?checkNeedMoreVillagers\@Village\@\@QEBA_NXZ
      */
     MCAPI bool checkNeedMoreVillagers() const;
-    /**
-     * @symbol ?clearOwnedPOIs\@Village\@\@QEAAXXZ
-     */
-    MCAPI void clearOwnedPOIs();
     /**
      * @symbol ?debugDraw\@Village\@\@QEAAXXZ
      */
@@ -128,10 +116,6 @@ public:
      */
     MCAPI int getStanding(struct ActorUniqueID const &);
     /**
-     * @symbol ?getUnclaimedPOIs\@Village\@\@QEBAAEBV?$array\@V?$vector\@V?$weak_ptr\@VPOIInstance\@\@\@std\@\@V?$allocator\@V?$weak_ptr\@VPOIInstance\@\@\@std\@\@\@2\@\@std\@\@$02\@std\@\@XZ
-     */
-    MCAPI class std::array<std::vector<class std::weak_ptr<class POIInstance>>, 3> const & getUnclaimedPOIs() const;
-    /**
      * @symbol ?getUniqueID\@Village\@\@QEBA?AVUUID\@mce\@\@XZ
      */
     MCAPI class mce::UUID getUniqueID() const;
@@ -180,10 +164,6 @@ public:
      */
     MCAPI void rewardAllPlayers(int);
     /**
-     * @symbol ?saveEntireVillage\@Village\@\@QEAAXXZ
-     */
-    MCAPI void saveEntireVillage();
-    /**
      * @symbol ?setSavedDwellerPosition\@Village\@\@QEAAXW4DwellerRole\@\@AEBUActorUniqueID\@\@VBlockPos\@\@\@Z
      */
     MCAPI void setSavedDwellerPosition(enum class DwellerRole, struct ActorUniqueID const &, class BlockPos);
@@ -215,10 +195,6 @@ public:
      * @symbol ?withinVillageBounds\@Village\@\@QEBA_NAEBVVec3\@\@M\@Z
      */
     MCAPI bool withinVillageBounds(class Vec3 const &, float) const;
-    /**
-     * @symbol ??1Village\@\@QEAA\@XZ
-     */
-    MCAPI ~Village();
     /**
      * @symbol ?DEBUG_DRAWING\@Village\@\@2_NA
      */

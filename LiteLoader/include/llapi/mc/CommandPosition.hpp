@@ -61,10 +61,6 @@ public:
      */
     MCAPI class Vec3 getPosition(int, class CommandOrigin const &, class Vec3 const &) const;
     /**
-     * @symbol ?load\@CommandPosition\@\@QEAAXAEBVCompoundTag\@\@\@Z
-     */
-    MCAPI void load(class CompoundTag const &);
-    /**
      * @symbol ?serialize\@CommandPosition\@\@QEBA?AVCompoundTag\@\@XZ
      */
     MCAPI class CompoundTag serialize() const;

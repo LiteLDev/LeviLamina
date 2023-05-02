@@ -84,13 +84,13 @@ public:
      */
     MCAPI bool addComponents(class Json::Value const &, std::string &);
     /**
-     * @symbol ?addCustomUserData\@ItemStackBase\@\@QEAAXAEAVContainerComponent\@\@\@Z
-     */
-    MCAPI void addCustomUserData(class ContainerComponent &);
-    /**
      * @symbol ?addCustomUserData\@ItemStackBase\@\@QEAAXAEAVBlockActor\@\@AEAVBlockSource\@\@\@Z
      */
     MCAPI void addCustomUserData(class BlockActor &, class BlockSource &);
+    /**
+     * @symbol ?addCustomUserData\@ItemStackBase\@\@QEAAXAEAVContainerComponent\@\@\@Z
+     */
+    MCAPI void addCustomUserData(class ContainerComponent &);
     /**
      * @symbol ?canBeCharged\@ItemStackBase\@\@QEBA_NXZ
      */
@@ -124,10 +124,6 @@ public:
      */
     MCAPI class ItemEnchants constructItemEnchantsFromUserData() const;
     /**
-     * @symbol ?deserializeComponents\@ItemStackBase\@\@QEAAXAEAVIDataInput\@\@\@Z
-     */
-    MCAPI void deserializeComponents(class IDataInput &);
-    /**
      * @symbol ?executeEvent\@ItemStackBase\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVRenderParams\@\@\@Z
      */
     MCAPI void executeEvent(std::string const &, class RenderParams &);
@@ -155,10 +151,6 @@ public:
      * @symbol ?getBlockingTick\@ItemStackBase\@\@QEBAAEBUTick\@\@XZ
      */
     MCAPI struct Tick const & getBlockingTick() const;
-    /**
-     * @symbol ?getCategoryName\@ItemStackBase\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string getCategoryName() const;
     /**
      * @symbol ?getChargedItem\@ItemStackBase\@\@QEBAAEBVItemInstance\@\@XZ
      */
@@ -256,10 +248,6 @@ public:
      */
     MCAPI std::string getRawNameId() const;
     /**
-     * @symbol ?getRequiredBaseGameVersion\@ItemStackBase\@\@QEBAAEBVBaseGameVersion\@\@XZ
-     */
-    MCAPI class BaseGameVersion const & getRequiredBaseGameVersion() const;
-    /**
      * @symbol ?getUseAnimation\@ItemStackBase\@\@QEBA?AW4UseAnimation\@\@XZ
      */
     MCAPI enum class UseAnimation getUseAnimation() const;
@@ -304,13 +292,13 @@ public:
      */
     MCAPI bool hasSameUserData(class ItemStackBase const &) const;
     /**
-     * @symbol ?hasTag\@ItemStackBase\@\@QEBA_NAEB_K\@Z
-     */
-    MCAPI bool hasTag(unsigned __int64 const &) const;
-    /**
      * @symbol ?hasTag\@ItemStackBase\@\@QEBA_NAEBUItemTag\@\@\@Z
      */
     MCAPI bool hasTag(struct ItemTag const &) const;
+    /**
+     * @symbol ?hasTag\@ItemStackBase\@\@QEBA_NAEB_K\@Z
+     */
+    MCAPI bool hasTag(unsigned __int64 const &) const;
     /**
      * @symbol ?hasUserData\@ItemStackBase\@\@QEBA_NXZ
      */
@@ -380,10 +368,6 @@ public:
      */
     MCAPI bool isLiquidClipItem() const;
     /**
-     * @symbol ?isMusicDiscItem\@ItemStackBase\@\@QEBA_NXZ
-     */
-    MCAPI bool isMusicDiscItem() const;
-    /**
      * @symbol ?isNull\@ItemStackBase\@\@QEBA_NXZ
      */
     MCAPI bool isNull() const;
@@ -428,13 +412,13 @@ public:
      */
     MCAPI bool isWearableItem() const;
     /**
-     * @symbol ?load\@ItemStackBase\@\@QEAAXAEBVCompoundTag\@\@\@Z
-     */
-    MCAPI void load(class CompoundTag const &);
-    /**
      * @symbol ?load\@ItemStackBase\@\@QEAAXAEBVCompoundTag\@\@AEAVLevel\@\@\@Z
      */
     MCAPI void load(class CompoundTag const &, class Level &);
+    /**
+     * @symbol ?load\@ItemStackBase\@\@QEAAXAEBVCompoundTag\@\@\@Z
+     */
+    MCAPI void load(class CompoundTag const &);
     /**
      * @symbol ?matches\@ItemStackBase\@\@QEBA_NAEBV1\@\@Z
      */
@@ -480,13 +464,13 @@ public:
      */
     MCAPI void resetHoverName();
     /**
-     * @symbol ?sameItem\@ItemStackBase\@\@QEBA_NAEBV1\@\@Z
-     */
-    MCAPI bool sameItem(class ItemStackBase const &) const;
-    /**
      * @symbol ?sameItem\@ItemStackBase\@\@QEBA_NHH\@Z
      */
     MCAPI bool sameItem(int, int) const;
+    /**
+     * @symbol ?sameItem\@ItemStackBase\@\@QEBA_NAEBV1\@\@Z
+     */
+    MCAPI bool sameItem(class ItemStackBase const &) const;
     /**
      * @symbol ?sameItemAndAux\@ItemStackBase\@\@QEBA_NAEBV1\@\@Z
      */
@@ -503,10 +487,6 @@ public:
      * @symbol ?sendEventTriggered\@ItemStackBase\@\@QEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVRenderParams\@\@\@Z
      */
     MCAPI bool sendEventTriggered(std::string const &, class RenderParams const &);
-    /**
-     * @symbol ?serializeComponents\@ItemStackBase\@\@QEBAXAEAVIDataOutput\@\@\@Z
-     */
-    MCAPI void serializeComponents(class IDataOutput &) const;
     /**
      * @symbol ?set\@ItemStackBase\@\@QEAAXH\@Z
      */
@@ -564,10 +544,6 @@ public:
      */
     MCAPI void setShowPickUp(bool);
     /**
-     * @symbol ?setStackSize\@ItemStackBase\@\@QEAAXE\@Z
-     */
-    MCAPI void setStackSize(unsigned char);
-    /**
      * @symbol ?setUserData\@ItemStackBase\@\@QEAAXV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI void setUserData(std::unique_ptr<class CompoundTag>);
@@ -619,6 +595,10 @@ public:
      * @symbol ?TAG_REPAIR_COST\@ItemStackBase\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const TAG_REPAIR_COST;
+    /**
+     * @symbol ?isValidComponent\@ItemStackBase\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static bool isValidComponent(std::string const &);
 
 //protected:
     /**
@@ -630,9 +610,9 @@ public:
      */
     MCAPI ItemStackBase(class ItemStackBase const &);
     /**
-     * @symbol ??0ItemStackBase\@\@IEAA\@AEBVBlockLegacy\@\@H\@Z
+     * @symbol ??0ItemStackBase\@\@IEAA\@XZ
      */
-    MCAPI ItemStackBase(class BlockLegacy const &, int);
+    MCAPI ItemStackBase();
     /**
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBVBlock\@\@HPEBVCompoundTag\@\@\@Z
      */
@@ -642,13 +622,13 @@ public:
      */
     MCAPI ItemStackBase(class std::basic_string_view<char, struct std::char_traits<char>>, int, int, class CompoundTag const *);
     /**
+     * @symbol ??0ItemStackBase\@\@IEAA\@AEBVBlockLegacy\@\@H\@Z
+     */
+    MCAPI ItemStackBase(class BlockLegacy const &, int);
+    /**
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBVRecipeIngredient\@\@\@Z
      */
     MCAPI ItemStackBase(class RecipeIngredient const &);
-    /**
-     * @symbol ??0ItemStackBase\@\@IEAA\@XZ
-     */
-    MCAPI ItemStackBase();
     /**
      * @symbol ?_getHoverFormattingPrefix\@ItemStackBase\@\@IEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
@@ -658,10 +638,6 @@ public:
      */
     MCAPI bool _setItem(int, bool);
     /**
-     * @symbol ?init\@ItemStackBase\@\@IEAAXHHH_N\@Z
-     */
-    MCAPI void init(int, int, int, bool);
-    /**
      * @symbol ?init\@ItemStackBase\@\@IEAAXAEBVBlockLegacy\@\@H\@Z
      */
     MCAPI void init(class BlockLegacy const &, int);
@@ -669,6 +645,10 @@ public:
      * @symbol ?init\@ItemStackBase\@\@IEAAXAEBVItem\@\@HHPEBVCompoundTag\@\@_N\@Z
      */
     MCAPI void init(class Item const &, int, int, class CompoundTag const *, bool);
+    /**
+     * @symbol ?init\@ItemStackBase\@\@IEAAXHHH_N\@Z
+     */
+    MCAPI void init(int, int, int, bool);
     /**
      * @symbol ??4ItemStackBase\@\@IEAAAEAV0\@AEBV0\@\@Z
      */

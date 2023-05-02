@@ -43,45 +43,21 @@ public:
      */
     MCAPI void clearCursors();
     /**
-     * @symbol ?getAdditionalDecayRate\@SculkSpreader\@\@QEBAHXZ
-     */
-    MCAPI int getAdditionalDecayRate() const;
-    /**
-     * @symbol ?getChargeDecayRate\@SculkSpreader\@\@QEBAHXZ
-     */
-    MCAPI int getChargeDecayRate() const;
-    /**
      * @symbol ?getCursorPosition\@SculkSpreader\@\@QEBA?AVBlockPos\@\@H\@Z
      */
     MCAPI class BlockPos getCursorPosition(int) const;
-    /**
-     * @symbol ?getGrowthSpawnCost\@SculkSpreader\@\@QEBAHXZ
-     */
-    MCAPI int getGrowthSpawnCost() const;
     /**
      * @symbol ?getMaxCharge\@SculkSpreader\@\@QEBAHXZ
      */
     MCAPI int getMaxCharge() const;
     /**
-     * @symbol ?getNoGrowthRadius\@SculkSpreader\@\@QEBAHXZ
-     */
-    MCAPI int getNoGrowthRadius() const;
-    /**
      * @symbol ?getNumberOfCursors\@SculkSpreader\@\@QEBAHXZ
      */
     MCAPI int getNumberOfCursors() const;
     /**
-     * @symbol ?getSculkReplaceableBlocks\@SculkSpreader\@\@QEAAAEBV?$set\@PEBVBlock\@\@U?$less\@PEBVBlock\@\@\@std\@\@V?$allocator\@PEBVBlock\@\@\@3\@\@std\@\@XZ
-     */
-    MCAPI class std::set<class Block const *, struct std::less<class Block const *>, class std::allocator<class Block const *>> const & getSculkReplaceableBlocks();
-    /**
      * @symbol ?getTotalCharge\@SculkSpreader\@\@QEBAHXZ
      */
     MCAPI int getTotalCharge() const;
-    /**
-     * @symbol ?isWorldGen\@SculkSpreader\@\@QEBA_NXZ
-     */
-    MCAPI bool isWorldGen() const;
     /**
      * @symbol ?load\@SculkSpreader\@\@QEAAXAEBVCompoundTag\@\@\@Z
      */

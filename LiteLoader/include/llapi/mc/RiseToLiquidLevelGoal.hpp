@@ -74,12 +74,4 @@ public:
      */
     MCAPI RiseToLiquidLevelGoal(class Mob &, float, float, float);
 
-//private:
-    /**
-     * @symbol ?findLiquidLevel\@RiseToLiquidLevelGoal\@\@AEAAMXZ
-     */
-    MCAPI float findLiquidLevel();
-
-private:
-
 };

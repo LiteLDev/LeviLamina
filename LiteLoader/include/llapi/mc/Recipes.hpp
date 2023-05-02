@@ -91,6 +91,10 @@ public:
      */
     MCAPI void addShapedRecipe(std::string, class ItemInstance const &, std::string const &, std::string const &, std::string const &, std::vector<class Recipes::Type> const &, std::vector<class HashedString> const &, int, class std::function<std::unique_ptr<class ShapedRecipe> (std::string, int, int, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString, int, class mce::UUID const *, class std::optional<class RecipeUnlockingRequirement>)>, class std::optional<class RecipeUnlockingRequirement>);
     /**
+     * @symbol ?addShapedRecipe\@Recipes\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemInstance\@\@AEBV23\@2AEBV?$vector\@VType\@Recipes\@\@V?$allocator\@VType\@Recipes\@\@\@std\@\@\@3\@AEBV?$vector\@VHashedString\@\@V?$allocator\@VHashedString\@\@\@std\@\@\@3\@HV?$function\@$$A6A?AV?$unique_ptr\@VShapedRecipe\@\@U?$default_delete\@VShapedRecipe\@\@\@std\@\@\@std\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@2\@HHAEBV?$vector\@VRecipeIngredient\@\@V?$allocator\@VRecipeIngredient\@\@\@std\@\@\@2\@AEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@2\@VHashedString\@\@HPEBVUUID\@mce\@\@V?$optional\@VRecipeUnlockingRequirement\@\@\@2\@\@Z\@3\@V?$optional\@VRecipeUnlockingRequirement\@\@\@3\@\@Z
+     */
+    MCAPI void addShapedRecipe(std::string, class ItemInstance const &, std::string const &, std::string const &, std::vector<class Recipes::Type> const &, std::vector<class HashedString> const &, int, class std::function<std::unique_ptr<class ShapedRecipe> (std::string, int, int, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString, int, class mce::UUID const *, class std::optional<class RecipeUnlockingRequirement>)>, class std::optional<class RecipeUnlockingRequirement>);
+    /**
      * @symbol ?addShapedRecipe\@Recipes\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemInstance\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@AEBV?$vector\@VType\@Recipes\@\@V?$allocator\@VType\@Recipes\@\@\@std\@\@\@3\@AEBV?$vector\@VHashedString\@\@V?$allocator\@VHashedString\@\@\@std\@\@\@3\@HV?$function\@$$A6A?AV?$unique_ptr\@VShapedRecipe\@\@U?$default_delete\@VShapedRecipe\@\@\@std\@\@\@std\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@2\@HHAEBV?$vector\@VRecipeIngredient\@\@V?$allocator\@VRecipeIngredient\@\@\@std\@\@\@2\@AEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@2\@VHashedString\@\@HPEBVUUID\@mce\@\@V?$optional\@VRecipeUnlockingRequirement\@\@\@2\@\@Z\@3\@V?$optional\@VRecipeUnlockingRequirement\@\@\@3\@\@Z
      */
     MCAPI void addShapedRecipe(std::string, class ItemInstance const &, std::vector<std::string> const &, std::vector<class Recipes::Type> const &, std::vector<class HashedString> const &, int, class std::function<std::unique_ptr<class ShapedRecipe> (std::string, int, int, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString, int, class mce::UUID const *, class std::optional<class RecipeUnlockingRequirement>)>, class std::optional<class RecipeUnlockingRequirement>);
@@ -98,10 +102,6 @@ public:
      * @symbol ?addShapedRecipe\@Recipes\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@3\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@AEBV?$vector\@VType\@Recipes\@\@V?$allocator\@VType\@Recipes\@\@\@std\@\@\@3\@AEBV?$vector\@VHashedString\@\@V?$allocator\@VHashedString\@\@\@std\@\@\@3\@HV?$function\@$$A6A?AV?$unique_ptr\@VShapedRecipe\@\@U?$default_delete\@VShapedRecipe\@\@\@std\@\@\@std\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@2\@HHAEBV?$vector\@VRecipeIngredient\@\@V?$allocator\@VRecipeIngredient\@\@\@std\@\@\@2\@AEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@2\@VHashedString\@\@HPEBVUUID\@mce\@\@V?$optional\@VRecipeUnlockingRequirement\@\@\@2\@\@Z\@3\@V?$optional\@VRecipeUnlockingRequirement\@\@\@3\@\@Z
      */
     MCAPI void addShapedRecipe(std::string, std::vector<class ItemInstance> const &, std::vector<std::string> const &, std::vector<class Recipes::Type> const &, std::vector<class HashedString> const &, int, class std::function<std::unique_ptr<class ShapedRecipe> (std::string, int, int, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString, int, class mce::UUID const *, class std::optional<class RecipeUnlockingRequirement>)>, class std::optional<class RecipeUnlockingRequirement>);
-    /**
-     * @symbol ?addShapedRecipe\@Recipes\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemInstance\@\@AEBV23\@2AEBV?$vector\@VType\@Recipes\@\@V?$allocator\@VType\@Recipes\@\@\@std\@\@\@3\@AEBV?$vector\@VHashedString\@\@V?$allocator\@VHashedString\@\@\@std\@\@\@3\@HV?$function\@$$A6A?AV?$unique_ptr\@VShapedRecipe\@\@U?$default_delete\@VShapedRecipe\@\@\@std\@\@\@std\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@2\@HHAEBV?$vector\@VRecipeIngredient\@\@V?$allocator\@VRecipeIngredient\@\@\@std\@\@\@2\@AEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@2\@VHashedString\@\@HPEBVUUID\@mce\@\@V?$optional\@VRecipeUnlockingRequirement\@\@\@2\@\@Z\@3\@V?$optional\@VRecipeUnlockingRequirement\@\@\@3\@\@Z
-     */
-    MCAPI void addShapedRecipe(std::string, class ItemInstance const &, std::string const &, std::string const &, std::vector<class Recipes::Type> const &, std::vector<class HashedString> const &, int, class std::function<std::unique_ptr<class ShapedRecipe> (std::string, int, int, std::vector<class RecipeIngredient> const &, std::vector<class ItemInstance> const &, class HashedString, int, class mce::UUID const *, class std::optional<class RecipeUnlockingRequirement>)>, class std::optional<class RecipeUnlockingRequirement>);
     /**
      * @symbol ?addShapelessRecipe\@Recipes\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemInstance\@\@AEBV?$vector\@VType\@Recipes\@\@V?$allocator\@VType\@Recipes\@\@\@std\@\@\@3\@AEBV?$vector\@VHashedString\@\@V?$allocator\@VHashedString\@\@\@std\@\@\@3\@HV?$function\@$$A6A?AV?$unique_ptr\@VShapelessRecipe\@\@U?$default_delete\@VShapelessRecipe\@\@\@std\@\@\@std\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@2\@AEBV?$vector\@VRecipeIngredient\@\@V?$allocator\@VRecipeIngredient\@\@\@std\@\@\@2\@AEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@2\@VHashedString\@\@HPEBVUUID\@mce\@\@V?$optional\@VRecipeUnlockingRequirement\@\@\@2\@\@Z\@3\@V?$optional\@VRecipeUnlockingRequirement\@\@\@3\@\@Z
      */
@@ -118,6 +118,10 @@ public:
      * @symbol ?extractRecipeObjInfo\@Recipes\@\@QEAA?AU?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VValue\@Json\@\@\@std\@\@AEBVValue\@Json\@\@\@Z
      */
     MCAPI struct std::pair<std::string, class Json::Value> extractRecipeObjInfo(class Json::Value const &);
+    /**
+     * @symbol ?forEachRecipeFor\@Recipes\@\@QEBAXAEBVHashedString\@\@AEBV?$function\@$$A6AXAEBVRecipe\@\@\@Z\@std\@\@\@Z
+     */
+    MCAPI void forEachRecipeFor(class HashedString const &, class std::function<void (class Recipe const &)> const &) const;
     /**
      * @symbol ?getFurnaceRecipeResult\@Recipes\@\@QEBA?AVItemInstance\@\@AEBVItemStackBase\@\@AEBVHashedString\@\@\@Z
      */
@@ -179,9 +183,9 @@ public:
      */
     MCAPI bool _loadBrewingMix(class Json::Value const &, class SemVersion const &);
     /**
-     * @symbol ?_loadHardcodedRecipes\@Recipes\@\@AEAAXXZ
+     * @symbol ?_loadHardcodedRecipes\@Recipes\@\@AEAAXAEBVBaseGameVersion\@\@AEBVExperiments\@\@\@Z
      */
-    MCAPI void _loadHardcodedRecipes();
+    MCAPI void _loadHardcodedRecipes(class BaseGameVersion const &, class Experiments const &);
     /**
      * @symbol ?_loadIngredientFromJson\@Recipes\@\@AEBA?BVRecipeIngredient\@\@AEBVValue\@Json\@\@AEBVSemVersion\@\@_N2\@Z
      */
@@ -194,6 +198,10 @@ public:
      * @symbol ?_loadSmithingTransform\@Recipes\@\@AEAA_NAEBVValue\@Json\@\@AEBVSemVersion\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@VHashedString\@\@V?$allocator\@VHashedString\@\@\@std\@\@\@6\@\@Z
      */
     MCAPI bool _loadSmithingTransform(class Json::Value const &, class SemVersion const &, std::string const &, std::vector<class HashedString> const &);
+    /**
+     * @symbol ?_loadSmithingTrim\@Recipes\@\@AEAA_NAEBVValue\@Json\@\@AEBVSemVersion\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@VHashedString\@\@V?$allocator\@VHashedString\@\@\@std\@\@\@6\@\@Z
+     */
+    MCAPI bool _loadSmithingTrim(class Json::Value const &, class SemVersion const &, std::string const &, std::vector<class HashedString> const &);
 
 protected:
 

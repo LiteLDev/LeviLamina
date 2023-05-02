@@ -5,6 +5,8 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "npc.hpp"
+#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -63,17 +65,13 @@ public:
      */
     MCAPI void executeOpeningCommands(class Actor &, class Player &, std::string const &);
     /**
-     * @symbol ?getActionsContainer\@NpcComponent\@\@QEAAAEAUNpcActionsContainer\@\@XZ
+     * @symbol ?getActionsContainer\@NpcComponent\@\@QEAAAEAUActionContainer\@npc\@\@XZ
      */
-    MCAPI struct NpcActionsContainer & getActionsContainer();
+    MCAPI struct npc::ActionContainer & getActionsContainer();
     /**
-     * @symbol ?getButtonCounts\@NpcComponent\@\@QEBA?AV?$vector\@HV?$allocator\@H\@std\@\@\@std\@\@XZ
+     * @symbol ?getCommandCounts\@NpcComponent\@\@QEBA?AV?$vector\@HV?$allocator\@H\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<int> getButtonCounts() const;
-    /**
-     * @symbol ?getCommandPermissionLevel\@NpcComponent\@\@QEBA?AW4CommandPermissionLevel\@\@XZ
-     */
-    MCAPI enum class CommandPermissionLevel getCommandPermissionLevel() const;
+    MCAPI std::vector<int> getCommandCounts() const;
     /**
      * @symbol ?getInteraction\@NpcComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
@@ -95,17 +93,9 @@ public:
      */
     MCAPI int getSkinIndex() const;
     /**
-     * @symbol ?getUpdatedActions\@NpcComponent\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$vector\@V?$unique_ptr\@VNpcAction\@\@U?$default_delete\@VNpcAction\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VNpcAction\@\@U?$default_delete\@VNpcAction\@\@\@std\@\@\@std\@\@\@2\@\@3\@AEA_N2\@Z
-     */
-    MCAPI void getUpdatedActions(std::string const &, std::vector<std::unique_ptr<class NpcAction>> &, bool &, bool &);
-    /**
      * @symbol ?getUrlCount\@NpcComponent\@\@QEBAHXZ
      */
     MCAPI int getUrlCount() const;
-    /**
-     * @symbol ?handleNpcRequest\@NpcComponent\@\@QEAAXAEAVActor\@\@AEAVPlayer\@\@AEBVNpcRequestPacket\@\@\@Z
-     */
-    MCAPI void handleNpcRequest(class Actor &, class Player &, class NpcRequestPacket const &);
     /**
      * @symbol ?initClientOnlyData\@NpcComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
@@ -139,9 +129,9 @@ public:
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @symbol ?setActions\@NpcComponent\@\@QEAAXAEAVActor\@\@$$QEAV?$vector\@V?$unique_ptr\@VNpcAction\@\@U?$default_delete\@VNpcAction\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VNpcAction\@\@U?$default_delete\@VNpcAction\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@\@Z
+     * @symbol ?setActions\@NpcComponent\@\@QEAAXAEAVActor\@\@$$QEAV?$vector\@V?$variant\@UCommandAction\@npc\@\@UUrlAction\@2\@\@std\@\@V?$allocator\@V?$variant\@UCommandAction\@npc\@\@UUrlAction\@2\@\@std\@\@\@2\@\@std\@\@\@Z
      */
-    MCAPI void setActions(class Actor &, std::vector<std::unique_ptr<class NpcAction>> &&);
+    MCAPI void setActions(class Actor &, std::vector<class std::variant<struct npc::CommandAction, struct npc::UrlAction>> &&);
     /**
      * @symbol ?setDialogueScene\@NpcComponent\@\@QEAA_NAEAVActor\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -162,10 +152,6 @@ public:
      * @symbol ?setSkinIndex\@NpcComponent\@\@QEAAXAEAVActor\@\@H_N\@Z
      */
     MCAPI void setSkinIndex(class Actor &, int, bool);
-    /**
-     * @symbol ?MAX_NPC_NAME_LENGTH\@NpcComponent\@\@2_KB
-     */
-    MCAPI static unsigned __int64 const MAX_NPC_NAME_LENGTH;
 
 //private:
     /**
@@ -173,17 +159,9 @@ public:
      */
     MCAPI void _defineEntityDataString(class Actor &, enum class ActorDataIDs);
     /**
-     * @symbol ?_deserializeData\@NpcComponent\@\@AEAAXXZ
+     * @symbol ?_deserializeData\@NpcComponent\@\@AEAAXAEBVValue\@Json\@\@\@Z
      */
-    MCAPI void _deserializeData();
-    /**
-     * @symbol ?_loadActions\@NpcComponent\@\@AEBAXAEAV?$vector\@V?$unique_ptr\@VNpcAction\@\@U?$default_delete\@VNpcAction\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VNpcAction\@\@U?$default_delete\@VNpcAction\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
-     */
-    MCAPI void _loadActions(std::vector<std::unique_ptr<class NpcAction>> &, std::string const &) const;
-    /**
-     * @symbol ?_serializeActions\@NpcComponent\@\@AEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string _serializeActions() const;
+    MCAPI void _deserializeData(class Json::Value const &);
 
 private:
     /**

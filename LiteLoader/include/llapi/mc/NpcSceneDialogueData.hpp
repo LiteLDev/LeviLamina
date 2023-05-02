@@ -80,13 +80,13 @@ public:
     virtual struct ActorUniqueID getActorUniqueID();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCSCENEDIALOGUEDATA
     /**
-     * @symbol ?getActionsContainer\@NpcSceneDialogueData\@\@UEAAPEAUNpcActionsContainer\@\@XZ
+     * @symbol ?getActionsContainer\@NpcSceneDialogueData\@\@UEAAPEAUActionContainer\@npc\@\@XZ
      */
-    MCVAPI struct NpcActionsContainer * getActionsContainer();
+    MCVAPI struct npc::ActionContainer * getActionsContainer();
     /**
-     * @symbol ?getActionsContainer\@NpcSceneDialogueData\@\@UEBAPEBUNpcActionsContainer\@\@XZ
+     * @symbol ?getActionsContainer\@NpcSceneDialogueData\@\@UEBAPEBUActionContainer\@npc\@\@XZ
      */
-    MCVAPI struct NpcActionsContainer const * getActionsContainer() const;
+    MCVAPI struct npc::ActionContainer const * getActionsContainer() const;
     /**
      * @symbol ?getActor\@NpcSceneDialogueData\@\@UEAAPEAVActor\@\@XZ
      */

@@ -38,9 +38,5 @@ public:
      * @symbol ?execute\@DeferredCommandBlockCommand\@\@UEAAXAEAVMinecraftCommands\@\@\@Z
      */
     virtual void execute(class MinecraftCommands &);
-    /**
-     * @symbol ??0DeferredCommandBlockCommand\@\@QEAA\@VBlockPos\@\@AEAVBlockSource\@\@\@Z
-     */
-    MCAPI DeferredCommandBlockCommand(class BlockPos, class BlockSource &);
 
 };

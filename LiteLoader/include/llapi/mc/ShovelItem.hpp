@@ -119,9 +119,9 @@ public:
     virtual void __unk_vfn_80();
     /**
      * @vftbl 132
-     * @symbol ?_useOn\@ShovelItem\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
+     * @symbol ?_useOn\@ShovelItem\@\@MEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
-    virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
      * @symbol ??0ShovelItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVTier\@Item\@\@\@Z
      */

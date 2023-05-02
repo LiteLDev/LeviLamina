@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "MultifaceSpreader.hpp"
 
 #define BEFORE_EXTRA
 
@@ -54,9 +53,5 @@ public:
      */
     MCVAPI ~SculkVeinMultifaceSpreader();
 #endif
-    /**
-     * @symbol ??0SculkVeinMultifaceSpreader\@\@QEAA\@AEBV?$vector\@W4SpreadType\@MultifaceSpreader\@\@V?$allocator\@W4SpreadType\@MultifaceSpreader\@\@\@std\@\@\@std\@\@\@Z
-     */
-    MCAPI SculkVeinMultifaceSpreader(std::vector<enum class MultifaceSpreader::SpreadType> const &);
 
 };

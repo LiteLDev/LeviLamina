@@ -52,6 +52,16 @@ public:
      * @symbol ?_read\@UpdateClientInputLocksPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATECLIENTINPUTLOCKSPACKET
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~UpdateClientInputLocksPacket();
+#endif
+    /**
+     * @symbol ??0UpdateClientInputLocksPacket\@\@QEAA\@AEBUClientInputLockComponent\@\@AEBVVec3\@\@\@Z
+     */
+    MCAPI UpdateClientInputLocksPacket(struct ClientInputLockComponent const &, class Vec3 const &);
     /**
      * @symbol ??0UpdateClientInputLocksPacket\@\@QEAA\@XZ
      */

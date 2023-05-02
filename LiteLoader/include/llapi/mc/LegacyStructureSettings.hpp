@@ -24,7 +24,6 @@ class LegacyStructureSettings {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYSTRUCTURESETTINGS
 public:
     class LegacyStructureSettings& operator=(class LegacyStructureSettings const &) = delete;
-    LegacyStructureSettings(class LegacyStructureSettings const &) = delete;
 #endif
 
 public:
@@ -32,6 +31,10 @@ public:
      * @symbol ??0LegacyStructureSettings\@\@QEAA\@XZ
      */
     MCAPI LegacyStructureSettings();
+    /**
+     * @symbol ??0LegacyStructureSettings\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI LegacyStructureSettings(class LegacyStructureSettings const &);
     /**
      * @symbol ??0LegacyStructureSettings\@\@QEAA\@W4Mirror\@\@W4Rotation\@\@PEBVBlock\@\@AEBVBoundingBox\@\@\@Z
      */
@@ -44,10 +47,6 @@ public:
      * @symbol ?getBoundingBox\@LegacyStructureSettings\@\@QEAAAEBVBoundingBox\@\@XZ
      */
     MCAPI class BoundingBox const & getBoundingBox();
-    /**
-     * @symbol ?getIgnoreBlock\@LegacyStructureSettings\@\@QEBAPEBVBlock\@\@XZ
-     */
-    MCAPI class Block const * getIgnoreBlock() const;
     /**
      * @symbol ?getMirror\@LegacyStructureSettings\@\@QEBAAEBW4Mirror\@\@XZ
      */
@@ -64,18 +63,6 @@ public:
      * @symbol ?getSwappedBlock\@LegacyStructureSettings\@\@QEBAAEBVBlock\@\@AEBVBlockPalette\@\@AEBV2\@\@Z
      */
     MCAPI class Block const & getSwappedBlock(class BlockPalette const &, class Block const &) const;
-    /**
-     * @symbol ?isIgnoreJigsawBlocks\@LegacyStructureSettings\@\@QEBA_NXZ
-     */
-    MCAPI bool isIgnoreJigsawBlocks() const;
-    /**
-     * @symbol ?isIgnoreStructureBlocks\@LegacyStructureSettings\@\@QEBA_NXZ
-     */
-    MCAPI bool isIgnoreStructureBlocks() const;
-    /**
-     * @symbol ?isPlacingWaterBelowSeaLevel\@LegacyStructureSettings\@\@QEBA_NXZ
-     */
-    MCAPI bool isPlacingWaterBelowSeaLevel() const;
     /**
      * @symbol ?placeWaterBelowSeaLevel\@LegacyStructureSettings\@\@QEAAX_N\@Z
      */

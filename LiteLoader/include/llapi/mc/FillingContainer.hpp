@@ -45,72 +45,72 @@ public:
      */
     virtual class ItemStack const & getItem(int) const;
     /**
-     * @vftbl 9
+     * @vftbl 10
      * @symbol ?setItem\@FillingContainer\@\@UEAAXHAEBVItemStack\@\@\@Z
      */
     virtual void setItem(int, class ItemStack const &);
     /**
-     * @vftbl 10
+     * @vftbl 11
      * @symbol ?setItemWithForceBalance\@FillingContainer\@\@UEAAXHAEBVItemStack\@\@_N\@Z
      */
     virtual void setItemWithForceBalance(int, class ItemStack const &, bool);
     /**
-     * @vftbl 11
+     * @vftbl 12
      * @symbol ?removeItem\@FillingContainer\@\@UEAAXHH\@Z
      */
     virtual void removeItem(int, int);
     /**
-     * @vftbl 14
+     * @vftbl 15
      * @symbol ?getContainerSize\@FillingContainer\@\@UEBAHXZ
      */
     virtual int getContainerSize() const;
     /**
-     * @vftbl 15
+     * @vftbl 16
      * @symbol ?getMaxStackSize\@FillingContainer\@\@UEBAHXZ
      */
     virtual int getMaxStackSize() const;
     /**
-     * @vftbl 16
+     * @vftbl 17
      * @symbol ?startOpen\@FillingContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
     virtual void startOpen(class Player &);
     /**
-     * @vftbl 17
+     * @vftbl 18
      * @symbol ?stopOpen\@FillingContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
     virtual void stopOpen(class Player &);
-    /**
-     * @vftbl 23
-     * @symbol __unk_vfn_23
-     */
-    virtual void __unk_vfn_23();
     /**
      * @vftbl 24
      * @symbol __unk_vfn_24
      */
     virtual void __unk_vfn_24();
     /**
-     * @vftbl 34
+     * @vftbl 25
+     * @symbol __unk_vfn_25
+     */
+    virtual void __unk_vfn_25();
+    /**
+     * @vftbl 35
      * @symbol ?add\@FillingContainer\@\@UEAA_NAEAVItemStack\@\@\@Z
      */
     virtual bool add(class ItemStack &);
     /**
-     * @vftbl 35
+     * @vftbl 36
      * @symbol ?canAdd\@FillingContainer\@\@UEBA_NAEBVItemStack\@\@\@Z
      */
     virtual bool canAdd(class ItemStack const &) const;
     /**
-     * @vftbl 36
+     * @vftbl 37
      * @symbol ?clearSlot\@FillingContainer\@\@UEAAXH\@Z
      */
     virtual void clearSlot(int);
     /**
-     * @vftbl 37
+     * @vftbl 38
      * @symbol ?clearInventory\@FillingContainer\@\@UEAAHH\@Z
      */
     virtual int clearInventory(int);
     /**
-     * @vftbl 38
+     * @vftbl 39
      * @symbol ?load\@FillingContainer\@\@UEAAXAEBVListTag\@\@AEBVSemVersion\@\@AEAVLevel\@\@\@Z
      */
     virtual void load(class ListTag const &, class SemVersion const &, class Level &);

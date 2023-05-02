@@ -56,17 +56,17 @@ public:
      */
     MCAPI static void storeSideBySideResult(class Actor &, enum class SideBySideExtractionId, struct SideBySideResult);
     /**
-     * @symbol ?tryRecordBlockSource\@SideBySideTrigger\@\@SA?AVConditionalRecordingConstBlockSource\@\@_NV?$not_null\@PEBVIConstBlockSource\@\@\@gsl\@\@\@Z
+     * @symbol ?tryRecordBlockSource\@SideBySideTrigger\@\@SA?AVConditionalRecordingConstBlockSource\@\@_NV?$not_null\@PEBVIConstBlockSource\@\@\@gsl\@\@AEAUIActorMovementProxy\@\@\@Z
      */
-    MCAPI static class ConditionalRecordingConstBlockSource tryRecordBlockSource(bool, class gsl::not_null<class IConstBlockSource const *>);
-    /**
-     * @symbol ?tryTrigger\@SideBySideTrigger\@\@SA_NAEAVActor\@\@W4SideBySideExtractionId\@\@W4SideBySideExtractionStep\@\@\@Z
-     */
-    MCAPI static bool tryTrigger(class Actor &, enum class SideBySideExtractionId, enum class SideBySideExtractionStep);
+    MCAPI static class ConditionalRecordingConstBlockSource tryRecordBlockSource(bool, class gsl::not_null<class IConstBlockSource const *>, struct IActorMovementProxy &);
     /**
      * @symbol ?tryTrigger\@SideBySideTrigger\@\@SA_NAEAUIActorMovementProxy\@\@W4SideBySideExtractionId\@\@W4SideBySideExtractionStep\@\@\@Z
      */
     MCAPI static bool tryTrigger(struct IActorMovementProxy &, enum class SideBySideExtractionId, enum class SideBySideExtractionStep);
+    /**
+     * @symbol ?tryTrigger\@SideBySideTrigger\@\@SA_NAEAVActor\@\@W4SideBySideExtractionId\@\@W4SideBySideExtractionStep\@\@\@Z
+     */
+    MCAPI static bool tryTrigger(class Actor &, enum class SideBySideExtractionId, enum class SideBySideExtractionStep);
     /**
      * @symbol ?tryTriggerCurrentPostSimulation\@SideBySideTrigger\@\@SA_NAEAUIActorMovementProxy\@\@V?$optional\@W4SideBySideExtractionId\@\@\@std\@\@\@Z
      */

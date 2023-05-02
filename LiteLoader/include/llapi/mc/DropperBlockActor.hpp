@@ -45,10 +45,6 @@ public:
     MCVAPI std::string getName() const;
 #endif
     /**
-     * @symbol ??0DropperBlockActor\@\@QEAA\@VBlockPos\@\@\@Z
-     */
-    MCAPI DropperBlockActor(class BlockPos);
-    /**
      * @symbol ?pushOutItems\@DropperBlockActor\@\@QEAA_NAEAVBlockSource\@\@\@Z
      */
     MCAPI bool pushOutItems(class BlockSource &);

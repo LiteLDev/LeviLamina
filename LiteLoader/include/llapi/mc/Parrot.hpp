@@ -187,11 +187,6 @@ public:
      */
     virtual void __unk_vfn_275();
     /**
-     * @vftbl 288
-     * @symbol ?aiStep\@Parrot\@\@UEAAXXZ
-     */
-    virtual void aiStep();
-    /**
      * @vftbl 301
      * @symbol __unk_vfn_301
      */

@@ -116,6 +116,10 @@ public:
      */
     MCAPI AppPlatformListener(bool);
     /**
+     * @symbol ?initListener\@AppPlatformListener\@\@QEAAXM\@Z
+     */
+    MCAPI void initListener(float);
+    /**
      * @symbol ?terminate\@AppPlatformListener\@\@QEAAXXZ
      */
     MCAPI void terminate();

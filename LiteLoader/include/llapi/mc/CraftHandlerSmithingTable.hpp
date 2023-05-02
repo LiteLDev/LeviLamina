@@ -43,9 +43,5 @@ public:
      * @symbol ?_getLevelRecipes\@CraftHandlerSmithingTable\@\@EEBAPEBVRecipes\@\@XZ
      */
     virtual class Recipes const * _getLevelRecipes() const;
-    /**
-     * @symbol ??0CraftHandlerSmithingTable\@\@QEAA\@AEAVPlayer\@\@AEAVItemStackRequestActionCraftHandler\@\@\@Z
-     */
-    MCAPI CraftHandlerSmithingTable(class Player &, class ItemStackRequestActionCraftHandler &);
 
 };

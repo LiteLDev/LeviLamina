@@ -61,12 +61,12 @@ public:
     MCVAPI ~PacketViolationWarningPacket();
 #endif
     /**
-     * @symbol ??0PacketViolationWarningPacket\@\@QEAA\@W4StreamReadResult\@\@W4PacketViolationResponse\@\@W4MinecraftPacketIds\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI PacketViolationWarningPacket(enum class StreamReadResult, enum class PacketViolationResponse, enum class MinecraftPacketIds, std::string const &);
-    /**
      * @symbol ??0PacketViolationWarningPacket\@\@QEAA\@XZ
      */
     MCAPI PacketViolationWarningPacket();
+    /**
+     * @symbol ??0PacketViolationWarningPacket\@\@QEAA\@W4StreamReadResult\@\@W4PacketViolationResponse\@\@W4MinecraftPacketIds\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI PacketViolationWarningPacket(enum class StreamReadResult, enum class PacketViolationResponse, enum class MinecraftPacketIds, std::string const &);
 
 };

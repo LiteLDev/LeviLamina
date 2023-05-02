@@ -31,9 +31,13 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSYSTEMS
     /**
-     * @symbol ?registerTickingSystem\@EntitySystems\@\@UEAAXV?$span\@$$CBV?$typeid_t\@USystemCategory\@\@\@\@$0?0\@gsl\@\@V?$unique_ptr\@VITickingSystem\@\@U?$default_delete\@VITickingSystem\@\@\@std\@\@\@std\@\@AEBUSystemInfo\@\@\@Z
+     * @symbol ?registerSingleTickingSystem\@EntitySystems\@\@UEAAXV?$span\@$$CBV?$typeid_t\@USystemCategory\@\@\@Bedrock\@\@$0?0\@gsl\@\@V?$unique_ptr\@VITickingSystem\@\@U?$default_delete\@VITickingSystem\@\@\@std\@\@\@std\@\@AEBUSystemInfo\@\@\@Z
      */
-    MCVAPI void registerTickingSystem(class gsl::span<class typeid_t<struct SystemCategory> const, -1>, std::unique_ptr<class ITickingSystem>, struct SystemInfo const &);
+    MCVAPI void registerSingleTickingSystem(class gsl::span<class Bedrock::typeid_t<struct SystemCategory> const, -1>, std::unique_ptr<class ITickingSystem>, struct SystemInfo const &);
+    /**
+     * @symbol ?registerTickingSystem\@EntitySystems\@\@UEAAXV?$span\@$$CBV?$typeid_t\@USystemCategory\@\@\@Bedrock\@\@$0?0\@gsl\@\@V?$unique_ptr\@VITickingSystem\@\@U?$default_delete\@VITickingSystem\@\@\@std\@\@\@std\@\@AEBUSystemInfo\@\@\@Z
+     */
+    MCVAPI void registerTickingSystem(class gsl::span<class Bedrock::typeid_t<struct SystemCategory> const, -1>, std::unique_ptr<class ITickingSystem>, struct SystemInfo const &);
     /**
      * @symbol ?tickMovementCatchup\@EntitySystems\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */

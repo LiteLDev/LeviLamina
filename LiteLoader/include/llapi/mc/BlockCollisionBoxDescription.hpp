@@ -11,15 +11,15 @@
 #undef BEFORE_EXTRA
 
 
-class BlockCollisionBoxDescription {
+struct BlockCollisionBoxDescription {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCOLLISIONBOXDESCRIPTION
 public:
-    class BlockCollisionBoxDescription& operator=(class BlockCollisionBoxDescription const &) = delete;
-    BlockCollisionBoxDescription(class BlockCollisionBoxDescription const &) = delete;
+    struct BlockCollisionBoxDescription& operator=(struct BlockCollisionBoxDescription const &) = delete;
+    BlockCollisionBoxDescription(struct BlockCollisionBoxDescription const &) = delete;
     BlockCollisionBoxDescription() = delete;
 #endif
 
@@ -67,9 +67,5 @@ public:
      * @symbol ?bindType\@BlockCollisionBoxDescription\@\@SAXXZ
      */
     MCAPI static void bindType();
-    /**
-     * @symbol ?registerVersionUpgrades\@BlockCollisionBoxDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
-     */
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

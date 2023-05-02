@@ -42,10 +42,6 @@ public:
      */
     MCAPI struct ActorUniqueID const & getEntityId() const;
     /**
-     * @symbol ?getFakePlayerName\@ScoreboardIdentityRef\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string const & getFakePlayerName() const;
-    /**
      * @symbol ?getIdentityType\@ScoreboardIdentityRef\@\@QEBA?AW4Type\@IdentityDefinition\@\@XZ
      */
     MCAPI enum class IdentityDefinition::Type getIdentityType() const;

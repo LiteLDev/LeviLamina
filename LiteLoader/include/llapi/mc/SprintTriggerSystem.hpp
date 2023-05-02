@@ -10,26 +10,15 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC class SprintTriggerSystem.
- *
- */
-class SprintTriggerSystem {
+
+namespace SprintTriggerSystem {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPRINTTRIGGERSYSTEM
-public:
-    class SprintTriggerSystem& operator=(class SprintTriggerSystem const &) = delete;
-    SprintTriggerSystem(class SprintTriggerSystem const &) = delete;
-    SprintTriggerSystem() = delete;
-#endif
-
-public:
     /**
-     * @symbol ?create\@SprintTriggerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@SprintTriggerSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo create();
+    MCAPI struct TickingSystemWithInfo createSystem();
 
 };

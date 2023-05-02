@@ -38,13 +38,5 @@ public:
      * @symbol ?DEFAULT_LEVEL\@ActorSelectorArgs\@\@2U?$pair\@HH\@std\@\@B
      */
     MCAPI static struct std::pair<int, int> const DEFAULT_LEVEL;
-    /**
-     * @symbol ?DEFAULT_X_ROTATION\@ActorSelectorArgs\@\@2U?$pair\@MM\@std\@\@B
-     */
-    MCAPI static struct std::pair<float, float> const DEFAULT_X_ROTATION;
-    /**
-     * @symbol ?DEFAULT_Y_ROTATION\@ActorSelectorArgs\@\@2U?$pair\@MM\@std\@\@B
-     */
-    MCAPI static struct std::pair<float, float> const DEFAULT_Y_ROTATION;
 
 };

@@ -8,7 +8,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+#include "EntityRegistryBase.hpp"
 #undef BEFORE_EXTRA
 
 /**
@@ -22,6 +22,11 @@ class EntityContextBase {
 public:
     class EntityRegistryBase* mRegistry;
     const class EntityId mEntity;
+
+
+    class entt::basic_registry<EntityId>& _enttRegistry() {
+        return *mRegistry->mRegistry;
+    }
 
 #define DISABLE_CONSTRUCTOR_PREVENTION_ENTITYCONTEXTBASE
 #undef AFTER_EXTRA
@@ -47,18 +52,6 @@ public:
     MCAPI bool operator==(class EntityContextBase const &) const;
 
 //protected:
-    /**
-     * @symbol ?_assertValid\@EntityContextBase\@\@IEBAXXZ
-     */
-    MCAPI void _assertValid() const;
-    /**
-     * @symbol ?_enttRegistry\@EntityContextBase\@\@IEAAAEAV?$basic_registry\@VEntityId\@\@V?$allocator\@VEntityId\@\@\@std\@\@\@entt\@\@XZ
-     */
-    MCAPI class entt::basic_registry<class EntityId, class std::allocator<class EntityId>> & _enttRegistry();
-    /**
-     * @symbol ?_enttRegistry\@EntityContextBase\@\@IEBAAEBV?$basic_registry\@VEntityId\@\@V?$allocator\@VEntityId\@\@\@std\@\@\@entt\@\@XZ
-     */
-    MCAPI class entt::basic_registry<class EntityId, class std::allocator<class EntityId>> const & _enttRegistry() const;
     /**
      * @symbol ?_getEntityId\@EntityContextBase\@\@IEBA?AVEntityId\@\@XZ
      */

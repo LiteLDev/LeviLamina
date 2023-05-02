@@ -80,10 +80,6 @@ public:
      * @symbol ?_getContainer\@HudContainerModel\@\@EEBAPEAVContainer\@\@XZ
      */
     virtual class Container * _getContainer() const;
-    /**
-     * @symbol ??0HudContainerModel\@\@QEAA\@W4ContainerEnumName\@\@AEAVPlayer\@\@\@Z
-     */
-    MCAPI HudContainerModel(enum class ContainerEnumName, class Player &);
 
 //private:
     /**

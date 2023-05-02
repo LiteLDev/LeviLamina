@@ -84,13 +84,13 @@ public:
 
 //private:
     /**
-     * @symbol ?_handleExplosionStartedEvent\@ScriptBlockGameplayHandler\@\@AEBA_NAEAUExplosionStartedEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VScriptWorldEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
+     * @symbol ?_handleExplosionStartedEvent\@ScriptBlockGameplayHandler\@\@AEBA_NAEAUExplosionStartedEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VIScriptBeforeEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
      */
-    MCAPI bool _handleExplosionStartedEvent(struct ExplosionStartedEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldEvents>) const;
+    MCAPI bool _handleExplosionStartedEvent(struct ExplosionStartedEvent &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptBeforeEvents>) const;
     /**
-     * @symbol ?_handlePistonActionEvent\@ScriptBlockGameplayHandler\@\@AEBA_NAEBUPistonActionEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VScriptWorldEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
+     * @symbol ?_handlePistonActionEvent\@ScriptBlockGameplayHandler\@\@AEBA_NAEBUPistonActionEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@U?$TypedObjectHandle\@VIScriptBeforeEvents\@ScriptModuleMinecraft\@\@\@4\@\@Z
      */
-    MCAPI bool _handlePistonActionEvent(struct PistonActionEvent const &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptWorldEvents>) const;
+    MCAPI bool _handlePistonActionEvent(struct PistonActionEvent const &, class Scripting::WeakLifetimeScope const &, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptBeforeEvents>) const;
 
 private:
 

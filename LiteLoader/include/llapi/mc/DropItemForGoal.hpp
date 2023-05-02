@@ -95,4 +95,12 @@ public:
      */
     MCAPI DropItemForGoal(class Mob &);
 
+//private:
+    /**
+     * @symbol ?_getLootTable\@DropItemForGoal\@\@AEAAPEAVLootTable\@\@XZ
+     */
+    MCAPI class LootTable * _getLootTable();
+
+private:
+
 };

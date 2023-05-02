@@ -29,21 +29,21 @@ public:
      */
     MCAPI ItemContext(class BlockSource &, class BlockPos const &, int);
     /**
+     * @symbol ??0ItemContext\@\@QEAA\@AEBVWeakEntityRef\@\@W4EquipmentSlot\@\@\@Z
+     */
+    MCAPI ItemContext(class WeakEntityRef const &, enum class EquipmentSlot);
+    /**
      * @symbol ??0ItemContext\@\@QEAA\@AEBVWeakEntityRef\@\@H\@Z
      */
     MCAPI ItemContext(class WeakEntityRef const &, int);
     /**
-     * @symbol ?clone\@ItemContext\@\@QEBA?AVItemStack\@\@XZ
+     * @symbol ?clone\@ItemContext\@\@QEBA?AV?$optional\@VItemStack\@\@\@std\@\@XZ
      */
-    MCAPI class ItemStack clone() const;
+    MCAPI class std::optional<class ItemStack> clone() const;
     /**
-     * @symbol ?getAmount\@ItemContext\@\@QEBAHXZ
+     * @symbol ?getAmount\@ItemContext\@\@QEBA?AV?$optional\@H\@std\@\@XZ
      */
-    MCAPI int getAmount() const;
-    /**
-     * @symbol ?getData\@ItemContext\@\@QEBAHXZ
-     */
-    MCAPI int getData() const;
+    MCAPI class std::optional<int> getAmount() const;
     /**
      * @symbol ?getId\@ItemContext\@\@QEBA?AV?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@XZ
      */
@@ -53,79 +53,99 @@ public:
      */
     MCAPI class ItemStack const & getItem() const;
     /**
-     * @symbol ?getKeepOnDeath\@ItemContext\@\@QEBA_NXZ
+     * @symbol ?getKeepOnDeath\@ItemContext\@\@QEBA?AV?$optional\@_N\@std\@\@XZ
      */
-    MCAPI bool getKeepOnDeath() const;
+    MCAPI class std::optional<bool> getKeepOnDeath() const;
     /**
-     * @symbol ?getLockMode\@ItemContext\@\@QEBA?AW4ItemLockMode\@\@XZ
+     * @symbol ?getLockMode\@ItemContext\@\@QEBA?AV?$optional\@W4ItemLockMode\@\@\@std\@\@XZ
      */
-    MCAPI enum class ItemLockMode getLockMode() const;
+    MCAPI class std::optional<enum class ItemLockMode> getLockMode() const;
     /**
      * @symbol ?getLore\@ItemContext\@\@QEBA?AV?$optional\@V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@std\@\@XZ
      */
     MCAPI class std::optional<std::vector<std::string>> getLore() const;
     /**
-     * @symbol ?getMaxAmount\@ItemContext\@\@QEBAHXZ
+     * @symbol ?getMaxAmount\@ItemContext\@\@QEBA?AV?$optional\@H\@std\@\@XZ
      */
-    MCAPI int getMaxAmount() const;
+    MCAPI class std::optional<int> getMaxAmount() const;
     /**
      * @symbol ?getNameTag\@ItemContext\@\@QEBA?AV?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@XZ
      */
     MCAPI class std::optional<std::string> getNameTag() const;
     /**
-     * @symbol ?isStackable\@ItemContext\@\@QEBA_NXZ
+     * @symbol ?getTags\@ItemContext\@\@QEBA?AV?$optional\@V?$vector\@UItemTag\@\@V?$allocator\@UItemTag\@\@\@std\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI bool isStackable() const;
+    MCAPI class std::optional<std::vector<struct ItemTag>> getTags() const;
     /**
-     * @symbol ?isStackableWith\@ItemContext\@\@QEBA_NAEBVItemStackBase\@\@\@Z
+     * @symbol ?hasTag\@ItemContext\@\@QEBA?AV?$optional\@_N\@std\@\@AEBUItemTag\@\@\@Z
      */
-    MCAPI bool isStackableWith(class ItemStackBase const &) const;
+    MCAPI class std::optional<bool> hasTag(struct ItemTag const &) const;
+    /**
+     * @symbol ?isStackable\@ItemContext\@\@QEBA?AV?$optional\@_N\@std\@\@XZ
+     */
+    MCAPI class std::optional<bool> isStackable() const;
+    /**
+     * @symbol ?isStackableWith\@ItemContext\@\@QEBA?AV?$optional\@_N\@std\@\@AEBVItemStackBase\@\@\@Z
+     */
+    MCAPI class std::optional<bool> isStackableWith(class ItemStackBase const &) const;
     /**
      * @symbol ?isValid\@ItemContext\@\@QEBA_NXZ
      */
     MCAPI bool isValid() const;
     /**
-     * @symbol ?setAmount\@ItemContext\@\@QEAAXH\@Z
+     * @symbol ?setAmount\@ItemContext\@\@QEAA_NH\@Z
      */
-    MCAPI void setAmount(int);
+    MCAPI bool setAmount(int);
     /**
-     * @symbol ?setCanDestroy\@ItemContext\@\@QEAA_NAEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
+     * @symbol ?setCanDestroy\@ItemContext\@\@QEAA?AV?$optional\@_N\@std\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@\@Z
      */
-    MCAPI bool setCanDestroy(std::vector<std::string> const &);
+    MCAPI class std::optional<bool> setCanDestroy(std::vector<std::string> const &);
     /**
-     * @symbol ?setCanPlaceOn\@ItemContext\@\@QEAA_NAEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
+     * @symbol ?setCanPlaceOn\@ItemContext\@\@QEAA?AV?$optional\@_N\@std\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@\@Z
      */
-    MCAPI bool setCanPlaceOn(std::vector<std::string> const &);
+    MCAPI class std::optional<bool> setCanPlaceOn(std::vector<std::string> const &);
     /**
-     * @symbol ?setData\@ItemContext\@\@QEAAXH\@Z
+     * @symbol ?setItem\@ItemContext\@\@QEAA_NAEBVItemStack\@\@\@Z
      */
-    MCAPI void setData(int);
+    MCAPI bool setItem(class ItemStack const &);
     /**
-     * @symbol ?setItem\@ItemContext\@\@QEAAXAEBVItemStack\@\@\@Z
+     * @symbol ?setKeepOnDeath\@ItemContext\@\@QEAA_N_N\@Z
      */
-    MCAPI void setItem(class ItemStack const &);
+    MCAPI bool setKeepOnDeath(bool);
     /**
-     * @symbol ?setKeepOnDeath\@ItemContext\@\@QEAAX_N\@Z
+     * @symbol ?setLockMode\@ItemContext\@\@QEAA_NW4ItemLockMode\@\@\@Z
      */
-    MCAPI void setKeepOnDeath(bool);
+    MCAPI bool setLockMode(enum class ItemLockMode);
     /**
-     * @symbol ?setLockMode\@ItemContext\@\@QEAAXW4ItemLockMode\@\@\@Z
+     * @symbol ?setLore\@ItemContext\@\@QEAA_NAEBV?$optional\@V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI void setLockMode(enum class ItemLockMode);
+    MCAPI bool setLore(class std::optional<std::vector<std::string>> const &);
     /**
-     * @symbol ?setLore\@ItemContext\@\@QEAAXAEBV?$optional\@V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@std\@\@\@Z
+     * @symbol ?setNameTag\@ItemContext\@\@QEAA_NV?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI void setLore(class std::optional<std::vector<std::string>> const &);
-    /**
-     * @symbol ?setNameTag\@ItemContext\@\@QEAAXV?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@Z
-     */
-    MCAPI void setNameTag(class std::optional<std::string>);
+    MCAPI bool setNameTag(class std::optional<std::string>);
     /**
      * @symbol ??1ItemContext\@\@QEAA\@XZ
      */
     MCAPI ~ItemContext();
+    /**
+     * @symbol ?setEquipment\@ItemContext\@\@SAXAEBVItemStack\@\@W4EquipmentSlot\@\@AEAVMob\@\@\@Z
+     */
+    MCAPI static void setEquipment(class ItemStack const &, enum class EquipmentSlot, class Mob &);
 
 //private:
+    /**
+     * @symbol ?_getItem\@ItemContext\@\@AEBAAEBVItemStack\@\@XZ
+     */
+    MCAPI class ItemStack const & _getItem() const;
+    /**
+     * @symbol ?_setItem\@ItemContext\@\@AEAAXAEBVItemStack\@\@\@Z
+     */
+    MCAPI void _setItem(class ItemStack const &);
+    /**
+     * @symbol ?_tryGetChestContainer\@ItemContext\@\@AEBAPEAVContainer\@\@XZ
+     */
+    MCAPI class Container * _tryGetChestContainer() const;
     /**
      * @symbol ?_tryGetContainerFromEntity\@ItemContext\@\@AEBAPEAVContainer\@\@XZ
      */

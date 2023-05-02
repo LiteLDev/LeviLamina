@@ -833,13 +833,13 @@ public:
     MCVAPI ~Mob();
 #endif
     /**
-     * @symbol ??0Mob\@\@QEAA\@AEAVLevel\@\@AEAVEntityContext\@\@\@Z
-     */
-    MCAPI Mob(class Level &, class EntityContext &);
-    /**
      * @symbol ??0Mob\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Mob(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+    /**
+     * @symbol ??0Mob\@\@QEAA\@AEAVLevel\@\@AEAVEntityContext\@\@\@Z
+     */
+    MCAPI Mob(class Level &, class EntityContext &);
     /**
      * @symbol ?_endJump\@Mob\@\@QEAAXXZ
      */
@@ -901,25 +901,25 @@ public:
      */
     MCAPI float getJumpEffectAmplifierValue();
     /**
-     * @symbol ?getJumpMultiplier\@Mob\@\@QEAAMAEBVIConstBlockSource\@\@\@Z
-     */
-    MCAPI float getJumpMultiplier(class IConstBlockSource const &);
-    /**
      * @symbol ?getJumpMultiplier\@Mob\@\@QEAAMXZ
      */
     MCAPI float getJumpMultiplier();
+    /**
+     * @symbol ?getJumpMultiplier\@Mob\@\@QEAAMAEBVIConstBlockSource\@\@\@Z
+     */
+    MCAPI float getJumpMultiplier(class IConstBlockSource const &);
     /**
      * @symbol ?getJumpPower\@Mob\@\@QEBAMXZ
      */
     MCAPI float getJumpPower() const;
     /**
-     * @symbol ?getJumpPrevention\@Mob\@\@QEAA?AUJumpPreventionResult\@\@XZ
-     */
-    MCAPI struct JumpPreventionResult getJumpPrevention();
-    /**
      * @symbol ?getJumpPrevention\@Mob\@\@QEAA?AUJumpPreventionResult\@\@AEBVIConstBlockSource\@\@\@Z
      */
     MCAPI struct JumpPreventionResult getJumpPrevention(class IConstBlockSource const &);
+    /**
+     * @symbol ?getJumpPrevention\@Mob\@\@QEAA?AUJumpPreventionResult\@\@XZ
+     */
+    MCAPI struct JumpPreventionResult getJumpPrevention();
     /**
      * @symbol ?getJumpTicks\@Mob\@\@QEBAHXZ
      */

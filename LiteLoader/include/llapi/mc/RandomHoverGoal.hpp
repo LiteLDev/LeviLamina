@@ -80,10 +80,6 @@ public:
      */
     MCAPI bool _computeNewTarget();
     /**
-     * @symbol ?_mobMeetsPreconditions\@RandomHoverGoal\@\@IEBA_NXZ
-     */
-    MCAPI bool _mobMeetsPreconditions() const;
-    /**
      * @symbol ?_moveToTarget\@RandomHoverGoal\@\@IEAAXXZ
      */
     MCAPI void _moveToTarget();

@@ -32,6 +32,10 @@ public:
      */
     MCAPI static void _spinAttack(class StrictEntityContext &, class ActorOwnerComponent &);
     /**
+     * @symbol ?_tickSpinAttackSystem\@SpinAttackSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@\@\@VActorOwnerComponent\@\@\@\@\@Z
+     */
+    MCAPI static void _tickSpinAttackSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>, class ActorOwnerComponent>);
+    /**
      * @symbol ?createSystem\@SpinAttackSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();

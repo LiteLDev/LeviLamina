@@ -52,13 +52,13 @@ public:
      */
     MCAPI bool checkChatPermissions(class CommandOrigin const &, class CommandOutput &) const;
     /**
-     * @symbol ?checkMutedAndSendToastIfMuted\@MessagingCommand\@\@IEBAXAEBVPlayer\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
+     * @symbol ?checkMutedAndSendToastIfMuted\@MessagingCommand\@\@KAXAEBVPlayer\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
      */
-    MCAPI void checkMutedAndSendToastIfMuted(class Player const &, std::vector<std::string> const &) const;
+    MCAPI static void checkMutedAndSendToastIfMuted(class Player const &, std::vector<std::string> const &);
     /**
-     * @symbol ?checkMutedAndSendToastIfMuted\@MessagingCommand\@\@IEBAXAEBUCommandOriginIdentity\@\@AEBVLevel\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
+     * @symbol ?checkMutedAndSendToastIfMuted\@MessagingCommand\@\@KAXAEBUCommandOriginIdentity\@\@AEBVLevel\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
      */
-    MCAPI void checkMutedAndSendToastIfMuted(struct CommandOriginIdentity const &, class Level const &, std::vector<std::string> const &) const;
+    MCAPI static void checkMutedAndSendToastIfMuted(struct CommandOriginIdentity const &, class Level const &, std::vector<std::string> const &);
 
 protected:
 

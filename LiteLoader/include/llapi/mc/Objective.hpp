@@ -57,10 +57,6 @@ public:
      */
     MCAPI struct ScoreInfo getPlayerScore(struct ScoreboardId const &) const;
     /**
-     * @symbol ?getPlayerScoreRef\@Objective\@\@QEAA_NAEBUScoreboardId\@\@AEAUScoreInfoRef\@\@\@Z
-     */
-    MCAPI bool getPlayerScoreRef(struct ScoreboardId const &, struct ScoreInfoRef &);
-    /**
      * @symbol ?getPlayers\@Objective\@\@QEBA?AV?$vector\@UScoreboardId\@\@V?$allocator\@UScoreboardId\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::vector<struct ScoreboardId> getPlayers() const;
@@ -76,10 +72,6 @@ public:
      * @symbol ?hasScores\@Objective\@\@QEBA_NXZ
      */
     MCAPI bool hasScores() const;
-    /**
-     * @symbol ?setDisplayName\@Objective\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI void setDisplayName(std::string const &);
     /**
      * @symbol ??1Objective\@\@QEAA\@XZ
      */

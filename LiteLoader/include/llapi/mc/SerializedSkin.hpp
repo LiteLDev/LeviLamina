@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "persona.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -24,10 +23,6 @@ class SerializedSkin {
 #undef AFTER_EXTRA
 public:
     /**
-     * @symbol ??0SerializedSkin\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI SerializedSkin(class SerializedSkin const &);
-    /**
      * @symbol ??0SerializedSkin\@\@QEAA\@AEBVSubClientConnectionRequest\@\@\@Z
      */
     MCAPI SerializedSkin(class SubClientConnectionRequest const &);
@@ -36,6 +31,10 @@ public:
      */
     MCAPI SerializedSkin();
     /**
+     * @symbol ??0SerializedSkin\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI SerializedSkin(class SerializedSkin const &);
+    /**
      * @symbol ??0SerializedSkin\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI SerializedSkin(class SerializedSkin &&);
@@ -43,10 +42,6 @@ public:
      * @symbol ??0SerializedSkin\@\@QEAA\@AEBVConnectionRequest\@\@\@Z
      */
     MCAPI SerializedSkin(class ConnectionRequest const &);
-    /**
-     * @symbol ?getAnimationFrames\@SerializedSkin\@\@QEBAMW4AnimatedTextureType\@persona\@\@\@Z
-     */
-    MCAPI float getAnimationFrames(enum class persona::AnimatedTextureType) const;
     /**
      * @symbol ?getName\@SerializedSkin\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
@@ -64,6 +59,10 @@ public:
      */
     MCAPI bool read(class ReadOnlyBinaryStream &);
     /**
+     * @symbol ?setArmSizeFromString\@SerializedSkin\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI void setArmSizeFromString(std::string const &);
+    /**
      * @symbol ?setIsTrustedSkin\@SerializedSkin\@\@QEAAX_N\@Z
      */
     MCAPI void setIsTrustedSkin(bool);
@@ -71,10 +70,6 @@ public:
      * @symbol ?updateGeometryName\@SerializedSkin\@\@QEAAXXZ
      */
     MCAPI void updateGeometryName();
-    /**
-     * @symbol ?useBlinkingAnimation\@SerializedSkin\@\@QEBA_NXZ
-     */
-    MCAPI bool useBlinkingAnimation() const;
     /**
      * @symbol ?write\@SerializedSkin\@\@QEBAXAEAVBinaryStream\@\@\@Z
      */

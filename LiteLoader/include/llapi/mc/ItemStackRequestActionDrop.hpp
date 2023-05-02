@@ -25,6 +25,7 @@ class ItemStackRequestActionDrop {
 public:
     class ItemStackRequestActionDrop& operator=(class ItemStackRequestActionDrop const &) = delete;
     ItemStackRequestActionDrop(class ItemStackRequestActionDrop const &) = delete;
+    ItemStackRequestActionDrop() = delete;
 #endif
 
 public:
@@ -58,13 +59,5 @@ public:
      * @symbol ?_read\@ItemStackRequestActionDrop\@\@MEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
-    /**
-     * @symbol ??0ItemStackRequestActionDrop\@\@QEAA\@XZ
-     */
-    MCAPI ItemStackRequestActionDrop();
-    /**
-     * @symbol ?getRandomly\@ItemStackRequestActionDrop\@\@QEBA_NXZ
-     */
-    MCAPI bool getRandomly() const;
 
 };

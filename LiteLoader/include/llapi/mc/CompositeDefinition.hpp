@@ -6,7 +6,6 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Json.hpp"
-#include "BehaviorDefinition.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +16,7 @@
  * @brief MC class CompositeDefinition.
  *
  */
-class CompositeDefinition : public BehaviorDefinition {
+class CompositeDefinition {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -27,18 +26,10 @@ class CompositeDefinition : public BehaviorDefinition {
 public:
     class CompositeDefinition& operator=(class CompositeDefinition const &) = delete;
     CompositeDefinition(class CompositeDefinition const &) = delete;
+    CompositeDefinition() = delete;
 #endif
 
 public:
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
-    virtual void __unk_vfn_0();
-    /**
-     * @symbol ??0CompositeDefinition\@\@QEAA\@XZ
-     */
-    MCAPI CompositeDefinition();
     /**
      * @symbol ?get\@CompositeDefinition\@\@QEBAPEBVBehaviorDefinition\@\@_K\@Z
      */

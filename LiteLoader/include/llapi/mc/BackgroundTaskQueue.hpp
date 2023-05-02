@@ -41,10 +41,6 @@ public:
      */
     MCAPI unsigned __int64 getApproximateTaskCount() const;
     /**
-     * @symbol ?getNextItemPriority\@BackgroundTaskQueue\@\@QEAAHXZ
-     */
-    MCAPI int getNextItemPriority();
-    /**
      * @symbol ?queue\@BackgroundTaskQueue\@\@QEAAXV?$shared_ptr\@VBackgroundTaskBase\@\@\@std\@\@_N\@Z
      */
     MCAPI void queue(class std::shared_ptr<class BackgroundTaskBase>, bool);

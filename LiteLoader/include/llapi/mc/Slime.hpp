@@ -256,10 +256,6 @@ public:
      */
     MCAPI float getOldSquishValue() const;
     /**
-     * @symbol ?getSlimeSize\@Slime\@\@QEBAHXZ
-     */
-    MCAPI int getSlimeSize() const;
-    /**
      * @symbol ?getSquishValue\@Slime\@\@QEBAMXZ
      */
     MCAPI float getSquishValue() const;

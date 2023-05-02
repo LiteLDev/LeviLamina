@@ -25,14 +25,13 @@ class BoneOrientation {
 public:
     class BoneOrientation& operator=(class BoneOrientation const &) = delete;
     BoneOrientation(class BoneOrientation const &) = delete;
-    BoneOrientation() = delete;
 #endif
 
 public:
     /**
-     * @symbol ?applyShortestPathBlend\@BoneOrientation\@\@QEAAXAEBV1\@0MM\@Z
+     * @symbol ??0BoneOrientation\@\@QEAA\@XZ
      */
-    MCAPI void applyShortestPathBlend(class BoneOrientation const &, class BoneOrientation const &, float, float);
+    MCAPI BoneOrientation();
     /**
      * @symbol ?getName\@BoneOrientation\@\@QEBAAEBVHashedString\@\@XZ
      */

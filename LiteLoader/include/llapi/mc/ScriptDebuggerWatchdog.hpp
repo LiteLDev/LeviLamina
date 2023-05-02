@@ -49,13 +49,5 @@ public:
      * @symbol ?listenTimeoutExpired\@ScriptDebuggerWatchdog\@\@UEBA_NXZ
      */
     virtual bool listenTimeoutExpired() const;
-    /**
-     * @symbol ??0ScriptDebuggerWatchdog\@\@QEAA\@V?$duration\@HU?$ratio\@$0DM\@$00\@std\@\@\@chrono\@std\@\@\@Z
-     */
-    MCAPI ScriptDebuggerWatchdog(class std::chrono::duration<int, struct std::ratio<60, 1>>);
-    /**
-     * @symbol ?startLeaveGame\@ScriptDebuggerWatchdog\@\@QEAAXXZ
-     */
-    MCAPI void startLeaveGame();
 
 };

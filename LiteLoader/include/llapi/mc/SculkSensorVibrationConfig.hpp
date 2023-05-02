@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "VibrationListenerConfig.hpp"
 
 #define BEFORE_EXTRA
 
@@ -14,7 +15,7 @@
  * @brief MC class SculkSensorVibrationConfig.
  *
  */
-class SculkSensorVibrationConfig {
+class SculkSensorVibrationConfig : public VibrationListenerConfig {
 
 #define AFTER_EXTRA
 
@@ -47,5 +48,9 @@ public:
      * @symbol ?shouldListen\@SculkSensorVibrationConfig\@\@UEAA_NAEAVBlockSource\@\@AEBVGameEvent\@\@AEBUGameEventContext\@\@\@Z
      */
     virtual bool shouldListen(class BlockSource &, class GameEvent const &, struct GameEventContext const &);
+    /**
+     * @symbol ??0SculkSensorVibrationConfig\@\@QEAA\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI SculkSensorVibrationConfig(class BlockPos const &);
 
 };

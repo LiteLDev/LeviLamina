@@ -73,34 +73,39 @@ public:
     virtual void Detach(struct ITaskQueuePortContext *);
     /**
      * @vftbl 12
-     * @symbol ?DrainOneItem\@TaskQueuePortImpl\@\@UEAA_NXZ
+     * @symbol ?Dispatch\@TaskQueuePortImpl\@\@UEAA_NPEAUITaskQueuePortContext\@\@I\@Z
      */
-    virtual bool DrainOneItem();
+    virtual bool Dispatch(struct ITaskQueuePortContext *, unsigned int);
     /**
      * @vftbl 13
-     * @symbol ?Wait\@TaskQueuePortImpl\@\@UEAA_NPEAUITaskQueuePortContext\@\@I\@Z
-     */
-    virtual bool Wait(struct ITaskQueuePortContext *, unsigned int);
-    /**
-     * @vftbl 14
      * @symbol ?IsEmpty\@TaskQueuePortImpl\@\@UEAA_NXZ
      */
     virtual bool IsEmpty();
     /**
-     * @vftbl 15
+     * @vftbl 14
      * @symbol ?SuspendTermination\@TaskQueuePortImpl\@\@UEAAJPEAUITaskQueuePortContext\@\@\@Z
      */
     virtual long SuspendTermination(struct ITaskQueuePortContext *);
     /**
-     * @vftbl 16
+     * @vftbl 15
      * @symbol ?ResumeTermination\@TaskQueuePortImpl\@\@UEAAXPEAUITaskQueuePortContext\@\@\@Z
      */
     virtual void ResumeTermination(struct ITaskQueuePortContext *);
     /**
-     * @vftbl 17
-     * @symbol __unk_vfn_17
+     * @vftbl 16
+     * @symbol ?SuspendPort\@TaskQueuePortImpl\@\@UEAAXXZ
      */
-    virtual void __unk_vfn_17();
+    virtual void SuspendPort();
+    /**
+     * @vftbl 17
+     * @symbol ?ResumePort\@TaskQueuePortImpl\@\@UEAAXXZ
+     */
+    virtual void ResumePort();
+    /**
+     * @vftbl 18
+     * @symbol __unk_vfn_18
+     */
+    virtual void __unk_vfn_18();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKQUEUEPORTIMPL
     /**
      * @symbol __unk_destructor_-1
@@ -118,21 +123,33 @@ public:
 
 //private:
     /**
-     * @symbol ?AppendEntry\@TaskQueuePortImpl\@\@AEAA_NAEBUQueueEntry\@1\@_K_N\@Z
+     * @symbol ?AppendEntry\@TaskQueuePortImpl\@\@AEAA_NAEBUQueueEntry\@1\@_K\@Z
      */
-    MCAPI bool AppendEntry(struct TaskQueuePortImpl::QueueEntry const &, unsigned __int64, bool);
+    MCAPI bool AppendEntry(struct TaskQueuePortImpl::QueueEntry const &, unsigned __int64);
     /**
-     * @symbol ?AppendWaitRegistrationEntry\@TaskQueuePortImpl\@\@AEAA_NPEAUWaitRegistration\@1\@_N\@Z
+     * @symbol ?AppendWaitRegistrationEntry\@TaskQueuePortImpl\@\@AEAA_NPEAUWaitRegistration\@1\@\@Z
      */
-    MCAPI bool AppendWaitRegistrationEntry(struct TaskQueuePortImpl::WaitRegistration *, bool);
+    MCAPI bool AppendWaitRegistrationEntry(struct TaskQueuePortImpl::WaitRegistration *);
     /**
      * @symbol ?CancelPendingEntries\@TaskQueuePortImpl\@\@AEAAXPEAUITaskQueuePortContext\@\@_N\@Z
      */
     MCAPI void CancelPendingEntries(struct ITaskQueuePortContext *, bool);
     /**
+     * @symbol ?DrainOneItem\@TaskQueuePortImpl\@\@AEAA_NAEAUThreadPoolActionStatus\@OS\@\@\@Z
+     */
+    MCAPI bool DrainOneItem(struct OS::ThreadPoolActionStatus &);
+    /**
      * @symbol ?InitializeWaitRegistration\@TaskQueuePortImpl\@\@AEAAJPEAUWaitRegistration\@1\@\@Z
      */
     MCAPI long InitializeWaitRegistration(struct TaskQueuePortImpl::WaitRegistration *);
+    /**
+     * @symbol ?NotifyItemQueued\@TaskQueuePortImpl\@\@AEAAXXZ
+     */
+    MCAPI void NotifyItemQueued();
+    /**
+     * @symbol ?ProcessThreadPoolCallback\@TaskQueuePortImpl\@\@AEAAXAEAUThreadPoolActionStatus\@OS\@\@\@Z
+     */
+    MCAPI void ProcessThreadPoolCallback(struct OS::ThreadPoolActionStatus &);
     /**
      * @symbol ?ScheduleTermination\@TaskQueuePortImpl\@\@AEAAXPEAUTerminationEntry\@1\@\@Z
      */
@@ -141,6 +158,10 @@ public:
      * @symbol ?SubmitPendingCallback\@TaskQueuePortImpl\@\@AEAAXXZ
      */
     MCAPI void SubmitPendingCallback();
+    /**
+     * @symbol ?Wait\@TaskQueuePortImpl\@\@AEAA_NPEAUITaskQueuePortContext\@\@I\@Z
+     */
+    MCAPI bool Wait(struct ITaskQueuePortContext *, unsigned int);
     /**
      * @symbol ?EraseQueue\@TaskQueuePortImpl\@\@CAXPEAV?$LocklessQueue\@UQueueEntry\@TaskQueuePortImpl\@\@\@\@\@Z
      */

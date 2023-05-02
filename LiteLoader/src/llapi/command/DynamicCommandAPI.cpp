@@ -504,9 +504,9 @@ DynamicCommandInstance* DynamicCommand::_setup(std::unique_ptr<class DynamicComm
                 ++index;
             }
 #ifdef USE_PARSE_ENUM_STRING
-            Global<CommandRegistry>->_addEnumValuesInternal(fixedView.data(), values, typeid_t<CommandRegistry>::count++, &CommandRegistry::parseEnumStringAndInt).val;
+            Global<CommandRegistry>->_addEnumValuesInternal(fixedView.data(), values, Bedrock::typeid_t<CommandRegistry>::_getCounter().fetch_add(1), &CommandRegistry::parseEnumStringAndInt).val;
 #else
-            Global<CommandRegistry>->_addEnumValuesInternal(fixedView.data(), values, typeid_t<CommandRegistry>::count++, &CommandRegistry::parseEnum<int>).val;
+            Global<CommandRegistry>->_addEnumValuesInternal(fixedView.data(), values, Bedrock::typeid_t<CommandRegistry>::count++, &CommandRegistry::parseEnum<int>).val;
 #endif // USE_PARSE_ENUM_STRING
         }
         commandInstance->enumRanges.swap(convertedEnumRanges);

@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "RotationCommandUtils.hpp"
 #include "Command.hpp"
 
 #define BEFORE_EXTRA
@@ -36,7 +37,7 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 1
+     * @vftbl 2
      * @symbol ?execute\@SummonCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -44,5 +45,13 @@ public:
      * @symbol ?setup\@SummonCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);
+
+//private:
+    /**
+     * @symbol ?_getFacingDirection\@SummonCommand\@\@AEBA?AW4FacingResult\@RotationCommandUtils\@\@AEBVCommandOrigin\@\@AEAVCommandOutput\@\@AEAVVec3\@\@\@Z
+     */
+    MCAPI enum class RotationCommandUtils::FacingResult _getFacingDirection(class CommandOrigin const &, class CommandOutput &, class Vec3 &) const;
+
+private:
 
 };

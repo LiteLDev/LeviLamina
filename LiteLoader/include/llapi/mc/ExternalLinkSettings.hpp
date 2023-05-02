@@ -11,15 +11,15 @@
 #undef BEFORE_EXTRA
 
 
-class ExternalLinkSettings {
+struct ExternalLinkSettings {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXTERNALLINKSETTINGS
 public:
-    class ExternalLinkSettings& operator=(class ExternalLinkSettings const &) = delete;
-    ExternalLinkSettings(class ExternalLinkSettings const &) = delete;
+    struct ExternalLinkSettings& operator=(struct ExternalLinkSettings const &) = delete;
+    ExternalLinkSettings(struct ExternalLinkSettings const &) = delete;
     ExternalLinkSettings() = delete;
 #endif
 

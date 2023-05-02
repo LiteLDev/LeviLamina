@@ -36,4 +36,12 @@ public:
      */
     MCAPI static void tickDeferredPassengerRemoval(class StrictEntityContext const &, struct VehicleComponent const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct StopRidingRequestFlag>>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct PendingRemovePassengersComponent>);
 
+//private:
+    /**
+     * @symbol ?_tickDeferredRemoval\@FlagPassengerRemovalSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@UVehicleComponent\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UStopRidingRequestFlag\@\@\@\@\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UPendingRemovePassengersComponent\@\@\@\@\@Z
+     */
+    MCAPI static void _tickDeferredRemoval(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct VehicleComponent>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct StopRidingRequestFlag>>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct PendingRemovePassengersComponent>);
+
+private:
+
 };

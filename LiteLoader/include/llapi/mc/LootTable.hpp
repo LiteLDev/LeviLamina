@@ -31,10 +31,6 @@ public:
 
 public:
     /**
-     * @symbol ??0LootTable\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI LootTable(std::string);
-    /**
      * @symbol ?deserialize\@LootTable\@\@QEAAXAEBVValue\@Json\@\@\@Z
      */
     MCAPI void deserialize(class Json::Value const &);

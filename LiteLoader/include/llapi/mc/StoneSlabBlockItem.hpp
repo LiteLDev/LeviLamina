@@ -106,9 +106,5 @@ public:
      * @symbol __unk_vfn_80
      */
     virtual void __unk_vfn_80();
-    /**
-     * @symbol ??0StoneSlabBlockItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
-     */
-    MCAPI StoneSlabBlockItem(std::string const &, int);
 
 };

@@ -51,10 +51,6 @@ public:
     MCVAPI ~RemoveEntityPacket();
 #endif
     /**
-     * @symbol ??0RemoveEntityPacket\@\@QEAA\@AEAVEntityContext\@\@\@Z
-     */
-    MCAPI RemoveEntityPacket(class EntityContext &);
-    /**
      * @symbol ??0RemoveEntityPacket\@\@QEAA\@XZ
      */
     MCAPI RemoveEntityPacket();

@@ -36,13 +36,9 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 1
+     * @vftbl 2
      * @symbol ?execute\@GetChunksCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
-    /**
-     * @symbol ?setup\@GetChunksCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
-     */
-    MCAPI static void setup(class CommandRegistry &);
 
 };

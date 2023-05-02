@@ -38,13 +38,13 @@ public:
      */
     MCAPI ~MolangVariable();
     /**
-     * @symbol ?getVariableIndex\@MolangVariable\@\@SA?AW4MolangVariableIndex\@\@_KPEBD_N\@Z
-     */
-    MCAPI static enum class MolangVariableIndex getVariableIndex(unsigned __int64, char const *, bool);
-    /**
      * @symbol ?getVariableIndex\@MolangVariable\@\@SA?AW4MolangVariableIndex\@\@_K\@Z
      */
     MCAPI static enum class MolangVariableIndex getVariableIndex(unsigned __int64);
+    /**
+     * @symbol ?getVariableIndex\@MolangVariable\@\@SA?AW4MolangVariableIndex\@\@_KPEBD_N\@Z
+     */
+    MCAPI static enum class MolangVariableIndex getVariableIndex(unsigned __int64, char const *, bool);
     /**
      * @symbol ?getVariableIndex\@MolangVariable\@\@SA?AW4MolangVariableIndex\@\@AEBVHashedString\@\@\@Z
      */
@@ -53,10 +53,6 @@ public:
      * @symbol ?getVariableName\@MolangVariable\@\@SAAEBVHashedString\@\@W4MolangVariableIndex\@\@\@Z
      */
     MCAPI static class HashedString const & getVariableName(enum class MolangVariableIndex);
-    /**
-     * @symbol ?initVariableMaps\@MolangVariable\@\@SAXXZ
-     */
-    MCAPI static void initVariableMaps();
     /**
      * @symbol ?processWaterMark\@MolangVariable\@\@SAXXZ
      */

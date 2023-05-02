@@ -123,10 +123,6 @@ public:
      */
     MCAPI class BlockPos getExitPosition() const;
     /**
-     * @symbol ?getParticleAmount\@EndGatewayBlockActor\@\@QEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI int getParticleAmount(class BlockSource &, class BlockPos const &) const;
-    /**
      * @symbol ?setExitPosition\@EndGatewayBlockActor\@\@QEAAXAEBVBlockPos\@\@\@Z
      */
     MCAPI void setExitPosition(class BlockPos const &);

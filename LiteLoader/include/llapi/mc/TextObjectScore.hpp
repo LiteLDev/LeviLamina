@@ -51,10 +51,6 @@ public:
      */
     virtual class Json::Value resolve(struct ResolveData const &) const;
     /**
-     * @symbol ??0TextObjectScore\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
-     */
-    MCAPI TextObjectScore(std::string, std::string);
-    /**
      * @symbol ?RAW_TEXT_SCORE_KEY\@TextObjectScore\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const RAW_TEXT_SCORE_KEY;

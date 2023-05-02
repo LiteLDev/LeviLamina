@@ -94,9 +94,5 @@ public:
      * @symbol ?getBlockSource\@MinecraftGameTestInstance\@\@UEBAAEAVBlockSource\@\@XZ
      */
     virtual class BlockSource & getBlockSource() const;
-    /**
-     * @symbol ??0MinecraftGameTestInstance\@\@QEAA\@AEBVBaseGameTestFunction\@gametest\@\@V?$unique_ptr\@VIGameTestHelperProvider\@gametest\@\@U?$default_delete\@VIGameTestHelperProvider\@gametest\@\@\@std\@\@\@std\@\@AEAVDimension\@\@\@Z
-     */
-    MCAPI MinecraftGameTestInstance(class gametest::BaseGameTestFunction const &, std::unique_ptr<class gametest::IGameTestHelperProvider>, class Dimension &);
 
 };

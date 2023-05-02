@@ -29,10 +29,6 @@ public:
 
 public:
     /**
-     * @symbol ??0TrustComponent\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI TrustComponent(class TrustComponent &&);
-    /**
      * @symbol ??0TrustComponent\@\@QEAA\@XZ
      */
     MCAPI TrustComponent();
@@ -52,10 +48,6 @@ public:
      * @symbol ?initFromDefinition\@TrustComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void initFromDefinition(class Actor &);
-    /**
-     * @symbol ??4TrustComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
-     */
-    MCAPI class TrustComponent & operator=(class TrustComponent &&);
     /**
      * @symbol ?readAdditionalSaveData\@TrustComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */

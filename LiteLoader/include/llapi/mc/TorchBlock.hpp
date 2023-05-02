@@ -182,9 +182,9 @@ public:
     virtual void __unk_vfn_105();
     /**
      * @vftbl 106
-     * @symbol ?getPlacementBlock\@TorchBlock\@\@UEBAAEBVBlock\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
+     * @symbol ?getPlacementBlock\@TorchBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
-    virtual class Block const & getPlacementBlock(class Actor &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
+    virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -201,40 +201,40 @@ public:
      */
     virtual void __unk_vfn_126();
     /**
-     * @vftbl 131
-     * @symbol __unk_vfn_131
+     * @vftbl 129
+     * @symbol __unk_vfn_129
      */
-    virtual void __unk_vfn_131();
+    virtual void __unk_vfn_129();
     /**
      * @vftbl 132
+     * @symbol __unk_vfn_132
+     */
+    virtual void __unk_vfn_132();
+    /**
+     * @vftbl 133
      * @symbol ?getIconYOffset\@TorchBlock\@\@UEBAHXZ
      */
     virtual int getIconYOffset() const;
     /**
-     * @vftbl 143
+     * @vftbl 144
      * @symbol ?getVisualShape\@TorchBlock\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
     virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
     /**
-     * @vftbl 151
+     * @vftbl 152
      * @symbol ?animateTick\@TorchBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @vftbl 156
-     * @symbol __unk_vfn_156
+     * @vftbl 157
+     * @symbol __unk_vfn_157
      */
-    virtual void __unk_vfn_156();
+    virtual void __unk_vfn_157();
     /**
-     * @vftbl 161
+     * @vftbl 162
      * @symbol ?_addHardCodedBlockComponents\@TorchBlock\@\@UEAAXXZ
      */
     virtual void _addHardCodedBlockComponents();
-    /**
-     * @vftbl 165
-     * @symbol __unk_vfn_165
-     */
-    virtual void __unk_vfn_165();
     /**
      * @vftbl 166
      * @symbol __unk_vfn_166
@@ -247,44 +247,49 @@ public:
     virtual void __unk_vfn_167();
     /**
      * @vftbl 168
+     * @symbol __unk_vfn_168
+     */
+    virtual void __unk_vfn_168();
+    /**
+     * @vftbl 169
      * @symbol ?onPlace\@TorchBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 170
-     * @symbol __unk_vfn_170
-     */
-    virtual void __unk_vfn_170();
-    /**
      * @vftbl 171
+     * @symbol __unk_vfn_171
+     */
+    virtual void __unk_vfn_171();
+    /**
+     * @vftbl 172
      * @symbol ?tick\@TorchBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @vftbl 174
-     * @symbol __unk_vfn_174
+     * @vftbl 175
+     * @symbol __unk_vfn_175
      */
-    virtual void __unk_vfn_174();
-    /**
-     * @vftbl 178
-     * @symbol __unk_vfn_178
-     */
-    virtual void __unk_vfn_178();
+    virtual void __unk_vfn_175();
     /**
      * @vftbl 179
+     * @symbol __unk_vfn_179
+     */
+    virtual void __unk_vfn_179();
+    /**
+     * @vftbl 180
      * @symbol ?canSurvive\@TorchBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 181
+     * @vftbl 182
      * @symbol ?getRenderLayer\@TorchBlock\@\@UEBA?AW4BlockRenderLayer\@\@AEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 186
-     * @symbol __unk_vfn_186
+     * @vftbl 187
+     * @symbol __unk_vfn_187
      */
-    virtual void __unk_vfn_186();
+    virtual void __unk_vfn_187();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TORCHBLOCK
     /**
      * @symbol ?canBeSilkTouched\@TorchBlock\@\@MEBA_NXZ

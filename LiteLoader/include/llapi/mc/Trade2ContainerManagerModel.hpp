@@ -69,9 +69,5 @@ public:
      * @symbol ??0Trade2ContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBUActorUniqueID\@\@\@Z
      */
     MCAPI Trade2ContainerManagerModel(enum class ContainerID, class Player &, struct ActorUniqueID const &);
-    /**
-     * @symbol ?getEntity\@Trade2ContainerManagerModel\@\@QEBAPEAVActor\@\@XZ
-     */
-    MCAPI class Actor * getEntity() const;
 
 };

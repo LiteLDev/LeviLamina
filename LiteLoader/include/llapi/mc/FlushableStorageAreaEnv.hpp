@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Core.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -135,9 +134,5 @@ public:
      * @symbol ?flushToPermanentStorage\@FlushableStorageAreaEnv\@\@UEAAXXZ
      */
     virtual void flushToPermanentStorage();
-    /**
-     * @symbol ??0FlushableStorageAreaEnv\@\@QEAA\@PEAVEnv\@leveldb\@\@V?$shared_ptr\@VFileStorageArea\@Core\@\@\@std\@\@\@Z
-     */
-    MCAPI FlushableStorageAreaEnv(class leveldb::Env *, class std::shared_ptr<class Core::FileStorageArea>);
 
 };

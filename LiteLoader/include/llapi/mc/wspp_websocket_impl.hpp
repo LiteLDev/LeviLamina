@@ -44,9 +44,9 @@ public:
      */
     MCAPI long sendBinary(struct XAsyncBlock *, unsigned char const *, unsigned int);
     /**
-     * @symbol ??0wspp_websocket_impl\@\@QEAA\@PEAUHC_WEBSOCKET\@\@PEBD1\@Z
+     * @symbol ??0wspp_websocket_impl\@\@QEAA\@PEAUHC_WEBSOCKET_OBSERVER\@\@PEBD1\@Z
      */
-    MCAPI wspp_websocket_impl(struct HC_WEBSOCKET *, char const *, char const *);
+    MCAPI wspp_websocket_impl(struct HC_WEBSOCKET_OBSERVER *, char const *, char const *);
 
 //private:
     /**

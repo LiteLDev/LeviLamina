@@ -41,9 +41,5 @@ public:
      * @symbol ?parseExpressionNodeFloat\@SurfaceMaterialAdjustmentAttributes\@\@QEAAXAEBVCompoundTag\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1AEAVExpressionNode\@\@M\@Z
      */
     MCAPI void parseExpressionNodeFloat(class CompoundTag const &, std::string const &, std::string const &, class ExpressionNode &, float);
-    /**
-     * @symbol ??1SurfaceMaterialAdjustmentAttributes\@\@QEAA\@XZ
-     */
-    MCAPI ~SurfaceMaterialAdjustmentAttributes();
 
 };

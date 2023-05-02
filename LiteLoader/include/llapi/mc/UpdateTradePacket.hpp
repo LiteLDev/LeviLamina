@@ -61,12 +61,12 @@ public:
     MCVAPI ~UpdateTradePacket();
 #endif
     /**
-     * @symbol ??0UpdateTradePacket\@\@QEAA\@W4ContainerID\@\@W4ContainerType\@\@HAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEAVCompoundTag\@\@AEBUActorUniqueID\@\@4H_N5\@Z
-     */
-    MCAPI UpdateTradePacket(enum class ContainerID, enum class ContainerType, int, std::string const &, class CompoundTag &&, struct ActorUniqueID const &, struct ActorUniqueID const &, int, bool, bool);
-    /**
      * @symbol ??0UpdateTradePacket\@\@QEAA\@XZ
      */
     MCAPI UpdateTradePacket();
+    /**
+     * @symbol ??0UpdateTradePacket\@\@QEAA\@W4ContainerID\@\@W4ContainerType\@\@HAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEAVCompoundTag\@\@AEBUActorUniqueID\@\@4H_N5\@Z
+     */
+    MCAPI UpdateTradePacket(enum class ContainerID, enum class ContainerType, int, std::string const &, class CompoundTag &&, struct ActorUniqueID const &, struct ActorUniqueID const &, int, bool, bool);
 
 };

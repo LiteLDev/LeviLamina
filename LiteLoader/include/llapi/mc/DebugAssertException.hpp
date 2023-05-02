@@ -49,13 +49,9 @@ public:
      */
     MCAPI DebugAssertException(class DebugAssertException const &);
     /**
-     * @symbol ??0DebugAssertException\@\@QEAA\@PEBD00H00\@Z
+     * @symbol ??0DebugAssertException\@\@QEAA\@PEBD0H00\@Z
      */
-    MCAPI DebugAssertException(char const *, char const *, char const *, int, char const *, char const *);
-    /**
-     * @symbol ?isEnabled\@DebugAssertException\@\@SA_NXZ
-     */
-    MCAPI static bool isEnabled();
+    MCAPI DebugAssertException(char const *, char const *, int, char const *, char const *);
 
 //private:
 

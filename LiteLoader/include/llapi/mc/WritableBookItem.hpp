@@ -117,10 +117,6 @@ public:
      */
     virtual std::string getInteractText(class Player const &) const;
     /**
-     * @symbol ??0WritableBookItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
-     */
-    MCAPI WritableBookItem(std::string const &, int);
-    /**
      * @symbol ?addPageAt\@WritableBookItem\@\@SAXAEAVItemStack\@\@HAEBUPageContent\@\@\@Z
      */
     MCAPI static void addPageAt(class ItemStack &, int, struct PageContent const &);

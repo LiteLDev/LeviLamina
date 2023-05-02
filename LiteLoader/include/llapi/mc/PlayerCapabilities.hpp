@@ -20,9 +20,11 @@ namespace PlayerCapabilities {
 #define AFTER_EXTRA
 // Add Member There
 struct ISharedController {
-    ISharedController() = delete;
-    ISharedController(ISharedController const&) = delete;
-    ISharedController(ISharedController const&&) = delete;
+    void** vtable;
+};
+
+struct IPlayerData {
+
 };
 
 #undef AFTER_EXTRA

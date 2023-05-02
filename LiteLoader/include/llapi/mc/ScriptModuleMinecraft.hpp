@@ -6,23 +6,10 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Scripting.hpp"
+#include "Json.hpp"
 
 #define BEFORE_EXTRA
-namespace Scripting {
-    template <typename T>
-    class ClassBindingBuilder {
-        ClassBindingBuilder() = delete;
-        ClassBindingBuilder(ClassBindingBuilder const&) = delete;
-        ClassBindingBuilder(ClassBindingBuilder const&&) = delete;
-    };
-    template <typename T, typename T2>
-    class EnumBindingBuilder {
-        EnumBindingBuilder() = delete;
-        EnumBindingBuilder(EnumBindingBuilder const&) = delete;
-        EnumBindingBuilder(EnumBindingBuilder const&&) = delete;
-    };
-    struct Version;
-};
+
 #undef BEFORE_EXTRA
 
 /**
@@ -44,6 +31,10 @@ enum class ScriptFacing {
 enum class ScriptTimeOfDay;
 
 enum class ScriptMessageSourceType;
+
+struct ScriptRawMessageScoreInterface;
+
+struct ScriptRawMessageInterface;
 
 struct ScriptNavigationResult {
 public:
@@ -87,5 +78,9 @@ public:
      * @symbol ?bindTimeOfDay\@ScriptModuleMinecraft\@\@YA?AV?$EnumBindingBuilder\@W4ScriptTimeOfDay\@ScriptModuleMinecraft\@\@W412\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::EnumBindingBuilder<enum class ScriptModuleMinecraft::ScriptTimeOfDay, enum class ScriptModuleMinecraft::ScriptTimeOfDay> bindTimeOfDay();
+    /**
+     * @symbol ?rawMessageOrStringToJson\@ScriptModuleMinecraft\@\@YA?AVValue\@Json\@\@AEBV?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@\@std\@\@\@Z
+     */
+    MCAPI class Json::Value rawMessageOrStringToJson(class std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface> const &);
 
 };

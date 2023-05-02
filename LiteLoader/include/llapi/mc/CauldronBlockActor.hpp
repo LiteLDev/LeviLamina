@@ -97,10 +97,6 @@ public:
     MCVAPI void tick(class BlockSource &);
 #endif
     /**
-     * @symbol ??0CauldronBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI CauldronBlockActor(class BlockPos const &);
-    /**
      * @symbol ?getColor\@CauldronBlockActor\@\@QEBA?AVColor\@mce\@\@XZ
      */
     MCAPI class mce::Color getColor() const;

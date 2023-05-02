@@ -25,13 +25,10 @@ struct ItemStackRequestHandlerSlotInfo {
 public:
     struct ItemStackRequestHandlerSlotInfo& operator=(struct ItemStackRequestHandlerSlotInfo const &) = delete;
     ItemStackRequestHandlerSlotInfo(struct ItemStackRequestHandlerSlotInfo const &) = delete;
+    ItemStackRequestHandlerSlotInfo() = delete;
 #endif
 
 public:
-    /**
-     * @symbol ??0ItemStackRequestHandlerSlotInfo\@\@QEAA\@XZ
-     */
-    MCAPI ItemStackRequestHandlerSlotInfo();
     /**
      * @symbol ??BItemStackRequestHandlerSlotInfo\@\@QEBA_NXZ
      */

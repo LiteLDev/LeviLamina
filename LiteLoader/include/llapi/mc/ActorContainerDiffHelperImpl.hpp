@@ -38,6 +38,10 @@ namespace ActorContainerDiffHelperImpl {
      */
     MCAPI std::vector<class gsl::not_null<class MobEffectInstance const *>> const _createListOfPointers(std::vector<class MobEffectInstance> const &);
     /**
+     * @symbol ?_getDiff\@ActorContainerDiffHelperImpl\@\@YA?BV?$vector\@V?$not_null\@PEBVMobEffectInstance\@\@\@gsl\@\@V?$allocator\@V?$not_null\@PEBVMobEffectInstance\@\@\@gsl\@\@\@std\@\@\@std\@\@AEBV?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@3\@0\@Z
+     */
+    MCAPI std::vector<class gsl::not_null<class MobEffectInstance const *>> const _getDiff(std::vector<class MobEffectInstance> const &, std::vector<class MobEffectInstance> const &);
+    /**
      * @symbol ?_getDiff\@ActorContainerDiffHelperImpl\@\@YA?AV?$vector\@V?$unique_ptr\@VDataItem\@\@U?$default_delete\@VDataItem\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VDataItem\@\@U?$default_delete\@VDataItem\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEBVSynchedActorData\@\@0\@Z
      */
     MCAPI std::vector<std::unique_ptr<class DataItem>> _getDiff(class SynchedActorData const &, class SynchedActorData const &);
@@ -45,9 +49,5 @@ namespace ActorContainerDiffHelperImpl {
      * @symbol ?_getDiff\@ActorContainerDiffHelperImpl\@\@YA?BV?$vector\@V?$not_null\@PEBVAttributeInstance\@\@\@gsl\@\@V?$allocator\@V?$not_null\@PEBVAttributeInstance\@\@\@gsl\@\@\@std\@\@\@std\@\@AEBVBaseAttributeMap\@\@0\@Z
      */
     MCAPI std::vector<class gsl::not_null<class AttributeInstance const *>> const _getDiff(class BaseAttributeMap const &, class BaseAttributeMap const &);
-    /**
-     * @symbol ?_getDiff\@ActorContainerDiffHelperImpl\@\@YA?BV?$vector\@V?$not_null\@PEBVMobEffectInstance\@\@\@gsl\@\@V?$allocator\@V?$not_null\@PEBVMobEffectInstance\@\@\@gsl\@\@\@std\@\@\@std\@\@AEBV?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@3\@0\@Z
-     */
-    MCAPI std::vector<class gsl::not_null<class MobEffectInstance const *>> const _getDiff(std::vector<class MobEffectInstance> const &, std::vector<class MobEffectInstance> const &);
 
 };

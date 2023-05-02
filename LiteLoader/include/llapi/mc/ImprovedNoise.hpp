@@ -30,14 +30,6 @@ public:
 
 public:
     /**
-     * @symbol ??0ImprovedNoise\@\@QEAA\@AEAVIRandom\@\@UYBlendingBugSettings\@\@\@Z
-     */
-    MCAPI ImprovedNoise(class IRandom &, struct YBlendingBugSettings);
-    /**
-     * @symbol ?_getValue\@ImprovedNoise\@\@QEBAMAEBVVec3\@\@\@Z
-     */
-    MCAPI float _getValue(class Vec3 const &) const;
-    /**
      * @symbol ?_readArea\@ImprovedNoise\@\@QEBAXPEAMAEBVVec3\@\@HHH1M\@Z
      */
     MCAPI void _readArea(float *, class Vec3 const &, int, int, int, class Vec3 const &, float) const;

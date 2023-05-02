@@ -17,10 +17,6 @@ namespace BoatPaddleInputSystem {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?createSideBySideSystem\@BoatPaddleInputSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI struct TickingSystemWithInfo createSideBySideSystem();
-    /**
      * @symbol ?createSystem\@BoatPaddleInputSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI struct TickingSystemWithInfo createSystem();

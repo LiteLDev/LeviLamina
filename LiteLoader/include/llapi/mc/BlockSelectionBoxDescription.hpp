@@ -11,15 +11,15 @@
 #undef BEFORE_EXTRA
 
 
-class BlockSelectionBoxDescription {
+struct BlockSelectionBoxDescription {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSELECTIONBOXDESCRIPTION
 public:
-    class BlockSelectionBoxDescription& operator=(class BlockSelectionBoxDescription const &) = delete;
-    BlockSelectionBoxDescription(class BlockSelectionBoxDescription const &) = delete;
+    struct BlockSelectionBoxDescription& operator=(struct BlockSelectionBoxDescription const &) = delete;
+    BlockSelectionBoxDescription(struct BlockSelectionBoxDescription const &) = delete;
     BlockSelectionBoxDescription() = delete;
 #endif
 

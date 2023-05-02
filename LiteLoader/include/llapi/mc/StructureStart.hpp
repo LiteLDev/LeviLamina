@@ -50,10 +50,6 @@ public:
      */
     MCVAPI ~StructureStart();
 #endif
-    /**
-     * @symbol ?postProcessMobsAt\@StructureStart\@\@QEAAXAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
-     */
-    MCAPI void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
 
 //protected:
     /**

@@ -79,10 +79,6 @@ public:
 
 //private:
     /**
-     * @symbol ?_positionAndRotateActor\@EntityPlacerItemComponent\@\@AEBAXAEAVActor\@\@VVec3\@\@EAEBV3\@PEBVBlockLegacy\@\@\@Z
-     */
-    MCAPI void _positionAndRotateActor(class Actor &, class Vec3, unsigned char, class Vec3 const &, class BlockLegacy const *) const;
-    /**
      * @symbol ?_setActorCustomName\@EntityPlacerItemComponent\@\@AEBAXAEAVActor\@\@AEBVItemStack\@\@\@Z
      */
     MCAPI void _setActorCustomName(class Actor &, class ItemStack const &) const;

@@ -53,9 +53,5 @@ public:
      * @symbol ?reload\@ActorPermutationEventHandler\@\@QEAAXAEAVRenderParams\@\@\@Z
      */
     MCAPI void reload(class RenderParams &);
-    /**
-     * @symbol ??1ActorPermutationEventHandler\@\@QEAA\@XZ
-     */
-    MCAPI ~ActorPermutationEventHandler();
 
 };

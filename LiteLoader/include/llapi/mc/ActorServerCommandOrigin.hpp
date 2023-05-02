@@ -69,9 +69,5 @@ public:
      * @symbol ?setTargetOther\@ActorServerCommandOrigin\@\@QEAAXUActorUniqueID\@\@\@Z
      */
     MCAPI void setTargetOther(struct ActorUniqueID);
-    /**
-     * @symbol ?load\@ActorServerCommandOrigin\@\@SA?AV?$unique_ptr\@VActorServerCommandOrigin\@\@U?$default_delete\@VActorServerCommandOrigin\@\@\@std\@\@\@std\@\@AEBVCompoundTag\@\@AEAVLevel\@\@\@Z
-     */
-    MCAPI static std::unique_ptr<class ActorServerCommandOrigin> load(class CompoundTag const &, class Level &);
 
 };

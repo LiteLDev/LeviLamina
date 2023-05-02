@@ -55,9 +55,5 @@ public:
      */
     MCVAPI void stopOpen(class Player &);
 #endif
-    /**
-     * @symbol ??0BarrelBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI BarrelBlockActor(class BlockPos const &);
 
 };
