@@ -60,6 +60,7 @@ class ActorDamageSource {
 
 public:
     LIAPI Actor* getEntity();
+    LIAPI bool setEntity(ActorUniqueID uid);
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDAMAGESOURCE
