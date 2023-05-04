@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "llapi/mc/Dimension.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -20,7 +21,8 @@ class Village {
 #define AFTER_EXTRA
 // Add Member There
 public:
-
+    
+    LIAPI Dimension* getDimension();
     LIAPI int getDimensionId();
 
 struct DwellerData {
