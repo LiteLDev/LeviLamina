@@ -496,6 +496,13 @@ public:
     ServerPlayer* mServerPlayer = nullptr;
 };
 
+class PlayerBreedAnimalEvent : public EventTemplate<PlayerBreedAnimalEvent> {
+public:
+    Player* mPlayer = nullptr;
+    Actor* mActor = nullptr;
+    ItemStack* mItemStack = nullptr;
+};
+
 /* endregion */
 
 /* region ## Block Events ## */
