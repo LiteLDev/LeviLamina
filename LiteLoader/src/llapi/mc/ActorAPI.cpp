@@ -30,6 +30,7 @@
 #include "llapi/mc/RotationCommandUtils.hpp"
 #include "llapi/mc/WeakEntityRef.hpp"
 #include "llapi/mc/WeakStorageEntity.hpp"
+#include "llapi/mc/ActorDamageByActorSource.hpp"
 
 class UserEntityIdentifierComponent;
 
@@ -91,6 +92,15 @@ std::string Actor::getTypeName() const {
 
 bool Actor::hurtEntity(float damage, ActorDamageCause damageCause) {
     auto ads = new ActorDamageSource(damageCause);
+    auto res = ((Mob*)this)->_hurt(*ads, damage, true, false);
+    ads->~ActorDamageSource();
+    delete ads;
+    return res;
+}
+
+bool Actor::hurtEntity(float damage, ActorDamageCause damageCause, Actor* actor) {
+    auto src = new ActorDamageByActorSource(*actor, damageCause);
+    auto ads = (ActorDamageSource*)src;
     auto res = ((Mob*)this)->_hurt(*ads, damage, true, false);
     ads->~ActorDamageSource();
     delete ads;
