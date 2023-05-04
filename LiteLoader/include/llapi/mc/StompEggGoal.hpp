@@ -75,9 +75,5 @@ public:
      * @symbol ?_playDestroySound\@StompEggGoal\@\@MEAAXAEAVLevel\@\@AEAVBlockSource\@\@VBlockPos\@\@\@Z
      */
     virtual void _playDestroySound(class Level &, class BlockSource &, class BlockPos);
-    /**
-     * @symbol ??0StompEggGoal\@\@QEAA\@AEAVMob\@\@MHHMH\@Z
-     */
-    MCAPI StompEggGoal(class Mob &, float, int, int, float, int);
 
 };

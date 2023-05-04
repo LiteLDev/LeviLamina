@@ -11,15 +11,15 @@
 #undef BEFORE_EXTRA
 
 
-class LevelChunkAndSubChunkLoggingData {
+struct LevelChunkAndSubChunkLoggingData {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCHUNKANDSUBCHUNKLOGGINGDATA
 public:
-    class LevelChunkAndSubChunkLoggingData& operator=(class LevelChunkAndSubChunkLoggingData const &) = delete;
-    LevelChunkAndSubChunkLoggingData(class LevelChunkAndSubChunkLoggingData const &) = delete;
+    struct LevelChunkAndSubChunkLoggingData& operator=(struct LevelChunkAndSubChunkLoggingData const &) = delete;
+    LevelChunkAndSubChunkLoggingData(struct LevelChunkAndSubChunkLoggingData const &) = delete;
     LevelChunkAndSubChunkLoggingData() = delete;
 #endif
 

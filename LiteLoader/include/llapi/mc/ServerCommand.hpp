@@ -33,10 +33,6 @@ public:
      */
     MCVAPI ~ServerCommand();
 #endif
-    /**
-     * @symbol ?setup\@ServerCommand\@\@SAXAEAVMinecraft\@\@\@Z
-     */
-    MCAPI static void setup(class Minecraft &);
 
 //protected:
     /**

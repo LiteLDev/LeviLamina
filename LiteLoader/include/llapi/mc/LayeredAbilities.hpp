@@ -6,11 +6,10 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Ability.hpp"
-#include "Abilities.hpp"
-#include "PermissionsHandler.hpp"
 
 #define BEFORE_EXTRA
-
+#include "Abilities.hpp"
+#include "PermissionsHandler.hpp"
 #undef BEFORE_EXTRA
 
 /**
@@ -20,8 +19,9 @@
 class LayeredAbilities {
 
 #define AFTER_EXTRA
+private:
     PermissionsHandler mPermissions;
-    std::array<Abilities,1> mLayers; // May not correct
+    std::array<Abilities, 5> mLayers; // May not correct
 #undef AFTER_EXTRA
 public:
     /**
@@ -53,13 +53,13 @@ public:
      */
     MCAPI void forEachLayer(class std::function<void (enum class AbilitiesLayer, class Abilities const &)> const &) const;
     /**
-     * @symbol ?getAbility\@LayeredAbilities\@\@QEBAAEBVAbility\@\@W4AbilitiesIndex\@\@\@Z
-     */
-    MCAPI class Ability const & getAbility(enum class AbilitiesIndex) const;
-    /**
      * @symbol ?getAbility\@LayeredAbilities\@\@QEAAAEAVAbility\@\@W4AbilitiesLayer\@\@W4AbilitiesIndex\@\@\@Z
      */
     MCAPI class Ability & getAbility(enum class AbilitiesLayer, enum class AbilitiesIndex);
+    /**
+     * @symbol ?getAbility\@LayeredAbilities\@\@QEBAAEBVAbility\@\@W4AbilitiesIndex\@\@\@Z
+     */
+    MCAPI class Ability const & getAbility(enum class AbilitiesIndex) const;
     /**
      * @symbol ?getBool\@LayeredAbilities\@\@QEBA_NW4AbilitiesIndex\@\@\@Z
      */
@@ -85,10 +85,6 @@ public:
      */
     MCAPI enum class PlayerPermissionLevel getPlayerPermissions() const;
     /**
-     * @symbol ?loadSaveData\@LayeredAbilities\@\@QEAA_NAEBVCompoundTag\@\@\@Z
-     */
-    MCAPI bool loadSaveData(class CompoundTag const &);
-    /**
      * @symbol ??4LayeredAbilities\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
     MCAPI class LayeredAbilities & operator=(class LayeredAbilities const &);
@@ -104,10 +100,6 @@ public:
      * @symbol ?setCommandPermissions\@LayeredAbilities\@\@QEAAXW4CommandPermissionLevel\@\@\@Z
      */
     MCAPI void setCommandPermissions(enum class CommandPermissionLevel);
-    /**
-     * @symbol ?setPermissions\@LayeredAbilities\@\@QEAAXAEBVPermissionsHandler\@\@\@Z
-     */
-    MCAPI void setPermissions(class PermissionsHandler const &);
     /**
      * @symbol ?setPlayerPermissions\@LayeredAbilities\@\@QEAAXW4PlayerPermissionLevel\@\@\@Z
      */

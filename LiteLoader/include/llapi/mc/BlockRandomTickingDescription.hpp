@@ -12,7 +12,7 @@
 #undef BEFORE_EXTRA
 
 
-class BlockRandomTickingDescription {
+struct BlockRandomTickingDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -20,8 +20,8 @@ class BlockRandomTickingDescription {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKRANDOMTICKINGDESCRIPTION
 public:
-    class BlockRandomTickingDescription& operator=(class BlockRandomTickingDescription const &) = delete;
-    BlockRandomTickingDescription(class BlockRandomTickingDescription const &) = delete;
+    struct BlockRandomTickingDescription& operator=(struct BlockRandomTickingDescription const &) = delete;
+    BlockRandomTickingDescription(struct BlockRandomTickingDescription const &) = delete;
     BlockRandomTickingDescription() = delete;
 #endif
 

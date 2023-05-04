@@ -113,10 +113,6 @@ public:
     MCVAPI bool uniqueAuxValues() const;
 #endif
     /**
-     * @symbol ??0SuspiciousStewItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@F\@Z
-     */
-    MCAPI SuspiciousStewItem(std::string const &, short);
-    /**
      * @symbol ?applyStewEffect\@SuspiciousStewItem\@\@SAXAEBVItemStack\@\@AEAVActor\@\@\@Z
      */
     MCAPI static void applyStewEffect(class ItemStack const &, class Actor &);

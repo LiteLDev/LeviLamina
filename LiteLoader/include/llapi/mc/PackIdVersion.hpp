@@ -56,10 +56,6 @@ public:
      */
     MCAPI bool operator<(struct PackIdVersion const &) const;
     /**
-     * @symbol ??4PackIdVersion\@\@QEAAAEAU0\@$$QEAU0\@\@Z
-     */
-    MCAPI struct PackIdVersion & operator=(struct PackIdVersion &&);
-    /**
      * @symbol ??8PackIdVersion\@\@QEBA_NAEBU0\@\@Z
      */
     MCAPI bool operator==(struct PackIdVersion const &) const;

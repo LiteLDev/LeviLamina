@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -12,7 +13,7 @@
 #undef BEFORE_EXTRA
 
 
-class HudScreenCapabilities {
+struct HudScreenCapabilities {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -20,8 +21,8 @@ class HudScreenCapabilities {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HUDSCREENCAPABILITIES
 public:
-    class HudScreenCapabilities& operator=(class HudScreenCapabilities const &) = delete;
-    HudScreenCapabilities(class HudScreenCapabilities const &) = delete;
+    struct HudScreenCapabilities& operator=(struct HudScreenCapabilities const &) = delete;
+    HudScreenCapabilities(struct HudScreenCapabilities const &) = delete;
     HudScreenCapabilities() = delete;
 #endif
 
@@ -33,8 +34,8 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?isOfType\@?$TypedScreenCapabilities\@UHudScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
+     * @symbol ?isOfType\@?$TypedScreenCapabilities\@UHudScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@Bedrock\@\@\@Z
      */
-    virtual bool isOfType(class typeid_t<class IScreenCapabilities>) const;
+    virtual bool isOfType(class Bedrock::typeid_t<class IScreenCapabilities>) const;
 
 };

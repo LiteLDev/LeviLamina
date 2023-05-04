@@ -48,4 +48,16 @@ public:
      */
     MCAPI static void tickUpdateRidingPrevID(class StrictEntityContext &, struct PassengerComponent const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct VehicleComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct RidingPrevIDComponent>);
 
+//private:
+    /**
+     * @symbol ?_tickClearRidingID\@ActorUpdateRidingIDSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UStopRidingRequestFlag\@\@\@\@\@\@$$CBUPassengerComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UPassengerComponent\@\@\@\@\@Z
+     */
+    MCAPI static void _tickClearRidingID(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct StopRidingRequestFlag>>, struct PassengerComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct PassengerComponent>);
+    /**
+     * @symbol ?_tickUpdateRidingPrevID\@ActorUpdateRidingIDSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UStopRidingRequestFlag\@\@\@\@\@\@$$CBUPassengerComponent\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBUVehicleComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@URidingPrevIDComponent\@\@\@\@\@Z
+     */
+    MCAPI static void _tickUpdateRidingPrevID(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct StopRidingRequestFlag>>, struct PassengerComponent const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct VehicleComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct RidingPrevIDComponent>);
+
+private:
+
 };

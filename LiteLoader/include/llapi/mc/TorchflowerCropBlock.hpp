@@ -176,25 +176,25 @@ public:
      */
     virtual void __unk_vfn_126();
     /**
-     * @vftbl 131
-     * @symbol __unk_vfn_131
+     * @vftbl 129
+     * @symbol __unk_vfn_129
      */
-    virtual void __unk_vfn_131();
+    virtual void __unk_vfn_129();
     /**
-     * @vftbl 146
+     * @vftbl 132
+     * @symbol __unk_vfn_132
+     */
+    virtual void __unk_vfn_132();
+    /**
+     * @vftbl 147
      * @symbol ?getVariant\@TorchflowerCropBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @vftbl 156
-     * @symbol __unk_vfn_156
+     * @vftbl 157
+     * @symbol __unk_vfn_157
      */
-    virtual void __unk_vfn_156();
-    /**
-     * @vftbl 165
-     * @symbol __unk_vfn_165
-     */
-    virtual void __unk_vfn_165();
+    virtual void __unk_vfn_157();
     /**
      * @vftbl 166
      * @symbol __unk_vfn_166
@@ -206,45 +206,79 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @vftbl 170
-     * @symbol __unk_vfn_170
+     * @vftbl 168
+     * @symbol __unk_vfn_168
      */
-    virtual void __unk_vfn_170();
+    virtual void __unk_vfn_168();
     /**
-     * @vftbl 174
-     * @symbol __unk_vfn_174
+     * @vftbl 171
+     * @symbol __unk_vfn_171
      */
-    virtual void __unk_vfn_174();
+    virtual void __unk_vfn_171();
     /**
-     * @vftbl 178
-     * @symbol __unk_vfn_178
+     * @vftbl 175
+     * @symbol __unk_vfn_175
      */
-    virtual void __unk_vfn_178();
+    virtual void __unk_vfn_175();
     /**
-     * @vftbl 186
-     * @symbol __unk_vfn_186
+     * @vftbl 179
+     * @symbol __unk_vfn_179
      */
-    virtual void __unk_vfn_186();
+    virtual void __unk_vfn_179();
     /**
-     * @vftbl 194
-     * @symbol __unk_vfn_194
+     * @vftbl 187
+     * @symbol __unk_vfn_187
      */
-    virtual void __unk_vfn_194();
+    virtual void __unk_vfn_187();
     /**
      * @vftbl 195
+     * @symbol __unk_vfn_195
+     */
+    virtual void __unk_vfn_195();
+    /**
+     * @vftbl 196
      * @symbol ?getBaseSeed\@TorchflowerCropBlock\@\@UEBA?BVItemInstance\@\@XZ
      */
     virtual class ItemInstance const getBaseSeed() const;
     /**
-     * @vftbl 196
+     * @vftbl 197
      * @symbol ?getBaseCrop\@TorchflowerCropBlock\@\@UEBA?BVItemInstance\@\@XZ
      */
     virtual class ItemInstance const getBaseCrop() const;
     /**
-     * @vftbl 197
+     * @vftbl 198
      * @symbol ?getSeedNum\@TorchflowerCropBlock\@\@UEBAHAEAVRandomize\@\@HH\@Z
      */
     virtual int getSeedNum(class Randomize &, int, int) const;
+    /**
+     * @vftbl 200
+     * @symbol __unk_vfn_200
+     */
+    virtual void __unk_vfn_200();
+    /**
+     * @vftbl 201
+     * @symbol __unk_vfn_201
+     */
+    virtual void __unk_vfn_201();
+    /**
+     * @vftbl 202
+     * @symbol __unk_vfn_202
+     */
+    virtual void __unk_vfn_202();
+    /**
+     * @vftbl 203
+     * @symbol __unk_vfn_203
+     */
+    virtual void __unk_vfn_203();
+    /**
+     * @vftbl 204
+     * @symbol __unk_vfn_204
+     */
+    virtual void __unk_vfn_204();
+    /**
+     * @symbol ?getDescriptionId\@BlockLegacy\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     */
+    MCAPI std::string const & getDescriptionId() const;
     /**
      * @symbol ??0TorchflowerCropBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */

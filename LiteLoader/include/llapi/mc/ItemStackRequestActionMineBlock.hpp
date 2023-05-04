@@ -27,6 +27,7 @@ enum class PreValidationStatus;
 public:
     class ItemStackRequestActionMineBlock& operator=(class ItemStackRequestActionMineBlock const &) = delete;
     ItemStackRequestActionMineBlock(class ItemStackRequestActionMineBlock const &) = delete;
+    ItemStackRequestActionMineBlock() = delete;
 #endif
 
 public:
@@ -60,10 +61,6 @@ public:
      * @symbol ?_read\@ItemStackRequestActionMineBlock\@\@MEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
-    /**
-     * @symbol ??0ItemStackRequestActionMineBlock\@\@QEAA\@XZ
-     */
-    MCAPI ItemStackRequestActionMineBlock();
     /**
      * @symbol ?getPreValidationStatus\@ItemStackRequestActionMineBlock\@\@QEBA?AW4PreValidationStatus\@1\@XZ
      */

@@ -71,10 +71,6 @@ public:
      */
     MCVAPI void upgradeLevelChunk(class ChunkSource &, class LevelChunk &, class LevelChunk &);
 #endif
-    /**
-     * @symbol ??0OverworldDimension\@\@QEAA\@AEAVILevel\@\@AEAVScheduler\@\@\@Z
-     */
-    MCAPI OverworldDimension(class ILevel &, class Scheduler &);
 
 //private:
     /**

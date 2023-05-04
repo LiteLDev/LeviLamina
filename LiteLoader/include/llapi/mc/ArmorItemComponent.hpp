@@ -69,10 +69,6 @@ public:
      */
     MCAPI enum class ArmorTextureType getArmorTextureType() const;
     /**
-     * @symbol ?getArmorValue\@ArmorItemComponent\@\@QEBAHXZ
-     */
-    MCAPI int getArmorValue() const;
-    /**
      * @symbol ?bindType\@ArmorItemComponent\@\@SAXXZ
      */
     MCAPI static void bindType();

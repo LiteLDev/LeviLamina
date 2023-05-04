@@ -43,9 +43,9 @@ public:
 
 //private:
     /**
-     * @symbol ?_growColumn\@BasaltPillarFeature\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@M\@Z
+     * @symbol ?_growColumn\@BasaltPillarFeature\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@MAEBVBlock\@\@\@Z
      */
-    MCAPI bool _growColumn(class BlockSource &, class BlockPos const &, class Random &, float) const;
+    MCAPI bool _growColumn(class BlockSource &, class BlockPos const &, class Random &, float, class Block const &) const;
 
 private:
 

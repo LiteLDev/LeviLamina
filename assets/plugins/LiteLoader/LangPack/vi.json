@@ -3,7 +3,7 @@
     "getDimName": {
       "0": "Thế giới chính",
       "1": "Địa ngục",
-      "2": "Kết thúc",
+      "2": "The End",
       "unknown": "Không gian khác"
     }
   },
@@ -135,9 +135,9 @@
         "conflicts": {
           "1": "Builtin CrashLogger không được bật vì plugin <{}> xung đột với nó",
           "2": "Sẽ không có nhật ký sự cố khi ngoại lệ được xử lý xảy ra",
-          "3": "điều này khiến cho việc tìm ra lý do của sự cố và nguồn gốc của sự cố gần như không thể.",
+          "3": "điều này gần như làm cho việc tìm ra nguyên nhân và nguồn gốc của sự cố trở nên khó khăn gần như là không thể.",
           "4": "Vì CrashLogger là một thành phần quan trọng đảm bảo sự ổn định của máy chủ",
-          "5": "Chúng tôi khuyên bạn nên suy nghĩ kỹ về việc sử dụng plugin <{}>"
+          "5": "Chúng tôi khuyên bạn nên suy nghĩ kỹ trước khi sử dụng plugin <{}>"
         }
       },
       "init": {
@@ -415,7 +415,7 @@
           "role": {
             "member": {
               "add": {
-                "success": "Đã thêm thành viên {name}§r({xuid}) vào Vai trò {roleDisplayName}§r."
+                "success": "Thành viên {name}§r({xuid}) đã được thêm vào vai trò {roleDisplayName}§r."
               },
               "remove": {
                 "success": "Đã xóa thành viên {name}§r({xuid}) khỏi Vai trò {roleDisplayName}§r."
@@ -463,13 +463,13 @@
   },
   "llseapi": {
     "require": {
-      "fail": "Plugin which is required by {0} not found.",
-      "success": "Plugin named {0} which is required by {1} loaded.",
+      "fail": "Không tìm thấy plugin cần thiết cho {0}.",
+      "success": "Plugin có tên {0} cần thiết cho {1} đã được tải.",
       "network": {
-        "fail": "Error occurred when download plugin which is required by {0}, http code: {1}"
+        "fail": "Đã xảy ra lỗi khi tải plugin cần thiết cho {0}, mã http: {1}"
       },
       "download": {
-        "success": "Download plugin which is required by {0} successfully, path {1}."
+        "success": "Tải plugin cần thiết cho {0} thành công, đường dẫn {1}."
       }
     }
   }

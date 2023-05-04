@@ -12,7 +12,7 @@
 #undef BEFORE_EXTRA
 
 
-class BlockFlammableDescription {
+struct BlockFlammableDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -20,8 +20,8 @@ class BlockFlammableDescription {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKFLAMMABLEDESCRIPTION
 public:
-    class BlockFlammableDescription& operator=(class BlockFlammableDescription const &) = delete;
-    BlockFlammableDescription(class BlockFlammableDescription const &) = delete;
+    struct BlockFlammableDescription& operator=(struct BlockFlammableDescription const &) = delete;
+    BlockFlammableDescription(struct BlockFlammableDescription const &) = delete;
     BlockFlammableDescription() = delete;
 #endif
 
@@ -57,9 +57,5 @@ public:
      * @symbol ?bindType\@BlockFlammableDescription\@\@SAXXZ
      */
     MCAPI static void bindType();
-    /**
-     * @symbol ?registerVersionUpgrades\@BlockFlammableDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
-     */
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

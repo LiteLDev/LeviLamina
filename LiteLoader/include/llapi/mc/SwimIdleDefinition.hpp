@@ -26,17 +26,10 @@ class SwimIdleDefinition {
 public:
     class SwimIdleDefinition& operator=(class SwimIdleDefinition const &) = delete;
     SwimIdleDefinition(class SwimIdleDefinition const &) = delete;
+    SwimIdleDefinition() = delete;
 #endif
 
 public:
-    /**
-     * @symbol ??0SwimIdleDefinition\@\@QEAA\@XZ
-     */
-    MCAPI SwimIdleDefinition();
-    /**
-     * @symbol ?initialize\@SwimIdleDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVSwimIdleGoal\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext &, class SwimIdleGoal &) const;
     /**
      * @symbol ?buildSchema\@SwimIdleDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VSwimIdleDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */

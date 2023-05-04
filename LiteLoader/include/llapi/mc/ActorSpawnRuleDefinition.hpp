@@ -11,15 +11,15 @@
 #undef BEFORE_EXTRA
 
 
-class ActorSpawnRuleDefinition {
+struct ActorSpawnRuleDefinition {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSPAWNRULEDEFINITION
 public:
-    class ActorSpawnRuleDefinition& operator=(class ActorSpawnRuleDefinition const &) = delete;
-    ActorSpawnRuleDefinition(class ActorSpawnRuleDefinition const &) = delete;
+    struct ActorSpawnRuleDefinition& operator=(struct ActorSpawnRuleDefinition const &) = delete;
+    ActorSpawnRuleDefinition(struct ActorSpawnRuleDefinition const &) = delete;
     ActorSpawnRuleDefinition() = delete;
 #endif
 

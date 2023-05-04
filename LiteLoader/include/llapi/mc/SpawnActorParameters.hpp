@@ -32,13 +32,13 @@ public:
      */
     MCAPI SpawnActorParameters(struct SpawnActorParameters &&);
     /**
-     * @symbol ??0SpawnActorParameters\@\@QEAA\@AEBU0\@\@Z
-     */
-    MCAPI SpawnActorParameters(struct SpawnActorParameters const &);
-    /**
      * @symbol ??0SpawnActorParameters\@\@QEAA\@XZ
      */
     MCAPI SpawnActorParameters();
+    /**
+     * @symbol ??0SpawnActorParameters\@\@QEAA\@AEBU0\@\@Z
+     */
+    MCAPI SpawnActorParameters(struct SpawnActorParameters const &);
     /**
      * @symbol ?setItem\@SpawnActorParameters\@\@QEAAXAEBVItemDescriptor\@\@\@Z
      */

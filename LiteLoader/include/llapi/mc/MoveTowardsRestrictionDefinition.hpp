@@ -25,19 +25,10 @@ class MoveTowardsRestrictionDefinition {
 public:
     class MoveTowardsRestrictionDefinition& operator=(class MoveTowardsRestrictionDefinition const &) = delete;
     MoveTowardsRestrictionDefinition(class MoveTowardsRestrictionDefinition const &) = delete;
+    MoveTowardsRestrictionDefinition() = delete;
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVETOWARDSRESTRICTIONDEFINITION
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~MoveTowardsRestrictionDefinition();
-#endif
-    /**
-     * @symbol ??0MoveTowardsRestrictionDefinition\@\@QEAA\@XZ
-     */
-    MCAPI MoveTowardsRestrictionDefinition();
     /**
      * @symbol ?initialize\@MoveTowardsRestrictionDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVMoveTowardsRestrictionGoal\@\@\@Z
      */

@@ -236,10 +236,6 @@ public:
      */
     MCAPI __int64 _getTicksAlive() const;
     /**
-     * @symbol ?_setSpawnTick\@AreaEffectCloud\@\@AEAAX_J\@Z
-     */
-    MCAPI void _setSpawnTick(__int64);
-    /**
      * @symbol ?_spawnParticles\@AreaEffectCloud\@\@AEAAXAEAVRandom\@\@IM\@Z
      */
     MCAPI void _spawnParticles(class Random &, unsigned int, float);

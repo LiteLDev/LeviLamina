@@ -115,11 +115,6 @@ public:
      */
     virtual void causeFallDamage(float, float, class ActorDamageSource);
     /**
-     * @vftbl 190
-     * @symbol ?canBePulledIntoVehicle\@Camel\@\@UEBA_NXZ
-     */
-    virtual bool canBePulledIntoVehicle() const;
-    /**
      * @vftbl 192
      * @symbol __unk_vfn_192
      */

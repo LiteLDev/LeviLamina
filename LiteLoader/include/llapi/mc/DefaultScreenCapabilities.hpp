@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -12,7 +13,7 @@
 #undef BEFORE_EXTRA
 
 
-class DefaultScreenCapabilities {
+struct DefaultScreenCapabilities {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -20,8 +21,8 @@ class DefaultScreenCapabilities {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFAULTSCREENCAPABILITIES
 public:
-    class DefaultScreenCapabilities& operator=(class DefaultScreenCapabilities const &) = delete;
-    DefaultScreenCapabilities(class DefaultScreenCapabilities const &) = delete;
+    struct DefaultScreenCapabilities& operator=(struct DefaultScreenCapabilities const &) = delete;
+    DefaultScreenCapabilities(struct DefaultScreenCapabilities const &) = delete;
     DefaultScreenCapabilities() = delete;
 #endif
 
@@ -33,8 +34,8 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?isOfType\@?$TypedScreenCapabilities\@UDefaultScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@\@\@Z
+     * @symbol ?isOfType\@?$TypedScreenCapabilities\@UDefaultScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@Bedrock\@\@\@Z
      */
-    virtual bool isOfType(class typeid_t<class IScreenCapabilities>) const;
+    virtual bool isOfType(class Bedrock::typeid_t<class IScreenCapabilities>) const;
 
 };

@@ -46,18 +46,6 @@ public:
      * @symbol ?load\@BoolOption\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void load(std::string const &);
-    /**
-     * @symbol ??0BoolOption\@\@QEAA\@W4OptionID\@\@W4OptionOwnerType\@\@W4OptionResetFlags\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@3_N\@Z
-     */
-    MCAPI BoolOption(enum class OptionID, enum class OptionOwnerType, enum class OptionResetFlags, std::string const &, std::string const &, bool);
-    /**
-     * @symbol ?getValue\@BoolOption\@\@QEBA_NXZ
-     */
-    MCAPI bool getValue() const;
-    /**
-     * @symbol ?set\@BoolOption\@\@QEAAX_N0\@Z
-     */
-    MCAPI void set(bool, bool);
 
 //private:
     /**

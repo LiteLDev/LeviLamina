@@ -26,6 +26,7 @@ class MoveInputHandler : public MoveInput {
 public:
     class MoveInputHandler& operator=(class MoveInputHandler const &) = delete;
     MoveInputHandler(class MoveInputHandler const &) = delete;
+    MoveInputHandler() = delete;
 #endif
 
 public:
@@ -99,51 +100,13 @@ public:
      * @symbol ?getClientRawInputStateCopy\@MoveInputHandler\@\@UEBA?AUMoveInputState\@\@XZ
      */
     virtual struct MoveInputState getClientRawInputStateCopy() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEINPUTHANDLER
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~MoveInputHandler();
-#endif
-    /**
-     * @symbol ?isAscendBlock\@MoveInputHandler\@\@QEBA_NXZ
-     */
-    MCAPI bool isAscendBlock() const;
-    /**
-     * @symbol ?isDescendBlock\@MoveInputHandler\@\@QEBA_NXZ
-     */
-    MCAPI bool isDescendBlock() const;
     /**
      * @symbol ?isSneakDown\@MoveInputHandler\@\@QEBA_NXZ
      */
     MCAPI bool isSneakDown() const;
     /**
-     * @symbol ?isSneakToggleButtonDown\@MoveInputHandler\@\@QEBA_NXZ
-     */
-    MCAPI bool isSneakToggleButtonDown() const;
-    /**
      * @symbol ?setInputState\@MoveInputHandler\@\@QEAAXAEAUMoveInputState\@\@\@Z
      */
     MCAPI void setInputState(struct MoveInputState &);
-    /**
-     * @symbol ?wantsDownSlow\@MoveInputHandler\@\@QEBA_NXZ
-     */
-    MCAPI bool wantsDownSlow() const;
-    /**
-     * @symbol ?wantsMoveForward\@MoveInputHandler\@\@QEBA_NXZ
-     */
-    MCAPI bool wantsMoveForward() const;
-    /**
-     * @symbol ?wantsUpSlow\@MoveInputHandler\@\@QEBA_NXZ
-     */
-    MCAPI bool wantsUpSlow() const;
-
-//protected:
-    /**
-     * @symbol ??0MoveInputHandler\@\@IEAA\@XZ
-     */
-    MCAPI MoveInputHandler();
-
-protected:
 
 };

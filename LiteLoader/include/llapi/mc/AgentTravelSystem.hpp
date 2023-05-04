@@ -32,6 +32,14 @@ public:
      * @symbol ?createServerSystem\@AgentTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createServerSystem();
+    /**
+     * @symbol ?tickClient\@AgentTravelSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UUsesECSMovementFlag\@\@\@\@V?$FlagComponent\@UAgentFlag\@\@\@\@\@\@VActorMovementProxyComponent\@\@VActorOwnerComponent\@\@\@\@\@Z
+     */
+    MCAPI static void tickClient(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct UsesECSMovementFlag>, class FlagComponent<struct AgentFlag>>, class ActorMovementProxyComponent, class ActorOwnerComponent>);
+    /**
+     * @symbol ?tickServer\@AgentTravelSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UUsesECSMovementFlag\@\@\@\@V?$FlagComponent\@UAgentFlag\@\@\@\@\@\@VActorMovementProxyComponent\@\@VActorOwnerComponent\@\@UStateVectorComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UMoveRequestComponent\@\@\@\@\@Z
+     */
+    MCAPI static void tickServer(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct UsesECSMovementFlag>, class FlagComponent<struct AgentFlag>>, class ActorMovementProxyComponent, class ActorOwnerComponent, struct StateVectorComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MoveRequestComponent>);
 
 //private:
     /**

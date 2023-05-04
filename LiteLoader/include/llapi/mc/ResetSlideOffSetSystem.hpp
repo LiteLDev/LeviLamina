@@ -31,5 +31,9 @@ public:
      * @symbol ?createResetSlideOffSetSystem\@ResetSlideOffSetSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createResetSlideOffSetSystem();
+    /**
+     * @symbol ?tickResetSlideOffSetSystem\@ResetSlideOffSetSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Exclude\@V?$FlagComponent\@UAutoStepRequestFlag\@\@\@\@\@\@$$CBUMoveRequestComponent\@\@USlideOffsetComponent\@\@\@\@\@Z
+     */
+    MCAPI static void tickResetSlideOffSetSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Exclude<class FlagComponent<struct AutoStepRequestFlag>>, struct MoveRequestComponent const, struct SlideOffsetComponent>);
 
 };

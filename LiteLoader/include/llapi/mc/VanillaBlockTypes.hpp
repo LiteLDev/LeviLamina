@@ -30,29 +30,9 @@ namespace VanillaBlockTypes {
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mAmethystCluster;
     /**
-     * @symbol ?mAnvil\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mAnvil;
-    /**
-     * @symbol ?mBamboo\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mBamboo;
-    /**
      * @symbol ?mBambooSapling\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mBambooSapling;
-    /**
-     * @symbol ?mBasalt\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mBasalt;
-    /**
-     * @symbol ?mBeacon\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mBeacon;
-    /**
-     * @symbol ?mBlackstone\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mBlackstone;
     /**
      * @symbol ?mBlackstoneDoubleSlab\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */
@@ -62,14 +42,6 @@ namespace VanillaBlockTypes {
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mBlackstoneSlab;
     /**
-     * @symbol ?mBookshelf\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mBookshelf;
-    /**
-     * @symbol ?mBrewingStand\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mBrewingStand;
-    /**
      * @symbol ?mBuddingAmethyst\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mBuddingAmethyst;
@@ -77,10 +49,6 @@ namespace VanillaBlockTypes {
      * @symbol ?mCalcite\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mCalcite;
-    /**
-     * @symbol ?mCauldron\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mCauldron;
     /**
      * @symbol ?mChest\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */
@@ -90,10 +58,6 @@ namespace VanillaBlockTypes {
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mChiseledDeepslate;
     /**
-     * @symbol ?mChiseledPolishedBlackstone\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mChiseledPolishedBlackstone;
-    /**
      * @symbol ?mCobbledDeepslateDoubleSlab\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mCobbledDeepslateDoubleSlab;
@@ -101,10 +65,6 @@ namespace VanillaBlockTypes {
      * @symbol ?mCobbledDeepslateSlab\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mCobbledDeepslateSlab;
-    /**
-     * @symbol ?mConduitBlock\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mConduitBlock;
     /**
      * @symbol ?mCrackedDeepslateTiles\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */
@@ -178,10 +138,6 @@ namespace VanillaBlockTypes {
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mDripstone;
     /**
-     * @symbol ?mEnchantingTable\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mEnchantingTable;
-    /**
      * @symbol ?mExposedCutCopperSlab\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mExposedCutCopperSlab;
@@ -214,25 +170,9 @@ namespace VanillaBlockTypes {
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mInfestedDeepslate;
     /**
-     * @symbol ?mInfoReserved6\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mInfoReserved6;
-    /**
-     * @symbol ?mInfoUpdateGame1\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mInfoUpdateGame1;
-    /**
-     * @symbol ?mInfoUpdateGame2\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mInfoUpdateGame2;
-    /**
      * @symbol ?mLargeAmethystBud\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mLargeAmethystBud;
-    /**
-     * @symbol ?mLavaCauldron\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mLavaCauldron;
     /**
      * @symbol ?mLodestoneBlock\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */
@@ -265,10 +205,6 @@ namespace VanillaBlockTypes {
      * @symbol ?mMediumAmethystBud\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mMediumAmethystBud;
-    /**
-     * @symbol ?mMovingBlock\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mMovingBlock;
     /**
      * @symbol ?mMudBrickDoubleSlab\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */
@@ -306,10 +242,6 @@ namespace VanillaBlockTypes {
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPointedDripstone;
     /**
-     * @symbol ?mPolishedBasalt\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mPolishedBasalt;
-    /**
      * @symbol ?mPolishedBlackstone\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPolishedBlackstone;
@@ -346,21 +278,9 @@ namespace VanillaBlockTypes {
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mPortal;
     /**
-     * @symbol ?mPrismarine\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mPrismarine;
-    /**
-     * @symbol ?mPurpurBlock\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mPurpurBlock;
-    /**
      * @symbol ?mQuartzBricks\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mQuartzBricks;
-    /**
-     * @symbol ?mReeds\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mReeds;
     /**
      * @symbol ?mReinforcedDeepslate\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */
@@ -394,10 +314,6 @@ namespace VanillaBlockTypes {
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mSmallAmethystBud;
     /**
-     * @symbol ?mSmoothBasalt\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mSmoothBasalt;
-    /**
      * @symbol ?mSmoothStone\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mSmoothStone;
@@ -421,10 +337,6 @@ namespace VanillaBlockTypes {
      * @symbol ?mStrippedMangroveWood\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mStrippedMangroveWood;
-    /**
-     * @symbol ?mSweetBerryBushBlock\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mSweetBerryBushBlock;
     /**
      * @symbol ?mTuff\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */
@@ -505,10 +417,6 @@ namespace VanillaBlockTypes {
      * @symbol ?mWeatheredDoubleCutCopperSlab\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */
     MCAPI extern class WeakPtr<class BlockLegacy> mWeatheredDoubleCutCopperSlab;
-    /**
-     * @symbol ?mWitherRose\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
-     */
-    MCAPI extern class WeakPtr<class BlockLegacy> mWitherRose;
     /**
      * @symbol ?mWoodenSlab\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
      */

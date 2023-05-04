@@ -46,28 +46,8 @@ public:
      */
     MCAPI static void fillColumnDown(class StructurePiece &, class BlockSource &, class Block const &, int, int, int, class BoundingBox const &);
     /**
-     * @symbol ?getDirectionRotation\@StructureHelpers\@\@SAHHG\@Z
-     */
-    MCAPI static int getDirectionRotation(int, unsigned short);
-    /**
-     * @symbol ?getDoorRotation\@StructureHelpers\@\@SAHHG\@Z
-     */
-    MCAPI static int getDoorRotation(int, unsigned short);
-    /**
-     * @symbol ?getFacingDirectionRotation\@StructureHelpers\@\@SAHHG\@Z
-     */
-    MCAPI static int getFacingDirectionRotation(int, unsigned short);
-    /**
-     * @symbol ?getRailRotation\@StructureHelpers\@\@SAHHG\@Z
-     */
-    MCAPI static int getRailRotation(int, unsigned short);
-    /**
      * @symbol ?getTorchRotation\@StructureHelpers\@\@SAHHG\@Z
      */
     MCAPI static int getTorchRotation(int, unsigned short);
-    /**
-     * @symbol ?getWeirdoDirectionRotation\@StructureHelpers\@\@SAHHG\@Z
-     */
-    MCAPI static int getWeirdoDirectionRotation(int, unsigned short);
 
 };

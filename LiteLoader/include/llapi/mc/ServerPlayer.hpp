@@ -416,9 +416,9 @@ public:
     virtual void stopSleepInBed(bool, bool);
     /**
      * @vftbl 395
-     * @symbol __unk_vfn_395
+     * @symbol ?openSign\@ServerPlayer\@\@UEAAXAEBVBlockPos\@\@_N\@Z
      */
-    virtual void __unk_vfn_395();
+    virtual void openSign(class BlockPos const &, bool);
     /**
      * @vftbl 396
      * @symbol __unk_vfn_396
@@ -540,22 +540,27 @@ public:
      */
     virtual void __unk_vfn_436();
     /**
-     * @vftbl 440
+     * @vftbl 437
+     * @symbol ?getMaxChunkBuildRadius\@ServerPlayer\@\@UEBAEXZ
+     */
+    virtual unsigned char getMaxChunkBuildRadius() const;
+    /**
+     * @vftbl 441
      * @symbol ?getEditorPlayer\@ServerPlayer\@\@UEBA?AV?$NonOwnerPointer\@VIEditorPlayer\@Editor\@\@\@Bedrock\@\@XZ
      */
     virtual class Bedrock::NonOwnerPointer<class Editor::IEditorPlayer> getEditorPlayer() const;
     /**
-     * @vftbl 441
+     * @vftbl 442
      * @symbol ?destroyEditorPlayer\@ServerPlayer\@\@UEAAXXZ
      */
     virtual void destroyEditorPlayer();
     /**
-     * @vftbl 442
+     * @vftbl 443
      * @symbol ?_getSpawnChunkLimit\@ServerPlayer\@\@MEBAHXZ
      */
     virtual int _getSpawnChunkLimit() const;
     /**
-     * @vftbl 443
+     * @vftbl 444
      * @symbol ?_updateChunkPublisherView\@ServerPlayer\@\@MEAAXAEBVVec3\@\@M\@Z
      */
     virtual void _updateChunkPublisherView(class Vec3 const &, float);
@@ -614,6 +619,10 @@ public:
      */
     MCAPI void handleBlockPickRequestOnServer(class BlockPos const &, bool);
     /**
+     * @symbol ?isCompatibleWithClientSideChunkGen\@ServerPlayer\@\@QEBA_NXZ
+     */
+    MCAPI bool isCompatibleWithClientSideChunkGen() const;
+    /**
      * @symbol ?openUnmanagedContainer\@ServerPlayer\@\@QEAA?AW4ContainerID\@\@XZ
      */
     MCAPI enum class ContainerID openUnmanagedContainer();
@@ -642,13 +651,17 @@ public:
      */
     MCAPI void sendPlayerOnGround();
     /**
-     * @symbol ?setClientChunkRadius\@ServerPlayer\@\@QEAAXI\@Z
+     * @symbol ?setClientChunkRadius\@ServerPlayer\@\@QEAAXIE\@Z
      */
-    MCAPI void setClientChunkRadius(unsigned int);
+    MCAPI void setClientChunkRadius(unsigned int, unsigned char);
     /**
      * @symbol ?setInputMode\@ServerPlayer\@\@QEAAXAEBW4InputMode\@\@\@Z
      */
     MCAPI void setInputMode(enum class InputMode const &);
+    /**
+     * @symbol ?setIsCompatibleWithClientSideChunkGen\@ServerPlayer\@\@QEAAX_N\@Z
+     */
+    MCAPI void setIsCompatibleWithClientSideChunkGen(bool);
     /**
      * @symbol ?setLocalPlayerAsInitialized\@ServerPlayer\@\@QEAAXXZ
      */

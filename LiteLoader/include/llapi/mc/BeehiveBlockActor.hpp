@@ -97,10 +97,6 @@ public:
      */
     virtual void __unk_vfn_36();
     /**
-     * @symbol ??0BeehiveBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI BeehiveBlockActor(class BlockPos const &);
-    /**
      * @symbol ?disableBeeSpawn\@BeehiveBlockActor\@\@QEAAXXZ
      */
     MCAPI void disableBeeSpawn();

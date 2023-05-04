@@ -33,10 +33,6 @@ public:
      */
     MCAPI void recordCacheCheck(class LevelChunk const &);
     /**
-     * @symbol ?recordChunkDeleted\@ChunkRecyclerTelemetryData\@\@QEAAXAEBVLevelChunk\@\@\@Z
-     */
-    MCAPI void recordChunkDeleted(class LevelChunk const &);
-    /**
      * @symbol ?recordTaskCompleted\@ChunkRecyclerTelemetryData\@\@QEAAXAEBVLevelChunk\@\@AEBVTaskInfo\@1\@\@Z
      */
     MCAPI void recordTaskCompleted(class LevelChunk const &, class ChunkRecyclerTelemetryData::TaskInfo const &);
@@ -48,10 +44,6 @@ public:
      * @symbol ?tickLevel\@ChunkRecyclerTelemetryData\@\@QEAAXAEBVLevel\@\@\@Z
      */
     MCAPI void tickLevel(class Level const &);
-    /**
-     * @symbol ?taskStarted\@ChunkRecyclerTelemetryData\@\@SA?AVTaskInfo\@1\@XZ
-     */
-    MCAPI static class ChunkRecyclerTelemetryData::TaskInfo taskStarted();
 
 //private:
     /**

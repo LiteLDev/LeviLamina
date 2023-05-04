@@ -1,260 +1,237 @@
 /**
- * @file  Npc.hpp
+ * @file  npc.hpp
  *
  */
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Actor.hpp"
-#include "Mob.hpp"
+#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC class Npc.
- *
- */
-class Npc : public Mob {
+
+namespace npc {
 
 #define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPC
+struct UrlAction {
+
 public:
-    class Npc& operator=(class Npc const &) = delete;
-    Npc(class Npc const &) = delete;
-    Npc() = delete;
-#endif
+    struct UrlAction& operator=(struct UrlAction const&) = delete;
+    UrlAction(struct UrlAction const&) = delete;
+    UrlAction() = delete;
 
 public:
     /**
-     * @vftbl 10
-     * @symbol ?reloadHardcoded\@Npc\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
+     * @symbol ??9UrlAction\@npc\@\@QEBA_NAEBU01\@\@Z
      */
-    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
+    MCAPI bool operator!=(struct UrlAction const&) const;
     /**
-     * @vftbl 12
-     * @symbol ?initializeComponents\@Npc\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
+     * @symbol ??1UrlAction\@npc\@\@QEAA\@XZ
      */
-    virtual void initializeComponents(enum class Actor::InitializationMethod, class VariantParameterList const &);
+    MCAPI ~UrlAction();
+};
+
+struct ActionValue {
+    std::string mRawText;
+    std::string mText;
+
+public:
+    struct ActionValue& operator=(struct ActionValue const&) = delete;
+    ActionValue(struct ActionValue const&) = delete;
+//    ActionValue() = delete;
+
+public:
     /**
-     * @vftbl 16
-     * @symbol __unk_vfn_16
+     * @symbol ??0ActionValue\@npc\@\@QEAA\@XZ
      */
-    virtual void __unk_vfn_16();
+    MCAPI ActionValue();
     /**
-     * @vftbl 41
-     * @symbol __unk_vfn_41
+     * @symbol ??4ActionValue\@npc\@\@QEAAAEAU01\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    virtual void __unk_vfn_41();
+    MCAPI struct ActionValue& operator=(class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
-     * @vftbl 61
-     * @symbol ?canShowNameTag\@Npc\@\@UEBA_NXZ
+     * @symbol ?rawValue\@ActionValue\@npc\@\@QEBA?AV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@XZ
      */
-    virtual bool canShowNameTag() const;
+    MCAPI class std::basic_string_view<char, struct std::char_traits<char>> rawValue() const;
     /**
-     * @vftbl 62
-     * @symbol __unk_vfn_62
+     * @symbol ??1ActionValue\@npc\@\@QEAA\@XZ
      */
-    virtual void __unk_vfn_62();
+    MCAPI ~ActionValue();
+};
+
+struct StoredCommand {
+
+public:
+    struct StoredCommand& operator=(struct StoredCommand const&) = delete;
+    StoredCommand(struct StoredCommand const&) = delete;
+    StoredCommand() = delete;
+
+public:
     /**
-     * @vftbl 66
-     * @symbol ?getFormattedNameTag\@Npc\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol
+     * ??0StoredCommand\@npc\@\@QEAA\@W4CurrentCmdVersion\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    virtual std::string getFormattedNameTag() const;
+    MCAPI StoredCommand(enum class CurrentCmdVersion,
+                        class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
-     * @vftbl 69
-     * @symbol __unk_vfn_69
+     * @symbol ??1StoredCommand\@npc\@\@QEAA\@XZ
      */
-    virtual void __unk_vfn_69();
+    MCAPI ~StoredCommand();
+};
+
+struct Button {
+
+public:
+    struct Button& operator=(struct Button const&) = delete;
+    Button(struct Button const&) = delete;
+//    Button() = delete;
+
+public:
     /**
-     * @vftbl 82
-     * @symbol __unk_vfn_82
+     * @symbol ??0Button\@npc\@\@QEAA\@XZ
      */
-    virtual void __unk_vfn_82();
+    MCAPI Button();
     /**
-     * @vftbl 85
-     * @symbol __unk_vfn_85
+     * @symbol ??4Button\@npc\@\@QEAAAEAU01\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    virtual void __unk_vfn_85();
+    MCAPI struct Button& operator=(class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
-     * @vftbl 88
-     * @symbol __unk_vfn_88
+     * @symbol ??1Button\@npc\@\@QEAA\@XZ
      */
-    virtual void __unk_vfn_88();
+    MCAPI ~Button();
+};
+
+enum class ActionMode : __int8 {
+    BUTTON = 0x0,
+    CLOSE = 0x1,
+    OPEN = 0x2,
+};
+
+struct CommandAction {
+    npc::ActionValue mActionValue;
+    npc::Button mButton;
+    npc::ActionMode mActionMode;
+    std::vector<npc::StoredCommand> mCmds;
+
+public:
+    struct CommandAction& operator=(struct CommandAction const&) = delete;
+    CommandAction(struct CommandAction const&) = delete;
+    CommandAction() = delete;
+
+public:
     /**
-     * @vftbl 96
-     * @symbol __unk_vfn_96
+     * @symbol ??9CommandAction\@npc\@\@QEBA_NAEBU01\@\@Z
      */
-    virtual void __unk_vfn_96();
+    MCAPI bool operator!=(struct CommandAction const&) const;
     /**
-     * @vftbl 99
-     * @symbol __unk_vfn_99
+     * @symbol ??1CommandAction\@npc\@\@QEAA\@XZ
      */
-    virtual void __unk_vfn_99();
+    MCAPI ~CommandAction();
+};
+
+
+struct ActionContainer {
+
+public:
+    struct ActionContainer& operator=(struct ActionContainer const&) = delete;
+    ActionContainer(struct ActionContainer const&) = delete;
+    ActionContainer() = delete;
+
+public:
     /**
-     * @vftbl 106
-     * @symbol __unk_vfn_106
+     * @symbol ?at\@ActionContainer\@npc\@\@QEAAPEAV?$variant\@UCommandAction\@npc\@\@UUrlAction\@2\@\@std\@\@_K\@Z
      */
-    virtual void __unk_vfn_106();
+    MCAPI class std::variant<struct npc::CommandAction, struct npc::UrlAction>* at(unsigned __int64);
     /**
-     * @vftbl 108
-     * @symbol __unk_vfn_108
+     * @symbol ?at\@ActionContainer\@npc\@\@QEBAPEBV?$variant\@UCommandAction\@npc\@\@UUrlAction\@2\@\@std\@\@_K\@Z
      */
-    virtual void __unk_vfn_108();
+    MCAPI class std::variant<struct npc::CommandAction, struct npc::UrlAction> const* at(unsigned __int64) const;
     /**
-     * @vftbl 109
-     * @symbol __unk_vfn_109
+     * @symbol ?countUrl\@ActionContainer\@npc\@\@QEBA_KXZ
      */
-    virtual void __unk_vfn_109();
+    MCAPI unsigned __int64 countUrl() const;
     /**
-     * @vftbl 111
-     * @symbol __unk_vfn_111
+     * @symbol
+     * ?data\@ActionContainer\@npc\@\@QEBAAEBV?$vector\@V?$variant\@UCommandAction\@npc\@\@UUrlAction\@2\@\@std\@\@V?$allocator\@V?$variant\@UCommandAction\@npc\@\@UUrlAction\@2\@\@std\@\@\@2\@\@std\@\@XZ
      */
-    virtual void __unk_vfn_111();
+    MCAPI std::vector<class std::variant<struct npc::CommandAction, struct npc::UrlAction>> const& data() const;
     /**
-     * @vftbl 178
-     * @symbol __unk_vfn_178
+     * @symbol ?push\@ActionContainer\@npc\@\@QEAAX$$QEAV?$variant\@UCommandAction\@npc\@\@UUrlAction\@2\@\@std\@\@\@Z
      */
-    virtual void __unk_vfn_178();
+    MCAPI void push(class std::variant<struct npc::CommandAction, struct npc::UrlAction>&&);
     /**
-     * @vftbl 190
-     * @symbol ?canBePulledIntoVehicle\@Npc\@\@UEBA_NXZ
+     * @symbol
+     * ?reset\@ActionContainer\@npc\@\@QEAAX$$QEAV?$vector\@V?$variant\@UCommandAction\@npc\@\@UUrlAction\@2\@\@std\@\@V?$allocator\@V?$variant\@UCommandAction\@npc\@\@UUrlAction\@2\@\@std\@\@\@2\@\@std\@\@\@Z
      */
-    virtual bool canBePulledIntoVehicle() const;
+    MCAPI void reset(std::vector<class std::variant<struct npc::CommandAction, struct npc::UrlAction>>&&);
     /**
-     * @vftbl 192
-     * @symbol __unk_vfn_192
+     * @symbol ?size\@ActionContainer\@npc\@\@QEBA_KXZ
      */
-    virtual void __unk_vfn_192();
+    MCAPI unsigned __int64 size() const;
     /**
-     * @vftbl 199
-     * @symbol ?buildDebugInfo\@Npc\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ??1ActionContainer\@npc\@\@QEAA\@XZ
      */
-    virtual void buildDebugInfo(std::string &) const;
+    MCAPI ~ActionContainer();
+};
+
+
+#undef AFTER_EXTRA
     /**
-     * @vftbl 207
-     * @symbol ?canBeAffected\@Npc\@\@UEBA_NI\@Z
+     * @symbol ?COMMAND_DELIMITER\@npc\@\@3DB
      */
-    virtual bool canBeAffected(unsigned int) const;
+    MCAPI extern char const COMMAND_DELIMITER;
     /**
-     * @vftbl 217
-     * @symbol __unk_vfn_217
+     * @symbol ?COMMAND_PERMISSION\@npc\@\@3W4CommandPermissionLevel\@\@B
      */
-    virtual void __unk_vfn_217();
+    MCAPI extern enum class CommandPermissionLevel const COMMAND_PERMISSION;
     /**
-     * @vftbl 218
-     * @symbol __unk_vfn_218
+     * @symbol ?MAX_NAME_LENGTH\@npc\@\@3_KB
      */
-    virtual void __unk_vfn_218();
+    MCAPI extern unsigned __int64 const MAX_NAME_LENGTH;
     /**
-     * @vftbl 240
-     * @symbol __unk_vfn_240
+     * @symbol ?UNUSED_ACTION_INDEX\@npc\@\@3_KB
      */
-    virtual void __unk_vfn_240();
+    MCAPI extern unsigned __int64 const UNUSED_ACTION_INDEX;
     /**
-     * @vftbl 243
-     * @symbol __unk_vfn_243
+     * @symbol ?fillCommands\@npc\@\@YAXAEAUCommandAction\@1\@AEBV?$vector\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@V?$allocator\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@2\@\@std\@\@W4CurrentCmdVersion\@\@\@Z
      */
-    virtual void __unk_vfn_243();
+    MCAPI void fillCommands(struct npc::CommandAction &, std::vector<class std::basic_string_view<char, struct std::char_traits<char>>> const &, enum class CurrentCmdVersion);
     /**
-     * @vftbl 245
-     * @symbol ?die\@Npc\@\@UEAAXAEBVActorDamageSource\@\@\@Z
+     * @symbol ?fromJson\@npc\@\@YA?AV?$optional\@V?$variant\@UCommandAction\@npc\@\@UUrlAction\@2\@\@std\@\@\@std\@\@AEBVValue\@Json\@\@\@Z
      */
-    virtual void die(class ActorDamageSource const &);
+    MCAPI class std::optional<class std::variant<struct npc::CommandAction, struct npc::UrlAction>> fromJson(class Json::Value const &);
     /**
-     * @vftbl 260
-     * @symbol __unk_vfn_260
+     * @symbol ?handlePacket\@npc\@\@YAXAEAVActor\@\@AEAVPlayer\@\@AEAVNpcComponent\@\@AEBVNpcRequestPacket\@\@\@Z
      */
-    virtual void __unk_vfn_260();
+    MCAPI void handlePacket(class Actor &, class Player &, class NpcComponent &, class NpcRequestPacket const &);
     /**
-     * @vftbl 261
-     * @symbol ?_hurt\@Npc\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
+     * @symbol ?hasCreatePermission\@npc\@\@YA_NAEAVActor\@\@\@Z
      */
-    virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
+    MCAPI bool hasCreatePermission(class Actor &);
     /**
-     * @vftbl 268
-     * @symbol __unk_vfn_268
+     * @symbol ?toJson\@npc\@\@YA?AVValue\@Json\@\@AEBV?$variant\@UCommandAction\@npc\@\@UUrlAction\@2\@\@std\@\@\@Z
      */
-    virtual void __unk_vfn_268();
+    MCAPI class Json::Value toJson(class std::variant<struct npc::CommandAction, struct npc::UrlAction> const &);
     /**
-     * @vftbl 274
-     * @symbol ?_onSizeUpdated\@Npc\@\@EEAAXXZ
+     * @symbol ?toJson\@npc\@\@YA?AVValue\@Json\@\@AEBUActionContainer\@1\@\@Z
      */
-    virtual void _onSizeUpdated();
+    MCAPI class Json::Value toJson(struct npc::ActionContainer const &);
     /**
-     * @vftbl 275
-     * @symbol __unk_vfn_275
+     * @symbol ?toJson\@npc\@\@YA?AVValue\@Json\@\@AEBUCommandAction\@1\@\@Z
      */
-    virtual void __unk_vfn_275();
+    MCAPI class Json::Value toJson(struct npc::CommandAction const &);
     /**
-     * @vftbl 276
-     * @symbol ?knockback\@Npc\@\@UEAAXPEAVActor\@\@HMMMMM\@Z
+     * @symbol ?toJson\@npc\@\@YA?AVValue\@Json\@\@AEBUUrlAction\@1\@\@Z
      */
-    virtual void knockback(class Actor *, int, float, float, float, float, float);
+    MCAPI class Json::Value toJson(struct npc::UrlAction const &);
     /**
-     * @vftbl 301
-     * @symbol __unk_vfn_301
+     * @symbol ?toString\@npc\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUActionContainer\@1\@\@Z
      */
-    virtual void __unk_vfn_301();
-    /**
-     * @vftbl 305
-     * @symbol __unk_vfn_305
-     */
-    virtual void __unk_vfn_305();
-    /**
-     * @vftbl 338
-     * @symbol ?canExistWhenDisallowMob\@Npc\@\@UEBA_NXZ
-     */
-    virtual bool canExistWhenDisallowMob() const;
-    /**
-     * @vftbl 346
-     * @symbol ?newServerAiStep\@Npc\@\@UEAAXXZ
-     */
-    virtual void newServerAiStep();
-    /**
-     * @vftbl 347
-     * @symbol ?_serverAiMobStep\@Npc\@\@MEAAXXZ
-     */
-    virtual void _serverAiMobStep();
-    /**
-     * @vftbl 351
-     * @symbol __unk_vfn_351
-     */
-    virtual void __unk_vfn_351();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPC
-    /**
-     * @symbol ?breaksFallingBlocks\@Npc\@\@UEBA_NXZ
-     */
-    MCVAPI bool breaksFallingBlocks() const;
-    /**
-     * @symbol ?interactPreventDefault\@Npc\@\@UEAA_NXZ
-     */
-    MCVAPI bool interactPreventDefault();
-    /**
-     * @symbol ?isFishable\@Npc\@\@UEBA_NXZ
-     */
-    MCVAPI bool isFishable() const;
-    /**
-     * @symbol ?isTargetable\@Npc\@\@UEBA_NXZ
-     */
-    MCVAPI bool isTargetable() const;
-#endif
-    /**
-     * @symbol ??0Npc\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
-     */
-    MCAPI Npc(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
-    /**
-     * @symbol ?SKIN_ID_TAG\@Npc\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
-     */
-    MCAPI static std::string const SKIN_ID_TAG;
-    /**
-     * @symbol ?Skins\@Npc\@\@2V?$vector\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@\@std\@\@V?$allocator\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@\@std\@\@\@2\@\@std\@\@B
-     */
-    MCAPI static std::vector<struct std::pair<std::string, std::string>> const Skins;
+    MCAPI std::string toString(struct npc::ActionContainer const &);
 
 };

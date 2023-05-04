@@ -210,10 +210,6 @@ public:
      */
     MCAPI class Block const & getCarryingBlock() const;
     /**
-     * @symbol ?setCarryingBlock\@EnderMan\@\@QEAAXAEBVBlock\@\@\@Z
-     */
-    MCAPI void setCarryingBlock(class Block const &);
-    /**
      * @symbol ?SPEED_MODIFIER_ATTACKING\@EnderMan\@\@2V?$shared_ptr\@VAttributeModifier\@\@\@std\@\@A
      */
     MCAPI static class std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_ATTACKING;

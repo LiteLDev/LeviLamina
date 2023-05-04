@@ -66,21 +66,9 @@ public:
      */
     MCAPI void postLoadItems(class BlockPalette &, bool);
     /**
-     * @symbol ?recalculateBalance\@InventoryTransaction\@\@QEAAXXZ
-     */
-    MCAPI void recalculateBalance();
-    /**
      * @symbol ?serialize\@InventoryTransaction\@\@QEBAXAEAVBinaryStream\@\@_N\@Z
      */
     MCAPI void serialize(class BinaryStream &, bool) const;
-    /**
-     * @symbol ?verifyBalance\@InventoryTransaction\@\@QEBA_NXZ
-     */
-    MCAPI bool verifyBalance() const;
-    /**
-     * @symbol ?verifyFull\@InventoryTransaction\@\@QEBA?AW4InventoryTransactionError\@\@AEAVPlayer\@\@_N\@Z
-     */
-    MCAPI enum class InventoryTransactionError verifyFull(class Player &, bool) const;
     /**
      * @symbol ??1InventoryTransaction\@\@QEAA\@XZ
      */

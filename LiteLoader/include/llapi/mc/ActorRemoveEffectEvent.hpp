@@ -19,11 +19,14 @@ struct ActorRemoveEffectEvent {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORREMOVEEFFECTEVENT
 public:
     struct ActorRemoveEffectEvent& operator=(struct ActorRemoveEffectEvent const &) = delete;
-    ActorRemoveEffectEvent(struct ActorRemoveEffectEvent const &) = delete;
     ActorRemoveEffectEvent() = delete;
 #endif
 
 public:
+    /**
+     * @symbol ??0ActorRemoveEffectEvent\@\@QEAA\@AEBU0\@\@Z
+     */
+    MCAPI ActorRemoveEffectEvent(struct ActorRemoveEffectEvent const &);
     /**
      * @symbol ??1ActorRemoveEffectEvent\@\@QEAA\@XZ
      */

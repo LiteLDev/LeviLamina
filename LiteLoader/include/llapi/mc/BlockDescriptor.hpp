@@ -28,13 +28,13 @@ public:
 
 public:
     /**
-     * @symbol ??0BlockDescriptor\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEBV?$vector\@VBlockState\@BlockDescriptor\@\@V?$allocator\@VBlockState\@BlockDescriptor\@\@\@std\@\@\@2\@\@Z
-     */
-    MCAPI BlockDescriptor(std::string const &, std::vector<class BlockDescriptor::BlockState> const &&);
-    /**
      * @symbol ??0BlockDescriptor\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI BlockDescriptor(class BlockDescriptor const &);
+    /**
+     * @symbol ??0BlockDescriptor\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEBV?$vector\@VState\@BlockDescriptor\@\@V?$allocator\@VState\@BlockDescriptor\@\@\@std\@\@\@2\@\@Z
+     */
+    MCAPI BlockDescriptor(std::string const &, std::vector<class BlockDescriptor::State> const &&);
     /**
      * @symbol ??0BlockDescriptor\@\@QEAA\@$$QEAV0\@\@Z
      */
@@ -60,9 +60,9 @@ public:
      */
     MCAPI std::string const & getFullName() const;
     /**
-     * @symbol ?getStates\@BlockDescriptor\@\@QEBAAEBV?$vector\@VBlockState\@BlockDescriptor\@\@V?$allocator\@VBlockState\@BlockDescriptor\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?getStates\@BlockDescriptor\@\@QEBAAEBV?$vector\@VState\@BlockDescriptor\@\@V?$allocator\@VState\@BlockDescriptor\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<class BlockDescriptor::BlockState> const & getStates() const;
+    MCAPI std::vector<class BlockDescriptor::State> const & getStates() const;
     /**
      * @symbol ?getTagExpression\@BlockDescriptor\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
@@ -142,17 +142,9 @@ public:
 
 //private:
     /**
-     * @symbol ?_anyTagsMatch\@BlockDescriptor\@\@AEBA_NAEBVBlock\@\@\@Z
-     */
-    MCAPI bool _anyTagsMatch(class Block const &) const;
-    /**
      * @symbol ?_resolveImpl\@BlockDescriptor\@\@AEAAX_N\@Z
      */
     MCAPI void _resolveImpl(bool);
-    /**
-     * @symbol ?_statesMatch\@BlockDescriptor\@\@AEBA_NAEBVBlock\@\@\@Z
-     */
-    MCAPI bool _statesMatch(class Block const &) const;
 
 private:
 

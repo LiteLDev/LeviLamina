@@ -123,12 +123,16 @@ public:
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
      * @vftbl 132
-     * @symbol ?_useOn\@BannerItem\@\@UEBA_NAEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
+     * @symbol ?_useOn\@BannerItem\@\@UEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
-    virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
      * @symbol ??0BannerItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI BannerItem(std::string const &, int);
+    /**
+     * @symbol ?getPatternAndColorPairsFromItemStack\@BannerItem\@\@SA?AV?$vector\@U?$pair\@V?$not_null\@PEBVBannerPattern\@\@\@gsl\@\@W4ItemColor\@\@\@std\@\@V?$allocator\@U?$pair\@V?$not_null\@PEBVBannerPattern\@\@\@gsl\@\@W4ItemColor\@\@\@std\@\@\@2\@\@std\@\@AEBVItemStackBase\@\@\@Z
+     */
+    MCAPI static std::vector<struct std::pair<class gsl::not_null<class BannerPattern const *>, enum class ItemColor>> getPatternAndColorPairsFromItemStack(class ItemStackBase const &);
 
 };

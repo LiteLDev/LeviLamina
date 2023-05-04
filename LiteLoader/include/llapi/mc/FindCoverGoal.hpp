@@ -73,10 +73,6 @@ public:
      * @symbol ??0FindCoverGoal\@\@QEAA\@AEAVMob\@\@MM\@Z
      */
     MCAPI FindCoverGoal(class Mob &, float, float);
-    /**
-     * @symbol ?getMob\@FindCoverGoal\@\@QEBAAEBVMob\@\@XZ
-     */
-    MCAPI class Mob const & getMob() const;
 
 //private:
     /**

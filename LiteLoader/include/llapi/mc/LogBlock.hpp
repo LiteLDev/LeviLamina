@@ -176,25 +176,25 @@ public:
      */
     virtual void __unk_vfn_126();
     /**
-     * @vftbl 131
-     * @symbol __unk_vfn_131
+     * @vftbl 129
+     * @symbol __unk_vfn_129
      */
-    virtual void __unk_vfn_131();
+    virtual void __unk_vfn_129();
     /**
-     * @vftbl 156
-     * @symbol __unk_vfn_156
+     * @vftbl 132
+     * @symbol __unk_vfn_132
      */
-    virtual void __unk_vfn_156();
+    virtual void __unk_vfn_132();
     /**
-     * @vftbl 162
+     * @vftbl 157
+     * @symbol __unk_vfn_157
+     */
+    virtual void __unk_vfn_157();
+    /**
+     * @vftbl 163
      * @symbol ?onRemove\@LogBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
-    /**
-     * @vftbl 165
-     * @symbol __unk_vfn_165
-     */
-    virtual void __unk_vfn_165();
     /**
      * @vftbl 166
      * @symbol __unk_vfn_166
@@ -206,48 +206,59 @@ public:
      */
     virtual void __unk_vfn_167();
     /**
-     * @vftbl 170
-     * @symbol __unk_vfn_170
+     * @vftbl 168
+     * @symbol __unk_vfn_168
      */
-    virtual void __unk_vfn_170();
+    virtual void __unk_vfn_168();
     /**
-     * @vftbl 174
-     * @symbol __unk_vfn_174
+     * @vftbl 171
+     * @symbol __unk_vfn_171
      */
-    virtual void __unk_vfn_174();
+    virtual void __unk_vfn_171();
     /**
-     * @vftbl 177
+     * @vftbl 175
+     * @symbol __unk_vfn_175
+     */
+    virtual void __unk_vfn_175();
+    /**
+     * @vftbl 178
      * @symbol ?use\@LogBlock\@\@MEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @vftbl 178
-     * @symbol __unk_vfn_178
+     * @vftbl 179
+     * @symbol __unk_vfn_179
      */
-    virtual void __unk_vfn_178();
+    virtual void __unk_vfn_179();
     /**
-     * @vftbl 185
+     * @vftbl 186
      * @symbol ?getMapColor\@LogBlock\@\@MEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @vftbl 186
-     * @symbol __unk_vfn_186
+     * @vftbl 187
+     * @symbol __unk_vfn_187
      */
-    virtual void __unk_vfn_186();
+    virtual void __unk_vfn_187();
     /**
-     * @vftbl 188
+     * @vftbl 189
      * @symbol ?getResourceItem\@LogBlock\@\@MEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @vftbl 190
+     * @vftbl 191
      * @symbol ?getSilkTouchItemInstance\@LogBlock\@\@MEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOGBLOCK
     /**
-     * @symbol ??0LogBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HV?$WeakPtr\@VBlockLegacy\@\@\@\@V?$optional\@ULogMapColors\@LogBlock\@\@\@2\@\@Z
+     * @symbol __unk_destructor_-1
      */
-    MCAPI LogBlock(std::string const &, int, class WeakPtr<class BlockLegacy>, class std::optional<struct LogBlock::LogMapColors>);
+    MCVAPI ~LogBlock();
+#endif
+    /**
+     * @symbol ??0LogBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HV?$WeakPtr\@VBlockLegacy\@\@\@\@V?$optional\@ULogBlockMapColors\@\@\@2\@\@Z
+     */
+    MCAPI LogBlock(std::string const &, int, class WeakPtr<class BlockLegacy>, class std::optional<struct LogBlockMapColors>);
 
 };

@@ -26,13 +26,10 @@ struct NpcDialogueScene {
 public:
     struct NpcDialogueScene& operator=(struct NpcDialogueScene const &) = delete;
     NpcDialogueScene(struct NpcDialogueScene const &) = delete;
+    NpcDialogueScene() = delete;
 #endif
 
 public:
-    /**
-     * @symbol ??0NpcDialogueScene\@\@QEAA\@XZ
-     */
-    MCAPI NpcDialogueScene();
     /**
      * @symbol ??1NpcDialogueScene\@\@QEAA\@XZ
      */

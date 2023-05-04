@@ -74,9 +74,5 @@ public:
      */
     MCVAPI bool canContinueToUse();
 #endif
-    /**
-     * @symbol ??0TargetWhenPushedGoal\@\@QEAA\@AEAVMob\@\@V?$vector\@UMobDescriptor\@\@V?$allocator\@UMobDescriptor\@\@\@std\@\@\@std\@\@M\@Z
-     */
-    MCAPI TargetWhenPushedGoal(class Mob &, std::vector<struct MobDescriptor>, float);
 
 };

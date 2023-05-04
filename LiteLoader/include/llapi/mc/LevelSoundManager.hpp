@@ -25,6 +25,12 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELSOUNDMANAGER
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~LevelSoundManager();
+#endif
     /**
      * @symbol ??0LevelSoundManager\@\@QEAA\@AEBV?$not_null\@V?$NonOwnerPointer\@VSoundPlayerInterface\@\@\@Bedrock\@\@\@gsl\@\@_N\@Z
      */
@@ -74,26 +80,6 @@ public:
      */
     MCAPI class Bedrock::PubSub::Subscription registerOnHandleLevelSoundEventCallback(class std::function<void (enum class LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool)>);
     /**
-     * @symbol ?registerOnHandleLevelSoundEventWithVolumeAndPitchCallback\@LevelSoundManager\@\@QEAA?AVSubscription\@PubSub\@Bedrock\@\@V?$function\@$$A6AXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVVec3\@\@MM\@Z\@std\@\@\@Z
-     */
-    MCAPI class Bedrock::PubSub::Subscription registerOnHandleLevelSoundEventWithVolumeAndPitchCallback(class std::function<void (std::string const &, class Vec3 const &, float, float)>);
-    /**
-     * @symbol ?registerOnHandleStopAllLevelSoundsEventCallback\@LevelSoundManager\@\@QEAA?AVSubscription\@PubSub\@Bedrock\@\@V?$function\@$$A6AXXZ\@std\@\@\@Z
-     */
-    MCAPI class Bedrock::PubSub::Subscription registerOnHandleStopAllLevelSoundsEventCallback(class std::function<void (void)>);
-    /**
-     * @symbol ?registerOnHandleStopLevelSoundEventCallback\@LevelSoundManager\@\@QEAA?AVSubscription\@PubSub\@Bedrock\@\@V?$function\@$$A6AXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z\@std\@\@\@Z
-     */
-    MCAPI class Bedrock::PubSub::Subscription registerOnHandleStopLevelSoundEventCallback(class std::function<void (std::string const &)>);
-    /**
-     * @symbol ?registerOnLevelSoundEventCallback\@LevelSoundManager\@\@QEAA?AVSubscription\@PubSub\@Bedrock\@\@V?$function\@$$A6AXW4LevelSoundEvent\@\@AEBVVec3\@\@HAEBUActorDefinitionIdentifier\@\@_N3\@Z\@std\@\@\@Z
-     */
-    MCAPI class Bedrock::PubSub::Subscription registerOnLevelSoundEventCallback(class std::function<void (enum class LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool)>);
-    /**
-     * @symbol ?registerOnLevelSoundEventWithVolumeAndPitchCallback\@LevelSoundManager\@\@QEAA?AVSubscription\@PubSub\@Bedrock\@\@V?$function\@$$A6AXW4LevelSoundEvent\@\@AEBVVec3\@\@MM\@Z\@std\@\@\@Z
-     */
-    MCAPI class Bedrock::PubSub::Subscription registerOnLevelSoundEventWithVolumeAndPitchCallback(class std::function<void (enum class LevelSoundEvent, class Vec3 const &, float, float)>);
-    /**
      * @symbol ?setLevelEventCoordinator\@LevelSoundManager\@\@QEAAXV?$shared_ptr\@VLevelEventCoordinator\@\@\@std\@\@\@Z
      */
     MCAPI void setLevelEventCoordinator(class std::shared_ptr<class LevelEventCoordinator>);
@@ -101,9 +87,5 @@ public:
      * @symbol ?setPacketSender\@LevelSoundManager\@\@QEAAXAEAVPacketSender\@\@\@Z
      */
     MCAPI void setPacketSender(class PacketSender &);
-    /**
-     * @symbol ??1LevelSoundManager\@\@QEAA\@XZ
-     */
-    MCAPI ~LevelSoundManager();
 
 };

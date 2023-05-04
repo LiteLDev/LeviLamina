@@ -24,6 +24,7 @@ class AttributeInstance {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTRIBUTEINSTANCE
 public:
     class AttributeInstance& operator=(class AttributeInstance const &) = delete;
+    AttributeInstance() = delete;
 #endif
 
 public:
@@ -47,10 +48,6 @@ public:
      * @symbol ??0AttributeInstance\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI AttributeInstance(class AttributeInstance const &);
-    /**
-     * @symbol ??0AttributeInstance\@\@QEAA\@XZ
-     */
-    MCAPI AttributeInstance();
     /**
      * @symbol ?addBuff\@AttributeInstance\@\@QEAAXAEBVAttributeBuff\@\@\@Z
      */
@@ -84,10 +81,6 @@ public:
      */
     MCAPI class AttributeInstanceHandle getHandle() const;
     /**
-     * @symbol ?getListeners\@AttributeInstance\@\@QEBAAEBV?$vector\@VAttributeInstanceHandle\@\@V?$allocator\@VAttributeInstanceHandle\@\@\@std\@\@\@std\@\@XZ
-     */
-    MCAPI std::vector<class AttributeInstanceHandle> const & getListeners() const;
-    /**
      * @symbol ?getMaxValue\@AttributeInstance\@\@QEBAMXZ
      */
     MCAPI float getMaxValue() const;
@@ -100,21 +93,25 @@ public:
      */
     MCAPI class AttributeModifier getModifier(class mce::UUID const &) const;
     /**
-     * @symbol ?getModifiers\@AttributeInstance\@\@QEBA?AV?$vector\@VAttributeModifier\@\@V?$allocator\@VAttributeModifier\@\@\@std\@\@\@std\@\@H\@Z
-     */
-    MCAPI std::vector<class AttributeModifier> getModifiers(int) const;
-    /**
      * @symbol ?getModifiers\@AttributeInstance\@\@QEBA?AV?$vector\@VAttributeModifier\@\@V?$allocator\@VAttributeModifier\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::vector<class AttributeModifier> getModifiers() const;
     /**
-     * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NAEBVUUID\@mce\@\@\@Z
+     * @symbol ?getModifiers\@AttributeInstance\@\@QEBA?AV?$vector\@VAttributeModifier\@\@V?$allocator\@VAttributeModifier\@\@\@std\@\@\@std\@\@H\@Z
      */
-    MCAPI bool hasModifier(class mce::UUID const &) const;
+    MCAPI std::vector<class AttributeModifier> getModifiers(int) const;
     /**
      * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@\@Z
      */
     MCAPI bool hasModifier(class std::shared_ptr<class AttributeModifier>) const;
+    /**
+     * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NAEBVAttributeModifier\@\@\@Z
+     */
+    MCAPI bool hasModifier(class AttributeModifier const &) const;
+    /**
+     * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NAEBVUUID\@mce\@\@\@Z
+     */
+    MCAPI bool hasModifier(class mce::UUID const &) const;
     /**
      * @symbol ?hasModifiers\@AttributeInstance\@\@QEBA_NXZ
      */
@@ -131,10 +128,6 @@ public:
      * @symbol ?isValid\@AttributeInstance\@\@QEBA_NXZ
      */
     MCAPI bool isValid() const;
-    /**
-     * @symbol ?notify\@AttributeInstance\@\@QEAAX_J\@Z
-     */
-    MCAPI void notify(__int64);
     /**
      * @symbol ??8AttributeInstance\@\@QEBA_NAEBV0\@\@Z
      */
@@ -164,13 +157,13 @@ public:
      */
     MCAPI bool removeModifier(class mce::UUID const &);
     /**
-     * @symbol ?removeModifier\@AttributeInstance\@\@QEAAXV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@\@Z
-     */
-    MCAPI void removeModifier(class std::shared_ptr<class AttributeModifier>);
-    /**
      * @symbol ?removeModifier\@AttributeInstance\@\@QEAAXAEBVAttributeModifier\@\@\@Z
      */
     MCAPI void removeModifier(class AttributeModifier const &);
+    /**
+     * @symbol ?removeModifier\@AttributeInstance\@\@QEAAXV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@\@Z
+     */
+    MCAPI void removeModifier(class std::shared_ptr<class AttributeModifier>);
     /**
      * @symbol ?removeModifiers\@AttributeInstance\@\@QEAAXXZ
      */
@@ -226,21 +219,21 @@ public:
 
 //private:
     /**
-     * @symbol ??0AttributeInstance\@\@AEAA\@PEAVBaseAttributeMap\@\@PEBVAttribute\@\@\@Z
+     * @symbol ?_calculateValue\@AttributeInstance\@\@AEAAMAEBVAttributeBuff\@\@\@Z
      */
-    MCAPI AttributeInstance(class BaseAttributeMap *, class Attribute const *);
+    MCAPI float _calculateValue(class AttributeBuff const &);
     /**
      * @symbol ?_calculateValue\@AttributeInstance\@\@AEAAMXZ
      */
     MCAPI float _calculateValue();
     /**
-     * @symbol ?_calculateValue\@AttributeInstance\@\@AEAAMAEBVAttributeBuff\@\@\@Z
-     */
-    MCAPI float _calculateValue(class AttributeBuff const &);
-    /**
      * @symbol ?_sanitizeValue\@AttributeInstance\@\@AEAAMM\@Z
      */
     MCAPI float _sanitizeValue(float);
+    /**
+     * @symbol ?_setDirty\@AttributeInstance\@\@AEAAXXZ
+     */
+    MCAPI void _setDirty();
 
 private:
 

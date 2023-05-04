@@ -81,7 +81,7 @@ public:
     virtual void setData(int, int) = 0;
     /**
      * @vftbl 10
-     * @symbol ?broadcastChanges\@FurnaceContainerManagerModel\@\@UEAAXXZ
+     * @symbol ?broadcastChanges\@BrewingStandContainerManagerModel\@\@UEAAXXZ
      */
     virtual void broadcastChanges() = 0;
     /**

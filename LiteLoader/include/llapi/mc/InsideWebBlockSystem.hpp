@@ -39,5 +39,9 @@ public:
      * @symbol ?createSlowdownSystem\@InsideWebBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSlowdownSystem();
+    /**
+     * @symbol ?webSlowdownSystem\@InsideWebBlockSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UWebBlockTag\@\@\@\@\@\@UBlockMovementSlowdownMultiplierComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UBlockMovementSlowdownAppliedComponent\@\@\@\@\@Z
+     */
+    MCAPI static void webSlowdownSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct WebBlockTag>>, struct BlockMovementSlowdownMultiplierComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct BlockMovementSlowdownAppliedComponent>);
 
 };

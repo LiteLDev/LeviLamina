@@ -52,19 +52,13 @@ public:
     virtual void onError(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char>> const &) const;
     /**
      * @vftbl 4
-     * @symbol ?onException\@ScriptPrintLogger\@\@UEBAXUContextId\@Scripting\@\@AEBUError\@3\@\@Z
+     * @symbol ?onException\@ScriptPrintLogger\@\@UEBAXUContextId\@Scripting\@\@AEBVmeta_any\@entt\@\@\@Z
      */
-    virtual void onException(struct Scripting::ContextId, struct Scripting::Error const &) const;
+    virtual void onException(struct Scripting::ContextId, class entt::meta_any const &) const;
     /**
      * @vftbl 5
-     * @symbol ?shouldPrintException\@ScriptPrintLogger\@\@UEBA_NAEBUError\@Scripting\@\@\@Z
+     * @symbol ?shouldPrintException\@ScriptPrintLogger\@\@UEBA_NAEBVmeta_any\@entt\@\@\@Z
      */
-    virtual bool shouldPrintException(struct Scripting::Error const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPRINTLOGGER
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~ScriptPrintLogger();
-#endif
+    virtual bool shouldPrintException(class entt::meta_any const &) const;
 
 };

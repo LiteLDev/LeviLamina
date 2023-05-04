@@ -25,13 +25,10 @@ class EntityComponentFactoryCereal {
 public:
     class EntityComponentFactoryCereal& operator=(class EntityComponentFactoryCereal const &) = delete;
     EntityComponentFactoryCereal(class EntityComponentFactoryCereal const &) = delete;
+    EntityComponentFactoryCereal() = delete;
 #endif
 
 public:
-    /**
-     * @symbol ??0EntityComponentFactoryCereal\@\@QEAA\@XZ
-     */
-    MCAPI EntityComponentFactoryCereal();
     /**
      * @symbol ?serializeComponentDefinitions\@EntityComponentFactoryCereal\@\@QEBAXAEAVDefinitionInstanceGroup\@\@AEBV?$GenericValue\@U?$UTF8\@D\@rapidjson\@\@V?$MemoryPoolAllocator\@VCrtAllocator\@rapidjson\@\@\@2\@\@rapidjson\@\@AEBVSemVersion\@\@\@Z
      */

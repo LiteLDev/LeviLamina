@@ -63,10 +63,6 @@ public:
      */
     MCVAPI enum class EventResult onLevelTick(class Level &);
     /**
-     * @symbol ?onLevelTickEnd\@LevelEventListener\@\@UEAA?AW4EventResult\@\@AEAVLevel\@\@\@Z
-     */
-    MCVAPI enum class EventResult onLevelTickEnd(class Level &);
-    /**
      * @symbol ?onLevelTickStart\@LevelEventListener\@\@UEAA?AW4EventResult\@\@AEAVLevel\@\@\@Z
      */
     MCVAPI enum class EventResult onLevelTickStart(class Level &);

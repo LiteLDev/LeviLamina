@@ -61,7 +61,7 @@ public:
     virtual void __unk_vfn_5() = 0;
     /**
      * @vftbl 6
-     * @symbol ?getDefinitionTypeId\@?$DefinitionInstance\@UPushThroughDefinition\@\@\@\@UEBAGXZ
+     * @symbol ?getDefinitionTypeId\@?$DefinitionInstance\@UWaterMovementDescription\@\@\@\@UEBAGXZ
      */
     virtual unsigned short getDefinitionTypeId() const = 0;
     /**

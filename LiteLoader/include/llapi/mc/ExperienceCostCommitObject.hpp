@@ -47,9 +47,5 @@ public:
      * @symbol ?commit\@ExperienceCostCommitObject\@\@UEAAXAEBVContainerScreenContext\@\@\@Z
      */
     virtual void commit(class ContainerScreenContext const &);
-    /**
-     * @symbol ??0ExperienceCostCommitObject\@\@QEAA\@H\@Z
-     */
-    MCAPI ExperienceCostCommitObject(int);
 
 };

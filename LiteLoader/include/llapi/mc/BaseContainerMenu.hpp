@@ -71,10 +71,6 @@ public:
      */
     MCVAPI ~BaseContainerMenu();
 #endif
-    /**
-     * @symbol ??0BaseContainerMenu\@\@QEAA\@AEAVPlayer\@\@W4ContainerType\@\@\@Z
-     */
-    MCAPI BaseContainerMenu(class Player &, enum class ContainerType);
 
 //protected:
     /**

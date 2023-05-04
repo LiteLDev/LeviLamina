@@ -25,6 +25,7 @@ class CreativeItemGroupCategory {
 public:
     class CreativeItemGroupCategory& operator=(class CreativeItemGroupCategory const &) = delete;
     CreativeItemGroupCategory(class CreativeItemGroupCategory const &) = delete;
+    CreativeItemGroupCategory() = delete;
 #endif
 
 public:
@@ -34,14 +35,6 @@ public:
      */
     MCVAPI ~CreativeItemGroupCategory();
 #endif
-    /**
-     * @symbol ??0CreativeItemGroupCategory\@\@QEAA\@PEAVCreativeItemRegistry\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4CreativeItemCategory\@\@\@Z
-     */
-    MCAPI CreativeItemGroupCategory(class CreativeItemRegistry *, std::string const &, enum class CreativeItemCategory);
-    /**
-     * @symbol ??0CreativeItemGroupCategory\@\@QEAA\@XZ
-     */
-    MCAPI CreativeItemGroupCategory();
     /**
      * @symbol ?addAnonymousGroup\@CreativeItemGroupCategory\@\@QEAAPEAVCreativeGroupInfo\@\@XZ
      */

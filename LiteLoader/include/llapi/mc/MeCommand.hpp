@@ -36,7 +36,7 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 1
+     * @vftbl 2
      * @symbol ?execute\@MeCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -44,13 +44,5 @@ public:
      * @symbol ?setup\@MeCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
     MCAPI static void setup(class CommandRegistry &);
-
-//private:
-    /**
-     * @symbol ?_sendMessage\@MeCommand\@\@AEBAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUCommandOriginIdentity\@\@AEBVLevel\@\@\@Z
-     */
-    MCAPI void _sendMessage(std::string const &, struct CommandOriginIdentity const &, class Level const &) const;
-
-private:
 
 };

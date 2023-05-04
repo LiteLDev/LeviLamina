@@ -46,10 +46,6 @@ public:
      */
     MCAPI void addExpectedAction(class InventoryAction const &);
     /**
-     * @symbol ?checkActionExpected\@InventoryTransactionManager\@\@QEAA_NAEBVInventoryAction\@\@\@Z
-     */
-    MCAPI bool checkActionExpected(class InventoryAction const &);
-    /**
      * @symbol ?forceBalanceTransaction\@InventoryTransactionManager\@\@QEAAXXZ
      */
     MCAPI void forceBalanceTransaction();

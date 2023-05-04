@@ -76,7 +76,7 @@ bool MolangInstance::isInitialized() {
 }
 
 bool MolangInstance::isValid() {
-    return ((ExpressionNode*)expression)->isValid();
+    return ((ExpressionNode*)expression)->_checkAllOperationsAreValid();
 }
 
 bool MolangInstance::parse(const string& expressionStr, MolangVersion version,

@@ -33,11 +33,5 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONNECTIONEVENTING
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~IConnectionEventing();
-#endif
 
 };

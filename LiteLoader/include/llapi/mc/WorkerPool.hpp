@@ -49,10 +49,6 @@ public:
      */
     MCAPI void queue(class std::shared_ptr<class BackgroundTaskBase>, bool);
     /**
-     * @symbol ?resortPriorityQueue\@WorkerPool\@\@QEAAXXZ
-     */
-    MCAPI void resortPriorityQueue();
-    /**
      * @symbol ?size\@WorkerPool\@\@QEBA_KXZ
      */
     MCAPI unsigned __int64 size() const;

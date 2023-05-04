@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "gametest.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -29,10 +30,6 @@ public:
 #endif
 
 public:
-    /**
-     * @symbol ?clearAllTests\@GameTestRunner\@\@SAXAEAVBlockSource\@\@AEAVGameTestTicker\@gametest\@\@AEBV?$vector\@VBoundingBox\@\@V?$allocator\@VBoundingBox\@\@\@std\@\@\@std\@\@\@Z
-     */
-    MCAPI static void clearAllTests(class BlockSource &, class gametest::GameTestTicker &, std::vector<class BoundingBox> const &);
     /**
      * @symbol ?clearMarkers\@GameTestRunner\@\@SAXAEAVLevel\@\@\@Z
      */

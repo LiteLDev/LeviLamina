@@ -61,12 +61,12 @@ public:
     MCVAPI ~NetworkChunkPublisherUpdatePacket();
 #endif
     /**
-     * @symbol ??0NetworkChunkPublisherUpdatePacket\@\@QEAA\@XZ
-     */
-    MCAPI NetworkChunkPublisherUpdatePacket();
-    /**
      * @symbol ??0NetworkChunkPublisherUpdatePacket\@\@QEAA\@AEBVBlockPos\@\@I\@Z
      */
     MCAPI NetworkChunkPublisherUpdatePacket(class BlockPos const &, unsigned int);
+    /**
+     * @symbol ??0NetworkChunkPublisherUpdatePacket\@\@QEAA\@XZ
+     */
+    MCAPI NetworkChunkPublisherUpdatePacket();
 
 };

@@ -45,6 +45,10 @@ public:
      */
     virtual bool test(class BlockPos const &, class BlockPos const &, class Randomize &) const;
     /**
+     * @symbol ??0StructurePoolBlockPredicateBlockMatch\@\@QEAA\@V?$vector\@VHashedString\@\@V?$allocator\@VHashedString\@\@\@std\@\@\@std\@\@\@Z
+     */
+    MCAPI StructurePoolBlockPredicateBlockMatch(std::vector<class HashedString>);
+    /**
      * @symbol ??0StructurePoolBlockPredicateBlockMatch\@\@QEAA\@AEBVBlock\@\@\@Z
      */
     MCAPI StructurePoolBlockPredicateBlockMatch(class Block const &);

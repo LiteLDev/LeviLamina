@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "PackCapability.hpp"
 #include "Json.hpp"
 
 #define BEFORE_EXTRA
@@ -61,33 +60,13 @@ public:
      */
     MCAPI PackManifest(class PackManifest const &);
     /**
-     * @symbol ?addLegacyModuleDependency\@PackManifest\@\@QEAAXAEBULegacyPackIdVersion\@\@\@Z
-     */
-    MCAPI void addLegacyModuleDependency(struct LegacyPackIdVersion const &);
-    /**
      * @symbol ?addModule\@PackManifest\@\@QEAAXAEBVResourceInformation\@\@\@Z
      */
     MCAPI void addModule(class ResourceInformation const &);
     /**
-     * @symbol ?addModuleDependency\@PackManifest\@\@QEAAXAEBUModuleIdentifier\@\@\@Z
-     */
-    MCAPI void addModuleDependency(struct ModuleIdentifier const &);
-    /**
-     * @symbol ?addPackCapability\@PackManifest\@\@QEAAXV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@W4TrustLevel\@PackCapability\@\@\@Z
-     */
-    MCAPI void addPackCapability(class std::basic_string_view<char, struct std::char_traits<char>>, enum class PackCapability::TrustLevel);
-    /**
      * @symbol ?addPackDependency\@PackManifest\@\@QEAAXAEBUPackIdVersion\@\@\@Z
      */
     MCAPI void addPackDependency(struct PackIdVersion const &);
-    /**
-     * @symbol ?clearLegacyModuleDependencies\@PackManifest\@\@QEAAXXZ
-     */
-    MCAPI void clearLegacyModuleDependencies();
-    /**
-     * @symbol ?clearModules\@PackManifest\@\@QEAAXXZ
-     */
-    MCAPI void clearModules();
     /**
      * @symbol ?getContentIdentity\@PackManifest\@\@QEBAAEBVContentIdentity\@\@XZ
      */
@@ -108,10 +87,6 @@ public:
      * @symbol ?getIdentity\@PackManifest\@\@QEBAAEBUPackIdVersion\@\@XZ
      */
     MCAPI struct PackIdVersion const & getIdentity() const;
-    /**
-     * @symbol ?getLegacyModuleDependencies\@PackManifest\@\@QEBAAEBV?$vector\@ULegacyPackIdVersion\@\@V?$allocator\@ULegacyPackIdVersion\@\@\@std\@\@\@std\@\@XZ
-     */
-    MCAPI std::vector<struct LegacyPackIdVersion> const & getLegacyModuleDependencies() const;
     /**
      * @symbol ?getLocation\@PackManifest\@\@QEBAAEBVResourceLocation\@\@XZ
      */
@@ -161,10 +136,6 @@ public:
      */
     MCAPI enum class PackScope getPackScope() const;
     /**
-     * @symbol ?getPackSettings\@PackManifest\@\@QEBAAEBVValue\@Json\@\@XZ
-     */
-    MCAPI class Json::Value const & getPackSettings() const;
-    /**
      * @symbol ?getPackSize\@PackManifest\@\@QEBA_KXZ
      */
     MCAPI unsigned __int64 getPackSize() const;
@@ -173,21 +144,9 @@ public:
      */
     MCAPI enum class PackType getPackType() const;
     /**
-     * @symbol ?getRequiredBaseGameVersion\@PackManifest\@\@QEBAAEBVBaseGameVersion\@\@XZ
-     */
-    MCAPI class BaseGameVersion const & getRequiredBaseGameVersion() const;
-    /**
      * @symbol ?hasClientScript\@PackManifest\@\@QEBA_NXZ
      */
     MCAPI bool hasClientScript() const;
-    /**
-     * @symbol ?hasEducationMetadata\@PackManifest\@\@QEBA_NXZ
-     */
-    MCAPI bool hasEducationMetadata() const;
-    /**
-     * @symbol ?hasLegacyModuleDependencies\@PackManifest\@\@QEBA_NXZ
-     */
-    MCAPI bool hasLegacyModuleDependencies() const;
     /**
      * @symbol ?hasModule\@PackManifest\@\@QEBA_NAEBUPackIdVersion\@\@\@Z
      */
@@ -217,14 +176,6 @@ public:
      */
     MCAPI bool isRestrictedPack() const;
     /**
-     * @symbol ?isUsingPackDescriptionKeyword\@PackManifest\@\@QEBA_NXZ
-     */
-    MCAPI bool isUsingPackDescriptionKeyword() const;
-    /**
-     * @symbol ?isUsingPackNameKeyword\@PackManifest\@\@QEBA_NXZ
-     */
-    MCAPI bool isUsingPackNameKeyword() const;
-    /**
      * @symbol ?serialize\@PackManifest\@\@QEBAXW4PackManifestFormat\@\@AEAVValue\@Json\@\@\@Z
      */
     MCAPI void serialize(enum class PackManifestFormat, class Json::Value &) const;
@@ -233,45 +184,13 @@ public:
      */
     MCAPI void setCanBeRedownloaded(bool);
     /**
-     * @symbol ?setContentIdentity\@PackManifest\@\@QEAAXAEBVContentIdentity\@\@\@Z
-     */
-    MCAPI void setContentIdentity(class ContentIdentity const &);
-    /**
      * @symbol ?setDescription\@PackManifest\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void setDescription(std::string const &);
     /**
-     * @symbol ?setFormatVersion\@PackManifest\@\@QEAAXW4PackManifestFormat\@\@\@Z
-     */
-    MCAPI void setFormatVersion(enum class PackManifestFormat);
-    /**
-     * @symbol ?setHasClientScript\@PackManifest\@\@QEAAXXZ
-     */
-    MCAPI void setHasClientScript();
-    /**
-     * @symbol ?setHasEducationMetadata\@PackManifest\@\@QEAAX_N\@Z
-     */
-    MCAPI void setHasEducationMetadata(bool);
-    /**
-     * @symbol ?setHasPlugins\@PackManifest\@\@QEAAX_N\@Z
-     */
-    MCAPI void setHasPlugins(bool);
-    /**
-     * @symbol ?setHidden\@PackManifest\@\@QEAAX_N\@Z
-     */
-    MCAPI void setHidden(bool);
-    /**
      * @symbol ?setIdentity\@PackManifest\@\@QEAAXAEBUPackIdVersion\@\@\@Z
      */
     MCAPI void setIdentity(struct PackIdVersion const &);
-    /**
-     * @symbol ?setInvalidUUID\@PackManifest\@\@QEAAXXZ
-     */
-    MCAPI void setInvalidUUID();
-    /**
-     * @symbol ?setLanguageCodesForPackKeywords\@PackManifest\@\@QEAAXV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
-     */
-    MCAPI void setLanguageCodesForPackKeywords(std::vector<std::string>);
     /**
      * @symbol ?setLastModifiedDate\@PackManifest\@\@QEAAX_J\@Z
      */
@@ -281,33 +200,13 @@ public:
      */
     MCAPI void setLocalizedNameKeywords(class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>> const &);
     /**
-     * @symbol ?setLocation\@PackManifest\@\@QEAAXAEBVResourceLocation\@\@\@Z
-     */
-    MCAPI void setLocation(class ResourceLocation const &);
-    /**
      * @symbol ?setManifestOrigin\@PackManifest\@\@QEAAXAEBW4ManifestOrigin\@\@\@Z
      */
     MCAPI void setManifestOrigin(enum class ManifestOrigin const &);
     /**
-     * @symbol ?setMetadata\@PackManifest\@\@QEAAXAEBVResourceMetadata\@\@\@Z
-     */
-    MCAPI void setMetadata(class ResourceMetadata const &);
-    /**
-     * @symbol ?setMinEngineVersion\@PackManifest\@\@QEAAXAEBVSemVersion\@\@\@Z
-     */
-    MCAPI void setMinEngineVersion(class SemVersion const &);
-    /**
      * @symbol ?setName\@PackManifest\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void setName(std::string const &);
-    /**
-     * @symbol ?setOptionLockedState\@PackManifest\@\@QEAAXW4TemplateLockState\@\@\@Z
-     */
-    MCAPI void setOptionLockedState(enum class TemplateLockState);
-    /**
-     * @symbol ?setOriginalFormatVersion\@PackManifest\@\@QEAAXW4PackManifestFormat\@\@\@Z
-     */
-    MCAPI void setOriginalFormatVersion(enum class PackManifestFormat);
     /**
      * @symbol ?setPackCapabilitiesTrusted\@PackManifest\@\@QEAAXXZ
      */
@@ -317,33 +216,9 @@ public:
      */
     MCAPI void setPackCategory(enum class PackCategory);
     /**
-     * @symbol ?setPackOrigin\@PackManifest\@\@QEAAXW4PackOrigin\@\@\@Z
-     */
-    MCAPI void setPackOrigin(enum class PackOrigin);
-    /**
-     * @symbol ?setPackScope\@PackManifest\@\@QEAAXW4PackScope\@\@\@Z
-     */
-    MCAPI void setPackScope(enum class PackScope);
-    /**
-     * @symbol ?setPackSettings\@PackManifest\@\@QEAAXAEBVValue\@Json\@\@\@Z
-     */
-    MCAPI void setPackSettings(class Json::Value const &);
-    /**
-     * @symbol ?setPackSize\@PackManifest\@\@QEAAX_K\@Z
-     */
-    MCAPI void setPackSize(unsigned __int64);
-    /**
      * @symbol ?setPackType\@PackManifest\@\@QEAAXW4PackType\@\@\@Z
      */
     MCAPI void setPackType(enum class PackType);
-    /**
-     * @symbol ?setPlatformLocked\@PackManifest\@\@QEAAX_N\@Z
-     */
-    MCAPI void setPlatformLocked(bool);
-    /**
-     * @symbol ?setRequiredBaseGameVersion\@PackManifest\@\@QEAAXAEBVBaseGameVersion\@\@\@Z
-     */
-    MCAPI void setRequiredBaseGameVersion(class BaseGameVersion const &);
     /**
      * @symbol ?setSourceIdentity\@PackManifest\@\@QEAAXAEBVContentIdentity\@\@\@Z
      */
@@ -352,10 +227,6 @@ public:
      * @symbol ?MarioPackId\@PackManifest\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const MarioPackId;
-    /**
-     * @symbol ?StringToPackScope\@PackManifest\@\@SA?AW4PackScope\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static enum class PackScope StringToPackScope(std::string const &);
 
 //private:
     /**

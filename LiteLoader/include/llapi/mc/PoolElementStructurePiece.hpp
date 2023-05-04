@@ -85,17 +85,5 @@ public:
      * @symbol ??0PoolElementStructurePiece\@\@QEAA\@AEBVStructurePoolElement\@\@VBlockPos\@\@W4Rotation\@\@HAEAUJigsawJunction\@\@AEBVBoundingBox\@\@1\@Z
      */
     MCAPI PoolElementStructurePiece(class StructurePoolElement const &, class BlockPos, enum class Rotation, int, struct JigsawJunction &, class BoundingBox const &, class BlockPos);
-    /**
-     * @symbol ?getElement\@PoolElementStructurePiece\@\@QEBAAEBVStructurePoolElement\@\@XZ
-     */
-    MCAPI class StructurePoolElement const & getElement() const;
-    /**
-     * @symbol ?getPosition\@PoolElementStructurePiece\@\@QEBAAEBVBlockPos\@\@XZ
-     */
-    MCAPI class BlockPos const & getPosition() const;
-    /**
-     * @symbol ?setReferencePosition\@PoolElementStructurePiece\@\@QEAAXAEBVBlockPos\@\@\@Z
-     */
-    MCAPI void setReferencePosition(class BlockPos const &);
 
 };

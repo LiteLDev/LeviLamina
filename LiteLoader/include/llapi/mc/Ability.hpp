@@ -32,13 +32,13 @@ public:
 
 public:
     /**
-     * @symbol ??0Ability\@\@QEAA\@XZ
-     */
-    MCAPI Ability();
-    /**
      * @symbol ??0Ability\@\@QEAA\@_NW4Options\@0\@\@Z
      */
     MCAPI Ability(bool, enum class Ability::Options);
+    /**
+     * @symbol ??0Ability\@\@QEAA\@XZ
+     */
+    MCAPI Ability();
     /**
      * @symbol ?getBool\@Ability\@\@QEBA_NXZ
      */

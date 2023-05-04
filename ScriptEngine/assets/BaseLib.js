@@ -395,6 +395,9 @@ SOFTWARE.
 cjs.js end
 */
 
+globalThis.exports = {};
+globalThis.module = { exports: {} };
+
 /*
 For Compatibility
 */

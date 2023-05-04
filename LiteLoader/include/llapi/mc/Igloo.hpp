@@ -50,10 +50,6 @@ public:
      * @symbol ?postProcessMobsAt\@Igloo\@\@UEAAXAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
     virtual void postProcessMobsAt(class BlockSource &, class Random &, class BoundingBox const &);
-    /**
-     * @symbol ??0Igloo\@\@QEAA\@FHH\@Z
-     */
-    MCAPI Igloo(short, int, int);
 
 //private:
 

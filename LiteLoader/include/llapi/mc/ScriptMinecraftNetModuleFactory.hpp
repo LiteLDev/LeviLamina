@@ -75,6 +75,10 @@ public:
 
 //private:
     /**
+     * @symbol ?_addVersions\@ScriptMinecraftNetModuleFactory\@\@AEAAXXZ
+     */
+    MCAPI void _addVersions();
+    /**
      * @symbol ?_generateBindings\@ScriptMinecraftNetModuleFactory\@\@AEAA?AUModuleBinding\@Scripting\@\@AEAVModuleBindingBuilder\@3\@V?$optional\@UContextConfig\@Scripting\@\@\@std\@\@_NAEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@6\@\@Z
      */
     MCAPI struct Scripting::ModuleBinding _generateBindings(class Scripting::ModuleBindingBuilder &, class std::optional<struct Scripting::ContextConfig>, bool, std::vector<std::string> const &);

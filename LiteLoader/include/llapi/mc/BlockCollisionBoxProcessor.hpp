@@ -29,9 +29,9 @@ public:
 
 public:
     /**
-     * @symbol ?_tryBake\@BlockCollisionBoxProcessor\@\@SAXPEBUBlockRotationComponent\@\@PEAUBlockCollisionBoxComponent\@\@\@Z
+     * @symbol ?_tryBake\@BlockCollisionBoxProcessor\@\@SAXAEBVMatrix\@\@PEAUBlockCollisionBoxComponent\@\@\@Z
      */
-    MCAPI static void _tryBake(struct BlockRotationComponent const *, struct BlockCollisionBoxComponent *);
+    MCAPI static void _tryBake(class Matrix const &, struct BlockCollisionBoxComponent *);
     /**
      * @symbol ?getProcessor\@BlockCollisionBoxProcessor\@\@SA?AV?$unique_ptr\@VEntityComponentProcessor\@Util\@\@U?$default_delete\@VEntityComponentProcessor\@Util\@\@\@std\@\@\@std\@\@XZ
      */

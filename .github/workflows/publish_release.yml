@@ -59,7 +59,7 @@ jobs:
         if: steps.cache-bds-lib.outputs.cache-hit != 'true'
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
-          mkdir LiteLoader\lib
+          mkdir LiteLoader/lib
           cd tools
           ./PeEditor.exe -l --pdb Server/bedrock_server.pdb -o ../LiteLoader/lib
         shell: bash
@@ -146,7 +146,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           cd scripts
-          cmd //c "UpdateSDK.cmd action"
+          cmd //c "UpdateSDK.cmd action release"
         shell: bash
 
       - name: Upload LiteLoaderBDS

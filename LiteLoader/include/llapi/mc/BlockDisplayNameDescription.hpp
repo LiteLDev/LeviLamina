@@ -12,7 +12,7 @@
 #undef BEFORE_EXTRA
 
 
-class BlockDisplayNameDescription {
+struct BlockDisplayNameDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -20,8 +20,8 @@ class BlockDisplayNameDescription {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKDISPLAYNAMEDESCRIPTION
 public:
-    class BlockDisplayNameDescription& operator=(class BlockDisplayNameDescription const &) = delete;
-    BlockDisplayNameDescription(class BlockDisplayNameDescription const &) = delete;
+    struct BlockDisplayNameDescription& operator=(struct BlockDisplayNameDescription const &) = delete;
+    BlockDisplayNameDescription(struct BlockDisplayNameDescription const &) = delete;
     BlockDisplayNameDescription() = delete;
 #endif
 
@@ -69,9 +69,5 @@ public:
      * @symbol ?bindType\@BlockDisplayNameDescription\@\@SAXXZ
      */
     MCAPI static void bindType();
-    /**
-     * @symbol ?registerVersionUpgrades\@BlockDisplayNameDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
-     */
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

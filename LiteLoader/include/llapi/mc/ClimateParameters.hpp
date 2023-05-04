@@ -13,7 +13,7 @@
 #undef BEFORE_EXTRA
 
 
-class ClimateParameters {
+struct ClimateParameters {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -21,8 +21,8 @@ class ClimateParameters {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIMATEPARAMETERS
 public:
-    class ClimateParameters& operator=(class ClimateParameters const &) = delete;
-    ClimateParameters(class ClimateParameters const &) = delete;
+    struct ClimateParameters& operator=(struct ClimateParameters const &) = delete;
+    ClimateParameters(struct ClimateParameters const &) = delete;
     ClimateParameters() = delete;
 #endif
 

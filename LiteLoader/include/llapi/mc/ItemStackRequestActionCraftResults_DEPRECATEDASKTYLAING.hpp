@@ -46,13 +46,5 @@ public:
      * @symbol ??0ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING\@\@QEAA\@XZ
      */
     MCAPI ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING();
-    /**
-     * @symbol ?getNumCrafts\@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING\@\@QEBAEXZ
-     */
-    MCAPI unsigned char getNumCrafts() const;
-    /**
-     * @symbol ?getResults\@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING\@\@QEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@XZ
-     */
-    MCAPI std::vector<class ItemInstance> const & getResults() const;
 
 };

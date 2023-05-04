@@ -65,9 +65,5 @@ public:
      * @symbol ??0GameDirectorEntityServerCommandOrigin\@\@QEAA\@AEAVActor\@\@\@Z
      */
     MCAPI GameDirectorEntityServerCommandOrigin(class Actor &);
-    /**
-     * @symbol ?load\@GameDirectorEntityServerCommandOrigin\@\@SA?AV?$unique_ptr\@VGameDirectorEntityServerCommandOrigin\@\@U?$default_delete\@VGameDirectorEntityServerCommandOrigin\@\@\@std\@\@\@std\@\@AEBVCompoundTag\@\@AEAVLevel\@\@\@Z
-     */
-    MCAPI static std::unique_ptr<class GameDirectorEntityServerCommandOrigin> load(class CompoundTag const &, class Level &);
 
 };

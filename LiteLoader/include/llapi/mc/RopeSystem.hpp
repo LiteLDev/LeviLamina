@@ -134,6 +134,10 @@ public:
      * @symbol ?_tickWaves\@RopeSystem\@\@AEAAXXZ
      */
     MCAPI void _tickWaves();
+    /**
+     * @symbol ?_updateRenderPoints\@RopeSystem\@\@AEAAXXZ
+     */
+    MCAPI void _updateRenderPoints();
 
 private:
 

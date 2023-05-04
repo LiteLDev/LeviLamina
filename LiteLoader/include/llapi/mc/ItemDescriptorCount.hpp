@@ -29,7 +29,6 @@ class ItemDescriptorCount : public ItemDescriptor {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMDESCRIPTORCOUNT
 public:
     class ItemDescriptorCount& operator=(class ItemDescriptorCount const &) = delete;
-    ItemDescriptorCount(class ItemDescriptorCount const &) = delete;
 #endif
 
 public:
@@ -54,9 +53,9 @@ public:
      */
     MCAPI ItemDescriptorCount(class ReadOnlyBinaryStream &);
     /**
-     * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBVBlockLegacy\@\@G\@Z
+     * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI ItemDescriptorCount(class BlockLegacy const &, unsigned short);
+    MCAPI ItemDescriptorCount(class ItemDescriptorCount const &);
     /**
      * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBVBlock\@\@G\@Z
      */
@@ -70,10 +69,6 @@ public:
      */
     MCAPI ItemDescriptorCount(class Item const &, int, unsigned short);
     /**
-     * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBUItemTag\@\@G\@Z
-     */
-    MCAPI ItemDescriptorCount(struct ItemTag const &, unsigned short);
-    /**
      * @symbol ??0ItemDescriptorCount\@\@QEAA\@XZ
      */
     MCAPI ItemDescriptorCount();
@@ -81,6 +76,14 @@ public:
      * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBVItemDescriptor\@\@G\@Z
      */
     MCAPI ItemDescriptorCount(class ItemDescriptor const &, unsigned short);
+    /**
+     * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBVBlockLegacy\@\@G\@Z
+     */
+    MCAPI ItemDescriptorCount(class BlockLegacy const &, unsigned short);
+    /**
+     * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBUItemTag\@\@G\@Z
+     */
+    MCAPI ItemDescriptorCount(struct ItemTag const &, unsigned short);
     /**
      * @symbol ?getStackSize\@ItemDescriptorCount\@\@QEBAFXZ
      */

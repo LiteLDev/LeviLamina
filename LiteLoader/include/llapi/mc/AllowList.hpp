@@ -46,10 +46,6 @@ public:
      */
     virtual void deserialize(class Json::Value &);
     /**
-     * @symbol ??0AllowList\@\@QEAA\@V?$function\@$$A6AXXZ\@std\@\@\@Z
-     */
-    MCAPI AllowList(class std::function<void (void)>);
-    /**
      * @symbol ?addEntry\@AllowList\@\@QEAA_NAEBVAllowListEntry\@\@\@Z
      */
     MCAPI bool addEntry(class AllowListEntry const &);

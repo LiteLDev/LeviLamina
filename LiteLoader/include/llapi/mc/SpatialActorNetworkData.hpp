@@ -49,22 +49,6 @@ public:
      */
     MCAPI void enableAutoSend(bool);
     /**
-     * @symbol ?getLastSentPositionForAddingEntity\@SpatialActorNetworkData\@\@QEAA?AVVec3\@\@XZ
-     */
-    MCAPI class Vec3 getLastSentPositionForAddingEntity();
-    /**
-     * @symbol ?getLastSentRotationForAddingEntity\@SpatialActorNetworkData\@\@QEAA?AVVec2\@\@XZ
-     */
-    MCAPI class Vec2 getLastSentRotationForAddingEntity();
-    /**
-     * @symbol ?getLastSentYBodyRotationForAddingEntity\@SpatialActorNetworkData\@\@QEAAMXZ
-     */
-    MCAPI float getLastSentYBodyRotationForAddingEntity();
-    /**
-     * @symbol ?getLastSentYHeadRotationForAddingEntity\@SpatialActorNetworkData\@\@QEAAMXZ
-     */
-    MCAPI float getLastSentYHeadRotationForAddingEntity();
-    /**
      * @symbol ?handleClientData\@SpatialActorNetworkData\@\@QEAAXAEBVMoveActorAbsoluteData\@\@\@Z
      */
     MCAPI void handleClientData(class MoveActorAbsoluteData const &);

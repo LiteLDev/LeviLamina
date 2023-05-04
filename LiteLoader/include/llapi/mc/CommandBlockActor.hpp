@@ -141,10 +141,6 @@ public:
      */
     virtual bool _playerCanUpdate(class Player const &) const;
     /**
-     * @symbol ??0CommandBlockActor\@\@QEAA\@AEBVBlockPos\@\@W4CommandBlockMode\@\@\@Z
-     */
-    MCAPI CommandBlockActor(class BlockPos const &, enum class CommandBlockMode);
-    /**
      * @symbol ?getBaseCommandBlock\@CommandBlockActor\@\@QEAAAEAVBaseCommandBlock\@\@XZ
      */
     MCAPI class BaseCommandBlock & getBaseCommandBlock();

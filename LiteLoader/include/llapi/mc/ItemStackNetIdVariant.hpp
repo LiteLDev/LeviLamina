@@ -87,14 +87,6 @@ public:
      */
     MCAPI std::string toString() const;
     /**
-     * @symbol ?tryGetLegacyRequestId\@ItemStackNetIdVariant\@\@QEBAPEBV?$TypedClientNetId\@UItemStackLegacyRequestIdTag\@\@H$0A\@\@\@XZ
-     */
-    MCAPI class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const * tryGetLegacyRequestId() const;
-    /**
-     * @symbol ?tryGetRequestId\@ItemStackNetIdVariant\@\@QEBAPEBV?$TypedClientNetId\@UItemStackRequestIdTag\@\@H$0A\@\@\@XZ
-     */
-    MCAPI class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> const * tryGetRequestId() const;
-    /**
      * @symbol ?tryGetServerNetId\@ItemStackNetIdVariant\@\@QEBAPEBV?$TypedServerNetId\@UItemStackNetIdTag\@\@H$0A\@\@\@XZ
      */
     MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const * tryGetServerNetId() const;

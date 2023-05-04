@@ -11,15 +11,15 @@
 #undef BEFORE_EXTRA
 
 
-class GameEventPair {
+struct GameEventPair {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEEVENTPAIR
 public:
-    class GameEventPair& operator=(class GameEventPair const &) = delete;
-    GameEventPair(class GameEventPair const &) = delete;
+    struct GameEventPair& operator=(struct GameEventPair const &) = delete;
+    GameEventPair(struct GameEventPair const &) = delete;
     GameEventPair() = delete;
 #endif
 

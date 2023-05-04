@@ -172,6 +172,10 @@ public:
      */
     MCAPI void sendToMultiple(std::vector<struct NetworkIdentifierWithSubId> const &, class Packet const &);
     /**
+     * @symbol ?setClientUpdateAndRenderThrottle\@NetworkSystem\@\@QEAAX_NHM\@Z
+     */
+    MCAPI void setClientUpdateAndRenderThrottle(bool, int, float);
+    /**
      * @symbol ?setCloseConnection\@NetworkSystem\@\@QEAAXAEBVNetworkIdentifier\@\@\@Z
      */
     MCAPI void setCloseConnection(class NetworkIdentifier const &);

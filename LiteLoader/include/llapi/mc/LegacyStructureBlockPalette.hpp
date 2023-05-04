@@ -33,14 +33,6 @@ public:
      */
     MCAPI LegacyStructureBlockPalette();
     /**
-     * @symbol ?addMapping\@LegacyStructureBlockPalette\@\@QEAAXHAEBVBlock\@\@\@Z
-     */
-    MCAPI void addMapping(int, class Block const &);
-    /**
-     * @symbol ?clearMap\@LegacyStructureBlockPalette\@\@QEAAXXZ
-     */
-    MCAPI void clearMap();
-    /**
      * @symbol ?getBlock\@LegacyStructureBlockPalette\@\@QEAAAEBVBlock\@\@H\@Z
      */
     MCAPI class Block const & getBlock(int);

@@ -60,14 +60,6 @@ public:
      * @symbol ?getResourceStats\@ScriptDebugger\@\@UEBA?AUScriptResourceStats\@\@XZ
      */
     virtual struct ScriptResourceStats getResourceStats() const;
-    /**
-     * @symbol ??0ScriptDebugger\@\@QEAA\@AEAVScriptEngine\@Scripting\@\@AEAVScriptPluginManager\@\@AEAVIScriptDebuggerWatchdog\@\@V?$unique_ptr\@VIScriptTelemetryLogger\@\@U?$default_delete\@VIScriptTelemetryLogger\@\@\@std\@\@\@std\@\@\@Z
-     */
-    MCAPI ScriptDebugger(class Scripting::ScriptEngine &, class ScriptPluginManager &, class IScriptDebuggerWatchdog &, std::unique_ptr<class IScriptTelemetryLogger>);
-    /**
-     * @symbol ?checkConnections\@ScriptDebugger\@\@QEAAXXZ
-     */
-    MCAPI void checkConnections();
 
 //private:
     /**

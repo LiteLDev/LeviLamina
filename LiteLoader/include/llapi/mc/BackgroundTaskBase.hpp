@@ -64,10 +64,6 @@ public:
      */
     MCAPI class BackgroundTaskBase * getPrev();
     /**
-     * @symbol ?getPriority\@BackgroundTaskBase\@\@QEBAHXZ
-     */
-    MCAPI int getPriority() const;
-    /**
      * @symbol ?getStartAfterTime\@BackgroundTaskBase\@\@QEBA?AV?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@std\@\@XZ
      */
     MCAPI class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> getStartAfterTime() const;

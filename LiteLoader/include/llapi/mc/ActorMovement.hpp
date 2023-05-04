@@ -33,9 +33,17 @@ namespace ActorMovement {
      */
     MCAPI void initializeActor(class EntityContext &);
     /**
+     * @symbol ?isImmobile\@ActorMovement\@\@YA_NAEBVEntityContext\@\@\@Z
+     */
+    MCAPI bool isImmobile(class EntityContext const &);
+    /**
      * @symbol ?setHasTeleported\@ActorMovement\@\@YAXAEAVEntityContext\@\@_N\@Z
      */
     MCAPI void setHasTeleported(class EntityContext &, bool);
+    /**
+     * @symbol ?setIsImmobile\@ActorMovement\@\@YAXAEAVEntityContext\@\@_N\@Z
+     */
+    MCAPI void setIsImmobile(class EntityContext &, bool);
     /**
      * @symbol ?setWalkDist\@ActorMovement\@\@YAXAEAVEntityContext\@\@M\@Z
      */

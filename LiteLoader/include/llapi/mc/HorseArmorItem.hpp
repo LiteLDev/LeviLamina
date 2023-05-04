@@ -156,4 +156,12 @@ public:
      */
     MCAPI static int const mHealthPerTier[];
 
+//private:
+    /**
+     * @symbol ?_tryEquipHorseArmor\@HorseArmorItem\@\@CA_NPEAVActor\@\@AEBVItemStack\@\@\@Z
+     */
+    MCAPI static bool _tryEquipHorseArmor(class Actor *, class ItemStack const &);
+
+private:
+
 };

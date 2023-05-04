@@ -91,18 +91,6 @@ public:
      */
     MCAPI RakWebSocket(std::unique_ptr<class TcpProxy>, bool);
     /**
-     * @symbol ?close\@RakWebSocket\@\@QEAAX_N0\@Z
-     */
-    MCAPI void close(bool, bool);
-    /**
-     * @symbol ?getUri\@RakWebSocket\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string getUri() const;
-    /**
-     * @symbol ?isDisconnected\@RakWebSocket\@\@QEBA_NXZ
-     */
-    MCAPI bool isDisconnected() const;
-    /**
      * @symbol ?send\@RakWebSocket\@\@QEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI bool send(std::string const &);
@@ -133,10 +121,6 @@ public:
      */
     MCAPI void _invokeOnCloseHandler();
     /**
-     * @symbol ?_processClosingFrames\@RakWebSocket\@\@IEAAXAEAVBitStream\@RakNet\@\@\@Z
-     */
-    MCAPI void _processClosingFrames(class RakNet::BitStream &);
-    /**
      * @symbol ?_processClosingHandshake\@RakWebSocket\@\@IEAAX_N\@Z
      */
     MCAPI void _processClosingHandshake(bool);
@@ -144,10 +128,6 @@ public:
      * @symbol ?_processDataFrames\@RakWebSocket\@\@IEAAXAEAVBitStream\@RakNet\@\@\@Z
      */
     MCAPI void _processDataFrames(class RakNet::BitStream &);
-    /**
-     * @symbol ?_processOpenHandshakePackets\@RakWebSocket\@\@IEAAXAEAVBitStream\@RakNet\@\@\@Z
-     */
-    MCAPI void _processOpenHandshakePackets(class RakNet::BitStream &);
     /**
      * @symbol ?_processPacket\@RakWebSocket\@\@IEAA_NAEBV?$function\@$$A6AXAEAVBitStream\@RakNet\@\@\@Z\@std\@\@_N\@Z
      */

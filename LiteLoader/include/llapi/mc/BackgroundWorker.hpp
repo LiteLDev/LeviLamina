@@ -70,10 +70,6 @@ public:
      */
     MCAPI bool isIdle() const;
     /**
-     * @symbol ?processTaskSync\@BackgroundWorker\@\@QEAA_NXZ
-     */
-    MCAPI bool processTaskSync();
-    /**
      * @symbol ?queue\@BackgroundWorker\@\@QEAAXV?$shared_ptr\@VBackgroundTaskBase\@\@\@std\@\@\@Z
      */
     MCAPI void queue(class std::shared_ptr<class BackgroundTaskBase>);
@@ -81,10 +77,6 @@ public:
      * @symbol ?requestStop\@BackgroundWorker\@\@QEAAX_N\@Z
      */
     MCAPI void requestStop(bool);
-    /**
-     * @symbol ?resetWorkerThreadID\@BackgroundWorker\@\@QEAAXXZ
-     */
-    MCAPI void resetWorkerThreadID();
     /**
      * @symbol ?resortPriorityQueue\@BackgroundWorker\@\@QEAAXXZ
      */

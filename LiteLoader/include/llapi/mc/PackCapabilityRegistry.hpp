@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "PackCapability.hpp"
 
 #define BEFORE_EXTRA
 
@@ -29,10 +28,6 @@ public:
      * @symbol ??0PackCapabilityRegistry\@\@QEAA\@AEBV?$initializer_list\@VPackCapability\@\@\@std\@\@\@Z
      */
     MCAPI PackCapabilityRegistry(class std::initializer_list<class PackCapability> const &);
-    /**
-     * @symbol ?lookup\@PackCapabilityRegistry\@\@QEBA?AV?$variant\@USucceeded\@ValidationResult\@PackCapability\@\@UFailed\@23\@UNotFound\@23\@\@std\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@3\@\@Z
-     */
-    MCAPI class std::variant<struct PackCapability::ValidationResult::Succeeded, struct PackCapability::ValidationResult::Failed, struct PackCapability::ValidationResult::NotFound> lookup(class std::basic_string_view<char, struct std::char_traits<char>>) const;
     /**
      * @symbol ?merge\@PackCapabilityRegistry\@\@QEAAXAEAV1\@\@Z
      */

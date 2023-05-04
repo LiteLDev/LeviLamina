@@ -29,13 +29,13 @@ public:
 
 public:
     /**
-     * @symbol ??0PathfinderNode\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI PathfinderNode(class PathfinderNode const &);
-    /**
      * @symbol ??0PathfinderNode\@\@QEAA\@AEBVBlockPos\@\@W4NodeType\@\@\@Z
      */
     MCAPI PathfinderNode(class BlockPos const &, enum class NodeType);
+    /**
+     * @symbol ??0PathfinderNode\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI PathfinderNode(class PathfinderNode const &);
     /**
      * @symbol ?distanceTo\@PathfinderNode\@\@QEBAMPEAV1\@\@Z
      */
@@ -49,10 +49,6 @@ public:
      */
     MCAPI bool equals(class PathfinderNode *);
     /**
-     * @symbol ?getCostMalus\@PathfinderNode\@\@QEBAMXZ
-     */
-    MCAPI float getCostMalus() const;
-    /**
      * @symbol ?getType\@PathfinderNode\@\@QEBA?AW4NodeType\@\@XZ
      */
     MCAPI enum class NodeType getType() const;
@@ -60,13 +56,5 @@ public:
      * @symbol ?inOpenSet\@PathfinderNode\@\@QEAA_NXZ
      */
     MCAPI bool inOpenSet();
-    /**
-     * @symbol ?setCostMalus\@PathfinderNode\@\@QEAAXM\@Z
-     */
-    MCAPI void setCostMalus(float);
-    /**
-     * @symbol ?setMoveMalus\@PathfinderNode\@\@QEAAXM\@Z
-     */
-    MCAPI void setMoveMalus(float);
 
 };

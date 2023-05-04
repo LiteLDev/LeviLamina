@@ -52,13 +52,25 @@ namespace VanillaItemNames {
      */
     MCAPI extern class HashedString const AmethystShard;
     /**
+     * @symbol ?AnglerPotteryShard\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const AnglerPotteryShard;
+    /**
      * @symbol ?Apple\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Apple;
     /**
+     * @symbol ?ArcherPotteryShard\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const ArcherPotteryShard;
+    /**
      * @symbol ?ArmorStand\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ArmorStand;
+    /**
+     * @symbol ?ArmsUpPotteryShard\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const ArmsUpPotteryShard;
     /**
      * @symbol ?Arrow\@VanillaItemNames\@\@3VHashedString\@\@B
      */
@@ -160,6 +172,10 @@ namespace VanillaItemNames {
      */
     MCAPI extern class HashedString const BlackDye;
     /**
+     * @symbol ?BladePotteryShard\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const BladePotteryShard;
+    /**
      * @symbol ?BlazePowder\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BlazePowder;
@@ -216,6 +232,10 @@ namespace VanillaItemNames {
      */
     MCAPI extern class HashedString const Bread;
     /**
+     * @symbol ?BrewerPotteryShard\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const BrewerPotteryShard;
+    /**
      * @symbol ?BrewingStand\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BrewingStand;
@@ -239,6 +259,10 @@ namespace VanillaItemNames {
      * @symbol ?Bundle\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Bundle;
+    /**
+     * @symbol ?BurnPotteryShard\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const BurnPotteryShard;
     /**
      * @symbol ?Cake\@VanillaItemNames\@\@3VHashedString\@\@B
      */
@@ -304,6 +328,26 @@ namespace VanillaItemNames {
      */
     MCAPI extern class HashedString const Charcoal;
     /**
+     * @symbol ?CherryBoat\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const CherryBoat;
+    /**
+     * @symbol ?CherryChestBoat\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const CherryChestBoat;
+    /**
+     * @symbol ?CherryDoor\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const CherryDoor;
+    /**
+     * @symbol ?CherryHangingSign\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const CherryHangingSign;
+    /**
+     * @symbol ?CherrySign\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const CherrySign;
+    /**
      * @symbol ?ChestMinecart\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ChestMinecart;
@@ -331,6 +375,10 @@ namespace VanillaItemNames {
      * @symbol ?Coal\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Coal;
+    /**
+     * @symbol ?CoastArmorTrimSmithingTemplate\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const CoastArmorTrimSmithingTemplate;
     /**
      * @symbol ?CocoaBeans\@VanillaItemNames\@\@3VHashedString\@\@B
      */
@@ -436,6 +484,10 @@ namespace VanillaItemNames {
      */
     MCAPI extern class HashedString const CyanDye;
     /**
+     * @symbol ?DangerPotteryShard\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const DangerPotteryShard;
+    /**
      * @symbol ?DarkOakBoat\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DarkOakBoat;
@@ -528,6 +580,10 @@ namespace VanillaItemNames {
      */
     MCAPI extern class HashedString const DrownedSpawnEgg;
     /**
+     * @symbol ?DuneArmorTrimSmithingTemplate\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const DuneArmorTrimSmithingTemplate;
+    /**
      * @symbol ?DyeLegacy\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DyeLegacy;
@@ -596,6 +652,14 @@ namespace VanillaItemNames {
      */
     MCAPI extern class HashedString const ExperienceBottle;
     /**
+     * @symbol ?ExplorerPotteryShard\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const ExplorerPotteryShard;
+    /**
+     * @symbol ?EyeArmorTrimSmithingTemplate\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const EyeArmorTrimSmithingTemplate;
+    /**
      * @symbol ?Feather\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Feather;
@@ -647,6 +711,10 @@ namespace VanillaItemNames {
      * @symbol ?FoxSpawnEgg\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const FoxSpawnEgg;
+    /**
+     * @symbol ?FriendPotteryShard\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const FriendPotteryShard;
     /**
      * @symbol ?FrogSpawnEgg\@VanillaItemNames\@\@3VHashedString\@\@B
      */
@@ -784,6 +852,14 @@ namespace VanillaItemNames {
      */
     MCAPI extern class HashedString const HeartOfTheSea;
     /**
+     * @symbol ?HeartPotteryShard\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const HeartPotteryShard;
+    /**
+     * @symbol ?HeartbreakPotteryShard\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const HeartbreakPotteryShard;
+    /**
      * @symbol ?HoglinSpawnEgg\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const HoglinSpawnEgg;
@@ -807,6 +883,14 @@ namespace VanillaItemNames {
      * @symbol ?HorseSpawnEgg\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const HorseSpawnEgg;
+    /**
+     * @symbol ?HostArmorTrimSmithingTemplate\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const HostArmorTrimSmithingTemplate;
+    /**
+     * @symbol ?HowlPotteryShard\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const HowlPotteryShard;
     /**
      * @symbol ?HuskSpawnEgg\@VanillaItemNames\@\@3VHashedString\@\@B
      */
@@ -1016,6 +1100,10 @@ namespace VanillaItemNames {
      */
     MCAPI extern class HashedString const Minecart;
     /**
+     * @symbol ?MinerPotteryShard\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const MinerPotteryShard;
+    /**
      * @symbol ?MojangBannerPattern\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MojangBannerPattern;
@@ -1023,6 +1111,10 @@ namespace VanillaItemNames {
      * @symbol ?MooshroomSpawnEgg\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MooshroomSpawnEgg;
+    /**
+     * @symbol ?MournerPotteryShard\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const MournerPotteryShard;
     /**
      * @symbol ?MuleSpawnEgg\@VanillaItemNames\@\@3VHashedString\@\@B
      */
@@ -1164,6 +1256,10 @@ namespace VanillaItemNames {
      */
     MCAPI extern class HashedString const NetheriteSword;
     /**
+     * @symbol ?NetheriteUpgradeSmithingTemplate\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const NetheriteUpgradeSmithingTemplate;
+    /**
      * @symbol ?NpcSpawnEgg\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const NpcSpawnEgg;
@@ -1248,6 +1344,10 @@ namespace VanillaItemNames {
      */
     MCAPI extern class HashedString const PinkDye;
     /**
+     * @symbol ?PlentyPotteryShard\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const PlentyPotteryShard;
+    /**
      * @symbol ?PoisonousPotato\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PoisonousPotato;
@@ -1276,22 +1376,6 @@ namespace VanillaItemNames {
      */
     MCAPI extern class HashedString const Potion;
     /**
-     * @symbol ?PotteryShardArcher\@VanillaItemNames\@\@3VHashedString\@\@B
-     */
-    MCAPI extern class HashedString const PotteryShardArcher;
-    /**
-     * @symbol ?PotteryShardArmsUp\@VanillaItemNames\@\@3VHashedString\@\@B
-     */
-    MCAPI extern class HashedString const PotteryShardArmsUp;
-    /**
-     * @symbol ?PotteryShardPrize\@VanillaItemNames\@\@3VHashedString\@\@B
-     */
-    MCAPI extern class HashedString const PotteryShardPrize;
-    /**
-     * @symbol ?PotteryShardSkull\@VanillaItemNames\@\@3VHashedString\@\@B
-     */
-    MCAPI extern class HashedString const PotteryShardSkull;
-    /**
      * @symbol ?PowderSnowBucket\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PowderSnowBucket;
@@ -1303,6 +1387,10 @@ namespace VanillaItemNames {
      * @symbol ?PrismarineShard\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PrismarineShard;
+    /**
+     * @symbol ?PrizePotteryShard\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const PrizePotteryShard;
     /**
      * @symbol ?Pufferfish\@VanillaItemNames\@\@3VHashedString\@\@B
      */
@@ -1352,6 +1440,10 @@ namespace VanillaItemNames {
      */
     MCAPI extern class HashedString const RabbitStew;
     /**
+     * @symbol ?RaiserArmorTrimSmithingTemplate\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const RaiserArmorTrimSmithingTemplate;
+    /**
      * @symbol ?RapidFertilizer\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const RapidFertilizer;
@@ -1388,6 +1480,10 @@ namespace VanillaItemNames {
      */
     MCAPI extern class HashedString const Repeater;
     /**
+     * @symbol ?RibArmorTrimSmithingTemplate\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const RibArmorTrimSmithingTemplate;
+    /**
      * @symbol ?RottenFlesh\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const RottenFlesh;
@@ -1412,6 +1508,18 @@ namespace VanillaItemNames {
      */
     MCAPI extern class HashedString const Scute;
     /**
+     * @symbol ?SentryArmorTrimSmithingTemplate\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const SentryArmorTrimSmithingTemplate;
+    /**
+     * @symbol ?ShaperArmorTrimSmithingTemplate\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const ShaperArmorTrimSmithingTemplate;
+    /**
+     * @symbol ?SheafPotteryShard\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const SheafPotteryShard;
+    /**
      * @symbol ?Shears\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Shears;
@@ -1419,6 +1527,10 @@ namespace VanillaItemNames {
      * @symbol ?SheepSpawnEgg\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SheepSpawnEgg;
+    /**
+     * @symbol ?ShelterPotteryShard\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const ShelterPotteryShard;
     /**
      * @symbol ?Shield\@VanillaItemNames\@\@3VHashedString\@\@B
      */
@@ -1435,6 +1547,10 @@ namespace VanillaItemNames {
      * @symbol ?ShulkerSpawnEgg\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const ShulkerSpawnEgg;
+    /**
+     * @symbol ?SilenceArmorTrimSmithingTemplate\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const SilenceArmorTrimSmithingTemplate;
     /**
      * @symbol ?SilverfishSpawnEgg\@VanillaItemNames\@\@3VHashedString\@\@B
      */
@@ -1456,6 +1572,10 @@ namespace VanillaItemNames {
      */
     MCAPI extern class HashedString const SkullBannerPattern;
     /**
+     * @symbol ?SkullPotteryShard\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const SkullPotteryShard;
+    /**
      * @symbol ?SlimeBall\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SlimeBall;
@@ -1467,6 +1587,14 @@ namespace VanillaItemNames {
      * @symbol ?SnifferSpawnEgg\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SnifferSpawnEgg;
+    /**
+     * @symbol ?SnortPotteryShard\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const SnortPotteryShard;
+    /**
+     * @symbol ?SnoutArmorTrimSmithingTemplate\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const SnoutArmorTrimSmithingTemplate;
     /**
      * @symbol ?SnowBall\@VanillaItemNames\@\@3VHashedString\@\@B
      */
@@ -1495,6 +1623,10 @@ namespace VanillaItemNames {
      * @symbol ?SpiderSpawnEgg\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SpiderSpawnEgg;
+    /**
+     * @symbol ?SpireArmorTrimSmithingTemplate\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const SpireArmorTrimSmithingTemplate;
     /**
      * @symbol ?SplashPotion\@VanillaItemNames\@\@3VHashedString\@\@B
      */
@@ -1588,6 +1720,10 @@ namespace VanillaItemNames {
      */
     MCAPI extern class HashedString const TadpoleSpawnEgg;
     /**
+     * @symbol ?TideArmorTrimSmithingTemplate\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const TideArmorTrimSmithingTemplate;
+    /**
      * @symbol ?TntMinecart\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const TntMinecart;
@@ -1628,6 +1764,10 @@ namespace VanillaItemNames {
      */
     MCAPI extern class HashedString const TurtleSpawnEgg;
     /**
+     * @symbol ?VexArmorTrimSmithingTemplate\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const VexArmorTrimSmithingTemplate;
+    /**
      * @symbol ?VexSpawnEgg\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const VexSpawnEgg;
@@ -1643,6 +1783,10 @@ namespace VanillaItemNames {
      * @symbol ?WanderingTraderSpawnEgg\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WanderingTraderSpawnEgg;
+    /**
+     * @symbol ?WardArmorTrimSmithingTemplate\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const WardArmorTrimSmithingTemplate;
     /**
      * @symbol ?WardenSpawnEgg\@VanillaItemNames\@\@3VHashedString\@\@B
      */
@@ -1668,6 +1812,10 @@ namespace VanillaItemNames {
      */
     MCAPI extern class HashedString const WaterBucket;
     /**
+     * @symbol ?WayfinderArmorTrimSmithingTemplate\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const WayfinderArmorTrimSmithingTemplate;
+    /**
      * @symbol ?Wheat\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Wheat;
@@ -1679,6 +1827,10 @@ namespace VanillaItemNames {
      * @symbol ?WhiteDye\@VanillaItemNames\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WhiteDye;
+    /**
+     * @symbol ?WildArmorTrimSmithingTemplate\@VanillaItemNames\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const WildArmorTrimSmithingTemplate;
     /**
      * @symbol ?WitchSpawnEgg\@VanillaItemNames\@\@3VHashedString\@\@B
      */

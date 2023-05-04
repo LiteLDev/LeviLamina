@@ -53,10 +53,6 @@ public:
      */
     MCAPI unsigned short getIPv6BoundPort() const;
     /**
-     * @symbol ?getIPv6ConnectionIndex\@RakPeerHelper\@\@QEBAHXZ
-     */
-    MCAPI int getIPv6ConnectionIndex() const;
-    /**
      * @symbol ?isIPv4Supported\@RakPeerHelper\@\@QEBA_NXZ
      */
     MCAPI bool isIPv4Supported() const;
@@ -68,10 +64,6 @@ public:
      * @symbol ?peerStartup\@RakPeerHelper\@\@QEAA?AW4StartupResult\@RakNet\@\@PEAVRakPeerInterface\@3\@AEBUConnectionDefinition\@\@W4PeerPurpose\@1\@\@Z
      */
     MCAPI enum class RakNet::StartupResult peerStartup(class RakNet::RakPeerInterface *, struct ConnectionDefinition const &, enum class RakPeerHelper::PeerPurpose);
-    /**
-     * @symbol ?reset\@RakPeerHelper\@\@QEAAXXZ
-     */
-    MCAPI void reset();
 
 //private:
     /**

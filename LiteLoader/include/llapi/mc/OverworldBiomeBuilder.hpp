@@ -39,10 +39,6 @@ public:
      */
     MCAPI void addBiomes(std::vector<struct BiomeNoiseTarget> &, class BiomeRegistry const &) const;
     /**
-     * @symbol ?getWorldSpawnParameters\@OverworldBiomeBuilder\@\@QEBA?AV?$vector\@UClimateParameters\@\@V?$allocator\@UClimateParameters\@\@\@std\@\@\@std\@\@XZ
-     */
-    MCAPI std::vector<struct ClimateParameters> getWorldSpawnParameters() const;
-    /**
      * @symbol ??1OverworldBiomeBuilder\@\@QEAA\@XZ
      */
     MCAPI ~OverworldBiomeBuilder();

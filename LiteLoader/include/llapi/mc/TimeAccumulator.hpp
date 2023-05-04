@@ -23,13 +23,10 @@ class TimeAccumulator {
 public:
     class TimeAccumulator& operator=(class TimeAccumulator const &) = delete;
     TimeAccumulator(class TimeAccumulator const &) = delete;
+    TimeAccumulator() = delete;
 #endif
 
 public:
-    /**
-     * @symbol ??0TimeAccumulator\@\@QEAA\@XZ
-     */
-    MCAPI TimeAccumulator();
     /**
      * @symbol ?getCount\@TimeAccumulator\@\@QEBA_KXZ
      */
@@ -42,9 +39,5 @@ public:
      * @symbol ?getTimeSumAverageSeconds\@TimeAccumulator\@\@QEBAMXZ
      */
     MCAPI float getTimeSumAverageSeconds() const;
-    /**
-     * @symbol ?getTimeSumSeconds\@TimeAccumulator\@\@QEBAMXZ
-     */
-    MCAPI float getTimeSumSeconds() const;
 
 };

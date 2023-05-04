@@ -1269,7 +1269,9 @@ Local<Value> PlayerClass::setPermLevel(const Arguments& args) {
                             fmt::format("Set Player {} Permission Level as {}.", player->getRealName(), newPerm));
             player->setPermissions((CommandPermissionLevel)newPerm);
             if (newPerm >= 1) {
-                player->getAbilities().setPlayerPermissions(PlayerPermissionLevel::PlayerPermissionLevelOperator);
+                player->getAbilities().setPlayerPermissions(PlayerPermissionLevel::Operator);
+            } else {
+                player->getAbilities().setPlayerPermissions(PlayerPermissionLevel::Member);
             }
             UpdateAbilitiesPacket uPkt(player->getUniqueID(), player->getAbilities());
             player->sendNetworkPacket(uPkt);
@@ -3157,13 +3159,17 @@ Local<Value> PlayerClass::getAllEffects() {
         if (!player) {
             return Local<Value>();
         }
-        auto effects = player->getAllEffects();
-        if (effects.size() == 0) {
+        if (!player->getActiveEffectCount()) {
             return Local<Value>();
         }
         Local<Array> effectList = Array::newArray();
-        for (auto effect : effects)
-            effectList.add(Number::newNumber((int)effect.getId()));
+        for (unsigned int i = 0; i <= 30; i++) {
+            if (player->getEffect(i)) {
+                effectList.add(Number::newNumber((int)i));
+            } else {
+                break;
+            }
+        }
         return effectList;
     }
     CATCH("Fail in getAllEffects!")

@@ -24,20 +24,13 @@ class ScriptMinecraftCommonModuleFactory {
 public:
     class ScriptMinecraftCommonModuleFactory& operator=(class ScriptMinecraftCommonModuleFactory const &) = delete;
     ScriptMinecraftCommonModuleFactory(class ScriptMinecraftCommonModuleFactory const &) = delete;
+    ScriptMinecraftCommonModuleFactory() = delete;
 #endif
 
 public:
     /**
-     * @symbol ??0ScriptMinecraftCommonModuleFactory\@\@QEAA\@XZ
-     */
-    MCAPI ScriptMinecraftCommonModuleFactory();
-    /**
      * @symbol ?addCommon\@ScriptMinecraftCommonModuleFactory\@\@QEAAXAEAVModuleBindingBuilder\@Scripting\@\@\@Z
      */
     MCAPI void addCommon(class Scripting::ModuleBindingBuilder &);
-    /**
-     * @symbol ??1ScriptMinecraftCommonModuleFactory\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptMinecraftCommonModuleFactory();
 
 };

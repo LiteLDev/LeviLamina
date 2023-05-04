@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -40,9 +39,5 @@ public:
      * @symbol ?getJsonName\@IsSummonableDescription\@\@UEBAPEBDXZ
      */
     virtual char const * getJsonName() const;
-    /**
-     * @symbol ?parse\@IsSummonableDescription\@\@QEAAXAEBVValue\@Json\@\@\@Z
-     */
-    MCAPI void parse(class Json::Value const &);
 
 };

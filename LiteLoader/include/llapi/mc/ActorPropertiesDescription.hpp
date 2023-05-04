@@ -5,18 +5,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC structure ActorPropertiesDescription.
- *
- */
-struct ActorPropertiesDescription {
+
+class ActorPropertiesDescription {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -24,7 +20,8 @@ struct ActorPropertiesDescription {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORPROPERTIESDESCRIPTION
 public:
-    ActorPropertiesDescription(struct ActorPropertiesDescription const &) = delete;
+    class ActorPropertiesDescription& operator=(class ActorPropertiesDescription const &) = delete;
+    ActorPropertiesDescription(class ActorPropertiesDescription const &) = delete;
     ActorPropertiesDescription() = delete;
 #endif
 
@@ -45,13 +42,5 @@ public:
      */
     MCVAPI ~ActorPropertiesDescription();
 #endif
-    /**
-     * @symbol ??4ActorPropertiesDescription\@\@QEAAAEAU0\@AEBU0\@\@Z
-     */
-    MCAPI struct ActorPropertiesDescription & operator=(struct ActorPropertiesDescription const &);
-    /**
-     * @symbol ?parse\@ActorPropertiesDescription\@\@QEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
-     */
-    MCAPI void parse(class Json::Value &, class SemVersion const &);
 
 };

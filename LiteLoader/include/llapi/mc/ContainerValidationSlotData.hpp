@@ -23,21 +23,14 @@ struct ContainerValidationSlotData {
 public:
     struct ContainerValidationSlotData& operator=(struct ContainerValidationSlotData const &) = delete;
     ContainerValidationSlotData(struct ContainerValidationSlotData const &) = delete;
+    ContainerValidationSlotData() = delete;
 #endif
 
 public:
     /**
-     * @symbol ??0ContainerValidationSlotData\@\@QEAA\@XZ
-     */
-    MCAPI ContainerValidationSlotData();
-    /**
      * @symbol ??0ContainerValidationSlotData\@\@QEAA\@W4ContainerEnumName\@\@H\@Z
      */
     MCAPI ContainerValidationSlotData(enum class ContainerEnumName, int);
-    /**
-     * @symbol ?matches\@ContainerValidationSlotData\@\@QEBA_NAEBU1\@\@Z
-     */
-    MCAPI bool matches(struct ContainerValidationSlotData const &) const;
     /**
      * @symbol ?AUTOPLACE\@ContainerValidationSlotData\@\@2U1\@B
      */

@@ -54,17 +54,9 @@ public:
      */
     MCAPI unsigned int countEntityTickingAreas() const;
     /**
-     * @symbol ?countStandaloneTickingAreas\@TickingAreaListBase\@\@QEBAIXZ
-     */
-    MCAPI unsigned int countStandaloneTickingAreas() const;
-    /**
      * @symbol ?destroyAreas\@TickingAreaListBase\@\@QEAAXXZ
      */
     MCAPI void destroyAreas();
-    /**
-     * @symbol ?empty\@TickingAreaListBase\@\@QEBA_NXZ
-     */
-    MCAPI bool empty() const;
     /**
      * @symbol ?findStandaloneAreasContaining\@TickingAreaListBase\@\@QEAA?AV?$vector\@V?$shared_ptr\@VITickingArea\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VITickingArea\@\@\@std\@\@\@2\@\@std\@\@AEBVBlockPos\@\@\@Z
      */
@@ -90,17 +82,9 @@ public:
      */
     MCAPI bool hasTickingAreaNamed(std::string const &) const;
     /**
-     * @symbol ?isPreloadDone\@TickingAreaListBase\@\@QEBA_NXZ
-     */
-    MCAPI bool isPreloadDone() const;
-    /**
      * @symbol ?processRemoves\@TickingAreaListBase\@\@QEAAXXZ
      */
     MCAPI void processRemoves();
-    /**
-     * @symbol ?processUpdates\@TickingAreaListBase\@\@QEAAXAEAVLevelStorage\@\@UTick\@\@\@Z
-     */
-    MCAPI void processUpdates(class LevelStorage &, struct Tick);
     /**
      * @symbol ?removeAllStandaloneAreas\@TickingAreaListBase\@\@QEAA?AV?$vector\@UTickingAreaDescription\@\@V?$allocator\@UTickingAreaDescription\@\@\@std\@\@\@std\@\@AEAVLevelStorage\@\@\@Z
      */
@@ -110,10 +94,6 @@ public:
      */
     MCAPI std::vector<struct TickingAreaDescription> removeAreas(std::vector<class std::shared_ptr<class ITickingArea>> const &, class LevelStorage &);
     /**
-     * @symbol ?tick\@TickingAreaListBase\@\@QEAAXAEBUTick\@\@\@Z
-     */
-    MCAPI void tick(struct Tick const &);
-    /**
      * @symbol ?tickSeasons\@TickingAreaListBase\@\@QEAAXAEAVRandom\@\@\@Z
      */
     MCAPI void tickSeasons(class Random &);
@@ -121,13 +101,5 @@ public:
      * @symbol ?updateBlockSourceCurrentTick\@TickingAreaListBase\@\@QEAAXAEBUTick\@\@\@Z
      */
     MCAPI void updateBlockSourceCurrentTick(struct Tick const &);
-
-//protected:
-    /**
-     * @symbol ?_shouldRemoveArea\@TickingAreaListBase\@\@IEBA_NIAEBV?$vector\@VVec3\@\@V?$allocator\@VVec3\@\@\@std\@\@\@std\@\@\@Z
-     */
-    MCAPI bool _shouldRemoveArea(unsigned int, std::vector<class Vec3> const &) const;
-
-protected:
 
 };

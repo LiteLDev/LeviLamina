@@ -135,10 +135,6 @@ public:
      * @symbol ??0BlockCommandOrigin\@\@QEAA\@AEAVLevel\@\@V?$AutomaticID\@VDimension\@\@H\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI BlockCommandOrigin(class Level &, class AutomaticID<class Dimension, int>, std::string const &, class BlockPos const &);
-    /**
-     * @symbol ?load\@BlockCommandOrigin\@\@SA?AV?$unique_ptr\@VBlockCommandOrigin\@\@U?$default_delete\@VBlockCommandOrigin\@\@\@std\@\@\@std\@\@AEBVCompoundTag\@\@AEAVLevel\@\@\@Z
-     */
-    MCAPI static std::unique_ptr<class BlockCommandOrigin> load(class CompoundTag const &, class Level &);
 
 //protected:
     /**

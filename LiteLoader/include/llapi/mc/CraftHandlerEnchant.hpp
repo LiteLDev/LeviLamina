@@ -50,10 +50,6 @@ public:
      * @symbol ?_postCraftRequest\@CraftHandlerEnchant\@\@MEAAX_N\@Z
      */
     virtual void _postCraftRequest(bool);
-    /**
-     * @symbol ??0CraftHandlerEnchant\@\@QEAA\@AEAVPlayer\@\@AEAVItemStackRequestActionCraftHandler\@\@\@Z
-     */
-    MCAPI CraftHandlerEnchant(class Player &, class ItemStackRequestActionCraftHandler &);
 
 //private:
     /**

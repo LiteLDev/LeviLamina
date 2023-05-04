@@ -34,10 +34,6 @@ public:
      */
     MCAPI LevelChunkGarbageCollector(class Dimension &);
     /**
-     * @symbol ?acquireDiscardedChunk\@LevelChunkGarbageCollector\@\@QEAAXV?$unique_ptr\@VLevelChunk\@\@U?$default_delete\@VLevelChunk\@\@\@std\@\@\@std\@\@\@Z
-     */
-    MCAPI void acquireDiscardedChunk(std::unique_ptr<class LevelChunk>);
-    /**
      * @symbol ?getPendingDeletesCount\@LevelChunkGarbageCollector\@\@QEBA_KXZ
      */
     MCAPI unsigned __int64 getPendingDeletesCount() const;

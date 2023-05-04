@@ -11,15 +11,15 @@
 #undef BEFORE_EXTRA
 
 
-class BlockLightDampeningDescription {
+struct BlockLightDampeningDescription {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKLIGHTDAMPENINGDESCRIPTION
 public:
-    class BlockLightDampeningDescription& operator=(class BlockLightDampeningDescription const &) = delete;
-    BlockLightDampeningDescription(class BlockLightDampeningDescription const &) = delete;
+    struct BlockLightDampeningDescription& operator=(struct BlockLightDampeningDescription const &) = delete;
+    BlockLightDampeningDescription(struct BlockLightDampeningDescription const &) = delete;
     BlockLightDampeningDescription() = delete;
 #endif
 
@@ -67,9 +67,5 @@ public:
      * @symbol ?bindType\@BlockLightDampeningDescription\@\@SAXXZ
      */
     MCAPI static void bindType();
-    /**
-     * @symbol ?registerVersionUpgrades\@BlockLightDampeningDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
-     */
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

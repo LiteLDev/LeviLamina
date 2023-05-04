@@ -45,10 +45,6 @@ public:
      */
     virtual void serialize(class CompoundTag &) const;
     /**
-     * @symbol ??0PortalForcer\@\@QEAA\@AEAVLevel\@\@\@Z
-     */
-    MCAPI PortalForcer(class Level &);
-    /**
      * @symbol ?addPortalRecord\@PortalForcer\@\@QEAAAEBVPortalRecord\@\@V?$AutomaticID\@VDimension\@\@H\@\@V2\@\@Z
      */
     MCAPI class PortalRecord const & addPortalRecord(class AutomaticID<class Dimension, int>, class PortalRecord);
@@ -60,10 +56,6 @@ public:
      * @symbol ?createPortal\@PortalForcer\@\@QEAAAEBVPortalRecord\@\@AEBVActor\@\@H\@Z
      */
     MCAPI class PortalRecord const & createPortal(class Actor const &, int);
-    /**
-     * @symbol ?findPortal\@PortalForcer\@\@QEBA_NV?$AutomaticID\@VDimension\@\@H\@\@AEBVBlockPos\@\@HAEAV3\@\@Z
-     */
-    MCAPI bool findPortal(class AutomaticID<class Dimension, int>, class BlockPos const &, int, class BlockPos &) const;
     /**
      * @symbol ?force\@PortalForcer\@\@QEAAXAEAVActor\@\@AEBUDimensionTransitionComponent\@\@\@Z
      */
@@ -81,9 +73,17 @@ public:
      */
     MCAPI void removePortalRecord(class BlockSource &, class BlockPos const &);
     /**
+     * @symbol ?MIN_PORTAL_REPLACE_BLOCK_FIX_VERSION\@PortalForcer\@\@2VBaseGameVersion\@\@B
+     */
+    MCAPI static class BaseGameVersion const MIN_PORTAL_REPLACE_BLOCK_FIX_VERSION;
+    /**
      * @symbol ?PORTAL_FILE_ID\@PortalForcer\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const PORTAL_FILE_ID;
+    /**
+     * @symbol ?canPortalReplaceBlock\@PortalForcer\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI static bool canPortalReplaceBlock(class BlockSource &, class BlockPos const &);
 
 //private:
     /**

@@ -34,10 +34,6 @@ public:
      */
     MCAPI CreativeItemEntry(class CreativeItemEntry &&);
     /**
-     * @symbol ??0CreativeItemEntry\@\@QEAA\@PEAVCreativeItemRegistry\@\@AEBV?$TypedServerNetId\@UCreativeItemNetIdTag\@\@I$0A\@\@\@AEBVItemInstance\@\@I\@Z
-     */
-    MCAPI CreativeItemEntry(class CreativeItemRegistry *, class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const &, class ItemInstance const &, unsigned int);
-    /**
      * @symbol ?getCreativeNetId\@CreativeItemEntry\@\@QEBAAEBV?$TypedServerNetId\@UCreativeItemNetIdTag\@\@I$0A\@\@\@XZ
      */
     MCAPI class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const & getCreativeNetId() const;
@@ -53,13 +49,5 @@ public:
      * @symbol ?getItemInstance\@CreativeItemEntry\@\@QEBAAEBVItemInstance\@\@XZ
      */
     MCAPI class ItemInstance const & getItemInstance() const;
-
-//private:
-    /**
-     * @symbol ?_setGroup\@CreativeItemEntry\@\@AEAAXPEAVCreativeGroupInfo\@\@\@Z
-     */
-    MCAPI void _setGroup(class CreativeGroupInfo *);
-
-private:
 
 };

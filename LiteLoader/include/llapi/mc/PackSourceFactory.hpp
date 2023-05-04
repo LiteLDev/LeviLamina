@@ -106,36 +106,6 @@ public:
      * @symbol ?setDynamicPackageRoot\@PackSourceFactory\@\@UEAAXV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@\@Z
      */
     virtual void setDynamicPackageRoot(class Core::PathBuffer<std::string>);
-    /**
-     * @vftbl 15
-     * @symbol __unk_vfn_15
-     */
-    virtual void __unk_vfn_15();
-    /**
-     * @vftbl 16
-     * @symbol __unk_vfn_16
-     */
-    virtual void __unk_vfn_16();
-    /**
-     * @vftbl 17
-     * @symbol __unk_vfn_17
-     */
-    virtual void __unk_vfn_17();
-    /**
-     * @vftbl 18
-     * @symbol __unk_vfn_18
-     */
-    virtual void __unk_vfn_18();
-    /**
-     * @vftbl 19
-     * @symbol ?_Delete_this\@?$_Func_impl_no_alloc\@V?$_Fake_no_copy_callable_adapter\@P8thread\@std\@\@EAAXXZPEAV12\@\@std\@\@X$$V\@std\@\@EEAAX_N\@Z
-     */
-    virtual void _Delete_this(bool);
-    /**
-     * @vftbl 20
-     * @symbol ?_Get\@?$_Func_impl_no_alloc\@V?$_Fake_no_copy_callable_adapter\@P8thread\@std\@\@EAAXXZPEAV12\@\@std\@\@X$$V\@std\@\@EEBAPEBXXZ
-     */
-    virtual void const * _Get() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSOURCEFACTORY
     /**
      * @symbol __unk_destructor_-1

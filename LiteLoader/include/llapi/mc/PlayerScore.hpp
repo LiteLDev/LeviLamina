@@ -28,10 +28,6 @@ public:
 
 public:
     /**
-     * @symbol ??0PlayerScore\@\@QEAA\@AEBUScoreboardId\@\@H\@Z
-     */
-    MCAPI PlayerScore(struct ScoreboardId const &, int);
-    /**
      * @symbol ?getId\@PlayerScore\@\@QEBAAEBUScoreboardId\@\@XZ
      */
     MCAPI struct ScoreboardId const & getId() const;

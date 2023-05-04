@@ -90,6 +90,7 @@ enum class EVENT_TYPES : int {
     onMobDie,
     onDeathMessage,
     onMobHurt,
+    onRaidMobSpawn,
     onEntityExplode,
     onProjectileHitEntity,
     onWitherBossDestroy,
@@ -837,6 +838,16 @@ void EnableEventListener(int eventId) {
                               Number::newNumber(float(ev.mDamage)), Number::newNumber((int)ev.mDamageSource->getCause()));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onMobHurt)
+            });
+            break;
+
+        case EVENT_TYPES::onRaidMobSpawn:
+            Event::RaidMobSpawnEvent::subscribe([](const RaidMobSpawnEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onRaidMobSpawn) {
+                    CallEvent(EVENT_TYPES::onRaidMobSpawn, IntPos::newPos(ev.mVillageCenter), IntPos::newPos(ev.mPos),
+                              Number::newNumber(ev.mWaveNum), Number::newNumber(ev.mActorNum));
+                }
+                IF_LISTENED_END(EVENT_TYPES::onRaidMobSpawn)
             });
             break;
 

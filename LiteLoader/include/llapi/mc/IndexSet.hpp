@@ -32,13 +32,13 @@ public:
      */
     MCAPI IndexSet();
     /**
-     * @symbol ??0IndexSet\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI IndexSet(class IndexSet &&);
-    /**
      * @symbol ??0IndexSet\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI IndexSet(class IndexSet const &);
+    /**
+     * @symbol ??0IndexSet\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI IndexSet(class IndexSet &&);
     /**
      * @symbol ?contains\@IndexSet\@\@QEBA_N_K\@Z
      */
