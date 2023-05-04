@@ -2,8 +2,6 @@
 #include "llapi/mc/Level.hpp"
 #include "llapi/HookAPI.h"
 #include "llapi/mc/ActorUniqueID.hpp"
-#include "llapi/LoggerAPI.h"
-#include "llapi/mc/Actor.hpp"
 
 Actor* ActorDamageSource::getEntity() {
     ActorUniqueID v6 = getDamagingEntityUniqueID();
