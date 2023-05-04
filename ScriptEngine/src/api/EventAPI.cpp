@@ -78,6 +78,7 @@ enum class EVENT_TYPES : int {
     onCloseContainer,
     onInventoryChange,
     onPlayerPullFishingHook,
+    onLeaveBed,
     //onMove,
     onChangeSprinting,
     onSetArmor,
@@ -1164,6 +1165,16 @@ void EnableEventListener(int eventId) {
                               ev.mActor ? EntityClass::newEntity(ev.mActor) : Local<Value>(), ev.mItemStack ? ItemClass::newItem(ev.mItemStack) : Local<Value>());
                 }
                 IF_LISTENED_END(EVENT_TYPES::onPlayerPullFishingHook);
+                return true;
+            });
+            break;
+
+        case EVENT_TYPES::onLeaveBed:
+            Event::PlayerLeaveBedEvent::subscribe([](const PlayerLeaveBedEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onLeaveBed) {
+                    CallEvent(EVENT_TYPES::onLeaveBed, PlayerClass::newPlayer(ev.mPlayer), IntPos::newPos(ev.mPos));
+                }
+                IF_LISTENED_END(EVENT_TYPES::onLeaveBed);
                 return true;
             });
             break;
