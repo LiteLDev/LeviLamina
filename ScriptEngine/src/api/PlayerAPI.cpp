@@ -3159,13 +3159,15 @@ Local<Value> PlayerClass::getAllEffects() {
         if (!player) {
             return Local<Value>();
         }
-        auto effects = player->getAllEffects();
-        if (effects.size() == 0) {
+        if (player->getActiveEffectCount() == 0) {
             return Local<Value>();
         }
         Local<Array> effectList = Array::newArray();
-        for (auto effect : effects)
-            effectList.add(Number::newNumber((int)effect.getId()));
+        for (unsigned int i = 0; i <= 30; i++) {
+            if (player->getEffect(i) != nullptr) {
+                effectList.add(Number::newNumber((int)i));
+            }
+        }
         return effectList;
     }
     CATCH("Fail in getAllEffects!")
