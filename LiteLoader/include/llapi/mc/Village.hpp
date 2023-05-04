@@ -16,10 +16,13 @@
  *
  */
 class Village {
-
+    
 #define AFTER_EXTRA
 // Add Member There
 public:
+
+    LIAPI int getDimensionId();
+
 struct DwellerData {
     DwellerData() = delete;
     DwellerData(DwellerData const&) = delete;
