@@ -306,6 +306,7 @@ DECLARE_EVENT_DATA(ResourcePackInitEvent);
 DECLARE_EVENT_DATA(PlayerOpenInventoryEvent);
 DECLARE_EVENT_DATA(PlayerSwingEvent);
 DECLARE_EVENT_DATA(PlayerPullFishingHookEvent);
+DECLARE_EVENT_DATA(PlayerBreedAnimalEvent);
 
 #define IF_LISTENED(EVENT)                                                                                             \
     if (EVENT::hasListener()) {                                                                                        \
@@ -2217,4 +2218,18 @@ TInstanceHook(void, "?_pullCloser@FishingHook@@IEAAXAEAVActor@@M@Z", FishingHook
         IF_LISTENED_END(PlayerPullFishingHookEvent)
     }
     return original(this, item, b);
+}
+
+TClasslessInstanceHook(void, "?_useBreedItem@BreedableComponent@@AEAAXAEAVActor@@AEAVPlayer@@AEBVItemStack@@@Z", Actor* en, Player* pl, ItemStack* it) {
+    IF_LISTENED(PlayerBreedAnimalEvent) {
+        PlayerBreedAnimalEvent ev{};
+        ev.mPlayer = pl;
+        ev.mActor = en;
+        ev.mItemStack = it;
+        if (!ev.call()) {
+            return;
+        }
+    }
+    IF_LISTENED_END(PlayerBreedAnimalEvent)
+    return original(this, en, pl, it);
 }
