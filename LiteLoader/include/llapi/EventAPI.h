@@ -490,6 +490,12 @@ public:
     BlockInstance* mBlockInstance = nullptr;
 };
 
+class PlayerLeaveBedEvent : public EventTemplate<PlayerLeaveBedEvent> {
+public:
+    Player* mPlayer = nullptr;
+    BlockPos mPos;
+};
+
 class PlayerOpenInventoryEvent : public EventTemplate<PlayerOpenInventoryEvent> {
 public:
     Player* mPlayer = nullptr;
