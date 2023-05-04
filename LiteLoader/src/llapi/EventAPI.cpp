@@ -306,6 +306,7 @@ DECLARE_EVENT_DATA(ResourcePackInitEvent);
 DECLARE_EVENT_DATA(PlayerOpenInventoryEvent);
 DECLARE_EVENT_DATA(PlayerSwingEvent);
 DECLARE_EVENT_DATA(PlayerPullFishingHookEvent);
+DECLARE_EVENT_DATA(PlayerLeaveBedEvent);
 
 #define IF_LISTENED(EVENT)                                                                                             \
     if (EVENT::hasListener()) {                                                                                        \
@@ -2037,6 +2038,19 @@ TInstanceHook(int, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBloc
     }
     IF_LISTENED_END(PlayerBedEnterEvent)
     return original(this, blk);
+}
+
+////////////// PlayerLeaveBed //////////////
+TInstanceHook(void, "?stopSleepInBed@Player@@UEAAX_N0@Z", Player, bool a1, bool a2) {
+	IF_LISTENED(PlayerLeaveBedEvent) {
+        PlayerLeaveBedEvent ev{};
+        ev.mPlayer = this;
+        ev.mPos = this->getBlockPos();
+        if (!ev.call()) {
+            return;
+        }
+    }
+    IF_LISTENED_END(PlayerLeaveBedEvent)
 }
 
 #include "llapi/mc/Spawner.hpp"
