@@ -78,6 +78,7 @@ enum class EVENT_TYPES : int {
     onCloseContainer,
     onInventoryChange,
     onPlayerPullFishingHook,
+    onBreedAnimal,
     //onMove,
     onChangeSprinting,
     onSetArmor,
@@ -1168,6 +1169,15 @@ void EnableEventListener(int eventId) {
             });
             break;
 
+        case EVENT_TYPES::onBreedAnimal:
+            Event::PlayerBreedAnimalEvent::subscribe([](const PlayerBreedAnimalEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onBreedAnimal) {
+                    CallEvent(EVENT_TYPES::onBreedAnimal, PlayerClass::newPlayer(ev.mPlayer), EntityClass::newEntity(ev.mActor), ItemClass::newItem(ev.mItemStack));
+                }
+                IF_LISTENED_END(EVENT_TYPES::onBreedAnimal);
+                return true;
+            });
+            break;
             /* DEPRECATED AND RECENTLY REMOVED - END */
 
         default:
