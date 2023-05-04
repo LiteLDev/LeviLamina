@@ -300,7 +300,8 @@ DECLARE_EVENT_DATA(PlayerBedEnterEvent);
 DECLARE_EVENT_DATA(ScriptPluginManagerEvent);
 DECLARE_EVENT_DATA(MobTrySpawnEvent);
 DECLARE_EVENT_DATA(MobSpawnedEvent);
-DECLARE_EVENT_DATA(RaidMobSpawnEvent);
+DECLARE_EVENT_DATA(RaidMobTrySpawnEvent);
+DECLARE_EVENT_DATA(RaidMobSpawnedEvent);
 DECLARE_EVENT_DATA(FormResponsePacketEvent);
 DECLARE_EVENT_DATA(ResourcePackInitEvent);
 DECLARE_EVENT_DATA(PlayerOpenInventoryEvent);
@@ -2114,22 +2115,48 @@ TClasslessInstanceHook(void, "?_setRespawnStage@EndDragonFight@@AEAAXW4RespawnAn
 }
 
 #include "llapi/mc/Village.hpp"
-
-TInstanceHook(void,
+#include "llapi/mc/Dimension.hpp"
+TInstanceHook(void, 
               "?_spawnRaidGroup@Village@@AEBA_NVVec3@@EAEAV?$unordered_set@UActorUniqueID@@U?$hash@UActorUniqueID@@@"
               "std@@U?$equal_to@UActorUniqueID@@@3@V?$allocator@UActorUniqueID@@@3@@std@@@Z",
-              Village, Vec3 pos, unsigned char num, std::unordered_set<long long>& actorIDs) {
-    // actorIDs其实是std::unordered_set<ActorUniqueID>，懒得写hash函数
-    original(this, pos, num, actorIDs);
-    IF_LISTENED(RaidMobSpawnEvent) {
-        RaidMobSpawnEvent ev{};
+              Village, Vec3 pos, unsigned char num, std::unordered_set<ActorUniqueID>& auids) {            
+    auto dim = (Dimension*)*((uintptr_t *)this + 2);
+    std::vector<ActorUniqueID> uids;
+    uids.insert(uids.end(), auids.begin(), auids.end());
+    IF_LISTENED(RaidMobTrySpawnEvent) {
+        RaidMobTrySpawnEvent ev{};
+        ev.mVillage = this;
         ev.mVillageCenter = this->getCenter();
         ev.mPos = pos;
+        ev.mDimensionId = dim->getDimensionId();
         ev.mWaveNum = num;
-        ev.mActorNum = actorIDs.size();
-        ev.call();
+        ev.mActorUniqueIDs = uids;
+        if (!ev.call()) {
+            return;
+        }
     }
-    IF_LISTENED_END(RaidMobSpawnEvent)
+    IF_LISTENED_END(RaidMobTrySpawnEvent)
+    original(this, pos, num, auids);
+    std::vector<Actor*> actors;
+    for (auto uid : uids) {
+        auto en = Global<Level>->getEntity(uid);
+        if (en) {
+            actors.push_back(en);
+        }
+    }
+    if (actors.size() >= 1) {
+        IF_LISTENED(RaidMobSpawnedEvent) {
+            RaidMobSpawnedEvent ev{};
+            ev.mVillage = this;
+            ev.mVillageCenter = this->getCenter();
+            ev.mPos = pos;
+            ev.mDimensionId = dim->getDimensionId();
+            ev.mWaveNum = num;
+            ev.mActors = actors;
+            ev.call();
+        }
+        IF_LISTENED_END(RaidMobSpawnedEvent)
+    }
 }
 
 #include "llapi/impl/FormPacketHelper.h"

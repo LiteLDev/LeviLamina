@@ -89,7 +89,6 @@ enum class EVENT_TYPES : int {
     /* Entity Events */
     onMobDie,
     onMobHurt,
-    onRaidMobSpawn,
     onEntityExplode,
     onProjectileHitEntity,
     onWitherBossDestroy,
@@ -142,6 +141,8 @@ enum class EVENT_TYPES : int {
     onMobSpawn,
     onMobTrySpawn,
     onMobSpawned,
+    onRaidMobTrySpawn,
+    onRaidMobSpawned,
     onContainerChangeSlot,
     EVENT_COUNT
 };
@@ -840,13 +841,31 @@ void EnableEventListener(int eventId) {
             });
             break;
 
-        case EVENT_TYPES::onRaidMobSpawn:
-            Event::RaidMobSpawnEvent::subscribe([](const RaidMobSpawnEvent& ev) {
-                IF_LISTENED(EVENT_TYPES::onRaidMobSpawn) {
-                    CallEvent(EVENT_TYPES::onRaidMobSpawn, IntPos::newPos(ev.mVillageCenter), IntPos::newPos(ev.mPos),
-                              Number::newNumber(ev.mWaveNum), Number::newNumber(ev.mActorNum));
+        case EVENT_TYPES::onRaidMobTrySpawn:
+            Event::RaidMobTrySpawnEvent::subscribe([](const RaidMobTrySpawnEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onRaidMobTrySpawn) {
+                    Local<Array> AuidList = Array::newArray();
+                    for (auto uid : ev.mActorUniqueIDs) {
+                        AuidList.add(Number::newNumber(uid.get()));
+                    }
+                    CallEvent(EVENT_TYPES::onRaidMobTrySpawn, IntPos::newPos(ev.mVillageCenter, ev.mDimensionId), IntPos::newPos(ev.mPos, ev.mDimensionId),
+                              Number::newNumber(ev.mWaveNum), AuidList);
                 }
-                IF_LISTENED_END(EVENT_TYPES::onRaidMobSpawn)
+                IF_LISTENED_END(EVENT_TYPES::onRaidMobTrySpawn)
+            });
+            break;
+
+        case EVENT_TYPES::onRaidMobSpawned:
+            Event::RaidMobSpawnedEvent::subscribe([](const RaidMobSpawnedEvent& ev) {
+                IF_LISTENED(EVENT_TYPES::onRaidMobSpawned) {
+                    Local<Array> EntityList = Array::newArray();
+                    for (auto en : ev.mActors) {
+                        EntityList.add(EntityClass::newEntity(en));
+                    }
+                    CallEvent(EVENT_TYPES::onRaidMobSpawned, IntPos::newPos(ev.mVillageCenter, ev.mDimensionId), IntPos::newPos(ev.mPos, ev.mDimensionId),
+                              Number::newNumber(ev.mWaveNum), EntityList);
+                }
+                IF_LISTENED_END(EVENT_TYPES::onRaidMobSpawned)
             });
             break;
 
