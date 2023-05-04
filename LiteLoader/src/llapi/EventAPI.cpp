@@ -2120,7 +2120,6 @@ TInstanceHook(void,
               "?_spawnRaidGroup@Village@@AEBA_NVVec3@@EAEAV?$unordered_set@UActorUniqueID@@U?$hash@UActorUniqueID@@@"
               "std@@U?$equal_to@UActorUniqueID@@@3@V?$allocator@UActorUniqueID@@@3@@std@@@Z",
               Village, Vec3 pos, unsigned char num, std::unordered_set<ActorUniqueID>& auids) {            
-    auto dim = (Dimension*)*((uintptr_t *)this + 2);
     std::vector<ActorUniqueID> uids;
     uids.insert(uids.end(), auids.begin(), auids.end());
     IF_LISTENED(RaidMobTrySpawnEvent) {
@@ -2128,7 +2127,7 @@ TInstanceHook(void,
         ev.mVillage = this;
         ev.mVillageCenter = this->getCenter();
         ev.mPos = pos;
-        ev.mDimensionId = dim->getDimensionId();
+        ev.mDimensionId = this->getDimensionId();
         ev.mWaveNum = num;
         ev.mActorUniqueIDs = uids;
         if (!ev.call()) {
@@ -2150,7 +2149,7 @@ TInstanceHook(void,
             ev.mVillage = this;
             ev.mVillageCenter = this->getCenter();
             ev.mPos = pos;
-            ev.mDimensionId = dim->getDimensionId();
+            ev.mDimensionId = this->getDimensionId();
             ev.mWaveNum = num;
             ev.mActors = actors;
             ev.call();
