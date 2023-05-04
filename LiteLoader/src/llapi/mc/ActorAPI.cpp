@@ -99,10 +99,9 @@ bool Actor::hurtEntity(float damage, ActorDamageCause damageCause) {
 }
 
 bool Actor::hurtEntity(float damage, ActorDamageCause damageCause, Actor* actor) {
-    auto src = new ActorDamageByActorSource(*actor, damageCause);
-    auto ads = (ActorDamageSource*)src;
-    auto res = ((Mob*)this)->_hurt(*ads, damage, true, false);
-    ads->~ActorDamageSource();
+    auto ads = new ActorDamageByActorSource(*actor, damageCause);
+    auto res = ((Mob*)this)->_hurt(*(ActorDamageByActorSource*)ads, damage, true, false);
+    ads->~ActorDamageByActorSource();
     delete ads;
     return res;
 }
