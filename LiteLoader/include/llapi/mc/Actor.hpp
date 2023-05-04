@@ -65,6 +65,7 @@ public:
     LIAPI bool stopFire();
     LIAPI bool hasTag(const string& tag);
     LIAPI bool hurtEntity(float damage, ActorDamageCause damageCause = ActorDamageCause::Override);
+    LIAPI bool hurtEntity(float damage, ActorDamageCause damageCause, Actor* actor);
     LIAPI bool teleport(Vec3 to, int dimID, float x, float y);
     LIAPI bool teleport(Vec3 pos,int dimid);
     LIAPI ItemStack* getHandSlot();
