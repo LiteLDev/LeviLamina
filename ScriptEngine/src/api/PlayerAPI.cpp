@@ -3166,8 +3166,6 @@ Local<Value> PlayerClass::getAllEffects() {
         for (unsigned int i = 0; i <= 30; i++) {
             if (player->getEffect(i)) {
                 effectList.add(Number::newNumber((int)i));
-            } else {
-                break;
             }
         }
         return effectList;

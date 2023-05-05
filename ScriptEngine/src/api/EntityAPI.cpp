@@ -1520,8 +1520,6 @@ Local<Value> EntityClass::getAllEffects() {
         for (unsigned int i = 0; i <= 30; i++) {
             if (actor->getEffect(i)) {
                 effectList.add(Number::newNumber((int)i));
-            } else {
-                break;
             }
         }
         return effectList;
