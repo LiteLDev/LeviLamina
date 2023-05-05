@@ -355,15 +355,27 @@ TInstanceHook(bool, "?setLocalPlayerAsInitialized@ServerPlayer@@QEAAXXZ", Server
 }
 
 /////////////////// PlayerLeft ///////////////////
-THook(void, "?disconnect@ServerPlayer@@QEAAXXZ", ServerPlayer* player) {
+TInstanceHook(void, "?disconnect@ServerPlayer@@QEAAXXZ", ServerPlayer) {
     IF_LISTENED(PlayerLeftEvent) {
         PlayerLeftEvent ev{};
-        ev.mPlayer = player;
-        ev.mXUID = player->getXuid();
+        ev.mPlayer = (Player*)this;
+        ev.mXUID = this->getXuid();
         ev.call();
     }
     IF_LISTENED_END(PlayerLeftEvent)
-    return original(player);
+    return original(this);
+}
+
+#include "llapi/mc/SimulatedPlayer.hpp"
+TInstanceHook(void, "?simulateDisconnect@SimulatedPlayer@@QEAAXXZ", SimulatedPlayer) {
+    IF_LISTENED(PlayerLeftEvent) {
+        PlayerLeftEvent ev{};
+        ev.mPlayer = (Player*)this;
+        ev.mXUID = this->getXuid();
+        ev.call();
+    }
+    IF_LISTENED_END(PlayerLeftEvent)
+    return original(this);
 }
 
 /////////////////// PlayerRespawn ///////////////////
