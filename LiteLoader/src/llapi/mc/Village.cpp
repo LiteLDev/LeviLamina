@@ -7,6 +7,5 @@ Dimension* Village::getDimension() {
 }
 
 int Village::getDimensionId() {
-    auto dim = (Dimension*)*((uintptr_t *)this + 2);
-    return dim->getDimensionId();
+    return getDimension()->getDimensionId();
 }
