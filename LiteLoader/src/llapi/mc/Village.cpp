@@ -2,7 +2,7 @@
 #include "llapi/mc/Dimension.hpp"
 
 Dimension* Village::getDimension() {
-    auto dim = (Dimension*)*((uintptr_t *)this + 2);
+    auto dim = &dAccess<Dimension, 2>(this);
     return dim;
 }
 
