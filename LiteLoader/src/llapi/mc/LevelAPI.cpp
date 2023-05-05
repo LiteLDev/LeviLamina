@@ -371,7 +371,7 @@ std::string Level::getCurrentLevelName() {
                 buf.pop_back();
             if (buf.back() == '\r')
                 buf.pop_back();
-            return buf.substr(4);
+            return buf.substr(11);
         }
     }
     return "";
