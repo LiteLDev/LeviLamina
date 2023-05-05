@@ -30,7 +30,13 @@ class Dimension;
 struct ActorUniqueID;
 class Packet;
 
-
+enum class FillMode {
+    Replace = 0,
+    Keep = 1,
+    Outline = 2,
+    Hollow = 3,
+    Destroy = 4
+};
 #undef BEFORE_EXTRA
 
 /**
@@ -219,6 +225,13 @@ public:
 
     LIAPI static std::string getCurrentLevelPath();
     LIAPI static int64_t createBossEvent();
+
+    LIAPI static bool fillBlock(BlockPos startpos, BlockPos endpos, int dimensionid, Block* block, FillMode mode = FillMode::Replace);
+    LIAPI static bool fillBlock(BlockPos startpos, BlockPos endpos, int dimensionid, const string& name, unsigned short tileData, FillMode mode = FillMode::Replace);
+    LIAPI static bool fillBlock(BlockPos startpos, BlockPos endpos, int dimensionid, CompoundTag* nbt, FillMode mode = FillMode::Replace);
+    LIAPI static bool fillBlock(BlockPos startpos, BlockPos endpos, int dimensionid, Block* newblock, Block* oldblock);
+    LIAPI static bool fillBlock(BlockPos startpos, BlockPos endpos, int dimensionid, const string& newname, unsigned short newtileData, const string& oldname, unsigned short oldtileData);
+    LIAPI static bool fillBlock(BlockPos startpos, BlockPos endpos, int dimensionid, CompoundTag* newnbt, CompoundTag* oldnbt);
 
 public:
     static void dummy() {

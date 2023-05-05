@@ -487,6 +487,180 @@ Local<Value> McClass::setBlock(const Arguments& args) {
     CATCH("Fail in SetBlock!")
 }
 
+Local<Value> McClass::fillBlock(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 4);
+
+    try {
+        IntVec4 startpos;
+        IntVec4 endpos;
+        Local<Value> block;
+        int fillmode = 0;
+        unsigned short tileData = 0;
+        if (args.size() == 4 || args.size() == 5) {
+            if (args.size() == 5) {
+                CHECK_ARG_TYPE(args[2], ValueKind::kString);
+                CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
+                CHECK_ARG_TYPE(args[4], ValueKind::kNumber);
+                tileData = args[3].toInt();
+                fillmode = args[4].toInt();
+            }
+            if (IsInstanceOf<IntPos>(args[0]) && IsInstanceOf<IntPos>(args[1])) {
+                // IntPos
+                IntPos* posObj1 = IntPos::extractPos(args[0]);
+                IntPos* posObj2 = IntPos::extractPos(args[1]);
+                if (posObj1->dim < 0 || posObj2->dim < 0) {
+                    return Boolean::newBoolean(false);
+                }
+                else if (posObj1->dim != posObj2->dim) {
+                    return Boolean::newBoolean(false);
+                }
+                else {
+                    startpos = *posObj1;
+                    endpos = *posObj2;
+                    block = args[2];
+                }
+            }
+            else if (IsInstanceOf<FloatPos>(args[0]) && IsInstanceOf<FloatPos>(args[1])) {
+                // FloatPos
+                FloatPos* posObj1 = FloatPos::extractPos(args[0]);
+                FloatPos* posObj2 = FloatPos::extractPos(args[1]);
+                if (posObj1->dim < 0 || posObj2->dim < 0) {
+                    return Boolean::newBoolean(false);
+                }
+                else if (posObj1->dim != posObj2->dim) {
+                    return Boolean::newBoolean(false);
+                }
+                else {
+                    startpos = posObj1->toIntVec4();
+                    endpos = posObj2->toIntVec4();
+                    block = args[2];
+                }
+            }
+            else {
+                LOG_WRONG_ARG_TYPE();
+                return Local<Value>();
+            }
+        }
+
+        if (block.isString()) {
+            // block name
+            return Boolean::newBoolean(Level::fillBlock(startpos.getBlockPos(), endpos.getBlockPos(), startpos.dim, block.toStr(), tileData, (FillMode)fillmode));
+        }
+        else if (IsInstanceOf<NbtCompoundClass>(block)) {
+            // Nbt
+            Tag* nbt = NbtCompoundClass::extract(block);
+            return Boolean::newBoolean(Level::fillBlock(startpos.getBlockPos(), endpos.getBlockPos(), startpos.dim, (CompoundTag*)nbt, (FillMode)fillmode));
+        }
+        else {
+            // other block object
+            Block* bl = BlockClass::extract(block);
+            if (!bl) {
+                LOG_WRONG_ARG_TYPE();
+                return Local<Value>();
+            }
+            return Boolean::newBoolean(Level::fillBlock(startpos.getBlockPos(), endpos.getBlockPos(), startpos.dim, bl, (FillMode)fillmode));
+        }
+    }
+    CATCH("Fail in fillBlock!")
+}
+
+Local<Value> McClass::rangeReplaceBlock(const Arguments& args) {
+    CHECK_ARGS_COUNT(args, 4);
+
+    try {
+        IntVec4 startpos;
+        IntVec4 endpos;
+        Local<Value> newblock;
+        Local<Value> oldblock;
+        unsigned short newtileData = 0;
+        unsigned short oldtileData = 0;
+        if (args.size() == 4 || args.size() == 6) {
+            if (args.size() == 6) {
+                CHECK_ARG_TYPE(args[2], ValueKind::kString);
+                CHECK_ARG_TYPE(args[3], ValueKind::kNumber);
+                CHECK_ARG_TYPE(args[4], ValueKind::kString);
+                CHECK_ARG_TYPE(args[5], ValueKind::kNumber);
+                newtileData = args[3].toInt();
+                oldtileData = args[5].toInt();
+            }
+            if (IsInstanceOf<IntPos>(args[0]) && IsInstanceOf<IntPos>(args[1])) {
+                // IntPos
+                IntPos* posObj1 = IntPos::extractPos(args[0]);
+                IntPos* posObj2 = IntPos::extractPos(args[1]);
+                if (posObj1->dim < 0 || posObj2->dim < 0) {
+                    return Boolean::newBoolean(false);
+                }
+                else if (posObj1->dim != posObj2->dim) {
+                    return Boolean::newBoolean(false);
+                }
+                else {
+                    startpos = *posObj1;
+                    endpos = *posObj2;
+                    newblock = args[2];
+                    if (args.size() == 4) {
+                        oldblock = args[3];
+                    }
+                    else {
+                        oldblock = args[4];
+                    }
+                }
+            }
+            else if (IsInstanceOf<FloatPos>(args[0]) && IsInstanceOf<FloatPos>(args[1])) {
+                // FloatPos
+                FloatPos* posObj1 = FloatPos::extractPos(args[0]);
+                FloatPos* posObj2 = FloatPos::extractPos(args[1]);
+                if (posObj1->dim < 0 || posObj2->dim < 0) {
+                    return Boolean::newBoolean(false);
+                }
+                else if (posObj1->dim != posObj2->dim) {
+                    return Boolean::newBoolean(false);
+                }
+                else {
+                    startpos = posObj1->toIntVec4();
+                    endpos = posObj2->toIntVec4();
+                    newblock = args[2];
+                    if (args.size() == 4) {
+                        oldblock = args[3];
+                    }
+                    else {
+                        oldblock = args[4];
+                    }
+                }
+            } 
+            else {
+                LOG_WRONG_ARG_TYPE();
+                return Local<Value>();
+            }
+        }
+
+        if (newblock.isString() && oldblock.isString()) {
+            // block name
+            return Boolean::newBoolean(Level::fillBlock(startpos.getBlockPos(), endpos.getBlockPos(), startpos.dim, newblock.toStr(), newtileData, oldblock.toStr(), oldtileData));
+        }
+        else if (IsInstanceOf<NbtCompoundClass>(newblock) && IsInstanceOf<NbtCompoundClass>(oldblock)) {
+            // Nbt
+            Tag* newnbt = NbtCompoundClass::extract(newblock);
+            Tag* oldnbt = NbtCompoundClass::extract(oldblock);
+            return Boolean::newBoolean(Level::fillBlock(startpos.getBlockPos(), endpos.getBlockPos(), startpos.dim, (CompoundTag*)newnbt, (CompoundTag*)oldnbt));
+        }
+        else if (IsInstanceOf<BlockClass>(newblock) && IsInstanceOf<BlockClass>(oldblock)) {
+            // other block object
+            Block* nbl = BlockClass::extract(newblock);
+            Block* obl = BlockClass::extract(oldblock);
+            if (!nbl || !obl) {
+                LOG_WRONG_ARG_TYPE();
+                return Local<Value>();
+            }
+            return Boolean::newBoolean(Level::fillBlock(startpos.getBlockPos(), endpos.getBlockPos(), startpos.dim, nbl, obl));
+        }
+        else {
+            LOG_WRONG_ARG_TYPE();
+            return Local<Value>();
+        }
+    }
+    CATCH("Fail in rangeReplaceBlock!")
+}
+
 Local<Value> McClass::spawnParticle(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 2)
 

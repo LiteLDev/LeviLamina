@@ -22,6 +22,8 @@ ClassDefine<void> McClassBuilder =
         .function("explode", &McClass::explode)
         .function("getBlock", &McClass::getBlock)
         .function("setBlock", &McClass::setBlock)
+        .function("fillBlock", &McClass::fillBlock)
+        .function("rangeReplaceBlock", &McClass::rangeReplaceBlock)
         .function("spawnParticle", &McClass::spawnParticle)
         .function("newSimpleForm", &McClass::newSimpleForm)
         .function("newCustomForm", &McClass::newCustomForm)

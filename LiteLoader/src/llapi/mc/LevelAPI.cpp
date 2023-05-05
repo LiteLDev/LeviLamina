@@ -371,7 +371,7 @@ std::string Level::getCurrentLevelName() {
                 buf.pop_back();
             if (buf.back() == '\r')
                 buf.pop_back();
-            return buf.substr(11);
+            return buf.substr(4);
         }
     }
     return "";
@@ -385,4 +385,115 @@ int64_t BossID = 7492341231332ull;
 
 int64_t Level::createBossEvent() {
     return ++BossID;
+}
+
+bool CheckFillPos(BlockPos startpos, BlockPos endpos) {
+    if (startpos.x <= endpos.x && startpos.y <= endpos.y && startpos.z <= endpos.z) {
+        return true;
+    }
+    return false;
+}
+
+bool CheckPosInRange(BlockPos pos, BlockPos startpos, BlockPos endpos) {
+    if (pos.x > startpos.x && pos.y > startpos.y && pos.z > startpos.z && pos.x < endpos.x && pos.y < endpos.y && pos.z < endpos.z) {
+        return true;
+    }
+    return false;
+}
+
+bool Level::fillBlock(BlockPos startpos, BlockPos endpos, int dimensionid, Block* block, FillMode mode) {
+    if (CheckFillPos(startpos, endpos)) {
+        int lx = endpos.x - startpos.x;
+        int ly = endpos.y - startpos.y;
+        int lz = endpos.z - startpos.z;
+        for (int i = 0; i <= lx; i++) {
+            for (int j = 0; j <= ly; j++) {
+                for (int k = 0; k <= lz; k++) {
+                    BlockPos pos = {startpos.x + i, startpos.y + j, startpos.z + k};
+                    switch (mode)
+                    {
+                    case FillMode::Hollow:
+                        if (CheckPosInRange(pos, startpos, endpos)) {
+                            setBlock(pos, dimensionid, "minecraft:air", 0);
+                        }
+                    case FillMode::Outline:
+                        if (CheckPosInRange(pos, startpos, endpos) == false) {
+                            setBlock(pos, dimensionid, block);
+                        }
+                        break;
+                    case FillMode::Destroy:
+                        getBlockInstance(pos, dimensionid).breakNaturally();
+                        setBlock(pos, dimensionid, block);
+                        break;
+                    case FillMode::Keep:
+                        if (getBlock(pos, dimensionid)->isAir()) {
+                            setBlock(pos, dimensionid, block);
+                        }
+                        break;
+                    case FillMode::Replace:
+                        setBlock(pos, dimensionid, block);
+                        break;
+                    default:
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+    return false;
+}
+
+bool Level::fillBlock(BlockPos startpos, BlockPos endpos, int dimensionid, const string& name, unsigned short tileData, FillMode mode) {
+    Block* block = Block::create(name, tileData);
+    if (block) {
+        return fillBlock(startpos, endpos, dimensionid, block, mode);
+    }
+    return false;
+}
+
+bool Level::fillBlock(BlockPos startpos, BlockPos endpos, int dimensionid, CompoundTag* nbt, FillMode mode) {
+    Block* block = Block::create(nbt);
+    if (block) {
+        return fillBlock(startpos, endpos, dimensionid, block, mode);
+    }
+    return false;
+}
+
+bool Level::fillBlock(BlockPos startpos, BlockPos endpos, int dimensionid, Block* newblock, Block* oldblock) {
+    if (CheckFillPos(startpos, endpos)) {
+        int lx = endpos.x - startpos.x;
+        int ly = endpos.y - startpos.y;
+        int lz = endpos.z - startpos.z;
+        for (int i = 0; i <= lx; i++) {
+            for (int j = 0; j <= ly; j++) {
+                for (int k = 0; k <= lz; k++) {
+                    BlockPos pos = {startpos.x + i, startpos.y + j, startpos.z + k};
+                    if (getBlock(pos, dimensionid) == oldblock) {
+                        setBlock(pos, dimensionid, newblock);
+                    }
+                }
+            }
+        }
+        return true;
+    }
+    return false;
+}
+
+bool Level::fillBlock(BlockPos startpos, BlockPos endpos, int dimensionid, const string& newname, unsigned short newtileData, const string& oldname, unsigned short oldtileData) {
+    Block* newblock = Block::create(newname, newtileData);
+    Block* oldblock = Block::create(oldname, oldtileData);
+    if (newblock && oldblock) {
+        return fillBlock(startpos, endpos, dimensionid, newblock, oldblock);
+    }
+    return false;
+}
+
+bool Level::fillBlock(BlockPos startpos, BlockPos endpos, int dimensionid, CompoundTag* newnbt, CompoundTag* oldnbt) {
+    Block* newblock = Block::create(newnbt);
+    Block* oldblock = Block::create(oldnbt);
+    if (newblock && oldblock) {
+        return fillBlock(startpos, endpos, dimensionid, newblock, oldblock);
+    }
+    return false;
 }

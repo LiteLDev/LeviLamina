@@ -30,6 +30,8 @@ public:
 
     static Local<Value> getBlock(const Arguments& args);
     static Local<Value> setBlock(const Arguments& args);
+    static Local<Value> fillBlock(const Arguments& args);
+    static Local<Value> rangeReplaceBlock(const Arguments& args);
     static Local<Value> spawnParticle(const Arguments& args);
 
     static Local<Value> newSimpleForm(const Arguments& args);
