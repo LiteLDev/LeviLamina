@@ -300,7 +300,6 @@ DECLARE_EVENT_DATA(PlayerBedEnterEvent);
 DECLARE_EVENT_DATA(ScriptPluginManagerEvent);
 DECLARE_EVENT_DATA(MobTrySpawnEvent);
 DECLARE_EVENT_DATA(MobSpawnedEvent);
-DECLARE_EVENT_DATA(RaidMobSpawnEvent);
 DECLARE_EVENT_DATA(FormResponsePacketEvent);
 DECLARE_EVENT_DATA(ResourcePackInitEvent);
 DECLARE_EVENT_DATA(PlayerOpenInventoryEvent);
@@ -354,15 +353,27 @@ TInstanceHook(bool, "?setLocalPlayerAsInitialized@ServerPlayer@@QEAAXXZ", Server
 }
 
 /////////////////// PlayerLeft ///////////////////
-THook(void, "?disconnect@ServerPlayer@@QEAAXXZ", ServerPlayer* player) {
+TInstanceHook(void, "?disconnect@ServerPlayer@@QEAAXXZ", ServerPlayer) {
     IF_LISTENED(PlayerLeftEvent) {
         PlayerLeftEvent ev{};
-        ev.mPlayer = player;
-        ev.mXUID = player->getXuid();
+        ev.mPlayer = (Player*)this;
+        ev.mXUID = this->getXuid();
         ev.call();
     }
     IF_LISTENED_END(PlayerLeftEvent)
-    return original(player);
+    return original(this);
+}
+
+#include "llapi/mc/SimulatedPlayer.hpp"
+TInstanceHook(void, "?simulateDisconnect@SimulatedPlayer@@QEAAXXZ", SimulatedPlayer) {
+    IF_LISTENED(PlayerLeftEvent) {
+        PlayerLeftEvent ev{};
+        ev.mPlayer = (Player*)this;
+        ev.mXUID = this->getXuid();
+        ev.call();
+    }
+    IF_LISTENED_END(PlayerLeftEvent)
+    return original(this);
 }
 
 /////////////////// PlayerRespawn ///////////////////
@@ -1324,30 +1335,9 @@ TInstanceHook(void*, "?die@ServerPlayer@@UEAAXAEBVActorDamageSource@@@Z", Server
 
 /////////////////// PlayerDestroy ///////////////////
 
-// TInstanceHook(bool, "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z",
-//               SurvivalMode, BlockPos a3, unsigned __int8 a4)
-//{
-//     IF_LISTENED(PlayerDestroyBlockEvent)
-//     {
-//         if (getPlayer()->isPlayer())
-//         {
-//             PlayerDestroyBlockEvent ev{};
-//             ev.mPlayer = getPlayer();
-//             auto bl = Level::getBlockInstance(a3, getPlayer()->getDimensionId());
-//             ev.mBlockInstance = bl;
-//             if (!ev.call())
-//             {
-//                 return false;
-//             }
-//         }
-//     }
-//     IF_LISTENED_END(PlayerDestroyBlockEvent)
-//     return original(this, a3, a4);
-// }
-
-TInstanceHook(bool, "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z", GameMode, BlockPos a3, unsigned __int8 a4) {
+TInstanceHook(bool, "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z", GameMode, BlockPos a3, unsigned __int8 a4) {
     auto player = getPlayer();
-    if (player != nullptr && player->isPlayer()) {
+    if (player && player->isPlayer()) {
         IF_LISTENED(PlayerDestroyBlockEvent) {
             PlayerDestroyBlockEvent ev{};
             ev.mPlayer = player;
@@ -2132,25 +2122,6 @@ TClasslessInstanceHook(void, "?_setRespawnStage@EndDragonFight@@AEAAXW4RespawnAn
         }
         IF_LISTENED_END(MobSpawnedEvent)
     }
-}
-
-#include "llapi/mc/Village.hpp"
-
-TInstanceHook(void,
-              "?_spawnRaidGroup@Village@@AEBA_NVVec3@@EAEAV?$unordered_set@UActorUniqueID@@U?$hash@UActorUniqueID@@@"
-              "std@@U?$equal_to@UActorUniqueID@@@3@V?$allocator@UActorUniqueID@@@3@@std@@@Z",
-              Village, Vec3 pos, unsigned char num, std::unordered_set<long long>& actorIDs) {
-    // actorIDs其实是std::unordered_set<ActorUniqueID>，懒得写hash函数
-    original(this, pos, num, actorIDs);
-    IF_LISTENED(RaidMobSpawnEvent) {
-        RaidMobSpawnEvent ev{};
-        ev.mVillageCenter = this->getCenter();
-        ev.mPos = pos;
-        ev.mWaveNum = num;
-        ev.mActorNum = actorIDs.size();
-        ev.call();
-    }
-    IF_LISTENED_END(RaidMobSpawnEvent)
 }
 
 #include "llapi/impl/FormPacketHelper.h"
