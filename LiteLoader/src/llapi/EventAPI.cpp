@@ -300,7 +300,6 @@ DECLARE_EVENT_DATA(PlayerBedEnterEvent);
 DECLARE_EVENT_DATA(ScriptPluginManagerEvent);
 DECLARE_EVENT_DATA(MobTrySpawnEvent);
 DECLARE_EVENT_DATA(MobSpawnedEvent);
-DECLARE_EVENT_DATA(RaidMobSpawnEvent);
 DECLARE_EVENT_DATA(FormResponsePacketEvent);
 DECLARE_EVENT_DATA(ResourcePackInitEvent);
 DECLARE_EVENT_DATA(PlayerOpenInventoryEvent);
@@ -2123,25 +2122,6 @@ TClasslessInstanceHook(void, "?_setRespawnStage@EndDragonFight@@AEAAXW4RespawnAn
         }
         IF_LISTENED_END(MobSpawnedEvent)
     }
-}
-
-#include "llapi/mc/Village.hpp"
-
-TInstanceHook(void,
-              "?_spawnRaidGroup@Village@@AEBA_NVVec3@@EAEAV?$unordered_set@UActorUniqueID@@U?$hash@UActorUniqueID@@@"
-              "std@@U?$equal_to@UActorUniqueID@@@3@V?$allocator@UActorUniqueID@@@3@@std@@@Z",
-              Village, Vec3 pos, unsigned char num, std::unordered_set<long long>& actorIDs) {
-    // actorIDs其实是std::unordered_set<ActorUniqueID>，懒得写hash函数
-    original(this, pos, num, actorIDs);
-    IF_LISTENED(RaidMobSpawnEvent) {
-        RaidMobSpawnEvent ev{};
-        ev.mVillageCenter = this->getCenter();
-        ev.mPos = pos;
-        ev.mWaveNum = num;
-        ev.mActorNum = actorIDs.size();
-        ev.call();
-    }
-    IF_LISTENED_END(RaidMobSpawnEvent)
 }
 
 #include "llapi/impl/FormPacketHelper.h"
