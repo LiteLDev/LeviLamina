@@ -463,25 +463,9 @@ TClasslessInstanceHook(void, "?sendEvent@ActorEventCoordinator@@QEAAXAEBV?$Event
     }
 }
 */
-// Fix LevelChunkPacket crash
-#include "llapi/mc/LevelChunkPacket.hpp"
-
-TInstanceHook(StreamReadResult, "?_read@LevelChunkPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
-              LevelChunkPacket, ReadOnlyBinaryStream* bs) {
-    size_t readPointer = bs->getReadPointer();
-    bs->getVarInt();
-    bs->getVarInt();
-    unsigned int varInt = bs->getUnsignedVarInt();
-    if (varInt != -2) {
-        bs->getUnsignedVarInt();
-    }
-    bool boolean = bs->getBool();
-    if (boolean) {
-        varInt = bs->getUnsignedVarInt();
-        if (varInt > 10000) {
-            return StreamReadResult::Valid;
-        }
-    }
-    bs->setReadPointer(readPointer);
-    return original(this, bs);
+// Fix horion client's crash module
+#include "llapi/mc/PlayerListPacket.hpp"
+#include "llapi/mc/ExtendedStreamReadResult.hpp"
+TInstanceHook(ExtendedStreamReadResult, "?readExtended@PlayerListPacket@@UEAA?AUExtendedStreamReadResult@@AEAVReadOnlyBinaryStream@@@Z", PlayerListPacket, ReadOnlyBinaryStream) {
+    return ExtendedStreamReadResult{ StreamReadResult::Valid, "" };
 }
