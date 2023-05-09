@@ -526,5 +526,13 @@ TInstanceHook(ExtendedStreamReadResult,
 
 TInstanceHook(StreamReadResult, "?_read@SubClientLoginPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
               SubClientLoginPacket, class ReadOnlyBinaryStream& binaryStream) {
-    return StreamReadResult::Valid;
+    size_t readPointer = binaryStream.getReadPointer();
+    unsigned int header = binaryStream.getUnsignedInt();
+    unsigned int senderSubClientId = (header >> 10) & 3;
+    unsigned int targetSubClientId = (header >> 12) & 3;
+    binaryStream.setReadPointer(readPointer);
+    if (targetSubClientId != 0 || senderSubClientId != 0) {
+        return StreamReadResult::Valid;
+    }
+    return original(this, binaryStream);
 }
