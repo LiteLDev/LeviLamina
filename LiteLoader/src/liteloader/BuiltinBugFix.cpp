@@ -130,67 +130,68 @@ TInstanceHook(size_t, "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_t
 }
 
 // Fix move view crash (ref PlayerAuthInput[MoveView])
-Player* movingViewPlayer = nullptr;
-
-TInstanceHook(void, "?moveView@Player@@UEAAXXZ", Player) {
-    movingViewPlayer = this;
-    original(this);
-    movingViewPlayer = nullptr;
-}
-
-#include "llapi/mc/ChunkViewSource.hpp"
-#include "llapi/mc/Level.hpp"
-
-inline bool Interval(int a1) {
-    if (a1 < 0x5ffffff && a1 > -0x5ffffff)
-        return true;
-    return false;
-}
-
-template <typename T>
-inline bool validPosition(T const& pos) {
-    if (isnan(static_cast<float>(pos.x)) || isnan(static_cast<float>(pos.z)))
-        return false;
-    return Interval(static_cast<int>(pos.x)) && Interval(static_cast<int>(pos.y)) && Interval(static_cast<int>(pos.z));
-}
-
-inline void fixPlayerPosition(Player* pl, bool kick = true) {
-    if (pl->isPlayer()) {
-        logger.warn << "Player(" << pl->getRealName() << ") sent invalid MoveView Packet!" << Logger::endl;
-        auto& pos = pl->getPosPrev();
-        if (validPosition(pos))
-            pl->setPos(pl->getPosition());
-        else
-            pl->setPos(Global<Level>->getDefaultSpawn().bottomCenter());
-        if (kick)
-            pl->kick("error move");
-    }
-}
-
-TInstanceHook(void, "?moveSpawnView@Player@@QEAAXAEBVVec3@@V?$AutomaticID@VDimension@@H@@@Z", Player,
-              class Vec3 const& pos, class AutomaticID<class Dimension, int> dimid) {
-    if (validPosition(pos))
-        return original(this, pos, dimid);
-    fixPlayerPosition(this, false);
-}
-
-TClasslessInstanceHook(
-    __int64,
-    "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NW4ChunkSourceViewGenerateMode@@V?$function@$$A6AXV?$buffer_span_mut"
-    "@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@PEBM@Z",
-    BlockPos a2, int a3, bool a4, enum class ChunkSourceViewGenerateMode a5, void* a6, void* a7, const float* a8) {
-    if (validPosition(a2))
-        return original(this, a2, a3, a4, a5, a6, a7, a8);
-    fixPlayerPosition(movingViewPlayer);
-    return 0;
-}
-
-TInstanceHook(void, "?move@Player@@UEAAXAEBVVec3@@@Z", Player, Vec3 pos) {
-    if (validPosition(pos))
-        return original(this, pos);
-    logger.warn << "Player(" << this->getRealName() << ") sent invalid Move Packet!" << Logger::endl;
-    this->kick("error move");
-}
+// Player* movingViewPlayer = nullptr;
+//
+// TInstanceHook(void, "?moveView@Player@@UEAAXXZ", Player) {
+//    movingViewPlayer = this;
+//    original(this);
+//    movingViewPlayer = nullptr;
+//}
+//
+// #include "llapi/mc/ChunkViewSource.hpp"
+// #include "llapi/mc/Level.hpp"
+//
+// inline bool Interval(int a1) {
+//    if (a1 < 0x5ffffff && a1 > -0x5ffffff)
+//        return true;
+//    return false;
+//}
+//
+// template <typename T>
+// inline bool validPosition(T const& pos) {
+//    if (isnan(static_cast<float>(pos.x)) || isnan(static_cast<float>(pos.z)))
+//        return false;
+//    return Interval(static_cast<int>(pos.x)) && Interval(static_cast<int>(pos.y)) &&
+//    Interval(static_cast<int>(pos.z));
+//}
+//
+// inline void fixPlayerPosition(Player* pl, bool kick = true) {
+//    if (pl->isPlayer()) {
+//        logger.warn << "Player(" << pl->getRealName() << ") sent invalid MoveView Packet!" << Logger::endl;
+//        auto& pos = pl->getPosPrev();
+//        if (validPosition(pos))
+//            pl->setPos(pl->getPosition());
+//        else
+//            pl->setPos(Global<Level>->getDefaultSpawn().bottomCenter());
+//        if (kick)
+//            pl->kick("error move");
+//    }
+//}
+//
+// TInstanceHook(void, "?moveSpawnView@Player@@QEAAXAEBVVec3@@V?$AutomaticID@VDimension@@H@@@Z", Player,
+//              class Vec3 const& pos, class AutomaticID<class Dimension, int> dimid) {
+//    if (validPosition(pos))
+//        return original(this, pos, dimid);
+//    fixPlayerPosition(this, false);
+//}
+//
+// TClasslessInstanceHook(
+//    __int64,
+//    "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NW4ChunkSourceViewGenerateMode@@V?$function@$$A6AXV?$buffer_span_mut"
+//    "@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@PEBM@Z",
+//    BlockPos a2, int a3, bool a4, enum class ChunkSourceViewGenerateMode a5, void* a6, void* a7, const float* a8) {
+//    if (validPosition(a2))
+//        return original(this, a2, a3, a4, a5, a6, a7, a8);
+//    fixPlayerPosition(movingViewPlayer);
+//    return 0;
+//}
+//
+// TInstanceHook(void, "?move@Player@@UEAAXAEBVVec3@@@Z", Player, Vec3 pos) {
+//    if (validPosition(pos))
+//        return original(this, pos);
+//    logger.warn << "Player(" << this->getRealName() << ") sent invalid Move Packet!" << Logger::endl;
+//    this->kick("error move");
+//}
 
 // Built-in packet filter
 // #include "llapi/mc/NetworkPeer.hpp"
@@ -519,20 +520,4 @@ TInstanceHook(ExtendedStreamReadResult,
               "?readExtended@PlayerListPacket@@UEAA?AUExtendedStreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
               PlayerListPacket, ReadOnlyBinaryStream) {
     return ExtendedStreamReadResult{StreamReadResult::Valid, ""};
-}
-
-// Fix SubClient exploit: Getting OP by using OP's xuid to join server
-#include "llapi/mc/SubClientLoginPacket.hpp"
-
-TInstanceHook(StreamReadResult, "?_read@SubClientLoginPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
-              SubClientLoginPacket, class ReadOnlyBinaryStream& binaryStream) {
-    size_t readPointer = binaryStream.getReadPointer();
-    unsigned int header = binaryStream.getUnsignedInt();
-    unsigned int senderSubClientId = (header >> 10) & 3;
-    unsigned int targetSubClientId = (header >> 12) & 3;
-    binaryStream.setReadPointer(readPointer);
-    if (targetSubClientId != 0 || senderSubClientId != 0) {
-        return StreamReadResult::Valid;
-    }
-    return original(this, binaryStream);
 }
