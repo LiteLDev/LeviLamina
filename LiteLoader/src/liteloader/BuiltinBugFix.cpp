@@ -138,9 +138,6 @@ TInstanceHook(size_t, "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_t
 //    movingViewPlayer = nullptr;
 //}
 //
-// #include "llapi/mc/ChunkViewSource.hpp"
-// #include "llapi/mc/Level.hpp"
-//
 // inline bool Interval(int a1) {
 //    if (a1 < 0x5ffffff && a1 > -0x5ffffff)
 //        return true;
@@ -378,6 +375,7 @@ THook(LevelChunk*, "?getChunk@BlockSource@@QEBAPEAVLevelChunk@@AEBVChunkPos@@@Z"
     return original(self, a2);
 }
 
+#include "llapi/mc/Level.hpp"
 TInstanceHook(BlockSource*, "?getDimensionBlockSourceConst@Actor@@QEBAAEBVBlockSource@@XZ", Actor) {
 
     auto bs = original(this);
@@ -443,6 +441,7 @@ TInstanceHook(void, "?tickWorld@Player@@UEAAXAEBUTick@@@Z", Player, struct Tick 
     }
 }
 
+#include "llapi/mc/ChunkViewSource.hpp"
 // fix chunk load and tick - ChunkSource load mode
 static_assert(sizeof(ChunkSource) == 0x50);      // 88
 static_assert(sizeof(ChunkViewSource) == 0x1d8); // 472
