@@ -365,6 +365,7 @@ TInstanceHook(void, "?disconnect@ServerPlayer@@QEAAXXZ", ServerPlayer) {
 }
 
 #include "llapi/mc/SimulatedPlayer.hpp"
+
 TInstanceHook(void, "?simulateDisconnect@SimulatedPlayer@@QEAAXXZ", SimulatedPlayer) {
     IF_LISTENED(PlayerLeftEvent) {
         PlayerLeftEvent ev{};
@@ -1335,21 +1336,42 @@ TInstanceHook(void*, "?die@ServerPlayer@@UEAAXAEBVActorDamageSource@@@Z", Server
 
 /////////////////// PlayerDestroy ///////////////////
 
-TInstanceHook(bool, "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z", GameMode, BlockPos a3, unsigned __int8 a4) {
-    auto player = getPlayer();
-    if (player && player->isPlayer()) {
-        IF_LISTENED(PlayerDestroyBlockEvent) {
+TInstanceHook(bool, "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z", GameMode, BlockPos blockPos,
+              unsigned __int8 uChar) {
+    IF_LISTENED(PlayerDestroyBlockEvent) {
+        auto player = getPlayer();
+        if (player && player->isPlayer()) {
+            if (player->getPlayerGameType() != GameType::Creative) {
+                PlayerDestroyBlockEvent ev{};
+                ev.mPlayer = player;
+                auto blockInstance = Level::getBlockInstance(blockPos, player->getDimensionId());
+                ev.mBlockInstance = blockInstance;
+                if (!ev.call()) {
+                    return false;
+                }
+            }
+        }
+    }
+    IF_LISTENED_END(PlayerDestroyBlockEvent)
+    return original(this, blockPos, uChar);
+}
+
+TInstanceHook(bool, "?_creativeDestroyBlock@GameMode@@AEAA_NAEBVBlockPos@@E@Z", GameMode, BlockPos blockPos,
+              unsigned __int8 uChar) {
+    IF_LISTENED(PlayerDestroyBlockEvent) {
+        auto player = getPlayer();
+        if (player && player->isPlayer()) {
             PlayerDestroyBlockEvent ev{};
             ev.mPlayer = player;
-            auto bl = Level::getBlockInstance(a3, player->getDimensionId());
-            ev.mBlockInstance = bl;
+            auto blockInstance = Level::getBlockInstance(blockPos, player->getDimensionId());
+            ev.mBlockInstance = blockInstance;
             if (!ev.call()) {
                 return false;
             }
         }
-        IF_LISTENED_END(PlayerDestroyBlockEvent)
     }
-    return original(this, a3, a4);
+    IF_LISTENED_END(PlayerDestroyBlockEvent)
+    return original(this, blockPos, uChar);
 }
 
 /////////////////// PlayerUseItemOn ///////////////////
@@ -1364,7 +1386,7 @@ TInstanceHook(InteractionResult,
         ev.mFace = side;
         ev.mClickPos = *clickPos;
         if (!ev.call())
-            return InteractionResult { InteractionResult::Fail };
+            return InteractionResult{InteractionResult::Fail};
     }
     IF_LISTENED_END(PlayerUseItemOnEvent)
     return original(this, item, blockPosPtr, side, clickPos, block);
@@ -1477,8 +1499,8 @@ THook(void, "?implInteraction@BucketableComponent@@SAXAEAVActor@@AEAVPlayer@@@Z"
     return original(actor, player);
 }
 
-TInstanceHook(InteractionResult, "?useOn@ItemStack@@QEAA?AVInteractionResult@@AEAVActor@@HHHEAEBVVec3@@@Z", ItemStack, Actor* actor,
-              int x, int y, int z, unsigned char face, Vec3 clickPos) {
+TInstanceHook(InteractionResult, "?useOn@ItemStack@@QEAA?AVInteractionResult@@AEAVActor@@HHHEAEBVVec3@@@Z", ItemStack,
+              Actor* actor, int x, int y, int z, unsigned char face, Vec3 clickPos) {
     IF_LISTENED(PlayerUseBucketEvent) {
         if (actor->getTypeName() != "minecraft:player") {
             PlayerUseBucketEvent ev{};
@@ -1489,7 +1511,7 @@ TInstanceHook(InteractionResult, "?useOn@ItemStack@@QEAA?AVInteractionResult@@AE
             ev.mTargetActor = actor;
             ev.mFace = face;
             if (!ev.call())
-                return InteractionResult { InteractionResult::Fail };
+                return InteractionResult{InteractionResult::Fail};
         }
     }
     IF_LISTENED_END(PlayerUseBucketEvent)
