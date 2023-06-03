@@ -523,12 +523,15 @@ TInstanceHook(ExtendedStreamReadResult,
 }
 
 // 修复玩家向未加载区块扔物品导致服务器崩溃
-#include "llapi/mc/ItemFrameDropItemPacket.hpp"
-#include "llapi/mc/NetEventCallback.hpp"
+#include <llapi/mc/InventoryTransactionPacket.hpp>
+#include <llapi/mc/ServerNetworkHandler.hpp>
 
-TInstanceHook(void, "?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVItemFrameDropItemPacket@@@Z",
-              NetEventCallback, NetworkIdentifier const& nid, ItemFrameDropItemPacket const& pkt) {
-    auto pl = Global<ServerNetworkHandler>->getServerPlayer(nid);
+TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryTransactionPacket@@@Z",
+              ServerNetworkHandler, NetworkIdentifier& nid, InventoryTransactionPacket& pkt) {
+    if (!pkt.isValid()) {
+        return original(this, nid, pkt);
+    }
+    auto pl = getServerPlayer(nid);
     auto& bs = *pl->getBlockSource();
     if (pl->_isChunkSourceLoaded(pl->getPosition(), bs)) {
         return original(this, nid, pkt);
