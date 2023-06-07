@@ -43,11 +43,6 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
-     */
-    virtual void __unk_vfn_7();
-    /**
      * @vftbl 11
      * @symbol __unk_vfn_11
      */
@@ -62,6 +57,11 @@ public:
      * @symbol __unk_vfn_16
      */
     virtual void __unk_vfn_16();
+    /**
+     * @vftbl 19
+     * @symbol __unk_vfn_19
+     */
+    virtual void __unk_vfn_19();
     /**
      * @vftbl 49
      * @symbol ?isHandEquipped\@SparklerItem\@\@UEBA_NXZ
@@ -123,17 +123,27 @@ public:
      */
     virtual bool inventoryTick(class ItemStack &, class Level &, class Actor &, int, bool) const;
     /**
-     * @vftbl 117
+     * @vftbl 115
+     * @symbol __unk_vfn_115
+     */
+    virtual void __unk_vfn_115();
+    /**
+     * @vftbl 116
+     * @symbol __unk_vfn_116
+     */
+    virtual void __unk_vfn_116();
+    /**
+     * @vftbl 119
      * @symbol ?setIconInfo\@SparklerItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     virtual class Item & setIconInfo(std::string const &, int);
     /**
-     * @vftbl 118
+     * @vftbl 120
      * @symbol ?getIconInfo\@SparklerItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
-     * @vftbl 122
+     * @vftbl 124
      * @symbol ?getLightEmission\@SparklerItem\@\@UEBA?AUBrightness\@\@H\@Z
      */
     virtual struct Brightness getLightEmission(int) const;

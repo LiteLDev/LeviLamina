@@ -196,6 +196,10 @@ public:
      */
     MCAPI static float getBurnDuration(class ItemStackBase const &, float);
     /**
+     * @symbol ?getItemBurnDuration\@FurnaceBlockActor\@\@SAMAEBVItem\@\@M\@Z
+     */
+    MCAPI static float getItemBurnDuration(class Item const &, float);
+    /**
      * @symbol ?getXPRewardFromSmeltingItems\@FurnaceBlockActor\@\@SAHAEBVItemStackBase\@\@H\@Z
      */
     MCAPI static int getXPRewardFromSmeltingItems(class ItemStackBase const &, int);

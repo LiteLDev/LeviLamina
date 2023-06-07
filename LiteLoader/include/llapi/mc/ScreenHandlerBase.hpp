@@ -53,14 +53,6 @@ public:
      * @symbol ?postRequest\@ScreenHandlerBase\@\@UEAAX_N\@Z
      */
     MCVAPI void postRequest(bool);
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~ScreenHandlerBase();
 #endif
-    /**
-     * @symbol ??0ScreenHandlerBase\@\@QEAA\@AEAVItemStackRequestActionHandler\@\@\@Z
-     */
-    MCAPI ScreenHandlerBase(class ItemStackRequestActionHandler &);
 
 };

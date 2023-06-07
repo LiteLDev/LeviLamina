@@ -38,9 +38,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?assemble\@BannerAddPatternRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@AEBUCraftingContext\@\@\@Z
+     * @symbol ?assemble\@BannerAddPatternRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@AEAVCraftingContext\@\@\@Z
      */
-    virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &, struct CraftingContext const &) const;
+    virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &, class CraftingContext &) const;
     /**
      * @vftbl 2
      * @symbol ?getCraftingSize\@BannerAddPatternRecipe\@\@UEBAHXZ
@@ -63,9 +63,9 @@ public:
     virtual void __unk_vfn_5();
     /**
      * @vftbl 6
-     * @symbol ?matches\@BannerAddPatternRecipe\@\@UEBA_NAEAVCraftingContainer\@\@AEAVLevel\@\@\@Z
+     * @symbol ?matches\@BannerAddPatternRecipe\@\@UEBA_NAEBVCraftingContainer\@\@AEBVCraftingContext\@\@\@Z
      */
-    virtual bool matches(class CraftingContainer &, class Level &) const;
+    virtual bool matches(class CraftingContainer const &, class CraftingContext const &) const;
     /**
      * @vftbl 7
      * @symbol ?size\@BannerAddPatternRecipe\@\@UEBAHXZ
@@ -80,9 +80,9 @@ public:
      */
     MCAPI BannerAddPatternRecipe(class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
-     * @symbol ?matchPatterns\@BannerAddPatternRecipe\@\@QEBA?BV?$NonOwnerPointer\@$$CBVBannerPattern\@\@\@Bedrock\@\@AEAVCraftingContainer\@\@\@Z
+     * @symbol ?matchPatterns\@BannerAddPatternRecipe\@\@QEBA?BV?$NonOwnerPointer\@$$CBVBannerPattern\@\@\@Bedrock\@\@AEBVCraftingContainer\@\@\@Z
      */
-    MCAPI class Bedrock::NonOwnerPointer<class BannerPattern const> const matchPatterns(class CraftingContainer &) const;
+    MCAPI class Bedrock::NonOwnerPointer<class BannerPattern const> const matchPatterns(class CraftingContainer const &) const;
     /**
      * @symbol ?ID\@BannerAddPatternRecipe\@\@2VUUID\@mce\@\@B
      */

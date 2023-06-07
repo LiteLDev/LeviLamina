@@ -23,13 +23,13 @@ struct EducationLevelSettings {
 #undef AFTER_EXTRA
 public:
     /**
-     * @symbol ??0EducationLevelSettings\@\@QEAA\@AEBU0\@\@Z
-     */
-    MCAPI EducationLevelSettings(struct EducationLevelSettings const &);
-    /**
      * @symbol ??0EducationLevelSettings\@\@QEAA\@XZ
      */
     MCAPI EducationLevelSettings();
+    /**
+     * @symbol ??0EducationLevelSettings\@\@QEAA\@AEBU0\@\@Z
+     */
+    MCAPI EducationLevelSettings(struct EducationLevelSettings const &);
     /**
      * @symbol ?getCommandOverrideFunctor\@EducationLevelSettings\@\@QEBA?AV?$function\@$$A6AXAEAUCommandFlag\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z\@std\@\@XZ
      */

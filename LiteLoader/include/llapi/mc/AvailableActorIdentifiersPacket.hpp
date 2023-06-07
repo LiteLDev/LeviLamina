@@ -51,14 +51,14 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 4
-     * @symbol ?readExtended\@AvailableActorIdentifiersPacket\@\@UEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?read\@AvailableActorIdentifiersPacket\@\@UEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult read(class ReadOnlyBinaryStream &);
     /**
      * @vftbl 7
-     * @symbol ?_read\@AvailableActorIdentifiersPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@AvailableActorIdentifiersPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AVAILABLEACTORIDENTIFIERSPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -66,12 +66,12 @@ public:
     MCVAPI ~AvailableActorIdentifiersPacket();
 #endif
     /**
-     * @symbol ??0AvailableActorIdentifiersPacket\@\@QEAA\@AEBV?$vector\@UActorInfo\@\@V?$allocator\@UActorInfo\@\@\@std\@\@\@std\@\@\@Z
-     */
-    MCAPI AvailableActorIdentifiersPacket(std::vector<struct ActorInfo> const &);
-    /**
      * @symbol ??0AvailableActorIdentifiersPacket\@\@QEAA\@XZ
      */
     MCAPI AvailableActorIdentifiersPacket();
+    /**
+     * @symbol ??0AvailableActorIdentifiersPacket\@\@QEAA\@AEBV?$vector\@UActorInfo\@\@V?$allocator\@UActorInfo\@\@\@std\@\@\@std\@\@\@Z
+     */
+    MCAPI AvailableActorIdentifiersPacket(std::vector<struct ActorInfo> const &);
 
 };

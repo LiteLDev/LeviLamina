@@ -101,12 +101,12 @@ public:
      */
     virtual void __unk_vfn_35();
     /**
-     * @vftbl 36
-     * @symbol __unk_vfn_36
+     * @vftbl 38
+     * @symbol __unk_vfn_38
      */
-    virtual void __unk_vfn_36();
+    virtual void __unk_vfn_38();
     /**
-     * @vftbl 37
+     * @vftbl 39
      * @symbol ?_getUpdatePacket\@EndGatewayBlockActor\@\@MEAA?AV?$unique_ptr\@VBlockActorDataPacket\@\@U?$default_delete\@VBlockActorDataPacket\@\@\@std\@\@\@std\@\@AEAVBlockSource\@\@\@Z
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);

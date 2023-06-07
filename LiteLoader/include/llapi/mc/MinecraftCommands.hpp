@@ -113,13 +113,13 @@ public:
      */
     MCAPI void runCommand(class HashedString const &, class CommandOrigin &, enum class CurrentCmdVersion);
     /**
-     * @symbol ?runOrDeferCommand\@MinecraftCommands\@\@QEAAXAEBVHashedString\@\@AEAVCommandOrigin\@\@W4CurrentCmdVersion\@\@\@Z
-     */
-    MCAPI void runOrDeferCommand(class HashedString const &, class CommandOrigin &, enum class CurrentCmdVersion);
-    /**
      * @symbol ?runOrDeferCommand\@MinecraftCommands\@\@QEAAXV?$not_null\@PEAVCommand\@\@\@gsl\@\@AEAVCommandOrigin\@\@W4CurrentCmdVersion\@\@\@Z
      */
     MCAPI void runOrDeferCommand(class gsl::not_null<class Command *>, class CommandOrigin &, enum class CurrentCmdVersion);
+    /**
+     * @symbol ?runOrDeferCommand\@MinecraftCommands\@\@QEAAXAEBVHashedString\@\@AEAVCommandOrigin\@\@W4CurrentCmdVersion\@\@\@Z
+     */
+    MCAPI void runOrDeferCommand(class HashedString const &, class CommandOrigin &, enum class CurrentCmdVersion);
     /**
      * @symbol ?setRegistryNetworkUpdateCallback\@MinecraftCommands\@\@QEBAXV?$function\@$$A6AXAEBVPacket\@\@\@Z\@std\@\@\@Z
      */

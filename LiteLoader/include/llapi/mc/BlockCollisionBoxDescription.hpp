@@ -41,24 +41,43 @@ public:
     virtual void initializeComponent(class EntityContext &) const;
     /**
      * @vftbl 3
-     * @symbol __unk_vfn_3
+     * @symbol ?initializeComponentFromCode\@BlockCollisionBoxDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
-    virtual void __unk_vfn_3();
+    virtual void initializeComponentFromCode(class EntityContext &) const;
     /**
      * @vftbl 4
+     * @symbol __unk_vfn_4
+     */
+    virtual void __unk_vfn_4();
+    /**
+     * @vftbl 5
      * @symbol ?isNetworkComponent\@BlockCollisionBoxDescription\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl 5
+     * @vftbl 6
      * @symbol ?buildNetworkTag\@BlockCollisionBoxDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?initializeFromNetwork\@BlockCollisionBoxDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCOLLISIONBOXDESCRIPTION
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~BlockCollisionBoxDescription();
+#endif
+    /**
+     * @symbol ??0BlockCollisionBoxDescription\@\@QEAA\@AEBVVec3\@\@0\@Z
+     */
+    MCAPI BlockCollisionBoxDescription(class Vec3 const &, class Vec3 const &);
+    /**
+     * @symbol ??0BlockCollisionBoxDescription\@\@QEAA\@_N\@Z
+     */
+    MCAPI BlockCollisionBoxDescription(bool);
     /**
      * @symbol ?NameID\@BlockCollisionBoxDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */

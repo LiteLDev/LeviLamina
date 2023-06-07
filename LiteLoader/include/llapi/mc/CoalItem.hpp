@@ -6,7 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Json.hpp"
-#include "Item.hpp"
+#include "ComponentItem.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +17,7 @@
  * @brief MC class CoalItem.
  *
  */
-class CoalItem : public Item {
+class CoalItem : public ComponentItem {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -37,11 +37,6 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
-     */
-    virtual void __unk_vfn_7();
-    /**
      * @vftbl 11
      * @symbol __unk_vfn_11
      */
@@ -56,6 +51,11 @@ public:
      * @symbol __unk_vfn_16
      */
     virtual void __unk_vfn_16();
+    /**
+     * @vftbl 19
+     * @symbol __unk_vfn_19
+     */
+    virtual void __unk_vfn_19();
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
@@ -107,7 +107,27 @@ public:
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @vftbl 128
+     * @vftbl 115
+     * @symbol __unk_vfn_115
+     */
+    virtual void __unk_vfn_115();
+    /**
+     * @vftbl 116
+     * @symbol __unk_vfn_116
+     */
+    virtual void __unk_vfn_116();
+    /**
+     * @vftbl 119
+     * @symbol ?setIconInfo\@CoalItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
+     */
+    virtual class Item & setIconInfo(std::string const &, int);
+    /**
+     * @vftbl 120
+     * @symbol ?getIconInfo\@CoalItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
+     */
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
+    /**
+     * @vftbl 130
      * @symbol ?getFurnaceXPmultiplier\@CoalItem\@\@UEBAMAEBVItemStackBase\@\@\@Z
      */
     virtual float getFurnaceXPmultiplier(class ItemStackBase const &) const;

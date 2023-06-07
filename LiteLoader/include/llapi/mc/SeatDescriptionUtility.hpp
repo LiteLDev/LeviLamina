@@ -28,13 +28,13 @@ public:
 
 public:
     /**
-     * @symbol ?getSeatDescriptionOfPassenger\@SeatDescriptionUtility\@\@SAAEBUSeatDescription\@\@AEBV?$vector\@USeatDescription\@\@V?$allocator\@USeatDescription\@\@\@std\@\@\@std\@\@HH\@Z
-     */
-    MCAPI static struct SeatDescription const & getSeatDescriptionOfPassenger(std::vector<struct SeatDescription> const &, int, int);
-    /**
      * @symbol ?getSeatDescriptionOfPassenger\@SeatDescriptionUtility\@\@SAAEBUSeatDescription\@\@AEBV?$vector\@USeatDescription\@\@V?$allocator\@USeatDescription\@\@\@std\@\@\@std\@\@AEBUVehicleComponent\@\@AEBVStrictEntityContext\@\@\@Z
      */
     MCAPI static struct SeatDescription const & getSeatDescriptionOfPassenger(std::vector<struct SeatDescription> const &, struct VehicleComponent const &, class StrictEntityContext const &);
+    /**
+     * @symbol ?getSeatDescriptionOfPassenger\@SeatDescriptionUtility\@\@SAAEBUSeatDescription\@\@AEBV?$vector\@USeatDescription\@\@V?$allocator\@USeatDescription\@\@\@std\@\@\@std\@\@HH\@Z
+     */
+    MCAPI static struct SeatDescription const & getSeatDescriptionOfPassenger(std::vector<struct SeatDescription> const &, int, int);
     /**
      * @symbol ?getSeatRidingHeightOffset\@SeatDescriptionUtility\@\@SAMMMM\@Z
      */

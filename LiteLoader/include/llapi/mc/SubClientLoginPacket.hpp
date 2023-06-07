@@ -56,9 +56,9 @@ public:
     virtual bool disallowBatching() const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@SubClientLoginPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@SubClientLoginPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0SubClientLoginPacket\@\@QEAA\@XZ
      */

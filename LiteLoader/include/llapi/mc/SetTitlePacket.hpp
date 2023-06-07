@@ -52,9 +52,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@SetTitlePacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@SetTitlePacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETTITLEPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -62,29 +62,29 @@ public:
     MCVAPI ~SetTitlePacket();
 #endif
     /**
+     * @symbol ??0SetTitlePacket\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI SetTitlePacket(class SetTitlePacket const &);
+    /**
      * @symbol ??0SetTitlePacket\@\@QEAA\@XZ
      */
     MCAPI SetTitlePacket();
-    /**
-     * @symbol ??0SetTitlePacket\@\@QEAA\@W4TitleType\@0\@\@Z
-     */
-    MCAPI SetTitlePacket(enum class SetTitlePacket::TitleType);
     /**
      * @symbol ??0SetTitlePacket\@\@QEAA\@HHH\@Z
      */
     MCAPI SetTitlePacket(int, int, int);
     /**
-     * @symbol ??0SetTitlePacket\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0SetTitlePacket\@\@QEAA\@W4TitleType\@0\@\@Z
      */
-    MCAPI SetTitlePacket(class SetTitlePacket const &);
-    /**
-     * @symbol ??0SetTitlePacket\@\@QEAA\@W4TitleType\@0\@AEBVResolvedTextObject\@\@\@Z
-     */
-    MCAPI SetTitlePacket(enum class SetTitlePacket::TitleType, class ResolvedTextObject const &);
+    MCAPI SetTitlePacket(enum class SetTitlePacket::TitleType);
     /**
      * @symbol ??0SetTitlePacket\@\@QEAA\@W4TitleType\@0\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI SetTitlePacket(enum class SetTitlePacket::TitleType, std::string const &);
+    /**
+     * @symbol ??0SetTitlePacket\@\@QEAA\@W4TitleType\@0\@AEBVResolvedTextObject\@\@\@Z
+     */
+    MCAPI SetTitlePacket(enum class SetTitlePacket::TitleType, class ResolvedTextObject const &);
     /**
      * @symbol ??4SetTitlePacket\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */

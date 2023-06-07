@@ -37,11 +37,6 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
-     */
-    virtual void __unk_vfn_7();
-    /**
      * @vftbl 11
      * @symbol __unk_vfn_11
      */
@@ -56,6 +51,11 @@ public:
      * @symbol __unk_vfn_16
      */
     virtual void __unk_vfn_16();
+    /**
+     * @vftbl 19
+     * @symbol __unk_vfn_19
+     */
+    virtual void __unk_vfn_19();
     /**
      * @vftbl 44
      * @symbol ?canDestroySpecial\@WeaponItem\@\@UEBA_NAEBVBlock\@\@\@Z
@@ -156,5 +156,15 @@ public:
      * @symbol ?hurtActor\@WeaponItem\@\@UEBAXAEAVItemStack\@\@AEAVActor\@\@AEAVMob\@\@\@Z
      */
     virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
+    /**
+     * @vftbl 115
+     * @symbol __unk_vfn_115
+     */
+    virtual void __unk_vfn_115();
+    /**
+     * @vftbl 116
+     * @symbol __unk_vfn_116
+     */
+    virtual void __unk_vfn_116();
 
 };

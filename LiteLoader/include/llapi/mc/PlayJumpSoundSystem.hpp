@@ -17,12 +17,16 @@ namespace PlayJumpSoundSystem {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?createSideBySideSystem\@PlayJumpSoundSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createPlayJumpSoundSystem\@PlayJumpSoundSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI struct TickingSystemWithInfo createSideBySideSystem();
+    MCAPI struct TickingSystemWithInfo createPlayJumpSoundSystem();
     /**
-     * @symbol ?createSystem\@PlayJumpSoundSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createPlayPowerJumpSoundSideBySideSystem\@PlayJumpSoundSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI struct TickingSystemWithInfo createSystem();
+    MCAPI struct TickingSystemWithInfo createPlayPowerJumpSoundSideBySideSystem();
+    /**
+     * @symbol ?createPlayPowerJumpSoundSystem\@PlayJumpSoundSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
+     */
+    MCAPI struct TickingSystemWithInfo createPlayPowerJumpSoundSystem();
 
 };

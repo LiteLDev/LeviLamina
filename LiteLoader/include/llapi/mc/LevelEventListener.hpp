@@ -55,10 +55,6 @@ public:
      */
     MCVAPI enum class EventResult onLevelRemovedPlayer(class Level &, class Player &);
     /**
-     * @symbol ?onLevelSaveData\@LevelEventListener\@\@UEAA?AW4EventResult\@\@AEAVLevel\@\@AEAVCompoundTag\@\@\@Z
-     */
-    MCVAPI enum class EventResult onLevelSaveData(class Level &, class CompoundTag &);
-    /**
      * @symbol ?onLevelTick\@LevelEventListener\@\@UEAA?AW4EventResult\@\@AEAVLevel\@\@\@Z
      */
     MCVAPI enum class EventResult onLevelTick(class Level &);

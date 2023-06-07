@@ -814,7 +814,7 @@ void assignBlocks() {
     mCampFire = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::CampFire, true);
     mCandle = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Candle, true);
     mCandleCake = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::CandleCake, true);
-    mCarpet = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Carpet, true);
+    //mCarpet = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Carpet, true);
     mCarrots = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Carrots, true);
     mCartographyTable = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::CartographyTable, true);
     mCarvedPumpkin = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::CarvedPumpkin, true);
@@ -878,7 +878,7 @@ void assignBlocks() {
     mConduit = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Conduit, true);
     mCopperBlock = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::CopperBlock, true);
     mCopperOre = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::CopperOre, true);
-    mCoral = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Coral, true);
+    //mCoral = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Coral, true);
     mCoralBlock = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::CoralBlock, true);
     mCoralFan = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::CoralFan, true);
     mCoralFanDead = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::CoralFanDead, true);
@@ -1070,7 +1070,7 @@ void assignBlocks() {
     mLapisOre = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::LapisOre, true);
     mLargeAmethystBud = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::LargeAmethystBud, true);
     mLava = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Lava, true);
-    mLavaCauldron = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::LavaCauldron, true);
+    //mLavaCauldron = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::LavaCauldron, true);
     mLeaves = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Leaves, true);
     mLeaves2 = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Leaves2, true);
     mLectern = &BlockTypeRegistry::getDefaultBlockState(VanillaBlockTypeIds::Lectern, true);

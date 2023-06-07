@@ -71,10 +71,10 @@ public:
      */
     virtual void __unk_vfn_35();
     /**
-     * @vftbl 36
-     * @symbol __unk_vfn_36
+     * @vftbl 38
+     * @symbol __unk_vfn_38
      */
-    virtual void __unk_vfn_36();
+    virtual void __unk_vfn_38();
     /**
      * @symbol ??0EndPortalBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */

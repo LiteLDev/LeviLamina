@@ -37,11 +37,6 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
-     */
-    virtual void __unk_vfn_7();
-    /**
      * @vftbl 10
      * @symbol ?executeEvent\@FertilizerItem\@\@UEBAXAEAVItemStackBase\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVRenderParams\@\@\@Z
      */
@@ -61,6 +56,11 @@ public:
      * @symbol __unk_vfn_16
      */
     virtual void __unk_vfn_16();
+    /**
+     * @vftbl 19
+     * @symbol __unk_vfn_19
+     */
+    virtual void __unk_vfn_19();
     /**
      * @vftbl 21
      * @symbol ?isFertilizer\@FertilizerItem\@\@UEBA_NXZ
@@ -117,7 +117,17 @@ public:
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
-     * @vftbl 132
+     * @vftbl 115
+     * @symbol __unk_vfn_115
+     */
+    virtual void __unk_vfn_115();
+    /**
+     * @vftbl 116
+     * @symbol __unk_vfn_116
+     */
+    virtual void __unk_vfn_116();
+    /**
+     * @vftbl 134
      * @symbol ?_useOn\@FertilizerItem\@\@MEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;

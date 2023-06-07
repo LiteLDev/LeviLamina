@@ -5,8 +5,8 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Core.hpp"
 #include "Bedrock.hpp"
+#include "Core.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -35,13 +35,13 @@ public:
      */
     MCAPI PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, std::string const &, bool, class PackSettings *);
     /**
-     * @symbol ??0PackInstance\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI PackInstance(class PackInstance const &);
-    /**
      * @symbol ??0PackInstance\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VResourcePack\@\@\@Bedrock\@\@\@gsl\@\@H_NPEAVPackSettings\@\@\@Z
      */
     MCAPI PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, int, bool, class PackSettings *);
+    /**
+     * @symbol ??0PackInstance\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI PackInstance(class PackInstance const &);
     /**
      * @symbol ?forEachIn\@PackInstance\@\@QEBAXAEBVPath\@Core\@\@V?$function\@$$A6AXAEBVPath\@Core\@\@\@Z\@std\@\@_N\@Z
      */

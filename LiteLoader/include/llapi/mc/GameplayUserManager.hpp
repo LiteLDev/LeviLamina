@@ -39,6 +39,14 @@ public:
      */
     MCAPI void addGameplayUser(class OwnerPtrT<struct EntityRefTraits>);
     /**
+     * @symbol ?cleanupRemovedGameplayUsers\@GameplayUserManager\@\@QEAAXXZ
+     */
+    MCAPI void cleanupRemovedGameplayUsers();
+    /**
+     * @symbol ?clearAllGameplayUserEntities\@GameplayUserManager\@\@QEAAXXZ
+     */
+    MCAPI void clearAllGameplayUserEntities();
+    /**
      * @symbol ?forEachActiveGameplayUser\@GameplayUserManager\@\@QEBAXV?$function\@$$A6A_NAEAVEntityContext\@\@\@Z\@std\@\@\@Z
      */
     MCAPI void forEachActiveGameplayUser(class std::function<bool (class EntityContext &)>) const;
@@ -47,21 +55,21 @@ public:
      */
     MCAPI void forEachActivePlayer(class std::function<bool (class Player &)>) const;
     /**
+     * @symbol ?forEachActivePlayerIncludeRemoved\@GameplayUserManager\@\@QEBAXV?$function\@$$A6A_NAEAVPlayer\@\@\@Z\@std\@\@\@Z
+     */
+    MCAPI void forEachActivePlayerIncludeRemoved(class std::function<bool (class Player &)>) const;
+    /**
      * @symbol ?getActiveGameplayUserCount\@GameplayUserManager\@\@QEBA_KXZ
      */
     MCAPI unsigned __int64 getActiveGameplayUserCount() const;
-    /**
-     * @symbol ?getActiveGameplayUsers\@GameplayUserManager\@\@QEAAAEAV?$vector\@VWeakEntityRef\@\@V?$allocator\@VWeakEntityRef\@\@\@std\@\@\@std\@\@XZ
-     */
-    MCAPI std::vector<class WeakEntityRef> & getActiveGameplayUsers();
     /**
      * @symbol ?getActiveGameplayUsers\@GameplayUserManager\@\@QEBAAEBV?$vector\@VWeakEntityRef\@\@V?$allocator\@VWeakEntityRef\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::vector<class WeakEntityRef> const & getActiveGameplayUsers() const;
     /**
-     * @symbol ?getGameplayUserEntities\@GameplayUserManager\@\@QEAAAEAV?$vector\@V?$OwnerPtrT\@UEntityRefTraits\@\@\@\@V?$allocator\@V?$OwnerPtrT\@UEntityRefTraits\@\@\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?getActivePlayerCount\@GameplayUserManager\@\@QEBA_KXZ
      */
-    MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> & getGameplayUserEntities();
+    MCAPI unsigned __int64 getActivePlayerCount() const;
     /**
      * @symbol ?getGameplayUserEntities\@GameplayUserManager\@\@QEBAAEBV?$vector\@V?$OwnerPtrT\@UEntityRefTraits\@\@\@\@V?$allocator\@V?$OwnerPtrT\@UEntityRefTraits\@\@\@\@\@std\@\@\@std\@\@XZ
      */
@@ -70,10 +78,6 @@ public:
      * @symbol ?getGameplayUserEntityCount\@GameplayUserManager\@\@QEBA_KXZ
      */
     MCAPI unsigned __int64 getGameplayUserEntityCount() const;
-    /**
-     * @symbol ?getSuspendedGameplayUsers\@GameplayUserManager\@\@QEAAAEAV?$vector\@VWeakEntityRef\@\@V?$allocator\@VWeakEntityRef\@\@\@std\@\@\@std\@\@XZ
-     */
-    MCAPI std::vector<class WeakEntityRef> & getSuspendedGameplayUsers();
     /**
      * @symbol ?initializeWithGameplayUserManagerProxy\@GameplayUserManager\@\@QEAAXV?$unique_ptr\@VGameplayUserManagerProxy\@\@U?$default_delete\@VGameplayUserManagerProxy\@\@\@std\@\@\@std\@\@\@Z
      */
@@ -91,9 +95,17 @@ public:
      */
     MCAPI void queueSuspendPlayer(class EntityContext const &);
     /**
+     * @symbol ?registerAnyGameplayUsersRemovedCallback\@GameplayUserManager\@\@QEAA?AVSubscription\@PubSub\@Bedrock\@\@V?$function\@$$A6AXXZ\@std\@\@\@Z
+     */
+    MCAPI class Bedrock::PubSub::Subscription registerAnyGameplayUsersRemovedCallback(class std::function<void (void)>);
+    /**
      * @symbol ?registerGameplayUserAddedCallback\@GameplayUserManager\@\@QEAA?AVSubscription\@PubSub\@Bedrock\@\@V?$function\@$$A6AXAEAVEntityContext\@\@\@Z\@std\@\@\@Z
      */
     MCAPI class Bedrock::PubSub::Subscription registerGameplayUserAddedCallback(class std::function<void (class EntityContext &)>);
+    /**
+     * @symbol ?registerGameplayUserRemovedCallback\@GameplayUserManager\@\@QEAA?AVSubscription\@PubSub\@Bedrock\@\@V?$function\@$$A6AXAEAVEntityContext\@\@\@Z\@std\@\@\@Z
+     */
+    MCAPI class Bedrock::PubSub::Subscription registerGameplayUserRemovedCallback(class std::function<void (class EntityContext &)>);
     /**
      * @symbol ?registerGameplayUserResumedCallback\@GameplayUserManager\@\@QEAA?AVSubscription\@PubSub\@Bedrock\@\@V?$function\@$$A6AXAEBVEntityContext\@\@\@Z\@std\@\@\@Z
      */
@@ -103,11 +115,27 @@ public:
      */
     MCAPI class Bedrock::PubSub::Subscription registerGameplayUserSuspendedCallback(class std::function<void (class EntityContext const &)>);
     /**
+     * @symbol ?registerLevelStorageManagerListener\@GameplayUserManager\@\@QEAAXAEAVLevelStorageManager\@\@\@Z
+     */
+    MCAPI void registerLevelStorageManagerListener(class LevelStorageManager &);
+    /**
+     * @symbol ?shuffleActiveUsers\@GameplayUserManager\@\@QEAAXAEAVRandom\@\@\@Z
+     */
+    MCAPI void shuffleActiveUsers(class Random &);
+    /**
+     * @symbol ?startLeaveGame\@GameplayUserManager\@\@QEAAXXZ
+     */
+    MCAPI void startLeaveGame();
+    /**
      * @symbol ?tickSuspensions\@GameplayUserManager\@\@QEAAXXZ
      */
     MCAPI void tickSuspensions();
 
 //private:
+    /**
+     * @symbol ?_forActiveEachPlayer\@GameplayUserManager\@\@AEBAXV?$function\@$$A6A_NAEAVPlayer\@\@\@Z\@std\@\@_N\@Z
+     */
+    MCAPI void _forActiveEachPlayer(class std::function<bool (class Player &)>, bool) const;
     /**
      * @symbol ?_getGameplayUserManagerProxy\@GameplayUserManager\@\@AEAAAEAVGameplayUserManagerProxy\@\@XZ
      */
@@ -116,6 +144,10 @@ public:
      * @symbol ?_getNewPlayerId\@GameplayUserManager\@\@AEBAHXZ
      */
     MCAPI int _getNewPlayerId() const;
+    /**
+     * @symbol ?_saveAllPlayers\@GameplayUserManager\@\@AEAAXAEAVLevelStorage\@\@\@Z
+     */
+    MCAPI void _saveAllPlayers(class LevelStorage &);
 
 private:
 

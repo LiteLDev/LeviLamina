@@ -10,38 +10,15 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC class LiquidSplashRequestSystem.
- *
- */
-class LiquidSplashRequestSystem {
+
+namespace LiquidSplashRequestSystem {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LIQUIDSPLASHREQUESTSYSTEM
-public:
-    class LiquidSplashRequestSystem& operator=(class LiquidSplashRequestSystem const &) = delete;
-    LiquidSplashRequestSystem(class LiquidSplashRequestSystem const &) = delete;
-    LiquidSplashRequestSystem() = delete;
-#endif
-
-public:
     /**
-     * @symbol ?createSystem\@LiquidSplashRequestSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@LiquidSplashRequestSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
-
-//private:
-    /**
-     * @symbol ?_liquidSplashRequest\@LiquidSplashRequestSystem\@\@CAXAEAVStrictEntityContext\@\@AEBUUpdateWaterStateRequestComponent\@\@V?$Optional\@$$CBUPlayerGameTypeComponent\@\@\@\@V?$Optional\@$$CBV?$FlagComponent\@UInLavaFlag\@\@\@\@\@\@V?$Optional\@$$CBV?$FlagComponent\@UInWaterFlag\@\@\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UPostSplashGameEventRequestFlag\@\@\@\@V?$FlagComponent\@UWaterSplashEffectRequestFlag\@\@\@\@\@\@\@Z
-     */
-    MCAPI static void _liquidSplashRequest(class StrictEntityContext &, struct UpdateWaterStateRequestComponent const &, class Optional<struct PlayerGameTypeComponent const>, class Optional<class FlagComponent<struct InLavaFlag> const>, class Optional<class FlagComponent<struct InWaterFlag> const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct PostSplashGameEventRequestFlag>, class FlagComponent<struct WaterSplashEffectRequestFlag>>);
-    /**
-     * @symbol ?_tick\@LiquidSplashRequestSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Exclude\@UPassengerComponent\@\@\@\@$$CBUUpdateWaterStateRequestComponent\@\@V?$Optional\@$$CBUPlayerGameTypeComponent\@\@\@\@V?$Optional\@$$CBV?$FlagComponent\@UInLavaFlag\@\@\@\@\@\@V?$Optional\@$$CBV?$FlagComponent\@UInWaterFlag\@\@\@\@\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UPostSplashGameEventRequestFlag\@\@\@\@V?$FlagComponent\@UWaterSplashEffectRequestFlag\@\@\@\@\@\@\@Z
-     */
-    MCAPI static void _tick(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Exclude<struct PassengerComponent>, struct UpdateWaterStateRequestComponent const, class Optional<struct PlayerGameTypeComponent const>, class Optional<class FlagComponent<struct InLavaFlag> const>, class Optional<class FlagComponent<struct InWaterFlag> const>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct PostSplashGameEventRequestFlag>, class FlagComponent<struct WaterSplashEffectRequestFlag>>);
-
-private:
+    MCAPI struct TickingSystemWithInfo createSystem();
 
 };

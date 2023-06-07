@@ -26,7 +26,6 @@ class NetworkSettingsPacket : public Packet {
 public:
     class NetworkSettingsPacket& operator=(class NetworkSettingsPacket const &) = delete;
     NetworkSettingsPacket(class NetworkSettingsPacket const &) = delete;
-    NetworkSettingsPacket() = delete;
 #endif
 
 public:
@@ -52,14 +51,22 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@NetworkSettingsPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@NetworkSettingsPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKSETTINGSPACKET
     /**
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~NetworkSettingsPacket();
 #endif
+    /**
+     * @symbol ??0NetworkSettingsPacket\@\@QEAA\@AEBUNetworkSettingOptions\@\@\@Z
+     */
+    MCAPI NetworkSettingsPacket(struct NetworkSettingOptions const &);
+    /**
+     * @symbol ??0NetworkSettingsPacket\@\@QEAA\@XZ
+     */
+    MCAPI NetworkSettingsPacket();
 
 };

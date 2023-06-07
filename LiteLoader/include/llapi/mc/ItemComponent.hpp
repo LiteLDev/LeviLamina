@@ -41,9 +41,9 @@ public:
     virtual void __unk_vfn_1();
     /**
      * @vftbl 2
-     * @symbol ?writeSettings\@ItemComponent\@\@UEAAXXZ
+     * @symbol __unk_vfn_2
      */
-    virtual void writeSettings();
+    virtual void __unk_vfn_2();
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
@@ -51,19 +51,26 @@ public:
     virtual void __unk_vfn_3();
     /**
      * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4();
-    /**
-     * @vftbl 5
      * @symbol ?buildNetworkTag\@ItemComponent\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMCOMPONENT
     /**
+     * @symbol ?_canUseOn\@ItemComponent\@\@MEBA_NAEBVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@E\@Z
+     */
+    MCVAPI bool _canUseOn(class ItemStack const &, class Actor &, class BlockPos const &, unsigned char) const;
+    /**
+     * @symbol ?_useOn\@ItemComponent\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
+     */
+    MCVAPI bool _useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
+    /**
      * @symbol ?checkComponentDataForContentErrors\@ItemComponent\@\@UEBA_NXZ
      */
     MCVAPI bool checkComponentDataForContentErrors() const;
+    /**
+     * @symbol ?handleVersionBasedInitialization\@ItemComponent\@\@UEAAXAEBVSemVersion\@\@\@Z
+     */
+    MCVAPI void handleVersionBasedInitialization(class SemVersion const &);
     /**
      * @symbol ?initializeFromNetwork\@ItemComponent\@\@UEAA_NAEBVCompoundTag\@\@\@Z
      */
@@ -73,9 +80,9 @@ public:
      */
     MCVAPI bool isNetworkComponent() const;
     /**
-     * @symbol ?useOn\@ItemComponent\@\@UEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
+     * @symbol ?writeSettings\@ItemComponent\@\@UEAAXXZ
      */
-    MCVAPI bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
+    MCVAPI void writeSettings();
     /**
      * @symbol __unk_destructor_-1
      */
@@ -85,6 +92,10 @@ public:
      * @symbol ??0ItemComponent\@\@QEAA\@PEAVComponentItem\@\@\@Z
      */
     MCAPI ItemComponent(class ComponentItem *);
+    /**
+     * @symbol ?useOn\@ItemComponent\@\@QEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
+     */
+    MCAPI bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
     /**
      * @symbol ?bindItemComponentType\@ItemComponent\@\@SAXXZ
      */

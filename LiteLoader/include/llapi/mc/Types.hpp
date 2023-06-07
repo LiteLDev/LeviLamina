@@ -83,7 +83,12 @@ public:
 
 // static_assert(std::is_pod_v<ActorRuntimeID>);
 
-// namespace Core {
+
+namespace BlockTrait {
+class IGetPlacementBlockCallback;
+class ITrait;
+};
+    // namespace Core {
 //
 // class PathPart {
 // public:
@@ -163,6 +168,7 @@ public:
 struct ISurfaceBuilder {
     struct BuildParameters;
 };
+
 
 struct FeatureLoading {
     template <typename T>
@@ -314,6 +320,15 @@ class buffer_span;
 
 template <typename T>
 class buffer_span_mut;
+
+template <typename T, typename T2, typename T3, typename T4>
+class ViewT;
+
+template <typename T>
+class Optional;
+
+template <typename T>
+class Include;
 
 template <typename T>
 class optional_ref {

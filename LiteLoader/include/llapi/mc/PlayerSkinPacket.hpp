@@ -51,14 +51,14 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 4
-     * @symbol ?readExtended\@PlayerSkinPacket\@\@UEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?read\@PlayerSkinPacket\@\@UEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult read(class ReadOnlyBinaryStream &);
     /**
      * @vftbl 7
-     * @symbol ?_read\@PlayerSkinPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@PlayerSkinPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERSKINPACKET
     /**
      * @symbol __unk_destructor_-1

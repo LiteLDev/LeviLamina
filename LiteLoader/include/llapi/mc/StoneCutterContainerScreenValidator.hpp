@@ -53,4 +53,12 @@ public:
      */
     MCAPI StoneCutterContainerScreenValidator();
 
+//private:
+    /**
+     * @symbol ?_recipeMatches\@StoneCutterContainerScreenValidator\@\@AEBA_NAEBVContainerScreenContext\@\@AEBV?$TypedServerNetId\@URecipeNetIdTag\@\@I$0A\@\@\@AEBVItemStack\@\@\@Z
+     */
+    MCAPI bool _recipeMatches(class ContainerScreenContext const &, class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &, class ItemStack const &) const;
+
+private:
+
 };

@@ -46,9 +46,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@OpenSignPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@OpenSignPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OPENSIGNPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -56,12 +56,12 @@ public:
     MCVAPI ~OpenSignPacket();
 #endif
     /**
-     * @symbol ??0OpenSignPacket\@\@QEAA\@AEBVBlockPos\@\@_N\@Z
-     */
-    MCAPI OpenSignPacket(class BlockPos const &, bool);
-    /**
      * @symbol ??0OpenSignPacket\@\@QEAA\@XZ
      */
     MCAPI OpenSignPacket();
+    /**
+     * @symbol ??0OpenSignPacket\@\@QEAA\@AEBVBlockPos\@\@_N\@Z
+     */
+    MCAPI OpenSignPacket(class BlockPos const &, bool);
 
 };

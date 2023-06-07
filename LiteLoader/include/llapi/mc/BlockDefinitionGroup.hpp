@@ -111,9 +111,9 @@ public:
      */
     MCAPI void _initializeComponentPostProcessors();
     /**
-     * @symbol ?_loadBlockDescription\@BlockDefinitionGroup\@\@AEAA_NAEBVValue\@Json\@\@AEAUBlockDescription\@\@\@Z
+     * @symbol ?_loadBlockDescription\@BlockDefinitionGroup\@\@AEAA_NAEBVValue\@Json\@\@AEAUBlockDescription\@\@AEBVSemVersion\@\@AEBVExperiments\@\@\@Z
      */
-    MCAPI bool _loadBlockDescription(class Json::Value const &, struct BlockDescription &);
+    MCAPI bool _loadBlockDescription(class Json::Value const &, struct BlockDescription &, class SemVersion const &, class Experiments const &);
     /**
      * @symbol ?_loadComponents\@BlockDefinitionGroup\@\@AEAA_NAEBVValue\@Json\@\@AEAUBlockDefinition\@\@AEBVExperiments\@\@\@Z
      */

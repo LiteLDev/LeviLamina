@@ -20,12 +20,24 @@ namespace PlayerGameTypeUtility {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?isCreative\@PlayerGameTypeUtility\@\@YA_NAEBUPlayerGameTypeComponent\@\@\@Z
+     * @symbol ?isAdventure\@PlayerGameTypeUtility\@\@YA_NW4GameType\@\@0\@Z
      */
-    MCAPI bool isCreative(struct PlayerGameTypeComponent const &);
+    MCAPI bool isAdventure(enum class GameType, enum class GameType);
     /**
-     * @symbol ?isSpectator\@PlayerGameTypeUtility\@\@YA_NAEBUPlayerGameTypeComponent\@\@\@Z
+     * @symbol ?isCreative\@PlayerGameTypeUtility\@\@YA_NW4GameType\@\@0\@Z
      */
-    MCAPI bool isSpectator(struct PlayerGameTypeComponent const &);
+    MCAPI bool isCreative(enum class GameType, enum class GameType);
+    /**
+     * @symbol ?isSpectator\@PlayerGameTypeUtility\@\@YA_NW4GameType\@\@0\@Z
+     */
+    MCAPI bool isSpectator(enum class GameType, enum class GameType);
+    /**
+     * @symbol ?isSurvival\@PlayerGameTypeUtility\@\@YA_NW4GameType\@\@0\@Z
+     */
+    MCAPI bool isSurvival(enum class GameType, enum class GameType);
+    /**
+     * @symbol ?isWorldBuilderBedrock\@PlayerGameTypeUtility\@\@YA_NAEBUAbilitiesComponent\@\@W4GameType\@\@1\@Z
+     */
+    MCAPI bool isWorldBuilderBedrock(struct AbilitiesComponent const &, enum class GameType, enum class GameType);
 
 };

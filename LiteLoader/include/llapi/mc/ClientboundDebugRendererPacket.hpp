@@ -51,9 +51,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@ClientboundDebugRendererPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@ClientboundDebugRendererPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIENTBOUNDDEBUGRENDERERPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -65,12 +65,12 @@ public:
      */
     MCAPI ClientboundDebugRendererPacket(std::string, class mce::Color const &, class Vec3 const &, class std::chrono::duration<__int64, struct std::ratio<1, 1000>>);
     /**
-     * @symbol ??0ClientboundDebugRendererPacket\@\@QEAA\@XZ
-     */
-    MCAPI ClientboundDebugRendererPacket();
-    /**
      * @symbol ??0ClientboundDebugRendererPacket\@\@QEAA\@W4Type\@0\@\@Z
      */
     MCAPI ClientboundDebugRendererPacket(enum class ClientboundDebugRendererPacket::Type);
+    /**
+     * @symbol ??0ClientboundDebugRendererPacket\@\@QEAA\@XZ
+     */
+    MCAPI ClientboundDebugRendererPacket();
 
 };

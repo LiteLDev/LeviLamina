@@ -89,19 +89,19 @@ public:
     virtual class Material const & getMaterial(int, int, int) const;
     /**
      * @vftbl 12
-     * @symbol __unk_vfn_12
+     * @symbol ?hasChunksAt\@SideBySideConstBlockSource\@\@UEBA_NAEBUBounds\@\@_N\@Z
      */
-    virtual void __unk_vfn_12();
+    virtual bool hasChunksAt(struct Bounds const &, bool) const;
     /**
      * @vftbl 13
-     * @symbol __unk_vfn_13
+     * @symbol ?hasChunksAt\@SideBySideConstBlockSource\@\@UEBA_NAEBVBlockPos\@\@H_N\@Z
      */
-    virtual void __unk_vfn_13();
+    virtual bool hasChunksAt(class BlockPos const &, int, bool) const;
     /**
      * @vftbl 14
-     * @symbol __unk_vfn_14
+     * @symbol ?hasChunksAt\@SideBySideConstBlockSource\@\@UEBA_NAEBVAABB\@\@_N\@Z
      */
-    virtual void __unk_vfn_14();
+    virtual bool hasChunksAt(class AABB const &, bool) const;
     /**
      * @vftbl 15
      * @symbol ?getDimensionId\@SideBySideConstBlockSource\@\@UEBA?AV?$AutomaticID\@VDimension\@\@H\@\@XZ
@@ -127,20 +127,6 @@ public:
      * @symbol ?getBrightness\@SideBySideConstBlockSource\@\@UEBAMAEBVBlockPos\@\@\@Z
      */
     virtual float getBrightness(class BlockPos const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIDEBYSIDECONSTBLOCKSOURCE
-    /**
-     * @symbol ?hasChunksAt\@SideBySideConstBlockSource\@\@UEBA_NAEBUBounds\@\@_N\@Z
-     */
-    MCVAPI bool hasChunksAt(struct Bounds const &, bool) const;
-    /**
-     * @symbol ?hasChunksAt\@SideBySideConstBlockSource\@\@UEBA_NAEBVAABB\@\@_N\@Z
-     */
-    MCVAPI bool hasChunksAt(class AABB const &, bool) const;
-    /**
-     * @symbol ?hasChunksAt\@SideBySideConstBlockSource\@\@UEBA_NAEBVBlockPos\@\@H_N\@Z
-     */
-    MCVAPI bool hasChunksAt(class BlockPos const &, int, bool) const;
-#endif
     /**
      * @symbol ??0SideBySideConstBlockSource\@\@QEAA\@V?$not_null\@PEBUAccessedBlockSourceBlocks\@\@\@gsl\@\@_K\@Z
      */

@@ -71,6 +71,10 @@ public:
      */
     MCAPI static unsigned char const FACINGMASK_INV[];
     /**
+     * @symbol ?FROM_STRING_MAP\@Facing\@\@2V?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@EU?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@E\@std\@\@\@2\@\@std\@\@B
+     */
+    MCAPI static class std::unordered_map<std::string, unsigned char, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, unsigned char>>> const FROM_STRING_MAP;
+    /**
      * @symbol ?NORMAL\@Facing\@\@2QBVVec3\@\@B
      */
     MCAPI static class Vec3 const NORMAL[];
@@ -90,6 +94,10 @@ public:
      * @symbol ?STEP_Z\@Facing\@\@2QBHB
      */
     MCAPI static int const STEP_Z[];
+    /**
+     * @symbol ?TO_STRING_ARR\@Facing\@\@2V?$array\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$05\@std\@\@B
+     */
+    MCAPI static class std::array<std::string, 6> const TO_STRING_ARR;
     /**
      * @symbol ?convertDirectionToFacingDirection\@Facing\@\@SAEW4Type\@Direction\@\@\@Z
      */
@@ -135,10 +143,6 @@ public:
      */
     MCAPI static class Vec3 getFaceLocation(unsigned char, float, float);
     /**
-     * @symbol ?getFaceLocationXY\@Facing\@\@SA?AVVec2\@\@EAEBVVec3\@\@\@Z
-     */
-    MCAPI static class Vec2 getFaceLocationXY(unsigned char, class Vec3 const &);
-    /**
      * @symbol ?getFacingDirection\@Facing\@\@SAEAEBVVec3\@\@0\@Z
      */
     MCAPI static unsigned char getFacingDirection(class Vec3 const &, class Vec3 const &);
@@ -167,13 +171,13 @@ public:
      */
     MCAPI static struct glm::mat<3, 3, float, 0> getRotationMatrix(unsigned char, enum class Facing::Rotation);
     /**
-     * @symbol ?getShuffledDirections\@Facing\@\@SA?AV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@AEAVRandom\@\@\@Z
-     */
-    MCAPI static std::vector<unsigned char> getShuffledDirections(class Random &);
-    /**
      * @symbol ?getShuffledDirections\@Facing\@\@SA?AV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@XZ
      */
     MCAPI static std::vector<unsigned char> getShuffledDirections();
+    /**
+     * @symbol ?getShuffledDirections\@Facing\@\@SA?AV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@AEAVRandom\@\@\@Z
+     */
+    MCAPI static std::vector<unsigned char> getShuffledDirections(class Random &);
     /**
      * @symbol ?getStepX\@Facing\@\@SAHE\@Z
      */

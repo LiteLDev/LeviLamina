@@ -30,13 +30,13 @@ public:
      */
     MCAPI ActorDefinitionModifier(struct ActorDefinitionModifier const &);
     /**
-     * @symbol ??4ActorDefinitionModifier\@\@QEAAAEAU0\@AEBU0\@\@Z
-     */
-    MCAPI struct ActorDefinitionModifier & operator=(struct ActorDefinitionModifier const &);
-    /**
      * @symbol ??4ActorDefinitionModifier\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct ActorDefinitionModifier & operator=(struct ActorDefinitionModifier &&);
+    /**
+     * @symbol ??4ActorDefinitionModifier\@\@QEAAAEAU0\@AEBU0\@\@Z
+     */
+    MCAPI struct ActorDefinitionModifier & operator=(struct ActorDefinitionModifier const &);
     /**
      * @symbol ??1ActorDefinitionModifier\@\@QEAA\@XZ
      */

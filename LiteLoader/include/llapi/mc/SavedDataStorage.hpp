@@ -29,6 +29,12 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAVEDDATASTORAGE
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~SavedDataStorage();
+#endif
     /**
      * @symbol ??0SavedDataStorage\@\@QEAA\@PEAVLevelStorage\@\@\@Z
      */

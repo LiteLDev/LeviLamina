@@ -39,10 +39,6 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORM
     /**
-     * @symbol ?_createProxyResolver\@AppPlatform\@\@EEAA?AV?$unique_ptr\@VIProxyResolver\@Http\@Bedrock\@\@U?$default_delete\@VIProxyResolver\@Http\@Bedrock\@\@\@std\@\@\@std\@\@XZ
-     */
-    MCVAPI std::unique_ptr<class Bedrock::Http::IProxyResolver> _createProxyResolver();
-    /**
      * @symbol ?_disableCPUBoost\@AppPlatform\@\@MEAAXXZ
      */
     MCVAPI void _disableCPUBoost();
@@ -135,13 +131,13 @@ public:
      */
     MCVAPI class std::shared_ptr<class Core::FileStorageArea> createLoggingStorageArea(enum class Core::FileAccessType, class Core::Path const &);
     /**
-     * @symbol ?createUserInput\@AppPlatform\@\@UEAAXH\@Z
-     */
-    MCVAPI void createUserInput(int);
-    /**
      * @symbol ?createUserInput\@AppPlatform\@\@UEAAXXZ
      */
     MCVAPI void createUserInput();
+    /**
+     * @symbol ?createUserInput\@AppPlatform\@\@UEAAXH\@Z
+     */
+    MCVAPI void createUserInput(int);
     /**
      * @symbol ?createWebview\@AppPlatform\@\@UEBA?AV?$shared_ptr\@VWebviewInterface\@\@\@std\@\@$$QEAVPlatformArguments\@Webview\@\@\@Z
      */
@@ -206,6 +202,10 @@ public:
      * @symbol ?getDefaultNetworkMaxPlayers\@AppPlatform\@\@UEBAHXZ
      */
     MCVAPI int getDefaultNetworkMaxPlayers() const;
+    /**
+     * @symbol ?getDefaultSafeZoneScaleAll\@AppPlatform\@\@UEBAMXZ
+     */
+    MCVAPI float getDefaultSafeZoneScaleAll() const;
     /**
      * @symbol ?getDefaultSafeZoneScaleX\@AppPlatform\@\@UEBAMXZ
      */
@@ -274,6 +274,10 @@ public:
      * @symbol ?getInternalPackStoragePath\@AppPlatform\@\@UEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
     MCVAPI class Core::PathBuffer<std::string> getInternalPackStoragePath() const;
+    /**
+     * @symbol ?getIsRunningInAppCenter\@AppPlatform\@\@UEBA_NXZ
+     */
+    MCVAPI bool getIsRunningInAppCenter() const;
     /**
      * @symbol ?getLevelInfoCachePath\@AppPlatform\@\@UEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
@@ -483,6 +487,10 @@ public:
      */
     MCVAPI bool hasJournalingFilesystem() const;
     /**
+     * @symbol ?hasMulticastReceivePermission\@AppPlatform\@\@UEBA_NXZ
+     */
+    MCVAPI bool hasMulticastReceivePermission() const;
+    /**
      * @symbol ?hasPlatformSpecificInvites\@AppPlatform\@\@UEBA_NXZ
      */
     MCVAPI bool hasPlatformSpecificInvites() const;
@@ -510,6 +518,10 @@ public:
      * @symbol ?initializeGameStreaming\@AppPlatform\@\@UEAAXXZ
      */
     MCVAPI void initializeGameStreaming();
+    /**
+     * @symbol ?initializeMulticast\@AppPlatform\@\@UEBAXXZ
+     */
+    MCVAPI void initializeMulticast() const;
     /**
      * @symbol ?initializeScreenDependentResources\@AppPlatform\@\@UEAAXXZ
      */
@@ -659,6 +671,10 @@ public:
      */
     MCVAPI void notifyNetworkConfigurationChanged();
     /**
+     * @symbol ?onMinecraftGameInitComplete\@AppPlatform\@\@UEAAXXZ
+     */
+    MCVAPI void onMinecraftGameInitComplete();
+    /**
      * @symbol ?onPrimaryUserNetworkReady\@AppPlatform\@\@UEAAXXZ
      */
     MCVAPI void onPrimaryUserNetworkReady();
@@ -679,6 +695,10 @@ public:
      */
     MCVAPI void registerFileForCollectionWithCrashDump(class Core::Path const &);
     /**
+     * @symbol ?releaseMulticastReceivePermission\@AppPlatform\@\@UEBAXXZ
+     */
+    MCVAPI void releaseMulticastReceivePermission() const;
+    /**
      * @symbol ?reloadRenderResourcesOnResume\@AppPlatform\@\@UEBA_NXZ
      */
     MCVAPI bool reloadRenderResourcesOnResume() const;
@@ -686,6 +706,10 @@ public:
      * @symbol ?removeListener\@AppPlatform\@\@UEAAXPEAVAppPlatformListener\@\@\@Z
      */
     MCVAPI void removeListener(class AppPlatformListener *);
+    /**
+     * @symbol ?requestMulticastReceivePermission\@AppPlatform\@\@UEAAXXZ
+     */
+    MCVAPI void requestMulticastReceivePermission();
     /**
      * @symbol ?requireControllerAtStartup\@AppPlatform\@\@UEBA_NXZ
      */
@@ -919,10 +943,6 @@ public:
      * @symbol ?getPlatformRuntimeInformation\@AppPlatform\@\@QEBAAEBV?$unique_ptr\@UPlatformRuntimeInfo\@Bedrock\@\@U?$default_delete\@UPlatformRuntimeInfo\@Bedrock\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::unique_ptr<struct Bedrock::PlatformRuntimeInfo> const & getPlatformRuntimeInformation() const;
-    /**
-     * @symbol ?getProxyResolver\@AppPlatform\@\@QEAA?AV?$not_null\@V?$NonOwnerPointer\@VIProxyResolver\@Http\@Bedrock\@\@\@Bedrock\@\@\@gsl\@\@XZ
-     */
-    MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class Bedrock::Http::IProxyResolver>> getProxyResolver();
     /**
      * @symbol ?getScratchPath\@AppPlatform\@\@QEAA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */

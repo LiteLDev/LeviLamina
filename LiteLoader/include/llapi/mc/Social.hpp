@@ -22,6 +22,11 @@ namespace Social {
 class MultiplayerServiceManager;
 
 namespace Events {
+class PlayerTelemetry {
+    PlayerTelemetry() = delete;
+    PlayerTelemetry(PlayerTelemetry const&) = delete;
+    PlayerTelemetry(PlayerTelemetry const&&) = delete;
+};
 class AchievementEventing {
 public:
     AchievementEventing() = delete;

@@ -77,13 +77,13 @@ public:
     MCVAPI ~LevelContainerManagerModel();
 #endif
     /**
-     * @symbol ??0LevelContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@W4BlockActorType\@\@\@Z
-     */
-    MCAPI LevelContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &, enum class BlockActorType);
-    /**
      * @symbol ??0LevelContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@UActorUniqueID\@\@\@Z
      */
     MCAPI LevelContainerManagerModel(enum class ContainerID, class Player &, struct ActorUniqueID);
+    /**
+     * @symbol ??0LevelContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@W4BlockActorType\@\@\@Z
+     */
+    MCAPI LevelContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &, enum class BlockActorType);
     /**
      * @symbol ?getBlockPos\@LevelContainerManagerModel\@\@QEBAAEBVBlockPos\@\@XZ
      */

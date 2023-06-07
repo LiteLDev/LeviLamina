@@ -51,9 +51,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@MobEffectPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@MobEffectPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECTPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -61,12 +61,12 @@ public:
     MCVAPI ~MobEffectPacket();
 #endif
     /**
-     * @symbol ??0MobEffectPacket\@\@QEAA\@XZ
-     */
-    MCAPI MobEffectPacket();
-    /**
      * @symbol ??0MobEffectPacket\@\@QEAA\@VActorRuntimeID\@\@W4Event\@0\@HHH_N\@Z
      */
     MCAPI MobEffectPacket(class ActorRuntimeID, enum class MobEffectPacket::Event, int, int, int, bool);
+    /**
+     * @symbol ??0MobEffectPacket\@\@QEAA\@XZ
+     */
+    MCAPI MobEffectPacket();
 
 };

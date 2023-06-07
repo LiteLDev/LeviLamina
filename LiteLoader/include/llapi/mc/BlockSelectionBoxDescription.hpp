@@ -41,24 +41,43 @@ public:
     virtual void initializeComponent(class EntityContext &) const;
     /**
      * @vftbl 3
-     * @symbol __unk_vfn_3
+     * @symbol ?initializeComponentFromCode\@BlockSelectionBoxDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
-    virtual void __unk_vfn_3();
+    virtual void initializeComponentFromCode(class EntityContext &) const;
     /**
      * @vftbl 4
+     * @symbol __unk_vfn_4
+     */
+    virtual void __unk_vfn_4();
+    /**
+     * @vftbl 5
      * @symbol ?isNetworkComponent\@BlockSelectionBoxDescription\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl 5
+     * @vftbl 6
      * @symbol ?buildNetworkTag\@BlockSelectionBoxDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?initializeFromNetwork\@BlockSelectionBoxDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSELECTIONBOXDESCRIPTION
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~BlockSelectionBoxDescription();
+#endif
+    /**
+     * @symbol ??0BlockSelectionBoxDescription\@\@QEAA\@_N\@Z
+     */
+    MCAPI BlockSelectionBoxDescription(bool);
+    /**
+     * @symbol ??0BlockSelectionBoxDescription\@\@QEAA\@AEBVVec3\@\@0\@Z
+     */
+    MCAPI BlockSelectionBoxDescription(class Vec3 const &, class Vec3 const &);
     /**
      * @symbol ?NameID\@BlockSelectionBoxDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */

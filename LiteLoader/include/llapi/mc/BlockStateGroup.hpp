@@ -46,6 +46,10 @@ public:
      */
     MCAPI void registerBlockStateDefinition(struct BlockStateDefinition const &);
     /**
+     * @symbol ?registerExistingBlockState\@BlockStateGroup\@\@QEAAXAEBVBlockState\@\@\@Z
+     */
+    MCAPI void registerExistingBlockState(class BlockState const &);
+    /**
      * @symbol ?registerToBlock\@BlockStateGroup\@\@QEAAXAEAVBlockLegacy\@\@\@Z
      */
     MCAPI void registerToBlock(class BlockLegacy &);

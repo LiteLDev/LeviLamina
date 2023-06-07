@@ -22,6 +22,10 @@ namespace CerealHelpers {
 
 #undef AFTER_EXTRA
     /**
+     * @symbol ?bindBoundingBox\@CerealHelpers\@\@YAXXZ
+     */
+    MCAPI void bindBoundingBox();
+    /**
      * @symbol ?bindBrightness\@CerealHelpers\@\@YAXXZ
      */
     MCAPI void bindBrightness();
@@ -121,6 +125,10 @@ namespace CerealHelpers {
      * @symbol ?identifierStringFromString\@CerealHelpers\@\@YAXAEAUIdentifierString\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void identifierStringFromString(struct CerealHelpers::IdentifierString &, std::string const &);
+    /**
+     * @symbol ?initialize\@CerealHelpers\@\@YAXXZ
+     */
+    MCAPI void initialize();
     /**
      * @symbol ?vec2FromArray\@CerealHelpers\@\@YAXAEAVVec2\@\@V?$array\@M$01\@std\@\@\@Z
      */

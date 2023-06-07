@@ -89,13 +89,13 @@ public:
      */
     MCAPI class LayeredAbilities & operator=(class LayeredAbilities const &);
     /**
-     * @symbol ?setAbility\@LayeredAbilities\@\@QEAAXW4AbilitiesIndex\@\@_N\@Z
-     */
-    MCAPI void setAbility(enum class AbilitiesIndex, bool);
-    /**
      * @symbol ?setAbility\@LayeredAbilities\@\@QEAAXW4AbilitiesIndex\@\@M\@Z
      */
     MCAPI void setAbility(enum class AbilitiesIndex, float);
+    /**
+     * @symbol ?setAbility\@LayeredAbilities\@\@QEAAXW4AbilitiesIndex\@\@_N\@Z
+     */
+    MCAPI void setAbility(enum class AbilitiesIndex, bool);
     /**
      * @symbol ?setCommandPermissions\@LayeredAbilities\@\@QEAAXW4CommandPermissionLevel\@\@\@Z
      */

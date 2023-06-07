@@ -29,9 +29,9 @@ public:
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
     /**
-     * @symbol ?tickImmobileSystem\@ImmobileSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UMobIsImmobileFlag\@\@\@\@V?$FlagComponent\@UUsesECSMovementFlag\@\@\@\@\@\@ULocalMoveVelocityComponent\@\@UMobRotationComponent\@\@UStateVectorComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UMobIsJumpingFlag\@\@\@\@\@\@\@Z
+     * @symbol ?tickImmobileSystem\@ImmobileSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UMobIsImmobileFlag\@\@\@\@\@\@ULocalMoveVelocityComponent\@\@UMobRotationComponent\@\@UStateVectorComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UMobIsJumpingFlag\@\@\@\@\@\@\@Z
      */
-    MCAPI static void tickImmobileSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct MobIsImmobileFlag>, class FlagComponent<struct UsesECSMovementFlag>>, struct LocalMoveVelocityComponent, struct MobRotationComponent, struct StateVectorComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct MobIsJumpingFlag>>);
+    MCAPI static void tickImmobileSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct MobIsImmobileFlag>>, struct LocalMoveVelocityComponent, struct MobRotationComponent, struct StateVectorComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct MobIsJumpingFlag>>);
 
 //private:
     /**

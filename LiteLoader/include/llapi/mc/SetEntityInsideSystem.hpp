@@ -10,34 +10,23 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC class SetEntityInsideSystem.
- *
- */
-class SetEntityInsideSystem {
+
+namespace SetEntityInsideSystem {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETENTITYINSIDESYSTEM
-public:
-    class SetEntityInsideSystem& operator=(class SetEntityInsideSystem const &) = delete;
-    SetEntityInsideSystem(class SetEntityInsideSystem const &) = delete;
-    SetEntityInsideSystem() = delete;
-#endif
-
-public:
     /**
-     * @symbol ?createCleanupSystem\@SetEntityInsideSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createCleanupSystem\@SetEntityInsideSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createCleanupSystem();
+    MCAPI struct TickingSystemWithInfo createCleanupSystem();
     /**
-     * @symbol ?createSpectatorFilter\@SetEntityInsideSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSpectatorFilterSystem\@SetEntityInsideSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSpectatorFilter();
+    MCAPI struct TickingSystemWithInfo createSpectatorFilterSystem();
     /**
-     * @symbol ?createSystem\@SetEntityInsideSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@SetEntityInsideSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI struct TickingSystemWithInfo createSystem();
 
 };

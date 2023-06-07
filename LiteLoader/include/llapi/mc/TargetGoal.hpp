@@ -36,7 +36,7 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?canUse\@OwnerHurtTargetGoal\@\@UEAA_NXZ
+     * @symbol ?canUse\@OwnerHurtByTargetGoal\@\@UEAA_NXZ
      */
     virtual bool canUse() = 0;
     /**
@@ -91,13 +91,13 @@ public:
     MCVAPI ~TargetGoal();
 #endif
     /**
-     * @symbol ??0TargetGoal\@\@QEAA\@AEAVMob\@\@AEBV?$vector\@UMobDescriptor\@\@V?$allocator\@UMobDescriptor\@\@\@std\@\@\@std\@\@_NH2M2H\@Z
-     */
-    MCAPI TargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, bool, int, bool, float, bool, int);
-    /**
      * @symbol ??0TargetGoal\@\@QEAA\@AEAVMob\@\@_NH1M1H\@Z
      */
     MCAPI TargetGoal(class Mob &, bool, int, bool, float, bool, int);
+    /**
+     * @symbol ??0TargetGoal\@\@QEAA\@AEAVMob\@\@AEBV?$vector\@UMobDescriptor\@\@V?$allocator\@UMobDescriptor\@\@\@std\@\@\@std\@\@_NH2M2H\@Z
+     */
+    MCAPI TargetGoal(class Mob &, std::vector<struct MobDescriptor> const &, bool, int, bool, float, bool, int);
 
 //protected:
     /**

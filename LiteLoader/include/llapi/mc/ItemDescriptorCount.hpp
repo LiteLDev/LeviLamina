@@ -53,13 +53,13 @@ public:
      */
     MCAPI ItemDescriptorCount(class ReadOnlyBinaryStream &);
     /**
+     * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBVBlockLegacy\@\@G\@Z
+     */
+    MCAPI ItemDescriptorCount(class BlockLegacy const &, unsigned short);
+    /**
      * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI ItemDescriptorCount(class ItemDescriptorCount const &);
-    /**
-     * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBVBlock\@\@G\@Z
-     */
-    MCAPI ItemDescriptorCount(class Block const &, unsigned short);
     /**
      * @symbol ??0ItemDescriptorCount\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@HG\@Z
      */
@@ -69,6 +69,10 @@ public:
      */
     MCAPI ItemDescriptorCount(class Item const &, int, unsigned short);
     /**
+     * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBUItemTag\@\@G\@Z
+     */
+    MCAPI ItemDescriptorCount(struct ItemTag const &, unsigned short);
+    /**
      * @symbol ??0ItemDescriptorCount\@\@QEAA\@XZ
      */
     MCAPI ItemDescriptorCount();
@@ -77,13 +81,9 @@ public:
      */
     MCAPI ItemDescriptorCount(class ItemDescriptor const &, unsigned short);
     /**
-     * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBVBlockLegacy\@\@G\@Z
+     * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBVBlock\@\@G\@Z
      */
-    MCAPI ItemDescriptorCount(class BlockLegacy const &, unsigned short);
-    /**
-     * @symbol ??0ItemDescriptorCount\@\@QEAA\@AEBUItemTag\@\@G\@Z
-     */
-    MCAPI ItemDescriptorCount(struct ItemTag const &, unsigned short);
+    MCAPI ItemDescriptorCount(class Block const &, unsigned short);
     /**
      * @symbol ?getStackSize\@ItemDescriptorCount\@\@QEBAFXZ
      */

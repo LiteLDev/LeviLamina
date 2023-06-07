@@ -27,13 +27,13 @@ public:
      */
     MCAPI GoalDefinition();
     /**
-     * @symbol ??0GoalDefinition\@\@QEAA\@AEBU0\@\@Z
-     */
-    MCAPI GoalDefinition(struct GoalDefinition const &);
-    /**
      * @symbol ??0GoalDefinition\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI GoalDefinition(struct GoalDefinition &&);
+    /**
+     * @symbol ??0GoalDefinition\@\@QEAA\@AEBU0\@\@Z
+     */
+    MCAPI GoalDefinition(struct GoalDefinition const &);
     /**
      * @symbol ?_getPOITypeFromString\@GoalDefinition\@\@QEAA?AW4POIType\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */

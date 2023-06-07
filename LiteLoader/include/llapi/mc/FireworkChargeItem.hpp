@@ -39,11 +39,6 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
-     */
-    virtual void __unk_vfn_7();
-    /**
      * @vftbl 11
      * @symbol __unk_vfn_11
      */
@@ -63,6 +58,11 @@ public:
      * @symbol ?isDyeable\@FireworkChargeItem\@\@UEBA_NXZ
      */
     virtual bool isDyeable() const;
+    /**
+     * @vftbl 19
+     * @symbol __unk_vfn_19
+     */
+    virtual void __unk_vfn_19();
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
@@ -125,9 +125,19 @@ public:
     virtual void __unk_vfn_80();
     /**
      * @vftbl 115
-     * @symbol ?isSameItem\@FireworkChargeItem\@\@UEBA_NAEBVItemStackBase\@\@0\@Z
+     * @symbol __unk_vfn_115
      */
-    virtual bool isSameItem(class ItemStackBase const &, class ItemStackBase const &) const;
+    virtual void __unk_vfn_115();
+    /**
+     * @vftbl 116
+     * @symbol __unk_vfn_116
+     */
+    virtual void __unk_vfn_116();
+    /**
+     * @vftbl 117
+     * @symbol ?hasSameRelevantUserData\@FireworkChargeItem\@\@UEBA_NAEBVItemStackBase\@\@0\@Z
+     */
+    virtual bool hasSameRelevantUserData(class ItemStackBase const &, class ItemStackBase const &) const;
     /**
      * @symbol ??0FireworkChargeItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */

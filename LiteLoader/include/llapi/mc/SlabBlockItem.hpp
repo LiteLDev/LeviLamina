@@ -37,11 +37,6 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
-     */
-    virtual void __unk_vfn_7();
-    /**
      * @vftbl 11
      * @symbol __unk_vfn_11
      */
@@ -56,6 +51,11 @@ public:
      * @symbol __unk_vfn_16
      */
     virtual void __unk_vfn_16();
+    /**
+     * @vftbl 19
+     * @symbol __unk_vfn_19
+     */
+    virtual void __unk_vfn_19();
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
@@ -102,12 +102,22 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @vftbl 131
+     * @vftbl 115
+     * @symbol __unk_vfn_115
+     */
+    virtual void __unk_vfn_115();
+    /**
+     * @vftbl 116
+     * @symbol __unk_vfn_116
+     */
+    virtual void __unk_vfn_116();
+    /**
+     * @vftbl 133
      * @symbol ?_calculatePlacePos\@SlabBlockItem\@\@UEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
      */
     virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
-     * @vftbl 132
+     * @vftbl 134
      * @symbol ?_useOn\@SlabBlockItem\@\@UEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;

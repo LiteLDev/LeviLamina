@@ -32,9 +32,5 @@ namespace MobJumpSystem {
      * @symbol ?createResetNoJumpDelaySystem\@MobJumpSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI struct TickingSystemWithInfo createResetNoJumpDelaySystem();
-    /**
-     * @symbol ?createSideBySideMobJumpSystem\@MobJumpSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI struct TickingSystemWithInfo createSideBySideMobJumpSystem();
 
 };

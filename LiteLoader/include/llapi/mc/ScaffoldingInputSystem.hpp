@@ -31,5 +31,9 @@ public:
      * @symbol ?createScaffoldingInputSystem\@ScaffoldingInputSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createScaffoldingInputSystem();
+    /**
+     * @symbol ?doScaffoldingInputSystem\@ScaffoldingInputSystem\@\@SAXAEBUMoveInputComponent\@\@AEBUPlayerInputModeComponent\@\@AEAUFallDistanceComponent\@\@AEAUStateVectorComponent\@\@AEAUSynchedActorDataComponent\@\@\@Z
+     */
+    MCAPI static void doScaffoldingInputSystem(struct MoveInputComponent const &, struct PlayerInputModeComponent const &, struct FallDistanceComponent &, struct StateVectorComponent &, struct SynchedActorDataComponent &);
 
 };

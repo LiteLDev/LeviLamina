@@ -51,35 +51,35 @@ public:
      */
     virtual void setItem(int, class ItemStack const &);
     /**
-     * @vftbl 15
+     * @vftbl 16
      * @symbol ?getContainerSize\@SimpleContainer\@\@UEBAHXZ
      */
     virtual int getContainerSize() const;
     /**
-     * @vftbl 16
+     * @vftbl 17
      * @symbol ?getMaxStackSize\@SimpleContainer\@\@UEBAHXZ
      */
     virtual int getMaxStackSize() const;
     /**
-     * @vftbl 17
+     * @vftbl 18
      * @symbol ?startOpen\@SimpleContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
     virtual void startOpen(class Player &);
     /**
-     * @vftbl 18
+     * @vftbl 19
      * @symbol ?stopOpen\@SimpleContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
     virtual void stopOpen(class Player &);
-    /**
-     * @vftbl 24
-     * @symbol __unk_vfn_24
-     */
-    virtual void __unk_vfn_24();
     /**
      * @vftbl 25
      * @symbol __unk_vfn_25
      */
     virtual void __unk_vfn_25();
+    /**
+     * @vftbl 26
+     * @symbol __unk_vfn_26
+     */
+    virtual void __unk_vfn_26();
     /**
      * @symbol ??0SimpleContainer\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_NHW4ContainerType\@\@\@Z
      */

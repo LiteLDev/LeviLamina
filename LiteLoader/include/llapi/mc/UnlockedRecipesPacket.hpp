@@ -46,9 +46,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@UnlockedRecipesPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@UnlockedRecipesPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UNLOCKEDRECIPESPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -56,12 +56,12 @@ public:
     MCVAPI ~UnlockedRecipesPacket();
 #endif
     /**
-     * @symbol ??0UnlockedRecipesPacket\@\@QEAA\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@_N\@Z
-     */
-    MCAPI UnlockedRecipesPacket(std::vector<std::string> const &, bool);
-    /**
      * @symbol ??0UnlockedRecipesPacket\@\@QEAA\@XZ
      */
     MCAPI UnlockedRecipesPacket();
+    /**
+     * @symbol ??0UnlockedRecipesPacket\@\@QEAA\@V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@W4PacketType\@0\@\@Z
+     */
+    MCAPI UnlockedRecipesPacket(std::vector<std::string>, enum class UnlockedRecipesPacket::PacketType);
 
 };

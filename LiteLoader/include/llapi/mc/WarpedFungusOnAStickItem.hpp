@@ -6,7 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Json.hpp"
-#include "Item.hpp"
+#include "ComponentItem.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +17,7 @@
  * @brief MC class WarpedFungusOnAStickItem.
  *
  */
-class WarpedFungusOnAStickItem : public Item {
+class WarpedFungusOnAStickItem : public ComponentItem {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -37,11 +37,6 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
-     */
-    virtual void __unk_vfn_7();
-    /**
      * @vftbl 11
      * @symbol __unk_vfn_11
      */
@@ -56,6 +51,11 @@ public:
      * @symbol __unk_vfn_16
      */
     virtual void __unk_vfn_16();
+    /**
+     * @vftbl 19
+     * @symbol __unk_vfn_19
+     */
+    virtual void __unk_vfn_19();
     /**
      * @vftbl 49
      * @symbol ?isHandEquipped\@WarpedFungusOnAStickItem\@\@UEBA_NXZ
@@ -126,5 +126,19 @@ public:
      * @symbol ?mineBlock\@WarpedFungusOnAStickItem\@\@UEBA_NAEAVItemStack\@\@AEBVBlock\@\@HHHPEAVActor\@\@\@Z
      */
     virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
+    /**
+     * @vftbl 115
+     * @symbol __unk_vfn_115
+     */
+    virtual void __unk_vfn_115();
+    /**
+     * @vftbl 116
+     * @symbol __unk_vfn_116
+     */
+    virtual void __unk_vfn_116();
+    /**
+     * @symbol ??0WarpedFungusOnAStickItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
+     */
+    MCAPI WarpedFungusOnAStickItem(std::string const &, int);
 
 };

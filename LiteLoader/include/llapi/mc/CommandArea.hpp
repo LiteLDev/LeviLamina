@@ -32,10 +32,6 @@ public:
      */
     MCAPI class BlockSource & getDimensionBlockSource();
     /**
-     * @symbol ?getDimensionBlockSource\@CommandArea\@\@QEBAAEBVBlockSource\@\@XZ
-     */
-    MCAPI class BlockSource const & getDimensionBlockSource() const;
-    /**
      * @symbol ??1CommandArea\@\@QEAA\@XZ
      */
     MCAPI ~CommandArea();

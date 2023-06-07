@@ -42,172 +42,162 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @vftbl 41
-     * @symbol __unk_vfn_41
+     * @vftbl 40
+     * @symbol __unk_vfn_40
      */
-    virtual void __unk_vfn_41();
+    virtual void __unk_vfn_40();
     /**
-     * @vftbl 62
-     * @symbol __unk_vfn_62
+     * @vftbl 61
+     * @symbol __unk_vfn_61
      */
-    virtual void __unk_vfn_62();
+    virtual void __unk_vfn_61();
     /**
-     * @vftbl 69
-     * @symbol __unk_vfn_69
+     * @vftbl 68
+     * @symbol __unk_vfn_68
      */
-    virtual void __unk_vfn_69();
+    virtual void __unk_vfn_68();
     /**
-     * @vftbl 73
-     * @symbol ?isInLava\@LavaSlime\@\@UEBA_NAEBVIConstBlockSource\@\@\@Z
+     * @vftbl 80
+     * @symbol __unk_vfn_80
      */
-    virtual bool isInLava(class IConstBlockSource const &) const;
-    /**
-     * @vftbl 82
-     * @symbol __unk_vfn_82
-     */
-    virtual void __unk_vfn_82();
+    virtual void __unk_vfn_80();
     /**
      * @vftbl 85
-     * @symbol __unk_vfn_85
-     */
-    virtual void __unk_vfn_85();
-    /**
-     * @vftbl 87
      * @symbol ?getBrightness\@LavaSlime\@\@UEBAMMAEBVIConstBlockSource\@\@\@Z
      */
     virtual float getBrightness(float, class IConstBlockSource const &) const;
     /**
-     * @vftbl 88
-     * @symbol __unk_vfn_88
+     * @vftbl 86
+     * @symbol __unk_vfn_86
      */
-    virtual void __unk_vfn_88();
+    virtual void __unk_vfn_86();
     /**
-     * @vftbl 96
-     * @symbol __unk_vfn_96
+     * @vftbl 94
+     * @symbol __unk_vfn_94
      */
-    virtual void __unk_vfn_96();
+    virtual void __unk_vfn_94();
     /**
-     * @vftbl 99
-     * @symbol __unk_vfn_99
+     * @vftbl 97
+     * @symbol __unk_vfn_97
      */
-    virtual void __unk_vfn_99();
+    virtual void __unk_vfn_97();
     /**
-     * @vftbl 104
+     * @vftbl 102
      * @symbol ?isOnFire\@LavaSlime\@\@MEBA_NXZ
      */
     virtual bool isOnFire() const;
+    /**
+     * @vftbl 104
+     * @symbol __unk_vfn_104
+     */
+    virtual void __unk_vfn_104();
     /**
      * @vftbl 106
      * @symbol __unk_vfn_106
      */
     virtual void __unk_vfn_106();
     /**
-     * @vftbl 108
-     * @symbol __unk_vfn_108
+     * @vftbl 107
+     * @symbol __unk_vfn_107
      */
-    virtual void __unk_vfn_108();
+    virtual void __unk_vfn_107();
     /**
      * @vftbl 109
      * @symbol __unk_vfn_109
      */
     virtual void __unk_vfn_109();
     /**
-     * @vftbl 111
-     * @symbol __unk_vfn_111
+     * @vftbl 176
+     * @symbol __unk_vfn_176
      */
-    virtual void __unk_vfn_111();
+    virtual void __unk_vfn_176();
     /**
-     * @vftbl 178
-     * @symbol __unk_vfn_178
+     * @vftbl 190
+     * @symbol __unk_vfn_190
      */
-    virtual void __unk_vfn_178();
+    virtual void __unk_vfn_190();
     /**
-     * @vftbl 192
-     * @symbol __unk_vfn_192
+     * @vftbl 215
+     * @symbol __unk_vfn_215
      */
-    virtual void __unk_vfn_192();
+    virtual void __unk_vfn_215();
     /**
-     * @vftbl 217
-     * @symbol __unk_vfn_217
+     * @vftbl 216
+     * @symbol __unk_vfn_216
      */
-    virtual void __unk_vfn_217();
+    virtual void __unk_vfn_216();
     /**
-     * @vftbl 218
-     * @symbol __unk_vfn_218
+     * @vftbl 232
+     * @symbol __unk_vfn_232
      */
-    virtual void __unk_vfn_218();
+    virtual void __unk_vfn_232();
     /**
-     * @vftbl 240
-     * @symbol __unk_vfn_240
+     * @vftbl 235
+     * @symbol __unk_vfn_235
      */
-    virtual void __unk_vfn_240();
+    virtual void __unk_vfn_235();
     /**
-     * @vftbl 243
-     * @symbol __unk_vfn_243
+     * @vftbl 252
+     * @symbol __unk_vfn_252
      */
-    virtual void __unk_vfn_243();
+    virtual void __unk_vfn_252();
     /**
      * @vftbl 260
      * @symbol __unk_vfn_260
      */
     virtual void __unk_vfn_260();
     /**
-     * @vftbl 268
-     * @symbol __unk_vfn_268
+     * @vftbl 267
+     * @symbol __unk_vfn_267
      */
-    virtual void __unk_vfn_268();
+    virtual void __unk_vfn_267();
     /**
-     * @vftbl 275
-     * @symbol __unk_vfn_275
-     */
-    virtual void __unk_vfn_275();
-    /**
-     * @vftbl 293
+     * @vftbl 285
      * @symbol ?checkSpawnRules\@LavaSlime\@\@UEAA_N_N\@Z
      */
     virtual bool checkSpawnRules(bool);
     /**
-     * @vftbl 301
-     * @symbol __unk_vfn_301
+     * @vftbl 293
+     * @symbol __unk_vfn_293
      */
-    virtual void __unk_vfn_301();
+    virtual void __unk_vfn_293();
     /**
-     * @vftbl 305
-     * @symbol __unk_vfn_305
+     * @vftbl 297
+     * @symbol __unk_vfn_297
      */
-    virtual void __unk_vfn_305();
+    virtual void __unk_vfn_297();
     /**
-     * @vftbl 310
+     * @vftbl 302
      * @symbol ?getArmorValue\@LavaSlime\@\@UEBAHXZ
      */
     virtual int getArmorValue() const;
     /**
-     * @vftbl 344
+     * @vftbl 336
      * @symbol ?jumpFromGround\@LavaSlime\@\@MEAAXAEBVIConstBlockSource\@\@\@Z
      */
     virtual void jumpFromGround(class IConstBlockSource const &);
     /**
-     * @vftbl 351
-     * @symbol __unk_vfn_351
+     * @vftbl 343
+     * @symbol __unk_vfn_343
      */
-    virtual void __unk_vfn_351();
+    virtual void __unk_vfn_343();
     /**
-     * @vftbl 353
+     * @vftbl 345
      * @symbol ?isDarkEnoughToSpawn\@LavaSlime\@\@UEBA_NXZ
      */
     virtual bool isDarkEnoughToSpawn() const;
     /**
-     * @vftbl 357
+     * @vftbl 349
      * @symbol ?doPlayLandSound\@LavaSlime\@\@MEAA_NXZ
      */
     virtual bool doPlayLandSound();
     /**
-     * @vftbl 360
+     * @vftbl 352
      * @symbol ?decreaseSquish\@LavaSlime\@\@MEAAXXZ
      */
     virtual void decreaseSquish();
     /**
-     * @vftbl 361
+     * @vftbl 353
      * @symbol ?createChild\@LavaSlime\@\@MEAA?AV?$OwnerPtrT\@UEntityRefTraits\@\@\@\@H\@Z
      */
     virtual class OwnerPtrT<struct EntityRefTraits> createChild(int);

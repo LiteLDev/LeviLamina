@@ -47,6 +47,11 @@ public:
     virtual void initializeComponent(class EntityContext &) const;
     /**
      * @vftbl 3
+     * @symbol __unk_vfn_3
+     */
+    virtual void __unk_vfn_3();
+    /**
+     * @vftbl 4
      * @symbol ?buildSchema\@OnFallOnTriggerDescription\@\@UEBAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UBlockComponentGroupDescription\@\@\@JsonUtil\@\@\@std\@\@AEBVBlockComponentFactory\@\@\@Z
      */
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>> &, class BlockComponentFactory const &) const;

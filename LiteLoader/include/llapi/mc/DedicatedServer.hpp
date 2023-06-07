@@ -89,10 +89,6 @@ public:
 
 //private:
     /**
-     * @symbol ?initializeHttp\@DedicatedServer\@\@AEAAXW4Implementation\@Http\@Bedrock\@\@\@Z
-     */
-    MCAPI void initializeHttp(enum class Bedrock::Http::Implementation);
-    /**
      * @symbol ?initializeLogging\@DedicatedServer\@\@AEAAXXZ
      */
     MCAPI void initializeLogging();

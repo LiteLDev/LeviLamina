@@ -516,7 +516,7 @@ TClasslessInstanceHook(void, "?sendEvent@ActorEventCoordinator@@QEAAXAEBV?$Event
 #include "llapi/mc/ExtendedStreamReadResult.hpp"
 
 TInstanceHook(ExtendedStreamReadResult,
-              "?readExtended@PlayerListPacket@@UEAA?AUExtendedStreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
+              "?read@PlayerListPacket@@UEAA?AUExtendedStreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
               PlayerListPacket, ReadOnlyBinaryStream) {
     return ExtendedStreamReadResult{StreamReadResult::Valid, ""};
 }

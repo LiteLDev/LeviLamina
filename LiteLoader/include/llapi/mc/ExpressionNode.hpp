@@ -46,13 +46,13 @@ class ExpressionNode {
 #undef AFTER_EXTRA
 public:
     /**
-     * @symbol ??0ExpressionNode\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4MolangVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z
-     */
-    MCAPI ExpressionNode(std::string const &, enum class MolangVersion, class gsl::span<class HashedString const, -1>);
-    /**
      * @symbol ??0ExpressionNode\@\@QEAA\@XZ
      */
     MCAPI ExpressionNode();
+    /**
+     * @symbol ??0ExpressionNode\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4MolangVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z
+     */
+    MCAPI ExpressionNode(std::string const &, enum class MolangVersion, class gsl::span<class HashedString const, -1>);
     /**
      * @symbol ??0ExpressionNode\@\@QEAA\@AEBV0\@\@Z
      */
@@ -62,10 +62,6 @@ public:
      */
     MCAPI ExpressionNode(std::string const &, class SemVersion const &, class gsl::span<class HashedString const, -1>);
     /**
-     * @symbol ??0ExpressionNode\@\@QEAA\@AEBVValue\@Json\@\@W4MolangVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z
-     */
-    MCAPI ExpressionNode(class Json::Value const &, enum class MolangVersion, class gsl::span<class HashedString const, -1>);
-    /**
      * @symbol ??0ExpressionNode\@\@QEAA\@AEAUMolangScriptArg\@\@W4ExpressionOp\@\@\@Z
      */
     MCAPI ExpressionNode(struct MolangScriptArg &, enum class ExpressionOp);
@@ -74,13 +70,17 @@ public:
      */
     MCAPI ExpressionNode(class ExpressionNode &&);
     /**
-     * @symbol ??0ExpressionNode\@\@QEAA\@M\@Z
+     * @symbol ??0ExpressionNode\@\@QEAA\@AEBVValue\@Json\@\@W4MolangVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z
      */
-    MCAPI ExpressionNode(float);
+    MCAPI ExpressionNode(class Json::Value const &, enum class MolangVersion, class gsl::span<class HashedString const, -1>);
     /**
      * @symbol ??0ExpressionNode\@\@QEAA\@AEBVValue\@Json\@\@AEBVSemVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z
      */
     MCAPI ExpressionNode(class Json::Value const &, class SemVersion const &, class gsl::span<class HashedString const, -1>);
+    /**
+     * @symbol ??0ExpressionNode\@\@QEAA\@M\@Z
+     */
+    MCAPI ExpressionNode(float);
     /**
      * @symbol ?clear\@ExpressionNode\@\@QEAAXXZ
      */
@@ -129,6 +129,10 @@ public:
      * @symbol ?isInitialized\@ExpressionNode\@\@QEBA_NXZ
      */
     MCAPI bool isInitialized() const;
+    /**
+     * @symbol ?isValid\@ExpressionNode\@\@QEBA_NXZ
+     */
+    MCAPI bool isValid() const;
     /**
      * @symbol ?link\@ExpressionNode\@\@QEBA?AW4MolangCompileResult\@\@W4MolangVersion\@\@\@Z
      */
@@ -220,9 +224,9 @@ public:
      */
     MCAPI bool _hasDisallowedQueryPtrs(std::vector<class std::function<struct MolangScriptArg const & (class RenderParams &, class std::vector<class ExpressionNode, class std::allocator<class ExpressionNode>> const &)> const *> const &) const;
     /**
-     * @symbol ?_optimize\@ExpressionNode\@\@AEAA_NW4MolangVersion\@\@\@Z
+     * @symbol ?_optimize\@ExpressionNode\@\@AEAA_NW4MolangVersion\@\@AEAVRenderParams\@\@H\@Z
      */
-    MCAPI bool _optimize(enum class MolangVersion);
+    MCAPI bool _optimize(enum class MolangVersion, class RenderParams &, int);
     /**
      * @symbol ?_processBinaryExpressions\@ExpressionNode\@\@AEAA_NV?$function\@$$A6A_NW4ExpressionOp\@\@\@Z\@std\@\@\@Z
      */

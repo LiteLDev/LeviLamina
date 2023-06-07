@@ -38,6 +38,10 @@ public:
      */
     MCAPI class CompoundTagUpdaterBuilder & match(std::string const &, std::string);
     /**
+     * @symbol ?matchInteger\@CompoundTagUpdaterBuilder\@\@QEAAAEAV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_J\@Z
+     */
+    MCAPI class CompoundTagUpdaterBuilder & matchInteger(std::string const &, __int64);
+    /**
      * @symbol ?matchLiteral\@CompoundTagUpdaterBuilder\@\@QEAAAEAV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V23\@\@Z
      */
     MCAPI class CompoundTagUpdaterBuilder & matchLiteral(std::string const &, std::string);

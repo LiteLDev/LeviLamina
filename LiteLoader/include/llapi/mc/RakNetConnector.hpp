@@ -41,9 +41,9 @@ public:
      */
     MCVAPI void addConnectionStateListener(class Connector::ConnectionStateListener *);
     /**
-     * @symbol ?closeNetworkConnection\@RakNetConnector\@\@UEAAXAEAVNetworkConnection\@\@\@Z
+     * @symbol ?closeNetworkConnection\@RakNetConnector\@\@UEAAXAEBVNetworkIdentifier\@\@\@Z
      */
-    MCVAPI void closeNetworkConnection(class NetworkConnection &);
+    MCVAPI void closeNetworkConnection(class NetworkIdentifier const &);
     /**
      * @symbol ?connect\@RakNetConnector\@\@UEAA_NAEBVGameConnectionInfo\@Social\@\@0\@Z
      */
@@ -77,6 +77,10 @@ public:
      */
     MCVAPI struct Connector::NatPunchInfo getNatPunchInfo() const;
     /**
+     * @symbol ?getNetworkIdentifier\@RakNetConnector\@\@UEBA?AVNetworkIdentifier\@\@XZ
+     */
+    MCVAPI class NetworkIdentifier getNetworkIdentifier() const;
+    /**
      * @symbol ?getPeer\@RakNetConnector\@\@UEAAPEAVRakPeerInterface\@RakNet\@\@XZ
      */
     MCVAPI class RakNet::RakPeerInterface * getPeer();
@@ -93,13 +97,13 @@ public:
      */
     MCVAPI std::vector<struct RakNet::SystemAddress> getRefinedLocalIps() const;
     /**
-     * @symbol ?getTransportIdentifier\@RakNetConnector\@\@UEBA_KXZ
-     */
-    MCVAPI unsigned __int64 getTransportIdentifier() const;
-    /**
      * @symbol ?host\@RakNetConnector\@\@UEAA_NAEBUConnectionDefinition\@\@\@Z
      */
     MCVAPI bool host(struct ConnectionDefinition const &);
+    /**
+     * @symbol ?isConnected\@RakNetConnector\@\@UEBA_NAEBVNetworkIdentifier\@\@\@Z
+     */
+    MCVAPI bool isConnected(class NetworkIdentifier const &) const;
     /**
      * @symbol ?isIPv4Supported\@RakNetConnector\@\@UEBA_NXZ
      */
@@ -141,6 +145,10 @@ public:
      * @symbol ??0RakNetConnector\@\@QEAA\@AEAUConnectionCallbacks\@0\@AEAVIPSupportInterface\@RakPeerHelper\@\@AEBV?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@\@Z
      */
     MCAPI RakNetConnector(struct RakNetConnector::ConnectionCallbacks &, class RakPeerHelper::IPSupportInterface &, class Bedrock::NonOwnerPointer<class AppPlatform> const &);
+    /**
+     * @symbol ?getStatistics\@RakNetConnector\@\@QEAA_NAEAURakNetStatistics\@RakNet\@\@\@Z
+     */
+    MCAPI bool getStatistics(struct RakNet::RakNetStatistics &);
 
 //private:
     /**

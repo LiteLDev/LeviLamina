@@ -22,6 +22,10 @@ namespace ActorUtil {
 
 #undef AFTER_EXTRA
     /**
+     * @symbol ?canActorBeKilled\@ActorUtil\@\@YA?BW4CanBeKilledResult\@1\@AEBVActor\@\@_N\@Z
+     */
+    MCAPI enum class ActorUtil::CanBeKilledResult const canActorBeKilled(class Actor const &, bool);
+    /**
      * @symbol ?startFizzEffect\@ActorUtil\@\@YAXAEAVActor\@\@\@Z
      */
     MCAPI void startFizzEffect(class Actor &);

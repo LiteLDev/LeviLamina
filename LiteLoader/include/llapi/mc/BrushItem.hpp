@@ -32,11 +32,6 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
-     */
-    virtual void __unk_vfn_7();
-    /**
      * @vftbl 11
      * @symbol __unk_vfn_11
      */
@@ -52,6 +47,11 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
+     * @vftbl 19
+     * @symbol __unk_vfn_19
+     */
+    virtual void __unk_vfn_19();
+    /**
      * @vftbl 51
      * @symbol __unk_vfn_51
      */
@@ -61,6 +61,11 @@ public:
      * @symbol __unk_vfn_53
      */
     virtual void __unk_vfn_53();
+    /**
+     * @vftbl 62
+     * @symbol ?getEnchantSlot\@BrushItem\@\@UEBAHXZ
+     */
+    virtual int getEnchantSlot() const;
     /**
      * @vftbl 66
      * @symbol __unk_vfn_66
@@ -97,9 +102,48 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @vftbl 132
+     * @vftbl 89
+     * @symbol ?hurtActor\@BrushItem\@\@UEBAXAEAVItemStack\@\@AEAVActor\@\@AEAVMob\@\@\@Z
+     */
+    virtual void hurtActor(class ItemStack &, class Actor &, class Mob &) const;
+    /**
+     * @vftbl 92
+     * @symbol ?mineBlock\@BrushItem\@\@UEBA_NAEAVItemInstance\@\@AEBVBlock\@\@HHHPEAVActor\@\@\@Z
+     */
+    virtual bool mineBlock(class ItemInstance &, class Block const &, int, int, int, class Actor *) const;
+    /**
+     * @vftbl 93
+     * @symbol ?mineBlock\@BrushItem\@\@UEBA_NAEAVItemStack\@\@AEBVBlock\@\@HHHPEAVActor\@\@\@Z
+     */
+    virtual bool mineBlock(class ItemStack &, class Block const &, int, int, int, class Actor *) const;
+    /**
+     * @vftbl 115
+     * @symbol __unk_vfn_115
+     */
+    virtual void __unk_vfn_115();
+    /**
+     * @vftbl 116
+     * @symbol __unk_vfn_116
+     */
+    virtual void __unk_vfn_116();
+    /**
+     * @vftbl 134
      * @symbol ?_useOn\@BrushItem\@\@MEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BRUSHITEM
+    /**
+     * @symbol ?useInterruptedByAttacking\@BrushItem\@\@UEBA_NXZ
+     */
+    MCVAPI bool useInterruptedByAttacking() const;
+#endif
+
+//protected:
+    /**
+     * @symbol ?_spawnDustParticles\@BrushItem\@\@KAXAEAVLevel\@\@VVec3\@\@AEBVBlock\@\@AEBVBlockPos\@\@E\@Z
+     */
+    MCAPI static void _spawnDustParticles(class Level &, class Vec3, class Block const &, class BlockPos const &, unsigned char);
+
+protected:
 
 };

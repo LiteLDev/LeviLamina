@@ -31,6 +31,10 @@ public:
 
 public:
     /**
+     * @symbol ??0BlockStateMeta\@\@QEAA\@AEBVBlockState\@\@AEBUBlockStateDefinition\@\@\@Z
+     */
+    MCAPI BlockStateMeta(class BlockState const &, struct BlockStateDefinition const &);
+    /**
      * @symbol ?getBool\@BlockStateMeta\@\@QEBA?B_NH\@Z
      */
     MCAPI bool const getBool(int) const;

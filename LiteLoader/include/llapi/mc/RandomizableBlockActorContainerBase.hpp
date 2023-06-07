@@ -81,10 +81,10 @@ public:
      */
     virtual void __unk_vfn_35();
     /**
-     * @vftbl 36
-     * @symbol __unk_vfn_36
+     * @vftbl 38
+     * @symbol __unk_vfn_38
      */
-    virtual void __unk_vfn_36();
+    virtual void __unk_vfn_38();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMIZABLEBLOCKACTORCONTAINERBASE
     /**
      * @symbol __unk_destructor_-1

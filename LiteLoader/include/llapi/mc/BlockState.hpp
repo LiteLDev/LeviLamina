@@ -34,5 +34,9 @@ public:
      * @symbol ?forEachState\@BlockState\@\@SAXV?$function\@$$A6A_NAEBVBlockState\@\@\@Z\@std\@\@\@Z
      */
     MCAPI static void forEachState(class std::function<bool (class BlockState const &)>);
+    /**
+     * @symbol ?getState\@BlockState\@\@SAPEBV1\@AEBVHashedString\@\@\@Z
+     */
+    MCAPI static class BlockState const * getState(class HashedString const &);
 
 };

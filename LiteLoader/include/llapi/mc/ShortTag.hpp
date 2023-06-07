@@ -46,9 +46,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 2
-     * @symbol ?write\@ShortTag\@\@UEBAXAEAVIDataOutput\@\@\@Z
+     * @symbol __unk_vfn_2
      */
-    virtual void write(class IDataOutput &) const;
+    virtual void __unk_vfn_2();
     /**
      * @vftbl 3
      * @symbol ?load\@ShortTag\@\@UEAAXAEAVIDataInput\@\@\@Z
@@ -79,6 +79,12 @@ public:
      * @symbol ?hash\@ShortTag\@\@UEBA_KXZ
      */
     virtual unsigned __int64 hash() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHORTTAG
+    /**
+     * @symbol ?write\@ShortTag\@\@UEBAXAEAVIDataOutput\@\@\@Z
+     */
+    MCVAPI void write(class IDataOutput &) const;
+#endif
     /**
      * @symbol ??0ShortTag\@\@QEAA\@F\@Z
      */

@@ -46,24 +46,38 @@ public:
     virtual void __unk_vfn_2();
     /**
      * @vftbl 3
-     * @symbol ?useOn\@PlanterItemComponent\@\@UEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
+     * @symbol __unk_vfn_3
      */
-    virtual bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
+    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4();
-    /**
-     * @vftbl 5
      * @symbol ?buildNetworkTag\@?$NetworkedItemComponent\@VPlanterItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vftbl 6
+     * @vftbl 5
      * @symbol ?initializeFromNetwork\@?$NetworkedItemComponent\@VPlanterItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
+    /**
+     * @vftbl 6
+     * @symbol __unk_vfn_6
+     */
+    virtual void __unk_vfn_6();
+    /**
+     * @vftbl 7
+     * @symbol ?_canUseOn\@PlanterItemComponent\@\@MEBA_NAEBVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@E\@Z
+     */
+    virtual bool _canUseOn(class ItemStack const &, class Actor &, class BlockPos const &, unsigned char) const;
+    /**
+     * @vftbl 8
+     * @symbol ?_useOn\@PlanterItemComponent\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
+     */
+    virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
+    /**
+     * @symbol ??0PlanterItemComponent\@\@QEAA\@PEAVComponentItem\@\@AEBVBlock\@\@\@Z
+     */
+    MCAPI PlanterItemComponent(class ComponentItem *, class Block const &);
     /**
      * @symbol ?calculatePlacePos\@PlanterItemComponent\@\@QEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
      */
@@ -76,5 +90,13 @@ public:
      * @symbol ?getIdentifier\@PlanterItemComponent\@\@SAAEBVHashedString\@\@XZ
      */
     MCAPI static class HashedString const & getIdentifier();
+
+//private:
+    /**
+     * @symbol ?_placeBlock\@PlanterItemComponent\@\@AEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlock\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI bool _placeBlock(class ItemStack &, class Actor &, class Block const &, class BlockPos const &) const;
+
+private:
 
 };

@@ -29,10 +29,6 @@ public:
 
 public:
     /**
-     * @symbol ??0WorldPackHistory\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI WorldPackHistory(class WorldPackHistory &&);
-    /**
      * @symbol ??0WorldPackHistory\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI WorldPackHistory(class WorldPackHistory const &);

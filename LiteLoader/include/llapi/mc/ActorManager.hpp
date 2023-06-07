@@ -35,13 +35,13 @@ public:
      */
     MCAPI ActorManager();
     /**
-     * @symbol ?addActorEntity\@ActorManager\@\@QEAAPEAVActor\@\@AEAVDimension\@\@V?$OwnerPtrT\@UEntityRefTraits\@\@\@\@\@Z
-     */
-    MCAPI class Actor * addActorEntity(class Dimension &, class OwnerPtrT<struct EntityRefTraits>);
-    /**
      * @symbol ?addActorEntity\@ActorManager\@\@QEAAPEAVActor\@\@AEAVIAddActorEntityProxy\@\@V?$OwnerPtrT\@UEntityRefTraits\@\@\@\@\@Z
      */
     MCAPI class Actor * addActorEntity(class IAddActorEntityProxy &, class OwnerPtrT<struct EntityRefTraits>);
+    /**
+     * @symbol ?addActorEntity\@ActorManager\@\@QEAAPEAVActor\@\@AEAVDimension\@\@V?$OwnerPtrT\@UEntityRefTraits\@\@\@\@\@Z
+     */
+    MCAPI class Actor * addActorEntity(class Dimension &, class OwnerPtrT<struct EntityRefTraits>);
     /**
      * @symbol ?cleanupActorEntityReferencesGarbageCollect\@ActorManager\@\@QEAAXV?$OwnerPtrT\@UEntityRefTraits\@\@\@\@\@Z
      */

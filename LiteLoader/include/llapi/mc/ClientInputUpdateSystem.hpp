@@ -28,20 +28,24 @@ public:
 
 public:
     /**
+     * @symbol ?_calculateLookDelta\@ClientInputUpdateSystem\@\@SA?AVVec2\@\@EM\@Z
+     */
+    MCAPI static class Vec2 _calculateLookDelta(unsigned char, float);
+    /**
      * @symbol ?create\@ClientInputUpdateSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo create();
     /**
-     * @symbol ?createAntiCheatApplySystem\@ClientInputUpdateSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?tick\@ClientInputUpdateSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@ULocalPlayerComponentFlag\@\@\@\@UPlayerInputRequestComponent\@\@\@\@VActorMovementProxyComponent\@\@UMoveInputComponent\@\@URawMoveInputComponent\@\@UClientInputLockComponent\@\@USynchedActorDataComponent\@\@$$CBUAbilitiesComponent\@\@UVanillaClientGameplayComponent\@\@V?$Optional\@$$CBV?$FlagComponent\@UInWaterFlag\@\@\@\@\@\@V?$Optional\@$$CBUSneakingComponent\@\@\@\@\@\@V?$OptionalGlobalT\@$$CBUExternalDataComponent\@\@VEntityRegistryBase\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UShouldStopEmotingRequestComponent\@\@\@\@\@Z
      */
-    MCAPI static struct TickingSystemWithInfo createAntiCheatApplySystem();
+    MCAPI static void tick(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct LocalPlayerComponentFlag>, struct PlayerInputRequestComponent>, class ActorMovementProxyComponent, struct MoveInputComponent, struct RawMoveInputComponent, struct ClientInputLockComponent, struct SynchedActorDataComponent, struct AbilitiesComponent const, struct VanillaClientGameplayComponent, class Optional<class FlagComponent<struct InWaterFlag> const>, class Optional<struct SneakingComponent const>>, class OptionalGlobalT<struct ExternalDataComponent const, class EntityRegistryBase>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct ShouldStopEmotingRequestComponent>);
     /**
-     * @symbol ?createAntiCheatExtractSystem\@ClientInputUpdateSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?tickBaseInput\@ClientInputUpdateSystem\@\@SAXAEAUMoveInputComponent\@\@AEAUIPlayerMovementProxy\@\@\@Z
      */
-    MCAPI static struct TickingSystemWithInfo createAntiCheatExtractSystem();
+    MCAPI static void tickBaseInput(struct MoveInputComponent &, struct IPlayerMovementProxy &);
     /**
-     * @symbol ?extractRawHIDInput\@ClientInputUpdateSystem\@\@SAXAEBVLayeredAbilities\@\@AEBVSynchedActorData\@\@_NAEAURawMoveInputComponent\@\@AEBVMoveInputHandler\@\@PEBUSneakingComponent\@\@\@Z
+     * @symbol ?updateClientInput\@ClientInputUpdateSystem\@\@SAXAEAUIPlayerMovementProxy\@\@AEBURawMoveInputComponent\@\@AEBUClientInputLockComponent\@\@AEAUIClientInstanceProxy\@\@AEAUMoveInputComponent\@\@M\@Z
      */
-    MCAPI static void extractRawHIDInput(class LayeredAbilities const &, class SynchedActorData const &, bool, struct RawMoveInputComponent &, class MoveInputHandler const &, struct SneakingComponent const *);
+    MCAPI static void updateClientInput(struct IPlayerMovementProxy &, struct RawMoveInputComponent const &, struct ClientInputLockComponent const &, struct IClientInstanceProxy &, struct MoveInputComponent &, float);
 
 };

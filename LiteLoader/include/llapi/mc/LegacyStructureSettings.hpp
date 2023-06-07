@@ -32,13 +32,13 @@ public:
      */
     MCAPI LegacyStructureSettings();
     /**
-     * @symbol ??0LegacyStructureSettings\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI LegacyStructureSettings(class LegacyStructureSettings const &);
-    /**
      * @symbol ??0LegacyStructureSettings\@\@QEAA\@W4Mirror\@\@W4Rotation\@\@PEBVBlock\@\@AEBVBoundingBox\@\@\@Z
      */
     MCAPI LegacyStructureSettings(enum class Mirror, enum class Rotation, class Block const *, class BoundingBox const &);
+    /**
+     * @symbol ??0LegacyStructureSettings\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI LegacyStructureSettings(class LegacyStructureSettings const &);
     /**
      * @symbol ?addSwapAuxValue\@LegacyStructureSettings\@\@QEAAXHH\@Z
      */

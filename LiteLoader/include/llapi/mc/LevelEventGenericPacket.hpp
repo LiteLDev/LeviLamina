@@ -51,9 +51,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@LevelEventGenericPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@LevelEventGenericPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELEVENTGENERICPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -61,12 +61,12 @@ public:
     MCVAPI ~LevelEventGenericPacket();
 #endif
     /**
-     * @symbol ??0LevelEventGenericPacket\@\@QEAA\@W4LevelEvent\@\@AEBVCompoundTag\@\@\@Z
-     */
-    MCAPI LevelEventGenericPacket(enum class LevelEvent, class CompoundTag const &);
-    /**
      * @symbol ??0LevelEventGenericPacket\@\@QEAA\@XZ
      */
     MCAPI LevelEventGenericPacket();
+    /**
+     * @symbol ??0LevelEventGenericPacket\@\@QEAA\@W4LevelEvent\@\@AEBVCompoundTag\@\@\@Z
+     */
+    MCAPI LevelEventGenericPacket(enum class LevelEvent, class CompoundTag const &);
 
 };

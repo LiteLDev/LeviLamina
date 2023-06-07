@@ -37,11 +37,6 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
-     */
-    virtual void __unk_vfn_7();
-    /**
      * @vftbl 11
      * @symbol __unk_vfn_11
      */
@@ -56,6 +51,11 @@ public:
      * @symbol __unk_vfn_16
      */
     virtual void __unk_vfn_16();
+    /**
+     * @vftbl 19
+     * @symbol __unk_vfn_19
+     */
+    virtual void __unk_vfn_19();
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
@@ -117,27 +117,37 @@ public:
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @vftbl 118
+     * @vftbl 115
+     * @symbol __unk_vfn_115
+     */
+    virtual void __unk_vfn_115();
+    /**
+     * @vftbl 116
+     * @symbol __unk_vfn_116
+     */
+    virtual void __unk_vfn_116();
+    /**
+     * @vftbl 120
      * @symbol ?getIconInfo\@BlockItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
-     * @vftbl 122
+     * @vftbl 124
      * @symbol ?getLightEmission\@BlockItem\@\@UEBA?AUBrightness\@\@H\@Z
      */
     virtual struct Brightness getLightEmission(int) const;
     /**
-     * @vftbl 123
+     * @vftbl 125
      * @symbol ?getIconYOffset\@BlockItem\@\@UEBAHXZ
      */
     virtual int getIconYOffset() const;
     /**
-     * @vftbl 131
+     * @vftbl 133
      * @symbol ?_calculatePlacePos\@BlockItem\@\@MEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
      */
     virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
-     * @vftbl 132
+     * @vftbl 134
      * @symbol ?_useOn\@BlockItem\@\@MEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;

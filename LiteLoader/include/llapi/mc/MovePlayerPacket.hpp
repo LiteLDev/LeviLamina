@@ -87,9 +87,9 @@ public:
     virtual bool isValid() const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@MovePlayerPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@MovePlayerPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEPLAYERPACKET
     /**
      * @symbol __unk_destructor_-1

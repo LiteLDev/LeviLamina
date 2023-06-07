@@ -51,37 +51,37 @@ public:
      */
     virtual void setItemWithForceBalance(int, class ItemStack const &, bool);
     /**
-     * @vftbl 21
+     * @vftbl 22
      * @symbol ?getEmptySlotsCount\@Inventory\@\@UEBAHXZ
      */
     virtual int getEmptySlotsCount() const;
-    /**
-     * @vftbl 24
-     * @symbol __unk_vfn_24
-     */
-    virtual void __unk_vfn_24();
     /**
      * @vftbl 25
      * @symbol __unk_vfn_25
      */
     virtual void __unk_vfn_25();
     /**
-     * @vftbl 35
+     * @vftbl 26
+     * @symbol __unk_vfn_26
+     */
+    virtual void __unk_vfn_26();
+    /**
+     * @vftbl 36
      * @symbol ?add\@Inventory\@\@UEAA_NAEAVItemStack\@\@\@Z
      */
     virtual bool add(class ItemStack &);
     /**
-     * @vftbl 36
+     * @vftbl 37
      * @symbol ?canAdd\@Inventory\@\@UEBA_NAEBVItemStack\@\@\@Z
      */
     virtual bool canAdd(class ItemStack const &) const;
     /**
-     * @vftbl 40
+     * @vftbl 41
      * @symbol ?getFirstEmptySlot\@Inventory\@\@UEBAHXZ
      */
     virtual int getFirstEmptySlot() const;
     /**
-     * @vftbl 41
+     * @vftbl 42
      * @symbol ?setContainerSize\@Inventory\@\@UEAAXH\@Z
      */
     virtual void setContainerSize(int);

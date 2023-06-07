@@ -27,7 +27,6 @@ class ActorInCloudsTest {
 public:
     class ActorInCloudsTest& operator=(class ActorInCloudsTest const &) = delete;
     ActorInCloudsTest(class ActorInCloudsTest const &) = delete;
-    ActorInCloudsTest() = delete;
 #endif
 
 public:
@@ -72,5 +71,9 @@ public:
      */
     MCVAPI ~ActorInCloudsTest();
 #endif
+    /**
+     * @symbol ??0ActorInCloudsTest\@\@QEAA\@XZ
+     */
+    MCAPI ActorInCloudsTest();
 
 };

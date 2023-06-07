@@ -51,7 +51,7 @@ public:
     virtual void addChildren(class StructurePiece &, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &);
     /**
      * @vftbl 4
-     * @symbol ?postProcess\@NBCastleSmallCorridorLeftTurnPiece\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
+     * @symbol ?postProcess\@DesertPyramidPiece\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
     virtual bool postProcess(class BlockSource &, class Random &, class BoundingBox const &) = 0;
     /**

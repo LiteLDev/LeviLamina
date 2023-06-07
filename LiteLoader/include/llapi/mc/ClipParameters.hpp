@@ -32,6 +32,10 @@ public:
      */
     MCAPI ClipParameters(class Vec3 const &, class Vec3 const &, class std::function<bool (class BlockSource const &, class Block const &, bool)> const &);
     /**
+     * @symbol ??0ClipParameters\@\@QEAA\@AEBVVec3\@\@0\@Z
+     */
+    MCAPI ClipParameters(class Vec3 const &, class Vec3 const &);
+    /**
      * @symbol ??1ClipParameters\@\@QEAA\@XZ
      */
     MCAPI ~ClipParameters();

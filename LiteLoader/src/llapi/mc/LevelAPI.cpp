@@ -150,7 +150,7 @@ Container* Level::getContainer(Vec3 pos, int dim) {
     // `RandomizableBlockActorContainerBase'}
 
     // This function didn't use 'this' pointer
-    return ((DropperBlockActor*)nullptr)->_getContainerAt(*Level::getBlockSource(dim), pos);
+    return ((DropperBlockActor*)nullptr)->getContainerAt(*Level::getBlockSource(dim), pos);
 }
 
 Actor* Level::getDamageSourceEntity(ActorDamageSource* ads) {

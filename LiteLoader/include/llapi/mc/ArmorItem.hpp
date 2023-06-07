@@ -44,11 +44,6 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
-     */
-    virtual void __unk_vfn_7();
-    /**
      * @vftbl 11
      * @symbol __unk_vfn_11
      */
@@ -73,6 +68,11 @@ public:
      * @symbol ?isDyeable\@ArmorItem\@\@UEBA_NXZ
      */
     virtual bool isDyeable() const;
+    /**
+     * @vftbl 19
+     * @symbol __unk_vfn_19
+     */
+    virtual void __unk_vfn_19();
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
@@ -209,12 +209,22 @@ public:
      */
     virtual enum class LevelSoundEvent getEquipSound() const;
     /**
-     * @vftbl 118
+     * @vftbl 115
+     * @symbol __unk_vfn_115
+     */
+    virtual void __unk_vfn_115();
+    /**
+     * @vftbl 116
+     * @symbol __unk_vfn_116
+     */
+    virtual void __unk_vfn_116();
+    /**
+     * @vftbl 120
      * @symbol ?getIconInfo\@ArmorItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
-     * @vftbl 133
+     * @vftbl 135
      * @symbol ?getArmorKnockbackResistance\@ArmorItem\@\@UEBAMXZ
      */
     virtual float getArmorKnockbackResistance() const;
@@ -222,6 +232,10 @@ public:
      * @symbol ??0ArmorItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVArmorMaterial\@0\@HW4ArmorSlot\@\@_N\@Z
      */
     MCAPI ArmorItem(std::string const &, int, class ArmorItem::ArmorMaterial const &, int, enum class ArmorSlot, bool);
+    /**
+     * @symbol ?isTrimAllowed\@ArmorItem\@\@QEBA_NXZ
+     */
+    MCAPI bool isTrimAllowed() const;
     /**
      * @symbol ?CHAIN\@ArmorItem\@\@2VArmorMaterial\@1\@B
      */

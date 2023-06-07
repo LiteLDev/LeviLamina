@@ -91,10 +91,10 @@ public:
      */
     virtual void __unk_vfn_35();
     /**
-     * @vftbl 36
-     * @symbol __unk_vfn_36
+     * @vftbl 38
+     * @symbol __unk_vfn_38
      */
-    virtual void __unk_vfn_36();
+    virtual void __unk_vfn_38();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCULKSENSORBLOCKACTOR
     /**
      * @symbol __unk_destructor_-1
@@ -102,13 +102,13 @@ public:
     MCVAPI ~SculkSensorBlockActor();
 #endif
     /**
-     * @symbol ??0SculkSensorBlockActor\@\@QEAA\@W4BlockActorType\@\@AEBVBlockPos\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEAV?$unique_ptr\@VSculkSensorVibrationConfig\@\@U?$default_delete\@VSculkSensorVibrationConfig\@\@\@std\@\@\@4\@\@Z
-     */
-    MCAPI SculkSensorBlockActor(enum class BlockActorType, class BlockPos const &, std::string const &, std::unique_ptr<class SculkSensorVibrationConfig> &&);
-    /**
      * @symbol ??0SculkSensorBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
     MCAPI SculkSensorBlockActor(class BlockPos const &);
+    /**
+     * @symbol ??0SculkSensorBlockActor\@\@QEAA\@W4BlockActorType\@\@AEBVBlockPos\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@I$$QEAV?$unique_ptr\@VSculkSensorVibrationConfig\@\@U?$default_delete\@VSculkSensorVibrationConfig\@\@\@std\@\@\@4\@\@Z
+     */
+    MCAPI SculkSensorBlockActor(enum class BlockActorType, class BlockPos const &, std::string const &, unsigned int, std::unique_ptr<class SculkSensorVibrationConfig> &&);
     /**
      * @symbol ?getLatestReceivedVibrationFrequency\@SculkSensorBlockActor\@\@QEBAHXZ
      */

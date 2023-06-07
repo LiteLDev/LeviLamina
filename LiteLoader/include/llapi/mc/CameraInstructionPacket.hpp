@@ -46,17 +46,27 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 4
-     * @symbol ?readExtended\@CameraInstructionPacket\@\@UEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?read\@CameraInstructionPacket\@\@UEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult read(class ReadOnlyBinaryStream &);
     /**
      * @vftbl 7
-     * @symbol ?_read\@CameraInstructionPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@CameraInstructionPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMERAINSTRUCTIONPACKET
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~CameraInstructionPacket();
+#endif
     /**
      * @symbol ??0CameraInstructionPacket\@\@QEAA\@XZ
      */
     MCAPI CameraInstructionPacket();
+    /**
+     * @symbol ??0CameraInstructionPacket\@\@QEAA\@AEBUCameraInstruction\@\@\@Z
+     */
+    MCAPI CameraInstructionPacket(struct CameraInstruction const &);
 
 };

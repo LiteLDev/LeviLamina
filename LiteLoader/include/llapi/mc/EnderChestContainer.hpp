@@ -35,25 +35,25 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 17
+     * @vftbl 18
      * @symbol ?startOpen\@EnderChestContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
     virtual void startOpen(class Player &);
     /**
-     * @vftbl 18
+     * @vftbl 19
      * @symbol ?stopOpen\@EnderChestContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
     virtual void stopOpen(class Player &);
-    /**
-     * @vftbl 24
-     * @symbol __unk_vfn_24
-     */
-    virtual void __unk_vfn_24();
     /**
      * @vftbl 25
      * @symbol __unk_vfn_25
      */
     virtual void __unk_vfn_25();
+    /**
+     * @vftbl 26
+     * @symbol __unk_vfn_26
+     */
+    virtual void __unk_vfn_26();
     /**
      * @symbol ??0EnderChestContainer\@\@QEAA\@XZ
      */

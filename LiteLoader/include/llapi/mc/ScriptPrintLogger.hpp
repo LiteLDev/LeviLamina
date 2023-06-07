@@ -57,8 +57,13 @@ public:
     virtual void onException(struct Scripting::ContextId, class entt::meta_any const &) const;
     /**
      * @vftbl 5
-     * @symbol ?shouldPrintException\@ScriptPrintLogger\@\@UEBA_NAEBVmeta_any\@entt\@\@\@Z
+     * @symbol ?shouldPrintException\@ScriptPrintLogger\@\@UEBA_NUContextId\@Scripting\@\@AEBVmeta_any\@entt\@\@\@Z
      */
-    virtual bool shouldPrintException(class entt::meta_any const &) const;
+    virtual bool shouldPrintException(struct Scripting::ContextId, class entt::meta_any const &) const;
+    /**
+     * @vftbl 6
+     * @symbol ?onPromiseRejection\@ScriptPrintLogger\@\@UEBAXUContextId\@Scripting\@\@AEBV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@_N\@Z
+     */
+    virtual void onPromiseRejection(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char>> const &, bool) const;
 
 };

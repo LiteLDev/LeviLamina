@@ -29,13 +29,13 @@ public:
 
 public:
     /**
-     * @symbol ??0ContainerValidationResult\@\@QEAA\@W4ContainerValidationOutcome\@\@\@Z
-     */
-    MCAPI ContainerValidationResult(enum class ContainerValidationOutcome);
-    /**
      * @symbol ??0ContainerValidationResult\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI ContainerValidationResult(struct ContainerValidationResult const &);
+    /**
+     * @symbol ??0ContainerValidationResult\@\@QEAA\@W4ContainerValidationOutcome\@\@\@Z
+     */
+    MCAPI ContainerValidationResult(enum class ContainerValidationOutcome);
     /**
      * @symbol ?isSuccess\@ContainerValidationResult\@\@QEBA_NXZ
      */

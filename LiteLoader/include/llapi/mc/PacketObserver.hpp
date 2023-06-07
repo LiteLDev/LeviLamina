@@ -68,6 +68,10 @@ public:
      * @symbol ?dataSentTo\@PacketObserver\@\@UEAAXAEBVNetworkIdentifier\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
     MCVAPI void dataSentTo(class NetworkIdentifier const &, class std::basic_string_view<char, struct std::char_traits<char>>);
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~PacketObserver();
 #endif
 
 };

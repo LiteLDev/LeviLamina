@@ -6,7 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Json.hpp"
-#include "SignBlockActor.hpp"
+#include "SignBlock.hpp"
 #include "SignItem.hpp"
 
 #define BEFORE_EXTRA
@@ -36,11 +36,6 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
-     */
-    virtual void __unk_vfn_7();
-    /**
      * @vftbl 11
      * @symbol __unk_vfn_11
      */
@@ -55,6 +50,11 @@ public:
      * @symbol __unk_vfn_16
      */
     virtual void __unk_vfn_16();
+    /**
+     * @vftbl 19
+     * @symbol __unk_vfn_19
+     */
+    virtual void __unk_vfn_19();
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
@@ -101,24 +101,29 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @vftbl 131
+     * @vftbl 115
+     * @symbol __unk_vfn_115
+     */
+    virtual void __unk_vfn_115();
+    /**
+     * @vftbl 116
+     * @symbol __unk_vfn_116
+     */
+    virtual void __unk_vfn_116();
+    /**
+     * @vftbl 133
      * @symbol ?_calculatePlacePos\@HangingSignItem\@\@EEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
      */
     virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
-     * @vftbl 133
+     * @vftbl 135
      * @symbol ?getBlockToPlace\@HangingSignItem\@\@MEBAPEBVBlock\@\@EAEBVActor\@\@VBlockPos\@\@\@Z
      */
     virtual class Block const * getBlockToPlace(unsigned char, class Actor const &, class BlockPos) const;
     /**
-     * @vftbl 134
-     * @symbol ?_initializeTags\@HangingSignItem\@\@EEAAXXZ
+     * @symbol ??0HangingSignItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4SignType\@SignBlock\@\@\@Z
      */
-    virtual void _initializeTags();
-    /**
-     * @symbol ??0HangingSignItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4SignType\@SignBlockActor\@\@\@Z
-     */
-    MCAPI HangingSignItem(std::string const &, int, enum class SignBlockActor::SignType);
+    MCAPI HangingSignItem(std::string const &, int, enum class SignBlock::SignType);
 
 //private:
     /**

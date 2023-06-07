@@ -44,9 +44,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?initServer\@Item\@\@UEAA_NAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
+     * @symbol ?initServer\@Item\@\@UEAA_NAEAVValue\@Json\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@\@Z
      */
-    virtual bool initServer(class Json::Value &, class SemVersion const &);
+    virtual bool initServer(class Json::Value &, class SemVersion const &, bool, class Experiments const &);
     /**
      * @vftbl 2
      * @symbol ?tearDown\@Item\@\@UEAAXXZ
@@ -74,9 +74,9 @@ public:
     virtual int getMaxUseDuration(class ItemStack const *) const;
     /**
      * @vftbl 7
-     * @symbol __unk_vfn_7
+     * @symbol ?isMusicDisk\@Item\@\@UEBA_NXZ
      */
-    virtual void __unk_vfn_7();
+    virtual bool isMusicDisk() const;
     /**
      * @vftbl 8
      * @symbol ?hasTag\@Item\@\@UEBA_NAEBVHashedString\@\@\@Z
@@ -134,9 +134,9 @@ public:
     virtual bool isDyeable() const;
     /**
      * @vftbl 19
-     * @symbol ?isDye\@Item\@\@UEBA_NXZ
+     * @symbol __unk_vfn_19
      */
-    virtual bool isDye() const;
+    virtual void __unk_vfn_19();
     /**
      * @vftbl 20
      * @symbol ?getItemColor\@Item\@\@UEBA?AW4ItemColor\@\@XZ
@@ -614,91 +614,101 @@ public:
     virtual enum class LevelSoundEvent getEquipSound() const;
     /**
      * @vftbl 115
-     * @symbol ?isSameItem\@Item\@\@UEBA_NAEBVItemStackBase\@\@0\@Z
+     * @symbol __unk_vfn_115
      */
-    virtual bool isSameItem(class ItemStackBase const &, class ItemStackBase const &) const;
+    virtual void __unk_vfn_115();
     /**
      * @vftbl 116
-     * @symbol ?initClient\@Item\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
+     * @symbol __unk_vfn_116
      */
-    virtual void initClient(class Json::Value &, class SemVersion const &);
+    virtual void __unk_vfn_116();
     /**
      * @vftbl 117
+     * @symbol ?hasSameRelevantUserData\@Item\@\@UEBA_NAEBVItemStackBase\@\@0\@Z
+     */
+    virtual bool hasSameRelevantUserData(class ItemStackBase const &, class ItemStackBase const &) const;
+    /**
+     * @vftbl 118
+     * @symbol ?initClient\@Item\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@\@Z
+     */
+    virtual void initClient(class Json::Value &, class SemVersion const &, bool, class Experiments const &);
+    /**
+     * @vftbl 119
      * @symbol ?setIconInfo\@Item\@\@UEAAAEAV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     virtual class Item & setIconInfo(std::string const &, int);
     /**
-     * @vftbl 118
+     * @vftbl 120
      * @symbol ?getIconInfo\@Item\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
-     * @vftbl 119
+     * @vftbl 121
      * @symbol ?getInteractText\@Item\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPlayer\@\@\@Z
      */
     virtual std::string getInteractText(class Player const &) const;
     /**
-     * @vftbl 120
+     * @vftbl 122
      * @symbol ?getAnimationFrameFor\@Item\@\@UEBAHPEAVMob\@\@_NPEBVItemStack\@\@_N\@Z
      */
     virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
     /**
-     * @vftbl 121
+     * @vftbl 123
      * @symbol ?isEmissive\@Item\@\@UEBA_NH\@Z
      */
     virtual bool isEmissive(int) const;
     /**
-     * @vftbl 122
+     * @vftbl 124
      * @symbol ?getLightEmission\@Item\@\@UEBA?AUBrightness\@\@H\@Z
      */
     virtual struct Brightness getLightEmission(int) const;
     /**
-     * @vftbl 123
+     * @vftbl 125
      * @symbol ?getIconYOffset\@Item\@\@UEBAHXZ
      */
     virtual int getIconYOffset() const;
     /**
-     * @vftbl 124
+     * @vftbl 126
      * @symbol ?canBeCharged\@Item\@\@UEBA_NXZ
      */
     virtual bool canBeCharged() const;
     /**
-     * @vftbl 125
+     * @vftbl 127
      * @symbol ?playSoundIncrementally\@Item\@\@UEBAXAEBVItemInstance\@\@AEAVMob\@\@\@Z
      */
     virtual void playSoundIncrementally(class ItemInstance const &, class Mob &) const;
     /**
-     * @vftbl 126
+     * @vftbl 128
      * @symbol ?playSoundIncrementally\@Item\@\@UEBAXAEBVItemStack\@\@AEAVMob\@\@\@Z
      */
     virtual void playSoundIncrementally(class ItemStack const &, class Mob &) const;
     /**
-     * @vftbl 127
-     * @symbol ?getFurnaceBurnIntervalMultipler\@Item\@\@UEBAMAEBVItemStackBase\@\@\@Z
+     * @vftbl 129
+     * @symbol ?getFurnaceBurnIntervalMultipler\@Item\@\@UEBAMXZ
      */
-    virtual float getFurnaceBurnIntervalMultipler(class ItemStackBase const &) const;
+    virtual float getFurnaceBurnIntervalMultipler() const;
     /**
-     * @vftbl 128
+     * @vftbl 130
      * @symbol ?getFurnaceXPmultiplier\@Item\@\@UEBAMAEBVItemStackBase\@\@\@Z
      */
     virtual float getFurnaceXPmultiplier(class ItemStackBase const &) const;
     /**
-     * @vftbl 129
+     * @vftbl 131
      * @symbol ?getAuxValuesDescription\@Item\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getAuxValuesDescription() const;
     /**
-     * @vftbl 130
+     * @vftbl 132
      * @symbol ?_checkUseOnPermissions\@Item\@\@EEBA_NAEAVActor\@\@AEAVItemStackBase\@\@AEBEAEBVBlockPos\@\@\@Z
      */
     virtual bool _checkUseOnPermissions(class Actor &, class ItemStackBase &, unsigned char const &, class BlockPos const &) const;
     /**
-     * @vftbl 131
+     * @vftbl 133
      * @symbol ?_calculatePlacePos\@Item\@\@EEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
      */
     virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
-     * @vftbl 132
+     * @vftbl 134
      * @symbol ?_useOn\@Item\@\@EEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
@@ -736,17 +746,21 @@ public:
      */
     MCVAPI bool isComponentBased() const;
     /**
+     * @symbol ?isDye\@Item\@\@UEBA_NXZ
+     */
+    MCVAPI bool isDye() const;
+    /**
      * @symbol ?isMultiColorTinted\@Item\@\@UEBA_NAEBVItemStack\@\@\@Z
      */
     MCVAPI bool isMultiColorTinted(class ItemStack const &) const;
     /**
-     * @symbol ?isMusicDisk\@Item\@\@UEBA_NXZ
-     */
-    MCVAPI bool isMusicDisk() const;
-    /**
      * @symbol ?isPattern\@Item\@\@UEBA_NXZ
      */
     MCVAPI bool isPattern() const;
+    /**
+     * @symbol ?shouldSendInteractionGameEvents\@Item\@\@UEBA_NXZ
+     */
+    MCVAPI bool shouldSendInteractionGameEvents() const;
     /**
      * @symbol ?showsDurabilityInCreative\@Item\@\@UEBA_NXZ
      */
@@ -755,6 +769,10 @@ public:
      * @symbol ?uniqueAuxValues\@Item\@\@UEBA_NXZ
      */
     MCVAPI bool uniqueAuxValues() const;
+    /**
+     * @symbol ?useInterruptedByAttacking\@Item\@\@UEBA_NXZ
+     */
+    MCVAPI bool useInterruptedByAttacking() const;
     /**
      * @symbol __unk_destructor_-1
      */
