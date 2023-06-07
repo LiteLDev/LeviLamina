@@ -169,6 +169,7 @@ THook(void, "?log@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@
     return BedrockLog::log_va(a1, a2, a3, a4, a5, a6, a7, a8, va);
 }
 
+#include "llapi/utils/StringHelper.h"
 extern std::unordered_map<CommandOrigin const*, string*> resultOfOrigin;
 
 TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z",
@@ -203,11 +204,16 @@ TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin
 #endif // DEBUG
         }
     }
+
     auto& log = output.getSuccessCount() > 0 ? serverLogger.info : serverLogger.error;
-    if (ll::globalConfig.colorLog) {
-        log << ColorFormat::convertToConsole(str, false) << Logger::endl;
-    } else {
-        log << ColorFormat::removeColorCode(str) << Logger::endl;
+    std::vector<std::string> ts = SplitStrWithPattern(str, "\n");
+    ts.pop_back();
+    for (auto s : ts) {
+        if (ll::globalConfig.colorLog) {
+            log << ColorFormat::convertToConsole(s, false) << Logger::endl;
+        } else {
+            log << ColorFormat::removeColorCode(s) << Logger::endl;
+        }
     }
     return rv;
 }
