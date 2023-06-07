@@ -376,6 +376,7 @@ THook(LevelChunk*, "?getChunk@BlockSource@@QEBAPEAVLevelChunk@@AEBVChunkPos@@@Z"
 }
 
 #include "llapi/mc/Level.hpp"
+
 TInstanceHook(BlockSource*, "?getDimensionBlockSourceConst@Actor@@QEBAAEBVBlockSource@@XZ", Actor) {
 
     auto bs = original(this);
@@ -519,4 +520,21 @@ TInstanceHook(ExtendedStreamReadResult,
               "?readExtended@PlayerListPacket@@UEAA?AUExtendedStreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
               PlayerListPacket, ReadOnlyBinaryStream) {
     return ExtendedStreamReadResult{StreamReadResult::Valid, ""};
+}
+
+// 修复玩家向未加载区块扔物品导致服务器崩溃
+#include <llapi/mc/InventoryTransactionPacket.hpp>
+#include <llapi/mc/ServerNetworkHandler.hpp>
+
+TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryTransactionPacket@@@Z",
+              ServerNetworkHandler, NetworkIdentifier& nid, InventoryTransactionPacket& pkt) {
+    if (!pkt.isValid()) {
+        return original(this, nid, pkt);
+    }
+    auto pl = getServerPlayer(nid);
+    auto& bs = *pl->getBlockSource();
+    if (pl->_isChunkSourceLoaded(pl->getPosition(), bs)) {
+        return original(this, nid, pkt);
+    }
+    pl->sendInventory(1);
 }
