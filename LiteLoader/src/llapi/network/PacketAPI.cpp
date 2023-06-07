@@ -6,7 +6,7 @@
 #define INCLUDE_ALL_PACKET
 #define SIZE_STATIC_ASSERT_IF_DEFINE
 //#define SIZE_STATIC_ASSERT
-#define GENERATE_PACKET
+//#define GENERATE_PACKET
 //#define FILL_PACKET
 
 using ll::logger;
