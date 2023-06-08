@@ -207,12 +207,14 @@ TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin
 
     auto& log = output.getSuccessCount() > 0 ? serverLogger.info : serverLogger.error;
     std::vector<std::string> ts = SplitStrWithPattern(str, "\n");
-    ts.pop_back();
-    for (auto s : ts) {
-        if (ll::globalConfig.colorLog) {
-            log << ColorFormat::convertToConsole(s, false) << Logger::endl;
-        } else {
-            log << ColorFormat::removeColorCode(s) << Logger::endl;
+    if (!ts.empty()) {
+        ts.pop_back();
+        for (auto s : ts) {
+            if (ll::globalConfig.colorLog) {
+                log << ColorFormat::convertToConsole(s, false) << Logger::endl;
+            } else {
+                log << ColorFormat::removeColorCode(s) << Logger::endl;
+            }
         }
     }
     return rv;
