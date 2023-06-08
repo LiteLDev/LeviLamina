@@ -38,6 +38,8 @@ public:
     {
         std::string desc;
         unsigned int sym;
+        bool optional;
+        char paramOptions;
     };
     struct OverloadData
     {
