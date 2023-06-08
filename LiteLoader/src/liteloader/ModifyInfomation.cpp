@@ -177,43 +177,45 @@ TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin
 
 
     auto rv = original(this, origin, output);
-    std::string str = cmdstr.c_str();
+    if (origin.getOriginType() == (CommandOriginType)7) {
+        std::string str = cmdstr.c_str();
 
-    if (ll::isDebugMode() && ll::globalRuntimeConfig.tickThreadId != std::this_thread::get_id()) {
-        ll::logger.warn("The thread executing the CommandOutputSender::send is not the \"MC_SERVER\" thread");
-        ll::logger.warn("Output: {}", str);
-    }
-
-    auto it = resultOfOrigin.find(&origin);
-    if (it != resultOfOrigin.end()) {
-        try {
-            // May crash for incomprehensible reasons
-            it->second->assign(str);
-            while (it->second->size() && (it->second->back() == '\n' || it->second->back() == '\r'))
-                it->second->pop_back();
-            it->second = nullptr;
-            resultOfOrigin.erase(it);
-            return rv;
-        } catch (...) {
-            if (ll::isDebugMode()) {
-                ll::logger.warn("Output: {}", str);
-                ll::logger.warn("size of resultOfOrigin: {}", resultOfOrigin.size());
-            }
-#ifdef DEBUG
-            __debugbreak();
-#endif // DEBUG
+        if (ll::isDebugMode() && ll::globalRuntimeConfig.tickThreadId != std::this_thread::get_id()) {
+            ll::logger.warn("The thread executing the CommandOutputSender::send is not the \"MC_SERVER\" thread");
+            ll::logger.warn("Output: {}", str);
         }
-    }
 
-    auto& log = output.getSuccessCount() > 0 ? serverLogger.info : serverLogger.error;
-    std::vector<std::string> ts = SplitStrWithPattern(str, "\n");
-    if (!ts.empty()) {
-        ts.pop_back();
-        for (auto s : ts) {
-            if (ll::globalConfig.colorLog) {
-                log << ColorFormat::convertToConsole(s, false) << Logger::endl;
-            } else {
-                log << ColorFormat::removeColorCode(s) << Logger::endl;
+        auto it = resultOfOrigin.find(&origin);
+        if (it != resultOfOrigin.end()) {
+            try {
+                // May crash for incomprehensible reasons
+                it->second->assign(str);
+                while (it->second->size() && (it->second->back() == '\n' || it->second->back() == '\r'))
+                    it->second->pop_back();
+                it->second = nullptr;
+                resultOfOrigin.erase(it);
+                return rv;
+            } catch (...) {
+                if (ll::isDebugMode()) {
+                    ll::logger.warn("Output: {}", str);
+                    ll::logger.warn("size of resultOfOrigin: {}", resultOfOrigin.size());
+                }
+#ifdef DEBUG
+                __debugbreak();
+#endif // DEBUG
+            }
+        }
+
+        auto& log = output.getSuccessCount() > 0 ? serverLogger.info : serverLogger.error;
+        std::vector<std::string> ts = SplitStrWithPattern(str, "\n");
+        if (!ts.empty()) {
+            ts.pop_back();
+            for (auto s : ts) {
+                if (ll::globalConfig.colorLog) {
+                    log << ColorFormat::convertToConsole(s, false) << Logger::endl;
+                } else {
+                    log << ColorFormat::removeColorCode(s) << Logger::endl;
+                }
             }
         }
     }
