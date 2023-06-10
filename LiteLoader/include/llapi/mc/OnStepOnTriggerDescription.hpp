@@ -41,6 +41,11 @@ public:
      */
     virtual std::string const & getName() const;
     /**
+     * @vftbl 3
+     * @symbol __unk_vfn_3
+     */
+    virtual void __unk_vfn_3();
+    /**
      * @symbol ?NameID\@OnStepOnTriggerDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const NameID;

@@ -34,9 +34,17 @@ namespace PlayerMovement {
      */
     MCAPI class Vec2 calculateMoveVector(struct MoveInputState const &, struct IPlayerMovementProxy &);
     /**
+     * @symbol ?clearInputState\@PlayerMovement\@\@YAXAEAUMoveInputComponent\@\@\@Z
+     */
+    MCAPI void clearInputState(struct MoveInputComponent &);
+    /**
      * @symbol ?getControllingPassengerID\@PlayerMovement\@\@YA?AUActorUniqueID\@\@AEBV?$vector\@UStrictActorIDEntityContextPair\@\@V?$allocator\@UStrictActorIDEntityContextPair\@\@\@std\@\@\@std\@\@H\@Z
      */
     MCAPI struct ActorUniqueID getControllingPassengerID(std::vector<struct StrictActorIDEntityContextPair> const &, int);
+    /**
+     * @symbol ?getInputMode\@PlayerMovement\@\@YA?AW4InputMode\@\@AEBVEntityContext\@\@\@Z
+     */
+    MCAPI enum class InputMode getInputMode(class EntityContext const &);
     /**
      * @symbol ?getPositionMode\@PlayerMovement\@\@YA?AW4PositionMode\@PlayerPositionModeComponent\@\@AEBVEntityContext\@\@\@Z
      */
@@ -49,21 +57,5 @@ namespace PlayerMovement {
      * @symbol ?setPositionMode\@PlayerMovement\@\@YAXAEAVEntityContext\@\@W4PositionMode\@PlayerPositionModeComponent\@\@\@Z
      */
     MCAPI void setPositionMode(class EntityContext &, enum class PlayerPositionModeComponent::PositionMode);
-    /**
-     * @symbol ?updatePlayerOnInput\@PlayerMovement\@\@YAXAEAUIPlayerMovementProxy\@\@AEAVMoveInputHandler\@\@AEAVVec3\@\@\@Z
-     */
-    MCAPI void updatePlayerOnInput(struct IPlayerMovementProxy &, class MoveInputHandler &, class Vec3 &);
-    /**
-     * @symbol ?updatePlayerRiding\@PlayerMovement\@\@YAXAEAUIPlayerMovementProxy\@\@AEAVMoveInputHandler\@\@\@Z
-     */
-    MCAPI void updatePlayerRiding(struct IPlayerMovementProxy &, class MoveInputHandler &);
-    /**
-     * @symbol ?updatePlayerState\@PlayerMovement\@\@YAXAEAUIPlayerMovementProxy\@\@AEAVMoveInputHandler\@\@AEBVIConstBlockSource\@\@\@Z
-     */
-    MCAPI void updatePlayerState(struct IPlayerMovementProxy &, class MoveInputHandler &, class IConstBlockSource const &);
-    /**
-     * @symbol ?updateSwimTravel\@PlayerMovement\@\@YAXAEAUIPlayerMovementProxy\@\@AEAVMoveInputHandler\@\@AEAVVec3\@\@AEBVIConstBlockSource\@\@\@Z
-     */
-    MCAPI void updateSwimTravel(struct IPlayerMovementProxy &, class MoveInputHandler &, class Vec3 &, class IConstBlockSource const &);
 
 };

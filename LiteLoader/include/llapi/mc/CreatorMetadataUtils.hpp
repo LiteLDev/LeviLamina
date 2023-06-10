@@ -24,6 +24,10 @@ namespace CreatorMetadataUtils {
      */
     MCAPI void _addCommonVanillaMetadata(class Json::Value &, char const *);
     /**
+     * @symbol ?_addOptionalPrivilegeName\@CreatorMetadataUtils\@\@YAXAEAVValue\@Json\@\@W4Privilege\@Scripting\@\@\@Z
+     */
+    MCAPI void _addOptionalPrivilegeName(class Json::Value &, enum class Scripting::Privilege);
+    /**
      * @symbol ?_generateBlocksMetadataJson\@CreatorMetadataUtils\@\@YA?AVValue\@Json\@\@XZ
      */
     MCAPI class Json::Value _generateBlocksMetadataJson();

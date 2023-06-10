@@ -71,6 +71,10 @@ public:
      */
     MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> RENDERING;
     /**
+     * @symbol ?RENDERING_HELPERS\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
+     */
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> RENDERING_HELPERS;
+    /**
      * @symbol ?VR\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
     MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> VR;

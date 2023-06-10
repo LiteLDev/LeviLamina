@@ -86,7 +86,7 @@ public:
     virtual bool hasReachedTarget() const;
     /**
      * @vftbl 11
-     * @symbol ?isValidTarget\@LayEggGoal\@\@UEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     * @symbol ?isValidTarget\@OcelotSitOnBlockGoal\@\@UEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool isValidTarget(class BlockSource &, class BlockPos const &) = 0;
     /**

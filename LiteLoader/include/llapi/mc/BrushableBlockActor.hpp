@@ -79,9 +79,9 @@ public:
      */
     MCAPI BrushableBlockActor(class HashedString const &, class BlockPos const &, enum class BrushableBlockActor::Placement);
     /**
-     * @symbol ?brush\@BrushableBlockActor\@\@QEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
+     * @symbol ?brush\@BrushableBlockActor\@\@QEAA?AW4BrushingState\@1\@AEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
-    MCAPI void brush(class BlockSource &, class BlockPos const &, unsigned char);
+    MCAPI enum class BrushableBlockActor::BrushingState brush(class BlockSource &, class BlockPos const &, unsigned char);
     /**
      * @symbol ?update\@BrushableBlockActor\@\@QEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */

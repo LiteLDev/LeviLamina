@@ -43,9 +43,9 @@ public:
      */
     MCVAPI enum class EventResult onBlockDestructionStopped(class Player &, class BlockPos const &, int);
     /**
-     * @symbol ?onBlockExploded\@BlockEventListener\@\@UEAA?AW4EventResult\@\@AEBVBlockPos\@\@AEBVBlock\@\@PEAVActor\@\@\@Z
+     * @symbol ?onBlockExploded\@BlockEventListener\@\@UEAA?AW4EventResult\@\@AEAVDimension\@\@AEBVBlockPos\@\@AEBVBlock\@\@PEAVActor\@\@\@Z
      */
-    MCVAPI enum class EventResult onBlockExploded(class BlockPos const &, class Block const &, class Actor *);
+    MCVAPI enum class EventResult onBlockExploded(class Dimension &, class BlockPos const &, class Block const &, class Actor *);
     /**
      * @symbol ?onBlockInPosWillBeDestroyedByPlayer\@BlockEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */

@@ -29,29 +29,29 @@ public:
 
 public:
     /**
-     * @symbol ??0PerlinNoise\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI PerlinNoise(class PerlinNoise const &);
-    /**
      * @symbol ??0PerlinNoise\@\@QEAA\@IHH\@Z
      */
     MCAPI PerlinNoise(unsigned int, int, int);
     /**
-     * @symbol ??0PerlinNoise\@\@QEAA\@AEAVIRandom\@\@HH\@Z
+     * @symbol ??0PerlinNoise\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI PerlinNoise(class IRandom &, int, int);
+    MCAPI PerlinNoise(class PerlinNoise const &);
     /**
      * @symbol ??0PerlinNoise\@\@QEAA\@AEAVIRandom\@\@UYBlendingBugSettings\@\@HH\@Z
      */
     MCAPI PerlinNoise(class IRandom &, struct YBlendingBugSettings, int, int);
     /**
-     * @symbol ?getRegion\@PerlinNoise\@\@QEBAXPEAMAEBVVec2\@\@HH1M\@Z
+     * @symbol ??0PerlinNoise\@\@QEAA\@AEAVIRandom\@\@HH\@Z
      */
-    MCAPI void getRegion(float *, class Vec2 const &, int, int, class Vec2 const &, float) const;
+    MCAPI PerlinNoise(class IRandom &, int, int);
     /**
      * @symbol ?getRegion\@PerlinNoise\@\@QEBAXPEAMAEBVVec3\@\@HHH1\@Z
      */
     MCAPI void getRegion(float *, class Vec3 const &, int, int, int, class Vec3 const &) const;
+    /**
+     * @symbol ?getRegion\@PerlinNoise\@\@QEBAXPEAMAEBVVec2\@\@HH1M\@Z
+     */
+    MCAPI void getRegion(float *, class Vec2 const &, int, int, class Vec2 const &, float) const;
     /**
      * @symbol ?getValue\@PerlinNoise\@\@QEBAMAEBVVec3\@\@\@Z
      */

@@ -76,16 +76,21 @@ public:
     virtual void __unk_vfn_8();
     /**
      * @vftbl 9
+     * @symbol __unk_vfn_9
+     */
+    virtual void __unk_vfn_9();
+    /**
+     * @vftbl 10
      * @symbol ?handleEvent\@ScriptItemGameplayHandler\@\@UEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAUItemDefinitionEventTriggeredEvent\@\@\@Z
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct ItemDefinitionEventTriggeredEvent &);
     /**
-     * @vftbl 10
+     * @vftbl 11
      * @symbol ?handleEvent\@ScriptItemGameplayHandler\@\@UEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAUItemUseOnEvent\@\@\@Z
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct ItemUseOnEvent &);
     /**
-     * @vftbl 11
+     * @vftbl 12
      * @symbol ?handleEvent\@ScriptItemGameplayHandler\@\@UEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAUItemUseEvent\@\@\@Z
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct ItemUseEvent &);

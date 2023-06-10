@@ -51,9 +51,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@TakeItemActorPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@TakeItemActorPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAKEITEMACTORPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -61,12 +61,12 @@ public:
     MCVAPI ~TakeItemActorPacket();
 #endif
     /**
-     * @symbol ??0TakeItemActorPacket\@\@QEAA\@VActorRuntimeID\@\@0\@Z
-     */
-    MCAPI TakeItemActorPacket(class ActorRuntimeID, class ActorRuntimeID);
-    /**
      * @symbol ??0TakeItemActorPacket\@\@QEAA\@XZ
      */
     MCAPI TakeItemActorPacket();
+    /**
+     * @symbol ??0TakeItemActorPacket\@\@QEAA\@VActorRuntimeID\@\@0\@Z
+     */
+    MCAPI TakeItemActorPacket(class ActorRuntimeID, class ActorRuntimeID);
 
 };

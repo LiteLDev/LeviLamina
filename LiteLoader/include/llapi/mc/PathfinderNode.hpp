@@ -29,13 +29,13 @@ public:
 
 public:
     /**
-     * @symbol ??0PathfinderNode\@\@QEAA\@AEBVBlockPos\@\@W4NodeType\@\@\@Z
-     */
-    MCAPI PathfinderNode(class BlockPos const &, enum class NodeType);
-    /**
      * @symbol ??0PathfinderNode\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI PathfinderNode(class PathfinderNode const &);
+    /**
+     * @symbol ??0PathfinderNode\@\@QEAA\@AEBVBlockPos\@\@W4NodeType\@\@\@Z
+     */
+    MCAPI PathfinderNode(class BlockPos const &, enum class NodeType);
     /**
      * @symbol ?distanceTo\@PathfinderNode\@\@QEBAMPEAV1\@\@Z
      */

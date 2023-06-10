@@ -56,9 +56,9 @@ public:
      */
     MCAPI int _getExperienceFromItem(class ItemStack const &) const;
     /**
-     * @symbol ?_getResultItemWithNoEnchants\@CraftHandlerGrindstone\@\@AEAA?AVItemStack\@\@AEBV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEA_N\@Z
+     * @symbol ?_getResultItemWithNoEnchants\@CraftHandlerGrindstone\@\@AEAA?AVItemStack\@\@AEAV2\@AEBV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEA_N\@Z
      */
-    MCAPI class ItemStack _getResultItemWithNoEnchants(std::vector<class ItemStack> const &, bool &);
+    MCAPI class ItemStack _getResultItemWithNoEnchants(class ItemStack &, std::vector<class ItemStack> const &, bool &);
     /**
      * @symbol ?_resolveNetIdAndValidate\@CraftHandlerGrindstone\@\@AEAA_NW4ContainerEnumName\@\@EAEBUItemStackNetIdVariant\@\@\@Z
      */

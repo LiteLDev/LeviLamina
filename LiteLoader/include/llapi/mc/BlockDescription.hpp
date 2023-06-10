@@ -19,12 +19,15 @@ struct BlockDescription {
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKDESCRIPTION
 public:
-    BlockDescription() = delete;
-#endif
-
-public:
+    /**
+     * @symbol ??0BlockDescription\@\@QEAA\@$$QEAU0\@\@Z
+     */
+    MCAPI BlockDescription(struct BlockDescription &&);
+    /**
+     * @symbol ??0BlockDescription\@\@QEAA\@XZ
+     */
+    MCAPI BlockDescription();
     /**
      * @symbol ??0BlockDescription\@\@QEAA\@AEBU0\@\@Z
      */

@@ -20,5 +20,9 @@ namespace MobTravelFilterSystem {
      * @symbol ?createSystem\@MobTravelFilterSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI struct TickingSystemWithInfo createSystem();
+    /**
+     * @symbol ?createUpdateSystem\@MobTravelFilterSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
+     */
+    MCAPI struct TickingSystemWithInfo createUpdateSystem();
 
 };

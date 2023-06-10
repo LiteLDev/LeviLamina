@@ -38,9 +38,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 7
-     * @symbol __unk_vfn_7
+     * @symbol ?isMusicDisk\@RecordItem\@\@UEBA_NXZ
      */
-    virtual void __unk_vfn_7();
+    virtual bool isMusicDisk() const;
     /**
      * @vftbl 11
      * @symbol __unk_vfn_11
@@ -56,6 +56,11 @@ public:
      * @symbol __unk_vfn_16
      */
     virtual void __unk_vfn_16();
+    /**
+     * @vftbl 19
+     * @symbol __unk_vfn_19
+     */
+    virtual void __unk_vfn_19();
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
@@ -111,12 +116,16 @@ public:
      * @symbol ?buildDescriptionId\@RecordItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECORDITEM
     /**
-     * @symbol ?isMusicDisk\@RecordItem\@\@UEBA_NXZ
+     * @vftbl 115
+     * @symbol __unk_vfn_115
      */
-    MCVAPI bool isMusicDisk() const;
-#endif
+    virtual void __unk_vfn_115();
+    /**
+     * @vftbl 116
+     * @symbol __unk_vfn_116
+     */
+    virtual void __unk_vfn_116();
     /**
      * @symbol ??0RecordItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4LevelSoundEvent\@\@\@Z
      */

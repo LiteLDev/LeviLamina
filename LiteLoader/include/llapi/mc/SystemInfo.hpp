@@ -21,17 +21,13 @@ struct SystemInfo {
 #undef AFTER_EXTRA
 public:
     /**
-     * @symbol ??0SystemInfo\@\@QEAA\@$$QEAU0\@\@Z
+     * @symbol ??0SystemInfo\@\@QEAA\@XZ
      */
-    MCAPI SystemInfo(struct SystemInfo &&);
+    MCAPI SystemInfo();
     /**
      * @symbol ??0SystemInfo\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI SystemInfo(struct SystemInfo const &);
-    /**
-     * @symbol ??0SystemInfo\@\@QEAA\@XZ
-     */
-    MCAPI SystemInfo();
     /**
      * @symbol ??4SystemInfo\@\@QEAAAEAU0\@AEBU0\@\@Z
      */

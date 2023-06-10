@@ -28,5 +28,9 @@ public:
      * @symbol ?createSystem\@PlayerMovementStatsEventSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
+    /**
+     * @symbol ?tickPlayerMovementStatsEventSystem\@PlayerMovementStatsEventSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@VActorOwnerComponent\@\@$$CBUPlayerPreMobTravelComponent\@\@$$CBUStateVectorComponent\@\@\@\@\@Z
+     */
+    MCAPI static void tickPlayerMovementStatsEventSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, class ActorOwnerComponent, struct PlayerPreMobTravelComponent const, struct StateVectorComponent const>);
 
 };

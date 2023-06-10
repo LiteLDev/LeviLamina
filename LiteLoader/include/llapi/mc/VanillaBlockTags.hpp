@@ -27,6 +27,10 @@ namespace VanillaBlockTags {
      */
     MCAPI extern class HashedString const Birch;
     /**
+     * @symbol ?Crop\@VanillaBlockTags\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const Crop;
+    /**
      * @symbol ?DarkOak\@VanillaBlockTags\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DarkOak;

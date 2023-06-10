@@ -32,10 +32,6 @@ public:
      */
     MCAPI BlockDescriptor(class BlockDescriptor const &);
     /**
-     * @symbol ??0BlockDescriptor\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEBV?$vector\@VState\@BlockDescriptor\@\@V?$allocator\@VState\@BlockDescriptor\@\@\@std\@\@\@2\@\@Z
-     */
-    MCAPI BlockDescriptor(std::string const &, std::vector<class BlockDescriptor::State> const &&);
-    /**
      * @symbol ??0BlockDescriptor\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI BlockDescriptor(class BlockDescriptor &&);
@@ -47,6 +43,10 @@ public:
      * @symbol ??0BlockDescriptor\@\@QEAA\@AEBVHashedString\@\@\@Z
      */
     MCAPI BlockDescriptor(class HashedString const &);
+    /**
+     * @symbol ??0BlockDescriptor\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEBV?$vector\@VState\@BlockDescriptor\@\@V?$allocator\@VState\@BlockDescriptor\@\@\@std\@\@\@2\@\@Z
+     */
+    MCAPI BlockDescriptor(std::string const &, std::vector<class BlockDescriptor::State> const &&);
     /**
      * @symbol ?getBlockOrUnknownBlock\@BlockDescriptor\@\@QEBAAEBVBlock\@\@XZ
      */
@@ -120,13 +120,13 @@ public:
      */
     MCAPI static char const JSON_TAGS_FIELD[];
     /**
-     * @symbol ?anyMatch\@BlockDescriptor\@\@SA_NAEBV?$vector\@VBlockDescriptor\@\@V?$allocator\@VBlockDescriptor\@\@\@std\@\@\@std\@\@AEBV1\@\@Z
-     */
-    MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const &, class BlockDescriptor const &);
-    /**
      * @symbol ?anyMatch\@BlockDescriptor\@\@SA_NAEBV?$vector\@VBlockDescriptor\@\@V?$allocator\@VBlockDescriptor\@\@\@std\@\@\@std\@\@AEBVBlock\@\@\@Z
      */
     MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const &, class Block const &);
+    /**
+     * @symbol ?anyMatch\@BlockDescriptor\@\@SA_NAEBV?$vector\@VBlockDescriptor\@\@V?$allocator\@VBlockDescriptor\@\@\@std\@\@\@std\@\@AEBV1\@\@Z
+     */
+    MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const &, class BlockDescriptor const &);
     /**
      * @symbol ?bindType\@BlockDescriptor\@\@SAXXZ
      */
@@ -142,9 +142,9 @@ public:
 
 //private:
     /**
-     * @symbol ?_resolveImpl\@BlockDescriptor\@\@AEAAX_N\@Z
+     * @symbol ?_resolve\@BlockDescriptor\@\@AEBAX_N\@Z
      */
-    MCAPI void _resolveImpl(bool);
+    MCAPI void _resolve(bool) const;
 
 private:
 

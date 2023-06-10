@@ -28,13 +28,13 @@ public:
 
 public:
     /**
-     * @symbol ??0PackSourceReport\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI PackSourceReport(class PackSourceReport const &);
-    /**
      * @symbol ??0PackSourceReport\@\@QEAA\@XZ
      */
     MCAPI PackSourceReport();
+    /**
+     * @symbol ??0PackSourceReport\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI PackSourceReport(class PackSourceReport const &);
     /**
      * @symbol ?addReport\@PackSourceReport\@\@QEAAXAEBUPackIdVersion\@\@$$QEAVPackReport\@\@\@Z
      */

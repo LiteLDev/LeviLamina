@@ -260,6 +260,10 @@ public:
      */
     MCAPI static class Enchant const * getEnchant(enum class Enchant::Type const &);
     /**
+     * @symbol ?getEnchantTypeFromName\@Enchant\@\@SA?AW4Type\@1\@AEBVHashedString\@\@\@Z
+     */
+    MCAPI static enum class Enchant::Type getEnchantTypeFromName(class HashedString const &);
+    /**
      * @symbol ?initEnchants\@Enchant\@\@SAXXZ
      */
     MCAPI static void initEnchants();

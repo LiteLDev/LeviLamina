@@ -36,9 +36,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?isNetworkComponent\@?$NetworkedItemComponent\@VOnUseOnItemComponent\@\@\@\@UEBA_NXZ
+     * @symbol __unk_vfn_1
      */
-    virtual bool isNetworkComponent() const;
+    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
@@ -46,24 +46,40 @@ public:
     virtual void __unk_vfn_2();
     /**
      * @vftbl 3
-     * @symbol ?useOn\@OnUseOnItemComponent\@\@UEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
+     * @symbol __unk_vfn_3
      */
-    virtual bool useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
+    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4();
-    /**
-     * @vftbl 5
      * @symbol ?buildNetworkTag\@?$NetworkedItemComponent\@VOnUseOnItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vftbl 6
+     * @vftbl 5
      * @symbol ?initializeFromNetwork\@?$NetworkedItemComponent\@VOnUseOnItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
+    /**
+     * @vftbl 6
+     * @symbol __unk_vfn_6
+     */
+    virtual void __unk_vfn_6();
+    /**
+     * @vftbl 7
+     * @symbol __unk_vfn_7
+     */
+    virtual void __unk_vfn_7();
+    /**
+     * @vftbl 8
+     * @symbol ?_useOn\@OnUseOnItemComponent\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
+     */
+    virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONUSEONITEMCOMPONENT
+    /**
+     * @symbol ?_canUseOn\@OnUseOnItemComponent\@\@MEBA_NAEBVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@E\@Z
+     */
+    MCVAPI bool _canUseOn(class ItemStack const &, class Actor &, class BlockPos const &, unsigned char) const;
+#endif
     /**
      * @symbol ?bindType\@OnUseOnItemComponent\@\@SAXXZ
      */

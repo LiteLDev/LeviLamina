@@ -82,6 +82,12 @@ public:
      * @symbol ?getCircuitComponentType\@ConsumerComponent\@\@UEBA?AW4CircuitComponentType\@\@XZ
      */
     virtual enum class CircuitComponentType getCircuitComponentType() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONSUMERCOMPONENT
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~ConsumerComponent();
+#endif
     /**
      * @symbol ??0ConsumerComponent\@\@QEAA\@XZ
      */

@@ -32,9 +32,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?assemble\@ShieldRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@AEBUCraftingContext\@\@\@Z
+     * @symbol ?assemble\@ShieldRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@AEAVCraftingContext\@\@\@Z
      */
-    virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &, struct CraftingContext const &) const;
+    virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &, class CraftingContext &) const;
     /**
      * @vftbl 2
      * @symbol ?getCraftingSize\@ShieldRecipe\@\@UEBAHXZ
@@ -57,9 +57,9 @@ public:
     virtual void __unk_vfn_5();
     /**
      * @vftbl 6
-     * @symbol ?matches\@ShieldRecipe\@\@UEBA_NAEAVCraftingContainer\@\@AEAVLevel\@\@\@Z
+     * @symbol ?matches\@ShieldRecipe\@\@UEBA_NAEBVCraftingContainer\@\@AEBVCraftingContext\@\@\@Z
      */
-    virtual bool matches(class CraftingContainer &, class Level &) const;
+    virtual bool matches(class CraftingContainer const &, class CraftingContext const &) const;
     /**
      * @vftbl 7
      * @symbol ?size\@ShieldRecipe\@\@UEBAHXZ

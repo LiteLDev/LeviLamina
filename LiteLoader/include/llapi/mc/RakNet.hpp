@@ -29,6 +29,7 @@ namespace RakNet {
     class SimpleMutex;
     struct SocketDescriptor;
     struct SplitPacketChannel;
+    struct RakNetStatistics;
 
     struct SystemAddress {
         char filler[17 * 8]; // uncertain?

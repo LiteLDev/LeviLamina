@@ -50,16 +50,16 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@StructureBlockUpdatePacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@StructureBlockUpdatePacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /**
-     * @symbol ??0StructureBlockUpdatePacket\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI StructureBlockUpdatePacket(class StructureBlockUpdatePacket const &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0StructureBlockUpdatePacket\@\@QEAA\@XZ
      */
     MCAPI StructureBlockUpdatePacket();
+    /**
+     * @symbol ??0StructureBlockUpdatePacket\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI StructureBlockUpdatePacket(class StructureBlockUpdatePacket const &);
 
 };

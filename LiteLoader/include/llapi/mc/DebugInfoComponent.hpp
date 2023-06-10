@@ -180,11 +180,6 @@ public:
     virtual void __unk_vfn_29();
     /**
      * @vftbl 30
-     * @symbol __unk_vfn_30
-     */
-    virtual void __unk_vfn_30();
-    /**
-     * @vftbl 31
      * @symbol ?onEvent\@DebugInfoComponent\@\@UEAA?AW4EventResult\@\@AEBUActorDefinitionTriggeredEvent\@\@\@Z
      */
     virtual enum class EventResult onEvent(struct ActorDefinitionTriggeredEvent const &);

@@ -123,6 +123,10 @@ namespace SharedConstants {
      */
     MCAPI extern unsigned short const NetworkEphemeralPort;
     /**
+     * @symbol ?NetworkMaxPlayerCount\@SharedConstants\@\@3HB
+     */
+    MCAPI extern int const NetworkMaxPlayerCount;
+    /**
      * @symbol ?NetworkProtocolVersion\@SharedConstants\@\@3HB
      */
     MCAPI extern int const NetworkProtocolVersion;

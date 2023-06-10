@@ -38,11 +38,6 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
-     */
-    virtual void __unk_vfn_7();
-    /**
      * @vftbl 11
      * @symbol __unk_vfn_11
      */
@@ -57,6 +52,11 @@ public:
      * @symbol __unk_vfn_16
      */
     virtual void __unk_vfn_16();
+    /**
+     * @vftbl 19
+     * @symbol __unk_vfn_19
+     */
+    virtual void __unk_vfn_19();
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
@@ -103,20 +103,20 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @vftbl 132
+     * @vftbl 115
+     * @symbol __unk_vfn_115
+     */
+    virtual void __unk_vfn_115();
+    /**
+     * @vftbl 116
+     * @symbol __unk_vfn_116
+     */
+    virtual void __unk_vfn_116();
+    /**
+     * @vftbl 134
      * @symbol ?_useOn\@BellBlockItem\@\@UEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
-    /**
-     * @vftbl 133
-     * @symbol __unk_vfn_133
-     */
-    virtual void __unk_vfn_133();
-    /**
-     * @vftbl 134
-     * @symbol __unk_vfn_134
-     */
-    virtual void __unk_vfn_134();
     /**
      * @vftbl 135
      * @symbol __unk_vfn_135
@@ -599,9 +599,9 @@ public:
     virtual void __unk_vfn_230();
     /**
      * @vftbl 231
-     * @symbol ?getPotionType\@SplashPotionItem\@\@UEBA?AW4PotionType\@Potion\@\@XZ
+     * @symbol __unk_vfn_231
      */
-    virtual enum class Potion::PotionType getPotionType() const;
+    virtual void __unk_vfn_231();
     /**
      * @vftbl 232
      * @symbol __unk_vfn_232
@@ -609,9 +609,9 @@ public:
     virtual void __unk_vfn_232();
     /**
      * @vftbl 233
-     * @symbol __unk_vfn_233
+     * @symbol ?getPotionType\@SplashPotionItem\@\@UEBA?AW4PotionType\@Potion\@\@XZ
      */
-    virtual void __unk_vfn_233();
+    virtual enum class Potion::PotionType getPotionType() const;
     /**
      * @vftbl 234
      * @symbol __unk_vfn_234
@@ -629,6 +629,16 @@ public:
     virtual void __unk_vfn_236();
     /**
      * @vftbl 237
+     * @symbol __unk_vfn_237
+     */
+    virtual void __unk_vfn_237();
+    /**
+     * @vftbl 238
+     * @symbol __unk_vfn_238
+     */
+    virtual void __unk_vfn_238();
+    /**
+     * @vftbl 239
      * @symbol ?getVariant\@ComponentItem\@\@UEBAHHH_N\@Z
      */
     virtual int getVariant(int, int, bool) const;

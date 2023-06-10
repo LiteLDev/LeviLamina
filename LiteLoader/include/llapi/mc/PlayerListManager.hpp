@@ -20,10 +20,13 @@ class PlayerListManager {
 public:
     class PlayerListManager& operator=(class PlayerListManager const &) = delete;
     PlayerListManager(class PlayerListManager const &) = delete;
-    PlayerListManager() = delete;
 #endif
 
 public:
+    /**
+     * @symbol ??0PlayerListManager\@\@QEAA\@XZ
+     */
+    MCAPI PlayerListManager();
     /**
      * @symbol ?getPlayerList\@PlayerListManager\@\@QEAAAEAV?$unordered_map\@VUUID\@mce\@\@VPlayerListEntry\@\@U?$hash\@VUUID\@mce\@\@\@std\@\@U?$equal_to\@VUUID\@mce\@\@\@5\@V?$allocator\@U?$pair\@$$CBVUUID\@mce\@\@VPlayerListEntry\@\@\@std\@\@\@5\@\@std\@\@XZ
      */
@@ -41,12 +44,28 @@ public:
      */
     MCAPI std::string const & getPlayerXUID(class mce::UUID const &) const;
     /**
-     * @symbol ?removeByUUID\@PlayerListManager\@\@QEAAXAEBVUUID\@mce\@\@\@Z
+     * @symbol ?initializeWithGameplayUserManagerOnServer\@PlayerListManager\@\@QEAAXAEAVGameplayUserManager\@\@\@Z
      */
-    MCAPI void removeByUUID(class mce::UUID const &);
+    MCAPI void initializeWithGameplayUserManagerOnServer(class GameplayUserManager &);
+    /**
+     * @symbol ?setPacketSender\@PlayerListManager\@\@QEAAXAEAVPacketSender\@\@\@Z
+     */
+    MCAPI void setPacketSender(class PacketSender &);
     /**
      * @symbol ??1PlayerListManager\@\@QEAA\@XZ
      */
     MCAPI ~PlayerListManager();
+
+//private:
+    /**
+     * @symbol ?_onAnyGameplayUsersRemoved\@PlayerListManager\@\@AEAAXXZ
+     */
+    MCAPI void _onAnyGameplayUsersRemoved();
+    /**
+     * @symbol ?_onGameplayUserRemoved\@PlayerListManager\@\@AEAAXAEAVEntityContext\@\@\@Z
+     */
+    MCAPI void _onGameplayUserRemoved(class EntityContext &);
+
+private:
 
 };

@@ -83,10 +83,6 @@ public:
      */
     MCVAPI enum class EventResult onActorTick(class Actor &);
     /**
-     * @symbol ?onActorUseItemOn\@ActorEventListener\@\@UEAA?AW4EventResult\@\@AEAVActor\@\@AEBVItemStack\@\@AEBVBlockPos\@\@E\@Z
-     */
-    MCVAPI enum class EventResult onActorUseItemOn(class Actor &, class ItemStack const &, class BlockPos const &, unsigned char);
-    /**
      * @symbol ?onEvent\@ActorEventListener\@\@UEAA?AW4EventResult\@\@AEBUActorNotificationEvent\@\@\@Z
      */
     MCVAPI enum class EventResult onEvent(struct ActorNotificationEvent const &);

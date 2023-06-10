@@ -50,9 +50,9 @@ public:
      */
     MCAPI void sendBlockDestructionStopped(class Player &, class BlockPos const &, int);
     /**
-     * @symbol ?sendBlockExploded\@BlockEventCoordinator\@\@QEAAXAEBVBlockPos\@\@AEBVBlock\@\@PEAVActor\@\@\@Z
+     * @symbol ?sendBlockExploded\@BlockEventCoordinator\@\@QEAAXAEAVDimension\@\@AEBVBlockPos\@\@AEBVBlock\@\@PEAVActor\@\@\@Z
      */
-    MCAPI void sendBlockExploded(class BlockPos const &, class Block const &, class Actor *);
+    MCAPI void sendBlockExploded(class Dimension &, class BlockPos const &, class Block const &, class Actor *);
     /**
      * @symbol ?sendBlockInPosWillBeDestroyedByPlayer\@BlockEventCoordinator\@\@QEAAXAEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */

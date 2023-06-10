@@ -64,10 +64,6 @@ public:
      */
     MCAPI void evaluate(class BlockSource *);
     /**
-     * @symbol ?getDirection\@CircuitSystem\@\@QEAAEAEBVBlockPos\@\@\@Z
-     */
-    MCAPI unsigned char getDirection(class BlockPos const &);
-    /**
      * @symbol ?getStrength\@CircuitSystem\@\@QEAAHAEBVBlockPos\@\@\@Z
      */
     MCAPI int getStrength(class BlockPos const &);
@@ -79,6 +75,10 @@ public:
      * @symbol ?isAvailableAt\@CircuitSystem\@\@QEAA_NAEBVBlockPos\@\@\@Z
      */
     MCAPI bool isAvailableAt(class BlockPos const &);
+    /**
+     * @symbol ?isConnectionAllowed\@CircuitSystem\@\@QEAA_NAEAVBaseCircuitComponent\@\@AEBVBlockPos\@\@E_N\@Z
+     */
+    MCAPI bool isConnectionAllowed(class BaseCircuitComponent &, class BlockPos const &, unsigned char, bool);
     /**
      * @symbol ?preSetupPoweredBlocks\@CircuitSystem\@\@QEAAXAEBVChunkPos\@\@\@Z
      */

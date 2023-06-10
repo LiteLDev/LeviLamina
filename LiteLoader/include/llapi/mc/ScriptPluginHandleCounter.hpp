@@ -35,24 +35,24 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?onMakeObject\@ScriptPluginHandleCounter\@\@UEAAXAEAVLifetimeRegistry\@Scripting\@\@UObjectHandle\@3\@Vmeta_type\@entt\@\@I\@Z
+     * @symbol ?onMakeObject\@ScriptPluginHandleCounter\@\@UEAAXAEAVLifetimeRegistry\@Scripting\@\@UObjectHandle\@3\@AEBVmeta_type\@entt\@\@I\@Z
      */
-    virtual void onMakeObject(class Scripting::LifetimeRegistry &, struct Scripting::ObjectHandle, class entt::meta_type, unsigned int);
+    virtual void onMakeObject(class Scripting::LifetimeRegistry &, struct Scripting::ObjectHandle, class entt::meta_type const &, unsigned int);
     /**
      * @vftbl 2
-     * @symbol ?onDestroyObject\@ScriptPluginHandleCounter\@\@UEAAXAEAVLifetimeRegistry\@Scripting\@\@UObjectHandle\@3\@Vmeta_type\@entt\@\@I\@Z
+     * @symbol ?onDestroyObject\@ScriptPluginHandleCounter\@\@UEAAXAEAVLifetimeRegistry\@Scripting\@\@UObjectHandle\@3\@AEBVmeta_type\@entt\@\@I\@Z
      */
-    virtual void onDestroyObject(class Scripting::LifetimeRegistry &, struct Scripting::ObjectHandle, class entt::meta_type, unsigned int);
+    virtual void onDestroyObject(class Scripting::LifetimeRegistry &, struct Scripting::ObjectHandle, class entt::meta_type const &, unsigned int);
     /**
      * @vftbl 3
-     * @symbol ?onTrackObject\@ScriptPluginHandleCounter\@\@UEAAXAEAVLifetimeRegistry\@Scripting\@\@UObjectHandle\@3\@Vmeta_type\@entt\@\@I\@Z
+     * @symbol ?onTrackObject\@ScriptPluginHandleCounter\@\@UEAAXAEAVLifetimeRegistry\@Scripting\@\@UObjectHandle\@3\@AEBVmeta_type\@entt\@\@I\@Z
      */
-    virtual void onTrackObject(class Scripting::LifetimeRegistry &, struct Scripting::ObjectHandle, class entt::meta_type, unsigned int);
+    virtual void onTrackObject(class Scripting::LifetimeRegistry &, struct Scripting::ObjectHandle, class entt::meta_type const &, unsigned int);
     /**
      * @vftbl 4
-     * @symbol ?onUntrackObject\@ScriptPluginHandleCounter\@\@UEAAXAEAVLifetimeRegistry\@Scripting\@\@UObjectHandle\@3\@Vmeta_type\@entt\@\@I\@Z
+     * @symbol ?onUntrackObject\@ScriptPluginHandleCounter\@\@UEAAXAEAVLifetimeRegistry\@Scripting\@\@UObjectHandle\@3\@AEBVmeta_type\@entt\@\@I\@Z
      */
-    virtual void onUntrackObject(class Scripting::LifetimeRegistry &, struct Scripting::ObjectHandle, class entt::meta_type, unsigned int);
+    virtual void onUntrackObject(class Scripting::LifetimeRegistry &, struct Scripting::ObjectHandle, class entt::meta_type const &, unsigned int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINHANDLECOUNTER
     /**
      * @symbol ?onObjectPromotedToMultipleOwners\@ScriptPluginHandleCounter\@\@UEAAXAEAVLifetimeRegistry\@Scripting\@\@UObjectHandle\@3\@\@Z
@@ -74,9 +74,9 @@ public:
 
 //private:
     /**
-     * @symbol ?_getOrMakeStats\@ScriptPluginHandleCounter\@\@AEAAPEAUTypeStats\@1\@Vmeta_type\@entt\@\@\@Z
+     * @symbol ?_getOrMakeStats\@ScriptPluginHandleCounter\@\@AEAAPEAUTypeStats\@1\@AEBVmeta_type\@entt\@\@\@Z
      */
-    MCAPI struct ScriptPluginHandleCounter::TypeStats * _getOrMakeStats(class entt::meta_type);
+    MCAPI struct ScriptPluginHandleCounter::TypeStats * _getOrMakeStats(class entt::meta_type const &);
 
 private:
 

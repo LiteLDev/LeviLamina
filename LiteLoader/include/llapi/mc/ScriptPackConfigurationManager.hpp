@@ -27,13 +27,13 @@ public:
 
 public:
     /**
-     * @symbol ??0ScriptPackConfigurationManager\@\@QEAA\@XZ
-     */
-    MCAPI ScriptPackConfigurationManager();
-    /**
      * @symbol ??0ScriptPackConfigurationManager\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI ScriptPackConfigurationManager(class ScriptPackConfigurationManager const &);
+    /**
+     * @symbol ??0ScriptPackConfigurationManager\@\@QEAA\@XZ
+     */
+    MCAPI ScriptPackConfigurationManager();
     /**
      * @symbol ?getPackConfiguration\@ScriptPackConfigurationManager\@\@QEBAAEBVScriptPackConfiguration\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */

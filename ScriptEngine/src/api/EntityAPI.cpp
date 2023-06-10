@@ -23,7 +23,11 @@
 #include <llapi/mc/Biome.hpp>
 #include <llapi/mc/AABB.hpp>
 #include <llapi/mc/BlockSource.hpp>
+#include <llapi/mc/ActorMobilityUtils.hpp>
+#include <llapi/mc/IConstBlockSource.hpp>
+#include <llapi/mc/EntityContext.hpp>
 #include <magic_enum/magic_enum.hpp>
+
 
 using magic_enum::enum_integer;
 
@@ -594,7 +598,8 @@ Local<Value> EntityClass::getInLava() {
         if (!entity)
             return Local<Value>();
 
-        return Boolean::newBoolean(entity->isInLava());
+        return Boolean::newBoolean(ActorMobilityUtils::shouldApplyLava(
+            *(IConstBlockSource*)&entity->getDimensionBlockSourceConst(), entity->getEntityContext()));
     }
     CATCH("Fail in getInLava!")
 }

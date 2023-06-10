@@ -50,9 +50,9 @@ public:
 
 //private:
     /**
-     * @symbol ?_getSpawnPositionAndFitness\@SpawnClimateFinder\@\@AEBA?AU?$pair\@VBlockPos\@\@_J\@std\@\@VBlockPos\@\@\@Z
+     * @symbol ?_calculateClimateFitness\@SpawnClimateFinder\@\@AEBA_JVBlockPos\@\@\@Z
      */
-    MCAPI struct std::pair<class BlockPos, __int64> _getSpawnPositionAndFitness(class BlockPos) const;
+    MCAPI __int64 _calculateClimateFitness(class BlockPos) const;
     /**
      * @symbol ?_radialSearch\@SpawnClimateFinder\@\@AEBA?AUResultDetails\@1\@U21\@HH\@Z
      */

@@ -55,4 +55,12 @@ public:
      */
     MCAPI static void addPieces(class BlockPos, std::vector<std::unique_ptr<class StructurePiece>> &, class Random &, class JigsawStructureRegistry &, enum class VanillaBiomeTypes, class Dimension &);
 
+//private:
+    /**
+     * @symbol ?_isPieceTowerTop\@TrailRuinsPiece\@\@AEBA?B_NXZ
+     */
+    MCAPI bool const _isPieceTowerTop() const;
+
+private:
+
 };

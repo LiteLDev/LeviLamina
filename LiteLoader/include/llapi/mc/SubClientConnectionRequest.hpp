@@ -200,9 +200,9 @@ public:
      */
     MCAPI SubClientConnectionRequest(std::unique_ptr<class WebToken>, std::string const &);
     /**
-     * @symbol ?validate\@SubClientConnectionRequest\@\@AEBA?AV?$unique_ptr\@VCertificate\@\@U?$default_delete\@VCertificate\@\@\@std\@\@\@std\@\@V23\@_J\@Z
+     * @symbol ?validate\@SubClientConnectionRequest\@\@AEBA?AV?$unique_ptr\@VCertificate\@\@U?$default_delete\@VCertificate\@\@\@std\@\@\@std\@\@V23\@_J_N\@Z
      */
-    MCAPI std::unique_ptr<class Certificate> validate(std::unique_ptr<class Certificate>, __int64) const;
+    MCAPI std::unique_ptr<class Certificate> validate(std::unique_ptr<class Certificate>, __int64, bool) const;
 
 private:
 

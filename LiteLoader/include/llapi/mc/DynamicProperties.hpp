@@ -40,6 +40,10 @@ public:
      */
     MCAPI class std::variant<float, bool, std::string> * getDynamicProperty(std::string const &, std::string const &);
     /**
+     * @symbol ?registerLevelStorageManagerListener\@DynamicProperties\@\@QEAAXAEAVLevelStorageManager\@\@\@Z
+     */
+    MCAPI void registerLevelStorageManagerListener(class LevelStorageManager &);
+    /**
      * @symbol ?removeDynamicProperty\@DynamicProperties\@\@QEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
     MCAPI bool removeDynamicProperty(std::string const &, std::string const &);

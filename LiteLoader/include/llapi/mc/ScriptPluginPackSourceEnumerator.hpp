@@ -43,5 +43,9 @@ public:
      */
     MCVAPI ~ScriptPluginPackSourceEnumerator();
 #endif
+    /**
+     * @symbol ??0ScriptPluginPackSourceEnumerator\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@VPackInstance\@\@V?$allocator\@VPackInstance\@\@\@std\@\@\@2\@\@Z
+     */
+    MCAPI ScriptPluginPackSourceEnumerator(std::string const &, std::vector<class PackInstance> const &);
 
 };

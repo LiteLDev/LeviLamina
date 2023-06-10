@@ -10,38 +10,27 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC class InsidePowderSnowBlockSystem.
- *
- */
-class InsidePowderSnowBlockSystem {
+
+namespace InsidePowderSnowBlockSystem {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEPOWDERSNOWBLOCKSYSTEM
-public:
-    class InsidePowderSnowBlockSystem& operator=(class InsidePowderSnowBlockSystem const &) = delete;
-    InsidePowderSnowBlockSystem(class InsidePowderSnowBlockSystem const &) = delete;
-    InsidePowderSnowBlockSystem() = delete;
-#endif
-
-public:
     /**
-     * @symbol ?createClientSideSpawnParticleSystem\@InsidePowderSnowBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createClientSideSpawnParticleSystem\@InsidePowderSnowBlockSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createClientSideSpawnParticleSystem();
+    MCAPI struct TickingSystemWithInfo createClientSideSpawnParticleSystem();
     /**
-     * @symbol ?createMovementSlowdownSystem\@InsidePowderSnowBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createMovementSlowdownSystem\@InsidePowderSnowBlockSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createMovementSlowdownSystem();
+    MCAPI struct TickingSystemWithInfo createMovementSlowdownSystem();
     /**
-     * @symbol ?createServerSideClearFireSystem\@InsidePowderSnowBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createServerSideClearFireSystem\@InsidePowderSnowBlockSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createServerSideClearFireSystem();
+    MCAPI struct TickingSystemWithInfo createServerSideClearFireSystem();
     /**
-     * @symbol ?createServerSideFreezingSystem\@InsidePowderSnowBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createServerSideFreezingSystem\@InsidePowderSnowBlockSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createServerSideFreezingSystem();
+    MCAPI struct TickingSystemWithInfo createServerSideFreezingSystem();
 
 };

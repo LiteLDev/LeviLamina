@@ -97,6 +97,10 @@ public:
      */
     MCAPI void disconnectClient(class NetworkIdentifier const &, std::string const &);
     /**
+     * @symbol ?earlyShutdownMainthread\@Minecraft\@\@QEAAXXZ
+     */
+    MCAPI void earlyShutdownMainthread();
+    /**
      * @symbol ?getCommands\@Minecraft\@\@QEAAAEAVMinecraftCommands\@\@XZ
      */
     MCAPI class MinecraftCommands & getCommands();

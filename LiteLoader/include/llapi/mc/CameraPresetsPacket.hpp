@@ -46,17 +46,27 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 4
-     * @symbol ?readExtended\@CameraPresetsPacket\@\@UEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?read\@CameraPresetsPacket\@\@UEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult read(class ReadOnlyBinaryStream &);
     /**
      * @vftbl 7
-     * @symbol ?_read\@CameraPresetsPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@CameraPresetsPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMERAPRESETSPACKET
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~CameraPresetsPacket();
+#endif
     /**
      * @symbol ??0CameraPresetsPacket\@\@QEAA\@XZ
      */
     MCAPI CameraPresetsPacket();
+    /**
+     * @symbol ??0CameraPresetsPacket\@\@QEAA\@AEBVCameraPresets\@\@\@Z
+     */
+    MCAPI CameraPresetsPacket(class CameraPresets const &);
 
 };

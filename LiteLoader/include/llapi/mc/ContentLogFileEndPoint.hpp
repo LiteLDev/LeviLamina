@@ -53,9 +53,9 @@ public:
     MCVAPI void setEnabled(bool);
 #endif
     /**
-     * @symbol ??0ContentLogFileEndPoint\@\@QEAA\@VPath\@Core\@\@0\@Z
+     * @symbol ??0ContentLogFileEndPoint\@\@QEAA\@VPath\@Core\@\@0V?$optional\@W4LogLevel\@\@\@std\@\@\@Z
      */
-    MCAPI ContentLogFileEndPoint(class Core::Path, class Core::Path);
+    MCAPI ContentLogFileEndPoint(class Core::Path, class Core::Path, class std::optional<enum class LogLevel>);
     /**
      * @symbol ?FILE_NAME\@ContentLogFileEndPoint\@\@2V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@B
      */

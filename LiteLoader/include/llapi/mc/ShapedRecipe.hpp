@@ -37,9 +37,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?assemble\@ShapedRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@AEBUCraftingContext\@\@\@Z
+     * @symbol ?assemble\@ShapedRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@AEAVCraftingContext\@\@\@Z
      */
-    virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &, struct CraftingContext const &) const;
+    virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &, class CraftingContext &) const;
     /**
      * @vftbl 2
      * @symbol ?getCraftingSize\@ShapedRecipe\@\@UEBAHXZ
@@ -62,9 +62,9 @@ public:
     virtual void __unk_vfn_5();
     /**
      * @vftbl 6
-     * @symbol ?matches\@ShapedRecipe\@\@UEBA_NAEAVCraftingContainer\@\@AEAVLevel\@\@\@Z
+     * @symbol ?matches\@ShapedRecipe\@\@UEBA_NAEBVCraftingContainer\@\@AEBVCraftingContext\@\@\@Z
      */
-    virtual bool matches(class CraftingContainer &, class Level &) const;
+    virtual bool matches(class CraftingContainer const &, class CraftingContext const &) const;
     /**
      * @vftbl 7
      * @symbol ?size\@ShapedRecipe\@\@UEBAHXZ
@@ -96,9 +96,9 @@ public:
 
 //private:
     /**
-     * @symbol ?matches\@ShapedRecipe\@\@AEBA_NAEAVCraftingContainer\@\@HH_N\@Z
+     * @symbol ?matches\@ShapedRecipe\@\@AEBA_NAEBVCraftingContainer\@\@HH_N\@Z
      */
-    MCAPI bool matches(class CraftingContainer &, int, int, bool) const;
+    MCAPI bool matches(class CraftingContainer const &, int, int, bool) const;
 
 private:
 

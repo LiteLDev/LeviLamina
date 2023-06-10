@@ -104,21 +104,31 @@ public:
     virtual void __unk_vfn_35();
     /**
      * @vftbl 36
-     * @symbol __unk_vfn_36
+     * @symbol ?getUgcStrings\@SignBlockActor\@\@UEBA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEBVCompoundTag\@\@\@Z
      */
-    virtual void __unk_vfn_36();
+    virtual std::vector<std::string> getUgcStrings(class CompoundTag const &) const;
     /**
      * @vftbl 37
+     * @symbol ?setUgcStrings\@SignBlockActor\@\@UEBAXAEAVCompoundTag\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
+     */
+    virtual void setUgcStrings(class CompoundTag &, std::vector<std::string> const &) const;
+    /**
+     * @vftbl 38
+     * @symbol __unk_vfn_38
+     */
+    virtual void __unk_vfn_38();
+    /**
+     * @vftbl 39
      * @symbol ?_getUpdatePacket\@SignBlockActor\@\@MEAA?AV?$unique_ptr\@VBlockActorDataPacket\@\@U?$default_delete\@VBlockActorDataPacket\@\@\@std\@\@\@std\@\@AEAVBlockSource\@\@\@Z
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @vftbl 38
+     * @vftbl 40
      * @symbol ?_onUpdatePacket\@SignBlockActor\@\@MEAAXAEBVCompoundTag\@\@AEAVBlockSource\@\@\@Z
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
-     * @vftbl 39
+     * @vftbl 41
      * @symbol ?_playerCanUpdate\@SignBlockActor\@\@MEBA_NAEBVPlayer\@\@\@Z
      */
     virtual bool _playerCanUpdate(class Player const &) const;
@@ -169,6 +179,10 @@ public:
      */
     MCAPI void serverOnlySetIsLockedForEditing(class Player &);
     /**
+     * @symbol ?setHideGlowOutline\@SignBlockActor\@\@QEAAXW4SignTextSide\@\@_N\@Z
+     */
+    MCAPI void setHideGlowOutline(enum class SignTextSide, bool);
+    /**
      * @symbol ?setIsGlowing\@SignBlockActor\@\@QEAAXW4SignTextSide\@\@_N\@Z
      */
     MCAPI void setIsGlowing(enum class SignTextSide, bool);
@@ -184,10 +198,6 @@ public:
      * @symbol ?setSignTextColor\@SignBlockActor\@\@QEAAXW4SignTextSide\@\@AEBVColor\@mce\@\@\@Z
      */
     MCAPI void setSignTextColor(enum class SignTextSide, class mce::Color const &);
-    /**
-     * @symbol ?setType\@SignBlockActor\@\@QEAAXW4SignType\@1\@\@Z
-     */
-    MCAPI void setType(enum class SignBlockActor::SignType);
     /**
      * @symbol ?setWaxed\@SignBlockActor\@\@QEAAXXZ
      */

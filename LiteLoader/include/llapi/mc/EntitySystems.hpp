@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -91,5 +92,13 @@ public:
      * @symbol ?tickEditor\@EntitySystems\@\@QEAAXAEAVEntityRegistry\@\@\@Z
      */
     MCAPI void tickEditor(class EntityRegistry &);
+
+//private:
+    /**
+     * @symbol ?_singleTickCategory\@EntitySystems\@\@AEAAXV?$typeid_t\@USystemCategory\@\@\@Bedrock\@\@AEAVEntityContext\@\@\@Z
+     */
+    MCAPI void _singleTickCategory(class Bedrock::typeid_t<struct SystemCategory>, class EntityContext &);
+
+private:
 
 };

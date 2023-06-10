@@ -70,6 +70,10 @@ public:
      */
     MCAPI void serialize(class BinaryStream &, bool) const;
     /**
+     * @symbol ?verifyFull\@InventoryTransaction\@\@QEBA?AW4InventoryTransactionError\@\@AEAVPlayer\@\@_N\@Z
+     */
+    MCAPI enum class InventoryTransactionError verifyFull(class Player &, bool) const;
+    /**
      * @symbol ??1InventoryTransaction\@\@QEAA\@XZ
      */
     MCAPI ~InventoryTransaction();

@@ -29,4 +29,12 @@ public:
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
+//private:
+    /**
+     * @symbol ?_tick\@UpdateAISystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UMobFlag\@\@\@\@\@\@VActorOwnerComponent\@\@\@\@\@Z
+     */
+    MCAPI static void _tick(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct MobFlag>>, class ActorOwnerComponent>);
+
+private:
+
 };

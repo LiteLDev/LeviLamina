@@ -155,6 +155,10 @@ public:
      */
     MCVAPI bool hasFastAlphaTest() const;
     /**
+     * @symbol ?hideSplashScreen\@AppPlatform_win32\@\@UEAAXXZ
+     */
+    MCVAPI void hideSplashScreen();
+    /**
      * @symbol ?isCentennial\@AppPlatform_win32\@\@UEBA_NXZ
      */
     MCVAPI bool isCentennial() const;

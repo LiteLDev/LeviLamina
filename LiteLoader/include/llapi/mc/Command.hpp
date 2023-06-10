@@ -53,6 +53,7 @@ public:
 #endif
 
 public:
+public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
@@ -69,7 +70,7 @@ protected:
      * @symbol ?execute\@SetMaxPlayersCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
 public:
-    virtual void execute(class CommandOrigin const &, class CommandOutput &) const = 0;
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMAND
     /**
      * @symbol __unk_destructor_-1
@@ -105,13 +106,13 @@ public:
      */
     MCAPI static bool shouldUseCommandOriginRotation(class CommandOrigin const &, int);
     /**
-     * @symbol ?validRange\@Command\@\@SA_NHHHAEAVCommandOutput\@\@\@Z
-     */
-    MCAPI static bool validRange(int, int, int, class CommandOutput &);
-    /**
      * @symbol ?validRange\@Command\@\@SA_NMMMAEAVCommandOutput\@\@\@Z
      */
     MCAPI static bool validRange(float, float, float, class CommandOutput &);
+    /**
+     * @symbol ?validRange\@Command\@\@SA_NHHHAEAVCommandOutput\@\@\@Z
+     */
+    MCAPI static bool validRange(int, int, int, class CommandOutput &);
 
 //protected:
     /**

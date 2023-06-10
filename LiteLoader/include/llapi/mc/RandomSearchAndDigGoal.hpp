@@ -75,6 +75,10 @@ public:
 
 //private:
     /**
+     * @symbol ?_emitDiggingParticles\@RandomSearchAndDigGoal\@\@AEAAXXZ
+     */
+    MCAPI void _emitDiggingParticles();
+    /**
      * @symbol ?_triggerEvent\@RandomSearchAndDigGoal\@\@AEBAXAEBVActorDefinitionTrigger\@\@\@Z
      */
     MCAPI void _triggerEvent(class ActorDefinitionTrigger const &) const;

@@ -198,11 +198,11 @@ void LLPluginInfoCommand(CommandOutput& output, const string& pluginName) {
         output.trError("ll.cmd.pluginInfo.error.pluginNotFound", pluginName);
     }
 }
-
+//
 void LLVersionCommand(CommandOutput& output) {
     output.trSuccess("ll.cmd.version.msg", ll::getBdsVersion(), ll::getLoaderVersionString(), ll::getServerProtocolVersion());
 }
-
+//
 void LLHelpCommand(CommandOutput& output) {
     output.trSuccess("ll.cmd.help.msg");
 }
@@ -330,15 +330,15 @@ public:
 
     bool hasUpgradeOption, hasPluginNameSet, hasKeySet, hasValueSet;
     CommandRawText pluginNameToDoOperation;
-    CommandRawText key;
-    CommandRawText value;
+    std::string key;
+    std::string value;
 
 public:
     void execute(CommandOrigin const& ori, CommandOutput& output) const override {
         output.setLanguageCode(ori);
         std::string pluginName = "";
         if (hasPluginNameSet) {
-            pluginName = pluginNameToDoOperation;
+            pluginName = pluginNameToDoOperation.getText();
             if (pluginName.size() > 1 && pluginName[0] == '"' && pluginName[pluginName.size() - 1] == '"' && pluginName[pluginName.size() - 2] != '\\') {
                 pluginName.erase(0, 1);
                 pluginName.pop_back();
@@ -422,8 +422,8 @@ public:
             "ll",
             makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_Settings").addOptions((CommandParameterOption)1),
             makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::settingsOperation, "SettingsOperation", "SettingsOperation").addOptions((CommandParameterOption)1),
-            makeOptional<CommandParameterDataType::SOFT_ENUM>((std::string LLCommand::*)&LLCommand::key, "JsonPointer", "A path starting with /", &LLCommand::hasKeySet),
-            makeOptional<CommandParameterDataType::SOFT_ENUM>((std::string LLCommand::*)&LLCommand::value, "Value", "The value you'd like to set.", &LLCommand::hasValueSet));
+            makeOptional((std::string LLCommand::*)&LLCommand::key, "JsonPointer", &LLCommand::hasKeySet),
+            makeOptional((std::string LLCommand::*)&LLCommand::value, "Value", &LLCommand::hasValueSet));
 
         // ll load
         registry->addEnum<Operation>("Operation_FreeFilePath", {

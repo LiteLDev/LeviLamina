@@ -236,7 +236,7 @@ Local<Value> BlockClass::isThinFenceBlock() {
 
 Local<Value> BlockClass::isHeavyBlock() {
     try {
-        return Boolean::newBoolean(block->isHeavy());
+        return Boolean::newBoolean(block->isFallingBlock());
     }
     CATCH("Fail in isHeavyBlock!");
 }

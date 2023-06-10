@@ -176,13 +176,13 @@ public:
      */
     MCAPI bool moveTo(class Mob &, class Vec3 const &, float);
     /**
-     * @symbol ?moveTo\@NavigationComponent\@\@QEAA_NAEAVMob\@\@AEAVActor\@\@M\@Z
-     */
-    MCAPI bool moveTo(class Mob &, class Actor &, float);
-    /**
      * @symbol ?moveTo\@NavigationComponent\@\@QEAA_NAEAVMob\@\@AEBVVec3\@\@M1\@Z
      */
     MCAPI bool moveTo(class Mob &, class Vec3 const &, float, class Vec3 const &);
+    /**
+     * @symbol ?moveTo\@NavigationComponent\@\@QEAA_NAEAVMob\@\@AEAVActor\@\@M\@Z
+     */
+    MCAPI bool moveTo(class Mob &, class Actor &, float);
     /**
      * @symbol ?moveTo\@NavigationComponent\@\@QEAA_NAEAVMob\@\@V?$unique_ptr\@VPath\@\@U?$default_delete\@VPath\@\@\@std\@\@\@std\@\@M\@Z
      */

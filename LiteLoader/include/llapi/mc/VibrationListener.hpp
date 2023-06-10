@@ -76,6 +76,10 @@ public:
      */
     MCAPI void _requestVibrationParticle(class BlockSource &, class BlockPos const &, float);
     /**
+     * @symbol ?_tickInternal\@VibrationListener\@\@AEAAXAEAVBlockSource\@\@\@Z
+     */
+    MCAPI void _tickInternal(class BlockSource &);
+    /**
      * @symbol ?_trySendSneakCloseToSculkSensorEventPacket\@VibrationListener\@\@AEAAXAEAVBlockSource\@\@AEBVGameEvent\@\@AEBUGameEventContext\@\@AEBVVec3\@\@\@Z
      */
     MCAPI void _trySendSneakCloseToSculkSensorEventPacket(class BlockSource &, class GameEvent const &, struct GameEventContext const &, class Vec3 const &);

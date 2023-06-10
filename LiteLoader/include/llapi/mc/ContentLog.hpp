@@ -49,6 +49,10 @@ public:
      */
     MCAPI void updateEnabledStatus();
     /**
+     * @symbol ?getBedrockLogAreaFromContentLogArea\@ContentLog\@\@SA?BW4LogAreaID\@\@W4LogArea\@\@\@Z
+     */
+    MCAPI static enum class LogAreaID const getBedrockLogAreaFromContentLogArea(enum class LogArea);
+    /**
      * @symbol ?getLogAreaName\@ContentLog\@\@SAPEBDW4LogArea\@\@\@Z
      */
     MCAPI static char const * getLogAreaName(enum class LogArea);

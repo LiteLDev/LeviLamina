@@ -62,14 +62,6 @@ public:
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
     /**
-     * @symbol ?getPreValidationStatus\@ItemStackRequestActionMineBlock\@\@QEBA?AW4PreValidationStatus\@1\@XZ
-     */
-    MCAPI enum class ItemStackRequestActionMineBlock::PreValidationStatus getPreValidationStatus() const;
-    /**
-     * @symbol ?getPredictedDurability\@ItemStackRequestActionMineBlock\@\@QEBAHXZ
-     */
-    MCAPI int getPredictedDurability() const;
-    /**
      * @symbol ?getSrc\@ItemStackRequestActionMineBlock\@\@QEBA?AUItemStackRequestSlotInfo\@\@XZ
      */
     MCAPI struct ItemStackRequestSlotInfo getSrc() const;

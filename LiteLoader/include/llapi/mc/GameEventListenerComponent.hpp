@@ -27,13 +27,13 @@ public:
 
 public:
     /**
-     * @symbol ??0GameEventListenerComponent\@\@QEAA\@XZ
-     */
-    MCAPI GameEventListenerComponent();
-    /**
      * @symbol ??0GameEventListenerComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI GameEventListenerComponent(class GameEventListenerComponent &&);
+    /**
+     * @symbol ??0GameEventListenerComponent\@\@QEAA\@XZ
+     */
+    MCAPI GameEventListenerComponent();
     /**
      * @symbol ?initialize\@GameEventListenerComponent\@\@QEAA_NV?$unique_ptr\@VGameEventDynamicRegistration\@\@U?$default_delete\@VGameEventDynamicRegistration\@\@\@std\@\@\@std\@\@\@Z
      */

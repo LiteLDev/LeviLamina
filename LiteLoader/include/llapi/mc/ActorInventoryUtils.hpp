@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "ItemStackBase.hpp"
 
 #define BEFORE_EXTRA
 
@@ -44,12 +45,12 @@ namespace ActorInventoryUtils {
      */
     MCAPI class ItemStack const * getItem(class Actor const &, enum class EquipmentSlot, int);
     /**
-     * @symbol ?queryActorEquipmentSlotForItem\@ActorInventoryUtils\@\@YA_NAEBVActor\@\@AEBVItemInstance\@\@W4EquipmentSlot\@\@AEBVCommandIntegerRange\@\@3_N\@Z
+     * @symbol ?queryActorEquipmentSlotForItem\@ActorInventoryUtils\@\@YA_NAEBVActor\@\@AEBVItemInstance\@\@W4EquipmentSlot\@\@AEBVCommandIntegerRange\@\@3AEBUComparisonOptions\@ItemStackBase\@\@\@Z
      */
-    MCAPI bool queryActorEquipmentSlotForItem(class Actor const &, class ItemInstance const &, enum class EquipmentSlot, class CommandIntegerRange const &, class CommandIntegerRange const &, bool);
+    MCAPI bool queryActorEquipmentSlotForItem(class Actor const &, class ItemInstance const &, enum class EquipmentSlot, class CommandIntegerRange const &, class CommandIntegerRange const &, struct ItemStackBase::ComparisonOptions const &);
     /**
-     * @symbol ?queryActorForItem\@ActorInventoryUtils\@\@YA_NAEBVActor\@\@AEBVItemInstance\@\@AEBVCommandIntegerRange\@\@_N\@Z
+     * @symbol ?queryActorForItem\@ActorInventoryUtils\@\@YA_NAEBVActor\@\@AEBVItemInstance\@\@AEBVCommandIntegerRange\@\@AEBUComparisonOptions\@ItemStackBase\@\@\@Z
      */
-    MCAPI bool queryActorForItem(class Actor const &, class ItemInstance const &, class CommandIntegerRange const &, bool);
+    MCAPI bool queryActorForItem(class Actor const &, class ItemInstance const &, class CommandIntegerRange const &, struct ItemStackBase::ComparisonOptions const &);
 
 };

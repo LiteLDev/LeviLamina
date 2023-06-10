@@ -97,10 +97,6 @@ public:
      */
     MCAPI static float getSpeedBoost(int);
     /**
-     * @symbol ?isActive\@SoulSpeedEnchant\@\@SA_NAEBVActor\@\@\@Z
-     */
-    MCAPI static bool isActive(class Actor const &);
-    /**
      * @symbol ?shouldSpawnParticles\@SoulSpeedEnchant\@\@SA_NAEBVActor\@\@\@Z
      */
     MCAPI static bool shouldSpawnParticles(class Actor const &);

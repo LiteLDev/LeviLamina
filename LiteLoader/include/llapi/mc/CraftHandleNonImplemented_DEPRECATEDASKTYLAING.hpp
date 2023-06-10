@@ -40,5 +40,9 @@ public:
      * @symbol ?_handleCraftAction\@CraftHandleNonImplemented_DEPRECATEDASKTYLAING\@\@MEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionCraftBase\@\@\@Z
      */
     virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &);
+    /**
+     * @symbol ??0CraftHandleNonImplemented_DEPRECATEDASKTYLAING\@\@QEAA\@AEAVItemStackRequestActionCraftHandler\@\@\@Z
+     */
+    MCAPI CraftHandleNonImplemented_DEPRECATEDASKTYLAING(class ItemStackRequestActionCraftHandler &);
 
 };

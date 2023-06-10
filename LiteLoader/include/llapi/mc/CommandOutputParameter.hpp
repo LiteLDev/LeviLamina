@@ -45,13 +45,13 @@ public:
      */
     MCAPI CommandOutputParameter(char const *);
     /**
+     * @symbol ??0CommandOutputParameter\@\@QEAA\@M\@Z
+     */
+    MCAPI CommandOutputParameter(float);
+    /**
      * @symbol ??0CommandOutputParameter\@\@QEAA\@H\@Z
      */
     MCAPI CommandOutputParameter(int);
-    /**
-     * @symbol ??0CommandOutputParameter\@\@QEAA\@W4NoCountType\@0\@\@Z
-     */
-    MCAPI CommandOutputParameter(enum class CommandOutputParameter::NoCountType);
     /**
      * @symbol ??0CommandOutputParameter\@\@QEAA\@AEBV?$CommandSelectorResults\@VActor\@\@\@\@\@Z
      */
@@ -61,17 +61,21 @@ public:
      */
     MCAPI CommandOutputParameter(class CommandSelectorResults<class Player> const &);
     /**
-     * @symbol ??0CommandOutputParameter\@\@QEAA\@M\@Z
+     * @symbol ??0CommandOutputParameter\@\@QEAA\@_N\@Z
      */
-    MCAPI CommandOutputParameter(float);
-    /**
-     * @symbol ??0CommandOutputParameter\@\@QEAA\@VBlockPos\@\@\@Z
-     */
-    MCAPI CommandOutputParameter(class BlockPos);
+    MCAPI CommandOutputParameter(bool);
     /**
      * @symbol ??0CommandOutputParameter\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI CommandOutputParameter(class CommandOutputParameter &&);
+    /**
+     * @symbol ??0CommandOutputParameter\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI CommandOutputParameter(std::string const &);
+    /**
+     * @symbol ??0CommandOutputParameter\@\@QEAA\@W4NoCountType\@0\@\@Z
+     */
+    MCAPI CommandOutputParameter(enum class CommandOutputParameter::NoCountType);
     /**
      * @symbol ??0CommandOutputParameter\@\@QEAA\@AEBV?$vector\@PEBVActor\@\@V?$allocator\@PEBVActor\@\@\@std\@\@\@std\@\@\@Z
      */
@@ -81,17 +85,13 @@ public:
      */
     MCAPI CommandOutputParameter(std::vector<class Player const *> const &);
     /**
-     * @symbol ??0CommandOutputParameter\@\@QEAA\@_N\@Z
-     */
-    MCAPI CommandOutputParameter(bool);
-    /**
-     * @symbol ??0CommandOutputParameter\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI CommandOutputParameter(std::string const &);
-    /**
      * @symbol ??0CommandOutputParameter\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI CommandOutputParameter(class CommandOutputParameter const &);
+    /**
+     * @symbol ??0CommandOutputParameter\@\@QEAA\@VBlockPos\@\@\@Z
+     */
+    MCAPI CommandOutputParameter(class BlockPos);
     /**
      * @symbol ??4CommandOutputParameter\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */

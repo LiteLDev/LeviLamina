@@ -10,19 +10,16 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC structure WorldTemplateManagerProxyCallbacks.
- *
- */
-struct WorldTemplateManagerProxyCallbacks {
+
+class WorldTemplateManagerProxyCallbacks {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDTEMPLATEMANAGERPROXYCALLBACKS
 public:
-    struct WorldTemplateManagerProxyCallbacks& operator=(struct WorldTemplateManagerProxyCallbacks const &) = delete;
-    WorldTemplateManagerProxyCallbacks(struct WorldTemplateManagerProxyCallbacks const &) = delete;
+    class WorldTemplateManagerProxyCallbacks& operator=(class WorldTemplateManagerProxyCallbacks const &) = delete;
+    WorldTemplateManagerProxyCallbacks(class WorldTemplateManagerProxyCallbacks const &) = delete;
     WorldTemplateManagerProxyCallbacks() = delete;
 #endif
 

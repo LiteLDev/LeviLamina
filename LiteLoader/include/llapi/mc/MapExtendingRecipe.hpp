@@ -37,9 +37,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?assemble\@MapExtendingRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@AEBUCraftingContext\@\@\@Z
+     * @symbol ?assemble\@MapExtendingRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@AEAVCraftingContext\@\@\@Z
      */
-    virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &, struct CraftingContext const &) const;
+    virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &, class CraftingContext &) const;
     /**
      * @vftbl 2
      * @symbol ?getCraftingSize\@MapExtendingRecipe\@\@UEBAHXZ
@@ -62,9 +62,9 @@ public:
     virtual void __unk_vfn_5();
     /**
      * @vftbl 6
-     * @symbol ?matches\@MapExtendingRecipe\@\@UEBA_NAEAVCraftingContainer\@\@AEAVLevel\@\@\@Z
+     * @symbol ?matches\@MapExtendingRecipe\@\@UEBA_NAEBVCraftingContainer\@\@AEBVCraftingContext\@\@\@Z
      */
-    virtual bool matches(class CraftingContainer &, class Level &) const;
+    virtual bool matches(class CraftingContainer const &, class CraftingContext const &) const;
     /**
      * @vftbl 7
      * @symbol ?size\@MapExtendingRecipe\@\@UEBAHXZ
@@ -82,13 +82,5 @@ public:
      * @symbol ?CraftingTableID\@MapExtendingRecipe\@\@2VUUID\@mce\@\@B
      */
     MCAPI static class mce::UUID const CraftingTableID;
-
-//private:
-    /**
-     * @symbol ?_updateMapInstance\@MapExtendingRecipe\@\@AEBAXAEAVItemInstance\@\@\@Z
-     */
-    MCAPI void _updateMapInstance(class ItemInstance &) const;
-
-private:
 
 };

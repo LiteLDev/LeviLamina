@@ -298,9 +298,9 @@ public:
      */
     MCAPI static std::string getNameById(unsigned int);
     /**
-     * @symbol ?initEffects\@MobEffect\@\@SAXPEAVResourcePackManager\@\@AEBVExperiments\@\@\@Z
+     * @symbol ?initEffects\@MobEffect\@\@SAXPEAVResourcePackManager\@\@AEBVBaseGameVersion\@\@AEBVExperiments\@\@\@Z
      */
-    MCAPI static void initEffects(class ResourcePackManager *, class Experiments const &);
+    MCAPI static void initEffects(class ResourcePackManager *, class BaseGameVersion const &, class Experiments const &);
     /**
      * @symbol ?mMobEffects\@MobEffect\@\@2PAV?$unique_ptr\@VMobEffect\@\@U?$default_delete\@VMobEffect\@\@\@std\@\@\@std\@\@A
      */

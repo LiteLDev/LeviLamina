@@ -59,13 +59,5 @@ public:
      * @symbol ?_read\@ItemStackRequestActionBeaconPayment\@\@MEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual bool _read(class ReadOnlyBinaryStream &);
-    /**
-     * @symbol ?getPrimaryEffectId\@ItemStackRequestActionBeaconPayment\@\@QEBAHXZ
-     */
-    MCAPI int getPrimaryEffectId() const;
-    /**
-     * @symbol ?getSecondaryEffectId\@ItemStackRequestActionBeaconPayment\@\@QEBAHXZ
-     */
-    MCAPI int getSecondaryEffectId() const;
 
 };

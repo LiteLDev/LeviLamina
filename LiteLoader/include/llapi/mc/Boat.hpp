@@ -51,167 +51,162 @@ public:
      */
     virtual void remove();
     /**
-     * @vftbl 41
-     * @symbol __unk_vfn_41
+     * @vftbl 40
+     * @symbol __unk_vfn_40
      */
-    virtual void __unk_vfn_41();
+    virtual void __unk_vfn_40();
     /**
-     * @vftbl 49
+     * @vftbl 48
      * @symbol ?normalTick\@Boat\@\@UEAAXXZ
      */
     virtual void normalTick();
     /**
-     * @vftbl 56
+     * @vftbl 55
      * @symbol ?getExitTip\@Boat\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@W4InputMode\@\@W4NewInteractionModel\@\@\@Z
      */
     virtual std::string getExitTip(std::string const &, enum class InputMode, enum class NewInteractionModel) const;
     /**
-     * @vftbl 62
-     * @symbol __unk_vfn_62
+     * @vftbl 61
+     * @symbol __unk_vfn_61
      */
-    virtual void __unk_vfn_62();
+    virtual void __unk_vfn_61();
     /**
-     * @vftbl 69
-     * @symbol __unk_vfn_69
+     * @vftbl 68
+     * @symbol __unk_vfn_68
      */
-    virtual void __unk_vfn_69();
+    virtual void __unk_vfn_68();
     /**
-     * @vftbl 79
+     * @vftbl 77
      * @symbol ?getShadowHeightOffs\@Boat\@\@UEAAMXZ
      */
     virtual float getShadowHeightOffs();
     /**
-     * @vftbl 80
+     * @vftbl 78
      * @symbol ?getShadowRadius\@Boat\@\@UEBAMXZ
      */
     virtual float getShadowRadius() const;
     /**
-     * @vftbl 82
-     * @symbol __unk_vfn_82
+     * @vftbl 80
+     * @symbol __unk_vfn_80
      */
-    virtual void __unk_vfn_82();
+    virtual void __unk_vfn_80();
     /**
-     * @vftbl 85
-     * @symbol __unk_vfn_85
+     * @vftbl 86
+     * @symbol __unk_vfn_86
      */
-    virtual void __unk_vfn_85();
+    virtual void __unk_vfn_86();
     /**
      * @vftbl 88
-     * @symbol __unk_vfn_88
-     */
-    virtual void __unk_vfn_88();
-    /**
-     * @vftbl 90
      * @symbol ?onAboveBubbleColumn\@Boat\@\@UEAAX_N\@Z
      */
     virtual void onAboveBubbleColumn(bool);
     /**
-     * @vftbl 95
+     * @vftbl 93
      * @symbol ?isPickable\@Boat\@\@UEAA_NXZ
      */
     virtual bool isPickable();
     /**
-     * @vftbl 96
-     * @symbol __unk_vfn_96
+     * @vftbl 94
+     * @symbol __unk_vfn_94
      */
-    virtual void __unk_vfn_96();
+    virtual void __unk_vfn_94();
     /**
-     * @vftbl 99
-     * @symbol __unk_vfn_99
+     * @vftbl 97
+     * @symbol __unk_vfn_97
      */
-    virtual void __unk_vfn_99();
+    virtual void __unk_vfn_97();
+    /**
+     * @vftbl 104
+     * @symbol __unk_vfn_104
+     */
+    virtual void __unk_vfn_104();
     /**
      * @vftbl 106
      * @symbol __unk_vfn_106
      */
     virtual void __unk_vfn_106();
     /**
-     * @vftbl 108
-     * @symbol __unk_vfn_108
+     * @vftbl 107
+     * @symbol __unk_vfn_107
      */
-    virtual void __unk_vfn_108();
+    virtual void __unk_vfn_107();
     /**
      * @vftbl 109
      * @symbol __unk_vfn_109
      */
     virtual void __unk_vfn_109();
     /**
-     * @vftbl 111
-     * @symbol __unk_vfn_111
-     */
-    virtual void __unk_vfn_111();
-    /**
-     * @vftbl 134
+     * @vftbl 132
      * @symbol ?isInvulnerableTo\@Boat\@\@UEBA_NAEBVActorDamageSource\@\@\@Z
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
-     * @vftbl 178
-     * @symbol __unk_vfn_178
+     * @vftbl 176
+     * @symbol __unk_vfn_176
      */
-    virtual void __unk_vfn_178();
+    virtual void __unk_vfn_176();
     /**
-     * @vftbl 180
+     * @vftbl 178
      * @symbol ?getControllingPlayer\@Boat\@\@UEBA?AUActorUniqueID\@\@XZ
      */
     virtual struct ActorUniqueID getControllingPlayer() const;
     /**
-     * @vftbl 188
+     * @vftbl 186
      * @symbol ?canAddPassenger\@Boat\@\@UEBA_NAEAVActor\@\@\@Z
      */
     virtual bool canAddPassenger(class Actor &) const;
     /**
-     * @vftbl 192
-     * @symbol __unk_vfn_192
+     * @vftbl 190
+     * @symbol __unk_vfn_190
      */
-    virtual void __unk_vfn_192();
+    virtual void __unk_vfn_190();
     /**
-     * @vftbl 217
-     * @symbol __unk_vfn_217
+     * @vftbl 215
+     * @symbol __unk_vfn_215
      */
-    virtual void __unk_vfn_217();
+    virtual void __unk_vfn_215();
     /**
-     * @vftbl 218
-     * @symbol __unk_vfn_218
+     * @vftbl 216
+     * @symbol __unk_vfn_216
      */
-    virtual void __unk_vfn_218();
+    virtual void __unk_vfn_216();
     /**
-     * @vftbl 221
+     * @vftbl 219
      * @symbol ?getPassengerYRotation\@Boat\@\@UEBAMAEBVActor\@\@\@Z
      */
     virtual float getPassengerYRotation(class Actor const &) const;
     /**
-     * @vftbl 240
-     * @symbol __unk_vfn_240
+     * @vftbl 232
+     * @symbol __unk_vfn_232
      */
-    virtual void __unk_vfn_240();
+    virtual void __unk_vfn_232();
     /**
-     * @vftbl 243
-     * @symbol __unk_vfn_243
+     * @vftbl 235
+     * @symbol __unk_vfn_235
      */
-    virtual void __unk_vfn_243();
+    virtual void __unk_vfn_235();
+    /**
+     * @vftbl 252
+     * @symbol __unk_vfn_252
+     */
+    virtual void __unk_vfn_252();
+    /**
+     * @vftbl 253
+     * @symbol ?_hurt\@Boat\@\@EEAA_NAEBVActorDamageSource\@\@M_N1\@Z
+     */
+    virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
      * @vftbl 260
      * @symbol __unk_vfn_260
      */
     virtual void __unk_vfn_260();
     /**
-     * @vftbl 261
-     * @symbol ?_hurt\@Boat\@\@EEAA_NAEBVActorDamageSource\@\@M_N1\@Z
+     * @vftbl 267
+     * @symbol __unk_vfn_267
      */
-    virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
+    virtual void __unk_vfn_267();
     /**
      * @vftbl 268
-     * @symbol __unk_vfn_268
-     */
-    virtual void __unk_vfn_268();
-    /**
-     * @vftbl 275
-     * @symbol __unk_vfn_275
-     */
-    virtual void __unk_vfn_275();
-    /**
-     * @vftbl 276
      * @symbol ?destroy\@Boat\@\@UEAAXPEAVActor\@\@\@Z
      */
     virtual void destroy(class Actor *);

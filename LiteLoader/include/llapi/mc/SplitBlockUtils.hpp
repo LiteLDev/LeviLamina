@@ -21,9 +21,21 @@ namespace SplitBlockUtils {
      */
     MCAPI extern std::vector<class std::reference_wrapper<struct SplitBlockUtils::LegacyBlockInfo const>> const LegacyBlockInfos;
     /**
+     * @symbol ?LegacyCarpetInfo\@SplitBlockUtils\@\@3ULegacyBlockInfo\@1\@B
+     */
+    MCAPI extern struct SplitBlockUtils::LegacyBlockInfo const LegacyCarpetInfo;
+    /**
+     * @symbol ?LegacyCoralInfo\@SplitBlockUtils\@\@3ULegacyBlockInfo\@1\@B
+     */
+    MCAPI extern struct SplitBlockUtils::LegacyBlockInfo const LegacyCoralInfo;
+    /**
      * @symbol ?LegacyFenceInfo\@SplitBlockUtils\@\@3ULegacyBlockInfo\@1\@B
      */
     MCAPI extern struct SplitBlockUtils::LegacyBlockInfo const LegacyFenceInfo;
+    /**
+     * @symbol ?LegacyLavaCauldronInfo\@SplitBlockUtils\@\@3ULegacyBlockInfo\@1\@B
+     */
+    MCAPI extern struct SplitBlockUtils::LegacyBlockInfo const LegacyLavaCauldronInfo;
     /**
      * @symbol ?LegacyLog2Info\@SplitBlockUtils\@\@3ULegacyBlockInfo\@1\@B
      */

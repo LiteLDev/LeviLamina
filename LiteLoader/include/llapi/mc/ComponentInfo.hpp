@@ -27,13 +27,13 @@ public:
 
 public:
     /**
-     * @symbol ??4ComponentInfo\@\@QEAAAEAU0\@AEBU0\@\@Z
-     */
-    MCAPI struct ComponentInfo & operator=(struct ComponentInfo const &);
-    /**
      * @symbol ??4ComponentInfo\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct ComponentInfo & operator=(struct ComponentInfo &&);
+    /**
+     * @symbol ??4ComponentInfo\@\@QEAAAEAU0\@AEBU0\@\@Z
+     */
+    MCAPI struct ComponentInfo & operator=(struct ComponentInfo const &);
     /**
      * @symbol ??1ComponentInfo\@\@QEAA\@XZ
      */

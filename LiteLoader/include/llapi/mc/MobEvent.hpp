@@ -29,13 +29,13 @@ public:
 
 public:
     /**
-     * @symbol ??0MobEvent\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI MobEvent(class MobEvent const &);
-    /**
      * @symbol ??0MobEvent\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0_N\@Z
      */
     MCAPI MobEvent(std::string, std::string, bool);
+    /**
+     * @symbol ??0MobEvent\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI MobEvent(class MobEvent const &);
     /**
      * @symbol ?getLocalizableName\@MobEvent\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */

@@ -36,15 +36,15 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 24
-     * @symbol __unk_vfn_24
-     */
-    virtual void __unk_vfn_24();
-    /**
      * @vftbl 25
      * @symbol __unk_vfn_25
      */
     virtual void __unk_vfn_25();
+    /**
+     * @vftbl 26
+     * @symbol __unk_vfn_26
+     */
+    virtual void __unk_vfn_26();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERUICONTAINER
     /**
      * @symbol __unk_destructor_-1

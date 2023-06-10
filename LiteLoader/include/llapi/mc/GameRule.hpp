@@ -128,13 +128,13 @@ public:
 
 //protected:
     /**
-     * @symbol ?_setDefaultValue\@GameRule\@\@IEAAAEAV1\@_N\@Z
-     */
-    MCAPI class GameRule & _setDefaultValue(bool);
-    /**
      * @symbol ?_setDefaultValue\@GameRule\@\@IEAAAEAV1\@H\@Z
      */
     MCAPI class GameRule & _setDefaultValue(int);
+    /**
+     * @symbol ?_setDefaultValue\@GameRule\@\@IEAAAEAV1\@_N\@Z
+     */
+    MCAPI class GameRule & _setDefaultValue(bool);
 
 //private:
     /**

@@ -107,6 +107,10 @@ namespace CommandUtils {
      */
     MCAPI bool isActiveTickingChunk(struct Tick, struct Tick);
     /**
+     * @symbol ?isActiveTickingChunk\@CommandUtils\@\@YA_NAEBVLevelChunk\@\@\@Z
+     */
+    MCAPI bool isActiveTickingChunk(class LevelChunk const &);
+    /**
      * @symbol ?isFunctionValid\@CommandUtils\@\@YA_NAEAVCommandOutput\@\@AEAVFunctionEntry\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI bool isFunctionValid(class CommandOutput &, class FunctionEntry &, std::string const &);

@@ -28,9 +28,9 @@ public:
 
 public:
     /**
-     * @symbol ?canHatchTurtle\@SpawnChecks\@\@SA_NAEBVILevel\@\@\@Z
+     * @symbol ?canHatchEgg\@SpawnChecks\@\@SA_NAEBVILevel\@\@\@Z
      */
-    MCAPI static bool canHatchTurtle(class ILevel const &);
+    MCAPI static bool canHatchEgg(class ILevel const &);
     /**
      * @symbol ?canRespawnEnderDragon\@SpawnChecks\@\@SA_NAEBVILevel\@\@\@Z
      */

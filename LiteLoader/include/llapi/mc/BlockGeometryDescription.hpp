@@ -42,29 +42,44 @@ public:
     virtual void initializeComponent(class EntityContext &) const;
     /**
      * @vftbl 3
-     * @symbol __unk_vfn_3
+     * @symbol ?initializeComponentFromCode\@BlockGeometryDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
-    virtual void __unk_vfn_3();
+    virtual void initializeComponentFromCode(class EntityContext &) const;
     /**
      * @vftbl 4
+     * @symbol __unk_vfn_4
+     */
+    virtual void __unk_vfn_4();
+    /**
+     * @vftbl 5
      * @symbol ?isNetworkComponent\@BlockGeometryDescription\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl 5
+     * @vftbl 6
      * @symbol ?buildNetworkTag\@BlockGeometryDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?initializeFromNetwork\@BlockGeometryDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
-     * @vftbl 7
+     * @vftbl 8
      * @symbol ?handleVersionBasedInitialization\@BlockGeometryDescription\@\@UEAAXAEBVSemVersion\@\@\@Z
      */
     virtual void handleVersionBasedInitialization(class SemVersion const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKGEOMETRYDESCRIPTION
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~BlockGeometryDescription();
+#endif
+    /**
+     * @symbol ??0BlockGeometryDescription\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI BlockGeometryDescription(std::string const &);
     /**
      * @symbol ??0BlockGeometryDescription\@\@QEAA\@XZ
      */

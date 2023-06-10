@@ -25,6 +25,14 @@ public:
 
 public:
     /**
+     * @symbol ?registerBlockState\@BlockStateRegistry\@\@QEAAXAEBVBlockState\@\@\@Z
+     */
+    MCAPI void registerBlockState(class BlockState const &);
+    /**
+     * @symbol ?unregisterBlockStates\@BlockStateRegistry\@\@QEAAXXZ
+     */
+    MCAPI void unregisterBlockStates();
+    /**
      * @symbol ?get\@BlockStateRegistry\@\@SAAEAV1\@XZ
      */
     MCAPI static class BlockStateRegistry & get();

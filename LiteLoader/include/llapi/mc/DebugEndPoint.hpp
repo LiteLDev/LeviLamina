@@ -30,6 +30,36 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEBUGENDPOINT
+    /**
+     * @symbol ?contentAssert\@DebugEndPoint\@\@MEAAXW4LogArea\@\@W4LogLevel\@\@PEBD\@Z
+     */
+    MCVAPI void contentAssert(enum class LogArea, enum class LogLevel, char const *);
+    /**
+     * @symbol ?flush\@DebugEndPoint\@\@UEAAXXZ
+     */
+    MCVAPI void flush();
+    /**
+     * @symbol ?isEnabled\@DebugEndPoint\@\@UEBA_NXZ
+     */
+    MCVAPI bool isEnabled() const;
+    /**
+     * @symbol ?log\@DebugEndPoint\@\@UEAAXW4LogArea\@\@W4LogLevel\@\@PEBD\@Z
+     */
+    MCVAPI void log(enum class LogArea, enum class LogLevel, char const *);
+    /**
+     * @symbol ?logOnlyOnce\@DebugEndPoint\@\@UEBA_NXZ
+     */
+    MCVAPI bool logOnlyOnce() const;
+    /**
+     * @symbol ?setEnabled\@DebugEndPoint\@\@UEAAX_N\@Z
+     */
+    MCVAPI void setEnabled(bool);
+#endif
+    /**
+     * @symbol ??0DebugEndPoint\@\@QEAA\@V?$optional\@W4LogLevel\@\@\@std\@\@\@Z
+     */
+    MCAPI DebugEndPoint(class std::optional<enum class LogLevel>);
     /**
      * @symbol ?initializeContentLogging\@DebugEndPoint\@\@QEAAXAEAVResourcePackManager\@\@AEBVPath\@Core\@\@\@Z
      */

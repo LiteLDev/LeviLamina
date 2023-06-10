@@ -37,11 +37,6 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
-     */
-    virtual void __unk_vfn_7();
-    /**
      * @vftbl 11
      * @symbol __unk_vfn_11
      */
@@ -56,6 +51,11 @@ public:
      * @symbol __unk_vfn_16
      */
     virtual void __unk_vfn_16();
+    /**
+     * @vftbl 19
+     * @symbol __unk_vfn_19
+     */
+    virtual void __unk_vfn_19();
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
@@ -106,6 +106,16 @@ public:
      * @symbol ?useTimeDepleted\@SuspiciousStewItem\@\@UEBA?AW4ItemUseMethod\@\@AEAVItemStack\@\@PEAVLevel\@\@PEAVPlayer\@\@\@Z
      */
     virtual enum class ItemUseMethod useTimeDepleted(class ItemStack &, class Level *, class Player *) const;
+    /**
+     * @vftbl 115
+     * @symbol __unk_vfn_115
+     */
+    virtual void __unk_vfn_115();
+    /**
+     * @vftbl 116
+     * @symbol __unk_vfn_116
+     */
+    virtual void __unk_vfn_116();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SUSPICIOUSSTEWITEM
     /**
      * @symbol ?uniqueAuxValues\@SuspiciousStewItem\@\@UEBA_NXZ
@@ -116,5 +126,13 @@ public:
      * @symbol ?applyStewEffect\@SuspiciousStewItem\@\@SAXAEBVItemStack\@\@AEAVActor\@\@\@Z
      */
     MCAPI static void applyStewEffect(class ItemStack const &, class Actor &);
+
+//private:
+    /**
+     * @symbol ?_getStewEffects\@SuspiciousStewItem\@\@CAAEBV?$array\@VMobEffectInstance\@\@$0L\@\@std\@\@XZ
+     */
+    MCAPI static class std::array<class MobEffectInstance, 11> const & _getStewEffects();
+
+private:
 
 };

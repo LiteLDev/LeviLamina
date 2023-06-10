@@ -99,6 +99,10 @@ public:
      */
     MCAPI bool _canBreed(class Actor &, class Player &, class ItemStack const &);
     /**
+     * @symbol ?_determineBreedType\@BreedableComponent\@\@AEBA?AV?$optional\@UBreedableType\@\@\@std\@\@AEBVActor\@\@\@Z
+     */
+    MCAPI class std::optional<struct BreedableType> _determineBreedType(class Actor const &) const;
+    /**
      * @symbol ?_handleMate\@BreedableComponent\@\@AEAAPEAVActor\@\@AEAV2\@0\@Z
      */
     MCAPI class Actor * _handleMate(class Actor &, class Actor &);
@@ -110,6 +114,14 @@ public:
      * @symbol ?_meetsEnvironmentRequirements\@BreedableComponent\@\@AEBA_NAEAVActor\@\@\@Z
      */
     MCAPI bool _meetsEnvironmentRequirements(class Actor &) const;
+    /**
+     * @symbol ?_spawnExperienceOrbs\@BreedableComponent\@\@AEAAXAEAVActor\@\@\@Z
+     */
+    MCAPI void _spawnExperienceOrbs(class Actor &);
+    /**
+     * @symbol ?_spawnLoveParticles\@BreedableComponent\@\@AEAAXAEAVActor\@\@\@Z
+     */
+    MCAPI void _spawnLoveParticles(class Actor &);
     /**
      * @symbol ?_useBreedItem\@BreedableComponent\@\@AEAAXAEAVActor\@\@AEAVPlayer\@\@AEBVItemStack\@\@\@Z
      */

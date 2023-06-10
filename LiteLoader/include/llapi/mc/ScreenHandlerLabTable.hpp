@@ -54,10 +54,6 @@ public:
      * @symbol ?postRequest\@ScreenHandlerLabTable\@\@MEAAX_N\@Z
      */
     virtual void postRequest(bool);
-    /**
-     * @symbol ??0ScreenHandlerLabTable\@\@QEAA\@AEBVContainerScreenContext\@\@AEAVItemStackRequestActionHandler\@\@\@Z
-     */
-    MCAPI ScreenHandlerLabTable(class ContainerScreenContext const &, class ItemStackRequestActionHandler &);
 
 //private:
     /**

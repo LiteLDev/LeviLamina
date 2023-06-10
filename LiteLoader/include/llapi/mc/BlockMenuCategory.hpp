@@ -1,0 +1,32 @@
+/**
+ * @file  BlockMenuCategory.hpp
+ *
+ */
+#pragma once
+#define AUTO_GENERATED
+#include "llapi/Global.h"
+
+#define BEFORE_EXTRA
+
+#undef BEFORE_EXTRA
+
+
+struct BlockMenuCategory {
+
+#define AFTER_EXTRA
+
+#undef AFTER_EXTRA
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKMENUCATEGORY
+public:
+    struct BlockMenuCategory& operator=(struct BlockMenuCategory const &) = delete;
+    BlockMenuCategory(struct BlockMenuCategory const &) = delete;
+    BlockMenuCategory() = delete;
+#endif
+
+public:
+    /**
+     * @symbol ??1BlockMenuCategory\@\@QEAA\@XZ
+     */
+    MCAPI ~BlockMenuCategory();
+
+};

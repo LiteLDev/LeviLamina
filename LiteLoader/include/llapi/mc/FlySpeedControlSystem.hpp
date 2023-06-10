@@ -10,26 +10,19 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC class FlySpeedControlSystem.
- *
- */
-class FlySpeedControlSystem {
+
+namespace FlySpeedControlSystem {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLYSPEEDCONTROLSYSTEM
-public:
-    class FlySpeedControlSystem& operator=(class FlySpeedControlSystem const &) = delete;
-    FlySpeedControlSystem(class FlySpeedControlSystem const &) = delete;
-    FlySpeedControlSystem() = delete;
-#endif
-
-public:
     /**
-     * @symbol ?createFlySpeedControlSystem\@FlySpeedControlSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@FlySpeedControlSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createFlySpeedControlSystem();
+    MCAPI struct TickingSystemWithInfo createSystem();
+    /**
+     * @symbol ?doFlySpeedControlSystem\@FlySpeedControlSystem\@\@YAXAEBVStrictEntityContext\@\@AEBUAbilitiesComponent\@\@AEBUMoveInputComponent\@\@AEBUActorGameTypeComponent\@\@AEAUFrictionModifierComponent\@\@AEAUStateVectorComponent\@\@AEBUExternalDataInterface\@\@\@Z
+     */
+    MCAPI void doFlySpeedControlSystem(class StrictEntityContext const &, struct AbilitiesComponent const &, struct MoveInputComponent const &, struct ActorGameTypeComponent const &, struct FrictionModifierComponent &, struct StateVectorComponent &, struct ExternalDataInterface const &);
 
 };

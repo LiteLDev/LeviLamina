@@ -82,17 +82,17 @@ public:
      */
     MCAPI void _getResources(class Level &);
     /**
-     * @symbol ?_loadActorDefinition\@ActorDefinitionGroup\@\@AEAA?AULoadActorResult\@1\@AEAVLevel\@\@AEBVSemVersion\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBW4CurrentCmdVersion\@\@AEAVValue\@Json\@\@AEAV?$unordered_set\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@6\@W4LogArea\@\@\@Z
+     * @symbol ?_loadActorDefinition\@ActorDefinitionGroup\@\@AEAA?AULoadActorResult\@1\@AEAVLevel\@\@AEBVSemVersion\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBW4CurrentCmdVersion\@\@AEAVValue\@Json\@\@AEAV?$unordered_set\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@6\@_NW4LogArea\@\@\@Z
      */
-    MCAPI struct ActorDefinitionGroup::LoadActorResult _loadActorDefinition(class Level &, class SemVersion const &, std::string const &, enum class CurrentCmdVersion const &, class Json::Value &, class std::unordered_set<std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<std::string>> &, enum class LogArea);
+    MCAPI struct ActorDefinitionGroup::LoadActorResult _loadActorDefinition(class Level &, class SemVersion const &, std::string const &, enum class CurrentCmdVersion const &, class Json::Value &, class std::unordered_set<std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<std::string>> &, bool, enum class LogArea);
     /**
-     * @symbol ?_loadDefinitionFromJSON\@ActorDefinitionGroup\@\@AEAA_NAEBVSemVersion\@\@0AEBW4CurrentCmdVersion\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVValue\@Json\@\@2AEAVLevel\@\@W4LogArea\@\@\@Z
+     * @symbol ?_loadDefinitionFromJSON\@ActorDefinitionGroup\@\@AEAA_NAEBVSemVersion\@\@0AEBW4CurrentCmdVersion\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVValue\@Json\@\@2AEAVLevel\@\@_NW4LogArea\@\@\@Z
      */
-    MCAPI bool _loadDefinitionFromJSON(class SemVersion const &, class SemVersion const &, enum class CurrentCmdVersion const &, std::string const &, class Json::Value &, std::string const &, class Level &, enum class LogArea);
+    MCAPI bool _loadDefinitionFromJSON(class SemVersion const &, class SemVersion const &, enum class CurrentCmdVersion const &, std::string const &, class Json::Value &, std::string const &, class Level &, bool, enum class LogArea);
     /**
-     * @symbol ?_loadTemplates\@ActorDefinitionGroup\@\@AEAAXAEAVLevel\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UDeserializeDataParams\@\@\@Z
+     * @symbol ?_loadTemplates\@ActorDefinitionGroup\@\@AEAA?AW4ActorDefinitionParseStatus\@\@AEAVLevel\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UDeserializeDataParams\@\@\@Z
      */
-    MCAPI void _loadTemplates(class Level &, std::string const &, struct DeserializeDataParams);
+    MCAPI enum class ActorDefinitionParseStatus _loadTemplates(class Level &, std::string const &, struct DeserializeDataParams);
     /**
      * @symbol ?_setupCommonResourceDefinitionMap\@ActorDefinitionGroup\@\@AEAAXAEAVActorDefinition\@\@AEAVLevel\@\@\@Z
      */

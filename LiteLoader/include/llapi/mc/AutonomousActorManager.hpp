@@ -21,13 +21,14 @@ class AutonomousActorManager {
 public:
     class AutonomousActorManager& operator=(class AutonomousActorManager const &) = delete;
     AutonomousActorManager(class AutonomousActorManager const &) = delete;
+    AutonomousActorManager() = delete;
 #endif
 
 public:
     /**
-     * @symbol ??0AutonomousActorManager\@\@QEAA\@XZ
+     * @symbol ??0AutonomousActorManager\@\@QEAA\@V?$WeakRefT\@UEntityRegistryRefTraits\@\@\@\@\@Z
      */
-    MCAPI AutonomousActorManager();
+    MCAPI AutonomousActorManager(class WeakRefT<struct EntityRegistryRefTraits>);
     /**
      * @symbol ?addAutonomousActorEntity\@AutonomousActorManager\@\@QEAAPEAVActor\@\@AEAVDimension\@\@V?$OwnerPtrT\@UEntityRefTraits\@\@\@\@\@Z
      */
@@ -57,9 +58,21 @@ public:
      */
     MCAPI void onChunkLoaded(class LevelChunk &);
     /**
+     * @symbol ?registerLevelStorageManagerListener\@AutonomousActorManager\@\@QEAAXAEAVLevelStorageManager\@\@\@Z
+     */
+    MCAPI void registerLevelStorageManagerListener(class LevelStorageManager &);
+    /**
      * @symbol ??1AutonomousActorManager\@\@QEAA\@XZ
      */
     MCAPI ~AutonomousActorManager();
+    /**
+     * @symbol ?AUTONOMOUS_ACTOR_KEY\@AutonomousActorManager\@\@2V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@B
+     */
+    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> const AUTONOMOUS_ACTOR_KEY;
+    /**
+     * @symbol ?AUTONOMOUS_ACTOR_LIST_KEY\@AutonomousActorManager\@\@2V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@B
+     */
+    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> const AUTONOMOUS_ACTOR_LIST_KEY;
 
 //private:
     /**
@@ -70,6 +83,10 @@ public:
      * @symbol ?_onRemoveActorEntityReferences\@AutonomousActorManager\@\@AEAAXAEAVActor\@\@\@Z
      */
     MCAPI void _onRemoveActorEntityReferences(class Actor &);
+    /**
+     * @symbol ?_saveAllAutonomousActors\@AutonomousActorManager\@\@AEAAXAEAVLevelStorage\@\@\@Z
+     */
+    MCAPI void _saveAllAutonomousActors(class LevelStorage &);
 
 private:
 

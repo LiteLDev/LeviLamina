@@ -51,9 +51,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@LabTablePacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@LabTablePacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LABTABLEPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -65,12 +65,12 @@ public:
      */
     MCAPI LabTablePacket();
     /**
-     * @symbol ??0LabTablePacket\@\@QEAA\@W4Type\@0\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI LabTablePacket(enum class LabTablePacket::Type, class BlockPos const &);
-    /**
      * @symbol ??0LabTablePacket\@\@QEAA\@AEBVBlockPos\@\@W4LabTableReactionType\@\@\@Z
      */
     MCAPI LabTablePacket(class BlockPos const &, enum class LabTableReactionType);
+    /**
+     * @symbol ??0LabTablePacket\@\@QEAA\@W4Type\@0\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI LabTablePacket(enum class LabTablePacket::Type, class BlockPos const &);
 
 };

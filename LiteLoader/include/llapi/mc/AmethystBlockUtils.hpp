@@ -17,8 +17,8 @@ namespace AmethystBlockUtils {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?resonateVibration\@AmethystBlockUtils\@\@YAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
+     * @symbol ?resonateVibration\@AmethystBlockUtils\@\@YAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@H\@Z
      */
-    MCAPI void resonateVibration(class BlockSource &, class BlockPos const &, int);
+    MCAPI void resonateVibration(class BlockSource &, class BlockPos const &, class Actor *, int);
 
 };

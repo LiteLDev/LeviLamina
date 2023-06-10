@@ -73,12 +73,12 @@ public:
      */
     MCAPI static void appendUpgradeHoverText(class ItemStackBase const &, class Level &, std::string &);
     /**
-     * @symbol ?getTrim\@ArmorTrim\@\@SA?AV?$optional\@VArmorTrim\@\@\@std\@\@VBaseGameVersion\@\@VExperiments\@\@AEBVItemStackBase\@\@\@Z
+     * @symbol ?getTrim\@ArmorTrim\@\@SA?AV?$optional\@VArmorTrim\@\@\@std\@\@AEBVItemStackBase\@\@\@Z
      */
-    MCAPI static class std::optional<class ArmorTrim> getTrim(class BaseGameVersion, class Experiments, class ItemStackBase const &);
+    MCAPI static class std::optional<class ArmorTrim> getTrim(class ItemStackBase const &);
     /**
-     * @symbol ?setTrim\@ArmorTrim\@\@SAXVBaseGameVersion\@\@VExperiments\@\@AEAVItemStackBase\@\@V1\@\@Z
+     * @symbol ?setTrim\@ArmorTrim\@\@SAXAEAVItemStackBase\@\@V1\@\@Z
      */
-    MCAPI static void setTrim(class BaseGameVersion, class Experiments, class ItemStackBase &, class ArmorTrim);
+    MCAPI static void setTrim(class ItemStackBase &, class ArmorTrim);
 
 };

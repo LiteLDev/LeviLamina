@@ -97,16 +97,26 @@ public:
     virtual void __unk_vfn_35();
     /**
      * @vftbl 36
-     * @symbol __unk_vfn_36
+     * @symbol ?getUgcStrings\@ChalkboardBlockActor\@\@UEBA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEBVCompoundTag\@\@\@Z
      */
-    virtual void __unk_vfn_36();
+    virtual std::vector<std::string> getUgcStrings(class CompoundTag const &) const;
     /**
      * @vftbl 37
+     * @symbol ?setUgcStrings\@ChalkboardBlockActor\@\@UEBAXAEAVCompoundTag\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
+     */
+    virtual void setUgcStrings(class CompoundTag &, std::vector<std::string> const &) const;
+    /**
+     * @vftbl 38
+     * @symbol __unk_vfn_38
+     */
+    virtual void __unk_vfn_38();
+    /**
+     * @vftbl 39
      * @symbol ?_getUpdatePacket\@ChalkboardBlockActor\@\@MEAA?AV?$unique_ptr\@VBlockActorDataPacket\@\@U?$default_delete\@VBlockActorDataPacket\@\@\@std\@\@\@std\@\@AEAVBlockSource\@\@\@Z
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @vftbl 38
+     * @vftbl 40
      * @symbol ?_onUpdatePacket\@ChalkboardBlockActor\@\@MEAAXAEBVCompoundTag\@\@AEAVBlockSource\@\@\@Z
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);

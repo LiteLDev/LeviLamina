@@ -303,9 +303,9 @@ struct CachedItemStateMapPtr {
      */
     MCAPI extern class BlockStateVariant<int> const MultiFaceDirectionBits;
     /**
-     * @symbol ?NewLeafType\@VanillaStates\@\@3V?$BlockStateVariant\@W4NewLeafType\@\@\@\@B
+     * @symbol ?NewLeavesType\@VanillaStates\@\@3V?$BlockStateVariant\@W4NewLeavesType\@\@\@\@B
      */
-    MCAPI extern class BlockStateVariant<enum class NewLeafType> const NewLeafType;
+    MCAPI extern class BlockStateVariant<enum class NewLeavesType> const NewLeavesType;
     /**
      * @symbol ?NewLogType\@VanillaStates\@\@3V?$BlockStateVariant\@W4NewLogType\@\@\@\@B
      */
@@ -319,9 +319,9 @@ struct CachedItemStateMapPtr {
      */
     MCAPI extern class BlockStateVariant<bool> const OccupiedBit;
     /**
-     * @symbol ?OldLeafType\@VanillaStates\@\@3V?$BlockStateVariant\@W4OldLeafType\@\@\@\@B
+     * @symbol ?OldLeavesType\@VanillaStates\@\@3V?$BlockStateVariant\@W4OldLeavesType\@\@\@\@B
      */
-    MCAPI extern class BlockStateVariant<enum class OldLeafType> const OldLeafType;
+    MCAPI extern class BlockStateVariant<enum class OldLeavesType> const OldLeavesType;
     /**
      * @symbol ?OldLogType\@VanillaStates\@\@3V?$BlockStateVariant\@W4OldLogType\@\@\@\@B
      */
@@ -387,21 +387,25 @@ struct CachedItemStateMapPtr {
      */
     MCAPI extern class BlockStateVariant<int> const Rotation;
     /**
-     * @symbol ?SandStoneType\@VanillaStates\@\@3V?$BlockStateVariant\@W4SandStoneType\@\@\@\@B
-     */
-    MCAPI extern class BlockStateVariant<enum class SandStoneType> const SandStoneType;
-    /**
      * @symbol ?SandType\@VanillaStates\@\@3V?$BlockStateVariant\@W4SandType\@\@\@\@B
      */
     MCAPI extern class BlockStateVariant<enum class SandType> const SandType;
+    /**
+     * @symbol ?SandstoneType\@VanillaStates\@\@3V?$BlockStateVariant\@W4SandstoneType\@\@\@\@B
+     */
+    MCAPI extern class BlockStateVariant<enum class SandstoneType> const SandstoneType;
     /**
      * @symbol ?SaplingType\@VanillaStates\@\@3V?$BlockStateVariant\@W4SaplingType\@\@\@\@B
      */
     MCAPI extern class BlockStateVariant<enum class SaplingType> const SaplingType;
     /**
-     * @symbol ?SeaGrassType\@VanillaStates\@\@3V?$BlockStateVariant\@W4SeaGrassType\@\@\@\@B
+     * @symbol ?SculkSensorPhase\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
      */
-    MCAPI extern class BlockStateVariant<enum class SeaGrassType> const SeaGrassType;
+    MCAPI extern class BlockStateVariant<int> const SculkSensorPhase;
+    /**
+     * @symbol ?SeagrassType\@VanillaStates\@\@3V?$BlockStateVariant\@W4SeagrassType\@\@\@\@B
+     */
+    MCAPI extern class BlockStateVariant<enum class SeagrassType> const SeagrassType;
     /**
      * @symbol ?SpongeType\@VanillaStates\@\@3V?$BlockStateVariant\@W4SpongeType\@\@\@\@B
      */

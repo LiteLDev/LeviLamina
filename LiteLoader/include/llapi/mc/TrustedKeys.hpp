@@ -22,8 +22,8 @@ namespace TrustedKeys {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?AuthServicePublicKey\@TrustedKeys\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     * @symbol ?getAuthServicePublicKeys\@TrustedKeys\@\@YAAEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
      */
-    MCAPI extern std::string const AuthServicePublicKey;
+    MCAPI std::vector<std::string> const & getAuthServicePublicKeys();
 
 };

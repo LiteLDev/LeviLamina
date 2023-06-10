@@ -22,7 +22,6 @@ struct BlockQueuedTickingDescription {
 public:
     struct BlockQueuedTickingDescription& operator=(struct BlockQueuedTickingDescription const &) = delete;
     BlockQueuedTickingDescription(struct BlockQueuedTickingDescription const &) = delete;
-    BlockQueuedTickingDescription() = delete;
 #endif
 
 public:
@@ -41,6 +40,10 @@ public:
      * @symbol ?initializeComponent\@BlockQueuedTickingDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
     virtual void initializeComponent(class EntityContext &) const;
+    /**
+     * @symbol ??0BlockQueuedTickingDescription\@\@QEAA\@XZ
+     */
+    MCAPI BlockQueuedTickingDescription();
     /**
      * @symbol ?NameID\@BlockQueuedTickingDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */

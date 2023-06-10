@@ -54,9 +54,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@ModalFormRequestPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@ModalFormRequestPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MODALFORMREQUESTPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -64,12 +64,12 @@ public:
     MCVAPI ~ModalFormRequestPacket();
 #endif
     /**
-     * @symbol ??0ModalFormRequestPacket\@\@QEAA\@IAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI ModalFormRequestPacket(unsigned int, std::string const &);
-    /**
      * @symbol ??0ModalFormRequestPacket\@\@QEAA\@XZ
      */
     MCAPI ModalFormRequestPacket();
+    /**
+     * @symbol ??0ModalFormRequestPacket\@\@QEAA\@IAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI ModalFormRequestPacket(unsigned int, std::string const &);
 
 };

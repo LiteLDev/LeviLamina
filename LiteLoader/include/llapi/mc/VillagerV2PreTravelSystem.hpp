@@ -34,6 +34,10 @@ public:
      * @symbol ?_doVillagerV2PreTravel\@VillagerV2PreTravelSystem\@\@CAXAEBVStrictEntityContext\@\@AEBUSynchedActorDataComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@USkipMobTravelFlag\@\@\@\@\@\@\@Z
      */
     MCAPI static void _doVillagerV2PreTravel(class StrictEntityContext const &, struct SynchedActorDataComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct SkipMobTravelFlag>>);
+    /**
+     * @symbol ?_tick\@VillagerV2PreTravelSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UVillagerV2Flag\@\@\@\@\@\@$$CBUSynchedActorDataComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@USkipMobTravelFlag\@\@\@\@\@\@\@Z
+     */
+    MCAPI static void _tick(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct VillagerV2Flag>>, struct SynchedActorDataComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct SkipMobTravelFlag>>);
 
 private:
 

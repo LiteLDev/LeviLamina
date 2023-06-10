@@ -35,6 +35,10 @@ public:
      */
     MCAPI GameSession(class NetworkSystem &, std::unique_ptr<class ServerNetworkHandler>, class LoopbackPacketSender &, std::unique_ptr<class NetEventCallback>, struct std::pair<std::unique_ptr<class Level>, class OwnerPtrT<struct EntityRefTraits>>, enum class SubClientId);
     /**
+     * @symbol ?earlyShutdownMainthread\@GameSession\@\@QEAAXXZ
+     */
+    MCAPI void earlyShutdownMainthread();
+    /**
      * @symbol ?getServerNetworkHandler\@GameSession\@\@QEAA?AV?$NonOwnerPointer\@VServerNetworkHandler\@\@\@Bedrock\@\@XZ
      */
     MCAPI class Bedrock::NonOwnerPointer<class ServerNetworkHandler> getServerNetworkHandler();

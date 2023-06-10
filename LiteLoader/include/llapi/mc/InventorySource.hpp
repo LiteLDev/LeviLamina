@@ -62,9 +62,5 @@ public:
      * @symbol ??8InventorySource\@\@QEBA_NAEBV0\@\@Z
      */
     MCAPI bool operator==(class InventorySource const &) const;
-    /**
-     * @symbol ?toString\@InventorySource\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string toString() const;
 
 };
