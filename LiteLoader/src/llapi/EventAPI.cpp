@@ -1356,22 +1356,21 @@ TInstanceHook(bool, "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z", GameM
     return original(this, blockPos, uChar);
 }
 
-TInstanceHook(bool, "?_creativeDestroyBlock@GameMode@@AEAA_NAEBVBlockPos@@E@Z", GameMode, BlockPos blockPos,
-              unsigned __int8 uChar) {
-    IF_LISTENED(PlayerDestroyBlockEvent) {
-        auto player = getPlayer();
-        if (player && player->isPlayer()) {
+TInstanceHook(bool, "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z", GameMode, BlockPos a3, unsigned __int8 a4) {
+    auto player = getPlayer();
+    if (player != nullptr && player->isPlayer()) {
+        IF_LISTENED(PlayerDestroyBlockEvent) {
             PlayerDestroyBlockEvent ev{};
             ev.mPlayer = player;
-            auto blockInstance = Level::getBlockInstance(blockPos, player->getDimensionId());
-            ev.mBlockInstance = blockInstance;
+            auto bl = Level::getBlockInstance(a3, player->getDimensionId());
+            ev.mBlockInstance = bl;
             if (!ev.call()) {
                 return false;
             }
         }
+        IF_LISTENED_END(PlayerDestroyBlockEvent)
     }
-    IF_LISTENED_END(PlayerDestroyBlockEvent)
-    return original(this, blockPos, uChar);
+    return original(this, a3, a4);
 }
 
 /////////////////// PlayerUseItemOn ///////////////////
