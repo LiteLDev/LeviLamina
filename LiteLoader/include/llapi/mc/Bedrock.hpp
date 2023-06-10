@@ -204,6 +204,8 @@ template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandIntegerRange>();
 template<>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>();
+template <>
+MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandRawText>();
 
 //template <>
 //inline typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>() {
