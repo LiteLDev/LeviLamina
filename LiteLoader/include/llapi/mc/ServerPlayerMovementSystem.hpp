@@ -30,12 +30,8 @@ public:
 
 public:
     /**
-     * @symbol ?_foreachTransactionPacket\@ServerPlayerMovementSystem\@\@SAXAEBUPlayerActionComponent\@\@_NAEBV?$function\@$$A6AXAEAVInventoryTransactionPacket\@\@\@Z\@std\@\@\@Z
+     * @symbol ?createSystems\@ServerPlayerMovementSystem\@\@SA?AV?$array\@UTickingSystemWithInfo\@\@$0BE\@\@std\@\@XZ
      */
-    MCAPI static void _foreachTransactionPacket(struct PlayerActionComponent const &, bool, class std::function<void (class InventoryTransactionPacket &)> const &);
-    /**
-     * @symbol ?create\@ServerPlayerMovementSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI static struct TickingSystemWithInfo create();
+    MCAPI static class std::array<struct TickingSystemWithInfo, 20> createSystems();
 
 };

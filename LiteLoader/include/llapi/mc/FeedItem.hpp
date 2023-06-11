@@ -41,13 +41,13 @@ public:
      */
     MCAPI void addEffect(struct FeedItem::Effect const &);
     /**
-     * @symbol ??4FeedItem\@\@QEAAAEAU0\@AEBU0\@\@Z
-     */
-    MCAPI struct FeedItem & operator=(struct FeedItem const &);
-    /**
      * @symbol ??4FeedItem\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct FeedItem & operator=(struct FeedItem &&);
+    /**
+     * @symbol ??4FeedItem\@\@QEAAAEAU0\@AEBU0\@\@Z
+     */
+    MCAPI struct FeedItem & operator=(struct FeedItem const &);
     /**
      * @symbol ??1FeedItem\@\@QEAA\@XZ
      */

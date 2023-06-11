@@ -42,9 +42,9 @@ public:
     virtual void __unk_vfn_5();
     /**
      * @vftbl 6
-     * @symbol ?matches\@ShapedChemistryRecipe\@\@UEBA_NAEAVCraftingContainer\@\@AEAVLevel\@\@\@Z
+     * @symbol ?matches\@ShapedChemistryRecipe\@\@UEBA_NAEBVCraftingContainer\@\@AEBVCraftingContext\@\@\@Z
      */
-    virtual bool matches(class CraftingContainer &, class Level &) const;
+    virtual bool matches(class CraftingContainer const &, class CraftingContext const &) const;
     /**
      * @vftbl 8
      * @symbol ?getId\@ShapedChemistryRecipe\@\@UEBAAEBVUUID\@mce\@\@XZ

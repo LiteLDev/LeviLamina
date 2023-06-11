@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
+#include "RakNet.hpp"
 
 #define BEFORE_EXTRA
 
@@ -15,7 +16,8 @@
 class NetworkSystem {
 
 #define AFTER_EXTRA
-
+public:
+    struct Dependencies;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKSYSTEM
 public:
@@ -35,6 +37,10 @@ public:
      */
     MCVAPI void _onEnable();
     /**
+     * @symbol ?createNetworkSession\@NetworkSystem\@\@UEAAXW4TransportLayer\@\@\@Z
+     */
+    MCVAPI void createNetworkSession(enum class TransportLayer);
+    /**
      * @symbol ?getConnectionInfo\@NetworkSystem\@\@UEBAAEBVGameConnectionInfo\@Social\@\@XZ
      */
     MCVAPI class Social::GameConnectionInfo const & getConnectionInfo() const;
@@ -46,6 +52,10 @@ public:
      * @symbol ?getDefaultGamePortv6\@NetworkSystem\@\@UEBAGXZ
      */
     MCVAPI unsigned short getDefaultGamePortv6() const;
+    /**
+     * @symbol ?getTransportLayer\@NetworkSystem\@\@UEBA?AW4TransportLayer\@\@XZ
+     */
+    MCVAPI enum class TransportLayer getTransportLayer() const;
     /**
      * @symbol ?onAllConnectionsClosed\@NetworkSystem\@\@EEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
@@ -128,9 +138,9 @@ public:
      */
     MCAPI class NetworkIdentifier getPrimaryNetworkId() const;
     /**
-     * @symbol ?getRemoteConnector\@NetworkSystem\@\@QEBA?AV?$NonOwnerPointer\@VRemoteConnector\@\@\@Bedrock\@\@XZ
+     * @symbol ?getRemoteConnector\@NetworkSystem\@\@QEAA?AV?$not_null\@V?$NonOwnerPointer\@VRemoteConnector\@\@\@Bedrock\@\@\@gsl\@\@XZ
      */
-    MCAPI class Bedrock::NonOwnerPointer<class RemoteConnector> getRemoteConnector() const;
+    MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class RemoteConnector>> getRemoteConnector();
     /**
      * @symbol ?getResourcePackUploadManager\@NetworkSystem\@\@QEAAAEAVResourcePackFileUploadManager\@\@AEAVPacketSender\@\@AEBVNetworkIdentifier\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -140,9 +150,9 @@ public:
      */
     MCAPI class NetworkIdentifier getServerId() const;
     /**
-     * @symbol ?getServerLocatorComposite\@NetworkSystem\@\@QEAAAEAVServerLocatorComposite\@\@XZ
+     * @symbol ?getServerLocator\@NetworkSystem\@\@QEAAAEAVServerLocator\@\@XZ
      */
-    MCAPI class ServerLocatorComposite & getServerLocatorComposite();
+    MCAPI class ServerLocator & getServerLocator();
     /**
      * @symbol ?host\@NetworkSystem\@\@QEAA_NAEBUConnectionDefinition\@\@\@Z
      */
@@ -190,13 +200,13 @@ public:
 
 //protected:
     /**
-     * @symbol ??0NetworkSystem\@\@IEAA\@AEAVScheduler\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEBUNetworkSystemToggles\@\@AEBV?$NonOwnerPointer\@VNetworkDebugManager\@\@\@Bedrock\@\@V?$ServiceReference\@VServicesManager\@\@\@\@\@Z
+     * @symbol ??0NetworkSystem\@\@IEAA\@$$QEAUDependencies\@0\@\@Z
      */
-    MCAPI NetworkSystem(class Scheduler &, std::vector<std::string> const &, struct NetworkSystemToggles const &, class Bedrock::NonOwnerPointer<class NetworkDebugManager> const &, class ServiceReference<class ServicesManager>);
+    MCAPI NetworkSystem(struct NetworkSystem::Dependencies &&);
     /**
-     * @symbol ??0NetworkSystem\@\@IEAA\@AEAVScheduler\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEBUNetworkSystemToggles\@\@AEBV?$NonOwnerPointer\@VNetworkDebugManager\@\@\@Bedrock\@\@V?$ServiceReference\@VServicesManager\@\@\@\@AEBVNetherNetTransportFactory\@\@V?$NonOwnerPointer\@VAppPlatform\@\@\@6\@\@Z
+     * @symbol ?_createNetworkStatistics\@NetworkSystem\@\@IEAAXW4TrackerType\@\@$$QEAV?$function\@$$A6A_NAEAURakNetStatistics\@RakNet\@\@\@Z\@std\@\@$$QEAV?$not_null\@V?$NonOwnerPointer\@VNetworkDebugManager\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
-    MCAPI NetworkSystem(class Scheduler &, std::vector<std::string> const &, struct NetworkSystemToggles const &, class Bedrock::NonOwnerPointer<class NetworkDebugManager> const &, class ServiceReference<class ServicesManager>, class NetherNetTransportFactory const &, class Bedrock::NonOwnerPointer<class AppPlatform>);
+    MCAPI void _createNetworkStatistics(enum class TrackerType, class std::function<bool (struct RakNet::RakNetStatistics &)> &&, class gsl::not_null<class Bedrock::NonOwnerPointer<class NetworkDebugManager>> &&);
 
 //private:
     /**
@@ -208,17 +218,9 @@ public:
      */
     MCAPI void _handlePacketViolation(enum class StreamReadResult, enum class PacketViolationResponse, enum class MinecraftPacketIds, class NetworkIdentifier const &, class NetworkConnection &, enum class SubClientId, std::string const &);
     /**
-     * @symbol ?_initializeRakNetConnector\@NetworkSystem\@\@AEAAXXZ
-     */
-    MCAPI void _initializeRakNetConnector();
-    /**
      * @symbol ?_sendInternal\@NetworkSystem\@\@AEAAXAEBVNetworkIdentifier\@\@AEBVPacket\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void _sendInternal(class NetworkIdentifier const &, class Packet const &, std::string const &);
-    /**
-     * @symbol ?_setActiveTransportLayer\@NetworkSystem\@\@AEAAXXZ
-     */
-    MCAPI void _setActiveTransportLayer();
     /**
      * @symbol ?_sortAndPacketizeEvents\@NetworkSystem\@\@AEAA_NAEAVNetworkConnection\@\@V?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@std\@\@\@Z
      */

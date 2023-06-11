@@ -6,7 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Json.hpp"
-#include "Item.hpp"
+#include "ComponentItem.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +17,7 @@
  * @brief MC class BlockPlanterItem.
  *
  */
-class BlockPlanterItem : public Item {
+class BlockPlanterItem : public ComponentItem {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -37,20 +37,15 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
+     * @vftbl 3
+     * @symbol ?setDescriptionId\@BlockPlanterItem\@\@UEAAAEAV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void __unk_vfn_7();
+    virtual class BlockPlanterItem & setDescriptionId(std::string const &);
     /**
      * @vftbl 11
      * @symbol __unk_vfn_11
      */
     virtual void __unk_vfn_11();
-    /**
-     * @vftbl 13
-     * @symbol ?isBlockPlanterItem\@BlockPlanterItem\@\@UEBA_NXZ
-     */
-    virtual bool isBlockPlanterItem() const;
     /**
      * @vftbl 14
      * @symbol __unk_vfn_14
@@ -61,6 +56,11 @@ public:
      * @symbol __unk_vfn_16
      */
     virtual void __unk_vfn_16();
+    /**
+     * @vftbl 19
+     * @symbol __unk_vfn_19
+     */
+    virtual void __unk_vfn_19();
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
@@ -107,15 +107,30 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @vftbl 131
-     * @symbol ?_calculatePlacePos\@BlockPlanterItem\@\@MEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
+     * @vftbl 95
+     * @symbol ?buildDescriptionId\@BlockPlanterItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
      */
-    virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
+    virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @vftbl 132
-     * @symbol ?_useOn\@BlockPlanterItem\@\@MEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
+     * @vftbl 115
+     * @symbol __unk_vfn_115
      */
-    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+    virtual void __unk_vfn_115();
+    /**
+     * @vftbl 116
+     * @symbol __unk_vfn_116
+     */
+    virtual void __unk_vfn_116();
+    /**
+     * @vftbl 119
+     * @symbol ?setIconInfo\@BlockPlanterItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
+     */
+    virtual class Item & setIconInfo(std::string const &, int);
+    /**
+     * @vftbl 120
+     * @symbol ?getIconInfo\@BlockPlanterItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
+     */
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
      * @symbol ??0BlockPlanterItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVBlock\@\@_N\@Z
      */

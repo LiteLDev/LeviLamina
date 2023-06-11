@@ -46,12 +46,12 @@ public:
      */
     virtual class ContainerScreenContext _postInit();
     /**
-     * @symbol ??0ChestContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@UActorUniqueID\@\@\@Z
-     */
-    MCAPI ChestContainerManagerModel(enum class ContainerID, class Player &, struct ActorUniqueID);
-    /**
      * @symbol ??0ChestContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@W4BlockActorType\@\@\@Z
      */
     MCAPI ChestContainerManagerModel(enum class ContainerID, class Player &, class BlockPos const &, enum class BlockActorType);
+    /**
+     * @symbol ??0ChestContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@UActorUniqueID\@\@\@Z
+     */
+    MCAPI ChestContainerManagerModel(enum class ContainerID, class Player &, struct ActorUniqueID);
 
 };

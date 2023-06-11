@@ -52,7 +52,7 @@ public:
     virtual void endRequestBatch();
     /**
      * @vftbl 4
-     * @symbol ?_handleCraftAction\@CraftHandlerEnchant\@\@MEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionCraftBase\@\@\@Z
+     * @symbol ?_handleCraftAction\@CraftHandlerLoom\@\@MEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionCraftBase\@\@\@Z
      */
     virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const &) = 0;
     /**
@@ -71,5 +71,45 @@ public:
      */
     MCVAPI ~CraftHandlerBase();
 #endif
+    /**
+     * @symbol ??0CraftHandlerBase\@\@QEAA\@AEAVItemStackRequestActionCraftHandler\@\@\@Z
+     */
+    MCAPI CraftHandlerBase(class ItemStackRequestActionCraftHandler &);
+    /**
+     * @symbol ?_isNonImplementedTrustClientResults\@CraftHandlerBase\@\@QEBA_NXZ
+     */
+    MCAPI bool _isNonImplementedTrustClientResults() const;
+    /**
+     * @symbol ?endRequest\@CraftHandlerBase\@\@QEAA?AW4ItemStackNetResult\@\@W42\@\@Z
+     */
+    MCAPI enum class ItemStackNetResult endRequest(enum class ItemStackNetResult);
+    /**
+     * @symbol ?handleCraftAction\@CraftHandlerBase\@\@QEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionCraftBase\@\@W42\@\@Z
+     */
+    MCAPI enum class ItemStackNetResult handleCraftAction(class ItemStackRequestActionCraftBase const &, enum class ItemStackNetResult);
+    /**
+     * @symbol ?isCraftRequest\@CraftHandlerBase\@\@QEAA_NXZ
+     */
+    MCAPI bool isCraftRequest();
+    /**
+     * @symbol ?postRequest\@CraftHandlerBase\@\@QEAAX_N\@Z
+     */
+    MCAPI void postRequest(bool);
+
+//protected:
+    /**
+     * @symbol ?_getRecipeFromNetId\@CraftHandlerBase\@\@IEAA?AV?$tuple\@W4ItemStackNetResult\@\@PEBVRecipe\@\@\@std\@\@AEBV?$TypedServerNetId\@URecipeNetIdTag\@\@I$0A\@\@\@\@Z
+     */
+    MCAPI class std::tuple<enum class ItemStackNetResult, class Recipe const *> _getRecipeFromNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const &);
+    /**
+     * @symbol ?_tryGetSparseContainer\@CraftHandlerBase\@\@IEAA?AV?$shared_ptr\@VSimpleSparseContainer\@\@\@std\@\@W4ContainerEnumName\@\@\@Z
+     */
+    MCAPI class std::shared_ptr<class SimpleSparseContainer> _tryGetSparseContainer(enum class ContainerEnumName);
+    /**
+     * @symbol ?_validateRequestSlot\@CraftHandlerBase\@\@IEAA?AUItemStackRequestHandlerSlotInfo\@\@UItemStackRequestSlotInfo\@\@\@Z
+     */
+    MCAPI struct ItemStackRequestHandlerSlotInfo _validateRequestSlot(struct ItemStackRequestSlotInfo);
+
+protected:
 
 };

@@ -128,13 +128,13 @@ public:
      */
     MCVAPI class BlockPos loadBlockPositionOffset(class BlockPos const &);
     /**
-     * @symbol ?loadDirection\@NewUniqueIdsDataLoadHelper\@\@UEAA?AVVec3\@\@AEBV2\@\@Z
-     */
-    MCVAPI class Vec3 loadDirection(class Vec3 const &);
-    /**
      * @symbol ?loadDirection\@NewUniqueIdsDataLoadHelper\@\@UEAA?AW4Type\@Direction\@\@W423\@\@Z
      */
     MCVAPI enum class Direction::Type loadDirection(enum class Direction::Type);
+    /**
+     * @symbol ?loadDirection\@NewUniqueIdsDataLoadHelper\@\@UEAA?AVVec3\@\@AEBV2\@\@Z
+     */
+    MCVAPI class Vec3 loadDirection(class Vec3 const &);
     /**
      * @symbol ?loadFacingID\@NewUniqueIdsDataLoadHelper\@\@UEAAEE\@Z
      */

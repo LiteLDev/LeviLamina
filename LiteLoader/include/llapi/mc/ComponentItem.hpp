@@ -40,9 +40,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?initServer\@ComponentItem\@\@UEAA_NAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
+     * @symbol ?initServer\@ComponentItem\@\@UEAA_NAEAVValue\@Json\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@\@Z
      */
-    virtual bool initServer(class Json::Value &, class SemVersion const &);
+    virtual bool initServer(class Json::Value &, class SemVersion const &, bool, class Experiments const &);
     /**
      * @vftbl 2
      * @symbol ?tearDown\@ComponentItem\@\@UEAAXXZ
@@ -60,9 +60,9 @@ public:
     virtual std::string const & getDescriptionId() const;
     /**
      * @vftbl 7
-     * @symbol __unk_vfn_7
+     * @symbol ?isMusicDisk\@ComponentItem\@\@UEBA_NXZ
      */
-    virtual void __unk_vfn_7();
+    virtual bool isMusicDisk() const;
     /**
      * @vftbl 10
      * @symbol ?executeEvent\@ComponentItem\@\@UEBAXAEAVItemStackBase\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVRenderParams\@\@\@Z
@@ -105,9 +105,9 @@ public:
     virtual bool isDyeable() const;
     /**
      * @vftbl 19
-     * @symbol ?isDye\@ComponentItem\@\@UEBA_NXZ
+     * @symbol __unk_vfn_19
      */
-    virtual bool isDye() const;
+    virtual void __unk_vfn_19();
     /**
      * @vftbl 22
      * @symbol ?isFood\@ComponentItem\@\@UEBA_NXZ
@@ -249,11 +249,6 @@ public:
      */
     virtual void __unk_vfn_66();
     /**
-     * @vftbl 67
-     * @symbol ?isValidAuxValue\@ComponentItem\@\@UEBA_NH\@Z
-     */
-    virtual bool isValidAuxValue(int) const;
-    /**
      * @vftbl 68
      * @symbol ?getDamageChance\@ComponentItem\@\@UEBAHH\@Z
      */
@@ -384,57 +379,67 @@ public:
      */
     virtual int getCooldownTime() const;
     /**
-     * @vftbl 116
-     * @symbol ?initClient\@ComponentItem\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
+     * @vftbl 115
+     * @symbol __unk_vfn_115
      */
-    virtual void initClient(class Json::Value &, class SemVersion const &);
+    virtual void __unk_vfn_115();
     /**
-     * @vftbl 117
+     * @vftbl 116
+     * @symbol __unk_vfn_116
+     */
+    virtual void __unk_vfn_116();
+    /**
+     * @vftbl 118
+     * @symbol ?initClient\@ComponentItem\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@\@Z
+     */
+    virtual void initClient(class Json::Value &, class SemVersion const &, bool, class Experiments const &);
+    /**
+     * @vftbl 119
      * @symbol ?setIconInfo\@ComponentItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     virtual class Item & setIconInfo(std::string const &, int);
     /**
-     * @vftbl 118
+     * @vftbl 120
      * @symbol ?getIconInfo\@ComponentItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
-     * @vftbl 119
+     * @vftbl 121
      * @symbol ?getInteractText\@ComponentItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPlayer\@\@\@Z
      */
     virtual std::string getInteractText(class Player const &) const;
     /**
-     * @vftbl 120
+     * @vftbl 122
      * @symbol ?getAnimationFrameFor\@ComponentItem\@\@UEBAHPEAVMob\@\@_NPEBVItemStack\@\@_N\@Z
      */
     virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
     /**
-     * @vftbl 121
+     * @vftbl 123
      * @symbol ?isEmissive\@ComponentItem\@\@UEBA_NH\@Z
      */
     virtual bool isEmissive(int) const;
     /**
-     * @vftbl 124
+     * @vftbl 126
      * @symbol ?canBeCharged\@ComponentItem\@\@UEBA_NXZ
      */
     virtual bool canBeCharged() const;
     /**
-     * @vftbl 129
+     * @vftbl 131
      * @symbol ?getAuxValuesDescription\@ComponentItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getAuxValuesDescription() const;
     /**
-     * @vftbl 130
+     * @vftbl 132
      * @symbol ?_checkUseOnPermissions\@ComponentItem\@\@EEBA_NAEAVActor\@\@AEAVItemStackBase\@\@AEBEAEBVBlockPos\@\@\@Z
      */
     virtual bool _checkUseOnPermissions(class Actor &, class ItemStackBase &, unsigned char const &, class BlockPos const &) const;
     /**
-     * @vftbl 131
+     * @vftbl 133
      * @symbol ?_calculatePlacePos\@ComponentItem\@\@EEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
      */
     virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
-     * @vftbl 132
+     * @vftbl 134
      * @symbol ?_useOn\@ComponentItem\@\@EEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
@@ -455,6 +460,10 @@ public:
      * @symbol ?useVariant\@ComponentItem\@\@UEBA_NHH_N\@Z
      */
     MCVAPI bool useVariant(int, int, bool) const;
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~ComponentItem();
 #endif
     /**
      * @symbol ??0ComponentItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@F\@Z
@@ -469,13 +478,13 @@ public:
      */
     MCAPI class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ComponentItem>> _buildItemsFileSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ComponentItem>> &, bool, class SemVersion);
     /**
-     * @symbol ?_validateClientSchemaAndInitItem\@ComponentItem\@\@QEAA_NAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
+     * @symbol ?_validateClientSchemaAndInitItem\@ComponentItem\@\@QEAA_NAEAVValue\@Json\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@\@Z
      */
-    MCAPI bool _validateClientSchemaAndInitItem(class Json::Value &, class SemVersion const &);
+    MCAPI bool _validateClientSchemaAndInitItem(class Json::Value &, class SemVersion const &, bool, class Experiments const &);
     /**
-     * @symbol ?_validateServerSchemaAndInitItem\@ComponentItem\@\@QEAA_NAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
+     * @symbol ?_validateServerSchemaAndInitItem\@ComponentItem\@\@QEAA_NAEAVValue\@Json\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@\@Z
      */
-    MCAPI bool _validateServerSchemaAndInitItem(class Json::Value &, class SemVersion const &);
+    MCAPI bool _validateServerSchemaAndInitItem(class Json::Value &, class SemVersion const &, bool, class Experiments const &);
     /**
      * @symbol ?checkComponentDataForContentErrors\@ComponentItem\@\@QEBA_NXZ
      */
@@ -485,13 +494,13 @@ public:
      */
     MCAPI bool executeTrigger(class ItemStackBase &, class DefinitionTrigger const &, class RenderParams &) const;
     /**
-     * @symbol ?getAliases\@ComponentItem\@\@QEBAAEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
-     */
-    MCAPI std::vector<std::string> const & getAliases() const;
-    /**
      * @symbol ?parseJsonEvents\@ComponentItem\@\@QEAA_NAEBVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
     MCAPI bool parseJsonEvents(class Json::Value const &, class SemVersion const &);
+    /**
+     * @symbol ?buildAllPatchSchemas\@ComponentItem\@\@SAXAEAVCerealDocumentUpgrader\@\@\@Z
+     */
+    MCAPI static void buildAllPatchSchemas(class CerealDocumentUpgrader &);
     /**
      * @symbol ?createItemAbstractCerealSchema\@ComponentItem\@\@SA?AUSchema\@reflection\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -530,6 +539,10 @@ public:
      * @symbol ?_loadItemTagsNetworkTag\@ComponentItem\@\@AEAAXAEBVListTag\@\@\@Z
      */
     MCAPI void _loadItemTagsNetworkTag(class ListTag const &);
+    /**
+     * @symbol ?_parseCereal\@ComponentItem\@\@AEAA_NAEBVValue\@Json\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@\@Z
+     */
+    MCAPI bool _parseCereal(class Json::Value const &, class SemVersion const &, bool, class Experiments const &);
 
 private:
     /**

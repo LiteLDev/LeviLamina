@@ -56,237 +56,232 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @vftbl 41
-     * @symbol __unk_vfn_41
+     * @vftbl 40
+     * @symbol __unk_vfn_40
      */
-    virtual void __unk_vfn_41();
+    virtual void __unk_vfn_40();
     /**
-     * @vftbl 44
+     * @vftbl 43
      * @symbol ?teleportTo\@SimulatedPlayer\@\@UEAAXAEBVVec3\@\@_NHH1\@Z
      */
     virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
     /**
-     * @vftbl 62
-     * @symbol __unk_vfn_62
+     * @vftbl 61
+     * @symbol __unk_vfn_61
      */
-    virtual void __unk_vfn_62();
+    virtual void __unk_vfn_61();
     /**
-     * @vftbl 69
-     * @symbol __unk_vfn_69
+     * @vftbl 68
+     * @symbol __unk_vfn_68
      */
-    virtual void __unk_vfn_69();
+    virtual void __unk_vfn_68();
     /**
-     * @vftbl 82
-     * @symbol __unk_vfn_82
+     * @vftbl 80
+     * @symbol __unk_vfn_80
      */
-    virtual void __unk_vfn_82();
+    virtual void __unk_vfn_80();
     /**
-     * @vftbl 85
-     * @symbol __unk_vfn_85
+     * @vftbl 86
+     * @symbol __unk_vfn_86
      */
-    virtual void __unk_vfn_85();
+    virtual void __unk_vfn_86();
     /**
-     * @vftbl 88
-     * @symbol __unk_vfn_88
+     * @vftbl 94
+     * @symbol __unk_vfn_94
      */
-    virtual void __unk_vfn_88();
+    virtual void __unk_vfn_94();
     /**
-     * @vftbl 96
-     * @symbol __unk_vfn_96
+     * @vftbl 97
+     * @symbol __unk_vfn_97
      */
-    virtual void __unk_vfn_96();
+    virtual void __unk_vfn_97();
     /**
-     * @vftbl 99
-     * @symbol __unk_vfn_99
+     * @vftbl 104
+     * @symbol __unk_vfn_104
      */
-    virtual void __unk_vfn_99();
+    virtual void __unk_vfn_104();
     /**
      * @vftbl 106
      * @symbol __unk_vfn_106
      */
     virtual void __unk_vfn_106();
     /**
-     * @vftbl 108
-     * @symbol __unk_vfn_108
+     * @vftbl 107
+     * @symbol __unk_vfn_107
      */
-    virtual void __unk_vfn_108();
+    virtual void __unk_vfn_107();
     /**
      * @vftbl 109
      * @symbol __unk_vfn_109
      */
     virtual void __unk_vfn_109();
     /**
-     * @vftbl 111
-     * @symbol __unk_vfn_111
+     * @vftbl 176
+     * @symbol __unk_vfn_176
      */
-    virtual void __unk_vfn_111();
+    virtual void __unk_vfn_176();
     /**
-     * @vftbl 178
-     * @symbol __unk_vfn_178
+     * @vftbl 190
+     * @symbol __unk_vfn_190
      */
-    virtual void __unk_vfn_178();
+    virtual void __unk_vfn_190();
     /**
-     * @vftbl 192
-     * @symbol __unk_vfn_192
+     * @vftbl 215
+     * @symbol __unk_vfn_215
      */
-    virtual void __unk_vfn_192();
+    virtual void __unk_vfn_215();
     /**
-     * @vftbl 217
-     * @symbol __unk_vfn_217
+     * @vftbl 216
+     * @symbol __unk_vfn_216
      */
-    virtual void __unk_vfn_217();
+    virtual void __unk_vfn_216();
     /**
-     * @vftbl 218
-     * @symbol __unk_vfn_218
+     * @vftbl 232
+     * @symbol __unk_vfn_232
      */
-    virtual void __unk_vfn_218();
+    virtual void __unk_vfn_232();
     /**
-     * @vftbl 240
-     * @symbol __unk_vfn_240
+     * @vftbl 235
+     * @symbol __unk_vfn_235
      */
-    virtual void __unk_vfn_240();
+    virtual void __unk_vfn_235();
     /**
-     * @vftbl 243
-     * @symbol __unk_vfn_243
+     * @vftbl 252
+     * @symbol __unk_vfn_252
      */
-    virtual void __unk_vfn_243();
+    virtual void __unk_vfn_252();
     /**
      * @vftbl 260
      * @symbol __unk_vfn_260
      */
     virtual void __unk_vfn_260();
     /**
-     * @vftbl 268
-     * @symbol __unk_vfn_268
+     * @vftbl 267
+     * @symbol __unk_vfn_267
      */
-    virtual void __unk_vfn_268();
+    virtual void __unk_vfn_267();
     /**
-     * @vftbl 275
-     * @symbol __unk_vfn_275
-     */
-    virtual void __unk_vfn_275();
-    /**
-     * @vftbl 288
+     * @vftbl 280
      * @symbol ?aiStep\@SimulatedPlayer\@\@UEAAXXZ
      */
     virtual void aiStep();
     /**
-     * @vftbl 301
-     * @symbol __unk_vfn_301
+     * @vftbl 293
+     * @symbol __unk_vfn_293
      */
-    virtual void __unk_vfn_301();
+    virtual void __unk_vfn_293();
     /**
-     * @vftbl 305
-     * @symbol __unk_vfn_305
+     * @vftbl 297
+     * @symbol __unk_vfn_297
      */
-    virtual void __unk_vfn_305();
+    virtual void __unk_vfn_297();
     /**
-     * @vftbl 351
-     * @symbol __unk_vfn_351
+     * @vftbl 343
+     * @symbol __unk_vfn_343
      */
-    virtual void __unk_vfn_351();
+    virtual void __unk_vfn_343();
+    /**
+     * @vftbl 353
+     * @symbol __unk_vfn_353
+     */
+    virtual void __unk_vfn_353();
+    /**
+     * @vftbl 360
+     * @symbol __unk_vfn_360
+     */
+    virtual void __unk_vfn_360();
     /**
      * @vftbl 361
      * @symbol __unk_vfn_361
      */
     virtual void __unk_vfn_361();
     /**
-     * @vftbl 368
-     * @symbol __unk_vfn_368
+     * @vftbl 363
+     * @symbol __unk_vfn_363
      */
-    virtual void __unk_vfn_368();
+    virtual void __unk_vfn_363();
+    /**
+     * @vftbl 364
+     * @symbol __unk_vfn_364
+     */
+    virtual void __unk_vfn_364();
     /**
      * @vftbl 369
      * @symbol __unk_vfn_369
      */
     virtual void __unk_vfn_369();
     /**
-     * @vftbl 371
-     * @symbol __unk_vfn_371
+     * @vftbl 370
+     * @symbol __unk_vfn_370
      */
-    virtual void __unk_vfn_371();
+    virtual void __unk_vfn_370();
     /**
-     * @vftbl 372
-     * @symbol __unk_vfn_372
+     * @vftbl 373
+     * @symbol __unk_vfn_373
      */
-    virtual void __unk_vfn_372();
+    virtual void __unk_vfn_373();
+    /**
+     * @vftbl 376
+     * @symbol __unk_vfn_376
+     */
+    virtual void __unk_vfn_376();
     /**
      * @vftbl 377
      * @symbol __unk_vfn_377
      */
     virtual void __unk_vfn_377();
     /**
-     * @vftbl 378
-     * @symbol __unk_vfn_378
+     * @vftbl 388
+     * @symbol __unk_vfn_388
      */
-    virtual void __unk_vfn_378();
+    virtual void __unk_vfn_388();
     /**
-     * @vftbl 381
-     * @symbol __unk_vfn_381
-     */
-    virtual void __unk_vfn_381();
-    /**
-     * @vftbl 384
-     * @symbol __unk_vfn_384
-     */
-    virtual void __unk_vfn_384();
-    /**
-     * @vftbl 385
-     * @symbol __unk_vfn_385
-     */
-    virtual void __unk_vfn_385();
-    /**
-     * @vftbl 396
-     * @symbol __unk_vfn_396
-     */
-    virtual void __unk_vfn_396();
-    /**
-     * @vftbl 397
+     * @vftbl 389
      * @symbol ?isHostingPlayer\@SimulatedPlayer\@\@UEBA_NXZ
      */
     virtual bool isHostingPlayer() const;
     /**
-     * @vftbl 400
-     * @symbol __unk_vfn_400
+     * @vftbl 392
+     * @symbol __unk_vfn_392
      */
-    virtual void __unk_vfn_400();
+    virtual void __unk_vfn_392();
     /**
-     * @vftbl 407
-     * @symbol __unk_vfn_407
+     * @vftbl 399
+     * @symbol __unk_vfn_399
      */
-    virtual void __unk_vfn_407();
+    virtual void __unk_vfn_399();
     /**
-     * @vftbl 433
-     * @symbol __unk_vfn_433
+     * @vftbl 422
+     * @symbol __unk_vfn_422
      */
-    virtual void __unk_vfn_433();
+    virtual void __unk_vfn_422();
     /**
-     * @vftbl 434
+     * @vftbl 423
      * @symbol ?getXuid\@SimulatedPlayer\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getXuid() const;
     /**
-     * @vftbl 435
+     * @vftbl 424
      * @symbol ?getMovementSettings\@SimulatedPlayer\@\@UEBAAEBUPlayerMovementSettings\@\@XZ
      */
     virtual struct PlayerMovementSettings const & getMovementSettings() const;
     /**
-     * @vftbl 436
-     * @symbol __unk_vfn_436
+     * @vftbl 425
+     * @symbol __unk_vfn_425
      */
-    virtual void __unk_vfn_436();
+    virtual void __unk_vfn_425();
     /**
-     * @vftbl 439
+     * @vftbl 428
      * @symbol ?_createChunkSource\@SimulatedPlayer\@\@MEAA?AV?$shared_ptr\@VChunkViewSource\@\@\@std\@\@AEAVChunkSource\@\@\@Z
      */
     virtual class std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource &);
     /**
-     * @vftbl 443
+     * @vftbl 432
      * @symbol ?_getSpawnChunkLimit\@SimulatedPlayer\@\@MEBAHXZ
      */
     virtual int _getSpawnChunkLimit() const;
     /**
-     * @vftbl 444
+     * @vftbl 433
      * @symbol ?_updateChunkPublisherView\@SimulatedPlayer\@\@MEAAXAEBVVec3\@\@M\@Z
      */
     virtual void _updateChunkPublisherView(class Vec3 const &, float);
@@ -341,17 +336,17 @@ public:
      */
     MCAPI bool simulateGiveItem(class ItemStack &, bool);
     /**
-     * @symbol ?simulateInteract\@SimulatedPlayer\@\@QEAA_NXZ
+     * @symbol ?simulateInteract\@SimulatedPlayer\@\@QEAA_NAEAVActor\@\@\@Z
      */
-    MCAPI bool simulateInteract();
+    MCAPI bool simulateInteract(class Actor &);
     /**
      * @symbol ?simulateInteract\@SimulatedPlayer\@\@QEAA_NAEBVBlockPos\@\@W4ScriptFacing\@ScriptModuleMinecraft\@\@\@Z
      */
     MCAPI bool simulateInteract(class BlockPos const &, enum class ScriptModuleMinecraft::ScriptFacing);
     /**
-     * @symbol ?simulateInteract\@SimulatedPlayer\@\@QEAA_NAEAVActor\@\@\@Z
+     * @symbol ?simulateInteract\@SimulatedPlayer\@\@QEAA_NXZ
      */
-    MCAPI bool simulateInteract(class Actor &);
+    MCAPI bool simulateInteract();
     /**
      * @symbol ?simulateJump\@SimulatedPlayer\@\@QEAA_NXZ
      */
@@ -361,6 +356,10 @@ public:
      */
     MCAPI void simulateLocalMove(class Vec3 const &, float);
     /**
+     * @symbol ?simulateLookAt\@SimulatedPlayer\@\@QEAAXAEBVBlockPos\@\@\@Z
+     */
+    MCAPI void simulateLookAt(class BlockPos const &);
+    /**
      * @symbol ?simulateLookAt\@SimulatedPlayer\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void simulateLookAt(class Actor &);
@@ -368,10 +367,6 @@ public:
      * @symbol ?simulateLookAt\@SimulatedPlayer\@\@QEAAXAEBVVec3\@\@\@Z
      */
     MCAPI void simulateLookAt(class Vec3 const &);
-    /**
-     * @symbol ?simulateLookAt\@SimulatedPlayer\@\@QEAAXAEBVBlockPos\@\@\@Z
-     */
-    MCAPI void simulateLookAt(class BlockPos const &);
     /**
      * @symbol ?simulateMoveToLocation\@SimulatedPlayer\@\@QEAAXAEBVVec3\@\@M\@Z
      */

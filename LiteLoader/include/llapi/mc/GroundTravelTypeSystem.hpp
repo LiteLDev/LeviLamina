@@ -25,16 +25,24 @@ public:
 
 public:
     /**
-     * @symbol ?create\@GroundTravelTypeSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?calcMoveRelativeSpeed\@GroundTravelTypeSystem\@\@SAMAEBUIMobMovementProxy\@\@AEBVIConstBlockSource\@\@\@Z
      */
-    MCAPI static struct TickingSystemWithInfo create();
+    MCAPI static float calcMoveRelativeSpeed(struct IMobMovementProxy const &, class IConstBlockSource const &);
     /**
-     * @symbol ?createSideBySide\@GroundTravelTypeSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?create\@GroundTravelTypeSystem\@\@SA?AUTickingSystemWithInfo\@\@AEBVBaseGameVersion\@\@\@Z
      */
-    MCAPI static struct TickingSystemWithInfo createSideBySide();
+    MCAPI static struct TickingSystemWithInfo create(class BaseGameVersion const &);
     /**
-     * @symbol ?tick\@GroundTravelTypeSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUAABBShapeComponent\@\@AEBUStateVectorComponent\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBUAttributesComponent\@\@$$CBUMovementSpeedComponent\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBV?$FlagComponent\@USoulSpeedEnchantFlag\@\@\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UMobTravelComponent\@\@\@\@AEBVIConstBlockSource\@\@\@Z
+     * @symbol ?createSideBySide\@GroundTravelTypeSystem\@\@SA?AUTickingSystemWithInfo\@\@AEBVBaseGameVersion\@\@\@Z
      */
-    MCAPI static void tick(class StrictEntityContext const &, struct AABBShapeComponent const &, struct StateVectorComponent const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct AttributesComponent const, struct MovementSpeedComponent const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PlayerComponentFlag>>>, class ViewT<class StrictEntityContext, class EntityRegistryBase, class FlagComponent<struct SoulSpeedEnchantFlag> const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MobTravelComponent>, class IConstBlockSource const &);
+    MCAPI static struct TickingSystemWithInfo createSideBySide(class BaseGameVersion const &);
+
+//private:
+
+private:
+    /**
+     * @symbol ?FRICTION_FIX_VERSION\@GroundTravelTypeSystem\@\@0VBaseGameVersion\@\@B
+     */
+    MCAPI static class BaseGameVersion const FRICTION_FIX_VERSION;
 
 };

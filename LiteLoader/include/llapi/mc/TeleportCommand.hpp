@@ -63,17 +63,9 @@ public:
      */
     MCAPI enum class RotationCommandUtils::FacingResult getFacingDirection(class CommandOrigin const &, class CommandOutput &, class Vec3 &, class Actor *) const;
     /**
-     * @symbol ?actorToLocationTeleportAnalysis\@TeleportCommand\@\@CA?AW4TeleportAnalysis\@1\@AEBVCommandOrigin\@\@AEBVCommandArea\@\@AEAV4\@AEBVActor\@\@VVec3\@\@\@Z
-     */
-    MCAPI static enum class TeleportCommand::TeleportAnalysis actorToLocationTeleportAnalysis(class CommandOrigin const &, class CommandArea const &, class CommandArea &, class Actor const &, class Vec3);
-    /**
      * @symbol ?getCommandAreaForTargets\@TeleportCommand\@\@CA?AV?$unique_ptr\@VCommandArea\@\@U?$default_delete\@VCommandArea\@\@\@std\@\@\@std\@\@AEBVCommandOrigin\@\@AEBV?$CommandSelectorResults\@VActor\@\@\@\@VVec3\@\@H_N\@Z
      */
     MCAPI static std::unique_ptr<class CommandArea> getCommandAreaForTargets(class CommandOrigin const &, class CommandSelectorResults<class Actor> const &, class Vec3, int, bool);
-    /**
-     * @symbol ?getSafetyAABB\@TeleportCommand\@\@CA?AVAABB\@\@AEBVActor\@\@VVec3\@\@\@Z
-     */
-    MCAPI static class AABB getSafetyAABB(class Actor const &, class Vec3);
 
 private:
 

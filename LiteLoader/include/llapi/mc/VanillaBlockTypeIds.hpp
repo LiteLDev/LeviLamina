@@ -280,6 +280,10 @@ namespace VanillaBlockTypeIds {
      */
     MCAPI extern class HashedString const BlackCandleCake;
     /**
+     * @symbol ?BlackCarpet\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const BlackCarpet;
+    /**
      * @symbol ?BlackGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BlackGlazedTerracotta;
@@ -320,6 +324,10 @@ namespace VanillaBlockTypeIds {
      */
     MCAPI extern class HashedString const BlueCandleCake;
     /**
+     * @symbol ?BlueCarpet\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const BlueCarpet;
+    /**
      * @symbol ?BlueGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BlueGlazedTerracotta;
@@ -344,6 +352,10 @@ namespace VanillaBlockTypeIds {
      */
     MCAPI extern class HashedString const BorderBlock;
     /**
+     * @symbol ?BrainCoral\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const BrainCoral;
+    /**
      * @symbol ?BrewingStand\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BrewingStand;
@@ -364,6 +376,10 @@ namespace VanillaBlockTypeIds {
      */
     MCAPI extern class HashedString const BrownCandleCake;
     /**
+     * @symbol ?BrownCarpet\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const BrownCarpet;
+    /**
      * @symbol ?BrownGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BrownGlazedTerracotta;
@@ -383,6 +399,10 @@ namespace VanillaBlockTypeIds {
      * @symbol ?BubbleColumn\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const BubbleColumn;
+    /**
+     * @symbol ?BubbleCoral\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const BubbleCoral;
     /**
      * @symbol ?BuddingAmethyst\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
@@ -419,10 +439,6 @@ namespace VanillaBlockTypeIds {
      * @symbol ?CandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CandleCake;
-    /**
-     * @symbol ?Carpet\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
-     */
-    MCAPI extern class HashedString const Carpet;
     /**
      * @symbol ?Carrots\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
@@ -652,10 +668,6 @@ namespace VanillaBlockTypeIds {
      */
     MCAPI extern class HashedString const CopperOre;
     /**
-     * @symbol ?Coral\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
-     */
-    MCAPI extern class HashedString const Coral;
-    /**
      * @symbol ?CoralBlock\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CoralBlock;
@@ -796,6 +808,10 @@ namespace VanillaBlockTypeIds {
      */
     MCAPI extern class HashedString const CyanCandleCake;
     /**
+     * @symbol ?CyanCarpet\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const CyanCarpet;
+    /**
      * @symbol ?CyanGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const CyanGlazedTerracotta;
@@ -859,6 +875,26 @@ namespace VanillaBlockTypeIds {
      * @symbol ?DaylightDetectorInverted\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const DaylightDetectorInverted;
+    /**
+     * @symbol ?DeadBrainCoral\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const DeadBrainCoral;
+    /**
+     * @symbol ?DeadBubbleCoral\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const DeadBubbleCoral;
+    /**
+     * @symbol ?DeadFireCoral\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const DeadFireCoral;
+    /**
+     * @symbol ?DeadHornCoral\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const DeadHornCoral;
+    /**
+     * @symbol ?DeadTubeCoral\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const DeadTubeCoral;
     /**
      * @symbol ?Deadbush\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
@@ -1100,6 +1136,10 @@ namespace VanillaBlockTypeIds {
      */
     MCAPI extern class HashedString const Fire;
     /**
+     * @symbol ?FireCoral\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const FireCoral;
+    /**
      * @symbol ?FletchingTable\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const FletchingTable;
@@ -1196,6 +1236,10 @@ namespace VanillaBlockTypeIds {
      */
     MCAPI extern class HashedString const GrayCandleCake;
     /**
+     * @symbol ?GrayCarpet\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const GrayCarpet;
+    /**
      * @symbol ?GrayGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const GrayGlazedTerracotta;
@@ -1211,6 +1255,10 @@ namespace VanillaBlockTypeIds {
      * @symbol ?GreenCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const GreenCandleCake;
+    /**
+     * @symbol ?GreenCarpet\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const GreenCarpet;
     /**
      * @symbol ?GreenGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
@@ -1267,6 +1315,10 @@ namespace VanillaBlockTypeIds {
      * @symbol ?Hopper\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Hopper;
+    /**
+     * @symbol ?HornCoral\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const HornCoral;
     /**
      * @symbol ?Ice\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
@@ -1392,10 +1444,6 @@ namespace VanillaBlockTypeIds {
      */
     MCAPI extern class HashedString const Lava;
     /**
-     * @symbol ?LavaCauldron\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
-     */
-    MCAPI extern class HashedString const LavaCauldron;
-    /**
      * @symbol ?Leaves\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Leaves;
@@ -1424,6 +1472,10 @@ namespace VanillaBlockTypeIds {
      */
     MCAPI extern class HashedString const LightBlueCandleCake;
     /**
+     * @symbol ?LightBlueCarpet\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const LightBlueCarpet;
+    /**
      * @symbol ?LightBlueGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LightBlueGlazedTerracotta;
@@ -1439,6 +1491,10 @@ namespace VanillaBlockTypeIds {
      * @symbol ?LightGrayCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LightGrayCandleCake;
+    /**
+     * @symbol ?LightGrayCarpet\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const LightGrayCarpet;
     /**
      * @symbol ?LightGrayWool\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
@@ -1459,6 +1515,10 @@ namespace VanillaBlockTypeIds {
      * @symbol ?LimeCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const LimeCandleCake;
+    /**
+     * @symbol ?LimeCarpet\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const LimeCarpet;
     /**
      * @symbol ?LimeGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
@@ -1511,6 +1571,10 @@ namespace VanillaBlockTypeIds {
      * @symbol ?MagentaCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const MagentaCandleCake;
+    /**
+     * @symbol ?MagentaCarpet\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const MagentaCarpet;
     /**
      * @symbol ?MagentaGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
@@ -1764,6 +1828,10 @@ namespace VanillaBlockTypeIds {
      */
     MCAPI extern class HashedString const OrangeCandleCake;
     /**
+     * @symbol ?OrangeCarpet\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const OrangeCarpet;
+    /**
      * @symbol ?OrangeGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const OrangeGlazedTerracotta;
@@ -1812,6 +1880,10 @@ namespace VanillaBlockTypeIds {
      */
     MCAPI extern class HashedString const PinkCandleCake;
     /**
+     * @symbol ?PinkCarpet\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const PinkCarpet;
+    /**
      * @symbol ?PinkGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PinkGlazedTerracotta;
@@ -1831,6 +1903,14 @@ namespace VanillaBlockTypeIds {
      * @symbol ?PistonArmCollision\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PistonArmCollision;
+    /**
+     * @symbol ?PitcherCrop\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const PitcherCrop;
+    /**
+     * @symbol ?PitcherPlant\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const PitcherPlant;
     /**
      * @symbol ?Planks\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
@@ -1976,6 +2056,10 @@ namespace VanillaBlockTypeIds {
      */
     MCAPI extern class HashedString const PurpleCandleCake;
     /**
+     * @symbol ?PurpleCarpet\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const PurpleCarpet;
+    /**
      * @symbol ?PurpleGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const PurpleGlazedTerracotta;
@@ -2031,6 +2115,10 @@ namespace VanillaBlockTypeIds {
      * @symbol ?RedCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const RedCandleCake;
+    /**
+     * @symbol ?RedCarpet\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const RedCarpet;
     /**
      * @symbol ?RedFlower\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
@@ -2215,6 +2303,10 @@ namespace VanillaBlockTypeIds {
      * @symbol ?SmoothStone\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const SmoothStone;
+    /**
+     * @symbol ?SnifferEgg\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const SnifferEgg;
     /**
      * @symbol ?Snow\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
@@ -2500,6 +2592,10 @@ namespace VanillaBlockTypeIds {
      */
     MCAPI extern class HashedString const TripWireHook;
     /**
+     * @symbol ?TubeCoral\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const TubeCoral;
+    /**
      * @symbol ?Tuff\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const Tuff;
@@ -2752,6 +2848,10 @@ namespace VanillaBlockTypeIds {
      */
     MCAPI extern class HashedString const WhiteCandleCake;
     /**
+     * @symbol ?WhiteCarpet\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const WhiteCarpet;
+    /**
      * @symbol ?WhiteGlazedTerracotta\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const WhiteGlazedTerracotta;
@@ -2791,6 +2891,10 @@ namespace VanillaBlockTypeIds {
      * @symbol ?YellowCandleCake\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */
     MCAPI extern class HashedString const YellowCandleCake;
+    /**
+     * @symbol ?YellowCarpet\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
+     */
+    MCAPI extern class HashedString const YellowCarpet;
     /**
      * @symbol ?YellowFlower\@VanillaBlockTypeIds\@\@3VHashedString\@\@B
      */

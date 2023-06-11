@@ -52,6 +52,10 @@ public:
      */
     MCAPI std::vector<std::string> getErrors() const;
     /**
+     * @symbol ?getLog\@SerializerContext\@\@QEBAAEBV?$vector\@ULogEntry\@SerializerContext\@\@V?$allocator\@ULogEntry\@SerializerContext\@\@\@std\@\@\@std\@\@XZ
+     */
+    MCAPI std::vector<struct SerializerContext::LogEntry> const & getLog() const;
+    /**
      * @symbol ?log\@SerializerContext\@\@QEAA?AW4ResultCode\@internal\@reflection\@\@W4234\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI enum class reflection::internal::ResultCode log(enum class reflection::internal::ResultCode, std::string);

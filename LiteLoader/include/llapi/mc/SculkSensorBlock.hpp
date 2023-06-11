@@ -51,15 +51,20 @@ public:
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
+     * @vftbl 28
+     * @symbol __unk_vfn_28
+     */
+    virtual void __unk_vfn_28();
+    /**
      * @vftbl 29
      * @symbol __unk_vfn_29
      */
     virtual void __unk_vfn_29();
     /**
-     * @vftbl 30
-     * @symbol __unk_vfn_30
+     * @vftbl 31
+     * @symbol __unk_vfn_31
      */
-    virtual void __unk_vfn_30();
+    virtual void __unk_vfn_31();
     /**
      * @vftbl 32
      * @symbol __unk_vfn_32
@@ -71,10 +76,10 @@ public:
      */
     virtual void __unk_vfn_33();
     /**
-     * @vftbl 34
-     * @symbol __unk_vfn_34
+     * @vftbl 35
+     * @symbol __unk_vfn_35
      */
-    virtual void __unk_vfn_34();
+    virtual void __unk_vfn_35();
     /**
      * @vftbl 36
      * @symbol __unk_vfn_36
@@ -106,10 +111,10 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @vftbl 42
-     * @symbol __unk_vfn_42
+     * @vftbl 43
+     * @symbol __unk_vfn_43
      */
-    virtual void __unk_vfn_42();
+    virtual void __unk_vfn_43();
     /**
      * @vftbl 44
      * @symbol __unk_vfn_44
@@ -136,105 +141,110 @@ public:
      */
     virtual void __unk_vfn_48();
     /**
-     * @vftbl 49
-     * @symbol __unk_vfn_49
-     */
-    virtual void __unk_vfn_49();
-    /**
-     * @vftbl 51
+     * @vftbl 50
      * @symbol ?isSignalSource\@SculkSensorBlock\@\@UEBA_NXZ
      */
     virtual bool isSignalSource() const;
     /**
-     * @vftbl 54
-     * @symbol __unk_vfn_54
+     * @vftbl 53
+     * @symbol __unk_vfn_53
      */
-    virtual void __unk_vfn_54();
+    virtual void __unk_vfn_53();
+    /**
+     * @vftbl 59
+     * @symbol __unk_vfn_59
+     */
+    virtual void __unk_vfn_59();
     /**
      * @vftbl 60
      * @symbol __unk_vfn_60
      */
     virtual void __unk_vfn_60();
     /**
-     * @vftbl 61
-     * @symbol __unk_vfn_61
-     */
-    virtual void __unk_vfn_61();
-    /**
-     * @vftbl 64
+     * @vftbl 63
      * @symbol ?shouldConnectToRedstone\@SculkSensorBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /**
-     * @vftbl 75
-     * @symbol __unk_vfn_75
+     * @vftbl 74
+     * @symbol __unk_vfn_74
      */
-    virtual void __unk_vfn_75();
+    virtual void __unk_vfn_74();
     /**
-     * @vftbl 79
+     * @vftbl 78
      * @symbol ?setupRedstoneComponent\@SculkSensorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 82
-     * @symbol __unk_vfn_82
+     * @vftbl 81
+     * @symbol __unk_vfn_81
      */
-    virtual void __unk_vfn_82();
+    virtual void __unk_vfn_81();
     /**
-     * @vftbl 105
-     * @symbol __unk_vfn_105
+     * @vftbl 104
+     * @symbol __unk_vfn_104
      */
-    virtual void __unk_vfn_105();
+    virtual void __unk_vfn_104();
+    /**
+     * @vftbl 122
+     * @symbol __unk_vfn_122
+     */
+    virtual void __unk_vfn_122();
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
      */
     virtual void __unk_vfn_123();
     /**
+     * @vftbl 124
+     * @symbol __unk_vfn_124
+     */
+    virtual void __unk_vfn_124();
+    /**
      * @vftbl 125
-     * @symbol __unk_vfn_125
-     */
-    virtual void __unk_vfn_125();
-    /**
-     * @vftbl 126
-     * @symbol __unk_vfn_126
-     */
-    virtual void __unk_vfn_126();
-    /**
-     * @vftbl 127
      * @symbol ?getComparatorSignal\@SculkSensorBlock\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /**
-     * @vftbl 129
-     * @symbol __unk_vfn_129
+     * @vftbl 127
+     * @symbol __unk_vfn_127
      */
-    virtual void __unk_vfn_129();
+    virtual void __unk_vfn_127();
     /**
-     * @vftbl 132
-     * @symbol __unk_vfn_132
+     * @vftbl 130
+     * @symbol __unk_vfn_130
      */
-    virtual void __unk_vfn_132();
+    virtual void __unk_vfn_130();
     /**
-     * @vftbl 152
+     * @vftbl 150
      * @symbol ?animateTick\@SculkSensorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @vftbl 154
+     * @vftbl 152
      * @symbol ?getLightEmission\@SculkSensorBlock\@\@UEBA?AUBrightness\@\@AEBVBlock\@\@\@Z
      */
     virtual struct Brightness getLightEmission(class Block const &) const;
     /**
-     * @vftbl 157
-     * @symbol __unk_vfn_157
+     * @vftbl 155
+     * @symbol __unk_vfn_155
      */
-    virtual void __unk_vfn_157();
+    virtual void __unk_vfn_155();
     /**
-     * @vftbl 165
+     * @vftbl 163
      * @symbol ?onStandOn\@SculkSensorBlock\@\@UEBAXAEAVEntityContext\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void onStandOn(class EntityContext &, class BlockPos const &) const;
+    /**
+     * @vftbl 164
+     * @symbol __unk_vfn_164
+     */
+    virtual void __unk_vfn_164();
+    /**
+     * @vftbl 165
+     * @symbol __unk_vfn_165
+     */
+    virtual void __unk_vfn_165();
     /**
      * @vftbl 166
      * @symbol __unk_vfn_166
@@ -242,61 +252,51 @@ public:
     virtual void __unk_vfn_166();
     /**
      * @vftbl 167
-     * @symbol __unk_vfn_167
-     */
-    virtual void __unk_vfn_167();
-    /**
-     * @vftbl 168
-     * @symbol __unk_vfn_168
-     */
-    virtual void __unk_vfn_168();
-    /**
-     * @vftbl 169
      * @symbol ?onPlace\@SculkSensorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 171
-     * @symbol __unk_vfn_171
+     * @vftbl 169
+     * @symbol __unk_vfn_169
      */
-    virtual void __unk_vfn_171();
+    virtual void __unk_vfn_169();
     /**
-     * @vftbl 172
+     * @vftbl 170
      * @symbol ?tick\@SculkSensorBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @vftbl 175
-     * @symbol __unk_vfn_175
+     * @vftbl 173
+     * @symbol __unk_vfn_173
      */
-    virtual void __unk_vfn_175();
+    virtual void __unk_vfn_173();
     /**
-     * @vftbl 179
-     * @symbol __unk_vfn_179
+     * @vftbl 177
+     * @symbol __unk_vfn_177
      */
-    virtual void __unk_vfn_179();
+    virtual void __unk_vfn_177();
     /**
-     * @vftbl 185
+     * @vftbl 184
      * @symbol ?getEmissiveBrightness\@SculkSensorBlock\@\@UEBA?AUBrightness\@\@AEBVBlock\@\@\@Z
      */
     virtual struct Brightness getEmissiveBrightness(class Block const &) const;
     /**
-     * @vftbl 187
-     * @symbol __unk_vfn_187
+     * @vftbl 186
+     * @symbol __unk_vfn_186
      */
-    virtual void __unk_vfn_187();
+    virtual void __unk_vfn_186();
     /**
-     * @vftbl 189
+     * @vftbl 188
      * @symbol ?getResourceItem\@SculkSensorBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @vftbl 190
+     * @vftbl 189
      * @symbol ?getResourceCount\@SculkSensorBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @vftbl 191
+     * @vftbl 190
      * @symbol ?getSilkTouchItemInstance\@SculkSensorBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
@@ -315,16 +315,20 @@ public:
      */
     MCAPI SculkSensorBlock(std::string const &, int);
     /**
-     * @symbol ??0SculkSensorBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4BlockActorType\@\@\@Z
+     * @symbol ??0SculkSensorBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4BlockActorType\@\@H\@Z
      */
-    MCAPI SculkSensorBlock(std::string const &, int, enum class BlockActorType);
-    /**
-     * @symbol ?activate\@SculkSensorBlock\@\@SAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@HH\@Z
-     */
-    MCAPI static void activate(class BlockSource &, class BlockPos const &, class Actor *, int, int);
+    MCAPI SculkSensorBlock(std::string const &, int, enum class BlockActorType, int);
     /**
      * @symbol ?isActive\@SculkSensorBlock\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static bool isActive(class BlockSource &, class BlockPos const &);
+    /**
+     * @symbol ?isOnCooldown\@SculkSensorBlock\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI static bool isOnCooldown(class BlockSource &, class BlockPos const &);
+    /**
+     * @symbol ?setActivePhase\@SculkSensorBlock\@\@SAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@HH\@Z
+     */
+    MCAPI static void setActivePhase(class BlockSource &, class BlockPos const &, class Actor *, int, int);
 
 };

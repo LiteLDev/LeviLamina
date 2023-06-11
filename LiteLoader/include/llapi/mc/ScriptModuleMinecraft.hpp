@@ -51,6 +51,10 @@ public:
 };
 #undef AFTER_EXTRA
     /**
+     * @symbol ?SetUpScriptAssertHandler\@ScriptModuleMinecraft\@\@YAXXZ
+     */
+    MCAPI void SetUpScriptAssertHandler();
+    /**
      * @symbol ?bindBlockLocation\@ScriptModuleMinecraft\@\@YA?AV?$ClassBindingBuilder\@VBlockPos\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::ClassBindingBuilder<class BlockPos> bindBlockLocation();

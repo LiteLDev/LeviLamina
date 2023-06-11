@@ -21,15 +21,13 @@ struct RepairItemEntry {
 // Add Member There
 
 #undef AFTER_EXTRA
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_REPAIRITEMENTRY
 public:
-    /**
-     * @symbol ??0RepairItemEntry\@\@QEAA\@AEBU0\@\@Z
-     */
-    MCAPI RepairItemEntry(struct RepairItemEntry const &);
-    /**
-     * @symbol ??0RepairItemEntry\@\@QEAA\@XZ
-     */
-    MCAPI RepairItemEntry();
+    RepairItemEntry(struct RepairItemEntry const &) = delete;
+    RepairItemEntry() = delete;
+#endif
+
+public:
     /**
      * @symbol ??4RepairItemEntry\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */

@@ -20,8 +20,8 @@ namespace ServerPlayerMovementSystemUtils {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?_handlePlayerAuthInputPacket\@ServerPlayerMovementSystemUtils\@\@YAXAEBVPlayerAuthInputPacket\@\@V?$not_null\@PEAVServerPlayer\@\@\@gsl\@\@\@Z
+     * @symbol ?_handlePlayerAuthInputPacketEnd\@ServerPlayerMovementSystemUtils\@\@YAXAEBUServerPlayerCurrentMovementComponent\@\@AEAVActorOwnerComponent\@\@\@Z
      */
-    MCAPI void _handlePlayerAuthInputPacket(class PlayerAuthInputPacket const &, class gsl::not_null<class ServerPlayer *>);
+    MCAPI void _handlePlayerAuthInputPacketEnd(struct ServerPlayerCurrentMovementComponent const &, class ActorOwnerComponent &);
 
 };

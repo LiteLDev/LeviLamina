@@ -42,13 +42,13 @@ public:
      */
     MCAPI MapItemSavedData(struct ActorUniqueID, bool);
     /**
-     * @symbol ?addTrackedMapEntity\@MapItemSavedData\@\@QEAA?AV?$shared_ptr\@VMapItemTrackedActor\@\@\@std\@\@AEAVActor\@\@W4Type\@MapDecoration\@\@\@Z
-     */
-    MCAPI class std::shared_ptr<class MapItemTrackedActor> addTrackedMapEntity(class Actor &, enum class MapDecoration::Type);
-    /**
      * @symbol ?addTrackedMapEntity\@MapItemSavedData\@\@QEAA?AV?$shared_ptr\@VMapItemTrackedActor\@\@\@std\@\@AEBVBlockPos\@\@AEAVBlockSource\@\@W4Type\@MapDecoration\@\@\@Z
      */
     MCAPI class std::shared_ptr<class MapItemTrackedActor> addTrackedMapEntity(class BlockPos const &, class BlockSource &, enum class MapDecoration::Type);
+    /**
+     * @symbol ?addTrackedMapEntity\@MapItemSavedData\@\@QEAA?AV?$shared_ptr\@VMapItemTrackedActor\@\@\@std\@\@AEAVActor\@\@W4Type\@MapDecoration\@\@\@Z
+     */
+    MCAPI class std::shared_ptr<class MapItemTrackedActor> addTrackedMapEntity(class Actor &, enum class MapDecoration::Type);
     /**
      * @symbol ?areClientPixelsDirty\@MapItemSavedData\@\@QEBA_NXZ
      */

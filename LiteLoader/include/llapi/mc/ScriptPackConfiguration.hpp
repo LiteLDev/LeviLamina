@@ -22,10 +22,6 @@ class ScriptPackConfiguration {
 #undef AFTER_EXTRA
 public:
     /**
-     * @symbol ??0ScriptPackConfiguration\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI ScriptPackConfiguration(class ScriptPackConfiguration &&);
-    /**
      * @symbol ??0ScriptPackConfiguration\@\@QEAA\@XZ
      */
     MCAPI ScriptPackConfiguration();
@@ -33,6 +29,10 @@ public:
      * @symbol ??0ScriptPackConfiguration\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI ScriptPackConfiguration(class ScriptPackConfiguration const &);
+    /**
+     * @symbol ??0ScriptPackConfiguration\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI ScriptPackConfiguration(class ScriptPackConfiguration &&);
     /**
      * @symbol ?getPermissions\@ScriptPackConfiguration\@\@QEBAAEBVScriptPackPermissions\@\@XZ
      */

@@ -29,13 +29,13 @@ public:
 
 public:
     /**
-     * @symbol ??0AngryComponent\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI AngryComponent(class AngryComponent &&);
-    /**
      * @symbol ??0AngryComponent\@\@QEAA\@XZ
      */
     MCAPI AngryComponent();
+    /**
+     * @symbol ??0AngryComponent\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI AngryComponent(class AngryComponent &&);
     /**
      * @symbol ?canGetAngry\@AngryComponent\@\@QEBA_NAEAVMob\@\@PEAV2\@PEAVActor\@\@_N3\@Z
      */

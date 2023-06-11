@@ -17,9 +17,9 @@ namespace SmithingTrimRecipeUtils {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?doesItemHaveResultingTrim\@SmithingTrimRecipeUtils\@\@YA_NAEBVLevel\@\@AEBVItemStack\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@2\@Z
+     * @symbol ?doesItemHaveResultingTrim\@SmithingTrimRecipeUtils\@\@YA_NAEBVCraftingContext\@\@AEBVItemStack\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@2\@Z
      */
-    MCAPI bool doesItemHaveResultingTrim(class Level const &, class ItemStack const &, std::string const &, std::string const &);
+    MCAPI bool doesItemHaveResultingTrim(class CraftingContext const &, class ItemStack const &, std::string const &, std::string const &);
     /**
      * @symbol ?validateAdditionIngredient\@SmithingTrimRecipeUtils\@\@YA_NAEBVLevel\@\@VRecipeIngredient\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */

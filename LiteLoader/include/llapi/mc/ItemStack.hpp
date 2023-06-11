@@ -106,21 +106,17 @@ public:
     MCVAPI ~ItemStack();
 #endif
     /**
-     * @symbol ??0ItemStack\@\@QEAA\@AEBVRecipeIngredient\@\@\@Z
-     */
-    MCAPI ItemStack(class RecipeIngredient const &);
-    /**
      * @symbol ??0ItemStack\@\@QEAA\@AEBVItemInstance\@\@\@Z
      */
     MCAPI ItemStack(class ItemInstance const &);
     /**
+     * @symbol ??0ItemStack\@\@QEAA\@AEBVRecipeIngredient\@\@\@Z
+     */
+    MCAPI ItemStack(class RecipeIngredient const &);
+    /**
      * @symbol ??0ItemStack\@\@QEAA\@XZ
      */
     MCAPI ItemStack();
-    /**
-     * @symbol ??0ItemStack\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@HHPEBVCompoundTag\@\@\@Z
-     */
-    MCAPI ItemStack(class std::basic_string_view<char, struct std::char_traits<char>>, int, int, class CompoundTag const *);
     /**
      * @symbol ??0ItemStack\@\@QEAA\@AEBVItem\@\@HHPEBVCompoundTag\@\@\@Z
      */
@@ -129,6 +125,10 @@ public:
      * @symbol ??0ItemStack\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI ItemStack(class ItemStack const &);
+    /**
+     * @symbol ??0ItemStack\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@HHPEBVCompoundTag\@\@\@Z
+     */
+    MCAPI ItemStack(class std::basic_string_view<char, struct std::char_traits<char>>, int, int, class CompoundTag const *);
     /**
      * @symbol ??0ItemStack\@\@QEAA\@AEBVBlockLegacy\@\@H\@Z
      */

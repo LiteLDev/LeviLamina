@@ -32,25 +32,25 @@ public:
      */
     MCAPI MolangScriptArg(struct MolangScriptArg const &);
     /**
-     * @symbol ??0MolangScriptArg\@\@QEAA\@H\@Z
-     */
-    MCAPI MolangScriptArg(int);
-    /**
      * @symbol ??0MolangScriptArg\@\@QEAA\@M\@Z
      */
     MCAPI MolangScriptArg(float);
+    /**
+     * @symbol ??0MolangScriptArg\@\@QEAA\@H\@Z
+     */
+    MCAPI MolangScriptArg(int);
     /**
      * @symbol ?getAsNonConstMolangMemberArray\@MolangScriptArg\@\@QEAAPEAUMolangMemberArray\@\@XZ
      */
     MCAPI struct MolangMemberArray * getAsNonConstMolangMemberArray();
     /**
-     * @symbol ??4MolangScriptArg\@\@QEAAAEAU0\@$$QEAU0\@\@Z
-     */
-    MCAPI struct MolangScriptArg & operator=(struct MolangScriptArg &&);
-    /**
      * @symbol ??4MolangScriptArg\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
     MCAPI struct MolangScriptArg & operator=(struct MolangScriptArg const &);
+    /**
+     * @symbol ??4MolangScriptArg\@\@QEAAAEAU0\@$$QEAU0\@\@Z
+     */
+    MCAPI struct MolangScriptArg & operator=(struct MolangScriptArg &&);
     /**
      * @symbol ??1MolangScriptArg\@\@QEAA\@XZ
      */

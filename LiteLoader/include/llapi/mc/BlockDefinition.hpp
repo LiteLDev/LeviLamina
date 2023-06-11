@@ -22,13 +22,10 @@ struct BlockDefinition {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKDEFINITION
 public:
     struct BlockDefinition& operator=(struct BlockDefinition const &) = delete;
+    BlockDefinition() = delete;
 #endif
 
 public:
-    /**
-     * @symbol ??0BlockDefinition\@\@QEAA\@XZ
-     */
-    MCAPI BlockDefinition();
     /**
      * @symbol ??0BlockDefinition\@\@QEAA\@$$QEAU0\@\@Z
      */

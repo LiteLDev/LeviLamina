@@ -53,9 +53,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@SimpleEventPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@SimpleEventPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLEEVENTPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -63,13 +63,13 @@ public:
     MCVAPI ~SimpleEventPacket();
 #endif
     /**
-     * @symbol ??0SimpleEventPacket\@\@QEAA\@XZ
-     */
-    MCAPI SimpleEventPacket();
-    /**
      * @symbol ??0SimpleEventPacket\@\@QEAA\@AEBW4Subtype\@0\@\@Z
      */
     MCAPI SimpleEventPacket(enum class SimpleEventPacket::Subtype const &);
+    /**
+     * @symbol ??0SimpleEventPacket\@\@QEAA\@XZ
+     */
+    MCAPI SimpleEventPacket();
     /**
      * @symbol ?getSubtype\@SimpleEventPacket\@\@QEBAAEBW4Subtype\@1\@XZ
      */

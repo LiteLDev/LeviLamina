@@ -5,8 +5,8 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "RakPeerHelper.hpp"
 #include "Bedrock.hpp"
+#include "RakPeerHelper.hpp"
 #include "RakNet.hpp"
 
 #define BEFORE_EXTRA
@@ -55,14 +55,14 @@ public:
     virtual void _onEnable();
     /**
      * @vftbl 3
-     * @symbol ?startAnnouncingServer\@RakNetServerLocator\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0W4GameType\@\@HH_N2W4TransportLayer\@\@\@Z
+     * @symbol ?startAnnouncingServer\@RakNetServerLocator\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0V?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@W4GameType\@\@HH_N3\@Z
      */
-    virtual void startAnnouncingServer(std::string const &, std::string const &, enum class GameType, int, int, bool, bool, enum class TransportLayer);
+    virtual void startAnnouncingServer(std::string const &, std::string const &, class Bedrock::NonOwnerPointer<class AppPlatform>, enum class GameType, int, int, bool, bool);
     /**
      * @vftbl 4
-     * @symbol ?stopAnnouncingServer\@RakNetServerLocator\@\@UEAAXXZ
+     * @symbol ?stopAnnouncingServer\@RakNetServerLocator\@\@UEAAXV?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@\@Z
      */
-    virtual void stopAnnouncingServer();
+    virtual void stopAnnouncingServer(class Bedrock::NonOwnerPointer<class AppPlatform>);
     /**
      * @vftbl 5
      * @symbol ?startServerDiscovery\@RakNetServerLocator\@\@UEAAXUPortPair\@\@\@Z

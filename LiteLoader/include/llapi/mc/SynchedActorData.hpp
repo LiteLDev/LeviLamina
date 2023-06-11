@@ -166,13 +166,13 @@ public:
 
 public:
     /**
-     * @symbol ??0SynchedActorData\@\@QEAA\@XZ
-     */
-    MCAPI SynchedActorData();
-    /**
      * @symbol ??0SynchedActorData\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI SynchedActorData(class SynchedActorData &&);
+    /**
+     * @symbol ??0SynchedActorData\@\@QEAA\@XZ
+     */
+    MCAPI SynchedActorData();
     /**
      * @symbol ?_clone\@SynchedActorData\@\@QEBA?AV1\@XZ
      */

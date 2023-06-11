@@ -42,11 +42,6 @@ public:
      */
     virtual int getMaxUseDuration(class ItemStack const *) const;
     /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
-     */
-    virtual void __unk_vfn_7();
-    /**
      * @vftbl 11
      * @symbol __unk_vfn_11
      */
@@ -61,6 +56,11 @@ public:
      * @symbol __unk_vfn_16
      */
     virtual void __unk_vfn_16();
+    /**
+     * @vftbl 19
+     * @symbol __unk_vfn_19
+     */
+    virtual void __unk_vfn_19();
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
@@ -132,27 +132,37 @@ public:
      */
     virtual void enchantProjectile(class ItemStackBase const &, class Actor &) const;
     /**
-     * @vftbl 117
+     * @vftbl 115
+     * @symbol __unk_vfn_115
+     */
+    virtual void __unk_vfn_115();
+    /**
+     * @vftbl 116
+     * @symbol __unk_vfn_116
+     */
+    virtual void __unk_vfn_116();
+    /**
+     * @vftbl 119
      * @symbol ?setIconInfo\@CrossbowItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     virtual class Item & setIconInfo(std::string const &, int);
     /**
-     * @vftbl 118
+     * @vftbl 120
      * @symbol ?getIconInfo\@CrossbowItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
-     * @vftbl 120
+     * @vftbl 122
      * @symbol ?getAnimationFrameFor\@CrossbowItem\@\@UEBAHPEAVMob\@\@_NPEBVItemStack\@\@_N\@Z
      */
     virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
     /**
-     * @vftbl 124
+     * @vftbl 126
      * @symbol ?canBeCharged\@CrossbowItem\@\@UEBA_NXZ
      */
     virtual bool canBeCharged() const;
     /**
-     * @vftbl 126
+     * @vftbl 128
      * @symbol ?playSoundIncrementally\@CrossbowItem\@\@UEBAXAEBVItemStack\@\@AEAVMob\@\@\@Z
      */
     virtual void playSoundIncrementally(class ItemStack const &, class Mob &) const;

@@ -17,6 +17,10 @@ namespace PlayerFetchUtils {
 
 #undef AFTER_EXTRA
     /**
+     * @symbol ?findActivePlayerByActorUniqueID\@PlayerFetchUtils\@\@YAPEAVPlayer\@\@AEBVGameplayUserManager\@\@UActorUniqueID\@\@\@Z
+     */
+    MCAPI class Player * findActivePlayerByActorUniqueID(class GameplayUserManager const &, struct ActorUniqueID);
+    /**
      * @symbol ?findPlayer\@PlayerFetchUtils\@\@YAPEAVPlayer\@\@AEBVGameplayUserManager\@\@V?$function\@$$A6A_NAEBVPlayer\@\@\@Z\@std\@\@\@Z
      */
     MCAPI class Player * findPlayer(class GameplayUserManager const &, class std::function<bool (class Player const &)>);

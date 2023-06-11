@@ -65,9 +65,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@AnimatePacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@AnimatePacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMATEPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -75,13 +75,13 @@ public:
     MCVAPI ~AnimatePacket();
 #endif
     /**
-     * @symbol ??0AnimatePacket\@\@QEAA\@XZ
-     */
-    MCAPI AnimatePacket();
-    /**
      * @symbol ??0AnimatePacket\@\@QEAA\@W4Action\@0\@AEAVActor\@\@\@Z
      */
     MCAPI AnimatePacket(enum class AnimatePacket::Action, class Actor &);
+    /**
+     * @symbol ??0AnimatePacket\@\@QEAA\@XZ
+     */
+    MCAPI AnimatePacket();
     /**
      * @symbol ??0AnimatePacket\@\@QEAA\@W4Action\@0\@VActorRuntimeID\@\@M\@Z
      */

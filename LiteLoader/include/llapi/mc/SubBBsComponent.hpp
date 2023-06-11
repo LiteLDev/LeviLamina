@@ -28,10 +28,6 @@ public:
 
 public:
     /**
-     * @symbol ??4SubBBsComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
-     */
-    MCAPI struct SubBBsComponent & operator=(struct SubBBsComponent &&);
-    /**
      * @symbol ??1SubBBsComponent\@\@QEAA\@XZ
      */
     MCAPI ~SubBBsComponent();

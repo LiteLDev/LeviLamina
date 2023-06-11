@@ -29,10 +29,6 @@ namespace MobJumpFromGroundSystem {
      */
     MCAPI struct TickingSystemWithInfo createFilterSystem();
     /**
-     * @symbol ?createSideBySideSystem\@MobJumpFromGroundSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI struct TickingSystemWithInfo createSideBySideSystem();
-    /**
      * @symbol ?createSystem\@MobJumpFromGroundSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI struct TickingSystemWithInfo createSystem();

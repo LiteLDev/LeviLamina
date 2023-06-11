@@ -35,9 +35,9 @@ public:
      */
     MCAPI ActorDefinition(std::string const &);
     /**
-     * @symbol ?parse\@ActorDefinition\@\@QEAAXUDeserializeDataParams\@\@AEAVActorDefinitionDescriptor\@\@AEAVActorFactory\@\@W4LogArea\@\@\@Z
+     * @symbol ?parse\@ActorDefinition\@\@QEAA?AW4ActorDefinitionParseStatus\@\@UDeserializeDataParams\@\@AEAVActorDefinitionDescriptor\@\@AEAVActorFactory\@\@W4LogArea\@\@\@Z
      */
-    MCAPI void parse(struct DeserializeDataParams, class ActorDefinitionDescriptor &, class ActorFactory &, enum class LogArea);
+    MCAPI enum class ActorDefinitionParseStatus parse(struct DeserializeDataParams, class ActorDefinitionDescriptor &, class ActorFactory &, enum class LogArea);
     /**
      * @symbol ?parseAttributes\@ActorDefinition\@\@QEAAXUDeserializeDataParams\@\@AEAVActorDefinitionDescriptor\@\@\@Z
      */

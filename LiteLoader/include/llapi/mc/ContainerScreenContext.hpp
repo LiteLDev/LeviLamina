@@ -33,13 +33,13 @@ public:
      */
     MCAPI ContainerScreenContext(class Player &, enum class ContainerType, struct ActorUniqueID const &);
     /**
-     * @symbol ??0ContainerScreenContext\@\@QEAA\@AEAVPlayer\@\@W4ContainerType\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI ContainerScreenContext(class Player &, enum class ContainerType, class BlockPos const &);
-    /**
      * @symbol ??0ContainerScreenContext\@\@QEAA\@XZ
      */
     MCAPI ContainerScreenContext();
+    /**
+     * @symbol ??0ContainerScreenContext\@\@QEAA\@AEAVPlayer\@\@W4ContainerType\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI ContainerScreenContext(class Player &, enum class ContainerType, class BlockPos const &);
     /**
      * @symbol ?getPlayer\@ContainerScreenContext\@\@QEBAAEAVPlayer\@\@XZ
      */

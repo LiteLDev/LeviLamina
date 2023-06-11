@@ -63,10 +63,6 @@ public:
      */
     MCVAPI std::string getName() const;
     /**
-     * @symbol ?getRandomSlot\@DispenserBlockActor\@\@UEAAHXZ
-     */
-    MCVAPI int getRandomSlot();
-    /**
      * @symbol ?load\@DispenserBlockActor\@\@UEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     MCVAPI void load(class Level &, class CompoundTag const &, class DataLoadHelper &);
@@ -94,15 +90,15 @@ public:
      * @symbol ?stopOpen\@DispenserBlockActor\@\@UEAAXAEAVPlayer\@\@\@Z
      */
     MCVAPI void stopOpen(class Player &);
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~DispenserBlockActor();
 #endif
     /**
      * @symbol ??0DispenserBlockActor\@\@QEAA\@VBlockPos\@\@W4BlockActorType\@\@\@Z
      */
     MCAPI DispenserBlockActor(class BlockPos, enum class BlockActorType);
+    /**
+     * @symbol ?getRandomSlot\@DispenserBlockActor\@\@QEAAHAEAVRandom\@\@\@Z
+     */
+    MCAPI int getRandomSlot(class Random &);
 
 //protected:
     /**

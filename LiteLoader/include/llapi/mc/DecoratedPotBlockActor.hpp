@@ -76,17 +76,17 @@ public:
      */
     virtual void __unk_vfn_35();
     /**
-     * @vftbl 36
-     * @symbol __unk_vfn_36
+     * @vftbl 38
+     * @symbol __unk_vfn_38
      */
-    virtual void __unk_vfn_36();
+    virtual void __unk_vfn_38();
     /**
-     * @vftbl 37
+     * @vftbl 39
      * @symbol ?_getUpdatePacket\@DecoratedPotBlockActor\@\@MEAA?AV?$unique_ptr\@VBlockActorDataPacket\@\@U?$default_delete\@VBlockActorDataPacket\@\@\@std\@\@\@std\@\@AEAVBlockSource\@\@\@Z
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @vftbl 38
+     * @vftbl 40
      * @symbol ?_onUpdatePacket\@DecoratedPotBlockActor\@\@MEAAXAEBVCompoundTag\@\@AEAVBlockSource\@\@\@Z
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
@@ -95,31 +95,31 @@ public:
      */
     MCAPI DecoratedPotBlockActor(class BlockPos const &);
     /**
-     * @symbol ?getShardNames\@DecoratedPotBlockActor\@\@QEBAAEBV?$array\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$03\@std\@\@XZ
+     * @symbol ?getSherdNames\@DecoratedPotBlockActor\@\@QEBAAEBV?$array\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$03\@std\@\@XZ
      */
-    MCAPI class std::array<std::string, 4> const & getShardNames() const;
+    MCAPI class std::array<std::string, 4> const & getSherdNames() const;
     /**
-     * @symbol ?DEFAULT_SHARD_LIST\@DecoratedPotBlockActor\@\@2V?$array\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$03\@std\@\@B
+     * @symbol ?DEFAULT_SHERD_LIST\@DecoratedPotBlockActor\@\@2V?$array\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$03\@std\@\@B
      */
-    MCAPI static class std::array<std::string, 4> const DEFAULT_SHARD_LIST;
+    MCAPI static class std::array<std::string, 4> const DEFAULT_SHERD_LIST;
     /**
-     * @symbol ?saveShardsToTag\@DecoratedPotBlockActor\@\@SAXAEAVCompoundTag\@\@AEBV?$array\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$03\@std\@\@\@Z
+     * @symbol ?saveSherdsToTag\@DecoratedPotBlockActor\@\@SAXAEAVCompoundTag\@\@AEBV?$array\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$03\@std\@\@\@Z
      */
-    MCAPI static void saveShardsToTag(class CompoundTag &, class std::array<std::string, 4> const &);
+    MCAPI static void saveSherdsToTag(class CompoundTag &, class std::array<std::string, 4> const &);
     /**
      * @symbol ?tryGet\@DecoratedPotBlockActor\@\@SAPEAV1\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static class DecoratedPotBlockActor * tryGet(class BlockSource &, class BlockPos const &);
     /**
-     * @symbol ?tryGetShardsFromTag\@DecoratedPotBlockActor\@\@SA?AV?$optional\@V?$array\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$03\@std\@\@\@std\@\@AEBVCompoundTag\@\@\@Z
+     * @symbol ?tryGetSherdsFromTag\@DecoratedPotBlockActor\@\@SA?AV?$optional\@V?$array\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$03\@std\@\@\@std\@\@AEBVCompoundTag\@\@\@Z
      */
-    MCAPI static class std::optional<class std::array<std::string, 4>> tryGetShardsFromTag(class CompoundTag const &);
+    MCAPI static class std::optional<class std::array<std::string, 4>> tryGetSherdsFromTag(class CompoundTag const &);
 
 //protected:
     /**
-     * @symbol ?_resetShardItemNames\@DecoratedPotBlockActor\@\@IEAAXXZ
+     * @symbol ?_resetSherdItemNames\@DecoratedPotBlockActor\@\@IEAAXXZ
      */
-    MCAPI void _resetShardItemNames();
+    MCAPI void _resetSherdItemNames();
 
 protected:
 

@@ -30,10 +30,6 @@ public:
 
 public:
     /**
-     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_TentacleAngleAndSwimRotation\@\@MM\@Z
-     */
-    MCAPI MolangMemberArray(enum class MolangStruct_TentacleAngleAndSwimRotation, float, float);
-    /**
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_BaseAndPattern\@\@HH\@Z
      */
     MCAPI MolangMemberArray(enum class MolangStruct_BaseAndPattern, int, int);
@@ -41,10 +37,6 @@ public:
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_RGB\@\@AEBVColor\@mce\@\@\@Z
      */
     MCAPI MolangMemberArray(enum class MolangStruct_RGB, class mce::Color const &);
-    /**
-     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_MinAndMax\@\@$$QEAU0\@1\@Z
-     */
-    MCAPI MolangMemberArray(enum class MolangStruct_MinAndMax, struct MolangMemberArray &&, struct MolangMemberArray &&);
     /**
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_XYZ\@\@AEBVVec3\@\@\@Z
      */
@@ -54,17 +46,25 @@ public:
      */
     MCAPI MolangMemberArray(enum class MolangStruct_RGBA, class mce::Color const &);
     /**
+     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_RotYAndPosY\@\@MM\@Z
+     */
+    MCAPI MolangMemberArray(enum class MolangStruct_RotYAndPosY, float, float);
+    /**
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_SpeedAndDirection\@\@MAEBVVec3\@\@\@Z
      */
     MCAPI MolangMemberArray(enum class MolangStruct_SpeedAndDirection, float, class Vec3 const &);
+    /**
+     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_XY\@\@AEBVVec2\@\@\@Z
+     */
+    MCAPI MolangMemberArray(enum class MolangStruct_XY, class Vec2 const &);
     /**
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_TRS\@\@$$QEAU0\@11\@Z
      */
     MCAPI MolangMemberArray(enum class MolangStruct_TRS, struct MolangMemberArray &&, struct MolangMemberArray &&, struct MolangMemberArray &&);
     /**
-     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_XY\@\@AEBVVec2\@\@\@Z
+     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_MinAndMax\@\@$$QEAU0\@1\@Z
      */
-    MCAPI MolangMemberArray(enum class MolangStruct_XY, class Vec2 const &);
+    MCAPI MolangMemberArray(enum class MolangStruct_MinAndMax, struct MolangMemberArray &&, struct MolangMemberArray &&);
     /**
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_PoseIndexAndHurtTime\@\@HH\@Z
      */
@@ -74,9 +74,9 @@ public:
      */
     MCAPI MolangMemberArray(enum class MolangStruct_UV, float, float);
     /**
-     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_RotYAndPosY\@\@MM\@Z
+     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_TentacleAngleAndSwimRotation\@\@MM\@Z
      */
-    MCAPI MolangMemberArray(enum class MolangStruct_RotYAndPosY, float, float);
+    MCAPI MolangMemberArray(enum class MolangStruct_TentacleAngleAndSwimRotation, float, float);
     /**
      * @symbol ?add\@MolangMemberArray\@\@QEAAXAEBVHashedString\@\@AEBUMolangScriptArg\@\@\@Z
      */

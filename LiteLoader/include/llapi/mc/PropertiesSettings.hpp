@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -87,6 +86,10 @@ public:
      */
     MCAPI unsigned short getCompressionThresholdBytesize() const;
     /**
+     * @symbol ?getContentLogLevel\@PropertiesSettings\@\@QEBA?AW4LogLevel\@\@XZ
+     */
+    MCAPI enum class LogLevel getContentLogLevel() const;
+    /**
      * @symbol ?getCustomProperty\@PropertiesSettings\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@\@Z
      */
     MCAPI std::string const & getCustomProperty(std::string const &) const;
@@ -94,10 +97,6 @@ public:
      * @symbol ?getDefaultPlayerPermissionLevel\@PropertiesSettings\@\@QEBA?BW4PlayerPermissionLevel\@\@XZ
      */
     MCAPI enum class PlayerPermissionLevel const getDefaultPlayerPermissionLevel() const;
-    /**
-     * @symbol ?getDesiredHttpImplementation\@PropertiesSettings\@\@QEBA?AW4Implementation\@Http\@Bedrock\@\@XZ
-     */
-    MCAPI enum class Bedrock::Http::Implementation getDesiredHttpImplementation() const;
     /**
      * @symbol ?getDifficulty\@PropertiesSettings\@\@QEBA?AW4Difficulty\@\@XZ
      */
@@ -202,6 +201,10 @@ public:
      * @symbol ?isClientSideGenEnabled\@PropertiesSettings\@\@QEBA_NXZ
      */
     MCAPI bool isClientSideGenEnabled() const;
+    /**
+     * @symbol ?isContentLogConsoleOutputEnabled\@PropertiesSettings\@\@QEBA_NXZ
+     */
+    MCAPI bool isContentLogConsoleOutputEnabled() const;
     /**
      * @symbol ?isContentLogFileEnabled\@PropertiesSettings\@\@QEBA_NXZ
      */

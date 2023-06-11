@@ -49,10 +49,10 @@ public:
     {
         return handler->getServerPlayer(*netId, dAccess<char>(this, 16));
     }
-    inline StreamReadResult read(class ReadOnlyBinaryStream& binaryStream)
-    {
-        return _read(binaryStream);
-    }
+    //inline StreamReadResult read(class ReadOnlyBinaryStream& binaryStream)
+    //{
+    //    return _read(binaryStream);
+    //}
 protected:
     std::string toDebugString() {
         return fmt::format("{}({})->{}", getName(), getId(), clientSubId);
@@ -89,9 +89,9 @@ public:
     virtual void write(class BinaryStream &) const = 0;
     /**
      * @vftbl 4
-     * @symbol ?readExtended\@Packet\@\@UEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?read\@Packet\@\@UEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult read(class ReadOnlyBinaryStream &);
     /**
      * @vftbl 5
      * @symbol ?disallowBatching\@Packet\@\@UEBA_NXZ
@@ -104,9 +104,9 @@ public:
     virtual bool isValid() const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@CreatePhotoPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@CreatePhotoPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &) = 0;
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &) = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKET
     /**
      * @symbol __unk_destructor_-1

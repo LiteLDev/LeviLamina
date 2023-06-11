@@ -26,6 +26,7 @@ private:
     char filler[128];
 
 public:
+    struct ComparisonOptions;
     LIAPI int getCount() const;
 
     inline int getCountNoCheck() const {
@@ -252,13 +253,13 @@ public:
      */
     MCAPI enum class UseAnimation getUseAnimation() const;
     /**
-     * @symbol ?getUserData\@ItemStackBase\@\@QEAAPEAVCompoundTag\@\@XZ
-     */
-    MCAPI class CompoundTag * getUserData();
-    /**
      * @symbol ?getUserData\@ItemStackBase\@\@QEBAPEBVCompoundTag\@\@XZ
      */
     MCAPI class CompoundTag const * getUserData() const;
+    /**
+     * @symbol ?getUserData\@ItemStackBase\@\@QEAAPEAVCompoundTag\@\@XZ
+     */
+    MCAPI class CompoundTag * getUserData();
     /**
      * @symbol ?getWasPickedUp\@ItemStackBase\@\@QEBA_NXZ
      */
@@ -468,9 +469,9 @@ public:
      */
     MCAPI bool sameItem(int, int) const;
     /**
-     * @symbol ?sameItem\@ItemStackBase\@\@QEBA_NAEBV1\@\@Z
+     * @symbol ?sameItem\@ItemStackBase\@\@QEBA_NAEBV1\@AEBUComparisonOptions\@1\@\@Z
      */
-    MCAPI bool sameItem(class ItemStackBase const &) const;
+    MCAPI bool sameItem(class ItemStackBase const &, struct ItemStackBase::ComparisonOptions const &) const;
     /**
      * @symbol ?sameItemAndAux\@ItemStackBase\@\@QEBA_NAEBV1\@\@Z
      */
@@ -568,6 +569,10 @@ public:
      */
     MCAPI bool updateComponent(std::string const &, class Json::Value const &);
     /**
+     * @symbol ?COMPARISONOPTIONS_RELEVANTUSERDATA\@ItemStackBase\@\@2UComparisonOptions\@1\@B
+     */
+    MCAPI static struct ItemStackBase::ComparisonOptions const COMPARISONOPTIONS_RELEVANTUSERDATA;
+    /**
      * @symbol ?TAG_CAN_DESTROY\@ItemStackBase\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const TAG_CAN_DESTROY;
@@ -602,6 +607,10 @@ public:
 
 //protected:
     /**
+     * @symbol ??0ItemStackBase\@\@IEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@HHPEBVCompoundTag\@\@\@Z
+     */
+    MCAPI ItemStackBase(class std::basic_string_view<char, struct std::char_traits<char>>, int, int, class CompoundTag const *);
+    /**
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBVItem\@\@HHPEBVCompoundTag\@\@\@Z
      */
     MCAPI ItemStackBase(class Item const &, int, int, class CompoundTag const *);
@@ -614,17 +623,13 @@ public:
      */
     MCAPI ItemStackBase();
     /**
-     * @symbol ??0ItemStackBase\@\@IEAA\@AEBVBlock\@\@HPEBVCompoundTag\@\@\@Z
-     */
-    MCAPI ItemStackBase(class Block const &, int, class CompoundTag const *);
-    /**
-     * @symbol ??0ItemStackBase\@\@IEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@HHPEBVCompoundTag\@\@\@Z
-     */
-    MCAPI ItemStackBase(class std::basic_string_view<char, struct std::char_traits<char>>, int, int, class CompoundTag const *);
-    /**
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBVBlockLegacy\@\@H\@Z
      */
     MCAPI ItemStackBase(class BlockLegacy const &, int);
+    /**
+     * @symbol ??0ItemStackBase\@\@IEAA\@AEBVBlock\@\@HPEBVCompoundTag\@\@\@Z
+     */
+    MCAPI ItemStackBase(class Block const &, int, class CompoundTag const *);
     /**
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBVRecipeIngredient\@\@\@Z
      */

@@ -38,13 +38,13 @@ public:
      */
     MCAPI class BlockPatternBuilder & build();
     /**
-     * @symbol ?define\@BlockPatternBuilder\@\@QEAAAEAV1\@DAEBVBlock\@\@\@Z
-     */
-    MCAPI class BlockPatternBuilder & define(char, class Block const &);
-    /**
      * @symbol ?define\@BlockPatternBuilder\@\@QEAAAEAV1\@DV?$function\@$$A6A_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z\@std\@\@\@Z
      */
     MCAPI class BlockPatternBuilder & define(char, class std::function<bool (class BlockSource &, class BlockPos const &, class Block const &)>);
+    /**
+     * @symbol ?define\@BlockPatternBuilder\@\@QEAAAEAV1\@DAEBVBlock\@\@\@Z
+     */
+    MCAPI class BlockPatternBuilder & define(char, class Block const &);
     /**
      * @symbol ?isReadyForMatch\@BlockPatternBuilder\@\@QEAA_NXZ
      */
@@ -54,13 +54,13 @@ public:
      */
     MCAPI struct BuildMatch match(class BlockPos const &);
     /**
-     * @symbol ?match\@BlockPatternBuilder\@\@QEAA?AUBuildMatch\@\@AEBVBlockPos\@\@HH\@Z
-     */
-    MCAPI struct BuildMatch match(class BlockPos const &, int, int);
-    /**
      * @symbol ?match\@BlockPatternBuilder\@\@QEAA?AUBuildMatch\@\@AEBVBlockPos\@\@HHEE\@Z
      */
     MCAPI struct BuildMatch match(class BlockPos const &, int, int, unsigned char, unsigned char);
+    /**
+     * @symbol ?match\@BlockPatternBuilder\@\@QEAA?AUBuildMatch\@\@AEBVBlockPos\@\@HH\@Z
+     */
+    MCAPI struct BuildMatch match(class BlockPos const &, int, int);
     /**
      * @symbol ?replaceBlocks\@BlockPatternBuilder\@\@QEAAXDUBuildMatch\@\@AEBVBlock\@\@\@Z
      */

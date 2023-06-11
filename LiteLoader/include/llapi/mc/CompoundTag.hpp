@@ -114,9 +114,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 2
-     * @symbol ?write\@CompoundTag\@\@UEBAXAEAVIDataOutput\@\@\@Z
+     * @symbol __unk_vfn_2
      */
-    virtual void write(class IDataOutput &) const;
+    virtual void __unk_vfn_2();
     /**
      * @vftbl 3
      * @symbol ?load\@CompoundTag\@\@UEAAXAEAVIDataInput\@\@\@Z
@@ -153,6 +153,10 @@ public:
      */
     virtual unsigned __int64 hash() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAG
+    /**
+     * @symbol ?write\@CompoundTag\@\@UEBAXAEAVIDataOutput\@\@\@Z
+     */
+    MCVAPI void write(class IDataOutput &) const;
     /**
      * @symbol __unk_destructor_-1
      */
@@ -192,6 +196,7 @@ public:
     MCAPI bool contains(class std::basic_string_view<char, struct std::char_traits<char>>) const;
     /**
      * @symbol ?deepCopy\@CompoundTag\@\@QEAAXAEBV1\@\@Z
+     *
      *
      *
      * @brief This function performs a deep copy of a CompoundTag object.
@@ -264,13 +269,13 @@ public:
      */
     MCAPI class IntTag const * getIntTag(class std::basic_string_view<char, struct std::char_traits<char>>) const;
     /**
-     * @symbol ?getList\@CompoundTag\@\@QEBAPEBVListTag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
-     */
-    MCAPI class ListTag const * getList(class std::basic_string_view<char, struct std::char_traits<char>>) const;
-    /**
      * @symbol ?getList\@CompoundTag\@\@QEAAPEAVListTag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
     MCAPI class ListTag * getList(class std::basic_string_view<char, struct std::char_traits<char>>);
+    /**
+     * @symbol ?getList\@CompoundTag\@\@QEBAPEBVListTag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
+     */
+    MCAPI class ListTag const * getList(class std::basic_string_view<char, struct std::char_traits<char>>) const;
     /**
      * @symbol ?getShort\@CompoundTag\@\@QEBAFV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
@@ -296,13 +301,13 @@ public:
      */
     MCAPI class CompoundTag & operator=(class CompoundTag &&);
     /**
-     * @symbol ?put\@CompoundTag\@\@QEAAPEAVTag\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VTag\@\@U?$default_delete\@VTag\@\@\@std\@\@\@4\@\@Z
-     */
-    MCAPI class Tag * put(std::string, std::unique_ptr<class Tag>);
-    /**
      * @symbol ?put\@CompoundTag\@\@QEAAAEAVTag\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEAV2\@\@Z
      */
     MCAPI class Tag & put(std::string, class Tag &&);
+    /**
+     * @symbol ?put\@CompoundTag\@\@QEAAPEAVTag\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VTag\@\@U?$default_delete\@VTag\@\@\@std\@\@\@4\@\@Z
+     */
+    MCAPI class Tag * put(std::string, std::unique_ptr<class Tag>);
     /**
      * @symbol ?putBoolean\@CompoundTag\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
@@ -316,13 +321,13 @@ public:
      */
     MCAPI struct TagMemoryChunk & putByteArray(std::string, struct TagMemoryChunk);
     /**
-     * @symbol ?putCompound\@CompoundTag\@\@QEAAAEAV1\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V1\@\@Z
-     */
-    MCAPI class CompoundTag & putCompound(std::string, class CompoundTag);
-    /**
      * @symbol ?putCompound\@CompoundTag\@\@QEAAPEAV1\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@3\@\@Z
      */
     MCAPI class CompoundTag * putCompound(std::string, std::unique_ptr<class CompoundTag>);
+    /**
+     * @symbol ?putCompound\@CompoundTag\@\@QEAAAEAV1\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V1\@\@Z
+     */
+    MCAPI class CompoundTag & putCompound(std::string, class CompoundTag);
     /**
      * @symbol ?putFloat\@CompoundTag\@\@QEAAAEAMV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@M\@Z
      */

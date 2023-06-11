@@ -125,6 +125,10 @@ public:
      */
     MCAPI void deserialize(std::unique_ptr<class CompoundTag>);
     /**
+     * @symbol ?initializeImGui\@ServerScoreboard\@\@QEAAXAEAVLevel\@\@\@Z
+     */
+    MCAPI void initializeImGui(class Level &);
+    /**
      * @symbol ?serialize\@ServerScoreboard\@\@QEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::unique_ptr<class CompoundTag> serialize() const;

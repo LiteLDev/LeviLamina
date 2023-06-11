@@ -41,15 +41,20 @@ public:
      */
     virtual void __unk_vfn_19();
     /**
+     * @vftbl 28
+     * @symbol __unk_vfn_28
+     */
+    virtual void __unk_vfn_28();
+    /**
      * @vftbl 29
      * @symbol __unk_vfn_29
      */
     virtual void __unk_vfn_29();
     /**
-     * @vftbl 30
-     * @symbol __unk_vfn_30
+     * @vftbl 31
+     * @symbol __unk_vfn_31
      */
-    virtual void __unk_vfn_30();
+    virtual void __unk_vfn_31();
     /**
      * @vftbl 32
      * @symbol __unk_vfn_32
@@ -61,10 +66,10 @@ public:
      */
     virtual void __unk_vfn_33();
     /**
-     * @vftbl 34
-     * @symbol __unk_vfn_34
+     * @vftbl 35
+     * @symbol __unk_vfn_35
      */
-    virtual void __unk_vfn_34();
+    virtual void __unk_vfn_35();
     /**
      * @vftbl 36
      * @symbol __unk_vfn_36
@@ -96,10 +101,10 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
-     * @vftbl 42
-     * @symbol __unk_vfn_42
+     * @vftbl 43
+     * @symbol __unk_vfn_43
      */
-    virtual void __unk_vfn_42();
+    virtual void __unk_vfn_43();
     /**
      * @vftbl 44
      * @symbol __unk_vfn_44
@@ -126,120 +131,125 @@ public:
      */
     virtual void __unk_vfn_48();
     /**
-     * @vftbl 49
-     * @symbol __unk_vfn_49
+     * @vftbl 53
+     * @symbol __unk_vfn_53
      */
-    virtual void __unk_vfn_49();
+    virtual void __unk_vfn_53();
     /**
-     * @vftbl 54
-     * @symbol __unk_vfn_54
+     * @vftbl 59
+     * @symbol __unk_vfn_59
      */
-    virtual void __unk_vfn_54();
+    virtual void __unk_vfn_59();
     /**
      * @vftbl 60
      * @symbol __unk_vfn_60
      */
     virtual void __unk_vfn_60();
     /**
-     * @vftbl 61
-     * @symbol __unk_vfn_61
-     */
-    virtual void __unk_vfn_61();
-    /**
-     * @vftbl 70
+     * @vftbl 69
      * @symbol ?shouldDispense\@TntBlock\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@\@Z
      */
     virtual bool shouldDispense(class BlockSource &, class Container &) const;
     /**
-     * @vftbl 71
+     * @vftbl 70
      * @symbol ?dispense\@TntBlock\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
-     * @vftbl 73
+     * @vftbl 72
      * @symbol ?onRedstoneUpdate\@TntBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /**
-     * @vftbl 75
-     * @symbol __unk_vfn_75
+     * @vftbl 74
+     * @symbol __unk_vfn_74
      */
-    virtual void __unk_vfn_75();
+    virtual void __unk_vfn_74();
     /**
-     * @vftbl 79
+     * @vftbl 78
      * @symbol ?setupRedstoneComponent\@TntBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 82
-     * @symbol __unk_vfn_82
+     * @vftbl 81
+     * @symbol __unk_vfn_81
      */
-    virtual void __unk_vfn_82();
+    virtual void __unk_vfn_81();
     /**
-     * @vftbl 97
+     * @vftbl 96
      * @symbol ?destroy\@TntBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@PEAVActor\@\@\@Z
      */
     virtual void destroy(class BlockSource &, class BlockPos const &, class Block const &, class Actor *) const;
     /**
-     * @vftbl 104
+     * @vftbl 103
      * @symbol ?trySpawnResourcesOnExplosion\@TntBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAVRandomize\@\@M\@Z
      */
     virtual void trySpawnResourcesOnExplosion(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, float) const;
     /**
-     * @vftbl 105
-     * @symbol __unk_vfn_105
+     * @vftbl 104
+     * @symbol __unk_vfn_104
      */
-    virtual void __unk_vfn_105();
+    virtual void __unk_vfn_104();
+    /**
+     * @vftbl 122
+     * @symbol __unk_vfn_122
+     */
+    virtual void __unk_vfn_122();
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
      */
     virtual void __unk_vfn_123();
     /**
-     * @vftbl 125
-     * @symbol __unk_vfn_125
+     * @vftbl 124
+     * @symbol __unk_vfn_124
      */
-    virtual void __unk_vfn_125();
+    virtual void __unk_vfn_124();
     /**
-     * @vftbl 126
-     * @symbol __unk_vfn_126
+     * @vftbl 127
+     * @symbol __unk_vfn_127
      */
-    virtual void __unk_vfn_126();
+    virtual void __unk_vfn_127();
     /**
-     * @vftbl 129
-     * @symbol __unk_vfn_129
+     * @vftbl 130
+     * @symbol __unk_vfn_130
      */
-    virtual void __unk_vfn_129();
+    virtual void __unk_vfn_130();
     /**
      * @vftbl 132
-     * @symbol __unk_vfn_132
-     */
-    virtual void __unk_vfn_132();
-    /**
-     * @vftbl 134
      * @symbol ?buildDescriptionId\@TntBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @vftbl 135
+     * @vftbl 133
      * @symbol ?isAuxValueRelevantForPicking\@TntBlock\@\@UEBA_NXZ
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @vftbl 147
+     * @vftbl 145
      * @symbol ?getVariant\@TntBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @vftbl 157
-     * @symbol __unk_vfn_157
+     * @vftbl 155
+     * @symbol __unk_vfn_155
      */
-    virtual void __unk_vfn_157();
+    virtual void __unk_vfn_155();
     /**
-     * @vftbl 164
+     * @vftbl 162
      * @symbol ?onExploded\@TntBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@\@Z
      */
     virtual void onExploded(class BlockSource &, class BlockPos const &, class Actor *) const;
+    /**
+     * @vftbl 164
+     * @symbol __unk_vfn_164
+     */
+    virtual void __unk_vfn_164();
+    /**
+     * @vftbl 165
+     * @symbol __unk_vfn_165
+     */
+    virtual void __unk_vfn_165();
     /**
      * @vftbl 166
      * @symbol __unk_vfn_166
@@ -247,46 +257,36 @@ public:
     virtual void __unk_vfn_166();
     /**
      * @vftbl 167
-     * @symbol __unk_vfn_167
-     */
-    virtual void __unk_vfn_167();
-    /**
-     * @vftbl 168
-     * @symbol __unk_vfn_168
-     */
-    virtual void __unk_vfn_168();
-    /**
-     * @vftbl 169
      * @symbol ?onPlace\@TntBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 171
-     * @symbol __unk_vfn_171
+     * @vftbl 169
+     * @symbol __unk_vfn_169
      */
-    virtual void __unk_vfn_171();
+    virtual void __unk_vfn_169();
     /**
-     * @vftbl 175
-     * @symbol __unk_vfn_175
+     * @vftbl 173
+     * @symbol __unk_vfn_173
      */
-    virtual void __unk_vfn_175();
+    virtual void __unk_vfn_173();
     /**
-     * @vftbl 178
+     * @vftbl 176
      * @symbol ?use\@TntBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @vftbl 179
-     * @symbol __unk_vfn_179
+     * @vftbl 177
+     * @symbol __unk_vfn_177
      */
-    virtual void __unk_vfn_179();
+    virtual void __unk_vfn_177();
     /**
-     * @vftbl 187
-     * @symbol __unk_vfn_187
+     * @vftbl 186
+     * @symbol __unk_vfn_186
      */
-    virtual void __unk_vfn_187();
+    virtual void __unk_vfn_186();
     /**
-     * @vftbl 189
+     * @vftbl 188
      * @symbol ?getResourceItem\@TntBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;

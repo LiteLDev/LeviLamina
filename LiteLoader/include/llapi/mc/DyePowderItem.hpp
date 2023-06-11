@@ -37,11 +37,6 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
-     */
-    virtual void __unk_vfn_7();
-    /**
      * @vftbl 11
      * @symbol __unk_vfn_11
      */
@@ -58,9 +53,9 @@ public:
     virtual void __unk_vfn_16();
     /**
      * @vftbl 19
-     * @symbol ?isDye\@DyePowderItem\@\@UEBA_NXZ
+     * @symbol __unk_vfn_19
      */
-    virtual bool isDye() const;
+    virtual void __unk_vfn_19();
     /**
      * @vftbl 20
      * @symbol ?getItemColor\@DyePowderItem\@\@UEBA?AW4ItemColor\@\@XZ
@@ -132,15 +127,31 @@ public:
      */
     virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
-     * @vftbl 117
+     * @vftbl 115
+     * @symbol __unk_vfn_115
+     */
+    virtual void __unk_vfn_115();
+    /**
+     * @vftbl 116
+     * @symbol __unk_vfn_116
+     */
+    virtual void __unk_vfn_116();
+    /**
+     * @vftbl 119
      * @symbol ?setIconInfo\@DyePowderItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     virtual class Item & setIconInfo(std::string const &, int);
     /**
-     * @vftbl 132
+     * @vftbl 134
      * @symbol ?_useOn\@DyePowderItem\@\@EEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYEPOWDERITEM
+    /**
+     * @symbol ?isDye\@DyePowderItem\@\@UEBA_NXZ
+     */
+    MCVAPI bool isDye() const;
+#endif
     /**
      * @symbol ??0DyePowderItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4ItemColor\@\@_N2\@Z
      */

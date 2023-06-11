@@ -48,17 +48,13 @@ public:
      * @symbol ?pushOutItems\@DropperBlockActor\@\@QEAA_NAEAVBlockSource\@\@\@Z
      */
     MCAPI bool pushOutItems(class BlockSource &);
-
-//private:
     /**
-     * @symbol ?_addItem\@DropperBlockActor\@\@AEAA_NAEAVContainer\@\@AEAVItemStack\@\@H\@Z
+     * @symbol ?addItemsToContainerAndDepleteStack\@DropperBlockActor\@\@SA_NAEAVContainer\@\@AEAVItemStack\@\@HH\@Z
      */
-    MCAPI bool _addItem(class Container &, class ItemStack &, int);
+    MCAPI static bool addItemsToContainerAndDepleteStack(class Container &, class ItemStack &, int, int);
     /**
-     * @symbol ?_getContainerAt\@DropperBlockActor\@\@AEAAPEAVContainer\@\@AEAVBlockSource\@\@AEBVVec3\@\@\@Z
+     * @symbol ?getContainerAt\@DropperBlockActor\@\@SAPEAVContainer\@\@AEAVBlockSource\@\@AEBVVec3\@\@\@Z
      */
-    MCAPI class Container * _getContainerAt(class BlockSource &, class Vec3 const &);
-
-private:
+    MCAPI static class Container * getContainerAt(class BlockSource &, class Vec3 const &);
 
 };

@@ -47,9 +47,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 2
-     * @symbol ?write\@ByteArrayTag\@\@UEBAXAEAVIDataOutput\@\@\@Z
+     * @symbol __unk_vfn_2
      */
-    virtual void write(class IDataOutput &) const;
+    virtual void __unk_vfn_2();
     /**
      * @vftbl 3
      * @symbol ?load\@ByteArrayTag\@\@UEAAXAEAVIDataInput\@\@\@Z
@@ -80,6 +80,12 @@ public:
      * @symbol ?hash\@ByteArrayTag\@\@UEBA_KXZ
      */
     virtual unsigned __int64 hash() const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BYTEARRAYTAG
+    /**
+     * @symbol ?write\@ByteArrayTag\@\@UEBAXAEAVIDataOutput\@\@\@Z
+     */
+    MCVAPI void write(class IDataOutput &) const;
+#endif
     /**
      * @symbol ??0ByteArrayTag\@\@QEAA\@UTagMemoryChunk\@\@\@Z
      */

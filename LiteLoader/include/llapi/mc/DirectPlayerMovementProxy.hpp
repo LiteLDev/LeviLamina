@@ -99,10 +99,6 @@ public:
      */
     MCVAPI int getGlidingTicks() const;
     /**
-     * @symbol ?getInputMode\@DirectPlayerMovementProxy\@\@UEBA?AW4InputMode\@\@XZ
-     */
-    MCVAPI enum class InputMode getInputMode() const;
-    /**
      * @symbol ?getItemUseMovementModifier\@DirectPlayerMovementProxy\@\@UEBAMXZ
      */
     MCVAPI float getItemUseMovementModifier() const;
@@ -127,14 +123,6 @@ public:
      */
     MCVAPI enum class LoadingState getLoadingState() const;
     /**
-     * @symbol ?getMoveInputHandler\@DirectPlayerMovementProxy\@\@UEAAPEAVMoveInputHandler\@\@XZ
-     */
-    MCVAPI class MoveInputHandler * getMoveInputHandler();
-    /**
-     * @symbol ?getPlayMode\@DirectPlayerMovementProxy\@\@UEBA?AW4ClientPlayMode\@\@XZ
-     */
-    MCVAPI enum class ClientPlayMode getPlayMode() const;
-    /**
      * @symbol ?getPlayerPaddleForce\@DirectPlayerMovementProxy\@\@UEBAMW4Side\@\@\@Z
      */
     MCVAPI float getPlayerPaddleForce(enum class Side) const;
@@ -146,10 +134,6 @@ public:
      * @symbol ?getVRMoveAdjustAngle\@DirectPlayerMovementProxy\@\@UEBAMXZ
      */
     MCVAPI float getVRMoveAdjustAngle() const;
-    /**
-     * @symbol ?isAdventureSettingsAutoJump\@DirectPlayerMovementProxy\@\@UEAA_NXZ
-     */
-    MCVAPI bool isAdventureSettingsAutoJump();
     /**
      * @symbol ?isArmorFlyEnabled\@DirectPlayerMovementProxy\@\@UEBA_NXZ
      */
@@ -299,13 +283,13 @@ public:
      */
     MCVAPI void stopGliding();
     /**
-     * @symbol ?tryAsPlayer\@DirectPlayerMovementProxy\@\@UEAAPEAUIPlayerMovementProxy\@\@XZ
-     */
-    MCVAPI struct IPlayerMovementProxy * tryAsPlayer();
-    /**
      * @symbol ?tryAsPlayer\@DirectPlayerMovementProxy\@\@UEBAPEBUIPlayerMovementProxy\@\@XZ
      */
     MCVAPI struct IPlayerMovementProxy const * tryAsPlayer() const;
+    /**
+     * @symbol ?tryAsPlayer\@DirectPlayerMovementProxy\@\@UEAAPEAUIPlayerMovementProxy\@\@XZ
+     */
+    MCVAPI struct IPlayerMovementProxy * tryAsPlayer();
     /**
      * @symbol ?tryGetPlayerActionComponent\@DirectPlayerMovementProxy\@\@UEAAPEAUPlayerActionComponent\@\@XZ
      */

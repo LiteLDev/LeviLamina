@@ -54,6 +54,10 @@ public:
      */
     MCAPI __int64 getNotBeforeDate() const;
     /**
+     * @symbol ?isSelfSigned\@Certificate\@\@QEBA_NXZ
+     */
+    MCAPI bool isSelfSigned() const;
+    /**
      * @symbol ?isValid\@Certificate\@\@QEBA_NXZ
      */
     MCAPI bool isValid() const;
@@ -62,9 +66,9 @@ public:
      */
     MCAPI std::string toString() const;
     /**
-     * @symbol ?validate\@Certificate\@\@QEAA_N_J\@Z
+     * @symbol ?validate\@Certificate\@\@QEAA_N_J_N\@Z
      */
-    MCAPI bool validate(__int64);
+    MCAPI bool validate(__int64, bool);
     /**
      * @symbol ??1Certificate\@\@QEAA\@XZ
      */

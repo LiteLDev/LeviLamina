@@ -61,17 +61,17 @@ public:
     virtual void serverInitItemStackIds();
     /**
      * @vftbl 6
-     * @symbol ?getItemCopies\@HorseContainerManagerModel\@\@UEBA?AV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?getItemCopies\@FurnaceContainerManagerModel\@\@UEBA?AV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::vector<class ItemStack> getItemCopies() const = 0;
     /**
      * @vftbl 7
-     * @symbol ?setSlot\@HorseContainerManagerModel\@\@UEAAXHAEBVItemStack\@\@_N\@Z
+     * @symbol ?setSlot\@FurnaceContainerManagerModel\@\@UEAAXHAEBVItemStack\@\@_N\@Z
      */
     virtual void setSlot(int, class ItemStack const &, bool) = 0;
     /**
      * @vftbl 8
-     * @symbol ?getSlot\@HorseContainerManagerModel\@\@UEBAAEBVItemStack\@\@H\@Z
+     * @symbol ?getSlot\@FurnaceContainerManagerModel\@\@UEBAAEBVItemStack\@\@H\@Z
      */
     virtual class ItemStack const & getSlot(int) const = 0;
     /**
@@ -81,7 +81,7 @@ public:
     virtual void setData(int, int) = 0;
     /**
      * @vftbl 10
-     * @symbol ?broadcastChanges\@BrewingStandContainerManagerModel\@\@UEAAXXZ
+     * @symbol ?broadcastChanges\@FurnaceContainerManagerModel\@\@UEAAXXZ
      */
     virtual void broadcastChanges() = 0;
     /**

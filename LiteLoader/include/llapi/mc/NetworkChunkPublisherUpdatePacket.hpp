@@ -51,9 +51,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@NetworkChunkPublisherUpdatePacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@NetworkChunkPublisherUpdatePacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKCHUNKPUBLISHERUPDATEPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -61,12 +61,12 @@ public:
     MCVAPI ~NetworkChunkPublisherUpdatePacket();
 #endif
     /**
-     * @symbol ??0NetworkChunkPublisherUpdatePacket\@\@QEAA\@AEBVBlockPos\@\@I\@Z
-     */
-    MCAPI NetworkChunkPublisherUpdatePacket(class BlockPos const &, unsigned int);
-    /**
      * @symbol ??0NetworkChunkPublisherUpdatePacket\@\@QEAA\@XZ
      */
     MCAPI NetworkChunkPublisherUpdatePacket();
+    /**
+     * @symbol ??0NetworkChunkPublisherUpdatePacket\@\@QEAA\@AEBVBlockPos\@\@I\@Z
+     */
+    MCAPI NetworkChunkPublisherUpdatePacket(class BlockPos const &, unsigned int);
 
 };

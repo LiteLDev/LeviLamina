@@ -51,16 +51,16 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@AddPaintingPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@AddPaintingPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
-    /**
-     * @symbol ??0AddPaintingPacket\@\@QEAA\@XZ
-     */
-    MCAPI AddPaintingPacket();
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0AddPaintingPacket\@\@QEAA\@AEBVPainting\@\@\@Z
      */
     MCAPI AddPaintingPacket(class Painting const &);
+    /**
+     * @symbol ??0AddPaintingPacket\@\@QEAA\@XZ
+     */
+    MCAPI AddPaintingPacket();
 
 };

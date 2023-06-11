@@ -28,10 +28,6 @@ public:
 
 public:
     /**
-     * @symbol ??0AccessedBlockSourceBlock\@\@QEAA\@$$QEAU0\@\@Z
-     */
-    MCAPI AccessedBlockSourceBlock(struct AccessedBlockSourceBlock &&);
-    /**
      * @symbol ??1AccessedBlockSourceBlock\@\@QEAA\@XZ
      */
     MCAPI ~AccessedBlockSourceBlock();

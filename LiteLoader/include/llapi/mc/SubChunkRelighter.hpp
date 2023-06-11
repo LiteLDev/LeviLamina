@@ -38,21 +38,21 @@ public:
      */
     MCAPI struct SubChunk * _getAbsorption(struct SubChunkLightIndex, unsigned char &) const;
     /**
-     * @symbol ?_propagateBlockLight\@SubChunkRelighter\@\@QEAAXXZ
-     */
-    MCAPI void _propagateBlockLight();
-    /**
      * @symbol ?_propagateBlockLight\@SubChunkRelighter\@\@QEAAXUSubChunkLightIndex\@\@E\@Z
      */
     MCAPI void _propagateBlockLight(struct SubChunkLightIndex, unsigned char);
     /**
-     * @symbol ?_propagateSkyLight\@SubChunkRelighter\@\@QEAAXUSubChunkLightIndex\@\@E\@Z
+     * @symbol ?_propagateBlockLight\@SubChunkRelighter\@\@QEAAXXZ
      */
-    MCAPI void _propagateSkyLight(struct SubChunkLightIndex, unsigned char);
+    MCAPI void _propagateBlockLight();
     /**
      * @symbol ?_propagateSkyLight\@SubChunkRelighter\@\@QEAAXXZ
      */
     MCAPI void _propagateSkyLight();
+    /**
+     * @symbol ?_propagateSkyLight\@SubChunkRelighter\@\@QEAAXUSubChunkLightIndex\@\@E\@Z
+     */
+    MCAPI void _propagateSkyLight(struct SubChunkLightIndex, unsigned char);
     /**
      * @symbol ?_propagateSubtractiveBlockLight\@SubChunkRelighter\@\@QEAAXUSubChunkLightIndex\@\@E\@Z
      */

@@ -26,6 +26,12 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIMENSIONMANAGER
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~DimensionManager();
+#endif
     /**
      * @symbol ??0DimensionManager\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VIDimensionFactory\@\@\@Bedrock\@\@\@gsl\@\@V?$optional\@VDimensionDefinitionGroup\@\@\@std\@\@\@Z
      */
@@ -74,9 +80,5 @@ public:
      * @symbol ?shutdown\@DimensionManager\@\@QEAAXXZ
      */
     MCAPI void shutdown();
-    /**
-     * @symbol ??1DimensionManager\@\@QEAA\@XZ
-     */
-    MCAPI ~DimensionManager();
 
 };

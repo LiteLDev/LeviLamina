@@ -28,9 +28,5 @@ public:
      * @symbol ?create\@VRBobControlSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo create();
-    /**
-     * @symbol ?createSideBySide\@VRBobControlSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI static struct TickingSystemWithInfo createSideBySide();
 
 };

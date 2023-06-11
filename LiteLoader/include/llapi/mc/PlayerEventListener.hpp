@@ -103,9 +103,9 @@ public:
      */
     MCVAPI enum class EventResult onPlayerEquippedArmor(class Player &, class ItemDescriptor const &);
     /**
-     * @symbol ?onPlayerInput\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAUIPlayerMovementProxy\@\@AEAVMoveInputHandler\@\@\@Z
+     * @symbol ?onPlayerInput\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAUIPlayerMovementProxy\@\@\@Z
      */
-    MCVAPI enum class EventResult onPlayerInput(struct IPlayerMovementProxy &, class MoveInputHandler &);
+    MCVAPI enum class EventResult onPlayerInput(struct IPlayerMovementProxy &);
     /**
      * @symbol ?onPlayerItemEquipped\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@AEBVItemInstance\@\@H\@Z
      */
@@ -162,6 +162,10 @@ public:
      * @symbol ?onPlayerSlide\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@\@Z
      */
     MCVAPI enum class EventResult onPlayerSlide(class Player &);
+    /**
+     * @symbol ?onPlayerSmithiedItem\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@AEBVItemDescriptor\@\@\@Z
+     */
+    MCVAPI enum class EventResult onPlayerSmithiedItem(class Player &, class ItemDescriptor const &);
     /**
      * @symbol ?onPlayerStartRiding\@PlayerEventListener\@\@UEAA?AW4EventResult\@\@AEAVPlayer\@\@AEAVActor\@\@\@Z
      */

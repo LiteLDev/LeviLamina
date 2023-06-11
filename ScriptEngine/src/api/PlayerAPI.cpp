@@ -35,6 +35,9 @@
 #include <llapi/mc/SynchedActorDataEntityWrapper.hpp>
 #include <llapi/PlayerInfoAPI.h>
 #include <llapi/mc/Biome.hpp>
+#include <llapi/mc/ActorMobilityUtils.hpp>
+#include <llapi/mc/IConstBlockSource.hpp>
+#include <llapi/mc/EntityContext.hpp>
 #include "main/SafeGuardRecord.h"
 #include <string>
 #include <vector>
@@ -802,7 +805,8 @@ Local<Value> PlayerClass::getInLava() {
         if (!player)
             return Local<Value>();
 
-        return Boolean::newBoolean(player->isInLava());
+               return Boolean::newBoolean(ActorMobilityUtils::shouldApplyLava(
+            *(IConstBlockSource*)&player->getDimensionBlockSourceConst(), player->getEntityContext()));
     }
     CATCH("Fail in getInLava!")
 }
@@ -2227,11 +2231,23 @@ Local<Value> PlayerClass::hurt(const Arguments& args) {
 
     try {
         Player* player = get();
-        if (!player)
-            return Local<Value>();
-
-        int damage = args[0].toInt();
-        return Boolean::newBoolean(player->hurtEntity(damage));
+        if (!player) {
+            return Boolean::newBoolean(false);
+        }
+        float damage = args[0].asNumber().toFloat();
+        int type = 0;
+        if (args.size() == 2) {
+            CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+            type = args[1].asNumber().toInt32();
+            return Boolean::newBoolean(player->hurtEntity(damage, (ActorDamageCause)type));
+        }
+        if (args.size() == 3) {
+            CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+            auto source = EntityClass::extract(args[2]);
+            type = args[1].asNumber().toInt32();
+            return Boolean::newBoolean(player->hurtEntity(damage, (ActorDamageCause)type, source));
+        }
+        return Boolean::newBoolean(false);
     }
     CATCH("Fail in hurt!");
 }

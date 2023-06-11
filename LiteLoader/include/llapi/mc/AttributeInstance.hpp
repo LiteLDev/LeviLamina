@@ -101,13 +101,13 @@ public:
      */
     MCAPI std::vector<class AttributeModifier> getModifiers(int) const;
     /**
-     * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@\@Z
-     */
-    MCAPI bool hasModifier(class std::shared_ptr<class AttributeModifier>) const;
-    /**
      * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NAEBVAttributeModifier\@\@\@Z
      */
     MCAPI bool hasModifier(class AttributeModifier const &) const;
+    /**
+     * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@\@Z
+     */
+    MCAPI bool hasModifier(class std::shared_ptr<class AttributeModifier>) const;
     /**
      * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NAEBVUUID\@mce\@\@\@Z
      */

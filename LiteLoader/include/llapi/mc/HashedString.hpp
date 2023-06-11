@@ -26,44 +26,42 @@ public:
     std::string str;
     class HashedString* lastMatch;
 
-    HASHEDSTR_CONSTEXPR20 static unsigned long long computeHash(std::string_view str){
+    HASHEDSTR_CONSTEXPR20 static unsigned long long computeHash(std::string_view str) {
         unsigned long long hash = 0xCBF29CE484222325ULL;
-        for(char s : str){
+        for (char s : str) {
             hash = s ^ (0x100000001B3ULL * hash);
         }
         return hash;
     }
-    
+
     // Constructors
-    HASHEDSTR_CONSTEXPR20 HashedString(std::nullptr_t = nullptr) noexcept : 
-        hash(0), lastMatch(nullptr) {}
-    
-    HASHEDSTR_CONSTEXPR20 HashedString(uint64_t h, const char* str) noexcept : 
-        hash(h), str(str), lastMatch(nullptr) {}
-    
-    HASHEDSTR_CONSTEXPR20 HashedString(const char* str) noexcept : 
-        hash(computeHash(str)), str(str), lastMatch(nullptr) {}
-    
-    HASHEDSTR_CONSTEXPR20 HashedString(const std::string& str) noexcept : 
-        hash(computeHash(str)), str(str), lastMatch(nullptr) {}
-    
-    HASHEDSTR_CONSTEXPR20 HashedString(const HashedString& other) noexcept : 
-        hash(other.hash), str(other.str), lastMatch(nullptr) {}
-    
-    HASHEDSTR_CONSTEXPR20 HashedString(HashedString&& other) noexcept : 
-        hash(other.hash), str(std::move(other.str)), lastMatch(other.lastMatch) {
+    HASHEDSTR_CONSTEXPR20 HashedString(std::nullptr_t = nullptr) noexcept : hash(0), lastMatch(nullptr) {}
+
+    HASHEDSTR_CONSTEXPR20 HashedString(uint64_t h, const char* str) noexcept : hash(h), str(str), lastMatch(nullptr) {}
+
+    HASHEDSTR_CONSTEXPR20 HashedString(const char* str) noexcept
+    : hash(computeHash(str)), str(str), lastMatch(nullptr) {}
+
+    HASHEDSTR_CONSTEXPR20 HashedString(const std::string& str) noexcept
+    : hash(computeHash(str)), str(str), lastMatch(nullptr) {}
+
+    HASHEDSTR_CONSTEXPR20 HashedString(const HashedString& other) noexcept
+    : hash(other.hash), str(other.str), lastMatch(nullptr) {}
+
+    HASHEDSTR_CONSTEXPR20 HashedString(HashedString&& other) noexcept
+    : hash(other.hash), str(std::move(other.str)), lastMatch(other.lastMatch) {
         other.hash = 0;
         other.lastMatch = nullptr;
     }
-    
-    HASHEDSTR_CONSTEXPR20 [[nodiscard]] HashedString& operator=(const HashedString& other) noexcept {
+
+    [[nodiscard]] HASHEDSTR_CONSTEXPR20 HashedString& operator=(const HashedString& other) noexcept {
         hash = other.hash;
         str = other.str;
         lastMatch = nullptr;
         return *this;
     }
 
-    HASHEDSTR_CONSTEXPR20 [[nodiscard]] HashedString& operator=(HashedString&& other) noexcept {
+    [[nodiscard]] HASHEDSTR_CONSTEXPR20 HashedString& operator=(HashedString&& other) noexcept {
         hash = other.hash;
         str = std::move(other.str);
         lastMatch = other.lastMatch;
@@ -71,55 +69,66 @@ public:
         other.lastMatch = nullptr;
         return *this;
     }
-    
+
     // Accessors
-    inline [[nodiscard]] const char* c_str() const noexcept {
+    [[nodiscard]] inline const char* c_str() const noexcept {
         return str.c_str();
     }
-    HASHEDSTR_CONSTEXPR20 [[nodiscard]] const std::string& getString() const noexcept {
+
+    [[nodiscard]] HASHEDSTR_CONSTEXPR20 const std::string& getString() const noexcept {
         return str;
     }
-    HASHEDSTR_CONSTEXPR20 [[nodiscard]] uint64_t getHash() const noexcept { 
+
+    [[nodiscard]] HASHEDSTR_CONSTEXPR20 uint64_t getHash() const noexcept {
         return hash;
     }
-    HASHEDSTR_CONSTEXPR20 [[nodiscard]] bool isEmpty() const noexcept { 
-        return str.empty(); 
+
+    [[nodiscard]] HASHEDSTR_CONSTEXPR20 bool isEmpty() const noexcept {
+        return str.empty();
     }
 
     // Mutators
-    HASHEDSTR_CONSTEXPR20 void clear() noexcept { hash = 0; str.clear(); lastMatch = nullptr; }
-    
+    HASHEDSTR_CONSTEXPR20 void clear() noexcept {
+        hash = 0;
+        str.clear();
+        lastMatch = nullptr;
+    }
+
     // Operators
-    template<typename StringType>
-    HASHEDSTR_CONSTEXPR20 [[nodiscard]] bool operator==(StringType const& rhs) const noexcept {
+    template <typename StringType>
+    [[nodiscard]] HASHEDSTR_CONSTEXPR20 bool operator==(StringType const& rhs) const noexcept {
         return str == rhs;
     }
-    HASHEDSTR_CONSTEXPR20 [[nodiscard]] bool operator==(const HashedString& other) const noexcept { 
+
+    [[nodiscard]] HASHEDSTR_CONSTEXPR20 bool operator==(const HashedString& other) const noexcept {
         return hash == other.hash;
     }
 
-    template<typename StringType>
-    HASHEDSTR_CONSTEXPR20 [[nodiscard]] bool operator!=(StringType const& rhs) const noexcept {
+    template <typename StringType>
+    [[nodiscard]] HASHEDSTR_CONSTEXPR20 bool operator!=(StringType const& rhs) const noexcept {
         return str != rhs;
     }
-    HASHEDSTR_CONSTEXPR20 [[nodiscard]] bool operator!=(const HashedString& other) const noexcept { 
+
+    [[nodiscard]] HASHEDSTR_CONSTEXPR20 bool operator!=(const HashedString& other) const noexcept {
         return hash != other.hash;
     }
 
 #if _MSVC_LANG > 201703L
-    template<typename StringType>
+    template <typename StringType>
     HASHEDSTR_CONSTEXPR20 std::strong_ordering operator<=>(const StringType& other) const noexcept {
         return str <=> other.str;
     }
+
     HASHEDSTR_CONSTEXPR20 std::strong_ordering operator<=>(const HashedString& other) const noexcept {
         return str <=> other.str;
     }
 #endif
 
-    //Convertors
+    // Convertors
     inline operator std::string() const {
         return str;
     }
+
     inline operator std::string_view() const {
         return std::string_view(str);
     }
@@ -138,16 +147,18 @@ public:
     /**
      * @symbol  ?getEmptyString\@HashedString\@\@SAAEBV1\@XZ
      */
-    MCAPI static class HashedString const & getEmptyString();
-    
+    MCAPI static class HashedString const& getEmptyString();
+
 #undef HASHEDSTR_CONSTEXPR20
 };
 
 namespace std {
 
-    template <>
-    struct hash<HashedString> {
-        std::size_t operator()(HashedString const& str) const noexcept { return str.getHash(); }
-    };
+template <>
+struct hash<HashedString> {
+    std::size_t operator()(HashedString const& str) const noexcept {
+        return str.getHash();
+    }
+};
 
-}  // namespace std
+} // namespace std

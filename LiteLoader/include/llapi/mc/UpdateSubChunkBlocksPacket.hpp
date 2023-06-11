@@ -51,9 +51,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@UpdateSubChunkBlocksPacket\@\@MEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@UpdateSubChunkBlocksPacket\@\@MEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATESUBCHUNKBLOCKSPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -61,13 +61,13 @@ public:
     MCVAPI ~UpdateSubChunkBlocksPacket();
 #endif
     /**
-     * @symbol ??0UpdateSubChunkBlocksPacket\@\@QEAA\@XZ
-     */
-    MCAPI UpdateSubChunkBlocksPacket();
-    /**
      * @symbol ??0UpdateSubChunkBlocksPacket\@\@QEAA\@AEBV?$vector\@UNetworkBlockInfo\@UpdateSubChunkBlocksPacket\@\@V?$allocator\@UNetworkBlockInfo\@UpdateSubChunkBlocksPacket\@\@\@std\@\@\@std\@\@0\@Z
      */
     MCAPI UpdateSubChunkBlocksPacket(std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const &, std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const &);
+    /**
+     * @symbol ??0UpdateSubChunkBlocksPacket\@\@QEAA\@XZ
+     */
+    MCAPI UpdateSubChunkBlocksPacket();
     /**
      * @symbol ?setSubChunkPosition\@UpdateSubChunkBlocksPacket\@\@QEAAXAEBVSubChunkPos\@\@\@Z
      */

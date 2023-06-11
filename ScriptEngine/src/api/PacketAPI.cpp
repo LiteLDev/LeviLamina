@@ -8,6 +8,7 @@
 #include "api/NbtAPI.h"
 #include "api/NativeAPI.h"
 #include <llapi/mc/Packet.hpp>
+#include <llapi/mc/ExtendedStreamReadResult.hpp>
 #include "api/PacketAPI.h"
 #include <llapi/mc/MinecraftPackets.hpp>
 
@@ -456,3 +457,4 @@ Local<Value> BinaryStreamClass::writeCompoundTag(const Arguments& args){
     }
     CATCH("Fail in BinaryStream createPacket!");
 }
+

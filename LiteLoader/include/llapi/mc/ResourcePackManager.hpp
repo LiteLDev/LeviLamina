@@ -143,6 +143,10 @@ public:
      */
     MCAPI bool hasResource(class ResourceLocation const &) const;
     /**
+     * @symbol ?isOnlyBaseGamePacks\@ResourcePackManager\@\@QEBA_NXZ
+     */
+    MCAPI bool isOnlyBaseGamePacks() const;
+    /**
      * @symbol ?iteratePacks\@ResourcePackManager\@\@QEBAXAEBV?$function\@$$A6AXAEBVPackInstance\@\@\@Z\@std\@\@\@Z
      */
     MCAPI void iteratePacks(class std::function<void (class PackInstance const &)> const &) const;

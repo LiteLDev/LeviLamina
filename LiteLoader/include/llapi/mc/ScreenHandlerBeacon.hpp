@@ -54,10 +54,6 @@ public:
      * @symbol ?postRequest\@ScreenHandlerBeacon\@\@MEAAX_N\@Z
      */
     virtual void postRequest(bool);
-    /**
-     * @symbol ??0ScreenHandlerBeacon\@\@QEAA\@AEBVContainerScreenContext\@\@AEAVItemStackRequestActionHandler\@\@\@Z
-     */
-    MCAPI ScreenHandlerBeacon(class ContainerScreenContext const &, class ItemStackRequestActionHandler &);
 
 //private:
     /**

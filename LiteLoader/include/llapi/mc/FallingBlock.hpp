@@ -5,8 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Actor.hpp"
-#include "PredictableProjectile.hpp"
+#include "BlockLegacy.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +16,7 @@
  * @brief MC class FallingBlock.
  *
  */
-class FallingBlock : public PredictableProjectile {
+class FallingBlock : public BlockLegacy {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -32,207 +31,279 @@ public:
 
 public:
     /**
-     * @vftbl 10
-     * @symbol ?reloadHardcoded\@FallingBlock\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const &);
+    virtual void __unk_vfn_0();
     /**
-     * @vftbl 16
-     * @symbol __unk_vfn_16
+     * @vftbl 19
+     * @symbol __unk_vfn_19
      */
-    virtual void __unk_vfn_16();
+    virtual void __unk_vfn_19();
+    /**
+     * @vftbl 28
+     * @symbol __unk_vfn_28
+     */
+    virtual void __unk_vfn_28();
+    /**
+     * @vftbl 29
+     * @symbol __unk_vfn_29
+     */
+    virtual void __unk_vfn_29();
+    /**
+     * @vftbl 31
+     * @symbol __unk_vfn_31
+     */
+    virtual void __unk_vfn_31();
+    /**
+     * @vftbl 32
+     * @symbol __unk_vfn_32
+     */
+    virtual void __unk_vfn_32();
+    /**
+     * @vftbl 33
+     * @symbol __unk_vfn_33
+     */
+    virtual void __unk_vfn_33();
+    /**
+     * @vftbl 35
+     * @symbol __unk_vfn_35
+     */
+    virtual void __unk_vfn_35();
+    /**
+     * @vftbl 36
+     * @symbol __unk_vfn_36
+     */
+    virtual void __unk_vfn_36();
+    /**
+     * @vftbl 37
+     * @symbol __unk_vfn_37
+     */
+    virtual void __unk_vfn_37();
+    /**
+     * @vftbl 38
+     * @symbol __unk_vfn_38
+     */
+    virtual void __unk_vfn_38();
+    /**
+     * @vftbl 39
+     * @symbol __unk_vfn_39
+     */
+    virtual void __unk_vfn_39();
+    /**
+     * @vftbl 40
+     * @symbol __unk_vfn_40
+     */
+    virtual void __unk_vfn_40();
     /**
      * @vftbl 41
      * @symbol __unk_vfn_41
      */
     virtual void __unk_vfn_41();
     /**
+     * @vftbl 43
+     * @symbol __unk_vfn_43
+     */
+    virtual void __unk_vfn_43();
+    /**
      * @vftbl 44
-     * @symbol ?teleportTo\@FallingBlock\@\@UEAAXAEBVVec3\@\@_NHH1\@Z
+     * @symbol __unk_vfn_44
      */
-    virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
+    virtual void __unk_vfn_44();
     /**
-     * @vftbl 49
-     * @symbol ?normalTick\@FallingBlock\@\@UEAAXXZ
+     * @vftbl 45
+     * @symbol __unk_vfn_45
      */
-    virtual void normalTick();
+    virtual void __unk_vfn_45();
     /**
-     * @vftbl 62
-     * @symbol __unk_vfn_62
+     * @vftbl 46
+     * @symbol __unk_vfn_46
      */
-    virtual void __unk_vfn_62();
+    virtual void __unk_vfn_46();
     /**
-     * @vftbl 69
-     * @symbol __unk_vfn_69
+     * @vftbl 47
+     * @symbol __unk_vfn_47
      */
-    virtual void __unk_vfn_69();
+    virtual void __unk_vfn_47();
     /**
-     * @vftbl 79
-     * @symbol ?getShadowHeightOffs\@FallingBlock\@\@UEAAMXZ
+     * @vftbl 48
+     * @symbol __unk_vfn_48
      */
-    virtual float getShadowHeightOffs();
+    virtual void __unk_vfn_48();
     /**
-     * @vftbl 80
-     * @symbol ?getShadowRadius\@FallingBlock\@\@UEBAMXZ
+     * @vftbl 53
+     * @symbol __unk_vfn_53
      */
-    virtual float getShadowRadius() const;
+    virtual void __unk_vfn_53();
     /**
-     * @vftbl 82
-     * @symbol __unk_vfn_82
+     * @vftbl 59
+     * @symbol __unk_vfn_59
      */
-    virtual void __unk_vfn_82();
+    virtual void __unk_vfn_59();
     /**
-     * @vftbl 85
-     * @symbol __unk_vfn_85
+     * @vftbl 60
+     * @symbol __unk_vfn_60
      */
-    virtual void __unk_vfn_85();
+    virtual void __unk_vfn_60();
     /**
-     * @vftbl 88
-     * @symbol __unk_vfn_88
+     * @vftbl 74
+     * @symbol __unk_vfn_74
      */
-    virtual void __unk_vfn_88();
+    virtual void __unk_vfn_74();
     /**
-     * @vftbl 95
-     * @symbol ?isPickable\@FallingBlock\@\@UEAA_NXZ
+     * @vftbl 81
+     * @symbol __unk_vfn_81
      */
-    virtual bool isPickable();
+    virtual void __unk_vfn_81();
     /**
-     * @vftbl 96
-     * @symbol __unk_vfn_96
+     * @vftbl 98
+     * @symbol ?neighborChanged\@FallingBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
-    virtual void __unk_vfn_96();
+    virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @vftbl 99
-     * @symbol __unk_vfn_99
+     * @vftbl 104
+     * @symbol __unk_vfn_104
      */
-    virtual void __unk_vfn_99();
+    virtual void __unk_vfn_104();
     /**
-     * @vftbl 106
-     * @symbol __unk_vfn_106
+     * @vftbl 122
+     * @symbol __unk_vfn_122
      */
-    virtual void __unk_vfn_106();
+    virtual void __unk_vfn_122();
     /**
-     * @vftbl 108
-     * @symbol __unk_vfn_108
+     * @vftbl 123
+     * @symbol __unk_vfn_123
      */
-    virtual void __unk_vfn_108();
+    virtual void __unk_vfn_123();
     /**
-     * @vftbl 109
-     * @symbol __unk_vfn_109
+     * @vftbl 124
+     * @symbol __unk_vfn_124
      */
-    virtual void __unk_vfn_109();
+    virtual void __unk_vfn_124();
     /**
-     * @vftbl 111
-     * @symbol __unk_vfn_111
+     * @vftbl 127
+     * @symbol __unk_vfn_127
      */
-    virtual void __unk_vfn_111();
+    virtual void __unk_vfn_127();
+    /**
+     * @vftbl 130
+     * @symbol __unk_vfn_130
+     */
+    virtual void __unk_vfn_130();
+    /**
+     * @vftbl 150
+     * @symbol ?animateTick\@FallingBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     */
+    virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
+    /**
+     * @vftbl 155
+     * @symbol __unk_vfn_155
+     */
+    virtual void __unk_vfn_155();
+    /**
+     * @vftbl 164
+     * @symbol __unk_vfn_164
+     */
+    virtual void __unk_vfn_164();
+    /**
+     * @vftbl 165
+     * @symbol __unk_vfn_165
+     */
+    virtual void __unk_vfn_165();
+    /**
+     * @vftbl 166
+     * @symbol __unk_vfn_166
+     */
+    virtual void __unk_vfn_166();
+    /**
+     * @vftbl 167
+     * @symbol ?onPlace\@FallingBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    virtual void onPlace(class BlockSource &, class BlockPos const &) const;
+    /**
+     * @vftbl 169
+     * @symbol __unk_vfn_169
+     */
+    virtual void __unk_vfn_169();
+    /**
+     * @vftbl 170
+     * @symbol ?tick\@FallingBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     */
+    virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
+    /**
+     * @vftbl 173
+     * @symbol __unk_vfn_173
+     */
+    virtual void __unk_vfn_173();
     /**
      * @vftbl 177
-     * @symbol ?canChangeDimensionsUsingPortal\@FallingBlock\@\@UEBA_NXZ
+     * @symbol __unk_vfn_177
      */
-    virtual bool canChangeDimensionsUsingPortal() const;
+    virtual void __unk_vfn_177();
     /**
-     * @vftbl 178
-     * @symbol __unk_vfn_178
+     * @vftbl 186
+     * @symbol __unk_vfn_186
      */
-    virtual void __unk_vfn_178();
+    virtual void __unk_vfn_186();
     /**
-     * @vftbl 182
-     * @symbol ?causeFallDamage\@FallingBlock\@\@UEAAXMMVActorDamageSource\@\@\@Z
+     * @vftbl 194
+     * @symbol ?getDustColor\@DragonEggBlock\@\@UEBA?AVColor\@mce\@\@AEBVBlock\@\@\@Z
      */
-    virtual void causeFallDamage(float, float, class ActorDamageSource);
+    virtual class mce::Color getDustColor(class Block const &) const = 0;
     /**
-     * @vftbl 187
-     * @symbol ?onSynchedDataUpdate\@FallingBlock\@\@UEAAXH\@Z
+     * @vftbl 195
+     * @symbol ?getDustParticleName\@DragonEggBlock\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
-    virtual void onSynchedDataUpdate(int);
+    virtual std::string getDustParticleName(class Block const &) const = 0;
     /**
-     * @vftbl 192
-     * @symbol __unk_vfn_192
+     * @vftbl 196
+     * @symbol __unk_vfn_196
      */
-    virtual void __unk_vfn_192();
+    virtual void __unk_vfn_196();
     /**
-     * @vftbl 217
-     * @symbol __unk_vfn_217
+     * @vftbl 197
+     * @symbol ?onLand\@FallingBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    virtual void __unk_vfn_217();
+    virtual void onLand(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 218
-     * @symbol __unk_vfn_218
+     * @vftbl 198
+     * @symbol ?isFreeToFall\@FallingBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    virtual void __unk_vfn_218();
+    virtual bool isFreeToFall(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 240
-     * @symbol __unk_vfn_240
+     * @vftbl 199
+     * @symbol ?startFalling\@FallingBlock\@\@MEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@_N\@Z
      */
-    virtual void __unk_vfn_240();
-    /**
-     * @vftbl 243
-     * @symbol __unk_vfn_243
-     */
-    virtual void __unk_vfn_243();
-    /**
-     * @vftbl 260
-     * @symbol __unk_vfn_260
-     */
-    virtual void __unk_vfn_260();
-    /**
-     * @vftbl 261
-     * @symbol ?_hurt\@FallingBlock\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
-     */
-    virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
-    /**
-     * @vftbl 264
-     * @symbol ?readAdditionalSaveData\@FallingBlock\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
-     */
-    virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
-    /**
-     * @vftbl 265
-     * @symbol ?addAdditionalSaveData\@FallingBlock\@\@MEBAXAEAVCompoundTag\@\@\@Z
-     */
-    virtual void addAdditionalSaveData(class CompoundTag &) const;
-    /**
-     * @vftbl 268
-     * @symbol __unk_vfn_268
-     */
-    virtual void __unk_vfn_268();
+    virtual void startFalling(class BlockSource &, class BlockPos const &, class Block const &, bool) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FALLINGBLOCK
     /**
-     * @symbol ?getDeletionDelayTimeSeconds\@FallingBlock\@\@UEBAMXZ
+     * @symbol ?falling\@FallingBlock\@\@UEBA_NXZ
      */
-    MCVAPI float getDeletionDelayTimeSeconds() const;
+    MCVAPI bool falling() const;
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~FallingBlock();
 #endif
     /**
-     * @symbol ??0FallingBlock\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
+     * @symbol ??0FallingBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
-    MCAPI FallingBlock(class ActorDefinitionGroup *, struct ActorDefinitionIdentifier const &, class EntityContext &);
+    MCAPI FallingBlock(std::string const &, int, class Material const &);
     /**
-     * @symbol ?breakBlock\@FallingBlock\@\@QEAAXXZ
+     * @symbol ?triggerFallCheck\@FallingBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI void breakBlock();
-    /**
-     * @symbol ?doNormalTick\@FallingBlock\@\@QEAAXAEAVITickDelegate\@\@\@Z
-     */
-    MCAPI void doNormalTick(class ITickDelegate &);
-    /**
-     * @symbol ?getFallingBlock\@FallingBlock\@\@QEBAAEBVBlock\@\@XZ
-     */
-    MCAPI class Block const & getFallingBlock() const;
-    /**
-     * @symbol ?setFallDamageAmount\@FallingBlock\@\@QEAAXM\@Z
-     */
-    MCAPI void setFallDamageAmount(float);
-    /**
-     * @symbol ?setFallingBlock\@FallingBlock\@\@QEAAXAEBVBlock\@\@_N\@Z
-     */
-    MCAPI void setFallingBlock(class Block const &, bool);
+    MCAPI void triggerFallCheck(class BlockSource &, class BlockPos const &) const;
 
-//private:
+//protected:
     /**
-     * @symbol ?_waitRemoval\@FallingBlock\@\@AEAAXXZ
+     * @symbol ?_tickBlocksAround2D\@FallingBlock\@\@IEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
-    MCAPI void _waitRemoval();
+    MCAPI void _tickBlocksAround2D(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /**
+     * @symbol ?checkSlide\@FallingBlock\@\@IEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI void checkSlide(class BlockSource &, class BlockPos const &) const;
 
-private:
+protected:
 
 };

@@ -47,6 +47,10 @@ namespace VanillaSystemsRegistration {
      */
     MCAPI void registerActorPositionPassenger(class IEntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &);
     /**
+     * @symbol ?registerActorPreTravelSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEBURegistrationOptions\@1\@\@Z
+     */
+    MCAPI void registerActorPreTravelSystems(class EntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &);
+    /**
      * @symbol ?registerActorTravelSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEAUDependencyInfo\@1\@AEBURegistrationOptions\@1\@\@Z
      */
     MCAPI void registerActorTravelSystems(class EntitySystems &, struct VanillaSystemsRegistration::DependencyInfo &, struct VanillaSystemsRegistration::RegistrationOptions const &);
@@ -55,17 +59,13 @@ namespace VanillaSystemsRegistration {
      */
     MCAPI void registerExtractApplyBlock(struct VanillaSystemsRegistration::DependencyInfo &, enum class VanillaSystemsRegistration::ExtractApplyMode, enum class SideBySideExtractionId, class EntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &, class std::function<void (class IEntitySystems &)> const &);
     /**
-     * @symbol ?registerPassengerTick\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEAUDependencyInfo\@1\@AEBURegistrationOptions\@1\@\@Z
+     * @symbol ?registerPassengerTick\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEBURegistrationOptions\@1\@\@Z
      */
-    MCAPI void registerPassengerTick(class EntitySystems &, struct VanillaSystemsRegistration::DependencyInfo &, struct VanillaSystemsRegistration::RegistrationOptions const &);
+    MCAPI void registerPassengerTick(class EntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &);
     /**
      * @symbol ?registerRemovePassengerSystems\@VanillaSystemsRegistration\@\@YAXAEAVIEntitySystems\@\@AEBURegistrationOptions\@1\@\@Z
      */
     MCAPI void registerRemovePassengerSystems(class IEntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &);
-    /**
-     * @symbol ?registerSetPosSystems\@VanillaSystemsRegistration\@\@YAXAEAVIEntitySystems\@\@AEBURegistrationOptions\@1\@\@Z
-     */
-    MCAPI void registerSetPosSystems(class IEntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &);
     /**
      * @symbol ?registerSharedVanillaPlayerInteractionSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@\@Z
      */
@@ -74,6 +74,10 @@ namespace VanillaSystemsRegistration {
      * @symbol ?registerTickFilterSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@\@Z
      */
     MCAPI void registerTickFilterSystems(class EntitySystems &);
+    /**
+     * @symbol ?registerUpdateMobTravelSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEBURegistrationOptions\@1\@\@Z
+     */
+    MCAPI void registerUpdateMobTravelSystems(class EntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &);
     /**
      * @symbol ?registerVanillaServerTickingSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@V?$not_null\@V?$NonOwnerPointer\@$$CBVILevel\@\@\@Bedrock\@\@\@gsl\@\@AEBURegistrationOptions\@1\@\@Z
      */

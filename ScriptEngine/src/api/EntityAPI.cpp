@@ -23,7 +23,11 @@
 #include <llapi/mc/Biome.hpp>
 #include <llapi/mc/AABB.hpp>
 #include <llapi/mc/BlockSource.hpp>
+#include <llapi/mc/ActorMobilityUtils.hpp>
+#include <llapi/mc/IConstBlockSource.hpp>
+#include <llapi/mc/EntityContext.hpp>
 #include <magic_enum/magic_enum.hpp>
+
 
 using magic_enum::enum_integer;
 
@@ -594,7 +598,8 @@ Local<Value> EntityClass::getInLava() {
         if (!entity)
             return Local<Value>();
 
-        return Boolean::newBoolean(entity->isInLava());
+        return Boolean::newBoolean(ActorMobilityUtils::shouldApplyLava(
+            *(IConstBlockSource*)&entity->getDimensionBlockSourceConst(), entity->getEntityContext()));
     }
     CATCH("Fail in getInLava!")
 }
@@ -1043,15 +1048,23 @@ Local<Value> EntityClass::hurt(const Arguments& args) {
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
     try {
         Actor* entity = get();
-        if (!entity)
-            return Local<Value>();
+        if (!entity) {
+            return Boolean::newBoolean(false);
+        }
         float damage = args[0].asNumber().toFloat();
         int type = 0;
         if (args.size() == 2) {
             CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
             type = args[1].asNumber().toInt32();
+            return Boolean::newBoolean(entity->hurtEntity(damage, (ActorDamageCause)type));
         }
-        return Boolean::newBoolean(entity->hurtEntity(damage, (ActorDamageCause)type));
+        if (args.size() == 3) {
+            CHECK_ARG_TYPE(args[1], ValueKind::kNumber);
+            auto source = EntityClass::extract(args[2]);
+            type = args[1].asNumber().toInt32();
+            return Boolean::newBoolean(entity->hurtEntity(damage, (ActorDamageCause)type, source));
+        }
+        return Boolean::newBoolean(false);
     }
     CATCH("Fail in hurt!");
 }

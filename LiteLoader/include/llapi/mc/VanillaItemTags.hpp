@@ -74,9 +74,9 @@ public:
      */
     MCAPI static struct ItemTag const CrimsonStems;
     /**
-     * @symbol ?DecoratedPotShards\@VanillaItemTags\@\@2UItemTag\@\@B
+     * @symbol ?DecoratedPotSherds\@VanillaItemTags\@\@2UItemTag\@\@B
      */
-    MCAPI static struct ItemTag const DecoratedPotShards;
+    MCAPI static struct ItemTag const DecoratedPotSherds;
     /**
      * @symbol ?DiamondTier\@VanillaItemTags\@\@2UItemTag\@\@B
      */

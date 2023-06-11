@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "DimensionDocument.hpp"
 
 #define BEFORE_EXTRA
 
@@ -48,5 +49,13 @@ public:
      * @symbol ??1DimensionDefinitionGroup\@\@QEAA\@XZ
      */
     MCAPI ~DimensionDefinitionGroup();
+
+//private:
+    /**
+     * @symbol ?_checkValidDimensionBounds\@DimensionDefinitionGroup\@\@AEAA_NAEBUDimension\@DimensionDocument\@\@\@Z
+     */
+    MCAPI bool _checkValidDimensionBounds(struct DimensionDocument::Dimension const &);
+
+private:
 
 };

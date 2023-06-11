@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -45,14 +46,14 @@ public:
     virtual void __unk_vfn_2();
     /**
      * @vftbl 3
-     * @symbol ?startAnnouncingServer\@StubServerLocator\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0W4GameType\@\@HH_N2W4TransportLayer\@\@\@Z
+     * @symbol ?startAnnouncingServer\@StubServerLocator\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0V?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@W4GameType\@\@HH_N3\@Z
      */
-    virtual void startAnnouncingServer(std::string const &, std::string const &, enum class GameType, int, int, bool, bool, enum class TransportLayer);
+    virtual void startAnnouncingServer(std::string const &, std::string const &, class Bedrock::NonOwnerPointer<class AppPlatform>, enum class GameType, int, int, bool, bool);
     /**
      * @vftbl 4
-     * @symbol ?stopAnnouncingServer\@StubServerLocator\@\@UEAAXXZ
+     * @symbol ?stopAnnouncingServer\@StubServerLocator\@\@UEAAXV?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@\@Z
      */
-    virtual void stopAnnouncingServer();
+    virtual void stopAnnouncingServer(class Bedrock::NonOwnerPointer<class AppPlatform>);
     /**
      * @vftbl 5
      * @symbol ?startServerDiscovery\@StubServerLocator\@\@UEAAXUPortPair\@\@\@Z

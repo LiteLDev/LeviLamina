@@ -1,17 +1,13 @@
-# Release 2.13.1
+# Release 2.14.0
 
-![BDS 1.19.81.01](https://img.shields.io/badge/BDS-1.19.81.01-blue?style=for-the-badge) ![Protocol 582](https://img.shields.io/badge/Protocol-582-orange?style=for-the-badge)
+![BDS 1.20.0.01](https://img.shields.io/badge/BDS-1.20.0.01-blue?style=for-the-badge) ![Protocol 582](https://img.shields.io/badge/Protocol-582-orange?style=for-the-badge)
 
-# Notice
+## Added
 
-This version has fixed two destructive BDS vulnerabilities, please update as quickly as possible
+- Support 2.14.0 (by @dreamguxiang @OEOTYAN)
 
-[//]: # (## Added)
-## Changed
-
-- refactor: remove LevelChunkPacket hook because its vulnerability has been fixed
+[//]: # (## Changed)
 
 ## Fixed
 
-- fix: add hook to fix PlayerListPacket's memory leak vulnerability
-- fix: add hook to fix SubClient exploit
+- Fix item disappear caused by players throwing items at unloaded chunks (by @timiya)

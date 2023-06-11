@@ -1,18 +1,18 @@
 #pragma once
 
-enum class CommandFlagValue : unsigned short
-{
+enum class CommandFlagValue : unsigned short {
     None = 0x00,
     Usage = 0x01,
     Visibility2 = 0x02,
     Visibility4 = 0x04,
-    Visibility6 = 0x06,	
-	Unknown8 = 0x08,
+    Visibility6 = 0x06,
+    Visibility8 = 0x08,
     Sync = 0x10,
     Execute = 0x20,
     Type = 0x40,
     Cheat = 0x80,
     Async = 0x100,
+    //Editor = 0x200;
 };
 
 enum class CommandUsageFlag : unsigned short {
@@ -25,12 +25,8 @@ enum class CommandVisibilityFlag : unsigned short {
     HiddenFromCommandBlockOrigin = 0x02,
     HiddenFromPlayerOrigin = 0x04,
     Hidden = 0x06,
-};
-
-//
-enum class CommmandUnknown8Flag : unsigned short {
-    None = 0x00,
-    Unknown = 0x08,
+    HiddenFromAutomationOrigin = 0x08,
+    Removed = 0xe,
 };
 
 enum class CommandSyncFlag : unsigned short {
@@ -56,6 +52,11 @@ enum class CommandCheatFlag : unsigned short {
 enum class CommandAsyncFlag : unsigned short {
     Synch = 0x00,
     Async = 0x100,
+};
+
+enum class CommandEditorFlag : unsigned short {
+    Editor = 0x0,
+    NoEditor = 0x200,
 };
 
 

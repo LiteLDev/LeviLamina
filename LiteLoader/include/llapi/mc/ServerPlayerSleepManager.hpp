@@ -46,6 +46,10 @@ public:
      */
     MCAPI ServerPlayerSleepManager(class gsl::not_null<class Bedrock::NonOwnerPointer<class GameplayUserManager>>);
     /**
+     * @symbol ?initializeWithPlayerDeathManager\@ServerPlayerSleepManager\@\@QEAAXAEAVPlayerDeathManager\@\@\@Z
+     */
+    MCAPI void initializeWithPlayerDeathManager(class PlayerDeathManager &);
+    /**
      * @symbol ?registerOnPlayerWakeUp\@ServerPlayerSleepManager\@\@QEAA?AVSubscription\@PubSub\@Bedrock\@\@V?$function\@$$A6AXAEAVPlayer\@\@\@Z\@std\@\@\@Z
      */
     MCAPI class Bedrock::PubSub::Subscription registerOnPlayerWakeUp(class std::function<void (class Player &)>);
@@ -75,6 +79,10 @@ public:
      * @symbol ?_awakenAllPlayers\@ServerPlayerSleepManager\@\@AEAAXXZ
      */
     MCAPI void _awakenAllPlayers();
+    /**
+     * @symbol ?_onPlayerDeath\@ServerPlayerSleepManager\@\@AEAAXAEAVPlayer\@\@\@Z
+     */
+    MCAPI void _onPlayerDeath(class Player &);
 
 private:
 

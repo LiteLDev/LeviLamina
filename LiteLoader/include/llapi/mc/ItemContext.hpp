@@ -49,9 +49,9 @@ public:
      */
     MCAPI class std::optional<std::string> getId() const;
     /**
-     * @symbol ?getItem\@ItemContext\@\@QEBAAEBVItemStack\@\@XZ
+     * @symbol ?getItem\@ItemContext\@\@QEBA?AV?$optional\@VItemStack\@\@\@std\@\@XZ
      */
-    MCAPI class ItemStack const & getItem() const;
+    MCAPI class std::optional<class ItemStack> getItem() const;
     /**
      * @symbol ?getKeepOnDeath\@ItemContext\@\@QEBA?AV?$optional\@_N\@std\@\@XZ
      */

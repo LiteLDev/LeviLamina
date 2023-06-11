@@ -42,13 +42,13 @@ public:
      */
     MCAPI int getSlotToSwap(class Actor &, class ItemActor const &) const;
     /**
-     * @symbol ?hasSurplus\@ShareableComponent\@\@QEBAHAEAVActor\@\@AEBVItemStack\@\@_N\@Z
-     */
-    MCAPI int hasSurplus(class Actor &, class ItemStack const &, bool) const;
-    /**
      * @symbol ?hasSurplus\@ShareableComponent\@\@QEBAHAEAVActor\@\@AEBVItemStack\@\@AEAV3\@_N\@Z
      */
     MCAPI int hasSurplus(class Actor &, class ItemStack const &, class ItemStack &, bool) const;
+    /**
+     * @symbol ?hasSurplus\@ShareableComponent\@\@QEBAHAEAVActor\@\@AEBVItemStack\@\@_N\@Z
+     */
+    MCAPI int hasSurplus(class Actor &, class ItemStack const &, bool) const;
     /**
      * @symbol ?itemBelongsInInventory\@ShareableComponent\@\@QEBA_NAEAVActor\@\@AEBVItemStack\@\@_N\@Z
      */

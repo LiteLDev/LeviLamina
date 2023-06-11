@@ -58,9 +58,9 @@ public:
     virtual bool isValid() const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@PlayerAuthInputPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@PlayerAuthInputPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERAUTHINPUTPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -87,10 +87,6 @@ public:
      * @symbol ?readIntoComponent\@PlayerAuthInputPacket\@\@QEBA?AUPlayerActionComponent\@\@XZ
      */
     MCAPI struct PlayerActionComponent readIntoComponent() const;
-    /**
-     * @symbol ?setInput\@PlayerAuthInputPacket\@\@QEAAXW4InputData\@1\@_N\@Z
-     */
-    MCAPI void setInput(enum class PlayerAuthInputPacket::InputData, bool);
     /**
      * @symbol ?takeCopy\@PlayerAuthInputPacket\@\@QEBA?AV1\@XZ
      */

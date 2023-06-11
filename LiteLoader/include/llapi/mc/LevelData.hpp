@@ -33,13 +33,13 @@ public:
 
 public:
     /**
-     * @symbol ??0LevelData\@\@QEAA\@AEBVLevelSettings\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4GeneratorType\@\@AEBVBlockPos\@\@_NW4EducationEditionOffer\@\@MM\@Z
-     */
-    MCAPI LevelData(class LevelSettings const &, std::string const &, enum class GeneratorType, class BlockPos const &, bool, enum class EducationEditionOffer, float, float);
-    /**
      * @symbol ??0LevelData\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI LevelData(class LevelData &&);
+    /**
+     * @symbol ??0LevelData\@\@QEAA\@AEBVLevelSettings\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4GeneratorType\@\@AEBVBlockPos\@\@_NW4EducationEditionOffer\@\@MM\@Z
+     */
+    MCAPI LevelData(class LevelSettings const &, std::string const &, enum class GeneratorType, class BlockPos const &, bool, enum class EducationEditionOffer, float, float);
     /**
      * @symbol ??0LevelData\@\@QEAA\@_N\@Z
      */
@@ -153,13 +153,13 @@ public:
      */
     MCAPI enum class Difficulty getGameDifficulty() const;
     /**
-     * @symbol ?getGameRules\@LevelData\@\@QEAAAEAVGameRules\@\@XZ
-     */
-    MCAPI class GameRules & getGameRules();
-    /**
      * @symbol ?getGameRules\@LevelData\@\@QEBAAEBVGameRules\@\@XZ
      */
     MCAPI class GameRules const & getGameRules() const;
+    /**
+     * @symbol ?getGameRules\@LevelData\@\@QEAAAEAVGameRules\@\@XZ
+     */
+    MCAPI class GameRules & getGameRules();
     /**
      * @symbol ?getGameType\@LevelData\@\@QEBA?AW4GameType\@\@XZ
      */

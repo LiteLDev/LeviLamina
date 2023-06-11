@@ -42,13 +42,13 @@ public:
      */
     MCAPI bool optimizeAndGetDataValues(class Vec3 &, class Vec3 &);
     /**
-     * @symbol ?set\@KeyFrameTransform\@\@QEAAXAEBVExpressionNode\@\@\@Z
-     */
-    MCAPI void set(class ExpressionNode const &);
-    /**
      * @symbol ?set\@KeyFrameTransform\@\@QEAAXAEBVExpressionNode\@\@H\@Z
      */
     MCAPI void set(class ExpressionNode const &, int);
+    /**
+     * @symbol ?set\@KeyFrameTransform\@\@QEAAXAEBVExpressionNode\@\@\@Z
+     */
+    MCAPI void set(class ExpressionNode const &);
     /**
      * @symbol ??1KeyFrameTransform\@\@QEAA\@XZ
      */

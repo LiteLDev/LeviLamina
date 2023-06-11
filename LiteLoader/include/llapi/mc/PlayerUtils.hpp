@@ -21,6 +21,10 @@ namespace PlayerUtils {
      */
     MCAPI void addItem(class Player &, class ItemStack &);
     /**
+     * @symbol ?getPlayerColor\@PlayerUtils\@\@YA?AVColor\@mce\@\@AEBVPlayer\@\@\@Z
+     */
+    MCAPI class mce::Color getPlayerColor(class Player const &);
+    /**
      * @symbol ?replaceCurrentItem\@PlayerUtils\@\@YAXAEAVPlayer\@\@AEAVItemStack\@\@\@Z
      */
     MCAPI void replaceCurrentItem(class Player &, class ItemStack &);

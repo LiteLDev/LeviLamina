@@ -34,9 +34,9 @@ public:
      */
     MCAPI void sendPlayerDestroyedBlock(class Player &, class Block const &);
     /**
-     * @symbol ?sendPlayerInput\@ClientPlayerEventCoordinator\@\@QEAAXAEAUIPlayerMovementProxy\@\@AEAVMoveInputHandler\@\@\@Z
+     * @symbol ?sendPlayerInput\@ClientPlayerEventCoordinator\@\@QEAAXAEAUIPlayerMovementProxy\@\@\@Z
      */
-    MCAPI void sendPlayerInput(struct IPlayerMovementProxy &, class MoveInputHandler &);
+    MCAPI void sendPlayerInput(struct IPlayerMovementProxy &);
     /**
      * @symbol ?sendStartDestroyBlock\@ClientPlayerEventCoordinator\@\@QEAAXAEAVPlayer\@\@AEBVBlockPos\@\@AEAE\@Z
      */

@@ -28,10 +28,6 @@ public:
      */
     MCAPI BaseGameVersion(class BaseGameVersion const &);
     /**
-     * @symbol ??0BaseGameVersion\@\@QEAA\@AEBVSemVersion\@\@\@Z
-     */
-    MCAPI BaseGameVersion(class SemVersion const &);
-    /**
      * @symbol ??0BaseGameVersion\@\@QEAA\@XZ
      */
     MCAPI BaseGameVersion();
@@ -39,6 +35,10 @@ public:
      * @symbol ??0BaseGameVersion\@\@QEAA\@GII\@Z
      */
     MCAPI BaseGameVersion(unsigned short, unsigned int, unsigned int);
+    /**
+     * @symbol ??0BaseGameVersion\@\@QEAA\@AEBVSemVersion\@\@\@Z
+     */
+    MCAPI BaseGameVersion(class SemVersion const &);
     /**
      * @symbol ?asSemVersion\@BaseGameVersion\@\@QEBAAEBVSemVersion\@\@XZ
      */

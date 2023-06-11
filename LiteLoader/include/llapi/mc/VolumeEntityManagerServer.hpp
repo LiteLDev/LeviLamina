@@ -54,13 +54,13 @@ public:
      */
     MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> removeAllVolumes(class LevelStorage &, class AutomaticID<class Dimension, int>, class PacketSender &);
     /**
-     * @symbol ?removeVolumes\@VolumeEntityManagerServer\@\@QEAA?AV?$vector\@V?$OwnerPtrT\@UEntityRefTraits\@\@\@\@V?$allocator\@V?$OwnerPtrT\@UEntityRefTraits\@\@\@\@\@std\@\@\@std\@\@AEAVLevelStorage\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@V?$AutomaticID\@VDimension\@\@H\@\@AEAVPacketSender\@\@\@Z
-     */
-    MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> removeVolumes(class LevelStorage &, std::string const &, class AutomaticID<class Dimension, int>, class PacketSender &);
-    /**
      * @symbol ?removeVolumes\@VolumeEntityManagerServer\@\@QEAA?AV?$vector\@V?$OwnerPtrT\@UEntityRefTraits\@\@\@\@V?$allocator\@V?$OwnerPtrT\@UEntityRefTraits\@\@\@\@\@std\@\@\@std\@\@AEAVLevelStorage\@\@AEBVBlockPos\@\@V?$AutomaticID\@VDimension\@\@H\@\@AEAVPacketSender\@\@\@Z
      */
     MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> removeVolumes(class LevelStorage &, class BlockPos const &, class AutomaticID<class Dimension, int>, class PacketSender &);
+    /**
+     * @symbol ?removeVolumes\@VolumeEntityManagerServer\@\@QEAA?AV?$vector\@V?$OwnerPtrT\@UEntityRefTraits\@\@\@\@V?$allocator\@V?$OwnerPtrT\@UEntityRefTraits\@\@\@\@\@std\@\@\@std\@\@AEAVLevelStorage\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@V?$AutomaticID\@VDimension\@\@H\@\@AEAVPacketSender\@\@\@Z
+     */
+    MCAPI std::vector<class OwnerPtrT<struct EntityRefTraits>> removeVolumes(class LevelStorage &, std::string const &, class AutomaticID<class Dimension, int>, class PacketSender &);
     /**
      * @symbol ?sendAllVolumesToClient\@VolumeEntityManagerServer\@\@QEBAXAEBVUserEntityIdentifierComponent\@\@AEBVNetworkIdentifier\@\@AEAVPacketSender\@\@\@Z
      */

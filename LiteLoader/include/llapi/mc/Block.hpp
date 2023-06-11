@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "BlockLegacy.hpp"
 
 #define BEFORE_EXTRA
 // Add include headers & pre-declares
@@ -105,13 +106,13 @@ public:
      */
     MCAPI void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @symbol ?asItemInstance\@Block\@\@QEBA?AVItemInstance\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &) const;
-    /**
      * @symbol ?asItemInstance\@Block\@\@QEBA?AVItemInstance\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@_N\@Z
      */
     MCAPI class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &, bool) const;
+    /**
+     * @symbol ?asItemInstance\@Block\@\@QEBA?AVItemInstance\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI class ItemInstance asItemInstance(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?attack\@Block\@\@QEBA_NPEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
@@ -137,21 +138,17 @@ public:
      */
     MCAPI void cacheComponentData();
     /**
-     * @symbol ?calcGroundFriction\@Block\@\@QEBAMAEBUIMobMovementProxy\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI float calcGroundFriction(struct IMobMovementProxy const &, class BlockPos const &) const;
-    /**
      * @symbol ?canBeBrokenFromFalling\@Block\@\@QEBA_NXZ
      */
     MCAPI bool canBeBrokenFromFalling() const;
     /**
-     * @symbol ?canBeBuiltOver\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlockItem\@\@\@Z
-     */
-    MCAPI bool canBeBuiltOver(class BlockSource &, class BlockPos const &, class BlockItem const &) const;
-    /**
      * @symbol ?canBeBuiltOver\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool canBeBuiltOver(class BlockSource &, class BlockPos const &) const;
+    /**
+     * @symbol ?canBeBuiltOver\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlockItem\@\@\@Z
+     */
+    MCAPI bool canBeBuiltOver(class BlockSource &, class BlockPos const &, class BlockItem const &) const;
     /**
      * @symbol ?canBeFertilized\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBV1\@\@Z
      */
@@ -217,13 +214,13 @@ public:
      */
     MCAPI bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @symbol ?clip\@Block\@\@QEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_N\@Z
-     */
-    MCAPI class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
-    /**
      * @symbol ?clip\@Block\@\@QEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_NAEBVAABB\@\@\@Z
      */
     MCAPI class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool, class AABB const &) const;
+    /**
+     * @symbol ?clip\@Block\@\@QEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_N\@Z
+     */
+    MCAPI class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /**
      * @symbol ?computeRawSerializationIdHashForNetwork\@Block\@\@QEBAIXZ
      */
@@ -277,21 +274,21 @@ public:
      */
     MCAPI bool getCollisionShape(class AABB &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
-     * @symbol ?getColor\@Block\@\@QEBAHXZ
-     */
-    MCAPI int getColor() const;
-    /**
      * @symbol ?getColor\@Block\@\@QEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI int getColor(class BlockSource &, class BlockPos const &) const;
+    /**
+     * @symbol ?getColor\@Block\@\@QEBAHXZ
+     */
+    MCAPI int getColor() const;
     /**
      * @symbol ?getComparatorSignal\@Block\@\@QEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     MCAPI int getComparatorSignal(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
-     * @symbol ?getConnectedDirections\@Block\@\@QEBAXAEBVBlockPos\@\@AEAVBlockSource\@\@AEA_N222\@Z
+     * @symbol ?getConnectedDirections\@Block\@\@QEBA?AUHorizontalDirectionBits\@BlockLegacy\@\@AEBVBlockPos\@\@AEAVBlockSource\@\@\@Z
      */
-    MCAPI void getConnectedDirections(class BlockPos const &, class BlockSource &, bool &, bool &, bool &, bool &) const;
+    MCAPI struct BlockLegacy::HorizontalDirectionBits getConnectedDirections(class BlockPos const &, class BlockSource &) const;
     /**
      * @symbol ?getCreativeCategory\@Block\@\@QEBA?AW4CreativeItemCategory\@\@XZ
      */
@@ -473,6 +470,10 @@ public:
      */
     MCAPI bool isEmpty() const;
     /**
+     * @symbol ?isFallingBlock\@Block\@\@QEBA_NXZ
+     */
+    MCAPI bool isFallingBlock() const;
+    /**
      * @symbol ?isFenceBlock\@Block\@\@QEBA_NXZ
      */
     MCAPI bool isFenceBlock() const;
@@ -484,10 +485,6 @@ public:
      * @symbol ?isFilteredOut\@Block\@\@QEBA_NW4BlockRenderLayer\@\@\@Z
      */
     MCAPI bool isFilteredOut(enum class BlockRenderLayer) const;
-    /**
-     * @symbol ?isHeavy\@Block\@\@QEBA_NXZ
-     */
-    MCAPI bool isHeavy() const;
     /**
      * @symbol ?isInteractiveBlock\@Block\@\@QEBA_NXZ
      */
@@ -581,21 +578,21 @@ public:
      */
     MCAPI bool mayConsumeFertilizer(class BlockSource &) const;
     /**
-     * @symbol ?mayPick\@Block\@\@QEBA_NXZ
-     */
-    MCAPI bool mayPick() const;
-    /**
      * @symbol ?mayPick\@Block\@\@QEBA_NAEBVBlockSource\@\@_N\@Z
      */
     MCAPI bool mayPick(class BlockSource const &, bool) const;
     /**
-     * @symbol ?mayPlace\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     * @symbol ?mayPick\@Block\@\@QEBA_NXZ
      */
-    MCAPI bool mayPlace(class BlockSource &, class BlockPos const &) const;
+    MCAPI bool mayPick() const;
     /**
      * @symbol ?mayPlace\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     MCAPI bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
+    /**
+     * @symbol ?mayPlace\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?mayPlaceOn\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */

@@ -25,13 +25,14 @@ class BoostableComponent {
 public:
     class BoostableComponent& operator=(class BoostableComponent const &) = delete;
     BoostableComponent(class BoostableComponent const &) = delete;
+    BoostableComponent() = delete;
 #endif
 
 public:
     /**
-     * @symbol ??0BoostableComponent\@\@QEAA\@XZ
+     * @symbol ?boost\@BoostableComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI BoostableComponent();
+    MCAPI void boost(class Actor &);
     /**
      * @symbol ?getBoostTime\@BoostableComponent\@\@QEBAHXZ
      */
@@ -61,17 +62,13 @@ public:
      */
     MCAPI void setIsBoosting(bool);
     /**
-     * @symbol ?getSpeedModifierBoosting\@BoostableComponent\@\@SA?AV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@XZ
+     * @symbol ?getSpeedModifierUUID\@BoostableComponent\@\@SA?AVUUID\@mce\@\@XZ
      */
-    MCAPI static class std::shared_ptr<class AttributeModifier> getSpeedModifierBoosting();
+    MCAPI static class mce::UUID getSpeedModifierUUID();
 
 //private:
 
 private:
-    /**
-     * @symbol ?SPEED_MODIFIER_BOOSTING\@BoostableComponent\@\@0V?$shared_ptr\@VAttributeModifier\@\@\@std\@\@A
-     */
-    MCAPI static class std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_BOOSTING;
     /**
      * @symbol ?SPEED_MODIFIER_BOOSTING_UUID\@BoostableComponent\@\@0VUUID\@mce\@\@B
      */
