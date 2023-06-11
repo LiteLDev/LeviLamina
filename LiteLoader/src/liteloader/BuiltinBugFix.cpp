@@ -522,7 +522,7 @@ TInstanceHook(ExtendedStreamReadResult,
     return ExtendedStreamReadResult{StreamReadResult::Valid, ""};
 }
 
-// 修复玩家向未加载区块扔物品导致服务器崩溃
+// Fix item disappear caused by players throwing items at unloaded chunks
 #include <llapi/mc/InventoryTransactionPacket.hpp>
 #include <llapi/mc/ServerNetworkHandler.hpp>
 
