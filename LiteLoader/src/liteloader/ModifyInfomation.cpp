@@ -177,7 +177,7 @@ TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin
 
 
     auto rv = original(this, origin, output);
-    if (origin.getOriginType() == (CommandOriginType)7) {
+    if (origin.getOriginType() == (CommandOriginType)OriginType::Server) {
         std::string str = cmdstr.c_str();
 
         if (ll::isDebugMode() && ll::globalRuntimeConfig.tickThreadId != std::this_thread::get_id()) {
@@ -206,7 +206,7 @@ TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin
             }
         }
 
-        auto& log = output.getSuccessCount() > 0 ? serverLogger.info : serverLogger.error;
+        auto& log = output.hasErrorMessage() ? serverLogger.error : serverLogger.info;
         std::vector<std::string> ts = SplitStrWithPattern(str, "\n");
         if (!ts.empty()) {
             ts.pop_back();
