@@ -75,7 +75,7 @@ public:
         unrollWithArgs<Component...>([&](size_t iter, auto shit) constexpr {
             using axis_type = decltype(shit);
             res += std::to_string(static_cast<T const*>(this)->get<axis_type>(iter)) +
-                   ((iter < sizeof...(Component)) ? ", " : ")");
+                   ((iter < sizeof...(Component) - 1) ? ", " : ")");
         });
         return res;
     }
