@@ -111,7 +111,9 @@ jobs:
         shell: cmd
 
       - name: Build SymDBHelper
-        run: cmake --build ${{github.workspace}}/build_clang --config ${{env.BUILD_TYPE}} --target SymDBHelper
+        run: |
+          cmake --build ${{github.workspace}}/build_clang --config ${{env.BUILD_TYPE}} --target SymDBHelper
+          cp .\build_clang\sdk\lib\SymDBHelper.lib .\build\sdk\lib\SymDBHelper.lib
 
       - name: Compress resource packs for LiteLoaderBDS
         run: |
