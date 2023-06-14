@@ -20,6 +20,7 @@ class UpdateBlockPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+    char filler[24];
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPDATEBLOCKPACKET
