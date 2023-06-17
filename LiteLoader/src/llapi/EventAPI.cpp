@@ -1335,43 +1335,59 @@ TInstanceHook(void*, "?die@ServerPlayer@@UEAAXAEBVActorDamageSource@@@Z", Server
 #include "llapi/mc/SurvivalMode.hpp"
 
 /////////////////// PlayerDestroy ///////////////////
-
-TInstanceHook(bool, "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z", GameMode, BlockPos blockPos,
-              unsigned __int8 uChar) {
-    IF_LISTENED(PlayerDestroyBlockEvent) {
-        auto player = getPlayer();
-        if (player && player->isPlayer()) {
-            if (player->getPlayerGameType() != GameType::Creative) {
-                PlayerDestroyBlockEvent ev{};
-                ev.mPlayer = player;
-                auto blockInstance = Level::getBlockInstance(blockPos, player->getDimensionId());
-                ev.mBlockInstance = blockInstance;
-                if (!ev.call()) {
-                    return false;
-                }
-            }
-        }
-    }
-    IF_LISTENED_END(PlayerDestroyBlockEvent)
-    return original(this, blockPos, uChar);
-}
-
-TInstanceHook(bool, "?_creativeDestroyBlock@GameMode@@AEAA_NAEBVBlockPos@@E@Z", GameMode, BlockPos a3, unsigned __int8 a4) {
-    auto player = getPlayer();
+TInstanceHook(bool,"?playerWillDestroy@BlockLegacy@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z", BlockLegacy ,Player *player, const BlockPos *pos, const Block *block){
     if (player != nullptr && player->isPlayer()) {
         IF_LISTENED(PlayerDestroyBlockEvent) {
             PlayerDestroyBlockEvent ev{};
             ev.mPlayer = player;
-            auto bl = Level::getBlockInstance(a3, player->getDimensionId());
-            ev.mBlockInstance = bl;
+            ev.mBlockInstance = Level::getBlockInstance(*pos, player->getDimensionId());
             if (!ev.call()) {
                 return false;
             }
         }
         IF_LISTENED_END(PlayerDestroyBlockEvent)
-    }
-    return original(this, a3, a4);
+        }
+        return original(this, player, pos, block);
 }
+
+// TInstanceHook(bool, "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z", GameMode, BlockPos blockPos,
+//               unsigned __int8 uChar) {
+//     IF_LISTENED(PlayerDestroyBlockEvent) {
+//         auto player = getPlayer();
+//         if (player && player->isPlayer()) {
+//             if (player->getPlayerGameType() != GameType::Creative) {
+//                 PlayerDestroyBlockEvent ev{};
+//                 ev.mPlayer = player;
+//                 auto blockInstance = Level::getBlockInstance(blockPos, player->getDimensionId());
+//                 ev.mBlockInstance = blockInstance;
+//                 if (!ev.call()) {
+//                     return false;
+//                 }
+//             }
+//         }
+//     }
+//     IF_LISTENED_END(PlayerDestroyBlockEvent)
+//     return original(this, blockPos, uChar);
+// }
+
+// TInstanceHook(bool, "?_creativeDestroyBlock@GameMode@@AEAA_NAEBVBlockPos@@E@Z", GameMode, BlockPos a3, unsigned __int8 a4) {
+//     auto player = getPlayer();
+//     if (player != nullptr && player->isPlayer()) {
+//         IF_LISTENED(PlayerDestroyBlockEvent) {
+//             PlayerDestroyBlockEvent ev{};
+//             ev.mPlayer = player;
+//             auto bl = Level::getBlockInstance(a3, player->getDimensionId());
+//             ev.mBlockInstance = bl;
+//             if (!ev.call()) {
+//                 return false;
+//             }
+//         }
+//         IF_LISTENED_END(PlayerDestroyBlockEvent)
+//     }
+//     return original(this, a3, a4);
+// }
+            
+
 
 /////////////////// PlayerUseItemOn ///////////////////
 TInstanceHook(InteractionResult,
