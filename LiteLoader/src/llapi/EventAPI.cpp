@@ -266,7 +266,6 @@ DECLARE_EVENT_DATA(MobDieEvent);
 DECLARE_EVENT_DATA(EntityExplodeEvent);
 DECLARE_EVENT_DATA(ProjectileHitEntityEvent);
 DECLARE_EVENT_DATA(WitherBossDestroyEvent);
-DECLARE_EVENT_DATA(EnderDragonDestroyEvent);
 DECLARE_EVENT_DATA(EntityRideEvent);
 DECLARE_EVENT_DATA(EntityStepOnPressurePlateEvent);
 DECLARE_EVENT_DATA(NpcCmdEvent);
@@ -1746,23 +1745,6 @@ TInstanceHook(void, "?_destroyBlocks@WitherBoss@@AEAAXAEAVLevel@@AEBVAABB@@AEAVB
     }
     IF_LISTENED_END(WitherBossDestroyEvent)
     original(this, a2, aabb, a4, a5, a6);
-}
-
-////////////// EnderDragonDestroy //////////////
-#include <llapi/mc/EnderDragon.hpp>
-#include <llapi/mc/BlockLegacy.hpp>
-
-TInstanceHook(bool, "?_isDragonImmuneBlock@EnderDragon@@CA_NAEBVBlockLegacy@@@Z", EnderDragon, BlockLegacy* bl) {
-    IF_LISTENED(EnderDragonDestroyEvent) {
-        EnderDragonDestroyEvent ev{};
-        ev.mEnderDragon = (EnderDragon*)this;
-        ev.mBlockLegacy = bl;
-        if (!ev.call()) {
-            return true;
-        }
-    }
-    IF_LISTENED_END(EnderDragonDestroyEvent)
-    return original(this, bl);
 }
 
 ////////////// EntityRide //////////////

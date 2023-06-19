@@ -649,12 +649,6 @@ public:
     AABB mDestroyRange{{}, {}};
 };
 
-class EnderDragonDestroyEvent : public EventTemplate<EnderDragonDestroyEvent> {
-public:
-    EnderDragon* mEnderDragon = nullptr;
-    BlockLegacy* mBlockLegacy = nullptr;
-};
-
 class EntityRideEvent : public EventTemplate<EntityRideEvent> {
 public:
     Actor* mRider = nullptr;
