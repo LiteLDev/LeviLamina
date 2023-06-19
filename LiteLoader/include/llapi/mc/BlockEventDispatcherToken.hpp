@@ -8,6 +8,8 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+typedef int ListenerHandle;
+#include "llapi/mc/BlockEventDispatcher.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -19,6 +21,9 @@ class BlockEventDispatcherToken {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+  ListenerHandle mHandle;
+  BlockEventDispatcher *mDispatcher;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKEVENTDISPATCHERTOKEN

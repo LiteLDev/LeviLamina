@@ -538,3 +538,15 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
     }
     pl->sendInventory(1);
 }
+
+
+// fix BlockEventDispatcherToken unregister crash error when stop server
+#include <llapi/mc/BlockEventDispatcherToken.hpp>
+TInstanceHook(void,"?unregister@BlockEventDispatcherToken@@QEAAXXZ",BlockEventDispatcherToken){
+  if (this->mHandle != -1 && this->mDispatcher->listeners.size() <= 1)
+  {
+    //logger.warn("BlockEventDispatcherToken::unregister with no listeners");
+    return;
+  }
+  original(this);
+}
