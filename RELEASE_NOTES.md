@@ -11,3 +11,6 @@
 ## Fixed
 
 - Fix item disappear caused by players throwing items at unloaded chunks (by @timiya233)
+- Fix empty overloads error (by @OEOTYAN)
+- Fix destroy event (by @dofes)
+- Fix VectorBase::toString incorrect process of right parenthesis (by @Redbeanw44602)

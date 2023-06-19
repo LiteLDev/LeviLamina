@@ -814,7 +814,7 @@ void EnableEventListener(int eventId) {
         case EVENT_TYPES::onEnderDragonDestroy:
             Event::EnderDragonDestroyEvent::subscribe([](const EnderDragonDestroyEvent& ev) {
                 IF_LISTENED(EVENT_TYPES::onEnderDragonDestroy) {
-                    CallEvent(EVENT_TYPES::onEnderDragonDestroy, EntityClass::newEntity((Actor*)ev.mEnderDragon), BlockClass::newBlock(*(BlockInstance*)(ev.mBlockLegacy)));
+                    CallEvent(EVENT_TYPES::onEnderDragonDestroy, EntityClass::newEntity((Actor*)ev.mEnderDragon), BlockClass::newBlock(BlockInstance::createBlockInstance(ev.mBlockLegacy->toBlock(0), ev.mEnderDragon->getBlockPos(), ev.mEnderDragon->getDimensionId())));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onEnderDragonDestroy);
             });
