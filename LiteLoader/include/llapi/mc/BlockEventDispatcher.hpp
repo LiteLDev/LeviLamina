@@ -8,6 +8,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "llapi/mc/ListenerInfo.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -19,6 +20,8 @@ class BlockEventDispatcher {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+std::unordered_map<int, std::unique_ptr<ListenerInfo>> listeners;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKEVENTDISPATCHER

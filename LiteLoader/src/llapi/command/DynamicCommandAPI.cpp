@@ -629,8 +629,12 @@ std::unique_ptr<class DynamicCommandInstance> DynamicCommand::createCommand(std:
     for (auto& param : params) {
         command->newParameter(std::move(param));
     }
-    for (auto& overload : overloads) {
-        command->addOverload(std::move(overload));
+    if (overloads.size() > 0) {
+        for (auto& overload : overloads) {
+            command->addOverload(std::move(overload));
+        }
+    }else{
+        command->addOverload();
     }
     command->setCallback(std::move(callback));
     return std::move(command);

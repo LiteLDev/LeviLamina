@@ -34,8 +34,6 @@ inline void loadConfig() {
     if (std::filesystem::exists("plugins/LiteLoader/LiteLoader.json")) {
         try {
             LoadConfigFromJson("plugins/LiteLoader/LiteLoader.json");
-        } catch (std::exception& e) {
-            ColorLog = true;
         } catch (...) {
             ColorLog = true;
         }

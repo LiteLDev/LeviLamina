@@ -517,7 +517,7 @@ TClasslessInstanceHook(void, "?sendEvent@ActorEventCoordinator@@QEAAXAEBV?$Event
 #include "llapi/mc/ExtendedStreamReadResult.hpp"
 
 TInstanceHook(ExtendedStreamReadResult,
-              "?read@PlayerListPacket@@UEAA?AUExtendedStreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
+              "?_read@PlayerListPacket@@EEAA?AUExtendedStreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
               PlayerListPacket, ReadOnlyBinaryStream) {
     return ExtendedStreamReadResult{StreamReadResult::Valid, ""};
 }
@@ -537,4 +537,16 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
         return original(this, nid, pkt);
     }
     pl->sendInventory(1);
+}
+
+
+// fix BlockEventDispatcherToken unregister crash error when stop server
+#include <llapi/mc/BlockEventDispatcherToken.hpp>
+TInstanceHook(void,"?unregister@BlockEventDispatcherToken@@QEAAXXZ",BlockEventDispatcherToken){
+  if (this->mHandle != -1 && this->mDispatcher->listeners.size() <= 1 && ll::globalRuntimeConfig.serverStatus == ll::LLServerStatus::Stopping)
+  {
+    logger.debug("BlockEventDispatcherToken::unregister with no listeners");
+    return;
+  }
+  original(this);
 }

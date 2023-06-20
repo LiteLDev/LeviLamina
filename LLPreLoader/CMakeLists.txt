@@ -7,7 +7,7 @@ set(CMAKE_BUILD_TYPE Release)
 add_definitions(-D"NDEBUG" -D"_WINDOWS" -D"_USRDLL" -D"_WINDLL" -D"_UNICODE" -D"UNICODE")
 
 add_compile_options(
-    /permissive- /GS /GL /W0 /Gy /Zc:wchar_t /Zi /Gm- /O2 /sdl /Zc:inline /fp:precise
+    /permissive- /GS /GL /W3 /Gy /Zc:wchar_t /Zi /Gm- /O2 /sdl /Zc:inline /fp:precise
     /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /MD /FC /EHsc /nologo /diagnostics:column
 )
 

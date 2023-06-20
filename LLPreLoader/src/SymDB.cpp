@@ -227,7 +227,7 @@ extern _declspec(dllexport) std::vector<string> dlsym_reverse(int addr) {
     if (!rvaMap)
         InitReverseLookup();
     // TODO: Fix Narrowing Conversion
-    addr = addr - imageBaseAddr;
+    addr = (int)(addr - imageBaseAddr);
     auto const iter = rvaMap->equal_range(addr);
     std::vector<string> ret;
     for (auto it = iter.first; it != iter.second; ++it) {

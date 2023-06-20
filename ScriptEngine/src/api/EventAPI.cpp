@@ -92,7 +92,6 @@ enum class EVENT_TYPES : int {
     onEntityExplode,
     onProjectileHitEntity,
     onWitherBossDestroy,
-    onEnderDragonDestroy,
     onRide,
     onStepOnPressurePlate,
     onSpawnProjectile,
@@ -808,15 +807,6 @@ void EnableEventListener(int eventId) {
                               IntPos::newPos(range.min.toBlockPos(), dimId), IntPos::newPos(range.max.toBlockPos(), dimId));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onWitherBossDestroy);
-            });
-            break;
-
-        case EVENT_TYPES::onEnderDragonDestroy:
-            Event::EnderDragonDestroyEvent::subscribe([](const EnderDragonDestroyEvent& ev) {
-                IF_LISTENED(EVENT_TYPES::onEnderDragonDestroy) {
-                    CallEvent(EVENT_TYPES::onEnderDragonDestroy, EntityClass::newEntity((Actor*)ev.mEnderDragon), BlockClass::newBlock(*(BlockInstance*)(ev.mBlockLegacy)));
-                }
-                IF_LISTENED_END(EVENT_TYPES::onEnderDragonDestroy);
             });
             break;
 
