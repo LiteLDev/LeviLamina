@@ -181,16 +181,16 @@ MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPositionFl
 //MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<class Actor>>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<class Player>>();
-template <>
-MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum class EquipmentSlot>();
+//template <>
+//MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum class EquipmentSlot>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, float>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, int>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, Json::Value>();
-template <>
-MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum class Mirror>();
+//template <>
+//MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum class Mirror>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class MobEffect const*>();
 template <>
@@ -203,8 +203,8 @@ template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class WildcardCommandSelector<class Actor>>();
 template<>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>();
-template <>
-MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandIntegerRange>();
+//template <>
+//MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandIntegerRange>();
 template<>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>();
 template <>
