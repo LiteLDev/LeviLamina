@@ -19,7 +19,7 @@ class AutomaticID;
 template <typename>
 class CommandSelector;
 class CommandWildcardInt;
-enum class ObjectiveSortOrder;
+enum class ObjectiveSortOrder : char;
 
 namespace Json {
 class Value;
