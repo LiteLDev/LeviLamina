@@ -419,7 +419,7 @@ Local<Value> McClass::getPlayer(const Arguments& args) {
 
         transform(target.begin(), target.end(), target.begin(), ::tolower); // lower case the string
         auto playerList = Level::getAllPlayers();
-        int delta = 2147483647; // c++ int max
+        int delta = 2147483647;                                             // c++ int max
         Player* found = nullptr;
 
         for (Player* p : playerList) {
@@ -805,7 +805,7 @@ Local<Value> PlayerClass::getInLava() {
         if (!player)
             return Local<Value>();
 
-               return Boolean::newBoolean(ActorMobilityUtils::shouldApplyLava(
+        return Boolean::newBoolean(ActorMobilityUtils::shouldApplyLava(
             *(IConstBlockSource*)&player->getDimensionBlockSourceConst(), player->getEntityContext()));
     }
     CATCH("Fail in getInLava!")
@@ -1257,6 +1257,7 @@ Local<Value> PlayerClass::isOP(const Arguments& args) {
 }
 
 #include <llapi/mc/UpdateAbilitiesPacket.hpp>
+
 Local<Value> PlayerClass::setPermLevel(const Arguments& args) {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
@@ -2790,7 +2791,10 @@ Local<Value> PlayerClass::getBlockFromViewVector(const Arguments& args) {
 
 Local<Value> PlayerClass::isSimulatedPlayer(const Arguments& args) {
     try {
-        return Boolean::newBoolean(get()->isSimulatedPlayer());
+        Player* actor = get();
+        if (!actor)
+            return Local<Value>();
+        return Boolean::newBoolean(actor->isSimulatedPlayer());
     }
     CATCH("Fail in isSimulatedPlayer!");
 }
