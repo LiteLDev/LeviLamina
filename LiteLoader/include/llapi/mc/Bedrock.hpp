@@ -9,6 +9,7 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "llapi/mc/Json.hpp"
+#include "llapi/mc/Enchant.hpp"
 #include <string>
 
 class CommandRegistry;
@@ -17,6 +18,8 @@ template <typename, typename>
 class AutomaticID;
 template <typename>
 class CommandSelector;
+class CommandWildcardInt;
+enum class ObjectiveSortOrder
 
 namespace Json {
 class Value;
@@ -206,6 +209,33 @@ template<>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandRawText>();
+template<>
+MCAPI typeid_t<CommandRegistry> type_id<class CommandRegistry, class CommandWildcardInt>();
+template<>
+MCAPI typeid_t<CommandRegistry> type_id<class CommandRegistry, enum ObjectiveSortOrder>();
+template<>
+MCAPI typeid_t<CommandRegistry> type_id<class CommandRegistry, enum BlockSlot>();
+
+template<>
+inline typeid_t<CommandRegistry> type_id<CommandRegistry, enum class Mirror>() {
+    auto id = ( unsigned short *)dlsym_real("?id@?1???$type_id@VCommandRegistry@@W4Mirror@@@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@@@1@XZ@4V21@A");
+    return typeid_t<CommandRegistry> (*id);
+}
+template<>
+inline typeid_t<CommandRegistry> type_id<CommandRegistry, CommandIntegerRange>() {
+    auto id = (unsigned short*)dlsym_real("?id@?1???$type_id@VCommandRegistry@@VCommandIntegerRange@@@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@@@1@XZ@4V21@A");
+    return typeid_t<CommandRegistry>(*id);
+}
+template<>
+inline typeid_t<CommandRegistry> type_id<CommandRegistry, EquipmentSlot>() {
+    auto id = (unsigned short*)dlsym_real("?id@?1???$type_id@VCommandRegistry@@W4EquipmentSlot@@@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@@@1@XZ@4V21@A");
+    return typeid_t<CommandRegistry>(*id);
+}
+template<>
+inline typeid_t<CommandRegistry> type_id<CommandRegistry, Enchant::Type>() {
+    auto id = (unsigned short*)dlsym_real("?id@?1???$type_id@VCommandRegistry@@W4Type@Enchant@@@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@@@1@XZ@4V21@A");
+    return typeid_t<CommandRegistry>(*id);
+}
 
 //template <>
 //inline typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>() {
