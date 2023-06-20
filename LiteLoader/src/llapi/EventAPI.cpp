@@ -1332,7 +1332,7 @@ TInstanceHook(void*, "?die@ServerPlayer@@UEAAXAEBVActorDamageSource@@@Z", Server
 #include "llapi/mc/SurvivalMode.hpp"
 
 /////////////////// PlayerDestroy ///////////////////
-TInstanceHook(bool,"?playerWillDestroy@BlockLegacy@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z", BlockLegacy ,Player *player, const BlockPos *pos, const Block *block){
+TInstanceHook(bool,"?playerWillDestroy@Block@@QEBA_NAEAVPlayer@@AEBVBlockPos@@@Z", Block, Player *player, const BlockPos *pos){
     if (player != nullptr && player->isPlayer()) {
         IF_LISTENED(PlayerDestroyBlockEvent) {
             PlayerDestroyBlockEvent ev{};
@@ -1344,7 +1344,7 @@ TInstanceHook(bool,"?playerWillDestroy@BlockLegacy@@UEBA_NAEAVPlayer@@AEBVBlockP
         }
         IF_LISTENED_END(PlayerDestroyBlockEvent)
         }
-        return original(this, player, pos, block);
+        return original(this, player, pos);
 }
 
 // TInstanceHook(bool, "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z", GameMode, BlockPos blockPos,
