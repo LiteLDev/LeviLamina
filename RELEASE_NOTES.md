@@ -6,7 +6,9 @@
 
 - Support 2.14.0 (by @dreamguxiang @OEOTYAN)
 
-[//]: # (## Changed)
+## Changed
+
+- Remove EnderDragonDestroy event
 
 ## Fixed
 
@@ -14,3 +16,4 @@
 - Fix empty overloads error (by @OEOTYAN)
 - Fix destroy event (by @dofes)
 - Fix VectorBase::toString incorrect process of right parenthesis (by @Redbeanw44602)
+- Fix stop server crash caused by BDS (by @dofes)
