@@ -545,17 +545,17 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
 TInstanceHook(void,"?unregister@BlockEventDispatcherToken@@QEAAXXZ",BlockEventDispatcherToken){
   if (this->mHandle != -1)
   {
-    try{
+    if(ll::globalRuntimeConfig.serverStatus == ll::LLServerStatus::Stopping){
+      logger.debug("BlockEventDispatcherToken::unregister ignore unregister when server stopping");
+      this->mHandle = -1;
+      return;
+    }
     //logger.info("{} {}",this->mHandle,this->mDispatcher->listeners.size());
     auto it = this->mDispatcher->listeners.find(this->mHandle);
     if (it != this->mDispatcher->listeners.end())
         this->mDispatcher->listeners.erase(it);
-    }
-    catch(std::exception& e){
-        logger.debug("BlockEventDispatcherToken::unregister error {}",e.what());
-    }
     this->mHandle = -1;
     return;
   }
-  original(this);
+  //original(this);
 }

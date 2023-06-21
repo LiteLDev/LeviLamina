@@ -21,7 +21,7 @@ class BlockEventDispatcher {
 #define AFTER_EXTRA
 // Add Member There
 public:
-std::unordered_map<int, std::unique_ptr<ListenerInfo>> listeners;
+    std::unordered_map<int, std::unique_ptr<ListenerInfo>> listeners;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKEVENTDISPATCHER
