@@ -7,6 +7,7 @@
 #include <typeinfo>
 #include <vector>
 
+#include "llapi/mc/WeakEntityRef.hpp"
 #include "llapi/mc/ActorDamageSource.hpp"
 #include "llapi/mc/BaseCommandBlock.hpp"
 #include "llapi/mc/BedrockBlocks.hpp"
@@ -32,9 +33,7 @@
 #include "llapi/mc/PlayerActionPacket.hpp"
 #include "llapi/mc/RespawnPacket.hpp"
 #include "llapi/mc/Scoreboard.hpp"
-#include "llapi/mc/NpcSceneDialogueData.hpp"
 #include "llapi/mc/ArmorStand.hpp"
-#include "llapi/mc/NpcComponent.hpp"
 #include "llapi/mc/Container.hpp"
 #include "llapi/mc/ScoreboardId.hpp"
 #include "llapi/mc/ServerNetworkHandler.hpp"
@@ -268,7 +267,6 @@ DECLARE_EVENT_DATA(ProjectileHitEntityEvent);
 DECLARE_EVENT_DATA(WitherBossDestroyEvent);
 DECLARE_EVENT_DATA(EntityRideEvent);
 DECLARE_EVENT_DATA(EntityStepOnPressurePlateEvent);
-DECLARE_EVENT_DATA(NpcCmdEvent);
 DECLARE_EVENT_DATA(ProjectileSpawnEvent);
 DECLARE_EVENT_DATA(ProjectileCreatedEvent);
 DECLARE_EVENT_DATA(EntityTransformEvent);
@@ -1334,7 +1332,7 @@ TInstanceHook(void*, "?die@ServerPlayer@@UEAAXAEBVActorDamageSource@@@Z", Server
 #include "llapi/mc/SurvivalMode.hpp"
 
 /////////////////// PlayerDestroy ///////////////////
-TInstanceHook(bool,"?playerWillDestroy@BlockLegacy@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z", BlockLegacy ,Player *player, const BlockPos *pos, const Block *block){
+TInstanceHook(bool,"?playerWillDestroy@Block@@QEBA_NAEAVPlayer@@AEBVBlockPos@@@Z", Block, Player *player, const BlockPos *pos){
     if (player != nullptr && player->isPlayer()) {
         IF_LISTENED(PlayerDestroyBlockEvent) {
             PlayerDestroyBlockEvent ev{};
@@ -1346,7 +1344,7 @@ TInstanceHook(bool,"?playerWillDestroy@BlockLegacy@@UEBA_NAEAVPlayer@@AEBVBlockP
         }
         IF_LISTENED_END(PlayerDestroyBlockEvent)
         }
-        return original(this, player, pos, block);
+        return original(this, player, pos);
 }
 
 // TInstanceHook(bool, "?destroyBlock@SurvivalMode@@UEAA_NAEBVBlockPos@@E@Z", GameMode, BlockPos blockPos,
@@ -1840,40 +1838,6 @@ TClasslessInstanceHook(void, "?releaseUsing@TridentItem@@UEBAXAEAVItemStack@@PEA
     }
     IF_LISTENED_END(ProjectileSpawnEvent)
     return original(this, a2, a3, a4);
-}
-
-#include "llapi/mc/WeakEntityRef.hpp"
-#include "llapi/mc/EntityContext.hpp"
-#include "llapi/mc/Npc.hpp"
-
-////////////// NpcCmd //////////////
-TInstanceHook(void,
-              "?executeCommandAction@NpcComponent@@QEAAXAEAVActor@@AEAVPlayer@@HAEBV?$basic_string@DU?$char_traits@D@"
-              "std@@V?$allocator@D@2@@std@@@Z",
-              NpcComponent, Actor* ac, Player* player, int a4, string& a5) {
-    IF_LISTENED(NpcCmdEvent) {
-        // IDA NpcComponent::executeCommandAction
-        // NpcSceneDialogueData data(*this, *ac, a5);
-
-        NpcSceneDialogueData data(WeakEntityRef(ac->getEntityContext().getWeakRef()), a5);
-
-        auto container = data.getActionsContainer();
-        if (container) {
-            auto actionAt = container->at(a4);
-            if (actionAt) {
-                if (auto* command = std::get_if<npc::CommandAction>(actionAt)) {
-                    NpcCmdEvent ev{};
-                    ev.mPlayer = player;
-                    ev.mNpc = ac;
-                    ev.mCommand = command->mActionValue.mText;
-                    if (!ev.call())
-                        return;
-                }
-            }
-        }
-    }
-    IF_LISTENED_END(NpcCmdEvent)
-    return original(this, ac, player, a4, a5);
 }
 
 ////////////// ArmorStandChange //////////////

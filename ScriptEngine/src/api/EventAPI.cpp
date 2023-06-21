@@ -96,7 +96,6 @@ enum class EVENT_TYPES : int {
     onStepOnPressurePlate,
     onSpawnProjectile,
     onProjectileCreated,
-    onNpcCmd,
     onChangeArmorStand,
     onEntityTransformation,
     /* Block Events */
@@ -852,16 +851,6 @@ void EnableEventListener(int eventId) {
                               (source ? EntityClass::newEntity(source) : Local<Value>()), Number::newNumber((int)ev.mDamageSource->getCause()));
                 }
                 IF_LISTENED_END(EVENT_TYPES::onMobDie);
-            });
-            break;
-
-        case EVENT_TYPES::onNpcCmd:
-            Event::NpcCmdEvent::subscribe([](const NpcCmdEvent& ev) {
-                IF_LISTENED(EVENT_TYPES::onNpcCmd) {
-                    CallEvent(EVENT_TYPES::onNpcCmd, EntityClass::newEntity(ev.mNpc), PlayerClass::newPlayer(ev.mPlayer),
-                              String::newString(ev.mCommand));
-                }
-                IF_LISTENED_END(EVENT_TYPES::onNpcCmd);
             });
             break;
 
