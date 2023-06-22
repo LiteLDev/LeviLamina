@@ -25,7 +25,6 @@ public:
     LIAPI static Block* create(const std::string& str, unsigned short tileData);
     LIAPI static Block* create(CompoundTag* nbt);
 
-    [[deprecated("Use MCAPI getName() instead.")]]
     LIAPI std::string getTypeName() const;
     LIAPI int getId() const;
     inline unsigned short getTileData(){
