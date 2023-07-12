@@ -42,8 +42,14 @@ public:
     class Symbol {
     public:
         int val;
-        MCAPI Symbol(unsigned __int64 = -1);
-        //MCAPI Symbol(class Symbol const&);
+
+        Symbol(unsigned __int64 a1 = -1) {
+            this->val = a1;
+        }
+
+        Symbol(class Symbol const& a1) {
+            this->val = a1.val;
+        }
         MCAPI unsigned __int64 toIndex() const;
         MCAPI int value() const;
         inline bool operator==(Symbol const& right) const {

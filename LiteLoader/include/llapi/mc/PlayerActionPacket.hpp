@@ -58,6 +58,7 @@ public:
     FaceID blockFace;            // 72
     PlayerActionType actionType; // 76
     ActorRuntimeID runtimeID;    // 80
+    bool unk88;				     // 88
 
     inline std::string toDebugString() {
         return fmt::format("{}: position: ({}), blockFace: {}, actionType: {}, runtimeID: {}",

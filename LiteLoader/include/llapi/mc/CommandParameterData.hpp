@@ -34,11 +34,13 @@ public:
     std::string name;                       // 16
     char const* desc;                       // 48
     int unk56;                              // 56
-    CommandParameterDataType type;          // 60
-    int offset;                             // 64
-    int flag_offset;                        // 68
-    bool mand;                              // 72
-    unsigned char options;                  // 73
+    char const* unk64;                      // 64
+    int unk72;                              // 72
+    CommandParameterDataType type;          // 76
+    int offset;                             // 80
+    int flag_offset;                        // 84
+    bool mand;                              // 88
+    unsigned char options;                  // 89
 
     CommandParameterData()
         : tid(tid){};
@@ -51,6 +53,8 @@ public:
         , name(describe)
         , desc(enumName)
         , unk56(-1)
+        , unk64("")
+        , unk72(-1)
         , type(type)
         , offset(offset)
         , flag_offset(flag_offset)

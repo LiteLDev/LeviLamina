@@ -61,21 +61,28 @@ public:
         std::vector<std::string> values;
     };//56
 
+    struct ChainedSubcommandData
+    {
+
+    };
+
 std::vector<std::string> mAllEnums;//48
-std::vector<std::string> mAllSuffix;//72
-std::vector<EnumData> mEnumDatas;//96
-std::vector<CommandData> mCommandDatas;//120
-std::vector<SoftEnumData> mSoftEnums;//144
-std::vector<ConstrainedValueData> mConstrainedValueDatas; //168
+std::vector<std::string> mChainedSubcommandValues;// 72
+std::vector<std::string> mAllSuffix; // 96
+std::vector<EnumData> mEnumDatas;//120
+std::vector<ChainedSubcommandData> mChainedSubcommands; // 144
+std::vector<CommandData> mCommandDatas;// 168
+std::vector<SoftEnumData> mSoftEnums;// 192
+std::vector<ConstrainedValueData> mConstrainedValueDatas; //216
 inline void test()
 {
-    static_assert(sizeof(AvailableCommandsPacket) == 192);
+    static_assert(sizeof(AvailableCommandsPacket) == 240);
     static_assert(sizeof(EnumData) == 56);
     static_assert(sizeof(CommandData) == 104);
     static_assert(offsetof(CommandData, perm) == 66);
     static_assert(offsetof(AvailableCommandsPacket, mAllEnums) == 48);
-    static_assert(offsetof(AvailableCommandsPacket, mAllSuffix) == 72);
-    static_assert(offsetof(AvailableCommandsPacket, mConstrainedValueDatas) == 168);
+    static_assert(offsetof(AvailableCommandsPacket, mAllSuffix) == 96);
+    static_assert(offsetof(AvailableCommandsPacket, mConstrainedValueDatas) == 216);
 }
 
 public:
