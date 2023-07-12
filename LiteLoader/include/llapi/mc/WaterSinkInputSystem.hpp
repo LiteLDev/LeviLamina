@@ -35,9 +35,5 @@ public:
      * @symbol ?doInWaterSinkInputSystem\@WaterSinkInputSystem\@\@SAXAEBUAbilitiesComponent\@\@AEBUMoveInputComponent\@\@AEAUStateVectorComponent\@\@\@Z
      */
     MCAPI static void doInWaterSinkInputSystem(struct AbilitiesComponent const &, struct MoveInputComponent const &, struct StateVectorComponent &);
-    /**
-     * @symbol ?tickWaterSinkInputSystem\@WaterSinkInputSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@UPlayerInputRequestComponent\@\@V?$FlagComponent\@UInWaterFlag\@\@\@\@\@\@$$CBUAbilitiesComponent\@\@$$CBUMoveInputComponent\@\@UStateVectorComponent\@\@\@\@\@Z
-     */
-    MCAPI static void tickWaterSinkInputSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, struct PlayerInputRequestComponent, class FlagComponent<struct InWaterFlag>>, struct AbilitiesComponent const, struct MoveInputComponent const, struct StateVectorComponent>);
 
 };

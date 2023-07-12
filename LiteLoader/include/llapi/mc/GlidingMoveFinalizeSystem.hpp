@@ -37,16 +37,8 @@ public:
      */
     MCAPI static struct TickingSystemWithInfo createCollisionDamageCalculateSystem();
     /**
-     * @symbol ?createCollisionDamageCalculateSystemSideBySide\@GlidingMoveFinalizeSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI static struct TickingSystemWithInfo createCollisionDamageCalculateSystemSideBySide();
-    /**
      * @symbol ?createCollisionDamageHurtSystem\@GlidingMoveFinalizeSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createCollisionDamageHurtSystem();
-    /**
-     * @symbol ?tickCollisionDamageHurt\@GlidingMoveFinalizeSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UMobFlag\@\@\@\@\@\@VActorOwnerComponent\@\@$$CBUGlidingCollisionDamageComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UGlidingCollisionDamageComponent\@\@\@\@\@Z
-     */
-    MCAPI static void tickCollisionDamageHurt(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct MobFlag>>, class ActorOwnerComponent, struct GlidingCollisionDamageComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct GlidingCollisionDamageComponent>);
 
 };

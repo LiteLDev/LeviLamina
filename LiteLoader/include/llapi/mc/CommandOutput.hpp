@@ -103,13 +103,13 @@ public:
 
 public:
     /**
-     * @symbol ??0CommandOutput\@\@QEAA\@W4CommandOutputType\@\@\@Z
-     */
-    MCAPI CommandOutput(enum class CommandOutputType);
-    /**
      * @symbol ??0CommandOutput\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI CommandOutput(class CommandOutput const &);
+    /**
+     * @symbol ??0CommandOutput\@\@QEAA\@W4CommandOutputType\@\@\@Z
+     */
+    MCAPI CommandOutput(enum class CommandOutputType);
     /**
      * @symbol ?addToResultList\@CommandOutput\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVActor\@\@\@Z
      */
@@ -159,13 +159,13 @@ public:
      */
     MCAPI void setHasPlayerText();
     /**
-     * @symbol ?success\@CommandOutput\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@VCommandOutputParameter\@\@V?$allocator\@VCommandOutputParameter\@\@\@std\@\@\@3\@\@Z
-     */
-    MCAPI void success(std::string const &, std::vector<class CommandOutputParameter> const &);
-    /**
      * @symbol ?success\@CommandOutput\@\@QEAAXXZ
      */
     MCAPI void success();
+    /**
+     * @symbol ?success\@CommandOutput\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@VCommandOutputParameter\@\@V?$allocator\@VCommandOutputParameter\@\@\@std\@\@\@3\@\@Z
+     */
+    MCAPI void success(std::string const &, std::vector<class CommandOutputParameter> const &);
     /**
      * @symbol ?wantsData\@CommandOutput\@\@QEBA_NXZ
      */

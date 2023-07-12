@@ -58,9 +58,17 @@ public:
      */
     MCAPI ExpressionNode(class ExpressionNode const &);
     /**
+     * @symbol ??0ExpressionNode\@\@QEAA\@AEBVValue\@Json\@\@W4MolangVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z
+     */
+    MCAPI ExpressionNode(class Json::Value const &, enum class MolangVersion, class gsl::span<class HashedString const, -1>);
+    /**
      * @symbol ??0ExpressionNode\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVSemVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z
      */
     MCAPI ExpressionNode(std::string const &, class SemVersion const &, class gsl::span<class HashedString const, -1>);
+    /**
+     * @symbol ??0ExpressionNode\@\@QEAA\@M\@Z
+     */
+    MCAPI ExpressionNode(float);
     /**
      * @symbol ??0ExpressionNode\@\@QEAA\@AEAUMolangScriptArg\@\@W4ExpressionOp\@\@\@Z
      */
@@ -70,17 +78,9 @@ public:
      */
     MCAPI ExpressionNode(class ExpressionNode &&);
     /**
-     * @symbol ??0ExpressionNode\@\@QEAA\@AEBVValue\@Json\@\@W4MolangVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z
-     */
-    MCAPI ExpressionNode(class Json::Value const &, enum class MolangVersion, class gsl::span<class HashedString const, -1>);
-    /**
      * @symbol ??0ExpressionNode\@\@QEAA\@AEBVValue\@Json\@\@AEBVSemVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z
      */
     MCAPI ExpressionNode(class Json::Value const &, class SemVersion const &, class gsl::span<class HashedString const, -1>);
-    /**
-     * @symbol ??0ExpressionNode\@\@QEAA\@M\@Z
-     */
-    MCAPI ExpressionNode(float);
     /**
      * @symbol ?clear\@ExpressionNode\@\@QEAAXXZ
      */

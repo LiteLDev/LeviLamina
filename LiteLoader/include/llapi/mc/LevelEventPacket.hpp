@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 #include "Packet.hpp"
 
 #define BEFORE_EXTRA
@@ -51,19 +52,15 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@LevelEventPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@LevelEventPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELEVENTPACKET
     /**
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~LevelEventPacket();
 #endif
-    /**
-     * @symbol ??0LevelEventPacket\@\@QEAA\@W4LevelEvent\@\@MMMH\@Z
-     */
-    MCAPI LevelEventPacket(enum class LevelEvent, float, float, float, int);
     /**
      * @symbol ??0LevelEventPacket\@\@QEAA\@XZ
      */
@@ -72,5 +69,9 @@ public:
      * @symbol ??0LevelEventPacket\@\@QEAA\@W4LevelEvent\@\@AEBVVec3\@\@H\@Z
      */
     MCAPI LevelEventPacket(enum class LevelEvent, class Vec3 const &, int);
+    /**
+     * @symbol ??0LevelEventPacket\@\@QEAA\@W4LevelEvent\@\@MMMH\@Z
+     */
+    MCAPI LevelEventPacket(enum class LevelEvent, float, float, float, int);
 
 };

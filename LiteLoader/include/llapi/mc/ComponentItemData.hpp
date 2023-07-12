@@ -11,26 +11,14 @@
 #undef BEFORE_EXTRA
 
 
-struct ComponentItemData {
+namespace ComponentItemData {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPONENTITEMDATA
-public:
-    struct ComponentItemData& operator=(struct ComponentItemData const &) = delete;
-    ComponentItemData(struct ComponentItemData const &) = delete;
-    ComponentItemData() = delete;
-#endif
-
-public:
     /**
-     * @symbol ??1ComponentItemData\@\@QEAA\@XZ
+     * @symbol ?bindTypes\@ComponentItemData\@\@YAXXZ
      */
-    MCAPI ~ComponentItemData();
-    /**
-     * @symbol ?VERSION\@ComponentItemData\@\@2VSemVersion\@\@B
-     */
-    MCAPI static class SemVersion const VERSION;
+    MCAPI void bindTypes();
 
 };

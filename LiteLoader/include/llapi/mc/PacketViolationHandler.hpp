@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -33,15 +34,15 @@ public:
      */
     MCAPI PacketViolationHandler();
     /**
-     * @symbol ?checkForViolation\@PacketViolationHandler\@\@QEAA?AW4PacketViolationResponse\@\@W4MinecraftPacketIds\@\@W4StreamReadResult\@\@AEBVNetworkIdentifier\@\@PEA_N\@Z
+     * @symbol ?checkForViolation\@PacketViolationHandler\@\@QEAA?AW4PacketViolationResponse\@\@W4MinecraftPacketIds\@\@AEBV?$expected\@XU?$ErrorInfo\@Verror_code\@std\@\@\@Bedrock\@\@\@expected_lite\@nonstd\@\@AEBVNetworkIdentifier\@\@PEA_N\@Z
      */
-    MCAPI enum class PacketViolationResponse checkForViolation(enum class MinecraftPacketIds, enum class StreamReadResult, class NetworkIdentifier const &, bool *);
+    MCAPI enum class PacketViolationResponse checkForViolation(enum class MinecraftPacketIds, class nonstd::expected_lite::expected<void, struct Bedrock::ErrorInfo<class std::error_code>> const &, class NetworkIdentifier const &, bool *);
 
 //private:
     /**
-     * @symbol ?_handleViolation\@PacketViolationHandler\@\@AEAA?AW4PacketViolationResponse\@\@W4MinecraftPacketIds\@\@W4StreamReadResult\@\@AEBVNetworkIdentifier\@\@PEA_N\@Z
+     * @symbol ?_handleViolation\@PacketViolationHandler\@\@AEAA?AW4PacketViolationResponse\@\@W4MinecraftPacketIds\@\@AEBVerror_code\@std\@\@AEBVNetworkIdentifier\@\@PEA_N\@Z
      */
-    MCAPI enum class PacketViolationResponse _handleViolation(enum class MinecraftPacketIds, enum class StreamReadResult, class NetworkIdentifier const &, bool *);
+    MCAPI enum class PacketViolationResponse _handleViolation(enum class MinecraftPacketIds, class std::error_code const &, class NetworkIdentifier const &, bool *);
 
 private:
 

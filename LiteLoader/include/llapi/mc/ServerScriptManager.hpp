@@ -118,6 +118,10 @@ public:
      */
     MCAPI class Scripting::ScriptEngine & getScriptEngine();
     /**
+     * @symbol ?getScriptSettings\@ServerScriptManager\@\@QEAAAEAUScriptSettings\@\@XZ
+     */
+    MCAPI struct ScriptSettings & getScriptSettings();
+    /**
      * @symbol ?onMainThreadStartLeaveGame\@ServerScriptManager\@\@QEAAXXZ
      */
     MCAPI void onMainThreadStartLeaveGame();

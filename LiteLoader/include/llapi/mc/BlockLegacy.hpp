@@ -66,24 +66,24 @@ public:
     virtual bool hasTag(class BlockSource &, class BlockPos const &, class Block const &, std::string const &) const;
     /**
      * @vftbl 5
+     * @symbol ?clip\@BlockLegacy\@\@UEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_N\@Z
+     */
+    virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
+    /**
+     * @vftbl 6
      * @symbol ?getCollisionShape\@BlockLegacy\@\@UEBA_NAEAVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
-     * @vftbl 6
-     * @symbol ?isObstructingChests\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
-     */
-    virtual bool isObstructingChests(class BlockSource &, class BlockPos const &, class Block const &) const;
-    /**
      * @vftbl 7
-     * @symbol ?randomlyModifyPosition\@BlockLegacy\@\@UEBA?AVVec3\@\@AEBVBlockPos\@\@AEAH\@Z
+     * @symbol ?addCollisionShapes\@BlockLegacy\@\@UEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
-    virtual class Vec3 randomlyModifyPosition(class BlockPos const &, int &) const;
+    virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
      * @vftbl 8
-     * @symbol ?randomlyModifyPosition\@BlockLegacy\@\@UEBA?AVVec3\@\@AEBVBlockPos\@\@\@Z
+     * @symbol ?getAABB\@BlockLegacy\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
-    virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
+    virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
      * @vftbl 9
      * @symbol ?addAABBs\@BlockLegacy\@\@UEBAXAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@\@Z
@@ -91,24 +91,24 @@ public:
     virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
     /**
      * @vftbl 10
-     * @symbol ?getAABB\@BlockLegacy\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
-     */
-    virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
-    /**
-     * @vftbl 11
-     * @symbol ?addCollisionShapes\@BlockLegacy\@\@UEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
-     */
-    virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
-    /**
-     * @vftbl 12
-     * @symbol ?updateTallestCollisionShape\@BlockLegacy\@\@UEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVAABB\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@AEAV5\@AEBVVec3\@\@AEAM\@Z
-     */
-    virtual bool updateTallestCollisionShape(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const &, class optional_ref<class GetCollisionShapeInterface const>, class AABB &, class Vec3 const &, float &) const;
-    /**
-     * @vftbl 13
      * @symbol ?getOutline\@BlockLegacy\@\@UEBAAEBVAABB\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEAV2\@\@Z
      */
     virtual class AABB const & getOutline(class BlockSource &, class BlockPos const &, class AABB &) const;
+    /**
+     * @vftbl 11
+     * @symbol ?getVisualShapeInWorld\@BlockLegacy\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEAV2\@\@Z
+     */
+    virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &) const;
+    /**
+     * @vftbl 12
+     * @symbol ?getVisualShape\@BlockLegacy\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@\@Z
+     */
+    virtual class AABB const & getVisualShape(class Block const &, class AABB &) const;
+    /**
+     * @vftbl 13
+     * @symbol ?getUIShape\@BlockLegacy\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@\@Z
+     */
+    virtual class AABB const & getUIShape(class Block const &, class AABB &) const;
     /**
      * @vftbl 14
      * @symbol ?getLiquidClipVolume\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVAABB\@\@\@Z
@@ -116,84 +116,84 @@ public:
     virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
     /**
      * @vftbl 15
+     * @symbol ?isObstructingChests\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
+     */
+    virtual bool isObstructingChests(class BlockSource &, class BlockPos const &, class Block const &) const;
+    /**
+     * @vftbl 16
+     * @symbol ?randomlyModifyPosition\@BlockLegacy\@\@UEBA?AVVec3\@\@AEBVBlockPos\@\@AEAH\@Z
+     */
+    virtual class Vec3 randomlyModifyPosition(class BlockPos const &, int &) const;
+    /**
+     * @vftbl 17
+     * @symbol ?randomlyModifyPosition\@BlockLegacy\@\@UEBA?AVVec3\@\@AEBVBlockPos\@\@\@Z
+     */
+    virtual class Vec3 randomlyModifyPosition(class BlockPos const &) const;
+    /**
+     * @vftbl 18
      * @symbol ?onProjectileHit\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVActor\@\@\@Z
      */
     virtual void onProjectileHit(class BlockSource &, class BlockPos const &, class Actor const &) const;
     /**
-     * @vftbl 16
+     * @vftbl 19
      * @symbol ?onLightningHit\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void onLightningHit(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 17
+     * @vftbl 20
      * @symbol ?liquidCanFlowIntoFromDirection\@BlockLegacy\@\@UEBA_NEAEBV?$function\@$$A6AAEBVBlock\@\@AEBVBlockPos\@\@\@Z\@std\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool liquidCanFlowIntoFromDirection(unsigned char, class std::function<class Block const & (class BlockPos const &)> const &, class BlockPos const &) const;
     /**
-     * @vftbl 18
+     * @vftbl 21
      * @symbol ?isSolid\@BlockLegacy\@\@UEBA_NXZ
      */
     virtual bool isSolid() const;
     /**
-     * @vftbl 19
-     * @symbol __unk_vfn_19
+     * @vftbl 22
+     * @symbol __unk_vfn_22
      */
-    virtual void __unk_vfn_19();
+    virtual void __unk_vfn_22();
     /**
-     * @vftbl 20
+     * @vftbl 23
      * @symbol ?isStrippable\@BlockLegacy\@\@UEBA_NAEBVBlock\@\@\@Z
      */
     virtual bool isStrippable(class Block const &) const;
     /**
-     * @vftbl 21
+     * @vftbl 24
      * @symbol ?getStrippedBlock\@BlockLegacy\@\@UEBAAEBVBlock\@\@AEBV2\@\@Z
      */
     virtual class Block const & getStrippedBlock(class Block const &) const;
     /**
-     * @vftbl 22
+     * @vftbl 25
      * @symbol ?canProvideSupport\@BlockLegacy\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
-     * @vftbl 23
+     * @vftbl 26
      * @symbol ?canProvideFullSupport\@BlockLegacy\@\@UEBA_NAEBVBlock\@\@E\@Z
      */
     virtual bool canProvideFullSupport(class Block const &, unsigned char) const;
     /**
-     * @vftbl 24
+     * @vftbl 27
      * @symbol ?canProvideMultifaceSupport\@BlockLegacy\@\@UEBA_NAEBVBlock\@\@E\@Z
      */
     virtual bool canProvideMultifaceSupport(class Block const &, unsigned char) const;
     /**
-     * @vftbl 25
+     * @vftbl 28
      * @symbol ?canConnect\@BlockLegacy\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
     virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
     /**
-     * @vftbl 26
+     * @vftbl 29
      * @symbol ?isAir\@BlockLegacy\@\@UEBA_NXZ
      */
     virtual bool isAir() const;
     /**
-     * @vftbl 27
+     * @vftbl 30
      * @symbol ?tryGetCopperBehavior\@BlockLegacy\@\@UEBAPEBVCopperBehavior\@\@XZ
      */
     virtual class CopperBehavior const * tryGetCopperBehavior() const;
-    /**
-     * @vftbl 28
-     * @symbol __unk_vfn_28
-     */
-    virtual void __unk_vfn_28();
-    /**
-     * @vftbl 29
-     * @symbol __unk_vfn_29
-     */
-    virtual void __unk_vfn_29();
-    /**
-     * @vftbl 30
-     * @symbol ?isClimbable\@BlockLegacy\@\@UEBA_NAEBUIActorMovementProxy\@\@\@Z
-     */
-    virtual bool isClimbable(struct IActorMovementProxy const &) const;
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -206,14 +206,14 @@ public:
     virtual void __unk_vfn_32();
     /**
      * @vftbl 33
-     * @symbol __unk_vfn_33
+     * @symbol ?isClimbable\@BlockLegacy\@\@UEBA_NAEBUIActorMovementProxy\@\@\@Z
      */
-    virtual void __unk_vfn_33();
+    virtual bool isClimbable(struct IActorMovementProxy const &) const;
     /**
      * @vftbl 34
-     * @symbol ?isWaterBlocking\@BlockLegacy\@\@UEBA_NXZ
+     * @symbol __unk_vfn_34
      */
-    virtual bool isWaterBlocking() const;
+    virtual void __unk_vfn_34();
     /**
      * @vftbl 35
      * @symbol __unk_vfn_35
@@ -226,9 +226,9 @@ public:
     virtual void __unk_vfn_36();
     /**
      * @vftbl 37
-     * @symbol __unk_vfn_37
+     * @symbol ?isWaterBlocking\@BlockLegacy\@\@UEBA_NXZ
      */
-    virtual void __unk_vfn_37();
+    virtual bool isWaterBlocking() const;
     /**
      * @vftbl 38
      * @symbol __unk_vfn_38
@@ -251,9 +251,9 @@ public:
     virtual void __unk_vfn_41();
     /**
      * @vftbl 42
-     * @symbol ?isDoubleSlabBlock\@BlockLegacy\@\@UEBA_NXZ
+     * @symbol __unk_vfn_42
      */
-    virtual bool isDoubleSlabBlock() const;
+    virtual void __unk_vfn_42();
     /**
      * @vftbl 43
      * @symbol __unk_vfn_43
@@ -266,9 +266,9 @@ public:
     virtual void __unk_vfn_44();
     /**
      * @vftbl 45
-     * @symbol __unk_vfn_45
+     * @symbol ?isDoubleSlabBlock\@BlockLegacy\@\@UEBA_NXZ
      */
-    virtual void __unk_vfn_45();
+    virtual bool isDoubleSlabBlock() const;
     /**
      * @vftbl 46
      * @symbol __unk_vfn_46
@@ -286,374 +286,374 @@ public:
     virtual void __unk_vfn_48();
     /**
      * @vftbl 49
+     * @symbol __unk_vfn_49
+     */
+    virtual void __unk_vfn_49();
+    /**
+     * @vftbl 50
+     * @symbol __unk_vfn_50
+     */
+    virtual void __unk_vfn_50();
+    /**
+     * @vftbl 51
+     * @symbol __unk_vfn_51
+     */
+    virtual void __unk_vfn_51();
+    /**
+     * @vftbl 52
      * @symbol ?canHurtAndBreakItem\@BlockLegacy\@\@UEBA_NXZ
      */
     virtual bool canHurtAndBreakItem() const;
     /**
-     * @vftbl 50
+     * @vftbl 53
      * @symbol ?isSignalSource\@BlockLegacy\@\@UEBA_NXZ
      */
     virtual bool isSignalSource() const;
     /**
-     * @vftbl 51
+     * @vftbl 54
      * @symbol ?canBeOriginalSurface\@BlockLegacy\@\@UEBA_NXZ
      */
     virtual bool canBeOriginalSurface() const;
     /**
-     * @vftbl 52
+     * @vftbl 55
      * @symbol ?canBeAscendedByJumping\@BlockLegacy\@\@UEBA_NAEBVActor\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool canBeAscendedByJumping(class Actor const &, class BlockPos const &) const;
     /**
-     * @vftbl 53
-     * @symbol __unk_vfn_53
+     * @vftbl 56
+     * @symbol __unk_vfn_56
      */
-    virtual void __unk_vfn_53();
+    virtual void __unk_vfn_56();
     /**
-     * @vftbl 54
+     * @vftbl 57
      * @symbol ?isValidAuxValue\@BlockLegacy\@\@UEBA_NH\@Z
      */
     virtual bool isValidAuxValue(int) const;
     /**
-     * @vftbl 55
+     * @vftbl 58
      * @symbol ?canFillAtPos\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool canFillAtPos(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @vftbl 56
+     * @vftbl 59
      * @symbol ?sanitizeFillBlock\@BlockLegacy\@\@UEBAAEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBV2\@\@Z
      */
     virtual class Block const & sanitizeFillBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @vftbl 57
+     * @vftbl 60
      * @symbol ?onFillBlock\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual void onFillBlock(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @vftbl 58
+     * @vftbl 61
      * @symbol ?getDirectSignal\@BlockLegacy\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     virtual int getDirectSignal(class BlockSource &, class BlockPos const &, int) const;
     /**
-     * @vftbl 59
-     * @symbol __unk_vfn_59
+     * @vftbl 62
+     * @symbol __unk_vfn_62
      */
-    virtual void __unk_vfn_59();
+    virtual void __unk_vfn_62();
     /**
-     * @vftbl 60
-     * @symbol __unk_vfn_60
+     * @vftbl 63
+     * @symbol __unk_vfn_63
      */
-    virtual void __unk_vfn_60();
+    virtual void __unk_vfn_63();
     /**
-     * @vftbl 61
+     * @vftbl 64
      * @symbol ?canContainLiquid\@BlockLegacy\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @vftbl 62
+     * @vftbl 65
      * @symbol ?getRequiredMedium\@BlockLegacy\@\@UEBA?AV?$optional\@VHashedString\@\@\@std\@\@XZ
      */
     virtual class std::optional<class HashedString> getRequiredMedium() const;
     /**
-     * @vftbl 63
+     * @vftbl 66
      * @symbol ?shouldConnectToRedstone\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     virtual bool shouldConnectToRedstone(class BlockSource &, class BlockPos const &, int) const;
     /**
-     * @vftbl 64
+     * @vftbl 67
      * @symbol ?handlePrecipitation\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@MM\@Z
      */
     virtual void handlePrecipitation(class BlockSource &, class BlockPos const &, float, float) const;
     /**
-     * @vftbl 65
+     * @vftbl 68
      * @symbol ?canBeUsedInCommands\@BlockLegacy\@\@UEBA_NAEBVBaseGameVersion\@\@\@Z
      */
     virtual bool canBeUsedInCommands(class BaseGameVersion const &) const;
     /**
-     * @vftbl 66
+     * @vftbl 69
      * @symbol ?getThickness\@BlockLegacy\@\@UEBAMXZ
      */
     virtual float getThickness() const;
     /**
-     * @vftbl 67
+     * @vftbl 70
      * @symbol ?getFlexibility\@BlockLegacy\@\@UEBAMAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual float getFlexibility(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 68
+     * @vftbl 71
      * @symbol ?checkIsPathable\@BlockLegacy\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @vftbl 69
+     * @vftbl 72
      * @symbol ?shouldDispense\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@\@Z
      */
     virtual bool shouldDispense(class BlockSource &, class Container &) const;
     /**
-     * @vftbl 70
+     * @vftbl 73
      * @symbol ?dispense\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
     /**
-     * @vftbl 71
+     * @vftbl 74
      * @symbol ?transformOnFall\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@M\@Z
      */
     virtual void transformOnFall(class BlockSource &, class BlockPos const &, class Actor *, float) const;
     /**
-     * @vftbl 72
+     * @vftbl 75
      * @symbol ?onRedstoneUpdate\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
      */
     virtual void onRedstoneUpdate(class BlockSource &, class BlockPos const &, int, bool) const;
     /**
-     * @vftbl 73
+     * @vftbl 76
      * @symbol ?onMove\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void onMove(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @vftbl 74
-     * @symbol __unk_vfn_74
+     * @vftbl 77
+     * @symbol __unk_vfn_77
      */
-    virtual void __unk_vfn_74();
+    virtual void __unk_vfn_77();
     /**
-     * @vftbl 75
+     * @vftbl 78
      * @symbol ?movedByPiston\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void movedByPiston(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 76
+     * @vftbl 79
      * @symbol ?onStructureBlockPlace\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void onStructureBlockPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 77
+     * @vftbl 80
      * @symbol ?onStructureNeighborBlockPlace\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void onStructureNeighborBlockPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 78
+     * @vftbl 81
      * @symbol ?setupRedstoneComponent\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void setupRedstoneComponent(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 79
+     * @vftbl 82
      * @symbol ?getRedstoneProperty\@BlockLegacy\@\@UEBA?AW4BlockProperty\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual enum class BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 80
+     * @vftbl 83
      * @symbol ?updateEntityAfterFallOn\@BlockLegacy\@\@UEBAXAEBVBlockPos\@\@AEAUUpdateEntityAfterFallOnInterface\@\@\@Z
      */
     virtual void updateEntityAfterFallOn(class BlockPos const &, struct UpdateEntityAfterFallOnInterface &) const;
     /**
-     * @vftbl 81
-     * @symbol __unk_vfn_81
+     * @vftbl 84
+     * @symbol __unk_vfn_84
      */
-    virtual void __unk_vfn_81();
+    virtual void __unk_vfn_84();
     /**
-     * @vftbl 82
+     * @vftbl 85
      * @symbol ?isFilteredOut\@BlockLegacy\@\@UEBA_NW4BlockRenderLayer\@\@\@Z
      */
     virtual bool isFilteredOut(enum class BlockRenderLayer) const;
     /**
-     * @vftbl 83
+     * @vftbl 86
      * @symbol ?isPreservingMediumWhenPlaced\@BlockLegacy\@\@UEBA_NPEBV1\@\@Z
      */
     virtual bool isPreservingMediumWhenPlaced(class BlockLegacy const *) const;
     /**
-     * @vftbl 84
+     * @vftbl 87
      * @symbol ?ignoreEntitiesOnPistonMove\@BlockLegacy\@\@UEBA_NAEBVBlock\@\@\@Z
      */
     virtual bool ignoreEntitiesOnPistonMove(class Block const &) const;
     /**
-     * @vftbl 85
+     * @vftbl 88
      * @symbol ?onFertilized\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@W4FertilizerType\@\@\@Z
      */
     virtual bool onFertilized(class BlockSource &, class BlockPos const &, class Actor *, enum class FertilizerType) const;
     /**
-     * @vftbl 86
+     * @vftbl 89
      * @symbol ?mayConsumeFertilizer\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@\@Z
      */
     virtual bool mayConsumeFertilizer(class BlockSource &) const;
     /**
-     * @vftbl 87
+     * @vftbl 90
      * @symbol ?canBeFertilized\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool canBeFertilized(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @vftbl 88
+     * @vftbl 91
      * @symbol ?mayPick\@BlockLegacy\@\@UEBA_NXZ
      */
     virtual bool mayPick() const;
     /**
-     * @vftbl 89
+     * @vftbl 92
      * @symbol ?mayPick\@BlockLegacy\@\@UEBA_NAEBVBlockSource\@\@AEBVBlock\@\@_N\@Z
      */
     virtual bool mayPick(class BlockSource const &, class Block const &, bool) const;
     /**
-     * @vftbl 90
+     * @vftbl 93
      * @symbol ?mayPlace\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
-     * @vftbl 91
+     * @vftbl 94
      * @symbol ?mayPlace\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 92
+     * @vftbl 95
      * @symbol ?mayPlaceOn\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool mayPlaceOn(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 93
+     * @vftbl 96
      * @symbol ?tryToPlace\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@PEBUActorBlockSyncMessage\@\@\@Z
      */
     virtual bool tryToPlace(class BlockSource &, class BlockPos const &, class Block const &, struct ActorBlockSyncMessage const *) const;
     /**
-     * @vftbl 94
+     * @vftbl 97
      * @symbol ?tryToTill\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@AEAVItemStack\@\@\@Z
      */
     virtual bool tryToTill(class BlockSource &, class BlockPos const &, class Actor &, class ItemStack &) const;
     /**
-     * @vftbl 95
+     * @vftbl 98
      * @symbol ?breaksFallingBlocks\@BlockLegacy\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
-     * @vftbl 96
+     * @vftbl 99
      * @symbol ?destroy\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@PEAVActor\@\@\@Z
      */
     virtual void destroy(class BlockSource &, class BlockPos const &, class Block const &, class Actor *) const;
     /**
-     * @vftbl 97
+     * @vftbl 100
      * @symbol ?getIgnoresDestroyPermissions\@BlockLegacy\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool getIgnoresDestroyPermissions(class Actor &, class BlockPos const &) const;
     /**
-     * @vftbl 98
+     * @vftbl 101
      * @symbol ?neighborChanged\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     virtual void neighborChanged(class BlockSource &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @vftbl 99
+     * @vftbl 102
      * @symbol ?getSecondPart\@BlockLegacy\@\@UEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@AEAV3\@\@Z
      */
     virtual bool getSecondPart(class BlockSource const &, class BlockPos const &, class BlockPos &) const;
     /**
-     * @vftbl 100
+     * @vftbl 103
      * @symbol ?playerWillDestroy\@BlockLegacy\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual bool playerWillDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
-     * @vftbl 101
+     * @vftbl 104
      * @symbol ?spawnResources\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAVRandomize\@\@AEBUResourceDropsContext\@\@\@Z
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &) const;
     /**
-     * @vftbl 102
+     * @vftbl 105
      * @symbol ?asItemInstance\@BlockLegacy\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
-     * @vftbl 103
+     * @vftbl 106
      * @symbol ?trySpawnResourcesOnExplosion\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAVRandomize\@\@M\@Z
      */
     virtual void trySpawnResourcesOnExplosion(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, float) const;
     /**
-     * @vftbl 104
-     * @symbol __unk_vfn_104
+     * @vftbl 107
+     * @symbol __unk_vfn_107
      */
-    virtual void __unk_vfn_104();
+    virtual void __unk_vfn_107();
     /**
-     * @vftbl 105
+     * @vftbl 108
      * @symbol ?getPlacementBlock\@BlockLegacy\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
-     * @vftbl 106
+     * @vftbl 109
      * @symbol ?calcVariant\@BlockLegacy\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVColor\@mce\@\@\@Z
      */
     virtual int calcVariant(class BlockSource &, class BlockPos const &, class mce::Color const &) const;
     /**
-     * @vftbl 107
+     * @vftbl 110
      * @symbol ?isAttachedTo\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAV3\@\@Z
      */
     virtual bool isAttachedTo(class BlockSource &, class BlockPos const &, class BlockPos &) const;
     /**
-     * @vftbl 108
+     * @vftbl 111
      * @symbol ?attack\@BlockLegacy\@\@UEBA_NPEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool attack(class Player *, class BlockPos const &) const;
     /**
-     * @vftbl 109
-     * @symbol ?handleEntityInside\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@AEAVVec3\@\@\@Z
-     */
-    virtual void handleEntityInside(class BlockSource &, class BlockPos const &, class Actor *, class Vec3 &) const;
-    /**
-     * @vftbl 110
+     * @vftbl 112
      * @symbol ?shouldTriggerOnStandOn\@BlockLegacy\@\@UEBA_NAEAVActor\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool shouldTriggerOnStandOn(class Actor &, class BlockPos const &) const;
     /**
-     * @vftbl 111
+     * @vftbl 113
      * @symbol ?shouldTriggerEntityInside\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
     virtual bool shouldTriggerEntityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
-     * @vftbl 112
-     * @symbol ?entityInside\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
-     */
-    virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
-    /**
-     * @vftbl 113
+     * @vftbl 114
      * @symbol ?canBeBuiltOver\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlockItem\@\@\@Z
      */
     virtual bool canBeBuiltOver(class BlockSource &, class BlockPos const &, class BlockItem const &) const;
     /**
-     * @vftbl 114
+     * @vftbl 115
      * @symbol ?canBeBuiltOver\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool canBeBuiltOver(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 115
+     * @vftbl 116
      * @symbol ?triggerEvent\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@HH\@Z
      */
     virtual void triggerEvent(class BlockSource &, class BlockPos const &, int, int) const;
     /**
-     * @vftbl 116
+     * @vftbl 117
      * @symbol ?executeEvent\@BlockLegacy\@\@UEBAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVRenderParams\@\@\@Z
      */
     virtual void executeEvent(std::string const &, class RenderParams &) const;
     /**
-     * @vftbl 117
+     * @vftbl 118
      * @symbol ?executeEvent\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVActor\@\@\@Z
      */
     virtual void executeEvent(class BlockSource &, class BlockPos const &, class Block const &, std::string const &, class Actor &) const;
     /**
-     * @vftbl 118
+     * @vftbl 119
      * @symbol ?executeTrigger\@BlockLegacy\@\@UEBA_NAEBVDefinitionTrigger\@\@AEAVRenderParams\@\@\@Z
      */
     virtual bool executeTrigger(class DefinitionTrigger const &, class RenderParams &) const;
     /**
-     * @vftbl 119
+     * @vftbl 120
      * @symbol ?forceExecuteTrigger\@BlockLegacy\@\@UEBAXAEBVDefinitionTrigger\@\@AEAVRenderParams\@\@\@Z
      */
     virtual void forceExecuteTrigger(class DefinitionTrigger const &, class RenderParams &) const;
     /**
-     * @vftbl 120
+     * @vftbl 121
      * @symbol ?getMobToSpawn\@BlockLegacy\@\@UEBAPEBVMobSpawnerData\@\@AEBVSpawnConditions\@\@AEAVBlockSource\@\@\@Z
      */
     virtual class MobSpawnerData const * getMobToSpawn(class SpawnConditions const &, class BlockSource &) const;
     /**
-     * @vftbl 121
+     * @vftbl 122
      * @symbol ?shouldStopFalling\@BlockLegacy\@\@UEBA_NAEAVActor\@\@\@Z
      */
     virtual bool shouldStopFalling(class Actor &) const;
-    /**
-     * @vftbl 122
-     * @symbol __unk_vfn_122
-     */
-    virtual void __unk_vfn_122();
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -666,199 +666,199 @@ public:
     virtual void __unk_vfn_124();
     /**
      * @vftbl 125
+     * @symbol __unk_vfn_125
+     */
+    virtual void __unk_vfn_125();
+    /**
+     * @vftbl 126
      * @symbol ?getComparatorSignal\@BlockLegacy\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@E\@Z
      */
     virtual int getComparatorSignal(class BlockSource &, class BlockPos const &, class Block const &, unsigned char) const;
     /**
-     * @vftbl 126
+     * @vftbl 127
      * @symbol ?canSlide\@BlockLegacy\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool canSlide(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 127
-     * @symbol __unk_vfn_127
-     */
-    virtual void __unk_vfn_127();
-    /**
      * @vftbl 128
+     * @symbol __unk_vfn_128
+     */
+    virtual void __unk_vfn_128();
+    /**
+     * @vftbl 129
      * @symbol ?canSpawnAt\@BlockLegacy\@\@UEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool canSpawnAt(class BlockSource const &, class BlockPos const &) const;
     /**
-     * @vftbl 129
+     * @vftbl 130
      * @symbol ?notifySpawnedAt\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void notifySpawnedAt(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 130
-     * @symbol __unk_vfn_130
-     */
-    virtual void __unk_vfn_130();
-    /**
      * @vftbl 131
+     * @symbol __unk_vfn_131
+     */
+    virtual void __unk_vfn_131();
+    /**
+     * @vftbl 132
      * @symbol ?getIconYOffset\@BlockLegacy\@\@UEBAHXZ
      */
     virtual int getIconYOffset() const;
     /**
-     * @vftbl 132
+     * @vftbl 133
      * @symbol ?buildDescriptionId\@BlockLegacy\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlock\@\@\@Z
      */
     virtual std::string buildDescriptionId(class Block const &) const;
     /**
-     * @vftbl 133
+     * @vftbl 134
      * @symbol ?isAuxValueRelevantForPicking\@BlockLegacy\@\@UEBA_NXZ
      */
     virtual bool isAuxValueRelevantForPicking() const;
     /**
-     * @vftbl 134
+     * @vftbl 135
      * @symbol ?getColor\@BlockLegacy\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getColor(class Block const &) const;
     /**
-     * @vftbl 135
+     * @vftbl 136
      * @symbol ?getColor\@BlockLegacy\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual int getColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @vftbl 136
+     * @vftbl 137
      * @symbol ?getColorAtPos\@BlockLegacy\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual int getColorAtPos(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 137
+     * @vftbl 138
      * @symbol ?getColorForParticle\@BlockLegacy\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual int getColorForParticle(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @vftbl 138
+     * @vftbl 139
      * @symbol ?isSeasonTinted\@BlockLegacy\@\@UEBA_NAEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool isSeasonTinted(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 139
+     * @vftbl 140
      * @symbol ?onGraphicsModeChanged\@BlockLegacy\@\@UEAAXAEBUBlockGraphicsModeChangeContext\@\@\@Z
      */
     virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
     /**
-     * @vftbl 140
+     * @vftbl 141
      * @symbol ?getShadeBrightness\@BlockLegacy\@\@UEBAMAEBVBlock\@\@\@Z
      */
     virtual float getShadeBrightness(class Block const &) const;
     /**
-     * @vftbl 141
-     * @symbol ?getVisualShapeInWorld\@BlockLegacy\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEAV2\@_N\@Z
-     */
-    virtual class AABB const & getVisualShapeInWorld(class Block const &, class IConstBlockSource const &, class BlockPos const &, class AABB &, bool) const;
-    /**
      * @vftbl 142
-     * @symbol ?getVisualShape\@BlockLegacy\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@_N\@Z
-     */
-    virtual class AABB const & getVisualShape(class Block const &, class AABB &, bool) const;
-    /**
-     * @vftbl 143
-     * @symbol ?getUIShape\@BlockLegacy\@\@UEBAAEBVAABB\@\@AEBVBlock\@\@AEAV2\@\@Z
-     */
-    virtual class AABB const & getUIShape(class Block const &, class AABB &) const;
-    /**
-     * @vftbl 144
      * @symbol ?telemetryVariant\@BlockLegacy\@\@UEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual int telemetryVariant(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 145
+     * @vftbl 143
      * @symbol ?getVariant\@BlockLegacy\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @vftbl 146
+     * @vftbl 144
      * @symbol ?canSpawnOn\@BlockLegacy\@\@UEBA_NPEAVActor\@\@\@Z
      */
     virtual bool canSpawnOn(class Actor *) const;
     /**
-     * @vftbl 147
+     * @vftbl 145
      * @symbol ?getRenderBlock\@BlockLegacy\@\@UEBAAEBVBlock\@\@XZ
      */
     virtual class Block const & getRenderBlock() const;
     /**
-     * @vftbl 148
+     * @vftbl 146
      * @symbol ?getMappedFace\@BlockLegacy\@\@UEBAEEAEBVBlock\@\@\@Z
      */
     virtual unsigned char getMappedFace(unsigned char, class Block const &) const;
     /**
-     * @vftbl 149
+     * @vftbl 147
      * @symbol ?getFaceFlip\@BlockLegacy\@\@UEBA?AW4Flip\@\@EAEBVBlock\@\@\@Z
      */
     virtual enum class Flip getFaceFlip(unsigned char, class Block const &) const;
     /**
-     * @vftbl 150
+     * @vftbl 148
      * @symbol ?animateTick\@BlockLegacy\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @vftbl 151
+     * @vftbl 149
      * @symbol ?init\@BlockLegacy\@\@UEAAAEAV1\@XZ
      */
     virtual class BlockLegacy & init();
     /**
-     * @vftbl 152
+     * @vftbl 150
      * @symbol ?getLightEmission\@BlockLegacy\@\@MEBA?AUBrightness\@\@AEBVBlock\@\@\@Z
      */
     virtual struct Brightness getLightEmission(class Block const &) const;
     /**
-     * @vftbl 153
+     * @vftbl 151
      * @symbol ?addState\@BlockLegacy\@\@UEAAAEAV1\@AEBVBlockState\@\@\@Z
      */
     virtual class BlockLegacy & addState(class BlockState const &);
     /**
-     * @vftbl 154
+     * @vftbl 152
      * @symbol ?addState\@BlockLegacy\@\@UEAAAEAV1\@AEBVBlockState\@\@_K\@Z
      */
     virtual class BlockLegacy & addState(class BlockState const &, unsigned __int64);
     /**
-     * @vftbl 155
-     * @symbol __unk_vfn_155
+     * @vftbl 153
+     * @symbol __unk_vfn_153
      */
-    virtual void __unk_vfn_155();
+    virtual void __unk_vfn_153();
     /**
-     * @vftbl 156
+     * @vftbl 154
      * @symbol ?tryLegacyUpgrade\@BlockLegacy\@\@UEBAPEBVBlock\@\@G\@Z
      */
     virtual class Block const * tryLegacyUpgrade(unsigned short) const;
     /**
-     * @vftbl 157
+     * @vftbl 155
      * @symbol ?dealsContactDamage\@BlockLegacy\@\@UEBA_NAEBVActor\@\@AEBVBlock\@\@_N\@Z
      */
     virtual bool dealsContactDamage(class Actor const &, class Block const &, bool) const;
     /**
-     * @vftbl 158
+     * @vftbl 156
      * @symbol ?tryGetInfested\@BlockLegacy\@\@UEBAPEBVBlock\@\@AEBV2\@\@Z
      */
     virtual class Block const * tryGetInfested(class Block const &) const;
     /**
-     * @vftbl 159
+     * @vftbl 157
      * @symbol ?tryGetUninfested\@BlockLegacy\@\@UEBAPEBVBlock\@\@AEBV2\@\@Z
      */
     virtual class Block const * tryGetUninfested(class Block const &) const;
     /**
-     * @vftbl 160
+     * @vftbl 158
      * @symbol ?_addHardCodedBlockComponents\@BlockLegacy\@\@UEAAXXZ
      */
     virtual void _addHardCodedBlockComponents();
     /**
-     * @vftbl 161
+     * @vftbl 159
      * @symbol ?onRemove\@BlockLegacy\@\@MEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 162
+     * @vftbl 160
      * @symbol ?onExploded\@BlockLegacy\@\@MEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@\@Z
      */
     virtual void onExploded(class BlockSource &, class BlockPos const &, class Actor *) const;
     /**
-     * @vftbl 163
+     * @vftbl 161
      * @symbol ?onStandOn\@BlockLegacy\@\@MEBAXAEAVEntityContext\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void onStandOn(class EntityContext &, class BlockPos const &) const;
+    /**
+     * @vftbl 162
+     * @symbol __unk_vfn_162
+     */
+    virtual void __unk_vfn_162();
+    /**
+     * @vftbl 163
+     * @symbol __unk_vfn_163
+     */
+    virtual void __unk_vfn_163();
     /**
      * @vftbl 164
      * @symbol __unk_vfn_164
@@ -866,146 +866,136 @@ public:
     virtual void __unk_vfn_164();
     /**
      * @vftbl 165
-     * @symbol __unk_vfn_165
-     */
-    virtual void __unk_vfn_165();
-    /**
-     * @vftbl 166
-     * @symbol __unk_vfn_166
-     */
-    virtual void __unk_vfn_166();
-    /**
-     * @vftbl 167
      * @symbol ?onPlace\@BlockLegacy\@\@MEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 168
+     * @vftbl 166
      * @symbol ?onFallOn\@BlockLegacy\@\@MEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@M\@Z
      */
     virtual void onFallOn(class BlockSource &, class BlockPos const &, class Actor &, float) const;
     /**
-     * @vftbl 169
-     * @symbol __unk_vfn_169
+     * @vftbl 167
+     * @symbol __unk_vfn_167
      */
-    virtual void __unk_vfn_169();
+    virtual void __unk_vfn_167();
     /**
-     * @vftbl 170
+     * @vftbl 168
      * @symbol ?tick\@BlockLegacy\@\@MEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @vftbl 171
+     * @vftbl 169
      * @symbol ?randomTick\@BlockLegacy\@\@MEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual void randomTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @vftbl 172
+     * @vftbl 170
      * @symbol ?shouldRandomTick\@BlockLegacy\@\@MEBA_NXZ
      */
     virtual bool shouldRandomTick() const;
     /**
-     * @vftbl 173
-     * @symbol __unk_vfn_173
+     * @vftbl 171
+     * @symbol __unk_vfn_171
      */
-    virtual void __unk_vfn_173();
+    virtual void __unk_vfn_171();
     /**
-     * @vftbl 174
-     * @symbol ?clip\@BlockLegacy\@\@MEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_N\@Z
-     */
-    virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
-    /**
-     * @vftbl 175
+     * @vftbl 172
      * @symbol ?use\@BlockLegacy\@\@MEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@EV?$optional\@VVec3\@\@\@std\@\@\@Z
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char, class std::optional<class Vec3>) const;
     /**
-     * @vftbl 176
+     * @vftbl 173
      * @symbol ?use\@BlockLegacy\@\@MEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @vftbl 177
-     * @symbol __unk_vfn_177
+     * @vftbl 174
+     * @symbol __unk_vfn_174
      */
-    virtual void __unk_vfn_177();
+    virtual void __unk_vfn_174();
     /**
-     * @vftbl 178
+     * @vftbl 175
      * @symbol ?canSurvive\@BlockLegacy\@\@MEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool canSurvive(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 179
+     * @vftbl 176
      * @symbol ?getRenderLayer\@BlockLegacy\@\@MEBA?AW4BlockRenderLayer\@\@XZ
      */
     virtual enum class BlockRenderLayer getRenderLayer() const;
     /**
-     * @vftbl 180
+     * @vftbl 177
      * @symbol ?getRenderLayer\@BlockLegacy\@\@MEBA?AW4BlockRenderLayer\@\@AEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual enum class BlockRenderLayer getRenderLayer(class Block const &, class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 181
+     * @vftbl 178
      * @symbol ?getExtraRenderLayers\@BlockLegacy\@\@MEBAHXZ
      */
     virtual int getExtraRenderLayers() const;
     /**
-     * @vftbl 182
+     * @vftbl 179
      * @symbol ?getExplosionResistance\@BlockLegacy\@\@MEBAMXZ
      */
     virtual float getExplosionResistance() const;
     /**
-     * @vftbl 183
+     * @vftbl 180
      * @symbol ?getLight\@BlockLegacy\@\@MEBA?AUBrightness\@\@AEBVBlock\@\@\@Z
      */
     virtual struct Brightness getLight(class Block const &) const;
     /**
-     * @vftbl 184
+     * @vftbl 181
      * @symbol ?getEmissiveBrightness\@BlockLegacy\@\@MEBA?AUBrightness\@\@AEBVBlock\@\@\@Z
      */
     virtual struct Brightness getEmissiveBrightness(class Block const &) const;
     /**
-     * @vftbl 185
+     * @vftbl 182
      * @symbol ?getMapColor\@BlockLegacy\@\@MEBA?AVColor\@mce\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual class mce::Color getMapColor(class BlockSource &, class BlockPos const &, class Block const &) const;
     /**
-     * @vftbl 186
-     * @symbol __unk_vfn_186
+     * @vftbl 183
+     * @symbol __unk_vfn_183
      */
-    virtual void __unk_vfn_186();
+    virtual void __unk_vfn_183();
     /**
-     * @vftbl 187
+     * @vftbl 184
      * @symbol ?playerDestroy\@BlockLegacy\@\@MEBAXAEAVPlayer\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual void playerDestroy(class Player &, class BlockPos const &, class Block const &) const;
     /**
-     * @vftbl 188
+     * @vftbl 185
      * @symbol ?getResourceItem\@BlockLegacy\@\@MEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
     /**
-     * @vftbl 189
+     * @vftbl 186
      * @symbol ?getResourceCount\@BlockLegacy\@\@MEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @vftbl 190
+     * @vftbl 187
      * @symbol ?getSilkTouchItemInstance\@BlockLegacy\@\@MEBA?AVItemInstance\@\@AEBVBlock\@\@\@Z
      */
     virtual class ItemInstance getSilkTouchItemInstance(class Block const &) const;
     /**
-     * @vftbl 191
+     * @vftbl 188
+     * @symbol ?entityInside\@BlockLegacy\@\@EEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
+     */
+    virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
+    /**
+     * @vftbl 189
      * @symbol ?_executeEvent\@BlockLegacy\@\@EEBAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$vector\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$CBV12\@\@std\@\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$CBV12\@\@std\@\@\@2\@\@3\@AEAVRenderParams\@\@\@Z
      */
     virtual void _executeEvent(std::string const &, std::vector<struct std::pair<std::string const, std::string const>> &, class RenderParams &) const;
     /**
-     * @vftbl 192
+     * @vftbl 190
      * @symbol ?_executeTrigger\@BlockLegacy\@\@EEBA_NAEBVDefinitionTrigger\@\@AEAV?$vector\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$CBV12\@\@std\@\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$CBV12\@\@std\@\@\@2\@\@std\@\@AEAVRenderParams\@\@\@Z
      */
     virtual bool _executeTrigger(class DefinitionTrigger const &, std::vector<struct std::pair<std::string const, std::string const>> &, class RenderParams &) const;
     /**
-     * @vftbl 193
+     * @vftbl 191
      * @symbol ?_forceExecuteTrigger\@BlockLegacy\@\@EEBAXAEBVDefinitionTrigger\@\@AEAV?$vector\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$CBV12\@\@std\@\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$CBV12\@\@std\@\@\@2\@\@std\@\@AEAVRenderParams\@\@\@Z
      */
     virtual void _forceExecuteTrigger(class DefinitionTrigger const &, std::vector<struct std::pair<std::string const, std::string const>> &, class RenderParams &) const;
@@ -1200,13 +1190,17 @@ public:
      */
     MCAPI class BlockLegacy & addTrait(class BlockTrait::ITrait const &);
     /**
+     * @symbol ?anyOf\@BlockLegacy\@\@QEBA_NAEBV?$vector\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@V?$allocator\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@\@2\@\@std\@\@\@Z
+     */
+    MCAPI bool anyOf(std::vector<class std::reference_wrapper<class HashedString const>> const &) const;
+    /**
      * @symbol ?anyOf\@BlockLegacy\@\@QEBA_NV?$initializer_list\@$$CBVHashedString\@\@\@std\@\@\@Z
      */
     MCAPI bool anyOf(class std::initializer_list<class HashedString const>) const;
     /**
-     * @symbol ?anyOf\@BlockLegacy\@\@QEBA_NAEBV?$vector\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@V?$allocator\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@\@2\@\@std\@\@\@Z
+     * @symbol ?clip\@BlockLegacy\@\@QEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_NAEBVAABB\@\@\@Z
      */
-    MCAPI bool anyOf(std::vector<class std::reference_wrapper<class HashedString const>> const &) const;
+    MCAPI class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool, class AABB const &) const;
     /**
      * @symbol ?createBlockPermutations\@BlockLegacy\@\@QEAAXI\@Z
      */
@@ -1215,6 +1209,10 @@ public:
      * @symbol ?createWeakPtr\@BlockLegacy\@\@QEBA?AV?$WeakPtr\@VBlockLegacy\@\@\@\@XZ
      */
     MCAPI class WeakPtr<class BlockLegacy> createWeakPtr() const;
+    /**
+     * @symbol ?finalizeBlockComponentStorage\@BlockLegacy\@\@QEAAXXZ
+     */
+    MCAPI void finalizeBlockComponentStorage();
     /**
      * @symbol ?forEachBlockPermutation\@BlockLegacy\@\@QEBAXV?$function\@$$A6A_NAEBVBlock\@\@\@Z\@std\@\@\@Z
      */
@@ -1384,9 +1382,9 @@ public:
      */
     MCAPI class BlockLegacy & setExperienceDrop(struct IntRange);
     /**
-     * @symbol ?setExplodeable\@BlockLegacy\@\@QEAAAEAV1\@M\@Z
+     * @symbol ?setExplosionResistance\@BlockLegacy\@\@QEAAAEAV1\@M\@Z
      */
-    MCAPI class BlockLegacy & setExplodeable(float);
+    MCAPI class BlockLegacy & setExplosionResistance(float);
     /**
      * @symbol ?setFlammable\@BlockLegacy\@\@QEAAAEAV1\@W4FlameOdds\@\@W4BurnOdds\@\@W4LavaFlammable\@\@\@Z
      */
@@ -1456,17 +1454,21 @@ public:
      */
     MCAPI void setSolid(bool);
     /**
-     * @symbol ?setVisualShape\@BlockLegacy\@\@QEAAXAEBVVec3\@\@0\@Z
-     */
-    MCAPI void setVisualShape(class Vec3 const &, class Vec3 const &);
-    /**
      * @symbol ?setVisualShape\@BlockLegacy\@\@QEAAXAEBVAABB\@\@\@Z
      */
     MCAPI void setVisualShape(class AABB const &);
     /**
+     * @symbol ?setVisualShape\@BlockLegacy\@\@QEAAXAEBVVec3\@\@0\@Z
+     */
+    MCAPI void setVisualShape(class Vec3 const &, class Vec3 const &);
+    /**
      * @symbol ?tryGetStateFromLegacyData\@BlockLegacy\@\@QEBAPEBVBlock\@\@G_N\@Z
      */
     MCAPI class Block const * tryGetStateFromLegacyData(unsigned short, bool) const;
+    /**
+     * @symbol ?updateTallestCollisionShape\@BlockLegacy\@\@QEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVAABB\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@AEAV5\@AEBVVec3\@\@AEAM\@Z
+     */
+    MCAPI bool updateTallestCollisionShape(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const &, class optional_ref<class GetCollisionShapeInterface const>, class AABB &, class Vec3 const &, float &) const;
     /**
      * @symbol ?BLOCK_DESCRIPTION_PREFIX\@BlockLegacy\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
@@ -1496,27 +1498,19 @@ public:
      */
     MCAPI static unsigned char getPlacementFacingAllExceptAxisY(class Actor const &, class BlockPos const &, float);
     /**
-     * @symbol ?popResource\@BlockLegacy\@\@SAPEAVItemActor\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVItemInstance\@\@\@Z
-     */
-    MCAPI static class ItemActor * popResource(class BlockSource &, class BlockPos const &, class ItemInstance const &);
-    /**
      * @symbol ?popResource\@BlockLegacy\@\@SAPEAVItemActor\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVItemStack\@\@\@Z
      */
     MCAPI static class ItemActor * popResource(class BlockSource &, class BlockPos const &, class ItemStack const &);
     /**
-     * @symbol ?spawnResources\@BlockLegacy\@\@SAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandomize\@\@M\@Z
+     * @symbol ?popResource\@BlockLegacy\@\@SAPEAVItemActor\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVItemInstance\@\@\@Z
      */
-    MCAPI static void spawnResources(class BlockSource &, class BlockPos const &, class Randomize &, float);
+    MCAPI static class ItemActor * popResource(class BlockSource &, class BlockPos const &, class ItemInstance const &);
 
 //protected:
     /**
      * @symbol ?_getBlockShape\@BlockLegacy\@\@IEBA?AW4BlockShape\@\@XZ
      */
     MCAPI enum class BlockShape _getBlockShape() const;
-    /**
-     * @symbol ?clip\@BlockLegacy\@\@IEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_NAEBVAABB\@\@\@Z
-     */
-    MCAPI class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool, class AABB const &) const;
     /**
      * @symbol ?forEachBlockPermutationMutable\@BlockLegacy\@\@IEAA_NV?$function\@$$A6A_NAEAVBlock\@\@\@Z\@std\@\@\@Z
      */

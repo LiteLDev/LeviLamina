@@ -26,17 +26,29 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDEFERREDEVENTLISTENER
     /**
-     * @symbol ?onFlushAfterEvents\@ScriptDeferredEventListener\@\@UEAA_NXZ
+     * @symbol ?onFlushSystemAfterEvents\@ScriptDeferredEventListener\@\@UEAA_NXZ
      */
-    MCVAPI bool onFlushAfterEvents();
+    MCVAPI bool onFlushSystemAfterEvents();
+    /**
+     * @symbol ?onFlushWorldAfterEvents\@ScriptDeferredEventListener\@\@UEAA_NXZ
+     */
+    MCVAPI bool onFlushWorldAfterEvents();
     /**
      * @symbol ?onLevelTickEnd\@ScriptDeferredEventListener\@\@UEAAXXZ
      */
     MCVAPI void onLevelTickEnd();
     /**
-     * @symbol ?onRunSystemEvents\@ScriptDeferredEventListener\@\@UEAA_NXZ
+     * @symbol ?onPostFlushAfterEvents\@ScriptDeferredEventListener\@\@UEAAXXZ
      */
-    MCVAPI bool onRunSystemEvents();
+    MCVAPI void onPostFlushAfterEvents();
+    /**
+     * @symbol ?onPreFlushAfterEvents\@ScriptDeferredEventListener\@\@UEAAXXZ
+     */
+    MCVAPI void onPreFlushAfterEvents();
+    /**
+     * @symbol ?onRunSystemTick\@ScriptDeferredEventListener\@\@UEAA_NXZ
+     */
+    MCVAPI bool onRunSystemTick();
 #endif
 
 };

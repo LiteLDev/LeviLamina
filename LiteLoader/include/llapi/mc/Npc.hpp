@@ -214,10 +214,6 @@ public:
      */
     MCAPI bool hasCreatePermission(class Actor &);
     /**
-     * @symbol ?toJson\@npc\@\@YA?AVValue\@Json\@\@AEBV?$variant\@UCommandAction\@npc\@\@UUrlAction\@2\@\@std\@\@\@Z
-     */
-    MCAPI class Json::Value toJson(class std::variant<struct npc::CommandAction, struct npc::UrlAction> const &);
-    /**
      * @symbol ?toJson\@npc\@\@YA?AVValue\@Json\@\@AEBUActionContainer\@1\@\@Z
      */
     MCAPI class Json::Value toJson(struct npc::ActionContainer const &);
@@ -225,6 +221,10 @@ public:
      * @symbol ?toJson\@npc\@\@YA?AVValue\@Json\@\@AEBUCommandAction\@1\@\@Z
      */
     MCAPI class Json::Value toJson(struct npc::CommandAction const &);
+    /**
+     * @symbol ?toJson\@npc\@\@YA?AVValue\@Json\@\@AEBV?$variant\@UCommandAction\@npc\@\@UUrlAction\@2\@\@std\@\@\@Z
+     */
+    MCAPI class Json::Value toJson(class std::variant<struct npc::CommandAction, struct npc::UrlAction> const &);
     /**
      * @symbol ?toJson\@npc\@\@YA?AVValue\@Json\@\@AEBUUrlAction\@1\@\@Z
      */

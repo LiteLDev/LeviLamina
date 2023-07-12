@@ -82,13 +82,13 @@ public:
      */
     MCAPI class MolangVariable const * _getMolangVariable(enum class MolangVariableIndex) const;
     /**
-     * @symbol ?_getOrAddMolangVariable\@MolangVariableMap\@\@AEAAPEAVMolangVariable\@\@W4MolangVariableIndex\@\@\@Z
-     */
-    MCAPI class MolangVariable * _getOrAddMolangVariable(enum class MolangVariableIndex);
-    /**
      * @symbol ?_getOrAddMolangVariable\@MolangVariableMap\@\@AEAAPEAVMolangVariable\@\@AEB_KPEBD_N\@Z
      */
     MCAPI class MolangVariable * _getOrAddMolangVariable(unsigned __int64 const &, char const *, bool);
+    /**
+     * @symbol ?_getOrAddMolangVariable\@MolangVariableMap\@\@AEAAPEAVMolangVariable\@\@W4MolangVariableIndex\@\@\@Z
+     */
+    MCAPI class MolangVariable * _getOrAddMolangVariable(enum class MolangVariableIndex);
 
 private:
 

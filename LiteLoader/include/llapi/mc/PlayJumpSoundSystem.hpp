@@ -21,10 +21,6 @@ namespace PlayJumpSoundSystem {
      */
     MCAPI struct TickingSystemWithInfo createPlayJumpSoundSystem();
     /**
-     * @symbol ?createPlayPowerJumpSoundSideBySideSystem\@PlayJumpSoundSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI struct TickingSystemWithInfo createPlayPowerJumpSoundSideBySideSystem();
-    /**
      * @symbol ?createPlayPowerJumpSoundSystem\@PlayJumpSoundSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI struct TickingSystemWithInfo createPlayPowerJumpSoundSystem();

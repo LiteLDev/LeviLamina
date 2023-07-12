@@ -31,5 +31,9 @@ public:
      * @symbol ?createStoreWasAutoJumpingClientSystem\@StoreWasAutoJumpingClientSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createStoreWasAutoJumpingClientSystem();
+    /**
+     * @symbol ?tickStoreWasAutoJumpingClientSystem\@StoreWasAutoJumpingClientSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@ULocalPlayerComponentFlag\@\@\@\@\@\@V?$Optional\@$$CBV?$FlagComponent\@UAutoJumpingFlag\@\@\@\@\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UWasAutoJumpingFlag\@\@\@\@\@\@\@Z
+     */
+    MCAPI static void tickStoreWasAutoJumpingClientSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct LocalPlayerComponentFlag>>, class Optional<class FlagComponent<struct AutoJumpingFlag> const>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct WasAutoJumpingFlag>>);
 
 };

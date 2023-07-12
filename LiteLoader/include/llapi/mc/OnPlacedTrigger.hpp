@@ -27,9 +27,15 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLACEDTRIGGER
     /**
-     * @symbol ??1OnPlacedTrigger\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI ~OnPlacedTrigger();
+    MCVAPI ~OnPlacedTrigger();
+#endif
+    /**
+     * @symbol ??0OnPlacedTrigger\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI OnPlacedTrigger(class OnPlacedTrigger &&);
 
 };

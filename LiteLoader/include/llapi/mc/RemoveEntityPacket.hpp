@@ -5,7 +5,8 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Packet.hpp"
+#include "Bedrock.hpp"
+#include "EntityServerPacket.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class RemoveEntityPacket.
  *
  */
-class RemoveEntityPacket : public Packet {
+class RemoveEntityPacket : public EntityServerPacket {
 
 #define AFTER_EXTRA
 // Add Member There

@@ -119,6 +119,10 @@ public:
      */
     MCAPI void registerLevelStorageManagerListener(class LevelStorageManager &);
     /**
+     * @symbol ?shouldStartGameSaveTimer\@GameplayUserManager\@\@QEBA_NXZ
+     */
+    MCAPI bool shouldStartGameSaveTimer() const;
+    /**
      * @symbol ?shuffleActiveUsers\@GameplayUserManager\@\@QEAAXAEAVRandom\@\@\@Z
      */
     MCAPI void shuffleActiveUsers(class Random &);
@@ -133,9 +137,9 @@ public:
 
 //private:
     /**
-     * @symbol ?_forActiveEachPlayer\@GameplayUserManager\@\@AEBAXV?$function\@$$A6A_NAEAVPlayer\@\@\@Z\@std\@\@_N\@Z
+     * @symbol ?_forEachActivePlayer\@GameplayUserManager\@\@AEBAXV?$function\@$$A6A_NAEAVPlayer\@\@\@Z\@std\@\@_N\@Z
      */
-    MCAPI void _forActiveEachPlayer(class std::function<bool (class Player &)>, bool) const;
+    MCAPI void _forEachActivePlayer(class std::function<bool (class Player &)>, bool) const;
     /**
      * @symbol ?_getGameplayUserManagerProxy\@GameplayUserManager\@\@AEAAAEAVGameplayUserManagerProxy\@\@XZ
      */

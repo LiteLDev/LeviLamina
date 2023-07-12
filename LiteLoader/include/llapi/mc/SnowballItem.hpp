@@ -6,7 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Json.hpp"
-#include "Item.hpp"
+#include "ComponentItem.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +17,7 @@
  * @brief MC class SnowballItem.
  *
  */
-class SnowballItem : public Item {
+class SnowballItem : public ComponentItem {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -37,6 +37,11 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
+     * @vftbl 3
+     * @symbol ?setDescriptionId\@SnowballItem\@\@UEAAAEAV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    virtual class SnowballItem & setDescriptionId(std::string const &);
+    /**
      * @vftbl 11
      * @symbol __unk_vfn_11
      */
@@ -52,15 +57,10 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @vftbl 19
-     * @symbol __unk_vfn_19
+     * @vftbl 21
+     * @symbol __unk_vfn_21
      */
-    virtual void __unk_vfn_19();
-    /**
-     * @vftbl 23
-     * @symbol ?isThrowable\@SnowballItem\@\@UEBA_NXZ
-     */
-    virtual bool isThrowable() const;
+    virtual void __unk_vfn_21();
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
@@ -107,15 +107,15 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @vftbl 84
-     * @symbol ?use\@SnowballItem\@\@UEBAAEAVItemStack\@\@AEAV2\@AEAVPlayer\@\@\@Z
-     */
-    virtual class ItemStack & use(class ItemStack &, class Player &) const;
-    /**
      * @vftbl 85
      * @symbol ?dispense\@SnowballItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
     virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
+    /**
+     * @vftbl 95
+     * @symbol ?buildDescriptionId\@SnowballItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
+     */
+    virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
      * @vftbl 115
      * @symbol __unk_vfn_115
@@ -126,5 +126,19 @@ public:
      * @symbol __unk_vfn_116
      */
     virtual void __unk_vfn_116();
+    /**
+     * @vftbl 119
+     * @symbol ?setIconInfo\@SnowballItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
+     */
+    virtual class Item & setIconInfo(std::string const &, int);
+    /**
+     * @vftbl 120
+     * @symbol ?getIconInfo\@SnowballItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
+     */
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
+    /**
+     * @symbol ??0SnowballItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
+     */
+    MCAPI SnowballItem(std::string const &, int);
 
 };

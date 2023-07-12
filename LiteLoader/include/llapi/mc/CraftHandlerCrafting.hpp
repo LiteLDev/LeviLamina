@@ -64,10 +64,6 @@ public:
      * @symbol ?_getLevelRecipes\@CraftHandlerCrafting\@\@EEBAPEBVRecipes\@\@XZ
      */
     virtual class Recipes const * _getLevelRecipes() const;
-    /**
-     * @symbol ??0CraftHandlerCrafting\@\@QEAA\@_NAEAVPlayer\@\@AEAVItemStackRequestActionCraftHandler\@\@\@Z
-     */
-    MCAPI CraftHandlerCrafting(bool, class Player &, class ItemStackRequestActionCraftHandler &);
 
 //private:
     /**
@@ -75,9 +71,9 @@ public:
      */
     MCAPI enum class ItemStackNetResult _handleAutoCraft(class ItemStackRequestActionCraftRecipeAuto const &);
     /**
-     * @symbol ?_handleCarefulRestoration\@CraftHandlerCrafting\@\@AEBAXAEBVItemInstance\@\@PEAVPlayer\@\@\@Z
+     * @symbol ?_handleCarefulRestoration\@CraftHandlerCrafting\@\@AEBAXAEBVItemInstance\@\@\@Z
      */
-    MCAPI void _handleCarefulRestoration(class ItemInstance const &, class Player *) const;
+    MCAPI void _handleCarefulRestoration(class ItemInstance const &) const;
     /**
      * @symbol ?_handleCraftOutput\@CraftHandlerCrafting\@\@AEAA?AW4ItemStackNetResult\@\@AEBV?$ItemStackRequestActionCraft\@V?$TypedServerNetId\@URecipeNetIdTag\@\@I$0A\@\@\@$0M\@\@\@\@Z
      */

@@ -25,10 +25,6 @@ public:
 
 public:
     /**
-     * @symbol ??0NetworkSession\@\@QEAA\@W4TransportLayer\@\@\@Z
-     */
-    MCAPI NetworkSession(enum class TransportLayer);
-    /**
      * @symbol ?getTransportLayer\@NetworkSession\@\@QEBA?AW4TransportLayer\@\@XZ
      */
     MCAPI enum class TransportLayer getTransportLayer() const;

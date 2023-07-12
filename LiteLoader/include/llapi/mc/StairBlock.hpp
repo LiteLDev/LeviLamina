@@ -36,17 +36,22 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
+     * @vftbl 5
+     * @symbol ?clip\@StairBlock\@\@UEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_N\@Z
+     */
+    virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
+    /**
+     * @vftbl 7
+     * @symbol ?addCollisionShapes\@StairBlock\@\@UEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
+     */
+    virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
+    /**
      * @vftbl 9
      * @symbol ?addAABBs\@StairBlock\@\@UEBAXAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@\@Z
      */
     virtual void addAABBs(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &) const;
     /**
-     * @vftbl 11
-     * @symbol ?addCollisionShapes\@StairBlock\@\@UEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
-     */
-    virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
-    /**
-     * @vftbl 13
+     * @vftbl 10
      * @symbol ?getOutline\@StairBlock\@\@UEBAAEBVAABB\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEAV2\@\@Z
      */
     virtual class AABB const & getOutline(class BlockSource &, class BlockPos const &, class AABB &) const;
@@ -56,35 +61,25 @@ public:
      */
     virtual bool getLiquidClipVolume(class BlockSource &, class BlockPos const &, class AABB &) const;
     /**
-     * @vftbl 17
+     * @vftbl 20
      * @symbol ?liquidCanFlowIntoFromDirection\@StairBlock\@\@UEBA_NEAEBV?$function\@$$A6AAEBVBlock\@\@AEBVBlockPos\@\@\@Z\@std\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool liquidCanFlowIntoFromDirection(unsigned char, class std::function<class Block const & (class BlockPos const &)> const &, class BlockPos const &) const;
     /**
-     * @vftbl 19
-     * @symbol __unk_vfn_19
-     */
-    virtual void __unk_vfn_19();
-    /**
      * @vftbl 22
+     * @symbol __unk_vfn_22
+     */
+    virtual void __unk_vfn_22();
+    /**
+     * @vftbl 25
      * @symbol ?canProvideSupport\@StairBlock\@\@UEBA_NAEBVBlock\@\@EW4BlockSupportType\@\@\@Z
      */
     virtual bool canProvideSupport(class Block const &, unsigned char, enum class BlockSupportType) const;
     /**
-     * @vftbl 25
+     * @vftbl 28
      * @symbol ?canConnect\@StairBlock\@\@UEBA_NAEBVBlock\@\@E0\@Z
      */
     virtual bool canConnect(class Block const &, unsigned char, class Block const &) const;
-    /**
-     * @vftbl 28
-     * @symbol __unk_vfn_28
-     */
-    virtual void __unk_vfn_28();
-    /**
-     * @vftbl 29
-     * @symbol __unk_vfn_29
-     */
-    virtual void __unk_vfn_29();
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -96,10 +91,10 @@ public:
      */
     virtual void __unk_vfn_32();
     /**
-     * @vftbl 33
-     * @symbol __unk_vfn_33
+     * @vftbl 34
+     * @symbol __unk_vfn_34
      */
-    virtual void __unk_vfn_33();
+    virtual void __unk_vfn_34();
     /**
      * @vftbl 35
      * @symbol __unk_vfn_35
@@ -110,11 +105,6 @@ public:
      * @symbol __unk_vfn_36
      */
     virtual void __unk_vfn_36();
-    /**
-     * @vftbl 37
-     * @symbol __unk_vfn_37
-     */
-    virtual void __unk_vfn_37();
     /**
      * @vftbl 38
      * @symbol __unk_vfn_38
@@ -136,6 +126,11 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
+     * @vftbl 42
+     * @symbol __unk_vfn_42
+     */
+    virtual void __unk_vfn_42();
+    /**
      * @vftbl 43
      * @symbol __unk_vfn_43
      */
@@ -145,11 +140,6 @@ public:
      * @symbol __unk_vfn_44
      */
     virtual void __unk_vfn_44();
-    /**
-     * @vftbl 45
-     * @symbol __unk_vfn_45
-     */
-    virtual void __unk_vfn_45();
     /**
      * @vftbl 46
      * @symbol __unk_vfn_46
@@ -166,85 +156,90 @@ public:
      */
     virtual void __unk_vfn_48();
     /**
-     * @vftbl 53
-     * @symbol __unk_vfn_53
+     * @vftbl 49
+     * @symbol __unk_vfn_49
      */
-    virtual void __unk_vfn_53();
+    virtual void __unk_vfn_49();
     /**
-     * @vftbl 59
-     * @symbol __unk_vfn_59
+     * @vftbl 50
+     * @symbol __unk_vfn_50
      */
-    virtual void __unk_vfn_59();
+    virtual void __unk_vfn_50();
     /**
-     * @vftbl 60
-     * @symbol __unk_vfn_60
+     * @vftbl 51
+     * @symbol __unk_vfn_51
      */
-    virtual void __unk_vfn_60();
+    virtual void __unk_vfn_51();
     /**
-     * @vftbl 74
-     * @symbol __unk_vfn_74
+     * @vftbl 56
+     * @symbol __unk_vfn_56
      */
-    virtual void __unk_vfn_74();
+    virtual void __unk_vfn_56();
     /**
-     * @vftbl 79
+     * @vftbl 62
+     * @symbol __unk_vfn_62
+     */
+    virtual void __unk_vfn_62();
+    /**
+     * @vftbl 63
+     * @symbol __unk_vfn_63
+     */
+    virtual void __unk_vfn_63();
+    /**
+     * @vftbl 77
+     * @symbol __unk_vfn_77
+     */
+    virtual void __unk_vfn_77();
+    /**
+     * @vftbl 82
      * @symbol ?getRedstoneProperty\@StairBlock\@\@UEBA?AW4BlockProperty\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual enum class BlockProperty getRedstoneProperty(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 81
-     * @symbol __unk_vfn_81
+     * @vftbl 84
+     * @symbol __unk_vfn_84
      */
-    virtual void __unk_vfn_81();
+    virtual void __unk_vfn_84();
     /**
-     * @vftbl 88
+     * @vftbl 91
      * @symbol ?mayPick\@StairBlock\@\@UEBA_NXZ
      */
     virtual bool mayPick() const;
     /**
-     * @vftbl 89
+     * @vftbl 92
      * @symbol ?mayPick\@StairBlock\@\@UEBA_NAEBVBlockSource\@\@AEBVBlock\@\@_N\@Z
      */
     virtual bool mayPick(class BlockSource const &, class Block const &, bool) const;
     /**
-     * @vftbl 90
+     * @vftbl 93
      * @symbol ?mayPlace\@StairBlock\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
-     * @vftbl 95
+     * @vftbl 98
      * @symbol ?breaksFallingBlocks\@StairBlock\@\@UEBA_NAEBVBlock\@\@VBaseGameVersion\@\@\@Z
      */
     virtual bool breaksFallingBlocks(class Block const &, class BaseGameVersion) const;
     /**
-     * @vftbl 96
+     * @vftbl 99
      * @symbol ?destroy\@StairBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@PEAVActor\@\@\@Z
      */
     virtual void destroy(class BlockSource &, class BlockPos const &, class Block const &, class Actor *) const;
     /**
-     * @vftbl 104
-     * @symbol __unk_vfn_104
+     * @vftbl 107
+     * @symbol __unk_vfn_107
      */
-    virtual void __unk_vfn_104();
+    virtual void __unk_vfn_107();
     /**
-     * @vftbl 105
+     * @vftbl 108
      * @symbol ?getPlacementBlock\@StairBlock\@\@UEBAAEBVBlock\@\@AEBVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@H\@Z
      */
     virtual class Block const & getPlacementBlock(class Actor const &, class BlockPos const &, unsigned char, class Vec3 const &, int) const;
     /**
-     * @vftbl 108
+     * @vftbl 111
      * @symbol ?attack\@StairBlock\@\@UEBA_NPEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool attack(class Player *, class BlockPos const &) const;
-    /**
-     * @vftbl 109
-     * @symbol ?handleEntityInside\@StairBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@AEAVVec3\@\@\@Z
-     */
-    virtual void handleEntityInside(class BlockSource &, class BlockPos const &, class Actor *, class Vec3 &) const;
-    /**
-     * @vftbl 122
-     * @symbol __unk_vfn_122
-     */
-    virtual void __unk_vfn_122();
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -256,45 +251,60 @@ public:
      */
     virtual void __unk_vfn_124();
     /**
-     * @vftbl 127
-     * @symbol __unk_vfn_127
+     * @vftbl 125
+     * @symbol __unk_vfn_125
      */
-    virtual void __unk_vfn_127();
+    virtual void __unk_vfn_125();
     /**
-     * @vftbl 130
-     * @symbol __unk_vfn_130
+     * @vftbl 128
+     * @symbol __unk_vfn_128
      */
-    virtual void __unk_vfn_130();
+    virtual void __unk_vfn_128();
     /**
-     * @vftbl 145
+     * @vftbl 131
+     * @symbol __unk_vfn_131
+     */
+    virtual void __unk_vfn_131();
+    /**
+     * @vftbl 143
      * @symbol ?getVariant\@StairBlock\@\@UEBAHAEBVBlock\@\@\@Z
      */
     virtual int getVariant(class Block const &) const;
     /**
-     * @vftbl 150
+     * @vftbl 148
      * @symbol ?animateTick\@StairBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @vftbl 155
-     * @symbol __unk_vfn_155
+     * @vftbl 153
+     * @symbol __unk_vfn_153
      */
-    virtual void __unk_vfn_155();
+    virtual void __unk_vfn_153();
     /**
-     * @vftbl 161
+     * @vftbl 159
      * @symbol ?onRemove\@StairBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void onRemove(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 162
+     * @vftbl 160
      * @symbol ?onExploded\@StairBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@\@Z
      */
     virtual void onExploded(class BlockSource &, class BlockPos const &, class Actor *) const;
     /**
-     * @vftbl 163
+     * @vftbl 161
      * @symbol ?onStandOn\@StairBlock\@\@UEBAXAEAVEntityContext\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void onStandOn(class EntityContext &, class BlockPos const &) const;
+    /**
+     * @vftbl 162
+     * @symbol __unk_vfn_162
+     */
+    virtual void __unk_vfn_162();
+    /**
+     * @vftbl 163
+     * @symbol __unk_vfn_163
+     */
+    virtual void __unk_vfn_163();
     /**
      * @vftbl 164
      * @symbol __unk_vfn_164
@@ -302,54 +312,39 @@ public:
     virtual void __unk_vfn_164();
     /**
      * @vftbl 165
-     * @symbol __unk_vfn_165
-     */
-    virtual void __unk_vfn_165();
-    /**
-     * @vftbl 166
-     * @symbol __unk_vfn_166
-     */
-    virtual void __unk_vfn_166();
-    /**
-     * @vftbl 167
      * @symbol ?onPlace\@StairBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual void onPlace(class BlockSource &, class BlockPos const &) const;
     /**
-     * @vftbl 169
-     * @symbol __unk_vfn_169
+     * @vftbl 167
+     * @symbol __unk_vfn_167
      */
-    virtual void __unk_vfn_169();
+    virtual void __unk_vfn_167();
     /**
-     * @vftbl 170
+     * @vftbl 168
      * @symbol ?tick\@StairBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual void tick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
+     * @vftbl 171
+     * @symbol __unk_vfn_171
+     */
+    virtual void __unk_vfn_171();
+    /**
      * @vftbl 173
-     * @symbol __unk_vfn_173
-     */
-    virtual void __unk_vfn_173();
-    /**
-     * @vftbl 174
-     * @symbol ?clip\@StairBlock\@\@UEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_N\@Z
-     */
-    virtual class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
-    /**
-     * @vftbl 176
      * @symbol ?use\@StairBlock\@\@UEBA_NAEAVPlayer\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool use(class Player &, class BlockPos const &, unsigned char) const;
     /**
-     * @vftbl 177
-     * @symbol __unk_vfn_177
+     * @vftbl 174
+     * @symbol __unk_vfn_174
      */
-    virtual void __unk_vfn_177();
+    virtual void __unk_vfn_174();
     /**
-     * @vftbl 186
-     * @symbol __unk_vfn_186
+     * @vftbl 183
+     * @symbol __unk_vfn_183
      */
-    virtual void __unk_vfn_186();
+    virtual void __unk_vfn_183();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STAIRBLOCK
     /**
      * @symbol ?canBeSilkTouched\@StairBlock\@\@MEBA_NXZ

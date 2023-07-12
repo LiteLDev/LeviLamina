@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -54,13 +55,13 @@ public:
      */
     MCAPI class PlayerListEntry clone() const;
     /**
-     * @symbol ?read\@PlayerListEntry\@\@QEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?read\@PlayerListEntry\@\@QEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    MCAPI bool read(class ReadOnlyBinaryStream &);
+    MCAPI class Bedrock::Result<void, class std::error_code> read(class ReadOnlyBinaryStream &);
     /**
-     * @symbol ?readRemove\@PlayerListEntry\@\@QEAAXAEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?readRemove\@PlayerListEntry\@\@QEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    MCAPI void readRemove(class ReadOnlyBinaryStream &);
+    MCAPI class Bedrock::Result<void, class std::error_code> readRemove(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?write\@PlayerListEntry\@\@QEBAXAEAVBinaryStream\@\@\@Z
      */

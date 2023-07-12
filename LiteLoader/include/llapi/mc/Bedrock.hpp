@@ -69,8 +69,16 @@ struct StorageMigration {
     StorageMigration(StorageMigration const&&) = delete;
 };
 
+template <typename T, typename E>
+class Result {
+    T value;
+    E error;
+};
 
+template <typename T0>
+struct ErrorInfo {
 
+};
 
 namespace PubSub {
 class Subscription {

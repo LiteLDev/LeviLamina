@@ -86,9 +86,5 @@ public:
      * @symbol ?updateBreathableState\@BreathableComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void updateBreathableState(class Actor &);
-    /**
-     * @symbol ??1BreathableComponent\@\@QEAA\@XZ
-     */
-    MCAPI ~BreathableComponent();
 
 };

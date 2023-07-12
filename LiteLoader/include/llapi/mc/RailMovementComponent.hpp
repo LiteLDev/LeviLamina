@@ -36,9 +36,5 @@ public:
      * @symbol ?getMaxSpeed\@RailMovementComponent\@\@QEBAMXZ
      */
     MCAPI float getMaxSpeed() const;
-    /**
-     * @symbol ??8RailMovementComponent\@\@QEBA_NAEBV0\@\@Z
-     */
-    MCAPI bool operator==(class RailMovementComponent const &) const;
 
 };

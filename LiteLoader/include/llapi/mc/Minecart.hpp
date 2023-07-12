@@ -46,40 +46,55 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @vftbl 32
+     * @vftbl 29
      * @symbol ?getInterpolatedBodyYaw\@Minecart\@\@UEBAMM\@Z
      */
     virtual float getInterpolatedBodyYaw(float) const;
     /**
-     * @vftbl 40
-     * @symbol __unk_vfn_40
+     * @vftbl 35
+     * @symbol __unk_vfn_35
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_35();
     /**
-     * @vftbl 61
-     * @symbol __unk_vfn_61
+     * @vftbl 55
+     * @symbol __unk_vfn_55
      */
-    virtual void __unk_vfn_61();
+    virtual void __unk_vfn_55();
+    /**
+     * @vftbl 62
+     * @symbol __unk_vfn_62
+     */
+    virtual void __unk_vfn_62();
     /**
      * @vftbl 68
-     * @symbol __unk_vfn_68
-     */
-    virtual void __unk_vfn_68();
-    /**
-     * @vftbl 77
      * @symbol ?getShadowHeightOffs\@Minecart\@\@UEAAMXZ
      */
     virtual float getShadowHeightOffs();
     /**
-     * @vftbl 78
+     * @vftbl 69
      * @symbol ?getShadowRadius\@Minecart\@\@UEBAMXZ
      */
     virtual float getShadowRadius() const;
     /**
-     * @vftbl 80
-     * @symbol __unk_vfn_80
+     * @vftbl 71
+     * @symbol __unk_vfn_71
      */
-    virtual void __unk_vfn_80();
+    virtual void __unk_vfn_71();
+    /**
+     * @vftbl 77
+     * @symbol __unk_vfn_77
+     */
+    virtual void __unk_vfn_77();
+    /**
+     * @vftbl 82
+     * @symbol ?isPickable\@Minecart\@\@UEAA_NXZ
+     */
+    virtual bool isPickable();
+    /**
+     * @vftbl 83
+     * @symbol __unk_vfn_83
+     */
+    virtual void __unk_vfn_83();
     /**
      * @vftbl 86
      * @symbol __unk_vfn_86
@@ -87,156 +102,141 @@ public:
     virtual void __unk_vfn_86();
     /**
      * @vftbl 93
-     * @symbol ?isPickable\@Minecart\@\@UEAA_NXZ
+     * @symbol __unk_vfn_93
      */
-    virtual bool isPickable();
+    virtual void __unk_vfn_93();
     /**
-     * @vftbl 94
-     * @symbol __unk_vfn_94
+     * @vftbl 95
+     * @symbol __unk_vfn_95
      */
-    virtual void __unk_vfn_94();
+    virtual void __unk_vfn_95();
     /**
-     * @vftbl 97
-     * @symbol __unk_vfn_97
+     * @vftbl 96
+     * @symbol __unk_vfn_96
      */
-    virtual void __unk_vfn_97();
+    virtual void __unk_vfn_96();
     /**
-     * @vftbl 104
-     * @symbol __unk_vfn_104
+     * @vftbl 98
+     * @symbol __unk_vfn_98
      */
-    virtual void __unk_vfn_104();
+    virtual void __unk_vfn_98();
     /**
-     * @vftbl 106
-     * @symbol __unk_vfn_106
-     */
-    virtual void __unk_vfn_106();
-    /**
-     * @vftbl 107
-     * @symbol __unk_vfn_107
-     */
-    virtual void __unk_vfn_107();
-    /**
-     * @vftbl 109
-     * @symbol __unk_vfn_109
-     */
-    virtual void __unk_vfn_109();
-    /**
-     * @vftbl 132
+     * @vftbl 120
      * @symbol ?isInvulnerableTo\@Minecart\@\@UEBA_NAEBVActorDamageSource\@\@\@Z
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
-     * @vftbl 137
+     * @vftbl 125
      * @symbol ?onBounceStarted\@Minecart\@\@UEAAXAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual void onBounceStarted(class BlockPos const &, class Block const &);
     /**
-     * @vftbl 176
-     * @symbol __unk_vfn_176
+     * @vftbl 164
+     * @symbol __unk_vfn_164
      */
-    virtual void __unk_vfn_176();
+    virtual void __unk_vfn_164();
     /**
-     * @vftbl 178
+     * @vftbl 166
      * @symbol ?getControllingPlayer\@Minecart\@\@UEBA?AUActorUniqueID\@\@XZ
      */
     virtual struct ActorUniqueID getControllingPlayer() const;
     /**
-     * @vftbl 190
-     * @symbol __unk_vfn_190
+     * @vftbl 178
+     * @symbol __unk_vfn_178
      */
-    virtual void __unk_vfn_190();
+    virtual void __unk_vfn_178();
     /**
-     * @vftbl 215
-     * @symbol __unk_vfn_215
+     * @vftbl 202
+     * @symbol __unk_vfn_202
      */
-    virtual void __unk_vfn_215();
+    virtual void __unk_vfn_202();
     /**
-     * @vftbl 216
-     * @symbol __unk_vfn_216
+     * @vftbl 203
+     * @symbol __unk_vfn_203
      */
-    virtual void __unk_vfn_216();
+    virtual void __unk_vfn_203();
     /**
-     * @vftbl 232
-     * @symbol __unk_vfn_232
+     * @vftbl 219
+     * @symbol __unk_vfn_219
      */
-    virtual void __unk_vfn_232();
+    virtual void __unk_vfn_219();
     /**
-     * @vftbl 235
-     * @symbol __unk_vfn_235
+     * @vftbl 222
+     * @symbol __unk_vfn_222
      */
-    virtual void __unk_vfn_235();
+    virtual void __unk_vfn_222();
     /**
-     * @vftbl 236
+     * @vftbl 223
      * @symbol ?kill\@Minecart\@\@MEAAXXZ
      */
     virtual void kill();
     /**
-     * @vftbl 252
-     * @symbol __unk_vfn_252
+     * @vftbl 239
+     * @symbol __unk_vfn_239
      */
-    virtual void __unk_vfn_252();
+    virtual void __unk_vfn_239();
     /**
-     * @vftbl 253
+     * @vftbl 240
      * @symbol ?_hurt\@Minecart\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vftbl 256
+     * @vftbl 243
      * @symbol ?readAdditionalSaveData\@Minecart\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vftbl 257
+     * @vftbl 244
      * @symbol ?addAdditionalSaveData\@Minecart\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vftbl 260
-     * @symbol __unk_vfn_260
+     * @vftbl 247
+     * @symbol __unk_vfn_247
      */
-    virtual void __unk_vfn_260();
+    virtual void __unk_vfn_247();
     /**
-     * @vftbl 266
+     * @vftbl 252
      * @symbol ?_onSizeUpdated\@Minecart\@\@EEAAXXZ
      */
     virtual void _onSizeUpdated();
     /**
-     * @vftbl 267
-     * @symbol __unk_vfn_267
+     * @vftbl 253
+     * @symbol __unk_vfn_253
      */
-    virtual void __unk_vfn_267();
+    virtual void __unk_vfn_253();
     /**
-     * @vftbl 268
+     * @vftbl 254
      * @symbol ?destroy\@Minecart\@\@UEAAXAEBVActorDamageSource\@\@_N\@Z
      */
     virtual void destroy(class ActorDamageSource const &, bool);
     /**
-     * @vftbl 269
-     * @symbol ?getType\@MinecartTNT\@\@UEAA?AW4MinecartType\@\@XZ
+     * @vftbl 255
+     * @symbol ?getType\@MinecartChest\@\@UEAA?AW4MinecartType\@\@XZ
      */
     virtual enum class MinecartType getType() = 0;
     /**
-     * @vftbl 270
+     * @vftbl 256
      * @symbol ?getDefaultDisplayBlock\@Minecart\@\@UEBAPEBVBlock\@\@XZ
      */
     virtual class Block const * getDefaultDisplayBlock() const;
     /**
-     * @vftbl 271
-     * @symbol __unk_vfn_271
+     * @vftbl 257
+     * @symbol __unk_vfn_257
      */
-    virtual void __unk_vfn_271();
+    virtual void __unk_vfn_257();
     /**
-     * @vftbl 272
+     * @vftbl 258
      * @symbol ?getDefaultDisplayOffset\@Minecart\@\@UEBAHXZ
      */
     virtual int getDefaultDisplayOffset() const;
     /**
-     * @vftbl 273
+     * @vftbl 259
      * @symbol ?applyNaturalSlowdown\@Minecart\@\@MEAAXAEAVBlockSource\@\@\@Z
      */
     virtual void applyNaturalSlowdown(class BlockSource &);
     /**
-     * @vftbl 274
+     * @vftbl 260
      * @symbol ?_lazyInitDisplayBlock\@Minecart\@\@EEAAXXZ
      */
     virtual void _lazyInitDisplayBlock();

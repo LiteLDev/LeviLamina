@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Core.hpp"
 #include "JsonUtil.hpp"
 #include "Json.hpp"
 
@@ -45,10 +46,6 @@ public:
      */
     MCAPI void buildBlockSchema(class BlockComponentFactory const &);
     /**
-     * @symbol ?digestServerBlockProperties\@BlockDefinitionGroup\@\@QEAAXAEBV?$vector\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VCompoundTag\@\@\@std\@\@V?$allocator\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VCompoundTag\@\@\@std\@\@\@2\@\@std\@\@AEBVBlockComponentFactory\@\@\@Z
-     */
-    MCAPI void digestServerBlockProperties(std::vector<struct std::pair<std::string, class CompoundTag>> const &, class BlockComponentFactory const &);
-    /**
      * @symbol ?generateBlockDefinition\@BlockDefinitionGroup\@\@QEAA?AV?$unique_ptr\@UBlockDefinition\@\@U?$default_delete\@UBlockDefinition\@\@\@std\@\@\@std\@\@AEBUBlockResource\@1\@AEBVExperiments\@\@\@Z
      */
     MCAPI std::unique_ptr<struct BlockDefinition> generateBlockDefinition(struct BlockDefinitionGroup::BlockResource const &, class Experiments const &);
@@ -69,9 +66,13 @@ public:
      */
     MCAPI void initializeBlocks(class EntityRegistry &, class Level &);
     /**
-     * @symbol ?loadResources\@BlockDefinitionGroup\@\@QEAAXAEAVResourcePackManager\@\@AEBVBlockComponentFactory\@\@AEBVExperiments\@\@\@Z
+     * @symbol ?loadResource\@BlockDefinitionGroup\@\@QEAA?AV?$unique_ptr\@UBlockDefinition\@\@U?$default_delete\@UBlockDefinition\@\@\@std\@\@\@std\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@AEBV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@AEBV43\@AEBVSemVersion\@\@AEBVExperiments\@\@\@Z
      */
-    MCAPI void loadResources(class ResourcePackManager &, class BlockComponentFactory const &, class Experiments const &);
+    MCAPI std::unique_ptr<struct BlockDefinition> loadResource(std::string, class Core::PathBuffer<std::string> const &, std::string const &, class SemVersion const &, class Experiments const &);
+    /**
+     * @symbol ?loadResources\@BlockDefinitionGroup\@\@QEAAXAEBVResourcePackManager\@\@AEBVBlockComponentFactory\@\@AEBVExperiments\@\@\@Z
+     */
+    MCAPI void loadResources(class ResourcePackManager const &, class BlockComponentFactory const &, class Experiments const &);
     /**
      * @symbol ?postProcessComponents\@BlockDefinitionGroup\@\@QEAAXAEAVBlockLegacy\@\@\@Z
      */

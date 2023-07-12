@@ -17,9 +17,9 @@ namespace MobJumpSystemImpl {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?doDecrementNoJumpDelaySystem\@MobJumpSystemImpl\@\@YAXAEAVStrictEntityContext\@\@AEAUMobJumpComponent\@\@\@Z
+     * @symbol ?doDecrementNoJumpDelaySystem\@MobJumpSystemImpl\@\@YAXAEAUMobJumpComponent\@\@\@Z
      */
-    MCAPI void doDecrementNoJumpDelaySystem(class StrictEntityContext &, struct MobJumpComponent &);
+    MCAPI void doDecrementNoJumpDelaySystem(struct MobJumpComponent &);
     /**
      * @symbol ?doMobJumpSystem\@MobJumpSystemImpl\@\@YAXAEBVStrictEntityContext\@\@V?$Optional\@$$CBVJumpControlComponent\@\@\@\@V?$Optional\@$$CBV?$FlagComponent\@UOnGroundFlag\@\@\@\@\@\@V?$Optional\@$$CBV?$FlagComponent\@UPlayerComponentFlag\@\@\@\@\@\@V?$Optional\@$$CBV?$FlagComponent\@USquidFlag\@\@\@\@\@\@V?$Optional\@$$CBV?$FlagComponent\@UWasAutoJumpingFlag\@\@\@\@\@\@V?$Optional\@$$CBV?$FlagComponent\@UInWaterFlag\@\@\@\@\@\@V?$Optional\@$$CBV?$FlagComponent\@UCanStandOnSnowFlag\@\@\@\@\@\@V?$Optional\@$$CBV?$FlagComponent\@UHasLightweightFamilyFlag\@\@\@\@\@\@V?$Optional\@$$CBV?$FlagComponent\@UImmuneToLavaDragFlag\@\@\@\@\@\@AEBUAABBShapeComponent\@\@AEBUSwimAmountComponent\@\@AEBUMobEffectsComponent\@\@AEBUSubBBsComponent\@\@AEBUSynchedActorDataComponent\@\@AEAUMobJumpComponent\@\@AEAUStateVectorComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UJumpFromGroundRequestFlag\@\@\@\@\@\@AEBVIConstBlockSource\@\@\@Z
      */

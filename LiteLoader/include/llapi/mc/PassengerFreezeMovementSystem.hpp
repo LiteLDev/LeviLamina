@@ -35,9 +35,5 @@ public:
      * @symbol ?freezeMovement\@PassengerFreezeMovementSystem\@\@SAXAEAVStrictEntityContext\@\@AEAUStateVectorComponent\@\@\@Z
      */
     MCAPI static void freezeMovement(class StrictEntityContext &, struct StateVectorComponent &);
-    /**
-     * @symbol ?tickPassengerFreezeMovementSystem\@PassengerFreezeMovementSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@UPassengerComponent\@\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@\@\@UStateVectorComponent\@\@\@\@\@Z
-     */
-    MCAPI static void tickPassengerFreezeMovementSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct PassengerComponent, class FlagComponent<struct ActorMovementTickNeededFlag>>, struct StateVectorComponent>);
 
 };

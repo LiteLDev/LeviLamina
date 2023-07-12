@@ -6,7 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Json.hpp"
-#include "BlockItem.hpp"
+#include "AuxDataBlockItem.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +17,7 @@
  * @brief MC class ShulkerBoxBlockItem.
  *
  */
-class ShulkerBoxBlockItem : public BlockItem {
+class ShulkerBoxBlockItem : public AuxDataBlockItem {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -52,10 +52,10 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @vftbl 19
-     * @symbol __unk_vfn_19
+     * @vftbl 21
+     * @symbol __unk_vfn_21
      */
-    virtual void __unk_vfn_19();
+    virtual void __unk_vfn_21();
     /**
      * @vftbl 45
      * @symbol ?getLevelDataForAuxValue\@ShulkerBoxBlockItem\@\@UEBAHH\@Z
@@ -111,11 +111,6 @@ public:
      * @symbol __unk_vfn_80
      */
     virtual void __unk_vfn_80();
-    /**
-     * @vftbl 95
-     * @symbol ?buildDescriptionId\@ShulkerBoxBlockItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
-     */
-    virtual std::string buildDescriptionId(class ItemDescriptor const &, class CompoundTag const *) const;
     /**
      * @vftbl 96
      * @symbol ?buildEffectDescriptionName\@ShulkerBoxBlockItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemStackBase\@\@\@Z

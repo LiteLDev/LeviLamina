@@ -91,9 +91,17 @@ public:
      */
     MCAPI void _findNewPartner(struct ActorUniqueID);
     /**
+     * @symbol ?_getMingleComponent\@MingleGoal\@\@AEBAAEAVMingleComponent\@\@XZ
+     */
+    MCAPI class MingleComponent & _getMingleComponent() const;
+    /**
      * @symbol ?_isWithinInteractRange\@MingleGoal\@\@AEBA_NAEAVActor\@\@\@Z
      */
     MCAPI bool _isWithinInteractRange(class Actor &) const;
+    /**
+     * @symbol ?_tryGetMingleComponent\@MingleGoal\@\@CAPEAVMingleComponent\@\@AEAVActor\@\@\@Z
+     */
+    MCAPI static class MingleComponent * _tryGetMingleComponent(class Actor &);
 
 private:
     /**

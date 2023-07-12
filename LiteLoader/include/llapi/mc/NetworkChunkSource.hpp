@@ -71,6 +71,11 @@ public:
      */
     virtual bool canCreateViews() const;
     /**
+     * @vftbl 30
+     * @symbol ?canLaunchTasks\@NetworkChunkSource\@\@UEBA_NXZ
+     */
+    virtual bool canLaunchTasks() const;
+    /**
      * @symbol ??0NetworkChunkSource\@\@QEAA\@AEAVDimension\@\@\@Z
      */
     MCAPI NetworkChunkSource(class Dimension &);

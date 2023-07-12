@@ -28,9 +28,9 @@ public:
 
 public:
     /**
-     * @symbol ?forEachBlockInAABB\@SpatialQueryUtility\@\@SAXAEBVIConstBlockSource\@\@AEBVAABB\@\@AEBV?$function\@$$A6AXAEBVBlock\@\@AEBVBlockPos\@\@\@Z\@std\@\@\@Z
+     * @symbol ?forEachBlockInAABB\@SpatialQueryUtility\@\@SAXAEBVIConstBlockSource\@\@AEBVAABB\@\@MAEBV?$function\@$$A6AXAEBVBlock\@\@AEBVBlockPos\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI static void forEachBlockInAABB(class IConstBlockSource const &, class AABB const &, class std::function<void (class Block const &, class BlockPos const &)> const &);
+    MCAPI static void forEachBlockInAABB(class IConstBlockSource const &, class AABB const &, float, class std::function<void (class Block const &, class BlockPos const &)> const &);
     /**
      * @symbol ?testForCollidableMobs\@SpatialQueryUtility\@\@SAXAEBVStrictEntityContext\@\@AEAVLocalSpatialEntityFetcher\@\@AEBVAABB\@\@2V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UCollidableMobFlag\@\@\@\@\@\@$$CBUAABBShapeComponent\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UFallingBlockFlag\@\@\@\@\@\@\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@\@Z
      */

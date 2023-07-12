@@ -29,6 +29,10 @@ public:
 
 public:
     /**
+     * @symbol ??0EduSharedUriResource\@\@QEAA\@$$QEAU0\@\@Z
+     */
+    MCAPI EduSharedUriResource(struct EduSharedUriResource &&);
+    /**
      * @symbol ??0EduSharedUriResource\@\@QEAA\@AEBVCompoundTag\@\@\@Z
      */
     MCAPI EduSharedUriResource(class CompoundTag const &);

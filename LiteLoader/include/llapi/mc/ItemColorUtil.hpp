@@ -42,6 +42,10 @@ namespace ItemColorUtil {
      */
     MCAPI std::string const & getName(enum class ItemColor);
     /**
+     * @symbol ?getNameMixedCase\@ItemColorUtil\@\@YAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ItemColor\@\@\@Z
+     */
+    MCAPI std::string const & getNameMixedCase(enum class ItemColor);
+    /**
      * @symbol ?getRGBColor\@ItemColorUtil\@\@YAHW4ItemColor\@\@\@Z
      */
     MCAPI int getRGBColor(enum class ItemColor);

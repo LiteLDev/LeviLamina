@@ -412,7 +412,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
             ab.setBool(0);
             if (flying)
                 ab.setBool(1);
-            UpdateAbilitiesPacket packet(sp->getUniqueID(), abilities);
+            UpdateAbilitiesPacket packet(sp->getOrCreateUniqueID(), abilities);
             auto pkt2 = UpdateAdventureSettingsPacket(AdventureSettings());
             abilities.setAbility(AbilitiesIndex::Flying, flying);
             sp->sendNetworkPacket(pkt2);

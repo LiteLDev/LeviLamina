@@ -57,10 +57,10 @@ public:
      */
     virtual bool isDyeable() const;
     /**
-     * @vftbl 19
-     * @symbol __unk_vfn_19
+     * @vftbl 21
+     * @symbol __unk_vfn_21
      */
-    virtual void __unk_vfn_19();
+    virtual void __unk_vfn_21();
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
@@ -127,7 +127,7 @@ public:
      */
     virtual void __unk_vfn_116();
     /**
-     * @vftbl 134
+     * @vftbl 135
      * @symbol ?_useOn\@BalloonItem\@\@EEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;

@@ -25,13 +25,13 @@ public:
 #undef AFTER_EXTRA
 public:
     /**
-     * @symbol ??0ContentIdentity\@\@QEAA\@AEBVUUID\@mce\@\@\@Z
-     */
-    MCAPI ContentIdentity(class mce::UUID const &);
-    /**
      * @symbol ??0ContentIdentity\@\@QEAA\@XZ
      */
     MCAPI ContentIdentity();
+    /**
+     * @symbol ??0ContentIdentity\@\@QEAA\@AEBVUUID\@mce\@\@\@Z
+     */
+    MCAPI ContentIdentity(class mce::UUID const &);
     /**
      * @symbol ??0ContentIdentity\@\@QEAA\@$$QEAV0\@\@Z
      */

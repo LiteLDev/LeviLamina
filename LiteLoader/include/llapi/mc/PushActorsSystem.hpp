@@ -32,8 +32,8 @@ public:
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
     /**
-     * @symbol ?pushActors\@PushActorsSystem\@\@SAXAEAVStrictEntityContext\@\@AEAVActorMovementProxyComponent\@\@\@Z
+     * @symbol ?pushActors\@PushActorsSystem\@\@SAXAEAVActorOwnerComponent\@\@\@Z
      */
-    MCAPI static void pushActors(class StrictEntityContext &, class ActorMovementProxyComponent &);
+    MCAPI static void pushActors(class ActorOwnerComponent &);
 
 };

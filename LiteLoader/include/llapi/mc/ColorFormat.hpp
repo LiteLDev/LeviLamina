@@ -102,9 +102,9 @@ LIAPI std::string& transferColorCodeToConsole(std::string& str, bool keepColorCo
      */
     MCAPI extern std::string const ESCAPE;
     /**
-     * @symbol ?FromString\@ColorFormat\@\@YA?BV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
+     * @symbol ?FormatCodeFromName\@ColorFormat\@\@YA?BV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
      */
-    MCAPI class std::basic_string_view<char, struct std::char_traits<char>> const FromString(std::string const &);
+    MCAPI class std::basic_string_view<char, struct std::char_traits<char>> const FormatCodeFromName(std::string const &);
     /**
      * @symbol ?GOLD\@ColorFormat\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */

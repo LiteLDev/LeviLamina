@@ -93,9 +93,9 @@ public:
      */
     MCAPI void configureGameTest(class Level &, class Experiments const &);
     /**
-     * @symbol ?disconnectClient\@Minecraft\@\@QEAAXAEBVNetworkIdentifier\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?disconnectClient\@Minecraft\@\@QEAAXAEBVNetworkIdentifier\@\@W4DisconnectFailReason\@Connection\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void disconnectClient(class NetworkIdentifier const &, std::string const &);
+    MCAPI void disconnectClient(class NetworkIdentifier const &, enum class Connection::DisconnectFailReason, std::string const &);
     /**
      * @symbol ?earlyShutdownMainthread\@Minecraft\@\@QEAAXXZ
      */

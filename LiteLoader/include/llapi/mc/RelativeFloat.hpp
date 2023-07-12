@@ -53,5 +53,9 @@ public:
      * @symbol ?getValue\@RelativeFloat\@\@QEBAMM\@Z
      */
     MCAPI float getValue(float) const;
+    /**
+     * @symbol ?isRelative\@RelativeFloat\@\@QEBA_NXZ
+     */
+    MCAPI bool isRelative() const;
 
 };

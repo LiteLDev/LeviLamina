@@ -24,6 +24,7 @@ class RideableComponent {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RIDEABLECOMPONENT
 public:
     class RideableComponent& operator=(class RideableComponent const &) = delete;
+    RideableComponent(class RideableComponent const &) = delete;
 #endif
 
 public:
@@ -31,10 +32,6 @@ public:
      * @symbol ??0RideableComponent\@\@QEAA\@XZ
      */
     MCAPI RideableComponent();
-    /**
-     * @symbol ??0RideableComponent\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI RideableComponent(class RideableComponent const &);
     /**
      * @symbol ??0RideableComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
@@ -68,16 +65,8 @@ public:
      */
     MCAPI class RideableComponent & operator=(class RideableComponent &&);
     /**
-     * @symbol ?positionPassenger\@RideableComponent\@\@QEBAXAEAVActor\@\@0\@Z
-     */
-    MCAPI void positionPassenger(class Actor &, class Actor &) const;
-    /**
      * @symbol ?pullInEntity\@RideableComponent\@\@QEBA_NAEAVActor\@\@0\@Z
      */
     MCAPI bool pullInEntity(class Actor &, class Actor &) const;
-    /**
-     * @symbol ??1RideableComponent\@\@QEAA\@XZ
-     */
-    MCAPI ~RideableComponent();
 
 };

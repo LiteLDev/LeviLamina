@@ -57,15 +57,10 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @vftbl 19
-     * @symbol __unk_vfn_19
-     */
-    virtual void __unk_vfn_19();
-    /**
      * @vftbl 21
-     * @symbol ?isFertilizer\@FertilizerItem\@\@UEBA_NXZ
+     * @symbol __unk_vfn_21
      */
-    virtual bool isFertilizer() const;
+    virtual void __unk_vfn_21();
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
@@ -127,11 +122,15 @@ public:
      */
     virtual void __unk_vfn_116();
     /**
-     * @vftbl 134
+     * @vftbl 135
      * @symbol ?_useOn\@FertilizerItem\@\@MEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FERTILIZERITEM
+    /**
+     * @symbol ?isFertilizer\@FertilizerItem\@\@UEBA_NXZ
+     */
+    MCVAPI bool isFertilizer() const;
     /**
      * @symbol __unk_destructor_-1
      */

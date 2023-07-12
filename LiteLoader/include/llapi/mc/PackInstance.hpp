@@ -35,13 +35,13 @@ public:
      */
     MCAPI PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, std::string const &, bool, class PackSettings *);
     /**
-     * @symbol ??0PackInstance\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VResourcePack\@\@\@Bedrock\@\@\@gsl\@\@H_NPEAVPackSettings\@\@\@Z
-     */
-    MCAPI PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, int, bool, class PackSettings *);
-    /**
      * @symbol ??0PackInstance\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI PackInstance(class PackInstance const &);
+    /**
+     * @symbol ??0PackInstance\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VResourcePack\@\@\@Bedrock\@\@\@gsl\@\@H_NPEAVPackSettings\@\@\@Z
+     */
+    MCAPI PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, int, bool, class PackSettings *);
     /**
      * @symbol ?forEachIn\@PackInstance\@\@QEBAXAEBVPath\@Core\@\@V?$function\@$$A6AXAEBVPath\@Core\@\@\@Z\@std\@\@_N\@Z
      */
@@ -110,6 +110,10 @@ public:
      * @symbol ?isBaseGamePack\@PackInstance\@\@QEBA_NXZ
      */
     MCAPI bool isBaseGamePack() const;
+    /**
+     * @symbol ?isTrusted\@PackInstance\@\@QEBA_NXZ
+     */
+    MCAPI bool isTrusted() const;
     /**
      * @symbol ?isZipped\@PackInstance\@\@QEBA_NXZ
      */

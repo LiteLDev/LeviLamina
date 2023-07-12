@@ -81,7 +81,7 @@ enum class AbilitiesLayer;
 
 // From https://github.com/dreamguxiang/BETweaker
 void Player::setAbility(AbilitiesIndex index, bool value) {
-    ActorUniqueID uid = getUniqueID();
+    ActorUniqueID uid = getOrCreateUniqueID();
     auto& abilities = getAbilities();
     auto flying = abilities.getAbility(AbilitiesIndex::Flying).getBool();
     if (index == AbilitiesIndex::Flying && value && isOnGround()) {

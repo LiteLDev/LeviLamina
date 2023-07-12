@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 #include "Packet.hpp"
 
 #define BEFORE_EXTRA
@@ -94,9 +95,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@PlayerActionPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@PlayerActionPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERACTIONPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -104,9 +105,21 @@ public:
     MCVAPI ~PlayerActionPacket();
 #endif
     /**
+     * @symbol ??0PlayerActionPacket\@\@QEAA\@W4PlayerActionType\@\@AEBVBlockPos\@\@1HVActorRuntimeID\@\@\@Z
+     */
+    MCAPI PlayerActionPacket(enum class PlayerActionType, class BlockPos const &, class BlockPos const &, int, class ActorRuntimeID);
+    /**
      * @symbol ??0PlayerActionPacket\@\@QEAA\@W4PlayerActionType\@\@AEBVBlockPos\@\@VActorRuntimeID\@\@\@Z
      */
     MCAPI PlayerActionPacket(enum class PlayerActionType, class BlockPos const &, class ActorRuntimeID);
+    /**
+     * @symbol ??0PlayerActionPacket\@\@QEAA\@XZ
+     */
+    MCAPI PlayerActionPacket();
+    /**
+     * @symbol ??0PlayerActionPacket\@\@QEAA\@W4PlayerActionType\@\@VActorRuntimeID\@\@\@Z
+     */
+    MCAPI PlayerActionPacket(enum class PlayerActionType, class ActorRuntimeID);
     /**
      * @symbol ??0PlayerActionPacket\@\@QEAA\@W4PlayerActionType\@\@AEBVBlockPos\@\@EVActorRuntimeID\@\@\@Z
      */
@@ -116,16 +129,12 @@ public:
      */
     MCAPI PlayerActionPacket(enum class PlayerActionType, class BlockPos const &, int, class ActorRuntimeID);
     /**
-     * @symbol ??0PlayerActionPacket\@\@QEAA\@W4PlayerActionType\@\@VActorRuntimeID\@\@\@Z
+     * @symbol ?getIsFromServerPlayerMovementSystem\@PlayerActionPacket\@\@QEBA_NXZ
      */
-    MCAPI PlayerActionPacket(enum class PlayerActionType, class ActorRuntimeID);
+    MCAPI bool getIsFromServerPlayerMovementSystem() const;
     /**
-     * @symbol ??0PlayerActionPacket\@\@QEAA\@W4PlayerActionType\@\@AEBVBlockPos\@\@1HVActorRuntimeID\@\@\@Z
+     * @symbol ?setFromServerPlayerMovementSystem\@PlayerActionPacket\@\@QEAAX_N\@Z
      */
-    MCAPI PlayerActionPacket(enum class PlayerActionType, class BlockPos const &, class BlockPos const &, int, class ActorRuntimeID);
-    /**
-     * @symbol ??0PlayerActionPacket\@\@QEAA\@XZ
-     */
-    MCAPI PlayerActionPacket();
+    MCAPI void setFromServerPlayerMovementSystem(bool);
 
 };

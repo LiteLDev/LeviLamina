@@ -49,9 +49,5 @@ public:
      * @symbol ?getJumpDelay\@JumpInfo\@\@QEBAHXZ
      */
     MCAPI int getJumpDelay() const;
-    /**
-     * @symbol ??9JumpInfo\@\@QEBA_NAEBV0\@\@Z
-     */
-    MCAPI bool operator!=(class JumpInfo const &) const;
 
 };

@@ -68,6 +68,10 @@ public:
      */
     MCAPI bool use(class ItemStack &, class Player &) const;
     /**
+     * @symbol ?useTimeDepleted\@ShooterItemComponent\@\@QEBAXAEAVItemStack\@\@AEAVPlayer\@\@\@Z
+     */
+    MCAPI void useTimeDepleted(class ItemStack &, class Player &) const;
+    /**
      * @symbol ?bindType\@ShooterItemComponent\@\@SAXXZ
      */
     MCAPI static void bindType();

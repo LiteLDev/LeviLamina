@@ -42,50 +42,65 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @vftbl 40
-     * @symbol __unk_vfn_40
+     * @vftbl 35
+     * @symbol __unk_vfn_35
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_35();
     /**
-     * @vftbl 43
+     * @vftbl 38
      * @symbol ?teleportTo\@Agent\@\@UEAAXAEBVVec3\@\@_NHH1\@Z
      */
     virtual void teleportTo(class Vec3 const &, bool, int, int, bool);
     /**
-     * @vftbl 48
+     * @vftbl 43
      * @symbol ?normalTick\@Agent\@\@UEAAXXZ
      */
     virtual void normalTick();
     /**
-     * @vftbl 59
+     * @vftbl 53
      * @symbol ?isInvisible\@Agent\@\@UEBA_NXZ
      */
     virtual bool isInvisible() const;
     /**
-     * @vftbl 60
+     * @vftbl 54
      * @symbol ?canShowNameTag\@Agent\@\@UEBA_NXZ
      */
     virtual bool canShowNameTag() const;
     /**
-     * @vftbl 61
-     * @symbol __unk_vfn_61
+     * @vftbl 55
+     * @symbol __unk_vfn_55
      */
-    virtual void __unk_vfn_61();
+    virtual void __unk_vfn_55();
     /**
-     * @vftbl 65
+     * @vftbl 59
      * @symbol ?getFormattedNameTag\@Agent\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string getFormattedNameTag() const;
     /**
-     * @vftbl 68
-     * @symbol __unk_vfn_68
+     * @vftbl 62
+     * @symbol __unk_vfn_62
      */
-    virtual void __unk_vfn_68();
+    virtual void __unk_vfn_62();
     /**
-     * @vftbl 80
-     * @symbol __unk_vfn_80
+     * @vftbl 71
+     * @symbol __unk_vfn_71
      */
-    virtual void __unk_vfn_80();
+    virtual void __unk_vfn_71();
+    /**
+     * @vftbl 77
+     * @symbol __unk_vfn_77
+     */
+    virtual void __unk_vfn_77();
+    /**
+     * @vftbl 82
+     * @symbol ?isPickable\@Agent\@\@UEAA_NXZ
+     */
+    virtual bool isPickable();
+    /**
+     * @vftbl 83
+     * @symbol __unk_vfn_83
+     */
+    virtual void __unk_vfn_83();
     /**
      * @vftbl 86
      * @symbol __unk_vfn_86
@@ -93,169 +108,144 @@ public:
     virtual void __unk_vfn_86();
     /**
      * @vftbl 93
-     * @symbol ?isPickable\@Agent\@\@UEAA_NXZ
+     * @symbol __unk_vfn_93
      */
-    virtual bool isPickable();
+    virtual void __unk_vfn_93();
     /**
-     * @vftbl 94
-     * @symbol __unk_vfn_94
+     * @vftbl 95
+     * @symbol __unk_vfn_95
      */
-    virtual void __unk_vfn_94();
+    virtual void __unk_vfn_95();
     /**
-     * @vftbl 97
-     * @symbol __unk_vfn_97
+     * @vftbl 96
+     * @symbol __unk_vfn_96
      */
-    virtual void __unk_vfn_97();
+    virtual void __unk_vfn_96();
     /**
-     * @vftbl 104
-     * @symbol __unk_vfn_104
+     * @vftbl 98
+     * @symbol __unk_vfn_98
      */
-    virtual void __unk_vfn_104();
+    virtual void __unk_vfn_98();
     /**
      * @vftbl 106
-     * @symbol __unk_vfn_106
-     */
-    virtual void __unk_vfn_106();
-    /**
-     * @vftbl 107
-     * @symbol __unk_vfn_107
-     */
-    virtual void __unk_vfn_107();
-    /**
-     * @vftbl 109
-     * @symbol __unk_vfn_109
-     */
-    virtual void __unk_vfn_109();
-    /**
-     * @vftbl 117
      * @symbol ?setOwner\@Agent\@\@UEAAXUActorUniqueID\@\@\@Z
      */
     virtual void setOwner(struct ActorUniqueID);
     /**
-     * @vftbl 139
+     * @vftbl 127
      * @symbol ?handleEntityEvent\@Agent\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
-     * @vftbl 156
+     * @vftbl 144
      * @symbol ?setCarriedItem\@Agent\@\@UEAAXAEBVItemStack\@\@\@Z
      */
     virtual void setCarriedItem(class ItemStack const &);
     /**
-     * @vftbl 176
-     * @symbol __unk_vfn_176
+     * @vftbl 164
+     * @symbol __unk_vfn_164
      */
-    virtual void __unk_vfn_176();
+    virtual void __unk_vfn_164();
     /**
-     * @vftbl 188
+     * @vftbl 176
      * @symbol ?canBePulledIntoVehicle\@Agent\@\@UEBA_NXZ
      */
     virtual bool canBePulledIntoVehicle() const;
     /**
-     * @vftbl 190
-     * @symbol __unk_vfn_190
+     * @vftbl 178
+     * @symbol __unk_vfn_178
      */
-    virtual void __unk_vfn_190();
+    virtual void __unk_vfn_178();
     /**
-     * @vftbl 205
+     * @vftbl 192
      * @symbol ?canBeAffected\@Agent\@\@UEBA_NI\@Z
      */
     virtual bool canBeAffected(unsigned int) const;
     /**
-     * @vftbl 215
-     * @symbol __unk_vfn_215
+     * @vftbl 202
+     * @symbol __unk_vfn_202
      */
-    virtual void __unk_vfn_215();
+    virtual void __unk_vfn_202();
     /**
-     * @vftbl 216
-     * @symbol __unk_vfn_216
+     * @vftbl 203
+     * @symbol __unk_vfn_203
      */
-    virtual void __unk_vfn_216();
+    virtual void __unk_vfn_203();
     /**
-     * @vftbl 232
-     * @symbol __unk_vfn_232
+     * @vftbl 219
+     * @symbol __unk_vfn_219
      */
-    virtual void __unk_vfn_232();
+    virtual void __unk_vfn_219();
     /**
-     * @vftbl 235
-     * @symbol __unk_vfn_235
+     * @vftbl 222
+     * @symbol __unk_vfn_222
      */
-    virtual void __unk_vfn_235();
+    virtual void __unk_vfn_222();
     /**
-     * @vftbl 236
+     * @vftbl 223
      * @symbol ?kill\@Agent\@\@UEAAXXZ
      */
     virtual void kill();
     /**
-     * @vftbl 250
+     * @vftbl 237
      * @symbol ?updateEntitySpecificMolangVariables\@Agent\@\@UEAAXAEAVRenderParams\@\@\@Z
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
-     * @vftbl 252
-     * @symbol __unk_vfn_252
+     * @vftbl 239
+     * @symbol __unk_vfn_239
      */
-    virtual void __unk_vfn_252();
+    virtual void __unk_vfn_239();
     /**
-     * @vftbl 253
+     * @vftbl 240
      * @symbol ?_hurt\@Agent\@\@EEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vftbl 260
-     * @symbol __unk_vfn_260
+     * @vftbl 247
+     * @symbol __unk_vfn_247
      */
-    virtual void __unk_vfn_260();
+    virtual void __unk_vfn_247();
     /**
-     * @vftbl 267
-     * @symbol __unk_vfn_267
+     * @vftbl 253
+     * @symbol __unk_vfn_253
      */
-    virtual void __unk_vfn_267();
+    virtual void __unk_vfn_253();
     /**
-     * @vftbl 268
+     * @vftbl 254
      * @symbol ?knockback\@Agent\@\@UEAAXPEAVActor\@\@HMMMMM\@Z
      */
     virtual void knockback(class Actor *, int, float, float, float, float, float);
     /**
-     * @vftbl 278
-     * @symbol ?travel\@Agent\@\@UEAAXMMM_N\@Z
+     * @vftbl 276
+     * @symbol __unk_vfn_276
      */
-    virtual void travel(float, float, float, bool);
+    virtual void __unk_vfn_276();
     /**
      * @vftbl 280
-     * @symbol ?aiStep\@Agent\@\@UEAAXXZ
+     * @symbol __unk_vfn_280
      */
-    virtual void aiStep();
+    virtual void __unk_vfn_280();
     /**
-     * @vftbl 293
-     * @symbol __unk_vfn_293
-     */
-    virtual void __unk_vfn_293();
-    /**
-     * @vftbl 297
-     * @symbol __unk_vfn_297
-     */
-    virtual void __unk_vfn_297();
-    /**
-     * @vftbl 323
+     * @vftbl 306
      * @symbol ?createAIGoals\@Agent\@\@UEAA_NXZ
      */
     virtual bool createAIGoals();
     /**
-     * @vftbl 330
+     * @vftbl 313
      * @symbol ?canExistWhenDisallowMob\@Agent\@\@UEBA_NXZ
      */
     virtual bool canExistWhenDisallowMob() const;
     /**
-     * @vftbl 335
+     * @vftbl 317
      * @symbol ?initBodyControl\@Agent\@\@EEAA?AV?$unique_ptr\@VBodyControl\@\@U?$default_delete\@VBodyControl\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class BodyControl> initBodyControl();
     /**
-     * @vftbl 343
-     * @symbol __unk_vfn_343
+     * @vftbl 323
+     * @symbol __unk_vfn_323
      */
-    virtual void __unk_vfn_343();
+    virtual void __unk_vfn_323();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AGENT
     /**
      * @symbol ?breaksFallingBlocks\@Agent\@\@UEBA_NXZ
@@ -299,6 +289,14 @@ public:
      */
     MCAPI int getSelectedSlot() const;
     /**
+     * @symbol ?handleAnimationEvent\@Agent\@\@QEAAXW4AgentAnimation\@\@\@Z
+     */
+    MCAPI void handleAnimationEvent(enum class AgentAnimation);
+    /**
+     * @symbol ?isEmoting\@Agent\@\@QEBA_NXZ
+     */
+    MCAPI bool isEmoting() const;
+    /**
      * @symbol ?isValidSlotNum\@Agent\@\@QEAA_NH\@Z
      */
     MCAPI bool isValidSlotNum(int);
@@ -319,6 +317,10 @@ public:
      */
     MCAPI void setNameTagFromOwner(class Player const &);
     /**
+     * @symbol ?shrug\@Agent\@\@QEAAXXZ
+     */
+    MCAPI void shrug();
+    /**
      * @symbol ?startCommandMode\@Agent\@\@QEAAXXZ
      */
     MCAPI void startCommandMode();
@@ -326,10 +328,6 @@ public:
      * @symbol ?stopCommandMode\@Agent\@\@QEAAXXZ
      */
     MCAPI void stopCommandMode();
-    /**
-     * @symbol ?swingAnimationCompleted\@Agent\@\@QEAA_NXZ
-     */
-    MCAPI bool swingAnimationCompleted();
     /**
      * @symbol ?swingArm\@Agent\@\@QEAAXXZ
      */

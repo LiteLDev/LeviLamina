@@ -65,13 +65,13 @@ public:
      */
     MCAPI class AttributeInstance const & getInstance(unsigned int) const;
     /**
-     * @symbol ?getMutableInstance\@BaseAttributeMap\@\@QEAAPEAVAttributeInstance\@\@I\@Z
-     */
-    MCAPI class AttributeInstance * getMutableInstance(unsigned int);
-    /**
      * @symbol ?getMutableInstance\@BaseAttributeMap\@\@QEAAPEAVAttributeInstance\@\@AEBVAttribute\@\@\@Z
      */
     MCAPI class AttributeInstance * getMutableInstance(class Attribute const &);
+    /**
+     * @symbol ?getMutableInstance\@BaseAttributeMap\@\@QEAAPEAVAttributeInstance\@\@I\@Z
+     */
+    MCAPI class AttributeInstance * getMutableInstance(unsigned int);
     /**
      * @symbol ?getMutableInstance\@BaseAttributeMap\@\@QEAAPEAVAttributeInstance\@\@AEBVHashedString\@\@\@Z
      */
@@ -120,10 +120,6 @@ public:
      * @symbol ?DIFF_NO_ATTRIBUTES\@BaseAttributeMap\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const DIFF_NO_ATTRIBUTES;
-    /**
-     * @symbol ?getDiff\@BaseAttributeMap\@\@SA?AV?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@AEBV1\@0\@Z
-     */
-    MCAPI static class std::optional<std::string> getDiff(class BaseAttributeMap const &, class BaseAttributeMap const &);
 
 //private:
 

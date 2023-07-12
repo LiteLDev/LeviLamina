@@ -25,10 +25,6 @@ public:
 
 public:
     /**
-     * @symbol ?createLavaMoveSideBySideSystem\@LavaMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI static struct TickingSystemWithInfo createLavaMoveSideBySideSystem();
-    /**
      * @symbol ?createLavaMoveSystem\@LavaMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createLavaMoveSystem();

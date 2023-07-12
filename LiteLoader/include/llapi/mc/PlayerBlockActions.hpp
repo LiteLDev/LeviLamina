@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -46,9 +47,9 @@ public:
      */
     MCAPI ~PlayerBlockActions();
     /**
-     * @symbol ?read\@PlayerBlockActions\@\@SA?AV1\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?read\@PlayerBlockActions\@\@SA?AV?$Result\@VPlayerBlockActions\@\@Verror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    MCAPI static class PlayerBlockActions read(class ReadOnlyBinaryStream &);
+    MCAPI static class Bedrock::Result<class PlayerBlockActions, class std::error_code> read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?write\@PlayerBlockActions\@\@SAXAEBV1\@AEAVBinaryStream\@\@\@Z
      */

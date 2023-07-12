@@ -35,13 +35,5 @@ public:
      * @symbol ?createUpdateHitboxSystem\@ActorMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createUpdateHitboxSystem();
-    /**
-     * @symbol ?tickActorMoveSystem\@ActorMoveSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBUOnewayPhysicsBlocksComponent\@\@UMoveRequestComponent\@\@UAABBShapeComponent\@\@USubBBsComponent\@\@$$CBUSynchedActorDataComponent\@\@V?$Optional\@$$CBV?$FlagComponent\@UIsStuckItemFlag\@\@\@\@\@\@V?$Optional\@$$CBV?$FlagComponent\@UUsesOneWayCollisionFlag\@\@\@\@\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@$$CBV?$FlagComponent\@UIsStuckInColliderFlag\@\@\@\@\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@$$CBV?$FlagComponent\@UWasPenetratingLastFrameFlag\@\@\@\@\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UIsStuckInColliderFlag\@\@\@\@V?$FlagComponent\@UWasPenetratingLastFrameFlag\@\@\@\@UShouldMoveTowardClosestSpaceFlagComponent\@\@\@\@\@Z
-     */
-    MCAPI static void tickActorMoveSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct OnewayPhysicsBlocksComponent const, struct MoveRequestComponent, struct AABBShapeComponent, struct SubBBsComponent, struct SynchedActorDataComponent const, class Optional<class FlagComponent<struct IsStuckItemFlag> const>, class Optional<class FlagComponent<struct UsesOneWayCollisionFlag> const>>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct IsStuckInColliderFlag> const>>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct WasPenetratingLastFrameFlag> const>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct IsStuckInColliderFlag>, class FlagComponent<struct WasPenetratingLastFrameFlag>, struct ShouldMoveTowardClosestSpaceFlagComponent>);
-    /**
-     * @symbol ?tickUpdateHitboxSystem\@ActorMoveSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@UMoveRequestComponent\@\@\@\@$$CBUStateVectorComponent\@\@VHitboxComponent\@\@\@\@\@Z
-     */
-    MCAPI static void tickUpdateHitboxSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct MoveRequestComponent>, struct StateVectorComponent const, class HitboxComponent>);
 
 };

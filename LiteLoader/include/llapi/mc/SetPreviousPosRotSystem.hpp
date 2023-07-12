@@ -31,9 +31,5 @@ public:
      * @symbol ?_setPreviousPosRot\@SetPreviousPosRotSystem\@\@SAXAEAVStrictEntityContext\@\@AEAUStateVectorComponent\@\@AEAUActorRotationComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UPrevPosRotSetThisTickFlag\@\@\@\@\@\@\@Z
      */
     MCAPI static void _setPreviousPosRot(class StrictEntityContext &, struct StateVectorComponent &, struct ActorRotationComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct PrevPosRotSetThisTickFlag>>);
-    /**
-     * @symbol ?_setPreviousPosRotSystem\@SetPreviousPosRotSystem\@\@SAXAEBVEntityContext\@\@\@Z
-     */
-    MCAPI static void _setPreviousPosRotSystem(class EntityContext const &);
 
 };

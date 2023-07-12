@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 #include "Packet.hpp"
 
 #define BEFORE_EXTRA
@@ -51,9 +52,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@LevelChunkPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@LevelChunkPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0LevelChunkPacket\@\@QEAA\@XZ
      */
@@ -62,5 +63,9 @@ public:
      * @symbol ?pushSubChunkMetadata\@LevelChunkPacket\@\@QEAAX_K\@Z
      */
     MCAPI void pushSubChunkMetadata(unsigned __int64);
+    /**
+     * @symbol ?readCacheMetadata\@LevelChunkPacket\@\@QEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     */
+    MCAPI class Bedrock::Result<void, class std::error_code> readCacheMetadata(class ReadOnlyBinaryStream &);
 
 };

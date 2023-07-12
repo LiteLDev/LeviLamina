@@ -253,13 +253,13 @@ public:
      */
     MCAPI enum class UseAnimation getUseAnimation() const;
     /**
-     * @symbol ?getUserData\@ItemStackBase\@\@QEBAPEBVCompoundTag\@\@XZ
-     */
-    MCAPI class CompoundTag const * getUserData() const;
-    /**
      * @symbol ?getUserData\@ItemStackBase\@\@QEAAPEAVCompoundTag\@\@XZ
      */
     MCAPI class CompoundTag * getUserData();
+    /**
+     * @symbol ?getUserData\@ItemStackBase\@\@QEBAPEBVCompoundTag\@\@XZ
+     */
+    MCAPI class CompoundTag const * getUserData() const;
     /**
      * @symbol ?getWasPickedUp\@ItemStackBase\@\@QEBA_NXZ
      */
@@ -293,13 +293,13 @@ public:
      */
     MCAPI bool hasSameUserData(class ItemStackBase const &) const;
     /**
-     * @symbol ?hasTag\@ItemStackBase\@\@QEBA_NAEBUItemTag\@\@\@Z
-     */
-    MCAPI bool hasTag(struct ItemTag const &) const;
-    /**
      * @symbol ?hasTag\@ItemStackBase\@\@QEBA_NAEB_K\@Z
      */
     MCAPI bool hasTag(unsigned __int64 const &) const;
+    /**
+     * @symbol ?hasTag\@ItemStackBase\@\@QEBA_NAEBUItemTag\@\@\@Z
+     */
+    MCAPI bool hasTag(struct ItemTag const &) const;
     /**
      * @symbol ?hasUserData\@ItemStackBase\@\@QEBA_NXZ
      */
@@ -369,6 +369,10 @@ public:
      */
     MCAPI bool isLiquidClipItem() const;
     /**
+     * @symbol ?isMusicDiscItem\@ItemStackBase\@\@QEBA_NXZ
+     */
+    MCAPI bool isMusicDiscItem() const;
+    /**
      * @symbol ?isNull\@ItemStackBase\@\@QEBA_NXZ
      */
     MCAPI bool isNull() const;
@@ -376,6 +380,10 @@ public:
      * @symbol ?isOffhandItem\@ItemStackBase\@\@QEBA_NXZ
      */
     MCAPI bool isOffhandItem() const;
+    /**
+     * @symbol ?isOneOfBlockInstances\@ItemStackBase\@\@QEBA_NAEBV?$vector\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@V?$allocator\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@\@2\@\@std\@\@\@Z
+     */
+    MCAPI bool isOneOfBlockInstances(std::vector<class std::reference_wrapper<class HashedString const>> const &) const;
     /**
      * @symbol ?isOneOfBlockInstances\@ItemStackBase\@\@QEBA_NV?$initializer_list\@$$CBVHashedString\@\@\@std\@\@\@Z
      */
@@ -465,13 +473,13 @@ public:
      */
     MCAPI void resetHoverName();
     /**
-     * @symbol ?sameItem\@ItemStackBase\@\@QEBA_NHH\@Z
-     */
-    MCAPI bool sameItem(int, int) const;
-    /**
      * @symbol ?sameItem\@ItemStackBase\@\@QEBA_NAEBV1\@AEBUComparisonOptions\@1\@\@Z
      */
     MCAPI bool sameItem(class ItemStackBase const &, struct ItemStackBase::ComparisonOptions const &) const;
+    /**
+     * @symbol ?sameItem\@ItemStackBase\@\@QEBA_NHH\@Z
+     */
+    MCAPI bool sameItem(int, int) const;
     /**
      * @symbol ?sameItemAndAux\@ItemStackBase\@\@QEBA_NAEBV1\@\@Z
      */
@@ -544,6 +552,10 @@ public:
      * @symbol ?setShowPickUp\@ItemStackBase\@\@QEAAX_N\@Z
      */
     MCAPI void setShowPickUp(bool);
+    /**
+     * @symbol ?setStackSize\@ItemStackBase\@\@QEAAXE\@Z
+     */
+    MCAPI void setStackSize(unsigned char);
     /**
      * @symbol ?setUserData\@ItemStackBase\@\@QEAAXV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@\@Z
      */
@@ -623,13 +635,13 @@ public:
      */
     MCAPI ItemStackBase();
     /**
-     * @symbol ??0ItemStackBase\@\@IEAA\@AEBVBlockLegacy\@\@H\@Z
-     */
-    MCAPI ItemStackBase(class BlockLegacy const &, int);
-    /**
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBVBlock\@\@HPEBVCompoundTag\@\@\@Z
      */
     MCAPI ItemStackBase(class Block const &, int, class CompoundTag const *);
+    /**
+     * @symbol ??0ItemStackBase\@\@IEAA\@AEBVBlockLegacy\@\@H\@Z
+     */
+    MCAPI ItemStackBase(class BlockLegacy const &, int);
     /**
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBVRecipeIngredient\@\@\@Z
      */

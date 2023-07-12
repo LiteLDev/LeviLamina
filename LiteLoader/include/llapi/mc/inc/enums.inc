@@ -1180,4 +1180,8 @@ public:
     std::underlying_type_t<InteractionResult::Result> mResult;
 };
 
+namespace Connection{
+    enum class DisconnectFailReason;
+};
+
 // clang-format on

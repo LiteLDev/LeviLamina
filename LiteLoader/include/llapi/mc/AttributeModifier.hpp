@@ -43,11 +43,6 @@ public:
     bool mSerialize;
 
 #undef AFTER_EXTRA
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTRIBUTEMODIFIER
-public:
-    AttributeModifier(class AttributeModifier const &) = delete;
-#endif
-
 public:
     /**
      * @vftbl 0
@@ -66,6 +61,14 @@ public:
     MCVAPI ~AttributeModifier();
 #endif
     /**
+     * @symbol ??0AttributeModifier\@\@QEAA\@VUUID\@mce\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@MW4AttributeModifierOperation\@\@W4AttributeOperands\@\@_N\@Z
+     */
+    MCAPI AttributeModifier(class mce::UUID, std::string const &, float, enum class AttributeModifierOperation, enum class AttributeOperands, bool);
+    /**
+     * @symbol ??0AttributeModifier\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI AttributeModifier(class AttributeModifier const &);
+    /**
      * @symbol ??0AttributeModifier\@\@QEAA\@XZ
      */
     MCAPI AttributeModifier();
@@ -73,10 +76,6 @@ public:
      * @symbol ??0AttributeModifier\@\@QEAA\@VUUID\@mce\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@MHH_N\@Z
      */
     MCAPI AttributeModifier(class mce::UUID, std::string const &, float, int, int, bool);
-    /**
-     * @symbol ??0AttributeModifier\@\@QEAA\@VUUID\@mce\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@MW4AttributeModifierOperation\@\@W4AttributeOperands\@\@_N\@Z
-     */
-    MCAPI AttributeModifier(class mce::UUID, std::string const &, float, enum class AttributeModifierOperation, enum class AttributeOperands, bool);
     /**
      * @symbol ?getAmount\@AttributeModifier\@\@QEBAMXZ
      */

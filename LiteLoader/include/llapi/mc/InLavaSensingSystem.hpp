@@ -35,5 +35,9 @@ public:
      * @symbol ?doInLavaSensing\@InLavaSensingSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUUpdateWaterStateRequestComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UInLavaFlag\@\@\@\@\@\@\@Z
      */
     MCAPI static void doInLavaSensing(class StrictEntityContext const &, struct UpdateWaterStateRequestComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct InLavaFlag>>);
+    /**
+     * @symbol ?tickSystem\@InLavaSensingSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBUUpdateWaterStateRequestComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UInLavaFlag\@\@\@\@\@\@\@Z
+     */
+    MCAPI static void tickSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct UpdateWaterStateRequestComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct InLavaFlag>>);
 
 };

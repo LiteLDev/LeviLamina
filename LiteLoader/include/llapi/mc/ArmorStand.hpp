@@ -43,35 +43,50 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @vftbl 40
-     * @symbol __unk_vfn_40
+     * @vftbl 35
+     * @symbol __unk_vfn_35
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_35();
     /**
-     * @vftbl 48
+     * @vftbl 43
      * @symbol ?normalTick\@ArmorStand\@\@UEAAXXZ
      */
     virtual void normalTick();
     /**
-     * @vftbl 61
-     * @symbol __unk_vfn_61
+     * @vftbl 55
+     * @symbol __unk_vfn_55
      */
-    virtual void __unk_vfn_61();
+    virtual void __unk_vfn_55();
     /**
-     * @vftbl 68
-     * @symbol __unk_vfn_68
+     * @vftbl 62
+     * @symbol __unk_vfn_62
      */
-    virtual void __unk_vfn_68();
+    virtual void __unk_vfn_62();
     /**
-     * @vftbl 78
+     * @vftbl 69
      * @symbol ?getShadowRadius\@ArmorStand\@\@UEBAMXZ
      */
     virtual float getShadowRadius() const;
     /**
-     * @vftbl 80
-     * @symbol __unk_vfn_80
+     * @vftbl 71
+     * @symbol __unk_vfn_71
      */
-    virtual void __unk_vfn_80();
+    virtual void __unk_vfn_71();
+    /**
+     * @vftbl 77
+     * @symbol __unk_vfn_77
+     */
+    virtual void __unk_vfn_77();
+    /**
+     * @vftbl 82
+     * @symbol ?isPickable\@ArmorStand\@\@UEAA_NXZ
+     */
+    virtual bool isPickable();
+    /**
+     * @vftbl 83
+     * @symbol __unk_vfn_83
+     */
+    virtual void __unk_vfn_83();
     /**
      * @vftbl 86
      * @symbol __unk_vfn_86
@@ -79,144 +94,129 @@ public:
     virtual void __unk_vfn_86();
     /**
      * @vftbl 93
-     * @symbol ?isPickable\@ArmorStand\@\@UEAA_NXZ
+     * @symbol __unk_vfn_93
      */
-    virtual bool isPickable();
+    virtual void __unk_vfn_93();
     /**
-     * @vftbl 94
-     * @symbol __unk_vfn_94
+     * @vftbl 95
+     * @symbol __unk_vfn_95
      */
-    virtual void __unk_vfn_94();
+    virtual void __unk_vfn_95();
     /**
-     * @vftbl 97
-     * @symbol __unk_vfn_97
+     * @vftbl 96
+     * @symbol __unk_vfn_96
      */
-    virtual void __unk_vfn_97();
+    virtual void __unk_vfn_96();
     /**
-     * @vftbl 104
-     * @symbol __unk_vfn_104
+     * @vftbl 98
+     * @symbol __unk_vfn_98
      */
-    virtual void __unk_vfn_104();
+    virtual void __unk_vfn_98();
     /**
-     * @vftbl 106
-     * @symbol __unk_vfn_106
-     */
-    virtual void __unk_vfn_106();
-    /**
-     * @vftbl 107
-     * @symbol __unk_vfn_107
-     */
-    virtual void __unk_vfn_107();
-    /**
-     * @vftbl 109
-     * @symbol __unk_vfn_109
-     */
-    virtual void __unk_vfn_109();
-    /**
-     * @vftbl 132
+     * @vftbl 120
      * @symbol ?isInvulnerableTo\@ArmorStand\@\@UEBA_NAEBVActorDamageSource\@\@\@Z
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
-     * @vftbl 176
-     * @symbol __unk_vfn_176
+     * @vftbl 164
+     * @symbol __unk_vfn_164
      */
-    virtual void __unk_vfn_176();
+    virtual void __unk_vfn_164();
     /**
-     * @vftbl 190
-     * @symbol __unk_vfn_190
+     * @vftbl 178
+     * @symbol __unk_vfn_178
      */
-    virtual void __unk_vfn_190();
+    virtual void __unk_vfn_178();
     /**
-     * @vftbl 215
-     * @symbol __unk_vfn_215
+     * @vftbl 202
+     * @symbol __unk_vfn_202
      */
-    virtual void __unk_vfn_215();
+    virtual void __unk_vfn_202();
     /**
-     * @vftbl 216
-     * @symbol __unk_vfn_216
+     * @vftbl 203
+     * @symbol __unk_vfn_203
      */
-    virtual void __unk_vfn_216();
+    virtual void __unk_vfn_203();
     /**
-     * @vftbl 222
+     * @vftbl 209
      * @symbol ?getInteraction\@ArmorStand\@\@UEAA_NAEAVPlayer\@\@AEAVActorInteraction\@\@AEBVVec3\@\@\@Z
      */
     virtual bool getInteraction(class Player &, class ActorInteraction &, class Vec3 const &);
     /**
-     * @vftbl 232
-     * @symbol __unk_vfn_232
+     * @vftbl 219
+     * @symbol __unk_vfn_219
      */
-    virtual void __unk_vfn_232();
+    virtual void __unk_vfn_219();
     /**
-     * @vftbl 235
-     * @symbol __unk_vfn_235
+     * @vftbl 222
+     * @symbol __unk_vfn_222
      */
-    virtual void __unk_vfn_235();
+    virtual void __unk_vfn_222();
     /**
-     * @vftbl 236
+     * @vftbl 223
      * @symbol ?kill\@ArmorStand\@\@UEAAXXZ
      */
     virtual void kill();
     /**
-     * @vftbl 237
+     * @vftbl 224
      * @symbol ?die\@ArmorStand\@\@UEAAXAEBVActorDamageSource\@\@\@Z
      */
     virtual void die(class ActorDamageSource const &);
     /**
-     * @vftbl 250
+     * @vftbl 237
      * @symbol ?updateEntitySpecificMolangVariables\@ArmorStand\@\@UEAAXAEAVRenderParams\@\@\@Z
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
-     * @vftbl 252
-     * @symbol __unk_vfn_252
+     * @vftbl 239
+     * @symbol __unk_vfn_239
      */
-    virtual void __unk_vfn_252();
+    virtual void __unk_vfn_239();
     /**
-     * @vftbl 253
+     * @vftbl 240
      * @symbol ?_hurt\@ArmorStand\@\@UEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vftbl 256
+     * @vftbl 243
      * @symbol ?readAdditionalSaveData\@ArmorStand\@\@UEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vftbl 257
+     * @vftbl 244
      * @symbol ?addAdditionalSaveData\@ArmorStand\@\@UEBAXAEAVCompoundTag\@\@\@Z
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vftbl 260
-     * @symbol __unk_vfn_260
+     * @vftbl 247
+     * @symbol __unk_vfn_247
      */
-    virtual void __unk_vfn_260();
+    virtual void __unk_vfn_247();
     /**
-     * @vftbl 267
-     * @symbol __unk_vfn_267
+     * @vftbl 253
+     * @symbol __unk_vfn_253
      */
-    virtual void __unk_vfn_267();
+    virtual void __unk_vfn_253();
     /**
-     * @vftbl 282
+     * @vftbl 266
      * @symbol ?pushActors\@ArmorStand\@\@UEAAXXZ
      */
     virtual void pushActors();
     /**
-     * @vftbl 293
-     * @symbol __unk_vfn_293
+     * @vftbl 276
+     * @symbol __unk_vfn_276
      */
-    virtual void __unk_vfn_293();
+    virtual void __unk_vfn_276();
     /**
-     * @vftbl 297
-     * @symbol __unk_vfn_297
+     * @vftbl 280
+     * @symbol __unk_vfn_280
      */
-    virtual void __unk_vfn_297();
+    virtual void __unk_vfn_280();
     /**
-     * @vftbl 343
-     * @symbol __unk_vfn_343
+     * @vftbl 323
+     * @symbol __unk_vfn_323
      */
-    virtual void __unk_vfn_343();
+    virtual void __unk_vfn_323();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ARMORSTAND
     /**
      * @symbol ?interactPreventDefault\@ArmorStand\@\@UEAA_NXZ
@@ -234,9 +234,9 @@ public:
      */
     MCAPI void _causeDamage(float);
     /**
-     * @symbol ?_destroyWithEffects\@ArmorStand\@\@AEAAXAEBVVec3\@\@\@Z
+     * @symbol ?_destroyWithEffects\@ArmorStand\@\@AEAAXPEAVActor\@\@\@Z
      */
-    MCAPI void _destroyWithEffects(class Vec3 const &);
+    MCAPI void _destroyWithEffects(class Actor *);
     /**
      * @symbol ?_dropHeldItems\@ArmorStand\@\@AEAAXXZ
      */

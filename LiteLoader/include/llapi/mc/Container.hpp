@@ -69,7 +69,7 @@ public:
     virtual void removeContentChangeListener(class ContainerContentChangeListener *);
     /**
      * @vftbl 5
-     * @symbol ?getItem\@CraftingContainer\@\@UEBAAEBVItemStack\@\@H\@Z
+     * @symbol ?getItem\@FillingContainer\@\@UEBAAEBVItemStack\@\@H\@Z
      */
     virtual class ItemStack const & getItem(int) const = 0;
     /**
@@ -94,7 +94,7 @@ public:
     virtual bool addItemToFirstEmptySlot(class ItemStack const &);
     /**
      * @vftbl 10
-     * @symbol ?setItem\@Inventory\@\@UEAAXHAEBVItemStack\@\@\@Z
+     * @symbol ?setItem\@SimplePlayerContainer\@\@UEAAXHAEBVItemStack\@\@\@Z
      */
     virtual void setItem(int, class ItemStack const &) = 0;
     /**
@@ -241,13 +241,13 @@ public:
      */
     MCAPI Container(enum class ContainerType);
     /**
-     * @symbol ??0Container\@\@QEAA\@W4ContainerType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
-     */
-    MCAPI Container(enum class ContainerType, std::string const &, bool);
-    /**
      * @symbol ??0Container\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI Container(class Container const &);
+    /**
+     * @symbol ??0Container\@\@QEAA\@W4ContainerType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
+     */
+    MCAPI Container(enum class ContainerType, std::string const &, bool);
     /**
      * @symbol ?getContainerType\@Container\@\@QEBA?AW4ContainerType\@\@XZ
      */

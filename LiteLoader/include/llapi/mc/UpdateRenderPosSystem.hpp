@@ -37,10 +37,6 @@ public:
      * @symbol ?_doUpdateRenderPosSystem\@UpdateRenderPosSystem\@\@CAXAEBVStrictEntityContext\@\@AEBUStateVectorComponent\@\@AEAURenderPositionComponent\@\@\@Z
      */
     MCAPI static void _doUpdateRenderPosSystem(class StrictEntityContext const &, struct StateVectorComponent const &, struct RenderPositionComponent &);
-    /**
-     * @symbol ?_tickUpdateRenderPosSystem\@UpdateRenderPosSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@\@\@$$CBUStateVectorComponent\@\@URenderPositionComponent\@\@\@\@\@Z
-     */
-    MCAPI static void _tickUpdateRenderPosSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>, struct StateVectorComponent const, struct RenderPositionComponent>);
 
 private:
 

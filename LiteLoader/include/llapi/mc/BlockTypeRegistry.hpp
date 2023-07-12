@@ -40,6 +40,10 @@ public:
      */
     MCAPI static unsigned __int64 computeBlockTypeRegistryChecksum(class BaseGameVersion const &);
     /**
+     * @symbol ?finalizeBlockComponentStorage\@BlockTypeRegistry\@\@SAXXZ
+     */
+    MCAPI static void finalizeBlockComponentStorage();
+    /**
      * @symbol ?forEachBlock\@BlockTypeRegistry\@\@SAXV?$function\@$$A6A_NAEBVBlockLegacy\@\@\@Z\@std\@\@\@Z
      */
     MCAPI static void forEachBlock(class std::function<bool (class BlockLegacy const &)>);
@@ -84,13 +88,13 @@ public:
      */
     MCAPI static class WeakPtr<class BlockLegacy> lookupByName(class HashedString const &, bool);
     /**
-     * @symbol ?lookupByName\@BlockTypeRegistry\@\@SAPEBVBlock\@\@AEBVHashedString\@\@H_N\@Z
-     */
-    MCAPI static class Block const * lookupByName(class HashedString const &, int, bool);
-    /**
      * @symbol ?lookupByName\@BlockTypeRegistry\@\@SAPEBVBlock\@\@AEBVHashedString\@\@AEBV?$vector\@UBlockComplexAliasBlockState\@BlockTypeRegistry\@\@V?$allocator\@UBlockComplexAliasBlockState\@BlockTypeRegistry\@\@\@std\@\@\@std\@\@_N\@Z
      */
     MCAPI static class Block const * lookupByName(class HashedString const &, std::vector<struct BlockTypeRegistry::BlockComplexAliasBlockState> const &, bool);
+    /**
+     * @symbol ?lookupByName\@BlockTypeRegistry\@\@SAPEBVBlock\@\@AEBVHashedString\@\@H_N\@Z
+     */
+    MCAPI static class Block const * lookupByName(class HashedString const &, int, bool);
     /**
      * @symbol ?prepareBlocks\@BlockTypeRegistry\@\@SAXI\@Z
      */

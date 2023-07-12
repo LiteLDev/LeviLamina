@@ -29,4 +29,20 @@ public:
      */
     MCAPI void sendAllDeferredEvents();
 
+//private:
+    /**
+     * @symbol ?_sendFlushSystemAfterEvents\@ScriptDeferredEventCoordinator\@\@AEAA_NXZ
+     */
+    MCAPI bool _sendFlushSystemAfterEvents();
+    /**
+     * @symbol ?_sendFlushWorldAfterEvents\@ScriptDeferredEventCoordinator\@\@AEAA_NXZ
+     */
+    MCAPI bool _sendFlushWorldAfterEvents();
+
+private:
+    /**
+     * @symbol ?sEventExecutionOrder\@ScriptDeferredEventCoordinator\@\@0V?$vector\@UDocumentableEventExecution\@ScriptDeferredEventCoordinator\@\@V?$allocator\@UDocumentableEventExecution\@ScriptDeferredEventCoordinator\@\@\@std\@\@\@std\@\@B
+     */
+    MCAPI static std::vector<struct ScriptDeferredEventCoordinator::DocumentableEventExecution> const sEventExecutionOrder;
+
 };

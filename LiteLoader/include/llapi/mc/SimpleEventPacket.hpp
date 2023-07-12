@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 #include "Packet.hpp"
 
 #define BEFORE_EXTRA
@@ -53,9 +54,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@SimpleEventPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@SimpleEventPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLEEVENTPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -63,13 +64,13 @@ public:
     MCVAPI ~SimpleEventPacket();
 #endif
     /**
-     * @symbol ??0SimpleEventPacket\@\@QEAA\@AEBW4Subtype\@0\@\@Z
-     */
-    MCAPI SimpleEventPacket(enum class SimpleEventPacket::Subtype const &);
-    /**
      * @symbol ??0SimpleEventPacket\@\@QEAA\@XZ
      */
     MCAPI SimpleEventPacket();
+    /**
+     * @symbol ??0SimpleEventPacket\@\@QEAA\@AEBW4Subtype\@0\@\@Z
+     */
+    MCAPI SimpleEventPacket(enum class SimpleEventPacket::Subtype const &);
     /**
      * @symbol ?getSubtype\@SimpleEventPacket\@\@QEBAAEBW4Subtype\@1\@XZ
      */

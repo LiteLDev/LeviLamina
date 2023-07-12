@@ -37,10 +37,6 @@ public:
      * @symbol ?_doSetPreviousPositionSystem\@SetPreviousPositionSystem\@\@CAXAEBVStrictEntityContext\@\@AEAUStateVectorComponent\@\@\@Z
      */
     MCAPI static void _doSetPreviousPositionSystem(class StrictEntityContext const &, struct StateVectorComponent &);
-    /**
-     * @symbol ?_tickSetPreviousPositionSystem\@SetPreviousPositionSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UNeedSetPreviousPosition\@\@\@\@\@\@UStateVectorComponent\@\@\@\@\@Z
-     */
-    MCAPI static void _tickSetPreviousPositionSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct NeedSetPreviousPosition>>, struct StateVectorComponent>);
 
 private:
 

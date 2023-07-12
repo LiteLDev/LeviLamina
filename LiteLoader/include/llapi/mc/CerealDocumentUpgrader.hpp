@@ -29,13 +29,13 @@ public:
 
 public:
     /**
-     * @symbol ??0CerealDocumentUpgrader\@\@QEAA\@AEBUSchema\@reflection\@\@\@Z
+     * @symbol ??0CerealDocumentUpgrader\@\@QEAA\@AEBUSchema\@cereal\@\@\@Z
      */
-    MCAPI CerealDocumentUpgrader(struct reflection::Schema const &);
+    MCAPI CerealDocumentUpgrader(struct cereal::Schema const &);
     /**
-     * @symbol ?buildPatchSchemas\@CerealDocumentUpgrader\@\@QEAAXAEBV?$function\@$$A6A?BUSchema\@reflection\@\@AEBVSemVersion\@\@\@Z\@std\@\@\@Z
+     * @symbol ?buildPatchSchemas\@CerealDocumentUpgrader\@\@QEAAXAEBV?$function\@$$A6A?BUSchema\@cereal\@\@AEBVSemVersion\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI void buildPatchSchemas(class std::function<struct reflection::Schema const (class SemVersion const &)> const &);
+    MCAPI void buildPatchSchemas(class std::function<struct cereal::Schema const (class SemVersion const &)> const &);
     /**
      * @symbol ?clear\@CerealDocumentUpgrader\@\@QEAAXXZ
      */

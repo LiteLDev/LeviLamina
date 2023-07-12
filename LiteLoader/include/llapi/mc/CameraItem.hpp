@@ -52,10 +52,10 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @vftbl 19
-     * @symbol __unk_vfn_19
+     * @vftbl 21
+     * @symbol __unk_vfn_21
      */
-    virtual void __unk_vfn_19();
+    virtual void __unk_vfn_21();
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
@@ -111,5 +111,9 @@ public:
      * @symbol __unk_vfn_116
      */
     virtual void __unk_vfn_116();
+    /**
+     * @symbol ??0CameraItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
+     */
+    MCAPI CameraItem(std::string const &, int);
 
 };

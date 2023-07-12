@@ -7,6 +7,7 @@
 #include "llapi/Global.h"
 #include "ItemDescriptor.hpp"
 #include "Json.hpp"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 
@@ -76,6 +77,10 @@ public:
      * @symbol ?getHash\@MolangDescriptor\@\@UEBA_KXZ
      */
     virtual unsigned __int64 getHash() const;
+    /**
+     * @symbol ?deserialize\@MolangDescriptor\@\@SA?AV?$Result\@V?$unique_ptr\@UMolangDescriptor\@\@U?$default_delete\@UMolangDescriptor\@\@\@std\@\@\@std\@\@Verror_code\@2\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     */
+    MCAPI static class Bedrock::Result<std::unique_ptr<struct MolangDescriptor>, class std::error_code> deserialize(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?fromExpressionTag\@MolangDescriptor\@\@SA?AV?$unique_ptr\@UMolangDescriptor\@\@U?$default_delete\@UMolangDescriptor\@\@\@std\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@W4MolangVersion\@\@\@Z
      */

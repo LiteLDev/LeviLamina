@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -74,9 +75,9 @@ public:
      */
     MCAPI static std::string const getActionTypeName(enum class ItemStackRequestActionType);
     /**
-     * @symbol ?read\@ItemStackRequestAction\@\@SA?AV?$unique_ptr\@VItemStackRequestAction\@\@U?$default_delete\@VItemStackRequestAction\@\@\@std\@\@\@std\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?read\@ItemStackRequestAction\@\@SA?AV?$Result\@V?$unique_ptr\@VItemStackRequestAction\@\@U?$default_delete\@VItemStackRequestAction\@\@\@std\@\@\@std\@\@Verror_code\@2\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    MCAPI static std::unique_ptr<class ItemStackRequestAction> read(class ReadOnlyBinaryStream &);
+    MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestAction>, class std::error_code> read(class ReadOnlyBinaryStream &);
 
 //private:
 

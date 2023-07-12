@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -36,9 +37,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?read\@ItemUseOnActorInventoryTransaction\@\@UEAAXAEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?read\@ItemUseOnActorInventoryTransaction\@\@UEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual void read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, class std::error_code> read(class ReadOnlyBinaryStream &);
     /**
      * @vftbl 2
      * @symbol ?write\@ItemUseOnActorInventoryTransaction\@\@UEBAXAEAVBinaryStream\@\@\@Z

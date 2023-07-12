@@ -40,9 +40,9 @@ class RotationData {
      */
     MCAPI class Vec2 ComputeRotation(class Actor const &, class std::optional<class RotationCommandUtils::RotationData> const &, int);
     /**
-     * @symbol ?getFacingDirectionFacingEntity\@RotationCommandUtils\@\@YA?AVVec3\@\@PEAVActor\@\@\@Z
+     * @symbol ?getFacingDirectionFacingEntity\@RotationCommandUtils\@\@YA?AVVec3\@\@AEBVActor\@\@\@Z
      */
-    MCAPI class Vec3 getFacingDirectionFacingEntity(class Actor *);
+    MCAPI class Vec3 getFacingDirectionFacingEntity(class Actor const &);
     /**
      * @symbol ?getFacingDirectionFacingPosition\@RotationCommandUtils\@\@YA?AVVec3\@\@HAEBVCommandOrigin\@\@VCommandPositionFloat\@\@\@Z
      */

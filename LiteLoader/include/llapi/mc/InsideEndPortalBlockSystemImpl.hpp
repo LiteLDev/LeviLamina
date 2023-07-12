@@ -10,30 +10,15 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC class InsideEndPortalBlockSystemImpl.
- *
- */
-class InsideEndPortalBlockSystemImpl {
+
+namespace InsideEndPortalBlockSystemImpl {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEENDPORTALBLOCKSYSTEMIMPL
-public:
-    class InsideEndPortalBlockSystemImpl& operator=(class InsideEndPortalBlockSystemImpl const &) = delete;
-    InsideEndPortalBlockSystemImpl(class InsideEndPortalBlockSystemImpl const &) = delete;
-    InsideEndPortalBlockSystemImpl() = delete;
-#endif
-
-public:
     /**
-     * @symbol ?_tickInsideEndPortalBlockSystem\@InsideEndPortalBlockSystemImpl\@\@SAXAEAVStrictEntityContext\@\@AEBU?$InsideBlockWithPosAndBlockComponent\@UEndPortalBlockFlag\@\@\@\@AEAVActorOwnerComponent\@\@\@Z
+     * @symbol ?tickInsideEndPortalBlock\@InsideEndPortalBlockSystemImpl\@\@YAXAEBU?$InsideBlockWithPosAndBlockComponent\@UEndPortalBlockFlag\@\@\@\@AEAVActorOwnerComponent\@\@\@Z
      */
-    MCAPI static void _tickInsideEndPortalBlockSystem(class StrictEntityContext &, struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag> const &, class ActorOwnerComponent &);
-    /**
-     * @symbol ?tickInsideEndPortalBlockSystem\@InsideEndPortalBlockSystemImpl\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBU?$InsideBlockWithPosAndBlockComponent\@UEndPortalBlockFlag\@\@\@\@VActorOwnerComponent\@\@\@\@\@Z
-     */
-    MCAPI static void tickInsideEndPortalBlockSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag> const, class ActorOwnerComponent>);
+    MCAPI void tickInsideEndPortalBlock(struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag> const &, class ActorOwnerComponent &);
 
 };

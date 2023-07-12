@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -47,9 +48,9 @@ public:
      */
     MCAPI ItemStackNetIdVariant();
     /**
-     * @symbol ?deserialize\@ItemStackNetIdVariant\@\@QEAAXAEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?deserialize\@ItemStackNetIdVariant\@\@QEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    MCAPI void deserialize(class ReadOnlyBinaryStream &);
+    MCAPI class Bedrock::Result<void, class std::error_code> deserialize(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?hasServerNetId\@ItemStackNetIdVariant\@\@QEBA_NXZ
      */
@@ -58,10 +59,6 @@ public:
      * @symbol ?isValid\@ItemStackNetIdVariant\@\@QEBA_NXZ
      */
     MCAPI bool isValid() const;
-    /**
-     * @symbol ??4ItemStackNetIdVariant\@\@QEAAAEAU0\@AEBV?$TypedClientNetId\@UItemStackLegacyRequestIdTag\@\@H$0A\@\@\@\@Z
-     */
-    MCAPI struct ItemStackNetIdVariant & operator=(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &);
     /**
      * @symbol ??4ItemStackNetIdVariant\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
@@ -74,6 +71,10 @@ public:
      * @symbol ??4ItemStackNetIdVariant\@\@QEAAAEAU0\@AEBV?$TypedServerNetId\@UItemStackNetIdTag\@\@H$0A\@\@\@\@Z
      */
     MCAPI struct ItemStackNetIdVariant & operator=(class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const &);
+    /**
+     * @symbol ??4ItemStackNetIdVariant\@\@QEAAAEAU0\@AEBV?$TypedClientNetId\@UItemStackLegacyRequestIdTag\@\@H$0A\@\@\@\@Z
+     */
+    MCAPI struct ItemStackNetIdVariant & operator=(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const &);
     /**
      * @symbol ??8ItemStackNetIdVariant\@\@QEBA_NAEBU0\@\@Z
      */

@@ -22,13 +22,10 @@ class ScriptPackPermissions {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPACKPERMISSIONS
 public:
     class ScriptPackPermissions& operator=(class ScriptPackPermissions const &) = delete;
+    ScriptPackPermissions() = delete;
 #endif
 
 public:
-    /**
-     * @symbol ??0ScriptPackPermissions\@\@QEAA\@XZ
-     */
-    MCAPI ScriptPackPermissions();
     /**
      * @symbol ??0ScriptPackPermissions\@\@QEAA\@AEBV0\@\@Z
      */

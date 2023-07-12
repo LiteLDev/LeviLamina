@@ -82,13 +82,13 @@ public:
      */
     virtual void RundownObject();
     /**
-     * @symbol ?Initialize\@TaskQueueImpl\@\@QEAAJW4XTaskQueueDispatchMode\@\@0_N1\@Z
-     */
-    MCAPI long Initialize(enum class XTaskQueueDispatchMode, enum class XTaskQueueDispatchMode, bool, bool);
-    /**
      * @symbol ?Initialize\@TaskQueueImpl\@\@QEAAJPEAUXTaskQueuePortObject\@\@0\@Z
      */
     MCAPI long Initialize(struct XTaskQueuePortObject *, struct XTaskQueuePortObject *);
+    /**
+     * @symbol ?Initialize\@TaskQueueImpl\@\@QEAAJW4XTaskQueueDispatchMode\@\@0_N1\@Z
+     */
+    MCAPI long Initialize(enum class XTaskQueueDispatchMode, enum class XTaskQueueDispatchMode, bool, bool);
     /**
      * @symbol ??0TaskQueueImpl\@\@QEAA\@XZ
      */

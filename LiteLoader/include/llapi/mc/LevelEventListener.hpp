@@ -39,10 +39,6 @@ public:
      */
     MCVAPI enum class EventResult onLevelAddedPlayer(class Level &, class Player &);
     /**
-     * @symbol ?onLevelBiomesRegistered\@LevelEventListener\@\@UEAA?AW4EventResult\@\@AEAVIWorldRegistriesProvider\@\@\@Z
-     */
-    MCVAPI enum class EventResult onLevelBiomesRegistered(class IWorldRegistriesProvider &);
-    /**
      * @symbol ?onLevelInitialized\@LevelEventListener\@\@UEAA?AW4EventResult\@\@AEAVLevel\@\@\@Z
      */
     MCVAPI enum class EventResult onLevelInitialized(class Level &);

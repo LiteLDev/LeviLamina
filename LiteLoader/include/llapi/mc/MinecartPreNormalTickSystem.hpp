@@ -37,10 +37,6 @@ public:
      * @symbol ?_doMinecartPreNormalTickSystem\@MinecartPreNormalTickSystem\@\@CAXAEAVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UMinecartPreNormalTickBlockPosComponent\@\@\@\@\@Z
      */
     MCAPI static void _doMinecartPreNormalTickSystem(class StrictEntityContext &, class ActorOwnerComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MinecartPreNormalTickBlockPosComponent>);
-    /**
-     * @symbol ?_tickMinecartPreNormalTickSystem\@MinecartPreNormalTickSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UMinecartFlag\@\@\@\@\@\@VActorOwnerComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UMinecartPreNormalTickBlockPosComponent\@\@\@\@\@Z
-     */
-    MCAPI static void _tickMinecartPreNormalTickSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct MinecartFlag>>, class ActorOwnerComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MinecartPreNormalTickBlockPosComponent>);
 
 private:
 

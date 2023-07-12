@@ -34,12 +34,12 @@ public:
      */
     MCAPI SimplexNoise(class IRandom &, bool);
     /**
-     * @symbol ?_getValue\@SimplexNoise\@\@QEBAMAEBVVec2\@\@\@Z
-     */
-    MCAPI float _getValue(class Vec2 const &) const;
-    /**
      * @symbol ?_getValue\@SimplexNoise\@\@QEBAMAEBVVec3\@\@\@Z
      */
     MCAPI float _getValue(class Vec3 const &) const;
+    /**
+     * @symbol ?_getValue\@SimplexNoise\@\@QEBAMAEBVVec2\@\@\@Z
+     */
+    MCAPI float _getValue(class Vec2 const &) const;
 
 };

@@ -72,6 +72,10 @@ public:
      */
     MCVAPI void handleVersionBasedInitialization(class SemVersion const &);
     /**
+     * @symbol ?initializeComponent\@ItemComponent\@\@UEBAXXZ
+     */
+    MCVAPI void initializeComponent() const;
+    /**
      * @symbol ?initializeFromNetwork\@ItemComponent\@\@UEAA_NAEBVCompoundTag\@\@\@Z
      */
     MCVAPI bool initializeFromNetwork(class CompoundTag const &);

@@ -29,12 +29,12 @@ public:
      * @symbol ?createSystem\@RecipeUnlockingSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
+    /**
+     * @symbol ?isEnabled\@RecipeUnlockingSystem\@\@SA_NAEBVLevel\@\@\@Z
+     */
+    MCAPI static bool isEnabled(class Level const &);
 
 //protected:
-    /**
-     * @symbol ?_hasRecipesLeftToUnlock\@RecipeUnlockingSystem\@\@KA_NAEBVRecipes\@\@AEBVUnlockedRecipesServerComponent\@\@\@Z
-     */
-    MCAPI static bool _hasRecipesLeftToUnlock(class Recipes const &, class UnlockedRecipesServerComponent const &);
     /**
      * @symbol ?_unlockRecipes\@RecipeUnlockingSystem\@\@KA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEAVUnlockedRecipesServerComponent\@\@AEBVRecipes\@\@_NAEBV?$optional\@UInventoryChangedData\@RecipeUnlockingSystem\@\@\@3\@\@Z
      */
@@ -57,10 +57,6 @@ public:
      * @symbol ?_handleInstructionUnlocks\@RecipeUnlockingSystem\@\@CAXPEAVServerPlayer\@\@AEAVUnlockedRecipesServerComponent\@\@\@Z
      */
     MCAPI static void _handleInstructionUnlocks(class ServerPlayer *, class UnlockedRecipesServerComponent &);
-    /**
-     * @symbol ?_tick\@RecipeUnlockingSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UServerPlayerComponentFlag\@\@\@\@\@\@VUnlockedRecipesServerComponent\@\@VActorOwnerComponent\@\@\@\@\@Z
-     */
-    MCAPI static void _tick(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ServerPlayerComponentFlag>>, class UnlockedRecipesServerComponent, class ActorOwnerComponent>);
 
 protected:
 

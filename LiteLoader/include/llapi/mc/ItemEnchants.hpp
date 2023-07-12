@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Enchant.hpp"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -79,9 +80,9 @@ public:
      */
     MCAPI bool isEmpty() const;
     /**
-     * @symbol ?read\@ItemEnchants\@\@QEAAXAEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?read\@ItemEnchants\@\@QEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    MCAPI void read(class ReadOnlyBinaryStream &);
+    MCAPI class Bedrock::Result<void, class std::error_code> read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?removeEnchantment\@ItemEnchants\@\@QEAAXW4Type\@Enchant\@\@\@Z
      */

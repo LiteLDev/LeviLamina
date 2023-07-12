@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 #include "Packet.hpp"
 
 #define BEFORE_EXTRA
@@ -52,9 +53,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@SetTitlePacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@SetTitlePacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SETTITLEPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -70,21 +71,21 @@ public:
      */
     MCAPI SetTitlePacket();
     /**
-     * @symbol ??0SetTitlePacket\@\@QEAA\@HHH\@Z
-     */
-    MCAPI SetTitlePacket(int, int, int);
-    /**
      * @symbol ??0SetTitlePacket\@\@QEAA\@W4TitleType\@0\@\@Z
      */
     MCAPI SetTitlePacket(enum class SetTitlePacket::TitleType);
     /**
-     * @symbol ??0SetTitlePacket\@\@QEAA\@W4TitleType\@0\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ??0SetTitlePacket\@\@QEAA\@HHH\@Z
      */
-    MCAPI SetTitlePacket(enum class SetTitlePacket::TitleType, std::string const &);
+    MCAPI SetTitlePacket(int, int, int);
     /**
      * @symbol ??0SetTitlePacket\@\@QEAA\@W4TitleType\@0\@AEBVResolvedTextObject\@\@\@Z
      */
     MCAPI SetTitlePacket(enum class SetTitlePacket::TitleType, class ResolvedTextObject const &);
+    /**
+     * @symbol ??0SetTitlePacket\@\@QEAA\@W4TitleType\@0\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI SetTitlePacket(enum class SetTitlePacket::TitleType, std::string const &);
     /**
      * @symbol ??4SetTitlePacket\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */

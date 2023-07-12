@@ -31,9 +31,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONTRANSFERBASE
     /**
-     * @symbol ?_read\@ItemStackRequestActionTransferBase\@\@MEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@ItemStackRequestActionTransferBase\@\@MEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    MCVAPI bool _read(class ReadOnlyBinaryStream &);
+    MCVAPI class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?_write\@ItemStackRequestActionTransferBase\@\@MEBAXAEAVBinaryStream\@\@\@Z
      */

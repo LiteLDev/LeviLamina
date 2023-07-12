@@ -7,21 +7,22 @@
 #include "llapi/Global.h"
 #include "ItemDescriptor.hpp"
 #include "Json.hpp"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
 
-class DeferredDescriptor {
+struct DeferredDescriptor {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFERREDDESCRIPTOR
 public:
-    class DeferredDescriptor& operator=(class DeferredDescriptor const &) = delete;
-    DeferredDescriptor(class DeferredDescriptor const &) = delete;
+    struct DeferredDescriptor& operator=(struct DeferredDescriptor const &) = delete;
+    DeferredDescriptor(struct DeferredDescriptor const &) = delete;
     DeferredDescriptor() = delete;
 #endif
 
@@ -76,6 +77,10 @@ public:
      * @symbol ?resolve\@DeferredDescriptor\@\@UEBA?AV?$unique_ptr\@UBaseDescriptor\@ItemDescriptor\@\@U?$default_delete\@UBaseDescriptor\@ItemDescriptor\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> resolve() const;
+    /**
+     * @symbol ?deserialize\@DeferredDescriptor\@\@SA?AV?$Result\@V?$unique_ptr\@UDeferredDescriptor\@\@U?$default_delete\@UDeferredDescriptor\@\@\@std\@\@\@std\@\@Verror_code\@2\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     */
+    MCAPI static class Bedrock::Result<std::unique_ptr<struct DeferredDescriptor>, class std::error_code> deserialize(class ReadOnlyBinaryStream &);
 
 //private:
     /**
@@ -86,7 +91,5 @@ public:
      * @symbol ?_initFromItem\@DeferredDescriptor\@\@AEBA?AV?$unique_ptr\@UBaseDescriptor\@ItemDescriptor\@\@U?$default_delete\@UBaseDescriptor\@ItemDescriptor\@\@\@std\@\@\@std\@\@$$QEAV?$WeakPtr\@VItem\@\@\@\@F\@Z
      */
     MCAPI std::unique_ptr<struct ItemDescriptor::BaseDescriptor> _initFromItem(class WeakPtr<class Item> &&, short) const;
-
-private:
 
 };

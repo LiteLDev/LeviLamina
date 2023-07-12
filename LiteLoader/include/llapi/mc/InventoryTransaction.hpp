@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -82,9 +83,9 @@ public:
      */
     MCAPI static bool checkTransactionItemsMatch(class ItemStack const &, class ItemStack const &);
     /**
-     * @symbol ?deserialize\@InventoryTransaction\@\@SA?AV1\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?deserialize\@InventoryTransaction\@\@SA?AV?$Result\@VInventoryTransaction\@\@Verror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    MCAPI static class InventoryTransaction deserialize(class ReadOnlyBinaryStream &);
+    MCAPI static class Bedrock::Result<class InventoryTransaction, class std::error_code> deserialize(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?getInventoryTransactionErrorName\@InventoryTransaction\@\@SA?BV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4InventoryTransactionError\@\@\@Z
      */

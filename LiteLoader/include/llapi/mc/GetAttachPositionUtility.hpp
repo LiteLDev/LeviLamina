@@ -11,26 +11,22 @@
 #undef BEFORE_EXTRA
 
 
-class GetAttachPositionUtility {
+namespace GetAttachPositionUtility {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GETATTACHPOSITIONUTILITY
-public:
-    class GetAttachPositionUtility& operator=(class GetAttachPositionUtility const &) = delete;
-    GetAttachPositionUtility(class GetAttachPositionUtility const &) = delete;
-    GetAttachPositionUtility() = delete;
-#endif
-
-public:
     /**
-     * @symbol ?getAttachPos\@GetAttachPositionUtility\@\@SA?AVVec3\@\@AEBVStrictEntityContext\@\@AEBUGetAttachPositionViews\@\@W4ActorLocation\@\@\@Z
+     * @symbol ?getAttachPosition\@GetAttachPositionUtility\@\@YA?AV?$optional\@VVec3\@\@\@std\@\@AEBVStrictEntityContext\@\@AEBUGetAttachPositionViews\@\@W4ActorLocation\@\@AEBVVec3\@\@\@Z
      */
-    MCAPI static class Vec3 getAttachPos(class StrictEntityContext const &, struct GetAttachPositionViews const &, enum class ActorLocation);
+    MCAPI class std::optional<class Vec3> getAttachPosition(class StrictEntityContext const &, struct GetAttachPositionViews const &, enum class ActorLocation, class Vec3 const &);
     /**
-     * @symbol ?getAttachPos\@GetAttachPositionUtility\@\@SA?AV?$optional\@VVec3\@\@\@std\@\@AEBVStrictEntityContext\@\@AEBUGetAttachPositionViews\@\@W4ActorLocation\@\@AEBVVec3\@\@\@Z
+     * @symbol ?getNonPassengerAttachPos\@GetAttachPositionUtility\@\@YA?AVVec3\@\@AEBUStateVectorComponent\@\@V?$optional_ref\@$$CBUActorHeadRotationComponent\@\@\@\@AEBUAABBShapeComponent\@\@AEBUActorRotationComponent\@\@AEBUOffsetsComponent\@\@V?$optional_ref\@$$CBUVanillaOffsetComponent\@\@\@\@W4ActorLocation\@\@M\@Z
      */
-    MCAPI static class std::optional<class Vec3> getAttachPos(class StrictEntityContext const &, struct GetAttachPositionViews const &, enum class ActorLocation, class Vec3 const &);
+    MCAPI class Vec3 getNonPassengerAttachPos(struct StateVectorComponent const &, class optional_ref<struct ActorHeadRotationComponent const>, struct AABBShapeComponent const &, struct ActorRotationComponent const &, struct OffsetsComponent const &, class optional_ref<struct VanillaOffsetComponent const>, enum class ActorLocation, float);
+    /**
+     * @symbol ?getPassengerAttachPos\@GetAttachPositionUtility\@\@YA?AVVec3\@\@AEBVStrictEntityContext\@\@AEBUGetAttachPositionViews\@\@W4ActorLocation\@\@M\@Z
+     */
+    MCAPI class Vec3 getPassengerAttachPos(class StrictEntityContext const &, struct GetAttachPositionViews const &, enum class ActorLocation, float);
 
 };

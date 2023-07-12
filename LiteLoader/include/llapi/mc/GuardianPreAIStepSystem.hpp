@@ -37,10 +37,6 @@ public:
      * @symbol ?_doGuardianPreAIStepSystem\@GuardianPreAIStepSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
      */
     MCAPI static void _doGuardianPreAIStepSystem(class StrictEntityContext const &, class ActorOwnerComponent &);
-    /**
-     * @symbol ?_tickGuardianPreAIStepSystem\@GuardianPreAIStepSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UGuardianFlag\@\@\@\@\@\@VActorOwnerComponent\@\@\@\@\@Z
-     */
-    MCAPI static void _tickGuardianPreAIStepSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct GuardianFlag>>, class ActorOwnerComponent>);
 
 private:
 

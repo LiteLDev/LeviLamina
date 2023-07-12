@@ -38,9 +38,9 @@ public:
     virtual std::string const & getName() const;
     /**
      * @vftbl 2
-     * @symbol ?initializeComponent\@BlockMapColorDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
+     * @symbol ?initializeComponent\@BlockMapColorDescription\@\@UEBAXAEAVBlockComponentStorage\@\@\@Z
      */
-    virtual void initializeComponent(class EntityContext &) const;
+    virtual void initializeComponent(class BlockComponentStorage &) const;
     /**
      * @symbol ?NameID\@BlockMapColorDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */

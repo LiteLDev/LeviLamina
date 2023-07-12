@@ -268,13 +268,13 @@ public:
      */
     MCAPI static std::string getBasePotion(enum class Potion::PotionType);
     /**
-     * @symbol ?getPotion\@Potion\@\@SA?AV?$shared_ptr\@$$CBVPotion\@\@\@std\@\@H\@Z
-     */
-    MCAPI static class std::shared_ptr<class Potion const> getPotion(int);
-    /**
      * @symbol ?getPotion\@Potion\@\@SA?AV?$shared_ptr\@$$CBVPotion\@\@\@std\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@3\@\@Z
      */
     MCAPI static class std::shared_ptr<class Potion const> getPotion(class std::basic_string_view<char, struct std::char_traits<char>>);
+    /**
+     * @symbol ?getPotion\@Potion\@\@SA?AV?$shared_ptr\@$$CBVPotion\@\@\@std\@\@H\@Z
+     */
+    MCAPI static class std::shared_ptr<class Potion const> getPotion(int);
     /**
      * @symbol ?getPotionCount\@Potion\@\@SAHXZ
      */

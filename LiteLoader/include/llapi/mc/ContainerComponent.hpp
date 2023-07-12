@@ -56,13 +56,13 @@ public:
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @symbol ?addItem\@ContainerComponent\@\@QEAA_NAEAVItemStack\@\@HH\@Z
-     */
-    MCAPI bool addItem(class ItemStack &, int, int);
-    /**
      * @symbol ?addItem\@ContainerComponent\@\@QEAA_NAEAVItemActor\@\@\@Z
      */
     MCAPI bool addItem(class ItemActor &);
+    /**
+     * @symbol ?addItem\@ContainerComponent\@\@QEAA_NAEAVItemStack\@\@HH\@Z
+     */
+    MCAPI bool addItem(class ItemStack &, int, int);
     /**
      * @symbol ?addItem\@ContainerComponent\@\@QEAA_NAEAVItemStack\@\@\@Z
      */

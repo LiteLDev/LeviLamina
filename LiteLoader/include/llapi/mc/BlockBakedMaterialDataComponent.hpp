@@ -24,11 +24,14 @@ struct BlockBakedMaterialDataComponent {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKBAKEDMATERIALDATACOMPONENT
 public:
     struct BlockBakedMaterialDataComponent& operator=(struct BlockBakedMaterialDataComponent const &) = delete;
-    BlockBakedMaterialDataComponent(struct BlockBakedMaterialDataComponent const &) = delete;
     BlockBakedMaterialDataComponent() = delete;
 #endif
 
 public:
+    /**
+     * @symbol ??0BlockBakedMaterialDataComponent\@\@QEAA\@AEBU0\@\@Z
+     */
+    MCAPI BlockBakedMaterialDataComponent(struct BlockBakedMaterialDataComponent const &);
     /**
      * @symbol ?isSolidOpaque\@BlockBakedMaterialDataComponent\@\@QEBA_NXZ
      */

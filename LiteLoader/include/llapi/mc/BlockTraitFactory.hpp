@@ -25,10 +25,6 @@ public:
 
 public:
     /**
-     * @symbol ?createTrait\@BlockTraitFactory\@\@QEBA?AV?$unique_ptr\@VITrait\@BlockTrait\@\@U?$default_delete\@VITrait\@BlockTrait\@\@\@std\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
-     */
-    MCAPI std::unique_ptr<class BlockTrait::ITrait> createTrait(std::string const &) const;
-    /**
      * @symbol ??1BlockTraitFactory\@\@QEAA\@XZ
      */
     MCAPI ~BlockTraitFactory();

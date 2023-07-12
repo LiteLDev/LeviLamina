@@ -49,6 +49,10 @@ public:
      */
     MCAPI bool Gametest() const;
     /**
+     * @symbol ?RecipeUnlocking\@Experiments\@\@QEBA_NXZ
+     */
+    MCAPI bool RecipeUnlocking() const;
+    /**
      * @symbol ?ShortSneaking\@Experiments\@\@QEBA_NXZ
      */
     MCAPI bool ShortSneaking() const;
@@ -72,6 +76,10 @@ public:
      * @symbol ?isExperimentEnabled\@Experiments\@\@QEBA_NW4AllExperiments\@\@\@Z
      */
     MCAPI bool isExperimentEnabled(enum class AllExperiments) const;
+    /**
+     * @symbol ?setExperimentByToggleIndex\@Experiments\@\@QEAAX_K_N\@Z
+     */
+    MCAPI void setExperimentByToggleIndex(unsigned __int64, bool);
     /**
      * @symbol ?setExperimentEnabled\@Experiments\@\@QEAAXW4AllExperiments\@\@_N\@Z
      */

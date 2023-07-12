@@ -31,10 +31,6 @@ public:
      * @symbol ?createSystem\@CurrentSwimAmountSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
-    /**
-     * @symbol ?tick\@CurrentSwimAmountSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@\@\@USwimAmountComponent\@\@$$CBUSynchedActorDataComponent\@\@\@\@\@Z
-     */
-    MCAPI static void tick(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>, struct SwimAmountComponent, struct SynchedActorDataComponent const>);
 
 //private:
     /**

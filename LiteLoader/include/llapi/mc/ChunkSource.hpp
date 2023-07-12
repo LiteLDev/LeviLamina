@@ -244,6 +244,10 @@ public:
      */
     MCAPI class Level & getLevel() const;
     /**
+     * @symbol ?initializeWithLevelStorageManager\@ChunkSource\@\@QEAAXAEAVLevelStorageManager\@\@\@Z
+     */
+    MCAPI void initializeWithLevelStorageManager(class LevelStorageManager &);
+    /**
      * @symbol ?setShuttingDown\@ChunkSource\@\@QEAAX_N\@Z
      */
     MCAPI void setShuttingDown(bool);
@@ -322,6 +326,14 @@ public:
      */
     MCAPI void _spawnChunkGenerationTasks(int, bool);
 
+//private:
+    /**
+     * @symbol ?_saveDirtyChunks\@ChunkSource\@\@AEAAXAEAVLevelStorage\@\@\@Z
+     */
+    MCAPI void _saveDirtyChunks(class LevelStorage &);
+
 protected:
+
+private:
 
 };

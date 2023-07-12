@@ -28,9 +28,5 @@ public:
      * @symbol ?createAirTravelSystem\@AirTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createAirTravelSystem();
-    /**
-     * @symbol ?tickAirTravelSystem\@AirTravelSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UUsesECSMovementFlag\@\@\@\@V?$FlagComponent\@UAirTravelFlag\@\@\@\@\@\@$$CBUFlySpeedComponent\@\@UMobTravelComponent\@\@\@\@\@Z
-     */
-    MCAPI static void tickAirTravelSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct UsesECSMovementFlag>, class FlagComponent<struct AirTravelFlag>>, struct FlySpeedComponent const, struct MobTravelComponent>);
 
 };

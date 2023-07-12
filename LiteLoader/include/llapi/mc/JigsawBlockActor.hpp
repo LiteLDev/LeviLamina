@@ -56,6 +56,11 @@ public:
      */
     virtual void __unk_vfn_18();
     /**
+     * @vftbl 30
+     * @symbol __unk_vfn_30
+     */
+    virtual void __unk_vfn_30();
+    /**
      * @vftbl 31
      * @symbol __unk_vfn_31
      */
@@ -82,26 +87,31 @@ public:
     virtual void __unk_vfn_35();
     /**
      * @vftbl 36
+     * @symbol __unk_vfn_36
+     */
+    virtual void __unk_vfn_36();
+    /**
+     * @vftbl 37
      * @symbol ?getUgcStrings\@JigsawBlockActor\@\@UEBA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEBVCompoundTag\@\@\@Z
      */
     virtual std::vector<std::string> getUgcStrings(class CompoundTag const &) const;
     /**
-     * @vftbl 37
+     * @vftbl 38
      * @symbol ?setUgcStrings\@JigsawBlockActor\@\@UEBAXAEAVCompoundTag\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
      */
     virtual void setUgcStrings(class CompoundTag &, std::vector<std::string> const &) const;
     /**
-     * @vftbl 38
-     * @symbol __unk_vfn_38
-     */
-    virtual void __unk_vfn_38();
-    /**
      * @vftbl 39
+     * @symbol __unk_vfn_39
+     */
+    virtual void __unk_vfn_39();
+    /**
+     * @vftbl 40
      * @symbol ?_getUpdatePacket\@JigsawBlockActor\@\@MEAA?AV?$unique_ptr\@VBlockActorDataPacket\@\@U?$default_delete\@VBlockActorDataPacket\@\@\@std\@\@\@std\@\@AEAVBlockSource\@\@\@Z
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @vftbl 40
+     * @vftbl 41
      * @symbol ?_onUpdatePacket\@JigsawBlockActor\@\@MEAAXAEBVCompoundTag\@\@AEAVBlockSource\@\@\@Z
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);

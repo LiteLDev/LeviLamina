@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 #include "Packet.hpp"
 
 #define BEFORE_EXTRA
@@ -51,16 +52,16 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@AddPaintingPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@AddPaintingPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
-    /**
-     * @symbol ??0AddPaintingPacket\@\@QEAA\@AEBVPainting\@\@\@Z
-     */
-    MCAPI AddPaintingPacket(class Painting const &);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0AddPaintingPacket\@\@QEAA\@XZ
      */
     MCAPI AddPaintingPacket();
+    /**
+     * @symbol ??0AddPaintingPacket\@\@QEAA\@AEBVPainting\@\@\@Z
+     */
+    MCAPI AddPaintingPacket(class Painting const &);
 
 };
