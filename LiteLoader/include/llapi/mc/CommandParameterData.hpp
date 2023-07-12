@@ -33,14 +33,13 @@ public:
     ParseFn parser;                         // 8
     std::string name;                       // 16
     char const* desc;                       // 48
-    int unk56;                              // 56
-    int unk60;                              // 60
+    int fix_symbol;                         // 56
     char const* unk64;                      // 64
     int unk72;                              // 72
     CommandParameterDataType type;          // 76
     int offset;                             // 80
-    int flag_offset;                        // 84
-    bool mand;                              // 88
+    int set_offset;                         // 84
+    bool is_optional;                       // 88
     unsigned char options;                  // 89
 
     CommandParameterData()
@@ -53,13 +52,13 @@ public:
         , parser(parser)
         , name(describe)
         , desc(enumName)
-        , unk56(-1)
+        , fix_symbol(-1)
         , unk64("")
         , unk72(-1)
         , type(type)
         , offset(offset)
-        , flag_offset(flag_offset)
-        , mand(optional)
+        , set_offset(flag_offset)
+        , is_optional(optional)
         , options(0){};
 
 #undef AFTER_EXTRA

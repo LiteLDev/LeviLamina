@@ -12,7 +12,7 @@
 using ll::logger;
 static_assert(offsetof(CommandParameterData, options) == 89);
 static_assert(offsetof(CommandParameterData, name) == 16);
-static_assert(offsetof(CommandParameterData, unk56) == 56);
+static_assert(offsetof(CommandParameterData, unk72) == 72);
 static_assert(sizeof(CommandParameterData) == 96);
 static_assert(offsetof(CommandRegistry::Overload, versionOffset) == 40);
 static_assert(sizeof(CommandRegistry::Overload) == 72);

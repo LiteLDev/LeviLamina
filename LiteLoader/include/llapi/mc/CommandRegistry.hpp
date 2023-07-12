@@ -43,13 +43,6 @@ public:
     public:
         int val;
 
-        Symbol(unsigned __int64 a1 = -1) {
-            this->val = a1;
-        }
-
-        Symbol(class Symbol const& a1) {
-            this->val = a1.val;
-        }
         MCAPI unsigned __int64 toIndex() const;
         MCAPI int value() const;
         inline bool operator==(Symbol const& right) const {
@@ -152,7 +145,7 @@ public:
 
     struct Enum {
         std::string name;                                                                           // 0
-        Bedrock::typeid_t<CommandRegistry> type;                                                     // 32
+        Bedrock::typeid_t<CommandRegistry> type;                                                    // 32
         ParseFn parse;                                                                              // 40
         std::vector<std::tuple<unsigned long, unsigned long, unsigned long, unsigned long>> values; // 48
 

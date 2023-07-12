@@ -9,6 +9,7 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "llapi/mc/Json.hpp"
+#include "llapi/mc/Enchant.hpp"
 #include <string>
 
 class CommandRegistry;
@@ -25,6 +26,8 @@ class CommandIntegerRange;
 struct ActorDefinitionIdentifier;
 class CommandItem;
 class CommandBlockName;
+class CommandWildcardInt;
+enum class ObjectiveSortOrder : char;
 
 #undef BEFORE_EXTRA
 
@@ -230,12 +233,12 @@ class typeid_t<CommandRegistry> {
 public:
     unsigned short value;
 
-    inline static std::atomic<unsigned short>& _getCounter(){
-         std::atomic<unsigned short>& id = *(std::atomic<unsigned short>*)dlsym_real(
+    inline static std::atomic<unsigned short>& _getCounter() {
+        std::atomic<unsigned short>& id = *(std::atomic<unsigned short>*)dlsym_real(
             "?storage@?1??_getCounter@?$typeid_t@VCommandRegistry@@@Bedrock@@CAAEAU?$atomic@G@std@@XZ@4U45@A");
         return id;
     }
-    
+
     typeid_t<CommandRegistry>(typeid_t<CommandRegistry> const& id) : value(id.value){};
     typeid_t<CommandRegistry>(unsigned short value) : value(value){};
 };
@@ -244,9 +247,9 @@ template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDamageCause>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, AutomaticID<class Dimension, int>>();
-template<>
+template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandBlockName>();
-template<>
+template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, bool>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandMessage>();
@@ -256,20 +259,20 @@ template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPosition>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPositionFloat>();
-//template <>
-//MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<class Actor>>();
+// template <>
+// MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<class Actor>>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<class Player>>();
-template <>
-MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum class EquipmentSlot>();
+// template <>
+// MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum class EquipmentSlot>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, float>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, int>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, Json::Value>();
-template <>
-MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum class Mirror>();
+// template <>
+// MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum class Mirror>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class MobEffect const*>();
 template <>
@@ -280,27 +283,49 @@ template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, std::unique_ptr<class Command>>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class WildcardCommandSelector<class Actor>>();
-template<>
-MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>();
 template <>
-MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandIntegerRange>();
-template<>
+MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>();
+// template <>
+// MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandIntegerRange>();
+template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandRawText>();
+template <>
+MCAPI typeid_t<CommandRegistry> type_id<class CommandRegistry, class CommandWildcardInt>();
+template <>
+MCAPI typeid_t<CommandRegistry> type_id<class CommandRegistry, enum ObjectiveSortOrder>();
+template <>
+MCAPI typeid_t<CommandRegistry> type_id<class CommandRegistry, enum BlockSlot>();
 
-//template <>
-//inline typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>() {
-//    static typeid_t<CommandRegistry> id =
-//        *(typeid_t<CommandRegistry>*)dlsym_real("??$type_id@VCommandRegistry@@PEBUActorDefinitionIdentifier@@@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@@@0@XZ");
-////     static typeid_t<CommandRegistry> id = ([]() -> typeid_t<CommandRegistry> {
-////        CommandParameterData data =
-////        SymCall("??$mandatory@VRideCommand@@PEBUActorDefinitionIdentifier@@@commands@@YA?AVCommandParameterData@@PEQRideCommand@@PEBUActorDefinitionIdentifier@@PEBDPEQ2@_N@Z",
-////                 CommandParameterData, void*, char const*, uintptr_t)(nullptr, "entityType", 0);
-////         return data.tid;
-////         })();
-//    return id;
-//};
+template <>
+inline typeid_t<CommandRegistry> type_id<CommandRegistry, enum class Mirror>() {
+    auto id = (unsigned short*)dlsym_real(
+        "?id@?1???$type_id@VCommandRegistry@@W4Mirror@@@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@@@1@XZ@4V21@A");
+        return typeid_t<CommandRegistry>(*id);
+}
+
+template <>
+inline typeid_t<CommandRegistry> type_id<CommandRegistry, CommandIntegerRange>() {
+    auto id = (unsigned short*)dlsym_real("?id@?1???$type_id@VCommandRegistry@@VCommandIntegerRange@@@Bedrock@@YA?AV?$"
+                                          "typeid_t@VCommandRegistry@@@1@XZ@4V21@A");
+    return typeid_t<CommandRegistry>(*id);
+}
+
+template <>
+inline typeid_t<CommandRegistry> type_id<CommandRegistry, EquipmentSlot>() {
+    auto id = (unsigned short*)dlsym_real("?id@?1???$type_id@VCommandRegistry@@W4EquipmentSlot@@@Bedrock@@YA?AV?$"
+                                          "typeid_t@VCommandRegistry@@@1@XZ@4V21@A");
+    return typeid_t<CommandRegistry>(*id);
+}
+
+template <>
+inline typeid_t<CommandRegistry> type_id<CommandRegistry, Enchant::Type>() {
+    auto id = (unsigned short*)dlsym_real(
+        "?id@?1???$type_id@VCommandRegistry@@W4Type@Enchant@@@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@@@1@XZ@4V21@A");
+    return typeid_t<CommandRegistry>(*id);
+}
+
 
 
 #undef AFTER_EXTRA
