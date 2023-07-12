@@ -13,10 +13,11 @@ using ll::logger;
 static_assert(offsetof(CommandParameterData, options) == 89);
 static_assert(offsetof(CommandParameterData, name) == 16);
 static_assert(offsetof(CommandParameterData, unk56) == 56);
+static_assert(sizeof(CommandParameterData) == 96);
 static_assert(offsetof(CommandRegistry::Overload, versionOffset) == 40);
 static_assert(sizeof(CommandRegistry::Overload) == 72);
-static_assert(offsetof(CommandRegistry::Signature, alt_symbol) == 96);
-static_assert(sizeof(CommandRegistry::Signature) == 128);
+static_assert(offsetof(CommandRegistry::Signature, alt_symbol) == 120);
+static_assert(sizeof(CommandRegistry::Signature) == 152);
 /*
 void CommandRegistry::registerOverload(std::string const& name, Overload::FactoryFn factory, std::vector<CommandParameterData>&& args)
 {

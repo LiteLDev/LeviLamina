@@ -121,15 +121,16 @@ public:
         std::string name;                // 0
         std::string desc;                // 32
         std::vector<Overload> overloads; // 64
-        CommandPermissionLevel perm;     // 88
-        Symbol main_symbol;              // 92
-        Symbol alt_symbol;               // 96
-        CommandFlag flag;                // 100
-        int firstRule;
-        int firstFactorization;
-        int firstOptional;
-        bool runnable;
-        size_t ruleCounter;
+        std::vector<void*> unk88;        // 88
+        CommandPermissionLevel perm;     // 112
+        Symbol main_symbol;              // 116
+        Symbol alt_symbol;               // 120
+        CommandFlag flag;                // 124
+        int firstRule;                   // 128
+        int firstFactorization;          // 132
+        int firstOptional;               // 136
+        bool runnable;                   // 140
+        size_t ruleCounter;              // 144
 
         inline Signature(std::string_view name,
                          std::string_view desc,

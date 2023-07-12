@@ -34,6 +34,7 @@ public:
     std::string name;                       // 16
     char const* desc;                       // 48
     int unk56;                              // 56
+    int unk60;                              // 60
     char const* unk64;                      // 64
     int unk72;                              // 72
     CommandParameterDataType type;          // 76
