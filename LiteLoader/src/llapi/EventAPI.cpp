@@ -629,8 +629,8 @@ TInstanceHook(void, "?onEffectUpdated@ServerPlayer@@MEAAXAEAVMobEffectInstance@@
 }
 
 /////////////////// PlayerStartDestroyBlock ///////////////////
-TClasslessInstanceHook(void, "?sendBlockDestructionStarted@BlockEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlockPos@@@Z",
-                       Player* player, BlockPos* blockPosPtr) {
+TClasslessInstanceHook(void, "?sendBlockDestructionStarted@BlockEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlockPos@@E@Z",
+                       Player* player, BlockPos* blockPosPtr, char a4) {
     if (player && blockPosPtr) {
         IF_LISTENED(PlayerStartDestroyBlockEvent) {
             PlayerStartDestroyBlockEvent ev{};
@@ -640,7 +640,7 @@ TClasslessInstanceHook(void, "?sendBlockDestructionStarted@BlockEventCoordinator
         }
         IF_LISTENED_END(PlayerStartDestroyBlockEvent)
     }
-    return original(this, player, blockPosPtr);
+    return original(this, player, blockPosPtr,a4);
 }
 
 /////////////////// PlayerPlaceBlock ///////////////////
@@ -814,7 +814,7 @@ TInstanceHook(void, "?setArmor@ServerPlayer@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
 }
 
 /////////////////// PlayerUseRespawnAnchor ///////////////////
-TInstanceHook(bool, "?trySetSpawn@RespawnAnchorBlock@@CA_NAEAVPlayer@@AEBVBlockPos@@AEAVBlockSource@@AEAVLevel@@@Z",
+TInstanceHook(char, "?_trySetSpawn@RespawnAnchorBlock@@CA_NAEAVPlayer@@AEBVBlockPos@@AEAVBlockSource@@AEAVLevel@@@Z",
               Player, BlockPos* blockPosPtr, BlockSource* blockSource, Level* a4) {
     IF_LISTENED(PlayerUseRespawnAnchorEvent) {
         PlayerUseRespawnAnchorEvent ev{};
@@ -1461,7 +1461,7 @@ struct BucketPlayerAndActor {
 };
 
 // 也许这个结构体可以用偏移获取替代？
-THook(void, "<lambda_7e34d7d5fccf0904e478400d9cd01bf3>::operator()", BucketPlayerAndActor* a1) {
+THook(void, "<lambda_6afa751f7d1669ccd67230f07aadabb7>::operator()", BucketPlayerAndActor* a1) {
     IF_LISTENED(PlayerUseBucketEvent) {
         BucketPlayerAndActor mBucketPlayerAndActor = *a1;
         if (mBucketPlayerAndActor.owner->getTypeName() == "minecraft:cow" ||

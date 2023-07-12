@@ -43,7 +43,7 @@ public:
     public:
         int val;
         MCAPI Symbol(unsigned __int64 = -1);
-        MCAPI Symbol(class Symbol const&);
+        //MCAPI Symbol(class Symbol const&);
         MCAPI unsigned __int64 toIndex() const;
         MCAPI int value() const;
         inline bool operator==(Symbol const& right) const {

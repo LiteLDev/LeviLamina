@@ -423,7 +423,7 @@ Local<Value> McClass::getPlayer(const Arguments& args) {
         Player* found = nullptr;
 
         for (Player* p : playerList) {
-            if (p->getXuid() == target || std::to_string(p->getUniqueID().id) == target)
+            if (p->getXuid() == target || std::to_string(p->getOrCreateUniqueID().id) == target)
                 return PlayerClass::newPlayer(p);
 
             string pName = p->getName();
@@ -477,7 +477,7 @@ Local<Value> McClass::broadcast(const Arguments& args) {
 // 成员函数
 void PlayerClass::set(Player* player) {
     __try {
-        id = player->getUniqueID();
+        id = player->getOrCreateUniqueID();
     } __except (EXCEPTION_EXECUTE_HANDLER) { isValid = false; }
 }
 
@@ -895,7 +895,7 @@ Local<Value> PlayerClass::getUniqueID() {
         if (!player)
             return Local<Value>();
         else
-            return String::newString(std::to_string(player->getUniqueID().id));
+            return String::newString(std::to_string(player->getOrCreateUniqueID().id));
     }
     CATCH("Fail in getUniqueID!")
 }
@@ -1278,7 +1278,7 @@ Local<Value> PlayerClass::setPermLevel(const Arguments& args) {
             } else {
                 player->getAbilities().setPlayerPermissions(PlayerPermissionLevel::Member);
             }
-            UpdateAbilitiesPacket uPkt(player->getUniqueID(), player->getAbilities());
+            UpdateAbilitiesPacket uPkt(player->getOrCreateUniqueID(), player->getAbilities());
             player->sendNetworkPacket(uPkt);
             res = true;
         }
@@ -2016,7 +2016,7 @@ Local<Value> PlayerClass::sendSimpleForm(const Arguments& args) {
         }
 
         player->sendSimpleFormPacket(args[0].toStr(), args[1].toStr(), texts, images,
-                                     [id{player->getUniqueID()}, engine{EngineScope::currentEngine()},
+                                     [id{player->getOrCreateUniqueID()}, engine{EngineScope::currentEngine()},
                                       callback{script::Global(args[4].asFunction())}](int chosen) {
                                          if (ll::isServerStopping())
                                              return;
@@ -2055,7 +2055,7 @@ Local<Value> PlayerClass::sendModalForm(const Arguments& args) {
             return Local<Value>();
 
         player->sendModalFormPacket(args[0].toStr(), args[1].toStr(), args[2].toStr(), args[3].toStr(),
-                                    [id{player->getUniqueID()}, engine{EngineScope::currentEngine()},
+                                    [id{player->getOrCreateUniqueID()}, engine{EngineScope::currentEngine()},
                                      callback{script::Global(args[4].asFunction())}](bool chosen) {
                                         if (ll::isServerStopping())
                                             return;
@@ -2092,7 +2092,7 @@ Local<Value> PlayerClass::sendCustomForm(const Arguments& args) {
 
         string data = fifo_json::parse(args[0].toStr()).dump();
 
-        player->sendCustomFormPacket(data, [id{player->getUniqueID()}, engine{EngineScope::currentEngine()},
+        player->sendCustomFormPacket(data, [id{player->getOrCreateUniqueID()}, engine{EngineScope::currentEngine()},
                                             callback{script::Global(args[1].asFunction())}](string result) {
             if (ll::isServerStopping())
                 return;
