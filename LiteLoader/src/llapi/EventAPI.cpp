@@ -475,6 +475,7 @@ THook(void,
         IF_LISTENED(PlayerSwingEvent) {
             PlayerSwingEvent ev{};
             ev.mPlayer = serverNetworkHandler->getServerPlayer(networkIdentifier);
+        ev.call();
         }
         IF_LISTENED_END(PlayerSwingEvent)
     }
