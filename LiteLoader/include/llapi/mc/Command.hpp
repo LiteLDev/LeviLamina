@@ -57,17 +57,19 @@ public:
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual ~Command();
     /**
      * @vftbl 1
      * @symbol ?collectOptionalArguments\@Command\@\@MEAA_NXZ
      */
+protected:
     virtual bool collectOptionalArguments();
     /**
      * @vftbl 2
-     * @symbol ?execute\@TakePictureCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     * @symbol ?execute\@SetMaxPlayersCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    virtual void execute(class CommandOrigin const &, class CommandOutput &) const = 0;
+public:
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMMAND
     /**
      * @symbol __unk_destructor_-1

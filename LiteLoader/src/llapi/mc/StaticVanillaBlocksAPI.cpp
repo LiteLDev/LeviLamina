@@ -898,7 +898,7 @@ void assignBlocks() {
     INIT_BLOCK(ColoredTorchRg);
     INIT_BLOCK(CommandBlock);
     INIT_BLOCK(Composter);
-    INIT_BLOCK(Concrete);
+    //INIT_BLOCK(Concrete);
     INIT_BLOCK(ConcretePowder);
     INIT_BLOCK(Conduit);
     INIT_BLOCK(CopperBlock);
@@ -1298,7 +1298,7 @@ void assignBlocks() {
     INIT_BLOCK(SeaPickle);
     INIT_BLOCK(Seagrass);
     INIT_BLOCK(Shroomlight);
-    INIT_BLOCK(ShulkerBox);
+    //INIT_BLOCK(ShulkerBox);
     INIT_BLOCK(SilverGlazedTerracotta);
     INIT_BLOCK(Skull);
     INIT_BLOCK(SlimeBlock);

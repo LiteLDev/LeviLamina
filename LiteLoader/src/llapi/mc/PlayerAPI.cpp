@@ -109,6 +109,16 @@ void Player::setAbility(AbilitiesIndex index, bool value) {
     sendNetworkPacket(pkt);
 }
 
+float Player::getCameraOffset() {
+    if (isGliding())
+        return 1.1;
+    if (isSwimming() || getDamageNearbyMobs())
+        return 1.2;
+    if (isSleeping())
+        return 1.0;
+    return 0.0;
+}
+
 std::string Player::getRealName() {
     if (isSimulatedPlayer())
         return getName();
@@ -207,7 +217,7 @@ string Player::getDeviceTypeName() {
 
 bool Player::kick(const std::string& msg) {
     NetworkIdentifier* pNetworkIdentifier = getNetworkIdentifier();
-    Global<ServerNetworkHandler>->disconnectClient(*pNetworkIdentifier, msg, 0);
+    Global<ServerNetworkHandler>->disconnectClient(*pNetworkIdentifier, Connection::DisconnectFailReason(0), msg, 0);
     return true;
 }
 
@@ -799,7 +809,7 @@ bool Player::sendSetScorePacket(char type, const vector<ScorePacketInfo>& data) 
 bool Player::sendBossEventPacket(BossEvent type, string name, float percent, BossEventColour colour, int overlay) {
     BinaryStream wp;
     wp.reserve(8 + name.size());
-    wp.writeVarInt64(getUniqueID() + 1145141919);
+    wp.writeVarInt64(getOrCreateUniqueID() + 1145141919);
     wp.writeUnsignedVarInt((int)type);
     switch (type) {
         case BossEvent::Show:
@@ -809,7 +819,7 @@ bool Player::sendBossEventPacket(BossEvent type, string name, float percent, Bos
         case BossEvent::RegisterPlayer:
         case BossEvent::UnregisterPlayer:
         case BossEvent::ResendRaidBossEventData: {
-            wp.writeVarInt64(getUniqueID() + 1145141919);
+            wp.writeVarInt64(getOrCreateUniqueID() + 1145141919);
             break;
         }
         case BossEvent::HealthPercentage: {
@@ -833,7 +843,8 @@ bool Player::sendBossEventPacket(BossEvent type, string name, float percent, Bos
 
     auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::BossEvent);
     pkt->read(wp);
-    sendAddEntityPacket(getUniqueID() + 1145141919, "player", Vec3(getPos().x, (float)-70, getPos().z), Vec2{0, 0}, 0);
+    sendAddEntityPacket(getOrCreateUniqueID() + 1145141919, "player", Vec3(getPos().x, (float)-70, getPos().z),
+                        Vec2{0, 0}, 0);
     if (type != BossEvent::Hide) {
         sendBossEventPacket(BossEvent::Hide, "", 0, BossEventColour::White);
     }

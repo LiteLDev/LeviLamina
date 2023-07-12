@@ -51,8 +51,8 @@ public:
     template <>
     inline void readType(mce::UUID& uuid)
     {
-        dAccess<uint64_t, 0>(&uuid) = getUnsignedInt64();
-        dAccess<uint64_t, 8>(&uuid) = getUnsignedInt64();
+        dAccess<uint64_t, 0>(&uuid) = getUnsignedInt64().value();
+        dAccess<uint64_t, 8>(&uuid) = getUnsignedInt64().value();
     }
     //template <>
     //inline void readType(NetworkItemInstanceDescriptor& descriptor)

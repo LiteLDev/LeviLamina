@@ -76,8 +76,10 @@ public:
     LIAPI float getLastPacketLoss();
     LIAPI string getClientId();
     LIAPI int getDeviceType();
+    LIAPI float getCameraOffset();
     LIAPI bool isOperator();
     LIAPI bool isOP();
+
 
     LIAPI int getCurrentExperience();
     LIAPI bool setCurrentExperience(int exp);

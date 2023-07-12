@@ -71,13 +71,87 @@ struct StorageMigration {
 
 template <typename T, typename E>
 class Result {
-    T value;
-    E error;
+public:
+    Result(const T& value) : data(value), hasValue(true) {}
+
+    Result(const E& error) : data(error), hasValue(false) {}
+
+    bool has_value() const {
+        return hasValue;
+    }
+
+    T& value() {
+        if (!hasValue) {          
+            std::rethrow_exception(std::make_exception_ptr(std::get<E>(data)));
+        }
+        return std::get<T>(data);
+    }
+
+    E& error() {
+        if (hasValue)
+            throw std::logic_error("Bad Result access");
+        return std::get<E>(data);
+    }
+
+private:
+    std::variant<T, E> data;
+    bool hasValue;
 };
 
-template <typename T0>
-struct ErrorInfo {
+template <class T, class E>
+    requires std::is_void_v<T>
+class Result<T, E> {
+    Result() : hasValue(true) {}
 
+    Result(const E& error) : data(error), hasValue(false) {}
+
+    bool has_value() const {
+        return hasValue;
+    }
+
+    void value() {
+        if (!hasValue)
+            std::rethrow_exception(std::get<E>(data));
+    }
+
+    E& error() {
+        if (hasValue)
+            throw std::logic_error("Bad Result access");
+        return std::get<E>(data);
+    }
+
+private:
+    std::variant<E> data;
+    bool hasValue;
+};
+
+template <typename E>
+struct ErrorInfo {
+public:
+    ErrorInfo() = delete;
+
+    ErrorInfo(const E& e) : m_val(e) {}
+
+    ErrorInfo(E&& e) : m_val(std::move(e)) {}
+
+    const E& value() const& {
+        return m_val;
+    }
+
+    E& value() & {
+        return m_val;
+    }
+
+    const E&& value() const&& {
+        return std::move(m_val);
+    }
+
+    E&& value() && {
+        return std::move(m_val);
+    }
+
+private:
+    E m_val;
 };
 
 namespace PubSub {
