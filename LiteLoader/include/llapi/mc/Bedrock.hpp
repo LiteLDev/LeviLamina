@@ -223,20 +223,16 @@ template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPosition>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPositionFloat>();
-// template <>
-// MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<class Actor>>();
+template <>
+MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<class Actor>>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<class Player>>();
-// template <>
-// MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum class EquipmentSlot>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, float>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, int>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, Json::Value>();
-// template <>
-// MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum class Mirror>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class MobEffect const*>();
 template <>
@@ -249,8 +245,6 @@ template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class WildcardCommandSelector<class Actor>>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>();
-// template <>
-// MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandIntegerRange>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>();
 template <>
@@ -290,8 +284,16 @@ inline typeid_t<CommandRegistry> type_id<CommandRegistry, Enchant::Type>() {
     return typeid_t<CommandRegistry>(*id);
 }
 
+template <>
+MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, std::vector<class BlockStateCommandParam>>();
 
-
+// template <>
+// inline typeid_t<CommandRegistry> type_id<CommandRegistry, std::vector<class BlockStateCommandParam>>() {
+//     auto id = (unsigned short*)dlsym_real(
+//         "?id@?1???$type_id@VCommandRegistry@@V?$vector@VBlockStateCommandParam@@V?$allocator@VBlockStateCommandParam@@@"
+//         "std@@@std@@@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@@@1@XZ@4V21@A");
+//     return typeid_t<CommandRegistry>(*id);
+// }
 #undef AFTER_EXTRA
     /**
      * @symbol ?strtoint32\@Bedrock\@\@YAHPEBDPEAPEADH\@Z
