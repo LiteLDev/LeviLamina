@@ -82,7 +82,7 @@ public:
 template <typename _Ty, typename _Err>
 class Result {
 public:
-    Result(_Ty&& value) : value(std::move(value)), has_value(true) {};
+    Result(_Ty&& value) : _Value(std::move(value)), _Has_value(true) {};
     Result(ErrorInfo<_Err> error) : _Error(std::move(error)), _Has_value(false) {};
     Result(Result&& other) {
         _Has_value = other._Has_value;
