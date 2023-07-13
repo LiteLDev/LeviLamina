@@ -134,9 +134,8 @@ private:
     bool mHasValue;
 };
 
-template <class T, class Err>
-    requires std::is_void_v<T>
-class Result<T, Err> {
+template <class Err>
+class Result<void, Err> {
     explicit Result() : mHasValue(true) {}
 
     Result(Result&& other)  noexcept {
