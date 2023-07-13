@@ -24,14 +24,13 @@ namespace VanillaStates {
 
 #define AFTER_EXTRA
 // Add Member There
-public:
     struct CachedBlockStateMapPtr {
         const BlockState* ptr;
         int mapVersion;
     CachedBlockStateMapPtr() = delete;
     CachedBlockStateMapPtr(CachedBlockStateMapPtr const&) = delete;
     CachedBlockStateMapPtr(CachedBlockStateMapPtr const&&) = delete;
-};
+    };
 
 #undef AFTER_EXTRA
     /**
