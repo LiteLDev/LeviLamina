@@ -9,6 +9,15 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
+bool setBlockStates(class Block const** blockptr, std::vector<class BlockStateCommandParam> const& states, class CommandOutput& output){
+    for (auto& state : states) {
+        if (!state.setBlockState(blockptr, output)) {
+            return false;
+        }
+    }
+    return true;
+}
+
 #undef BEFORE_EXTRA
 
 /**
@@ -19,7 +28,18 @@ class BlockStateCommandParam {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
 
+    enum class Type : int {
+        Integer = 0x0,
+        Float   = 0x1,
+        Bool    = 0x2,
+        String  = 0x3,
+        Invalid = 0x4,
+    };
+    std::string mBlockState;
+    std::string mValue;
+    BlockStateCommandParam::Type mType;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSTATECOMMANDPARAM
 public:
@@ -53,5 +73,4 @@ public:
     MCAPI class BlockState const * _getBlockState(class Block const &) const;
 
 private:
-
 };

@@ -7,36 +7,35 @@ class ItemStack;
 class BlockActor;
 class Container;
 
-class BlockInstance
-{
+class BlockInstance {
+public:
     friend class Level;
     friend class BlockSource;
 
-    Block* block;
+    Block const* block;
     BlockPos pos;
     int dim;
-    LIAPI BlockInstance(Block* block, BlockPos pos, int dimid);
-    LIAPI BlockInstance(BlockPos pos, int dimid = 0);
 
-public:
+    LIAPI BlockInstance(Block const* block, BlockPos const pos, int dimid);
+    LIAPI BlockInstance(BlockPos const pos, int dimid);
+
     LIAPI BlockInstance() = default;
-    LIAPI static BlockInstance createBlockInstance(Block* block, BlockPos pos, int dimId);
 
-    LIAPI Block* getBlock();
-    LIAPI BlockPos getPosition();
-    LIAPI BlockSource* getBlockSource();
-    LIAPI int getDimensionId();
+    LIAPI Block const* getBlock() const;
+    LIAPI BlockPos const& getPosition() const;
+    LIAPI BlockSource* getBlockSource() const;
+    LIAPI int getDimensionId() const;
 
-    LIAPI bool hasBlockEntity();
-    LIAPI BlockActor* getBlockEntity();
-    LIAPI bool hasContainer();
-    LIAPI Container* getContainer();
+    LIAPI bool hasBlockEntity() const;
+    LIAPI BlockActor* getBlockEntity() const;
+    LIAPI bool hasContainer() const;
+    LIAPI Container* getContainer() const;
 
     LIAPI bool breakNaturally(bool isCreativeMode = false);
     LIAPI bool breakNaturally(ItemStack* tool, bool isCreativeMode = false);
-    LIAPI ItemStack getBlockDrops();
-    LIAPI bool isNull();
+    LIAPI ItemStack getBlockDrops() const;
+    LIAPI bool isNull() const;
 
-    LIAPI bool operator==(BlockInstance const& bli);
+    LIAPI bool operator==(BlockInstance const& bli) const;
     LIAPI const static BlockInstance Null;
 };

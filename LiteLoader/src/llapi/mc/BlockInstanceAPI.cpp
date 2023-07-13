@@ -11,61 +11,36 @@
 #include "llapi/mc/Level.hpp"
 #include "llapi/mc/ItemInstance.hpp"
 
-BlockInstance::BlockInstance(Block* block, BlockPos pos, int dimID) : block(block), pos(pos), dim(dimID) {}
+BlockInstance::BlockInstance(Block const* block, BlockPos const pos, int dimid) : block(block), pos(pos), dim(dimid) {}
 
 BlockInstance::BlockInstance(BlockPos pos, int dimID) : pos(pos), dim(dimID) {
     block = Level::getBlock(pos, dimID);
 }
 
-BlockInstance BlockInstance::createBlockInstance(Block* block, BlockPos pos, int dimID) {
-    return BlockInstance(block, pos, dimID);
-}
-
-bool BlockInstance::operator==(BlockInstance const& bli) {
+bool BlockInstance::operator==(BlockInstance const& bli) const {
     return block == bli.block && pos == bli.pos && dim == bli.dim;
 };
 
-Block* BlockInstance::getBlock() {
+Block const* BlockInstance::getBlock() const {
     return isNull() ? nullptr : block;
 };
 
-bool BlockInstance::hasBlockEntity() {
+bool BlockInstance::hasBlockEntity() const {
     return block->hasBlockEntity();
 }
 
-BlockActor* BlockInstance::getBlockEntity() {
+BlockActor* BlockInstance::getBlockEntity() const {
     return Level::getBlockSource(dim)->getBlockEntity(pos);
 }
 
-bool BlockInstance::hasContainer() {
+bool BlockInstance::hasContainer() const {
     return getContainer() != nullptr;
 }
 
 class DropperBlockActor;
 
-Container* BlockInstance::getContainer() {
-    return Level::getContainer(pos.center(), dim);
-    // auto be = getBlockEntity();
-    // if (!be)
-    //     return nullptr;
-    // switch (be->getType()) { // From Hopper::_getContainerInBlock
-    //     case BlockActorType::Furnace:
-    //     case BlockActorType::BrewingStand:
-    //     case BlockActorType::Hopper:
-    //     case BlockActorType::BlastFurnace:
-    //     case BlockActorType::Smoker:
-    //         return SymCall("?getContainer@ChemistryTableBlockActor@@UEBAPEBVContainer@@XZ", Container*,
-    //                        BlockActor*)(be);
-    //         break;
-    //     case BlockActorType::Chest:
-    //     case BlockActorType::Dispenser:
-    //     case BlockActorType::Dropper:
-    //     case BlockActorType::ShulkerBox:
-    //     case BlockActorType::Jukebox:
-    //     case BlockActorType::BarrelBlock:
-    //         return SymCall("?getContainer@ChestBlockActor@@UEBAPEBVContainer@@XZ", Container*, BlockActor*)(be);
-    // }
-    // return nullptr;
+Container* BlockInstance::getContainer() const {
+    return Level::getContainer(pos, dim);
 }
 
 bool BlockInstance::breakNaturally(bool isCreativeMode) {
@@ -94,24 +69,24 @@ bool BlockInstance::breakNaturally(ItemStack* tool, bool isCreativeMode) {
     return out;
 }
 
-ItemStack BlockInstance::getBlockDrops() {
+ItemStack BlockInstance::getBlockDrops() const {
     auto v17 = block->asItemInstance(*Level::getBlockSource(dim), pos);
     return ItemStack::fromItemInstance(v17);
 }
 
-BlockPos BlockInstance::getPosition() {
+BlockPos const& BlockInstance::getPosition() const {
     return pos;
 }
 
-BlockSource* BlockInstance::getBlockSource() {
+BlockSource* BlockInstance::getBlockSource() const {
     return Level::getBlockSource(dim);
 }
 
-int BlockInstance::getDimensionId() {
+int BlockInstance::getDimensionId() const {
     return dim;
 }
 
-bool BlockInstance::isNull() {
+bool BlockInstance::isNull() const {
     return *this == BlockInstance::Null;
 }
 

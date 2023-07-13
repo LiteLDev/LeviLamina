@@ -282,7 +282,7 @@ public:
     }
 
     int use_count() const {
-        return counter ? counter->getShareCount() : 0;
+        return counter ? counter->getWeakCount() : 0;
     }
 
     bool expired() const {

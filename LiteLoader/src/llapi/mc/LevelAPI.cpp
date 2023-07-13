@@ -47,14 +47,6 @@ Dimension* Level::getDimensionPtr(class AutomaticID<class Dimension, int> dimId)
     return Global<Level>->getDimension(dimId).get();
 }
 
-Block* Level::getBlock(BlockPos* pos, int dimId) {
-    return getBlock(*pos, Level::getBlockSource(dimId));
-}
-
-Block* Level::getBlock(BlockPos* pos, BlockSource* blockSource) {
-    return (Block*)&(blockSource->getBlock(*pos));
-}
-
 Block* Level::getBlock(const BlockPos& pos, int dimId) {
     return getBlock(pos, Level::getBlockSource(dimId));
 }
@@ -82,14 +74,6 @@ Block* Level::getBlockEx(const BlockPos& pos, int dimId) {
     return const_cast<Block*>(&lc->getBlock(cbpos));
 }
 
-BlockInstance Level::getBlockInstance(BlockPos* pos, int dimId) {
-    return {*pos, dimId};
-}
-
-BlockInstance Level::getBlockInstance(BlockPos* pos, BlockSource* blockSource) {
-    return {*pos, blockSource->getDimensionId()};
-}
-
 BlockInstance Level::getBlockInstance(const BlockPos& pos, int dim) {
     return {pos, dim};
 }
@@ -98,39 +82,17 @@ BlockInstance Level::getBlockInstance(const BlockPos& pos, BlockSource* blockSou
     return {pos, blockSource->getDimensionId()};
 }
 
-BlockActor* Level::getBlockEntity(BlockPos* pos, int dimId) {
+BlockActor* Level::getBlockEntity(const BlockPos& pos, int dimId) {
     return getBlockEntity(pos, Level::getBlockSource(dimId));
 }
 
-BlockActor* Level::getBlockEntity(BlockPos* pos, BlockSource* blockSource) {
-    return blockSource->getBlockEntity(*pos);
-}
-
-BlockActor* Level::getBlockEntity(const BlockPos& pos, int dimId) {
-    return getBlockEntity((BlockPos*)&pos, Level::getBlockSource(dimId));
-}
-
 BlockActor* Level::getBlockEntity(const BlockPos& pos, BlockSource* blockSource) {
-    return getBlockEntity((BlockPos*)&pos, blockSource);
+    return blockSource->getBlockEntity(pos);
 }
 
 bool Level::setBlock(const BlockPos& pos, int dim, Block* block) {
     BlockSource* bs = getBlockSource(dim);
     return bs->setBlock(pos, *block, 3, nullptr, nullptr); // updateFlag = 3 from IDA SetBlockCommand::execute()
-}
-
-bool Level::setBlock(const BlockPos& pos, int dim, const string& name, unsigned short tileData) {
-    Block* newBlock = Block::create(name, tileData);
-    if (!newBlock)
-        return false;
-    return setBlock(pos, dim, newBlock);
-}
-
-bool Level::setBlock(const BlockPos& pos, int dim, CompoundTag* nbt) {
-    Block* newBlock = Block::create(nbt);
-    if (!newBlock)
-        return false;
-    return setBlock(pos, dim, newBlock);
 }
 
 bool Level::breakBlockNaturally(BlockSource* bs, const BlockPos& pos) {
@@ -141,16 +103,13 @@ bool Level::breakBlockNaturally(BlockSource* bs, const BlockPos& pos, ItemStack*
     return getBlockInstance(pos, bs).breakNaturally(item);
 }
 
-bool Level::hasContainer(Vec3 pos, int dim) {
+bool Level::hasContainer(BlockPos const& pos, int dim) {
     return getContainer(pos, dim) != nullptr;
 }
 
-Container* Level::getContainer(Vec3 pos, int dim) {
-    // VirtualCall<Container*>(getBlockEntity(), 224); // IDA ChestBlockActor::`vftable'{for
-    // `RandomizableBlockActorContainerBase'}
-
+Container* Level::getContainer(BlockPos const& pos, int dim) {
     // This function didn't use 'this' pointer
-    return ((DropperBlockActor*)nullptr)->getContainerAt(*Level::getBlockSource(dim), pos);
+    return ((DropperBlockActor*)nullptr)->getContainerAt(*Level::getBlockSource(dim), pos.center());
 }
 
 Actor* Level::getDamageSourceEntity(ActorDamageSource* ads) {
@@ -286,7 +245,7 @@ Player* Level::getPlayer(ActorUniqueID id) {
                    ActorUniqueID)(Global<Level>, id);
 }
 
-Actor* Level::spawnMob(Vec3 pos, int dimId, std::string name) {
+Actor* Level::spawnMob(Vec3 const& pos, int dimId, std::string name) {
 
     Spawner* sp = &Global<Level>->getSpawner();
     return sp->spawnMob(pos, dimId, std::move(name));
@@ -295,7 +254,7 @@ Actor* Level::spawnMob(Vec3 pos, int dimId, std::string name) {
 #include "llapi/mc/ListTag.hpp"
 #include "llapi/mc/FloatTag.hpp"
 
-Actor* Level::cloneMob(Vec3 pos, int dimId, Actor* ac) {
+Actor* Level::cloneMob(Vec3 const& pos, int dimId, Actor* ac) {
     Spawner* sp = &Global<Level>->getSpawner();
     Mob* mob = sp->spawnMob(pos, dimId, std::move(ac->getTypeName()));
     auto nbt = ac->getNbt();
@@ -306,12 +265,12 @@ Actor* Level::cloneMob(Vec3 pos, int dimId, Actor* ac) {
     return mob;
 }
 
-Actor* Level::spawnItem(Vec3 pos, int dimId, ItemStack* item) {
+Actor* Level::spawnItem(Vec3 const& pos, int dimId, ItemStack* item) {
     Spawner* sp = &Global<Level>->getSpawner();
     return sp->spawnItem(pos, dimId, item);
 }
 
-bool Level::createExplosion(Vec3 pos, int dimId, Actor* source, float radius, bool createFire, bool canBreak,
+bool Level::createExplosion(Vec3 const& pos, int dimId, Actor* source, float radius, bool createFire, bool canBreak,
                             float maxResistance) {
     Global<Level>->explode(*Level::getBlockSource(dimId), source, pos, radius, createFire, canBreak, maxResistance,
                            false);

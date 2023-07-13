@@ -25,8 +25,8 @@ class Spawner {
 #define AFTER_EXTRA
 // Add new members to class
 public:
-    LIAPI Mob* spawnMob(Vec3& ,int, std::string );
-    LIAPI ItemActor* spawnItem(Vec3&, int, ItemStack*);
+    LIAPI Mob* spawnMob(Vec3 const& ,int, std::string);
+    LIAPI ItemActor* spawnItem(Vec3 const&, int, ItemStack*);
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNER
 public:

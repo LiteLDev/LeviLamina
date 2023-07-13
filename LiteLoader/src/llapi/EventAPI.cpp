@@ -533,7 +533,7 @@ TInstanceHook(bool, "?attack@Block@@QEBA_NPEAVPlayer@@AEBVBlockPos@@@Z", Block, 
         PlayerAttackBlockEvent ev{};
         ev.mPlayer = player;
         ev.mItemStack = player->getHandSlot();
-        ev.mBlockInstance = BlockInstance::createBlockInstance(this, *blockPosPtr, player->getDimensionId());
+        ev.mBlockInstance = BlockInstance(this, *blockPosPtr, player->getDimensionId());
         if (!ev.call())
             return false;
     }
@@ -676,7 +676,7 @@ TClasslessInstanceHook(void,
     IF_LISTENED(BlockPlacedByPlayerEvent) {
         BlockPlacedByPlayerEvent ev{};
         ev.mPlayer = player;
-        ev.mBlockInstance = BlockInstance::createBlockInstance(bl, *blockPosPtr, player->getDimensionId());
+        ev.mBlockInstance = BlockInstance(bl, *blockPosPtr, player->getDimensionId());
         ev.call();
     }
     IF_LISTENED_END(BlockPlacedByPlayerEvent)
@@ -976,8 +976,8 @@ TInstanceHook(void,
     IF_LISTENED(BlockChangedEvent) {
         int dimId = this->getDimensionId();
         BlockChangedEvent ev{};
-        ev.mPreviousBlockInstance = BlockInstance::createBlockInstance(beforeBlock, *blockPosPtr, dimId);
-        ev.mNewBlockInstance = BlockInstance::createBlockInstance(afterBlock, *blockPosPtr, dimId);
+        ev.mPreviousBlockInstance = BlockInstance(beforeBlock, *blockPosPtr, dimId);
+        ev.mNewBlockInstance = BlockInstance(afterBlock, *blockPosPtr, dimId);
         if (!ev.call())
             return;
     }
@@ -991,7 +991,7 @@ TInstanceHook(void, "?onExploded@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@PEAV
     IF_LISTENED(BlockExplodedEvent) {
         if (actor) {
             BlockExplodedEvent ev{};
-            ev.mBlockInstance = BlockInstance::createBlockInstance(this, *blockPosPtr, blockSource->getDimensionId());
+            ev.mBlockInstance = BlockInstance(this, *blockPosPtr, blockSource->getDimensionId());
             ev.mExplodeSource = actor;
             ev.call();
         }
@@ -1285,7 +1285,7 @@ TInstanceHook(bool, "?_canSpreadTo@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AE
         return rtn;
     IF_LISTENED(LiquidSpreadEvent) {
         LiquidSpreadEvent ev{};
-        ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(&this->getRenderBlock()), from,
+        ev.mBlockInstance = BlockInstance(const_cast<Block*>(&this->getRenderBlock()), from,
                                                                blockSource.getDimensionId());
         ev.mTarget = to;
         ev.mDimensionId = blockSource.getDimensionId();
@@ -1303,7 +1303,7 @@ TInstanceHook(bool, "?_canSpreadTo@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AE
 //     IF_LISTENED(LiquidSpreadEvent)
 //     {
 //         LiquidSpreadEvent ev{};
-//         ev.mBlockInstance = BlockInstance::createBlockInstance(
+//         ev.mBlockInstance = BlockInstance(
 //             const_cast<Block*>(&_this->getRenderBlock()), *from, blockSource->getDimensionId());
 //         ev.mTarget = *to;
 //         ev.mDimensionId = blockSource->getDimensionId();
@@ -1424,7 +1424,7 @@ TInstanceHook(bool,
             ev.mEventType = PlayerUseBucketEvent::EventType::Place;
             ev.mTargetPos = blockPos->toVec3();
             ev.mBucket = itemStack;
-            ev.mBlockInstance = BlockInstance::createBlockInstance(block, *blockPos, actor->getDimensionId());
+            ev.mBlockInstance = BlockInstance(block, *blockPos, actor->getDimensionId());
             ev.mFace = face;
             if (!ev.call())
                 return false;

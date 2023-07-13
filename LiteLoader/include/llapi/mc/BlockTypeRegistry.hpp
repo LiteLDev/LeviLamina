@@ -9,6 +9,9 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include <shared_mutex>
+#include "BlockLegacy.hpp"
+#include "Block.hpp"
+#include "HashedString.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -21,9 +24,16 @@ class BlockTypeRegistry {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    struct LookupByNameImplReturnType;
+    struct LookupByNameImplReturnType {
+        WeakPtr<class BlockLegacy> mBlockLegacy;
+        class Block const* mBlock;
+    };
     class InhibitModificationsLock;
-    struct BlockComplexAliasBlockState;
+
+    struct BlockComplexAliasBlockState {
+        class HashedString stateName;
+        int value;
+    };
     class BlockComplexAliasContent;
     inline static std::map<class HashedString, class SharedPtr<class BlockLegacy>, struct std::less<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class SharedPtr<class BlockLegacy>>>>& getBlockLookupMap(){return mBlockLookupMap;}
 #undef AFTER_EXTRA

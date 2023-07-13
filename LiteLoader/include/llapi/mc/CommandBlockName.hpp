@@ -19,7 +19,7 @@ class CommandBlockName {
 #define AFTER_EXTRA
 #define DISABLE_CONSTRUCTOR_PREVENTION_COMMANDBLOCKNAME
 public:
-    unsigned __int64 id;
+    unsigned long long hash;
 
     CommandBlockName(){};
 
