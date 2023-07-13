@@ -9,15 +9,6 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-bool setBlockStates(class Block const** blockptr, std::vector<class BlockStateCommandParam> const& states, class CommandOutput& output){
-    for (auto& state : states) {
-        if (!state.setBlockState(blockptr, output)) {
-            return false;
-        }
-    }
-    return true;
-}
-
 #undef BEFORE_EXTRA
 
 /**
@@ -40,6 +31,18 @@ public:
     std::string mBlockState;
     std::string mValue;
     BlockStateCommandParam::Type mType;
+
+    static const bool setBlockStates(class Block const** blockptr,
+                                          std::vector<class BlockStateCommandParam> const& states,
+                                          class CommandOutput& output) {
+        for (auto& state : states) {
+            if (!state.setBlockState(blockptr, output)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSTATECOMMANDPARAM
 public:
