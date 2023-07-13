@@ -7,7 +7,12 @@
 #include "llapi/Global.h"
 
 #define BEFORE_EXTRA
+#include "BlockState.hpp"
 // Include Headers or Declare Types Here
+template <class T>
+class BlockStateVariant : BlockState {
+
+};
 
 #undef BEFORE_EXTRA
 
@@ -19,10 +24,12 @@ namespace VanillaStates {
 
 #define AFTER_EXTRA
 // Add Member There
-struct CachedItemStateMapPtr {
-    CachedItemStateMapPtr() = delete;
-    CachedItemStateMapPtr(CachedItemStateMapPtr const&) = delete;
-    CachedItemStateMapPtr(CachedItemStateMapPtr const&&) = delete;
+struct CachedBlockStateMapPtr {
+        const BlockState* ptr;
+        int mapVersion;
+    CachedBlockStateMapPtr() = delete;
+    CachedBlockStateMapPtr(CachedBlockStateMapPtr const&) = delete;
+    CachedBlockStateMapPtr(CachedBlockStateMapPtr const&&) = delete;
 };
 
 #undef AFTER_EXTRA
