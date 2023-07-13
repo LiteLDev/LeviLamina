@@ -90,8 +90,8 @@ struct ErrorInfo {
     }
 
 private:
-    std::error_code error;
-    char filler[0x40 - sizeof(std::error_code)];
+    E error;
+    char filler[0x30];
 };
 static_assert(sizeof(ErrorInfo<std::error_code>) == 0x40);
 
