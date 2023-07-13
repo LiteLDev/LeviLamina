@@ -11,6 +11,7 @@
 #include "llapi/mc/Json.hpp"
 #include "llapi/mc/Enchant.hpp"
 #include <string>
+#include <utility>
 
 class CommandRegistry;
 enum class ActorDamageCause : int;
@@ -63,8 +64,8 @@ public:
     NonOwnerPointer(T0& a1) {
         mPtr = std::make_shared<T0>(a1);
     }
-	
 };
+
 struct StorageMigration {
     enum class StorageMigrationType;
     StorageMigration() = delete;
@@ -72,53 +73,99 @@ struct StorageMigration {
     StorageMigration(StorageMigration const&&) = delete;
 };
 
-// error,Waiting to restore
-template <typename E>
-struct ErrorInfo {
-public:
-  
+struct CallStack {
+    struct FrameWithContext{
+        char filler[80];
+    };
+private:
+    std::vector<Bedrock::CallStack::FrameWithContext> vector;
 };
 
-template <typename _Ty, typename _Err>
-class Result {
-public:
-    Result(_Ty&& value) : _Value(std::move(value)), _Has_value(true) {};
-    Result(ErrorInfo<_Err> error) : _Error(std::move(error)), _Has_value(false) {};
-    Result(Result&& other) {
-        _Has_value = other._Has_value;
-        if (_Has_value) {
-            value = std::move(other._Value)
-        } else {
-            error = std::move(other._Error);
-        }
-    };
+template <typename E>
+struct ErrorInfo {
+    ErrorInfo() = default;
 
-    bool has_value() const {
-        return _Has_value;
-    }
-
-    _Ty& value() {
-        if (!_Has_value) {
-            std::rethrow_exception(std::make_exception_ptr(_Error));
-        }
-        return _Value;
-    }
-
-    _Err& error() {
-        if (_Has_value)
-            throw std::logic_error("Bad error result access.");
-        return _Error;
+    E& getError() {
+        return error;
     }
 
 private:
+    std::error_code error;
+    char filler[0x40 - sizeof(std::error_code)];
+};
+static_assert(sizeof(ErrorInfo<std::error_code>) == 0x40);
 
-    union {
-        _Ty _Value;
-        ErrorInfo<_Err> _Error;
+template <typename T, typename Err>
+class Result {
+public:
+    explicit Result(T&& value) : mValue(std::move(value)), mHasValue(true) {}
+
+    Result(Result&& other)  noexcept {
+        mHasValue = other.mHasValue;
+        if (mHasValue) {
+            mValue = std::move(other.mValue);
+        } else {
+            mError = std::move(other.mError);
+        }
+    }
+
+    [[nodiscard]] bool has_value() const {
+        return mHasValue;
+    }
+
+    T& value() {
+        if (!mHasValue) {
+            std::rethrow_exception(std::make_exception_ptr(mError.getError()));
+        }
+        return mValue;
+    }
+
+    Err& error() {
+        if (mHasValue)
+            throw std::logic_error("Bad error result access.");
+        return mError;
+    }
+
+private:
+    union{
+        T mValue;
+        ErrorInfo<Err> mError;
     };
+    bool mHasValue;
+};
 
-    bool _Has_value;
+template <class T, class Err>
+    requires std::is_void_v<T>
+class Result<T, Err> {
+    explicit Result() : mHasValue(true) {}
 
+    Result(Result&& other)  noexcept {
+        mHasValue = other.mHasValue;
+        if (!mHasValue) {
+            mError = std::move(other.mError);
+        }
+    }
+
+    [[nodiscard]] bool has_value() const {
+        return mHasValue;
+    }
+
+    void value() {
+        if (!mHasValue) {
+            std::rethrow_exception(std::make_exception_ptr(mError.getError()));
+        }
+        // No value to return as T is void
+    }
+
+    Err& error() {
+        if (mHasValue)
+            throw std::logic_error("Bad error result access.");
+        return mError;
+    }
+
+private:
+    ErrorInfo<Err> mError;
+    bool mHasValue;
 };
 
 namespace PubSub {
@@ -223,16 +270,20 @@ template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPosition>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPositionFloat>();
-template <>
-MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<class Actor>>();
+// template <>
+// MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<class Actor>>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<class Player>>();
+// template <>
+// MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum class EquipmentSlot>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, float>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, int>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, Json::Value>();
+// template <>
+// MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum class Mirror>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class MobEffect const*>();
 template <>
@@ -245,6 +296,8 @@ template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class WildcardCommandSelector<class Actor>>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>();
+// template <>
+// MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandIntegerRange>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>();
 template <>
@@ -284,16 +337,8 @@ inline typeid_t<CommandRegistry> type_id<CommandRegistry, Enchant::Type>() {
     return typeid_t<CommandRegistry>(*id);
 }
 
-template <>
-MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, std::vector<class BlockStateCommandParam>>();
 
-// template <>
-// inline typeid_t<CommandRegistry> type_id<CommandRegistry, std::vector<class BlockStateCommandParam>>() {
-//     auto id = (unsigned short*)dlsym_real(
-//         "?id@?1???$type_id@VCommandRegistry@@V?$vector@VBlockStateCommandParam@@V?$allocator@VBlockStateCommandParam@@@"
-//         "std@@@std@@@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@@@1@XZ@4V21@A");
-//     return typeid_t<CommandRegistry>(*id);
-// }
+
 #undef AFTER_EXTRA
     /**
      * @symbol ?strtoint32\@Bedrock\@\@YAHPEBDPEAPEADH\@Z

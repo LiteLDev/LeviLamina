@@ -493,10 +493,3 @@ TInstanceHook(void,"?unregister@BlockEventDispatcherToken@@QEAAXXZ",BlockEventDi
   }
   //original(this);
 }
-
-THook(__int64, "?_read@LoginPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z",
-      __int64 a1, __int64 a2, ReadOnlyBinaryStream* a3) {
-  std::cout << a3->getSignedBigEndianInt().has_value() << std::endl;
-  std::cout << a3->getSignedBigEndianInt().value() << std::endl;
-  return original(a1, a2, a3);
-}
