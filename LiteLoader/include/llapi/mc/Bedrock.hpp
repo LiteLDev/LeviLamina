@@ -72,75 +72,53 @@ struct StorageMigration {
     StorageMigration(StorageMigration const&&) = delete;
 };
 
-   // error,Waiting to restore
+// error,Waiting to restore
+template <typename E>
+struct ErrorInfo {
+public:
+  
+};
+
 template <typename _Ty, typename _Err>
 class Result {
 public:
-    Result(const _Ty& value) : _Value(value), _Has_value(true) {}
-
-    Result(const _Err& error) : _Unexpected(error), _Has_value(false) {}
+    Result(_Ty&& value) : value(std::move(value)), has_value(true) {};
+    Result(ErrorInfo<_Err> error) : _Error(std::move(error)), _Has_value(false) {};
+    Result(Result&& other) {
+        _Has_value = other._Has_value;
+        if (_Has_value) {
+            value = std::move(other._Value)
+        } else {
+            error = std::move(other._Error);
+        }
+    };
 
     bool has_value() const {
         return _Has_value;
     }
 
     _Ty& value() {
-        if (!_Has_value) {          
-            std::rethrow_exception(std::make_exception_ptr(_Unexpected));
+        if (!_Has_value) {
+            std::rethrow_exception(std::make_exception_ptr(_Error));
         }
         return _Value;
     }
 
-   _Err& error() {
-        if (_Has_value)
-            throw std::logic_error("Bad Result access");
-        return _Unexpected;
-    }
-
-private:
-    
-    union {
-       _Ty _Value;
-       _Err _Unexpected;
-    };
-    bool _Has_value;
-};
-
-    // error,Waiting to restore
-template <class _Ty, class _Err>
-    requires std::is_void_v<_Ty>
-class Result<_Ty, _Err> {
-    Result() : _Has_value(true) {}
-
-    Result(const _Err& error) : _Unexpected(error), _Has_value(false) {}
-
-    bool has_value() const {
-       return _Has_value;
-    }
-
-    void value() {
-        if (!_Has_value)
-            std::rethrow_exception(_Unexpected);
-    }
-
     _Err& error() {
         if (_Has_value)
-            throw std::logic_error("Bad Result access");
-        return _Unexpected;
+            throw std::logic_error("Bad error result access.");
+        return _Error;
     }
 
 private:
-    union {
-        _Err _Unexpected;
-    };
-    bool _Has_value;
-};
 
-// error,Waiting to restore
-template <typename E>
-struct ErrorInfo {
-public:
-  
+    union {
+        _Ty _Value;
+        ErrorInfo<_Err> _Error;
+    };
+
+    bool _Has_value;
+
 };
 
 namespace PubSub {
