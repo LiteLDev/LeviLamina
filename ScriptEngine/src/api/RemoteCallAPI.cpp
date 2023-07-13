@@ -124,7 +124,7 @@ Local<Value> _extractValue(Actor* v) {
     return EntityClass::newEntity(v);
 };
 Local<Value> _extractValue(Block* v) {
-    return BlockClass::newBlock(const_cast<Block*>(v), &BlockPos::ZERO, -1);
+    return BlockClass::newBlock(const_cast<Block*>(v), BlockPos::ZERO, -1);
 };
 Local<Value> _extractValue(BlockActor* const& v) {
     return BlockEntityClass::newBlockEntity(v, -1);

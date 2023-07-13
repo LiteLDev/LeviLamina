@@ -640,7 +640,7 @@ TClasslessInstanceHook(void, "?sendBlockDestructionStarted@BlockEventCoordinator
         IF_LISTENED(PlayerStartDestroyBlockEvent) {
             PlayerStartDestroyBlockEvent ev{};
             ev.mPlayer = player;
-            ev.mBlockInstance = Level::getBlockInstance(blockPosPtr, Level::getBlockSource(player));
+            ev.mBlockInstance = Level::getBlockInstance(*blockPosPtr, Level::getBlockSource(player));
             ev.call();
         }
         IF_LISTENED_END(PlayerStartDestroyBlockEvent)
@@ -690,10 +690,10 @@ TClasslessInstanceHook(
     Actor* player = ((class WeakEntityRef*)(a2))->tryUnwrap<Actor>();
     if (player->isPlayer()) {
         IF_LISTENED(PlayerOpenContainerEvent) {
-            BlockPos blockPosPtr = dAccess<BlockPos>(a2, 28);
+            BlockPos blockPos = dAccess<BlockPos>(a2, 28);
             PlayerOpenContainerEvent ev{};
             ev.mPlayer = (Player*)player;
-            ev.mBlockInstance = Level::getBlockInstance(blockPosPtr, player->getDimensionId());
+            ev.mBlockInstance = Level::getBlockInstance(blockPos, player->getDimensionId());
             ev.mContainer = ev.mBlockInstance.getContainer();
             if (!ev.call())
                 return 0;
@@ -708,12 +708,12 @@ TClasslessInstanceHook(
 TInstanceHook(bool, "?stopOpen@ChestBlockActor@@UEAAXAEAVPlayer@@@Z", ChestBlockActor, Player* player) {
     IF_LISTENED(PlayerCloseContainerEvent) {
         auto* ba = (BlockActor*)((char*)this - 240); // IDA ChestBlockActor::stopOpen
-        BlockPos blockPosPtr = ba->getPosition();
+        BlockPos blockPos = ba->getPosition();
 
         PlayerCloseContainerEvent ev{};
         ev.mPlayer = player;
-        ev.mBlockInstance = Level::getBlockInstance(blockPosPtr, player->getDimensionId());
-        ev.mContainer = Level::getBlockInstance(blockPosPtr, player->getDimensionId()).getContainer();
+        ev.mBlockInstance = Level::getBlockInstance(blockPos, player->getDimensionId());
+        ev.mContainer = Level::getBlockInstance(blockPos, player->getDimensionId()).getContainer();
         ev.call();
     }
     IF_LISTENED_END(PlayerCloseContainerEvent)
@@ -724,12 +724,12 @@ TInstanceHook(bool, "?stopOpen@ChestBlockActor@@UEAAXAEAVPlayer@@@Z", ChestBlock
 TClasslessInstanceHook(bool, "?stopOpen@BarrelBlockActor@@UEAAXAEAVPlayer@@@Z", Player* player) {
     IF_LISTENED(PlayerCloseContainerEvent) {
         auto* ba = (BlockActor*)((char*)this - 240); // IDA ChestBlockActor::stopOpen
-        BlockPos blockPosPtr = ba->getPosition();
+        BlockPos blockPos = ba->getPosition();
 
         PlayerCloseContainerEvent ev{};
         ev.mPlayer = player;
-        ev.mBlockInstance = Level::getBlockInstance(blockPosPtr, player->getDimensionId());
-        ev.mContainer = Level::getBlockInstance(blockPosPtr, player->getDimensionId()).getContainer();
+        ev.mBlockInstance = Level::getBlockInstance(blockPos, player->getDimensionId());
+        ev.mContainer = Level::getBlockInstance(blockPos, player->getDimensionId()).getContainer();
         ev.call();
     }
     IF_LISTENED_END(PlayerCloseContainerEvent)
@@ -824,7 +824,7 @@ TInstanceHook(char, "?_trySetSpawn@RespawnAnchorBlock@@CA_NAEAVPlayer@@AEBVBlock
     IF_LISTENED(PlayerUseRespawnAnchorEvent) {
         PlayerUseRespawnAnchorEvent ev{};
         ev.mPlayer = this;
-        ev.mBlockInstance = Level::getBlockInstance(blockPosPtr, blockSource);
+        ev.mBlockInstance = Level::getBlockInstance(*blockPosPtr, blockSource);
         if (!ev.call())
             return false;
     }
@@ -960,7 +960,7 @@ TClasslessInstanceHook(
     IF_LISTENED(BlockInteractedEvent) {
         BlockInteractedEvent ev{};
         ev.mPlayer = player;
-        ev.mBlockInstance = Level::getBlockInstance(blockPosPtr, player->getDimensionId());
+        ev.mBlockInstance = Level::getBlockInstance(*blockPosPtr, player->getDimensionId());
         if (!ev.call())
             return 0;
     }
@@ -1039,7 +1039,7 @@ TInstanceHook(void, "?_onItemChanged@LevelContainerModel@@MEAAXHAEBVItemStack@@0
             auto* blockPosPtr = (BlockPos*)((char*)this + 216);
 
             ContainerChangeEvent ev{};
-            ev.mBlockInstance = Level::getBlockInstance(blockPosPtr, player->getDimensionId());
+            ev.mBlockInstance = Level::getBlockInstance(*blockPosPtr, player->getDimensionId());
             ev.mContainer = ev.mBlockInstance.getContainer();
             ev.mPlayer = player;
             ev.mSlot = slotNumber + this->_getContainerOffset();
@@ -1062,7 +1062,7 @@ TInstanceHook(void, "?onProjectileHit@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@
     IF_LISTENED(ProjectileHitBlockEvent) {
         if (this != BedrockBlocks::mAir) {
             ProjectileHitBlockEvent ev{};
-            ev.mBlockInstance = Level::getBlockInstance(blockPosPtr, blockSource);
+            ev.mBlockInstance = Level::getBlockInstance(*blockPosPtr, blockSource);
             ev.mSource = actor;
             ev.call();
         }
@@ -1077,7 +1077,7 @@ TClasslessInstanceHook(void, "?onRedstoneUpdate@RedStoneWireBlock@@UEBAXAEAVBloc
                        BlockSource* blockSource, BlockPos* blockPosPtr, int level, bool isActive) {
     IF_LISTENED(RedStoneUpdateEvent) {
         RedStoneUpdateEvent ev{};
-        ev.mBlockInstance = Level::getBlockInstance(blockPosPtr, blockSource);
+        ev.mBlockInstance = Level::getBlockInstance(*blockPosPtr, blockSource);
         ev.mRedStonePower = level;
         ev.mIsActivated = level != 0;
         if (!ev.call())
@@ -1094,7 +1094,7 @@ TClasslessInstanceHook(void, "?onRedstoneUpdate@RedstoneTorchBlock@@UEBAXAEAVBlo
                        BlockSource* blockSource, BlockPos* blockPosPtr, int level, bool isActive) {
     IF_LISTENED(RedStoneUpdateEvent) {
         RedStoneUpdateEvent ev{};
-        ev.mBlockInstance = Level::getBlockInstance(blockPosPtr, blockSource);
+        ev.mBlockInstance = Level::getBlockInstance(*blockPosPtr, blockSource);
         ev.mRedStonePower = level;
         ev.mIsActivated = level != 0;
         if (!ev.call())
@@ -1111,7 +1111,7 @@ TClasslessInstanceHook(void, "?onRedstoneUpdate@DiodeBlock@@UEBAXAEAVBlockSource
                        BlockSource* blockSource, BlockPos* blockPosPtr, int level, bool isActive) {
     IF_LISTENED(RedStoneUpdateEvent) {
         RedStoneUpdateEvent ev{};
-        ev.mBlockInstance = Level::getBlockInstance(blockPosPtr, blockSource);
+        ev.mBlockInstance = Level::getBlockInstance(*blockPosPtr, blockSource);
         ev.mRedStonePower = level;
         ev.mIsActivated = level != 0;
         if (!ev.call())
@@ -1128,7 +1128,7 @@ TClasslessInstanceHook(void, "?onRedstoneUpdate@ComparatorBlock@@UEBAXAEAVBlockS
                        BlockSource* blockSource, BlockPos* blockPosPtr, int level, bool isActive) {
     IF_LISTENED(RedStoneUpdateEvent) {
         RedStoneUpdateEvent ev{};
-        ev.mBlockInstance = Level::getBlockInstance(blockPosPtr, blockSource);
+        ev.mBlockInstance = Level::getBlockInstance(*blockPosPtr, blockSource);
         ev.mRedStonePower = level;
         ev.mIsActivated = level != 0;
         if (!ev.call())
@@ -1205,7 +1205,7 @@ TInstanceHook(bool, "?_attachedBlockWalker@PistonBlockActor@@AEAA_NAEAVBlockSour
               PistonBlockActor, BlockSource* blockSource, BlockPos* blockPosPtr, char a3, char a4) {
     IF_LISTENED(PistonTryPushEvent) {
         PistonTryPushEvent ev{};
-        ev.mTargetBlockInstance = Level::getBlockInstance(blockPosPtr, blockSource);
+        ev.mTargetBlockInstance = Level::getBlockInstance(*blockPosPtr, blockSource);
         if (ev.mTargetBlockInstance.getBlock() == BedrockBlocks::mAir)
             return original(this, blockSource, blockPosPtr, a3, a4);
 
@@ -1222,7 +1222,7 @@ TInstanceHook(bool, "?_attachedBlockWalker@PistonBlockActor@@AEAA_NAEAVBlockSour
 
     IF_LISTENED(PistonPushEvent) {
         PistonPushEvent ev{};
-        ev.mTargetBlockInstance = Level::getBlockInstance(blockPosPtr, blockSource);
+        ev.mTargetBlockInstance = Level::getBlockInstance(*blockPosPtr, blockSource);
         if (ev.mTargetBlockInstance.getBlock() == BedrockBlocks::mAir)
             return true;
 
@@ -1239,7 +1239,7 @@ TClasslessInstanceHook(void, "?transformOnFall@FarmBlock@@UEBAXAEAVBlockSource@@
                        BlockSource* blockSource, BlockPos* blockPosPtr, Actor* ac, float a5) {
     IF_LISTENED(FarmLandDecayEvent) {
         FarmLandDecayEvent ev{};
-        ev.mBlockInstance = Level::getBlockInstance(blockPosPtr, blockSource);
+        ev.mBlockInstance = Level::getBlockInstance(*blockPosPtr, blockSource);
         ev.mActor = ac;
         if (!ev.call())
             return;
@@ -1253,7 +1253,7 @@ TClasslessInstanceHook(bool, "?use@ItemFrameBlock@@UEBA_NAEAVPlayer@@AEBVBlockPo
     IF_LISTENED(PlayerUseFrameBlockEvent) {
         PlayerUseFrameBlockEvent ev{};
         ev.mType = PlayerUseFrameBlockEvent::Type::Use;
-        ev.mBlockInstance = Level::getBlockInstance(a3, a2->getDimensionId());
+        ev.mBlockInstance = Level::getBlockInstance(*a3, a2->getDimensionId());
         ev.mPlayer = a2;
         if (!ev.call())
             return false;
@@ -1266,7 +1266,7 @@ TClasslessInstanceHook(bool, "?attack@ItemFrameBlock@@UEBA_NPEAVPlayer@@AEBVBloc
     IF_LISTENED(PlayerUseFrameBlockEvent) {
         PlayerUseFrameBlockEvent ev{};
         ev.mType = PlayerUseFrameBlockEvent::Type::Attack;
-        ev.mBlockInstance = Level::getBlockInstance(a3, a2->getDimensionId());
+        ev.mBlockInstance = Level::getBlockInstance(*a3, a2->getDimensionId());
         ev.mPlayer = a2;
         if (!ev.call())
             return false;
@@ -1285,7 +1285,7 @@ TInstanceHook(bool, "?_canSpreadTo@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AE
         return rtn;
     IF_LISTENED(LiquidSpreadEvent) {
         LiquidSpreadEvent ev{};
-        ev.mBlockInstance = BlockInstance(const_cast<Block*>(&this->getRenderBlock()), from,
+        ev.mBlockInstance = BlockInstance(&this->getRenderBlock(), from,
                                                                blockSource.getDimensionId());
         ev.mTarget = to;
         ev.mDimensionId = blockSource.getDimensionId();
@@ -1395,11 +1395,11 @@ TInstanceHook(bool,"?playerWillDestroy@Block@@QEBA_NAEAVPlayer@@AEBVBlockPos@@@Z
 /////////////////// PlayerUseItemOn ///////////////////
 TInstanceHook(InteractionResult,
               "?useItemOn@GameMode@@UEAA?AVInteractionResult@@AEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z",
-              GameMode, ItemStack& item, BlockPos& blockPosPtr, unsigned char side, Vec3* clickPos, Block* block) {
+              GameMode, ItemStack& item, BlockPos& blockPos, unsigned char side, Vec3* clickPos, Block* block) {
     IF_LISTENED(PlayerUseItemOnEvent) {
         PlayerUseItemOnEvent ev{};
         ev.mPlayer = this->getPlayer();
-        ev.mBlockInstance = Level::getBlockInstance(blockPosPtr, ev.mPlayer->getDimensionId());
+        ev.mBlockInstance = Level::getBlockInstance(blockPos, ev.mPlayer->getDimensionId());
         ev.mItemStack = &item;
         ev.mFace = side;
         ev.mClickPos = *clickPos;
@@ -1407,7 +1407,7 @@ TInstanceHook(InteractionResult,
             return InteractionResult{InteractionResult::Fail};
     }
     IF_LISTENED_END(PlayerUseItemOnEvent)
-    return original(this, item, blockPosPtr, side, clickPos, block);
+    return original(this, item, blockPos, side, clickPos, block);
 }
 
 /////////////////// PlayerUseBucket ///////////////////
@@ -1436,12 +1436,12 @@ TInstanceHook(bool,
 
 // 装水
 TInstanceHook(bool, "?_takeLiquid@BucketItem@@AEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@@Z", BucketItem,
-              ItemStack* itemStack, Actor* actor, BlockPos* blockPos) {
+              ItemStack* itemStack, Actor* actor, BlockPos& blockPos) {
     IF_LISTENED(PlayerUseBucketEvent) {
         PlayerUseBucketEvent ev{};
         ev.mPlayer = (Player*)actor;
         ev.mEventType = PlayerUseBucketEvent::EventType::Take;
-        ev.mTargetPos = blockPos->toVec3();
+        ev.mTargetPos = blockPos.toVec3();
         ev.mBucket = itemStack;
         ev.mBlockInstance = Level::getBlockInstance(blockPos, Level::getBlockSource(actor));
         ev.mFace = -1;
@@ -1488,12 +1488,12 @@ THook(void, "<lambda_6afa751f7d1669ccd67230f07aadabb7>::operator()", BucketPlaye
 
 // 装细雪
 TInstanceHook(bool, "?_takePowderSnow@BucketItem@@AEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@@Z", BucketItem,
-              ItemStack* itemStack, Actor* actor, BlockPos* blockPos) {
+              ItemStack* itemStack, Actor* actor, BlockPos& blockPos) {
     IF_LISTENED(PlayerUseBucketEvent) {
         PlayerUseBucketEvent ev{};
         ev.mPlayer = (Player*)actor;
         ev.mEventType = PlayerUseBucketEvent::EventType::Take;
-        ev.mTargetPos = blockPos->toVec3();
+        ev.mTargetPos = blockPos.toVec3();
         ev.mBucket = itemStack;
         ev.mBlockInstance = Level::getBlockInstance(blockPos, Level::getBlockSource(actor));
         ev.mFace = -1;
@@ -1694,9 +1694,9 @@ TClasslessInstanceHook(void, "?explode@Explosion@@QEAAXXZ") {
 
         IF_LISTENED(BlockExplodeEvent) {
             if (!actor) {
-                BlockPos blockPosPtr = pos.toBlockPos();
+                BlockPos blockPos = pos.toBlockPos();
                 BlockExplodeEvent ev{};
-                ev.mBlockInstance = Level::getBlockInstance(blockPosPtr, blockSource);
+                ev.mBlockInstance = Level::getBlockInstance(blockPos, blockSource);
                 ev.mBreaking = canBreaking;
                 ev.mFire = genFire;
                 ev.mMaxResistance = maxResistance;
@@ -1774,7 +1774,7 @@ TClasslessInstanceHook(
     IF_LISTENED(EntityStepOnPressurePlateEvent) {
         EntityStepOnPressurePlateEvent ev{};
         ev.mActor = a4;
-        ev.mBlockInstance = Level::getBlockInstance(a3, a4->getDimensionId());
+        ev.mBlockInstance = Level::getBlockInstance(*a3, a4->getDimensionId());
         if (!ev.call())
             return false;
     }

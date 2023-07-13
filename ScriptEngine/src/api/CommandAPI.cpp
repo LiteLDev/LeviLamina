@@ -108,7 +108,7 @@ Local<Value> convertResult(DynamicCommand::Result const& result) {
         case DynamicCommand::ParameterType::Item:
             return ItemClass::newItem(new ItemStack(result.getRaw<CommandItem>().createInstance(1, 1, nullptr, true).value_or(ItemInstance::EMPTY_ITEM)));
         case DynamicCommand::ParameterType::Block:
-            return BlockClass::newBlock(const_cast<Block*>(result.getRaw<CommandBlockName>().resolveBlock(0).getBlock()),const_cast<BlockPos*>(&BlockPos::MIN), -1);
+            return BlockClass::newBlock(result.getRaw<CommandBlockName>().resolveBlock(0).getBlock(), BlockPos::MIN, -1);
         case DynamicCommand::ParameterType::Effect:
             return String::newString(result.getRaw<MobEffect const*>()->getResourceName());
         case DynamicCommand::ParameterType::Enum:
