@@ -176,43 +176,8 @@ string Player::getServerAddress() {
     return "unknown";
 }
 
-string Player::getDeviceTypeName() {
-    switch ((int)getPlatform()) {
-        case -1:
-            return "Unknown";
-        case 1:
-            return "Android";
-        case 2:
-            return "iOS";
-        case 3:
-            return "OSX";
-        case 4:
-            return "Amazon";
-        case 5:
-            return "GearVR";
-        case 6:
-            return "Hololens";
-        case 7:
-            return "Win10";
-        case 8:
-            return "WIN32";
-        case 9:
-            return "Dedicated";
-        case 10:
-            return "TVOS";
-        case 11:
-            return "PlayStation";
-        case 12:
-            return "Nintendo";
-        case 13:
-            return "Xbox";
-        case 14:
-            return "WindowsPhone";
-        case 15:
-            return "Linux";
-        default:
-            return "Unknown";
-    }
+std::string Player::getDeviceTypeName() {
+    return std::string{magic_enum::enum_name(getPlatform())};
 }
 
 bool Player::kick(const std::string& msg) {
