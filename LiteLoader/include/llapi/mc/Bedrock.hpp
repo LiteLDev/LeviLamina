@@ -72,89 +72,75 @@ struct StorageMigration {
     StorageMigration(StorageMigration const&&) = delete;
 };
 
-template <typename T, typename E>
+   // error,Waiting to restore
+template <typename _Ty, typename _Err>
 class Result {
 public:
-    Result(const T& value) : data(value), hasValue(true) {}
+    Result(const _Ty& value) : _Value(value), _Has_value(true) {}
 
-    Result(const E& error) : data(error), hasValue(false) {}
+    Result(const _Err& error) : _Unexpected(error), _Has_value(false) {}
 
     bool has_value() const {
-        return hasValue;
+        return _Has_value;
     }
 
-    T& value() {
-        if (!hasValue) {          
-            std::rethrow_exception(std::make_exception_ptr(std::get<E>(data)));
+    _Ty& value() {
+        if (!_Has_value) {          
+            std::rethrow_exception(std::make_exception_ptr(_Unexpected));
         }
-        return std::get<T>(data);
+        return _Value;
     }
 
-    E& error() {
-        if (hasValue)
+   _Err& error() {
+        if (_Has_value)
             throw std::logic_error("Bad Result access");
-        return std::get<E>(data);
+        return _Unexpected;
     }
 
 private:
-    std::variant<T, E> data;
-    bool hasValue;
+    
+    union {
+       _Ty _Value;
+       _Err _Unexpected;
+    };
+    bool _Has_value;
 };
 
-template <class T, class E>
-    requires std::is_void_v<T>
-class Result<T, E> {
-    Result() : hasValue(true) {}
+    // error,Waiting to restore
+template <class _Ty, class _Err>
+    requires std::is_void_v<_Ty>
+class Result<_Ty, _Err> {
+    Result() : _Has_value(true) {}
 
-    Result(const E& error) : data(error), hasValue(false) {}
+    Result(const _Err& error) : _Unexpected(error), _Has_value(false) {}
 
     bool has_value() const {
-        return hasValue;
+       return _Has_value;
     }
 
     void value() {
-        if (!hasValue)
-            std::rethrow_exception(std::get<E>(data));
+        if (!_Has_value)
+            std::rethrow_exception(_Unexpected);
     }
 
-    E& error() {
-        if (hasValue)
+    _Err& error() {
+        if (_Has_value)
             throw std::logic_error("Bad Result access");
-        return std::get<E>(data);
+        return _Unexpected;
     }
 
 private:
-    std::variant<E> data;
-    bool hasValue;
+    union {
+        _Err _Unexpected;
+    };
+    bool _Has_value;
 };
 
+// error,Waiting to restore
 template <typename E>
 struct ErrorInfo {
 public:
-    ErrorInfo() = delete;
-
-    ErrorInfo(const E& e) : m_val(e) {}
-
-    ErrorInfo(E&& e) : m_val(std::move(e)) {}
-
-    const E& value() const& {
-        return m_val;
-    }
-
-    E& value() & {
-        return m_val;
-    }
-
-    const E&& value() const&& {
-        return std::move(m_val);
-    }
-
-    E&& value() && {
-        return std::move(m_val);
-    }
-
-private:
-    E m_val;
+  
 };
 
 namespace PubSub {

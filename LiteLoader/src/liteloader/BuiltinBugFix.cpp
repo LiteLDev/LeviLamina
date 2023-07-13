@@ -421,6 +421,8 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
     }
 }
 
+
+
 // Fix SimulatedPlayer Bugs
 namespace SimulatedPlayerClient {
 template <typename T>
@@ -444,8 +446,8 @@ TInstanceHook(void, "?tickWorld@Player@@UEAAXAEBUTick@@@Z", Player, struct Tick 
 
 #include "llapi/mc/ChunkViewSource.hpp"
 // fix chunk load and tick - ChunkSource load mode
-static_assert(sizeof(ChunkSource) == 0x50);      // 88
-static_assert(sizeof(ChunkViewSource) == 0x1d8); // 472
+static_assert(sizeof(ChunkSource) == 0x60);      // 96
+static_assert(sizeof(ChunkViewSource) == 0x1e8); // 472
 
 TInstanceHook(std::shared_ptr<class ChunkViewSource>,
               "?_createChunkSource@SimulatedPlayer@@MEAA?AV?$shared_ptr@VChunkViewSource@@@std@@AEAVChunkSource@@@Z",
@@ -490,4 +492,11 @@ TInstanceHook(void,"?unregister@BlockEventDispatcherToken@@QEAAXXZ",BlockEventDi
     return;
   }
   //original(this);
+}
+
+THook(__int64, "?_read@LoginPacket@@EEAA?AV?$Result@XVerror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z",
+      __int64 a1, __int64 a2, ReadOnlyBinaryStream* a3) {
+  std::cout << a3->getSignedBigEndianInt().has_value() << std::endl;
+  std::cout << a3->getSignedBigEndianInt().value() << std::endl;
+  return original(a1, a2, a3);
 }
