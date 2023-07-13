@@ -441,14 +441,19 @@ TClasslessInstanceHook(bool,
 int num = 0;
 
 /////////////////// PlayerJump ///////////////////
-TInstanceHook(void, "?jumpFromGround@Player@@UEAAXAEBVIConstBlockSource@@@Z", Player, void* a2) {
-    IF_LISTENED(PlayerJumpEvent) {
-        PlayerJumpEvent ev{};
-        ev.mPlayer = this;
-        ev.call();
+THook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerActionPacket@@@Z",
+      ServerNetworkHandler * self, NetworkIdentifier * a2, PlayerActionPacket * a3)
+{
+    auto pl = self->getServerPlayer(*a2);
+    if (pl && a3->actionType == PlayerActionType::Jump){
+        IF_LISTENED(PlayerJumpEvent) {
+            PlayerJumpEvent ev{};
+            ev.mPlayer = pl;
+            ev.call();
+        }
+        IF_LISTENED_END(PlayerJumpEvent)
     }
-    IF_LISTENED_END(PlayerJumpEvent)
-    return original(this, a2);
+    original(self, a2, a3);
 }
 
 /////////////////// PlayerSneak ///////////////////
@@ -475,6 +480,7 @@ THook(void,
         IF_LISTENED(PlayerSwingEvent) {
             PlayerSwingEvent ev{};
             ev.mPlayer = serverNetworkHandler->getServerPlayer(networkIdentifier);
+        ev.call();
         }
         IF_LISTENED_END(PlayerSwingEvent)
     }
@@ -628,8 +634,8 @@ TInstanceHook(void, "?onEffectUpdated@ServerPlayer@@MEAAXAEAVMobEffectInstance@@
 }
 
 /////////////////// PlayerStartDestroyBlock ///////////////////
-TClasslessInstanceHook(void, "?sendBlockDestructionStarted@BlockEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlockPos@@@Z",
-                       Player* player, BlockPos* blockPosPtr) {
+TClasslessInstanceHook(void, "?sendBlockDestructionStarted@BlockEventCoordinator@@QEAAXAEAVPlayer@@AEBVBlockPos@@E@Z",
+                       Player* player, BlockPos* blockPosPtr, char a4) {
     if (player && blockPosPtr) {
         IF_LISTENED(PlayerStartDestroyBlockEvent) {
             PlayerStartDestroyBlockEvent ev{};
@@ -639,7 +645,7 @@ TClasslessInstanceHook(void, "?sendBlockDestructionStarted@BlockEventCoordinator
         }
         IF_LISTENED_END(PlayerStartDestroyBlockEvent)
     }
-    return original(this, player, blockPosPtr);
+    return original(this, player, blockPosPtr,a4);
 }
 
 /////////////////// PlayerPlaceBlock ///////////////////
@@ -795,7 +801,7 @@ TInstanceHook(void, "?setArmor@ServerPlayer@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
             ev.mSlot = slot;
             ev.mArmorItem = item;
             if (!ev.call()) {
-                auto& uid = getUniqueID();
+                auto& uid = getOrCreateUniqueID();
                 auto& plInv = getSupplies();
                 plInv.add(*item, 1);
                 getArmorContainer().setItem(slot, ItemStack::EMPTY_ITEM);
@@ -813,7 +819,7 @@ TInstanceHook(void, "?setArmor@ServerPlayer@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
 }
 
 /////////////////// PlayerUseRespawnAnchor ///////////////////
-TInstanceHook(bool, "?trySetSpawn@RespawnAnchorBlock@@CA_NAEAVPlayer@@AEBVBlockPos@@AEAVBlockSource@@AEAVLevel@@@Z",
+TInstanceHook(char, "?_trySetSpawn@RespawnAnchorBlock@@CA_NAEAVPlayer@@AEBVBlockPos@@AEAVBlockSource@@AEAVLevel@@@Z",
               Player, BlockPos* blockPosPtr, BlockSource* blockSource, Level* a4) {
     IF_LISTENED(PlayerUseRespawnAnchorEvent) {
         PlayerUseRespawnAnchorEvent ev{};
@@ -1460,7 +1466,7 @@ struct BucketPlayerAndActor {
 };
 
 // 也许这个结构体可以用偏移获取替代？
-THook(void, "<lambda_7e34d7d5fccf0904e478400d9cd01bf3>::operator()", BucketPlayerAndActor* a1) {
+THook(void, "<lambda_6afa751f7d1669ccd67230f07aadabb7>::operator()", BucketPlayerAndActor* a1) {
     IF_LISTENED(PlayerUseBucketEvent) {
         BucketPlayerAndActor mBucketPlayerAndActor = *a1;
         if (mBucketPlayerAndActor.owner->getTypeName() == "minecraft:cow" ||

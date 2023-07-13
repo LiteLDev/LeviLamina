@@ -17,10 +17,6 @@ namespace ActorRiding {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?clearVehicle\@ActorRiding\@\@YAXAEAVEntityContext\@\@\@Z
-     */
-    MCAPI void clearVehicle(class EntityContext &);
-    /**
      * @symbol ?clearVehiclePrev\@ActorRiding\@\@YAXAEAVEntityContext\@\@\@Z
      */
     MCAPI void clearVehiclePrev(class EntityContext &);
@@ -52,10 +48,6 @@ namespace ActorRiding {
      * @symbol ?setVehicle\@ActorRiding\@\@YAXAEAVEntityContext\@\@VStrictEntityContext\@\@AEBUActorUniqueID\@\@\@Z
      */
     MCAPI void setVehicle(class EntityContext &, class StrictEntityContext, struct ActorUniqueID const &);
-    /**
-     * @symbol ?setVehiclePrev\@ActorRiding\@\@YAXAEAVEntityContext\@\@VStrictEntityContext\@\@AEBUActorUniqueID\@\@\@Z
-     */
-    MCAPI void setVehiclePrev(class EntityContext &, class StrictEntityContext, struct ActorUniqueID const &);
     /**
      * @symbol ?tryRemoveLastPendingPassenger\@ActorRiding\@\@YA?AUStrictActorIDEntityContextPair\@\@AEAVEntityContext\@\@\@Z
      */

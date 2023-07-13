@@ -166,13 +166,13 @@ public:
 
 public:
     /**
-     * @symbol ??0SynchedActorData\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI SynchedActorData(class SynchedActorData &&);
-    /**
      * @symbol ??0SynchedActorData\@\@QEAA\@XZ
      */
     MCAPI SynchedActorData();
+    /**
+     * @symbol ??0SynchedActorData\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI SynchedActorData(class SynchedActorData &&);
     /**
      * @symbol ?_clone\@SynchedActorData\@\@QEBA?AV1\@XZ
      */
@@ -214,10 +214,6 @@ public:
      */
     MCAPI class Vec3 getVec3(unsigned short) const;
     /**
-     * @symbol ?markDirty\@SynchedActorData\@\@QEAAXAEAVDataItem\@\@\@Z
-     */
-    MCAPI void markDirty(class DataItem &);
-    /**
      * @symbol ?markDirty\@SynchedActorData\@\@QEAAXG\@Z
      */
     MCAPI void markDirty(unsigned short);
@@ -245,10 +241,6 @@ public:
      * @symbol ?DIFF_ITEM_NULL\@SynchedActorData\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const DIFF_ITEM_NULL;
-    /**
-     * @symbol ?getDiff\@SynchedActorData\@\@SA?AV?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@AEBV1\@0\@Z
-     */
-    MCAPI static class std::optional<std::string> getDiff(class SynchedActorData const &, class SynchedActorData const &);
 
 //private:
     /**

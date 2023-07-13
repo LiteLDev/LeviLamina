@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -50,8 +51,8 @@ public:
     template <>
     inline void readType(mce::UUID& uuid)
     {
-        dAccess<uint64_t, 0>(&uuid) = getUnsignedInt64();
-        dAccess<uint64_t, 8>(&uuid) = getUnsignedInt64();
+        dAccess<uint64_t, 0>(&uuid) = getUnsignedInt64().value();
+        dAccess<uint64_t, 8>(&uuid) = getUnsignedInt64().value();
     }
     //template <>
     //inline void readType(NetworkItemInstanceDescriptor& descriptor)
@@ -76,9 +77,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?read\@ReadOnlyBinaryStream\@\@EEAA_NPEAX_K\@Z
+     * @symbol ?read\@ReadOnlyBinaryStream\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@PEAX_K\@Z
      */
-    virtual bool read(void *, unsigned __int64);
+    virtual class Bedrock::Result<void, class std::error_code> read(void *, unsigned __int64);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_READONLYBINARYSTREAM
     /**
      * @symbol __unk_destructor_-1
@@ -98,84 +99,88 @@ public:
      */
     MCAPI bool canReadBool() const;
     /**
-     * @symbol ?getBool\@ReadOnlyBinaryStream\@\@QEAA_NXZ
+     * @symbol ?ensureReadCompleted\@ReadOnlyBinaryStream\@\@QEBA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI bool getBool();
+    MCAPI class Bedrock::Result<void, class std::error_code> ensureReadCompleted() const;
     /**
-     * @symbol ?getByte\@ReadOnlyBinaryStream\@\@QEAAEXZ
+     * @symbol ?getBool\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@_NVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI unsigned char getByte();
+    MCAPI class Bedrock::Result<bool, class std::error_code> getBool();
     /**
-     * @symbol ?getDouble\@ReadOnlyBinaryStream\@\@QEAANXZ
+     * @symbol ?getByte\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@EVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI double getDouble();
+    MCAPI class Bedrock::Result<unsigned char, class std::error_code> getByte();
     /**
-     * @symbol ?getFloat\@ReadOnlyBinaryStream\@\@QEAAMXZ
+     * @symbol ?getDouble\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@NVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI float getFloat();
+    MCAPI class Bedrock::Result<double, class std::error_code> getDouble();
     /**
-     * @symbol ?getReadCompleteResult\@ReadOnlyBinaryStream\@\@QEBA?AW4StreamReadResult\@\@XZ
+     * @symbol ?getFloat\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@MVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI enum class StreamReadResult getReadCompleteResult() const;
+    MCAPI class Bedrock::Result<float, class std::error_code> getFloat();
     /**
-     * @symbol ?getSignedBigEndianInt\@ReadOnlyBinaryStream\@\@QEAAHXZ
+     * @symbol ?getSignedBigEndianInt\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@HVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI int getSignedBigEndianInt();
+    MCAPI class Bedrock::Result<int, class std::error_code> getSignedBigEndianInt();
     /**
-     * @symbol ?getSignedInt\@ReadOnlyBinaryStream\@\@QEAAHXZ
+     * @symbol ?getSignedInt\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@HVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI int getSignedInt();
+    MCAPI class Bedrock::Result<int, class std::error_code> getSignedInt();
     /**
-     * @symbol ?getSignedInt64\@ReadOnlyBinaryStream\@\@QEAA_JXZ
+     * @symbol ?getSignedInt64\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@_JVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI __int64 getSignedInt64();
+    MCAPI class Bedrock::Result<__int64, class std::error_code> getSignedInt64();
     /**
-     * @symbol ?getSignedShort\@ReadOnlyBinaryStream\@\@QEAAFXZ
+     * @symbol ?getSignedShort\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@FVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI short getSignedShort();
+    MCAPI class Bedrock::Result<short, class std::error_code> getSignedShort();
     /**
-     * @symbol ?getString\@ReadOnlyBinaryStream\@\@QEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getString\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI std::string getString();
+    MCAPI class Bedrock::Result<void, class std::error_code> getString(std::string &);
     /**
-     * @symbol ?getString\@ReadOnlyBinaryStream\@\@QEAA_NAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?getString\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@Verror_code\@2\@\@Bedrock\@\@XZ
      */
-    MCAPI bool getString(std::string &);
+    MCAPI class Bedrock::Result<std::string, class std::error_code> getString();
     /**
-     * @symbol ?getUnsignedChar\@ReadOnlyBinaryStream\@\@QEAAEXZ
+     * @symbol ?getUnsignedChar\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@EVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI unsigned char getUnsignedChar();
+    MCAPI class Bedrock::Result<unsigned char, class std::error_code> getUnsignedChar();
     /**
-     * @symbol ?getUnsignedInt\@ReadOnlyBinaryStream\@\@QEAAIXZ
+     * @symbol ?getUnsignedInt\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@IVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI unsigned int getUnsignedInt();
+    MCAPI class Bedrock::Result<unsigned int, class std::error_code> getUnsignedInt();
     /**
-     * @symbol ?getUnsignedInt64\@ReadOnlyBinaryStream\@\@QEAA_KXZ
+     * @symbol ?getUnsignedInt64\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@_KVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI unsigned __int64 getUnsignedInt64();
+    MCAPI class Bedrock::Result<unsigned __int64, class std::error_code> getUnsignedInt64();
     /**
-     * @symbol ?getUnsignedShort\@ReadOnlyBinaryStream\@\@QEAAGXZ
+     * @symbol ?getUnsignedShort\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@GVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI unsigned short getUnsignedShort();
+    MCAPI class Bedrock::Result<unsigned short, class std::error_code> getUnsignedShort();
     /**
-     * @symbol ?getUnsignedVarInt\@ReadOnlyBinaryStream\@\@QEAAIXZ
+     * @symbol ?getUnsignedVarInt\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@IVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI unsigned int getUnsignedVarInt();
+    MCAPI class Bedrock::Result<unsigned int, class std::error_code> getUnsignedVarInt();
     /**
-     * @symbol ?getUnsignedVarInt64\@ReadOnlyBinaryStream\@\@QEAA_KXZ
+     * @symbol ?getUnsignedVarInt64\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@_KVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI unsigned __int64 getUnsignedVarInt64();
+    MCAPI class Bedrock::Result<unsigned __int64, class std::error_code> getUnsignedVarInt64();
     /**
-     * @symbol ?getVarInt\@ReadOnlyBinaryStream\@\@QEAAHXZ
+     * @symbol ?getVarInt\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@HVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI int getVarInt();
+    MCAPI class Bedrock::Result<int, class std::error_code> getVarInt();
     /**
-     * @symbol ?getVarInt64\@ReadOnlyBinaryStream\@\@QEAA_JXZ
+     * @symbol ?getVarInt64\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@_JVerror_code\@std\@\@\@Bedrock\@\@XZ
      */
-    MCAPI __int64 getVarInt64();
+    MCAPI class Bedrock::Result<__int64, class std::error_code> getVarInt64();
     /**
      * @symbol ?hasOverflowed\@ReadOnlyBinaryStream\@\@QEBA_NXZ
      */
     MCAPI bool hasOverflowed() const;
+    /**
+     * @symbol ?readVectorList\@ReadOnlyBinaryStream\@\@QEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAV?$vector\@IV?$allocator\@I\@std\@\@\@std\@\@\@Z
+     */
+    MCAPI class Bedrock::Result<void, class std::error_code> readVectorList(std::vector<unsigned int> &);
 
 };

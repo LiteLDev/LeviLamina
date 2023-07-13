@@ -53,10 +53,10 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @vftbl 19
-     * @symbol __unk_vfn_19
+     * @vftbl 21
+     * @symbol __unk_vfn_21
      */
-    virtual void __unk_vfn_19();
+    virtual void __unk_vfn_21();
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
@@ -118,12 +118,12 @@ public:
      */
     virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
-     * @vftbl 134
+     * @vftbl 135
      * @symbol ?_useOn\@SignItem\@\@EEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
     /**
-     * @vftbl 135
+     * @vftbl 136
      * @symbol ?getBlockToPlace\@SignItem\@\@UEBAPEBVBlock\@\@EAEBVActor\@\@VBlockPos\@\@\@Z
      */
     virtual class Block const * getBlockToPlace(unsigned char, class Actor const &, class BlockPos) const;

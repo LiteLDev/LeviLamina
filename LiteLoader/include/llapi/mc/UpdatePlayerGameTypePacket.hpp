@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 #include "Packet.hpp"
 
 #define BEFORE_EXTRA
@@ -51,9 +52,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@UpdatePlayerGameTypePacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@UpdatePlayerGameTypePacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATEPLAYERGAMETYPEPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -61,12 +62,12 @@ public:
     MCVAPI ~UpdatePlayerGameTypePacket();
 #endif
     /**
-     * @symbol ??0UpdatePlayerGameTypePacket\@\@QEAA\@W4GameType\@\@AEBUActorUniqueID\@\@\@Z
-     */
-    MCAPI UpdatePlayerGameTypePacket(enum class GameType, struct ActorUniqueID const &);
-    /**
      * @symbol ??0UpdatePlayerGameTypePacket\@\@QEAA\@XZ
      */
     MCAPI UpdatePlayerGameTypePacket();
+    /**
+     * @symbol ??0UpdatePlayerGameTypePacket\@\@QEAA\@W4GameType\@\@AEBUActorUniqueID\@\@\@Z
+     */
+    MCAPI UpdatePlayerGameTypePacket(enum class GameType, struct ActorUniqueID const &);
 
 };

@@ -31,6 +31,10 @@ public:
 
 public:
     /**
+     * @symbol ?initialize\@PeekDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext &) const;
+    /**
      * @symbol ?buildSchema\@PeekDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VPeekDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class PeekDefinition>> &);

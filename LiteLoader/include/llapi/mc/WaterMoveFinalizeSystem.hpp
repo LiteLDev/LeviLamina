@@ -25,10 +25,6 @@ public:
 
 public:
     /**
-     * @symbol ?createWaterMoveFinalizeSideBySideSystem\@WaterMoveFinalizeSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI static struct TickingSystemWithInfo createWaterMoveFinalizeSideBySideSystem();
-    /**
      * @symbol ?createWaterMoveFinalizeSystem\@WaterMoveFinalizeSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createWaterMoveFinalizeSystem();

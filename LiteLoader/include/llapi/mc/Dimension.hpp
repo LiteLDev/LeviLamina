@@ -112,6 +112,10 @@ public:
      */
     MCVAPI void init();
     /**
+     * @symbol ?initializeWithLevelStorageManager\@Dimension\@\@UEAAXAEAVLevelStorageManager\@\@\@Z
+     */
+    MCVAPI void initializeWithLevelStorageManager(class LevelStorageManager &);
+    /**
      * @symbol ?is2DPositionRelevantForPlayer\@Dimension\@\@UEBA_NAEBVBlockPos\@\@AEAVPlayer\@\@\@Z
      */
     MCVAPI bool is2DPositionRelevantForPlayer(class BlockPos const &, class Player &) const;
@@ -221,13 +225,13 @@ public:
      */
     MCAPI class Actor * fetchEntity(struct ActorUniqueID, bool) const;
     /**
-     * @symbol ?fetchNearestAttackablePlayer\@Dimension\@\@QEAAPEAVPlayer\@\@AEAVActor\@\@M\@Z
-     */
-    MCAPI class Player * fetchNearestAttackablePlayer(class Actor &, float);
-    /**
      * @symbol ?fetchNearestAttackablePlayer\@Dimension\@\@QEAAPEAVPlayer\@\@VBlockPos\@\@MPEAVActor\@\@\@Z
      */
     MCAPI class Player * fetchNearestAttackablePlayer(class BlockPos, float, class Actor *);
+    /**
+     * @symbol ?fetchNearestAttackablePlayer\@Dimension\@\@QEAAPEAVPlayer\@\@AEAVActor\@\@M\@Z
+     */
+    MCAPI class Player * fetchNearestAttackablePlayer(class Actor &, float);
     /**
      * @symbol ?fetchNearestInteractablePlayer\@Dimension\@\@QEBAPEAVPlayer\@\@AEBVVec3\@\@M\@Z
      */
@@ -256,10 +260,6 @@ public:
      * @symbol ?forEachPlayer\@Dimension\@\@QEBAXV?$function\@$$A6A_NAEAVPlayer\@\@\@Z\@std\@\@\@Z
      */
     MCAPI void forEachPlayer(class std::function<bool (class Player &)>) const;
-    /**
-     * @symbol ?forceSaveVillageManager\@Dimension\@\@QEAAXXZ
-     */
-    MCAPI void forceSaveVillageManager();
     /**
      * @symbol ?getBlockEventDispatcher\@Dimension\@\@QEAAAEAVBlockEventDispatcher\@\@XZ
      */
@@ -465,13 +465,13 @@ public:
      */
     MCAPI void transferEntity(class ChunkPos const &, class Vec3 const &, std::unique_ptr<class CompoundTag>, bool);
     /**
-     * @symbol ?transferEntityToUnloadedChunk\@Dimension\@\@QEAAXAEBVChunkPos\@\@0V?$AutomaticID\@VDimension\@\@H\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@5\@\@Z
-     */
-    MCAPI void transferEntityToUnloadedChunk(class ChunkPos const &, class ChunkPos const &, class AutomaticID<class Dimension, int>, std::string &, std::unique_ptr<class CompoundTag>);
-    /**
      * @symbol ?transferEntityToUnloadedChunk\@Dimension\@\@QEAAXAEAVActor\@\@PEAVLevelChunk\@\@\@Z
      */
     MCAPI void transferEntityToUnloadedChunk(class Actor &, class LevelChunk *);
+    /**
+     * @symbol ?transferEntityToUnloadedChunk\@Dimension\@\@QEAAXAEBVChunkPos\@\@0V?$AutomaticID\@VDimension\@\@H\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@5\@\@Z
+     */
+    MCAPI void transferEntityToUnloadedChunk(class ChunkPos const &, class ChunkPos const &, class AutomaticID<class Dimension, int>, std::string &, std::unique_ptr<class CompoundTag>);
     /**
      * @symbol ?tryGarbageCollectStructures\@Dimension\@\@QEAAXXZ
      */

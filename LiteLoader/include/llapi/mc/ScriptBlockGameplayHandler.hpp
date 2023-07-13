@@ -78,6 +78,26 @@ public:
     virtual void __unk_vfn_8();
     /**
      * @vftbl 9
+     * @symbol __unk_vfn_9
+     */
+    virtual void __unk_vfn_9();
+    /**
+     * @vftbl 10
+     * @symbol __unk_vfn_10
+     */
+    virtual void __unk_vfn_10();
+    /**
+     * @vftbl 11
+     * @symbol __unk_vfn_11
+     */
+    virtual void __unk_vfn_11();
+    /**
+     * @vftbl 12
+     * @symbol __unk_vfn_12
+     */
+    virtual void __unk_vfn_12();
+    /**
+     * @vftbl 13
      * @symbol ?handleEvent\@ScriptBlockGameplayHandler\@\@UEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEBUPistonActionEvent\@\@\@Z
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct PistonActionEvent const &);

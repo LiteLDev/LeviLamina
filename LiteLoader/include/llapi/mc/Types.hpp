@@ -55,6 +55,10 @@ namespace reflection {
 struct Schema {};
 } // namespace reflection
 
+namespace cereal {
+struct Schema {};
+}
+
 template <typename A, typename T>
 class AutomaticID {
     T id;

@@ -6,7 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Json.hpp"
-#include "Item.hpp"
+#include "ComponentItem.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +17,7 @@
  * @brief MC class RecordItem.
  *
  */
-class RecordItem : public Item {
+class RecordItem : public ComponentItem {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -37,10 +37,10 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 7
-     * @symbol ?isMusicDisk\@RecordItem\@\@UEBA_NXZ
+     * @vftbl 3
+     * @symbol ?setDescriptionId\@RecordItem\@\@UEAAAEAV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual bool isMusicDisk() const;
+    virtual class RecordItem & setDescriptionId(std::string const &);
     /**
      * @vftbl 11
      * @symbol __unk_vfn_11
@@ -57,10 +57,10 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @vftbl 19
-     * @symbol __unk_vfn_19
+     * @vftbl 21
+     * @symbol __unk_vfn_21
      */
-    virtual void __unk_vfn_19();
+    virtual void __unk_vfn_21();
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
@@ -71,11 +71,6 @@ public:
      * @symbol __unk_vfn_53
      */
     virtual void __unk_vfn_53();
-    /**
-     * @vftbl 60
-     * @symbol ?appendFormattedHovertext\@RecordItem\@\@UEBAXAEBVItemStackBase\@\@AEAVLevel\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
-     */
-    virtual void appendFormattedHovertext(class ItemStackBase const &, class Level &, std::string &, bool) const;
     /**
      * @vftbl 66
      * @symbol __unk_vfn_66
@@ -127,16 +122,18 @@ public:
      */
     virtual void __unk_vfn_116();
     /**
+     * @vftbl 119
+     * @symbol ?setIconInfo\@RecordItem\@\@UEAAAEAVItem\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
+     */
+    virtual class Item & setIconInfo(std::string const &, int);
+    /**
+     * @vftbl 120
+     * @symbol ?getIconInfo\@RecordItem\@\@UEBA?AUResolvedItemIconInfo\@\@AEBVItemStackBase\@\@H_N\@Z
+     */
+    virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
+    /**
      * @symbol ??0RecordItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4LevelSoundEvent\@\@\@Z
      */
     MCAPI RecordItem(std::string const &, int, enum class LevelSoundEvent);
-    /**
-     * @symbol ?getDuration\@RecordItem\@\@QEBAMXZ
-     */
-    MCAPI float getDuration() const;
-    /**
-     * @symbol ?getSound\@RecordItem\@\@QEBA?AW4LevelSoundEvent\@\@XZ
-     */
-    MCAPI enum class LevelSoundEvent getSound() const;
 
 };

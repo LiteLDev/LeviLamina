@@ -60,9 +60,9 @@ public:
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
-     * @symbol ?handleItemRepair\@RepairableItemComponent\@\@QEAA?AURepairItemResult\@\@AEAVItemStack\@\@0_N\@Z
+     * @symbol ?handleItemRepair\@RepairableItemComponent\@\@QEBA?AURepairItemResult\@\@AEAVItemStack\@\@0_N\@Z
      */
-    MCAPI struct RepairItemResult handleItemRepair(class ItemStack &, class ItemStack &, bool);
+    MCAPI struct RepairItemResult handleItemRepair(class ItemStack &, class ItemStack &, bool) const;
     /**
      * @symbol ?isValidRepairItem\@RepairableItemComponent\@\@QEBA_NAEBVItemStackBase\@\@\@Z
      */
@@ -86,9 +86,9 @@ public:
      */
     MCAPI struct RepairItemEntry const * _getRepairItemEntry(class ItemStackBase const &) const;
     /**
-     * @symbol ?_repairItem\@RepairableItemComponent\@\@AEAAHAEAVItemStackBase\@\@0VExpressionNode\@\@\@Z
+     * @symbol ?_repairItem\@RepairableItemComponent\@\@AEBAHAEAVItemStackBase\@\@0VExpressionNode\@\@\@Z
      */
-    MCAPI int _repairItem(class ItemStackBase &, class ItemStackBase &, class ExpressionNode);
+    MCAPI int _repairItem(class ItemStackBase &, class ItemStackBase &, class ExpressionNode) const;
 
 private:
 

@@ -21,16 +21,8 @@ namespace InsidePowderSnowBlockSystem {
      */
     MCAPI struct TickingSystemWithInfo createClientSideSpawnParticleSystem();
     /**
-     * @symbol ?createMovementSlowdownSystem\@InsidePowderSnowBlockSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI struct TickingSystemWithInfo createMovementSlowdownSystem();
-    /**
      * @symbol ?createServerSideClearFireSystem\@InsidePowderSnowBlockSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI struct TickingSystemWithInfo createServerSideClearFireSystem();
-    /**
-     * @symbol ?createServerSideFreezingSystem\@InsidePowderSnowBlockSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI struct TickingSystemWithInfo createServerSideFreezingSystem();
 
 };

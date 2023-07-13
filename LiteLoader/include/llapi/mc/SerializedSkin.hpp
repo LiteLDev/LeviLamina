@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -27,21 +28,21 @@ public:
      */
     MCAPI SerializedSkin(class SubClientConnectionRequest const &);
     /**
-     * @symbol ??0SerializedSkin\@\@QEAA\@XZ
-     */
-    MCAPI SerializedSkin();
-    /**
      * @symbol ??0SerializedSkin\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI SerializedSkin(class SerializedSkin const &);
     /**
-     * @symbol ??0SerializedSkin\@\@QEAA\@$$QEAV0\@\@Z
+     * @symbol ??0SerializedSkin\@\@QEAA\@XZ
      */
-    MCAPI SerializedSkin(class SerializedSkin &&);
+    MCAPI SerializedSkin();
     /**
      * @symbol ??0SerializedSkin\@\@QEAA\@AEBVConnectionRequest\@\@\@Z
      */
     MCAPI SerializedSkin(class ConnectionRequest const &);
+    /**
+     * @symbol ??0SerializedSkin\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI SerializedSkin(class SerializedSkin &&);
     /**
      * @symbol ?getName\@SerializedSkin\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
@@ -55,9 +56,9 @@ public:
      */
     MCAPI class SerializedSkin & operator=(class SerializedSkin const &);
     /**
-     * @symbol ?read\@SerializedSkin\@\@QEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?read\@SerializedSkin\@\@QEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    MCAPI bool read(class ReadOnlyBinaryStream &);
+    MCAPI class Bedrock::Result<void, class std::error_code> read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?setArmSizeFromString\@SerializedSkin\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */

@@ -20,7 +20,6 @@ class UnlockedRecipesServerComponent {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_UNLOCKEDRECIPESSERVERCOMPONENT
 public:
     class UnlockedRecipesServerComponent& operator=(class UnlockedRecipesServerComponent const &) = delete;
-    UnlockedRecipesServerComponent(class UnlockedRecipesServerComponent const &) = delete;
 #endif
 
 public:
@@ -28,6 +27,10 @@ public:
      * @symbol ??0UnlockedRecipesServerComponent\@\@QEAA\@XZ
      */
     MCAPI UnlockedRecipesServerComponent();
+    /**
+     * @symbol ??0UnlockedRecipesServerComponent\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI UnlockedRecipesServerComponent(class UnlockedRecipesServerComponent const &);
     /**
      * @symbol ??0UnlockedRecipesServerComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
@@ -37,13 +40,29 @@ public:
      */
     MCAPI void addAdditionalSaveData(class CompoundTag &) const;
     /**
+     * @symbol ?addChangedInventorySlot\@UnlockedRecipesServerComponent\@\@QEAAXH\@Z
+     */
+    MCAPI void addChangedInventorySlot(int);
+    /**
      * @symbol ?addUnlockedRecipe\@UnlockedRecipesServerComponent\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void addUnlockedRecipe(std::string const &);
     /**
+     * @symbol ?addUnlockingInstruction\@UnlockedRecipesServerComponent\@\@QEAAXUUnlockingInstruction\@1\@\@Z
+     */
+    MCAPI void addUnlockingInstruction(struct UnlockedRecipesServerComponent::UnlockingInstruction);
+    /**
+     * @symbol ?clearChangedInventorySlots\@UnlockedRecipesServerComponent\@\@QEAAXXZ
+     */
+    MCAPI void clearChangedInventorySlots();
+    /**
      * @symbol ?clearUnlockingInstructions\@UnlockedRecipesServerComponent\@\@QEAAXXZ
      */
     MCAPI void clearUnlockingInstructions();
+    /**
+     * @symbol ?getChangedInventorySlots\@UnlockedRecipesServerComponent\@\@QEBAAEBV?$unordered_set\@HU?$hash\@H\@std\@\@U?$equal_to\@H\@2\@V?$allocator\@H\@2\@\@std\@\@XZ
+     */
+    MCAPI class std::unordered_set<int, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<int>> const & getChangedInventorySlots() const;
     /**
      * @symbol ?getUnlockedRecipes\@UnlockedRecipesServerComponent\@\@QEBAAEBV?$unordered_set\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
      */
@@ -104,10 +123,6 @@ public:
      * @symbol ?resetUsedContexts\@UnlockedRecipesServerComponent\@\@QEAAXXZ
      */
     MCAPI void resetUsedContexts();
-    /**
-     * @symbol ?setInventoryChangedStatus\@UnlockedRecipesServerComponent\@\@QEAAX_N\@Z
-     */
-    MCAPI void setInventoryChangedStatus(bool);
     /**
      * @symbol ?COMPONENT_TAG\@UnlockedRecipesServerComponent\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */

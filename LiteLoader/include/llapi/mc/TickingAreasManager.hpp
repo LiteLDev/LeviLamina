@@ -85,6 +85,10 @@ public:
      */
     MCAPI void loadArea(std::string const &, class CompoundTag const *);
     /**
+     * @symbol ?loadAreasFromSaveData\@TickingAreasManager\@\@QEAAXAEAVLevelStorage\@\@\@Z
+     */
+    MCAPI void loadAreasFromSaveData(class LevelStorage &);
+    /**
      * @symbol ?onTickingEntityAdded\@TickingAreasManager\@\@QEAAXV?$AutomaticID\@VDimension\@\@H\@\@AEAVActor\@\@AEAVLevelStorage\@\@\@Z
      */
     MCAPI void onTickingEntityAdded(class AutomaticID<class Dimension, int>, class Actor &, class LevelStorage &);

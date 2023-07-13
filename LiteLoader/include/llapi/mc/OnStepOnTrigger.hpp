@@ -27,9 +27,15 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONSTEPONTRIGGER
     /**
-     * @symbol ??1OnStepOnTrigger\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI ~OnStepOnTrigger();
+    MCVAPI ~OnStepOnTrigger();
+#endif
+    /**
+     * @symbol ??0OnStepOnTrigger\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI OnStepOnTrigger(class OnStepOnTrigger &&);
 
 };

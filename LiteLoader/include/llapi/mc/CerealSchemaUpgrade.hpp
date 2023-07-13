@@ -53,9 +53,9 @@ public:
      */
     MCAPI CerealSchemaUpgrade(class SemVersion, std::string const &, std::string const &);
     /**
-     * @symbol ?bindLegacySchema\@CerealSchemaUpgrade\@\@QEAAXAEAVSchemaFactory\@reflection\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?bindLegacySchema\@CerealSchemaUpgrade\@\@QEAAXAEAVSchemaFactory\@cereal\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void bindLegacySchema(class reflection::SchemaFactory &, std::string const &);
+    MCAPI void bindLegacySchema(class cereal::SchemaFactory &, std::string const &);
     /**
      * @symbol ?getTargetVersion\@CerealSchemaUpgrade\@\@QEBAAEBVSemVersion\@\@XZ
      */

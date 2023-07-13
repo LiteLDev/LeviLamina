@@ -35,9 +35,5 @@ public:
      * @symbol ?createSystem\@FrostWalkSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
-    /**
-     * @symbol ?tickSystem\@FrostWalkSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UMobFlag\@\@\@\@\@\@VActorOwnerComponent\@\@\@\@\@Z
-     */
-    MCAPI static void tickSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct MobFlag>>, class ActorOwnerComponent>);
 
 };

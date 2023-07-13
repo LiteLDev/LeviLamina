@@ -108,6 +108,10 @@ namespace CreatorMetadataUtils {
      */
     MCAPI std::string getGameSemVersionAsString();
     /**
+     * @symbol ?getRequiredExperimentsForMetadata\@CreatorMetadataUtils\@\@YA?AV?$initializer_list\@W4AllExperiments\@\@\@std\@\@XZ
+     */
+    MCAPI class std::initializer_list<enum class AllExperiments> getRequiredExperimentsForMetadata();
+    /**
      * @symbol ?scriptingVersionToString\@CreatorMetadataUtils\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUVersion\@Scripting\@\@\@Z
      */
     MCAPI std::string scriptingVersionToString(struct Scripting::Version const &);

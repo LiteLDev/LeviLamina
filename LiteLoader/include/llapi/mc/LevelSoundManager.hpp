@@ -44,13 +44,17 @@ public:
      */
     MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> getSoundPlayer() const;
     /**
-     * @symbol ?playSound\@LevelSoundManager\@\@QEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@MM\@Z
+     * @symbol ?playPredictiveSynchronizedSound\@LevelSoundManager\@\@QEAAXAEAVIDimension\@\@W4LevelSoundEvent\@\@AEBVVec3\@\@PEAVPlayer\@\@HAEBUActorDefinitionIdentifier\@\@_N5\@Z
      */
-    MCAPI void playSound(enum class LevelSoundEvent, class Vec3 const &, float, float);
+    MCAPI void playPredictiveSynchronizedSound(class IDimension &, enum class LevelSoundEvent, class Vec3 const &, class Player *, int, struct ActorDefinitionIdentifier const &, bool, bool);
     /**
      * @symbol ?playSound\@LevelSoundManager\@\@QEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@HAEBUActorDefinitionIdentifier\@\@_N3\@Z
      */
     MCAPI void playSound(enum class LevelSoundEvent, class Vec3 const &, int, struct ActorDefinitionIdentifier const &, bool, bool);
+    /**
+     * @symbol ?playSound\@LevelSoundManager\@\@QEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@MM\@Z
+     */
+    MCAPI void playSound(enum class LevelSoundEvent, class Vec3 const &, float, float);
     /**
      * @symbol ?playSound\@LevelSoundManager\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVVec3\@\@MM\@Z
      */

@@ -30,14 +30,6 @@ public:
 
 public:
     /**
-     * @symbol ??0BedHelper\@\@QEAA\@HHHHMMMM\@Z
-     */
-    MCAPI BedHelper(int, int, int, int, float, float, float, float);
-    /**
-     * @symbol ??0BedHelper\@\@QEAA\@HHHHMMMMMM\@Z
-     */
-    MCAPI BedHelper(int, int, int, int, float, float, float, float, float, float);
-    /**
      * @symbol ?getBedRotation\@BedHelper\@\@QEBAMH\@Z
      */
     MCAPI float getBedRotation(int) const;

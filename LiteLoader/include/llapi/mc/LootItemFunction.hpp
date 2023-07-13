@@ -37,7 +37,7 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?apply\@EnchantRandomlyFunction\@\@UEAAXAEAVItemStack\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
+     * @symbol ?apply\@RandomDyeFunction\@\@UEAAXAEAVItemStack\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
     virtual void apply(class ItemStack &, class Random &, class LootTableContext &) = 0;
     /**
@@ -47,7 +47,7 @@ public:
     virtual int apply(class ItemStack &, class Random &, struct Trade const &, class LootTableContext &);
     /**
      * @vftbl 3
-     * @symbol ?apply\@EnchantRandomlyFunction\@\@UEAAXAEAVItemInstance\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
+     * @symbol ?apply\@RandomDyeFunction\@\@UEAAXAEAVItemInstance\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
     virtual void apply(class ItemInstance &, class Random &, class LootTableContext &) = 0;
     /**

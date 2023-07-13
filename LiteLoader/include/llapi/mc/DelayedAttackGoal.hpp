@@ -100,9 +100,9 @@ public:
 
 //private:
     /**
-     * @symbol ?_attemptAttack\@DelayedAttackGoal\@\@AEAAXPEAVActor\@\@\@Z
+     * @symbol ?_attemptStartAttacking\@DelayedAttackGoal\@\@AEBAXPEAVActor\@\@\@Z
      */
-    MCAPI void _attemptAttack(class Actor *);
+    MCAPI void _attemptStartAttacking(class Actor *) const;
     /**
      * @symbol ?_manageAttackTime\@DelayedAttackGoal\@\@AEAAXXZ
      */

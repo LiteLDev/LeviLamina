@@ -29,12 +29,8 @@ public:
      */
     MCAPI static struct TickingSystemWithInfo createTriggerSystem(bool);
     /**
-     * @symbol ?determinePose\@SneakTriggerSystem\@\@SA?AUPlayerPoseTransitions\@1\@AEAUDeterminePoseArgs\@1\@\@Z
+     * @symbol ?updatePlayerState\@SneakTriggerSystem\@\@SA?AUPlayerPoseTransitions\@1\@AEBVGetCollisionShapeInterface\@\@AEBVAABB\@\@AEBVVec2\@\@_N3333333MAEBVIConstBlockSource\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI static struct SneakTriggerSystem::PlayerPoseTransitions determinePose(struct SneakTriggerSystem::DeterminePoseArgs &);
-    /**
-     * @symbol ?doSneakTriggerSystemClient\@SneakTriggerSystem\@\@SAXAEAUDeterminePoseArgs\@1\@AEBVStrictEntityContext\@\@AEAUPlayerActionComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UShouldUpdateBoundingBoxRequestComponent\@\@\@\@\@Z
-     */
-    MCAPI static void doSneakTriggerSystemClient(struct SneakTriggerSystem::DeterminePoseArgs &, class StrictEntityContext const &, struct PlayerActionComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct ShouldUpdateBoundingBoxRequestComponent>);
+    MCAPI static struct SneakTriggerSystem::PlayerPoseTransitions updatePlayerState(class GetCollisionShapeInterface const &, class AABB const &, class Vec2 const &, bool, bool, bool, bool, bool, bool, bool, bool, float, class IConstBlockSource const &, std::vector<class AABB> &);
 
 };

@@ -84,6 +84,10 @@ public:
      */
     MCAPI class BlockPos _getHomePos() const;
     /**
+     * @symbol ?_hasRequiredComponents\@GoHomeGoal\@\@AEBA_NXZ
+     */
+    MCAPI bool _hasRequiredComponents() const;
+    /**
      * @symbol ?_triggerOnFailedEvents\@GoHomeGoal\@\@AEAAXXZ
      */
     MCAPI void _triggerOnFailedEvents();

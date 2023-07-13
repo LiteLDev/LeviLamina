@@ -104,10 +104,10 @@ public:
      */
     virtual bool isDyeable() const;
     /**
-     * @vftbl 19
-     * @symbol __unk_vfn_19
+     * @vftbl 21
+     * @symbol __unk_vfn_21
      */
-    virtual void __unk_vfn_19();
+    virtual void __unk_vfn_21();
     /**
      * @vftbl 22
      * @symbol ?isFood\@ComponentItem\@\@UEBA_NXZ
@@ -440,6 +440,11 @@ public:
     virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
      * @vftbl 134
+     * @symbol ?_shouldAutoCalculatePlacePos\@ComponentItem\@\@EEBA_NXZ
+     */
+    virtual bool _shouldAutoCalculatePlacePos() const;
+    /**
+     * @vftbl 135
      * @symbol ?_useOn\@ComponentItem\@\@EEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
@@ -498,13 +503,17 @@ public:
      */
     MCAPI bool parseJsonEvents(class Json::Value const &, class SemVersion const &);
     /**
+     * @symbol ?setCanDestroyInCreative\@ComponentItem\@\@QEAAX_N\@Z
+     */
+    MCAPI void setCanDestroyInCreative(bool);
+    /**
      * @symbol ?buildAllPatchSchemas\@ComponentItem\@\@SAXAEAVCerealDocumentUpgrader\@\@\@Z
      */
     MCAPI static void buildAllPatchSchemas(class CerealDocumentUpgrader &);
     /**
-     * @symbol ?createItemAbstractCerealSchema\@ComponentItem\@\@SA?AUSchema\@reflection\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?createItemAbstractCerealSchema\@ComponentItem\@\@SA?AUSchema\@cereal\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI static struct reflection::Schema createItemAbstractCerealSchema(std::string const &);
+    MCAPI static struct cereal::Schema createItemAbstractCerealSchema(std::string const &);
     /**
      * @symbol ?registerItemComponentTypes\@ComponentItem\@\@SAXXZ
      */
@@ -543,6 +552,10 @@ public:
      * @symbol ?_parseCereal\@ComponentItem\@\@AEAA_NAEBVValue\@Json\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@\@Z
      */
     MCAPI bool _parseCereal(class Json::Value const &, class SemVersion const &, bool, class Experiments const &);
+    /**
+     * @symbol ?_validateCerealComponent\@ComponentItem\@\@AEAA_NV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@\@Z
+     */
+    MCAPI bool _validateCerealComponent(std::string, class SemVersion const &, bool, class Experiments const &);
 
 private:
     /**

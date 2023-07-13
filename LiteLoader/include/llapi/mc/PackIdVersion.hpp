@@ -32,13 +32,13 @@ public:
 
 public:
     /**
-     * @symbol ??0PackIdVersion\@\@QEAA\@AEBU0\@\@Z
-     */
-    MCAPI PackIdVersion(struct PackIdVersion const &);
-    /**
      * @symbol ??0PackIdVersion\@\@QEAA\@AEBVUUID\@mce\@\@AEBVSemVersion\@\@W4PackType\@\@\@Z
      */
     MCAPI PackIdVersion(class mce::UUID const &, class SemVersion const &, enum class PackType);
+    /**
+     * @symbol ??0PackIdVersion\@\@QEAA\@AEBU0\@\@Z
+     */
+    MCAPI PackIdVersion(struct PackIdVersion const &);
     /**
      * @symbol ??0PackIdVersion\@\@QEAA\@XZ
      */

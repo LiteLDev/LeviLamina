@@ -17,17 +17,9 @@ namespace MobJump {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?getJumpPendingScale\@MobJump\@\@YAMAEBVEntityContext\@\@\@Z
-     */
-    MCAPI float getJumpPendingScale(class EntityContext const &);
-    /**
      * @symbol ?getJumpStartPosition\@MobJump\@\@YA?AVVec3\@\@AEBVEntityContext\@\@\@Z
      */
     MCAPI class Vec3 getJumpStartPosition(class EntityContext const &);
-    /**
-     * @symbol ?getJumpVelRedux\@MobJump\@\@YA_NAEBVEntityContext\@\@\@Z
-     */
-    MCAPI bool getJumpVelRedux(class EntityContext const &);
     /**
      * @symbol ?getNoJumpDelay\@MobJump\@\@YAHAEBVEntityContext\@\@\@Z
      */

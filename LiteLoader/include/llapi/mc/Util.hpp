@@ -119,6 +119,10 @@ struct FormattedString {
      */
     MCAPI std::string cp437ToUTF8(std::string const &);
     /**
+     * @symbol ?crashOnPurpose\@Util\@\@YAXXZ
+     */
+    MCAPI void crashOnPurpose();
+    /**
      * @symbol ?decompressRaw\@Util\@\@YA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV23\@\@Z
      */
     MCAPI bool decompressRaw(std::string const &, std::string &);
@@ -279,17 +283,21 @@ struct FormattedString {
      */
     MCAPI std::string & stringReplace(std::string &, std::string const &, std::string const &, int);
     /**
-     * @symbol ?stringTrim\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@0\@Z
-     */
-    MCAPI std::string stringTrim(std::string const &, std::string const &);
-    /**
      * @symbol ?stringTrim\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@\@Z
      */
     MCAPI std::string stringTrim(std::string const &);
     /**
+     * @symbol ?stringTrim\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@0\@Z
+     */
+    MCAPI std::string stringTrim(std::string const &, std::string const &);
+    /**
      * @symbol ?stripBOM\@Util\@\@YAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void stripBOM(std::string &);
+    /**
+     * @symbol ?timeoutForDuration\@Util\@\@YAXV?$duration\@_JU?$ratio\@$00$00\@std\@\@\@chrono\@std\@\@\@Z
+     */
+    MCAPI void timeoutForDuration(class std::chrono::duration<__int64, struct std::ratio<1, 1>>);
     /**
      * @symbol ?toBool\@Util\@\@YA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEA_N\@Z
      */
@@ -307,29 +315,33 @@ struct FormattedString {
      */
     MCAPI enum class Util::NumberConversionResult toIntWithMinMax(class std::basic_string_view<char, struct std::char_traits<char>>, int &, int, int);
     /**
-     * @symbol ?toLower\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@3\@\@Z
-     */
-    MCAPI std::string toLower(class std::basic_string_view<char, struct std::char_traits<char>> const &);
-    /**
      * @symbol ?toLower\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEBD\@Z
      */
     MCAPI std::string toLower(char const *);
+    /**
+     * @symbol ?toLower\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@3\@\@Z
+     */
+    MCAPI std::string toLower(class std::basic_string_view<char, struct std::char_traits<char>> const &);
     /**
      * @symbol ?toLowerInPlace\@Util\@\@YAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void toLowerInPlace(std::string &);
     /**
+     * @symbol ?toPascalCase\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@D\@Z
+     */
+    MCAPI std::string toPascalCase(std::string const &, char);
+    /**
      * @symbol ?toString\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$basic_string\@_WU?$char_traits\@_W\@std\@\@V?$allocator\@_W\@2\@\@3\@\@Z
      */
     MCAPI std::string toString(class std::basic_string<wchar_t, struct std::char_traits<wchar_t>, class std::allocator<wchar_t>> const &);
     /**
-     * @symbol ?toString\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@\@Z
-     */
-    MCAPI std::string toString(std::string const &);
-    /**
      * @symbol ?toString\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@MH\@Z
      */
     MCAPI std::string toString(float, int);
+    /**
+     * @symbol ?toString\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@\@Z
+     */
+    MCAPI std::string toString(std::string const &);
     /**
      * @symbol ?toStringWithPaddedZeroes\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@IE\@Z
      */

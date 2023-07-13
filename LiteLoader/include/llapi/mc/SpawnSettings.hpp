@@ -22,11 +22,14 @@ struct SpawnSettings {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNSETTINGS
 public:
     struct SpawnSettings& operator=(struct SpawnSettings const &) = delete;
-    SpawnSettings(struct SpawnSettings const &) = delete;
     SpawnSettings() = delete;
 #endif
 
 public:
+    /**
+     * @symbol ??0SpawnSettings\@\@QEAA\@AEBU0\@\@Z
+     */
+    MCAPI SpawnSettings(struct SpawnSettings const &);
     /**
      * @symbol ??1SpawnSettings\@\@QEAA\@XZ
      */

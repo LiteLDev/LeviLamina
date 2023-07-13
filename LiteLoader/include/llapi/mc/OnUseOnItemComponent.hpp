@@ -71,6 +71,11 @@ public:
     virtual void __unk_vfn_7();
     /**
      * @vftbl 8
+     * @symbol __unk_vfn_8
+     */
+    virtual void __unk_vfn_8();
+    /**
+     * @vftbl 9
      * @symbol ?_useOn\@OnUseOnItemComponent\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;

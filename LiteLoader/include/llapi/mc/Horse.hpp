@@ -42,262 +42,252 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @vftbl 35
+     * @vftbl 32
      * @symbol ?getInterpolatedRidingOffset\@Horse\@\@UEBA?AVVec3\@\@MH\@Z
      */
     virtual class Vec3 getInterpolatedRidingOffset(float, int) const;
     /**
-     * @vftbl 40
-     * @symbol __unk_vfn_40
+     * @vftbl 35
+     * @symbol __unk_vfn_35
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_35();
     /**
-     * @vftbl 51
-     * @symbol ?positionPassenger\@Horse\@\@UEAAXAEAVActor\@\@M\@Z
+     * @vftbl 55
+     * @symbol __unk_vfn_55
      */
-    virtual void positionPassenger(class Actor &, float);
+    virtual void __unk_vfn_55();
     /**
-     * @vftbl 61
-     * @symbol __unk_vfn_61
+     * @vftbl 62
+     * @symbol __unk_vfn_62
      */
-    virtual void __unk_vfn_61();
+    virtual void __unk_vfn_62();
     /**
-     * @vftbl 68
-     * @symbol __unk_vfn_68
-     */
-    virtual void __unk_vfn_68();
-    /**
-     * @vftbl 78
+     * @vftbl 69
      * @symbol ?getShadowRadius\@Horse\@\@UEBAMXZ
      */
     virtual float getShadowRadius() const;
     /**
-     * @vftbl 80
-     * @symbol __unk_vfn_80
+     * @vftbl 71
+     * @symbol __unk_vfn_71
      */
-    virtual void __unk_vfn_80();
+    virtual void __unk_vfn_71();
+    /**
+     * @vftbl 77
+     * @symbol __unk_vfn_77
+     */
+    virtual void __unk_vfn_77();
+    /**
+     * @vftbl 79
+     * @symbol ?isImmobile\@Horse\@\@MEBA_NXZ
+     */
+    virtual bool isImmobile() const;
+    /**
+     * @vftbl 83
+     * @symbol __unk_vfn_83
+     */
+    virtual void __unk_vfn_83();
     /**
      * @vftbl 86
      * @symbol __unk_vfn_86
      */
     virtual void __unk_vfn_86();
     /**
-     * @vftbl 90
-     * @symbol ?isImmobile\@Horse\@\@MEBA_NXZ
+     * @vftbl 93
+     * @symbol __unk_vfn_93
      */
-    virtual bool isImmobile() const;
+    virtual void __unk_vfn_93();
     /**
-     * @vftbl 94
-     * @symbol __unk_vfn_94
+     * @vftbl 95
+     * @symbol __unk_vfn_95
      */
-    virtual void __unk_vfn_94();
+    virtual void __unk_vfn_95();
     /**
-     * @vftbl 97
-     * @symbol __unk_vfn_97
+     * @vftbl 96
+     * @symbol __unk_vfn_96
      */
-    virtual void __unk_vfn_97();
+    virtual void __unk_vfn_96();
     /**
-     * @vftbl 104
-     * @symbol __unk_vfn_104
+     * @vftbl 98
+     * @symbol __unk_vfn_98
      */
-    virtual void __unk_vfn_104();
-    /**
-     * @vftbl 106
-     * @symbol __unk_vfn_106
-     */
-    virtual void __unk_vfn_106();
-    /**
-     * @vftbl 107
-     * @symbol __unk_vfn_107
-     */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_98();
     /**
      * @vftbl 109
-     * @symbol __unk_vfn_109
-     */
-    virtual void __unk_vfn_109();
-    /**
-     * @vftbl 120
      * @symbol ?onFailedTame\@Horse\@\@UEAAXXZ
      */
     virtual void onFailedTame();
     /**
-     * @vftbl 124
+     * @vftbl 113
      * @symbol ?setStanding\@Horse\@\@UEAAX_N\@Z
      */
     virtual void setStanding(bool);
     /**
-     * @vftbl 138
+     * @vftbl 126
      * @symbol ?feed\@Horse\@\@UEAAXH\@Z
      */
     virtual void feed(int);
     /**
-     * @vftbl 139
+     * @vftbl 127
      * @symbol ?handleEntityEvent\@Horse\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
-     * @vftbl 169
+     * @vftbl 157
      * @symbol ?canFreeze\@Horse\@\@UEBA_NXZ
      */
     virtual bool canFreeze() const;
     /**
-     * @vftbl 176
-     * @symbol __unk_vfn_176
+     * @vftbl 164
+     * @symbol __unk_vfn_164
      */
-    virtual void __unk_vfn_176();
+    virtual void __unk_vfn_164();
     /**
-     * @vftbl 178
+     * @vftbl 166
      * @symbol ?getControllingPlayer\@Horse\@\@UEBA?AUActorUniqueID\@\@XZ
      */
     virtual struct ActorUniqueID getControllingPlayer() const;
     /**
-     * @vftbl 180
+     * @vftbl 168
      * @symbol ?causeFallDamage\@Horse\@\@MEAAXMMVActorDamageSource\@\@\@Z
      */
     virtual void causeFallDamage(float, float, class ActorDamageSource);
     /**
-     * @vftbl 181
+     * @vftbl 169
      * @symbol ?handleFallDistanceOnServer\@Horse\@\@MEAAXMM_N\@Z
      */
     virtual void handleFallDistanceOnServer(float, float, bool);
     /**
-     * @vftbl 185
+     * @vftbl 173
      * @symbol ?onSynchedDataUpdate\@Horse\@\@UEAAXH\@Z
      */
     virtual void onSynchedDataUpdate(int);
     /**
-     * @vftbl 190
-     * @symbol __unk_vfn_190
+     * @vftbl 178
+     * @symbol __unk_vfn_178
      */
-    virtual void __unk_vfn_190();
+    virtual void __unk_vfn_178();
     /**
-     * @vftbl 212
+     * @vftbl 199
      * @symbol ?openContainerComponent\@Horse\@\@UEAAXAEAVPlayer\@\@\@Z
      */
     virtual void openContainerComponent(class Player &);
     /**
-     * @vftbl 215
-     * @symbol __unk_vfn_215
+     * @vftbl 202
+     * @symbol __unk_vfn_202
      */
-    virtual void __unk_vfn_215();
+    virtual void __unk_vfn_202();
     /**
-     * @vftbl 216
-     * @symbol __unk_vfn_216
+     * @vftbl 203
+     * @symbol __unk_vfn_203
      */
-    virtual void __unk_vfn_216();
+    virtual void __unk_vfn_203();
     /**
-     * @vftbl 232
-     * @symbol __unk_vfn_232
+     * @vftbl 219
+     * @symbol __unk_vfn_219
      */
-    virtual void __unk_vfn_232();
+    virtual void __unk_vfn_219();
     /**
-     * @vftbl 235
-     * @symbol __unk_vfn_235
+     * @vftbl 222
+     * @symbol __unk_vfn_222
      */
-    virtual void __unk_vfn_235();
+    virtual void __unk_vfn_222();
     /**
-     * @vftbl 237
+     * @vftbl 224
      * @symbol ?die\@Horse\@\@UEAAXAEBVActorDamageSource\@\@\@Z
      */
     virtual void die(class ActorDamageSource const &);
     /**
-     * @vftbl 250
+     * @vftbl 237
      * @symbol ?updateEntitySpecificMolangVariables\@Horse\@\@UEAAXAEAVRenderParams\@\@\@Z
      */
     virtual void updateEntitySpecificMolangVariables(class RenderParams &);
     /**
-     * @vftbl 252
-     * @symbol __unk_vfn_252
+     * @vftbl 239
+     * @symbol __unk_vfn_239
      */
-    virtual void __unk_vfn_252();
+    virtual void __unk_vfn_239();
     /**
-     * @vftbl 253
+     * @vftbl 240
      * @symbol ?_hurt\@Horse\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vftbl 258
+     * @vftbl 245
      * @symbol ?_playStepSound\@Horse\@\@MEAAXAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     virtual void _playStepSound(class BlockPos const &, class Block const &);
     /**
-     * @vftbl 260
-     * @symbol __unk_vfn_260
+     * @vftbl 247
+     * @symbol __unk_vfn_247
      */
-    virtual void __unk_vfn_260();
+    virtual void __unk_vfn_247();
     /**
-     * @vftbl 267
-     * @symbol __unk_vfn_267
+     * @vftbl 253
+     * @symbol __unk_vfn_253
      */
-    virtual void __unk_vfn_267();
+    virtual void __unk_vfn_253();
     /**
-     * @vftbl 278
-     * @symbol ?travel\@Horse\@\@UEAAXMMM_N\@Z
+     * @vftbl 276
+     * @symbol __unk_vfn_276
      */
-    virtual void travel(float, float, float, bool);
+    virtual void __unk_vfn_276();
     /**
-     * @vftbl 293
-     * @symbol __unk_vfn_293
+     * @vftbl 280
+     * @symbol __unk_vfn_280
      */
-    virtual void __unk_vfn_293();
+    virtual void __unk_vfn_280();
     /**
-     * @vftbl 297
-     * @symbol __unk_vfn_297
-     */
-    virtual void __unk_vfn_297();
-    /**
-     * @vftbl 302
+     * @vftbl 285
      * @symbol ?getArmorValue\@Horse\@\@UEBAHXZ
      */
     virtual int getArmorValue() const;
     /**
-     * @vftbl 343
-     * @symbol __unk_vfn_343
+     * @vftbl 323
+     * @symbol __unk_vfn_323
      */
-    virtual void __unk_vfn_343();
+    virtual void __unk_vfn_323();
     /**
-     * @vftbl 345
+     * @vftbl 325
      * @symbol ?setType\@Horse\@\@UEAAXH\@Z
      */
     virtual void setType(int);
     /**
-     * @vftbl 346
+     * @vftbl 326
      * @symbol ?getType\@Horse\@\@UEBAHXZ
      */
     virtual int getType() const;
     /**
-     * @vftbl 347
+     * @vftbl 327
      * @symbol ?setHorseEating\@Horse\@\@UEAAX_N\@Z
      */
     virtual void setHorseEating(bool);
     /**
-     * @vftbl 348
+     * @vftbl 328
      * @symbol ?getStandAnim\@Horse\@\@UEBAMM\@Z
      */
     virtual float getStandAnim(float) const;
     /**
-     * @vftbl 349
+     * @vftbl 329
      * @symbol ?isAdult\@Horse\@\@UEBA_NXZ
      */
     virtual bool isAdult() const;
     /**
-     * @vftbl 350
+     * @vftbl 330
      * @symbol ?isHorseEating\@Horse\@\@UEBA_NXZ
      */
     virtual bool isHorseEating() const;
     /**
-     * @vftbl 351
+     * @vftbl 331
      * @symbol ?isMouthOpen\@Horse\@\@UEBA_NXZ
      */
     virtual bool isMouthOpen() const;
     /**
-     * @vftbl 352
+     * @vftbl 332
      * @symbol ?makeMad\@Horse\@\@UEAAXXZ
      */
     virtual void makeMad();
     /**
-     * @vftbl 353
+     * @vftbl 333
      * @symbol ?tameToPlayer\@Horse\@\@UEAA_NAEAVPlayer\@\@_N\@Z
      */
     virtual bool tameToPlayer(class Player &, bool);

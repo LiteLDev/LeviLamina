@@ -36,12 +36,4 @@ public:
      */
     MCAPI static void removePassengersWithoutSeat(class StrictEntityContext &, class RideableComponent const &, struct VehicleComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct StopRidingRequestFlag>> &);
 
-//private:
-    /**
-     * @symbol ?_tickRemovePassengersWithoutSeat\@RemovePassengersWithoutSeatSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@\@\@$$CBVRideableComponent\@\@UVehicleComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UStopRidingRequestFlag\@\@\@\@\@\@\@Z
-     */
-    MCAPI static void _tickRemovePassengersWithoutSeat(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>, class RideableComponent const, struct VehicleComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct StopRidingRequestFlag>>);
-
-private:
-
 };

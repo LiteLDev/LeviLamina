@@ -52,205 +52,200 @@ public:
      */
     virtual void remove();
     /**
-     * @vftbl 26
+     * @vftbl 25
      * @symbol ?getFiringPos\@WitherBoss\@\@UEBA?AVVec3\@\@XZ
      */
     virtual class Vec3 getFiringPos() const;
     /**
-     * @vftbl 40
-     * @symbol __unk_vfn_40
+     * @vftbl 35
+     * @symbol __unk_vfn_35
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_35();
     /**
-     * @vftbl 52
+     * @vftbl 47
      * @symbol ?startRiding\@WitherBoss\@\@UEAA_NAEAVActor\@\@\@Z
      */
     virtual bool startRiding(class Actor &);
     /**
-     * @vftbl 61
-     * @symbol __unk_vfn_61
+     * @vftbl 55
+     * @symbol __unk_vfn_55
      */
-    virtual void __unk_vfn_61();
+    virtual void __unk_vfn_55();
     /**
-     * @vftbl 68
-     * @symbol __unk_vfn_68
+     * @vftbl 62
+     * @symbol __unk_vfn_62
      */
-    virtual void __unk_vfn_68();
+    virtual void __unk_vfn_62();
     /**
-     * @vftbl 74
-     * @symbol ?setBlockMovementSlowdownMultiplier\@WitherBoss\@\@UEAAXAEBVBlockLegacy\@\@AEBVVec3\@\@\@Z
+     * @vftbl 71
+     * @symbol __unk_vfn_71
      */
-    virtual void setBlockMovementSlowdownMultiplier(class BlockLegacy const &, class Vec3 const &);
+    virtual void __unk_vfn_71();
     /**
-     * @vftbl 80
-     * @symbol __unk_vfn_80
+     * @vftbl 77
+     * @symbol __unk_vfn_77
      */
-    virtual void __unk_vfn_80();
+    virtual void __unk_vfn_77();
+    /**
+     * @vftbl 83
+     * @symbol __unk_vfn_83
+     */
+    virtual void __unk_vfn_83();
     /**
      * @vftbl 86
      * @symbol __unk_vfn_86
      */
     virtual void __unk_vfn_86();
     /**
-     * @vftbl 94
-     * @symbol __unk_vfn_94
+     * @vftbl 93
+     * @symbol __unk_vfn_93
      */
-    virtual void __unk_vfn_94();
+    virtual void __unk_vfn_93();
     /**
-     * @vftbl 97
-     * @symbol __unk_vfn_97
+     * @vftbl 95
+     * @symbol __unk_vfn_95
      */
-    virtual void __unk_vfn_97();
+    virtual void __unk_vfn_95();
     /**
-     * @vftbl 104
-     * @symbol __unk_vfn_104
+     * @vftbl 96
+     * @symbol __unk_vfn_96
      */
-    virtual void __unk_vfn_104();
+    virtual void __unk_vfn_96();
     /**
-     * @vftbl 106
-     * @symbol __unk_vfn_106
+     * @vftbl 98
+     * @symbol __unk_vfn_98
      */
-    virtual void __unk_vfn_106();
+    virtual void __unk_vfn_98();
     /**
-     * @vftbl 107
-     * @symbol __unk_vfn_107
-     */
-    virtual void __unk_vfn_107();
-    /**
-     * @vftbl 109
-     * @symbol __unk_vfn_109
-     */
-    virtual void __unk_vfn_109();
-    /**
-     * @vftbl 132
+     * @vftbl 120
      * @symbol ?isInvulnerableTo\@WitherBoss\@\@UEBA_NAEBVActorDamageSource\@\@\@Z
      */
     virtual bool isInvulnerableTo(class ActorDamageSource const &) const;
     /**
-     * @vftbl 139
+     * @vftbl 127
      * @symbol ?handleEntityEvent\@WitherBoss\@\@UEAAXW4ActorEvent\@\@H\@Z
      */
     virtual void handleEntityEvent(enum class ActorEvent, int);
     /**
-     * @vftbl 169
+     * @vftbl 157
      * @symbol ?canFreeze\@WitherBoss\@\@UEBA_NXZ
      */
     virtual bool canFreeze() const;
     /**
-     * @vftbl 176
-     * @symbol __unk_vfn_176
+     * @vftbl 164
+     * @symbol __unk_vfn_164
      */
-    virtual void __unk_vfn_176();
+    virtual void __unk_vfn_164();
     /**
-     * @vftbl 180
+     * @vftbl 168
      * @symbol ?causeFallDamage\@WitherBoss\@\@UEAAXMMVActorDamageSource\@\@\@Z
      */
     virtual void causeFallDamage(float, float, class ActorDamageSource);
     /**
-     * @vftbl 190
-     * @symbol __unk_vfn_190
+     * @vftbl 178
+     * @symbol __unk_vfn_178
      */
-    virtual void __unk_vfn_190();
+    virtual void __unk_vfn_178();
     /**
-     * @vftbl 205
+     * @vftbl 192
      * @symbol ?canBeAffected\@WitherBoss\@\@UEBA_NI\@Z
      */
     virtual bool canBeAffected(unsigned int) const;
     /**
-     * @vftbl 206
+     * @vftbl 193
      * @symbol ?canBeAffectedByArrow\@WitherBoss\@\@UEBA_NAEBVMobEffectInstance\@\@\@Z
      */
     virtual bool canBeAffectedByArrow(class MobEffectInstance const &) const;
     /**
-     * @vftbl 215
-     * @symbol __unk_vfn_215
+     * @vftbl 202
+     * @symbol __unk_vfn_202
      */
-    virtual void __unk_vfn_215();
+    virtual void __unk_vfn_202();
     /**
-     * @vftbl 216
-     * @symbol __unk_vfn_216
+     * @vftbl 203
+     * @symbol __unk_vfn_203
      */
-    virtual void __unk_vfn_216();
+    virtual void __unk_vfn_203();
     /**
-     * @vftbl 232
-     * @symbol __unk_vfn_232
+     * @vftbl 219
+     * @symbol __unk_vfn_219
      */
-    virtual void __unk_vfn_232();
+    virtual void __unk_vfn_219();
     /**
-     * @vftbl 235
-     * @symbol __unk_vfn_235
+     * @vftbl 222
+     * @symbol __unk_vfn_222
      */
-    virtual void __unk_vfn_235();
+    virtual void __unk_vfn_222();
     /**
-     * @vftbl 237
+     * @vftbl 224
      * @symbol ?die\@WitherBoss\@\@UEAAXAEBVActorDamageSource\@\@\@Z
      */
     virtual void die(class ActorDamageSource const &);
     /**
-     * @vftbl 252
-     * @symbol __unk_vfn_252
+     * @vftbl 239
+     * @symbol __unk_vfn_239
      */
-    virtual void __unk_vfn_252();
+    virtual void __unk_vfn_239();
     /**
-     * @vftbl 253
+     * @vftbl 240
      * @symbol ?_hurt\@WitherBoss\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual bool _hurt(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vftbl 256
+     * @vftbl 243
      * @symbol ?readAdditionalSaveData\@WitherBoss\@\@UEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &, class DataLoadHelper &);
     /**
-     * @vftbl 257
+     * @vftbl 244
      * @symbol ?addAdditionalSaveData\@WitherBoss\@\@UEBAXAEAVCompoundTag\@\@\@Z
      */
     virtual void addAdditionalSaveData(class CompoundTag &) const;
     /**
-     * @vftbl 260
-     * @symbol __unk_vfn_260
+     * @vftbl 247
+     * @symbol __unk_vfn_247
      */
-    virtual void __unk_vfn_260();
+    virtual void __unk_vfn_247();
     /**
-     * @vftbl 267
-     * @symbol __unk_vfn_267
+     * @vftbl 253
+     * @symbol __unk_vfn_253
      */
-    virtual void __unk_vfn_267();
+    virtual void __unk_vfn_253();
     /**
-     * @vftbl 275
+     * @vftbl 261
      * @symbol ?hurtEffects\@WitherBoss\@\@UEAAXAEBVActorDamageSource\@\@M_N1\@Z
      */
     virtual void hurtEffects(class ActorDamageSource const &, float, bool, bool);
     /**
-     * @vftbl 280
+     * @vftbl 264
      * @symbol ?aiStep\@WitherBoss\@\@UEAAXXZ
      */
     virtual void aiStep();
     /**
-     * @vftbl 293
-     * @symbol __unk_vfn_293
+     * @vftbl 276
+     * @symbol __unk_vfn_276
      */
-    virtual void __unk_vfn_293();
+    virtual void __unk_vfn_276();
     /**
-     * @vftbl 297
-     * @symbol __unk_vfn_297
+     * @vftbl 280
+     * @symbol __unk_vfn_280
      */
-    virtual void __unk_vfn_297();
+    virtual void __unk_vfn_280();
     /**
-     * @vftbl 302
+     * @vftbl 285
      * @symbol ?getArmorValue\@WitherBoss\@\@UEBAHXZ
      */
     virtual int getArmorValue() const;
     /**
-     * @vftbl 338
+     * @vftbl 318
      * @symbol ?newServerAiStep\@WitherBoss\@\@UEAAXXZ
      */
     virtual void newServerAiStep();
     /**
-     * @vftbl 343
-     * @symbol __unk_vfn_343
+     * @vftbl 323
+     * @symbol __unk_vfn_323
      */
-    virtual void __unk_vfn_343();
+    virtual void __unk_vfn_323();
     /**
      * @symbol ??0WitherBoss\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */

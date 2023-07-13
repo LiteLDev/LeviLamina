@@ -23,7 +23,7 @@ class BehaviorTreeDefinitionPtr {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEHAVIORTREEDEFINITIONPTR
 public:
-    BehaviorTreeDefinitionPtr(class BehaviorTreeDefinitionPtr const &) = delete;
+    class BehaviorTreeDefinitionPtr& operator=(class BehaviorTreeDefinitionPtr const &) = delete;
 #endif
 
 public:
@@ -31,6 +31,14 @@ public:
      * @symbol ??0BehaviorTreeDefinitionPtr\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI BehaviorTreeDefinitionPtr(class BehaviorTreeDefinitionPtr &&);
+    /**
+     * @symbol ??0BehaviorTreeDefinitionPtr\@\@QEAA\@AEAVAutomationBehaviorTreeGroup\@\@AEAVBehaviorTreeDefinition\@\@\@Z
+     */
+    MCAPI BehaviorTreeDefinitionPtr(class AutomationBehaviorTreeGroup &, class BehaviorTreeDefinition &);
+    /**
+     * @symbol ??0BehaviorTreeDefinitionPtr\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI BehaviorTreeDefinitionPtr(class BehaviorTreeDefinitionPtr const &);
     /**
      * @symbol ??0BehaviorTreeDefinitionPtr\@\@QEAA\@XZ
      */
@@ -40,10 +48,6 @@ public:
      */
     MCAPI class BehaviorTreeDefinitionPtr & operator=(class BehaviorTreeDefinitionPtr &&);
     /**
-     * @symbol ??4BehaviorTreeDefinitionPtr\@\@QEAAAEAV0\@AEBV0\@\@Z
-     */
-    MCAPI class BehaviorTreeDefinitionPtr & operator=(class BehaviorTreeDefinitionPtr const &);
-    /**
      * @symbol ??1BehaviorTreeDefinitionPtr\@\@QEAA\@XZ
      */
     MCAPI ~BehaviorTreeDefinitionPtr();
@@ -51,13 +55,5 @@ public:
      * @symbol ?NONE\@BehaviorTreeDefinitionPtr\@\@2V1\@B
      */
     MCAPI static class BehaviorTreeDefinitionPtr const NONE;
-
-//protected:
-    /**
-     * @symbol ?_move\@BehaviorTreeDefinitionPtr\@\@IEAAAEAV1\@$$QEAV1\@\@Z
-     */
-    MCAPI class BehaviorTreeDefinitionPtr & _move(class BehaviorTreeDefinitionPtr &&);
-
-protected:
 
 };

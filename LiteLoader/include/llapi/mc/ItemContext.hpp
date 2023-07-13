@@ -37,10 +37,6 @@ public:
      */
     MCAPI ItemContext(class WeakEntityRef const &, int);
     /**
-     * @symbol ?clone\@ItemContext\@\@QEBA?AV?$optional\@VItemStack\@\@\@std\@\@XZ
-     */
-    MCAPI class std::optional<class ItemStack> clone() const;
-    /**
      * @symbol ?getAmount\@ItemContext\@\@QEBA?AV?$optional\@H\@std\@\@XZ
      */
     MCAPI class std::optional<int> getAmount() const;

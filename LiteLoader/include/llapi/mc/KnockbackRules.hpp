@@ -22,13 +22,13 @@ namespace KnockbackRules {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?doKnockbackAttack\@KnockbackRules\@\@YAXAEAVMob\@\@0AEBVVec3\@\@MM\@Z
-     */
-    MCAPI void doKnockbackAttack(class Mob &, class Mob &, class Vec3 const &, float, float);
-    /**
      * @symbol ?doKnockbackAttack\@KnockbackRules\@\@YAXAEAVMob\@\@0AEBVVec2\@\@MM\@Z
      */
     MCAPI void doKnockbackAttack(class Mob &, class Mob &, class Vec2 const &, float, float);
+    /**
+     * @symbol ?doKnockbackAttack\@KnockbackRules\@\@YAXAEAVMob\@\@0AEBVVec3\@\@MM\@Z
+     */
+    MCAPI void doKnockbackAttack(class Mob &, class Mob &, class Vec3 const &, float, float);
     /**
      * @symbol ?getScaledKnockbackForce\@KnockbackRules\@\@YAMAEBVActor\@\@M\@Z
      */

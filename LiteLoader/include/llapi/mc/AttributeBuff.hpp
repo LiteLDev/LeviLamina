@@ -102,13 +102,13 @@ public:
 
 //protected:
     /**
-     * @symbol ??0AttributeBuff\@\@IEAA\@MHAEBVActorDamageSource\@\@W4AttributeBuffType\@\@\@Z
-     */
-    MCAPI AttributeBuff(float, int, class ActorDamageSource const &, enum class AttributeBuffType);
-    /**
      * @symbol ??0AttributeBuff\@\@IEAA\@MHW4AttributeBuffType\@\@\@Z
      */
     MCAPI AttributeBuff(float, int, enum class AttributeBuffType);
+    /**
+     * @symbol ??0AttributeBuff\@\@IEAA\@MHAEBVActorDamageSource\@\@W4AttributeBuffType\@\@\@Z
+     */
+    MCAPI AttributeBuff(float, int, class ActorDamageSource const &, enum class AttributeBuffType);
 
 protected:
 

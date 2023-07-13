@@ -21,16 +21,16 @@ namespace ScriptUtils {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?functionError\@ScriptUtils\@\@YA?AUError\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?functionError\@ScriptUtils\@\@YA?AUError\@Scripting\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI struct Scripting::Error functionError(std::string const &);
+    MCAPI struct Scripting::Error functionError(class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
-     * @symbol ?getPropertyError\@ScriptUtils\@\@YA?AUError\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?getPropertyError\@ScriptUtils\@\@YA?AUError\@Scripting\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI struct Scripting::Error getPropertyError(std::string const &);
+    MCAPI struct Scripting::Error getPropertyError(class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
-     * @symbol ?setPropertyError\@ScriptUtils\@\@YA?AUError\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?setPropertyError\@ScriptUtils\@\@YA?AUError\@Scripting\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI struct Scripting::Error setPropertyError(std::string const &);
+    MCAPI struct Scripting::Error setPropertyError(class std::basic_string_view<char, struct std::char_traits<char>>);
 
 };

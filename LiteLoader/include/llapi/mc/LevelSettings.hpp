@@ -29,17 +29,17 @@ public:
 
 public:
     /**
-     * @symbol ??0LevelSettings\@\@QEAA\@$$QEAV0\@\@Z
+     * @symbol ??0LevelSettings\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI LevelSettings(class LevelSettings &&);
+    MCAPI LevelSettings(class LevelSettings const &);
     /**
      * @symbol ??0LevelSettings\@\@QEAA\@XZ
      */
     MCAPI LevelSettings();
     /**
-     * @symbol ??0LevelSettings\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0LevelSettings\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI LevelSettings(class LevelSettings const &);
+    MCAPI LevelSettings(class LevelSettings &&);
     /**
      * @symbol ??0LevelSettings\@\@QEAA\@AEBVLevelData\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
@@ -281,6 +281,10 @@ public:
      */
     MCAPI class LevelSettings & setEduSharedUriResource(struct EduSharedUriResource const &);
     /**
+     * @symbol ?setEducationEditionOffer\@LevelSettings\@\@QEAAAEAV1\@W4EducationEditionOffer\@\@\@Z
+     */
+    MCAPI class LevelSettings & setEducationEditionOffer(enum class EducationEditionOffer);
+    /**
      * @symbol ?setEducationFeaturesEnabled\@LevelSettings\@\@QEAAAEAV1\@_N\@Z
      */
     MCAPI class LevelSettings & setEducationFeaturesEnabled(bool);
@@ -292,6 +296,10 @@ public:
      * @symbol ?setEmoteChatMuted\@LevelSettings\@\@QEAAAEAV1\@_N\@Z
      */
     MCAPI class LevelSettings & setEmoteChatMuted(bool);
+    /**
+     * @symbol ?setExperiments\@LevelSettings\@\@QEAAAEAV1\@AEBVExperimentStorage\@\@\@Z
+     */
+    MCAPI class LevelSettings & setExperiments(class ExperimentStorage const &);
     /**
      * @symbol ?setForceGameType\@LevelSettings\@\@QEAAAEAV1\@_N\@Z
      */
@@ -308,10 +316,6 @@ public:
      * @symbol ?setGeneratorType\@LevelSettings\@\@QEAAAEAV1\@W4GeneratorType\@\@\@Z
      */
     MCAPI class LevelSettings & setGeneratorType(enum class GeneratorType);
-    /**
-     * @symbol ?setIsEditorWorld\@LevelSettings\@\@QEAAAEAV1\@_N\@Z
-     */
-    MCAPI class LevelSettings & setIsEditorWorld(bool);
     /**
      * @symbol ?setOnlySpawnV1Villagers\@LevelSettings\@\@QEAAX_N\@Z
      */

@@ -26,21 +26,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTAGENTMOBMOVEMENTPROXY
     /**
-     * @symbol ?getSlideOffset\@DirectAgentMobMovementProxy\@\@UEBA?AVVec2\@\@XZ
-     */
-    MCVAPI class Vec2 getSlideOffset() const;
-    /**
      * @symbol ?isFlying\@DirectAgentMobMovementProxy\@\@UEBA_NXZ
      */
     MCVAPI bool isFlying() const;
-    /**
-     * @symbol ?setIsFlying\@DirectAgentMobMovementProxy\@\@UEAAX_N\@Z
-     */
-    MCVAPI void setIsFlying(bool);
-    /**
-     * @symbol ?setSlideOffset\@DirectAgentMobMovementProxy\@\@UEAAXAEBVVec2\@\@\@Z
-     */
-    MCVAPI void setSlideOffset(class Vec2 const &);
 #endif
 
 };

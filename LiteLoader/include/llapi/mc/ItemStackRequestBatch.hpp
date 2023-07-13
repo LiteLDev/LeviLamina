@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -38,8 +39,8 @@ public:
      */
     MCAPI ~ItemStackRequestBatch();
     /**
-     * @symbol ?read\@ItemStackRequestBatch\@\@SA?AV?$unique_ptr\@VItemStackRequestBatch\@\@U?$default_delete\@VItemStackRequestBatch\@\@\@std\@\@\@std\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?read\@ItemStackRequestBatch\@\@SA?AV?$Result\@V?$unique_ptr\@VItemStackRequestBatch\@\@U?$default_delete\@VItemStackRequestBatch\@\@\@std\@\@\@std\@\@Verror_code\@2\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    MCAPI static std::unique_ptr<class ItemStackRequestBatch> read(class ReadOnlyBinaryStream &);
+    MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestBatch>, class std::error_code> read(class ReadOnlyBinaryStream &);
 
 };

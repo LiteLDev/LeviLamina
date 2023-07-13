@@ -40,13 +40,13 @@ public:
      */
     MCAPI RecipeUnlockingRequirement(enum class RecipeUnlockingRequirement::UnlockingContext);
     /**
-     * @symbol ??0RecipeUnlockingRequirement\@\@QEAA\@XZ
-     */
-    MCAPI RecipeUnlockingRequirement();
-    /**
      * @symbol ??0RecipeUnlockingRequirement\@\@QEAA\@V?$vector\@VRecipeIngredient\@\@V?$allocator\@VRecipeIngredient\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI RecipeUnlockingRequirement(std::vector<class RecipeIngredient>);
+    /**
+     * @symbol ??0RecipeUnlockingRequirement\@\@QEAA\@XZ
+     */
+    MCAPI RecipeUnlockingRequirement();
     /**
      * @symbol ?canBeUnlockedByContext\@RecipeUnlockingRequirement\@\@QEBA_NW4UnlockingContext\@1\@\@Z
      */
@@ -56,13 +56,9 @@ public:
      */
     MCAPI bool canBeUnlockedByIngredient(class RecipeIngredient const &) const;
     /**
-     * @symbol ?isUnlockedByIngredients\@RecipeUnlockingRequirement\@\@QEBA_NXZ
+     * @symbol ?isUnlockable\@RecipeUnlockingRequirement\@\@QEBA_NXZ
      */
-    MCAPI bool isUnlockedByIngredients() const;
-    /**
-     * @symbol ?isValid\@RecipeUnlockingRequirement\@\@QEBA_NXZ
-     */
-    MCAPI bool isValid() const;
+    MCAPI bool isUnlockable() const;
     /**
      * @symbol ??1RecipeUnlockingRequirement\@\@QEAA\@XZ
      */

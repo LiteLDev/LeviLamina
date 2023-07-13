@@ -41,7 +41,7 @@ public:
     virtual std::vector<class ItemInstance> const & assemble(class CraftingContainer &, class CraftingContext &) const = 0;
     /**
      * @vftbl 2
-     * @symbol ?getCraftingSize\@BannerAddPatternRecipe\@\@UEBAHXZ
+     * @symbol ?getCraftingSize\@DecoratedPotRecipe\@\@UEBAHXZ
      */
     virtual int getCraftingSize() const = 0;
     /**
@@ -66,7 +66,7 @@ public:
     virtual bool matches(class CraftingContainer const &, class CraftingContext const &) const = 0;
     /**
      * @vftbl 7
-     * @symbol ?size\@BannerAddPatternRecipe\@\@UEBAHXZ
+     * @symbol ?size\@DecoratedPotRecipe\@\@UEBAHXZ
      */
     virtual int size() const = 0;
     /**
@@ -162,9 +162,9 @@ public:
 
 //protected:
     /**
-     * @symbol ??0Recipe\@\@IEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@VHashedString\@\@AEBV?$vector\@VRecipeIngredient\@\@V?$allocator\@VRecipeIngredient\@\@\@std\@\@\@2\@V?$optional\@VRecipeUnlockingRequirement\@\@\@2\@\@Z
+     * @symbol ??0Recipe\@\@IEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@VHashedString\@\@AEBV?$vector\@VRecipeIngredient\@\@V?$allocator\@VRecipeIngredient\@\@\@std\@\@\@2\@V?$optional\@VRecipeUnlockingRequirement\@\@\@2\@VSemVersion\@\@\@Z
      */
-    MCAPI Recipe(class std::basic_string_view<char, struct std::char_traits<char>>, class HashedString, std::vector<class RecipeIngredient> const &, class std::optional<class RecipeUnlockingRequirement>);
+    MCAPI Recipe(class std::basic_string_view<char, struct std::char_traits<char>>, class HashedString, std::vector<class RecipeIngredient> const &, class std::optional<class RecipeUnlockingRequirement>, class SemVersion);
 
 protected:
 

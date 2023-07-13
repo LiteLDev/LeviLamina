@@ -9,7 +9,9 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "llapi/mc/Json.hpp"
+#include "llapi/mc/Enchant.hpp"
 #include <string>
+#include <utility>
 
 class CommandRegistry;
 enum class ActorDamageCause : int;
@@ -25,6 +27,8 @@ class CommandIntegerRange;
 struct ActorDefinitionIdentifier;
 class CommandItem;
 class CommandBlockName;
+class CommandWildcardInt;
+enum class ObjectiveSortOrder : char;
 
 #undef BEFORE_EXTRA
 
@@ -60,8 +64,8 @@ public:
     NonOwnerPointer(T0& a1) {
         mPtr = std::make_shared<T0>(a1);
     }
-	
 };
+
 struct StorageMigration {
     enum class StorageMigrationType;
     StorageMigration() = delete;
@@ -69,8 +73,99 @@ struct StorageMigration {
     StorageMigration(StorageMigration const&&) = delete;
 };
 
+struct CallStack {
+    struct FrameWithContext{
+        char filler[80];
+    };
+private:
+    std::vector<Bedrock::CallStack::FrameWithContext> vector;
+};
 
+template <typename E>
+struct ErrorInfo {
+    ErrorInfo() = default;
 
+    E& getError() {
+        return error;
+    }
+
+private:
+    E error;
+    char filler[0x30];
+};
+static_assert(sizeof(ErrorInfo<std::error_code>) == 0x40);
+
+template <typename T, typename Err>
+class Result {
+public:
+    explicit Result(T&& value) : mValue(std::move(value)), mHasValue(true) {}
+
+    Result(Result&& other)  noexcept {
+        mHasValue = other.mHasValue;
+        if (mHasValue) {
+            mValue = std::move(other.mValue);
+        } else {
+            mError = std::move(other.mError);
+        }
+    }
+
+    [[nodiscard]] bool has_value() const {
+        return mHasValue;
+    }
+
+    T& value() {
+        if (!mHasValue) {
+            std::rethrow_exception(std::make_exception_ptr(mError.getError()));
+        }
+        return mValue;
+    }
+
+    Err& error() {
+        if (mHasValue)
+            throw std::logic_error("Bad error result access.");
+        return mError;
+    }
+
+private:
+    union{
+        T mValue;
+        ErrorInfo<Err> mError;
+    };
+    bool mHasValue;
+};
+
+template <class Err>
+class Result<void, Err> {
+    explicit Result() : mHasValue(true) {}
+
+    Result(Result&& other)  noexcept {
+        mHasValue = other.mHasValue;
+        if (!mHasValue) {
+            mError = std::move(other.mError);
+        }
+    }
+
+    [[nodiscard]] bool has_value() const {
+        return mHasValue;
+    }
+
+    void value() {
+        if (!mHasValue) {
+            std::rethrow_exception(std::make_exception_ptr(mError.getError()));
+        }
+        // No value to return as T is void
+    }
+
+    Err& error() {
+        if (mHasValue)
+            throw std::logic_error("Bad error result access.");
+        return mError;
+    }
+
+private:
+    ErrorInfo<Err> mError;
+    bool mHasValue;
+};
 
 namespace PubSub {
 class Subscription {
@@ -148,12 +243,12 @@ class typeid_t<CommandRegistry> {
 public:
     unsigned short value;
 
-    inline static std::atomic<unsigned short>& _getCounter(){
-         std::atomic<unsigned short>& id = *(std::atomic<unsigned short>*)dlsym_real(
+    inline static std::atomic<unsigned short>& _getCounter() {
+        std::atomic<unsigned short>& id = *(std::atomic<unsigned short>*)dlsym_real(
             "?storage@?1??_getCounter@?$typeid_t@VCommandRegistry@@@Bedrock@@CAAEAU?$atomic@G@std@@XZ@4U45@A");
         return id;
     }
-    
+
     typeid_t<CommandRegistry>(typeid_t<CommandRegistry> const& id) : value(id.value){};
     typeid_t<CommandRegistry>(unsigned short value) : value(value){};
 };
@@ -162,9 +257,9 @@ template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDamageCause>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, AutomaticID<class Dimension, int>>();
-template<>
+template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandBlockName>();
-template<>
+template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, bool>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandMessage>();
@@ -174,20 +269,20 @@ template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPosition>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandPositionFloat>();
-//template <>
-//MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<class Actor>>();
+// template <>
+// MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<class Actor>>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandSelector<class Player>>();
-template <>
-MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum class EquipmentSlot>();
+// template <>
+// MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum class EquipmentSlot>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, float>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, int>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, Json::Value>();
-template <>
-MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum class Mirror>();
+// template <>
+// MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, enum class Mirror>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class MobEffect const*>();
 template <>
@@ -198,27 +293,49 @@ template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, std::unique_ptr<class Command>>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class WildcardCommandSelector<class Actor>>();
-template<>
-MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>();
 template <>
-MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandIntegerRange>();
-template<>
+MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandItem>();
+// template <>
+// MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, CommandIntegerRange>();
+template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>();
 template <>
 MCAPI typeid_t<CommandRegistry> type_id<CommandRegistry, class CommandRawText>();
+template <>
+MCAPI typeid_t<CommandRegistry> type_id<class CommandRegistry, class CommandWildcardInt>();
+template <>
+MCAPI typeid_t<CommandRegistry> type_id<class CommandRegistry, enum ObjectiveSortOrder>();
+template <>
+MCAPI typeid_t<CommandRegistry> type_id<class CommandRegistry, enum BlockSlot>();
 
-//template <>
-//inline typeid_t<CommandRegistry> type_id<CommandRegistry, ActorDefinitionIdentifier const*>() {
-//    static typeid_t<CommandRegistry> id =
-//        *(typeid_t<CommandRegistry>*)dlsym_real("??$type_id@VCommandRegistry@@PEBUActorDefinitionIdentifier@@@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@@@0@XZ");
-////     static typeid_t<CommandRegistry> id = ([]() -> typeid_t<CommandRegistry> {
-////        CommandParameterData data =
-////        SymCall("??$mandatory@VRideCommand@@PEBUActorDefinitionIdentifier@@@commands@@YA?AVCommandParameterData@@PEQRideCommand@@PEBUActorDefinitionIdentifier@@PEBDPEQ2@_N@Z",
-////                 CommandParameterData, void*, char const*, uintptr_t)(nullptr, "entityType", 0);
-////         return data.tid;
-////         })();
-//    return id;
-//};
+template <>
+inline typeid_t<CommandRegistry> type_id<CommandRegistry, enum class Mirror>() {
+    auto id = (unsigned short*)dlsym_real(
+        "?id@?1???$type_id@VCommandRegistry@@W4Mirror@@@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@@@1@XZ@4V21@A");
+        return typeid_t<CommandRegistry>(*id);
+}
+
+template <>
+inline typeid_t<CommandRegistry> type_id<CommandRegistry, CommandIntegerRange>() {
+    auto id = (unsigned short*)dlsym_real("?id@?1???$type_id@VCommandRegistry@@VCommandIntegerRange@@@Bedrock@@YA?AV?$"
+                                          "typeid_t@VCommandRegistry@@@1@XZ@4V21@A");
+    return typeid_t<CommandRegistry>(*id);
+}
+
+template <>
+inline typeid_t<CommandRegistry> type_id<CommandRegistry, EquipmentSlot>() {
+    auto id = (unsigned short*)dlsym_real("?id@?1???$type_id@VCommandRegistry@@W4EquipmentSlot@@@Bedrock@@YA?AV?$"
+                                          "typeid_t@VCommandRegistry@@@1@XZ@4V21@A");
+    return typeid_t<CommandRegistry>(*id);
+}
+
+template <>
+inline typeid_t<CommandRegistry> type_id<CommandRegistry, Enchant::Type>() {
+    auto id = (unsigned short*)dlsym_real(
+        "?id@?1???$type_id@VCommandRegistry@@W4Type@Enchant@@@Bedrock@@YA?AV?$typeid_t@VCommandRegistry@@@1@XZ@4V21@A");
+    return typeid_t<CommandRegistry>(*id);
+}
+
 
 
 #undef AFTER_EXTRA

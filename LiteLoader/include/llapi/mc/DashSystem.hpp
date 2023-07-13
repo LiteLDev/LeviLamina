@@ -32,12 +32,4 @@ public:
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
-//private:
-    /**
-     * @symbol ?_tickDashSystem\@DashSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorTickedFlag\@\@\@\@\@\@VActorOwnerComponent\@\@UDashCooldownTimerComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UDashCooldownTimerComponent\@\@\@\@\@Z
-     */
-    MCAPI static void _tickDashSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorTickedFlag>>, class ActorOwnerComponent, struct DashCooldownTimerComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct DashCooldownTimerComponent>);
-
-private:
-
 };

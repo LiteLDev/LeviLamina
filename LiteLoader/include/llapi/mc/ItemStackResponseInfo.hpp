@@ -27,6 +27,10 @@ public:
 
 public:
     /**
+     * @symbol ??0ItemStackResponseInfo\@\@QEAA\@$$QEAU0\@\@Z
+     */
+    MCAPI ItemStackResponseInfo(struct ItemStackResponseInfo &&);
+    /**
      * @symbol ??0ItemStackResponseInfo\@\@QEAA\@XZ
      */
     MCAPI ItemStackResponseInfo();

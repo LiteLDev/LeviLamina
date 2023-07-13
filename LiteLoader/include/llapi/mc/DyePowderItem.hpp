@@ -6,7 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Json.hpp"
-#include "FertilizerItem.hpp"
+#include "Item.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -17,7 +17,7 @@
  * @brief MC class DyePowderItem.
  *
  */
-class DyePowderItem : public FertilizerItem {
+class DyePowderItem : public Item {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -53,9 +53,9 @@ public:
     virtual void __unk_vfn_16();
     /**
      * @vftbl 19
-     * @symbol __unk_vfn_19
+     * @symbol ?isDye\@DyePowderItem\@\@UEBA_NXZ
      */
-    virtual void __unk_vfn_19();
+    virtual bool isDye() const;
     /**
      * @vftbl 20
      * @symbol ?getItemColor\@DyePowderItem\@\@UEBA?AW4ItemColor\@\@XZ
@@ -63,9 +63,9 @@ public:
     virtual enum class ItemColor getItemColor() const;
     /**
      * @vftbl 21
-     * @symbol ?isFertilizer\@DyePowderItem\@\@UEBA_NXZ
+     * @symbol __unk_vfn_21
      */
-    virtual bool isFertilizer() const;
+    virtual void __unk_vfn_21();
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
@@ -117,11 +117,6 @@ public:
      */
     virtual void __unk_vfn_80();
     /**
-     * @vftbl 85
-     * @symbol ?dispense\@DyePowderItem\@\@UEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
-     */
-    virtual bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;
-    /**
      * @vftbl 95
      * @symbol ?buildDescriptionId\@DyePowderItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemDescriptor\@\@PEBVCompoundTag\@\@\@Z
      */
@@ -142,19 +137,8 @@ public:
      */
     virtual class Item & setIconInfo(std::string const &, int);
     /**
-     * @vftbl 134
-     * @symbol ?_useOn\@DyePowderItem\@\@EEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
+     * @symbol ??0DyePowderItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4ItemColor\@\@\@Z
      */
-    virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DYEPOWDERITEM
-    /**
-     * @symbol ?isDye\@DyePowderItem\@\@UEBA_NXZ
-     */
-    MCVAPI bool isDye() const;
-#endif
-    /**
-     * @symbol ??0DyePowderItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HW4ItemColor\@\@_N2\@Z
-     */
-    MCAPI DyePowderItem(std::string const &, int, enum class ItemColor, bool, bool);
+    MCAPI DyePowderItem(std::string const &, int, enum class ItemColor);
 
 };

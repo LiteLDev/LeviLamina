@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 #include "Packet.hpp"
 
 #define BEFORE_EXTRA
@@ -78,9 +79,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@CraftingEventPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@CraftingEventPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ??0CraftingEventPacket\@\@QEAA\@XZ
      */

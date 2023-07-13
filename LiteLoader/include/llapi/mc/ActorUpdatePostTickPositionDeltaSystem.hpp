@@ -32,12 +32,4 @@ public:
      */
     MCAPI static struct TickingSystemWithInfo createActorUpdatePostTickPositionDeltaSystem();
 
-//private:
-    /**
-     * @symbol ?_tickActorUpdatePostTickPositionDeltaSystem\@ActorUpdatePostTickPositionDeltaSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@\@\@$$CBUStateVectorComponent\@\@UPostTickPositionDeltaComponent\@\@\@\@\@Z
-     */
-    MCAPI static void _tickActorUpdatePostTickPositionDeltaSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>, struct StateVectorComponent const, struct PostTickPositionDeltaComponent>);
-
-private:
-
 };

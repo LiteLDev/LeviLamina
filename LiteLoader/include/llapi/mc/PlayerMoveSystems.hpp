@@ -32,6 +32,10 @@ public:
      */
     MCAPI static struct TickingSystemWithInfo createLocalPlayerPreMoveJumpSystem();
     /**
+     * @symbol ?createLocalPlayerPreMoveSystem\@PlayerMoveSystems\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     */
+    MCAPI static struct TickingSystemWithInfo createLocalPlayerPreMoveSystem();
+    /**
      * @symbol ?createPlayerPostMoveSystem\@PlayerMoveSystems\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createPlayerPostMoveSystem();

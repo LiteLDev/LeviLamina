@@ -42,13 +42,13 @@ public:
      */
     MCAPI std::unique_ptr<class Path> findPath(class Actor &, int, int, int, float);
     /**
-     * @symbol ?isFree\@PathFinder\@\@QEAA?AW4NodeType\@\@AEAVActor\@\@AEBVBlockPos\@\@11W4CanJumpIntoNode\@\@W4CanClimbIntoNode\@\@\@Z
-     */
-    MCAPI enum class NodeType isFree(class Actor &, class BlockPos const &, class BlockPos const &, class BlockPos const &, enum class CanJumpIntoNode, enum class CanClimbIntoNode);
-    /**
      * @symbol ?isFree\@PathFinder\@\@QEAA?AW4NodeType\@\@AEBUActorPathingData\@\@AEBVBlockPos\@\@11W4CanJumpIntoNode\@\@W4CanClimbIntoNode\@\@\@Z
      */
     MCAPI enum class NodeType isFree(struct ActorPathingData const &, class BlockPos const &, class BlockPos const &, class BlockPos const &, enum class CanJumpIntoNode, enum class CanClimbIntoNode);
+    /**
+     * @symbol ?isFree\@PathFinder\@\@QEAA?AW4NodeType\@\@AEAVActor\@\@AEBVBlockPos\@\@11W4CanJumpIntoNode\@\@W4CanClimbIntoNode\@\@\@Z
+     */
+    MCAPI enum class NodeType isFree(class Actor &, class BlockPos const &, class BlockPos const &, class BlockPos const &, enum class CanJumpIntoNode, enum class CanClimbIntoNode);
     /**
      * @symbol ??1PathFinder\@\@QEAA\@XZ
      */

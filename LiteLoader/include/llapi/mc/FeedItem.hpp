@@ -28,6 +28,7 @@ struct Effect {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FEEDITEM
 public:
+    struct FeedItem& operator=(struct FeedItem const &) = delete;
     FeedItem() = delete;
 #endif
 
@@ -44,10 +45,6 @@ public:
      * @symbol ??4FeedItem\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct FeedItem & operator=(struct FeedItem &&);
-    /**
-     * @symbol ??4FeedItem\@\@QEAAAEAU0\@AEBU0\@\@Z
-     */
-    MCAPI struct FeedItem & operator=(struct FeedItem const &);
     /**
      * @symbol ??1FeedItem\@\@QEAA\@XZ
      */

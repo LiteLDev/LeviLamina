@@ -412,7 +412,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
             ab.setBool(0);
             if (flying)
                 ab.setBool(1);
-            UpdateAbilitiesPacket packet(sp->getUniqueID(), abilities);
+            UpdateAbilitiesPacket packet(sp->getOrCreateUniqueID(), abilities);
             auto pkt2 = UpdateAdventureSettingsPacket(AdventureSettings());
             abilities.setAbility(AbilitiesIndex::Flying, flying);
             sp->sendNetworkPacket(pkt2);
@@ -420,6 +420,8 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
         }
     }
 }
+
+
 
 // Fix SimulatedPlayer Bugs
 namespace SimulatedPlayerClient {
@@ -444,8 +446,8 @@ TInstanceHook(void, "?tickWorld@Player@@UEAAXAEBUTick@@@Z", Player, struct Tick 
 
 #include "llapi/mc/ChunkViewSource.hpp"
 // fix chunk load and tick - ChunkSource load mode
-static_assert(sizeof(ChunkSource) == 0x50);      // 88
-static_assert(sizeof(ChunkViewSource) == 0x1d8); // 472
+static_assert(sizeof(ChunkSource) == 0x60);      // 96
+static_assert(sizeof(ChunkViewSource) == 0x1e8); // 472
 
 TInstanceHook(std::shared_ptr<class ChunkViewSource>,
               "?_createChunkSource@SimulatedPlayer@@MEAA?AV?$shared_ptr@VChunkViewSource@@@std@@AEAVChunkSource@@@Z",

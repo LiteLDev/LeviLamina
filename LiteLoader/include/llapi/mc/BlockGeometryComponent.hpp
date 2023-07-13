@@ -29,6 +29,12 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKGEOMETRYCOMPONENT
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~BlockGeometryComponent();
+#endif
     /**
      * @symbol ??0BlockGeometryComponent\@\@QEAA\@$$QEAU0\@\@Z
      */
@@ -37,9 +43,5 @@ public:
      * @symbol ??4BlockGeometryComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct BlockGeometryComponent & operator=(struct BlockGeometryComponent &&);
-    /**
-     * @symbol ??1BlockGeometryComponent\@\@QEAA\@XZ
-     */
-    MCAPI ~BlockGeometryComponent();
 
 };

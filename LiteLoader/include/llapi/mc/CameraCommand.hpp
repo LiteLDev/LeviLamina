@@ -31,7 +31,7 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 2
+     * @vftbl 1
      * @symbol ?execute\@CameraCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -55,6 +55,10 @@ public:
      * @symbol ?ENUM_OPTION_EASE\@CameraCommand\@\@2PEBDEB
      */
     MCAPI static char const * ENUM_OPTION_EASE;
+    /**
+     * @symbol ?ENUM_OPTION_FACING\@CameraCommand\@\@2PEBDEB
+     */
+    MCAPI static char const * ENUM_OPTION_FACING;
     /**
      * @symbol ?ENUM_OPTION_FADE\@CameraCommand\@\@2PEBDEB
      */
@@ -91,6 +95,10 @@ public:
      * @symbol ?OPTION_EASE\@CameraCommand\@\@2PEBDEB
      */
     MCAPI static char const * OPTION_EASE;
+    /**
+     * @symbol ?OPTION_FACING\@CameraCommand\@\@2PEBDEB
+     */
+    MCAPI static char const * OPTION_FACING;
     /**
      * @symbol ?OPTION_FADE\@CameraCommand\@\@2PEBDEB
      */

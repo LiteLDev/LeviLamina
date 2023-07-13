@@ -54,6 +54,10 @@ namespace PlayerMovement {
      */
     MCAPI void initializePlayer(class EntityContext &);
     /**
+     * @symbol ?setElytraFlightTimeTicks\@PlayerMovement\@\@YAXAEAVEntityContext\@\@AEBUTick\@\@\@Z
+     */
+    MCAPI void setElytraFlightTimeTicks(class EntityContext &, struct Tick const &);
+    /**
      * @symbol ?setPositionMode\@PlayerMovement\@\@YAXAEAVEntityContext\@\@W4PositionMode\@PlayerPositionModeComponent\@\@\@Z
      */
     MCAPI void setPositionMode(class EntityContext &, enum class PlayerPositionModeComponent::PositionMode);

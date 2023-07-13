@@ -41,10 +41,15 @@ public:
      */
     virtual std::string const & getName() const;
     /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_3();
+    virtual void __unk_vfn_2();
+    /**
+     * @vftbl 4
+     * @symbol __unk_vfn_4
+     */
+    virtual void __unk_vfn_4();
     /**
      * @symbol ?NameID\@OnStepOnTriggerDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */

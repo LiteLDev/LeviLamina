@@ -51,6 +51,11 @@ public:
      */
     virtual void __unk_vfn_18();
     /**
+     * @vftbl 30
+     * @symbol __unk_vfn_30
+     */
+    virtual void __unk_vfn_30();
+    /**
      * @vftbl 31
      * @symbol __unk_vfn_31
      */
@@ -76,10 +81,15 @@ public:
      */
     virtual void __unk_vfn_35();
     /**
-     * @vftbl 38
-     * @symbol __unk_vfn_38
+     * @vftbl 36
+     * @symbol __unk_vfn_36
      */
-    virtual void __unk_vfn_38();
+    virtual void __unk_vfn_36();
+    /**
+     * @vftbl 39
+     * @symbol __unk_vfn_39
+     */
+    virtual void __unk_vfn_39();
     /**
      * @symbol ??0SporeBlossomBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */

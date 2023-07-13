@@ -27,13 +27,15 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONFALLONTRIGGER
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~OnFallOnTrigger();
+#endif
     /**
      * @symbol ??0OnFallOnTrigger\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI OnFallOnTrigger(class OnFallOnTrigger &&);
-    /**
-     * @symbol ??1OnFallOnTrigger\@\@QEAA\@XZ
-     */
-    MCAPI ~OnFallOnTrigger();
 
 };

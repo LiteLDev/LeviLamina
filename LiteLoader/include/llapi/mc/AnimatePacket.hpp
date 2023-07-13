@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 #include "Packet.hpp"
 
 #define BEFORE_EXTRA
@@ -65,9 +66,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@AnimatePacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@AnimatePacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMATEPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -83,12 +84,12 @@ public:
      */
     MCAPI AnimatePacket();
     /**
-     * @symbol ??0AnimatePacket\@\@QEAA\@W4Action\@0\@VActorRuntimeID\@\@M\@Z
-     */
-    MCAPI AnimatePacket(enum class AnimatePacket::Action, class ActorRuntimeID, float);
-    /**
      * @symbol ??0AnimatePacket\@\@QEAA\@W4Action\@0\@VActorRuntimeID\@\@\@Z
      */
     MCAPI AnimatePacket(enum class AnimatePacket::Action, class ActorRuntimeID);
+    /**
+     * @symbol ??0AnimatePacket\@\@QEAA\@W4Action\@0\@VActorRuntimeID\@\@M\@Z
+     */
+    MCAPI AnimatePacket(enum class AnimatePacket::Action, class ActorRuntimeID, float);
 
 };

@@ -18,11 +18,14 @@ struct CameraPreset {
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMERAPRESET
 public:
-    CameraPreset(struct CameraPreset const &) = delete;
     CameraPreset() = delete;
 #endif
 
 public:
+    /**
+     * @symbol ??0CameraPreset\@\@QEAA\@AEBU0\@\@Z
+     */
+    MCAPI CameraPreset(struct CameraPreset const &);
     /**
      * @symbol ??4CameraPreset\@\@QEAAAEAU0\@AEBU0\@\@Z
      */

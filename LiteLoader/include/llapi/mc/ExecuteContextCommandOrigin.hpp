@@ -110,9 +110,9 @@ public:
      */
     virtual bool isValid() const;
     /**
-     * @symbol ??0ExecuteContextCommandOrigin\@\@QEAA\@UActorUniqueID\@\@AEBVVec3\@\@AEBV?$optional\@VVec2\@\@\@std\@\@00W4ActorLocation\@\@V?$AutomaticID\@VDimension\@\@H\@\@AEAVLevel\@\@\@Z
+     * @symbol ??0ExecuteContextCommandOrigin\@\@QEAA\@UActorUniqueID\@\@AEBVVec3\@\@AEBV?$optional\@VVec2\@\@\@std\@\@00W4ActorLocation\@\@V?$AutomaticID\@VDimension\@\@H\@\@AEAVLevel\@\@H\@Z
      */
-    MCAPI ExecuteContextCommandOrigin(struct ActorUniqueID, class Vec3 const &, class std::optional<class Vec2> const &, struct ActorUniqueID, struct ActorUniqueID, enum class ActorLocation, class AutomaticID<class Dimension, int>, class Level &);
+    MCAPI ExecuteContextCommandOrigin(struct ActorUniqueID, class Vec3 const &, class std::optional<class Vec2> const &, struct ActorUniqueID, struct ActorUniqueID, enum class ActorLocation, class AutomaticID<class Dimension, int>, class Level &, int);
     /**
      * @symbol ?getPositionEntity\@ExecuteContextCommandOrigin\@\@QEAAPEBVActor\@\@XZ
      */

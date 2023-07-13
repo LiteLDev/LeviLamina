@@ -29,12 +29,4 @@ public:
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
 
-//private:
-    /**
-     * @symbol ?_tickWalkDistPrevSystem\@SetPreviousWalkDistSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@\@\@$$CBUWalkDistComponent\@\@UWalkDistPrevComponent\@\@\@\@\@Z
-     */
-    MCAPI static void _tickWalkDistPrevSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>, struct WalkDistComponent const, struct WalkDistPrevComponent>);
-
-private:
-
 };

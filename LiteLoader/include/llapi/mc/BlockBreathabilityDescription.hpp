@@ -53,16 +53,21 @@ public:
     virtual void __unk_vfn_4();
     /**
      * @vftbl 5
+     * @symbol __unk_vfn_5
+     */
+    virtual void __unk_vfn_5();
+    /**
+     * @vftbl 6
      * @symbol ?isNetworkComponent\@BlockBreathabilityDescription\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?buildNetworkTag\@BlockBreathabilityDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vftbl 7
+     * @vftbl 8
      * @symbol ?initializeFromNetwork\@BlockBreathabilityDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
      */
     virtual void initializeFromNetwork(class CompoundTag const &);

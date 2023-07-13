@@ -56,11 +56,16 @@ public:
     virtual void __unk_vfn_4();
     /**
      * @vftbl 5
+     * @symbol __unk_vfn_5
+     */
+    virtual void __unk_vfn_5();
+    /**
+     * @vftbl 6
      * @symbol ?isNetworkComponent\@BlockComponentDescription\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?buildNetworkTag\@BlockComponentDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
@@ -77,6 +82,10 @@ public:
      * @symbol ?initializeComponent\@BlockComponentDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
     MCVAPI void initializeComponent(class EntityContext &) const;
+    /**
+     * @symbol ?initializeComponent\@BlockComponentDescription\@\@UEBAXAEAVBlockComponentStorage\@\@\@Z
+     */
+    MCVAPI void initializeComponent(class BlockComponentStorage &) const;
     /**
      * @symbol ?initializeComponentFromCode\@BlockComponentDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */

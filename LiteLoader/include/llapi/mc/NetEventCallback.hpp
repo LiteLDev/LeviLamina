@@ -76,9 +76,9 @@ public:
     virtual void onWebsocketRequest(std::string const &, std::string const &, class std::function<void (void)>);
     /**
      * @vftbl 9
-     * @symbol __unk_vfn_9
+     * @symbol ?sendPacketViolationDetectedTelemetryData\@NetEventCallback\@\@UEAAX_KV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4PacketViolationResponse\@\@W4MinecraftPacketIds\@\@AEBVNetworkIdentifier\@\@\@Z
      */
-    virtual void __unk_vfn_9();
+    virtual void sendPacketViolationDetectedTelemetryData(unsigned __int64, std::string, enum class PacketViolationResponse, enum class MinecraftPacketIds, class NetworkIdentifier const &);
     /**
      * @vftbl 10
      * @symbol __unk_vfn_10
@@ -211,13 +211,13 @@ public:
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ModalFormResponsePacket const &);
     /**
-     * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVTextPacket\@\@\@Z
+     * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@V?$shared_ptr\@VLevelChunkPacket\@\@\@std\@\@\@Z
      */
-    MCVAPI void handle(class NetworkIdentifier const &, class TextPacket const &);
+    MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class LevelChunkPacket>);
     /**
-     * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@V?$shared_ptr\@VBlockActorDataPacket\@\@\@std\@\@\@Z
+     * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@V?$shared_ptr\@VClientCacheMissResponsePacket\@\@\@std\@\@\@Z
      */
-    MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class BlockActorDataPacket>);
+    MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class ClientCacheMissResponsePacket>);
     /**
      * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVAgentActionEventPacket\@\@\@Z
      */
@@ -226,6 +226,10 @@ public:
      * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVPlayStatusPacket\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class PlayStatusPacket const &);
+    /**
+     * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVLegacyTelemetryEventPacket\@\@\@Z
+     */
+    MCVAPI void handle(class NetworkIdentifier const &, class LegacyTelemetryEventPacket const &);
     /**
      * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVCommandRequestPacket\@\@\@Z
      */
@@ -347,9 +351,9 @@ public:
      */
     MCVAPI void handle(class NetworkIdentifier const &, class UpdateAbilitiesPacket const &);
     /**
-     * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@V?$shared_ptr\@VLevelChunkPacket\@\@\@std\@\@\@Z
+     * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@V?$shared_ptr\@VUpdateBlockPacket\@\@\@std\@\@\@Z
      */
-    MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class LevelChunkPacket>);
+    MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class UpdateBlockPacket>);
     /**
      * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVUpdateAdventureSettingsPacket\@\@\@Z
      */
@@ -363,9 +367,9 @@ public:
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ServerStatsPacket const &);
     /**
-     * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@V?$shared_ptr\@VClientCacheMissResponsePacket\@\@\@std\@\@\@Z
+     * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@V?$shared_ptr\@VUpdateBlockSyncedPacket\@\@\@std\@\@\@Z
      */
-    MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class ClientCacheMissResponsePacket>);
+    MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class UpdateBlockSyncedPacket>);
     /**
      * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVRequestAbilityPacket\@\@\@Z
      */
@@ -427,10 +431,6 @@ public:
      */
     MCVAPI void handle(class NetworkIdentifier const &, class CodeBuilderSourcePacket const &);
     /**
-     * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@V?$shared_ptr\@VUpdateBlockPacket\@\@\@std\@\@\@Z
-     */
-    MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class UpdateBlockPacket>);
-    /**
      * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVSetTitlePacket\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetTitlePacket const &);
@@ -463,10 +463,6 @@ public:
      */
     MCVAPI void handle(class NetworkIdentifier const &, class ClientCacheStatusPacket const &);
     /**
-     * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVEventPacket\@\@\@Z
-     */
-    MCVAPI void handle(class NetworkIdentifier const &, class EventPacket const &);
-    /**
      * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVSetCommandsEnabledPacket\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetCommandsEnabledPacket const &);
@@ -486,10 +482,6 @@ public:
      * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVSetDefaultGameTypePacket\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetDefaultGameTypePacket const &);
-    /**
-     * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@V?$shared_ptr\@VUpdateBlockSyncedPacket\@\@\@std\@\@\@Z
-     */
-    MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class UpdateBlockSyncedPacket>);
     /**
      * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVAddVolumeEntityPacket\@\@\@Z
      */
@@ -554,10 +546,6 @@ public:
      * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVInteractPacket\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class InteractPacket const &);
-    /**
-     * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVClientCheatAbilityPacket\@\@\@Z
-     */
-    MCVAPI void handle(class NetworkIdentifier const &, class ClientCheatAbilityPacket const &);
     /**
      * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVFeatureRegistryPacket\@\@\@Z
      */
@@ -638,6 +626,10 @@ public:
      * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVLevelSoundEventPacketV1\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class LevelSoundEventPacketV1 const &);
+    /**
+     * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVAgentAnimationPacket\@\@\@Z
+     */
+    MCVAPI void handle(class NetworkIdentifier const &, class AgentAnimationPacket const &);
     /**
      * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVLevelSoundEventPacketV2\@\@\@Z
      */
@@ -895,21 +887,25 @@ public:
      */
     MCVAPI void handle(class NetworkIdentifier const &, class OnScreenTextureAnimationPacket const &);
     /**
-     * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVScriptCustomEventPacket\@\@\@Z
-     */
-    MCVAPI void handle(class NetworkIdentifier const &, class ScriptCustomEventPacket const &);
-    /**
      * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVSetActorLinkPacket\@\@\@Z
      */
     MCVAPI void handle(class NetworkIdentifier const &, class SetActorLinkPacket const &);
+    /**
+     * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVTextPacket\@\@\@Z
+     */
+    MCVAPI void handle(class NetworkIdentifier const &, class TextPacket const &);
+    /**
+     * @symbol ?handle\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@V?$shared_ptr\@VBlockActorDataPacket\@\@\@std\@\@\@Z
+     */
+    MCVAPI void handle(class NetworkIdentifier const &, class std::shared_ptr<class BlockActorDataPacket>);
     /**
      * @symbol ?onConnect\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@\@Z
      */
     MCVAPI void onConnect(class NetworkIdentifier const &);
     /**
-     * @symbol ?onDisconnect\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N1\@Z
+     * @symbol ?onDisconnect\@NetEventCallback\@\@UEAAXAEBVNetworkIdentifier\@\@W4DisconnectFailReason\@Connection\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N2\@Z
      */
-    MCVAPI void onDisconnect(class NetworkIdentifier const &, std::string const &, bool, std::string const &);
+    MCVAPI void onDisconnect(class NetworkIdentifier const &, enum class Connection::DisconnectFailReason, std::string const &, bool, std::string const &);
     /**
      * @symbol ?onPlayerReady\@NetEventCallback\@\@UEAAXAEAVPlayer\@\@\@Z
      */
@@ -930,10 +926,6 @@ public:
      * @symbol ?onUnableToConnect\@NetEventCallback\@\@UEAAXXZ
      */
     MCVAPI void onUnableToConnect();
-    /**
-     * @symbol ?sendPacketViolationDetectedTelemetryData\@NetEventCallback\@\@UEAAXAEBUExtendedStreamReadResult\@\@W4PacketViolationResponse\@\@W4MinecraftPacketIds\@\@AEBVNetworkIdentifier\@\@\@Z
-     */
-    MCVAPI void sendPacketViolationDetectedTelemetryData(struct ExtendedStreamReadResult const &, enum class PacketViolationResponse, enum class MinecraftPacketIds, class NetworkIdentifier const &);
     /**
      * @symbol __unk_destructor_-1
      */

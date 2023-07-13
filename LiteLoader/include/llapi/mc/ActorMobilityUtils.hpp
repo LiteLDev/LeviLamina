@@ -56,6 +56,10 @@ namespace ActorMobilityUtils {
      */
     //MCAPI void endJump(class StrictEntityContext const &, struct StateVectorComponent const &, struct MobJumpComponent &, struct SynchedActorDataComponent &, struct VehicleComponent const *, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ParrotFlag>>, struct PassengerComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct ExitFromPassengerFlag>, class FlagComponent<struct StopRidingRequestFlag>, class FlagComponent<struct MobIsJumpingFlag>> &);
     /**
+     * @symbol ?getBlockWhenClimbing\@ActorMobilityUtils\@\@YAAEBVBlock\@\@AEBUAABBShapeComponent\@\@AEBVIConstBlockSource\@\@AEBUStateVectorComponent\@\@\@Z
+     */
+    MCAPI class Block const & getBlockWhenClimbing(struct AABBShapeComponent const &, class IConstBlockSource const &, struct StateVectorComponent const &);
+    /**
      * @symbol ?getBrightness\@ActorMobilityUtils\@\@YAMAEBVStrictEntityContext\@\@MAEBVIConstBlockSource\@\@AEBUAABBShapeComponent\@\@AEBUOffsetsComponent\@\@AEBUStateVectorComponent\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UBlazeFlag\@\@\@\@\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@ULavaSlimeFlag\@\@\@\@\@\@\@\@\@Z
      */
     //MCAPI float getBrightness(class StrictEntityContext const &, float, class IConstBlockSource const &, struct AABBShapeComponent const &, struct OffsetsComponent const &, struct StateVectorComponent const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct BlazeFlag>>>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct LavaSlimeFlag>>>);
@@ -63,6 +67,10 @@ namespace ActorMobilityUtils {
      * @symbol ?getJumpEffectAmplifierValue\@ActorMobilityUtils\@\@YAMAEBV?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI float getJumpEffectAmplifierValue(std::vector<class MobEffectInstance> const &);
+    /**
+     * @symbol ?getJumpEffectAmplifierValue\@ActorMobilityUtils\@\@YAMAEBUMobEffectsComponent\@\@\@Z
+     */
+    MCAPI float getJumpEffectAmplifierValue(struct MobEffectsComponent const &);
     /**
      * @symbol ?getJumpPower\@ActorMobilityUtils\@\@YAMPEBVJumpControlComponent\@\@_N\@Z
      */
@@ -75,10 +83,6 @@ namespace ActorMobilityUtils {
      * @symbol ?getSpeed\@ActorMobilityUtils\@\@YAMAEBVStrictEntityContext\@\@AEBV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBUAttributesComponent\@\@$$CBUMovementSpeedComponent\@\@\@\@AEBV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@\@\@\@\@\@Z
      */
     //MCAPI float getSpeed(class StrictEntityContext const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct AttributesComponent const, struct MovementSpeedComponent const> const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PlayerComponentFlag>>> const &);
-    /**
-     * @symbol ?isDamagingNearbyMobs\@ActorMobilityUtils\@\@YA_NAEBUSynchedActorDataComponent\@\@\@Z
-     */
-    MCAPI bool isDamagingNearbyMobs(struct SynchedActorDataComponent const &);
     /**
      * @symbol ?isFlying\@ActorMobilityUtils\@\@YA_NAEBUAbilitiesComponent\@\@\@Z
      */
@@ -136,10 +140,6 @@ namespace ActorMobilityUtils {
      */
     MCAPI bool onHoverableBlock(class IConstBlockSource const &, class Vec3 const &, class AABB const &);
     /**
-     * @symbol ?setLocalPlayerSneaking\@ActorMobilityUtils\@\@YAXAEAUSynchedActorDataComponent\@\@PEAUPlayerActionComponent\@\@_N\@Z
-     */
-    MCAPI void setLocalPlayerSneaking(struct SynchedActorDataComponent &, struct PlayerActionComponent *, bool);
-    /**
      * @symbol ?setSpeed\@ActorMobilityUtils\@\@YAXAEBVStrictEntityContext\@\@MAEBV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@UMovementSpeedComponent\@\@ULocalMoveVelocityComponent\@\@\@\@AEBV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@\@\@\@\@\@Z
      */
     //MCAPI void setSpeed(class StrictEntityContext const &, float, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct MovementSpeedComponent, struct LocalMoveVelocityComponent> const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PlayerComponentFlag>>> const &);
@@ -163,9 +163,5 @@ namespace ActorMobilityUtils {
      * @symbol ?tryApplyingLevitation\@ActorMobilityUtils\@\@YA_NAEBUMobEffectsComponent\@\@AEAUStateVectorComponent\@\@\@Z
      */
     MCAPI bool tryApplyingLevitation(struct MobEffectsComponent const &, struct StateVectorComponent &);
-    /**
-     * @symbol ?updateBBFromDefinition\@ActorMobilityUtils\@\@YAXAEAVStrictEntityContext\@\@V?$optional_ref\@$$CBUCollisionBoxDefinitionComponent\@\@\@\@AEAUSynchedActorDataComponent\@\@AEAUAABBShapeComponent\@\@AEBUStateVectorComponent\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UWasPenetratingLastFrameFlag\@\@\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@\@\@UOffsetsComponent\@\@\@\@\@Z
-     */
-    //MCAPI void updateBBFromDefinition(class StrictEntityContext &, class optional_ref<struct CollisionBoxDefinitionComponent const>, struct SynchedActorDataComponent &, struct AABBShapeComponent &, struct StateVectorComponent const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct WasPenetratingLastFrameFlag>> &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PlayerComponentFlag>>, struct OffsetsComponent>);
 
 };

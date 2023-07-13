@@ -32,13 +32,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSYSTEMS
     /**
-     * @symbol ?registerSingleTickingSystem\@EntitySystems\@\@UEAAXV?$span\@$$CBV?$typeid_t\@USystemCategory\@\@\@Bedrock\@\@$0?0\@gsl\@\@V?$unique_ptr\@VITickingSystem\@\@U?$default_delete\@VITickingSystem\@\@\@std\@\@\@std\@\@AEBUSystemInfo\@\@\@Z
+     * @symbol ?registerTickingSystem\@EntitySystems\@\@UEAAXV?$span\@$$CBV?$typeid_t\@USystemCategory\@\@\@Bedrock\@\@$0?0\@gsl\@\@V?$unique_ptr\@VITickingSystem\@\@U?$default_delete\@VITickingSystem\@\@\@std\@\@\@std\@\@AEBUSystemInfo\@\@UEntitySystemTickingMode\@\@\@Z
      */
-    MCVAPI void registerSingleTickingSystem(class gsl::span<class Bedrock::typeid_t<struct SystemCategory> const, -1>, std::unique_ptr<class ITickingSystem>, struct SystemInfo const &);
-    /**
-     * @symbol ?registerTickingSystem\@EntitySystems\@\@UEAAXV?$span\@$$CBV?$typeid_t\@USystemCategory\@\@\@Bedrock\@\@$0?0\@gsl\@\@V?$unique_ptr\@VITickingSystem\@\@U?$default_delete\@VITickingSystem\@\@\@std\@\@\@std\@\@AEBUSystemInfo\@\@\@Z
-     */
-    MCVAPI void registerTickingSystem(class gsl::span<class Bedrock::typeid_t<struct SystemCategory> const, -1>, std::unique_ptr<class ITickingSystem>, struct SystemInfo const &);
+    MCVAPI void registerTickingSystem(class gsl::span<class Bedrock::typeid_t<struct SystemCategory> const, -1>, std::unique_ptr<class ITickingSystem>, struct SystemInfo const &, struct EntitySystemTickingMode);
     /**
      * @symbol ?tickMovementCatchup\@EntitySystems\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
@@ -77,10 +73,6 @@ public:
      */
     MCAPI void registerMovementTickingSystem(struct TickingSystemWithInfo &&);
     /**
-     * @symbol ?registerSystem\@EntitySystems\@\@QEAAXV?$unique_ptr\@UISystem\@\@U?$default_delete\@UISystem\@\@\@std\@\@\@std\@\@AEBUSystemInfo\@\@\@Z
-     */
-    MCAPI void registerSystem(std::unique_ptr<struct ISystem>, struct SystemInfo const &);
-    /**
      * @symbol ?registerTickingSystem\@EntitySystems\@\@QEAAX$$QEAUTickingSystemWithInfo\@\@\@Z
      */
     MCAPI void registerTickingSystem(struct TickingSystemWithInfo &&);
@@ -94,6 +86,10 @@ public:
     MCAPI void tickEditor(class EntityRegistry &);
 
 //private:
+    /**
+     * @symbol ?_hasSingleTickCategory\@EntitySystems\@\@AEBA_NV?$typeid_t\@USystemCategory\@\@\@Bedrock\@\@\@Z
+     */
+    MCAPI bool _hasSingleTickCategory(class Bedrock::typeid_t<struct SystemCategory>) const;
     /**
      * @symbol ?_singleTickCategory\@EntitySystems\@\@AEAAXV?$typeid_t\@USystemCategory\@\@\@Bedrock\@\@AEAVEntityContext\@\@\@Z
      */

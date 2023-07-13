@@ -20,10 +20,13 @@ class ChunkRecyclerTelemetryData {
 public:
     class ChunkRecyclerTelemetryData& operator=(class ChunkRecyclerTelemetryData const &) = delete;
     ChunkRecyclerTelemetryData(class ChunkRecyclerTelemetryData const &) = delete;
-    ChunkRecyclerTelemetryData() = delete;
 #endif
 
 public:
+    /**
+     * @symbol ??0ChunkRecyclerTelemetryData\@\@QEAA\@XZ
+     */
+    MCAPI ChunkRecyclerTelemetryData();
     /**
      * @symbol ?endLevel\@ChunkRecyclerTelemetryData\@\@QEAAXAEAVLevel\@\@\@Z
      */

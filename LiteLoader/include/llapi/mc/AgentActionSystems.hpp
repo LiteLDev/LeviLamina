@@ -17,8 +17,8 @@ namespace AgentActionSystems {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?tickActionFailed\@AgentActionSystems\@\@YAXAEAVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UActionDetails\@AgentComponents\@\@V?$FlagComponent\@UArmSwingFailFlag\@AgentComponents\@\@\@\@VCommandCooldown\@4\@V?$FlagComponent\@UExecutingFlag\@AgentComponents\@\@\@\@\@\@\@Z
+     * @symbol ?tickActionFailed\@AgentActionSystems\@\@YAXAEAVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UActionDetails\@AgentComponents\@\@V?$FlagComponent\@UAnimationShrugFlag\@AgentComponents\@\@\@\@VCommandCooldown\@4\@V?$FlagComponent\@UExecutingFlag\@AgentComponents\@\@\@\@\@\@\@Z
      */
-    MCAPI void tickActionFailed(class StrictEntityContext &, class ActorOwnerComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct AgentComponents::ActionDetails, class FlagComponent<struct AgentComponents::ArmSwingFailFlag>, class AgentComponents::CommandCooldown, class FlagComponent<struct AgentComponents::ExecutingFlag>> &);
+    MCAPI void tickActionFailed(class StrictEntityContext &, class ActorOwnerComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct AgentComponents::ActionDetails, class FlagComponent<struct AgentComponents::AnimationShrugFlag>, class AgentComponents::CommandCooldown, class FlagComponent<struct AgentComponents::ExecutingFlag>> &);
 
 };

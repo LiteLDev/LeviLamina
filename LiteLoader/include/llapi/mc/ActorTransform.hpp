@@ -17,10 +17,6 @@ namespace ActorTransform {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?getRenderPosition\@ActorTransform\@\@YAAEBVVec3\@\@AEBVEntityContext\@\@\@Z
-     */
-    MCAPI class Vec3 const & getRenderPosition(class EntityContext const &);
-    /**
      * @symbol ?getRenderRotation\@ActorTransform\@\@YAAEBVVec2\@\@AEBVEntityContext\@\@\@Z
      */
     MCAPI class Vec2 const & getRenderRotation(class EntityContext const &);

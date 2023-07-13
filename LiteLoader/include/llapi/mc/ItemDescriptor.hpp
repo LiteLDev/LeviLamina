@@ -68,13 +68,13 @@ public:
      */
     MCAPI ItemDescriptor(class ReadOnlyBinaryStream &);
     /**
-     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVItem\@\@H\@Z
-     */
-    MCAPI ItemDescriptor(class Item const &, int);
-    /**
      * @symbol ??0ItemDescriptor\@\@QEAA\@AEBUItemTag\@\@\@Z
      */
     MCAPI ItemDescriptor(struct ItemTag const &);
+    /**
+     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVItem\@\@H\@Z
+     */
+    MCAPI ItemDescriptor(class Item const &, int);
     /**
      * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVBlockLegacy\@\@\@Z
      */
@@ -148,13 +148,13 @@ public:
      */
     MCAPI bool isValid(bool) const;
     /**
-     * @symbol ??4ItemDescriptor\@\@QEAAX$$QEAV0\@\@Z
-     */
-    MCAPI void operator=(class ItemDescriptor &&);
-    /**
      * @symbol ??4ItemDescriptor\@\@QEAAXAEBV0\@\@Z
      */
     MCAPI void operator=(class ItemDescriptor const &);
+    /**
+     * @symbol ??4ItemDescriptor\@\@QEAAX$$QEAV0\@\@Z
+     */
+    MCAPI void operator=(class ItemDescriptor &&);
     /**
      * @symbol ??8ItemDescriptor\@\@QEBA_NAEBV0\@\@Z
      */

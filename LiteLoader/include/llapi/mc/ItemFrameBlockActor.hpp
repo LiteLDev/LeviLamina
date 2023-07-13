@@ -76,6 +76,11 @@ public:
      */
     virtual float getShadowRadius(class BlockSource &) const;
     /**
+     * @vftbl 30
+     * @symbol __unk_vfn_30
+     */
+    virtual void __unk_vfn_30();
+    /**
      * @vftbl 31
      * @symbol __unk_vfn_31
      */
@@ -101,17 +106,22 @@ public:
      */
     virtual void __unk_vfn_35();
     /**
-     * @vftbl 38
-     * @symbol __unk_vfn_38
+     * @vftbl 36
+     * @symbol __unk_vfn_36
      */
-    virtual void __unk_vfn_38();
+    virtual void __unk_vfn_36();
     /**
      * @vftbl 39
+     * @symbol __unk_vfn_39
+     */
+    virtual void __unk_vfn_39();
+    /**
+     * @vftbl 40
      * @symbol ?_getUpdatePacket\@ItemFrameBlockActor\@\@MEAA?AV?$unique_ptr\@VBlockActorDataPacket\@\@U?$default_delete\@VBlockActorDataPacket\@\@\@std\@\@\@std\@\@AEAVBlockSource\@\@\@Z
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @vftbl 40
+     * @vftbl 41
      * @symbol ?_onUpdatePacket\@ItemFrameBlockActor\@\@MEAAXAEBVCompoundTag\@\@AEAVBlockSource\@\@\@Z
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
@@ -130,13 +140,13 @@ public:
      */
     MCAPI ItemFrameBlockActor(class BlockPos, enum class BlockActorType, std::string const &);
     /**
-     * @symbol ?actuallyDropItem\@ItemFrameBlockActor\@\@QEAAXAEAVBlockSource\@\@_N\@Z
+     * @symbol ?actuallyDropItem\@ItemFrameBlockActor\@\@QEAAXAEAVBlockSource\@\@_NPEAVActor\@\@\@Z
      */
-    MCAPI void actuallyDropItem(class BlockSource &, bool);
+    MCAPI void actuallyDropItem(class BlockSource &, bool, class Actor *);
     /**
-     * @symbol ?dropFramedItem\@ItemFrameBlockActor\@\@QEAAXAEAVBlockSource\@\@_N\@Z
+     * @symbol ?dropFramedItem\@ItemFrameBlockActor\@\@QEAAXAEAVBlockSource\@\@_NPEAVActor\@\@\@Z
      */
-    MCAPI void dropFramedItem(class BlockSource &, bool);
+    MCAPI void dropFramedItem(class BlockSource &, bool, class Actor *);
     /**
      * @symbol ?getFramedItem\@ItemFrameBlockActor\@\@QEBAAEBVItemInstance\@\@XZ
      */
@@ -146,13 +156,13 @@ public:
      */
     MCAPI float getRotation();
     /**
-     * @symbol ?rotateFramedItem\@ItemFrameBlockActor\@\@QEAAXXZ
+     * @symbol ?rotateFramedItem\@ItemFrameBlockActor\@\@QEAAXAEAVBlockSource\@\@AEAVActor\@\@\@Z
      */
-    MCAPI void rotateFramedItem();
+    MCAPI void rotateFramedItem(class BlockSource &, class Actor &);
     /**
-     * @symbol ?setItem\@ItemFrameBlockActor\@\@QEAAXAEAVBlockSource\@\@AEBVItemInstance\@\@\@Z
+     * @symbol ?setItem\@ItemFrameBlockActor\@\@QEAAXAEAVBlockSource\@\@AEBVItemInstance\@\@PEAVActor\@\@\@Z
      */
-    MCAPI void setItem(class BlockSource &, class ItemInstance const &);
+    MCAPI void setItem(class BlockSource &, class ItemInstance const &, class Actor *);
     /**
      * @symbol ?updateNameTag\@ItemFrameBlockActor\@\@QEAAXXZ
      */

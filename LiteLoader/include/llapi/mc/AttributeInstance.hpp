@@ -105,13 +105,13 @@ public:
      */
     MCAPI bool hasModifier(class AttributeModifier const &) const;
     /**
-     * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@\@Z
-     */
-    MCAPI bool hasModifier(class std::shared_ptr<class AttributeModifier>) const;
-    /**
      * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NAEBVUUID\@mce\@\@\@Z
      */
     MCAPI bool hasModifier(class mce::UUID const &) const;
+    /**
+     * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@\@Z
+     */
+    MCAPI bool hasModifier(class std::shared_ptr<class AttributeModifier>) const;
     /**
      * @symbol ?hasModifiers\@AttributeInstance\@\@QEBA_NXZ
      */
@@ -121,17 +121,9 @@ public:
      */
     MCAPI bool hasTemporalBuffs() const;
     /**
-     * @symbol ?inheritFrom\@AttributeInstance\@\@QEAAXAEBV1\@PEAVBaseAttributeMap\@\@\@Z
-     */
-    MCAPI void inheritFrom(class AttributeInstance const &, class BaseAttributeMap *);
-    /**
      * @symbol ?isValid\@AttributeInstance\@\@QEBA_NXZ
      */
     MCAPI bool isValid() const;
-    /**
-     * @symbol ??8AttributeInstance\@\@QEBA_NAEBV0\@\@Z
-     */
-    MCAPI bool operator==(class AttributeInstance const &) const;
     /**
      * @symbol ?recalculateModifiers\@AttributeInstance\@\@QEAAXXZ
      */
@@ -153,6 +145,10 @@ public:
      */
     MCAPI void removeBuffs();
     /**
+     * @symbol ?removeModifier\@AttributeInstance\@\@QEAAXV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@\@Z
+     */
+    MCAPI void removeModifier(class std::shared_ptr<class AttributeModifier>);
+    /**
      * @symbol ?removeModifier\@AttributeInstance\@\@QEAA_NAEBVUUID\@mce\@\@\@Z
      */
     MCAPI bool removeModifier(class mce::UUID const &);
@@ -160,10 +156,6 @@ public:
      * @symbol ?removeModifier\@AttributeInstance\@\@QEAAXAEBVAttributeModifier\@\@\@Z
      */
     MCAPI void removeModifier(class AttributeModifier const &);
-    /**
-     * @symbol ?removeModifier\@AttributeInstance\@\@QEAAXV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@\@Z
-     */
-    MCAPI void removeModifier(class std::shared_ptr<class AttributeModifier>);
     /**
      * @symbol ?removeModifiers\@AttributeInstance\@\@QEAAXXZ
      */

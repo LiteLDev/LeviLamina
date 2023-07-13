@@ -24,14 +24,11 @@ class HitboxComponent {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_HITBOXCOMPONENT
 public:
     class HitboxComponent& operator=(class HitboxComponent const &) = delete;
+    HitboxComponent(class HitboxComponent const &) = delete;
     HitboxComponent() = delete;
 #endif
 
 public:
-    /**
-     * @symbol ??0HitboxComponent\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI HitboxComponent(class HitboxComponent const &);
     /**
      * @symbol ?addAdditionalSaveData\@HitboxComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
@@ -48,9 +45,5 @@ public:
      * @symbol ?toCompoundTag\@HitboxComponent\@\@QEAAXAEAVCompoundTag\@\@\@Z
      */
     MCAPI void toCompoundTag(class CompoundTag &);
-    /**
-     * @symbol ??1HitboxComponent\@\@QEAA\@XZ
-     */
-    MCAPI ~HitboxComponent();
 
 };

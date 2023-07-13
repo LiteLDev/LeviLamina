@@ -134,9 +134,9 @@ public:
     virtual bool isDyeable() const;
     /**
      * @vftbl 19
-     * @symbol __unk_vfn_19
+     * @symbol ?isDye\@Item\@\@UEBA_NXZ
      */
-    virtual void __unk_vfn_19();
+    virtual bool isDye() const;
     /**
      * @vftbl 20
      * @symbol ?getItemColor\@Item\@\@UEBA?AW4ItemColor\@\@XZ
@@ -144,9 +144,9 @@ public:
     virtual enum class ItemColor getItemColor() const;
     /**
      * @vftbl 21
-     * @symbol ?isFertilizer\@Item\@\@UEBA_NXZ
+     * @symbol __unk_vfn_21
      */
-    virtual bool isFertilizer() const;
+    virtual void __unk_vfn_21();
     /**
      * @vftbl 22
      * @symbol ?isFood\@Item\@\@UEBA_NXZ
@@ -709,6 +709,11 @@ public:
     virtual bool _calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
      * @vftbl 134
+     * @symbol ?_shouldAutoCalculatePlacePos\@Item\@\@EEBA_NXZ
+     */
+    virtual bool _shouldAutoCalculatePlacePos() const;
+    /**
+     * @vftbl 135
      * @symbol ?_useOn\@Item\@\@EEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
@@ -746,9 +751,9 @@ public:
      */
     MCVAPI bool isComponentBased() const;
     /**
-     * @symbol ?isDye\@Item\@\@UEBA_NXZ
+     * @symbol ?isFertilizer\@Item\@\@UEBA_NXZ
      */
-    MCVAPI bool isDye() const;
+    MCVAPI bool isFertilizer() const;
     /**
      * @symbol ?isMultiColorTinted\@Item\@\@UEBA_NAEBVItemStack\@\@\@Z
      */
@@ -806,6 +811,10 @@ public:
      * @symbol ?calculatePlacePos\@Item\@\@QEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
      */
     MCAPI bool calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
+    /**
+     * @symbol ?canBeUsedInCommands\@Item\@\@QEBA_NAEBVBaseGameVersion\@\@\@Z
+     */
+    MCAPI bool canBeUsedInCommands(class BaseGameVersion const &) const;
     /**
      * @symbol ?destroySpeedBonus\@Item\@\@QEBAMAEBVItemStackBase\@\@\@Z
      */
@@ -902,6 +911,10 @@ public:
      * @symbol ?setFurnaceXPmultiplier\@Item\@\@QEAAAEAV1\@M\@Z
      */
     MCAPI class Item & setFurnaceXPmultiplier(float);
+    /**
+     * @symbol ?setHoverTextColorFormat\@Item\@\@QEAAXAEBV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
+     */
+    MCAPI void setHoverTextColorFormat(class std::basic_string_view<char, struct std::char_traits<char>> const &);
     /**
      * @symbol ?setIsMirroredArt\@Item\@\@QEAAAEAV1\@_N\@Z
      */

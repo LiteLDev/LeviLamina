@@ -49,7 +49,8 @@ class Player;
     bool const*, int const*, float const*, std::string const*, CommandSelector<Actor> const*,                          \
         CommandSelector<Player> const*, CommandPosition const*, CommandPositionFloat const*, CommandRawText const*,    \
         CommandMessage const*, Json::Value const*, CommandItem const*, CommandBlockName const*,                        \
-        MobEffect const* const*, ActorDefinitionIdentifier const* const*, std::unique_ptr<Command> const*
+        MobEffect const* const*, ActorDefinitionIdentifier const* const*, std::unique_ptr<Command> const*,             \
+        std::vector<class BlockStateCommandParam> const*
 
 /**
  * @brief The dynamic command
@@ -221,6 +222,7 @@ public:
         ActorType,        // ActorDefinitionIdentifier const*
         Command,          // std::unique_ptr<Command>
         WildcardSelector, // WildcardCommandSelector<Actor>
+        BlockState,
 
 #ifdef ENABLE_PARAMETER_TYPE_POSTFIX
         Postfix, // int?
@@ -466,6 +468,8 @@ private:
                 return std::is_same_v<CommandItem, std::remove_cv_t<_Ty>>;
             case ParameterType::Block:
                 return std::is_same_v<CommandBlockName, std::remove_cv_t<_Ty>>;
+            case ParameterType::BlockState:
+                return std::is_same_v<std::vector<BlockStateCommandParam>, std::remove_cv_t<_Ty>>;
             case ParameterType::Effect:
                 return std::is_same_v<MobEffect const*, std::remove_cv_t<_Ty>>;
             // case ParameterType::Position:

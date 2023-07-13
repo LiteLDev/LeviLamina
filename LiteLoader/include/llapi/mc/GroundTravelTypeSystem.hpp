@@ -32,10 +32,6 @@ public:
      * @symbol ?create\@GroundTravelTypeSystem\@\@SA?AUTickingSystemWithInfo\@\@AEBVBaseGameVersion\@\@\@Z
      */
     MCAPI static struct TickingSystemWithInfo create(class BaseGameVersion const &);
-    /**
-     * @symbol ?createSideBySide\@GroundTravelTypeSystem\@\@SA?AUTickingSystemWithInfo\@\@AEBVBaseGameVersion\@\@\@Z
-     */
-    MCAPI static struct TickingSystemWithInfo createSideBySide(class BaseGameVersion const &);
 
 //private:
 

@@ -70,10 +70,6 @@ public:
      */
     MCAPI static std::string const DIFF_PLAYER_PERMISSION;
     /**
-     * @symbol ?getDiff\@PermissionsHandler\@\@SA?AV?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@AEBV1\@0\@Z
-     */
-    MCAPI static class std::optional<std::string> getDiff(class PermissionsHandler const &, class PermissionsHandler const &);
-    /**
      * @symbol ?playerPermissionLevelFromString\@PermissionsHandler\@\@SA?AW4PlayerPermissionLevel\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI static enum class PlayerPermissionLevel playerPermissionLevelFromString(std::string const &);

@@ -120,7 +120,7 @@ BlockInstance Actor::getBlockStandingOn() const {
 
 ActorUniqueID Actor::getActorUniqueId() const {
     __try {
-        return getUniqueID();
+        return getOrCreateUniqueID();
     } __except (EXCEPTION_EXECUTE_HANDLER) { return {0}; }
 }
 

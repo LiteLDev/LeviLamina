@@ -20,9 +20,5 @@ namespace MobTravelIntentSystem {
      * @symbol ?createSystem\@MobTravelIntentSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI struct TickingSystemWithInfo createSystem();
-    /**
-     * @symbol ?createUpdateSystem\@MobTravelIntentSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI struct TickingSystemWithInfo createUpdateSystem();
 
 };

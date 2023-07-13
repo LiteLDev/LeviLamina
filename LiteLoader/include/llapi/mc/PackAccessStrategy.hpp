@@ -36,62 +36,62 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?getPackSize\@DirectoryPackWithEncryptionAccessStrategy\@\@UEBA_KXZ
+     * @symbol ?getPackSize\@ZipPackAccessStrategy\@\@UEBA_KXZ
      */
     virtual unsigned __int64 getPackSize() const = 0;
     /**
      * @vftbl 2
-     * @symbol ?getPackLocation\@DirectoryPackWithEncryptionAccessStrategy\@\@UEBAAEBVResourceLocation\@\@XZ
+     * @symbol ?getPackLocation\@ZipPackAccessStrategy\@\@UEBAAEBVResourceLocation\@\@XZ
      */
     virtual class ResourceLocation const & getPackLocation() const = 0;
     /**
      * @vftbl 3
-     * @symbol ?getPackName\@DirectoryPackWithEncryptionAccessStrategy\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?getPackName\@ZipPackAccessStrategy\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string const & getPackName() const = 0;
     /**
      * @vftbl 4
-     * @symbol ?isWritable\@DirectoryPackWithEncryptionAccessStrategy\@\@UEBA_NXZ
+     * @symbol ?isWritable\@ZipPackAccessStrategy\@\@UEBA_NXZ
      */
     virtual bool isWritable() const = 0;
     /**
      * @vftbl 5
-     * @symbol ?setIsTrusted\@DirectoryPackWithEncryptionAccessStrategy\@\@UEAAX_N\@Z
+     * @symbol ?setIsTrusted\@ZipPackAccessStrategy\@\@UEAAX_N\@Z
      */
     virtual void setIsTrusted(bool) = 0;
     /**
      * @vftbl 6
-     * @symbol ?isTrusted\@DirectoryPackWithEncryptionAccessStrategy\@\@UEBA_NXZ
+     * @symbol ?isTrusted\@ZipPackAccessStrategy\@\@UEBA_NXZ
      */
     virtual bool isTrusted() const = 0;
     /**
      * @vftbl 7
-     * @symbol ?hasAsset\@DirectoryPackWithEncryptionAccessStrategy\@\@UEBA_NAEBVPath\@Core\@\@_N1\@Z
+     * @symbol ?hasAsset\@ZipPackAccessStrategy\@\@UEBA_NAEBVPath\@Core\@\@_N1\@Z
      */
     virtual bool hasAsset(class Core::Path const &, bool, bool) const = 0;
     /**
      * @vftbl 8
-     * @symbol ?hasFolder\@DirectoryPackWithEncryptionAccessStrategy\@\@UEBA_NAEBVPath\@Core\@\@\@Z
+     * @symbol ?hasFolder\@ZipPackAccessStrategy\@\@UEBA_NAEBVPath\@Core\@\@\@Z
      */
     virtual bool hasFolder(class Core::Path const &) const = 0;
     /**
      * @vftbl 9
-     * @symbol ?getAsset\@DirectoryPackWithEncryptionAccessStrategy\@\@UEBA_NAEBVPath\@Core\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
+     * @symbol ?getAsset\@ZipPackAccessStrategy\@\@UEBA_NAEBVPath\@Core\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
     virtual bool getAsset(class Core::Path const &, std::string &, bool) const = 0;
     /**
      * @vftbl 10
-     * @symbol ?deleteAsset\@DirectoryPackWithEncryptionAccessStrategy\@\@UEAA_NAEBV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@\@Z
+     * @symbol ?deleteAsset\@ZipPackAccessStrategy\@\@UEAA_NAEBV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@\@Z
      */
     virtual bool deleteAsset(class Core::PathBuffer<std::string> const &) = 0;
     /**
      * @vftbl 11
-     * @symbol ?writeAsset\@DirectoryPackWithEncryptionAccessStrategy\@\@UEAA_NAEBVPath\@Core\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?writeAsset\@ZipPackAccessStrategy\@\@UEAA_NAEBVPath\@Core\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual bool writeAsset(class Core::Path const &, std::string const &) = 0;
     /**
      * @vftbl 12
-     * @symbol ?forEachIn\@DirectoryPackWithEncryptionAccessStrategy\@\@UEBAXAEBVPath\@Core\@\@V?$function\@$$A6AXAEBVPath\@Core\@\@\@Z\@std\@\@_N\@Z
+     * @symbol ?forEachIn\@ZipPackAccessStrategy\@\@UEBAXAEBVPath\@Core\@\@V?$function\@$$A6AXAEBVPath\@Core\@\@\@Z\@std\@\@_N\@Z
      */
     virtual void forEachIn(class Core::Path const &, class std::function<void (class Core::Path const &)>, bool) const = 0;
     /**
@@ -111,7 +111,7 @@ public:
     virtual class Core::PathBuffer<std::string> const & getSubPath() const;
     /**
      * @vftbl 16
-     * @symbol ?createSubPack\@DirectoryPackWithEncryptionAccessStrategy\@\@UEBA?AV?$unique_ptr\@VPackAccessStrategy\@\@U?$default_delete\@VPackAccessStrategy\@\@\@std\@\@\@std\@\@AEBVPath\@Core\@\@\@Z
+     * @symbol ?createSubPack\@ZipPackAccessStrategy\@\@UEBA?AV?$unique_ptr\@VPackAccessStrategy\@\@U?$default_delete\@VPackAccessStrategy\@\@\@std\@\@\@std\@\@AEBVPath\@Core\@\@\@Z
      */
     virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const &) const = 0;
     /**
@@ -126,7 +126,7 @@ public:
     virtual bool canRecurse() const;
     /**
      * @vftbl 19
-     * @symbol ?unload\@DirectoryPackWithEncryptionAccessStrategy\@\@UEAAXXZ
+     * @symbol ?unload\@ZipPackAccessStrategy\@\@UEAAXXZ
      */
     virtual void unload() = 0;
     /**

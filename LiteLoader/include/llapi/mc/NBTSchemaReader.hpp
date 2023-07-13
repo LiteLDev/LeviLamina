@@ -39,19 +39,19 @@ public:
     virtual bool isValid() const;
     /**
      * @vftbl 2
-     * @symbol ?isString\@NBTSchemaReader\@\@UEBA_NXZ
+     * @symbol ?isObject\@NBTSchemaReader\@\@UEBA?AW4SchemaReaderState\@cereal\@\@XZ
      */
-    virtual bool isString() const;
+    virtual enum class cereal::SchemaReaderState isObject() const;
     /**
      * @vftbl 3
-     * @symbol ?isObject\@NBTSchemaReader\@\@UEBA_NXZ
+     * @symbol ?isArray\@NBTSchemaReader\@\@UEBA?AW4SchemaReaderState\@cereal\@\@XZ
      */
-    virtual bool isObject() const;
+    virtual enum class cereal::SchemaReaderState isArray() const;
     /**
      * @vftbl 4
-     * @symbol ?isArray\@NBTSchemaReader\@\@UEBA_NXZ
+     * @symbol ?asBool\@NBTSchemaReader\@\@UEAA?AV?$optional\@_N\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z
      */
-    virtual bool isArray() const;
+    virtual class std::optional<bool> asBool(struct cereal::SerializerTraits const &);
     /**
      * @vftbl 5
      * @symbol __unk_vfn_5
@@ -94,173 +94,82 @@ public:
     virtual void __unk_vfn_12();
     /**
      * @vftbl 13
-     * @symbol __unk_vfn_13
+     * @symbol ?asFloat\@NBTSchemaReader\@\@UEAA?AV?$optional\@M\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z
      */
-    virtual void __unk_vfn_13();
+    virtual class std::optional<float> asFloat(struct cereal::SerializerTraits const &);
     /**
      * @vftbl 14
-     * @symbol ?isFloat\@NBTSchemaReader\@\@UEBA_NXZ
+     * @symbol ?asDouble\@NBTSchemaReader\@\@UEAA?AV?$optional\@N\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z
      */
-    virtual bool isFloat() const;
+    virtual class std::optional<double> asDouble(struct cereal::SerializerTraits const &);
     /**
      * @vftbl 15
-     * @symbol ?isDouble\@NBTSchemaReader\@\@UEBA_NXZ
+     * @symbol ?asString\@NBTSchemaReader\@\@UEAA?AV?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z
      */
-    virtual bool isDouble() const;
+    virtual class std::optional<std::string> asString(struct cereal::SerializerTraits const &);
     /**
      * @vftbl 16
-     * @symbol ?asBool\@NBTSchemaReader\@\@UEBA_NXZ
+     * @symbol ?members\@NBTSchemaReader\@\@UEAA_KAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    virtual bool asBool() const;
+    virtual unsigned __int64 members(struct cereal::SerializerTraits const &);
     /**
      * @vftbl 17
-     * @symbol __unk_vfn_17
+     * @symbol ?length\@NBTSchemaReader\@\@UEAA_KAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    virtual void __unk_vfn_17();
+    virtual unsigned __int64 length(struct cereal::SerializerTraits const &);
     /**
      * @vftbl 18
-     * @symbol __unk_vfn_18
+     * @symbol ?pushMember\@NBTSchemaReader\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z
      */
-    virtual void __unk_vfn_18();
+    virtual bool pushMember(std::string const &, struct cereal::SerializerTraits const &);
     /**
      * @vftbl 19
-     * @symbol __unk_vfn_19
+     * @symbol ?pushMember\@NBTSchemaReader\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_KAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    virtual void __unk_vfn_19();
+    virtual std::string pushMember(unsigned __int64, struct cereal::SerializerTraits const &);
     /**
      * @vftbl 20
-     * @symbol __unk_vfn_20
+     * @symbol ?pushElement\@NBTSchemaReader\@\@UEAAX_KAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    virtual void __unk_vfn_20();
+    virtual void pushElement(unsigned __int64, struct cereal::SerializerTraits const &);
     /**
      * @vftbl 21
-     * @symbol __unk_vfn_21
+     * @symbol ?pop\@NBTSchemaReader\@\@UEAAXAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    virtual void __unk_vfn_21();
-    /**
-     * @vftbl 22
-     * @symbol __unk_vfn_22
-     */
-    virtual void __unk_vfn_22();
-    /**
-     * @vftbl 23
-     * @symbol __unk_vfn_23
-     */
-    virtual void __unk_vfn_23();
-    /**
-     * @vftbl 24
-     * @symbol __unk_vfn_24
-     */
-    virtual void __unk_vfn_24();
-    /**
-     * @vftbl 25
-     * @symbol ?asFloat\@NBTSchemaReader\@\@UEBAMXZ
-     */
-    virtual float asFloat() const;
-    /**
-     * @vftbl 26
-     * @symbol ?asDouble\@NBTSchemaReader\@\@UEBANXZ
-     */
-    virtual double asDouble() const;
-    /**
-     * @vftbl 27
-     * @symbol ?asString\@NBTSchemaReader\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    virtual std::string asString() const;
-    /**
-     * @vftbl 28
-     * @symbol ?members\@NBTSchemaReader\@\@UEBA_KXZ
-     */
-    virtual unsigned __int64 members() const;
-    /**
-     * @vftbl 29
-     * @symbol ?length\@NBTSchemaReader\@\@UEBA_KXZ
-     */
-    virtual unsigned __int64 length() const;
-    /**
-     * @vftbl 30
-     * @symbol ?pushMember\@NBTSchemaReader\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_K\@Z
-     */
-    virtual std::string pushMember(unsigned __int64);
-    /**
-     * @vftbl 31
-     * @symbol ?pushElement\@NBTSchemaReader\@\@UEAAX_K\@Z
-     */
-    virtual void pushElement(unsigned __int64);
-    /**
-     * @vftbl 32
-     * @symbol ?pop\@NBTSchemaReader\@\@UEAAXXZ
-     */
-    virtual void pop();
+    virtual void pop(struct cereal::SerializerTraits const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTSCHEMAREADER
     /**
-     * @symbol ?asInt16\@NBTSchemaReader\@\@UEBAFXZ
+     * @symbol ?asInt16\@NBTSchemaReader\@\@UEAA?AV?$optional\@F\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI short asInt16() const;
+    MCVAPI class std::optional<short> asInt16(struct cereal::SerializerTraits const &);
     /**
-     * @symbol ?asInt32\@NBTSchemaReader\@\@UEBAHXZ
+     * @symbol ?asInt32\@NBTSchemaReader\@\@UEAA?AV?$optional\@H\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI int asInt32() const;
+    MCVAPI class std::optional<int> asInt32(struct cereal::SerializerTraits const &);
     /**
-     * @symbol ?asInt64\@NBTSchemaReader\@\@UEBA_JXZ
+     * @symbol ?asInt64\@NBTSchemaReader\@\@UEAA?AV?$optional\@_J\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI __int64 asInt64() const;
+    MCVAPI class std::optional<__int64> asInt64(struct cereal::SerializerTraits const &);
     /**
-     * @symbol ?asInt8\@NBTSchemaReader\@\@UEBACXZ
+     * @symbol ?asInt8\@NBTSchemaReader\@\@UEAA?AV?$optional\@C\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI signed char asInt8() const;
+    MCVAPI class std::optional<signed char> asInt8(struct cereal::SerializerTraits const &);
     /**
-     * @symbol ?asUInt16\@NBTSchemaReader\@\@UEBAGXZ
+     * @symbol ?asUInt16\@NBTSchemaReader\@\@UEAA?AV?$optional\@G\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI unsigned short asUInt16() const;
+    MCVAPI class std::optional<unsigned short> asUInt16(struct cereal::SerializerTraits const &);
     /**
-     * @symbol ?asUInt32\@NBTSchemaReader\@\@UEBAIXZ
+     * @symbol ?asUInt32\@NBTSchemaReader\@\@UEAA?AV?$optional\@I\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI unsigned int asUInt32() const;
+    MCVAPI class std::optional<unsigned int> asUInt32(struct cereal::SerializerTraits const &);
     /**
-     * @symbol ?asUInt64\@NBTSchemaReader\@\@UEBA_KXZ
+     * @symbol ?asUInt64\@NBTSchemaReader\@\@UEAA?AV?$optional\@_K\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI unsigned __int64 asUInt64() const;
+    MCVAPI class std::optional<unsigned __int64> asUInt64(struct cereal::SerializerTraits const &);
     /**
-     * @symbol ?asUInt8\@NBTSchemaReader\@\@UEBAEXZ
+     * @symbol ?asUInt8\@NBTSchemaReader\@\@UEAA?AV?$optional\@E\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI unsigned char asUInt8() const;
-    /**
-     * @symbol ?isBool\@NBTSchemaReader\@\@UEBA_NXZ
-     */
-    MCVAPI bool isBool() const;
-    /**
-     * @symbol ?isInt16\@NBTSchemaReader\@\@UEBA_NXZ
-     */
-    MCVAPI bool isInt16() const;
-    /**
-     * @symbol ?isInt32\@NBTSchemaReader\@\@UEBA_NXZ
-     */
-    MCVAPI bool isInt32() const;
-    /**
-     * @symbol ?isInt64\@NBTSchemaReader\@\@UEBA_NXZ
-     */
-    MCVAPI bool isInt64() const;
-    /**
-     * @symbol ?isInt8\@NBTSchemaReader\@\@UEBA_NXZ
-     */
-    MCVAPI bool isInt8() const;
-    /**
-     * @symbol ?isUInt16\@NBTSchemaReader\@\@UEBA_NXZ
-     */
-    MCVAPI bool isUInt16() const;
-    /**
-     * @symbol ?isUInt32\@NBTSchemaReader\@\@UEBA_NXZ
-     */
-    MCVAPI bool isUInt32() const;
-    /**
-     * @symbol ?isUInt64\@NBTSchemaReader\@\@UEBA_NXZ
-     */
-    MCVAPI bool isUInt64() const;
-    /**
-     * @symbol ?isUInt8\@NBTSchemaReader\@\@UEBA_NXZ
-     */
-    MCVAPI bool isUInt8() const;
+    MCVAPI class std::optional<unsigned char> asUInt8(struct cereal::SerializerTraits const &);
     /**
      * @symbol __unk_destructor_-1
      */

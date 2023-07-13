@@ -32,7 +32,12 @@ class EnumBindingBuilder {
     EnumBindingBuilder(EnumBindingBuilder const&&) = delete;
 };
 
+template <typename T>
+class StrongTypedObjectHandle;
+
 struct Version;
+
+struct Error;
 
 enum class LogLevel : int {
     Verbose = 0x0,

@@ -47,25 +47,10 @@ public:
      */
     virtual std::string getName() const;
     /**
-     * @vftbl 9
-     * @symbol ?getPermissionsLevel\@AutomationPlayerCommandOrigin\@\@UEBA?AW4CommandPermissionLevel\@\@XZ
-     */
-    virtual enum class CommandPermissionLevel getPermissionsLevel() const;
-    /**
      * @vftbl 10
      * @symbol ?clone\@AutomationPlayerCommandOrigin\@\@UEBA?AV?$unique_ptr\@VCommandOrigin\@\@U?$default_delete\@VCommandOrigin\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /**
-     * @vftbl 13
-     * @symbol ?hasChatPerms\@AutomationPlayerCommandOrigin\@\@UEBA_NXZ
-     */
-    virtual bool hasChatPerms() const;
-    /**
-     * @vftbl 14
-     * @symbol ?hasTellPerms\@AutomationPlayerCommandOrigin\@\@UEBA_NXZ
-     */
-    virtual bool hasTellPerms() const;
     /**
      * @vftbl 19
      * @symbol ?getSourceId\@AutomationPlayerCommandOrigin\@\@UEBAAEBVNetworkIdentifier\@\@XZ
@@ -92,12 +77,12 @@ public:
      */
     virtual bool isValid() const;
     /**
+     * @symbol ??0AutomationPlayerCommandOrigin\@\@QEAA\@UActorUniqueID\@\@AEAVLevel\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVNetworkIdentifier\@\@\@Z
+     */
+    MCAPI AutomationPlayerCommandOrigin(struct ActorUniqueID, class Level &, std::string const &, class NetworkIdentifier const &);
+    /**
      * @symbol ??0AutomationPlayerCommandOrigin\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVPlayer\@\@\@Z
      */
     MCAPI AutomationPlayerCommandOrigin(std::string const &, class Player &);
-    /**
-     * @symbol ??0AutomationPlayerCommandOrigin\@\@QEAA\@UActorUniqueID\@\@AEAVLevel\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4CommandPermissionLevel\@\@AEBVNetworkIdentifier\@\@\@Z
-     */
-    MCAPI AutomationPlayerCommandOrigin(struct ActorUniqueID, class Level &, std::string const &, enum class CommandPermissionLevel, class NetworkIdentifier const &);
 
 };

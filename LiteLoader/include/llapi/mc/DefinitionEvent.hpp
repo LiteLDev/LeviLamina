@@ -28,13 +28,13 @@ public:
 
 public:
     /**
-     * @symbol ??0DefinitionEvent\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI DefinitionEvent(class DefinitionEvent &&);
-    /**
      * @symbol ??0DefinitionEvent\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI DefinitionEvent(class DefinitionEvent const &);
+    /**
+     * @symbol ??0DefinitionEvent\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI DefinitionEvent(class DefinitionEvent &&);
     /**
      * @symbol ?evaluateEvent\@DefinitionEvent\@\@QEBAXAEAVRenderParams\@\@AEAV?$vector\@UDefinitionModifier\@\@V?$allocator\@UDefinitionModifier\@\@\@std\@\@\@std\@\@\@Z
      */

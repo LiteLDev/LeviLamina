@@ -108,10 +108,6 @@ public:
      * @symbol ?DIFF_LAYER_AT\@LayeredAbilities\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const DIFF_LAYER_AT;
-    /**
-     * @symbol ?getDiff\@LayeredAbilities\@\@SA?AV?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@AEBV1\@0\@Z
-     */
-    MCAPI static class std::optional<std::string> getDiff(class LayeredAbilities const &, class LayeredAbilities const &);
 
 //private:
     /**

@@ -129,6 +129,10 @@ public:
      */
     MCAPI void initializeImGui(class Level &);
     /**
+     * @symbol ?initializeWithLevelStorageManager\@ServerScoreboard\@\@QEAAXAEAVLevelStorageManager\@\@\@Z
+     */
+    MCAPI void initializeWithLevelStorageManager(class LevelStorageManager &);
+    /**
      * @symbol ?serialize\@ServerScoreboard\@\@QEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::unique_ptr<class CompoundTag> serialize() const;
@@ -154,6 +158,10 @@ public:
     MCAPI void setSetDisplayObjectiveCallback(class std::function<void (std::string const &, class DisplayObjective const &)>);
 
 //private:
+    /**
+     * @symbol ?_onSaveEvent\@ServerScoreboard\@\@AEAAXAEAVLevelStorage\@\@\@Z
+     */
+    MCAPI void _onSaveEvent(class LevelStorage &);
     /**
      * @symbol ?_stopTrackingObjective\@ServerScoreboard\@\@AEAAXAEBVObjective\@\@\@Z
      */

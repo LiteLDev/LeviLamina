@@ -36,7 +36,7 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 2
+     * @vftbl 1
      * @symbol ?execute\@AgentCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;
@@ -46,6 +46,10 @@ public:
     MCAPI static void setup(class CommandRegistry &);
 
 //private:
+    /**
+     * @symbol ?collect\@AgentCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     */
+    MCAPI void collect(class CommandOrigin const &, class CommandOutput &) const;
     /**
      * @symbol ?createAgent\@AgentCommand\@\@AEBAXAEAVPlayer\@\@AEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */

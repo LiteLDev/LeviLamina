@@ -194,10 +194,6 @@ public:
      */
     MCAPI int getServerWakeupFrequency() const;
     /**
-     * @symbol ?getTransportLayerType\@PropertiesSettings\@\@QEBA?AW4TransportLayer\@\@XZ
-     */
-    MCAPI enum class TransportLayer getTransportLayerType() const;
-    /**
      * @symbol ?isClientSideGenEnabled\@PropertiesSettings\@\@QEBA_NXZ
      */
     MCAPI bool isClientSideGenEnabled() const;
@@ -265,5 +261,9 @@ public:
      * @symbol ?parseGameMode\@PropertiesSettings\@\@SA?AW4GameType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI static enum class GameType parseGameMode(std::string const &);
+    /**
+     * @symbol ?parseInt32Value\@PropertiesSettings\@\@SAHAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static int parseInt32Value(std::string const &);
 
 };

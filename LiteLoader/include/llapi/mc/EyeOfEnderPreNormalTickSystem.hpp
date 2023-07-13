@@ -37,10 +37,6 @@ public:
      * @symbol ?_doEyeOfEnderPreNormalTickSystem\@EyeOfEnderPreNormalTickSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
      */
     MCAPI static void _doEyeOfEnderPreNormalTickSystem(class StrictEntityContext const &, class ActorOwnerComponent &);
-    /**
-     * @symbol ?_tickEyeOfEnderPreNormalTickSystem\@EyeOfEnderPreNormalTickSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UEyeOfEnderFlag\@\@\@\@\@\@VActorOwnerComponent\@\@\@\@\@Z
-     */
-    MCAPI static void _tickEyeOfEnderPreNormalTickSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct EyeOfEnderFlag>>, class ActorOwnerComponent>);
 
 private:
 

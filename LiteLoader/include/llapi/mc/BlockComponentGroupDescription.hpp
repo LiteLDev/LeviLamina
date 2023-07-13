@@ -21,16 +21,7 @@ struct BlockComponentGroupDescription {
 // Add Member There
 
 #undef AFTER_EXTRA
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCOMPONENTGROUPDESCRIPTION
 public:
-    struct BlockComponentGroupDescription& operator=(struct BlockComponentGroupDescription const &) = delete;
-#endif
-
-public:
-    /**
-     * @symbol ??0BlockComponentGroupDescription\@\@QEAA\@AEBU0\@\@Z
-     */
-    MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription const &);
     /**
      * @symbol ??0BlockComponentGroupDescription\@\@QEAA\@XZ
      */
@@ -40,6 +31,10 @@ public:
      */
     MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription &&);
     /**
+     * @symbol ??0BlockComponentGroupDescription\@\@QEAA\@AEBU0\@\@Z
+     */
+    MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription const &);
+    /**
      * @symbol ?foreachDescription\@BlockComponentGroupDescription\@\@QEBAXV?$function\@$$A6AXAEBUBlockComponentDescription\@\@\@Z\@std\@\@\@Z
      */
     MCAPI void foreachDescription(class std::function<void (struct BlockComponentDescription const &)>) const;
@@ -47,6 +42,10 @@ public:
      * @symbol ?getComponentDescription\@BlockComponentGroupDescription\@\@QEBAPEAUBlockComponentDescription\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI struct BlockComponentDescription * getComponentDescription(std::string const &) const;
+    /**
+     * @symbol ??4BlockComponentGroupDescription\@\@QEAAAEAU0\@AEBU0\@\@Z
+     */
+    MCAPI struct BlockComponentGroupDescription & operator=(struct BlockComponentGroupDescription const &);
     /**
      * @symbol ??4BlockComponentGroupDescription\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */

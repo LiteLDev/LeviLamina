@@ -69,10 +69,10 @@ public:
      */
     virtual bool isDyeable() const;
     /**
-     * @vftbl 19
-     * @symbol __unk_vfn_19
+     * @vftbl 21
+     * @symbol __unk_vfn_21
      */
-    virtual void __unk_vfn_19();
+    virtual void __unk_vfn_21();
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
@@ -224,7 +224,7 @@ public:
      */
     virtual struct ResolvedItemIconInfo getIconInfo(class ItemStackBase const &, int, bool) const;
     /**
-     * @vftbl 135
+     * @vftbl 136
      * @symbol ?getArmorKnockbackResistance\@ArmorItem\@\@UEBAMXZ
      */
     virtual float getArmorKnockbackResistance() const;

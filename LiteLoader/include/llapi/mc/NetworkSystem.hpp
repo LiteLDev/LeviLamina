@@ -37,10 +37,6 @@ public:
      */
     MCVAPI void _onEnable();
     /**
-     * @symbol ?createNetworkSession\@NetworkSystem\@\@UEAAXW4TransportLayer\@\@\@Z
-     */
-    MCVAPI void createNetworkSession(enum class TransportLayer);
-    /**
      * @symbol ?getConnectionInfo\@NetworkSystem\@\@UEBAAEBVGameConnectionInfo\@Social\@\@XZ
      */
     MCVAPI class Social::GameConnectionInfo const & getConnectionInfo() const;
@@ -53,21 +49,17 @@ public:
      */
     MCVAPI unsigned short getDefaultGamePortv6() const;
     /**
-     * @symbol ?getTransportLayer\@NetworkSystem\@\@UEBA?AW4TransportLayer\@\@XZ
+     * @symbol ?onAllConnectionsClosed\@NetworkSystem\@\@EEAAXW4DisconnectFailReason\@Connection\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
-    MCVAPI enum class TransportLayer getTransportLayer() const;
+    MCVAPI void onAllConnectionsClosed(enum class Connection::DisconnectFailReason, std::string const &, bool);
     /**
-     * @symbol ?onAllConnectionsClosed\@NetworkSystem\@\@EEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
+     * @symbol ?onAllRemoteConnectionsClosed\@NetworkSystem\@\@EEAAXW4DisconnectFailReason\@Connection\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
-    MCVAPI void onAllConnectionsClosed(std::string const &, bool);
+    MCVAPI void onAllRemoteConnectionsClosed(enum class Connection::DisconnectFailReason, std::string const &, bool);
     /**
-     * @symbol ?onAllRemoteConnectionsClosed\@NetworkSystem\@\@EEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
+     * @symbol ?onConnectionClosed\@NetworkSystem\@\@EEAAXAEBVNetworkIdentifier\@\@W4DisconnectFailReason\@Connection\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
-    MCVAPI void onAllRemoteConnectionsClosed(std::string const &, bool);
-    /**
-     * @symbol ?onConnectionClosed\@NetworkSystem\@\@EEAAXAEBVNetworkIdentifier\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
-     */
-    MCVAPI void onConnectionClosed(class NetworkIdentifier const &, std::string const &, bool);
+    MCVAPI void onConnectionClosed(class NetworkIdentifier const &, enum class Connection::DisconnectFailReason, std::string const &, bool);
     /**
      * @symbol ?onNewIncomingConnection\@NetworkSystem\@\@EEAAXAEBVNetworkIdentifier\@\@$$QEAV?$shared_ptr\@VNetworkPeer\@\@\@std\@\@\@Z
      */
@@ -142,6 +134,10 @@ public:
      */
     MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class RemoteConnector>> getRemoteConnector();
     /**
+     * @symbol ?getRemoteConnector\@NetworkSystem\@\@QEBA?AV?$not_null\@V?$NonOwnerPointer\@$$CBVRemoteConnector\@\@\@Bedrock\@\@\@gsl\@\@XZ
+     */
+    MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class RemoteConnector const>> getRemoteConnector() const;
+    /**
      * @symbol ?getResourcePackUploadManager\@NetworkSystem\@\@QEAAAEAVResourcePackFileUploadManager\@\@AEAVPacketSender\@\@AEBVNetworkIdentifier\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class ResourcePackFileUploadManager & getResourcePackUploadManager(class PacketSender &, class NetworkIdentifier const &, std::string const &);
@@ -207,6 +203,10 @@ public:
      * @symbol ?_createNetworkStatistics\@NetworkSystem\@\@IEAAXW4TrackerType\@\@$$QEAV?$function\@$$A6A_NAEAURakNetStatistics\@RakNet\@\@\@Z\@std\@\@$$QEAV?$not_null\@V?$NonOwnerPointer\@VNetworkDebugManager\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
     MCAPI void _createNetworkStatistics(enum class TrackerType, class std::function<bool (struct RakNet::RakNetStatistics &)> &&, class gsl::not_null<class Bedrock::NonOwnerPointer<class NetworkDebugManager>> &&);
+    /**
+     * @symbol ?_getTransportLayer\@NetworkSystem\@\@IEBA?AW4TransportLayer\@\@XZ
+     */
+    MCAPI enum class TransportLayer _getTransportLayer() const;
 
 //private:
     /**
@@ -214,9 +214,13 @@ public:
      */
     MCAPI class NetworkConnection * _getConnectionFromId(class NetworkIdentifier const &) const;
     /**
-     * @symbol ?_handlePacketViolation\@NetworkSystem\@\@AEAAXW4StreamReadResult\@\@W4PacketViolationResponse\@\@W4MinecraftPacketIds\@\@AEBVNetworkIdentifier\@\@AEAVNetworkConnection\@\@W4SubClientId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?_handlePacketViolation\@NetworkSystem\@\@AEAAXAEBU?$ErrorInfo\@Verror_code\@std\@\@\@Bedrock\@\@W4PacketViolationResponse\@\@W4MinecraftPacketIds\@\@AEBVNetworkIdentifier\@\@AEAVNetworkConnection\@\@W4SubClientId\@\@\@Z
      */
-    MCAPI void _handlePacketViolation(enum class StreamReadResult, enum class PacketViolationResponse, enum class MinecraftPacketIds, class NetworkIdentifier const &, class NetworkConnection &, enum class SubClientId, std::string const &);
+    MCAPI void _handlePacketViolation(struct Bedrock::ErrorInfo<class std::error_code> const &, enum class PacketViolationResponse, enum class MinecraftPacketIds, class NetworkIdentifier const &, class NetworkConnection &, enum class SubClientId);
+    /**
+     * @symbol ?_isUsingNetherNetTransportLayer\@NetworkSystem\@\@AEBA_NXZ
+     */
+    MCAPI bool _isUsingNetherNetTransportLayer() const;
     /**
      * @symbol ?_sendInternal\@NetworkSystem\@\@AEAAXAEBVNetworkIdentifier\@\@AEBVPacket\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */

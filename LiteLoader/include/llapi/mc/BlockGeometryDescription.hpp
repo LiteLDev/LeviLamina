@@ -37,36 +37,41 @@ public:
     virtual std::string const & getName() const;
     /**
      * @vftbl 2
+     * @symbol __unk_vfn_2
+     */
+    virtual void __unk_vfn_2();
+    /**
+     * @vftbl 3
      * @symbol ?initializeComponent\@BlockGeometryDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
-     * @vftbl 3
+     * @vftbl 4
      * @symbol ?initializeComponentFromCode\@BlockGeometryDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
     virtual void initializeComponentFromCode(class EntityContext &) const;
     /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4();
-    /**
      * @vftbl 5
-     * @symbol ?isNetworkComponent\@BlockGeometryDescription\@\@UEBA_NXZ
+     * @symbol __unk_vfn_5
+     */
+    virtual void __unk_vfn_5();
+    /**
+     * @vftbl 6
+     * @symbol ?isNetworkComponent\@?$NetworkedBlockComponentDescription\@UBlockGeometryDescription\@\@\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl 6
-     * @symbol ?buildNetworkTag\@BlockGeometryDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
+     * @vftbl 7
+     * @symbol ?buildNetworkTag\@?$NetworkedBlockComponentDescription\@UBlockGeometryDescription\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vftbl 7
-     * @symbol ?initializeFromNetwork\@BlockGeometryDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
+     * @vftbl 8
+     * @symbol ?initializeFromNetwork\@?$NetworkedBlockComponentDescription\@UBlockGeometryDescription\@\@\@\@UEAAXAEBVCompoundTag\@\@\@Z
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
     /**
-     * @vftbl 8
+     * @vftbl 9
      * @symbol ?handleVersionBasedInitialization\@BlockGeometryDescription\@\@UEAAXAEBVSemVersion\@\@\@Z
      */
     virtual void handleVersionBasedInitialization(class SemVersion const &);

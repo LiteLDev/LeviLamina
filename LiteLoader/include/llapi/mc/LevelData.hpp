@@ -33,6 +33,10 @@ public:
 
 public:
     /**
+     * @symbol ??0LevelData\@\@QEAA\@_N\@Z
+     */
+    MCAPI LevelData(bool);
+    /**
      * @symbol ??0LevelData\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI LevelData(class LevelData &&);
@@ -40,10 +44,6 @@ public:
      * @symbol ??0LevelData\@\@QEAA\@AEBVLevelSettings\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4GeneratorType\@\@AEBVBlockPos\@\@_NW4EducationEditionOffer\@\@MM\@Z
      */
     MCAPI LevelData(class LevelSettings const &, std::string const &, enum class GeneratorType, class BlockPos const &, bool, enum class EducationEditionOffer, float, float);
-    /**
-     * @symbol ??0LevelData\@\@QEAA\@_N\@Z
-     */
-    MCAPI LevelData(bool);
     /**
      * @symbol ?achievementsWillBeDisabledOnLoad\@LevelData\@\@QEBA_NXZ
      */
@@ -105,13 +105,13 @@ public:
      */
     MCAPI class Abilities & getDefaultAbilities();
     /**
-     * @symbol ?getDefaultPermissions\@LevelData\@\@QEAAAEAVPermissionsHandler\@\@XZ
-     */
-    MCAPI class PermissionsHandler & getDefaultPermissions();
-    /**
      * @symbol ?getDefaultPermissions\@LevelData\@\@QEBAAEBVPermissionsHandler\@\@XZ
      */
     MCAPI class PermissionsHandler const & getDefaultPermissions() const;
+    /**
+     * @symbol ?getDefaultPermissions\@LevelData\@\@QEAAAEAVPermissionsHandler\@\@XZ
+     */
+    MCAPI class PermissionsHandler & getDefaultPermissions();
     /**
      * @symbol ?getEduSharedUriResource\@LevelData\@\@QEBAAEBVCompoundTag\@\@XZ
      */
@@ -133,13 +133,13 @@ public:
      */
     MCAPI bool getEmoteChatMuted() const;
     /**
-     * @symbol ?getExperiments\@LevelData\@\@QEAAAEAVExperiments\@\@XZ
-     */
-    MCAPI class Experiments & getExperiments();
-    /**
      * @symbol ?getExperiments\@LevelData\@\@QEBAAEBVExperiments\@\@XZ
      */
     MCAPI class Experiments const & getExperiments() const;
+    /**
+     * @symbol ?getExperiments\@LevelData\@\@QEAAAEAVExperiments\@\@XZ
+     */
+    MCAPI class Experiments & getExperiments();
     /**
      * @symbol ?getFlatWorldGeneratorOptions\@LevelData\@\@QEBAAEBVValue\@Json\@\@XZ
      */
@@ -468,10 +468,6 @@ public:
      * @symbol ?setHasLockedResourcePack\@LevelData\@\@QEAAX_N\@Z
      */
     MCAPI void setHasLockedResourcePack(bool);
-    /**
-     * @symbol ?setIsEditorWorld\@LevelData\@\@QEAAX_N\@Z
-     */
-    MCAPI void setIsEditorWorld(bool);
     /**
      * @symbol ?setLANBroadcast\@LevelData\@\@QEAAX_N\@Z
      */

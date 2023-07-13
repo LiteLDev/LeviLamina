@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 #include "Packet.hpp"
 
 #define BEFORE_EXTRA
@@ -46,9 +47,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 4
-     * @symbol ?read\@CompressedBiomeDefinitionListPacket\@\@UEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?read\@CompressedBiomeDefinitionListPacket\@\@UEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual struct ExtendedStreamReadResult read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, class std::error_code> read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPRESSEDBIOMEDEFINITIONLISTPACKET
     /**
      * @symbol __unk_destructor_-1

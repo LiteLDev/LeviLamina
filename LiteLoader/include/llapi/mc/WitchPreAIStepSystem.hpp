@@ -37,10 +37,6 @@ public:
      * @symbol ?_doWitchPreAIStepSystem\@WitchPreAIStepSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
      */
     MCAPI static void _doWitchPreAIStepSystem(class StrictEntityContext const &, class ActorOwnerComponent &);
-    /**
-     * @symbol ?_tickWitchPreAIStepSystem\@WitchPreAIStepSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UWitchFlag\@\@\@\@\@\@VActorOwnerComponent\@\@\@\@\@Z
-     */
-    MCAPI static void _tickWitchPreAIStepSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct WitchFlag>>, class ActorOwnerComponent>);
 
 private:
 

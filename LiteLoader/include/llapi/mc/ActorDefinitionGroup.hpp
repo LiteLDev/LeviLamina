@@ -54,6 +54,10 @@ public:
      */
     MCAPI class ActorDefinitionPtr tryGetDefinitionGroup(std::string const &, std::string const &);
     /**
+     * @symbol ?forEachComponentOf\@ActorDefinitionGroup\@\@SAXAEAVValue\@Json\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$function\@$$A6AXAEAVValue\@Json\@\@0\@Z\@5\@\@Z
+     */
+    MCAPI static void forEachComponentOf(class Json::Value &, std::string const &, class std::function<void (class Json::Value &, class Json::Value &)> const &);
+    /**
      * @symbol ?loadActorDefinitionIdentifier\@ActorDefinitionGroup\@\@SA_NAEBVValue\@Json\@\@AEBVSemVersion\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI static bool loadActorDefinitionIdentifier(class Json::Value const &, class SemVersion const &, std::string &);

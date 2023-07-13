@@ -34,9 +34,9 @@ public:
      */
     MCAPI void resetAll();
     /**
-     * @symbol ?CATEGORY_NAMES\@DBStoragePerformanceData\@\@2V?$array\@PEBD$0M\@\@std\@\@A
+     * @symbol ?CATEGORY_NAMES\@DBStoragePerformanceData\@\@2V?$array\@PEBD$0N\@\@std\@\@A
      */
-    MCAPI static class std::array<char const *, 12> CATEGORY_NAMES;
+    MCAPI static class std::array<char const *, 13> CATEGORY_NAMES;
     /**
      * @symbol ?OPERATION_NAMES\@DBStoragePerformanceData\@\@2V?$array\@PEBD$03\@std\@\@A
      */

@@ -197,7 +197,7 @@ std::optional<Actor*> EntityClass::tryExtractActor(Local<Value> v) {
 // 成员函数
 void EntityClass::set(Actor* actor) {
     __try {
-        id = actor->getUniqueID();
+        id = actor->getOrCreateUniqueID();
     } __except (EXCEPTION_EXECUTE_HANDLER) { isValid = false; }
 }
 
@@ -225,7 +225,7 @@ Local<Value> EntityClass::getUniqueID() {
         if (!entity)
             return Local<Value>();
         else
-            return String::newString(std::to_string(entity->getUniqueID().id));
+            return String::newString(std::to_string(entity->getOrCreateUniqueID().id));
     }
     CATCH("Fail in getUniqueID!")
 }

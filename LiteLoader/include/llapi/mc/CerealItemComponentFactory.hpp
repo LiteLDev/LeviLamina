@@ -40,9 +40,9 @@ public:
      */
     MCAPI static void addAllComponentUpgrades(class CerealDocumentUpgrader &);
     /**
-     * @symbol ?bindAllComponentSchemas\@CerealItemComponentFactory\@\@SAXAEAVSchemaFactory\@reflection\@\@AEBVSemVersion\@\@\@Z
+     * @symbol ?bindAllComponentSchemas\@CerealItemComponentFactory\@\@SAXAEAVSchemaFactory\@cereal\@\@AEBVSemVersion\@\@\@Z
      */
-    MCAPI static void bindAllComponentSchemas(class reflection::SchemaFactory &, class SemVersion const &);
+    MCAPI static void bindAllComponentSchemas(class cereal::SchemaFactory &, class SemVersion const &);
     /**
      * @symbol ?constructItemComponent\@CerealItemComponentFactory\@\@SA?AV?$shared_ptr\@VItemComponent\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
      */
@@ -59,14 +59,30 @@ public:
      * @symbol ?isRegisteredComponent\@CerealItemComponentFactory\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI static bool isRegisteredComponent(std::string const &);
+    /**
+     * @symbol ?registerDeprecatedComponent\@CerealItemComponentFactory\@\@SAX$$QEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
+     */
+    MCAPI static void registerDeprecatedComponent(std::string const &&, std::string const &&);
+    /**
+     * @symbol ?resetItemContext\@CerealItemComponentFactory\@\@SAXXZ
+     */
+    MCAPI static void resetItemContext();
+    /**
+     * @symbol ?setItemContext\@CerealItemComponentFactory\@\@SAXPEAVComponentItem\@\@\@Z
+     */
+    MCAPI static void setItemContext(class ComponentItem *);
 
 //private:
     /**
-     * @symbol ?updateReleasedMinFormatVersionForAnyComponent\@CerealItemComponentFactory\@\@CAXVSemVersion\@\@\@Z
+     * @symbol ?updateReleasedMinFormatVersionForAnyComponentIfLower\@CerealItemComponentFactory\@\@CAXVSemVersion\@\@\@Z
      */
-    MCAPI static void updateReleasedMinFormatVersionForAnyComponent(class SemVersion);
+    MCAPI static void updateReleasedMinFormatVersionForAnyComponentIfLower(class SemVersion);
 
 private:
+    /**
+     * @symbol ?mDeprecatedComponents\@CerealItemComponentFactory\@\@0V?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VSemVersion\@\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VSemVersion\@\@\@std\@\@\@2\@\@std\@\@A
+     */
+    MCAPI static class std::unordered_map<std::string, class SemVersion, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, class SemVersion>>> mDeprecatedComponents;
     /**
      * @symbol ?mItemContext\@CerealItemComponentFactory\@\@0PEAVComponentItem\@\@EA
      */

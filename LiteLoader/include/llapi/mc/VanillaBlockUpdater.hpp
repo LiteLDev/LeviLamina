@@ -95,6 +95,10 @@ public:
      * @symbol ?addUpdaters_1_20_0\@VanillaBlockUpdater\@\@CAXAEAVCompoundTagUpdaterContext\@\@\@Z
      */
     MCAPI static void addUpdaters_1_20_0(class CompoundTagUpdaterContext &);
+    /**
+     * @symbol ?addUpdaters_1_20_10\@VanillaBlockUpdater\@\@CAXAEAVCompoundTagUpdaterContext\@\@\@Z
+     */
+    MCAPI static void addUpdaters_1_20_10(class CompoundTagUpdaterContext &);
 
 private:
     /**

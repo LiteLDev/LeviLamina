@@ -61,10 +61,6 @@ public:
      * @symbol ?_preRailMovementCalculateMinecartPositionSystem\@MinecartMoveAlongRailSystem\@\@CAXAEBVStrictEntityContext\@\@AEBUOffsetsComponent\@\@AEBUStateVectorComponent\@\@AEAUFallDistanceComponent\@\@AEAUSnapOnRailComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UActorSetPositionRequestComponent\@\@\@\@AEBVIConstBlockSource\@\@\@Z
      */
     MCAPI static void _preRailMovementCalculateMinecartPositionSystem(class StrictEntityContext const &, struct OffsetsComponent const &, struct StateVectorComponent const &, struct FallDistanceComponent &, struct SnapOnRailComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct ActorSetPositionRequestComponent>, class IConstBlockSource const &);
-    /**
-     * @symbol ?_tickCalculateRailMovementSystem\@MinecartMoveAlongRailSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBVRailMovementComponent\@\@USnapOnRailComponent\@\@UStateVectorComponent\@\@V?$Optional\@$$CBUVehicleComponent\@\@\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@\@\@$$CBUActorRotationComponent\@\@$$CBULocalMoveVelocityComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UMoveRequestComponent\@\@\@\@\@Z
-     */
-    MCAPI static void _tickCalculateRailMovementSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, class RailMovementComponent const, struct SnapOnRailComponent, struct StateVectorComponent, class Optional<struct VehicleComponent const>>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PlayerComponentFlag>>, struct ActorRotationComponent const, struct LocalMoveVelocityComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MoveRequestComponent>);
 
 private:
 

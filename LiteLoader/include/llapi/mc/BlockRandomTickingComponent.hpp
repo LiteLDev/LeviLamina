@@ -27,9 +27,15 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKRANDOMTICKINGCOMPONENT
     /**
-     * @symbol ??1BlockRandomTickingComponent\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI ~BlockRandomTickingComponent();
+    MCVAPI ~BlockRandomTickingComponent();
+#endif
+    /**
+     * @symbol ??0BlockRandomTickingComponent\@\@QEAA\@$$QEAU0\@\@Z
+     */
+    MCAPI BlockRandomTickingComponent(struct BlockRandomTickingComponent &&);
 
 };

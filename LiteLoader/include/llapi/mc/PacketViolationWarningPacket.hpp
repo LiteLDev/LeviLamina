@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 #include "Packet.hpp"
 
 #define BEFORE_EXTRA
@@ -51,9 +52,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@PacketViolationWarningPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@PacketViolationWarningPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKETVIOLATIONWARNINGPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -65,8 +66,8 @@ public:
      */
     MCAPI PacketViolationWarningPacket();
     /**
-     * @symbol ??0PacketViolationWarningPacket\@\@QEAA\@W4StreamReadResult\@\@W4PacketViolationResponse\@\@W4MinecraftPacketIds\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ??0PacketViolationWarningPacket\@\@QEAA\@AEBVerror_code\@std\@\@W4PacketViolationResponse\@\@W4MinecraftPacketIds\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@2\@\@Z
      */
-    MCAPI PacketViolationWarningPacket(enum class StreamReadResult, enum class PacketViolationResponse, enum class MinecraftPacketIds, std::string const &);
+    MCAPI PacketViolationWarningPacket(class std::error_code const &, enum class PacketViolationResponse, enum class MinecraftPacketIds, std::string const &);
 
 };

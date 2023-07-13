@@ -28,14 +28,6 @@ public:
 
 public:
     /**
-     * @symbol ?createBoatInsideBubbleColumnSystem\@InsideBubbleColumnSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI static struct TickingSystemWithInfo createBoatInsideBubbleColumnSystem();
-    /**
-     * @symbol ?createBubbleColumnMovementSystem\@InsideBubbleColumnSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI static struct TickingSystemWithInfo createBubbleColumnMovementSystem();
-    /**
      * @symbol ?createSpawnBubbleColumnParticlesSystem\@InsideBubbleColumnSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSpawnBubbleColumnParticlesSystem();

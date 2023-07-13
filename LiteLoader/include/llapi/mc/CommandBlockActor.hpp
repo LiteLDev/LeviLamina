@@ -96,6 +96,11 @@ public:
      */
     virtual void setCustomName(std::string const &);
     /**
+     * @vftbl 30
+     * @symbol __unk_vfn_30
+     */
+    virtual void __unk_vfn_30();
+    /**
      * @vftbl 31
      * @symbol __unk_vfn_31
      */
@@ -121,22 +126,27 @@ public:
      */
     virtual void __unk_vfn_35();
     /**
-     * @vftbl 38
-     * @symbol __unk_vfn_38
+     * @vftbl 36
+     * @symbol __unk_vfn_36
      */
-    virtual void __unk_vfn_38();
+    virtual void __unk_vfn_36();
     /**
      * @vftbl 39
+     * @symbol __unk_vfn_39
+     */
+    virtual void __unk_vfn_39();
+    /**
+     * @vftbl 40
      * @symbol ?_getUpdatePacket\@CommandBlockActor\@\@MEAA?AV?$unique_ptr\@VBlockActorDataPacket\@\@U?$default_delete\@VBlockActorDataPacket\@\@\@std\@\@\@std\@\@AEAVBlockSource\@\@\@Z
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @vftbl 40
+     * @vftbl 41
      * @symbol ?_onUpdatePacket\@CommandBlockActor\@\@MEAAXAEBVCompoundTag\@\@AEAVBlockSource\@\@\@Z
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
     /**
-     * @vftbl 41
+     * @vftbl 42
      * @symbol ?_playerCanUpdate\@CommandBlockActor\@\@MEBA_NAEBVPlayer\@\@\@Z
      */
     virtual bool _playerCanUpdate(class Player const &) const;

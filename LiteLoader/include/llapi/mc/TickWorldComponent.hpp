@@ -29,13 +29,13 @@ public:
 
 public:
     /**
-     * @symbol ??0TickWorldComponent\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI TickWorldComponent(class TickWorldComponent &&);
-    /**
      * @symbol ??0TickWorldComponent\@\@QEAA\@XZ
      */
     MCAPI TickWorldComponent();
+    /**
+     * @symbol ??0TickWorldComponent\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI TickWorldComponent(class TickWorldComponent &&);
     /**
      * @symbol ?getChunkRadius\@TickWorldComponent\@\@QEBAIXZ
      */
