@@ -111,12 +111,12 @@ void Player::setAbility(AbilitiesIndex index, bool value) {
 
 float Player::getCameraOffset() {
     if (isGliding())
-        return 1.1;
+        return 1.1f;
     if (isSwimming() || getDamageNearbyMobs())
-        return 1.2;
+        return PLAYER_SWIMMING_CAMERA_OFFSET;
     if (isSleeping())
-        return 1.0;
-    return 0.0;
+        return PLAYER_SLEEPING_HEIGHT;
+    return DEFAULT_PLAYER_HEIGHT_OFFSET;
 }
 
 std::string Player::getRealName() {
