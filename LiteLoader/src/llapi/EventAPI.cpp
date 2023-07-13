@@ -441,14 +441,19 @@ TClasslessInstanceHook(bool,
 int num = 0;
 
 /////////////////// PlayerJump ///////////////////
-TInstanceHook(void, "?jumpFromGround@Player@@UEAAXAEBVIConstBlockSource@@@Z", Player, void* a2) {
-    IF_LISTENED(PlayerJumpEvent) {
-        PlayerJumpEvent ev{};
-        ev.mPlayer = this;
-        ev.call();
+THook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPlayerActionPacket@@@Z",
+      ServerNetworkHandler * self, NetworkIdentifier * a2, PlayerActionPacket * a3)
+{
+    auto pl = self->getServerPlayer(*a2);
+    if (pl && a3->actionType == PlayerActionType::Jump){
+        IF_LISTENED(PlayerJumpEvent) {
+            PlayerJumpEvent ev{};
+            ev.mPlayer = pl;
+            ev.call();
+        }
+        IF_LISTENED_END(PlayerJumpEvent)
     }
-    IF_LISTENED_END(PlayerJumpEvent)
-    return original(this, a2);
+    original(self, a2, a3);
 }
 
 /////////////////// PlayerSneak ///////////////////
