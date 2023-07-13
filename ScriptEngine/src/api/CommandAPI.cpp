@@ -12,6 +12,7 @@
 #include "engine/EngineOwnData.h"
 #include <llapi/utils/STLHelper.h>
 #include <llapi/mc/CommandBlockName.hpp>
+#include <llapi/mc/BlockStateCommandParam.hpp>
 #include <llapi/mc/CommandBlockNameResult.hpp>
 #include <llapi/RegCommandAPI.h>
 #include <filesystem>
