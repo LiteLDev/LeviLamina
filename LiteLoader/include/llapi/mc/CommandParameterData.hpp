@@ -53,7 +53,7 @@ public:
         , name(describe)
         , desc(enumName)
         , fix_symbol(-1)
-        , unk64("")
+        , unk64(nullptr)
         , unk72(-1)
         , type(type)
         , offset(offset)
