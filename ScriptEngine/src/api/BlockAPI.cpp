@@ -291,19 +291,7 @@ Local<Value> BlockClass::getNbt(const Arguments& args) {
 }
 
 Local<Value> BlockClass::setNbt(const Arguments& args) {
-    CHECK_ARGS_COUNT(args, 1);
-
-    try {
-        auto nbt = NbtCompoundClass::extract(args[0]);
-        if (!nbt)
-            return Local<Value>(); // Null
-
-        // update Pre Data
-        Level::setBlock(pos.getBlockPos(), pos.dim, Block::create(nbt));
-        preloadData(pos.getBlockPos(), pos.getDimensionId());
-        return Boolean::newBoolean(true);
-    }
-    CATCH("Fail in setNbt!")
+    return Boolean::newBoolean(false);
 }
 
 Local<Value> BlockClass::getBlockState(const Arguments& args) {

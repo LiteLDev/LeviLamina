@@ -33,23 +33,19 @@ public:
 
     LIAPI std::string getTypeName() const;
     LIAPI int getId() const;
-    inline unsigned short getTileData(){
+    inline unsigned short getTileData() const {
         return static_cast<unsigned short>(getVariant());
     }
 
     /**
      * @brief Obtain a copy of the NBT associated with this block. To obtain a reference to the original instance, use block->getSerializationId().
      */
-    LIAPI std::unique_ptr<CompoundTag> getNbt();
+    LIAPI std::unique_ptr<CompoundTag> getNbt() const;
+    [[deprecated("DO NOT USE THIS")]]
     LIAPI bool setNbt(CompoundTag* nbt);
 
     inline unsigned short getData() const {
         return dAccess<unsigned short, 8>(this);
-    }
-
-    [[deprecated("Use MCAPI getLegacyBlock() instead.")]]
-    inline class BlockLegacy const* getLegacyBlockPtr() const {
-        return reinterpret_cast<class BlockLegacy const*>(&this->getLegacyBlock());
     }
 
     inline bool operator==(class Block const& block) const {
