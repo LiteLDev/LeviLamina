@@ -45,43 +45,50 @@ public:
     struct OverloadData
     {
         std::vector<ParamData> datas;
+        bool chained;
     };
     struct CommandData
     {
-        std::string name;                    //0
-        std::string description;             //32
-        CommandFlag flag;                    //64
-        CommandPermissionLevel perm;         //66
-        std::vector<OverloadData> overloads; //72
-        signed int aliasIndex;               //96
-    };//104
+        std::string name;                    // 0
+        std::string description;             // 32
+        CommandFlag flag;                    // 64
+        CommandPermissionLevel perm;         // 66
+        std::vector<OverloadData> overloads; // 72
+        std::vector<int> chainedOffsets;     // 96
+        signed int aliasIndex;               // 120
+    };                                       // 128
     struct SoftEnumData
     {
         std::string name;
         std::vector<std::string> values;
-    };//56
-
+    };
+    struct ChainedSubcommandDataValue
+    {
+        unsigned int index;
+        unsigned int value;
+    };
     struct ChainedSubcommandData
     {
-
+        std::string name;
+        std::vector<ChainedSubcommandDataValue> valueIndices;
     };
 
-std::vector<std::string> mAllEnums;//48
-std::vector<std::string> mChainedSubcommandValues;// 72
-std::vector<std::string> mAllSuffix; // 96
-std::vector<EnumData> mEnumDatas;//120
-std::vector<ChainedSubcommandData> mChainedSubcommands; // 144
-std::vector<CommandData> mCommandDatas;// 168
-std::vector<SoftEnumData> mSoftEnums;// 192
-std::vector<ConstrainedValueData> mConstrainedValueDatas; //216
-inline void test()
-{
+    std::vector<std::string> mAllEnums;                       // 48
+    std::vector<std::string> mAllSuffix;                      // 48+24=72
+    std::vector<EnumData> mEnumDatas;                         // 48+24*2=96
+    std::vector<std::string> mChainedSubcommandValues;        // 48+24*3=120
+    std::vector<ChainedSubcommandData> mChainedSubcommands;   // 48+24*4=144
+    std::vector<CommandData> mCommandDatas;                   // 48+24*5=168
+    std::vector<SoftEnumData> mSoftEnums;                     // 48+24*6=192
+    std::vector<ConstrainedValueData> mConstrainedValueDatas; // 48+24*7=216
+
+inline void test() {
     static_assert(sizeof(AvailableCommandsPacket) == 240);
     static_assert(sizeof(EnumData) == 56);
-    static_assert(sizeof(CommandData) == 104);
+    static_assert(sizeof(CommandData) == 128);
     static_assert(offsetof(CommandData, perm) == 66);
     static_assert(offsetof(AvailableCommandsPacket, mAllEnums) == 48);
-    static_assert(offsetof(AvailableCommandsPacket, mAllSuffix) == 96);
+    static_assert(offsetof(AvailableCommandsPacket, mAllSuffix) == 72);
     static_assert(offsetof(AvailableCommandsPacket, mConstrainedValueDatas) == 216);
 }
 
