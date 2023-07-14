@@ -97,7 +97,7 @@ Local<Value> BlockEntityClass::setNbt(const Arguments& args) {
 Local<Value> BlockEntityClass::getBlock(const Arguments& args) {
     try {
         BlockPos bp = blockEntity->getPosition();
-        return BlockClass::newBlock(Level::getBlock(bp, dim), bp, dim);
+        return BlockClass::newBlock(Level::getBlock(bp, dim), &bp, dim);
     }
     CATCH("Fail in getBlock!")
 }

@@ -63,38 +63,43 @@ ClassDefine<BlockClass> BlockClassBuilder =
 
 //////////////////// Classes ////////////////////
 
-BlockClass::BlockClass(Block const* p) : ScriptClass(ScriptClass::ConstructFromCpp<BlockClass>{}), block((Block*)p) {
+BlockClass::BlockClass(Block const* p)
+: ScriptClass(ScriptClass::ConstructFromCpp<BlockClass>{}), block(const_cast<Block*>(p)) {
     preloadData({0, 0, 0}, -1);
 }
 
-BlockClass::BlockClass(Block const* p, BlockPos const& bp, int dim)
-: ScriptClass(ScriptClass::ConstructFromCpp<BlockClass>{}), block((Block*)p) {
+BlockClass::BlockClass(Block const* p, BlockPos bp, int dim)
+: ScriptClass(ScriptClass::ConstructFromCpp<BlockClass>{}), block(const_cast<Block*>(p)) {
     preloadData(bp, dim);
 }
 
 // generating function
-Local<Object> BlockClass::newBlock(Block const* p, BlockPos const& pos, int dim) {
-    auto newp = new BlockClass(p, pos, dim);
+Local<Object> BlockClass::newBlock(Block const* p, BlockPos const* pos, int dim) {
+    auto newp = new BlockClass(p, *pos, dim);
     return newp->getScriptObject();
 }
 
-Local<Object> BlockClass::newBlock(BlockPos const& pos, int dim) {
-    return BlockClass::newBlock(Level::getBlock(pos, dim), pos, dim);
+Local<Object> BlockClass::newBlock(BlockPos const* pos, int dim) {
+    return BlockClass::newBlock(Level::getBlock(const_cast<BlockPos*>(pos), dim), pos, dim);
 }
 
-Local<Object> BlockClass::newBlock(Block const* p, BlockPos const& pos, BlockSource const* bs) {
-    auto newp = new BlockClass(p, pos, bs->getDimensionId());
+Local<Object> BlockClass::newBlock(const BlockPos& pos, int dim) {
+    return newBlock((BlockPos*)&pos, dim);
+}
+
+Local<Object> BlockClass::newBlock(Block const* p, BlockPos const* pos, BlockSource const* bs) {
+    auto newp = new BlockClass(p, *pos, bs->getDimensionId());
     return newp->getScriptObject();
 }
 
 Local<Object> BlockClass::newBlock(IntVec4 pos) {
     BlockPos bp = {pos.x, pos.y, pos.z};
-    return BlockClass::newBlock(Level::getBlock(bp, pos.dim), bp, pos.dim);
+    return BlockClass::newBlock(Level::getBlock(bp, pos.dim), &bp, pos.dim);
 }
 
 Local<Object> BlockClass::newBlock(BlockInstance block) {
     BlockPos bp = block.getPosition();
-    return BlockClass::newBlock(block.getBlock(), bp, block.getDimensionId());
+    return BlockClass::newBlock(block.getBlock(), &bp, block.getDimensionId());
 }
 
 Block* BlockClass::extract(Local<Value> v) {
@@ -105,7 +110,7 @@ Block* BlockClass::extract(Local<Value> v) {
 }
 
 // member function
-void BlockClass::preloadData(BlockPos const& bp, int dim) {
+void BlockClass::preloadData(BlockPos bp, int dim) {
     name = block->getName().getString(); // TODO
     type = block->getName().getString();
     id = block->getId();
@@ -291,7 +296,19 @@ Local<Value> BlockClass::getNbt(const Arguments& args) {
 }
 
 Local<Value> BlockClass::setNbt(const Arguments& args) {
-    return Boolean::newBoolean(false);
+    CHECK_ARGS_COUNT(args, 1);
+
+    try {
+        auto nbt = NbtCompoundClass::extract(args[0]);
+        if (!nbt)
+            return Local<Value>(); // Null
+
+        // update Pre Data
+        Level::setBlock(pos.getBlockPos(), pos.dim, (CompoundTag*)nbt);
+        preloadData(pos.getBlockPos(), pos.getDimensionId());
+        return Boolean::newBoolean(true);
+    }
+    CATCH("Fail in setNbt!")
 }
 
 Local<Value> BlockClass::getBlockState(const Arguments& args) {
@@ -391,7 +408,7 @@ Local<Value> McClass::getBlock(const Arguments& args) {
             return Local<Value>();
         }
         BlockPos bp{pos.x, pos.y, pos.z};
-        return BlockClass::newBlock(block, bp, pos.dim);
+        return BlockClass::newBlock(block, &bp, pos.dim);
     }
     CATCH("Fail in GetBlock!")
 }
@@ -452,12 +469,11 @@ Local<Value> McClass::setBlock(const Arguments& args) {
 
         if (block.isString()) {
             // block name
-            return Boolean::newBoolean(
-                Level::setBlock(pos.getBlockPos(), pos.dim, Block::create(block.toStr(), tileData)));
+            return Boolean::newBoolean(Level::setBlock(pos.getBlockPos(), pos.dim, block.toStr(), tileData));
         } else if (IsInstanceOf<NbtCompoundClass>(block)) {
             // Nbt
             Tag* nbt = NbtCompoundClass::extract(block);
-            return Boolean::newBoolean(Level::setBlock(pos.getBlockPos(), pos.dim, Block::create((CompoundTag*)nbt)));
+            return Boolean::newBoolean(Level::setBlock(pos.getBlockPos(), pos.dim, (CompoundTag*)nbt));
         } else {
             // other block object
             Block* bl = BlockClass::extract(block);

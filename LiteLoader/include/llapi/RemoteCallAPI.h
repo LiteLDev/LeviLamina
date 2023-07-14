@@ -103,7 +103,7 @@ struct BlockType {
     BlockType(BlockInstance instance)
     : instance(instance){};
     BlockType(Block const* ptr)
-    : instance(BlockInstance(ptr, BlockPos::ZERO, -1)){};
+    : instance(BlockInstance::createBlockInstance(const_cast<Block*>(ptr), BlockPos::ZERO, -1)){};
     template <typename RTN>
     inline RTN get() = delete;
     template <>

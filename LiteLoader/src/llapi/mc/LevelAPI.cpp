@@ -47,16 +47,16 @@ Dimension* Level::getDimensionPtr(class AutomaticID<class Dimension, int> dimId)
     return Global<Level>->getDimension(dimId).get();
 }
 
-Block const* Level::getBlock(const BlockPos& pos, int dimId) {
+Block* Level::getBlock(const BlockPos& pos, int dimId) {
     return getBlock(pos, Level::getBlockSource(dimId));
 }
 
-Block const* Level::getBlock(const BlockPos& pos, BlockSource* blockSource) {
-    return &(blockSource->getBlock(pos));
+Block* Level::getBlock(const BlockPos& pos, BlockSource* blockSource) {
+    return (Block*)&(blockSource->getBlock(pos));
 }
 
 // Return nullptr when failing to get block
-Block const* Level::getBlockEx(const BlockPos& pos, int dimId) {
+Block* Level::getBlockEx(const BlockPos& pos, int dimId) {
     auto dim = Level::getDimensionPtr(dimId);
     if (!dim)
         return nullptr;
@@ -71,7 +71,7 @@ Block const* Level::getBlockEx(const BlockPos& pos, int dimId) {
         return nullptr;
 
     ChunkBlockPos cbpos = ChunkBlockPos(pos, minHeight);
-    return &lc->getBlock(cbpos);
+    return const_cast<Block*>(&lc->getBlock(cbpos));
 }
 
 BlockInstance Level::getBlockInstance(const BlockPos& pos, int dim) {
@@ -90,7 +90,7 @@ BlockActor* Level::getBlockEntity(const BlockPos& pos, BlockSource* blockSource)
     return blockSource->getBlockEntity(pos);
 }
 
-bool Level::setBlock(const BlockPos& pos, int dim, Block const* block) {
+bool Level::setBlock(const BlockPos& pos, int dim, Block* block) {
     BlockSource* bs = getBlockSource(dim);
     return bs->setBlock(pos, *block, 3, nullptr, nullptr); // updateFlag = 3 from IDA SetBlockCommand::execute()
 }
