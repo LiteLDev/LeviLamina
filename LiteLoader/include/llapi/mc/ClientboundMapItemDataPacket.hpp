@@ -22,7 +22,7 @@ class ClientboundMapItemDataPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
-    char val[0xC8]{};
+    char val[0x98]{};
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTBOUNDMAPITEMDATAPACKET
