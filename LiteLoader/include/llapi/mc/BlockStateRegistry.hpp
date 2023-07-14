@@ -14,8 +14,7 @@
 class BlockStateRegistry {
 
 #define AFTER_EXTRA
-public:
-    std::unordered_map<class HashedString, class BlockState const* > mBlockStateMap;
+
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSTATEREGISTRY
 public:

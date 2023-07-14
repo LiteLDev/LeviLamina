@@ -25,7 +25,7 @@ public:
         return block;
     }
     BlockInstance toBlockInstance() {
-        return BlockInstance(block, pos.getBlockPos(), pos.getDimensionId());
+        return BlockInstance::createBlockInstance(block, pos.getBlockPos(), pos.getDimensionId());
     }
 
 

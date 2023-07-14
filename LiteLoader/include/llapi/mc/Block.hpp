@@ -22,14 +22,8 @@ class Block {
 #define AFTER_EXTRA
     // Add new members to class
 public:
-    using BlockStateValueType = std::variant<bool, int, std::string>;
-    using BlockStateType = std::pair<std::string, BlockStateValueType>;
-
-    LIAPI static Block const* create(const std::string& name, unsigned short tileData);
-    LIAPI static Block const* create(const std::string& name, std::vector<BlockStateType> const& states);
-    LIAPI static Block const* create(const std::string& name);
-    LIAPI static Block const* create(unsigned int runtimeid);
-    LIAPI static Block const* create(CompoundTag* nbt);
+    LIAPI static Block* create(const std::string& str, unsigned short tileData);
+    LIAPI static Block* create(CompoundTag* nbt);
 
     LIAPI std::string getTypeName() const;
     LIAPI int getId() const;
