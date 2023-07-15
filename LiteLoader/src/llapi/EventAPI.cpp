@@ -649,24 +649,25 @@ TClasslessInstanceHook(void, "?sendBlockDestructionStarted@BlockEventCoordinator
 }
 
 /////////////////// PlayerPlaceBlock ///////////////////
-// #include "llapi/mc/ItemUseInventoryTransaction.hpp"
+#include "llapi/mc/ItemUseInventoryTransaction.hpp"
 
-TInstanceHook(bool, "?mayPlace@BlockSource@@QEAA_NAEBVBlock@@AEBVBlockPos@@EPEAVActor@@_NVVec3@@@Z",
-              BlockSource, Block* bl, BlockPos* blockPosPtr, unsigned __int8 facing, Actor* ac, bool a6, Vec3 a7) {
+TInstanceHook(char, "?checkBlockPermissions@BlockSource@@QEAA_NAEAVActor@@AEBVBlockPos@@EAEBVItemStackBase@@_N@Z",
+              BlockSource, Actor* ac, BlockPos* blockPosPtr, unsigned __int8 facing, ItemStackBase* item, bool a6) {
     if (ac->isPlayer()) {
         IF_LISTENED(PlayerPlaceBlockEvent) {
             auto player = (Player*)ac;
             PlayerPlaceBlockEvent ev{};
             ev.mPlayer = player;
+            blockPosPtr->add(BlockPos(facing == 5 ? 1 : facing == 4 ? -1 : 0, facing == 1 ? 1 : facing == 0 ? -1 : 0, facing == 3 ? 1 : facing == 2 ? -1 : 0));
             ev.mBlockInstance = this->getBlockInstance(*blockPosPtr);
             if (!ev.call()) { // this pointer is not used.
-                // ((ItemUseInventoryTransaction*)nullptr)->resendBlocksAroundArea(*player, *blockPosPtr, facing);
+                ((ItemUseInventoryTransaction*)nullptr)->resendBlocksAroundArea(*player, *blockPosPtr, facing);
                 return false;
             }
         }
         IF_LISTENED_END(PlayerPlaceBlockEvent)
     }
-    return original(this, bl, blockPosPtr, facing, ac, a6, a7);
+    return original(this, ac, blockPosPtr, facing, item, a6);
 }
 
 /////////////////// BlockPlacedByPlayerEvent ///////////////////
