@@ -243,7 +243,6 @@ inline void CommandRegistry::printSize() const {
     log["mCommandSymbols          "].append(fmt::format(", {:4}", mCommandSymbols.size()));
     log["mSignatures              "].append(fmt::format(", {:4}", mSignatures.size()));
     log["mTypeLookup              "].append(fmt::format(", {:4}", mTypeLookup.size()));
-    log["unk376                   "].append(fmt::format(", {:4}", unk376.size()));
     log["mAliases                 "].append(fmt::format(", {:4}", mAliases.size()));
     log["mSemanticConstraints     "].append(fmt::format(", {:4}", mSemanticConstraints.size()));
     log["mSemanticConstraintLookup"].append(fmt::format(", {:4}", mSemanticConstraintLookup.size()));
