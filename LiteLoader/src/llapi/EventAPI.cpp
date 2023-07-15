@@ -658,9 +658,11 @@ TInstanceHook(char, "?checkBlockPermissions@BlockSource@@QEAA_NAEAVActor@@AEBVBl
             auto player = (Player*)ac;
             PlayerPlaceBlockEvent ev{};
             ev.mPlayer = player;
-            ev.mBlockInstance = this->getBlockInstance(BlockPos(blockPosPtr->x + facing == 5 ? 1 : facing == 4 ? -1 : 0,
-                                                                blockPosPtr->y + facing == 1 ? 1 : facing == 0 ? -1 : 0,
-                                                                blockPosPtr->z + facing == 3 ? 1 : facing == 2 ? -1 : 0));
+            int x = blockPosPtr->x + (facing == 5 ? 1 : (facing == 4 ? -1 : 0));
+            int y = blockPosPtr->y + (facing == 1 ? 1 : (facing == 0 ? -1 : 0));
+            int z = blockPosPtr->z + (facing == 3 ? 1 : (facing == 2 ? -1 : 0));
+            BlockPos pos(x, y, z);
+            ev.mBlockInstance = this->getBlockInstance(pos);
             if (!ev.call()) { // this pointer is not used.
                 ((ItemUseInventoryTransaction*)nullptr)->resendBlocksAroundArea(*player, *blockPosPtr, facing);
                 return false;
