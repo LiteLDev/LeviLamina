@@ -267,82 +267,52 @@ public:
     };
 
     using CommandOverrideFunctor = std::function<void __cdecl(struct CommandFlag&, class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>> const&)>;
-    using ParamSymbols = std::array<Symbol, 21>;
+    using ParamSymbols = std::array<Symbol, 23>;
 
-    std::function<void(const class Packet&)> mGetScoreForObjective;  // 0
-    std::function<void(const class Packet&)> mNetworkUpdateCallback; // 64
-    std::vector<ParseRule> mRules;                                   // 128
-    // map<command version, ParseTable>
-    std::map<unsigned int, ParseTable> mParseTableMap;                                      // 152
-    std::vector<OptionalParameterChain> mOptionals;                                         // 168
-    std::vector<std::string> mEnumValues;                                                   // 192
-    std::vector<Enum> mEnums;                                                               // 216
-    std::vector<Factorization> mFactorizations;                                             // 240
-    std::vector<std::string> mPostfixes;                                                    // 264
-    std::map<std::string, unsigned int> mEnumLookup;                                        // 288
-    std::map<std::string, unsigned long> mEnumValueLookup;                                  // 304
-    std::vector<Symbol> mCommandSymbols;                                                    // 320
-    std::map<std::string, Signature> mSignatures;                                           // 344
-    std::map<Bedrock::typeid_t<CommandRegistry>, int> mTypeLookup;                          // 360
-    std::map<char, char> unk376;                                                            // 376
-    std::map<std::string, std::string> mAliases;                                            // 392
-    std::vector<SemanticConstraint> mSemanticConstraints;                                   // 408
-    std::map<SemanticConstraint, unsigned char> mSemanticConstraintLookup;                  // 432
-    std::vector<ConstrainedValue> mConstrainedValues;                                       // 448
-    std::map<std::pair<unsigned long, unsigned int>, unsigned int> mConstrainedValueLookup; // 472
-    std::vector<SoftEnum> mSoftEnums;                                                       // 488
-    std::map<std::string, unsigned int> mSoftEnumLookup;                                    // 512
-    std::vector<RegistryState> mStateStack;                                                 // 528
-    ParamSymbols mArgs;                                                                     // 552
-    CommandOverrideFunctor mCommandOverrideFunctor;                                         // 640
-    // 704
+    std::function<void(const class Packet&)> mGetScoreForObjective;//0
+    std::function<void(const class Packet&)> mNetworkUpdateCallback;//64
+    std::vector<ParseRule> mRules;//128
+    std::map<unsigned int, ParseTable> mParseTableMap;//152
+    std::vector<OptionalParameterChain> mOptionals; //168
+    std::vector<std::string> mEnumValues;//192
+    std::vector<CommandRegistry::Enum> mEnums;//216
+    char filler48[48];
+    std::vector<CommandRegistry::Factorization> mFactorizations;//288
+    std::vector<std::string> mPostfixes;//312
+    std::map<std::string,unsigned int> mEnumLookup;//336
+    std::map<std::string,unsigned long> mEnumValueLookup;//352
+    std::vector<CommandRegistry::Symbol> mCommandSymbols;//368
+    char filler32[32];
+    std::map<std::string,CommandRegistry::Signature> mSignatures;//424
+    std::map<Bedrock::typeid_t<CommandRegistry>,int> mTypeLookup;//440
+    std::map<std::string,std::string> mAliases;//456
+    std::vector<SemanticConstraint> mSemanticConstraints;//472
+    std::map<SemanticConstraint, unsigned char> mSemanticConstraintLookup;//496
+    std::vector<ConstrainedValue> mConstrainedValues;//512
+    std::map<std::pair<unsigned long, unsigned int>, unsigned int> mConstrainedValueLookup;//536
+    std::vector<CommandRegistry::SoftEnum> mSoftEnums;//552
+    std::map<std::string,unsigned int> mSoftEnumLookup;//576
+    std::vector<RegistryState> mStateStack; //592
+    ParamSymbols mArgs;//616
+    char filler[64];
+    CommandOverrideFunctor mCommandOverrideFunctor;//712
+    //840
+
+
 
     inline void printAll() const;
     inline void printSize() const;
 
     void test() {
-        auto mParseTableMapCopy = mParseTableMap;
-        auto mEnumLookupCopy = mEnumLookup;
-        auto mEnumValueLookupCopy = mEnumValueLookup;
-        auto mSignaturesCopy = mSignatures;
-        auto mTypeLookupCopy = mTypeLookup;
-        auto unk376Copy = unk376;
-        auto mAliasesCopy = mAliases;
-        auto mSemanticConstraintLookupCopy = mSemanticConstraintLookup;
-        auto mConstrainedValueLookupCopy = mConstrainedValueLookup;
-        auto mSoftEnumLookupCopy = mSoftEnumLookup;
-
         constexpr auto size = sizeof(CommandRegistry);
 
+        static_assert(size == 840);
         static_assert(sizeof(Enum) == 72);
-        static_assert(sizeof(ParseTable) == 48);
-        static_assert(sizeof(ParseRule) == 104);
-        static_assert(sizeof(CommandRegistry) == 0x2c0);
-        static_assert(offsetof(CommandRegistry, mGetScoreForObjective) == 0);
-        static_assert(offsetof(CommandRegistry, mNetworkUpdateCallback) == 64);
-        static_assert(offsetof(CommandRegistry, mRules) == 128);
-        static_assert(offsetof(CommandRegistry, mParseTableMap) == 152);
-        static_assert(offsetof(CommandRegistry, mOptionals) == 168);
         static_assert(offsetof(CommandRegistry, mEnumValues) == 192);
         static_assert(offsetof(CommandRegistry, mEnums) == 216);
-        static_assert(offsetof(CommandRegistry, mFactorizations) == 240);
-        static_assert(offsetof(CommandRegistry, mPostfixes) == 264);
-        static_assert(offsetof(CommandRegistry, mEnumLookup) == 288);
-        static_assert(offsetof(CommandRegistry, mEnumValueLookup) == 304);
-        static_assert(offsetof(CommandRegistry, mCommandSymbols) == 320);
-        static_assert(offsetof(CommandRegistry, mSignatures) == 344);
-        static_assert(offsetof(CommandRegistry, mTypeLookup) == 360);
-        static_assert(offsetof(CommandRegistry, unk376) == 376);
-        static_assert(offsetof(CommandRegistry, mAliases) == 392);
-        static_assert(offsetof(CommandRegistry, mSemanticConstraints) == 408);
-        static_assert(offsetof(CommandRegistry, mSemanticConstraintLookup) == 432);
-        static_assert(offsetof(CommandRegistry, mConstrainedValues) == 448);
-        static_assert(offsetof(CommandRegistry, mConstrainedValueLookup) == 472);
-        static_assert(offsetof(CommandRegistry, mSoftEnums) == 488);
-        static_assert(offsetof(CommandRegistry, mSoftEnumLookup) == 512);
-        static_assert(offsetof(CommandRegistry, mStateStack) == 528);
-        static_assert(offsetof(CommandRegistry, mArgs) == 552);
-        static_assert(offsetof(CommandRegistry, mCommandOverrideFunctor) == 640);
+        static_assert(offsetof(CommandRegistry, mCommandSymbols) == 368);
+        static_assert(offsetof(CommandRegistry, mSignatures) == 424);
+        static_assert(offsetof(CommandRegistry, mSoftEnumLookup) == 576);
     }
 #endif // COMMAND_REGISTRY_EXTRA
 
