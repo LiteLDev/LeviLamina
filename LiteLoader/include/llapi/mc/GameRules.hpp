@@ -9,6 +9,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "HashedString.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -20,6 +21,9 @@ class GameRules {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+        std::vector<GameRule> mGameRules;
+        std::map<HashedString, GameRule, std::less<HashedString>> mWorldPolicies;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMERULES

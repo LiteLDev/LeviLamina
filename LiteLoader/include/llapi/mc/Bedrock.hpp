@@ -29,6 +29,7 @@ class CommandItem;
 class CommandBlockName;
 class CommandWildcardInt;
 enum class ObjectiveSortOrder : char;
+enum class BlockSlot : int;
 
 #undef BEFORE_EXTRA
 

@@ -9,14 +9,16 @@
 #include "Packet.hpp"
 
 #define BEFORE_EXTRA
-
+#include "CompoundTag.hpp"
 #undef BEFORE_EXTRA
 
 
 class CompressedBiomeDefinitionListPacket : public Packet {
 
 #define AFTER_EXTRA
-
+public:
+    CompoundTag mBiomeData;
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&);
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPRESSEDBIOMEDEFINITIONLISTPACKET
 public:

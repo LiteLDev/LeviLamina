@@ -10,6 +10,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "GameRulesChangedPacketData.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -21,6 +22,8 @@ class GameRulesChangedPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+   GameRulesChangedPacketData mRuleData;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMERULESCHANGEDPACKET

@@ -1,6 +1,13 @@
 // clang-format off
 #include <stdint.h>
 
+enum class BlockSlot : int
+{
+    None_86 = -1,
+    Container_0 = 0,
+    _count_28 = 1,
+};
+
 enum class ContainerType : char {
     NONE = -9,
     INVENTORY = -1,

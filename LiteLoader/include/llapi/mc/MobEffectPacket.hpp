@@ -21,6 +21,21 @@ class MobEffectPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    enum class Event : char
+    {
+    Invalid_21 = 0x0,
+    Add_1 = 0x1,
+    Update_0 = 0x2,
+    Remove_0 = 0x3,
+    };
+
+  ActorRuntimeID mRuntimeId;
+  int mEffectDurationTicks;
+  MobEffectPacket::Event mEventId;
+  int mEffectId;
+  int mEffectAmplifier;
+  bool mShowParticles;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEFFECTPACKET
