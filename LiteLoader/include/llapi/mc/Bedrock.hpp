@@ -83,6 +83,7 @@ private:
 
 template <typename E>
 struct ErrorInfo {
+public:
     ErrorInfo() = default;
 
     E& getError() {
@@ -91,7 +92,7 @@ struct ErrorInfo {
 
 private:
     E error;
-    char filler[0x30];
+    char filler[0x30]{};
 };
 static_assert(sizeof(ErrorInfo<std::error_code>) == 0x40);
 
@@ -136,6 +137,7 @@ private:
 
 template <class Err>
 class Result<void, Err> {
+public:
     explicit Result() : mHasValue(true) {}
 
     Result(Result&& other)  noexcept {
