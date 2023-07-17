@@ -25,6 +25,47 @@ public:
         std::vector<GameRule> mGameRules;
         std::map<HashedString, GameRule, std::less<HashedString>> mWorldPolicies;
 
+        enum class GameRulesIndex : int
+        {
+            INVALID_GAME_RULE = -1,
+            COMMAND_BLOCK_OUTPUT = 0x0,
+            DO_DAYLIGHT_CYCLE = 0x1,
+            DO_ENTITY_DROPS = 0x2,
+            DO_FIRE_TICK = 0x3,
+            DO_MOB_LOOT = 0x4,
+            DO_MOB_SPAWNING = 0x5,
+            DO_TILE_DROPS = 0x6,
+            DO_WEATHER_CYCLE = 0x7,
+            DROWNING_DAMAGE = 0x8,
+            FALL_DAMAGE = 0x9,
+            FIRE_DAMAGE = 0xA,
+            KEEP_INVENTORY = 0xB,
+            MOB_GRIEFING = 0xC,
+            PVP = 0xD,
+            SHOW_COORDINATES = 0xE,
+            DO_NATURAL_REGENERATION = 0xF,
+            DO_TNT_EXPLODE = 0x10,
+            SEND_COMMAND_FEEDBACK = 0x11,
+            MAX_COMMAND_CHAIN_LENGTH = 0x12,
+            DO_INSOMNIA = 0x13,
+            COMMAND_BLOCKS_ENABLED = 0x14,
+            RANDOM_TICK_SPEED = 0x15,
+            DO_IMMEDIATE_RESPAWN = 0x16,
+            SHOW_DEATH_MESSAGES = 0x17,
+            FUNCTION_COMMAND_LIMIT = 0x18,
+            PLAYER_SPAWN_RADIUS = 0x19,
+            SHOW_TAGS = 0x1A,
+            FREEZE_DAMAGE = 0x1B,
+            RESPAWN_BLOCKS_EXPLODE = 0x1C,
+            SHOW_BORDER_EFFECT = 0x1D,
+            VANILLA_GAME_RULE_COUNT = 0x1E,
+            GLOBAL_MUTE = 0x1E,
+            ALLOW_DESTRUCTIVE_OBJECTS = 0x1F,
+            ALLOW_MOBS = 0x20,
+            CODE_BUILDER = 0x21,
+            EDU_GAME_RULE_COUNT = 0x22,
+        };
+
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMERULES
 public:
