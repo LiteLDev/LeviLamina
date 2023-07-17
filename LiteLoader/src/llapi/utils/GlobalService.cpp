@@ -17,16 +17,27 @@ TInstanceHook(void, "?initAsDedicatedServer@Minecraft@@QEAAXXZ", Minecraft) {
     original(this);
 }
 // ServerNetworkHandler
-TInstanceHook(void, "?allowIncomingConnections@ServerNetworkHandler@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z",
-              ServerNetworkHandler, std::string const& a1, bool a2) {
+//TInstanceHook(void, "?allowIncomingConnections@ServerNetworkHandler@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z",
+//              ServerNetworkHandler, std::string const& a1, bool a2) {
+//    static bool initd = false;
+//    if (!initd) {
+//        initd = true;
+//        // auto v3 = (ServerNetworkHandler*)((char*)this + 16);
+//        // +16 cause fetchConnectionRequest returns nullptr
+//        Global<ServerNetworkHandler> = this;
+//    }
+//    original(this, a1, a2);
+//}
+
+TInstanceHook(bool, "?allowIncomingPacketId@ServerNetworkHandler@@UEAA_NAEBVNetworkIdentifier@@W4MinecraftPacketIds@@@Z",
+    ServerNetworkHandler, __int64 a2, signed int a3)
+{
     static bool initd = false;
     if (!initd) {
-        initd = true;
-        // auto v3 = (ServerNetworkHandler*)((char*)this + 16);
-        // +16 cause fetchConnectionRequest returns nullptr
         Global<ServerNetworkHandler> = this;
+        initd = true;
     }
-    original(this, a1, a2);
+    return original(this, a2, a3);
 }
 
 // TInstanceHook(ServerNetworkHandler*, "??0ServerNetworkHandler@@QEAA@AEAVGameCallbacks@@AEBV?$NonOwnerPointer@VILevel@@@Bedrock@@AEAVNetworkHandler@@AEAVPrivateKeyManager@@AEAVServerLocator@@AEAVPacketSender@@AEAVAllowList@@PEAVPermissionsFile@@AEBVUUID@mce@@H_NAEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@HAEAVMinecraftCommands@@AEAVIMinecraftApp@@AEBV?$unordered_map@UPackIdVersion@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@UPackIdVersion@@@3@U?$equal_to@UPackIdVersion@@@3@V?$allocator@U?$pair@$$CBUPackIdVersion@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@3@@std@@AEAVScheduler@@V?$NonOwnerPointer@VTextFilteringProcessor@@@3@@Z",
