@@ -10,6 +10,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "CompoundTag.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -21,6 +22,7 @@ class BiomeDefinitionListPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+CompoundTag mBiomeData;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMEDEFINITIONLISTPACKET

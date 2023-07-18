@@ -203,6 +203,55 @@ inline static const char getParticleColorType(ColorPalette const& p) {
     return particleColors.at(p).first;
 }
 
+enum class ImageFormat : __int32
+{
+  Unknown_17 = 0x0,
+  R8Unorm = 0x1,
+  RGB8Unorm = 0x2,
+  RGBA8Unorm = 0x3,
+};
+
+enum class ImageUsage : unsigned char {
+	Unknown = 0x0,
+	sRGB = 0x1,
+	Data = 0x2,
+};
+
+
+struct Blob
+{
+    typedef std::size_t size_type;
+    typedef uint8_t value_type;
+    typedef void (*delete_function)(value_type *);
+    class Deleter
+    {
+        public:
+        delete_function m_func;
+        void operator()(value_type* ptr) const
+        {
+            if (m_func)
+                m_func(ptr);
+            else
+                delete[] ptr;
+        }
+    };
+    typedef std::unique_ptr<unsigned char[],Deleter> pointer_type;
+  pointer_type mBlob;
+  size_type mSize;
+};
+
+
+
+struct Image
+{
+    mce::ImageFormat imageFormat;
+    uint32_t mWidth;
+    uint32_t mHeight;
+    mce::ImageUsage mUsage;
+    mce::Blob mImageBytes;
+};
+
+
 }; // namespace mce
 
 namespace std {

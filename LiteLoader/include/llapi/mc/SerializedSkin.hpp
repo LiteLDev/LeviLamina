@@ -9,6 +9,19 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "mce.hpp"
+#include "AnimatedImageData.hpp"
+#include "SemVersion.hpp"
+#include "SerializedPersonaPieceHandle.hpp"
+#include "persona.hpp"
+#include "TintMapColor.hpp"
+
+enum class TrustedSkinFlag : __int8
+{
+  Unset = 0x0,
+  False = 0x1,
+  True = 0x2,
+};
 
 #undef BEFORE_EXTRA
 
@@ -20,7 +33,31 @@ class SerializedSkin {
 
 #define AFTER_EXTRA
 // Add Member There
-    char filler[0x250];
+public:
+    std::string mId;
+    std::string mPlayFabId;
+    std::string mFullId;
+    std::string mResourcePatch;
+    std::string mDefaultGeometryName;
+    mce::Image mSkinImage;
+    mce::Image mCapeImage;
+    std::vector<AnimatedImageData> mSkinAnimatedImages;
+    Json::Value mGeometryData;
+    SemVersion mGeometryDataEngineVersion;
+    Json::Value mGeometryDataMutable;
+    std::string mAnimationData;
+    std::string mCapeId;
+    std::vector<SerializedPersonaPieceHandle> mPersonaPieces;
+    persona::ArmSize::Type mArmSizeType;
+    std::unordered_map<persona::PieceType, TintMapColor> mPieceTintColors;
+    mce::Color mSkinColor;
+    TrustedSkinFlag mIsTrustedSkin;
+    bool mIsPremium;
+    bool mIsPersona;
+    bool mIsPersonaCapeOnClassicSkin;
+    bool mIsPrimaryUser;
+    bool mOverridesPlayerAppearance;
+    // char filler[0x250];
 #undef AFTER_EXTRA
 public:
     /**
