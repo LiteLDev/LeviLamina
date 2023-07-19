@@ -111,7 +111,7 @@ LIAPI bool Scoreboard::forceRemovePlayerScoreFromObjective(xuid_t const& xuid, s
     auto uuid = PlayerInfo::getUUIDByXuid(xuid);
     if (uuid.empty())
         return false;
-    return removeFromObjective(objname, Global<Scoreboard>->getScoreboardId(uuid));
+    return removeFromObjective(objname, Global<Scoreboard>->getScoreboardId(mce::UUID::fromString(uuid)));
 }
 
 LIAPI Objective* Scoreboard::newObjective(const std::string& objname, const std::string& displayName) {
