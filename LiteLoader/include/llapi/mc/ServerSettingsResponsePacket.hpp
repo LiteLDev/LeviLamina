@@ -21,6 +21,8 @@ class ServerSettingsResponsePacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+  unsigned int mFormId;
+  string mFormJSON;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERSETTINGSRESPONSEPACKET
