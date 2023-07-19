@@ -85,7 +85,7 @@ LIAPI bool Scoreboard::forceModifyPlayerScore(xuid_t const& xuid, std::string co
 
 LIAPI std::optional<int> Scoreboard::queryPlayerScore(mce::UUID const& uuid, std::string const& objname) {
     auto obj = Global<Scoreboard>->getObjective(objname);
-    auto sId = Global<Scoreboard>->getScoreboardId(uuid);
+    auto sId = Global<Scoreboard>->getScoreboardId(mce::UUID::fromString(uuid));
     if (!obj || !sId.isValid() || !obj->hasScore(sId))
         return std::nullopt;
     return obj->getPlayerScore(sId).getCount();
