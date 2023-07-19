@@ -96,7 +96,7 @@ LIAPI std::optional<int> Scoreboard::queryPlayerScore(xuid_t const& xuid, std::s
     auto uuid = PlayerInfo::getUUIDByXuid(xuid);
     if (uuid.empty())
         return std::nullopt;
-    const auto& sId = Global<Scoreboard>->getScoreboardId(uuid);
+    const auto& sId = Global<Scoreboard>->getScoreboardId(mce::UUID::fromString(uuid));
     if (!obj || !sId.isValid() || !obj->hasScore(sId))
         return std::nullopt;
     return obj->getPlayerScore(sId).getCount();
