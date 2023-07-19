@@ -5,17 +5,20 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 #include "Packet.hpp"
 
 #define BEFORE_EXTRA
-
+#include "CompoundTag.hpp"
 #undef BEFORE_EXTRA
 
 
 class CompressedBiomeDefinitionListPacket : public Packet {
 
 #define AFTER_EXTRA
-
+public:
+    CompoundTag mBiomeData;
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&);
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPRESSEDBIOMEDEFINITIONLISTPACKET
 public:
@@ -46,9 +49,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 4
-     * @symbol ?read\@CompressedBiomeDefinitionListPacket\@\@UEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?read\@CompressedBiomeDefinitionListPacket\@\@UEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual struct ExtendedStreamReadResult read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, class std::error_code> read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPRESSEDBIOMEDEFINITIONLISTPACKET
     /**
      * @symbol __unk_destructor_-1

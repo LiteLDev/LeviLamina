@@ -122,10 +122,6 @@ public:
 
 //private:
     /**
-     * @symbol ?_onChanged\@JukeboxBlockActor\@\@AEAAXAEAVBlockSource\@\@W4LevelSoundEvent\@\@\@Z
-     */
-    MCAPI void _onChanged(class BlockSource &, enum class LevelSoundEvent);
-    /**
      * @symbol ?_spawnMusicParticles\@JukeboxBlockActor\@\@AEAAXAEAVLevel\@\@M\@Z
      */
     MCAPI void _spawnMusicParticles(class Level &, float);

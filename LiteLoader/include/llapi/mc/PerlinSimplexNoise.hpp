@@ -33,13 +33,13 @@ public:
      */
     MCAPI PerlinSimplexNoise(unsigned int, int);
     /**
-     * @symbol ??0PerlinSimplexNoise\@\@QEAA\@AEAVIRandom\@\@H_N\@Z
-     */
-    MCAPI PerlinSimplexNoise(class IRandom &, int, bool);
-    /**
      * @symbol ??0PerlinSimplexNoise\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI PerlinSimplexNoise(class PerlinSimplexNoise const &);
+    /**
+     * @symbol ??0PerlinSimplexNoise\@\@QEAA\@AEAVIRandom\@\@H_N\@Z
+     */
+    MCAPI PerlinSimplexNoise(class IRandom &, int, bool);
     /**
      * @symbol ?getRegion\@PerlinSimplexNoise\@\@QEBAPEAMPEAMAEBVVec2\@\@HH1MM\@Z
      */

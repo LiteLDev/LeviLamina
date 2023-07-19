@@ -114,10 +114,6 @@ public:
      */
     MCAPI static class Ability const & getDefault(enum class AbilitiesIndex);
     /**
-     * @symbol ?getDiff\@Abilities\@\@SA?AV?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@AEBV1\@0\@Z
-     */
-    MCAPI static class std::optional<std::string> getDiff(class Abilities const &, class Abilities const &);
-    /**
      * @symbol ?nameToAbilityIndex\@Abilities\@\@SA?AW4AbilitiesIndex\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI static enum class AbilitiesIndex nameToAbilityIndex(std::string const &);

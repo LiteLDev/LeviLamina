@@ -35,13 +35,13 @@ public:
      */
     MCAPI ResourceLocation(class Core::Path const &, enum class ResourceFileSystem);
     /**
-     * @symbol ??0ResourceLocation\@\@QEAA\@XZ
-     */
-    MCAPI ResourceLocation();
-    /**
      * @symbol ??0ResourceLocation\@\@QEAA\@AEBVPath\@Core\@\@\@Z
      */
     MCAPI ResourceLocation(class Core::Path const &);
+    /**
+     * @symbol ??0ResourceLocation\@\@QEAA\@XZ
+     */
+    MCAPI ResourceLocation();
     /**
      * @symbol ?getFullPath\@ResourceLocation\@\@QEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */

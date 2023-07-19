@@ -25,17 +25,9 @@ public:
 
 public:
     /**
-     * @symbol ?createAirMoveSideBySideSystem\@GroundAndAirMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI static struct TickingSystemWithInfo createAirMoveSideBySideSystem();
-    /**
      * @symbol ?createAirMoveSystem\@GroundAndAirMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createAirMoveSystem();
-    /**
-     * @symbol ?createGroundMoveSideBySideSystem\@GroundAndAirMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI static struct TickingSystemWithInfo createGroundMoveSideBySideSystem();
     /**
      * @symbol ?createGroundMoveSystem\@GroundAndAirMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */

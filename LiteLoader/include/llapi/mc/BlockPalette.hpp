@@ -66,13 +66,13 @@ public:
     MCVAPI ~BlockPalette();
 #endif
     /**
-     * @symbol ??0BlockPalette\@\@QEAA\@UConstructorToken\@0\@\@Z
-     */
-    MCAPI BlockPalette(struct BlockPalette::ConstructorToken);
-    /**
      * @symbol ??0BlockPalette\@\@QEAA\@AEAVLevel\@\@\@Z
      */
     MCAPI BlockPalette(class Level &);
+    /**
+     * @symbol ??0BlockPalette\@\@QEAA\@UConstructorToken\@0\@\@Z
+     */
+    MCAPI BlockPalette(struct BlockPalette::ConstructorToken);
     /**
      * @symbol ?cacheBlockComponentData\@BlockPalette\@\@QEAAXXZ
      */

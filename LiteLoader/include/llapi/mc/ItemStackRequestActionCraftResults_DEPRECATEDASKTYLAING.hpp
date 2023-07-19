@@ -30,9 +30,9 @@ public:
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTRESULTS_DEPRECATEDASKTYLAING
     /**
-     * @symbol ?_read\@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING\@\@MEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING\@\@MEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    MCVAPI bool _read(class ReadOnlyBinaryStream &);
+    MCVAPI class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?_write\@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING\@\@MEBAXAEAVBinaryStream\@\@\@Z
      */

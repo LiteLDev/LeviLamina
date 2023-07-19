@@ -27,9 +27,15 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONINTERACTTRIGGER
     /**
-     * @symbol ??1OnInteractTrigger\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI ~OnInteractTrigger();
+    MCVAPI ~OnInteractTrigger();
+#endif
+    /**
+     * @symbol ??0OnInteractTrigger\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI OnInteractTrigger(class OnInteractTrigger &&);
 
 };

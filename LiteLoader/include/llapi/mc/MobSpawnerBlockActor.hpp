@@ -66,6 +66,11 @@ public:
      */
     virtual void __unk_vfn_18();
     /**
+     * @vftbl 30
+     * @symbol __unk_vfn_30
+     */
+    virtual void __unk_vfn_30();
+    /**
      * @vftbl 31
      * @symbol __unk_vfn_31
      */
@@ -91,17 +96,22 @@ public:
      */
     virtual void __unk_vfn_35();
     /**
-     * @vftbl 38
-     * @symbol __unk_vfn_38
+     * @vftbl 36
+     * @symbol __unk_vfn_36
      */
-    virtual void __unk_vfn_38();
+    virtual void __unk_vfn_36();
     /**
      * @vftbl 39
+     * @symbol __unk_vfn_39
+     */
+    virtual void __unk_vfn_39();
+    /**
+     * @vftbl 40
      * @symbol ?_getUpdatePacket\@MobSpawnerBlockActor\@\@MEAA?AV?$unique_ptr\@VBlockActorDataPacket\@\@U?$default_delete\@VBlockActorDataPacket\@\@\@std\@\@\@std\@\@AEAVBlockSource\@\@\@Z
      */
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource &);
     /**
-     * @vftbl 40
+     * @vftbl 41
      * @symbol ?_onUpdatePacket\@MobSpawnerBlockActor\@\@MEAAXAEBVCompoundTag\@\@AEAVBlockSource\@\@\@Z
      */
     virtual void _onUpdatePacket(class CompoundTag const &, class BlockSource &);
@@ -113,5 +123,9 @@ public:
      * @symbol ?getSpawner\@MobSpawnerBlockActor\@\@QEAAAEAVBaseMobSpawner\@\@XZ
      */
     MCAPI class BaseMobSpawner & getSpawner();
+    /**
+     * @symbol ?setMob\@MobSpawnerBlockActor\@\@QEAAXAEAVBlockSource\@\@AEBUActorDefinitionIdentifier\@\@PEAVActor\@\@\@Z
+     */
+    MCAPI void setMob(class BlockSource &, struct ActorDefinitionIdentifier const &, class Actor *);
 
 };

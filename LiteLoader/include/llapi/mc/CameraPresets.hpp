@@ -52,10 +52,6 @@ public:
      */
     MCAPI class CameraPresets & operator=(class CameraPresets &&);
     /**
-     * @symbol ?bindType\@CameraPresets\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ?isAllowedEaseTarget\@CameraPresets\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI static bool isAllowedEaseTarget(std::string const &);

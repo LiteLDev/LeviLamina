@@ -38,14 +38,14 @@ public:
     virtual std::string const & getName() const;
     /**
      * @vftbl 2
-     * @symbol ?initializeComponent\@BlockUnitCubeDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
-     */
-    virtual void initializeComponent(class EntityContext &) const;
-    /**
-     * @vftbl 3
      * @symbol ?initializeFromNetwork\@BlockUnitCubeDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
+    /**
+     * @vftbl 3
+     * @symbol ?initializeComponent\@BlockUnitCubeDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
+     */
+    virtual void initializeComponent(class EntityContext &) const;
     /**
      * @vftbl 4
      * @symbol __unk_vfn_4
@@ -53,11 +53,16 @@ public:
     virtual void __unk_vfn_4();
     /**
      * @vftbl 5
+     * @symbol __unk_vfn_5
+     */
+    virtual void __unk_vfn_5();
+    /**
+     * @vftbl 6
      * @symbol ?isNetworkComponent\@BlockUnitCubeDescription\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?buildNetworkTag\@BlockUnitCubeDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;

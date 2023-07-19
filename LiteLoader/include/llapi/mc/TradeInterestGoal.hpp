@@ -70,12 +70,4 @@ public:
      */
     virtual void appendDebugInfo(std::string &) const;
 
-//private:
-    /**
-     * @symbol ?_isLookingAtMe\@TradeInterestGoal\@\@AEBA_NAEBVPlayer\@\@\@Z
-     */
-    MCAPI bool _isLookingAtMe(class Player const &) const;
-
-private:
-
 };

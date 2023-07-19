@@ -33,9 +33,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z
      */
-    virtual bool write(std::string const &);
+    virtual bool write(std::string const &, struct cereal::SerializerTraits const &);
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
@@ -43,9 +43,9 @@ public:
     virtual void __unk_vfn_2();
     /**
      * @vftbl 3
-     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NM\@Z
+     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NMAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    virtual bool write(float);
+    virtual bool write(float, struct cereal::SerializerTraits const &);
     /**
      * @vftbl 4
      * @symbol __unk_vfn_4
@@ -93,9 +93,9 @@ public:
     virtual void __unk_vfn_12();
     /**
      * @vftbl 13
-     * @symbol ?pushMember\@NBTSchemaWriter\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ?pushMember\@NBTSchemaWriter\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z
      */
-    virtual bool pushMember(std::string const &);
+    virtual bool pushMember(std::string const &, struct cereal::SerializerTraits const &);
     /**
      * @vftbl 14
      * @symbol ?popMember\@NBTSchemaWriter\@\@UEAAXXZ
@@ -103,60 +103,60 @@ public:
     virtual void popMember();
     /**
      * @vftbl 15
-     * @symbol ?openObject\@NBTSchemaWriter\@\@UEAA_NXZ
+     * @symbol ?openObject\@NBTSchemaWriter\@\@UEAA_NAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    virtual bool openObject();
+    virtual bool openObject(struct cereal::SerializerTraits const &);
     /**
      * @vftbl 16
-     * @symbol ?openArray\@NBTSchemaWriter\@\@UEAA_NXZ
+     * @symbol ?openArray\@NBTSchemaWriter\@\@UEAA_N_KAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    virtual bool openArray();
+    virtual bool openArray(unsigned __int64, struct cereal::SerializerTraits const &);
     /**
      * @vftbl 17
-     * @symbol ?close\@NBTSchemaWriter\@\@UEAAXXZ
+     * @symbol ?close\@NBTSchemaWriter\@\@UEAAXAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    virtual void close();
+    virtual void close(struct cereal::SerializerTraits const &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTSCHEMAWRITER
     /**
-     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NN\@Z
+     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_N_KAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI bool write(double);
+    MCVAPI bool write(unsigned __int64, struct cereal::SerializerTraits const &);
     /**
-     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_N_K\@Z
+     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_N_JAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI bool write(unsigned __int64);
+    MCVAPI bool write(__int64, struct cereal::SerializerTraits const &);
     /**
-     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_N_J\@Z
+     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NNAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI bool write(__int64);
+    MCVAPI bool write(double, struct cereal::SerializerTraits const &);
     /**
-     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_N_N\@Z
+     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_N_NAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI bool write(bool);
+    MCVAPI bool write(bool, struct cereal::SerializerTraits const &);
     /**
-     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NE\@Z
+     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NCAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI bool write(unsigned char);
+    MCVAPI bool write(signed char, struct cereal::SerializerTraits const &);
     /**
-     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NC\@Z
+     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NEAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI bool write(signed char);
+    MCVAPI bool write(unsigned char, struct cereal::SerializerTraits const &);
     /**
-     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NF\@Z
+     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NGAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI bool write(short);
+    MCVAPI bool write(unsigned short, struct cereal::SerializerTraits const &);
     /**
-     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NG\@Z
+     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NFAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI bool write(unsigned short);
+    MCVAPI bool write(short, struct cereal::SerializerTraits const &);
     /**
-     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NH\@Z
+     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NIAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI bool write(int);
+    MCVAPI bool write(unsigned int, struct cereal::SerializerTraits const &);
     /**
-     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NI\@Z
+     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NHAEBUSerializerTraits\@cereal\@\@\@Z
      */
-    MCVAPI bool write(unsigned int);
+    MCVAPI bool write(int, struct cereal::SerializerTraits const &);
     /**
      * @symbol __unk_destructor_-1
      */

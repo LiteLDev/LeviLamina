@@ -29,10 +29,6 @@ public:
      */
     MCAPI static struct TickingSystemWithInfo createCleanupSystem();
     /**
-     * @symbol ?createTriggerJumpSideBySideSystem\@TriggerJumpSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI static struct TickingSystemWithInfo createTriggerJumpSideBySideSystem();
-    /**
      * @symbol ?createTriggerJumpSystem\@TriggerJumpSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createTriggerJumpSystem();

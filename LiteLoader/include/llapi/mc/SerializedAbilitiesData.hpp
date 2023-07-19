@@ -35,13 +35,10 @@ struct SerializedAbilitiesData {
 public:
     struct SerializedAbilitiesData& operator=(struct SerializedAbilitiesData const &) = delete;
     SerializedAbilitiesData(struct SerializedAbilitiesData const &) = delete;
+    SerializedAbilitiesData() = delete;
 #endif
 
 public:
-    /**
-     * @symbol ??0SerializedAbilitiesData\@\@QEAA\@XZ
-     */
-    MCAPI SerializedAbilitiesData();
     /**
      * @symbol ??0SerializedAbilitiesData\@\@QEAA\@UActorUniqueID\@\@AEBVLayeredAbilities\@\@\@Z
      */

@@ -7,21 +7,22 @@
 #include "llapi/Global.h"
 #include "ItemDescriptor.hpp"
 #include "Json.hpp"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 
 #undef BEFORE_EXTRA
 
 
-class ComplexAliasDescriptor {
+struct ComplexAliasDescriptor {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPLEXALIASDESCRIPTOR
 public:
-    class ComplexAliasDescriptor& operator=(class ComplexAliasDescriptor const &) = delete;
-    ComplexAliasDescriptor(class ComplexAliasDescriptor const &) = delete;
+    struct ComplexAliasDescriptor& operator=(struct ComplexAliasDescriptor const &) = delete;
+    ComplexAliasDescriptor(struct ComplexAliasDescriptor const &) = delete;
     ComplexAliasDescriptor() = delete;
 #endif
 
@@ -85,5 +86,9 @@ public:
      * @symbol ??0ComplexAliasDescriptor\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI ComplexAliasDescriptor(std::string const &);
+    /**
+     * @symbol ?deserialize\@ComplexAliasDescriptor\@\@SA?AV?$Result\@V?$unique_ptr\@UComplexAliasDescriptor\@\@U?$default_delete\@UComplexAliasDescriptor\@\@\@std\@\@\@std\@\@Verror_code\@2\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     */
+    MCAPI static class Bedrock::Result<std::unique_ptr<struct ComplexAliasDescriptor>, class std::error_code> deserialize(class ReadOnlyBinaryStream &);
 
 };

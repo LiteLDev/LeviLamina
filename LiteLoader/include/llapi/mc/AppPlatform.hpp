@@ -723,10 +723,6 @@ public:
      */
     MCVAPI bool requiresLiveGoldForMultiplayer() const;
     /**
-     * @symbol ?requiresPatchNoticePopup\@AppPlatform\@\@UEBA_NXZ
-     */
-    MCVAPI bool requiresPatchNoticePopup() const;
-    /**
      * @symbol ?requiresXboxLiveSigninToPlay\@AppPlatform\@\@UEBA_NXZ
      */
     MCVAPI bool requiresXboxLiveSigninToPlay() const;

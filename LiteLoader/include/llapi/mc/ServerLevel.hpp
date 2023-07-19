@@ -108,10 +108,6 @@ public:
      */
     MCVAPI void runCommand(class Command &, class CommandOrigin &, enum class CommandOriginSystem);
     /**
-     * @symbol ?saveAdditionalData\@ServerLevel\@\@UEAAXXZ
-     */
-    MCVAPI void saveAdditionalData();
-    /**
      * @symbol ?setCommandsEnabled\@ServerLevel\@\@UEAAX_N\@Z
      */
     MCVAPI void setCommandsEnabled(bool);
@@ -129,9 +125,9 @@ public:
     MCVAPI ~ServerLevel();
 #endif
     /**
-     * @symbol ??0ServerLevel\@\@QEAA\@AEBV?$not_null\@V?$NonOwnerPointer\@VSoundPlayerInterface\@\@\@Bedrock\@\@\@gsl\@\@V?$unique_ptr\@VLevelStorage\@\@U?$default_delete\@VLevelStorage\@\@\@std\@\@\@std\@\@V?$unique_ptr\@VLevelLooseFileStorage\@\@U?$default_delete\@VLevelLooseFileStorage\@\@\@std\@\@\@4\@AEAVIMinecraftEventing\@\@AEAVResourcePackManager\@\@4V?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@2\@AEAVMinecraftCommands\@\@AEAVScheduler\@\@AEBV?$not_null\@V?$NonOwnerPointer\@VIEntityRegistryOwner\@\@\@Bedrock\@\@\@2\@V?$WeakRefT\@UEntityRefTraits\@\@\@\@V?$unique_ptr\@VBlockComponentFactory\@\@U?$default_delete\@VBlockComponentFactory\@\@\@std\@\@\@4\@V?$unique_ptr\@VBlockDefinitionGroup\@\@U?$default_delete\@VBlockDefinitionGroup\@\@\@std\@\@\@4\@VItemRegistryRef\@\@_N_NAEBUNetworkPermissions\@\@V?$weak_ptr\@VBlockTypeRegistry\@\@\@4\@\@Z
+     * @symbol ??0ServerLevel\@\@QEAA\@AEBV?$not_null\@V?$NonOwnerPointer\@VSoundPlayerInterface\@\@\@Bedrock\@\@\@gsl\@\@V?$OwnerPtrT\@U?$SharePtrRefTraits\@VLevelStorage\@\@\@\@\@\@AEAVIMinecraftEventing\@\@AEAVResourcePackManager\@\@3V?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@2\@AEAVMinecraftCommands\@\@AEAVScheduler\@\@AEBV?$not_null\@V?$NonOwnerPointer\@VIEntityRegistryOwner\@\@\@Bedrock\@\@\@2\@V?$WeakRefT\@UEntityRefTraits\@\@\@\@V?$unique_ptr\@VBlockComponentFactory\@\@U?$default_delete\@VBlockComponentFactory\@\@\@std\@\@\@std\@\@V?$unique_ptr\@VBlockDefinitionGroup\@\@U?$default_delete\@VBlockDefinitionGroup\@\@\@std\@\@\@std\@\@VItemRegistryRef\@\@_N_NAEBUNetworkPermissions\@\@V?$weak_ptr\@VBlockTypeRegistry\@\@\@std\@\@\@Z
      */
-    MCAPI ServerLevel(class gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> const &, std::unique_ptr<class LevelStorage>, std::unique_ptr<class LevelLooseFileStorage>, class IMinecraftEventing &, class ResourcePackManager &, class ResourcePackManager &, class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class MinecraftCommands &, class Scheduler &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntityRegistryOwner>> const &, class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>, class ItemRegistryRef, bool, bool, struct NetworkPermissions const &, class std::weak_ptr<class BlockTypeRegistry>);
+    MCAPI ServerLevel(class gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> const &, class OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>>, class IMinecraftEventing &, class ResourcePackManager &, class ResourcePackManager &, class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class MinecraftCommands &, class Scheduler &, class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntityRegistryOwner>> const &, class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>, class ItemRegistryRef, bool, bool, struct NetworkPermissions const &, class std::weak_ptr<class BlockTypeRegistry>);
     /**
      * @symbol ?addServerChunksToPacket\@ServerLevel\@\@QEAAXAEBVNetworkIdentifier\@\@W4SubClientId\@\@AEAVNetworkChunkPublisherUpdatePacket\@\@\@Z
      */
@@ -199,6 +195,10 @@ public:
      */
     MCAPI void _initializePlayerSleepManager();
     /**
+     * @symbol ?_initializeScoreboard\@ServerLevel\@\@AEAAXXZ
+     */
+    MCAPI void _initializeScoreboard();
+    /**
      * @symbol ?_onActorEntityAdded\@ServerLevel\@\@AEAAXAEAVActor\@\@\@Z
      */
     MCAPI void _onActorEntityAdded(class Actor &);
@@ -214,10 +214,6 @@ public:
      * @symbol ?_onNewDimensionCreated\@ServerLevel\@\@AEAAXAEAVDimension\@\@\@Z
      */
     MCAPI void _onNewDimensionCreated(class Dimension &);
-    /**
-     * @symbol ?_onPlayerDeath\@ServerLevel\@\@AEAAXAEAVPlayer\@\@\@Z
-     */
-    MCAPI void _onPlayerDeath(class Player &);
     /**
      * @symbol ?_onPlayerWakeUp\@ServerLevel\@\@AEAAXAEAVPlayer\@\@\@Z
      */

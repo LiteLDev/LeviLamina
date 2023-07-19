@@ -38,10 +38,6 @@ public:
      */
     MCAPI class Actor * addAutonomousActorEntity(class IAddActorEntityProxy &, class OwnerPtrT<struct EntityRefTraits>);
     /**
-     * @symbol ?addOwnedInactiveAutonomousActorEntity\@AutonomousActorManager\@\@QEAAXV?$OwnerPtrT\@UEntityRefTraits\@\@\@\@\@Z
-     */
-    MCAPI void addOwnedInactiveAutonomousActorEntity(class OwnerPtrT<struct EntityRefTraits>);
-    /**
      * @symbol ?hasOwnedInactiveAutonomousActorWithUniqueID\@AutonomousActorManager\@\@QEBA_NUActorUniqueID\@\@\@Z
      */
     MCAPI bool hasOwnedInactiveAutonomousActorWithUniqueID(struct ActorUniqueID) const;
@@ -49,6 +45,10 @@ public:
      * @symbol ?initializeWithActorManager\@AutonomousActorManager\@\@QEAAXV?$not_null\@V?$NonOwnerPointer\@VActorManager\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
     MCAPI void initializeWithActorManager(class gsl::not_null<class Bedrock::NonOwnerPointer<class ActorManager>>);
+    /**
+     * @symbol ?loadAutonomousActorsFromDisk\@AutonomousActorManager\@\@QEAAXAEAVLevelStorage\@\@AEAVActorFactory\@\@\@Z
+     */
+    MCAPI void loadAutonomousActorsFromDisk(class LevelStorage &, class ActorFactory &);
     /**
      * @symbol ?onChunkDiscarded\@AutonomousActorManager\@\@QEAAXAEAVLevelChunk\@\@\@Z
      */
@@ -87,6 +87,10 @@ public:
      * @symbol ?_saveAllAutonomousActors\@AutonomousActorManager\@\@AEAAXAEAVLevelStorage\@\@\@Z
      */
     MCAPI void _saveAllAutonomousActors(class LevelStorage &);
+    /**
+     * @symbol ?_deduplicateDuplicateActorsFromList\@AutonomousActorManager\@\@CAXAEAVListTag\@\@\@Z
+     */
+    MCAPI static void _deduplicateDuplicateActorsFromList(class ListTag &);
 
 private:
 

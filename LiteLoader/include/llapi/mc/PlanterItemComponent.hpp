@@ -66,11 +66,16 @@ public:
     virtual void __unk_vfn_6();
     /**
      * @vftbl 7
+     * @symbol __unk_vfn_7
+     */
+    virtual void __unk_vfn_7();
+    /**
+     * @vftbl 8
      * @symbol ?_canUseOn\@PlanterItemComponent\@\@MEBA_NAEBVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@E\@Z
      */
     virtual bool _canUseOn(class ItemStack const &, class Actor &, class BlockPos const &, unsigned char) const;
     /**
-     * @vftbl 8
+     * @vftbl 9
      * @symbol ?_useOn\@PlanterItemComponent\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos const &, unsigned char, class Vec3 const &) const;
@@ -79,9 +84,9 @@ public:
      */
     MCAPI PlanterItemComponent(class ComponentItem *, class Block const &);
     /**
-     * @symbol ?calculatePlacePos\@PlanterItemComponent\@\@QEBA_NAEAVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
+     * @symbol ?calculatePlacePos\@PlanterItemComponent\@\@QEBA_NAEBVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
      */
-    MCAPI bool calculatePlacePos(class ItemStackBase &, class Actor &, unsigned char &, class BlockPos &) const;
+    MCAPI bool calculatePlacePos(class ItemStackBase const &, class Actor &, unsigned char &, class BlockPos &) const;
     /**
      * @symbol ?bindType\@PlanterItemComponent\@\@SAXXZ
      */

@@ -1,7 +1,6 @@
 #pragma once
 #include "llapi/mc/BinaryStream.hpp"
 #include "llapi/mc/Packet.hpp"
-#include "llapi/mc/ExtendedStreamReadResult.hpp"
 
 template <int pid, bool batching = true, bool compress = true>
 class NetworkPacket : public Packet {
@@ -26,7 +25,8 @@ public:
     virtual void write(BinaryStream& bs) const {
         bs.getRaw().append(view);
     }
-    virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream &) {
+
+    virtual class Bedrock::Result<void, class std::error_code> read(class ReadOnlyBinaryStream&) {
         throw("TODO");
     }
     virtual bool disallowBatching() const {
@@ -36,8 +36,8 @@ public:
         throw("TODO");
     }
 
-    virtual ExtendedStreamReadResult _read(class ReadOnlyBinaryStream&) override {
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&) override {
         throw("TODO in MyPkt::_read()");
-        return ExtendedStreamReadResult{(enum StreamReadResult)0, ""};
+        //return ExtendedStreamReadResult{(enum StreamReadResult)0, ""};
     }
 };

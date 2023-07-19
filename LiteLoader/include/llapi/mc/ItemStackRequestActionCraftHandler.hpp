@@ -34,10 +34,6 @@ public:
      */
     MCAPI ItemStackRequestActionCraftHandler(class ItemStackRequestActionHandler &, class Player &);
     /**
-     * @symbol ?_getOrInitSparseContainer\@ItemStackRequestActionCraftHandler\@\@QEAA?AV?$shared_ptr\@VSimpleSparseContainer\@\@\@std\@\@W4ContainerEnumName\@\@\@Z
-     */
-    MCAPI class std::shared_ptr<class SimpleSparseContainer> _getOrInitSparseContainer(enum class ContainerEnumName);
-    /**
      * @symbol ?_initCraftResults\@ItemStackRequestActionCraftHandler\@\@QEAA?AW4ItemStackNetResult\@\@AEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@E\@Z
      */
     MCAPI enum class ItemStackNetResult _initCraftResults(std::vector<class ItemInstance> const &, unsigned char);
@@ -45,10 +41,6 @@ public:
      * @symbol ?_initSingleCraftResult\@ItemStackRequestActionCraftHandler\@\@QEAAPEAVItemInstance\@\@AEBV2\@\@Z
      */
     MCAPI class ItemInstance * _initSingleCraftResult(class ItemInstance const &);
-    /**
-     * @symbol ?_validateRequestSlot\@ItemStackRequestActionCraftHandler\@\@QEAA?AUItemStackRequestHandlerSlotInfo\@\@AEBUItemStackRequestSlotInfo\@\@\@Z
-     */
-    MCAPI struct ItemStackRequestHandlerSlotInfo _validateRequestSlot(struct ItemStackRequestSlotInfo const &);
     /**
      * @symbol ?endRequest\@ItemStackRequestActionCraftHandler\@\@QEAA?AW4ItemStackNetResult\@\@W42\@\@Z
      */

@@ -31,9 +31,9 @@ public:
 
 public:
     /**
-     * @symbol ?setupStandaloneServer\@DedicatedServerCommands\@\@SAXAEBV?$not_null\@V?$NonOwnerPointer\@VMinecraft\@\@\@Bedrock\@\@\@gsl\@\@AEAVIMinecraftApp\@\@AEAVLevel\@\@AEAVLevelStorage\@\@AEAVDedicatedServer\@\@AEAVAllowListFile\@\@\@Z
+     * @symbol ?setupStandaloneServer\@DedicatedServerCommands\@\@SAXAEBV?$not_null\@V?$NonOwnerPointer\@VMinecraft\@\@\@Bedrock\@\@\@gsl\@\@AEAVIMinecraftApp\@\@AEAVLevel\@\@AEAVLevelStorage\@\@AEAVDedicatedServer\@\@AEAVAllowListFile\@\@PEAUScriptSettings\@\@\@Z
      */
-    MCAPI static void setupStandaloneServer(class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const &, class IMinecraftApp &, class Level &, class LevelStorage &, class DedicatedServer &, class AllowListFile &);
+    MCAPI static void setupStandaloneServer(class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> const &, class IMinecraftApp &, class Level &, class LevelStorage &, class DedicatedServer &, class AllowListFile &, struct ScriptSettings *);
 
 //private:
 

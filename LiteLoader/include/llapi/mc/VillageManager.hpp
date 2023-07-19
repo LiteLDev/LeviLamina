@@ -67,6 +67,10 @@ public:
      */
     MCAPI class HashedString getPOIInitEventFromName(class HashedString const &) const;
     /**
+     * @symbol ?initializeWithLevelStorageManager\@VillageManager\@\@QEAAXAEAVLevelStorageManager\@\@\@Z
+     */
+    MCAPI void initializeWithLevelStorageManager(class LevelStorageManager &);
+    /**
      * @symbol ?insertPOI\@VillageManager\@\@QEAAX$$QEAV?$shared_ptr\@VPOIInstance\@\@\@std\@\@\@Z
      */
     MCAPI void insertPOI(class std::shared_ptr<class POIInstance> &&);
@@ -86,10 +90,6 @@ public:
      * @symbol ?removePOI\@VillageManager\@\@QEAAXV?$weak_ptr\@VPOIInstance\@\@\@std\@\@\@Z
      */
     MCAPI void removePOI(class std::weak_ptr<class POIInstance>);
-    /**
-     * @symbol ?saveAllVillages\@VillageManager\@\@QEAAXXZ
-     */
-    MCAPI void saveAllVillages();
     /**
      * @symbol ?submitFindPOIQuery\@VillageManager\@\@QEAAXAEBUActorUniqueID\@\@\@Z
      */
@@ -140,6 +140,10 @@ public:
      * @symbol ?_removeVillage\@VillageManager\@\@AEAAXAEAVVillage\@\@\@Z
      */
     MCAPI void _removeVillage(class Village &);
+    /**
+     * @symbol ?_saveAllVillages\@VillageManager\@\@AEAAXAEAVLevelStorage\@\@\@Z
+     */
+    MCAPI void _saveAllVillages(class LevelStorage &);
     /**
      * @symbol ?_tryAssignPOIOrCreateVillage\@VillageManager\@\@AEAAX$$QEAV?$shared_ptr\@VPOIInstance\@\@\@std\@\@\@Z
      */

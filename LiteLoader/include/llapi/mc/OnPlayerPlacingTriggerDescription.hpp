@@ -41,22 +41,27 @@ public:
      */
     virtual std::string const & getName() const;
     /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
+     * @vftbl 2
+     * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_3();
+    virtual void __unk_vfn_2();
     /**
-     * @vftbl 5
+     * @vftbl 4
+     * @symbol __unk_vfn_4
+     */
+    virtual void __unk_vfn_4();
+    /**
+     * @vftbl 6
      * @symbol ?isNetworkComponent\@OnPlayerPlacingTriggerDescription\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?buildNetworkTag\@OnPlayerPlacingTriggerDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vftbl 7
+     * @vftbl 8
      * @symbol ?initializeFromNetwork\@OnPlayerPlacingTriggerDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
      */
     virtual void initializeFromNetwork(class CompoundTag const &);

@@ -31,21 +31,17 @@ public:
 
 public:
     /**
-     * @symbol ??0MobEffectInstance\@\@QEAA\@I\@Z
+     * @symbol ??0MobEffectInstance\@\@QEAA\@IHHHHH_N00\@Z
      */
-    MCAPI MobEffectInstance(unsigned int);
+    MCAPI MobEffectInstance(unsigned int, int, int, int, int, int, bool, bool, bool);
     /**
      * @symbol ??0MobEffectInstance\@\@QEAA\@IHH_N00\@Z
      */
     MCAPI MobEffectInstance(unsigned int, int, int, bool, bool, bool);
     /**
-     * @symbol ??0MobEffectInstance\@\@QEAA\@IHH\@Z
+     * @symbol ??0MobEffectInstance\@\@QEAA\@IH\@Z
      */
-    MCAPI MobEffectInstance(unsigned int, int, int);
-    /**
-     * @symbol ??0MobEffectInstance\@\@QEAA\@IHHHHH_N00\@Z
-     */
-    MCAPI MobEffectInstance(unsigned int, int, int, int, int, int, bool, bool, bool);
+    MCAPI MobEffectInstance(unsigned int, int);
     /**
      * @symbol ??0MobEffectInstance\@\@QEAA\@$$QEAV0\@\@Z
      */
@@ -55,9 +51,13 @@ public:
      */
     MCAPI MobEffectInstance(class MobEffectInstance const &);
     /**
-     * @symbol ??0MobEffectInstance\@\@QEAA\@IH\@Z
+     * @symbol ??0MobEffectInstance\@\@QEAA\@IHH\@Z
      */
-    MCAPI MobEffectInstance(unsigned int, int);
+    MCAPI MobEffectInstance(unsigned int, int, int);
+    /**
+     * @symbol ??0MobEffectInstance\@\@QEAA\@I\@Z
+     */
+    MCAPI MobEffectInstance(unsigned int);
     /**
      * @symbol ?applyEffects\@MobEffectInstance\@\@QEAAXPEAVActor\@\@\@Z
      */

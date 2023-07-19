@@ -140,6 +140,10 @@ public:
      */
     MCAPI bool readPacket(struct NetherNet::NetworkID, void *, unsigned int, unsigned int *) const;
     /**
+     * @symbol ?registerRelayServerCredentialsReadyCallback\@NetherNetConnector\@\@QEBAX$$QEAV?$function\@$$A6AXW4ERelayServerConfigurationResult\@NetherNet\@\@\@Z\@std\@\@\@Z
+     */
+    MCAPI void registerRelayServerCredentialsReadyCallback(class std::function<void (enum class NetherNet::ERelayServerConfigurationResult)> &&) const;
+    /**
      * @symbol ?sendPacket\@NetherNetConnector\@\@QEBA_NUNetworkID\@NetherNet\@\@PEBDIW4ESendType\@3\@\@Z
      */
     MCAPI bool sendPacket(struct NetherNet::NetworkID, char const *, unsigned int, enum class NetherNet::ESendType) const;
@@ -151,6 +155,10 @@ public:
      * @symbol ?setBroadcastResponseCallback\@NetherNetConnector\@\@QEAAX$$QEAV?$function\@$$A6AXAEBUNetworkID\@NetherNet\@\@PEBXH\@Z\@std\@\@\@Z
      */
     MCAPI void setBroadcastResponseCallback(class std::function<void (struct NetherNet::NetworkID const &, void const *, int)> &&);
+    /**
+     * @symbol ?signIntoSignalingService\@NetherNetConnector\@\@QEBAX$$QEAV?$function\@$$A6AXVerror_code\@std\@\@\@Z\@std\@\@$$QEAV?$function\@$$A6AXW4SignalingHostConnectionStatus\@NetherNet\@\@I\@Z\@3\@$$QEAUSignalingConfiguration\@IWebRTCSignalingInterface\@NetherNet\@\@\@Z
+     */
+    MCAPI void signIntoSignalingService(class std::function<void (class std::error_code)> &&, class std::function<void (enum class NetherNet::SignalingHostConnectionStatus, unsigned int)> &&, struct NetherNet::IWebRTCSignalingInterface::SignalingConfiguration &&) const;
     /**
      * @symbol ?signOutFromSignalingService\@NetherNetConnector\@\@QEBAXXZ
      */

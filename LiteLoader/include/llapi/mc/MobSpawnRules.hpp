@@ -28,17 +28,17 @@ public:
 
 public:
     /**
-     * @symbol ??0MobSpawnRules\@\@QEAA\@XZ
+     * @symbol ??0MobSpawnRules\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI MobSpawnRules();
+    MCAPI MobSpawnRules(class MobSpawnRules const &);
     /**
      * @symbol ??0MobSpawnRules\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI MobSpawnRules(class MobSpawnRules &&);
     /**
-     * @symbol ??0MobSpawnRules\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0MobSpawnRules\@\@QEAA\@XZ
      */
-    MCAPI MobSpawnRules(class MobSpawnRules const &);
+    MCAPI MobSpawnRules();
     /**
      * @symbol ?addHerd\@MobSpawnRules\@\@QEAAAEAV1\@HHAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */

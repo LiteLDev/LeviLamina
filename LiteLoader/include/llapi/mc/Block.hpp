@@ -25,26 +25,21 @@ public:
     LIAPI static Block* create(const std::string& str, unsigned short tileData);
     LIAPI static Block* create(CompoundTag* nbt);
 
-    [[deprecated("Use MCAPI getName() instead.")]]
     LIAPI std::string getTypeName() const;
     LIAPI int getId() const;
-    inline unsigned short getTileData(){
+    inline unsigned short getTileData() const {
         return static_cast<unsigned short>(getVariant());
     }
 
     /**
      * @brief Obtain a copy of the NBT associated with this block. To obtain a reference to the original instance, use block->getSerializationId().
      */
-    LIAPI std::unique_ptr<CompoundTag> getNbt();
+    LIAPI std::unique_ptr<CompoundTag> getNbt() const;
+    [[deprecated("DO NOT USE THIS")]]
     LIAPI bool setNbt(CompoundTag* nbt);
 
     inline unsigned short getData() const {
         return dAccess<unsigned short, 8>(this);
-    }
-
-    [[deprecated("Use MCAPI getLegacyBlock() instead.")]]
-    inline class BlockLegacy const* getLegacyBlockPtr() const {
-        return reinterpret_cast<class BlockLegacy const*>(&this->getLegacyBlock());
     }
 
     inline bool operator==(class Block const& block) const {
@@ -142,13 +137,13 @@ public:
      */
     MCAPI bool canBeBrokenFromFalling() const;
     /**
-     * @symbol ?canBeBuiltOver\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI bool canBeBuiltOver(class BlockSource &, class BlockPos const &) const;
-    /**
      * @symbol ?canBeBuiltOver\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlockItem\@\@\@Z
      */
     MCAPI bool canBeBuiltOver(class BlockSource &, class BlockPos const &, class BlockItem const &) const;
+    /**
+     * @symbol ?canBeBuiltOver\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI bool canBeBuiltOver(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?canBeFertilized\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBV1\@\@Z
      */
@@ -214,13 +209,13 @@ public:
      */
     MCAPI bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @symbol ?clip\@Block\@\@QEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_NAEBVAABB\@\@\@Z
-     */
-    MCAPI class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool, class AABB const &) const;
-    /**
      * @symbol ?clip\@Block\@\@QEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_N\@Z
      */
     MCAPI class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
+    /**
+     * @symbol ?clip\@Block\@\@QEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_NAEBVAABB\@\@\@Z
+     */
+    MCAPI class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool, class AABB const &) const;
     /**
      * @symbol ?computeRawSerializationIdHashForNetwork\@Block\@\@QEBAIXZ
      */
@@ -237,10 +232,6 @@ public:
      * @symbol ?destroy\@Block\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@\@Z
      */
     MCAPI void destroy(class BlockSource &, class BlockPos const &, class Actor *) const;
-    /**
-     * @symbol ?entityInside\@Block\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
-     */
-    MCAPI void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
      * @symbol ?executeEvent\@Block\@\@QEBAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVRenderParams\@\@\@Z
      */
@@ -274,13 +265,13 @@ public:
      */
     MCAPI bool getCollisionShape(class AABB &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
-     * @symbol ?getColor\@Block\@\@QEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI int getColor(class BlockSource &, class BlockPos const &) const;
-    /**
      * @symbol ?getColor\@Block\@\@QEBAHXZ
      */
     MCAPI int getColor() const;
+    /**
+     * @symbol ?getColor\@Block\@\@QEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI int getColor(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?getComparatorSignal\@Block\@\@QEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
@@ -289,10 +280,6 @@ public:
      * @symbol ?getConnectedDirections\@Block\@\@QEBA?AUHorizontalDirectionBits\@BlockLegacy\@\@AEBVBlockPos\@\@AEAVBlockSource\@\@\@Z
      */
     MCAPI struct BlockLegacy::HorizontalDirectionBits getConnectedDirections(class BlockPos const &, class BlockSource &) const;
-    /**
-     * @symbol ?getCreativeCategory\@Block\@\@QEBA?AW4CreativeItemCategory\@\@XZ
-     */
-    MCAPI enum class CreativeItemCategory getCreativeCategory() const;
     /**
      * @symbol ?getDebugText\@Block\@\@QEBAXAEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEBVBlockPos\@\@\@Z
      */
@@ -390,13 +377,13 @@ public:
      */
     MCAPI int getVariant() const;
     /**
-     * @symbol ?getVisualShape\@Block\@\@QEBAAEBVAABB\@\@AEAV2\@_N\@Z
+     * @symbol ?getVisualShape\@Block\@\@QEBAAEBVAABB\@\@AEAV2\@\@Z
      */
-    MCAPI class AABB const & getVisualShape(class AABB &, bool) const;
+    MCAPI class AABB const & getVisualShape(class AABB &) const;
     /**
-     * @symbol ?getVisualShapeInWorld\@Block\@\@QEBAAEBVAABB\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEAV2\@_N\@Z
+     * @symbol ?getVisualShapeInWorld\@Block\@\@QEBAAEBVAABB\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEAV2\@\@Z
      */
-    MCAPI class AABB const & getVisualShapeInWorld(class BlockSource &, class BlockPos const &, class AABB &, bool) const;
+    MCAPI class AABB const & getVisualShapeInWorld(class BlockSource &, class BlockPos const &, class AABB &) const;
     /**
      * @symbol ?hasBlockEntity\@Block\@\@QEBA_NXZ
      */
@@ -578,21 +565,21 @@ public:
      */
     MCAPI bool mayConsumeFertilizer(class BlockSource &) const;
     /**
-     * @symbol ?mayPick\@Block\@\@QEBA_NAEBVBlockSource\@\@_N\@Z
-     */
-    MCAPI bool mayPick(class BlockSource const &, bool) const;
-    /**
      * @symbol ?mayPick\@Block\@\@QEBA_NXZ
      */
     MCAPI bool mayPick() const;
     /**
-     * @symbol ?mayPlace\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
+     * @symbol ?mayPick\@Block\@\@QEBA_NAEBVBlockSource\@\@_N\@Z
      */
-    MCAPI bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
+    MCAPI bool mayPick(class BlockSource const &, bool) const;
     /**
      * @symbol ?mayPlace\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool mayPlace(class BlockSource &, class BlockPos const &) const;
+    /**
+     * @symbol ?mayPlace\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
+     */
+    MCAPI bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
      * @symbol ?mayPlaceOn\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -790,9 +777,9 @@ public:
      */
     MCAPI enum class BlockOcclusionType _getBlockOcclusionType() const;
     /**
-     * @symbol ?_getLight\@Block\@\@AEBA?AUBrightness\@\@XZ
+     * @symbol ?_isSolid\@Block\@\@AEBA_NXZ
      */
-    MCAPI struct Brightness _getLight() const;
+    MCAPI bool _isSolid() const;
     /**
      * @symbol ?_lockRegistryForRead\@Block\@\@AEBA?AVBlockTypeRegistryReadLock\@\@XZ
      */
@@ -805,6 +792,10 @@ public:
      * @symbol ?_tryInitEntityIfNotInitialized\@Block\@\@AEAAXXZ
      */
     MCAPI void _tryInitEntityIfNotInitialized();
+    /**
+     * @symbol ?entityInside\@Block\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
+     */
+    MCAPI void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
     /**
      * @symbol ?getEntity\@Block\@\@AEBAAEBVEntityContext\@\@XZ
      */

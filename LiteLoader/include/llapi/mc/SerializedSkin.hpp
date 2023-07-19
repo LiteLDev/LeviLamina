@@ -5,9 +5,23 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "mce.hpp"
+#include "AnimatedImageData.hpp"
+#include "SemVersion.hpp"
+#include "SerializedPersonaPieceHandle.hpp"
+#include "persona.hpp"
+#include "TintMapColor.hpp"
+
+enum class TrustedSkinFlag : __int8
+{
+  Unset = 0x0,
+  False = 0x1,
+  True = 0x2,
+};
 
 #undef BEFORE_EXTRA
 
@@ -19,7 +33,31 @@ class SerializedSkin {
 
 #define AFTER_EXTRA
 // Add Member There
-    char filler[0x250];
+public:
+    std::string mId;
+    std::string mPlayFabId;
+    std::string mFullId;
+    std::string mResourcePatch;
+    std::string mDefaultGeometryName;
+    mce::Image mSkinImage;
+    mce::Image mCapeImage;
+    std::vector<AnimatedImageData> mSkinAnimatedImages;
+    Json::Value mGeometryData;
+    SemVersion mGeometryDataEngineVersion;
+    Json::Value mGeometryDataMutable;
+    std::string mAnimationData;
+    std::string mCapeId;
+    std::vector<SerializedPersonaPieceHandle> mPersonaPieces;
+    persona::ArmSize::Type mArmSizeType;
+    std::unordered_map<persona::PieceType, TintMapColor> mPieceTintColors;
+    mce::Color mSkinColor;
+    TrustedSkinFlag mIsTrustedSkin;
+    bool mIsPremium;
+    bool mIsPersona;
+    bool mIsPersonaCapeOnClassicSkin;
+    bool mIsPrimaryUser;
+    bool mOverridesPlayerAppearance;
+    // char filler[0x250];
 #undef AFTER_EXTRA
 public:
     /**
@@ -27,21 +65,21 @@ public:
      */
     MCAPI SerializedSkin(class SubClientConnectionRequest const &);
     /**
-     * @symbol ??0SerializedSkin\@\@QEAA\@XZ
-     */
-    MCAPI SerializedSkin();
-    /**
      * @symbol ??0SerializedSkin\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI SerializedSkin(class SerializedSkin const &);
     /**
-     * @symbol ??0SerializedSkin\@\@QEAA\@$$QEAV0\@\@Z
+     * @symbol ??0SerializedSkin\@\@QEAA\@XZ
      */
-    MCAPI SerializedSkin(class SerializedSkin &&);
+    MCAPI SerializedSkin();
     /**
      * @symbol ??0SerializedSkin\@\@QEAA\@AEBVConnectionRequest\@\@\@Z
      */
     MCAPI SerializedSkin(class ConnectionRequest const &);
+    /**
+     * @symbol ??0SerializedSkin\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI SerializedSkin(class SerializedSkin &&);
     /**
      * @symbol ?getName\@SerializedSkin\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
@@ -55,9 +93,9 @@ public:
      */
     MCAPI class SerializedSkin & operator=(class SerializedSkin const &);
     /**
-     * @symbol ?read\@SerializedSkin\@\@QEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?read\@SerializedSkin\@\@QEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    MCAPI bool read(class ReadOnlyBinaryStream &);
+    MCAPI class Bedrock::Result<void, class std::error_code> read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?setArmSizeFromString\@SerializedSkin\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */

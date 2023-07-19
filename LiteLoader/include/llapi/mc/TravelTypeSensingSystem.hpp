@@ -25,10 +25,6 @@ public:
 
 public:
     /**
-     * @symbol ?createTravelTypeSensingSideBySideSystem\@TravelTypeSensingSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI static struct TickingSystemWithInfo createTravelTypeSensingSideBySideSystem();
-    /**
      * @symbol ?createTravelTypeSensingSystem\@TravelTypeSensingSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createTravelTypeSensingSystem();

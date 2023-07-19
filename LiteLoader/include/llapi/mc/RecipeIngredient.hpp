@@ -50,9 +50,9 @@ public:
      */
     MCAPI RecipeIngredient(class ItemDescriptor const &, unsigned short);
     /**
-     * @symbol ??0RecipeIngredient\@\@QEAA\@AEBVBlockLegacy\@\@G\@Z
+     * @symbol ??0RecipeIngredient\@\@QEAA\@AEBVBlock\@\@G\@Z
      */
-    MCAPI RecipeIngredient(class BlockLegacy const &, unsigned short);
+    MCAPI RecipeIngredient(class Block const &, unsigned short);
     /**
      * @symbol ??0RecipeIngredient\@\@QEAA\@AEBV0\@\@Z
      */
@@ -70,9 +70,9 @@ public:
      */
     MCAPI RecipeIngredient(class ReadOnlyBinaryStream &);
     /**
-     * @symbol ??0RecipeIngredient\@\@QEAA\@AEBVBlock\@\@G\@Z
+     * @symbol ??0RecipeIngredient\@\@QEAA\@AEBVBlockLegacy\@\@G\@Z
      */
-    MCAPI RecipeIngredient(class Block const &, unsigned short);
+    MCAPI RecipeIngredient(class BlockLegacy const &, unsigned short);
     /**
      * @symbol ??0RecipeIngredient\@\@QEAA\@$$QEAV0\@\@Z
      */

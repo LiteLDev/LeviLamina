@@ -21,14 +21,6 @@ namespace ActorOffset {
      */
     MCAPI class Vec3 getBreathingOffset(class EntityContext const &);
     /**
-     * @symbol ?getDropOffset\@ActorOffset\@\@YA?AVVec3\@\@AEBVEntityContext\@\@\@Z
-     */
-    MCAPI class Vec3 getDropOffset(class EntityContext const &);
-    /**
-     * @symbol ?getExplosionOffset\@ActorOffset\@\@YAMAEBVEntityContext\@\@\@Z
-     */
-    MCAPI float getExplosionOffset(class EntityContext const &);
-    /**
      * @symbol ?getEyeOffset\@ActorOffset\@\@YA?AVVec3\@\@AEBVEntityContext\@\@\@Z
      */
     MCAPI class Vec3 getEyeOffset(class EntityContext const &);
@@ -40,10 +32,6 @@ namespace ActorOffset {
      * @symbol ?getHeightOffset\@ActorOffset\@\@YAMAEBVEntityContext\@\@\@Z
      */
     MCAPI float getHeightOffset(class EntityContext const &);
-    /**
-     * @symbol ?getMouthOffset\@ActorOffset\@\@YA?AVVec3\@\@AEBVEntityContext\@\@\@Z
-     */
-    MCAPI class Vec3 getMouthOffset(class EntityContext const &);
     /**
      * @symbol ?initializeActor\@ActorOffset\@\@YAXAEAVEntityContext\@\@\@Z
      */

@@ -100,9 +100,9 @@ public:
      */
     MCAPI void _configureWorldGen(class IWorldRegistriesProvider &, struct SpawnSettings const &, class Experiments const &, class ResourcePackManager &, class BaseGameVersion const &);
     /**
-     * @symbol ?_registerListeners\@VanillaGameModuleServer\@\@AEAAXAEBV?$not_null\@V?$NonOwnerPointer\@VLevel\@\@\@Bedrock\@\@\@gsl\@\@\@Z
+     * @symbol ?_registerListeners\@VanillaGameModuleServer\@\@AEAAXAEBV?$not_null\@V?$NonOwnerPointer\@VLevel\@\@\@Bedrock\@\@\@gsl\@\@_N\@Z
      */
-    MCAPI void _registerListeners(class gsl::not_null<class Bedrock::NonOwnerPointer<class Level>> const &);
+    MCAPI void _registerListeners(class gsl::not_null<class Bedrock::NonOwnerPointer<class Level>> const &, bool);
 
 private:
 

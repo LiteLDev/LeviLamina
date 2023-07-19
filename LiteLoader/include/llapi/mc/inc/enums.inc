@@ -1,6 +1,13 @@
 // clang-format off
 #include <stdint.h>
 
+enum class BlockSlot : int
+{
+    None_86 = -1,
+    Container_0 = 0,
+    _count_28 = 1,
+};
+
 enum class ContainerType : char {
     NONE = -9,
     INVENTORY = -1,
@@ -1178,6 +1185,10 @@ public:
         Fail = 0x2,
     };
     std::underlying_type_t<InteractionResult::Result> mResult;
+};
+
+namespace Connection{
+    enum class DisconnectFailReason;
 };
 
 // clang-format on

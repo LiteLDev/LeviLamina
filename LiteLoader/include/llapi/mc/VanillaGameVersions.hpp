@@ -58,6 +58,10 @@ namespace VanillaGameVersions {
      */
     MCAPI extern class BaseGameVersion const NetherUpdate_U3;
     /**
+     * @symbol ?RecipeUnlockingVersion\@VanillaGameVersions\@\@3VBaseGameVersion\@\@B
+     */
+    MCAPI extern class BaseGameVersion const RecipeUnlockingVersion;
+    /**
      * @symbol ?SneakingHeightChangeVersion\@VanillaGameVersions\@\@3VBaseGameVersion\@\@B
      */
     MCAPI extern class BaseGameVersion const SneakingHeightChangeVersion;
@@ -65,6 +69,10 @@ namespace VanillaGameVersions {
      * @symbol ?TrailsAndTalesVersion\@VanillaGameVersions\@\@3VBaseGameVersion\@\@B
      */
     MCAPI extern class BaseGameVersion const TrailsAndTalesVersion;
+    /**
+     * @symbol ?TrailsAndTalesVersion_U1\@VanillaGameVersions\@\@3VBaseGameVersion\@\@B
+     */
+    MCAPI extern class BaseGameVersion const TrailsAndTalesVersion_U1;
     /**
      * @symbol ?WildUpdateVersion\@VanillaGameVersions\@\@3VBaseGameVersion\@\@B
      */

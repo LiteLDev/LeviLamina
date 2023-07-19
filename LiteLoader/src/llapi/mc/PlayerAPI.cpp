@@ -81,7 +81,7 @@ enum class AbilitiesLayer;
 
 // From https://github.com/dreamguxiang/BETweaker
 void Player::setAbility(AbilitiesIndex index, bool value) {
-    ActorUniqueID uid = getUniqueID();
+    ActorUniqueID uid = getOrCreateUniqueID();
     auto& abilities = getAbilities();
     auto flying = abilities.getAbility(AbilitiesIndex::Flying).getBool();
     if (index == AbilitiesIndex::Flying && value && isOnGround()) {
@@ -107,6 +107,16 @@ void Player::setAbility(AbilitiesIndex index, bool value) {
     abilities.setAbility(AbilitiesIndex::Flying, flying);
     sendNetworkPacket(pkt2);
     sendNetworkPacket(pkt);
+}
+
+float Player::getCameraOffset() {
+    if (isGliding())
+        return -1.1f;
+    if (isSwimming() || getDamageNearbyMobs())
+        return -1.2f;
+    if (isSleeping())
+        return 1.0f;
+    return 0.0f;
 }
 
 std::string Player::getRealName() {
@@ -166,48 +176,13 @@ string Player::getServerAddress() {
     return "unknown";
 }
 
-string Player::getDeviceTypeName() {
-    switch ((int)getPlatform()) {
-        case -1:
-            return "Unknown";
-        case 1:
-            return "Android";
-        case 2:
-            return "iOS";
-        case 3:
-            return "OSX";
-        case 4:
-            return "Amazon";
-        case 5:
-            return "GearVR";
-        case 6:
-            return "Hololens";
-        case 7:
-            return "Win10";
-        case 8:
-            return "WIN32";
-        case 9:
-            return "Dedicated";
-        case 10:
-            return "TVOS";
-        case 11:
-            return "PlayStation";
-        case 12:
-            return "Nintendo";
-        case 13:
-            return "Xbox";
-        case 14:
-            return "WindowsPhone";
-        case 15:
-            return "Linux";
-        default:
-            return "Unknown";
-    }
+std::string Player::getDeviceTypeName() {
+    return std::string{magic_enum::enum_name(getPlatform())};
 }
 
 bool Player::kick(const std::string& msg) {
     NetworkIdentifier* pNetworkIdentifier = getNetworkIdentifier();
-    Global<ServerNetworkHandler>->disconnectClient(*pNetworkIdentifier, msg, 0);
+    Global<ServerNetworkHandler>->disconnectClient(*pNetworkIdentifier, Connection::DisconnectFailReason(0), msg, 0);
     return true;
 }
 
@@ -330,7 +305,7 @@ bool Player::runcmd(const string& cmd) {
 }
 
 Container* Player::getEnderChestContainer() {
-    return dAccess<Container*>(this, 3344); // IDA Player::Player() 782
+    return dAccess<Container*>(this, 3208); // IDA Player::Player() 782
 }
 
 bool Player::transferServer(const string& address, unsigned short port) {
@@ -799,7 +774,7 @@ bool Player::sendSetScorePacket(char type, const vector<ScorePacketInfo>& data) 
 bool Player::sendBossEventPacket(BossEvent type, string name, float percent, BossEventColour colour, int overlay) {
     BinaryStream wp;
     wp.reserve(8 + name.size());
-    wp.writeVarInt64(getUniqueID() + 1145141919);
+    wp.writeVarInt64(getOrCreateUniqueID() + 1145141919);
     wp.writeUnsignedVarInt((int)type);
     switch (type) {
         case BossEvent::Show:
@@ -809,7 +784,7 @@ bool Player::sendBossEventPacket(BossEvent type, string name, float percent, Bos
         case BossEvent::RegisterPlayer:
         case BossEvent::UnregisterPlayer:
         case BossEvent::ResendRaidBossEventData: {
-            wp.writeVarInt64(getUniqueID() + 1145141919);
+            wp.writeVarInt64(getOrCreateUniqueID() + 1145141919);
             break;
         }
         case BossEvent::HealthPercentage: {
@@ -833,7 +808,8 @@ bool Player::sendBossEventPacket(BossEvent type, string name, float percent, Bos
 
     auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::BossEvent);
     pkt->read(wp);
-    sendAddEntityPacket(getUniqueID() + 1145141919, "player", Vec3(getPos().x, (float)-70, getPos().z), Vec2{0, 0}, 0);
+    sendAddEntityPacket(getOrCreateUniqueID() + 1145141919, "player", Vec3(getPos().x, (float)-70, getPos().z),
+                        Vec2{0, 0}, 0);
     if (type != BossEvent::Hide) {
         sendBossEventPacket(BossEvent::Hide, "", 0, BossEventColour::White);
     }

@@ -5,7 +5,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
-#include "Scripting.hpp"
 
 #define BEFORE_EXTRA
 
@@ -38,9 +37,5 @@ public:
      */
     MCVAPI void onLevelTickEnd();
 #endif
-    /**
-     * @symbol ??0ScriptTickListener\@\@QEAA\@AEAVScriptEngine\@Scripting\@\@AEAVScriptFormPromiseTracker\@\@\@Z
-     */
-    MCAPI ScriptTickListener(class Scripting::ScriptEngine &, class ScriptFormPromiseTracker &);
 
 };

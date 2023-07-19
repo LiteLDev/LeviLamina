@@ -71,13 +71,13 @@ public:
      */
     virtual int size() const;
     /**
-     * @symbol ??0BookCloningRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@AEBVUUID\@mce\@\@\@Z
-     */
-    MCAPI BookCloningRecipe(class std::basic_string_view<char, struct std::char_traits<char>>, class mce::UUID const &);
-    /**
      * @symbol ??0BookCloningRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
     MCAPI BookCloningRecipe(class std::basic_string_view<char, struct std::char_traits<char>>);
+    /**
+     * @symbol ??0BookCloningRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@AEBVUUID\@mce\@\@\@Z
+     */
+    MCAPI BookCloningRecipe(class std::basic_string_view<char, struct std::char_traits<char>>, class mce::UUID const &);
     /**
      * @symbol ?ID\@BookCloningRecipe\@\@2VUUID\@mce\@\@B
      */

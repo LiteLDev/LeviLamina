@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -46,14 +47,14 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?read\@ComplexInventoryTransaction\@\@UEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual void __unk_vfn_1();
+    virtual class Bedrock::Result<void, class std::error_code> read(class ReadOnlyBinaryStream &);
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?write\@ComplexInventoryTransaction\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
-    virtual void __unk_vfn_2();
+    virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 3
      * @symbol ?postLoadItems\@ComplexInventoryTransaction\@\@UEAAXAEAVBlockPalette\@\@_N\@Z
@@ -70,14 +71,6 @@ public:
      */
     virtual void onTransactionError(class Player &, enum class InventoryTransactionError) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPLEXINVENTORYTRANSACTION
-    /**
-     * @symbol ?read\@ComplexInventoryTransaction\@\@UEAAXAEAVReadOnlyBinaryStream\@\@\@Z
-     */
-    MCVAPI void read(class ReadOnlyBinaryStream &);
-    /**
-     * @symbol ?write\@ComplexInventoryTransaction\@\@UEBAXAEAVBinaryStream\@\@\@Z
-     */
-    MCVAPI void write(class BinaryStream &) const;
     /**
      * @symbol __unk_destructor_-1
      */

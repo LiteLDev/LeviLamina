@@ -30,8 +30,8 @@ int Block::getId() const {
     return getLegacyBlock().getBlockItemId();
 }
 
-std::unique_ptr<CompoundTag> Block::getNbt() {
-    return CompoundTag::fromBlock(this);
+std::unique_ptr<CompoundTag> Block::getNbt() const {
+    return getSerializationId().clone();
 }
 
 bool Block::setNbt(CompoundTag* nbt) {

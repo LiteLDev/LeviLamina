@@ -170,13 +170,13 @@ public:
      */
     MCAPI void registerNativeGameTests();
     /**
-     * @symbol ?runTest\@MinecraftGameTest\@\@QEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@AEAVDimension\@\@AEBUTestParameters\@gametest\@\@\@Z
-     */
-    MCAPI std::string runTest(std::string const &, class Dimension &, struct gametest::TestParameters const &);
-    /**
      * @symbol ?runTest\@MinecraftGameTest\@\@QEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@AEAVDimension\@\@AEBUTestParameters\@gametest\@\@V?$vector\@V?$shared_ptr\@VIGameTestListener\@gametest\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VIGameTestListener\@gametest\@\@\@std\@\@\@2\@\@3\@\@Z
      */
     MCAPI std::string runTest(std::string const &, class Dimension &, struct gametest::TestParameters const &, std::vector<class std::shared_ptr<class gametest::IGameTestListener>>);
+    /**
+     * @symbol ?runTest\@MinecraftGameTest\@\@QEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@AEAVDimension\@\@AEBUTestParameters\@gametest\@\@\@Z
+     */
+    MCAPI std::string runTest(std::string const &, class Dimension &, struct gametest::TestParameters const &);
     /**
      * @symbol ?runTestAt\@MinecraftGameTest\@\@QEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@V?$optional\@W4Rotation\@\@\@3\@\@Z
      */

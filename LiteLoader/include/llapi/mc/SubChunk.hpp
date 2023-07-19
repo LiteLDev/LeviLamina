@@ -10,6 +10,15 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
+class SubChunkBrightnessStorage {
+public:
+    struct LightPair {
+        unsigned char blockLight : 4;
+        unsigned char skyLight : 4;
+    };
+    std::array<unsigned char,2048> mLightValues;
+};
+
 #undef BEFORE_EXTRA
 
 /**
@@ -20,7 +29,18 @@ struct SubChunk {
 
 #define AFTER_EXTRA
 // Add Member There
-    enum class SubChunkState;
+public:
+    enum class SubChunkState : int {
+        Invalid                    =-1,
+        Normal                     = 0,
+        IsLightingSystemSubChunk   = 1,
+        NeedsRequest               = 2,
+        ReceivedResponseFromServer = 3,
+        ProcessingSubChunk         = 4,
+        WaitingForCacheResponse    = 5,
+        ProcessedSubChunk          = 6,
+        RequestFinished            = 7,
+    };
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNK
 public:
@@ -30,13 +50,13 @@ public:
 
 public:
     /**
-     * @symbol ??0SubChunk\@\@QEAA\@$$QEAU0\@\@Z
-     */
-    MCAPI SubChunk(struct SubChunk &&);
-    /**
      * @symbol ??0SubChunk\@\@QEAA\@PEBVBlock\@\@_N1AEAVSpinLock\@\@C\@Z
      */
     MCAPI SubChunk(class Block const *, bool, bool, class SpinLock &, signed char);
+    /**
+     * @symbol ??0SubChunk\@\@QEAA\@$$QEAU0\@\@Z
+     */
+    MCAPI SubChunk(struct SubChunk &&);
     /**
      * @symbol ??0SubChunk\@\@QEAA\@XZ
      */

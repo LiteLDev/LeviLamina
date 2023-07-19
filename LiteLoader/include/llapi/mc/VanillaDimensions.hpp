@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -57,6 +58,10 @@ public:
      * @symbol ?fromSerializedInt\@VanillaDimensions\@\@SA?AV?$AutomaticID\@VDimension\@\@H\@\@H\@Z
      */
     MCAPI static class AutomaticID<class Dimension, int> fromSerializedInt(int);
+    /**
+     * @symbol ?fromSerializedInt\@VanillaDimensions\@\@SA?AV?$Result\@V?$AutomaticID\@VDimension\@\@H\@\@Verror_code\@std\@\@\@Bedrock\@\@$$QEAV?$Result\@HVerror_code\@std\@\@\@3\@\@Z
+     */
+    MCAPI static class Bedrock::Result<class AutomaticID<class Dimension, int>, class std::error_code> fromSerializedInt(class Bedrock::Result<int, class std::error_code> &&);
     /**
      * @symbol ?fromString\@VanillaDimensions\@\@SA?AV?$AutomaticID\@VDimension\@\@H\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */

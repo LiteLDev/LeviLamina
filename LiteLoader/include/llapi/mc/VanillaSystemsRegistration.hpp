@@ -23,41 +23,33 @@ namespace VanillaSystemsRegistration {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?_registerSideBySideCompare\@VanillaSystemsRegistration\@\@YAXAEBV?$vector\@IV?$allocator\@I\@std\@\@\@std\@\@AEAVEntitySystems\@\@W4SideBySideExtractionId\@\@AEBURegistrationOptions\@1\@\@Z
+     * @symbol ?registerActorAiStepSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEBURegistrationOptions\@1\@\@Z
      */
-    MCAPI void _registerSideBySideCompare(std::vector<unsigned int> const &, class EntitySystems &, enum class SideBySideExtractionId, struct VanillaSystemsRegistration::RegistrationOptions const &);
+    MCAPI void registerActorAiStepSystems(class EntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &);
     /**
-     * @symbol ?registerActorAiStepSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEAUDependencyInfo\@1\@AEBURegistrationOptions\@1\@AEAV?$shared_future\@UEntitySystemsInfo\@\@\@std\@\@\@Z
+     * @symbol ?registerActorMoveSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEBURegistrationOptions\@1\@\@Z
      */
-    MCAPI void registerActorAiStepSystems(class EntitySystems &, struct VanillaSystemsRegistration::DependencyInfo &, struct VanillaSystemsRegistration::RegistrationOptions const &, class std::shared_future<struct EntitySystemsInfo> &);
+    MCAPI void registerActorMoveSystems(class EntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &);
     /**
-     * @symbol ?registerActorMoveSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEAUDependencyInfo\@1\@AEBURegistrationOptions\@1\@W4MoveSystemsRegistrationMode\@1\@\@Z
+     * @symbol ?registerActorMovementTickSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEBURegistrationOptions\@1\@\@Z
      */
-    MCAPI void registerActorMoveSystems(class EntitySystems &, struct VanillaSystemsRegistration::DependencyInfo &, struct VanillaSystemsRegistration::RegistrationOptions const &, enum class VanillaSystemsRegistration::MoveSystemsRegistrationMode);
+    MCAPI void registerActorMovementTickSystems(class EntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &);
     /**
-     * @symbol ?registerActorMovementTickSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEBURegistrationOptions\@1\@AEAV?$shared_future\@UEntitySystemsInfo\@\@\@std\@\@\@Z
+     * @symbol ?registerActorNormalTickSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEBURegistrationOptions\@1\@\@Z
      */
-    MCAPI void registerActorMovementTickSystems(class EntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &, class std::shared_future<struct EntitySystemsInfo> &);
+    MCAPI void registerActorNormalTickSystems(class EntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &);
     /**
-     * @symbol ?registerActorNormalTickSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEAUDependencyInfo\@1\@AEBURegistrationOptions\@1\@AEAV?$shared_future\@UEntitySystemsInfo\@\@\@std\@\@\@Z
+     * @symbol ?registerActorPositionPassenger\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEBURegistrationOptions\@1\@\@Z
      */
-    MCAPI void registerActorNormalTickSystems(class EntitySystems &, struct VanillaSystemsRegistration::DependencyInfo &, struct VanillaSystemsRegistration::RegistrationOptions const &, class std::shared_future<struct EntitySystemsInfo> &);
-    /**
-     * @symbol ?registerActorPositionPassenger\@VanillaSystemsRegistration\@\@YAXAEAVIEntitySystems\@\@AEBURegistrationOptions\@1\@\@Z
-     */
-    MCAPI void registerActorPositionPassenger(class IEntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &);
+    MCAPI void registerActorPositionPassenger(class EntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &);
     /**
      * @symbol ?registerActorPreTravelSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEBURegistrationOptions\@1\@\@Z
      */
     MCAPI void registerActorPreTravelSystems(class EntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &);
     /**
-     * @symbol ?registerActorTravelSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEAUDependencyInfo\@1\@AEBURegistrationOptions\@1\@\@Z
+     * @symbol ?registerActorTravelSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEBURegistrationOptions\@1\@\@Z
      */
-    MCAPI void registerActorTravelSystems(class EntitySystems &, struct VanillaSystemsRegistration::DependencyInfo &, struct VanillaSystemsRegistration::RegistrationOptions const &);
-    /**
-     * @symbol ?registerExtractApplyBlock\@VanillaSystemsRegistration\@\@YAXAEAUDependencyInfo\@1\@W4ExtractApplyMode\@1\@W4SideBySideExtractionId\@\@AEAVEntitySystems\@\@AEBURegistrationOptions\@1\@AEBV?$function\@$$A6AXAEAVIEntitySystems\@\@\@Z\@std\@\@\@Z
-     */
-    MCAPI void registerExtractApplyBlock(struct VanillaSystemsRegistration::DependencyInfo &, enum class VanillaSystemsRegistration::ExtractApplyMode, enum class SideBySideExtractionId, class EntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &, class std::function<void (class IEntitySystems &)> const &);
+    MCAPI void registerActorTravelSystems(class EntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &);
     /**
      * @symbol ?registerPassengerTick\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEBURegistrationOptions\@1\@\@Z
      */
@@ -75,9 +67,9 @@ namespace VanillaSystemsRegistration {
      */
     MCAPI void registerTickFilterSystems(class EntitySystems &);
     /**
-     * @symbol ?registerUpdateMobTravelSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEBURegistrationOptions\@1\@\@Z
+     * @symbol ?registerUpdateMobTravelSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@\@Z
      */
-    MCAPI void registerUpdateMobTravelSystems(class EntitySystems &, struct VanillaSystemsRegistration::RegistrationOptions const &);
+    MCAPI void registerUpdateMobTravelSystems(class EntitySystems &);
     /**
      * @symbol ?registerVanillaServerTickingSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@V?$not_null\@V?$NonOwnerPointer\@$$CBVILevel\@\@\@Bedrock\@\@\@gsl\@\@AEBURegistrationOptions\@1\@\@Z
      */

@@ -90,12 +90,4 @@ public:
      */
     MCAPI HideGoal(class Mob &, float, float, float, enum class POIType);
 
-//private:
-    /**
-     * @symbol ?_sendSoundTheAlarmAchievement\@HideGoal\@\@AEBAXXZ
-     */
-    MCAPI void _sendSoundTheAlarmAchievement() const;
-
-private:
-
 };

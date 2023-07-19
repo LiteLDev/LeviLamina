@@ -21,10 +21,6 @@ namespace ActorEnvironment {
      */
     MCAPI bool getHeadInWater(class EntityContext const &);
     /**
-     * @symbol ?getIsInLava\@ActorEnvironment\@\@YA_NAEBVEntityContext\@\@\@Z
-     */
-    MCAPI bool getIsInLava(class EntityContext const &);
-    /**
      * @symbol ?getIsInWater\@ActorEnvironment\@\@YA_NAEBVEntityContext\@\@\@Z
      */
     MCAPI bool getIsInWater(class EntityContext const &);
@@ -32,10 +28,6 @@ namespace ActorEnvironment {
      * @symbol ?setHeadInWater\@ActorEnvironment\@\@YAXAEAVEntityContext\@\@_N\@Z
      */
     MCAPI void setHeadInWater(class EntityContext &, bool);
-    /**
-     * @symbol ?setIsInLava\@ActorEnvironment\@\@YAXAEAVEntityContext\@\@_N\@Z
-     */
-    MCAPI void setIsInLava(class EntityContext &, bool);
     /**
      * @symbol ?setIsInWater\@ActorEnvironment\@\@YAXAEAVEntityContext\@\@_N\@Z
      */

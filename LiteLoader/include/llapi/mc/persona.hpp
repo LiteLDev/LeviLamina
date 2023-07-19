@@ -19,6 +19,35 @@ namespace persona {
 
 #define AFTER_EXTRA
 // Add Member There
+
+    struct SizeInfo {
+        std::string_view mSizeName;
+        std::string_view mSizeTexturePath;
+    };
+
+    enum class AnimationExpression : __int32
+    {
+    Linear_0 = 0x0,
+    Blinking = 0x1,
+    };
+
+
+struct ArmSize {
+    enum class Type : int64_t {
+        Slim = 0,
+        Wide = 1,
+        Count_15 = 2,
+        Unknown_18 = 3,
+    };
+
+    struct Proxy {
+        using constIterator = std::unordered_map<ArmSize::Type, SizeInfo>::const_iterator;
+    };
+
+    using SizeInfoList = std::unordered_map<ArmSize::Type, SizeInfo>;
+    };
+
+
 enum class AnimatedTextureType;
 enum class PieceType;
 

@@ -37,10 +37,6 @@ public:
      */
     MCAPI static void _tickPostPlayerTravelSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct LocalPlayerPrePlayerTravelComponent const, struct AbilitiesComponent>);
     /**
-     * @symbol ?_tickPrePlayerTravelSystem\@VRFlyTravelSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@ULocalPlayerComponentFlag\@\@\@\@\@\@$$CBUPlayerInputModeComponent\@\@UMobTravelComponent\@\@UAbilitiesComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@ULocalPlayerPrePlayerTravelComponent\@\@\@\@\@Z
-     */
-    MCAPI static void _tickPrePlayerTravelSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct LocalPlayerComponentFlag>>, struct PlayerInputModeComponent const, struct MobTravelComponent, struct AbilitiesComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct LocalPlayerPrePlayerTravelComponent>);
-    /**
      * @symbol ?createPostPlayerTravelSystem\@VRFlyTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createPostPlayerTravelSystem();
@@ -48,9 +44,5 @@ public:
      * @symbol ?createPrePlayerTravelSystem\@VRFlyTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createPrePlayerTravelSystem();
-    /**
-     * @symbol ?createSideBySideCatchupSystem\@VRFlyTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI static struct TickingSystemWithInfo createSideBySideCatchupSystem();
 
 };

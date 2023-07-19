@@ -190,7 +190,6 @@ jobs:
         with:
           prerelease: false
           tag: ${{ github.event.inputs.tag }}
-          bodyFile: RELEASE_NOTES.md
           artifacts: |
             build/LiteLoaderBDS.zip
             build/PDB.zip
@@ -203,7 +202,6 @@ jobs:
         with:
           prerelease: true
           tag: ${{ github.event.inputs.tag }}
-          bodyFile: RELEASE_NOTES.md
           artifacts: |
             build/LiteLoaderBDS.zip
             build/PDB.zip

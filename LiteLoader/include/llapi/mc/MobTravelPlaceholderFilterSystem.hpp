@@ -29,10 +29,6 @@ public:
      */
     MCAPI static struct TickingSystemWithInfo create();
     /**
-     * @symbol ?createSideBySide\@MobTravelPlaceholderFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
-     */
-    MCAPI static struct TickingSystemWithInfo createSideBySide();
-    /**
      * @symbol ?tick\@MobTravelPlaceholderFilterSystem\@\@SAXAEBVStrictEntityContext\@\@AEAUStateVectorComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UMobTravelComponent\@\@\@\@AEBVIConstBlockSource\@\@\@Z
      */
     MCAPI static void tick(class StrictEntityContext const &, struct StateVectorComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MobTravelComponent>, class IConstBlockSource const &);

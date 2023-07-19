@@ -47,14 +47,6 @@ public:
     MCVAPI ~ScriptPlugin();
 #endif
     /**
-     * @symbol ?getModuleDescriptor\@ScriptPlugin\@\@QEBAAEBUModuleDescriptor\@Scripting\@\@XZ
-     */
-    MCAPI struct Scripting::ModuleDescriptor const & getModuleDescriptor() const;
-    /**
-     * @symbol ?getScriptContext\@ScriptPlugin\@\@QEAAAEAVScriptContext\@Scripting\@\@XZ
-     */
-    MCAPI class Scripting::ScriptContext & getScriptContext();
-    /**
      * @symbol ?hasErrors\@ScriptPlugin\@\@QEBA_NXZ
      */
     MCAPI bool hasErrors() const;

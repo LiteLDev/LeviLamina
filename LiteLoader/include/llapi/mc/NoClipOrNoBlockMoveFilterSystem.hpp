@@ -32,12 +32,8 @@ public:
      */
     MCAPI static struct TickingSystemWithInfo create();
     /**
-     * @symbol ?createSideBySide\@NoClipOrNoBlockMoveFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?tick\@NoClipOrNoBlockMoveFilterSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUMoveRequestComponent\@\@AEBUOffsetsComponent\@\@V?$Optional\@$$CBUSlideOffsetComponent\@\@\@\@AEBUSynchedActorDataComponent\@\@AEAUAABBShapeComponent\@\@AEAUStateVectorComponent\@\@AEAUSubBBsComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UMoveRequestComponent\@\@\@\@AEBVIConstBlockSource\@\@\@Z
      */
-    MCAPI static struct TickingSystemWithInfo createSideBySide();
-    /**
-     * @symbol ?tick\@NoClipOrNoBlockMoveFilterSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUMoveRequestComponent\@\@AEBUOffsetsComponent\@\@AEBUSlideOffsetComponent\@\@AEBUSynchedActorDataComponent\@\@AEAUAABBShapeComponent\@\@AEAUStateVectorComponent\@\@AEAUSubBBsComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UMoveRequestComponent\@\@\@\@AEBVIConstBlockSource\@\@\@Z
-     */
-    MCAPI static void tick(class StrictEntityContext const &, struct MoveRequestComponent const &, struct OffsetsComponent const &, struct SlideOffsetComponent const &, struct SynchedActorDataComponent const &, struct AABBShapeComponent &, struct StateVectorComponent &, struct SubBBsComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MoveRequestComponent>, class IConstBlockSource const &);
+    MCAPI static void tick(class StrictEntityContext const &, struct MoveRequestComponent const &, struct OffsetsComponent const &, class Optional<struct SlideOffsetComponent const>, struct SynchedActorDataComponent const &, struct AABBShapeComponent &, struct StateVectorComponent &, struct SubBBsComponent &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MoveRequestComponent>, class IConstBlockSource const &);
 
 };

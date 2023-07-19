@@ -34,13 +34,5 @@ public:
      * @symbol ??0ItemChargeEvent\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI ItemChargeEvent(struct ItemChargeEvent &&);
-    /**
-     * @symbol ??0ItemChargeEvent\@\@QEAA\@AEBVItemInstance\@\@VWeakEntityRef\@\@H\@Z
-     */
-    MCAPI ItemChargeEvent(class ItemInstance const &, class WeakEntityRef, int);
-    /**
-     * @symbol ??1ItemChargeEvent\@\@QEAA\@XZ
-     */
-    MCAPI ~ItemChargeEvent();
 
 };

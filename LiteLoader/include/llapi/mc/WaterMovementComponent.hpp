@@ -41,10 +41,6 @@ public:
      */
     MCAPI void initFromDefinition(class Actor &);
     /**
-     * @symbol ??8WaterMovementComponent\@\@QEBA_NAEBV0\@\@Z
-     */
-    MCAPI bool operator==(class WaterMovementComponent const &) const;
-    /**
      * @symbol ?getDefaultDragFactor\@WaterMovementComponent\@\@SAMXZ
      */
     MCAPI static float getDefaultDragFactor();

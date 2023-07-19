@@ -37,10 +37,6 @@ public:
      * @symbol ?_doWaterAnimalPreAIStepSystem\@WaterAnimalPreAIStepSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
      */
     MCAPI static void _doWaterAnimalPreAIStepSystem(class StrictEntityContext const &, class ActorOwnerComponent &);
-    /**
-     * @symbol ?_tickWaterAnimalPreAIStepSystem\@WaterAnimalPreAIStepSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UWaterAnimalFlag\@\@\@\@\@\@VActorOwnerComponent\@\@\@\@\@Z
-     */
-    MCAPI static void _tickWaterAnimalPreAIStepSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct WaterAnimalFlag>>, class ActorOwnerComponent>);
 
 private:
 

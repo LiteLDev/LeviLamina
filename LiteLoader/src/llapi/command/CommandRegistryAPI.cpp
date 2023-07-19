@@ -10,13 +10,14 @@
 #include "liteloader/LiteLoader.h"
 
 using ll::logger;
-static_assert(offsetof(CommandParameterData, options) == 73);
+static_assert(offsetof(CommandParameterData, options) == 89);
 static_assert(offsetof(CommandParameterData, name) == 16);
-static_assert(offsetof(CommandParameterData, unk56) == 56);
+static_assert(offsetof(CommandParameterData, unk72) == 72);
+static_assert(sizeof(CommandParameterData) == 96);
 static_assert(offsetof(CommandRegistry::Overload, versionOffset) == 40);
 static_assert(sizeof(CommandRegistry::Overload) == 72);
-static_assert(offsetof(CommandRegistry::Signature, alt_symbol) == 96);
-static_assert(sizeof(CommandRegistry::Signature) == 128);
+static_assert(offsetof(CommandRegistry::Signature, alt_symbol) == 120);
+static_assert(sizeof(CommandRegistry::Signature) == 152);
 /*
 void CommandRegistry::registerOverload(std::string const& name, Overload::FactoryFn factory, std::vector<CommandParameterData>&& args)
 {
@@ -242,7 +243,6 @@ inline void CommandRegistry::printSize() const {
     log["mCommandSymbols          "].append(fmt::format(", {:4}", mCommandSymbols.size()));
     log["mSignatures              "].append(fmt::format(", {:4}", mSignatures.size()));
     log["mTypeLookup              "].append(fmt::format(", {:4}", mTypeLookup.size()));
-    log["unk376                   "].append(fmt::format(", {:4}", unk376.size()));
     log["mAliases                 "].append(fmt::format(", {:4}", mAliases.size()));
     log["mSemanticConstraints     "].append(fmt::format(", {:4}", mSemanticConstraints.size()));
     log["mSemanticConstraintLookup"].append(fmt::format(", {:4}", mSemanticConstraintLookup.size()));

@@ -53,7 +53,6 @@ public:
 #endif
 
 public:
-public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
@@ -106,13 +105,13 @@ public:
      */
     MCAPI static bool shouldUseCommandOriginRotation(class CommandOrigin const &, int);
     /**
-     * @symbol ?validRange\@Command\@\@SA_NMMMAEAVCommandOutput\@\@\@Z
-     */
-    MCAPI static bool validRange(float, float, float, class CommandOutput &);
-    /**
      * @symbol ?validRange\@Command\@\@SA_NHHHAEAVCommandOutput\@\@\@Z
      */
     MCAPI static bool validRange(int, int, int, class CommandOutput &);
+    /**
+     * @symbol ?validRange\@Command\@\@SA_NMMMAEAVCommandOutput\@\@\@Z
+     */
+    MCAPI static bool validRange(float, float, float, class CommandOutput &);
 
 //protected:
     /**

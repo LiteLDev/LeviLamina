@@ -47,7 +47,7 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 2
+     * @vftbl 1
      * @symbol ?execute\@ScoreboardCommand\@\@EEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const &, class CommandOutput &) const;

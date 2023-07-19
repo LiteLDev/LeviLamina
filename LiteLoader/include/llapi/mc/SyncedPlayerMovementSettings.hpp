@@ -10,19 +10,16 @@
 
 #undef BEFORE_EXTRA
 
-/**
- * @brief MC class SyncedPlayerMovementSettings.
- *
- */
-class SyncedPlayerMovementSettings {
+
+struct SyncedPlayerMovementSettings {
 
 #define AFTER_EXTRA
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SYNCEDPLAYERMOVEMENTSETTINGS
 public:
-    class SyncedPlayerMovementSettings& operator=(class SyncedPlayerMovementSettings const &) = delete;
-    SyncedPlayerMovementSettings(class SyncedPlayerMovementSettings const &) = delete;
+    struct SyncedPlayerMovementSettings& operator=(struct SyncedPlayerMovementSettings const &) = delete;
+    SyncedPlayerMovementSettings(struct SyncedPlayerMovementSettings const &) = delete;
 #endif
 
 public:

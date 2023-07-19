@@ -33,9 +33,9 @@ public:
      */
     MCAPI RoleChecker();
     /**
-     * @symbol ?checkRole\@RoleChecker\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$function\@$$A6AXW4ADRole\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1\@Z\@3\@\@Z
+     * @symbol ?checkRole\@RoleChecker\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$function\@$$A6AXW4Role\@edu\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1\@Z\@3\@\@Z
      */
-    MCAPI void checkRole(std::string const &, class std::function<void (enum class ADRole, std::string const &, std::string const &)>);
+    MCAPI void checkRole(std::string const &, class std::function<void (enum class edu::Role, std::string const &, std::string const &)>);
     /**
      * @symbol ?lookupInProgress\@RoleChecker\@\@QEBA_NXZ
      */

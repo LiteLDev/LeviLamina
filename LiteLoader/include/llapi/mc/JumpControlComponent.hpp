@@ -67,10 +67,6 @@ public:
      */
     MCAPI class JumpControlComponent & operator=(class JumpControlComponent const &);
     /**
-     * @symbol ??8JumpControlComponent\@\@QEBA_NAEBV0\@\@Z
-     */
-    MCAPI bool operator==(class JumpControlComponent const &) const;
-    /**
      * @symbol ?resetSpeedModifier\@JumpControlComponent\@\@QEAAXAEAVMob\@\@\@Z
      */
     MCAPI void resetSpeedModifier(class Mob &);

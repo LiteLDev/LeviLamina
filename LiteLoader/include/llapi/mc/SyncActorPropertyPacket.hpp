@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 #include "Packet.hpp"
 
 #define BEFORE_EXTRA
@@ -50,15 +51,10 @@ public:
      */
     virtual void write(class BinaryStream &) const;
     /**
-     * @vftbl 4
-     * @symbol ?read\@SyncActorPropertyPacket\@\@UEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
-     */
-    virtual struct ExtendedStreamReadResult read(class ReadOnlyBinaryStream &);
-    /**
      * @vftbl 7
-     * @symbol ?_read\@SyncActorPropertyPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@SyncActorPropertyPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SYNCACTORPROPERTYPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -66,12 +62,12 @@ public:
     MCVAPI ~SyncActorPropertyPacket();
 #endif
     /**
-     * @symbol ??0SyncActorPropertyPacket\@\@QEAA\@AEBVHashedString\@\@AEBVPropertyGroupManager\@\@\@Z
-     */
-    MCAPI SyncActorPropertyPacket(class HashedString const &, class PropertyGroupManager const &);
-    /**
      * @symbol ??0SyncActorPropertyPacket\@\@QEAA\@XZ
      */
     MCAPI SyncActorPropertyPacket();
+    /**
+     * @symbol ??0SyncActorPropertyPacket\@\@QEAA\@AEBVHashedString\@\@AEBVPropertyGroupManager\@\@\@Z
+     */
+    MCAPI SyncActorPropertyPacket(class HashedString const &, class PropertyGroupManager const &);
 
 };

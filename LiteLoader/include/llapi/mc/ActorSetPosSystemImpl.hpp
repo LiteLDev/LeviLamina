@@ -17,17 +17,13 @@ namespace ActorSetPosSystemImpl {
 
 #undef AFTER_EXTRA
     /**
-     * @symbol ?_tickActorUpdatePositionAndAABBSystem2\@ActorSetPosSystemImpl\@\@YAXAEBUActorSetPositionRequestComponent\@\@AEBUOffsetsComponent\@\@AEBUSlideOffsetComponent\@\@AEAUAABBShapeComponent\@\@AEAUStateVectorComponent\@\@V?$Optional\@V?$FlagComponent\@UPaintingFlag\@\@\@\@\@\@\@Z
+     * @symbol ?_tickActorUpdatePositionAndAABBSystem2\@ActorSetPosSystemImpl\@\@YAXAEBUActorSetPositionRequestComponent\@\@AEBUOffsetsComponent\@\@V?$Optional\@$$CBUSlideOffsetComponent\@\@\@\@AEAUAABBShapeComponent\@\@AEAUStateVectorComponent\@\@V?$Optional\@V?$FlagComponent\@UPaintingFlag\@\@\@\@\@\@\@Z
      */
-    MCAPI void _tickActorUpdatePositionAndAABBSystem2(struct ActorSetPositionRequestComponent const &, struct OffsetsComponent const &, struct SlideOffsetComponent const &, struct AABBShapeComponent &, struct StateVectorComponent &, class Optional<class FlagComponent<struct PaintingFlag>>);
+    MCAPI void _tickActorUpdatePositionAndAABBSystem2(struct ActorSetPositionRequestComponent const &, struct OffsetsComponent const &, class Optional<struct SlideOffsetComponent const>, struct AABBShapeComponent &, struct StateVectorComponent &, class Optional<class FlagComponent<struct PaintingFlag>>);
     /**
      * @symbol ?_tickAddLocalPlayerEntityMovedSystemAsynchronous1\@ActorSetPosSystemImpl\@\@YAXAEAVStrictEntityContext\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UActorChunkMoveFlag\@\@\@\@V?$FlagComponent\@UActorLocalPlayerEntityMovedFlag\@\@\@\@UActorSetPositionRequestComponent\@\@\@\@\@Z
      */
     MCAPI void _tickAddLocalPlayerEntityMovedSystemAsynchronous1(class StrictEntityContext &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct ActorChunkMoveFlag>, class FlagComponent<struct ActorLocalPlayerEntityMovedFlag>, struct ActorSetPositionRequestComponent>);
-    /**
-     * @symbol ?_tickAddLocalPlayerEntityMovedSystemSynchronous1\@ActorSetPosSystemImpl\@\@YAXAEBVActorOwnerComponent\@\@\@Z
-     */
-    MCAPI void _tickAddLocalPlayerEntityMovedSystemSynchronous1(class ActorOwnerComponent const &);
     /**
      * @symbol ?_tickChunkMoveNeededSystemAsynchronous4\@ActorSetPosSystemImpl\@\@YAXAEAVStrictEntityContext\@\@AEBUChunkPositionComponent\@\@AEBUStateVectorComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UActorChunkMoveFlag\@\@\@\@V?$FlagComponent\@UActorLocalPlayerEntityMovedFlag\@\@\@\@UActorSetPositionRequestComponent\@\@\@\@\@Z
      */

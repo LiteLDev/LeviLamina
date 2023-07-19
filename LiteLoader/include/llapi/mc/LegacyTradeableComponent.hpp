@@ -61,9 +61,9 @@ public:
      */
     MCAPI bool getInteraction(class Actor &, class Player &, class ActorInteraction &);
     /**
-     * @symbol ?getLastPlayerTradeName\@LegacyTradeableComponent\@\@QEBAPEBVPlayer\@\@XZ
+     * @symbol ?getLastPlayerTradeID\@LegacyTradeableComponent\@\@QEBA?BUActorUniqueID\@\@XZ
      */
-    MCAPI class Player const * getLastPlayerTradeName() const;
+    MCAPI struct ActorUniqueID const getLastPlayerTradeID() const;
     /**
      * @symbol ?getOffers\@LegacyTradeableComponent\@\@QEAAPEAVMerchantRecipeList\@\@AEAVActor\@\@\@Z
      */

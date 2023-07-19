@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Json.hpp"
+#include "Bedrock.hpp"
 #include "ItemDescriptorCount.hpp"
 
 #define BEFORE_EXTRA
@@ -30,6 +31,7 @@ public:
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKITEMSTACKDESCRIPTOR
 public:
     class NetworkItemStackDescriptor& operator=(class NetworkItemStackDescriptor const &) = delete;
+    NetworkItemStackDescriptor() = delete;
 #endif
 
 public:
@@ -45,29 +47,25 @@ public:
     MCVAPI ~NetworkItemStackDescriptor();
 #endif
     /**
-     * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor const &);
-    /**
-     * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@XZ
-     */
-    MCAPI NetworkItemStackDescriptor();
-    /**
-     * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor &&);
-    /**
      * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@AEBVItemStack\@\@\@Z
      */
     MCAPI NetworkItemStackDescriptor(class ItemStack const &);
+    /**
+     * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor const &);
     /**
      * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@AEBVItemStackDescriptor\@\@\@Z
      */
     MCAPI NetworkItemStackDescriptor(class ItemStackDescriptor const &);
     /**
-     * @symbol ?read\@NetworkItemStackDescriptor\@\@QEAAXAEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI void read(class ReadOnlyBinaryStream &);
+    MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor &&);
+    /**
+     * @symbol ?read\@NetworkItemStackDescriptor\@\@QEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     */
+    MCAPI class Bedrock::Result<void, class std::error_code> read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?setIncludeNetIds\@NetworkItemStackDescriptor\@\@QEBAX_N\@Z
      */

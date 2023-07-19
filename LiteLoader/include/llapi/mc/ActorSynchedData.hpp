@@ -25,6 +25,10 @@ namespace ActorSynchedData {
      */
     MCAPI void updateAmbientSound(class EntityContext &);
     /**
+     * @symbol ?updateBoundingBox\@ActorSynchedData\@\@YAXAEAVEntityContext\@\@AEBVSynchedActorDataEntityWrapper\@\@\@Z
+     */
+    MCAPI void updateBoundingBox(class EntityContext &, class SynchedActorDataEntityWrapper const &);
+    /**
      * @symbol ?updateBuoyancyData\@ActorSynchedData\@\@YAXAEAVEntityContext\@\@AEBVSynchedActorDataEntityWrapper\@\@\@Z
      */
     MCAPI void updateBuoyancyData(class EntityContext &, class SynchedActorDataEntityWrapper const &);

@@ -32,10 +32,6 @@ public:
      */
     MCAPI static struct TickingSystemWithInfo createFlyTravelSystem();
     /**
-     * @symbol ?getPlayerFlySpeed\@FlyTravelSystem\@\@SAMAEBVLayeredAbilities\@\@VSynchedActorDataReader\@\@\@Z
-     */
-    MCAPI static float getPlayerFlySpeed(class LayeredAbilities const &, class SynchedActorDataReader);
-    /**
      * @symbol ?tickFlyTravelSystem\@FlyTravelSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@UMobTravelComponent\@\@\@\@$$CBUAbilitiesComponent\@\@$$CBUSynchedActorDataComponent\@\@UFlySpeedComponent\@\@\@\@\@Z
      */
     MCAPI static void tickFlyTravelSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PlayerComponentFlag>, struct MobTravelComponent>, struct AbilitiesComponent const, struct SynchedActorDataComponent const, struct FlySpeedComponent>);

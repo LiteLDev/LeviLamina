@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Json.hpp"
+#include "Bedrock.hpp"
 #include "ItemDescriptorCount.hpp"
 
 #define BEFORE_EXTRA
@@ -43,13 +44,13 @@ public:
     MCVAPI ~NetworkItemInstanceDescriptor();
 #endif
     /**
-     * @symbol ??0NetworkItemInstanceDescriptor\@\@QEAA\@AEBVItemInstance\@\@\@Z
-     */
-    MCAPI NetworkItemInstanceDescriptor(class ItemInstance const &);
-    /**
      * @symbol ??0NetworkItemInstanceDescriptor\@\@QEAA\@AEBVItemStackDescriptor\@\@\@Z
      */
     MCAPI NetworkItemInstanceDescriptor(class ItemStackDescriptor const &);
+    /**
+     * @symbol ??0NetworkItemInstanceDescriptor\@\@QEAA\@AEBVItemInstance\@\@\@Z
+     */
+    MCAPI NetworkItemInstanceDescriptor(class ItemInstance const &);
     /**
      * @symbol ??0NetworkItemInstanceDescriptor\@\@QEAA\@$$QEAV0\@\@Z
      */
@@ -59,9 +60,9 @@ public:
      */
     MCAPI class ItemInstance getItemInstance(class BlockPalette const &) const;
     /**
-     * @symbol ?read\@NetworkItemInstanceDescriptor\@\@QEAAXAEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?read\@NetworkItemInstanceDescriptor\@\@QEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    MCAPI void read(class ReadOnlyBinaryStream &);
+    MCAPI class Bedrock::Result<void, class std::error_code> read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?write\@NetworkItemInstanceDescriptor\@\@QEBAXAEAVBinaryStream\@\@\@Z
      */

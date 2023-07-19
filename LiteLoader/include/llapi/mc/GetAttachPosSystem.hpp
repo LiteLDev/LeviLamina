@@ -21,8 +21,8 @@ namespace GetAttachPosSystem {
      */
     MCAPI struct TickingSystemWithInfo createSystem();
     /**
-     * @symbol ?getAttachPos\@GetAttachPosSystem\@\@YA?AV?$optional\@VVec3\@\@\@std\@\@AEBVStrictEntityContext\@\@W4ActorLocation\@\@AEBVVec3\@\@AEBUAABBShapeComponent\@\@AEBUActorRotationComponent\@\@AEBUOffsetsComponent\@\@AEBUSynchedActorDataComponent\@\@AEBV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@\@\@\@\@M\@Z
+     * @symbol ?getAttachPos\@GetAttachPosSystem\@\@YA?AVVec3\@\@W4ActorLocation\@\@AEBV2\@AEBUAABBShapeComponent\@\@AEBUActorRotationComponent\@\@AEBUOffsetsComponent\@\@V?$optional_ref\@$$CBUPassengerRenderingRidingOffsetComponent\@\@\@\@V?$optional_ref\@$$CBUVanillaOffsetComponent\@\@\@\@M\@Z
      */
-    MCAPI class std::optional<class Vec3> getAttachPos(class StrictEntityContext const &, enum class ActorLocation, class Vec3 const &, struct AABBShapeComponent const &, struct ActorRotationComponent const &, struct OffsetsComponent const &, struct SynchedActorDataComponent const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PlayerComponentFlag>>> const &, float);
+    MCAPI class Vec3 getAttachPos(enum class ActorLocation, class Vec3 const &, struct AABBShapeComponent const &, struct ActorRotationComponent const &, struct OffsetsComponent const &, class optional_ref<struct PassengerRenderingRidingOffsetComponent const>, class optional_ref<struct VanillaOffsetComponent const>, float);
 
 };

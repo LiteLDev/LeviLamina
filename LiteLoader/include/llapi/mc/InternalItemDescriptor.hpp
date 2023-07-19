@@ -7,6 +7,7 @@
 #include "llapi/Global.h"
 #include "ItemDescriptor.hpp"
 #include "Json.hpp"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 
@@ -72,8 +73,8 @@ public:
      */
     virtual unsigned __int64 getHash() const;
     /**
-     * @symbol ?deserialize\@InternalItemDescriptor\@\@SA?AV?$unique_ptr\@UInternalItemDescriptor\@\@U?$default_delete\@UInternalItemDescriptor\@\@\@std\@\@\@std\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?deserialize\@InternalItemDescriptor\@\@SA?AV?$Result\@V?$unique_ptr\@UInternalItemDescriptor\@\@U?$default_delete\@UInternalItemDescriptor\@\@\@std\@\@\@std\@\@Verror_code\@2\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    MCAPI static std::unique_ptr<struct InternalItemDescriptor> deserialize(class ReadOnlyBinaryStream &);
+    MCAPI static class Bedrock::Result<std::unique_ptr<struct InternalItemDescriptor>, class std::error_code> deserialize(class ReadOnlyBinaryStream &);
 
 };

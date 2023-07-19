@@ -23,6 +23,10 @@ public:
 union Value;
 class ValidationError {
 public:
+    bool mSuccess;
+    std::string mErrorDescription;
+    std::vector<std::string> mErrorParameters;
+
     ValidationError() = delete;
     ValidationError(ValidationError const&) = delete;
     ValidationError(ValidationError const&&) = delete;

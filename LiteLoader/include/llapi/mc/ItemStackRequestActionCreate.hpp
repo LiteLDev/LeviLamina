@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -56,9 +57,9 @@ public:
     virtual void _write(class BinaryStream &) const;
     /**
      * @vftbl 5
-     * @symbol ?_read\@ItemStackRequestActionCreate\@\@MEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@ItemStackRequestActionCreate\@\@MEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual bool _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &);
     /**
      * @symbol ?getResultsIndex\@ItemStackRequestActionCreate\@\@QEBAEXZ
      */

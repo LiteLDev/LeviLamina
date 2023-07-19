@@ -169,7 +169,7 @@ CompoundTag& getServerOriginTag() {
 std::unique_ptr<CompoundTag> getPlayerOriginTag(Player& player) {
     static auto cached = CompoundTag::fromSNBT(R"({"OriginType":0b,"PlayerId":0l})");
     auto tag = cached->clone();
-    tag->putInt64("PlayerId", player.getUniqueID());
+    tag->putInt64("PlayerId", player.getOrCreateUniqueID());
     return std::move(tag);
 }
 

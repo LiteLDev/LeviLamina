@@ -39,10 +39,6 @@ public:
      */
     MCAPI struct EducationLevelSettings & operator=(struct EducationLevelSettings const &);
     /**
-     * @symbol ?save\@EducationLevelSettings\@\@QEAAXAEBVLevelLooseFileStorage\@\@\@Z
-     */
-    MCAPI void save(class LevelLooseFileStorage const &);
-    /**
      * @symbol ??1EducationLevelSettings\@\@QEAA\@XZ
      */
     MCAPI ~EducationLevelSettings();

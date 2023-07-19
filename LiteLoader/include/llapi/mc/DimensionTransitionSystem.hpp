@@ -32,10 +32,6 @@ public:
      */
     MCAPI static void _tickPortalTransition(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Exclude<struct PassengerComponent, struct VehicleComponent>, class ActorOwnerComponent, struct DimensionTransitionComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct DimensionTransitionComponent>);
     /**
-     * @symbol ?_tickReadyToContinueServer\@DimensionTransitionSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Exclude\@UPassengerComponent\@\@UVehicleComponent\@\@UDimensionTransitionComponent\@\@\@\@UPlayerChangeDimensionRequestComponent\@\@\@\@\@Z
-     */
-    MCAPI static void _tickReadyToContinueServer(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Exclude<struct PassengerComponent, struct VehicleComponent, struct DimensionTransitionComponent>, struct PlayerChangeDimensionRequestComponent>);
-    /**
      * @symbol ?_tickVehicleDismount\@DimensionTransitionSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@UPlayerChangeDimensionRequestComponent\@\@UPassengerComponent\@\@\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@UPlayerChangeDimensionRequestComponent\@\@\@\@$$CBUVehicleComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UStopRidingRequestFlag\@\@\@\@V?$FlagComponent\@UExitFromPassengerFlag\@\@\@\@\@\@\@Z
      */
     MCAPI static void _tickVehicleDismount(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct PlayerChangeDimensionRequestComponent, struct PassengerComponent>>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct PlayerChangeDimensionRequestComponent>, struct VehicleComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct StopRidingRequestFlag>, class FlagComponent<struct ExitFromPassengerFlag>>);

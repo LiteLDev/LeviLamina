@@ -28,10 +28,6 @@ public:
 
 public:
     /**
-     * @symbol ??1EntitySystemsInfo\@\@QEAA\@XZ
-     */
-    MCAPI ~EntitySystemsInfo();
-    /**
      * @symbol ?bindType\@EntitySystemsInfo\@\@SAXXZ
      */
     MCAPI static void bindType();

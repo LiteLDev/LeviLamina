@@ -32,12 +32,8 @@ public:
      */
     MCAPI static void initActorComponents(enum class EntityHost, std::unique_ptr<class Actor>, class EntityContext &, class EntityContext const &);
     /**
-     * @symbol ?initExperimentalMovement\@VanillaEntityInitializerCommon\@\@SAXAEAVEntityContext\@\@AEBV2\@\@Z
+     * @symbol ?initLevelEntityDependentComponents\@VanillaEntityInitializerCommon\@\@SAXAEAVEntityContext\@\@AEBV2\@\@Z
      */
-    MCAPI static void initExperimentalMovement(class EntityContext &, class EntityContext const &);
-    /**
-     * @symbol ?initVanilla\@VanillaEntityInitializerCommon\@\@SAXAEAVEntityContext\@\@AEBV2\@\@Z
-     */
-    MCAPI static void initVanilla(class EntityContext &, class EntityContext const &);
+    MCAPI static void initLevelEntityDependentComponents(class EntityContext &, class EntityContext const &);
 
 };

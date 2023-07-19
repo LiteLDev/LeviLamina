@@ -30,6 +30,12 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORFACTORY
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~ActorFactory();
+#endif
     /**
      * @symbol ??0ActorFactory\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VLevel\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
@@ -94,10 +100,6 @@ public:
      * @symbol ?setEntityInitializer\@ActorFactory\@\@QEAAXV?$shared_ptr\@VIEntityInitializer\@\@\@std\@\@\@Z
      */
     MCAPI void setEntityInitializer(class std::shared_ptr<class IEntityInitializer>);
-    /**
-     * @symbol ??1ActorFactory\@\@QEAA\@XZ
-     */
-    MCAPI ~ActorFactory();
     /**
      * @symbol ?clearEntityMappings\@ActorFactory\@\@SAXXZ
      */

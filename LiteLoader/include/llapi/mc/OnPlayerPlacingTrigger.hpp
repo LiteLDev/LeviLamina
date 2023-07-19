@@ -27,9 +27,15 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLAYERPLACINGTRIGGER
     /**
-     * @symbol ??1OnPlayerPlacingTrigger\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI ~OnPlayerPlacingTrigger();
+    MCVAPI ~OnPlayerPlacingTrigger();
+#endif
+    /**
+     * @symbol ??0OnPlayerPlacingTrigger\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI OnPlayerPlacingTrigger(class OnPlayerPlacingTrigger &&);
 
 };

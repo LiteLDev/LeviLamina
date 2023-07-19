@@ -36,6 +36,10 @@ public:
      */
     MCAPI static void _tickVehicleServerMolangSeatPositionSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct PassengerComponent const, class ActorOwnerComponent, struct PositionPassengerRequestComponent>, class ViewT<class StrictEntityContext, class EntityRegistryBase, class RideableComponent const, struct VehicleComponent const>);
     /**
+     * @symbol ?_tickVehicleServerMolangSeatPositionSystemSingleEntity\@VehicleServerMolangSeatPositionSystem\@\@SAXAEBVStrictEntityContext\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBUPassengerComponent\@\@VActorOwnerComponent\@\@UPositionPassengerRequestComponent\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBVRideableComponent\@\@$$CBUVehicleComponent\@\@\@\@\@Z
+     */
+    MCAPI static void _tickVehicleServerMolangSeatPositionSystemSingleEntity(class StrictEntityContext const &, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct PassengerComponent const, class ActorOwnerComponent, struct PositionPassengerRequestComponent>, class ViewT<class StrictEntityContext, class EntityRegistryBase, class RideableComponent const, struct VehicleComponent const>);
+    /**
      * @symbol ?createSystem\@VehicleServerMolangSeatPositionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();

@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 #include "Packet.hpp"
 
 #define BEFORE_EXTRA
@@ -49,9 +50,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@RequestAbilityPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@RequestAbilityPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REQUESTABILITYPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -59,13 +60,13 @@ public:
     MCVAPI ~RequestAbilityPacket();
 #endif
     /**
-     * @symbol ??0RequestAbilityPacket\@\@QEAA\@W4AbilitiesIndex\@\@_N\@Z
-     */
-    MCAPI RequestAbilityPacket(enum class AbilitiesIndex, bool);
-    /**
      * @symbol ??0RequestAbilityPacket\@\@QEAA\@XZ
      */
     MCAPI RequestAbilityPacket();
+    /**
+     * @symbol ??0RequestAbilityPacket\@\@QEAA\@W4AbilitiesIndex\@\@_N\@Z
+     */
+    MCAPI RequestAbilityPacket(enum class AbilitiesIndex, bool);
     /**
      * @symbol ?getAbility\@RequestAbilityPacket\@\@QEBA?AW4AbilitiesIndex\@\@XZ
      */

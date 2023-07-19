@@ -255,5 +255,9 @@ namespace GameEventRegistry {
      * @symbol ?swim\@GameEventRegistry\@\@3VGameEvent\@\@B
      */
     MCAPI extern class GameEvent const swim;
+    /**
+     * @symbol ?teleport\@GameEventRegistry\@\@3VGameEvent\@\@B
+     */
+    MCAPI extern class GameEvent const teleport;
 
 };

@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 #include "Packet.hpp"
 
 #define BEFORE_EXTRA
@@ -46,14 +47,14 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 4
-     * @symbol ?read\@CameraPresetsPacket\@\@UEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?read\@CameraPresetsPacket\@\@UEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual struct ExtendedStreamReadResult read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, class std::error_code> read(class ReadOnlyBinaryStream &);
     /**
      * @vftbl 7
-     * @symbol ?_read\@CameraPresetsPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@CameraPresetsPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMERAPRESETSPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -61,12 +62,12 @@ public:
     MCVAPI ~CameraPresetsPacket();
 #endif
     /**
-     * @symbol ??0CameraPresetsPacket\@\@QEAA\@XZ
-     */
-    MCAPI CameraPresetsPacket();
-    /**
      * @symbol ??0CameraPresetsPacket\@\@QEAA\@AEBVCameraPresets\@\@\@Z
      */
     MCAPI CameraPresetsPacket(class CameraPresets const &);
+    /**
+     * @symbol ??0CameraPresetsPacket\@\@QEAA\@XZ
+     */
+    MCAPI CameraPresetsPacket();
 
 };

@@ -8,6 +8,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "GameRule.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -19,6 +20,8 @@ class GameRulesChangedPacketData {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    std::vector<GameRule> mRules;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMERULESCHANGEDPACKETDATA

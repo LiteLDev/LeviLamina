@@ -114,9 +114,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?write\@CompoundTag\@\@UEBAXAEAVIDataOutput\@\@\@Z
      */
-    virtual void __unk_vfn_2();
+    virtual void write(class IDataOutput &) const;
     /**
      * @vftbl 3
      * @symbol ?load\@CompoundTag\@\@UEAAXAEAVIDataInput\@\@\@Z
@@ -153,10 +153,6 @@ public:
      */
     virtual unsigned __int64 hash() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAG
-    /**
-     * @symbol ?write\@CompoundTag\@\@UEBAXAEAVIDataOutput\@\@\@Z
-     */
-    MCVAPI void write(class IDataOutput &) const;
     /**
      * @symbol __unk_destructor_-1
      */
@@ -196,6 +192,7 @@ public:
     MCAPI bool contains(class std::basic_string_view<char, struct std::char_traits<char>>) const;
     /**
      * @symbol ?deepCopy\@CompoundTag\@\@QEAAXAEBV1\@\@Z
+     *
      *
      *
      *
@@ -301,13 +298,13 @@ public:
      */
     MCAPI class CompoundTag & operator=(class CompoundTag &&);
     /**
-     * @symbol ?put\@CompoundTag\@\@QEAAAEAVTag\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEAV2\@\@Z
-     */
-    MCAPI class Tag & put(std::string, class Tag &&);
-    /**
      * @symbol ?put\@CompoundTag\@\@QEAAPEAVTag\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VTag\@\@U?$default_delete\@VTag\@\@\@std\@\@\@4\@\@Z
      */
     MCAPI class Tag * put(std::string, std::unique_ptr<class Tag>);
+    /**
+     * @symbol ?put\@CompoundTag\@\@QEAAAEAVTag\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEAV2\@\@Z
+     */
+    MCAPI class Tag & put(std::string, class Tag &&);
     /**
      * @symbol ?putBoolean\@CompoundTag\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */

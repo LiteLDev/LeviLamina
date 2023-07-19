@@ -161,6 +161,16 @@ public:
     virtual void __unk_vfn_25();
     /**
      * @vftbl 26
+     * @symbol __unk_vfn_26
+     */
+    virtual void __unk_vfn_26();
+    /**
+     * @vftbl 27
+     * @symbol __unk_vfn_27
+     */
+    virtual void __unk_vfn_27();
+    /**
+     * @vftbl 28
      * @symbol ?onEvent\@NetheriteArmorEquippedListener\@\@UEAA?AW4EventResult\@\@AEBUActorEquippedArmorEvent\@\@\@Z
      */
     virtual enum class EventResult onEvent(struct ActorEquippedArmorEvent const &);

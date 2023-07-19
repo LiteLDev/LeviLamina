@@ -8,12 +8,27 @@
 
 #define BEFORE_EXTRA
 
+#include "HashedString.hpp"
+
 #undef BEFORE_EXTRA
 
 
 class BlockState {
 
 #define AFTER_EXTRA
+public:
+    class StateListNode {
+    public:
+        BlockState::StateListNode* mNext;
+        BlockState::StateListNode* mPrev;
+        BlockState* mState;
+    };
+
+    int (**_vptr_BlockState)(void);
+    const size_t mID;
+    const size_t mVariationCount;
+    const class HashedString mName;
+    StateListNode mNode;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSTATE

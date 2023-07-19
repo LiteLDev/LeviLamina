@@ -54,10 +54,6 @@ public:
      */
     MCAPI bool isFullyUnfrozen() const;
     /**
-     * @symbol ??8FreezingComponent\@\@QEBA_NAEBV0\@\@Z
-     */
-    MCAPI bool operator==(class FreezingComponent const &) const;
-    /**
      * @symbol ?readAdditionalSaveData\@FreezingComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     MCAPI void readAdditionalSaveData(class Actor &, class CompoundTag const &, class DataLoadHelper &);

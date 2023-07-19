@@ -60,6 +60,10 @@ public:
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
+     * @symbol ??0RecordItemComponent\@\@QEAA\@PEAVComponentItem\@\@W4LevelSoundEvent\@\@MH\@Z
+     */
+    MCAPI RecordItemComponent(class ComponentItem *, enum class LevelSoundEvent, float, int);
+    /**
      * @symbol ?appendFormattedHovertext\@RecordItemComponent\@\@QEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void appendFormattedHovertext(std::string &) const;

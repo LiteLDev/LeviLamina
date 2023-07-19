@@ -27,8 +27,9 @@ void ReadOnlyBinaryStream::setReadPointer(std::size_t size) {
 
 std::unique_ptr<class CompoundTag> ReadOnlyBinaryStream::getCompoundTag() {
     auto tag = CompoundTag::create();
-    class CompoundTag& (*rv)(class CompoundTag&, class ReadOnlyBinaryStream&);
-    *((void**)&rv) = dlsym("?read@?$serialize@VCompoundTag@@@@SA?AVCompoundTag@@AEAVReadOnlyBinaryStream@@@Z");
+    class Bedrock::Result<class CompoundTag, class std::error_code>& (*rv)(class CompoundTag&,
+                                                                           class ReadOnlyBinaryStream&);
+    *((void**)&rv) = dlsym("?read@?$serialize@VCompoundTag@@@@SA?AV?$Result@VCompoundTag@@Verror_code@std@@@Bedrock@@AEAVReadOnlyBinaryStream@@@Z");
     (*rv)(*tag, *this);
     return std::move(tag);
 }

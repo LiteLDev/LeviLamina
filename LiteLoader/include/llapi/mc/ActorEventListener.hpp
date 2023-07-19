@@ -51,10 +51,6 @@ public:
      */
     MCVAPI enum class EventResult onActorMobInteraction(class Actor &, enum class MinecraftEventing::InteractionType, enum class ActorType);
     /**
-     * @symbol ?onActorMove\@ActorEventListener\@\@UEAA?AW4EventResult\@\@AEAVActor\@\@AEBVVec3\@\@\@Z
-     */
-    MCVAPI enum class EventResult onActorMove(class Actor &, class Vec3 const &);
-    /**
      * @symbol ?onActorPredictedMove\@ActorEventListener\@\@UEAA?AW4EventResult\@\@AEAVActor\@\@W4MovePredictionType\@\@AEBVVec3\@\@\@Z
      */
     MCVAPI enum class EventResult onActorPredictedMove(class Actor &, enum class MovePredictionType, class Vec3 const &);

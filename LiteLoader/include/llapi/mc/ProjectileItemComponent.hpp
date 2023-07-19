@@ -60,6 +60,10 @@ public:
      */
     virtual bool initializeFromNetwork(class CompoundTag const &);
     /**
+     * @symbol ??0ProjectileItemComponent\@\@QEAA\@PEAVComponentItem\@\@W4ActorType\@\@M\@Z
+     */
+    MCAPI ProjectileItemComponent(class ComponentItem *, enum class ActorType, float);
+    /**
      * @symbol ?dispense\@ProjectileItemComponent\@\@QEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
     MCAPI bool dispense(class BlockSource &, class Container &, int, class Vec3 const &, unsigned char) const;

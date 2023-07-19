@@ -27,9 +27,15 @@ public:
 #endif
 
 public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLAYERDESTROYEDTRIGGER
     /**
-     * @symbol ??1OnPlayerDestroyedTrigger\@\@QEAA\@XZ
+     * @symbol __unk_destructor_-1
      */
-    MCAPI ~OnPlayerDestroyedTrigger();
+    MCVAPI ~OnPlayerDestroyedTrigger();
+#endif
+    /**
+     * @symbol ??0OnPlayerDestroyedTrigger\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI OnPlayerDestroyedTrigger(class OnPlayerDestroyedTrigger &&);
 
 };

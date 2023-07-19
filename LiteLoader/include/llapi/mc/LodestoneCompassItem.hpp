@@ -52,10 +52,10 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @vftbl 19
-     * @symbol __unk_vfn_19
+     * @vftbl 21
+     * @symbol __unk_vfn_21
      */
-    virtual void __unk_vfn_19();
+    virtual void __unk_vfn_21();
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
@@ -117,7 +117,7 @@ public:
      */
     virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
     /**
-     * @vftbl 134
+     * @vftbl 135
      * @symbol ?_useOn\@LodestoneCompassItem\@\@EEBA?AVInteractionResult\@\@AEAVItemStack\@\@AEAVActor\@\@VBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual class InteractionResult _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
@@ -129,5 +129,13 @@ public:
      * @symbol ?linkCompassToLodestone\@LodestoneCompassItem\@\@SA_NAEAVItemStack\@\@AEAVBlockSource\@\@VBlockPos\@\@\@Z
      */
     MCAPI static bool linkCompassToLodestone(class ItemStack &, class BlockSource &, class BlockPos);
+
+//private:
+    /**
+     * @symbol ?_tryGetOrAddComponent\@LodestoneCompassItem\@\@CAPEAVLodestoneCompassComponent\@\@PEAVTrackingRecord\@PositionTrackingDB\@\@AEBV?$variant\@UActorUniqueID\@\@U?$pair\@VBlockPos\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@std\@\@\@std\@\@\@Z
+     */
+    MCAPI static class LodestoneCompassComponent * _tryGetOrAddComponent(class PositionTrackingDB::TrackingRecord *, class std::variant<struct ActorUniqueID, struct std::pair<class BlockPos, class AutomaticID<class Dimension, int>>> const &);
+
+private:
 
 };

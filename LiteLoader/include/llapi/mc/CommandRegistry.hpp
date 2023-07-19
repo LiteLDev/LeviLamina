@@ -24,6 +24,7 @@ class CommandParameterData;
 #include "CommandItem.hpp"
 #include "CommandIntegerRange.hpp"
 #include "CommandBlockName.hpp"
+#include "BlockStateCommandParam.hpp"
 #include "ActorDamageSource.hpp"
 
 #undef BEFORE_EXTRA
@@ -42,8 +43,7 @@ public:
     class Symbol {
     public:
         int val;
-        MCAPI Symbol(unsigned __int64 = -1);
-        MCAPI Symbol(class Symbol const&);
+
         MCAPI unsigned __int64 toIndex() const;
         MCAPI int value() const;
         inline bool operator==(Symbol const& right) const {
@@ -115,15 +115,16 @@ public:
         std::string name;                // 0
         std::string desc;                // 32
         std::vector<Overload> overloads; // 64
-        CommandPermissionLevel perm;     // 88
-        Symbol main_symbol;              // 92
-        Symbol alt_symbol;               // 96
-        CommandFlag flag;                // 100
-        int firstRule;
-        int firstFactorization;
-        int firstOptional;
-        bool runnable;
-        size_t ruleCounter;
+        std::vector<void*> unk88;        // 88
+        CommandPermissionLevel perm;     // 112
+        Symbol main_symbol;              // 116
+        Symbol alt_symbol;               // 120
+        CommandFlag flag;                // 124
+        int firstRule;                   // 128
+        int firstFactorization;          // 132
+        int firstOptional;               // 136
+        bool runnable;                   // 140
+        size_t ruleCounter;              // 144
 
         inline Signature(std::string_view name,
                          std::string_view desc,
@@ -145,7 +146,7 @@ public:
 
     struct Enum {
         std::string name;                                                                           // 0
-        Bedrock::typeid_t<CommandRegistry> type;                                                     // 32
+        Bedrock::typeid_t<CommandRegistry> type;                                                    // 32
         ParseFn parse;                                                                              // 40
         std::vector<std::tuple<unsigned long, unsigned long, unsigned long, unsigned long>> values; // 48
 
@@ -266,82 +267,52 @@ public:
     };
 
     using CommandOverrideFunctor = std::function<void __cdecl(struct CommandFlag&, class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>> const&)>;
-    using ParamSymbols = std::array<Symbol, 21>;
+    using ParamSymbols = std::array<Symbol, 23>;
 
-    std::function<void(const class Packet&)> mGetScoreForObjective;  // 0
-    std::function<void(const class Packet&)> mNetworkUpdateCallback; // 64
-    std::vector<ParseRule> mRules;                                   // 128
-    // map<command version, ParseTable>
-    std::map<unsigned int, ParseTable> mParseTableMap;                                      // 152
-    std::vector<OptionalParameterChain> mOptionals;                                         // 168
-    std::vector<std::string> mEnumValues;                                                   // 192
-    std::vector<Enum> mEnums;                                                               // 216
-    std::vector<Factorization> mFactorizations;                                             // 240
-    std::vector<std::string> mPostfixes;                                                    // 264
-    std::map<std::string, unsigned int> mEnumLookup;                                        // 288
-    std::map<std::string, unsigned long> mEnumValueLookup;                                  // 304
-    std::vector<Symbol> mCommandSymbols;                                                    // 320
-    std::map<std::string, Signature> mSignatures;                                           // 344
-    std::map<Bedrock::typeid_t<CommandRegistry>, int> mTypeLookup;                          // 360
-    std::map<char, char> unk376;                                                            // 376
-    std::map<std::string, std::string> mAliases;                                            // 392
-    std::vector<SemanticConstraint> mSemanticConstraints;                                   // 408
-    std::map<SemanticConstraint, unsigned char> mSemanticConstraintLookup;                  // 432
-    std::vector<ConstrainedValue> mConstrainedValues;                                       // 448
-    std::map<std::pair<unsigned long, unsigned int>, unsigned int> mConstrainedValueLookup; // 472
-    std::vector<SoftEnum> mSoftEnums;                                                       // 488
-    std::map<std::string, unsigned int> mSoftEnumLookup;                                    // 512
-    std::vector<RegistryState> mStateStack;                                                 // 528
-    ParamSymbols mArgs;                                                                     // 552
-    CommandOverrideFunctor mCommandOverrideFunctor;                                         // 640
-    // 704
+    std::function<void(const class Packet&)> mGetScoreForObjective;//0
+    std::function<void(const class Packet&)> mNetworkUpdateCallback;//64
+    std::vector<ParseRule> mRules;//128
+    std::map<unsigned int, ParseTable> mParseTableMap;//152
+    std::vector<OptionalParameterChain> mOptionals; //168
+    std::vector<std::string> mEnumValues;//192
+    std::vector<CommandRegistry::Enum> mEnums;//216
+    char filler48[48];
+    std::vector<CommandRegistry::Factorization> mFactorizations;//288
+    std::vector<std::string> mPostfixes;//312
+    std::map<std::string,unsigned int> mEnumLookup;//336
+    std::map<std::string,unsigned long> mEnumValueLookup;//352
+    std::vector<CommandRegistry::Symbol> mCommandSymbols;//368
+    char filler32[32];
+    std::map<std::string,CommandRegistry::Signature> mSignatures;//424
+    std::map<Bedrock::typeid_t<CommandRegistry>,int> mTypeLookup;//440
+    std::map<std::string,std::string> mAliases;//456
+    std::vector<SemanticConstraint> mSemanticConstraints;//472
+    std::map<SemanticConstraint, unsigned char> mSemanticConstraintLookup;//496
+    std::vector<ConstrainedValue> mConstrainedValues;//512
+    std::map<std::pair<unsigned long, unsigned int>, unsigned int> mConstrainedValueLookup;//536
+    std::vector<CommandRegistry::SoftEnum> mSoftEnums;//552
+    std::map<std::string,unsigned int> mSoftEnumLookup;//576
+    std::vector<RegistryState> mStateStack; //592
+    ParamSymbols mArgs;//616
+    char filler[64];
+    CommandOverrideFunctor mCommandOverrideFunctor;//712
+    //840
+
+
 
     inline void printAll() const;
     inline void printSize() const;
 
     void test() {
-        auto mParseTableMapCopy = mParseTableMap;
-        auto mEnumLookupCopy = mEnumLookup;
-        auto mEnumValueLookupCopy = mEnumValueLookup;
-        auto mSignaturesCopy = mSignatures;
-        auto mTypeLookupCopy = mTypeLookup;
-        auto unk376Copy = unk376;
-        auto mAliasesCopy = mAliases;
-        auto mSemanticConstraintLookupCopy = mSemanticConstraintLookup;
-        auto mConstrainedValueLookupCopy = mConstrainedValueLookup;
-        auto mSoftEnumLookupCopy = mSoftEnumLookup;
-
         constexpr auto size = sizeof(CommandRegistry);
 
+        static_assert(size == 840);
         static_assert(sizeof(Enum) == 72);
-        static_assert(sizeof(ParseTable) == 48);
-        static_assert(sizeof(ParseRule) == 104);
-        static_assert(sizeof(CommandRegistry) == 0x2c0);
-        static_assert(offsetof(CommandRegistry, mGetScoreForObjective) == 0);
-        static_assert(offsetof(CommandRegistry, mNetworkUpdateCallback) == 64);
-        static_assert(offsetof(CommandRegistry, mRules) == 128);
-        static_assert(offsetof(CommandRegistry, mParseTableMap) == 152);
-        static_assert(offsetof(CommandRegistry, mOptionals) == 168);
         static_assert(offsetof(CommandRegistry, mEnumValues) == 192);
         static_assert(offsetof(CommandRegistry, mEnums) == 216);
-        static_assert(offsetof(CommandRegistry, mFactorizations) == 240);
-        static_assert(offsetof(CommandRegistry, mPostfixes) == 264);
-        static_assert(offsetof(CommandRegistry, mEnumLookup) == 288);
-        static_assert(offsetof(CommandRegistry, mEnumValueLookup) == 304);
-        static_assert(offsetof(CommandRegistry, mCommandSymbols) == 320);
-        static_assert(offsetof(CommandRegistry, mSignatures) == 344);
-        static_assert(offsetof(CommandRegistry, mTypeLookup) == 360);
-        static_assert(offsetof(CommandRegistry, unk376) == 376);
-        static_assert(offsetof(CommandRegistry, mAliases) == 392);
-        static_assert(offsetof(CommandRegistry, mSemanticConstraints) == 408);
-        static_assert(offsetof(CommandRegistry, mSemanticConstraintLookup) == 432);
-        static_assert(offsetof(CommandRegistry, mConstrainedValues) == 448);
-        static_assert(offsetof(CommandRegistry, mConstrainedValueLookup) == 472);
-        static_assert(offsetof(CommandRegistry, mSoftEnums) == 488);
-        static_assert(offsetof(CommandRegistry, mSoftEnumLookup) == 512);
-        static_assert(offsetof(CommandRegistry, mStateStack) == 528);
-        static_assert(offsetof(CommandRegistry, mArgs) == 552);
-        static_assert(offsetof(CommandRegistry, mCommandOverrideFunctor) == 640);
+        static_assert(offsetof(CommandRegistry, mCommandSymbols) == 368);
+        static_assert(offsetof(CommandRegistry, mSignatures) == 424);
+        static_assert(offsetof(CommandRegistry, mSoftEnumLookup) == 576);
     }
 #endif // COMMAND_REGISTRY_EXTRA
 
@@ -362,13 +333,13 @@ public:
         fakeParse(void*, ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&) const {
         return false;
     }
+
     inline static std::unordered_map<string, void*> parse_ptr = {
         {typeid(CommandMessage).name(),
-         dlsym_real(
-             "??$parse@VCommandMessage@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@"
-             "@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_"
-             "string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$"
-             "char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+         dlsym_real("??$parse@VCommandMessage@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@"
+                    "@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_"
+                    "string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$"
+                    "char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
         {typeid(std::string).name(),
          dlsym_real("??$parse@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@"
                     "CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_"
@@ -391,58 +362,76 @@ public:
                     "string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@"
                     "DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
         {typeid(CommandSelector<Actor>).name(),
-         dlsym_real(
-             "??$parse@V?$CommandSelector@VActor@@@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@"
-             "AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@"
-             "AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@"
-             "V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+         dlsym_real("??$parse@V?$CommandSelector@VActor@@@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@"
+                    "AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@"
+                    "AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@"
+                    "V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
         {typeid(CommandSelector<Player>).name(),
-         dlsym_real(
-             "??$parse@V?$CommandSelector@VPlayer@@@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@"
-             "AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@"
-             "AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@"
-             "V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+         dlsym_real("??$parse@V?$CommandSelector@VPlayer@@@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@"
+                    "AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@"
+                    "AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@"
+                    "V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
         {typeid(CommandPosition).name(),
-         dlsym_real(
-             "??$parse@VCommandPosition@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@"
-             "HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@"
-             "DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@"
-             "std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+         dlsym_real("??$parse@VCommandPosition@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@"
+                    "HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@"
+                    "DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@"
+                    "std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
         {typeid(CommandPositionFloat).name(),
-         dlsym_real(
-             "??$parse@VCommandPositionFloat@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@"
-             "HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@"
-             "DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@"
-             "V?$allocator@D@2@@std@@@2@@4@@Z")},
+         dlsym_real("??$parse@VCommandPositionFloat@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@"
+                    "HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@"
+                    "DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@"
+                    "V?$allocator@D@2@@std@@@2@@4@@Z")},
         {typeid(Json::Value).name(),
-         dlsym_real(
-             "??$parse@VValue@Json@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@"
-             "HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@"
-             "DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@"
-             "V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+         dlsym_real("??$parse@VValue@Json@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@"
+                    "HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@"
+                    "DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@"
+                    "V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
         {typeid(std::unique_ptr<class Command>).name(),
-         dlsym_real(
-             "??$parse@V?$unique_ptr@VCommand@@U?$default_delete@VCommand@@@std@@@std@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+         dlsym_real("??$parse@V?$unique_ptr@VCommand@@U?$default_delete@VCommand@@@std@@@std@@@CommandRegistry@@AEBA_"
+                    "NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@"
+                    "D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@"
+                    "V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
         {typeid(RelativeFloat).name(),
-         dlsym_real(
-             "??$parse@VRelativeFloat@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+         dlsym_real("??$parse@VRelativeFloat@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$"
+                    "basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_"
+                    "traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$"
+                    "allocator@D@2@@std@@@2@@4@@Z")},
         {typeid(CommandRawText).name(),
-         dlsym_real(
-             "??$parse@VCommandRawText@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+         dlsym_real("??$parse@VCommandRawText@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$"
+                    "basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_"
+                    "traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$"
+                    "allocator@D@2@@std@@@2@@4@@Z")},
         {typeid(class MobEffect const*).name(),
-         dlsym_real(
-             "??$parse@PEBVMobEffect@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+         dlsym_real("??$parse@PEBVMobEffect@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$"
+                    "basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_"
+                    "traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$"
+                    "allocator@D@2@@std@@@2@@4@@Z")},
         {typeid(CommandItem).name(),
-         dlsym_real(
-             "??$parse@VCommandItem@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+         dlsym_real("??$parse@VCommandItem@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$"
+                    "basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_"
+                    "traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$"
+                    "allocator@D@2@@std@@@2@@4@@Z")},
         {typeid(WildcardCommandSelector<Actor>).name(),
-         dlsym_real(
-             "??$parse@V?$WildcardCommandSelector@VActor@@@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+         dlsym_real("??$parse@V?$WildcardCommandSelector@VActor@@@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@"
+                    "AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@"
+                    "V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$"
+                    "char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
         {typeid(ActorDefinitionIdentifier const*).name(),
-         dlsym_real(
-             "??$parse@PEBUActorDefinitionIdentifier@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+         dlsym_real("??$parse@PEBUActorDefinitionIdentifier@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@"
+                    "AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@"
+                    "V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$"
+                    "char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
         {typeid(CommandBlockName).name(),
-         dlsym_real("??$parse@VCommandBlockName@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+         dlsym_real("??$parse@VCommandBlockName@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?"
+                    "$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_"
+                    "traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$"
+                    "allocator@D@2@@std@@@2@@4@@Z")},
+        {typeid(std::vector<BlockStateCommandParam>).name(),
+         dlsym_real(
+             "??$parse@V?$vector@VBlockStateCommandParam@@V?$allocator@VBlockStateCommandParam@@@std@@@std@@@"
+             "CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@"
+             "@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$"
+             "allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
     };
 
 private:
@@ -576,6 +565,10 @@ public:
      */
     MCAPI bool buildSelector(struct ActorSelectorArgs const &, class CommandSelectorBase *, std::string &) const;
     /**
+     * @symbol ?finalizeChainedSubcommandOverloadRules\@CommandRegistry\@\@QEAAXPEBD\@Z
+     */
+    MCAPI void finalizeChainedSubcommandOverloadRules(char const *);
+    /**
      * @symbol ?fireCommandParseTableTelemetry\@CommandRegistry\@\@QEBAXAEBVIMinecraftEventing\@\@_N\@Z
      */
     MCAPI void fireCommandParseTableTelemetry(class IMinecraftEventing const &, bool) const;
@@ -702,6 +695,14 @@ public:
 
 //private:
     /**
+     * @symbol ?_addChainedSubcommandValuesInternal\@CommandRegistry\@\@AEAA?AVSymbol\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@I\@std\@\@V?$allocator\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@I\@std\@\@\@2\@\@4\@V?$typeid_t\@VCommandRegistry\@\@\@Bedrock\@\@P81\@EBA_NPEAXAEBUParseToken\@1\@AEBVCommandOrigin\@\@HAEAV34\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@4\@\@ZPEAUSignature\@1\@\@Z
+     */
+    MCAPI class CommandRegistry::Symbol _addChainedSubcommandValuesInternal(std::string const &, std::vector<struct std::pair<std::string, unsigned int>> const &, class Bedrock::typeid_t<class CommandRegistry>, bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const, struct CommandRegistry::Signature *);
+    /**
+     * @symbol ?_addChainedSubcommandValuesInternal\@CommandRegistry\@\@AEAA?AVSymbol\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@U?$pair\@_KI\@std\@\@V?$allocator\@U?$pair\@_KI\@std\@\@\@2\@\@4\@V?$typeid_t\@VCommandRegistry\@\@\@Bedrock\@\@P81\@EBA_NPEAXAEBUParseToken\@1\@AEBVCommandOrigin\@\@HAEAV34\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@4\@\@ZPEAUSignature\@1\@\@Z
+     */
+    MCAPI class CommandRegistry::Symbol _addChainedSubcommandValuesInternal(std::string const &, std::vector<struct std::pair<unsigned __int64, unsigned int>> const &, class Bedrock::typeid_t<class CommandRegistry>, bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const, struct CommandRegistry::Signature *);
+    /**
      * @symbol ?_addEnumValuesInternal\@CommandRegistry\@\@AEAA?AVSymbol\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@U?$pair\@_K_K\@std\@\@V?$allocator\@U?$pair\@_K_K\@std\@\@\@2\@\@4\@V?$typeid_t\@VCommandRegistry\@\@\@Bedrock\@\@P81\@EBA_NPEAXAEBUParseToken\@1\@AEBVCommandOrigin\@\@HAEAV34\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@4\@\@Z\@Z
      */
     MCAPI class CommandRegistry::Symbol _addEnumValuesInternal(std::string const &, std::vector<struct std::pair<unsigned __int64, unsigned __int64>> const &, class Bedrock::typeid_t<class CommandRegistry>, bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const);
@@ -726,6 +727,10 @@ public:
      */
     MCAPI bool _matchesEnumConstraintsSet(class CommandRegistry::Symbol const &, class CommandOrigin const &, class CommandRegistry::Symbol const &, enum class SemanticConstraint) const;
     /**
+     * @symbol ?addChainedSubcommandValuesToExisting\@CommandRegistry\@\@AEAAXIAEBV?$vector\@U?$pair\@_KI\@std\@\@V?$allocator\@U?$pair\@_KI\@std\@\@\@2\@\@std\@\@\@Z
+     */
+    MCAPI void addChainedSubcommandValuesToExisting(unsigned int, std::vector<struct std::pair<unsigned __int64, unsigned int>> const &);
+    /**
      * @symbol ?addEnumValuesToExisting\@CommandRegistry\@\@AEAAXIAEBV?$vector\@U?$pair\@_K_K\@std\@\@V?$allocator\@U?$pair\@_K_K\@std\@\@\@2\@\@std\@\@\@Z
      */
     MCAPI void addEnumValuesToExisting(unsigned int, std::vector<struct std::pair<unsigned __int64, unsigned __int64>> const &);
@@ -734,9 +739,9 @@ public:
      */
     MCAPI class CommandRegistry::Symbol addPostfix(std::string const &);
     /**
-     * @symbol ?addRule\@CommandRegistry\@\@AEAAXVSymbol\@1\@$$QEAV?$vector\@VSymbol\@CommandRegistry\@\@V?$allocator\@VSymbol\@CommandRegistry\@\@\@std\@\@\@std\@\@V?$function\@$$A6APEAUParseToken\@CommandRegistry\@\@AEAU12\@VSymbol\@2\@\@Z\@4\@VCommandVersion\@\@\@Z
+     * @symbol ?addRule\@CommandRegistry\@\@AEAAXVSymbol\@1\@V?$vector\@VSymbol\@CommandRegistry\@\@V?$allocator\@VSymbol\@CommandRegistry\@\@\@std\@\@\@std\@\@V?$function\@$$A6APEAUParseToken\@CommandRegistry\@\@AEAU12\@VSymbol\@2\@\@Z\@4\@VCommandVersion\@\@\@Z
      */
-    MCAPI void addRule(class CommandRegistry::Symbol, std::vector<class CommandRegistry::Symbol> &&, class std::function<struct CommandRegistry::ParseToken * (struct CommandRegistry::ParseToken &, class CommandRegistry::Symbol)>, class CommandVersion);
+    MCAPI void addRule(class CommandRegistry::Symbol, std::vector<class CommandRegistry::Symbol>, class std::function<struct CommandRegistry::ParseToken * (struct CommandRegistry::ParseToken &, class CommandRegistry::Symbol)>, class CommandVersion);
     /**
      * @symbol ?addSemanticConstraint\@CommandRegistry\@\@AEAAXW4SemanticConstraint\@\@\@Z
      */
@@ -758,6 +763,10 @@ public:
      */
     MCAPI class CommandRegistry::Symbol buildOptionalRuleChain(struct CommandRegistry::Signature const &, std::vector<class CommandParameterData> const &, std::vector<class CommandRegistry::Symbol> const &);
     /**
+     * @symbol ?buildOptionalRuleChain\@CommandRegistry\@\@AEAA?AVSymbol\@1\@AEBUSignature\@1\@AEBV?$vector\@VCommandParameterData\@\@V?$allocator\@VCommandParameterData\@\@\@std\@\@\@std\@\@PEBVCommandParameterData\@\@_K\@Z
+     */
+    MCAPI class CommandRegistry::Symbol buildOptionalRuleChain(struct CommandRegistry::Signature const &, std::vector<class CommandParameterData> const &, class CommandParameterData const *, unsigned __int64);
+    /**
      * @symbol ?buildParseTable\@CommandRegistry\@\@AEBAXI\@Z
      */
     MCAPI void buildParseTable(unsigned int) const;
@@ -778,25 +787,25 @@ public:
      */
     MCAPI std::unique_ptr<class Command> createCommand(struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const;
     /**
-     * @symbol ?describe\@CommandRegistry\@\@AEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUSignature\@1\@AEBV23\@AEBUOverload\@1\@IPEAI3\@Z
+     * @symbol ?describe\@CommandRegistry\@\@AEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VSymbol\@1\@\@Z
      */
-    MCAPI std::string describe(struct CommandRegistry::Signature const &, std::string const &, struct CommandRegistry::Overload const &, unsigned int, unsigned int *, unsigned int *) const;
+    MCAPI std::string describe(class CommandRegistry::Symbol) const;
     /**
      * @symbol ?describe\@CommandRegistry\@\@AEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVCommandParameterData\@\@\@Z
      */
     MCAPI std::string describe(class CommandParameterData const &) const;
     /**
-     * @symbol ?describe\@CommandRegistry\@\@AEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VSymbol\@1\@\@Z
+     * @symbol ?describe\@CommandRegistry\@\@AEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUSignature\@1\@AEBV23\@AEBUOverload\@1\@IPEAI3\@Z
      */
-    MCAPI std::string describe(class CommandRegistry::Symbol) const;
-    /**
-     * @symbol ?findCommand\@CommandRegistry\@\@AEBAPEBUSignature\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI struct CommandRegistry::Signature const * findCommand(std::string const &) const;
+    MCAPI std::string describe(struct CommandRegistry::Signature const &, std::string const &, struct CommandRegistry::Overload const &, unsigned int, unsigned int *, unsigned int *) const;
     /**
      * @symbol ?findCommand\@CommandRegistry\@\@AEAAPEAUSignature\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI struct CommandRegistry::Signature * findCommand(std::string const &);
+    /**
+     * @symbol ?findCommand\@CommandRegistry\@\@AEBAPEBUSignature\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI struct CommandRegistry::Signature const * findCommand(std::string const &) const;
     /**
      * @symbol ?findEnumValue\@CommandRegistry\@\@AEBA?AVSymbol\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -826,13 +835,13 @@ public:
      */
     MCAPI bool isValid(class CommandRegistry::Symbol) const;
     /**
-     * @symbol ?originCanRun\@CommandRegistry\@\@AEBA_NAEBVCommandOrigin\@\@AEBUSignature\@1\@\@Z
-     */
-    MCAPI bool originCanRun(class CommandOrigin const &, struct CommandRegistry::Signature const &) const;
-    /**
      * @symbol ?originCanRun\@CommandRegistry\@\@AEBA_NAEBVCommandOrigin\@\@AEBUOverload\@1\@\@Z
      */
     MCAPI bool originCanRun(class CommandOrigin const &, struct CommandRegistry::Overload const &) const;
+    /**
+     * @symbol ?originCanRun\@CommandRegistry\@\@AEBA_NAEBVCommandOrigin\@\@AEBUSignature\@1\@\@Z
+     */
+    MCAPI bool originCanRun(class CommandOrigin const &, struct CommandRegistry::Signature const &) const;
     /**
      * @symbol ?parseSelector\@CommandRegistry\@\@AEBA_NPEAVCommandSelectorBase\@\@AEBUParseToken\@1\@AEBVCommandOrigin\@\@HAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@6\@_N\@Z
      */
@@ -845,6 +854,10 @@ public:
      * @symbol ?registerOverloadInternal\@CommandRegistry\@\@AEAAXAEAUSignature\@1\@AEAUOverload\@1\@\@Z
      */
     MCAPI void registerOverloadInternal(struct CommandRegistry::Signature &, struct CommandRegistry::Overload &);
+    /**
+     * @symbol ?setupChainedSubcommandOverloadRules\@CommandRegistry\@\@AEAAXAEAUSignature\@1\@\@Z
+     */
+    MCAPI void setupChainedSubcommandOverloadRules(struct CommandRegistry::Signature &);
     /**
      * @symbol ?setupOverloadRules\@CommandRegistry\@\@AEAAXAEAUSignature\@1\@\@Z
      */

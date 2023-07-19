@@ -31,10 +31,6 @@ public:
      * @symbol ?createSystem\@SquidPreAiStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
     MCAPI static struct TickingSystemWithInfo createSystem();
-    /**
-     * @symbol ?tick\@SquidPreAiStepSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@USquidFlag\@\@\@\@\@\@ULocalMoveVelocityComponent\@\@\@\@\@Z
-     */
-    MCAPI static void tick(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct SquidFlag>>, struct LocalMoveVelocityComponent>);
 
 //private:
     /**

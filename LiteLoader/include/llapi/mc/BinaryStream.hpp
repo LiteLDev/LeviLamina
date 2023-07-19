@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 #include "ReadOnlyBinaryStream.hpp"
 
 #define BEFORE_EXTRA
@@ -79,13 +80,13 @@ public:
     MCVAPI ~BinaryStream();
 #endif
     /**
-     * @symbol ??0BinaryStream\@\@QEAA\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
-     */
-    MCAPI BinaryStream(std::string &, bool);
-    /**
      * @symbol ??0BinaryStream\@\@QEAA\@XZ
      */
     MCAPI BinaryStream();
+    /**
+     * @symbol ??0BinaryStream\@\@QEAA\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
+     */
+    MCAPI BinaryStream(std::string &, bool);
     /**
      * @symbol ?getAndReleaseData\@BinaryStream\@\@QEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */

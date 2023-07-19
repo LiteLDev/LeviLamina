@@ -31,9 +31,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?signin\@SignalServiceSigninJob\@\@UEAAX_N\@Z
+     * @symbol ?signin\@SignalServiceSigninJob\@\@UEAAX_NV?$optional\@V?$duration\@_JU?$ratio\@$00$00\@std\@\@\@chrono\@std\@\@\@std\@\@\@Z
      */
-    virtual void signin(bool);
+    virtual void signin(bool, class std::optional<class std::chrono::duration<__int64, struct std::ratio<1, 1>>>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIGNALSERVICESIGNINJOB
     /**
      * @symbol __unk_destructor_-1

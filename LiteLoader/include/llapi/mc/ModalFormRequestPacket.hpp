@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 #include "Packet.hpp"
 
 #define BEFORE_EXTRA
@@ -54,9 +55,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@ModalFormRequestPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@ModalFormRequestPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MODALFORMREQUESTPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -64,12 +65,12 @@ public:
     MCVAPI ~ModalFormRequestPacket();
 #endif
     /**
-     * @symbol ??0ModalFormRequestPacket\@\@QEAA\@XZ
-     */
-    MCAPI ModalFormRequestPacket();
-    /**
      * @symbol ??0ModalFormRequestPacket\@\@QEAA\@IAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI ModalFormRequestPacket(unsigned int, std::string const &);
+    /**
+     * @symbol ??0ModalFormRequestPacket\@\@QEAA\@XZ
+     */
+    MCAPI ModalFormRequestPacket();
 
 };

@@ -46,6 +46,10 @@ public:
      */
     MCAPI enum class MobEventsIndex getIndexFromName(std::string const &) const;
     /**
+     * @symbol ?initializeWithLevelStorageManager\@MobEvents\@\@QEAAXAEAVLevelStorageManager\@\@\@Z
+     */
+    MCAPI void initializeWithLevelStorageManager(class LevelStorageManager &);
+    /**
      * @symbol ?isEnabled\@MobEvents\@\@QEBA_NW4MobEventsIndex\@\@\@Z
      */
     MCAPI bool isEnabled(enum class MobEventsIndex) const;
@@ -81,5 +85,13 @@ public:
      * @symbol ?EVENTS_ENABLED_STRING\@MobEvents\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const EVENTS_ENABLED_STRING;
+
+//private:
+    /**
+     * @symbol ?_onSaveEvent\@MobEvents\@\@AEAAXAEAVLevelStorage\@\@\@Z
+     */
+    MCAPI void _onSaveEvent(class LevelStorage &);
+
+private:
 
 };

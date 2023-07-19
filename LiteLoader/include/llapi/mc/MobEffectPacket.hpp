@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Bedrock.hpp"
 #include "Packet.hpp"
 
 #define BEFORE_EXTRA
@@ -20,6 +21,21 @@ class MobEffectPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    enum class Event : char
+    {
+    Invalid_21 = 0x0,
+    Add_1 = 0x1,
+    Update_0 = 0x2,
+    Remove_0 = 0x3,
+    };
+
+  ActorRuntimeID mRuntimeId;
+  int mEffectDurationTicks;
+  MobEffectPacket::Event mEventId;
+  int mEffectId;
+  int mEffectAmplifier;
+  bool mShowParticles;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEFFECTPACKET
@@ -51,9 +67,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@MobEffectPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@MobEffectPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOBEFFECTPACKET
     /**
      * @symbol __unk_destructor_-1

@@ -41,13 +41,13 @@ public:
      */
     MCAPI void acquireAllRandomTicks(class LevelChunk &);
     /**
-     * @symbol ?acquireAllTicks\@BlockTickingQueue\@\@QEAAXAEAVLevelChunk\@\@\@Z
-     */
-    MCAPI void acquireAllTicks(class LevelChunk &);
-    /**
      * @symbol ?acquireAllTicks\@BlockTickingQueue\@\@QEAAXAEAV1\@\@Z
      */
     MCAPI void acquireAllTicks(class BlockTickingQueue &);
+    /**
+     * @symbol ?acquireAllTicks\@BlockTickingQueue\@\@QEAAXAEAVLevelChunk\@\@\@Z
+     */
+    MCAPI void acquireAllTicks(class LevelChunk &);
     /**
      * @symbol ?add\@BlockTickingQueue\@\@QEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@HH\@Z
      */

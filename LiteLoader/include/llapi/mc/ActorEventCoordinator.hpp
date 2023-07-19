@@ -46,10 +46,6 @@ public:
      */
     MCAPI void sendActorCreationAttemptFailed(class Actor &, class std::basic_string_view<char, struct std::char_traits<char>>);
     /**
-     * @symbol ?sendActorMove\@ActorEventCoordinator\@\@QEAAXAEAVActor\@\@AEBVVec3\@\@\@Z
-     */
-    MCAPI void sendActorMove(class Actor &, class Vec3 const &);
-    /**
      * @symbol ?sendActorPredictedMove\@ActorEventCoordinator\@\@QEAAXAEAVActor\@\@W4MovePredictionType\@\@AEBVVec3\@\@\@Z
      */
     MCAPI void sendActorPredictedMove(class Actor &, enum class MovePredictionType, class Vec3 const &);
@@ -78,13 +74,13 @@ public:
      */
     MCAPI void sendActorTick(class Actor &);
     /**
-     * @symbol ?sendEvent\@ActorEventCoordinator\@\@QEAAXAEBV?$EventRef\@U?$ActorGameplayEvent\@X\@\@\@\@\@Z
-     */
-    MCAPI void sendEvent(class EventRef<struct ActorGameplayEvent<void>> const &);
-    /**
      * @symbol ?sendEvent\@ActorEventCoordinator\@\@QEAA?AW4CoordinatorResult\@\@V?$EventRef\@U?$MutableActorGameplayEvent\@W4CoordinatorResult\@\@\@\@\@\@\@Z
      */
     MCAPI enum class CoordinatorResult sendEvent(class EventRef<struct MutableActorGameplayEvent<enum class CoordinatorResult>>);
+    /**
+     * @symbol ?sendEvent\@ActorEventCoordinator\@\@QEAAXAEBV?$EventRef\@U?$ActorGameplayEvent\@X\@\@\@\@\@Z
+     */
+    MCAPI void sendEvent(class EventRef<struct ActorGameplayEvent<void>> const &);
     /**
      * @symbol ?sendEvent\@ActorEventCoordinator\@\@QEAA?AW4CoordinatorResult\@\@AEBV?$EventRef\@U?$ActorGameplayEvent\@W4CoordinatorResult\@\@\@\@\@\@\@Z
      */

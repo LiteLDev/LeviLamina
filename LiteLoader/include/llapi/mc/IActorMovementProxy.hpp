@@ -32,10 +32,6 @@ public:
      * @symbol ?isFlying\@IActorMovementProxy\@\@UEBA_NXZ
      */
     MCVAPI bool isFlying() const;
-    /**
-     * @symbol ?setIsFlying\@IActorMovementProxy\@\@UEAAX_N\@Z
-     */
-    MCVAPI void setIsFlying(bool);
 #endif
     /**
      * @symbol ?getRegionAsConstBlockSource\@IActorMovementProxy\@\@QEBAAEBVIConstBlockSource\@\@XZ

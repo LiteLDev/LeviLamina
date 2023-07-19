@@ -70,6 +70,10 @@ public:
      */
     MCAPI void initServerFromPacks(class ResourcePackManager &, class IWorldRegistriesProvider &);
     /**
+     * @symbol ?initializeWithLevelStorageManager\@BiomeRegistry\@\@QEAAXAEAVLevelStorageManager\@\@\@Z
+     */
+    MCAPI void initializeWithLevelStorageManager(class LevelStorageManager &);
+    /**
      * @symbol ?isRegistrationFinished\@BiomeRegistry\@\@QEBA_NXZ
      */
     MCAPI bool isRegistrationFinished() const;
@@ -115,6 +119,10 @@ public:
      * @symbol ?_mergeDataInheritance\@BiomeRegistry\@\@AEAAXAEAVValue\@Json\@\@AEAVSemVersion\@\@AEAV?$InheritanceTree\@UBiomeParent\@BiomeRegistry\@\@\@\@AEBUBiomeParent\@1\@\@Z
      */
     MCAPI void _mergeDataInheritance(class Json::Value &, class SemVersion &, class InheritanceTree<struct BiomeRegistry::BiomeParent> &, struct BiomeRegistry::BiomeParent const &);
+    /**
+     * @symbol ?_save\@BiomeRegistry\@\@AEAAXAEAVLevelStorage\@\@\@Z
+     */
+    MCAPI void _save(class LevelStorage &);
 
 private:
 

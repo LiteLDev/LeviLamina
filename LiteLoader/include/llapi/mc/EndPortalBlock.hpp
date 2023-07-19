@@ -36,35 +36,25 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 5
+     * @vftbl 6
      * @symbol ?getCollisionShape\@EndPortalBlock\@\@UEBA_NAEAVAABB\@\@AEBVBlock\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
     virtual bool getCollisionShape(class AABB &, class Block const &, class IConstBlockSource const &, class BlockPos const &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
-     * @vftbl 10
-     * @symbol ?getAABB\@EndPortalBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
-     */
-    virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
-    /**
-     * @vftbl 11
+     * @vftbl 7
      * @symbol ?addCollisionShapes\@EndPortalBlock\@\@UEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
     virtual bool addCollisionShapes(class Block const &, class BlockSource const &, class BlockPos const &, class AABB const *, std::vector<class AABB> &, class optional_ref<class GetCollisionShapeInterface const>) const;
     /**
-     * @vftbl 19
-     * @symbol __unk_vfn_19
+     * @vftbl 8
+     * @symbol ?getAABB\@EndPortalBlock\@\@UEBAAEBVAABB\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAV2\@_N\@Z
      */
-    virtual void __unk_vfn_19();
+    virtual class AABB const & getAABB(class IConstBlockSource const &, class BlockPos const &, class Block const &, class AABB &, bool) const;
     /**
-     * @vftbl 28
-     * @symbol __unk_vfn_28
+     * @vftbl 22
+     * @symbol __unk_vfn_22
      */
-    virtual void __unk_vfn_28();
-    /**
-     * @vftbl 29
-     * @symbol __unk_vfn_29
-     */
-    virtual void __unk_vfn_29();
+    virtual void __unk_vfn_22();
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
@@ -76,15 +66,10 @@ public:
      */
     virtual void __unk_vfn_32();
     /**
-     * @vftbl 33
-     * @symbol __unk_vfn_33
-     */
-    virtual void __unk_vfn_33();
-    /**
      * @vftbl 34
-     * @symbol ?isWaterBlocking\@EndPortalBlock\@\@UEBA_NXZ
+     * @symbol __unk_vfn_34
      */
-    virtual bool isWaterBlocking() const;
+    virtual void __unk_vfn_34();
     /**
      * @vftbl 35
      * @symbol __unk_vfn_35
@@ -97,9 +82,9 @@ public:
     virtual void __unk_vfn_36();
     /**
      * @vftbl 37
-     * @symbol __unk_vfn_37
+     * @symbol ?isWaterBlocking\@EndPortalBlock\@\@UEBA_NXZ
      */
-    virtual void __unk_vfn_37();
+    virtual bool isWaterBlocking() const;
     /**
      * @vftbl 38
      * @symbol __unk_vfn_38
@@ -121,6 +106,11 @@ public:
      */
     virtual void __unk_vfn_41();
     /**
+     * @vftbl 42
+     * @symbol __unk_vfn_42
+     */
+    virtual void __unk_vfn_42();
+    /**
      * @vftbl 43
      * @symbol __unk_vfn_43
      */
@@ -130,11 +120,6 @@ public:
      * @symbol __unk_vfn_44
      */
     virtual void __unk_vfn_44();
-    /**
-     * @vftbl 45
-     * @symbol __unk_vfn_45
-     */
-    virtual void __unk_vfn_45();
     /**
      * @vftbl 46
      * @symbol __unk_vfn_46
@@ -151,60 +136,65 @@ public:
      */
     virtual void __unk_vfn_48();
     /**
-     * @vftbl 53
-     * @symbol __unk_vfn_53
+     * @vftbl 49
+     * @symbol __unk_vfn_49
      */
-    virtual void __unk_vfn_53();
+    virtual void __unk_vfn_49();
     /**
-     * @vftbl 59
-     * @symbol __unk_vfn_59
+     * @vftbl 50
+     * @symbol __unk_vfn_50
      */
-    virtual void __unk_vfn_59();
+    virtual void __unk_vfn_50();
     /**
-     * @vftbl 60
-     * @symbol __unk_vfn_60
+     * @vftbl 51
+     * @symbol __unk_vfn_51
      */
-    virtual void __unk_vfn_60();
+    virtual void __unk_vfn_51();
     /**
-     * @vftbl 61
+     * @vftbl 56
+     * @symbol __unk_vfn_56
+     */
+    virtual void __unk_vfn_56();
+    /**
+     * @vftbl 62
+     * @symbol __unk_vfn_62
+     */
+    virtual void __unk_vfn_62();
+    /**
+     * @vftbl 63
+     * @symbol __unk_vfn_63
+     */
+    virtual void __unk_vfn_63();
+    /**
+     * @vftbl 64
      * @symbol ?canContainLiquid\@EndPortalBlock\@\@UEBA_NXZ
      */
     virtual bool canContainLiquid() const;
     /**
-     * @vftbl 74
-     * @symbol __unk_vfn_74
+     * @vftbl 77
+     * @symbol __unk_vfn_77
      */
-    virtual void __unk_vfn_74();
+    virtual void __unk_vfn_77();
     /**
-     * @vftbl 81
-     * @symbol __unk_vfn_81
+     * @vftbl 84
+     * @symbol __unk_vfn_84
      */
-    virtual void __unk_vfn_81();
+    virtual void __unk_vfn_84();
     /**
-     * @vftbl 101
+     * @vftbl 104
      * @symbol ?spawnResources\@EndPortalBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAVRandomize\@\@AEBUResourceDropsContext\@\@\@Z
      */
     virtual void spawnResources(class BlockSource &, class BlockPos const &, class Block const &, class Randomize &, struct ResourceDropsContext const &) const;
     /**
-     * @vftbl 102
+     * @vftbl 105
      * @symbol ?asItemInstance\@EndPortalBlock\@\@UEBA?AVItemInstance\@\@AEBVBlock\@\@PEBVBlockActor\@\@\@Z
      */
     virtual class ItemInstance asItemInstance(class Block const &, class BlockActor const *) const;
     /**
-     * @vftbl 104
-     * @symbol __unk_vfn_104
+     * @vftbl 107
+     * @symbol __unk_vfn_107
      */
-    virtual void __unk_vfn_104();
-    /**
-     * @vftbl 112
-     * @symbol ?entityInside\@EndPortalBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
-     */
-    virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
-    /**
-     * @vftbl 122
-     * @symbol __unk_vfn_122
-     */
-    virtual void __unk_vfn_122();
+    virtual void __unk_vfn_107();
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
@@ -216,72 +206,82 @@ public:
      */
     virtual void __unk_vfn_124();
     /**
-     * @vftbl 127
-     * @symbol __unk_vfn_127
+     * @vftbl 125
+     * @symbol __unk_vfn_125
      */
-    virtual void __unk_vfn_127();
+    virtual void __unk_vfn_125();
     /**
-     * @vftbl 130
-     * @symbol __unk_vfn_130
+     * @vftbl 128
+     * @symbol __unk_vfn_128
      */
-    virtual void __unk_vfn_130();
+    virtual void __unk_vfn_128();
     /**
-     * @vftbl 150
+     * @vftbl 131
+     * @symbol __unk_vfn_131
+     */
+    virtual void __unk_vfn_131();
+    /**
+     * @vftbl 148
      * @symbol ?animateTick\@EndPortalBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     virtual void animateTick(class BlockSource &, class BlockPos const &, class Random &) const;
     /**
-     * @vftbl 155
-     * @symbol __unk_vfn_155
+     * @vftbl 153
+     * @symbol __unk_vfn_153
      */
-    virtual void __unk_vfn_155();
+    virtual void __unk_vfn_153();
+    /**
+     * @vftbl 162
+     * @symbol __unk_vfn_162
+     */
+    virtual void __unk_vfn_162();
+    /**
+     * @vftbl 163
+     * @symbol __unk_vfn_163
+     */
+    virtual void __unk_vfn_163();
     /**
      * @vftbl 164
      * @symbol __unk_vfn_164
      */
     virtual void __unk_vfn_164();
     /**
-     * @vftbl 165
-     * @symbol __unk_vfn_165
-     */
-    virtual void __unk_vfn_165();
-    /**
      * @vftbl 166
-     * @symbol __unk_vfn_166
-     */
-    virtual void __unk_vfn_166();
-    /**
-     * @vftbl 168
      * @symbol ?onFallOn\@EndPortalBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@M\@Z
      */
     virtual void onFallOn(class BlockSource &, class BlockPos const &, class Actor &, float) const;
     /**
-     * @vftbl 169
-     * @symbol __unk_vfn_169
+     * @vftbl 167
+     * @symbol __unk_vfn_167
      */
-    virtual void __unk_vfn_169();
+    virtual void __unk_vfn_167();
     /**
-     * @vftbl 173
-     * @symbol __unk_vfn_173
+     * @vftbl 171
+     * @symbol __unk_vfn_171
      */
-    virtual void __unk_vfn_173();
+    virtual void __unk_vfn_171();
     /**
-     * @vftbl 177
-     * @symbol __unk_vfn_177
+     * @vftbl 174
+     * @symbol __unk_vfn_174
      */
-    virtual void __unk_vfn_177();
+    virtual void __unk_vfn_174();
+    /**
+     * @vftbl 183
+     * @symbol __unk_vfn_183
+     */
+    virtual void __unk_vfn_183();
     /**
      * @vftbl 186
-     * @symbol __unk_vfn_186
-     */
-    virtual void __unk_vfn_186();
-    /**
-     * @vftbl 189
      * @symbol ?getResourceCount\@EndPortalBlock\@\@UEBAHAEAVRandomize\@\@AEBVBlock\@\@H\@Z
      */
     virtual int getResourceCount(class Randomize &, class Block const &, int) const;
     /**
-     * @vftbl 194
+     * @vftbl 188
+     * @symbol ?entityInside\@EndPortalBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
+     */
+    virtual void entityInside(class BlockSource &, class BlockPos const &, class Actor &) const;
+    /**
+     * @vftbl 192
      * @symbol ?getEntityResourceItem\@EndPortalBlock\@\@UEBA?AVItemInstance\@\@AEAVRandomize\@\@AEBVBlockActor\@\@H\@Z
      */
     virtual class ItemInstance getEntityResourceItem(class Randomize &, class BlockActor const &, int) const;

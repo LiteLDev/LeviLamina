@@ -412,7 +412,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
             ab.setBool(0);
             if (flying)
                 ab.setBool(1);
-            UpdateAbilitiesPacket packet(sp->getUniqueID(), abilities);
+            UpdateAbilitiesPacket packet(sp->getOrCreateUniqueID(), abilities);
             auto pkt2 = UpdateAdventureSettingsPacket(AdventureSettings());
             abilities.setAbility(AbilitiesIndex::Flying, flying);
             sp->sendNetworkPacket(pkt2);
@@ -420,6 +420,8 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
         }
     }
 }
+
+
 
 // Fix SimulatedPlayer Bugs
 namespace SimulatedPlayerClient {
@@ -444,82 +446,14 @@ TInstanceHook(void, "?tickWorld@Player@@UEAAXAEBUTick@@@Z", Player, struct Tick 
 
 #include "llapi/mc/ChunkViewSource.hpp"
 // fix chunk load and tick - ChunkSource load mode
-static_assert(sizeof(ChunkSource) == 0x50);      // 88
-static_assert(sizeof(ChunkViewSource) == 0x1d8); // 472
+static_assert(sizeof(ChunkSource) == 0x60);      // 96
+static_assert(sizeof(ChunkViewSource) == 0x1e8); // 472
 
 TInstanceHook(std::shared_ptr<class ChunkViewSource>,
               "?_createChunkSource@SimulatedPlayer@@MEAA?AV?$shared_ptr@VChunkViewSource@@@std@@AEAVChunkSource@@@Z",
               SimulatedPlayer, ChunkSource& chunkSource) {
     auto result = ChunkViewSource(chunkSource, ChunkSource::LoadMode::Deferred);
     return std::make_shared<ChunkViewSource>(result);
-}
-
-/*
-// Fix carried item display
-// Fix armor display
-#include "llapi/mc/WeakStorageEntity.hpp"
-#include "llapi/mc/WeakEntityRef.hpp"
-
-// void sendEvent(class EventRef<struct ActorGameplayEvent<void>> const &);
-TClasslessInstanceHook(void, "?sendEvent@ActorEventCoordinator@@QEAAXAEBV?$EventRef@U?$ActorGameplayEvent@X@@@@@Z",
-                       void* a2) {
-    original(this, a2);
-    if (a2) {
-        auto type = dAccess<char, 312>(a2);
-        // sendActorCarriedItemChanged
-        if (type == 4) {
-            auto v56 = dAccess<char, 304>(a2);
-            WeakStorageEntity* weakStorageEntity;
-            if (v56) {
-                if (v56 != 1) {
-                    return;
-                }
-            }
-            weakStorageEntity = (WeakStorageEntity*)a2;
-            if (weakStorageEntity) {
-                auto* actor = weakStorageEntity->tryUnwrap<Actor>();
-                if (actor->isSimulatedPlayer()) {
-                    ItemInstance const& newItem = dAccess<ItemInstance, 160>(weakStorageEntity);
-                    int slot = dAccess<int, 296>(weakStorageEntity);
-                    // Force to call the implementation of ServerPlayer
-                    MobEquipmentPacket pkt(actor->getRuntimeID(), newItem, (int)slot, (int)slot,
-                                           ContainerID::Inventory);
-                    SimulatedPlayerClient::send((SimulatedPlayer*)actor, pkt);
-                }
-            }
-        }
-        // sendActorEquippedArmor
-        else if (type == 8) {
-            auto v30 = dAccess<char, 168>(a2);
-            WeakStorageEntity* weakStorageEntity;
-            if (v30) {
-                if (v30 != 1) {
-                    return;
-                }
-            }
-            weakStorageEntity = (WeakStorageEntity*)a2;
-            if (weakStorageEntity) {
-                auto* actor = weakStorageEntity->tryUnwrap<Actor>();
-                if (actor->isSimulatedPlayer()) {
-                    int slot = dAccess<int, 160>(weakStorageEntity);
-                    ItemInstance const& item = dAccess<ItemInstance, 24>(weakStorageEntity);
-                    // Force to call the implementation of ServerPlayer
-                    MobEquipmentPacket pkt(actor->getRuntimeID(), item, (int)slot, (int)slot, ContainerID::Armor);
-                    SimulatedPlayerClient::send((SimulatedPlayer*)actor, pkt);
-                }
-            }
-        }
-    }
-}
-*/
-// Fix horion client's crash module
-#include "llapi/mc/PlayerListPacket.hpp"
-#include "llapi/mc/ExtendedStreamReadResult.hpp"
-
-TInstanceHook(ExtendedStreamReadResult,
-              "?_read@PlayerListPacket@@EEAA?AUExtendedStreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
-              PlayerListPacket, ReadOnlyBinaryStream) {
-    return ExtendedStreamReadResult{StreamReadResult::Valid, ""};
 }
 
 // Fix item disappear caused by players throwing items at unloaded chunks
@@ -543,10 +477,19 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
 // fix BlockEventDispatcherToken unregister crash error when stop server
 #include <llapi/mc/BlockEventDispatcherToken.hpp>
 TInstanceHook(void,"?unregister@BlockEventDispatcherToken@@QEAAXXZ",BlockEventDispatcherToken){
-  if (this->mHandle != -1 && this->mDispatcher->listeners.size() <= 1 && ll::globalRuntimeConfig.serverStatus == ll::LLServerStatus::Stopping)
+  if (this->mHandle != -1)
   {
-    logger.debug("BlockEventDispatcherToken::unregister with no listeners");
+    if(ll::globalRuntimeConfig.serverStatus == ll::LLServerStatus::Stopping){
+      logger.debug("BlockEventDispatcherToken::unregister ignore unregister when server stopping");
+      this->mHandle = -1;
+      return;
+    }
+    //logger.info("{} {}",this->mHandle,this->mDispatcher->listeners.size());
+    auto it = this->mDispatcher->listeners.find(this->mHandle);
+    if (it != this->mDispatcher->listeners.end())
+        this->mDispatcher->listeners.erase(it);
+    this->mHandle = -1;
     return;
   }
-  original(this);
+  //original(this);
 }
