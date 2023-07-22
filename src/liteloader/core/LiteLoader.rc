@@ -1,0 +1,92 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winres.h"
+#include "liteloader/core/version.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE
+BEGIN
+    "#include ""winres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION LITELOADER_VERSION_MAJOR,LITELOADER_VERSION_MINOR,LITELOADER_VERSION_REVISION,LITELOADER_VERSION_STATUS_VERSION
+ PRODUCTVERSION LITELOADER_VERSION_MAJOR,LITELOADER_VERSION_MINOR,LITELOADER_VERSION_REVISION,LITELOADER_VERSION_STATUS_VERSION
+ FILEFLAGSMASK 0x3fL
+ FILEFLAGS LITELOADER_FILE_VERSION_FLAG
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "CompanyName", "LiteLoaderDev"
+            VALUE "FileDescription", "A Light-Weight Plugin Loader for Bedrock Dedicated Server"
+            VALUE "FileVersion", LITELOADER_FILE_VERSION_STRING
+            VALUE "InternalName", "LiteLoader.dll"
+            VALUE "LegalCopyright", "LiteLoader Developer"
+            VALUE "OriginalFilename", "LiteLoader.dll"
+            VALUE "ProductName", "LiteLoader For BDS"
+            VALUE "ProductVersion", LITELOADER_FILE_VERSION_STRING
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif
+/////////////////////////////////////////////////////////////////////////////
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
