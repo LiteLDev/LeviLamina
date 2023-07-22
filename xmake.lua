@@ -47,9 +47,9 @@ target("LiteLoader")
     set_languages("c++20")
     set_symbols("debug")
     set_exceptions("none")
-    set_pcxxheader("include/llapi/Global.h")
-    add_headerfiles("include/(**.h)", "include/(**.hpp)", "include/(**.inl)")
-    add_includedirs("./include")
+    set_pcxxheader("src/llapi/Global.h")
+    add_headerfiles("src/(**.h)", "src/(**.hpp)", "src/(**.inl)")
+    add_includedirs("./src")
     add_cxflags("/utf-8", "/permissive-", "/EHa", "/W3")
     add_defines(
         "UNICODE", "LITELOADER_EXPORTS", "WIN32_LEAN_AND_MEAN", 
