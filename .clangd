@@ -1,0 +1,4 @@
+Diagnostics:
+  Suppress: ["-Wmicrosoft-enum-forward-reference", "-Wc++11-narrowing"]
+CompileFlags:
+  Add: ["-ferror-limit=0", "-D__FUNCTION__=\"dummy\"", "-D_CRT_USE_BUILTIN_OFFSETOF"]

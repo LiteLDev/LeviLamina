@@ -1,0 +1,35 @@
+BasedOnStyle: LLVM
+AccessModifierOffset: -4
+AlignAfterOpenBracket: BlockIndent
+AlignArrayOfStructures: Left
+AlignConsecutiveDeclarations:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: false
+AlignConsecutiveAssignments:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: false
+  AlignCompound: true
+  PadOperators: true
+AlignConsecutiveMacros:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: false
+AllowAllParametersOfDeclarationOnNextLine: false
+AllowShortLambdasOnASingleLine: All
+AlwaysBreakAfterDefinitionReturnType: None
+AlwaysBreakTemplateDeclarations: 'Yes'
+BinPackArguments: false
+BinPackParameters: false
+BreakBeforeBraces: Custom
+ColumnLimit: 120
+CommentPragmas: '^ IWYU pragma:'
+ConstructorInitializerIndentWidth: 0
+IndentWidth: 4
+Language: Cpp
+MaxEmptyLinesToKeep: 2
+PointerAlignment: Left
+TabWidth: 4
+UseTab: Never
+SortIncludes: CaseSensitive

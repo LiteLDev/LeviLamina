@@ -1,0 +1,21 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+class IContainerManager {
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICONTAINERMANAGER
+public:
+    IContainerManager& operator=(IContainerManager const&) = delete;
+    IContainerManager(IContainerManager const&)            = delete;
+    IContainerManager()                                    = delete;
+#endif
+
+public:
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONTAINERMANAGER
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~IContainerManager();
+#endif
+};
