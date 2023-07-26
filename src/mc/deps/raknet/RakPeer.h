@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/raknet/RakNetGUID.h"
+#include "mc/deps/raknet/SystemAddress.h"
+#include "mc/network/NetworkIdentifier.h"
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/List.h"
@@ -94,12 +97,16 @@ public:
     };
 
 public:
+    SystemAddress getAdr(NetworkIdentifier const& ni) {
+        RakNetGUID const& guid = dAccess<RakNetGUID>(&ni, 8);
+        return RakPeer::GetSystemAddressFromGuid(guid);
+    }
+
     // prevent constructor by default
     RakPeer& operator=(RakPeer const&) = delete;
     RakPeer(RakPeer const&)            = delete;
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKNET_RAKPEER
     /**
      * @symbol ?AddToBanList\@RakPeer\@RakNet\@\@UEAAXPEBDI\@Z
      */
@@ -533,7 +540,6 @@ public:
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~RakPeer(); // NOLINT
-#endif
     /**
      * @symbol ??0RakPeer\@RakNet\@\@QEAA\@XZ
      */

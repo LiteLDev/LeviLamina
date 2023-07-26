@@ -1,20 +1,23 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/gamerefs_entity/EntityRegistryBase.h"
+#include "mc/entity/EntityId.h"
 
 class EntityContextBase {
 
 public:
-    // prevent constructor by default
-    EntityContextBase& operator=(EntityContextBase const&) = delete;
-    EntityContextBase(EntityContextBase const&)            = delete;
-    EntityContextBase()                                    = delete;
+    class EntityRegistryBase& mRegistry;
+    class EntityId      mEntity;
 
-public:
+    [[nodiscard]] class entt::basic_registry<EntityId>& _enttRegistry() {
+        return mRegistry.mRegistry;
+    }
     /**
      * @symbol ??0EntityContextBase\@\@QEAA\@AEAVEntityRegistryBase\@\@VEntityId\@\@\@Z
      */
-    MCAPI EntityContextBase(class EntityRegistryBase&, class EntityId); // NOLINT
+    MCAPI
+    EntityContextBase(class EntityRegistryBase&, class EntityId); // NOLINT
     /**
      * @symbol ?isValid\@EntityContextBase\@\@QEBA_NXZ
      */

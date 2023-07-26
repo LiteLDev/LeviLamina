@@ -1,12 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/EntityRegistryRefTraits.h"
 
-struct EntityRegistryConstRefTraits {
+struct EntityRegistryConstRefTraits : public EntityRegistryRefTraits {
 
-public:
-    // prevent constructor by default
-    EntityRegistryConstRefTraits& operator=(EntityRegistryConstRefTraits const&) = delete;
-    EntityRegistryConstRefTraits(EntityRegistryConstRefTraits const&)            = delete;
-    EntityRegistryConstRefTraits()                                               = delete;
 };

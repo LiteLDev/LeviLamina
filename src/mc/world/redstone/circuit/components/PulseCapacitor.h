@@ -3,14 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/CircuitComponentType.h"
 #include "mc/world/redstone/circuit/components/ProducerComponent.h"
 
 class PulseCapacitor : public ::ProducerComponent {
 
 public:
-    // prevent constructor by default
-    PulseCapacitor& operator=(PulseCapacitor const&) = delete;
-    PulseCapacitor(PulseCapacitor const&)            = delete;
+    bool                                  mPowered;
+    bool                                  mNewPowered;
+    const enum class CircuitComponentType mCircuitComponentType = CircuitComponentType::PulseCapacitor;
 
 public:
     /**

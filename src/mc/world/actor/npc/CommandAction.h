@@ -1,12 +1,26 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/actor/npc/ActionValue.h"
+#include "mc/world/actor/npc/Button.h"
+#include "mc/server/commands/StoredCommand.h"
 
 namespace npc {
+
+enum class ActionMode : char {
+    BUTTON = 0x0,
+    CLOSE  = 0x1,
+    OPEN   = 0x2,
+};
 
 struct CommandAction {
 
 public:
+    npc::ActionValue                mActionValue;
+    npc::Button                     mButton;
+    npc::ActionMode                 mActionMode;
+    std::vector<npc::StoredCommand> mCmds;
+
     // prevent constructor by default
     CommandAction& operator=(CommandAction const&) = delete;
     CommandAction(CommandAction const&)            = delete;

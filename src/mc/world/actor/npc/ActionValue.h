@@ -7,6 +7,9 @@ namespace npc {
 struct ActionValue {
 
 public:
+    std::string mRawText;
+    std::string mText;
+
     // prevent constructor by default
     ActionValue& operator=(ActionValue const&) = delete;
     ActionValue(ActionValue const&)            = delete;

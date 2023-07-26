@@ -5,12 +5,6 @@
 class Vec3 {
 
 public:
-    // prevent constructor by default
-    Vec3& operator=(Vec3 const&) = delete;
-    Vec3(Vec3 const&)            = delete;
-    Vec3()                       = delete;
-
-public:
     /**
      * @symbol ??0Vec3\@\@QEAA\@MMM\@Z
      */

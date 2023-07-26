@@ -15,7 +15,7 @@ public:
 
     ChunkBlockPos(char x, short y, char z) : x(x), y(y), z(z){};
 
-    inline unsigned short toLegacyIndex() const { return (y.mVal & 0xF) + 16 * (z + 16 * x); }
+    [[nodiscard]] inline unsigned short toLegacyIndex() const { return (y.mVal & 0xF) + 16 * (z + 16 * x); }
 
     template <typename T>
     [[nodiscard]] constexpr T& get(size_t index) {

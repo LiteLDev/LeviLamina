@@ -1,11 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/EntityRefTraits.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/WeakRefT.h"
 
-class WeakEntityRef {
+class WeakEntityRef : public WeakRefT<struct EntityRefTraits> {
 
 public:
     // prevent constructor by default

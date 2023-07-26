@@ -1,16 +1,16 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/EntityId.h"
 
 class EntityRegistryBase {
 
 public:
-    // prevent constructor by default
-    EntityRegistryBase& operator=(EntityRegistryBase const&) = delete;
-    EntityRegistryBase(EntityRegistryBase const&)            = delete;
-    EntityRegistryBase()                                     = delete;
-
-public:
+    void*                                 mCanModifyDuringView;
+    entt::basic_registry<class EntityId>& mRegistry;
+    EntityId                              mViewedEntity;
+    bool                                  mViewUsesViewedContext;
+    unsigned int                          mId;
     /**
      * @symbol
      * ??0EntityRegistryBase\@\@QEAA\@AEAV?$basic_registry\@VEntityId\@\@V?$allocator\@VEntityId\@\@\@std\@\@\@entt\@\@\@Z

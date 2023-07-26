@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/raknet/RakNetGUID.h"
+#include "mc/deps/raknet/SystemAddress.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,11 +14,9 @@ namespace RakNet {
 struct AddressOrGUID {
 
 public:
-    // prevent constructor by default
-    AddressOrGUID& operator=(AddressOrGUID const&) = delete;
-    AddressOrGUID()                                = delete;
+    RakNetGUID    guid;
+    SystemAddress adr;
 
-public:
     /**
      * @symbol ??0AddressOrGUID\@RakNet\@\@QEAA\@AEBU01\@\@Z
      */

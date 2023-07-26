@@ -1,17 +1,18 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/EntityContextBase.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/WeakRefT.h"
 
-class EntityContext {
+class EntityContext : public EntityContextBase {
 
 public:
-    // prevent constructor by default
-    EntityContext& operator=(EntityContext const&) = delete;
-    EntityContext(EntityContext const&)            = delete;
-    EntityContext()                                = delete;
+    template <class T>
+    inline T* tryGetComponent() {
+        return const_cast<T*>(_enttRegistry().try_get<T>(_getEntityId()));
+    }
 
 public:
     /**

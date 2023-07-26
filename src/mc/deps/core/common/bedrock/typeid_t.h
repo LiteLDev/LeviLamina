@@ -12,12 +12,12 @@ public:
 
     unsigned short value;
     typeid_t<T0>(typeid_t<T0> const& id) : value(id.value){};
-    typeid_t<T0>(unsigned short value) : value(value){};
+    explicit typeid_t<T0>(unsigned short value) : value(value){};
 
     MCAPI inline static std::atomic<unsigned short>& _getCounter();
 };
 
-template <typename T, typename T2>
-MCAPI typeid_t<T> type_id();
+template <typename T0, typename T1>
+MCAPI typeid_t<T0> type_id();
 
 }; // namespace Bedrock

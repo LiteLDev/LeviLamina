@@ -5,8 +5,10 @@
 class ActorRuntimeID {
 
 public:
-    // prevent constructor by default
-    ActorRuntimeID& operator=(ActorRuntimeID const&) = delete;
-    ActorRuntimeID(ActorRuntimeID const&)            = delete;
-    ActorRuntimeID()                                 = delete;
+    uint64_t id;
+
+    [[nodiscard]] inline uint64_t get() const { return id; }
+
+    inline explicit operator uint64_t() const { return id; }
+
 };

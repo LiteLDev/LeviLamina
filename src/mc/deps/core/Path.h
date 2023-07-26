@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/PathPart.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,11 +13,8 @@ namespace Core {
 class Path {
 
 public:
-    // prevent constructor by default
-    Path& operator=(Path const&) = delete;
-    Path(Path const&)            = delete;
-
-public:
+    class PathPart mPath;
+    explicit Path(std::string const& a1) { mPath.mUtf8StdString = a1; }
     /**
      * @symbol ??0Path\@Core\@\@QEAA\@XZ
      */

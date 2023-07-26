@@ -1,13 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/common/wrapper/Ref.h"
 
 template <typename T0>
-class StackRefResultT {
-
+class StackRefResultT : public T0::StackResultStorage {
 public:
-    // prevent constructor by default
-    StackRefResultT& operator=(StackRefResultT const&) = delete;
-    StackRefResultT(StackRefResultT const&)            = delete;
-    StackRefResultT()                                  = delete;
+    using StackRef = typename T0::StackRef;
 };

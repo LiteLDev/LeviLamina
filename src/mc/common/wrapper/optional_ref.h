@@ -5,9 +5,18 @@
 template <typename T0>
 class optional_ref {
 
+    T* value;
+
 public:
-    // prevent constructor by default
-    optional_ref& operator=(optional_ref const&) = delete;
-    optional_ref(optional_ref const&)            = delete;
-    optional_ref()                               = delete;
+    inline T* get() const {
+        if (*this)
+            return value;
+        return nullptr;
+    }
+
+    inline T& operator*() const { return *value; }
+
+    inline T* operator->() const { return value; }
+
+    inline operator bool() const { return value != nullptr; }
 };

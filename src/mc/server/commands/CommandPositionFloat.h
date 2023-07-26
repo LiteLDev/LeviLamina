@@ -1,12 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/commands/CommandPosition.h"
 
-class CommandPositionFloat {
+class CommandPositionFloat : public CommandPosition {
 
-public:
-    // prevent constructor by default
-    CommandPositionFloat& operator=(CommandPositionFloat const&) = delete;
-    CommandPositionFloat(CommandPositionFloat const&)            = delete;
-    CommandPositionFloat()                                       = delete;
 };

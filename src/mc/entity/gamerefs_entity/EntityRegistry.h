@@ -1,17 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/gamerefs_entity/EntityRegistryBase.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/WeakRefT.h"
 
-class EntityRegistry {
-
-public:
-    // prevent constructor by default
-    EntityRegistry& operator=(EntityRegistry const&) = delete;
-    EntityRegistry(EntityRegistry const&)            = delete;
-    EntityRegistry()                                 = delete;
+class EntityRegistry : public EntityRegistryBase, public std::enable_shared_from_this<EntityRegistry> {
 
 public:
     /**

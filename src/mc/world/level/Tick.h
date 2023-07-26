@@ -5,12 +5,18 @@
 struct Tick {
 
 public:
-    // prevent constructor by default
-    Tick& operator=(Tick const&) = delete;
-    Tick(Tick const&)            = delete;
-    Tick()                       = delete;
+    uint64_t t;
 
-public:
+    constexpr explicit operator uint64_t() const { return t; }
+
+    constexpr explicit operator uint64_t&() { return t; }
+
+    constexpr explicit Tick(uint64_t v) : t(v){};
+
+    constexpr Tick(const Tick& v) = default;
+
+    constexpr Tick() : t(0){};
+
     /**
      * @symbol ?MAX\@Tick\@\@2U1\@B
      */

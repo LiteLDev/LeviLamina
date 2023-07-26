@@ -2,12 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template <typename T0, typename T1>
+template <typename A, typename T>
 class AutomaticID {
+    T id;
 
 public:
-    // prevent constructor by default
-    AutomaticID& operator=(AutomaticID const&) = delete;
-    AutomaticID(AutomaticID const&)            = delete;
-    AutomaticID()                              = delete;
+    AutomaticID() { id = 0; }
+
+    explicit AutomaticID(T x) { id = x; }
+
+    inline explicit operator T() const { return id; }
 };

@@ -6,8 +6,8 @@ template <typename T0, typename T1, int T2>
 class TypedServerNetId {
 
 public:
-    // prevent constructor by default
-    TypedServerNetId& operator=(TypedServerNetId const&) = delete;
-    TypedServerNetId(TypedServerNetId const&)            = delete;
-    TypedServerNetId()                                   = delete;
+    T1        mRawId;
+    static T1 sNextRawId;
+
+    inline explicit operator T1() { return mRawId; }
 };

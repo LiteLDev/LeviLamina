@@ -5,12 +5,6 @@
 class BlockPos {
 
 public:
-    // prevent constructor by default
-    BlockPos& operator=(BlockPos const&) = delete;
-    BlockPos(BlockPos const&)            = delete;
-    BlockPos()                           = delete;
-
-public:
     /**
      * @symbol ??0BlockPos\@\@QEAA\@AEBVVec3\@\@\@Z
      */

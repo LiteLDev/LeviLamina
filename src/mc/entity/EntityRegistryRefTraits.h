@@ -1,12 +1,15 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/gamerefs_entity/EntityRegistry.h"
+#include "mc/common/wrapper/Ref.h"
 
 struct EntityRegistryRefTraits {
 
 public:
-    // prevent constructor by default
-    EntityRegistryRefTraits& operator=(EntityRegistryRefTraits const&) = delete;
-    EntityRegistryRefTraits(EntityRegistryRefTraits const&)            = delete;
-    EntityRegistryRefTraits()                                          = delete;
+    using StackRef           = EntityRegistry;
+    using WeakStorage        = WeakStorageSharePtr<StackRef>;
+    using StackResultStorage = StackResultStorageSharePtr<StackRef>;
+    using OwnerStackRef      = StackRef;
+    using OwnerStorage       = OwnerStorageSharePtr<OwnerStackRef>;
 };

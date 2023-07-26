@@ -6,8 +6,21 @@ template <typename T0>
 class CommandSelectorResults {
 
 public:
-    // prevent constructor by default
-    CommandSelectorResults& operator=(CommandSelectorResults const&) = delete;
-    CommandSelectorResults(CommandSelectorResults const&)            = delete;
-    CommandSelectorResults()                                         = delete;
+    std::shared_ptr<std::vector<T0*>> data;
+
+    auto begin() {
+        return data->begin();
+    }
+
+    auto end() {
+        return data->end();
+    }
+
+    auto count() const {
+        return data->size();
+    }
+
+    auto empty() const {
+        return data->empty();
+    }
 };

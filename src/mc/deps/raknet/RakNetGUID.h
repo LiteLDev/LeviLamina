@@ -7,11 +7,11 @@ namespace RakNet {
 struct RakNetGUID {
 
 public:
-    // prevent constructor by default
-    RakNetGUID& operator=(RakNetGUID const&) = delete;
-    RakNetGUID(RakNetGUID const&)            = delete;
+    uint64_t g;
+    uint16_t systemIndex;
 
-public:
+    bool operator!=(const RakNetGUID& a1) const { return !(*this == a1); }
+
     /**
      * @symbol ?FromString\@RakNetGUID\@RakNet\@\@QEAA_NPEBD\@Z
      */

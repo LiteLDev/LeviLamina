@@ -8,10 +8,10 @@ template <typename T0>
 class PathBuffer {
 
 public:
-    // prevent constructor by default
-    PathBuffer& operator=(PathBuffer const&) = delete;
-    PathBuffer(PathBuffer const&)            = delete;
-    PathBuffer()                             = delete;
+    T0  value;
+    T0& get() { return value; }
+    explicit operator T0&() noexcept { return value; }
+    explicit operator T0 const&() const noexcept { return value; }
 };
 
 }; // namespace Core

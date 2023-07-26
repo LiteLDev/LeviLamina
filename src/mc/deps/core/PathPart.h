@@ -7,12 +7,7 @@ namespace Core {
 class PathPart {
 
 public:
-    // prevent constructor by default
-    PathPart& operator=(PathPart const&) = delete;
-    PathPart(PathPart const&)            = delete;
-    PathPart()                           = delete;
-
-public:
+    std::string mUtf8StdString;
     /**
      * @symbol ??1PathPart\@Core\@\@QEAA\@XZ
      */
