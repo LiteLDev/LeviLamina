@@ -1,17 +1,31 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/math/VectorBase.hpp"
 
-class ChunkPos {
-
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKPOS
-public:
-    ChunkPos& operator=(ChunkPos const&) = delete;
-    ChunkPos(ChunkPos const&)            = delete;
-    ChunkPos()                           = delete;
-#endif
+class ChunkPos : public VectorBase<ChunkPos, int, int> {
 
 public:
+    int x, z;
+    ChunkPos() = default;
+    ChunkPos(int ix, int iz) : x(ix), z(iz){};
+
+    template <typename T>
+    [[nodiscard]] constexpr T& get(size_t index) {
+        if (index==1) {
+            return z;
+        }
+        return x;
+    }
+
+    template <typename T>
+    [[nodiscard]] constexpr T get(size_t index) const {
+        if (index == 1) {
+            return z;
+        }
+        return x;
+    }
+
     /**
      * @symbol ??0ChunkPos\@\@QEAA\@AEBVVec3\@\@\@Z
      */
