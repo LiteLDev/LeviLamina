@@ -3,15 +3,14 @@
 #pragma warning(disable : 4949)
 
 #include "liteloader/api/Macro.h"
+#include "mc/_HeaderOutputPredefine.h"
 
 #ifndef NOMINMAX
 #define NOMINMAX
 #endif // NOMINMAX
 
-#define MCAPI    __declspec(dllimport)
 #define MCVAPI   __declspec(dllimport)
 #define MCINLINE inline
-#define MCCLS
 
 #ifndef FMT_HEADER_ONLY
 #define FMT_HEADER_ONLY
