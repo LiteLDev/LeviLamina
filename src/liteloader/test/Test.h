@@ -28,8 +28,8 @@ public:
 
     Test(std::string_view name, std::string_view description) : name{name}, description{description} {}
 
-    void pass(std::string_view message = "") const;
+    void pass(std::string_view message = "");
 
-    void fail(std::string_view message = "") const;
+    void fail(std::string_view message = "");
 };
 } // namespace ll::test

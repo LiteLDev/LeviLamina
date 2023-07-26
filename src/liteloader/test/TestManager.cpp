@@ -23,8 +23,15 @@ void TestManager::initAllTests() {
         "Initialized {0} tests, success {1}, failed {2}\n", testStatus.size(), testStatus.size() - failed, failed
     );
 }
-void TestManager::submitResult(const Test* test, const Result& result) {
-    if (testStatus[test] != TestStatus::Running) {
+
+void TestManager::submitResult(Test* test, const Result& result) {
+    auto it = testStatus.find(test);
+    if (it == testStatus.end()) {
+        fmt::print("Test {0} is not registered, cannot submit result.\n", test->getName());
+        return;
+    }
+    auto status = it->second;
+    if (status != TestStatus::Running) {
         fmt::print("Test {0} is not running, cannot submit result.\n", test->getName());
         return;
     }
@@ -40,6 +47,7 @@ void TestManager::submitResult(const Test* test, const Result& result) {
         fmt::print("Test {0} passed\n", test->getName());
     }
 }
+
 void TestManager::printTestStatus() {
     for (auto& [test, status] : testStatus) {
         switch (status) {
