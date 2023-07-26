@@ -16,6 +16,6 @@ MCAPI class PackCapabilityRegistry createRegistry(
     class Bedrock::NonOwnerPointer<class IAdvancedGraphicsOptions>,
     class std::optional<bool>,
     class PackCapabilityRegistry
-);
+); // NOLINT
 
 }; // namespace PackCapabilities::Detail

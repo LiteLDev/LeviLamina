@@ -4,34 +4,34 @@
 
 class ActorDefinitionEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDEFINITIONEVENT
 public:
+    // prevent constructor by default
     ActorDefinitionEvent() = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ActorDefinitionEvent\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI ActorDefinitionEvent(class ActorDefinitionEvent&&);
+    MCAPI ActorDefinitionEvent(class ActorDefinitionEvent&&); // NOLINT
     /**
      * @symbol ??0ActorDefinitionEvent\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI ActorDefinitionEvent(class ActorDefinitionEvent const&);
+    MCAPI ActorDefinitionEvent(class ActorDefinitionEvent const&); // NOLINT
     /**
      * @symbol
      * ?evaluateGroups\@ActorDefinitionEvent\@\@QEBAXAEAVActor\@\@AEAV?$vector\@UActorDefinitionModifier\@\@V?$allocator\@UActorDefinitionModifier\@\@\@std\@\@\@std\@\@AEBVVariantParameterList\@\@\@Z
      */
     MCAPI void
-    evaluateGroups(class Actor&, std::vector<struct ActorDefinitionModifier>&, class VariantParameterList const&) const;
+    evaluateGroups(class Actor&, std::vector<struct ActorDefinitionModifier>&, class VariantParameterList const&)
+        const; // NOLINT
     /**
      * @symbol ??4ActorDefinitionEvent\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
-    MCAPI class ActorDefinitionEvent& operator=(class ActorDefinitionEvent const&);
+    MCAPI class ActorDefinitionEvent& operator=(class ActorDefinitionEvent const&); // NOLINT
     /**
      * @symbol ??1ActorDefinitionEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorDefinitionEvent();
+    MCAPI ~ActorDefinitionEvent(); // NOLINT
 
     // private:
     /**
@@ -40,7 +40,7 @@ public:
      */
     MCAPI void
     _evaluateGroups(class Actor&, std::vector<struct ActorDefinitionModifier>&, class VariantParameterList const&)
-        const;
+        const; // NOLINT
 
 private:
 };

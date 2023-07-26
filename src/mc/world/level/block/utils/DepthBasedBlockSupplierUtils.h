@@ -6,6 +6,6 @@ namespace DepthBasedBlockSupplierUtils {
 /**
  * @symbol ?getDepthBasedBlock\@DepthBasedBlockSupplierUtils\@\@YAPEBVBlock\@\@HAEAVIRandom\@\@PEBV2\@1\@Z
  */
-MCAPI class Block const* getDepthBasedBlock(int, class IRandom&, class Block const*, class Block const*);
+MCAPI class Block const* getDepthBasedBlock(int, class IRandom&, class Block const*, class Block const*); // NOLINT
 
 }; // namespace DepthBasedBlockSupplierUtils

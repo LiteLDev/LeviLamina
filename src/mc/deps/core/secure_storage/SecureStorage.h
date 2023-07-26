@@ -4,18 +4,17 @@
 
 class SecureStorage {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SECURESTORAGE
 public:
+    // prevent constructor by default
     SecureStorage& operator=(SecureStorage const&) = delete;
     SecureStorage(SecureStorage const&)            = delete;
     SecureStorage()                                = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SECURESTORAGE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~SecureStorage();
+    MCVAPI ~SecureStorage(); // NOLINT
 #endif
 };

@@ -4,12 +4,11 @@
 
 class AnimationComponentGroup {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANIMATIONCOMPONENTGROUP
 public:
+    // prevent constructor by default
     AnimationComponentGroup& operator=(AnimationComponentGroup const&) = delete;
     AnimationComponentGroup(AnimationComponentGroup const&)            = delete;
     AnimationComponentGroup()                                          = delete;
-#endif
 
 public:
     /**
@@ -23,24 +22,25 @@ public:
         struct std::equal_to<class AnimationComponentID>,
         class std::allocator<
             struct std::pair<class AnimationComponentID const, class std::weak_ptr<class AnimationComponent>>>>&
-        _getAllAnimationComponents(enum class AnimationComponentGroupType);
+        _getAllAnimationComponents(enum class AnimationComponentGroupType); // NOLINT
     /**
      * @symbol
      * ?getAnimationComponent\@AnimationComponentGroup\@\@SA?AV?$shared_ptr\@VAnimationComponent\@\@\@std\@\@W4AnimationComponentGroupType\@\@VAnimationComponentID\@\@\@Z
      */
     MCAPI static class std::shared_ptr<class AnimationComponent>
-        getAnimationComponent(enum class AnimationComponentGroupType, class AnimationComponentID);
+        getAnimationComponent(enum class AnimationComponentGroupType, class AnimationComponentID); // NOLINT
     /**
      * @symbol
      * ?releaseAnimationComponent\@AnimationComponentGroup\@\@SAXW4AnimationComponentGroupType\@\@VAnimationComponentID\@\@\@Z
      */
-    MCAPI static void releaseAnimationComponent(enum class AnimationComponentGroupType, class AnimationComponentID);
+    MCAPI static void
+        releaseAnimationComponent(enum class AnimationComponentGroupType, class AnimationComponentID); // NOLINT
 
     // private:
     /**
      * @symbol ?_getAnimationComponentMapLock\@AnimationComponentGroup\@\@CAAEAVrecursive_mutex\@std\@\@XZ
      */
-    MCAPI static class std::recursive_mutex& _getAnimationComponentMapLock();
+    MCAPI static class std::recursive_mutex& _getAnimationComponentMapLock(); // NOLINT
 
 private:
 };

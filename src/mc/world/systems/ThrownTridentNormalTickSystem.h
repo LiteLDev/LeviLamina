@@ -4,16 +4,15 @@
 
 class ThrownTridentNormalTickSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_THROWNTRIDENTNORMALTICKSYSTEM
 public:
+    // prevent constructor by default
     ThrownTridentNormalTickSystem& operator=(ThrownTridentNormalTickSystem const&) = delete;
     ThrownTridentNormalTickSystem(ThrownTridentNormalTickSystem const&)            = delete;
     ThrownTridentNormalTickSystem()                                                = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@ThrownTridentNormalTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
 };

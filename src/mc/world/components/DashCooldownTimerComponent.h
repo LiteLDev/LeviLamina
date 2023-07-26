@@ -4,12 +4,9 @@
 
 struct DashCooldownTimerComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DASHCOOLDOWNTIMERCOMPONENT
 public:
+    // prevent constructor by default
     DashCooldownTimerComponent& operator=(DashCooldownTimerComponent const&) = delete;
     DashCooldownTimerComponent(DashCooldownTimerComponent const&)            = delete;
     DashCooldownTimerComponent()                                             = delete;
-#endif
-
-public:
 };

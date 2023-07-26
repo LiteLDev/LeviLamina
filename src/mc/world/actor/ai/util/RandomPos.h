@@ -4,23 +4,22 @@
 
 class RandomPos {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMPOS
 public:
+    // prevent constructor by default
     RandomPos& operator=(RandomPos const&) = delete;
     RandomPos(RandomPos const&)            = delete;
     RandomPos()                            = delete;
-#endif
 
 public:
     /**
      * @symbol ?getPos\@RandomPos\@\@SA_NAEAVVec3\@\@AEAVMob\@\@HHHW4SolidityCheckType\@\@\@Z
      */
-    MCAPI static bool getPos(class Vec3&, class Mob&, int, int, int, enum class SolidityCheckType);
+    MCAPI static bool getPos(class Vec3&, class Mob&, int, int, int, enum class SolidityCheckType); // NOLINT
     /**
      * @symbol ?getPosAvoid\@RandomPos\@\@SA_NAEAVVec3\@\@AEAVMob\@\@HHAEBV2\@W4SolidityCheckType\@\@H\@Z
      */
     MCAPI static bool
-    getPosAvoid(class Vec3&, class Mob&, int, int, class Vec3 const&, enum class SolidityCheckType, int);
+    getPosAvoid(class Vec3&, class Mob&, int, int, class Vec3 const&, enum class SolidityCheckType, int); // NOLINT
     /**
      * @symbol
      * ?getPosInDirection\@RandomPos\@\@SA_NAEAVVec3\@\@AEAVMob\@\@HHH_N2PEAV2\@AEBUIntRange\@\@HW4SolidityCheckType\@\@\@Z
@@ -37,19 +36,19 @@ public:
         struct IntRange const&,
         int,
         enum class SolidityCheckType
-    );
+    ); // NOLINT
     /**
      * @symbol ?getPosTowards\@RandomPos\@\@SA_NAEAVVec3\@\@AEAVMob\@\@HHAEBV2\@\@Z
      */
-    MCAPI static bool getPosTowards(class Vec3&, class Mob&, int, int, class Vec3 const&);
+    MCAPI static bool getPosTowards(class Vec3&, class Mob&, int, int, class Vec3 const&); // NOLINT
     /**
      * @symbol ?getPosTowards\@RandomPos\@\@SA_NAEAVRandom\@\@AEAVVec3\@\@AEAVMob\@\@HHAEBV3\@\@Z
      */
-    MCAPI static bool getPosTowards(class Random&, class Vec3&, class Mob&, int, int, class Vec3 const&);
+    MCAPI static bool getPosTowards(class Random&, class Vec3&, class Mob&, int, int, class Vec3 const&); // NOLINT
     /**
      * @symbol ?getSpawnPos\@RandomPos\@\@SA_NAEAVBlockSource\@\@AEAVRandom\@\@AEAVVec3\@\@HHH\@Z
      */
-    MCAPI static bool getSpawnPos(class BlockSource&, class Random&, class Vec3&, int, int, int);
+    MCAPI static bool getSpawnPos(class BlockSource&, class Random&, class Vec3&, int, int, int); // NOLINT
 
     // private:
     /**
@@ -65,7 +64,7 @@ public:
         bool,
         int,
         enum class SolidityCheckType
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?generateRandomPos\@RandomPos\@\@CA_NAEAVRandomize\@\@AEAVVec3\@\@AEAVMob\@\@HHHPEBV3\@_N4AEBUIntRange\@\@HW4SolidityCheckType\@\@\@Z
@@ -83,24 +82,25 @@ public:
         struct IntRange const&,
         int,
         enum class SolidityCheckType
-    );
+    ); // NOLINT
     /**
      * @symbol ?snapToGround\@RandomPos\@\@CA_NAEAVBlockPos\@\@AEAVMob\@\@HAEBUIntRange\@\@W4SolidityCheckType\@\@\@Z
      */
     MCAPI static bool
-    snapToGround(class BlockPos&, class Mob&, int, struct IntRange const&, enum class SolidityCheckType);
+    snapToGround(class BlockPos&, class Mob&, int, struct IntRange const&, enum class SolidityCheckType); // NOLINT
     /**
      * @symbol ?snapToGround\@RandomPos\@\@CA_NAEAVBlockPos\@\@HHHV?$function\@$$A6A_NAEAVBlockPos\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI static bool snapToGround(class BlockPos&, int, int, int, class std::function<bool(class BlockPos&)>);
+    MCAPI static bool
+    snapToGround(class BlockPos&, int, int, int, class std::function<bool(class BlockPos&)>); // NOLINT
     /**
      * @symbol ?snapToGround\@RandomPos\@\@CA_NAEAVBlockPos\@\@HHV?$function\@$$A6A_NAEAVBlockPos\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI static bool snapToGround(class BlockPos&, int, int, class std::function<bool(class BlockPos&)>);
+    MCAPI static bool snapToGround(class BlockPos&, int, int, class std::function<bool(class BlockPos&)>); // NOLINT
     /**
      * @symbol ?spawnSnapToGround\@RandomPos\@\@CA_NAEAVBlockSource\@\@AEAVBlockPos\@\@MH\@Z
      */
-    MCAPI static bool spawnSnapToGround(class BlockSource&, class BlockPos&, float, int);
+    MCAPI static bool spawnSnapToGround(class BlockSource&, class BlockPos&, float, int); // NOLINT
 
 private:
 };

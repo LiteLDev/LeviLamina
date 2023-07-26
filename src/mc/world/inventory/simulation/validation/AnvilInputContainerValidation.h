@@ -7,59 +7,59 @@
 
 class AnvilInputContainerValidation : public ::ContainerValidationBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANVILINPUTCONTAINERVALIDATION
 public:
+    // prevent constructor by default
     AnvilInputContainerValidation& operator=(AnvilInputContainerValidation const&) = delete;
     AnvilInputContainerValidation(AnvilInputContainerValidation const&)            = delete;
     AnvilInputContainerValidation()                                                = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?isValidSlotForContainer\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVContainer\@\@H\@Z
      */
-    virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
+    virtual bool
+    isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const; // NOLINT
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2();
+    virtual void __unk_vfn_2(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?getAvailableSetCount\@ContainerValidationBase\@\@UEBAHHAEBVItemStackBase\@\@\@Z
      */
-    virtual int getAvailableSetCount(int, class ItemStackBase const&) const;
+    virtual int getAvailableSetCount(int, class ItemStackBase const&) const; // NOLINT
     /**
      * @vftbl 4
      * @symbol __unk_vfn_4
      */
-    virtual void __unk_vfn_4();
+    virtual void __unk_vfn_4(); // NOLINT
     /**
      * @vftbl 5
      * @symbol __unk_vfn_5
      */
-    virtual void __unk_vfn_5();
+    virtual void __unk_vfn_5(); // NOLINT
     /**
      * @vftbl 6
      * @symbol ?canItemMoveToContainer\@ContainerValidationBase\@\@UEBA_NAEBVItemStackBase\@\@\@Z
      */
-    virtual bool canItemMoveToContainer(class ItemStackBase const&) const;
+    virtual bool canItemMoveToContainer(class ItemStackBase const&) const; // NOLINT
     /**
      * @vftbl 7
      * @symbol ?canDestroy\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
      */
-    virtual bool canDestroy(class ContainerScreenContext const&) const;
+    virtual bool canDestroy(class ContainerScreenContext const&) const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANVILINPUTCONTAINERVALIDATION
     /**
      * @symbol ?getContainerOffset\@AnvilInputContainerValidation\@\@UEBAHAEBVContainerScreenContext\@\@\@Z
      */
-    MCVAPI int getContainerOffset(class ContainerScreenContext const&) const;
+    MCVAPI int getContainerOffset(class ContainerScreenContext const&) const; // NOLINT
 #endif
 };

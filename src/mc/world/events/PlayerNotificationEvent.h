@@ -4,16 +4,15 @@
 
 struct PlayerNotificationEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERNOTIFICATIONEVENT
 public:
+    // prevent constructor by default
     PlayerNotificationEvent& operator=(PlayerNotificationEvent const&) = delete;
     PlayerNotificationEvent(PlayerNotificationEvent const&)            = delete;
     PlayerNotificationEvent()                                          = delete;
-#endif
 
 public:
     /**
      * @symbol ??1PlayerNotificationEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerNotificationEvent();
+    MCAPI ~PlayerNotificationEvent(); // NOLINT
 };

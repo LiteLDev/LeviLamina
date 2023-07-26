@@ -4,26 +4,26 @@
 
 class UnburiedConstraint {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_UNBURIEDCONSTRAINT
 public:
+    // prevent constructor by default
     UnburiedConstraint& operator=(UnburiedConstraint const&) = delete;
     UnburiedConstraint(UnburiedConstraint const&)            = delete;
     UnburiedConstraint()                                     = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?isSatisfied\@UnburiedConstraint\@\@UEBA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEBW4Rotation\@\@\@Z
      */
-    virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, enum class Rotation const&) const;
+    virtual bool
+    isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, enum class Rotation const&) const; // NOLINT
     /**
      * @symbol ??0UnburiedConstraint\@\@QEAA\@AEAVStructureTemplate\@\@\@Z
      */
-    MCAPI UnburiedConstraint(class StructureTemplate&);
+    MCAPI UnburiedConstraint(class StructureTemplate&); // NOLINT
 };

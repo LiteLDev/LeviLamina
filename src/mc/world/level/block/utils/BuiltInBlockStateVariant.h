@@ -5,12 +5,9 @@
 template <typename T0>
 class BuiltInBlockStateVariant {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BUILTINBLOCKSTATEVARIANT
 public:
+    // prevent constructor by default
     BuiltInBlockStateVariant& operator=(BuiltInBlockStateVariant const&) = delete;
     BuiltInBlockStateVariant(BuiltInBlockStateVariant const&)            = delete;
     BuiltInBlockStateVariant()                                           = delete;
-#endif
-
-public:
 };

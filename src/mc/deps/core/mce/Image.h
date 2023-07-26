@@ -12,38 +12,37 @@ namespace mce {
 
 struct Image {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MCE_IMAGE
 public:
+    // prevent constructor by default
     Image& operator=(Image const&) = delete;
     Image(Image const&)            = delete;
     Image()                        = delete;
-#endif
 
 public:
     /**
      * @symbol ??0Image\@mce\@\@QEAA\@IIW4ImageFormat\@1\@W4ImageUsage\@1\@\@Z
      */
-    MCAPI Image(unsigned int, unsigned int, enum class mce::ImageFormat, enum class mce::ImageUsage);
+    MCAPI Image(unsigned int, unsigned int, enum class mce::ImageFormat, enum class mce::ImageUsage); // NOLINT
     /**
      * @symbol ?clone\@Image\@mce\@\@QEBA?AU12\@XZ
      */
-    MCAPI struct mce::Image clone() const;
+    MCAPI struct mce::Image clone() const; // NOLINT
     /**
      * @symbol ?isEmpty\@Image\@mce\@\@QEBA_NXZ
      */
-    MCAPI bool isEmpty() const;
+    MCAPI bool isEmpty() const; // NOLINT
     /**
      * @symbol ??4Image\@mce\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
-    MCAPI struct mce::Image& operator=(struct mce::Image&&);
+    MCAPI struct mce::Image& operator=(struct mce::Image&&); // NOLINT
     /**
      * @symbol ?resizeImageBytesToFitImageDescription\@Image\@mce\@\@QEAAXXZ
      */
-    MCAPI void resizeImageBytesToFitImageDescription();
+    MCAPI void resizeImageBytesToFitImageDescription(); // NOLINT
     /**
      * @symbol ??1Image\@mce\@\@QEAA\@XZ
      */
-    MCAPI ~Image();
+    MCAPI ~Image(); // NOLINT
 };
 
 }; // namespace mce

@@ -8,37 +8,36 @@
 
 class AddEntityPacket : public ::EntityServerPacket {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADDENTITYPACKET
 public:
+    // prevent constructor by default
     AddEntityPacket& operator=(AddEntityPacket const&) = delete;
     AddEntityPacket(AddEntityPacket const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?getId\@AddEntityPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
-    virtual enum class MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?getName\@AddEntityPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string getName() const;
+    virtual std::string getName() const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDENTITYPACKET
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~AddEntityPacket();
+    MCVAPI ~AddEntityPacket(); // NOLINT
 #endif
     /**
      * @symbol ??0AddEntityPacket\@\@QEAA\@XZ
      */
-    MCAPI AddEntityPacket();
+    MCAPI AddEntityPacket(); // NOLINT
 };

@@ -6,19 +6,18 @@ namespace ScriptModuleMinecraftServerUI {
 
 class IControl {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFTSERVERUI_ICONTROL
 public:
+    // prevent constructor by default
     IControl& operator=(IControl const&) = delete;
     IControl(IControl const&)            = delete;
     IControl()                           = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFTSERVERUI_ICONTROL
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IControl();
+    MCVAPI ~IControl(); // NOLINT
 #endif
 };
 

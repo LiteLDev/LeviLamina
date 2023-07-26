@@ -9,12 +9,11 @@ namespace mce { class UUID; }
 
 struct PackInfoData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKINFODATA
 public:
+    // prevent constructor by default
     PackInfoData& operator=(PackInfoData const&) = delete;
     PackInfoData(PackInfoData const&)            = delete;
     PackInfoData()                               = delete;
-#endif
 
 public:
     /**
@@ -30,9 +29,9 @@ public:
         class ContentIdentity const&,
         bool,
         bool
-    );
+    ); // NOLINT
     /**
      * @symbol ??1PackInfoData\@\@QEAA\@XZ
      */
-    MCAPI ~PackInfoData();
+    MCAPI ~PackInfoData(); // NOLINT
 };

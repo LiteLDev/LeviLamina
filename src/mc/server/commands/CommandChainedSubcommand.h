@@ -4,16 +4,15 @@
 
 class CommandChainedSubcommand {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDCHAINEDSUBCOMMAND
 public:
+    // prevent constructor by default
     CommandChainedSubcommand& operator=(CommandChainedSubcommand const&) = delete;
     CommandChainedSubcommand(CommandChainedSubcommand const&)            = delete;
     CommandChainedSubcommand()                                           = delete;
-#endif
 
 public:
     /**
      * @symbol ?getCommand\@CommandChainedSubcommand\@\@QEBAPEBVCommand\@\@XZ
      */
-    MCAPI class Command const* getCommand() const;
+    MCAPI class Command const* getCommand() const; // NOLINT
 };

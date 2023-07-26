@@ -16,60 +16,59 @@ public:
     // AnimatePacket inner types define
     enum class Action {};
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANIMATEPACKET
 public:
+    // prevent constructor by default
     AnimatePacket& operator=(AnimatePacket const&) = delete;
     AnimatePacket(AnimatePacket const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?getId\@AnimatePacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
-    virtual enum class MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?getName\@AnimatePacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string getName() const;
+    virtual std::string getName() const; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?write\@AnimatePacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream&) const; // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?_read\@AnimatePacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ANIMATEPACKET
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~AnimatePacket();
+    MCVAPI ~AnimatePacket(); // NOLINT
 #endif
     /**
      * @symbol ??0AnimatePacket\@\@QEAA\@W4Action\@0\@AEAVActor\@\@\@Z
      */
-    MCAPI AnimatePacket(enum class AnimatePacket::Action, class Actor&);
+    MCAPI AnimatePacket(enum class AnimatePacket::Action, class Actor&); // NOLINT
     /**
      * @symbol ??0AnimatePacket\@\@QEAA\@XZ
      */
-    MCAPI AnimatePacket();
+    MCAPI AnimatePacket(); // NOLINT
     /**
      * @symbol ??0AnimatePacket\@\@QEAA\@W4Action\@0\@VActorRuntimeID\@\@\@Z
      */
-    MCAPI AnimatePacket(enum class AnimatePacket::Action, class ActorRuntimeID);
+    MCAPI AnimatePacket(enum class AnimatePacket::Action, class ActorRuntimeID); // NOLINT
     /**
      * @symbol ??0AnimatePacket\@\@QEAA\@W4Action\@0\@VActorRuntimeID\@\@M\@Z
      */
-    MCAPI AnimatePacket(enum class AnimatePacket::Action, class ActorRuntimeID, float);
+    MCAPI AnimatePacket(enum class AnimatePacket::Action, class ActorRuntimeID, float); // NOLINT
 };

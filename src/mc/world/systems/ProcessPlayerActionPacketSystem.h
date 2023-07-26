@@ -4,12 +4,11 @@
 
 class ProcessPlayerActionPacketSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROCESSPLAYERACTIONPACKETSYSTEM
 public:
+    // prevent constructor by default
     ProcessPlayerActionPacketSystem& operator=(ProcessPlayerActionPacketSystem const&) = delete;
     ProcessPlayerActionPacketSystem(ProcessPlayerActionPacketSystem const&)            = delete;
     ProcessPlayerActionPacketSystem()                                                  = delete;
-#endif
 
 public:
     /**
@@ -17,9 +16,9 @@ public:
      * ?_foreachTransactionPacket\@ProcessPlayerActionPacketSystem\@\@SAXAEBUPlayerActionComponent\@\@_NAEBV?$function\@$$A6AXAEAVInventoryTransactionPacket\@\@\@Z\@std\@\@\@Z
      */
     MCAPI static void
-    _foreachTransactionPacket(struct PlayerActionComponent const&, bool, class std::function<void(class InventoryTransactionPacket&)> const&);
+    _foreachTransactionPacket(struct PlayerActionComponent const&, bool, class std::function<void(class InventoryTransactionPacket&)> const&); // NOLINT
     /**
      * @symbol ?createSystem\@ProcessPlayerActionPacketSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
 };

@@ -4,33 +4,32 @@
 
 class AgeableComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGEABLECOMPONENT
 public:
+    // prevent constructor by default
     AgeableComponent& operator=(AgeableComponent const&) = delete;
     AgeableComponent(AgeableComponent const&)            = delete;
     AgeableComponent()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ?addAdditionalSaveData\@AgeableComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
     /**
      * @symbol ?getAge\@AgeableComponent\@\@QEBAHXZ
      */
-    MCAPI int getAge() const;
+    MCAPI int getAge() const; // NOLINT
     /**
      * @symbol ?getInteraction\@AgeableComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
+    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&); // NOLINT
     /**
      * @symbol
      * ?readAdditionalSaveData\@AgeableComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&); // NOLINT
     /**
      * @symbol ?setAge\@AgeableComponent\@\@QEAAXH\@Z
      */
-    MCAPI void setAge(int);
+    MCAPI void setAge(int); // NOLINT
 };

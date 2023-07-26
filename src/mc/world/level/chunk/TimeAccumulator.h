@@ -4,24 +4,23 @@
 
 class TimeAccumulator {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TIMEACCUMULATOR
 public:
+    // prevent constructor by default
     TimeAccumulator& operator=(TimeAccumulator const&) = delete;
     TimeAccumulator(TimeAccumulator const&)            = delete;
     TimeAccumulator()                                  = delete;
-#endif
 
 public:
     /**
      * @symbol ?getCount\@TimeAccumulator\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 getCount() const;
+    MCAPI unsigned __int64 getCount() const; // NOLINT
     /**
      * @symbol ?getTimeSumAverageMS\@TimeAccumulator\@\@QEBAMXZ
      */
-    MCAPI float getTimeSumAverageMS() const;
+    MCAPI float getTimeSumAverageMS() const; // NOLINT
     /**
      * @symbol ?getTimeSumAverageSeconds\@TimeAccumulator\@\@QEBAMXZ
      */
-    MCAPI float getTimeSumAverageSeconds() const;
+    MCAPI float getTimeSumAverageSeconds() const; // NOLINT
 };

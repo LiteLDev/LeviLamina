@@ -4,18 +4,17 @@
 
 class ServerMetrics {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERMETRICS
 public:
+    // prevent constructor by default
     ServerMetrics& operator=(ServerMetrics const&) = delete;
     ServerMetrics(ServerMetrics const&)            = delete;
     ServerMetrics()                                = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERMETRICS
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ServerMetrics();
+    MCVAPI ~ServerMetrics(); // NOLINT
 #endif
 };

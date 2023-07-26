@@ -4,12 +4,9 @@
 
 struct ActionOrStopComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTIONORSTOPCOMPONENT
 public:
+    // prevent constructor by default
     ActionOrStopComponent& operator=(ActionOrStopComponent const&) = delete;
     ActionOrStopComponent(ActionOrStopComponent const&)            = delete;
     ActionOrStopComponent()                                        = delete;
-#endif
-
-public:
 };

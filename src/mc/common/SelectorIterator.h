@@ -5,12 +5,9 @@
 template <typename T0>
 class SelectorIterator {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SELECTORITERATOR
 public:
+    // prevent constructor by default
     SelectorIterator& operator=(SelectorIterator const&) = delete;
     SelectorIterator(SelectorIterator const&)            = delete;
     SelectorIterator()                                   = delete;
-#endif
-
-public:
 };

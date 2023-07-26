@@ -6,6 +6,6 @@ namespace ComponentItemData {
 /**
  * @symbol ?bindTypes\@ComponentItemData\@\@YAXXZ
  */
-MCAPI void bindTypes();
+MCAPI void bindTypes(); // NOLINT
 
 }; // namespace ComponentItemData

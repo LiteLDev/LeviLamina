@@ -11,10 +11,10 @@ namespace ActorUtil {
 /**
  * @symbol ?canActorBeKilled\@ActorUtil\@\@YA?BW4CanBeKilledResult\@1\@AEBVActor\@\@_N\@Z
  */
-MCAPI enum class ActorUtil::CanBeKilledResult const canActorBeKilled(class Actor const&, bool);
+MCAPI enum class ActorUtil::CanBeKilledResult const canActorBeKilled(class Actor const&, bool); // NOLINT
 /**
  * @symbol ?startFizzEffect\@ActorUtil\@\@YAXAEAVActor\@\@\@Z
  */
-MCAPI void startFizzEffect(class Actor&);
+MCAPI void startFizzEffect(class Actor&); // NOLINT
 
 }; // namespace ActorUtil

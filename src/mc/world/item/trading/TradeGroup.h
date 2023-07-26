@@ -4,16 +4,15 @@
 
 struct TradeGroup {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADEGROUP
 public:
+    // prevent constructor by default
     TradeGroup& operator=(TradeGroup const&) = delete;
     TradeGroup(TradeGroup const&)            = delete;
     TradeGroup()                             = delete;
-#endif
 
 public:
     /**
      * @symbol ??1TradeGroup\@\@QEAA\@XZ
      */
-    MCAPI ~TradeGroup();
+    MCAPI ~TradeGroup(); // NOLINT
 };

@@ -4,12 +4,9 @@
 
 struct ShouldUpdateBoundingBoxRequestComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHOULDUPDATEBOUNDINGBOXREQUESTCOMPONENT
 public:
+    // prevent constructor by default
     ShouldUpdateBoundingBoxRequestComponent& operator=(ShouldUpdateBoundingBoxRequestComponent const&) = delete;
     ShouldUpdateBoundingBoxRequestComponent(ShouldUpdateBoundingBoxRequestComponent const&)            = delete;
     ShouldUpdateBoundingBoxRequestComponent()                                                          = delete;
-#endif
-
-public:
 };

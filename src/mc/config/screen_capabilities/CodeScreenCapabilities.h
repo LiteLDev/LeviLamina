@@ -7,29 +7,28 @@
 
 struct CodeScreenCapabilities {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CODESCREENCAPABILITIES
 public:
+    // prevent constructor by default
     CodeScreenCapabilities& operator=(CodeScreenCapabilities const&) = delete;
     CodeScreenCapabilities(CodeScreenCapabilities const&)            = delete;
     CodeScreenCapabilities()                                         = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?isOfType\@?$TypedScreenCapabilities\@UCodeScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@Bedrock\@\@\@Z
      */
-    virtual bool isOfType(class Bedrock::typeid_t<class IScreenCapabilities>) const;
+    virtual bool isOfType(class Bedrock::typeid_t<class IScreenCapabilities>) const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CODESCREENCAPABILITIES
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~CodeScreenCapabilities();
+    MCVAPI ~CodeScreenCapabilities(); // NOLINT
 #endif
 };

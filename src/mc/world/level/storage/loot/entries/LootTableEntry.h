@@ -4,12 +4,11 @@
 
 class LootTableEntry {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTTABLEENTRY
 public:
+    // prevent constructor by default
     LootTableEntry& operator=(LootTableEntry const&) = delete;
     LootTableEntry(LootTableEntry const&)            = delete;
     LootTableEntry()                                 = delete;
-#endif
 
 public:
     /**
@@ -17,5 +16,5 @@ public:
      * @symbol
      * ?_createItem\@LootTableEntry\@\@MEAA_NAEAV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
+    virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&); // NOLINT
 };

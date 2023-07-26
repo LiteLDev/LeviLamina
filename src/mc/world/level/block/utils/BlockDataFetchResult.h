@@ -5,12 +5,9 @@
 template <typename T0>
 class BlockDataFetchResult {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKDATAFETCHRESULT
 public:
+    // prevent constructor by default
     BlockDataFetchResult& operator=(BlockDataFetchResult const&) = delete;
     BlockDataFetchResult(BlockDataFetchResult const&)            = delete;
     BlockDataFetchResult()                                       = delete;
-#endif
-
-public:
 };

@@ -6,18 +6,17 @@ namespace CerealHelpers {
 
 struct LocIdString {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CEREALHELPERS_LOCIDSTRING
 public:
+    // prevent constructor by default
     LocIdString& operator=(LocIdString const&) = delete;
     LocIdString(LocIdString const&)            = delete;
     LocIdString()                              = delete;
-#endif
 
 public:
     /**
      * @symbol ??1LocIdString\@CerealHelpers\@\@QEAA\@XZ
      */
-    MCAPI ~LocIdString();
+    MCAPI ~LocIdString(); // NOLINT
 };
 
 }; // namespace CerealHelpers

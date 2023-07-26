@@ -4,28 +4,27 @@
 
 class StructureTelemetryClientData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURETELEMETRYCLIENTDATA
 public:
+    // prevent constructor by default
     StructureTelemetryClientData& operator=(StructureTelemetryClientData const&) = delete;
     StructureTelemetryClientData(StructureTelemetryClientData const&)            = delete;
     StructureTelemetryClientData()                                               = delete;
-#endif
 
 public:
     /**
      * @symbol ?getMirrorEditCount\@StructureTelemetryClientData\@\@QEBAIXZ
      */
-    MCAPI unsigned int getMirrorEditCount() const;
+    MCAPI unsigned int getMirrorEditCount() const; // NOLINT
     /**
      * @symbol ?getOffsetEditCount\@StructureTelemetryClientData\@\@QEBAIXZ
      */
-    MCAPI unsigned int getOffsetEditCount() const;
+    MCAPI unsigned int getOffsetEditCount() const; // NOLINT
     /**
      * @symbol ?getRotationEditCount\@StructureTelemetryClientData\@\@QEBAIXZ
      */
-    MCAPI unsigned int getRotationEditCount() const;
+    MCAPI unsigned int getRotationEditCount() const; // NOLINT
     /**
      * @symbol ?getSizeEditCount\@StructureTelemetryClientData\@\@QEBAIXZ
      */
-    MCAPI unsigned int getSizeEditCount() const;
+    MCAPI unsigned int getSizeEditCount() const; // NOLINT
 };

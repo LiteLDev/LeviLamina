@@ -4,28 +4,27 @@
 
 class GameEventMovementTrackingComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEEVENTMOVEMENTTRACKINGCOMPONENT
 public:
+    // prevent constructor by default
     GameEventMovementTrackingComponent& operator=(GameEventMovementTrackingComponent const&) = delete;
     GameEventMovementTrackingComponent(GameEventMovementTrackingComponent const&)            = delete;
     GameEventMovementTrackingComponent()                                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ?initializeFromCode\@GameEventMovementTrackingComponent\@\@QEAAXAEAVActor\@\@_N\@Z
      */
-    MCAPI void initializeFromCode(class Actor&, bool);
+    MCAPI void initializeFromCode(class Actor&, bool); // NOLINT
     /**
      * @symbol ?shouldEmitEntityMoveGameEvent\@GameEventMovementTrackingComponent\@\@QEAA_NXZ
      */
-    MCAPI bool shouldEmitEntityMoveGameEvent();
+    MCAPI bool shouldEmitEntityMoveGameEvent(); // NOLINT
     /**
      * @symbol ?shouldEmitFlapGameEvent\@GameEventMovementTrackingComponent\@\@QEAA_NXZ
      */
-    MCAPI bool shouldEmitFlapGameEvent();
+    MCAPI bool shouldEmitFlapGameEvent(); // NOLINT
     /**
      * @symbol ?shouldEmitSwimGameEvent\@GameEventMovementTrackingComponent\@\@QEAA_NXZ
      */
-    MCAPI bool shouldEmitSwimGameEvent();
+    MCAPI bool shouldEmitSwimGameEvent(); // NOLINT
 };

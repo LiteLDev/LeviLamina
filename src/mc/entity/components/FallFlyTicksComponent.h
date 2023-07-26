@@ -4,12 +4,9 @@
 
 struct FallFlyTicksComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FALLFLYTICKSCOMPONENT
 public:
+    // prevent constructor by default
     FallFlyTicksComponent& operator=(FallFlyTicksComponent const&) = delete;
     FallFlyTicksComponent(FallFlyTicksComponent const&)            = delete;
     FallFlyTicksComponent()                                        = delete;
-#endif
-
-public:
 };

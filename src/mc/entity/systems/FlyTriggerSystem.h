@@ -10,22 +10,21 @@
 
 class FlyTriggerSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLYTRIGGERSYSTEM
 public:
+    // prevent constructor by default
     FlyTriggerSystem& operator=(FlyTriggerSystem const&) = delete;
     FlyTriggerSystem(FlyTriggerSystem const&)            = delete;
     FlyTriggerSystem()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@FlyTriggerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
     /**
      * @symbol
      * ?tickEntity\@FlyTriggerSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUActorUniqueIDComponent\@\@AEBUMoveInputComponent\@\@V?$Optional\@$$CBUPassengerComponent\@\@\@\@AEAUAbilitiesComponent\@\@AEAUFallDistanceComponent\@\@AEAUPlayerInputRequestComponent\@\@AEAUVanillaClientGameplayComponent\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@UVehicleComponent\@\@\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@USendPacketsComponent\@\@\@\@\@Z
      */
     MCAPI static void
-    tickEntity(class StrictEntityContext const&, struct ActorUniqueIDComponent const&, struct MoveInputComponent const&, class Optional<struct PassengerComponent const>, struct AbilitiesComponent&, struct FallDistanceComponent&, struct PlayerInputRequestComponent&, struct VanillaClientGameplayComponent&, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct VehicleComponent>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct SendPacketsComponent>);
+    tickEntity(class StrictEntityContext const&, struct ActorUniqueIDComponent const&, struct MoveInputComponent const&, class Optional<struct PassengerComponent const>, struct AbilitiesComponent&, struct FallDistanceComponent&, struct PlayerInputRequestComponent&, struct VanillaClientGameplayComponent&, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct VehicleComponent>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct SendPacketsComponent>); // NOLINT
 };

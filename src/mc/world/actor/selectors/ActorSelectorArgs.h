@@ -4,23 +4,22 @@
 
 struct ActorSelectorArgs {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSELECTORARGS
 public:
+    // prevent constructor by default
     ActorSelectorArgs& operator=(ActorSelectorArgs const&) = delete;
     ActorSelectorArgs(ActorSelectorArgs const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ActorSelectorArgs\@\@QEAA\@XZ
      */
-    MCAPI ActorSelectorArgs();
+    MCAPI ActorSelectorArgs(); // NOLINT
     /**
      * @symbol ??1ActorSelectorArgs\@\@QEAA\@XZ
      */
-    MCAPI ~ActorSelectorArgs();
+    MCAPI ~ActorSelectorArgs(); // NOLINT
     /**
      * @symbol ?DEFAULT_LEVEL\@ActorSelectorArgs\@\@2U?$pair\@HH\@std\@\@B
      */
-    MCAPI static struct std::pair<int, int> const DEFAULT_LEVEL;
+    MCAPI static struct std::pair<int, int> const DEFAULT_LEVEL; // NOLINT
 };

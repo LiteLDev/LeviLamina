@@ -11,6 +11,6 @@ namespace ScriptModuleMinecraftServerAdmin::Betas {
 /**
  * @symbol ?CURRENT\@Betas\@ScriptModuleMinecraftServerAdmin\@\@3UVersion\@Scripting\@\@B
  */
-MCAPI extern struct Scripting::Version const CURRENT;
+MCAPI extern struct Scripting::Version const CURRENT; // NOLINT
 
 }; // namespace ScriptModuleMinecraftServerAdmin::Betas

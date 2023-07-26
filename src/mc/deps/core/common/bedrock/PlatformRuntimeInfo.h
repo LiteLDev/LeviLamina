@@ -6,23 +6,22 @@ namespace Bedrock {
 
 struct PlatformRuntimeInfo {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_PLATFORMRUNTIMEINFO
 public:
+    // prevent constructor by default
     PlatformRuntimeInfo& operator=(PlatformRuntimeInfo const&) = delete;
     PlatformRuntimeInfo(PlatformRuntimeInfo const&)            = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_PLATFORMRUNTIMEINFO
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~PlatformRuntimeInfo();
+    MCVAPI ~PlatformRuntimeInfo(); // NOLINT
 #endif
     /**
      * @symbol ??0PlatformRuntimeInfo\@Bedrock\@\@QEAA\@XZ
      */
-    MCAPI PlatformRuntimeInfo();
+    MCAPI PlatformRuntimeInfo(); // NOLINT
 };
 
 }; // namespace Bedrock

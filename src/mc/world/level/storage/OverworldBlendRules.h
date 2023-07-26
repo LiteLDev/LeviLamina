@@ -4,16 +4,15 @@
 
 struct OverworldBlendRules {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OVERWORLDBLENDRULES
 public:
+    // prevent constructor by default
     OverworldBlendRules& operator=(OverworldBlendRules const&) = delete;
     OverworldBlendRules(OverworldBlendRules const&)            = delete;
     OverworldBlendRules()                                      = delete;
-#endif
 
 public:
     /**
      * @symbol ??1OverworldBlendRules\@\@QEAA\@XZ
      */
-    MCAPI ~OverworldBlendRules();
+    MCAPI ~OverworldBlendRules(); // NOLINT
 };

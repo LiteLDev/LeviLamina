@@ -4,29 +4,28 @@
 
 class DefaultSculkBehavior {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFAULTSCULKBEHAVIOR
 public:
+    // prevent constructor by default
     DefaultSculkBehavior& operator=(DefaultSculkBehavior const&) = delete;
     DefaultSculkBehavior(DefaultSculkBehavior const&)            = delete;
     DefaultSculkBehavior()                                       = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol ?updateDecayDelay\@DefaultSculkBehavior\@\@UEBAHH\@Z
      */
-    virtual int updateDecayDelay(int) const;
+    virtual int updateDecayDelay(int) const; // NOLINT
     /**
      * @vftbl 1
      * @symbol ?updateFacingData\@DefaultSculkBehavior\@\@UEBAHHAEBVBlock\@\@\@Z
      */
-    virtual int updateFacingData(int, class Block const&) const;
+    virtual int updateFacingData(int, class Block const&) const; // NOLINT
     /**
      * @vftbl 2
      * @symbol ?canChangeBlockOnSpread\@DefaultSculkBehavior\@\@UEBA_NXZ
      */
-    virtual bool canChangeBlockOnSpread() const;
+    virtual bool canChangeBlockOnSpread() const; // NOLINT
     /**
      * @vftbl 3
      * @symbol
@@ -34,7 +33,7 @@ public:
      */
     virtual bool
     attemptSpreadVeins(class IBlockWorldGenAPI&, class BlockPos const&, class Block const&, int, class SculkSpreader&)
-        const;
+        const; // NOLINT
     /**
      * @vftbl 4
      * @symbol
@@ -50,11 +49,11 @@ public:
         class Random&,
         class SculkSpreader&,
         bool
-    ) const;
+    ) const; // NOLINT
     /**
      * @vftbl 5
      * @symbol
      * ?onDischarged\@DefaultSculkBehavior\@\@UEBAXAEAVIBlockWorldGenAPI\@\@PEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    virtual void onDischarged(class IBlockWorldGenAPI&, class BlockSource*, class BlockPos const&) const;
+    virtual void onDischarged(class IBlockWorldGenAPI&, class BlockSource*, class BlockPos const&) const; // NOLINT
 };

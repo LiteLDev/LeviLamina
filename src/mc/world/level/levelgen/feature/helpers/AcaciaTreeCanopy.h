@@ -9,19 +9,18 @@ namespace TreeHelper { struct TreeParams; }
 
 class AcaciaTreeCanopy {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACACIATREECANOPY
 public:
+    // prevent constructor by default
     AcaciaTreeCanopy& operator=(AcaciaTreeCanopy const&) = delete;
     AcaciaTreeCanopy(AcaciaTreeCanopy const&)            = delete;
     AcaciaTreeCanopy()                                   = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
@@ -29,7 +28,7 @@ public:
      */
     virtual class std::optional<class BlockPos>
     placeCanopy(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&, struct TreeHelper::TreeParams const&, std::vector<class BlockPos> const&)
-        const;
+        const; // NOLINT
 
     // private:
     /**
@@ -38,7 +37,7 @@ public:
      */
     MCAPI void
     _placeLeaf(class IBlockWorldGenAPI&, class BlockPos const&, class gsl::not_null<class Block const*>, struct TreeHelper::TreeParams const&)
-        const;
+        const; // NOLINT
 
 private:
 };

@@ -9,29 +9,28 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptActorAddEffectAfterEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTACTORADDEFFECTAFTEREVENT
 public:
+    // prevent constructor by default
     ScriptActorAddEffectAfterEvent& operator=(ScriptActorAddEffectAfterEvent const&) = delete;
     ScriptActorAddEffectAfterEvent(ScriptActorAddEffectAfterEvent const&)            = delete;
     ScriptActorAddEffectAfterEvent()                                                 = delete;
-#endif
 
 public:
     /**
      * @symbol ??4ScriptActorAddEffectAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptActorAddEffectAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptActorAddEffectAfterEvent&&);
+    operator=(struct ScriptModuleMinecraft::ScriptActorAddEffectAfterEvent&&); // NOLINT
     /**
      * @symbol ??1ScriptActorAddEffectAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptActorAddEffectAfterEvent();
+    MCAPI ~ScriptActorAddEffectAfterEvent(); // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptActorAddEffectAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptActorAddEffectAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorAddEffectAfterEvent>
-    bind();
+    bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -20,63 +20,61 @@ public:
     // DryingOutTimerComponent inner types define
     class DryingOutTimerDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRYINGOUTTIMERCOMPONENT_DRYINGOUTTIMERDEFINITION
     public:
+        // prevent constructor by default
         DryingOutTimerDefinition& operator=(DryingOutTimerDefinition const&) = delete;
         DryingOutTimerDefinition(DryingOutTimerDefinition const&)            = delete;
         DryingOutTimerDefinition()                                           = delete;
-#endif
 
     public:
         /**
          * @symbol
          * ?initialize\@DryingOutTimerDefinition\@DryingOutTimerComponent\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
          */
-        MCAPI void initialize(class EntityContext&, class DryingOutTimerComponent&) const;
+        MCAPI void initialize(class EntityContext&, class DryingOutTimerComponent&) const; // NOLINT
         /**
          * @symbol
          * ?buildSchema\@DryingOutTimerDefinition\@DryingOutTimerComponent\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDryingOutTimerDefinition\@DryingOutTimerComponent\@\@\@JsonUtil\@\@\@std\@\@\@Z
          */
         MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
                                           class JsonUtil::EmptyClass,
-                                          class DryingOutTimerComponent::DryingOutTimerDefinition>>&);
+                                          class DryingOutTimerComponent::DryingOutTimerDefinition>>&); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRYINGOUTTIMERCOMPONENT
 public:
+    // prevent constructor by default
     DryingOutTimerComponent& operator=(DryingOutTimerComponent const&) = delete;
     DryingOutTimerComponent(DryingOutTimerComponent const&)            = delete;
     DryingOutTimerComponent()                                          = delete;
-#endif
 
 public:
     /**
      * @symbol ??0DryingOutTimerComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI DryingOutTimerComponent(class DryingOutTimerComponent&&);
+    MCAPI DryingOutTimerComponent(class DryingOutTimerComponent&&); // NOLINT
     /**
      * @symbol ?addAdditionalSaveData\@DryingOutTimerComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
     /**
      * @symbol ?canBeAffectedByWaterBottle\@DryingOutTimerComponent\@\@QEBA_NXZ
      */
-    MCAPI bool canBeAffectedByWaterBottle() const;
+    MCAPI bool canBeAffectedByWaterBottle() const; // NOLINT
     /**
      * @symbol ??4DryingOutTimerComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class DryingOutTimerComponent& operator=(class DryingOutTimerComponent&&);
+    MCAPI class DryingOutTimerComponent& operator=(class DryingOutTimerComponent&&); // NOLINT
     /**
      * @symbol
      * ?readAdditionalSaveData\@DryingOutTimerComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&); // NOLINT
     /**
      * @symbol ?refillTimeWithWaterBottle\@DryingOutTimerComponent\@\@QEAAXXZ
      */
-    MCAPI void refillTimeWithWaterBottle();
+    MCAPI void refillTimeWithWaterBottle(); // NOLINT
     /**
      * @symbol ??1DryingOutTimerComponent\@\@QEAA\@XZ
      */
-    MCAPI ~DryingOutTimerComponent();
+    MCAPI ~DryingOutTimerComponent(); // NOLINT
 };

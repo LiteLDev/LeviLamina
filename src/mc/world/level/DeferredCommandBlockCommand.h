@@ -7,22 +7,21 @@
 
 class DeferredCommandBlockCommand : public ::Command {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFERREDCOMMANDBLOCKCOMMAND
 public:
+    // prevent constructor by default
     DeferredCommandBlockCommand& operator=(DeferredCommandBlockCommand const&) = delete;
     DeferredCommandBlockCommand(DeferredCommandBlockCommand const&)            = delete;
     DeferredCommandBlockCommand()                                              = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?execute\@DeferredCommandBlockCommand\@\@UEAAXAEAVMinecraftCommands\@\@\@Z
      */
-    virtual void execute(class MinecraftCommands&);
+    virtual void execute(class MinecraftCommands&); // NOLINT
 };

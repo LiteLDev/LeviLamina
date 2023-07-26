@@ -9,11 +9,12 @@ namespace BiomeSurfaceSystem {
 /**
  * @symbol ?buildSurfaceAt\@BiomeSurfaceSystem\@\@YAXAEBUBuildParameters\@ISurfaceBuilder\@\@\@Z
  */
-MCAPI void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const&);
+MCAPI void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const&); // NOLINT
 /**
  * @symbol
  * ?resolveBuilderImplementation\@BiomeSurfaceSystem\@\@YAXAEAVEntityRegistry\@\@AEBVSurfaceBuilderRegistry\@\@I\@Z
  */
-MCAPI void resolveBuilderImplementation(class EntityRegistry&, class SurfaceBuilderRegistry const&, unsigned int);
+MCAPI void
+resolveBuilderImplementation(class EntityRegistry&, class SurfaceBuilderRegistry const&, unsigned int); // NOLINT
 
 }; // namespace BiomeSurfaceSystem

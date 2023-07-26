@@ -4,12 +4,9 @@
 
 struct WaterlilyBlockFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WATERLILYBLOCKFLAG
 public:
+    // prevent constructor by default
     WaterlilyBlockFlag& operator=(WaterlilyBlockFlag const&) = delete;
     WaterlilyBlockFlag(WaterlilyBlockFlag const&)            = delete;
     WaterlilyBlockFlag()                                     = delete;
-#endif
-
-public:
 };

@@ -15,52 +15,50 @@ public:
     // ItemRegistryManager inner types define
     class ScopedItemRegistry {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMREGISTRYMANAGER_SCOPEDITEMREGISTRY
     public:
+        // prevent constructor by default
         ScopedItemRegistry& operator=(ScopedItemRegistry const&) = delete;
         ScopedItemRegistry(ScopedItemRegistry const&)            = delete;
         ScopedItemRegistry()                                     = delete;
-#endif
 
     public:
         /**
          * @symbol ??0ScopedItemRegistry\@ItemRegistryManager\@\@QEAA\@VItemRegistryRef\@\@\@Z
          */
-        MCAPI ScopedItemRegistry(class ItemRegistryRef);
+        MCAPI ScopedItemRegistry(class ItemRegistryRef); // NOLINT
         /**
          * @symbol ??0ScopedItemRegistry\@ItemRegistryManager\@\@QEAA\@V?$weak_ptr\@VItemRegistry\@\@\@std\@\@\@Z
          */
-        MCAPI ScopedItemRegistry(class std::weak_ptr<class ItemRegistry>);
+        MCAPI ScopedItemRegistry(class std::weak_ptr<class ItemRegistry>); // NOLINT
         /**
          * @symbol ?construct\@ScopedItemRegistry\@ItemRegistryManager\@\@QEAAXVItemRegistryRef\@\@\@Z
          */
-        MCAPI void construct(class ItemRegistryRef);
+        MCAPI void construct(class ItemRegistryRef); // NOLINT
         /**
          * @symbol ??1ScopedItemRegistry\@ItemRegistryManager\@\@QEAA\@XZ
          */
-        MCAPI ~ScopedItemRegistry();
+        MCAPI ~ScopedItemRegistry(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMREGISTRYMANAGER
 public:
+    // prevent constructor by default
     ItemRegistryManager& operator=(ItemRegistryManager const&) = delete;
     ItemRegistryManager(ItemRegistryManager const&)            = delete;
     ItemRegistryManager()                                      = delete;
-#endif
 
 public:
     /**
      * @symbol ?getItemRegistry\@ItemRegistryManager\@\@SA?AVItemRegistryRef\@\@XZ
      */
-    MCAPI static class ItemRegistryRef getItemRegistry();
+    MCAPI static class ItemRegistryRef getItemRegistry(); // NOLINT
     /**
      * @symbol ?resetItemRegistry\@ItemRegistryManager\@\@SAXXZ
      */
-    MCAPI static void resetItemRegistry();
+    MCAPI static void resetItemRegistry(); // NOLINT
     /**
      * @symbol ?setItemRegistry\@ItemRegistryManager\@\@SAXVItemRegistryRef\@\@\@Z
      */
-    MCAPI static void setItemRegistry(class ItemRegistryRef);
+    MCAPI static void setItemRegistry(class ItemRegistryRef); // NOLINT
 
     // private:
 
@@ -72,5 +70,5 @@ private:
     MCAPI static class Bedrock::Threading::ThreadLocalObject<
         class std::weak_ptr<class ItemRegistry>,
         class std::allocator<class std::weak_ptr<class ItemRegistry>>>
-        mThreadLocalRegistry;
+        mThreadLocalRegistry; // NOLINT
 };

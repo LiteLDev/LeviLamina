@@ -4,12 +4,9 @@
 
 class IEntitlementManager {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IENTITLEMENTMANAGER
 public:
+    // prevent constructor by default
     IEntitlementManager& operator=(IEntitlementManager const&) = delete;
     IEntitlementManager(IEntitlementManager const&)            = delete;
     IEntitlementManager()                                      = delete;
-#endif
-
-public:
 };

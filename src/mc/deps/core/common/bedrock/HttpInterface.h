@@ -6,14 +6,11 @@ namespace Bedrock::Http {
 
 class HttpInterface {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_HTTP_HTTPINTERFACE
 public:
+    // prevent constructor by default
     HttpInterface& operator=(HttpInterface const&) = delete;
     HttpInterface(HttpInterface const&)            = delete;
     HttpInterface()                                = delete;
-#endif
-
-public:
 };
 
 }; // namespace Bedrock::Http

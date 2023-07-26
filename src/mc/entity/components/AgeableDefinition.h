@@ -12,44 +12,43 @@ namespace JsonUtil { class EmptyClass; }
 
 class AgeableDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGEABLEDEFINITION
 public:
+    // prevent constructor by default
     AgeableDefinition& operator=(AgeableDefinition const&) = delete;
     AgeableDefinition(AgeableDefinition const&)            = delete;
     AgeableDefinition()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ?addDropItem\@AgeableDefinition\@\@QEAAXAEBVItemDescriptor\@\@\@Z
      */
-    MCAPI void addDropItem(class ItemDescriptor const&);
+    MCAPI void addDropItem(class ItemDescriptor const&); // NOLINT
     /**
      * @symbol ?addFeedItem\@AgeableDefinition\@\@QEAAXAEBUActorDefinitionFeedItem\@\@\@Z
      */
-    MCAPI void addFeedItem(struct ActorDefinitionFeedItem const&);
+    MCAPI void addFeedItem(struct ActorDefinitionFeedItem const&); // NOLINT
     /**
      * @symbol
      * ?addFeedItemByName\@AgeableDefinition\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void addFeedItemByName(std::string const&);
+    MCAPI void addFeedItemByName(std::string const&); // NOLINT
     /**
      * @symbol ?canGrowUp\@AgeableDefinition\@\@QEBA_NXZ
      */
-    MCAPI bool canGrowUp() const;
+    MCAPI bool canGrowUp() const; // NOLINT
     /**
      * @symbol ?getTicksAsBaby\@AgeableDefinition\@\@QEBAHXZ
      */
-    MCAPI int getTicksAsBaby() const;
+    MCAPI int getTicksAsBaby() const; // NOLINT
     /**
      * @symbol ?initialize\@AgeableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVAgeableComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class AgeableComponent&) const;
+    MCAPI void initialize(class EntityContext&, class AgeableComponent&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@AgeableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VAgeableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
     buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AgeableDefinition>>&);
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AgeableDefinition>>&); // NOLINT
 };

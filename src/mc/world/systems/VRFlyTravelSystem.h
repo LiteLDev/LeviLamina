@@ -8,12 +8,11 @@
 
 class VRFlyTravelSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VRFLYTRAVELSYSTEM
 public:
+    // prevent constructor by default
     VRFlyTravelSystem& operator=(VRFlyTravelSystem const&) = delete;
     VRFlyTravelSystem(VRFlyTravelSystem const&)            = delete;
     VRFlyTravelSystem()                                    = delete;
-#endif
 
 public:
     /**
@@ -21,13 +20,13 @@ public:
      * ?_postPlayerTravelSystem\@VRFlyTravelSystem\@\@SAXAEBULocalPlayerPrePlayerTravelComponent\@\@AEAUAbilitiesComponent\@\@\@Z
      */
     MCAPI static void
-    _postPlayerTravelSystem(struct LocalPlayerPrePlayerTravelComponent const&, struct AbilitiesComponent&);
+    _postPlayerTravelSystem(struct LocalPlayerPrePlayerTravelComponent const&, struct AbilitiesComponent&); // NOLINT
     /**
      * @symbol
      * ?_prePlayerTravelSystem\@VRFlyTravelSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUPlayerInputModeComponent\@\@AEAUMobTravelComponent\@\@AEAUAbilitiesComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@ULocalPlayerPrePlayerTravelComponent\@\@\@\@\@Z
      */
     MCAPI static void
-    _prePlayerTravelSystem(class StrictEntityContext const&, struct PlayerInputModeComponent const&, struct MobTravelComponent&, struct AbilitiesComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct LocalPlayerPrePlayerTravelComponent>);
+    _prePlayerTravelSystem(class StrictEntityContext const&, struct PlayerInputModeComponent const&, struct MobTravelComponent&, struct AbilitiesComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct LocalPlayerPrePlayerTravelComponent>); // NOLINT
     /**
      * @symbol
      * ?_tickPostPlayerTravelSystem\@VRFlyTravelSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBULocalPlayerPrePlayerTravelComponent\@\@UAbilitiesComponent\@\@\@\@\@Z
@@ -36,13 +35,13 @@ public:
                                                   class StrictEntityContext,
                                                   class EntityRegistryBase,
                                                   struct LocalPlayerPrePlayerTravelComponent const,
-                                                  struct AbilitiesComponent>);
+                                                  struct AbilitiesComponent>); // NOLINT
     /**
      * @symbol ?createPostPlayerTravelSystem\@VRFlyTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createPostPlayerTravelSystem();
+    MCAPI static struct TickingSystemWithInfo createPostPlayerTravelSystem(); // NOLINT
     /**
      * @symbol ?createPrePlayerTravelSystem\@VRFlyTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createPrePlayerTravelSystem();
+    MCAPI static struct TickingSystemWithInfo createPrePlayerTravelSystem(); // NOLINT
 };

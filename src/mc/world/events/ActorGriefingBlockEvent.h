@@ -4,19 +4,18 @@
 
 struct ActorGriefingBlockEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORGRIEFINGBLOCKEVENT
 public:
+    // prevent constructor by default
     ActorGriefingBlockEvent& operator=(ActorGriefingBlockEvent const&) = delete;
     ActorGriefingBlockEvent()                                          = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ActorGriefingBlockEvent\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI ActorGriefingBlockEvent(struct ActorGriefingBlockEvent const&);
+    MCAPI ActorGriefingBlockEvent(struct ActorGriefingBlockEvent const&); // NOLINT
     /**
      * @symbol ??1ActorGriefingBlockEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorGriefingBlockEvent();
+    MCAPI ~ActorGriefingBlockEvent(); // NOLINT
 };

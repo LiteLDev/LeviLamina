@@ -4,16 +4,15 @@
 
 class AsyncTracker {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ASYNCTRACKER
 public:
+    // prevent constructor by default
     AsyncTracker& operator=(AsyncTracker const&) = delete;
     AsyncTracker(AsyncTracker const&)            = delete;
     AsyncTracker()                               = delete;
-#endif
 
 public:
     /**
      * @symbol ?hasAsyncOperationTimedOut\@AsyncTracker\@\@QEAA_NXZ
      */
-    MCAPI bool hasAsyncOperationTimedOut();
+    MCAPI bool hasAsyncOperationTimedOut(); // NOLINT
 };

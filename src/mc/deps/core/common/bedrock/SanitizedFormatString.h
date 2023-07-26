@@ -6,28 +6,27 @@ namespace Bedrock {
 
 class SanitizedFormatString {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_SANITIZEDFORMATSTRING
 public:
+    // prevent constructor by default
     SanitizedFormatString& operator=(SanitizedFormatString const&) = delete;
     SanitizedFormatString(SanitizedFormatString const&)            = delete;
     SanitizedFormatString()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ??0SanitizedFormatString\@Bedrock\@\@QEAA\@PEBD\@Z
      */
-    MCAPI SanitizedFormatString(char const*);
+    MCAPI SanitizedFormatString(char const*); // NOLINT
     /**
      * @symbol ?getOriginalWithoutFlag\@SanitizedFormatString\@Bedrock\@\@QEBAPEBDXZ
      */
-    MCAPI char const* getOriginalWithoutFlag() const;
+    MCAPI char const* getOriginalWithoutFlag() const; // NOLINT
 
     // private:
     /**
      * @symbol ?_sanitize\@SanitizedFormatString\@Bedrock\@\@AEAAXXZ
      */
-    MCAPI void _sanitize();
+    MCAPI void _sanitize(); // NOLINT
 
 private:
 };

@@ -6,33 +6,32 @@ namespace Core::ZipUtils {
 
 class ZipProgress {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORE_ZIPUTILS_ZIPPROGRESS
 public:
+    // prevent constructor by default
     ZipProgress& operator=(ZipProgress const&) = delete;
     ZipProgress(ZipProgress const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?clear\@ZipProgress\@ZipUtils\@Core\@\@UEAAXXZ
      */
-    virtual void clear();
+    virtual void clear(); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CORE_ZIPUTILS_ZIPPROGRESS
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ZipProgress();
+    MCVAPI ~ZipProgress(); // NOLINT
 #endif
     /**
      * @symbol ??0ZipProgress\@ZipUtils\@Core\@\@QEAA\@XZ
      */
-    MCAPI ZipProgress();
+    MCAPI ZipProgress(); // NOLINT
 };
 
 }; // namespace Core::ZipUtils

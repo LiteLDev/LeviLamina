@@ -6,14 +6,11 @@ namespace NetherNet {
 
 class INetherNetTransportInterface {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERNET_INETHERNETTRANSPORTINTERFACE
 public:
+    // prevent constructor by default
     INetherNetTransportInterface& operator=(INetherNetTransportInterface const&) = delete;
     INetherNetTransportInterface(INetherNetTransportInterface const&)            = delete;
     INetherNetTransportInterface()                                               = delete;
-#endif
-
-public:
 };
 
 }; // namespace NetherNet

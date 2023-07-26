@@ -4,16 +4,15 @@
 
 struct ServerInstanceNotificationEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERINSTANCENOTIFICATIONEVENT
 public:
+    // prevent constructor by default
     ServerInstanceNotificationEvent& operator=(ServerInstanceNotificationEvent const&) = delete;
     ServerInstanceNotificationEvent(ServerInstanceNotificationEvent const&)            = delete;
     ServerInstanceNotificationEvent()                                                  = delete;
-#endif
 
 public:
     /**
      * @symbol ??1ServerInstanceNotificationEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ServerInstanceNotificationEvent();
+    MCAPI ~ServerInstanceNotificationEvent(); // NOLINT
 };

@@ -4,12 +4,9 @@
 
 struct LevelStartLeaveGameEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELSTARTLEAVEGAMEEVENT
 public:
+    // prevent constructor by default
     LevelStartLeaveGameEvent& operator=(LevelStartLeaveGameEvent const&) = delete;
     LevelStartLeaveGameEvent(LevelStartLeaveGameEvent const&)            = delete;
     LevelStartLeaveGameEvent()                                           = delete;
-#endif
-
-public:
 };

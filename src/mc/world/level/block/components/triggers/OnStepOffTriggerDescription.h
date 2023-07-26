@@ -12,38 +12,37 @@ namespace JsonUtil { class EmptyClass; }
 
 class OnStepOffTriggerDescription {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONSTEPOFFTRIGGERDESCRIPTION
 public:
+    // prevent constructor by default
     OnStepOffTriggerDescription& operator=(OnStepOffTriggerDescription const&) = delete;
     OnStepOffTriggerDescription(OnStepOffTriggerDescription const&)            = delete;
     OnStepOffTriggerDescription()                                              = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?getName\@OnStepOffTriggerDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string const& getName() const;
+    virtual std::string const& getName() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2();
+    virtual void __unk_vfn_2(); // NOLINT
     /**
      * @vftbl 4
      * @symbol __unk_vfn_4
      */
-    virtual void __unk_vfn_4();
+    virtual void __unk_vfn_4(); // NOLINT
     /**
      * @symbol
      * ?NameID\@OnStepOffTriggerDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const NameID;
+    MCAPI static std::string const NameID; // NOLINT
 };

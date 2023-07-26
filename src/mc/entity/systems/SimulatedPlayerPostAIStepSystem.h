@@ -4,25 +4,25 @@
 
 class SimulatedPlayerPostAIStepSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMULATEDPLAYERPOSTAISTEPSYSTEM
 public:
+    // prevent constructor by default
     SimulatedPlayerPostAIStepSystem& operator=(SimulatedPlayerPostAIStepSystem const&) = delete;
     SimulatedPlayerPostAIStepSystem(SimulatedPlayerPostAIStepSystem const&)            = delete;
     SimulatedPlayerPostAIStepSystem()                                                  = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@SimulatedPlayerPostAIStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
 
     // private:
     /**
      * @symbol
      * ?_doSimulatedPlayerPostAIStepSystem\@SimulatedPlayerPostAIStepSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
      */
-    MCAPI static void _doSimulatedPlayerPostAIStepSystem(class StrictEntityContext const&, class ActorOwnerComponent&);
+    MCAPI static void
+    _doSimulatedPlayerPostAIStepSystem(class StrictEntityContext const&, class ActorOwnerComponent&); // NOLINT
 
 private:
 };

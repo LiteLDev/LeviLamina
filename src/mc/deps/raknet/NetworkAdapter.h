@@ -6,18 +6,17 @@ namespace RakNet {
 
 struct NetworkAdapter {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKNET_NETWORKADAPTER
 public:
+    // prevent constructor by default
     NetworkAdapter& operator=(NetworkAdapter const&) = delete;
     NetworkAdapter(NetworkAdapter const&)            = delete;
     NetworkAdapter()                                 = delete;
-#endif
 
 public:
     /**
      * @symbol ?GetNumberOfAddresses\@NetworkAdapter\@RakNet\@\@QEAAIXZ
      */
-    MCAPI unsigned int GetNumberOfAddresses();
+    MCAPI unsigned int GetNumberOfAddresses(); // NOLINT
 };
 
 }; // namespace RakNet

@@ -12,68 +12,67 @@ public:
     // BreathableComponent inner types define
     enum class BreathableState {};
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREATHABLECOMPONENT
 public:
+    // prevent constructor by default
     BreathableComponent& operator=(BreathableComponent const&) = delete;
     BreathableComponent(BreathableComponent const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0BreathableComponent\@\@QEAA\@XZ
      */
-    MCAPI BreathableComponent();
+    MCAPI BreathableComponent(); // NOLINT
     /**
      * @symbol ?addAdditionalSaveData\@BreathableComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
     /**
      * @symbol ?canBreathe\@BreathableComponent\@\@QEBA_NAEBVActor\@\@\@Z
      */
-    MCAPI bool canBreathe(class Actor const&) const;
+    MCAPI bool canBreathe(class Actor const&) const; // NOLINT
     /**
      * @symbol ?generatesBubbles\@BreathableComponent\@\@QEBA_NXZ
      */
-    MCAPI bool generatesBubbles() const;
+    MCAPI bool generatesBubbles() const; // NOLINT
     /**
      * @symbol ?getAirRegenPerTick\@BreathableComponent\@\@QEBAHXZ
      */
-    MCAPI int getAirRegenPerTick() const;
+    MCAPI int getAirRegenPerTick() const; // NOLINT
     /**
      * @symbol ?getAirSupply\@BreathableComponent\@\@QEBAFXZ
      */
-    MCAPI short getAirSupply() const;
+    MCAPI short getAirSupply() const; // NOLINT
     /**
      * @symbol ?getBreathableState\@BreathableComponent\@\@QEAAAEAW4BreathableState\@1\@XZ
      */
-    MCAPI enum class BreathableComponent::BreathableState& getBreathableState();
+    MCAPI enum class BreathableComponent::BreathableState& getBreathableState(); // NOLINT
     /**
      * @symbol ?getInhaleTime\@BreathableComponent\@\@QEBAMXZ
      */
-    MCAPI float getInhaleTime() const;
+    MCAPI float getInhaleTime() const; // NOLINT
     /**
      * @symbol ?getMaxAirSupply\@BreathableComponent\@\@QEBAFXZ
      */
-    MCAPI short getMaxAirSupply() const;
+    MCAPI short getMaxAirSupply() const; // NOLINT
     /**
      * @symbol ?getSuffocateTime\@BreathableComponent\@\@QEBAHXZ
      */
-    MCAPI int getSuffocateTime() const;
+    MCAPI int getSuffocateTime() const; // NOLINT
     /**
      * @symbol ??4BreathableComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class BreathableComponent& operator=(class BreathableComponent&&);
+    MCAPI class BreathableComponent& operator=(class BreathableComponent&&); // NOLINT
     /**
      * @symbol
      * ?readAdditionalSaveData\@BreathableComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&); // NOLINT
     /**
      * @symbol ?setAirSupply\@BreathableComponent\@\@QEAAXF\@Z
      */
-    MCAPI void setAirSupply(short);
+    MCAPI void setAirSupply(short); // NOLINT
     /**
      * @symbol ?updateBreathableState\@BreathableComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void updateBreathableState(class Actor&);
+    MCAPI void updateBreathableState(class Actor&); // NOLINT
 };

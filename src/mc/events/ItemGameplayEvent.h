@@ -5,12 +5,9 @@
 template <typename T0>
 struct ItemGameplayEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMGAMEPLAYEVENT
 public:
+    // prevent constructor by default
     ItemGameplayEvent& operator=(ItemGameplayEvent const&) = delete;
     ItemGameplayEvent(ItemGameplayEvent const&)            = delete;
     ItemGameplayEvent()                                    = delete;
-#endif
-
-public:
 };

@@ -7,35 +7,34 @@
 
 class BuriedTreasurePiece : public ::StructurePiece {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BURIEDTREASUREPIECE
 public:
+    // prevent constructor by default
     BuriedTreasurePiece& operator=(BuriedTreasurePiece const&) = delete;
     BuriedTreasurePiece(BuriedTreasurePiece const&)            = delete;
     BuriedTreasurePiece()                                      = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?getType\@BuriedTreasurePiece\@\@UEBA?AW4StructurePieceType\@\@XZ
      */
-    virtual enum class StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const; // NOLINT
     /**
      * @vftbl 4
      * @symbol ?postProcess\@BuriedTreasurePiece\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&); // NOLINT
 
     // private:
     /**
      * @symbol ?_isCovered\@BuriedTreasurePiece\@\@AEBA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI bool _isCovered(class BlockSource const&, class BlockPos const&) const;
+    MCAPI bool _isCovered(class BlockSource const&, class BlockPos const&) const; // NOLINT
 
 private:
 };

@@ -7,22 +7,21 @@
 
 class TrailRuinsStart : public ::StructureStart {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRAILRUINSSTART
 public:
+    // prevent constructor by default
     TrailRuinsStart& operator=(TrailRuinsStart const&) = delete;
     TrailRuinsStart(TrailRuinsStart const&)            = delete;
     TrailRuinsStart()                                  = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?isValid\@TrailRuinsStart\@\@UEBA_NXZ
      */
-    virtual bool isValid() const;
+    virtual bool isValid() const; // NOLINT
 };

@@ -4,12 +4,9 @@
 
 struct JumpPendingScaleComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_JUMPPENDINGSCALECOMPONENT
 public:
+    // prevent constructor by default
     JumpPendingScaleComponent& operator=(JumpPendingScaleComponent const&) = delete;
     JumpPendingScaleComponent(JumpPendingScaleComponent const&)            = delete;
     JumpPendingScaleComponent()                                            = delete;
-#endif
-
-public:
 };

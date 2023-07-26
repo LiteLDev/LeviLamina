@@ -4,27 +4,26 @@
 
 class RelativeFloat {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RELATIVEFLOAT
 public:
+    // prevent constructor by default
     RelativeFloat& operator=(RelativeFloat const&) = delete;
     RelativeFloat(RelativeFloat const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0RelativeFloat\@\@QEAA\@M_N\@Z
      */
-    MCAPI RelativeFloat(float, bool);
+    MCAPI RelativeFloat(float, bool); // NOLINT
     /**
      * @symbol ??0RelativeFloat\@\@QEAA\@XZ
      */
-    MCAPI RelativeFloat();
+    MCAPI RelativeFloat(); // NOLINT
     /**
      * @symbol ?getValue\@RelativeFloat\@\@QEBAMM\@Z
      */
-    MCAPI float getValue(float) const;
+    MCAPI float getValue(float) const; // NOLINT
     /**
      * @symbol ?isRelative\@RelativeFloat\@\@QEBA_NXZ
      */
-    MCAPI bool isRelative() const;
+    MCAPI bool isRelative() const; // NOLINT
 };

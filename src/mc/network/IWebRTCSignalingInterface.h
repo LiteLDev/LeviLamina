@@ -14,24 +14,18 @@ public:
     // IWebRTCSignalingInterface inner types define
     struct SignalingConfiguration {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERNET_IWEBRTCSIGNALINGINTERFACE_SIGNALINGCONFIGURATION
     public:
+        // prevent constructor by default
         SignalingConfiguration& operator=(SignalingConfiguration const&) = delete;
         SignalingConfiguration(SignalingConfiguration const&)            = delete;
         SignalingConfiguration()                                         = delete;
-#endif
-
-    public:
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERNET_IWEBRTCSIGNALINGINTERFACE
 public:
+    // prevent constructor by default
     IWebRTCSignalingInterface& operator=(IWebRTCSignalingInterface const&) = delete;
     IWebRTCSignalingInterface(IWebRTCSignalingInterface const&)            = delete;
     IWebRTCSignalingInterface()                                            = delete;
-#endif
-
-public:
 };
 
 }; // namespace NetherNet

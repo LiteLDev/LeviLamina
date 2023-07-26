@@ -4,12 +4,9 @@
 
 struct InsideBlockData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEBLOCKDATA
 public:
+    // prevent constructor by default
     InsideBlockData& operator=(InsideBlockData const&) = delete;
     InsideBlockData(InsideBlockData const&)            = delete;
     InsideBlockData()                                  = delete;
-#endif
-
-public:
 };

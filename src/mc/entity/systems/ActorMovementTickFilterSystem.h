@@ -4,16 +4,15 @@
 
 class ActorMovementTickFilterSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORMOVEMENTTICKFILTERSYSTEM
 public:
+    // prevent constructor by default
     ActorMovementTickFilterSystem& operator=(ActorMovementTickFilterSystem const&) = delete;
     ActorMovementTickFilterSystem(ActorMovementTickFilterSystem const&)            = delete;
     ActorMovementTickFilterSystem()                                                = delete;
-#endif
 
 public:
     /**
      * @symbol ?createBase\@ActorMovementTickFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createBase();
+    MCAPI static struct TickingSystemWithInfo createBase(); // NOLINT
 };

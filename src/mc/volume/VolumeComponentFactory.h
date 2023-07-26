@@ -4,16 +4,15 @@
 
 class VolumeComponentFactory {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VOLUMECOMPONENTFACTORY
 public:
+    // prevent constructor by default
     VolumeComponentFactory& operator=(VolumeComponentFactory const&) = delete;
     VolumeComponentFactory(VolumeComponentFactory const&)            = delete;
     VolumeComponentFactory()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol ?registerVolumeComponentDefinitions\@VolumeComponentFactory\@\@QEAAX_N\@Z
      */
-    MCAPI void registerVolumeComponentDefinitions(bool);
+    MCAPI void registerVolumeComponentDefinitions(bool); // NOLINT
 };

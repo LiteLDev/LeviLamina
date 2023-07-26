@@ -4,16 +4,15 @@
 
 struct WorldGenContext {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDGENCONTEXT
 public:
+    // prevent constructor by default
     WorldGenContext& operator=(WorldGenContext const&) = delete;
     WorldGenContext(WorldGenContext const&)            = delete;
     WorldGenContext()                                  = delete;
-#endif
 
 public:
     /**
      * @symbol ??1WorldGenContext\@\@QEAA\@XZ
      */
-    MCAPI ~WorldGenContext();
+    MCAPI ~WorldGenContext(); // NOLINT
 };

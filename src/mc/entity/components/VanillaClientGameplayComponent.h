@@ -4,12 +4,9 @@
 
 struct VanillaClientGameplayComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLACLIENTGAMEPLAYCOMPONENT
 public:
+    // prevent constructor by default
     VanillaClientGameplayComponent& operator=(VanillaClientGameplayComponent const&) = delete;
     VanillaClientGameplayComponent(VanillaClientGameplayComponent const&)            = delete;
     VanillaClientGameplayComponent()                                                 = delete;
-#endif
-
-public:
 };

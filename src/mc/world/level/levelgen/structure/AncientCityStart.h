@@ -7,22 +7,21 @@
 
 class AncientCityStart : public ::StructureStart {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANCIENTCITYSTART
 public:
+    // prevent constructor by default
     AncientCityStart& operator=(AncientCityStart const&) = delete;
     AncientCityStart(AncientCityStart const&)            = delete;
     AncientCityStart()                                   = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?isValid\@AncientCityStart\@\@UEBA_NXZ
      */
-    virtual bool isValid() const;
+    virtual bool isValid() const; // NOLINT
 };

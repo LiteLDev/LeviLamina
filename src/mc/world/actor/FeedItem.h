@@ -12,48 +12,46 @@ public:
     // FeedItem inner types define
     struct Effect {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FEEDITEM_EFFECT
     public:
+        // prevent constructor by default
         Effect(Effect const&) = delete;
         Effect()              = delete;
-#endif
 
     public:
         /**
          * @symbol ??4Effect\@FeedItem\@\@QEAAAEAU01\@$$QEAU01\@\@Z
          */
-        MCAPI struct FeedItem::Effect& operator=(struct FeedItem::Effect&&);
+        MCAPI struct FeedItem::Effect& operator=(struct FeedItem::Effect&&); // NOLINT
         /**
          * @symbol ??4Effect\@FeedItem\@\@QEAAAEAU01\@AEBU01\@\@Z
          */
-        MCAPI struct FeedItem::Effect& operator=(struct FeedItem::Effect const&);
+        MCAPI struct FeedItem::Effect& operator=(struct FeedItem::Effect const&); // NOLINT
         /**
          * @symbol ??1Effect\@FeedItem\@\@QEAA\@XZ
          */
-        MCAPI ~Effect();
+        MCAPI ~Effect(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FEEDITEM
 public:
+    // prevent constructor by default
     FeedItem& operator=(FeedItem const&) = delete;
     FeedItem()                           = delete;
-#endif
 
 public:
     /**
      * @symbol ??0FeedItem\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI FeedItem(struct FeedItem const&);
+    MCAPI FeedItem(struct FeedItem const&); // NOLINT
     /**
      * @symbol ?addEffect\@FeedItem\@\@QEAAXAEBUEffect\@1\@\@Z
      */
-    MCAPI void addEffect(struct FeedItem::Effect const&);
+    MCAPI void addEffect(struct FeedItem::Effect const&); // NOLINT
     /**
      * @symbol ??4FeedItem\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct FeedItem& operator=(struct FeedItem&&);
+    MCAPI struct FeedItem& operator=(struct FeedItem&&); // NOLINT
     /**
      * @symbol ??1FeedItem\@\@QEAA\@XZ
      */
-    MCAPI ~FeedItem();
+    MCAPI ~FeedItem(); // NOLINT
 };

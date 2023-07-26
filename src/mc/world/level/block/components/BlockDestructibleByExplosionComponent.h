@@ -4,12 +4,9 @@
 
 struct BlockDestructibleByExplosionComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKDESTRUCTIBLEBYEXPLOSIONCOMPONENT
 public:
+    // prevent constructor by default
     BlockDestructibleByExplosionComponent& operator=(BlockDestructibleByExplosionComponent const&) = delete;
     BlockDestructibleByExplosionComponent(BlockDestructibleByExplosionComponent const&)            = delete;
     BlockDestructibleByExplosionComponent()                                                        = delete;
-#endif
-
-public:
 };

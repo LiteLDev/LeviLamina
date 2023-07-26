@@ -4,12 +4,9 @@
 
 struct InterpolationPair {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTERPOLATIONPAIR
 public:
+    // prevent constructor by default
     InterpolationPair& operator=(InterpolationPair const&) = delete;
     InterpolationPair(InterpolationPair const&)            = delete;
     InterpolationPair()                                    = delete;
-#endif
-
-public:
 };

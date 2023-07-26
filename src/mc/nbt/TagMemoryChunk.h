@@ -4,24 +4,23 @@
 
 struct TagMemoryChunk {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TAGMEMORYCHUNK
 public:
+    // prevent constructor by default
     TagMemoryChunk& operator=(TagMemoryChunk const&) = delete;
     TagMemoryChunk(TagMemoryChunk const&)            = delete;
     TagMemoryChunk()                                 = delete;
-#endif
 
 public:
     /**
      * @symbol ?copy\@TagMemoryChunk\@\@QEBA?AU1\@XZ
      */
-    MCAPI struct TagMemoryChunk copy() const;
+    MCAPI struct TagMemoryChunk copy() const; // NOLINT
     /**
      * @symbol ??9TagMemoryChunk\@\@QEBA_NAEBU0\@\@Z
      */
-    MCAPI bool operator!=(struct TagMemoryChunk const&) const;
+    MCAPI bool operator!=(struct TagMemoryChunk const&) const; // NOLINT
     /**
      * @symbol ??1TagMemoryChunk\@\@QEAA\@XZ
      */
-    MCAPI ~TagMemoryChunk();
+    MCAPI ~TagMemoryChunk(); // NOLINT
 };

@@ -9,29 +9,28 @@ namespace edu { enum class Role; }
 
 class RoleChecker {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ROLECHECKER
 public:
+    // prevent constructor by default
     RoleChecker& operator=(RoleChecker const&) = delete;
     RoleChecker(RoleChecker const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0RoleChecker\@\@QEAA\@XZ
      */
-    MCAPI RoleChecker();
+    MCAPI RoleChecker(); // NOLINT
     /**
      * @symbol
      * ?checkRole\@RoleChecker\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$function\@$$A6AXW4Role\@edu\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1\@Z\@3\@\@Z
      */
     MCAPI void
-    checkRole(std::string const&, class std::function<void(enum class edu::Role, std::string const&, std::string const&)>);
+    checkRole(std::string const&, class std::function<void(enum class edu::Role, std::string const&, std::string const&)>); // NOLINT
     /**
      * @symbol ?lookupInProgress\@RoleChecker\@\@QEBA_NXZ
      */
-    MCAPI bool lookupInProgress() const;
+    MCAPI bool lookupInProgress() const; // NOLINT
     /**
      * @symbol ??1RoleChecker\@\@QEAA\@XZ
      */
-    MCAPI ~RoleChecker();
+    MCAPI ~RoleChecker(); // NOLINT
 };

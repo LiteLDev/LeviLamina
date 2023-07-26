@@ -6,14 +6,11 @@ namespace persona {
 
 struct SizeInfo {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERSONA_SIZEINFO
 public:
+    // prevent constructor by default
     SizeInfo& operator=(SizeInfo const&) = delete;
     SizeInfo(SizeInfo const&)            = delete;
     SizeInfo()                           = delete;
-#endif
-
-public:
 };
 
 }; // namespace persona

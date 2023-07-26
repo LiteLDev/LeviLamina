@@ -4,12 +4,9 @@
 
 struct IMobMovementProxy {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IMOBMOVEMENTPROXY
 public:
+    // prevent constructor by default
     IMobMovementProxy& operator=(IMobMovementProxy const&) = delete;
     IMobMovementProxy(IMobMovementProxy const&)            = delete;
     IMobMovementProxy()                                    = delete;
-#endif
-
-public:
 };

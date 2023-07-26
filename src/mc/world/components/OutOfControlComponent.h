@@ -4,12 +4,9 @@
 
 class OutOfControlComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OUTOFCONTROLCOMPONENT
 public:
+    // prevent constructor by default
     OutOfControlComponent& operator=(OutOfControlComponent const&) = delete;
     OutOfControlComponent(OutOfControlComponent const&)            = delete;
     OutOfControlComponent()                                        = delete;
-#endif
-
-public:
 };

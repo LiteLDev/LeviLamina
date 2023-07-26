@@ -2,27 +2,31 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class MobEffect;
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class ScriptEffectType {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTEFFECTTYPE
 public:
+    // prevent constructor by default
     ScriptEffectType& operator=(ScriptEffectType const&) = delete;
     ScriptEffectType(ScriptEffectType const&)            = delete;
     ScriptEffectType()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ?getEffect\@ScriptEffectType\@ScriptModuleMinecraft\@\@QEBAAEBVMobEffect\@\@XZ
      */
-    MCAPI class MobEffect const& getEffect() const;
+    MCAPI class MobEffect const& getEffect() const; // NOLINT
     /**
      * @symbol
      * ?getName\@ScriptEffectType\@ScriptModuleMinecraft\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getName() const;
+    MCAPI std::string getName() const; // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

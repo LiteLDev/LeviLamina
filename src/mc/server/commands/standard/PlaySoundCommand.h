@@ -7,26 +7,25 @@
 
 class PlaySoundCommand : public ::Command {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYSOUNDCOMMAND
 public:
+    // prevent constructor by default
     PlaySoundCommand& operator=(PlaySoundCommand const&) = delete;
     PlaySoundCommand(PlaySoundCommand const&)            = delete;
     PlaySoundCommand()                                   = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?execute\@PlaySoundCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol ?setup\@PlaySoundCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
-    MCAPI static void setup(class CommandRegistry&);
+    MCAPI static void setup(class CommandRegistry&); // NOLINT
 };

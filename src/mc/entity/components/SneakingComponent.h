@@ -4,12 +4,9 @@
 
 struct SneakingComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SNEAKINGCOMPONENT
 public:
+    // prevent constructor by default
     SneakingComponent& operator=(SneakingComponent const&) = delete;
     SneakingComponent(SneakingComponent const&)            = delete;
     SneakingComponent()                                    = delete;
-#endif
-
-public:
 };

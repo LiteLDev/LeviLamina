@@ -4,12 +4,9 @@
 
 class ActorStatusProvider {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSTATUSPROVIDER
 public:
+    // prevent constructor by default
     ActorStatusProvider& operator=(ActorStatusProvider const&) = delete;
     ActorStatusProvider(ActorStatusProvider const&)            = delete;
     ActorStatusProvider()                                      = delete;
-#endif
-
-public:
 };

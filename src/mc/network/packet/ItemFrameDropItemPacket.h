@@ -8,48 +8,47 @@
 
 class ItemFrameDropItemPacket : public ::Packet {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMFRAMEDROPITEMPACKET
 public:
+    // prevent constructor by default
     ItemFrameDropItemPacket& operator=(ItemFrameDropItemPacket const&) = delete;
     ItemFrameDropItemPacket(ItemFrameDropItemPacket const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?getId\@ItemFrameDropItemPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
-    virtual enum class MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?getName\@ItemFrameDropItemPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string getName() const;
+    virtual std::string getName() const; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?write\@ItemFrameDropItemPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream&) const; // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?_read\@ItemFrameDropItemPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMFRAMEDROPITEMPACKET
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ItemFrameDropItemPacket();
+    MCVAPI ~ItemFrameDropItemPacket(); // NOLINT
 #endif
     /**
      * @symbol ??0ItemFrameDropItemPacket\@\@QEAA\@XZ
      */
-    MCAPI ItemFrameDropItemPacket();
+    MCAPI ItemFrameDropItemPacket(); // NOLINT
 };

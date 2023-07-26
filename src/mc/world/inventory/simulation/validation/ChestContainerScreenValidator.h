@@ -7,20 +7,19 @@
 
 class ChestContainerScreenValidator : public ::ContainerScreenValidatorBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHESTCONTAINERSCREENVALIDATOR
 public:
+    // prevent constructor by default
     ChestContainerScreenValidator& operator=(ChestContainerScreenValidator const&) = delete;
     ChestContainerScreenValidator(ChestContainerScreenValidator const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @symbol ??0ChestContainerScreenValidator\@\@QEAA\@XZ
      */
-    MCAPI ChestContainerScreenValidator();
+    MCAPI ChestContainerScreenValidator(); // NOLINT
 };

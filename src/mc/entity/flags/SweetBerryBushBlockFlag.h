@@ -4,12 +4,9 @@
 
 struct SweetBerryBushBlockFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWEETBERRYBUSHBLOCKFLAG
 public:
+    // prevent constructor by default
     SweetBerryBushBlockFlag& operator=(SweetBerryBushBlockFlag const&) = delete;
     SweetBerryBushBlockFlag(SweetBerryBushBlockFlag const&)            = delete;
     SweetBerryBushBlockFlag()                                          = delete;
-#endif
-
-public:
 };

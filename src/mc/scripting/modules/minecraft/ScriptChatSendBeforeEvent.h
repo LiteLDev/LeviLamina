@@ -9,41 +9,41 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptChatSendBeforeEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTCHATSENDBEFOREEVENT
 public:
+    // prevent constructor by default
     ScriptChatSendBeforeEvent& operator=(ScriptChatSendBeforeEvent const&) = delete;
     ScriptChatSendBeforeEvent()                                            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ScriptChatSendBeforeEvent\@ScriptModuleMinecraft\@\@QEAA\@$$QEAU01\@\@Z
      */
-    MCAPI ScriptChatSendBeforeEvent(struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent&&);
+    MCAPI ScriptChatSendBeforeEvent(struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent&&); // NOLINT
     /**
      * @symbol ??0ScriptChatSendBeforeEvent\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
      */
-    MCAPI ScriptChatSendBeforeEvent(struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent const&);
+    MCAPI ScriptChatSendBeforeEvent(struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent const&); // NOLINT
     /**
      * @symbol ??4ScriptChatSendBeforeEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent&&);
+    operator=(struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent&&); // NOLINT
     /**
      * @symbol ??1ScriptChatSendBeforeEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptChatSendBeforeEvent();
+    MCAPI ~ScriptChatSendBeforeEvent(); // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptChatSendBeforeEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptChatSendBeforeEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent> bind();
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent>
+    bind(); // NOLINT
     /**
      * @symbol
      * ?bindV010\@ScriptChatSendBeforeEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptChatSendBeforeEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent>
-    bindV010();
+    bindV010(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

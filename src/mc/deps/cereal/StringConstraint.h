@@ -11,48 +11,47 @@ namespace cereal {
 
 class StringConstraint {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CEREAL_STRINGCONSTRAINT
 public:
+    // prevent constructor by default
     StringConstraint& operator=(StringConstraint const&) = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol ?doValidate\@StringConstraint\@cereal\@\@EEBA_NAEBVmeta_any\@entt\@\@AEAVSerializerContext\@2\@\@Z
      */
-    virtual bool doValidate(class entt::meta_any const&, class cereal::SerializerContext&) const;
+    virtual bool doValidate(class entt::meta_any const&, class cereal::SerializerContext&) const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREAL_STRINGCONSTRAINT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~StringConstraint();
+    MCVAPI ~StringConstraint(); // NOLINT
 #endif
     /**
      * @symbol ??0StringConstraint\@cereal\@\@QEAA\@XZ
      */
-    MCAPI StringConstraint();
+    MCAPI StringConstraint(); // NOLINT
     /**
      * @symbol ??0StringConstraint\@cereal\@\@QEAA\@AEBV01\@\@Z
      */
-    MCAPI StringConstraint(class cereal::StringConstraint const&);
+    MCAPI StringConstraint(class cereal::StringConstraint const&); // NOLINT
     /**
      * @symbol ??0StringConstraint\@cereal\@\@QEAA\@$$QEAV01\@\@Z
      */
-    MCAPI StringConstraint(class cereal::StringConstraint&&);
+    MCAPI StringConstraint(class cereal::StringConstraint&&); // NOLINT
     /**
      * @symbol ?maxSize\@StringConstraint\@cereal\@\@QEAAAEAV12\@_K\@Z
      */
-    MCAPI class cereal::StringConstraint& maxSize(unsigned __int64);
+    MCAPI class cereal::StringConstraint& maxSize(unsigned __int64); // NOLINT
     /**
      * @symbol
      * ?regex\@StringConstraint\@cereal\@\@QEAAAEAV12\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI class cereal::StringConstraint& regex(std::string);
+    MCAPI class cereal::StringConstraint& regex(std::string); // NOLINT
     /**
      * @symbol ?rejectEmpty\@StringConstraint\@cereal\@\@QEAAAEAV12\@XZ
      */
-    MCAPI class cereal::StringConstraint& rejectEmpty();
+    MCAPI class cereal::StringConstraint& rejectEmpty(); // NOLINT
 };
 
 }; // namespace cereal

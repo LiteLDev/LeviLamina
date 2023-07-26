@@ -9,26 +9,25 @@ namespace gametest { class GameTestTicker; }
 
 class GameTestLevelListener {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETESTLEVELLISTENER
 public:
+    // prevent constructor by default
     GameTestLevelListener& operator=(GameTestLevelListener const&) = delete;
     GameTestLevelListener(GameTestLevelListener const&)            = delete;
     GameTestLevelListener()                                        = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETESTLEVELLISTENER
     /**
      * @symbol ?onEvent\@GameTestLevelListener\@\@UEAA?AW4EventResult\@\@AEBULevelNotificationEvent\@\@\@Z
      */
-    MCVAPI enum class EventResult onEvent(struct LevelNotificationEvent const&);
+    MCVAPI enum class EventResult onEvent(struct LevelNotificationEvent const&); // NOLINT
     /**
      * @symbol ?onLevelTickEnd\@GameTestLevelListener\@\@UEAAXXZ
      */
-    MCVAPI void onLevelTickEnd();
+    MCVAPI void onLevelTickEnd(); // NOLINT
 #endif
     /**
      * @symbol ??0GameTestLevelListener\@\@QEAA\@AEAVGameTestTicker\@gametest\@\@\@Z
      */
-    MCAPI GameTestLevelListener(class gametest::GameTestTicker&);
+    MCAPI GameTestLevelListener(class gametest::GameTestTicker&); // NOLINT
 };

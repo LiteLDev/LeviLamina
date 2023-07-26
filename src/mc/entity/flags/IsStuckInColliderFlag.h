@@ -4,12 +4,9 @@
 
 struct IsStuckInColliderFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISSTUCKINCOLLIDERFLAG
 public:
+    // prevent constructor by default
     IsStuckInColliderFlag& operator=(IsStuckInColliderFlag const&) = delete;
     IsStuckInColliderFlag(IsStuckInColliderFlag const&)            = delete;
     IsStuckInColliderFlag()                                        = delete;
-#endif
-
-public:
 };

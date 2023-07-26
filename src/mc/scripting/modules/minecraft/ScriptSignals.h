@@ -18,28 +18,28 @@ namespace ScriptModuleMinecraft::ScriptSignals {
  */
 MCAPI class Scripting::InterfaceBindingBuilder<
     struct ScriptModuleMinecraft::ScriptActorDataDrivenTriggerEventSignalOptions>
-bindActorDataEventOptionsInterface();
+bindActorDataEventOptionsInterface(); // NOLINT
 /**
  * @symbol
  * ?bindActorDataEventOptions_V010\@ScriptSignals\@ScriptModuleMinecraft\@\@YA?AV?$ClassBindingBuilder\@UScriptActorDataDrivenTriggerEventSignalOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
  */
 MCAPI class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorDataDrivenTriggerEventSignalOptions>
-bindActorDataEventOptions_V010();
+bindActorDataEventOptions_V010(); // NOLINT
 /**
  * @symbol
  * ?bindActorEventOptionsInterface\@ScriptSignals\@ScriptModuleMinecraft\@\@YA?AV?$InterfaceBindingBuilder\@UScriptActorEventSignalOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
  */
 MCAPI class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptActorEventSignalOptions>
-bindActorEventOptionsInterface();
+bindActorEventOptionsInterface(); // NOLINT
 /**
  * @symbol
  * ?bindActorEventOptions_V010\@ScriptSignals\@ScriptModuleMinecraft\@\@YA?AV?$ClassBindingBuilder\@UScriptActorEventSignalOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
  */
 MCAPI class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorEventSignalOptions>
-bindActorEventOptions_V010();
+bindActorEventOptions_V010(); // NOLINT
 /**
  * @symbol ?bindSignalsUtils\@ScriptSignals\@ScriptModuleMinecraft\@\@YAXAEAVModuleBindingBuilder\@Scripting\@\@\@Z
  */
-MCAPI void bindSignalsUtils(class Scripting::ModuleBindingBuilder&);
+MCAPI void bindSignalsUtils(class Scripting::ModuleBindingBuilder&); // NOLINT
 
 }; // namespace ScriptModuleMinecraft::ScriptSignals

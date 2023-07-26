@@ -12,19 +12,18 @@ namespace JsonUtil { class EmptyClass; }
 
 class RailActivatorDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAILACTIVATORDEFINITION
 public:
+    // prevent constructor by default
     RailActivatorDefinition& operator=(RailActivatorDefinition const&) = delete;
     RailActivatorDefinition(RailActivatorDefinition const&)            = delete;
     RailActivatorDefinition()                                          = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?buildSchema\@RailActivatorDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VRailActivatorDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RailActivatorDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      class RailActivatorDefinition>>&); // NOLINT
 };

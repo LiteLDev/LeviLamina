@@ -20,57 +20,56 @@ public:
     // GameRuleCommand inner types define
     struct InitProxy {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMERULECOMMAND_INITPROXY
     public:
+        // prevent constructor by default
         InitProxy& operator=(InitProxy const&) = delete;
         InitProxy(InitProxy const&)            = delete;
         InitProxy()                            = delete;
-#endif
 
     public:
         /**
          * @symbol ??0InitProxy\@GameRuleCommand\@\@QEAA\@AEAVLevel\@\@\@Z
          */
-        MCAPI InitProxy(class Level&);
+        MCAPI InitProxy(class Level&); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMERULECOMMAND
 public:
+    // prevent constructor by default
     GameRuleCommand& operator=(GameRuleCommand const&) = delete;
     GameRuleCommand(GameRuleCommand const&)            = delete;
     GameRuleCommand()                                  = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?execute\@GameRuleCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol ?setup\@GameRuleCommand\@\@SAXAEAVCommandRegistry\@\@$$QEAUInitProxy\@1\@\@Z
      */
-    MCAPI static void setup(class CommandRegistry&, struct GameRuleCommand::InitProxy&&);
+    MCAPI static void setup(class CommandRegistry&, struct GameRuleCommand::InitProxy&&); // NOLINT
 
     // private:
     /**
      * @symbol ?getGameRule\@GameRuleCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void getGameRule(class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI void getGameRule(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol ?setGameRule\@GameRuleCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void setGameRule(class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI void setGameRule(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol
      * ?createJsonIndex\@GameRuleCommand\@\@CAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVGameRule\@\@AEAVValue\@Json\@\@PEAV23\@\@Z
      */
-    MCAPI static void createJsonIndex(std::string const&, class GameRule const&, class Json::Value&, std::string*);
+    MCAPI static void
+    createJsonIndex(std::string const&, class GameRule const&, class Json::Value&, std::string*); // NOLINT
 
 private:
 };

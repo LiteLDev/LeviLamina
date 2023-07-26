@@ -4,17 +4,16 @@
 
 class JigsawEditorData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_JIGSAWEDITORDATA
 public:
+    // prevent constructor by default
     JigsawEditorData& operator=(JigsawEditorData const&) = delete;
     JigsawEditorData(JigsawEditorData const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0JigsawEditorData\@\@QEAA\@XZ
      */
-    MCAPI JigsawEditorData();
+    MCAPI JigsawEditorData(); // NOLINT
     /**
      * @symbol
      * ??0JigsawEditorData\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@000W4JigsawJointType\@\@\@Z
@@ -25,66 +24,66 @@ public:
         std::string const&,
         std::string const&,
         enum class JigsawJointType
-    );
+    ); // NOLINT
     /**
      * @symbol ??0JigsawEditorData\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI JigsawEditorData(class JigsawEditorData&&);
+    MCAPI JigsawEditorData(class JigsawEditorData&&); // NOLINT
     /**
      * @symbol
      * ?getFinalBlock\@JigsawEditorData\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string const& getFinalBlock() const;
+    MCAPI std::string const& getFinalBlock() const; // NOLINT
     /**
      * @symbol ?getJointType\@JigsawEditorData\@\@QEBAAEBW4JigsawJointType\@\@XZ
      */
-    MCAPI enum class JigsawJointType const& getJointType() const;
+    MCAPI enum class JigsawJointType const& getJointType() const; // NOLINT
     /**
      * @symbol
      * ?getName\@JigsawEditorData\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string const& getName() const;
+    MCAPI std::string const& getName() const; // NOLINT
     /**
      * @symbol
      * ?getTarget\@JigsawEditorData\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string const& getTarget() const;
+    MCAPI std::string const& getTarget() const; // NOLINT
     /**
      * @symbol ?load\@JigsawEditorData\@\@QEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void load(class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void load(class CompoundTag const&, class DataLoadHelper&); // NOLINT
     /**
      * @symbol ?save\@JigsawEditorData\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void save(class CompoundTag&) const;
+    MCAPI void save(class CompoundTag&) const; // NOLINT
     /**
      * @symbol
      * ?setFinalBlock\@JigsawEditorData\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void setFinalBlock(std::string const&);
+    MCAPI void setFinalBlock(std::string const&); // NOLINT
     /**
      * @symbol ?setJointType\@JigsawEditorData\@\@QEAAXAEBW4JigsawJointType\@\@\@Z
      */
-    MCAPI void setJointType(enum class JigsawJointType const&);
+    MCAPI void setJointType(enum class JigsawJointType const&); // NOLINT
     /**
      * @symbol
      * ?setName\@JigsawEditorData\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void setName(std::string const&);
+    MCAPI void setName(std::string const&); // NOLINT
     /**
      * @symbol
      * ?setTarget\@JigsawEditorData\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void setTarget(std::string const&);
+    MCAPI void setTarget(std::string const&); // NOLINT
     /**
      * @symbol
      * ?setTargetPool\@JigsawEditorData\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void setTargetPool(std::string const&);
+    MCAPI void setTargetPool(std::string const&); // NOLINT
     /**
      * @symbol ??1JigsawEditorData\@\@QEAA\@XZ
      */
-    MCAPI ~JigsawEditorData();
+    MCAPI ~JigsawEditorData(); // NOLINT
 
     // private:
 
@@ -98,5 +97,5 @@ private:
         std::string,
         struct std::hash<int>,
         struct std::equal_to<int>,
-        class std::allocator<struct std::pair<int const, std::string>>> const JOINT_TYPE_TO_NAME;
+        class std::allocator<struct std::pair<int const, std::string>>> const JOINT_TYPE_TO_NAME; // NOLINT
 };

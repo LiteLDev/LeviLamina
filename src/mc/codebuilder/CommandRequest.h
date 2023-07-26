@@ -6,18 +6,17 @@ namespace CodeBuilder {
 
 struct CommandRequest {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CODEBUILDER_COMMANDREQUEST
 public:
+    // prevent constructor by default
     CommandRequest& operator=(CommandRequest const&) = delete;
     CommandRequest(CommandRequest const&)            = delete;
     CommandRequest()                                 = delete;
-#endif
 
 public:
     /**
      * @symbol ??1CommandRequest\@CodeBuilder\@\@QEAA\@XZ
      */
-    MCAPI ~CommandRequest();
+    MCAPI ~CommandRequest(); // NOLINT
 };
 
 }; // namespace CodeBuilder

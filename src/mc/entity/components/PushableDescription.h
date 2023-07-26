@@ -4,36 +4,35 @@
 
 struct PushableDescription {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PUSHABLEDESCRIPTION
 public:
+    // prevent constructor by default
     PushableDescription& operator=(PushableDescription const&) = delete;
     PushableDescription(PushableDescription const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol ?getJsonName\@PushableDescription\@\@UEBAPEBDXZ
      */
-    virtual char const* getJsonName() const;
+    virtual char const* getJsonName() const; // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?deserializeData\@PushableDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PUSHABLEDESCRIPTION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~PushableDescription();
+    MCVAPI ~PushableDescription(); // NOLINT
 #endif
     /**
      * @symbol ??0PushableDescription\@\@QEAA\@XZ
      */
-    MCAPI PushableDescription();
+    MCAPI PushableDescription(); // NOLINT
 };

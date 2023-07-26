@@ -5,12 +5,9 @@
 template <typename T0>
 class SmallSet {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMALLSET
 public:
+    // prevent constructor by default
     SmallSet& operator=(SmallSet const&) = delete;
     SmallSet(SmallSet const&)            = delete;
     SmallSet()                           = delete;
-#endif
-
-public:
 };

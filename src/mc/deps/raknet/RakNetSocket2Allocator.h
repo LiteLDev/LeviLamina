@@ -11,25 +11,24 @@ namespace RakNet {
 
 class RakNetSocket2Allocator {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKNET_RAKNETSOCKET2ALLOCATOR
 public:
+    // prevent constructor by default
     RakNetSocket2Allocator& operator=(RakNetSocket2Allocator const&) = delete;
     RakNetSocket2Allocator(RakNetSocket2Allocator const&)            = delete;
     RakNetSocket2Allocator()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?CreateSharedRNS2\@RakNetSocket2Allocator\@RakNet\@\@SA?AV?$shared_ptr\@VRakNetSocket2\@RakNet\@\@\@std\@\@XZ
      */
-    MCAPI static class std::shared_ptr<class RakNet::RakNetSocket2> CreateSharedRNS2();
+    MCAPI static class std::shared_ptr<class RakNet::RakNetSocket2> CreateSharedRNS2(); // NOLINT
 
     // private:
     /**
      * @symbol ?DeallocRNS2\@RakNetSocket2Allocator\@RakNet\@\@CAXPEAVRakNetSocket2\@2\@\@Z
      */
-    MCAPI static void DeallocRNS2(class RakNet::RakNetSocket2*);
+    MCAPI static void DeallocRNS2(class RakNet::RakNetSocket2*); // NOLINT
 
 private:
 };

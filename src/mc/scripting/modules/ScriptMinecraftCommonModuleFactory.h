@@ -9,16 +9,15 @@ namespace Scripting { class ModuleBindingBuilder; }
 
 class ScriptMinecraftCommonModuleFactory {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMINECRAFTCOMMONMODULEFACTORY
 public:
+    // prevent constructor by default
     ScriptMinecraftCommonModuleFactory& operator=(ScriptMinecraftCommonModuleFactory const&) = delete;
     ScriptMinecraftCommonModuleFactory(ScriptMinecraftCommonModuleFactory const&)            = delete;
     ScriptMinecraftCommonModuleFactory()                                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ?addCommon\@ScriptMinecraftCommonModuleFactory\@\@QEAAXAEAVModuleBindingBuilder\@Scripting\@\@\@Z
      */
-    MCAPI void addCommon(class Scripting::ModuleBindingBuilder&);
+    MCAPI void addCommon(class Scripting::ModuleBindingBuilder&); // NOLINT
 };

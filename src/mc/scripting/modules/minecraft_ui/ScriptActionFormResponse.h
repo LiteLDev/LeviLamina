@@ -9,12 +9,11 @@ namespace ScriptModuleMinecraftServerUI {
 
 class ScriptActionFormResponse {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFTSERVERUI_SCRIPTACTIONFORMRESPONSE
 public:
+    // prevent constructor by default
     ScriptActionFormResponse& operator=(ScriptActionFormResponse const&) = delete;
     ScriptActionFormResponse(ScriptActionFormResponse const&)            = delete;
     ScriptActionFormResponse()                                           = delete;
-#endif
 
 public:
     /**
@@ -22,7 +21,7 @@ public:
      * ?bind\@ScriptActionFormResponse\@ScriptModuleMinecraftServerUI\@\@SA?AV?$ClassBindingBuilder\@VScriptActionFormResponse\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptActionFormResponse>
-    bind();
+    bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraftServerUI

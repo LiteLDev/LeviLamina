@@ -4,24 +4,23 @@
 
 class BalloonableComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BALLOONABLECOMPONENT
 public:
+    // prevent constructor by default
     BalloonableComponent& operator=(BalloonableComponent const&) = delete;
     BalloonableComponent(BalloonableComponent const&)            = delete;
     BalloonableComponent()                                       = delete;
-#endif
 
 public:
     /**
      * @symbol ?getInteraction\@BalloonableComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
+    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&); // NOLINT
 
     // private:
     /**
      * @symbol ?attach\@BalloonableComponent\@\@AEAA_NAEAVActor\@\@0AEAVItemStack\@\@\@Z
      */
-    MCAPI bool attach(class Actor&, class Actor&, class ItemStack&);
+    MCAPI bool attach(class Actor&, class Actor&, class ItemStack&); // NOLINT
 
 private:
 };

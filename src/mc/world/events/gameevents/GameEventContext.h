@@ -4,12 +4,9 @@
 
 struct GameEventContext {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEEVENTCONTEXT
 public:
+    // prevent constructor by default
     GameEventContext& operator=(GameEventContext const&) = delete;
     GameEventContext(GameEventContext const&)            = delete;
     GameEventContext()                                   = delete;
-#endif
-
-public:
 };

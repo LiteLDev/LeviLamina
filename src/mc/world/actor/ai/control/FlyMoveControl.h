@@ -7,25 +7,24 @@
 
 class FlyMoveControl : public ::MoveControl {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLYMOVECONTROL
 public:
+    // prevent constructor by default
     FlyMoveControl& operator=(FlyMoveControl const&) = delete;
     FlyMoveControl(FlyMoveControl const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?tick\@FlyMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
      */
-    virtual void tick(class MoveControlComponent&, class Mob&);
+    virtual void tick(class MoveControlComponent&, class Mob&); // NOLINT
     /**
      * @symbol ??0FlyMoveControl\@\@QEAA\@XZ
      */
-    MCAPI FlyMoveControl();
+    MCAPI FlyMoveControl(); // NOLINT
 };

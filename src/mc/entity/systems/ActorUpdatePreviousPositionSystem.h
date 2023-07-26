@@ -9,18 +9,17 @@
 
 class ActorUpdatePreviousPositionSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORUPDATEPREVIOUSPOSITIONSYSTEM
 public:
+    // prevent constructor by default
     ActorUpdatePreviousPositionSystem& operator=(ActorUpdatePreviousPositionSystem const&) = delete;
     ActorUpdatePreviousPositionSystem(ActorUpdatePreviousPositionSystem const&)            = delete;
     ActorUpdatePreviousPositionSystem()                                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ?create\@ActorUpdatePreviousPositionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo create();
+    MCAPI static struct TickingSystemWithInfo create(); // NOLINT
     /**
      * @symbol
      * ?tickSystem\@ActorUpdatePreviousPositionSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@\@\@VActorOwnerComponent\@\@\@\@\@Z
@@ -29,5 +28,5 @@ public:
                                  class StrictEntityContext,
                                  class EntityRegistryBase,
                                  struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
-                                 class ActorOwnerComponent>);
+                                 class ActorOwnerComponent>); // NOLINT
 };

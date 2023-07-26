@@ -12,41 +12,39 @@ public:
     // GrowingPlantFeature inner types define
     struct WeightedBlockReference {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROWINGPLANTFEATURE_WEIGHTEDBLOCKREFERENCE
     public:
+        // prevent constructor by default
         WeightedBlockReference& operator=(WeightedBlockReference const&) = delete;
         WeightedBlockReference(WeightedBlockReference const&)            = delete;
         WeightedBlockReference()                                         = delete;
-#endif
 
     public:
         /**
          * @symbol ??1WeightedBlockReference\@GrowingPlantFeature\@\@QEAA\@XZ
          */
-        MCAPI ~WeightedBlockReference();
+        MCAPI ~WeightedBlockReference(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROWINGPLANTFEATURE
 public:
+    // prevent constructor by default
     GrowingPlantFeature& operator=(GrowingPlantFeature const&) = delete;
     GrowingPlantFeature(GrowingPlantFeature const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?place\@GrowingPlantFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */
     virtual class std::optional<class BlockPos>
-    place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const; // NOLINT
     /**
      * @symbol ??0GrowingPlantFeature\@\@QEAA\@XZ
      */
-    MCAPI GrowingPlantFeature();
+    MCAPI GrowingPlantFeature(); // NOLINT
 };

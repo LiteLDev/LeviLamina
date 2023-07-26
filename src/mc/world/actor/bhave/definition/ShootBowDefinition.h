@@ -12,22 +12,21 @@ namespace Json { class Value; }
 
 class ShootBowDefinition : public ::BehaviorDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHOOTBOWDEFINITION
 public:
+    // prevent constructor by default
     ShootBowDefinition& operator=(ShootBowDefinition const&) = delete;
     ShootBowDefinition(ShootBowDefinition const&)            = delete;
     ShootBowDefinition()                                     = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?load\@ShootBowDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    virtual void load(class Json::Value, class BehaviorFactory const&); // NOLINT
 };

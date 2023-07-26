@@ -6,29 +6,28 @@ namespace RakNet {
 
 class SimpleMutex {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKNET_SIMPLEMUTEX
 public:
+    // prevent constructor by default
     SimpleMutex& operator=(SimpleMutex const&) = delete;
     SimpleMutex(SimpleMutex const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ?Lock\@SimpleMutex\@RakNet\@\@QEAAXXZ
      */
-    MCAPI void Lock();
+    MCAPI void Lock(); // NOLINT
     /**
      * @symbol ??0SimpleMutex\@RakNet\@\@QEAA\@XZ
      */
-    MCAPI SimpleMutex();
+    MCAPI SimpleMutex(); // NOLINT
     /**
      * @symbol ?Unlock\@SimpleMutex\@RakNet\@\@QEAAXXZ
      */
-    MCAPI void Unlock();
+    MCAPI void Unlock(); // NOLINT
     /**
      * @symbol ??1SimpleMutex\@RakNet\@\@QEAA\@XZ
      */
-    MCAPI ~SimpleMutex();
+    MCAPI ~SimpleMutex(); // NOLINT
 };
 
 }; // namespace RakNet

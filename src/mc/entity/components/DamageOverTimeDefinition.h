@@ -12,23 +12,22 @@ namespace JsonUtil { class EmptyClass; }
 
 class DamageOverTimeDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DAMAGEOVERTIMEDEFINITION
 public:
+    // prevent constructor by default
     DamageOverTimeDefinition& operator=(DamageOverTimeDefinition const&) = delete;
     DamageOverTimeDefinition(DamageOverTimeDefinition const&)            = delete;
     DamageOverTimeDefinition()                                           = delete;
-#endif
 
 public:
     /**
      * @symbol ?initialize\@DamageOverTimeDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVDamageOverTimeComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class DamageOverTimeComponent&) const;
+    MCAPI void initialize(class EntityContext&, class DamageOverTimeComponent&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@DamageOverTimeDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDamageOverTimeDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DamageOverTimeDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      class DamageOverTimeDefinition>>&); // NOLINT
 };

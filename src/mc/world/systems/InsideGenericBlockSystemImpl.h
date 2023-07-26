@@ -7,6 +7,6 @@ namespace InsideGenericBlockSystemImpl {
  * @symbol
  * ?tickInsideGenericBlock\@InsideGenericBlockSystemImpl\@\@YAXAEAUInsideGenericBlockComponent\@\@AEAVActorOwnerComponent\@\@\@Z
  */
-MCAPI void tickInsideGenericBlock(struct InsideGenericBlockComponent&, class ActorOwnerComponent&);
+MCAPI void tickInsideGenericBlock(struct InsideGenericBlockComponent&, class ActorOwnerComponent&); // NOLINT
 
 }; // namespace InsideGenericBlockSystemImpl

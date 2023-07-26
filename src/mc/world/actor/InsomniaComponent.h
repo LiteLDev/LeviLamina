@@ -4,37 +4,36 @@
 
 class InsomniaComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSOMNIACOMPONENT
 public:
+    // prevent constructor by default
     InsomniaComponent& operator=(InsomniaComponent const&) = delete;
     InsomniaComponent(InsomniaComponent const&)            = delete;
     InsomniaComponent()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ?addAdditionalSaveData\@InsomniaComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
     /**
      * @symbol ?getInsomniaTimerTicks\@InsomniaComponent\@\@QEBAHXZ
      */
-    MCAPI int getInsomniaTimerTicks() const;
+    MCAPI int getInsomniaTimerTicks() const; // NOLINT
     /**
      * @symbol ?getTicksUntilInsomnia\@InsomniaComponent\@\@QEBAHXZ
      */
-    MCAPI int getTicksUntilInsomnia() const;
+    MCAPI int getTicksUntilInsomnia() const; // NOLINT
     /**
      * @symbol ?incrementTimeSinceRest\@InsomniaComponent\@\@QEAAHXZ
      */
-    MCAPI int incrementTimeSinceRest();
+    MCAPI int incrementTimeSinceRest(); // NOLINT
     /**
      * @symbol
      * ?readAdditionalSaveData\@InsomniaComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&); // NOLINT
     /**
      * @symbol ?restartTimer\@InsomniaComponent\@\@QEAAXXZ
      */
-    MCAPI void restartTimer();
+    MCAPI void restartTimer(); // NOLINT
 };

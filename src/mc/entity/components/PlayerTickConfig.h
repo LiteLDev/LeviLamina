@@ -4,12 +4,9 @@
 
 struct PlayerTickConfig {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERTICKCONFIG
 public:
+    // prevent constructor by default
     PlayerTickConfig& operator=(PlayerTickConfig const&) = delete;
     PlayerTickConfig(PlayerTickConfig const&)            = delete;
     PlayerTickConfig()                                   = delete;
-#endif
-
-public:
 };

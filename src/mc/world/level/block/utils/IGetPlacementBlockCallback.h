@@ -6,14 +6,11 @@ namespace BlockTrait {
 
 class IGetPlacementBlockCallback {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKTRAIT_IGETPLACEMENTBLOCKCALLBACK
 public:
+    // prevent constructor by default
     IGetPlacementBlockCallback& operator=(IGetPlacementBlockCallback const&) = delete;
     IGetPlacementBlockCallback(IGetPlacementBlockCallback const&)            = delete;
     IGetPlacementBlockCallback()                                             = delete;
-#endif
-
-public:
 };
 
 }; // namespace BlockTrait

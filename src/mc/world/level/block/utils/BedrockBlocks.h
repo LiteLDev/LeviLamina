@@ -6,22 +6,22 @@ namespace BedrockBlocks {
 /**
  * @symbol ?assignBlocks\@BedrockBlocks\@\@YAXXZ
  */
-MCAPI void assignBlocks();
+MCAPI void assignBlocks(); // NOLINT
 /**
  * @symbol ?mAir\@BedrockBlocks\@\@3PEBVBlock\@\@EB
  */
-MCAPI extern class Block const* mAir;
+MCAPI extern class Block const* mAir; // NOLINT
 /**
  * @symbol ?mClientRequestPlaceholderBlock\@BedrockBlocks\@\@3PEBVBlock\@\@EB
  */
-MCAPI extern class Block const* mClientRequestPlaceholderBlock;
+MCAPI extern class Block const* mClientRequestPlaceholderBlock; // NOLINT
 /**
  * @symbol ?mUnknown\@BedrockBlocks\@\@3PEBVBlock\@\@EB
  */
-MCAPI extern class Block const* mUnknown;
+MCAPI extern class Block const* mUnknown; // NOLINT
 /**
  * @symbol ?unassignBlocks\@BedrockBlocks\@\@YAXXZ
  */
-MCAPI void unassignBlocks();
+MCAPI void unassignBlocks(); // NOLINT
 
 }; // namespace BedrockBlocks

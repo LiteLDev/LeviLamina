@@ -4,16 +4,15 @@
 
 class UpdateEntityAfterFallOnEntityProxyBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPDATEENTITYAFTERFALLONENTITYPROXYBASE
 public:
+    // prevent constructor by default
     UpdateEntityAfterFallOnEntityProxyBase& operator=(UpdateEntityAfterFallOnEntityProxyBase const&) = delete;
     UpdateEntityAfterFallOnEntityProxyBase(UpdateEntityAfterFallOnEntityProxyBase const&)            = delete;
     UpdateEntityAfterFallOnEntityProxyBase()                                                         = delete;
-#endif
 
 public:
     /**
      * @symbol ?mDummy\@UpdateEntityAfterFallOnEntityProxyBase\@\@2VVec3\@\@A
      */
-    MCAPI static class Vec3 mDummy;
+    MCAPI static class Vec3 mDummy; // NOLINT
 };

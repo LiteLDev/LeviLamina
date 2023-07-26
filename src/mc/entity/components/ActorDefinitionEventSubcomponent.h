@@ -9,40 +9,39 @@ namespace Json { class Value; }
 
 class ActorDefinitionEventSubcomponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDEFINITIONEVENTSUBCOMPONENT
 public:
+    // prevent constructor by default
     ActorDefinitionEventSubcomponent& operator=(ActorDefinitionEventSubcomponent const&) = delete;
     ActorDefinitionEventSubcomponent(ActorDefinitionEventSubcomponent const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?readfromJSON\@ActorDefinitionEventSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
-    virtual void readfromJSON(class Json::Value&, class SemVersion const&);
+    virtual void readfromJSON(class Json::Value&, class SemVersion const&); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?writetoJSON\@ActorDefinitionEventSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
-    virtual void writetoJSON(class Json::Value&) const;
+    virtual void writetoJSON(class Json::Value&) const; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?doOnHitEffect\@ActorDefinitionEventSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
      */
-    virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
+    virtual void doOnHitEffect(class Actor&, class ProjectileComponent&); // NOLINT
     /**
      * @vftbl 4
      * @symbol ?getName\@ActorDefinitionEventSubcomponent\@\@UEAAPEBDXZ
      */
-    virtual char const* getName();
+    virtual char const* getName(); // NOLINT
     /**
      * @symbol ??0ActorDefinitionEventSubcomponent\@\@QEAA\@XZ
      */
-    MCAPI ActorDefinitionEventSubcomponent();
+    MCAPI ActorDefinitionEventSubcomponent(); // NOLINT
 };

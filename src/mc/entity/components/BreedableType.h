@@ -4,19 +4,18 @@
 
 struct BreedableType {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREEDABLETYPE
 public:
+    // prevent constructor by default
     BreedableType& operator=(BreedableType const&) = delete;
     BreedableType()                                = delete;
-#endif
 
 public:
     /**
      * @symbol ??0BreedableType\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI BreedableType(struct BreedableType const&);
+    MCAPI BreedableType(struct BreedableType const&); // NOLINT
     /**
      * @symbol ??1BreedableType\@\@QEAA\@XZ
      */
-    MCAPI ~BreedableType();
+    MCAPI ~BreedableType(); // NOLINT
 };

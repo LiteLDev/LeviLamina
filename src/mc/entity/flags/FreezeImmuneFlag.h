@@ -4,12 +4,9 @@
 
 struct FreezeImmuneFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FREEZEIMMUNEFLAG
 public:
+    // prevent constructor by default
     FreezeImmuneFlag& operator=(FreezeImmuneFlag const&) = delete;
     FreezeImmuneFlag(FreezeImmuneFlag const&)            = delete;
     FreezeImmuneFlag()                                   = delete;
-#endif
-
-public:
 };

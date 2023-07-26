@@ -12,34 +12,33 @@ namespace JsonUtil { class EmptyClass; }
 
 class BreathableDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREATHABLEDEFINITION
 public:
+    // prevent constructor by default
     BreathableDefinition& operator=(BreathableDefinition const&) = delete;
     BreathableDefinition(BreathableDefinition const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0BreathableDefinition\@\@QEAA\@XZ
      */
-    MCAPI BreathableDefinition();
+    MCAPI BreathableDefinition(); // NOLINT
     /**
      * @symbol ?addBreathableBlockDescriptor\@BreathableDefinition\@\@QEAAXAEBVBlockDescriptor\@\@\@Z
      */
-    MCAPI void addBreathableBlockDescriptor(class BlockDescriptor const&);
+    MCAPI void addBreathableBlockDescriptor(class BlockDescriptor const&); // NOLINT
     /**
      * @symbol ?addNonBreathableBlockDescriptor\@BreathableDefinition\@\@QEAAXAEBVBlockDescriptor\@\@\@Z
      */
-    MCAPI void addNonBreathableBlockDescriptor(class BlockDescriptor const&);
+    MCAPI void addNonBreathableBlockDescriptor(class BlockDescriptor const&); // NOLINT
     /**
      * @symbol ?initialize\@BreathableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVBreathableComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class BreathableComponent&) const;
+    MCAPI void initialize(class EntityContext&, class BreathableComponent&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@BreathableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VBreathableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BreathableDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      class BreathableDefinition>>&); // NOLINT
 };

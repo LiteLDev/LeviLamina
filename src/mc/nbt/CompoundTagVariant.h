@@ -4,32 +4,31 @@
 
 class CompoundTagVariant {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDTAGVARIANT
 public:
+    // prevent constructor by default
     CompoundTagVariant& operator=(CompoundTagVariant const&) = delete;
     CompoundTagVariant(CompoundTagVariant const&)            = delete;
     CompoundTagVariant()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ?emplace\@CompoundTagVariant\@\@QEAAAEAVTag\@\@$$QEAV2\@\@Z
      */
-    MCAPI class Tag& emplace(class Tag&&);
+    MCAPI class Tag& emplace(class Tag&&); // NOLINT
     /**
      * @symbol ?get\@CompoundTagVariant\@\@QEAAPEAVTag\@\@XZ
      */
-    MCAPI class Tag* get();
+    MCAPI class Tag* get(); // NOLINT
     /**
      * @symbol ?get\@CompoundTagVariant\@\@QEBAPEBVTag\@\@XZ
      */
-    MCAPI class Tag const* get() const;
+    MCAPI class Tag const* get() const; // NOLINT
     /**
      * @symbol ??CCompoundTagVariant\@\@QEBAPEBVTag\@\@XZ
      */
-    MCAPI class Tag const* operator->() const;
+    MCAPI class Tag const* operator->() const; // NOLINT
     /**
      * @symbol ??1CompoundTagVariant\@\@QEAA\@XZ
      */
-    MCAPI ~CompoundTagVariant();
+    MCAPI ~CompoundTagVariant(); // NOLINT
 };

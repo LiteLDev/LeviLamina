@@ -6,6 +6,6 @@ namespace LiquidSplashRequestSystem {
 /**
  * @symbol ?createSystem\@LiquidSplashRequestSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
  */
-MCAPI struct TickingSystemWithInfo createSystem();
+MCAPI struct TickingSystemWithInfo createSystem(); // NOLINT
 
 }; // namespace LiquidSplashRequestSystem

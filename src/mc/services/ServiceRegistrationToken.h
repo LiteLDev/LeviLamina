@@ -5,12 +5,9 @@
 template <typename T0>
 class ServiceRegistrationToken {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVICEREGISTRATIONTOKEN
 public:
+    // prevent constructor by default
     ServiceRegistrationToken& operator=(ServiceRegistrationToken const&) = delete;
     ServiceRegistrationToken(ServiceRegistrationToken const&)            = delete;
     ServiceRegistrationToken()                                           = delete;
-#endif
-
-public:
 };

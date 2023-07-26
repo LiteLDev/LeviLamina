@@ -12,24 +12,23 @@ namespace JsonUtil { class EmptyClass; }
 
 class InsideBlockNotifierDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEBLOCKNOTIFIERDEFINITION
 public:
+    // prevent constructor by default
     InsideBlockNotifierDefinition& operator=(InsideBlockNotifierDefinition const&) = delete;
     InsideBlockNotifierDefinition(InsideBlockNotifierDefinition const&)            = delete;
     InsideBlockNotifierDefinition()                                                = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?initialize\@InsideBlockNotifierDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVInsideBlockNotifierComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class InsideBlockNotifierComponent&) const;
+    MCAPI void initialize(class EntityContext&, class InsideBlockNotifierComponent&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@InsideBlockNotifierDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VInsideBlockNotifierDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
                                       class JsonUtil::EmptyClass,
-                                      class InsideBlockNotifierDefinition>>&);
+                                      class InsideBlockNotifierDefinition>>&); // NOLINT
 };

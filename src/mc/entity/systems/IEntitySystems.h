@@ -7,12 +7,11 @@
 
 class IEntitySystems {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IENTITYSYSTEMS
 public:
+    // prevent constructor by default
     IEntitySystems& operator=(IEntitySystems const&) = delete;
     IEntitySystems(IEntitySystems const&)            = delete;
     IEntitySystems()                                 = delete;
-#endif
 
 public:
     /**
@@ -24,5 +23,5 @@ public:
         std::unique_ptr<class ITickingSystem>,
         struct SystemInfo const&,
         struct EntitySystemTickingMode
-    );
+    ); // NOLINT
 };

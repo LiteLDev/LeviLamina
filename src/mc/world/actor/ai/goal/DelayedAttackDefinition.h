@@ -12,25 +12,24 @@ namespace JsonUtil { class EmptyClass; }
 
 class DelayedAttackDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DELAYEDATTACKDEFINITION
 public:
+    // prevent constructor by default
     DelayedAttackDefinition& operator=(DelayedAttackDefinition const&) = delete;
     DelayedAttackDefinition(DelayedAttackDefinition const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0DelayedAttackDefinition\@\@QEAA\@XZ
      */
-    MCAPI DelayedAttackDefinition();
+    MCAPI DelayedAttackDefinition(); // NOLINT
     /**
      * @symbol ?initialize\@DelayedAttackDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVDelayedAttackGoal\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class DelayedAttackGoal&) const;
+    MCAPI void initialize(class EntityContext&, class DelayedAttackGoal&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@DelayedAttackDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDelayedAttackDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void
-    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DelayedAttackDefinition>>&);
+    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DelayedAttackDefinition>>&); // NOLINT
 };

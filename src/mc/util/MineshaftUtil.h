@@ -6,10 +6,10 @@ namespace MineshaftUtil {
 /**
  * @symbol ?_isLava\@MineshaftUtil\@\@YA_NAEBVBlockLegacy\@\@\@Z
  */
-MCAPI bool _isLava(class BlockLegacy const&);
+MCAPI bool _isLava(class BlockLegacy const&); // NOLINT
 /**
  * @symbol ?fillColumnBetween\@MineshaftUtil\@\@YAXAEAVBlockSource\@\@AEBVBlock\@\@AEBVBlockPos\@\@HH\@Z
  */
-MCAPI void fillColumnBetween(class BlockSource&, class Block const&, class BlockPos const&, int, int);
+MCAPI void fillColumnBetween(class BlockSource&, class Block const&, class BlockPos const&, int, int); // NOLINT
 
 }; // namespace MineshaftUtil

@@ -7,20 +7,19 @@
 
 class GrindstoneContainerScreenValidator : public ::ContainerScreenValidatorBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GRINDSTONECONTAINERSCREENVALIDATOR
 public:
+    // prevent constructor by default
     GrindstoneContainerScreenValidator& operator=(GrindstoneContainerScreenValidator const&) = delete;
     GrindstoneContainerScreenValidator(GrindstoneContainerScreenValidator const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @symbol ??0GrindstoneContainerScreenValidator\@\@QEAA\@XZ
      */
-    MCAPI GrindstoneContainerScreenValidator();
+    MCAPI GrindstoneContainerScreenValidator(); // NOLINT
 };

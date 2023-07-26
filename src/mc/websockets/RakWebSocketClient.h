@@ -7,38 +7,37 @@
 
 class RakWebSocketClient : public ::RakWebSocket {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKWEBSOCKETCLIENT
 public:
+    // prevent constructor by default
     RakWebSocketClient& operator=(RakWebSocketClient const&) = delete;
     RakWebSocketClient(RakWebSocketClient const&)            = delete;
     RakWebSocketClient()                                     = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 8
      * @symbol ?_updateState\@RakWebSocketClient\@\@MEAAXXZ
      */
-    virtual void _updateState();
+    virtual void _updateState(); // NOLINT
     /**
      * @vftbl 9
      * @symbol ?_genMaskingKey\@RakWebSocketClient\@\@MEBAIXZ
      */
-    virtual unsigned int _genMaskingKey() const;
+    virtual unsigned int _genMaskingKey() const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKWEBSOCKETCLIENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~RakWebSocketClient();
+    MCVAPI ~RakWebSocketClient(); // NOLINT
 #endif
     /**
      * @symbol
      * ??0RakWebSocketClient\@\@QEAA\@V?$unique_ptr\@VTcpProxy\@\@U?$default_delete\@VTcpProxy\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI RakWebSocketClient(std::unique_ptr<class TcpProxy>);
+    MCAPI RakWebSocketClient(std::unique_ptr<class TcpProxy>); // NOLINT
 };

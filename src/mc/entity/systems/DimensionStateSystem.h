@@ -7,21 +7,21 @@
 
 class DimensionStateSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONSTATESYSTEM
 public:
+    // prevent constructor by default
     DimensionStateSystem& operator=(DimensionStateSystem const&) = delete;
     DimensionStateSystem(DimensionStateSystem const&)            = delete;
     DimensionStateSystem()                                       = delete;
-#endif
 
 public:
     /**
      * @symbol ?isDimensionReady\@DimensionStateSystem\@\@SA_NAEBVEntityContext\@\@\@Z
      */
-    MCAPI static bool isDimensionReady(class EntityContext const&);
+    MCAPI static bool isDimensionReady(class EntityContext const&); // NOLINT
     /**
      * @symbol
      * ?setDimensionState\@DimensionStateSystem\@\@SAXAEAVEntityContext\@\@W4DimensionState\@DimensionStateComponent\@\@\@Z
      */
-    MCAPI static void setDimensionState(class EntityContext&, enum class DimensionStateComponent::DimensionState);
+    MCAPI static void
+    setDimensionState(class EntityContext&, enum class DimensionStateComponent::DimensionState); // NOLINT
 };

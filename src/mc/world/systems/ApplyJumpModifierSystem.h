@@ -10,12 +10,11 @@
 
 class ApplyJumpModifierSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_APPLYJUMPMODIFIERSYSTEM
 public:
+    // prevent constructor by default
     ApplyJumpModifierSystem& operator=(ApplyJumpModifierSystem const&) = delete;
     ApplyJumpModifierSystem(ApplyJumpModifierSystem const&)            = delete;
     ApplyJumpModifierSystem()                                          = delete;
-#endif
 
 public:
     /**
@@ -35,15 +34,15 @@ public:
                                                    struct MobEffectsComponent const,
                                                    struct MobTravelComponent const,
                                                    struct JumpPendingScaleComponent,
-                                                   struct StateVectorComponent>);
+                                                   struct StateVectorComponent>); // NOLINT
     /**
      * @symbol ?createApplyJumpModifierSystem\@ApplyJumpModifierSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createApplyJumpModifierSystem();
+    MCAPI static struct TickingSystemWithInfo createApplyJumpModifierSystem(); // NOLINT
     /**
      * @symbol
      * ?tickApplyJumpModifierSystem\@ApplyJumpModifierSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUTriggerJumpRequestComponent\@\@AEBUActorRotationComponent\@\@AEBUAttributesComponent\@\@AEBUMobEffectsComponent\@\@AEBUMobTravelComponent\@\@AEAUJumpPendingScaleComponent\@\@AEAUStateVectorComponent\@\@\@Z
      */
     MCAPI static void
-    tickApplyJumpModifierSystem(class StrictEntityContext const&, struct TriggerJumpRequestComponent const&, struct ActorRotationComponent const&, struct AttributesComponent const&, struct MobEffectsComponent const&, struct MobTravelComponent const&, struct JumpPendingScaleComponent&, struct StateVectorComponent&);
+    tickApplyJumpModifierSystem(class StrictEntityContext const&, struct TriggerJumpRequestComponent const&, struct ActorRotationComponent const&, struct AttributesComponent const&, struct MobEffectsComponent const&, struct MobTravelComponent const&, struct JumpPendingScaleComponent&, struct StateVectorComponent&); // NOLINT
 };

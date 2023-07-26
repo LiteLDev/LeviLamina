@@ -7,6 +7,6 @@ namespace TrimMaterialRegistryHardCodedInit {
  * @symbol
  * ?getMaterials\@TrimMaterialRegistryHardCodedInit\@\@YA?AV?$vector\@UTrimMaterial\@\@V?$allocator\@UTrimMaterial\@\@\@std\@\@\@std\@\@XZ
  */
-MCAPI std::vector<struct TrimMaterial> getMaterials();
+MCAPI std::vector<struct TrimMaterial> getMaterials(); // NOLINT
 
 }; // namespace TrimMaterialRegistryHardCodedInit

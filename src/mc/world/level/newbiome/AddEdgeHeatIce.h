@@ -14,12 +14,11 @@ namespace OperationNodeFilters {
 
 struct AddEdgeHeatIce {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OPERATIONNODEFILTERS_ADDEDGEHEATICE
 public:
+    // prevent constructor by default
     AddEdgeHeatIce& operator=(AddEdgeHeatIce const&) = delete;
     AddEdgeHeatIce(AddEdgeHeatIce const&)            = delete;
     AddEdgeHeatIce()                                 = delete;
-#endif
 
 public:
     /**
@@ -27,7 +26,8 @@ public:
      * ??RAddEdgeHeatIce\@OperationNodeFilters\@\@QEBA?AUPreBiome\@OperationNodeValues\@\@AEAU?$NeighborhoodReader\@UPreBiome\@OperationNodeValues\@\@$00$00\@OperationNodeDetails\@\@\@Z
      */
     MCAPI struct OperationNodeValues::PreBiome
-    operator()(struct OperationNodeDetails::NeighborhoodReader<struct OperationNodeValues::PreBiome, 1, 1>&) const;
+    operator()(struct OperationNodeDetails::NeighborhoodReader<struct OperationNodeValues::PreBiome, 1, 1>&)
+        const; // NOLINT
 };
 
 }; // namespace OperationNodeFilters

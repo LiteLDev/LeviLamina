@@ -12,25 +12,24 @@ namespace JsonUtil { class EmptyClass; }
 
 class ChargeAttackDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHARGEATTACKDEFINITION
 public:
+    // prevent constructor by default
     ChargeAttackDefinition& operator=(ChargeAttackDefinition const&) = delete;
     ChargeAttackDefinition(ChargeAttackDefinition const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ChargeAttackDefinition\@\@QEAA\@XZ
      */
-    MCAPI ChargeAttackDefinition();
+    MCAPI ChargeAttackDefinition(); // NOLINT
     /**
      * @symbol ?initialize\@ChargeAttackDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVChargeAttackGoal\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class ChargeAttackGoal&) const;
+    MCAPI void initialize(class EntityContext&, class ChargeAttackGoal&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@ChargeAttackDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VChargeAttackDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void
-    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ChargeAttackDefinition>>&);
+    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ChargeAttackDefinition>>&); // NOLINT
 };

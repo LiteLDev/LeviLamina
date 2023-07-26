@@ -12,23 +12,22 @@ namespace JsonUtil { class EmptyClass; }
 
 struct ColorDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COLORDEFINITION
 public:
+    // prevent constructor by default
     ColorDefinition& operator=(ColorDefinition const&) = delete;
     ColorDefinition(ColorDefinition const&)            = delete;
     ColorDefinition()                                  = delete;
-#endif
 
 public:
     /**
      * @symbol ?setColorChoice\@ColorDefinition\@\@QEAAXAEBH\@Z
      */
-    MCAPI void setColorChoice(int const&);
+    MCAPI void setColorChoice(int const&); // NOLINT
     /**
      * @symbol
      * ?buildSchema\@ColorDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UColorDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
     buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ColorDefinition>>&);
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ColorDefinition>>&); // NOLINT
 };

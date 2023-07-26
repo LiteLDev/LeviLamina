@@ -4,12 +4,9 @@
 
 struct ActorHeadRotationComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORHEADROTATIONCOMPONENT
 public:
+    // prevent constructor by default
     ActorHeadRotationComponent& operator=(ActorHeadRotationComponent const&) = delete;
     ActorHeadRotationComponent(ActorHeadRotationComponent const&)            = delete;
     ActorHeadRotationComponent()                                             = delete;
-#endif
-
-public:
 };

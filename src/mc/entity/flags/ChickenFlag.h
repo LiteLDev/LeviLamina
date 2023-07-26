@@ -4,12 +4,9 @@
 
 struct ChickenFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHICKENFLAG
 public:
+    // prevent constructor by default
     ChickenFlag& operator=(ChickenFlag const&) = delete;
     ChickenFlag(ChickenFlag const&)            = delete;
     ChickenFlag()                              = delete;
-#endif
-
-public:
 };

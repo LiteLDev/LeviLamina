@@ -9,18 +9,17 @@
 
 class SlimePreNormalTickSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLIMEPRENORMALTICKSYSTEM
 public:
+    // prevent constructor by default
     SlimePreNormalTickSystem& operator=(SlimePreNormalTickSystem const&) = delete;
     SlimePreNormalTickSystem(SlimePreNormalTickSystem const&)            = delete;
     SlimePreNormalTickSystem()                                           = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@SlimePreNormalTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
 
     // private:
     /**
@@ -28,7 +27,7 @@ public:
      * ?_doSlimePreNormalTickSystem\@SlimePreNormalTickSystem\@\@CAXAEAVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@V?$Optional\@$$CBV?$FlagComponent\@UOnGroundFlag\@\@\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@USlimeWasOnGroundPreNormalTick\@\@\@\@\@\@\@Z
      */
     MCAPI static void
-    _doSlimePreNormalTickSystem(class StrictEntityContext&, class ActorOwnerComponent&, class Optional<class FlagComponent<struct OnGroundFlag> const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct SlimeWasOnGroundPreNormalTick>>);
+    _doSlimePreNormalTickSystem(class StrictEntityContext&, class ActorOwnerComponent&, class Optional<class FlagComponent<struct OnGroundFlag> const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct SlimeWasOnGroundPreNormalTick>>); // NOLINT
 
 private:
 };

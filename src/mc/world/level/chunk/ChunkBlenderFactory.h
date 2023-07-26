@@ -17,44 +17,41 @@ public:
     // ChunkBlenderFactory inner types define
     struct IntermediateAttenuationData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKBLENDERFACTORY_INTERMEDIATEATTENUATIONDATA
     public:
+        // prevent constructor by default
         IntermediateAttenuationData& operator=(IntermediateAttenuationData const&) = delete;
         IntermediateAttenuationData(IntermediateAttenuationData const&)            = delete;
         IntermediateAttenuationData()                                              = delete;
-#endif
-
-    public:
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKBLENDERFACTORY
 public:
+    // prevent constructor by default
     ChunkBlenderFactory& operator=(ChunkBlenderFactory const&) = delete;
     ChunkBlenderFactory(ChunkBlenderFactory const&)            = delete;
     ChunkBlenderFactory()                                      = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ChunkBlenderFactory\@\@QEAA\@AEAVDimension\@\@\@Z
      */
-    MCAPI ChunkBlenderFactory(class Dimension&);
+    MCAPI ChunkBlenderFactory(class Dimension&); // NOLINT
     /**
      * @symbol
      * ?getOrCreateChunkBlender\@ChunkBlenderFactory\@\@QEAA?AV?$shared_ptr\@VChunkBlender\@\@\@std\@\@AEBVChunkPos\@\@\@Z
      */
-    MCAPI class std::shared_ptr<class ChunkBlender> getOrCreateChunkBlender(class ChunkPos const&);
+    MCAPI class std::shared_ptr<class ChunkBlender> getOrCreateChunkBlender(class ChunkPos const&); // NOLINT
     /**
      * @symbol ?isClientSide\@ChunkBlenderFactory\@\@QEBA?B_NXZ
      */
-    MCAPI bool const isClientSide() const;
+    MCAPI bool const isClientSide() const; // NOLINT
 
     // private:
     /**
      * @symbol
      * ?_createChunkBlendingAttenuator\@ChunkBlenderFactory\@\@AEBA?AV?$shared_ptr\@VChunkBlender\@\@\@std\@\@AEBVChunkPos\@\@\@Z
      */
-    MCAPI class std::shared_ptr<class ChunkBlender> _createChunkBlendingAttenuator(class ChunkPos const&) const;
+    MCAPI class std::shared_ptr<class ChunkBlender>
+    _createChunkBlendingAttenuator(class ChunkPos const&) const; // NOLINT
     /**
      * @symbol
      * ?_finalizeChunkAttenuationData\@ChunkBlenderFactory\@\@AEBA?AV?$vector\@V?$array\@UAttenuationData\@ChunkBlenderUtil\@\@$03\@std\@\@V?$allocator\@V?$array\@UAttenuationData\@ChunkBlenderUtil\@\@$03\@std\@\@\@2\@\@std\@\@AEBV?$vector\@V?$array\@UIntermediateAttenuationData\@ChunkBlenderFactory\@\@$03\@std\@\@V?$allocator\@V?$array\@UIntermediateAttenuationData\@ChunkBlenderFactory\@\@$03\@std\@\@\@2\@\@3\@\@Z
@@ -62,7 +59,7 @@ public:
     MCAPI std::vector<class std::array<struct ChunkBlenderUtil::AttenuationData, 4>>
           _finalizeChunkAttenuationData(std::vector<
                                   class std::array<struct ChunkBlenderFactory::IntermediateAttenuationData, 4>> const&)
-        const;
+        const; // NOLINT
     /**
      * @symbol
      * ?_processDensityColumn\@ChunkBlenderFactory\@\@AEBAXAEAV?$vector\@V?$array\@UIntermediateAttenuationData\@ChunkBlenderFactory\@\@$03\@std\@\@V?$allocator\@V?$array\@UIntermediateAttenuationData\@ChunkBlenderFactory\@\@$03\@std\@\@\@2\@\@std\@\@AEBVBlendingData\@\@MU?$pair\@HH\@3\@2_N\@Z
@@ -74,7 +71,7 @@ public:
         struct std::pair<int, int>,
         struct std::pair<int, int>,
         bool
-    ) const;
+    ) const; // NOLINT
     /**
      * @symbol
      * ?_updateIntermediateAttenuationData\@ChunkBlenderFactory\@\@AEBAXAEAV?$vector\@V?$array\@UIntermediateAttenuationData\@ChunkBlenderFactory\@\@$03\@std\@\@V?$allocator\@V?$array\@UIntermediateAttenuationData\@ChunkBlenderFactory\@\@$03\@std\@\@\@2\@\@std\@\@AEBVChunkPos\@\@1AEBVBlendingData\@\@_N\@Z
@@ -85,7 +82,7 @@ public:
         class ChunkPos const&,
         class BlendingData const&,
         bool
-    ) const;
+    ) const; // NOLINT
 
 private:
 };

@@ -4,20 +4,19 @@
 
 class HeartbeatServerComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HEARTBEATSERVERCOMPONENT
 public:
+    // prevent constructor by default
     HeartbeatServerComponent& operator=(HeartbeatServerComponent const&) = delete;
     HeartbeatServerComponent(HeartbeatServerComponent const&)            = delete;
     HeartbeatServerComponent()                                           = delete;
-#endif
 
 public:
     /**
      * @symbol ??0HeartbeatServerComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI HeartbeatServerComponent(class HeartbeatServerComponent&&);
+    MCAPI HeartbeatServerComponent(class HeartbeatServerComponent&&); // NOLINT
     /**
      * @symbol ??1HeartbeatServerComponent\@\@QEAA\@XZ
      */
-    MCAPI ~HeartbeatServerComponent();
+    MCAPI ~HeartbeatServerComponent(); // NOLINT
 };

@@ -11,22 +11,21 @@ namespace cereal::internal {
 
 struct ReflectionContext {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CEREAL_INTERNAL_REFLECTIONCONTEXT
 public:
+    // prevent constructor by default
     ReflectionContext& operator=(ReflectionContext const&) = delete;
     ReflectionContext(ReflectionContext const&)            = delete;
     ReflectionContext()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ?from\@ReflectionContext\@internal\@cereal\@\@SAAEAU123\@AEAUReflectionCtx\@3\@\@Z
      */
-    MCAPI static struct cereal::internal::ReflectionContext& from(struct cereal::ReflectionCtx&);
+    MCAPI static struct cereal::internal::ReflectionContext& from(struct cereal::ReflectionCtx&); // NOLINT
     /**
      * @symbol ?from\@ReflectionContext\@internal\@cereal\@\@SAAEBU123\@AEBUReflectionCtx\@3\@\@Z
      */
-    MCAPI static struct cereal::internal::ReflectionContext const& from(struct cereal::ReflectionCtx const&);
+    MCAPI static struct cereal::internal::ReflectionContext const& from(struct cereal::ReflectionCtx const&); // NOLINT
 };
 
 }; // namespace cereal::internal

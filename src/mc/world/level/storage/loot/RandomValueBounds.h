@@ -9,32 +9,31 @@ namespace Json { class Value; }
 
 class RandomValueBounds {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMVALUEBOUNDS
 public:
+    // prevent constructor by default
     RandomValueBounds& operator=(RandomValueBounds const&) = delete;
     RandomValueBounds(RandomValueBounds const&)            = delete;
     RandomValueBounds()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ?deserialize\@RandomValueBounds\@\@QEAAXAEBVValue\@Json\@\@\@Z
      */
-    MCAPI void deserialize(class Json::Value const&);
+    MCAPI void deserialize(class Json::Value const&); // NOLINT
     /**
      * @symbol ?getFloat\@RandomValueBounds\@\@QEBAMAEAVRandom\@\@\@Z
      */
-    MCAPI float getFloat(class Random&) const;
+    MCAPI float getFloat(class Random&) const; // NOLINT
     /**
      * @symbol ?getInt\@RandomValueBounds\@\@QEBAHAEAVRandom\@\@\@Z
      */
-    MCAPI int getInt(class Random&) const;
+    MCAPI int getInt(class Random&) const; // NOLINT
     /**
      * @symbol ?getMax\@RandomValueBounds\@\@QEBAMXZ
      */
-    MCAPI float getMax() const;
+    MCAPI float getMax() const; // NOLINT
     /**
      * @symbol ?getMin\@RandomValueBounds\@\@QEBAMXZ
      */
-    MCAPI float getMin() const;
+    MCAPI float getMin() const; // NOLINT
 };

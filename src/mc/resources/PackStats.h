@@ -4,12 +4,9 @@
 
 class PackStats {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKSTATS
 public:
+    // prevent constructor by default
     PackStats& operator=(PackStats const&) = delete;
     PackStats(PackStats const&)            = delete;
     PackStats()                            = delete;
-#endif
-
-public:
 };

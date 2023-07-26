@@ -7,21 +7,20 @@
 
 class ShipwreckStart : public ::StructureStart {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHIPWRECKSTART
 public:
+    // prevent constructor by default
     ShipwreckStart& operator=(ShipwreckStart const&) = delete;
     ShipwreckStart(ShipwreckStart const&)            = delete;
     ShipwreckStart()                                 = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @symbol ??0ShipwreckStart\@\@QEAA\@AEBVBiomeSource\@\@AEAVRandom\@\@HHF\@Z
      */
-    MCAPI ShipwreckStart(class BiomeSource const&, class Random&, int, int, short);
+    MCAPI ShipwreckStart(class BiomeSource const&, class Random&, int, int, short); // NOLINT
 };

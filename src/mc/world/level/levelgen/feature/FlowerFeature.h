@@ -7,40 +7,40 @@
 
 class FlowerFeature : public ::Feature {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOWERFEATURE
 public:
+    // prevent constructor by default
     FlowerFeature& operator=(FlowerFeature const&) = delete;
     FlowerFeature(FlowerFeature const&)            = delete;
     FlowerFeature()                                = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?place\@FlowerFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOWERFEATURE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~FlowerFeature();
+    MCVAPI ~FlowerFeature(); // NOLINT
 #endif
     /**
      * @symbol ??0FlowerFeature\@\@QEAA\@AEBVBlock\@\@\@Z
      */
-    MCAPI FlowerFeature(class Block const&);
+    MCAPI FlowerFeature(class Block const&); // NOLINT
 
     // private:
     /**
      * @symbol ?_placeMushroom\@FlowerFeature\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@AEAVRandom\@\@\@Z
      */
-    MCAPI bool _placeMushroom(class BlockSource&, class BlockPos const&, class Block const&, class Random&) const;
+    MCAPI bool
+    _placeMushroom(class BlockSource&, class BlockPos const&, class Block const&, class Random&) const; // NOLINT
 
 private:
 };

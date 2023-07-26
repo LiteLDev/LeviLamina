@@ -4,16 +4,15 @@
 
 struct TaskStartInfoBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TASKSTARTINFOBASE
 public:
+    // prevent constructor by default
     TaskStartInfoBase& operator=(TaskStartInfoBase const&) = delete;
     TaskStartInfoBase(TaskStartInfoBase const&)            = delete;
     TaskStartInfoBase()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ?NoAffinity\@TaskStartInfoBase\@\@2Vid\@thread\@std\@\@B
      */
-    MCAPI static class std::thread::id const NoAffinity;
+    MCAPI static class std::thread::id const NoAffinity; // NOLINT
 };

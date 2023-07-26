@@ -7,32 +7,31 @@
 
 class IdleState : public ::PetSleepWithOwnerState {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IDLESTATE
 public:
+    // prevent constructor by default
     IdleState& operator=(IdleState const&) = delete;
     IdleState(IdleState const&)            = delete;
     IdleState()                            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?tick\@IdleState\@\@UEAAXXZ
      */
-    virtual void tick();
+    virtual void tick(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?start\@IdleState\@\@UEAAXXZ
      */
-    virtual void start();
+    virtual void start(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?stop\@PetSleepWithOwnerState\@\@UEAAXXZ
      */
-    virtual void stop();
+    virtual void stop(); // NOLINT
 };

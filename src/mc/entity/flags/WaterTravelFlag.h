@@ -4,12 +4,9 @@
 
 struct WaterTravelFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WATERTRAVELFLAG
 public:
+    // prevent constructor by default
     WaterTravelFlag& operator=(WaterTravelFlag const&) = delete;
     WaterTravelFlag(WaterTravelFlag const&)            = delete;
     WaterTravelFlag()                                  = delete;
-#endif
-
-public:
 };

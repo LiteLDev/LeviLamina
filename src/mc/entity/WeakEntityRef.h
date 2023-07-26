@@ -7,36 +7,35 @@
 
 class WeakEntityRef {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEAKENTITYREF
 public:
+    // prevent constructor by default
     WeakEntityRef& operator=(WeakEntityRef const&) = delete;
     WeakEntityRef(WeakEntityRef const&)            = delete;
     WeakEntityRef()                                = delete;
-#endif
 
 public:
     /**
      * @symbol ??0WeakEntityRef\@\@QEAA\@V?$WeakRefT\@UEntityRefTraits\@\@\@\@\@Z
      */
-    MCAPI WeakEntityRef(class WeakRefT<struct EntityRefTraits>);
+    MCAPI WeakEntityRef(class WeakRefT<struct EntityRefTraits>); // NOLINT
     /**
      * @symbol ??9WeakEntityRef\@\@QEBA_NV0\@\@Z
      */
-    MCAPI bool operator!=(class WeakEntityRef) const;
+    MCAPI bool operator!=(class WeakEntityRef) const; // NOLINT
     /**
      * @symbol ??4WeakEntityRef\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class WeakEntityRef& operator=(class WeakEntityRef&&);
+    MCAPI class WeakEntityRef& operator=(class WeakEntityRef&&); // NOLINT
     /**
      * @symbol ??8WeakEntityRef\@\@QEBA_NV?$WeakRefT\@UEntityRefTraits\@\@\@\@\@Z
      */
-    MCAPI bool operator==(class WeakRefT<struct EntityRefTraits>) const;
+    MCAPI bool operator==(class WeakRefT<struct EntityRefTraits>) const; // NOLINT
     /**
      * @symbol ??8WeakEntityRef\@\@QEBA_NV0\@\@Z
      */
-    MCAPI bool operator==(class WeakEntityRef) const;
+    MCAPI bool operator==(class WeakEntityRef) const; // NOLINT
     /**
      * @symbol ??1WeakEntityRef\@\@QEAA\@XZ
      */
-    MCAPI ~WeakEntityRef();
+    MCAPI ~WeakEntityRef(); // NOLINT
 };

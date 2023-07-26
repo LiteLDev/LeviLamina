@@ -4,34 +4,33 @@
 
 struct GameTestResult {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETESTRESULT
 public:
+    // prevent constructor by default
     GameTestResult() = delete;
-#endif
 
 public:
     /**
      * @symbol ??0GameTestResult\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI GameTestResult(struct GameTestResult const&);
+    MCAPI GameTestResult(struct GameTestResult const&); // NOLINT
     /**
      * @symbol ??4GameTestResult\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
-    MCAPI struct GameTestResult& operator=(struct GameTestResult const&);
+    MCAPI struct GameTestResult& operator=(struct GameTestResult const&); // NOLINT
     /**
      * @symbol ??4GameTestResult\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct GameTestResult& operator=(struct GameTestResult&&);
+    MCAPI struct GameTestResult& operator=(struct GameTestResult&&); // NOLINT
     /**
      * @symbol ??8GameTestResult\@\@QEBA_NAEBU0\@\@Z
      */
-    MCAPI bool operator==(struct GameTestResult const&) const;
+    MCAPI bool operator==(struct GameTestResult const&) const; // NOLINT
     /**
      * @symbol ??1GameTestResult\@\@QEAA\@XZ
      */
-    MCAPI ~GameTestResult();
+    MCAPI ~GameTestResult(); // NOLINT
     /**
      * @symbol ?bindType\@GameTestResult\@\@SAXXZ
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(); // NOLINT
 };

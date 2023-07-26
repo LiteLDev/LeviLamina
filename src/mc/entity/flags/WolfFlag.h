@@ -4,12 +4,9 @@
 
 struct WolfFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WOLFFLAG
 public:
+    // prevent constructor by default
     WolfFlag& operator=(WolfFlag const&) = delete;
     WolfFlag(WolfFlag const&)            = delete;
     WolfFlag()                           = delete;
-#endif
-
-public:
 };

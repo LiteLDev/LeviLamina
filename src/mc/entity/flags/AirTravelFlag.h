@@ -4,12 +4,9 @@
 
 struct AirTravelFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AIRTRAVELFLAG
 public:
+    // prevent constructor by default
     AirTravelFlag& operator=(AirTravelFlag const&) = delete;
     AirTravelFlag(AirTravelFlag const&)            = delete;
     AirTravelFlag()                                = delete;
-#endif
-
-public:
 };

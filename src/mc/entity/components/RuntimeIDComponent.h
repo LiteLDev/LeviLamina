@@ -4,12 +4,9 @@
 
 struct RuntimeIDComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RUNTIMEIDCOMPONENT
 public:
+    // prevent constructor by default
     RuntimeIDComponent& operator=(RuntimeIDComponent const&) = delete;
     RuntimeIDComponent(RuntimeIDComponent const&)            = delete;
     RuntimeIDComponent()                                     = delete;
-#endif
-
-public:
 };

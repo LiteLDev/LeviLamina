@@ -16,26 +16,25 @@ namespace Bedrock::Http {
 
 class HttpUrlValidator : public ::Bedrock::Http::DispatcherProcess {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_HTTP_HTTPURLVALIDATOR
 public:
+    // prevent constructor by default
     HttpUrlValidator& operator=(HttpUrlValidator const&) = delete;
     HttpUrlValidator(HttpUrlValidator const&)            = delete;
     HttpUrlValidator()                                   = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?send\@HttpUrlValidator\@Http\@Bedrock\@\@UEAA?AV?$shared_ptr\@V?$IAsyncResult\@VResponse\@Http\@Bedrock\@\@\@Threading\@Bedrock\@\@\@std\@\@$$QEAVRequest\@23\@\@Z
      */
     virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
-    send(class Bedrock::Http::Request&&);
+    send(class Bedrock::Http::Request&&); // NOLINT
 };
 
 }; // namespace Bedrock::Http

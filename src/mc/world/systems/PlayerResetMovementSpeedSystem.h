@@ -4,16 +4,15 @@
 
 class PlayerResetMovementSpeedSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERRESETMOVEMENTSPEEDSYSTEM
 public:
+    // prevent constructor by default
     PlayerResetMovementSpeedSystem& operator=(PlayerResetMovementSpeedSystem const&) = delete;
     PlayerResetMovementSpeedSystem(PlayerResetMovementSpeedSystem const&)            = delete;
     PlayerResetMovementSpeedSystem()                                                 = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@PlayerResetMovementSpeedSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
 };

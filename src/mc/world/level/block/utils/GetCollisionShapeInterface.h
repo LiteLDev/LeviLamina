@@ -4,12 +4,9 @@
 
 class GetCollisionShapeInterface {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GETCOLLISIONSHAPEINTERFACE
 public:
+    // prevent constructor by default
     GetCollisionShapeInterface& operator=(GetCollisionShapeInterface const&) = delete;
     GetCollisionShapeInterface(GetCollisionShapeInterface const&)            = delete;
     GetCollisionShapeInterface()                                             = delete;
-#endif
-
-public:
 };

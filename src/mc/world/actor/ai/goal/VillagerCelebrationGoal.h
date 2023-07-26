@@ -20,12 +20,11 @@ public:
     // VillagerCelebrationGoal inner types define
     class VillagerCelebrationDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VILLAGERCELEBRATIONGOAL_VILLAGERCELEBRATIONDEFINITION
     public:
+        // prevent constructor by default
         VillagerCelebrationDefinition& operator=(VillagerCelebrationDefinition const&) = delete;
         VillagerCelebrationDefinition(VillagerCelebrationDefinition const&)            = delete;
         VillagerCelebrationDefinition()                                                = delete;
-#endif
 
     public:
         /**
@@ -33,68 +32,67 @@ public:
          * ?buildSchema\@VillagerCelebrationDefinition\@VillagerCelebrationGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VVillagerCelebrationDefinition\@VillagerCelebrationGoal\@\@\@JsonUtil\@\@\@4\@\@Z
          */
         MCAPI static void
-        buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class VillagerCelebrationGoal::VillagerCelebrationDefinition>>&);
+        buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class VillagerCelebrationGoal::VillagerCelebrationDefinition>>&); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VILLAGERCELEBRATIONGOAL
 public:
+    // prevent constructor by default
     VillagerCelebrationGoal& operator=(VillagerCelebrationGoal const&) = delete;
     VillagerCelebrationGoal(VillagerCelebrationGoal const&)            = delete;
     VillagerCelebrationGoal()                                          = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?canUse\@VillagerCelebrationGoal\@\@UEAA_NXZ
      */
-    virtual bool canUse();
+    virtual bool canUse(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?canContinueToUse\@VillagerCelebrationGoal\@\@UEAA_NXZ
      */
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse(); // NOLINT
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3();
+    virtual void __unk_vfn_3(); // NOLINT
     /**
      * @vftbl 4
      * @symbol ?start\@VillagerCelebrationGoal\@\@UEAAXXZ
      */
-    virtual void start();
+    virtual void start(); // NOLINT
     /**
      * @vftbl 5
      * @symbol ?stop\@VillagerCelebrationGoal\@\@UEAAXXZ
      */
-    virtual void stop();
+    virtual void stop(); // NOLINT
     /**
      * @vftbl 6
      * @symbol ?tick\@VillagerCelebrationGoal\@\@UEAAXXZ
      */
-    virtual void tick();
+    virtual void tick(); // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?appendDebugInfo\@VillagerCelebrationGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string&) const; // NOLINT
 
     // private:
     /**
      * @symbol ?_launchFirework\@VillagerCelebrationGoal\@\@AEAAXXZ
      */
-    MCAPI void _launchFirework();
+    MCAPI void _launchFirework(); // NOLINT
     /**
      * @symbol ?_setNextFireworkTick\@VillagerCelebrationGoal\@\@AEAAXXZ
      */
-    MCAPI void _setNextFireworkTick();
+    MCAPI void _setNextFireworkTick(); // NOLINT
 
 private:
 };

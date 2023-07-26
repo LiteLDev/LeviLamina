@@ -12,28 +12,27 @@ namespace JsonUtil { class EmptyClass; }
 
 class AreaAttackDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AREAATTACKDEFINITION
 public:
+    // prevent constructor by default
     AreaAttackDefinition& operator=(AreaAttackDefinition const&) = delete;
     AreaAttackDefinition(AreaAttackDefinition const&)            = delete;
     AreaAttackDefinition()                                       = delete;
-#endif
 
 public:
     /**
      * @symbol ?initialize\@AreaAttackDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVAreaAttackComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class AreaAttackComponent&) const;
+    MCAPI void initialize(class EntityContext&, class AreaAttackComponent&) const; // NOLINT
     /**
      * @symbol
      * ?setDamageCause\@AreaAttackDefinition\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void setDamageCause(std::string const&);
+    MCAPI void setDamageCause(std::string const&); // NOLINT
     /**
      * @symbol
      * ?buildSchema\@AreaAttackDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VAreaAttackDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AreaAttackDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      class AreaAttackDefinition>>&); // NOLINT
 };

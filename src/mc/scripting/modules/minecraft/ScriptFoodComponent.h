@@ -18,65 +18,65 @@ namespace ScriptModuleMinecraft {
 
 class ScriptFoodComponent : public ::ScriptModuleMinecraft::ScriptItemComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTFOODCOMPONENT
 public:
+    // prevent constructor by default
     ScriptFoodComponent() = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTFOODCOMPONENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptFoodComponent();
+    MCVAPI ~ScriptFoodComponent(); // NOLINT
 #endif
     /**
      * @symbol
      * ??0ScriptFoodComponent\@ScriptModuleMinecraft\@\@QEAA\@V?$WeakTypedObjectHandle\@VScriptItemStack\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBVWeakLifetimeScope\@3\@\@Z
      */
     MCAPI
-    ScriptFoodComponent(class Scripting::WeakTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, class Scripting::WeakLifetimeScope const&);
+    ScriptFoodComponent(class Scripting::WeakTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, class Scripting::WeakLifetimeScope const&); // NOLINT
     /**
      * @symbol ??0ScriptFoodComponent\@ScriptModuleMinecraft\@\@QEAA\@AEBV01\@\@Z
      */
-    MCAPI ScriptFoodComponent(class ScriptModuleMinecraft::ScriptFoodComponent const&);
+    MCAPI ScriptFoodComponent(class ScriptModuleMinecraft::ScriptFoodComponent const&); // NOLINT
     /**
      * @symbol ?getCanAlwaysEat\@ScriptFoodComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@_N\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<bool> getCanAlwaysEat();
+    MCAPI class Scripting::Result<bool> getCanAlwaysEat(); // NOLINT
     /**
      * @symbol ?getNutrition\@ScriptFoodComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getNutrition();
+    MCAPI class Scripting::Result<int> getNutrition(); // NOLINT
     /**
      * @symbol ?getSaturationModifier\@ScriptFoodComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@M\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<float> getSaturationModifier();
+    MCAPI class Scripting::Result<float> getSaturationModifier(); // NOLINT
     /**
      * @symbol
      * ?getUsingConvertsToItem\@ScriptFoodComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<std::string> getUsingConvertsToItem();
+    MCAPI class Scripting::Result<std::string> getUsingConvertsToItem(); // NOLINT
     /**
      * @symbol ??4ScriptFoodComponent\@ScriptModuleMinecraft\@\@QEAAAEAV01\@AEBV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraft::ScriptFoodComponent&
-    operator=(class ScriptModuleMinecraft::ScriptFoodComponent const&);
+    operator=(class ScriptModuleMinecraft::ScriptFoodComponent const&); // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptFoodComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptFoodComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptFoodComponent> bind();
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptFoodComponent>
+    bind(); // NOLINT
     /**
      * @symbol
      * ?getTypeName\@ScriptFoodComponent\@ScriptModuleMinecraft\@\@SAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI static std::string const& getTypeName();
+    MCAPI static std::string const& getTypeName(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

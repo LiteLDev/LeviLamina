@@ -4,20 +4,19 @@
 
 struct ContainerValidationSlotData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERVALIDATIONSLOTDATA
 public:
+    // prevent constructor by default
     ContainerValidationSlotData& operator=(ContainerValidationSlotData const&) = delete;
     ContainerValidationSlotData(ContainerValidationSlotData const&)            = delete;
     ContainerValidationSlotData()                                              = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ContainerValidationSlotData\@\@QEAA\@W4ContainerEnumName\@\@H\@Z
      */
-    MCAPI ContainerValidationSlotData(enum class ContainerEnumName, int);
+    MCAPI ContainerValidationSlotData(enum class ContainerEnumName, int); // NOLINT
     /**
      * @symbol ?AUTOPLACE\@ContainerValidationSlotData\@\@2U1\@B
      */
-    MCAPI static struct ContainerValidationSlotData const AUTOPLACE;
+    MCAPI static struct ContainerValidationSlotData const AUTOPLACE; // NOLINT
 };

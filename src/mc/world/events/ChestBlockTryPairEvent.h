@@ -4,16 +4,15 @@
 
 struct ChestBlockTryPairEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHESTBLOCKTRYPAIREVENT
 public:
+    // prevent constructor by default
     ChestBlockTryPairEvent& operator=(ChestBlockTryPairEvent const&) = delete;
     ChestBlockTryPairEvent(ChestBlockTryPairEvent const&)            = delete;
     ChestBlockTryPairEvent()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol ??1ChestBlockTryPairEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ChestBlockTryPairEvent();
+    MCAPI ~ChestBlockTryPairEvent(); // NOLINT
 };

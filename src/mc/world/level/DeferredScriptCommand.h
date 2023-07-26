@@ -16,28 +16,27 @@ namespace Scripting { class WeakLifetimeScope; }
 
 class DeferredScriptCommand : public ::Command {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFERREDSCRIPTCOMMAND
 public:
+    // prevent constructor by default
     DeferredScriptCommand& operator=(DeferredScriptCommand const&) = delete;
     DeferredScriptCommand(DeferredScriptCommand const&)            = delete;
     DeferredScriptCommand()                                        = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?execute\@DeferredScriptCommand\@\@UEAAXAEAVMinecraftCommands\@\@\@Z
      */
-    virtual void execute(class MinecraftCommands&);
+    virtual void execute(class MinecraftCommands&); // NOLINT
     /**
      * @symbol
      * ??0DeferredScriptCommand\@\@QEAA\@V?$unique_ptr\@VScriptCommand\@\@U?$default_delete\@VScriptCommand\@\@\@std\@\@\@std\@\@V?$unique_ptr\@VCommandContext\@\@U?$default_delete\@VCommandContext\@\@\@std\@\@\@2\@VWeakLifetimeScope\@Scripting\@\@V?$Promise\@V?$StrongTypedObjectHandle\@UScriptCommandResult\@ScriptModuleMinecraft\@\@\@Scripting\@\@UScriptCommandError\@ScriptModuleMinecraft\@\@X\@5\@\@Z
      */
     MCAPI
-        DeferredScriptCommand(std::unique_ptr<class ScriptCommand>, std::unique_ptr<class CommandContext>, class Scripting::WeakLifetimeScope, class Scripting::Promise<class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptCommandResult>, struct ScriptModuleMinecraft::ScriptCommandError, void>);
+        DeferredScriptCommand(std::unique_ptr<class ScriptCommand>, std::unique_ptr<class CommandContext>, class Scripting::WeakLifetimeScope, class Scripting::Promise<class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptCommandResult>, struct ScriptModuleMinecraft::ScriptCommandError, void>); // NOLINT
 };

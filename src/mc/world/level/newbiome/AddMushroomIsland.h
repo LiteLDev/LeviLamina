@@ -2,22 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Biome;
+class BiomeRegistry;
+// clang-format on
+
 namespace OperationNodeFilters {
 
 struct AddMushroomIsland {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OPERATIONNODEFILTERS_ADDMUSHROOMISLAND
 public:
+    // prevent constructor by default
     AddMushroomIsland& operator=(AddMushroomIsland const&) = delete;
     AddMushroomIsland(AddMushroomIsland const&)            = delete;
     AddMushroomIsland()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ??0AddMushroomIsland\@OperationNodeFilters\@\@QEAA\@AEAVBiome\@\@AEBVBiomeRegistry\@\@\@Z
      */
-    MCAPI AddMushroomIsland(class Biome&, class BiomeRegistry const&);
+    MCAPI AddMushroomIsland(class Biome&, class BiomeRegistry const&); // NOLINT
 };
 
 }; // namespace OperationNodeFilters

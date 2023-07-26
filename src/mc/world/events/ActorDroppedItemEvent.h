@@ -4,16 +4,15 @@
 
 struct ActorDroppedItemEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDROPPEDITEMEVENT
 public:
+    // prevent constructor by default
     ActorDroppedItemEvent& operator=(ActorDroppedItemEvent const&) = delete;
     ActorDroppedItemEvent(ActorDroppedItemEvent const&)            = delete;
     ActorDroppedItemEvent()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ??1ActorDroppedItemEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorDroppedItemEvent();
+    MCAPI ~ActorDroppedItemEvent(); // NOLINT
 };

@@ -4,16 +4,15 @@
 
 struct PlayerFormCloseEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERFORMCLOSEEVENT
 public:
+    // prevent constructor by default
     PlayerFormCloseEvent& operator=(PlayerFormCloseEvent const&) = delete;
     PlayerFormCloseEvent(PlayerFormCloseEvent const&)            = delete;
     PlayerFormCloseEvent()                                       = delete;
-#endif
 
 public:
     /**
      * @symbol ??1PlayerFormCloseEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerFormCloseEvent();
+    MCAPI ~PlayerFormCloseEvent(); // NOLINT
 };

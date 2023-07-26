@@ -7,17 +7,16 @@
 
 class BarrelContainerScreenValidator : public ::ContainerScreenValidatorBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BARRELCONTAINERSCREENVALIDATOR
 public:
+    // prevent constructor by default
     BarrelContainerScreenValidator& operator=(BarrelContainerScreenValidator const&) = delete;
     BarrelContainerScreenValidator(BarrelContainerScreenValidator const&)            = delete;
     BarrelContainerScreenValidator()                                                 = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
 };

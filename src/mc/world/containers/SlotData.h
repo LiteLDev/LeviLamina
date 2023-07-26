@@ -4,23 +4,22 @@
 
 struct SlotData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLOTDATA
 public:
+    // prevent constructor by default
     SlotData& operator=(SlotData const&) = delete;
     SlotData(SlotData const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0SlotData\@\@QEAA\@XZ
      */
-    MCAPI SlotData();
+    MCAPI SlotData(); // NOLINT
     /**
      * @symbol ??1SlotData\@\@QEAA\@XZ
      */
-    MCAPI ~SlotData();
+    MCAPI ~SlotData(); // NOLINT
     /**
      * @symbol ?UNKNOWN_LOCATION\@SlotData\@\@2U1\@A
      */
-    MCAPI static struct SlotData UNKNOWN_LOCATION;
+    MCAPI static struct SlotData UNKNOWN_LOCATION; // NOLINT
 };

@@ -5,12 +5,9 @@
 template <int T0>
 class AggregateFeature {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGGREGATEFEATURE
 public:
+    // prevent constructor by default
     AggregateFeature& operator=(AggregateFeature const&) = delete;
     AggregateFeature(AggregateFeature const&)            = delete;
     AggregateFeature()                                   = delete;
-#endif
-
-public:
 };

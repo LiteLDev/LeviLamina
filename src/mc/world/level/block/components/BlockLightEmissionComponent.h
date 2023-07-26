@@ -4,16 +4,15 @@
 
 struct BlockLightEmissionComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKLIGHTEMISSIONCOMPONENT
 public:
+    // prevent constructor by default
     BlockLightEmissionComponent& operator=(BlockLightEmissionComponent const&) = delete;
     BlockLightEmissionComponent(BlockLightEmissionComponent const&)            = delete;
     BlockLightEmissionComponent()                                              = delete;
-#endif
 
 public:
     /**
      * @symbol ?usesNewComponentStorage\@BlockLightEmissionComponent\@\@SA_NXZ
      */
-    MCAPI static bool usesNewComponentStorage();
+    MCAPI static bool usesNewComponentStorage(); // NOLINT
 };

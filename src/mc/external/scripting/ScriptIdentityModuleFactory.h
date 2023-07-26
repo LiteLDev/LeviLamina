@@ -9,23 +9,21 @@ namespace mce { class UUID; }
 
 class ScriptIdentityModuleFactory {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTIDENTITYMODULEFACTORY
 public:
+    // prevent constructor by default
     ScriptIdentityModuleFactory& operator=(ScriptIdentityModuleFactory const&) = delete;
     ScriptIdentityModuleFactory(ScriptIdentityModuleFactory const&)            = delete;
     ScriptIdentityModuleFactory()                                              = delete;
-#endif
 
-public:
     // private:
 
 private:
     /**
      * @symbol ?ModuleName\@ScriptIdentityModuleFactory\@\@0PEBDEB
      */
-    MCAPI static char const* ModuleName;
+    MCAPI static char const* ModuleName; // NOLINT
     /**
      * @symbol ?ModuleUUID\@ScriptIdentityModuleFactory\@\@0VUUID\@mce\@\@B
      */
-    MCAPI static class mce::UUID const ModuleUUID;
+    MCAPI static class mce::UUID const ModuleUUID; // NOLINT
 };

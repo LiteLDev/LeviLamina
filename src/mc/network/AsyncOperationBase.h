@@ -12,12 +12,11 @@ namespace PositionTrackingDB {
 
 class AsyncOperationBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_POSITIONTRACKINGDB_ASYNCOPERATIONBASE
 public:
+    // prevent constructor by default
     AsyncOperationBase& operator=(AsyncOperationBase const&) = delete;
     AsyncOperationBase(AsyncOperationBase const&)            = delete;
     AsyncOperationBase()                                     = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POSITIONTRACKINGDB_ASYNCOPERATIONBASE
@@ -26,21 +25,21 @@ public:
      * ?_quit\@AsyncOperationBase\@PositionTrackingDB\@\@MEAA_NV?$weak_ptr\@VPositionTrackingDBServer\@PositionTrackingDB\@\@\@std\@\@AEAVTrackingRecord\@2\@\@Z
      */
     MCVAPI bool
-    _quit(class std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&);
+    _quit(class std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&); // NOLINT
     /**
      * @symbol ?isAsync\@AsyncOperationBase\@PositionTrackingDB\@\@UEBA_NXZ
      */
-    MCVAPI bool isAsync() const;
+    MCVAPI bool isAsync() const; // NOLINT
     /**
      * @symbol ?isComplete\@AsyncOperationBase\@PositionTrackingDB\@\@UEBA_NXZ
      */
-    MCVAPI bool isComplete() const;
+    MCVAPI bool isComplete() const; // NOLINT
     /**
      * @symbol
      * ?tick\@AsyncOperationBase\@PositionTrackingDB\@\@UEAA_NV?$weak_ptr\@VPositionTrackingDBServer\@PositionTrackingDB\@\@\@std\@\@AEAVTrackingRecord\@2\@\@Z
      */
     MCVAPI bool
-    tick(class std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&);
+    tick(class std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&); // NOLINT
 #endif
 };
 

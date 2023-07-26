@@ -6,14 +6,11 @@ namespace Core::Profile {
 
 class CounterTokenMarker {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORE_PROFILE_COUNTERTOKENMARKER
 public:
+    // prevent constructor by default
     CounterTokenMarker& operator=(CounterTokenMarker const&) = delete;
     CounterTokenMarker(CounterTokenMarker const&)            = delete;
     CounterTokenMarker()                                     = delete;
-#endif
-
-public:
 };
 
 }; // namespace Core::Profile

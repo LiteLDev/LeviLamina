@@ -17,173 +17,172 @@ namespace mce { class UUID; }
 
 class Minecraft {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFT
 public:
+    // prevent constructor by default
     Minecraft& operator=(Minecraft const&) = delete;
     Minecraft(Minecraft const&)            = delete;
     Minecraft()                            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2();
+    virtual void __unk_vfn_2(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?setSimTimePause\@Minecraft\@\@UEAAX_N\@Z
      */
-    virtual void setSimTimePause(bool);
+    virtual void setSimTimePause(bool); // NOLINT
     /**
      * @vftbl 4
      * @symbol ?setSimTimeScale\@Minecraft\@\@UEAAXM\@Z
      */
-    virtual void setSimTimeScale(float);
+    virtual void setSimTimeScale(float); // NOLINT
     /**
      * @vftbl 5
      * @symbol ?getSimPaused\@Minecraft\@\@UEBA_NXZ
      */
-    virtual bool getSimPaused() const;
+    virtual bool getSimPaused() const; // NOLINT
     /**
      * @vftbl 6
      * @symbol ?isOnlineClient\@Minecraft\@\@UEBA_NXZ
      */
-    virtual bool isOnlineClient() const;
+    virtual bool isOnlineClient() const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINECRAFT
     /**
      * @symbol ?getEntityRegistry\@Minecraft\@\@UEBA?AV?$StackRefResultT\@UEntityRegistryConstRefTraits\@\@\@\@XZ
      */
-    MCVAPI class StackRefResultT<struct EntityRegistryConstRefTraits> getEntityRegistry() const;
+    MCVAPI class StackRefResultT<struct EntityRegistryConstRefTraits> getEntityRegistry() const; // NOLINT
     /**
      * @symbol ?getEntityRegistry\@Minecraft\@\@UEAA?AV?$StackRefResultT\@UEntityRegistryRefTraits\@\@\@\@XZ
      */
-    MCVAPI class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry();
+    MCVAPI class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry(); // NOLINT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~Minecraft();
+    MCVAPI ~Minecraft(); // NOLINT
 #endif
     /**
      * @symbol
      * ??0Minecraft\@\@QEAA\@AEAVIMinecraftApp\@\@AEAVGameCallbacks\@\@AEAVAllowList\@\@PEAVPermissionsFile\@\@AEBV?$not_null\@V?$NonOwnerPointer\@VFilePathManager\@Core\@\@\@Bedrock\@\@\@gsl\@\@V?$duration\@_JU?$ratio\@$00$00\@std\@\@\@chrono\@std\@\@AEAVIMinecraftEventing\@\@AEAVNetworkSystem\@\@AEAVPacketSender\@\@W4SubClientId\@\@AEAVTimer\@\@AEAVTimer\@\@AEBV?$not_null\@V?$NonOwnerPointer\@$$CBVIContentTierManager\@\@\@Bedrock\@\@\@6\@PEAVServerMetrics\@\@\@Z
      */
     MCAPI
-    Minecraft(class IMinecraftApp&, class GameCallbacks&, class AllowList&, class PermissionsFile*, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const&, class std::chrono::duration<__int64, struct std::ratio<1, 1>>, class IMinecraftEventing&, class NetworkSystem&, class PacketSender&, enum class SubClientId, class Timer&, class Timer&, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentTierManager const>> const&, class ServerMetrics*);
+    Minecraft(class IMinecraftApp&, class GameCallbacks&, class AllowList&, class PermissionsFile*, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const&, class std::chrono::duration<__int64, struct std::ratio<1, 1>>, class IMinecraftEventing&, class NetworkSystem&, class PacketSender&, enum class SubClientId, class Timer&, class Timer&, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentTierManager const>> const&, class ServerMetrics*); // NOLINT
     /**
      * @symbol ?activateAllowList\@Minecraft\@\@QEAAXXZ
      */
-    MCAPI void activateAllowList();
+    MCAPI void activateAllowList(); // NOLINT
     /**
      * @symbol ?configureGameTest\@Minecraft\@\@QEAAXAEAVLevel\@\@AEBVExperiments\@\@\@Z
      */
-    MCAPI void configureGameTest(class Level&, class Experiments const&);
+    MCAPI void configureGameTest(class Level&, class Experiments const&); // NOLINT
     /**
      * @symbol
      * ?disconnectClient\@Minecraft\@\@QEAAXAEBVNetworkIdentifier\@\@W4DisconnectFailReason\@Connection\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void
-    disconnectClient(class NetworkIdentifier const&, enum class Connection::DisconnectFailReason, std::string const&);
+    disconnectClient(class NetworkIdentifier const&, enum class Connection::DisconnectFailReason, std::string const&); // NOLINT
     /**
      * @symbol ?earlyShutdownMainthread\@Minecraft\@\@QEAAXXZ
      */
-    MCAPI void earlyShutdownMainthread();
+    MCAPI void earlyShutdownMainthread(); // NOLINT
     /**
      * @symbol ?getCommands\@Minecraft\@\@QEAAAEAVMinecraftCommands\@\@XZ
      */
-    MCAPI class MinecraftCommands& getCommands();
+    MCAPI class MinecraftCommands& getCommands(); // NOLINT
     /**
      * @symbol ?getEventing\@Minecraft\@\@QEBAAEAVIMinecraftEventing\@\@XZ
      */
-    MCAPI class IMinecraftEventing& getEventing() const;
+    MCAPI class IMinecraftEventing& getEventing() const; // NOLINT
     /**
      * @symbol ?getGameModuleServer\@Minecraft\@\@QEAAAEAVGameModuleServer\@\@XZ
      */
-    MCAPI class GameModuleServer& getGameModuleServer();
+    MCAPI class GameModuleServer& getGameModuleServer(); // NOLINT
     /**
      * @symbol ?getGameTest\@Minecraft\@\@QEAA?AV?$optional_ref\@VMinecraftGameTest\@\@\@\@XZ
      */
-    MCAPI class optional_ref<class MinecraftGameTest> getGameTest();
+    MCAPI class optional_ref<class MinecraftGameTest> getGameTest(); // NOLINT
     /**
      * @symbol ?getLastTimestep\@Minecraft\@\@QEAANXZ
      */
-    MCAPI double getLastTimestep();
+    MCAPI double getLastTimestep(); // NOLINT
     /**
      * @symbol ?getLevel\@Minecraft\@\@QEBAPEAVLevel\@\@XZ
      */
-    MCAPI class Level* getLevel() const;
+    MCAPI class Level* getLevel() const; // NOLINT
     /**
      * @symbol ?getNetworkSystem\@Minecraft\@\@QEAAAEAVNetworkSystem\@\@XZ
      */
-    MCAPI class NetworkSystem& getNetworkSystem();
+    MCAPI class NetworkSystem& getNetworkSystem(); // NOLINT
     /**
      * @symbol ?getResourceLoader\@Minecraft\@\@QEAAAEAVResourcePackManager\@\@XZ
      */
-    MCAPI class ResourcePackManager& getResourceLoader();
+    MCAPI class ResourcePackManager& getResourceLoader(); // NOLINT
     /**
      * @symbol ?getServerNetworkHandler\@Minecraft\@\@QEAA?AV?$NonOwnerPointer\@VServerNetworkHandler\@\@\@Bedrock\@\@XZ
      */
-    MCAPI class Bedrock::NonOwnerPointer<class ServerNetworkHandler> getServerNetworkHandler();
+    MCAPI class Bedrock::NonOwnerPointer<class ServerNetworkHandler> getServerNetworkHandler(); // NOLINT
     /**
      * @symbol
      * ?getStructureManager\@Minecraft\@\@QEAA?AV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@XZ
      */
-    MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>> getStructureManager();
+    MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>> getStructureManager(); // NOLINT
     /**
      * @symbol ?hasCommands\@Minecraft\@\@QEAA_NXZ
      */
-    MCAPI bool hasCommands();
+    MCAPI bool hasCommands(); // NOLINT
     /**
      * @symbol
      * ?hostMultiplayer\@Minecraft\@\@QEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@U?$pair\@V?$unique_ptr\@VLevel\@\@U?$default_delete\@VLevel\@\@\@std\@\@\@std\@\@V?$OwnerPtrT\@UEntityRefTraits\@\@\@\@\@3\@PEAVPlayer\@\@AEBVUUID\@mce\@\@V?$unique_ptr\@VNetEventCallback\@\@U?$default_delete\@VNetEventCallback\@\@\@std\@\@\@3\@H_N5AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@V23\@AEBUConnectionDefinition\@\@AEBV?$unordered_map\@UPackIdVersion\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@U?$hash\@UPackIdVersion\@\@\@3\@U?$equal_to\@UPackIdVersion\@\@\@3\@V?$allocator\@U?$pair\@$$CBUPackIdVersion\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@3\@\@3\@AEAVScheduler\@\@PEAVTextFilteringProcessor\@\@AEBUNetworkPermissions\@\@\@Z
      */
     MCAPI bool
-    hostMultiplayer(std::string const&, struct std::pair<std::unique_ptr<class Level>, class OwnerPtrT<struct EntityRefTraits>>, class Player*, class mce::UUID const&, std::unique_ptr<class NetEventCallback>, int, bool, bool, std::vector<std::string> const&, std::string, struct ConnectionDefinition const&, class std::unordered_map<struct PackIdVersion, std::string, struct std::hash<struct PackIdVersion>, struct std::equal_to<struct PackIdVersion>, class std::allocator<struct std::pair<struct PackIdVersion const, std::string>>> const&, class Scheduler&, class TextFilteringProcessor*, struct NetworkPermissions const&);
+    hostMultiplayer(std::string const&, struct std::pair<std::unique_ptr<class Level>, class OwnerPtrT<struct EntityRefTraits>>, class Player*, class mce::UUID const&, std::unique_ptr<class NetEventCallback>, int, bool, bool, std::vector<std::string> const&, std::string, struct ConnectionDefinition const&, class std::unordered_map<struct PackIdVersion, std::string, struct std::hash<struct PackIdVersion>, struct std::equal_to<struct PackIdVersion>, class std::allocator<struct std::pair<struct PackIdVersion const, std::string>>> const&, class Scheduler&, class TextFilteringProcessor*, struct NetworkPermissions const&); // NOLINT
     /**
      * @symbol ?init\@Minecraft\@\@QEAAXXZ
      */
-    MCAPI void init();
+    MCAPI void init(); // NOLINT
     /**
      * @symbol ?initAsDedicatedServer\@Minecraft\@\@QEAAXXZ
      */
-    MCAPI void initAsDedicatedServer();
+    MCAPI void initAsDedicatedServer(); // NOLINT
     /**
      * @symbol ?isLeaveGameDone\@Minecraft\@\@QEBA_NXZ
      */
-    MCAPI bool isLeaveGameDone() const;
+    MCAPI bool isLeaveGameDone() const; // NOLINT
     /**
      * @symbol ?requestResourceReload\@Minecraft\@\@QEAAXXZ
      */
-    MCAPI void requestResourceReload();
+    MCAPI void requestResourceReload(); // NOLINT
     /**
      * @symbol
      * ?requestServerShutdown\@Minecraft\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void requestServerShutdown(std::string const&);
+    MCAPI void requestServerShutdown(std::string const&); // NOLINT
     /**
      * @symbol ?startLeaveGame\@Minecraft\@\@QEAAX_N\@Z
      */
-    MCAPI void startLeaveGame(bool);
+    MCAPI void startLeaveGame(bool); // NOLINT
     /**
      * @symbol ?update\@Minecraft\@\@QEAA_NXZ
      */
-    MCAPI bool update();
+    MCAPI bool update(); // NOLINT
 
     // private:
     /**
      * @symbol ?_tryCatchupMovementTicks\@Minecraft\@\@AEAAXXZ
      */
-    MCAPI void _tryCatchupMovementTicks();
+    MCAPI void _tryCatchupMovementTicks(); // NOLINT
 
 private:
 };

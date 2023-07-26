@@ -4,12 +4,9 @@
 
 struct NetworkPermissions {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKPERMISSIONS
 public:
+    // prevent constructor by default
     NetworkPermissions& operator=(NetworkPermissions const&) = delete;
     NetworkPermissions(NetworkPermissions const&)            = delete;
     NetworkPermissions()                                     = delete;
-#endif
-
-public:
 };

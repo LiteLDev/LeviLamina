@@ -4,16 +4,15 @@
 
 class HorsePreTravelSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HORSEPRETRAVELSYSTEM
 public:
+    // prevent constructor by default
     HorsePreTravelSystem& operator=(HorsePreTravelSystem const&) = delete;
     HorsePreTravelSystem(HorsePreTravelSystem const&)            = delete;
     HorsePreTravelSystem()                                       = delete;
-#endif
 
 public:
     /**
      * @symbol ?createHorsePreTravelSystem\@HorsePreTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createHorsePreTravelSystem();
+    MCAPI static struct TickingSystemWithInfo createHorsePreTravelSystem(); // NOLINT
 };

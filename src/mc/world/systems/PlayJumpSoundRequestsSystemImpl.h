@@ -13,6 +13,6 @@ namespace PlayJumpSoundRequestsSystemImpl {
  * ?doPlayJumpSoundRequestsSystem\@PlayJumpSoundRequestsSystemImpl\@\@YAXAEBVStrictEntityContext\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UGetAttachPosRequestComponent\@\@\@\@\@Z
  */
 MCAPI void
-doPlayJumpSoundRequestsSystem(class StrictEntityContext const&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct GetAttachPosRequestComponent>);
+doPlayJumpSoundRequestsSystem(class StrictEntityContext const&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct GetAttachPosRequestComponent>); // NOLINT
 
 }; // namespace PlayJumpSoundRequestsSystemImpl

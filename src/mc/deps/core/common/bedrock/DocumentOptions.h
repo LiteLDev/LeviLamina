@@ -6,14 +6,11 @@ namespace Bedrock::JSONObject {
 
 class DocumentOptions {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_JSONOBJECT_DOCUMENTOPTIONS
 public:
+    // prevent constructor by default
     DocumentOptions& operator=(DocumentOptions const&) = delete;
     DocumentOptions(DocumentOptions const&)            = delete;
     DocumentOptions()                                  = delete;
-#endif
-
-public:
 };
 
 }; // namespace Bedrock::JSONObject

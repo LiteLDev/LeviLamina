@@ -11,18 +11,17 @@
 
 class RaidTriggerSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAIDTRIGGERSYSTEM
 public:
+    // prevent constructor by default
     RaidTriggerSystem& operator=(RaidTriggerSystem const&) = delete;
     RaidTriggerSystem(RaidTriggerSystem const&)            = delete;
     RaidTriggerSystem()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@RaidTriggerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
 
     // private:
     /**
@@ -30,13 +29,13 @@ public:
      * ?_doRaidTriggerSystem\@RaidTriggerSystem\@\@CAXAEBUDimensionTypeComponent\@\@AEBUStateVectorComponent\@\@AEAVActorOwnerComponent\@\@AEBUVillageManagerComponent\@\@\@Z
      */
     MCAPI static void
-    _doRaidTriggerSystem(struct DimensionTypeComponent const&, struct StateVectorComponent const&, class ActorOwnerComponent&, struct VillageManagerComponent const&);
+    _doRaidTriggerSystem(struct DimensionTypeComponent const&, struct StateVectorComponent const&, class ActorOwnerComponent&, struct VillageManagerComponent const&); // NOLINT
     /**
      * @symbol
      * ?_tickRaidTriggerSystem\@RaidTriggerSystem\@\@CAXV?$OptionalGlobalT\@$$CBUVillageManagerComponent\@\@VEntityRegistryBase\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@$$CBV?$FlagComponent\@UActorTickedFlag\@\@\@\@$$CBV?$ActorFlagComponent\@URaidTriggerFlag\@\@\@\@\@\@$$CBUDimensionTypeComponent\@\@$$CBUStateVectorComponent\@\@VActorOwnerComponent\@\@\@\@\@Z
      */
     MCAPI static void
-        _tickRaidTriggerSystem(class OptionalGlobalT<struct VillageManagerComponent const, class EntityRegistryBase>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorTickedFlag> const, class ActorFlagComponent<struct RaidTriggerFlag> const>, struct DimensionTypeComponent const, struct StateVectorComponent const, class ActorOwnerComponent>);
+        _tickRaidTriggerSystem(class OptionalGlobalT<struct VillageManagerComponent const, class EntityRegistryBase>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorTickedFlag> const, class ActorFlagComponent<struct RaidTriggerFlag> const>, struct DimensionTypeComponent const, struct StateVectorComponent const, class ActorOwnerComponent>); // NOLINT
 
 private:
 };

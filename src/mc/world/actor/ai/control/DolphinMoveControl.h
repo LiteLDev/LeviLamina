@@ -7,49 +7,48 @@
 
 class DolphinMoveControl : public ::MoveControl {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DOLPHINMOVECONTROL
 public:
+    // prevent constructor by default
     DolphinMoveControl& operator=(DolphinMoveControl const&) = delete;
     DolphinMoveControl(DolphinMoveControl const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?tick\@DolphinMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
      */
-    virtual void tick(class MoveControlComponent&, class Mob&);
+    virtual void tick(class MoveControlComponent&, class Mob&); // NOLINT
     /**
      * @symbol ??0DolphinMoveControl\@\@QEAA\@XZ
      */
-    MCAPI DolphinMoveControl();
+    MCAPI DolphinMoveControl(); // NOLINT
 
     // private:
     /**
      * @symbol ?_calcRotX\@DolphinMoveControl\@\@AEAAMMMM\@Z
      */
-    MCAPI float _calcRotX(float, float, float);
+    MCAPI float _calcRotX(float, float, float); // NOLINT
     /**
      * @symbol ?_calcRotY\@DolphinMoveControl\@\@AEAAMMM\@Z
      */
-    MCAPI float _calcRotY(float, float);
+    MCAPI float _calcRotY(float, float); // NOLINT
     /**
      * @symbol ?_clearOfObstacles\@DolphinMoveControl\@\@AEBA_NAEBVMob\@\@MMH\@Z
      */
-    MCAPI bool _clearOfObstacles(class Mob const&, float, float, int) const;
+    MCAPI bool _clearOfObstacles(class Mob const&, float, float, int) const; // NOLINT
     /**
      * @symbol ?_isInWater\@DolphinMoveControl\@\@AEBA_NAEBVMob\@\@\@Z
      */
-    MCAPI bool _isInWater(class Mob const&) const;
+    MCAPI bool _isInWater(class Mob const&) const; // NOLINT
     /**
      * @symbol ?_setupBreach\@DolphinMoveControl\@\@AEAAXAEAVMob\@\@\@Z
      */
-    MCAPI void _setupBreach(class Mob&);
+    MCAPI void _setupBreach(class Mob&); // NOLINT
 
 private:
 };

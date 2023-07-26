@@ -4,12 +4,9 @@
 
 struct BlockCollisionBoxComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCOLLISIONBOXCOMPONENT
 public:
+    // prevent constructor by default
     BlockCollisionBoxComponent& operator=(BlockCollisionBoxComponent const&) = delete;
     BlockCollisionBoxComponent(BlockCollisionBoxComponent const&)            = delete;
     BlockCollisionBoxComponent()                                             = delete;
-#endif
-
-public:
 };

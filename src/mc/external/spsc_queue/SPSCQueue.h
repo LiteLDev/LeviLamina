@@ -5,12 +5,9 @@
 template <typename T0, int T1>
 struct SPSCQueue {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPSCQUEUE
 public:
+    // prevent constructor by default
     SPSCQueue& operator=(SPSCQueue const&) = delete;
     SPSCQueue(SPSCQueue const&)            = delete;
     SPSCQueue()                            = delete;
-#endif
-
-public:
 };

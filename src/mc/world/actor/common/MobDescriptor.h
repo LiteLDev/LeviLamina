@@ -4,22 +4,21 @@
 
 struct MobDescriptor {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBDESCRIPTOR
 public:
+    // prevent constructor by default
     MobDescriptor() = delete;
-#endif
 
 public:
     /**
      * @symbol ??0MobDescriptor\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI MobDescriptor(struct MobDescriptor const&);
+    MCAPI MobDescriptor(struct MobDescriptor const&); // NOLINT
     /**
      * @symbol ??4MobDescriptor\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
-    MCAPI struct MobDescriptor& operator=(struct MobDescriptor const&);
+    MCAPI struct MobDescriptor& operator=(struct MobDescriptor const&); // NOLINT
     /**
      * @symbol ??1MobDescriptor\@\@QEAA\@XZ
      */
-    MCAPI ~MobDescriptor();
+    MCAPI ~MobDescriptor(); // NOLINT
 };

@@ -6,22 +6,21 @@ namespace npc {
 
 struct UrlAction {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPC_URLACTION
 public:
+    // prevent constructor by default
     UrlAction& operator=(UrlAction const&) = delete;
     UrlAction(UrlAction const&)            = delete;
     UrlAction()                            = delete;
-#endif
 
 public:
     /**
      * @symbol ??9UrlAction\@npc\@\@QEBA_NAEBU01\@\@Z
      */
-    MCAPI bool operator!=(struct npc::UrlAction const&) const;
+    MCAPI bool operator!=(struct npc::UrlAction const&) const; // NOLINT
     /**
      * @symbol ??1UrlAction\@npc\@\@QEAA\@XZ
      */
-    MCAPI ~UrlAction();
+    MCAPI ~UrlAction(); // NOLINT
 };
 
 }; // namespace npc

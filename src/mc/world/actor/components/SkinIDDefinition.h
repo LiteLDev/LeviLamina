@@ -12,12 +12,11 @@ namespace JsonUtil { class EmptyClass; }
 
 struct SkinIDDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SKINIDDEFINITION
 public:
+    // prevent constructor by default
     SkinIDDefinition& operator=(SkinIDDefinition const&) = delete;
     SkinIDDefinition(SkinIDDefinition const&)            = delete;
     SkinIDDefinition()                                   = delete;
-#endif
 
 public:
     /**
@@ -26,5 +25,5 @@ public:
      */
     MCAPI static void
     buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct SkinIDDefinition>>&);
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct SkinIDDefinition>>&); // NOLINT
 };

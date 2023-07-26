@@ -2,22 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+enum class LogAreaID;
+// clang-format on
+
 namespace BedrockLog {
 
 class LogAreaFilter {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCKLOG_LOGAREAFILTER
 public:
+    // prevent constructor by default
     LogAreaFilter& operator=(LogAreaFilter const&) = delete;
     LogAreaFilter(LogAreaFilter const&)            = delete;
     LogAreaFilter()                                = delete;
-#endif
 
 public:
     /**
      * @symbol ?toggleFilter\@LogAreaFilter\@BedrockLog\@\@QEAAXW4LogAreaID\@\@\@Z
      */
-    MCAPI void toggleFilter(enum class LogAreaID);
+    MCAPI void toggleFilter(enum class LogAreaID); // NOLINT
 };
 
 }; // namespace BedrockLog

@@ -4,16 +4,15 @@
 
 class BlockCollisionsSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCOLLISIONSSYSTEM
 public:
+    // prevent constructor by default
     BlockCollisionsSystem& operator=(BlockCollisionsSystem const&) = delete;
     BlockCollisionsSystem(BlockCollisionsSystem const&)            = delete;
     BlockCollisionsSystem()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ?createBlockCollisionsSystem\@BlockCollisionsSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createBlockCollisionsSystem();
+    MCAPI static struct TickingSystemWithInfo createBlockCollisionsSystem(); // NOLINT
 };

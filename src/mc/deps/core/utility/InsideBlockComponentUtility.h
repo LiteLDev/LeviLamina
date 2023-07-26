@@ -12,23 +12,23 @@ namespace InsideBlockComponentUtility {
  * @symbol
  * ?entityInside\@InsideBlockComponentUtility\@\@YAXAEBV?$vector\@UInsideBlockData\@\@V?$allocator\@UInsideBlockData\@\@\@std\@\@\@std\@\@AEAVActor\@\@\@Z
  */
-MCAPI void entityInside(std::vector<struct InsideBlockData> const&, class Actor&);
+MCAPI void entityInside(std::vector<struct InsideBlockData> const&, class Actor&); // NOLINT
 /**
  * @symbol
  * ?entityInsideLegacyRedirect\@InsideBlockComponentUtility\@\@YAXAEBU?$InsideBlockWithPosAndBlockComponent\@USweetBerryBushBlockFlag\@\@\@\@AEAVActorOwnerComponent\@\@\@Z
  */
 MCAPI void
-entityInsideLegacyRedirect(struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag> const&, class ActorOwnerComponent&);
+entityInsideLegacyRedirect(struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag> const&, class ActorOwnerComponent&); // NOLINT
 /**
  * @symbol
  * ?entityInsideLegacyRedirect\@InsideBlockComponentUtility\@\@YAXAEBUInsideGenericBlockComponent\@\@AEAVActorOwnerComponent\@\@\@Z
  */
-MCAPI void entityInsideLegacyRedirect(struct InsideGenericBlockComponent const&, class ActorOwnerComponent&);
+MCAPI void entityInsideLegacyRedirect(struct InsideGenericBlockComponent const&, class ActorOwnerComponent&); // NOLINT
 /**
  * @symbol
  * ?entityInsideLegacyRedirect\@InsideBlockComponentUtility\@\@YAXAEBU?$InsideBlockWithPosAndBlockComponent\@UEndPortalBlockFlag\@\@\@\@AEAVActorOwnerComponent\@\@\@Z
  */
 MCAPI void
-entityInsideLegacyRedirect(struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag> const&, class ActorOwnerComponent&);
+entityInsideLegacyRedirect(struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag> const&, class ActorOwnerComponent&); // NOLINT
 
 }; // namespace InsideBlockComponentUtility

@@ -4,12 +4,9 @@
 
 class ItemStackNetManagerScreen {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKNETMANAGERSCREEN
 public:
+    // prevent constructor by default
     ItemStackNetManagerScreen& operator=(ItemStackNetManagerScreen const&) = delete;
     ItemStackNetManagerScreen(ItemStackNetManagerScreen const&)            = delete;
     ItemStackNetManagerScreen()                                            = delete;
-#endif
-
-public:
 };

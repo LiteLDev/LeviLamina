@@ -6,14 +6,11 @@ namespace AgentComponents::Actions {
 
 struct DropAll {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMPONENTS_ACTIONS_DROPALL
 public:
+    // prevent constructor by default
     DropAll& operator=(DropAll const&) = delete;
     DropAll(DropAll const&)            = delete;
     DropAll()                          = delete;
-#endif
-
-public:
 };
 
 }; // namespace AgentComponents::Actions

@@ -13,23 +13,22 @@ namespace Core { class Path; }
 
 class ZipPackAccessStrategyOwningFileAccess : public ::ZipPackAccessStrategy {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ZIPPACKACCESSSTRATEGYOWNINGFILEACCESS
 public:
+    // prevent constructor by default
     ZipPackAccessStrategyOwningFileAccess& operator=(ZipPackAccessStrategyOwningFileAccess const&) = delete;
     ZipPackAccessStrategyOwningFileAccess(ZipPackAccessStrategyOwningFileAccess const&)            = delete;
     ZipPackAccessStrategyOwningFileAccess()                                                        = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @symbol
      * ??0ZipPackAccessStrategyOwningFileAccess\@\@QEAA\@V?$shared_ptr\@VIFileAccess\@\@\@std\@\@AEBVResourceLocation\@\@AEBVPath\@Core\@\@\@Z
      */
     MCAPI
-    ZipPackAccessStrategyOwningFileAccess(class std::shared_ptr<class IFileAccess>, class ResourceLocation const&, class Core::Path const&);
+    ZipPackAccessStrategyOwningFileAccess(class std::shared_ptr<class IFileAccess>, class ResourceLocation const&, class Core::Path const&); // NOLINT
 };

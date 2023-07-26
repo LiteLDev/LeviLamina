@@ -4,12 +4,9 @@
 
 class SoundItem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SOUNDITEM
 public:
+    // prevent constructor by default
     SoundItem& operator=(SoundItem const&) = delete;
     SoundItem(SoundItem const&)            = delete;
     SoundItem()                            = delete;
-#endif
-
-public:
 };

@@ -12,19 +12,18 @@ namespace JsonUtil { class EmptyClass; }
 
 struct FloatsInLiquidDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOATSINLIQUIDDEFINITION
 public:
+    // prevent constructor by default
     FloatsInLiquidDefinition& operator=(FloatsInLiquidDefinition const&) = delete;
     FloatsInLiquidDefinition(FloatsInLiquidDefinition const&)            = delete;
     FloatsInLiquidDefinition()                                           = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?buildSchema\@FloatsInLiquidDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UFloatsInLiquidDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct FloatsInLiquidDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      struct FloatsInLiquidDefinition>>&); // NOLINT
 };

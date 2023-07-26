@@ -4,12 +4,9 @@
 
 class DisplayLoggedErrorManager {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DISPLAYLOGGEDERRORMANAGER
 public:
+    // prevent constructor by default
     DisplayLoggedErrorManager& operator=(DisplayLoggedErrorManager const&) = delete;
     DisplayLoggedErrorManager(DisplayLoggedErrorManager const&)            = delete;
     DisplayLoggedErrorManager()                                            = delete;
-#endif
-
-public:
 };

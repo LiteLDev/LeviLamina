@@ -4,24 +4,23 @@
 
 class SensingComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SENSINGCOMPONENT
 public:
+    // prevent constructor by default
     SensingComponent& operator=(SensingComponent const&) = delete;
     SensingComponent(SensingComponent const&)            = delete;
     SensingComponent()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ?canSee\@SensingComponent\@\@QEAA_NAEAVMob\@\@AEBVActor\@\@\@Z
      */
-    MCAPI bool canSee(class Mob&, class Actor const&);
+    MCAPI bool canSee(class Mob&, class Actor const&); // NOLINT
     /**
      * @symbol ?reset\@SensingComponent\@\@QEAAXXZ
      */
-    MCAPI void reset();
+    MCAPI void reset(); // NOLINT
     /**
      * @symbol ?withinFOV\@SensingComponent\@\@QEAA_NAEAVMob\@\@AEBVVec3\@\@M\@Z
      */
-    MCAPI bool withinFOV(class Mob&, class Vec3 const&, float);
+    MCAPI bool withinFOV(class Mob&, class Vec3 const&, float); // NOLINT
 };

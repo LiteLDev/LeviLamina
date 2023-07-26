@@ -7,39 +7,38 @@
 
 class EnchantmentInstance {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCHANTMENTINSTANCE
 public:
+    // prevent constructor by default
     EnchantmentInstance& operator=(EnchantmentInstance const&) = delete;
     EnchantmentInstance(EnchantmentInstance const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0EnchantmentInstance\@\@QEAA\@XZ
      */
-    MCAPI EnchantmentInstance();
+    MCAPI EnchantmentInstance(); // NOLINT
     /**
      * @symbol ??0EnchantmentInstance\@\@QEAA\@W4Type\@Enchant\@\@H\@Z
      */
-    MCAPI EnchantmentInstance(enum class Enchant::Type, int);
+    MCAPI EnchantmentInstance(enum class Enchant::Type, int); // NOLINT
     /**
      * @symbol ?getEnchantLevel\@EnchantmentInstance\@\@QEBAHXZ
      */
-    MCAPI int getEnchantLevel() const;
+    MCAPI int getEnchantLevel() const; // NOLINT
     /**
      * @symbol ?getEnchantType\@EnchantmentInstance\@\@QEBA?AW4Type\@Enchant\@\@XZ
      */
-    MCAPI enum class Enchant::Type getEnchantType() const;
+    MCAPI enum class Enchant::Type getEnchantType() const; // NOLINT
     /**
      * @symbol ??8EnchantmentInstance\@\@QEBA_NAEBV0\@\@Z
      */
-    MCAPI bool operator==(class EnchantmentInstance const&) const;
+    MCAPI bool operator==(class EnchantmentInstance const&) const; // NOLINT
     /**
      * @symbol ?setEnchantLevel\@EnchantmentInstance\@\@QEAAXH\@Z
      */
-    MCAPI void setEnchantLevel(int);
+    MCAPI void setEnchantLevel(int); // NOLINT
     /**
      * @symbol ?setEnchantType\@EnchantmentInstance\@\@QEAAXW4Type\@Enchant\@\@\@Z
      */
-    MCAPI void setEnchantType(enum class Enchant::Type);
+    MCAPI void setEnchantType(enum class Enchant::Type); // NOLINT
 };

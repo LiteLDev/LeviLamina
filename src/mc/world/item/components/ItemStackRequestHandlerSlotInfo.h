@@ -4,20 +4,19 @@
 
 struct ItemStackRequestHandlerSlotInfo {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTHANDLERSLOTINFO
 public:
+    // prevent constructor by default
     ItemStackRequestHandlerSlotInfo& operator=(ItemStackRequestHandlerSlotInfo const&) = delete;
     ItemStackRequestHandlerSlotInfo(ItemStackRequestHandlerSlotInfo const&)            = delete;
     ItemStackRequestHandlerSlotInfo()                                                  = delete;
-#endif
 
 public:
     /**
      * @symbol ??BItemStackRequestHandlerSlotInfo\@\@QEBA_NXZ
      */
-    MCAPI operator bool() const;
+    MCAPI operator bool() const; // NOLINT
     /**
      * @symbol ??1ItemStackRequestHandlerSlotInfo\@\@QEAA\@XZ
      */
-    MCAPI ~ItemStackRequestHandlerSlotInfo();
+    MCAPI ~ItemStackRequestHandlerSlotInfo(); // NOLINT
 };

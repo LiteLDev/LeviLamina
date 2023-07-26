@@ -12,48 +12,46 @@ public:
     // BlockState inner types define
     struct StateListNode {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSTATE_STATELISTNODE
     public:
+        // prevent constructor by default
         StateListNode& operator=(StateListNode const&) = delete;
         StateListNode(StateListNode const&)            = delete;
         StateListNode()                                = delete;
-#endif
 
     public:
         /**
          * @symbol ??0StateListNode\@BlockState\@\@QEAA\@PEAV1\@\@Z
          */
-        MCAPI StateListNode(class BlockState*);
+        MCAPI StateListNode(class BlockState*); // NOLINT
         /**
          * @symbol ??1StateListNode\@BlockState\@\@QEAA\@XZ
          */
-        MCAPI ~StateListNode();
+        MCAPI ~StateListNode(); // NOLINT
         /**
          * @symbol ?mHead\@StateListNode\@BlockState\@\@2PEAU12\@EA
          */
-        MCAPI static struct BlockState::StateListNode* mHead;
+        MCAPI static struct BlockState::StateListNode* mHead; // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSTATE
 public:
+    // prevent constructor by default
     BlockState& operator=(BlockState const&) = delete;
     BlockState(BlockState const&)            = delete;
     BlockState()                             = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSTATE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~BlockState();
+    MCVAPI ~BlockState(); // NOLINT
 #endif
     /**
      * @symbol ?forEachState\@BlockState\@\@SAXV?$function\@$$A6A_NAEBVBlockState\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI static void forEachState(class std::function<bool(class BlockState const&)>);
+    MCAPI static void forEachState(class std::function<bool(class BlockState const&)>); // NOLINT
     /**
      * @symbol ?getState\@BlockState\@\@SAPEBV1\@AEBVHashedString\@\@\@Z
      */
-    MCAPI static class BlockState const* getState(class HashedString const&);
+    MCAPI static class BlockState const* getState(class HashedString const&); // NOLINT
 };

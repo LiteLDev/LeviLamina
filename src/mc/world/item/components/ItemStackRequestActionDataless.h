@@ -5,12 +5,9 @@
 template <int T0>
 class ItemStackRequestActionDataless {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONDATALESS
 public:
+    // prevent constructor by default
     ItemStackRequestActionDataless& operator=(ItemStackRequestActionDataless const&) = delete;
     ItemStackRequestActionDataless(ItemStackRequestActionDataless const&)            = delete;
     ItemStackRequestActionDataless()                                                 = delete;
-#endif
-
-public:
 };

@@ -12,15 +12,15 @@ namespace Bedrock::PlatformUtils {
  * @symbol
  * ?getExternalStoragePath\@PlatformUtils\@Bedrock\@\@YAAEBV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
  */
-MCAPI class Core::PathBuffer<std::string> const& getExternalStoragePath();
+MCAPI class Core::PathBuffer<std::string> const& getExternalStoragePath(); // NOLINT
 /**
  * @symbol
  * ?getPackageFamilyName\@PlatformUtils\@Bedrock\@\@YAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
  */
-MCAPI std::string const& getPackageFamilyName();
+MCAPI std::string const& getPackageFamilyName(); // NOLINT
 /**
  * @symbol ?isCentennial\@PlatformUtils\@Bedrock\@\@YA_NXZ
  */
-MCAPI bool isCentennial();
+MCAPI bool isCentennial(); // NOLINT
 
 }; // namespace Bedrock::PlatformUtils

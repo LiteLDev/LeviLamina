@@ -11,24 +11,23 @@ namespace BlockCreativeGroupVersioning {
 
 class BlockCreativeGroup11920Upgrade {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCREATIVEGROUPVERSIONING_BLOCKCREATIVEGROUP11920UPGRADE
 public:
+    // prevent constructor by default
     BlockCreativeGroup11920Upgrade& operator=(BlockCreativeGroup11920Upgrade const&) = delete;
     BlockCreativeGroup11920Upgrade(BlockCreativeGroup11920Upgrade const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?previousSchema\@BlockCreativeGroup11920Upgrade\@BlockCreativeGroupVersioning\@\@UEBAXAEAVSchemaFactory\@cereal\@\@\@Z
      */
-    virtual void previousSchema(class cereal::SchemaFactory&) const;
+    virtual void previousSchema(class cereal::SchemaFactory&) const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
@@ -37,11 +36,11 @@ public:
     virtual bool upgradeToNext(class rapidjson::GenericDocument<
                                struct rapidjson::UTF8<char>,
                                class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>,
-                               class rapidjson::CrtAllocator>&) const;
+                               class rapidjson::CrtAllocator>&) const; // NOLINT
     /**
      * @symbol ??0BlockCreativeGroup11920Upgrade\@BlockCreativeGroupVersioning\@\@QEAA\@XZ
      */
-    MCAPI BlockCreativeGroup11920Upgrade();
+    MCAPI BlockCreativeGroup11920Upgrade(); // NOLINT
 };
 
 }; // namespace BlockCreativeGroupVersioning

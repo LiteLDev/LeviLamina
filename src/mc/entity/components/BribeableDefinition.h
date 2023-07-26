@@ -12,27 +12,26 @@ namespace JsonUtil { class EmptyClass; }
 
 class BribeableDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BRIBEABLEDEFINITION
 public:
+    // prevent constructor by default
     BribeableDefinition& operator=(BribeableDefinition const&) = delete;
     BribeableDefinition(BribeableDefinition const&)            = delete;
     BribeableDefinition()                                      = delete;
-#endif
 
 public:
     /**
      * @symbol ?addBribeItem\@BribeableDefinition\@\@QEAAXAEBVItemDescriptor\@\@\@Z
      */
-    MCAPI void addBribeItem(class ItemDescriptor const&);
+    MCAPI void addBribeItem(class ItemDescriptor const&); // NOLINT
     /**
      * @symbol ?initialize\@BribeableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVBribeableComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class BribeableComponent&) const;
+    MCAPI void initialize(class EntityContext&, class BribeableComponent&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@BribeableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VBribeableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BribeableDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      class BribeableDefinition>>&); // NOLINT
 };

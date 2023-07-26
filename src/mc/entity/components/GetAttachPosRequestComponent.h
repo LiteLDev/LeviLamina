@@ -4,16 +4,15 @@
 
 struct GetAttachPosRequestComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GETATTACHPOSREQUESTCOMPONENT
 public:
+    // prevent constructor by default
     GetAttachPosRequestComponent& operator=(GetAttachPosRequestComponent const&) = delete;
     GetAttachPosRequestComponent(GetAttachPosRequestComponent const&)            = delete;
     GetAttachPosRequestComponent()                                               = delete;
-#endif
 
 public:
     /**
      * @symbol ??4GetAttachPosRequestComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct GetAttachPosRequestComponent& operator=(struct GetAttachPosRequestComponent&&);
+    MCAPI struct GetAttachPosRequestComponent& operator=(struct GetAttachPosRequestComponent&&); // NOLINT
 };

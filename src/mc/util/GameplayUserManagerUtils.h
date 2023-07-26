@@ -8,6 +8,6 @@ namespace GameplayUserManagerUtils {
  * ?countUsersWithMatchingNetworkId\@GameplayUserManagerUtils\@\@YA_KAEBVGameplayUserManager\@\@AEBVNetworkIdentifier\@\@\@Z
  */
 MCAPI unsigned __int64
-countUsersWithMatchingNetworkId(class GameplayUserManager const&, class NetworkIdentifier const&);
+countUsersWithMatchingNetworkId(class GameplayUserManager const&, class NetworkIdentifier const&); // NOLINT
 
 }; // namespace GameplayUserManagerUtils

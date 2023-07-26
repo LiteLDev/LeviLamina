@@ -4,12 +4,9 @@
 
 class ActorPermutation {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORPERMUTATION
 public:
+    // prevent constructor by default
     ActorPermutation& operator=(ActorPermutation const&) = delete;
     ActorPermutation(ActorPermutation const&)            = delete;
     ActorPermutation()                                   = delete;
-#endif
-
-public:
 };

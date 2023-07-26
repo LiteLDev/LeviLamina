@@ -7,26 +7,25 @@
 
 class IcePatchFeature : public ::Feature {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICEPATCHFEATURE
 public:
+    // prevent constructor by default
     IcePatchFeature& operator=(IcePatchFeature const&) = delete;
     IcePatchFeature(IcePatchFeature const&)            = delete;
     IcePatchFeature()                                  = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?place\@IcePatchFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
     /**
      * @symbol ??0IcePatchFeature\@\@QEAA\@H\@Z
      */
-    MCAPI IcePatchFeature(int);
+    MCAPI IcePatchFeature(int); // NOLINT
 };

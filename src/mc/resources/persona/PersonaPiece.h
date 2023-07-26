@@ -4,23 +4,22 @@
 
 class PersonaPiece {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERSONAPIECE
 public:
+    // prevent constructor by default
     PersonaPiece& operator=(PersonaPiece const&) = delete;
     PersonaPiece(PersonaPiece const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0PersonaPiece\@\@QEAA\@XZ
      */
-    MCAPI PersonaPiece();
+    MCAPI PersonaPiece(); // NOLINT
     /**
      * @symbol ??1PersonaPiece\@\@QEAA\@XZ
      */
-    MCAPI ~PersonaPiece();
+    MCAPI ~PersonaPiece(); // NOLINT
     /**
      * @symbol ?INVALID_PIECE\@PersonaPiece\@\@2V1\@B
      */
-    MCAPI static class PersonaPiece const INVALID_PIECE;
+    MCAPI static class PersonaPiece const INVALID_PIECE; // NOLINT
 };

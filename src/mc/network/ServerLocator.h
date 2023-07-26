@@ -4,26 +4,25 @@
 
 class ServerLocator {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERLOCATOR
 public:
+    // prevent constructor by default
     ServerLocator& operator=(ServerLocator const&) = delete;
     ServerLocator(ServerLocator const&)            = delete;
     ServerLocator()                                = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERLOCATOR
     /**
      * @symbol ?_onDisable\@ServerLocator\@\@EEAAXXZ
      */
-    MCVAPI void _onDisable();
+    MCVAPI void _onDisable(); // NOLINT
     /**
      * @symbol ?_onEnable\@ServerLocator\@\@EEAAXXZ
      */
-    MCVAPI void _onEnable();
+    MCVAPI void _onEnable(); // NOLINT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ServerLocator();
+    MCVAPI ~ServerLocator(); // NOLINT
 #endif
 };

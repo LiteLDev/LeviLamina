@@ -4,16 +4,15 @@
 
 struct MolangMemberAccessor {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGMEMBERACCESSOR
 public:
+    // prevent constructor by default
     MolangMemberAccessor& operator=(MolangMemberAccessor const&) = delete;
     MolangMemberAccessor(MolangMemberAccessor const&)            = delete;
     MolangMemberAccessor()                                       = delete;
-#endif
 
 public:
     /**
      * @symbol ??1MolangMemberAccessor\@\@QEAA\@XZ
      */
-    MCAPI ~MolangMemberAccessor();
+    MCAPI ~MolangMemberAccessor(); // NOLINT
 };

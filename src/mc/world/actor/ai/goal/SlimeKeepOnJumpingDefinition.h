@@ -12,25 +12,24 @@ namespace JsonUtil { class EmptyClass; }
 
 class SlimeKeepOnJumpingDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLIMEKEEPONJUMPINGDEFINITION
 public:
+    // prevent constructor by default
     SlimeKeepOnJumpingDefinition& operator=(SlimeKeepOnJumpingDefinition const&) = delete;
     SlimeKeepOnJumpingDefinition(SlimeKeepOnJumpingDefinition const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0SlimeKeepOnJumpingDefinition\@\@QEAA\@XZ
      */
-    MCAPI SlimeKeepOnJumpingDefinition();
+    MCAPI SlimeKeepOnJumpingDefinition(); // NOLINT
     /**
      * @symbol ?initialize\@SlimeKeepOnJumpingDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVSlimeKeepOnJumpingGoal\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class SlimeKeepOnJumpingGoal&) const;
+    MCAPI void initialize(class EntityContext&, class SlimeKeepOnJumpingGoal&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@SlimeKeepOnJumpingDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VSlimeKeepOnJumpingDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void
-    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeKeepOnJumpingDefinition>>&);
+    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeKeepOnJumpingDefinition>>&); // NOLINT
 };

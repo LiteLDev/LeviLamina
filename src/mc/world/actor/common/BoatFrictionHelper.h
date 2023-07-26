@@ -6,6 +6,6 @@ namespace BoatFrictionHelper {
 /**
  * @symbol ?getFrictionBasedOnCollision\@BoatFrictionHelper\@\@YAMAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
  */
-MCAPI float getFrictionBasedOnCollision(class BlockSource&, class BlockPos const&);
+MCAPI float getFrictionBasedOnCollision(class BlockSource&, class BlockPos const&); // NOLINT
 
 }; // namespace BoatFrictionHelper

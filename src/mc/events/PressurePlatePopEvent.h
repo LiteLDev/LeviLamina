@@ -4,16 +4,15 @@
 
 struct PressurePlatePopEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PRESSUREPLATEPOPEVENT
 public:
+    // prevent constructor by default
     PressurePlatePopEvent& operator=(PressurePlatePopEvent const&) = delete;
     PressurePlatePopEvent(PressurePlatePopEvent const&)            = delete;
     PressurePlatePopEvent()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ??1PressurePlatePopEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PressurePlatePopEvent();
+    MCAPI ~PressurePlatePopEvent(); // NOLINT
 };

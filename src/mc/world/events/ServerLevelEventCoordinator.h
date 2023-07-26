@@ -4,20 +4,19 @@
 
 class ServerLevelEventCoordinator {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERLEVELEVENTCOORDINATOR
 public:
+    // prevent constructor by default
     ServerLevelEventCoordinator& operator=(ServerLevelEventCoordinator const&) = delete;
     ServerLevelEventCoordinator(ServerLevelEventCoordinator const&)            = delete;
     ServerLevelEventCoordinator()                                              = delete;
-#endif
 
 public:
     /**
      * @symbol ?sendLevelAddedPlayer\@ServerLevelEventCoordinator\@\@QEAAXAEAVLevel\@\@AEAVPlayer\@\@\@Z
      */
-    MCAPI void sendLevelAddedPlayer(class Level&, class Player&);
+    MCAPI void sendLevelAddedPlayer(class Level&, class Player&); // NOLINT
     /**
      * @symbol ?sendLevelRemovedPlayer\@ServerLevelEventCoordinator\@\@QEAAXAEAVLevel\@\@AEAVPlayer\@\@\@Z
      */
-    MCAPI void sendLevelRemovedPlayer(class Level&, class Player&);
+    MCAPI void sendLevelRemovedPlayer(class Level&, class Player&); // NOLINT
 };

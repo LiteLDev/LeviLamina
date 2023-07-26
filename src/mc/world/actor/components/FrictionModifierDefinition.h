@@ -12,19 +12,18 @@ namespace JsonUtil { class EmptyClass; }
 
 struct FrictionModifierDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FRICTIONMODIFIERDEFINITION
 public:
+    // prevent constructor by default
     FrictionModifierDefinition& operator=(FrictionModifierDefinition const&) = delete;
     FrictionModifierDefinition(FrictionModifierDefinition const&)            = delete;
     FrictionModifierDefinition()                                             = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?buildSchema\@FrictionModifierDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UFrictionModifierDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct FrictionModifierDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      struct FrictionModifierDefinition>>&); // NOLINT
 };

@@ -12,22 +12,21 @@ namespace Json { class Value; }
 
 class WaitTicksDefinition : public ::BehaviorDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WAITTICKSDEFINITION
 public:
+    // prevent constructor by default
     WaitTicksDefinition& operator=(WaitTicksDefinition const&) = delete;
     WaitTicksDefinition(WaitTicksDefinition const&)            = delete;
     WaitTicksDefinition()                                      = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?load\@WaitTicksDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    virtual void load(class Json::Value, class BehaviorFactory const&); // NOLINT
 };

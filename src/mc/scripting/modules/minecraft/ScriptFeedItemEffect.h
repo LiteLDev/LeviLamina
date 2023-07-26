@@ -10,19 +10,18 @@ namespace ScriptModuleMinecraft {
 
 class ScriptFeedItemEffect {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTFEEDITEMEFFECT
 public:
+    // prevent constructor by default
     ScriptFeedItemEffect& operator=(ScriptFeedItemEffect const&) = delete;
     ScriptFeedItemEffect(ScriptFeedItemEffect const&)            = delete;
     ScriptFeedItemEffect()                                       = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?bind\@ScriptFeedItemEffect\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UEffect\@FeedItem\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<struct FeedItem::Effect> bind();
+    MCAPI static class Scripting::ClassBindingBuilder<struct FeedItem::Effect> bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

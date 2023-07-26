@@ -6,14 +6,11 @@ namespace AgentComponents {
 
 struct ActionDetails {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMPONENTS_ACTIONDETAILS
 public:
+    // prevent constructor by default
     ActionDetails& operator=(ActionDetails const&) = delete;
     ActionDetails(ActionDetails const&)            = delete;
     ActionDetails()                                = delete;
-#endif
-
-public:
 };
 
 }; // namespace AgentComponents

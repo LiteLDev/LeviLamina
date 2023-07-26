@@ -21,56 +21,50 @@ public:
         // ValidationResult inner types define
         struct Failed {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKCAPABILITY_VALIDATIONRESULT_FAILED
         public:
+            // prevent constructor by default
             Failed& operator=(Failed const&) = delete;
             Failed(Failed const&)            = delete;
             Failed()                         = delete;
-#endif
 
         public:
             /**
              * @symbol ??1Failed\@ValidationResult\@PackCapability\@\@QEAA\@XZ
              */
-            MCAPI ~Failed();
+            MCAPI ~Failed(); // NOLINT
         };
 
         struct Succeeded {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKCAPABILITY_VALIDATIONRESULT_SUCCEEDED
         public:
+            // prevent constructor by default
             Succeeded& operator=(Succeeded const&) = delete;
             Succeeded(Succeeded const&)            = delete;
             Succeeded()                            = delete;
-#endif
 
         public:
             /**
              * @symbol ??1Succeeded\@ValidationResult\@PackCapability\@\@QEAA\@XZ
              */
-            MCAPI ~Succeeded();
+            MCAPI ~Succeeded(); // NOLINT
         };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKCAPABILITY_VALIDATIONRESULT
     public:
+        // prevent constructor by default
         ValidationResult& operator=(ValidationResult const&) = delete;
         ValidationResult(ValidationResult const&)            = delete;
         ValidationResult()                                   = delete;
-#endif
-
-    public:
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKCAPABILITY
 public:
+    // prevent constructor by default
     PackCapability& operator=(PackCapability const&) = delete;
     PackCapability(PackCapability const&)            = delete;
     PackCapability()                                 = delete;
-#endif
 
 public:
     /**
      * @symbol ??1PackCapability\@\@QEAA\@XZ
      */
-    MCAPI ~PackCapability();
+    MCAPI ~PackCapability(); // NOLINT
 };

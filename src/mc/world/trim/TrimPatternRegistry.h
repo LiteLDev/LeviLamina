@@ -4,26 +4,25 @@
 
 class TrimPatternRegistry {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRIMPATTERNREGISTRY
 public:
+    // prevent constructor by default
     TrimPatternRegistry& operator=(TrimPatternRegistry const&) = delete;
     TrimPatternRegistry(TrimPatternRegistry const&)            = delete;
     TrimPatternRegistry()                                      = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?getAllEntries\@TrimPatternRegistry\@\@QEBA?AV?$vector\@UTrimPattern\@\@V?$allocator\@UTrimPattern\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<struct TrimPattern> getAllEntries() const;
+    MCAPI std::vector<struct TrimPattern> getAllEntries() const; // NOLINT
     /**
      * @symbol
      * ?getPatternIdByItem\@TrimPatternRegistry\@\@QEBA?AV?$optional\@VHashedString\@\@\@std\@\@AEBVHashedString\@\@\@Z
      */
-    MCAPI class std::optional<class HashedString> getPatternIdByItem(class HashedString const&) const;
+    MCAPI class std::optional<class HashedString> getPatternIdByItem(class HashedString const&) const; // NOLINT
     /**
      * @symbol ?initializeServer\@TrimPatternRegistry\@\@QEAAXVItemRegistryRef\@\@\@Z
      */
-    MCAPI void initializeServer(class ItemRegistryRef);
+    MCAPI void initializeServer(class ItemRegistryRef); // NOLINT
 };

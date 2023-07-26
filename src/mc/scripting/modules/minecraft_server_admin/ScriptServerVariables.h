@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ScriptPackConfigurationManager;
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct JSON; }
 // clang-format on
@@ -16,40 +17,39 @@ namespace ScriptModuleMinecraftServerAdmin {
 
 class ScriptServerVariables {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFTSERVERADMIN_SCRIPTSERVERVARIABLES
 public:
+    // prevent constructor by default
     ScriptServerVariables& operator=(ScriptServerVariables const&) = delete;
     ScriptServerVariables(ScriptServerVariables const&)            = delete;
     ScriptServerVariables()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ScriptServerVariables\@ScriptModuleMinecraftServerAdmin\@\@QEAA\@$$QEAV01\@\@Z
      */
-    MCAPI ScriptServerVariables(class ScriptModuleMinecraftServerAdmin::ScriptServerVariables&&);
+    MCAPI ScriptServerVariables(class ScriptModuleMinecraftServerAdmin::ScriptServerVariables&&); // NOLINT
     /**
      * @symbol
      * ??0ScriptServerVariables\@ScriptModuleMinecraftServerAdmin\@\@QEAA\@V?$NonOwnerPointer\@VScriptPackConfigurationManager\@\@\@Bedrock\@\@AEBUContextConfig\@Scripting\@\@\@Z
      */
     MCAPI
-    ScriptServerVariables(class Bedrock::NonOwnerPointer<class ScriptPackConfigurationManager>, struct Scripting::ContextConfig const&);
+    ScriptServerVariables(class Bedrock::NonOwnerPointer<class ScriptPackConfigurationManager>, struct Scripting::ContextConfig const&); // NOLINT
     /**
      * @symbol
      * ?get\@ScriptServerVariables\@ScriptModuleMinecraftServerAdmin\@\@QEBA?AV?$optional\@UJSON\@Scripting\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@4\@\@Z
      */
-    MCAPI class std::optional<struct Scripting::JSON> get(std::string const&) const;
+    MCAPI class std::optional<struct Scripting::JSON> get(std::string const&) const; // NOLINT
     /**
      * @symbol
      * ?getAllVariableNames\@ScriptServerVariables\@ScriptModuleMinecraftServerAdmin\@\@QEBA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
      */
-    MCAPI std::vector<std::string> getAllVariableNames() const;
+    MCAPI std::vector<std::string> getAllVariableNames() const; // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptServerVariables\@ScriptModuleMinecraftServerAdmin\@\@SA?AV?$ClassBindingBuilder\@VScriptServerVariables\@ScriptModuleMinecraftServerAdmin\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerAdmin::ScriptServerVariables>
-    bind();
+    bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraftServerAdmin

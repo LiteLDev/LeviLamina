@@ -4,26 +4,25 @@
 
 class SpawnActorComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNACTORCOMPONENT
 public:
+    // prevent constructor by default
     SpawnActorComponent& operator=(SpawnActorComponent const&) = delete;
     SpawnActorComponent(SpawnActorComponent const&)            = delete;
     SpawnActorComponent()                                      = delete;
-#endif
 
 public:
     /**
      * @symbol ?addAdditionalSaveData\@SpawnActorComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
     /**
      * @symbol
      * ?getSpawnEntries\@SpawnActorComponent\@\@QEAAAEAV?$vector\@USpawnActorEntry\@\@V?$allocator\@USpawnActorEntry\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<struct SpawnActorEntry>& getSpawnEntries();
+    MCAPI std::vector<struct SpawnActorEntry>& getSpawnEntries(); // NOLINT
     /**
      * @symbol
      * ?readAdditionalSaveData\@SpawnActorComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&); // NOLINT
 };

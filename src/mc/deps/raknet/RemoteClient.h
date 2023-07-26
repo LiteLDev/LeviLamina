@@ -6,29 +6,28 @@ namespace RakNet {
 
 struct RemoteClient {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKNET_REMOTECLIENT
 public:
+    // prevent constructor by default
     RemoteClient& operator=(RemoteClient const&) = delete;
     RemoteClient(RemoteClient const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0RemoteClient\@RakNet\@\@QEAA\@XZ
      */
-    MCAPI RemoteClient();
+    MCAPI RemoteClient(); // NOLINT
     /**
      * @symbol ?SendOrBuffer\@RemoteClient\@RakNet\@\@QEAAXPEAPEBDPEBIH\@Z
      */
-    MCAPI void SendOrBuffer(char const**, unsigned int const*, int);
+    MCAPI void SendOrBuffer(char const**, unsigned int const*, int); // NOLINT
     /**
      * @symbol ?SetActive\@RemoteClient\@RakNet\@\@QEAAX_N\@Z
      */
-    MCAPI void SetActive(bool);
+    MCAPI void SetActive(bool); // NOLINT
     /**
      * @symbol ??1RemoteClient\@RakNet\@\@QEAA\@XZ
      */
-    MCAPI ~RemoteClient();
+    MCAPI ~RemoteClient(); // NOLINT
 };
 
 }; // namespace RakNet

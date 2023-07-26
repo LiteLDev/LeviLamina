@@ -8,21 +8,19 @@
 
 class SkeletonPassengerRotationSystemImpl {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SKELETONPASSENGERROTATIONSYSTEMIMPL
 public:
+    // prevent constructor by default
     SkeletonPassengerRotationSystemImpl& operator=(SkeletonPassengerRotationSystemImpl const&) = delete;
     SkeletonPassengerRotationSystemImpl(SkeletonPassengerRotationSystemImpl const&)            = delete;
     SkeletonPassengerRotationSystemImpl()                                                      = delete;
-#endif
 
-public:
     // private:
     /**
      * @symbol
      * ?_tickSkeletonView\@SkeletonPassengerRotationSystemImpl\@\@CAXAEAVStrictEntityContext\@\@AEBUPassengerComponent\@\@AEBV?$FlagComponent\@USkeletonFlag\@\@\@\@AEAUMobBodyRotationComponent\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBUVehicleComponent\@\@$$CBUMobBodyRotationComponent\@\@\@\@\@Z
      */
     MCAPI static void
-    _tickSkeletonView(class StrictEntityContext&, struct PassengerComponent const&, class FlagComponent<struct SkeletonFlag> const&, struct MobBodyRotationComponent&, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct VehicleComponent const, struct MobBodyRotationComponent const>);
+    _tickSkeletonView(class StrictEntityContext&, struct PassengerComponent const&, class FlagComponent<struct SkeletonFlag> const&, struct MobBodyRotationComponent&, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct VehicleComponent const, struct MobBodyRotationComponent const>); // NOLINT
 
 private:
 };

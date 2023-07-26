@@ -12,67 +12,68 @@ namespace mce { class UUID; }
 
 class MapUpgradingRecipe : public ::Recipe {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MAPUPGRADINGRECIPE
 public:
+    // prevent constructor by default
     MapUpgradingRecipe& operator=(MapUpgradingRecipe const&) = delete;
     MapUpgradingRecipe(MapUpgradingRecipe const&)            = delete;
     MapUpgradingRecipe()                                     = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?assemble\@MapUpgradingRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@AEAVCraftingContext\@\@\@Z
      */
-    virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&, class CraftingContext&) const;
+    virtual std::vector<class ItemInstance> const&
+    assemble(class CraftingContainer&, class CraftingContext&) const; // NOLINT
     /**
      * @vftbl 2
      * @symbol ?getCraftingSize\@MapUpgradingRecipe\@\@UEBAHXZ
      */
-    virtual int getCraftingSize() const;
+    virtual int getCraftingSize() const; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?getIngredient\@MapUpgradingRecipe\@\@UEBAAEBVRecipeIngredient\@\@HH\@Z
      */
-    virtual class RecipeIngredient const& getIngredient(int, int) const;
+    virtual class RecipeIngredient const& getIngredient(int, int) const; // NOLINT
     /**
      * @vftbl 4
      * @symbol
      * ?getResultItem\@MapUpgradingRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@XZ
      */
-    virtual std::vector<class ItemInstance> const& getResultItem() const;
+    virtual std::vector<class ItemInstance> const& getResultItem() const; // NOLINT
     /**
      * @vftbl 5
      * @symbol __unk_vfn_5
      */
-    virtual void __unk_vfn_5();
+    virtual void __unk_vfn_5(); // NOLINT
     /**
      * @vftbl 6
      * @symbol ?matches\@MapUpgradingRecipe\@\@UEBA_NAEBVCraftingContainer\@\@AEBVCraftingContext\@\@\@Z
      */
-    virtual bool matches(class CraftingContainer const&, class CraftingContext const&) const;
+    virtual bool matches(class CraftingContainer const&, class CraftingContext const&) const; // NOLINT
     /**
      * @vftbl 7
      * @symbol ?size\@MapUpgradingRecipe\@\@UEBAHXZ
      */
-    virtual int size() const;
+    virtual int size() const; // NOLINT
     /**
      * @symbol
      * ??0MapUpgradingRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@AEBVUUID\@mce\@\@\@Z
      */
-    MCAPI MapUpgradingRecipe(class std::basic_string_view<char, struct std::char_traits<char>>, class mce::UUID const&);
+    MCAPI
+    MapUpgradingRecipe(class std::basic_string_view<char, struct std::char_traits<char>>, class mce::UUID const&); // NOLINT
     /**
      * @symbol ?CartographyTableID\@MapUpgradingRecipe\@\@2VUUID\@mce\@\@B
      */
-    MCAPI static class mce::UUID const CartographyTableID;
+    MCAPI static class mce::UUID const CartographyTableID; // NOLINT
     /**
      * @symbol ?CraftingTableID\@MapUpgradingRecipe\@\@2VUUID\@mce\@\@B
      */
-    MCAPI static class mce::UUID const CraftingTableID;
+    MCAPI static class mce::UUID const CraftingTableID; // NOLINT
 };

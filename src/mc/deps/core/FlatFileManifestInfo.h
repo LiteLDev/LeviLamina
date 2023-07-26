@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ReadOnlyBinaryStream;
 namespace Core { enum class FileType; }
 // clang-format on
 
@@ -15,59 +16,58 @@ namespace Core {
 
 class FlatFileManifestInfo {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORE_FLATFILEMANIFESTINFO
 public:
+    // prevent constructor by default
     FlatFileManifestInfo& operator=(FlatFileManifestInfo const&) = delete;
     FlatFileManifestInfo(FlatFileManifestInfo const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0FlatFileManifestInfo\@Core\@\@QEAA\@XZ
      */
-    MCAPI FlatFileManifestInfo();
+    MCAPI FlatFileManifestInfo(); // NOLINT
     /**
      * @symbol ?getFileSize\@FlatFileManifestInfo\@Core\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 getFileSize() const;
+    MCAPI unsigned __int64 getFileSize() const; // NOLINT
     /**
      * @symbol ?getFileType\@FlatFileManifestInfo\@Core\@\@QEBA?AW4FileType\@2\@XZ
      */
-    MCAPI enum class Core::FileType getFileType() const;
+    MCAPI enum class Core::FileType getFileType() const; // NOLINT
     /**
      * @symbol
      * ?getPath\@FlatFileManifestInfo\@Core\@\@QEBAAEBV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@XZ
      */
-    MCAPI class Core::PathBuffer<std::string> const& getPath() const;
+    MCAPI class Core::PathBuffer<std::string> const& getPath() const; // NOLINT
     /**
      * @symbol ?getSeekPos\@FlatFileManifestInfo\@Core\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 getSeekPos() const;
+    MCAPI unsigned __int64 getSeekPos() const; // NOLINT
     /**
      * @symbol ?isDeleted\@FlatFileManifestInfo\@Core\@\@QEBA_NXZ
      */
-    MCAPI bool isDeleted() const;
+    MCAPI bool isDeleted() const; // NOLINT
     /**
      * @symbol ?isDirectory\@FlatFileManifestInfo\@Core\@\@QEBA_NXZ
      */
-    MCAPI bool isDirectory() const;
+    MCAPI bool isDirectory() const; // NOLINT
     /**
      * @symbol ?isFile\@FlatFileManifestInfo\@Core\@\@QEBA_NXZ
      */
-    MCAPI bool isFile() const;
+    MCAPI bool isFile() const; // NOLINT
     /**
      * @symbol
      * ?readFromStream\@FlatFileManifestInfo\@Core\@\@QEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    MCAPI class Bedrock::Result<void, class std::error_code> readFromStream(class ReadOnlyBinaryStream&);
+    MCAPI class Bedrock::Result<void, class std::error_code> readFromStream(class ReadOnlyBinaryStream&); // NOLINT
     /**
      * @symbol ?setDeleted\@FlatFileManifestInfo\@Core\@\@QEAAX_N\@Z
      */
-    MCAPI void setDeleted(bool);
+    MCAPI void setDeleted(bool); // NOLINT
     /**
      * @symbol ??1FlatFileManifestInfo\@Core\@\@QEAA\@XZ
      */
-    MCAPI ~FlatFileManifestInfo();
+    MCAPI ~FlatFileManifestInfo(); // NOLINT
 };
 
 }; // namespace Core

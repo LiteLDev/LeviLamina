@@ -6,6 +6,6 @@ namespace ActorOwnerUtils {
 /**
  * @symbol ?constActorOwnerComponentOrAssert\@ActorOwnerUtils\@\@YAPEBVActorOwnerComponent\@\@AEBVEntityContext\@\@\@Z
  */
-MCAPI class ActorOwnerComponent const* constActorOwnerComponentOrAssert(class EntityContext const&);
+MCAPI class ActorOwnerComponent const* constActorOwnerComponentOrAssert(class EntityContext const&); // NOLINT
 
 }; // namespace ActorOwnerUtils

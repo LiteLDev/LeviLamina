@@ -4,24 +4,23 @@
 
 class CommandMessage {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDMESSAGE
 public:
+    // prevent constructor by default
     CommandMessage& operator=(CommandMessage const&) = delete;
     CommandMessage(CommandMessage const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0CommandMessage\@\@QEAA\@XZ
      */
-    MCAPI CommandMessage();
+    MCAPI CommandMessage(); // NOLINT
     /**
      * @symbol
      * ?getMessage\@CommandMessage\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVCommandOrigin\@\@\@Z
      */
-    MCAPI std::string getMessage(class CommandOrigin const&) const;
+    MCAPI std::string getMessage(class CommandOrigin const&) const; // NOLINT
     /**
      * @symbol ??1CommandMessage\@\@QEAA\@XZ
      */
-    MCAPI ~CommandMessage();
+    MCAPI ~CommandMessage(); // NOLINT
 };

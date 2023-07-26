@@ -9,29 +9,28 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptTripWireTripAfterEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTTRIPWIRETRIPAFTEREVENT
 public:
+    // prevent constructor by default
     ScriptTripWireTripAfterEvent& operator=(ScriptTripWireTripAfterEvent const&) = delete;
     ScriptTripWireTripAfterEvent(ScriptTripWireTripAfterEvent const&)            = delete;
     ScriptTripWireTripAfterEvent()                                               = delete;
-#endif
 
 public:
     /**
      * @symbol ??4ScriptTripWireTripAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptTripWireTripAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptTripWireTripAfterEvent&&);
+    operator=(struct ScriptModuleMinecraft::ScriptTripWireTripAfterEvent&&); // NOLINT
     /**
      * @symbol ??1ScriptTripWireTripAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptTripWireTripAfterEvent();
+    MCAPI ~ScriptTripWireTripAfterEvent(); // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptTripWireTripAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptTripWireTripAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptTripWireTripAfterEvent>
-    bind();
+    bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

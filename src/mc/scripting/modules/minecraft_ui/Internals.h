@@ -11,6 +11,6 @@ namespace ScriptModuleMinecraftServerUI::Internals {
 /**
  * @symbol ?CURRENT\@Internals\@ScriptModuleMinecraftServerUI\@\@3UVersion\@Scripting\@\@B
  */
-MCAPI extern struct Scripting::Version const CURRENT;
+MCAPI extern struct Scripting::Version const CURRENT; // NOLINT
 
 }; // namespace ScriptModuleMinecraftServerUI::Internals

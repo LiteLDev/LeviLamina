@@ -6,14 +6,11 @@ namespace Webview {
 
 class PlatformArguments {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEBVIEW_PLATFORMARGUMENTS
 public:
+    // prevent constructor by default
     PlatformArguments& operator=(PlatformArguments const&) = delete;
     PlatformArguments(PlatformArguments const&)            = delete;
     PlatformArguments()                                    = delete;
-#endif
-
-public:
 };
 
 }; // namespace Webview

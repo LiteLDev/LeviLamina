@@ -26,80 +26,78 @@ public:
     // PriorityDeferredSubscriptionHub inner types define
     struct DequeuedEntry {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_PUBSUB_PRIORITYDEFERREDSUBSCRIPTIONHUB_DEQUEUEDENTRY
     public:
+        // prevent constructor by default
         DequeuedEntry& operator=(DequeuedEntry const&) = delete;
         DequeuedEntry(DequeuedEntry const&)            = delete;
         DequeuedEntry()                                = delete;
-#endif
 
     public:
         /**
          * @symbol ??1DequeuedEntry\@PriorityDeferredSubscriptionHub\@PubSub\@Bedrock\@\@QEAA\@XZ
          */
-        MCAPI ~DequeuedEntry();
+        MCAPI ~DequeuedEntry(); // NOLINT
     };
 
     struct QueueEntry {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_PUBSUB_PRIORITYDEFERREDSUBSCRIPTIONHUB_QUEUEENTRY
     public:
+        // prevent constructor by default
         QueueEntry& operator=(QueueEntry const&) = delete;
         QueueEntry(QueueEntry const&)            = delete;
         QueueEntry()                             = delete;
-#endif
 
     public:
         /**
          * @symbol ??1QueueEntry\@PriorityDeferredSubscriptionHub\@PubSub\@Bedrock\@\@QEAA\@XZ
          */
-        MCAPI ~QueueEntry();
+        MCAPI ~QueueEntry(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_PUBSUB_PRIORITYDEFERREDSUBSCRIPTIONHUB
 public:
+    // prevent constructor by default
     PriorityDeferredSubscriptionHub& operator=(PriorityDeferredSubscriptionHub const&) = delete;
     PriorityDeferredSubscriptionHub(PriorityDeferredSubscriptionHub const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?flushPendingEvents\@PriorityDeferredSubscriptionHub\@PubSub\@Bedrock\@\@UEAAXXZ
      */
-    virtual void flushPendingEvents();
+    virtual void flushPendingEvents(); // NOLINT
     /**
      * @vftbl 8
      * @symbol
      * ?getHubType\@PriorityDeferredSubscriptionHub\@PubSub\@Bedrock\@\@UEBA?AW4HubType\@DeferredSubscriptionHub\@23\@XZ
      */
-    virtual enum class Bedrock::PubSub::DeferredSubscriptionHub::HubType getHubType() const;
+    virtual enum class Bedrock::PubSub::DeferredSubscriptionHub::HubType getHubType() const; // NOLINT
     /**
      * @vftbl 10
      * @symbol
      * ?_enqueue\@PriorityDeferredSubscriptionHub\@PubSub\@Bedrock\@\@EEAAXV?$function\@$$A6AXXZ\@std\@\@W4ConnectPosition\@23\@V?$optional\@H\@5\@\@Z
      */
     virtual void
-        _enqueue(class std::function<void(void)>, enum class Bedrock::PubSub::ConnectPosition, class std::optional<int>);
+        _enqueue(class std::function<void(void)>, enum class Bedrock::PubSub::ConnectPosition, class std::optional<int>); // NOLINT
     /**
      * @vftbl 11
      * @symbol ?_runOneEvent\@PriorityDeferredSubscriptionHub\@PubSub\@Bedrock\@\@EEAA_NXZ
      */
-    virtual bool _runOneEvent();
+    virtual bool _runOneEvent(); // NOLINT
     /**
      * @vftbl 12
      * @symbol ?_runDequeuedEntry\@PriorityDeferredSubscriptionHub\@PubSub\@Bedrock\@\@MEAAXAEBUDequeuedEntry\@123\@\@Z
      */
-    virtual void _runDequeuedEntry(struct Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry const&);
+    virtual void
+    _runDequeuedEntry(struct Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry const&); // NOLINT
     /**
      * @symbol ??0PriorityDeferredSubscriptionHub\@PubSub\@Bedrock\@\@QEAA\@XZ
      */
-    MCAPI PriorityDeferredSubscriptionHub();
+    MCAPI PriorityDeferredSubscriptionHub(); // NOLINT
 };
 
 }; // namespace Bedrock::PubSub

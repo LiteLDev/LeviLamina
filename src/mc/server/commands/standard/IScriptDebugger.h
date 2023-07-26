@@ -4,12 +4,9 @@
 
 class IScriptDebugger {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISCRIPTDEBUGGER
 public:
+    // prevent constructor by default
     IScriptDebugger& operator=(IScriptDebugger const&) = delete;
     IScriptDebugger(IScriptDebugger const&)            = delete;
     IScriptDebugger()                                  = delete;
-#endif
-
-public:
 };

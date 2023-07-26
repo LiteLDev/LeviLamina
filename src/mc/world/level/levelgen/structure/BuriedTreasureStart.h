@@ -7,21 +7,20 @@
 
 class BuriedTreasureStart : public ::StructureStart {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BURIEDTREASURESTART
 public:
+    // prevent constructor by default
     BuriedTreasureStart& operator=(BuriedTreasureStart const&) = delete;
     BuriedTreasureStart(BuriedTreasureStart const&)            = delete;
     BuriedTreasureStart()                                      = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @symbol ??0BuriedTreasureStart\@\@QEAA\@AEAVDimension\@\@AEAVRandom\@\@HH\@Z
      */
-    MCAPI BuriedTreasureStart(class Dimension&, class Random&, int, int);
+    MCAPI BuriedTreasureStart(class Dimension&, class Random&, int, int); // NOLINT
 };

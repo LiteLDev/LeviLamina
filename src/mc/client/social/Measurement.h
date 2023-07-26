@@ -6,18 +6,17 @@ namespace Social::Events {
 
 class Measurement {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SOCIAL_EVENTS_MEASUREMENT
 public:
+    // prevent constructor by default
     Measurement& operator=(Measurement const&) = delete;
     Measurement(Measurement const&)            = delete;
     Measurement()                              = delete;
-#endif
 
 public:
     /**
      * @symbol ??1Measurement\@Events\@Social\@\@QEAA\@XZ
      */
-    MCAPI ~Measurement();
+    MCAPI ~Measurement(); // NOLINT
 };
 
 }; // namespace Social::Events

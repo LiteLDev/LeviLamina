@@ -4,12 +4,9 @@
 
 struct BiomeTagSetIDType {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMETAGSETIDTYPE
 public:
+    // prevent constructor by default
     BiomeTagSetIDType& operator=(BiomeTagSetIDType const&) = delete;
     BiomeTagSetIDType(BiomeTagSetIDType const&)            = delete;
     BiomeTagSetIDType()                                    = delete;
-#endif
-
-public:
 };

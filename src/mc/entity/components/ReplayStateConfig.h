@@ -4,16 +4,15 @@
 
 struct ReplayStateConfig {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_REPLAYSTATECONFIG
 public:
+    // prevent constructor by default
     ReplayStateConfig& operator=(ReplayStateConfig const&) = delete;
     ReplayStateConfig(ReplayStateConfig const&)            = delete;
     ReplayStateConfig()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ReplayStateConfig\@\@QEAA\@W4ReplayStateMode\@\@\@Z
      */
-    MCAPI ReplayStateConfig(enum class ReplayStateMode);
+    MCAPI ReplayStateConfig(enum class ReplayStateMode); // NOLINT
 };

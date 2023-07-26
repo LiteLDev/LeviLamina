@@ -5,12 +5,9 @@
 template <typename T0>
 class MPMCQueue {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MPMCQUEUE
 public:
+    // prevent constructor by default
     MPMCQueue& operator=(MPMCQueue const&) = delete;
     MPMCQueue(MPMCQueue const&)            = delete;
     MPMCQueue()                            = delete;
-#endif
-
-public:
 };

@@ -7,36 +7,35 @@
 
 class BonusChestFeature : public ::Feature {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BONUSCHESTFEATURE
 public:
+    // prevent constructor by default
     BonusChestFeature& operator=(BonusChestFeature const&) = delete;
     BonusChestFeature(BonusChestFeature const&)            = delete;
     BonusChestFeature()                                    = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?place\@BonusChestFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BONUSCHESTFEATURE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~BonusChestFeature();
+    MCVAPI ~BonusChestFeature(); // NOLINT
 #endif
 
     // private:
     /**
      * @symbol ?_place\@BonusChestFeature\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    MCAPI bool _place(class BlockSource&, class BlockPos const&, class Random&) const;
+    MCAPI bool _place(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
 
 private:
 };

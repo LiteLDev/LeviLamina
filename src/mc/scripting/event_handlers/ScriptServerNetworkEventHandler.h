@@ -15,32 +15,31 @@ namespace Scripting { class WeakLifetimeScope; }
 
 class ScriptServerNetworkEventHandler {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTSERVERNETWORKEVENTHANDLER
 public:
+    // prevent constructor by default
     ScriptServerNetworkEventHandler& operator=(ScriptServerNetworkEventHandler const&) = delete;
     ScriptServerNetworkEventHandler(ScriptServerNetworkEventHandler const&)            = delete;
     ScriptServerNetworkEventHandler()                                                  = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?handleEvent\@ScriptServerNetworkEventHandler\@\@UEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAUChatEvent\@\@\@Z
      */
-    virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct ChatEvent&);
+    virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct ChatEvent&); // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?handleEvent\@?$Impl\@U?$type_list\@U?$MutableServerNetworkGameplayEvent\@W4CoordinatorResult\@\@\@\@\@entt\@\@\@?$EventHandlerDispatcher\@VServerNetworkEventHandler\@\@\@Details\@\@MEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAU?$MutableServerNetworkGameplayEvent\@W4CoordinatorResult\@\@\@\@\@Z
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult>
-    handleEvent(struct MutableServerNetworkGameplayEvent<enum class CoordinatorResult>&);
+    handleEvent(struct MutableServerNetworkGameplayEvent<enum class CoordinatorResult>&); // NOLINT
 
     // private:
     /**
@@ -49,7 +48,7 @@ public:
      */
     MCAPI bool
     _handleChat(struct ChatEvent&, class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptBeforeEvents>)
-        const;
+        const; // NOLINT
 
 private:
 };

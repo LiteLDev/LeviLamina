@@ -4,18 +4,17 @@
 
 class ITickingAreaView {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITICKINGAREAVIEW
 public:
+    // prevent constructor by default
     ITickingAreaView& operator=(ITickingAreaView const&) = delete;
     ITickingAreaView(ITickingAreaView const&)            = delete;
     ITickingAreaView()                                   = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITICKINGAREAVIEW
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ITickingAreaView();
+    MCVAPI ~ITickingAreaView(); // NOLINT
 #endif
 };

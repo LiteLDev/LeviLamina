@@ -13,6 +13,6 @@ MCAPI class std::unordered_map<
     struct std::hash<class HashedString>,
     struct std::equal_to<class HashedString>,
     class std::allocator<struct std::pair<class HashedString const, class HashedString>>>
-    getPatterns(class ItemRegistryRef);
+    getPatterns(class ItemRegistryRef); // NOLINT
 
 }; // namespace TrimPatternRegistryHardCodedInit

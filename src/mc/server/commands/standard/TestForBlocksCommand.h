@@ -7,26 +7,25 @@
 
 class TestForBlocksCommand : public ::Command {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TESTFORBLOCKSCOMMAND
 public:
+    // prevent constructor by default
     TestForBlocksCommand& operator=(TestForBlocksCommand const&) = delete;
     TestForBlocksCommand(TestForBlocksCommand const&)            = delete;
     TestForBlocksCommand()                                       = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?execute\@TestForBlocksCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol ?setup\@TestForBlocksCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
-    MCAPI static void setup(class CommandRegistry&);
+    MCAPI static void setup(class CommandRegistry&); // NOLINT
 };

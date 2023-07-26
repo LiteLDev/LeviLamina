@@ -4,12 +4,9 @@
 
 struct StopGlidingRequestFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STOPGLIDINGREQUESTFLAG
 public:
+    // prevent constructor by default
     StopGlidingRequestFlag& operator=(StopGlidingRequestFlag const&) = delete;
     StopGlidingRequestFlag(StopGlidingRequestFlag const&)            = delete;
     StopGlidingRequestFlag()                                         = delete;
-#endif
-
-public:
 };

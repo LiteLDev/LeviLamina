@@ -4,12 +4,9 @@
 
 struct ShulkerFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHULKERFLAG
 public:
+    // prevent constructor by default
     ShulkerFlag& operator=(ShulkerFlag const&) = delete;
     ShulkerFlag(ShulkerFlag const&)            = delete;
     ShulkerFlag()                              = delete;
-#endif
-
-public:
 };

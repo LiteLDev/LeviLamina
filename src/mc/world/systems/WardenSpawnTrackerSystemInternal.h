@@ -7,6 +7,6 @@ namespace WardenSpawnTrackerSystemInternal {
  * @symbol
  * ?tickWardenSpawnTrackerComponent\@WardenSpawnTrackerSystemInternal\@\@YAXAEAVActorOwnerComponent\@\@AEAVWardenSpawnTrackerComponent\@\@\@Z
  */
-MCAPI void tickWardenSpawnTrackerComponent(class ActorOwnerComponent&, class WardenSpawnTrackerComponent&);
+MCAPI void tickWardenSpawnTrackerComponent(class ActorOwnerComponent&, class WardenSpawnTrackerComponent&); // NOLINT
 
 }; // namespace WardenSpawnTrackerSystemInternal

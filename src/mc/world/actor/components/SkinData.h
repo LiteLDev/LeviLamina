@@ -9,28 +9,27 @@ namespace Json { class Value; }
 
 struct SkinData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SKINDATA
 public:
+    // prevent constructor by default
     SkinData& operator=(SkinData const&) = delete;
     SkinData(SkinData const&)            = delete;
     SkinData()                           = delete;
-#endif
 
 public:
     /**
      * @symbol ??0SkinData\@\@QEAA\@AEBVActor\@\@\@Z
      */
-    MCAPI SkinData(class Actor const&);
+    MCAPI SkinData(class Actor const&); // NOLINT
     /**
      * @symbol ??0SkinData\@\@QEAA\@AEBVValue\@Json\@\@\@Z
      */
-    MCAPI SkinData(class Json::Value const&);
+    MCAPI SkinData(class Json::Value const&); // NOLINT
     /**
      * @symbol ?applyToActor\@SkinData\@\@QEBAXAEAVActor\@\@\@Z
      */
-    MCAPI void applyToActor(class Actor&) const;
+    MCAPI void applyToActor(class Actor&) const; // NOLINT
     /**
      * @symbol ?softMatch\@SkinData\@\@QEBA_NAEBU1\@AEA_N\@Z
      */
-    MCAPI bool softMatch(struct SkinData const&, bool&) const;
+    MCAPI bool softMatch(struct SkinData const&, bool&) const; // NOLINT
 };

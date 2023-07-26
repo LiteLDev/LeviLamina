@@ -14,12 +14,11 @@ public:
 
     struct BuildParameters {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISURFACEBUILDER_BUILDPARAMETERS
     public:
+        // prevent constructor by default
         BuildParameters& operator=(BuildParameters const&) = delete;
         BuildParameters(BuildParameters const&)            = delete;
         BuildParameters()                                  = delete;
-#endif
 
     public:
         /**
@@ -38,15 +37,12 @@ public:
             int,
             class HeightmapWrapper const&,
             bool
-        );
+        ); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISURFACEBUILDER
 public:
+    // prevent constructor by default
     ISurfaceBuilder& operator=(ISurfaceBuilder const&) = delete;
     ISurfaceBuilder(ISurfaceBuilder const&)            = delete;
     ISurfaceBuilder()                                  = delete;
-#endif
-
-public:
 };

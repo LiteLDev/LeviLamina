@@ -12,19 +12,18 @@ namespace CanyonFeatureUtils { struct CanyonConfiguration; }
 
 class UnderwaterCanyonFeature : public ::CanyonFeature {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_UNDERWATERCANYONFEATURE
 public:
+    // prevent constructor by default
     UnderwaterCanyonFeature& operator=(UnderwaterCanyonFeature const&) = delete;
     UnderwaterCanyonFeature(UnderwaterCanyonFeature const&)            = delete;
     UnderwaterCanyonFeature()                                          = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
@@ -32,19 +31,19 @@ public:
      */
     virtual bool
     carve(class BlockVolume&, class BiomeSource const&, class Random&, class ChunkPos const&, class Vec3 const&, class Vec3 const&, int, int, int, int, int, int, float, float, class gsl::span<float const, -1>, struct WorldGenContext const&)
-        const;
+        const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UNDERWATERCANYONFEATURE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~UnderwaterCanyonFeature();
+    MCVAPI ~UnderwaterCanyonFeature(); // NOLINT
 #endif
     /**
      * @symbol ??0UnderwaterCanyonFeature\@\@QEAA\@F\@Z
      */
-    MCAPI UnderwaterCanyonFeature(short);
+    MCAPI UnderwaterCanyonFeature(short); // NOLINT
     /**
      * @symbol ?isDiggable\@UnderwaterCanyonFeature\@\@SA_NAEBVBlock\@\@\@Z
      */
-    MCAPI static bool isDiggable(class Block const&);
+    MCAPI static bool isDiggable(class Block const&); // NOLINT
 };

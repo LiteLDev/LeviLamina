@@ -4,12 +4,9 @@
 
 class Control {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTROL
 public:
+    // prevent constructor by default
     Control& operator=(Control const&) = delete;
     Control(Control const&)            = delete;
     Control()                          = delete;
-#endif
-
-public:
 };

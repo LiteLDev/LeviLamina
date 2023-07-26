@@ -4,12 +4,11 @@
 
 struct POIBlueprint {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_POIBLUEPRINT
 public:
+    // prevent constructor by default
     POIBlueprint& operator=(POIBlueprint const&) = delete;
     POIBlueprint(POIBlueprint const&)            = delete;
     POIBlueprint()                               = delete;
-#endif
 
 public:
     /**
@@ -26,5 +25,5 @@ public:
         std::string,
         std::string,
         std::string
-    );
+    ); // NOLINT
 };

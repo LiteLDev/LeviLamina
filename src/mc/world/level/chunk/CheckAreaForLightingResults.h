@@ -6,14 +6,11 @@ namespace GameLightingChecker {
 
 struct CheckAreaForLightingResults {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMELIGHTINGCHECKER_CHECKAREAFORLIGHTINGRESULTS
 public:
+    // prevent constructor by default
     CheckAreaForLightingResults& operator=(CheckAreaForLightingResults const&) = delete;
     CheckAreaForLightingResults(CheckAreaForLightingResults const&)            = delete;
     CheckAreaForLightingResults()                                              = delete;
-#endif
-
-public:
 };
 
 }; // namespace GameLightingChecker

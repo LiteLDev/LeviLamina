@@ -6,18 +6,17 @@ namespace Bedrock::PlatformUtils {
 
 struct PlatformData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_PLATFORMUTILS_PLATFORMDATA
 public:
+    // prevent constructor by default
     PlatformData& operator=(PlatformData const&) = delete;
     PlatformData(PlatformData const&)            = delete;
     PlatformData()                               = delete;
-#endif
 
 public:
     /**
      * @symbol ?get\@PlatformData\@PlatformUtils\@Bedrock\@\@SAAEAU123\@XZ
      */
-    MCAPI static struct Bedrock::PlatformUtils::PlatformData& get();
+    MCAPI static struct Bedrock::PlatformUtils::PlatformData& get(); // NOLINT
 };
 
 }; // namespace Bedrock::PlatformUtils

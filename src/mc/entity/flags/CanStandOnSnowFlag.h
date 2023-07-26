@@ -4,12 +4,9 @@
 
 struct CanStandOnSnowFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CANSTANDONSNOWFLAG
 public:
+    // prevent constructor by default
     CanStandOnSnowFlag& operator=(CanStandOnSnowFlag const&) = delete;
     CanStandOnSnowFlag(CanStandOnSnowFlag const&)            = delete;
     CanStandOnSnowFlag()                                     = delete;
-#endif
-
-public:
 };

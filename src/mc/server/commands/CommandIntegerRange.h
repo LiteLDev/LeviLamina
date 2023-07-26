@@ -4,23 +4,22 @@
 
 class CommandIntegerRange {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDINTEGERRANGE
 public:
+    // prevent constructor by default
     CommandIntegerRange& operator=(CommandIntegerRange const&) = delete;
     CommandIntegerRange(CommandIntegerRange const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0CommandIntegerRange\@\@QEAA\@HH_N\@Z
      */
-    MCAPI CommandIntegerRange(int, int, bool);
+    MCAPI CommandIntegerRange(int, int, bool); // NOLINT
     /**
      * @symbol ??0CommandIntegerRange\@\@QEAA\@XZ
      */
-    MCAPI CommandIntegerRange();
+    MCAPI CommandIntegerRange(); // NOLINT
     /**
      * @symbol ?isWithinRange\@CommandIntegerRange\@\@QEBA_NH\@Z
      */
-    MCAPI bool isWithinRange(int) const;
+    MCAPI bool isWithinRange(int) const; // NOLINT
 };

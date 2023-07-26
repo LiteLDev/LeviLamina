@@ -4,12 +4,9 @@
 
 struct ActorUnloadedChunkTransferEntry {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORUNLOADEDCHUNKTRANSFERENTRY
 public:
+    // prevent constructor by default
     ActorUnloadedChunkTransferEntry& operator=(ActorUnloadedChunkTransferEntry const&) = delete;
     ActorUnloadedChunkTransferEntry(ActorUnloadedChunkTransferEntry const&)            = delete;
     ActorUnloadedChunkTransferEntry()                                                  = delete;
-#endif
-
-public:
 };

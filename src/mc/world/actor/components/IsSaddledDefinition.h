@@ -12,27 +12,26 @@ namespace JsonUtil { class EmptyClass; }
 
 struct IsSaddledDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISSADDLEDDEFINITION
 public:
+    // prevent constructor by default
     IsSaddledDefinition& operator=(IsSaddledDefinition const&) = delete;
     IsSaddledDefinition(IsSaddledDefinition const&)            = delete;
     IsSaddledDefinition()                                      = delete;
-#endif
 
 public:
     /**
      * @symbol ?initialize\@IsSaddledDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&) const;
+    MCAPI void initialize(class EntityContext&) const; // NOLINT
     /**
      * @symbol ?uninitialize\@IsSaddledDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void uninitialize(class EntityContext&) const;
+    MCAPI void uninitialize(class EntityContext&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@IsSaddledDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UIsSaddledDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsSaddledDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      struct IsSaddledDefinition>>&); // NOLINT
 };

@@ -4,29 +4,28 @@
 
 class MultifaceFeature {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MULTIFACEFEATURE
 public:
+    // prevent constructor by default
     MultifaceFeature& operator=(MultifaceFeature const&) = delete;
     MultifaceFeature(MultifaceFeature const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?place\@MultifaceFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */
     virtual class std::optional<class BlockPos>
-    place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const; // NOLINT
     /**
      * @symbol ??0MultifaceFeature\@\@QEAA\@XZ
      */
-    MCAPI MultifaceFeature();
+    MCAPI MultifaceFeature(); // NOLINT
 
     // private:
     /**
@@ -35,11 +34,11 @@ public:
      */
     MCAPI class std::optional<class BlockPos>
     _placeBlockIfPossible(class BlockSource&, class BlockPos const&, class Random&, std::vector<unsigned char> const&)
-        const;
+        const; // NOLINT
     /**
      * @symbol ?_getShuffledDirections\@MultifaceFeature\@\@CA?AV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@V23\@\@Z
      */
-    MCAPI static std::vector<unsigned char> _getShuffledDirections(std::vector<unsigned char>);
+    MCAPI static std::vector<unsigned char> _getShuffledDirections(std::vector<unsigned char>); // NOLINT
 
 private:
 };

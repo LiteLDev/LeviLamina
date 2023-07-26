@@ -4,35 +4,34 @@
 
 class RandomizableBlockActorContainer {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMIZABLEBLOCKACTORCONTAINER
 public:
+    // prevent constructor by default
     RandomizableBlockActorContainer& operator=(RandomizableBlockActorContainer const&) = delete;
     RandomizableBlockActorContainer(RandomizableBlockActorContainer const&)            = delete;
     RandomizableBlockActorContainer()                                                  = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMIZABLEBLOCKACTORCONTAINER
     /**
      * @symbol ?dropContents\@RandomizableBlockActorContainer\@\@UEAAXAEAVBlockSource\@\@AEBVVec3\@\@_N\@Z
      */
-    MCVAPI void dropContents(class BlockSource&, class Vec3 const&, bool);
+    MCVAPI void dropContents(class BlockSource&, class Vec3 const&, bool); // NOLINT
     /**
      * @symbol ?initializeContainerContents\@RandomizableBlockActorContainer\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
-    MCVAPI void initializeContainerContents(class BlockSource&);
+    MCVAPI void initializeContainerContents(class BlockSource&); // NOLINT
     /**
      * @symbol ?setContainerChanged\@RandomizableBlockActorContainer\@\@UEAAXH\@Z
      */
-    MCVAPI void setContainerChanged(int);
+    MCVAPI void setContainerChanged(int); // NOLINT
     /**
      * @symbol ?startOpen\@RandomizableBlockActorContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
-    MCVAPI void startOpen(class Player&);
+    MCVAPI void startOpen(class Player&); // NOLINT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~RandomizableBlockActorContainer();
+    MCVAPI ~RandomizableBlockActorContainer(); // NOLINT
 #endif
     /**
      * @symbol
@@ -43,5 +42,5 @@ public:
         std::string const&,
         class BlockPos const&,
         enum class ContainerType
-    );
+    ); // NOLINT
 };

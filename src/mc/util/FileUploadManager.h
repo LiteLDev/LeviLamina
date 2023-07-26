@@ -18,97 +18,96 @@ public:
     // FileUploadManager inner types define
     class MultiPartStreamHelper {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILEUPLOADMANAGER_MULTIPARTSTREAMHELPER
     public:
+        // prevent constructor by default
         MultiPartStreamHelper& operator=(MultiPartStreamHelper const&) = delete;
         MultiPartStreamHelper(MultiPartStreamHelper const&)            = delete;
         MultiPartStreamHelper()                                        = delete;
-#endif
 
     public:
         /**
          * @symbol ??1MultiPartStreamHelper\@FileUploadManager\@\@QEAA\@XZ
          */
-        MCAPI ~MultiPartStreamHelper();
+        MCAPI ~MultiPartStreamHelper(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILEUPLOADMANAGER
 public:
+    // prevent constructor by default
     FileUploadManager& operator=(FileUploadManager const&) = delete;
     FileUploadManager(FileUploadManager const&)            = delete;
     FileUploadManager()                                    = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?getUploadProgress\@FileUploadManager\@\@UEBAMXZ
      */
-    virtual float getUploadProgress() const;
+    virtual float getUploadProgress() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?uploadFileToRealmStorage\@ResourcePackFileUploadManager\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPath\@Core\@\@H0\@Z
      */
-    virtual void uploadFileToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&) = 0;
+    virtual void
+    uploadFileToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&) = 0; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILEUPLOADMANAGER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~FileUploadManager();
+    MCVAPI ~FileUploadManager(); // NOLINT
 #endif
     /**
      * @symbol ??0FileUploadManager\@\@QEAA\@AEAVTaskGroup\@\@V?$shared_ptr\@VIFileChunkUploader\@\@\@std\@\@\@Z
      */
-    MCAPI FileUploadManager(class TaskGroup&, class std::shared_ptr<class IFileChunkUploader>);
+    MCAPI FileUploadManager(class TaskGroup&, class std::shared_ptr<class IFileChunkUploader>); // NOLINT
     /**
      * @symbol ?addCallbackQueue\@FileUploadManager\@\@QEAAXV?$function\@$$A6AXXZ\@std\@\@\@Z
      */
-    MCAPI void addCallbackQueue(class std::function<void(void)>);
+    MCAPI void addCallbackQueue(class std::function<void(void)>); // NOLINT
     /**
      * @symbol ?setFailed\@FileUploadManager\@\@QEAAXW4UploadError\@\@\@Z
      */
-    MCAPI void setFailed(enum class UploadError);
+    MCAPI void setFailed(enum class UploadError); // NOLINT
     /**
      * @symbol ?setUseStream\@FileUploadManager\@\@QEAAX_N\@Z
      */
-    MCAPI void setUseStream(bool);
+    MCAPI void setUseStream(bool); // NOLINT
     /**
      * @symbol ?update\@FileUploadManager\@\@QEAAXXZ
      */
-    MCAPI void update();
+    MCAPI void update(); // NOLINT
     /**
      * @symbol ?uploadChunk\@FileUploadManager\@\@QEAAXH\@Z
      */
-    MCAPI void uploadChunk(int);
+    MCAPI void uploadChunk(int); // NOLINT
     /**
      * @symbol
      * ?uploadFile\@FileUploadManager\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPath\@Core\@\@_NAEBVValue\@Json\@\@\@Z
      */
-    MCAPI void uploadFile(std::string const&, class Core::Path const&, bool, class Json::Value const&);
+    MCAPI void uploadFile(std::string const&, class Core::Path const&, bool, class Json::Value const&); // NOLINT
 
     // protected:
     /**
      * @symbol ?_generateMultiPartHelper\@FileUploadManager\@\@IEAAXXZ
      */
-    MCAPI void _generateMultiPartHelper();
+    MCAPI void _generateMultiPartHelper(); // NOLINT
     /**
      * @symbol ?_resumeUpload\@FileUploadManager\@\@IEAAXXZ
      */
-    MCAPI void _resumeUpload();
+    MCAPI void _resumeUpload(); // NOLINT
     /**
      * @symbol ?_uploadChunk\@FileUploadManager\@\@IEAAXAEBUFileChunkInfo\@\@\@Z
      */
-    MCAPI void _uploadChunk(struct FileChunkInfo const&);
+    MCAPI void _uploadChunk(struct FileChunkInfo const&); // NOLINT
     /**
      * @symbol ?_uploadStream\@FileUploadManager\@\@IEAAXXZ
      */
-    MCAPI void _uploadStream();
+    MCAPI void _uploadStream(); // NOLINT
 
     // private:
 
@@ -116,12 +115,12 @@ protected:
     /**
      * @symbol ?CHUNK_UPLOAD_SIZE\@FileUploadManager\@\@1HB
      */
-    MCAPI static int const CHUNK_UPLOAD_SIZE;
+    MCAPI static int const CHUNK_UPLOAD_SIZE; // NOLINT
 
 private:
     /**
      * @symbol
      * ?BOUNDARY\@FileUploadManager\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const BOUNDARY;
+    MCAPI static std::string const BOUNDARY; // NOLINT
 };

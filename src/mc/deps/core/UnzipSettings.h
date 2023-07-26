@@ -6,21 +6,20 @@ namespace Core::ZipUtils {
 
 class UnzipSettings {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORE_ZIPUTILS_UNZIPSETTINGS
 public:
+    // prevent constructor by default
     UnzipSettings& operator=(UnzipSettings const&) = delete;
     UnzipSettings(UnzipSettings const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0UnzipSettings\@ZipUtils\@Core\@\@QEAA\@XZ
      */
-    MCAPI UnzipSettings();
+    MCAPI UnzipSettings(); // NOLINT
     /**
      * @symbol ??1UnzipSettings\@ZipUtils\@Core\@\@QEAA\@XZ
      */
-    MCAPI ~UnzipSettings();
+    MCAPI ~UnzipSettings(); // NOLINT
 };
 
 }; // namespace Core::ZipUtils

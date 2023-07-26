@@ -21,58 +21,57 @@ public:
     // ClientboundDebugRendererPacket inner types define
     enum class Type {};
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTBOUNDDEBUGRENDERERPACKET
 public:
+    // prevent constructor by default
     ClientboundDebugRendererPacket& operator=(ClientboundDebugRendererPacket const&) = delete;
     ClientboundDebugRendererPacket(ClientboundDebugRendererPacket const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?getId\@ClientboundDebugRendererPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
-    virtual enum class MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?getName\@ClientboundDebugRendererPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string getName() const;
+    virtual std::string getName() const; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?write\@ClientboundDebugRendererPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream&) const; // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?_read\@ClientboundDebugRendererPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CLIENTBOUNDDEBUGRENDERERPACKET
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ClientboundDebugRendererPacket();
+    MCVAPI ~ClientboundDebugRendererPacket(); // NOLINT
 #endif
     /**
      * @symbol
      * ??0ClientboundDebugRendererPacket\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVColor\@mce\@\@AEBVVec3\@\@V?$duration\@_JU?$ratio\@$00$0DOI\@\@std\@\@\@chrono\@2\@\@Z
      */
     MCAPI
-    ClientboundDebugRendererPacket(std::string, class mce::Color const&, class Vec3 const&, class std::chrono::duration<__int64, struct std::ratio<1, 1000>>);
+    ClientboundDebugRendererPacket(std::string, class mce::Color const&, class Vec3 const&, class std::chrono::duration<__int64, struct std::ratio<1, 1000>>); // NOLINT
     /**
      * @symbol ??0ClientboundDebugRendererPacket\@\@QEAA\@XZ
      */
-    MCAPI ClientboundDebugRendererPacket();
+    MCAPI ClientboundDebugRendererPacket(); // NOLINT
     /**
      * @symbol ??0ClientboundDebugRendererPacket\@\@QEAA\@W4Type\@0\@\@Z
      */
-    MCAPI ClientboundDebugRendererPacket(enum class ClientboundDebugRendererPacket::Type);
+    MCAPI ClientboundDebugRendererPacket(enum class ClientboundDebugRendererPacket::Type); // NOLINT
 };

@@ -13,12 +13,11 @@ namespace Webview { class PlatformArguments; }
 
 class AppPlatform_win32 {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_APPPLATFORM_WIN32
 public:
+    // prevent constructor by default
     AppPlatform_win32& operator=(AppPlatform_win32 const&) = delete;
     AppPlatform_win32(AppPlatform_win32 const&)            = delete;
     AppPlatform_win32()                                    = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORM_WIN32
@@ -26,162 +25,163 @@ public:
      * @symbol
      * ?canLaunchUri\@AppPlatform_win32\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCVAPI bool canLaunchUri(std::string const&);
+    MCVAPI bool canLaunchUri(std::string const&); // NOLINT
     /**
      * @symbol
      * ?copyImportFileToTempFolder\@AppPlatform_win32\@\@UEAA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@AEBVPath\@3\@\@Z
      */
-    MCVAPI class Core::PathBuffer<std::string> copyImportFileToTempFolder(class Core::Path const&);
+    MCVAPI class Core::PathBuffer<std::string> copyImportFileToTempFolder(class Core::Path const&); // NOLINT
     /**
      * @symbol
      * ?createWebview\@AppPlatform_win32\@\@UEBA?AV?$shared_ptr\@VWebviewInterface\@\@\@std\@\@$$QEAVPlatformArguments\@Webview\@\@\@Z
      */
-    MCVAPI class std::shared_ptr<class WebviewInterface> createWebview(class Webview::PlatformArguments&&) const;
+    MCVAPI class std::shared_ptr<class WebviewInterface>
+    createWebview(class Webview::PlatformArguments&&) const; // NOLINT
     /**
      * @symbol
      * ?getApplicationId\@AppPlatform_win32\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCVAPI std::string getApplicationId() const;
+    MCVAPI std::string getApplicationId() const; // NOLINT
     /**
      * @symbol
      * ?getAssetFileFullPath\@AppPlatform_win32\@\@UEAA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@AEBVPath\@3\@\@Z
      */
-    MCVAPI class Core::PathBuffer<std::string> getAssetFileFullPath(class Core::Path const&);
+    MCVAPI class Core::PathBuffer<std::string> getAssetFileFullPath(class Core::Path const&); // NOLINT
     /**
      * @symbol ?getBuildPlatform\@AppPlatform_win32\@\@UEBA?AW4BuildPlatform\@\@XZ
      */
-    MCVAPI enum class BuildPlatform getBuildPlatform() const;
+    MCVAPI enum class BuildPlatform getBuildPlatform() const; // NOLINT
     /**
      * @symbol ?getDisplayHeight\@AppPlatform_win32\@\@UEAAHXZ
      */
-    MCVAPI int getDisplayHeight();
+    MCVAPI int getDisplayHeight(); // NOLINT
     /**
      * @symbol ?getDisplayWidth\@AppPlatform_win32\@\@UEAAHXZ
      */
-    MCVAPI int getDisplayWidth();
+    MCVAPI int getDisplayWidth(); // NOLINT
     /**
      * @symbol
      * ?getEdition\@AppPlatform_win32\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCVAPI std::string getEdition() const;
+    MCVAPI std::string getEdition() const; // NOLINT
     /**
      * @symbol ?getFreeMemory\@AppPlatform_win32\@\@UEBA_KXZ
      */
-    MCVAPI unsigned __int64 getFreeMemory() const;
+    MCVAPI unsigned __int64 getFreeMemory() const; // NOLINT
     /**
      * @symbol
      * ?getLoggingPath\@AppPlatform_win32\@\@UEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
-    MCVAPI class Core::PathBuffer<std::string> getLoggingPath() const;
+    MCVAPI class Core::PathBuffer<std::string> getLoggingPath() const; // NOLINT
     /**
      * @symbol ?getMemoryLimit\@AppPlatform_win32\@\@UEBA_KXZ
      */
-    MCVAPI unsigned __int64 getMemoryLimit() const;
+    MCVAPI unsigned __int64 getMemoryLimit() const; // NOLINT
     /**
      * @symbol
      * ?getModelName\@AppPlatform_win32\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCVAPI std::string getModelName();
+    MCVAPI std::string getModelName(); // NOLINT
     /**
      * @symbol ?getOSVersion\@AppPlatform_win32\@\@UEBA?AW4OsVersion\@\@XZ
      */
-    MCVAPI enum class OsVersion getOSVersion() const;
+    MCVAPI enum class OsVersion getOSVersion() const; // NOLINT
     /**
      * @symbol
      * ?getPackageFamilyName\@AppPlatform_win32\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCVAPI std::string getPackageFamilyName() const;
+    MCVAPI std::string getPackageFamilyName() const; // NOLINT
     /**
      * @symbol
      * ?getPackagePath\@AppPlatform_win32\@\@UEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
-    MCVAPI class Core::PathBuffer<std::string> getPackagePath() const;
+    MCVAPI class Core::PathBuffer<std::string> getPackagePath() const; // NOLINT
     /**
      * @symbol ?getPixelsPerMillimeter\@AppPlatform_win32\@\@UEAAMXZ
      */
-    MCVAPI float getPixelsPerMillimeter();
+    MCVAPI float getPixelsPerMillimeter(); // NOLINT
     /**
      * @symbol
      * ?getPlatformString\@AppPlatform_win32\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCVAPI std::string getPlatformString() const;
+    MCVAPI std::string getPlatformString() const; // NOLINT
     /**
      * @symbol ?getPlatformTTSEnabled\@AppPlatform_win32\@\@UEBA_NXZ
      */
-    MCVAPI bool getPlatformTTSEnabled() const;
+    MCVAPI bool getPlatformTTSEnabled() const; // NOLINT
     /**
      * @symbol ?getPlatformType\@AppPlatform_win32\@\@UEBA?AW4PlatformType\@\@XZ
      */
-    MCVAPI enum class PlatformType getPlatformType() const;
+    MCVAPI enum class PlatformType getPlatformType() const; // NOLINT
     /**
      * @symbol ?getPlatformUIScalingRules\@AppPlatform_win32\@\@EEBA?AW4UIScalingRules\@\@XZ
      */
-    MCVAPI enum class UIScalingRules getPlatformUIScalingRules() const;
+    MCVAPI enum class UIScalingRules getPlatformUIScalingRules() const; // NOLINT
     /**
      * @symbol
      * ?getRenderSurfaceParameters\@AppPlatform_win32\@\@UEBA?AV?$variant\@PEAUHWND__\@\@Umonostate\@std\@\@\@std\@\@XZ
      */
-    MCVAPI class std::variant<struct HWND__*, struct std::monostate> getRenderSurfaceParameters() const;
+    MCVAPI class std::variant<struct HWND__*, struct std::monostate> getRenderSurfaceParameters() const; // NOLINT
     /**
      * @symbol ?getScreenHeight\@AppPlatform_win32\@\@UEBAHXZ
      */
-    MCVAPI int getScreenHeight() const;
+    MCVAPI int getScreenHeight() const; // NOLINT
     /**
      * @symbol ?getScreenWidth\@AppPlatform_win32\@\@UEBAHXZ
      */
-    MCVAPI int getScreenWidth() const;
+    MCVAPI int getScreenWidth() const; // NOLINT
     /**
      * @symbol
      * ?getSecureStorage\@AppPlatform_win32\@\@UEAA?AV?$unique_ptr\@VSecureStorage\@\@U?$default_delete\@VSecureStorage\@\@\@std\@\@\@std\@\@XZ
      */
-    MCVAPI std::unique_ptr<class SecureStorage> getSecureStorage();
+    MCVAPI std::unique_ptr<class SecureStorage> getSecureStorage(); // NOLINT
     /**
      * @symbol
      * ?getSecureStorageKey\@AppPlatform_win32\@\@UEAA?AVSecureStorageKey\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCVAPI class SecureStorageKey getSecureStorageKey(std::string const&);
+    MCVAPI class SecureStorageKey getSecureStorageKey(std::string const&); // NOLINT
     /**
      * @symbol
      * ?getSubPlatformString\@AppPlatform_win32\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCVAPI std::string getSubPlatformString() const;
+    MCVAPI std::string getSubPlatformString() const; // NOLINT
     /**
      * @symbol ?getTotalPhysicalMemory\@AppPlatform_win32\@\@UEBA_KXZ
      */
-    MCVAPI unsigned __int64 getTotalPhysicalMemory() const;
+    MCVAPI unsigned __int64 getTotalPhysicalMemory() const; // NOLINT
     /**
      * @symbol ?getUsedMemory\@AppPlatform_win32\@\@UEAA_KXZ
      */
-    MCVAPI unsigned __int64 getUsedMemory();
+    MCVAPI unsigned __int64 getUsedMemory(); // NOLINT
     /**
      * @symbol ?hasBuyButtonWhenInvalidLicense\@AppPlatform_win32\@\@UEAA_NXZ
      */
-    MCVAPI bool hasBuyButtonWhenInvalidLicense();
+    MCVAPI bool hasBuyButtonWhenInvalidLicense(); // NOLINT
     /**
      * @symbol ?hasFastAlphaTest\@AppPlatform_win32\@\@UEBA_NXZ
      */
-    MCVAPI bool hasFastAlphaTest() const;
+    MCVAPI bool hasFastAlphaTest() const; // NOLINT
     /**
      * @symbol ?hideSplashScreen\@AppPlatform_win32\@\@UEAAXXZ
      */
-    MCVAPI void hideSplashScreen();
+    MCVAPI void hideSplashScreen(); // NOLINT
     /**
      * @symbol ?isCentennial\@AppPlatform_win32\@\@UEBA_NXZ
      */
-    MCVAPI bool isCentennial() const;
+    MCVAPI bool isCentennial() const; // NOLINT
     /**
      * @symbol ?isOnWifiConnectionTelemetryValue\@AppPlatform_win32\@\@UEAA?AV?$optional\@_N\@std\@\@XZ
      */
-    MCVAPI class std::optional<bool> isOnWifiConnectionTelemetryValue();
+    MCVAPI class std::optional<bool> isOnWifiConnectionTelemetryValue(); // NOLINT
     /**
      * @symbol ?isWebviewSupported\@AppPlatform_win32\@\@UEBA_NXZ
      */
-    MCVAPI bool isWebviewSupported() const;
+    MCVAPI bool isWebviewSupported() const; // NOLINT
     /**
      * @symbol
      * ?launchUri\@AppPlatform_win32\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCVAPI void launchUri(std::string const&);
+    MCVAPI void launchUri(std::string const&); // NOLINT
     /**
      * @symbol
      * ?listAssetFilesIn\@AppPlatform_win32\@\@UEBA?AV?$set\@V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@U?$less\@V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@\@std\@\@V?$allocator\@V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@\@4\@\@std\@\@AEBVPath\@Core\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
@@ -190,51 +190,51 @@ public:
         class Core::PathBuffer<std::string>,
         struct std::less<class Core::PathBuffer<std::string>>,
         class std::allocator<class Core::PathBuffer<std::string>>>
-    listAssetFilesIn(class Core::Path const&, std::string const&) const;
+    listAssetFilesIn(class Core::Path const&, std::string const&) const; // NOLINT
     /**
      * @symbol
      * ?readAssetFile\@AppPlatform_win32\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPath\@Core\@\@\@Z
      */
-    MCVAPI std::string readAssetFile(class Core::Path const&);
+    MCVAPI std::string readAssetFile(class Core::Path const&); // NOLINT
     /**
      * @symbol ?setFullscreenMode\@AppPlatform_win32\@\@UEAAXW4FullscreenMode\@\@\@Z
      */
-    MCVAPI void setFullscreenMode(enum class FullscreenMode);
+    MCVAPI void setFullscreenMode(enum class FullscreenMode); // NOLINT
     /**
      * @symbol ?setScreenSize\@AppPlatform_win32\@\@UEAAXHH\@Z
      */
-    MCVAPI void setScreenSize(int, int);
+    MCVAPI void setScreenSize(int, int); // NOLINT
     /**
      * @symbol
      * ?setSecureStorageKey\@AppPlatform_win32\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVSecureStorageKey\@\@\@Z
      */
-    MCVAPI void setSecureStorageKey(std::string const&, class SecureStorageKey const&);
+    MCVAPI void setSecureStorageKey(std::string const&, class SecureStorageKey const&); // NOLINT
     /**
      * @symbol ?setWindowSize\@AppPlatform_win32\@\@UEAAXHH\@Z
      */
-    MCVAPI void setWindowSize(int, int);
+    MCVAPI void setWindowSize(int, int); // NOLINT
     /**
      * @symbol
      * ?setWindowText\@AppPlatform_win32\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCVAPI void setWindowText(std::string const&);
+    MCVAPI void setWindowText(std::string const&); // NOLINT
     /**
      * @symbol ?supportsFliteTTS\@AppPlatform_win32\@\@UEBA_NXZ
      */
-    MCVAPI bool supportsFliteTTS() const;
+    MCVAPI bool supportsFliteTTS() const; // NOLINT
     /**
      * @symbol ?supportsVibration\@AppPlatform_win32\@\@UEBA_NXZ
      */
-    MCVAPI bool supportsVibration() const;
+    MCVAPI bool supportsVibration() const; // NOLINT
     /**
      * @symbol
      * ?updateTextBoxText\@AppPlatform_win32\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCVAPI void updateTextBoxText(std::string const&);
+    MCVAPI void updateTextBoxText(std::string const&); // NOLINT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~AppPlatform_win32();
+    MCVAPI ~AppPlatform_win32(); // NOLINT
 #endif
     /**
      * @symbol
@@ -248,17 +248,17 @@ public:
         class std::shared_ptr<class HIDController>,
         int,
         int
-    );
+    ); // NOLINT
     /**
      * @symbol ?setupWorkingDirectory\@AppPlatform_win32\@\@SAXXZ
      */
-    MCAPI static void setupWorkingDirectory();
+    MCAPI static void setupWorkingDirectory(); // NOLINT
 
     // private:
     /**
      * @symbol ?_fetchOSInformation\@AppPlatform_win32\@\@AEBA?AUOSInformation\@\@XZ
      */
-    MCAPI struct OSInformation _fetchOSInformation() const;
+    MCAPI struct OSInformation _fetchOSInformation() const; // NOLINT
 
 private:
 };

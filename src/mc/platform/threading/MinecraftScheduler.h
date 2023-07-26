@@ -4,22 +4,21 @@
 
 class MinecraftScheduler {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTSCHEDULER
 public:
+    // prevent constructor by default
     MinecraftScheduler& operator=(MinecraftScheduler const&) = delete;
     MinecraftScheduler(MinecraftScheduler const&)            = delete;
     MinecraftScheduler()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ?client\@MinecraftScheduler\@\@SAAEAVScheduler\@\@XZ
      */
-    MCAPI static class Scheduler& client();
+    MCAPI static class Scheduler& client(); // NOLINT
     /**
      * @symbol ?destroyClientSingleton\@MinecraftScheduler\@\@SAXXZ
      */
-    MCAPI static void destroyClientSingleton();
+    MCAPI static void destroyClientSingleton(); // NOLINT
 
     // private:
 
@@ -28,5 +27,5 @@ private:
      * @symbol
      * ?mInstance\@MinecraftScheduler\@\@0V?$unique_ptr\@VScheduler\@\@U?$default_delete\@VScheduler\@\@\@std\@\@\@std\@\@A
      */
-    MCAPI static std::unique_ptr<class Scheduler> mInstance;
+    MCAPI static std::unique_ptr<class Scheduler> mInstance; // NOLINT
 };

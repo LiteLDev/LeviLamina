@@ -12,12 +12,11 @@ namespace JsonUtil { class EmptyClass; }
 
 class BarterDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BARTERDEFINITION
 public:
+    // prevent constructor by default
     BarterDefinition& operator=(BarterDefinition const&) = delete;
     BarterDefinition(BarterDefinition const&)            = delete;
     BarterDefinition()                                   = delete;
-#endif
 
 public:
     /**
@@ -26,5 +25,5 @@ public:
      */
     MCAPI static void
     buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BarterDefinition>>&);
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BarterDefinition>>&); // NOLINT
 };

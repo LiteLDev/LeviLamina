@@ -4,12 +4,9 @@
 
 struct HasLightweightFamilyFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HASLIGHTWEIGHTFAMILYFLAG
 public:
+    // prevent constructor by default
     HasLightweightFamilyFlag& operator=(HasLightweightFamilyFlag const&) = delete;
     HasLightweightFamilyFlag(HasLightweightFamilyFlag const&)            = delete;
     HasLightweightFamilyFlag()                                           = delete;
-#endif
-
-public:
 };

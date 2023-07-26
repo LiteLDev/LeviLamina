@@ -4,24 +4,23 @@
 
 class SpawnData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNDATA
 public:
+    // prevent constructor by default
     SpawnData& operator=(SpawnData const&) = delete;
     SpawnData()                            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0SpawnData\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI SpawnData(class SpawnData const&);
+    MCAPI SpawnData(class SpawnData const&); // NOLINT
     /**
      * @symbol ??0SpawnData\@\@QEAA\@AEBVCompoundTag\@\@\@Z
      */
-    MCAPI SpawnData(class CompoundTag const&);
+    MCAPI SpawnData(class CompoundTag const&); // NOLINT
     /**
      * @symbol
      * ?save\@SpawnData\@\@QEAA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::unique_ptr<class CompoundTag> save();
+    MCAPI std::unique_ptr<class CompoundTag> save(); // NOLINT
 };

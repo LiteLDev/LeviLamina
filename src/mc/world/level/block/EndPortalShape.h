@@ -4,24 +4,23 @@
 
 class EndPortalShape {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDPORTALSHAPE
 public:
+    // prevent constructor by default
     EndPortalShape& operator=(EndPortalShape const&) = delete;
     EndPortalShape(EndPortalShape const&)            = delete;
     EndPortalShape()                                 = delete;
-#endif
 
 public:
     /**
      * @symbol ??0EndPortalShape\@\@QEAA\@AEAVBlockSource\@\@VBlockPos\@\@\@Z
      */
-    MCAPI EndPortalShape(class BlockSource&, class BlockPos);
+    MCAPI EndPortalShape(class BlockSource&, class BlockPos); // NOLINT
     /**
      * @symbol ?isValid\@EndPortalShape\@\@QEAA_NAEAVBlockSource\@\@\@Z
      */
-    MCAPI bool isValid(class BlockSource&);
+    MCAPI bool isValid(class BlockSource&); // NOLINT
     /**
      * @symbol ??1EndPortalShape\@\@QEAA\@XZ
      */
-    MCAPI ~EndPortalShape();
+    MCAPI ~EndPortalShape(); // NOLINT
 };

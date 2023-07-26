@@ -4,16 +4,15 @@
 
 class EducationLocalLevelSettings {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDUCATIONLOCALLEVELSETTINGS
 public:
+    // prevent constructor by default
     EducationLocalLevelSettings& operator=(EducationLocalLevelSettings const&) = delete;
     EducationLocalLevelSettings(EducationLocalLevelSettings const&)            = delete;
     EducationLocalLevelSettings()                                              = delete;
-#endif
 
 public:
     /**
      * @symbol ??1EducationLocalLevelSettings\@\@QEAA\@XZ
      */
-    MCAPI ~EducationLocalLevelSettings();
+    MCAPI ~EducationLocalLevelSettings(); // NOLINT
 };

@@ -12,12 +12,11 @@ namespace JsonUtil { class EmptyClass; }
 
 class SwimIdleDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWIMIDLEDEFINITION
 public:
+    // prevent constructor by default
     SwimIdleDefinition& operator=(SwimIdleDefinition const&) = delete;
     SwimIdleDefinition(SwimIdleDefinition const&)            = delete;
     SwimIdleDefinition()                                     = delete;
-#endif
 
 public:
     /**
@@ -25,5 +24,5 @@ public:
      * ?buildSchema\@SwimIdleDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VSwimIdleDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void
-    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwimIdleDefinition>>&);
+    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwimIdleDefinition>>&); // NOLINT
 };

@@ -12,27 +12,26 @@ namespace JsonUtil { class EmptyClass; }
 
 struct CanClimbDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CANCLIMBDEFINITION
 public:
+    // prevent constructor by default
     CanClimbDefinition& operator=(CanClimbDefinition const&) = delete;
     CanClimbDefinition(CanClimbDefinition const&)            = delete;
     CanClimbDefinition()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ?initialize\@CanClimbDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&) const;
+    MCAPI void initialize(class EntityContext&) const; // NOLINT
     /**
      * @symbol ?uninitialize\@CanClimbDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void uninitialize(class EntityContext&) const;
+    MCAPI void uninitialize(class EntityContext&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@CanClimbDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UCanClimbDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct CanClimbDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      struct CanClimbDefinition>>&); // NOLINT
 };

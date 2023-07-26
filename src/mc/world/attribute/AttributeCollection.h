@@ -4,24 +4,23 @@
 
 class AttributeCollection {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTRIBUTECOLLECTION
 public:
+    // prevent constructor by default
     AttributeCollection& operator=(AttributeCollection const&) = delete;
     AttributeCollection(AttributeCollection const&)            = delete;
     AttributeCollection()                                      = delete;
-#endif
 
 public:
     /**
      * @symbol ?hasAttribute\@AttributeCollection\@\@SA_NAEBVHashedString\@\@\@Z
      */
-    MCAPI static bool hasAttribute(class HashedString const&);
+    MCAPI static bool hasAttribute(class HashedString const&); // NOLINT
 
     // private:
     /**
      * @symbol ?instance\@AttributeCollection\@\@CAAEAV1\@XZ
      */
-    MCAPI static class AttributeCollection& instance();
+    MCAPI static class AttributeCollection& instance(); // NOLINT
 
 private:
 };

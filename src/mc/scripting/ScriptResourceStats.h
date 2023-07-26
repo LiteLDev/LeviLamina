@@ -4,25 +4,24 @@
 
 struct ScriptResourceStats {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTRESOURCESTATS
 public:
+    // prevent constructor by default
     ScriptResourceStats& operator=(ScriptResourceStats const&) = delete;
     ScriptResourceStats(ScriptResourceStats const&)            = delete;
     ScriptResourceStats()                                      = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?serialize\@ScriptResourceStats\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string serialize() const;
+    MCAPI std::string serialize() const; // NOLINT
     /**
      * @symbol ??1ScriptResourceStats\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptResourceStats();
+    MCAPI ~ScriptResourceStats(); // NOLINT
     /**
      * @symbol ?bindType\@ScriptResourceStats\@\@SAXXZ
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(); // NOLINT
 };

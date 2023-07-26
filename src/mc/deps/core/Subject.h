@@ -7,14 +7,11 @@ namespace Core {
 template <typename T0, typename T1>
 class Subject {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORE_SUBJECT
 public:
+    // prevent constructor by default
     Subject& operator=(Subject const&) = delete;
     Subject(Subject const&)            = delete;
     Subject()                          = delete;
-#endif
-
-public:
 };
 
 }; // namespace Core

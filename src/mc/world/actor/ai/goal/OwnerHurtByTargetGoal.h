@@ -7,42 +7,41 @@
 
 class OwnerHurtByTargetGoal : public ::TargetGoal {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OWNERHURTBYTARGETGOAL
 public:
+    // prevent constructor by default
     OwnerHurtByTargetGoal& operator=(OwnerHurtByTargetGoal const&) = delete;
     OwnerHurtByTargetGoal(OwnerHurtByTargetGoal const&)            = delete;
     OwnerHurtByTargetGoal()                                        = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?canUse\@OwnerHurtByTargetGoal\@\@UEAA_NXZ
      */
-    virtual bool canUse();
+    virtual bool canUse(); // NOLINT
     /**
      * @vftbl 4
      * @symbol ?start\@OwnerHurtByTargetGoal\@\@UEAAXXZ
      */
-    virtual void start();
+    virtual void start(); // NOLINT
     /**
      * @vftbl 8
      * @symbol __unk_vfn_8
      */
-    virtual void __unk_vfn_8();
+    virtual void __unk_vfn_8(); // NOLINT
     /**
      * @vftbl 9
      * @symbol __unk_vfn_9
      */
-    virtual void __unk_vfn_9();
+    virtual void __unk_vfn_9(); // NOLINT
     /**
      * @symbol
      * ??0OwnerHurtByTargetGoal\@\@QEAA\@AEAVMob\@\@AEBV?$vector\@UMobDescriptor\@\@V?$allocator\@UMobDescriptor\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI OwnerHurtByTargetGoal(class Mob&, std::vector<struct MobDescriptor> const&);
+    MCAPI OwnerHurtByTargetGoal(class Mob&, std::vector<struct MobDescriptor> const&); // NOLINT
 };

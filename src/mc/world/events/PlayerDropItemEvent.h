@@ -4,16 +4,15 @@
 
 struct PlayerDropItemEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERDROPITEMEVENT
 public:
+    // prevent constructor by default
     PlayerDropItemEvent& operator=(PlayerDropItemEvent const&) = delete;
     PlayerDropItemEvent(PlayerDropItemEvent const&)            = delete;
     PlayerDropItemEvent()                                      = delete;
-#endif
 
 public:
     /**
      * @symbol ??1PlayerDropItemEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerDropItemEvent();
+    MCAPI ~PlayerDropItemEvent(); // NOLINT
 };

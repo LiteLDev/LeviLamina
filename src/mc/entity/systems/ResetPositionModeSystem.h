@@ -9,18 +9,17 @@
 
 class ResetPositionModeSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESETPOSITIONMODESYSTEM
 public:
+    // prevent constructor by default
     ResetPositionModeSystem& operator=(ResetPositionModeSystem const&) = delete;
     ResetPositionModeSystem(ResetPositionModeSystem const&)            = delete;
     ResetPositionModeSystem()                                          = delete;
-#endif
 
 public:
     /**
      * @symbol ?createResetPositionModeSystem\@ResetPositionModeSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createResetPositionModeSystem();
+    MCAPI static struct TickingSystemWithInfo createResetPositionModeSystem(); // NOLINT
     /**
      * @symbol
      * ?tickResetPositionModeSystem\@ResetPositionModeSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@\@\@UPlayerPositionModeComponent\@\@\@\@\@Z
@@ -30,5 +29,5 @@ public:
                                     class StrictEntityContext,
                                     class EntityRegistryBase,
                                     struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
-                                    struct PlayerPositionModeComponent>);
+                                    struct PlayerPositionModeComponent>); // NOLINT
 };

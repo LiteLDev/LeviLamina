@@ -4,12 +4,9 @@
 
 class IScriptPluginSource {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISCRIPTPLUGINSOURCE
 public:
+    // prevent constructor by default
     IScriptPluginSource& operator=(IScriptPluginSource const&) = delete;
     IScriptPluginSource(IScriptPluginSource const&)            = delete;
     IScriptPluginSource()                                      = delete;
-#endif
-
-public:
 };

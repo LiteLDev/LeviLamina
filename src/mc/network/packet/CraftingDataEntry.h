@@ -4,28 +4,27 @@
 
 class CraftingDataEntry {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTINGDATAENTRY
 public:
+    // prevent constructor by default
     CraftingDataEntry& operator=(CraftingDataEntry const&) = delete;
     CraftingDataEntry(CraftingDataEntry const&)            = delete;
     CraftingDataEntry()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ?fillFromMultiRecipe\@CraftingDataEntry\@\@QEAAXAEBVMultiRecipe\@\@\@Z
      */
-    MCAPI void fillFromMultiRecipe(class MultiRecipe const&);
+    MCAPI void fillFromMultiRecipe(class MultiRecipe const&); // NOLINT
     /**
      * @symbol ?fillFromRecipe\@CraftingDataEntry\@\@QEAAXAEBVRecipe\@\@\@Z
      */
-    MCAPI void fillFromRecipe(class Recipe const&);
+    MCAPI void fillFromRecipe(class Recipe const&); // NOLINT
     /**
      * @symbol ?write\@CraftingDataEntry\@\@QEBAXAEAVBinaryStream\@\@\@Z
      */
-    MCAPI void write(class BinaryStream&) const;
+    MCAPI void write(class BinaryStream&) const; // NOLINT
     /**
      * @symbol ??1CraftingDataEntry\@\@QEAA\@XZ
      */
-    MCAPI ~CraftingDataEntry();
+    MCAPI ~CraftingDataEntry(); // NOLINT
 };

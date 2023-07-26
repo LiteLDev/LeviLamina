@@ -4,12 +4,9 @@
 
 class PacketSender {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKETSENDER
 public:
+    // prevent constructor by default
     PacketSender& operator=(PacketSender const&) = delete;
     PacketSender(PacketSender const&)            = delete;
     PacketSender()                               = delete;
-#endif
-
-public:
 };

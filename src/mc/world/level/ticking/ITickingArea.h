@@ -4,22 +4,21 @@
 
 class ITickingArea {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITICKINGAREA
 public:
+    // prevent constructor by default
     ITickingArea& operator=(ITickingArea const&) = delete;
     ITickingArea(ITickingArea const&)            = delete;
     ITickingArea()                               = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITICKINGAREA
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ITickingArea();
+    MCVAPI ~ITickingArea(); // NOLINT
 #endif
     /**
      * @symbol ?serialize\@ITickingArea\@\@QEBA?AVCompoundTag\@\@XZ
      */
-    MCAPI class CompoundTag serialize() const;
+    MCAPI class CompoundTag serialize() const; // NOLINT
 };

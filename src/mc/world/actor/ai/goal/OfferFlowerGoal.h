@@ -20,85 +20,83 @@ public:
     // OfferFlowerGoal inner types define
     class OfferFlowerDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OFFERFLOWERGOAL_OFFERFLOWERDEFINITION
     public:
+        // prevent constructor by default
         OfferFlowerDefinition& operator=(OfferFlowerDefinition const&) = delete;
         OfferFlowerDefinition(OfferFlowerDefinition const&)            = delete;
         OfferFlowerDefinition()                                        = delete;
-#endif
 
     public:
         /**
          * @symbol ?initialize\@OfferFlowerDefinition\@OfferFlowerGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
          */
-        MCAPI void initialize(class EntityContext&, class OfferFlowerGoal&) const;
+        MCAPI void initialize(class EntityContext&, class OfferFlowerGoal&) const; // NOLINT
         /**
          * @symbol
          * ?buildSchema\@OfferFlowerDefinition\@OfferFlowerGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VOfferFlowerDefinition\@OfferFlowerGoal\@\@\@JsonUtil\@\@\@4\@\@Z
          */
         MCAPI static void
-        buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class OfferFlowerGoal::OfferFlowerDefinition>>&);
+        buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class OfferFlowerGoal::OfferFlowerDefinition>>&); // NOLINT
         /**
          * @symbol ?getStrictParsingVersion\@OfferFlowerDefinition\@OfferFlowerGoal\@\@SA?AVSemVersion\@\@XZ
          */
-        MCAPI static class SemVersion getStrictParsingVersion();
+        MCAPI static class SemVersion getStrictParsingVersion(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OFFERFLOWERGOAL
 public:
+    // prevent constructor by default
     OfferFlowerGoal& operator=(OfferFlowerGoal const&) = delete;
     OfferFlowerGoal(OfferFlowerGoal const&)            = delete;
     OfferFlowerGoal()                                  = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?canUse\@OfferFlowerGoal\@\@UEAA_NXZ
      */
-    virtual bool canUse();
+    virtual bool canUse(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?canContinueToUse\@OfferFlowerGoal\@\@UEAA_NXZ
      */
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse(); // NOLINT
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3();
+    virtual void __unk_vfn_3(); // NOLINT
     /**
      * @vftbl 4
      * @symbol ?start\@OfferFlowerGoal\@\@UEAAXXZ
      */
-    virtual void start();
+    virtual void start(); // NOLINT
     /**
      * @vftbl 5
      * @symbol ?stop\@OfferFlowerGoal\@\@UEAAXXZ
      */
-    virtual void stop();
+    virtual void stop(); // NOLINT
     /**
      * @vftbl 6
      * @symbol ?tick\@OfferFlowerGoal\@\@UEAAXXZ
      */
-    virtual void tick();
+    virtual void tick(); // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?appendDebugInfo\@OfferFlowerGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string&) const; // NOLINT
     /**
      * @symbol ??0OfferFlowerGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
-    MCAPI OfferFlowerGoal(class Mob&);
+    MCAPI OfferFlowerGoal(class Mob&); // NOLINT
     /**
      * @symbol ?getMaxOfferFlowerDurationTicks\@OfferFlowerGoal\@\@QEBAHXZ
      */
-    MCAPI int getMaxOfferFlowerDurationTicks() const;
+    MCAPI int getMaxOfferFlowerDurationTicks() const; // NOLINT
 };

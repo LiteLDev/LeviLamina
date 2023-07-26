@@ -5,12 +5,9 @@
 template <typename T0>
 class BlockStateVariant {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSTATEVARIANT
 public:
+    // prevent constructor by default
     BlockStateVariant& operator=(BlockStateVariant const&) = delete;
     BlockStateVariant(BlockStateVariant const&)            = delete;
     BlockStateVariant()                                    = delete;
-#endif
-
-public:
 };

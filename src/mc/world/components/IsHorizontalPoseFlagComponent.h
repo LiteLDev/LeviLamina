@@ -4,12 +4,9 @@
 
 struct IsHorizontalPoseFlagComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISHORIZONTALPOSEFLAGCOMPONENT
 public:
+    // prevent constructor by default
     IsHorizontalPoseFlagComponent& operator=(IsHorizontalPoseFlagComponent const&) = delete;
     IsHorizontalPoseFlagComponent(IsHorizontalPoseFlagComponent const&)            = delete;
     IsHorizontalPoseFlagComponent()                                                = delete;
-#endif
-
-public:
 };

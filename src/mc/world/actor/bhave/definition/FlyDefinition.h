@@ -12,22 +12,21 @@ namespace Json { class Value; }
 
 class FlyDefinition : public ::BehaviorDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLYDEFINITION
 public:
+    // prevent constructor by default
     FlyDefinition& operator=(FlyDefinition const&) = delete;
     FlyDefinition(FlyDefinition const&)            = delete;
     FlyDefinition()                                = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?load\@FlyDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    virtual void load(class Json::Value, class BehaviorFactory const&); // NOLINT
 };

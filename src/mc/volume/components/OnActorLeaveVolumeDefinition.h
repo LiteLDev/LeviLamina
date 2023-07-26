@@ -4,29 +4,28 @@
 
 struct OnActorLeaveVolumeDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONACTORLEAVEVOLUMEDEFINITION
 public:
+    // prevent constructor by default
     OnActorLeaveVolumeDefinition& operator=(OnActorLeaveVolumeDefinition const&) = delete;
     OnActorLeaveVolumeDefinition(OnActorLeaveVolumeDefinition const&)            = delete;
     OnActorLeaveVolumeDefinition()                                               = delete;
-#endif
 
 public:
     /**
      * @symbol ??4OnActorLeaveVolumeDefinition\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct OnActorLeaveVolumeDefinition& operator=(struct OnActorLeaveVolumeDefinition&&);
+    MCAPI struct OnActorLeaveVolumeDefinition& operator=(struct OnActorLeaveVolumeDefinition&&); // NOLINT
     /**
      * @symbol ??1OnActorLeaveVolumeDefinition\@\@QEAA\@XZ
      */
-    MCAPI ~OnActorLeaveVolumeDefinition();
+    MCAPI ~OnActorLeaveVolumeDefinition(); // NOLINT
+    /**
+     * @symbol ?bindType\@OnActorLeaveVolumeDefinition\@\@SAXXZ
+     */
+    MCAPI static void bindType(); // NOLINT
     /**
      * @symbol
      * ?NAME\@OnActorLeaveVolumeDefinition\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const NAME;
-    /**
-     * @symbol ?bindType\@OnActorLeaveVolumeDefinition\@\@SAXXZ
-     */
-    MCAPI static void bindType();
+    MCAPI static std::string const NAME; // NOLINT
 };

@@ -4,12 +4,9 @@
 
 class ICommandDispatcher {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICOMMANDDISPATCHER
 public:
+    // prevent constructor by default
     ICommandDispatcher& operator=(ICommandDispatcher const&) = delete;
     ICommandDispatcher(ICommandDispatcher const&)            = delete;
     ICommandDispatcher()                                     = delete;
-#endif
-
-public:
 };

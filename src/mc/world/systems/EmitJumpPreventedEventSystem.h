@@ -6,6 +6,6 @@ namespace EmitJumpPreventedEventSystem {
 /**
  * @symbol ?createSystem\@EmitJumpPreventedEventSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
  */
-MCAPI struct TickingSystemWithInfo createSystem();
+MCAPI struct TickingSystemWithInfo createSystem(); // NOLINT
 
 }; // namespace EmitJumpPreventedEventSystem

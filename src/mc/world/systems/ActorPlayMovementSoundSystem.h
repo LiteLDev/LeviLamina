@@ -6,6 +6,6 @@ namespace ActorPlayMovementSoundSystem {
 /**
  * @symbol ?createSystem\@ActorPlayMovementSoundSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
  */
-MCAPI struct TickingSystemWithInfo createSystem();
+MCAPI struct TickingSystemWithInfo createSystem(); // NOLINT
 
 }; // namespace ActorPlayMovementSoundSystem

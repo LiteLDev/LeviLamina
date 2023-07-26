@@ -7,20 +7,19 @@
 
 class ElementConstructorContainerScreenValidator : public ::ContainerScreenValidatorBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ELEMENTCONSTRUCTORCONTAINERSCREENVALIDATOR
 public:
+    // prevent constructor by default
     ElementConstructorContainerScreenValidator& operator=(ElementConstructorContainerScreenValidator const&) = delete;
     ElementConstructorContainerScreenValidator(ElementConstructorContainerScreenValidator const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @symbol ??0ElementConstructorContainerScreenValidator\@\@QEAA\@XZ
      */
-    MCAPI ElementConstructorContainerScreenValidator();
+    MCAPI ElementConstructorContainerScreenValidator(); // NOLINT
 };

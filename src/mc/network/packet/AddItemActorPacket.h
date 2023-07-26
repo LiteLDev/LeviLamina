@@ -8,46 +8,45 @@
 
 class AddItemActorPacket : public ::Packet {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADDITEMACTORPACKET
 public:
+    // prevent constructor by default
     AddItemActorPacket& operator=(AddItemActorPacket const&) = delete;
     AddItemActorPacket(AddItemActorPacket const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?getId\@AddItemActorPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
-    virtual enum class MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?getName\@AddItemActorPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string getName() const;
+    virtual std::string getName() const; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?write\@AddItemActorPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream&) const; // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?_read\@AddItemActorPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&); // NOLINT
     /**
      * @symbol ??0AddItemActorPacket\@\@QEAA\@AEAVItemActor\@\@\@Z
      */
-    MCAPI AddItemActorPacket(class ItemActor&);
+    MCAPI AddItemActorPacket(class ItemActor&); // NOLINT
     /**
      * @symbol ??0AddItemActorPacket\@\@QEAA\@XZ
      */
-    MCAPI AddItemActorPacket();
+    MCAPI AddItemActorPacket(); // NOLINT
 };

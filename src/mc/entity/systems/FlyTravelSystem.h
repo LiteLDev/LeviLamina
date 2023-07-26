@@ -9,18 +9,17 @@
 
 class FlyTravelSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLYTRAVELSYSTEM
 public:
+    // prevent constructor by default
     FlyTravelSystem& operator=(FlyTravelSystem const&) = delete;
     FlyTravelSystem(FlyTravelSystem const&)            = delete;
     FlyTravelSystem()                                  = delete;
-#endif
 
 public:
     /**
      * @symbol ?createFlyTravelSystem\@FlyTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createFlyTravelSystem();
+    MCAPI static struct TickingSystemWithInfo createFlyTravelSystem(); // NOLINT
     /**
      * @symbol
      * ?tickFlyTravelSystem\@FlyTravelSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@UMobTravelComponent\@\@\@\@$$CBUAbilitiesComponent\@\@$$CBUSynchedActorDataComponent\@\@UFlySpeedComponent\@\@\@\@\@Z
@@ -32,5 +31,5 @@ public:
                             struct Include<class FlagComponent<struct PlayerComponentFlag>, struct MobTravelComponent>,
                             struct AbilitiesComponent const,
                             struct SynchedActorDataComponent const,
-                            struct FlySpeedComponent>);
+                            struct FlySpeedComponent>); // NOLINT
 };

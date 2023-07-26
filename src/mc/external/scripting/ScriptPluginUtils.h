@@ -7,37 +7,37 @@ namespace ScriptPluginUtils {
  * @symbol
  * ?BETA_RELEASE\@ScriptPluginUtils\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
  */
-MCAPI extern std::string const BETA_RELEASE;
+MCAPI extern std::string const BETA_RELEASE; // NOLINT
 /**
  * @symbol
  * ?GetRuntimeType\@ScriptPluginUtils\@\@YA?AW4ScriptRuntimeType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
  */
-MCAPI enum class ScriptRuntimeType GetRuntimeType(std::string const&);
+MCAPI enum class ScriptRuntimeType GetRuntimeType(std::string const&); // NOLINT
 /**
  * @symbol
  * ?GetRuntimeTypeFromFileExtension\@ScriptPluginUtils\@\@YA?AW4ScriptRuntimeType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
  */
-MCAPI enum class ScriptRuntimeType GetRuntimeTypeFromFileExtension(std::string const&);
+MCAPI enum class ScriptRuntimeType GetRuntimeTypeFromFileExtension(std::string const&); // NOLINT
 /**
  * @symbol
  * ?INTERNAL_RELEASE\@ScriptPluginUtils\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
  */
-MCAPI extern std::string const INTERNAL_RELEASE;
+MCAPI extern std::string const INTERNAL_RELEASE; // NOLINT
 /**
  * @symbol
  * ?JAVA_SCRIPT_RUNTIME_EXTENSION\@ScriptPluginUtils\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
  */
-MCAPI extern std::string const JAVA_SCRIPT_RUNTIME_EXTENSION;
+MCAPI extern std::string const JAVA_SCRIPT_RUNTIME_EXTENSION; // NOLINT
 /**
  * @symbol
  * ?JAVA_SCRIPT_RUNTIME_NAME\@ScriptPluginUtils\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
  */
-MCAPI extern std::string const JAVA_SCRIPT_RUNTIME_NAME;
+MCAPI extern std::string const JAVA_SCRIPT_RUNTIME_NAME; // NOLINT
 /**
  * @symbol
  * ?JavaScriptModuleNameNormalizer\@ScriptPluginUtils\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@3\@AEBV23\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@\@Z
  */
 MCAPI std::string
-JavaScriptModuleNameNormalizer(class std::basic_string_view<char, struct std::char_traits<char>> const&, std::string const&, std::vector<std::string> const&);
+JavaScriptModuleNameNormalizer(class std::basic_string_view<char, struct std::char_traits<char>> const&, std::string const&, std::vector<std::string> const&); // NOLINT
 
 }; // namespace ScriptPluginUtils

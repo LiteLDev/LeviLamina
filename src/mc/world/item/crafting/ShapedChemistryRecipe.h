@@ -12,36 +12,35 @@ namespace mce { class UUID; }
 
 class ShapedChemistryRecipe : public ::ShapedRecipe {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAPEDCHEMISTRYRECIPE
 public:
+    // prevent constructor by default
     ShapedChemistryRecipe& operator=(ShapedChemistryRecipe const&) = delete;
     ShapedChemistryRecipe(ShapedChemistryRecipe const&)            = delete;
     ShapedChemistryRecipe()                                        = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 5
      * @symbol __unk_vfn_5
      */
-    virtual void __unk_vfn_5();
+    virtual void __unk_vfn_5(); // NOLINT
     /**
      * @vftbl 6
      * @symbol ?matches\@ShapedChemistryRecipe\@\@UEBA_NAEBVCraftingContainer\@\@AEBVCraftingContext\@\@\@Z
      */
-    virtual bool matches(class CraftingContainer const&, class CraftingContext const&) const;
+    virtual bool matches(class CraftingContainer const&, class CraftingContext const&) const; // NOLINT
     /**
      * @vftbl 8
      * @symbol ?getId\@ShapedChemistryRecipe\@\@UEBAAEBVUUID\@mce\@\@XZ
      */
-    virtual class mce::UUID const& getId() const;
+    virtual class mce::UUID const& getId() const; // NOLINT
     /**
      * @symbol ?ID\@ShapedChemistryRecipe\@\@2VUUID\@mce\@\@B
      */
-    MCAPI static class mce::UUID const ID;
+    MCAPI static class mce::UUID const ID; // NOLINT
 };

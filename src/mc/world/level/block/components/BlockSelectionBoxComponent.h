@@ -4,12 +4,9 @@
 
 struct BlockSelectionBoxComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSELECTIONBOXCOMPONENT
 public:
+    // prevent constructor by default
     BlockSelectionBoxComponent& operator=(BlockSelectionBoxComponent const&) = delete;
     BlockSelectionBoxComponent(BlockSelectionBoxComponent const&)            = delete;
     BlockSelectionBoxComponent()                                             = delete;
-#endif
-
-public:
 };

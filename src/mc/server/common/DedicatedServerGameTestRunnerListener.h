@@ -10,39 +10,38 @@ namespace gametest { struct GameTestError; }
 
 class DedicatedServerGameTestRunnerListener {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEDICATEDSERVERGAMETESTRUNNERLISTENER
 public:
+    // prevent constructor by default
     DedicatedServerGameTestRunnerListener& operator=(DedicatedServerGameTestRunnerListener const&) = delete;
     DedicatedServerGameTestRunnerListener(DedicatedServerGameTestRunnerListener const&)            = delete;
     DedicatedServerGameTestRunnerListener()                                                        = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?onTestPassed\@DedicatedServerGameTestRunnerListener\@\@UEAAXAEAVBaseGameTestInstance\@gametest\@\@\@Z
      */
-    virtual void onTestPassed(class gametest::BaseGameTestInstance&);
+    virtual void onTestPassed(class gametest::BaseGameTestInstance&); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?onTestFailed\@DedicatedServerGameTestRunnerListener\@\@UEAAXAEAVBaseGameTestInstance\@gametest\@\@\@Z
      */
-    virtual void onTestFailed(class gametest::BaseGameTestInstance&);
+    virtual void onTestFailed(class gametest::BaseGameTestInstance&); // NOLINT
     /**
      * @vftbl 4
      * @symbol ?onTestStarted\@DedicatedServerGameTestRunnerListener\@\@UEAAXAEAVBaseGameTestInstance\@gametest\@\@\@Z
      */
-    virtual void onTestStarted(class gametest::BaseGameTestInstance&);
+    virtual void onTestStarted(class gametest::BaseGameTestInstance&); // NOLINT
 
     // private:
     /**
@@ -50,12 +49,12 @@ public:
      * ?_addTestResult\@DedicatedServerGameTestRunnerListener\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0V?$optional\@UGameTestError\@gametest\@\@\@3\@\@Z
      */
     MCAPI void
-    _addTestResult(std::string const&, std::string const&, class std::optional<struct gametest::GameTestError>);
+    _addTestResult(std::string const&, std::string const&, class std::optional<struct gametest::GameTestError>); // NOLINT
     /**
      * @symbol
      * ?_getTestNameWithRotation\@DedicatedServerGameTestRunnerListener\@\@CA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVBaseGameTestInstance\@gametest\@\@\@Z
      */
-    MCAPI static std::string _getTestNameWithRotation(class gametest::BaseGameTestInstance&);
+    MCAPI static std::string _getTestNameWithRotation(class gametest::BaseGameTestInstance&); // NOLINT
 
 private:
 };

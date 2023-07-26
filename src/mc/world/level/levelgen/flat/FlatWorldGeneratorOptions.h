@@ -9,28 +9,27 @@ namespace Json { class Value; }
 
 class FlatWorldGeneratorOptions {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLATWORLDGENERATOROPTIONS
 public:
+    // prevent constructor by default
     FlatWorldGeneratorOptions& operator=(FlatWorldGeneratorOptions const&) = delete;
     FlatWorldGeneratorOptions(FlatWorldGeneratorOptions const&)            = delete;
     FlatWorldGeneratorOptions()                                            = delete;
-#endif
 
 public:
     /**
      * @symbol ??1FlatWorldGeneratorOptions\@\@QEAA\@XZ
      */
-    MCAPI ~FlatWorldGeneratorOptions();
+    MCAPI ~FlatWorldGeneratorOptions(); // NOLINT
     /**
      * @symbol ?getLayers\@FlatWorldGeneratorOptions\@\@SA?AVValue\@Json\@\@AEBVLevelData\@\@\@Z
      */
-    MCAPI static class Json::Value getLayers(class LevelData const&);
+    MCAPI static class Json::Value getLayers(class LevelData const&); // NOLINT
 
     // protected:
     /**
      * @symbol ?_load\@FlatWorldGeneratorOptions\@\@IEAA_NAEBVValue\@Json\@\@AEBVBlockPalette\@\@AEBVLevelData\@\@\@Z
      */
-    MCAPI bool _load(class Json::Value const&, class BlockPalette const&, class LevelData const&);
+    MCAPI bool _load(class Json::Value const&, class BlockPalette const&, class LevelData const&); // NOLINT
 
 protected:
 };

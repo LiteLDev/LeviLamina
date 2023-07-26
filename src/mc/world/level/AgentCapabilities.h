@@ -4,12 +4,9 @@
 
 struct AgentCapabilities {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCAPABILITIES
 public:
+    // prevent constructor by default
     AgentCapabilities& operator=(AgentCapabilities const&) = delete;
     AgentCapabilities(AgentCapabilities const&)            = delete;
     AgentCapabilities()                                    = delete;
-#endif
-
-public:
 };

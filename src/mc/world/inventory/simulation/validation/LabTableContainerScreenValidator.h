@@ -7,20 +7,19 @@
 
 class LabTableContainerScreenValidator : public ::ContainerScreenValidatorBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LABTABLECONTAINERSCREENVALIDATOR
 public:
+    // prevent constructor by default
     LabTableContainerScreenValidator& operator=(LabTableContainerScreenValidator const&) = delete;
     LabTableContainerScreenValidator(LabTableContainerScreenValidator const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @symbol ??0LabTableContainerScreenValidator\@\@QEAA\@XZ
      */
-    MCAPI LabTableContainerScreenValidator();
+    MCAPI LabTableContainerScreenValidator(); // NOLINT
 };

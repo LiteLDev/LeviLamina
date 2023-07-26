@@ -7,14 +7,11 @@ namespace Bedrock::Detail {
 template <typename T0>
 struct ErrorInfoBuilder {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_DETAIL_ERRORINFOBUILDER
 public:
+    // prevent constructor by default
     ErrorInfoBuilder& operator=(ErrorInfoBuilder const&) = delete;
     ErrorInfoBuilder(ErrorInfoBuilder const&)            = delete;
     ErrorInfoBuilder()                                   = delete;
-#endif
-
-public:
 };
 
 }; // namespace Bedrock::Detail

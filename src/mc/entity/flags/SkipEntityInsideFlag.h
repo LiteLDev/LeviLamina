@@ -4,12 +4,9 @@
 
 struct SkipEntityInsideFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SKIPENTITYINSIDEFLAG
 public:
+    // prevent constructor by default
     SkipEntityInsideFlag& operator=(SkipEntityInsideFlag const&) = delete;
     SkipEntityInsideFlag(SkipEntityInsideFlag const&)            = delete;
     SkipEntityInsideFlag()                                       = delete;
-#endif
-
-public:
 };

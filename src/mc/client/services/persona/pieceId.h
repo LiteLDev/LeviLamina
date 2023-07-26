@@ -7,11 +7,11 @@ namespace personaDefault::pieceId {
  * @symbol
  * ?STEVE_BOTTOM_PIECE\@pieceId\@personaDefault\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
  */
-MCAPI extern std::string const STEVE_BOTTOM_PIECE;
+MCAPI extern std::string const STEVE_BOTTOM_PIECE; // NOLINT
 /**
  * @symbol
  * ?STEVE_TOP_PIECE\@pieceId\@personaDefault\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
  */
-MCAPI extern std::string const STEVE_TOP_PIECE;
+MCAPI extern std::string const STEVE_TOP_PIECE; // NOLINT
 
 }; // namespace personaDefault::pieceId

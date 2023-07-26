@@ -8,18 +8,17 @@
 
 class HorsePostTravelSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HORSEPOSTTRAVELSYSTEM
 public:
+    // prevent constructor by default
     HorsePostTravelSystem& operator=(HorsePostTravelSystem const&) = delete;
     HorsePostTravelSystem(HorsePostTravelSystem const&)            = delete;
     HorsePostTravelSystem()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@HorsePostTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
 
     // private:
     /**
@@ -27,7 +26,7 @@ public:
      * ?_doHorsePostTravelSystem\@HorsePostTravelSystem\@\@CAXAEBVStrictEntityContext\@\@V?$Optional\@$$CBV?$FlagComponent\@UWasOnGroundPreTravelFlag\@\@\@\@\@\@AEAVActorOwnerComponent\@\@\@Z
      */
     MCAPI static void
-    _doHorsePostTravelSystem(class StrictEntityContext const&, class Optional<class FlagComponent<struct WasOnGroundPreTravelFlag> const>, class ActorOwnerComponent&);
+    _doHorsePostTravelSystem(class StrictEntityContext const&, class Optional<class FlagComponent<struct WasOnGroundPreTravelFlag> const>, class ActorOwnerComponent&); // NOLINT
 
 private:
 };

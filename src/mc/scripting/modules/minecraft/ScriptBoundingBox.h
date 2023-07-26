@@ -5,23 +5,27 @@
 // auto generated inclusion list
 #include "mc/external/scripting/InterfaceBindingBuilder.h"
 
+// auto generated forward declare list
+// clang-format off
+class BoundingBox;
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class ScriptBoundingBox {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTBOUNDINGBOX
 public:
+    // prevent constructor by default
     ScriptBoundingBox& operator=(ScriptBoundingBox const&) = delete;
     ScriptBoundingBox(ScriptBoundingBox const&)            = delete;
     ScriptBoundingBox()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?bind\@ScriptBoundingBox\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@VBoundingBox\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::InterfaceBindingBuilder<class BoundingBox> bind();
+    MCAPI static class Scripting::InterfaceBindingBuilder<class BoundingBox> bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -4,25 +4,29 @@
 
 class DelayActionList {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DELAYACTIONLIST
 public:
+    // prevent constructor by default
     DelayActionList& operator=(DelayActionList const&) = delete;
     DelayActionList(DelayActionList const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0DelayActionList\@\@QEAA\@XZ
      */
-    MCAPI DelayActionList();
+    MCAPI DelayActionList(); // NOLINT
     /**
      * @symbol
      * ?queueRequestOrExecuteAction\@DelayActionList\@\@QEAA?AW4QueueRequestResult\@\@VDelayRequest\@\@AEAVServerLevel\@\@AEAVDimension\@\@_K_N\@Z
      */
-    MCAPI enum class QueueRequestResult
-    queueRequestOrExecuteAction(class DelayRequest, class ServerLevel&, class Dimension&, unsigned __int64, bool);
+    MCAPI enum class QueueRequestResult queueRequestOrExecuteAction(
+        class DelayRequest,
+        class ServerLevel&,
+        class Dimension&,
+        unsigned __int64,
+        bool
+    ); // NOLINT
     /**
      * @symbol ?tick\@DelayActionList\@\@QEAAXAEAVServerLevel\@\@AEAVDimension\@\@_K\@Z
      */
-    MCAPI void tick(class ServerLevel&, class Dimension&, unsigned __int64);
+    MCAPI void tick(class ServerLevel&, class Dimension&, unsigned __int64); // NOLINT
 };

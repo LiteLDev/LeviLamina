@@ -7,27 +7,26 @@
 
 class DesertPyramidPiece : public ::StructurePiece {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DESERTPYRAMIDPIECE
 public:
+    // prevent constructor by default
     DesertPyramidPiece& operator=(DesertPyramidPiece const&) = delete;
     DesertPyramidPiece(DesertPyramidPiece const&)            = delete;
     DesertPyramidPiece()                                     = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?getType\@DesertPyramidPiece\@\@UEBA?AW4StructurePieceType\@\@XZ
      */
-    virtual enum class StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const; // NOLINT
     /**
      * @vftbl 4
      * @symbol ?postProcess\@DesertPyramidPiece\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&); // NOLINT
 };

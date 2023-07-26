@@ -4,12 +4,9 @@
 
 class ProgressListener {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROGRESSLISTENER
 public:
+    // prevent constructor by default
     ProgressListener& operator=(ProgressListener const&) = delete;
     ProgressListener(ProgressListener const&)            = delete;
     ProgressListener()                                   = delete;
-#endif
-
-public:
 };

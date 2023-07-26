@@ -4,16 +4,15 @@
 
 struct MolangQueryFunction {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGQUERYFUNCTION
 public:
+    // prevent constructor by default
     MolangQueryFunction& operator=(MolangQueryFunction const&) = delete;
     MolangQueryFunction(MolangQueryFunction const&)            = delete;
     MolangQueryFunction()                                      = delete;
-#endif
 
 public:
     /**
      * @symbol ??1MolangQueryFunction\@\@QEAA\@XZ
      */
-    MCAPI ~MolangQueryFunction();
+    MCAPI ~MolangQueryFunction(); // NOLINT
 };

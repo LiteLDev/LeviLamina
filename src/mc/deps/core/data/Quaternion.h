@@ -4,16 +4,15 @@
 
 class Quaternion {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_QUATERNION
 public:
+    // prevent constructor by default
     Quaternion& operator=(Quaternion const&) = delete;
     Quaternion(Quaternion const&)            = delete;
     Quaternion()                             = delete;
-#endif
 
 public:
     /**
      * @symbol ??0Quaternion\@\@QEAA\@AEBVMatrix\@\@\@Z
      */
-    MCAPI Quaternion(class Matrix const&);
+    MCAPI Quaternion(class Matrix const&); // NOLINT
 };

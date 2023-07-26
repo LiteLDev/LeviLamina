@@ -11,6 +11,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class Player;
+class Vec3;
 namespace ScriptModuleMinecraft { struct ScriptDimensionLocation; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerSoundOptions; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
@@ -18,191 +21,191 @@ namespace ScriptModuleMinecraft { struct ScriptScreenDisplay; }
 namespace ScriptModuleMinecraft { struct ScriptSoundOptions; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ContextConfig; }
+struct EntityRefTraits;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 class ScriptPlayer : public ::ScriptModuleMinecraft::ScriptActor {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTPLAYER
 public:
+    // prevent constructor by default
     ScriptPlayer& operator=(ScriptPlayer const&) = delete;
     ScriptPlayer(ScriptPlayer const&)            = delete;
     ScriptPlayer()                               = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?setUnloaded\@ScriptPlayer\@ScriptModuleMinecraft\@\@UEAAXAEAVActor\@\@\@Z
      */
-    virtual void setUnloaded(class Actor&);
+    virtual void setUnloaded(class Actor&); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?clearVelocity\@ScriptPlayer\@ScriptModuleMinecraft\@\@UEAA?AV?$Result\@X\@Scripting\@\@AEAVActor\@\@\@Z
      */
-    virtual class Scripting::Result<void> clearVelocity(class Actor&);
+    virtual class Scripting::Result<void> clearVelocity(class Actor&); // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?applyImpulse\@ScriptPlayer\@ScriptModuleMinecraft\@\@UEAA?AV?$Result\@X\@Scripting\@\@AEAVActor\@\@AEBVVec3\@\@\@Z
      */
-    virtual class Scripting::Result<void> applyImpulse(class Actor&, class Vec3 const&);
+    virtual class Scripting::Result<void> applyImpulse(class Actor&, class Vec3 const&); // NOLINT
     /**
      * @vftbl 8
      * @symbol ?_isValid\@ScriptPlayer\@ScriptModuleMinecraft\@\@EEBA_NXZ
      */
-    virtual bool _isValid() const;
+    virtual bool _isValid() const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTPLAYER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptPlayer();
+    MCVAPI ~ScriptPlayer(); // NOLINT
 #endif
     /**
      * @symbol ??0ScriptPlayer\@ScriptModuleMinecraft\@\@QEAA\@AEBVPlayer\@\@AEBVWeakLifetimeScope\@Scripting\@\@\@Z
      */
-    MCAPI ScriptPlayer(class Player const&, class Scripting::WeakLifetimeScope const&);
+    MCAPI ScriptPlayer(class Player const&, class Scripting::WeakLifetimeScope const&); // NOLINT
     /**
      * @symbol ?addExperience\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@I\@Scripting\@\@H\@Z
      */
-    MCAPI class Scripting::Result<unsigned int> addExperience(int) const;
+    MCAPI class Scripting::Result<unsigned int> addExperience(int) const; // NOLINT
     /**
      * @symbol ?addLevels\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@H\@Z
      */
-    MCAPI class Scripting::Result<int> addLevels(int) const;
+    MCAPI class Scripting::Result<int> addLevels(int) const; // NOLINT
     /**
      * @symbol ?calculateTotalXp\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@I\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<unsigned int> calculateTotalXp() const;
+    MCAPI class Scripting::Result<unsigned int> calculateTotalXp() const; // NOLINT
     /**
      * @symbol
      * ?getItemCooldownLeft\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI class Scripting::Result<int> getItemCooldownLeft(std::string const&) const;
+    MCAPI class Scripting::Result<int> getItemCooldownLeft(std::string const&) const; // NOLINT
     /**
      * @symbol
      * ?getName\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<std::string> getName() const;
+    MCAPI class Scripting::Result<std::string> getName() const; // NOLINT
     /**
      * @symbol
      * ?getOrCreateScreenDisplay\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@V?$StrongTypedObjectHandle\@UScriptScreenDisplay\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptScreenDisplay>>
-    getOrCreateScreenDisplay();
+    getOrCreateScreenDisplay(); // NOLINT
     /**
      * @symbol ?getPlayerLevel\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getPlayerLevel() const;
+    MCAPI class Scripting::Result<int> getPlayerLevel() const; // NOLINT
     /**
      * @symbol ?getSelectedSlot\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getSelectedSlot() const;
+    MCAPI class Scripting::Result<int> getSelectedSlot() const; // NOLINT
     /**
      * @symbol
      * ?getSpawnPoint\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$optional\@UScriptDimensionLocation\@ScriptModuleMinecraft\@\@\@std\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<class std::optional<struct ScriptModuleMinecraft::ScriptDimensionLocation>>
-    getSpawnPoint() const;
+    getSpawnPoint() const; // NOLINT
     /**
      * @symbol ?getTotalXpNeededForNextLevel\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getTotalXpNeededForNextLevel() const;
+    MCAPI class Scripting::Result<int> getTotalXpNeededForNextLevel() const; // NOLINT
     /**
      * @symbol ?getXpEarnedAtCurrentLevel\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getXpEarnedAtCurrentLevel() const;
+    MCAPI class Scripting::Result<int> getXpEarnedAtCurrentLevel() const; // NOLINT
     /**
      * @symbol ?isFlying\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@_N\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<bool> isFlying() const;
+    MCAPI class Scripting::Result<bool> isFlying() const; // NOLINT
     /**
      * @symbol ?isGliding\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@_N\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<bool> isGliding() const;
+    MCAPI class Scripting::Result<bool> isGliding() const; // NOLINT
     /**
      * @symbol ?isJumping\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@_N\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<bool> isJumping() const;
+    MCAPI class Scripting::Result<bool> isJumping() const; // NOLINT
     /**
      * @symbol ?isOp\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@_N\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<bool> isOp() const;
+    MCAPI class Scripting::Result<bool> isOp() const; // NOLINT
     /**
      * @symbol
      * ?playSound\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$optional\@UScriptPlayerSoundOptions\@ScriptModuleMinecraft\@\@\@6\@\@Z
      */
     MCAPI class Scripting::Result<void>
-    playSound(std::string const&, class std::optional<struct ScriptModuleMinecraft::ScriptPlayerSoundOptions>);
+    playSound(std::string const&, class std::optional<struct ScriptModuleMinecraft::ScriptPlayerSoundOptions>); // NOLINT
     /**
      * @symbol
      * ?playSound_V010\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$optional\@UScriptSoundOptions\@ScriptModuleMinecraft\@\@\@6\@\@Z
      */
     MCAPI class Scripting::Result<void>
-    playSound_V010(std::string const&, class std::optional<struct ScriptModuleMinecraft::ScriptSoundOptions>);
+    playSound_V010(std::string const&, class std::optional<struct ScriptModuleMinecraft::ScriptSoundOptions>); // NOLINT
     /**
      * @symbol
      * ?postClientMessage\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
-    MCAPI class Scripting::Result<void> postClientMessage(std::string const&, std::string const&);
+    MCAPI class Scripting::Result<void> postClientMessage(std::string const&, std::string const&); // NOLINT
     /**
      * @symbol ?resetPlayerLevel\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@X\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<void> resetPlayerLevel() const;
+    MCAPI class Scripting::Result<void> resetPlayerLevel() const; // NOLINT
     /**
      * @symbol
      * ?sendMessage\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@X\@Scripting\@\@AEBUContextConfig\@4\@AEBV?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@V?$vector\@V?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@\@std\@\@V?$allocator\@V?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@\@std\@\@\@2\@\@2\@\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<void>
     sendMessage(struct Scripting::ContextConfig const&, class std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface, std::vector<class std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&)
-        const;
+        const; // NOLINT
     /**
      * @symbol ?setOp\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@X\@Scripting\@\@_N\@Z
      */
-    MCAPI class Scripting::Result<void> setOp(bool) const;
+    MCAPI class Scripting::Result<void> setOp(bool) const; // NOLINT
     /**
      * @symbol ?setSelectedSlot\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@X\@Scripting\@\@H\@Z
      */
-    MCAPI class Scripting::Result<void> setSelectedSlot(int) const;
+    MCAPI class Scripting::Result<void> setSelectedSlot(int) const; // NOLINT
     /**
      * @symbol
      * ?setSpawnPoint\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@X\@Scripting\@\@AEBV?$optional\@UScriptDimensionLocation\@ScriptModuleMinecraft\@\@\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<void>
-    setSpawnPoint(class std::optional<struct ScriptModuleMinecraft::ScriptDimensionLocation> const&) const;
+    setSpawnPoint(class std::optional<struct ScriptModuleMinecraft::ScriptDimensionLocation> const&) const; // NOLINT
     /**
      * @symbol
      * ?startItemCooldown\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI class Scripting::Result<void> startItemCooldown(std::string const&, int);
+    MCAPI class Scripting::Result<void> startItemCooldown(std::string const&, int); // NOLINT
     /**
      * @symbol ?tryGetPlayer\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBAPEAVPlayer\@\@XZ
      */
-    MCAPI class Player* tryGetPlayer() const;
+    MCAPI class Player* tryGetPlayer() const; // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptPlayer\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptPlayer\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptPlayer> bind();
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptPlayer> bind(); // NOLINT
     /**
      * @symbol
      * ?getHandle\@ScriptPlayer\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptPlayer\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBVPlayer\@\@AEBVWeakLifetimeScope\@4\@\@Z
      */
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>
-    getHandle(class Player const&, class Scripting::WeakLifetimeScope const&);
+    getHandle(class Player const&, class Scripting::WeakLifetimeScope const&); // NOLINT
     /**
      * @symbol
      * ?getHandle\@ScriptPlayer\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptPlayer\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$StackRefResultT\@UEntityRefTraits\@\@\@\@AEBVWeakLifetimeScope\@4\@\@Z
      */
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>
-    getHandle(class StackRefResultT<struct EntityRefTraits>, class Scripting::WeakLifetimeScope const&);
+    getHandle(class StackRefResultT<struct EntityRefTraits>, class Scripting::WeakLifetimeScope const&); // NOLINT
 
     // private:
     /**
@@ -210,7 +213,7 @@ public:
      * ?_playSoundInternal\@ScriptPlayer\@ScriptModuleMinecraft\@\@AEAA?AV?$Result\@X\@Scripting\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$optional\@UScriptPlayerSoundOptions\@ScriptModuleMinecraft\@\@\@6\@\@Z
      */
     MCAPI class Scripting::Result<void>
-        _playSoundInternal(std::string, class std::optional<struct ScriptModuleMinecraft::ScriptPlayerSoundOptions>);
+        _playSoundInternal(std::string, class std::optional<struct ScriptModuleMinecraft::ScriptPlayerSoundOptions>); // NOLINT
 
 private:
 };

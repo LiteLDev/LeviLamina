@@ -13,30 +13,29 @@ namespace JsonUtil { class EmptyClass; }
 
 class PlaySoundResponse {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYSOUNDRESPONSE
 public:
+    // prevent constructor by default
     PlaySoundResponse& operator=(PlaySoundResponse const&) = delete;
     PlaySoundResponse(PlaySoundResponse const&)            = delete;
     PlaySoundResponse()                                    = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?getName\@PlaySoundResponse\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string const& getName() const;
+    virtual std::string const& getName() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol ?executeAction\@PlaySoundResponse\@\@UEBAXAEAVRenderParams\@\@\@Z
      */
-    virtual void executeAction(class RenderParams&) const;
+    virtual void executeAction(class RenderParams&) const; // NOLINT
     /**
      * @vftbl 3
      * @symbol
@@ -44,9 +43,9 @@ public:
      */
     virtual void
     buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>>&, class Factory<class EventResponse> const&)
-        const;
+        const; // NOLINT
     /**
      * @symbol ?NameID\@PlaySoundResponse\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const NameID;
+    MCAPI static std::string const NameID; // NOLINT
 };

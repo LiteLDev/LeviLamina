@@ -13,12 +13,11 @@ namespace JsonUtil { class EmptyClass; }
 
 struct ActorEventResponseCollection {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOREVENTRESPONSECOLLECTION
 public:
+    // prevent constructor by default
     ActorEventResponseCollection& operator=(ActorEventResponseCollection const&) = delete;
     ActorEventResponseCollection(ActorEventResponseCollection const&)            = delete;
     ActorEventResponseCollection()                                               = delete;
-#endif
 
 public:
     /**
@@ -27,5 +26,5 @@ public:
      */
     MCAPI static class std::shared_ptr<
         class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ActorEventResponseCollection>>
-    buildSchema(std::string const&, class SemVersion const&, class Factory<class ActorEventResponse> const&);
+    buildSchema(std::string const&, class SemVersion const&, class Factory<class ActorEventResponse> const&); // NOLINT
 };

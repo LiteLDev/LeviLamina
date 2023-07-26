@@ -13,6 +13,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class MobEffect;
+class Vec2;
+class Vec3;
+class WeakEntityRef;
 namespace ScriptModuleMinecraft { class IComponentFactory; }
 namespace ScriptModuleMinecraft { class ScriptActorComponent; }
 namespace ScriptModuleMinecraft { class ScriptBlock; }
@@ -39,152 +44,153 @@ namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct Error; }
 namespace Scripting { struct JSON; }
+struct DynamicPropertyDefinition;
+struct EntityRefTraits;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 class ScriptActor {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTACTOR
 public:
+    // prevent constructor by default
     ScriptActor& operator=(ScriptActor const&) = delete;
     ScriptActor(ScriptActor const&)            = delete;
     ScriptActor()                              = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?setUnloaded\@ScriptActor\@ScriptModuleMinecraft\@\@UEAAXAEAVActor\@\@\@Z
      */
-    virtual void setUnloaded(class Actor&);
+    virtual void setUnloaded(class Actor&); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?clearVelocity\@ScriptActor\@ScriptModuleMinecraft\@\@UEAA?AV?$Result\@X\@Scripting\@\@AEAVActor\@\@\@Z
      */
-    virtual class Scripting::Result<void> clearVelocity(class Actor&);
+    virtual class Scripting::Result<void> clearVelocity(class Actor&); // NOLINT
     /**
      * @vftbl 3
      * @symbol
      * ?getNameTag\@ScriptActor\@ScriptModuleMinecraft\@\@UEBA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Scripting\@\@AEBVActor\@\@\@Z
      */
-    virtual class Scripting::Result<std::string> getNameTag(class Actor const&) const;
+    virtual class Scripting::Result<std::string> getNameTag(class Actor const&) const; // NOLINT
     /**
      * @vftbl 4
      * @symbol
      * ?setNameTag\@ScriptActor\@ScriptModuleMinecraft\@\@UEAA?AV?$Result\@X\@Scripting\@\@AEAVActor\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual class Scripting::Result<void> setNameTag(class Actor&, std::string const&);
+    virtual class Scripting::Result<void> setNameTag(class Actor&, std::string const&); // NOLINT
     /**
      * @vftbl 5
      * @symbol ?getSneaking\@ScriptActor\@ScriptModuleMinecraft\@\@UEBA?AV?$Result\@_N\@Scripting\@\@AEBVActor\@\@\@Z
      */
-    virtual class Scripting::Result<bool> getSneaking(class Actor const&) const;
+    virtual class Scripting::Result<bool> getSneaking(class Actor const&) const; // NOLINT
     /**
      * @vftbl 6
      * @symbol ?setSneaking\@ScriptActor\@ScriptModuleMinecraft\@\@UEAA?AV?$Result\@X\@Scripting\@\@AEAVActor\@\@_N\@Z
      */
-    virtual class Scripting::Result<void> setSneaking(class Actor&, bool);
+    virtual class Scripting::Result<void> setSneaking(class Actor&, bool); // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?applyImpulse\@ScriptActor\@ScriptModuleMinecraft\@\@UEAA?AV?$Result\@X\@Scripting\@\@AEAVActor\@\@AEBVVec3\@\@\@Z
      */
-    virtual class Scripting::Result<void> applyImpulse(class Actor&, class Vec3 const&);
+    virtual class Scripting::Result<void> applyImpulse(class Actor&, class Vec3 const&); // NOLINT
     /**
      * @vftbl 8
      * @symbol ?_isValid\@ScriptActor\@ScriptModuleMinecraft\@\@MEBA_NXZ
      */
-    virtual bool _isValid() const;
+    virtual bool _isValid() const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTACTOR
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptActor();
+    MCVAPI ~ScriptActor(); // NOLINT
 #endif
     /**
      * @symbol ??0ScriptActor\@ScriptModuleMinecraft\@\@QEAA\@$$QEAV01\@\@Z
      */
-    MCAPI ScriptActor(class ScriptModuleMinecraft::ScriptActor&&);
+    MCAPI ScriptActor(class ScriptModuleMinecraft::ScriptActor&&); // NOLINT
     /**
      * @symbol ??0ScriptActor\@ScriptModuleMinecraft\@\@QEAA\@AEBVActor\@\@AEBVWeakLifetimeScope\@Scripting\@\@\@Z
      */
-    MCAPI ScriptActor(class Actor const&, class Scripting::WeakLifetimeScope const&);
+    MCAPI ScriptActor(class Actor const&, class Scripting::WeakLifetimeScope const&); // NOLINT
     /**
      * @symbol
      * ?addEffect\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEAVActor\@\@AEBV?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$StrongTypedObjectHandle\@VScriptEffectType\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@std\@\@HAEBV?$optional\@UScriptEntityEffectOptions\@ScriptModuleMinecraft\@\@\@7\@\@Z
      */
     MCAPI class Scripting::Result<void>
-    addEffect(class Actor&, class std::variant<std::string, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptEffectType>> const&, int, class std::optional<struct ScriptModuleMinecraft::ScriptEntityEffectOptions> const&);
+    addEffect(class Actor&, class std::variant<std::string, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptEffectType>> const&, int, class std::optional<struct ScriptModuleMinecraft::ScriptEntityEffectOptions> const&); // NOLINT
     /**
      * @symbol
      * ?addEffect_V010\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEAVActor\@\@AEBVScriptEffectType\@2\@HH_N\@Z
      */
     MCAPI class Scripting::Result<void>
-    addEffect_V010(class Actor&, class ScriptModuleMinecraft::ScriptEffectType const&, int, int, bool);
+    addEffect_V010(class Actor&, class ScriptModuleMinecraft::ScriptEffectType const&, int, int, bool); // NOLINT
     /**
      * @symbol
      * ?addTag\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@_N\@Scripting\@\@AEAVActor\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI class Scripting::Result<bool> addTag(class Actor&, std::string const&);
+    MCAPI class Scripting::Result<bool> addTag(class Actor&, std::string const&); // NOLINT
     /**
      * @symbol
      * ?addTag_010\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@_N\@Scripting\@\@AEAVActor\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI class Scripting::Result<bool> addTag_010(class Actor&, std::string const&);
+    MCAPI class Scripting::Result<bool> addTag_010(class Actor&, std::string const&); // NOLINT
     /**
      * @symbol
      * ?applyDamage\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@_N\@Scripting\@\@AEAVActor\@\@MAEBV?$optional\@V?$variant\@UScriptActorApplyDamageOptions\@ScriptModuleMinecraft\@\@UScriptActorApplyDamageByProjectileOptions\@2\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<bool>
-    applyDamage(class Actor&, float, class std::optional<class std::variant<struct ScriptModuleMinecraft::ScriptActorApplyDamageOptions, struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions>> const&);
+    applyDamage(class Actor&, float, class std::optional<class std::variant<struct ScriptModuleMinecraft::ScriptActorApplyDamageOptions, struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions>> const&); // NOLINT
     /**
      * @symbol
      * ?applyKnockback\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEAVActor\@\@MMMM\@Z
      */
-    MCAPI class Scripting::Result<void> applyKnockback(class Actor&, float, float, float, float);
+    MCAPI class Scripting::Result<void> applyKnockback(class Actor&, float, float, float, float); // NOLINT
     /**
      * @symbol
      * ?extinguishFire\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@_N\@Scripting\@\@AEAVActor\@\@V?$optional\@_N\@std\@\@\@Z
      */
-    MCAPI class Scripting::Result<bool> extinguishFire(class Actor&, class std::optional<bool>);
+    MCAPI class Scripting::Result<bool> extinguishFire(class Actor&, class std::optional<bool>); // NOLINT
     /**
      * @symbol
      * ?getBlockFromViewDirection\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$optional\@VScriptBlockRaycastHit\@ScriptModuleMinecraft\@\@\@std\@\@\@Scripting\@\@AEBVActor\@\@VWeakLifetimeScope\@4\@AEBV?$optional\@UScriptBlockRaycastOptions\@ScriptModuleMinecraft\@\@\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<class std::optional<class ScriptModuleMinecraft::ScriptBlockRaycastHit>>
     getBlockFromViewDirection(class Actor const&, class Scripting::WeakLifetimeScope, class std::optional<struct ScriptModuleMinecraft::ScriptBlockRaycastOptions> const&)
-        const;
+        const; // NOLINT
     /**
      * @symbol
      * ?getBlockFromViewVector_010\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$StrongTypedObjectHandle\@VScriptBlock\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Scripting\@\@AEBVActor\@\@VWeakLifetimeScope\@4\@AEBV?$optional\@UScriptBlockRaycastOptions\@ScriptModuleMinecraft\@\@\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock>>
     getBlockFromViewVector_010(class Actor const&, class Scripting::WeakLifetimeScope, class std::optional<struct ScriptModuleMinecraft::ScriptBlockRaycastOptions> const&)
-        const;
+        const; // NOLINT
     /**
      * @symbol
      * ?getComponent\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptActorComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@VWeakLifetimeScope\@4\@AEBV?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VIComponentFactory\@ScriptModuleMinecraft\@\@U?$default_delete\@VIComponentFactory\@ScriptModuleMinecraft\@\@\@std\@\@\@2\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VIComponentFactory\@ScriptModuleMinecraft\@\@U?$default_delete\@VIComponentFactory\@ScriptModuleMinecraft\@\@\@std\@\@\@2\@\@std\@\@\@2\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@7\@\@Z
      */
-    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActorComponent> getComponent(class Scripting::WeakLifetimeScope, class std::unordered_map<std::string, std::unique_ptr<class ScriptModuleMinecraft::IComponentFactory>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class ScriptModuleMinecraft::IComponentFactory>>>> const&, std::string const&);
+    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActorComponent> getComponent(class Scripting::WeakLifetimeScope, class std::unordered_map<std::string, std::unique_ptr<class ScriptModuleMinecraft::IComponentFactory>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class ScriptModuleMinecraft::IComponentFactory>>>> const&, std::string const&); // NOLINT
     /**
      * @symbol
      * ?getDimension\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$StrongTypedObjectHandle\@VScriptDimension\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Scripting\@\@AEBVActor\@\@\@Z
      */
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDimension>>
-    getDimension(class Actor const&) const;
+    getDimension(class Actor const&) const; // NOLINT
     /**
      * @symbol
      * ?getDynamicProperty\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@V?$optional\@V?$variant\@M_NV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@std\@\@\@Scripting\@\@AEAVActor\@\@AEBUContextConfig\@4\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<class std::optional<class std::variant<float, bool, std::string>>>
-    getDynamicProperty(class Actor&, struct Scripting::ContextConfig const&, std::string const&);
+    getDynamicProperty(class Actor&, struct Scripting::ContextConfig const&, std::string const&); // NOLINT
     /**
      * @symbol
      * ?getEffect\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$optional\@V?$StrongTypedObjectHandle\@VScriptMobEffectInstance\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@std\@\@\@Scripting\@\@AEBVActor\@\@AEBV?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$StrongTypedObjectHandle\@VScriptEffectType\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@std\@\@\@Z
@@ -192,28 +198,28 @@ public:
     MCAPI class Scripting::Result<class std::optional<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptMobEffectInstance>>>
     getEffect(class Actor const&, class std::variant<std::string, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptEffectType>> const&)
-        const;
+        const; // NOLINT
     /**
      * @symbol
      * ?getEffect_V010\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$StrongTypedObjectHandle\@VScriptMobEffectInstance\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Scripting\@\@AEBVActor\@\@AEBVScriptEffectType\@2\@\@Z
      */
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptMobEffectInstance>>
-    getEffect_V010(class Actor const&, class ScriptModuleMinecraft::ScriptEffectType const&) const;
+    getEffect_V010(class Actor const&, class ScriptModuleMinecraft::ScriptEffectType const&) const; // NOLINT
     /**
      * @symbol
      * ?getEffects\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$vector\@V?$StrongTypedObjectHandle\@VScriptMobEffectInstance\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$allocator\@V?$StrongTypedObjectHandle\@VScriptMobEffectInstance\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@std\@\@\@std\@\@\@Scripting\@\@AEBVActor\@\@\@Z
      */
     MCAPI class Scripting::Result<
         std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptMobEffectInstance>>>
-    getEffects(class Actor const&) const;
+    getEffects(class Actor const&) const; // NOLINT
     /**
      * @symbol
      * ?getEntitiesFromViewDirection\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$vector\@VScriptEntityRaycastHit\@ScriptModuleMinecraft\@\@V?$allocator\@VScriptEntityRaycastHit\@ScriptModuleMinecraft\@\@\@std\@\@\@std\@\@\@Scripting\@\@AEBVActor\@\@VWeakLifetimeScope\@4\@AEBV?$optional\@UScriptEntityRaycastOptions\@ScriptModuleMinecraft\@\@\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<std::vector<class ScriptModuleMinecraft::ScriptEntityRaycastHit>>
     getEntitiesFromViewDirection(class Actor const&, class Scripting::WeakLifetimeScope, class std::optional<struct ScriptModuleMinecraft::ScriptEntityRaycastOptions> const&)
-        const;
+        const; // NOLINT
     /**
      * @symbol
      * ?getEntitiesFromViewVector_010\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$vector\@V?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$allocator\@V?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@std\@\@\@std\@\@\@Scripting\@\@AEBVActor\@\@VWeakLifetimeScope\@4\@AEBV?$optional\@UScriptEntityRaycastOptions\@ScriptModuleMinecraft\@\@\@std\@\@\@Z
@@ -221,170 +227,171 @@ public:
     MCAPI class Scripting::Result<
         std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>>
     getEntitiesFromViewVector_010(class Actor const&, class Scripting::WeakLifetimeScope, class std::optional<struct ScriptModuleMinecraft::ScriptEntityRaycastOptions> const&)
-        const;
+        const; // NOLINT
     /**
      * @symbol ?getFallDistance\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@M\@Scripting\@\@AEBVActor\@\@\@Z
      */
-    MCAPI class Scripting::Result<float> getFallDistance(class Actor const&) const;
+    MCAPI class Scripting::Result<float> getFallDistance(class Actor const&) const; // NOLINT
     /**
      * @symbol
      * ?getHeadLocation\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@VVec3\@\@\@Scripting\@\@AEBVActor\@\@\@Z
      */
-    MCAPI class Scripting::Result<class Vec3> getHeadLocation(class Actor const&) const;
+    MCAPI class Scripting::Result<class Vec3> getHeadLocation(class Actor const&) const; // NOLINT
     /**
      * @symbol
      * ?getHeadLocation_010\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@VVec3\@\@\@Scripting\@\@AEBVActor\@\@\@Z
      */
-    MCAPI class Scripting::Result<class Vec3> getHeadLocation_010(class Actor const&) const;
+    MCAPI class Scripting::Result<class Vec3> getHeadLocation_010(class Actor const&) const; // NOLINT
     /**
      * @symbol
      * ?getId\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Scripting\@\@AEBVActor\@\@\@Z
      */
-    MCAPI class Scripting::Result<std::string> getId(class Actor const&) const;
+    MCAPI class Scripting::Result<std::string> getId(class Actor const&) const; // NOLINT
     /**
      * @symbol
      * ?getId_010\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Scripting\@\@AEBVActor\@\@\@Z
      */
-    MCAPI class Scripting::Result<std::string> getId_010(class Actor const&) const;
+    MCAPI class Scripting::Result<std::string> getId_010(class Actor const&) const; // NOLINT
     /**
      * @symbol ?getLifetimeState\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AW4ScriptActorLifetimeState\@2\@XZ
      */
-    MCAPI enum class ScriptModuleMinecraft::ScriptActorLifetimeState getLifetimeState() const;
+    MCAPI enum class ScriptModuleMinecraft::ScriptActorLifetimeState getLifetimeState() const; // NOLINT
     /**
      * @symbol
      * ?getLocation\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@VVec3\@\@\@Scripting\@\@AEBVActor\@\@\@Z
      */
-    MCAPI class Scripting::Result<class Vec3> getLocation(class Actor const&) const;
+    MCAPI class Scripting::Result<class Vec3> getLocation(class Actor const&) const; // NOLINT
     /**
      * @symbol
      * ?getRotation\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@VVec2\@\@\@Scripting\@\@AEBVActor\@\@\@Z
      */
-    MCAPI class Scripting::Result<class Vec2> getRotation(class Actor const&) const;
+    MCAPI class Scripting::Result<class Vec2> getRotation(class Actor const&) const; // NOLINT
     /**
      * @symbol
      * ?getRotation_V010\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@UScriptXYRotation\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBVActor\@\@\@Z
      */
     MCAPI class Scripting::Result<struct ScriptModuleMinecraft::ScriptXYRotation>
-    getRotation_V010(class Actor const&) const;
+    getRotation_V010(class Actor const&) const; // NOLINT
     /**
      * @symbol
      * ?getScoreboardIdentity\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$optional\@V?$StrongTypedObjectHandle\@VScriptScoreboardIdentity\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@std\@\@\@Scripting\@\@AEBVActor\@\@\@Z
      */
     MCAPI class Scripting::Result<class std::optional<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>>>
-    getScoreboardIdentity(class Actor const&) const;
+    getScoreboardIdentity(class Actor const&) const; // NOLINT
     /**
      * @symbol
      * ?getTags\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Scripting\@\@AEBVActor\@\@\@Z
      */
-    MCAPI class Scripting::Result<std::vector<std::string>> getTags(class Actor const&) const;
+    MCAPI class Scripting::Result<std::vector<std::string>> getTags(class Actor const&) const; // NOLINT
     /**
      * @symbol
      * ?getTarget\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Scripting\@\@AEBVActor\@\@\@Z
      */
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>
-    getTarget(class Actor const&) const;
+    getTarget(class Actor const&) const; // NOLINT
     /**
      * @symbol
      * ?getTypeId\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Scripting\@\@AEBVActor\@\@\@Z
      */
-    MCAPI class Scripting::Result<std::string> getTypeId(class Actor const&) const;
+    MCAPI class Scripting::Result<std::string> getTypeId(class Actor const&) const; // NOLINT
     /**
      * @symbol
      * ?getVelocity\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@VVec3\@\@\@Scripting\@\@AEBVActor\@\@\@Z
      */
-    MCAPI class Scripting::Result<class Vec3> getVelocity(class Actor const&) const;
+    MCAPI class Scripting::Result<class Vec3> getVelocity(class Actor const&) const; // NOLINT
     /**
      * @symbol
      * ?getVelocity_010\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@VScriptVector\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBVActor\@\@\@Z
      */
-    MCAPI class Scripting::Result<class ScriptModuleMinecraft::ScriptVector> getVelocity_010(class Actor const&) const;
+    MCAPI class Scripting::Result<class ScriptModuleMinecraft::ScriptVector>
+    getVelocity_010(class Actor const&) const; // NOLINT
     /**
      * @symbol
      * ?getViewDirection\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@VVec3\@\@\@Scripting\@\@AEBVActor\@\@\@Z
      */
-    MCAPI class Scripting::Result<class Vec3> getViewDirection(class Actor const&) const;
+    MCAPI class Scripting::Result<class Vec3> getViewDirection(class Actor const&) const; // NOLINT
     /**
      * @symbol
      * ?getViewVector_010\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@VScriptVector\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBVActor\@\@\@Z
      */
     MCAPI class Scripting::Result<class ScriptModuleMinecraft::ScriptVector>
-    getViewVector_010(class Actor const&) const;
+    getViewVector_010(class Actor const&) const; // NOLINT
     /**
      * @symbol ?getWeakEntity\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$WeakRefT\@UEntityRefTraits\@\@\@\@XZ
      */
-    MCAPI class WeakRefT<struct EntityRefTraits> getWeakEntity() const;
+    MCAPI class WeakRefT<struct EntityRefTraits> getWeakEntity() const; // NOLINT
     /**
      * @symbol
      * ?hasTag\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@_N\@Scripting\@\@AEBVActor\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI class Scripting::Result<bool> hasTag(class Actor const&, std::string const&) const;
+    MCAPI class Scripting::Result<bool> hasTag(class Actor const&, std::string const&) const; // NOLINT
     /**
      * @symbol ?isClimbing\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@_N\@Scripting\@\@AEBVActor\@\@\@Z
      */
-    MCAPI class Scripting::Result<bool> isClimbing(class Actor const&) const;
+    MCAPI class Scripting::Result<bool> isClimbing(class Actor const&) const; // NOLINT
     /**
      * @symbol ?isFalling\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@_N\@Scripting\@\@AEBVActor\@\@\@Z
      */
-    MCAPI class Scripting::Result<bool> isFalling(class Actor const&) const;
+    MCAPI class Scripting::Result<bool> isFalling(class Actor const&) const; // NOLINT
     /**
      * @symbol ?isInWater\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@_N\@Scripting\@\@AEBVActor\@\@\@Z
      */
-    MCAPI class Scripting::Result<bool> isInWater(class Actor const&) const;
+    MCAPI class Scripting::Result<bool> isInWater(class Actor const&) const; // NOLINT
     /**
      * @symbol ?isOnGround\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@_N\@Scripting\@\@AEBVActor\@\@\@Z
      */
-    MCAPI class Scripting::Result<bool> isOnGround(class Actor const&) const;
+    MCAPI class Scripting::Result<bool> isOnGround(class Actor const&) const; // NOLINT
     /**
      * @symbol ?isSprinting\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@_N\@Scripting\@\@AEBVActor\@\@\@Z
      */
-    MCAPI class Scripting::Result<bool> isSprinting(class Actor const&) const;
+    MCAPI class Scripting::Result<bool> isSprinting(class Actor const&) const; // NOLINT
     /**
      * @symbol ?isSwimming\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@_N\@Scripting\@\@AEBVActor\@\@\@Z
      */
-    MCAPI class Scripting::Result<bool> isSwimming(class Actor const&) const;
+    MCAPI class Scripting::Result<bool> isSwimming(class Actor const&) const; // NOLINT
     /**
      * @symbol ?kill\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@_N\@Scripting\@\@AEAVActor\@\@\@Z
      */
-    MCAPI class Scripting::Result<bool> kill(class Actor&);
+    MCAPI class Scripting::Result<bool> kill(class Actor&); // NOLINT
     /**
      * @symbol ?kill_010\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEAVActor\@\@\@Z
      */
-    MCAPI class Scripting::Result<void> kill_010(class Actor&);
+    MCAPI class Scripting::Result<void> kill_010(class Actor&); // NOLINT
     /**
      * @symbol ??4ScriptActor\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
-    MCAPI class ScriptModuleMinecraft::ScriptActor& operator=(class ScriptModuleMinecraft::ScriptActor&&);
+    MCAPI class ScriptModuleMinecraft::ScriptActor& operator=(class ScriptModuleMinecraft::ScriptActor&&); // NOLINT
     /**
      * @symbol
      * ?playAnimation\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEAVActor\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$optional\@UScriptPlayAnimationOptions\@ScriptModuleMinecraft\@\@\@7\@\@Z
      */
     MCAPI class Scripting::Result<void>
-    playAnimation(class Actor&, std::string const&, class std::optional<struct ScriptModuleMinecraft::ScriptPlayAnimationOptions> const&);
+    playAnimation(class Actor&, std::string const&, class std::optional<struct ScriptModuleMinecraft::ScriptPlayAnimationOptions> const&); // NOLINT
     /**
      * @symbol
      * ?removeDynamicProperty\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@_N\@Scripting\@\@AEAVActor\@\@AEBUContextConfig\@4\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<bool>
-    removeDynamicProperty(class Actor&, struct Scripting::ContextConfig const&, std::string const&);
+    removeDynamicProperty(class Actor&, struct Scripting::ContextConfig const&, std::string const&); // NOLINT
     /**
      * @symbol
      * ?removeEffect\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@_N\@Scripting\@\@AEAVActor\@\@AEBV?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$StrongTypedObjectHandle\@VScriptEffectType\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<bool>
-    removeEffect(class Actor&, class std::variant<std::string, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptEffectType>> const&);
+    removeEffect(class Actor&, class std::variant<std::string, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptEffectType>> const&); // NOLINT
     /**
      * @symbol
      * ?removeTag\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@_N\@Scripting\@\@AEAVActor\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI class Scripting::Result<bool> removeTag(class Actor&, std::string const&);
+    MCAPI class Scripting::Result<bool> removeTag(class Actor&, std::string const&); // NOLINT
     /**
      * @symbol
      * ?runCommand\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@V?$StrongTypedObjectHandle\@UScriptCommandResult\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Scripting\@\@AEAVActor\@\@AEBUContextConfig\@4\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptCommandResult>>
-    runCommand(class Actor&, struct Scripting::ContextConfig const&, std::string const&);
+    runCommand(class Actor&, struct Scripting::ContextConfig const&, std::string const&); // NOLINT
     /**
      * @symbol
      * ?runCommandAsync\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@V?$Promise\@V?$StrongTypedObjectHandle\@UScriptCommandResult\@ScriptModuleMinecraft\@\@\@Scripting\@\@UScriptCommandError\@ScriptModuleMinecraft\@\@X\@Scripting\@\@\@Scripting\@\@AEAVActor\@\@AEBUContextConfig\@4\@AEAVScriptObjectFactory\@4\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -393,62 +400,63 @@ public:
         class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptCommandResult>,
         struct ScriptModuleMinecraft::ScriptCommandError,
         void>>
-    runCommandAsync(class Actor&, struct Scripting::ContextConfig const&, class Scripting::ScriptObjectFactory&, std::string const&);
+    runCommandAsync(class Actor&, struct Scripting::ContextConfig const&, class Scripting::ScriptObjectFactory&, std::string const&); // NOLINT
     /**
      * @symbol
      * ?runCommand_V010\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@UJSON\@Scripting\@\@\@Scripting\@\@AEAVActor\@\@AEBUContextConfig\@4\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<struct Scripting::JSON>
-    runCommand_V010(class Actor&, struct Scripting::ContextConfig const&, std::string const&);
+    runCommand_V010(class Actor&, struct Scripting::ContextConfig const&, std::string const&); // NOLINT
     /**
      * @symbol
      * ?setDynamicProperty\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEAVActor\@\@AEBUContextConfig\@4\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$variant\@M_NV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@8\@\@Z
      */
     MCAPI class Scripting::Result<void>
-    setDynamicProperty(class Actor&, struct Scripting::ContextConfig const&, std::string const&, class std::variant<float, bool, std::string> const&);
+    setDynamicProperty(class Actor&, struct Scripting::ContextConfig const&, std::string const&, class std::variant<float, bool, std::string> const&); // NOLINT
     /**
      * @symbol ?setLoaded\@ScriptActor\@ScriptModuleMinecraft\@\@QEAAXXZ
      */
-    MCAPI void setLoaded();
+    MCAPI void setLoaded(); // NOLINT
     /**
      * @symbol ?setLoading\@ScriptActor\@ScriptModuleMinecraft\@\@QEAAXAEBVActor\@\@\@Z
      */
-    MCAPI void setLoading(class Actor const&);
+    MCAPI void setLoading(class Actor const&); // NOLINT
     /**
      * @symbol
      * ?setOnFire\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@_N\@Scripting\@\@AEAVActor\@\@HV?$optional\@_N\@std\@\@\@Z
      */
-    MCAPI class Scripting::Result<bool> setOnFire(class Actor&, int, class std::optional<bool>);
+    MCAPI class Scripting::Result<bool> setOnFire(class Actor&, int, class std::optional<bool>); // NOLINT
     /**
      * @symbol ?setRemoved\@ScriptActor\@ScriptModuleMinecraft\@\@QEAAXXZ
      */
-    MCAPI void setRemoved();
+    MCAPI void setRemoved(); // NOLINT
     /**
      * @symbol
      * ?setRotation\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEAVActor\@\@VVec2\@\@\@Z
      */
-    MCAPI class Scripting::Result<void> setRotation(class Actor&, class Vec2);
+    MCAPI class Scripting::Result<void> setRotation(class Actor&, class Vec2); // NOLINT
     /**
      * @symbol
      * ?setRotation_V010\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEAVActor\@\@MM\@Z
      */
-    MCAPI class Scripting::Result<void> setRotation_V010(class Actor&, float, float);
+    MCAPI class Scripting::Result<void> setRotation_V010(class Actor&, float, float); // NOLINT
     /**
      * @symbol
      * ?setTarget\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEAVActor\@\@AEAV12\@\@Z
      */
-    MCAPI class Scripting::Result<void> setTarget(class Actor&, class ScriptModuleMinecraft::ScriptActor&);
+    MCAPI class Scripting::Result<void> setTarget(class Actor&, class ScriptModuleMinecraft::ScriptActor&); // NOLINT
     /**
      * @symbol
      * ?setVelocity_010\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEAVActor\@\@AEBVScriptVector\@2\@\@Z
      */
-    MCAPI class Scripting::Result<void> setVelocity_010(class Actor&, class ScriptModuleMinecraft::ScriptVector const&);
+    MCAPI class Scripting::Result<void>
+    setVelocity_010(class Actor&, class ScriptModuleMinecraft::ScriptVector const&); // NOLINT
     /**
      * @symbol
      * ?teleport\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEAVActor\@\@AEBVVec3\@\@AEBV?$optional\@UScriptTeleportOptions\@ScriptModuleMinecraft\@\@\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<void>
-    teleport(class Actor&, class Vec3 const&, class std::optional<struct ScriptModuleMinecraft::ScriptTeleportOptions> const&);
+    teleport(class Actor&, class Vec3 const&, class std::optional<struct ScriptModuleMinecraft::ScriptTeleportOptions> const&); // NOLINT
     /**
      * @symbol
      * ?teleportFacing_V010\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEAVActor\@\@AEBVVec3\@\@AEAVScriptDimension\@2\@1_N\@Z
@@ -459,28 +467,34 @@ public:
         class ScriptModuleMinecraft::ScriptDimension&,
         class Vec3 const&,
         bool
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?teleport_V010\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEAVActor\@\@AEBVVec3\@\@AEAVScriptDimension\@2\@MM_N\@Z
      */
-    MCAPI class Scripting::Result<void>
-    teleport_V010(class Actor&, class Vec3 const&, class ScriptModuleMinecraft::ScriptDimension&, float, float, bool);
+    MCAPI class Scripting::Result<void> teleport_V010(
+        class Actor&,
+        class Vec3 const&,
+        class ScriptModuleMinecraft::ScriptDimension&,
+        float,
+        float,
+        bool
+    ); // NOLINT
     /**
      * @symbol
      * ?triggerEvent\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEAVActor\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI class Scripting::Result<void> triggerEvent(class Actor&, std::string const&);
+    MCAPI class Scripting::Result<void> triggerEvent(class Actor&, std::string const&); // NOLINT
     /**
      * @symbol ?tryGetActor\@ScriptActor\@ScriptModuleMinecraft\@\@QEBAPEAVActor\@\@XZ
      */
-    MCAPI class Actor* tryGetActor() const;
+    MCAPI class Actor* tryGetActor() const; // NOLINT
     /**
      * @symbol
      * ?tryTeleport\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@_N\@Scripting\@\@AEAVActor\@\@AEBVVec3\@\@AEBV?$optional\@UScriptTeleportOptions\@ScriptModuleMinecraft\@\@\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<bool>
-    tryTeleport(class Actor&, class Vec3 const&, class std::optional<struct ScriptModuleMinecraft::ScriptTeleportOptions> const&);
+    tryTeleport(class Actor&, class Vec3 const&, class std::optional<struct ScriptModuleMinecraft::ScriptTeleportOptions> const&); // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptActor\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEAV?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VIComponentFactory\@ScriptModuleMinecraft\@\@U?$default_delete\@VIComponentFactory\@ScriptModuleMinecraft\@\@\@std\@\@\@2\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VIComponentFactory\@ScriptModuleMinecraft\@\@U?$default_delete\@VIComponentFactory\@ScriptModuleMinecraft\@\@\@std\@\@\@2\@\@std\@\@\@2\@\@std\@\@\@Z
@@ -491,32 +505,33 @@ public:
          std::unique_ptr<class ScriptModuleMinecraft::IComponentFactory>,
          struct std::hash<std::string>,
          struct std::equal_to<std::string>,
-         class std::allocator<
-             struct std::pair<std::string const, std::unique_ptr<class ScriptModuleMinecraft::IComponentFactory>>>>&);
+         class std::allocator<struct std::pair<
+             std::string const,
+             std::unique_ptr<class ScriptModuleMinecraft::IComponentFactory>>>>&); // NOLINT
     /**
      * @symbol
      * ?getHandle\@ScriptActor\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@PEBVActor\@\@AEBVWeakLifetimeScope\@4\@\@Z
      */
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
-    getHandle(class Actor const*, class Scripting::WeakLifetimeScope const&);
+    getHandle(class Actor const*, class Scripting::WeakLifetimeScope const&); // NOLINT
     /**
      * @symbol
      * ?getHandle\@ScriptActor\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@VWeakEntityRef\@\@AEBVWeakLifetimeScope\@4\@\@Z
      */
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
-    getHandle(class WeakEntityRef, class Scripting::WeakLifetimeScope const&);
+    getHandle(class WeakEntityRef, class Scripting::WeakLifetimeScope const&); // NOLINT
     /**
      * @symbol
      * ?getHandle\@ScriptActor\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$StackRefResultT\@UEntityRefTraits\@\@\@\@AEBVWeakLifetimeScope\@4\@\@Z
      */
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
-    getHandle(class StackRefResultT<struct EntityRefTraits>, class Scripting::WeakLifetimeScope const&);
+    getHandle(class StackRefResultT<struct EntityRefTraits>, class Scripting::WeakLifetimeScope const&); // NOLINT
     /**
      * @symbol
      * ?tryGetActor\@ScriptActor\@ScriptModuleMinecraft\@\@SAPEAVActor\@\@AEBU?$TypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBVWeakLifetimeScope\@5\@\@Z
      */
     MCAPI static class Actor*
-    tryGetActor(struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptActor> const&, class Scripting::WeakLifetimeScope const&);
+    tryGetActor(struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptActor> const&, class Scripting::WeakLifetimeScope const&); // NOLINT
 
     // protected:
     /**
@@ -524,18 +539,19 @@ public:
      * ?_applyDamage\@ScriptActor\@ScriptModuleMinecraft\@\@IEAA?AV?$Result\@_N\@Scripting\@\@AEAVActor\@\@MAEBUScriptActorApplyDamageOptions\@2\@\@Z
      */
     MCAPI class Scripting::Result<bool>
-    _applyDamage(class Actor&, float, struct ScriptModuleMinecraft::ScriptActorApplyDamageOptions const&);
+    _applyDamage(class Actor&, float, struct ScriptModuleMinecraft::ScriptActorApplyDamageOptions const&); // NOLINT
     /**
      * @symbol
      * ?_applyProjectileDamage\@ScriptActor\@ScriptModuleMinecraft\@\@IEAA?AV?$Result\@_N\@Scripting\@\@AEAVActor\@\@MAEBUScriptActorApplyDamageByProjectileOptions\@2\@\@Z
      */
     MCAPI class Scripting::Result<bool>
-    _applyProjectileDamage(class Actor&, float, struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const&);
+    _applyProjectileDamage(class Actor&, float, struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const&); // NOLINT
     /**
      * @symbol
      * ?_getDynamicPropertyDefinition\@ScriptActor\@ScriptModuleMinecraft\@\@IEBAPEBUDynamicPropertyDefinition\@\@AEAVActor\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI struct DynamicPropertyDefinition const* _getDynamicPropertyDefinition(class Actor&, std::string const&) const;
+    MCAPI struct DynamicPropertyDefinition const*
+    _getDynamicPropertyDefinition(class Actor&, std::string const&) const; // NOLINT
     /**
      * @symbol
      * ?_getEffectHelper\@ScriptActor\@ScriptModuleMinecraft\@\@IEBAPEBVMobEffect\@\@AEBV?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$StrongTypedObjectHandle\@VScriptEffectType\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@std\@\@\@Z
@@ -544,7 +560,7 @@ public:
     _getEffectHelper(class std::variant<
                      std::string,
                      class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptEffectType>> const&)
-        const;
+        const; // NOLINT
     /**
      * @symbol
      * ?_teleport\@ScriptActor\@ScriptModuleMinecraft\@\@IEAA?AV?$Result\@_N\@Scripting\@\@AEAVActor\@\@AEBVVec3\@\@AEBV?$optional\@UScriptTeleportOptions\@ScriptModuleMinecraft\@\@\@std\@\@_N\@Z
@@ -554,13 +570,13 @@ public:
         class Vec3 const&,
         class std::optional<struct ScriptModuleMinecraft::ScriptTeleportOptions> const&,
         bool
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?_validateDynamicProperty\@ScriptActor\@ScriptModuleMinecraft\@\@IEAA?AV?$optional\@UError\@Scripting\@\@\@std\@\@AEAVActor\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@4\@PEBV?$variant\@M_NV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@4\@1\@Z
      */
     MCAPI class std::optional<struct Scripting::Error>
-    _validateDynamicProperty(class Actor&, std::string const&, class std::variant<float, bool, std::string> const*, std::string const&);
+    _validateDynamicProperty(class Actor&, std::string const&, class std::variant<float, bool, std::string> const*, std::string const&); // NOLINT
 
 protected:
 };

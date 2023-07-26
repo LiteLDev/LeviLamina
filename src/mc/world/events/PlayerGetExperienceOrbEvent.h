@@ -4,16 +4,15 @@
 
 struct PlayerGetExperienceOrbEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERGETEXPERIENCEORBEVENT
 public:
+    // prevent constructor by default
     PlayerGetExperienceOrbEvent& operator=(PlayerGetExperienceOrbEvent const&) = delete;
     PlayerGetExperienceOrbEvent(PlayerGetExperienceOrbEvent const&)            = delete;
     PlayerGetExperienceOrbEvent()                                              = delete;
-#endif
 
 public:
     /**
      * @symbol ??1PlayerGetExperienceOrbEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerGetExperienceOrbEvent();
+    MCAPI ~PlayerGetExperienceOrbEvent(); // NOLINT
 };

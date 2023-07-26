@@ -7,14 +7,11 @@ namespace Scripting {
 template <typename T0>
 class ClassBindingBuilder {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTING_CLASSBINDINGBUILDER
 public:
+    // prevent constructor by default
     ClassBindingBuilder& operator=(ClassBindingBuilder const&) = delete;
     ClassBindingBuilder(ClassBindingBuilder const&)            = delete;
     ClassBindingBuilder()                                      = delete;
-#endif
-
-public:
 };
 
 }; // namespace Scripting

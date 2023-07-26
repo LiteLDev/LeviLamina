@@ -4,12 +4,9 @@
 
 struct AbilitiesComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ABILITIESCOMPONENT
 public:
+    // prevent constructor by default
     AbilitiesComponent& operator=(AbilitiesComponent const&) = delete;
     AbilitiesComponent(AbilitiesComponent const&)            = delete;
     AbilitiesComponent()                                     = delete;
-#endif
-
-public:
 };

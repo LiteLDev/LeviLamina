@@ -5,12 +5,9 @@
 template <typename T0>
 class WeakPtr {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEAKPTR
 public:
+    // prevent constructor by default
     WeakPtr& operator=(WeakPtr const&) = delete;
     WeakPtr(WeakPtr const&)            = delete;
     WeakPtr()                          = delete;
-#endif
-
-public:
 };

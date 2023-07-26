@@ -4,40 +4,39 @@
 
 class CommandVersion {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDVERSION
 public:
+    // prevent constructor by default
     CommandVersion& operator=(CommandVersion const&) = delete;
     CommandVersion(CommandVersion const&)            = delete;
     CommandVersion()                                 = delete;
-#endif
 
 public:
     /**
      * @symbol ??0CommandVersion\@\@QEAA\@HH\@Z
      */
-    MCAPI CommandVersion(int, int);
+    MCAPI CommandVersion(int, int); // NOLINT
     /**
      * @symbol ?covers\@CommandVersion\@\@QEBA_NAEBV1\@\@Z
      */
-    MCAPI bool covers(class CommandVersion const&) const;
+    MCAPI bool covers(class CommandVersion const&) const; // NOLINT
     /**
      * @symbol ?isCompatible\@CommandVersion\@\@QEBA_NH\@Z
      */
-    MCAPI bool isCompatible(int) const;
+    MCAPI bool isCompatible(int) const; // NOLINT
     /**
      * @symbol ??9CommandVersion\@\@QEBA_NAEBV0\@\@Z
      */
-    MCAPI bool operator!=(class CommandVersion const&) const;
-    /**
-     * @symbol ?CurrentVersion\@CommandVersion\@\@2HB
-     */
-    MCAPI static int const CurrentVersion;
+    MCAPI bool operator!=(class CommandVersion const&) const; // NOLINT
     /**
      * @symbol ?getLatestCompatibleSemVersion\@CommandVersion\@\@SA?AVSemVersion\@\@H\@Z
      */
-    MCAPI static class SemVersion getLatestCompatibleSemVersion(int);
+    MCAPI static class SemVersion getLatestCompatibleSemVersion(int); // NOLINT
     /**
      * @symbol ?getVersionMapping\@CommandVersion\@\@SA?BW4CurrentCmdVersion\@\@AEBVSemVersion\@\@\@Z
      */
-    MCAPI static enum class CurrentCmdVersion const getVersionMapping(class SemVersion const&);
+    MCAPI static enum class CurrentCmdVersion const getVersionMapping(class SemVersion const&); // NOLINT
+    /**
+     * @symbol ?CurrentVersion\@CommandVersion\@\@2HB
+     */
+    MCAPI static int const CurrentVersion; // NOLINT
 };

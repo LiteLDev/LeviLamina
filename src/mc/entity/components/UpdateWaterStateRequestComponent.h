@@ -4,12 +4,9 @@
 
 struct UpdateWaterStateRequestComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPDATEWATERSTATEREQUESTCOMPONENT
 public:
+    // prevent constructor by default
     UpdateWaterStateRequestComponent& operator=(UpdateWaterStateRequestComponent const&) = delete;
     UpdateWaterStateRequestComponent(UpdateWaterStateRequestComponent const&)            = delete;
     UpdateWaterStateRequestComponent()                                                   = delete;
-#endif
-
-public:
 };

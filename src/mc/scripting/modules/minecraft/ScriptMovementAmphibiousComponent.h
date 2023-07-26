@@ -11,41 +11,40 @@ namespace ScriptModuleMinecraft {
 
 class ScriptMovementAmphibiousComponent : public ::ScriptModuleMinecraft::MovementScriptActorComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTMOVEMENTAMPHIBIOUSCOMPONENT
 public:
+    // prevent constructor by default
     ScriptMovementAmphibiousComponent& operator=(ScriptMovementAmphibiousComponent const&) = delete;
     ScriptMovementAmphibiousComponent(ScriptMovementAmphibiousComponent const&)            = delete;
     ScriptMovementAmphibiousComponent()                                                    = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTMOVEMENTAMPHIBIOUSCOMPONENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptMovementAmphibiousComponent();
+    MCVAPI ~ScriptMovementAmphibiousComponent(); // NOLINT
 #endif
-    /**
-     * @symbol ?ComponentId\@ScriptMovementAmphibiousComponent\@ScriptModuleMinecraft\@\@2PEBDEB
-     */
-    MCAPI static char const* ComponentId;
     /**
      * @symbol
      * ?bind\@ScriptMovementAmphibiousComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptMovementAmphibiousComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMovementAmphibiousComponent>
-    bind();
+    bind(); // NOLINT
     /**
      * @symbol
      * ?bindV010\@ScriptMovementAmphibiousComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptMovementAmphibiousComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMovementAmphibiousComponent>
-    bindV010();
+    bindV010(); // NOLINT
+    /**
+     * @symbol ?ComponentId\@ScriptMovementAmphibiousComponent\@ScriptModuleMinecraft\@\@2PEBDEB
+     */
+    MCAPI static char const* ComponentId; // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

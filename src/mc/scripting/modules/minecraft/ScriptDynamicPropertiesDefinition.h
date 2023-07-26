@@ -7,66 +7,71 @@
 #include "mc/external/scripting/Result.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
 
+// auto generated forward declare list
+// clang-format off
+class DynamicPropertiesDefinition;
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class ScriptDynamicPropertiesDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTDYNAMICPROPERTIESDEFINITION
 public:
+    // prevent constructor by default
     ScriptDynamicPropertiesDefinition& operator=(ScriptDynamicPropertiesDefinition const&) = delete;
     ScriptDynamicPropertiesDefinition()                                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@QEAA\@$$QEAV01\@\@Z
      */
-    MCAPI ScriptDynamicPropertiesDefinition(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&&);
+    MCAPI ScriptDynamicPropertiesDefinition(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&&); // NOLINT
     /**
      * @symbol ??0ScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@QEAA\@AEBV01\@\@Z
      */
-    MCAPI ScriptDynamicPropertiesDefinition(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&);
+    MCAPI
+    ScriptDynamicPropertiesDefinition(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&); // NOLINT
     /**
      * @symbol
      * ?defineBoolean\@ScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@V?$StrongTypedObjectHandle\@VScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$optional\@_N\@6\@\@Z
      */
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition>>
-    defineBoolean(std::string const&, class std::optional<bool>);
+    defineBoolean(std::string const&, class std::optional<bool>); // NOLINT
     /**
      * @symbol
      * ?defineNumber\@ScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@V?$StrongTypedObjectHandle\@VScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$optional\@M\@6\@\@Z
      */
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition>>
-    defineNumber(std::string const&, class std::optional<float>);
+    defineNumber(std::string const&, class std::optional<float>); // NOLINT
     /**
      * @symbol
      * ?defineString\@ScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@V?$StrongTypedObjectHandle\@VScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@IV?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@6\@\@Z
      */
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition>>
-    defineString(std::string const&, unsigned int, class std::optional<std::string>);
+    defineString(std::string const&, unsigned int, class std::optional<std::string>); // NOLINT
     /**
      * @symbol
      * ?getDefinition\@ScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@QEBAAEBVDynamicPropertiesDefinition\@\@XZ
      */
-    MCAPI class DynamicPropertiesDefinition const& getDefinition() const;
+    MCAPI class DynamicPropertiesDefinition const& getDefinition() const; // NOLINT
     /**
      * @symbol ??4ScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&
-    operator=(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&&);
+    operator=(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&&); // NOLINT
     /**
      * @symbol ??1ScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptDynamicPropertiesDefinition();
+    MCAPI ~ScriptDynamicPropertiesDefinition(); // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition>
-    bind();
+    bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

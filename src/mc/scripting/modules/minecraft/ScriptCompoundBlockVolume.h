@@ -6,39 +6,43 @@
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/EnumBindingBuilder.h"
 
+// auto generated forward declare list
+// clang-format off
+enum class CompoundBlockVolumeAction;
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class ScriptCompoundBlockVolume {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTCOMPOUNDBLOCKVOLUME
 public:
+    // prevent constructor by default
     ScriptCompoundBlockVolume(ScriptCompoundBlockVolume const&) = delete;
     ScriptCompoundBlockVolume()                                 = delete;
-#endif
 
 public:
     /**
      * @symbol ??4ScriptCompoundBlockVolume\@ScriptModuleMinecraft\@\@QEAAAEAV01\@AEBV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraft::ScriptCompoundBlockVolume&
-    operator=(class ScriptModuleMinecraft::ScriptCompoundBlockVolume const&);
+    operator=(class ScriptModuleMinecraft::ScriptCompoundBlockVolume const&); // NOLINT
     /**
      * @symbol ??1ScriptCompoundBlockVolume\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptCompoundBlockVolume();
+    MCAPI ~ScriptCompoundBlockVolume(); // NOLINT
     /**
      * @symbol
      * ?bindClass\@ScriptCompoundBlockVolume\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptCompoundBlockVolume\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptCompoundBlockVolume>
-    bindClass();
+    bindClass(); // NOLINT
     /**
      * @symbol
      * ?bindEnums\@ScriptCompoundBlockVolume\@ScriptModuleMinecraft\@\@SA?AV?$EnumBindingBuilder\@W4CompoundBlockVolumeAction\@\@W41\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::
         EnumBindingBuilder<enum class CompoundBlockVolumeAction, enum class CompoundBlockVolumeAction>
-        bindEnums();
+        bindEnums(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

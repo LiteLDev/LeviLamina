@@ -5,12 +5,9 @@
 template <typename T0>
 struct ServerInstanceGameplayEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERINSTANCEGAMEPLAYEVENT
 public:
+    // prevent constructor by default
     ServerInstanceGameplayEvent& operator=(ServerInstanceGameplayEvent const&) = delete;
     ServerInstanceGameplayEvent(ServerInstanceGameplayEvent const&)            = delete;
     ServerInstanceGameplayEvent()                                              = delete;
-#endif
-
-public:
 };

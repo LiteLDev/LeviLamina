@@ -4,12 +4,9 @@
 
 struct NetworkSettingOptions {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKSETTINGOPTIONS
 public:
+    // prevent constructor by default
     NetworkSettingOptions& operator=(NetworkSettingOptions const&) = delete;
     NetworkSettingOptions(NetworkSettingOptions const&)            = delete;
     NetworkSettingOptions()                                        = delete;
-#endif
-
-public:
 };

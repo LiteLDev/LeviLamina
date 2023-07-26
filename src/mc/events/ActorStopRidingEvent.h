@@ -4,19 +4,18 @@
 
 struct ActorStopRidingEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSTOPRIDINGEVENT
 public:
+    // prevent constructor by default
     ActorStopRidingEvent& operator=(ActorStopRidingEvent const&) = delete;
     ActorStopRidingEvent()                                       = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ActorStopRidingEvent\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI ActorStopRidingEvent(struct ActorStopRidingEvent const&);
+    MCAPI ActorStopRidingEvent(struct ActorStopRidingEvent const&); // NOLINT
     /**
      * @symbol ??1ActorStopRidingEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorStopRidingEvent();
+    MCAPI ~ActorStopRidingEvent(); // NOLINT
 };

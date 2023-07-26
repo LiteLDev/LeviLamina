@@ -19,6 +19,6 @@ MCAPI class std::shared_ptr<class VanillaWorldSystems::Impl> init(
     class BaseGameVersion const&,
     class ResourcePackManager*,
     class ItemRegistryRef
-);
+); // NOLINT
 
 }; // namespace VanillaWorldSystems

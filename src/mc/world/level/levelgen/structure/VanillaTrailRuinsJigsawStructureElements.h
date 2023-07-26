@@ -7,12 +7,11 @@
 
 class VanillaTrailRuinsJigsawStructureElements {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLATRAILRUINSJIGSAWSTRUCTUREELEMENTS
 public:
+    // prevent constructor by default
     VanillaTrailRuinsJigsawStructureElements& operator=(VanillaTrailRuinsJigsawStructureElements const&) = delete;
     VanillaTrailRuinsJigsawStructureElements(VanillaTrailRuinsJigsawStructureElements const&)            = delete;
     VanillaTrailRuinsJigsawStructureElements()                                                           = delete;
-#endif
 
 public:
     /**
@@ -20,5 +19,5 @@ public:
      * ?initialize\@VanillaTrailRuinsJigsawStructureElements\@\@SAXAEBV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEAVJigsawStructureRegistry\@\@\@Z
      */
     MCAPI static void
-    initialize(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>> const&, class JigsawStructureRegistry&);
+    initialize(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>> const&, class JigsawStructureRegistry&); // NOLINT
 };

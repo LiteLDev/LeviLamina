@@ -6,18 +6,17 @@ namespace Util::Url {
 
 struct Components {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_UTIL_URL_COMPONENTS
 public:
+    // prevent constructor by default
     Components& operator=(Components const&) = delete;
     Components(Components const&)            = delete;
     Components()                             = delete;
-#endif
 
 public:
     /**
      * @symbol ??1Components\@Url\@Util\@\@QEAA\@XZ
      */
-    MCAPI ~Components();
+    MCAPI ~Components(); // NOLINT
 };
 
 }; // namespace Util::Url

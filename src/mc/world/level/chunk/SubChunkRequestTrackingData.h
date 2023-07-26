@@ -4,12 +4,9 @@
 
 struct SubChunkRequestTrackingData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKREQUESTTRACKINGDATA
 public:
+    // prevent constructor by default
     SubChunkRequestTrackingData& operator=(SubChunkRequestTrackingData const&) = delete;
     SubChunkRequestTrackingData(SubChunkRequestTrackingData const&)            = delete;
     SubChunkRequestTrackingData()                                              = delete;
-#endif
-
-public:
 };

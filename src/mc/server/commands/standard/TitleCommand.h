@@ -7,26 +7,25 @@
 
 class TitleCommand : public ::Command {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TITLECOMMAND
 public:
+    // prevent constructor by default
     TitleCommand& operator=(TitleCommand const&) = delete;
     TitleCommand(TitleCommand const&)            = delete;
     TitleCommand()                               = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?execute\@TitleCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol ?setup\@TitleCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
-    MCAPI static void setup(class CommandRegistry&);
+    MCAPI static void setup(class CommandRegistry&); // NOLINT
 };

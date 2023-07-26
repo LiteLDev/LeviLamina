@@ -4,12 +4,9 @@
 
 struct AbilitiesDirtyFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ABILITIESDIRTYFLAG
 public:
+    // prevent constructor by default
     AbilitiesDirtyFlag& operator=(AbilitiesDirtyFlag const&) = delete;
     AbilitiesDirtyFlag(AbilitiesDirtyFlag const&)            = delete;
     AbilitiesDirtyFlag()                                     = delete;
-#endif
-
-public:
 };

@@ -4,12 +4,9 @@
 
 class ServerNetworkEventHandler {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERNETWORKEVENTHANDLER
 public:
+    // prevent constructor by default
     ServerNetworkEventHandler& operator=(ServerNetworkEventHandler const&) = delete;
     ServerNetworkEventHandler(ServerNetworkEventHandler const&)            = delete;
     ServerNetworkEventHandler()                                            = delete;
-#endif
-
-public:
 };

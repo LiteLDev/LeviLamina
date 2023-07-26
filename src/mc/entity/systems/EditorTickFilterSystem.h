@@ -10,12 +10,11 @@
 
 class EditorTickFilterSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDITORTICKFILTERSYSTEM
 public:
+    // prevent constructor by default
     EditorTickFilterSystem& operator=(EditorTickFilterSystem const&) = delete;
     EditorTickFilterSystem(EditorTickFilterSystem const&)            = delete;
     EditorTickFilterSystem()                                         = delete;
-#endif
 
 public:
     /**
@@ -23,19 +22,19 @@ public:
      * ?_addPauseTickNeeded\@EditorTickFilterSystem\@\@SAXAEAVStrictEntityContext\@\@AEAVActorTickNeededComponent\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UEditorActorPauseTickNeededFlag\@\@\@\@\@\@\@Z
      */
     MCAPI static void
-    _addPauseTickNeeded(class StrictEntityContext&, class ActorTickNeededComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct EditorActorPauseTickNeededFlag>>&);
+    _addPauseTickNeeded(class StrictEntityContext&, class ActorTickNeededComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct EditorActorPauseTickNeededFlag>>&); // NOLINT
     /**
      * @symbol
      * ?_tickAddPauseTickNeeded\@EditorTickFilterSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UEditorActorPausedFlag\@\@\@\@\@\@VActorTickNeededComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UEditorActorPauseTickNeededFlag\@\@\@\@\@\@\@Z
      */
     MCAPI static void
-        _tickAddPauseTickNeeded(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct EditorActorPausedFlag>>, class ActorTickNeededComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct EditorActorPauseTickNeededFlag>>);
+        _tickAddPauseTickNeeded(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct EditorActorPausedFlag>>, class ActorTickNeededComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct EditorActorPauseTickNeededFlag>>); // NOLINT
     /**
      * @symbol ?createAddPauseTickNeeded\@EditorTickFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createAddPauseTickNeeded();
+    MCAPI static struct TickingSystemWithInfo createAddPauseTickNeeded(); // NOLINT
     /**
      * @symbol ?createRemoveActorTickNeeded\@EditorTickFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createRemoveActorTickNeeded();
+    MCAPI static struct TickingSystemWithInfo createRemoveActorTickNeeded(); // NOLINT
 };

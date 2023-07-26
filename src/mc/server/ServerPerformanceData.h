@@ -4,12 +4,9 @@
 
 struct ServerPerformanceData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERPERFORMANCEDATA
 public:
+    // prevent constructor by default
     ServerPerformanceData& operator=(ServerPerformanceData const&) = delete;
     ServerPerformanceData(ServerPerformanceData const&)            = delete;
     ServerPerformanceData()                                        = delete;
-#endif
-
-public:
 };

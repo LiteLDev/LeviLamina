@@ -4,12 +4,11 @@
 
 struct ActorTargetFilter {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORTARGETFILTER
 public:
+    // prevent constructor by default
     ActorTargetFilter& operator=(ActorTargetFilter const&) = delete;
     ActorTargetFilter(ActorTargetFilter const&)            = delete;
     ActorTargetFilter()                                    = delete;
-#endif
 
 public:
     /**
@@ -23,5 +22,5 @@ public:
         struct std::equal_to<class HashedString>,
         class std::allocator<
             struct std::pair<class HashedString const, bool (*)(struct ActorTargetFilter const&, class Actor&)>>>
-        ConditionPredicates;
+        ConditionPredicates; // NOLINT
 };

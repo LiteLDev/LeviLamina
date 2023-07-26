@@ -4,12 +4,9 @@
 
 class PackMetadata {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKMETADATA
 public:
+    // prevent constructor by default
     PackMetadata& operator=(PackMetadata const&) = delete;
     PackMetadata(PackMetadata const&)            = delete;
     PackMetadata()                               = delete;
-#endif
-
-public:
 };

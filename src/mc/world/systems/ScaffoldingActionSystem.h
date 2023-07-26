@@ -6,6 +6,6 @@ namespace ScaffoldingActionSystem {
 /**
  * @symbol ?createSystem\@ScaffoldingActionSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
  */
-MCAPI struct TickingSystemWithInfo createSystem();
+MCAPI struct TickingSystemWithInfo createSystem(); // NOLINT
 
 }; // namespace ScaffoldingActionSystem

@@ -13,24 +13,23 @@ namespace OperationNodeValues { enum class Terrain; }
 
 class IslandOperationNode : public ::OperationNodeDetails::OperationNodeBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISLANDOPERATIONNODE
 public:
+    // prevent constructor by default
     IslandOperationNode& operator=(IslandOperationNode const&) = delete;
     IslandOperationNode(IslandOperationNode const&)            = delete;
     IslandOperationNode()                                      = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2();
+    virtual void __unk_vfn_2(); // NOLINT
     /**
      * @vftbl 3
      * @symbol
@@ -38,5 +37,5 @@ public:
      */
     virtual void
     _fillArea(class OperationNodeDetails::WorkingData<enum class OperationNodeValues::Terrain, char>&, class Pos2d const&, class Pos2d const&)
-        const;
+        const; // NOLINT
 };

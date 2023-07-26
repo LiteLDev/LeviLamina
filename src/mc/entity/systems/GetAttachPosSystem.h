@@ -11,7 +11,7 @@ namespace GetAttachPosSystem {
 /**
  * @symbol ?createSystem\@GetAttachPosSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
  */
-MCAPI struct TickingSystemWithInfo createSystem();
+MCAPI struct TickingSystemWithInfo createSystem(); // NOLINT
 /**
  * @symbol
  * ?getAttachPos\@GetAttachPosSystem\@\@YA?AVVec3\@\@W4ActorLocation\@\@AEBV2\@AEBUAABBShapeComponent\@\@AEBUActorRotationComponent\@\@AEBUOffsetsComponent\@\@V?$optional_ref\@$$CBUPassengerRenderingRidingOffsetComponent\@\@\@\@V?$optional_ref\@$$CBUVanillaOffsetComponent\@\@\@\@M\@Z
@@ -25,6 +25,6 @@ MCAPI class Vec3 getAttachPos(
     class optional_ref<struct PassengerRenderingRidingOffsetComponent const>,
     class optional_ref<struct VanillaOffsetComponent const>,
     float
-);
+); // NOLINT
 
 }; // namespace GetAttachPosSystem

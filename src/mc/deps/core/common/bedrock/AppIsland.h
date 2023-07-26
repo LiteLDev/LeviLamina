@@ -11,57 +11,56 @@ namespace Bedrock {
 
 class AppIsland {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_APPISLAND
 public:
+    // prevent constructor by default
     AppIsland& operator=(AppIsland const&) = delete;
     AppIsland(AppIsland const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?getId\@AppIsland\@Bedrock\@\@UEAAGXZ
      */
-    virtual unsigned short getId();
+    virtual unsigned short getId(); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_APPISLAND
     /**
      * @symbol ?mainUpdate\@AppIsland\@Bedrock\@\@UEAAXXZ
      */
-    MCVAPI void mainUpdate();
+    MCVAPI void mainUpdate(); // NOLINT
     /**
      * @symbol ?processActivationArguments\@AppIsland\@Bedrock\@\@UEAAXAEBVActivationArguments\@2\@\@Z
      */
-    MCVAPI void processActivationArguments(class Bedrock::ActivationArguments const&);
+    MCVAPI void processActivationArguments(class Bedrock::ActivationArguments const&); // NOLINT
     /**
      * @symbol ?resume\@AppIsland\@Bedrock\@\@UEAA_NXZ
      */
-    MCVAPI bool resume();
+    MCVAPI bool resume(); // NOLINT
     /**
      * @symbol ?start\@AppIsland\@Bedrock\@\@UEAA_NXZ
      */
-    MCVAPI bool start();
+    MCVAPI bool start(); // NOLINT
     /**
      * @symbol ?stop\@AppIsland\@Bedrock\@\@UEAA_NXZ
      */
-    MCVAPI bool stop();
+    MCVAPI bool stop(); // NOLINT
     /**
      * @symbol ?suspend\@AppIsland\@Bedrock\@\@UEAA_NXZ
      */
-    MCVAPI bool suspend();
+    MCVAPI bool suspend(); // NOLINT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~AppIsland();
+    MCVAPI ~AppIsland(); // NOLINT
 #endif
     /**
      * @symbol ??0AppIsland\@Bedrock\@\@QEAA\@XZ
      */
-    MCAPI AppIsland();
+    MCAPI AppIsland(); // NOLINT
 };
 
 }; // namespace Bedrock

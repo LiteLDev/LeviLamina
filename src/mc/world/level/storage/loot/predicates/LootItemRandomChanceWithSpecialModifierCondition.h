@@ -4,24 +4,23 @@
 
 class LootItemRandomChanceWithSpecialModifierCondition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEMRANDOMCHANCEWITHSPECIALMODIFIERCONDITION
 public:
+    // prevent constructor by default
     LootItemRandomChanceWithSpecialModifierCondition&
     operator=(LootItemRandomChanceWithSpecialModifierCondition const&)                                        = delete;
     LootItemRandomChanceWithSpecialModifierCondition(LootItemRandomChanceWithSpecialModifierCondition const&) = delete;
     LootItemRandomChanceWithSpecialModifierCondition()                                                        = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?applies\@LootItemRandomChanceWithSpecialModifierCondition\@\@UEAA_NAEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual bool applies(class Random&, class LootTableContext&);
+    virtual bool applies(class Random&, class LootTableContext&); // NOLINT
 };

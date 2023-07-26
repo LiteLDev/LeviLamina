@@ -4,22 +4,21 @@
 
 struct SummonSpellData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUMMONSPELLDATA
 public:
+    // prevent constructor by default
     SummonSpellData() = delete;
-#endif
 
 public:
     /**
      * @symbol ??0SummonSpellData\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI SummonSpellData(struct SummonSpellData const&);
+    MCAPI SummonSpellData(struct SummonSpellData const&); // NOLINT
     /**
      * @symbol ??4SummonSpellData\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
-    MCAPI struct SummonSpellData& operator=(struct SummonSpellData const&);
+    MCAPI struct SummonSpellData& operator=(struct SummonSpellData const&); // NOLINT
     /**
      * @symbol ??1SummonSpellData\@\@QEAA\@XZ
      */
-    MCAPI ~SummonSpellData();
+    MCAPI ~SummonSpellData(); // NOLINT
 };

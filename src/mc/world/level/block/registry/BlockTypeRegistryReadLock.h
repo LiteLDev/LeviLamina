@@ -4,16 +4,15 @@
 
 class BlockTypeRegistryReadLock {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKTYPEREGISTRYREADLOCK
 public:
+    // prevent constructor by default
     BlockTypeRegistryReadLock& operator=(BlockTypeRegistryReadLock const&) = delete;
     BlockTypeRegistryReadLock(BlockTypeRegistryReadLock const&)            = delete;
     BlockTypeRegistryReadLock()                                            = delete;
-#endif
 
 public:
     /**
      * @symbol ??1BlockTypeRegistryReadLock\@\@QEAA\@XZ
      */
-    MCAPI ~BlockTypeRegistryReadLock();
+    MCAPI ~BlockTypeRegistryReadLock(); // NOLINT
 };

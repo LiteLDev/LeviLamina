@@ -4,23 +4,22 @@
 
 struct ConditionalBandwidthOptimization {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONDITIONALBANDWIDTHOPTIMIZATION
 public:
+    // prevent constructor by default
     ConditionalBandwidthOptimization(ConditionalBandwidthOptimization const&) = delete;
     ConditionalBandwidthOptimization()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ??4ConditionalBandwidthOptimization\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
-    MCAPI struct ConditionalBandwidthOptimization& operator=(struct ConditionalBandwidthOptimization const&);
+    MCAPI struct ConditionalBandwidthOptimization& operator=(struct ConditionalBandwidthOptimization const&); // NOLINT
     /**
      * @symbol ??4ConditionalBandwidthOptimization\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct ConditionalBandwidthOptimization& operator=(struct ConditionalBandwidthOptimization&&);
+    MCAPI struct ConditionalBandwidthOptimization& operator=(struct ConditionalBandwidthOptimization&&); // NOLINT
     /**
      * @symbol ??1ConditionalBandwidthOptimization\@\@QEAA\@XZ
      */
-    MCAPI ~ConditionalBandwidthOptimization();
+    MCAPI ~ConditionalBandwidthOptimization(); // NOLINT
 };

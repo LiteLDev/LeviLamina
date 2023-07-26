@@ -4,12 +4,9 @@
 
 struct StackStats {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STACKSTATS
 public:
+    // prevent constructor by default
     StackStats& operator=(StackStats const&) = delete;
     StackStats(StackStats const&)            = delete;
     StackStats()                             = delete;
-#endif
-
-public:
 };

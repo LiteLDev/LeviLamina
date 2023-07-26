@@ -4,12 +4,9 @@
 
 struct ExperienceOrbFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPERIENCEORBFLAG
 public:
+    // prevent constructor by default
     ExperienceOrbFlag& operator=(ExperienceOrbFlag const&) = delete;
     ExperienceOrbFlag(ExperienceOrbFlag const&)            = delete;
     ExperienceOrbFlag()                                    = delete;
-#endif
-
-public:
 };

@@ -4,16 +4,15 @@
 
 class InsideHoneyBlockSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEHONEYBLOCKSYSTEM
 public:
+    // prevent constructor by default
     InsideHoneyBlockSystem& operator=(InsideHoneyBlockSystem const&) = delete;
     InsideHoneyBlockSystem(InsideHoneyBlockSystem const&)            = delete;
     InsideHoneyBlockSystem()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol ?createEventsSystem\@InsideHoneyBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createEventsSystem();
+    MCAPI static struct TickingSystemWithInfo createEventsSystem(); // NOLINT
 };

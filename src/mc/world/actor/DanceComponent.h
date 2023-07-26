@@ -4,27 +4,26 @@
 
 class DanceComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DANCECOMPONENT
 public:
+    // prevent constructor by default
     DanceComponent& operator=(DanceComponent const&) = delete;
     DanceComponent(DanceComponent const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0DanceComponent\@\@QEAA\@XZ
      */
-    MCAPI DanceComponent();
+    MCAPI DanceComponent(); // NOLINT
     /**
      * @symbol ?inListenDistance\@DanceComponent\@\@QEBA_NAEBVVec3\@\@\@Z
      */
-    MCAPI bool inListenDistance(class Vec3 const&) const;
+    MCAPI bool inListenDistance(class Vec3 const&) const; // NOLINT
     /**
      * @symbol ?initFromDefinition\@DanceComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void initFromDefinition(class Actor&);
+    MCAPI void initFromDefinition(class Actor&); // NOLINT
     /**
      * @symbol ?initFromDefinition\@DanceComponent\@\@QEAAXAEAVActor\@\@M\@Z
      */
-    MCAPI void initFromDefinition(class Actor&, float);
+    MCAPI void initFromDefinition(class Actor&, float); // NOLINT
 };

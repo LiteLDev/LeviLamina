@@ -8,89 +8,88 @@
 
 class StructureDataLoadHelper {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREDATALOADHELPER
 public:
+    // prevent constructor by default
     StructureDataLoadHelper& operator=(StructureDataLoadHelper const&) = delete;
     StructureDataLoadHelper(StructureDataLoadHelper const&)            = delete;
     StructureDataLoadHelper()                                          = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?loadPosition\@StructureDataLoadHelper\@\@UEAA?AVVec3\@\@AEBV2\@\@Z
      */
-    virtual class Vec3 loadPosition(class Vec3 const&);
+    virtual class Vec3 loadPosition(class Vec3 const&); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?loadBlockPosition\@StructureDataLoadHelper\@\@UEAA?AVBlockPos\@\@AEBV2\@\@Z
      */
-    virtual class BlockPos loadBlockPosition(class BlockPos const&);
+    virtual class BlockPos loadBlockPosition(class BlockPos const&); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?loadBlockPositionOffset\@StructureDataLoadHelper\@\@UEAA?AVBlockPos\@\@AEBV2\@\@Z
      */
-    virtual class BlockPos loadBlockPositionOffset(class BlockPos const&);
+    virtual class BlockPos loadBlockPositionOffset(class BlockPos const&); // NOLINT
     /**
      * @vftbl 4
      * @symbol __unk_vfn_4
      */
-    virtual void __unk_vfn_4();
+    virtual void __unk_vfn_4(); // NOLINT
     /**
      * @vftbl 5
      * @symbol ?loadRotationDegreesY\@StructureDataLoadHelper\@\@UEAAMM\@Z
      */
-    virtual float loadRotationDegreesY(float);
+    virtual float loadRotationDegreesY(float); // NOLINT
     /**
      * @vftbl 6
      * @symbol __unk_vfn_6
      */
-    virtual void __unk_vfn_6();
+    virtual void __unk_vfn_6(); // NOLINT
     /**
      * @vftbl 7
      * @symbol ?loadRotationRadiansY\@StructureDataLoadHelper\@\@UEAAMM\@Z
      */
-    virtual float loadRotationRadiansY(float);
+    virtual float loadRotationRadiansY(float); // NOLINT
     /**
      * @vftbl 8
      * @symbol ?loadFacingID\@StructureDataLoadHelper\@\@UEAAEE\@Z
      */
-    virtual unsigned char loadFacingID(unsigned char);
+    virtual unsigned char loadFacingID(unsigned char); // NOLINT
     /**
      * @vftbl 9
      * @symbol ?loadDirection\@StructureDataLoadHelper\@\@UEAA?AVVec3\@\@AEBV2\@\@Z
      */
-    virtual class Vec3 loadDirection(class Vec3 const&);
+    virtual class Vec3 loadDirection(class Vec3 const&); // NOLINT
     /**
      * @vftbl 10
      * @symbol ?loadDirection\@StructureDataLoadHelper\@\@UEAA?AW4Type\@Direction\@\@W423\@\@Z
      */
-    virtual enum class Direction::Type loadDirection(enum class Direction::Type);
+    virtual enum class Direction::Type loadDirection(enum class Direction::Type); // NOLINT
     /**
      * @vftbl 11
      * @symbol ?loadRotation\@StructureDataLoadHelper\@\@UEAA?AW4Rotation\@\@W42\@\@Z
      */
-    virtual enum class Rotation loadRotation(enum class Rotation);
+    virtual enum class Rotation loadRotation(enum class Rotation); // NOLINT
     /**
      * @vftbl 12
      * @symbol ?loadMirror\@StructureDataLoadHelper\@\@UEAA?AW4Mirror\@\@W42\@\@Z
      */
-    virtual enum class Mirror loadMirror(enum class Mirror);
+    virtual enum class Mirror loadMirror(enum class Mirror); // NOLINT
     /**
      * @vftbl 13
      * @symbol ?loadActorUniqueID\@StructureDataLoadHelper\@\@UEAA?AUActorUniqueID\@\@U2\@\@Z
      */
-    virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
+    virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID); // NOLINT
     /**
      * @vftbl 14
      * @symbol ?loadOwnerID\@StructureDataLoadHelper\@\@UEAA?AUActorUniqueID\@\@U2\@\@Z
      */
-    virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
+    virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID); // NOLINT
     /**
      * @vftbl 15
      * @symbol
@@ -98,40 +97,40 @@ public:
      */
     virtual struct InternalComponentRegistry::
         ComponentInfo const*
-        loadActorInternalComponentInfo(class std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct InternalComponentRegistry::ComponentInfo>>> const&, std::string const&);
+        loadActorInternalComponentInfo(class std::unordered_map<class HashedString, struct InternalComponentRegistry::ComponentInfo, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct InternalComponentRegistry::ComponentInfo>>> const&, std::string const&); // NOLINT
     /**
      * @vftbl 16
      * @symbol ?getType\@StructureDataLoadHelper\@\@UEBA?AW4DataLoadHelperType\@\@XZ
      */
-    virtual enum class DataLoadHelperType getType() const;
+    virtual enum class DataLoadHelperType getType() const; // NOLINT
     /**
      * @vftbl 17
      * @symbol ?shouldResetTime\@StructureDataLoadHelper\@\@UEAA_NXZ
      */
-    virtual bool shouldResetTime();
+    virtual bool shouldResetTime(); // NOLINT
     /**
      * @vftbl 18
      * @symbol ?_generateNewID\@StructureDataLoadHelper\@\@MEAA?AUActorUniqueID\@\@XZ
      */
-    virtual struct ActorUniqueID _generateNewID();
+    virtual struct ActorUniqueID _generateNewID(); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREDATALOADHELPER
     /**
      * @symbol ?loadRotationDegreesX\@StructureDataLoadHelper\@\@UEAAMM\@Z
      */
-    MCVAPI float loadRotationDegreesX(float);
+    MCVAPI float loadRotationDegreesX(float); // NOLINT
     /**
      * @symbol ?loadRotationRadiansX\@StructureDataLoadHelper\@\@UEAAMM\@Z
      */
-    MCVAPI float loadRotationRadiansX(float);
+    MCVAPI float loadRotationRadiansX(float); // NOLINT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~StructureDataLoadHelper();
+    MCVAPI ~StructureDataLoadHelper(); // NOLINT
 #endif
     /**
      * @symbol
      * ??0StructureDataLoadHelper\@\@QEAA\@AEBVBlockPos\@\@0AEBVVec3\@\@UActorUniqueID\@\@W4Rotation\@\@W4Mirror\@\@AEAVLevel\@\@\@Z
      */
     MCAPI
-    StructureDataLoadHelper(class BlockPos const&, class BlockPos const&, class Vec3 const&, struct ActorUniqueID, enum class Rotation, enum class Mirror, class Level&);
+    StructureDataLoadHelper(class BlockPos const&, class BlockPos const&, class Vec3 const&, struct ActorUniqueID, enum class Rotation, enum class Mirror, class Level&); // NOLINT
 };

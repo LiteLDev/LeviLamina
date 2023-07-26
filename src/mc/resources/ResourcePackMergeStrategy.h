@@ -4,12 +4,9 @@
 
 class ResourcePackMergeStrategy {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKMERGESTRATEGY
 public:
+    // prevent constructor by default
     ResourcePackMergeStrategy& operator=(ResourcePackMergeStrategy const&) = delete;
     ResourcePackMergeStrategy(ResourcePackMergeStrategy const&)            = delete;
     ResourcePackMergeStrategy()                                            = delete;
-#endif
-
-public:
 };

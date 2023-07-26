@@ -4,12 +4,9 @@
 
 class IContentAccessibilityProvider {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICONTENTACCESSIBILITYPROVIDER
 public:
+    // prevent constructor by default
     IContentAccessibilityProvider& operator=(IContentAccessibilityProvider const&) = delete;
     IContentAccessibilityProvider(IContentAccessibilityProvider const&)            = delete;
     IContentAccessibilityProvider()                                                = delete;
-#endif
-
-public:
 };

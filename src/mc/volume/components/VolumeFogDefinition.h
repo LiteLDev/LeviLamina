@@ -4,28 +4,27 @@
 
 struct VolumeFogDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VOLUMEFOGDEFINITION
 public:
+    // prevent constructor by default
     VolumeFogDefinition& operator=(VolumeFogDefinition const&) = delete;
     VolumeFogDefinition(VolumeFogDefinition const&)            = delete;
     VolumeFogDefinition()                                      = delete;
-#endif
 
 public:
     /**
      * @symbol ?initialize\@VolumeFogDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVVolumeFogComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class VolumeFogComponent&) const;
+    MCAPI void initialize(class EntityContext&, class VolumeFogComponent&) const; // NOLINT
     /**
      * @symbol ??1VolumeFogDefinition\@\@QEAA\@XZ
      */
-    MCAPI ~VolumeFogDefinition();
-    /**
-     * @symbol ?NAME\@VolumeFogDefinition\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
-     */
-    MCAPI static std::string const NAME;
+    MCAPI ~VolumeFogDefinition(); // NOLINT
     /**
      * @symbol ?bindType\@VolumeFogDefinition\@\@SAXXZ
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(); // NOLINT
+    /**
+     * @symbol ?NAME\@VolumeFogDefinition\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
+     */
+    MCAPI static std::string const NAME; // NOLINT
 };

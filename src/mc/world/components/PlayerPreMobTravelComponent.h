@@ -4,12 +4,9 @@
 
 struct PlayerPreMobTravelComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERPREMOBTRAVELCOMPONENT
 public:
+    // prevent constructor by default
     PlayerPreMobTravelComponent& operator=(PlayerPreMobTravelComponent const&) = delete;
     PlayerPreMobTravelComponent(PlayerPreMobTravelComponent const&)            = delete;
     PlayerPreMobTravelComponent()                                              = delete;
-#endif
-
-public:
 };

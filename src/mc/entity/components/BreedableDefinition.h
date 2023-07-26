@@ -12,52 +12,51 @@ namespace JsonUtil { class EmptyClass; }
 
 class BreedableDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREEDABLEDEFINITION
 public:
+    // prevent constructor by default
     BreedableDefinition& operator=(BreedableDefinition const&) = delete;
     BreedableDefinition(BreedableDefinition const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0BreedableDefinition\@\@QEAA\@XZ
      */
-    MCAPI BreedableDefinition();
+    MCAPI BreedableDefinition(); // NOLINT
     /**
      * @symbol ?addBreedItem\@BreedableDefinition\@\@QEAAXAEBVItemDescriptor\@\@\@Z
      */
-    MCAPI void addBreedItem(class ItemDescriptor const&);
+    MCAPI void addBreedItem(class ItemDescriptor const&); // NOLINT
     /**
      * @symbol ?addBreedableType\@BreedableDefinition\@\@QEAAXAEBUBreedableType\@\@\@Z
      */
-    MCAPI void addBreedableType(struct BreedableType const&);
+    MCAPI void addBreedableType(struct BreedableType const&); // NOLINT
     /**
      * @symbol ?addEnvironmentRequirement\@BreedableDefinition\@\@QEAAXAEBUEnvironmentRequirement\@\@\@Z
      */
-    MCAPI void addEnvironmentRequirement(struct EnvironmentRequirement const&);
+    MCAPI void addEnvironmentRequirement(struct EnvironmentRequirement const&); // NOLINT
     /**
      * @symbol
      * ?addParentCentricAttributeBlending\@BreedableDefinition\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void addParentCentricAttributeBlending(std::string const&);
+    MCAPI void addParentCentricAttributeBlending(std::string const&); // NOLINT
     /**
      * @symbol ?initialize\@BreedableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVBreedableComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class BreedableComponent&) const;
+    MCAPI void initialize(class EntityContext&, class BreedableComponent&) const; // NOLINT
     /**
      * @symbol
      * ?setMutationStrategy\@BreedableDefinition\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void setMutationStrategy(std::string const&);
+    MCAPI void setMutationStrategy(std::string const&); // NOLINT
     /**
      * @symbol ??1BreedableDefinition\@\@QEAA\@XZ
      */
-    MCAPI ~BreedableDefinition();
+    MCAPI ~BreedableDefinition(); // NOLINT
     /**
      * @symbol
      * ?buildSchema\@BreedableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VBreedableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BreedableDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      class BreedableDefinition>>&); // NOLINT
 };

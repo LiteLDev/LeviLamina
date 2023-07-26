@@ -4,27 +4,26 @@
 
 class KeyFrameTransformData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_KEYFRAMETRANSFORMDATA
 public:
+    // prevent constructor by default
     KeyFrameTransformData& operator=(KeyFrameTransformData const&) = delete;
     KeyFrameTransformData()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ??0KeyFrameTransformData\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI KeyFrameTransformData(class KeyFrameTransformData const&);
+    MCAPI KeyFrameTransformData(class KeyFrameTransformData const&); // NOLINT
     /**
      * @symbol ?addChannelTransform\@KeyFrameTransformData\@\@QEAAXAEBVExpressionNode\@\@H\@Z
      */
-    MCAPI void addChannelTransform(class ExpressionNode const&, int);
+    MCAPI void addChannelTransform(class ExpressionNode const&, int); // NOLINT
     /**
      * @symbol ?addChannelTransform\@KeyFrameTransformData\@\@QEAAXAEBVExpressionNode\@\@AEBVVec3\@\@\@Z
      */
-    MCAPI void addChannelTransform(class ExpressionNode const&, class Vec3 const&);
+    MCAPI void addChannelTransform(class ExpressionNode const&, class Vec3 const&); // NOLINT
     /**
      * @symbol ??8KeyFrameTransformData\@\@QEBA_NAEBV0\@\@Z
      */
-    MCAPI bool operator==(class KeyFrameTransformData const&) const;
+    MCAPI bool operator==(class KeyFrameTransformData const&) const; // NOLINT
 };

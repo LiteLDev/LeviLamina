@@ -6,14 +6,11 @@ namespace DripstoneUtils {
 
 struct PointedDripstoneBasePos {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRIPSTONEUTILS_POINTEDDRIPSTONEBASEPOS
 public:
+    // prevent constructor by default
     PointedDripstoneBasePos& operator=(PointedDripstoneBasePos const&) = delete;
     PointedDripstoneBasePos(PointedDripstoneBasePos const&)            = delete;
     PointedDripstoneBasePos()                                          = delete;
-#endif
-
-public:
 };
 
 }; // namespace DripstoneUtils

@@ -9,19 +9,18 @@ namespace TreeHelper { struct TreeParams; }
 
 class FancyTreeTrunk {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FANCYTREETRUNK
 public:
+    // prevent constructor by default
     FancyTreeTrunk& operator=(FancyTreeTrunk const&) = delete;
     FancyTreeTrunk(FancyTreeTrunk const&)            = delete;
     FancyTreeTrunk()                                 = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
@@ -29,12 +28,12 @@ public:
      */
     virtual class std::optional<class BlockPos>
     placeTrunk(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, int, class RenderParams&, struct TreeHelper::TreeParams const&, class ITreeCanopy const*)
-        const;
+        const; // NOLINT
     /**
      * @vftbl 2
      * @symbol ?getTreeHeight\@FancyTreeTrunk\@\@UEBAHAEAVRandom\@\@\@Z
      */
-    virtual int getTreeHeight(class Random&) const;
+    virtual int getTreeHeight(class Random&) const; // NOLINT
 
     // private:
     /**
@@ -43,11 +42,11 @@ public:
      */
     MCAPI int
     _checkLine(class IBlockWorldGenAPI&, class BlockPos const&, class BlockPos const&, struct TreeHelper::TreeParams const&)
-        const;
+        const; // NOLINT
     /**
      * @symbol ?_placeLimb\@FancyTreeTrunk\@\@AEBAXAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@1\@Z
      */
-    MCAPI void _placeLimb(class IBlockWorldGenAPI&, class BlockPos const&, class BlockPos const&) const;
+    MCAPI void _placeLimb(class IBlockWorldGenAPI&, class BlockPos const&, class BlockPos const&) const; // NOLINT
 
 private:
 };

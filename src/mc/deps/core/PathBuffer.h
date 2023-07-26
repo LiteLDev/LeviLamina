@@ -7,14 +7,11 @@ namespace Core {
 template <typename T0>
 class PathBuffer {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORE_PATHBUFFER
 public:
+    // prevent constructor by default
     PathBuffer& operator=(PathBuffer const&) = delete;
     PathBuffer(PathBuffer const&)            = delete;
     PathBuffer()                             = delete;
-#endif
-
-public:
 };
 
 }; // namespace Core

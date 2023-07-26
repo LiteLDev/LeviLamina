@@ -4,16 +4,15 @@
 
 struct PlayerEatFoodEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYEREATFOODEVENT
 public:
+    // prevent constructor by default
     PlayerEatFoodEvent& operator=(PlayerEatFoodEvent const&) = delete;
     PlayerEatFoodEvent(PlayerEatFoodEvent const&)            = delete;
     PlayerEatFoodEvent()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ??1PlayerEatFoodEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerEatFoodEvent();
+    MCAPI ~PlayerEatFoodEvent(); // NOLINT
 };

@@ -12,27 +12,26 @@ namespace JsonUtil { class EmptyClass; }
 
 struct FireImmuneDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FIREIMMUNEDEFINITION
 public:
+    // prevent constructor by default
     FireImmuneDefinition& operator=(FireImmuneDefinition const&) = delete;
     FireImmuneDefinition(FireImmuneDefinition const&)            = delete;
     FireImmuneDefinition()                                       = delete;
-#endif
 
 public:
     /**
      * @symbol ?initialize\@FireImmuneDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&) const;
+    MCAPI void initialize(class EntityContext&) const; // NOLINT
     /**
      * @symbol ?uninitialize\@FireImmuneDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void uninitialize(class EntityContext&) const;
+    MCAPI void uninitialize(class EntityContext&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@FireImmuneDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UFireImmuneDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct FireImmuneDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      struct FireImmuneDefinition>>&); // NOLINT
 };

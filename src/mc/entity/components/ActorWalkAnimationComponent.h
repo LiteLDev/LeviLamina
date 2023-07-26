@@ -4,12 +4,9 @@
 
 struct ActorWalkAnimationComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORWALKANIMATIONCOMPONENT
 public:
+    // prevent constructor by default
     ActorWalkAnimationComponent& operator=(ActorWalkAnimationComponent const&) = delete;
     ActorWalkAnimationComponent(ActorWalkAnimationComponent const&)            = delete;
     ActorWalkAnimationComponent()                                              = delete;
-#endif
-
-public:
 };

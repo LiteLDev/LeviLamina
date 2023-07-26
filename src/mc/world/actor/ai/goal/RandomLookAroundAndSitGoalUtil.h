@@ -6,6 +6,6 @@ namespace RandomLookAroundAndSitGoalUtil {
 /**
  * @symbol ?_isMobPulledByLeash\@RandomLookAroundAndSitGoalUtil\@\@YA_NAEBVMob\@\@\@Z
  */
-MCAPI bool _isMobPulledByLeash(class Mob const&);
+MCAPI bool _isMobPulledByLeash(class Mob const&); // NOLINT
 
 }; // namespace RandomLookAroundAndSitGoalUtil

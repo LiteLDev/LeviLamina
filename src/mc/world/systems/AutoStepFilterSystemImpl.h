@@ -14,6 +14,6 @@ namespace AutoStepFilterSystemImpl {
  * @symbol
  * ?doAutoStepFilterSystem\@AutoStepFilterSystemImpl\@\@YAXAEAVStrictEntityContext\@\@AEBUMoveRequestComponent\@\@AEBUMaxAutoStepComponent\@\@V?$Optional\@$$CBV?$FlagComponent\@UOnGroundFlag\@\@\@\@\@\@V?$Optional\@$$CBUAbilitiesComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UAutoStepRequestFlag\@\@\@\@\@\@\@Z
  */
-MCAPI void doAutoStepFilterSystem(class StrictEntityContext&, struct MoveRequestComponent const&, struct MaxAutoStepComponent const&, class Optional<class FlagComponent<struct OnGroundFlag> const>, class Optional<struct AbilitiesComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct AutoStepRequestFlag>>);
+MCAPI void doAutoStepFilterSystem(class StrictEntityContext&, struct MoveRequestComponent const&, struct MaxAutoStepComponent const&, class Optional<class FlagComponent<struct OnGroundFlag> const>, class Optional<struct AbilitiesComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct AutoStepRequestFlag>>); // NOLINT
 
 }; // namespace AutoStepFilterSystemImpl

@@ -9,18 +9,17 @@
 
 class ShulkerPostAiStepSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHULKERPOSTAISTEPSYSTEM
 public:
+    // prevent constructor by default
     ShulkerPostAiStepSystem& operator=(ShulkerPostAiStepSystem const&) = delete;
     ShulkerPostAiStepSystem(ShulkerPostAiStepSystem const&)            = delete;
     ShulkerPostAiStepSystem()                                          = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@ShulkerPostAiStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
     /**
      * @symbol
      * ?tick\@ShulkerPostAiStepSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UShulkerFlag\@\@\@\@\@\@UActorRotationComponent\@\@UMobBodyRotationComponent\@\@UStateVectorComponent\@\@\@\@\@Z
@@ -33,7 +32,7 @@ public:
                                class FlagComponent<struct ShulkerFlag>>,
                            struct ActorRotationComponent,
                            struct MobBodyRotationComponent,
-                           struct StateVectorComponent>);
+                           struct StateVectorComponent>); // NOLINT
 
     // private:
     /**
@@ -41,7 +40,7 @@ public:
      * ?_doShulkerPostAiStepSystem\@ShulkerPostAiStepSystem\@\@CAXAEBVStrictEntityContext\@\@AEAUActorRotationComponent\@\@AEAUMobBodyRotationComponent\@\@AEAUStateVectorComponent\@\@\@Z
      */
     MCAPI static void
-    _doShulkerPostAiStepSystem(class StrictEntityContext const&, struct ActorRotationComponent&, struct MobBodyRotationComponent&, struct StateVectorComponent&);
+    _doShulkerPostAiStepSystem(class StrictEntityContext const&, struct ActorRotationComponent&, struct MobBodyRotationComponent&, struct StateVectorComponent&); // NOLINT
 
 private:
 };

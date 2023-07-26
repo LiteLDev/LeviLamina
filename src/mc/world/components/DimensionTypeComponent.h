@@ -4,12 +4,9 @@
 
 struct DimensionTypeComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONTYPECOMPONENT
 public:
+    // prevent constructor by default
     DimensionTypeComponent& operator=(DimensionTypeComponent const&) = delete;
     DimensionTypeComponent(DimensionTypeComponent const&)            = delete;
     DimensionTypeComponent()                                         = delete;
-#endif
-
-public:
 };

@@ -11,6 +11,6 @@ namespace NpcSystemHelper {
 /**
  * @symbol ?sendClosePacket\@NpcSystemHelper\@\@YAXAEAVEntityContext\@\@AEBULeaveMenuCountdown\@NpcComponents\@\@\@Z
  */
-MCAPI void sendClosePacket(class EntityContext&, struct NpcComponents::LeaveMenuCountdown const&);
+MCAPI void sendClosePacket(class EntityContext&, struct NpcComponents::LeaveMenuCountdown const&); // NOLINT
 
 }; // namespace NpcSystemHelper

@@ -4,12 +4,9 @@
 
 class ChunkLocalHeight {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKLOCALHEIGHT
 public:
+    // prevent constructor by default
     ChunkLocalHeight& operator=(ChunkLocalHeight const&) = delete;
     ChunkLocalHeight(ChunkLocalHeight const&)            = delete;
     ChunkLocalHeight()                                   = delete;
-#endif
-
-public:
 };

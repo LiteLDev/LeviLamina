@@ -4,19 +4,18 @@
 
 struct ItemDefinitionEventTriggeredEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMDEFINITIONEVENTTRIGGEREDEVENT
 public:
+    // prevent constructor by default
     ItemDefinitionEventTriggeredEvent& operator=(ItemDefinitionEventTriggeredEvent const&) = delete;
     ItemDefinitionEventTriggeredEvent()                                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ItemDefinitionEventTriggeredEvent\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI ItemDefinitionEventTriggeredEvent(struct ItemDefinitionEventTriggeredEvent const&);
+    MCAPI ItemDefinitionEventTriggeredEvent(struct ItemDefinitionEventTriggeredEvent const&); // NOLINT
     /**
      * @symbol ??1ItemDefinitionEventTriggeredEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ItemDefinitionEventTriggeredEvent();
+    MCAPI ~ItemDefinitionEventTriggeredEvent(); // NOLINT
 };

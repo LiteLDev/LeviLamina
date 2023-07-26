@@ -14,30 +14,30 @@ namespace mce { class UUID; }
 
 class WorldTemplateManager {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDTEMPLATEMANAGER
 public:
+    // prevent constructor by default
     WorldTemplateManager& operator=(WorldTemplateManager const&) = delete;
     WorldTemplateManager(WorldTemplateManager const&)            = delete;
     WorldTemplateManager()                                       = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?findInstalledWorldTemplateByUUID\@WorldTemplateManager\@\@UEBAPEBUWorldTemplateInfo\@\@AEBV?$vector\@VUUID\@mce\@\@V?$allocator\@VUUID\@mce\@\@\@std\@\@\@std\@\@\@Z
      */
-    virtual struct WorldTemplateInfo const* findInstalledWorldTemplateByUUID(std::vector<class mce::UUID> const&) const;
+    virtual struct WorldTemplateInfo const*
+    findInstalledWorldTemplateByUUID(std::vector<class mce::UUID> const&) const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDTEMPLATEMANAGER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~WorldTemplateManager();
+    MCVAPI ~WorldTemplateManager(); // NOLINT
 #endif
     /**
      * @symbol
@@ -49,31 +49,31 @@ public:
         class PackSourceFactory&,
         class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const&,
         bool
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?findInstalledWorldTemplate\@WorldTemplateManager\@\@QEBAPEBUWorldTemplateInfo\@\@AEBUPackIdVersion\@\@\@Z
      */
-    MCAPI struct WorldTemplateInfo const* findInstalledWorldTemplate(struct PackIdVersion const&) const;
+    MCAPI struct WorldTemplateInfo const* findInstalledWorldTemplate(struct PackIdVersion const&) const; // NOLINT
     /**
      * @symbol
      * ?getWorldTemplatesPath\@WorldTemplateManager\@\@QEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
-    MCAPI class Core::PathBuffer<std::string> getWorldTemplatesPath() const;
+    MCAPI class Core::PathBuffer<std::string> getWorldTemplatesPath() const; // NOLINT
 
     // private:
     /**
      * @symbol ?_initialize\@WorldTemplateManager\@\@AEAAXXZ
      */
-    MCAPI void _initialize();
+    MCAPI void _initialize(); // NOLINT
     /**
      * @symbol ?_initializePackSources\@WorldTemplateManager\@\@AEAAXXZ
      */
-    MCAPI void _initializePackSources();
+    MCAPI void _initializePackSources(); // NOLINT
     /**
      * @symbol ?_onDiscoverWorldTemplate\@WorldTemplateManager\@\@AEAAXAEBVPack\@\@\@Z
      */
-    MCAPI void _onDiscoverWorldTemplate(class Pack const&);
+    MCAPI void _onDiscoverWorldTemplate(class Pack const&); // NOLINT
 
 private:
 };

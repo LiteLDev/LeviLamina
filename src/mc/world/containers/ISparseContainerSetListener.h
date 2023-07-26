@@ -4,12 +4,9 @@
 
 class ISparseContainerSetListener {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISPARSECONTAINERSETLISTENER
 public:
+    // prevent constructor by default
     ISparseContainerSetListener& operator=(ISparseContainerSetListener const&) = delete;
     ISparseContainerSetListener(ISparseContainerSetListener const&)            = delete;
     ISparseContainerSetListener()                                              = delete;
-#endif
-
-public:
 };

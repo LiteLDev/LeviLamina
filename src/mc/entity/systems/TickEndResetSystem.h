@@ -4,16 +4,15 @@
 
 class TickEndResetSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKENDRESETSYSTEM
 public:
+    // prevent constructor by default
     TickEndResetSystem& operator=(TickEndResetSystem const&) = delete;
     TickEndResetSystem(TickEndResetSystem const&)            = delete;
     TickEndResetSystem()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@TickEndResetSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
 };

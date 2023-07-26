@@ -4,18 +4,17 @@
 
 class IUnknownBlockTypeRegistry {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IUNKNOWNBLOCKTYPEREGISTRY
 public:
+    // prevent constructor by default
     IUnknownBlockTypeRegistry& operator=(IUnknownBlockTypeRegistry const&) = delete;
     IUnknownBlockTypeRegistry(IUnknownBlockTypeRegistry const&)            = delete;
     IUnknownBlockTypeRegistry()                                            = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IUNKNOWNBLOCKTYPEREGISTRY
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IUnknownBlockTypeRegistry();
+    MCVAPI ~IUnknownBlockTypeRegistry(); // NOLINT
 #endif
 };

@@ -8,52 +8,51 @@
 
 class MoveActorAbsolutePacket : public ::Packet {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEACTORABSOLUTEPACKET
 public:
+    // prevent constructor by default
     MoveActorAbsolutePacket& operator=(MoveActorAbsolutePacket const&) = delete;
     MoveActorAbsolutePacket(MoveActorAbsolutePacket const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?getId\@MoveActorAbsolutePacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
-    virtual enum class MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?getName\@MoveActorAbsolutePacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string getName() const;
+    virtual std::string getName() const; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?write\@MoveActorAbsolutePacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream&) const; // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?_read\@MoveActorAbsolutePacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEACTORABSOLUTEPACKET
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~MoveActorAbsolutePacket();
+    MCVAPI ~MoveActorAbsolutePacket(); // NOLINT
 #endif
     /**
      * @symbol ??0MoveActorAbsolutePacket\@\@QEAA\@AEBVMoveActorAbsoluteData\@\@\@Z
      */
-    MCAPI MoveActorAbsolutePacket(class MoveActorAbsoluteData const&);
+    MCAPI MoveActorAbsolutePacket(class MoveActorAbsoluteData const&); // NOLINT
     /**
      * @symbol ??0MoveActorAbsolutePacket\@\@QEAA\@XZ
      */
-    MCAPI MoveActorAbsolutePacket();
+    MCAPI MoveActorAbsolutePacket(); // NOLINT
 };

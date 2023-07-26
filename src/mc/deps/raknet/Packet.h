@@ -6,14 +6,11 @@ namespace RakNet {
 
 struct Packet {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKNET_PACKET
 public:
+    // prevent constructor by default
     Packet& operator=(Packet const&) = delete;
     Packet(Packet const&)            = delete;
     Packet()                         = delete;
-#endif
-
-public:
 };
 
 }; // namespace RakNet

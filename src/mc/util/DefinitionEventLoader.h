@@ -9,12 +9,11 @@ namespace Json { class Value; }
 
 class DefinitionEventLoader {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFINITIONEVENTLOADER
 public:
+    // prevent constructor by default
     DefinitionEventLoader& operator=(DefinitionEventLoader const&) = delete;
     DefinitionEventLoader(DefinitionEventLoader const&)            = delete;
     DefinitionEventLoader()                                        = delete;
-#endif
 
 public:
     /**
@@ -22,7 +21,7 @@ public:
      * ?loadEvent\@DefinitionEventLoader\@\@SA?AVDefinitionEvent\@\@VValue\@Json\@\@AEBVSemVersion\@\@W4TypeExecutingEvent\@\@PEBVEventResponseFactory\@\@\@Z
      */
     MCAPI static class DefinitionEvent
-    loadEvent(class Json::Value, class SemVersion const&, enum class TypeExecutingEvent, class EventResponseFactory const*);
+    loadEvent(class Json::Value, class SemVersion const&, enum class TypeExecutingEvent, class EventResponseFactory const*); // NOLINT
 
     // private:
     /**
@@ -30,7 +29,7 @@ public:
      * ?_loadCollection\@DefinitionEventLoader\@\@CAXAEAVDefinitionEvent\@\@AEBVValue\@Json\@\@AEBVSemVersion\@\@W4TypeExecutingEvent\@\@PEBVEventResponseFactory\@\@\@Z
      */
     MCAPI static void
-    _loadCollection(class DefinitionEvent&, class Json::Value const&, class SemVersion const&, enum class TypeExecutingEvent, class EventResponseFactory const*);
+    _loadCollection(class DefinitionEvent&, class Json::Value const&, class SemVersion const&, enum class TypeExecutingEvent, class EventResponseFactory const*); // NOLINT
 
 private:
 };

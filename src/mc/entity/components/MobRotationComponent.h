@@ -4,12 +4,9 @@
 
 struct MobRotationComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBROTATIONCOMPONENT
 public:
+    // prevent constructor by default
     MobRotationComponent& operator=(MobRotationComponent const&) = delete;
     MobRotationComponent(MobRotationComponent const&)            = delete;
     MobRotationComponent()                                       = delete;
-#endif
-
-public:
 };

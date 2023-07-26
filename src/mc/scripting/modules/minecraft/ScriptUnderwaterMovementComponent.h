@@ -11,35 +11,34 @@ namespace ScriptModuleMinecraft {
 
 class ScriptUnderwaterMovementComponent : public ::ScriptModuleMinecraft::AttributeScriptActorComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTUNDERWATERMOVEMENTCOMPONENT
 public:
+    // prevent constructor by default
     ScriptUnderwaterMovementComponent& operator=(ScriptUnderwaterMovementComponent const&) = delete;
     ScriptUnderwaterMovementComponent(ScriptUnderwaterMovementComponent const&)            = delete;
     ScriptUnderwaterMovementComponent()                                                    = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTUNDERWATERMOVEMENTCOMPONENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptUnderwaterMovementComponent();
+    MCVAPI ~ScriptUnderwaterMovementComponent(); // NOLINT
 #endif
-    /**
-     * @symbol ?ComponentId\@ScriptUnderwaterMovementComponent\@ScriptModuleMinecraft\@\@2PEBDEB
-     */
-    MCAPI static char const* ComponentId;
     /**
      * @symbol
      * ?bind\@ScriptUnderwaterMovementComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptUnderwaterMovementComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptUnderwaterMovementComponent>
-    bind();
+    bind(); // NOLINT
+    /**
+     * @symbol ?ComponentId\@ScriptUnderwaterMovementComponent\@ScriptModuleMinecraft\@\@2PEBDEB
+     */
+    MCAPI static char const* ComponentId; // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

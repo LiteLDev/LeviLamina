@@ -4,16 +4,15 @@
 
 struct PlayerInitialSpawnEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERINITIALSPAWNEVENT
 public:
+    // prevent constructor by default
     PlayerInitialSpawnEvent& operator=(PlayerInitialSpawnEvent const&) = delete;
     PlayerInitialSpawnEvent(PlayerInitialSpawnEvent const&)            = delete;
     PlayerInitialSpawnEvent()                                          = delete;
-#endif
 
 public:
     /**
      * @symbol ??1PlayerInitialSpawnEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerInitialSpawnEvent();
+    MCAPI ~PlayerInitialSpawnEvent(); // NOLINT
 };

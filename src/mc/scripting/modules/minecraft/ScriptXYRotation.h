@@ -6,28 +6,33 @@
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/InterfaceBindingBuilder.h"
 
+// auto generated forward declare list
+// clang-format off
+class Vec2;
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 struct ScriptXYRotation {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTXYROTATION
 public:
+    // prevent constructor by default
     ScriptXYRotation& operator=(ScriptXYRotation const&) = delete;
     ScriptXYRotation(ScriptXYRotation const&)            = delete;
     ScriptXYRotation()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?bind\@ScriptXYRotation\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@VVec2\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::InterfaceBindingBuilder<class Vec2> bind();
+    MCAPI static class Scripting::InterfaceBindingBuilder<class Vec2> bind(); // NOLINT
     /**
      * @symbol
      * ?bindV010\@ScriptXYRotation\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptXYRotation\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptXYRotation> bindV010();
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptXYRotation>
+    bindV010(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -4,12 +4,9 @@
 
 class ITreeRootWrapper {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITREEROOTWRAPPER
 public:
+    // prevent constructor by default
     ITreeRootWrapper& operator=(ITreeRootWrapper const&) = delete;
     ITreeRootWrapper(ITreeRootWrapper const&)            = delete;
     ITreeRootWrapper()                                   = delete;
-#endif
-
-public:
 };

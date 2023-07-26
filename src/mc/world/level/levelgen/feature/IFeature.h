@@ -4,12 +4,11 @@
 
 class IFeature {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IFEATURE
 public:
+    // prevent constructor by default
     IFeature& operator=(IFeature const&) = delete;
     IFeature(IFeature const&)            = delete;
     IFeature()                           = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFEATURE
@@ -17,10 +16,10 @@ public:
      * @symbol
      * ?isValidPlacement\@IFeature\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCVAPI bool isValidPlacement(std::string const&);
+    MCVAPI bool isValidPlacement(std::string const&); // NOLINT
 #endif
     /**
      * @symbol ?setBlockSafe\@IFeature\@\@QEBA_NAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEBVBlock\@\@H\@Z
      */
-    MCAPI bool setBlockSafe(class IBlockWorldGenAPI&, class BlockPos const&, class Block const&, int) const;
+    MCAPI bool setBlockSafe(class IBlockWorldGenAPI&, class BlockPos const&, class Block const&, int) const; // NOLINT
 };

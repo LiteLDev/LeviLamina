@@ -2,22 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Random;
+// clang-format on
+
 namespace ValueProviders {
 
 class UniformInt {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VALUEPROVIDERS_UNIFORMINT
 public:
+    // prevent constructor by default
     UniformInt& operator=(UniformInt const&) = delete;
     UniformInt(UniformInt const&)            = delete;
     UniformInt()                             = delete;
-#endif
 
 public:
     /**
      * @symbol ?generateNext\@UniformInt\@ValueProviders\@\@QEBAHAEAVRandom\@\@\@Z
      */
-    MCAPI int generateNext(class Random&) const;
+    MCAPI int generateNext(class Random&) const; // NOLINT
 };
 
 }; // namespace ValueProviders

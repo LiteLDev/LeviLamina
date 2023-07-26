@@ -4,16 +4,15 @@
 
 struct FogCommandSettings {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOGCOMMANDSETTINGS
 public:
+    // prevent constructor by default
     FogCommandSettings& operator=(FogCommandSettings const&) = delete;
     FogCommandSettings(FogCommandSettings const&)            = delete;
     FogCommandSettings()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ??1FogCommandSettings\@\@QEAA\@XZ
      */
-    MCAPI ~FogCommandSettings();
+    MCAPI ~FogCommandSettings(); // NOLINT
 };

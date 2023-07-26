@@ -22,61 +22,61 @@ namespace CodeBuilder {
 /**
  * @symbol ?deserialize\@CodeBuilder\@\@YA?AUMCRESULT\@\@AEBVValue\@Json\@\@AEAURequestHeader\@1\@\@Z
  */
-MCAPI struct MCRESULT deserialize(class Json::Value const&, struct CodeBuilder::RequestHeader&);
+MCAPI struct MCRESULT deserialize(class Json::Value const&, struct CodeBuilder::RequestHeader&); // NOLINT
 /**
  * @symbol
  * ?fromString\@CodeBuilder\@\@YA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAW4RequestPurpose\@1\@\@Z
  */
-MCAPI bool fromString(std::string const&, enum class CodeBuilder::RequestPurpose&);
+MCAPI bool fromString(std::string const&, enum class CodeBuilder::RequestPurpose&); // NOLINT
 /**
  * @symbol
  * ?fromString\@CodeBuilder\@\@YA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAW4EncryptionCipherMode\@1\@\@Z
  */
-MCAPI bool fromString(std::string const&, enum class CodeBuilder::EncryptionCipherMode&);
+MCAPI bool fromString(std::string const&, enum class CodeBuilder::EncryptionCipherMode&); // NOLINT
 /**
  * @symbol
  * ?serialize\@CodeBuilder\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUChatMessage\@1\@\@Z
  */
-MCAPI std::string serialize(struct CodeBuilder::ChatMessage const&);
+MCAPI std::string serialize(struct CodeBuilder::ChatMessage const&); // NOLINT
 /**
  * @symbol
  * ?serialize\@CodeBuilder\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUCommandMessage\@1\@\@Z
  */
-MCAPI std::string serialize(struct CodeBuilder::CommandMessage const&);
+MCAPI std::string serialize(struct CodeBuilder::CommandMessage const&); // NOLINT
 /**
  * @symbol
  * ?serialize\@CodeBuilder\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUEncryptionResult\@1\@\@Z
  */
-MCAPI std::string serialize(struct CodeBuilder::EncryptionResult const&);
+MCAPI std::string serialize(struct CodeBuilder::EncryptionResult const&); // NOLINT
 /**
  * @symbol
  * ?serialize\@CodeBuilder\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUChatMessage\@1\@AEBV23\@\@Z
  */
-MCAPI std::string serialize(struct CodeBuilder::ChatMessage const&, std::string const&);
+MCAPI std::string serialize(struct CodeBuilder::ChatMessage const&, std::string const&); // NOLINT
 /**
  * @symbol
  * ?serialize\@CodeBuilder\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUErrorMessage\@1\@\@Z
  */
-MCAPI std::string serialize(struct CodeBuilder::ErrorMessage const&);
+MCAPI std::string serialize(struct CodeBuilder::ErrorMessage const&); // NOLINT
 /**
  * @symbol
  * ?serialize\@CodeBuilder\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUDataMessage\@1\@\@Z
  */
-MCAPI std::string serialize(struct CodeBuilder::DataMessage const&);
+MCAPI std::string serialize(struct CodeBuilder::DataMessage const&); // NOLINT
 /**
  * @symbol
  * ?serialize\@CodeBuilder\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUEventMessage\@1\@\@Z
  */
-MCAPI std::string serialize(struct CodeBuilder::EventMessage const&);
+MCAPI std::string serialize(struct CodeBuilder::EventMessage const&); // NOLINT
 /**
  * @symbol
  * ?serialize\@CodeBuilder\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUAgentMessage\@1\@\@Z
  */
-MCAPI std::string serialize(struct CodeBuilder::AgentMessage const&);
+MCAPI std::string serialize(struct CodeBuilder::AgentMessage const&); // NOLINT
 /**
  * @symbol
  * ?toString\@CodeBuilder\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ResponsePurpose\@1\@\@Z
  */
-MCAPI std::string toString(enum class CodeBuilder::ResponsePurpose);
+MCAPI std::string toString(enum class CodeBuilder::ResponsePurpose); // NOLINT
 
 }; // namespace CodeBuilder

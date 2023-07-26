@@ -9,40 +9,39 @@ namespace Json { class Value; }
 
 class HurtOwnerSubcomponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HURTOWNERSUBCOMPONENT
 public:
+    // prevent constructor by default
     HurtOwnerSubcomponent& operator=(HurtOwnerSubcomponent const&) = delete;
     HurtOwnerSubcomponent(HurtOwnerSubcomponent const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?readfromJSON\@HurtOwnerSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
-    virtual void readfromJSON(class Json::Value&, class SemVersion const&);
+    virtual void readfromJSON(class Json::Value&, class SemVersion const&); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?writetoJSON\@HurtOwnerSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
-    virtual void writetoJSON(class Json::Value&) const;
+    virtual void writetoJSON(class Json::Value&) const; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?doOnHitEffect\@HurtOwnerSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
      */
-    virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
+    virtual void doOnHitEffect(class Actor&, class ProjectileComponent&); // NOLINT
     /**
      * @vftbl 4
      * @symbol ?getName\@HurtOwnerSubcomponent\@\@UEAAPEBDXZ
      */
-    virtual char const* getName();
+    virtual char const* getName(); // NOLINT
     /**
      * @symbol ??0HurtOwnerSubcomponent\@\@QEAA\@XZ
      */
-    MCAPI HurtOwnerSubcomponent();
+    MCAPI HurtOwnerSubcomponent(); // NOLINT
 };

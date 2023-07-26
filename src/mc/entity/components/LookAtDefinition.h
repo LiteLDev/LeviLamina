@@ -12,26 +12,25 @@ namespace JsonUtil { class EmptyClass; }
 
 class LookAtDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKATDEFINITION
 public:
+    // prevent constructor by default
     LookAtDefinition& operator=(LookAtDefinition const&) = delete;
     LookAtDefinition(LookAtDefinition const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0LookAtDefinition\@\@QEAA\@XZ
      */
-    MCAPI LookAtDefinition();
+    MCAPI LookAtDefinition(); // NOLINT
     /**
      * @symbol ?initialize\@LookAtDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVLookAtComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class LookAtComponent&) const;
+    MCAPI void initialize(class EntityContext&, class LookAtComponent&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@LookAtDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VLookAtDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
     buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class LookAtDefinition>>&);
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class LookAtDefinition>>&); // NOLINT
 };

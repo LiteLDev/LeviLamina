@@ -6,14 +6,11 @@ namespace RakNet {
 
 struct RemoteSystemIndex {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKNET_REMOTESYSTEMINDEX
 public:
+    // prevent constructor by default
     RemoteSystemIndex& operator=(RemoteSystemIndex const&) = delete;
     RemoteSystemIndex(RemoteSystemIndex const&)            = delete;
     RemoteSystemIndex()                                    = delete;
-#endif
-
-public:
 };
 
 }; // namespace RakNet

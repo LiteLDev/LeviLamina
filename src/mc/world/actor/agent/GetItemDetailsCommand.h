@@ -9,39 +9,38 @@ namespace AgentCommands {
 
 class GetItemDetailsCommand : public ::Command {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMMANDS_GETITEMDETAILSCOMMAND
 public:
+    // prevent constructor by default
     GetItemDetailsCommand& operator=(GetItemDetailsCommand const&) = delete;
     GetItemDetailsCommand(GetItemDetailsCommand const&)            = delete;
     GetItemDetailsCommand()                                        = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?execute\@GetItemDetailsCommand\@AgentCommands\@\@UEAAXXZ
      */
-    virtual void execute();
+    virtual void execute(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?isDone\@GetItemDetailsCommand\@AgentCommands\@\@UEAA_NXZ
      */
-    virtual bool isDone();
+    virtual bool isDone(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?tick\@Command\@AgentCommands\@\@UEAAXXZ
      */
-    virtual void tick();
+    virtual void tick(); // NOLINT
     /**
      * @vftbl 4
      * @symbol ?fireCommandDoneEvent\@GetItemDetailsCommand\@AgentCommands\@\@UEAAXXZ
      */
-    virtual void fireCommandDoneEvent();
+    virtual void fireCommandDoneEvent(); // NOLINT
 };
 
 }; // namespace AgentCommands

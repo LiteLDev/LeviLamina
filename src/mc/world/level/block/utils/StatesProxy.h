@@ -12,11 +12,10 @@ namespace BlockDescriptorSerializer {
 
 struct StatesProxy {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKDESCRIPTORSERIALIZER_STATESPROXY
 public:
+    // prevent constructor by default
     StatesProxy(StatesProxy const&) = delete;
     StatesProxy()                   = delete;
-#endif
 
 public:
     /**
@@ -29,24 +28,25 @@ public:
                        struct std::less<struct BlockDescriptorSerializer::StateNameProxy>,
                        class std::allocator<struct std::pair<
                            struct BlockDescriptorSerializer::StateNameProxy const,
-                           struct BlockDescriptorSerializer::CompoundProxy>>> const&);
+                           struct BlockDescriptorSerializer::CompoundProxy>>> const&); // NOLINT
     /**
      * @symbol ??4StatesProxy\@BlockDescriptorSerializer\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
-    MCAPI struct BlockDescriptorSerializer::StatesProxy& operator=(struct BlockDescriptorSerializer::StatesProxy&&);
+    MCAPI struct BlockDescriptorSerializer::StatesProxy&
+    operator=(struct BlockDescriptorSerializer::StatesProxy&&); // NOLINT
     /**
      * @symbol ??4StatesProxy\@BlockDescriptorSerializer\@\@QEAAAEAU01\@AEBU01\@\@Z
      */
     MCAPI struct BlockDescriptorSerializer::StatesProxy&
-    operator=(struct BlockDescriptorSerializer::StatesProxy const&);
+    operator=(struct BlockDescriptorSerializer::StatesProxy const&); // NOLINT
     /**
      * @symbol ??1StatesProxy\@BlockDescriptorSerializer\@\@QEAA\@XZ
      */
-    MCAPI ~StatesProxy();
+    MCAPI ~StatesProxy(); // NOLINT
     /**
      * @symbol ?bindType\@StatesProxy\@BlockDescriptorSerializer\@\@SAXXZ
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(); // NOLINT
     /**
      * @symbol
      * ?toMap\@StatesProxy\@BlockDescriptorSerializer\@\@SA?AV?$map\@UStateNameProxy\@BlockDescriptorSerializer\@\@UCompoundProxy\@2\@U?$less\@UStateNameProxy\@BlockDescriptorSerializer\@\@\@std\@\@V?$allocator\@U?$pair\@$$CBUStateNameProxy\@BlockDescriptorSerializer\@\@UCompoundProxy\@2\@\@std\@\@\@5\@\@std\@\@AEBU12\@\@Z
@@ -58,7 +58,7 @@ public:
         class std::allocator<struct std::pair<
             struct BlockDescriptorSerializer::StateNameProxy const,
             struct BlockDescriptorSerializer::CompoundProxy>>>
-    toMap(struct BlockDescriptorSerializer::StatesProxy const&);
+    toMap(struct BlockDescriptorSerializer::StatesProxy const&); // NOLINT
 };
 
 }; // namespace BlockDescriptorSerializer

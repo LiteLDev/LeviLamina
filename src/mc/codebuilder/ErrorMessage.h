@@ -2,32 +2,36 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct MCRESULT;
+// clang-format on
+
 namespace CodeBuilder {
 
 struct ErrorMessage {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CODEBUILDER_ERRORMESSAGE
 public:
+    // prevent constructor by default
     ErrorMessage& operator=(ErrorMessage const&) = delete;
     ErrorMessage(ErrorMessage const&)            = delete;
     ErrorMessage()                               = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ??0ErrorMessage\@CodeBuilder\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UMCRESULT\@\@0\@Z
      */
-    MCAPI ErrorMessage(std::string const&, struct MCRESULT, std::string const&);
+    MCAPI ErrorMessage(std::string const&, struct MCRESULT, std::string const&); // NOLINT
     /**
      * @symbol
      * ??0ErrorMessage\@CodeBuilder\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UMCRESULT\@\@\@Z
      */
-    MCAPI ErrorMessage(std::string const&, struct MCRESULT);
+    MCAPI ErrorMessage(std::string const&, struct MCRESULT); // NOLINT
     /**
      * @symbol ??1ErrorMessage\@CodeBuilder\@\@QEAA\@XZ
      */
-    MCAPI ~ErrorMessage();
+    MCAPI ~ErrorMessage(); // NOLINT
 };
 
 }; // namespace CodeBuilder

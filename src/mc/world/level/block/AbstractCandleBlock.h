@@ -13,303 +13,303 @@ namespace mce { class Color; }
 
 class AbstractCandleBlock : public ::BlockLegacy {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ABSTRACTCANDLEBLOCK
 public:
+    // prevent constructor by default
     AbstractCandleBlock& operator=(AbstractCandleBlock const&) = delete;
     AbstractCandleBlock(AbstractCandleBlock const&)            = delete;
     AbstractCandleBlock()                                      = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 22
      * @symbol __unk_vfn_22
      */
-    virtual void __unk_vfn_22();
+    virtual void __unk_vfn_22(); // NOLINT
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
      */
-    virtual void __unk_vfn_31();
+    virtual void __unk_vfn_31(); // NOLINT
     /**
      * @vftbl 32
      * @symbol __unk_vfn_32
      */
-    virtual void __unk_vfn_32();
+    virtual void __unk_vfn_32(); // NOLINT
     /**
      * @vftbl 34
      * @symbol __unk_vfn_34
      */
-    virtual void __unk_vfn_34();
+    virtual void __unk_vfn_34(); // NOLINT
     /**
      * @vftbl 35
      * @symbol __unk_vfn_35
      */
-    virtual void __unk_vfn_35();
+    virtual void __unk_vfn_35(); // NOLINT
     /**
      * @vftbl 36
      * @symbol __unk_vfn_36
      */
-    virtual void __unk_vfn_36();
+    virtual void __unk_vfn_36(); // NOLINT
     /**
      * @vftbl 37
      * @symbol ?isWaterBlocking\@AbstractCandleBlock\@\@UEBA_NXZ
      */
-    virtual bool isWaterBlocking() const;
+    virtual bool isWaterBlocking() const; // NOLINT
     /**
      * @vftbl 38
      * @symbol __unk_vfn_38
      */
-    virtual void __unk_vfn_38();
+    virtual void __unk_vfn_38(); // NOLINT
     /**
      * @vftbl 39
      * @symbol __unk_vfn_39
      */
-    virtual void __unk_vfn_39();
+    virtual void __unk_vfn_39(); // NOLINT
     /**
      * @vftbl 40
      * @symbol __unk_vfn_40
      */
-    virtual void __unk_vfn_40();
+    virtual void __unk_vfn_40(); // NOLINT
     /**
      * @vftbl 41
      * @symbol __unk_vfn_41
      */
-    virtual void __unk_vfn_41();
+    virtual void __unk_vfn_41(); // NOLINT
     /**
      * @vftbl 42
      * @symbol __unk_vfn_42
      */
-    virtual void __unk_vfn_42();
+    virtual void __unk_vfn_42(); // NOLINT
     /**
      * @vftbl 43
      * @symbol __unk_vfn_43
      */
-    virtual void __unk_vfn_43();
+    virtual void __unk_vfn_43(); // NOLINT
     /**
      * @vftbl 44
      * @symbol __unk_vfn_44
      */
-    virtual void __unk_vfn_44();
+    virtual void __unk_vfn_44(); // NOLINT
     /**
      * @vftbl 46
      * @symbol __unk_vfn_46
      */
-    virtual void __unk_vfn_46();
+    virtual void __unk_vfn_46(); // NOLINT
     /**
      * @vftbl 47
      * @symbol __unk_vfn_47
      */
-    virtual void __unk_vfn_47();
+    virtual void __unk_vfn_47(); // NOLINT
     /**
      * @vftbl 48
      * @symbol __unk_vfn_48
      */
-    virtual void __unk_vfn_48();
+    virtual void __unk_vfn_48(); // NOLINT
     /**
      * @vftbl 49
      * @symbol __unk_vfn_49
      */
-    virtual void __unk_vfn_49();
+    virtual void __unk_vfn_49(); // NOLINT
     /**
      * @vftbl 50
      * @symbol __unk_vfn_50
      */
-    virtual void __unk_vfn_50();
+    virtual void __unk_vfn_50(); // NOLINT
     /**
      * @vftbl 51
      * @symbol __unk_vfn_51
      */
-    virtual void __unk_vfn_51();
+    virtual void __unk_vfn_51(); // NOLINT
     /**
      * @vftbl 56
      * @symbol __unk_vfn_56
      */
-    virtual void __unk_vfn_56();
+    virtual void __unk_vfn_56(); // NOLINT
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
      */
-    virtual void __unk_vfn_62();
+    virtual void __unk_vfn_62(); // NOLINT
     /**
      * @vftbl 63
      * @symbol __unk_vfn_63
      */
-    virtual void __unk_vfn_63();
+    virtual void __unk_vfn_63(); // NOLINT
     /**
      * @vftbl 64
      * @symbol ?canContainLiquid\@AbstractCandleBlock\@\@UEBA_NXZ
      */
-    virtual bool canContainLiquid() const;
+    virtual bool canContainLiquid() const; // NOLINT
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
      */
-    virtual void __unk_vfn_77();
+    virtual void __unk_vfn_77(); // NOLINT
     /**
      * @vftbl 84
      * @symbol __unk_vfn_84
      */
-    virtual void __unk_vfn_84();
+    virtual void __unk_vfn_84(); // NOLINT
     /**
      * @vftbl 101
      * @symbol ?neighborChanged\@AbstractCandleBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
-    virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const; // NOLINT
     /**
      * @vftbl 107
      * @symbol __unk_vfn_107
      */
-    virtual void __unk_vfn_107();
+    virtual void __unk_vfn_107(); // NOLINT
     /**
      * @vftbl 123
      * @symbol __unk_vfn_123
      */
-    virtual void __unk_vfn_123();
+    virtual void __unk_vfn_123(); // NOLINT
     /**
      * @vftbl 124
      * @symbol __unk_vfn_124
      */
-    virtual void __unk_vfn_124();
+    virtual void __unk_vfn_124(); // NOLINT
     /**
      * @vftbl 125
      * @symbol __unk_vfn_125
      */
-    virtual void __unk_vfn_125();
+    virtual void __unk_vfn_125(); // NOLINT
     /**
      * @vftbl 128
      * @symbol __unk_vfn_128
      */
-    virtual void __unk_vfn_128();
+    virtual void __unk_vfn_128(); // NOLINT
     /**
      * @vftbl 131
      * @symbol __unk_vfn_131
      */
-    virtual void __unk_vfn_131();
+    virtual void __unk_vfn_131(); // NOLINT
     /**
      * @vftbl 148
      * @symbol ?animateTick\@AbstractCandleBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual void animateTick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void animateTick(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
     /**
      * @vftbl 150
      * @symbol ?getLightEmission\@AbstractCandleBlock\@\@UEBA?AUBrightness\@\@AEBVBlock\@\@\@Z
      */
-    virtual struct Brightness getLightEmission(class Block const&) const;
+    virtual struct Brightness getLightEmission(class Block const&) const; // NOLINT
     /**
      * @vftbl 153
      * @symbol __unk_vfn_153
      */
-    virtual void __unk_vfn_153();
+    virtual void __unk_vfn_153(); // NOLINT
     /**
      * @vftbl 162
      * @symbol __unk_vfn_162
      */
-    virtual void __unk_vfn_162();
+    virtual void __unk_vfn_162(); // NOLINT
     /**
      * @vftbl 163
      * @symbol __unk_vfn_163
      */
-    virtual void __unk_vfn_163();
+    virtual void __unk_vfn_163(); // NOLINT
     /**
      * @vftbl 164
      * @symbol __unk_vfn_164
      */
-    virtual void __unk_vfn_164();
+    virtual void __unk_vfn_164(); // NOLINT
     /**
      * @vftbl 167
      * @symbol __unk_vfn_167
      */
-    virtual void __unk_vfn_167();
+    virtual void __unk_vfn_167(); // NOLINT
     /**
      * @vftbl 168
      * @symbol ?tick\@AbstractCandleBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
     /**
      * @vftbl 171
      * @symbol __unk_vfn_171
      */
-    virtual void __unk_vfn_171();
+    virtual void __unk_vfn_171(); // NOLINT
     /**
      * @vftbl 174
      * @symbol __unk_vfn_174
      */
-    virtual void __unk_vfn_174();
+    virtual void __unk_vfn_174(); // NOLINT
     /**
      * @vftbl 183
      * @symbol __unk_vfn_183
      */
-    virtual void __unk_vfn_183();
+    virtual void __unk_vfn_183(); // NOLINT
     /**
      * @vftbl 188
      * @symbol ?entityInside\@AbstractCandleBlock\@\@UEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVActor\@\@\@Z
      */
-    virtual void entityInside(class BlockSource&, class BlockPos const&, class Actor&) const;
+    virtual void entityInside(class BlockSource&, class BlockPos const&, class Actor&) const; // NOLINT
     /**
      * @vftbl 192
      * @symbol ?_getNumCandles\@AbstractCandleBlock\@\@MEBAHAEBVBlock\@\@\@Z
      */
-    virtual int _getNumCandles(class Block const&) const;
+    virtual int _getNumCandles(class Block const&) const; // NOLINT
     /**
      * @vftbl 193
      * @symbol
      * ?_iterateCandles\@AbstractCandleBlock\@\@MEBAXAEBVBlock\@\@AEBVBlockPos\@\@V?$function\@$$A6AXAEBVVec3\@\@H\@Z\@std\@\@\@Z
      */
     virtual void
-    _iterateCandles(class Block const&, class BlockPos const&, class std::function<void(class Vec3 const&, int)>) const;
+    _iterateCandles(class Block const&, class BlockPos const&, class std::function<void(class Vec3 const&, int)>)
+        const; // NOLINT
     /**
      * @vftbl 194
      * @symbol ?_tryLightOnFire\@AbstractCandleBlock\@\@MEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@\@Z
      */
-    virtual void _tryLightOnFire(class BlockSource&, class BlockPos const&, class Actor*) const;
+    virtual void _tryLightOnFire(class BlockSource&, class BlockPos const&, class Actor*) const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ABSTRACTCANDLEBLOCK
     /**
      * @symbol ?canBeSilkTouched\@AbstractCandleBlock\@\@UEBA_NXZ
      */
-    MCVAPI bool canBeSilkTouched() const;
+    MCVAPI bool canBeSilkTouched() const; // NOLINT
     /**
      * @symbol ?hasVariableLighting\@AbstractCandleBlock\@\@UEBA_NXZ
      */
-    MCVAPI bool hasVariableLighting() const;
+    MCVAPI bool hasVariableLighting() const; // NOLINT
     /**
      * @symbol ?isInteractiveBlock\@AbstractCandleBlock\@\@UEBA_NXZ
      */
-    MCVAPI bool isInteractiveBlock() const;
+    MCVAPI bool isInteractiveBlock() const; // NOLINT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~AbstractCandleBlock();
+    MCVAPI ~AbstractCandleBlock(); // NOLINT
 #endif
     /**
      * @symbol
      * ??0AbstractCandleBlock\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HAEBVMaterial\@\@\@Z
      */
-    MCAPI AbstractCandleBlock(std::string const&, int, class Material const&);
+    MCAPI AbstractCandleBlock(std::string const&, int, class Material const&); // NOLINT
 
     // protected:
     /**
      * @symbol ?_checkForWaterlogging\@AbstractCandleBlock\@\@IEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI void _checkForWaterlogging(class BlockSource&, class BlockPos const&) const;
+    MCAPI void _checkForWaterlogging(class BlockSource&, class BlockPos const&) const; // NOLINT
     /**
      * @symbol
      * ?_extinguish\@AbstractCandleBlock\@\@IEBAXPEAVActor\@\@AEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI void _extinguish(class Actor*, class Block const&, class BlockSource&, class BlockPos const&) const;
+    MCAPI void _extinguish(class Actor*, class Block const&, class BlockSource&, class BlockPos const&) const; // NOLINT
     /**
      * @symbol ?_canBeLit\@AbstractCandleBlock\@\@KA_NAEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI static bool _canBeLit(class Block const&, class BlockSource&, class BlockPos const&);
+    MCAPI static bool _canBeLit(class Block const&, class BlockSource&, class BlockPos const&); // NOLINT
     /**
      * @symbol ?_isLit\@AbstractCandleBlock\@\@KA_NAEBVBlock\@\@\@Z
      */
-    MCAPI static bool _isLit(class Block const&);
+    MCAPI static bool _isLit(class Block const&); // NOLINT
 
 protected:
 };

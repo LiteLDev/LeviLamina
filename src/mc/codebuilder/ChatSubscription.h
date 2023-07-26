@@ -6,22 +6,21 @@ namespace CodeBuilder {
 
 struct ChatSubscription {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CODEBUILDER_CHATSUBSCRIPTION
 public:
+    // prevent constructor by default
     ChatSubscription& operator=(ChatSubscription const&) = delete;
     ChatSubscription(ChatSubscription const&)            = delete;
     ChatSubscription()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ChatSubscription\@CodeBuilder\@\@QEAA\@$$QEAU01\@\@Z
      */
-    MCAPI ChatSubscription(struct CodeBuilder::ChatSubscription&&);
+    MCAPI ChatSubscription(struct CodeBuilder::ChatSubscription&&); // NOLINT
     /**
      * @symbol ??1ChatSubscription\@CodeBuilder\@\@QEAA\@XZ
      */
-    MCAPI ~ChatSubscription();
+    MCAPI ~ChatSubscription(); // NOLINT
 };
 
 }; // namespace CodeBuilder

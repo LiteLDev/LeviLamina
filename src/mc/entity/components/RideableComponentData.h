@@ -4,16 +4,15 @@
 
 struct RideableComponentData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RIDEABLECOMPONENTDATA
 public:
+    // prevent constructor by default
     RideableComponentData& operator=(RideableComponentData const&) = delete;
     RideableComponentData(RideableComponentData const&)            = delete;
     RideableComponentData()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ??1RideableComponentData\@\@QEAA\@XZ
      */
-    MCAPI ~RideableComponentData();
+    MCAPI ~RideableComponentData(); // NOLINT
 };

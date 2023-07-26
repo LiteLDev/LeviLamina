@@ -7,14 +7,11 @@ namespace ScriptModuleMinecraft {
 template <typename T0, int T1>
 class IScriptActorDataDrivenTriggerEventSignal {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_ISCRIPTACTORDATADRIVENTRIGGEREVENTSIGNAL
 public:
+    // prevent constructor by default
     IScriptActorDataDrivenTriggerEventSignal& operator=(IScriptActorDataDrivenTriggerEventSignal const&) = delete;
     IScriptActorDataDrivenTriggerEventSignal(IScriptActorDataDrivenTriggerEventSignal const&)            = delete;
     IScriptActorDataDrivenTriggerEventSignal()                                                           = delete;
-#endif
-
-public:
 };
 
 }; // namespace ScriptModuleMinecraft

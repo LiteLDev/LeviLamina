@@ -4,12 +4,9 @@
 
 struct WebBlockTag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEBBLOCKTAG
 public:
+    // prevent constructor by default
     WebBlockTag& operator=(WebBlockTag const&) = delete;
     WebBlockTag(WebBlockTag const&)            = delete;
     WebBlockTag()                              = delete;
-#endif
-
-public:
 };

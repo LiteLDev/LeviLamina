@@ -17,87 +17,85 @@ public:
     // FilterTest inner types define
     struct Definition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERTEST_DEFINITION
     public:
+        // prevent constructor by default
         Definition& operator=(Definition const&) = delete;
         Definition(Definition const&)            = delete;
         Definition()                             = delete;
-#endif
 
     public:
         /**
          * @symbol ??1Definition\@FilterTest\@\@QEAA\@XZ
          */
-        MCAPI ~Definition();
+        MCAPI ~Definition(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERTEST
 public:
+    // prevent constructor by default
     FilterTest& operator=(FilterTest const&) = delete;
     FilterTest(FilterTest const&)            = delete;
     FilterTest()                             = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?setup\@FilterTest\@\@UEAA_NAEBUDefinition\@1\@AEBUFilterInputs\@\@\@Z
      */
-    virtual bool setup(struct FilterTest::Definition const&, struct FilterInputs const&);
+    virtual bool setup(struct FilterTest::Definition const&, struct FilterInputs const&); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?evaluate\@ActorHealthTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
-    virtual bool evaluate(struct FilterContext const&) const = 0;
+    virtual bool evaluate(struct FilterContext const&) const = 0; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?finalizeParsedValue\@FilterTest\@\@UEAAXAEAVIWorldRegistriesProvider\@\@\@Z
      */
-    virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
+    virtual void finalizeParsedValue(class IWorldRegistriesProvider&); // NOLINT
     /**
      * @vftbl 4
      * @symbol ?getName\@ActorHealthTest\@\@UEBA?AV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@XZ
      */
-    virtual class std::basic_string_view<char, struct std::char_traits<char>> getName() const = 0;
+    virtual class std::basic_string_view<char, struct std::char_traits<char>> getName() const = 0; // NOLINT
     /**
      * @vftbl 5
      * @symbol ?_serializeDomain\@FilterTest\@\@MEBA?AVValue\@Json\@\@XZ
      */
-    virtual class Json::Value _serializeDomain() const;
+    virtual class Json::Value _serializeDomain() const; // NOLINT
     /**
      * @vftbl 6
      * @symbol ?_serializeValue\@ActorHasAllSlotsEmptyTest\@\@MEBA?AVValue\@Json\@\@XZ
      */
-    virtual class Json::Value _serializeValue() const = 0;
+    virtual class Json::Value _serializeValue() const = 0; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTEST
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~FilterTest();
+    MCVAPI ~FilterTest(); // NOLINT
 #endif
     /**
      * @symbol ?serialize\@FilterTest\@\@QEBA?AVValue\@Json\@\@XZ
      */
-    MCAPI class Json::Value serialize() const;
+    MCAPI class Json::Value serialize() const; // NOLINT
 
     // protected:
     /**
      * @symbol ?_testValuesWithOperator\@FilterTest\@\@IEBA_NMM\@Z
      */
-    MCAPI bool _testValuesWithOperator(float, float) const;
+    MCAPI bool _testValuesWithOperator(float, float) const; // NOLINT
     /**
      * @symbol ?_testValuesWithOperator\@FilterTest\@\@IEBA_N_N0\@Z
      */
-    MCAPI bool _testValuesWithOperator(bool, bool) const;
+    MCAPI bool _testValuesWithOperator(bool, bool) const; // NOLINT
     /**
      * @symbol ?_testValuesWithOperator\@FilterTest\@\@IEBA_NHH\@Z
      */
-    MCAPI bool _testValuesWithOperator(int, int) const;
+    MCAPI bool _testValuesWithOperator(int, int) const; // NOLINT
 
 protected:
 };

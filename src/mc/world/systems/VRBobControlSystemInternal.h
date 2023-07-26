@@ -8,6 +8,6 @@ namespace VRBobControlSystemInternal {
  * ?tickVRBobControl\@VRBobControlSystemInternal\@\@YAXAEBVStrictEntityContext\@\@AEBUAABBShapeComponent\@\@AEBUAbilitiesComponent\@\@AEBUPlayerInputModeComponent\@\@AEAUStateVectorComponent\@\@AEBVIConstBlockSource\@\@\@Z
  */
 MCAPI void
-tickVRBobControl(class StrictEntityContext const&, struct AABBShapeComponent const&, struct AbilitiesComponent const&, struct PlayerInputModeComponent const&, struct StateVectorComponent&, class IConstBlockSource const&);
+tickVRBobControl(class StrictEntityContext const&, struct AABBShapeComponent const&, struct AbilitiesComponent const&, struct PlayerInputModeComponent const&, struct StateVectorComponent&, class IConstBlockSource const&); // NOLINT
 
 }; // namespace VRBobControlSystemInternal

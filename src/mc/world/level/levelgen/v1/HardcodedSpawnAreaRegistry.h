@@ -4,25 +4,25 @@
 
 class HardcodedSpawnAreaRegistry {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HARDCODEDSPAWNAREAREGISTRY
 public:
+    // prevent constructor by default
     HardcodedSpawnAreaRegistry& operator=(HardcodedSpawnAreaRegistry const&) = delete;
     HardcodedSpawnAreaRegistry(HardcodedSpawnAreaRegistry const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0HardcodedSpawnAreaRegistry\@\@QEAA\@XZ
      */
-    MCAPI HardcodedSpawnAreaRegistry();
+    MCAPI HardcodedSpawnAreaRegistry(); // NOLINT
     /**
      * @symbol
      * ?getMobSpawnsForType\@HardcodedSpawnAreaRegistry\@\@QEBAAEBV?$vector\@VMobSpawnerData\@\@V?$allocator\@VMobSpawnerData\@\@\@std\@\@\@std\@\@W4HardcodedSpawnAreaType\@\@\@Z
      */
-    MCAPI std::vector<class MobSpawnerData> const& getMobSpawnsForType(enum class HardcodedSpawnAreaType) const;
+    MCAPI std::vector<class MobSpawnerData> const& getMobSpawnsForType(enum class HardcodedSpawnAreaType
+    ) const; // NOLINT
     /**
      * @symbol
      * ?initMobSpawnsForType\@HardcodedSpawnAreaRegistry\@\@QEAAXW4HardcodedSpawnAreaType\@\@$$QEAV?$vector\@VMobSpawnerData\@\@V?$allocator\@VMobSpawnerData\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI void initMobSpawnsForType(enum class HardcodedSpawnAreaType, std::vector<class MobSpawnerData>&&);
+    MCAPI void initMobSpawnsForType(enum class HardcodedSpawnAreaType, std::vector<class MobSpawnerData>&&); // NOLINT
 };

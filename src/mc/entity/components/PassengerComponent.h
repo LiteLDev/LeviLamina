@@ -4,12 +4,9 @@
 
 struct PassengerComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PASSENGERCOMPONENT
 public:
+    // prevent constructor by default
     PassengerComponent& operator=(PassengerComponent const&) = delete;
     PassengerComponent(PassengerComponent const&)            = delete;
     PassengerComponent()                                     = delete;
-#endif
-
-public:
 };

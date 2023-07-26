@@ -9,50 +9,53 @@ namespace Json { class Value; }
 
 class ActorDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDEFINITION
 public:
+    // prevent constructor by default
     ActorDefinition& operator=(ActorDefinition const&) = delete;
     ActorDefinition(ActorDefinition const&)            = delete;
     ActorDefinition()                                  = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ??0ActorDefinition\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI ActorDefinition(std::string const&);
+    MCAPI ActorDefinition(std::string const&); // NOLINT
     /**
      * @symbol
      * ?parse\@ActorDefinition\@\@QEAA?AW4ActorDefinitionParseStatus\@\@UDeserializeDataParams\@\@AEAVActorDefinitionDescriptor\@\@AEAVActorFactory\@\@W4LogArea\@\@\@Z
      */
-    MCAPI enum class ActorDefinitionParseStatus
-    parse(struct DeserializeDataParams, class ActorDefinitionDescriptor&, class ActorFactory&, enum class LogArea);
+    MCAPI enum class ActorDefinitionParseStatus parse(
+        struct DeserializeDataParams,
+        class ActorDefinitionDescriptor&,
+        class ActorFactory&,
+        enum class LogArea
+    ); // NOLINT
     /**
      * @symbol ?parseAttributes\@ActorDefinition\@\@QEAAXUDeserializeDataParams\@\@AEAVActorDefinitionDescriptor\@\@\@Z
      */
-    MCAPI void parseAttributes(struct DeserializeDataParams, class ActorDefinitionDescriptor&);
+    MCAPI void parseAttributes(struct DeserializeDataParams, class ActorDefinitionDescriptor&); // NOLINT
     /**
      * @symbol ?parseEntityDescription\@ActorDefinition\@\@QEAAXUDeserializeDataParams\@\@\@Z
      */
-    MCAPI void parseEntityDescription(struct DeserializeDataParams);
+    MCAPI void parseEntityDescription(struct DeserializeDataParams); // NOLINT
     /**
      * @symbol
      * ?parseEvents\@ActorDefinition\@\@QEAAXAEBVValue\@Json\@\@AEBVSemVersion\@\@1PEAVActorEventResponseFactory\@\@\@Z
      */
     MCAPI void
-    parseEvents(class Json::Value const&, class SemVersion const&, class SemVersion const&, class ActorEventResponseFactory*);
+    parseEvents(class Json::Value const&, class SemVersion const&, class SemVersion const&, class ActorEventResponseFactory*); // NOLINT
     /**
      * @symbol ?parsePermutations\@ActorDefinition\@\@QEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@1AEAVActorFactory\@\@\@Z
      */
     MCAPI void
-    parsePermutations(class Json::Value&, class SemVersion const&, class SemVersion const&, class ActorFactory&);
+    parsePermutations(class Json::Value&, class SemVersion const&, class SemVersion const&, class ActorFactory&); // NOLINT
     /**
      * @symbol ?validatePermutationJson\@ActorDefinition\@\@QEAA_NAEAVValue\@Json\@\@\@Z
      */
-    MCAPI bool validatePermutationJson(class Json::Value&);
+    MCAPI bool validatePermutationJson(class Json::Value&); // NOLINT
     /**
      * @symbol ??1ActorDefinition\@\@QEAA\@XZ
      */
-    MCAPI ~ActorDefinition();
+    MCAPI ~ActorDefinition(); // NOLINT
 };

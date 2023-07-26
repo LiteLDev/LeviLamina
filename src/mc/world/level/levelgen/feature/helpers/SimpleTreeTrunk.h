@@ -9,19 +9,18 @@ namespace TreeHelper { struct TreeParams; }
 
 class SimpleTreeTrunk {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMPLETREETRUNK
 public:
+    // prevent constructor by default
     SimpleTreeTrunk& operator=(SimpleTreeTrunk const&) = delete;
     SimpleTreeTrunk(SimpleTreeTrunk const&)            = delete;
     SimpleTreeTrunk()                                  = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
@@ -29,10 +28,10 @@ public:
      */
     virtual class std::optional<class BlockPos>
     placeTrunk(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, int, class RenderParams&, struct TreeHelper::TreeParams const&, class ITreeCanopy const*)
-        const;
+        const; // NOLINT
     /**
      * @vftbl 2
      * @symbol ?getTreeHeight\@SimpleTreeTrunk\@\@UEBAHAEAVRandom\@\@\@Z
      */
-    virtual int getTreeHeight(class Random&) const;
+    virtual int getTreeHeight(class Random&) const; // NOLINT
 };

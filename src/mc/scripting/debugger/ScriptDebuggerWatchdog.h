@@ -4,32 +4,31 @@
 
 class ScriptDebuggerWatchdog {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTDEBUGGERWATCHDOG
 public:
+    // prevent constructor by default
     ScriptDebuggerWatchdog& operator=(ScriptDebuggerWatchdog const&) = delete;
     ScriptDebuggerWatchdog(ScriptDebuggerWatchdog const&)            = delete;
     ScriptDebuggerWatchdog()                                         = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?requireClose\@ScriptDebuggerWatchdog\@\@UEBA_NXZ
      */
-    virtual bool requireClose() const;
+    virtual bool requireClose() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol ?startListenTimeout\@ScriptDebuggerWatchdog\@\@UEAAXXZ
      */
-    virtual void startListenTimeout();
+    virtual void startListenTimeout(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?listenTimeoutExpired\@ScriptDebuggerWatchdog\@\@UEBA_NXZ
      */
-    virtual bool listenTimeoutExpired() const;
+    virtual bool listenTimeoutExpired() const; // NOLINT
 };

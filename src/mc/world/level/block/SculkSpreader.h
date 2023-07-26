@@ -4,60 +4,60 @@
 
 class SculkSpreader {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCULKSPREADER
 public:
+    // prevent constructor by default
     SculkSpreader& operator=(SculkSpreader const&) = delete;
     SculkSpreader(SculkSpreader const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0SculkSpreader\@\@QEAA\@_NHHHH\@Z
      */
-    MCAPI SculkSpreader(bool, int, int, int, int);
+    MCAPI SculkSpreader(bool, int, int, int, int); // NOLINT
     /**
      * @symbol ??0SculkSpreader\@\@QEAA\@XZ
      */
-    MCAPI SculkSpreader();
+    MCAPI SculkSpreader(); // NOLINT
     /**
      * @symbol ?addCursors\@SculkSpreader\@\@QEAAXAEBVBlockPos\@\@H\@Z
      */
-    MCAPI void addCursors(class BlockPos const&, int);
+    MCAPI void addCursors(class BlockPos const&, int); // NOLINT
     /**
      * @symbol ?clearCursors\@SculkSpreader\@\@QEAAXXZ
      */
-    MCAPI void clearCursors();
+    MCAPI void clearCursors(); // NOLINT
     /**
      * @symbol ?getCursorPosition\@SculkSpreader\@\@QEBA?AVBlockPos\@\@H\@Z
      */
-    MCAPI class BlockPos getCursorPosition(int) const;
+    MCAPI class BlockPos getCursorPosition(int) const; // NOLINT
     /**
      * @symbol ?getMaxCharge\@SculkSpreader\@\@QEBAHXZ
      */
-    MCAPI int getMaxCharge() const;
+    MCAPI int getMaxCharge() const; // NOLINT
     /**
      * @symbol ?getNumberOfCursors\@SculkSpreader\@\@QEBAHXZ
      */
-    MCAPI int getNumberOfCursors() const;
+    MCAPI int getNumberOfCursors() const; // NOLINT
     /**
      * @symbol ?getTotalCharge\@SculkSpreader\@\@QEBAHXZ
      */
-    MCAPI int getTotalCharge() const;
+    MCAPI int getTotalCharge() const; // NOLINT
     /**
      * @symbol ?load\@SculkSpreader\@\@QEAAXAEBVCompoundTag\@\@\@Z
      */
-    MCAPI void load(class CompoundTag const&);
+    MCAPI void load(class CompoundTag const&); // NOLINT
     /**
      * @symbol ?save\@SculkSpreader\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void save(class CompoundTag&) const;
+    MCAPI void save(class CompoundTag&) const; // NOLINT
     /**
      * @symbol
      * ?updateCursors\@SculkSpreader\@\@QEAAXAEAVIBlockWorldGenAPI\@\@PEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@_N\@Z
      */
-    MCAPI void updateCursors(class IBlockWorldGenAPI&, class BlockSource*, class BlockPos const&, class Random&, bool);
+    MCAPI void
+    updateCursors(class IBlockWorldGenAPI&, class BlockSource*, class BlockPos const&, class Random&, bool); // NOLINT
     /**
      * @symbol ??1SculkSpreader\@\@QEAA\@XZ
      */
-    MCAPI ~SculkSpreader();
+    MCAPI ~SculkSpreader(); // NOLINT
 };

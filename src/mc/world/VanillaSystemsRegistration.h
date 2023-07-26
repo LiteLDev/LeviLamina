@@ -14,70 +14,71 @@ namespace VanillaSystemsRegistration {
  * ?registerActorAiStepSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEBURegistrationOptions\@1\@\@Z
  */
 MCAPI void
-registerActorAiStepSystems(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&);
+registerActorAiStepSystems(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&); // NOLINT
 /**
  * @symbol
  * ?registerActorMoveSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEBURegistrationOptions\@1\@\@Z
  */
 MCAPI void
-registerActorMoveSystems(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&);
+registerActorMoveSystems(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&); // NOLINT
 /**
  * @symbol
  * ?registerActorMovementTickSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEBURegistrationOptions\@1\@\@Z
  */
 MCAPI void
-registerActorMovementTickSystems(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&);
+registerActorMovementTickSystems(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&); // NOLINT
 /**
  * @symbol
  * ?registerActorNormalTickSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEBURegistrationOptions\@1\@\@Z
  */
 MCAPI void
-registerActorNormalTickSystems(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&);
+registerActorNormalTickSystems(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&); // NOLINT
 /**
  * @symbol
  * ?registerActorPositionPassenger\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEBURegistrationOptions\@1\@\@Z
  */
 MCAPI void
-registerActorPositionPassenger(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&);
+registerActorPositionPassenger(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&); // NOLINT
 /**
  * @symbol
  * ?registerActorPreTravelSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEBURegistrationOptions\@1\@\@Z
  */
 MCAPI void
-registerActorPreTravelSystems(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&);
+registerActorPreTravelSystems(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&); // NOLINT
 /**
  * @symbol
  * ?registerActorTravelSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEBURegistrationOptions\@1\@\@Z
  */
 MCAPI void
-registerActorTravelSystems(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&);
+registerActorTravelSystems(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&); // NOLINT
 /**
  * @symbol ?registerPassengerTick\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@AEBURegistrationOptions\@1\@\@Z
  */
-MCAPI void registerPassengerTick(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&);
+MCAPI void
+registerPassengerTick(class EntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&); // NOLINT
 /**
  * @symbol
  * ?registerRemovePassengerSystems\@VanillaSystemsRegistration\@\@YAXAEAVIEntitySystems\@\@AEBURegistrationOptions\@1\@\@Z
  */
 MCAPI void
-registerRemovePassengerSystems(class IEntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&);
+registerRemovePassengerSystems(class IEntitySystems&, struct VanillaSystemsRegistration::RegistrationOptions const&); // NOLINT
 /**
  * @symbol ?registerSharedVanillaPlayerInteractionSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@\@Z
  */
-MCAPI void registerSharedVanillaPlayerInteractionSystems(class EntitySystems&);
+MCAPI void registerSharedVanillaPlayerInteractionSystems(class EntitySystems&); // NOLINT
 /**
  * @symbol ?registerTickFilterSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@\@Z
  */
-MCAPI void registerTickFilterSystems(class EntitySystems&);
+MCAPI void registerTickFilterSystems(class EntitySystems&); // NOLINT
 /**
  * @symbol ?registerUpdateMobTravelSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@\@Z
  */
-MCAPI void registerUpdateMobTravelSystems(class EntitySystems&);
+MCAPI void registerUpdateMobTravelSystems(class EntitySystems&); // NOLINT
 /**
  * @symbol
  * ?registerVanillaServerTickingSystems\@VanillaSystemsRegistration\@\@YAXAEAVEntitySystems\@\@V?$not_null\@V?$NonOwnerPointer\@$$CBVILevel\@\@\@Bedrock\@\@\@gsl\@\@AEBURegistrationOptions\@1\@\@Z
  */
 MCAPI void
-registerVanillaServerTickingSystems(class EntitySystems&, class gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>, struct VanillaSystemsRegistration::RegistrationOptions const&);
+registerVanillaServerTickingSystems(class EntitySystems&, class gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const>>, struct VanillaSystemsRegistration::RegistrationOptions const&); // NOLINT
 
 }; // namespace VanillaSystemsRegistration

@@ -24,59 +24,60 @@ namespace Core {
 
 class FlatFileSystemImpl {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORE_FLATFILESYSTEMIMPL
 public:
+    // prevent constructor by default
     FlatFileSystemImpl& operator=(FlatFileSystemImpl const&) = delete;
     FlatFileSystemImpl(FlatFileSystemImpl const&)            = delete;
     FlatFileSystemImpl()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ??0FlatFileSystemImpl\@Core\@\@QEAA\@AEAVFileSystemImpl\@1\@V?$shared_ptr\@VFlatFileManifestTracker\@Core\@\@\@std\@\@\@Z
      */
-    MCAPI FlatFileSystemImpl(class Core::FileSystemImpl&, class std::shared_ptr<class Core::FlatFileManifestTracker>);
+    MCAPI
+    FlatFileSystemImpl(class Core::FileSystemImpl&, class std::shared_ptr<class Core::FlatFileManifestTracker>); // NOLINT
     /**
      * @symbol
      * ?copyFlatFile\@FlatFileSystemImpl\@Core\@\@QEAA?AVResult\@2\@AEBVPath\@2\@0AEBV?$vector\@UExcludedPath\@Core\@\@V?$allocator\@UExcludedPath\@Core\@\@\@std\@\@\@std\@\@1\@Z
      */
     MCAPI class Core::Result
-    copyFlatFile(class Core::Path const&, class Core::Path const&, std::vector<struct Core::ExcludedPath> const&, std::vector<struct Core::ExcludedPath> const&);
+    copyFlatFile(class Core::Path const&, class Core::Path const&, std::vector<struct Core::ExcludedPath> const&, std::vector<struct Core::ExcludedPath> const&); // NOLINT
     /**
      * @symbol ?createFlatFile\@FlatFileSystemImpl\@Core\@\@QEAA?AVResult\@2\@AEBVPath\@2\@0\@Z
      */
-    MCAPI class Core::Result createFlatFile(class Core::Path const&, class Core::Path const&);
+    MCAPI class Core::Result createFlatFile(class Core::Path const&, class Core::Path const&); // NOLINT
     /**
      * @symbol ?deleteFileOrDirectory\@FlatFileSystemImpl\@Core\@\@QEAA?AVResult\@2\@AEBVPath\@2\@0_N1\@Z
      */
-    MCAPI class Core::Result deleteFileOrDirectory(class Core::Path const&, class Core::Path const&, bool, bool);
+    MCAPI class Core::Result
+    deleteFileOrDirectory(class Core::Path const&, class Core::Path const&, bool, bool); // NOLINT
     /**
      * @symbol ?directoryExists\@FlatFileSystemImpl\@Core\@\@QEAA_NAEBVPath\@2\@0\@Z
      */
-    MCAPI bool directoryExists(class Core::Path const&, class Core::Path const&);
+    MCAPI bool directoryExists(class Core::Path const&, class Core::Path const&); // NOLINT
     /**
      * @symbol ?fileExists\@FlatFileSystemImpl\@Core\@\@QEAA_NAEBVPath\@2\@0\@Z
      */
-    MCAPI bool fileExists(class Core::Path const&, class Core::Path const&);
+    MCAPI bool fileExists(class Core::Path const&, class Core::Path const&); // NOLINT
     /**
      * @symbol ?fileOrDirectoryExists\@FlatFileSystemImpl\@Core\@\@QEAA_NAEBVPath\@2\@0\@Z
      */
-    MCAPI bool fileOrDirectoryExists(class Core::Path const&, class Core::Path const&);
+    MCAPI bool fileOrDirectoryExists(class Core::Path const&, class Core::Path const&); // NOLINT
     /**
      * @symbol ?getFileSize\@FlatFileSystemImpl\@Core\@\@QEAA?AVResult\@2\@AEBVPath\@2\@0PEA_K\@Z
      */
-    MCAPI class Core::Result getFileSize(class Core::Path const&, class Core::Path const&, unsigned __int64*);
+    MCAPI class Core::Result getFileSize(class Core::Path const&, class Core::Path const&, unsigned __int64*); // NOLINT
     /**
      * @symbol ?isDirectoryPathAFlatFile\@FlatFileSystemImpl\@Core\@\@QEAA_NAEBVPath\@2\@\@Z
      */
-    MCAPI bool isDirectoryPathAFlatFile(class Core::Path const&);
+    MCAPI bool isDirectoryPathAFlatFile(class Core::Path const&); // NOLINT
     /**
      * @symbol
      * ?iterateOverDirectory\@FlatFileSystemImpl\@Core\@\@QEAA?AVResult\@2\@AEBVPath\@2\@0W4DirectoryIterationFlags\@2\@V?$function\@$$A6A?AVResult\@Core\@\@AEBUDirectoryIterationItem\@2\@\@Z\@std\@\@\@Z
      */
     MCAPI class Core::Result
-    iterateOverDirectory(class Core::Path const&, class Core::Path const&, enum class Core::DirectoryIterationFlags, class std::function<class Core::Result(struct Core::DirectoryIterationItem const&)>);
+    iterateOverDirectory(class Core::Path const&, class Core::Path const&, enum class Core::DirectoryIterationFlags, class std::function<class Core::Result(struct Core::DirectoryIterationItem const&)>); // NOLINT
     /**
      * @symbol
      * ?openFlatFile\@FlatFileSystemImpl\@Core\@\@QEAA?AVResult\@2\@AEAV?$unique_ptr\@VFileImpl\@Core\@\@U?$default_delete\@VFileImpl\@Core\@\@\@std\@\@\@std\@\@AEBVPath\@2\@1VFileOpenMode\@2\@W4FileBufferingMode\@2\@\@Z
@@ -87,12 +88,12 @@ public:
         class Core::Path const&,
         class Core::FileOpenMode,
         enum class Core::FileBufferingMode
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?shouldAccessFlatFile\@FlatFileSystemImpl\@Core\@\@QEAA_NAEBVPath\@2\@AEAV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@_N\@Z
      */
-    MCAPI bool shouldAccessFlatFile(class Core::Path const&, class Core::PathBuffer<std::string>&, bool);
+    MCAPI bool shouldAccessFlatFile(class Core::Path const&, class Core::PathBuffer<std::string>&, bool); // NOLINT
 
     // private:
     /**
@@ -100,12 +101,12 @@ public:
      * ?_findFileOrDirectoryEntry\@FlatFileSystemImpl\@Core\@\@AEAA?AVFlatFileSearchResult\@2\@AEBVPath\@2\@0_N\@Z
      */
     MCAPI class Core::FlatFileSearchResult
-    _findFileOrDirectoryEntry(class Core::Path const&, class Core::Path const&, bool);
+    _findFileOrDirectoryEntry(class Core::Path const&, class Core::Path const&, bool); // NOLINT
     /**
      * @symbol ?_getSeekPositionAndSize\@FlatFileSystemImpl\@Core\@\@AEAA?AVResult\@2\@AEBVPath\@2\@0AEA_K1\@Z
      */
     MCAPI class Core::Result
-    _getSeekPositionAndSize(class Core::Path const&, class Core::Path const&, unsigned __int64&, unsigned __int64&);
+    _getSeekPositionAndSize(class Core::Path const&, class Core::Path const&, unsigned __int64&, unsigned __int64&); // NOLINT
 
 private:
 };

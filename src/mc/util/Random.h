@@ -7,83 +7,82 @@
 
 class Random {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOM
 public:
+    // prevent constructor by default
     Random& operator=(Random const&) = delete;
     Random(Random const&)            = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOM
     /**
      * @symbol ?consumeCount\@Random\@\@UEAAXI\@Z
      */
-    MCVAPI void consumeCount(unsigned int);
+    MCVAPI void consumeCount(unsigned int); // NOLINT
     /**
      * @symbol ?fork\@Random\@\@UEAA?AV?$unique_ptr\@VIRandom\@\@U?$default_delete\@VIRandom\@\@\@std\@\@\@std\@\@XZ
      */
-    MCVAPI std::unique_ptr<class IRandom> fork();
+    MCVAPI std::unique_ptr<class IRandom> fork(); // NOLINT
     /**
      * @symbol ?nextBoolean\@Random\@\@UEAA_NXZ
      */
-    MCVAPI bool nextBoolean();
+    MCVAPI bool nextBoolean(); // NOLINT
     /**
      * @symbol ?nextDouble\@Random\@\@UEAANXZ
      */
-    MCVAPI double nextDouble();
+    MCVAPI double nextDouble(); // NOLINT
     /**
      * @symbol ?nextFloat\@Random\@\@UEAAMXZ
      */
-    MCVAPI float nextFloat();
+    MCVAPI float nextFloat(); // NOLINT
     /**
      * @symbol ?nextGaussianDouble\@Random\@\@UEAANXZ
      */
-    MCVAPI double nextGaussianDouble();
+    MCVAPI double nextGaussianDouble(); // NOLINT
     /**
      * @symbol ?nextInt\@Random\@\@UEAAHH\@Z
      */
-    MCVAPI int nextInt(int);
+    MCVAPI int nextInt(int); // NOLINT
     /**
      * @symbol ?nextInt\@Random\@\@UEAAHXZ
      */
-    MCVAPI int nextInt();
+    MCVAPI int nextInt(); // NOLINT
     /**
      * @symbol ?nextLong\@Random\@\@UEAA_JXZ
      */
-    MCVAPI __int64 nextLong();
+    MCVAPI __int64 nextLong(); // NOLINT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~Random();
+    MCVAPI ~Random(); // NOLINT
 #endif
     /**
      * @symbol ??0Random\@\@QEAA\@XZ
      */
-    MCAPI Random();
+    MCAPI Random(); // NOLINT
     /**
      * @symbol ?nextFloat\@Random\@\@QEAAMMM\@Z
      */
-    MCAPI float nextFloat(float, float);
+    MCAPI float nextFloat(float, float); // NOLINT
     /**
      * @symbol ?nextGaussianFloat\@Random\@\@QEAAMXZ
      */
-    MCAPI float nextGaussianFloat();
+    MCAPI float nextGaussianFloat(); // NOLINT
     /**
      * @symbol ?nextGaussianInt\@Random\@\@QEAAHH\@Z
      */
-    MCAPI int nextGaussianInt(int);
+    MCAPI int nextGaussianInt(int); // NOLINT
     /**
      * @symbol ?nextInt\@Random\@\@QEAAHHH\@Z
      */
-    MCAPI int nextInt(int, int);
+    MCAPI int nextInt(int, int); // NOLINT
     /**
      * @symbol ?nextIntInclusive\@Random\@\@QEAAHHH\@Z
      */
-    MCAPI int nextIntInclusive(int, int);
+    MCAPI int nextIntInclusive(int, int); // NOLINT
     /**
      * @symbol ?getThreadLocal\@Random\@\@SAAEAV1\@XZ
      */
-    MCAPI static class Random& getThreadLocal();
+    MCAPI static class Random& getThreadLocal(); // NOLINT
 
     // private:
 
@@ -93,5 +92,5 @@ private:
      * ?mThreadLocalRandom\@Random\@\@0V?$ThreadLocalObject\@VRandom\@\@V?$allocator\@VRandom\@\@\@std\@\@\@Threading\@Bedrock\@\@A
      */
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class Random, class std::allocator<class Random>>
-        mThreadLocalRandom;
+        mThreadLocalRandom; // NOLINT
 };

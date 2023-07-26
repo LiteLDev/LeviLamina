@@ -4,12 +4,9 @@
 
 struct LevelTagIDType {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELTAGIDTYPE
 public:
+    // prevent constructor by default
     LevelTagIDType& operator=(LevelTagIDType const&) = delete;
     LevelTagIDType(LevelTagIDType const&)            = delete;
     LevelTagIDType()                                 = delete;
-#endif
-
-public:
 };

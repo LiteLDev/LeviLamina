@@ -8,53 +8,52 @@
 
 class GuiDataPickItemPacket : public ::Packet {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GUIDATAPICKITEMPACKET
 public:
+    // prevent constructor by default
     GuiDataPickItemPacket& operator=(GuiDataPickItemPacket const&) = delete;
     GuiDataPickItemPacket(GuiDataPickItemPacket const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?getId\@GuiDataPickItemPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
-    virtual enum class MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?getName\@GuiDataPickItemPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string getName() const;
+    virtual std::string getName() const; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?write\@GuiDataPickItemPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream&) const; // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?_read\@GuiDataPickItemPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GUIDATAPICKITEMPACKET
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~GuiDataPickItemPacket();
+    MCVAPI ~GuiDataPickItemPacket(); // NOLINT
 #endif
     /**
      * @symbol
      * ??0GuiDataPickItemPacket\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0AEBH\@Z
      */
-    MCAPI GuiDataPickItemPacket(std::string const&, std::string const&, int const&);
+    MCAPI GuiDataPickItemPacket(std::string const&, std::string const&, int const&); // NOLINT
     /**
      * @symbol ??0GuiDataPickItemPacket\@\@QEAA\@XZ
      */
-    MCAPI GuiDataPickItemPacket();
+    MCAPI GuiDataPickItemPacket(); // NOLINT
 };

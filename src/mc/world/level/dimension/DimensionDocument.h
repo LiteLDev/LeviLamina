@@ -30,120 +30,114 @@ public:
             // Components inner types define
             struct Bounds {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONDOCUMENT_DIMENSION_COMPONENTS_BOUNDS
             public:
+                // prevent constructor by default
                 Bounds& operator=(Bounds const&) = delete;
                 Bounds(Bounds const&)            = delete;
                 Bounds()                         = delete;
-#endif
 
             public:
                 /**
                  * @symbol ?bindType\@Bounds\@Components\@Dimension\@DimensionDocument\@\@SAXXZ
                  */
-                MCAPI static void bindType();
+                MCAPI static void bindType(); // NOLINT
             };
 
             struct Generation {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONDOCUMENT_DIMENSION_COMPONENTS_GENERATION
             public:
+                // prevent constructor by default
                 Generation& operator=(Generation const&) = delete;
                 Generation(Generation const&)            = delete;
                 Generation()                             = delete;
-#endif
 
             public:
                 /**
                  * @symbol ?bindType\@Generation\@Components\@Dimension\@DimensionDocument\@\@SAXXZ
                  */
-                MCAPI static void bindType();
+                MCAPI static void bindType(); // NOLINT
             };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONDOCUMENT_DIMENSION_COMPONENTS
         public:
+            // prevent constructor by default
             Components(Components const&) = delete;
             Components()                  = delete;
-#endif
 
         public:
             /**
              * @symbol ??4Components\@Dimension\@DimensionDocument\@\@QEAAAEAU012\@AEBU012\@\@Z
              */
             MCAPI struct DimensionDocument::Dimension::Components&
-            operator=(struct DimensionDocument::Dimension::Components const&);
+            operator=(struct DimensionDocument::Dimension::Components const&); // NOLINT
             /**
              * @symbol ??1Components\@Dimension\@DimensionDocument\@\@QEAA\@XZ
              */
-            MCAPI ~Components();
+            MCAPI ~Components(); // NOLINT
             /**
              * @symbol ?bindType\@Components\@Dimension\@DimensionDocument\@\@SAXXZ
              */
-            MCAPI static void bindType();
+            MCAPI static void bindType(); // NOLINT
         };
 
         struct Description {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONDOCUMENT_DIMENSION_DESCRIPTION
         public:
+            // prevent constructor by default
             Description& operator=(Description const&) = delete;
             Description(Description const&)            = delete;
             Description()                              = delete;
-#endif
 
         public:
             /**
              * @symbol ??1Description\@Dimension\@DimensionDocument\@\@QEAA\@XZ
              */
-            MCAPI ~Description();
+            MCAPI ~Description(); // NOLINT
             /**
              * @symbol ?bindType\@Description\@Dimension\@DimensionDocument\@\@SAXXZ
              */
-            MCAPI static void bindType();
+            MCAPI static void bindType(); // NOLINT
         };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONDOCUMENT_DIMENSION
     public:
+        // prevent constructor by default
         Dimension(Dimension const&) = delete;
         Dimension()                 = delete;
-#endif
 
     public:
         /**
          * @symbol ??4Dimension\@DimensionDocument\@\@QEAAAEAU01\@AEBU01\@\@Z
          */
-        MCAPI struct DimensionDocument::Dimension& operator=(struct DimensionDocument::Dimension const&);
+        MCAPI struct DimensionDocument::Dimension& operator=(struct DimensionDocument::Dimension const&); // NOLINT
         /**
          * @symbol ??4Dimension\@DimensionDocument\@\@QEAAAEAU01\@$$QEAU01\@\@Z
          */
-        MCAPI struct DimensionDocument::Dimension& operator=(struct DimensionDocument::Dimension&&);
+        MCAPI struct DimensionDocument::Dimension& operator=(struct DimensionDocument::Dimension&&); // NOLINT
         /**
          * @symbol ??1Dimension\@DimensionDocument\@\@QEAA\@XZ
          */
-        MCAPI ~Dimension();
+        MCAPI ~Dimension(); // NOLINT
         /**
          * @symbol ?bindType\@Dimension\@DimensionDocument\@\@SAXXZ
          */
-        MCAPI static void bindType();
+        MCAPI static void bindType(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONDOCUMENT
 public:
+    // prevent constructor by default
     DimensionDocument& operator=(DimensionDocument const&) = delete;
     DimensionDocument(DimensionDocument const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0DimensionDocument\@\@QEAA\@XZ
      */
-    MCAPI DimensionDocument();
+    MCAPI DimensionDocument(); // NOLINT
     /**
      * @symbol ??1DimensionDocument\@\@QEAA\@XZ
      */
-    MCAPI ~DimensionDocument();
+    MCAPI ~DimensionDocument(); // NOLINT
     /**
      * @symbol ?bindType\@DimensionDocument\@\@SAXXZ
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(); // NOLINT
 };

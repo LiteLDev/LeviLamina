@@ -4,78 +4,78 @@
 
 class OnUseOnItemComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONUSEONITEMCOMPONENT
 public:
+    // prevent constructor by default
     OnUseOnItemComponent& operator=(OnUseOnItemComponent const&) = delete;
     OnUseOnItemComponent(OnUseOnItemComponent const&)            = delete;
     OnUseOnItemComponent()                                       = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2();
+    virtual void __unk_vfn_2(); // NOLINT
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3();
+    virtual void __unk_vfn_3(); // NOLINT
     /**
      * @vftbl 4
      * @symbol
      * ?buildNetworkTag\@?$NetworkedItemComponent\@VOnUseOnItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const; // NOLINT
     /**
      * @vftbl 5
      * @symbol
      * ?initializeFromNetwork\@?$NetworkedItemComponent\@VOnUseOnItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
      */
-    virtual bool initializeFromNetwork(class CompoundTag const&);
+    virtual bool initializeFromNetwork(class CompoundTag const&); // NOLINT
     /**
      * @vftbl 6
      * @symbol __unk_vfn_6
      */
-    virtual void __unk_vfn_6();
+    virtual void __unk_vfn_6(); // NOLINT
     /**
      * @vftbl 7
      * @symbol __unk_vfn_7
      */
-    virtual void __unk_vfn_7();
+    virtual void __unk_vfn_7(); // NOLINT
     /**
      * @vftbl 8
      * @symbol __unk_vfn_8
      */
-    virtual void __unk_vfn_8();
+    virtual void __unk_vfn_8(); // NOLINT
     /**
      * @vftbl 9
      * @symbol ?_useOn\@OnUseOnItemComponent\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
      */
-    virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&) const;
+    virtual bool
+    _useOn(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&) const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONUSEONITEMCOMPONENT
     /**
      * @symbol ?_canUseOn\@OnUseOnItemComponent\@\@MEBA_NAEBVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@E\@Z
      */
-    MCVAPI bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, unsigned char) const;
+    MCVAPI bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, unsigned char) const; // NOLINT
 #endif
     /**
      * @symbol ?bindType\@OnUseOnItemComponent\@\@SAXXZ
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(); // NOLINT
     /**
      * @symbol ?getIdentifier\@OnUseOnItemComponent\@\@SAAEBVHashedString\@\@XZ
      */
-    MCAPI static class HashedString const& getIdentifier();
+    MCAPI static class HashedString const& getIdentifier(); // NOLINT
 };

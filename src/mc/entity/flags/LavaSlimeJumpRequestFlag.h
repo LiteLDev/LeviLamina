@@ -4,12 +4,9 @@
 
 struct LavaSlimeJumpRequestFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LAVASLIMEJUMPREQUESTFLAG
 public:
+    // prevent constructor by default
     LavaSlimeJumpRequestFlag& operator=(LavaSlimeJumpRequestFlag const&) = delete;
     LavaSlimeJumpRequestFlag(LavaSlimeJumpRequestFlag const&)            = delete;
     LavaSlimeJumpRequestFlag()                                           = delete;
-#endif
-
-public:
 };

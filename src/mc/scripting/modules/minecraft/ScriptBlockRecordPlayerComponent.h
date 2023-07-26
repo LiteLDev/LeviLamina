@@ -16,52 +16,51 @@ namespace ScriptModuleMinecraft {
 
 class ScriptBlockRecordPlayerComponent : public ::ScriptModuleMinecraft::BaseScriptBlockComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTBLOCKRECORDPLAYERCOMPONENT
 public:
+    // prevent constructor by default
     ScriptBlockRecordPlayerComponent& operator=(ScriptBlockRecordPlayerComponent const&) = delete;
     ScriptBlockRecordPlayerComponent(ScriptBlockRecordPlayerComponent const&)            = delete;
     ScriptBlockRecordPlayerComponent()                                                   = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTBLOCKRECORDPLAYERCOMPONENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptBlockRecordPlayerComponent();
+    MCVAPI ~ScriptBlockRecordPlayerComponent(); // NOLINT
 #endif
-    /**
-     * @symbol ?ComponentId\@ScriptBlockRecordPlayerComponent\@ScriptModuleMinecraft\@\@2PEBDEB
-     */
-    MCAPI static char const* ComponentId;
     /**
      * @symbol
      * ?bind\@ScriptBlockRecordPlayerComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockRecordPlayerComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockRecordPlayerComponent>
-    bind();
+    bind(); // NOLINT
+    /**
+     * @symbol ?ComponentId\@ScriptBlockRecordPlayerComponent\@ScriptModuleMinecraft\@\@2PEBDEB
+     */
+    MCAPI static char const* ComponentId; // NOLINT
 
     // protected:
     /**
      * @symbol
      * ?clearRecord\@ScriptBlockRecordPlayerComponent\@ScriptModuleMinecraft\@\@IEAA?AV?$Result\@X\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<void> clearRecord();
+    MCAPI class Scripting::Result<void> clearRecord(); // NOLINT
     /**
      * @symbol
      * ?isPlaying\@ScriptBlockRecordPlayerComponent\@ScriptModuleMinecraft\@\@IEAA?AV?$Result\@_N\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<bool> isPlaying();
+    MCAPI class Scripting::Result<bool> isPlaying(); // NOLINT
     /**
      * @symbol
      * ?setRecord\@ScriptBlockRecordPlayerComponent\@ScriptModuleMinecraft\@\@IEAA?AV?$Result\@X\@Scripting\@\@AEBVScriptItemType\@2\@\@Z
      */
-    MCAPI class Scripting::Result<void> setRecord(class ScriptModuleMinecraft::ScriptItemType const&);
+    MCAPI class Scripting::Result<void> setRecord(class ScriptModuleMinecraft::ScriptItemType const&); // NOLINT
 
 protected:
 };

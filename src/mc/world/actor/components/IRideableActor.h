@@ -6,14 +6,11 @@ namespace RideableComponentHelpers {
 
 class IRideableActor {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RIDEABLECOMPONENTHELPERS_IRIDEABLEACTOR
 public:
+    // prevent constructor by default
     IRideableActor& operator=(IRideableActor const&) = delete;
     IRideableActor(IRideableActor const&)            = delete;
     IRideableActor()                                 = delete;
-#endif
-
-public:
 };
 
 }; // namespace RideableComponentHelpers

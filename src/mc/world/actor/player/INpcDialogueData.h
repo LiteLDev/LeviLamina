@@ -4,12 +4,11 @@
 
 struct INpcDialogueData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INPCDIALOGUEDATA
 public:
+    // prevent constructor by default
     INpcDialogueData& operator=(INpcDialogueData const&) = delete;
     INpcDialogueData(INpcDialogueData const&)            = delete;
     INpcDialogueData()                                   = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INPCDIALOGUEDATA
@@ -17,10 +16,10 @@ public:
      * @symbol
      * ?getRawDialogueText\@INpcDialogueData\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCVAPI std::string const& getRawDialogueText() const;
+    MCVAPI std::string const& getRawDialogueText() const; // NOLINT
     /**
      * @symbol ?isRemoteFire\@INpcDialogueData\@\@UEAA_NXZ
      */
-    MCVAPI bool isRemoteFire();
+    MCVAPI bool isRemoteFire(); // NOLINT
 #endif
 };

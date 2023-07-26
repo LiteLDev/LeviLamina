@@ -4,12 +4,9 @@
 
 struct ActorUniqueIDComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORUNIQUEIDCOMPONENT
 public:
+    // prevent constructor by default
     ActorUniqueIDComponent& operator=(ActorUniqueIDComponent const&) = delete;
     ActorUniqueIDComponent(ActorUniqueIDComponent const&)            = delete;
     ActorUniqueIDComponent()                                         = delete;
-#endif
-
-public:
 };

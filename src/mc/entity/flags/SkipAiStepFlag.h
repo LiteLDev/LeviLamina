@@ -4,12 +4,9 @@
 
 struct SkipAiStepFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SKIPAISTEPFLAG
 public:
+    // prevent constructor by default
     SkipAiStepFlag& operator=(SkipAiStepFlag const&) = delete;
     SkipAiStepFlag(SkipAiStepFlag const&)            = delete;
     SkipAiStepFlag()                                 = delete;
-#endif
-
-public:
 };

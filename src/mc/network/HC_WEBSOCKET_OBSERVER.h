@@ -12,12 +12,11 @@ namespace xbox::httpclient { class WebSocket; }
 
 struct HC_WEBSOCKET_OBSERVER {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HC_WEBSOCKET_OBSERVER
 public:
+    // prevent constructor by default
     HC_WEBSOCKET_OBSERVER& operator=(HC_WEBSOCKET_OBSERVER const&) = delete;
     HC_WEBSOCKET_OBSERVER(HC_WEBSOCKET_OBSERVER const&)            = delete;
     HC_WEBSOCKET_OBSERVER()                                        = delete;
-#endif
 
 public:
     /**
@@ -27,24 +26,25 @@ public:
     MCAPI static class std::unique_ptr<
         struct HC_WEBSOCKET_OBSERVER,
         struct http_alloc_deleter<struct HC_WEBSOCKET_OBSERVER>>
-    Initialize(class std::shared_ptr<class xbox::httpclient::WebSocket>, void (*)(struct HC_WEBSOCKET_OBSERVER*, char const*, void*), void (*)(struct HC_WEBSOCKET_OBSERVER*, unsigned char const*, unsigned int, void*), void (*)(struct HC_WEBSOCKET_OBSERVER*, unsigned char const*, unsigned int, bool, void*), void (*)(struct HC_WEBSOCKET_OBSERVER*, enum class HCWebSocketCloseStatus, void*), void*);
+    Initialize(class std::shared_ptr<class xbox::httpclient::WebSocket>, void (*)(struct HC_WEBSOCKET_OBSERVER*, char const*, void*), void (*)(struct HC_WEBSOCKET_OBSERVER*, unsigned char const*, unsigned int, void*), void (*)(struct HC_WEBSOCKET_OBSERVER*, unsigned char const*, unsigned int, bool, void*), void (*)(struct HC_WEBSOCKET_OBSERVER*, enum class HCWebSocketCloseStatus, void*), void*); // NOLINT
 
     // private:
     /**
      * @symbol ?BinaryMessageFragmentFunc\@HC_WEBSOCKET_OBSERVER\@\@CAXPEAU1\@PEBEI_NPEAX\@Z
      */
     MCAPI static void
-    BinaryMessageFragmentFunc(struct HC_WEBSOCKET_OBSERVER*, unsigned char const*, unsigned int, bool, void*);
+    BinaryMessageFragmentFunc(struct HC_WEBSOCKET_OBSERVER*, unsigned char const*, unsigned int, bool, void*); // NOLINT
     /**
      * @symbol ?BinaryMessageFunc\@HC_WEBSOCKET_OBSERVER\@\@CAXPEAU1\@PEBEIPEAX\@Z
      */
-    MCAPI static void BinaryMessageFunc(struct HC_WEBSOCKET_OBSERVER*, unsigned char const*, unsigned int, void*);
+    MCAPI static void
+    BinaryMessageFunc(struct HC_WEBSOCKET_OBSERVER*, unsigned char const*, unsigned int, void*); // NOLINT
     /**
      * @symbol ?CloseFunc\@HC_WEBSOCKET_OBSERVER\@\@CAXPEAU1\@W4HCWebSocketCloseStatus\@\@PEAX\@Z
      */
-    MCAPI static void CloseFunc(struct HC_WEBSOCKET_OBSERVER*, enum class HCWebSocketCloseStatus, void*);
+    MCAPI static void CloseFunc(struct HC_WEBSOCKET_OBSERVER*, enum class HCWebSocketCloseStatus, void*); // NOLINT
     /**
      * @symbol ?MessageFunc\@HC_WEBSOCKET_OBSERVER\@\@CAXPEAU1\@PEBDPEAX\@Z
      */
-    MCAPI static void MessageFunc(struct HC_WEBSOCKET_OBSERVER*, char const*, void*);
+    MCAPI static void MessageFunc(struct HC_WEBSOCKET_OBSERVER*, char const*, void*); // NOLINT
 };

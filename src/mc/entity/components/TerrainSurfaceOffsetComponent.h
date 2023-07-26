@@ -4,12 +4,9 @@
 
 struct TerrainSurfaceOffsetComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TERRAINSURFACEOFFSETCOMPONENT
 public:
+    // prevent constructor by default
     TerrainSurfaceOffsetComponent& operator=(TerrainSurfaceOffsetComponent const&) = delete;
     TerrainSurfaceOffsetComponent(TerrainSurfaceOffsetComponent const&)            = delete;
     TerrainSurfaceOffsetComponent()                                                = delete;
-#endif
-
-public:
 };

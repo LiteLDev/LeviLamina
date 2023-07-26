@@ -4,19 +4,18 @@
 
 class ScaleByAgeComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCALEBYAGECOMPONENT
 public:
+    // prevent constructor by default
     ScaleByAgeComponent& operator=(ScaleByAgeComponent const&) = delete;
     ScaleByAgeComponent(ScaleByAgeComponent const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ScaleByAgeComponent\@\@QEAA\@XZ
      */
-    MCAPI ScaleByAgeComponent();
+    MCAPI ScaleByAgeComponent(); // NOLINT
     /**
      * @symbol ?_initializeScale\@ScaleByAgeComponent\@\@QEAAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void _initializeScale(class EntityContext&);
+    MCAPI void _initializeScale(class EntityContext&); // NOLINT
 };

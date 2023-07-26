@@ -9,23 +9,23 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptActorCreateEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTACTORCREATEEVENT
 public:
+    // prevent constructor by default
     ScriptActorCreateEvent& operator=(ScriptActorCreateEvent const&) = delete;
     ScriptActorCreateEvent(ScriptActorCreateEvent const&)            = delete;
     ScriptActorCreateEvent()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol ??1ScriptActorCreateEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptActorCreateEvent();
+    MCAPI ~ScriptActorCreateEvent(); // NOLINT
     /**
      * @symbol
      * ?bindV010\@ScriptActorCreateEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptActorCreateEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorCreateEvent> bindV010();
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorCreateEvent>
+    bindV010(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

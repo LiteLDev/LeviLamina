@@ -4,36 +4,35 @@
 
 class TeleportDescription {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TELEPORTDESCRIPTION
 public:
+    // prevent constructor by default
     TeleportDescription& operator=(TeleportDescription const&) = delete;
     TeleportDescription(TeleportDescription const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol ?getJsonName\@TeleportDescription\@\@UEBAPEBDXZ
      */
-    virtual char const* getJsonName() const;
+    virtual char const* getJsonName() const; // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?deserializeData\@TeleportDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TELEPORTDESCRIPTION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~TeleportDescription();
+    MCVAPI ~TeleportDescription(); // NOLINT
 #endif
     /**
      * @symbol ??0TeleportDescription\@\@QEAA\@XZ
      */
-    MCAPI TeleportDescription();
+    MCAPI TeleportDescription(); // NOLINT
 };

@@ -7,36 +7,35 @@
 
 class MoveToLavaGoal : public ::MoveToLiquidGoal {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETOLAVAGOAL
 public:
+    // prevent constructor by default
     MoveToLavaGoal& operator=(MoveToLavaGoal const&) = delete;
     MoveToLavaGoal(MoveToLavaGoal const&)            = delete;
     MoveToLavaGoal()                                 = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3();
+    virtual void __unk_vfn_3(); // NOLINT
     /**
      * @vftbl 8
      * @symbol __unk_vfn_8
      */
-    virtual void __unk_vfn_8();
+    virtual void __unk_vfn_8(); // NOLINT
     /**
      * @vftbl 9
      * @symbol __unk_vfn_9
      */
-    virtual void __unk_vfn_9();
+    virtual void __unk_vfn_9(); // NOLINT
     /**
      * @symbol ??0MoveToLavaGoal\@\@QEAA\@AEAVMob\@\@MHHHM\@Z
      */
-    MCAPI MoveToLavaGoal(class Mob&, float, int, int, int, float);
+    MCAPI MoveToLavaGoal(class Mob&, float, int, int, int, float); // NOLINT
 };

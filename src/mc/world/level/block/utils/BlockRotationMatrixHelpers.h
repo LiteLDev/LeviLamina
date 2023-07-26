@@ -6,6 +6,6 @@ namespace BlockRotationMatrixHelpers {
 /**
  * @symbol ?bakeRotationMatrix\@BlockRotationMatrixHelpers\@\@YA?BVMatrix\@\@HHH\@Z
  */
-MCAPI class Matrix const bakeRotationMatrix(int, int, int);
+MCAPI class Matrix const bakeRotationMatrix(int, int, int); // NOLINT
 
 }; // namespace BlockRotationMatrixHelpers

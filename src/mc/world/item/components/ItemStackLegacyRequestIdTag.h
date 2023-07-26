@@ -4,12 +4,9 @@
 
 struct ItemStackLegacyRequestIdTag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKLEGACYREQUESTIDTAG
 public:
+    // prevent constructor by default
     ItemStackLegacyRequestIdTag& operator=(ItemStackLegacyRequestIdTag const&) = delete;
     ItemStackLegacyRequestIdTag(ItemStackLegacyRequestIdTag const&)            = delete;
     ItemStackLegacyRequestIdTag()                                              = delete;
-#endif
-
-public:
 };

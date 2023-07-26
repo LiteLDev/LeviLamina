@@ -8,6 +8,6 @@ namespace CheckFallDamageSystemImpl {
  * ?checkFallDamage\@CheckFallDamageSystemImpl\@\@YAXAEAVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@AEAUCheckFallDamageRequestComponent\@\@\@Z
  */
 MCAPI void
-checkFallDamage(class StrictEntityContext&, class ActorOwnerComponent&, struct CheckFallDamageRequestComponent&);
+checkFallDamage(class StrictEntityContext&, class ActorOwnerComponent&, struct CheckFallDamageRequestComponent&); // NOLINT
 
 }; // namespace CheckFallDamageSystemImpl

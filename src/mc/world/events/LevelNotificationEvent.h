@@ -4,16 +4,15 @@
 
 struct LevelNotificationEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELNOTIFICATIONEVENT
 public:
+    // prevent constructor by default
     LevelNotificationEvent& operator=(LevelNotificationEvent const&) = delete;
     LevelNotificationEvent(LevelNotificationEvent const&)            = delete;
     LevelNotificationEvent()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol ??1LevelNotificationEvent\@\@QEAA\@XZ
      */
-    MCAPI ~LevelNotificationEvent();
+    MCAPI ~LevelNotificationEvent(); // NOLINT
 };

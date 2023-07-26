@@ -6,25 +6,24 @@ namespace RakNet {
 
 class LocklessUint32_t {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKNET_LOCKLESSUINT32_T
 public:
+    // prevent constructor by default
     LocklessUint32_t& operator=(LocklessUint32_t const&) = delete;
     LocklessUint32_t(LocklessUint32_t const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ?Decrement\@LocklessUint32_t\@RakNet\@\@QEAAIXZ
      */
-    MCAPI unsigned int Decrement();
+    MCAPI unsigned int Decrement(); // NOLINT
     /**
      * @symbol ?Increment\@LocklessUint32_t\@RakNet\@\@QEAAIXZ
      */
-    MCAPI unsigned int Increment();
+    MCAPI unsigned int Increment(); // NOLINT
     /**
      * @symbol ??0LocklessUint32_t\@RakNet\@\@QEAA\@XZ
      */
-    MCAPI LocklessUint32_t();
+    MCAPI LocklessUint32_t(); // NOLINT
 };
 
 }; // namespace RakNet

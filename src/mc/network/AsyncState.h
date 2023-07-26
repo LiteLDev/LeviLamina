@@ -4,16 +4,15 @@
 
 class AsyncState {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ASYNCSTATE
 public:
+    // prevent constructor by default
     AsyncState& operator=(AsyncState const&) = delete;
     AsyncState(AsyncState const&)            = delete;
     AsyncState()                             = delete;
-#endif
 
 public:
     /**
      * @symbol ?Release\@AsyncState\@\@QEAAXXZ
      */
-    MCAPI void Release();
+    MCAPI void Release(); // NOLINT
 };

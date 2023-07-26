@@ -4,12 +4,11 @@
 
 class NullSecureStorage {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NULLSECURESTORAGE
 public:
+    // prevent constructor by default
     NullSecureStorage& operator=(NullSecureStorage const&) = delete;
     NullSecureStorage(NullSecureStorage const&)            = delete;
     NullSecureStorage()                                    = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NULLSECURESTORAGE
@@ -17,21 +16,21 @@ public:
      * @symbol
      * ?add\@NullSecureStorage\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
-    MCVAPI bool add(std::string const&, std::string const&);
+    MCVAPI bool add(std::string const&, std::string const&); // NOLINT
     /**
      * @symbol
      * ?addOrUpdate\@NullSecureStorage\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
-    MCVAPI bool addOrUpdate(std::string const&, std::string const&);
+    MCVAPI bool addOrUpdate(std::string const&, std::string const&); // NOLINT
     /**
      * @symbol
      * ?get\@NullSecureStorage\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV23\@\@Z
      */
-    MCVAPI bool get(std::string const&, std::string&);
+    MCVAPI bool get(std::string const&, std::string&); // NOLINT
     /**
      * @symbol
      * ?remove\@NullSecureStorage\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCVAPI bool remove(std::string const&);
+    MCVAPI bool remove(std::string const&); // NOLINT
 #endif
 };

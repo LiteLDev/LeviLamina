@@ -7,32 +7,31 @@
 
 class InstantaneousMobEffect : public ::MobEffect {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSTANTANEOUSMOBEFFECT
 public:
+    // prevent constructor by default
     InstantaneousMobEffect& operator=(InstantaneousMobEffect const&) = delete;
     InstantaneousMobEffect(InstantaneousMobEffect const&)            = delete;
     InstantaneousMobEffect()                                         = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 5
      * @symbol ?isInstantaneous\@InstantaneousMobEffect\@\@UEBA_NXZ
      */
-    virtual bool isInstantaneous() const;
+    virtual bool isInstantaneous() const; // NOLINT
     /**
      * @vftbl 7
      * @symbol ?isDurationEffectTick\@InstantaneousMobEffect\@\@UEBA_NHH\@Z
      */
-    virtual bool isDurationEffectTick(int, int) const;
+    virtual bool isDurationEffectTick(int, int) const; // NOLINT
     /**
      * @symbol
      * ??0InstantaneousMobEffect\@\@QEAA\@IAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0_NHH\@Z
      */
-    MCAPI InstantaneousMobEffect(unsigned int, std::string const&, std::string const&, bool, int, int);
+    MCAPI InstantaneousMobEffect(unsigned int, std::string const&, std::string const&, bool, int, int); // NOLINT
 };

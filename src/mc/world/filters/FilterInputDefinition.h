@@ -4,21 +4,20 @@
 
 struct FilterInputDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERINPUTDEFINITION
 public:
+    // prevent constructor by default
     FilterInputDefinition& operator=(FilterInputDefinition const&) = delete;
     FilterInputDefinition(FilterInputDefinition const&)            = delete;
     FilterInputDefinition()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ??0FilterInputDefinition\@\@QEAA\@VFilterInput\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI FilterInputDefinition(class FilterInput, std::string const&);
+    MCAPI FilterInputDefinition(class FilterInput, std::string const&); // NOLINT
     /**
      * @symbol ??1FilterInputDefinition\@\@QEAA\@XZ
      */
-    MCAPI ~FilterInputDefinition();
+    MCAPI ~FilterInputDefinition(); // NOLINT
 };

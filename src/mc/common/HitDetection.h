@@ -18,6 +18,6 @@ MCAPI void searchActors(
     class Actor*&,
     class Vec3&,
     bool
-);
+); // NOLINT
 
 }; // namespace HitDetection

@@ -4,16 +4,15 @@
 
 class NetworkSession {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKSESSION
 public:
+    // prevent constructor by default
     NetworkSession& operator=(NetworkSession const&) = delete;
     NetworkSession(NetworkSession const&)            = delete;
     NetworkSession()                                 = delete;
-#endif
 
 public:
     /**
      * @symbol ?getTransportLayer\@NetworkSession\@\@QEBA?AW4TransportLayer\@\@XZ
      */
-    MCAPI enum class TransportLayer getTransportLayer() const;
+    MCAPI enum class TransportLayer getTransportLayer() const; // NOLINT
 };

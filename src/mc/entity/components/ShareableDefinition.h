@@ -12,31 +12,30 @@ namespace JsonUtil { class EmptyClass; }
 
 class ShareableDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAREABLEDEFINITION
 public:
+    // prevent constructor by default
     ShareableDefinition& operator=(ShareableDefinition const&) = delete;
     ShareableDefinition(ShareableDefinition const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ShareableDefinition\@\@QEAA\@XZ
      */
-    MCAPI ShareableDefinition();
+    MCAPI ShareableDefinition(); // NOLINT
     /**
      * @symbol ?addShareable\@ShareableDefinition\@\@QEAAXAEBUShareable\@\@\@Z
      */
-    MCAPI void addShareable(struct Shareable const&);
+    MCAPI void addShareable(struct Shareable const&); // NOLINT
     /**
      * @symbol
      * ?addShareableByName\@ShareableDefinition\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void addShareableByName(std::string const&);
+    MCAPI void addShareableByName(std::string const&); // NOLINT
     /**
      * @symbol
      * ?buildSchema\@ShareableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VShareableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ShareableDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      class ShareableDefinition>>&); // NOLINT
 };

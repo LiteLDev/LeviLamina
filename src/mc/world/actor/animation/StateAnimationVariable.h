@@ -4,12 +4,9 @@
 
 class StateAnimationVariable {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STATEANIMATIONVARIABLE
 public:
+    // prevent constructor by default
     StateAnimationVariable& operator=(StateAnimationVariable const&) = delete;
     StateAnimationVariable(StateAnimationVariable const&)            = delete;
     StateAnimationVariable()                                         = delete;
-#endif
-
-public:
 };

@@ -7,24 +7,23 @@
 
 class ServerCorrectionPolicy : public ::ClientReplayStatePolicy {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERCORRECTIONPOLICY
 public:
+    // prevent constructor by default
     ServerCorrectionPolicy& operator=(ServerCorrectionPolicy const&) = delete;
     ServerCorrectionPolicy(ServerCorrectionPolicy const&)            = delete;
     ServerCorrectionPolicy()                                         = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol
      * ?shouldCorrectMovement\@ServerCorrectionPolicy\@\@UEAA?AUMovementCorrection\@\@AEAUIActorMovementProxy\@\@AEBVPlayerAuthInputPacket\@\@_K\@Z
      */
     virtual struct MovementCorrection
-    shouldCorrectMovement(struct IActorMovementProxy&, class PlayerAuthInputPacket const&, unsigned __int64);
+    shouldCorrectMovement(struct IActorMovementProxy&, class PlayerAuthInputPacket const&, unsigned __int64); // NOLINT
 };

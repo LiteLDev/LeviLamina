@@ -16,18 +16,17 @@ namespace gametest { struct TestParameters; }
 
 class GameTestRunner {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETESTRUNNER
 public:
+    // prevent constructor by default
     GameTestRunner& operator=(GameTestRunner const&) = delete;
     GameTestRunner(GameTestRunner const&)            = delete;
     GameTestRunner()                                 = delete;
-#endif
 
 public:
     /**
      * @symbol ?clearMarkers\@GameTestRunner\@\@SAXAEAVLevel\@\@\@Z
      */
-    MCAPI static void clearMarkers(class Level&);
+    MCAPI static void clearMarkers(class Level&); // NOLINT
     /**
      * @symbol
      * ?groupTestsIntoBatches\@GameTestRunner\@\@SA?AV?$vector\@VGameTestBatch\@gametest\@\@V?$allocator\@VGameTestBatch\@gametest\@\@\@std\@\@\@std\@\@AEAVGameTestRegistry\@gametest\@\@AEBV?$vector\@V?$shared_ptr\@VBaseGameTestFunction\@gametest\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VBaseGameTestFunction\@gametest\@\@\@std\@\@\@2\@\@3\@H\@Z
@@ -36,19 +35,19 @@ public:
         class gametest::GameTestRegistry&,
         std::vector<class std::shared_ptr<class gametest::BaseGameTestFunction>> const&,
         int
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?runTest\@GameTestRunner\@\@SAXV?$shared_ptr\@VBaseGameTestInstance\@gametest\@\@\@std\@\@AEAVGameTestTicker\@gametest\@\@\@Z
      */
     MCAPI static void
-    runTest(class std::shared_ptr<class gametest::BaseGameTestInstance>, class gametest::GameTestTicker&);
+    runTest(class std::shared_ptr<class gametest::BaseGameTestInstance>, class gametest::GameTestTicker&); // NOLINT
     /**
      * @symbol
      * ?runTests\@GameTestRunner\@\@SA?AV?$unique_ptr\@VBaseGameTestBatchRunner\@gametest\@\@U?$default_delete\@VBaseGameTestBatchRunner\@gametest\@\@\@std\@\@\@std\@\@AEAVDimension\@\@AEAVGameTestRegistry\@gametest\@\@V?$unique_ptr\@VIGameTestHelperProvider\@gametest\@\@U?$default_delete\@VIGameTestHelperProvider\@gametest\@\@\@std\@\@\@3\@AEAVGameTestTicker\@6\@$$QEAUTestParameters\@6\@\@Z
      */
     MCAPI static std::unique_ptr<class gametest::BaseGameTestBatchRunner>
-    runTests(class Dimension&, class gametest::GameTestRegistry&, std::unique_ptr<class gametest::IGameTestHelperProvider>, class gametest::GameTestTicker&, struct gametest::TestParameters&&);
+    runTests(class Dimension&, class gametest::GameTestRegistry&, std::unique_ptr<class gametest::IGameTestHelperProvider>, class gametest::GameTestTicker&, struct gametest::TestParameters&&); // NOLINT
 
     // private:
     /**
@@ -58,7 +57,7 @@ public:
     MCAPI static std::vector<class std::vector<
         class std::shared_ptr<class gametest::BaseGameTestFunction>,
         class std::allocator<class std::shared_ptr<class gametest::BaseGameTestFunction>>>>
-    _subdivideBatch(std::vector<class std::shared_ptr<class gametest::BaseGameTestFunction>>&, int);
+    _subdivideBatch(std::vector<class std::shared_ptr<class gametest::BaseGameTestFunction>>&, int); // NOLINT
 
 private:
 };

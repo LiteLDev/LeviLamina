@@ -6,14 +6,14 @@ namespace EventCoordinatorRegistration {
 /**
  * @symbol ?registerClientEventCoordinators\@EventCoordinatorRegistration\@\@YAXAEAVLevel\@\@\@Z
  */
-MCAPI void registerClientEventCoordinators(class Level&);
+MCAPI void registerClientEventCoordinators(class Level&); // NOLINT
 /**
  * @symbol ?registerServerEventCoordinators\@EventCoordinatorRegistration\@\@YAXAEAVServerLevel\@\@\@Z
  */
-MCAPI void registerServerEventCoordinators(class ServerLevel&);
+MCAPI void registerServerEventCoordinators(class ServerLevel&); // NOLINT
 /**
  * @symbol ?registerSharedEventCoordinators\@EventCoordinatorRegistration\@\@YAXAEAVLevel\@\@\@Z
  */
-MCAPI void registerSharedEventCoordinators(class Level&);
+MCAPI void registerSharedEventCoordinators(class Level&); // NOLINT
 
 }; // namespace EventCoordinatorRegistration

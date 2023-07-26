@@ -6,18 +6,17 @@ namespace FeatureLoading {
 
 struct FeatureRootParseContext {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FEATURELOADING_FEATUREROOTPARSECONTEXT
 public:
+    // prevent constructor by default
     FeatureRootParseContext& operator=(FeatureRootParseContext const&) = delete;
     FeatureRootParseContext(FeatureRootParseContext const&)            = delete;
     FeatureRootParseContext()                                          = delete;
-#endif
 
 public:
     /**
      * @symbol ??1FeatureRootParseContext\@FeatureLoading\@\@QEAA\@XZ
      */
-    MCAPI ~FeatureRootParseContext();
+    MCAPI ~FeatureRootParseContext(); // NOLINT
 };
 
 }; // namespace FeatureLoading

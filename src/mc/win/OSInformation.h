@@ -4,16 +4,15 @@
 
 struct OSInformation {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OSINFORMATION
 public:
+    // prevent constructor by default
     OSInformation& operator=(OSInformation const&) = delete;
     OSInformation(OSInformation const&)            = delete;
     OSInformation()                                = delete;
-#endif
 
 public:
     /**
      * @symbol ??1OSInformation\@\@QEAA\@XZ
      */
-    MCAPI ~OSInformation();
+    MCAPI ~OSInformation(); // NOLINT
 };

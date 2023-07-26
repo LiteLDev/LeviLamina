@@ -12,19 +12,18 @@ namespace JsonUtil { class EmptyClass; }
 
 struct PersistSitDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERSISTSITDEFINITION
 public:
+    // prevent constructor by default
     PersistSitDefinition& operator=(PersistSitDefinition const&) = delete;
     PersistSitDefinition(PersistSitDefinition const&)            = delete;
     PersistSitDefinition()                                       = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?buildSchema\@PersistSitDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UPersistSitDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct PersistSitDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      struct PersistSitDefinition>>&); // NOLINT
 };

@@ -5,12 +5,9 @@
 template <typename T0>
 struct InsideBlockWithPosAndBlockComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEBLOCKWITHPOSANDBLOCKCOMPONENT
 public:
+    // prevent constructor by default
     InsideBlockWithPosAndBlockComponent& operator=(InsideBlockWithPosAndBlockComponent const&) = delete;
     InsideBlockWithPosAndBlockComponent(InsideBlockWithPosAndBlockComponent const&)            = delete;
     InsideBlockWithPosAndBlockComponent()                                                      = delete;
-#endif
-
-public:
 };

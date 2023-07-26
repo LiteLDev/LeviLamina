@@ -4,23 +4,22 @@
 
 class InventoryTransactionItemGroup {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYTRANSACTIONITEMGROUP
 public:
+    // prevent constructor by default
     InventoryTransactionItemGroup(InventoryTransactionItemGroup const&) = delete;
     InventoryTransactionItemGroup()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ?getItemInstance\@InventoryTransactionItemGroup\@\@QEBA?AVItemStack\@\@XZ
      */
-    MCAPI class ItemStack getItemInstance() const;
+    MCAPI class ItemStack getItemInstance() const; // NOLINT
     /**
      * @symbol ??4InventoryTransactionItemGroup\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
-    MCAPI class InventoryTransactionItemGroup& operator=(class InventoryTransactionItemGroup const&);
+    MCAPI class InventoryTransactionItemGroup& operator=(class InventoryTransactionItemGroup const&); // NOLINT
     /**
      * @symbol ??1InventoryTransactionItemGroup\@\@QEAA\@XZ
      */
-    MCAPI ~InventoryTransactionItemGroup();
+    MCAPI ~InventoryTransactionItemGroup(); // NOLINT
 };

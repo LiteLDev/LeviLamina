@@ -12,25 +12,24 @@ public:
     // BiomeComponentFactory inner types define
     enum class FactoryScope {};
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMECOMPONENTFACTORY
 public:
+    // prevent constructor by default
     BiomeComponentFactory& operator=(BiomeComponentFactory const&) = delete;
     BiomeComponentFactory(BiomeComponentFactory const&)            = delete;
     BiomeComponentFactory()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ??0BiomeComponentFactory\@\@QEAA\@W4FactoryScope\@0\@\@Z
      */
-    MCAPI BiomeComponentFactory(enum class BiomeComponentFactory::FactoryScope);
+    MCAPI BiomeComponentFactory(enum class BiomeComponentFactory::FactoryScope); // NOLINT
     /**
      * @symbol
      * ?processDataComponents\@BiomeComponentFactory\@\@QEBAXAEAVBiome\@\@AEAVIWorldRegistriesProvider\@\@AEAVCompoundTag\@\@\@Z
      */
-    MCAPI void processDataComponents(class Biome&, class IWorldRegistriesProvider&, class CompoundTag&) const;
+    MCAPI void processDataComponents(class Biome&, class IWorldRegistriesProvider&, class CompoundTag&) const; // NOLINT
     /**
      * @symbol ?registrationFinished\@BiomeComponentFactory\@\@QEAAXXZ
      */
-    MCAPI void registrationFinished();
+    MCAPI void registrationFinished(); // NOLINT
 };

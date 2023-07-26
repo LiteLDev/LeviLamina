@@ -7,14 +7,11 @@ namespace Scripting {
 template <typename T0>
 class StrongTypedObjectHandle {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTING_STRONGTYPEDOBJECTHANDLE
 public:
+    // prevent constructor by default
     StrongTypedObjectHandle& operator=(StrongTypedObjectHandle const&) = delete;
     StrongTypedObjectHandle(StrongTypedObjectHandle const&)            = delete;
     StrongTypedObjectHandle()                                          = delete;
-#endif
-
-public:
 };
 
 }; // namespace Scripting

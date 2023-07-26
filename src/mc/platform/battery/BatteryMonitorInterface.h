@@ -4,12 +4,9 @@
 
 class BatteryMonitorInterface {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BATTERYMONITORINTERFACE
 public:
+    // prevent constructor by default
     BatteryMonitorInterface& operator=(BatteryMonitorInterface const&) = delete;
     BatteryMonitorInterface(BatteryMonitorInterface const&)            = delete;
     BatteryMonitorInterface()                                          = delete;
-#endif
-
-public:
 };

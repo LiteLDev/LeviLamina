@@ -4,16 +4,15 @@
 
 struct BlockPatternPostEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPATTERNPOSTEVENT
 public:
+    // prevent constructor by default
     BlockPatternPostEvent& operator=(BlockPatternPostEvent const&) = delete;
     BlockPatternPostEvent(BlockPatternPostEvent const&)            = delete;
     BlockPatternPostEvent()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ??1BlockPatternPostEvent\@\@QEAA\@XZ
      */
-    MCAPI ~BlockPatternPostEvent();
+    MCAPI ~BlockPatternPostEvent(); // NOLINT
 };

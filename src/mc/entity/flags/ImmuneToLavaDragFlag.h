@@ -4,12 +4,9 @@
 
 struct ImmuneToLavaDragFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IMMUNETOLAVADRAGFLAG
 public:
+    // prevent constructor by default
     ImmuneToLavaDragFlag& operator=(ImmuneToLavaDragFlag const&) = delete;
     ImmuneToLavaDragFlag(ImmuneToLavaDragFlag const&)            = delete;
     ImmuneToLavaDragFlag()                                       = delete;
-#endif
-
-public:
 };

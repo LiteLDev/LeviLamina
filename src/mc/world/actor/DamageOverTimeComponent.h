@@ -4,37 +4,36 @@
 
 class DamageOverTimeComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DAMAGEOVERTIMECOMPONENT
 public:
+    // prevent constructor by default
     DamageOverTimeComponent& operator=(DamageOverTimeComponent const&) = delete;
     DamageOverTimeComponent(DamageOverTimeComponent const&)            = delete;
     DamageOverTimeComponent()                                          = delete;
-#endif
 
 public:
     /**
      * @symbol ?addAdditionalSaveData\@DamageOverTimeComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
     /**
      * @symbol ?getDamageTime\@DamageOverTimeComponent\@\@QEBAHXZ
      */
-    MCAPI int getDamageTime() const;
+    MCAPI int getDamageTime() const; // NOLINT
     /**
      * @symbol ?getDamageTimeInterval\@DamageOverTimeComponent\@\@QEBAHXZ
      */
-    MCAPI int getDamageTimeInterval() const;
+    MCAPI int getDamageTimeInterval() const; // NOLINT
     /**
      * @symbol ?getHurtValue\@DamageOverTimeComponent\@\@QEBAHXZ
      */
-    MCAPI int getHurtValue() const;
+    MCAPI int getHurtValue() const; // NOLINT
     /**
      * @symbol
      * ?readAdditionalSaveData\@DamageOverTimeComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&); // NOLINT
     /**
      * @symbol ?setDamageTime\@DamageOverTimeComponent\@\@QEAAXH\@Z
      */
-    MCAPI void setDamageTime(int);
+    MCAPI void setDamageTime(int); // NOLINT
 };

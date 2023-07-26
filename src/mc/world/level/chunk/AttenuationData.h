@@ -6,14 +6,11 @@ namespace ChunkBlenderUtil {
 
 struct AttenuationData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKBLENDERUTIL_ATTENUATIONDATA
 public:
+    // prevent constructor by default
     AttenuationData& operator=(AttenuationData const&) = delete;
     AttenuationData(AttenuationData const&)            = delete;
     AttenuationData()                                  = delete;
-#endif
-
-public:
 };
 
 }; // namespace ChunkBlenderUtil

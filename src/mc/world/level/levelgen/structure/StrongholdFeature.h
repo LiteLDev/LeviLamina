@@ -15,29 +15,25 @@ public:
     // StrongholdFeature inner types define
     struct StrongholdResult {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRONGHOLDFEATURE_STRONGHOLDRESULT
     public:
+        // prevent constructor by default
         StrongholdResult& operator=(StrongholdResult const&) = delete;
         StrongholdResult(StrongholdResult const&)            = delete;
         StrongholdResult()                                   = delete;
-#endif
-
-    public:
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRONGHOLDFEATURE
 public:
+    // prevent constructor by default
     StrongholdFeature& operator=(StrongholdFeature const&) = delete;
     StrongholdFeature(StrongholdFeature const&)            = delete;
     StrongholdFeature()                                    = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol
@@ -50,29 +46,29 @@ public:
         class BlockPos&,
         class IPreliminarySurfaceProvider const&,
         bool
-    );
+    ); // NOLINT
     /**
      * @vftbl 5
      * @symbol
      * ?isFeatureChunk\@StrongholdFeature\@\@UEAA_NAEBVBiomeSource\@\@AEAVRandom\@\@AEBVChunkPos\@\@IAEBVIPreliminarySurfaceProvider\@\@AEBVDimension\@\@\@Z
      */
     virtual bool
-    isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, class IPreliminarySurfaceProvider const&, class Dimension const&);
+    isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, class IPreliminarySurfaceProvider const&, class Dimension const&); // NOLINT
     /**
      * @vftbl 6
      * @symbol
      * ?createStructureStart\@StrongholdFeature\@\@MEAA?AV?$unique_ptr\@VStructureStart\@\@U?$default_delete\@VStructureStart\@\@\@std\@\@\@std\@\@AEAVDimension\@\@AEBVBiomeSource\@\@AEAVRandom\@\@AEBVChunkPos\@\@AEBVIPreliminarySurfaceProvider\@\@\@Z
      */
     virtual std::unique_ptr<class StructureStart>
-    createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
+    createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&); // NOLINT
     /**
      * @symbol ??0StrongholdFeature\@\@QEAA\@PEAVVillageFeature\@\@I\@Z
      */
-    MCAPI StrongholdFeature(class VillageFeature*, unsigned int);
+    MCAPI StrongholdFeature(class VillageFeature*, unsigned int); // NOLINT
     /**
      * @symbol ?START_OFFSET\@StrongholdFeature\@\@2VBlockPos\@\@B
      */
-    MCAPI static class BlockPos const START_OFFSET;
+    MCAPI static class BlockPos const START_OFFSET; // NOLINT
 
     // protected:
     /**
@@ -80,18 +76,19 @@ public:
      * ?generatePositions\@StrongholdFeature\@\@IEAAXAEAVRandom\@\@AEBVBiomeSource\@\@IAEBVIPreliminarySurfaceProvider\@\@AEBVDimension\@\@\@Z
      */
     MCAPI void
-    generatePositions(class Random&, class BiomeSource const&, unsigned int, class IPreliminarySurfaceProvider const&, class Dimension const&);
+    generatePositions(class Random&, class BiomeSource const&, unsigned int, class IPreliminarySurfaceProvider const&, class Dimension const&); // NOLINT
 
     // private:
     /**
      * @symbol ?_generateStronghold\@StrongholdFeature\@\@AEAA?BUStrongholdResult\@1\@IAEBVChunkPos\@\@\@Z
      */
-    MCAPI struct StrongholdFeature::StrongholdResult const _generateStronghold(unsigned int, class ChunkPos const&);
+    MCAPI struct StrongholdFeature::StrongholdResult const
+    _generateStronghold(unsigned int, class ChunkPos const&); // NOLINT
     /**
      * @symbol ?_getNearestStronghold\@StrongholdFeature\@\@AEAA_NAEBVDimension\@\@IAEBVBlockPos\@\@AEAV3\@_N\@Z
      */
     MCAPI bool
-    _getNearestStronghold(class Dimension const&, unsigned int, class BlockPos const&, class BlockPos&, bool);
+    _getNearestStronghold(class Dimension const&, unsigned int, class BlockPos const&, class BlockPos&, bool); // NOLINT
 
 protected:
 private:

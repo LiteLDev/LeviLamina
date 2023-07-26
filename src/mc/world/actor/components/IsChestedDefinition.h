@@ -12,27 +12,26 @@ namespace JsonUtil { class EmptyClass; }
 
 struct IsChestedDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISCHESTEDDEFINITION
 public:
+    // prevent constructor by default
     IsChestedDefinition& operator=(IsChestedDefinition const&) = delete;
     IsChestedDefinition(IsChestedDefinition const&)            = delete;
     IsChestedDefinition()                                      = delete;
-#endif
 
 public:
     /**
      * @symbol ?initialize\@IsChestedDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&) const;
+    MCAPI void initialize(class EntityContext&) const; // NOLINT
     /**
      * @symbol ?uninitialize\@IsChestedDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void uninitialize(class EntityContext&) const;
+    MCAPI void uninitialize(class EntityContext&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@IsChestedDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UIsChestedDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsChestedDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      struct IsChestedDefinition>>&); // NOLINT
 };

@@ -4,16 +4,15 @@
 
 struct PistonActionEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PISTONACTIONEVENT
 public:
+    // prevent constructor by default
     PistonActionEvent& operator=(PistonActionEvent const&) = delete;
     PistonActionEvent(PistonActionEvent const&)            = delete;
     PistonActionEvent()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ??1PistonActionEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PistonActionEvent();
+    MCAPI ~PistonActionEvent(); // NOLINT
 };

@@ -12,19 +12,18 @@ namespace JsonUtil { class EmptyClass; }
 
 struct EquipmentTableDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EQUIPMENTTABLEDEFINITION
 public:
+    // prevent constructor by default
     EquipmentTableDefinition& operator=(EquipmentTableDefinition const&) = delete;
     EquipmentTableDefinition(EquipmentTableDefinition const&)            = delete;
     EquipmentTableDefinition()                                           = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?buildSchema\@EquipmentTableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UEquipmentTableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EquipmentTableDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      struct EquipmentTableDefinition>>&); // NOLINT
 };

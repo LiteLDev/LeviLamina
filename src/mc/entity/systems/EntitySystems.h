@@ -7,12 +7,11 @@
 
 class EntitySystems {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYSYSTEMS
 public:
+    // prevent constructor by default
     EntitySystems& operator=(EntitySystems const&) = delete;
     EntitySystems(EntitySystems const&)            = delete;
     EntitySystems()                                = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYSYSTEMS
@@ -25,68 +24,68 @@ public:
         std::unique_ptr<class ITickingSystem>,
         struct SystemInfo const&,
         struct EntitySystemTickingMode
-    );
+    ); // NOLINT
     /**
      * @symbol ?tickMovementCatchup\@EntitySystems\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
-    MCVAPI void tickMovementCatchup(class EntityRegistry&);
+    MCVAPI void tickMovementCatchup(class EntityRegistry&); // NOLINT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~EntitySystems();
+    MCVAPI ~EntitySystems(); // NOLINT
 #endif
     /**
      * @symbol
      * ??0EntitySystems\@\@QEAA\@V?$unique_ptr\@UIEntitySystemsCollection\@\@U?$default_delete\@UIEntitySystemsCollection\@\@\@std\@\@\@std\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@2\@\@Z
      */
-    MCAPI EntitySystems(std::unique_ptr<struct IEntitySystemsCollection>, std::string);
+    MCAPI EntitySystems(std::unique_ptr<struct IEntitySystemsCollection>, std::string); // NOLINT
     /**
      * @symbol ??0EntitySystems\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI EntitySystems(std::string);
+    MCAPI EntitySystems(std::string); // NOLINT
     /**
      * @symbol ?getPlayerInteractionSystem\@EntitySystems\@\@QEAAAEAVPlayerInteractionSystem\@\@XZ
      */
-    MCAPI class PlayerInteractionSystem& getPlayerInteractionSystem();
+    MCAPI class PlayerInteractionSystem& getPlayerInteractionSystem(); // NOLINT
     /**
      * @symbol ?registerEditorOnlyTickingSystem\@EntitySystems\@\@QEAAX$$QEAUTickingSystemWithInfo\@\@\@Z
      */
-    MCAPI void registerEditorOnlyTickingSystem(struct TickingSystemWithInfo&&);
+    MCAPI void registerEditorOnlyTickingSystem(struct TickingSystemWithInfo&&); // NOLINT
     /**
      * @symbol ?registerEvents\@EntitySystems\@\@QEAAXAEAVEntityRegistry\@\@\@Z
      */
-    MCAPI void registerEvents(class EntityRegistry&);
+    MCAPI void registerEvents(class EntityRegistry&); // NOLINT
     /**
      * @symbol ?registerGameOnlyTickingSystem\@EntitySystems\@\@QEAAX$$QEAUTickingSystemWithInfo\@\@\@Z
      */
-    MCAPI void registerGameOnlyTickingSystem(struct TickingSystemWithInfo&&);
+    MCAPI void registerGameOnlyTickingSystem(struct TickingSystemWithInfo&&); // NOLINT
     /**
      * @symbol ?registerMovementTickingSystem\@EntitySystems\@\@QEAAX$$QEAUTickingSystemWithInfo\@\@\@Z
      */
-    MCAPI void registerMovementTickingSystem(struct TickingSystemWithInfo&&);
+    MCAPI void registerMovementTickingSystem(struct TickingSystemWithInfo&&); // NOLINT
     /**
      * @symbol ?registerTickingSystem\@EntitySystems\@\@QEAAX$$QEAUTickingSystemWithInfo\@\@\@Z
      */
-    MCAPI void registerTickingSystem(struct TickingSystemWithInfo&&);
+    MCAPI void registerTickingSystem(struct TickingSystemWithInfo&&); // NOLINT
     /**
      * @symbol ?tick\@EntitySystems\@\@QEAAXAEAVEntityRegistry\@\@\@Z
      */
-    MCAPI void tick(class EntityRegistry&);
+    MCAPI void tick(class EntityRegistry&); // NOLINT
     /**
      * @symbol ?tickEditor\@EntitySystems\@\@QEAAXAEAVEntityRegistry\@\@\@Z
      */
-    MCAPI void tickEditor(class EntityRegistry&);
+    MCAPI void tickEditor(class EntityRegistry&); // NOLINT
 
     // private:
     /**
      * @symbol ?_hasSingleTickCategory\@EntitySystems\@\@AEBA_NV?$typeid_t\@USystemCategory\@\@\@Bedrock\@\@\@Z
      */
-    MCAPI bool _hasSingleTickCategory(class Bedrock::typeid_t<struct SystemCategory>) const;
+    MCAPI bool _hasSingleTickCategory(class Bedrock::typeid_t<struct SystemCategory>) const; // NOLINT
     /**
      * @symbol
      * ?_singleTickCategory\@EntitySystems\@\@AEAAXV?$typeid_t\@USystemCategory\@\@\@Bedrock\@\@AEAVEntityContext\@\@\@Z
      */
-    MCAPI void _singleTickCategory(class Bedrock::typeid_t<struct SystemCategory>, class EntityContext&);
+    MCAPI void _singleTickCategory(class Bedrock::typeid_t<struct SystemCategory>, class EntityContext&); // NOLINT
 
 private:
 };

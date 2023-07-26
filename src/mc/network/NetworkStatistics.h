@@ -12,74 +12,73 @@ namespace RakNet { struct RakNetStatistics; }
 
 class NetworkStatistics {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKSTATISTICS
 public:
+    // prevent constructor by default
     NetworkStatistics& operator=(NetworkStatistics const&) = delete;
     NetworkStatistics(NetworkStatistics const&)            = delete;
     NetworkStatistics()                                    = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?packetSentTo\@NetworkStatistics\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVPacket\@\@I\@Z
      */
-    virtual void packetSentTo(class NetworkIdentifier const&, class Packet const&, unsigned int);
+    virtual void packetSentTo(class NetworkIdentifier const&, class Packet const&, unsigned int); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?packetReceivedFrom\@NetworkStatistics\@\@UEAAXAEBVNetworkIdentifier\@\@AEBVPacket\@\@I\@Z
      */
-    virtual void packetReceivedFrom(class NetworkIdentifier const&, class Packet const&, unsigned int);
+    virtual void packetReceivedFrom(class NetworkIdentifier const&, class Packet const&, unsigned int); // NOLINT
     /**
      * @vftbl 3
      * @symbol
      * ?dataSentTo\@NetworkStatistics\@\@UEAAXAEBVNetworkIdentifier\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
     virtual void
-    dataSentTo(class NetworkIdentifier const&, class std::basic_string_view<char, struct std::char_traits<char>>);
+    dataSentTo(class NetworkIdentifier const&, class std::basic_string_view<char, struct std::char_traits<char>>); // NOLINT
     /**
      * @vftbl 4
      * @symbol
      * ?dataReceivedFrom\@NetworkStatistics\@\@UEAAXAEBVNetworkIdentifier\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void dataReceivedFrom(class NetworkIdentifier const&, std::string const&);
+    virtual void dataReceivedFrom(class NetworkIdentifier const&, std::string const&); // NOLINT
     /**
      * @vftbl 5
      * @symbol ?reset\@NetworkStatistics\@\@UEAAXXZ
      */
-    virtual void reset();
+    virtual void reset(); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKSTATISTICS
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~NetworkStatistics();
+    MCVAPI ~NetworkStatistics(); // NOLINT
 #endif
     /**
      * @symbol
      * ??0NetworkStatistics\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VNetworkSystem\@\@\@Bedrock\@\@\@gsl\@\@W4TrackerType\@\@$$QEAV?$function\@$$A6A_NAEAURakNetStatistics\@RakNet\@\@\@Z\@std\@\@V?$not_null\@V?$NonOwnerPointer\@VNetworkDebugManager\@\@\@Bedrock\@\@\@2\@\@Z
      */
     MCAPI
-    NetworkStatistics(class gsl::not_null<class Bedrock::NonOwnerPointer<class NetworkSystem>>, enum class TrackerType, class std::function<bool(struct RakNet::RakNetStatistics&)>&&, class gsl::not_null<class Bedrock::NonOwnerPointer<class NetworkDebugManager>>);
+    NetworkStatistics(class gsl::not_null<class Bedrock::NonOwnerPointer<class NetworkSystem>>, enum class TrackerType, class std::function<bool(struct RakNet::RakNetStatistics&)>&&, class gsl::not_null<class Bedrock::NonOwnerPointer<class NetworkDebugManager>>); // NOLINT
     /**
      * @symbol
      * ?getVerboseInfo\@NetworkStatistics\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getVerboseInfo() const;
+    MCAPI std::string getVerboseInfo() const; // NOLINT
 
     // private:
     /**
      * @symbol ?_clearCSVStats\@NetworkStatistics\@\@AEAAXXZ
      */
-    MCAPI void _clearCSVStats();
+    MCAPI void _clearCSVStats(); // NOLINT
     /**
      * @symbol ?_initRakNetProfileTracking\@NetworkStatistics\@\@AEAAXXZ
      */
-    MCAPI void _initRakNetProfileTracking();
+    MCAPI void _initRakNetProfileTracking(); // NOLINT
 
 private:
 };

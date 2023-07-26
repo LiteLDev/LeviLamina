@@ -12,22 +12,21 @@ namespace RakNet {
 
 class SocketLayer {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKNET_SOCKETLAYER
 public:
+    // prevent constructor by default
     SocketLayer& operator=(SocketLayer const&) = delete;
     SocketLayer(SocketLayer const&)            = delete;
     SocketLayer()                              = delete;
-#endif
 
 public:
     /**
      * @symbol ?GetMyAdapters\@SocketLayer\@RakNet\@\@SAXQEAUNetworkAdapter\@2\@\@Z
      */
-    MCAPI static void GetMyAdapters(struct RakNet::NetworkAdapter* const);
+    MCAPI static void GetMyAdapters(struct RakNet::NetworkAdapter* const); // NOLINT
     /**
      * @symbol ?GetSubNetForSocketAndIp\@SocketLayer\@RakNet\@\@SA?AVRakString\@2\@V32\@\@Z
      */
-    MCAPI static class RakNet::RakString GetSubNetForSocketAndIp(class RakNet::RakString);
+    MCAPI static class RakNet::RakString GetSubNetForSocketAndIp(class RakNet::RakString); // NOLINT
 
     // private:
 
@@ -36,7 +35,7 @@ private:
      * @symbol
      * ?mPlatformAdapterOverride\@SocketLayer\@RakNet\@\@0V?$function\@$$A6A?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ\@std\@\@A
      */
-    MCAPI static class std::function<std::vector<std::string>(void)> mPlatformAdapterOverride;
+    MCAPI static class std::function<std::vector<std::string>(void)> mPlatformAdapterOverride; // NOLINT
 };
 
 }; // namespace RakNet

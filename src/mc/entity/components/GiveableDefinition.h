@@ -12,27 +12,26 @@ namespace JsonUtil { class EmptyClass; }
 
 class GiveableDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GIVEABLEDEFINITION
 public:
+    // prevent constructor by default
     GiveableDefinition& operator=(GiveableDefinition const&) = delete;
     GiveableDefinition(GiveableDefinition const&)            = delete;
     GiveableDefinition()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ?addGiveableTrigger\@GiveableDefinition\@\@QEAAXAEBUGiveableTrigger\@\@\@Z
      */
-    MCAPI void addGiveableTrigger(struct GiveableTrigger const&);
+    MCAPI void addGiveableTrigger(struct GiveableTrigger const&); // NOLINT
     /**
      * @symbol ?initialize\@GiveableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVGiveableComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class GiveableComponent&) const;
+    MCAPI void initialize(class EntityContext&, class GiveableComponent&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@GiveableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VGiveableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
     buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GiveableDefinition>>&);
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GiveableDefinition>>&); // NOLINT
 };

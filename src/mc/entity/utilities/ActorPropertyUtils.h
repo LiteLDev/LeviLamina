@@ -7,7 +7,8 @@ namespace ActorPropertyUtils {
  * @symbol
  * ?_checkAndQueueBoolValue\@ActorPropertyUtils\@\@YA_NAEBVPropertyGroup\@\@_KPEAVActorDefinitionDiffList\@\@_N\@Z
  */
-MCAPI bool _checkAndQueueBoolValue(class PropertyGroup const&, unsigned __int64, class ActorDefinitionDiffList*, bool);
+MCAPI bool
+_checkAndQueueBoolValue(class PropertyGroup const&, unsigned __int64, class ActorDefinitionDiffList*, bool); // NOLINT
 /**
  * @symbol
  * ?_checkAndQueueEnumIndexValueByHash\@ActorPropertyUtils\@\@YA_NAEBVPropertyGroup\@\@_K1PEAVActorDefinitionDiffList\@\@1\@Z
@@ -18,7 +19,7 @@ MCAPI bool _checkAndQueueEnumIndexValueByHash(
     unsigned __int64,
     class ActorDefinitionDiffList*,
     unsigned __int64
-);
+); // NOLINT
 /**
  * @symbol
  * ?_checkAndQueueFloatValue\@ActorPropertyUtils\@\@YA_NAEBVPropertyGroup\@\@_K1PEAVActorDefinitionDiffList\@\@M\@Z
@@ -29,7 +30,7 @@ MCAPI bool _checkAndQueueFloatValue(
     unsigned __int64,
     class ActorDefinitionDiffList*,
     float
-);
+); // NOLINT
 /**
  * @symbol
  * ?_checkAndQueueIntValue\@ActorPropertyUtils\@\@YA_NAEBVPropertyGroup\@\@_K1PEAVActorDefinitionDiffList\@\@H\@Z
@@ -40,12 +41,12 @@ MCAPI bool _checkAndQueueIntValue(
     unsigned __int64,
     class ActorDefinitionDiffList*,
     int
-);
+); // NOLINT
 /**
  * @symbol
  * ?addPendingEventResponseChange\@ActorPropertyUtils\@\@YAXAEBVPropertyComponent\@\@AEAVActor\@\@AEBVHashedString\@\@AEBUMolangScriptArg\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
  */
 MCAPI void
-addPendingEventResponseChange(class PropertyComponent const&, class Actor&, class HashedString const&, struct MolangScriptArg const&, std::string const&);
+addPendingEventResponseChange(class PropertyComponent const&, class Actor&, class HashedString const&, struct MolangScriptArg const&, std::string const&); // NOLINT
 
 }; // namespace ActorPropertyUtils

@@ -4,37 +4,36 @@
 
 class SaveTransactionManager {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SAVETRANSACTIONMANAGER
 public:
+    // prevent constructor by default
     SaveTransactionManager& operator=(SaveTransactionManager const&) = delete;
     SaveTransactionManager(SaveTransactionManager const&)            = delete;
     SaveTransactionManager()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ??0SaveTransactionManager\@\@QEAA\@AEAVWorkerPool\@\@AEAVScheduler\@\@V?$function\@$$A6AX_N\@Z\@std\@\@\@Z
      */
-    MCAPI SaveTransactionManager(class WorkerPool&, class Scheduler&, class std::function<void(bool)>);
+    MCAPI SaveTransactionManager(class WorkerPool&, class Scheduler&, class std::function<void(bool)>); // NOLINT
     /**
      * @symbol ?onBeginCompaction\@SaveTransactionManager\@\@QEAAXXZ
      */
-    MCAPI void onBeginCompaction();
+    MCAPI void onBeginCompaction(); // NOLINT
     /**
      * @symbol ?onEndCompaction\@SaveTransactionManager\@\@QEAAXXZ
      */
-    MCAPI void onEndCompaction();
+    MCAPI void onEndCompaction(); // NOLINT
 
     // private:
     /**
      * @symbol ?_hideGlobalSaveIcon\@SaveTransactionManager\@\@AEAAXXZ
      */
-    MCAPI void _hideGlobalSaveIcon();
+    MCAPI void _hideGlobalSaveIcon(); // NOLINT
     /**
      * @symbol ?_showGlobalSaveIcon\@SaveTransactionManager\@\@AEAAXXZ
      */
-    MCAPI void _showGlobalSaveIcon();
+    MCAPI void _showGlobalSaveIcon(); // NOLINT
 
 private:
 };

@@ -11,25 +11,24 @@ namespace RakNet {
 
 struct AddressOrGUID {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKNET_ADDRESSORGUID
 public:
+    // prevent constructor by default
     AddressOrGUID& operator=(AddressOrGUID const&) = delete;
     AddressOrGUID()                                = delete;
-#endif
 
 public:
     /**
      * @symbol ??0AddressOrGUID\@RakNet\@\@QEAA\@AEBU01\@\@Z
      */
-    MCAPI AddressOrGUID(struct RakNet::AddressOrGUID const&);
+    MCAPI AddressOrGUID(struct RakNet::AddressOrGUID const&); // NOLINT
     /**
      * @symbol ??0AddressOrGUID\@RakNet\@\@QEAA\@AEBUSystemAddress\@1\@\@Z
      */
-    MCAPI AddressOrGUID(struct RakNet::SystemAddress const&);
+    MCAPI AddressOrGUID(struct RakNet::SystemAddress const&); // NOLINT
     /**
      * @symbol ?IsUndefined\@AddressOrGUID\@RakNet\@\@QEBA_NXZ
      */
-    MCAPI bool IsUndefined() const;
+    MCAPI bool IsUndefined() const; // NOLINT
 };
 
 }; // namespace RakNet

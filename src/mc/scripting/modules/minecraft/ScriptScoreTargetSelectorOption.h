@@ -10,39 +10,38 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptScoreTargetSelectorOption {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTSCORETARGETSELECTOROPTION
 public:
+    // prevent constructor by default
     ScriptScoreTargetSelectorOption(ScriptScoreTargetSelectorOption const&) = delete;
     ScriptScoreTargetSelectorOption()                                       = delete;
-#endif
 
 public:
     /**
      * @symbol ??4ScriptScoreTargetSelectorOption\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&
-    operator=(struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption const&);
+    operator=(struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption const&); // NOLINT
     /**
      * @symbol ??4ScriptScoreTargetSelectorOption\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&
-    operator=(struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&&);
+    operator=(struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&&); // NOLINT
     /**
      * @symbol ??1ScriptScoreTargetSelectorOption\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptScoreTargetSelectorOption();
+    MCAPI ~ScriptScoreTargetSelectorOption(); // NOLINT
     /**
      * @symbol
      * ?bindV010\@ScriptScoreTargetSelectorOption\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptScoreTargetSelectorOption\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption>
-    bindV010();
+    bindV010(); // NOLINT
     /**
      * @symbol
      * ?bindV1\@ScriptScoreTargetSelectorOption\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptScoreTargetSelectorOption\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption>
-    bindV1();
+    bindV1(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

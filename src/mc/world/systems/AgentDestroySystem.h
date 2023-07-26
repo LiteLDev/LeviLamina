@@ -14,12 +14,12 @@ namespace AgentDestroySystem {
  * ?initialize\@AgentDestroySystem\@\@YAXAEAVEntityContext\@\@AEBUStateVectorComponent\@\@AEBUMobBodyRotationComponent\@\@AEBUActionDetails\@AgentComponents\@\@AEBVDestroy\@6\@\@Z
  */
 MCAPI void
-initialize(class EntityContext&, struct StateVectorComponent const&, struct MobBodyRotationComponent const&, struct AgentComponents::ActionDetails const&, class AgentComponents::Destroy const&);
+initialize(class EntityContext&, struct StateVectorComponent const&, struct MobBodyRotationComponent const&, struct AgentComponents::ActionDetails const&, class AgentComponents::Destroy const&); // NOLINT
 /**
  * @symbol
  * ?tick\@AgentDestroySystem\@\@YAXAEAVEntityContext\@\@AEBUStateVectorComponent\@\@AEBUMobBodyRotationComponent\@\@AEBUActionDetails\@AgentComponents\@\@AEBVDestroy\@6\@\@Z
  */
 MCAPI void
-tick(class EntityContext&, struct StateVectorComponent const&, struct MobBodyRotationComponent const&, struct AgentComponents::ActionDetails const&, class AgentComponents::Destroy const&);
+tick(class EntityContext&, struct StateVectorComponent const&, struct MobBodyRotationComponent const&, struct AgentComponents::ActionDetails const&, class AgentComponents::Destroy const&); // NOLINT
 
 }; // namespace AgentDestroySystem

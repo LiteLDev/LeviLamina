@@ -4,12 +4,9 @@
 
 class ActorAnimationControllerInfo {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORANIMATIONCONTROLLERINFO
 public:
+    // prevent constructor by default
     ActorAnimationControllerInfo& operator=(ActorAnimationControllerInfo const&) = delete;
     ActorAnimationControllerInfo(ActorAnimationControllerInfo const&)            = delete;
     ActorAnimationControllerInfo()                                               = delete;
-#endif
-
-public:
 };

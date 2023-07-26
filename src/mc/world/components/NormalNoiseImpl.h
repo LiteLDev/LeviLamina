@@ -5,12 +5,9 @@
 template <int T0, typename T1>
 class NormalNoiseImpl {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NORMALNOISEIMPL
 public:
+    // prevent constructor by default
     NormalNoiseImpl& operator=(NormalNoiseImpl const&) = delete;
     NormalNoiseImpl(NormalNoiseImpl const&)            = delete;
     NormalNoiseImpl()                                  = delete;
-#endif
-
-public:
 };

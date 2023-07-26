@@ -15,51 +15,49 @@ public:
     // StructureBlockPalette inner types define
     struct BlockPositionData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREBLOCKPALETTE_BLOCKPOSITIONDATA
     public:
+        // prevent constructor by default
         BlockPositionData& operator=(BlockPositionData const&) = delete;
         BlockPositionData()                                    = delete;
-#endif
 
     public:
         /**
          * @symbol ??0BlockPositionData\@StructureBlockPalette\@\@QEAA\@AEBU01\@\@Z
          */
-        MCAPI BlockPositionData(struct StructureBlockPalette::BlockPositionData const&);
+        MCAPI BlockPositionData(struct StructureBlockPalette::BlockPositionData const&); // NOLINT
         /**
          * @symbol ?isValid\@BlockPositionData\@StructureBlockPalette\@\@QEBA_NXZ
          */
-        MCAPI bool isValid() const;
+        MCAPI bool isValid() const; // NOLINT
         /**
          * @symbol ??1BlockPositionData\@StructureBlockPalette\@\@QEAA\@XZ
          */
-        MCAPI ~BlockPositionData();
+        MCAPI ~BlockPositionData(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREBLOCKPALETTE
 public:
+    // prevent constructor by default
     StructureBlockPalette& operator=(StructureBlockPalette const&) = delete;
     StructureBlockPalette(StructureBlockPalette const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0StructureBlockPalette\@\@QEAA\@XZ
      */
-    MCAPI StructureBlockPalette();
+    MCAPI StructureBlockPalette(); // NOLINT
     /**
      * @symbol ??0StructureBlockPalette\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI StructureBlockPalette(class StructureBlockPalette&&);
+    MCAPI StructureBlockPalette(class StructureBlockPalette&&); // NOLINT
     /**
      * @symbol ?addBlockPositionData\@StructureBlockPalette\@\@QEAAX_KUBlockPositionData\@1\@\@Z
      */
-    MCAPI void addBlockPositionData(unsigned __int64, struct StructureBlockPalette::BlockPositionData);
+    MCAPI void addBlockPositionData(unsigned __int64, struct StructureBlockPalette::BlockPositionData); // NOLINT
     /**
      * @symbol
      * ?addMapping\@StructureBlockPalette\@\@QEAA_KV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI unsigned __int64 addMapping(std::unique_ptr<class CompoundTag>);
+    MCAPI unsigned __int64 addMapping(std::unique_ptr<class CompoundTag>); // NOLINT
     /**
      * @symbol
      * ?getAllBlockPositionData\@StructureBlockPalette\@\@QEBAAEBV?$unordered_map\@_KUBlockPositionData\@StructureBlockPalette\@\@U?$hash\@_K\@std\@\@U?$equal_to\@_K\@4\@V?$allocator\@U?$pair\@$$CB_KUBlockPositionData\@StructureBlockPalette\@\@\@std\@\@\@4\@\@std\@\@XZ
@@ -71,63 +69,63 @@ public:
         struct std::equal_to<unsigned __int64>,
         class std::allocator<
             struct std::pair<unsigned __int64 const, struct StructureBlockPalette::BlockPositionData>>> const&
-    getAllBlockPositionData() const;
+    getAllBlockPositionData() const; // NOLINT
     /**
      * @symbol
      * ?getBlock\@StructureBlockPalette\@\@QEBAAEBVBlock\@\@AEBVBlockPalette\@\@_KV?$NonOwnerPointer\@VIUnknownBlockTypeRegistry\@\@\@Bedrock\@\@\@Z
      */
     MCAPI class Block const&
     getBlock(class BlockPalette const&, unsigned __int64, class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry>)
-        const;
+        const; // NOLINT
     /**
      * @symbol ?getBlockPositionData\@StructureBlockPalette\@\@QEBAPEBUBlockPositionData\@1\@_K\@Z
      */
-    MCAPI struct StructureBlockPalette::BlockPositionData const* getBlockPositionData(unsigned __int64) const;
+    MCAPI struct StructureBlockPalette::BlockPositionData const* getBlockPositionData(unsigned __int64) const; // NOLINT
     /**
      * @symbol ?getSize\@StructureBlockPalette\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 getSize() const;
+    MCAPI unsigned __int64 getSize() const; // NOLINT
     /**
      * @symbol ?load\@StructureBlockPalette\@\@QEAA_NAEBVCompoundTag\@\@H\@Z
      */
-    MCAPI bool load(class CompoundTag const&, int);
+    MCAPI bool load(class CompoundTag const&, int); // NOLINT
     /**
      * @symbol
      * ?save\@StructureBlockPalette\@\@QEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::unique_ptr<class CompoundTag> save() const;
+    MCAPI std::unique_ptr<class CompoundTag> save() const; // NOLINT
     /**
      * @symbol ??1StructureBlockPalette\@\@QEAA\@XZ
      */
-    MCAPI ~StructureBlockPalette();
+    MCAPI ~StructureBlockPalette(); // NOLINT
 
     // protected:
     /**
      * @symbol
      * ?_parseBlockPalette\@StructureBlockPalette\@\@IEAA?AW4StructureBlockPaletteLoadResult\@\@AEBVCompoundTag\@\@\@Z
      */
-    MCAPI enum class StructureBlockPaletteLoadResult _parseBlockPalette(class CompoundTag const&);
+    MCAPI enum class StructureBlockPaletteLoadResult _parseBlockPalette(class CompoundTag const&); // NOLINT
     /**
      * @symbol
      * ?_parseBlockPositionData\@StructureBlockPalette\@\@IEAA?AW4StructureBlockPaletteLoadResult\@\@AEBVCompoundTag\@\@H\@Z
      */
-    MCAPI enum class StructureBlockPaletteLoadResult _parseBlockPositionData(class CompoundTag const&, int);
+    MCAPI enum class StructureBlockPaletteLoadResult _parseBlockPositionData(class CompoundTag const&, int); // NOLINT
     /**
      * @symbol
      * ?_parseBlockPositionDataList\@StructureBlockPalette\@\@IEAA?AW4StructureBlockPaletteLoadResult\@\@AEBVCompoundTag\@\@\@Z
      */
-    MCAPI enum class StructureBlockPaletteLoadResult _parseBlockPositionDataList(class CompoundTag const&);
+    MCAPI enum class StructureBlockPaletteLoadResult _parseBlockPositionDataList(class CompoundTag const&); // NOLINT
     /**
      * @symbol ?_saveBlockPositionDataList\@StructureBlockPalette\@\@IEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void _saveBlockPositionDataList(class CompoundTag&) const;
+    MCAPI void _saveBlockPositionDataList(class CompoundTag&) const; // NOLINT
 
     // private:
     /**
      * @symbol
      * ?_contentErrorMissingField\@StructureBlockPalette\@\@AEBAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void _contentErrorMissingField(std::string const&) const;
+    MCAPI void _contentErrorMissingField(std::string const&) const; // NOLINT
 
 protected:
 private:

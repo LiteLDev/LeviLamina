@@ -4,16 +4,15 @@
 
 struct BlockSet {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSET
 public:
+    // prevent constructor by default
     BlockSet& operator=(BlockSet const&) = delete;
     BlockSet(BlockSet const&)            = delete;
     BlockSet()                           = delete;
-#endif
 
 public:
     /**
      * @symbol ??1BlockSet\@\@QEAA\@XZ
      */
-    MCAPI ~BlockSet();
+    MCAPI ~BlockSet(); // NOLINT
 };

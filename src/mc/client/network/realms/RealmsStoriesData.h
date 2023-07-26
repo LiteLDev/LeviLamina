@@ -4,36 +4,35 @@
 
 class RealmsStoriesData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_REALMSSTORIESDATA
 public:
+    // prevent constructor by default
     RealmsStoriesData& operator=(RealmsStoriesData const&) = delete;
     RealmsStoriesData(RealmsStoriesData const&)            = delete;
     RealmsStoriesData()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ??0RealmsStoriesData\@\@QEAA\@AEAVLevelStorage\@\@\@Z
      */
-    MCAPI RealmsStoriesData(class LevelStorage&);
+    MCAPI RealmsStoriesData(class LevelStorage&); // NOLINT
     /**
      * @symbol ?didRealmsEventAlreadyHappen\@RealmsStoriesData\@\@QEBA_NW4RealmsEventId\@\@\@Z
      */
-    MCAPI bool didRealmsEventAlreadyHappen(enum class RealmsEventId) const;
+    MCAPI bool didRealmsEventAlreadyHappen(enum class RealmsEventId) const; // NOLINT
     /**
      * @symbol
      * ?getRealmsEventInternalName\@RealmsStoriesData\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4RealmsEventId\@\@\@Z
      */
-    MCAPI std::string const& getRealmsEventInternalName(enum class RealmsEventId) const;
+    MCAPI std::string const& getRealmsEventInternalName(enum class RealmsEventId) const; // NOLINT
     /**
      * @symbol ?setRealmsEventHappenedAndSave\@RealmsStoriesData\@\@QEAAXW4RealmsEventId\@\@\@Z
      */
-    MCAPI void setRealmsEventHappenedAndSave(enum class RealmsEventId);
+    MCAPI void setRealmsEventHappenedAndSave(enum class RealmsEventId); // NOLINT
     /**
      * @symbol
      * ?REALMS_STORIES_PREFIX\@RealmsStoriesData\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const REALMS_STORIES_PREFIX;
+    MCAPI static std::string const REALMS_STORIES_PREFIX; // NOLINT
 
     // private:
 
@@ -47,5 +46,5 @@ private:
         std::string,
         struct std::less<enum class RealmsEventId>,
         class std::allocator<struct std::pair<enum class RealmsEventId const, std::string>>> const
-        mRealmsEventInternalNames;
+        mRealmsEventInternalNames; // NOLINT
 };

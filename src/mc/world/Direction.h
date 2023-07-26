@@ -12,34 +12,41 @@ public:
     // Direction inner types define
     enum class Type {};
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIRECTION
 public:
+    // prevent constructor by default
     Direction& operator=(Direction const&) = delete;
     Direction(Direction const&)            = delete;
     Direction()                            = delete;
-#endif
 
 public:
     /**
+     * @symbol ?convertFacingDirectionToDirection\@Direction\@\@SA?AW4Type\@1\@E\@Z
+     */
+    MCAPI static enum class Direction::Type convertFacingDirectionToDirection(unsigned char); // NOLINT
+    /**
+     * @symbol ?getDirection\@Direction\@\@SA?AW4Type\@1\@MM\@Z
+     */
+    MCAPI static enum class Direction::Type getDirection(float, float); // NOLINT
+    /**
      * @symbol ?DIRECTION_CLOCKWISE\@Direction\@\@2QBW4Type\@1\@B
      */
-    MCAPI static enum class Direction::Type const DIRECTION_CLOCKWISE[];
+    MCAPI static enum class Direction::Type const DIRECTION_CLOCKWISE[]; // NOLINT
     /**
      * @symbol ?DIRECTION_COUNTER_CLOCKWISE\@Direction\@\@2QBW4Type\@1\@B
      */
-    MCAPI static enum class Direction::Type const DIRECTION_COUNTER_CLOCKWISE[];
+    MCAPI static enum class Direction::Type const DIRECTION_COUNTER_CLOCKWISE[]; // NOLINT
     /**
      * @symbol ?DIRECTION_FACING\@Direction\@\@2QBEB
      */
-    MCAPI static unsigned char const DIRECTION_FACING[];
+    MCAPI static unsigned char const DIRECTION_FACING[]; // NOLINT
     /**
      * @symbol ?DIRECTION_OPPOSITE\@Direction\@\@2QBW4Type\@1\@B
      */
-    MCAPI static enum class Direction::Type const DIRECTION_OPPOSITE[];
+    MCAPI static enum class Direction::Type const DIRECTION_OPPOSITE[]; // NOLINT
     /**
      * @symbol ?FACING_DIRECTION\@Direction\@\@2QBW4Type\@1\@B
      */
-    MCAPI static enum class Direction::Type const FACING_DIRECTION[];
+    MCAPI static enum class Direction::Type const FACING_DIRECTION[]; // NOLINT
     /**
      * @symbol
      * ?FROM_STRING_MAP\@Direction\@\@2V?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4Type\@Direction\@\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4Type\@Direction\@\@\@std\@\@\@2\@\@std\@\@B
@@ -49,15 +56,16 @@ public:
         enum class Direction::Type,
         struct std::hash<std::string>,
         struct std::equal_to<std::string>,
-        class std::allocator<struct std::pair<std::string const, enum class Direction::Type>>> const FROM_STRING_MAP;
+        class std::allocator<struct std::pair<std::string const, enum class Direction::Type>>> const
+        FROM_STRING_MAP; // NOLINT
     /**
      * @symbol ?STEP_X\@Direction\@\@2QBHB
      */
-    MCAPI static int const STEP_X[];
+    MCAPI static int const STEP_X[]; // NOLINT
     /**
      * @symbol ?STEP_Z\@Direction\@\@2QBHB
      */
-    MCAPI static int const STEP_Z[];
+    MCAPI static int const STEP_Z[]; // NOLINT
     /**
      * @symbol
      * ?TO_STRING_MAP\@Direction\@\@2V?$unordered_map\@IV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@U?$hash\@I\@2\@U?$equal_to\@I\@2\@V?$allocator\@U?$pair\@$$CBIV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@2\@\@std\@\@B
@@ -67,13 +75,5 @@ public:
         std::string,
         struct std::hash<unsigned int>,
         struct std::equal_to<unsigned int>,
-        class std::allocator<struct std::pair<unsigned int const, std::string>>> const TO_STRING_MAP;
-    /**
-     * @symbol ?convertFacingDirectionToDirection\@Direction\@\@SA?AW4Type\@1\@E\@Z
-     */
-    MCAPI static enum class Direction::Type convertFacingDirectionToDirection(unsigned char);
-    /**
-     * @symbol ?getDirection\@Direction\@\@SA?AW4Type\@1\@MM\@Z
-     */
-    MCAPI static enum class Direction::Type getDirection(float, float);
+        class std::allocator<struct std::pair<unsigned int const, std::string>>> const TO_STRING_MAP; // NOLINT
 };

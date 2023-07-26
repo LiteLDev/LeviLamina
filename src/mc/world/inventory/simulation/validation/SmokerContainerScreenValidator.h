@@ -7,20 +7,19 @@
 
 class SmokerContainerScreenValidator : public ::FurnaceContainerScreenValidator {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMOKERCONTAINERSCREENVALIDATOR
 public:
+    // prevent constructor by default
     SmokerContainerScreenValidator& operator=(SmokerContainerScreenValidator const&) = delete;
     SmokerContainerScreenValidator(SmokerContainerScreenValidator const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @symbol ??0SmokerContainerScreenValidator\@\@QEAA\@XZ
      */
-    MCAPI SmokerContainerScreenValidator();
+    MCAPI SmokerContainerScreenValidator(); // NOLINT
 };

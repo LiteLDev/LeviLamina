@@ -9,27 +9,26 @@ namespace Json { class Value; }
 
 class LootItemKilledByActorCondition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEMKILLEDBYACTORCONDITION
 public:
+    // prevent constructor by default
     LootItemKilledByActorCondition& operator=(LootItemKilledByActorCondition const&) = delete;
     LootItemKilledByActorCondition(LootItemKilledByActorCondition const&)            = delete;
     LootItemKilledByActorCondition()                                                 = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?applies\@LootItemKilledByActorCondition\@\@UEAA_NAEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual bool applies(class Random&, class LootTableContext&);
+    virtual bool applies(class Random&, class LootTableContext&); // NOLINT
     /**
      * @symbol
      * ?deserialize\@LootItemKilledByActorCondition\@\@SA?AV?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@VValue\@Json\@\@\@Z
      */
-    MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
+    MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value); // NOLINT
 };

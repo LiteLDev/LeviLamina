@@ -4,12 +4,9 @@
 
 class IDataInput {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IDATAINPUT
 public:
+    // prevent constructor by default
     IDataInput& operator=(IDataInput const&) = delete;
     IDataInput(IDataInput const&)            = delete;
     IDataInput()                             = delete;
-#endif
-
-public:
 };

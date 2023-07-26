@@ -4,12 +4,11 @@
 
 class IContentKeyProvider {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICONTENTKEYPROVIDER
 public:
+    // prevent constructor by default
     IContentKeyProvider& operator=(IContentKeyProvider const&) = delete;
     IContentKeyProvider(IContentKeyProvider const&)            = delete;
     IContentKeyProvider()                                      = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONTENTKEYPROVIDER
@@ -17,10 +16,10 @@ public:
      * @symbol
      * ?getAlternateContentKey\@IContentKeyProvider\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVContentIdentity\@\@\@Z
      */
-    MCVAPI std::string getAlternateContentKey(class ContentIdentity const&) const;
+    MCVAPI std::string getAlternateContentKey(class ContentIdentity const&) const; // NOLINT
     /**
      * @symbol ?requireEncryptedReads\@IContentKeyProvider\@\@UEBA_NXZ
      */
-    MCVAPI bool requireEncryptedReads() const;
+    MCVAPI bool requireEncryptedReads() const; // NOLINT
 #endif
 };

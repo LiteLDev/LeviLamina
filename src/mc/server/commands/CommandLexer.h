@@ -12,26 +12,22 @@ public:
     // CommandLexer inner types define
     struct Token {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDLEXER_TOKEN
     public:
+        // prevent constructor by default
         Token& operator=(Token const&) = delete;
         Token(Token const&)            = delete;
         Token()                        = delete;
-#endif
-
-    public:
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDLEXER
 public:
+    // prevent constructor by default
     CommandLexer& operator=(CommandLexer const&) = delete;
     CommandLexer(CommandLexer const&)            = delete;
     CommandLexer()                               = delete;
-#endif
 
 public:
     /**
      * @symbol ?step\@CommandLexer\@\@QEAAXXZ
      */
-    MCAPI void step();
+    MCAPI void step(); // NOLINT
 };

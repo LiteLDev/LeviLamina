@@ -16,48 +16,43 @@ public:
     // SoundEventRequest inner types define
     struct PlainData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SOUNDEVENTREQUEST_PLAINDATA
     public:
+        // prevent constructor by default
         PlainData& operator=(PlainData const&) = delete;
         PlainData(PlainData const&)            = delete;
         PlainData()                            = delete;
-#endif
 
     public:
         /**
          * @symbol ??1PlainData\@SoundEventRequest\@\@QEAA\@XZ
          */
-        MCAPI ~PlainData();
+        MCAPI ~PlainData(); // NOLINT
     };
 
     struct SynchronizedPlainData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SOUNDEVENTREQUEST_SYNCHRONIZEDPLAINDATA
     public:
+        // prevent constructor by default
         SynchronizedPlainData& operator=(SynchronizedPlainData const&) = delete;
         SynchronizedPlainData(SynchronizedPlainData const&)            = delete;
         SynchronizedPlainData()                                        = delete;
-#endif
-
-    public:
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SOUNDEVENTREQUEST
 public:
+    // prevent constructor by default
     SoundEventRequest& operator=(SoundEventRequest const&) = delete;
     SoundEventRequest(SoundEventRequest const&)            = delete;
     SoundEventRequest()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ??0SoundEventRequest\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI SoundEventRequest(struct SoundEventRequest&&);
+    MCAPI SoundEventRequest(struct SoundEventRequest&&); // NOLINT
     /**
      * @symbol ??1SoundEventRequest\@\@QEAA\@XZ
      */
-    MCAPI ~SoundEventRequest();
+    MCAPI ~SoundEventRequest(); // NOLINT
     /**
      * @symbol
      * ?tryPlaySound\@SoundEventRequest\@\@SA?AV?$optional\@USoundEventRequest\@\@\@std\@\@V?$AutomaticID\@VDimension\@\@H\@\@AEBVSynchedActorData\@\@AEBUActorDefinitionIdentifier\@\@W4LevelSoundEvent\@\@AEBVVec3\@\@H\@Z
@@ -69,5 +64,5 @@ public:
         enum class LevelSoundEvent,
         class Vec3 const&,
         int
-    );
+    ); // NOLINT
 };

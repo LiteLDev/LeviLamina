@@ -6,18 +6,17 @@ namespace MolangVersionMap {
 
 class VersionInfo {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGVERSIONMAP_VERSIONINFO
 public:
+    // prevent constructor by default
     VersionInfo& operator=(VersionInfo const&) = delete;
     VersionInfo(VersionInfo const&)            = delete;
     VersionInfo()                              = delete;
-#endif
 
 public:
     /**
      * @symbol ??1VersionInfo\@MolangVersionMap\@\@QEAA\@XZ
      */
-    MCAPI ~VersionInfo();
+    MCAPI ~VersionInfo(); // NOLINT
 };
 
 }; // namespace MolangVersionMap

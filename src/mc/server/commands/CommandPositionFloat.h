@@ -4,12 +4,9 @@
 
 class CommandPositionFloat {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDPOSITIONFLOAT
 public:
+    // prevent constructor by default
     CommandPositionFloat& operator=(CommandPositionFloat const&) = delete;
     CommandPositionFloat(CommandPositionFloat const&)            = delete;
     CommandPositionFloat()                                       = delete;
-#endif
-
-public:
 };

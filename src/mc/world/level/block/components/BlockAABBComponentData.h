@@ -4,12 +4,9 @@
 
 class BlockAABBComponentData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKAABBCOMPONENTDATA
 public:
+    // prevent constructor by default
     BlockAABBComponentData& operator=(BlockAABBComponentData const&) = delete;
     BlockAABBComponentData(BlockAABBComponentData const&)            = delete;
     BlockAABBComponentData()                                         = delete;
-#endif
-
-public:
 };

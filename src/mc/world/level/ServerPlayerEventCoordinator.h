@@ -4,32 +4,31 @@
 
 class ServerPlayerEventCoordinator {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERPLAYEREVENTCOORDINATOR
 public:
+    // prevent constructor by default
     ServerPlayerEventCoordinator& operator=(ServerPlayerEventCoordinator const&) = delete;
     ServerPlayerEventCoordinator(ServerPlayerEventCoordinator const&)            = delete;
     ServerPlayerEventCoordinator()                                               = delete;
-#endif
 
 public:
     /**
      * @symbol ?sendPlayerAuthInputApplied\@ServerPlayerEventCoordinator\@\@QEAAXAEAVPlayer\@\@\@Z
      */
-    MCAPI void sendPlayerAuthInputApplied(class Player&);
+    MCAPI void sendPlayerAuthInputApplied(class Player&); // NOLINT
     /**
      * @symbol ?sendPlayerAuthInputReceived\@ServerPlayerEventCoordinator\@\@QEAAXAEAVPlayer\@\@\@Z
      */
-    MCAPI void sendPlayerAuthInputReceived(class Player&);
+    MCAPI void sendPlayerAuthInputReceived(class Player&); // NOLINT
     /**
      * @symbol ?sendPlayerMovementAnomaly\@ServerPlayerEventCoordinator\@\@QEAAXAEAVPlayer\@\@AEBVVec3\@\@MM\@Z
      */
-    MCAPI void sendPlayerMovementAnomaly(class Player&, class Vec3 const&, float, float);
+    MCAPI void sendPlayerMovementAnomaly(class Player&, class Vec3 const&, float, float); // NOLINT
     /**
      * @symbol ?sendPlayerMovementCorrected\@ServerPlayerEventCoordinator\@\@QEAAXAEAVPlayer\@\@AEBVVec3\@\@MM\@Z
      */
-    MCAPI void sendPlayerMovementCorrected(class Player&, class Vec3 const&, float, float);
+    MCAPI void sendPlayerMovementCorrected(class Player&, class Vec3 const&, float, float); // NOLINT
     /**
      * @symbol ?sendPlayerOnGround\@ServerPlayerEventCoordinator\@\@QEAAXAEAVPlayer\@\@\@Z
      */
-    MCAPI void sendPlayerOnGround(class Player&);
+    MCAPI void sendPlayerOnGround(class Player&); // NOLINT
 };

@@ -4,23 +4,22 @@
 
 struct ChunksLoadedInfo {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKSLOADEDINFO
 public:
+    // prevent constructor by default
     ChunksLoadedInfo& operator=(ChunksLoadedInfo const&) = delete;
     ChunksLoadedInfo(ChunksLoadedInfo const&)            = delete;
     ChunksLoadedInfo()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?getChunkViewSource\@ChunksLoadedInfo\@\@QEBA?AV?$unique_ptr\@VChunkViewSource\@\@U?$default_delete\@VChunkViewSource\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::unique_ptr<class ChunkViewSource> getChunkViewSource() const;
+    MCAPI std::unique_ptr<class ChunkViewSource> getChunkViewSource() const; // NOLINT
     /**
      * @symbol ?getChunksLoadedStatus\@ChunksLoadedInfo\@\@QEBA?AW4ChunksLoadedStatus\@\@XZ
      */
-    MCAPI enum class ChunksLoadedStatus getChunksLoadedStatus() const;
+    MCAPI enum class ChunksLoadedStatus getChunksLoadedStatus() const; // NOLINT
     /**
      * @symbol
      * ?areAllChunksLoadedAndTicking\@ChunksLoadedInfo\@\@SA?AW4ChunksLoadedStatus\@\@AEBVDimension\@\@AEAVChunkSource\@\@AEBUBounds\@\@_NUTick\@\@_N\@Z
@@ -32,7 +31,7 @@ public:
         bool,
         struct Tick,
         bool
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?calculateChunksLoadedInfo\@ChunksLoadedInfo\@\@SA?AU1\@AEBVDimension\@\@AEAVChunkSource\@\@AEBUBounds\@\@_NUTick\@\@_N55\@Z
@@ -46,5 +45,5 @@ public:
         bool,
         bool,
         bool
-    );
+    ); // NOLINT
 };

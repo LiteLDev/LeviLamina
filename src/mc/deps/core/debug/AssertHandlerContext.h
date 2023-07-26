@@ -4,16 +4,15 @@
 
 struct AssertHandlerContext {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ASSERTHANDLERCONTEXT
 public:
+    // prevent constructor by default
     AssertHandlerContext& operator=(AssertHandlerContext const&) = delete;
     AssertHandlerContext(AssertHandlerContext const&)            = delete;
     AssertHandlerContext()                                       = delete;
-#endif
 
 public:
     /**
      * @symbol ??1AssertHandlerContext\@\@QEAA\@XZ
      */
-    MCAPI ~AssertHandlerContext();
+    MCAPI ~AssertHandlerContext(); // NOLINT
 };

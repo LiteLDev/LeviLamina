@@ -4,12 +4,9 @@
 
 struct MineshaftData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINESHAFTDATA
 public:
+    // prevent constructor by default
     MineshaftData& operator=(MineshaftData const&) = delete;
     MineshaftData(MineshaftData const&)            = delete;
     MineshaftData()                                = delete;
-#endif
-
-public:
 };

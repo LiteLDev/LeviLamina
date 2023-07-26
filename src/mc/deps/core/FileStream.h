@@ -11,29 +11,28 @@ namespace Core {
 
 class FileStream {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORE_FILESTREAM
 public:
+    // prevent constructor by default
     FileStream& operator=(FileStream const&) = delete;
     FileStream(FileStream const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0FileStream\@Core\@\@QEAA\@AEBVPath\@1\@H\@Z
      */
-    MCAPI FileStream(class Core::Path const&, int);
+    MCAPI FileStream(class Core::Path const&, int); // NOLINT
     /**
      * @symbol ??0FileStream\@Core\@\@QEAA\@XZ
      */
-    MCAPI FileStream();
+    MCAPI FileStream(); // NOLINT
     /**
      * @symbol ?open\@FileStream\@Core\@\@QEAAXAEBVPath\@2\@H\@Z
      */
-    MCAPI void open(class Core::Path const&, int);
+    MCAPI void open(class Core::Path const&, int); // NOLINT
     /**
      * @symbol ?setLoggingEnabled\@FileStream\@Core\@\@QEAAX_N\@Z
      */
-    MCAPI void setLoggingEnabled(bool);
+    MCAPI void setLoggingEnabled(bool); // NOLINT
 };
 
 }; // namespace Core

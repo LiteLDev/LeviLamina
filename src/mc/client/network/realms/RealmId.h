@@ -6,14 +6,11 @@ namespace Realms {
 
 struct RealmId {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_REALMS_REALMID
 public:
+    // prevent constructor by default
     RealmId& operator=(RealmId const&) = delete;
     RealmId(RealmId const&)            = delete;
     RealmId()                          = delete;
-#endif
-
-public:
 };
 
 }; // namespace Realms

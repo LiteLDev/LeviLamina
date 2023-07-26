@@ -4,35 +4,34 @@
 
 class WorldTemplateLevelData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDTEMPLATELEVELDATA
 public:
+    // prevent constructor by default
     WorldTemplateLevelData& operator=(WorldTemplateLevelData const&) = delete;
     WorldTemplateLevelData(WorldTemplateLevelData const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0WorldTemplateLevelData\@\@QEAA\@XZ
      */
-    MCAPI WorldTemplateLevelData();
+    MCAPI WorldTemplateLevelData(); // NOLINT
     /**
      * @symbol ?getBaseGameVersion\@WorldTemplateLevelData\@\@QEBAAEBVBaseGameVersion\@\@XZ
      */
-    MCAPI class BaseGameVersion const& getBaseGameVersion() const;
+    MCAPI class BaseGameVersion const& getBaseGameVersion() const; // NOLINT
     /**
      * @symbol ??1WorldTemplateLevelData\@\@QEAA\@XZ
      */
-    MCAPI ~WorldTemplateLevelData();
+    MCAPI ~WorldTemplateLevelData(); // NOLINT
 
     // protected:
     /**
      * @symbol ?_getTagData\@WorldTemplateLevelData\@\@IEAAXAEBVCompoundTag\@\@\@Z
      */
-    MCAPI void _getTagData(class CompoundTag const&);
+    MCAPI void _getTagData(class CompoundTag const&); // NOLINT
     /**
      * @symbol ?_setTagData\@WorldTemplateLevelData\@\@IEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void _setTagData(class CompoundTag&) const;
+    MCAPI void _setTagData(class CompoundTag&) const; // NOLINT
 
 protected:
 };

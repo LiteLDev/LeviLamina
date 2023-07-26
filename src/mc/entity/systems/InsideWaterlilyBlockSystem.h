@@ -4,16 +4,15 @@
 
 class InsideWaterlilyBlockSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEWATERLILYBLOCKSYSTEM
 public:
+    // prevent constructor by default
     InsideWaterlilyBlockSystem& operator=(InsideWaterlilyBlockSystem const&) = delete;
     InsideWaterlilyBlockSystem(InsideWaterlilyBlockSystem const&)            = delete;
     InsideWaterlilyBlockSystem()                                             = delete;
-#endif
 
 public:
     /**
      * @symbol ?createDestroyWaterlilySystem\@InsideWaterlilyBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createDestroyWaterlilySystem();
+    MCAPI static struct TickingSystemWithInfo createDestroyWaterlilySystem(); // NOLINT
 };

@@ -12,31 +12,30 @@ namespace JsonUtil { class EmptyClass; }
 
 class CollisionBoxDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COLLISIONBOXDEFINITION
 public:
+    // prevent constructor by default
     CollisionBoxDefinition& operator=(CollisionBoxDefinition const&) = delete;
     CollisionBoxDefinition(CollisionBoxDefinition const&)            = delete;
     CollisionBoxDefinition()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol ?initialize\@CollisionBoxDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVCollisionBoxComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class CollisionBoxComponent&) const;
+    MCAPI void initialize(class EntityContext&, class CollisionBoxComponent&) const; // NOLINT
     /**
      * @symbol ?setHeight\@CollisionBoxDefinition\@\@QEAAXAEBM\@Z
      */
-    MCAPI void setHeight(float const&);
+    MCAPI void setHeight(float const&); // NOLINT
     /**
      * @symbol ?setWidth\@CollisionBoxDefinition\@\@QEAAXAEBM\@Z
      */
-    MCAPI void setWidth(float const&);
+    MCAPI void setWidth(float const&); // NOLINT
     /**
      * @symbol
      * ?buildSchema\@CollisionBoxDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VCollisionBoxDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class CollisionBoxDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      class CollisionBoxDefinition>>&); // NOLINT
 };

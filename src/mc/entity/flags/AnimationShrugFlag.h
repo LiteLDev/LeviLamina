@@ -6,14 +6,11 @@ namespace AgentComponents {
 
 struct AnimationShrugFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMPONENTS_ANIMATIONSHRUGFLAG
 public:
+    // prevent constructor by default
     AnimationShrugFlag& operator=(AnimationShrugFlag const&) = delete;
     AnimationShrugFlag(AnimationShrugFlag const&)            = delete;
     AnimationShrugFlag()                                     = delete;
-#endif
-
-public:
 };
 
 }; // namespace AgentComponents

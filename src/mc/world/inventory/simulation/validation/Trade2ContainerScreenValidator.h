@@ -7,20 +7,19 @@
 
 class Trade2ContainerScreenValidator : public ::ContainerScreenValidatorBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADE2CONTAINERSCREENVALIDATOR
 public:
+    // prevent constructor by default
     Trade2ContainerScreenValidator& operator=(Trade2ContainerScreenValidator const&) = delete;
     Trade2ContainerScreenValidator(Trade2ContainerScreenValidator const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @symbol ??0Trade2ContainerScreenValidator\@\@QEAA\@XZ
      */
-    MCAPI Trade2ContainerScreenValidator();
+    MCAPI Trade2ContainerScreenValidator(); // NOLINT
 };

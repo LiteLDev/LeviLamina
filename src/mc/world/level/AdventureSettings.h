@@ -4,15 +4,14 @@
 
 struct AdventureSettings {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADVENTURESETTINGS
 public:
+    // prevent constructor by default
     AdventureSettings& operator=(AdventureSettings const&) = delete;
     AdventureSettings(AdventureSettings const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0AdventureSettings\@\@QEAA\@XZ
      */
-    MCAPI AdventureSettings();
+    MCAPI AdventureSettings(); // NOLINT
 };

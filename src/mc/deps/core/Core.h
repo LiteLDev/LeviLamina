@@ -15,41 +15,42 @@ namespace Core {
 /**
  * @symbol ?RESULT_FAILED_MESSAGE\@Core\@\@3PEBDEB
  */
-MCAPI extern char const* RESULT_FAILED_MESSAGE;
+MCAPI extern char const* RESULT_FAILED_MESSAGE; // NOLINT
 /**
  * @symbol ?RESULT_NOT_IMPLEMENTED_MESSAGE\@Core\@\@3PEBDEB
  */
-MCAPI extern char const* RESULT_NOT_IMPLEMENTED_MESSAGE;
+MCAPI extern char const* RESULT_NOT_IMPLEMENTED_MESSAGE; // NOLINT
 /**
  * @symbol ?RESULT_SUCCEEDED_MESSAGE\@Core\@\@3PEBDEB
  */
-MCAPI extern char const* RESULT_SUCCEEDED_MESSAGE;
+MCAPI extern char const* RESULT_SUCCEEDED_MESSAGE; // NOLINT
 /**
  * @symbol ??ICore\@\@YA_KW4DirectoryIterationFlags\@0\@0\@Z
  */
-MCAPI unsigned __int64 operator&(enum class Core::DirectoryIterationFlags, enum class Core::DirectoryIterationFlags);
+MCAPI unsigned __int64
+operator&(enum class Core::DirectoryIterationFlags, enum class Core::DirectoryIterationFlags); // NOLINT
 /**
  * @symbol ??UCore\@\@YA?AW4DirectoryIterationFlags\@0\@W410\@0\@Z
  */
 MCAPI enum class Core::DirectoryIterationFlags
-operator|(enum class Core::DirectoryIterationFlags, enum class Core::DirectoryIterationFlags);
+operator|(enum class Core::DirectoryIterationFlags, enum class Core::DirectoryIterationFlags); // NOLINT
 /**
  * @symbol ?sLockBlobName\@Core\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
  */
-MCAPI extern std::string const sLockBlobName;
+MCAPI extern std::string const sLockBlobName; // NOLINT
 /**
  * @symbol ?sMultiChunkTag\@Core\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
  */
-MCAPI extern std::string const sMultiChunkTag;
+MCAPI extern std::string const sMultiChunkTag; // NOLINT
 /**
  * @symbol ?sRootStorageArea\@Core\@\@3V?$shared_ptr\@VFileStorageArea\@Core\@\@\@std\@\@A
  */
-MCAPI extern class std::shared_ptr<class Core::FileStorageArea> sRootStorageArea;
+MCAPI extern class std::shared_ptr<class Core::FileStorageArea> sRootStorageArea; // NOLINT
 /**
  * @symbol
  * ?transferDirectory\@Core\@\@YA?AVResult\@1\@PEAVFileSystemImpl\@1\@AEBVPath\@1\@01AEBV?$function\@$$A6A?AVResult\@Core\@\@AEBVPath\@2\@0\@Z\@std\@\@\@Z
  */
 MCAPI class Core::Result
-transferDirectory(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&, class std::function<class Core::Result(class Core::Path const&, class Core::Path const&)> const&);
+transferDirectory(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&, class std::function<class Core::Result(class Core::Path const&, class Core::Path const&)> const&); // NOLINT
 
 }; // namespace Core

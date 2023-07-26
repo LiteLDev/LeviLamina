@@ -5,23 +5,27 @@
 // auto generated inclusion list
 #include "mc/external/scripting/InterfaceBindingBuilder.h"
 
+// auto generated forward declare list
+// clang-format off
+class CompoundBlockVolumeItem;
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class ScriptCompoundBlockVolumeItem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTCOMPOUNDBLOCKVOLUMEITEM
 public:
+    // prevent constructor by default
     ScriptCompoundBlockVolumeItem& operator=(ScriptCompoundBlockVolumeItem const&) = delete;
     ScriptCompoundBlockVolumeItem(ScriptCompoundBlockVolumeItem const&)            = delete;
     ScriptCompoundBlockVolumeItem()                                                = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?bindInterface\@ScriptCompoundBlockVolumeItem\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@VCompoundBlockVolumeItem\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::InterfaceBindingBuilder<class CompoundBlockVolumeItem> bindInterface();
+    MCAPI static class Scripting::InterfaceBindingBuilder<class CompoundBlockVolumeItem> bindInterface(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

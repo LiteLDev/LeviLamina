@@ -14,12 +14,11 @@ namespace ScriptModuleMinecraft {
 
 class ScriptActorLifetimeStateBinding {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTACTORLIFETIMESTATEBINDING
 public:
+    // prevent constructor by default
     ScriptActorLifetimeStateBinding& operator=(ScriptActorLifetimeStateBinding const&) = delete;
     ScriptActorLifetimeStateBinding(ScriptActorLifetimeStateBinding const&)            = delete;
     ScriptActorLifetimeStateBinding()                                                  = delete;
-#endif
 
 public:
     /**
@@ -28,7 +27,7 @@ public:
      */
     MCAPI static class Scripting::
         EnumBindingBuilder<std::string, enum class ScriptModuleMinecraft::ScriptActorLifetimeState>
-        bind();
+        bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

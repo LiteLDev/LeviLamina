@@ -17,81 +17,79 @@ public:
     // CerealItemComponentFactory inner types define
     struct Constructor {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CEREALITEMCOMPONENTFACTORY_CONSTRUCTOR
     public:
+        // prevent constructor by default
         Constructor& operator=(Constructor const&) = delete;
         Constructor(Constructor const&)            = delete;
         Constructor()                              = delete;
-#endif
 
     public:
         /**
          * @symbol ??4Constructor\@CerealItemComponentFactory\@\@QEAAAEAU01\@$$QEAU01\@\@Z
          */
         MCAPI struct CerealItemComponentFactory::Constructor&
-        operator=(struct CerealItemComponentFactory::Constructor&&);
+        operator=(struct CerealItemComponentFactory::Constructor&&); // NOLINT
         /**
          * @symbol ??1Constructor\@CerealItemComponentFactory\@\@QEAA\@XZ
          */
-        MCAPI ~Constructor();
+        MCAPI ~Constructor(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CEREALITEMCOMPONENTFACTORY
 public:
+    // prevent constructor by default
     CerealItemComponentFactory& operator=(CerealItemComponentFactory const&) = delete;
     CerealItemComponentFactory(CerealItemComponentFactory const&)            = delete;
     CerealItemComponentFactory()                                             = delete;
-#endif
 
 public:
     /**
      * @symbol ?addAllComponentUpgrades\@CerealItemComponentFactory\@\@SAXAEAVCerealDocumentUpgrader\@\@\@Z
      */
-    MCAPI static void addAllComponentUpgrades(class CerealDocumentUpgrader&);
+    MCAPI static void addAllComponentUpgrades(class CerealDocumentUpgrader&); // NOLINT
     /**
      * @symbol
      * ?bindAllComponentSchemas\@CerealItemComponentFactory\@\@SAXAEAVSchemaFactory\@cereal\@\@AEBVSemVersion\@\@\@Z
      */
-    MCAPI static void bindAllComponentSchemas(class cereal::SchemaFactory&, class SemVersion const&);
+    MCAPI static void bindAllComponentSchemas(class cereal::SchemaFactory&, class SemVersion const&); // NOLINT
     /**
      * @symbol
      * ?constructItemComponent\@CerealItemComponentFactory\@\@SA?AV?$shared_ptr\@VItemComponent\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
      */
-    MCAPI static class std::shared_ptr<class ItemComponent> constructItemComponent(std::string const&);
+    MCAPI static class std::shared_ptr<class ItemComponent> constructItemComponent(std::string const&); // NOLINT
     /**
      * @symbol ?getItemContext\@CerealItemComponentFactory\@\@SAPEAVComponentItem\@\@XZ
      */
-    MCAPI static class ComponentItem* getItemContext();
+    MCAPI static class ComponentItem* getItemContext(); // NOLINT
     /**
      * @symbol
      * ?getReleasedMinFormatVersionForAnyComponent\@CerealItemComponentFactory\@\@SA?AV?$optional\@VSemVersion\@\@\@std\@\@XZ
      */
-    MCAPI static class std::optional<class SemVersion> getReleasedMinFormatVersionForAnyComponent();
+    MCAPI static class std::optional<class SemVersion> getReleasedMinFormatVersionForAnyComponent(); // NOLINT
     /**
      * @symbol
      * ?isRegisteredComponent\@CerealItemComponentFactory\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI static bool isRegisteredComponent(std::string const&);
+    MCAPI static bool isRegisteredComponent(std::string const&); // NOLINT
     /**
      * @symbol
      * ?registerDeprecatedComponent\@CerealItemComponentFactory\@\@SAX$$QEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
-    MCAPI static void registerDeprecatedComponent(std::string const&&, std::string const&&);
+    MCAPI static void registerDeprecatedComponent(std::string const&&, std::string const&&); // NOLINT
     /**
      * @symbol ?resetItemContext\@CerealItemComponentFactory\@\@SAXXZ
      */
-    MCAPI static void resetItemContext();
+    MCAPI static void resetItemContext(); // NOLINT
     /**
      * @symbol ?setItemContext\@CerealItemComponentFactory\@\@SAXPEAVComponentItem\@\@\@Z
      */
-    MCAPI static void setItemContext(class ComponentItem*);
+    MCAPI static void setItemContext(class ComponentItem*); // NOLINT
 
     // private:
     /**
      * @symbol
      * ?updateReleasedMinFormatVersionForAnyComponentIfLower\@CerealItemComponentFactory\@\@CAXVSemVersion\@\@\@Z
      */
-    MCAPI static void updateReleasedMinFormatVersionForAnyComponentIfLower(class SemVersion);
+    MCAPI static void updateReleasedMinFormatVersionForAnyComponentIfLower(class SemVersion); // NOLINT
 
 private:
     /**
@@ -104,11 +102,11 @@ private:
         struct std::hash<std::string>,
         struct std::equal_to<std::string>,
         class std::allocator<struct std::pair<std::string const, class SemVersion>>>
-        mDeprecatedComponents;
+        mDeprecatedComponents; // NOLINT
     /**
      * @symbol ?mItemContext\@CerealItemComponentFactory\@\@0PEAVComponentItem\@\@EA
      */
-    MCAPI static class ComponentItem* mItemContext;
+    MCAPI static class ComponentItem* mItemContext; // NOLINT
     /**
      * @symbol
      * ?mRegisteredComponents\@CerealItemComponentFactory\@\@0V?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UConstructor\@CerealItemComponentFactory\@\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UConstructor\@CerealItemComponentFactory\@\@\@std\@\@\@2\@\@std\@\@A
@@ -119,10 +117,10 @@ private:
         struct std::hash<std::string>,
         struct std::equal_to<std::string>,
         class std::allocator<struct std::pair<std::string const, struct CerealItemComponentFactory::Constructor>>>
-        mRegisteredComponents;
+        mRegisteredComponents; // NOLINT
     /**
      * @symbol
      * ?mReleasedMinFormatVersionForAnyComponent\@CerealItemComponentFactory\@\@0V?$optional\@VSemVersion\@\@\@std\@\@A
      */
-    MCAPI static class std::optional<class SemVersion> mReleasedMinFormatVersionForAnyComponent;
+    MCAPI static class std::optional<class SemVersion> mReleasedMinFormatVersionForAnyComponent; // NOLINT
 };

@@ -5,12 +5,9 @@
 template <typename T0>
 struct MutableServerNetworkGameplayEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MUTABLESERVERNETWORKGAMEPLAYEVENT
 public:
+    // prevent constructor by default
     MutableServerNetworkGameplayEvent& operator=(MutableServerNetworkGameplayEvent const&) = delete;
     MutableServerNetworkGameplayEvent(MutableServerNetworkGameplayEvent const&)            = delete;
     MutableServerNetworkGameplayEvent()                                                    = delete;
-#endif
-
-public:
 };

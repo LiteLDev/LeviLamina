@@ -6,14 +6,11 @@ namespace RakNet {
 
 struct PublicKey {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKNET_PUBLICKEY
 public:
+    // prevent constructor by default
     PublicKey& operator=(PublicKey const&) = delete;
     PublicKey(PublicKey const&)            = delete;
     PublicKey()                            = delete;
-#endif
-
-public:
 };
 
 }; // namespace RakNet

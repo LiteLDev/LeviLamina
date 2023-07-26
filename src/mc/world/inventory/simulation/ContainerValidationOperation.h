@@ -4,12 +4,9 @@
 
 struct ContainerValidationOperation {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERVALIDATIONOPERATION
 public:
+    // prevent constructor by default
     ContainerValidationOperation& operator=(ContainerValidationOperation const&) = delete;
     ContainerValidationOperation(ContainerValidationOperation const&)            = delete;
     ContainerValidationOperation()                                               = delete;
-#endif
-
-public:
 };

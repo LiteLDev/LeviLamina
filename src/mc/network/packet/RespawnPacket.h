@@ -8,52 +8,51 @@
 
 class RespawnPacket : public ::Packet {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESPAWNPACKET
 public:
+    // prevent constructor by default
     RespawnPacket& operator=(RespawnPacket const&) = delete;
     RespawnPacket(RespawnPacket const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?getId\@RespawnPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
-    virtual enum class MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?getName\@RespawnPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string getName() const;
+    virtual std::string getName() const; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?write\@RespawnPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream&) const; // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?_read\@RespawnPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESPAWNPACKET
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~RespawnPacket();
+    MCVAPI ~RespawnPacket(); // NOLINT
 #endif
     /**
      * @symbol ??0RespawnPacket\@\@QEAA\@XZ
      */
-    MCAPI RespawnPacket();
+    MCAPI RespawnPacket(); // NOLINT
     /**
      * @symbol ??0RespawnPacket\@\@QEAA\@AEBVVec3\@\@AEBW4PlayerRespawnState\@\@\@Z
      */
-    MCAPI RespawnPacket(class Vec3 const&, enum class PlayerRespawnState const&);
+    MCAPI RespawnPacket(class Vec3 const&, enum class PlayerRespawnState const&); // NOLINT
 };

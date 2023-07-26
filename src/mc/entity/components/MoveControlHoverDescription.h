@@ -7,33 +7,32 @@
 
 class MoveControlHoverDescription : public ::MoveControlDescription {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVECONTROLHOVERDESCRIPTION
 public:
+    // prevent constructor by default
     MoveControlHoverDescription& operator=(MoveControlHoverDescription const&) = delete;
     MoveControlHoverDescription(MoveControlHoverDescription const&)            = delete;
     MoveControlHoverDescription()                                              = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol ?getJsonName\@MoveControlHoverDescription\@\@UEBAPEBDXZ
      */
-    virtual char const* getJsonName() const;
+    virtual char const* getJsonName() const; // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?deserializeData\@MoveControlDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROLHOVERDESCRIPTION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~MoveControlHoverDescription();
+    MCVAPI ~MoveControlHoverDescription(); // NOLINT
 #endif
 };

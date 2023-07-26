@@ -4,16 +4,15 @@
 
 class VehicleInputSwitchRequestSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VEHICLEINPUTSWITCHREQUESTSYSTEM
 public:
+    // prevent constructor by default
     VehicleInputSwitchRequestSystem& operator=(VehicleInputSwitchRequestSystem const&) = delete;
     VehicleInputSwitchRequestSystem(VehicleInputSwitchRequestSystem const&)            = delete;
     VehicleInputSwitchRequestSystem()                                                  = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@VehicleInputSwitchRequestSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
 };

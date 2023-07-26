@@ -7,12 +7,11 @@
 
 class BiomeManager {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMEMANAGER
 public:
+    // prevent constructor by default
     BiomeManager& operator=(BiomeManager const&) = delete;
     BiomeManager(BiomeManager const&)            = delete;
     BiomeManager()                               = delete;
-#endif
 
 public:
     /**
@@ -20,19 +19,19 @@ public:
      * ??0BiomeManager\@\@QEAA\@V?$unique_ptr\@VBiomeRegistry\@\@U?$default_delete\@VBiomeRegistry\@\@\@std\@\@\@std\@\@W4FactoryScope\@BiomeComponentFactory\@\@_NV?$unique_ptr\@VAutomaticFeatureRules\@\@U?$default_delete\@VAutomaticFeatureRules\@\@\@std\@\@\@2\@\@Z
      */
     MCAPI
-    BiomeManager(std::unique_ptr<class BiomeRegistry>, enum class BiomeComponentFactory::FactoryScope, bool, std::unique_ptr<class AutomaticFeatureRules>);
+    BiomeManager(std::unique_ptr<class BiomeRegistry>, enum class BiomeComponentFactory::FactoryScope, bool, std::unique_ptr<class AutomaticFeatureRules>); // NOLINT
     /**
      * @symbol ?getBiomeComponentFactory\@BiomeManager\@\@QEAAAEAVBiomeComponentFactory\@\@XZ
      */
-    MCAPI class BiomeComponentFactory& getBiomeComponentFactory();
+    MCAPI class BiomeComponentFactory& getBiomeComponentFactory(); // NOLINT
     /**
      * @symbol ?getBiomeRegistry\@BiomeManager\@\@QEAAAEAVBiomeRegistry\@\@XZ
      */
-    MCAPI class BiomeRegistry& getBiomeRegistry();
+    MCAPI class BiomeRegistry& getBiomeRegistry(); // NOLINT
     /**
      * @symbol ?getSurfaceBuilderRegistry\@BiomeManager\@\@QEAAAEAVSurfaceBuilderRegistry\@\@XZ
      */
-    MCAPI class SurfaceBuilderRegistry& getSurfaceBuilderRegistry();
+    MCAPI class SurfaceBuilderRegistry& getSurfaceBuilderRegistry(); // NOLINT
     /**
      * @symbol
      * ?initializeBiomeRegistryAndAutomaticFeatureRulesOnServer\@BiomeManager\@\@QEAAXAEBVExperiments\@\@AEAVIWorldRegistriesProvider\@\@AEAVResourcePackManager\@\@VLevelSeed64\@\@\@Z
@@ -42,25 +41,25 @@ public:
         class IWorldRegistriesProvider&,
         class ResourcePackManager&,
         class LevelSeed64
-    );
+    ); // NOLINT
     /**
      * @symbol ?initializeWithLevelStorageManager\@BiomeManager\@\@QEAAXAEAVLevelStorageManager\@\@\@Z
      */
-    MCAPI void initializeWithLevelStorageManager(class LevelStorageManager&);
+    MCAPI void initializeWithLevelStorageManager(class LevelStorageManager&); // NOLINT
     /**
      * @symbol ?loadBiomeData\@BiomeManager\@\@QEAAXAEAVLevelStorage\@\@\@Z
      */
-    MCAPI void loadBiomeData(class LevelStorage&);
+    MCAPI void loadBiomeData(class LevelStorage&); // NOLINT
     /**
      * @symbol ?sendLevelBiomesRegistered\@BiomeManager\@\@QEAAXXZ
      */
-    MCAPI void sendLevelBiomesRegistered();
+    MCAPI void sendLevelBiomesRegistered(); // NOLINT
     /**
      * @symbol ??1BiomeManager\@\@QEAA\@XZ
      */
-    MCAPI ~BiomeManager();
+    MCAPI ~BiomeManager(); // NOLINT
     /**
      * @symbol ?use3DBiomeMaps\@BiomeManager\@\@SA_NAEBVBaseGameVersion\@\@\@Z
      */
-    MCAPI static bool use3DBiomeMaps(class BaseGameVersion const&);
+    MCAPI static bool use3DBiomeMaps(class BaseGameVersion const&); // NOLINT
 };

@@ -12,22 +12,21 @@ namespace Json { class Value; }
 
 class AttackDefinition : public ::BehaviorDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTACKDEFINITION
 public:
+    // prevent constructor by default
     AttackDefinition& operator=(AttackDefinition const&) = delete;
     AttackDefinition(AttackDefinition const&)            = delete;
     AttackDefinition()                                   = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?load\@AttackDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    virtual void load(class Json::Value, class BehaviorFactory const&); // NOLINT
 };

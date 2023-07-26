@@ -4,12 +4,9 @@
 
 struct PlayerDimensionChangeEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERDIMENSIONCHANGEEVENT
 public:
+    // prevent constructor by default
     PlayerDimensionChangeEvent& operator=(PlayerDimensionChangeEvent const&) = delete;
     PlayerDimensionChangeEvent(PlayerDimensionChangeEvent const&)            = delete;
     PlayerDimensionChangeEvent()                                             = delete;
-#endif
-
-public:
 };

@@ -4,15 +4,14 @@
 
 struct DirtyTicksCounter {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIRTYTICKSCOUNTER
 public:
+    // prevent constructor by default
     DirtyTicksCounter& operator=(DirtyTicksCounter const&) = delete;
     DirtyTicksCounter(DirtyTicksCounter const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0DirtyTicksCounter\@\@QEAA\@XZ
      */
-    MCAPI DirtyTicksCounter();
+    MCAPI DirtyTicksCounter(); // NOLINT
 };

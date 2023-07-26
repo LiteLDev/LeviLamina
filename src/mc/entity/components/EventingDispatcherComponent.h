@@ -4,12 +4,9 @@
 
 struct EventingDispatcherComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EVENTINGDISPATCHERCOMPONENT
 public:
+    // prevent constructor by default
     EventingDispatcherComponent& operator=(EventingDispatcherComponent const&) = delete;
     EventingDispatcherComponent(EventingDispatcherComponent const&)            = delete;
     EventingDispatcherComponent()                                              = delete;
-#endif
-
-public:
 };

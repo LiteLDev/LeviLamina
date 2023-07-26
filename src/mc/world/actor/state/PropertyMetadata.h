@@ -12,16 +12,15 @@ public:
     // PropertyMetadata inner types define
     enum class ContainedType {};
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROPERTYMETADATA
 public:
+    // prevent constructor by default
     PropertyMetadata& operator=(PropertyMetadata const&) = delete;
     PropertyMetadata(PropertyMetadata const&)            = delete;
     PropertyMetadata()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ??1PropertyMetadata\@\@QEAA\@XZ
      */
-    MCAPI ~PropertyMetadata();
+    MCAPI ~PropertyMetadata(); // NOLINT
 };

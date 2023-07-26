@@ -17,45 +17,44 @@ public:
     // BaseGamePackSlices inner types define
     struct BaseGameVersionPack {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASEGAMEPACKSLICES_BASEGAMEVERSIONPACK
     public:
+        // prevent constructor by default
         BaseGameVersionPack& operator=(BaseGameVersionPack const&) = delete;
         BaseGameVersionPack(BaseGameVersionPack const&)            = delete;
         BaseGameVersionPack()                                      = delete;
-#endif
 
     public:
         /**
          * @symbol ??1BaseGameVersionPack\@BaseGamePackSlices\@\@QEAA\@XZ
          */
-        MCAPI ~BaseGameVersionPack();
+        MCAPI ~BaseGameVersionPack(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASEGAMEPACKSLICES
 public:
+    // prevent constructor by default
     BaseGamePackSlices& operator=(BaseGamePackSlices const&) = delete;
     BaseGamePackSlices(BaseGamePackSlices const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0BaseGamePackSlices\@\@QEAA\@XZ
      */
-    MCAPI BaseGamePackSlices();
+    MCAPI BaseGamePackSlices(); // NOLINT
     /**
      * @symbol
      * ?addFromVersions\@BaseGamePackSlices\@\@QEAAXAEBV?$vector\@VBaseGameVersion\@\@V?$allocator\@VBaseGameVersion\@\@\@std\@\@\@std\@\@AEBVIResourcePackRepository\@\@AEBVUUID\@mce\@\@\@Z
      */
     MCAPI void
-    addFromVersions(std::vector<class BaseGameVersion> const&, class IResourcePackRepository const&, class mce::UUID const&);
+    addFromVersions(std::vector<class BaseGameVersion> const&, class IResourcePackRepository const&, class mce::UUID const&); // NOLINT
     /**
      * @symbol
      * ?applyPackSlices\@BaseGamePackSlices\@\@QEBAXAEBVBaseGameVersion\@\@AEBVIResourcePackRepository\@\@AEAVResourcePackStack\@\@\@Z
      */
     MCAPI void
-    applyPackSlices(class BaseGameVersion const&, class IResourcePackRepository const&, class ResourcePackStack&) const;
+    applyPackSlices(class BaseGameVersion const&, class IResourcePackRepository const&, class ResourcePackStack&)
+        const; // NOLINT
     /**
      * @symbol ??1BaseGamePackSlices\@\@QEAA\@XZ
      */
-    MCAPI ~BaseGamePackSlices();
+    MCAPI ~BaseGamePackSlices(); // NOLINT
 };

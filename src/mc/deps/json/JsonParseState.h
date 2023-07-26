@@ -7,14 +7,11 @@ namespace JsonUtil {
 template <typename T0, typename T1>
 class JsonParseState {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_JSONUTIL_JSONPARSESTATE
 public:
+    // prevent constructor by default
     JsonParseState& operator=(JsonParseState const&) = delete;
     JsonParseState(JsonParseState const&)            = delete;
     JsonParseState()                                 = delete;
-#endif
-
-public:
 };
 
 }; // namespace JsonUtil

@@ -11,6 +11,6 @@ namespace ScriptModuleGameTest::Betas {
 /**
  * @symbol ?CURRENT\@Betas\@ScriptModuleGameTest\@\@3UVersion\@Scripting\@\@B
  */
-MCAPI extern struct Scripting::Version const CURRENT;
+MCAPI extern struct Scripting::Version const CURRENT; // NOLINT
 
 }; // namespace ScriptModuleGameTest::Betas

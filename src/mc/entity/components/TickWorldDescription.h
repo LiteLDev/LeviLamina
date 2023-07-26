@@ -4,36 +4,35 @@
 
 class TickWorldDescription {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKWORLDDESCRIPTION
 public:
+    // prevent constructor by default
     TickWorldDescription& operator=(TickWorldDescription const&) = delete;
     TickWorldDescription(TickWorldDescription const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol ?getJsonName\@TickWorldDescription\@\@UEBAPEBDXZ
      */
-    virtual char const* getJsonName() const;
+    virtual char const* getJsonName() const; // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?deserializeData\@TickWorldDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TICKWORLDDESCRIPTION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~TickWorldDescription();
+    MCVAPI ~TickWorldDescription(); // NOLINT
 #endif
     /**
      * @symbol ??0TickWorldDescription\@\@QEAA\@XZ
      */
-    MCAPI TickWorldDescription();
+    MCAPI TickWorldDescription(); // NOLINT
 };

@@ -4,12 +4,9 @@
 
 struct ActorLink {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORLINK
 public:
+    // prevent constructor by default
     ActorLink& operator=(ActorLink const&) = delete;
     ActorLink(ActorLink const&)            = delete;
     ActorLink()                            = delete;
-#endif
-
-public:
 };

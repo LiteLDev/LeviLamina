@@ -4,19 +4,18 @@
 
 class ResourceMetadata {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEMETADATA
 public:
+    // prevent constructor by default
     ResourceMetadata& operator=(ResourceMetadata const&) = delete;
     ResourceMetadata(ResourceMetadata const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ResourceMetadata\@\@QEAA\@XZ
      */
-    MCAPI ResourceMetadata();
+    MCAPI ResourceMetadata(); // NOLINT
     /**
      * @symbol ??1ResourceMetadata\@\@QEAA\@XZ
      */
-    MCAPI ~ResourceMetadata();
+    MCAPI ~ResourceMetadata(); // NOLINT
 };

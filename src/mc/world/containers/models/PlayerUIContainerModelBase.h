@@ -7,94 +7,98 @@
 
 class PlayerUIContainerModelBase : public ::ContainerModel {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERUICONTAINERMODELBASE
 public:
+    // prevent constructor by default
     PlayerUIContainerModelBase& operator=(PlayerUIContainerModelBase const&) = delete;
     PlayerUIContainerModelBase(PlayerUIContainerModelBase const&)            = delete;
     PlayerUIContainerModelBase()                                             = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol ?containerContentChanged\@PlayerUIContainerModelBase\@\@UEAAXH\@Z
      */
-    virtual void containerContentChanged(int);
+    virtual void containerContentChanged(int); // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?postInit\@PlayerUIContainerModelBase\@\@UEAAXXZ
      */
-    virtual void postInit();
+    virtual void postInit(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?releaseResources\@PlayerUIContainerModelBase\@\@UEAAXXZ
      */
-    virtual void releaseResources();
+    virtual void releaseResources(); // NOLINT
     /**
      * @vftbl 6
      * @symbol __unk_vfn_6
      */
-    virtual void __unk_vfn_6();
+    virtual void __unk_vfn_6(); // NOLINT
     /**
      * @vftbl 7
      * @symbol ?getContainerWeakRef\@PlayerUIContainerModelBase\@\@UEBA?AVContainerWeakRef\@\@XZ
      */
-    virtual class ContainerWeakRef getContainerWeakRef() const;
+    virtual class ContainerWeakRef getContainerWeakRef() const; // NOLINT
     /**
      * @vftbl 12
      * @symbol __unk_vfn_12
      */
-    virtual void __unk_vfn_12();
+    virtual void __unk_vfn_12(); // NOLINT
     /**
      * @vftbl 14
      * @symbol ?isValid\@PlayerUIContainerModelBase\@\@UEAA_NXZ
      */
-    virtual bool isValid();
+    virtual bool isValid(); // NOLINT
     /**
      * @vftbl 15
      * @symbol __unk_vfn_15
      */
-    virtual void __unk_vfn_15();
+    virtual void __unk_vfn_15(); // NOLINT
     /**
      * @vftbl 16
      * @symbol __unk_vfn_16
      */
-    virtual void __unk_vfn_16();
+    virtual void __unk_vfn_16(); // NOLINT
     /**
      * @vftbl 19
      * @symbol __unk_vfn_19
      */
-    virtual void __unk_vfn_19();
+    virtual void __unk_vfn_19(); // NOLINT
     /**
      * @vftbl 20
      * @symbol ?_getContainer\@PlayerUIContainerModelBase\@\@MEBAPEAVContainer\@\@XZ
      */
-    virtual class Container* _getContainer() const;
+    virtual class Container* _getContainer() const; // NOLINT
     /**
      * @vftbl 21
      * @symbol ?_getContainerOffset\@PlayerUIContainerModelBase\@\@MEBAHXZ
      */
-    virtual int _getContainerOffset() const;
+    virtual int _getContainerOffset() const; // NOLINT
     /**
      * @vftbl 22
      * @symbol ?_onItemChanged\@PlayerUIContainerModelBase\@\@MEAAXHAEBVItemStack\@\@0\@Z
      */
-    virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
+    virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&); // NOLINT
     /**
      * @symbol ??0PlayerUIContainerModelBase\@\@QEAA\@W4ContainerEnumName\@\@AEAVPlayer\@\@HW4ContainerCategory\@\@\@Z
      */
-    MCAPI PlayerUIContainerModelBase(enum class ContainerEnumName, class Player&, int, enum class ContainerCategory);
+    MCAPI PlayerUIContainerModelBase(
+        enum class ContainerEnumName,
+        class Player&,
+        int,
+        enum class ContainerCategory
+    ); // NOLINT
 
     // protected:
     /**
      * @symbol ?_refreshContainer\@PlayerUIContainerModelBase\@\@IEAAX_N\@Z
      */
-    MCAPI void _refreshContainer(bool);
+    MCAPI void _refreshContainer(bool); // NOLINT
 
 protected:
 };

@@ -10,6 +10,6 @@ namespace TheEndSpikeHelper {
  * @symbol
  * ?getSpikesForLevel\@TheEndSpikeHelper\@\@YA?AV?$vector\@VEndSpike\@SpikeFeature\@\@V?$allocator\@VEndSpike\@SpikeFeature\@\@\@std\@\@\@std\@\@AEAVLevel\@\@\@Z
  */
-MCAPI std::vector<class SpikeFeature::EndSpike> getSpikesForLevel(class Level&);
+MCAPI std::vector<class SpikeFeature::EndSpike> getSpikesForLevel(class Level&); // NOLINT
 
 }; // namespace TheEndSpikeHelper

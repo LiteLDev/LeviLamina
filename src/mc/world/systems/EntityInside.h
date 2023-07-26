@@ -15,38 +15,71 @@
 #include "mc/world/components/InsideBlockWithPosAndBlockComponent.h"
 #include "mc/world/components/InsideBlockWithPosComponent.h"
 
+// auto generated forward declare list
+// clang-format off
+class FreezingComponent;
+class StrictEntityContext;
+struct AABBShapeComponent;
+struct AbilitiesComponent;
+struct ActorGameTypeComponent;
+struct ActorMovementTickNeededFlag;
+struct BlockMovementSlowdownAppliedComponent;
+struct BlockMovementSlowdownMultiplierComponent;
+struct BoatFlag;
+struct CactusBlockFlag;
+struct DimensionTypeComponent;
+struct EndPortalBlockFlag;
+struct ExternalDataComponent;
+struct FallDistanceComponent;
+struct FreezeImmuneFlag;
+struct HoneyBlockFlag;
+struct IgnoresEntityInsideFlagComponent;
+struct InWaterFlag;
+struct InsideBlockComponent;
+struct InsideBubbleColumnBlockComponent;
+struct InsideGenericBlockComponent;
+struct IsDeadFlag;
+struct LocalConstBlockSourceFactoryComponent;
+struct PlayerComponentFlag;
+struct PowderSnowBlockFlag;
+struct SkipEntityInsideFlag;
+struct StateVectorComponent;
+struct SweetBerryBushBlockFlag;
+struct WaterlilyBlockFlag;
+struct WebBlockTag;
+// clang-format on
+
 namespace EntityInsideSystemImpl {
 
 struct EntityInside {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYINSIDESYSTEMIMPL_ENTITYINSIDE
 public:
+    // prevent constructor by default
     EntityInside& operator=(EntityInside const&) = delete;
     EntityInside(EntityInside const&)            = delete;
     EntityInside()                               = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2();
+    virtual void __unk_vfn_2(); // NOLINT
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3();
+    virtual void __unk_vfn_3(); // NOLINT
     /**
      * @vftbl 4
      * @symbol
@@ -86,13 +119,13 @@ public:
                           class FlagComponent<struct WebBlockTag>>,
                       struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>,
                       struct GlobalWrite<>,
-                      struct EntityFactoryT<>>&);
+                      struct EntityFactoryT<>>&); // NOLINT
     /**
      * @vftbl 5
      * @symbol
      * ?singleTick\@EntityInside\@EntityInsideSystemImpl\@\@UEAAXAEAV?$StrictExecutionContext\@U?$Filter\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UBoatFlag\@\@\@\@V?$FlagComponent\@UFreezeImmuneFlag\@\@\@\@V?$FlagComponent\@UIsDeadFlag\@\@\@\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@V?$FlagComponent\@USkipEntityInsideFlag\@\@\@\@V?$FlagComponent\@UInWaterFlag\@\@\@\@\@\@U?$Read\@UAABBShapeComponent\@\@UAbilitiesComponent\@\@UActorGameTypeComponent\@\@UDimensionTypeComponent\@\@\@\@U?$Write\@UBlockMovementSlowdownMultiplierComponent\@\@UFallDistanceComponent\@\@UInsideBlockComponent\@\@UStateVectorComponent\@\@\@\@U?$AddRemove\@UBlockMovementSlowdownAppliedComponent\@\@VFreezingComponent\@\@UIgnoresEntityInsideFlagComponent\@\@UInsideBubbleColumnBlockComponent\@\@U?$InsideBlockWithPosAndBlockComponent\@UCactusBlockFlag\@\@\@\@U?$InsideBlockWithPosAndBlockComponent\@UEndPortalBlockFlag\@\@\@\@UInsideGenericBlockComponent\@\@U?$InsideBlockWithPosAndBlockComponent\@UHoneyBlockFlag\@\@\@\@U?$InsideBlockWithPosAndBlockComponent\@UPowderSnowBlockFlag\@\@\@\@U?$InsideBlockWithPosAndBlockComponent\@USweetBerryBushBlockFlag\@\@\@\@U?$InsideBlockWithPosComponent\@UWaterlilyBlockFlag\@\@\@\@V?$FlagComponent\@UWebBlockTag\@\@\@\@\@\@U?$GlobalRead\@UExternalDataComponent\@\@ULocalConstBlockSourceFactoryComponent\@\@\@\@U?$GlobalWrite\@$$V\@\@U?$EntityFactoryT\@$$V\@\@\@\@AEAVStrictEntityContext\@\@\@Z
      */
-    virtual void singleTick(class StrictExecutionContext<struct Filter<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct BoatFlag>, class FlagComponent<struct FreezeImmuneFlag>, class FlagComponent<struct IsDeadFlag>, class FlagComponent<struct PlayerComponentFlag>, class FlagComponent<struct SkipEntityInsideFlag>, class FlagComponent<struct InWaterFlag>>, struct Read<struct AABBShapeComponent, struct AbilitiesComponent, struct ActorGameTypeComponent, struct DimensionTypeComponent>, struct Write<struct BlockMovementSlowdownMultiplierComponent, struct FallDistanceComponent, struct InsideBlockComponent, struct StateVectorComponent>, struct AddRemove<struct BlockMovementSlowdownAppliedComponent, class FreezingComponent, struct IgnoresEntityInsideFlagComponent, struct InsideBubbleColumnBlockComponent, struct InsideBlockWithPosAndBlockComponent<struct CactusBlockFlag>, struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag>, struct InsideGenericBlockComponent, struct InsideBlockWithPosAndBlockComponent<struct HoneyBlockFlag>, struct InsideBlockWithPosAndBlockComponent<struct PowderSnowBlockFlag>, struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag>, struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag>, class FlagComponent<struct WebBlockTag>>, struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>, struct GlobalWrite<>, struct EntityFactoryT<>>&, class StrictEntityContext&);
+    virtual void singleTick(class StrictExecutionContext<struct Filter<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct BoatFlag>, class FlagComponent<struct FreezeImmuneFlag>, class FlagComponent<struct IsDeadFlag>, class FlagComponent<struct PlayerComponentFlag>, class FlagComponent<struct SkipEntityInsideFlag>, class FlagComponent<struct InWaterFlag>>, struct Read<struct AABBShapeComponent, struct AbilitiesComponent, struct ActorGameTypeComponent, struct DimensionTypeComponent>, struct Write<struct BlockMovementSlowdownMultiplierComponent, struct FallDistanceComponent, struct InsideBlockComponent, struct StateVectorComponent>, struct AddRemove<struct BlockMovementSlowdownAppliedComponent, class FreezingComponent, struct IgnoresEntityInsideFlagComponent, struct InsideBubbleColumnBlockComponent, struct InsideBlockWithPosAndBlockComponent<struct CactusBlockFlag>, struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag>, struct InsideGenericBlockComponent, struct InsideBlockWithPosAndBlockComponent<struct HoneyBlockFlag>, struct InsideBlockWithPosAndBlockComponent<struct PowderSnowBlockFlag>, struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag>, struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag>, class FlagComponent<struct WebBlockTag>>, struct GlobalRead<struct ExternalDataComponent, struct LocalConstBlockSourceFactoryComponent>, struct GlobalWrite<>, struct EntityFactoryT<>>&, class StrictEntityContext&); // NOLINT
     /**
      * @symbol
      * ?createContextObjects\@EntityInside\@EntityInsideSystemImpl\@\@SA\@AEAV?$StrictExecutionContext\@U?$Filter\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UBoatFlag\@\@\@\@V?$FlagComponent\@UFreezeImmuneFlag\@\@\@\@V?$FlagComponent\@UIsDeadFlag\@\@\@\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@V?$FlagComponent\@USkipEntityInsideFlag\@\@\@\@V?$FlagComponent\@UInWaterFlag\@\@\@\@\@\@U?$Read\@UAABBShapeComponent\@\@UAbilitiesComponent\@\@UActorGameTypeComponent\@\@UDimensionTypeComponent\@\@\@\@U?$Write\@UBlockMovementSlowdownMultiplierComponent\@\@UFallDistanceComponent\@\@UInsideBlockComponent\@\@UStateVectorComponent\@\@\@\@U?$AddRemove\@UBlockMovementSlowdownAppliedComponent\@\@VFreezingComponent\@\@UIgnoresEntityInsideFlagComponent\@\@UInsideBubbleColumnBlockComponent\@\@U?$InsideBlockWithPosAndBlockComponent\@UCactusBlockFlag\@\@\@\@U?$InsideBlockWithPosAndBlockComponent\@UEndPortalBlockFlag\@\@\@\@UInsideGenericBlockComponent\@\@U?$InsideBlockWithPosAndBlockComponent\@UHoneyBlockFlag\@\@\@\@U?$InsideBlockWithPosAndBlockComponent\@UPowderSnowBlockFlag\@\@\@\@U?$InsideBlockWithPosAndBlockComponent\@USweetBerryBushBlockFlag\@\@\@\@U?$InsideBlockWithPosComponent\@UWaterlilyBlockFlag\@\@\@\@V?$FlagComponent\@UWebBlockTag\@\@\@\@\@\@U?$GlobalRead\@UExternalDataComponent\@\@ULocalConstBlockSourceFactoryComponent\@\@\@\@U?$GlobalWrite\@$$V\@\@U?$EntityFactoryT\@$$V\@\@\@\@\@Z
@@ -133,7 +166,7 @@ public:
                                           struct ExternalDataComponent,
                                           struct LocalConstBlockSourceFactoryComponent>,
                                       struct GlobalWrite<>,
-                                      struct EntityFactoryT<>>&);
+                                      struct EntityFactoryT<>>&); // NOLINT
 };
 
 }; // namespace EntityInsideSystemImpl

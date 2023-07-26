@@ -6,18 +6,17 @@ namespace cereal::internal {
 
 class StringConstraint {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CEREAL_INTERNAL_STRINGCONSTRAINT
 public:
+    // prevent constructor by default
     StringConstraint& operator=(StringConstraint const&) = delete;
     StringConstraint(StringConstraint const&)            = delete;
     StringConstraint()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ??1StringConstraint\@internal\@cereal\@\@QEAA\@XZ
      */
-    MCAPI ~StringConstraint();
+    MCAPI ~StringConstraint(); // NOLINT
 };
 
 }; // namespace cereal::internal

@@ -4,12 +4,9 @@
 
 class LocalPlayer {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOCALPLAYER
 public:
+    // prevent constructor by default
     LocalPlayer& operator=(LocalPlayer const&) = delete;
     LocalPlayer(LocalPlayer const&)            = delete;
     LocalPlayer()                              = delete;
-#endif
-
-public:
 };

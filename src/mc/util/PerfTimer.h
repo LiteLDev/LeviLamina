@@ -8,32 +8,31 @@
 
 class PerfTimer {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERFTIMER
 public:
+    // prevent constructor by default
     PerfTimer& operator=(PerfTimer const&) = delete;
     PerfTimer(PerfTimer const&)            = delete;
     PerfTimer()                            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0PerfTimer\@\@QEAA\@Vid\@thread\@std\@\@\@Z
      */
-    MCAPI PerfTimer(class std::thread::id);
+    MCAPI PerfTimer(class std::thread::id); // NOLINT
     /**
      * @symbol ??1PerfTimer\@\@QEAA\@XZ
      */
-    MCAPI ~PerfTimer();
+    MCAPI ~PerfTimer(); // NOLINT
     /**
      * @symbol ?mEnabled\@PerfTimer\@\@2_NA
      */
-    MCAPI static bool mEnabled;
+    MCAPI static bool mEnabled; // NOLINT
     /**
      * @symbol
      * ?test\@PerfTimer\@\@2V?$ThreadLocalObject\@VPerfTimer\@\@V?$allocator\@VPerfTimer\@\@\@std\@\@\@Threading\@Bedrock\@\@A
      */
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class PerfTimer, class std::allocator<class PerfTimer>>
-        test;
+        test; // NOLINT
 
     // protected:
 
@@ -41,10 +40,10 @@ protected:
     /**
      * @symbol ?MultiplyDeBruijnBitPosition\@PerfTimer\@\@1QBHB
      */
-    MCAPI static int const MultiplyDeBruijnBitPosition[];
+    MCAPI static int const MultiplyDeBruijnBitPosition[]; // NOLINT
     /**
      * @symbol
      * ?mPath\@PerfTimer\@\@1V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@A
      */
-    MCAPI static class Core::PathBuffer<std::string> mPath;
+    MCAPI static class Core::PathBuffer<std::string> mPath; // NOLINT
 };

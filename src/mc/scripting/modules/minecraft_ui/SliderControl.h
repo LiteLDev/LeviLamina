@@ -11,28 +11,27 @@ namespace ScriptModuleMinecraftServerUI {
 
 class SliderControl {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFTSERVERUI_SLIDERCONTROL
 public:
+    // prevent constructor by default
     SliderControl& operator=(SliderControl const&) = delete;
     SliderControl(SliderControl const&)            = delete;
     SliderControl()                                = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?getJson\@SliderControl\@ScriptModuleMinecraftServerUI\@\@UEBA?AVValue\@Json\@\@XZ
      */
-    virtual class Json::Value getJson() const;
+    virtual class Json::Value getJson() const; // NOLINT
     /**
      * @symbol ??0SliderControl\@ScriptModuleMinecraftServerUI\@\@QEAA\@VValue\@Json\@\@MMMV?$optional\@H\@std\@\@\@Z
      */
-    MCAPI SliderControl(class Json::Value, float, float, float, class std::optional<int>);
+    MCAPI SliderControl(class Json::Value, float, float, float, class std::optional<int>); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraftServerUI

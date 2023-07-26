@@ -6,11 +6,11 @@ namespace CelebrateHuntSystemInternal {
 /**
  * @symbol ?_stopCelebrating\@CelebrateHuntSystemInternal\@\@YAXAEAVActor\@\@AEAVCelebrateHuntComponent\@\@\@Z
  */
-MCAPI void _stopCelebrating(class Actor&, class CelebrateHuntComponent&);
+MCAPI void _stopCelebrating(class Actor&, class CelebrateHuntComponent&); // NOLINT
 /**
  * @symbol
  * ?_tickCelebrateHuntComponent\@CelebrateHuntSystemInternal\@\@YAXAEAVActorOwnerComponent\@\@AEAVCelebrateHuntComponent\@\@\@Z
  */
-MCAPI void _tickCelebrateHuntComponent(class ActorOwnerComponent&, class CelebrateHuntComponent&);
+MCAPI void _tickCelebrateHuntComponent(class ActorOwnerComponent&, class CelebrateHuntComponent&); // NOLINT
 
 }; // namespace CelebrateHuntSystemInternal

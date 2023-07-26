@@ -4,16 +4,15 @@
 
 class IConstBlockSource {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICONSTBLOCKSOURCE
 public:
+    // prevent constructor by default
     IConstBlockSource& operator=(IConstBlockSource const&) = delete;
     IConstBlockSource(IConstBlockSource const&)            = delete;
     IConstBlockSource()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ?checkMaterial\@IConstBlockSource\@\@QEBA_NAEBVAABB\@\@W4MaterialType\@\@\@Z
      */
-    MCAPI bool checkMaterial(class AABB const&, enum class MaterialType) const;
+    MCAPI bool checkMaterial(class AABB const&, enum class MaterialType) const; // NOLINT
 };

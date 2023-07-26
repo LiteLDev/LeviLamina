@@ -5,12 +5,9 @@
 template <typename... T0>
 struct GlobalWrite {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLOBALWRITE
 public:
+    // prevent constructor by default
     GlobalWrite& operator=(GlobalWrite const&) = delete;
     GlobalWrite(GlobalWrite const&)            = delete;
     GlobalWrite()                              = delete;
-#endif
-
-public:
 };

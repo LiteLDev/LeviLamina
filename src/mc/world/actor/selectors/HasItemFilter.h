@@ -4,20 +4,19 @@
 
 struct HasItemFilter {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HASITEMFILTER
 public:
+    // prevent constructor by default
     HasItemFilter& operator=(HasItemFilter const&) = delete;
     HasItemFilter(HasItemFilter const&)            = delete;
     HasItemFilter()                                = delete;
-#endif
 
 public:
     /**
      * @symbol ??0HasItemFilter\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI HasItemFilter(struct HasItemFilter&&);
+    MCAPI HasItemFilter(struct HasItemFilter&&); // NOLINT
     /**
      * @symbol ??1HasItemFilter\@\@QEAA\@XZ
      */
-    MCAPI ~HasItemFilter();
+    MCAPI ~HasItemFilter(); // NOLINT
 };

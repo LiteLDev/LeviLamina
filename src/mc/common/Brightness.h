@@ -4,38 +4,37 @@
 
 struct Brightness {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BRIGHTNESS
 public:
+    // prevent constructor by default
     Brightness() = delete;
-#endif
 
 public:
     /**
      * @symbol ??0Brightness\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI Brightness(struct Brightness const&);
+    MCAPI Brightness(struct Brightness const&); // NOLINT
     /**
      * @symbol ??0Brightness\@\@QEAA\@AEBE\@Z
      */
-    MCAPI Brightness(unsigned char const&);
+    MCAPI Brightness(unsigned char const&); // NOLINT
     /**
      * @symbol ??4Brightness\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
-    MCAPI struct Brightness& operator=(struct Brightness const&);
+    MCAPI struct Brightness& operator=(struct Brightness const&); // NOLINT
     /**
      * @symbol ??4Brightness\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct Brightness& operator=(struct Brightness&&);
+    MCAPI struct Brightness& operator=(struct Brightness&&); // NOLINT
     /**
      * @symbol ?INVALID\@Brightness\@\@2U1\@B
      */
-    MCAPI static struct Brightness const INVALID;
+    MCAPI static struct Brightness const INVALID; // NOLINT
     /**
      * @symbol ?MAX\@Brightness\@\@2U1\@B
      */
-    MCAPI static struct Brightness const MAX;
+    MCAPI static struct Brightness const MAX; // NOLINT
     /**
      * @symbol ?MIN\@Brightness\@\@2U1\@B
      */
-    MCAPI static struct Brightness const MIN;
+    MCAPI static struct Brightness const MIN; // NOLINT
 };

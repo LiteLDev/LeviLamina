@@ -4,23 +4,22 @@
 
 struct ItemStackResponseInfo {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKRESPONSEINFO
 public:
+    // prevent constructor by default
     ItemStackResponseInfo& operator=(ItemStackResponseInfo const&) = delete;
     ItemStackResponseInfo(ItemStackResponseInfo const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ItemStackResponseInfo\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI ItemStackResponseInfo(struct ItemStackResponseInfo&&);
+    MCAPI ItemStackResponseInfo(struct ItemStackResponseInfo&&); // NOLINT
     /**
      * @symbol ??0ItemStackResponseInfo\@\@QEAA\@XZ
      */
-    MCAPI ItemStackResponseInfo();
+    MCAPI ItemStackResponseInfo(); // NOLINT
     /**
      * @symbol ??1ItemStackResponseInfo\@\@QEAA\@XZ
      */
-    MCAPI ~ItemStackResponseInfo();
+    MCAPI ~ItemStackResponseInfo(); // NOLINT
 };

@@ -4,19 +4,18 @@
 
 struct BlockPatternEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPATTERNEVENT
 public:
+    // prevent constructor by default
     BlockPatternEvent& operator=(BlockPatternEvent const&) = delete;
     BlockPatternEvent()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ??0BlockPatternEvent\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI BlockPatternEvent(struct BlockPatternEvent const&);
+    MCAPI BlockPatternEvent(struct BlockPatternEvent const&); // NOLINT
     /**
      * @symbol ??1BlockPatternEvent\@\@QEAA\@XZ
      */
-    MCAPI ~BlockPatternEvent();
+    MCAPI ~BlockPatternEvent(); // NOLINT
 };

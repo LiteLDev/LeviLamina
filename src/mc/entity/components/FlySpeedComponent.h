@@ -4,12 +4,9 @@
 
 struct FlySpeedComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLYSPEEDCOMPONENT
 public:
+    // prevent constructor by default
     FlySpeedComponent& operator=(FlySpeedComponent const&) = delete;
     FlySpeedComponent(FlySpeedComponent const&)            = delete;
     FlySpeedComponent()                                    = delete;
-#endif
-
-public:
 };

@@ -4,22 +4,21 @@
 
 class OnInteractTrigger {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONINTERACTTRIGGER
 public:
+    // prevent constructor by default
     OnInteractTrigger& operator=(OnInteractTrigger const&) = delete;
     OnInteractTrigger(OnInteractTrigger const&)            = delete;
     OnInteractTrigger()                                    = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONINTERACTTRIGGER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~OnInteractTrigger();
+    MCVAPI ~OnInteractTrigger(); // NOLINT
 #endif
     /**
      * @symbol ??0OnInteractTrigger\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI OnInteractTrigger(class OnInteractTrigger&&);
+    MCAPI OnInteractTrigger(class OnInteractTrigger&&); // NOLINT
 };

@@ -4,44 +4,43 @@
 
 class ChunkPos {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKPOS
 public:
+    // prevent constructor by default
     ChunkPos& operator=(ChunkPos const&) = delete;
     ChunkPos(ChunkPos const&)            = delete;
     ChunkPos()                           = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ChunkPos\@\@QEAA\@AEBVVec3\@\@\@Z
      */
-    MCAPI ChunkPos(class Vec3 const&);
+    MCAPI ChunkPos(class Vec3 const&); // NOLINT
     /**
      * @symbol ??0ChunkPos\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI ChunkPos(class BlockPos const&);
+    MCAPI ChunkPos(class BlockPos const&); // NOLINT
     /**
      * @symbol ?isWithinBounds\@ChunkPos\@\@QEBA_NAEBV1\@0\@Z
      */
-    MCAPI bool isWithinBounds(class ChunkPos const&, class ChunkPos const&) const;
+    MCAPI bool isWithinBounds(class ChunkPos const&, class ChunkPos const&) const; // NOLINT
     /**
      * @symbol ?toBlockSpaceVec3\@ChunkPos\@\@QEBA?AVVec3\@\@M\@Z
      */
-    MCAPI class Vec3 toBlockSpaceVec3(float) const;
+    MCAPI class Vec3 toBlockSpaceVec3(float) const; // NOLINT
     /**
      * @symbol ?INVALID\@ChunkPos\@\@2V1\@B
      */
-    MCAPI static class ChunkPos const INVALID;
+    MCAPI static class ChunkPos const INVALID; // NOLINT
     /**
      * @symbol ?MAX\@ChunkPos\@\@2V1\@B
      */
-    MCAPI static class ChunkPos const MAX;
+    MCAPI static class ChunkPos const MAX; // NOLINT
     /**
      * @symbol ?MIN\@ChunkPos\@\@2V1\@B
      */
-    MCAPI static class ChunkPos const MIN;
+    MCAPI static class ChunkPos const MIN; // NOLINT
     /**
      * @symbol ?ONE\@ChunkPos\@\@2V1\@B
      */
-    MCAPI static class ChunkPos const ONE;
+    MCAPI static class ChunkPos const ONE; // NOLINT
 };

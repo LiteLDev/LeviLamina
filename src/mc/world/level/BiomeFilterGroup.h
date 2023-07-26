@@ -12,33 +12,33 @@ namespace Json { class Value; }
 
 class BiomeFilterGroup : public ::FilterGroup {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMEFILTERGROUP
 public:
+    // prevent constructor by default
     BiomeFilterGroup& operator=(BiomeFilterGroup const&) = delete;
     BiomeFilterGroup(BiomeFilterGroup const&)            = delete;
     BiomeFilterGroup()                                   = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?_createSubgroup\@BiomeFilterGroup\@\@MEBA?AV?$shared_ptr\@VFilterGroup\@\@\@std\@\@W4CollectionType\@FilterGroup\@\@\@Z
      */
-    virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum class FilterGroup::CollectionType) const;
+    virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum class FilterGroup::CollectionType
+    ) const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIOMEFILTERGROUP
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~BiomeFilterGroup();
+    MCVAPI ~BiomeFilterGroup(); // NOLINT
 #endif
     /**
      * @symbol ?finalizeParsedValue\@BiomeFilterGroup\@\@QEAAXAEAVIWorldRegistriesProvider\@\@\@Z
      */
-    MCAPI void finalizeParsedValue(class IWorldRegistriesProvider&);
+    MCAPI void finalizeParsedValue(class IWorldRegistriesProvider&); // NOLINT
 };

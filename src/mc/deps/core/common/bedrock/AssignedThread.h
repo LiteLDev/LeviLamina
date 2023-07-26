@@ -6,26 +6,25 @@ namespace Bedrock::Threading {
 
 class AssignedThread {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_THREADING_ASSIGNEDTHREAD
 public:
+    // prevent constructor by default
     AssignedThread& operator=(AssignedThread const&) = delete;
     AssignedThread(AssignedThread const&)            = delete;
     AssignedThread()                                 = delete;
-#endif
 
 public:
     /**
      * @symbol ?assign\@AssignedThread\@Threading\@Bedrock\@\@QEAAXAEBVid\@thread\@std\@\@\@Z
      */
-    MCAPI void assign(class std::thread::id const&);
+    MCAPI void assign(class std::thread::id const&); // NOLINT
     /**
      * @symbol ?isOnThread\@AssignedThread\@Threading\@Bedrock\@\@QEBA_NXZ
      */
-    MCAPI bool isOnThread() const;
+    MCAPI bool isOnThread() const; // NOLINT
     /**
      * @symbol ??8AssignedThread\@Threading\@Bedrock\@\@QEBA_NAEBVid\@thread\@std\@\@\@Z
      */
-    MCAPI bool operator==(class std::thread::id const&) const;
+    MCAPI bool operator==(class std::thread::id const&) const; // NOLINT
 };
 
 }; // namespace Bedrock::Threading

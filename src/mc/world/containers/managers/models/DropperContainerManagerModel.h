@@ -7,26 +7,25 @@
 
 class DropperContainerManagerModel : public ::LevelContainerManagerModel {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DROPPERCONTAINERMANAGERMODEL
 public:
+    // prevent constructor by default
     DropperContainerManagerModel& operator=(DropperContainerManagerModel const&) = delete;
     DropperContainerManagerModel(DropperContainerManagerModel const&)            = delete;
     DropperContainerManagerModel()                                               = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 17
      * @symbol ?_postInit\@DropperContainerManagerModel\@\@MEAA?AVContainerScreenContext\@\@XZ
      */
-    virtual class ContainerScreenContext _postInit();
+    virtual class ContainerScreenContext _postInit(); // NOLINT
     /**
      * @symbol ??0DropperContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI DropperContainerManagerModel(enum class ContainerID, class Player&, class BlockPos const&);
+    MCAPI DropperContainerManagerModel(enum class ContainerID, class Player&, class BlockPos const&); // NOLINT
 };

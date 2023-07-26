@@ -4,12 +4,9 @@
 
 struct PositionPassengerRequestComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_POSITIONPASSENGERREQUESTCOMPONENT
 public:
+    // prevent constructor by default
     PositionPassengerRequestComponent& operator=(PositionPassengerRequestComponent const&) = delete;
     PositionPassengerRequestComponent(PositionPassengerRequestComponent const&)            = delete;
     PositionPassengerRequestComponent()                                                    = delete;
-#endif
-
-public:
 };

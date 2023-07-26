@@ -6,18 +6,17 @@ namespace AgentComponents::Actions {
 
 struct Till {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMPONENTS_ACTIONS_TILL
 public:
+    // prevent constructor by default
     Till& operator=(Till const&) = delete;
     Till(Till const&)            = delete;
     Till()                       = delete;
-#endif
 
 public:
     /**
      * @symbol ??1Till\@Actions\@AgentComponents\@\@QEAA\@XZ
      */
-    MCAPI ~Till();
+    MCAPI ~Till(); // NOLINT
 };
 
 }; // namespace AgentComponents::Actions

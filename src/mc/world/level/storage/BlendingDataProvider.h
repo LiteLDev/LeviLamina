@@ -4,12 +4,9 @@
 
 class BlendingDataProvider {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLENDINGDATAPROVIDER
 public:
+    // prevent constructor by default
     BlendingDataProvider& operator=(BlendingDataProvider const&) = delete;
     BlendingDataProvider(BlendingDataProvider const&)            = delete;
     BlendingDataProvider()                                       = delete;
-#endif
-
-public:
 };

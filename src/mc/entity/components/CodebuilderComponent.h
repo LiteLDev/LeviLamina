@@ -9,30 +9,29 @@ namespace CodeBuilderExecutionState { enum class CodeStatus; }
 
 class CodebuilderComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CODEBUILDERCOMPONENT
 public:
+    // prevent constructor by default
     CodebuilderComponent& operator=(CodebuilderComponent const&) = delete;
     CodebuilderComponent(CodebuilderComponent const&)            = delete;
     CodebuilderComponent()                                       = delete;
-#endif
 
 public:
     /**
      * @symbol ?getCodeStatus\@CodebuilderComponent\@\@QEBA?AW4CodeStatus\@CodeBuilderExecutionState\@\@XZ
      */
-    MCAPI enum class CodeBuilderExecutionState::CodeStatus getCodeStatus() const;
+    MCAPI enum class CodeBuilderExecutionState::CodeStatus getCodeStatus() const; // NOLINT
     /**
      * @symbol ?resetCodeStatus\@CodebuilderComponent\@\@QEAAXXZ
      */
-    MCAPI void resetCodeStatus();
+    MCAPI void resetCodeStatus(); // NOLINT
     /**
      * @symbol
      * ?setCodeStatus\@CodebuilderComponent\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void setCodeStatus(std::string const&);
+    MCAPI void setCodeStatus(std::string const&); // NOLINT
     /**
      * @symbol
      * ?stringToCodeStatus\@CodebuilderComponent\@\@QEBA?AW4CodeStatus\@CodeBuilderExecutionState\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI enum class CodeBuilderExecutionState::CodeStatus stringToCodeStatus(std::string const&) const;
+    MCAPI enum class CodeBuilderExecutionState::CodeStatus stringToCodeStatus(std::string const&) const; // NOLINT
 };

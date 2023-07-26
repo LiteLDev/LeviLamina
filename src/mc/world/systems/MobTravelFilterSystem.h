@@ -6,6 +6,6 @@ namespace MobTravelFilterSystem {
 /**
  * @symbol ?createSystem\@MobTravelFilterSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
  */
-MCAPI struct TickingSystemWithInfo createSystem();
+MCAPI struct TickingSystemWithInfo createSystem(); // NOLINT
 
 }; // namespace MobTravelFilterSystem

@@ -5,12 +5,9 @@
 template <typename T0>
 class CommandSelectorResults {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDSELECTORRESULTS
 public:
+    // prevent constructor by default
     CommandSelectorResults& operator=(CommandSelectorResults const&) = delete;
     CommandSelectorResults(CommandSelectorResults const&)            = delete;
     CommandSelectorResults()                                         = delete;
-#endif
-
-public:
 };

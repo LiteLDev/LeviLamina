@@ -9,18 +9,17 @@
 
 class ResetSlideOffSetSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESETSLIDEOFFSETSYSTEM
 public:
+    // prevent constructor by default
     ResetSlideOffSetSystem& operator=(ResetSlideOffSetSystem const&) = delete;
     ResetSlideOffSetSystem(ResetSlideOffSetSystem const&)            = delete;
     ResetSlideOffSetSystem()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol ?createResetSlideOffSetSystem\@ResetSlideOffSetSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createResetSlideOffSetSystem();
+    MCAPI static struct TickingSystemWithInfo createResetSlideOffSetSystem(); // NOLINT
     /**
      * @symbol
      * ?tickResetSlideOffSetSystem\@ResetSlideOffSetSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Exclude\@V?$FlagComponent\@UAutoStepRequestFlag\@\@\@\@\@\@$$CBUMoveRequestComponent\@\@USlideOffsetComponent\@\@\@\@\@Z
@@ -30,5 +29,5 @@ public:
                                                  class EntityRegistryBase,
                                                  struct Exclude<class FlagComponent<struct AutoStepRequestFlag>>,
                                                  struct MoveRequestComponent const,
-                                                 struct SlideOffsetComponent>);
+                                                 struct SlideOffsetComponent>); // NOLINT
 };

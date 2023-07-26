@@ -7,24 +7,23 @@
 
 class BedrockItems {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCKITEMS
 public:
+    // prevent constructor by default
     BedrockItems& operator=(BedrockItems const&) = delete;
     BedrockItems(BedrockItems const&)            = delete;
     BedrockItems()                               = delete;
-#endif
 
 public:
     /**
-     * @symbol ?mAir\@BedrockItems\@\@2V?$WeakPtr\@VItem\@\@\@\@A
-     */
-    MCAPI static class WeakPtr<class Item> mAir;
-    /**
      * @symbol ?registerItems\@BedrockItems\@\@SAXVItemRegistryRef\@\@\@Z
      */
-    MCAPI static void registerItems(class ItemRegistryRef);
+    MCAPI static void registerItems(class ItemRegistryRef); // NOLINT
     /**
      * @symbol ?unregisterItems\@BedrockItems\@\@SAXVItemRegistryRef\@\@\@Z
      */
-    MCAPI static void unregisterItems(class ItemRegistryRef);
+    MCAPI static void unregisterItems(class ItemRegistryRef); // NOLINT
+    /**
+     * @symbol ?mAir\@BedrockItems\@\@2V?$WeakPtr\@VItem\@\@\@\@A
+     */
+    MCAPI static class WeakPtr<class Item> mAir; // NOLINT
 };

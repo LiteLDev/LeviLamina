@@ -9,25 +9,24 @@
 
 class AquiferNoises {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AQUIFERNOISES
 public:
+    // prevent constructor by default
     AquiferNoises& operator=(AquiferNoises const&) = delete;
     AquiferNoises()                                = delete;
-#endif
 
 public:
     /**
      * @symbol ??0AquiferNoises\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI AquiferNoises(class AquiferNoises const&);
+    MCAPI AquiferNoises(class AquiferNoises const&); // NOLINT
     /**
      * @symbol ??1AquiferNoises\@\@QEAA\@XZ
      */
-    MCAPI ~AquiferNoises();
+    MCAPI ~AquiferNoises(); // NOLINT
     /**
      * @symbol ?make\@AquiferNoises\@\@SA?AV1\@AEBVXoroshiroPositionalRandomFactory\@\@\@Z
      */
-    MCAPI static class AquiferNoises make(class XoroshiroPositionalRandomFactory const&);
+    MCAPI static class AquiferNoises make(class XoroshiroPositionalRandomFactory const&); // NOLINT
 
     // private:
     /**
@@ -40,7 +39,7 @@ public:
         class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>,
         class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>,
         class XoroshiroPositionalRandomFactory
-    );
+    ); // NOLINT
 
 private:
 };

@@ -11,30 +11,29 @@
 
 class UpdateBoundingBoxSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPDATEBOUNDINGBOXSYSTEM
 public:
+    // prevent constructor by default
     UpdateBoundingBoxSystem& operator=(UpdateBoundingBoxSystem const&) = delete;
     UpdateBoundingBoxSystem(UpdateBoundingBoxSystem const&)            = delete;
     UpdateBoundingBoxSystem()                                          = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@UpdateBoundingBoxSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
     /**
      * @symbol
      * ?tick\@UpdateBoundingBoxSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@\@\@$$CBUShouldUpdateBoundingBoxRequestComponent\@\@VActorOwnerComponent\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Exclude\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@\@\@$$CBUShouldUpdateBoundingBoxRequestComponent\@\@VActorOwnerComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UShouldUpdateBoundingBoxRequestComponent\@\@\@\@\@Z
      */
     MCAPI static void
-        tick(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PlayerComponentFlag>>, struct ShouldUpdateBoundingBoxRequestComponent const, class ActorOwnerComponent>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Exclude<class FlagComponent<struct PlayerComponentFlag>>, struct ShouldUpdateBoundingBoxRequestComponent const, class ActorOwnerComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct ShouldUpdateBoundingBoxRequestComponent>);
+        tick(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PlayerComponentFlag>>, struct ShouldUpdateBoundingBoxRequestComponent const, class ActorOwnerComponent>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Exclude<class FlagComponent<struct PlayerComponentFlag>>, struct ShouldUpdateBoundingBoxRequestComponent const, class ActorOwnerComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct ShouldUpdateBoundingBoxRequestComponent>); // NOLINT
     /**
      * @symbol ?updateBoundingBoxFromDefinition\@UpdateBoundingBoxSystem\@\@SAXAEAVActor\@\@\@Z
      */
-    MCAPI static void updateBoundingBoxFromDefinition(class Actor&);
+    MCAPI static void updateBoundingBoxFromDefinition(class Actor&); // NOLINT
     /**
      * @symbol ?updatePlayerBoundingBoxFromDefinition\@UpdateBoundingBoxSystem\@\@SAXAEAVPlayer\@\@\@Z
      */
-    MCAPI static void updatePlayerBoundingBoxFromDefinition(class Player&);
+    MCAPI static void updatePlayerBoundingBoxFromDefinition(class Player&); // NOLINT
 };

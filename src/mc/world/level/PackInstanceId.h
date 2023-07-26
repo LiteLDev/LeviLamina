@@ -4,25 +4,24 @@
 
 struct PackInstanceId {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKINSTANCEID
 public:
+    // prevent constructor by default
     PackInstanceId& operator=(PackInstanceId const&) = delete;
     PackInstanceId(PackInstanceId const&)            = delete;
     PackInstanceId()                                 = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ??0PackInstanceId\@\@QEAA\@AEBUPackIdVersion\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI PackInstanceId(struct PackIdVersion const&, std::string const&);
+    MCAPI PackInstanceId(struct PackIdVersion const&, std::string const&); // NOLINT
     /**
      * @symbol ??0PackInstanceId\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI PackInstanceId(struct PackInstanceId&&);
+    MCAPI PackInstanceId(struct PackInstanceId&&); // NOLINT
     /**
      * @symbol ??1PackInstanceId\@\@QEAA\@XZ
      */
-    MCAPI ~PackInstanceId();
+    MCAPI ~PackInstanceId(); // NOLINT
 };

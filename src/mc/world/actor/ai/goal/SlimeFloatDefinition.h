@@ -12,25 +12,24 @@ namespace JsonUtil { class EmptyClass; }
 
 class SlimeFloatDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLIMEFLOATDEFINITION
 public:
+    // prevent constructor by default
     SlimeFloatDefinition& operator=(SlimeFloatDefinition const&) = delete;
     SlimeFloatDefinition(SlimeFloatDefinition const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0SlimeFloatDefinition\@\@QEAA\@XZ
      */
-    MCAPI SlimeFloatDefinition();
+    MCAPI SlimeFloatDefinition(); // NOLINT
     /**
      * @symbol ?initialize\@SlimeFloatDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVSlimeFloatGoal\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class SlimeFloatGoal&) const;
+    MCAPI void initialize(class EntityContext&, class SlimeFloatGoal&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@SlimeFloatDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VSlimeFloatDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void
-    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeFloatDefinition>>&);
+    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeFloatDefinition>>&); // NOLINT
 };

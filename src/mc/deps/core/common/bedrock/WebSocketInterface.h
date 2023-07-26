@@ -6,14 +6,11 @@ namespace Bedrock::Http {
 
 class WebSocketInterface {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_HTTP_WEBSOCKETINTERFACE
 public:
+    // prevent constructor by default
     WebSocketInterface& operator=(WebSocketInterface const&) = delete;
     WebSocketInterface(WebSocketInterface const&)            = delete;
     WebSocketInterface()                                     = delete;
-#endif
-
-public:
 };
 
 }; // namespace Bedrock::Http

@@ -14,106 +14,102 @@ public:
     // PerfContextTracker inner types define
     class Duration {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERFCONTEXTTRACKER_DURATION
     public:
+        // prevent constructor by default
         Duration& operator=(Duration const&) = delete;
         Duration(Duration const&)            = delete;
-#endif
 
     public:
         /**
          * @vftbl 0
          * @symbol __unk_vfn_0
          */
-        virtual void __unk_vfn_0();
+        virtual void __unk_vfn_0(); // NOLINT
         /**
          * @vftbl 1
          * @symbol ?reset\@Duration\@PerfContextTracker\@\@UEAAXXZ
          */
-        virtual void reset();
+        virtual void reset(); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERFCONTEXTTRACKER_DURATION
         /**
          * @symbol __unk_destructor_-1
          */
-        MCVAPI ~Duration();
+        MCVAPI ~Duration(); // NOLINT
 #endif
         /**
          * @symbol ??0Duration\@PerfContextTracker\@\@QEAA\@XZ
          */
-        MCAPI Duration();
+        MCAPI Duration(); // NOLINT
     };
 
     class EventScope {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERFCONTEXTTRACKER_EVENTSCOPE
     public:
+        // prevent constructor by default
         EventScope& operator=(EventScope const&) = delete;
         EventScope(EventScope const&)            = delete;
         EventScope()                             = delete;
-#endif
 
     public:
         /**
          * @symbol ??0EventScope\@PerfContextTracker\@\@QEAA\@W4PerfContextEvent\@\@\@Z
          */
-        MCAPI EventScope(enum class PerfContextEvent);
+        MCAPI EventScope(enum class PerfContextEvent); // NOLINT
         /**
          * @symbol ??1EventScope\@PerfContextTracker\@\@QEAA\@XZ
          */
-        MCAPI ~EventScope();
+        MCAPI ~EventScope(); // NOLINT
     };
 
     class Timer {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERFCONTEXTTRACKER_TIMER
     public:
+        // prevent constructor by default
         Timer& operator=(Timer const&) = delete;
         Timer(Timer const&)            = delete;
         Timer()                        = delete;
-#endif
 
     public:
         /**
          * @vftbl 0
          * @symbol __unk_vfn_0
          */
-        virtual void __unk_vfn_0();
+        virtual void __unk_vfn_0(); // NOLINT
         /**
          * @vftbl 1
          * @symbol ?reset\@Timer\@PerfContextTracker\@\@UEAAXXZ
          */
-        virtual void reset();
+        virtual void reset(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERFCONTEXTTRACKER
 public:
+    // prevent constructor by default
     PerfContextTracker& operator=(PerfContextTracker const&) = delete;
     PerfContextTracker(PerfContextTracker const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0PerfContextTracker\@\@QEAA\@XZ
      */
-    MCAPI PerfContextTracker();
+    MCAPI PerfContextTracker(); // NOLINT
     /**
      * @symbol ?incrementPacketReceivedInfo\@PerfContextTracker\@\@QEAAXI\@Z
      */
-    MCAPI void incrementPacketReceivedInfo(unsigned int);
+    MCAPI void incrementPacketReceivedInfo(unsigned int); // NOLINT
     /**
      * @symbol ?incrementPacketSentInfo\@PerfContextTracker\@\@QEAAXI\@Z
      */
-    MCAPI void incrementPacketSentInfo(unsigned int);
+    MCAPI void incrementPacketSentInfo(unsigned int); // NOLINT
     /**
      * @symbol ?getInstance\@PerfContextTracker\@\@SAAEAV1\@XZ
      */
-    MCAPI static class PerfContextTracker& getInstance();
+    MCAPI static class PerfContextTracker& getInstance(); // NOLINT
 
     // private:
     /**
      * @symbol ?_resetStats\@PerfContextTracker\@\@AEAAXXZ
      */
-    MCAPI void _resetStats();
+    MCAPI void _resetStats(); // NOLINT
 
 private:
 };

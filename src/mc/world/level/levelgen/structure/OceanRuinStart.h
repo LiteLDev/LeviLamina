@@ -7,21 +7,20 @@
 
 class OceanRuinStart : public ::StructureStart {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCEANRUINSTART
 public:
+    // prevent constructor by default
     OceanRuinStart& operator=(OceanRuinStart const&) = delete;
     OceanRuinStart(OceanRuinStart const&)            = delete;
     OceanRuinStart()                                 = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @symbol ?createRuin\@OceanRuinStart\@\@QEAAXAEAVDimension\@\@AEAVRandom\@\@HH\@Z
      */
-    MCAPI void createRuin(class Dimension&, class Random&, int, int);
+    MCAPI void createRuin(class Dimension&, class Random&, int, int); // NOLINT
 };

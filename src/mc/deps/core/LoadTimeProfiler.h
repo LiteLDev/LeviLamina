@@ -6,21 +6,20 @@ namespace Core {
 
 class LoadTimeProfiler {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORE_LOADTIMEPROFILER
 public:
+    // prevent constructor by default
     LoadTimeProfiler& operator=(LoadTimeProfiler const&) = delete;
     LoadTimeProfiler(LoadTimeProfiler const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0LoadTimeProfiler\@Core\@\@QEAA\@XZ
      */
-    MCAPI LoadTimeProfiler();
+    MCAPI LoadTimeProfiler(); // NOLINT
     /**
      * @symbol ?setEnabled\@LoadTimeProfiler\@Core\@\@QEAAX_N\@Z
      */
-    MCAPI void setEnabled(bool);
+    MCAPI void setEnabled(bool); // NOLINT
 };
 
 }; // namespace Core

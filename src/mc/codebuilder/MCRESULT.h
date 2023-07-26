@@ -4,24 +4,23 @@
 
 struct MCRESULT {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MCRESULT
 public:
+    // prevent constructor by default
     MCRESULT& operator=(MCRESULT const&) = delete;
     MCRESULT(MCRESULT const&)            = delete;
     MCRESULT()                           = delete;
-#endif
 
 public:
     /**
      * @symbol ?getFullCode\@MCRESULT\@\@QEBAHXZ
      */
-    MCAPI int getFullCode() const;
+    MCAPI int getFullCode() const; // NOLINT
     /**
      * @symbol ?isSuccess\@MCRESULT\@\@QEBA_NXZ
      */
-    MCAPI bool isSuccess() const;
+    MCAPI bool isSuccess() const; // NOLINT
     /**
      * @symbol ??8MCRESULT\@\@QEBA_NAEBU0\@\@Z
      */
-    MCAPI bool operator==(struct MCRESULT const&) const;
+    MCAPI bool operator==(struct MCRESULT const&) const; // NOLINT
 };

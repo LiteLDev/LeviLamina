@@ -11,60 +11,60 @@ namespace Json {
 
 class StyledStreamWriter {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_JSON_STYLEDSTREAMWRITER
 public:
+    // prevent constructor by default
     StyledStreamWriter& operator=(StyledStreamWriter const&) = delete;
     StyledStreamWriter(StyledStreamWriter const&)            = delete;
     StyledStreamWriter()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ??0StyledStreamWriter\@Json\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI StyledStreamWriter(std::string);
+    MCAPI StyledStreamWriter(std::string); // NOLINT
     /**
      * @symbol
      * ?write\@StyledStreamWriter\@Json\@\@QEAAXAEAV?$basic_ostream\@DU?$char_traits\@D\@std\@\@\@std\@\@AEBVValue\@2\@\@Z
      */
-    MCAPI void write(class std::basic_ostream<char, struct std::char_traits<char>>&, class Json::Value const&);
+    MCAPI void
+    write(class std::basic_ostream<char, struct std::char_traits<char>>&, class Json::Value const&); // NOLINT
     /**
      * @symbol ??1StyledStreamWriter\@Json\@\@QEAA\@XZ
      */
-    MCAPI ~StyledStreamWriter();
+    MCAPI ~StyledStreamWriter(); // NOLINT
 
     // private:
     /**
      * @symbol
      * ?pushValue\@StyledStreamWriter\@Json\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void pushValue(std::string const&);
+    MCAPI void pushValue(std::string const&); // NOLINT
     /**
      * @symbol ?unindent\@StyledStreamWriter\@Json\@\@AEAAXXZ
      */
-    MCAPI void unindent();
+    MCAPI void unindent(); // NOLINT
     /**
      * @symbol ?writeArrayValue\@StyledStreamWriter\@Json\@\@AEAAXAEBVValue\@2\@\@Z
      */
-    MCAPI void writeArrayValue(class Json::Value const&);
+    MCAPI void writeArrayValue(class Json::Value const&); // NOLINT
     /**
      * @symbol ?writeCommentAfterValueOnSameLine\@StyledStreamWriter\@Json\@\@AEAAXAEBVValue\@2\@\@Z
      */
-    MCAPI void writeCommentAfterValueOnSameLine(class Json::Value const&);
+    MCAPI void writeCommentAfterValueOnSameLine(class Json::Value const&); // NOLINT
     /**
      * @symbol ?writeCommentBeforeValue\@StyledStreamWriter\@Json\@\@AEAAXAEBVValue\@2\@\@Z
      */
-    MCAPI void writeCommentBeforeValue(class Json::Value const&);
+    MCAPI void writeCommentBeforeValue(class Json::Value const&); // NOLINT
     /**
      * @symbol ?writeValue\@StyledStreamWriter\@Json\@\@AEAAXAEBVValue\@2\@\@Z
      */
-    MCAPI void writeValue(class Json::Value const&);
+    MCAPI void writeValue(class Json::Value const&); // NOLINT
     /**
      * @symbol
      * ?normalizeEOL\@StyledStreamWriter\@Json\@\@CA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV34\@\@Z
      */
-    MCAPI static std::string normalizeEOL(std::string const&);
+    MCAPI static std::string normalizeEOL(std::string const&); // NOLINT
 
 private:
 };

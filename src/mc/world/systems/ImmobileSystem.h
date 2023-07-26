@@ -10,24 +10,23 @@
 
 class ImmobileSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IMMOBILESYSTEM
 public:
+    // prevent constructor by default
     ImmobileSystem& operator=(ImmobileSystem const&) = delete;
     ImmobileSystem(ImmobileSystem const&)            = delete;
     ImmobileSystem()                                 = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@ImmobileSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
     /**
      * @symbol
      * ?tickImmobileSystem\@ImmobileSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UMobIsImmobileFlag\@\@\@\@\@\@ULocalMoveVelocityComponent\@\@UMobRotationComponent\@\@UStateVectorComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UMobIsJumpingFlag\@\@\@\@\@\@\@Z
      */
     MCAPI static void
-        tickImmobileSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct MobIsImmobileFlag>>, struct LocalMoveVelocityComponent, struct MobRotationComponent, struct StateVectorComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct MobIsJumpingFlag>>);
+        tickImmobileSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct MobIsImmobileFlag>>, struct LocalMoveVelocityComponent, struct MobRotationComponent, struct StateVectorComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct MobIsJumpingFlag>>); // NOLINT
 
     // private:
     /**
@@ -35,7 +34,7 @@ public:
      * ?doImmobileSystem\@ImmobileSystem\@\@CAXAEBVStrictEntityContext\@\@AEAULocalMoveVelocityComponent\@\@AEAUMobRotationComponent\@\@AEAUStateVectorComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UMobIsJumpingFlag\@\@\@\@\@\@\@Z
      */
     MCAPI static void
-    doImmobileSystem(class StrictEntityContext const&, struct LocalMoveVelocityComponent&, struct MobRotationComponent&, struct StateVectorComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct MobIsJumpingFlag>>);
+    doImmobileSystem(class StrictEntityContext const&, struct LocalMoveVelocityComponent&, struct MobRotationComponent&, struct StateVectorComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct MobIsJumpingFlag>>); // NOLINT
 
 private:
 };

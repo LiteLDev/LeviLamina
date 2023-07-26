@@ -4,12 +4,9 @@
 
 class IPathBlockSource {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IPATHBLOCKSOURCE
 public:
+    // prevent constructor by default
     IPathBlockSource& operator=(IPathBlockSource const&) = delete;
     IPathBlockSource(IPathBlockSource const&)            = delete;
     IPathBlockSource()                                   = delete;
-#endif
-
-public:
 };

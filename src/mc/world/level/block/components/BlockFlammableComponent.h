@@ -4,12 +4,9 @@
 
 struct BlockFlammableComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKFLAMMABLECOMPONENT
 public:
+    // prevent constructor by default
     BlockFlammableComponent& operator=(BlockFlammableComponent const&) = delete;
     BlockFlammableComponent(BlockFlammableComponent const&)            = delete;
     BlockFlammableComponent()                                          = delete;
-#endif
-
-public:
 };

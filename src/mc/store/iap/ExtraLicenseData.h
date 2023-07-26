@@ -4,12 +4,9 @@
 
 struct ExtraLicenseData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXTRALICENSEDATA
 public:
+    // prevent constructor by default
     ExtraLicenseData& operator=(ExtraLicenseData const&) = delete;
     ExtraLicenseData(ExtraLicenseData const&)            = delete;
     ExtraLicenseData()                                   = delete;
-#endif
-
-public:
 };

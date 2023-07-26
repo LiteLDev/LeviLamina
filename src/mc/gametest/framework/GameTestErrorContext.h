@@ -9,19 +9,18 @@ namespace gametest {
 
 struct GameTestErrorContext {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETEST_GAMETESTERRORCONTEXT
 public:
+    // prevent constructor by default
     GameTestErrorContext& operator=(GameTestErrorContext const&) = delete;
     GameTestErrorContext(GameTestErrorContext const&)            = delete;
     GameTestErrorContext()                                       = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?bind\@GameTestErrorContext\@gametest\@\@SA?AV?$InterfaceBindingBuilder\@UGameTestErrorContext\@gametest\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct gametest::GameTestErrorContext> bind();
+    MCAPI static class Scripting::InterfaceBindingBuilder<struct gametest::GameTestErrorContext> bind(); // NOLINT
 };
 
 }; // namespace gametest

@@ -8,52 +8,51 @@
 
 class OnScreenTextureAnimationPacket : public ::Packet {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONSCREENTEXTUREANIMATIONPACKET
 public:
+    // prevent constructor by default
     OnScreenTextureAnimationPacket& operator=(OnScreenTextureAnimationPacket const&) = delete;
     OnScreenTextureAnimationPacket(OnScreenTextureAnimationPacket const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?getId\@OnScreenTextureAnimationPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
-    virtual enum class MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?getName\@OnScreenTextureAnimationPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string getName() const;
+    virtual std::string getName() const; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?write\@OnScreenTextureAnimationPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream&) const; // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?_read\@OnScreenTextureAnimationPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONSCREENTEXTUREANIMATIONPACKET
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~OnScreenTextureAnimationPacket();
+    MCVAPI ~OnScreenTextureAnimationPacket(); // NOLINT
 #endif
     /**
      * @symbol ??0OnScreenTextureAnimationPacket\@\@QEAA\@I\@Z
      */
-    MCAPI OnScreenTextureAnimationPacket(unsigned int);
+    MCAPI OnScreenTextureAnimationPacket(unsigned int); // NOLINT
     /**
      * @symbol ??0OnScreenTextureAnimationPacket\@\@QEAA\@XZ
      */
-    MCAPI OnScreenTextureAnimationPacket();
+    MCAPI OnScreenTextureAnimationPacket(); // NOLINT
 };

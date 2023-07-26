@@ -4,20 +4,19 @@
 
 class GroundAndAirMoveSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROUNDANDAIRMOVESYSTEM
 public:
+    // prevent constructor by default
     GroundAndAirMoveSystem& operator=(GroundAndAirMoveSystem const&) = delete;
     GroundAndAirMoveSystem(GroundAndAirMoveSystem const&)            = delete;
     GroundAndAirMoveSystem()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol ?createAirMoveSystem\@GroundAndAirMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createAirMoveSystem();
+    MCAPI static struct TickingSystemWithInfo createAirMoveSystem(); // NOLINT
     /**
      * @symbol ?createGroundMoveSystem\@GroundAndAirMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createGroundMoveSystem();
+    MCAPI static struct TickingSystemWithInfo createGroundMoveSystem(); // NOLINT
 };

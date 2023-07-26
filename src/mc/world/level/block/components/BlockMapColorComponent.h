@@ -4,16 +4,15 @@
 
 struct BlockMapColorComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKMAPCOLORCOMPONENT
 public:
+    // prevent constructor by default
     BlockMapColorComponent& operator=(BlockMapColorComponent const&) = delete;
     BlockMapColorComponent(BlockMapColorComponent const&)            = delete;
     BlockMapColorComponent()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol ?usesNewComponentStorage\@BlockMapColorComponent\@\@SA_NXZ
      */
-    MCAPI static bool usesNewComponentStorage();
+    MCAPI static bool usesNewComponentStorage(); // NOLINT
 };

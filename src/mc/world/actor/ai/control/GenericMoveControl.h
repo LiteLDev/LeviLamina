@@ -7,36 +7,35 @@
 
 class GenericMoveControl : public ::MoveControl {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GENERICMOVECONTROL
 public:
+    // prevent constructor by default
     GenericMoveControl& operator=(GenericMoveControl const&) = delete;
     GenericMoveControl(GenericMoveControl const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?initializeInternal\@GenericMoveControl\@\@UEAAXAEAVMob\@\@PEAUMoveControlDescription\@\@\@Z
      */
-    virtual void initializeInternal(class Mob&, struct MoveControlDescription*);
+    virtual void initializeInternal(class Mob&, struct MoveControlDescription*); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?tick\@GenericMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
      */
-    virtual void tick(class MoveControlComponent&, class Mob&);
+    virtual void tick(class MoveControlComponent&, class Mob&); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GENERICMOVECONTROL
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~GenericMoveControl();
+    MCVAPI ~GenericMoveControl(); // NOLINT
 #endif
     /**
      * @symbol ??0GenericMoveControl\@\@QEAA\@XZ
      */
-    MCAPI GenericMoveControl();
+    MCAPI GenericMoveControl(); // NOLINT
 };

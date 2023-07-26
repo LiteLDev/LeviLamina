@@ -4,24 +4,23 @@
 
 class BlockStateRegistry {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSTATEREGISTRY
 public:
+    // prevent constructor by default
     BlockStateRegistry& operator=(BlockStateRegistry const&) = delete;
     BlockStateRegistry(BlockStateRegistry const&)            = delete;
     BlockStateRegistry()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ?registerBlockState\@BlockStateRegistry\@\@QEAAXAEBVBlockState\@\@\@Z
      */
-    MCAPI void registerBlockState(class BlockState const&);
+    MCAPI void registerBlockState(class BlockState const&); // NOLINT
     /**
      * @symbol ?unregisterBlockStates\@BlockStateRegistry\@\@QEAAXXZ
      */
-    MCAPI void unregisterBlockStates();
+    MCAPI void unregisterBlockStates(); // NOLINT
     /**
      * @symbol ?get\@BlockStateRegistry\@\@SAAEAV1\@XZ
      */
-    MCAPI static class BlockStateRegistry& get();
+    MCAPI static class BlockStateRegistry& get(); // NOLINT
 };

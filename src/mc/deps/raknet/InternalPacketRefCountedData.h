@@ -6,14 +6,11 @@ namespace RakNet {
 
 struct InternalPacketRefCountedData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKNET_INTERNALPACKETREFCOUNTEDDATA
 public:
+    // prevent constructor by default
     InternalPacketRefCountedData& operator=(InternalPacketRefCountedData const&) = delete;
     InternalPacketRefCountedData(InternalPacketRefCountedData const&)            = delete;
     InternalPacketRefCountedData()                                               = delete;
-#endif
-
-public:
 };
 
 }; // namespace RakNet

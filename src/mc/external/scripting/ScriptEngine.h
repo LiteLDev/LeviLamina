@@ -6,14 +6,11 @@ namespace Scripting {
 
 class ScriptEngine {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTING_SCRIPTENGINE
 public:
+    // prevent constructor by default
     ScriptEngine& operator=(ScriptEngine const&) = delete;
     ScriptEngine(ScriptEngine const&)            = delete;
     ScriptEngine()                               = delete;
-#endif
-
-public:
 };
 
 }; // namespace Scripting

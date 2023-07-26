@@ -11,38 +11,38 @@ namespace Util::CodeBuilder {
 /**
  * @symbol ?createObject\@CodeBuilder\@Util\@\@YA?AVValue\@Json\@\@AEBVBlock\@\@H\@Z
  */
-MCAPI class Json::Value createObject(class Block const&, int);
+MCAPI class Json::Value createObject(class Block const&, int); // NOLINT
 /**
  * @symbol ?createObject\@CodeBuilder\@Util\@\@YA?AVValue\@Json\@\@AEBVPlayer\@\@\@Z
  */
-MCAPI class Json::Value createObject(class Player const&);
+MCAPI class Json::Value createObject(class Player const&); // NOLINT
 /**
  * @symbol ?createObject\@CodeBuilder\@Util\@\@YA?AVValue\@Json\@\@AEBVItemStack\@\@\@Z
  */
-MCAPI class Json::Value createObject(class ItemStack const&);
+MCAPI class Json::Value createObject(class ItemStack const&); // NOLINT
 /**
  * @symbol ?createObject\@CodeBuilder\@Util\@\@YA?AVValue\@Json\@\@AEBVItemDescriptor\@\@\@Z
  */
-MCAPI class Json::Value createObject(class ItemDescriptor const&);
+MCAPI class Json::Value createObject(class ItemDescriptor const&); // NOLINT
 /**
  * @symbol ?createObject\@CodeBuilder\@Util\@\@YA?AVValue\@Json\@\@AEBVCommandOutput\@\@\@Z
  */
-MCAPI class Json::Value createObject(class CommandOutput const&);
+MCAPI class Json::Value createObject(class CommandOutput const&); // NOLINT
 /**
  * @symbol ?createObject\@CodeBuilder\@Util\@\@YA?AVValue\@Json\@\@AEBVBlock\@\@\@Z
  */
-MCAPI class Json::Value createObject(class Block const&);
+MCAPI class Json::Value createObject(class Block const&); // NOLINT
 /**
  * @symbol ?createObject\@CodeBuilder\@Util\@\@YA?AVValue\@Json\@\@AEBVActor\@\@\@Z
  */
-MCAPI class Json::Value createObject(class Actor const&);
+MCAPI class Json::Value createObject(class Actor const&); // NOLINT
 /**
  * @symbol ?createObject\@CodeBuilder\@Util\@\@YA?AVValue\@Json\@\@AEBVItemStackBase\@\@\@Z
  */
-MCAPI class Json::Value createObject(class ItemStackBase const&);
+MCAPI class Json::Value createObject(class ItemStackBase const&); // NOLINT
 /**
  * @symbol ?createTraderObject\@CodeBuilder\@Util\@\@YA?AVValue\@Json\@\@AEBVActor\@\@\@Z
  */
-MCAPI class Json::Value createTraderObject(class Actor const&);
+MCAPI class Json::Value createTraderObject(class Actor const&); // NOLINT
 
 }; // namespace Util::CodeBuilder

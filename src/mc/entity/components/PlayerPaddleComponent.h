@@ -4,12 +4,9 @@
 
 struct PlayerPaddleComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERPADDLECOMPONENT
 public:
+    // prevent constructor by default
     PlayerPaddleComponent& operator=(PlayerPaddleComponent const&) = delete;
     PlayerPaddleComponent(PlayerPaddleComponent const&)            = delete;
     PlayerPaddleComponent()                                        = delete;
-#endif
-
-public:
 };

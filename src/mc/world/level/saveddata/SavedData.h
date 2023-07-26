@@ -4,18 +4,17 @@
 
 class SavedData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SAVEDDATA
 public:
+    // prevent constructor by default
     SavedData& operator=(SavedData const&) = delete;
     SavedData(SavedData const&)            = delete;
     SavedData()                            = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAVEDDATA
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~SavedData();
+    MCVAPI ~SavedData(); // NOLINT
 #endif
 };

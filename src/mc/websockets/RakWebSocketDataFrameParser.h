@@ -9,23 +9,22 @@ namespace RakNet { class BitStream; }
 
 class RakWebSocketDataFrameParser {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKWEBSOCKETDATAFRAMEPARSER
 public:
+    // prevent constructor by default
     RakWebSocketDataFrameParser& operator=(RakWebSocketDataFrameParser const&) = delete;
     RakWebSocketDataFrameParser(RakWebSocketDataFrameParser const&)            = delete;
     RakWebSocketDataFrameParser()                                              = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?readFrame\@RakWebSocketDataFrameParser\@\@QEAA?AV?$shared_ptr\@VRakWebSocketDataFrame\@\@\@std\@\@AEAVBitStream\@RakNet\@\@\@Z
      */
-    MCAPI class std::shared_ptr<class RakWebSocketDataFrame> readFrame(class RakNet::BitStream&);
+    MCAPI class std::shared_ptr<class RakWebSocketDataFrame> readFrame(class RakNet::BitStream&); // NOLINT
     /**
      * @symbol ??1RakWebSocketDataFrameParser\@\@QEAA\@XZ
      */
-    MCAPI ~RakWebSocketDataFrameParser();
+    MCAPI ~RakWebSocketDataFrameParser(); // NOLINT
 
     // private:
     /**
@@ -33,7 +32,7 @@ public:
      * ?_failReadFrame\@RakWebSocketDataFrameParser\@\@AEAA?AV?$shared_ptr\@VRakWebSocketDataFrame\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@W4CloseStatusCode\@\@\@Z
      */
     MCAPI class std::shared_ptr<class RakWebSocketDataFrame>
-    _failReadFrame(std::string const&, enum class CloseStatusCode);
+    _failReadFrame(std::string const&, enum class CloseStatusCode); // NOLINT
 
 private:
 };

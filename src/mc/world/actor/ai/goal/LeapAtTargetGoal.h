@@ -4,57 +4,56 @@
 
 class LeapAtTargetGoal {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEAPATTARGETGOAL
 public:
+    // prevent constructor by default
     LeapAtTargetGoal& operator=(LeapAtTargetGoal const&) = delete;
     LeapAtTargetGoal(LeapAtTargetGoal const&)            = delete;
     LeapAtTargetGoal()                                   = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?canUse\@LeapAtTargetGoal\@\@UEAA_NXZ
      */
-    virtual bool canUse();
+    virtual bool canUse(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?canContinueToUse\@LeapAtTargetGoal\@\@UEAA_NXZ
      */
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse(); // NOLINT
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3();
+    virtual void __unk_vfn_3(); // NOLINT
     /**
      * @vftbl 4
      * @symbol ?start\@LeapAtTargetGoal\@\@UEAAXXZ
      */
-    virtual void start();
+    virtual void start(); // NOLINT
     /**
      * @vftbl 5
      * @symbol __unk_vfn_5
      */
-    virtual void __unk_vfn_5();
+    virtual void __unk_vfn_5(); // NOLINT
     /**
      * @vftbl 6
      * @symbol __unk_vfn_6
      */
-    virtual void __unk_vfn_6();
+    virtual void __unk_vfn_6(); // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?appendDebugInfo\@LeapAtTargetGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string&) const; // NOLINT
     /**
      * @symbol ??0LeapAtTargetGoal\@\@QEAA\@AEAVMob\@\@M_N1\@Z
      */
-    MCAPI LeapAtTargetGoal(class Mob&, float, bool, bool);
+    MCAPI LeapAtTargetGoal(class Mob&, float, bool, bool); // NOLINT
 };

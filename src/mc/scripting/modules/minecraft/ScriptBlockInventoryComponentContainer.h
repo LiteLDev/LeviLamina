@@ -9,6 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class Container;
+class ItemContext;
 namespace ScriptModuleMinecraft { class ScriptContainer; }
 namespace ScriptModuleMinecraft { class ScriptContainerSlot; }
 namespace ScriptModuleMinecraft { class ScriptContainerWrapper; }
@@ -19,37 +21,36 @@ namespace ScriptModuleMinecraft {
 
 class ScriptBlockInventoryComponentContainer : public ::ScriptModuleMinecraft::ScriptContainer {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTBLOCKINVENTORYCOMPONENTCONTAINER
 public:
+    // prevent constructor by default
     ScriptBlockInventoryComponentContainer& operator=(ScriptBlockInventoryComponentContainer const&) = delete;
     ScriptBlockInventoryComponentContainer(ScriptBlockInventoryComponentContainer const&)            = delete;
     ScriptBlockInventoryComponentContainer()                                                         = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?getEmptySlotsCount\@ScriptBlockInventoryComponentContainer\@ScriptModuleMinecraft\@\@UEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    virtual class Scripting::Result<int> getEmptySlotsCount() const;
+    virtual class Scripting::Result<int> getEmptySlotsCount() const; // NOLINT
     /**
      * @vftbl 13
      * @symbol
      * ?_tryGetContainer\@ScriptBlockInventoryComponentContainer\@ScriptModuleMinecraft\@\@MEBAPEAVContainer\@\@XZ
      */
-    virtual class Container* _tryGetContainer() const;
+    virtual class Container* _tryGetContainer() const; // NOLINT
     /**
      * @vftbl 14
      * @symbol
      * ?_getItemContext\@ScriptBlockInventoryComponentContainer\@ScriptModuleMinecraft\@\@MEBA?AVItemContext\@\@H\@Z
      */
-    virtual class ItemContext _getItemContext(int) const;
+    virtual class ItemContext _getItemContext(int) const; // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

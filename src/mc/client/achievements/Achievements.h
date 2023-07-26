@@ -6,6 +6,6 @@ namespace Achievements {
 /**
  * @symbol ?getIndexForFroglight\@Achievements\@\@YAHAEBVItemStack\@\@\@Z
  */
-MCAPI int getIndexForFroglight(class ItemStack const&);
+MCAPI int getIndexForFroglight(class ItemStack const&); // NOLINT
 
 }; // namespace Achievements

@@ -4,16 +4,15 @@
 
 class ActorParticleEffectEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORPARTICLEEFFECTEVENT
 public:
+    // prevent constructor by default
     ActorParticleEffectEvent& operator=(ActorParticleEffectEvent const&) = delete;
     ActorParticleEffectEvent(ActorParticleEffectEvent const&)            = delete;
     ActorParticleEffectEvent()                                           = delete;
-#endif
 
 public:
     /**
      * @symbol ??1ActorParticleEffectEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorParticleEffectEvent();
+    MCAPI ~ActorParticleEffectEvent(); // NOLINT
 };

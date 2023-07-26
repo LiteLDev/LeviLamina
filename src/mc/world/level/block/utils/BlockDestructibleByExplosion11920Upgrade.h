@@ -11,24 +11,23 @@ namespace BlockExplosionResistanceVersioning {
 
 class BlockDestructibleByExplosion11920Upgrade {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKEXPLOSIONRESISTANCEVERSIONING_BLOCKDESTRUCTIBLEBYEXPLOSION11920UPGRADE
 public:
+    // prevent constructor by default
     BlockDestructibleByExplosion11920Upgrade& operator=(BlockDestructibleByExplosion11920Upgrade const&) = delete;
     BlockDestructibleByExplosion11920Upgrade(BlockDestructibleByExplosion11920Upgrade const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?previousSchema\@BlockDestructibleByExplosion11920Upgrade\@BlockExplosionResistanceVersioning\@\@UEBAXAEAVSchemaFactory\@cereal\@\@\@Z
      */
-    virtual void previousSchema(class cereal::SchemaFactory&) const;
+    virtual void previousSchema(class cereal::SchemaFactory&) const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
@@ -37,11 +36,11 @@ public:
     virtual bool upgradeToNext(class rapidjson::GenericDocument<
                                struct rapidjson::UTF8<char>,
                                class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>,
-                               class rapidjson::CrtAllocator>&) const;
+                               class rapidjson::CrtAllocator>&) const; // NOLINT
     /**
      * @symbol ??0BlockDestructibleByExplosion11920Upgrade\@BlockExplosionResistanceVersioning\@\@QEAA\@XZ
      */
-    MCAPI BlockDestructibleByExplosion11920Upgrade();
+    MCAPI BlockDestructibleByExplosion11920Upgrade(); // NOLINT
 };
 
 }; // namespace BlockExplosionResistanceVersioning

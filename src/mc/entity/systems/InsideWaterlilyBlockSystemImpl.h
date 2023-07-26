@@ -13,6 +13,6 @@ namespace InsideWaterlilyBlockSystemImpl {
  * ?tickDestroyWaterlily\@InsideWaterlilyBlockSystemImpl\@\@YAXAEBU?$InsideBlockWithPosComponent\@UWaterlilyBlockFlag\@\@\@\@AEAVActorOwnerComponent\@\@\@Z
  */
 MCAPI void
-tickDestroyWaterlily(struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag> const&, class ActorOwnerComponent&);
+tickDestroyWaterlily(struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag> const&, class ActorOwnerComponent&); // NOLINT
 
 }; // namespace InsideWaterlilyBlockSystemImpl

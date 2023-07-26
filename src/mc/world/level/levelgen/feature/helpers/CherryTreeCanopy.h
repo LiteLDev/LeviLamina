@@ -9,19 +9,18 @@ namespace TreeHelper { struct TreeParams; }
 
 class CherryTreeCanopy {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHERRYTREECANOPY
 public:
+    // prevent constructor by default
     CherryTreeCanopy& operator=(CherryTreeCanopy const&) = delete;
     CherryTreeCanopy(CherryTreeCanopy const&)            = delete;
     CherryTreeCanopy()                                   = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
@@ -29,7 +28,7 @@ public:
      */
     virtual class std::optional<class BlockPos>
     placeCanopy(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&, struct TreeHelper::TreeParams const&, std::vector<class BlockPos> const&)
-        const;
+        const; // NOLINT
 
     // private:
     /**
@@ -38,14 +37,14 @@ public:
      */
     MCAPI void
     _placeLayerOfLeaves(class IBlockWorldGenAPI&, class Random&, class BlockPos const&, int, class Block const&, int, struct TreeHelper::TreeParams const&)
-        const;
+        const; // NOLINT
     /**
      * @symbol
      * ?_placeLayerOfLeavesWithHangingLeavesBelow\@CherryTreeCanopy\@\@AEBAXAEAVIBlockWorldGenAPI\@\@AEAVRandom\@\@AEBVBlockPos\@\@HAEBVBlock\@\@HAEBUTreeParams\@TreeHelper\@\@\@Z
      */
     MCAPI void
     _placeLayerOfLeavesWithHangingLeavesBelow(class IBlockWorldGenAPI&, class Random&, class BlockPos const&, int, class Block const&, int, struct TreeHelper::TreeParams const&)
-        const;
+        const; // NOLINT
 
 private:
 };

@@ -8,37 +8,36 @@
 
 class RemoveEntityPacket : public ::EntityServerPacket {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_REMOVEENTITYPACKET
 public:
+    // prevent constructor by default
     RemoveEntityPacket& operator=(RemoveEntityPacket const&) = delete;
     RemoveEntityPacket(RemoveEntityPacket const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?getId\@RemoveEntityPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
-    virtual enum class MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?getName\@RemoveEntityPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string getName() const;
+    virtual std::string getName() const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_REMOVEENTITYPACKET
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~RemoveEntityPacket();
+    MCVAPI ~RemoveEntityPacket(); // NOLINT
 #endif
     /**
      * @symbol ??0RemoveEntityPacket\@\@QEAA\@XZ
      */
-    MCAPI RemoveEntityPacket();
+    MCAPI RemoveEntityPacket(); // NOLINT
 };

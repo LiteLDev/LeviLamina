@@ -7,35 +7,35 @@
 
 class BasaltColumnsFeature : public ::Feature {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASALTCOLUMNSFEATURE
 public:
+    // prevent constructor by default
     BasaltColumnsFeature& operator=(BasaltColumnsFeature const&) = delete;
     BasaltColumnsFeature(BasaltColumnsFeature const&)            = delete;
     BasaltColumnsFeature()                                       = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?place\@BasaltColumnsFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
 
     // private:
     /**
      * @symbol
      * ?_findSurface\@BasaltColumnsFeature\@\@AEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVBlockSource\@\@VBlockPos\@\@HH\@Z
      */
-    MCAPI class std::optional<class BlockPos> _findSurface(class BlockSource&, class BlockPos, int, int) const;
+    MCAPI class std::optional<class BlockPos>
+    _findSurface(class BlockSource&, class BlockPos, int, int) const; // NOLINT
     /**
      * @symbol ?_placeColumnCluster\@BasaltColumnsFeature\@\@AEBA_NAEAVBlockSource\@\@VBlockPos\@\@HH\@Z
      */
-    MCAPI bool _placeColumnCluster(class BlockSource&, class BlockPos, int, int) const;
+    MCAPI bool _placeColumnCluster(class BlockSource&, class BlockPos, int, int) const; // NOLINT
 
 private:
 };

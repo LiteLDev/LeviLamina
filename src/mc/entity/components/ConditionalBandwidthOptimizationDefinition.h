@@ -12,38 +12,37 @@ namespace JsonUtil { class EmptyClass; }
 
 class ConditionalBandwidthOptimizationDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONDITIONALBANDWIDTHOPTIMIZATIONDEFINITION
 public:
+    // prevent constructor by default
     ConditionalBandwidthOptimizationDefinition& operator=(ConditionalBandwidthOptimizationDefinition const&) = delete;
     ConditionalBandwidthOptimizationDefinition(ConditionalBandwidthOptimizationDefinition const&)            = delete;
     ConditionalBandwidthOptimizationDefinition()                                                             = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?addConditionalBandwidthOptimization\@ConditionalBandwidthOptimizationDefinition\@\@QEAAXAEBUConditionalBandwidthOptimization\@\@\@Z
      */
-    MCAPI void addConditionalBandwidthOptimization(struct ConditionalBandwidthOptimization const&);
+    MCAPI void addConditionalBandwidthOptimization(struct ConditionalBandwidthOptimization const&); // NOLINT
     /**
      * @symbol
      * ?addDefaultBandwidthOptimization\@ConditionalBandwidthOptimizationDefinition\@\@QEAAXAEBUConditionalBandwidthOptimization\@\@\@Z
      */
-    MCAPI void addDefaultBandwidthOptimization(struct ConditionalBandwidthOptimization const&);
+    MCAPI void addDefaultBandwidthOptimization(struct ConditionalBandwidthOptimization const&); // NOLINT
     /**
      * @symbol
      * ?initialize\@ConditionalBandwidthOptimizationDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVConditionalBandwidthOptimizationComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class ConditionalBandwidthOptimizationComponent&) const;
+    MCAPI void initialize(class EntityContext&, class ConditionalBandwidthOptimizationComponent&) const; // NOLINT
     /**
      * @symbol ??1ConditionalBandwidthOptimizationDefinition\@\@QEAA\@XZ
      */
-    MCAPI ~ConditionalBandwidthOptimizationDefinition();
+    MCAPI ~ConditionalBandwidthOptimizationDefinition(); // NOLINT
     /**
      * @symbol
      * ?buildSchema\@ConditionalBandwidthOptimizationDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VConditionalBandwidthOptimizationDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
                                       class JsonUtil::EmptyClass,
-                                      class ConditionalBandwidthOptimizationDefinition>>&);
+                                      class ConditionalBandwidthOptimizationDefinition>>&); // NOLINT
 };

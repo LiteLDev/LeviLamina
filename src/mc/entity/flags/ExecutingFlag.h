@@ -6,14 +6,11 @@ namespace AgentComponents {
 
 struct ExecutingFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMPONENTS_EXECUTINGFLAG
 public:
+    // prevent constructor by default
     ExecutingFlag& operator=(ExecutingFlag const&) = delete;
     ExecutingFlag(ExecutingFlag const&)            = delete;
     ExecutingFlag()                                = delete;
-#endif
-
-public:
 };
 
 }; // namespace AgentComponents

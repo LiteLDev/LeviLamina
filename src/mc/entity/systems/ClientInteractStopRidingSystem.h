@@ -4,16 +4,15 @@
 
 class ClientInteractStopRidingSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTINTERACTSTOPRIDINGSYSTEM
 public:
+    // prevent constructor by default
     ClientInteractStopRidingSystem& operator=(ClientInteractStopRidingSystem const&) = delete;
     ClientInteractStopRidingSystem(ClientInteractStopRidingSystem const&)            = delete;
     ClientInteractStopRidingSystem()                                                 = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@ClientInteractStopRidingSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
 };

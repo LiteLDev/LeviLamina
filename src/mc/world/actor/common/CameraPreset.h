@@ -4,30 +4,29 @@
 
 struct CameraPreset {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMERAPRESET
 public:
+    // prevent constructor by default
     CameraPreset() = delete;
-#endif
 
 public:
     /**
      * @symbol ??0CameraPreset\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI CameraPreset(struct CameraPreset const&);
+    MCAPI CameraPreset(struct CameraPreset const&); // NOLINT
     /**
      * @symbol ??4CameraPreset\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
-    MCAPI struct CameraPreset& operator=(struct CameraPreset const&);
+    MCAPI struct CameraPreset& operator=(struct CameraPreset const&); // NOLINT
     /**
      * @symbol ??4CameraPreset\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct CameraPreset& operator=(struct CameraPreset&&);
+    MCAPI struct CameraPreset& operator=(struct CameraPreset&&); // NOLINT
     /**
      * @symbol ??1CameraPreset\@\@QEAA\@XZ
      */
-    MCAPI ~CameraPreset();
+    MCAPI ~CameraPreset(); // NOLINT
     /**
      * @symbol ?bindType\@CameraPreset\@\@SAXXZ
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(); // NOLINT
 };

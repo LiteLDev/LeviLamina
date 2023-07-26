@@ -5,12 +5,9 @@
 template <typename... T0>
 struct Filter {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTER
 public:
+    // prevent constructor by default
     Filter& operator=(Filter const&) = delete;
     Filter(Filter const&)            = delete;
     Filter()                         = delete;
-#endif
-
-public:
 };

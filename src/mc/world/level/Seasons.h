@@ -4,28 +4,27 @@
 
 class Seasons {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SEASONS
 public:
+    // prevent constructor by default
     Seasons& operator=(Seasons const&) = delete;
     Seasons(Seasons const&)            = delete;
     Seasons()                          = delete;
-#endif
 
 public:
     /**
      * @symbol ??0Seasons\@\@QEAA\@AEAVDimension\@\@\@Z
      */
-    MCAPI Seasons(class Dimension&);
+    MCAPI Seasons(class Dimension&); // NOLINT
     /**
      * @symbol ?postProcess\@Seasons\@\@QEAAXAEAVLevelChunk\@\@AEAVBlockSource\@\@AEBVChunkPos\@\@\@Z
      */
-    MCAPI void postProcess(class LevelChunk&, class BlockSource&, class ChunkPos const&);
+    MCAPI void postProcess(class LevelChunk&, class BlockSource&, class ChunkPos const&); // NOLINT
     /**
      * @symbol ?tick\@Seasons\@\@QEAAXXZ
      */
-    MCAPI void tick();
+    MCAPI void tick(); // NOLINT
     /**
      * @symbol ??1Seasons\@\@QEAA\@XZ
      */
-    MCAPI ~Seasons();
+    MCAPI ~Seasons(); // NOLINT
 };

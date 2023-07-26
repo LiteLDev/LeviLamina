@@ -7,31 +7,30 @@
 
 class ResourcePackStack {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKSTACK
 public:
+    // prevent constructor by default
     ResourcePackStack& operator=(ResourcePackStack const&) = delete;
     ResourcePackStack(ResourcePackStack const&)            = delete;
     ResourcePackStack()                                    = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?loadAllVersionsOf\@ResourcePackStack\@\@UEBA?AV?$vector\@VLoadedResourceData\@\@V?$allocator\@VLoadedResourceData\@\@\@std\@\@\@std\@\@AEBVResourceLocation\@\@\@Z
      */
-    virtual std::vector<class LoadedResourceData> loadAllVersionsOf(class ResourceLocation const&) const;
+    virtual std::vector<class LoadedResourceData> loadAllVersionsOf(class ResourceLocation const&) const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?loadAllVersionsOf\@ResourcePackStack\@\@UEBA_NAEBVResourceLocation\@\@AEAVResourcePackMergeStrategy\@\@\@Z
      */
-    virtual bool loadAllVersionsOf(class ResourceLocation const&, class ResourcePackMergeStrategy&) const;
+    virtual bool loadAllVersionsOf(class ResourceLocation const&, class ResourcePackMergeStrategy&) const; // NOLINT
     /**
      * @vftbl 3
      * @symbol
@@ -39,48 +38,48 @@ public:
      */
     virtual bool
     loadAllVersionsOf(class ResourceLocation const&, class std::function<bool(class PackInstance const&)> const&, class ResourcePackMergeStrategy&)
-        const;
+        const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKSTACK
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ResourcePackStack();
+    MCVAPI ~ResourcePackStack(); // NOLINT
 #endif
     /**
      * @symbol ?add\@ResourcePackStack\@\@QEAAXVPackInstance\@\@AEBVIResourcePackRepository\@\@_N\@Z
      */
-    MCAPI void add(class PackInstance, class IResourcePackRepository const&, bool);
+    MCAPI void add(class PackInstance, class IResourcePackRepository const&, bool); // NOLINT
     /**
      * @symbol ?getSplitStacks\@ResourcePackStack\@\@QEBAXAEAV1\@0\@Z
      */
-    MCAPI void getSplitStacks(class ResourcePackStack&, class ResourcePackStack&) const;
+    MCAPI void getSplitStacks(class ResourcePackStack&, class ResourcePackStack&) const; // NOLINT
     /**
      * @symbol
      * ?hasCapabilityInStack\@ResourcePackStack\@\@QEBA_NV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI bool hasCapabilityInStack(class std::basic_string_view<char, struct std::char_traits<char>>) const;
+    MCAPI bool hasCapabilityInStack(class std::basic_string_view<char, struct std::char_traits<char>>) const; // NOLINT
     /**
      * @symbol ?hasPlatformLockedContent\@ResourcePackStack\@\@QEBA_NXZ
      */
-    MCAPI bool hasPlatformLockedContent() const;
+    MCAPI bool hasPlatformLockedContent() const; // NOLINT
     /**
      * @symbol ?removeDuplicates\@ResourcePackStack\@\@QEAAXXZ
      */
-    MCAPI void removeDuplicates();
+    MCAPI void removeDuplicates(); // NOLINT
     /**
      * @symbol ?removeIf\@ResourcePackStack\@\@QEAAXAEBV?$function\@$$A6A_NAEBVPackInstance\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI void removeIf(class std::function<bool(class PackInstance const&)> const&);
+    MCAPI void removeIf(class std::function<bool(class PackInstance const&)> const&); // NOLINT
     /**
      * @symbol ?removeInvalidPacks\@ResourcePackStack\@\@QEAAXXZ
      */
-    MCAPI void removeInvalidPacks();
+    MCAPI void removeInvalidPacks(); // NOLINT
     /**
      * @symbol
      * ?deserialize\@ResourcePackStack\@\@SA?AV?$unique_ptr\@VResourcePackStack\@\@U?$default_delete\@VResourcePackStack\@\@\@std\@\@\@std\@\@AEAV?$basic_istream\@DU?$char_traits\@D\@std\@\@\@3\@AEBVIResourcePackRepository\@\@\@Z
      */
     MCAPI static std::unique_ptr<class ResourcePackStack>
-    deserialize(class std::basic_istream<char, struct std::char_traits<char>>&, class IResourcePackRepository const&);
+    deserialize(class std::basic_istream<char, struct std::char_traits<char>>&, class IResourcePackRepository const&); // NOLINT
 
     // private:
     /**
@@ -92,7 +91,7 @@ public:
         class PackInstance&,
         class IResourcePackRepository const&,
         bool
-    );
+    ); // NOLINT
 
 private:
     /**
@@ -105,5 +104,5 @@ private:
         struct std::less<class Core::PathBuffer<std::string>>,
         class std::allocator<
             struct std::pair<class Core::PathBuffer<std::string> const, class Core::PathBuffer<std::string>>>>
-        mUpgradePathMap;
+        mUpgradePathMap; // NOLINT
 };

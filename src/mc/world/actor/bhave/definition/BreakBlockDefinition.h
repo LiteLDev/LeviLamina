@@ -12,22 +12,21 @@ namespace Json { class Value; }
 
 class BreakBlockDefinition : public ::BehaviorDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREAKBLOCKDEFINITION
 public:
+    // prevent constructor by default
     BreakBlockDefinition& operator=(BreakBlockDefinition const&) = delete;
     BreakBlockDefinition(BreakBlockDefinition const&)            = delete;
     BreakBlockDefinition()                                       = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?load\@BreakBlockDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    virtual void load(class Json::Value, class BehaviorFactory const&); // NOLINT
 };

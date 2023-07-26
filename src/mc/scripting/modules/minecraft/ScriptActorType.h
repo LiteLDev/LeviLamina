@@ -15,12 +15,11 @@ namespace ScriptModuleMinecraft {
 
 class ScriptActorType {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTACTORTYPE
 public:
+    // prevent constructor by default
     ScriptActorType& operator=(ScriptActorType const&) = delete;
     ScriptActorType(ScriptActorType const&)            = delete;
     ScriptActorType()                                  = delete;
-#endif
 
 public:
     /**
@@ -28,17 +27,17 @@ public:
      * ?addDynamicPropertiesDefinition\@ScriptActorType\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEBVScriptDynamicPropertiesDefinition\@2\@\@Z
      */
     MCAPI class Scripting::Result<void>
-    addDynamicPropertiesDefinition(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&);
+    addDynamicPropertiesDefinition(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&); // NOLINT
     /**
      * @symbol
      * ?getId\@ScriptActorType\@ScriptModuleMinecraft\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getId() const;
+    MCAPI std::string getId() const; // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptActorType\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptActorType\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptActorType> bind();
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptActorType> bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

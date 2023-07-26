@@ -12,23 +12,22 @@ namespace JsonUtil { class EmptyClass; }
 
 struct PushThroughDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PUSHTHROUGHDEFINITION
 public:
+    // prevent constructor by default
     PushThroughDefinition& operator=(PushThroughDefinition const&) = delete;
     PushThroughDefinition(PushThroughDefinition const&)            = delete;
     PushThroughDefinition()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ?initialize\@PushThroughDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&) const;
+    MCAPI void initialize(class EntityContext&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@PushThroughDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UPushThroughDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct PushThroughDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      struct PushThroughDefinition>>&); // NOLINT
 };

@@ -4,16 +4,15 @@
 
 struct GameEventPair {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEEVENTPAIR
 public:
+    // prevent constructor by default
     GameEventPair& operator=(GameEventPair const&) = delete;
     GameEventPair(GameEventPair const&)            = delete;
     GameEventPair()                                = delete;
-#endif
 
 public:
     /**
      * @symbol ??1GameEventPair\@\@QEAA\@XZ
      */
-    MCAPI ~GameEventPair();
+    MCAPI ~GameEventPair(); // NOLINT
 };

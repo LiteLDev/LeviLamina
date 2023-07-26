@@ -5,12 +5,9 @@
 template <typename T0>
 class Spline {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPLINE
 public:
+    // prevent constructor by default
     Spline& operator=(Spline const&) = delete;
     Spline(Spline const&)            = delete;
     Spline()                         = delete;
-#endif
-
-public:
 };

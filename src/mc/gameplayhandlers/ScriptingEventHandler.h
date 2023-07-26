@@ -4,12 +4,9 @@
 
 class ScriptingEventHandler {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTINGEVENTHANDLER
 public:
+    // prevent constructor by default
     ScriptingEventHandler& operator=(ScriptingEventHandler const&) = delete;
     ScriptingEventHandler(ScriptingEventHandler const&)            = delete;
     ScriptingEventHandler()                                        = delete;
-#endif
-
-public:
 };

@@ -15,59 +15,59 @@ namespace Core { enum class FileBufferingMode; }
 
 class JournaledFile {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_JOURNALEDFILE
 public:
+    // prevent constructor by default
     JournaledFile& operator=(JournaledFile const&) = delete;
     JournaledFile(JournaledFile const&)            = delete;
     JournaledFile()                                = delete;
-#endif
 
 public:
     /**
      * @symbol ??0JournaledFile\@\@QEAA\@$$QEAV?$function\@$$A6A?AVResult\@Core\@\@VPath\@2\@\@Z\@std\@\@\@Z
      */
-    MCAPI JournaledFile(class std::function<class Core::Result(class Core::Path)>&&);
+    MCAPI JournaledFile(class std::function<class Core::Result(class Core::Path)>&&); // NOLINT
     /**
      * @symbol ?open\@JournaledFile\@\@QEAA?AVResult\@Core\@\@VPath\@3\@VFileOpenMode\@3\@W4FileBufferingMode\@3\@\@Z
      */
-    MCAPI class Core::Result open(class Core::Path, class Core::FileOpenMode, enum class Core::FileBufferingMode);
+    MCAPI class Core::Result
+        open(class Core::Path, class Core::FileOpenMode, enum class Core::FileBufferingMode); // NOLINT
     /**
      * @symbol ?write\@JournaledFile\@\@QEAA?AVResult\@Core\@\@PEBX_K\@Z
      */
-    MCAPI class Core::Result write(void const*, unsigned __int64);
+    MCAPI class Core::Result write(void const*, unsigned __int64); // NOLINT
     /**
      * @symbol ??1JournaledFile\@\@QEAA\@XZ
      */
-    MCAPI ~JournaledFile();
+    MCAPI ~JournaledFile(); // NOLINT
     /**
      * @symbol
      * ?findBackupPath\@JournaledFile\@\@SA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@VPath\@3\@\@Z
      */
-    MCAPI static class Core::PathBuffer<std::string> findBackupPath(class Core::Path);
+    MCAPI static class Core::PathBuffer<std::string> findBackupPath(class Core::Path); // NOLINT
     /**
      * @symbol
      * ?findReadPath\@JournaledFile\@\@SA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@VPath\@3\@\@Z
      */
-    MCAPI static class Core::PathBuffer<std::string> findReadPath(class Core::Path);
+    MCAPI static class Core::PathBuffer<std::string> findReadPath(class Core::Path); // NOLINT
     /**
      * @symbol ?isOldFile\@JournaledFile\@\@SA_NVPath\@Core\@\@\@Z
      */
-    MCAPI static bool isOldFile(class Core::Path);
+    MCAPI static bool isOldFile(class Core::Path); // NOLINT
     /**
      * @symbol
      * ?populateImportantFiles\@JournaledFile\@\@SAXVPath\@Core\@\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
      */
-    MCAPI static void populateImportantFiles(class Core::Path, std::vector<std::string>&);
+    MCAPI static void populateImportantFiles(class Core::Path, std::vector<std::string>&); // NOLINT
     /**
      * @symbol ?replaceHeadFileWithBackup\@JournaledFile\@\@SA?AVResult\@Core\@\@VPath\@3\@\@Z
      */
-    MCAPI static class Core::Result replaceHeadFileWithBackup(class Core::Path);
+    MCAPI static class Core::Result replaceHeadFileWithBackup(class Core::Path); // NOLINT
 
     // private:
     /**
      * @symbol ?_flushFiles\@JournaledFile\@\@AEAAXXZ
      */
-    MCAPI void _flushFiles();
+    MCAPI void _flushFiles(); // NOLINT
 
 private:
 };

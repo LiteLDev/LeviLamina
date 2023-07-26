@@ -9,36 +9,37 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptEventCommandMessageAfterEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTEVENTCOMMANDMESSAGEAFTEREVENT
 public:
+    // prevent constructor by default
     ScriptEventCommandMessageAfterEvent& operator=(ScriptEventCommandMessageAfterEvent const&) = delete;
     ScriptEventCommandMessageAfterEvent()                                                      = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ScriptEventCommandMessageAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@$$QEAU01\@\@Z
      */
-    MCAPI ScriptEventCommandMessageAfterEvent(struct ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&&);
+    MCAPI
+    ScriptEventCommandMessageAfterEvent(struct ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&&); // NOLINT
     /**
      * @symbol ??0ScriptEventCommandMessageAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
      */
-    MCAPI ScriptEventCommandMessageAfterEvent(struct ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent const&);
+    MCAPI ScriptEventCommandMessageAfterEvent(struct ScriptModuleMinecraft::
+                                                  ScriptEventCommandMessageAfterEvent const&); // NOLINT
     /**
      * @symbol ??4ScriptEventCommandMessageAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&&);
+    operator=(struct ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&&); // NOLINT
     /**
      * @symbol ??1ScriptEventCommandMessageAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptEventCommandMessageAfterEvent();
+    MCAPI ~ScriptEventCommandMessageAfterEvent(); // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptEventCommandMessageAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptEventCommandMessageAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent>
-    bind();
+    bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

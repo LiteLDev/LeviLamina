@@ -20,38 +20,36 @@ public:
     // AttackCooldownComponent inner types define
     class AttackCooldownDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTACKCOOLDOWNCOMPONENT_ATTACKCOOLDOWNDEFINITION
     public:
+        // prevent constructor by default
         AttackCooldownDefinition& operator=(AttackCooldownDefinition const&) = delete;
         AttackCooldownDefinition(AttackCooldownDefinition const&)            = delete;
         AttackCooldownDefinition()                                           = delete;
-#endif
 
     public:
         /**
          * @symbol
          * ?initialize\@AttackCooldownDefinition\@AttackCooldownComponent\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
          */
-        MCAPI void initialize(class EntityContext&, class AttackCooldownComponent&) const;
+        MCAPI void initialize(class EntityContext&, class AttackCooldownComponent&) const; // NOLINT
         /**
          * @symbol
          * ?buildSchema\@AttackCooldownDefinition\@AttackCooldownComponent\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VAttackCooldownDefinition\@AttackCooldownComponent\@\@\@JsonUtil\@\@\@std\@\@\@Z
          */
         MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
                                           class JsonUtil::EmptyClass,
-                                          class AttackCooldownComponent::AttackCooldownDefinition>>&);
+                                          class AttackCooldownComponent::AttackCooldownDefinition>>&); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTACKCOOLDOWNCOMPONENT
 public:
+    // prevent constructor by default
     AttackCooldownComponent& operator=(AttackCooldownComponent const&) = delete;
     AttackCooldownComponent(AttackCooldownComponent const&)            = delete;
     AttackCooldownComponent()                                          = delete;
-#endif
 
 public:
     /**
      * @symbol ??1AttackCooldownComponent\@\@QEAA\@XZ
      */
-    MCAPI ~AttackCooldownComponent();
+    MCAPI ~AttackCooldownComponent(); // NOLINT
 };

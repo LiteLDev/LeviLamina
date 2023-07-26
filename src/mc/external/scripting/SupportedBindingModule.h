@@ -6,14 +6,11 @@ namespace Scripting {
 
 struct SupportedBindingModule {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTING_SUPPORTEDBINDINGMODULE
 public:
+    // prevent constructor by default
     SupportedBindingModule& operator=(SupportedBindingModule const&) = delete;
     SupportedBindingModule(SupportedBindingModule const&)            = delete;
     SupportedBindingModule()                                         = delete;
-#endif
-
-public:
 };
 
 }; // namespace Scripting

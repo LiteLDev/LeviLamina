@@ -7,11 +7,10 @@
 
 class ContainerWeakRef {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERWEAKREF
 public:
+    // prevent constructor by default
     ContainerWeakRef& operator=(ContainerWeakRef const&) = delete;
     ContainerWeakRef(ContainerWeakRef const&)            = delete;
-#endif
 
 public:
     /**
@@ -19,23 +18,23 @@ public:
      * ??0ContainerWeakRef\@\@QEAA\@AEBUActorUniqueID\@\@W4ActorContainerType\@\@AEBV?$TypedRuntimeId\@UContainerRuntimeIdTag\@\@I$0A\@\@\@\@Z
      */
     MCAPI
-    ContainerWeakRef(struct ActorUniqueID const&, enum class ActorContainerType, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const&);
+    ContainerWeakRef(struct ActorUniqueID const&, enum class ActorContainerType, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const&); // NOLINT
     /**
      * @symbol
      * ??0ContainerWeakRef\@\@QEAA\@AEBVBlockPos\@\@AEBV?$TypedRuntimeId\@UContainerRuntimeIdTag\@\@I$0A\@\@\@\@Z
      */
     MCAPI
-    ContainerWeakRef(class BlockPos const&, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const&);
+    ContainerWeakRef(class BlockPos const&, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const&); // NOLINT
     /**
      * @symbol ??0ContainerWeakRef\@\@QEAA\@XZ
      */
-    MCAPI ContainerWeakRef();
+    MCAPI ContainerWeakRef(); // NOLINT
     /**
      * @symbol ??BContainerWeakRef\@\@QEBA_NXZ
      */
-    MCAPI operator bool() const;
+    MCAPI operator bool() const; // NOLINT
     /**
      * @symbol ??1ContainerWeakRef\@\@QEAA\@XZ
      */
-    MCAPI ~ContainerWeakRef();
+    MCAPI ~ContainerWeakRef(); // NOLINT
 };

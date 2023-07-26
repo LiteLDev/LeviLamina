@@ -6,14 +6,11 @@ namespace xbox::httpclient {
 
 struct WinHttpWebSocketExports {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_XBOX_HTTPCLIENT_WINHTTPWEBSOCKETEXPORTS
 public:
+    // prevent constructor by default
     WinHttpWebSocketExports& operator=(WinHttpWebSocketExports const&) = delete;
     WinHttpWebSocketExports(WinHttpWebSocketExports const&)            = delete;
     WinHttpWebSocketExports()                                          = delete;
-#endif
-
-public:
 };
 
 }; // namespace xbox::httpclient

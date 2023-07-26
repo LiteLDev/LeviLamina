@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockState;
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 // clang-format on
 
@@ -15,40 +16,40 @@ namespace ScriptModuleMinecraft {
 
 class IScriptBlockProperty {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_ISCRIPTBLOCKPROPERTY
 public:
+    // prevent constructor by default
     IScriptBlockProperty& operator=(IScriptBlockProperty const&) = delete;
     IScriptBlockProperty(IScriptBlockProperty const&)            = delete;
     IScriptBlockProperty()                                       = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_ISCRIPTBLOCKPROPERTY
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IScriptBlockProperty();
+    MCVAPI ~IScriptBlockProperty(); // NOLINT
 #endif
     /**
      * @symbol ??0IScriptBlockProperty\@ScriptModuleMinecraft\@\@QEAA\@$$QEAV01\@\@Z
      */
-    MCAPI IScriptBlockProperty(class ScriptModuleMinecraft::IScriptBlockProperty&&);
+    MCAPI IScriptBlockProperty(class ScriptModuleMinecraft::IScriptBlockProperty&&); // NOLINT
     /**
      * @symbol
      * ??0IScriptBlockProperty\@ScriptModuleMinecraft\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlockState\@\@V?$StrongTypedObjectHandle\@VScriptBlockPermutation\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Z
      */
     MCAPI
-    IScriptBlockProperty(std::string, class BlockState const&, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>);
+    IScriptBlockProperty(std::string, class BlockState const&, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>); // NOLINT
     /**
      * @symbol ??4IScriptBlockProperty\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraft::IScriptBlockProperty&
-    operator=(class ScriptModuleMinecraft::IScriptBlockProperty&&);
+    operator=(class ScriptModuleMinecraft::IScriptBlockProperty&&); // NOLINT
     /**
      * @symbol
      * ?bindV010\@IScriptBlockProperty\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VIScriptBlockProperty\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::IScriptBlockProperty> bindV010();
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::IScriptBlockProperty>
+    bindV010(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

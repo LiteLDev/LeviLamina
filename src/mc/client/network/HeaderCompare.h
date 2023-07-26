@@ -9,12 +9,11 @@ namespace xbox::httpclient {
 
 struct HeaderCompare {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_XBOX_HTTPCLIENT_HEADERCOMPARE
 public:
+    // prevent constructor by default
     HeaderCompare& operator=(HeaderCompare const&) = delete;
     HeaderCompare(HeaderCompare const&)            = delete;
     HeaderCompare()                                = delete;
-#endif
 
 public:
     /**
@@ -23,7 +22,7 @@ public:
      */
     MCAPI bool
     operator()(class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> const&, class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> const&)
-        const;
+        const; // NOLINT
 };
 
 }; // namespace xbox::httpclient

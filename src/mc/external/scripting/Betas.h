@@ -11,6 +11,6 @@ namespace ScriptModuleIdentity::Betas {
 /**
  * @symbol ?CURRENT\@Betas\@ScriptModuleIdentity\@\@3UVersion\@Scripting\@\@B
  */
-MCAPI extern struct Scripting::Version const CURRENT;
+MCAPI extern struct Scripting::Version const CURRENT; // NOLINT
 
 }; // namespace ScriptModuleIdentity::Betas

@@ -11,14 +11,14 @@ namespace CopperUtil {
 /**
  * @symbol ?WAX_OFF_COLOR\@CopperUtil\@\@3VColor\@mce\@\@B
  */
-MCAPI extern class mce::Color const WAX_OFF_COLOR;
+MCAPI extern class mce::Color const WAX_OFF_COLOR; // NOLINT
 /**
  * @symbol ?WAX_ON_COLOR\@CopperUtil\@\@3VColor\@mce\@\@B
  */
-MCAPI extern class mce::Color const WAX_ON_COLOR;
+MCAPI extern class mce::Color const WAX_ON_COLOR; // NOLINT
 /**
  * @symbol ?trySendWaxingTelemetryEventToClient\@CopperUtil\@\@YAXAEAVPlayer\@\@AEBVBlockLegacy\@\@\@Z
  */
-MCAPI void trySendWaxingTelemetryEventToClient(class Player&, class BlockLegacy const&);
+MCAPI void trySendWaxingTelemetryEventToClient(class Player&, class BlockLegacy const&); // NOLINT
 
 }; // namespace CopperUtil

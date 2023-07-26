@@ -7,41 +7,40 @@
 
 class InstantaneousAttributeBuff : public ::AttributeBuff {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSTANTANEOUSATTRIBUTEBUFF
 public:
+    // prevent constructor by default
     InstantaneousAttributeBuff& operator=(InstantaneousAttributeBuff const&) = delete;
     InstantaneousAttributeBuff(InstantaneousAttributeBuff const&)            = delete;
     InstantaneousAttributeBuff()                                             = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?isInstantaneous\@InstantaneousAttributeBuff\@\@UEBA_NXZ
      */
-    virtual bool isInstantaneous() const;
+    virtual bool isInstantaneous() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol ?isSerializable\@InstantaneousAttributeBuff\@\@UEBA_NXZ
      */
-    virtual bool isSerializable() const;
+    virtual bool isSerializable() const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_INSTANTANEOUSATTRIBUTEBUFF
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~InstantaneousAttributeBuff();
+    MCVAPI ~InstantaneousAttributeBuff(); // NOLINT
 #endif
     /**
      * @symbol ??0InstantaneousAttributeBuff\@\@QEAA\@MW4AttributeBuffType\@\@\@Z
      */
-    MCAPI InstantaneousAttributeBuff(float, enum class AttributeBuffType);
+    MCAPI InstantaneousAttributeBuff(float, enum class AttributeBuffType); // NOLINT
     /**
      * @symbol ??0InstantaneousAttributeBuff\@\@QEAA\@MAEBVActorDamageSource\@\@\@Z
      */
-    MCAPI InstantaneousAttributeBuff(float, class ActorDamageSource const&);
+    MCAPI InstantaneousAttributeBuff(float, class ActorDamageSource const&); // NOLINT
 };

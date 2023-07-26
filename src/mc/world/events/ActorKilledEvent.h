@@ -4,16 +4,15 @@
 
 struct ActorKilledEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORKILLEDEVENT
 public:
+    // prevent constructor by default
     ActorKilledEvent& operator=(ActorKilledEvent const&) = delete;
     ActorKilledEvent(ActorKilledEvent const&)            = delete;
     ActorKilledEvent()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ??1ActorKilledEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorKilledEvent();
+    MCAPI ~ActorKilledEvent(); // NOLINT
 };

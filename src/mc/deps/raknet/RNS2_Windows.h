@@ -16,30 +16,29 @@ namespace RakNet {
 
 class RNS2_Windows : public ::RakNet::RNS2_Berkley {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKNET_RNS2_WINDOWS
 public:
+    // prevent constructor by default
     RNS2_Windows& operator=(RNS2_Windows const&) = delete;
     RNS2_Windows(RNS2_Windows const&)            = delete;
     RNS2_Windows()                               = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?Send\@RNS2_Windows\@RakNet\@\@UEAAHPEAURNS2_SendParameters\@2\@PEBDI\@Z
      */
-    virtual int Send(struct RakNet::RNS2_SendParameters*, char const*, unsigned int);
+    virtual int Send(struct RakNet::RNS2_SendParameters*, char const*, unsigned int); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?Bind\@RNS2_Windows\@RakNet\@\@UEAA?AW4RNS2BindResult\@2\@PEAURNS2_BerkleyBindParameters\@2\@PEBDI\@Z
      */
     virtual enum class RakNet::RNS2BindResult
-    Bind(struct RakNet::RNS2_BerkleyBindParameters*, char const*, unsigned int);
+    Bind(struct RakNet::RNS2_BerkleyBindParameters*, char const*, unsigned int); // NOLINT
 };
 
 }; // namespace RakNet

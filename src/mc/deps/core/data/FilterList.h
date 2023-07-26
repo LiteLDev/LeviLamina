@@ -10,10 +10,10 @@ namespace FilterList {
  * @symbol
  * ?findFilterDefinition\@FilterList\@\@YAPEBUDefinition\@FilterTest\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
  */
-MCAPI struct FilterTest::Definition const* findFilterDefinition(std::string const&);
+MCAPI struct FilterTest::Definition const* findFilterDefinition(std::string const&); // NOLINT
 /**
  * @symbol ?initialize\@FilterList\@\@YAXXZ
  */
-MCAPI void initialize();
+MCAPI void initialize(); // NOLINT
 
 }; // namespace FilterList

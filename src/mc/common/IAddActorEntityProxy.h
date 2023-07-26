@@ -4,12 +4,9 @@
 
 class IAddActorEntityProxy {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IADDACTORENTITYPROXY
 public:
+    // prevent constructor by default
     IAddActorEntityProxy& operator=(IAddActorEntityProxy const&) = delete;
     IAddActorEntityProxy(IAddActorEntityProxy const&)            = delete;
     IAddActorEntityProxy()                                       = delete;
-#endif
-
-public:
 };

@@ -12,22 +12,21 @@ namespace Json { class Value; }
 
 class SimpleFloatFilterTest {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMPLEFLOATFILTERTEST
 public:
+    // prevent constructor by default
     SimpleFloatFilterTest& operator=(SimpleFloatFilterTest const&) = delete;
     SimpleFloatFilterTest(SimpleFloatFilterTest const&)            = delete;
     SimpleFloatFilterTest()                                        = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLEFLOATFILTERTEST
     /**
      * @symbol ?_serializeValue\@SimpleFloatFilterTest\@\@MEBA?AVValue\@Json\@\@XZ
      */
-    MCVAPI class Json::Value _serializeValue() const;
+    MCVAPI class Json::Value _serializeValue() const; // NOLINT
     /**
      * @symbol ?setup\@SimpleFloatFilterTest\@\@UEAA_NAEBUDefinition\@FilterTest\@\@AEBUFilterInputs\@\@\@Z
      */
-    MCVAPI bool setup(struct FilterTest::Definition const&, struct FilterInputs const&);
+    MCVAPI bool setup(struct FilterTest::Definition const&, struct FilterInputs const&); // NOLINT
 #endif
 };

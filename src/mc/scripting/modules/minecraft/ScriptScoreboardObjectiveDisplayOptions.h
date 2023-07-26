@@ -9,25 +9,24 @@ namespace ScriptModuleMinecraft {
 
 class ScriptScoreboardObjectiveDisplayOptions {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTSCOREBOARDOBJECTIVEDISPLAYOPTIONS
 public:
+    // prevent constructor by default
     ScriptScoreboardObjectiveDisplayOptions& operator=(ScriptScoreboardObjectiveDisplayOptions const&) = delete;
     ScriptScoreboardObjectiveDisplayOptions(ScriptScoreboardObjectiveDisplayOptions const&)            = delete;
     ScriptScoreboardObjectiveDisplayOptions()                                                          = delete;
-#endif
 
 public:
     /**
      * @symbol ??1ScriptScoreboardObjectiveDisplayOptions\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptScoreboardObjectiveDisplayOptions();
+    MCAPI ~ScriptScoreboardObjectiveDisplayOptions(); // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptScoreboardObjectiveDisplayOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@VScriptScoreboardObjectiveDisplayOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::InterfaceBindingBuilder<
         class ScriptModuleMinecraft::ScriptScoreboardObjectiveDisplayOptions>
-    bind();
+    bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

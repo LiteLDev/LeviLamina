@@ -2,33 +2,37 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+enum class HCTraceLevel;
+// clang-format on
+
 namespace Bedrock::Http {
 
 class LoggingInterfaceGeneric {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_HTTP_LOGGINGINTERFACEGENERIC
 public:
+    // prevent constructor by default
     LoggingInterfaceGeneric& operator=(LoggingInterfaceGeneric const&) = delete;
     LoggingInterfaceGeneric(LoggingInterfaceGeneric const&)            = delete;
     LoggingInterfaceGeneric()                                          = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?threadId\@LoggingInterfaceGeneric\@Http\@Bedrock\@\@UEAA_KXZ
      */
-    virtual unsigned __int64 threadId();
+    virtual unsigned __int64 threadId(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?writeToDebugger\@LoggingInterfaceGeneric\@Http\@Bedrock\@\@UEAAXPEBDW4HCTraceLevel\@\@0\@Z
      */
-    virtual void writeToDebugger(char const*, enum class HCTraceLevel, char const*);
+    virtual void writeToDebugger(char const*, enum class HCTraceLevel, char const*); // NOLINT
 };
 
 }; // namespace Bedrock::Http

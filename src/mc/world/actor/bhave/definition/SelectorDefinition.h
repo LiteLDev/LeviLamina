@@ -12,22 +12,21 @@ namespace Json { class Value; }
 
 class SelectorDefinition : public ::BehaviorDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SELECTORDEFINITION
 public:
+    // prevent constructor by default
     SelectorDefinition& operator=(SelectorDefinition const&) = delete;
     SelectorDefinition(SelectorDefinition const&)            = delete;
     SelectorDefinition()                                     = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?load\@SelectorDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    virtual void load(class Json::Value, class BehaviorFactory const&); // NOLINT
 };

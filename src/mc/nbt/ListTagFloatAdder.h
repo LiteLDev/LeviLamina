@@ -4,20 +4,19 @@
 
 class ListTagFloatAdder {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LISTTAGFLOATADDER
 public:
+    // prevent constructor by default
     ListTagFloatAdder& operator=(ListTagFloatAdder const&) = delete;
     ListTagFloatAdder(ListTagFloatAdder const&)            = delete;
     ListTagFloatAdder()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ??RListTagFloatAdder\@\@QEAAAEAV0\@M\@Z
      */
-    MCAPI class ListTagFloatAdder& operator()(float);
+    MCAPI class ListTagFloatAdder& operator()(float); // NOLINT
     /**
      * @symbol ??1ListTagFloatAdder\@\@QEAA\@XZ
      */
-    MCAPI ~ListTagFloatAdder();
+    MCAPI ~ListTagFloatAdder(); // NOLINT
 };

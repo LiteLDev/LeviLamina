@@ -6,32 +6,32 @@ namespace ResourceLoaders {
 /**
  * @symbol ?EMPTY_STRING\@ResourceLoaders\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
  */
-MCAPI extern std::string const EMPTY_STRING;
+MCAPI extern std::string const EMPTY_STRING; // NOLINT
 /**
  * @symbol ?IMGEXT_JPEG\@ResourceLoaders\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
  */
-MCAPI extern std::string const IMGEXT_JPEG;
+MCAPI extern std::string const IMGEXT_JPEG; // NOLINT
 /**
  * @symbol ?IMGEXT_JPG\@ResourceLoaders\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
  */
-MCAPI extern std::string const IMGEXT_JPG;
+MCAPI extern std::string const IMGEXT_JPG; // NOLINT
 /**
  * @symbol ?IMGEXT_PNG\@ResourceLoaders\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
  */
-MCAPI extern std::string const IMGEXT_PNG;
+MCAPI extern std::string const IMGEXT_PNG; // NOLINT
 /**
  * @symbol ?IMGEXT_TARGA\@ResourceLoaders\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
  */
-MCAPI extern std::string const IMGEXT_TARGA;
+MCAPI extern std::string const IMGEXT_TARGA; // NOLINT
 /**
  * @symbol
  * ?IMGEXT_TEXTURESET\@ResourceLoaders\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
  */
-MCAPI extern std::string const IMGEXT_TEXTURESET;
+MCAPI extern std::string const IMGEXT_TEXTURESET; // NOLINT
 /**
  * @symbol ?backCompatGroup\@ResourceLoaders\@\@3VBackwardsCompatTextureGroup\@\@A
  */
-MCAPI extern class BackwardsCompatTextureGroup backCompatGroup;
+MCAPI extern class BackwardsCompatTextureGroup backCompatGroup; // NOLINT
 /**
  * @symbol
  * ?loaders\@ResourceLoaders\@\@3V?$map\@W4ResourceFileSystem\@\@V?$unique_ptr\@VResourceLoader\@\@U?$default_delete\@VResourceLoader\@\@\@std\@\@\@std\@\@U?$less\@W4ResourceFileSystem\@\@\@3\@V?$allocator\@U?$pair\@$$CBW4ResourceFileSystem\@\@V?$unique_ptr\@VResourceLoader\@\@U?$default_delete\@VResourceLoader\@\@\@std\@\@\@std\@\@\@std\@\@\@3\@\@std\@\@A
@@ -41,11 +41,11 @@ MCAPI extern class std::map<
     std::unique_ptr<class ResourceLoader>,
     struct std::less<enum class ResourceFileSystem>,
     class std::allocator<struct std::pair<enum class ResourceFileSystem const, std::unique_ptr<class ResourceLoader>>>>
-    loaders;
+    loaders; // NOLINT
 /**
  * @symbol
  * ?supportedImageExtensions\@ResourceLoaders\@\@3V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@B
  */
-MCAPI extern std::vector<std::string> const supportedImageExtensions;
+MCAPI extern std::vector<std::string> const supportedImageExtensions; // NOLINT
 
 }; // namespace ResourceLoaders

@@ -10,36 +10,35 @@ namespace Core { class Path; }
 
 class AllowListFile {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ALLOWLISTFILE
 public:
+    // prevent constructor by default
     AllowListFile& operator=(AllowListFile const&) = delete;
     AllowListFile(AllowListFile const&)            = delete;
     AllowListFile()                                = delete;
-#endif
 
 public:
     /**
      * @symbol ??0AllowListFile\@\@QEAA\@AEBVPath\@Core\@\@\@Z
      */
-    MCAPI AllowListFile(class Core::Path const&);
+    MCAPI AllowListFile(class Core::Path const&); // NOLINT
     /**
      * @symbol ?getAllowList\@AllowListFile\@\@QEBAAEAVAllowList\@\@XZ
      */
-    MCAPI class AllowList& getAllowList() const;
+    MCAPI class AllowList& getAllowList() const; // NOLINT
     /**
      * @symbol ?reload\@AllowListFile\@\@QEAA?AW4FileReadResult\@\@XZ
      */
-    MCAPI enum class FileReadResult reload();
+    MCAPI enum class FileReadResult reload(); // NOLINT
     /**
      * @symbol ?syncToDisc\@AllowListFile\@\@QEAAXXZ
      */
-    MCAPI void syncToDisc();
+    MCAPI void syncToDisc(); // NOLINT
     /**
      * @symbol ??1AllowListFile\@\@QEAA\@XZ
      */
-    MCAPI ~AllowListFile();
+    MCAPI ~AllowListFile(); // NOLINT
     /**
      * @symbol ?loadFromDefaultLocations\@AllowListFile\@\@SA?AV1\@AEAVIFileSystem\@Core\@\@\@Z
      */
-    MCAPI static class AllowListFile loadFromDefaultLocations(class Core::IFileSystem&);
+    MCAPI static class AllowListFile loadFromDefaultLocations(class Core::IFileSystem&); // NOLINT
 };

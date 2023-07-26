@@ -7,22 +7,21 @@
 
 class RabbitPanicGoal : public ::PanicGoal {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RABBITPANICGOAL
 public:
+    // prevent constructor by default
     RabbitPanicGoal& operator=(RabbitPanicGoal const&) = delete;
     RabbitPanicGoal(RabbitPanicGoal const&)            = delete;
     RabbitPanicGoal()                                  = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3();
+    virtual void __unk_vfn_3(); // NOLINT
 };

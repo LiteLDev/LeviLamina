@@ -6,14 +6,11 @@ namespace NetherNet {
 
 struct NetherNetTransportServerConfiguration {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERNET_NETHERNETTRANSPORTSERVERCONFIGURATION
 public:
+    // prevent constructor by default
     NetherNetTransportServerConfiguration& operator=(NetherNetTransportServerConfiguration const&) = delete;
     NetherNetTransportServerConfiguration(NetherNetTransportServerConfiguration const&)            = delete;
     NetherNetTransportServerConfiguration()                                                        = delete;
-#endif
-
-public:
 };
 
 }; // namespace NetherNet

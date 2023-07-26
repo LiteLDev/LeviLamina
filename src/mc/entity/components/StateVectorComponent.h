@@ -4,12 +4,9 @@
 
 struct StateVectorComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STATEVECTORCOMPONENT
 public:
+    // prevent constructor by default
     StateVectorComponent& operator=(StateVectorComponent const&) = delete;
     StateVectorComponent(StateVectorComponent const&)            = delete;
     StateVectorComponent()                                       = delete;
-#endif
-
-public:
 };

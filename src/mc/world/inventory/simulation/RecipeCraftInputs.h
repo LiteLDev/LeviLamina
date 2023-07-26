@@ -4,16 +4,15 @@
 
 class RecipeCraftInputs {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RECIPECRAFTINPUTS
 public:
+    // prevent constructor by default
     RecipeCraftInputs& operator=(RecipeCraftInputs const&) = delete;
     RecipeCraftInputs(RecipeCraftInputs const&)            = delete;
     RecipeCraftInputs()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ??1RecipeCraftInputs\@\@QEAA\@XZ
      */
-    MCAPI ~RecipeCraftInputs();
+    MCAPI ~RecipeCraftInputs(); // NOLINT
 };

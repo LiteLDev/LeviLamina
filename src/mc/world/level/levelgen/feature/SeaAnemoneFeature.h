@@ -7,22 +7,21 @@
 
 class SeaAnemoneFeature : public ::Feature {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SEAANEMONEFEATURE
 public:
+    // prevent constructor by default
     SeaAnemoneFeature& operator=(SeaAnemoneFeature const&) = delete;
     SeaAnemoneFeature(SeaAnemoneFeature const&)            = delete;
     SeaAnemoneFeature()                                    = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?place\@SeaAnemoneFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
 };

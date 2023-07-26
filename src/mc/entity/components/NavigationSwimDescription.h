@@ -7,28 +7,27 @@
 
 class NavigationSwimDescription : public ::NavigationDescription {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAVIGATIONSWIMDESCRIPTION
 public:
+    // prevent constructor by default
     NavigationSwimDescription& operator=(NavigationSwimDescription const&) = delete;
     NavigationSwimDescription(NavigationSwimDescription const&)            = delete;
     NavigationSwimDescription()                                            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol ?getJsonName\@NavigationSwimDescription\@\@UEBAPEBDXZ
      */
-    virtual char const* getJsonName() const;
+    virtual char const* getJsonName() const; // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONSWIMDESCRIPTION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~NavigationSwimDescription();
+    MCVAPI ~NavigationSwimDescription(); // NOLINT
 #endif
 };

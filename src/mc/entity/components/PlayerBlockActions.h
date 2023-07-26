@@ -7,38 +7,37 @@
 
 class PlayerBlockActions {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERBLOCKACTIONS
 public:
+    // prevent constructor by default
     PlayerBlockActions& operator=(PlayerBlockActions const&) = delete;
     PlayerBlockActions(PlayerBlockActions const&)            = delete;
     PlayerBlockActions()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ?findFirstOfType\@PlayerBlockActions\@\@QEBAPEBUPlayerBlockActionData\@\@W4PlayerActionType\@\@\@Z
      */
-    MCAPI struct PlayerBlockActionData const* findFirstOfType(enum class PlayerActionType) const;
+    MCAPI struct PlayerBlockActionData const* findFirstOfType(enum class PlayerActionType) const; // NOLINT
     /**
      * @symbol ?get\@PlayerBlockActions\@\@QEBA?AV?$span\@$$CBUPlayerBlockActionData\@\@$0?0\@gsl\@\@XZ
      */
-    MCAPI class gsl::span<struct PlayerBlockActionData const, -1> get() const;
+    MCAPI class gsl::span<struct PlayerBlockActionData const, -1> get() const; // NOLINT
     /**
      * @symbol ??4PlayerBlockActions\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class PlayerBlockActions& operator=(class PlayerBlockActions&&);
+    MCAPI class PlayerBlockActions& operator=(class PlayerBlockActions&&); // NOLINT
     /**
      * @symbol ??1PlayerBlockActions\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerBlockActions();
+    MCAPI ~PlayerBlockActions(); // NOLINT
     /**
      * @symbol
      * ?read\@PlayerBlockActions\@\@SA?AV?$Result\@VPlayerBlockActions\@\@Verror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     MCAPI static class Bedrock::Result<class PlayerBlockActions, class std::error_code>
-    read(class ReadOnlyBinaryStream&);
+    read(class ReadOnlyBinaryStream&); // NOLINT
     /**
      * @symbol ?write\@PlayerBlockActions\@\@SAXAEBV1\@AEAVBinaryStream\@\@\@Z
      */
-    MCAPI static void write(class PlayerBlockActions const&, class BinaryStream&);
+    MCAPI static void write(class PlayerBlockActions const&, class BinaryStream&); // NOLINT
 };

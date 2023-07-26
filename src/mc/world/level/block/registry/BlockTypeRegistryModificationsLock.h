@@ -4,16 +4,15 @@
 
 class BlockTypeRegistryModificationsLock {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKTYPEREGISTRYMODIFICATIONSLOCK
 public:
+    // prevent constructor by default
     BlockTypeRegistryModificationsLock& operator=(BlockTypeRegistryModificationsLock const&) = delete;
     BlockTypeRegistryModificationsLock(BlockTypeRegistryModificationsLock const&)            = delete;
     BlockTypeRegistryModificationsLock()                                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ??1BlockTypeRegistryModificationsLock\@\@QEAA\@XZ
      */
-    MCAPI ~BlockTypeRegistryModificationsLock();
+    MCAPI ~BlockTypeRegistryModificationsLock(); // NOLINT
 };

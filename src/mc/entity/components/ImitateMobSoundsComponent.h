@@ -4,22 +4,21 @@
 
 class ImitateMobSoundsComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IMITATEMOBSOUNDSCOMPONENT
 public:
+    // prevent constructor by default
     ImitateMobSoundsComponent& operator=(ImitateMobSoundsComponent const&) = delete;
     ImitateMobSoundsComponent(ImitateMobSoundsComponent const&)            = delete;
     ImitateMobSoundsComponent()                                            = delete;
-#endif
 
 public:
     /**
      * @symbol ?getRandomImitatedSound\@ImitateMobSoundsComponent\@\@SA?AW4LevelSoundEvent\@\@AEBVRandomize\@\@\@Z
      */
-    MCAPI static enum class LevelSoundEvent getRandomImitatedSound(class Randomize const&);
+    MCAPI static enum class LevelSoundEvent getRandomImitatedSound(class Randomize const&); // NOLINT
     /**
      * @symbol ?imitateNearbyMobs\@ImitateMobSoundsComponent\@\@SA_NAEAVActor\@\@AEBVRandomize\@\@\@Z
      */
-    MCAPI static bool imitateNearbyMobs(class Actor&, class Randomize const&);
+    MCAPI static bool imitateNearbyMobs(class Actor&, class Randomize const&); // NOLINT
 
     // private:
 
@@ -34,5 +33,5 @@ private:
         struct std::hash<enum class ActorType>,
         struct std::equal_to<enum class ActorType>,
         class std::allocator<struct std::pair<enum class ActorType const, enum class LevelSoundEvent>>> const
-        imitateMobMap;
+        imitateMobMap; // NOLINT
 };

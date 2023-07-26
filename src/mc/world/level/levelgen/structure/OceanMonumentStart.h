@@ -4,26 +4,25 @@
 
 class OceanMonumentStart {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCEANMONUMENTSTART
 public:
+    // prevent constructor by default
     OceanMonumentStart& operator=(OceanMonumentStart const&) = delete;
     OceanMonumentStart(OceanMonumentStart const&)            = delete;
     OceanMonumentStart()                                     = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?postProcess\@OceanMonumentStart\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&); // NOLINT
     /**
      * @symbol ?createMonument\@OceanMonumentStart\@\@QEAAXAEAVDimension\@\@AEAVRandom\@\@HH\@Z
      */
-    MCAPI void createMonument(class Dimension&, class Random&, int, int);
+    MCAPI void createMonument(class Dimension&, class Random&, int, int); // NOLINT
 };

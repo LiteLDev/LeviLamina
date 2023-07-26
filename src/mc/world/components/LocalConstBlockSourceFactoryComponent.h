@@ -4,12 +4,9 @@
 
 struct LocalConstBlockSourceFactoryComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOCALCONSTBLOCKSOURCEFACTORYCOMPONENT
 public:
+    // prevent constructor by default
     LocalConstBlockSourceFactoryComponent& operator=(LocalConstBlockSourceFactoryComponent const&) = delete;
     LocalConstBlockSourceFactoryComponent(LocalConstBlockSourceFactoryComponent const&)            = delete;
     LocalConstBlockSourceFactoryComponent()                                                        = delete;
-#endif
-
-public:
 };

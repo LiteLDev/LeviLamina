@@ -4,12 +4,11 @@
 
 struct SurfaceMaterialAdjustmentAttributes {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SURFACEMATERIALADJUSTMENTATTRIBUTES
 public:
+    // prevent constructor by default
     SurfaceMaterialAdjustmentAttributes& operator=(SurfaceMaterialAdjustmentAttributes const&) = delete;
     SurfaceMaterialAdjustmentAttributes(SurfaceMaterialAdjustmentAttributes const&)            = delete;
     SurfaceMaterialAdjustmentAttributes()                                                      = delete;
-#endif
 
 public:
     /**
@@ -22,11 +21,11 @@ public:
         class BlockPos const&,
         int,
         int
-    ) const;
+    ) const; // NOLINT
     /**
      * @symbol ??4SurfaceMaterialAdjustmentAttributes\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct SurfaceMaterialAdjustmentAttributes& operator=(struct SurfaceMaterialAdjustmentAttributes&&);
+    MCAPI struct SurfaceMaterialAdjustmentAttributes& operator=(struct SurfaceMaterialAdjustmentAttributes&&); // NOLINT
     /**
      * @symbol
      * ?parseExpressionNodeFloat\@SurfaceMaterialAdjustmentAttributes\@\@QEAAXAEBVCompoundTag\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1AEAVExpressionNode\@\@M\@Z
@@ -37,5 +36,5 @@ public:
         std::string const&,
         class ExpressionNode&,
         float
-    );
+    ); // NOLINT
 };

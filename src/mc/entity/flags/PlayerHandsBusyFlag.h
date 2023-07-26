@@ -4,12 +4,9 @@
 
 struct PlayerHandsBusyFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERHANDSBUSYFLAG
 public:
+    // prevent constructor by default
     PlayerHandsBusyFlag& operator=(PlayerHandsBusyFlag const&) = delete;
     PlayerHandsBusyFlag(PlayerHandsBusyFlag const&)            = delete;
     PlayerHandsBusyFlag()                                      = delete;
-#endif
-
-public:
 };

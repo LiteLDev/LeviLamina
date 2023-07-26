@@ -6,18 +6,17 @@ namespace CodeBuilder {
 
 struct EncryptionResult {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CODEBUILDER_ENCRYPTIONRESULT
 public:
+    // prevent constructor by default
     EncryptionResult& operator=(EncryptionResult const&) = delete;
     EncryptionResult(EncryptionResult const&)            = delete;
     EncryptionResult()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ??1EncryptionResult\@CodeBuilder\@\@QEAA\@XZ
      */
-    MCAPI ~EncryptionResult();
+    MCAPI ~EncryptionResult(); // NOLINT
 };
 
 }; // namespace CodeBuilder

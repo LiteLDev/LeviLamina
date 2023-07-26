@@ -4,39 +4,38 @@
 
 class CommandManager {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDMANAGER
 public:
+    // prevent constructor by default
     CommandManager& operator=(CommandManager const&) = delete;
     CommandManager(CommandManager const&)            = delete;
     CommandManager()                                 = delete;
-#endif
 
 public:
     /**
      * @symbol ??0CommandManager\@\@QEAA\@AEAVMinecraftCommands\@\@\@Z
      */
-    MCAPI CommandManager(class MinecraftCommands&);
+    MCAPI CommandManager(class MinecraftCommands&); // NOLINT
     /**
      * @symbol ?getCommands\@CommandManager\@\@QEAAAEAVMinecraftCommands\@\@XZ
      */
-    MCAPI class MinecraftCommands& getCommands();
+    MCAPI class MinecraftCommands& getCommands(); // NOLINT
     /**
      * @symbol ?getFunctionManager\@CommandManager\@\@QEAAAEAVFunctionManager\@\@XZ
      */
-    MCAPI class FunctionManager& getFunctionManager();
+    MCAPI class FunctionManager& getFunctionManager(); // NOLINT
     /**
      * @symbol
      * ?initialize\@CommandManager\@\@QEAAXV?$unique_ptr\@VFunctionManager\@\@U?$default_delete\@VFunctionManager\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI void initialize(std::unique_ptr<class FunctionManager>);
+    MCAPI void initialize(std::unique_ptr<class FunctionManager>); // NOLINT
     /**
      * @symbol ?loadFunctionManager\@CommandManager\@\@QEAAXAEAVResourcePackManager\@\@\@Z
      */
-    MCAPI void loadFunctionManager(class ResourcePackManager&);
+    MCAPI void loadFunctionManager(class ResourcePackManager&); // NOLINT
     /**
      * @symbol ?runCommand\@CommandManager\@\@QEAAXAEAVCommand\@\@AEAVCommandOrigin\@\@W4CommandOriginSystem\@\@\@Z
      */
-    MCAPI void runCommand(class Command&, class CommandOrigin&, enum class CommandOriginSystem);
+    MCAPI void runCommand(class Command&, class CommandOrigin&, enum class CommandOriginSystem); // NOLINT
     /**
      * @symbol
      * ?runCommand\@CommandManager\@\@QEAAXAEBVHashedString\@\@AEAVCommandOrigin\@\@W4CommandOriginSystem\@\@W4CurrentCmdVersion\@\@\@Z
@@ -46,13 +45,13 @@ public:
         class CommandOrigin&,
         enum class CommandOriginSystem,
         enum class CurrentCmdVersion
-    );
+    ); // NOLINT
     /**
      * @symbol ?tick\@CommandManager\@\@QEAAXXZ
      */
-    MCAPI void tick();
+    MCAPI void tick(); // NOLINT
     /**
      * @symbol ??1CommandManager\@\@QEAA\@XZ
      */
-    MCAPI ~CommandManager();
+    MCAPI ~CommandManager(); // NOLINT
 };

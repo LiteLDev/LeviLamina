@@ -11,23 +11,22 @@ namespace FoodItemVersioning {
 
 class FoodItem118Upgrade {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOODITEMVERSIONING_FOODITEM118UPGRADE
 public:
+    // prevent constructor by default
     FoodItem118Upgrade& operator=(FoodItem118Upgrade const&) = delete;
     FoodItem118Upgrade(FoodItem118Upgrade const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?previousSchema\@FoodItem118Upgrade\@FoodItemVersioning\@\@UEBAXAEAVSchemaFactory\@cereal\@\@\@Z
      */
-    virtual void previousSchema(class cereal::SchemaFactory&) const;
+    virtual void previousSchema(class cereal::SchemaFactory&) const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
@@ -36,11 +35,11 @@ public:
     virtual bool upgradeToNext(class rapidjson::GenericDocument<
                                struct rapidjson::UTF8<char>,
                                class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>,
-                               class rapidjson::CrtAllocator>&) const;
+                               class rapidjson::CrtAllocator>&) const; // NOLINT
     /**
      * @symbol ??0FoodItem118Upgrade\@FoodItemVersioning\@\@QEAA\@XZ
      */
-    MCAPI FoodItem118Upgrade();
+    MCAPI FoodItem118Upgrade(); // NOLINT
 };
 
 }; // namespace FoodItemVersioning

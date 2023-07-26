@@ -6,14 +6,11 @@ namespace Webview {
 
 struct TelemetryCommonProperties {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEBVIEW_TELEMETRYCOMMONPROPERTIES
 public:
+    // prevent constructor by default
     TelemetryCommonProperties& operator=(TelemetryCommonProperties const&) = delete;
     TelemetryCommonProperties(TelemetryCommonProperties const&)            = delete;
     TelemetryCommonProperties()                                            = delete;
-#endif
-
-public:
 };
 
 }; // namespace Webview

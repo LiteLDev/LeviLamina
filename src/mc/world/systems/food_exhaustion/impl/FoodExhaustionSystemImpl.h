@@ -14,38 +14,68 @@
 #include "mc/entity/EntityFactoryT.h"
 #include "mc/world/components/FlagComponent.h"
 
+// auto generated forward declare list
+// clang-format off
+class ExhaustionComponent;
+struct AABBShapeComponent;
+struct ActorGameTypeComponent;
+struct ActorMovementTickNeededFlag;
+struct ActorRotationComponent;
+struct AttributesComponent;
+struct CamelFlag;
+struct DimensionTypeComponent;
+struct ExternalDataComponent;
+struct HorseFlag;
+struct InWaterFlag;
+struct LocalConstBlockSourceFactoryComponent;
+struct MobBodyRotationComponent;
+struct MobFlag;
+struct OffsetsComponent;
+struct OnGroundFlag;
+struct ParrotFlag;
+struct PassengerComponent;
+struct PassengerRenderingRidingOffsetComponent;
+struct PlayerComponentFlag;
+struct RenderRotationComponent;
+struct ServerPlayerCurrentMovementComponent;
+struct StandAnimationComponent;
+struct StateVectorComponent;
+struct SynchedActorDataComponent;
+struct VanillaOffsetComponent;
+struct VehicleComponent;
+// clang-format on
+
 namespace FoodExhaustionSystemImpl {
 
 struct FoodExhaustionSystemImpl {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOODEXHAUSTIONSYSTEMIMPL_FOODEXHAUSTIONSYSTEMIMPL
 public:
+    // prevent constructor by default
     FoodExhaustionSystemImpl& operator=(FoodExhaustionSystemImpl const&) = delete;
     FoodExhaustionSystemImpl(FoodExhaustionSystemImpl const&)            = delete;
     FoodExhaustionSystemImpl()                                           = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2();
+    virtual void __unk_vfn_2(); // NOLINT
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3();
+    virtual void __unk_vfn_3(); // NOLINT
     /**
      * @vftbl 4
      * @symbol
@@ -83,7 +113,7 @@ public:
                       struct AddRemove<>,
                       struct GlobalRead<struct LocalConstBlockSourceFactoryComponent, struct ExternalDataComponent>,
                       struct GlobalWrite<>,
-                      struct EntityFactoryT<>>&);
+                      struct EntityFactoryT<>>&); // NOLINT
 };
 
 }; // namespace FoodExhaustionSystemImpl

@@ -4,12 +4,9 @@
 
 struct IsNearDolphinsFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISNEARDOLPHINSFLAG
 public:
+    // prevent constructor by default
     IsNearDolphinsFlag& operator=(IsNearDolphinsFlag const&) = delete;
     IsNearDolphinsFlag(IsNearDolphinsFlag const&)            = delete;
     IsNearDolphinsFlag()                                     = delete;
-#endif
-
-public:
 };

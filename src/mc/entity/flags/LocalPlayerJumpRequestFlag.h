@@ -4,12 +4,9 @@
 
 struct LocalPlayerJumpRequestFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOCALPLAYERJUMPREQUESTFLAG
 public:
+    // prevent constructor by default
     LocalPlayerJumpRequestFlag& operator=(LocalPlayerJumpRequestFlag const&) = delete;
     LocalPlayerJumpRequestFlag(LocalPlayerJumpRequestFlag const&)            = delete;
     LocalPlayerJumpRequestFlag()                                             = delete;
-#endif
-
-public:
 };

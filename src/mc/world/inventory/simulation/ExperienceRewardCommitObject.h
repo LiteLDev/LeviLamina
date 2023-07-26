@@ -4,36 +4,35 @@
 
 class ExperienceRewardCommitObject {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPERIENCEREWARDCOMMITOBJECT
 public:
+    // prevent constructor by default
     ExperienceRewardCommitObject& operator=(ExperienceRewardCommitObject const&) = delete;
     ExperienceRewardCommitObject(ExperienceRewardCommitObject const&)            = delete;
     ExperienceRewardCommitObject()                                               = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?append\@ExperienceRewardCommitObject\@\@UEAA_NPEAVContainerValidationCommitObject\@\@\@Z
      */
-    virtual bool append(class ContainerValidationCommitObject*);
+    virtual bool append(class ContainerValidationCommitObject*); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?canCommit\@ExperienceRewardCommitObject\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
      */
-    virtual bool canCommit(class ContainerScreenContext const&) const;
+    virtual bool canCommit(class ContainerScreenContext const&) const; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?commit\@ExperienceRewardCommitObject\@\@UEAAXAEBVContainerScreenContext\@\@\@Z
      */
-    virtual void commit(class ContainerScreenContext const&);
+    virtual void commit(class ContainerScreenContext const&); // NOLINT
     /**
      * @symbol ??0ExperienceRewardCommitObject\@\@QEAA\@H\@Z
      */
-    MCAPI ExperienceRewardCommitObject(int);
+    MCAPI ExperienceRewardCommitObject(int); // NOLINT
 };

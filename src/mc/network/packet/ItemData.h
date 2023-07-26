@@ -4,16 +4,15 @@
 
 struct ItemData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMDATA
 public:
+    // prevent constructor by default
     ItemData& operator=(ItemData const&) = delete;
     ItemData(ItemData const&)            = delete;
     ItemData()                           = delete;
-#endif
 
 public:
     /**
      * @symbol ??1ItemData\@\@QEAA\@XZ
      */
-    MCAPI ~ItemData();
+    MCAPI ~ItemData(); // NOLINT
 };

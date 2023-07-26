@@ -4,12 +4,9 @@
 
 class IDataOutput {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IDATAOUTPUT
 public:
+    // prevent constructor by default
     IDataOutput& operator=(IDataOutput const&) = delete;
     IDataOutput(IDataOutput const&)            = delete;
     IDataOutput()                              = delete;
-#endif
-
-public:
 };

@@ -13,6 +13,6 @@ namespace MobTravelFilterSystemImpl {
  * ?addMobTravelComponent\@MobTravelFilterSystemImpl\@\@YAXAEBVStrictEntityContext\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UMobTravelComponent\@\@\@\@\@Z
  */
 MCAPI void
-addMobTravelComponent(class StrictEntityContext const&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MobTravelComponent>);
+addMobTravelComponent(class StrictEntityContext const&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MobTravelComponent>); // NOLINT
 
 }; // namespace MobTravelFilterSystemImpl

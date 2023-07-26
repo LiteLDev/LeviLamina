@@ -4,17 +4,16 @@
 
 class StructureFeatureRegistry {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREFEATUREREGISTRY
 public:
+    // prevent constructor by default
     StructureFeatureRegistry& operator=(StructureFeatureRegistry const&) = delete;
     StructureFeatureRegistry(StructureFeatureRegistry const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0StructureFeatureRegistry\@\@QEAA\@XZ
      */
-    MCAPI StructureFeatureRegistry();
+    MCAPI StructureFeatureRegistry(); // NOLINT
     /**
      * @symbol
      * ?findNearestStructureFeature\@StructureFeatureRegistry\@\@QEAA_NAEAVDimension\@\@AEAVIPreliminarySurfaceProvider\@\@W4StructureFeatureType\@\@AEBVBlockPos\@\@AEAV5\@AEBVBiomeSource\@\@_N\@Z
@@ -27,24 +26,24 @@ public:
         class BlockPos&,
         class BiomeSource const&,
         bool
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?findStructureFeatureTypeAt\@StructureFeatureRegistry\@\@QEAA?AW4StructureFeatureType\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI enum class StructureFeatureType findStructureFeatureTypeAt(class BlockPos const&);
+    MCAPI enum class StructureFeatureType findStructureFeatureTypeAt(class BlockPos const&); // NOLINT
     /**
      * @symbol
      * ?getStructureFeatureOfType\@StructureFeatureRegistry\@\@QEBAPEAVStructureFeature\@\@W4StructureFeatureType\@\@\@Z
      */
-    MCAPI class StructureFeature* getStructureFeatureOfType(enum class StructureFeatureType) const;
+    MCAPI class StructureFeature* getStructureFeatureOfType(enum class StructureFeatureType) const; // NOLINT
     /**
      * @symbol
      * ?isStructureFeatureTypeAt\@StructureFeatureRegistry\@\@QEBA_NAEBVBlockPos\@\@W4StructureFeatureType\@\@\@Z
      */
-    MCAPI bool isStructureFeatureTypeAt(class BlockPos const&, enum class StructureFeatureType) const;
+    MCAPI bool isStructureFeatureTypeAt(class BlockPos const&, enum class StructureFeatureType) const; // NOLINT
     /**
      * @symbol ??1StructureFeatureRegistry\@\@QEAA\@XZ
      */
-    MCAPI ~StructureFeatureRegistry();
+    MCAPI ~StructureFeatureRegistry(); // NOLINT
 };

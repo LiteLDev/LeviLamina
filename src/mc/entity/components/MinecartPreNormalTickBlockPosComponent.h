@@ -4,12 +4,9 @@
 
 struct MinecartPreNormalTickBlockPosComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECARTPRENORMALTICKBLOCKPOSCOMPONENT
 public:
+    // prevent constructor by default
     MinecartPreNormalTickBlockPosComponent& operator=(MinecartPreNormalTickBlockPosComponent const&) = delete;
     MinecartPreNormalTickBlockPosComponent(MinecartPreNormalTickBlockPosComponent const&)            = delete;
     MinecartPreNormalTickBlockPosComponent()                                                         = delete;
-#endif
-
-public:
 };

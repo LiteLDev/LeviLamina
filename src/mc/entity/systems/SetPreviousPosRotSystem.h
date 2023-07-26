@@ -8,12 +8,11 @@
 
 class SetPreviousPosRotSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETPREVIOUSPOSROTSYSTEM
 public:
+    // prevent constructor by default
     SetPreviousPosRotSystem& operator=(SetPreviousPosRotSystem const&) = delete;
     SetPreviousPosRotSystem(SetPreviousPosRotSystem const&)            = delete;
     SetPreviousPosRotSystem()                                          = delete;
-#endif
 
 public:
     /**
@@ -21,5 +20,5 @@ public:
      * ?_setPreviousPosRot\@SetPreviousPosRotSystem\@\@SAXAEAVStrictEntityContext\@\@AEAUStateVectorComponent\@\@AEAUActorRotationComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UPrevPosRotSetThisTickFlag\@\@\@\@\@\@\@Z
      */
     MCAPI static void
-    _setPreviousPosRot(class StrictEntityContext&, struct StateVectorComponent&, struct ActorRotationComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct PrevPosRotSetThisTickFlag>>);
+    _setPreviousPosRot(class StrictEntityContext&, struct StateVectorComponent&, struct ActorRotationComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct PrevPosRotSetThisTickFlag>>); // NOLINT
 };

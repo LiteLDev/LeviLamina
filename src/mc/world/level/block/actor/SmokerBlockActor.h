@@ -4,12 +4,11 @@
 
 class SmokerBlockActor {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMOKERBLOCKACTOR
 public:
+    // prevent constructor by default
     SmokerBlockActor& operator=(SmokerBlockActor const&) = delete;
     SmokerBlockActor(SmokerBlockActor const&)            = delete;
     SmokerBlockActor()                                   = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SMOKERBLOCKACTOR
@@ -17,10 +16,10 @@ public:
      * @symbol
      * ?getName\@SmokerBlockActor\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCVAPI std::string getName() const;
+    MCVAPI std::string getName() const; // NOLINT
 #endif
     /**
      * @symbol ??0SmokerBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI SmokerBlockActor(class BlockPos const&);
+    MCAPI SmokerBlockActor(class BlockPos const&); // NOLINT
 };

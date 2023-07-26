@@ -4,18 +4,17 @@
 
 class CurrentSwimAmountSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CURRENTSWIMAMOUNTSYSTEM
 public:
+    // prevent constructor by default
     CurrentSwimAmountSystem& operator=(CurrentSwimAmountSystem const&) = delete;
     CurrentSwimAmountSystem(CurrentSwimAmountSystem const&)            = delete;
     CurrentSwimAmountSystem()                                          = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@CurrentSwimAmountSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
 
     // private:
     /**
@@ -23,7 +22,7 @@ public:
      * ?_doCurrentSwimAmountSystem\@CurrentSwimAmountSystem\@\@CAXAEBVStrictEntityContext\@\@AEAUSwimAmountComponent\@\@AEBUSynchedActorDataComponent\@\@\@Z
      */
     MCAPI static void
-    _doCurrentSwimAmountSystem(class StrictEntityContext const&, struct SwimAmountComponent&, struct SynchedActorDataComponent const&);
+    _doCurrentSwimAmountSystem(class StrictEntityContext const&, struct SwimAmountComponent&, struct SynchedActorDataComponent const&); // NOLINT
 
 private:
 };

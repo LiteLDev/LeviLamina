@@ -13,42 +13,41 @@ namespace JsonUtil { class EmptyClass; }
 
 class BuoyancyDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BUOYANCYDEFINITION
 public:
+    // prevent constructor by default
     BuoyancyDefinition& operator=(BuoyancyDefinition const&) = delete;
     BuoyancyDefinition(BuoyancyDefinition const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0BuoyancyDefinition\@\@QEAA\@XZ
      */
-    MCAPI BuoyancyDefinition();
+    MCAPI BuoyancyDefinition(); // NOLINT
     /**
      * @symbol ?initialize\@BuoyancyDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVBuoyancyComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class BuoyancyComponent&) const;
+    MCAPI void initialize(class EntityContext&, class BuoyancyComponent&) const; // NOLINT
     /**
      * @symbol ?uninitialize\@BuoyancyDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVBuoyancyComponent\@\@\@Z
      */
-    MCAPI void uninitialize(class EntityContext&, class BuoyancyComponent&) const;
+    MCAPI void uninitialize(class EntityContext&, class BuoyancyComponent&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@BuoyancyDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VBuoyancyDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
     buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BuoyancyDefinition>>&);
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BuoyancyDefinition>>&); // NOLINT
 
     // private:
     /**
      * @symbol ?_addLiquidBlockDescriptor\@BuoyancyDefinition\@\@AEAAXAEBVBlockDescriptor\@\@\@Z
      */
-    MCAPI void _addLiquidBlockDescriptor(class BlockDescriptor const&);
+    MCAPI void _addLiquidBlockDescriptor(class BlockDescriptor const&); // NOLINT
     /**
      * @symbol ?_serialize\@BuoyancyDefinition\@\@AEBA?AVValue\@Json\@\@XZ
      */
-    MCAPI class Json::Value _serialize() const;
+    MCAPI class Json::Value _serialize() const; // NOLINT
 
 private:
 };

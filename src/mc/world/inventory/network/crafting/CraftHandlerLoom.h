@@ -7,23 +7,22 @@
 
 class CraftHandlerLoom : public ::CraftHandlerBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTHANDLERLOOM
 public:
+    // prevent constructor by default
     CraftHandlerLoom& operator=(CraftHandlerLoom const&) = delete;
     CraftHandlerLoom(CraftHandlerLoom const&)            = delete;
     CraftHandlerLoom()                                   = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 4
      * @symbol
      * ?_handleCraftAction\@CraftHandlerLoom\@\@MEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionCraftBase\@\@\@Z
      */
-    virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
+    virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&); // NOLINT
 };

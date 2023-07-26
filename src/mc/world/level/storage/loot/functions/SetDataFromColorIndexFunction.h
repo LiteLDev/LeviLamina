@@ -7,37 +7,36 @@
 
 class SetDataFromColorIndexFunction : public ::LootItemFunction {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETDATAFROMCOLORINDEXFUNCTION
 public:
+    // prevent constructor by default
     SetDataFromColorIndexFunction& operator=(SetDataFromColorIndexFunction const&) = delete;
     SetDataFromColorIndexFunction(SetDataFromColorIndexFunction const&)            = delete;
     SetDataFromColorIndexFunction()                                                = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?apply\@SetDataFromColorIndexFunction\@\@UEAAXAEAVItemStack\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
+    virtual void apply(class ItemStack&, class Random&, class LootTableContext&); // NOLINT
     /**
      * @vftbl 3
      * @symbol
      * ?apply\@SetDataFromColorIndexFunction\@\@UEAAXAEAVItemInstance\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
+    virtual void apply(class ItemInstance&, class Random&, class LootTableContext&); // NOLINT
 
     // private:
     /**
      * @symbol
      * ?_applyImpl\@SetDataFromColorIndexFunction\@\@AEAA_NAEAPEBVItem\@\@PEBVActor\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAH\@Z
      */
-    MCAPI bool _applyImpl(class Item const*&, class Actor const*, std::string const&, int&);
+    MCAPI bool _applyImpl(class Item const*&, class Actor const*, std::string const&, int&); // NOLINT
 
 private:
 };

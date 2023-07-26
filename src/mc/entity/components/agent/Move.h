@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class EntityContext;
 namespace AgentComponents { enum class Direction; }
 // clang-format on
 
@@ -11,18 +12,18 @@ namespace AgentComponents {
 
 class Move {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMPONENTS_MOVE
 public:
+    // prevent constructor by default
     Move& operator=(Move const&) = delete;
     Move(Move const&)            = delete;
     Move()                       = delete;
-#endif
 
 public:
     /**
      * @symbol ?setup\@Move\@AgentComponents\@\@SAXAEAV12\@AEAVEntityContext\@\@W4Direction\@2\@\@Z
      */
-    MCAPI static void setup(class AgentComponents::Move&, class EntityContext&, enum class AgentComponents::Direction);
+    MCAPI static void
+    setup(class AgentComponents::Move&, class EntityContext&, enum class AgentComponents::Direction); // NOLINT
 };
 
 }; // namespace AgentComponents

@@ -5,12 +5,9 @@
 template <int T0>
 class ParityImprovedNoiseImpl {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PARITYIMPROVEDNOISEIMPL
 public:
+    // prevent constructor by default
     ParityImprovedNoiseImpl& operator=(ParityImprovedNoiseImpl const&) = delete;
     ParityImprovedNoiseImpl(ParityImprovedNoiseImpl const&)            = delete;
     ParityImprovedNoiseImpl()                                          = delete;
-#endif
-
-public:
 };

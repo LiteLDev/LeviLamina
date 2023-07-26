@@ -6,6 +6,6 @@ namespace CropUtils {
 /**
  * @symbol ?getGrowthSpeed\@CropUtils\@\@YAMAEBVBlockLegacy\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
  */
-MCAPI float getGrowthSpeed(class BlockLegacy const&, class BlockSource const&, class BlockPos const&);
+MCAPI float getGrowthSpeed(class BlockLegacy const&, class BlockSource const&, class BlockPos const&); // NOLINT
 
 }; // namespace CropUtils

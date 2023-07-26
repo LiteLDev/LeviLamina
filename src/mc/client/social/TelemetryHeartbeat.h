@@ -6,26 +6,25 @@ namespace Social::Events {
 
 class TelemetryHeartbeat {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SOCIAL_EVENTS_TELEMETRYHEARTBEAT
 public:
+    // prevent constructor by default
     TelemetryHeartbeat& operator=(TelemetryHeartbeat const&) = delete;
     TelemetryHeartbeat(TelemetryHeartbeat const&)            = delete;
     TelemetryHeartbeat()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ?antiIdleAction\@TelemetryHeartbeat\@Events\@Social\@\@QEAAXXZ
      */
-    MCAPI void antiIdleAction();
+    MCAPI void antiIdleAction(); // NOLINT
     /**
      * @symbol ?beat\@TelemetryHeartbeat\@Events\@Social\@\@QEAAXXZ
      */
-    MCAPI void beat();
+    MCAPI void beat(); // NOLINT
     /**
      * @symbol ?isPlayerIdle\@TelemetryHeartbeat\@Events\@Social\@\@QEAA_NXZ
      */
-    MCAPI bool isPlayerIdle();
+    MCAPI bool isPlayerIdle(); // NOLINT
 };
 
 }; // namespace Social::Events

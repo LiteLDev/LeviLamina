@@ -4,12 +4,9 @@
 
 struct PlayerSelectedItemChangedEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERSELECTEDITEMCHANGEDEVENT
 public:
+    // prevent constructor by default
     PlayerSelectedItemChangedEvent& operator=(PlayerSelectedItemChangedEvent const&) = delete;
     PlayerSelectedItemChangedEvent(PlayerSelectedItemChangedEvent const&)            = delete;
     PlayerSelectedItemChangedEvent()                                                 = delete;
-#endif
-
-public:
 };

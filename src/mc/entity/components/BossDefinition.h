@@ -12,26 +12,25 @@ namespace JsonUtil { class EmptyClass; }
 
 class BossDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOSSDEFINITION
 public:
+    // prevent constructor by default
     BossDefinition& operator=(BossDefinition const&) = delete;
     BossDefinition(BossDefinition const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0BossDefinition\@\@QEAA\@XZ
      */
-    MCAPI BossDefinition();
+    MCAPI BossDefinition(); // NOLINT
     /**
      * @symbol ?initialize\@BossDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVBossComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class BossComponent&) const;
+    MCAPI void initialize(class EntityContext&, class BossComponent&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@BossDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VBossDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
     buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BossDefinition>>&);
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BossDefinition>>&); // NOLINT
 };

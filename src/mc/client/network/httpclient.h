@@ -18,41 +18,43 @@ namespace xbox::httpclient {
  * ?BasicAsciiLowercase\@httpclient\@xbox\@\@YAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$http_stl_allocator\@D\@\@\@std\@\@\@Z
  */
 MCAPI void
-BasicAsciiLowercase(class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>>&);
+BasicAsciiLowercase(class std::
+                        basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>>&); // NOLINT
 /**
  * @symbol ?IsPathCharacter\@httpclient\@xbox\@\@YA_ND\@Z
  */
-MCAPI bool IsPathCharacter(char);
+MCAPI bool IsPathCharacter(char); // NOLINT
 /**
  * @symbol ?RunAsync\@httpclient\@xbox\@\@YAJ$$QEAV?$function\@$$A6AXXZ\@std\@\@PEAUXTaskQueueObject\@\@_K\@Z
  */
-MCAPI long RunAsync(class std::function<void(void)>&&, struct XTaskQueueObject*, unsigned __int64);
+MCAPI long RunAsync(class std::function<void(void)>&&, struct XTaskQueueObject*, unsigned __int64); // NOLINT
 /**
  * @symbol ?StringToUint4\@httpclient\@xbox\@\@YA_NPEBD0AEA_KH\@Z
  */
-MCAPI bool StringToUint4(char const*, char const*, unsigned __int64&, int);
+MCAPI bool StringToUint4(char const*, char const*, unsigned __int64&, int); // NOLINT
 /**
  * @symbol
  * ?WebSocketppConnectAsync\@httpclient\@xbox\@\@YAJPEBD0PEAUHC_WEBSOCKET_OBSERVER\@\@PEAUXAsyncBlock\@\@PEAXPEAUHC_PERFORM_ENV\@\@\@Z
  */
 MCAPI long
-WebSocketppConnectAsync(char const*, char const*, struct HC_WEBSOCKET_OBSERVER*, struct XAsyncBlock*, void*, struct HC_PERFORM_ENV*);
+WebSocketppConnectAsync(char const*, char const*, struct HC_WEBSOCKET_OBSERVER*, struct XAsyncBlock*, void*, struct HC_PERFORM_ENV*); // NOLINT
 /**
  * @symbol
  * ?WebSocketppDisconnect\@httpclient\@xbox\@\@YAJPEAUHC_WEBSOCKET_OBSERVER\@\@W4HCWebSocketCloseStatus\@\@PEAX\@Z
  */
-MCAPI long WebSocketppDisconnect(struct HC_WEBSOCKET_OBSERVER*, enum class HCWebSocketCloseStatus, void*);
+MCAPI long WebSocketppDisconnect(struct HC_WEBSOCKET_OBSERVER*, enum class HCWebSocketCloseStatus, void*); // NOLINT
 /**
  * @symbol
  * ?WebSocketppSendBinaryMessageAsync\@httpclient\@xbox\@\@YAJPEAUHC_WEBSOCKET_OBSERVER\@\@PEBEIPEAUXAsyncBlock\@\@PEAX\@Z
  */
 MCAPI long
-WebSocketppSendBinaryMessageAsync(struct HC_WEBSOCKET_OBSERVER*, unsigned char const*, unsigned int, struct XAsyncBlock*, void*);
+WebSocketppSendBinaryMessageAsync(struct HC_WEBSOCKET_OBSERVER*, unsigned char const*, unsigned int, struct XAsyncBlock*, void*); // NOLINT
 /**
  * @symbol
  * ?WebSocketppSendMessageAsync\@httpclient\@xbox\@\@YAJPEAUHC_WEBSOCKET_OBSERVER\@\@PEBDPEAUXAsyncBlock\@\@PEAX\@Z
  */
-MCAPI long WebSocketppSendMessageAsync(struct HC_WEBSOCKET_OBSERVER*, char const*, struct XAsyncBlock*, void*);
+MCAPI long
+WebSocketppSendMessageAsync(struct HC_WEBSOCKET_OBSERVER*, char const*, struct XAsyncBlock*, void*); // NOLINT
 /**
  * @symbol
  * ?flatten_http_headers\@httpclient\@xbox\@\@YA?AV?$basic_string\@_WU?$char_traits\@_W\@std\@\@V?$http_stl_allocator\@_W\@\@\@std\@\@AEBV?$map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$http_stl_allocator\@D\@\@\@std\@\@V12\@UHeaderCompare\@httpclient\@xbox\@\@V?$http_stl_allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$http_stl_allocator\@D\@\@\@std\@\@V12\@\@std\@\@\@\@\@4\@\@Z
@@ -68,27 +70,29 @@ flatten_http_headers(class std::map<
                          class std::basic_string<
                              char,
                              struct std::char_traits<char>,
-                             class http_stl_allocator<char>>>>> const&);
+                             class http_stl_allocator<char>>>>> const&); // NOLINT
 /**
  * @symbol ?get_http_singleton\@httpclient\@xbox\@\@YA?AV?$shared_ptr\@Uhttp_singleton\@httpclient\@xbox\@\@\@std\@\@XZ
  */
-MCAPI class std::shared_ptr<struct xbox::httpclient::http_singleton> get_http_singleton();
+MCAPI class std::shared_ptr<struct xbox::httpclient::http_singleton> get_http_singleton(); // NOLINT
 /**
  * @symbol ?get_ie_proxy_info\@httpclient\@xbox\@\@YA?AW4proxy_type\@12\@W4proxy_protocol\@12\@AEAVUri\@12\@\@Z
  */
 MCAPI enum class xbox::httpclient::proxy_type
-get_ie_proxy_info(enum class xbox::httpclient::proxy_protocol, class xbox::httpclient::Uri&);
+get_ie_proxy_info(enum class xbox::httpclient::proxy_protocol, class xbox::httpclient::Uri&); // NOLINT
 /**
  * @symbol
  * ?trim_whitespace\@httpclient\@xbox\@\@YAXAEAV?$basic_string\@_WU?$char_traits\@_W\@std\@\@V?$http_stl_allocator\@_W\@\@\@std\@\@\@Z
  */
-MCAPI void
-trim_whitespace(class std::basic_string<wchar_t, struct std::char_traits<wchar_t>, class http_stl_allocator<wchar_t>>&);
+MCAPI void trim_whitespace(class std::basic_string<
+                           wchar_t,
+                           struct std::char_traits<wchar_t>,
+                           class http_stl_allocator<wchar_t>>&); // NOLINT
 /**
  * @symbol
  * ?verify_cert_chain_platform_specific\@httpclient\@xbox\@\@YA_NAEAVverify_context\@ssl\@asio\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$http_stl_allocator\@D\@\@\@std\@\@\@Z
  */
 MCAPI bool
-verify_cert_chain_platform_specific(class asio::ssl::verify_context&, class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> const&);
+verify_cert_chain_platform_specific(class asio::ssl::verify_context&, class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> const&); // NOLINT
 
 }; // namespace xbox::httpclient

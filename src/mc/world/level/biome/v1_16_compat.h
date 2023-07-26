@@ -11,6 +11,6 @@ MCAPI class std::optional<class BlockPos> locateSpawnBiome2d(
     class std::set<int, struct std::less<int>, class std::allocator<int>> const&,
     class BiomeSource const&,
     int
-);
+); // NOLINT
 
 }; // namespace BiomeSourceUtil::v1_16_compat

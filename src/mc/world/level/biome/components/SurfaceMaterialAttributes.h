@@ -4,27 +4,26 @@
 
 struct SurfaceMaterialAttributes {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SURFACEMATERIALATTRIBUTES
 public:
+    // prevent constructor by default
     SurfaceMaterialAttributes& operator=(SurfaceMaterialAttributes const&) = delete;
     SurfaceMaterialAttributes()                                            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0SurfaceMaterialAttributes\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI SurfaceMaterialAttributes(struct SurfaceMaterialAttributes&&);
+    MCAPI SurfaceMaterialAttributes(struct SurfaceMaterialAttributes&&); // NOLINT
     /**
      * @symbol ??0SurfaceMaterialAttributes\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI SurfaceMaterialAttributes(struct SurfaceMaterialAttributes const&);
+    MCAPI SurfaceMaterialAttributes(struct SurfaceMaterialAttributes const&); // NOLINT
     /**
      * @symbol ??4SurfaceMaterialAttributes\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct SurfaceMaterialAttributes& operator=(struct SurfaceMaterialAttributes&&);
+    MCAPI struct SurfaceMaterialAttributes& operator=(struct SurfaceMaterialAttributes&&); // NOLINT
     /**
      * @symbol ??1SurfaceMaterialAttributes\@\@QEAA\@XZ
      */
-    MCAPI ~SurfaceMaterialAttributes();
+    MCAPI ~SurfaceMaterialAttributes(); // NOLINT
 };

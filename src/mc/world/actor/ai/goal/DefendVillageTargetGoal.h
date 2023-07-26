@@ -7,52 +7,51 @@
 
 class DefendVillageTargetGoal : public ::TargetGoal {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFENDVILLAGETARGETGOAL
 public:
+    // prevent constructor by default
     DefendVillageTargetGoal& operator=(DefendVillageTargetGoal const&) = delete;
     DefendVillageTargetGoal(DefendVillageTargetGoal const&)            = delete;
     DefendVillageTargetGoal()                                          = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?canUse\@DefendVillageTargetGoal\@\@UEAA_NXZ
      */
-    virtual bool canUse();
+    virtual bool canUse(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?canContinueToUse\@DefendVillageTargetGoal\@\@UEAA_NXZ
      */
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse(); // NOLINT
     /**
      * @vftbl 4
      * @symbol ?start\@DefendVillageTargetGoal\@\@UEAAXXZ
      */
-    virtual void start();
+    virtual void start(); // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?appendDebugInfo\@DefendVillageTargetGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string&) const; // NOLINT
     /**
      * @vftbl 8
      * @symbol __unk_vfn_8
      */
-    virtual void __unk_vfn_8();
+    virtual void __unk_vfn_8(); // NOLINT
     /**
      * @vftbl 9
      * @symbol __unk_vfn_9
      */
-    virtual void __unk_vfn_9();
+    virtual void __unk_vfn_9(); // NOLINT
     /**
      * @symbol ??0DefendVillageTargetGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
-    MCAPI DefendVillageTargetGoal(class Mob&);
+    MCAPI DefendVillageTargetGoal(class Mob&); // NOLINT
 };

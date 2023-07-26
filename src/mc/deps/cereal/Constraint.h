@@ -11,24 +11,23 @@ namespace cereal {
 
 class Constraint {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CEREAL_CONSTRAINT
 public:
+    // prevent constructor by default
     Constraint& operator=(Constraint const&) = delete;
     Constraint(Constraint const&)            = delete;
     Constraint()                             = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREAL_CONSTRAINT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~Constraint();
+    MCVAPI ~Constraint(); // NOLINT
 #endif
     /**
      * @symbol ?validate\@Constraint\@cereal\@\@QEBA_NAEBVmeta_any\@entt\@\@AEAVSerializerContext\@2\@\@Z
      */
-    MCAPI bool validate(class entt::meta_any const&, class cereal::SerializerContext&) const;
+    MCAPI bool validate(class entt::meta_any const&, class cereal::SerializerContext&) const; // NOLINT
 };
 
 }; // namespace cereal

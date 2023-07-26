@@ -4,12 +4,9 @@
 
 struct GetAttachPosRequestData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GETATTACHPOSREQUESTDATA
 public:
+    // prevent constructor by default
     GetAttachPosRequestData& operator=(GetAttachPosRequestData const&) = delete;
     GetAttachPosRequestData(GetAttachPosRequestData const&)            = delete;
     GetAttachPosRequestData()                                          = delete;
-#endif
-
-public:
 };

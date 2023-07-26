@@ -6,22 +6,21 @@ namespace Util::ResourceUri {
 
 struct ValidationResult {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_UTIL_RESOURCEURI_VALIDATIONRESULT
 public:
+    // prevent constructor by default
     ValidationResult& operator=(ValidationResult const&) = delete;
     ValidationResult(ValidationResult const&)            = delete;
     ValidationResult()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ?isSuccess\@ValidationResult\@ResourceUri\@Util\@\@QEBA_NXZ
      */
-    MCAPI bool isSuccess() const;
+    MCAPI bool isSuccess() const; // NOLINT
     /**
      * @symbol ??1ValidationResult\@ResourceUri\@Util\@\@QEAA\@XZ
      */
-    MCAPI ~ValidationResult();
+    MCAPI ~ValidationResult(); // NOLINT
 };
 
 }; // namespace Util::ResourceUri

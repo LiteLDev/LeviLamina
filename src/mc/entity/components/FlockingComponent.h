@@ -4,63 +4,62 @@
 
 class FlockingComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOCKINGCOMPONENT
 public:
+    // prevent constructor by default
     FlockingComponent& operator=(FlockingComponent const&) = delete;
     FlockingComponent(FlockingComponent const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0FlockingComponent\@\@QEAA\@XZ
      */
-    MCAPI FlockingComponent();
+    MCAPI FlockingComponent(); // NOLINT
     /**
      * @symbol ??0FlockingComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI FlockingComponent(class FlockingComponent&&);
+    MCAPI FlockingComponent(class FlockingComponent&&); // NOLINT
     /**
      * @symbol ?addFlockMember\@FlockingComponent\@\@QEAAXUActorUniqueID\@\@\@Z
      */
-    MCAPI void addFlockMember(struct ActorUniqueID);
+    MCAPI void addFlockMember(struct ActorUniqueID); // NOLINT
     /**
      * @symbol ?breakFlock\@FlockingComponent\@\@QEAAXAEBVActor\@\@\@Z
      */
-    MCAPI void breakFlock(class Actor const&);
+    MCAPI void breakFlock(class Actor const&); // NOLINT
     /**
      * @symbol ?calculateFlockVector\@FlockingComponent\@\@QEAAXAEBVActor\@\@\@Z
      */
-    MCAPI void calculateFlockVector(class Actor const&);
+    MCAPI void calculateFlockVector(class Actor const&); // NOLINT
     /**
      * @symbol ?calculateGoalHeading\@FlockingComponent\@\@QEAAXAEAVMob\@\@\@Z
      */
-    MCAPI void calculateGoalHeading(class Mob&);
+    MCAPI void calculateGoalHeading(class Mob&); // NOLINT
     /**
      * @symbol ?canJoinFlock\@FlockingComponent\@\@QEBA_NAEAVActor\@\@\@Z
      */
-    MCAPI bool canJoinFlock(class Actor&) const;
+    MCAPI bool canJoinFlock(class Actor&) const; // NOLINT
     /**
      * @symbol ?joinFlock\@FlockingComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void joinFlock(class Actor&);
+    MCAPI void joinFlock(class Actor&); // NOLINT
     /**
      * @symbol ?manageNeighborhood\@FlockingComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void manageNeighborhood(class Actor&);
+    MCAPI void manageNeighborhood(class Actor&); // NOLINT
     /**
      * @symbol ?mergeNeighborhoods\@FlockingComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void mergeNeighborhoods(class Actor&);
+    MCAPI void mergeNeighborhoods(class Actor&); // NOLINT
     /**
      * @symbol ??4FlockingComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class FlockingComponent& operator=(class FlockingComponent&&);
+    MCAPI class FlockingComponent& operator=(class FlockingComponent&&); // NOLINT
     /**
      * @symbol ?updateNeighborhoodData\@FlockingComponent\@\@QEAAXAEBVActor\@\@\@Z
      */
-    MCAPI void updateNeighborhoodData(class Actor const&);
+    MCAPI void updateNeighborhoodData(class Actor const&); // NOLINT
     /**
      * @symbol ?validateVariantEntityTypes\@FlockingComponent\@\@QEBA_NAEBVActor\@\@0\@Z
      */
-    MCAPI bool validateVariantEntityTypes(class Actor const&, class Actor const&) const;
+    MCAPI bool validateVariantEntityTypes(class Actor const&, class Actor const&) const; // NOLINT
 };

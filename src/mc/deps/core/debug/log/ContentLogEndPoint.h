@@ -4,25 +4,24 @@
 
 class ContentLogEndPoint {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTENTLOGENDPOINT
 public:
+    // prevent constructor by default
     ContentLogEndPoint& operator=(ContentLogEndPoint const&) = delete;
     ContentLogEndPoint(ContentLogEndPoint const&)            = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTLOGENDPOINT
     /**
      * @symbol ?log\@ContentLogEndPoint\@\@UEAAXPEBD\@Z
      */
-    MCVAPI void log(char const*);
+    MCVAPI void log(char const*); // NOLINT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ContentLogEndPoint();
+    MCVAPI ~ContentLogEndPoint(); // NOLINT
 #endif
     /**
      * @symbol ??0ContentLogEndPoint\@\@QEAA\@XZ
      */
-    MCAPI ContentLogEndPoint();
+    MCAPI ContentLogEndPoint(); // NOLINT
 };

@@ -4,12 +4,9 @@
 
 struct HoneyBlockFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HONEYBLOCKFLAG
 public:
+    // prevent constructor by default
     HoneyBlockFlag& operator=(HoneyBlockFlag const&) = delete;
     HoneyBlockFlag(HoneyBlockFlag const&)            = delete;
     HoneyBlockFlag()                                 = delete;
-#endif
-
-public:
 };

@@ -7,26 +7,25 @@
 
 class LegacyFlowerFeature : public ::Feature {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYFLOWERFEATURE
 public:
+    // prevent constructor by default
     LegacyFlowerFeature& operator=(LegacyFlowerFeature const&) = delete;
     LegacyFlowerFeature(LegacyFlowerFeature const&)            = delete;
     LegacyFlowerFeature()                                      = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?place\@LegacyFlowerFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
     /**
      * @symbol ??0LegacyFlowerFeature\@\@QEAA\@W4FlowerPlacementType\@\@\@Z
      */
-    MCAPI LegacyFlowerFeature(enum class FlowerPlacementType);
+    MCAPI LegacyFlowerFeature(enum class FlowerPlacementType); // NOLINT
 };

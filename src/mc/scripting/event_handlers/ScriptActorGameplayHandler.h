@@ -16,45 +16,45 @@ namespace Scripting { class WeakLifetimeScope; }
 
 class ScriptActorGameplayHandler {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTACTORGAMEPLAYHANDLER
 public:
+    // prevent constructor by default
     ScriptActorGameplayHandler& operator=(ScriptActorGameplayHandler const&) = delete;
     ScriptActorGameplayHandler(ScriptActorGameplayHandler const&)            = delete;
     ScriptActorGameplayHandler()                                             = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?handleEvent\@ScriptActorGameplayHandler\@\@UEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAUActorDefinitionStartedEvent\@\@\@Z
      */
-    virtual struct GameplayHandlerResult<enum class CoordinatorResult> handleEvent(struct ActorDefinitionStartedEvent&);
+    virtual struct GameplayHandlerResult<enum class CoordinatorResult>
+    handleEvent(struct ActorDefinitionStartedEvent&); // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?handleEvent\@?$Impl\@U?$type_list\@$$CBU?$ActorGameplayEvent\@X\@\@$$CBU?$ActorGameplayEvent\@W4CoordinatorResult\@\@\@\@U?$MutableActorGameplayEvent\@W4CoordinatorResult\@\@\@\@\@entt\@\@\@?$EventHandlerDispatcher\@VActorGameplayHandler\@\@\@Details\@\@MEAA?AW4HandlerResult\@\@AEBU?$ActorGameplayEvent\@X\@\@\@Z
      */
-    virtual enum class HandlerResult handleEvent(struct ActorGameplayEvent<void> const&);
+    virtual enum class HandlerResult handleEvent(struct ActorGameplayEvent<void> const&); // NOLINT
     /**
      * @vftbl 3
      * @symbol
      * ?handleEvent\@?$Impl\@U?$type_list\@$$CBU?$ActorGameplayEvent\@W4CoordinatorResult\@\@\@\@U?$MutableActorGameplayEvent\@W4CoordinatorResult\@\@\@\@\@entt\@\@\@?$EventHandlerDispatcher\@VActorGameplayHandler\@\@\@Details\@\@MEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEBU?$ActorGameplayEvent\@W4CoordinatorResult\@\@\@\@\@Z
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult>
-    handleEvent(struct ActorGameplayEvent<enum class CoordinatorResult> const&);
+    handleEvent(struct ActorGameplayEvent<enum class CoordinatorResult> const&); // NOLINT
     /**
      * @vftbl 4
      * @symbol
      * ?handleEvent\@?$Impl\@U?$type_list\@U?$MutableActorGameplayEvent\@W4CoordinatorResult\@\@\@\@\@entt\@\@\@?$EventHandlerDispatcher\@VActorGameplayHandler\@\@\@Details\@\@MEAA?AU?$GameplayHandlerResult\@W4CoordinatorResult\@\@\@\@AEAU?$MutableActorGameplayEvent\@W4CoordinatorResult\@\@\@\@\@Z
      */
     virtual struct GameplayHandlerResult<enum class CoordinatorResult>
-    handleEvent(struct MutableActorGameplayEvent<enum class CoordinatorResult>&);
+    handleEvent(struct MutableActorGameplayEvent<enum class CoordinatorResult>&); // NOLINT
 
     // private:
     /**
@@ -63,7 +63,7 @@ public:
      */
     MCAPI bool
     _handleActorDefinitionStartedEvent(struct ActorDefinitionStartedEvent&, class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::IScriptBeforeEvents>)
-        const;
+        const; // NOLINT
 
 private:
 };

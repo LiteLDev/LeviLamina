@@ -14,19 +14,18 @@ namespace mce { class UUID; }
 
 class PackSourceFactory {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKSOURCEFACTORY
 public:
+    // prevent constructor by default
     PackSourceFactory& operator=(PackSourceFactory const&) = delete;
     PackSourceFactory(PackSourceFactory const&)            = delete;
     PackSourceFactory()                                    = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
@@ -37,90 +36,93 @@ public:
         class mce::UUID const&,
         enum class PackType,
         enum class PackOrigin
-    );
+    ); // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?getWorldTemplatePackSource\@PackSourceFactory\@\@UEBAPEAVWorldTemplatePackSource\@\@AEBVUUID\@mce\@\@W4PackType\@\@\@Z
      */
     virtual class WorldTemplatePackSource*
-    getWorldTemplatePackSource(class mce::UUID const&, enum class PackType) const;
+    getWorldTemplatePackSource(class mce::UUID const&, enum class PackType) const; // NOLINT
     /**
      * @vftbl 3
      * @symbol
      * ?createDirectoryPackSource\@PackSourceFactory\@\@UEAAAEAVDirectoryPackSource\@\@AEBVPath\@Core\@\@W4PackType\@\@W4PackOrigin\@\@_N\@Z
      */
     virtual class DirectoryPackSource&
-    createDirectoryPackSource(class Core::Path const&, enum class PackType, enum class PackOrigin, bool);
+    createDirectoryPackSource(class Core::Path const&, enum class PackType, enum class PackOrigin, bool); // NOLINT
     /**
      * @vftbl 4
      * @symbol
      * ?getDirectoryPackSource\@PackSourceFactory\@\@UEBAPEAVDirectoryPackSource\@\@AEBVPath\@Core\@\@W4PackType\@\@\@Z
      */
-    virtual class DirectoryPackSource* getDirectoryPackSource(class Core::Path const&, enum class PackType) const;
+    virtual class DirectoryPackSource*
+    getDirectoryPackSource(class Core::Path const&, enum class PackType) const; // NOLINT
     /**
      * @vftbl 5
      * @symbol ?createInPackagePackSource\@PackSourceFactory\@\@UEAAAEAVInPackagePackSource\@\@W4PackType\@\@\@Z
      */
-    virtual class InPackagePackSource& createInPackagePackSource(enum class PackType);
+    virtual class InPackagePackSource& createInPackagePackSource(enum class PackType); // NOLINT
     /**
      * @vftbl 6
      * @symbol ?getInPackagePackSource\@PackSourceFactory\@\@UEAAPEAVInPackagePackSource\@\@W4PackType\@\@\@Z
      */
-    virtual class InPackagePackSource* getInPackagePackSource(enum class PackType);
+    virtual class InPackagePackSource* getInPackagePackSource(enum class PackType); // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?createWorldHistoryPackSource\@PackSourceFactory\@\@UEAAAEAVWorldHistoryPackSource\@\@AEBVPath\@Core\@\@W4PackType\@\@\@Z
      */
-    virtual class WorldHistoryPackSource& createWorldHistoryPackSource(class Core::Path const&, enum class PackType);
+    virtual class WorldHistoryPackSource&
+    createWorldHistoryPackSource(class Core::Path const&, enum class PackType); // NOLINT
     /**
      * @vftbl 8
      * @symbol
      * ?getWorldHistoryPackSource\@PackSourceFactory\@\@UEBAPEAVWorldHistoryPackSource\@\@AEBVPath\@Core\@\@W4PackType\@\@\@Z
      */
-    virtual class WorldHistoryPackSource* getWorldHistoryPackSource(class Core::Path const&, enum class PackType) const;
+    virtual class WorldHistoryPackSource*
+    getWorldHistoryPackSource(class Core::Path const&, enum class PackType) const; // NOLINT
     /**
      * @vftbl 9
      * @symbol
      * ?getDirectoryPackSourceContaining\@PackSourceFactory\@\@UEBAPEAVDirectoryPackSource\@\@AEBUPackIdVersion\@\@\@Z
      */
-    virtual class DirectoryPackSource* getDirectoryPackSourceContaining(struct PackIdVersion const&) const;
+    virtual class DirectoryPackSource* getDirectoryPackSourceContaining(struct PackIdVersion const&) const; // NOLINT
     /**
      * @vftbl 10
      * @symbol ?removeFromDirectoryPackSource\@PackSourceFactory\@\@UEAAXAEBVPath\@Core\@\@\@Z
      */
-    virtual void removeFromDirectoryPackSource(class Core::Path const&);
+    virtual void removeFromDirectoryPackSource(class Core::Path const&); // NOLINT
     /**
      * @vftbl 11
      * @symbol ?createDynamicPackagePackSource\@PackSourceFactory\@\@UEAAAEAVInPackagePackSource\@\@W4PackType\@\@\@Z
      */
-    virtual class InPackagePackSource& createDynamicPackagePackSource(enum class PackType);
+    virtual class InPackagePackSource& createDynamicPackagePackSource(enum class PackType); // NOLINT
     /**
      * @vftbl 12
      * @symbol ?getDynamicPackagePackSource\@PackSourceFactory\@\@UEAAPEAVInPackagePackSource\@\@W4PackType\@\@\@Z
      */
-    virtual class InPackagePackSource* getDynamicPackagePackSource(enum class PackType);
+    virtual class InPackagePackSource* getDynamicPackagePackSource(enum class PackType); // NOLINT
     /**
      * @vftbl 13
      * @symbol
      * ?setDynamicPackagePacks\@PackSourceFactory\@\@UEAAXAEBV?$shared_ptr\@VIDynamicPackagePacks\@\@\@std\@\@\@Z
      */
-    virtual void setDynamicPackagePacks(class std::shared_ptr<class IDynamicPackagePacks> const&);
+    virtual void setDynamicPackagePacks(class std::shared_ptr<class IDynamicPackagePacks> const&); // NOLINT
     /**
      * @vftbl 14
      * @symbol
      * ?setDynamicPackageRoot\@PackSourceFactory\@\@UEAAXV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@\@Z
      */
-    virtual void setDynamicPackageRoot(class Core::PathBuffer<std::string>);
+    virtual void setDynamicPackageRoot(class Core::PathBuffer<std::string>); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSOURCEFACTORY
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~PackSourceFactory();
+    MCVAPI ~PackSourceFactory(); // NOLINT
 #endif
     /**
      * @symbol ??0PackSourceFactory\@\@QEAA\@AEBV?$shared_ptr\@VIInPackagePacks\@\@\@std\@\@\@Z
      */
-    MCAPI PackSourceFactory(class std::shared_ptr<class IInPackagePacks> const&);
+    MCAPI PackSourceFactory(class std::shared_ptr<class IInPackagePacks> const&); // NOLINT
 };

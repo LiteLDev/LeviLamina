@@ -5,29 +5,33 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
+// auto generated forward declare list
+// clang-format off
+class WorkerPool;
+// clang-format on
+
 namespace Bedrock {
 
 class WorkerPoolHandle {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_WORKERPOOLHANDLE
 public:
+    // prevent constructor by default
     WorkerPoolHandle& operator=(WorkerPoolHandle const&) = delete;
     WorkerPoolHandle(WorkerPoolHandle const&)            = delete;
     WorkerPoolHandle()                                   = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?get\@WorkerPoolHandle\@Bedrock\@\@UEBA?AV?$not_null\@V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@\@gsl\@\@XZ
      */
-    virtual class gsl::not_null<class Bedrock::NonOwnerPointer<class WorkerPool>> get() const;
+    virtual class gsl::not_null<class Bedrock::NonOwnerPointer<class WorkerPool>> get() const; // NOLINT
 };
 
 }; // namespace Bedrock

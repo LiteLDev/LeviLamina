@@ -7,28 +7,27 @@
 
 class StopCommand : public ::Command {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STOPCOMMAND
 public:
+    // prevent constructor by default
     StopCommand& operator=(StopCommand const&) = delete;
     StopCommand(StopCommand const&)            = delete;
     StopCommand()                              = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?execute\@StopCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol ?setup\@StopCommand\@\@SAXAEAVCommandRegistry\@\@AEAVDedicatedServer\@\@\@Z
      */
-    MCAPI static void setup(class CommandRegistry&, class DedicatedServer&);
+    MCAPI static void setup(class CommandRegistry&, class DedicatedServer&); // NOLINT
 
     // private:
 
@@ -36,5 +35,5 @@ private:
     /**
      * @symbol ?mServer\@StopCommand\@\@0PEAVDedicatedServer\@\@EA
      */
-    MCAPI static class DedicatedServer* mServer;
+    MCAPI static class DedicatedServer* mServer; // NOLINT
 };

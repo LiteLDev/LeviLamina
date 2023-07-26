@@ -12,34 +12,32 @@ public:
     // VolumeIdentifier inner types define
     struct ConstrainedString {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VOLUMEIDENTIFIER_CONSTRAINEDSTRING
     public:
+        // prevent constructor by default
         ConstrainedString& operator=(ConstrainedString const&) = delete;
         ConstrainedString(ConstrainedString const&)            = delete;
         ConstrainedString()                                    = delete;
-#endif
 
     public:
         /**
          * @symbol ?bindType\@ConstrainedString\@VolumeIdentifier\@\@SAXXZ
          */
-        MCAPI static void bindType();
+        MCAPI static void bindType(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VOLUMEIDENTIFIER
 public:
+    // prevent constructor by default
     VolumeIdentifier& operator=(VolumeIdentifier const&) = delete;
     VolumeIdentifier(VolumeIdentifier const&)            = delete;
     VolumeIdentifier()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ??8VolumeIdentifier\@\@QEBA_NAEBU0\@\@Z
      */
-    MCAPI bool operator==(struct VolumeIdentifier const&) const;
+    MCAPI bool operator==(struct VolumeIdentifier const&) const; // NOLINT
     /**
      * @symbol ?bindType\@VolumeIdentifier\@\@SAXXZ
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(); // NOLINT
 };

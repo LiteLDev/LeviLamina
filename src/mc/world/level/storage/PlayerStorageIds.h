@@ -4,16 +4,15 @@
 
 struct PlayerStorageIds {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERSTORAGEIDS
 public:
+    // prevent constructor by default
     PlayerStorageIds& operator=(PlayerStorageIds const&) = delete;
     PlayerStorageIds(PlayerStorageIds const&)            = delete;
     PlayerStorageIds()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ??1PlayerStorageIds\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerStorageIds();
+    MCAPI ~PlayerStorageIds(); // NOLINT
 };

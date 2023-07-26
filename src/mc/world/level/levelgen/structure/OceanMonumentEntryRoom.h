@@ -7,27 +7,26 @@
 
 class OceanMonumentEntryRoom : public ::OceanMonumentPiece {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCEANMONUMENTENTRYROOM
 public:
+    // prevent constructor by default
     OceanMonumentEntryRoom& operator=(OceanMonumentEntryRoom const&) = delete;
     OceanMonumentEntryRoom(OceanMonumentEntryRoom const&)            = delete;
     OceanMonumentEntryRoom()                                         = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?getType\@OceanMonumentEntryRoom\@\@UEBA?AW4StructurePieceType\@\@XZ
      */
-    virtual enum class StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const; // NOLINT
     /**
      * @vftbl 4
      * @symbol ?postProcess\@OceanMonumentEntryRoom\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&); // NOLINT
 };

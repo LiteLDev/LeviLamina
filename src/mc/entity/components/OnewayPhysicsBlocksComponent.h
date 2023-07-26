@@ -4,12 +4,9 @@
 
 struct OnewayPhysicsBlocksComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONEWAYPHYSICSBLOCKSCOMPONENT
 public:
+    // prevent constructor by default
     OnewayPhysicsBlocksComponent& operator=(OnewayPhysicsBlocksComponent const&) = delete;
     OnewayPhysicsBlocksComponent(OnewayPhysicsBlocksComponent const&)            = delete;
     OnewayPhysicsBlocksComponent()                                               = delete;
-#endif
-
-public:
 };

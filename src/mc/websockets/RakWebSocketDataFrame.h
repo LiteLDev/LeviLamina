@@ -9,12 +9,11 @@ namespace RakNet { class BitStream; }
 
 class RakWebSocketDataFrame {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKWEBSOCKETDATAFRAME
 public:
+    // prevent constructor by default
     RakWebSocketDataFrame& operator=(RakWebSocketDataFrame const&) = delete;
     RakWebSocketDataFrame(RakWebSocketDataFrame const&)            = delete;
     RakWebSocketDataFrame()                                        = delete;
-#endif
 
 public:
     /**
@@ -27,5 +26,5 @@ public:
         enum class OpCode,
         bool,
         unsigned int
-    );
+    ); // NOLINT
 };

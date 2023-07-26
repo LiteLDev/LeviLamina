@@ -19,14 +19,12 @@ public:
     // ArmSize inner types define
     enum class Type {};
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERSONA_ARMSIZE
 public:
+    // prevent constructor by default
     ArmSize& operator=(ArmSize const&) = delete;
     ArmSize(ArmSize const&)            = delete;
     ArmSize()                          = delete;
-#endif
 
-public:
     // protected:
     /**
      * @symbol
@@ -34,7 +32,7 @@ public:
      */
     MCAPI static class std::_List_const_iterator<class std::_List_val<struct std::_List_simple_types<
         struct std::pair<enum class persona::ArmSize::Type const, struct persona::SizeInfo>>>>
-        _getSizeInfoIteratorByType(enum class persona::ArmSize::Type);
+        _getSizeInfoIteratorByType(enum class persona::ArmSize::Type); // NOLINT
 
     // private:
 
@@ -50,7 +48,7 @@ private:
         struct std::hash<enum class persona::ArmSize::Type>,
         struct std::equal_to<enum class persona::ArmSize::Type>,
         class std::allocator<struct std::pair<enum class persona::ArmSize::Type const, struct persona::SizeInfo>>> const
-        mInfoList;
+        mInfoList; // NOLINT
 };
 
 }; // namespace persona

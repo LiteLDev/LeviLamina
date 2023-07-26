@@ -9,32 +9,32 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptBlockFillOptions {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTBLOCKFILLOPTIONS
 public:
+    // prevent constructor by default
     ScriptBlockFillOptions(ScriptBlockFillOptions const&) = delete;
     ScriptBlockFillOptions()                              = delete;
-#endif
 
 public:
     /**
      * @symbol ??4ScriptBlockFillOptions\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptBlockFillOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptBlockFillOptions const&);
+    operator=(struct ScriptModuleMinecraft::ScriptBlockFillOptions const&); // NOLINT
     /**
      * @symbol ??4ScriptBlockFillOptions\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptBlockFillOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptBlockFillOptions&&);
+    operator=(struct ScriptModuleMinecraft::ScriptBlockFillOptions&&); // NOLINT
     /**
      * @symbol ??1ScriptBlockFillOptions\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptBlockFillOptions();
+    MCAPI ~ScriptBlockFillOptions(); // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptBlockFillOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptBlockFillOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptBlockFillOptions> bind();
+    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptBlockFillOptions>
+    bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

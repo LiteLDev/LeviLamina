@@ -4,32 +4,31 @@
 
 class JumpInfo {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_JUMPINFO
 public:
+    // prevent constructor by default
     JumpInfo& operator=(JumpInfo const&) = delete;
     JumpInfo(JumpInfo const&)            = delete;
     JumpInfo()                           = delete;
-#endif
 
 public:
     /**
      * @symbol ??0JumpInfo\@\@QEAA\@MMHH\@Z
      */
-    MCAPI JumpInfo(float, float, int, int);
+    MCAPI JumpInfo(float, float, int, int); // NOLINT
     /**
      * @symbol ?getAnimDuration\@JumpInfo\@\@QEBAHXZ
      */
-    MCAPI int getAnimDuration() const;
+    MCAPI int getAnimDuration() const; // NOLINT
     /**
      * @symbol ?getDistanceScale\@JumpInfo\@\@QEBAMXZ
      */
-    MCAPI float getDistanceScale() const;
+    MCAPI float getDistanceScale() const; // NOLINT
     /**
      * @symbol ?getHeight\@JumpInfo\@\@QEBAMXZ
      */
-    MCAPI float getHeight() const;
+    MCAPI float getHeight() const; // NOLINT
     /**
      * @symbol ?getJumpDelay\@JumpInfo\@\@QEBAHXZ
      */
-    MCAPI int getJumpDelay() const;
+    MCAPI int getJumpDelay() const; // NOLINT
 };

@@ -17,32 +17,30 @@ public:
     // RandomSpreadTreeCanopy inner types define
     struct WeightedBlockReference {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMSPREADTREECANOPY_WEIGHTEDBLOCKREFERENCE
     public:
+        // prevent constructor by default
         WeightedBlockReference& operator=(WeightedBlockReference const&) = delete;
         WeightedBlockReference(WeightedBlockReference const&)            = delete;
         WeightedBlockReference()                                         = delete;
-#endif
 
     public:
         /**
          * @symbol ??1WeightedBlockReference\@RandomSpreadTreeCanopy\@\@QEAA\@XZ
          */
-        MCAPI ~WeightedBlockReference();
+        MCAPI ~WeightedBlockReference(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMSPREADTREECANOPY
 public:
+    // prevent constructor by default
     RandomSpreadTreeCanopy& operator=(RandomSpreadTreeCanopy const&) = delete;
     RandomSpreadTreeCanopy(RandomSpreadTreeCanopy const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
@@ -50,9 +48,9 @@ public:
      */
     virtual class std::optional<class BlockPos>
     placeCanopy(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&, struct TreeHelper::TreeParams const&, std::vector<class BlockPos> const&)
-        const;
+        const; // NOLINT
     /**
      * @symbol ??0RandomSpreadTreeCanopy\@\@QEAA\@XZ
      */
-    MCAPI RandomSpreadTreeCanopy();
+    MCAPI RandomSpreadTreeCanopy(); // NOLINT
 };

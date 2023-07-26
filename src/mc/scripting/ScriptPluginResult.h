@@ -19,94 +19,90 @@ public:
     // ScriptPluginResult inner types define
     struct Error {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPLUGINRESULT_ERROR
     public:
+        // prevent constructor by default
         Error& operator=(Error const&) = delete;
         Error(Error const&)            = delete;
         Error()                        = delete;
-#endif
 
     public:
         /**
          * @symbol ??1Error\@ScriptPluginResult\@\@QEAA\@XZ
          */
-        MCAPI ~Error();
+        MCAPI ~Error(); // NOLINT
     };
 
     struct Info {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPLUGINRESULT_INFO
     public:
+        // prevent constructor by default
         Info& operator=(Info const&) = delete;
         Info(Info const&)            = delete;
         Info()                       = delete;
-#endif
 
     public:
         /**
          * @symbol ??1Info\@ScriptPluginResult\@\@QEAA\@XZ
          */
-        MCAPI ~Info();
+        MCAPI ~Info(); // NOLINT
     };
 
     struct Warning {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPLUGINRESULT_WARNING
     public:
+        // prevent constructor by default
         Warning& operator=(Warning const&) = delete;
         Warning(Warning const&)            = delete;
         Warning()                          = delete;
-#endif
 
     public:
         /**
          * @symbol ??1Warning\@ScriptPluginResult\@\@QEAA\@XZ
          */
-        MCAPI ~Warning();
+        MCAPI ~Warning(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPLUGINRESULT
 public:
+    // prevent constructor by default
     ScriptPluginResult& operator=(ScriptPluginResult const&) = delete;
     ScriptPluginResult()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ScriptPluginResult\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI ScriptPluginResult(class ScriptPluginResult const&);
+    MCAPI ScriptPluginResult(class ScriptPluginResult const&); // NOLINT
     /**
      * @symbol
      * ?addError\@ScriptPluginResult\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void addError(std::string const&);
+    MCAPI void addError(std::string const&); // NOLINT
     /**
      * @symbol
      * ?addInfo\@ScriptPluginResult\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void addInfo(std::string const&);
+    MCAPI void addInfo(std::string const&); // NOLINT
     /**
      * @symbol
      * ?addWarning\@ScriptPluginResult\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void addWarning(std::string const&);
+    MCAPI void addWarning(std::string const&); // NOLINT
     /**
      * @symbol
      * ?getErrors\@ScriptPluginResult\@\@QEBAAEBV?$vector\@UError\@ScriptPluginResult\@\@V?$allocator\@UError\@ScriptPluginResult\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<struct ScriptPluginResult::Error> const& getErrors() const;
+    MCAPI std::vector<struct ScriptPluginResult::Error> const& getErrors() const; // NOLINT
     /**
      * @symbol ?getModuleDescriptor\@ScriptPluginResult\@\@QEBAAEBUModuleDescriptor\@Scripting\@\@XZ
      */
-    MCAPI struct Scripting::ModuleDescriptor const& getModuleDescriptor() const;
+    MCAPI struct Scripting::ModuleDescriptor const& getModuleDescriptor() const; // NOLINT
     /**
      * @symbol
      * ?getWarnings\@ScriptPluginResult\@\@QEBAAEBV?$vector\@UWarning\@ScriptPluginResult\@\@V?$allocator\@UWarning\@ScriptPluginResult\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<struct ScriptPluginResult::Warning> const& getWarnings() const;
+    MCAPI std::vector<struct ScriptPluginResult::Warning> const& getWarnings() const; // NOLINT
     /**
      * @symbol ??1ScriptPluginResult\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptPluginResult();
+    MCAPI ~ScriptPluginResult(); // NOLINT
 };

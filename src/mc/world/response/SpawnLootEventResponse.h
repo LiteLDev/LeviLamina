@@ -13,30 +13,29 @@ namespace JsonUtil { class EmptyClass; }
 
 class SpawnLootEventResponse {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNLOOTEVENTRESPONSE
 public:
+    // prevent constructor by default
     SpawnLootEventResponse& operator=(SpawnLootEventResponse const&) = delete;
     SpawnLootEventResponse(SpawnLootEventResponse const&)            = delete;
     SpawnLootEventResponse()                                         = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?getName\@SpawnLootEventResponse\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string const& getName() const;
+    virtual std::string const& getName() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol ?executeAction\@SpawnLootEventResponse\@\@UEBAXAEAVRenderParams\@\@\@Z
      */
-    virtual void executeAction(class RenderParams&) const;
+    virtual void executeAction(class RenderParams&) const; // NOLINT
     /**
      * @vftbl 3
      * @symbol
@@ -44,10 +43,10 @@ public:
      */
     virtual void
     buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>>&, class Factory<class EventResponse> const&)
-        const;
+        const; // NOLINT
     /**
      * @symbol
      * ?NameID\@SpawnLootEventResponse\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const NameID;
+    MCAPI static std::string const NameID; // NOLINT
 };

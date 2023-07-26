@@ -7,47 +7,46 @@
 
 class HugeMushroomFeature : public ::Feature {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HUGEMUSHROOMFEATURE
 public:
+    // prevent constructor by default
     HugeMushroomFeature& operator=(HugeMushroomFeature const&) = delete;
     HugeMushroomFeature(HugeMushroomFeature const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?place\@HugeMushroomFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HUGEMUSHROOMFEATURE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~HugeMushroomFeature();
+    MCVAPI ~HugeMushroomFeature(); // NOLINT
 #endif
     /**
      * @symbol ??0HugeMushroomFeature\@\@QEAA\@XZ
      */
-    MCAPI HugeMushroomFeature();
+    MCAPI HugeMushroomFeature(); // NOLINT
     /**
      * @symbol ??0HugeMushroomFeature\@\@QEAA\@H\@Z
      */
-    MCAPI HugeMushroomFeature(int);
+    MCAPI HugeMushroomFeature(int); // NOLINT
     /**
      * @symbol ?placeFixed\@HugeMushroomFeature\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@HH\@Z
      */
-    MCAPI bool placeFixed(class BlockSource&, class BlockPos const&, int, int) const;
+    MCAPI bool placeFixed(class BlockSource&, class BlockPos const&, int, int) const; // NOLINT
 
     // private:
     /**
      * @symbol ?_canSurvive\@HugeMushroomFeature\@\@AEBA_NAEBVBlock\@\@\@Z
      */
-    MCAPI bool _canSurvive(class Block const&) const;
+    MCAPI bool _canSurvive(class Block const&) const; // NOLINT
 
 private:
 };

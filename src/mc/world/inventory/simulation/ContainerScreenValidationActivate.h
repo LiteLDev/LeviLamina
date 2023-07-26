@@ -7,22 +7,21 @@
 
 class ContainerScreenValidationActivate : public ::ContainerScreenValidation {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERSCREENVALIDATIONACTIVATE
 public:
+    // prevent constructor by default
     ContainerScreenValidationActivate& operator=(ContainerScreenValidationActivate const&) = delete;
     ContainerScreenValidationActivate(ContainerScreenValidationActivate const&)            = delete;
     ContainerScreenValidationActivate()                                                    = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?tryActivate\@ContainerScreenValidationActivate\@\@EEAA?AUContainerValidationResult\@\@XZ
      */
-    virtual struct ContainerValidationResult tryActivate();
+    virtual struct ContainerValidationResult tryActivate(); // NOLINT
 };

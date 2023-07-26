@@ -4,24 +4,23 @@
 
 class DashComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DASHCOMPONENT
 public:
+    // prevent constructor by default
     DashComponent& operator=(DashComponent const&) = delete;
     DashComponent(DashComponent const&)            = delete;
     DashComponent()                                = delete;
-#endif
 
 public:
     /**
      * @symbol ?getCooldownTime\@DashComponent\@\@QEBA?BIXZ
      */
-    MCAPI unsigned int const getCooldownTime() const;
+    MCAPI unsigned int const getCooldownTime() const; // NOLINT
     /**
      * @symbol ?getHorizontalMomentum\@DashComponent\@\@QEBA?BMXZ
      */
-    MCAPI float const getHorizontalMomentum() const;
+    MCAPI float const getHorizontalMomentum() const; // NOLINT
     /**
      * @symbol ?getVerticalMomentum\@DashComponent\@\@QEBA?BMXZ
      */
-    MCAPI float const getVerticalMomentum() const;
+    MCAPI float const getVerticalMomentum() const; // NOLINT
 };

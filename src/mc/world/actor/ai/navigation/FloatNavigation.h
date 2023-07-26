@@ -7,22 +7,21 @@
 
 class FloatNavigation : public ::PathNavigation {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOATNAVIGATION
 public:
+    // prevent constructor by default
     FloatNavigation& operator=(FloatNavigation const&) = delete;
     FloatNavigation(FloatNavigation const&)            = delete;
     FloatNavigation()                                  = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 10
      * @symbol ?travel\@FloatNavigation\@\@MEAA_NAEAVNavigationComponent\@\@AEAVMob\@\@AEAM22\@Z
      */
-    virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);
+    virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&); // NOLINT
 };

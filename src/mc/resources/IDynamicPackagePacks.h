@@ -4,12 +4,9 @@
 
 class IDynamicPackagePacks {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IDYNAMICPACKAGEPACKS
 public:
+    // prevent constructor by default
     IDynamicPackagePacks& operator=(IDynamicPackagePacks const&) = delete;
     IDynamicPackagePacks(IDynamicPackagePacks const&)            = delete;
     IDynamicPackagePacks()                                       = delete;
-#endif
-
-public:
 };

@@ -4,36 +4,36 @@
 
 class AmbientSoundServerSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AMBIENTSOUNDSERVERSYSTEM
 public:
+    // prevent constructor by default
     AmbientSoundServerSystem& operator=(AmbientSoundServerSystem const&) = delete;
     AmbientSoundServerSystem(AmbientSoundServerSystem const&)            = delete;
     AmbientSoundServerSystem()                                           = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?tick\@AmbientSoundServerSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
-    virtual void tick(class EntityRegistry&);
+    virtual void tick(class EntityRegistry&); // NOLINT
 
     // private:
     /**
      * @symbol
      * ?_tickAmbientSoundComponent\@AmbientSoundServerSystem\@\@CAXAEAVActorOwnerComponent\@\@AEAVAmbientSoundServerComponent\@\@\@Z
      */
-    MCAPI static void _tickAmbientSoundComponent(class ActorOwnerComponent&, class AmbientSoundServerComponent&);
+    MCAPI static void
+    _tickAmbientSoundComponent(class ActorOwnerComponent&, class AmbientSoundServerComponent&); // NOLINT
 
 private:
 };

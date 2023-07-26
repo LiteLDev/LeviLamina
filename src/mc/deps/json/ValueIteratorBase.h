@@ -11,39 +11,38 @@ namespace Json {
 
 class ValueIteratorBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_JSON_VALUEITERATORBASE
 public:
+    // prevent constructor by default
     ValueIteratorBase& operator=(ValueIteratorBase const&) = delete;
     ValueIteratorBase()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ValueIteratorBase\@Json\@\@QEAA\@AEBV01\@\@Z
      */
-    MCAPI ValueIteratorBase(class Json::ValueIteratorBase const&);
+    MCAPI ValueIteratorBase(class Json::ValueIteratorBase const&); // NOLINT
     /**
      * @symbol ?key\@ValueIteratorBase\@Json\@\@QEBA?AVValue\@2\@XZ
      */
-    MCAPI class Json::Value key() const;
+    MCAPI class Json::Value key() const; // NOLINT
     /**
      * @symbol ?memberName\@ValueIteratorBase\@Json\@\@QEBAPEBDXZ
      */
-    MCAPI char const* memberName() const;
+    MCAPI char const* memberName() const; // NOLINT
 
     // protected:
     /**
      * @symbol ?deref\@ValueIteratorBase\@Json\@\@IEBAAEAVValue\@2\@XZ
      */
-    MCAPI class Json::Value& deref() const;
+    MCAPI class Json::Value& deref() const; // NOLINT
     /**
      * @symbol ?increment\@ValueIteratorBase\@Json\@\@IEAAXXZ
      */
-    MCAPI void increment();
+    MCAPI void increment(); // NOLINT
     /**
      * @symbol ?isEqual\@ValueIteratorBase\@Json\@\@IEBA_NAEBV12\@\@Z
      */
-    MCAPI bool isEqual(class Json::ValueIteratorBase const&) const;
+    MCAPI bool isEqual(class Json::ValueIteratorBase const&) const; // NOLINT
 
 protected:
 };

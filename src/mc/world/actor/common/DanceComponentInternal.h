@@ -6,6 +6,6 @@ namespace DanceComponentInternal {
 /**
  * @symbol ?DEFAULT_DISTANCE\@DanceComponentInternal\@\@3MA
  */
-MCAPI extern float DEFAULT_DISTANCE;
+MCAPI extern float DEFAULT_DISTANCE; // NOLINT
 
 }; // namespace DanceComponentInternal

@@ -4,18 +4,17 @@
 
 class IStructurePoolBlockPredicate {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISTRUCTUREPOOLBLOCKPREDICATE
 public:
+    // prevent constructor by default
     IStructurePoolBlockPredicate& operator=(IStructurePoolBlockPredicate const&) = delete;
     IStructurePoolBlockPredicate(IStructurePoolBlockPredicate const&)            = delete;
     IStructurePoolBlockPredicate()                                               = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISTRUCTUREPOOLBLOCKPREDICATE
     /**
      * @symbol ?finalize\@IStructurePoolBlockPredicate\@\@UEAA_NAEAVBlockSource\@\@AEAVIRandom\@\@\@Z
      */
-    MCVAPI bool finalize(class BlockSource&, class IRandom&);
+    MCVAPI bool finalize(class BlockSource&, class IRandom&); // NOLINT
 #endif
 };

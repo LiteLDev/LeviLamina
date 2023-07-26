@@ -4,27 +4,26 @@
 
 class AgentDestroyCommandSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTDESTROYCOMMANDSYSTEM
 public:
+    // prevent constructor by default
     AgentDestroyCommandSystem& operator=(AgentDestroyCommandSystem const&) = delete;
     AgentDestroyCommandSystem(AgentDestroyCommandSystem const&)            = delete;
     AgentDestroyCommandSystem()                                            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?tick\@AgentDestroyCommandSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
-    virtual void tick(class EntityRegistry&);
+    virtual void tick(class EntityRegistry&); // NOLINT
 };

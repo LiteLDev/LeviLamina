@@ -14,12 +14,12 @@ namespace AgentInteractSystem {
  * ?initialize\@AgentInteractSystem\@\@YAXAEAVEntityContext\@\@AEBUStateVectorComponent\@\@AEBUMobBodyRotationComponent\@\@AEBUActionDetails\@AgentComponents\@\@AEBVInteract\@6\@\@Z
  */
 MCAPI void
-initialize(class EntityContext&, struct StateVectorComponent const&, struct MobBodyRotationComponent const&, struct AgentComponents::ActionDetails const&, class AgentComponents::Interact const&);
+initialize(class EntityContext&, struct StateVectorComponent const&, struct MobBodyRotationComponent const&, struct AgentComponents::ActionDetails const&, class AgentComponents::Interact const&); // NOLINT
 /**
  * @symbol
  * ?tick\@AgentInteractSystem\@\@YAXAEAVEntityContext\@\@AEBUStateVectorComponent\@\@AEBUMobBodyRotationComponent\@\@AEBUActionDetails\@AgentComponents\@\@AEBVInteract\@6\@\@Z
  */
 MCAPI void
-tick(class EntityContext&, struct StateVectorComponent const&, struct MobBodyRotationComponent const&, struct AgentComponents::ActionDetails const&, class AgentComponents::Interact const&);
+tick(class EntityContext&, struct StateVectorComponent const&, struct MobBodyRotationComponent const&, struct AgentComponents::ActionDetails const&, class AgentComponents::Interact const&); // NOLINT
 
 }; // namespace AgentInteractSystem

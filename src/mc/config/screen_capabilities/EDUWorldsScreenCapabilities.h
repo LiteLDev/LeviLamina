@@ -7,23 +7,22 @@
 
 struct EDUWorldsScreenCapabilities {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDUWORLDSSCREENCAPABILITIES
 public:
+    // prevent constructor by default
     EDUWorldsScreenCapabilities& operator=(EDUWorldsScreenCapabilities const&) = delete;
     EDUWorldsScreenCapabilities(EDUWorldsScreenCapabilities const&)            = delete;
     EDUWorldsScreenCapabilities()                                              = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?isOfType\@?$TypedScreenCapabilities\@UEDUWorldsScreenCapabilities\@\@\@\@UEBA_NV?$typeid_t\@VIScreenCapabilities\@\@\@Bedrock\@\@\@Z
      */
-    virtual bool isOfType(class Bedrock::typeid_t<class IScreenCapabilities>) const;
+    virtual bool isOfType(class Bedrock::typeid_t<class IScreenCapabilities>) const; // NOLINT
 };

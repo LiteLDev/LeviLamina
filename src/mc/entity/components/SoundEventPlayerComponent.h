@@ -4,12 +4,9 @@
 
 struct SoundEventPlayerComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SOUNDEVENTPLAYERCOMPONENT
 public:
+    // prevent constructor by default
     SoundEventPlayerComponent& operator=(SoundEventPlayerComponent const&) = delete;
     SoundEventPlayerComponent(SoundEventPlayerComponent const&)            = delete;
     SoundEventPlayerComponent()                                            = delete;
-#endif
-
-public:
 };

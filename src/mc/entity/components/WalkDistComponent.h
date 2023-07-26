@@ -4,12 +4,9 @@
 
 struct WalkDistComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WALKDISTCOMPONENT
 public:
+    // prevent constructor by default
     WalkDistComponent& operator=(WalkDistComponent const&) = delete;
     WalkDistComponent(WalkDistComponent const&)            = delete;
     WalkDistComponent()                                    = delete;
-#endif
-
-public:
 };

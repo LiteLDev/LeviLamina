@@ -22,25 +22,23 @@ public:
     // WorkerPoolManagerImpl inner types define
     struct PoolEntry {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_WORKERPOOLMANAGERIMPL_POOLENTRY
     public:
+        // prevent constructor by default
         PoolEntry& operator=(PoolEntry const&) = delete;
         PoolEntry(PoolEntry const&)            = delete;
         PoolEntry()                            = delete;
-#endif
 
     public:
         /**
          * @symbol ??1PoolEntry\@WorkerPoolManagerImpl\@Bedrock\@\@QEAA\@XZ
          */
-        MCAPI ~PoolEntry();
+        MCAPI ~PoolEntry(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_WORKERPOOLMANAGERIMPL
 public:
+    // prevent constructor by default
     WorkerPoolManagerImpl& operator=(WorkerPoolManagerImpl const&) = delete;
     WorkerPoolManagerImpl(WorkerPoolManagerImpl const&)            = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_WORKERPOOLMANAGERIMPL
@@ -49,20 +47,20 @@ public:
      * ?createWorkerPool\@WorkerPoolManagerImpl\@Bedrock\@\@UEAA?AV?$shared_ptr\@VPoolHandleInterface\@WorkerPoolManager\@Bedrock\@\@\@std\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@4\@_KAEBVOSThreadPriority\@Threading\@2\@V?$optional\@_K\@4\@_NV?$optional\@H\@4\@\@Z
      */
     MCVAPI class std::shared_ptr<class Bedrock::WorkerPoolManager::PoolHandleInterface>
-    createWorkerPool(std::string, unsigned __int64, class Bedrock::Threading::OSThreadPriority const&, class std::optional<unsigned __int64>, bool, class std::optional<int>);
+    createWorkerPool(std::string, unsigned __int64, class Bedrock::Threading::OSThreadPriority const&, class std::optional<unsigned __int64>, bool, class std::optional<int>); // NOLINT
     /**
      * @symbol ?init\@WorkerPoolManagerImpl\@Bedrock\@\@UEAAXXZ
      */
-    MCVAPI void init();
+    MCVAPI void init(); // NOLINT
     /**
      * @symbol ?tick\@WorkerPoolManagerImpl\@Bedrock\@\@UEAAXXZ
      */
-    MCVAPI void tick();
+    MCVAPI void tick(); // NOLINT
 #endif
     /**
      * @symbol ??0WorkerPoolManagerImpl\@Bedrock\@\@QEAA\@XZ
      */
-    MCAPI WorkerPoolManagerImpl();
+    MCAPI WorkerPoolManagerImpl(); // NOLINT
 };
 
 }; // namespace Bedrock

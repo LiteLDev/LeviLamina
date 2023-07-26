@@ -18,33 +18,31 @@ public:
     // ScriptPluginHandleCounter inner types define
     struct TypeStats {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPLUGINHANDLECOUNTER_TYPESTATS
     public:
+        // prevent constructor by default
         TypeStats& operator=(TypeStats const&) = delete;
         TypeStats(TypeStats const&)            = delete;
         TypeStats()                            = delete;
-#endif
 
     public:
         /**
          * @symbol ??1TypeStats\@ScriptPluginHandleCounter\@\@QEAA\@XZ
          */
-        MCAPI ~TypeStats();
+        MCAPI ~TypeStats(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPLUGINHANDLECOUNTER
 public:
+    // prevent constructor by default
     ScriptPluginHandleCounter& operator=(ScriptPluginHandleCounter const&) = delete;
     ScriptPluginHandleCounter(ScriptPluginHandleCounter const&)            = delete;
     ScriptPluginHandleCounter()                                            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
@@ -55,7 +53,7 @@ public:
         struct Scripting::ObjectHandle,
         class entt::meta_type const&,
         unsigned int
-    );
+    ); // NOLINT
     /**
      * @vftbl 2
      * @symbol
@@ -66,7 +64,7 @@ public:
         struct Scripting::ObjectHandle,
         class entt::meta_type const&,
         unsigned int
-    );
+    ); // NOLINT
     /**
      * @vftbl 3
      * @symbol
@@ -77,7 +75,7 @@ public:
         struct Scripting::ObjectHandle,
         class entt::meta_type const&,
         unsigned int
-    );
+    ); // NOLINT
     /**
      * @vftbl 4
      * @symbol
@@ -88,33 +86,35 @@ public:
         struct Scripting::ObjectHandle,
         class entt::meta_type const&,
         unsigned int
-    );
+    ); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINHANDLECOUNTER
     /**
      * @symbol
      * ?onObjectPromotedToMultipleOwners\@ScriptPluginHandleCounter\@\@UEAAXAEAVLifetimeRegistry\@Scripting\@\@UObjectHandle\@3\@\@Z
      */
-    MCVAPI void onObjectPromotedToMultipleOwners(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle);
+    MCVAPI void
+    onObjectPromotedToMultipleOwners(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle); // NOLINT
     /**
      * @symbol
      * ?onObjectReducedToSingleOwner\@ScriptPluginHandleCounter\@\@UEAAXAEAVLifetimeRegistry\@Scripting\@\@UObjectHandle\@3\@\@Z
      */
-    MCVAPI void onObjectReducedToSingleOwner(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle);
+    MCVAPI void
+    onObjectReducedToSingleOwner(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle); // NOLINT
     /**
      * @symbol ?onPostLifetimeScopeDestroy\@ScriptPluginHandleCounter\@\@UEAAXAEAVLifetimeRegistry\@Scripting\@\@\@Z
      */
-    MCVAPI void onPostLifetimeScopeDestroy(class Scripting::LifetimeRegistry&);
+    MCVAPI void onPostLifetimeScopeDestroy(class Scripting::LifetimeRegistry&); // NOLINT
     /**
      * @symbol ?onPreLifetimeScopeDestroy\@ScriptPluginHandleCounter\@\@UEAAXAEAVLifetimeRegistry\@Scripting\@\@\@Z
      */
-    MCVAPI void onPreLifetimeScopeDestroy(class Scripting::LifetimeRegistry&);
+    MCVAPI void onPreLifetimeScopeDestroy(class Scripting::LifetimeRegistry&); // NOLINT
 #endif
 
     // private:
     /**
      * @symbol ?_getOrMakeStats\@ScriptPluginHandleCounter\@\@AEAAPEAUTypeStats\@1\@AEBVmeta_type\@entt\@\@\@Z
      */
-    MCAPI struct ScriptPluginHandleCounter::TypeStats* _getOrMakeStats(class entt::meta_type const&);
+    MCAPI struct ScriptPluginHandleCounter::TypeStats* _getOrMakeStats(class entt::meta_type const&); // NOLINT
 
 private:
 };

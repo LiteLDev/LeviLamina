@@ -7,50 +7,49 @@
 
 class BlockStateMeta {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSTATEMETA
 public:
+    // prevent constructor by default
     BlockStateMeta& operator=(BlockStateMeta const&) = delete;
     BlockStateMeta(BlockStateMeta const&)            = delete;
     BlockStateMeta()                                 = delete;
-#endif
 
 public:
     /**
      * @symbol ??0BlockStateMeta\@\@QEAA\@AEBVBlockState\@\@AEBUBlockStateDefinition\@\@\@Z
      */
-    MCAPI BlockStateMeta(class BlockState const&, struct BlockStateDefinition const&);
+    MCAPI BlockStateMeta(class BlockState const&, struct BlockStateDefinition const&); // NOLINT
     /**
      * @symbol ?getBool\@BlockStateMeta\@\@QEBA?B_NH\@Z
      */
-    MCAPI bool const getBool(int) const;
+    MCAPI bool const getBool(int) const; // NOLINT
     /**
      * @symbol ?getID\@BlockStateMeta\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 getID() const;
+    MCAPI unsigned __int64 getID() const; // NOLINT
     /**
      * @symbol ?getInt\@BlockStateMeta\@\@QEBA?BHH\@Z
      */
-    MCAPI int const getInt(int) const;
+    MCAPI int const getInt(int) const; // NOLINT
     /**
      * @symbol
      * ?getName\@BlockStateMeta\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string const& getName() const;
+    MCAPI std::string const& getName() const; // NOLINT
     /**
      * @symbol ?getState\@BlockStateMeta\@\@QEBAAEBVBlockState\@\@XZ
      */
-    MCAPI class BlockState const& getState() const;
+    MCAPI class BlockState const& getState() const; // NOLINT
     /**
      * @symbol
      * ?getString\@BlockStateMeta\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI std::string const& getString(int) const;
+    MCAPI std::string const& getString(int) const; // NOLINT
     /**
      * @symbol ?getType\@BlockStateMeta\@\@QEBA?BW4Type\@Tag\@\@XZ
      */
-    MCAPI enum class Tag::Type const getType() const;
+    MCAPI enum class Tag::Type const getType() const; // NOLINT
     /**
      * @symbol ?indexOf\@BlockStateMeta\@\@QEBAHAEB_K\@Z
      */
-    MCAPI int indexOf(unsigned __int64 const&) const;
+    MCAPI int indexOf(unsigned __int64 const&) const; // NOLINT
 };

@@ -4,28 +4,27 @@
 
 class Vec4 {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VEC4
 public:
+    // prevent constructor by default
     Vec4& operator=(Vec4 const&) = delete;
     Vec4(Vec4 const&)            = delete;
     Vec4()                       = delete;
-#endif
 
 public:
     /**
      * @symbol ?MAX\@Vec4\@\@2V1\@B
      */
-    MCAPI static class Vec4 const MAX;
+    MCAPI static class Vec4 const MAX; // NOLINT
     /**
      * @symbol ?MIN\@Vec4\@\@2V1\@B
      */
-    MCAPI static class Vec4 const MIN;
+    MCAPI static class Vec4 const MIN; // NOLINT
     /**
      * @symbol ?ONE\@Vec4\@\@2V1\@B
      */
-    MCAPI static class Vec4 const ONE;
+    MCAPI static class Vec4 const ONE; // NOLINT
     /**
      * @symbol ?ZERO\@Vec4\@\@2V1\@B
      */
-    MCAPI static class Vec4 const ZERO;
+    MCAPI static class Vec4 const ZERO; // NOLINT
 };

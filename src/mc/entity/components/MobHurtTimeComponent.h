@@ -4,12 +4,9 @@
 
 struct MobHurtTimeComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBHURTTIMECOMPONENT
 public:
+    // prevent constructor by default
     MobHurtTimeComponent& operator=(MobHurtTimeComponent const&) = delete;
     MobHurtTimeComponent(MobHurtTimeComponent const&)            = delete;
     MobHurtTimeComponent()                                       = delete;
-#endif
-
-public:
 };

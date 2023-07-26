@@ -6,14 +6,11 @@ namespace PlayerCapabilities {
 
 struct ISharedController {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERCAPABILITIES_ISHAREDCONTROLLER
 public:
+    // prevent constructor by default
     ISharedController& operator=(ISharedController const&) = delete;
     ISharedController(ISharedController const&)            = delete;
     ISharedController()                                    = delete;
-#endif
-
-public:
 };
 
 }; // namespace PlayerCapabilities

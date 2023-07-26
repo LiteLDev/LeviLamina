@@ -9,29 +9,28 @@ namespace AgentCommands {
 
 class TransferToCommand : public ::AgentCommands::Command {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMMANDS_TRANSFERTOCOMMAND
 public:
+    // prevent constructor by default
     TransferToCommand& operator=(TransferToCommand const&) = delete;
     TransferToCommand(TransferToCommand const&)            = delete;
     TransferToCommand()                                    = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?execute\@TransferToCommand\@AgentCommands\@\@UEAAXXZ
      */
-    virtual void execute();
+    virtual void execute(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?isDone\@TransferToCommand\@AgentCommands\@\@UEAA_NXZ
      */
-    virtual bool isDone();
+    virtual bool isDone(); // NOLINT
 };
 
 }; // namespace AgentCommands

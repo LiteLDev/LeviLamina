@@ -9,19 +9,18 @@ namespace TreeHelper { struct TreeParams; }
 
 class MangroveTreeTrunk {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MANGROVETREETRUNK
 public:
+    // prevent constructor by default
     MangroveTreeTrunk& operator=(MangroveTreeTrunk const&) = delete;
     MangroveTreeTrunk(MangroveTreeTrunk const&)            = delete;
     MangroveTreeTrunk()                                    = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
@@ -29,12 +28,12 @@ public:
      */
     virtual class std::optional<class BlockPos>
     placeTrunk(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, int, class RenderParams&, struct TreeHelper::TreeParams const&, class ITreeCanopy const*)
-        const;
+        const; // NOLINT
     /**
      * @vftbl 2
      * @symbol ?getTreeHeight\@MangroveTreeTrunk\@\@UEBAHAEAVRandom\@\@\@Z
      */
-    virtual int getTreeHeight(class Random&) const;
+    virtual int getTreeHeight(class Random&) const; // NOLINT
 
     // private:
     /**
@@ -43,7 +42,7 @@ public:
      */
     MCAPI void
     _placeBranch(class IBlockWorldGenAPI&, std::vector<class BlockPos>*, class Random&, int, class RenderParams&, struct TreeHelper::TreeParams const&, class BlockPos&, int, unsigned char, int, int, class Block const*)
-        const;
+        const; // NOLINT
 
 private:
 };

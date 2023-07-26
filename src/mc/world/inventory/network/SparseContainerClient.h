@@ -15,18 +15,17 @@ public:
     // SparseContainerClient inner types define
     enum class PushSlotPredictionResult {};
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPARSECONTAINERCLIENT
 public:
+    // prevent constructor by default
     SparseContainerClient& operator=(SparseContainerClient const&) = delete;
     SparseContainerClient(SparseContainerClient const&)            = delete;
     SparseContainerClient()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ?_networkUpdateItem\@SparseContainerClient\@\@QEAAXHAEBVItemStack\@\@\@Z
      */
-    MCAPI void _networkUpdateItem(int, class ItemStack const&);
+    MCAPI void _networkUpdateItem(int, class ItemStack const&); // NOLINT
 
     // private:
 
@@ -37,5 +36,5 @@ private:
      */
     MCAPI static class BidirectionalUnorderedMap<
         enum class SparseContainerClient::PushSlotPredictionResult,
-        std::string> const pushSlotPredictionResultMap;
+        std::string> const pushSlotPredictionResultMap; // NOLINT
 };

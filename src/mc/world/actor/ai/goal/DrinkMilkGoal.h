@@ -20,77 +20,75 @@ public:
     // DrinkMilkGoal inner types define
     class DrinkMilkDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRINKMILKGOAL_DRINKMILKDEFINITION
     public:
+        // prevent constructor by default
         DrinkMilkDefinition& operator=(DrinkMilkDefinition const&) = delete;
         DrinkMilkDefinition(DrinkMilkDefinition const&)            = delete;
         DrinkMilkDefinition()                                      = delete;
-#endif
 
     public:
         /**
          * @symbol ?initialize\@DrinkMilkDefinition\@DrinkMilkGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
          */
-        MCAPI void initialize(class EntityContext&, class DrinkMilkGoal&) const;
+        MCAPI void initialize(class EntityContext&, class DrinkMilkGoal&) const; // NOLINT
         /**
          * @symbol
          * ?buildSchema\@DrinkMilkDefinition\@DrinkMilkGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDrinkMilkDefinition\@DrinkMilkGoal\@\@\@JsonUtil\@\@\@4\@\@Z
          */
         MCAPI static void
-        buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DrinkMilkGoal::DrinkMilkDefinition>>&);
+        buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DrinkMilkGoal::DrinkMilkDefinition>>&); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRINKMILKGOAL
 public:
+    // prevent constructor by default
     DrinkMilkGoal& operator=(DrinkMilkGoal const&) = delete;
     DrinkMilkGoal(DrinkMilkGoal const&)            = delete;
     DrinkMilkGoal()                                = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?canUse\@DrinkMilkGoal\@\@UEAA_NXZ
      */
-    virtual bool canUse();
+    virtual bool canUse(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?canContinueToUse\@DrinkMilkGoal\@\@UEAA_NXZ
      */
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse(); // NOLINT
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3();
+    virtual void __unk_vfn_3(); // NOLINT
     /**
      * @vftbl 4
      * @symbol ?start\@DrinkMilkGoal\@\@UEAAXXZ
      */
-    virtual void start();
+    virtual void start(); // NOLINT
     /**
      * @vftbl 5
      * @symbol ?stop\@DrinkMilkGoal\@\@UEAAXXZ
      */
-    virtual void stop();
+    virtual void stop(); // NOLINT
     /**
      * @vftbl 6
      * @symbol ?tick\@DrinkMilkGoal\@\@UEAAXXZ
      */
-    virtual void tick();
+    virtual void tick(); // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?appendDebugInfo\@DrinkMilkGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string&) const; // NOLINT
     /**
      * @symbol ??0DrinkMilkGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
-    MCAPI DrinkMilkGoal(class Mob&);
+    MCAPI DrinkMilkGoal(class Mob&); // NOLINT
 };

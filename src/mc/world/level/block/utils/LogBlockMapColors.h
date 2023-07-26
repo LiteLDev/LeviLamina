@@ -4,12 +4,9 @@
 
 struct LogBlockMapColors {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOGBLOCKMAPCOLORS
 public:
+    // prevent constructor by default
     LogBlockMapColors& operator=(LogBlockMapColors const&) = delete;
     LogBlockMapColors(LogBlockMapColors const&)            = delete;
     LogBlockMapColors()                                    = delete;
-#endif
-
-public:
 };

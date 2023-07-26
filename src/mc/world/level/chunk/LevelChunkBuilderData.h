@@ -4,19 +4,18 @@
 
 class LevelChunkBuilderData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCHUNKBUILDERDATA
 public:
+    // prevent constructor by default
     LevelChunkBuilderData& operator=(LevelChunkBuilderData const&) = delete;
     LevelChunkBuilderData(LevelChunkBuilderData const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0LevelChunkBuilderData\@\@QEAA\@XZ
      */
-    MCAPI LevelChunkBuilderData();
+    MCAPI LevelChunkBuilderData(); // NOLINT
     /**
      * @symbol ??1LevelChunkBuilderData\@\@QEAA\@XZ
      */
-    MCAPI ~LevelChunkBuilderData();
+    MCAPI ~LevelChunkBuilderData(); // NOLINT
 };

@@ -7,27 +7,26 @@
 
 class ExplosionDecayFunction : public ::LootItemFunction {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPLOSIONDECAYFUNCTION
 public:
+    // prevent constructor by default
     ExplosionDecayFunction& operator=(ExplosionDecayFunction const&) = delete;
     ExplosionDecayFunction(ExplosionDecayFunction const&)            = delete;
     ExplosionDecayFunction()                                         = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?apply\@ExplosionDecayFunction\@\@UEAAXAEAVItemStack\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
+    virtual void apply(class ItemStack&, class Random&, class LootTableContext&); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?apply\@ExplosionDecayFunction\@\@UEAAXAEAVItemInstance\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
+    virtual void apply(class ItemInstance&, class Random&, class LootTableContext&); // NOLINT
 };

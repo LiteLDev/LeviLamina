@@ -7,39 +7,38 @@
 
 class NetherFortressPiece : public ::StructurePiece {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERFORTRESSPIECE
 public:
+    // prevent constructor by default
     NetherFortressPiece& operator=(NetherFortressPiece const&) = delete;
     NetherFortressPiece(NetherFortressPiece const&)            = delete;
     NetherFortressPiece()                                      = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 4
      * @symbol ?postProcess\@NetherFortressPiece\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&); // NOLINT
     /**
      * @vftbl 12
      * @symbol ?addHardcodedSpawnAreas\@NetherFortressPiece\@\@UEBAXAEAVLevelChunk\@\@\@Z
      */
-    virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
+    virtual void addHardcodedSpawnAreas(class LevelChunk&) const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERFORTRESSPIECE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~NetherFortressPiece();
+    MCVAPI ~NetherFortressPiece(); // NOLINT
 #endif
     /**
      * @symbol ??0NetherFortressPiece\@\@QEAA\@H\@Z
      */
-    MCAPI NetherFortressPiece(int);
+    MCAPI NetherFortressPiece(int); // NOLINT
     /**
      * @symbol
      * ?findAndCreateBridgePieceFactory\@NetherFortressPiece\@\@QEAA?AV?$unique_ptr\@VNetherFortressPiece\@\@U?$default_delete\@VNetherFortressPiece\@\@\@std\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@3\@AEAVRandom\@\@HHHHH\@Z
@@ -53,7 +52,7 @@ public:
         int,
         int,
         int
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?generateAndAddPiece\@NetherFortressPiece\@\@QEAAPEAVStructurePiece\@\@AEAVNBStartPiece\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@HHHHH_N\@Z
@@ -68,7 +67,7 @@ public:
         int,
         int,
         bool
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?generateChildForward\@NetherFortressPiece\@\@QEAAPEAVStructurePiece\@\@AEAVNBStartPiece\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@HH_N\@Z
@@ -80,7 +79,7 @@ public:
         int,
         int,
         bool
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?generateChildLeft\@NetherFortressPiece\@\@QEAAPEAVStructurePiece\@\@AEAVNBStartPiece\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@HH_N\@Z
@@ -92,7 +91,7 @@ public:
         int,
         int,
         bool
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?generateChildRight\@NetherFortressPiece\@\@QEAAPEAVStructurePiece\@\@AEAVNBStartPiece\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@HH_N\@Z
@@ -104,7 +103,7 @@ public:
         int,
         int,
         bool
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?generatePiece\@NetherFortressPiece\@\@QEAA?AV?$unique_ptr\@VNetherFortressPiece\@\@U?$default_delete\@VNetherFortressPiece\@\@\@std\@\@\@std\@\@AEAVNBStartPiece\@\@AEAV?$vector\@VPieceWeight\@\@V?$allocator\@VPieceWeight\@\@\@std\@\@\@3\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@3\@AEAVRandom\@\@HHHHH\@Z
@@ -119,5 +118,5 @@ public:
         int,
         int,
         int
-    );
+    ); // NOLINT
 };

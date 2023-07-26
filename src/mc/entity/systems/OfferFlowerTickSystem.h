@@ -8,25 +8,25 @@
 
 class OfferFlowerTickSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OFFERFLOWERTICKSYSTEM
 public:
+    // prevent constructor by default
     OfferFlowerTickSystem& operator=(OfferFlowerTickSystem const&) = delete;
     OfferFlowerTickSystem(OfferFlowerTickSystem const&)            = delete;
     OfferFlowerTickSystem()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@OfferFlowerTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
 
     // private:
     /**
      * @symbol
      * ?_doOfferFlowerTickSystem\@OfferFlowerTickSystem\@\@CAXAEBVStrictEntityContext\@\@AEAUOfferFlowerTickComponent\@\@\@Z
      */
-    MCAPI static void _doOfferFlowerTickSystem(class StrictEntityContext const&, struct OfferFlowerTickComponent&);
+    MCAPI static void
+    _doOfferFlowerTickSystem(class StrictEntityContext const&, struct OfferFlowerTickComponent&); // NOLINT
     /**
      * @symbol
      * ?_tickOfferFlowerTickSystem\@OfferFlowerTickSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@VActorTickNeededComponent\@\@\@\@UOfferFlowerTickComponent\@\@\@\@\@Z
@@ -35,7 +35,7 @@ public:
                                                  class StrictEntityContext,
                                                  class EntityRegistryBase,
                                                  struct Include<class ActorTickNeededComponent>,
-                                                 struct OfferFlowerTickComponent>);
+                                                 struct OfferFlowerTickComponent>); // NOLINT
 
 private:
 };

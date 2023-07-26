@@ -4,16 +4,15 @@
 
 struct LevelChunkFinalDeleter {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCHUNKFINALDELETER
 public:
+    // prevent constructor by default
     LevelChunkFinalDeleter& operator=(LevelChunkFinalDeleter const&) = delete;
     LevelChunkFinalDeleter(LevelChunkFinalDeleter const&)            = delete;
     LevelChunkFinalDeleter()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol ??RLevelChunkFinalDeleter\@\@QEAAXPEAVLevelChunk\@\@\@Z
      */
-    MCAPI void operator()(class LevelChunk*);
+    MCAPI void operator()(class LevelChunk*); // NOLINT
 };

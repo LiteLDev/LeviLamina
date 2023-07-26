@@ -4,19 +4,18 @@
 
 struct ExplosionStartedEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPLOSIONSTARTEDEVENT
 public:
+    // prevent constructor by default
     ExplosionStartedEvent& operator=(ExplosionStartedEvent const&) = delete;
     ExplosionStartedEvent()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ExplosionStartedEvent\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI ExplosionStartedEvent(struct ExplosionStartedEvent const&);
+    MCAPI ExplosionStartedEvent(struct ExplosionStartedEvent const&); // NOLINT
     /**
      * @symbol ??1ExplosionStartedEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ExplosionStartedEvent();
+    MCAPI ~ExplosionStartedEvent(); // NOLINT
 };

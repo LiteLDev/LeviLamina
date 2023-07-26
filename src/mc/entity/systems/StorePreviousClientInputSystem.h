@@ -4,16 +4,15 @@
 
 class StorePreviousClientInputSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STOREPREVIOUSCLIENTINPUTSYSTEM
 public:
+    // prevent constructor by default
     StorePreviousClientInputSystem& operator=(StorePreviousClientInputSystem const&) = delete;
     StorePreviousClientInputSystem(StorePreviousClientInputSystem const&)            = delete;
     StorePreviousClientInputSystem()                                                 = delete;
-#endif
 
 public:
     /**
      * @symbol ?createStorePreviousClientInputSystem\@StorePreviousClientInputSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createStorePreviousClientInputSystem();
+    MCAPI static struct TickingSystemWithInfo createStorePreviousClientInputSystem(); // NOLINT
 };

@@ -13,49 +13,51 @@ namespace Json { class Value; }
 
 class ResourcePackFileUploadManager : public ::FileUploadManager {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKFILEUPLOADMANAGER
 public:
+    // prevent constructor by default
     ResourcePackFileUploadManager& operator=(ResourcePackFileUploadManager const&) = delete;
     ResourcePackFileUploadManager(ResourcePackFileUploadManager const&)            = delete;
     ResourcePackFileUploadManager()                                                = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?uploadFileToRealmStorage\@ResourcePackFileUploadManager\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPath\@Core\@\@H0\@Z
      */
-    virtual void uploadFileToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&);
+    virtual void
+    uploadFileToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKFILEUPLOADMANAGER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ResourcePackFileUploadManager();
+    MCVAPI ~ResourcePackFileUploadManager(); // NOLINT
 #endif
     /**
      * @symbol
      * ?uploadResourcePack\@ResourcePackFileUploadManager\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVResourceLocation\@\@_N2W4PackType\@\@\@Z
      */
-    MCAPI void uploadResourcePack(std::string const&, class ResourceLocation const&, bool, bool, enum class PackType);
+    MCAPI void
+    uploadResourcePack(std::string const&, class ResourceLocation const&, bool, bool, enum class PackType); // NOLINT
 
     // private:
     /**
      * @symbol
      * ?_uploadPackToRealmStorage\@ResourcePackFileUploadManager\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPath\@Core\@\@H0\@Z
      */
-    MCAPI void _uploadPackToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&);
+    MCAPI void
+    _uploadPackToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&); // NOLINT
     /**
      * @symbol
      * ?_uploadResourcePackFolder\@ResourcePackFileUploadManager\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVResourceLocation\@\@AEBVPath\@Core\@\@AEBVValue\@Json\@\@\@Z
      */
     MCAPI void
-    _uploadResourcePackFolder(std::string const&, class ResourceLocation const&, class Core::Path const&, class Json::Value const&);
+    _uploadResourcePackFolder(std::string const&, class ResourceLocation const&, class Core::Path const&, class Json::Value const&); // NOLINT
 
 private:
 };

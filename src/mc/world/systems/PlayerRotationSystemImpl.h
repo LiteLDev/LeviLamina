@@ -7,6 +7,6 @@ namespace PlayerRotationSystemImpl {
  * @symbol
  * ?doPlayerRotationSystem\@PlayerRotationSystemImpl\@\@YAXAEBUMoveInputComponent\@\@AEAUActorRotationComponent\@\@\@Z
  */
-MCAPI void doPlayerRotationSystem(struct MoveInputComponent const&, struct ActorRotationComponent&);
+MCAPI void doPlayerRotationSystem(struct MoveInputComponent const&, struct ActorRotationComponent&); // NOLINT
 
 }; // namespace PlayerRotationSystemImpl

@@ -11,24 +11,23 @@ namespace BlockSelectionBoxVersioning {
 
 class BlockAimCollision11910Upgrade {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSELECTIONBOXVERSIONING_BLOCKAIMCOLLISION11910UPGRADE
 public:
+    // prevent constructor by default
     BlockAimCollision11910Upgrade& operator=(BlockAimCollision11910Upgrade const&) = delete;
     BlockAimCollision11910Upgrade(BlockAimCollision11910Upgrade const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?previousSchema\@BlockAimCollision11910Upgrade\@BlockSelectionBoxVersioning\@\@UEBAXAEAVSchemaFactory\@cereal\@\@\@Z
      */
-    virtual void previousSchema(class cereal::SchemaFactory&) const;
+    virtual void previousSchema(class cereal::SchemaFactory&) const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
@@ -37,11 +36,11 @@ public:
     virtual bool upgradeToNext(class rapidjson::GenericDocument<
                                struct rapidjson::UTF8<char>,
                                class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>,
-                               class rapidjson::CrtAllocator>&) const;
+                               class rapidjson::CrtAllocator>&) const; // NOLINT
     /**
      * @symbol ??0BlockAimCollision11910Upgrade\@BlockSelectionBoxVersioning\@\@QEAA\@XZ
      */
-    MCAPI BlockAimCollision11910Upgrade();
+    MCAPI BlockAimCollision11910Upgrade(); // NOLINT
 };
 
 }; // namespace BlockSelectionBoxVersioning

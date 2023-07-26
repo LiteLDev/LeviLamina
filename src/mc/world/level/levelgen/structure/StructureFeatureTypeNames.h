@@ -7,12 +7,13 @@ namespace StructureFeatureTypeNames {
  * @symbol
  * ?getFeatureName\@StructureFeatureTypeNames\@\@YA?AV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@W4StructureFeatureType\@\@\@Z
  */
-MCAPI class std::basic_string_view<char, struct std::char_traits<char>> getFeatureName(enum class StructureFeatureType);
+MCAPI class std::basic_string_view<char, struct std::char_traits<char>> getFeatureName(enum class StructureFeatureType
+); // NOLINT
 /**
  * @symbol
  * ?getFeatureType\@StructureFeatureTypeNames\@\@YA?AW4StructureFeatureType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
  */
-MCAPI enum class StructureFeatureType getFeatureType(std::string const&);
+MCAPI enum class StructureFeatureType getFeatureType(std::string const&); // NOLINT
 /**
  * @symbol
  * ?getFeatureTypeAliasesMap\@StructureFeatureTypeNames\@\@YAAEBV?$map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4StructureFeatureType\@\@U?$less\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4StructureFeatureType\@\@\@std\@\@\@2\@\@std\@\@XZ
@@ -22,6 +23,6 @@ MCAPI class std::map<
     enum class StructureFeatureType,
     struct std::less<std::string>,
     class std::allocator<struct std::pair<std::string const, enum class StructureFeatureType>>> const&
-getFeatureTypeAliasesMap();
+getFeatureTypeAliasesMap(); // NOLINT
 
 }; // namespace StructureFeatureTypeNames

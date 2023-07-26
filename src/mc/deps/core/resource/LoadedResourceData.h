@@ -4,16 +4,15 @@
 
 class LoadedResourceData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOADEDRESOURCEDATA
 public:
+    // prevent constructor by default
     LoadedResourceData& operator=(LoadedResourceData const&) = delete;
     LoadedResourceData(LoadedResourceData const&)            = delete;
     LoadedResourceData()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ??1LoadedResourceData\@\@QEAA\@XZ
      */
-    MCAPI ~LoadedResourceData();
+    MCAPI ~LoadedResourceData(); // NOLINT
 };

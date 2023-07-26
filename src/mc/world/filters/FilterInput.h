@@ -4,27 +4,26 @@
 
 class FilterInput {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERINPUT
 public:
+    // prevent constructor by default
     FilterInput(FilterInput const&) = delete;
     FilterInput()                   = delete;
-#endif
 
 public:
     /**
      * @symbol ??0FilterInput\@\@QEAA\@H\@Z
      */
-    MCAPI FilterInput(int);
+    MCAPI FilterInput(int); // NOLINT
     /**
      * @symbol ??4FilterInput\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class FilterInput& operator=(class FilterInput&&);
+    MCAPI class FilterInput& operator=(class FilterInput&&); // NOLINT
     /**
      * @symbol ??4FilterInput\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
-    MCAPI class FilterInput& operator=(class FilterInput const&);
+    MCAPI class FilterInput& operator=(class FilterInput const&); // NOLINT
     /**
      * @symbol ??1FilterInput\@\@QEAA\@XZ
      */
-    MCAPI ~FilterInput();
+    MCAPI ~FilterInput(); // NOLINT
 };

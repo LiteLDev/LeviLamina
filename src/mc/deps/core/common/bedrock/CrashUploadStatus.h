@@ -6,14 +6,11 @@ namespace Bedrock {
 
 struct CrashUploadStatus {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_CRASHUPLOADSTATUS
 public:
+    // prevent constructor by default
     CrashUploadStatus& operator=(CrashUploadStatus const&) = delete;
     CrashUploadStatus(CrashUploadStatus const&)            = delete;
     CrashUploadStatus()                                    = delete;
-#endif
-
-public:
 };
 
 }; // namespace Bedrock

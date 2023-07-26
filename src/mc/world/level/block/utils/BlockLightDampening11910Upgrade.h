@@ -11,24 +11,23 @@ namespace BlockLightDampeningVersioning {
 
 class BlockLightDampening11910Upgrade {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKLIGHTDAMPENINGVERSIONING_BLOCKLIGHTDAMPENING11910UPGRADE
 public:
+    // prevent constructor by default
     BlockLightDampening11910Upgrade& operator=(BlockLightDampening11910Upgrade const&) = delete;
     BlockLightDampening11910Upgrade(BlockLightDampening11910Upgrade const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?previousSchema\@BlockLightDampening11910Upgrade\@BlockLightDampeningVersioning\@\@UEBAXAEAVSchemaFactory\@cereal\@\@\@Z
      */
-    virtual void previousSchema(class cereal::SchemaFactory&) const;
+    virtual void previousSchema(class cereal::SchemaFactory&) const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
@@ -37,11 +36,11 @@ public:
     virtual bool upgradeToNext(class rapidjson::GenericDocument<
                                struct rapidjson::UTF8<char>,
                                class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>,
-                               class rapidjson::CrtAllocator>&) const;
+                               class rapidjson::CrtAllocator>&) const; // NOLINT
     /**
      * @symbol ??0BlockLightDampening11910Upgrade\@BlockLightDampeningVersioning\@\@QEAA\@XZ
      */
-    MCAPI BlockLightDampening11910Upgrade();
+    MCAPI BlockLightDampening11910Upgrade(); // NOLINT
 };
 
 }; // namespace BlockLightDampeningVersioning

@@ -19,33 +19,31 @@ public:
     // ScriptNetPromiseTracker inner types define
     struct InProgressRequest {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFTNET_SCRIPTNETPROMISETRACKER_INPROGRESSREQUEST
     public:
+        // prevent constructor by default
         InProgressRequest& operator=(InProgressRequest const&) = delete;
         InProgressRequest(InProgressRequest const&)            = delete;
         InProgressRequest()                                    = delete;
-#endif
 
     public:
         /**
          * @symbol ??1InProgressRequest\@ScriptNetPromiseTracker\@ScriptModuleMinecraftNet\@\@QEAA\@XZ
          */
-        MCAPI ~InProgressRequest();
+        MCAPI ~InProgressRequest(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFTNET_SCRIPTNETPROMISETRACKER
 public:
+    // prevent constructor by default
     ScriptNetPromiseTracker& operator=(ScriptNetPromiseTracker const&) = delete;
     ScriptNetPromiseTracker(ScriptNetPromiseTracker const&)            = delete;
     ScriptNetPromiseTracker()                                          = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?handleFailure\@ScriptNetPromiseTracker\@ScriptModuleMinecraftNet\@\@QEAAXIAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void handleFailure(unsigned int, std::string const&);
+    MCAPI void handleFailure(unsigned int, std::string const&); // NOLINT
     /**
      * @symbol
      * ?handleResponse\@ScriptNetPromiseTracker\@ScriptModuleMinecraftNet\@\@QEAAXIAEBV?$vector\@UScriptNetHeader\@ScriptModuleMinecraftNet\@\@V?$allocator\@UScriptNetHeader\@ScriptModuleMinecraftNet\@\@\@std\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@4\@I\@Z
@@ -55,12 +53,12 @@ public:
         std::vector<struct ScriptModuleMinecraftNet::ScriptNetHeader> const&,
         std::string const&,
         unsigned int
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?rejectAll\@ScriptNetPromiseTracker\@ScriptModuleMinecraftNet\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void rejectAll(std::string const&);
+    MCAPI void rejectAll(std::string const&); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraftNet

@@ -4,15 +4,14 @@
 
 class TintMapColor {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TINTMAPCOLOR
 public:
+    // prevent constructor by default
     TintMapColor& operator=(TintMapColor const&) = delete;
     TintMapColor(TintMapColor const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0TintMapColor\@\@QEAA\@XZ
      */
-    MCAPI TintMapColor();
+    MCAPI TintMapColor(); // NOLINT
 };

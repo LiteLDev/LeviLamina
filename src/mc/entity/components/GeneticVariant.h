@@ -4,19 +4,18 @@
 
 struct GeneticVariant {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GENETICVARIANT
 public:
+    // prevent constructor by default
     GeneticVariant& operator=(GeneticVariant const&) = delete;
     GeneticVariant()                                 = delete;
-#endif
 
 public:
     /**
      * @symbol ??0GeneticVariant\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI GeneticVariant(struct GeneticVariant const&);
+    MCAPI GeneticVariant(struct GeneticVariant const&); // NOLINT
     /**
      * @symbol ??1GeneticVariant\@\@QEAA\@XZ
      */
-    MCAPI ~GeneticVariant();
+    MCAPI ~GeneticVariant(); // NOLINT
 };

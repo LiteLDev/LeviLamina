@@ -4,12 +4,9 @@
 
 struct SwimSpeedMultiplierComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWIMSPEEDMULTIPLIERCOMPONENT
 public:
+    // prevent constructor by default
     SwimSpeedMultiplierComponent& operator=(SwimSpeedMultiplierComponent const&) = delete;
     SwimSpeedMultiplierComponent(SwimSpeedMultiplierComponent const&)            = delete;
     SwimSpeedMultiplierComponent()                                               = delete;
-#endif
-
-public:
 };

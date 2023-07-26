@@ -9,29 +9,28 @@ namespace AgentCommands {
 
 class DropCommand : public ::AgentCommands::Command {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMMANDS_DROPCOMMAND
 public:
+    // prevent constructor by default
     DropCommand& operator=(DropCommand const&) = delete;
     DropCommand(DropCommand const&)            = delete;
     DropCommand()                              = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?execute\@DropCommand\@AgentCommands\@\@UEAAXXZ
      */
-    virtual void execute();
+    virtual void execute(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?isDone\@DropCommand\@AgentCommands\@\@UEAA_NXZ
      */
-    virtual bool isDone();
+    virtual bool isDone(); // NOLINT
 };
 
 }; // namespace AgentCommands

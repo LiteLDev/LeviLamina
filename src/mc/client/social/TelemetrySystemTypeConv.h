@@ -12,6 +12,6 @@ namespace Social::Events::TelemetrySystemTypeConv {
  * @symbol
  * ?getTelemetrySystemTypeAsString\@TelemetrySystemTypeConv\@Events\@Social\@\@YA?BV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4TelemetrySystemType\@23\@\@Z
  */
-MCAPI std::string const getTelemetrySystemTypeAsString(enum class Social::Events::TelemetrySystemType);
+MCAPI std::string const getTelemetrySystemTypeAsString(enum class Social::Events::TelemetrySystemType); // NOLINT
 
 }; // namespace Social::Events::TelemetrySystemTypeConv

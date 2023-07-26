@@ -9,51 +9,50 @@ namespace mce { class UUID; }
 
 class BoostableComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOOSTABLECOMPONENT
 public:
+    // prevent constructor by default
     BoostableComponent& operator=(BoostableComponent const&) = delete;
     BoostableComponent(BoostableComponent const&)            = delete;
     BoostableComponent()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ?boost\@BoostableComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void boost(class Actor&);
+    MCAPI void boost(class Actor&); // NOLINT
     /**
      * @symbol ?getBoostTime\@BoostableComponent\@\@QEBAHXZ
      */
-    MCAPI int getBoostTime() const;
+    MCAPI int getBoostTime() const; // NOLINT
     /**
      * @symbol ?getBoostTimeTotal\@BoostableComponent\@\@QEBAHXZ
      */
-    MCAPI int getBoostTimeTotal() const;
+    MCAPI int getBoostTimeTotal() const; // NOLINT
     /**
      * @symbol ?getIsBoosting\@BoostableComponent\@\@QEBA_NXZ
      */
-    MCAPI bool getIsBoosting() const;
+    MCAPI bool getIsBoosting() const; // NOLINT
     /**
      * @symbol
      * ?itemUseText\@BoostableComponent\@\@QEAA_NAEBVPlayer\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI bool itemUseText(class Player const&, std::string&);
+    MCAPI bool itemUseText(class Player const&, std::string&); // NOLINT
     /**
      * @symbol ?onItemInteract\@BoostableComponent\@\@QEAA_NAEAVActor\@\@AEAVItemStack\@\@AEAVPlayer\@\@\@Z
      */
-    MCAPI bool onItemInteract(class Actor&, class ItemStack&, class Player&);
+    MCAPI bool onItemInteract(class Actor&, class ItemStack&, class Player&); // NOLINT
     /**
      * @symbol ?setBoostTime\@BoostableComponent\@\@QEAAXH\@Z
      */
-    MCAPI void setBoostTime(int);
+    MCAPI void setBoostTime(int); // NOLINT
     /**
      * @symbol ?setIsBoosting\@BoostableComponent\@\@QEAAX_N\@Z
      */
-    MCAPI void setIsBoosting(bool);
+    MCAPI void setIsBoosting(bool); // NOLINT
     /**
      * @symbol ?getSpeedModifierUUID\@BoostableComponent\@\@SA?AVUUID\@mce\@\@XZ
      */
-    MCAPI static class mce::UUID getSpeedModifierUUID();
+    MCAPI static class mce::UUID getSpeedModifierUUID(); // NOLINT
 
     // private:
 
@@ -61,5 +60,5 @@ private:
     /**
      * @symbol ?SPEED_MODIFIER_BOOSTING_UUID\@BoostableComponent\@\@0VUUID\@mce\@\@B
      */
-    MCAPI static class mce::UUID const SPEED_MODIFIER_BOOSTING_UUID;
+    MCAPI static class mce::UUID const SPEED_MODIFIER_BOOSTING_UUID; // NOLINT
 };

@@ -5,12 +5,9 @@
 template <typename T0, int T1>
 class ItemStackRequestActionCraft {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONCRAFT
 public:
+    // prevent constructor by default
     ItemStackRequestActionCraft& operator=(ItemStackRequestActionCraft const&) = delete;
     ItemStackRequestActionCraft(ItemStackRequestActionCraft const&)            = delete;
     ItemStackRequestActionCraft()                                              = delete;
-#endif
-
-public:
 };

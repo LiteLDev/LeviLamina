@@ -12,26 +12,22 @@ public:
     // TripodCameraActivatedComponent inner types define
     class Definition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRIPODCAMERAACTIVATEDCOMPONENT_DEFINITION
     public:
+        // prevent constructor by default
         Definition& operator=(Definition const&) = delete;
         Definition(Definition const&)            = delete;
         Definition()                             = delete;
-#endif
 
     public:
         /**
          * @symbol ?initialize\@Definition\@TripodCameraActivatedComponent\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
          */
-        MCAPI void initialize(class EntityContext&, class TripodCameraActivatedComponent&) const;
+        MCAPI void initialize(class EntityContext&, class TripodCameraActivatedComponent&) const; // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRIPODCAMERAACTIVATEDCOMPONENT
 public:
+    // prevent constructor by default
     TripodCameraActivatedComponent& operator=(TripodCameraActivatedComponent const&) = delete;
     TripodCameraActivatedComponent(TripodCameraActivatedComponent const&)            = delete;
     TripodCameraActivatedComponent()                                                 = delete;
-#endif
-
-public:
 };

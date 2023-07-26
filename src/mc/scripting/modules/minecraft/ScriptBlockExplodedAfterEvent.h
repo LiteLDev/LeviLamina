@@ -9,36 +9,35 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptBlockExplodedAfterEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTBLOCKEXPLODEDAFTEREVENT
 public:
+    // prevent constructor by default
     ScriptBlockExplodedAfterEvent& operator=(ScriptBlockExplodedAfterEvent const&) = delete;
     ScriptBlockExplodedAfterEvent()                                                = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ScriptBlockExplodedAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
      */
-    MCAPI ScriptBlockExplodedAfterEvent(struct ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent const&);
+    MCAPI ScriptBlockExplodedAfterEvent(struct ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent const&); // NOLINT
     /**
      * @symbol ??0ScriptBlockExplodedAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@$$QEAU01\@\@Z
      */
-    MCAPI ScriptBlockExplodedAfterEvent(struct ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent&&);
+    MCAPI ScriptBlockExplodedAfterEvent(struct ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent&&); // NOLINT
     /**
      * @symbol ??4ScriptBlockExplodedAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent&&);
+    operator=(struct ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent&&); // NOLINT
     /**
      * @symbol ??1ScriptBlockExplodedAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptBlockExplodedAfterEvent();
+    MCAPI ~ScriptBlockExplodedAfterEvent(); // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptBlockExplodedAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptBlockExplodedAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent>
-    bind();
+    bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

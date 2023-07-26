@@ -5,12 +5,9 @@
 template <typename T0>
 class LevelChunkGridAreaElement {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCHUNKGRIDAREAELEMENT
 public:
+    // prevent constructor by default
     LevelChunkGridAreaElement& operator=(LevelChunkGridAreaElement const&) = delete;
     LevelChunkGridAreaElement(LevelChunkGridAreaElement const&)            = delete;
     LevelChunkGridAreaElement()                                            = delete;
-#endif
-
-public:
 };

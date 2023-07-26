@@ -17,34 +17,33 @@ public:
     // HttpHeaders inner types define
     enum class ParseState {};
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HTTPHEADERS
 public:
+    // prevent constructor by default
     HttpHeaders& operator=(HttpHeaders const&) = delete;
     HttpHeaders(HttpHeaders const&)            = delete;
     HttpHeaders()                              = delete;
-#endif
 
 public:
     /**
      * @symbol ?clear\@HttpHeaders\@\@QEAAXXZ
      */
-    MCAPI void clear();
+    MCAPI void clear(); // NOLINT
     /**
      * @symbol
      * ?getHeader\@HttpHeaders\@\@QEBA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV23\@\@Z
      */
-    MCAPI bool getHeader(std::string const&, std::string&) const;
+    MCAPI bool getHeader(std::string const&, std::string&) const; // NOLINT
     /**
      * @symbol
      * ?getStatusCode\@HttpHeaders\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getStatusCode() const;
+    MCAPI std::string getStatusCode() const; // NOLINT
     /**
      * @symbol ?parse\@HttpHeaders\@\@QEAA?AW4ParseState\@1\@AEAVBitStream\@RakNet\@\@\@Z
      */
-    MCAPI enum class HttpHeaders::ParseState parse(class RakNet::BitStream&);
+    MCAPI enum class HttpHeaders::ParseState parse(class RakNet::BitStream&); // NOLINT
     /**
      * @symbol ??1HttpHeaders\@\@QEAA\@XZ
      */
-    MCAPI ~HttpHeaders();
+    MCAPI ~HttpHeaders(); // NOLINT
 };

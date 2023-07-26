@@ -4,16 +4,15 @@
 
 struct SpawnActorEntry {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNACTORENTRY
 public:
+    // prevent constructor by default
     SpawnActorEntry& operator=(SpawnActorEntry const&) = delete;
     SpawnActorEntry(SpawnActorEntry const&)            = delete;
     SpawnActorEntry()                                  = delete;
-#endif
 
 public:
     /**
      * @symbol ??1SpawnActorEntry\@\@QEAA\@XZ
      */
-    MCAPI ~SpawnActorEntry();
+    MCAPI ~SpawnActorEntry(); // NOLINT
 };

@@ -4,12 +4,9 @@
 
 class Options {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OPTIONS
 public:
+    // prevent constructor by default
     Options& operator=(Options const&) = delete;
     Options(Options const&)            = delete;
     Options()                          = delete;
-#endif
-
-public:
 };

@@ -5,12 +5,9 @@
 template <typename T0>
 class OperationGraphResult {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OPERATIONGRAPHRESULT
 public:
+    // prevent constructor by default
     OperationGraphResult& operator=(OperationGraphResult const&) = delete;
     OperationGraphResult(OperationGraphResult const&)            = delete;
     OperationGraphResult()                                       = delete;
-#endif
-
-public:
 };

@@ -4,23 +4,22 @@
 
 class ScopedAutoreleasePool {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCOPEDAUTORELEASEPOOL
 public:
+    // prevent constructor by default
     ScopedAutoreleasePool& operator=(ScopedAutoreleasePool const&) = delete;
     ScopedAutoreleasePool(ScopedAutoreleasePool const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ScopedAutoreleasePool\@\@QEAA\@XZ
      */
-    MCAPI ScopedAutoreleasePool();
+    MCAPI ScopedAutoreleasePool(); // NOLINT
     /**
      * @symbol ?drain\@ScopedAutoreleasePool\@\@QEAAXXZ
      */
-    MCAPI void drain();
+    MCAPI void drain(); // NOLINT
     /**
      * @symbol ??1ScopedAutoreleasePool\@\@QEAA\@XZ
      */
-    MCAPI ~ScopedAutoreleasePool();
+    MCAPI ~ScopedAutoreleasePool(); // NOLINT
 };

@@ -7,21 +7,20 @@
 
 class SmokerContainerManagerModel : public ::FurnaceContainerManagerModel {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMOKERCONTAINERMANAGERMODEL
 public:
+    // prevent constructor by default
     SmokerContainerManagerModel& operator=(SmokerContainerManagerModel const&) = delete;
     SmokerContainerManagerModel(SmokerContainerManagerModel const&)            = delete;
     SmokerContainerManagerModel()                                              = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @symbol ??0SmokerContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI SmokerContainerManagerModel(enum class ContainerID, class Player&, class BlockPos const&);
+    MCAPI SmokerContainerManagerModel(enum class ContainerID, class Player&, class BlockPos const&); // NOLINT
 };

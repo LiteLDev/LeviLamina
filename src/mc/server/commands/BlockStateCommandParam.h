@@ -4,12 +4,11 @@
 
 class BlockStateCommandParam {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSTATECOMMANDPARAM
 public:
+    // prevent constructor by default
     BlockStateCommandParam& operator=(BlockStateCommandParam const&) = delete;
     BlockStateCommandParam(BlockStateCommandParam const&)            = delete;
     BlockStateCommandParam()                                         = delete;
-#endif
 
 public:
     /**
@@ -17,25 +16,25 @@ public:
      * ?getNameAndValue\@BlockStateCommandParam\@\@QEBA?AV?$optional\@U?$pair\@VHashedString\@\@H\@std\@\@\@std\@\@AEAVCommandOutput\@\@AEBVBlock\@\@\@Z
      */
     MCAPI class std::optional<struct std::pair<class HashedString, int>>
-    getNameAndValue(class CommandOutput&, class Block const&) const;
+    getNameAndValue(class CommandOutput&, class Block const&) const; // NOLINT
     /**
      * @symbol ?setBlockState\@BlockStateCommandParam\@\@QEBA_NPEAPEBVBlock\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI bool setBlockState(class Block const**, class CommandOutput&) const;
+    MCAPI bool setBlockState(class Block const**, class CommandOutput&) const; // NOLINT
     /**
      * @symbol ??1BlockStateCommandParam\@\@QEAA\@XZ
      */
-    MCAPI ~BlockStateCommandParam();
+    MCAPI ~BlockStateCommandParam(); // NOLINT
 
     // private:
     /**
      * @symbol ?_createCompoundTag\@BlockStateCommandParam\@\@AEBA_NAEAVCompoundTag\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI bool _createCompoundTag(class CompoundTag&, class CommandOutput&) const;
+    MCAPI bool _createCompoundTag(class CompoundTag&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol ?_getBlockState\@BlockStateCommandParam\@\@AEBAPEBVBlockState\@\@AEBVBlock\@\@\@Z
      */
-    MCAPI class BlockState const* _getBlockState(class Block const&) const;
+    MCAPI class BlockState const* _getBlockState(class Block const&) const; // NOLINT
 
 private:
 };

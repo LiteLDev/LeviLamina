@@ -5,12 +5,9 @@
 template <typename T0>
 struct referenced_ptr {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_REFERENCED_PTR
 public:
+    // prevent constructor by default
     referenced_ptr& operator=(referenced_ptr const&) = delete;
     referenced_ptr(referenced_ptr const&)            = delete;
     referenced_ptr()                                 = delete;
-#endif
-
-public:
 };

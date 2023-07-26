@@ -6,14 +6,11 @@ namespace Scripting {
 
 class IDebuggerController {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTING_IDEBUGGERCONTROLLER
 public:
+    // prevent constructor by default
     IDebuggerController& operator=(IDebuggerController const&) = delete;
     IDebuggerController(IDebuggerController const&)            = delete;
     IDebuggerController()                                      = delete;
-#endif
-
-public:
 };
 
 }; // namespace Scripting

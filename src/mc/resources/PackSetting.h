@@ -9,20 +9,19 @@ namespace Json { class Value; }
 
 class PackSetting {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKSETTING
 public:
+    // prevent constructor by default
     PackSetting& operator=(PackSetting const&) = delete;
     PackSetting(PackSetting const&)            = delete;
     PackSetting()                              = delete;
-#endif
 
 public:
     /**
      * @symbol ?set\@PackSetting\@\@QEAAXAEBVValue\@Json\@\@\@Z
      */
-    MCAPI void set(class Json::Value const&);
+    MCAPI void set(class Json::Value const&); // NOLINT
     /**
      * @symbol ??1PackSetting\@\@QEAA\@XZ
      */
-    MCAPI ~PackSetting();
+    MCAPI ~PackSetting(); // NOLINT
 };

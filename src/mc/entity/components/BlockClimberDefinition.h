@@ -12,19 +12,18 @@ namespace JsonUtil { class EmptyClass; }
 
 class BlockClimberDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCLIMBERDEFINITION
 public:
+    // prevent constructor by default
     BlockClimberDefinition& operator=(BlockClimberDefinition const&) = delete;
     BlockClimberDefinition(BlockClimberDefinition const&)            = delete;
     BlockClimberDefinition()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?buildSchema\@BlockClimberDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VBlockClimberDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BlockClimberDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      class BlockClimberDefinition>>&); // NOLINT
 };
