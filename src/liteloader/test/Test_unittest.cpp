@@ -12,15 +12,15 @@ public:
     TestFrameworkTest() : Test("TestFrameworkTest", "Test for LiteLoader TestFrameworkTest") {}
 
     Result init() override {
-        TestManager::getInstance().printTestStatus();
         pass("Test passed message test");
-        TestManager::getInstance().printTestStatus();
         return {};
     }
 };
 
-LL_TEST_REGISTER(TestFrameworkTest);
-
-TEST(LiteLoader, TestFramework) { TestManager::getInstance().initAllTests(); }
+TEST(LiteLoader, TestFramework) {
+    TestManager::getInstance().registerTest(new TestFrameworkTest());
+    TestManager::getInstance().initAllTests();
+    TestManager::getInstance().printTestStatus();
+}
 
 } // namespace
