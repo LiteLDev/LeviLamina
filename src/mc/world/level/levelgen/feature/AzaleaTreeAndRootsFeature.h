@@ -7,35 +7,35 @@
 
 class AzaleaTreeAndRootsFeature : public ::Feature {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AZALEATREEANDROOTSFEATURE
 public:
+    // prevent constructor by default
     AzaleaTreeAndRootsFeature& operator=(AzaleaTreeAndRootsFeature const&) = delete;
     AzaleaTreeAndRootsFeature(AzaleaTreeAndRootsFeature const&)            = delete;
     AzaleaTreeAndRootsFeature()                                            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?place\@AzaleaTreeAndRootsFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
 
     // private:
     /**
      * @symbol ?_isLushGroundReplaceable\@AzaleaTreeAndRootsFeature\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI bool _isLushGroundReplaceable(class BlockSource&, class BlockPos const&) const;
+    MCAPI bool _isLushGroundReplaceable(class BlockSource&, class BlockPos const&) const; // NOLINT
     /**
      * @symbol
      * ?_tryPlaceAzaleaTree\@AzaleaTreeAndRootsFeature\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@I\@Z
      */
-    MCAPI bool _tryPlaceAzaleaTree(class BlockSource&, class BlockPos const&, class Random&, unsigned int) const;
+    MCAPI bool
+    _tryPlaceAzaleaTree(class BlockSource&, class BlockPos const&, class Random&, unsigned int) const; // NOLINT
 
 private:
 };

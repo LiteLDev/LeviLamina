@@ -9,29 +9,28 @@ namespace AgentCommands {
 
 class CollectCommand : public ::AgentCommands::Command {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMMANDS_COLLECTCOMMAND
 public:
+    // prevent constructor by default
     CollectCommand& operator=(CollectCommand const&) = delete;
     CollectCommand(CollectCommand const&)            = delete;
     CollectCommand()                                 = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?execute\@CollectCommand\@AgentCommands\@\@UEAAXXZ
      */
-    virtual void execute();
+    virtual void execute(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?isDone\@CollectCommand\@AgentCommands\@\@UEAA_NXZ
      */
-    virtual bool isDone();
+    virtual bool isDone(); // NOLINT
 };
 
 }; // namespace AgentCommands

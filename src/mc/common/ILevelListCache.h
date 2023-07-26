@@ -4,12 +4,9 @@
 
 class ILevelListCache {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ILEVELLISTCACHE
 public:
+    // prevent constructor by default
     ILevelListCache& operator=(ILevelListCache const&) = delete;
     ILevelListCache(ILevelListCache const&)            = delete;
     ILevelListCache()                                  = delete;
-#endif
-
-public:
 };

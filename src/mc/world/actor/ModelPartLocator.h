@@ -4,12 +4,9 @@
 
 class ModelPartLocator {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MODELPARTLOCATOR
 public:
+    // prevent constructor by default
     ModelPartLocator& operator=(ModelPartLocator const&) = delete;
     ModelPartLocator(ModelPartLocator const&)            = delete;
     ModelPartLocator()                                   = delete;
-#endif
-
-public:
 };

@@ -5,12 +5,9 @@
 template <typename T0>
 class SubChunkStorage {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKSTORAGE
 public:
+    // prevent constructor by default
     SubChunkStorage& operator=(SubChunkStorage const&) = delete;
     SubChunkStorage(SubChunkStorage const&)            = delete;
     SubChunkStorage()                                  = delete;
-#endif
-
-public:
 };

@@ -4,16 +4,15 @@
 
 class MobTravelPlayerOrLocalFilterSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBTRAVELPLAYERORLOCALFILTERSYSTEM
 public:
+    // prevent constructor by default
     MobTravelPlayerOrLocalFilterSystem& operator=(MobTravelPlayerOrLocalFilterSystem const&) = delete;
     MobTravelPlayerOrLocalFilterSystem(MobTravelPlayerOrLocalFilterSystem const&)            = delete;
     MobTravelPlayerOrLocalFilterSystem()                                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ?create\@MobTravelPlayerOrLocalFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo create();
+    MCAPI static struct TickingSystemWithInfo create(); // NOLINT
 };

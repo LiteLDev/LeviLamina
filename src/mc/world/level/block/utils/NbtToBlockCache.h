@@ -6,18 +6,17 @@ namespace BlockSerializationUtils {
 
 struct NbtToBlockCache {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSERIALIZATIONUTILS_NBTTOBLOCKCACHE
 public:
+    // prevent constructor by default
     NbtToBlockCache& operator=(NbtToBlockCache const&) = delete;
     NbtToBlockCache(NbtToBlockCache const&)            = delete;
     NbtToBlockCache()                                  = delete;
-#endif
 
 public:
     /**
      * @symbol ??1NbtToBlockCache\@BlockSerializationUtils\@\@QEAA\@XZ
      */
-    MCAPI ~NbtToBlockCache();
+    MCAPI ~NbtToBlockCache(); // NOLINT
 };
 
 }; // namespace BlockSerializationUtils

@@ -4,24 +4,23 @@
 
 struct DamageSensorTrigger {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DAMAGESENSORTRIGGER
 public:
+    // prevent constructor by default
     DamageSensorTrigger& operator=(DamageSensorTrigger const&) = delete;
     DamageSensorTrigger()                                      = delete;
-#endif
 
 public:
     /**
      * @symbol ??0DamageSensorTrigger\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI DamageSensorTrigger(struct DamageSensorTrigger const&);
+    MCAPI DamageSensorTrigger(struct DamageSensorTrigger const&); // NOLINT
     /**
      * @symbol
      * ?setCause\@DamageSensorTrigger\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void setCause(std::string const&);
+    MCAPI void setCause(std::string const&); // NOLINT
     /**
      * @symbol ??1DamageSensorTrigger\@\@QEAA\@XZ
      */
-    MCAPI ~DamageSensorTrigger();
+    MCAPI ~DamageSensorTrigger(); // NOLINT
 };

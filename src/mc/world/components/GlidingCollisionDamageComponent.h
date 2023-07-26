@@ -4,12 +4,9 @@
 
 struct GlidingCollisionDamageComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLIDINGCOLLISIONDAMAGECOMPONENT
 public:
+    // prevent constructor by default
     GlidingCollisionDamageComponent& operator=(GlidingCollisionDamageComponent const&) = delete;
     GlidingCollisionDamageComponent(GlidingCollisionDamageComponent const&)            = delete;
     GlidingCollisionDamageComponent()                                                  = delete;
-#endif
-
-public:
 };

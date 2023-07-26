@@ -9,12 +9,11 @@ namespace Json { class Value; }
 
 class LootTableReference {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTTABLEREFERENCE
 public:
+    // prevent constructor by default
     LootTableReference& operator=(LootTableReference const&) = delete;
     LootTableReference(LootTableReference const&)            = delete;
     LootTableReference()                                     = delete;
-#endif
 
 public:
     /**
@@ -22,11 +21,11 @@ public:
      * @symbol
      * ?_createItem\@LootTableReference\@\@MEAA_NAEAV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
+    virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&); // NOLINT
     /**
      * @symbol
      * ?deserialize\@LootTableReference\@\@SA?AV?$unique_ptr\@VLootPoolEntry\@\@U?$default_delete\@VLootPoolEntry\@\@\@std\@\@\@std\@\@VValue\@Json\@\@HHAEAV?$vector\@V?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@\@2\@\@3\@\@Z
      */
     MCAPI static std::unique_ptr<class LootPoolEntry>
-    deserialize(class Json::Value, int, int, std::vector<std::unique_ptr<class LootItemCondition>>&);
+    deserialize(class Json::Value, int, int, std::vector<std::unique_ptr<class LootItemCondition>>&); // NOLINT
 };

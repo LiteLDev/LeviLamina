@@ -7,18 +7,17 @@
 
 class MinecartPreNormalTickSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECARTPRENORMALTICKSYSTEM
 public:
+    // prevent constructor by default
     MinecartPreNormalTickSystem& operator=(MinecartPreNormalTickSystem const&) = delete;
     MinecartPreNormalTickSystem(MinecartPreNormalTickSystem const&)            = delete;
     MinecartPreNormalTickSystem()                                              = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@MinecartPreNormalTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
 
     // private:
     /**
@@ -26,7 +25,7 @@ public:
      * ?_doMinecartPreNormalTickSystem\@MinecartPreNormalTickSystem\@\@CAXAEAVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UMinecartPreNormalTickBlockPosComponent\@\@\@\@\@Z
      */
     MCAPI static void
-    _doMinecartPreNormalTickSystem(class StrictEntityContext&, class ActorOwnerComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MinecartPreNormalTickBlockPosComponent>);
+    _doMinecartPreNormalTickSystem(class StrictEntityContext&, class ActorOwnerComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MinecartPreNormalTickBlockPosComponent>); // NOLINT
 
 private:
 };

@@ -9,46 +9,45 @@ namespace Json { class Value; }
 
 class BlockStateGroup {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSTATEGROUP
 public:
+    // prevent constructor by default
     BlockStateGroup& operator=(BlockStateGroup const&) = delete;
     BlockStateGroup(BlockStateGroup const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0BlockStateGroup\@\@QEAA\@XZ
      */
-    MCAPI BlockStateGroup();
+    MCAPI BlockStateGroup(); // NOLINT
     /**
      * @symbol ?getBlockStateFromHash\@BlockStateGroup\@\@QEBAPEBVBlockStateMeta\@\@AEB_K\@Z
      */
-    MCAPI class BlockStateMeta const* getBlockStateFromHash(unsigned __int64 const&) const;
+    MCAPI class BlockStateMeta const* getBlockStateFromHash(unsigned __int64 const&) const; // NOLINT
     /**
      * @symbol
      * ?getBlockStateFromName\@BlockStateGroup\@\@QEBAPEBVBlockStateMeta\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI class BlockStateMeta const* getBlockStateFromName(std::string const&) const;
+    MCAPI class BlockStateMeta const* getBlockStateFromName(std::string const&) const; // NOLINT
     /**
      * @symbol ?registerBlockStateDefinition\@BlockStateGroup\@\@QEAAXAEBUBlockStateDefinition\@\@\@Z
      */
-    MCAPI void registerBlockStateDefinition(struct BlockStateDefinition const&);
+    MCAPI void registerBlockStateDefinition(struct BlockStateDefinition const&); // NOLINT
     /**
      * @symbol ?registerExistingBlockState\@BlockStateGroup\@\@QEAAXAEBVBlockState\@\@\@Z
      */
-    MCAPI void registerExistingBlockState(class BlockState const&);
+    MCAPI void registerExistingBlockState(class BlockState const&); // NOLINT
     /**
      * @symbol ?registerToBlock\@BlockStateGroup\@\@QEAAXAEAVBlockLegacy\@\@\@Z
      */
-    MCAPI void registerToBlock(class BlockLegacy&);
-    /**
-     * @symbol ?MAX_ENUM_SIZE\@BlockStateGroup\@\@2HB
-     */
-    MCAPI static int const MAX_ENUM_SIZE;
+    MCAPI void registerToBlock(class BlockLegacy&); // NOLINT
     /**
      * @symbol
      * ?loadBlockStateFromJson\@BlockStateGroup\@\@SA_NAEAUBlockStateDefinition\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVValue\@Json\@\@\@Z
      */
     MCAPI static bool
-    loadBlockStateFromJson(struct BlockStateDefinition&, std::string const&, class Json::Value const&);
+    loadBlockStateFromJson(struct BlockStateDefinition&, std::string const&, class Json::Value const&); // NOLINT
+    /**
+     * @symbol ?MAX_ENUM_SIZE\@BlockStateGroup\@\@2HB
+     */
+    MCAPI static int const MAX_ENUM_SIZE; // NOLINT
 };

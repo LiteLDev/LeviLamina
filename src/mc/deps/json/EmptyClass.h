@@ -6,14 +6,11 @@ namespace JsonUtil {
 
 class EmptyClass {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_JSONUTIL_EMPTYCLASS
 public:
+    // prevent constructor by default
     EmptyClass& operator=(EmptyClass const&) = delete;
     EmptyClass(EmptyClass const&)            = delete;
     EmptyClass()                             = delete;
-#endif
-
-public:
 };
 
 }; // namespace JsonUtil

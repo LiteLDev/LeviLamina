@@ -6,14 +6,11 @@ namespace Social {
 
 class MultiplayerService {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SOCIAL_MULTIPLAYERSERVICE
 public:
+    // prevent constructor by default
     MultiplayerService& operator=(MultiplayerService const&) = delete;
     MultiplayerService(MultiplayerService const&)            = delete;
     MultiplayerService()                                     = delete;
-#endif
-
-public:
 };
 
 }; // namespace Social

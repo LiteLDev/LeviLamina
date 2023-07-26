@@ -4,16 +4,15 @@
 
 struct DBStorageConfig {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DBSTORAGECONFIG
 public:
+    // prevent constructor by default
     DBStorageConfig& operator=(DBStorageConfig const&) = delete;
     DBStorageConfig(DBStorageConfig const&)            = delete;
     DBStorageConfig()                                  = delete;
-#endif
 
 public:
     /**
      * @symbol ??1DBStorageConfig\@\@QEAA\@XZ
      */
-    MCAPI ~DBStorageConfig();
+    MCAPI ~DBStorageConfig(); // NOLINT
 };

@@ -11,24 +11,23 @@ namespace BlockDestroyTimeVersioning {
 
 class BlockDestructibleByMining11910Upgrade {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKDESTROYTIMEVERSIONING_BLOCKDESTRUCTIBLEBYMINING11910UPGRADE
 public:
+    // prevent constructor by default
     BlockDestructibleByMining11910Upgrade& operator=(BlockDestructibleByMining11910Upgrade const&) = delete;
     BlockDestructibleByMining11910Upgrade(BlockDestructibleByMining11910Upgrade const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?previousSchema\@BlockDestructibleByMining11910Upgrade\@BlockDestroyTimeVersioning\@\@UEBAXAEAVSchemaFactory\@cereal\@\@\@Z
      */
-    virtual void previousSchema(class cereal::SchemaFactory&) const;
+    virtual void previousSchema(class cereal::SchemaFactory&) const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
@@ -37,11 +36,11 @@ public:
     virtual bool upgradeToNext(class rapidjson::GenericDocument<
                                struct rapidjson::UTF8<char>,
                                class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>,
-                               class rapidjson::CrtAllocator>&) const;
+                               class rapidjson::CrtAllocator>&) const; // NOLINT
     /**
      * @symbol ??0BlockDestructibleByMining11910Upgrade\@BlockDestroyTimeVersioning\@\@QEAA\@XZ
      */
-    MCAPI BlockDestructibleByMining11910Upgrade();
+    MCAPI BlockDestructibleByMining11910Upgrade(); // NOLINT
 };
 
 }; // namespace BlockDestroyTimeVersioning

@@ -12,17 +12,16 @@ namespace Json { class Value; }
 
 class PlaceBlockDefinition : public ::BehaviorDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLACEBLOCKDEFINITION
 public:
+    // prevent constructor by default
     PlaceBlockDefinition& operator=(PlaceBlockDefinition const&) = delete;
     PlaceBlockDefinition(PlaceBlockDefinition const&)            = delete;
     PlaceBlockDefinition()                                       = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
 };

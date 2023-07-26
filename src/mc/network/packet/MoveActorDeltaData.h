@@ -4,12 +4,9 @@
 
 class MoveActorDeltaData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEACTORDELTADATA
 public:
+    // prevent constructor by default
     MoveActorDeltaData& operator=(MoveActorDeltaData const&) = delete;
     MoveActorDeltaData(MoveActorDeltaData const&)            = delete;
     MoveActorDeltaData()                                     = delete;
-#endif
-
-public:
 };

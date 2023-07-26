@@ -4,19 +4,18 @@
 
 class NetworkSessionOwner {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKSESSIONOWNER
 public:
+    // prevent constructor by default
     NetworkSessionOwner& operator=(NetworkSessionOwner const&) = delete;
     NetworkSessionOwner(NetworkSessionOwner const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0NetworkSessionOwner\@\@QEAA\@XZ
      */
-    MCAPI NetworkSessionOwner();
+    MCAPI NetworkSessionOwner(); // NOLINT
     /**
      * @symbol ?getTransportLayer\@NetworkSessionOwner\@\@QEBA?AW4TransportLayer\@\@XZ
      */
-    MCAPI enum class TransportLayer getTransportLayer() const;
+    MCAPI enum class TransportLayer getTransportLayer() const; // NOLINT
 };

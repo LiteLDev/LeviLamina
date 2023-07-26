@@ -6,6 +6,6 @@ namespace MobEffectPacketUtils {
 /**
  * @symbol ?shouldAlwaysSendToClient\@MobEffectPacketUtils\@\@YA_NI\@Z
  */
-MCAPI bool shouldAlwaysSendToClient(unsigned int);
+MCAPI bool shouldAlwaysSendToClient(unsigned int); // NOLINT
 
 }; // namespace MobEffectPacketUtils

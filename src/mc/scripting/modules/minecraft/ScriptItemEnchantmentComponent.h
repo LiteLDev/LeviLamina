@@ -17,55 +17,55 @@ namespace ScriptModuleMinecraft {
 
 class ScriptItemEnchantmentComponent : public ::ScriptModuleMinecraft::ScriptItemComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTITEMENCHANTMENTCOMPONENT
 public:
+    // prevent constructor by default
     ScriptItemEnchantmentComponent() = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTITEMENCHANTMENTCOMPONENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptItemEnchantmentComponent();
+    MCVAPI ~ScriptItemEnchantmentComponent(); // NOLINT
 #endif
     /**
      * @symbol ??0ScriptItemEnchantmentComponent\@ScriptModuleMinecraft\@\@QEAA\@AEBV01\@\@Z
      */
-    MCAPI ScriptItemEnchantmentComponent(class ScriptModuleMinecraft::ScriptItemEnchantmentComponent const&);
+    MCAPI ScriptItemEnchantmentComponent(class ScriptModuleMinecraft::ScriptItemEnchantmentComponent const&); // NOLINT
     /**
      * @symbol
      * ?getEnchantments\@ScriptItemEnchantmentComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$StrongTypedObjectHandle\@VScriptItemEnchantments\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemEnchantments>>
-    getEnchantments() const;
+    getEnchantments() const; // NOLINT
     /**
      * @symbol ??4ScriptItemEnchantmentComponent\@ScriptModuleMinecraft\@\@QEAAAEAV01\@AEBV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraft::ScriptItemEnchantmentComponent&
-    operator=(class ScriptModuleMinecraft::ScriptItemEnchantmentComponent const&);
+    operator=(class ScriptModuleMinecraft::ScriptItemEnchantmentComponent const&); // NOLINT
     /**
      * @symbol
      * ?removeAllEnchantments\@ScriptItemEnchantmentComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<void> removeAllEnchantments();
+    MCAPI class Scripting::Result<void> removeAllEnchantments(); // NOLINT
     /**
      * @symbol
      * ?setEnchantments\@ScriptItemEnchantmentComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEBVScriptItemEnchantments\@2\@\@Z
      */
-    MCAPI class Scripting::Result<void> setEnchantments(class ScriptModuleMinecraft::ScriptItemEnchantments const&);
+    MCAPI class Scripting::Result<void>
+    setEnchantments(class ScriptModuleMinecraft::ScriptItemEnchantments const&); // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptItemEnchantmentComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptItemEnchantmentComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemEnchantmentComponent>
-    bind();
+    bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -4,18 +4,17 @@
 
 class ResetJumpRidingScaleSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESETJUMPRIDINGSCALESYSTEM
 public:
+    // prevent constructor by default
     ResetJumpRidingScaleSystem& operator=(ResetJumpRidingScaleSystem const&) = delete;
     ResetJumpRidingScaleSystem(ResetJumpRidingScaleSystem const&)            = delete;
     ResetJumpRidingScaleSystem()                                             = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@ResetJumpRidingScaleSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
 
     // private:
     /**
@@ -23,7 +22,7 @@ public:
      * ?_doResetJumpRidingScaleSystem\@ResetJumpRidingScaleSystem\@\@CAXAEBVStrictEntityContext\@\@AEAUJumpRidingScaleComponent\@\@AEAUVanillaClientGameplayComponent\@\@\@Z
      */
     MCAPI static void
-    _doResetJumpRidingScaleSystem(class StrictEntityContext const&, struct JumpRidingScaleComponent&, struct VanillaClientGameplayComponent&);
+    _doResetJumpRidingScaleSystem(class StrictEntityContext const&, struct JumpRidingScaleComponent&, struct VanillaClientGameplayComponent&); // NOLINT
 
 private:
 };

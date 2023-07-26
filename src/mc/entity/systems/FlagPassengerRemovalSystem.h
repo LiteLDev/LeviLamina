@@ -4,20 +4,19 @@
 
 class FlagPassengerRemovalSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLAGPASSENGERREMOVALSYSTEM
 public:
+    // prevent constructor by default
     FlagPassengerRemovalSystem& operator=(FlagPassengerRemovalSystem const&) = delete;
     FlagPassengerRemovalSystem(FlagPassengerRemovalSystem const&)            = delete;
     FlagPassengerRemovalSystem()                                             = delete;
-#endif
 
 public:
     /**
      * @symbol ?createDeferredSystem\@FlagPassengerRemovalSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createDeferredSystem();
+    MCAPI static struct TickingSystemWithInfo createDeferredSystem(); // NOLINT
     /**
      * @symbol ?createImmediateSystem\@FlagPassengerRemovalSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createImmediateSystem();
+    MCAPI static struct TickingSystemWithInfo createImmediateSystem(); // NOLINT
 };

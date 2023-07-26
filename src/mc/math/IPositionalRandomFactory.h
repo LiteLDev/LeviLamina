@@ -4,12 +4,9 @@
 
 class IPositionalRandomFactory {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IPOSITIONALRANDOMFACTORY
 public:
+    // prevent constructor by default
     IPositionalRandomFactory& operator=(IPositionalRandomFactory const&) = delete;
     IPositionalRandomFactory(IPositionalRandomFactory const&)            = delete;
     IPositionalRandomFactory()                                           = delete;
-#endif
-
-public:
 };

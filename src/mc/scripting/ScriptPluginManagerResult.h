@@ -9,25 +9,24 @@ namespace Scripting { struct ModuleDescriptor; }
 
 class ScriptPluginManagerResult {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPLUGINMANAGERRESULT
 public:
+    // prevent constructor by default
     ScriptPluginManagerResult& operator=(ScriptPluginManagerResult const&) = delete;
     ScriptPluginManagerResult(ScriptPluginManagerResult const&)            = delete;
     ScriptPluginManagerResult()                                            = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?getOrCreatePluginResults\@ScriptPluginManagerResult\@\@QEAAAEAVScriptPluginResult\@\@AEBUModuleDescriptor\@Scripting\@\@\@Z
      */
-    MCAPI class ScriptPluginResult& getOrCreatePluginResults(struct Scripting::ModuleDescriptor const&);
+    MCAPI class ScriptPluginResult& getOrCreatePluginResults(struct Scripting::ModuleDescriptor const&); // NOLINT
     /**
      * @symbol ?writeToContentLog\@ScriptPluginManagerResult\@\@QEBAXXZ
      */
-    MCAPI void writeToContentLog() const;
+    MCAPI void writeToContentLog() const; // NOLINT
     /**
      * @symbol ??1ScriptPluginManagerResult\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptPluginManagerResult();
+    MCAPI ~ScriptPluginManagerResult(); // NOLINT
 };

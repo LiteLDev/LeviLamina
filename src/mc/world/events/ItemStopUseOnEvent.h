@@ -4,19 +4,18 @@
 
 struct ItemStopUseOnEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTOPUSEONEVENT
 public:
+    // prevent constructor by default
     ItemStopUseOnEvent& operator=(ItemStopUseOnEvent const&) = delete;
     ItemStopUseOnEvent()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ItemStopUseOnEvent\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI ItemStopUseOnEvent(struct ItemStopUseOnEvent const&);
+    MCAPI ItemStopUseOnEvent(struct ItemStopUseOnEvent const&); // NOLINT
     /**
      * @symbol ??1ItemStopUseOnEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ItemStopUseOnEvent();
+    MCAPI ~ItemStopUseOnEvent(); // NOLINT
 };

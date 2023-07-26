@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockLegacy;
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
@@ -17,52 +18,52 @@ namespace ScriptModuleMinecraft {
 
 class ScriptBlockType {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTBLOCKTYPE
 public:
+    // prevent constructor by default
     ScriptBlockType& operator=(ScriptBlockType const&) = delete;
     ScriptBlockType()                                  = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ScriptBlockType\@ScriptModuleMinecraft\@\@QEAA\@AEBV01\@\@Z
      */
-    MCAPI ScriptBlockType(class ScriptModuleMinecraft::ScriptBlockType const&);
+    MCAPI ScriptBlockType(class ScriptModuleMinecraft::ScriptBlockType const&); // NOLINT
     /**
      * @symbol
      * ?createDefaultBlockPermutationV010\@ScriptBlockType\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$StrongTypedObjectHandle\@VScriptBlockPermutation\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>>
-    createDefaultBlockPermutationV010() const;
+    createDefaultBlockPermutationV010() const; // NOLINT
     /**
      * @symbol ?getBlock\@ScriptBlockType\@ScriptModuleMinecraft\@\@QEBAAEBVBlockLegacy\@\@XZ
      */
-    MCAPI class BlockLegacy const& getBlock() const;
+    MCAPI class BlockLegacy const& getBlock() const; // NOLINT
     /**
      * @symbol
      * ?getId\@ScriptBlockType\@ScriptModuleMinecraft\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getId() const;
+    MCAPI std::string getId() const; // NOLINT
     /**
      * @symbol ??4ScriptBlockType\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
-    MCAPI class ScriptModuleMinecraft::ScriptBlockType& operator=(class ScriptModuleMinecraft::ScriptBlockType&&);
+    MCAPI class ScriptModuleMinecraft::ScriptBlockType&
+    operator=(class ScriptModuleMinecraft::ScriptBlockType&&); // NOLINT
     /**
      * @symbol ??1ScriptBlockType\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptBlockType();
+    MCAPI ~ScriptBlockType(); // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptBlockType\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockType\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockType> bind();
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockType> bind(); // NOLINT
     /**
      * @symbol
      * ?getOrCreateHandle\@ScriptBlockType\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptBlockType\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBVWeakLifetimeScope\@4\@AEBVBlockLegacy\@\@\@Z
      */
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockType>
-    getOrCreateHandle(class Scripting::WeakLifetimeScope const&, class BlockLegacy const&);
+    getOrCreateHandle(class Scripting::WeakLifetimeScope const&, class BlockLegacy const&); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

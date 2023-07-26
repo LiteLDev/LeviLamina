@@ -6,14 +6,11 @@ namespace cg {
 
 class ImageBuffer {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CG_IMAGEBUFFER
 public:
+    // prevent constructor by default
     ImageBuffer& operator=(ImageBuffer const&) = delete;
     ImageBuffer(ImageBuffer const&)            = delete;
     ImageBuffer()                              = delete;
-#endif
-
-public:
 };
 
 }; // namespace cg

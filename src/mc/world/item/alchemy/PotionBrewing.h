@@ -13,131 +13,127 @@ public:
     // PotionBrewing inner types define
     class Ingredient {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_POTIONBREWING_INGREDIENT
     public:
+        // prevent constructor by default
         Ingredient& operator=(Ingredient const&) = delete;
         Ingredient(Ingredient const&)            = delete;
         Ingredient()                             = delete;
-#endif
 
     public:
         /**
          * @symbol ??0Ingredient\@PotionBrewing\@\@QEAA\@AEBVItemInstance\@\@\@Z
          */
-        MCAPI Ingredient(class ItemInstance const&);
+        MCAPI Ingredient(class ItemInstance const&); // NOLINT
         /**
          * @symbol ?equals\@Ingredient\@PotionBrewing\@\@QEBA_NAEBVItemDescriptor\@\@\@Z
          */
-        MCAPI bool equals(class ItemDescriptor const&) const;
+        MCAPI bool equals(class ItemDescriptor const&) const; // NOLINT
         /**
          * @symbol ?getData\@Ingredient\@PotionBrewing\@\@QEBAHXZ
          */
-        MCAPI int getData() const;
+        MCAPI int getData() const; // NOLINT
         /**
          * @symbol ?getItemId\@Ingredient\@PotionBrewing\@\@QEBAHXZ
          */
-        MCAPI int getItemId() const;
+        MCAPI int getItemId() const; // NOLINT
     };
 
     template <typename T0>
     class Mix {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_POTIONBREWING_MIX
     public:
+        // prevent constructor by default
         Mix& operator=(Mix const&) = delete;
         Mix(Mix const&)            = delete;
         Mix()                      = delete;
-#endif
-
-    public:
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_POTIONBREWING
 public:
+    // prevent constructor by default
     PotionBrewing& operator=(PotionBrewing const&) = delete;
     PotionBrewing(PotionBrewing const&)            = delete;
     PotionBrewing()                                = delete;
-#endif
 
 public:
     /**
      * @symbol ?addContainerRecipe\@PotionBrewing\@\@SAXAEBVItem\@\@AEBVIngredient\@1\@0\@Z
      */
-    MCAPI static void addContainerRecipe(class Item const&, class PotionBrewing::Ingredient const&, class Item const&);
+    MCAPI static void
+    addContainerRecipe(class Item const&, class PotionBrewing::Ingredient const&, class Item const&); // NOLINT
     /**
      * @symbol ?addPotionMix\@PotionBrewing\@\@SAXAEBVItemDescriptor\@\@AEBVIngredient\@1\@0\@Z
      */
     MCAPI static void
-    addPotionMix(class ItemDescriptor const&, class PotionBrewing::Ingredient const&, class ItemDescriptor const&);
+    addPotionMix(class ItemDescriptor const&, class PotionBrewing::Ingredient const&, class ItemDescriptor const&); // NOLINT
     /**
      * @symbol ?getFuelValue\@PotionBrewing\@\@SAHAEBVItemDescriptor\@\@\@Z
      */
-    MCAPI static int getFuelValue(class ItemDescriptor const&);
+    MCAPI static int getFuelValue(class ItemDescriptor const&); // NOLINT
     /**
      * @symbol ?hasMix\@PotionBrewing\@\@SA_NAEBVItemInstance\@\@AEBVItemDescriptor\@\@\@Z
      */
-    MCAPI static bool hasMix(class ItemInstance const&, class ItemDescriptor const&);
+    MCAPI static bool hasMix(class ItemInstance const&, class ItemDescriptor const&); // NOLINT
     /**
      * @symbol ?initPotionBrewing\@PotionBrewing\@\@SAXXZ
      */
-    MCAPI static void initPotionBrewing();
+    MCAPI static void initPotionBrewing(); // NOLINT
     /**
      * @symbol ?isFuel\@PotionBrewing\@\@SA_NAEBVItemDescriptor\@\@\@Z
      */
-    MCAPI static bool isFuel(class ItemDescriptor const&);
+    MCAPI static bool isFuel(class ItemDescriptor const&); // NOLINT
     /**
      * @symbol ?isIngredient\@PotionBrewing\@\@SA_NAEBVItemDescriptor\@\@\@Z
      */
-    MCAPI static bool isIngredient(class ItemDescriptor const&);
+    MCAPI static bool isIngredient(class ItemDescriptor const&); // NOLINT
     /**
      * @symbol ?isPotionRecipeInput\@PotionBrewing\@\@SA_NAEBVItemDescriptor\@\@\@Z
      */
-    MCAPI static bool isPotionRecipeInput(class ItemDescriptor const&);
+    MCAPI static bool isPotionRecipeInput(class ItemDescriptor const&); // NOLINT
     /**
      * @symbol ?mix\@PotionBrewing\@\@SA?AVItemInstance\@\@AEBVItemDescriptor\@\@AEBV2\@\@Z
      */
-    MCAPI static class ItemInstance mix(class ItemDescriptor const&, class ItemInstance const&);
+    MCAPI static class ItemInstance mix(class ItemDescriptor const&, class ItemInstance const&); // NOLINT
     /**
      * @symbol ?shutdown\@PotionBrewing\@\@SAXXZ
      */
-    MCAPI static void shutdown();
+    MCAPI static void shutdown(); // NOLINT
 
     // private:
     /**
      * @symbol ?addChemistryMix\@PotionBrewing\@\@CAXAEBVItemInstance\@\@AEBVIngredient\@1\@0\@Z
      */
     MCAPI static void
-    addChemistryMix(class ItemInstance const&, class PotionBrewing::Ingredient const&, class ItemInstance const&);
+    addChemistryMix(class ItemInstance const&, class PotionBrewing::Ingredient const&, class ItemInstance const&); // NOLINT
     /**
      * @symbol ?getChemistryMix\@PotionBrewing\@\@CA?AVItemInstance\@\@AEBVItemDescriptor\@\@0\@Z
      */
-    MCAPI static class ItemInstance getChemistryMix(class ItemDescriptor const&, class ItemDescriptor const&);
+    MCAPI static class ItemInstance getChemistryMix(class ItemDescriptor const&, class ItemDescriptor const&); // NOLINT
 
 private:
     /**
      * @symbol
      * ?mChemistryMixes\@PotionBrewing\@\@0V?$vector\@V?$Mix\@VItemInstance\@\@\@PotionBrewing\@\@V?$allocator\@V?$Mix\@VItemInstance\@\@\@PotionBrewing\@\@\@std\@\@\@std\@\@A
      */
-    MCAPI static std::vector<class PotionBrewing::Mix<class ItemInstance>> mChemistryMixes;
+    MCAPI static std::vector<class PotionBrewing::Mix<class ItemInstance>> mChemistryMixes; // NOLINT
     /**
      * @symbol
      * ?mContainerMixes\@PotionBrewing\@\@0V?$vector\@V?$Mix\@AEBVItem\@\@\@PotionBrewing\@\@V?$allocator\@V?$Mix\@AEBVItem\@\@\@PotionBrewing\@\@\@std\@\@\@std\@\@A
      */
-    MCAPI static std::vector<class PotionBrewing::Mix<class Item const&>> mContainerMixes;
+    MCAPI static std::vector<class PotionBrewing::Mix<class Item const&>> mContainerMixes; // NOLINT
     /**
      * @symbol ?mIsInitialized\@PotionBrewing\@\@0_NA
      */
-    MCAPI static bool mIsInitialized;
+    MCAPI static bool mIsInitialized; // NOLINT
     /**
      * @symbol
      * ?mPotionMixes\@PotionBrewing\@\@0V?$vector\@V?$Mix\@VItemDescriptor\@\@\@PotionBrewing\@\@V?$allocator\@V?$Mix\@VItemDescriptor\@\@\@PotionBrewing\@\@\@std\@\@\@std\@\@A
      */
-    MCAPI static std::vector<class PotionBrewing::Mix<class ItemDescriptor>> mPotionMixes;
+    MCAPI static std::vector<class PotionBrewing::Mix<class ItemDescriptor>> mPotionMixes; // NOLINT
     /**
      * @symbol
      * ?mValidContainers\@PotionBrewing\@\@0V?$vector\@VIngredient\@PotionBrewing\@\@V?$allocator\@VIngredient\@PotionBrewing\@\@\@std\@\@\@std\@\@A
      */
-    MCAPI static std::vector<class PotionBrewing::Ingredient> mValidContainers;
+    MCAPI static std::vector<class PotionBrewing::Ingredient> mValidContainers; // NOLINT
     /**
      * @symbol
      * ?mValidIngredients\@PotionBrewing\@\@0V?$unordered_set\@VIngredient\@PotionBrewing\@\@U?$hash\@VIngredient\@PotionBrewing\@\@\@std\@\@U?$equal_to\@VIngredient\@PotionBrewing\@\@\@4\@V?$allocator\@VIngredient\@PotionBrewing\@\@\@4\@\@std\@\@A
@@ -147,7 +143,7 @@ private:
         struct std::hash<class PotionBrewing::Ingredient>,
         struct std::equal_to<class PotionBrewing::Ingredient>,
         class std::allocator<class PotionBrewing::Ingredient>>
-        mValidIngredients;
+        mValidIngredients; // NOLINT
     /**
      * @symbol
      * ?mValidRecipeInputs\@PotionBrewing\@\@0V?$unordered_set\@VIngredient\@PotionBrewing\@\@U?$hash\@VIngredient\@PotionBrewing\@\@\@std\@\@U?$equal_to\@VIngredient\@PotionBrewing\@\@\@4\@V?$allocator\@VIngredient\@PotionBrewing\@\@\@4\@\@std\@\@A
@@ -157,5 +153,5 @@ private:
         struct std::hash<class PotionBrewing::Ingredient>,
         struct std::equal_to<class PotionBrewing::Ingredient>,
         class std::allocator<class PotionBrewing::Ingredient>>
-        mValidRecipeInputs;
+        mValidRecipeInputs; // NOLINT
 };

@@ -7,26 +7,25 @@
 
 class CloneCommand : public ::Command {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLONECOMMAND
 public:
+    // prevent constructor by default
     CloneCommand& operator=(CloneCommand const&) = delete;
     CloneCommand(CloneCommand const&)            = delete;
     CloneCommand()                               = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?execute\@CloneCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol ?setup\@CloneCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
-    MCAPI static void setup(class CommandRegistry&);
+    MCAPI static void setup(class CommandRegistry&); // NOLINT
 };

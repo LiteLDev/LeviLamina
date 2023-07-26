@@ -12,32 +12,31 @@ namespace Json { class Value; }
 
 class ThrownPotionEffectSubcomponent : public ::SplashPotionEffectSubcomponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_THROWNPOTIONEFFECTSUBCOMPONENT
 public:
+    // prevent constructor by default
     ThrownPotionEffectSubcomponent& operator=(ThrownPotionEffectSubcomponent const&) = delete;
     ThrownPotionEffectSubcomponent(ThrownPotionEffectSubcomponent const&)            = delete;
     ThrownPotionEffectSubcomponent()                                                 = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?writetoJSON\@ThrownPotionEffectSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
-    virtual void writetoJSON(class Json::Value&) const;
+    virtual void writetoJSON(class Json::Value&) const; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?doOnHitEffect\@ThrownPotionEffectSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
      */
-    virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
+    virtual void doOnHitEffect(class Actor&, class ProjectileComponent&); // NOLINT
     /**
      * @vftbl 4
      * @symbol ?getName\@ThrownPotionEffectSubcomponent\@\@UEAAPEBDXZ
      */
-    virtual char const* getName();
+    virtual char const* getName(); // NOLINT
 };

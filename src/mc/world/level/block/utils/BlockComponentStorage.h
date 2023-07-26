@@ -4,26 +4,25 @@
 
 class BlockComponentStorage {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCOMPONENTSTORAGE
 public:
+    // prevent constructor by default
     BlockComponentStorage& operator=(BlockComponentStorage const&) = delete;
     BlockComponentStorage(BlockComponentStorage const&)            = delete;
     BlockComponentStorage()                                        = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCOMPONENTSTORAGE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~BlockComponentStorage();
+    MCVAPI ~BlockComponentStorage(); // NOLINT
 #endif
     /**
      * @symbol ?allowComponentReplacement\@BlockComponentStorage\@\@QEAAXXZ
      */
-    MCAPI void allowComponentReplacement();
+    MCAPI void allowComponentReplacement(); // NOLINT
     /**
      * @symbol ?finalizeComponents\@BlockComponentStorage\@\@QEAAXXZ
      */
-    MCAPI void finalizeComponents();
+    MCAPI void finalizeComponents(); // NOLINT
 };

@@ -6,6 +6,6 @@ namespace FoodExhaustionSystem {
 /**
  * @symbol ?createSystem\@FoodExhaustionSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
  */
-MCAPI struct TickingSystemWithInfo createSystem();
+MCAPI struct TickingSystemWithInfo createSystem(); // NOLINT
 
 }; // namespace FoodExhaustionSystem

@@ -7,27 +7,26 @@
 
 class OceanMonumentDoubleXYRoom : public ::OceanMonumentPiece {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCEANMONUMENTDOUBLEXYROOM
 public:
+    // prevent constructor by default
     OceanMonumentDoubleXYRoom& operator=(OceanMonumentDoubleXYRoom const&) = delete;
     OceanMonumentDoubleXYRoom(OceanMonumentDoubleXYRoom const&)            = delete;
     OceanMonumentDoubleXYRoom()                                            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?getType\@OceanMonumentDoubleXYRoom\@\@UEBA?AW4StructurePieceType\@\@XZ
      */
-    virtual enum class StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const; // NOLINT
     /**
      * @vftbl 4
      * @symbol ?postProcess\@OceanMonumentDoubleXYRoom\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&); // NOLINT
 };

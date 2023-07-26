@@ -4,12 +4,9 @@
 
 struct XTaskQueueObject {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_XTASKQUEUEOBJECT
 public:
+    // prevent constructor by default
     XTaskQueueObject& operator=(XTaskQueueObject const&) = delete;
     XTaskQueueObject(XTaskQueueObject const&)            = delete;
     XTaskQueueObject()                                   = delete;
-#endif
-
-public:
 };

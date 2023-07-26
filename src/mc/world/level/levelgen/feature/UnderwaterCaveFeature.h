@@ -13,18 +13,17 @@ namespace CaveFeatureUtils { struct CarvingParameters; }
 
 class UnderwaterCaveFeature : public ::CaveFeature {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_UNDERWATERCAVEFEATURE
 public:
+    // prevent constructor by default
     UnderwaterCaveFeature& operator=(UnderwaterCaveFeature const&) = delete;
     UnderwaterCaveFeature(UnderwaterCaveFeature const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 5
      * @symbol
@@ -32,13 +31,13 @@ public:
      */
     virtual bool
     carveEllipsoidVolume(class IBlockWorldGenAPI&, struct CaveFeatureUtils::CarverConfiguration const&, class Random&, class ChunkPos const&, class Vec3 const&, class BoundingBox const&, float, float, struct CaveFeatureUtils::CarvingParameters const&)
-        const;
+        const; // NOLINT
     /**
      * @symbol ??0UnderwaterCaveFeature\@\@QEAA\@XZ
      */
-    MCAPI UnderwaterCaveFeature();
+    MCAPI UnderwaterCaveFeature(); // NOLINT
     /**
      * @symbol ?isDiggable\@UnderwaterCaveFeature\@\@SA_NAEBVBlock\@\@\@Z
      */
-    MCAPI static bool isDiggable(class Block const&);
+    MCAPI static bool isDiggable(class Block const&); // NOLINT
 };

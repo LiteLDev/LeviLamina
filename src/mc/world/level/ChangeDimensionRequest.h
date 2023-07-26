@@ -4,12 +4,9 @@
 
 class ChangeDimensionRequest {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHANGEDIMENSIONREQUEST
 public:
+    // prevent constructor by default
     ChangeDimensionRequest& operator=(ChangeDimensionRequest const&) = delete;
     ChangeDimensionRequest(ChangeDimensionRequest const&)            = delete;
     ChangeDimensionRequest()                                         = delete;
-#endif
-
-public:
 };

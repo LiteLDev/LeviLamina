@@ -4,12 +4,9 @@
 
 class IBlockSource {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IBLOCKSOURCE
 public:
+    // prevent constructor by default
     IBlockSource& operator=(IBlockSource const&) = delete;
     IBlockSource(IBlockSource const&)            = delete;
     IBlockSource()                               = delete;
-#endif
-
-public:
 };

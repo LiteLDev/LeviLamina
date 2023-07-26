@@ -6,14 +6,11 @@ namespace Bedrock::Http {
 
 class Status {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_HTTP_STATUS
 public:
+    // prevent constructor by default
     Status& operator=(Status const&) = delete;
     Status(Status const&)            = delete;
     Status()                         = delete;
-#endif
-
-public:
 };
 
 }; // namespace Bedrock::Http

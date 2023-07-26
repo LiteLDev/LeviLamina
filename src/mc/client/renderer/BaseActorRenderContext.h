@@ -4,12 +4,9 @@
 
 class BaseActorRenderContext {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASEACTORRENDERCONTEXT
 public:
+    // prevent constructor by default
     BaseActorRenderContext& operator=(BaseActorRenderContext const&) = delete;
     BaseActorRenderContext(BaseActorRenderContext const&)            = delete;
     BaseActorRenderContext()                                         = delete;
-#endif
-
-public:
 };

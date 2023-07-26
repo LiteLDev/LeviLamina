@@ -4,16 +4,15 @@
 
 struct ActorEquippedArmorEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOREQUIPPEDARMOREVENT
 public:
+    // prevent constructor by default
     ActorEquippedArmorEvent& operator=(ActorEquippedArmorEvent const&) = delete;
     ActorEquippedArmorEvent(ActorEquippedArmorEvent const&)            = delete;
     ActorEquippedArmorEvent()                                          = delete;
-#endif
 
 public:
     /**
      * @symbol ??1ActorEquippedArmorEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorEquippedArmorEvent();
+    MCAPI ~ActorEquippedArmorEvent(); // NOLINT
 };

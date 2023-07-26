@@ -16,38 +16,36 @@ public:
     // PacketViolationHandler inner types define
     struct PacketViolation {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKETVIOLATIONHANDLER_PACKETVIOLATION
     public:
+        // prevent constructor by default
         PacketViolation& operator=(PacketViolation const&) = delete;
         PacketViolation(PacketViolation const&)            = delete;
         PacketViolation()                                  = delete;
-#endif
 
     public:
         /**
          * @symbol
          * ?ToString\@PacketViolation\@PacketViolationHandler\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
          */
-        MCAPI std::string ToString() const;
+        MCAPI std::string ToString() const; // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKETVIOLATIONHANDLER
 public:
+    // prevent constructor by default
     PacketViolationHandler& operator=(PacketViolationHandler const&) = delete;
     PacketViolationHandler(PacketViolationHandler const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0PacketViolationHandler\@\@QEAA\@XZ
      */
-    MCAPI PacketViolationHandler();
+    MCAPI PacketViolationHandler(); // NOLINT
     /**
      * @symbol
      * ?checkForViolation\@PacketViolationHandler\@\@QEAA?AW4PacketViolationResponse\@\@W4MinecraftPacketIds\@\@AEBV?$expected\@XU?$ErrorInfo\@Verror_code\@std\@\@\@Bedrock\@\@\@expected_lite\@nonstd\@\@AEBVNetworkIdentifier\@\@PEA_N\@Z
      */
     MCAPI enum class PacketViolationResponse
-    checkForViolation(enum class MinecraftPacketIds, class nonstd::expected_lite::expected<void, struct Bedrock::ErrorInfo<class std::error_code>> const&, class NetworkIdentifier const&, bool*);
+    checkForViolation(enum class MinecraftPacketIds, class nonstd::expected_lite::expected<void, struct Bedrock::ErrorInfo<class std::error_code>> const&, class NetworkIdentifier const&, bool*); // NOLINT
 
     // private:
     /**
@@ -55,7 +53,7 @@ public:
      * ?_handleViolation\@PacketViolationHandler\@\@AEAA?AW4PacketViolationResponse\@\@W4MinecraftPacketIds\@\@AEBVerror_code\@std\@\@AEBVNetworkIdentifier\@\@PEA_N\@Z
      */
     MCAPI enum class PacketViolationResponse
-    _handleViolation(enum class MinecraftPacketIds, class std::error_code const&, class NetworkIdentifier const&, bool*);
+    _handleViolation(enum class MinecraftPacketIds, class std::error_code const&, class NetworkIdentifier const&, bool*); // NOLINT
 
 private:
 };

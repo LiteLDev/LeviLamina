@@ -9,24 +9,23 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptActorHitBlockAfterEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTACTORHITBLOCKAFTEREVENT
 public:
+    // prevent constructor by default
     ScriptActorHitBlockAfterEvent& operator=(ScriptActorHitBlockAfterEvent const&) = delete;
     ScriptActorHitBlockAfterEvent(ScriptActorHitBlockAfterEvent const&)            = delete;
     ScriptActorHitBlockAfterEvent()                                                = delete;
-#endif
 
 public:
     /**
      * @symbol ??1ScriptActorHitBlockAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptActorHitBlockAfterEvent();
+    MCAPI ~ScriptActorHitBlockAfterEvent(); // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptActorHitBlockAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptActorHitBlockAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorHitBlockAfterEvent>
-    bind();
+    bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -4,23 +4,22 @@
 
 class HopperComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOPPERCOMPONENT
 public:
+    // prevent constructor by default
     HopperComponent& operator=(HopperComponent const&) = delete;
     HopperComponent(HopperComponent const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0HopperComponent\@\@QEAA\@XZ
      */
-    MCAPI HopperComponent();
+    MCAPI HopperComponent(); // NOLINT
     /**
      * @symbol ?getLastPosition\@HopperComponent\@\@QEBA?AVBlockPos\@\@XZ
      */
-    MCAPI class BlockPos getLastPosition() const;
+    MCAPI class BlockPos getLastPosition() const; // NOLINT
     /**
      * @symbol ?pullInItems\@HopperComponent\@\@QEAA_NAEAVActor\@\@\@Z
      */
-    MCAPI bool pullInItems(class Actor&);
+    MCAPI bool pullInItems(class Actor&); // NOLINT
 };

@@ -6,14 +6,11 @@ namespace OperationNodeValues {
 
 struct PreBiome {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OPERATIONNODEVALUES_PREBIOME
 public:
+    // prevent constructor by default
     PreBiome& operator=(PreBiome const&) = delete;
     PreBiome(PreBiome const&)            = delete;
     PreBiome()                           = delete;
-#endif
-
-public:
 };
 
 }; // namespace OperationNodeValues

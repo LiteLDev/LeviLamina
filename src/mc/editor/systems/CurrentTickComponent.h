@@ -4,12 +4,9 @@
 
 struct CurrentTickComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CURRENTTICKCOMPONENT
 public:
+    // prevent constructor by default
     CurrentTickComponent& operator=(CurrentTickComponent const&) = delete;
     CurrentTickComponent(CurrentTickComponent const&)            = delete;
     CurrentTickComponent()                                       = delete;
-#endif
-
-public:
 };

@@ -9,19 +9,19 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptItemEnchantmentSlot {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTITEMENCHANTMENTSLOT
 public:
+    // prevent constructor by default
     ScriptItemEnchantmentSlot& operator=(ScriptItemEnchantmentSlot const&) = delete;
     ScriptItemEnchantmentSlot(ScriptItemEnchantmentSlot const&)            = delete;
     ScriptItemEnchantmentSlot()                                            = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?bind\@ScriptItemEnchantmentSlot\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptItemEnchantmentSlot\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemEnchantmentSlot> bind();
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemEnchantmentSlot>
+    bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

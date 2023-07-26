@@ -4,12 +4,9 @@
 
 class IWorldRegistriesProvider {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IWORLDREGISTRIESPROVIDER
 public:
+    // prevent constructor by default
     IWorldRegistriesProvider& operator=(IWorldRegistriesProvider const&) = delete;
     IWorldRegistriesProvider(IWorldRegistriesProvider const&)            = delete;
     IWorldRegistriesProvider()                                           = delete;
-#endif
-
-public:
 };

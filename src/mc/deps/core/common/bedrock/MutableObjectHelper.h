@@ -12,17 +12,16 @@ namespace Bedrock::JSONObject {
 
 class MutableObjectHelper {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_JSONOBJECT_MUTABLEOBJECTHELPER
 public:
+    // prevent constructor by default
     MutableObjectHelper& operator=(MutableObjectHelper const&) = delete;
     MutableObjectHelper(MutableObjectHelper const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0MutableObjectHelper\@JSONObject\@Bedrock\@\@QEAA\@XZ
      */
-    MCAPI MutableObjectHelper();
+    MCAPI MutableObjectHelper(); // NOLINT
     /**
      * @symbol
      * ?insert\@MutableObjectHelper\@JSONObject\@Bedrock\@\@QEAA?AU?$pair\@V?$_Tree_iterator\@V?$_Tree_val\@U?$_Tree_simple_types\@U?$pair\@$$CBV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@PEAVNode\@JSONObject\@Bedrock\@\@\@std\@\@\@std\@\@\@std\@\@\@std\@\@_N\@std\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@5\@AEBVValueWrapper\@23\@_N\@Z
@@ -36,7 +35,7 @@ public:
         class std::basic_string_view<char, struct std::char_traits<char>>,
         class Bedrock::JSONObject::ValueWrapper const&,
         bool
-    );
+    ); // NOLINT
 };
 
 }; // namespace Bedrock::JSONObject

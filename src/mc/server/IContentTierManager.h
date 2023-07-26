@@ -4,18 +4,17 @@
 
 class IContentTierManager {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICONTENTTIERMANAGER
 public:
+    // prevent constructor by default
     IContentTierManager& operator=(IContentTierManager const&) = delete;
     IContentTierManager(IContentTierManager const&)            = delete;
     IContentTierManager()                                      = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONTENTTIERMANAGER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IContentTierManager();
+    MCVAPI ~IContentTierManager(); // NOLINT
 #endif
 };

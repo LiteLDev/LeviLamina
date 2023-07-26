@@ -9,32 +9,31 @@ namespace gametest { class BaseGameTestInstance; }
 
 class ConsoleGameTestListener {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONSOLEGAMETESTLISTENER
 public:
+    // prevent constructor by default
     ConsoleGameTestListener& operator=(ConsoleGameTestListener const&) = delete;
     ConsoleGameTestListener(ConsoleGameTestListener const&)            = delete;
     ConsoleGameTestListener()                                          = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?onTestStructureLoaded\@ConsoleGameTestListener\@\@UEAAXAEAVBaseGameTestInstance\@gametest\@\@\@Z
      */
-    virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
+    virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?onTestPassed\@ConsoleGameTestListener\@\@UEAAXAEAVBaseGameTestInstance\@gametest\@\@\@Z
      */
-    virtual void onTestPassed(class gametest::BaseGameTestInstance&);
+    virtual void onTestPassed(class gametest::BaseGameTestInstance&); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?onTestFailed\@ConsoleGameTestListener\@\@UEAAXAEAVBaseGameTestInstance\@gametest\@\@\@Z
      */
-    virtual void onTestFailed(class gametest::BaseGameTestInstance&);
+    virtual void onTestFailed(class gametest::BaseGameTestInstance&); // NOLINT
 };

@@ -4,12 +4,9 @@
 
 struct GameRelightingTestData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMERELIGHTINGTESTDATA
 public:
+    // prevent constructor by default
     GameRelightingTestData& operator=(GameRelightingTestData const&) = delete;
     GameRelightingTestData(GameRelightingTestData const&)            = delete;
     GameRelightingTestData()                                         = delete;
-#endif
-
-public:
 };

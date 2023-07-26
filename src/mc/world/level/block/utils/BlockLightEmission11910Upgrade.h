@@ -11,24 +11,23 @@ namespace BlockLightEmissionVersioning {
 
 class BlockLightEmission11910Upgrade {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKLIGHTEMISSIONVERSIONING_BLOCKLIGHTEMISSION11910UPGRADE
 public:
+    // prevent constructor by default
     BlockLightEmission11910Upgrade& operator=(BlockLightEmission11910Upgrade const&) = delete;
     BlockLightEmission11910Upgrade(BlockLightEmission11910Upgrade const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?previousSchema\@BlockLightEmission11910Upgrade\@BlockLightEmissionVersioning\@\@UEBAXAEAVSchemaFactory\@cereal\@\@\@Z
      */
-    virtual void previousSchema(class cereal::SchemaFactory&) const;
+    virtual void previousSchema(class cereal::SchemaFactory&) const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
@@ -37,11 +36,11 @@ public:
     virtual bool upgradeToNext(class rapidjson::GenericDocument<
                                struct rapidjson::UTF8<char>,
                                class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>,
-                               class rapidjson::CrtAllocator>&) const;
+                               class rapidjson::CrtAllocator>&) const; // NOLINT
     /**
      * @symbol ??0BlockLightEmission11910Upgrade\@BlockLightEmissionVersioning\@\@QEAA\@XZ
      */
-    MCAPI BlockLightEmission11910Upgrade();
+    MCAPI BlockLightEmission11910Upgrade(); // NOLINT
 };
 
 }; // namespace BlockLightEmissionVersioning

@@ -4,28 +4,27 @@
 
 class BasicTimer {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASICTIMER
 public:
+    // prevent constructor by default
     BasicTimer& operator=(BasicTimer const&) = delete;
     BasicTimer(BasicTimer const&)            = delete;
     BasicTimer()                             = delete;
-#endif
 
 public:
     /**
      * @symbol ??0BasicTimer\@\@QEAA\@NV?$function\@$$A6ANXZ\@std\@\@\@Z
      */
-    MCAPI BasicTimer(double, class std::function<double(void)>);
+    MCAPI BasicTimer(double, class std::function<double(void)>); // NOLINT
     /**
      * @symbol ?isFinished\@BasicTimer\@\@QEBA_NXZ
      */
-    MCAPI bool isFinished() const;
+    MCAPI bool isFinished() const; // NOLINT
     /**
      * @symbol ?resetTime\@BasicTimer\@\@QEAAXXZ
      */
-    MCAPI void resetTime();
+    MCAPI void resetTime(); // NOLINT
     /**
      * @symbol ??1BasicTimer\@\@QEAA\@XZ
      */
-    MCAPI ~BasicTimer();
+    MCAPI ~BasicTimer(); // NOLINT
 };

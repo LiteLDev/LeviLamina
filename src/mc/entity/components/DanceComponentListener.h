@@ -4,22 +4,21 @@
 
 class DanceComponentListener {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DANCECOMPONENTLISTENER
 public:
+    // prevent constructor by default
     DanceComponentListener& operator=(DanceComponentListener const&) = delete;
     DanceComponentListener(DanceComponentListener const&)            = delete;
     DanceComponentListener()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol ?setLevel\@DanceComponentListener\@\@QEAAXAEAVLevel\@\@\@Z
      */
-    MCAPI void setLevel(class Level&);
+    MCAPI void setLevel(class Level&); // NOLINT
     /**
      * @symbol ??1DanceComponentListener\@\@QEAA\@XZ
      */
-    MCAPI ~DanceComponentListener();
+    MCAPI ~DanceComponentListener(); // NOLINT
 
     // private:
     /**
@@ -33,7 +32,7 @@ public:
         struct ActorDefinitionIdentifier const&,
         bool,
         bool
-    );
+    ); // NOLINT
 
 private:
 };

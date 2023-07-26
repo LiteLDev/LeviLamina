@@ -4,12 +4,9 @@
 
 struct HttpPerformInfo {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HTTPPERFORMINFO
 public:
+    // prevent constructor by default
     HttpPerformInfo& operator=(HttpPerformInfo const&) = delete;
     HttpPerformInfo(HttpPerformInfo const&)            = delete;
     HttpPerformInfo()                                  = delete;
-#endif
-
-public:
 };

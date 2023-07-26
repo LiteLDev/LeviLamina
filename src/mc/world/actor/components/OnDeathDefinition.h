@@ -12,12 +12,11 @@ namespace JsonUtil { class EmptyClass; }
 
 struct OnDeathDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONDEATHDEFINITION
 public:
+    // prevent constructor by default
     OnDeathDefinition& operator=(OnDeathDefinition const&) = delete;
     OnDeathDefinition(OnDeathDefinition const&)            = delete;
     OnDeathDefinition()                                    = delete;
-#endif
 
 public:
     /**
@@ -26,5 +25,5 @@ public:
      */
     MCAPI static void
     buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnDeathDefinition>>&);
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnDeathDefinition>>&); // NOLINT
 };

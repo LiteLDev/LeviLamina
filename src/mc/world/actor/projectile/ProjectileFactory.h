@@ -9,38 +9,42 @@ namespace Json { class Value; }
 
 class ProjectileFactory {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROJECTILEFACTORY
 public:
+    // prevent constructor by default
     ProjectileFactory& operator=(ProjectileFactory const&) = delete;
     ProjectileFactory(ProjectileFactory const&)            = delete;
     ProjectileFactory()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ProjectileFactory\@\@QEAA\@AEAVLevel\@\@\@Z
      */
-    MCAPI ProjectileFactory(class Level&);
+    MCAPI ProjectileFactory(class Level&); // NOLINT
     /**
      * @symbol
      * ?shootProjectileFromDefinition\@ProjectileFactory\@\@QEAAPEAVActor\@\@AEBUActorDefinitionIdentifier\@\@PEAVMob\@\@VVec3\@\@HM\@Z
      */
-    MCAPI class Actor*
-    shootProjectileFromDefinition(struct ActorDefinitionIdentifier const&, class Mob*, class Vec3, int, float);
+    MCAPI class Actor* shootProjectileFromDefinition(
+        struct ActorDefinitionIdentifier const&,
+        class Mob*,
+        class Vec3,
+        int,
+        float
+    ); // NOLINT
     /**
      * @symbol
      * ?createSubcomponent\@ProjectileFactory\@\@SA?AV?$unique_ptr\@VOnHitSubcomponent\@\@U?$default_delete\@VOnHitSubcomponent\@\@\@std\@\@\@std\@\@AEAVValue\@Json\@\@AEBVSemVersion\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
      */
     MCAPI static std::unique_ptr<class OnHitSubcomponent>
-    createSubcomponent(class Json::Value&, class SemVersion const&, std::string const&);
+    createSubcomponent(class Json::Value&, class SemVersion const&, std::string const&); // NOLINT
     /**
      * @symbol ?initFactory\@ProjectileFactory\@\@SAXXZ
      */
-    MCAPI static void initFactory();
+    MCAPI static void initFactory(); // NOLINT
     /**
      * @symbol ?shutdown\@ProjectileFactory\@\@SAXXZ
      */
-    MCAPI static void shutdown();
+    MCAPI static void shutdown(); // NOLINT
 
     // private:
 
@@ -56,5 +60,5 @@ private:
         struct std::equal_to<std::string>,
         class std::allocator<
             struct std::pair<std::string const, class std::function<std::unique_ptr<class OnHitSubcomponent>(void)>>>>
-        mSubcomponentMap;
+        mSubcomponentMap; // NOLINT
 };

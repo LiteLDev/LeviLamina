@@ -4,18 +4,17 @@
 
 class IVillageManager {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IVILLAGEMANAGER
 public:
+    // prevent constructor by default
     IVillageManager& operator=(IVillageManager const&) = delete;
     IVillageManager(IVillageManager const&)            = delete;
     IVillageManager()                                  = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IVILLAGEMANAGER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IVillageManager();
+    MCVAPI ~IVillageManager(); // NOLINT
 #endif
 };

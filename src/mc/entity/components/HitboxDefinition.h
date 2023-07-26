@@ -12,27 +12,26 @@ namespace JsonUtil { class EmptyClass; }
 
 class HitboxDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HITBOXDEFINITION
 public:
+    // prevent constructor by default
     HitboxDefinition& operator=(HitboxDefinition const&) = delete;
     HitboxDefinition(HitboxDefinition const&)            = delete;
     HitboxDefinition()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ?addAABB\@HitboxDefinition\@\@QEAAXAEBUHitboxJson\@\@\@Z
      */
-    MCAPI void addAABB(struct HitboxJson const&);
+    MCAPI void addAABB(struct HitboxJson const&); // NOLINT
     /**
      * @symbol ?initialize\@HitboxDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVHitboxComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class HitboxComponent&) const;
+    MCAPI void initialize(class EntityContext&, class HitboxComponent&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@HitboxDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VHitboxDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
     buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HitboxDefinition>>&);
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HitboxDefinition>>&); // NOLINT
 };

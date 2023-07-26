@@ -8,6 +8,6 @@ namespace MobTravelIntentSystemImpl {
  * ?updatedMoveVelocity\@MobTravelIntentSystemImpl\@\@YAXAEBVStrictEntityContext\@\@AEAULocalMoveVelocityComponent\@\@AEAUMobRotationComponent\@\@AEAUMobTravelComponent\@\@\@Z
  */
 MCAPI void
-updatedMoveVelocity(class StrictEntityContext const&, struct LocalMoveVelocityComponent&, struct MobRotationComponent&, struct MobTravelComponent&);
+updatedMoveVelocity(class StrictEntityContext const&, struct LocalMoveVelocityComponent&, struct MobRotationComponent&, struct MobTravelComponent&); // NOLINT
 
 }; // namespace MobTravelIntentSystemImpl

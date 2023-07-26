@@ -4,16 +4,15 @@
 
 struct ActorDefinitionTriggeredEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDEFINITIONTRIGGEREDEVENT
 public:
+    // prevent constructor by default
     ActorDefinitionTriggeredEvent& operator=(ActorDefinitionTriggeredEvent const&) = delete;
     ActorDefinitionTriggeredEvent(ActorDefinitionTriggeredEvent const&)            = delete;
     ActorDefinitionTriggeredEvent()                                                = delete;
-#endif
 
 public:
     /**
      * @symbol ??1ActorDefinitionTriggeredEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorDefinitionTriggeredEvent();
+    MCAPI ~ActorDefinitionTriggeredEvent(); // NOLINT
 };

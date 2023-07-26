@@ -12,14 +12,12 @@ namespace Bedrock {
 
 class ResultLogger {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_RESULTLOGGER
 public:
+    // prevent constructor by default
     ResultLogger& operator=(ResultLogger const&) = delete;
     ResultLogger(ResultLogger const&)            = delete;
     ResultLogger()                               = delete;
-#endif
 
-public:
     // private:
     /**
      * @symbol
@@ -27,7 +25,7 @@ public:
      */
     MCAPI static class std::function<
         void(class std::optional<enum class Bedrock::LogLevel>, class std::optional<unsigned int>, class std::error_code const&, struct Bedrock::CallStack const&)>&
-    _logger();
+    _logger(); // NOLINT
     /**
      * @symbol
      * ?log\@ResultLogger\@Bedrock\@\@CAXV?$optional\@W4LogLevel\@Bedrock\@\@\@std\@\@V?$optional\@I\@4\@AEBVerror_code\@4\@AEBUCallStack\@2\@\@Z
@@ -36,7 +34,7 @@ public:
     log(class std::optional<enum class Bedrock::LogLevel>,
         class std::optional<unsigned int>,
         class std::error_code const&,
-        struct Bedrock::CallStack const&);
+        struct Bedrock::CallStack const&); // NOLINT
 
 private:
 };

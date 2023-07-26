@@ -14,34 +14,33 @@ namespace Bedrock::Threading::AsyncResult {
 
 class OnCanceled {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_THREADING_ASYNCRESULT_ONCANCELED
 public:
+    // prevent constructor by default
     OnCanceled& operator=(OnCanceled const&) = delete;
     OnCanceled(OnCanceled const&)            = delete;
     OnCanceled()                             = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 7
      * @symbol __unk_vfn_7
      */
-    virtual void __unk_vfn_7();
+    virtual void __unk_vfn_7(); // NOLINT
     /**
      * @vftbl 8
      * @symbol __unk_vfn_8
      */
-    virtual void __unk_vfn_8();
+    virtual void __unk_vfn_8(); // NOLINT
     /**
      * @vftbl 9
      * @symbol __unk_vfn_9
      */
-    virtual void __unk_vfn_9();
+    virtual void __unk_vfn_9(); // NOLINT
 };
 
 }; // namespace Bedrock::Threading::AsyncResult

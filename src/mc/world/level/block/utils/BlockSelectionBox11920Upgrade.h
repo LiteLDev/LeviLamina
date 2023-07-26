@@ -11,24 +11,23 @@ namespace BlockSelectionBoxVersioning {
 
 class BlockSelectionBox11920Upgrade {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSELECTIONBOXVERSIONING_BLOCKSELECTIONBOX11920UPGRADE
 public:
+    // prevent constructor by default
     BlockSelectionBox11920Upgrade& operator=(BlockSelectionBox11920Upgrade const&) = delete;
     BlockSelectionBox11920Upgrade(BlockSelectionBox11920Upgrade const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?previousSchema\@BlockSelectionBox11920Upgrade\@BlockSelectionBoxVersioning\@\@UEBAXAEAVSchemaFactory\@cereal\@\@\@Z
      */
-    virtual void previousSchema(class cereal::SchemaFactory&) const;
+    virtual void previousSchema(class cereal::SchemaFactory&) const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
@@ -37,11 +36,11 @@ public:
     virtual bool upgradeToNext(class rapidjson::GenericDocument<
                                struct rapidjson::UTF8<char>,
                                class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>,
-                               class rapidjson::CrtAllocator>&) const;
+                               class rapidjson::CrtAllocator>&) const; // NOLINT
     /**
      * @symbol ??0BlockSelectionBox11920Upgrade\@BlockSelectionBoxVersioning\@\@QEAA\@XZ
      */
-    MCAPI BlockSelectionBox11920Upgrade();
+    MCAPI BlockSelectionBox11920Upgrade(); // NOLINT
 };
 
 }; // namespace BlockSelectionBoxVersioning

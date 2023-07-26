@@ -4,16 +4,15 @@
 
 class MolangContextVariableMapWithCleanup {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGCONTEXTVARIABLEMAPWITHCLEANUP
 public:
+    // prevent constructor by default
     MolangContextVariableMapWithCleanup& operator=(MolangContextVariableMapWithCleanup const&) = delete;
     MolangContextVariableMapWithCleanup(MolangContextVariableMapWithCleanup const&)            = delete;
     MolangContextVariableMapWithCleanup()                                                      = delete;
-#endif
 
 public:
     /**
      * @symbol ??1MolangContextVariableMapWithCleanup\@\@QEAA\@XZ
      */
-    MCAPI ~MolangContextVariableMapWithCleanup();
+    MCAPI ~MolangContextVariableMapWithCleanup(); // NOLINT
 };

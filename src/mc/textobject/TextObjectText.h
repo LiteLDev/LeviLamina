@@ -9,42 +9,41 @@ namespace Json { class Value; }
 
 class TextObjectText {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEXTOBJECTTEXT
 public:
+    // prevent constructor by default
     TextObjectText& operator=(TextObjectText const&) = delete;
     TextObjectText(TextObjectText const&)            = delete;
     TextObjectText()                                 = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?asString\@TextObjectText\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string asString() const;
+    virtual std::string asString() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol ?asJsonValue\@TextObjectText\@\@UEBA?AVValue\@Json\@\@XZ
      */
-    virtual class Json::Value asJsonValue() const;
+    virtual class Json::Value asJsonValue() const; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?resolve\@TextObjectText\@\@UEBA?AVValue\@Json\@\@AEBUResolveData\@\@\@Z
      */
-    virtual class Json::Value resolve(struct ResolveData const&) const;
+    virtual class Json::Value resolve(struct ResolveData const&) const; // NOLINT
     /**
      * @symbol ??0TextObjectText\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI TextObjectText(std::string);
+    MCAPI TextObjectText(std::string); // NOLINT
     /**
      * @symbol
      * ?asJsonValue\@TextObjectText\@\@SA?AVValue\@Json\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI static class Json::Value asJsonValue(std::string const&);
+    MCAPI static class Json::Value asJsonValue(std::string const&); // NOLINT
 };

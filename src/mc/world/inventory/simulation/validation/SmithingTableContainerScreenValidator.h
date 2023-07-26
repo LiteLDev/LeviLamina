@@ -7,20 +7,19 @@
 
 class SmithingTableContainerScreenValidator : public ::ContainerScreenValidatorBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMITHINGTABLECONTAINERSCREENVALIDATOR
 public:
+    // prevent constructor by default
     SmithingTableContainerScreenValidator& operator=(SmithingTableContainerScreenValidator const&) = delete;
     SmithingTableContainerScreenValidator(SmithingTableContainerScreenValidator const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @symbol ??0SmithingTableContainerScreenValidator\@\@QEAA\@XZ
      */
-    MCAPI SmithingTableContainerScreenValidator();
+    MCAPI SmithingTableContainerScreenValidator(); // NOLINT
 };

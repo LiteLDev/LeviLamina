@@ -4,27 +4,26 @@
 
 class BalloonSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BALLOONSYSTEM
 public:
+    // prevent constructor by default
     BalloonSystem& operator=(BalloonSystem const&) = delete;
     BalloonSystem(BalloonSystem const&)            = delete;
     BalloonSystem()                                = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?tick\@BalloonSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
-    virtual void tick(class EntityRegistry&);
+    virtual void tick(class EntityRegistry&); // NOLINT
 };

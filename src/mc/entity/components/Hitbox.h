@@ -4,12 +4,9 @@
 
 struct Hitbox {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HITBOX
 public:
+    // prevent constructor by default
     Hitbox& operator=(Hitbox const&) = delete;
     Hitbox(Hitbox const&)            = delete;
     Hitbox()                         = delete;
-#endif
-
-public:
 };

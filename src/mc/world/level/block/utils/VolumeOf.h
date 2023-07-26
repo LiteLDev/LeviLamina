@@ -7,14 +7,11 @@ namespace ClientBlockPipeline {
 template <typename T0>
 class VolumeOf {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTBLOCKPIPELINE_VOLUMEOF
 public:
+    // prevent constructor by default
     VolumeOf& operator=(VolumeOf const&) = delete;
     VolumeOf(VolumeOf const&)            = delete;
     VolumeOf()                           = delete;
-#endif
-
-public:
 };
 
 }; // namespace ClientBlockPipeline

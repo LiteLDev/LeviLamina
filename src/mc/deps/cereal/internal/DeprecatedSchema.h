@@ -18,12 +18,11 @@ namespace cereal::internal {
 
 class DeprecatedSchema : public ::cereal::internal::BasicSchema {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CEREAL_INTERNAL_DEPRECATEDSCHEMA
 public:
+    // prevent constructor by default
     DeprecatedSchema& operator=(DeprecatedSchema const&) = delete;
     DeprecatedSchema(DeprecatedSchema const&)            = delete;
     DeprecatedSchema()                                   = delete;
-#endif
 
 public:
     /**
@@ -33,7 +32,7 @@ public:
      */
     virtual struct cereal::internal::Result
     doValidate(struct cereal::SchemaReader&, class entt::meta_any&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&)
-        const;
+        const; // NOLINT
     /**
      * @vftbl 1
      * @symbol
@@ -41,7 +40,7 @@ public:
      */
     virtual struct cereal::internal::Result
     doLoad(struct cereal::SchemaReader&, class entt::meta_any&, struct cereal::SerializerTraits const&, class entt::meta_any const&, class cereal::SerializerContext&)
-        const;
+        const; // NOLINT
 };
 
 }; // namespace cereal::internal

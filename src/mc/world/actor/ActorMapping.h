@@ -4,30 +4,29 @@
 
 struct ActorMapping {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORMAPPING
 public:
+    // prevent constructor by default
     ActorMapping& operator=(ActorMapping const&) = delete;
     ActorMapping(ActorMapping const&)            = delete;
     ActorMapping()                               = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ??0ActorMapping\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@00\@Z
      */
-    MCAPI ActorMapping(std::string const&, std::string const&, std::string const&);
+    MCAPI ActorMapping(std::string const&, std::string const&, std::string const&); // NOLINT
     /**
      * @symbol ??0ActorMapping\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
-    MCAPI ActorMapping(std::string const&, std::string const&);
+    MCAPI ActorMapping(std::string const&, std::string const&); // NOLINT
     /**
      * @symbol
      * ?getMappingName\@ActorMapping\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ActorTypeNamespaceRules\@\@\@Z
      */
-    MCAPI std::string getMappingName(enum class ActorTypeNamespaceRules) const;
+    MCAPI std::string getMappingName(enum class ActorTypeNamespaceRules) const; // NOLINT
     /**
      * @symbol ??1ActorMapping\@\@QEAA\@XZ
      */
-    MCAPI ~ActorMapping();
+    MCAPI ~ActorMapping(); // NOLINT
 };

@@ -4,19 +4,17 @@
 
 class ListenerInfo {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LISTENERINFO
 public:
+    // prevent constructor by default
     ListenerInfo& operator=(ListenerInfo const&) = delete;
     ListenerInfo(ListenerInfo const&)            = delete;
     ListenerInfo()                               = delete;
-#endif
 
-public:
     // private:
 
 private:
     /**
      * @symbol ?SQRT_FLT_MAX\@ListenerInfo\@\@0MB
      */
-    MCAPI static float const SQRT_FLT_MAX;
+    MCAPI static float const SQRT_FLT_MAX; // NOLINT
 };

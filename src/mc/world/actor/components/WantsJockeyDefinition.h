@@ -12,19 +12,18 @@ namespace JsonUtil { class EmptyClass; }
 
 struct WantsJockeyDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WANTSJOCKEYDEFINITION
 public:
+    // prevent constructor by default
     WantsJockeyDefinition& operator=(WantsJockeyDefinition const&) = delete;
     WantsJockeyDefinition(WantsJockeyDefinition const&)            = delete;
     WantsJockeyDefinition()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?buildSchema\@WantsJockeyDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UWantsJockeyDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct WantsJockeyDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      struct WantsJockeyDefinition>>&); // NOLINT
 };

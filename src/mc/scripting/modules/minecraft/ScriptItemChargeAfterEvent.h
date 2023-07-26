@@ -9,18 +9,18 @@
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace Scripting { class WeakLifetimeScope; }
+struct ItemChargeEvent;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 class ScriptItemChargeAfterEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTITEMCHARGEAFTEREVENT
 public:
+    // prevent constructor by default
     ScriptItemChargeAfterEvent& operator=(ScriptItemChargeAfterEvent const&) = delete;
     ScriptItemChargeAfterEvent(ScriptItemChargeAfterEvent const&)            = delete;
     ScriptItemChargeAfterEvent()                                             = delete;
-#endif
 
 public:
     /**
@@ -28,7 +28,7 @@ public:
      * ??0ScriptItemChargeAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@V?$StrongTypedObjectHandle\@VScriptItemStack\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBUItemChargeEvent\@\@AEBVWeakLifetimeScope\@3\@\@Z
      */
     MCAPI
-    ScriptItemChargeAfterEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, struct ItemChargeEvent const&, class Scripting::WeakLifetimeScope const&);
+    ScriptItemChargeAfterEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, struct ItemChargeEvent const&, class Scripting::WeakLifetimeScope const&); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

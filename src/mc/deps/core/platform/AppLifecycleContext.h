@@ -4,15 +4,14 @@
 
 class AppLifecycleContext {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_APPLIFECYCLECONTEXT
 public:
+    // prevent constructor by default
     AppLifecycleContext& operator=(AppLifecycleContext const&) = delete;
     AppLifecycleContext(AppLifecycleContext const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0AppLifecycleContext\@\@QEAA\@XZ
      */
-    MCAPI AppLifecycleContext();
+    MCAPI AppLifecycleContext(); // NOLINT
 };

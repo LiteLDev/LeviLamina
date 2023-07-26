@@ -4,52 +4,51 @@
 
 class SharedBuffs {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAREDBUFFS
 public:
+    // prevent constructor by default
     SharedBuffs& operator=(SharedBuffs const&) = delete;
     SharedBuffs(SharedBuffs const&)            = delete;
     SharedBuffs()                              = delete;
-#endif
 
 public:
     /**
      * @symbol ?ABSORPTION\@SharedBuffs\@\@2V?$shared_ptr\@VAttributeBuff\@\@\@std\@\@A
      */
-    MCAPI static class std::shared_ptr<class AttributeBuff> ABSORPTION;
+    MCAPI static class std::shared_ptr<class AttributeBuff> ABSORPTION; // NOLINT
     /**
      * @symbol ?FATAL_POISON\@SharedBuffs\@\@2V?$shared_ptr\@VAttributeBuff\@\@\@std\@\@A
      */
-    MCAPI static class std::shared_ptr<class AttributeBuff> FATAL_POISON;
+    MCAPI static class std::shared_ptr<class AttributeBuff> FATAL_POISON; // NOLINT
     /**
      * @symbol ?FOOD_POSIONING\@SharedBuffs\@\@2V?$shared_ptr\@VAttributeBuff\@\@\@std\@\@A
      */
-    MCAPI static class std::shared_ptr<class AttributeBuff> FOOD_POSIONING;
+    MCAPI static class std::shared_ptr<class AttributeBuff> FOOD_POSIONING; // NOLINT
     /**
      * @symbol ?HARM\@SharedBuffs\@\@2V?$shared_ptr\@VAttributeBuff\@\@\@std\@\@A
      */
-    MCAPI static class std::shared_ptr<class AttributeBuff> HARM;
+    MCAPI static class std::shared_ptr<class AttributeBuff> HARM; // NOLINT
     /**
      * @symbol ?HEAL\@SharedBuffs\@\@2V?$shared_ptr\@VAttributeBuff\@\@\@std\@\@A
      */
-    MCAPI static class std::shared_ptr<class AttributeBuff> HEAL;
+    MCAPI static class std::shared_ptr<class AttributeBuff> HEAL; // NOLINT
     /**
      * @symbol ?POISON\@SharedBuffs\@\@2V?$shared_ptr\@VAttributeBuff\@\@\@std\@\@A
      */
-    MCAPI static class std::shared_ptr<class AttributeBuff> POISON;
+    MCAPI static class std::shared_ptr<class AttributeBuff> POISON; // NOLINT
     /**
      * @symbol ?PUFFER_POSIONING\@SharedBuffs\@\@2V?$shared_ptr\@VAttributeBuff\@\@\@std\@\@A
      */
-    MCAPI static class std::shared_ptr<class AttributeBuff> PUFFER_POSIONING;
+    MCAPI static class std::shared_ptr<class AttributeBuff> PUFFER_POSIONING; // NOLINT
     /**
      * @symbol ?REGENERATION\@SharedBuffs\@\@2V?$shared_ptr\@VAttributeBuff\@\@\@std\@\@A
      */
-    MCAPI static class std::shared_ptr<class AttributeBuff> REGENERATION;
+    MCAPI static class std::shared_ptr<class AttributeBuff> REGENERATION; // NOLINT
     /**
      * @symbol ?SATURATION\@SharedBuffs\@\@2V?$shared_ptr\@VAttributeBuff\@\@\@std\@\@A
      */
-    MCAPI static class std::shared_ptr<class AttributeBuff> SATURATION;
+    MCAPI static class std::shared_ptr<class AttributeBuff> SATURATION; // NOLINT
     /**
      * @symbol ?WITHER\@SharedBuffs\@\@2V?$shared_ptr\@VAttributeBuff\@\@\@std\@\@A
      */
-    MCAPI static class std::shared_ptr<class AttributeBuff> WITHER;
+    MCAPI static class std::shared_ptr<class AttributeBuff> WITHER; // NOLINT
 };

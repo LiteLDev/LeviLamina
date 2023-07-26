@@ -4,16 +4,15 @@
 
 struct ParticleEventRequestQueueComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PARTICLEEVENTREQUESTQUEUECOMPONENT
 public:
+    // prevent constructor by default
     ParticleEventRequestQueueComponent& operator=(ParticleEventRequestQueueComponent const&) = delete;
     ParticleEventRequestQueueComponent(ParticleEventRequestQueueComponent const&)            = delete;
     ParticleEventRequestQueueComponent()                                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ParticleEventRequestQueueComponent\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI ParticleEventRequestQueueComponent(struct ParticleEventRequestQueueComponent&&);
+    MCAPI ParticleEventRequestQueueComponent(struct ParticleEventRequestQueueComponent&&); // NOLINT
 };

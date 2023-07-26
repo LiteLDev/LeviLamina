@@ -4,23 +4,22 @@
 
 class LegacyStructureBlockPalette {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYSTRUCTUREBLOCKPALETTE
 public:
+    // prevent constructor by default
     LegacyStructureBlockPalette& operator=(LegacyStructureBlockPalette const&) = delete;
     LegacyStructureBlockPalette(LegacyStructureBlockPalette const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0LegacyStructureBlockPalette\@\@QEAA\@XZ
      */
-    MCAPI LegacyStructureBlockPalette();
+    MCAPI LegacyStructureBlockPalette(); // NOLINT
     /**
      * @symbol ?getBlock\@LegacyStructureBlockPalette\@\@QEAAAEBVBlock\@\@H\@Z
      */
-    MCAPI class Block const& getBlock(int);
+    MCAPI class Block const& getBlock(int); // NOLINT
     /**
      * @symbol ??1LegacyStructureBlockPalette\@\@QEAA\@XZ
      */
-    MCAPI ~LegacyStructureBlockPalette();
+    MCAPI ~LegacyStructureBlockPalette(); // NOLINT
 };

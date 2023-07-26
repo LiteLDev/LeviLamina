@@ -7,19 +7,18 @@
 
 class EducationMetadataError : public ::PackError {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDUCATIONMETADATAERROR
 public:
+    // prevent constructor by default
     EducationMetadataError& operator=(EducationMetadataError const&) = delete;
     EducationMetadataError(EducationMetadataError const&)            = delete;
     EducationMetadataError()                                         = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 2
      * @symbol
@@ -31,7 +30,7 @@ public:
         struct std::hash<int>,
         struct std::equal_to<int>,
         class std::allocator<struct std::pair<int const, std::string>>> const&
-    getLocErrorMessageMap() const;
+    getLocErrorMessageMap() const; // NOLINT
     /**
      * @vftbl 3
      * @symbol
@@ -43,11 +42,11 @@ public:
         struct std::hash<int>,
         struct std::equal_to<int>,
         class std::allocator<struct std::pair<int const, std::string>>> const&
-    getEventErrorMessageMap() const;
+    getEventErrorMessageMap() const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EDUCATIONMETADATAERROR
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~EducationMetadataError();
+    MCVAPI ~EducationMetadataError(); // NOLINT
 #endif
 };

@@ -12,25 +12,24 @@ namespace JsonUtil { class EmptyClass; }
 
 class ExploreOutskirtsDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPLOREOUTSKIRTSDEFINITION
 public:
+    // prevent constructor by default
     ExploreOutskirtsDefinition& operator=(ExploreOutskirtsDefinition const&) = delete;
     ExploreOutskirtsDefinition(ExploreOutskirtsDefinition const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ExploreOutskirtsDefinition\@\@QEAA\@XZ
      */
-    MCAPI ExploreOutskirtsDefinition();
+    MCAPI ExploreOutskirtsDefinition(); // NOLINT
     /**
      * @symbol ?initialize\@ExploreOutskirtsDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVExploreOutskirtsGoal\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class ExploreOutskirtsGoal&) const;
+    MCAPI void initialize(class EntityContext&, class ExploreOutskirtsGoal&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@ExploreOutskirtsDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VExploreOutskirtsDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void
-    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ExploreOutskirtsDefinition>>&);
+    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ExploreOutskirtsDefinition>>&); // NOLINT
 };

@@ -4,19 +4,18 @@
 
 class CallbackTokenCancelState {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CALLBACKTOKENCANCELSTATE
 public:
+    // prevent constructor by default
     CallbackTokenCancelState& operator=(CallbackTokenCancelState const&) = delete;
     CallbackTokenCancelState(CallbackTokenCancelState const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0CallbackTokenCancelState\@\@QEAA\@XZ
      */
-    MCAPI CallbackTokenCancelState();
+    MCAPI CallbackTokenCancelState(); // NOLINT
     /**
      * @symbol ?wasCanceled\@CallbackTokenCancelState\@\@QEBA_NXZ
      */
-    MCAPI bool wasCanceled() const;
+    MCAPI bool wasCanceled() const; // NOLINT
 };

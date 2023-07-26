@@ -4,31 +4,30 @@
 
 class CommandItem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDITEM
 public:
+    // prevent constructor by default
     CommandItem& operator=(CommandItem const&) = delete;
     CommandItem(CommandItem const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0CommandItem\@\@QEAA\@XZ
      */
-    MCAPI CommandItem();
+    MCAPI CommandItem(); // NOLINT
     /**
      * @symbol ??0CommandItem\@\@QEAA\@HF_N\@Z
      */
-    MCAPI CommandItem(int, short, bool);
+    MCAPI CommandItem(int, short, bool); // NOLINT
     /**
      * @symbol ?createInstance\@CommandItem\@\@QEBA?AV?$optional\@VItemInstance\@\@\@std\@\@HHPEAVCommandOutput\@\@_N\@Z
      */
-    MCAPI class std::optional<class ItemInstance> createInstance(int, int, class CommandOutput*, bool) const;
+    MCAPI class std::optional<class ItemInstance> createInstance(int, int, class CommandOutput*, bool) const; // NOLINT
     /**
      * @symbol ?getId\@CommandItem\@\@QEBAHXZ
      */
-    MCAPI int getId() const;
+    MCAPI int getId() const; // NOLINT
     /**
      * @symbol ??BCommandItem\@\@QEBA_NXZ
      */
-    MCAPI operator bool() const;
+    MCAPI operator bool() const; // NOLINT
 };

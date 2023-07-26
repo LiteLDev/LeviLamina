@@ -4,16 +4,15 @@
 
 struct ItemTag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMTAG
 public:
+    // prevent constructor by default
     ItemTag& operator=(ItemTag const&) = delete;
     ItemTag(ItemTag const&)            = delete;
     ItemTag()                          = delete;
-#endif
 
 public:
     /**
      * @symbol ??1ItemTag\@\@QEAA\@XZ
      */
-    MCAPI ~ItemTag();
+    MCAPI ~ItemTag(); // NOLINT
 };

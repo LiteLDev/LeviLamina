@@ -4,16 +4,15 @@
 
 class LocalSpatialEntityFetcher {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOCALSPATIALENTITYFETCHER
 public:
+    // prevent constructor by default
     LocalSpatialEntityFetcher& operator=(LocalSpatialEntityFetcher const&) = delete;
     LocalSpatialEntityFetcher(LocalSpatialEntityFetcher const&)            = delete;
     LocalSpatialEntityFetcher()                                            = delete;
-#endif
 
 public:
     /**
      * @symbol ??1LocalSpatialEntityFetcher\@\@QEAA\@XZ
      */
-    MCAPI ~LocalSpatialEntityFetcher();
+    MCAPI ~LocalSpatialEntityFetcher(); // NOLINT
 };

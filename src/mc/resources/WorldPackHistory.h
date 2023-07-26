@@ -9,26 +9,25 @@ namespace Json { class Value; }
 
 class WorldPackHistory {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDPACKHISTORY
 public:
+    // prevent constructor by default
     WorldPackHistory& operator=(WorldPackHistory const&) = delete;
-#endif
 
 public:
     /**
      * @symbol ??0WorldPackHistory\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI WorldPackHistory(class WorldPackHistory const&);
+    MCAPI WorldPackHistory(class WorldPackHistory const&); // NOLINT
     /**
      * @symbol ??0WorldPackHistory\@\@QEAA\@XZ
      */
-    MCAPI WorldPackHistory();
+    MCAPI WorldPackHistory(); // NOLINT
     /**
      * @symbol ?initializeFromJson\@WorldPackHistory\@\@QEAA_NAEBVValue\@Json\@\@\@Z
      */
-    MCAPI bool initializeFromJson(class Json::Value const&);
+    MCAPI bool initializeFromJson(class Json::Value const&); // NOLINT
     /**
      * @symbol ??1WorldPackHistory\@\@QEAA\@XZ
      */
-    MCAPI ~WorldPackHistory();
+    MCAPI ~WorldPackHistory(); // NOLINT
 };

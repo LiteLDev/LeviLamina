@@ -4,16 +4,15 @@
 
 class MobResetPassengerYRotLimitSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBRESETPASSENGERYROTLIMITSYSTEM
 public:
+    // prevent constructor by default
     MobResetPassengerYRotLimitSystem& operator=(MobResetPassengerYRotLimitSystem const&) = delete;
     MobResetPassengerYRotLimitSystem(MobResetPassengerYRotLimitSystem const&)            = delete;
     MobResetPassengerYRotLimitSystem()                                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@MobResetPassengerYRotLimitSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
 };

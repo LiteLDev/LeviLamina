@@ -6,14 +6,11 @@ namespace Util {
 
 struct ActorReplacementParams {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_UTIL_ACTORREPLACEMENTPARAMS
 public:
+    // prevent constructor by default
     ActorReplacementParams& operator=(ActorReplacementParams const&) = delete;
     ActorReplacementParams(ActorReplacementParams const&)            = delete;
     ActorReplacementParams()                                         = delete;
-#endif
-
-public:
 };
 
 }; // namespace Util

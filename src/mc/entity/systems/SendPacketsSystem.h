@@ -4,16 +4,15 @@
 
 class SendPacketsSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SENDPACKETSSYSTEM
 public:
+    // prevent constructor by default
     SendPacketsSystem& operator=(SendPacketsSystem const&) = delete;
     SendPacketsSystem(SendPacketsSystem const&)            = delete;
     SendPacketsSystem()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSendPacketsSystem\@SendPacketsSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSendPacketsSystem();
+    MCAPI static struct TickingSystemWithInfo createSendPacketsSystem(); // NOLINT
 };

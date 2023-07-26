@@ -6,18 +6,17 @@ namespace Social::Events {
 
 class Property {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SOCIAL_EVENTS_PROPERTY
 public:
+    // prevent constructor by default
     Property& operator=(Property const&) = delete;
     Property(Property const&)            = delete;
     Property()                           = delete;
-#endif
 
 public:
     /**
      * @symbol ??1Property\@Events\@Social\@\@QEAA\@XZ
      */
-    MCAPI ~Property();
+    MCAPI ~Property(); // NOLINT
 };
 
 }; // namespace Social::Events

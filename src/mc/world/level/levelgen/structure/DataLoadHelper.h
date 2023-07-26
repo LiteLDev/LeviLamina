@@ -4,12 +4,9 @@
 
 class DataLoadHelper {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DATALOADHELPER
 public:
+    // prevent constructor by default
     DataLoadHelper& operator=(DataLoadHelper const&) = delete;
     DataLoadHelper(DataLoadHelper const&)            = delete;
     DataLoadHelper()                                 = delete;
-#endif
-
-public:
 };

@@ -6,10 +6,10 @@ namespace InsidePowderSnowBlockSystem {
 /**
  * @symbol ?createClientSideSpawnParticleSystem\@InsidePowderSnowBlockSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
  */
-MCAPI struct TickingSystemWithInfo createClientSideSpawnParticleSystem();
+MCAPI struct TickingSystemWithInfo createClientSideSpawnParticleSystem(); // NOLINT
 /**
  * @symbol ?createServerSideClearFireSystem\@InsidePowderSnowBlockSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
  */
-MCAPI struct TickingSystemWithInfo createServerSideClearFireSystem();
+MCAPI struct TickingSystemWithInfo createServerSideClearFireSystem(); // NOLINT
 
 }; // namespace InsidePowderSnowBlockSystem

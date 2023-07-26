@@ -4,12 +4,9 @@
 
 struct FilterContext {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERCONTEXT
 public:
+    // prevent constructor by default
     FilterContext& operator=(FilterContext const&) = delete;
     FilterContext(FilterContext const&)            = delete;
     FilterContext()                                = delete;
-#endif
-
-public:
 };

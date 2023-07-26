@@ -4,20 +4,19 @@
 
 class IllagerBeastBlockedComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ILLAGERBEASTBLOCKEDCOMPONENT
 public:
+    // prevent constructor by default
     IllagerBeastBlockedComponent& operator=(IllagerBeastBlockedComponent const&) = delete;
     IllagerBeastBlockedComponent(IllagerBeastBlockedComponent const&)            = delete;
     IllagerBeastBlockedComponent()                                               = delete;
-#endif
 
 public:
     /**
      * @symbol ?initFromDefinition\@IllagerBeastBlockedComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void initFromDefinition(class Actor&);
+    MCAPI void initFromDefinition(class Actor&); // NOLINT
     /**
      * @symbol ?onBlocked\@IllagerBeastBlockedComponent\@\@QEAAXAEAVActor\@\@AEBVActorDamageSource\@\@0\@Z
      */
-    MCAPI void onBlocked(class Actor&, class ActorDamageSource const&, class Actor&);
+    MCAPI void onBlocked(class Actor&, class ActorDamageSource const&, class Actor&); // NOLINT
 };

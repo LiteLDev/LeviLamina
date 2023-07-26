@@ -2,16 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct ActorUniqueID;
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class IScriptEventSignalAsync {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_ISCRIPTEVENTSIGNALASYNC
 public:
+    // prevent constructor by default
     IScriptEventSignalAsync& operator=(IScriptEventSignalAsync const&) = delete;
     IScriptEventSignalAsync(IScriptEventSignalAsync const&)            = delete;
     IScriptEventSignalAsync()                                          = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_ISCRIPTEVENTSIGNALASYNC
@@ -19,11 +23,11 @@ public:
      * @symbol
      * ?enqueueClosureRemovalForActor\@IScriptEventSignalAsync\@ScriptModuleMinecraft\@\@UEAAXUActorUniqueID\@\@\@Z
      */
-    MCVAPI void enqueueClosureRemovalForActor(struct ActorUniqueID);
+    MCVAPI void enqueueClosureRemovalForActor(struct ActorUniqueID); // NOLINT
     /**
      * @symbol ?isActorSignal\@IScriptEventSignalAsync\@ScriptModuleMinecraft\@\@UEAA_NXZ
      */
-    MCVAPI bool isActorSignal();
+    MCVAPI bool isActorSignal(); // NOLINT
 #endif
 };
 

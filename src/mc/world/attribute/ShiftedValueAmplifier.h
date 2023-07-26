@@ -4,26 +4,25 @@
 
 class ShiftedValueAmplifier {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHIFTEDVALUEAMPLIFIER
 public:
+    // prevent constructor by default
     ShiftedValueAmplifier& operator=(ShiftedValueAmplifier const&) = delete;
     ShiftedValueAmplifier(ShiftedValueAmplifier const&)            = delete;
     ShiftedValueAmplifier()                                        = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?getAmount\@ShiftedValueAmplifier\@\@UEBAMHM\@Z
      */
-    virtual float getAmount(int, float) const;
+    virtual float getAmount(int, float) const; // NOLINT
     /**
      * @symbol ??0ShiftedValueAmplifier\@\@QEAA\@HM\@Z
      */
-    MCAPI ShiftedValueAmplifier(int, float);
+    MCAPI ShiftedValueAmplifier(int, float); // NOLINT
 };

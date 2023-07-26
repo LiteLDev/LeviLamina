@@ -10,19 +10,18 @@
 
 class TeleportInterpolatorResetSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TELEPORTINTERPOLATORRESETSYSTEM
 public:
+    // prevent constructor by default
     TeleportInterpolatorResetSystem& operator=(TeleportInterpolatorResetSystem const&) = delete;
     TeleportInterpolatorResetSystem(TeleportInterpolatorResetSystem const&)            = delete;
     TeleportInterpolatorResetSystem()                                                  = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?createTeleportInterpolatorResetSystem\@TeleportInterpolatorResetSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createTeleportInterpolatorResetSystem();
+    MCAPI static struct TickingSystemWithInfo createTeleportInterpolatorResetSystem(); // NOLINT
     /**
      * @symbol
      * ?tickTeleportInterpolatorResetSystem\@TeleportInterpolatorResetSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UServerPlayerComponentFlag\@\@\@\@\@\@V?$Optional\@UMovementInterpolatorComponent\@\@\@\@$$CBUPlayerPositionModeComponent\@\@UFallDistanceComponent\@\@UStateVectorComponent\@\@\@\@\@Z
@@ -36,5 +35,5 @@ public:
                                                           class Optional<struct MovementInterpolatorComponent>,
                                                           struct PlayerPositionModeComponent const,
                                                           struct FallDistanceComponent,
-                                                          struct StateVectorComponent>);
+                                                          struct StateVectorComponent>); // NOLINT
 };

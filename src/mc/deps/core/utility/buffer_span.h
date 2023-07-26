@@ -5,12 +5,9 @@
 template <typename T0>
 class buffer_span {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BUFFER_SPAN
 public:
+    // prevent constructor by default
     buffer_span& operator=(buffer_span const&) = delete;
     buffer_span(buffer_span const&)            = delete;
     buffer_span()                              = delete;
-#endif
-
-public:
 };

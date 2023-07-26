@@ -4,36 +4,35 @@
 
 class GameEventListenerComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEEVENTLISTENERCOMPONENT
 public:
+    // prevent constructor by default
     GameEventListenerComponent& operator=(GameEventListenerComponent const&) = delete;
     GameEventListenerComponent(GameEventListenerComponent const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0GameEventListenerComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI GameEventListenerComponent(class GameEventListenerComponent&&);
+    MCAPI GameEventListenerComponent(class GameEventListenerComponent&&); // NOLINT
     /**
      * @symbol ??0GameEventListenerComponent\@\@QEAA\@XZ
      */
-    MCAPI GameEventListenerComponent();
+    MCAPI GameEventListenerComponent(); // NOLINT
     /**
      * @symbol
      * ?initialize\@GameEventListenerComponent\@\@QEAA_NV?$unique_ptr\@VGameEventDynamicRegistration\@\@U?$default_delete\@VGameEventDynamicRegistration\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI bool initialize(std::unique_ptr<class GameEventDynamicRegistration>);
+    MCAPI bool initialize(std::unique_ptr<class GameEventDynamicRegistration>); // NOLINT
     /**
      * @symbol ??4GameEventListenerComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class GameEventListenerComponent& operator=(class GameEventListenerComponent&&);
+    MCAPI class GameEventListenerComponent& operator=(class GameEventListenerComponent&&); // NOLINT
     /**
      * @symbol ?tryGetListenerRegistration\@GameEventListenerComponent\@\@QEBAPEAVGameEventDynamicRegistration\@\@XZ
      */
-    MCAPI class GameEventDynamicRegistration* tryGetListenerRegistration() const;
+    MCAPI class GameEventDynamicRegistration* tryGetListenerRegistration() const; // NOLINT
     /**
      * @symbol ??1GameEventListenerComponent\@\@QEAA\@XZ
      */
-    MCAPI ~GameEventListenerComponent();
+    MCAPI ~GameEventListenerComponent(); // NOLINT
 };

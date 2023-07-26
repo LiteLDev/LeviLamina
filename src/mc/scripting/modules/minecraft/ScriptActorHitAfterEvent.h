@@ -9,36 +9,35 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptActorHitAfterEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTACTORHITAFTEREVENT
 public:
+    // prevent constructor by default
     ScriptActorHitAfterEvent& operator=(ScriptActorHitAfterEvent const&) = delete;
     ScriptActorHitAfterEvent()                                           = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ScriptActorHitAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
      */
-    MCAPI ScriptActorHitAfterEvent(struct ScriptModuleMinecraft::ScriptActorHitAfterEvent const&);
+    MCAPI ScriptActorHitAfterEvent(struct ScriptModuleMinecraft::ScriptActorHitAfterEvent const&); // NOLINT
     /**
      * @symbol ??0ScriptActorHitAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@$$QEAU01\@\@Z
      */
-    MCAPI ScriptActorHitAfterEvent(struct ScriptModuleMinecraft::ScriptActorHitAfterEvent&&);
+    MCAPI ScriptActorHitAfterEvent(struct ScriptModuleMinecraft::ScriptActorHitAfterEvent&&); // NOLINT
     /**
      * @symbol ??4ScriptActorHitAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptActorHitAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptActorHitAfterEvent&&);
+    operator=(struct ScriptModuleMinecraft::ScriptActorHitAfterEvent&&); // NOLINT
     /**
      * @symbol ??1ScriptActorHitAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptActorHitAfterEvent();
+    MCAPI ~ScriptActorHitAfterEvent(); // NOLINT
     /**
      * @symbol
      * ?bindV010\@ScriptActorHitAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptActorHitAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorHitAfterEvent>
-    bindV010();
+    bindV010(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

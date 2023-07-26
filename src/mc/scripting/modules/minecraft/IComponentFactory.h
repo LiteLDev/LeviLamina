@@ -6,14 +6,11 @@ namespace ScriptModuleMinecraft {
 
 class IComponentFactory {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_ICOMPONENTFACTORY
 public:
+    // prevent constructor by default
     IComponentFactory& operator=(IComponentFactory const&) = delete;
     IComponentFactory(IComponentFactory const&)            = delete;
     IComponentFactory()                                    = delete;
-#endif
-
-public:
 };
 
 }; // namespace ScriptModuleMinecraft

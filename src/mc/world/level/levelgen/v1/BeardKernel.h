@@ -4,21 +4,20 @@
 
 struct BeardKernel {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEARDKERNEL
 public:
+    // prevent constructor by default
     BeardKernel& operator=(BeardKernel const&) = delete;
     BeardKernel(BeardKernel const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0BeardKernel\@\@QEAA\@XZ
      */
-    MCAPI BeardKernel();
+    MCAPI BeardKernel(); // NOLINT
 
     // private:
     /**
      * @symbol ?createBeardKernel\@BeardKernel\@\@AEAA?BV?$array\@M$0DGAA\@\@std\@\@XZ
      */
-    MCAPI class std::array<float, 13824> const createBeardKernel();
+    MCAPI class std::array<float, 13824> const createBeardKernel(); // NOLINT
 };

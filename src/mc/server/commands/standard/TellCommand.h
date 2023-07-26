@@ -7,28 +7,27 @@
 
 class TellCommand : public ::Command {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TELLCOMMAND
 public:
+    // prevent constructor by default
     TellCommand& operator=(TellCommand const&) = delete;
     TellCommand(TellCommand const&)            = delete;
     TellCommand()                              = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?execute\@TellCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol ?setup\@TellCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
-    MCAPI static void setup(class CommandRegistry&);
+    MCAPI static void setup(class CommandRegistry&); // NOLINT
 
     // private:
     /**
@@ -36,7 +35,7 @@ public:
      * ?_sendMessageToPlayer\@TellCommand\@\@CAXAEAVPlayer\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1AEBUCommandOriginIdentity\@\@AEAVLevel\@\@\@Z
      */
     MCAPI static void
-    _sendMessageToPlayer(class Player&, std::string const&, std::string const&, struct CommandOriginIdentity const&, class Level&);
+    _sendMessageToPlayer(class Player&, std::string const&, std::string const&, struct CommandOriginIdentity const&, class Level&); // NOLINT
 
 private:
 };

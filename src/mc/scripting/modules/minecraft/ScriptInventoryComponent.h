@@ -19,81 +19,81 @@ namespace ScriptModuleMinecraft {
 
 class ScriptInventoryComponent : public ::ScriptModuleMinecraft::ScriptActorComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTINVENTORYCOMPONENT
 public:
+    // prevent constructor by default
     ScriptInventoryComponent& operator=(ScriptInventoryComponent const&) = delete;
     ScriptInventoryComponent(ScriptInventoryComponent const&)            = delete;
     ScriptInventoryComponent()                                           = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTINVENTORYCOMPONENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptInventoryComponent();
+    MCVAPI ~ScriptInventoryComponent(); // NOLINT
 #endif
     /**
      * @symbol
      * ?getAdditionalSlotsPerStrength\@ScriptInventoryComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getAdditionalSlotsPerStrength() const;
+    MCAPI class Scripting::Result<int> getAdditionalSlotsPerStrength() const; // NOLINT
     /**
      * @symbol
      * ?getCanBeSiphonedFrom\@ScriptInventoryComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@_N\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<bool> getCanBeSiphonedFrom() const;
+    MCAPI class Scripting::Result<bool> getCanBeSiphonedFrom() const; // NOLINT
     /**
      * @symbol
      * ?getContainerType\@ScriptInventoryComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<std::string> getContainerType() const;
+    MCAPI class Scripting::Result<std::string> getContainerType() const; // NOLINT
     /**
      * @symbol ?getInventorySize\@ScriptInventoryComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getInventorySize() const;
+    MCAPI class Scripting::Result<int> getInventorySize() const; // NOLINT
     /**
      * @symbol
      * ?getOrCreateContainer\@ScriptInventoryComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@V?$StrongTypedObjectHandle\@VScriptContainerWrapper\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptContainerWrapper>>
-    getOrCreateContainer();
+    getOrCreateContainer(); // NOLINT
     /**
      * @symbol
      * ?getOrCreateContainerV010\@ScriptInventoryComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@V?$WeakTypedObjectHandle\@VScriptInventoryComponentContainer\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<
         class Scripting::WeakTypedObjectHandle<class ScriptModuleMinecraft::ScriptInventoryComponentContainer>>
-    getOrCreateContainerV010();
+    getOrCreateContainerV010(); // NOLINT
     /**
      * @symbol ?getPrivate\@ScriptInventoryComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@_N\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<bool> getPrivate() const;
+    MCAPI class Scripting::Result<bool> getPrivate() const; // NOLINT
     /**
      * @symbol
      * ?getRestrictToOwner\@ScriptInventoryComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@_N\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<bool> getRestrictToOwner() const;
+    MCAPI class Scripting::Result<bool> getRestrictToOwner() const; // NOLINT
     /**
      * @symbol ??4ScriptInventoryComponent\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraft::ScriptInventoryComponent&
-    operator=(class ScriptModuleMinecraft::ScriptInventoryComponent&&);
-    /**
-     * @symbol ?ComponentId\@ScriptInventoryComponent\@ScriptModuleMinecraft\@\@2PEBDEB
-     */
-    MCAPI static char const* ComponentId;
+    operator=(class ScriptModuleMinecraft::ScriptInventoryComponent&&); // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptInventoryComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptInventoryComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptInventoryComponent> bind();
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptInventoryComponent>
+    bind(); // NOLINT
+    /**
+     * @symbol ?ComponentId\@ScriptInventoryComponent\@ScriptModuleMinecraft\@\@2PEBDEB
+     */
+    MCAPI static char const* ComponentId; // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -6,14 +6,11 @@ namespace Util {
 
 struct ReplacementResults {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_UTIL_REPLACEMENTRESULTS
 public:
+    // prevent constructor by default
     ReplacementResults& operator=(ReplacementResults const&) = delete;
     ReplacementResults(ReplacementResults const&)            = delete;
     ReplacementResults()                                     = delete;
-#endif
-
-public:
 };
 
 }; // namespace Util

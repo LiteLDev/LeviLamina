@@ -4,18 +4,17 @@
 
 class ITickingSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITICKINGSYSTEM
 public:
+    // prevent constructor by default
     ITickingSystem& operator=(ITickingSystem const&) = delete;
     ITickingSystem(ITickingSystem const&)            = delete;
     ITickingSystem()                                 = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITICKINGSYSTEM
     /**
      * @symbol ?singleTick\@ITickingSystem\@\@UEAAXAEAVEntityRegistry\@\@AEAVEntityContext\@\@\@Z
      */
-    MCVAPI void singleTick(class EntityRegistry&, class EntityContext&);
+    MCVAPI void singleTick(class EntityRegistry&, class EntityContext&); // NOLINT
 #endif
 };

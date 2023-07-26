@@ -4,12 +4,9 @@
 
 class ICameraItemComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICAMERAITEMCOMPONENT
 public:
+    // prevent constructor by default
     ICameraItemComponent& operator=(ICameraItemComponent const&) = delete;
     ICameraItemComponent(ICameraItemComponent const&)            = delete;
     ICameraItemComponent()                                       = delete;
-#endif
-
-public:
 };

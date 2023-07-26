@@ -18,12 +18,9 @@ public:
 
     enum class SignalServiceConnectState {};
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ICONNECTIONEVENTING
 public:
+    // prevent constructor by default
     IConnectionEventing& operator=(IConnectionEventing const&) = delete;
     IConnectionEventing(IConnectionEventing const&)            = delete;
     IConnectionEventing()                                      = delete;
-#endif
-
-public:
 };

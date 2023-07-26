@@ -14,133 +14,133 @@ namespace Core { class Path; }
 
 class DirectoryPackWithEncryptionAccessStrategy : public ::PackAccessStrategy {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIRECTORYPACKWITHENCRYPTIONACCESSSTRATEGY
 public:
+    // prevent constructor by default
     DirectoryPackWithEncryptionAccessStrategy& operator=(DirectoryPackWithEncryptionAccessStrategy const&) = delete;
     DirectoryPackWithEncryptionAccessStrategy(DirectoryPackWithEncryptionAccessStrategy const&)            = delete;
     DirectoryPackWithEncryptionAccessStrategy()                                                            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?getPackSize\@DirectoryPackWithEncryptionAccessStrategy\@\@UEBA_KXZ
      */
-    virtual unsigned __int64 getPackSize() const;
+    virtual unsigned __int64 getPackSize() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol ?getPackLocation\@DirectoryPackWithEncryptionAccessStrategy\@\@UEBAAEBVResourceLocation\@\@XZ
      */
-    virtual class ResourceLocation const& getPackLocation() const;
+    virtual class ResourceLocation const& getPackLocation() const; // NOLINT
     /**
      * @vftbl 3
      * @symbol
      * ?getPackName\@DirectoryPackWithEncryptionAccessStrategy\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string const& getPackName() const;
+    virtual std::string const& getPackName() const; // NOLINT
     /**
      * @vftbl 4
      * @symbol ?isWritable\@DirectoryPackWithEncryptionAccessStrategy\@\@UEBA_NXZ
      */
-    virtual bool isWritable() const;
+    virtual bool isWritable() const; // NOLINT
     /**
      * @vftbl 5
      * @symbol ?setIsTrusted\@DirectoryPackWithEncryptionAccessStrategy\@\@UEAAX_N\@Z
      */
-    virtual void setIsTrusted(bool);
+    virtual void setIsTrusted(bool); // NOLINT
     /**
      * @vftbl 6
      * @symbol ?isTrusted\@DirectoryPackWithEncryptionAccessStrategy\@\@UEBA_NXZ
      */
-    virtual bool isTrusted() const;
+    virtual bool isTrusted() const; // NOLINT
     /**
      * @vftbl 7
      * @symbol ?hasAsset\@DirectoryPackWithEncryptionAccessStrategy\@\@UEBA_NAEBVPath\@Core\@\@_N1\@Z
      */
-    virtual bool hasAsset(class Core::Path const&, bool, bool) const;
+    virtual bool hasAsset(class Core::Path const&, bool, bool) const; // NOLINT
     /**
      * @vftbl 8
      * @symbol ?hasFolder\@DirectoryPackWithEncryptionAccessStrategy\@\@UEBA_NAEBVPath\@Core\@\@\@Z
      */
-    virtual bool hasFolder(class Core::Path const&) const;
+    virtual bool hasFolder(class Core::Path const&) const; // NOLINT
     /**
      * @vftbl 9
      * @symbol
      * ?getAsset\@DirectoryPackWithEncryptionAccessStrategy\@\@UEBA_NAEBVPath\@Core\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
-    virtual bool getAsset(class Core::Path const&, std::string&, bool) const;
+    virtual bool getAsset(class Core::Path const&, std::string&, bool) const; // NOLINT
     /**
      * @vftbl 10
      * @symbol
      * ?deleteAsset\@DirectoryPackWithEncryptionAccessStrategy\@\@UEAA_NAEBV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@\@Z
      */
-    virtual bool deleteAsset(class Core::PathBuffer<std::string> const&);
+    virtual bool deleteAsset(class Core::PathBuffer<std::string> const&); // NOLINT
     /**
      * @vftbl 11
      * @symbol
      * ?writeAsset\@DirectoryPackWithEncryptionAccessStrategy\@\@UEAA_NAEBVPath\@Core\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual bool writeAsset(class Core::Path const&, std::string const&);
+    virtual bool writeAsset(class Core::Path const&, std::string const&); // NOLINT
     /**
      * @vftbl 12
      * @symbol
      * ?forEachIn\@DirectoryPackWithEncryptionAccessStrategy\@\@UEBAXAEBVPath\@Core\@\@V?$function\@$$A6AXAEBVPath\@Core\@\@\@Z\@std\@\@_N\@Z
      */
-    virtual void forEachIn(class Core::Path const&, class std::function<void(class Core::Path const&)>, bool) const;
+    virtual void
+    forEachIn(class Core::Path const&, class std::function<void(class Core::Path const&)>, bool) const; // NOLINT
     /**
      * @vftbl 14
      * @symbol ?getStrategyType\@DirectoryPackWithEncryptionAccessStrategy\@\@UEBA?AW4PackAccessStrategyType\@\@XZ
      */
-    virtual enum class PackAccessStrategyType getStrategyType() const;
+    virtual enum class PackAccessStrategyType getStrategyType() const; // NOLINT
     /**
      * @vftbl 16
      * @symbol
      * ?createSubPack\@DirectoryPackWithEncryptionAccessStrategy\@\@UEBA?AV?$unique_ptr\@VPackAccessStrategy\@\@U?$default_delete\@VPackAccessStrategy\@\@\@std\@\@\@std\@\@AEBVPath\@Core\@\@\@Z
      */
-    virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const;
+    virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const; // NOLINT
     /**
      * @vftbl 17
      * @symbol
      * ?generateAssetSet\@DirectoryPackWithEncryptionAccessStrategy\@\@UEAA?AW4PackAccessAssetGenerationResult\@\@XZ
      */
-    virtual enum class PackAccessAssetGenerationResult generateAssetSet();
+    virtual enum class PackAccessAssetGenerationResult generateAssetSet(); // NOLINT
     /**
      * @vftbl 19
      * @symbol ?unload\@DirectoryPackWithEncryptionAccessStrategy\@\@UEAAXXZ
      */
-    virtual void unload();
+    virtual void unload(); // NOLINT
     /**
      * @vftbl 20
      * @symbol ?hasUpgradeFiles\@DirectoryPackWithEncryptionAccessStrategy\@\@UEBA_NXZ
      */
-    virtual bool hasUpgradeFiles() const;
+    virtual bool hasUpgradeFiles() const; // NOLINT
     /**
      * @vftbl 21
      * @symbol ?readContentIdentity\@DirectoryPackWithEncryptionAccessStrategy\@\@UEBA?AVContentIdentity\@\@XZ
      */
-    virtual class ContentIdentity readContentIdentity() const;
+    virtual class ContentIdentity readContentIdentity() const; // NOLINT
     /**
      * @symbol
      * ??0DirectoryPackWithEncryptionAccessStrategy\@\@QEAA\@AEBVResourceLocation\@\@0AEBV?$not_null\@V?$NonOwnerPointer\@$$CBVIContentKeyProvider\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
     MCAPI
-    DirectoryPackWithEncryptionAccessStrategy(class ResourceLocation const&, class ResourceLocation const&, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&);
+    DirectoryPackWithEncryptionAccessStrategy(class ResourceLocation const&, class ResourceLocation const&, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&); // NOLINT
 
     // private:
     /**
      * @symbol
      * ?_getUnencryptedAsset\@DirectoryPackWithEncryptionAccessStrategy\@\@AEBA_NAEBVPath\@Core\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI bool _getUnencryptedAsset(class Core::Path const&, std::string&) const;
+    MCAPI bool _getUnencryptedAsset(class Core::Path const&, std::string&) const; // NOLINT
     /**
      * @symbol ?_hasUnencryptedAsset\@DirectoryPackWithEncryptionAccessStrategy\@\@AEBA_NAEBVPath\@Core\@\@\@Z
      */
-    MCAPI bool _hasUnencryptedAsset(class Core::Path const&) const;
+    MCAPI bool _hasUnencryptedAsset(class Core::Path const&) const; // NOLINT
 
 private:
 };

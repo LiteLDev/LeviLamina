@@ -6,14 +6,11 @@ namespace CaveFeatureUtils {
 
 struct CarvingParameters {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAVEFEATUREUTILS_CARVINGPARAMETERS
 public:
+    // prevent constructor by default
     CarvingParameters& operator=(CarvingParameters const&) = delete;
     CarvingParameters(CarvingParameters const&)            = delete;
     CarvingParameters()                                    = delete;
-#endif
-
-public:
 };
 
 }; // namespace CaveFeatureUtils

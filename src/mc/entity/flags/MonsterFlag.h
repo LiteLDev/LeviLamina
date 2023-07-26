@@ -4,12 +4,9 @@
 
 struct MonsterFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MONSTERFLAG
 public:
+    // prevent constructor by default
     MonsterFlag& operator=(MonsterFlag const&) = delete;
     MonsterFlag(MonsterFlag const&)            = delete;
     MonsterFlag()                              = delete;
-#endif
-
-public:
 };

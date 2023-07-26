@@ -7,20 +7,19 @@
 
 class MaterialReducerContainerScreenValidator : public ::ContainerScreenValidatorBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MATERIALREDUCERCONTAINERSCREENVALIDATOR
 public:
+    // prevent constructor by default
     MaterialReducerContainerScreenValidator& operator=(MaterialReducerContainerScreenValidator const&) = delete;
     MaterialReducerContainerScreenValidator(MaterialReducerContainerScreenValidator const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @symbol ??0MaterialReducerContainerScreenValidator\@\@QEAA\@XZ
      */
-    MCAPI MaterialReducerContainerScreenValidator();
+    MCAPI MaterialReducerContainerScreenValidator(); // NOLINT
 };

@@ -9,42 +9,41 @@ namespace mce { class UUID; }
 
 class UserEntityIdentifierComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_USERENTITYIDENTIFIERCOMPONENT
 public:
+    // prevent constructor by default
     UserEntityIdentifierComponent& operator=(UserEntityIdentifierComponent const&) = delete;
     UserEntityIdentifierComponent(UserEntityIdentifierComponent const&)            = delete;
     UserEntityIdentifierComponent()                                                = delete;
-#endif
 
 public:
     /**
      * @symbol ??0UserEntityIdentifierComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI UserEntityIdentifierComponent(class UserEntityIdentifierComponent&&);
+    MCAPI UserEntityIdentifierComponent(class UserEntityIdentifierComponent&&); // NOLINT
     /**
      * @symbol
      * ??0UserEntityIdentifierComponent\@\@QEAA\@AEBVNetworkIdentifier\@\@W4SubClientId\@\@VUUID\@mce\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VCertificate\@\@U?$default_delete\@VCertificate\@\@\@std\@\@\@6\@\@Z
      */
     MCAPI
-    UserEntityIdentifierComponent(class NetworkIdentifier const&, enum class SubClientId, class mce::UUID, std::string const&, std::unique_ptr<class Certificate>);
+    UserEntityIdentifierComponent(class NetworkIdentifier const&, enum class SubClientId, class mce::UUID, std::string const&, std::unique_ptr<class Certificate>); // NOLINT
     /**
      * @symbol ?isPrimaryClient\@UserEntityIdentifierComponent\@\@QEBA_NXZ
      */
-    MCAPI bool isPrimaryClient() const;
+    MCAPI bool isPrimaryClient() const; // NOLINT
     /**
      * @symbol ??4UserEntityIdentifierComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class UserEntityIdentifierComponent& operator=(class UserEntityIdentifierComponent&&);
+    MCAPI class UserEntityIdentifierComponent& operator=(class UserEntityIdentifierComponent&&); // NOLINT
     /**
      * @symbol ??1UserEntityIdentifierComponent\@\@QEAA\@XZ
      */
-    MCAPI ~UserEntityIdentifierComponent();
+    MCAPI ~UserEntityIdentifierComponent(); // NOLINT
     /**
      * @symbol ?tryGetFromEntity\@UserEntityIdentifierComponent\@\@SAPEAV1\@AEAVEntityContext\@\@\@Z
      */
-    MCAPI static class UserEntityIdentifierComponent* tryGetFromEntity(class EntityContext&);
+    MCAPI static class UserEntityIdentifierComponent* tryGetFromEntity(class EntityContext&); // NOLINT
     /**
      * @symbol ?tryGetFromEntity\@UserEntityIdentifierComponent\@\@SAPEBV1\@AEBVEntityContext\@\@\@Z
      */
-    MCAPI static class UserEntityIdentifierComponent const* tryGetFromEntity(class EntityContext const&);
+    MCAPI static class UserEntityIdentifierComponent const* tryGetFromEntity(class EntityContext const&); // NOLINT
 };

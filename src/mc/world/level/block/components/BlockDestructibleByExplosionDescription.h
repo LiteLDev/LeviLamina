@@ -4,42 +4,41 @@
 
 struct BlockDestructibleByExplosionDescription {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKDESTRUCTIBLEBYEXPLOSIONDESCRIPTION
 public:
+    // prevent constructor by default
     BlockDestructibleByExplosionDescription& operator=(BlockDestructibleByExplosionDescription const&) = delete;
     BlockDestructibleByExplosionDescription(BlockDestructibleByExplosionDescription const&)            = delete;
     BlockDestructibleByExplosionDescription()                                                          = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?getName\@BlockDestructibleByExplosionDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string const& getName() const;
+    virtual std::string const& getName() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2();
+    virtual void __unk_vfn_2(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?initializeComponent\@BlockDestructibleByExplosionDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
-    virtual void initializeComponent(class EntityContext&) const;
+    virtual void initializeComponent(class EntityContext&) const; // NOLINT
+    /**
+     * @symbol ?bindType\@BlockDestructibleByExplosionDescription\@\@SAXXZ
+     */
+    MCAPI static void bindType(); // NOLINT
     /**
      * @symbol
      * ?NameID\@BlockDestructibleByExplosionDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const NameID;
-    /**
-     * @symbol ?bindType\@BlockDestructibleByExplosionDescription\@\@SAXXZ
-     */
-    MCAPI static void bindType();
+    MCAPI static std::string const NameID; // NOLINT
 };

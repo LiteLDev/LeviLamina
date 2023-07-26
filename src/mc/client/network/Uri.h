@@ -9,10 +9,9 @@ namespace xbox::httpclient {
 
 class Uri {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_XBOX_HTTPCLIENT_URI
 public:
+    // prevent constructor by default
     Uri& operator=(Uri const&) = delete;
-#endif
 
 public:
     /**
@@ -20,53 +19,55 @@ public:
      * ?FullPath\@Uri\@httpclient\@xbox\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$http_stl_allocator\@D\@\@\@std\@\@XZ
      */
     MCAPI class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> const&
-    FullPath() const;
+    FullPath() const; // NOLINT
     /**
      * @symbol
      * ?Host\@Uri\@httpclient\@xbox\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$http_stl_allocator\@D\@\@\@std\@\@XZ
      */
     MCAPI class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> const&
-    Host() const;
+    Host() const; // NOLINT
     /**
      * @symbol ?IsSecure\@Uri\@httpclient\@xbox\@\@QEBA_NXZ
      */
-    MCAPI bool IsSecure() const;
+    MCAPI bool IsSecure() const; // NOLINT
     /**
      * @symbol ?Port\@Uri\@httpclient\@xbox\@\@QEBAGXZ
      */
-    MCAPI unsigned short Port() const;
+    MCAPI unsigned short Port() const; // NOLINT
     /**
      * @symbol
      * ?Resource\@Uri\@httpclient\@xbox\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$http_stl_allocator\@D\@\@\@std\@\@XZ
      */
-    MCAPI class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> Resource() const;
+    MCAPI class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>>
+    Resource() const; // NOLINT
     /**
      * @symbol
      * ?Scheme\@Uri\@httpclient\@xbox\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$http_stl_allocator\@D\@\@\@std\@\@XZ
      */
     MCAPI class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> const&
-    Scheme() const;
+    Scheme() const; // NOLINT
     /**
      * @symbol ??0Uri\@httpclient\@xbox\@\@QEAA\@XZ
      */
-    MCAPI Uri();
+    MCAPI Uri(); // NOLINT
     /**
      * @symbol ??0Uri\@httpclient\@xbox\@\@QEAA\@AEBV012\@\@Z
      */
-    MCAPI Uri(class xbox::httpclient::Uri const&);
+    MCAPI Uri(class xbox::httpclient::Uri const&); // NOLINT
     /**
      * @symbol
      * ??0Uri\@httpclient\@xbox\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$http_stl_allocator\@D\@\@\@std\@\@\@Z
      */
-    MCAPI Uri(class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> const&);
+    MCAPI
+    Uri(class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> const&); // NOLINT
     /**
      * @symbol ??4Uri\@httpclient\@xbox\@\@QEAAAEAV012\@$$QEAV012\@\@Z
      */
-    MCAPI class xbox::httpclient::Uri& operator=(class xbox::httpclient::Uri&&);
+    MCAPI class xbox::httpclient::Uri& operator=(class xbox::httpclient::Uri&&); // NOLINT
     /**
      * @symbol ??1Uri\@httpclient\@xbox\@\@QEAA\@XZ
      */
-    MCAPI ~Uri();
+    MCAPI ~Uri(); // NOLINT
 
     // private:
     /**
@@ -74,13 +75,13 @@ public:
      * ?ParseAuthority\@Uri\@httpclient\@xbox\@\@AEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$http_stl_allocator\@D\@\@\@std\@\@AEAV?$_String_const_iterator\@V?$_String_val\@U?$_Simple_types\@D\@std\@\@\@std\@\@\@5\@\@Z
      */
     MCAPI bool
-    ParseAuthority(class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> const&, class std::_String_const_iterator<class std::_String_val<struct std::_Simple_types<char>>>&);
+    ParseAuthority(class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> const&, class std::_String_const_iterator<class std::_String_val<struct std::_Simple_types<char>>>&); // NOLINT
     /**
      * @symbol
      * ?ParseHost\@Uri\@httpclient\@xbox\@\@AEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$http_stl_allocator\@D\@\@\@std\@\@AEAV?$_String_const_iterator\@V?$_String_val\@U?$_Simple_types\@D\@std\@\@\@std\@\@\@5\@\@Z
      */
     MCAPI bool
-    ParseHost(class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> const&, class std::_String_const_iterator<class std::_String_val<struct std::_Simple_types<char>>>&);
+    ParseHost(class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> const&, class std::_String_const_iterator<class std::_String_val<struct std::_Simple_types<char>>>&); // NOLINT
 
 private:
 };

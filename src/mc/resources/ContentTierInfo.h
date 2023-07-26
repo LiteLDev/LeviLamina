@@ -4,12 +4,9 @@
 
 class ContentTierInfo {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTENTTIERINFO
 public:
+    // prevent constructor by default
     ContentTierInfo& operator=(ContentTierInfo const&) = delete;
     ContentTierInfo(ContentTierInfo const&)            = delete;
     ContentTierInfo()                                  = delete;
-#endif
-
-public:
 };

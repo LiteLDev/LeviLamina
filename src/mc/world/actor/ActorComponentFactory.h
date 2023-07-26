@@ -4,19 +4,17 @@
 
 class ActorComponentFactory {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORCOMPONENTFACTORY
 public:
+    // prevent constructor by default
     ActorComponentFactory& operator=(ActorComponentFactory const&) = delete;
     ActorComponentFactory(ActorComponentFactory const&)            = delete;
     ActorComponentFactory()                                        = delete;
-#endif
 
-public:
     // private:
     /**
      * @symbol ?_initialize\@ActorComponentFactory\@\@AEAAXAEBVExperiments\@\@\@Z
      */
-    MCAPI void _initialize(class Experiments const&);
+    MCAPI void _initialize(class Experiments const&); // NOLINT
 
 private:
 };

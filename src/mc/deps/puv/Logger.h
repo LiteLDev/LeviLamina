@@ -24,32 +24,30 @@ public:
 
     struct UpgradeLogEntry {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PUV_LOGGER_UPGRADELOGENTRY
     public:
+        // prevent constructor by default
         UpgradeLogEntry& operator=(UpgradeLogEntry const&) = delete;
         UpgradeLogEntry(UpgradeLogEntry const&)            = delete;
         UpgradeLogEntry()                                  = delete;
-#endif
 
     public:
         /**
          * @symbol ??1UpgradeLogEntry\@Logger\@Puv\@\@QEAA\@XZ
          */
-        MCAPI ~UpgradeLogEntry();
+        MCAPI ~UpgradeLogEntry(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PUV_LOGGER
 public:
+    // prevent constructor by default
     Logger& operator=(Logger const&) = delete;
     Logger(Logger const&)            = delete;
     Logger()                         = delete;
-#endif
 
 public:
     /**
      * @symbol ?hasErrors\@Logger\@Puv\@\@QEBA_NXZ
      */
-    MCAPI bool hasErrors() const;
+    MCAPI bool hasErrors() const; // NOLINT
     /**
      * @symbol
      * ?log\@Logger\@Puv\@\@QEAAXW4ResultCode\@internal\@cereal\@\@V?$vector\@U?$pair\@W4ContextType\@SerializerContext\@cereal\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@V?$allocator\@U?$pair\@W4ContextType\@SerializerContext\@cereal\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@2\@\@std\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@7\@\@Z
@@ -57,7 +55,7 @@ public:
     MCAPI void
         log(enum class cereal::internal::ResultCode,
             std::vector<struct std::pair<enum class cereal::SerializerContext::ContextType, std::string>>,
-            std::string);
+            std::string); // NOLINT
     /**
      * @symbol
      * ?log\@Logger\@Puv\@\@QEAAXW4UpgradeResultCode\@12\@V?$vector\@U?$pair\@W4ContextType\@SerializerContext\@cereal\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@V?$allocator\@U?$pair\@W4ContextType\@SerializerContext\@cereal\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@2\@\@std\@\@1V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@5\@\@Z
@@ -66,15 +64,15 @@ public:
         log(enum class Puv::Logger::UpgradeResultCode,
             std::vector<struct std::pair<enum class cereal::SerializerContext::ContextType, std::string>>,
             std::vector<struct std::pair<enum class cereal::SerializerContext::ContextType, std::string>>,
-            std::string);
+            std::string); // NOLINT
     /**
      * @symbol ??4Logger\@Puv\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
-    MCAPI struct Puv::Logger& operator=(struct Puv::Logger&&);
+    MCAPI struct Puv::Logger& operator=(struct Puv::Logger&&); // NOLINT
     /**
      * @symbol ??1Logger\@Puv\@\@QEAA\@XZ
      */
-    MCAPI ~Logger();
+    MCAPI ~Logger(); // NOLINT
 };
 
 }; // namespace Puv

@@ -4,12 +4,9 @@
 
 class NetworkBlockPosition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKBLOCKPOSITION
 public:
+    // prevent constructor by default
     NetworkBlockPosition& operator=(NetworkBlockPosition const&) = delete;
     NetworkBlockPosition(NetworkBlockPosition const&)            = delete;
     NetworkBlockPosition()                                       = delete;
-#endif
-
-public:
 };

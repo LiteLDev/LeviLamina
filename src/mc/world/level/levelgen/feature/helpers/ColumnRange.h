@@ -6,14 +6,11 @@ namespace ColumnUtils {
 
 struct ColumnRange {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COLUMNUTILS_COLUMNRANGE
 public:
+    // prevent constructor by default
     ColumnRange& operator=(ColumnRange const&) = delete;
     ColumnRange(ColumnRange const&)            = delete;
     ColumnRange()                              = delete;
-#endif
-
-public:
 };
 
 }; // namespace ColumnUtils

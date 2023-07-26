@@ -9,39 +9,38 @@ namespace Json { class Value; }
 
 class ScriptCommand {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTCOMMAND
 public:
+    // prevent constructor by default
     ScriptCommand& operator=(ScriptCommand const&) = delete;
     ScriptCommand(ScriptCommand const&)            = delete;
     ScriptCommand()                                = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ScriptCommand\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI ScriptCommand(std::string const&);
+    MCAPI ScriptCommand(std::string const&); // NOLINT
     /**
      * @symbol
      * ?getMessages\@ScriptCommand\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getMessages() const;
+    MCAPI std::string getMessages() const; // NOLINT
     /**
      * @symbol ?getSuccessCount\@ScriptCommand\@\@QEBAHXZ
      */
-    MCAPI int getSuccessCount() const;
+    MCAPI int getSuccessCount() const; // NOLINT
     /**
      * @symbol
      * ?serializeJsonOutput\@ScriptCommand\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string serializeJsonOutput() const;
+    MCAPI std::string serializeJsonOutput() const; // NOLINT
     /**
      * @symbol ?setJsonOutput\@ScriptCommand\@\@QEAAX$$QEAVValue\@Json\@\@\@Z
      */
-    MCAPI void setJsonOutput(class Json::Value&&);
+    MCAPI void setJsonOutput(class Json::Value&&); // NOLINT
     /**
      * @symbol
      * ?setOutput\@ScriptCommand\@\@QEAAXH$$QEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void setOutput(int, std::string&&);
+    MCAPI void setOutput(int, std::string&&); // NOLINT
 };

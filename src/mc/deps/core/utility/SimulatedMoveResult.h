@@ -6,14 +6,11 @@ namespace Util::Agent {
 
 struct SimulatedMoveResult {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_UTIL_AGENT_SIMULATEDMOVERESULT
 public:
+    // prevent constructor by default
     SimulatedMoveResult& operator=(SimulatedMoveResult const&) = delete;
     SimulatedMoveResult(SimulatedMoveResult const&)            = delete;
     SimulatedMoveResult()                                      = delete;
-#endif
-
-public:
 };
 
 }; // namespace Util::Agent

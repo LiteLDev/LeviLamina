@@ -4,12 +4,9 @@
 
 struct BiomeChunkData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMECHUNKDATA
 public:
+    // prevent constructor by default
     BiomeChunkData& operator=(BiomeChunkData const&) = delete;
     BiomeChunkData(BiomeChunkData const&)            = delete;
     BiomeChunkData()                                 = delete;
-#endif
-
-public:
 };

@@ -6,37 +6,36 @@ namespace RakNet {
 
 class SignaledEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKNET_SIGNALEDEVENT
 public:
+    // prevent constructor by default
     SignaledEvent& operator=(SignaledEvent const&) = delete;
     SignaledEvent(SignaledEvent const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ?CloseEvent\@SignaledEvent\@RakNet\@\@QEAAXXZ
      */
-    MCAPI void CloseEvent();
+    MCAPI void CloseEvent(); // NOLINT
     /**
      * @symbol ?InitEvent\@SignaledEvent\@RakNet\@\@QEAAXXZ
      */
-    MCAPI void InitEvent();
+    MCAPI void InitEvent(); // NOLINT
     /**
      * @symbol ?SetEvent\@SignaledEvent\@RakNet\@\@QEAAXXZ
      */
-    MCAPI void SetEvent();
+    MCAPI void SetEvent(); // NOLINT
     /**
      * @symbol ??0SignaledEvent\@RakNet\@\@QEAA\@XZ
      */
-    MCAPI SignaledEvent();
+    MCAPI SignaledEvent(); // NOLINT
     /**
      * @symbol ?WaitOnEvent\@SignaledEvent\@RakNet\@\@QEAAXH\@Z
      */
-    MCAPI void WaitOnEvent(int);
+    MCAPI void WaitOnEvent(int); // NOLINT
     /**
      * @symbol ??1SignaledEvent\@RakNet\@\@QEAA\@XZ
      */
-    MCAPI ~SignaledEvent();
+    MCAPI ~SignaledEvent(); // NOLINT
 };
 
 }; // namespace RakNet

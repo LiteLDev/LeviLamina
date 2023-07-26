@@ -4,22 +4,21 @@
 
 class ScriptTickListener {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTTICKLISTENER
 public:
+    // prevent constructor by default
     ScriptTickListener& operator=(ScriptTickListener const&) = delete;
     ScriptTickListener(ScriptTickListener const&)            = delete;
     ScriptTickListener()                                     = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTTICKLISTENER
     /**
      * @symbol ?onLevelRemovedPlayer\@ScriptTickListener\@\@UEAA?AW4EventResult\@\@AEAVLevel\@\@AEAVPlayer\@\@\@Z
      */
-    MCVAPI enum class EventResult onLevelRemovedPlayer(class Level&, class Player&);
+    MCVAPI enum class EventResult onLevelRemovedPlayer(class Level&, class Player&); // NOLINT
     /**
      * @symbol ?onLevelTickEnd\@ScriptTickListener\@\@UEAAXXZ
      */
-    MCVAPI void onLevelTickEnd();
+    MCVAPI void onLevelTickEnd(); // NOLINT
 #endif
 };

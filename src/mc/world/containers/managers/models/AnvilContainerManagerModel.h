@@ -7,69 +7,68 @@
 
 class AnvilContainerManagerModel : public ::ContainerManagerModel {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANVILCONTAINERMANAGERMODEL
 public:
+    // prevent constructor by default
     AnvilContainerManagerModel& operator=(AnvilContainerManagerModel const&) = delete;
     AnvilContainerManagerModel(AnvilContainerManagerModel const&)            = delete;
     AnvilContainerManagerModel()                                             = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 6
      * @symbol
      * ?getItemCopies\@AnvilContainerManagerModel\@\@UEBA?AV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@XZ
      */
-    virtual std::vector<class ItemStack> getItemCopies() const;
+    virtual std::vector<class ItemStack> getItemCopies() const; // NOLINT
     /**
      * @vftbl 7
      * @symbol ?setSlot\@AnvilContainerManagerModel\@\@UEAAXHAEBVItemStack\@\@_N\@Z
      */
-    virtual void setSlot(int, class ItemStack const&, bool);
+    virtual void setSlot(int, class ItemStack const&, bool); // NOLINT
     /**
      * @vftbl 8
      * @symbol ?getSlot\@AnvilContainerManagerModel\@\@UEBAAEBVItemStack\@\@H\@Z
      */
-    virtual class ItemStack const& getSlot(int) const;
+    virtual class ItemStack const& getSlot(int) const; // NOLINT
     /**
      * @vftbl 9
      * @symbol ?setData\@AnvilContainerManagerModel\@\@UEAAXHH\@Z
      */
-    virtual void setData(int, int);
+    virtual void setData(int, int); // NOLINT
     /**
      * @vftbl 10
      * @symbol ?broadcastChanges\@AnvilContainerManagerModel\@\@UEAAXXZ
      */
-    virtual void broadcastChanges();
+    virtual void broadcastChanges(); // NOLINT
     /**
      * @vftbl 16
      * @symbol ?isValid\@AnvilContainerManagerModel\@\@UEAA_NM\@Z
      */
-    virtual bool isValid(float);
+    virtual bool isValid(float); // NOLINT
     /**
      * @vftbl 17
      * @symbol ?_postInit\@AnvilContainerManagerModel\@\@MEAA?AVContainerScreenContext\@\@XZ
      */
-    virtual class ContainerScreenContext _postInit();
+    virtual class ContainerScreenContext _postInit(); // NOLINT
     /**
      * @symbol ??0AnvilContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI AnvilContainerManagerModel(enum class ContainerID, class Player&, class BlockPos const&);
+    MCAPI AnvilContainerManagerModel(enum class ContainerID, class Player&, class BlockPos const&); // NOLINT
     /**
      * @symbol ?INPUT_SLOT\@AnvilContainerManagerModel\@\@2HB
      */
-    MCAPI static int const INPUT_SLOT;
+    MCAPI static int const INPUT_SLOT; // NOLINT
     /**
      * @symbol ?MATERIAL_SLOT\@AnvilContainerManagerModel\@\@2HB
      */
-    MCAPI static int const MATERIAL_SLOT;
+    MCAPI static int const MATERIAL_SLOT; // NOLINT
     /**
      * @symbol ?RESULT_SLOT\@AnvilContainerManagerModel\@\@2HB
      */
-    MCAPI static int const RESULT_SLOT;
+    MCAPI static int const RESULT_SLOT; // NOLINT
 };

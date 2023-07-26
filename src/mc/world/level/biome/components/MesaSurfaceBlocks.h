@@ -4,12 +4,9 @@
 
 struct MesaSurfaceBlocks {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MESASURFACEBLOCKS
 public:
+    // prevent constructor by default
     MesaSurfaceBlocks& operator=(MesaSurfaceBlocks const&) = delete;
     MesaSurfaceBlocks(MesaSurfaceBlocks const&)            = delete;
     MesaSurfaceBlocks()                                    = delete;
-#endif
-
-public:
 };

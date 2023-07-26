@@ -6,22 +6,21 @@ namespace Bedrock::Threading {
 
 class SharedRecursiveMutexBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_THREADING_SHAREDRECURSIVEMUTEXBASE
 public:
+    // prevent constructor by default
     SharedRecursiveMutexBase& operator=(SharedRecursiveMutexBase const&) = delete;
     SharedRecursiveMutexBase(SharedRecursiveMutexBase const&)            = delete;
     SharedRecursiveMutexBase()                                           = delete;
-#endif
 
 public:
     /**
      * @symbol ?lock\@SharedRecursiveMutexBase\@Threading\@Bedrock\@\@QEAAXXZ
      */
-    MCAPI void lock();
+    MCAPI void lock(); // NOLINT
     /**
      * @symbol ?unlock\@SharedRecursiveMutexBase\@Threading\@Bedrock\@\@QEAAXXZ
      */
-    MCAPI void unlock();
+    MCAPI void unlock(); // NOLINT
 };
 
 }; // namespace Bedrock::Threading

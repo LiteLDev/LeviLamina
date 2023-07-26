@@ -6,28 +6,28 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptActorDataDrivenTriggerEventSignalOptions {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTACTORDATADRIVENTRIGGEREVENTSIGNALOPTIONS
 public:
+    // prevent constructor by default
     ScriptActorDataDrivenTriggerEventSignalOptions&
     operator=(ScriptActorDataDrivenTriggerEventSignalOptions const&) = delete;
     ScriptActorDataDrivenTriggerEventSignalOptions()                 = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ScriptActorDataDrivenTriggerEventSignalOptions\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
      */
-    MCAPI ScriptActorDataDrivenTriggerEventSignalOptions(struct ScriptModuleMinecraft::
-                                                             ScriptActorDataDrivenTriggerEventSignalOptions const&);
+    MCAPI
+    ScriptActorDataDrivenTriggerEventSignalOptions(struct ScriptModuleMinecraft::
+                                                       ScriptActorDataDrivenTriggerEventSignalOptions const&); // NOLINT
     /**
      * @symbol ??4ScriptActorDataDrivenTriggerEventSignalOptions\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptActorDataDrivenTriggerEventSignalOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptActorDataDrivenTriggerEventSignalOptions&&);
+    operator=(struct ScriptModuleMinecraft::ScriptActorDataDrivenTriggerEventSignalOptions&&); // NOLINT
     /**
      * @symbol ??1ScriptActorDataDrivenTriggerEventSignalOptions\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptActorDataDrivenTriggerEventSignalOptions();
+    MCAPI ~ScriptActorDataDrivenTriggerEventSignalOptions(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -4,12 +4,9 @@
 
 struct EndPortalBlockFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDPORTALBLOCKFLAG
 public:
+    // prevent constructor by default
     EndPortalBlockFlag& operator=(EndPortalBlockFlag const&) = delete;
     EndPortalBlockFlag(EndPortalBlockFlag const&)            = delete;
     EndPortalBlockFlag()                                     = delete;
-#endif
-
-public:
 };

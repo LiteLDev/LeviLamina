@@ -4,12 +4,11 @@
 
 class EmptyLootItem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EMPTYLOOTITEM
 public:
+    // prevent constructor by default
     EmptyLootItem& operator=(EmptyLootItem const&) = delete;
     EmptyLootItem(EmptyLootItem const&)            = delete;
     EmptyLootItem()                                = delete;
-#endif
 
 public:
     /**
@@ -17,5 +16,5 @@ public:
      * @symbol
      * ?_createItem\@EmptyLootItem\@\@MEAA_NAEAV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
+    virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&); // NOLINT
 };

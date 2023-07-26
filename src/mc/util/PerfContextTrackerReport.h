@@ -4,16 +4,15 @@
 
 class PerfContextTrackerReport {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERFCONTEXTTRACKERREPORT
 public:
+    // prevent constructor by default
     PerfContextTrackerReport& operator=(PerfContextTrackerReport const&) = delete;
     PerfContextTrackerReport(PerfContextTrackerReport const&)            = delete;
     PerfContextTrackerReport()                                           = delete;
-#endif
 
 public:
     /**
      * @symbol ??1PerfContextTrackerReport\@\@QEAA\@XZ
      */
-    MCAPI ~PerfContextTrackerReport();
+    MCAPI ~PerfContextTrackerReport(); // NOLINT
 };

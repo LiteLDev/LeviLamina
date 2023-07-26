@@ -12,22 +12,21 @@ namespace Json { class Value; }
 
 class SubtreeDefinition : public ::BehaviorDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBTREEDEFINITION
 public:
+    // prevent constructor by default
     SubtreeDefinition& operator=(SubtreeDefinition const&) = delete;
     SubtreeDefinition(SubtreeDefinition const&)            = delete;
     SubtreeDefinition()                                    = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?load\@SubtreeDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    virtual void load(class Json::Value, class BehaviorFactory const&); // NOLINT
 };

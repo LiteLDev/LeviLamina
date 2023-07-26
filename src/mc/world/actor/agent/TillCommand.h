@@ -9,29 +9,28 @@ namespace AgentCommands {
 
 class TillCommand : public ::AgentCommands::Command {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMMANDS_TILLCOMMAND
 public:
+    // prevent constructor by default
     TillCommand& operator=(TillCommand const&) = delete;
     TillCommand(TillCommand const&)            = delete;
     TillCommand()                              = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?execute\@TillCommand\@AgentCommands\@\@UEAAXXZ
      */
-    virtual void execute();
+    virtual void execute(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?isDone\@TillCommand\@AgentCommands\@\@UEAA_NXZ
      */
-    virtual bool isDone();
+    virtual bool isDone(); // NOLINT
 };
 
 }; // namespace AgentCommands

@@ -4,26 +4,25 @@
 
 class IWebviewTelemetry {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IWEBVIEWTELEMETRY
 public:
+    // prevent constructor by default
     IWebviewTelemetry& operator=(IWebviewTelemetry const&) = delete;
     IWebviewTelemetry(IWebviewTelemetry const&)            = delete;
     IWebviewTelemetry()                                    = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IWEBVIEWTELEMETRY
     /**
      * @symbol ?onDownloadBegin\@IWebviewTelemetry\@\@UEAAXAEBUWebviewDownloadInfo\@\@\@Z
      */
-    MCVAPI void onDownloadBegin(struct WebviewDownloadInfo const&);
+    MCVAPI void onDownloadBegin(struct WebviewDownloadInfo const&); // NOLINT
     /**
      * @symbol ?onDownloadCanceled\@IWebviewTelemetry\@\@UEAAXAEBUWebviewDownloadInfo\@\@\@Z
      */
-    MCVAPI void onDownloadCanceled(struct WebviewDownloadInfo const&);
+    MCVAPI void onDownloadCanceled(struct WebviewDownloadInfo const&); // NOLINT
     /**
      * @symbol ?onDownloadComplete\@IWebviewTelemetry\@\@UEAAXAEBUWebviewDownloadInfo\@\@\@Z
      */
-    MCVAPI void onDownloadComplete(struct WebviewDownloadInfo const&);
+    MCVAPI void onDownloadComplete(struct WebviewDownloadInfo const&); // NOLINT
 #endif
 };

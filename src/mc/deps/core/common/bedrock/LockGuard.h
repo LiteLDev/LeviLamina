@@ -8,7 +8,7 @@ template <typename T0>
 class LockGuard {
 
 public:
-    MCAPI LockGuard(T);
+    MCAPI LockGuard(T0);
     MCAPI ~LockGuard();
 };
 

@@ -4,16 +4,15 @@
 
 class CheckFallDamageInMoveSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHECKFALLDAMAGEINMOVESYSTEM
 public:
+    // prevent constructor by default
     CheckFallDamageInMoveSystem& operator=(CheckFallDamageInMoveSystem const&) = delete;
     CheckFallDamageInMoveSystem(CheckFallDamageInMoveSystem const&)            = delete;
     CheckFallDamageInMoveSystem()                                              = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@CheckFallDamageInMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
 };

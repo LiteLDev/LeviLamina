@@ -17,31 +17,30 @@ public:
     // TaskStatus inner types define
     enum class Value {};
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TASKSTATUS
 public:
+    // prevent constructor by default
     TaskStatus& operator=(TaskStatus const&) = delete;
     TaskStatus(TaskStatus const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0TaskStatus\@\@QEAA\@XZ
      */
-    MCAPI TaskStatus();
+    MCAPI TaskStatus(); // NOLINT
     /**
      * @symbol ?isComplete\@TaskStatus\@\@QEBA_NXZ
      */
-    MCAPI bool isComplete() const;
+    MCAPI bool isComplete() const; // NOLINT
     /**
      * @symbol ??BTaskStatus\@\@QEBA?AW4Value\@0\@XZ
      */
-    MCAPI operator enum TaskStatus::Value() const;
+    MCAPI operator enum TaskStatus::Value() const; // NOLINT
     /**
      * @symbol ?toAsyncStatus\@TaskStatus\@\@QEBA?AW4AsyncStatus\@Threading\@Bedrock\@\@XZ
      */
-    MCAPI enum class Bedrock::Threading::AsyncStatus toAsyncStatus() const;
+    MCAPI enum class Bedrock::Threading::AsyncStatus toAsyncStatus() const; // NOLINT
     /**
      * @symbol ?toErrorCode\@TaskStatus\@\@QEBA?AVerror_code\@std\@\@XZ
      */
-    MCAPI class std::error_code toErrorCode() const;
+    MCAPI class std::error_code toErrorCode() const; // NOLINT
 };

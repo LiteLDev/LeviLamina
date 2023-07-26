@@ -4,55 +4,54 @@
 
 class TimerComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TIMERCOMPONENT
 public:
+    // prevent constructor by default
     TimerComponent& operator=(TimerComponent const&) = delete;
     TimerComponent(TimerComponent const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0TimerComponent\@\@QEAA\@XZ
      */
-    MCAPI TimerComponent();
+    MCAPI TimerComponent(); // NOLINT
     /**
      * @symbol ?addAdditionalSaveData\@TimerComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
     /**
      * @symbol ?getHasExecuted\@TimerComponent\@\@QEBA_NXZ
      */
-    MCAPI bool getHasExecuted() const;
+    MCAPI bool getHasExecuted() const; // NOLINT
     /**
      * @symbol ?getLooping\@TimerComponent\@\@QEBA_NXZ
      */
-    MCAPI bool getLooping() const;
+    MCAPI bool getLooping() const; // NOLINT
     /**
      * @symbol ?getTimeStamp\@TimerComponent\@\@QEAA_KAEBVLevel\@\@\@Z
      */
-    MCAPI unsigned __int64 getTimeStamp(class Level const&);
+    MCAPI unsigned __int64 getTimeStamp(class Level const&); // NOLINT
     /**
      * @symbol ??4TimerComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class TimerComponent& operator=(class TimerComponent&&);
+    MCAPI class TimerComponent& operator=(class TimerComponent&&); // NOLINT
     /**
      * @symbol ?readAdditionalSaveData\@TimerComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&); // NOLINT
     /**
      * @symbol ?restartTimer\@TimerComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void restartTimer(class Actor&);
+    MCAPI void restartTimer(class Actor&); // NOLINT
     /**
      * @symbol ?setHasExecuted\@TimerComponent\@\@QEAAX_N\@Z
      */
-    MCAPI void setHasExecuted(bool);
+    MCAPI void setHasExecuted(bool); // NOLINT
 
     // private:
     /**
      * @symbol ?getRandomTime\@TimerComponent\@\@AEAAHAEAVActor\@\@\@Z
      */
-    MCAPI int getRandomTime(class Actor&);
+    MCAPI int getRandomTime(class Actor&); // NOLINT
 
 private:
 };

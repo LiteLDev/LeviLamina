@@ -4,20 +4,19 @@
 
 class AddRiderComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADDRIDERCOMPONENT
 public:
+    // prevent constructor by default
     AddRiderComponent& operator=(AddRiderComponent const&) = delete;
     AddRiderComponent(AddRiderComponent const&)            = delete;
     AddRiderComponent()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ?reloadComponent\@AddRiderComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void reloadComponent(class Actor&);
+    MCAPI void reloadComponent(class Actor&); // NOLINT
     /**
      * @symbol ??1AddRiderComponent\@\@QEAA\@XZ
      */
-    MCAPI ~AddRiderComponent();
+    MCAPI ~AddRiderComponent(); // NOLINT
 };

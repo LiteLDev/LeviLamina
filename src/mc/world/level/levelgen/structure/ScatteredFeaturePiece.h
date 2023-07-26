@@ -7,35 +7,34 @@
 
 class ScatteredFeaturePiece : public ::StructurePiece {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCATTEREDFEATUREPIECE
 public:
+    // prevent constructor by default
     ScatteredFeaturePiece& operator=(ScatteredFeaturePiece const&) = delete;
     ScatteredFeaturePiece(ScatteredFeaturePiece const&)            = delete;
     ScatteredFeaturePiece()                                        = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCATTEREDFEATUREPIECE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScatteredFeaturePiece();
+    MCVAPI ~ScatteredFeaturePiece(); // NOLINT
 #endif
 
     // protected:
     /**
      * @symbol ??0ScatteredFeaturePiece\@\@IEAA\@HHHHHH\@Z
      */
-    MCAPI ScatteredFeaturePiece(int, int, int, int, int, int);
+    MCAPI ScatteredFeaturePiece(int, int, int, int, int, int); // NOLINT
     /**
      * @symbol ?updateAverageGroundHeight\@ScatteredFeaturePiece\@\@IEAA_NAEAVBlockSource\@\@AEBVBoundingBox\@\@H\@Z
      */
-    MCAPI bool updateAverageGroundHeight(class BlockSource&, class BoundingBox const&, int);
+    MCAPI bool updateAverageGroundHeight(class BlockSource&, class BoundingBox const&, int); // NOLINT
 
 protected:
 };

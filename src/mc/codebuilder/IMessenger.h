@@ -6,14 +6,11 @@ namespace CodeBuilder {
 
 class IMessenger {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CODEBUILDER_IMESSENGER
 public:
+    // prevent constructor by default
     IMessenger& operator=(IMessenger const&) = delete;
     IMessenger(IMessenger const&)            = delete;
     IMessenger()                             = delete;
-#endif
-
-public:
 };
 
 }; // namespace CodeBuilder

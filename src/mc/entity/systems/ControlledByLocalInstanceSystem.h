@@ -12,22 +12,18 @@ public:
     // ControlledByLocalInstanceSystem inner types define
     struct Config {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTROLLEDBYLOCALINSTANCESYSTEM_CONFIG
     public:
+        // prevent constructor by default
         Config& operator=(Config const&) = delete;
         Config(Config const&)            = delete;
         Config()                         = delete;
-#endif
-
-    public:
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTROLLEDBYLOCALINSTANCESYSTEM
 public:
+    // prevent constructor by default
     ControlledByLocalInstanceSystem& operator=(ControlledByLocalInstanceSystem const&) = delete;
     ControlledByLocalInstanceSystem(ControlledByLocalInstanceSystem const&)            = delete;
     ControlledByLocalInstanceSystem()                                                  = delete;
-#endif
 
 public:
     /**
@@ -35,10 +31,10 @@ public:
      * ?createCalculateControlledByLocalInstanceSystem\@ControlledByLocalInstanceSystem\@\@SA?AUTickingSystemWithInfo\@\@AEBUConfig\@1\@\@Z
      */
     MCAPI static struct TickingSystemWithInfo
-    createCalculateControlledByLocalInstanceSystem(struct ControlledByLocalInstanceSystem::Config const&);
+    createCalculateControlledByLocalInstanceSystem(struct ControlledByLocalInstanceSystem::Config const&); // NOLINT
     /**
      * @symbol
      * ?createWasControlledByLocalInstanceSystem\@ControlledByLocalInstanceSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createWasControlledByLocalInstanceSystem();
+    MCAPI static struct TickingSystemWithInfo createWasControlledByLocalInstanceSystem(); // NOLINT
 };

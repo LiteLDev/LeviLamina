@@ -4,19 +4,18 @@
 
 class ActorSkeletalAnimationPlayer {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSKELETALANIMATIONPLAYER
 public:
+    // prevent constructor by default
     ActorSkeletalAnimationPlayer& operator=(ActorSkeletalAnimationPlayer const&) = delete;
     ActorSkeletalAnimationPlayer(ActorSkeletalAnimationPlayer const&)            = delete;
     ActorSkeletalAnimationPlayer()                                               = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
@@ -32,17 +31,17 @@ public:
             class std::allocator<
                 struct std::pair<enum class SkeletalHierarchyIndex const, std::vector<class BoneOrientation>>>>&,
         float
-    );
+    ); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?resetAnimation\@ActorSkeletalAnimationPlayer\@\@UEAAXXZ
      */
-    virtual void resetAnimation();
+    virtual void resetAnimation(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?buildBoneToPartMapping\@ActorSkeletalAnimationPlayer\@\@UEAAXAEAVAnimationComponent\@\@\@Z
      */
-    virtual void buildBoneToPartMapping(class AnimationComponent&);
+    virtual void buildBoneToPartMapping(class AnimationComponent&); // NOLINT
     /**
      * @vftbl 4
      * @symbol
@@ -54,7 +53,8 @@ public:
                         class HashedString,
                         struct std::hash<class HashedString>,
                         struct std::equal_to<class HashedString>,
-                        class std::allocator<struct std::pair<class HashedString const, class HashedString>>> const&);
+                        class std::allocator<
+                            struct std::pair<class HashedString const, class HashedString>>> const&); // NOLINT
     /**
      * @vftbl 5
      * @symbol
@@ -66,32 +66,32 @@ public:
                      std::string,
                      struct std::hash<class HashedString>,
                      struct std::equal_to<class HashedString>,
-                     class std::allocator<struct std::pair<class HashedString const, std::string>>> const&);
+                     class std::allocator<struct std::pair<class HashedString const, std::string>>> const&); // NOLINT
     /**
      * @vftbl 6
      * @symbol ?hasAnimationFinished\@ActorSkeletalAnimationPlayer\@\@UEBA_NXZ
      */
-    virtual bool hasAnimationFinished() const;
+    virtual bool hasAnimationFinished() const; // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?findAnimation\@ActorSkeletalAnimationPlayer\@\@UEAA?AV?$shared_ptr\@VActorAnimationPlayer\@\@\@std\@\@AEBVHashedString\@\@\@Z
      */
-    virtual class std::shared_ptr<class ActorAnimationPlayer> findAnimation(class HashedString const&);
+    virtual class std::shared_ptr<class ActorAnimationPlayer> findAnimation(class HashedString const&); // NOLINT
     /**
      * @vftbl 8
      * @symbol ?getAnimationType\@ActorSkeletalAnimationPlayer\@\@UEBA?AW4ActorAnimationType\@\@XZ
      */
-    virtual enum class ActorAnimationType getAnimationType() const;
+    virtual enum class ActorAnimationType getAnimationType() const; // NOLINT
     /**
      * @vftbl 9
      * @symbol ?getRawName\@ActorSkeletalAnimationPlayer\@\@UEBAAEBVHashedString\@\@XZ
      */
-    virtual class HashedString const& getRawName() const;
+    virtual class HashedString const& getRawName() const; // NOLINT
     /**
      * @symbol
      * ??0ActorSkeletalAnimationPlayer\@\@QEAA\@AEBVHashedString\@\@VActorSkeletalAnimationPtr\@\@AEAVAnimationComponent\@\@AEBVExpressionNode\@\@\@Z
      */
     MCAPI
-    ActorSkeletalAnimationPlayer(class HashedString const&, class ActorSkeletalAnimationPtr, class AnimationComponent&, class ExpressionNode const&);
+    ActorSkeletalAnimationPlayer(class HashedString const&, class ActorSkeletalAnimationPtr, class AnimationComponent&, class ExpressionNode const&); // NOLINT
 };

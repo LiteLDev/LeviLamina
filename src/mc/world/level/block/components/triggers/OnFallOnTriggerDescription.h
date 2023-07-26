@@ -12,40 +12,39 @@ namespace JsonUtil { class EmptyClass; }
 
 class OnFallOnTriggerDescription {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONFALLONTRIGGERDESCRIPTION
 public:
+    // prevent constructor by default
     OnFallOnTriggerDescription& operator=(OnFallOnTriggerDescription const&) = delete;
     OnFallOnTriggerDescription(OnFallOnTriggerDescription const&)            = delete;
     OnFallOnTriggerDescription()                                             = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?getName\@OnFallOnTriggerDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string const& getName() const;
+    virtual std::string const& getName() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2();
+    virtual void __unk_vfn_2(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?initializeComponent\@OnFallOnTriggerDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
-    virtual void initializeComponent(class EntityContext&) const;
+    virtual void initializeComponent(class EntityContext&) const; // NOLINT
     /**
      * @vftbl 4
      * @symbol __unk_vfn_4
      */
-    virtual void __unk_vfn_4();
+    virtual void __unk_vfn_4(); // NOLINT
     /**
      * @vftbl 5
      * @symbol
@@ -53,10 +52,10 @@ public:
      */
     virtual void
     buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>>&, class BlockComponentFactory const&)
-        const;
+        const; // NOLINT
     /**
      * @symbol
      * ?NameID\@OnFallOnTriggerDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const NameID;
+    MCAPI static std::string const NameID; // NOLINT
 };

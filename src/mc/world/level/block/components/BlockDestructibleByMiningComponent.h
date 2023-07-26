@@ -4,12 +4,9 @@
 
 struct BlockDestructibleByMiningComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKDESTRUCTIBLEBYMININGCOMPONENT
 public:
+    // prevent constructor by default
     BlockDestructibleByMiningComponent& operator=(BlockDestructibleByMiningComponent const&) = delete;
     BlockDestructibleByMiningComponent(BlockDestructibleByMiningComponent const&)            = delete;
     BlockDestructibleByMiningComponent()                                                     = delete;
-#endif
-
-public:
 };

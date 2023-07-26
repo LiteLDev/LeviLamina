@@ -4,20 +4,19 @@
 
 struct TickingSystemWithInfo {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKINGSYSTEMWITHINFO
 public:
+    // prevent constructor by default
     TickingSystemWithInfo& operator=(TickingSystemWithInfo const&) = delete;
     TickingSystemWithInfo(TickingSystemWithInfo const&)            = delete;
     TickingSystemWithInfo()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ??0TickingSystemWithInfo\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI TickingSystemWithInfo(struct TickingSystemWithInfo&&);
+    MCAPI TickingSystemWithInfo(struct TickingSystemWithInfo&&); // NOLINT
     /**
      * @symbol ??1TickingSystemWithInfo\@\@QEAA\@XZ
      */
-    MCAPI ~TickingSystemWithInfo();
+    MCAPI ~TickingSystemWithInfo(); // NOLINT
 };

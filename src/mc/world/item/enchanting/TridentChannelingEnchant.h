@@ -7,39 +7,38 @@
 
 class TridentChannelingEnchant {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRIDENTCHANNELINGENCHANT
 public:
+    // prevent constructor by default
     TridentChannelingEnchant& operator=(TridentChannelingEnchant const&) = delete;
     TridentChannelingEnchant(TridentChannelingEnchant const&)            = delete;
     TridentChannelingEnchant()                                           = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?isCompatibleWith\@TridentChannelingEnchant\@\@UEBA_NW4Type\@Enchant\@\@\@Z
      */
-    virtual bool isCompatibleWith(enum class Enchant::Type) const;
+    virtual bool isCompatibleWith(enum class Enchant::Type) const; // NOLINT
     /**
      * @vftbl 2
      * @symbol ?getMinCost\@TridentChannelingEnchant\@\@UEBAHH\@Z
      */
-    virtual int getMinCost(int) const;
+    virtual int getMinCost(int) const; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?getMaxCost\@TridentChannelingEnchant\@\@UEBAHH\@Z
      */
-    virtual int getMaxCost(int) const;
+    virtual int getMaxCost(int) const; // NOLINT
     /**
      * @vftbl 4
      * @symbol ?getMaxLevel\@TridentChannelingEnchant\@\@UEBAHXZ
      */
-    virtual int getMaxLevel() const;
+    virtual int getMaxLevel() const; // NOLINT
     /**
      * @symbol
      * ??0TridentChannelingEnchant\@\@QEAA\@W4Type\@Enchant\@\@W4Frequency\@2\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@2H_NH\@Z
@@ -52,5 +51,5 @@ public:
         int,
         bool,
         int
-    );
+    ); // NOLINT
 };

@@ -4,20 +4,19 @@
 
 struct CrashDumpFrameData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRASHDUMPFRAMEDATA
 public:
+    // prevent constructor by default
     CrashDumpFrameData& operator=(CrashDumpFrameData const&) = delete;
     CrashDumpFrameData(CrashDumpFrameData const&)            = delete;
     CrashDumpFrameData()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ??0CrashDumpFrameData\@\@QEAA\@HH_KMMMM\@Z
      */
-    MCAPI CrashDumpFrameData(int, int, unsigned __int64, float, float, float, float);
+    MCAPI CrashDumpFrameData(int, int, unsigned __int64, float, float, float, float); // NOLINT
     /**
      * @symbol ?kFormat\@CrashDumpFrameData\@\@2QBUCrashDumpFormatEntryImpl\@\@B
      */
-    MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
+    MCAPI static struct CrashDumpFormatEntryImpl const kFormat[]; // NOLINT
 };

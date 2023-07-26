@@ -4,12 +4,9 @@
 
 class PacketHeader {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKETHEADER
 public:
+    // prevent constructor by default
     PacketHeader& operator=(PacketHeader const&) = delete;
     PacketHeader(PacketHeader const&)            = delete;
     PacketHeader()                               = delete;
-#endif
-
-public:
 };

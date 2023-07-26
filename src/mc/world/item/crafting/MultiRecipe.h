@@ -12,42 +12,41 @@ namespace mce { class UUID; }
 
 class MultiRecipe : public ::Recipe {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MULTIRECIPE
 public:
+    // prevent constructor by default
     MultiRecipe& operator=(MultiRecipe const&) = delete;
     MultiRecipe(MultiRecipe const&)            = delete;
     MultiRecipe()                              = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 5
      * @symbol __unk_vfn_5
      */
-    virtual void __unk_vfn_5();
+    virtual void __unk_vfn_5(); // NOLINT
     /**
      * @vftbl 9
      * @symbol ?isMultiRecipe\@MultiRecipe\@\@EEBA_NXZ
      */
-    virtual bool isMultiRecipe() const;
+    virtual bool isMultiRecipe() const; // NOLINT
     /**
      * @vftbl 10
      * @symbol ?hasDataDrivenResult\@MultiRecipe\@\@EEBA_NXZ
      */
-    virtual bool hasDataDrivenResult() const;
+    virtual bool hasDataDrivenResult() const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTIRECIPE
     /**
      * @symbol ?isShapeless\@MultiRecipe\@\@EEBA_NXZ
      */
-    MCVAPI bool isShapeless() const;
+    MCVAPI bool isShapeless() const; // NOLINT
 #endif
     /**
      * @symbol ??0MultiRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@VHashedString\@\@\@Z
      */
-    MCAPI MultiRecipe(class std::basic_string_view<char, struct std::char_traits<char>>, class HashedString);
+    MCAPI MultiRecipe(class std::basic_string_view<char, struct std::char_traits<char>>, class HashedString); // NOLINT
 };

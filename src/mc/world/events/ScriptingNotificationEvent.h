@@ -4,16 +4,15 @@
 
 struct ScriptingNotificationEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTINGNOTIFICATIONEVENT
 public:
+    // prevent constructor by default
     ScriptingNotificationEvent& operator=(ScriptingNotificationEvent const&) = delete;
     ScriptingNotificationEvent(ScriptingNotificationEvent const&)            = delete;
     ScriptingNotificationEvent()                                             = delete;
-#endif
 
 public:
     /**
      * @symbol ??1ScriptingNotificationEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptingNotificationEvent();
+    MCAPI ~ScriptingNotificationEvent(); // NOLINT
 };

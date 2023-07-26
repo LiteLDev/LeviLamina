@@ -4,12 +4,9 @@
 
 struct ChunkPositionAndDimension {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKPOSITIONANDDIMENSION
 public:
+    // prevent constructor by default
     ChunkPositionAndDimension& operator=(ChunkPositionAndDimension const&) = delete;
     ChunkPositionAndDimension(ChunkPositionAndDimension const&)            = delete;
     ChunkPositionAndDimension()                                            = delete;
-#endif
-
-public:
 };

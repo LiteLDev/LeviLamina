@@ -4,27 +4,26 @@
 
 struct Dependencies {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEPENDENCIES
 public:
+    // prevent constructor by default
     Dependencies(Dependencies const&) = delete;
     Dependencies()                    = delete;
-#endif
 
 public:
     /**
      * @symbol ??4Dependencies\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
-    MCAPI struct Dependencies& operator=(struct Dependencies const&);
+    MCAPI struct Dependencies& operator=(struct Dependencies const&); // NOLINT
     /**
      * @symbol ??4Dependencies\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct Dependencies& operator=(struct Dependencies&&);
+    MCAPI struct Dependencies& operator=(struct Dependencies&&); // NOLINT
     /**
      * @symbol ??1Dependencies\@\@QEAA\@XZ
      */
-    MCAPI ~Dependencies();
+    MCAPI ~Dependencies(); // NOLINT
     /**
      * @symbol ?bindType\@Dependencies\@\@SAXXZ
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(); // NOLINT
 };

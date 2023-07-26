@@ -4,12 +4,9 @@
 
 class InteractionResult {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTERACTIONRESULT
 public:
+    // prevent constructor by default
     InteractionResult& operator=(InteractionResult const&) = delete;
     InteractionResult(InteractionResult const&)            = delete;
     InteractionResult()                                    = delete;
-#endif
-
-public:
 };

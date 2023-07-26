@@ -4,12 +4,9 @@
 
 struct MobAllowStandSlidingFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBALLOWSTANDSLIDINGFLAG
 public:
+    // prevent constructor by default
     MobAllowStandSlidingFlag& operator=(MobAllowStandSlidingFlag const&) = delete;
     MobAllowStandSlidingFlag(MobAllowStandSlidingFlag const&)            = delete;
     MobAllowStandSlidingFlag()                                           = delete;
-#endif
-
-public:
 };

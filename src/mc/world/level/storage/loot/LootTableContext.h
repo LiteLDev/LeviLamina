@@ -15,62 +15,60 @@ public:
     // LootTableContext inner types define
     class Builder {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTTABLECONTEXT_BUILDER
     public:
+        // prevent constructor by default
         Builder& operator=(Builder const&) = delete;
         Builder(Builder const&)            = delete;
         Builder()                          = delete;
-#endif
 
     public:
         /**
          * @symbol ??0Builder\@LootTableContext\@\@QEAA\@PEAVILevel\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
          */
-        MCAPI Builder(class ILevel*, class AutomaticID<class Dimension, int>);
+        MCAPI Builder(class ILevel*, class AutomaticID<class Dimension, int>); // NOLINT
         /**
          * @symbol ?create\@Builder\@LootTableContext\@\@QEBA?AV2\@XZ
          */
-        MCAPI class LootTableContext create() const;
+        MCAPI class LootTableContext create() const; // NOLINT
         /**
          * @symbol ?withDeathSource\@Builder\@LootTableContext\@\@QEAAAEAV12\@PEBVActorDamageSource\@\@\@Z
          */
-        MCAPI class LootTableContext::Builder& withDeathSource(class ActorDamageSource const*);
+        MCAPI class LootTableContext::Builder& withDeathSource(class ActorDamageSource const*); // NOLINT
         /**
          * @symbol ?withExplosionRadius\@Builder\@LootTableContext\@\@QEAAAEAV12\@M\@Z
          */
-        MCAPI class LootTableContext::Builder& withExplosionRadius(float);
+        MCAPI class LootTableContext::Builder& withExplosionRadius(float); // NOLINT
         /**
          * @symbol ?withKilledActor\@Builder\@LootTableContext\@\@QEAAAEAV12\@PEAVActor\@\@\@Z
          */
-        MCAPI class LootTableContext::Builder& withKilledActor(class Actor*);
+        MCAPI class LootTableContext::Builder& withKilledActor(class Actor*); // NOLINT
         /**
          * @symbol ?withKillerPlayer\@Builder\@LootTableContext\@\@QEAAAEAV12\@PEAVPlayer\@\@\@Z
          */
-        MCAPI class LootTableContext::Builder& withKillerPlayer(class Player*);
+        MCAPI class LootTableContext::Builder& withKillerPlayer(class Player*); // NOLINT
         /**
          * @symbol ?withLuck\@Builder\@LootTableContext\@\@QEAAAEAV12\@M\@Z
          */
-        MCAPI class LootTableContext::Builder& withLuck(float);
+        MCAPI class LootTableContext::Builder& withLuck(float); // NOLINT
         /**
          * @symbol ?withThisEntity\@Builder\@LootTableContext\@\@QEAAAEAV12\@PEAVActor\@\@\@Z
          */
-        MCAPI class LootTableContext::Builder& withThisEntity(class Actor*);
+        MCAPI class LootTableContext::Builder& withThisEntity(class Actor*); // NOLINT
         /**
          * @symbol ?withTool\@Builder\@LootTableContext\@\@QEAAAEAV12\@PEBVItemStack\@\@\@Z
          */
-        MCAPI class LootTableContext::Builder& withTool(class ItemStack const*);
+        MCAPI class LootTableContext::Builder& withTool(class ItemStack const*); // NOLINT
         /**
          * @symbol ??1Builder\@LootTableContext\@\@QEAA\@XZ
          */
-        MCAPI ~Builder();
+        MCAPI ~Builder(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTTABLECONTEXT
 public:
+    // prevent constructor by default
     LootTableContext& operator=(LootTableContext const&) = delete;
     LootTableContext(LootTableContext const&)            = delete;
     LootTableContext()                                   = delete;
-#endif
 
 public:
     /**
@@ -78,63 +76,63 @@ public:
      * ??0LootTableContext\@\@QEAA\@MPEAVILevel\@\@UActorUniqueID\@\@PEAVPlayer\@\@PEAVActor\@\@PEBVActorDamageSource\@\@MV?$AutomaticID\@VDimension\@\@H\@\@PEBVItemStack\@\@\@Z
      */
     MCAPI
-    LootTableContext(float, class ILevel*, struct ActorUniqueID, class Player*, class Actor*, class ActorDamageSource const*, float, class AutomaticID<class Dimension, int>, class ItemStack const*);
+    LootTableContext(float, class ILevel*, struct ActorUniqueID, class Player*, class Actor*, class ActorDamageSource const*, float, class AutomaticID<class Dimension, int>, class ItemStack const*); // NOLINT
     /**
      * @symbol ?getDimensionId\@LootTableContext\@\@QEBA?AV?$AutomaticID\@VDimension\@\@H\@\@XZ
      */
-    MCAPI class AutomaticID<class Dimension, int> getDimensionId() const;
+    MCAPI class AutomaticID<class Dimension, int> getDimensionId() const; // NOLINT
     /**
      * @symbol ?getEntity\@LootTableContext\@\@QEBAPEAVActor\@\@W4ActorTarget\@\@\@Z
      */
-    MCAPI class Actor* getEntity(enum class ActorTarget) const;
+    MCAPI class Actor* getEntity(enum class ActorTarget) const; // NOLINT
     /**
      * @symbol ?getKilledEntity\@LootTableContext\@\@QEBAPEAVActor\@\@XZ
      */
-    MCAPI class Actor* getKilledEntity() const;
+    MCAPI class Actor* getKilledEntity() const; // NOLINT
     /**
      * @symbol ?getKillerEntity\@LootTableContext\@\@QEBAPEAVActor\@\@XZ
      */
-    MCAPI class Actor* getKillerEntity() const;
+    MCAPI class Actor* getKillerEntity() const; // NOLINT
     /**
      * @symbol ?getKillerPet\@LootTableContext\@\@QEBAPEAVActor\@\@XZ
      */
-    MCAPI class Actor* getKillerPet() const;
+    MCAPI class Actor* getKillerPet() const; // NOLINT
     /**
      * @symbol ?getKillerPlayer\@LootTableContext\@\@QEBAPEAVActor\@\@XZ
      */
-    MCAPI class Actor* getKillerPlayer() const;
+    MCAPI class Actor* getKillerPlayer() const; // NOLINT
     /**
      * @symbol ?getLevel\@LootTableContext\@\@QEBAPEAVLevel\@\@XZ
      */
-    MCAPI class Level* getLevel() const;
+    MCAPI class Level* getLevel() const; // NOLINT
     /**
      * @symbol ?getLuck\@LootTableContext\@\@QEBAMXZ
      */
-    MCAPI float getLuck() const;
+    MCAPI float getLuck() const; // NOLINT
     /**
      * @symbol
      * ?getOriginalItemName\@LootTableContext\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getOriginalItemName() const;
+    MCAPI std::string getOriginalItemName() const; // NOLINT
     /**
      * @symbol ?getThisEntity\@LootTableContext\@\@QEBAPEAVActor\@\@XZ
      */
-    MCAPI class Actor* getThisEntity() const;
+    MCAPI class Actor* getThisEntity() const; // NOLINT
     /**
      * @symbol ?getTool\@LootTableContext\@\@QEBAPEBVItemStack\@\@XZ
      */
-    MCAPI class ItemStack const* getTool() const;
+    MCAPI class ItemStack const* getTool() const; // NOLINT
     /**
      * @symbol ?removeVisitedTable\@LootTableContext\@\@QEAAXPEBVLootTable\@\@\@Z
      */
-    MCAPI void removeVisitedTable(class LootTable const*);
+    MCAPI void removeVisitedTable(class LootTable const*); // NOLINT
     /**
      * @symbol
      * ?setOriginalItemName\@LootTableContext\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void setOriginalItemName(std::string const&);
+    MCAPI void setOriginalItemName(std::string const&); // NOLINT
     /**
      * @symbol ??1LootTableContext\@\@QEAA\@XZ
      */
-    MCAPI ~LootTableContext();
+    MCAPI ~LootTableContext(); // NOLINT
 };

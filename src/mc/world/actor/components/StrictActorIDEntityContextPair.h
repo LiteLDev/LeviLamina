@@ -4,12 +4,9 @@
 
 struct StrictActorIDEntityContextPair {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRICTACTORIDENTITYCONTEXTPAIR
 public:
+    // prevent constructor by default
     StrictActorIDEntityContextPair& operator=(StrictActorIDEntityContextPair const&) = delete;
     StrictActorIDEntityContextPair(StrictActorIDEntityContextPair const&)            = delete;
     StrictActorIDEntityContextPair()                                                 = delete;
-#endif
-
-public:
 };

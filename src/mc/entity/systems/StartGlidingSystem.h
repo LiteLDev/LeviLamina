@@ -15,34 +15,33 @@
 
 struct StartGlidingSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STARTGLIDINGSYSTEM
 public:
+    // prevent constructor by default
     StartGlidingSystem& operator=(StartGlidingSystem const&) = delete;
     StartGlidingSystem(StartGlidingSystem const&)            = delete;
     StartGlidingSystem()                                     = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2();
+    virtual void __unk_vfn_2(); // NOLINT
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3();
+    virtual void __unk_vfn_3(); // NOLINT
     /**
      * @vftbl 4
      * @symbol
@@ -62,9 +61,9 @@ public:
          struct AddRemove<struct ShouldUpdateBoundingBoxRequestComponent>,
          struct GlobalRead<>,
          struct GlobalWrite<>,
-         struct EntityFactoryT<>>&);
+         struct EntityFactoryT<>>&); // NOLINT
     /**
      * @symbol ?createSystem\@StartGlidingSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
 };

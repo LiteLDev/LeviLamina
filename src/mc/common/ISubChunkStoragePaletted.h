@@ -5,12 +5,9 @@
 template <typename T0>
 class ISubChunkStoragePaletted {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISUBCHUNKSTORAGEPALETTED
 public:
+    // prevent constructor by default
     ISubChunkStoragePaletted& operator=(ISubChunkStoragePaletted const&) = delete;
     ISubChunkStoragePaletted(ISubChunkStoragePaletted const&)            = delete;
     ISubChunkStoragePaletted()                                           = delete;
-#endif
-
-public:
 };

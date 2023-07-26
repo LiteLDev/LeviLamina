@@ -4,12 +4,9 @@
 
 struct DeserializationChanges {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DESERIALIZATIONCHANGES
 public:
+    // prevent constructor by default
     DeserializationChanges& operator=(DeserializationChanges const&) = delete;
     DeserializationChanges(DeserializationChanges const&)            = delete;
     DeserializationChanges()                                         = delete;
-#endif
-
-public:
 };

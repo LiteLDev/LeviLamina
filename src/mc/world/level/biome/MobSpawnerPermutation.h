@@ -4,16 +4,15 @@
 
 class MobSpawnerPermutation {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBSPAWNERPERMUTATION
 public:
+    // prevent constructor by default
     MobSpawnerPermutation& operator=(MobSpawnerPermutation const&) = delete;
     MobSpawnerPermutation(MobSpawnerPermutation const&)            = delete;
     MobSpawnerPermutation()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ??1MobSpawnerPermutation\@\@QEAA\@XZ
      */
-    MCAPI ~MobSpawnerPermutation();
+    MCAPI ~MobSpawnerPermutation(); // NOLINT
 };

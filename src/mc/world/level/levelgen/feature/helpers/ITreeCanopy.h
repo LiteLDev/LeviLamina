@@ -4,12 +4,9 @@
 
 class ITreeCanopy {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITREECANOPY
 public:
+    // prevent constructor by default
     ITreeCanopy& operator=(ITreeCanopy const&) = delete;
     ITreeCanopy(ITreeCanopy const&)            = delete;
     ITreeCanopy()                              = delete;
-#endif
-
-public:
 };

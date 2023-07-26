@@ -4,27 +4,26 @@
 
 class WaterMovementComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WATERMOVEMENTCOMPONENT
 public:
+    // prevent constructor by default
     WaterMovementComponent& operator=(WaterMovementComponent const&) = delete;
     WaterMovementComponent(WaterMovementComponent const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0WaterMovementComponent\@\@QEAA\@XZ
      */
-    MCAPI WaterMovementComponent();
+    MCAPI WaterMovementComponent(); // NOLINT
     /**
      * @symbol ?getDragFactor\@WaterMovementComponent\@\@QEBAMXZ
      */
-    MCAPI float getDragFactor() const;
+    MCAPI float getDragFactor() const; // NOLINT
     /**
      * @symbol ?initFromDefinition\@WaterMovementComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void initFromDefinition(class Actor&);
+    MCAPI void initFromDefinition(class Actor&); // NOLINT
     /**
      * @symbol ?getDefaultDragFactor\@WaterMovementComponent\@\@SAMXZ
      */
-    MCAPI static float getDefaultDragFactor();
+    MCAPI static float getDefaultDragFactor(); // NOLINT
 };

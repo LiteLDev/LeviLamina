@@ -4,20 +4,19 @@
 
 struct MolangContextVariable {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGCONTEXTVARIABLE
 public:
+    // prevent constructor by default
     MolangContextVariable& operator=(MolangContextVariable const&) = delete;
     MolangContextVariable(MolangContextVariable const&)            = delete;
     MolangContextVariable()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ??0MolangContextVariable\@\@QEAA\@AEBVHashedString\@\@\@Z
      */
-    MCAPI MolangContextVariable(class HashedString const&);
+    MCAPI MolangContextVariable(class HashedString const&); // NOLINT
     /**
      * @symbol ??1MolangContextVariable\@\@QEAA\@XZ
      */
-    MCAPI ~MolangContextVariable();
+    MCAPI ~MolangContextVariable(); // NOLINT
 };

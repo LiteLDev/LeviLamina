@@ -13,6 +13,6 @@ namespace ServerPlayerInputSystemUtils {
  * ?_tickPlayerMovement\@ServerPlayerInputSystemUtils\@\@YAXAEBUPlayerCurrentTickComponent\@\@AEAUServerPlayerMovementComponent\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UServerPlayerCurrentMovementComponent\@\@\@\@AEAVStrictEntityContext\@\@\@Z
  */
 MCAPI void
-_tickPlayerMovement(struct PlayerCurrentTickComponent const&, struct ServerPlayerMovementComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct ServerPlayerCurrentMovementComponent>&, class StrictEntityContext&);
+_tickPlayerMovement(struct PlayerCurrentTickComponent const&, struct ServerPlayerMovementComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct ServerPlayerCurrentMovementComponent>&, class StrictEntityContext&); // NOLINT
 
 }; // namespace ServerPlayerInputSystemUtils

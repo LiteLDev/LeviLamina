@@ -4,12 +4,9 @@
 
 struct UsesOneWayCollisionFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_USESONEWAYCOLLISIONFLAG
 public:
+    // prevent constructor by default
     UsesOneWayCollisionFlag& operator=(UsesOneWayCollisionFlag const&) = delete;
     UsesOneWayCollisionFlag(UsesOneWayCollisionFlag const&)            = delete;
     UsesOneWayCollisionFlag()                                          = delete;
-#endif
-
-public:
 };

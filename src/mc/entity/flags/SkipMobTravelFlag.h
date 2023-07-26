@@ -4,12 +4,9 @@
 
 struct SkipMobTravelFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SKIPMOBTRAVELFLAG
 public:
+    // prevent constructor by default
     SkipMobTravelFlag& operator=(SkipMobTravelFlag const&) = delete;
     SkipMobTravelFlag(SkipMobTravelFlag const&)            = delete;
     SkipMobTravelFlag()                                    = delete;
-#endif
-
-public:
 };

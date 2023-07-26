@@ -4,20 +4,19 @@
 
 class PushActorsSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PUSHACTORSSYSTEM
 public:
+    // prevent constructor by default
     PushActorsSystem& operator=(PushActorsSystem const&) = delete;
     PushActorsSystem(PushActorsSystem const&)            = delete;
     PushActorsSystem()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@PushActorsSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
     /**
      * @symbol ?pushActors\@PushActorsSystem\@\@SAXAEAVActorOwnerComponent\@\@\@Z
      */
-    MCAPI static void pushActors(class ActorOwnerComponent&);
+    MCAPI static void pushActors(class ActorOwnerComponent&); // NOLINT
 };

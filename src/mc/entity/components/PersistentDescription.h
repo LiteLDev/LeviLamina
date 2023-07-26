@@ -7,28 +7,27 @@
 
 class PersistentDescription : public ::Description {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERSISTENTDESCRIPTION
 public:
+    // prevent constructor by default
     PersistentDescription& operator=(PersistentDescription const&) = delete;
     PersistentDescription(PersistentDescription const&)            = delete;
     PersistentDescription()                                        = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol ?getJsonName\@PersistentDescription\@\@UEBAPEBDXZ
      */
-    virtual char const* getJsonName() const;
+    virtual char const* getJsonName() const; // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERSISTENTDESCRIPTION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~PersistentDescription();
+    MCVAPI ~PersistentDescription(); // NOLINT
 #endif
 };

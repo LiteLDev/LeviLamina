@@ -6,6 +6,6 @@ namespace StructureEditorDataHelper {
 /**
  * @symbol ?calculateMaxStructureSize\@StructureEditorDataHelper\@\@YA?AVBlockPos\@\@FF\@Z
  */
-MCAPI class BlockPos calculateMaxStructureSize(short, short);
+MCAPI class BlockPos calculateMaxStructureSize(short, short); // NOLINT
 
 }; // namespace StructureEditorDataHelper

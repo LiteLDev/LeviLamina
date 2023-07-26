@@ -13,12 +13,12 @@ namespace ColumnUtils {
  * ?scanColumn\@ColumnUtils\@\@YA?AV?$optional\@UColumnRange\@ColumnUtils\@\@\@std\@\@AEBVBlockPos\@\@HV?$function\@$$A6A_NAEBVBlockPos\@\@\@Z\@3\@1\@Z
  */
 MCAPI class std::optional<struct ColumnUtils::ColumnRange>
-scanColumn(class BlockPos const&, int, class std::function<bool(class BlockPos const&)>, class std::function<bool(class BlockPos const&)>);
+scanColumn(class BlockPos const&, int, class std::function<bool(class BlockPos const&)>, class std::function<bool(class BlockPos const&)>); // NOLINT
 /**
  * @symbol
  * ?scanColumnWithinPosBiome\@ColumnUtils\@\@YA?AV?$optional\@UColumnRange\@ColumnUtils\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@HV?$function\@$$A6A_NAEBVBlockPos\@\@\@Z\@3\@2\@Z
  */
 MCAPI class std::optional<struct ColumnUtils::ColumnRange>
-scanColumnWithinPosBiome(class IBlockWorldGenAPI&, class BlockPos const&, int, class std::function<bool(class BlockPos const&)>, class std::function<bool(class BlockPos const&)>);
+scanColumnWithinPosBiome(class IBlockWorldGenAPI&, class BlockPos const&, int, class std::function<bool(class BlockPos const&)>, class std::function<bool(class BlockPos const&)>); // NOLINT
 
 }; // namespace ColumnUtils

@@ -8,24 +8,23 @@
 
 class AddOceanTemperatureOperationNode : public ::OperationNodeDetails::OperationNodeBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADDOCEANTEMPERATUREOPERATIONNODE
 public:
+    // prevent constructor by default
     AddOceanTemperatureOperationNode& operator=(AddOceanTemperatureOperationNode const&) = delete;
     AddOceanTemperatureOperationNode(AddOceanTemperatureOperationNode const&)            = delete;
     AddOceanTemperatureOperationNode()                                                   = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2();
+    virtual void __unk_vfn_2(); // NOLINT
     /**
      * @vftbl 3
      * @symbol
@@ -33,5 +32,5 @@ public:
      */
     virtual void
     _fillArea(class OperationNodeDetails::WorkingData<enum class BiomeTemperatureCategory, char>&, class Pos2d const&, class Pos2d const&)
-        const;
+        const; // NOLINT
 };

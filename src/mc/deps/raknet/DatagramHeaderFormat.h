@@ -9,20 +9,19 @@ namespace RakNet { class BitStream; }
 
 class DatagramHeaderFormat {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DATAGRAMHEADERFORMAT
 public:
+    // prevent constructor by default
     DatagramHeaderFormat& operator=(DatagramHeaderFormat const&) = delete;
     DatagramHeaderFormat(DatagramHeaderFormat const&)            = delete;
     DatagramHeaderFormat()                                       = delete;
-#endif
 
 public:
     /**
      * @symbol ?Deserialize\@DatagramHeaderFormat\@\@QEAAXPEAVBitStream\@RakNet\@\@\@Z
      */
-    MCAPI void Deserialize(class RakNet::BitStream*);
+    MCAPI void Deserialize(class RakNet::BitStream*); // NOLINT
     /**
      * @symbol ?Serialize\@DatagramHeaderFormat\@\@QEAAXPEAVBitStream\@RakNet\@\@\@Z
      */
-    MCAPI void Serialize(class RakNet::BitStream*);
+    MCAPI void Serialize(class RakNet::BitStream*); // NOLINT
 };

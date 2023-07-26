@@ -6,14 +6,11 @@ namespace OS {
 
 struct ThreadPoolActionStatus {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OS_THREADPOOLACTIONSTATUS
 public:
+    // prevent constructor by default
     ThreadPoolActionStatus& operator=(ThreadPoolActionStatus const&) = delete;
     ThreadPoolActionStatus(ThreadPoolActionStatus const&)            = delete;
     ThreadPoolActionStatus()                                         = delete;
-#endif
-
-public:
 };
 
 }; // namespace OS

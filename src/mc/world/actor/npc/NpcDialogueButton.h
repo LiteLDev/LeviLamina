@@ -9,24 +9,23 @@ namespace Json { class Value; }
 
 struct NpcDialogueButton {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCDIALOGUEBUTTON
 public:
+    // prevent constructor by default
     NpcDialogueButton& operator=(NpcDialogueButton const&) = delete;
     NpcDialogueButton(NpcDialogueButton const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0NpcDialogueButton\@\@QEAA\@XZ
      */
-    MCAPI NpcDialogueButton();
+    MCAPI NpcDialogueButton(); // NOLINT
     /**
      * @symbol ??1NpcDialogueButton\@\@QEAA\@XZ
      */
-    MCAPI ~NpcDialogueButton();
+    MCAPI ~NpcDialogueButton(); // NOLINT
     /**
      * @symbol
      * ?parse\@NpcDialogueButton\@\@SA?AU1\@AEBVValue\@Json\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI static struct NpcDialogueButton parse(class Json::Value const&, std::string const&, int);
+    MCAPI static struct NpcDialogueButton parse(class Json::Value const&, std::string const&, int); // NOLINT
 };

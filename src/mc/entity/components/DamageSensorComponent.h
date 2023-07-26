@@ -4,53 +4,60 @@
 
 class DamageSensorComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DAMAGESENSORCOMPONENT
 public:
+    // prevent constructor by default
     DamageSensorComponent& operator=(DamageSensorComponent const&) = delete;
     DamageSensorComponent(DamageSensorComponent const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0DamageSensorComponent\@\@QEAA\@XZ
      */
-    MCAPI DamageSensorComponent();
+    MCAPI DamageSensorComponent(); // NOLINT
     /**
      * @symbol ?getCause\@DamageSensorComponent\@\@QEBA?AW4ActorDamageCause\@\@XZ
      */
-    MCAPI enum class ActorDamageCause getCause() const;
+    MCAPI enum class ActorDamageCause getCause() const; // NOLINT
     /**
      * @symbol ?getDamageModifier\@DamageSensorComponent\@\@QEAAMXZ
      */
-    MCAPI float getDamageModifier();
+    MCAPI float getDamageModifier(); // NOLINT
     /**
      * @symbol ?getDamageMultipler\@DamageSensorComponent\@\@QEAAMXZ
      */
-    MCAPI float getDamageMultipler();
+    MCAPI float getDamageMultipler(); // NOLINT
     /**
      * @symbol ?isFatal\@DamageSensorComponent\@\@QEBA_NXZ
      */
-    MCAPI bool isFatal() const;
+    MCAPI bool isFatal() const; // NOLINT
     /**
      * @symbol ??4DamageSensorComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class DamageSensorComponent& operator=(class DamageSensorComponent&&);
+    MCAPI class DamageSensorComponent& operator=(class DamageSensorComponent&&); // NOLINT
     /**
      * @symbol
      * ?recordDamage\@DamageSensorComponent\@\@QEAA_NAEAVActor\@\@AEBVActorDamageSource\@\@H_NVVariantParameterList\@\@2\@Z
      */
-    MCAPI bool recordDamage(class Actor&, class ActorDamageSource const&, int, bool, class VariantParameterList, bool);
+    MCAPI bool
+    recordDamage(class Actor&, class ActorDamageSource const&, int, bool, class VariantParameterList, bool); // NOLINT
     /**
      * @symbol
      * ?recordDamage\@DamageSensorComponent\@\@QEAA_NAEAVActor\@\@PEAV2\@W4ActorDamageCause\@\@H_NVVariantParameterList\@\@\@Z
      */
-    MCAPI bool
-    recordDamage(class Actor&, class Actor*, enum class ActorDamageCause, int, bool, class VariantParameterList);
+    MCAPI bool recordDamage(
+        class Actor&,
+        class Actor*,
+        enum class ActorDamageCause,
+        int,
+        bool,
+        class VariantParameterList
+    ); // NOLINT
     /**
      * @symbol
      * ?recordDamage\@DamageSensorComponent\@\@QEAA_NAEAVActor\@\@PEAV2\@W4ActorDamageCause\@\@H_NVBlockPos\@\@\@Z
      */
-    MCAPI bool recordDamage(class Actor&, class Actor*, enum class ActorDamageCause, int, bool, class BlockPos);
+    MCAPI bool
+    recordDamage(class Actor&, class Actor*, enum class ActorDamageCause, int, bool, class BlockPos); // NOLINT
 
     // private:
     /**
@@ -66,7 +73,7 @@ public:
         bool,
         class VariantParameterList,
         bool
-    );
+    ); // NOLINT
 
 private:
 };

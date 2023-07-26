@@ -4,12 +4,9 @@
 
 struct ScreenshotOptions {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCREENSHOTOPTIONS
 public:
+    // prevent constructor by default
     ScreenshotOptions& operator=(ScreenshotOptions const&) = delete;
     ScreenshotOptions(ScreenshotOptions const&)            = delete;
     ScreenshotOptions()                                    = delete;
-#endif
-
-public:
 };

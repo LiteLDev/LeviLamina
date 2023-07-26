@@ -4,12 +4,9 @@
 
 struct InLavaFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INLAVAFLAG
 public:
+    // prevent constructor by default
     InLavaFlag& operator=(InLavaFlag const&) = delete;
     InLavaFlag(InLavaFlag const&)            = delete;
     InLavaFlag()                             = delete;
-#endif
-
-public:
 };

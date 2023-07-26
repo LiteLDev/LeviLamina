@@ -12,22 +12,21 @@ namespace Json { class Value; }
 
 class SequenceDefinition : public ::BehaviorDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SEQUENCEDEFINITION
 public:
+    // prevent constructor by default
     SequenceDefinition& operator=(SequenceDefinition const&) = delete;
     SequenceDefinition(SequenceDefinition const&)            = delete;
     SequenceDefinition()                                     = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?load\@SequenceDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    virtual void load(class Json::Value, class BehaviorFactory const&); // NOLINT
 };

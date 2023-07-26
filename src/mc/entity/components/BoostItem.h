@@ -4,20 +4,19 @@
 
 struct BoostItem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOOSTITEM
 public:
+    // prevent constructor by default
     BoostItem& operator=(BoostItem const&) = delete;
     BoostItem(BoostItem const&)            = delete;
     BoostItem()                            = delete;
-#endif
 
 public:
     /**
      * @symbol ?setReplacementItemDescriptor\@BoostItem\@\@QEAAXAEBVItemDescriptor\@\@\@Z
      */
-    MCAPI void setReplacementItemDescriptor(class ItemDescriptor const&);
+    MCAPI void setReplacementItemDescriptor(class ItemDescriptor const&); // NOLINT
     /**
      * @symbol ??1BoostItem\@\@QEAA\@XZ
      */
-    MCAPI ~BoostItem();
+    MCAPI ~BoostItem(); // NOLINT
 };

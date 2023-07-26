@@ -4,21 +4,20 @@
 
 class GameModuleServer {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEMODULESERVER
 public:
+    // prevent constructor by default
     GameModuleServer& operator=(GameModuleServer const&) = delete;
     GameModuleServer(GameModuleServer const&)            = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEMODULESERVER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~GameModuleServer();
+    MCVAPI ~GameModuleServer(); // NOLINT
 #endif
     /**
      * @symbol ??0GameModuleServer\@\@QEAA\@XZ
      */
-    MCAPI GameModuleServer();
+    MCAPI GameModuleServer(); // NOLINT
 };

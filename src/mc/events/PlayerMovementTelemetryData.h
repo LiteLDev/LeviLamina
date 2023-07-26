@@ -4,23 +4,22 @@
 
 class PlayerMovementTelemetryData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERMOVEMENTTELEMETRYDATA
 public:
+    // prevent constructor by default
     PlayerMovementTelemetryData& operator=(PlayerMovementTelemetryData const&) = delete;
     PlayerMovementTelemetryData(PlayerMovementTelemetryData const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0PlayerMovementTelemetryData\@\@QEAA\@XZ
      */
-    MCAPI PlayerMovementTelemetryData();
+    MCAPI PlayerMovementTelemetryData(); // NOLINT
     /**
      * @symbol ?getAverage\@PlayerMovementTelemetryData\@\@QEBAMXZ
      */
-    MCAPI float getAverage() const;
+    MCAPI float getAverage() const; // NOLINT
     /**
      * @symbol ?reset\@PlayerMovementTelemetryData\@\@QEAAXXZ
      */
-    MCAPI void reset();
+    MCAPI void reset(); // NOLINT
 };

@@ -4,16 +4,15 @@
 
 struct MolangMaterialVariable {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGMATERIALVARIABLE
 public:
+    // prevent constructor by default
     MolangMaterialVariable& operator=(MolangMaterialVariable const&) = delete;
     MolangMaterialVariable(MolangMaterialVariable const&)            = delete;
     MolangMaterialVariable()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol ??1MolangMaterialVariable\@\@QEAA\@XZ
      */
-    MCAPI ~MolangMaterialVariable();
+    MCAPI ~MolangMaterialVariable(); // NOLINT
 };

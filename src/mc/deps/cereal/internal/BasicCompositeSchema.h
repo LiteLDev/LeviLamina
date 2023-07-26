@@ -20,69 +20,68 @@ namespace cereal::internal {
 
 class BasicCompositeSchema : public ::cereal::internal::BasicSchema {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CEREAL_INTERNAL_BASICCOMPOSITESCHEMA
 public:
+    // prevent constructor by default
     BasicCompositeSchema& operator=(BasicCompositeSchema const&) = delete;
     BasicCompositeSchema(BasicCompositeSchema const&)            = delete;
     BasicCompositeSchema()                                       = delete;
-#endif
 
 public:
     /**
      * @vftbl 4
      * @symbol __unk_vfn_4
      */
-    virtual void __unk_vfn_4();
+    virtual void __unk_vfn_4(); // NOLINT
     /**
      * @vftbl 5
      * @symbol __unk_vfn_5
      */
-    virtual void __unk_vfn_5();
+    virtual void __unk_vfn_5(); // NOLINT
     /**
      * @vftbl 6
      * @symbol
      * ?addParent\@BasicCompositeSchema\@internal\@cereal\@\@UEAAXV?$unique_ptr\@VBasicSchema\@internal\@cereal\@\@U?$default_delete\@VBasicSchema\@internal\@cereal\@\@\@std\@\@\@std\@\@\@Z
      */
-    virtual void addParent(std::unique_ptr<class cereal::internal::BasicSchema>);
+    virtual void addParent(std::unique_ptr<class cereal::internal::BasicSchema>); // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?addSetter\@BasicCompositeSchema\@internal\@cereal\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0V?$unique_ptr\@VBasicSchema\@internal\@cereal\@\@U?$default_delete\@VBasicSchema\@internal\@cereal\@\@\@std\@\@\@5\@\@Z
      */
     virtual void
-    addSetter(std::string const&, std::string const&, std::unique_ptr<class cereal::internal::BasicSchema>);
+    addSetter(std::string const&, std::string const&, std::unique_ptr<class cereal::internal::BasicSchema>); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREAL_INTERNAL_BASICCOMPOSITESCHEMA
     /**
      * @symbol
      * ?addDeprecatedMember\@BasicCompositeSchema\@internal\@cereal\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
-    MCVAPI void addDeprecatedMember(std::string const&, std::string const&);
+    MCVAPI void addDeprecatedMember(std::string const&, std::string const&); // NOLINT
     /**
      * @symbol
      * ?addMember\@BasicCompositeSchema\@internal\@cereal\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@USerializerTraits\@3\@V?$unique_ptr\@VBasicSchema\@internal\@cereal\@\@U?$default_delete\@VBasicSchema\@internal\@cereal\@\@\@std\@\@\@5\@\@Z
      */
     MCVAPI void
-    addMember(std::string const&, struct cereal::SerializerTraits, std::unique_ptr<class cereal::internal::BasicSchema>);
+    addMember(std::string const&, struct cereal::SerializerTraits, std::unique_ptr<class cereal::internal::BasicSchema>); // NOLINT
     /**
      * @symbol
      * ?addRequiredMember\@BasicCompositeSchema\@internal\@cereal\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@USerializerTraits\@3\@V?$unique_ptr\@VBasicSchema\@internal\@cereal\@\@U?$default_delete\@VBasicSchema\@internal\@cereal\@\@\@std\@\@\@5\@\@Z
      */
     MCVAPI void
-    addRequiredMember(std::string const&, struct cereal::SerializerTraits, std::unique_ptr<class cereal::internal::BasicSchema>);
+    addRequiredMember(std::string const&, struct cereal::SerializerTraits, std::unique_ptr<class cereal::internal::BasicSchema>); // NOLINT
     /**
      * @symbol
      * ?customError\@BasicCompositeSchema\@internal\@cereal\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
-    MCVAPI void customError(std::string const&, std::string const&);
+    MCVAPI void customError(std::string const&, std::string const&); // NOLINT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~BasicCompositeSchema();
+    MCVAPI ~BasicCompositeSchema(); // NOLINT
 #endif
     /**
      * @symbol ??0BasicCompositeSchema\@internal\@cereal\@\@QEAA\@USerializerTraits\@2\@AEBUReflectionCtx\@2\@\@Z
      */
-    MCAPI BasicCompositeSchema(struct cereal::SerializerTraits, struct cereal::ReflectionCtx const&);
+    MCAPI BasicCompositeSchema(struct cereal::SerializerTraits, struct cereal::ReflectionCtx const&); // NOLINT
 };
 
 }; // namespace cereal::internal

@@ -10,20 +10,19 @@ namespace GameEventConfig { enum class GameEventType; }
 
 class GameEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEEVENT
 public:
+    // prevent constructor by default
     GameEvent& operator=(GameEvent const&) = delete;
     GameEvent(GameEvent const&)            = delete;
     GameEvent()                            = delete;
-#endif
 
 public:
     /**
      * @symbol ?getType\@GameEvent\@\@QEBA?BW4GameEventType\@GameEventConfig\@\@XZ
      */
-    MCAPI enum class GameEventConfig::GameEventType const getType() const;
+    MCAPI enum class GameEventConfig::GameEventType const getType() const; // NOLINT
     /**
      * @symbol ?isCategory\@GameEvent\@\@QEBA_NW4GameEventCategory\@GameEventConfig\@\@\@Z
      */
-    MCAPI bool isCategory(enum class GameEventConfig::GameEventCategory) const;
+    MCAPI bool isCategory(enum class GameEventConfig::GameEventCategory) const; // NOLINT
 };

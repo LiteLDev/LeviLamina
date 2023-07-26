@@ -7,28 +7,27 @@
 
 class NavigationGenericDescription : public ::NavigationDescription {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAVIGATIONGENERICDESCRIPTION
 public:
+    // prevent constructor by default
     NavigationGenericDescription& operator=(NavigationGenericDescription const&) = delete;
     NavigationGenericDescription(NavigationGenericDescription const&)            = delete;
     NavigationGenericDescription()                                               = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol ?getJsonName\@NavigationGenericDescription\@\@UEBAPEBDXZ
      */
-    virtual char const* getJsonName() const;
+    virtual char const* getJsonName() const; // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONGENERICDESCRIPTION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~NavigationGenericDescription();
+    MCVAPI ~NavigationGenericDescription(); // NOLINT
 #endif
 };

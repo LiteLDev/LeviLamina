@@ -11,33 +11,32 @@ namespace OS {
 
 class ThreadPool {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OS_THREADPOOL
 public:
+    // prevent constructor by default
     ThreadPool& operator=(ThreadPool const&) = delete;
     ThreadPool(ThreadPool const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ?Initialize\@ThreadPool\@OS\@\@QEAAJPEAXP6AX0AEAUThreadPoolActionStatus\@2\@\@Z\@Z
      */
-    MCAPI long Initialize(void*, void (*)(void*, struct OS::ThreadPoolActionStatus&));
+    MCAPI long Initialize(void*, void (*)(void*, struct OS::ThreadPoolActionStatus&)); // NOLINT
     /**
      * @symbol ?Submit\@ThreadPool\@OS\@\@QEAAXXZ
      */
-    MCAPI void Submit();
+    MCAPI void Submit(); // NOLINT
     /**
      * @symbol ?Terminate\@ThreadPool\@OS\@\@QEAAXXZ
      */
-    MCAPI void Terminate();
+    MCAPI void Terminate(); // NOLINT
     /**
      * @symbol ??0ThreadPool\@OS\@\@QEAA\@XZ
      */
-    MCAPI ThreadPool();
+    MCAPI ThreadPool(); // NOLINT
     /**
      * @symbol ??1ThreadPool\@OS\@\@QEAA\@XZ
      */
-    MCAPI ~ThreadPool();
+    MCAPI ~ThreadPool(); // NOLINT
 };
 
 }; // namespace OS

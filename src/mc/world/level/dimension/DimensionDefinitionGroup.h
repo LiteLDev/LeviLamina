@@ -15,53 +15,49 @@ public:
     // DimensionDefinitionGroup inner types define
     struct DimensionDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONDEFINITIONGROUP_DIMENSIONDEFINITION
     public:
+        // prevent constructor by default
         DimensionDefinition& operator=(DimensionDefinition const&) = delete;
         DimensionDefinition(DimensionDefinition const&)            = delete;
         DimensionDefinition()                                      = delete;
-#endif
-
-    public:
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONDEFINITIONGROUP
 public:
+    // prevent constructor by default
     DimensionDefinitionGroup& operator=(DimensionDefinitionGroup const&) = delete;
     DimensionDefinitionGroup(DimensionDefinitionGroup const&)            = delete;
     DimensionDefinitionGroup()                                           = delete;
-#endif
 
 public:
     /**
      * @symbol ??0DimensionDefinitionGroup\@\@QEAA\@QEAVResourcePackManager\@\@_N\@Z
      */
-    MCAPI DimensionDefinitionGroup(class ResourcePackManager* const, bool);
+    MCAPI DimensionDefinitionGroup(class ResourcePackManager* const, bool); // NOLINT
     /**
      * @symbol
      * ?getDimensionDefinition\@DimensionDefinitionGroup\@\@QEBA?AV?$optional\@UDimensionDefinition\@DimensionDefinitionGroup\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
      */
     MCAPI class std::optional<struct DimensionDefinitionGroup::DimensionDefinition>
-    getDimensionDefinition(std::string const&) const;
+    getDimensionDefinition(std::string const&) const; // NOLINT
     /**
      * @symbol ?isEmpty\@DimensionDefinitionGroup\@\@QEBA_NXZ
      */
-    MCAPI bool isEmpty() const;
+    MCAPI bool isEmpty() const; // NOLINT
     /**
      * @symbol
      * ?tryAddDimensionDefinitionByString\@DimensionDefinitionGroup\@\@QEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI bool tryAddDimensionDefinitionByString(std::string const&);
+    MCAPI bool tryAddDimensionDefinitionByString(std::string const&); // NOLINT
     /**
      * @symbol ??1DimensionDefinitionGroup\@\@QEAA\@XZ
      */
-    MCAPI ~DimensionDefinitionGroup();
+    MCAPI ~DimensionDefinitionGroup(); // NOLINT
 
     // private:
     /**
      * @symbol ?_checkValidDimensionBounds\@DimensionDefinitionGroup\@\@AEAA_NAEBUDimension\@DimensionDocument\@\@\@Z
      */
-    MCAPI bool _checkValidDimensionBounds(struct DimensionDocument::Dimension const&);
+    MCAPI bool _checkValidDimensionBounds(struct DimensionDocument::Dimension const&); // NOLINT
 
 private:
 };

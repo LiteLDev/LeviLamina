@@ -9,39 +9,39 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptActorDamageSource {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTACTORDAMAGESOURCE
 public:
+    // prevent constructor by default
     ScriptActorDamageSource() = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ScriptActorDamageSource\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
      */
-    MCAPI ScriptActorDamageSource(struct ScriptModuleMinecraft::ScriptActorDamageSource const&);
+    MCAPI ScriptActorDamageSource(struct ScriptModuleMinecraft::ScriptActorDamageSource const&); // NOLINT
     /**
      * @symbol ??0ScriptActorDamageSource\@ScriptModuleMinecraft\@\@QEAA\@$$QEAU01\@\@Z
      */
-    MCAPI ScriptActorDamageSource(struct ScriptModuleMinecraft::ScriptActorDamageSource&&);
+    MCAPI ScriptActorDamageSource(struct ScriptModuleMinecraft::ScriptActorDamageSource&&); // NOLINT
     /**
      * @symbol ??4ScriptActorDamageSource\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptActorDamageSource&
-    operator=(struct ScriptModuleMinecraft::ScriptActorDamageSource const&);
+    operator=(struct ScriptModuleMinecraft::ScriptActorDamageSource const&); // NOLINT
     /**
      * @symbol ??4ScriptActorDamageSource\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptActorDamageSource&
-    operator=(struct ScriptModuleMinecraft::ScriptActorDamageSource&&);
+    operator=(struct ScriptModuleMinecraft::ScriptActorDamageSource&&); // NOLINT
     /**
      * @symbol ??1ScriptActorDamageSource\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptActorDamageSource();
+    MCAPI ~ScriptActorDamageSource(); // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptActorDamageSource\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptActorDamageSource\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptActorDamageSource> bind();
+    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptActorDamageSource>
+    bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

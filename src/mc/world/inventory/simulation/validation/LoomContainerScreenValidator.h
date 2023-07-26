@@ -7,20 +7,19 @@
 
 class LoomContainerScreenValidator : public ::ContainerScreenValidatorBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOMCONTAINERSCREENVALIDATOR
 public:
+    // prevent constructor by default
     LoomContainerScreenValidator& operator=(LoomContainerScreenValidator const&) = delete;
     LoomContainerScreenValidator(LoomContainerScreenValidator const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @symbol ??0LoomContainerScreenValidator\@\@QEAA\@XZ
      */
-    MCAPI LoomContainerScreenValidator();
+    MCAPI LoomContainerScreenValidator(); // NOLINT
 };

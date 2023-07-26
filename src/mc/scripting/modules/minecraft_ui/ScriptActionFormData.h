@@ -32,75 +32,73 @@ public:
     // ScriptActionFormData inner types define
     struct ButtonData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFTSERVERUI_SCRIPTACTIONFORMDATA_BUTTONDATA
     public:
+        // prevent constructor by default
         ButtonData(ButtonData const&) = delete;
         ButtonData()                  = delete;
-#endif
 
     public:
         /**
          * @symbol ??4ButtonData\@ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@QEAAAEAU012\@AEBU012\@\@Z
          */
         MCAPI struct ScriptModuleMinecraftServerUI::ScriptActionFormData::ButtonData&
-        operator=(struct ScriptModuleMinecraftServerUI::ScriptActionFormData::ButtonData const&);
+        operator=(struct ScriptModuleMinecraftServerUI::ScriptActionFormData::ButtonData const&); // NOLINT
         /**
          * @symbol ??1ButtonData\@ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@QEAA\@XZ
          */
-        MCAPI ~ButtonData();
+        MCAPI ~ButtonData(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFTSERVERUI_SCRIPTACTIONFORMDATA
 public:
+    // prevent constructor by default
     ScriptActionFormData& operator=(ScriptActionFormData const&) = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@QEAA\@AEBV01\@\@Z
      */
-    MCAPI ScriptActionFormData(class ScriptModuleMinecraftServerUI::ScriptActionFormData const&);
+    MCAPI ScriptActionFormData(class ScriptModuleMinecraftServerUI::ScriptActionFormData const&); // NOLINT
     /**
      * @symbol ??0ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@QEAA\@$$QEAV01\@\@Z
      */
-    MCAPI ScriptActionFormData(class ScriptModuleMinecraftServerUI::ScriptActionFormData&&);
+    MCAPI ScriptActionFormData(class ScriptModuleMinecraftServerUI::ScriptActionFormData&&); // NOLINT
     /**
      * @symbol ??0ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@QEAA\@XZ
      */
-    MCAPI ScriptActionFormData();
+    MCAPI ScriptActionFormData(); // NOLINT
     /**
      * @symbol
      * ?body\@ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@V?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@\@std\@\@\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptActionFormData>
-        body(class std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>);
+        body(class std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>); // NOLINT
     /**
      * @symbol
      * ?bodyV010\@ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptActionFormData>
-    bodyV010(std::string const&);
+    bodyV010(std::string const&); // NOLINT
     /**
      * @symbol ?buildJson\@ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@QEBA?AVValue\@Json\@\@XZ
      */
-    MCAPI class Json::Value buildJson() const;
+    MCAPI class Json::Value buildJson() const; // NOLINT
     /**
      * @symbol
      * ?button\@ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@V?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@\@std\@\@V?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@6\@\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptActionFormData>
-        button(class std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>, class std::optional<std::string>);
+        button(class std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>, class std::optional<std::string>); // NOLINT
     /**
      * @symbol
      * ?buttonV010\@ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$optional\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@6\@\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptActionFormData>
-    buttonV010(std::string const&, class std::optional<std::string>);
+    buttonV010(std::string const&, class std::optional<std::string>); // NOLINT
     /**
      * @symbol ??4ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraftServerUI::ScriptActionFormData&
-    operator=(class ScriptModuleMinecraftServerUI::ScriptActionFormData&&);
+    operator=(class ScriptModuleMinecraftServerUI::ScriptActionFormData&&); // NOLINT
     /**
      * @symbol
      * ?show\@ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@QEAA?AV?$Result\@V?$Promise\@V?$StrongTypedObjectHandle\@VScriptActionFormResponse\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@VScriptFormRejectError\@ScriptModuleMinecraftServerUI\@\@X\@Scripting\@\@\@Scripting\@\@AEBVWeakLifetimeScope\@4\@AEAVScriptObjectFactory\@4\@AEAVDependencyLocator\@4\@AEAVScriptPlayer\@ScriptModuleMinecraft\@\@\@Z
@@ -109,28 +107,29 @@ public:
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptActionFormResponse>,
         class ScriptModuleMinecraftServerUI::ScriptFormRejectError,
         void>>
-    show(class Scripting::WeakLifetimeScope const&, class Scripting::ScriptObjectFactory&, class Scripting::DependencyLocator&, class ScriptModuleMinecraft::ScriptPlayer&);
+    show(class Scripting::WeakLifetimeScope const&, class Scripting::ScriptObjectFactory&, class Scripting::DependencyLocator&, class ScriptModuleMinecraft::ScriptPlayer&); // NOLINT
     /**
      * @symbol
      * ?title\@ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@V?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@\@std\@\@\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptActionFormData>
-        title(class std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>);
+        title(class std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>); // NOLINT
     /**
      * @symbol
      * ?titleV010\@ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptActionFormData>
-    titleV010(std::string const&);
+    titleV010(std::string const&); // NOLINT
     /**
      * @symbol ??1ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptActionFormData();
+    MCAPI ~ScriptActionFormData(); // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@SA?AV?$ClassBindingBuilder\@VScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptActionFormData> bind();
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptActionFormData>
+    bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraftServerUI

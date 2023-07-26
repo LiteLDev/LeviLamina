@@ -4,19 +4,18 @@
 
 struct ChatEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHATEVENT
 public:
+    // prevent constructor by default
     ChatEvent& operator=(ChatEvent const&) = delete;
     ChatEvent()                            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ChatEvent\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI ChatEvent(struct ChatEvent const&);
+    MCAPI ChatEvent(struct ChatEvent const&); // NOLINT
     /**
      * @symbol ??1ChatEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ChatEvent();
+    MCAPI ~ChatEvent(); // NOLINT
 };

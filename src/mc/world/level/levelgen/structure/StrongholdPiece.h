@@ -12,19 +12,18 @@ public:
     // StrongholdPiece inner types define
     enum class SmallDoorType {};
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRONGHOLDPIECE
 public:
+    // prevent constructor by default
     StrongholdPiece& operator=(StrongholdPiece const&) = delete;
     StrongholdPiece(StrongholdPiece const&)            = delete;
     StrongholdPiece()                                  = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRONGHOLDPIECE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~StrongholdPiece();
+    MCVAPI ~StrongholdPiece(); // NOLINT
 #endif
     /**
      * @symbol
@@ -39,7 +38,7 @@ public:
         int,
         int,
         int
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?generateAndAddPiece\@StrongholdPiece\@\@QEAAPEAVStructurePiece\@\@AEAVSHStartPiece\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@HHHHH\@Z
@@ -53,7 +52,7 @@ public:
         int,
         int,
         int
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?generatePieceFromSmallDoor\@StrongholdPiece\@\@QEAA?AV?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@AEAVSHStartPiece\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@3\@AEBVRandom\@\@HHHHH\@Z
@@ -67,7 +66,7 @@ public:
         int,
         int,
         int
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?generateSmallDoor\@StrongholdPiece\@\@QEAAXAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@W4SmallDoorType\@1\@HHH\@Z
@@ -80,7 +79,7 @@ public:
         int,
         int,
         int
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?generateSmallDoorChildForward\@StrongholdPiece\@\@QEAAPEAVStructurePiece\@\@AEAVSHStartPiece\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@HH\@Z
@@ -91,7 +90,7 @@ public:
         class Random&,
         int,
         int
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?generateSmallDoorChildLeft\@StrongholdPiece\@\@QEAAPEAVStructurePiece\@\@AEAVSHStartPiece\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@HH\@Z
@@ -102,7 +101,7 @@ public:
         class Random&,
         int,
         int
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?generateSmallDoorChildRight\@StrongholdPiece\@\@QEAAPEAVStructurePiece\@\@AEAVSHStartPiece\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@HH\@Z
@@ -113,5 +112,5 @@ public:
         class Random&,
         int,
         int
-    );
+    ); // NOLINT
 };

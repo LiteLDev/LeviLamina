@@ -4,19 +4,18 @@
 
 class RailMovementComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAILMOVEMENTCOMPONENT
 public:
+    // prevent constructor by default
     RailMovementComponent& operator=(RailMovementComponent const&) = delete;
     RailMovementComponent(RailMovementComponent const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0RailMovementComponent\@\@QEAA\@XZ
      */
-    MCAPI RailMovementComponent();
+    MCAPI RailMovementComponent(); // NOLINT
     /**
      * @symbol ?getMaxSpeed\@RailMovementComponent\@\@QEBAMXZ
      */
-    MCAPI float getMaxSpeed() const;
+    MCAPI float getMaxSpeed() const; // NOLINT
 };

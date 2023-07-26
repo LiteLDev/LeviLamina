@@ -4,20 +4,19 @@
 
 struct GameTestReport {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETESTREPORT
 public:
+    // prevent constructor by default
     GameTestReport& operator=(GameTestReport const&) = delete;
     GameTestReport(GameTestReport const&)            = delete;
     GameTestReport()                                 = delete;
-#endif
 
 public:
     /**
      * @symbol ??1GameTestReport\@\@QEAA\@XZ
      */
-    MCAPI ~GameTestReport();
+    MCAPI ~GameTestReport(); // NOLINT
     /**
      * @symbol ?bindType\@GameTestReport\@\@SAXXZ
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(); // NOLINT
 };

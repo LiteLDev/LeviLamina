@@ -4,12 +4,9 @@
 
 class Pos {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_POS
 public:
+    // prevent constructor by default
     Pos& operator=(Pos const&) = delete;
     Pos(Pos const&)            = delete;
     Pos()                      = delete;
-#endif
-
-public:
 };

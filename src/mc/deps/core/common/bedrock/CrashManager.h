@@ -6,14 +6,11 @@ namespace Bedrock {
 
 class CrashManager {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_CRASHMANAGER
 public:
+    // prevent constructor by default
     CrashManager& operator=(CrashManager const&) = delete;
     CrashManager(CrashManager const&)            = delete;
     CrashManager()                               = delete;
-#endif
-
-public:
 };
 
 }; // namespace Bedrock

@@ -4,12 +4,9 @@
 
 struct ProfilerLiteTelemetry {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROFILERLITETELEMETRY
 public:
+    // prevent constructor by default
     ProfilerLiteTelemetry& operator=(ProfilerLiteTelemetry const&) = delete;
     ProfilerLiteTelemetry(ProfilerLiteTelemetry const&)            = delete;
     ProfilerLiteTelemetry()                                        = delete;
-#endif
-
-public:
 };

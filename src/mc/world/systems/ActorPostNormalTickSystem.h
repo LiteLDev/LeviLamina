@@ -4,20 +4,19 @@
 
 class ActorPostNormalTickSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORPOSTNORMALTICKSYSTEM
 public:
+    // prevent constructor by default
     ActorPostNormalTickSystem& operator=(ActorPostNormalTickSystem const&) = delete;
     ActorPostNormalTickSystem(ActorPostNormalTickSystem const&)            = delete;
     ActorPostNormalTickSystem()                                            = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystemClient\@ActorPostNormalTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystemClient();
+    MCAPI static struct TickingSystemWithInfo createSystemClient(); // NOLINT
     /**
      * @symbol ?createSystemServer\@ActorPostNormalTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystemServer();
+    MCAPI static struct TickingSystemWithInfo createSystemServer(); // NOLINT
 };

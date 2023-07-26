@@ -7,27 +7,26 @@
 
 class OceanMonumentCoreRoom : public ::OceanMonumentPiece {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCEANMONUMENTCOREROOM
 public:
+    // prevent constructor by default
     OceanMonumentCoreRoom& operator=(OceanMonumentCoreRoom const&) = delete;
     OceanMonumentCoreRoom(OceanMonumentCoreRoom const&)            = delete;
     OceanMonumentCoreRoom()                                        = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?getType\@OceanMonumentCoreRoom\@\@UEBA?AW4StructurePieceType\@\@XZ
      */
-    virtual enum class StructurePieceType getType() const;
+    virtual enum class StructurePieceType getType() const; // NOLINT
     /**
      * @vftbl 4
      * @symbol ?postProcess\@OceanMonumentCoreRoom\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&); // NOLINT
 };

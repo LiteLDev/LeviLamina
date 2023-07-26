@@ -4,16 +4,15 @@
 
 class SecureStorageKey {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SECURESTORAGEKEY
 public:
+    // prevent constructor by default
     SecureStorageKey& operator=(SecureStorageKey const&) = delete;
     SecureStorageKey(SecureStorageKey const&)            = delete;
     SecureStorageKey()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ??1SecureStorageKey\@\@QEAA\@XZ
      */
-    MCAPI ~SecureStorageKey();
+    MCAPI ~SecureStorageKey(); // NOLINT
 };

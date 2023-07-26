@@ -4,25 +4,24 @@
 
 class LegacyBodyControl {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYBODYCONTROL
 public:
+    // prevent constructor by default
     LegacyBodyControl& operator=(LegacyBodyControl const&) = delete;
     LegacyBodyControl(LegacyBodyControl const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?clientTick\@LegacyBodyControl\@\@UEAAXAEAVMob\@\@\@Z
      */
-    virtual void clientTick(class Mob&);
+    virtual void clientTick(class Mob&); // NOLINT
     /**
      * @symbol ??0LegacyBodyControl\@\@QEAA\@XZ
      */
-    MCAPI LegacyBodyControl();
+    MCAPI LegacyBodyControl(); // NOLINT
 };

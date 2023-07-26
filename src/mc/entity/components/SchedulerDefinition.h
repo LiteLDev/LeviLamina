@@ -12,34 +12,33 @@ namespace JsonUtil { class EmptyClass; }
 
 class SchedulerDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCHEDULERDEFINITION
 public:
+    // prevent constructor by default
     SchedulerDefinition& operator=(SchedulerDefinition const&) = delete;
     SchedulerDefinition(SchedulerDefinition const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0SchedulerDefinition\@\@QEAA\@XZ
      */
-    MCAPI SchedulerDefinition();
+    MCAPI SchedulerDefinition(); // NOLINT
     /**
      * @symbol ?initialize\@SchedulerDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVSchedulerComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class SchedulerComponent&) const;
+    MCAPI void initialize(class EntityContext&, class SchedulerComponent&) const; // NOLINT
     /**
      * @symbol ?setMaxDelayTicks\@SchedulerDefinition\@\@QEAAXAEBM\@Z
      */
-    MCAPI void setMaxDelayTicks(float const&);
+    MCAPI void setMaxDelayTicks(float const&); // NOLINT
     /**
      * @symbol ?setMinDelayTicks\@SchedulerDefinition\@\@QEAAXAEBM\@Z
      */
-    MCAPI void setMinDelayTicks(float const&);
+    MCAPI void setMinDelayTicks(float const&); // NOLINT
     /**
      * @symbol
      * ?buildSchema\@SchedulerDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VSchedulerDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SchedulerDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      class SchedulerDefinition>>&); // NOLINT
 };

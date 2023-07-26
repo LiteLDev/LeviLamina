@@ -7,25 +7,24 @@
 
 class AmphibiousMoveControl : public ::MoveControl {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AMPHIBIOUSMOVECONTROL
 public:
+    // prevent constructor by default
     AmphibiousMoveControl& operator=(AmphibiousMoveControl const&) = delete;
     AmphibiousMoveControl(AmphibiousMoveControl const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?tick\@AmphibiousMoveControl\@\@UEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
      */
-    virtual void tick(class MoveControlComponent&, class Mob&);
+    virtual void tick(class MoveControlComponent&, class Mob&); // NOLINT
     /**
      * @symbol ??0AmphibiousMoveControl\@\@QEAA\@XZ
      */
-    MCAPI AmphibiousMoveControl();
+    MCAPI AmphibiousMoveControl(); // NOLINT
 };

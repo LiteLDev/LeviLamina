@@ -6,14 +6,11 @@ namespace Social {
 
 class IUserManager {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SOCIAL_IUSERMANAGER
 public:
+    // prevent constructor by default
     IUserManager& operator=(IUserManager const&) = delete;
     IUserManager(IUserManager const&)            = delete;
     IUserManager()                               = delete;
-#endif
-
-public:
 };
 
 }; // namespace Social

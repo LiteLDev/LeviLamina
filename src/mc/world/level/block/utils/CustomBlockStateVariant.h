@@ -4,27 +4,26 @@
 
 class CustomBlockStateVariant {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CUSTOMBLOCKSTATEVARIANT
 public:
+    // prevent constructor by default
     CustomBlockStateVariant& operator=(CustomBlockStateVariant const&) = delete;
     CustomBlockStateVariant(CustomBlockStateVariant const&)            = delete;
     CustomBlockStateVariant()                                          = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?toNBT\@CustomBlockStateVariant\@\@UEBAXAEAVCompoundTag\@\@H\@Z
      */
-    virtual void toNBT(class CompoundTag&, int) const;
+    virtual void toNBT(class CompoundTag&, int) const; // NOLINT
     /**
      * @vftbl 2
      * @symbol ?fromNBT\@CustomBlockStateVariant\@\@UEBA_NAEBVCompoundTag\@\@AEAH\@Z
      */
-    virtual bool fromNBT(class CompoundTag const&, int&) const;
+    virtual bool fromNBT(class CompoundTag const&, int&) const; // NOLINT
 };

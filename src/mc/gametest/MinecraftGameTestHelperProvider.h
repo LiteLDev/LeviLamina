@@ -11,30 +11,29 @@ namespace gametest { class IGameTestHelperProvider; }
 
 class MinecraftGameTestHelperProvider {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTGAMETESTHELPERPROVIDER
 public:
+    // prevent constructor by default
     MinecraftGameTestHelperProvider& operator=(MinecraftGameTestHelperProvider const&) = delete;
     MinecraftGameTestHelperProvider(MinecraftGameTestHelperProvider const&)            = delete;
     MinecraftGameTestHelperProvider()                                                  = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?createGameTestHelper\@MinecraftGameTestHelperProvider\@\@UEAA?AV?$unique_ptr\@VBaseGameTestHelper\@gametest\@\@U?$default_delete\@VBaseGameTestHelper\@gametest\@\@\@std\@\@\@std\@\@AEAVBaseGameTestInstance\@gametest\@\@\@Z
      */
     virtual std::unique_ptr<class gametest::BaseGameTestHelper>
-    createGameTestHelper(class gametest::BaseGameTestInstance&);
+    createGameTestHelper(class gametest::BaseGameTestInstance&); // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?clone\@MinecraftGameTestHelperProvider\@\@UEAA?AV?$unique_ptr\@VIGameTestHelperProvider\@gametest\@\@U?$default_delete\@VIGameTestHelperProvider\@gametest\@\@\@std\@\@\@std\@\@XZ
      */
-    virtual std::unique_ptr<class gametest::IGameTestHelperProvider> clone();
+    virtual std::unique_ptr<class gametest::IGameTestHelperProvider> clone(); // NOLINT
 };

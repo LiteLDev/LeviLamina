@@ -9,20 +9,19 @@ namespace Json { class Value; }
 
 class EntityTypes {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYTYPES
 public:
+    // prevent constructor by default
     EntityTypes& operator=(EntityTypes const&) = delete;
     EntityTypes(EntityTypes const&)            = delete;
     EntityTypes()                              = delete;
-#endif
 
 public:
     /**
      * @symbol ?parseJson\@EntityTypes\@\@QEAA_NAEBVValue\@Json\@\@\@Z
      */
-    MCAPI bool parseJson(class Json::Value const&);
+    MCAPI bool parseJson(class Json::Value const&); // NOLINT
     /**
      * @symbol ??1EntityTypes\@\@QEAA\@XZ
      */
-    MCAPI ~EntityTypes();
+    MCAPI ~EntityTypes(); // NOLINT
 };

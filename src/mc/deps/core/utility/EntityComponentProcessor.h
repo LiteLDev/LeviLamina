@@ -6,14 +6,11 @@ namespace Util {
 
 class EntityComponentProcessor {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_UTIL_ENTITYCOMPONENTPROCESSOR
 public:
+    // prevent constructor by default
     EntityComponentProcessor& operator=(EntityComponentProcessor const&) = delete;
     EntityComponentProcessor(EntityComponentProcessor const&)            = delete;
     EntityComponentProcessor()                                           = delete;
-#endif
-
-public:
 };
 
 }; // namespace Util

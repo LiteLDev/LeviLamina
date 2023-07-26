@@ -4,16 +4,15 @@
 
 class ActorTerrainInterlockData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORTERRAININTERLOCKDATA
 public:
+    // prevent constructor by default
     ActorTerrainInterlockData& operator=(ActorTerrainInterlockData const&) = delete;
     ActorTerrainInterlockData(ActorTerrainInterlockData const&)            = delete;
     ActorTerrainInterlockData()                                            = delete;
-#endif
 
 public:
     /**
      * @symbol ?setCreationTime\@ActorTerrainInterlockData\@\@QEAAXXZ
      */
-    MCAPI void setCreationTime();
+    MCAPI void setCreationTime(); // NOLINT
 };

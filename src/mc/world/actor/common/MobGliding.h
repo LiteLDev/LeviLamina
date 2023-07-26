@@ -6,22 +6,22 @@ namespace MobGliding {
 /**
  * @symbol ?getArmorFlyEnabled\@MobGliding\@\@YA_NAEBVEntityContext\@\@\@Z
  */
-MCAPI bool getArmorFlyEnabled(class EntityContext const&);
+MCAPI bool getArmorFlyEnabled(class EntityContext const&); // NOLINT
 /**
  * @symbol ?getFallFlyTicks\@MobGliding\@\@YAHAEBVEntityContext\@\@\@Z
  */
-MCAPI int getFallFlyTicks(class EntityContext const&);
+MCAPI int getFallFlyTicks(class EntityContext const&); // NOLINT
 /**
  * @symbol ?initializeMob\@MobGliding\@\@YAXAEAVEntityContext\@\@\@Z
  */
-MCAPI void initializeMob(class EntityContext&);
+MCAPI void initializeMob(class EntityContext&); // NOLINT
 /**
  * @symbol ?setArmorFlyEnabled\@MobGliding\@\@YAXAEAVEntityContext\@\@_N\@Z
  */
-MCAPI void setArmorFlyEnabled(class EntityContext&, bool);
+MCAPI void setArmorFlyEnabled(class EntityContext&, bool); // NOLINT
 /**
  * @symbol ?setFallFlyTicks\@MobGliding\@\@YAXAEAVEntityContext\@\@H\@Z
  */
-MCAPI void setFallFlyTicks(class EntityContext&, int);
+MCAPI void setFallFlyTicks(class EntityContext&, int); // NOLINT
 
 }; // namespace MobGliding

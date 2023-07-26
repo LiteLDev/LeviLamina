@@ -12,19 +12,18 @@ namespace JsonUtil { class EmptyClass; }
 
 struct OnStartLandingDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONSTARTLANDINGDEFINITION
 public:
+    // prevent constructor by default
     OnStartLandingDefinition& operator=(OnStartLandingDefinition const&) = delete;
     OnStartLandingDefinition(OnStartLandingDefinition const&)            = delete;
     OnStartLandingDefinition()                                           = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?buildSchema\@OnStartLandingDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UOnStartLandingDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnStartLandingDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      struct OnStartLandingDefinition>>&); // NOLINT
 };

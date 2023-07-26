@@ -4,17 +4,16 @@
 
 class ActorUpdatePostTickPositionDeltaSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORUPDATEPOSTTICKPOSITIONDELTASYSTEM
 public:
+    // prevent constructor by default
     ActorUpdatePostTickPositionDeltaSystem& operator=(ActorUpdatePostTickPositionDeltaSystem const&) = delete;
     ActorUpdatePostTickPositionDeltaSystem(ActorUpdatePostTickPositionDeltaSystem const&)            = delete;
     ActorUpdatePostTickPositionDeltaSystem()                                                         = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?createActorUpdatePostTickPositionDeltaSystem\@ActorUpdatePostTickPositionDeltaSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createActorUpdatePostTickPositionDeltaSystem();
+    MCAPI static struct TickingSystemWithInfo createActorUpdatePostTickPositionDeltaSystem(); // NOLINT
 };

@@ -4,22 +4,21 @@
 
 class ThirdPartyInfo {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_THIRDPARTYINFO
 public:
+    // prevent constructor by default
     ThirdPartyInfo& operator=(ThirdPartyInfo const&) = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ThirdPartyInfo\@\@QEAA\@XZ
      */
-    MCAPI ThirdPartyInfo();
+    MCAPI ThirdPartyInfo(); // NOLINT
     /**
      * @symbol ??0ThirdPartyInfo\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI ThirdPartyInfo(class ThirdPartyInfo const&);
+    MCAPI ThirdPartyInfo(class ThirdPartyInfo const&); // NOLINT
     /**
      * @symbol ??1ThirdPartyInfo\@\@QEAA\@XZ
      */
-    MCAPI ~ThirdPartyInfo();
+    MCAPI ~ThirdPartyInfo(); // NOLINT
 };

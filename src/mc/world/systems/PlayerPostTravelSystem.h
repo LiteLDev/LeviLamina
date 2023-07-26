@@ -4,16 +4,15 @@
 
 class PlayerPostTravelSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERPOSTTRAVELSYSTEM
 public:
+    // prevent constructor by default
     PlayerPostTravelSystem& operator=(PlayerPostTravelSystem const&) = delete;
     PlayerPostTravelSystem(PlayerPostTravelSystem const&)            = delete;
     PlayerPostTravelSystem()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol ?create\@PlayerPostTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo create();
+    MCAPI static struct TickingSystemWithInfo create(); // NOLINT
 };

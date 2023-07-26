@@ -12,27 +12,26 @@ namespace JsonUtil { class EmptyClass; }
 
 struct IsStackableDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISSTACKABLEDEFINITION
 public:
+    // prevent constructor by default
     IsStackableDefinition& operator=(IsStackableDefinition const&) = delete;
     IsStackableDefinition(IsStackableDefinition const&)            = delete;
     IsStackableDefinition()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ?initialize\@IsStackableDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&) const;
+    MCAPI void initialize(class EntityContext&) const; // NOLINT
     /**
      * @symbol ?uninitialize\@IsStackableDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void uninitialize(class EntityContext&) const;
+    MCAPI void uninitialize(class EntityContext&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@IsStackableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UIsStackableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsStackableDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      struct IsStackableDefinition>>&); // NOLINT
 };

@@ -20,12 +20,11 @@ namespace ScriptModuleMinecraft {
 
 class IScriptBeforeEvents {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_ISCRIPTBEFOREEVENTS
 public:
+    // prevent constructor by default
     IScriptBeforeEvents& operator=(IScriptBeforeEvents const&) = delete;
     IScriptBeforeEvents(IScriptBeforeEvents const&)            = delete;
     IScriptBeforeEvents()                                      = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_ISCRIPTBEFOREEVENTS
@@ -34,44 +33,45 @@ public:
      * ?onBeforeActivatePiston\@IScriptBeforeEvents\@ScriptModuleMinecraft\@\@UEAAXV?$StrongTypedObjectHandle\@UScriptPistonActionBeforeEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Z
      */
     MCVAPI void onBeforeActivatePiston(class Scripting::StrongTypedObjectHandle<
-                                       struct ScriptModuleMinecraft::ScriptPistonActionBeforeEvent>);
+                                       struct ScriptModuleMinecraft::ScriptPistonActionBeforeEvent>); // NOLINT
     /**
      * @symbol
      * ?onBeforeChat\@IScriptBeforeEvents\@ScriptModuleMinecraft\@\@UEAAXV?$StrongTypedObjectHandle\@UScriptChatSendBeforeEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Z
      */
-    MCVAPI void
-        onBeforeChat(class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent>);
+    MCVAPI void onBeforeChat(class Scripting::StrongTypedObjectHandle<
+                             struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent>); // NOLINT
     /**
      * @symbol
      * ?onBeforeDataDrivenActorEventSend\@IScriptBeforeEvents\@ScriptModuleMinecraft\@\@UEAAXV?$StrongTypedObjectHandle\@UScriptDataDrivenActorTriggerBeforeEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Z
      */
-    MCVAPI void
-        onBeforeDataDrivenActorEventSend(class Scripting::StrongTypedObjectHandle<
-                                         struct ScriptModuleMinecraft::ScriptDataDrivenActorTriggerBeforeEvent>);
+    MCVAPI void onBeforeDataDrivenActorEventSend(class Scripting::StrongTypedObjectHandle<
+                                                 struct ScriptModuleMinecraft::
+                                                     ScriptDataDrivenActorTriggerBeforeEvent>); // NOLINT
     /**
      * @symbol
      * ?onBeforeExplosion\@IScriptBeforeEvents\@ScriptModuleMinecraft\@\@UEAAXV?$StrongTypedObjectHandle\@UScriptExplosionStartedBeforeEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Z
      */
     MCVAPI void onBeforeExplosion(class Scripting::StrongTypedObjectHandle<
-                                  struct ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent>);
+                                  struct ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent>); // NOLINT
     /**
      * @symbol
      * ?onBeforeItemDefinitionEventTriggered\@IScriptBeforeEvents\@ScriptModuleMinecraft\@\@UEAAXV?$StrongTypedObjectHandle\@UScriptItemDefinitionBeforeEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Z
      */
-    MCVAPI void onBeforeItemDefinitionEventTriggered(class Scripting::StrongTypedObjectHandle<
-                                                     struct ScriptModuleMinecraft::ScriptItemDefinitionBeforeEvent>);
+    MCVAPI void
+        onBeforeItemDefinitionEventTriggered(class Scripting::StrongTypedObjectHandle<
+                                             struct ScriptModuleMinecraft::ScriptItemDefinitionBeforeEvent>); // NOLINT
     /**
      * @symbol
      * ?onBeforeItemUse\@IScriptBeforeEvents\@ScriptModuleMinecraft\@\@UEAAXV?$StrongTypedObjectHandle\@UScriptItemUseBeforeEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Z
      */
     MCVAPI void onBeforeItemUse(class Scripting::StrongTypedObjectHandle<
-                                struct ScriptModuleMinecraft::ScriptItemUseBeforeEvent>);
+                                struct ScriptModuleMinecraft::ScriptItemUseBeforeEvent>); // NOLINT
     /**
      * @symbol
      * ?onBeforeItemUseOn\@IScriptBeforeEvents\@ScriptModuleMinecraft\@\@UEAAXV?$StrongTypedObjectHandle\@UScriptItemUseOnBeforeEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Z
      */
     MCVAPI void onBeforeItemUseOn(class Scripting::StrongTypedObjectHandle<
-                                  struct ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>);
+                                  struct ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>); // NOLINT
 #endif
 };
 

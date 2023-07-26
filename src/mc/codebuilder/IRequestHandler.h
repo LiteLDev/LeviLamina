@@ -6,14 +6,11 @@ namespace CodeBuilder {
 
 class IRequestHandler {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CODEBUILDER_IREQUESTHANDLER
 public:
+    // prevent constructor by default
     IRequestHandler& operator=(IRequestHandler const&) = delete;
     IRequestHandler(IRequestHandler const&)            = delete;
     IRequestHandler()                                  = delete;
-#endif
-
-public:
 };
 
 }; // namespace CodeBuilder

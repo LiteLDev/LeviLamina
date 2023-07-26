@@ -4,31 +4,30 @@
 
 class LookAtComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKATCOMPONENT
 public:
+    // prevent constructor by default
     LookAtComponent& operator=(LookAtComponent const&) = delete;
     LookAtComponent(LookAtComponent const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0LookAtComponent\@\@QEAA\@XZ
      */
-    MCAPI LookAtComponent();
+    MCAPI LookAtComponent(); // NOLINT
     /**
      * @symbol ?getCoolingTime\@LookAtComponent\@\@QEAAAEAHXZ
      */
-    MCAPI int& getCoolingTime();
+    MCAPI int& getCoolingTime(); // NOLINT
     /**
      * @symbol ?getSearchRadius\@LookAtComponent\@\@QEBAMXZ
      */
-    MCAPI float getSearchRadius() const;
+    MCAPI float getSearchRadius() const; // NOLINT
     /**
      * @symbol ?getTarget\@LookAtComponent\@\@QEBA_NXZ
      */
-    MCAPI bool getTarget() const;
+    MCAPI bool getTarget() const; // NOLINT
     /**
      * @symbol ?isLookingAtMe\@LookAtComponent\@\@QEAA_NAEAVActor\@\@0\@Z
      */
-    MCAPI bool isLookingAtMe(class Actor&, class Actor&);
+    MCAPI bool isLookingAtMe(class Actor&, class Actor&); // NOLINT
 };

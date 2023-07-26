@@ -7,11 +7,11 @@ namespace ComponentComparer {
  * @symbol
  * ?GETDIFF_NOT_IMPLEMENTED\@ComponentComparer\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
  */
-MCAPI extern std::string const GETDIFF_NOT_IMPLEMENTED;
+MCAPI extern std::string const GETDIFF_NOT_IMPLEMENTED; // NOLINT
 /**
  * @symbol
  * ?TOSTRING_NOT_IMPLEMENTED\@ComponentComparer\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
  */
-MCAPI extern std::string const TOSTRING_NOT_IMPLEMENTED;
+MCAPI extern std::string const TOSTRING_NOT_IMPLEMENTED; // NOLINT
 
 }; // namespace ComponentComparer

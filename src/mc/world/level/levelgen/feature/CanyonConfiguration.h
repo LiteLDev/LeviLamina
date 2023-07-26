@@ -6,14 +6,11 @@ namespace CanyonFeatureUtils {
 
 struct CanyonConfiguration {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CANYONFEATUREUTILS_CANYONCONFIGURATION
 public:
+    // prevent constructor by default
     CanyonConfiguration& operator=(CanyonConfiguration const&) = delete;
     CanyonConfiguration(CanyonConfiguration const&)            = delete;
     CanyonConfiguration()                                      = delete;
-#endif
-
-public:
 };
 
 }; // namespace CanyonFeatureUtils

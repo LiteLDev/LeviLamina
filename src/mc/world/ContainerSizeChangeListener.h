@@ -4,18 +4,17 @@
 
 class ContainerSizeChangeListener {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERSIZECHANGELISTENER
 public:
+    // prevent constructor by default
     ContainerSizeChangeListener& operator=(ContainerSizeChangeListener const&) = delete;
     ContainerSizeChangeListener(ContainerSizeChangeListener const&)            = delete;
     ContainerSizeChangeListener()                                              = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSIZECHANGELISTENER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ContainerSizeChangeListener();
+    MCVAPI ~ContainerSizeChangeListener(); // NOLINT
 #endif
 };

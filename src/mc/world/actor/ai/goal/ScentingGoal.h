@@ -21,12 +21,11 @@ public:
     // ScentingGoal inner types define
     class Definition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCENTINGGOAL_DEFINITION
     public:
+        // prevent constructor by default
         Definition& operator=(Definition const&) = delete;
         Definition(Definition const&)            = delete;
         Definition()                             = delete;
-#endif
 
     public:
         /**
@@ -34,29 +33,28 @@ public:
          * ?buildSchema\@Definition\@ScentingGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDefinition\@ScentingGoal\@\@\@JsonUtil\@\@\@4\@\@Z
          */
         MCAPI static void
-        buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ScentingGoal::Definition>>&);
+        buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ScentingGoal::Definition>>&); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCENTINGGOAL
 public:
+    // prevent constructor by default
     ScentingGoal& operator=(ScentingGoal const&) = delete;
     ScentingGoal(ScentingGoal const&)            = delete;
     ScentingGoal()                               = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3();
+    virtual void __unk_vfn_3(); // NOLINT
     /**
      * @symbol ??0ScentingGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
-    MCAPI ScentingGoal(class Mob&);
+    MCAPI ScentingGoal(class Mob&); // NOLINT
 };

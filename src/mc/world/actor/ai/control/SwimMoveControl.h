@@ -7,30 +7,29 @@
 
 class SwimMoveControl : public ::MoveControl {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWIMMOVECONTROL
 public:
+    // prevent constructor by default
     SwimMoveControl& operator=(SwimMoveControl const&) = delete;
     SwimMoveControl(SwimMoveControl const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?initializeInternal\@SwimMoveControl\@\@UEAAXAEAVMob\@\@PEAUMoveControlDescription\@\@\@Z
      */
-    virtual void initializeInternal(class Mob&, struct MoveControlDescription*);
+    virtual void initializeInternal(class Mob&, struct MoveControlDescription*); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?tick\@SwimMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
      */
-    virtual void tick(class MoveControlComponent&, class Mob&);
+    virtual void tick(class MoveControlComponent&, class Mob&); // NOLINT
     /**
      * @symbol ??0SwimMoveControl\@\@QEAA\@XZ
      */
-    MCAPI SwimMoveControl();
+    MCAPI SwimMoveControl(); // NOLINT
 };

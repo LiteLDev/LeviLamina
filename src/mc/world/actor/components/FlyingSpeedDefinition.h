@@ -12,19 +12,18 @@ namespace JsonUtil { class EmptyClass; }
 
 struct FlyingSpeedDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLYINGSPEEDDEFINITION
 public:
+    // prevent constructor by default
     FlyingSpeedDefinition& operator=(FlyingSpeedDefinition const&) = delete;
     FlyingSpeedDefinition(FlyingSpeedDefinition const&)            = delete;
     FlyingSpeedDefinition()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?buildSchema\@FlyingSpeedDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UFlyingSpeedDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct FlyingSpeedDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      struct FlyingSpeedDefinition>>&); // NOLINT
 };

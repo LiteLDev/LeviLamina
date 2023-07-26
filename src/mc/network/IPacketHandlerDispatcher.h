@@ -4,12 +4,9 @@
 
 class IPacketHandlerDispatcher {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IPACKETHANDLERDISPATCHER
 public:
+    // prevent constructor by default
     IPacketHandlerDispatcher& operator=(IPacketHandlerDispatcher const&) = delete;
     IPacketHandlerDispatcher(IPacketHandlerDispatcher const&)            = delete;
     IPacketHandlerDispatcher()                                           = delete;
-#endif
-
-public:
 };

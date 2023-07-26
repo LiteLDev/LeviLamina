@@ -7,33 +7,32 @@
 
 class EncryptedZipTransforms {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCRYPTEDZIPTRANSFORMS
 public:
+    // prevent constructor by default
     EncryptedZipTransforms& operator=(EncryptedZipTransforms const&) = delete;
     EncryptedZipTransforms(EncryptedZipTransforms const&)            = delete;
     EncryptedZipTransforms()                                         = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?readTransform\@EncryptedZipTransforms\@\@UEBA_NAEAV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@\@Z
      */
-    virtual bool readTransform(std::vector<unsigned char>&) const;
+    virtual bool readTransform(std::vector<unsigned char>&) const; // NOLINT
     /**
      * @vftbl 2
      * @symbol ?writeTransform\@EncryptedZipTransforms\@\@UEBA_NAEAV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@\@Z
      */
-    virtual bool writeTransform(std::vector<unsigned char>&) const;
+    virtual bool writeTransform(std::vector<unsigned char>&) const; // NOLINT
     /**
      * @symbol
      * ??0EncryptedZipTransforms\@\@QEAA\@AEBV?$not_null\@V?$NonOwnerPointer\@$$CBVIContentKeyProvider\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
-    MCAPI
-    EncryptedZipTransforms(class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&);
+    MCAPI EncryptedZipTransforms(class gsl::not_null<
+                                 class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&); // NOLINT
 };

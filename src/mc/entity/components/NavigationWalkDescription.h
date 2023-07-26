@@ -7,28 +7,27 @@
 
 class NavigationWalkDescription : public ::NavigationDescription {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAVIGATIONWALKDESCRIPTION
 public:
+    // prevent constructor by default
     NavigationWalkDescription& operator=(NavigationWalkDescription const&) = delete;
     NavigationWalkDescription(NavigationWalkDescription const&)            = delete;
     NavigationWalkDescription()                                            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol ?getJsonName\@NavigationWalkDescription\@\@UEBAPEBDXZ
      */
-    virtual char const* getJsonName() const;
+    virtual char const* getJsonName() const; // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONWALKDESCRIPTION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~NavigationWalkDescription();
+    MCVAPI ~NavigationWalkDescription(); // NOLINT
 #endif
 };

@@ -15,34 +15,33 @@
 
 struct VanillaOffsetSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAOFFSETSYSTEM
 public:
+    // prevent constructor by default
     VanillaOffsetSystem& operator=(VanillaOffsetSystem const&) = delete;
     VanillaOffsetSystem(VanillaOffsetSystem const&)            = delete;
     VanillaOffsetSystem()                                      = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2();
+    virtual void __unk_vfn_2(); // NOLINT
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3();
+    virtual void __unk_vfn_3(); // NOLINT
     /**
      * @vftbl 4
      * @symbol
@@ -60,11 +59,11 @@ public:
                       struct AddRemove<>,
                       struct GlobalRead<struct BaseGameVersionComponent>,
                       struct GlobalWrite<>,
-                      struct EntityFactoryT<>>&);
+                      struct EntityFactoryT<>>&); // NOLINT
     /**
      * @symbol ?createSystem\@VanillaOffsetSystem\@\@SA?AUTickingSystemWithInfo\@\@_N0\@Z
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(bool, bool);
+    MCAPI static struct TickingSystemWithInfo createSystem(bool, bool); // NOLINT
     /**
      * @symbol
      * ?getCameraPosition\@VanillaOffsetSystem\@\@SA?AVVec3\@\@AEBV2\@PEBUPassengerRenderingRidingOffsetComponent\@\@PEBUVanillaOffsetComponent\@\@M\@Z
@@ -74,9 +73,9 @@ public:
         struct PassengerRenderingRidingOffsetComponent const*,
         struct VanillaOffsetComponent const*,
         float
-    );
+    ); // NOLINT
     /**
      * @symbol ?getCameraPosition\@VanillaOffsetSystem\@\@SA?AVVec3\@\@AEBVActor\@\@M\@Z
      */
-    MCAPI static class Vec3 getCameraPosition(class Actor const&, float);
+    MCAPI static class Vec3 getCameraPosition(class Actor const&, float); // NOLINT
 };

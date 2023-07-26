@@ -4,16 +4,15 @@
 
 class GlideMoveSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLIDEMOVESYSTEM
 public:
+    // prevent constructor by default
     GlideMoveSystem& operator=(GlideMoveSystem const&) = delete;
     GlideMoveSystem(GlideMoveSystem const&)            = delete;
     GlideMoveSystem()                                  = delete;
-#endif
 
 public:
     /**
      * @symbol ?createGlideMoveSystem\@GlideMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createGlideMoveSystem();
+    MCAPI static struct TickingSystemWithInfo createGlideMoveSystem(); // NOLINT
 };

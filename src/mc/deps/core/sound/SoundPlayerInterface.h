@@ -4,12 +4,9 @@
 
 class SoundPlayerInterface {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SOUNDPLAYERINTERFACE
 public:
+    // prevent constructor by default
     SoundPlayerInterface& operator=(SoundPlayerInterface const&) = delete;
     SoundPlayerInterface(SoundPlayerInterface const&)            = delete;
     SoundPlayerInterface()                                       = delete;
-#endif
-
-public:
 };

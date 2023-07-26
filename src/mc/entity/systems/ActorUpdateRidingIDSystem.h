@@ -4,24 +4,23 @@
 
 class ActorUpdateRidingIDSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORUPDATERIDINGIDSYSTEM
 public:
+    // prevent constructor by default
     ActorUpdateRidingIDSystem& operator=(ActorUpdateRidingIDSystem const&) = delete;
     ActorUpdateRidingIDSystem(ActorUpdateRidingIDSystem const&)            = delete;
     ActorUpdateRidingIDSystem()                                            = delete;
-#endif
 
 public:
     /**
      * @symbol ?createClearPrevRidingIDSystem\@ActorUpdateRidingIDSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createClearPrevRidingIDSystem();
+    MCAPI static struct TickingSystemWithInfo createClearPrevRidingIDSystem(); // NOLINT
     /**
      * @symbol ?createClearRidingIDSystem\@ActorUpdateRidingIDSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createClearRidingIDSystem();
+    MCAPI static struct TickingSystemWithInfo createClearRidingIDSystem(); // NOLINT
     /**
      * @symbol ?createUpdatePrevRidingIDSystem\@ActorUpdateRidingIDSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createUpdatePrevRidingIDSystem();
+    MCAPI static struct TickingSystemWithInfo createUpdatePrevRidingIDSystem(); // NOLINT
 };

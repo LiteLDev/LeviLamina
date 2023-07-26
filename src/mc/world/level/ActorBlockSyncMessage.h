@@ -12,12 +12,9 @@ public:
     // ActorBlockSyncMessage inner types define
     enum class MessageId {};
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORBLOCKSYNCMESSAGE
 public:
+    // prevent constructor by default
     ActorBlockSyncMessage& operator=(ActorBlockSyncMessage const&) = delete;
     ActorBlockSyncMessage(ActorBlockSyncMessage const&)            = delete;
     ActorBlockSyncMessage()                                        = delete;
-#endif
-
-public:
 };

@@ -7,32 +7,31 @@
 
 class NetherSpringFeature : public ::Feature {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERSPRINGFEATURE
 public:
+    // prevent constructor by default
     NetherSpringFeature& operator=(NetherSpringFeature const&) = delete;
     NetherSpringFeature(NetherSpringFeature const&)            = delete;
     NetherSpringFeature()                                      = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?place\@NetherSpringFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERSPRINGFEATURE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~NetherSpringFeature();
+    MCVAPI ~NetherSpringFeature(); // NOLINT
 #endif
     /**
      * @symbol ??0NetherSpringFeature\@\@QEAA\@AEBVBlock\@\@_N\@Z
      */
-    MCAPI NetherSpringFeature(class Block const&, bool);
+    MCAPI NetherSpringFeature(class Block const&, bool); // NOLINT
 };

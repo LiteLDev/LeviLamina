@@ -5,12 +5,9 @@
 template <typename T0>
 class LocklessQueue {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOCKLESSQUEUE
 public:
+    // prevent constructor by default
     LocklessQueue& operator=(LocklessQueue const&) = delete;
     LocklessQueue(LocklessQueue const&)            = delete;
     LocklessQueue()                                = delete;
-#endif
-
-public:
 };

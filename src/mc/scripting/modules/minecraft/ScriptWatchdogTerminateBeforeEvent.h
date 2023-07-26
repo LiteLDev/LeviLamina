@@ -8,18 +8,18 @@
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { class WeakLifetimeScope; }
+struct BeforeWatchdogTerminateEvent;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 struct ScriptWatchdogTerminateBeforeEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTWATCHDOGTERMINATEBEFOREEVENT
 public:
+    // prevent constructor by default
     ScriptWatchdogTerminateBeforeEvent& operator=(ScriptWatchdogTerminateBeforeEvent const&) = delete;
     ScriptWatchdogTerminateBeforeEvent(ScriptWatchdogTerminateBeforeEvent const&)            = delete;
     ScriptWatchdogTerminateBeforeEvent()                                                     = delete;
-#endif
 
 public:
     /**
@@ -27,13 +27,13 @@ public:
      * ??0ScriptWatchdogTerminateBeforeEvent\@ScriptModuleMinecraft\@\@QEAA\@AEBUBeforeWatchdogTerminateEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@\@Z
      */
     MCAPI
-    ScriptWatchdogTerminateBeforeEvent(struct BeforeWatchdogTerminateEvent const&, class Scripting::WeakLifetimeScope const&);
+    ScriptWatchdogTerminateBeforeEvent(struct BeforeWatchdogTerminateEvent const&, class Scripting::WeakLifetimeScope const&); // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptWatchdogTerminateBeforeEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptWatchdogTerminateBeforeEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptWatchdogTerminateBeforeEvent>
-    bind();
+    bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

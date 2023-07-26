@@ -4,12 +4,9 @@
 
 class MultiPlayerLevel {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MULTIPLAYERLEVEL
 public:
+    // prevent constructor by default
     MultiPlayerLevel& operator=(MultiPlayerLevel const&) = delete;
     MultiPlayerLevel(MultiPlayerLevel const&)            = delete;
     MultiPlayerLevel()                                   = delete;
-#endif
-
-public:
 };

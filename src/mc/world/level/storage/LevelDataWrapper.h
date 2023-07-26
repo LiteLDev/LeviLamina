@@ -4,39 +4,38 @@
 
 class LevelDataWrapper {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELDATAWRAPPER
 public:
+    // prevent constructor by default
     LevelDataWrapper& operator=(LevelDataWrapper const&) = delete;
     LevelDataWrapper(LevelDataWrapper const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0LevelDataWrapper\@\@QEAA\@XZ
      */
-    MCAPI LevelDataWrapper();
+    MCAPI LevelDataWrapper(); // NOLINT
     /**
      * @symbol ??DLevelDataWrapper\@\@QEBAAEBVLevelData\@\@XZ
      */
-    MCAPI class LevelData const& operator*() const;
+    MCAPI class LevelData const& operator*() const; // NOLINT
     /**
      * @symbol ??DLevelDataWrapper\@\@QEAAAEAVLevelData\@\@XZ
      */
-    MCAPI class LevelData& operator*();
+    MCAPI class LevelData& operator*(); // NOLINT
     /**
      * @symbol ??CLevelDataWrapper\@\@QEBAPEBVLevelData\@\@XZ
      */
-    MCAPI class LevelData const* operator->() const;
+    MCAPI class LevelData const* operator->() const; // NOLINT
     /**
      * @symbol ??CLevelDataWrapper\@\@QEAAPEAVLevelData\@\@XZ
      */
-    MCAPI class LevelData* operator->();
+    MCAPI class LevelData* operator->(); // NOLINT
     /**
      * @symbol ?setLevelData\@LevelDataWrapper\@\@QEAAXAEAVLevelData\@\@\@Z
      */
-    MCAPI void setLevelData(class LevelData&);
+    MCAPI void setLevelData(class LevelData&); // NOLINT
     /**
      * @symbol ??1LevelDataWrapper\@\@QEAA\@XZ
      */
-    MCAPI ~LevelDataWrapper();
+    MCAPI ~LevelDataWrapper(); // NOLINT
 };

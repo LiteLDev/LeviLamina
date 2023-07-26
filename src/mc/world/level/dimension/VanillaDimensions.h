@@ -9,64 +9,63 @@
 
 class VanillaDimensions {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLADIMENSIONS
 public:
+    // prevent constructor by default
     VanillaDimensions& operator=(VanillaDimensions const&) = delete;
     VanillaDimensions(VanillaDimensions const&)            = delete;
     VanillaDimensions()                                    = delete;
-#endif
 
 public:
-    /**
-     * @symbol ?Nether\@VanillaDimensions\@\@2V?$AutomaticID\@VDimension\@\@H\@\@B
-     */
-    MCAPI static class AutomaticID<class Dimension, int> const Nether;
-    /**
-     * @symbol ?Overworld\@VanillaDimensions\@\@2V?$AutomaticID\@VDimension\@\@H\@\@B
-     */
-    MCAPI static class AutomaticID<class Dimension, int> const Overworld;
-    /**
-     * @symbol ?TheEnd\@VanillaDimensions\@\@2V?$AutomaticID\@VDimension\@\@H\@\@B
-     */
-    MCAPI static class AutomaticID<class Dimension, int> const TheEnd;
-    /**
-     * @symbol ?TheEndSpawnPoint\@VanillaDimensions\@\@2VVec3\@\@B
-     */
-    MCAPI static class Vec3 const TheEndSpawnPoint;
-    /**
-     * @symbol ?Undefined\@VanillaDimensions\@\@2V?$AutomaticID\@VDimension\@\@H\@\@B
-     */
-    MCAPI static class AutomaticID<class Dimension, int> const Undefined;
     /**
      * @symbol
      * ?convertPointBetweenDimensions\@VanillaDimensions\@\@SA_NAEBVVec3\@\@AEAV2\@V?$AutomaticID\@VDimension\@\@H\@\@2AEBVDimensionConversionData\@\@\@Z
      */
     MCAPI static bool
-    convertPointBetweenDimensions(class Vec3 const&, class Vec3&, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>, class DimensionConversionData const&);
+    convertPointBetweenDimensions(class Vec3 const&, class Vec3&, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>, class DimensionConversionData const&); // NOLINT
     /**
      * @symbol ?fromSerializedInt\@VanillaDimensions\@\@SA?AV?$AutomaticID\@VDimension\@\@H\@\@H\@Z
      */
-    MCAPI static class AutomaticID<class Dimension, int> fromSerializedInt(int);
+    MCAPI static class AutomaticID<class Dimension, int> fromSerializedInt(int); // NOLINT
     /**
      * @symbol
      * ?fromSerializedInt\@VanillaDimensions\@\@SA?AV?$Result\@V?$AutomaticID\@VDimension\@\@H\@\@Verror_code\@std\@\@\@Bedrock\@\@$$QEAV?$Result\@HVerror_code\@std\@\@\@3\@\@Z
      */
     MCAPI static class Bedrock::Result<class AutomaticID<class Dimension, int>, class std::error_code>
-    fromSerializedInt(class Bedrock::Result<int, class std::error_code>&&);
+    fromSerializedInt(class Bedrock::Result<int, class std::error_code>&&); // NOLINT
     /**
      * @symbol
      * ?fromString\@VanillaDimensions\@\@SA?AV?$AutomaticID\@VDimension\@\@H\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI static class AutomaticID<class Dimension, int> fromString(std::string const&);
+    MCAPI static class AutomaticID<class Dimension, int> fromString(std::string const&); // NOLINT
     /**
      * @symbol ?toSerializedInt\@VanillaDimensions\@\@SAHAEBV?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI static int toSerializedInt(class AutomaticID<class Dimension, int> const&);
+    MCAPI static int toSerializedInt(class AutomaticID<class Dimension, int> const&); // NOLINT
     /**
      * @symbol
      * ?toString\@VanillaDimensions\@\@SA?BV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI static std::string const toString(class AutomaticID<class Dimension, int> const&);
+    MCAPI static std::string const toString(class AutomaticID<class Dimension, int> const&); // NOLINT
+    /**
+     * @symbol ?Nether\@VanillaDimensions\@\@2V?$AutomaticID\@VDimension\@\@H\@\@B
+     */
+    MCAPI static class AutomaticID<class Dimension, int> const Nether; // NOLINT
+    /**
+     * @symbol ?Overworld\@VanillaDimensions\@\@2V?$AutomaticID\@VDimension\@\@H\@\@B
+     */
+    MCAPI static class AutomaticID<class Dimension, int> const Overworld; // NOLINT
+    /**
+     * @symbol ?TheEnd\@VanillaDimensions\@\@2V?$AutomaticID\@VDimension\@\@H\@\@B
+     */
+    MCAPI static class AutomaticID<class Dimension, int> const TheEnd; // NOLINT
+    /**
+     * @symbol ?TheEndSpawnPoint\@VanillaDimensions\@\@2VVec3\@\@B
+     */
+    MCAPI static class Vec3 const TheEndSpawnPoint; // NOLINT
+    /**
+     * @symbol ?Undefined\@VanillaDimensions\@\@2V?$AutomaticID\@VDimension\@\@H\@\@B
+     */
+    MCAPI static class AutomaticID<class Dimension, int> const Undefined; // NOLINT
 
     // protected:
 
@@ -76,5 +75,5 @@ protected:
      * ?DimensionMap\@VanillaDimensions\@\@1V?$BidirectionalUnorderedMap\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@\@B
      */
     MCAPI static class BidirectionalUnorderedMap<std::string, class AutomaticID<class Dimension, int>> const
-        DimensionMap;
+        DimensionMap; // NOLINT
 };

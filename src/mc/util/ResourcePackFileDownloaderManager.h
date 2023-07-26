@@ -4,22 +4,21 @@
 
 class ResourcePackFileDownloaderManager {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKFILEDOWNLOADERMANAGER
 public:
+    // prevent constructor by default
     ResourcePackFileDownloaderManager& operator=(ResourcePackFileDownloaderManager const&) = delete;
     ResourcePackFileDownloaderManager(ResourcePackFileDownloaderManager const&)            = delete;
     ResourcePackFileDownloaderManager()                                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ?cleanup\@ResourcePackFileDownloaderManager\@\@QEAAXXZ
      */
-    MCAPI void cleanup();
+    MCAPI void cleanup(); // NOLINT
     /**
      * @symbol ?update\@ResourcePackFileDownloaderManager\@\@QEAAXXZ
      */
-    MCAPI void update();
+    MCAPI void update(); // NOLINT
 
     // private:
 
@@ -27,5 +26,5 @@ private:
     /**
      * @symbol ?MAX_CHUNK_ATTEMPTS\@ResourcePackFileDownloaderManager\@\@0HB
      */
-    MCAPI static int const MAX_CHUNK_ATTEMPTS;
+    MCAPI static int const MAX_CHUNK_ATTEMPTS; // NOLINT
 };

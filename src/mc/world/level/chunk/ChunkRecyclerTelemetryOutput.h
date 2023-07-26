@@ -4,16 +4,15 @@
 
 struct ChunkRecyclerTelemetryOutput {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKRECYCLERTELEMETRYOUTPUT
 public:
+    // prevent constructor by default
     ChunkRecyclerTelemetryOutput& operator=(ChunkRecyclerTelemetryOutput const&) = delete;
     ChunkRecyclerTelemetryOutput(ChunkRecyclerTelemetryOutput const&)            = delete;
     ChunkRecyclerTelemetryOutput()                                               = delete;
-#endif
 
 public:
     /**
      * @symbol ??1ChunkRecyclerTelemetryOutput\@\@QEAA\@XZ
      */
-    MCAPI ~ChunkRecyclerTelemetryOutput();
+    MCAPI ~ChunkRecyclerTelemetryOutput(); // NOLINT
 };

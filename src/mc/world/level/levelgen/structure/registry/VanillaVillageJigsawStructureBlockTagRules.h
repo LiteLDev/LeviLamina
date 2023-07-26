@@ -4,16 +4,15 @@
 
 class VanillaVillageJigsawStructureBlockTagRules {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAVILLAGEJIGSAWSTRUCTUREBLOCKTAGRULES
 public:
+    // prevent constructor by default
     VanillaVillageJigsawStructureBlockTagRules& operator=(VanillaVillageJigsawStructureBlockTagRules const&) = delete;
     VanillaVillageJigsawStructureBlockTagRules(VanillaVillageJigsawStructureBlockTagRules const&)            = delete;
     VanillaVillageJigsawStructureBlockTagRules()                                                             = delete;
-#endif
 
 public:
     /**
      * @symbol ?initialize\@VanillaVillageJigsawStructureBlockTagRules\@\@SAXAEAVJigsawStructureRegistry\@\@\@Z
      */
-    MCAPI static void initialize(class JigsawStructureRegistry&);
+    MCAPI static void initialize(class JigsawStructureRegistry&); // NOLINT
 };

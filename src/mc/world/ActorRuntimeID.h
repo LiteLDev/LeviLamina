@@ -4,12 +4,9 @@
 
 class ActorRuntimeID {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORRUNTIMEID
 public:
+    // prevent constructor by default
     ActorRuntimeID& operator=(ActorRuntimeID const&) = delete;
     ActorRuntimeID(ActorRuntimeID const&)            = delete;
     ActorRuntimeID()                                 = delete;
-#endif
-
-public:
 };

@@ -4,28 +4,27 @@
 
 class HealableComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HEALABLECOMPONENT
 public:
+    // prevent constructor by default
     HealableComponent& operator=(HealableComponent const&) = delete;
     HealableComponent(HealableComponent const&)            = delete;
     HealableComponent()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ?getInteraction\@HealableComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
+    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&); // NOLINT
 
     // private:
     /**
      * @symbol ?_useFeedItem\@HealableComponent\@\@AEAAXAEAVActor\@\@AEAVPlayer\@\@AEBUFeedItem\@\@\@Z
      */
-    MCAPI void _useFeedItem(class Actor&, class Player&, struct FeedItem const&);
+    MCAPI void _useFeedItem(class Actor&, class Player&, struct FeedItem const&); // NOLINT
     /**
      * @symbol ?_canHeal\@HealableComponent\@\@CA_NAEAVActor\@\@AEBVItemStack\@\@PEBVHealableDefinition\@\@\@Z
      */
-    MCAPI static bool _canHeal(class Actor&, class ItemStack const&, class HealableDefinition const*);
+    MCAPI static bool _canHeal(class Actor&, class ItemStack const&, class HealableDefinition const*); // NOLINT
 
 private:
 };

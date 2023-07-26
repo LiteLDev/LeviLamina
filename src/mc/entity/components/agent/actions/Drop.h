@@ -6,14 +6,11 @@ namespace AgentComponents::Actions {
 
 struct Drop {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMPONENTS_ACTIONS_DROP
 public:
+    // prevent constructor by default
     Drop& operator=(Drop const&) = delete;
     Drop(Drop const&)            = delete;
     Drop()                       = delete;
-#endif
-
-public:
 };
 
 }; // namespace AgentComponents::Actions

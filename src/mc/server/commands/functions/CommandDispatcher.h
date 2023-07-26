@@ -4,25 +4,24 @@
 
 class CommandDispatcher {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDDISPATCHER
 public:
+    // prevent constructor by default
     CommandDispatcher& operator=(CommandDispatcher const&) = delete;
     CommandDispatcher(CommandDispatcher const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?performCommand\@CommandDispatcher\@\@UEAAHAEBVCommandOrigin\@\@AEAVCommand\@\@\@Z
      */
-    virtual int performCommand(class CommandOrigin const&, class Command&);
+    virtual int performCommand(class CommandOrigin const&, class Command&); // NOLINT
     /**
      * @symbol ??0CommandDispatcher\@\@QEAA\@XZ
      */
-    MCAPI CommandDispatcher();
+    MCAPI CommandDispatcher(); // NOLINT
 };

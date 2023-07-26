@@ -7,31 +7,30 @@
 
 class ItemStackRequestData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTDATA
 public:
+    // prevent constructor by default
     ItemStackRequestData& operator=(ItemStackRequestData const&) = delete;
     ItemStackRequestData(ItemStackRequestData const&)            = delete;
     ItemStackRequestData()                                       = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?tryFindAction\@ItemStackRequestData\@\@QEBAPEBVItemStackRequestAction\@\@W4ItemStackRequestActionType\@\@\@Z
      */
-    MCAPI class ItemStackRequestAction const* tryFindAction(enum class ItemStackRequestActionType) const;
+    MCAPI class ItemStackRequestAction const* tryFindAction(enum class ItemStackRequestActionType) const; // NOLINT
     /**
      * @symbol ?write\@ItemStackRequestData\@\@QEBAXAEAVBinaryStream\@\@\@Z
      */
-    MCAPI void write(class BinaryStream&) const;
+    MCAPI void write(class BinaryStream&) const; // NOLINT
     /**
      * @symbol ??1ItemStackRequestData\@\@QEAA\@XZ
      */
-    MCAPI ~ItemStackRequestData();
+    MCAPI ~ItemStackRequestData(); // NOLINT
     /**
      * @symbol
      * ?read\@ItemStackRequestData\@\@SA?AV?$Result\@V?$unique_ptr\@VItemStackRequestData\@\@U?$default_delete\@VItemStackRequestData\@\@\@std\@\@\@std\@\@Verror_code\@2\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestData>, class std::error_code>
-    read(class ReadOnlyBinaryStream&);
+    read(class ReadOnlyBinaryStream&); // NOLINT
 };

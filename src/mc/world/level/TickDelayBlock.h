@@ -4,12 +4,9 @@
 
 struct TickDelayBlock {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKDELAYBLOCK
 public:
+    // prevent constructor by default
     TickDelayBlock& operator=(TickDelayBlock const&) = delete;
     TickDelayBlock(TickDelayBlock const&)            = delete;
     TickDelayBlock()                                 = delete;
-#endif
-
-public:
 };

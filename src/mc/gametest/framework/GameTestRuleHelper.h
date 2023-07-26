@@ -2,42 +2,46 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ILevel;
+// clang-format on
+
 namespace gametest {
 
 class GameTestRuleHelper {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETEST_GAMETESTRULEHELPER
 public:
+    // prevent constructor by default
     GameTestRuleHelper& operator=(GameTestRuleHelper const&) = delete;
     GameTestRuleHelper(GameTestRuleHelper const&)            = delete;
     GameTestRuleHelper()                                     = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?addRuleToClear\@GameTestRuleHelper\@gametest\@\@UEAAXH\@Z
      */
-    virtual void addRuleToClear(int);
+    virtual void addRuleToClear(int); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?clearRules\@GameTestRuleHelper\@gametest\@\@UEAAXXZ
      */
-    virtual void clearRules();
+    virtual void clearRules(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?restoreRules\@GameTestRuleHelper\@gametest\@\@UEAAXXZ
      */
-    virtual void restoreRules();
+    virtual void restoreRules(); // NOLINT
     /**
      * @symbol ??0GameTestRuleHelper\@gametest\@\@QEAA\@AEAVILevel\@\@\@Z
      */
-    MCAPI GameTestRuleHelper(class ILevel&);
+    MCAPI GameTestRuleHelper(class ILevel&); // NOLINT
 };
 
 }; // namespace gametest

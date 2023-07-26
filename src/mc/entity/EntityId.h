@@ -4,12 +4,9 @@
 
 class EntityId {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYID
 public:
+    // prevent constructor by default
     EntityId& operator=(EntityId const&) = delete;
     EntityId(EntityId const&)            = delete;
     EntityId()                           = delete;
-#endif
-
-public:
 };

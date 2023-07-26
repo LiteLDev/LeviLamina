@@ -7,54 +7,53 @@
 
 class WorkComposterGoal : public ::WorkGoal {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORKCOMPOSTERGOAL
 public:
+    // prevent constructor by default
     WorkComposterGoal& operator=(WorkComposterGoal const&) = delete;
     WorkComposterGoal(WorkComposterGoal const&)            = delete;
     WorkComposterGoal()                                    = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3();
+    virtual void __unk_vfn_3(); // NOLINT
     /**
      * @vftbl 4
      * @symbol ?start\@WorkComposterGoal\@\@UEAAXXZ
      */
-    virtual void start();
+    virtual void start(); // NOLINT
     /**
      * @vftbl 8
      * @symbol __unk_vfn_8
      */
-    virtual void __unk_vfn_8();
+    virtual void __unk_vfn_8(); // NOLINT
     /**
      * @vftbl 9
      * @symbol __unk_vfn_9
      */
-    virtual void __unk_vfn_9();
+    virtual void __unk_vfn_9(); // NOLINT
     /**
      * @vftbl 18
      * @symbol ?useWorkstation\@WorkComposterGoal\@\@UEAAXXZ
      */
-    virtual void useWorkstation();
+    virtual void useWorkstation(); // NOLINT
 
     // private:
     /**
      * @symbol ?_tryCompostItems\@WorkComposterGoal\@\@AEAA_NXZ
      */
-    MCAPI bool _tryCompostItems();
+    MCAPI bool _tryCompostItems(); // NOLINT
     /**
      * @symbol ?_tryEmptyComposter\@WorkComposterGoal\@\@AEAA_NXZ
      */
-    MCAPI bool _tryEmptyComposter();
+    MCAPI bool _tryEmptyComposter(); // NOLINT
 
 private:
 };

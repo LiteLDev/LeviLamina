@@ -12,26 +12,25 @@ namespace JsonUtil { class EmptyClass; }
 
 class SlimeRandomDirectionDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLIMERANDOMDIRECTIONDEFINITION
 public:
+    // prevent constructor by default
     SlimeRandomDirectionDefinition& operator=(SlimeRandomDirectionDefinition const&) = delete;
     SlimeRandomDirectionDefinition(SlimeRandomDirectionDefinition const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0SlimeRandomDirectionDefinition\@\@QEAA\@XZ
      */
-    MCAPI SlimeRandomDirectionDefinition();
+    MCAPI SlimeRandomDirectionDefinition(); // NOLINT
     /**
      * @symbol
      * ?initialize\@SlimeRandomDirectionDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVSlimeRandomDirectionGoal\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class SlimeRandomDirectionGoal&) const;
+    MCAPI void initialize(class EntityContext&, class SlimeRandomDirectionGoal&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@SlimeRandomDirectionDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VSlimeRandomDirectionDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void
-    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeRandomDirectionDefinition>>&);
+    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SlimeRandomDirectionDefinition>>&); // NOLINT
 };

@@ -11,24 +11,23 @@ namespace BlockQueuedTickingVersioning {
 
 class BlockQueuedTicking11910Upgrade {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKQUEUEDTICKINGVERSIONING_BLOCKQUEUEDTICKING11910UPGRADE
 public:
+    // prevent constructor by default
     BlockQueuedTicking11910Upgrade& operator=(BlockQueuedTicking11910Upgrade const&) = delete;
     BlockQueuedTicking11910Upgrade(BlockQueuedTicking11910Upgrade const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?previousSchema\@BlockQueuedTicking11910Upgrade\@BlockQueuedTickingVersioning\@\@UEBAXAEAVSchemaFactory\@cereal\@\@\@Z
      */
-    virtual void previousSchema(class cereal::SchemaFactory&) const;
+    virtual void previousSchema(class cereal::SchemaFactory&) const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
@@ -37,11 +36,11 @@ public:
     virtual bool upgradeToNext(class rapidjson::GenericDocument<
                                struct rapidjson::UTF8<char>,
                                class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>,
-                               class rapidjson::CrtAllocator>&) const;
+                               class rapidjson::CrtAllocator>&) const; // NOLINT
     /**
      * @symbol ??0BlockQueuedTicking11910Upgrade\@BlockQueuedTickingVersioning\@\@QEAA\@XZ
      */
-    MCAPI BlockQueuedTicking11910Upgrade();
+    MCAPI BlockQueuedTicking11910Upgrade(); // NOLINT
 };
 
 }; // namespace BlockQueuedTickingVersioning

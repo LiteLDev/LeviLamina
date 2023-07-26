@@ -12,31 +12,30 @@ namespace JsonUtil { class EmptyClass; }
 
 class ExperienceRewardDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPERIENCEREWARDDEFINITION
 public:
+    // prevent constructor by default
     ExperienceRewardDefinition& operator=(ExperienceRewardDefinition const&) = delete;
     ExperienceRewardDefinition(ExperienceRewardDefinition const&)            = delete;
     ExperienceRewardDefinition()                                             = delete;
-#endif
 
 public:
     /**
      * @symbol ?addBredExpressionNode\@ExperienceRewardDefinition\@\@QEAAXAEBVExpressionNode\@\@\@Z
      */
-    MCAPI void addBredExpressionNode(class ExpressionNode const&);
+    MCAPI void addBredExpressionNode(class ExpressionNode const&); // NOLINT
     /**
      * @symbol ?addDeathExpressionNode\@ExperienceRewardDefinition\@\@QEAAXAEBVExpressionNode\@\@\@Z
      */
-    MCAPI void addDeathExpressionNode(class ExpressionNode const&);
+    MCAPI void addDeathExpressionNode(class ExpressionNode const&); // NOLINT
     /**
      * @symbol ?initialize\@ExperienceRewardDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVExperienceRewardComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class ExperienceRewardComponent&) const;
+    MCAPI void initialize(class EntityContext&, class ExperienceRewardComponent&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@ExperienceRewardDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VExperienceRewardDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ExperienceRewardDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      class ExperienceRewardDefinition>>&); // NOLINT
 };

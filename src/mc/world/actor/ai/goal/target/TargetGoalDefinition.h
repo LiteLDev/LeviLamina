@@ -4,22 +4,21 @@
 
 class TargetGoalDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TARGETGOALDEFINITION
 public:
+    // prevent constructor by default
     TargetGoalDefinition& operator=(TargetGoalDefinition const&) = delete;
     TargetGoalDefinition(TargetGoalDefinition const&)            = delete;
     TargetGoalDefinition()                                       = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TARGETGOALDEFINITION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~TargetGoalDefinition();
+    MCVAPI ~TargetGoalDefinition(); // NOLINT
 #endif
     /**
      * @symbol ?initialize\@TargetGoalDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVTargetGoal\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class TargetGoal&) const;
+    MCAPI void initialize(class EntityContext&, class TargetGoal&) const; // NOLINT
 };

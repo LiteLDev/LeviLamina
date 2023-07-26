@@ -9,31 +9,30 @@
 
 class EntityOptionalOwnerRef {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYOPTIONALOWNERREF
 public:
+    // prevent constructor by default
     EntityOptionalOwnerRef& operator=(EntityOptionalOwnerRef const&) = delete;
     EntityOptionalOwnerRef(EntityOptionalOwnerRef const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0EntityOptionalOwnerRef\@\@QEAA\@XZ
      */
-    MCAPI EntityOptionalOwnerRef();
+    MCAPI EntityOptionalOwnerRef(); // NOLINT
     /**
      * @symbol ?isSet\@EntityOptionalOwnerRef\@\@QEBA_NXZ
      */
-    MCAPI bool isSet() const;
+    MCAPI bool isSet() const; // NOLINT
     /**
      * @symbol ?setOwnedRef\@EntityOptionalOwnerRef\@\@QEAAXV?$OwnerPtrT\@UEntityRefTraits\@\@\@\@\@Z
      */
-    MCAPI void setOwnedRef(class OwnerPtrT<struct EntityRefTraits>);
+    MCAPI void setOwnedRef(class OwnerPtrT<struct EntityRefTraits>); // NOLINT
     /**
      * @symbol ?setWeakRef\@EntityOptionalOwnerRef\@\@QEAAXV?$WeakRefT\@UEntityRefTraits\@\@\@\@\@Z
      */
-    MCAPI void setWeakRef(class WeakRefT<struct EntityRefTraits>);
+    MCAPI void setWeakRef(class WeakRefT<struct EntityRefTraits>); // NOLINT
     /**
      * @symbol ?tryGet\@EntityOptionalOwnerRef\@\@QEBA?AV?$StackRefResultT\@UEntityRefTraits\@\@\@\@XZ
      */
-    MCAPI class StackRefResultT<struct EntityRefTraits> tryGet() const;
+    MCAPI class StackRefResultT<struct EntityRefTraits> tryGet() const; // NOLINT
 };

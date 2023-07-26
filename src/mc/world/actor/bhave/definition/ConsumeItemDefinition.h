@@ -12,17 +12,16 @@ namespace Json { class Value; }
 
 class ConsumeItemDefinition : public ::BehaviorDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONSUMEITEMDEFINITION
 public:
+    // prevent constructor by default
     ConsumeItemDefinition& operator=(ConsumeItemDefinition const&) = delete;
     ConsumeItemDefinition(ConsumeItemDefinition const&)            = delete;
     ConsumeItemDefinition()                                        = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
 };

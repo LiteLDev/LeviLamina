@@ -7,22 +7,21 @@
 
 class LookAtPlayerGoal : public ::LookAtActorGoal {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKATPLAYERGOAL
 public:
+    // prevent constructor by default
     LookAtPlayerGoal& operator=(LookAtPlayerGoal const&) = delete;
     LookAtPlayerGoal(LookAtPlayerGoal const&)            = delete;
     LookAtPlayerGoal()                                   = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3();
+    virtual void __unk_vfn_3(); // NOLINT
 };

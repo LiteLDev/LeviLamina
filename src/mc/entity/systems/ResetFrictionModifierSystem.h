@@ -9,18 +9,17 @@
 
 class ResetFrictionModifierSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESETFRICTIONMODIFIERSYSTEM
 public:
+    // prevent constructor by default
     ResetFrictionModifierSystem& operator=(ResetFrictionModifierSystem const&) = delete;
     ResetFrictionModifierSystem(ResetFrictionModifierSystem const&)            = delete;
     ResetFrictionModifierSystem()                                              = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@ResetFrictionModifierSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
     /**
      * @symbol
      * ?tickResetFrictionModifierSystem\@ResetFrictionModifierSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@UPlayerInputRequestComponent\@\@\@\@UFrictionModifierComponent\@\@\@\@\@Z
@@ -31,5 +30,5 @@ public:
                                                       struct Include<
                                                           class FlagComponent<struct ActorMovementTickNeededFlag>,
                                                           struct PlayerInputRequestComponent>,
-                                                      struct FrictionModifierComponent>);
+                                                      struct FrictionModifierComponent>); // NOLINT
 };

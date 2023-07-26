@@ -4,12 +4,9 @@
 
 struct CollidableMobNearFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COLLIDABLEMOBNEARFLAG
 public:
+    // prevent constructor by default
     CollidableMobNearFlag& operator=(CollidableMobNearFlag const&) = delete;
     CollidableMobNearFlag(CollidableMobNearFlag const&)            = delete;
     CollidableMobNearFlag()                                        = delete;
-#endif
-
-public:
 };

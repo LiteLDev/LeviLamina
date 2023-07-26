@@ -7,38 +7,37 @@
 
 class CameraShakeCommand : public ::Command {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMERASHAKECOMMAND
 public:
+    // prevent constructor by default
     CameraShakeCommand& operator=(CameraShakeCommand const&) = delete;
     CameraShakeCommand(CameraShakeCommand const&)            = delete;
     CameraShakeCommand()                                     = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?execute\@CameraShakeCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol ?setup\@CameraShakeCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
-    MCAPI static void setup(class CommandRegistry&);
+    MCAPI static void setup(class CommandRegistry&); // NOLINT
 
     // private:
     /**
      * @symbol ?_executeAdd\@CameraShakeCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void _executeAdd(class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI void _executeAdd(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol ?_executeStop\@CameraShakeCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void _executeStop(class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI void _executeStop(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
 
 private:
 };

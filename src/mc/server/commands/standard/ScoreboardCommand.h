@@ -17,64 +17,61 @@ public:
     // ScoreboardCommand inner types define
     struct InitProxy {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCOREBOARDCOMMAND_INITPROXY
     public:
+        // prevent constructor by default
         InitProxy& operator=(InitProxy const&) = delete;
         InitProxy(InitProxy const&)            = delete;
         InitProxy()                            = delete;
-#endif
 
     public:
         /**
          * @symbol ??0InitProxy\@ScoreboardCommand\@\@QEAA\@AEAVServerLevel\@\@\@Z
          */
-        MCAPI InitProxy(class ServerLevel&);
+        MCAPI InitProxy(class ServerLevel&); // NOLINT
     };
 
     struct SetScoreOutput {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCOREBOARDCOMMAND_SETSCOREOUTPUT
     public:
+        // prevent constructor by default
         SetScoreOutput& operator=(SetScoreOutput const&) = delete;
         SetScoreOutput(SetScoreOutput const&)            = delete;
         SetScoreOutput()                                 = delete;
-#endif
 
     public:
         /**
          * @symbol ??1SetScoreOutput\@ScoreboardCommand\@\@QEAA\@XZ
          */
-        MCAPI ~SetScoreOutput();
+        MCAPI ~SetScoreOutput(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCOREBOARDCOMMAND
 public:
+    // prevent constructor by default
     ScoreboardCommand& operator=(ScoreboardCommand const&) = delete;
     ScoreboardCommand(ScoreboardCommand const&)            = delete;
     ScoreboardCommand()                                    = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?execute\@ScoreboardCommand\@\@EEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARDCOMMAND
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScoreboardCommand();
+    MCVAPI ~ScoreboardCommand(); // NOLINT
 #endif
     /**
      * @symbol ?setup\@ScoreboardCommand\@\@SAXAEAVCommandRegistry\@\@$$QEAUInitProxy\@1\@\@Z
      */
-    MCAPI static void setup(class CommandRegistry&, struct ScoreboardCommand::InitProxy&&);
+    MCAPI static void setup(class CommandRegistry&, struct ScoreboardCommand::InitProxy&&); // NOLINT
 
     // private:
     /**
@@ -83,12 +80,13 @@ public:
      */
     MCAPI void
     _generateCumulativeOutput(struct ScoreboardCommand::SetScoreOutput const&, class Objective const&, class CommandOutput&)
-        const;
+        const; // NOLINT
     /**
      * @symbol
      * ?_getObjective\@ScoreboardCommand\@\@AEBAPEAVObjective\@\@AEBVScoreboard\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_NAEAVCommandOutput\@\@\@Z
      */
-    MCAPI class Objective* _getObjective(class Scoreboard const&, std::string const&, bool, class CommandOutput&) const;
+    MCAPI class Objective*
+    _getObjective(class Scoreboard const&, std::string const&, bool, class CommandOutput&) const; // NOLINT
     /**
      * @symbol
      * ?_getScoreboardIdsForSelector\@ScoreboardCommand\@\@AEBA?AV?$vector\@UScoreboardId\@\@V?$allocator\@UScoreboardId\@\@\@std\@\@\@std\@\@AEAVScoreboard\@\@AEBV?$WildcardCommandSelector\@VActor\@\@\@\@AEBVCommandOrigin\@\@AEAVCommandOutput\@\@_N\@Z
@@ -99,7 +97,7 @@ public:
         class CommandOrigin const&,
         class CommandOutput&,
         bool
-    ) const;
+    ) const; // NOLINT
     /**
      * @symbol
      * ?_getSelectorResultsForObjective\@ScoreboardCommand\@\@AEBA_NAEAV?$vector\@UScoreboardId\@\@V?$allocator\@UScoreboardId\@\@\@std\@\@\@std\@\@AEAVScoreboard\@\@AEBV?$WildcardCommandSelector\@VActor\@\@\@\@AEAVObjective\@\@AEBVCommandOrigin\@\@AEAVCommandOutput\@\@_N\@Z
@@ -112,90 +110,90 @@ public:
         class CommandOrigin const&,
         class CommandOutput&,
         bool
-    ) const;
+    ) const; // NOLINT
     /**
      * @symbol
      * ?addObjective\@ScoreboardCommand\@\@AEBAXAEAVScoreboard\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@11AEAVCommandOutput\@\@\@Z
      */
     MCAPI void
     addObjective(class Scoreboard&, std::string const&, std::string const&, std::string const&, class CommandOutput&)
-        const;
+        const; // NOLINT
     /**
      * @symbol
      * ?addPlayerScore\@ScoreboardCommand\@\@AEBAXAEAVScoreboard\@\@W4PlayerScoreSetFunction\@\@AEBUScoreboardId\@\@AEAVObjective\@\@AEBV?$function\@$$A6AAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UActorUniqueID\@\@\@Z\@std\@\@AEAVCommandOutput\@\@AEAUSetScoreOutput\@1\@\@Z
      */
     MCAPI void
     addPlayerScore(class Scoreboard&, enum class PlayerScoreSetFunction, struct ScoreboardId const&, class Objective&, class std::function<std::string const&(struct ActorUniqueID)> const&, class CommandOutput&, struct ScoreboardCommand::SetScoreOutput&)
-        const;
+        const; // NOLINT
     /**
      * @symbol
      * ?applyPlayerOperation\@ScoreboardCommand\@\@AEBA_NAEAVScoreboard\@\@AEBV?$function\@$$A6AAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UActorUniqueID\@\@\@Z\@std\@\@AEBUScoreboardId\@\@AEAVObjective\@\@3AEBVCommandOrigin\@\@AEAVCommandOutput\@\@AEAUSetScoreOutput\@1\@\@Z
      */
     MCAPI bool
     applyPlayerOperation(class Scoreboard&, class std::function<std::string const&(struct ActorUniqueID)> const&, struct ScoreboardId const&, class Objective&, class Objective&, class CommandOrigin const&, class CommandOutput&, struct ScoreboardCommand::SetScoreOutput&)
-        const;
+        const; // NOLINT
     /**
      * @symbol ?listObjectives\@ScoreboardCommand\@\@AEBAXAEBVScoreboard\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void listObjectives(class Scoreboard const&, class CommandOutput&) const;
+    MCAPI void listObjectives(class Scoreboard const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol
      * ?listPlayers\@ScoreboardCommand\@\@AEBAXAEAVScoreboard\@\@AEBUScoreboardId\@\@AEBV?$function\@$$A6AAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UActorUniqueID\@\@\@Z\@std\@\@AEAVCommandOutput\@\@\@Z
      */
     MCAPI void
     listPlayers(class Scoreboard&, struct ScoreboardId const&, class std::function<std::string const&(struct ActorUniqueID)> const&, class CommandOutput&)
-        const;
+        const; // NOLINT
     /**
      * @symbol ?objectives\@ScoreboardCommand\@\@AEBAXAEAVScoreboard\@\@AEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void objectives(class Scoreboard&, class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI void objectives(class Scoreboard&, class CommandOrigin const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol ?players\@ScoreboardCommand\@\@AEBAXAEAVScoreboard\@\@AEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void players(class Scoreboard&, class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI void players(class Scoreboard&, class CommandOrigin const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol
      * ?removeObjective\@ScoreboardCommand\@\@AEBAXAEAVScoreboard\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void removeObjective(class Scoreboard&, std::string const&, class CommandOutput&) const;
+    MCAPI void removeObjective(class Scoreboard&, std::string const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol
      * ?resetPlayer\@ScoreboardCommand\@\@AEBAXAEAVScoreboard\@\@AEBUScoreboardId\@\@PEAVObjective\@\@AEBV?$function\@$$A6AAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UActorUniqueID\@\@\@Z\@std\@\@AEAVCommandOutput\@\@\@Z
      */
     MCAPI void
     resetPlayer(class Scoreboard&, struct ScoreboardId const&, class Objective*, class std::function<std::string const&(struct ActorUniqueID)> const&, class CommandOutput&)
-        const;
+        const; // NOLINT
     /**
      * @symbol
      * ?setDisplayObjective\@ScoreboardCommand\@\@AEBAXAEAVScoreboard\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1W4ObjectiveSortOrder\@\@AEAVCommandOutput\@\@\@Z
      */
     MCAPI void
     setDisplayObjective(class Scoreboard&, std::string const&, std::string const&, enum class ObjectiveSortOrder, class CommandOutput&)
-        const;
+        const; // NOLINT
     /**
      * @symbol
      * ?setPlayerRandomScore\@ScoreboardCommand\@\@AEBA_NAEAVScoreboard\@\@AEBUScoreboardId\@\@AEAVObjective\@\@AEBV?$function\@$$A6AAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UActorUniqueID\@\@\@Z\@std\@\@AEAVCommandOutput\@\@AEAUSetScoreOutput\@1\@\@Z
      */
     MCAPI bool
     setPlayerRandomScore(class Scoreboard&, struct ScoreboardId const&, class Objective&, class std::function<std::string const&(struct ActorUniqueID)> const&, class CommandOutput&, struct ScoreboardCommand::SetScoreOutput&)
-        const;
+        const; // NOLINT
     /**
      * @symbol
      * ?testPlayerScore\@ScoreboardCommand\@\@AEBAXAEBUScoreboardId\@\@AEAVObjective\@\@AEBV?$function\@$$A6AAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UActorUniqueID\@\@\@Z\@std\@\@AEAVCommandOutput\@\@\@Z
      */
     MCAPI void
     testPlayerScore(struct ScoreboardId const&, class Objective&, class std::function<std::string const&(struct ActorUniqueID)> const&, class CommandOutput&)
-        const;
+        const; // NOLINT
     /**
      * @symbol
      * ?_getNonSortableDisplaySlots\@ScoreboardCommand\@\@CA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEAVScoreboard\@\@\@Z
      */
-    MCAPI static std::vector<std::string> _getNonSortableDisplaySlots(class Scoreboard&);
+    MCAPI static std::vector<std::string> _getNonSortableDisplaySlots(class Scoreboard&); // NOLINT
     /**
      * @symbol
      * ?_getSortableDisplaySlots\@ScoreboardCommand\@\@CA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEAVScoreboard\@\@\@Z
      */
-    MCAPI static std::vector<std::string> _getSortableDisplaySlots(class Scoreboard&);
+    MCAPI static std::vector<std::string> _getSortableDisplaySlots(class Scoreboard&); // NOLINT
 
 private:
 };

@@ -4,20 +4,19 @@
 
 class AmbientSoundServerComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AMBIENTSOUNDSERVERCOMPONENT
 public:
+    // prevent constructor by default
     AmbientSoundServerComponent& operator=(AmbientSoundServerComponent const&) = delete;
     AmbientSoundServerComponent(AmbientSoundServerComponent const&)            = delete;
     AmbientSoundServerComponent()                                              = delete;
-#endif
 
 public:
     /**
      * @symbol ??4AmbientSoundServerComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class AmbientSoundServerComponent& operator=(class AmbientSoundServerComponent&&);
+    MCAPI class AmbientSoundServerComponent& operator=(class AmbientSoundServerComponent&&); // NOLINT
     /**
      * @symbol ??1AmbientSoundServerComponent\@\@QEAA\@XZ
      */
-    MCAPI ~AmbientSoundServerComponent();
+    MCAPI ~AmbientSoundServerComponent(); // NOLINT
 };

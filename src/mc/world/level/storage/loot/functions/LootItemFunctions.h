@@ -9,17 +9,16 @@ namespace Json { class Value; }
 
 class LootItemFunctions {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEMFUNCTIONS
 public:
+    // prevent constructor by default
     LootItemFunctions& operator=(LootItemFunctions const&) = delete;
     LootItemFunctions(LootItemFunctions const&)            = delete;
     LootItemFunctions()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?deserialize\@LootItemFunctions\@\@SA?AV?$vector\@V?$unique_ptr\@VLootItemFunction\@\@U?$default_delete\@VLootItemFunction\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VLootItemFunction\@\@U?$default_delete\@VLootItemFunction\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@VValue\@Json\@\@\@Z
      */
-    MCAPI static std::vector<std::unique_ptr<class LootItemFunction>> deserialize(class Json::Value);
+    MCAPI static std::vector<std::unique_ptr<class LootItemFunction>> deserialize(class Json::Value); // NOLINT
 };

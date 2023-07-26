@@ -7,42 +7,41 @@
 
 class LookAtTradingPlayerGoal : public ::LookAtActorGoal {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKATTRADINGPLAYERGOAL
 public:
+    // prevent constructor by default
     LookAtTradingPlayerGoal& operator=(LookAtTradingPlayerGoal const&) = delete;
     LookAtTradingPlayerGoal(LookAtTradingPlayerGoal const&)            = delete;
     LookAtTradingPlayerGoal()                                          = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?canUse\@LookAtTradingPlayerGoal\@\@UEAA_NXZ
      */
-    virtual bool canUse();
+    virtual bool canUse(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?canContinueToUse\@LookAtTradingPlayerGoal\@\@UEAA_NXZ
      */
-    virtual bool canContinueToUse();
+    virtual bool canContinueToUse(); // NOLINT
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3();
+    virtual void __unk_vfn_3(); // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?appendDebugInfo\@LookAtTradingPlayerGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string&) const; // NOLINT
     /**
      * @symbol ??0LookAtTradingPlayerGoal\@\@QEAA\@AEAVMob\@\@MMHHHH\@Z
      */
-    MCAPI LookAtTradingPlayerGoal(class Mob&, float, float, int, int, int, int);
+    MCAPI LookAtTradingPlayerGoal(class Mob&, float, float, int, int, int, int); // NOLINT
 };

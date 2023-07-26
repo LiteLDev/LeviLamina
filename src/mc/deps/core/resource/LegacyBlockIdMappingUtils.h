@@ -11,11 +11,11 @@ namespace LegacyBlockIdMappingUtils {
 /**
  * @symbol ?addLegacyBlockIdMapping\@LegacyBlockIdMappingUtils\@\@YAXAEBVBlockLegacy\@\@_K\@Z
  */
-MCAPI void addLegacyBlockIdMapping(class BlockLegacy const&, unsigned __int64);
+MCAPI void addLegacyBlockIdMapping(class BlockLegacy const&, unsigned __int64); // NOLINT
 /**
  * @symbol ?addLegacyBlockIdMappings\@LegacyBlockIdMappingUtils\@\@YAXXZ
  */
-MCAPI void addLegacyBlockIdMappings();
+MCAPI void addLegacyBlockIdMappings(); // NOLINT
 /**
  * @symbol
  * ?mBlockIdToVanillaBlockTypesMap\@LegacyBlockIdMappingUtils\@\@3V?$unordered_map\@IV?$WeakPtr\@VBlockLegacy\@\@\@\@U?$hash\@I\@std\@\@U?$equal_to\@I\@3\@V?$allocator\@U?$pair\@$$CBIV?$WeakPtr\@VBlockLegacy\@\@\@\@\@std\@\@\@3\@\@std\@\@A
@@ -26,7 +26,7 @@ MCAPI extern class std::unordered_map<
     struct std::hash<unsigned int>,
     struct std::equal_to<unsigned int>,
     class std::allocator<struct std::pair<unsigned int const, class WeakPtr<class BlockLegacy>>>>
-    mBlockIdToVanillaBlockTypesMap;
+    mBlockIdToVanillaBlockTypesMap; // NOLINT
 /**
  * @symbol
  * ?mBlockNameToBlockIdMap\@LegacyBlockIdMappingUtils\@\@3V?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HU?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@std\@\@\@2\@\@std\@\@A
@@ -37,6 +37,6 @@ MCAPI extern class std::unordered_map<
     struct std::hash<std::string>,
     struct std::equal_to<std::string>,
     class std::allocator<struct std::pair<std::string const, int>>>
-    mBlockNameToBlockIdMap;
+    mBlockNameToBlockIdMap; // NOLINT
 
 }; // namespace LegacyBlockIdMappingUtils

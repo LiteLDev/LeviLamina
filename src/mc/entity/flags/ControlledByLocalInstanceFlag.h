@@ -4,12 +4,9 @@
 
 struct ControlledByLocalInstanceFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTROLLEDBYLOCALINSTANCEFLAG
 public:
+    // prevent constructor by default
     ControlledByLocalInstanceFlag& operator=(ControlledByLocalInstanceFlag const&) = delete;
     ControlledByLocalInstanceFlag(ControlledByLocalInstanceFlag const&)            = delete;
     ControlledByLocalInstanceFlag()                                                = delete;
-#endif
-
-public:
 };

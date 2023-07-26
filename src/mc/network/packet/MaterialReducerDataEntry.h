@@ -4,16 +4,15 @@
 
 struct MaterialReducerDataEntry {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MATERIALREDUCERDATAENTRY
 public:
+    // prevent constructor by default
     MaterialReducerDataEntry& operator=(MaterialReducerDataEntry const&) = delete;
     MaterialReducerDataEntry(MaterialReducerDataEntry const&)            = delete;
     MaterialReducerDataEntry()                                           = delete;
-#endif
 
 public:
     /**
      * @symbol ??1MaterialReducerDataEntry\@\@QEAA\@XZ
      */
-    MCAPI ~MaterialReducerDataEntry();
+    MCAPI ~MaterialReducerDataEntry(); // NOLINT
 };

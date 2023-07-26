@@ -5,12 +5,9 @@
 template <typename T0>
 struct InvertableFilter {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVERTABLEFILTER
 public:
+    // prevent constructor by default
     InvertableFilter& operator=(InvertableFilter const&) = delete;
     InvertableFilter(InvertableFilter const&)            = delete;
     InvertableFilter()                                   = delete;
-#endif
-
-public:
 };

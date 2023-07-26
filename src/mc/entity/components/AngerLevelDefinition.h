@@ -12,27 +12,26 @@ namespace JsonUtil { class EmptyClass; }
 
 class AngerLevelDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANGERLEVELDEFINITION
 public:
+    // prevent constructor by default
     AngerLevelDefinition& operator=(AngerLevelDefinition const&) = delete;
     AngerLevelDefinition(AngerLevelDefinition const&)            = delete;
     AngerLevelDefinition()                                       = delete;
-#endif
 
 public:
     /**
      * @symbol ?addOnIncreaseSoundDefinition\@AngerLevelDefinition\@\@QEAAXAEBVSoundDefinition\@\@\@Z
      */
-    MCAPI void addOnIncreaseSoundDefinition(class SoundDefinition const&);
+    MCAPI void addOnIncreaseSoundDefinition(class SoundDefinition const&); // NOLINT
     /**
      * @symbol ?initialize\@AngerLevelDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVAngerLevelComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class AngerLevelComponent&) const;
+    MCAPI void initialize(class EntityContext&, class AngerLevelComponent&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@AngerLevelDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VAngerLevelDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AngerLevelDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      class AngerLevelDefinition>>&); // NOLINT
 };

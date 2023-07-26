@@ -4,20 +4,19 @@
 
 struct GeneDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GENEDEFINITION
 public:
+    // prevent constructor by default
     GeneDefinition& operator=(GeneDefinition const&) = delete;
     GeneDefinition(GeneDefinition const&)            = delete;
     GeneDefinition()                                 = delete;
-#endif
 
 public:
     /**
      * @symbol ?addGeneticVariant\@GeneDefinition\@\@QEAAXAEBUGeneticVariant\@\@\@Z
      */
-    MCAPI void addGeneticVariant(struct GeneticVariant const&);
+    MCAPI void addGeneticVariant(struct GeneticVariant const&); // NOLINT
     /**
      * @symbol ??1GeneDefinition\@\@QEAA\@XZ
      */
-    MCAPI ~GeneDefinition();
+    MCAPI ~GeneDefinition(); // NOLINT
 };

@@ -7,44 +7,43 @@
 
 class NetworkChunkSource : public ::ChunkSource {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKCHUNKSOURCE
 public:
+    // prevent constructor by default
     NetworkChunkSource& operator=(NetworkChunkSource const&) = delete;
     NetworkChunkSource(NetworkChunkSource const&)            = delete;
     NetworkChunkSource()                                     = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?getExistingChunk\@NetworkChunkSource\@\@UEAA?AV?$shared_ptr\@VLevelChunk\@\@\@std\@\@AEBVChunkPos\@\@\@Z
      */
-    virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const&);
+    virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const&); // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?createNewChunk\@NetworkChunkSource\@\@UEAA?AV?$shared_ptr\@VLevelChunk\@\@\@std\@\@AEBVChunkPos\@\@W4LoadMode\@ChunkSource\@\@_N\@Z
      */
     virtual class std::shared_ptr<class LevelChunk>
-    createNewChunk(class ChunkPos const&, enum class ChunkSource::LoadMode, bool);
+    createNewChunk(class ChunkPos const&, enum class ChunkSource::LoadMode, bool); // NOLINT
     /**
      * @vftbl 8
      * @symbol
      * ?getOrLoadChunk\@NetworkChunkSource\@\@UEAA?AV?$shared_ptr\@VLevelChunk\@\@\@std\@\@AEBVChunkPos\@\@W4LoadMode\@ChunkSource\@\@_N\@Z
      */
     virtual class std::shared_ptr<class LevelChunk>
-    getOrLoadChunk(class ChunkPos const&, enum class ChunkSource::LoadMode, bool);
+    getOrLoadChunk(class ChunkPos const&, enum class ChunkSource::LoadMode, bool); // NOLINT
     /**
      * @vftbl 18
      * @symbol
      * ?acquireDiscarded\@NetworkChunkSource\@\@UEAAXV?$unique_ptr\@VLevelChunk\@\@ULevelChunkFinalDeleter\@\@\@std\@\@\@Z
      */
-    virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
+    virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>); // NOLINT
     /**
      * @vftbl 23
      * @symbol
@@ -56,7 +55,7 @@ public:
         struct std::hash<class ChunkPos>,
         struct std::equal_to<class ChunkPos>,
         class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const*
-    getChunkMap();
+    getChunkMap(); // NOLINT
     /**
      * @vftbl 24
      * @symbol
@@ -68,19 +67,19 @@ public:
         struct std::hash<class ChunkPos>,
         struct std::equal_to<class ChunkPos>,
         class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const&
-    getStorage() const;
+    getStorage() const; // NOLINT
     /**
      * @vftbl 26
      * @symbol ?canCreateViews\@NetworkChunkSource\@\@UEBA_NXZ
      */
-    virtual bool canCreateViews() const;
+    virtual bool canCreateViews() const; // NOLINT
     /**
      * @vftbl 30
      * @symbol ?canLaunchTasks\@NetworkChunkSource\@\@UEBA_NXZ
      */
-    virtual bool canLaunchTasks() const;
+    virtual bool canLaunchTasks() const; // NOLINT
     /**
      * @symbol ??0NetworkChunkSource\@\@QEAA\@AEAVDimension\@\@\@Z
      */
-    MCAPI NetworkChunkSource(class Dimension&);
+    MCAPI NetworkChunkSource(class Dimension&); // NOLINT
 };

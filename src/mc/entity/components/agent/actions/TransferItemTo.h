@@ -6,14 +6,11 @@ namespace AgentComponents::Actions {
 
 struct TransferItemTo {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMPONENTS_ACTIONS_TRANSFERITEMTO
 public:
+    // prevent constructor by default
     TransferItemTo& operator=(TransferItemTo const&) = delete;
     TransferItemTo(TransferItemTo const&)            = delete;
     TransferItemTo()                                 = delete;
-#endif
-
-public:
 };
 
 }; // namespace AgentComponents::Actions

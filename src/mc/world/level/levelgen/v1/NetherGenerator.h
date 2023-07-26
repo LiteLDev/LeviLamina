@@ -16,22 +16,18 @@ public:
     // NetherGenerator inner types define
     struct ThreadData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERGENERATOR_THREADDATA
     public:
+        // prevent constructor by default
         ThreadData& operator=(ThreadData const&) = delete;
         ThreadData(ThreadData const&)            = delete;
         ThreadData()                             = delete;
-#endif
-
-    public:
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERGENERATOR
 public:
+    // prevent constructor by default
     NetherGenerator& operator=(NetherGenerator const&) = delete;
     NetherGenerator(NetherGenerator const&)            = delete;
     NetherGenerator()                                  = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERGENERATOR
@@ -41,73 +37,76 @@ public:
      */
     MCVAPI void
     decorateWorldGenLoadChunk(class Biome&, class LevelChunk&, class BlockVolumeTarget&, class Random&, class ChunkPos const&)
-        const;
+        const; // NOLINT
     /**
      * @symbol
      * ?decorateWorldGenPostProcess\@NetherGenerator\@\@MEBAXAEAVBiome\@\@AEAVLevelChunk\@\@AEAVBlockSource\@\@AEAVRandom\@\@\@Z
      */
-    MCVAPI void decorateWorldGenPostProcess(class Biome&, class LevelChunk&, class BlockSource&, class Random&) const;
+    MCVAPI void
+    decorateWorldGenPostProcess(class Biome&, class LevelChunk&, class BlockSource&, class Random&) const; // NOLINT
     /**
      * @symbol ?findSpawnPosition\@NetherGenerator\@\@UEBA?AVBlockPos\@\@XZ
      */
-    MCVAPI class BlockPos findSpawnPosition() const;
+    MCVAPI class BlockPos findSpawnPosition() const; // NOLINT
     /**
      * @symbol ?getBiomeArea\@NetherGenerator\@\@UEBA?AVBiomeArea\@\@AEBVBoundingBox\@\@I\@Z
      */
-    MCVAPI class BiomeArea getBiomeArea(class BoundingBox const&, unsigned int) const;
+    MCVAPI class BiomeArea getBiomeArea(class BoundingBox const&, unsigned int) const; // NOLINT
     /**
      * @symbol ?getBiomeSource\@NetherGenerator\@\@UEBAAEBVBiomeSource\@\@XZ
      */
-    MCVAPI class BiomeSource const& getBiomeSource() const;
+    MCVAPI class BiomeSource const& getBiomeSource() const; // NOLINT
     /**
      * @symbol ?getBlockVolumeDimensions\@NetherGenerator\@\@UEBA?AUBlockVolumeDimensions\@WorldGenerator\@\@XZ
      */
-    MCVAPI struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const;
+    MCVAPI struct WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const; // NOLINT
     /**
      * @symbol ?loadChunk\@NetherGenerator\@\@UEAAXAEAVLevelChunk\@\@_N\@Z
      */
-    MCVAPI void loadChunk(class LevelChunk&, bool);
+    MCVAPI void loadChunk(class LevelChunk&, bool); // NOLINT
     /**
      * @symbol ?postProcess\@NetherGenerator\@\@UEAA_NAEAVChunkViewSource\@\@\@Z
      */
-    MCVAPI bool postProcess(class ChunkViewSource&);
+    MCVAPI bool postProcess(class ChunkViewSource&); // NOLINT
     /**
      * @symbol
      * ?prepareAndComputeHeights\@NetherGenerator\@\@UEAAXAEAVBlockVolume\@\@AEBVChunkPos\@\@AEAV?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@_NH\@Z
      */
-    MCVAPI void prepareAndComputeHeights(class BlockVolume&, class ChunkPos const&, std::vector<short>&, bool, int);
+    MCVAPI void
+    prepareAndComputeHeights(class BlockVolume&, class ChunkPos const&, std::vector<short>&, bool, int); // NOLINT
     /**
      * @symbol ?prepareHeights\@NetherGenerator\@\@UEAAXAEAVBlockVolume\@\@AEBVChunkPos\@\@_N\@Z
      */
-    MCVAPI void prepareHeights(class BlockVolume&, class ChunkPos const&, bool);
+    MCVAPI void prepareHeights(class BlockVolume&, class ChunkPos const&, bool); // NOLINT
 #endif
     /**
      * @symbol
      * ??0NetherGenerator\@\@QEAA\@AEAVDimension\@\@IPEBVBiome\@\@V?$unique_ptr\@VStructureFeatureRegistry\@\@U?$default_delete\@VStructureFeatureRegistry\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI
-    NetherGenerator(class Dimension&, unsigned int, class Biome const*, std::unique_ptr<class StructureFeatureRegistry>);
+    NetherGenerator(class Dimension&, unsigned int, class Biome const*, std::unique_ptr<class StructureFeatureRegistry>); // NOLINT
     /**
      * @symbol ?buildSurfaces\@NetherGenerator\@\@QEAAXAEAVBlockVolume\@\@AEAVLevelChunk\@\@AEBVChunkPos\@\@\@Z
      */
-    MCAPI void buildSurfaces(class BlockVolume&, class LevelChunk&, class ChunkPos const&);
+    MCAPI void buildSurfaces(class BlockVolume&, class LevelChunk&, class ChunkPos const&); // NOLINT
     /**
      * @symbol
      * ?generateDensityCellsForChunk\@NetherGenerator\@\@QEBA?AV?$MultidimensionalArray\@M$04$04$0BB\@\@Util\@\@AEBVChunkPos\@\@\@Z
      */
-    MCAPI class Util::MultidimensionalArray<float, 5, 5, 17> generateDensityCellsForChunk(class ChunkPos const&) const;
+    MCAPI class Util::MultidimensionalArray<float, 5, 5, 17>
+    generateDensityCellsForChunk(class ChunkPos const&) const; // NOLINT
 
     // private:
     /**
      * @symbol
      * ?_prepareHeights\@NetherGenerator\@\@AEAAXAEAVBlockVolume\@\@AEBVChunkPos\@\@_NPEAV?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@H\@Z
      */
-    MCAPI void _prepareHeights(class BlockVolume&, class ChunkPos const&, bool, std::vector<short>*, int);
+    MCAPI void _prepareHeights(class BlockVolume&, class ChunkPos const&, bool, std::vector<short>*, int); // NOLINT
     /**
      * @symbol
      * ?_makeBiomeSource\@NetherGenerator\@\@CA?AV?$unique_ptr\@VBiomeSource\@\@U?$default_delete\@VBiomeSource\@\@\@std\@\@\@std\@\@AEAVDimension\@\@\@Z
      */
-    MCAPI static std::unique_ptr<class BiomeSource> _makeBiomeSource(class Dimension&);
+    MCAPI static std::unique_ptr<class BiomeSource> _makeBiomeSource(class Dimension&); // NOLINT
 
 private:
 };

@@ -7,17 +7,16 @@
 
 class BrewingStandContainerScreenValidator : public ::ContainerScreenValidatorBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREWINGSTANDCONTAINERSCREENVALIDATOR
 public:
+    // prevent constructor by default
     BrewingStandContainerScreenValidator& operator=(BrewingStandContainerScreenValidator const&) = delete;
     BrewingStandContainerScreenValidator(BrewingStandContainerScreenValidator const&)            = delete;
     BrewingStandContainerScreenValidator()                                                       = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
 };

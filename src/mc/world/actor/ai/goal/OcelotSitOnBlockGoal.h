@@ -7,72 +7,71 @@
 
 class OcelotSitOnBlockGoal : public ::BaseMoveToBlockGoal {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCELOTSITONBLOCKGOAL
 public:
+    // prevent constructor by default
     OcelotSitOnBlockGoal& operator=(OcelotSitOnBlockGoal const&) = delete;
     OcelotSitOnBlockGoal(OcelotSitOnBlockGoal const&)            = delete;
     OcelotSitOnBlockGoal()                                       = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?canUse\@OcelotSitOnBlockGoal\@\@UEAA_NXZ
      */
-    virtual bool canUse();
+    virtual bool canUse(); // NOLINT
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3();
+    virtual void __unk_vfn_3(); // NOLINT
     /**
      * @vftbl 4
      * @symbol ?start\@OcelotSitOnBlockGoal\@\@UEAAXXZ
      */
-    virtual void start();
+    virtual void start(); // NOLINT
     /**
      * @vftbl 5
      * @symbol ?stop\@OcelotSitOnBlockGoal\@\@UEAAXXZ
      */
-    virtual void stop();
+    virtual void stop(); // NOLINT
     /**
      * @vftbl 6
      * @symbol ?tick\@OcelotSitOnBlockGoal\@\@UEAAXXZ
      */
-    virtual void tick();
+    virtual void tick(); // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?appendDebugInfo\@OcelotSitOnBlockGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string&) const; // NOLINT
     /**
      * @vftbl 8
      * @symbol __unk_vfn_8
      */
-    virtual void __unk_vfn_8();
+    virtual void __unk_vfn_8(); // NOLINT
     /**
      * @vftbl 9
      * @symbol __unk_vfn_9
      */
-    virtual void __unk_vfn_9();
+    virtual void __unk_vfn_9(); // NOLINT
     /**
      * @vftbl 11
      * @symbol ?isValidTarget\@OcelotSitOnBlockGoal\@\@UEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
+    virtual bool isValidTarget(class BlockSource&, class BlockPos const&); // NOLINT
     /**
      * @vftbl 13
      * @symbol ?_canReach\@OcelotSitOnBlockGoal\@\@UEAA_NAEBVBlockPos\@\@\@Z
      */
-    virtual bool _canReach(class BlockPos const&);
+    virtual bool _canReach(class BlockPos const&); // NOLINT
     /**
      * @symbol ??0OcelotSitOnBlockGoal\@\@QEAA\@AEAVMob\@\@M\@Z
      */
-    MCAPI OcelotSitOnBlockGoal(class Mob&, float);
+    MCAPI OcelotSitOnBlockGoal(class Mob&, float); // NOLINT
 };

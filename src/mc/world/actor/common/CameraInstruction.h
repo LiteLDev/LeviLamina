@@ -22,52 +22,49 @@ public:
         // FadeInstruction inner types define
         struct ColorOption {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMERAINSTRUCTION_FADEINSTRUCTION_COLOROPTION
         public:
+            // prevent constructor by default
             ColorOption& operator=(ColorOption const&) = delete;
             ColorOption(ColorOption const&)            = delete;
             ColorOption()                              = delete;
-#endif
 
         public:
             /**
              * @symbol ?bindType\@ColorOption\@FadeInstruction\@CameraInstruction\@\@SAXXZ
              */
-            MCAPI static void bindType();
+            MCAPI static void bindType(); // NOLINT
         };
 
         struct TimeOption {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMERAINSTRUCTION_FADEINSTRUCTION_TIMEOPTION
         public:
+            // prevent constructor by default
             TimeOption& operator=(TimeOption const&) = delete;
             TimeOption(TimeOption const&)            = delete;
             TimeOption()                             = delete;
-#endif
 
         public:
             /**
              * @symbol ?bindType\@TimeOption\@FadeInstruction\@CameraInstruction\@\@SAXXZ
              */
-            MCAPI static void bindType();
+            MCAPI static void bindType(); // NOLINT
         };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMERAINSTRUCTION_FADEINSTRUCTION
     public:
+        // prevent constructor by default
         FadeInstruction& operator=(FadeInstruction const&) = delete;
         FadeInstruction(FadeInstruction const&)            = delete;
         FadeInstruction()                                  = delete;
-#endif
 
     public:
         /**
          * @symbol ??8FadeInstruction\@CameraInstruction\@\@QEBA_NAEBU01\@\@Z
          */
-        MCAPI bool operator==(struct CameraInstruction::FadeInstruction const&) const;
+        MCAPI bool operator==(struct CameraInstruction::FadeInstruction const&) const; // NOLINT
         /**
          * @symbol ?bindType\@FadeInstruction\@CameraInstruction\@\@SAXXZ
          */
-        MCAPI static void bindType();
+        MCAPI static void bindType(); // NOLINT
     };
 
     struct SetInstruction {
@@ -81,75 +78,72 @@ public:
         // SetInstruction inner types define
         struct EaseOption {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMERAINSTRUCTION_SETINSTRUCTION_EASEOPTION
         public:
+            // prevent constructor by default
             EaseOption& operator=(EaseOption const&) = delete;
             EaseOption(EaseOption const&)            = delete;
             EaseOption()                             = delete;
-#endif
 
         public:
             /**
              * @symbol ?bindType\@EaseOption\@SetInstruction\@CameraInstruction\@\@SAXXZ
              */
-            MCAPI static void bindType();
+            MCAPI static void bindType(); // NOLINT
         };
 
         struct RotOption {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMERAINSTRUCTION_SETINSTRUCTION_ROTOPTION
         public:
+            // prevent constructor by default
             RotOption& operator=(RotOption const&) = delete;
             RotOption(RotOption const&)            = delete;
             RotOption()                            = delete;
-#endif
 
         public:
             /**
              * @symbol ?bindType\@RotOption\@SetInstruction\@CameraInstruction\@\@SAXXZ
              */
-            MCAPI static void bindType();
+            MCAPI static void bindType(); // NOLINT
         };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMERAINSTRUCTION_SETINSTRUCTION
     public:
+        // prevent constructor by default
         SetInstruction(SetInstruction const&) = delete;
         SetInstruction()                      = delete;
-#endif
 
     public:
         /**
          * @symbol ??4SetInstruction\@CameraInstruction\@\@QEAAAEAU01\@AEBU01\@\@Z
          */
-        MCAPI struct CameraInstruction::SetInstruction& operator=(struct CameraInstruction::SetInstruction const&);
+        MCAPI struct CameraInstruction::SetInstruction&
+        operator=(struct CameraInstruction::SetInstruction const&); // NOLINT
         /**
          * @symbol ??4SetInstruction\@CameraInstruction\@\@QEAAAEAU01\@$$QEAU01\@\@Z
          */
-        MCAPI struct CameraInstruction::SetInstruction& operator=(struct CameraInstruction::SetInstruction&&);
+        MCAPI struct CameraInstruction::SetInstruction& operator=(struct CameraInstruction::SetInstruction&&); // NOLINT
         /**
          * @symbol ??8SetInstruction\@CameraInstruction\@\@QEBA_NAEBU01\@\@Z
          */
-        MCAPI bool operator==(struct CameraInstruction::SetInstruction const&) const;
+        MCAPI bool operator==(struct CameraInstruction::SetInstruction const&) const; // NOLINT
         /**
          * @symbol ?bindType\@SetInstruction\@CameraInstruction\@\@SAXXZ
          */
-        MCAPI static void bindType();
+        MCAPI static void bindType(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMERAINSTRUCTION
 public:
+    // prevent constructor by default
     CameraInstruction& operator=(CameraInstruction const&) = delete;
     CameraInstruction(CameraInstruction const&)            = delete;
     CameraInstruction()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ??8CameraInstruction\@\@QEBA_NAEBU0\@\@Z
      */
-    MCAPI bool operator==(struct CameraInstruction const&) const;
+    MCAPI bool operator==(struct CameraInstruction const&) const; // NOLINT
     /**
      * @symbol ?bindType\@CameraInstruction\@\@SAXXZ
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(); // NOLINT
 };

@@ -11,34 +11,34 @@ namespace ScriptModuleMinecraft {
 
 class ScriptNavigationFlyComponent : public ::ScriptModuleMinecraft::NavigationScriptActorComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTNAVIGATIONFLYCOMPONENT
 public:
+    // prevent constructor by default
     ScriptNavigationFlyComponent& operator=(ScriptNavigationFlyComponent const&) = delete;
     ScriptNavigationFlyComponent(ScriptNavigationFlyComponent const&)            = delete;
     ScriptNavigationFlyComponent()                                               = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTNAVIGATIONFLYCOMPONENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptNavigationFlyComponent();
+    MCVAPI ~ScriptNavigationFlyComponent(); // NOLINT
 #endif
-    /**
-     * @symbol ?ComponentId\@ScriptNavigationFlyComponent\@ScriptModuleMinecraft\@\@2PEBDEB
-     */
-    MCAPI static char const* ComponentId;
     /**
      * @symbol
      * ?bind\@ScriptNavigationFlyComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptNavigationFlyComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptNavigationFlyComponent> bind();
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptNavigationFlyComponent>
+    bind(); // NOLINT
+    /**
+     * @symbol ?ComponentId\@ScriptNavigationFlyComponent\@ScriptModuleMinecraft\@\@2PEBDEB
+     */
+    MCAPI static char const* ComponentId; // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

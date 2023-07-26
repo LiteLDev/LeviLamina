@@ -4,12 +4,9 @@
 
 struct CanVehicleSprintFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CANVEHICLESPRINTFLAG
 public:
+    // prevent constructor by default
     CanVehicleSprintFlag& operator=(CanVehicleSprintFlag const&) = delete;
     CanVehicleSprintFlag(CanVehicleSprintFlag const&)            = delete;
     CanVehicleSprintFlag()                                       = delete;
-#endif
-
-public:
 };

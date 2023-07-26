@@ -4,39 +4,38 @@
 
 class ContainerScreenContext {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERSCREENCONTEXT
 public:
+    // prevent constructor by default
     ContainerScreenContext& operator=(ContainerScreenContext const&) = delete;
     ContainerScreenContext(ContainerScreenContext const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ContainerScreenContext\@\@QEAA\@AEAVPlayer\@\@W4ContainerType\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI ContainerScreenContext(class Player&, enum class ContainerType, class BlockPos const&);
+    MCAPI ContainerScreenContext(class Player&, enum class ContainerType, class BlockPos const&); // NOLINT
     /**
      * @symbol ??0ContainerScreenContext\@\@QEAA\@AEAVPlayer\@\@W4ContainerType\@\@AEBUActorUniqueID\@\@\@Z
      */
-    MCAPI ContainerScreenContext(class Player&, enum class ContainerType, struct ActorUniqueID const&);
+    MCAPI ContainerScreenContext(class Player&, enum class ContainerType, struct ActorUniqueID const&); // NOLINT
     /**
      * @symbol ??0ContainerScreenContext\@\@QEAA\@XZ
      */
-    MCAPI ContainerScreenContext();
+    MCAPI ContainerScreenContext(); // NOLINT
     /**
      * @symbol ?getPlayer\@ContainerScreenContext\@\@QEBAAEAVPlayer\@\@XZ
      */
-    MCAPI class Player& getPlayer() const;
+    MCAPI class Player& getPlayer() const; // NOLINT
     /**
      * @symbol ?getScreenContainerType\@ContainerScreenContext\@\@QEBA?AW4ContainerType\@\@XZ
      */
-    MCAPI enum class ContainerType getScreenContainerType() const;
+    MCAPI enum class ContainerType getScreenContainerType() const; // NOLINT
     /**
      * @symbol ?tryGetActor\@ContainerScreenContext\@\@QEBAPEAVActor\@\@XZ
      */
-    MCAPI class Actor* tryGetActor() const;
+    MCAPI class Actor* tryGetActor() const; // NOLINT
     /**
      * @symbol ?tryGetBlockActor\@ContainerScreenContext\@\@QEBAPEAVBlockActor\@\@XZ
      */
-    MCAPI class BlockActor* tryGetBlockActor() const;
+    MCAPI class BlockActor* tryGetBlockActor() const; // NOLINT
 };

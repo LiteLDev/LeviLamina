@@ -4,12 +4,11 @@
 
 struct ExpressionOpBitField {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPRESSIONOPBITFIELD
 public:
+    // prevent constructor by default
     ExpressionOpBitField& operator=(ExpressionOpBitField const&) = delete;
     ExpressionOpBitField(ExpressionOpBitField const&)            = delete;
     ExpressionOpBitField()                                       = delete;
-#endif
 
 public:
     /**
@@ -21,13 +20,13 @@ public:
         enum class ExpressionOp,
         enum class ExpressionOp,
         enum class ExpressionOp
-    ) const;
+    ) const; // NOLINT
     /**
      * @symbol ?areBitsSet\@ExpressionOpBitField\@\@QEBA_NW4ExpressionOp\@\@000\@Z
      */
     MCAPI bool
         areBitsSet(enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp, enum class ExpressionOp)
-            const;
+            const; // NOLINT
     /**
      * @symbol ?areBitsSet\@ExpressionOpBitField\@\@QEBA_NW4ExpressionOp\@\@00000\@Z
      */
@@ -38,7 +37,7 @@ public:
         enum class ExpressionOp,
         enum class ExpressionOp,
         enum class ExpressionOp
-    ) const;
+    ) const; // NOLINT
     /**
      * @symbol ?areBitsSet\@ExpressionOpBitField\@\@QEBA_NW4ExpressionOp\@\@0000000\@Z
      */
@@ -51,5 +50,5 @@ public:
         enum class ExpressionOp,
         enum class ExpressionOp,
         enum class ExpressionOp
-    ) const;
+    ) const; // NOLINT
 };

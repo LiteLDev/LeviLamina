@@ -5,12 +5,9 @@
 template <typename T0>
 class GridArea {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GRIDAREA
 public:
+    // prevent constructor by default
     GridArea& operator=(GridArea const&) = delete;
     GridArea(GridArea const&)            = delete;
     GridArea()                           = delete;
-#endif
-
-public:
 };

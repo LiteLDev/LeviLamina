@@ -11,22 +11,22 @@ namespace BedrockBlockTypes {
 /**
  * @symbol ?mAir\@BedrockBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mAir;
+MCAPI extern class WeakPtr<class BlockLegacy> mAir; // NOLINT
 /**
  * @symbol ?mClientRequestPlaceholderBlock\@BedrockBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mClientRequestPlaceholderBlock;
+MCAPI extern class WeakPtr<class BlockLegacy> mClientRequestPlaceholderBlock; // NOLINT
 /**
  * @symbol ?mUnknown\@BedrockBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mUnknown;
+MCAPI extern class WeakPtr<class BlockLegacy> mUnknown; // NOLINT
 /**
  * @symbol ?registerBlocks\@BedrockBlockTypes\@\@YAXXZ
  */
-MCAPI void registerBlocks();
+MCAPI void registerBlocks(); // NOLINT
 /**
  * @symbol ?unregisterBlocks\@BedrockBlockTypes\@\@YAXXZ
  */
-MCAPI void unregisterBlocks();
+MCAPI void unregisterBlocks(); // NOLINT
 
 }; // namespace BedrockBlockTypes

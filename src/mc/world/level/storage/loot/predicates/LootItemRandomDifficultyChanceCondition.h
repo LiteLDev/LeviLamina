@@ -4,22 +4,21 @@
 
 class LootItemRandomDifficultyChanceCondition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEMRANDOMDIFFICULTYCHANCECONDITION
 public:
+    // prevent constructor by default
     LootItemRandomDifficultyChanceCondition& operator=(LootItemRandomDifficultyChanceCondition const&) = delete;
     LootItemRandomDifficultyChanceCondition(LootItemRandomDifficultyChanceCondition const&)            = delete;
     LootItemRandomDifficultyChanceCondition()                                                          = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?applies\@LootItemRandomDifficultyChanceCondition\@\@UEAA_NAEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual bool applies(class Random&, class LootTableContext&);
+    virtual bool applies(class Random&, class LootTableContext&); // NOLINT
 };

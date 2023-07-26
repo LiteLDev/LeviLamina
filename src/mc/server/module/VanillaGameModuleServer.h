@@ -12,80 +12,80 @@ namespace VanillaSystemsRegistration { struct RegistrationOptions; }
 
 class VanillaGameModuleServer {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAGAMEMODULESERVER
 public:
+    // prevent constructor by default
     VanillaGameModuleServer& operator=(VanillaGameModuleServer const&) = delete;
     VanillaGameModuleServer(VanillaGameModuleServer const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?init\@VanillaGameModuleServer\@\@UEAAXAEAVServerInstance\@\@AEBV?$not_null\@V?$NonOwnerPointer\@VLevel\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
-    virtual void init(class ServerInstance&, class gsl::not_null<class Bedrock::NonOwnerPointer<class Level>> const&);
+    virtual void
+    init(class ServerInstance&, class gsl::not_null<class Bedrock::NonOwnerPointer<class Level>> const&); // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?initializeBehaviorStack\@VanillaGameModuleServer\@\@UEAAXAEBVExperiments\@\@AEAVIResourcePackRepository\@\@AEAVResourcePackStack\@\@AEBVBaseGameVersion\@\@\@Z
      */
     virtual void
-    initializeBehaviorStack(class Experiments const&, class IResourcePackRepository&, class ResourcePackStack&, class BaseGameVersion const&);
+    initializeBehaviorStack(class Experiments const&, class IResourcePackRepository&, class ResourcePackStack&, class BaseGameVersion const&); // NOLINT
     /**
      * @vftbl 3
      * @symbol
      * ?configureLevel\@VanillaGameModuleServer\@\@UEAAXAEBV?$not_null\@V?$NonOwnerPointer\@VLevel\@\@\@Bedrock\@\@\@gsl\@\@AEBVExperiments\@\@AEAVResourcePackManager\@\@AEBVBaseGameVersion\@\@\@Z
      */
     virtual void
-    configureLevel(class gsl::not_null<class Bedrock::NonOwnerPointer<class Level>> const&, class Experiments const&, class ResourcePackManager&, class BaseGameVersion const&);
+    configureLevel(class gsl::not_null<class Bedrock::NonOwnerPointer<class Level>> const&, class Experiments const&, class ResourcePackManager&, class BaseGameVersion const&); // NOLINT
     /**
      * @vftbl 4
      * @symbol __unk_vfn_4
      */
-    virtual void __unk_vfn_4();
+    virtual void __unk_vfn_4(); // NOLINT
     /**
      * @vftbl 5
      * @symbol
      * ?configureDocumentation\@VanillaGameModuleServer\@\@UEAAXAEAVIGameModuleDocumentation\@\@VItemRegistryRef\@\@\@Z
      */
-    virtual void configureDocumentation(class IGameModuleDocumentation&, class ItemRegistryRef);
+    virtual void configureDocumentation(class IGameModuleDocumentation&, class ItemRegistryRef); // NOLINT
     /**
      * @vftbl 6
      * @symbol __unk_vfn_6
      */
-    virtual void __unk_vfn_6();
+    virtual void __unk_vfn_6(); // NOLINT
     /**
      * @vftbl 7
      * @symbol ?setupCommands\@VanillaGameModuleServer\@\@UEAAXAEAVCommandRegistry\@\@\@Z
      */
-    virtual void setupCommands(class CommandRegistry&);
+    virtual void setupCommands(class CommandRegistry&); // NOLINT
     /**
      * @vftbl 8
      * @symbol
      * ?configureServerNetworkHandler\@VanillaGameModuleServer\@\@UEAAXAEAVServerInstance\@\@V?$not_null\@V?$NonOwnerPointer\@VServerNetworkHandler\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
     virtual void
-    configureServerNetworkHandler(class ServerInstance&, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>);
+    configureServerNetworkHandler(class ServerInstance&, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler>>); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VANILLAGAMEMODULESERVER
     /**
      * @symbol ?configureNewPlayer\@VanillaGameModuleServer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
-    MCVAPI void configureNewPlayer(class Player&);
+    MCVAPI void configureNewPlayer(class Player&); // NOLINT
     /**
      * @symbol ?tick\@VanillaGameModuleServer\@\@UEAAXXZ
      */
-    MCVAPI void tick();
+    MCVAPI void tick(); // NOLINT
 #endif
     /**
      * @symbol ??0VanillaGameModuleServer\@\@QEAA\@XZ
      */
-    MCAPI VanillaGameModuleServer();
+    MCAPI VanillaGameModuleServer(); // NOLINT
 
     // private:
     /**
@@ -93,18 +93,19 @@ public:
      * ?_configureEntitySystems\@VanillaGameModuleServer\@\@AEAAXAEBV?$not_null\@V?$NonOwnerPointer\@VLevel\@\@\@Bedrock\@\@\@gsl\@\@AEAVResourcePackManager\@\@AEBVExperiments\@\@AEBURegistrationOptions\@VanillaSystemsRegistration\@\@\@Z
      */
     MCAPI void
-    _configureEntitySystems(class gsl::not_null<class Bedrock::NonOwnerPointer<class Level>> const&, class ResourcePackManager&, class Experiments const&, struct VanillaSystemsRegistration::RegistrationOptions const&);
+    _configureEntitySystems(class gsl::not_null<class Bedrock::NonOwnerPointer<class Level>> const&, class ResourcePackManager&, class Experiments const&, struct VanillaSystemsRegistration::RegistrationOptions const&); // NOLINT
     /**
      * @symbol
      * ?_configureWorldGen\@VanillaGameModuleServer\@\@AEAAXAEAVIWorldRegistriesProvider\@\@AEBUSpawnSettings\@\@AEBVExperiments\@\@AEAVResourcePackManager\@\@AEBVBaseGameVersion\@\@\@Z
      */
     MCAPI void
-    _configureWorldGen(class IWorldRegistriesProvider&, struct SpawnSettings const&, class Experiments const&, class ResourcePackManager&, class BaseGameVersion const&);
+    _configureWorldGen(class IWorldRegistriesProvider&, struct SpawnSettings const&, class Experiments const&, class ResourcePackManager&, class BaseGameVersion const&); // NOLINT
     /**
      * @symbol
      * ?_registerListeners\@VanillaGameModuleServer\@\@AEAAXAEBV?$not_null\@V?$NonOwnerPointer\@VLevel\@\@\@Bedrock\@\@\@gsl\@\@_N\@Z
      */
-    MCAPI void _registerListeners(class gsl::not_null<class Bedrock::NonOwnerPointer<class Level>> const&, bool);
+    MCAPI void
+    _registerListeners(class gsl::not_null<class Bedrock::NonOwnerPointer<class Level>> const&, bool); // NOLINT
 
 private:
 };

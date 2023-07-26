@@ -15,62 +15,61 @@ namespace PositionTrackingDB {
 
 class LoadOperation : public ::PositionTrackingDB::AsyncOperationBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_POSITIONTRACKINGDB_LOADOPERATION
 public:
+    // prevent constructor by default
     LoadOperation& operator=(LoadOperation const&) = delete;
     LoadOperation(LoadOperation const&)            = delete;
     LoadOperation()                                = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?tick\@AsyncOperationBase\@PositionTrackingDB\@\@UEAA_NV?$weak_ptr\@VPositionTrackingDBServer\@PositionTrackingDB\@\@\@std\@\@AEAVTrackingRecord\@2\@\@Z
      */
     virtual bool
-    tick(class std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&);
+    tick(class std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?getDescription\@LoadOperation\@PositionTrackingDB\@\@UEBAPEBDXZ
      */
-    virtual char const* getDescription() const;
+    virtual char const* getDescription() const; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?isAsync\@AsyncOperationBase\@PositionTrackingDB\@\@UEBA_NXZ
      */
-    virtual bool isAsync() const;
+    virtual bool isAsync() const; // NOLINT
     /**
      * @vftbl 4
      * @symbol ?isComplete\@AsyncOperationBase\@PositionTrackingDB\@\@UEBA_NXZ
      */
-    virtual bool isComplete() const;
+    virtual bool isComplete() const; // NOLINT
     /**
      * @vftbl 5
      * @symbol
      * ?_init\@LoadOperation\@PositionTrackingDB\@\@MEAA_NV?$weak_ptr\@VPositionTrackingDBServer\@PositionTrackingDB\@\@\@std\@\@AEAVTrackingRecord\@2\@\@Z
      */
     virtual bool
-    _init(class std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&);
+    _init(class std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&); // NOLINT
     /**
      * @vftbl 6
      * @symbol
      * ?_tick\@LoadOperation\@PositionTrackingDB\@\@MEAA_NV?$weak_ptr\@VPositionTrackingDBServer\@PositionTrackingDB\@\@\@std\@\@AEAVTrackingRecord\@2\@\@Z
      */
     virtual bool
-    _tick(class std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&);
+    _tick(class std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&); // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?_quit\@AsyncOperationBase\@PositionTrackingDB\@\@MEAA_NV?$weak_ptr\@VPositionTrackingDBServer\@PositionTrackingDB\@\@\@std\@\@AEAVTrackingRecord\@2\@\@Z
      */
     virtual bool
-    _quit(class std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&);
+    _quit(class std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&); // NOLINT
 };
 
 }; // namespace PositionTrackingDB

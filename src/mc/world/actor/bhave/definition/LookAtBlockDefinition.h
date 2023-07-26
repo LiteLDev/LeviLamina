@@ -12,22 +12,21 @@ namespace Json { class Value; }
 
 class LookAtBlockDefinition : public ::BehaviorDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKATBLOCKDEFINITION
 public:
+    // prevent constructor by default
     LookAtBlockDefinition& operator=(LookAtBlockDefinition const&) = delete;
     LookAtBlockDefinition(LookAtBlockDefinition const&)            = delete;
     LookAtBlockDefinition()                                        = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?load\@LookAtBlockDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    virtual void load(class Json::Value, class BehaviorFactory const&); // NOLINT
 };

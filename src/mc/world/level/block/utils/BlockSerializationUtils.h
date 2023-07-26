@@ -20,24 +20,24 @@ MCAPI extern class std::unordered_map<
     struct std::equal_to<class HashedString>,
     class std::allocator<
         struct std::pair<class HashedString const, class std::function<void(int, class CompoundTag&)>>>>
-    BLOCK_REPLACE_DATA_MAP;
+    BLOCK_REPLACE_DATA_MAP; // NOLINT
 /**
  * @symbol ?clearBlockReplaceDataMap\@BlockSerializationUtils\@\@YAXXZ
  */
-MCAPI void clearBlockReplaceDataMap();
+MCAPI void clearBlockReplaceDataMap(); // NOLINT
 /**
  * @symbol ?clearNBTToBlockCache\@BlockSerializationUtils\@\@YAXXZ
  */
-MCAPI void clearNBTToBlockCache();
+MCAPI void clearNBTToBlockCache(); // NOLINT
 /**
  * @symbol ?initBlockReplaceDataMap\@BlockSerializationUtils\@\@YAXXZ
  */
-MCAPI void initBlockReplaceDataMap();
+MCAPI void initBlockReplaceDataMap(); // NOLINT
 /**
  * @symbol
  * ?tryGetBlockFromNBT\@BlockSerializationUtils\@\@YA?AU?$pair\@W4NBTState\@BlockSerializationUtils\@\@PEBVBlock\@\@\@std\@\@AEBVCompoundTag\@\@PEAUNbtToBlockCache\@1\@\@Z
  */
 MCAPI struct std::pair<enum class BlockSerializationUtils::NBTState, class Block const*>
-tryGetBlockFromNBT(class CompoundTag const&, struct BlockSerializationUtils::NbtToBlockCache*);
+tryGetBlockFromNBT(class CompoundTag const&, struct BlockSerializationUtils::NbtToBlockCache*); // NOLINT
 
 }; // namespace BlockSerializationUtils

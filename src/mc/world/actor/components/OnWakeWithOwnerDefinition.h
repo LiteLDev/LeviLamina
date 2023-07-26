@@ -12,19 +12,18 @@ namespace JsonUtil { class EmptyClass; }
 
 struct OnWakeWithOwnerDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONWAKEWITHOWNERDEFINITION
 public:
+    // prevent constructor by default
     OnWakeWithOwnerDefinition& operator=(OnWakeWithOwnerDefinition const&) = delete;
     OnWakeWithOwnerDefinition(OnWakeWithOwnerDefinition const&)            = delete;
     OnWakeWithOwnerDefinition()                                            = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?buildSchema\@OnWakeWithOwnerDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UOnWakeWithOwnerDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnWakeWithOwnerDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      struct OnWakeWithOwnerDefinition>>&); // NOLINT
 };

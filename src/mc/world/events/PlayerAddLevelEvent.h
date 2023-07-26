@@ -4,16 +4,15 @@
 
 struct PlayerAddLevelEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERADDLEVELEVENT
 public:
+    // prevent constructor by default
     PlayerAddLevelEvent& operator=(PlayerAddLevelEvent const&) = delete;
     PlayerAddLevelEvent(PlayerAddLevelEvent const&)            = delete;
     PlayerAddLevelEvent()                                      = delete;
-#endif
 
 public:
     /**
      * @symbol ??1PlayerAddLevelEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerAddLevelEvent();
+    MCAPI ~PlayerAddLevelEvent(); // NOLINT
 };

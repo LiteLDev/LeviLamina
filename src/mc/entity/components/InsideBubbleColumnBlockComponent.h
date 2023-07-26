@@ -4,16 +4,15 @@
 
 struct InsideBubbleColumnBlockComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEBUBBLECOLUMNBLOCKCOMPONENT
 public:
+    // prevent constructor by default
     InsideBubbleColumnBlockComponent& operator=(InsideBubbleColumnBlockComponent const&) = delete;
     InsideBubbleColumnBlockComponent(InsideBubbleColumnBlockComponent const&)            = delete;
     InsideBubbleColumnBlockComponent()                                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ??4InsideBubbleColumnBlockComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct InsideBubbleColumnBlockComponent& operator=(struct InsideBubbleColumnBlockComponent&&);
+    MCAPI struct InsideBubbleColumnBlockComponent& operator=(struct InsideBubbleColumnBlockComponent&&); // NOLINT
 };

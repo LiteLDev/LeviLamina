@@ -7,24 +7,24 @@
 
 struct ResourceDropsContext {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEDROPSCONTEXT
 public:
+    // prevent constructor by default
     ResourceDropsContext& operator=(ResourceDropsContext const&) = delete;
     ResourceDropsContext(ResourceDropsContext const&)            = delete;
     ResourceDropsContext()                                       = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ResourceDropsContext\@\@QEAA\@MAEBVItemStack\@\@AEAVILevel\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI ResourceDropsContext(float, class ItemStack const&, class ILevel&, class AutomaticID<class Dimension, int>);
+    MCAPI
+    ResourceDropsContext(float, class ItemStack const&, class ILevel&, class AutomaticID<class Dimension, int>); // NOLINT
     /**
      * @symbol ??0ResourceDropsContext\@\@QEAA\@MAEBVItemStack\@\@AEBVBlockSource\@\@\@Z
      */
-    MCAPI ResourceDropsContext(float, class ItemStack const&, class BlockSource const&);
+    MCAPI ResourceDropsContext(float, class ItemStack const&, class BlockSource const&); // NOLINT
     /**
      * @symbol ?getRandom\@ResourceDropsContext\@\@QEBAAEAVRandom\@\@XZ
      */
-    MCAPI class Random& getRandom() const;
+    MCAPI class Random& getRandom() const; // NOLINT
 };

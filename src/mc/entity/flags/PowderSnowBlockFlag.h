@@ -4,12 +4,9 @@
 
 struct PowderSnowBlockFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_POWDERSNOWBLOCKFLAG
 public:
+    // prevent constructor by default
     PowderSnowBlockFlag& operator=(PowderSnowBlockFlag const&) = delete;
     PowderSnowBlockFlag(PowderSnowBlockFlag const&)            = delete;
     PowderSnowBlockFlag()                                      = delete;
-#endif
-
-public:
 };

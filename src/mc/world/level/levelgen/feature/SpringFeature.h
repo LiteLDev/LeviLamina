@@ -7,34 +7,33 @@
 
 class SpringFeature : public ::Feature {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPRINGFEATURE
 public:
+    // prevent constructor by default
     SpringFeature& operator=(SpringFeature const&) = delete;
     SpringFeature(SpringFeature const&)            = delete;
     SpringFeature()                                = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?place\@SpringFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
     /**
      * @symbol ??0SpringFeature\@\@QEAA\@AEBVBlock\@\@\@Z
      */
-    MCAPI SpringFeature(class Block const&);
+    MCAPI SpringFeature(class Block const&); // NOLINT
 
     // private:
     /**
      * @symbol ?isValidSpringBorderBlock\@SpringFeature\@\@AEBA_NAEBVBlockLegacy\@\@AEAVBlockSource\@\@\@Z
      */
-    MCAPI bool isValidSpringBorderBlock(class BlockLegacy const&, class BlockSource&) const;
+    MCAPI bool isValidSpringBorderBlock(class BlockLegacy const&, class BlockSource&) const; // NOLINT
 
 private:
 };

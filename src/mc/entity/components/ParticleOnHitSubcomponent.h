@@ -9,40 +9,39 @@ namespace Json { class Value; }
 
 class ParticleOnHitSubcomponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PARTICLEONHITSUBCOMPONENT
 public:
+    // prevent constructor by default
     ParticleOnHitSubcomponent& operator=(ParticleOnHitSubcomponent const&) = delete;
     ParticleOnHitSubcomponent(ParticleOnHitSubcomponent const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?readfromJSON\@ParticleOnHitSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
-    virtual void readfromJSON(class Json::Value&, class SemVersion const&);
+    virtual void readfromJSON(class Json::Value&, class SemVersion const&); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?writetoJSON\@ParticleOnHitSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
-    virtual void writetoJSON(class Json::Value&) const;
+    virtual void writetoJSON(class Json::Value&) const; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?doOnHitEffect\@ParticleOnHitSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
      */
-    virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
+    virtual void doOnHitEffect(class Actor&, class ProjectileComponent&); // NOLINT
     /**
      * @vftbl 4
      * @symbol ?getName\@ParticleOnHitSubcomponent\@\@UEAAPEBDXZ
      */
-    virtual char const* getName();
+    virtual char const* getName(); // NOLINT
     /**
      * @symbol ??0ParticleOnHitSubcomponent\@\@QEAA\@XZ
      */
-    MCAPI ParticleOnHitSubcomponent();
+    MCAPI ParticleOnHitSubcomponent(); // NOLINT
 };

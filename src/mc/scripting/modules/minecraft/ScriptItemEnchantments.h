@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ItemEnchants;
 namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentInstance; }
 namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentType; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -18,84 +19,87 @@ namespace ScriptModuleMinecraft {
 
 class ScriptItemEnchantments {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTITEMENCHANTMENTS
 public:
+    // prevent constructor by default
     ScriptItemEnchantments& operator=(ScriptItemEnchantments const&) = delete;
     ScriptItemEnchantments()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ??0ScriptItemEnchantments\@ScriptModuleMinecraft\@\@QEAA\@AEBVItemEnchants\@\@VWeakLifetimeScope\@Scripting\@\@\@Z
      */
-    MCAPI ScriptItemEnchantments(class ItemEnchants const&, class Scripting::WeakLifetimeScope);
+    MCAPI ScriptItemEnchantments(class ItemEnchants const&, class Scripting::WeakLifetimeScope); // NOLINT
     /**
      * @symbol ??0ScriptItemEnchantments\@ScriptModuleMinecraft\@\@QEAA\@AEBV01\@\@Z
      */
-    MCAPI ScriptItemEnchantments(class ScriptModuleMinecraft::ScriptItemEnchantments const&);
+    MCAPI ScriptItemEnchantments(class ScriptModuleMinecraft::ScriptItemEnchantments const&); // NOLINT
     /**
      * @symbol ??0ScriptItemEnchantments\@ScriptModuleMinecraft\@\@QEAA\@$$QEAV01\@\@Z
      */
-    MCAPI ScriptItemEnchantments(class ScriptModuleMinecraft::ScriptItemEnchantments&&);
+    MCAPI ScriptItemEnchantments(class ScriptModuleMinecraft::ScriptItemEnchantments&&); // NOLINT
     /**
      * @symbol
      * ?addEnchantment\@ScriptItemEnchantments\@ScriptModuleMinecraft\@\@QEAA_NAEBUScriptItemEnchantmentInstance\@2\@\@Z
      */
-    MCAPI bool addEnchantment(struct ScriptModuleMinecraft::ScriptItemEnchantmentInstance const&);
+    MCAPI bool addEnchantment(struct ScriptModuleMinecraft::ScriptItemEnchantmentInstance const&); // NOLINT
     /**
      * @symbol
      * ?canAddEnchantment\@ScriptItemEnchantments\@ScriptModuleMinecraft\@\@QEAA_NAEBUScriptItemEnchantmentInstance\@2\@\@Z
      */
-    MCAPI bool canAddEnchantment(struct ScriptModuleMinecraft::ScriptItemEnchantmentInstance const&);
+    MCAPI bool canAddEnchantment(struct ScriptModuleMinecraft::ScriptItemEnchantmentInstance const&); // NOLINT
     /**
      * @symbol
      * ?getAllEnchantments\@ScriptItemEnchantments\@ScriptModuleMinecraft\@\@QEBA?AV?$vector\@V?$StrongTypedObjectHandle\@UScriptItemEnchantmentInstance\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$allocator\@V?$StrongTypedObjectHandle\@UScriptItemEnchantmentInstance\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::vector<
         class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemEnchantmentInstance>>
-    getAllEnchantments() const;
+    getAllEnchantments() const; // NOLINT
     /**
      * @symbol ?getEnchantSlot\@ScriptItemEnchantments\@ScriptModuleMinecraft\@\@QEBAHXZ
      */
-    MCAPI int getEnchantSlot() const;
+    MCAPI int getEnchantSlot() const; // NOLINT
     /**
      * @symbol
      * ?getEnchantment\@ScriptItemEnchantments\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@V?$optional\@V?$StrongTypedObjectHandle\@UScriptItemEnchantmentInstance\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@std\@\@\@Scripting\@\@V?$variant\@UScriptItemEnchantmentType\@ScriptModuleMinecraft\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<class std::optional<
         class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptItemEnchantmentInstance>>>
-        getEnchantment(class std::variant<struct ScriptModuleMinecraft::ScriptItemEnchantmentType, std::string>);
+        getEnchantment(class std::
+                           variant<struct ScriptModuleMinecraft::ScriptItemEnchantmentType, std::string>); // NOLINT
     /**
      * @symbol ?getEnchants\@ScriptItemEnchantments\@ScriptModuleMinecraft\@\@QEBAAEBVItemEnchants\@\@XZ
      */
-    MCAPI class ItemEnchants const& getEnchants() const;
+    MCAPI class ItemEnchants const& getEnchants() const; // NOLINT
     /**
      * @symbol
      * ?hasEnchantment\@ScriptItemEnchantments\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@V?$variant\@UScriptItemEnchantmentType\@ScriptModuleMinecraft\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<int>
-        hasEnchantment(class std::variant<struct ScriptModuleMinecraft::ScriptItemEnchantmentType, std::string>) const;
+        hasEnchantment(class std::variant<struct ScriptModuleMinecraft::ScriptItemEnchantmentType, std::string>)
+            const; // NOLINT
     /**
      * @symbol ??4ScriptItemEnchantments\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraft::ScriptItemEnchantments&
-    operator=(class ScriptModuleMinecraft::ScriptItemEnchantments&&);
+    operator=(class ScriptModuleMinecraft::ScriptItemEnchantments&&); // NOLINT
     /**
      * @symbol
      * ?removeEnchantment\@ScriptItemEnchantments\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@V?$variant\@UScriptItemEnchantmentType\@ScriptModuleMinecraft\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<void>
-        removeEnchantment(class std::variant<struct ScriptModuleMinecraft::ScriptItemEnchantmentType, std::string>);
+        removeEnchantment(class std::
+                              variant<struct ScriptModuleMinecraft::ScriptItemEnchantmentType, std::string>); // NOLINT
     /**
      * @symbol ??1ScriptItemEnchantments\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptItemEnchantments();
+    MCAPI ~ScriptItemEnchantments(); // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptItemEnchantments\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptItemEnchantments\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemEnchantments> bind();
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemEnchantments>
+    bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

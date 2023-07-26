@@ -4,12 +4,9 @@
 
 struct GlidingTravelFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLIDINGTRAVELFLAG
 public:
+    // prevent constructor by default
     GlidingTravelFlag& operator=(GlidingTravelFlag const&) = delete;
     GlidingTravelFlag(GlidingTravelFlag const&)            = delete;
     GlidingTravelFlag()                                    = delete;
-#endif
-
-public:
 };

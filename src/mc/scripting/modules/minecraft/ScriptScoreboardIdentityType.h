@@ -14,12 +14,11 @@ namespace ScriptModuleMinecraft {
 
 class ScriptScoreboardIdentityType {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTSCOREBOARDIDENTITYTYPE
 public:
+    // prevent constructor by default
     ScriptScoreboardIdentityType& operator=(ScriptScoreboardIdentityType const&) = delete;
     ScriptScoreboardIdentityType(ScriptScoreboardIdentityType const&)            = delete;
     ScriptScoreboardIdentityType()                                               = delete;
-#endif
 
 public:
     /**
@@ -29,14 +28,14 @@ public:
     MCAPI static class Scripting::EnumBindingBuilder<
         enum class ScriptModuleMinecraft::ScriptScoreboardIdentityType_t,
         enum class ScriptModuleMinecraft::ScriptScoreboardIdentityType_t>
-    bindV010();
+    bindV010(); // NOLINT
     /**
      * @symbol
      * ?bindV1\@ScriptScoreboardIdentityType\@ScriptModuleMinecraft\@\@SA?AV?$EnumBindingBuilder\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ScriptScoreboardIdentityType_t\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::
         EnumBindingBuilder<std::string, enum class ScriptModuleMinecraft::ScriptScoreboardIdentityType_t>
-        bindV1();
+        bindV1(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

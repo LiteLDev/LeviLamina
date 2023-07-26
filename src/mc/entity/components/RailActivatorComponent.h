@@ -4,16 +4,15 @@
 
 class RailActivatorComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAILACTIVATORCOMPONENT
 public:
+    // prevent constructor by default
     RailActivatorComponent& operator=(RailActivatorComponent const&) = delete;
     RailActivatorComponent(RailActivatorComponent const&)            = delete;
     RailActivatorComponent()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol ?ejectAllPassengers\@RailActivatorComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void ejectAllPassengers(class Actor&);
+    MCAPI void ejectAllPassengers(class Actor&); // NOLINT
 };

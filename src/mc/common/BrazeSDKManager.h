@@ -4,36 +4,35 @@
 
 class BrazeSDKManager {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BRAZESDKMANAGER
 public:
+    // prevent constructor by default
     BrazeSDKManager& operator=(BrazeSDKManager const&) = delete;
     BrazeSDKManager(BrazeSDKManager const&)            = delete;
     BrazeSDKManager()                                  = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BRAZESDKMANAGER
     /**
      * @symbol ?_disableBrazeSDK\@BrazeSDKManager\@\@MEAAXXZ
      */
-    MCVAPI void _disableBrazeSDK();
+    MCVAPI void _disableBrazeSDK(); // NOLINT
     /**
      * @symbol ?_enableBrazeSDK\@BrazeSDKManager\@\@MEAAXXZ
      */
-    MCVAPI void _enableBrazeSDK();
+    MCVAPI void _enableBrazeSDK(); // NOLINT
     /**
      * @symbol ?disableBrazeSDK\@BrazeSDKManager\@\@UEAAXXZ
      */
-    MCVAPI void disableBrazeSDK();
+    MCVAPI void disableBrazeSDK(); // NOLINT
     /**
      * @symbol ?enableBrazeSDK\@BrazeSDKManager\@\@UEAAXXZ
      */
-    MCVAPI void enableBrazeSDK();
+    MCVAPI void enableBrazeSDK(); // NOLINT
     /**
      * @symbol
      * ?setBrazeId\@BrazeSDKManager\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCVAPI void setBrazeId(std::string const&);
+    MCVAPI void setBrazeId(std::string const&); // NOLINT
 #endif
 
     // private:
@@ -42,13 +41,13 @@ private:
     /**
      * @symbol ?mInitialized\@BrazeSDKManager\@\@0_NA
      */
-    MCAPI static bool mInitialized;
+    MCAPI static bool mInitialized; // NOLINT
     /**
      * @symbol ?mInstance\@BrazeSDKManager\@\@0V?$shared_ptr\@VBrazeSDKManager\@\@\@std\@\@A
      */
-    MCAPI static class std::shared_ptr<class BrazeSDKManager> mInstance;
+    MCAPI static class std::shared_ptr<class BrazeSDKManager> mInstance; // NOLINT
     /**
      * @symbol ?mIsReady\@BrazeSDKManager\@\@0_NA
      */
-    MCAPI static bool mIsReady;
+    MCAPI static bool mIsReady; // NOLINT
 };

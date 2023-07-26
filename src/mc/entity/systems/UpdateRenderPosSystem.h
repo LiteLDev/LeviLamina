@@ -4,18 +4,17 @@
 
 class UpdateRenderPosSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPDATERENDERPOSSYSTEM
 public:
+    // prevent constructor by default
     UpdateRenderPosSystem& operator=(UpdateRenderPosSystem const&) = delete;
     UpdateRenderPosSystem(UpdateRenderPosSystem const&)            = delete;
     UpdateRenderPosSystem()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@UpdateRenderPosSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
 
     // private:
     /**
@@ -23,7 +22,7 @@ public:
      * ?_doUpdateRenderPosSystem\@UpdateRenderPosSystem\@\@CAXAEBVStrictEntityContext\@\@AEBUStateVectorComponent\@\@AEAURenderPositionComponent\@\@\@Z
      */
     MCAPI static void
-    _doUpdateRenderPosSystem(class StrictEntityContext const&, struct StateVectorComponent const&, struct RenderPositionComponent&);
+    _doUpdateRenderPosSystem(class StrictEntityContext const&, struct StateVectorComponent const&, struct RenderPositionComponent&); // NOLINT
 
 private:
 };

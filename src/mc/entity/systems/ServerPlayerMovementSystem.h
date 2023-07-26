@@ -4,12 +4,11 @@
 
 class ServerPlayerMovementSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERPLAYERMOVEMENTSYSTEM
 public:
+    // prevent constructor by default
     ServerPlayerMovementSystem& operator=(ServerPlayerMovementSystem const&) = delete;
     ServerPlayerMovementSystem(ServerPlayerMovementSystem const&)            = delete;
     ServerPlayerMovementSystem()                                             = delete;
-#endif
 
 public:
     /**
@@ -17,24 +16,24 @@ public:
      * ?_updateFallDistance\@ServerPlayerMovementSystem\@\@SAXAEBUServerPlayerCurrentMovementComponent\@\@AEBUStateVectorComponent\@\@AEAUFallDistanceComponent\@\@\@Z
      */
     MCAPI static void
-    _updateFallDistance(struct ServerPlayerCurrentMovementComponent const&, struct StateVectorComponent const&, struct FallDistanceComponent&);
+    _updateFallDistance(struct ServerPlayerCurrentMovementComponent const&, struct StateVectorComponent const&, struct FallDistanceComponent&); // NOLINT
     /**
      * @symbol
      * ?createPostInputSystems\@ServerPlayerMovementSystem\@\@SA?AV?$array\@UTickingSystemWithInfo\@\@$01\@std\@\@XZ
      */
-    MCAPI static class std::array<struct TickingSystemWithInfo, 2> createPostInputSystems();
+    MCAPI static class std::array<struct TickingSystemWithInfo, 2> createPostInputSystems(); // NOLINT
     /**
      * @symbol
      * ?createPostTravelSystems\@ServerPlayerMovementSystem\@\@SA?AV?$array\@UTickingSystemWithInfo\@\@$03\@std\@\@XZ
      */
-    MCAPI static class std::array<struct TickingSystemWithInfo, 4> createPostTravelSystems();
+    MCAPI static class std::array<struct TickingSystemWithInfo, 4> createPostTravelSystems(); // NOLINT
     /**
      * @symbol
      * ?createPreInputSystems\@ServerPlayerMovementSystem\@\@SA?AV?$array\@UTickingSystemWithInfo\@\@$02\@std\@\@XZ
      */
-    MCAPI static class std::array<struct TickingSystemWithInfo, 3> createPreInputSystems();
+    MCAPI static class std::array<struct TickingSystemWithInfo, 3> createPreInputSystems(); // NOLINT
     /**
      * @symbol ?createServerPlayerMovementFinalSystem\@ServerPlayerMovementSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createServerPlayerMovementFinalSystem();
+    MCAPI static struct TickingSystemWithInfo createServerPlayerMovementFinalSystem(); // NOLINT
 };

@@ -4,12 +4,9 @@
 
 class DimensionHeightRange {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONHEIGHTRANGE
 public:
+    // prevent constructor by default
     DimensionHeightRange& operator=(DimensionHeightRange const&) = delete;
     DimensionHeightRange(DimensionHeightRange const&)            = delete;
     DimensionHeightRange()                                       = delete;
-#endif
-
-public:
 };

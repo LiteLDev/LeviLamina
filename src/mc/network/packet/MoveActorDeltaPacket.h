@@ -8,52 +8,51 @@
 
 class MoveActorDeltaPacket : public ::Packet {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEACTORDELTAPACKET
 public:
+    // prevent constructor by default
     MoveActorDeltaPacket& operator=(MoveActorDeltaPacket const&) = delete;
     MoveActorDeltaPacket(MoveActorDeltaPacket const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?getId\@MoveActorDeltaPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
-    virtual enum class MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?getName\@MoveActorDeltaPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string getName() const;
+    virtual std::string getName() const; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?write\@MoveActorDeltaPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream&) const; // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?_read\@MoveActorDeltaPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEACTORDELTAPACKET
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~MoveActorDeltaPacket();
+    MCVAPI ~MoveActorDeltaPacket(); // NOLINT
 #endif
     /**
      * @symbol ??0MoveActorDeltaPacket\@\@QEAA\@AEBVMoveActorDeltaData\@\@\@Z
      */
-    MCAPI MoveActorDeltaPacket(class MoveActorDeltaData const&);
+    MCAPI MoveActorDeltaPacket(class MoveActorDeltaData const&); // NOLINT
     /**
      * @symbol ??0MoveActorDeltaPacket\@\@QEAA\@XZ
      */
-    MCAPI MoveActorDeltaPacket();
+    MCAPI MoveActorDeltaPacket(); // NOLINT
 };

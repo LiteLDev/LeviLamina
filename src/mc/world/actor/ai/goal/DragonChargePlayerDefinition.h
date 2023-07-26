@@ -12,25 +12,24 @@ namespace JsonUtil { class EmptyClass; }
 
 class DragonChargePlayerDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONCHARGEPLAYERDEFINITION
 public:
+    // prevent constructor by default
     DragonChargePlayerDefinition& operator=(DragonChargePlayerDefinition const&) = delete;
     DragonChargePlayerDefinition(DragonChargePlayerDefinition const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0DragonChargePlayerDefinition\@\@QEAA\@XZ
      */
-    MCAPI DragonChargePlayerDefinition();
+    MCAPI DragonChargePlayerDefinition(); // NOLINT
     /**
      * @symbol ?initialize\@DragonChargePlayerDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVDragonChargePlayerGoal\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class DragonChargePlayerGoal&) const;
+    MCAPI void initialize(class EntityContext&, class DragonChargePlayerGoal&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@DragonChargePlayerDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDragonChargePlayerDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void
-    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DragonChargePlayerDefinition>>&);
+    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DragonChargePlayerDefinition>>&); // NOLINT
 };

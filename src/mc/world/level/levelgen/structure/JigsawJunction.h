@@ -4,12 +4,9 @@
 
 struct JigsawJunction {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_JIGSAWJUNCTION
 public:
+    // prevent constructor by default
     JigsawJunction& operator=(JigsawJunction const&) = delete;
     JigsawJunction(JigsawJunction const&)            = delete;
     JigsawJunction()                                 = delete;
-#endif
-
-public:
 };

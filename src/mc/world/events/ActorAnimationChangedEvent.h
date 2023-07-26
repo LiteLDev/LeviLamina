@@ -4,12 +4,9 @@
 
 struct ActorAnimationChangedEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORANIMATIONCHANGEDEVENT
 public:
+    // prevent constructor by default
     ActorAnimationChangedEvent& operator=(ActorAnimationChangedEvent const&) = delete;
     ActorAnimationChangedEvent(ActorAnimationChangedEvent const&)            = delete;
     ActorAnimationChangedEvent()                                             = delete;
-#endif
-
-public:
 };

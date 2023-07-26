@@ -6,10 +6,10 @@ namespace Automation {
 /**
  * @symbol ?BodyData\@Automation\@\@3PEBDEB
  */
-MCAPI extern char const* BodyData;
+MCAPI extern char const* BodyData; // NOLINT
 /**
  * @symbol ?HeaderData\@Automation\@\@3PEBDEB
  */
-MCAPI extern char const* HeaderData;
+MCAPI extern char const* HeaderData; // NOLINT
 
 }; // namespace Automation

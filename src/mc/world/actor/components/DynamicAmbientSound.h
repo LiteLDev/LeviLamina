@@ -4,16 +4,15 @@
 
 struct DynamicAmbientSound {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DYNAMICAMBIENTSOUND
 public:
+    // prevent constructor by default
     DynamicAmbientSound& operator=(DynamicAmbientSound const&) = delete;
     DynamicAmbientSound(DynamicAmbientSound const&)            = delete;
     DynamicAmbientSound()                                      = delete;
-#endif
 
 public:
     /**
      * @symbol ??1DynamicAmbientSound\@\@QEAA\@XZ
      */
-    MCAPI ~DynamicAmbientSound();
+    MCAPI ~DynamicAmbientSound(); // NOLINT
 };

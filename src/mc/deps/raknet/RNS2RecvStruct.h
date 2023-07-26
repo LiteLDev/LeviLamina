@@ -6,14 +6,11 @@ namespace RakNet {
 
 struct RNS2RecvStruct {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKNET_RNS2RECVSTRUCT
 public:
+    // prevent constructor by default
     RNS2RecvStruct& operator=(RNS2RecvStruct const&) = delete;
     RNS2RecvStruct(RNS2RecvStruct const&)            = delete;
     RNS2RecvStruct()                                 = delete;
-#endif
-
-public:
 };
 
 }; // namespace RakNet

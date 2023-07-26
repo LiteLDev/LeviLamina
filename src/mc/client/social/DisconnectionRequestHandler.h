@@ -4,12 +4,9 @@
 
 class DisconnectionRequestHandler {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DISCONNECTIONREQUESTHANDLER
 public:
+    // prevent constructor by default
     DisconnectionRequestHandler& operator=(DisconnectionRequestHandler const&) = delete;
     DisconnectionRequestHandler(DisconnectionRequestHandler const&)            = delete;
     DisconnectionRequestHandler()                                              = delete;
-#endif
-
-public:
 };

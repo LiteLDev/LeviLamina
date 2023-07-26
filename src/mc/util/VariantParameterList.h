@@ -4,19 +4,18 @@
 
 class VariantParameterList {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VARIANTPARAMETERLIST
 public:
+    // prevent constructor by default
     VariantParameterList& operator=(VariantParameterList const&) = delete;
     VariantParameterList(VariantParameterList const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0VariantParameterList\@\@QEAA\@XZ
      */
-    MCAPI VariantParameterList();
+    MCAPI VariantParameterList(); // NOLINT
     /**
      * @symbol ?hasParameter\@VariantParameterList\@\@QEBA_NW4FilterSubject\@\@\@Z
      */
-    MCAPI bool hasParameter(enum class FilterSubject) const;
+    MCAPI bool hasParameter(enum class FilterSubject) const; // NOLINT
 };

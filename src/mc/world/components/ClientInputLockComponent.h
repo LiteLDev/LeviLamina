@@ -4,32 +4,31 @@
 
 struct ClientInputLockComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTINPUTLOCKCOMPONENT
 public:
+    // prevent constructor by default
     ClientInputLockComponent& operator=(ClientInputLockComponent const&) = delete;
     ClientInputLockComponent(ClientInputLockComponent const&)            = delete;
     ClientInputLockComponent()                                           = delete;
-#endif
 
 public:
     /**
      * @symbol ?hasAnyLock\@ClientInputLockComponent\@\@QEBA_NXZ
      */
-    MCAPI bool hasAnyLock() const;
+    MCAPI bool hasAnyLock() const; // NOLINT
     /**
      * @symbol ?hasLockCategory\@ClientInputLockComponent\@\@QEBA_NW4ClientInputLockCategory\@\@\@Z
      */
-    MCAPI bool hasLockCategory(enum class ClientInputLockCategory) const;
+    MCAPI bool hasLockCategory(enum class ClientInputLockCategory) const; // NOLINT
     /**
      * @symbol ?hasLockType\@ClientInputLockComponent\@\@QEBA_NW4ClientInputLockType\@\@\@Z
      */
-    MCAPI bool hasLockType(enum class ClientInputLockType) const;
+    MCAPI bool hasLockType(enum class ClientInputLockType) const; // NOLINT
     /**
      * @symbol ?serialize\@ClientInputLockComponent\@\@QEBAIXZ
      */
-    MCAPI unsigned int serialize() const;
+    MCAPI unsigned int serialize() const; // NOLINT
     /**
      * @symbol ?setLockCategory\@ClientInputLockComponent\@\@QEAAXW4ClientInputLockCategory\@\@_N\@Z
      */
-    MCAPI void setLockCategory(enum class ClientInputLockCategory, bool);
+    MCAPI void setLockCategory(enum class ClientInputLockCategory, bool); // NOLINT
 };

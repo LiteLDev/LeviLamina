@@ -9,31 +9,30 @@ namespace NpcComponents { struct LeaveMenuCountdown; }
 
 class NpcSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCSYSTEM
 public:
+    // prevent constructor by default
     NpcSystem& operator=(NpcSystem const&) = delete;
     NpcSystem(NpcSystem const&)            = delete;
     NpcSystem()                            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?tick\@NpcSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
-    virtual void tick(class EntityRegistry&);
+    virtual void tick(class EntityRegistry&); // NOLINT
     /**
      * @symbol ?tickCountdown\@NpcSystem\@\@SAXAEAVEntityContext\@\@AEAULeaveMenuCountdown\@NpcComponents\@\@\@Z
      */
-    MCAPI static void tickCountdown(class EntityContext&, struct NpcComponents::LeaveMenuCountdown&);
+    MCAPI static void tickCountdown(class EntityContext&, struct NpcComponents::LeaveMenuCountdown&); // NOLINT
 };

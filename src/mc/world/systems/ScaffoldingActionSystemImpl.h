@@ -8,6 +8,6 @@ namespace ScaffoldingActionSystemImpl {
  * ?descendThroughBlockAllowed\@ScaffoldingActionSystemImpl\@\@YAXAEAUSynchedActorDataComponent\@\@AEAUStateVectorComponent\@\@AEAUFallDistanceComponent\@\@\@Z
  */
 MCAPI void
-descendThroughBlockAllowed(struct SynchedActorDataComponent&, struct StateVectorComponent&, struct FallDistanceComponent&);
+descendThroughBlockAllowed(struct SynchedActorDataComponent&, struct StateVectorComponent&, struct FallDistanceComponent&); // NOLINT
 
 }; // namespace ScaffoldingActionSystemImpl

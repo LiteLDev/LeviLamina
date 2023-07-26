@@ -6,14 +6,11 @@ namespace NpcComponents {
 
 struct LeaveMenuCountdown {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCCOMPONENTS_LEAVEMENUCOUNTDOWN
 public:
+    // prevent constructor by default
     LeaveMenuCountdown& operator=(LeaveMenuCountdown const&) = delete;
     LeaveMenuCountdown(LeaveMenuCountdown const&)            = delete;
     LeaveMenuCountdown()                                     = delete;
-#endif
-
-public:
 };
 
 }; // namespace NpcComponents

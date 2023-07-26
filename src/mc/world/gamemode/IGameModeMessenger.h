@@ -4,12 +4,9 @@
 
 struct IGameModeMessenger {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IGAMEMODEMESSENGER
 public:
+    // prevent constructor by default
     IGameModeMessenger& operator=(IGameModeMessenger const&) = delete;
     IGameModeMessenger(IGameModeMessenger const&)            = delete;
     IGameModeMessenger()                                     = delete;
-#endif
-
-public:
 };

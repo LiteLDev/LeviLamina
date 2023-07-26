@@ -9,30 +9,29 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptWorldInitializeAfterEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTWORLDINITIALIZEAFTEREVENT
 public:
+    // prevent constructor by default
     ScriptWorldInitializeAfterEvent& operator=(ScriptWorldInitializeAfterEvent const&) = delete;
     ScriptWorldInitializeAfterEvent(ScriptWorldInitializeAfterEvent const&)            = delete;
     ScriptWorldInitializeAfterEvent()                                                  = delete;
-#endif
 
 public:
     /**
      * @symbol ??1ScriptWorldInitializeAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptWorldInitializeAfterEvent();
+    MCAPI ~ScriptWorldInitializeAfterEvent(); // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptWorldInitializeAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptWorldInitializeAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptWorldInitializeAfterEvent>
-    bind();
+    bind(); // NOLINT
     /**
      * @symbol
      * ?bindV010\@ScriptWorldInitializeAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptWorldInitializeAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptWorldInitializeAfterEvent>
-    bindV010();
+    bindV010(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

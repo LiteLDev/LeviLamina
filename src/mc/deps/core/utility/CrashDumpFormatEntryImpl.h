@@ -4,12 +4,9 @@
 
 struct CrashDumpFormatEntryImpl {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRASHDUMPFORMATENTRYIMPL
 public:
+    // prevent constructor by default
     CrashDumpFormatEntryImpl& operator=(CrashDumpFormatEntryImpl const&) = delete;
     CrashDumpFormatEntryImpl(CrashDumpFormatEntryImpl const&)            = delete;
     CrashDumpFormatEntryImpl()                                           = delete;
-#endif
-
-public:
 };

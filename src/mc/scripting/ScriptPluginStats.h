@@ -4,23 +4,22 @@
 
 struct ScriptPluginStats {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPLUGINSTATS
 public:
+    // prevent constructor by default
     ScriptPluginStats(ScriptPluginStats const&) = delete;
     ScriptPluginStats()                         = delete;
-#endif
 
 public:
     /**
      * @symbol ??4ScriptPluginStats\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
-    MCAPI struct ScriptPluginStats& operator=(struct ScriptPluginStats const&);
+    MCAPI struct ScriptPluginStats& operator=(struct ScriptPluginStats const&); // NOLINT
     /**
      * @symbol ??4ScriptPluginStats\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct ScriptPluginStats& operator=(struct ScriptPluginStats&&);
+    MCAPI struct ScriptPluginStats& operator=(struct ScriptPluginStats&&); // NOLINT
     /**
      * @symbol ??1ScriptPluginStats\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptPluginStats();
+    MCAPI ~ScriptPluginStats(); // NOLINT
 };

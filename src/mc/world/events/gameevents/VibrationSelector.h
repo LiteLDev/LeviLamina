@@ -4,17 +4,17 @@
 
 class VibrationSelector {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VIBRATIONSELECTOR
 public:
+    // prevent constructor by default
     VibrationSelector& operator=(VibrationSelector const&) = delete;
     VibrationSelector(VibrationSelector const&)            = delete;
     VibrationSelector()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?addCandidate\@VibrationSelector\@\@QEAAXUTick\@\@AEBVGameEvent\@\@AEBUGameEventContext\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI void addCandidate(struct Tick, class GameEvent const&, struct GameEventContext const&, class BlockPos const&);
+    MCAPI void
+    addCandidate(struct Tick, class GameEvent const&, struct GameEventContext const&, class BlockPos const&); // NOLINT
 };

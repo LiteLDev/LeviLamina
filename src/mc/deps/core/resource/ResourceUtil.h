@@ -4,12 +4,11 @@
 
 class ResourceUtil {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEUTIL
 public:
+    // prevent constructor by default
     ResourceUtil& operator=(ResourceUtil const&) = delete;
     ResourceUtil(ResourceUtil const&)            = delete;
     ResourceUtil()                               = delete;
-#endif
 
 public:
     /**
@@ -17,11 +16,11 @@ public:
      * ?pathFromString\@ResourceUtil\@\@SA?AW4ResourceFileSystem\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
     MCAPI static enum class ResourceFileSystem
-        pathFromString(class std::basic_string_view<char, struct std::char_traits<char>>);
+        pathFromString(class std::basic_string_view<char, struct std::char_traits<char>>); // NOLINT
     /**
      * @symbol
      * ?stringFromPath\@ResourceUtil\@\@SA?AV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@W4ResourceFileSystem\@\@\@Z
      */
     MCAPI static class std::basic_string_view<char, struct std::char_traits<char>>
-        stringFromPath(enum class ResourceFileSystem);
+        stringFromPath(enum class ResourceFileSystem); // NOLINT
 };

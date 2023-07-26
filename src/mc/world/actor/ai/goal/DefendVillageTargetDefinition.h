@@ -12,26 +12,25 @@ namespace JsonUtil { class EmptyClass; }
 
 class DefendVillageTargetDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFENDVILLAGETARGETDEFINITION
 public:
+    // prevent constructor by default
     DefendVillageTargetDefinition& operator=(DefendVillageTargetDefinition const&) = delete;
     DefendVillageTargetDefinition(DefendVillageTargetDefinition const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0DefendVillageTargetDefinition\@\@QEAA\@XZ
      */
-    MCAPI DefendVillageTargetDefinition();
+    MCAPI DefendVillageTargetDefinition(); // NOLINT
     /**
      * @symbol
      * ?initialize\@DefendVillageTargetDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVDefendVillageTargetGoal\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class DefendVillageTargetGoal&) const;
+    MCAPI void initialize(class EntityContext&, class DefendVillageTargetGoal&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@DefendVillageTargetDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDefendVillageTargetDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void
-    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DefendVillageTargetDefinition>>&);
+    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DefendVillageTargetDefinition>>&); // NOLINT
 };

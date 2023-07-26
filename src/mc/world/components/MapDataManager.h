@@ -4,12 +4,11 @@
 
 class MapDataManager {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MAPDATAMANAGER
 public:
+    // prevent constructor by default
     MapDataManager& operator=(MapDataManager const&) = delete;
     MapDataManager(MapDataManager const&)            = delete;
     MapDataManager()                                 = delete;
-#endif
 
 public:
     /**
@@ -22,9 +21,9 @@ public:
         struct std::hash<struct ActorUniqueID>,
         struct std::equal_to<struct ActorUniqueID>,
         class std::allocator<struct std::pair<struct ActorUniqueID const, std::unique_ptr<class MapItemSavedData>>>>&
-    getAllMapData();
+    getAllMapData(); // NOLINT
     /**
      * @symbol ??1MapDataManager\@\@QEAA\@XZ
      */
-    MCAPI ~MapDataManager();
+    MCAPI ~MapDataManager(); // NOLINT
 };

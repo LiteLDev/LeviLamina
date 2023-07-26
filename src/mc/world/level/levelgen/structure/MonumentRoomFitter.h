@@ -4,12 +4,9 @@
 
 class MonumentRoomFitter {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MONUMENTROOMFITTER
 public:
+    // prevent constructor by default
     MonumentRoomFitter& operator=(MonumentRoomFitter const&) = delete;
     MonumentRoomFitter(MonumentRoomFitter const&)            = delete;
     MonumentRoomFitter()                                     = delete;
-#endif
-
-public:
 };

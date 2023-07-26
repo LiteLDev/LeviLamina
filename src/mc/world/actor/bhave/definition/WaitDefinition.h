@@ -12,22 +12,21 @@ namespace Json { class Value; }
 
 class WaitDefinition : public ::BehaviorDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WAITDEFINITION
 public:
+    // prevent constructor by default
     WaitDefinition& operator=(WaitDefinition const&) = delete;
     WaitDefinition(WaitDefinition const&)            = delete;
     WaitDefinition()                                 = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?load\@WaitDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    virtual void load(class Json::Value, class BehaviorFactory const&); // NOLINT
 };

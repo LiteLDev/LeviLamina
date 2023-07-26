@@ -12,31 +12,31 @@ namespace Core {
 
 class StorageAreaState {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORE_STORAGEAREASTATE
 public:
+    // prevent constructor by default
     StorageAreaState& operator=(StorageAreaState const&) = delete;
     StorageAreaState(StorageAreaState const&)            = delete;
     StorageAreaState()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?checkUserStorage\@StorageAreaState\@Core\@\@QEAAXAEAV?$weak_ptr\@VFileStorageArea\@Core\@\@\@std\@\@_K1\@Z
      */
-    MCAPI void checkUserStorage(class std::weak_ptr<class Core::FileStorageArea>&, unsigned __int64, unsigned __int64);
+    MCAPI void
+    checkUserStorage(class std::weak_ptr<class Core::FileStorageArea>&, unsigned __int64, unsigned __int64); // NOLINT
     /**
      * @symbol ?isOutOfDiskSpaceError\@StorageAreaState\@Core\@\@QEBA_NXZ
      */
-    MCAPI bool isOutOfDiskSpaceError() const;
+    MCAPI bool isOutOfDiskSpaceError() const; // NOLINT
     /**
      * @symbol ?notifyCriticalDiskError\@StorageAreaState\@Core\@\@QEAAXAEBW4LevelStorageState\@2\@\@Z
      */
-    MCAPI void notifyCriticalDiskError(enum class Core::LevelStorageState const&);
+    MCAPI void notifyCriticalDiskError(enum class Core::LevelStorageState const&); // NOLINT
     /**
      * @symbol ??1StorageAreaState\@Core\@\@QEAA\@XZ
      */
-    MCAPI ~StorageAreaState();
+    MCAPI ~StorageAreaState(); // NOLINT
 };
 
 }; // namespace Core

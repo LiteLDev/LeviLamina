@@ -9,44 +9,43 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptRawMessageScoreInterface {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTRAWMESSAGESCOREINTERFACE
 public:
+    // prevent constructor by default
     ScriptRawMessageScoreInterface() = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ScriptRawMessageScoreInterface\@ScriptModuleMinecraft\@\@QEAA\@$$QEAU01\@\@Z
      */
-    MCAPI ScriptRawMessageScoreInterface(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&&);
+    MCAPI ScriptRawMessageScoreInterface(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&&); // NOLINT
     /**
      * @symbol ??0ScriptRawMessageScoreInterface\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
      */
-    MCAPI ScriptRawMessageScoreInterface(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface const&);
+    MCAPI ScriptRawMessageScoreInterface(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface const&); // NOLINT
     /**
      * @symbol ??4ScriptRawMessageScoreInterface\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&
-    operator=(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&&);
+    operator=(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&&); // NOLINT
     /**
      * @symbol ??4ScriptRawMessageScoreInterface\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&
-    operator=(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface const&);
+    operator=(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface const&); // NOLINT
     /**
      * @symbol ??8ScriptRawMessageScoreInterface\@ScriptModuleMinecraft\@\@QEBA_NAEBU01\@\@Z
      */
-    MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface const&) const;
+    MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface const&) const; // NOLINT
     /**
      * @symbol ??1ScriptRawMessageScoreInterface\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptRawMessageScoreInterface();
+    MCAPI ~ScriptRawMessageScoreInterface(); // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptRawMessageScoreInterface\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptRawMessageScoreInterface\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface>
-    bind();
+    bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

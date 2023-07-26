@@ -6,6 +6,6 @@ namespace MinecraftExplorer {
 /**
  * @symbol ?registerGeneratedBlocks\@MinecraftExplorer\@\@YAXXZ
  */
-MCAPI void registerGeneratedBlocks();
+MCAPI void registerGeneratedBlocks(); // NOLINT
 
 }; // namespace MinecraftExplorer

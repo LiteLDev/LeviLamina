@@ -5,34 +5,38 @@
 // auto generated inclusion list
 #include "mc/world/level/biome/surface/ISurfaceBuilder.h"
 
+// auto generated forward declare list
+// clang-format off
+class EntityContext;
+// clang-format on
+
 namespace VanillaSurfaceBuilders {
 
 class OceanFrozenSurfaceBuilder {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLASURFACEBUILDERS_OCEANFROZENSURFACEBUILDER
 public:
+    // prevent constructor by default
     OceanFrozenSurfaceBuilder& operator=(OceanFrozenSurfaceBuilder const&) = delete;
     OceanFrozenSurfaceBuilder(OceanFrozenSurfaceBuilder const&)            = delete;
     OceanFrozenSurfaceBuilder()                                            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?init\@OceanFrozenSurfaceBuilder\@VanillaSurfaceBuilders\@\@UEAAXAEAVEntityContext\@\@I\@Z
      */
-    virtual void init(class EntityContext&, unsigned int);
+    virtual void init(class EntityContext&, unsigned int); // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?buildSurfaceAt\@OceanFrozenSurfaceBuilder\@VanillaSurfaceBuilders\@\@UEBAXAEBUBuildParameters\@ISurfaceBuilder\@\@\@Z
      */
-    virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const&) const;
+    virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const&) const; // NOLINT
 };
 
 }; // namespace VanillaSurfaceBuilders

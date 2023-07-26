@@ -11,12 +11,11 @@ namespace Bedrock::JSONObject {
 
 class MemoryPage {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_JSONOBJECT_MEMORYPAGE
 public:
+    // prevent constructor by default
     MemoryPage& operator=(MemoryPage const&) = delete;
     MemoryPage(MemoryPage const&)            = delete;
     MemoryPage()                             = delete;
-#endif
 
 public:
     /**
@@ -28,15 +27,15 @@ public:
         class Bedrock::JSONObject::MemoryPage*,
         unsigned int,
         unsigned int
-    );
+    ); // NOLINT
     /**
      * @symbol ?allocateBack\@MemoryPage\@JSONObject\@Bedrock\@\@QEAAPEAX_K0\@Z
      */
-    MCAPI void* allocateBack(unsigned __int64, unsigned __int64);
+    MCAPI void* allocateBack(unsigned __int64, unsigned __int64); // NOLINT
     /**
      * @symbol ?allocateFront\@MemoryPage\@JSONObject\@Bedrock\@\@QEAAPEAX_K0\@Z
      */
-    MCAPI void* allocateFront(unsigned __int64, unsigned __int64);
+    MCAPI void* allocateFront(unsigned __int64, unsigned __int64); // NOLINT
 
     // private:
     /**
@@ -47,15 +46,15 @@ public:
         void* (Bedrock::JSONObject::MemoryPage::*)(unsigned __int64, unsigned __int64),
         unsigned __int64,
         unsigned __int64
-    );
+    ); // NOLINT
     /**
      * @symbol ?_tryAllocateBack\@MemoryPage\@JSONObject\@Bedrock\@\@AEAA_K_K0\@Z
      */
-    MCAPI unsigned __int64 _tryAllocateBack(unsigned __int64, unsigned __int64);
+    MCAPI unsigned __int64 _tryAllocateBack(unsigned __int64, unsigned __int64); // NOLINT
     /**
      * @symbol ?_tryAllocateFront\@MemoryPage\@JSONObject\@Bedrock\@\@AEAA_K_K0\@Z
      */
-    MCAPI unsigned __int64 _tryAllocateFront(unsigned __int64, unsigned __int64);
+    MCAPI unsigned __int64 _tryAllocateFront(unsigned __int64, unsigned __int64); // NOLINT
 
 private:
 };

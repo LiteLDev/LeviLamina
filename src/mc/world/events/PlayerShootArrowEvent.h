@@ -4,19 +4,18 @@
 
 struct PlayerShootArrowEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERSHOOTARROWEVENT
 public:
+    // prevent constructor by default
     PlayerShootArrowEvent& operator=(PlayerShootArrowEvent const&) = delete;
     PlayerShootArrowEvent()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ??0PlayerShootArrowEvent\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI PlayerShootArrowEvent(struct PlayerShootArrowEvent const&);
+    MCAPI PlayerShootArrowEvent(struct PlayerShootArrowEvent const&); // NOLINT
     /**
      * @symbol ??1PlayerShootArrowEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerShootArrowEvent();
+    MCAPI ~PlayerShootArrowEvent(); // NOLINT
 };

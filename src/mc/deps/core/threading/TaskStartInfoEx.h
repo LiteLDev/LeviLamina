@@ -5,12 +5,9 @@
 template <typename T0>
 struct TaskStartInfoEx {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TASKSTARTINFOEX
 public:
+    // prevent constructor by default
     TaskStartInfoEx& operator=(TaskStartInfoEx const&) = delete;
     TaskStartInfoEx(TaskStartInfoEx const&)            = delete;
     TaskStartInfoEx()                                  = delete;
-#endif
-
-public:
 };

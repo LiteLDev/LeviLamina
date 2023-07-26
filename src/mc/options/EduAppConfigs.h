@@ -4,16 +4,15 @@
 
 class EduAppConfigs {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EDUAPPCONFIGS
 public:
+    // prevent constructor by default
     EduAppConfigs& operator=(EduAppConfigs const&) = delete;
     EduAppConfigs(EduAppConfigs const&)            = delete;
     EduAppConfigs()                                = delete;
-#endif
 
 public:
     /**
      * @symbol ?EDUResourcePack\@EduAppConfigs\@\@2UPackIdVersion\@\@B
      */
-    MCAPI static struct PackIdVersion const EDUResourcePack;
+    MCAPI static struct PackIdVersion const EDUResourcePack; // NOLINT
 };

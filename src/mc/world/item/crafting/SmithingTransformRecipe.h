@@ -12,59 +12,59 @@ namespace mce { class UUID; }
 
 class SmithingTransformRecipe : public ::ShapelessRecipe {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMITHINGTRANSFORMRECIPE
 public:
+    // prevent constructor by default
     SmithingTransformRecipe& operator=(SmithingTransformRecipe const&) = delete;
     SmithingTransformRecipe(SmithingTransformRecipe const&)            = delete;
     SmithingTransformRecipe()                                          = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?assemble\@SmithingTransformRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@AEAVCraftingContext\@\@\@Z
      */
-    virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&, class CraftingContext&) const;
+    virtual std::vector<class ItemInstance> const&
+    assemble(class CraftingContainer&, class CraftingContext&) const; // NOLINT
     /**
      * @vftbl 5
      * @symbol __unk_vfn_5
      */
-    virtual void __unk_vfn_5();
+    virtual void __unk_vfn_5(); // NOLINT
     /**
      * @vftbl 6
      * @symbol ?matches\@SmithingTransformRecipe\@\@UEBA_NAEBVCraftingContainer\@\@AEBVCraftingContext\@\@\@Z
      */
-    virtual bool matches(class CraftingContainer const&, class CraftingContext const&) const;
+    virtual bool matches(class CraftingContainer const&, class CraftingContext const&) const; // NOLINT
     /**
      * @symbol
      * ??0SmithingTransformRecipe\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVRecipeIngredient\@\@11AEBVItemInstance\@\@AEBVHashedString\@\@\@Z
      */
     MCAPI
-    SmithingTransformRecipe(std::string const&, class RecipeIngredient const&, class RecipeIngredient const&, class RecipeIngredient const&, class ItemInstance const&, class HashedString const&);
+    SmithingTransformRecipe(std::string const&, class RecipeIngredient const&, class RecipeIngredient const&, class RecipeIngredient const&, class ItemInstance const&, class HashedString const&); // NOLINT
     /**
      * @symbol ?getAdditionIngredient\@SmithingTransformRecipe\@\@QEBAAEBVRecipeIngredient\@\@XZ
      */
-    MCAPI class RecipeIngredient const& getAdditionIngredient() const;
+    MCAPI class RecipeIngredient const& getAdditionIngredient() const; // NOLINT
     /**
      * @symbol ?getBaseIngredient\@SmithingTransformRecipe\@\@QEBAAEBVRecipeIngredient\@\@XZ
      */
-    MCAPI class RecipeIngredient const& getBaseIngredient() const;
+    MCAPI class RecipeIngredient const& getBaseIngredient() const; // NOLINT
     /**
      * @symbol ?getResult\@SmithingTransformRecipe\@\@QEBAAEBVItemInstance\@\@XZ
      */
-    MCAPI class ItemInstance const& getResult() const;
+    MCAPI class ItemInstance const& getResult() const; // NOLINT
     /**
      * @symbol ?getTemplateIngredient\@SmithingTransformRecipe\@\@QEBAAEBVRecipeIngredient\@\@XZ
      */
-    MCAPI class RecipeIngredient const& getTemplateIngredient() const;
+    MCAPI class RecipeIngredient const& getTemplateIngredient() const; // NOLINT
     /**
      * @symbol ?ID\@SmithingTransformRecipe\@\@2VUUID\@mce\@\@B
      */
-    MCAPI static class mce::UUID const ID;
+    MCAPI static class mce::UUID const ID; // NOLINT
 };

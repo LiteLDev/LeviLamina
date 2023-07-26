@@ -7,14 +7,11 @@ namespace Bedrock::Detail {
 template <typename T0>
 class ImplFactory {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_DETAIL_IMPLFACTORY
 public:
+    // prevent constructor by default
     ImplFactory& operator=(ImplFactory const&) = delete;
     ImplFactory(ImplFactory const&)            = delete;
     ImplFactory()                              = delete;
-#endif
-
-public:
 };
 
 }; // namespace Bedrock::Detail

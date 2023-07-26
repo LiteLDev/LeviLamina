@@ -4,19 +4,18 @@
 
 struct ProjectileHitEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROJECTILEHITEVENT
 public:
+    // prevent constructor by default
     ProjectileHitEvent& operator=(ProjectileHitEvent const&) = delete;
     ProjectileHitEvent()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ProjectileHitEvent\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI ProjectileHitEvent(struct ProjectileHitEvent const&);
+    MCAPI ProjectileHitEvent(struct ProjectileHitEvent const&); // NOLINT
     /**
      * @symbol ??1ProjectileHitEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ProjectileHitEvent();
+    MCAPI ~ProjectileHitEvent(); // NOLINT
 };

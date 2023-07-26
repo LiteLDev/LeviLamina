@@ -4,12 +4,9 @@
 
 class CameraCallbacks {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMERACALLBACKS
 public:
+    // prevent constructor by default
     CameraCallbacks& operator=(CameraCallbacks const&) = delete;
     CameraCallbacks(CameraCallbacks const&)            = delete;
     CameraCallbacks()                                  = delete;
-#endif
-
-public:
 };

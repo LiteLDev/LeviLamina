@@ -4,12 +4,9 @@
 
 struct PassengerTickRequestComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PASSENGERTICKREQUESTCOMPONENT
 public:
+    // prevent constructor by default
     PassengerTickRequestComponent& operator=(PassengerTickRequestComponent const&) = delete;
     PassengerTickRequestComponent(PassengerTickRequestComponent const&)            = delete;
     PassengerTickRequestComponent()                                                = delete;
-#endif
-
-public:
 };

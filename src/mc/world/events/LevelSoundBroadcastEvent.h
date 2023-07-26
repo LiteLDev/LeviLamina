@@ -4,12 +4,9 @@
 
 struct LevelSoundBroadcastEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELSOUNDBROADCASTEVENT
 public:
+    // prevent constructor by default
     LevelSoundBroadcastEvent& operator=(LevelSoundBroadcastEvent const&) = delete;
     LevelSoundBroadcastEvent(LevelSoundBroadcastEvent const&)            = delete;
     LevelSoundBroadcastEvent()                                           = delete;
-#endif
-
-public:
 };

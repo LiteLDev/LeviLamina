@@ -4,12 +4,9 @@
 
 struct XAsyncBlock {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_XASYNCBLOCK
 public:
+    // prevent constructor by default
     XAsyncBlock& operator=(XAsyncBlock const&) = delete;
     XAsyncBlock(XAsyncBlock const&)            = delete;
     XAsyncBlock()                              = delete;
-#endif
-
-public:
 };

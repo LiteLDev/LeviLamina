@@ -4,12 +4,9 @@
 
 struct MobIsJumpingFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBISJUMPINGFLAG
 public:
+    // prevent constructor by default
     MobIsJumpingFlag& operator=(MobIsJumpingFlag const&) = delete;
     MobIsJumpingFlag(MobIsJumpingFlag const&)            = delete;
     MobIsJumpingFlag()                                   = delete;
-#endif
-
-public:
 };

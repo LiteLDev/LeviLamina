@@ -10,90 +10,89 @@ namespace persona { enum class PieceType; }
 
 class ConnectionRequest {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONNECTIONREQUEST
 public:
+    // prevent constructor by default
     ConnectionRequest& operator=(ConnectionRequest const&) = delete;
     ConnectionRequest()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ConnectionRequest\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI ConnectionRequest(class ConnectionRequest const&);
+    MCAPI ConnectionRequest(class ConnectionRequest const&); // NOLINT
     /**
      * @symbol
      * ?getAnimatedImageData\@ConnectionRequest\@\@QEBA?AV?$vector\@VAnimatedImageData\@\@V?$allocator\@VAnimatedImageData\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<class AnimatedImageData> getAnimatedImageData() const;
+    MCAPI std::vector<class AnimatedImageData> getAnimatedImageData() const; // NOLINT
     /**
      * @symbol
      * ?getArmSize\@ConnectionRequest\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getArmSize() const;
+    MCAPI std::string getArmSize() const; // NOLINT
     /**
      * @symbol ?getCapeData\@ConnectionRequest\@\@QEBA?AV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<unsigned char> getCapeData() const;
+    MCAPI std::vector<unsigned char> getCapeData() const; // NOLINT
     /**
      * @symbol
      * ?getCapeId\@ConnectionRequest\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getCapeId() const;
+    MCAPI std::string getCapeId() const; // NOLINT
     /**
      * @symbol ?getCapeImageHeight\@ConnectionRequest\@\@QEBAGXZ
      */
-    MCAPI unsigned short getCapeImageHeight() const;
+    MCAPI unsigned short getCapeImageHeight() const; // NOLINT
     /**
      * @symbol ?getCapeImageWidth\@ConnectionRequest\@\@QEBAGXZ
      */
-    MCAPI unsigned short getCapeImageWidth() const;
+    MCAPI unsigned short getCapeImageWidth() const; // NOLINT
     /**
      * @symbol ?getCertificate\@ConnectionRequest\@\@QEBAPEBVCertificate\@\@XZ
      */
-    MCAPI class Certificate const* getCertificate() const;
+    MCAPI class Certificate const* getCertificate() const; // NOLINT
     /**
      * @symbol
      * ?getClientPlatformId\@ConnectionRequest\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getClientPlatformId() const;
+    MCAPI std::string getClientPlatformId() const; // NOLINT
     /**
      * @symbol
      * ?getClientPlatformOfflineId\@ConnectionRequest\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getClientPlatformOfflineId() const;
+    MCAPI std::string getClientPlatformOfflineId() const; // NOLINT
     /**
      * @symbol
      * ?getClientPlatformOnlineId\@ConnectionRequest\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getClientPlatformOnlineId() const;
+    MCAPI std::string getClientPlatformOnlineId() const; // NOLINT
     /**
      * @symbol ?getClientRandomId\@ConnectionRequest\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 getClientRandomId() const;
+    MCAPI unsigned __int64 getClientRandomId() const; // NOLINT
     /**
      * @symbol ?getClientSubId\@ConnectionRequest\@\@QEBA?AW4SubClientId\@\@XZ
      */
-    MCAPI enum class SubClientId getClientSubId() const;
+    MCAPI enum class SubClientId getClientSubId() const; // NOLINT
     /**
      * @symbol
      * ?getClientThirdPartyName\@ConnectionRequest\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getClientThirdPartyName() const;
+    MCAPI std::string getClientThirdPartyName() const; // NOLINT
     /**
      * @symbol
      * ?getDeviceId\@ConnectionRequest\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getDeviceId() const;
+    MCAPI std::string getDeviceId() const; // NOLINT
     /**
      * @symbol ?getDeviceOS\@ConnectionRequest\@\@QEBA?AW4BuildPlatform\@\@XZ
      */
-    MCAPI enum class BuildPlatform getDeviceOS() const;
+    MCAPI enum class BuildPlatform getDeviceOS() const; // NOLINT
     /**
      * @symbol
      * ?getPersonaPieces\@ConnectionRequest\@\@QEBA?AV?$vector\@VSerializedPersonaPieceHandle\@\@V?$allocator\@VSerializedPersonaPieceHandle\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<class SerializedPersonaPieceHandle> getPersonaPieces() const;
+    MCAPI std::vector<class SerializedPersonaPieceHandle> getPersonaPieces() const; // NOLINT
     /**
      * @symbol
      * ?getPieceTintColors\@ConnectionRequest\@\@QEBA?AV?$unordered_map\@W4PieceType\@persona\@\@VTintMapColor\@\@U?$hash\@W4PieceType\@persona\@\@\@std\@\@U?$equal_to\@W4PieceType\@persona\@\@\@5\@V?$allocator\@U?$pair\@$$CBW4PieceType\@persona\@\@VTintMapColor\@\@\@std\@\@\@5\@\@std\@\@XZ
@@ -104,129 +103,130 @@ public:
         struct std::hash<enum class persona::PieceType>,
         struct std::equal_to<enum class persona::PieceType>,
         class std::allocator<struct std::pair<enum class persona::PieceType const, class TintMapColor>>>
-    getPieceTintColors() const;
+    getPieceTintColors() const; // NOLINT
     /**
      * @symbol
      * ?getPlayFabId\@ConnectionRequest\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getPlayFabId() const;
+    MCAPI std::string getPlayFabId() const; // NOLINT
     /**
      * @symbol
      * ?getSelfSignedId\@ConnectionRequest\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getSelfSignedId() const;
+    MCAPI std::string getSelfSignedId() const; // NOLINT
     /**
      * @symbol
      * ?getSkinAnimationData\@ConnectionRequest\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getSkinAnimationData() const;
+    MCAPI std::string getSkinAnimationData() const; // NOLINT
     /**
      * @symbol ?getSkinColor\@ConnectionRequest\@\@QEBA?AVColor\@mce\@\@XZ
      */
-    MCAPI class mce::Color getSkinColor() const;
+    MCAPI class mce::Color getSkinColor() const; // NOLINT
     /**
      * @symbol ?getSkinData\@ConnectionRequest\@\@QEBA?AV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<unsigned char> getSkinData() const;
+    MCAPI std::vector<unsigned char> getSkinData() const; // NOLINT
     /**
      * @symbol
      * ?getSkinGeometry\@ConnectionRequest\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getSkinGeometry() const;
+    MCAPI std::string getSkinGeometry() const; // NOLINT
     /**
      * @symbol ?getSkinGeometryEngineVersion\@ConnectionRequest\@\@QEBA?AVSemVersion\@\@XZ
      */
-    MCAPI class SemVersion getSkinGeometryEngineVersion() const;
+    MCAPI class SemVersion getSkinGeometryEngineVersion() const; // NOLINT
     /**
      * @symbol
      * ?getSkinId\@ConnectionRequest\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getSkinId() const;
+    MCAPI std::string getSkinId() const; // NOLINT
     /**
      * @symbol ?getSkinImageHeight\@ConnectionRequest\@\@QEBAGXZ
      */
-    MCAPI unsigned short getSkinImageHeight() const;
+    MCAPI unsigned short getSkinImageHeight() const; // NOLINT
     /**
      * @symbol ?getSkinImageWidth\@ConnectionRequest\@\@QEBAGXZ
      */
-    MCAPI unsigned short getSkinImageWidth() const;
+    MCAPI unsigned short getSkinImageWidth() const; // NOLINT
     /**
      * @symbol
      * ?getSkinResourcePatch\@ConnectionRequest\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getSkinResourcePatch() const;
+    MCAPI std::string getSkinResourcePatch() const; // NOLINT
     /**
      * @symbol
      * ?getTenantId\@ConnectionRequest\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getTenantId() const;
+    MCAPI std::string getTenantId() const; // NOLINT
     /**
      * @symbol ?isCapeOnClassicSkin\@ConnectionRequest\@\@QEBA_NXZ
      */
-    MCAPI bool isCapeOnClassicSkin() const;
+    MCAPI bool isCapeOnClassicSkin() const; // NOLINT
     /**
      * @symbol ?isClientThirdPartyNameOnly\@ConnectionRequest\@\@QEBA_NXZ
      */
-    MCAPI bool isClientThirdPartyNameOnly() const;
+    MCAPI bool isClientThirdPartyNameOnly() const; // NOLINT
     /**
      * @symbol ?isCompatibleWithClientSideChunkGen\@ConnectionRequest\@\@QEBA_NXZ
      */
-    MCAPI bool isCompatibleWithClientSideChunkGen() const;
+    MCAPI bool isCompatibleWithClientSideChunkGen() const; // NOLINT
     /**
      * @symbol ?isEduMode\@ConnectionRequest\@\@QEBA_NXZ
      */
-    MCAPI bool isEduMode() const;
+    MCAPI bool isEduMode() const; // NOLINT
     /**
      * @symbol ?isOverrideSkin\@ConnectionRequest\@\@QEBA_NXZ
      */
-    MCAPI bool isOverrideSkin() const;
+    MCAPI bool isOverrideSkin() const; // NOLINT
     /**
      * @symbol ?isPersonaSkin\@ConnectionRequest\@\@QEBA_NXZ
      */
-    MCAPI bool isPersonaSkin() const;
+    MCAPI bool isPersonaSkin() const; // NOLINT
     /**
      * @symbol ?isPremiumSkin\@ConnectionRequest\@\@QEBA_NXZ
      */
-    MCAPI bool isPremiumSkin() const;
+    MCAPI bool isPremiumSkin() const; // NOLINT
     /**
      * @symbol ?isTrustedSkin\@ConnectionRequest\@\@QEBA_NXZ
      */
-    MCAPI bool isTrustedSkin() const;
+    MCAPI bool isTrustedSkin() const; // NOLINT
     /**
      * @symbol
      * ?toString\@ConnectionRequest\@\@QEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string toString();
+    MCAPI std::string toString(); // NOLINT
     /**
      * @symbol
      * ?verify\@ConnectionRequest\@\@QEAA_NAEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@_J\@Z
      */
-    MCAPI bool verify(std::vector<std::string> const&, __int64);
+    MCAPI bool verify(std::vector<std::string> const&, __int64); // NOLINT
     /**
      * @symbol ?verifySelfSigned\@ConnectionRequest\@\@QEAA_NXZ
      */
-    MCAPI bool verifySelfSigned();
+    MCAPI bool verifySelfSigned(); // NOLINT
     /**
      * @symbol ??1ConnectionRequest\@\@QEAA\@XZ
      */
-    MCAPI ~ConnectionRequest();
+    MCAPI ~ConnectionRequest(); // NOLINT
     /**
      * @symbol
      * ?fromString\@ConnectionRequest\@\@SA?AV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI static class ConnectionRequest fromString(std::string const&);
+    MCAPI static class ConnectionRequest fromString(std::string const&); // NOLINT
 
     // private:
     /**
      * @symbol
      * ??0ConnectionRequest\@\@AEAA\@V?$unique_ptr\@VWebToken\@\@U?$default_delete\@VWebToken\@\@\@std\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@2\@\@Z
      */
-    MCAPI ConnectionRequest(std::unique_ptr<class WebToken>, std::string const&);
+    MCAPI ConnectionRequest(std::unique_ptr<class WebToken>, std::string const&); // NOLINT
     /**
      * @symbol
      * ?validate\@ConnectionRequest\@\@AEBA?AV?$unique_ptr\@VCertificate\@\@U?$default_delete\@VCertificate\@\@\@std\@\@\@std\@\@V23\@_J_N\@Z
      */
-    MCAPI std::unique_ptr<class Certificate> validate(std::unique_ptr<class Certificate>, __int64, bool) const;
+    MCAPI std::unique_ptr<class Certificate>
+          validate(std::unique_ptr<class Certificate>, __int64, bool) const; // NOLINT
 
 private:
 };

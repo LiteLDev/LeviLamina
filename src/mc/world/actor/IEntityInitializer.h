@@ -4,12 +4,9 @@
 
 class IEntityInitializer {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IENTITYINITIALIZER
 public:
+    // prevent constructor by default
     IEntityInitializer& operator=(IEntityInitializer const&) = delete;
     IEntityInitializer(IEntityInitializer const&)            = delete;
     IEntityInitializer()                                     = delete;
-#endif
-
-public:
 };

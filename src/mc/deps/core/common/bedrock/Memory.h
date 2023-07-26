@@ -11,6 +11,6 @@ namespace Bedrock::Memory {
 /**
  * @symbol ?getDefaultAllocator\@Memory\@Bedrock\@\@YAAEAVIMemoryAllocator\@12\@XZ
  */
-MCAPI class Bedrock::Memory::IMemoryAllocator& getDefaultAllocator();
+MCAPI class Bedrock::Memory::IMemoryAllocator& getDefaultAllocator(); // NOLINT
 
 }; // namespace Bedrock::Memory

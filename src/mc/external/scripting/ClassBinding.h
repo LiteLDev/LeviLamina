@@ -6,14 +6,11 @@ namespace Scripting {
 
 struct ClassBinding {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTING_CLASSBINDING
 public:
+    // prevent constructor by default
     ClassBinding& operator=(ClassBinding const&) = delete;
     ClassBinding(ClassBinding const&)            = delete;
     ClassBinding()                               = delete;
-#endif
-
-public:
 };
 
 }; // namespace Scripting

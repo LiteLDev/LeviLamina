@@ -4,16 +4,15 @@
 
 struct MolangArrayVariable {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGARRAYVARIABLE
 public:
+    // prevent constructor by default
     MolangArrayVariable& operator=(MolangArrayVariable const&) = delete;
     MolangArrayVariable(MolangArrayVariable const&)            = delete;
     MolangArrayVariable()                                      = delete;
-#endif
 
 public:
     /**
      * @symbol ??1MolangArrayVariable\@\@QEAA\@XZ
      */
-    MCAPI ~MolangArrayVariable();
+    MCAPI ~MolangArrayVariable(); // NOLINT
 };

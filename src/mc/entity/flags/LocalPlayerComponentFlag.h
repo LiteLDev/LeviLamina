@@ -4,12 +4,9 @@
 
 struct LocalPlayerComponentFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOCALPLAYERCOMPONENTFLAG
 public:
+    // prevent constructor by default
     LocalPlayerComponentFlag& operator=(LocalPlayerComponentFlag const&) = delete;
     LocalPlayerComponentFlag(LocalPlayerComponentFlag const&)            = delete;
     LocalPlayerComponentFlag()                                           = delete;
-#endif
-
-public:
 };

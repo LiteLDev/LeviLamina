@@ -9,34 +9,33 @@ namespace ScriptModuleMinecraft {
 
 class ScriptIsShakingComponent : public ::ScriptModuleMinecraft::ScriptActorComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTISSHAKINGCOMPONENT
 public:
+    // prevent constructor by default
     ScriptIsShakingComponent& operator=(ScriptIsShakingComponent const&) = delete;
     ScriptIsShakingComponent(ScriptIsShakingComponent const&)            = delete;
     ScriptIsShakingComponent()                                           = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTISSHAKINGCOMPONENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptIsShakingComponent();
+    MCVAPI ~ScriptIsShakingComponent(); // NOLINT
 #endif
     /**
      * @symbol
      * ?sClassName\@ScriptIsShakingComponent\@ScriptModuleMinecraft\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const sClassName;
+    MCAPI static std::string const sClassName; // NOLINT
     /**
      * @symbol ?sComponentId\@ScriptIsShakingComponent\@ScriptModuleMinecraft\@\@2PEBDEB
      */
-    MCAPI static char const* sComponentId;
+    MCAPI static char const* sComponentId; // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

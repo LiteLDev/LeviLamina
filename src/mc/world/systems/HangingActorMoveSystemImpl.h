@@ -7,6 +7,6 @@ namespace HangingActorMoveSystemImpl {
  * @symbol
  * ?doActorMoveSystem\@HangingActorMoveSystemImpl\@\@YAXAEAVActorOwnerComponent\@\@AEAUMoveRequestComponent\@\@\@Z
  */
-MCAPI void doActorMoveSystem(class ActorOwnerComponent&, struct MoveRequestComponent&);
+MCAPI void doActorMoveSystem(class ActorOwnerComponent&, struct MoveRequestComponent&); // NOLINT
 
 }; // namespace HangingActorMoveSystemImpl

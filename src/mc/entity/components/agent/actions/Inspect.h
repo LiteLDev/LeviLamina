@@ -6,14 +6,11 @@ namespace AgentComponents::Actions {
 
 struct Inspect {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMPONENTS_ACTIONS_INSPECT
 public:
+    // prevent constructor by default
     Inspect& operator=(Inspect const&) = delete;
     Inspect(Inspect const&)            = delete;
     Inspect()                          = delete;
-#endif
-
-public:
 };
 
 }; // namespace AgentComponents::Actions

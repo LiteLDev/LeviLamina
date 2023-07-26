@@ -6,6 +6,6 @@ namespace Social::Events {
 /**
  * @symbol ?eventSequenceNumber\@Events\@Social\@\@3HA
  */
-MCAPI extern int eventSequenceNumber;
+MCAPI extern int eventSequenceNumber; // NOLINT
 
 }; // namespace Social::Events

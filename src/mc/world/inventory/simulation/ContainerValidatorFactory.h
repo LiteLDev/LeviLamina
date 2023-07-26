@@ -4,12 +4,11 @@
 
 class ContainerValidatorFactory {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERVALIDATORFACTORY
 public:
+    // prevent constructor by default
     ContainerValidatorFactory& operator=(ContainerValidatorFactory const&) = delete;
     ContainerValidatorFactory(ContainerValidatorFactory const&)            = delete;
     ContainerValidatorFactory()                                            = delete;
-#endif
 
 public:
     /**
@@ -17,7 +16,7 @@ public:
      * ?createContainerScreenValidator\@ContainerValidatorFactory\@\@SA?AV?$unique_ptr\@VContainerScreenValidatorBase\@\@U?$default_delete\@VContainerScreenValidatorBase\@\@\@std\@\@\@std\@\@AEBVContainerScreenContext\@\@\@Z
      */
     MCAPI static std::unique_ptr<class ContainerScreenValidatorBase>
-    createContainerScreenValidator(class ContainerScreenContext const&);
+    createContainerScreenValidator(class ContainerScreenContext const&); // NOLINT
     /**
      * @symbol
      * ?createContainerValidator\@ContainerValidatorFactory\@\@SA?AV?$shared_ptr\@$$CBVContainerValidationBase\@\@\@std\@\@W4ContainerEnumName\@\@AEBVContainerScreenContext\@\@W4ContainerValidationCaller\@\@\@Z
@@ -26,11 +25,11 @@ public:
         enum class ContainerEnumName,
         class ContainerScreenContext const&,
         enum class ContainerValidationCaller
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?getBackingContainer\@ContainerValidatorFactory\@\@SAPEAVContainer\@\@W4ContainerEnumName\@\@AEBVContainerScreenContext\@\@\@Z
      */
     MCAPI static class Container*
-    getBackingContainer(enum class ContainerEnumName, class ContainerScreenContext const&);
+    getBackingContainer(enum class ContainerEnumName, class ContainerScreenContext const&); // NOLINT
 };

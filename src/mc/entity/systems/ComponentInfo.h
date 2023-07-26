@@ -4,27 +4,26 @@
 
 struct ComponentInfo {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPONENTINFO
 public:
+    // prevent constructor by default
     ComponentInfo(ComponentInfo const&) = delete;
     ComponentInfo()                     = delete;
-#endif
 
 public:
     /**
      * @symbol ??4ComponentInfo\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
-    MCAPI struct ComponentInfo& operator=(struct ComponentInfo const&);
+    MCAPI struct ComponentInfo& operator=(struct ComponentInfo const&); // NOLINT
     /**
      * @symbol ??4ComponentInfo\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct ComponentInfo& operator=(struct ComponentInfo&&);
+    MCAPI struct ComponentInfo& operator=(struct ComponentInfo&&); // NOLINT
     /**
      * @symbol ??1ComponentInfo\@\@QEAA\@XZ
      */
-    MCAPI ~ComponentInfo();
+    MCAPI ~ComponentInfo(); // NOLINT
     /**
      * @symbol ?bindType\@ComponentInfo\@\@SAXXZ
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(); // NOLINT
 };

@@ -9,47 +9,46 @@ namespace mce { class UUID; }
 
 struct PackIdVersion {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKIDVERSION
 public:
+    // prevent constructor by default
     PackIdVersion& operator=(PackIdVersion const&) = delete;
-#endif
 
 public:
     /**
      * @symbol ??0PackIdVersion\@\@QEAA\@AEBVUUID\@mce\@\@AEBVSemVersion\@\@W4PackType\@\@\@Z
      */
-    MCAPI PackIdVersion(class mce::UUID const&, class SemVersion const&, enum class PackType);
+    MCAPI PackIdVersion(class mce::UUID const&, class SemVersion const&, enum class PackType); // NOLINT
     /**
      * @symbol ??0PackIdVersion\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI PackIdVersion(struct PackIdVersion const&);
+    MCAPI PackIdVersion(struct PackIdVersion const&); // NOLINT
     /**
      * @symbol ??0PackIdVersion\@\@QEAA\@XZ
      */
-    MCAPI PackIdVersion();
+    MCAPI PackIdVersion(); // NOLINT
     /**
      * @symbol
      * ?asString\@PackIdVersion\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string asString() const;
+    MCAPI std::string asString() const; // NOLINT
     /**
      * @symbol ??9PackIdVersion\@\@QEBA_NAEBU0\@\@Z
      */
-    MCAPI bool operator!=(struct PackIdVersion const&) const;
+    MCAPI bool operator!=(struct PackIdVersion const&) const; // NOLINT
     /**
      * @symbol ??MPackIdVersion\@\@QEBA_NAEBU0\@\@Z
      */
-    MCAPI bool operator<(struct PackIdVersion const&) const;
+    MCAPI bool operator<(struct PackIdVersion const&) const; // NOLINT
     /**
      * @symbol ??8PackIdVersion\@\@QEBA_NAEBU0\@\@Z
      */
-    MCAPI bool operator==(struct PackIdVersion const&) const;
+    MCAPI bool operator==(struct PackIdVersion const&) const; // NOLINT
     /**
      * @symbol ?satisfies\@PackIdVersion\@\@QEBA_NAEBU1\@\@Z
      */
-    MCAPI bool satisfies(struct PackIdVersion const&) const;
+    MCAPI bool satisfies(struct PackIdVersion const&) const; // NOLINT
     /**
      * @symbol ??1PackIdVersion\@\@QEAA\@XZ
      */
-    MCAPI ~PackIdVersion();
+    MCAPI ~PackIdVersion(); // NOLINT
 };

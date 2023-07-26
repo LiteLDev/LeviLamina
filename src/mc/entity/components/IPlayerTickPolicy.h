@@ -4,12 +4,9 @@
 
 struct IPlayerTickPolicy {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IPLAYERTICKPOLICY
 public:
+    // prevent constructor by default
     IPlayerTickPolicy& operator=(IPlayerTickPolicy const&) = delete;
     IPlayerTickPolicy(IPlayerTickPolicy const&)            = delete;
     IPlayerTickPolicy()                                    = delete;
-#endif
-
-public:
 };

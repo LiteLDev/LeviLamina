@@ -4,24 +4,23 @@
 
 class PlayerMoveSystems {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERMOVESYSTEMS
 public:
+    // prevent constructor by default
     PlayerMoveSystems& operator=(PlayerMoveSystems const&) = delete;
     PlayerMoveSystems(PlayerMoveSystems const&)            = delete;
     PlayerMoveSystems()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ?createLocalPlayerPreMoveJumpSystem\@PlayerMoveSystems\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createLocalPlayerPreMoveJumpSystem();
+    MCAPI static struct TickingSystemWithInfo createLocalPlayerPreMoveJumpSystem(); // NOLINT
     /**
      * @symbol ?createLocalPlayerPreMoveSystem\@PlayerMoveSystems\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createLocalPlayerPreMoveSystem();
+    MCAPI static struct TickingSystemWithInfo createLocalPlayerPreMoveSystem(); // NOLINT
     /**
      * @symbol ?createPlayerPostMoveSystem\@PlayerMoveSystems\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createPlayerPostMoveSystem();
+    MCAPI static struct TickingSystemWithInfo createPlayerPostMoveSystem(); // NOLINT
 };

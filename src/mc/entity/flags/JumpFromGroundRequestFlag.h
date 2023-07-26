@@ -4,12 +4,9 @@
 
 struct JumpFromGroundRequestFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_JUMPFROMGROUNDREQUESTFLAG
 public:
+    // prevent constructor by default
     JumpFromGroundRequestFlag& operator=(JumpFromGroundRequestFlag const&) = delete;
     JumpFromGroundRequestFlag(JumpFromGroundRequestFlag const&)            = delete;
     JumpFromGroundRequestFlag()                                            = delete;
-#endif
-
-public:
 };

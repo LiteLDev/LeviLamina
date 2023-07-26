@@ -12,23 +12,22 @@ namespace JsonUtil { class EmptyClass; }
 
 class SittableDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SITTABLEDEFINITION
 public:
+    // prevent constructor by default
     SittableDefinition& operator=(SittableDefinition const&) = delete;
     SittableDefinition(SittableDefinition const&)            = delete;
     SittableDefinition()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ?uninitialize\@SittableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVSitComponent\@\@\@Z
      */
-    MCAPI void uninitialize(class EntityContext&, class SitComponent&) const;
+    MCAPI void uninitialize(class EntityContext&, class SitComponent&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@SittableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VSittableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
     buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SittableDefinition>>&);
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SittableDefinition>>&); // NOLINT
 };

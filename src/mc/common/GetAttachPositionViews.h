@@ -4,19 +4,18 @@
 
 struct GetAttachPositionViews {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GETATTACHPOSITIONVIEWS
 public:
+    // prevent constructor by default
     GetAttachPositionViews& operator=(GetAttachPositionViews const&) = delete;
     GetAttachPositionViews()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol ??0GetAttachPositionViews\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI GetAttachPositionViews(struct GetAttachPositionViews const&);
+    MCAPI GetAttachPositionViews(struct GetAttachPositionViews const&); // NOLINT
     /**
      * @symbol ??0GetAttachPositionViews\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI GetAttachPositionViews(struct GetAttachPositionViews&&);
+    MCAPI GetAttachPositionViews(struct GetAttachPositionViews&&); // NOLINT
 };

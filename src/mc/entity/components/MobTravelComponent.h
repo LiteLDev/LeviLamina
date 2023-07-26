@@ -4,12 +4,9 @@
 
 struct MobTravelComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBTRAVELCOMPONENT
 public:
+    // prevent constructor by default
     MobTravelComponent& operator=(MobTravelComponent const&) = delete;
     MobTravelComponent(MobTravelComponent const&)            = delete;
     MobTravelComponent()                                     = delete;
-#endif
-
-public:
 };

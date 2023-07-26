@@ -4,12 +4,9 @@
 
 struct LocalPlayerLastPosComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOCALPLAYERLASTPOSCOMPONENT
 public:
+    // prevent constructor by default
     LocalPlayerLastPosComponent& operator=(LocalPlayerLastPosComponent const&) = delete;
     LocalPlayerLastPosComponent(LocalPlayerLastPosComponent const&)            = delete;
     LocalPlayerLastPosComponent()                                              = delete;
-#endif
-
-public:
 };

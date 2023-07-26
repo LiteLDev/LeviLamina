@@ -26,56 +26,54 @@ public:
     // DispatchQueue inner types define
     class AsyncQueueResult {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_HTTP_DISPATCHQUEUE_ASYNCQUEUERESULT
     public:
+        // prevent constructor by default
         AsyncQueueResult& operator=(AsyncQueueResult const&) = delete;
         AsyncQueueResult(AsyncQueueResult const&)            = delete;
         AsyncQueueResult()                                   = delete;
-#endif
 
     public:
         /**
          * @vftbl 0
          * @symbol __unk_vfn_0
          */
-        virtual void __unk_vfn_0();
+        virtual void __unk_vfn_0(); // NOLINT
         /**
          * @vftbl 7
          * @symbol ?_cancel\@AsyncQueueResult\@DispatchQueue\@Http\@Bedrock\@\@UEAAXXZ
          */
-        virtual void _cancel();
+        virtual void _cancel(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_HTTP_DISPATCHQUEUE
 public:
+    // prevent constructor by default
     DispatchQueue& operator=(DispatchQueue const&) = delete;
     DispatchQueue(DispatchQueue const&)            = delete;
     DispatchQueue()                                = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?send\@DispatchQueue\@Http\@Bedrock\@\@UEAA?AV?$shared_ptr\@V?$IAsyncResult\@VResponse\@Http\@Bedrock\@\@\@Threading\@Bedrock\@\@\@std\@\@$$QEAVRequest\@23\@\@Z
      */
     virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
-    send(class Bedrock::Http::Request&&);
+    send(class Bedrock::Http::Request&&); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_HTTP_DISPATCHQUEUE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~DispatchQueue();
+    MCVAPI ~DispatchQueue(); // NOLINT
 #endif
     /**
      * @symbol ??0DispatchQueue\@Http\@Bedrock\@\@QEAA\@V?$shared_ptr\@VDispatcherProcess\@Http\@Bedrock\@\@\@std\@\@\@Z
      */
-    MCAPI DispatchQueue(class std::shared_ptr<class Bedrock::Http::DispatcherProcess>);
+    MCAPI DispatchQueue(class std::shared_ptr<class Bedrock::Http::DispatcherProcess>); // NOLINT
 
     // private:
     /**
@@ -83,19 +81,19 @@ public:
      * ?_addNewRequest\@DispatchQueue\@Http\@Bedrock\@\@AEAA?AV?$shared_ptr\@V?$IAsyncResult\@VResponse\@Http\@Bedrock\@\@\@Threading\@Bedrock\@\@\@std\@\@$$QEAVRequest\@23\@\@Z
      */
     MCAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
-    _addNewRequest(class Bedrock::Http::Request&&);
+    _addNewRequest(class Bedrock::Http::Request&&); // NOLINT
     /**
      * @symbol ?_cleanUpCompletedRequests\@DispatchQueue\@Http\@Bedrock\@\@AEAAXXZ
      */
-    MCAPI void _cleanUpCompletedRequests();
+    MCAPI void _cleanUpCompletedRequests(); // NOLINT
     /**
      * @symbol ?_handlePendingRequest\@DispatchQueue\@Http\@Bedrock\@\@AEAAXXZ
      */
-    MCAPI void _handlePendingRequest();
+    MCAPI void _handlePendingRequest(); // NOLINT
     /**
      * @symbol ?_onCompletion\@DispatchQueue\@Http\@Bedrock\@\@AEAAXXZ
      */
-    MCAPI void _onCompletion();
+    MCAPI void _onCompletion(); // NOLINT
 
 private:
 };

@@ -4,16 +4,15 @@
 
 struct BiomeMetadata {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMEMETADATA
 public:
+    // prevent constructor by default
     BiomeMetadata& operator=(BiomeMetadata const&) = delete;
     BiomeMetadata(BiomeMetadata const&)            = delete;
     BiomeMetadata()                                = delete;
-#endif
 
 public:
     /**
      * @symbol ??1BiomeMetadata\@\@QEAA\@XZ
      */
-    MCAPI ~BiomeMetadata();
+    MCAPI ~BiomeMetadata(); // NOLINT
 };

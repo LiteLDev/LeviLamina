@@ -4,16 +4,15 @@
 
 struct PlayerAddExpEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERADDEXPEVENT
 public:
+    // prevent constructor by default
     PlayerAddExpEvent& operator=(PlayerAddExpEvent const&) = delete;
     PlayerAddExpEvent(PlayerAddExpEvent const&)            = delete;
     PlayerAddExpEvent()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ??1PlayerAddExpEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerAddExpEvent();
+    MCAPI ~PlayerAddExpEvent(); // NOLINT
 };

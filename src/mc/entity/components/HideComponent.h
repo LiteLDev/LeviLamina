@@ -4,47 +4,46 @@
 
 class HideComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HIDECOMPONENT
 public:
+    // prevent constructor by default
     HideComponent& operator=(HideComponent const&) = delete;
     HideComponent(HideComponent const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0HideComponent\@\@QEAA\@XZ
      */
-    MCAPI HideComponent();
+    MCAPI HideComponent(); // NOLINT
     /**
      * @symbol ?addAdditionalSaveData\@HideComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
     /**
      * @symbol ?initFromDefinition\@HideComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void initFromDefinition(class Actor&);
+    MCAPI void initFromDefinition(class Actor&); // NOLINT
     /**
      * @symbol ?isInRaid\@HideComponent\@\@QEAA_NXZ
      */
-    MCAPI bool isInRaid();
+    MCAPI bool isInRaid(); // NOLINT
     /**
      * @symbol ?isReactingToBell\@HideComponent\@\@QEAA_NXZ
      */
-    MCAPI bool isReactingToBell();
+    MCAPI bool isReactingToBell(); // NOLINT
     /**
      * @symbol ?readAdditionalSaveData\@HideComponent\@\@QEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&); // NOLINT
     /**
      * @symbol ?setInRaid\@HideComponent\@\@QEAAXXZ
      */
-    MCAPI void setInRaid();
+    MCAPI void setInRaid(); // NOLINT
     /**
      * @symbol ?setNotHiding\@HideComponent\@\@QEAAXXZ
      */
-    MCAPI void setNotHiding();
+    MCAPI void setNotHiding(); // NOLINT
     /**
      * @symbol ?setReactingToBell\@HideComponent\@\@QEAAXXZ
      */
-    MCAPI void setReactingToBell();
+    MCAPI void setReactingToBell(); // NOLINT
 };

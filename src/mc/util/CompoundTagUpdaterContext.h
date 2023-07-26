@@ -4,29 +4,28 @@
 
 class CompoundTagUpdaterContext {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDTAGUPDATERCONTEXT
 public:
+    // prevent constructor by default
     CompoundTagUpdaterContext& operator=(CompoundTagUpdaterContext const&) = delete;
     CompoundTagUpdaterContext(CompoundTagUpdaterContext const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0CompoundTagUpdaterContext\@\@QEAA\@XZ
      */
-    MCAPI CompoundTagUpdaterContext();
+    MCAPI CompoundTagUpdaterContext(); // NOLINT
     /**
      * @symbol ?addUpdater\@CompoundTagUpdaterContext\@\@QEAA?AVCompoundTagUpdaterBuilder\@\@EEE\@Z
      */
-    MCAPI class CompoundTagUpdaterBuilder addUpdater(unsigned char, unsigned char, unsigned char);
+    MCAPI class CompoundTagUpdaterBuilder addUpdater(unsigned char, unsigned char, unsigned char); // NOLINT
     /**
      * @symbol ?sortUpdaters\@CompoundTagUpdaterContext\@\@QEAAXXZ
      */
-    MCAPI void sortUpdaters();
+    MCAPI void sortUpdaters(); // NOLINT
     /**
      * @symbol ?update\@CompoundTagUpdaterContext\@\@QEAA?AW4CompoundTagUpdaterResult\@\@AEAVCompoundTag\@\@I\@Z
      */
-    MCAPI enum class CompoundTagUpdaterResult update(class CompoundTag&, unsigned int);
+    MCAPI enum class CompoundTagUpdaterResult update(class CompoundTag&, unsigned int); // NOLINT
 
     // private:
     /**
@@ -34,7 +33,7 @@ public:
      * ?comparisonPredicate\@CompoundTagUpdaterContext\@\@CA_NAEBV?$unique_ptr\@VCompoundTagUpdater\@\@U?$default_delete\@VCompoundTagUpdater\@\@\@std\@\@\@std\@\@0\@Z
      */
     MCAPI static bool
-    comparisonPredicate(std::unique_ptr<class CompoundTagUpdater> const&, std::unique_ptr<class CompoundTagUpdater> const&);
+    comparisonPredicate(std::unique_ptr<class CompoundTagUpdater> const&, std::unique_ptr<class CompoundTagUpdater> const&); // NOLINT
 
 private:
 };

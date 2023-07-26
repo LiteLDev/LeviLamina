@@ -4,16 +4,15 @@
 
 struct ActorHealthChangedEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORHEALTHCHANGEDEVENT
 public:
+    // prevent constructor by default
     ActorHealthChangedEvent& operator=(ActorHealthChangedEvent const&) = delete;
     ActorHealthChangedEvent(ActorHealthChangedEvent const&)            = delete;
     ActorHealthChangedEvent()                                          = delete;
-#endif
 
 public:
     /**
      * @symbol ??1ActorHealthChangedEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorHealthChangedEvent();
+    MCAPI ~ActorHealthChangedEvent(); // NOLINT
 };

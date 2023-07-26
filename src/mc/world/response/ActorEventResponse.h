@@ -13,30 +13,29 @@ namespace JsonUtil { class EmptyClass; }
 
 class ActorEventResponse {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOREVENTRESPONSE
 public:
+    // prevent constructor by default
     ActorEventResponse& operator=(ActorEventResponse const&) = delete;
     ActorEventResponse(ActorEventResponse const&)            = delete;
     ActorEventResponse()                                     = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?getName\@ActorEventResponse\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string const& getName() const;
+    virtual std::string const& getName() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2() = 0;
+    virtual void __unk_vfn_2() = 0; // NOLINT
     /**
      * @vftbl 3
      * @symbol
@@ -44,5 +43,5 @@ public:
      */
     virtual void
     buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ActorEventResponseCollection>>&, class Factory<class ActorEventResponse> const&)
-        const;
+        const; // NOLINT
 };

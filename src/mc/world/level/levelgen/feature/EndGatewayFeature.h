@@ -7,28 +7,27 @@
 
 class EndGatewayFeature : public ::Feature {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDGATEWAYFEATURE
 public:
+    // prevent constructor by default
     EndGatewayFeature& operator=(EndGatewayFeature const&) = delete;
     EndGatewayFeature(EndGatewayFeature const&)            = delete;
     EndGatewayFeature()                                    = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?place\@EndGatewayFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDGATEWAYFEATURE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~EndGatewayFeature();
+    MCVAPI ~EndGatewayFeature(); // NOLINT
 #endif
 };

@@ -4,29 +4,28 @@
 
 class InsideBlockNotifierComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEBLOCKNOTIFIERCOMPONENT
 public:
+    // prevent constructor by default
     InsideBlockNotifierComponent& operator=(InsideBlockNotifierComponent const&) = delete;
     InsideBlockNotifierComponent(InsideBlockNotifierComponent const&)            = delete;
     InsideBlockNotifierComponent()                                               = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?getBlockList\@InsideBlockNotifierComponent\@\@QEBAAEBV?$vector\@VInsideBlockEventMap\@\@V?$allocator\@VInsideBlockEventMap\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<class InsideBlockEventMap> const& getBlockList() const;
+    MCAPI std::vector<class InsideBlockEventMap> const& getBlockList() const; // NOLINT
     /**
      * @symbol ?isTrackedBlock\@InsideBlockNotifierComponent\@\@QEBA_NAEBVBlock\@\@\@Z
      */
-    MCAPI bool isTrackedBlock(class Block const&) const;
+    MCAPI bool isTrackedBlock(class Block const&) const; // NOLINT
     /**
      * @symbol ?resetBlocksInsideState\@InsideBlockNotifierComponent\@\@QEAAXXZ
      */
-    MCAPI void resetBlocksInsideState();
+    MCAPI void resetBlocksInsideState(); // NOLINT
     /**
      * @symbol ?setInsideBlock\@InsideBlockNotifierComponent\@\@QEAAXAEBVBlock\@\@_N\@Z
      */
-    MCAPI void setInsideBlock(class Block const&, bool);
+    MCAPI void setInsideBlock(class Block const&, bool); // NOLINT
 };

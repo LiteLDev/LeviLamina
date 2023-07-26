@@ -12,59 +12,59 @@ namespace mce { class Color; }
 
 class OverworldDimension {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OVERWORLDDIMENSION
 public:
+    // prevent constructor by default
     OverworldDimension& operator=(OverworldDimension const&) = delete;
     OverworldDimension(OverworldDimension const&)            = delete;
     OverworldDimension()                                     = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDDIMENSION
     /**
      * @symbol ?_upgradeOldLimboEntity\@OverworldDimension\@\@EEAAXAEAVCompoundTag\@\@W4LimboEntitiesVersion\@\@\@Z
      */
-    MCVAPI void _upgradeOldLimboEntity(class CompoundTag&, enum class LimboEntitiesVersion);
+    MCVAPI void _upgradeOldLimboEntity(class CompoundTag&, enum class LimboEntitiesVersion); // NOLINT
     /**
      * @symbol
      * ?_wrapStorageForVersionCompatibility\@OverworldDimension\@\@EEAA?AV?$unique_ptr\@VChunkSource\@\@U?$default_delete\@VChunkSource\@\@\@std\@\@\@std\@\@V23\@W4StorageVersion\@\@\@Z
      */
     MCVAPI std::unique_ptr<class ChunkSource>
-           _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, enum class StorageVersion);
+           _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource>, enum class StorageVersion); // NOLINT
     /**
      * @symbol
      * ?createGenerator\@OverworldDimension\@\@UEAA?AV?$unique_ptr\@VWorldGenerator\@\@U?$default_delete\@VWorldGenerator\@\@\@std\@\@\@std\@\@XZ
      */
-    MCVAPI std::unique_ptr<class WorldGenerator> createGenerator();
+    MCVAPI std::unique_ptr<class WorldGenerator> createGenerator(); // NOLINT
     /**
      * @symbol ?fixWallChunk\@OverworldDimension\@\@UEAAXAEAVChunkSource\@\@AEAVLevelChunk\@\@\@Z
      */
-    MCVAPI void fixWallChunk(class ChunkSource&, class LevelChunk&);
+    MCVAPI void fixWallChunk(class ChunkSource&, class LevelChunk&); // NOLINT
     /**
      * @symbol ?getBrightnessDependentFogColor\@OverworldDimension\@\@UEBA?AVColor\@mce\@\@AEBV23\@M\@Z
      */
-    MCVAPI class mce::Color getBrightnessDependentFogColor(class mce::Color const&, float) const;
+    MCVAPI class mce::Color getBrightnessDependentFogColor(class mce::Color const&, float) const; // NOLINT
     /**
      * @symbol ?getCloudHeight\@OverworldDimension\@\@UEBAFXZ
      */
-    MCVAPI short getCloudHeight() const;
+    MCVAPI short getCloudHeight() const; // NOLINT
     /**
      * @symbol ?hasPrecipitationFog\@OverworldDimension\@\@UEBA_NXZ
      */
-    MCVAPI bool hasPrecipitationFog() const;
+    MCVAPI bool hasPrecipitationFog() const; // NOLINT
     /**
      * @symbol ?levelChunkNeedsUpgrade\@OverworldDimension\@\@UEBA_NAEBVLevelChunk\@\@\@Z
      */
-    MCVAPI bool levelChunkNeedsUpgrade(class LevelChunk const&) const;
+    MCVAPI bool levelChunkNeedsUpgrade(class LevelChunk const&) const; // NOLINT
     /**
      * @symbol
      * ?translatePosAcrossDimension\@OverworldDimension\@\@UEBA?AVVec3\@\@AEBV2\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCVAPI class Vec3 translatePosAcrossDimension(class Vec3 const&, class AutomaticID<class Dimension, int>) const;
+    MCVAPI class Vec3
+    translatePosAcrossDimension(class Vec3 const&, class AutomaticID<class Dimension, int>) const; // NOLINT
     /**
      * @symbol ?upgradeLevelChunk\@OverworldDimension\@\@UEAAXAEAVChunkSource\@\@AEAVLevelChunk\@\@1\@Z
      */
-    MCVAPI void upgradeLevelChunk(class ChunkSource&, class LevelChunk&, class LevelChunk&);
+    MCVAPI void upgradeLevelChunk(class ChunkSource&, class LevelChunk&, class LevelChunk&); // NOLINT
 #endif
 
     // private:
@@ -73,7 +73,7 @@ public:
      * ?makeStructureFeatures\@OverworldDimension\@\@CA?AV?$unique_ptr\@VStructureFeatureRegistry\@\@U?$default_delete\@VStructureFeatureRegistry\@\@\@std\@\@\@std\@\@I_NAEBVBaseGameVersion\@\@AEBVExperiments\@\@\@Z
      */
     MCAPI static std::unique_ptr<class StructureFeatureRegistry>
-    makeStructureFeatures(unsigned int, bool, class BaseGameVersion const&, class Experiments const&);
+    makeStructureFeatures(unsigned int, bool, class BaseGameVersion const&, class Experiments const&); // NOLINT
 
 private:
 };

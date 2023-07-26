@@ -4,12 +4,9 @@
 
 struct CamelFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMELFLAG
 public:
+    // prevent constructor by default
     CamelFlag& operator=(CamelFlag const&) = delete;
     CamelFlag(CamelFlag const&)            = delete;
     CamelFlag()                            = delete;
-#endif
-
-public:
 };

@@ -4,12 +4,11 @@
 
 class ServerNetworkEventListener {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERNETWORKEVENTLISTENER
 public:
+    // prevent constructor by default
     ServerNetworkEventListener& operator=(ServerNetworkEventListener const&) = delete;
     ServerNetworkEventListener(ServerNetworkEventListener const&)            = delete;
     ServerNetworkEventListener()                                             = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKEVENTLISTENER
@@ -17,10 +16,10 @@ public:
      * @symbol
      * ?onEvent\@ServerNetworkEventListener\@\@UEAA?AW4EventResult\@\@AEBUServerNetworkGameplayNotificationEvent\@\@\@Z
      */
-    MCVAPI enum class EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const&);
+    MCVAPI enum class EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const&); // NOLINT
     /**
      * @symbol ?onMessage\@ServerNetworkEventListener\@\@UEAA?AW4EventResult\@\@AEBUMessageEvent\@\@\@Z
      */
-    MCVAPI enum class EventResult onMessage(struct MessageEvent const&);
+    MCVAPI enum class EventResult onMessage(struct MessageEvent const&); // NOLINT
 #endif
 };

@@ -15,46 +15,45 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptPlayerSoundOptions {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTPLAYERSOUNDOPTIONS
 public:
+    // prevent constructor by default
     ScriptPlayerSoundOptions(ScriptPlayerSoundOptions const&) = delete;
     ScriptPlayerSoundOptions()                                = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ScriptPlayerSoundOptions\@ScriptModuleMinecraft\@\@QEAA\@AEBUScriptSoundOptions\@1\@\@Z
      */
-    MCAPI ScriptPlayerSoundOptions(struct ScriptModuleMinecraft::ScriptSoundOptions const&);
+    MCAPI ScriptPlayerSoundOptions(struct ScriptModuleMinecraft::ScriptSoundOptions const&); // NOLINT
     /**
      * @symbol ?getPitch\@ScriptPlayerSoundOptions\@ScriptModuleMinecraft\@\@QEBAMXZ
      */
-    MCAPI float getPitch() const;
+    MCAPI float getPitch() const; // NOLINT
     /**
      * @symbol ?getVolume\@ScriptPlayerSoundOptions\@ScriptModuleMinecraft\@\@QEBAMXZ
      */
-    MCAPI float getVolume() const;
+    MCAPI float getVolume() const; // NOLINT
     /**
      * @symbol ??4ScriptPlayerSoundOptions\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptPlayerSoundOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptPlayerSoundOptions const&);
+    operator=(struct ScriptModuleMinecraft::ScriptPlayerSoundOptions const&); // NOLINT
     /**
      * @symbol ??4ScriptPlayerSoundOptions\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptPlayerSoundOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptPlayerSoundOptions&&);
+    operator=(struct ScriptModuleMinecraft::ScriptPlayerSoundOptions&&); // NOLINT
     /**
      * @symbol
      * ?validate\@ScriptPlayerSoundOptions\@ScriptModuleMinecraft\@\@QEBA?AV?$optional\@UError\@Scripting\@\@\@std\@\@XZ
      */
-    MCAPI class std::optional<struct Scripting::Error> validate() const;
+    MCAPI class std::optional<struct Scripting::Error> validate() const; // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptPlayerSoundOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptPlayerSoundOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptPlayerSoundOptions>
-    bind();
+    bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

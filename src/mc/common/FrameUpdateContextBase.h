@@ -4,12 +4,9 @@
 
 class FrameUpdateContextBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FRAMEUPDATECONTEXTBASE
 public:
+    // prevent constructor by default
     FrameUpdateContextBase& operator=(FrameUpdateContextBase const&) = delete;
     FrameUpdateContextBase(FrameUpdateContextBase const&)            = delete;
     FrameUpdateContextBase()                                         = delete;
-#endif
-
-public:
 };

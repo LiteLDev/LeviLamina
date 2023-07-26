@@ -4,12 +4,9 @@
 
 struct PlayerCurrentTickComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERCURRENTTICKCOMPONENT
 public:
+    // prevent constructor by default
     PlayerCurrentTickComponent& operator=(PlayerCurrentTickComponent const&) = delete;
     PlayerCurrentTickComponent(PlayerCurrentTickComponent const&)            = delete;
     PlayerCurrentTickComponent()                                             = delete;
-#endif
-
-public:
 };

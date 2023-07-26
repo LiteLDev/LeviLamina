@@ -4,12 +4,9 @@
 
 struct ServerChunkSourceProvider {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERCHUNKSOURCEPROVIDER
 public:
+    // prevent constructor by default
     ServerChunkSourceProvider& operator=(ServerChunkSourceProvider const&) = delete;
     ServerChunkSourceProvider(ServerChunkSourceProvider const&)            = delete;
     ServerChunkSourceProvider()                                            = delete;
-#endif
-
-public:
 };

@@ -4,24 +4,23 @@
 
 struct FileChunkInfo {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILECHUNKINFO
 public:
+    // prevent constructor by default
     FileChunkInfo& operator=(FileChunkInfo const&) = delete;
     FileChunkInfo(FileChunkInfo const&)            = delete;
     FileChunkInfo()                                = delete;
-#endif
 
 public:
     /**
      * @symbol ??0FileChunkInfo\@\@QEAA\@H_K0\@Z
      */
-    MCAPI FileChunkInfo(int, unsigned __int64, unsigned __int64);
+    MCAPI FileChunkInfo(int, unsigned __int64, unsigned __int64); // NOLINT
     /**
      * @symbol ?isValid\@FileChunkInfo\@\@QEBA_NXZ
      */
-    MCAPI bool isValid() const;
+    MCAPI bool isValid() const; // NOLINT
     /**
      * @symbol ?size\@FileChunkInfo\@\@QEBAHXZ
      */
-    MCAPI int size() const;
+    MCAPI int size() const; // NOLINT
 };

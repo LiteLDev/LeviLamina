@@ -7,59 +7,59 @@
 
 class TemplateStructurePiece : public ::StructurePiece {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEMPLATESTRUCTUREPIECE
 public:
+    // prevent constructor by default
     TemplateStructurePiece& operator=(TemplateStructurePiece const&) = delete;
     TemplateStructurePiece(TemplateStructurePiece const&)            = delete;
     TemplateStructurePiece()                                         = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?moveBoundingBox\@TemplateStructurePiece\@\@UEAAXHHH\@Z
      */
-    virtual void moveBoundingBox(int, int, int);
+    virtual void moveBoundingBox(int, int, int); // NOLINT
     /**
      * @vftbl 4
      * @symbol ?postProcess\@TemplateStructurePiece\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&); // NOLINT
     /**
      * @vftbl 13
      * @symbol
      * ?_handleDataMarker\@EndCityPiece\@EndCityPieces\@\@MEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlockPos\@\@AEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
     virtual void
-    _handleDataMarker(std::string const&, class BlockPos const&, class BlockSource&, class Random&, class BoundingBox const&) = 0;
+    _handleDataMarker(std::string const&, class BlockPos const&, class BlockSource&, class Random&, class BoundingBox const&) = 0; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEMPLATESTRUCTUREPIECE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~TemplateStructurePiece();
+    MCVAPI ~TemplateStructurePiece(); // NOLINT
 #endif
     /**
      * @symbol ??0TemplateStructurePiece\@\@QEAA\@H\@Z
      */
-    MCAPI TemplateStructurePiece(int);
+    MCAPI TemplateStructurePiece(int); // NOLINT
 
     // protected:
     /**
      * @symbol
      * ?_setup\@TemplateStructurePiece\@\@IEAAXAEAVLegacyStructureTemplate\@\@AEBVLegacyStructureSettings\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI void _setup(class LegacyStructureTemplate&, class LegacyStructureSettings const&, class BlockPos const&);
+    MCAPI void
+    _setup(class LegacyStructureTemplate&, class LegacyStructureSettings const&, class BlockPos const&); // NOLINT
 
     // private:
     /**
      * @symbol ?_setBoundingBoxFromTemplate\@TemplateStructurePiece\@\@AEAAXXZ
      */
-    MCAPI void _setBoundingBoxFromTemplate();
+    MCAPI void _setBoundingBoxFromTemplate(); // NOLINT
 
 protected:
 private:

@@ -4,12 +4,9 @@
 
 struct PrimedTntFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PRIMEDTNTFLAG
 public:
+    // prevent constructor by default
     PrimedTntFlag& operator=(PrimedTntFlag const&) = delete;
     PrimedTntFlag(PrimedTntFlag const&)            = delete;
     PrimedTntFlag()                                = delete;
-#endif
-
-public:
 };

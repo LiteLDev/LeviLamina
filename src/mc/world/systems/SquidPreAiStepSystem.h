@@ -4,25 +4,25 @@
 
 class SquidPreAiStepSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SQUIDPREAISTEPSYSTEM
 public:
+    // prevent constructor by default
     SquidPreAiStepSystem& operator=(SquidPreAiStepSystem const&) = delete;
     SquidPreAiStepSystem(SquidPreAiStepSystem const&)            = delete;
     SquidPreAiStepSystem()                                       = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@SquidPreAiStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
 
     // private:
     /**
      * @symbol
      * ?_doSquidPreAiStepSystem\@SquidPreAiStepSystem\@\@CAXAEBVStrictEntityContext\@\@AEAULocalMoveVelocityComponent\@\@\@Z
      */
-    MCAPI static void _doSquidPreAiStepSystem(class StrictEntityContext const&, struct LocalMoveVelocityComponent&);
+    MCAPI static void
+    _doSquidPreAiStepSystem(class StrictEntityContext const&, struct LocalMoveVelocityComponent&); // NOLINT
 
 private:
 };

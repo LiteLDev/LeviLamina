@@ -4,19 +4,18 @@
 
 struct PressurePlatePushEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PRESSUREPLATEPUSHEVENT
 public:
+    // prevent constructor by default
     PressurePlatePushEvent& operator=(PressurePlatePushEvent const&) = delete;
     PressurePlatePushEvent()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol ??0PressurePlatePushEvent\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI PressurePlatePushEvent(struct PressurePlatePushEvent const&);
+    MCAPI PressurePlatePushEvent(struct PressurePlatePushEvent const&); // NOLINT
     /**
      * @symbol ??1PressurePlatePushEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PressurePlatePushEvent();
+    MCAPI ~PressurePlatePushEvent(); // NOLINT
 };

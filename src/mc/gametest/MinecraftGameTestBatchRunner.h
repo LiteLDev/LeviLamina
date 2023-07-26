@@ -11,30 +11,30 @@ namespace gametest { class GameTestTicker; }
 
 class MinecraftGameTestBatchRunner {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTGAMETESTBATCHRUNNER
 public:
+    // prevent constructor by default
     MinecraftGameTestBatchRunner& operator=(MinecraftGameTestBatchRunner const&) = delete;
     MinecraftGameTestBatchRunner(MinecraftGameTestBatchRunner const&)            = delete;
     MinecraftGameTestBatchRunner()                                               = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?_createGameTestInstance\@MinecraftGameTestBatchRunner\@\@MEAA?AV?$shared_ptr\@VBaseGameTestInstance\@gametest\@\@\@std\@\@AEAVBaseGameTestFunction\@gametest\@\@\@Z
      */
     virtual class std::shared_ptr<class gametest::BaseGameTestInstance>
-    _createGameTestInstance(class gametest::BaseGameTestFunction&);
+    _createGameTestInstance(class gametest::BaseGameTestFunction&); // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?_runTest\@MinecraftGameTestBatchRunner\@\@MEAAXV?$shared_ptr\@VBaseGameTestInstance\@gametest\@\@\@std\@\@AEAVGameTestTicker\@gametest\@\@\@Z
      */
-    virtual void _runTest(class std::shared_ptr<class gametest::BaseGameTestInstance>, class gametest::GameTestTicker&);
+    virtual void
+    _runTest(class std::shared_ptr<class gametest::BaseGameTestInstance>, class gametest::GameTestTicker&); // NOLINT
 };

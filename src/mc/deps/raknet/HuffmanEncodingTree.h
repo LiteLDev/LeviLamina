@@ -5,33 +5,37 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/LinkedList.h"
 
+// auto generated forward declare list
+// clang-format off
+struct HuffmanEncodingTreeNode;
+// clang-format on
+
 namespace RakNet {
 
 class HuffmanEncodingTree {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKNET_HUFFMANENCODINGTREE
 public:
+    // prevent constructor by default
     HuffmanEncodingTree& operator=(HuffmanEncodingTree const&) = delete;
     HuffmanEncodingTree(HuffmanEncodingTree const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ?FreeMemory\@HuffmanEncodingTree\@RakNet\@\@QEAAXXZ
      */
-    MCAPI void FreeMemory();
+    MCAPI void FreeMemory(); // NOLINT
     /**
      * @symbol ?GenerateFromFrequencyTable\@HuffmanEncodingTree\@RakNet\@\@QEAAXQEAI\@Z
      */
-    MCAPI void GenerateFromFrequencyTable(unsigned int* const);
+    MCAPI void GenerateFromFrequencyTable(unsigned int* const); // NOLINT
     /**
      * @symbol ??0HuffmanEncodingTree\@RakNet\@\@QEAA\@XZ
      */
-    MCAPI HuffmanEncodingTree();
+    MCAPI HuffmanEncodingTree(); // NOLINT
     /**
      * @symbol ??1HuffmanEncodingTree\@RakNet\@\@QEAA\@XZ
      */
-    MCAPI ~HuffmanEncodingTree();
+    MCAPI ~HuffmanEncodingTree(); // NOLINT
 
     // private:
     /**
@@ -40,7 +44,7 @@ public:
      */
     MCAPI void
     InsertNodeIntoSortedList(struct HuffmanEncodingTreeNode*, class DataStructures::LinkedList<struct HuffmanEncodingTreeNode*>*)
-        const;
+        const; // NOLINT
 
 private:
 };

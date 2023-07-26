@@ -6,19 +6,18 @@ namespace Json {
 
 class Writer {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_JSON_WRITER
 public:
+    // prevent constructor by default
     Writer& operator=(Writer const&) = delete;
     Writer(Writer const&)            = delete;
     Writer()                         = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JSON_WRITER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~Writer();
+    MCVAPI ~Writer(); // NOLINT
 #endif
 };
 

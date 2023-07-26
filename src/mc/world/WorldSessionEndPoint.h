@@ -4,38 +4,37 @@
 
 class WorldSessionEndPoint {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDSESSIONENDPOINT
 public:
+    // prevent constructor by default
     WorldSessionEndPoint& operator=(WorldSessionEndPoint const&) = delete;
     WorldSessionEndPoint(WorldSessionEndPoint const&)            = delete;
     WorldSessionEndPoint()                                       = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDSESSIONENDPOINT
     /**
      * @symbol ?flush\@WorldSessionEndPoint\@\@UEAAXXZ
      */
-    MCVAPI void flush();
+    MCVAPI void flush(); // NOLINT
     /**
      * @symbol ?isEnabled\@WorldSessionEndPoint\@\@UEBA_NXZ
      */
-    MCVAPI bool isEnabled() const;
+    MCVAPI bool isEnabled() const; // NOLINT
     /**
      * @symbol ?log\@WorldSessionEndPoint\@\@UEAAXW4LogArea\@\@W4LogLevel\@\@PEBD\@Z
      */
-    MCVAPI void log(enum class LogArea, enum class LogLevel, char const*);
+    MCVAPI void log(enum class LogArea, enum class LogLevel, char const*); // NOLINT
     /**
      * @symbol ?logOnlyOnce\@WorldSessionEndPoint\@\@UEBA_NXZ
      */
-    MCVAPI bool logOnlyOnce() const;
+    MCVAPI bool logOnlyOnce() const; // NOLINT
     /**
      * @symbol ?setEnabled\@WorldSessionEndPoint\@\@UEAAX_N\@Z
      */
-    MCVAPI void setEnabled(bool);
+    MCVAPI void setEnabled(bool); // NOLINT
 #endif
     /**
      * @symbol ??0WorldSessionEndPoint\@\@QEAA\@AEAVIMinecraftEventing\@\@\@Z
      */
-    MCAPI WorldSessionEndPoint(class IMinecraftEventing&);
+    MCAPI WorldSessionEndPoint(class IMinecraftEventing&); // NOLINT
 };

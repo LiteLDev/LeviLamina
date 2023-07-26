@@ -4,12 +4,9 @@
 
 struct WeightChoiceEntry {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEIGHTCHOICEENTRY
 public:
+    // prevent constructor by default
     WeightChoiceEntry& operator=(WeightChoiceEntry const&) = delete;
     WeightChoiceEntry(WeightChoiceEntry const&)            = delete;
     WeightChoiceEntry()                                    = delete;
-#endif
-
-public:
 };

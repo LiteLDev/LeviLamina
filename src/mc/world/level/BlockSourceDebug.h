@@ -4,12 +4,9 @@
 
 struct BlockSourceDebug {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSOURCEDEBUG
 public:
+    // prevent constructor by default
     BlockSourceDebug& operator=(BlockSourceDebug const&) = delete;
     BlockSourceDebug(BlockSourceDebug const&)            = delete;
     BlockSourceDebug()                                   = delete;
-#endif
-
-public:
 };

@@ -4,12 +4,9 @@
 
 struct MinecartFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECARTFLAG
 public:
+    // prevent constructor by default
     MinecartFlag& operator=(MinecartFlag const&) = delete;
     MinecartFlag(MinecartFlag const&)            = delete;
     MinecartFlag()                               = delete;
-#endif
-
-public:
 };

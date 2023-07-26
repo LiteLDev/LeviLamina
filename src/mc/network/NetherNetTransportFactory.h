@@ -11,19 +11,18 @@ namespace NetherNet { struct NetworkID; }
 
 class NetherNetTransportFactory {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERNETTRANSPORTFACTORY
 public:
+    // prevent constructor by default
     NetherNetTransportFactory& operator=(NetherNetTransportFactory const&) = delete;
     NetherNetTransportFactory(NetherNetTransportFactory const&)            = delete;
     NetherNetTransportFactory()                                            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
@@ -32,15 +31,16 @@ public:
     virtual class std::unique_ptr<
         class NetherNet::INetherNetTransportInterface,
         class std::function<void(class NetherNet::INetherNetTransportInterface*)>>
-    createTransport(struct NetherNet::NetworkID const&, class NetherNet::INetherNetTransportInterfaceCallbacks*) const;
+    createTransport(struct NetherNet::NetworkID const&, class NetherNet::INetherNetTransportInterfaceCallbacks*)
+        const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERNETTRANSPORTFACTORY
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~NetherNetTransportFactory();
+    MCVAPI ~NetherNetTransportFactory(); // NOLINT
 #endif
     /**
      * @symbol ??0NetherNetTransportFactory\@\@QEAA\@AEBUNetworkSystemToggles\@\@\@Z
      */
-    MCAPI NetherNetTransportFactory(struct NetworkSystemToggles const&);
+    MCAPI NetherNetTransportFactory(struct NetworkSystemToggles const&); // NOLINT
 };

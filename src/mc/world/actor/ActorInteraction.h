@@ -4,42 +4,41 @@
 
 class ActorInteraction {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORINTERACTION
 public:
+    // prevent constructor by default
     ActorInteraction& operator=(ActorInteraction const&) = delete;
     ActorInteraction(ActorInteraction const&)            = delete;
     ActorInteraction()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ActorInteraction\@\@QEAA\@_N\@Z
      */
-    MCAPI ActorInteraction(bool);
+    MCAPI ActorInteraction(bool); // NOLINT
     /**
      * @symbol ?capture\@ActorInteraction\@\@QEAAXV?$function\@$$A6AXXZ\@std\@\@\@Z
      */
-    MCAPI void capture(class std::function<void(void)>);
+    MCAPI void capture(class std::function<void(void)>); // NOLINT
     /**
      * @symbol
      * ?getInteractText\@ActorInteraction\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string const& getInteractText() const;
+    MCAPI std::string const& getInteractText() const; // NOLINT
     /**
      * @symbol ?interact\@ActorInteraction\@\@QEAAXXZ
      */
-    MCAPI void interact();
+    MCAPI void interact(); // NOLINT
     /**
      * @symbol
      * ?setInteractText\@ActorInteraction\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void setInteractText(std::string const&);
+    MCAPI void setInteractText(std::string const&); // NOLINT
     /**
      * @symbol ?shouldCapture\@ActorInteraction\@\@QEBA_NXZ
      */
-    MCAPI bool shouldCapture() const;
+    MCAPI bool shouldCapture() const; // NOLINT
     /**
      * @symbol ??1ActorInteraction\@\@QEAA\@XZ
      */
-    MCAPI ~ActorInteraction();
+    MCAPI ~ActorInteraction(); // NOLINT
 };

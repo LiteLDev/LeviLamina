@@ -18,12 +18,11 @@ public:
     // NetherNetSignalServiceSigninJob inner types define
     class ConfigListener {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERNETSIGNALSERVICESIGNINJOB_CONFIGLISTENER
     public:
+        // prevent constructor by default
         ConfigListener& operator=(ConfigListener const&) = delete;
         ConfigListener(ConfigListener const&)            = delete;
         ConfigListener()                                 = delete;
-#endif
 
     public:
         /**
@@ -33,51 +32,48 @@ public:
         MCAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<class std::tuple<
             struct NetherNetSignalServiceSigninJob::Url,
             struct NetherNetSignalServiceSigninJob::Token>>>
-        getConfigAsync();
+        getConfigAsync(); // NOLINT
         /**
          * @symbol ??1ConfigListener\@NetherNetSignalServiceSigninJob\@\@QEAA\@XZ
          */
-        MCAPI ~ConfigListener();
+        MCAPI ~ConfigListener(); // NOLINT
     };
 
     struct Token {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERNETSIGNALSERVICESIGNINJOB_TOKEN
     public:
+        // prevent constructor by default
         Token& operator=(Token const&) = delete;
         Token(Token const&)            = delete;
         Token()                        = delete;
-#endif
 
     public:
         /**
          * @symbol ??1Token\@NetherNetSignalServiceSigninJob\@\@QEAA\@XZ
          */
-        MCAPI ~Token();
+        MCAPI ~Token(); // NOLINT
     };
 
     struct Url {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERNETSIGNALSERVICESIGNINJOB_URL
     public:
+        // prevent constructor by default
         Url& operator=(Url const&) = delete;
         Url(Url const&)            = delete;
         Url()                      = delete;
-#endif
 
     public:
         /**
          * @symbol ??1Url\@NetherNetSignalServiceSigninJob\@\@QEAA\@XZ
          */
-        MCAPI ~Url();
+        MCAPI ~Url(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERNETSIGNALSERVICESIGNINJOB
 public:
+    // prevent constructor by default
     NetherNetSignalServiceSigninJob& operator=(NetherNetSignalServiceSigninJob const&) = delete;
     NetherNetSignalServiceSigninJob(NetherNetSignalServiceSigninJob const&)            = delete;
     NetherNetSignalServiceSigninJob()                                                  = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERNETSIGNALSERVICESIGNINJOB
@@ -85,11 +81,12 @@ public:
      * @symbol
      * ?signin\@NetherNetSignalServiceSigninJob\@\@UEAAX_NV?$optional\@V?$duration\@_JU?$ratio\@$00$00\@std\@\@\@chrono\@std\@\@\@std\@\@\@Z
      */
-    MCVAPI void signin(bool, class std::optional<class std::chrono::duration<__int64, struct std::ratio<1, 1>>>);
+    MCVAPI void
+    signin(bool, class std::optional<class std::chrono::duration<__int64, struct std::ratio<1, 1>>>); // NOLINT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~NetherNetSignalServiceSigninJob();
+    MCVAPI ~NetherNetSignalServiceSigninJob(); // NOLINT
 #endif
     /**
      * @symbol
@@ -103,13 +100,13 @@ public:
         class gsl::not_null<class Bedrock::NonOwnerPointer<class ServicesManager>>,
         class gsl::not_null<class Bedrock::NonOwnerPointer<class IMinecraftEventing>>,
         bool
-    );
+    ); // NOLINT
 
     // private:
     /**
      * @symbol ?_executeOnMainThread\@NetherNetSignalServiceSigninJob\@\@AEAAX$$QEAV?$function\@$$A6AXXZ\@std\@\@\@Z
      */
-    MCAPI void _executeOnMainThread(class std::function<void(void)>&&);
+    MCAPI void _executeOnMainThread(class std::function<void(void)>&&); // NOLINT
     /**
      * @symbol ?_signin\@NetherNetSignalServiceSigninJob\@\@AEAAXAEBUUrl\@1\@AEBUToken\@1\@_N\@Z
      */
@@ -117,7 +114,7 @@ public:
         struct NetherNetSignalServiceSigninJob::Url const&,
         struct NetherNetSignalServiceSigninJob::Token const&,
         bool
-    );
+    ); // NOLINT
 
 private:
 };

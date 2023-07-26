@@ -14,29 +14,25 @@ public:
     // IRequestBody inner types define
     struct ReadResult {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_HTTP_INTERNAL_IREQUESTBODY_READRESULT
     public:
+        // prevent constructor by default
         ReadResult& operator=(ReadResult const&) = delete;
         ReadResult(ReadResult const&)            = delete;
         ReadResult()                             = delete;
-#endif
-
-    public:
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_HTTP_INTERNAL_IREQUESTBODY
 public:
+    // prevent constructor by default
     IRequestBody& operator=(IRequestBody const&) = delete;
     IRequestBody(IRequestBody const&)            = delete;
     IRequestBody()                               = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_HTTP_INTERNAL_IREQUESTBODY
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IRequestBody();
+    MCVAPI ~IRequestBody(); // NOLINT
 #endif
 };
 

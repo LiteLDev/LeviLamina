@@ -12,17 +12,16 @@ namespace Json { class Value; }
 
 class UseActorDefinition : public ::BehaviorDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_USEACTORDEFINITION
 public:
+    // prevent constructor by default
     UseActorDefinition& operator=(UseActorDefinition const&) = delete;
     UseActorDefinition(UseActorDefinition const&)            = delete;
     UseActorDefinition()                                     = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
 };

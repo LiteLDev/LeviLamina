@@ -7,20 +7,19 @@
 
 class HorseContainerScreenValidator : public ::ContainerScreenValidatorBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HORSECONTAINERSCREENVALIDATOR
 public:
+    // prevent constructor by default
     HorseContainerScreenValidator& operator=(HorseContainerScreenValidator const&) = delete;
     HorseContainerScreenValidator(HorseContainerScreenValidator const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @symbol ??0HorseContainerScreenValidator\@\@QEAA\@XZ
      */
-    MCAPI HorseContainerScreenValidator();
+    MCAPI HorseContainerScreenValidator(); // NOLINT
 };

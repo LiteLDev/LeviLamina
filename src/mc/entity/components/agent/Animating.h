@@ -6,14 +6,11 @@ namespace AgentComponents {
 
 class Animating {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMPONENTS_ANIMATING
 public:
+    // prevent constructor by default
     Animating& operator=(Animating const&) = delete;
     Animating(Animating const&)            = delete;
     Animating()                            = delete;
-#endif
-
-public:
 };
 
 }; // namespace AgentComponents

@@ -4,12 +4,9 @@
 
 struct ParrotFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PARROTFLAG
 public:
+    // prevent constructor by default
     ParrotFlag& operator=(ParrotFlag const&) = delete;
     ParrotFlag(ParrotFlag const&)            = delete;
     ParrotFlag()                             = delete;
-#endif
-
-public:
 };

@@ -6,14 +6,11 @@ namespace gametest {
 
 class IGameTestFunctionContext {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETEST_IGAMETESTFUNCTIONCONTEXT
 public:
+    // prevent constructor by default
     IGameTestFunctionContext& operator=(IGameTestFunctionContext const&) = delete;
     IGameTestFunctionContext(IGameTestFunctionContext const&)            = delete;
     IGameTestFunctionContext()                                           = delete;
-#endif
-
-public:
 };
 
 }; // namespace gametest

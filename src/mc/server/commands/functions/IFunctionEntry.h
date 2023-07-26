@@ -4,12 +4,9 @@
 
 class IFunctionEntry {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IFUNCTIONENTRY
 public:
+    // prevent constructor by default
     IFunctionEntry& operator=(IFunctionEntry const&) = delete;
     IFunctionEntry(IFunctionEntry const&)            = delete;
     IFunctionEntry()                                 = delete;
-#endif
-
-public:
 };

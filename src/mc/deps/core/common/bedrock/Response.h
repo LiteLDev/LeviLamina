@@ -13,62 +13,62 @@ namespace Bedrock::Http {
 
 class Response {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_HTTP_RESPONSE
 public:
+    // prevent constructor by default
     Response& operator=(Response const&) = delete;
-#endif
 
 public:
     /**
      * @symbol ??0Response\@Http\@Bedrock\@\@QEAA\@XZ
      */
-    MCAPI Response();
+    MCAPI Response(); // NOLINT
     /**
      * @symbol ??0Response\@Http\@Bedrock\@\@QEAA\@$$QEAV012\@\@Z
      */
-    MCAPI Response(class Bedrock::Http::Response&&);
+    MCAPI Response(class Bedrock::Http::Response&&); // NOLINT
     /**
      * @symbol ??0Response\@Http\@Bedrock\@\@QEAA\@VStatus\@12\@\@Z
      */
-    MCAPI Response(class Bedrock::Http::Status);
+    MCAPI Response(class Bedrock::Http::Status); // NOLINT
     /**
      * @symbol ??0Response\@Http\@Bedrock\@\@QEAA\@AEBV012\@\@Z
      */
-    MCAPI Response(class Bedrock::Http::Response const&);
+    MCAPI Response(class Bedrock::Http::Response const&); // NOLINT
     /**
      * @symbol ?getBodyAsBytes\@Response\@Http\@Bedrock\@\@QEBA?AV?$span\@$$CBE$0?0\@gsl\@\@XZ
      */
-    MCAPI class gsl::span<unsigned char const, -1> getBodyAsBytes() const;
+    MCAPI class gsl::span<unsigned char const, -1> getBodyAsBytes() const; // NOLINT
     /**
      * @symbol
      * ?getBodyAsUtf8String\@Response\@Http\@Bedrock\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getBodyAsUtf8String() const;
+    MCAPI std::string getBodyAsUtf8String() const; // NOLINT
     /**
      * @symbol ?getHeaders\@Response\@Http\@Bedrock\@\@QEBAAEBVHeaderCollection\@23\@XZ
      */
-    MCAPI class Bedrock::Http::HeaderCollection const& getHeaders() const;
+    MCAPI class Bedrock::Http::HeaderCollection const& getHeaders() const; // NOLINT
     /**
      * @symbol ?getStatus\@Response\@Http\@Bedrock\@\@QEBA?AVStatus\@23\@XZ
      */
-    MCAPI class Bedrock::Http::Status getStatus() const;
+    MCAPI class Bedrock::Http::Status getStatus() const; // NOLINT
     /**
      * @symbol
      * ?setBody\@Response\@Http\@Bedrock\@\@QEAAXV?$not_null\@V?$shared_ptr\@VIResponseBody\@Internal\@Http\@Bedrock\@\@\@std\@\@\@gsl\@\@\@Z
      */
-    MCAPI void setBody(class gsl::not_null<class std::shared_ptr<class Bedrock::Http::Internal::IResponseBody>>);
+    MCAPI void
+        setBody(class gsl::not_null<class std::shared_ptr<class Bedrock::Http::Internal::IResponseBody>>); // NOLINT
     /**
      * @symbol ?setHeaders\@Response\@Http\@Bedrock\@\@QEAAXAEBVHeaderCollection\@23\@\@Z
      */
-    MCAPI void setHeaders(class Bedrock::Http::HeaderCollection const&);
+    MCAPI void setHeaders(class Bedrock::Http::HeaderCollection const&); // NOLINT
     /**
      * @symbol ?setStatus\@Response\@Http\@Bedrock\@\@QEAAXVStatus\@23\@\@Z
      */
-    MCAPI void setStatus(class Bedrock::Http::Status);
+    MCAPI void setStatus(class Bedrock::Http::Status); // NOLINT
     /**
      * @symbol ??1Response\@Http\@Bedrock\@\@QEAA\@XZ
      */
-    MCAPI ~Response();
+    MCAPI ~Response(); // NOLINT
 };
 
 }; // namespace Bedrock::Http

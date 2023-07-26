@@ -4,12 +4,9 @@
 
 class EntitiesInsideVolumeComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITIESINSIDEVOLUMECOMPONENT
 public:
+    // prevent constructor by default
     EntitiesInsideVolumeComponent& operator=(EntitiesInsideVolumeComponent const&) = delete;
     EntitiesInsideVolumeComponent(EntitiesInsideVolumeComponent const&)            = delete;
     EntitiesInsideVolumeComponent()                                                = delete;
-#endif
-
-public:
 };

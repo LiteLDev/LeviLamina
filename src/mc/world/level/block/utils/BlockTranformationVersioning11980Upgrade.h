@@ -11,24 +11,23 @@ namespace BlockTranformationVersioning {
 
 class BlockTranformationVersioning11980Upgrade {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKTRANFORMATIONVERSIONING_BLOCKTRANFORMATIONVERSIONING11980UPGRADE
 public:
+    // prevent constructor by default
     BlockTranformationVersioning11980Upgrade& operator=(BlockTranformationVersioning11980Upgrade const&) = delete;
     BlockTranformationVersioning11980Upgrade(BlockTranformationVersioning11980Upgrade const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?previousSchema\@BlockTranformationVersioning11980Upgrade\@BlockTranformationVersioning\@\@UEBAXAEAVSchemaFactory\@cereal\@\@\@Z
      */
-    virtual void previousSchema(class cereal::SchemaFactory&) const;
+    virtual void previousSchema(class cereal::SchemaFactory&) const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
@@ -37,11 +36,11 @@ public:
     virtual bool upgradeToNext(class rapidjson::GenericDocument<
                                struct rapidjson::UTF8<char>,
                                class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>,
-                               class rapidjson::CrtAllocator>&) const;
+                               class rapidjson::CrtAllocator>&) const; // NOLINT
     /**
      * @symbol ??0BlockTranformationVersioning11980Upgrade\@BlockTranformationVersioning\@\@QEAA\@XZ
      */
-    MCAPI BlockTranformationVersioning11980Upgrade();
+    MCAPI BlockTranformationVersioning11980Upgrade(); // NOLINT
 };
 
 }; // namespace BlockTranformationVersioning

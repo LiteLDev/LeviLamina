@@ -4,16 +4,15 @@
 
 class VanillaVillageJigsawStructureActorRules {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAVILLAGEJIGSAWSTRUCTUREACTORRULES
 public:
+    // prevent constructor by default
     VanillaVillageJigsawStructureActorRules& operator=(VanillaVillageJigsawStructureActorRules const&) = delete;
     VanillaVillageJigsawStructureActorRules(VanillaVillageJigsawStructureActorRules const&)            = delete;
     VanillaVillageJigsawStructureActorRules()                                                          = delete;
-#endif
 
 public:
     /**
      * @symbol ?initialize\@VanillaVillageJigsawStructureActorRules\@\@SAXAEAVJigsawStructureRegistry\@\@\@Z
      */
-    MCAPI static void initialize(class JigsawStructureRegistry&);
+    MCAPI static void initialize(class JigsawStructureRegistry&); // NOLINT
 };

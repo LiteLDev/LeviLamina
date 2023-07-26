@@ -4,12 +4,9 @@
 
 class IFileWriteAccess {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IFILEWRITEACCESS
 public:
+    // prevent constructor by default
     IFileWriteAccess& operator=(IFileWriteAccess const&) = delete;
     IFileWriteAccess(IFileWriteAccess const&)            = delete;
     IFileWriteAccess()                                   = delete;
-#endif
-
-public:
 };

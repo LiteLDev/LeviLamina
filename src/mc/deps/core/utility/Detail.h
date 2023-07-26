@@ -6,6 +6,6 @@ namespace Util::Detail {
 /**
  * @symbol ?isStringPrefixLexicallyNegative\@Detail\@Util\@\@YA_NPEBD\@Z
  */
-MCAPI bool isStringPrefixLexicallyNegative(char const*);
+MCAPI bool isStringPrefixLexicallyNegative(char const*); // NOLINT
 
 }; // namespace Util::Detail

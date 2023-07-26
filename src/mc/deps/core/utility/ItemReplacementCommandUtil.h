@@ -4,6 +4,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class ItemStack;
+enum class EquipmentSlot;
 namespace Util { struct ActorReplacementParams; }
 namespace Util { struct ContainerReplacementParams; }
 namespace Util { struct ReplacementResults; }
@@ -13,24 +16,25 @@ namespace Util {
 
 class ItemReplacementCommandUtil {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_UTIL_ITEMREPLACEMENTCOMMANDUTIL
 public:
+    // prevent constructor by default
     ItemReplacementCommandUtil& operator=(ItemReplacementCommandUtil const&) = delete;
     ItemReplacementCommandUtil(ItemReplacementCommandUtil const&)            = delete;
     ItemReplacementCommandUtil()                                             = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?replaceActorSlotsOrError\@ItemReplacementCommandUtil\@Util\@\@SA?AUReplacementResults\@2\@AEAUActorReplacementParams\@2\@\@Z
      */
-    MCAPI static struct Util::ReplacementResults replaceActorSlotsOrError(struct Util::ActorReplacementParams&);
+    MCAPI static struct Util::ReplacementResults
+    replaceActorSlotsOrError(struct Util::ActorReplacementParams&); // NOLINT
     /**
      * @symbol
      * ?replaceContainerSlotsOrError\@ItemReplacementCommandUtil\@Util\@\@SA?AUReplacementResults\@2\@AEAUContainerReplacementParams\@2\@\@Z
      */
-    MCAPI static struct Util::ReplacementResults replaceContainerSlotsOrError(struct Util::ContainerReplacementParams&);
+    MCAPI static struct Util::ReplacementResults
+    replaceContainerSlotsOrError(struct Util::ContainerReplacementParams&); // NOLINT
 
     // private:
     /**
@@ -43,13 +47,13 @@ public:
         class gsl::span<class ItemStack const, -1>,
         enum class EquipmentSlot,
         int
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?_slotBoundsValid\@ItemReplacementCommandUtil\@Util\@\@CA_NAEAUReplacementResults\@2\@HHV?$optional\@H\@std\@\@1\@Z
      */
     MCAPI static bool
-    _slotBoundsValid(struct Util::ReplacementResults&, int, int, class std::optional<int>, class std::optional<int>);
+    _slotBoundsValid(struct Util::ReplacementResults&, int, int, class std::optional<int>, class std::optional<int>); // NOLINT
 
 private:
 };

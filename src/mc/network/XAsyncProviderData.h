@@ -4,12 +4,9 @@
 
 struct XAsyncProviderData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_XASYNCPROVIDERDATA
 public:
+    // prevent constructor by default
     XAsyncProviderData& operator=(XAsyncProviderData const&) = delete;
     XAsyncProviderData(XAsyncProviderData const&)            = delete;
     XAsyncProviderData()                                     = delete;
-#endif
-
-public:
 };

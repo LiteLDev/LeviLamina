@@ -4,16 +4,15 @@
 
 struct PlayerRespawnEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERRESPAWNEVENT
 public:
+    // prevent constructor by default
     PlayerRespawnEvent& operator=(PlayerRespawnEvent const&) = delete;
     PlayerRespawnEvent(PlayerRespawnEvent const&)            = delete;
     PlayerRespawnEvent()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ??1PlayerRespawnEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerRespawnEvent();
+    MCAPI ~PlayerRespawnEvent(); // NOLINT
 };

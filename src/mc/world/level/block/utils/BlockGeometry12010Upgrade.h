@@ -11,24 +11,23 @@ namespace BlockGeometryVersioning {
 
 class BlockGeometry12010Upgrade {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKGEOMETRYVERSIONING_BLOCKGEOMETRY12010UPGRADE
 public:
+    // prevent constructor by default
     BlockGeometry12010Upgrade& operator=(BlockGeometry12010Upgrade const&) = delete;
     BlockGeometry12010Upgrade(BlockGeometry12010Upgrade const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?previousSchema\@BlockGeometry12010Upgrade\@BlockGeometryVersioning\@\@UEBAXAEAVSchemaFactory\@cereal\@\@\@Z
      */
-    virtual void previousSchema(class cereal::SchemaFactory&) const;
+    virtual void previousSchema(class cereal::SchemaFactory&) const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
@@ -37,11 +36,11 @@ public:
     virtual bool upgradeToNext(class rapidjson::GenericDocument<
                                struct rapidjson::UTF8<char>,
                                class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>,
-                               class rapidjson::CrtAllocator>&) const;
+                               class rapidjson::CrtAllocator>&) const; // NOLINT
     /**
      * @symbol ??0BlockGeometry12010Upgrade\@BlockGeometryVersioning\@\@QEAA\@XZ
      */
-    MCAPI BlockGeometry12010Upgrade();
+    MCAPI BlockGeometry12010Upgrade(); // NOLINT
 };
 
 }; // namespace BlockGeometryVersioning

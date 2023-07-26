@@ -7,22 +7,21 @@
 
 class MelonFeature : public ::Feature {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MELONFEATURE
 public:
+    // prevent constructor by default
     MelonFeature& operator=(MelonFeature const&) = delete;
     MelonFeature(MelonFeature const&)            = delete;
     MelonFeature()                               = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?place\@MelonFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
 };

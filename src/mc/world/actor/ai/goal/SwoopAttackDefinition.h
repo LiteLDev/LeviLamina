@@ -12,12 +12,11 @@ namespace JsonUtil { class EmptyClass; }
 
 class SwoopAttackDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWOOPATTACKDEFINITION
 public:
+    // prevent constructor by default
     SwoopAttackDefinition& operator=(SwoopAttackDefinition const&) = delete;
     SwoopAttackDefinition(SwoopAttackDefinition const&)            = delete;
     SwoopAttackDefinition()                                        = delete;
-#endif
 
 public:
     /**
@@ -25,5 +24,5 @@ public:
      * ?buildSchema\@SwoopAttackDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VSwoopAttackDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void
-    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwoopAttackDefinition>>&);
+    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwoopAttackDefinition>>&); // NOLINT
 };

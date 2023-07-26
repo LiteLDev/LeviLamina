@@ -12,6 +12,6 @@ MCAPI float getRidingHeight(
     struct RidingHeightComponent const*,
     struct AdultRidingHeightOffsetComponent const*,
     float
-);
+); // NOLINT
 
 }; // namespace GetRidingHeightUtility

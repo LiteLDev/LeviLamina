@@ -4,12 +4,9 @@
 
 class IScreenChangedEventing {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISCREENCHANGEDEVENTING
 public:
+    // prevent constructor by default
     IScreenChangedEventing& operator=(IScreenChangedEventing const&) = delete;
     IScreenChangedEventing(IScreenChangedEventing const&)            = delete;
     IScreenChangedEventing()                                         = delete;
-#endif
-
-public:
 };

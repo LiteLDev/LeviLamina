@@ -8,33 +8,32 @@
 
 class ActorTickNeededComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORTICKNEEDEDCOMPONENT
 public:
+    // prevent constructor by default
     ActorTickNeededComponent& operator=(ActorTickNeededComponent const&) = delete;
     ActorTickNeededComponent(ActorTickNeededComponent const&)            = delete;
     ActorTickNeededComponent()                                           = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ActorTickNeededComponent\@\@QEAA\@AEAVBlockSource\@\@\@Z
      */
-    MCAPI ActorTickNeededComponent(class BlockSource&);
+    MCAPI ActorTickNeededComponent(class BlockSource&); // NOLINT
     /**
      * @symbol ??0ActorTickNeededComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI ActorTickNeededComponent(class ActorTickNeededComponent&&);
+    MCAPI ActorTickNeededComponent(class ActorTickNeededComponent&&); // NOLINT
     /**
      * @symbol
      * ?getBlockSource\@ActorTickNeededComponent\@\@QEAA?AV?$WeakRefT\@U?$SharePtrRefTraits\@VBlockSource\@\@\@\@\@\@XZ
      */
-    MCAPI class WeakRefT<struct SharePtrRefTraits<class BlockSource>> getBlockSource();
+    MCAPI class WeakRefT<struct SharePtrRefTraits<class BlockSource>> getBlockSource(); // NOLINT
     /**
      * @symbol ??4ActorTickNeededComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class ActorTickNeededComponent& operator=(class ActorTickNeededComponent&&);
+    MCAPI class ActorTickNeededComponent& operator=(class ActorTickNeededComponent&&); // NOLINT
     /**
      * @symbol ??1ActorTickNeededComponent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorTickNeededComponent();
+    MCAPI ~ActorTickNeededComponent(); // NOLINT
 };

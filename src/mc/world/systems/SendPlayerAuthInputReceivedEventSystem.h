@@ -7,12 +7,11 @@
 
 class SendPlayerAuthInputReceivedEventSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SENDPLAYERAUTHINPUTRECEIVEDEVENTSYSTEM
 public:
+    // prevent constructor by default
     SendPlayerAuthInputReceivedEventSystem& operator=(SendPlayerAuthInputReceivedEventSystem const&) = delete;
     SendPlayerAuthInputReceivedEventSystem(SendPlayerAuthInputReceivedEventSystem const&)            = delete;
     SendPlayerAuthInputReceivedEventSystem()                                                         = delete;
-#endif
 
 public:
     /**
@@ -20,9 +19,9 @@ public:
      * ?_doSendPlayerAuthInputReceivedEvent\@SendPlayerAuthInputReceivedEventSystem\@\@SAXAEAVStrictEntityContext\@\@AEBV?$FlagComponent\@UPlayerComponentFlag\@\@\@\@AEAVActorOwnerComponent\@\@\@Z
      */
     MCAPI static void
-    _doSendPlayerAuthInputReceivedEvent(class StrictEntityContext&, class FlagComponent<struct PlayerComponentFlag> const&, class ActorOwnerComponent&);
+    _doSendPlayerAuthInputReceivedEvent(class StrictEntityContext&, class FlagComponent<struct PlayerComponentFlag> const&, class ActorOwnerComponent&); // NOLINT
     /**
      * @symbol ?create\@SendPlayerAuthInputReceivedEventSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo create();
+    MCAPI static struct TickingSystemWithInfo create(); // NOLINT
 };

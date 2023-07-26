@@ -5,16 +5,24 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
+// auto generated forward declare list
+// clang-format off
+class BaseGameVersion;
+class Experiments;
+class ItemRegistryRef;
+class Level;
+class ResourcePackManager;
+// clang-format on
+
 namespace VanillaWorldSystems {
 
 class Impl {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAWORLDSYSTEMS_IMPL
 public:
+    // prevent constructor by default
     Impl& operator=(Impl const&) = delete;
     Impl(Impl const&)            = delete;
     Impl()                       = delete;
-#endif
 
 public:
     /**
@@ -27,11 +35,11 @@ public:
         class BaseGameVersion const&,
         class ResourcePackManager*,
         class ItemRegistryRef
-    );
+    ); // NOLINT
     /**
      * @symbol ?mInstance\@Impl\@VanillaWorldSystems\@\@2V?$weak_ptr\@VImpl\@VanillaWorldSystems\@\@\@std\@\@A
      */
-    MCAPI static class std::weak_ptr<class VanillaWorldSystems::Impl> mInstance;
+    MCAPI static class std::weak_ptr<class VanillaWorldSystems::Impl> mInstance; // NOLINT
 };
 
 }; // namespace VanillaWorldSystems

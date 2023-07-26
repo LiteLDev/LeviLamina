@@ -4,12 +4,9 @@
 
 struct PassengerRenderingRidingOffsetComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PASSENGERRENDERINGRIDINGOFFSETCOMPONENT
 public:
+    // prevent constructor by default
     PassengerRenderingRidingOffsetComponent& operator=(PassengerRenderingRidingOffsetComponent const&) = delete;
     PassengerRenderingRidingOffsetComponent(PassengerRenderingRidingOffsetComponent const&)            = delete;
     PassengerRenderingRidingOffsetComponent()                                                          = delete;
-#endif
-
-public:
 };

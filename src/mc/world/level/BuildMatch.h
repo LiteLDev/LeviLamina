@@ -4,12 +4,9 @@
 
 struct BuildMatch {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BUILDMATCH
 public:
+    // prevent constructor by default
     BuildMatch& operator=(BuildMatch const&) = delete;
     BuildMatch(BuildMatch const&)            = delete;
     BuildMatch()                             = delete;
-#endif
-
-public:
 };

@@ -7,22 +7,21 @@
 
 class VinesFeature : public ::Feature {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VINESFEATURE
 public:
+    // prevent constructor by default
     VinesFeature& operator=(VinesFeature const&) = delete;
     VinesFeature(VinesFeature const&)            = delete;
     VinesFeature()                               = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?place\@VinesFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
 };

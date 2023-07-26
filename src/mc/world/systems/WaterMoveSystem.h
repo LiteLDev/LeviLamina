@@ -4,16 +4,15 @@
 
 class WaterMoveSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WATERMOVESYSTEM
 public:
+    // prevent constructor by default
     WaterMoveSystem& operator=(WaterMoveSystem const&) = delete;
     WaterMoveSystem(WaterMoveSystem const&)            = delete;
     WaterMoveSystem()                                  = delete;
-#endif
 
 public:
     /**
      * @symbol ?createWaterMoveSystem\@WaterMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createWaterMoveSystem();
+    MCAPI static struct TickingSystemWithInfo createWaterMoveSystem(); // NOLINT
 };

@@ -4,16 +4,15 @@
 
 class StopwatchHandler {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STOPWATCHHANDLER
 public:
+    // prevent constructor by default
     StopwatchHandler& operator=(StopwatchHandler const&) = delete;
     StopwatchHandler(StopwatchHandler const&)            = delete;
     StopwatchHandler()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ?clearAll\@StopwatchHandler\@\@QEAAXXZ
      */
-    MCAPI void clearAll();
+    MCAPI void clearAll(); // NOLINT
 };

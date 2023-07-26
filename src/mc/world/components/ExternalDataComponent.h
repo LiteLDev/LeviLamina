@@ -4,16 +4,15 @@
 
 struct ExternalDataComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXTERNALDATACOMPONENT
 public:
+    // prevent constructor by default
     ExternalDataComponent& operator=(ExternalDataComponent const&) = delete;
     ExternalDataComponent(ExternalDataComponent const&)            = delete;
     ExternalDataComponent()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ??1ExternalDataComponent\@\@QEAA\@XZ
      */
-    MCAPI ~ExternalDataComponent();
+    MCAPI ~ExternalDataComponent(); // NOLINT
 };

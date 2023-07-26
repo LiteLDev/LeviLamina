@@ -5,12 +5,9 @@
 template <typename... T0>
 struct AddRemove {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADDREMOVE
 public:
+    // prevent constructor by default
     AddRemove& operator=(AddRemove const&) = delete;
     AddRemove(AddRemove const&)            = delete;
     AddRemove()                            = delete;
-#endif
-
-public:
 };

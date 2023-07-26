@@ -4,46 +4,45 @@
 
 class InsideBlockEventMap {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEBLOCKEVENTMAP
 public:
+    // prevent constructor by default
     InsideBlockEventMap() = delete;
-#endif
 
 public:
     /**
      * @symbol ??0InsideBlockEventMap\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI InsideBlockEventMap(class InsideBlockEventMap const&);
+    MCAPI InsideBlockEventMap(class InsideBlockEventMap const&); // NOLINT
     /**
      * @symbol ?getEnteredEvent\@InsideBlockEventMap\@\@QEBAAEBVActorDefinitionTrigger\@\@XZ
      */
-    MCAPI class ActorDefinitionTrigger const& getEnteredEvent() const;
+    MCAPI class ActorDefinitionTrigger const& getEnteredEvent() const; // NOLINT
     /**
      * @symbol ?getExitedEvent\@InsideBlockEventMap\@\@QEBAAEBVActorDefinitionTrigger\@\@XZ
      */
-    MCAPI class ActorDefinitionTrigger const& getExitedEvent() const;
+    MCAPI class ActorDefinitionTrigger const& getExitedEvent() const; // NOLINT
     /**
      * @symbol ?isActorCurrentlyInside\@InsideBlockEventMap\@\@QEBA_NXZ
      */
-    MCAPI bool isActorCurrentlyInside() const;
+    MCAPI bool isActorCurrentlyInside() const; // NOLINT
     /**
      * @symbol ?isWatchingIfActorEnters\@InsideBlockEventMap\@\@QEBA_NXZ
      */
-    MCAPI bool isWatchingIfActorEnters() const;
+    MCAPI bool isWatchingIfActorEnters() const; // NOLINT
     /**
      * @symbol ?isWatchingIfActorExits\@InsideBlockEventMap\@\@QEBA_NXZ
      */
-    MCAPI bool isWatchingIfActorExits() const;
+    MCAPI bool isWatchingIfActorExits() const; // NOLINT
     /**
      * @symbol ??4InsideBlockEventMap\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
-    MCAPI class InsideBlockEventMap& operator=(class InsideBlockEventMap const&);
+    MCAPI class InsideBlockEventMap& operator=(class InsideBlockEventMap const&); // NOLINT
     /**
      * @symbol ?wasActorInsideLastTick\@InsideBlockEventMap\@\@QEBA_NXZ
      */
-    MCAPI bool wasActorInsideLastTick() const;
+    MCAPI bool wasActorInsideLastTick() const; // NOLINT
     /**
      * @symbol ??1InsideBlockEventMap\@\@QEAA\@XZ
      */
-    MCAPI ~InsideBlockEventMap();
+    MCAPI ~InsideBlockEventMap(); // NOLINT
 };

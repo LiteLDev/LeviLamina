@@ -11,49 +11,50 @@ namespace BlockMovementSlowdownMultiplierSystem {
 /**
  * @symbol ?createAdjustFallDistanceSystem\@BlockMovementSlowdownMultiplierSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
  */
-MCAPI struct TickingSystemWithInfo createAdjustFallDistanceSystem();
+MCAPI struct TickingSystemWithInfo createAdjustFallDistanceSystem(); // NOLINT
 /**
  * @symbol ?createApplySlowdownOnMoveSystem\@BlockMovementSlowdownMultiplierSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
  */
-MCAPI struct TickingSystemWithInfo createApplySlowdownOnMoveSystem();
+MCAPI struct TickingSystemWithInfo createApplySlowdownOnMoveSystem(); // NOLINT
 /**
  * @symbol ?createCleanupSystem\@BlockMovementSlowdownMultiplierSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
  */
-MCAPI struct TickingSystemWithInfo createCleanupSystem();
+MCAPI struct TickingSystemWithInfo createCleanupSystem(); // NOLINT
 /**
  * @symbol ?createImmunePlayerSystem\@BlockMovementSlowdownMultiplierSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
  */
-MCAPI struct TickingSystemWithInfo createImmunePlayerSystem();
+MCAPI struct TickingSystemWithInfo createImmunePlayerSystem(); // NOLINT
 /**
  * @symbol ?createImmuneSpiderSystem\@BlockMovementSlowdownMultiplierSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
  */
-MCAPI struct TickingSystemWithInfo createImmuneSpiderSystem();
+MCAPI struct TickingSystemWithInfo createImmuneSpiderSystem(); // NOLINT
 /**
  * @symbol ?createImmuneWitherBossSystem\@BlockMovementSlowdownMultiplierSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
  */
-MCAPI struct TickingSystemWithInfo createImmuneWitherBossSystem();
+MCAPI struct TickingSystemWithInfo createImmuneWitherBossSystem(); // NOLINT
 /**
  * @symbol
  * ?tickAdjustFallDistance\@BlockMovementSlowdownMultiplierSystem\@\@YAXAEBUBlockMovementSlowdownAppliedComponent\@\@AEAUFallDistanceComponent\@\@\@Z
  */
-MCAPI void tickAdjustFallDistance(struct BlockMovementSlowdownAppliedComponent const&, struct FallDistanceComponent&);
+MCAPI void
+tickAdjustFallDistance(struct BlockMovementSlowdownAppliedComponent const&, struct FallDistanceComponent&); // NOLINT
 /**
  * @symbol
  * ?tickApplySlowdownOnMove\@BlockMovementSlowdownMultiplierSystem\@\@YAXAEAUBlockMovementSlowdownMultiplierComponent\@\@AEAUMoveRequestComponent\@\@AEAUStateVectorComponent\@\@\@Z
  */
 MCAPI void
-tickApplySlowdownOnMove(struct BlockMovementSlowdownMultiplierComponent&, struct MoveRequestComponent&, struct StateVectorComponent&);
+tickApplySlowdownOnMove(struct BlockMovementSlowdownMultiplierComponent&, struct MoveRequestComponent&, struct StateVectorComponent&); // NOLINT
 /**
  * @symbol
  * ?tickImmunePlayer\@BlockMovementSlowdownMultiplierSystem\@\@YAXAEBVStrictEntityContext\@\@AEAUBlockMovementSlowdownMultiplierComponent\@\@AEBUAbilitiesComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UBlockMovementSlowdownAppliedComponent\@\@\@\@\@Z
  */
 MCAPI void
-tickImmunePlayer(class StrictEntityContext const&, struct BlockMovementSlowdownMultiplierComponent&, struct AbilitiesComponent const&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct BlockMovementSlowdownAppliedComponent>);
+tickImmunePlayer(class StrictEntityContext const&, struct BlockMovementSlowdownMultiplierComponent&, struct AbilitiesComponent const&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct BlockMovementSlowdownAppliedComponent>); // NOLINT
 /**
  * @symbol
  * ?tickImmuneSlowdown\@BlockMovementSlowdownMultiplierSystem\@\@YAXAEBVStrictEntityContext\@\@AEAUBlockMovementSlowdownMultiplierComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UBlockMovementSlowdownAppliedComponent\@\@\@\@\@Z
  */
 MCAPI void
-tickImmuneSlowdown(class StrictEntityContext const&, struct BlockMovementSlowdownMultiplierComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct BlockMovementSlowdownAppliedComponent>);
+tickImmuneSlowdown(class StrictEntityContext const&, struct BlockMovementSlowdownMultiplierComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct BlockMovementSlowdownAppliedComponent>); // NOLINT
 
 }; // namespace BlockMovementSlowdownMultiplierSystem

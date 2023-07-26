@@ -6,6 +6,6 @@ namespace PlayerRotationSystem {
 /**
  * @symbol ?createSystem\@PlayerRotationSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
  */
-MCAPI struct TickingSystemWithInfo createSystem();
+MCAPI struct TickingSystemWithInfo createSystem(); // NOLINT
 
 }; // namespace PlayerRotationSystem

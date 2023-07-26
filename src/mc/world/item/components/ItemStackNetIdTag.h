@@ -4,12 +4,9 @@
 
 struct ItemStackNetIdTag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKNETIDTAG
 public:
+    // prevent constructor by default
     ItemStackNetIdTag& operator=(ItemStackNetIdTag const&) = delete;
     ItemStackNetIdTag(ItemStackNetIdTag const&)            = delete;
     ItemStackNetIdTag()                                    = delete;
-#endif
-
-public:
 };

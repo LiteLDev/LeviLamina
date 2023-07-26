@@ -7,28 +7,27 @@
 
 class HideDescription : public ::Description {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HIDEDESCRIPTION
 public:
+    // prevent constructor by default
     HideDescription& operator=(HideDescription const&) = delete;
     HideDescription(HideDescription const&)            = delete;
     HideDescription()                                  = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol ?getJsonName\@HideDescription\@\@UEBAPEBDXZ
      */
-    virtual char const* getJsonName() const;
+    virtual char const* getJsonName() const; // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HIDEDESCRIPTION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~HideDescription();
+    MCVAPI ~HideDescription(); // NOLINT
 #endif
 };

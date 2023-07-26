@@ -5,12 +5,9 @@
 template <typename T0>
 struct MutableActorGameplayEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MUTABLEACTORGAMEPLAYEVENT
 public:
+    // prevent constructor by default
     MutableActorGameplayEvent& operator=(MutableActorGameplayEvent const&) = delete;
     MutableActorGameplayEvent(MutableActorGameplayEvent const&)            = delete;
     MutableActorGameplayEvent()                                            = delete;
-#endif
-
-public:
 };

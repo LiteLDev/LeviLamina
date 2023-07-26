@@ -4,22 +4,21 @@
 
 struct BlockCraftingTableComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCRAFTINGTABLECOMPONENT
 public:
+    // prevent constructor by default
     BlockCraftingTableComponent& operator=(BlockCraftingTableComponent const&) = delete;
     BlockCraftingTableComponent(BlockCraftingTableComponent const&)            = delete;
     BlockCraftingTableComponent()                                              = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCRAFTINGTABLECOMPONENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~BlockCraftingTableComponent();
+    MCVAPI ~BlockCraftingTableComponent(); // NOLINT
 #endif
     /**
      * @symbol ??4BlockCraftingTableComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct BlockCraftingTableComponent& operator=(struct BlockCraftingTableComponent&&);
+    MCAPI struct BlockCraftingTableComponent& operator=(struct BlockCraftingTableComponent&&); // NOLINT
 };

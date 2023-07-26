@@ -4,12 +4,9 @@
 
 struct NibblePair {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NIBBLEPAIR
 public:
+    // prevent constructor by default
     NibblePair& operator=(NibblePair const&) = delete;
     NibblePair(NibblePair const&)            = delete;
     NibblePair()                             = delete;
-#endif
-
-public:
 };

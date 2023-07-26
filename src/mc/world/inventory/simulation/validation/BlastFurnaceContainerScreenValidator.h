@@ -7,20 +7,19 @@
 
 class BlastFurnaceContainerScreenValidator : public ::FurnaceContainerScreenValidator {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLASTFURNACECONTAINERSCREENVALIDATOR
 public:
+    // prevent constructor by default
     BlastFurnaceContainerScreenValidator& operator=(BlastFurnaceContainerScreenValidator const&) = delete;
     BlastFurnaceContainerScreenValidator(BlastFurnaceContainerScreenValidator const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @symbol ??0BlastFurnaceContainerScreenValidator\@\@QEAA\@XZ
      */
-    MCAPI BlastFurnaceContainerScreenValidator();
+    MCAPI BlastFurnaceContainerScreenValidator(); // NOLINT
 };

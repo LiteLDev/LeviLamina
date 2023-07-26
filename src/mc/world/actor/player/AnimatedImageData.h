@@ -11,10 +11,9 @@ namespace persona { enum class AnimationExpression; }
 
 class AnimatedImageData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANIMATEDIMAGEDATA
 public:
+    // prevent constructor by default
     AnimatedImageData() = delete;
-#endif
 
 public:
     /**
@@ -26,13 +25,13 @@ public:
         enum class persona::AnimationExpression,
         struct mce::Image const&,
         float
-    );
+    ); // NOLINT
     /**
      * @symbol ??0AnimatedImageData\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI AnimatedImageData(class AnimatedImageData const&);
+    MCAPI AnimatedImageData(class AnimatedImageData const&); // NOLINT
     /**
      * @symbol ??4AnimatedImageData\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
-    MCAPI class AnimatedImageData& operator=(class AnimatedImageData const&);
+    MCAPI class AnimatedImageData& operator=(class AnimatedImageData const&); // NOLINT
 };

@@ -5,12 +5,9 @@
 template <typename T0>
 class ToFloatFunction {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TOFLOATFUNCTION
 public:
+    // prevent constructor by default
     ToFloatFunction& operator=(ToFloatFunction const&) = delete;
     ToFloatFunction(ToFloatFunction const&)            = delete;
     ToFloatFunction()                                  = delete;
-#endif
-
-public:
 };

@@ -11,30 +11,29 @@
 
 class NormalTickFilterSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NORMALTICKFILTERSYSTEM
 public:
+    // prevent constructor by default
     NormalTickFilterSystem& operator=(NormalTickFilterSystem const&) = delete;
     NormalTickFilterSystem(NormalTickFilterSystem const&)            = delete;
     NormalTickFilterSystem()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol ?createGenericSystem\@NormalTickFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createGenericSystem();
+    MCAPI static struct TickingSystemWithInfo createGenericSystem(); // NOLINT
     /**
      * @symbol ?createLocalPlayerSystem\@NormalTickFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createLocalPlayerSystem();
+    MCAPI static struct TickingSystemWithInfo createLocalPlayerSystem(); // NOLINT
     /**
      * @symbol
      * ?tickGenericSystem\@NormalTickFilterSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@\@\@V?$Optional\@$$CBVDimensionStateComponent\@\@\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@USkipNormalTick\@\@\@\@\@\@\@Z
      */
-    MCAPI static void tickGenericSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct PlayerComponentFlag>>, class Optional<class DimensionStateComponent const>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct SkipNormalTick>>);
+    MCAPI static void tickGenericSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct PlayerComponentFlag>>, class Optional<class DimensionStateComponent const>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct SkipNormalTick>>); // NOLINT
     /**
      * @symbol
      * ?tickLocalPlayerSystem\@NormalTickFilterSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@ULocalPlayerComponentFlag\@\@\@\@\@\@V?$Optional\@$$CBVLoadingStateComponent\@\@\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@USkipNormalTick\@\@\@\@\@\@\@Z
      */
-    MCAPI static void tickLocalPlayerSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct LocalPlayerComponentFlag>>, class Optional<class LoadingStateComponent const>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct SkipNormalTick>>);
+    MCAPI static void tickLocalPlayerSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct LocalPlayerComponentFlag>>, class Optional<class LoadingStateComponent const>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct SkipNormalTick>>); // NOLINT
 };

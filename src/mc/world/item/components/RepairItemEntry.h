@@ -4,23 +4,22 @@
 
 struct RepairItemEntry {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_REPAIRITEMENTRY
 public:
+    // prevent constructor by default
     RepairItemEntry(RepairItemEntry const&) = delete;
     RepairItemEntry()                       = delete;
-#endif
 
 public:
     /**
      * @symbol ??4RepairItemEntry\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct RepairItemEntry& operator=(struct RepairItemEntry&&);
+    MCAPI struct RepairItemEntry& operator=(struct RepairItemEntry&&); // NOLINT
     /**
      * @symbol ??4RepairItemEntry\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
-    MCAPI struct RepairItemEntry& operator=(struct RepairItemEntry const&);
+    MCAPI struct RepairItemEntry& operator=(struct RepairItemEntry const&); // NOLINT
     /**
      * @symbol ??1RepairItemEntry\@\@QEAA\@XZ
      */
-    MCAPI ~RepairItemEntry();
+    MCAPI ~RepairItemEntry(); // NOLINT
 };

@@ -4,12 +4,9 @@
 
 struct EmotePlayedTelemetryDataComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EMOTEPLAYEDTELEMETRYDATACOMPONENT
 public:
+    // prevent constructor by default
     EmotePlayedTelemetryDataComponent& operator=(EmotePlayedTelemetryDataComponent const&) = delete;
     EmotePlayedTelemetryDataComponent(EmotePlayedTelemetryDataComponent const&)            = delete;
     EmotePlayedTelemetryDataComponent()                                                    = delete;
-#endif
-
-public:
 };

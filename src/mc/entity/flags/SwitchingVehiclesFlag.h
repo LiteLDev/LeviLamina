@@ -4,12 +4,9 @@
 
 struct SwitchingVehiclesFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWITCHINGVEHICLESFLAG
 public:
+    // prevent constructor by default
     SwitchingVehiclesFlag& operator=(SwitchingVehiclesFlag const&) = delete;
     SwitchingVehiclesFlag(SwitchingVehiclesFlag const&)            = delete;
     SwitchingVehiclesFlag()                                        = delete;
-#endif
-
-public:
 };

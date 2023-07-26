@@ -2,22 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Random;
+// clang-format on
+
 namespace ValueProviders {
 
 struct UniformFloat {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VALUEPROVIDERS_UNIFORMFLOAT
 public:
+    // prevent constructor by default
     UniformFloat& operator=(UniformFloat const&) = delete;
     UniformFloat(UniformFloat const&)            = delete;
     UniformFloat()                               = delete;
-#endif
 
 public:
     /**
      * @symbol ?generateNext\@UniformFloat\@ValueProviders\@\@QEBAMAEAVRandom\@\@\@Z
      */
-    MCAPI float generateNext(class Random&) const;
+    MCAPI float generateNext(class Random&) const; // NOLINT
 };
 
 }; // namespace ValueProviders

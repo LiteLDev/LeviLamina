@@ -6,14 +6,11 @@ namespace Scripting {
 
 struct Version {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTING_VERSION
 public:
+    // prevent constructor by default
     Version& operator=(Version const&) = delete;
     Version(Version const&)            = delete;
     Version()                          = delete;
-#endif
-
-public:
 };
 
 }; // namespace Scripting

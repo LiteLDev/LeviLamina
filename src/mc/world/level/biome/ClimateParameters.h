@@ -9,12 +9,11 @@ namespace ClimateUtils { struct Parameter; }
 
 struct ClimateParameters {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIMATEPARAMETERS
 public:
+    // prevent constructor by default
     ClimateParameters& operator=(ClimateParameters const&) = delete;
     ClimateParameters(ClimateParameters const&)            = delete;
     ClimateParameters()                                    = delete;
-#endif
 
 public:
     /**
@@ -28,5 +27,5 @@ public:
         struct ClimateUtils::Parameter,
         struct ClimateUtils::Parameter,
         float
-    );
+    ); // NOLINT
 };

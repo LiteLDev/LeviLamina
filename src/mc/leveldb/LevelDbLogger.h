@@ -4,22 +4,21 @@
 
 class LevelDbLogger {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELDBLOGGER
 public:
+    // prevent constructor by default
     LevelDbLogger& operator=(LevelDbLogger const&) = delete;
     LevelDbLogger(LevelDbLogger const&)            = delete;
     LevelDbLogger()                                = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?Logv\@LevelDbLogger\@\@EEAAXPEBDPEAD\@Z
      */
-    virtual void Logv(char const*, char*);
+    virtual void Logv(char const*, char*); // NOLINT
 };

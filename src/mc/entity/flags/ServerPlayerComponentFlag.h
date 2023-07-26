@@ -4,12 +4,9 @@
 
 struct ServerPlayerComponentFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERPLAYERCOMPONENTFLAG
 public:
+    // prevent constructor by default
     ServerPlayerComponentFlag& operator=(ServerPlayerComponentFlag const&) = delete;
     ServerPlayerComponentFlag(ServerPlayerComponentFlag const&)            = delete;
     ServerPlayerComponentFlag()                                            = delete;
-#endif
-
-public:
 };

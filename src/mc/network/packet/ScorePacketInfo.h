@@ -4,20 +4,19 @@
 
 struct ScorePacketInfo {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCOREPACKETINFO
 public:
+    // prevent constructor by default
     ScorePacketInfo& operator=(ScorePacketInfo const&) = delete;
     ScorePacketInfo(ScorePacketInfo const&)            = delete;
     ScorePacketInfo()                                  = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ScorePacketInfo\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI ScorePacketInfo(struct ScorePacketInfo&&);
+    MCAPI ScorePacketInfo(struct ScorePacketInfo&&); // NOLINT
     /**
      * @symbol ??1ScorePacketInfo\@\@QEAA\@XZ
      */
-    MCAPI ~ScorePacketInfo();
+    MCAPI ~ScorePacketInfo(); // NOLINT
 };

@@ -4,12 +4,9 @@
 
 struct AABBContactPoint {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AABBCONTACTPOINT
 public:
+    // prevent constructor by default
     AABBContactPoint& operator=(AABBContactPoint const&) = delete;
     AABBContactPoint(AABBContactPoint const&)            = delete;
     AABBContactPoint()                                   = delete;
-#endif
-
-public:
 };

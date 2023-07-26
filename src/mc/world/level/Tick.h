@@ -4,16 +4,15 @@
 
 struct Tick {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICK
 public:
+    // prevent constructor by default
     Tick& operator=(Tick const&) = delete;
     Tick(Tick const&)            = delete;
     Tick()                       = delete;
-#endif
 
 public:
     /**
      * @symbol ?MAX\@Tick\@\@2U1\@B
      */
-    MCAPI static struct Tick const MAX;
+    MCAPI static struct Tick const MAX; // NOLINT
 };

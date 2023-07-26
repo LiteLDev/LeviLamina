@@ -4,20 +4,19 @@
 
 struct PacksInfoData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKSINFODATA
 public:
+    // prevent constructor by default
     PacksInfoData& operator=(PacksInfoData const&) = delete;
     PacksInfoData(PacksInfoData const&)            = delete;
     PacksInfoData()                                = delete;
-#endif
 
 public:
     /**
      * @symbol ?getBehaviorPackSize\@PacksInfoData\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 getBehaviorPackSize() const;
+    MCAPI unsigned __int64 getBehaviorPackSize() const; // NOLINT
     /**
      * @symbol ?getResourcePackSize\@PacksInfoData\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 getResourcePackSize() const;
+    MCAPI unsigned __int64 getResourcePackSize() const; // NOLINT
 };

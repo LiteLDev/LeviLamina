@@ -6,14 +6,11 @@ namespace Util {
 
 struct ContainerReplacementParams {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_UTIL_CONTAINERREPLACEMENTPARAMS
 public:
+    // prevent constructor by default
     ContainerReplacementParams& operator=(ContainerReplacementParams const&) = delete;
     ContainerReplacementParams(ContainerReplacementParams const&)            = delete;
     ContainerReplacementParams()                                             = delete;
-#endif
-
-public:
 };
 
 }; // namespace Util

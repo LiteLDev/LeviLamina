@@ -11,56 +11,56 @@ namespace DripstoneUtils {
 /**
  * @symbol ?buildBaseToTipColumn\@DripstoneUtils\@\@YAXAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@EH_N\@Z
  */
-MCAPI void buildBaseToTipColumn(class IBlockWorldGenAPI&, class BlockPos const&, unsigned char, int, bool);
+MCAPI void buildBaseToTipColumn(class IBlockWorldGenAPI&, class BlockPos const&, unsigned char, int, bool); // NOLINT
 /**
  * @symbol ?canBeAdjacentToWater\@DripstoneUtils\@\@YA_NAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
  */
-MCAPI bool canBeAdjacentToWater(class IBlockWorldGenAPI&, class BlockPos const&);
+MCAPI bool canBeAdjacentToWater(class IBlockWorldGenAPI&, class BlockPos const&); // NOLINT
 /**
  * @symbol ?canPlacePool\@DripstoneUtils\@\@YA_NAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
  */
-MCAPI bool canPlacePool(class IBlockWorldGenAPI&, class BlockPos const&);
+MCAPI bool canPlacePool(class IBlockWorldGenAPI&, class BlockPos const&); // NOLINT
 /**
  * @symbol ?getDripstoneHeight\@DripstoneUtils\@\@YAMMMMM\@Z
  */
-MCAPI float getDripstoneHeight(float, float, float, float);
+MCAPI float getDripstoneHeight(float, float, float, float); // NOLINT
 /**
  * @symbol ?getPlacementBlock\@DripstoneUtils\@\@YAAEBVBlock\@\@EAEBW4DripstoneThickness\@\@\@Z
  */
-MCAPI class Block const& getPlacementBlock(unsigned char, enum class DripstoneThickness const&);
+MCAPI class Block const& getPlacementBlock(unsigned char, enum class DripstoneThickness const&); // NOLINT
 /**
  * @symbol
  * ?getPointedDripstoneBasePos\@DripstoneUtils\@\@YA?AV?$optional\@UPointedDripstoneBasePos\@DripstoneUtils\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
  */
 MCAPI class std::optional<struct DripstoneUtils::PointedDripstoneBasePos>
-getPointedDripstoneBasePos(class IBlockWorldGenAPI&, class BlockPos const&, class Random&);
+getPointedDripstoneBasePos(class IBlockWorldGenAPI&, class BlockPos const&, class Random&); // NOLINT
 /**
  * @symbol ?isCircleMostlyEmbeddedInStone\@DripstoneUtils\@\@YA_NAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@H\@Z
  */
-MCAPI bool isCircleMostlyEmbeddedInStone(class IBlockWorldGenAPI&, class BlockPos const&, int);
+MCAPI bool isCircleMostlyEmbeddedInStone(class IBlockWorldGenAPI&, class BlockPos const&, int); // NOLINT
 /**
  * @symbol ?isDripstoneBaseOrLava\@DripstoneUtils\@\@YA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
  */
-MCAPI bool isDripstoneBaseOrLava(class IBlockWorldGenAPI const&, class BlockPos const&);
+MCAPI bool isDripstoneBaseOrLava(class IBlockWorldGenAPI const&, class BlockPos const&); // NOLINT
 /**
  * @symbol ?isEmptyOrWater\@DripstoneUtils\@\@YA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
  */
-MCAPI bool isEmptyOrWater(class IBlockWorldGenAPI const&, class BlockPos const&);
+MCAPI bool isEmptyOrWater(class IBlockWorldGenAPI const&, class BlockPos const&); // NOLINT
 /**
  * @symbol ?isEmptyOrWaterOrLava\@DripstoneUtils\@\@YA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
  */
-MCAPI bool isEmptyOrWaterOrLava(class IBlockWorldGenAPI const&, class BlockPos const&);
+MCAPI bool isEmptyOrWaterOrLava(class IBlockWorldGenAPI const&, class BlockPos const&); // NOLINT
 /**
  * @symbol ?isLava\@DripstoneUtils\@\@YA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
  */
-MCAPI bool isLava(class IBlockWorldGenAPI const&, class BlockPos const&);
+MCAPI bool isLava(class IBlockWorldGenAPI const&, class BlockPos const&); // NOLINT
 /**
  * @symbol ?placeDripstoneBlockIfPossible\@DripstoneUtils\@\@YA_NAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
  */
-MCAPI bool placeDripstoneBlockIfPossible(class IBlockWorldGenAPI&, class BlockPos const&);
+MCAPI bool placeDripstoneBlockIfPossible(class IBlockWorldGenAPI&, class BlockPos const&); // NOLINT
 /**
  * @symbol ?replaceableByDripstone\@DripstoneUtils\@\@YA_NAEBVBlockLegacy\@\@\@Z
  */
-MCAPI bool replaceableByDripstone(class BlockLegacy const&);
+MCAPI bool replaceableByDripstone(class BlockLegacy const&); // NOLINT
 
 }; // namespace DripstoneUtils

@@ -9,18 +9,17 @@ namespace Social::Events { class Event; }
 
 class PlayerRespawnTelemetryData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERRESPAWNTELEMETRYDATA
 public:
+    // prevent constructor by default
     PlayerRespawnTelemetryData& operator=(PlayerRespawnTelemetryData const&) = delete;
     PlayerRespawnTelemetryData(PlayerRespawnTelemetryData const&)            = delete;
     PlayerRespawnTelemetryData()                                             = delete;
-#endif
 
 public:
     /**
      * @symbol ?WriteEventData\@PlayerRespawnTelemetryData\@\@QEBAXAEAVEvent\@Events\@Social\@\@\@Z
      */
-    MCAPI void WriteEventData(class Social::Events::Event&) const;
+    MCAPI void WriteEventData(class Social::Events::Event&) const; // NOLINT
 
     // private:
 
@@ -29,5 +28,5 @@ private:
      * @symbol
      * ?mEventName\@PlayerRespawnTelemetryData\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const mEventName;
+    MCAPI static std::string const mEventName; // NOLINT
 };

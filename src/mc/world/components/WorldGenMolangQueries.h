@@ -6,6 +6,6 @@ namespace WorldGenMolangQueries {
 /**
  * @symbol ?registerWorldGenMolangQueries\@WorldGenMolangQueries\@\@YAXXZ
  */
-MCAPI void registerWorldGenMolangQueries();
+MCAPI void registerWorldGenMolangQueries(); // NOLINT
 
 }; // namespace WorldGenMolangQueries

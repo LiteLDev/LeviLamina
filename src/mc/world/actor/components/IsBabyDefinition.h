@@ -12,27 +12,26 @@ namespace JsonUtil { class EmptyClass; }
 
 struct IsBabyDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISBABYDEFINITION
 public:
+    // prevent constructor by default
     IsBabyDefinition& operator=(IsBabyDefinition const&) = delete;
     IsBabyDefinition(IsBabyDefinition const&)            = delete;
     IsBabyDefinition()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ?initialize\@IsBabyDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&) const;
+    MCAPI void initialize(class EntityContext&) const; // NOLINT
     /**
      * @symbol ?uninitialize\@IsBabyDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void uninitialize(class EntityContext&) const;
+    MCAPI void uninitialize(class EntityContext&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@IsBabyDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UIsBabyDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
     buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsBabyDefinition>>&);
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsBabyDefinition>>&); // NOLINT
 };

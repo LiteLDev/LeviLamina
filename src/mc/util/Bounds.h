@@ -12,24 +12,23 @@ public:
     // Bounds inner types define
     enum class Option {};
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOUNDS
 public:
+    // prevent constructor by default
     Bounds& operator=(Bounds const&) = delete;
     Bounds(Bounds const&)            = delete;
     Bounds()                         = delete;
-#endif
 
 public:
     /**
      * @symbol ??0Bounds\@\@QEAA\@AEBVChunkPos\@\@0\@Z
      */
-    MCAPI Bounds(class ChunkPos const&, class ChunkPos const&);
+    MCAPI Bounds(class ChunkPos const&, class ChunkPos const&); // NOLINT
     /**
      * @symbol ??0Bounds\@\@QEAA\@AEBVBlockPos\@\@0HW4Option\@0\@\@Z
      */
-    MCAPI Bounds(class BlockPos const&, class BlockPos const&, int, enum class Bounds::Option);
+    MCAPI Bounds(class BlockPos const&, class BlockPos const&, int, enum class Bounds::Option); // NOLINT
     /**
      * @symbol ??0Bounds\@\@QEAA\@AEBVBlockPos\@\@HHFF\@Z
      */
-    MCAPI Bounds(class BlockPos const&, int, int, short, short);
+    MCAPI Bounds(class BlockPos const&, int, int, short, short); // NOLINT
 };

@@ -4,29 +4,28 @@
 
 class ActorEventResponseFactory {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOREVENTRESPONSEFACTORY
 public:
+    // prevent constructor by default
     ActorEventResponseFactory& operator=(ActorEventResponseFactory const&) = delete;
     ActorEventResponseFactory(ActorEventResponseFactory const&)            = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTRESPONSEFACTORY
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ActorEventResponseFactory();
+    MCVAPI ~ActorEventResponseFactory(); // NOLINT
 #endif
     /**
      * @symbol ??0ActorEventResponseFactory\@\@QEAA\@XZ
      */
-    MCAPI ActorEventResponseFactory();
+    MCAPI ActorEventResponseFactory(); // NOLINT
     /**
      * @symbol ?initSchema\@ActorEventResponseFactory\@\@QEAAXXZ
      */
-    MCAPI void initSchema();
+    MCAPI void initSchema(); // NOLINT
     /**
      * @symbol ?initializeFactory\@ActorEventResponseFactory\@\@QEAAXAEBVExperiments\@\@\@Z
      */
-    MCAPI void initializeFactory(class Experiments const&);
+    MCAPI void initializeFactory(class Experiments const&); // NOLINT
 };

@@ -4,16 +4,15 @@
 
 class SubpackInfoCollection {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBPACKINFOCOLLECTION
 public:
+    // prevent constructor by default
     SubpackInfoCollection& operator=(SubpackInfoCollection const&) = delete;
     SubpackInfoCollection(SubpackInfoCollection const&)            = delete;
     SubpackInfoCollection()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ?addSubpackInfo\@SubpackInfoCollection\@\@QEAAX$$QEAUSubpackInfo\@\@\@Z
      */
-    MCAPI void addSubpackInfo(struct SubpackInfo&&);
+    MCAPI void addSubpackInfo(struct SubpackInfo&&); // NOLINT
 };

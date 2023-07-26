@@ -9,22 +9,21 @@ namespace Json { class Value; }
 
 class CompositeDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOSITEDEFINITION
 public:
+    // prevent constructor by default
     CompositeDefinition& operator=(CompositeDefinition const&) = delete;
     CompositeDefinition(CompositeDefinition const&)            = delete;
     CompositeDefinition()                                      = delete;
-#endif
 
 public:
     /**
      * @symbol ?get\@CompositeDefinition\@\@QEBAPEBVBehaviorDefinition\@\@_K\@Z
      */
-    MCAPI class BehaviorDefinition const* get(unsigned __int64) const;
+    MCAPI class BehaviorDefinition const* get(unsigned __int64) const; // NOLINT
     /**
      * @symbol ?getCount\@CompositeDefinition\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 getCount() const;
+    MCAPI unsigned __int64 getCount() const; // NOLINT
 
     // protected:
     /**
@@ -36,7 +35,7 @@ public:
         std::vector<std::unique_ptr<class BehaviorDefinition>>&,
         class BehaviorFactory const&,
         class BehaviorTreeDefinitionPtr
-    );
+    ); // NOLINT
 
 protected:
 };

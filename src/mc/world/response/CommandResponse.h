@@ -13,30 +13,29 @@ namespace JsonUtil { class EmptyClass; }
 
 class CommandResponse {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDRESPONSE
 public:
+    // prevent constructor by default
     CommandResponse& operator=(CommandResponse const&) = delete;
     CommandResponse(CommandResponse const&)            = delete;
     CommandResponse()                                  = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?getName\@CommandResponse\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string const& getName() const;
+    virtual std::string const& getName() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol ?executeAction\@CommandResponse\@\@UEBAXAEAVRenderParams\@\@\@Z
      */
-    virtual void executeAction(class RenderParams&) const;
+    virtual void executeAction(class RenderParams&) const; // NOLINT
     /**
      * @vftbl 3
      * @symbol
@@ -44,5 +43,5 @@ public:
      */
     virtual void
     buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>>&, class Factory<class EventResponse> const&)
-        const;
+        const; // NOLINT
 };

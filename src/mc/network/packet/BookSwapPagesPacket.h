@@ -4,12 +4,9 @@
 
 class BookSwapPagesPacket {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOOKSWAPPAGESPACKET
 public:
+    // prevent constructor by default
     BookSwapPagesPacket& operator=(BookSwapPagesPacket const&) = delete;
     BookSwapPagesPacket(BookSwapPagesPacket const&)            = delete;
     BookSwapPagesPacket()                                      = delete;
-#endif
-
-public:
 };

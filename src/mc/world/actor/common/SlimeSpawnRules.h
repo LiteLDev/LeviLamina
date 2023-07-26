@@ -6,6 +6,6 @@ namespace SlimeSpawnRules {
 /**
  * @symbol ?checkSpawnRulesCallback\@SlimeSpawnRules\@\@YA_NAEBVSpawnConditions\@\@AEAVBlockSource\@\@\@Z
  */
-MCAPI bool checkSpawnRulesCallback(class SpawnConditions const&, class BlockSource&);
+MCAPI bool checkSpawnRulesCallback(class SpawnConditions const&, class BlockSource&); // NOLINT
 
 }; // namespace SlimeSpawnRules

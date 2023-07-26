@@ -4,19 +4,18 @@
 
 struct CommandSyntaxInformation {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDSYNTAXINFORMATION
 public:
+    // prevent constructor by default
     CommandSyntaxInformation& operator=(CommandSyntaxInformation const&) = delete;
     CommandSyntaxInformation(CommandSyntaxInformation const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0CommandSyntaxInformation\@\@QEAA\@XZ
      */
-    MCAPI CommandSyntaxInformation();
+    MCAPI CommandSyntaxInformation(); // NOLINT
     /**
      * @symbol ??1CommandSyntaxInformation\@\@QEAA\@XZ
      */
-    MCAPI ~CommandSyntaxInformation();
+    MCAPI ~CommandSyntaxInformation(); // NOLINT
 };

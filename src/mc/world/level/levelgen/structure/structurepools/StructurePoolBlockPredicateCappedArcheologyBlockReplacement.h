@@ -9,27 +9,26 @@
 class StructurePoolBlockPredicateCappedArcheologyBlockReplacement
 : public ::StructurePoolBlockPredicateCappedRandomBlockReplacement {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREPOOLBLOCKPREDICATECAPPEDARCHEOLOGYBLOCKREPLACEMENT
 public:
+    // prevent constructor by default
     StructurePoolBlockPredicateCappedArcheologyBlockReplacement&
     operator=(StructurePoolBlockPredicateCappedArcheologyBlockReplacement const&) = delete;
     StructurePoolBlockPredicateCappedArcheologyBlockReplacement(StructurePoolBlockPredicateCappedArcheologyBlockReplacement const&) =
         delete;
     StructurePoolBlockPredicateCappedArcheologyBlockReplacement() = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol
      * ?finalize\@StructurePoolBlockPredicateCappedArcheologyBlockReplacement\@\@UEAA_NAEAVBlockSource\@\@AEAVIRandom\@\@\@Z
      */
-    virtual bool finalize(class BlockSource&, class IRandom&);
+    virtual bool finalize(class BlockSource&, class IRandom&); // NOLINT
     /**
      * @symbol
      * ??0StructurePoolBlockPredicateCappedArcheologyBlockReplacement\@\@QEAA\@AEBV?$map\@VHashedString\@\@V1\@U?$less\@VHashedString\@\@\@std\@\@V?$allocator\@U?$pair\@$$CBVHashedString\@\@V1\@\@std\@\@\@3\@\@std\@\@_KW4Placement\@BrushableBlockActor\@\@\@Z
@@ -42,5 +41,5 @@ public:
             class std::allocator<struct std::pair<class HashedString const, class HashedString>>> const&,
         unsigned __int64,
         enum class BrushableBlockActor::Placement
-    );
+    ); // NOLINT
 };

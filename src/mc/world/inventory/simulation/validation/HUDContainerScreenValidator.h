@@ -7,20 +7,19 @@
 
 class HUDContainerScreenValidator : public ::ContainerScreenValidatorBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HUDCONTAINERSCREENVALIDATOR
 public:
+    // prevent constructor by default
     HUDContainerScreenValidator& operator=(HUDContainerScreenValidator const&) = delete;
     HUDContainerScreenValidator(HUDContainerScreenValidator const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @symbol ??0HUDContainerScreenValidator\@\@QEAA\@XZ
      */
-    MCAPI HUDContainerScreenValidator();
+    MCAPI HUDContainerScreenValidator(); // NOLINT
 };

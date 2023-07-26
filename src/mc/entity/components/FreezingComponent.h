@@ -4,45 +4,44 @@
 
 class FreezingComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FREEZINGCOMPONENT
 public:
+    // prevent constructor by default
     FreezingComponent& operator=(FreezingComponent const&) = delete;
     FreezingComponent(FreezingComponent const&)            = delete;
     FreezingComponent()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ?addAdditionalSaveData\@FreezingComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
     /**
      * @symbol ?decreaseFreezingEffect\@FreezingComponent\@\@QEAAXXZ
      */
-    MCAPI void decreaseFreezingEffect();
+    MCAPI void decreaseFreezingEffect(); // NOLINT
     /**
      * @symbol ?getFreezingEffectStrength\@FreezingComponent\@\@QEBAMXZ
      */
-    MCAPI float getFreezingEffectStrength() const;
+    MCAPI float getFreezingEffectStrength() const; // NOLINT
     /**
      * @symbol ?increaseFreezingEffect\@FreezingComponent\@\@QEAAXXZ
      */
-    MCAPI void increaseFreezingEffect();
+    MCAPI void increaseFreezingEffect(); // NOLINT
     /**
      * @symbol ?isFullyFrozen\@FreezingComponent\@\@QEBA_NXZ
      */
-    MCAPI bool isFullyFrozen() const;
+    MCAPI bool isFullyFrozen() const; // NOLINT
     /**
      * @symbol ?isFullyUnfrozen\@FreezingComponent\@\@QEBA_NXZ
      */
-    MCAPI bool isFullyUnfrozen() const;
+    MCAPI bool isFullyUnfrozen() const; // NOLINT
     /**
      * @symbol
      * ?readAdditionalSaveData\@FreezingComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&); // NOLINT
     /**
      * @symbol ?resetFreezingEffect\@FreezingComponent\@\@QEAAXXZ
      */
-    MCAPI void resetFreezingEffect();
+    MCAPI void resetFreezingEffect(); // NOLINT
 };

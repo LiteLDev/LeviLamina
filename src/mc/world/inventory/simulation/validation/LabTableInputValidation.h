@@ -7,70 +7,71 @@
 
 class LabTableInputValidation : public ::ContainerValidationBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LABTABLEINPUTVALIDATION
 public:
+    // prevent constructor by default
     LabTableInputValidation& operator=(LabTableInputValidation const&) = delete;
     LabTableInputValidation(LabTableInputValidation const&)            = delete;
     LabTableInputValidation()                                          = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?isValidSlotForContainer\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVContainer\@\@H\@Z
      */
-    virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
+    virtual bool
+    isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?isItemAllowedInSlot\@LabTableInputValidation\@\@UEBA_NAEBVContainerScreenContext\@\@HAEBVItemStackBase\@\@H\@Z
      */
-    virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    virtual bool
+    isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?getAvailableSetCount\@ContainerValidationBase\@\@UEBAHHAEBVItemStackBase\@\@\@Z
      */
-    virtual int getAvailableSetCount(int, class ItemStackBase const&) const;
+    virtual int getAvailableSetCount(int, class ItemStackBase const&) const; // NOLINT
     /**
      * @vftbl 4
      * @symbol __unk_vfn_4
      */
-    virtual void __unk_vfn_4();
+    virtual void __unk_vfn_4(); // NOLINT
     /**
      * @vftbl 5
      * @symbol __unk_vfn_5
      */
-    virtual void __unk_vfn_5();
+    virtual void __unk_vfn_5(); // NOLINT
     /**
      * @vftbl 6
      * @symbol ?canItemMoveToContainer\@ContainerValidationBase\@\@UEBA_NAEBVItemStackBase\@\@\@Z
      */
-    virtual bool canItemMoveToContainer(class ItemStackBase const&) const;
+    virtual bool canItemMoveToContainer(class ItemStackBase const&) const; // NOLINT
     /**
      * @vftbl 7
      * @symbol __unk_vfn_7
      */
-    virtual void __unk_vfn_7();
+    virtual void __unk_vfn_7(); // NOLINT
     /**
      * @vftbl 8
      * @symbol __unk_vfn_8
      */
-    virtual void __unk_vfn_8();
+    virtual void __unk_vfn_8(); // NOLINT
     /**
      * @vftbl 9
      * @symbol ?getContainerSize\@LabTableInputValidation\@\@UEBAHAEBVContainerScreenContext\@\@AEBVContainer\@\@\@Z
      */
-    virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
+    virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LABTABLEINPUTVALIDATION
     /**
      * @symbol ?canDestroy\@LabTableInputValidation\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
      */
-    MCVAPI bool canDestroy(class ContainerScreenContext const&) const;
+    MCVAPI bool canDestroy(class ContainerScreenContext const&) const; // NOLINT
 #endif
 };

@@ -6,7 +6,7 @@ namespace BiomeSourceUtil {
 /**
  * @symbol ?determineDestinationHeight\@BiomeSourceUtil\@\@YAFAEBVDimension\@\@VBlockPos\@\@\@Z
  */
-MCAPI short determineDestinationHeight(class Dimension const&, class BlockPos);
+MCAPI short determineDestinationHeight(class Dimension const&, class BlockPos); // NOLINT
 /**
  * @symbol
  * ?locateBiome\@BiomeSourceUtil\@\@YA?AV?$optional\@VBlockPos\@\@\@std\@\@AEBV?$function\@$$A6A_NAEBVBiome\@\@\@Z\@3\@AEBVBiomeSource\@\@AEBVBlockPos\@\@VBoundingBox\@\@I\@Z
@@ -17,7 +17,7 @@ MCAPI class std::optional<class BlockPos> locateBiome(
     class BlockPos const&,
     class BoundingBox,
     unsigned int
-);
+); // NOLINT
 /**
  * @symbol
  * ?locateBiome\@BiomeSourceUtil\@\@YA?AV?$optional\@VBlockPos\@\@\@std\@\@AEBV?$function\@$$A6A_NAEBVBiome\@\@\@Z\@3\@AEBVBiomeSource\@\@AEBVBoundingBox\@\@I\@Z
@@ -27,7 +27,7 @@ MCAPI class std::optional<class BlockPos> locateBiome(
     class BiomeSource const&,
     class BoundingBox const&,
     unsigned int
-);
+); // NOLINT
 /**
  * @symbol
  * ?locateBiome\@BiomeSourceUtil\@\@YA?AV?$optional\@VBlockPos\@\@\@std\@\@AEBV?$function\@$$A6A_NAEBVBiome\@\@\@Z\@3\@AEBVBiomeSource\@\@AEBVBlockPos\@\@2I\@Z
@@ -38,6 +38,6 @@ MCAPI class std::optional<class BlockPos> locateBiome(
     class BlockPos const&,
     class BlockPos const&,
     unsigned int
-);
+); // NOLINT
 
 }; // namespace BiomeSourceUtil

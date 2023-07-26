@@ -5,12 +5,9 @@
 template <typename T0>
 class ServiceReference {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVICEREFERENCE
 public:
+    // prevent constructor by default
     ServiceReference& operator=(ServiceReference const&) = delete;
     ServiceReference(ServiceReference const&)            = delete;
     ServiceReference()                                   = delete;
-#endif
-
-public:
 };

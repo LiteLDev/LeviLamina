@@ -7,14 +7,11 @@ namespace DataStructures {
 template <typename T0>
 class LinkedList {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DATASTRUCTURES_LINKEDLIST
 public:
+    // prevent constructor by default
     LinkedList& operator=(LinkedList const&) = delete;
     LinkedList(LinkedList const&)            = delete;
     LinkedList()                             = delete;
-#endif
-
-public:
 };
 
 }; // namespace DataStructures

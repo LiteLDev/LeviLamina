@@ -4,18 +4,17 @@
 
 class ClientPlayerRewindSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTPLAYERREWINDSYSTEM
 public:
+    // prevent constructor by default
     ClientPlayerRewindSystem& operator=(ClientPlayerRewindSystem const&) = delete;
     ClientPlayerRewindSystem(ClientPlayerRewindSystem const&)            = delete;
     ClientPlayerRewindSystem()                                           = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@ClientPlayerRewindSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
 
     // private:
     /**
@@ -23,7 +22,7 @@ public:
      * ?_doClientPlayerRewindSystem\@ClientPlayerRewindSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@AEAVReplayStateComponent\@\@\@Z
      */
     MCAPI static void
-    _doClientPlayerRewindSystem(class StrictEntityContext const&, class ActorOwnerComponent&, class ReplayStateComponent&);
+    _doClientPlayerRewindSystem(class StrictEntityContext const&, class ActorOwnerComponent&, class ReplayStateComponent&); // NOLINT
 
 private:
 };

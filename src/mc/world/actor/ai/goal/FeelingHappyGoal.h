@@ -21,12 +21,11 @@ public:
     // FeelingHappyGoal inner types define
     class Definition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FEELINGHAPPYGOAL_DEFINITION
     public:
+        // prevent constructor by default
         Definition& operator=(Definition const&) = delete;
         Definition(Definition const&)            = delete;
         Definition()                             = delete;
-#endif
 
     public:
         /**
@@ -34,29 +33,28 @@ public:
          * ?buildSchema\@Definition\@FeelingHappyGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDefinition\@FeelingHappyGoal\@\@\@JsonUtil\@\@\@4\@\@Z
          */
         MCAPI static void
-        buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class FeelingHappyGoal::Definition>>&);
+        buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class FeelingHappyGoal::Definition>>&); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FEELINGHAPPYGOAL
 public:
+    // prevent constructor by default
     FeelingHappyGoal& operator=(FeelingHappyGoal const&) = delete;
     FeelingHappyGoal(FeelingHappyGoal const&)            = delete;
     FeelingHappyGoal()                                   = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3();
+    virtual void __unk_vfn_3(); // NOLINT
     /**
      * @symbol ??0FeelingHappyGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
-    MCAPI FeelingHappyGoal(class Mob&);
+    MCAPI FeelingHappyGoal(class Mob&); // NOLINT
 };

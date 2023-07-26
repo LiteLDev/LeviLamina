@@ -18,6 +18,6 @@ MCAPI std::unique_ptr<class SubChunkStorage<class Block>> makeDeserialized(
     class std::function<class Block const*(unsigned __int64)> const&,
     class std::function<class Block const*(class CompoundTag const&)> const&,
     enum class SubChunkFormat
-);
+); // NOLINT
 
 }; // namespace SubChunkBlockStorageUtil

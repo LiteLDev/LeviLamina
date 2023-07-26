@@ -4,20 +4,19 @@
 
 class ListTagIntAdder {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LISTTAGINTADDER
 public:
+    // prevent constructor by default
     ListTagIntAdder& operator=(ListTagIntAdder const&) = delete;
     ListTagIntAdder(ListTagIntAdder const&)            = delete;
     ListTagIntAdder()                                  = delete;
-#endif
 
 public:
     /**
      * @symbol ??RListTagIntAdder\@\@QEAAAEAV0\@H\@Z
      */
-    MCAPI class ListTagIntAdder& operator()(int);
+    MCAPI class ListTagIntAdder& operator()(int); // NOLINT
     /**
      * @symbol ??1ListTagIntAdder\@\@QEAA\@XZ
      */
-    MCAPI ~ListTagIntAdder();
+    MCAPI ~ListTagIntAdder(); // NOLINT
 };

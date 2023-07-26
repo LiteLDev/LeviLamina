@@ -4,12 +4,9 @@
 
 struct WitherSkullFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WITHERSKULLFLAG
 public:
+    // prevent constructor by default
     WitherSkullFlag& operator=(WitherSkullFlag const&) = delete;
     WitherSkullFlag(WitherSkullFlag const&)            = delete;
     WitherSkullFlag()                                  = delete;
-#endif
-
-public:
 };

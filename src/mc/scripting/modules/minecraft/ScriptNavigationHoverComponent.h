@@ -11,35 +11,34 @@ namespace ScriptModuleMinecraft {
 
 class ScriptNavigationHoverComponent : public ::ScriptModuleMinecraft::NavigationScriptActorComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTNAVIGATIONHOVERCOMPONENT
 public:
+    // prevent constructor by default
     ScriptNavigationHoverComponent& operator=(ScriptNavigationHoverComponent const&) = delete;
     ScriptNavigationHoverComponent(ScriptNavigationHoverComponent const&)            = delete;
     ScriptNavigationHoverComponent()                                                 = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTNAVIGATIONHOVERCOMPONENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptNavigationHoverComponent();
+    MCVAPI ~ScriptNavigationHoverComponent(); // NOLINT
 #endif
-    /**
-     * @symbol ?ComponentId\@ScriptNavigationHoverComponent\@ScriptModuleMinecraft\@\@2PEBDEB
-     */
-    MCAPI static char const* ComponentId;
     /**
      * @symbol
      * ?bind\@ScriptNavigationHoverComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptNavigationHoverComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptNavigationHoverComponent>
-    bind();
+    bind(); // NOLINT
+    /**
+     * @symbol ?ComponentId\@ScriptNavigationHoverComponent\@ScriptModuleMinecraft\@\@2PEBDEB
+     */
+    MCAPI static char const* ComponentId; // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

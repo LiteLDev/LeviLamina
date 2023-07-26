@@ -4,12 +4,9 @@
 
 struct IsStuckItemFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISSTUCKITEMFLAG
 public:
+    // prevent constructor by default
     IsStuckItemFlag& operator=(IsStuckItemFlag const&) = delete;
     IsStuckItemFlag(IsStuckItemFlag const&)            = delete;
     IsStuckItemFlag()                                  = delete;
-#endif
-
-public:
 };

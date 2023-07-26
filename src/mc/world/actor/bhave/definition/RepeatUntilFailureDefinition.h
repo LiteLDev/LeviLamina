@@ -12,22 +12,21 @@ namespace Json { class Value; }
 
 class RepeatUntilFailureDefinition : public ::BehaviorDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_REPEATUNTILFAILUREDEFINITION
 public:
+    // prevent constructor by default
     RepeatUntilFailureDefinition& operator=(RepeatUntilFailureDefinition const&) = delete;
     RepeatUntilFailureDefinition(RepeatUntilFailureDefinition const&)            = delete;
     RepeatUntilFailureDefinition()                                               = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?load\@RepeatUntilFailureDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    virtual void load(class Json::Value, class BehaviorFactory const&); // NOLINT
 };

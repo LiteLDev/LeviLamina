@@ -12,27 +12,26 @@ namespace JsonUtil { class EmptyClass; }
 
 struct CanFlyDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CANFLYDEFINITION
 public:
+    // prevent constructor by default
     CanFlyDefinition& operator=(CanFlyDefinition const&) = delete;
     CanFlyDefinition(CanFlyDefinition const&)            = delete;
     CanFlyDefinition()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ?initialize\@CanFlyDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&) const;
+    MCAPI void initialize(class EntityContext&) const; // NOLINT
     /**
      * @symbol ?uninitialize\@CanFlyDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void uninitialize(class EntityContext&) const;
+    MCAPI void uninitialize(class EntityContext&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@CanFlyDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UCanFlyDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
     buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct CanFlyDefinition>>&);
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct CanFlyDefinition>>&); // NOLINT
 };

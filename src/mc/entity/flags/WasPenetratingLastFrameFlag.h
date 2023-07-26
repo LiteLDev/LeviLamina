@@ -4,12 +4,9 @@
 
 struct WasPenetratingLastFrameFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WASPENETRATINGLASTFRAMEFLAG
 public:
+    // prevent constructor by default
     WasPenetratingLastFrameFlag& operator=(WasPenetratingLastFrameFlag const&) = delete;
     WasPenetratingLastFrameFlag(WasPenetratingLastFrameFlag const&)            = delete;
     WasPenetratingLastFrameFlag()                                              = delete;
-#endif
-
-public:
 };

@@ -4,19 +4,17 @@
 
 class BackwardsCompatTextureGroup {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BACKWARDSCOMPATTEXTUREGROUP
 public:
+    // prevent constructor by default
     BackwardsCompatTextureGroup& operator=(BackwardsCompatTextureGroup const&) = delete;
     BackwardsCompatTextureGroup(BackwardsCompatTextureGroup const&)            = delete;
     BackwardsCompatTextureGroup()                                              = delete;
-#endif
 
-public:
     // private:
 
 private:
     /**
      * @symbol ?invalidInfo\@BackwardsCompatTextureGroup\@\@0VBackwardsCompatTextureInfo\@\@B
      */
-    MCAPI static class BackwardsCompatTextureInfo const invalidInfo;
+    MCAPI static class BackwardsCompatTextureInfo const invalidInfo; // NOLINT
 };

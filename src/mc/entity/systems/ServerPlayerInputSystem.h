@@ -4,22 +4,21 @@
 
 class ServerPlayerInputSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERPLAYERINPUTSYSTEM
 public:
+    // prevent constructor by default
     ServerPlayerInputSystem& operator=(ServerPlayerInputSystem const&) = delete;
     ServerPlayerInputSystem(ServerPlayerInputSystem const&)            = delete;
     ServerPlayerInputSystem()                                          = delete;
-#endif
 
 public:
     /**
      * @symbol ?create\@ServerPlayerInputSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo create();
+    MCAPI static struct TickingSystemWithInfo create(); // NOLINT
     /**
      * @symbol
      * ?onPlayerAuthInputPacket\@ServerPlayerInputSystem\@\@SAXAEAUServerPlayerMovementComponent\@\@AEBVPlayerAuthInputPacket\@\@\@Z
      */
     MCAPI static void
-    onPlayerAuthInputPacket(struct ServerPlayerMovementComponent&, class PlayerAuthInputPacket const&);
+    onPlayerAuthInputPacket(struct ServerPlayerMovementComponent&, class PlayerAuthInputPacket const&); // NOLINT
 };

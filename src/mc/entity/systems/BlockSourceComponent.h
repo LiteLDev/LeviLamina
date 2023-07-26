@@ -9,21 +9,20 @@
 
 class BlockSourceComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSOURCECOMPONENT
 public:
+    // prevent constructor by default
     BlockSourceComponent& operator=(BlockSourceComponent const&) = delete;
     BlockSourceComponent(BlockSourceComponent const&)            = delete;
     BlockSourceComponent()                                       = delete;
-#endif
 
 public:
     /**
      * @symbol ??0BlockSourceComponent\@\@QEAA\@V?$WeakRefT\@U?$SharePtrRefTraits\@VBlockSource\@\@\@\@\@\@\@Z
      */
-    MCAPI BlockSourceComponent(class WeakRefT<struct SharePtrRefTraits<class BlockSource>>);
+    MCAPI BlockSourceComponent(class WeakRefT<struct SharePtrRefTraits<class BlockSource>>); // NOLINT
     /**
      * @symbol
      * ?tryGetBlockSource\@BlockSourceComponent\@\@QEBA?AV?$StackRefResultT\@U?$SharePtrRefTraits\@VBlockSource\@\@\@\@\@\@XZ
      */
-    MCAPI class StackRefResultT<struct SharePtrRefTraits<class BlockSource>> tryGetBlockSource() const;
+    MCAPI class StackRefResultT<struct SharePtrRefTraits<class BlockSource>> tryGetBlockSource() const; // NOLINT
 };

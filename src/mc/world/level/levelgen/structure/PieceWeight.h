@@ -4,16 +4,15 @@
 
 class PieceWeight {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PIECEWEIGHT
 public:
+    // prevent constructor by default
     PieceWeight& operator=(PieceWeight const&) = delete;
     PieceWeight(PieceWeight const&)            = delete;
     PieceWeight()                              = delete;
-#endif
 
 public:
     /**
      * @symbol ??1PieceWeight\@\@QEAA\@XZ
      */
-    MCAPI ~PieceWeight();
+    MCAPI ~PieceWeight(); // NOLINT
 };

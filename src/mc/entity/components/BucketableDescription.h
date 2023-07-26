@@ -7,28 +7,27 @@
 
 class BucketableDescription : public ::Description {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BUCKETABLEDESCRIPTION
 public:
+    // prevent constructor by default
     BucketableDescription& operator=(BucketableDescription const&) = delete;
     BucketableDescription(BucketableDescription const&)            = delete;
     BucketableDescription()                                        = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol ?getJsonName\@BucketableDescription\@\@UEBAPEBDXZ
      */
-    virtual char const* getJsonName() const;
+    virtual char const* getJsonName() const; // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BUCKETABLEDESCRIPTION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~BucketableDescription();
+    MCVAPI ~BucketableDescription(); // NOLINT
 #endif
 };

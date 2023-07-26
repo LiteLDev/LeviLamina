@@ -7,14 +7,11 @@ namespace OperationNodeDetails {
 template <typename T0>
 class TransferData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OPERATIONNODEDETAILS_TRANSFERDATA
 public:
+    // prevent constructor by default
     TransferData& operator=(TransferData const&) = delete;
     TransferData(TransferData const&)            = delete;
     TransferData()                               = delete;
-#endif
-
-public:
 };
 
 }; // namespace OperationNodeDetails

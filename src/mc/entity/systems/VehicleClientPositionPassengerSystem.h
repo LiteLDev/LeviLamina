@@ -4,24 +4,23 @@
 
 class VehicleClientPositionPassengerSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VEHICLECLIENTPOSITIONPASSENGERSYSTEM
 public:
+    // prevent constructor by default
     VehicleClientPositionPassengerSystem& operator=(VehicleClientPositionPassengerSystem const&) = delete;
     VehicleClientPositionPassengerSystem(VehicleClientPositionPassengerSystem const&)            = delete;
     VehicleClientPositionPassengerSystem()                                                       = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSetPositionRequestSystem\@VehicleClientPositionPassengerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSetPositionRequestSystem();
+    MCAPI static struct TickingSystemWithInfo createSetPositionRequestSystem(); // NOLINT
     /**
      * @symbol ?createSetPreviousPosRotSystem\@VehicleClientPositionPassengerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSetPreviousPosRotSystem();
+    MCAPI static struct TickingSystemWithInfo createSetPreviousPosRotSystem(); // NOLINT
     /**
      * @symbol ?createSetRotationLock\@VehicleClientPositionPassengerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSetRotationLock();
+    MCAPI static struct TickingSystemWithInfo createSetRotationLock(); // NOLINT
 };

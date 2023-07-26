@@ -2,22 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Biome;
+// clang-format on
+
 namespace OperationNodeFilters {
 
 class RareBiomeSpot {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OPERATIONNODEFILTERS_RAREBIOMESPOT
 public:
+    // prevent constructor by default
     RareBiomeSpot& operator=(RareBiomeSpot const&) = delete;
     RareBiomeSpot(RareBiomeSpot const&)            = delete;
     RareBiomeSpot()                                = delete;
-#endif
 
 public:
     /**
      * @symbol ??0RareBiomeSpot\@OperationNodeFilters\@\@QEAA\@IAEAVBiome\@\@0\@Z
      */
-    MCAPI RareBiomeSpot(unsigned int, class Biome&, class Biome&);
+    MCAPI RareBiomeSpot(unsigned int, class Biome&, class Biome&); // NOLINT
 };
 
 }; // namespace OperationNodeFilters

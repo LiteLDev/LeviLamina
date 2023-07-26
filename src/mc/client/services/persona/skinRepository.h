@@ -11,14 +11,14 @@ namespace personaDefault::skinRepository {
 /**
  * @symbol ?PERSONA_SKIN_PACK_UUID\@skinRepository\@personaDefault\@\@3VUUID\@mce\@\@B
  */
-MCAPI extern class mce::UUID const PERSONA_SKIN_PACK_UUID;
+MCAPI extern class mce::UUID const PERSONA_SKIN_PACK_UUID; // NOLINT
 /**
  * @symbol ?PERSONA_SKIN_PACK_UUID_HASH\@skinRepository\@personaDefault\@\@3_KB
  */
-MCAPI extern unsigned __int64 const PERSONA_SKIN_PACK_UUID_HASH;
+MCAPI extern unsigned __int64 const PERSONA_SKIN_PACK_UUID_HASH; // NOLINT
 /**
  * @symbol ?VANILLA_SKIN_PACK_UUID\@skinRepository\@personaDefault\@\@3VUUID\@mce\@\@B
  */
-MCAPI extern class mce::UUID const VANILLA_SKIN_PACK_UUID;
+MCAPI extern class mce::UUID const VANILLA_SKIN_PACK_UUID; // NOLINT
 
 }; // namespace personaDefault::skinRepository

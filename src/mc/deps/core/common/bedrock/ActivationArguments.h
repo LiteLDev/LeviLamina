@@ -6,22 +6,21 @@ namespace Bedrock {
 
 class ActivationArguments {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_ACTIVATIONARGUMENTS
 public:
+    // prevent constructor by default
     ActivationArguments& operator=(ActivationArguments const&) = delete;
     ActivationArguments(ActivationArguments const&)            = delete;
     ActivationArguments()                                      = delete;
-#endif
 
 public:
     /**
      * @symbol ?preParseArguments\@ActivationArguments\@Bedrock\@\@QEAAXXZ
      */
-    MCAPI void preParseArguments();
+    MCAPI void preParseArguments(); // NOLINT
     /**
      * @symbol ??1ActivationArguments\@Bedrock\@\@QEAA\@XZ
      */
-    MCAPI ~ActivationArguments();
+    MCAPI ~ActivationArguments(); // NOLINT
 };
 
 }; // namespace Bedrock

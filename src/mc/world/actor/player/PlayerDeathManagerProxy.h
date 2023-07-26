@@ -4,31 +4,30 @@
 
 class PlayerDeathManagerProxy {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERDEATHMANAGERPROXY
 public:
+    // prevent constructor by default
     PlayerDeathManagerProxy& operator=(PlayerDeathManagerProxy const&) = delete;
     PlayerDeathManagerProxy(PlayerDeathManagerProxy const&)            = delete;
     PlayerDeathManagerProxy()                                          = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?fetchActor\@PlayerDeathManagerProxy\@\@UEBAPEAVActor\@\@UActorUniqueID\@\@\@Z
      */
-    virtual class Actor* fetchActor(struct ActorUniqueID) const;
+    virtual class Actor* fetchActor(struct ActorUniqueID) const; // NOLINT
     /**
      * @vftbl 2
      * @symbol ?shouldShowDeathMessages\@PlayerDeathManagerProxy\@\@UEBA_NXZ
      */
-    virtual bool shouldShowDeathMessages() const;
+    virtual bool shouldShowDeathMessages() const; // NOLINT
     /**
      * @symbol ??0PlayerDeathManagerProxy\@\@QEAA\@AEAVServerLevel\@\@\@Z
      */
-    MCAPI PlayerDeathManagerProxy(class ServerLevel&);
+    MCAPI PlayerDeathManagerProxy(class ServerLevel&); // NOLINT
 };

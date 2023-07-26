@@ -4,16 +4,15 @@
 
 class AsyncStateRef {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ASYNCSTATEREF
 public:
+    // prevent constructor by default
     AsyncStateRef& operator=(AsyncStateRef const&) = delete;
     AsyncStateRef(AsyncStateRef const&)            = delete;
     AsyncStateRef()                                = delete;
-#endif
 
 public:
     /**
      * @symbol ??1AsyncStateRef\@\@QEAA\@XZ
      */
-    MCAPI ~AsyncStateRef();
+    MCAPI ~AsyncStateRef(); // NOLINT
 };

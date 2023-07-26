@@ -4,12 +4,9 @@
 
 class IStructurePoolBlockTagPredicate {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISTRUCTUREPOOLBLOCKTAGPREDICATE
 public:
+    // prevent constructor by default
     IStructurePoolBlockTagPredicate& operator=(IStructurePoolBlockTagPredicate const&) = delete;
     IStructurePoolBlockTagPredicate(IStructurePoolBlockTagPredicate const&)            = delete;
     IStructurePoolBlockTagPredicate()                                                  = delete;
-#endif
-
-public:
 };

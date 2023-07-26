@@ -9,23 +9,23 @@ namespace ScriptModuleMinecraft {
 
 class ScriptBlockAreaSize {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTBLOCKAREASIZE
 public:
+    // prevent constructor by default
     ScriptBlockAreaSize& operator=(ScriptBlockAreaSize const&) = delete;
     ScriptBlockAreaSize(ScriptBlockAreaSize const&)            = delete;
     ScriptBlockAreaSize()                                      = delete;
-#endif
 
 public:
     /**
      * @symbol ??8ScriptBlockAreaSize\@ScriptModuleMinecraft\@\@QEBA_NAEBV01\@\@Z
      */
-    MCAPI bool operator==(class ScriptModuleMinecraft::ScriptBlockAreaSize const&) const;
+    MCAPI bool operator==(class ScriptModuleMinecraft::ScriptBlockAreaSize const&) const; // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptBlockAreaSize\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockAreaSize\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockAreaSize> bind();
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockAreaSize>
+    bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

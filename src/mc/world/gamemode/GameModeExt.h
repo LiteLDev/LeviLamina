@@ -7,6 +7,6 @@ namespace GameModeExt {
  * @symbol
  * ?createDefaultMessenger\@GameModeExt\@\@YA?AV?$unique_ptr\@UIGameModeMessenger\@\@U?$default_delete\@UIGameModeMessenger\@\@\@std\@\@\@std\@\@AEAVPlayer\@\@\@Z
  */
-MCAPI std::unique_ptr<struct IGameModeMessenger> createDefaultMessenger(class Player&);
+MCAPI std::unique_ptr<struct IGameModeMessenger> createDefaultMessenger(class Player&); // NOLINT
 
 }; // namespace GameModeExt

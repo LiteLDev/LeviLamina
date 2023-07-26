@@ -4,16 +4,15 @@
 
 struct ActorDefinitionEndedEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDEFINITIONENDEDEVENT
 public:
+    // prevent constructor by default
     ActorDefinitionEndedEvent& operator=(ActorDefinitionEndedEvent const&) = delete;
     ActorDefinitionEndedEvent(ActorDefinitionEndedEvent const&)            = delete;
     ActorDefinitionEndedEvent()                                            = delete;
-#endif
 
 public:
     /**
      * @symbol ??1ActorDefinitionEndedEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorDefinitionEndedEvent();
+    MCAPI ~ActorDefinitionEndedEvent(); // NOLINT
 };

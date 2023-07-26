@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockState;
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 // clang-format on
 
@@ -16,48 +17,48 @@ namespace ScriptModuleMinecraft {
 
 class ScriptBoolBlockProperty {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTBOOLBLOCKPROPERTY
 public:
+    // prevent constructor by default
     ScriptBoolBlockProperty& operator=(ScriptBoolBlockProperty const&) = delete;
     ScriptBoolBlockProperty(ScriptBoolBlockProperty const&)            = delete;
     ScriptBoolBlockProperty()                                          = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTBOOLBLOCKPROPERTY
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptBoolBlockProperty();
+    MCVAPI ~ScriptBoolBlockProperty(); // NOLINT
 #endif
     /**
      * @symbol
      * ??0ScriptBoolBlockProperty\@ScriptModuleMinecraft\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlockState\@\@V?$vector\@_NV?$allocator\@_N\@std\@\@\@3\@V?$StrongTypedObjectHandle\@VScriptBlockPermutation\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Z
      */
     MCAPI
-    ScriptBoolBlockProperty(std::string, class BlockState const&, std::vector<bool>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>);
+    ScriptBoolBlockProperty(std::string, class BlockState const&, std::vector<bool>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>); // NOLINT
     /**
      * @symbol ??0ScriptBoolBlockProperty\@ScriptModuleMinecraft\@\@QEAA\@$$QEAV01\@\@Z
      */
-    MCAPI ScriptBoolBlockProperty(class ScriptModuleMinecraft::ScriptBoolBlockProperty&&);
+    MCAPI ScriptBoolBlockProperty(class ScriptModuleMinecraft::ScriptBoolBlockProperty&&); // NOLINT
     /**
      * @symbol ?getState\@ScriptBoolBlockProperty\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@_N\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<bool> getState() const;
+    MCAPI class Scripting::Result<bool> getState() const; // NOLINT
     /**
      * @symbol ??4ScriptBoolBlockProperty\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraft::ScriptBoolBlockProperty&
-    operator=(class ScriptModuleMinecraft::ScriptBoolBlockProperty&&);
+    operator=(class ScriptModuleMinecraft::ScriptBoolBlockProperty&&); // NOLINT
     /**
      * @symbol ?setState\@ScriptBoolBlockProperty\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@_N\@Z
      */
-    MCAPI class Scripting::Result<void> setState(bool);
+    MCAPI class Scripting::Result<void> setState(bool); // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptBoolBlockProperty\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBoolBlockProperty\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBoolBlockProperty> bind();
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBoolBlockProperty>
+    bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

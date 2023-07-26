@@ -9,17 +9,16 @@ namespace ClientBlockPipeline { struct BlockSchematic; }
 
 struct BlockUnitCubeComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKUNITCUBECOMPONENT
 public:
+    // prevent constructor by default
     BlockUnitCubeComponent& operator=(BlockUnitCubeComponent const&) = delete;
     BlockUnitCubeComponent(BlockUnitCubeComponent const&)            = delete;
     BlockUnitCubeComponent()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?mBlockSchematic\@BlockUnitCubeComponent\@\@2V?$shared_ptr\@UBlockSchematic\@ClientBlockPipeline\@\@\@std\@\@A
      */
-    MCAPI static class std::shared_ptr<struct ClientBlockPipeline::BlockSchematic> mBlockSchematic;
+    MCAPI static class std::shared_ptr<struct ClientBlockPipeline::BlockSchematic> mBlockSchematic; // NOLINT
 };

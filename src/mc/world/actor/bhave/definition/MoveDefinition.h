@@ -12,28 +12,27 @@ namespace Json { class Value; }
 
 class MoveDefinition : public ::BehaviorDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEDEFINITION
 public:
+    // prevent constructor by default
     MoveDefinition& operator=(MoveDefinition const&) = delete;
     MoveDefinition(MoveDefinition const&)            = delete;
     MoveDefinition()                                 = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?load\@MoveDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    virtual void load(class Json::Value, class BehaviorFactory const&); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEDEFINITION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~MoveDefinition();
+    MCVAPI ~MoveDefinition(); // NOLINT
 #endif
 };

@@ -7,12 +7,11 @@
 
 class VanillaAncientCityJigsawStructures {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAANCIENTCITYJIGSAWSTRUCTURES
 public:
+    // prevent constructor by default
     VanillaAncientCityJigsawStructures& operator=(VanillaAncientCityJigsawStructures const&) = delete;
     VanillaAncientCityJigsawStructures(VanillaAncientCityJigsawStructures const&)            = delete;
     VanillaAncientCityJigsawStructures()                                                     = delete;
-#endif
 
 public:
     /**
@@ -20,5 +19,5 @@ public:
      * ?initialize\@VanillaAncientCityJigsawStructures\@\@SAXV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEAVFeatureRegistry\@\@AEAVJigsawStructureRegistry\@\@\@Z
      */
     MCAPI static void
-    initialize(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class FeatureRegistry&, class JigsawStructureRegistry&);
+    initialize(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class FeatureRegistry&, class JigsawStructureRegistry&); // NOLINT
 };

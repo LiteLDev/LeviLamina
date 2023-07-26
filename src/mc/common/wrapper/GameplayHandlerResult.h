@@ -5,12 +5,9 @@
 template <typename T0>
 struct GameplayHandlerResult {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEPLAYHANDLERRESULT
 public:
+    // prevent constructor by default
     GameplayHandlerResult& operator=(GameplayHandlerResult const&) = delete;
     GameplayHandlerResult(GameplayHandlerResult const&)            = delete;
     GameplayHandlerResult()                                        = delete;
-#endif
-
-public:
 };

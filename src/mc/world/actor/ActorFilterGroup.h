@@ -20,62 +20,59 @@ public:
     // ActorFilterGroup inner types define
     struct LegacyMapping {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORFILTERGROUP_LEGACYMAPPING
     public:
+        // prevent constructor by default
         LegacyMapping& operator=(LegacyMapping const&) = delete;
         LegacyMapping(LegacyMapping const&)            = delete;
         LegacyMapping()                                = delete;
-#endif
-
-    public:
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORFILTERGROUP
 public:
+    // prevent constructor by default
     ActorFilterGroup(ActorFilterGroup const&) = delete;
     ActorFilterGroup()                        = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?_createSubgroup\@ActorFilterGroup\@\@MEBA?AV?$shared_ptr\@VFilterGroup\@\@\@std\@\@W4CollectionType\@FilterGroup\@\@\@Z
      */
-    virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum class FilterGroup::CollectionType) const;
+    virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum class FilterGroup::CollectionType
+    ) const; // NOLINT
     /**
      * @vftbl 3
      * @symbol
      * ?_handleUnknownMember\@ActorFilterGroup\@\@MEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVValue\@Json\@\@\@Z
      */
-    virtual bool _handleUnknownMember(std::string const&, class Json::Value const&);
+    virtual bool _handleUnknownMember(std::string const&, class Json::Value const&); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORFILTERGROUP
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ActorFilterGroup();
+    MCVAPI ~ActorFilterGroup(); // NOLINT
 #endif
     /**
      * @symbol ?evaluateActor\@ActorFilterGroup\@\@QEBA_NAEBVActor\@\@AEBVVariantParameterList\@\@\@Z
      */
-    MCAPI bool evaluateActor(class Actor const&, class VariantParameterList const&) const;
+    MCAPI bool evaluateActor(class Actor const&, class VariantParameterList const&) const; // NOLINT
     /**
      * @symbol ??4ActorFilterGroup\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class ActorFilterGroup& operator=(class ActorFilterGroup&&);
+    MCAPI class ActorFilterGroup& operator=(class ActorFilterGroup&&); // NOLINT
     /**
      * @symbol ??4ActorFilterGroup\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
-    MCAPI class ActorFilterGroup& operator=(class ActorFilterGroup const&);
+    MCAPI class ActorFilterGroup& operator=(class ActorFilterGroup const&); // NOLINT
     /**
      * @symbol ?initialize\@ActorFilterGroup\@\@SAXXZ
      */
-    MCAPI static void initialize();
+    MCAPI static void initialize(); // NOLINT
 
     // protected:
     /**
@@ -83,19 +80,19 @@ public:
      * ?_addLegacyFilter\@ActorFilterGroup\@\@IEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBULegacyMapping\@1\@AEBVFilterInput\@\@\@Z
      */
     MCAPI bool
-    _addLegacyFilter(std::string const&, struct ActorFilterGroup::LegacyMapping const&, class FilterInput const&);
+    _addLegacyFilter(std::string const&, struct ActorFilterGroup::LegacyMapping const&, class FilterInput const&); // NOLINT
     /**
      * @symbol
      * ?_processLegacyArray\@ActorFilterGroup\@\@IEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVValue\@Json\@\@AEBULegacyMapping\@1\@\@Z
      */
     MCAPI bool
-    _processLegacyArray(std::string const&, class Json::Value const&, struct ActorFilterGroup::LegacyMapping const&);
+    _processLegacyArray(std::string const&, class Json::Value const&, struct ActorFilterGroup::LegacyMapping const&); // NOLINT
     /**
      * @symbol
      * ?_processLegacyMember\@ActorFilterGroup\@\@IEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVValue\@Json\@\@AEBULegacyMapping\@1\@\@Z
      */
     MCAPI bool
-    _processLegacyMember(std::string const&, class Json::Value const&, struct ActorFilterGroup::LegacyMapping const&);
+    _processLegacyMember(std::string const&, class Json::Value const&, struct ActorFilterGroup::LegacyMapping const&); // NOLINT
 
 protected:
 };

@@ -7,70 +7,70 @@
 
 class MaterialReducerOutputValidation : public ::ContainerValidationBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MATERIALREDUCEROUTPUTVALIDATION
 public:
+    // prevent constructor by default
     MaterialReducerOutputValidation& operator=(MaterialReducerOutputValidation const&) = delete;
     MaterialReducerOutputValidation(MaterialReducerOutputValidation const&)            = delete;
     MaterialReducerOutputValidation()                                                  = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?isValidSlotForContainer\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVContainer\@\@H\@Z
      */
-    virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
+    virtual bool
+    isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const; // NOLINT
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2();
+    virtual void __unk_vfn_2(); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?getAvailableSetCount\@ContainerValidationBase\@\@UEBAHHAEBVItemStackBase\@\@\@Z
      */
-    virtual int getAvailableSetCount(int, class ItemStackBase const&) const;
+    virtual int getAvailableSetCount(int, class ItemStackBase const&) const; // NOLINT
     /**
      * @vftbl 4
      * @symbol __unk_vfn_4
      */
-    virtual void __unk_vfn_4();
+    virtual void __unk_vfn_4(); // NOLINT
     /**
      * @vftbl 5
      * @symbol __unk_vfn_5
      */
-    virtual void __unk_vfn_5();
+    virtual void __unk_vfn_5(); // NOLINT
     /**
      * @vftbl 6
      * @symbol ?canItemMoveToContainer\@ContainerValidationBase\@\@UEBA_NAEBVItemStackBase\@\@\@Z
      */
-    virtual bool canItemMoveToContainer(class ItemStackBase const&) const;
+    virtual bool canItemMoveToContainer(class ItemStackBase const&) const; // NOLINT
     /**
      * @vftbl 7
      * @symbol __unk_vfn_7
      */
-    virtual void __unk_vfn_7();
+    virtual void __unk_vfn_7(); // NOLINT
     /**
      * @vftbl 8
      * @symbol ?getContainerOffset\@MaterialReducerOutputValidation\@\@UEBAHAEBVContainerScreenContext\@\@\@Z
      */
-    virtual int getContainerOffset(class ContainerScreenContext const&) const;
+    virtual int getContainerOffset(class ContainerScreenContext const&) const; // NOLINT
     /**
      * @vftbl 9
      * @symbol
      * ?getContainerSize\@MaterialReducerOutputValidation\@\@UEBAHAEBVContainerScreenContext\@\@AEBVContainer\@\@\@Z
      */
-    virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
+    virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MATERIALREDUCEROUTPUTVALIDATION
     /**
      * @symbol ?canDestroy\@MaterialReducerOutputValidation\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
      */
-    MCVAPI bool canDestroy(class ContainerScreenContext const&) const;
+    MCVAPI bool canDestroy(class ContainerScreenContext const&) const; // NOLINT
 #endif
 };

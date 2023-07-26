@@ -6,6 +6,6 @@ namespace VanillaGoalDefinition {
 /**
  * @symbol ?init\@VanillaGoalDefinition\@\@YAXXZ
  */
-MCAPI void init();
+MCAPI void init(); // NOLINT
 
 }; // namespace VanillaGoalDefinition

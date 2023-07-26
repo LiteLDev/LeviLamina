@@ -4,24 +4,23 @@
 
 class ClientPlayerEventCoordinator {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTPLAYEREVENTCOORDINATOR
 public:
+    // prevent constructor by default
     ClientPlayerEventCoordinator& operator=(ClientPlayerEventCoordinator const&) = delete;
     ClientPlayerEventCoordinator(ClientPlayerEventCoordinator const&)            = delete;
     ClientPlayerEventCoordinator()                                               = delete;
-#endif
 
 public:
     /**
      * @symbol ?sendPlayerDestroyedBlock\@ClientPlayerEventCoordinator\@\@QEAAXAEAVPlayer\@\@AEBVBlock\@\@\@Z
      */
-    MCAPI void sendPlayerDestroyedBlock(class Player&, class Block const&);
+    MCAPI void sendPlayerDestroyedBlock(class Player&, class Block const&); // NOLINT
     /**
      * @symbol ?sendPlayerInput\@ClientPlayerEventCoordinator\@\@QEAAXAEAUIPlayerMovementProxy\@\@\@Z
      */
-    MCAPI void sendPlayerInput(struct IPlayerMovementProxy&);
+    MCAPI void sendPlayerInput(struct IPlayerMovementProxy&); // NOLINT
     /**
      * @symbol ?sendStartDestroyBlock\@ClientPlayerEventCoordinator\@\@QEAAXAEAVPlayer\@\@AEBVBlockPos\@\@AEAE\@Z
      */
-    MCAPI void sendStartDestroyBlock(class Player&, class BlockPos const&, unsigned char&);
+    MCAPI void sendStartDestroyBlock(class Player&, class BlockPos const&, unsigned char&); // NOLINT
 };

@@ -4,23 +4,22 @@
 
 class StructureTelemetryServerData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURETELEMETRYSERVERDATA
 public:
+    // prevent constructor by default
     StructureTelemetryServerData& operator=(StructureTelemetryServerData const&) = delete;
     StructureTelemetryServerData(StructureTelemetryServerData const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0StructureTelemetryServerData\@\@QEAA\@XZ
      */
-    MCAPI StructureTelemetryServerData();
+    MCAPI StructureTelemetryServerData(); // NOLINT
     /**
      * @symbol ?hasBeenActivatedByRedstone\@StructureTelemetryServerData\@\@QEAA_NXZ
      */
-    MCAPI bool hasBeenActivatedByRedstone();
+    MCAPI bool hasBeenActivatedByRedstone(); // NOLINT
     /**
      * @symbol ?setHasBeenActivedByRedstone\@StructureTelemetryServerData\@\@QEAAXXZ
      */
-    MCAPI void setHasBeenActivedByRedstone();
+    MCAPI void setHasBeenActivedByRedstone(); // NOLINT
 };

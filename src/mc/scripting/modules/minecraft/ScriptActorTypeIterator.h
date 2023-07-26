@@ -9,28 +9,28 @@ namespace ScriptModuleMinecraft {
 
 class ScriptActorTypeIterator {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTACTORTYPEITERATOR
 public:
+    // prevent constructor by default
     ScriptActorTypeIterator& operator=(ScriptActorTypeIterator const&) = delete;
     ScriptActorTypeIterator(ScriptActorTypeIterator const&)            = delete;
     ScriptActorTypeIterator()                                          = delete;
-#endif
 
 public:
     /**
      * @symbol ??4ScriptActorTypeIterator\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraft::ScriptActorTypeIterator&
-    operator=(class ScriptModuleMinecraft::ScriptActorTypeIterator&&);
+    operator=(class ScriptModuleMinecraft::ScriptActorTypeIterator&&); // NOLINT
     /**
      * @symbol ??1ScriptActorTypeIterator\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptActorTypeIterator();
+    MCAPI ~ScriptActorTypeIterator(); // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptActorTypeIterator\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptActorTypeIterator\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptActorTypeIterator> bind();
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptActorTypeIterator>
+    bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

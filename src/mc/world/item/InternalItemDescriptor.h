@@ -13,12 +13,11 @@ namespace Json { class Value; }
 
 struct InternalItemDescriptor {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTERNALITEMDESCRIPTOR
 public:
+    // prevent constructor by default
     InternalItemDescriptor& operator=(InternalItemDescriptor const&) = delete;
     InternalItemDescriptor(InternalItemDescriptor const&)            = delete;
     InternalItemDescriptor()                                         = delete;
-#endif
 
 public:
     /**
@@ -26,23 +25,23 @@ public:
      * @symbol
      * ?clone\@InternalItemDescriptor\@\@UEBA?AV?$unique_ptr\@UBaseDescriptor\@ItemDescriptor\@\@U?$default_delete\@UBaseDescriptor\@ItemDescriptor\@\@\@std\@\@\@std\@\@XZ
      */
-    virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone() const;
+    virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol ?sameItem\@InternalItemDescriptor\@\@UEBA_NAEBUItemEntry\@ItemDescriptor\@\@_N\@Z
      */
-    virtual bool sameItem(struct ItemDescriptor::ItemEntry const&, bool) const;
+    virtual bool sameItem(struct ItemDescriptor::ItemEntry const&, bool) const; // NOLINT
     /**
      * @vftbl 3
      * @symbol
      * ?getFullName\@InternalItemDescriptor\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string const& getFullName() const;
+    virtual std::string const& getFullName() const; // NOLINT
     /**
      * @vftbl 4
      * @symbol ?getItem\@InternalItemDescriptor\@\@UEBA?AUItemEntry\@ItemDescriptor\@\@XZ
      */
-    virtual struct ItemDescriptor::ItemEntry getItem() const;
+    virtual struct ItemDescriptor::ItemEntry getItem() const; // NOLINT
     /**
      * @vftbl 6
      * @symbol
@@ -53,31 +52,31 @@ public:
         std::string,
         struct std::less<std::string>,
         class std::allocator<struct std::pair<std::string const, std::string>>>
-    toMap() const;
+    toMap() const; // NOLINT
     /**
      * @vftbl 7
      * @symbol ?save\@InternalItemDescriptor\@\@UEBA?AV?$optional\@VCompoundTag\@\@\@std\@\@XZ
      */
-    virtual class std::optional<class CompoundTag> save() const;
+    virtual class std::optional<class CompoundTag> save() const; // NOLINT
     /**
      * @vftbl 9
      * @symbol ?serialize\@InternalItemDescriptor\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
-    virtual void serialize(class BinaryStream&) const;
+    virtual void serialize(class BinaryStream&) const; // NOLINT
     /**
      * @vftbl 10
      * @symbol ?getType\@InternalItemDescriptor\@\@UEBA?AW4InternalType\@ItemDescriptor\@\@XZ
      */
-    virtual enum class ItemDescriptor::InternalType getType() const;
+    virtual enum class ItemDescriptor::InternalType getType() const; // NOLINT
     /**
      * @vftbl 12
      * @symbol ?getHash\@InternalItemDescriptor\@\@UEBA_KXZ
      */
-    virtual unsigned __int64 getHash() const;
+    virtual unsigned __int64 getHash() const; // NOLINT
     /**
      * @symbol
      * ?deserialize\@InternalItemDescriptor\@\@SA?AV?$Result\@V?$unique_ptr\@UInternalItemDescriptor\@\@U?$default_delete\@UInternalItemDescriptor\@\@\@std\@\@\@std\@\@Verror_code\@2\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     MCAPI static class Bedrock::Result<std::unique_ptr<struct InternalItemDescriptor>, class std::error_code>
-    deserialize(class ReadOnlyBinaryStream&);
+    deserialize(class ReadOnlyBinaryStream&); // NOLINT
 };

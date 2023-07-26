@@ -4,24 +4,23 @@
 
 class DefinitionTrigger {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFINITIONTRIGGER
 public:
+    // prevent constructor by default
     DefinitionTrigger& operator=(DefinitionTrigger const&) = delete;
     DefinitionTrigger(DefinitionTrigger const&)            = delete;
     DefinitionTrigger()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ?canTrigger\@DefinitionTrigger\@\@QEBA_NAEAVRenderParams\@\@\@Z
      */
-    MCAPI bool canTrigger(class RenderParams&) const;
+    MCAPI bool canTrigger(class RenderParams&) const; // NOLINT
     /**
      * @symbol ??1DefinitionTrigger\@\@QEAA\@XZ
      */
-    MCAPI ~DefinitionTrigger();
+    MCAPI ~DefinitionTrigger(); // NOLINT
     /**
      * @symbol ?bindType\@DefinitionTrigger\@\@SAXXZ
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(); // NOLINT
 };

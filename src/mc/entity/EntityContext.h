@@ -7,24 +7,23 @@
 
 class EntityContext {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYCONTEXT
 public:
+    // prevent constructor by default
     EntityContext& operator=(EntityContext const&) = delete;
     EntityContext(EntityContext const&)            = delete;
     EntityContext()                                = delete;
-#endif
 
 public:
     /**
      * @symbol ??0EntityContext\@\@QEAA\@AEAVEntityRegistry\@\@VEntityId\@\@\@Z
      */
-    MCAPI EntityContext(class EntityRegistry&, class EntityId);
+    MCAPI EntityContext(class EntityRegistry&, class EntityId); // NOLINT
     /**
      * @symbol ?_registry\@EntityContext\@\@QEBAAEAVEntityRegistry\@\@XZ
      */
-    MCAPI class EntityRegistry& _registry() const;
+    MCAPI class EntityRegistry& _registry() const; // NOLINT
     /**
      * @symbol ?getWeakRef\@EntityContext\@\@QEBA?AV?$WeakRefT\@UEntityRefTraits\@\@\@\@XZ
      */
-    MCAPI class WeakRefT<struct EntityRefTraits> getWeakRef() const;
+    MCAPI class WeakRefT<struct EntityRefTraits> getWeakRef() const; // NOLINT
 };

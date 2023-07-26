@@ -8,31 +8,30 @@
 
 class ServerNetworkEventCoordinator {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERNETWORKEVENTCOORDINATOR
 public:
+    // prevent constructor by default
     ServerNetworkEventCoordinator& operator=(ServerNetworkEventCoordinator const&) = delete;
     ServerNetworkEventCoordinator(ServerNetworkEventCoordinator const&)            = delete;
     ServerNetworkEventCoordinator()                                                = delete;
-#endif
 
 public:
     /**
      * @symbol ?getServerNetworkEventHandler\@ServerNetworkEventCoordinator\@\@QEAAAEAVServerNetworkEventHandler\@\@XZ
      */
-    MCAPI class ServerNetworkEventHandler& getServerNetworkEventHandler();
+    MCAPI class ServerNetworkEventHandler& getServerNetworkEventHandler(); // NOLINT
     /**
      * @symbol
      * ?registerServerNetworkEventHandler\@ServerNetworkEventCoordinator\@\@QEAAX$$QEAV?$unique_ptr\@VServerNetworkEventHandler\@\@U?$default_delete\@VServerNetworkEventHandler\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI void registerServerNetworkEventHandler(std::unique_ptr<class ServerNetworkEventHandler>&&);
+    MCAPI void registerServerNetworkEventHandler(std::unique_ptr<class ServerNetworkEventHandler>&&); // NOLINT
     /**
      * @symbol
      * ?sendEvent\@ServerNetworkEventCoordinator\@\@QEAA?AW4CoordinatorResult\@\@V?$EventRef\@U?$MutableServerNetworkGameplayEvent\@W4CoordinatorResult\@\@\@\@\@\@\@Z
      */
     MCAPI enum class CoordinatorResult
-        sendEvent(class EventRef<struct MutableServerNetworkGameplayEvent<enum class CoordinatorResult>>);
+        sendEvent(class EventRef<struct MutableServerNetworkGameplayEvent<enum class CoordinatorResult>>); // NOLINT
     /**
      * @symbol ?sendMessage\@ServerNetworkEventCoordinator\@\@QEAAXAEAUMessageEvent\@\@\@Z
      */
-    MCAPI void sendMessage(struct MessageEvent&);
+    MCAPI void sendMessage(struct MessageEvent&); // NOLINT
 };

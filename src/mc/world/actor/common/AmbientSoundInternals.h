@@ -6,22 +6,22 @@ namespace AmbientSoundInternals {
 /**
  * @symbol ?EVENT_NAMES_KEY\@AmbientSoundInternals\@\@3PEBDEB
  */
-MCAPI extern char const* EVENT_NAMES_KEY;
+MCAPI extern char const* EVENT_NAMES_KEY; // NOLINT
 /**
  * @symbol ?EVENT_NAME_DEFAULT\@AmbientSoundInternals\@\@3PEBDEB
  */
-MCAPI extern char const* EVENT_NAME_DEFAULT;
+MCAPI extern char const* EVENT_NAME_DEFAULT; // NOLINT
 /**
  * @symbol ?EVENT_NAME_KEY\@AmbientSoundInternals\@\@3PEBDEB
  */
-MCAPI extern char const* EVENT_NAME_KEY;
+MCAPI extern char const* EVENT_NAME_KEY; // NOLINT
 /**
  * @symbol ?RANGE_KEY\@AmbientSoundInternals\@\@3PEBDEB
  */
-MCAPI extern char const* RANGE_KEY;
+MCAPI extern char const* RANGE_KEY; // NOLINT
 /**
  * @symbol ?VALUE_KEY\@AmbientSoundInternals\@\@3PEBDEB
  */
-MCAPI extern char const* VALUE_KEY;
+MCAPI extern char const* VALUE_KEY; // NOLINT
 
 }; // namespace AmbientSoundInternals

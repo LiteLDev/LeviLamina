@@ -4,22 +4,21 @@
 
 class OnStepOnTrigger {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONSTEPONTRIGGER
 public:
+    // prevent constructor by default
     OnStepOnTrigger& operator=(OnStepOnTrigger const&) = delete;
     OnStepOnTrigger(OnStepOnTrigger const&)            = delete;
     OnStepOnTrigger()                                  = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONSTEPONTRIGGER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~OnStepOnTrigger();
+    MCVAPI ~OnStepOnTrigger(); // NOLINT
 #endif
     /**
      * @symbol ??0OnStepOnTrigger\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI OnStepOnTrigger(class OnStepOnTrigger&&);
+    MCAPI OnStepOnTrigger(class OnStepOnTrigger&&); // NOLINT
 };

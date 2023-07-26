@@ -4,22 +4,21 @@
 
 struct SendEventData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SENDEVENTDATA
 public:
+    // prevent constructor by default
     SendEventData() = delete;
-#endif
 
 public:
     /**
      * @symbol ??0SendEventData\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI SendEventData(struct SendEventData const&);
+    MCAPI SendEventData(struct SendEventData const&); // NOLINT
     /**
      * @symbol ??4SendEventData\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
-    MCAPI struct SendEventData& operator=(struct SendEventData const&);
+    MCAPI struct SendEventData& operator=(struct SendEventData const&); // NOLINT
     /**
      * @symbol ??1SendEventData\@\@QEAA\@XZ
      */
-    MCAPI ~SendEventData();
+    MCAPI ~SendEventData(); // NOLINT
 };

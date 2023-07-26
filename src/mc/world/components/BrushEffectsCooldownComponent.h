@@ -4,19 +4,17 @@
 
 class BrushEffectsCooldownComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BRUSHEFFECTSCOOLDOWNCOMPONENT
 public:
+    // prevent constructor by default
     BrushEffectsCooldownComponent& operator=(BrushEffectsCooldownComponent const&) = delete;
     BrushEffectsCooldownComponent(BrushEffectsCooldownComponent const&)            = delete;
     BrushEffectsCooldownComponent()                                                = delete;
-#endif
 
-public:
     // private:
 
 private:
     /**
      * @symbol ?EXPIRED_TICK\@BrushEffectsCooldownComponent\@\@0VExpiringTick\@\@B
      */
-    MCAPI static class ExpiringTick const EXPIRED_TICK;
+    MCAPI static class ExpiringTick const EXPIRED_TICK; // NOLINT
 };

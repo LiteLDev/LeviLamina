@@ -12,27 +12,26 @@ namespace Bedrock::JSONObject {
 
 class Node {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_JSONOBJECT_NODE
 public:
+    // prevent constructor by default
     Node& operator=(Node const&) = delete;
     Node(Node const&)            = delete;
     Node()                       = delete;
-#endif
 
 public:
     /**
      * @symbol ?asObject\@Node\@JSONObject\@Bedrock\@\@QEAAPEAVObjectNode\@23\@XZ
      */
-    MCAPI class Bedrock::JSONObject::ObjectNode* asObject();
+    MCAPI class Bedrock::JSONObject::ObjectNode* asObject(); // NOLINT
     /**
      * @symbol ??4Node\@JSONObject\@Bedrock\@\@QEAAPEAV012\@AEBVValueWrapper\@12\@\@Z
      */
-    MCAPI class Bedrock::JSONObject::Node* operator=(class Bedrock::JSONObject::ValueWrapper const&);
+    MCAPI class Bedrock::JSONObject::Node* operator=(class Bedrock::JSONObject::ValueWrapper const&); // NOLINT
     /**
      * @symbol
      * ?toJSONString\@Node\@JSONObject\@Bedrock\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string toJSONString() const;
+    MCAPI std::string toJSONString() const; // NOLINT
 };
 
 }; // namespace Bedrock::JSONObject

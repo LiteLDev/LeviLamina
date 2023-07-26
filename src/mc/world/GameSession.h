@@ -8,12 +8,11 @@
 
 class GameSession {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMESESSION
 public:
+    // prevent constructor by default
     GameSession& operator=(GameSession const&) = delete;
     GameSession(GameSession const&)            = delete;
     GameSession()                              = delete;
-#endif
 
 public:
     /**
@@ -27,35 +26,36 @@ public:
         std::unique_ptr<class NetEventCallback>,
         struct std::pair<std::unique_ptr<class Level>, class OwnerPtrT<struct EntityRefTraits>>,
         enum class SubClientId
-    );
+    ); // NOLINT
     /**
      * @symbol ?earlyShutdownMainthread\@GameSession\@\@QEAAXXZ
      */
-    MCAPI void earlyShutdownMainthread();
+    MCAPI void earlyShutdownMainthread(); // NOLINT
     /**
      * @symbol
      * ?getServerNetworkHandler\@GameSession\@\@QEAA?AV?$NonOwnerPointer\@VServerNetworkHandler\@\@\@Bedrock\@\@XZ
      */
-    MCAPI class Bedrock::NonOwnerPointer<class ServerNetworkHandler> getServerNetworkHandler();
+    MCAPI class Bedrock::NonOwnerPointer<class ServerNetworkHandler> getServerNetworkHandler(); // NOLINT
     /**
      * @symbol ?isLeaveGameDone\@GameSession\@\@QEAA_NXZ
      */
-    MCAPI bool isLeaveGameDone();
+    MCAPI bool isLeaveGameDone(); // NOLINT
     /**
      * @symbol
      * ?setLevel\@GameSession\@\@QEAAXU?$pair\@V?$unique_ptr\@VLevel\@\@U?$default_delete\@VLevel\@\@\@std\@\@\@std\@\@V?$OwnerPtrT\@UEntityRefTraits\@\@\@\@\@std\@\@\@Z
      */
-    MCAPI void setLevel(struct std::pair<std::unique_ptr<class Level>, class OwnerPtrT<struct EntityRefTraits>>);
+    MCAPI void
+        setLevel(struct std::pair<std::unique_ptr<class Level>, class OwnerPtrT<struct EntityRefTraits>>); // NOLINT
     /**
      * @symbol ?startLeaveGame\@GameSession\@\@QEAAXXZ
      */
-    MCAPI void startLeaveGame();
+    MCAPI void startLeaveGame(); // NOLINT
     /**
      * @symbol ?tick\@GameSession\@\@QEAAXXZ
      */
-    MCAPI void tick();
+    MCAPI void tick(); // NOLINT
     /**
      * @symbol ??1GameSession\@\@QEAA\@XZ
      */
-    MCAPI ~GameSession();
+    MCAPI ~GameSession(); // NOLINT
 };

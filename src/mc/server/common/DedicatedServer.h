@@ -22,11 +22,10 @@ public:
     // DedicatedServer inner types define
     enum class StartResult {};
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEDICATEDSERVER
 public:
+    // prevent constructor by default
     DedicatedServer& operator=(DedicatedServer const&) = delete;
     DedicatedServer(DedicatedServer const&)            = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEDICATEDSERVER
@@ -35,68 +34,69 @@ public:
      * ?getAutomationClient\@DedicatedServer\@\@EEBA?AV?$not_null\@V?$NonOwnerPointer\@VAutomationClient\@Automation\@\@\@Bedrock\@\@\@gsl\@\@XZ
      */
     MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class Automation::AutomationClient>>
-    getAutomationClient() const;
+    getAutomationClient() const; // NOLINT
     /**
      * @symbol
      * ?getFileArchiver\@DedicatedServer\@\@UEBA?AV?$not_null\@V?$NonOwnerPointer\@VFileArchiver\@\@\@Bedrock\@\@\@gsl\@\@XZ
      */
-    MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class FileArchiver>> getFileArchiver() const;
+    MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class FileArchiver>> getFileArchiver() const; // NOLINT
     /**
      * @symbol ?getGameModuleShared\@DedicatedServer\@\@EEAAAEAVIGameModuleShared\@\@XZ
      */
-    MCVAPI class IGameModuleShared& getGameModuleShared();
+    MCVAPI class IGameModuleShared& getGameModuleShared(); // NOLINT
     /**
      * @symbol
      * ?getPrimaryMinecraft\@DedicatedServer\@\@EEAA?AV?$not_null\@V?$NonOwnerPointer\@VMinecraft\@\@\@Bedrock\@\@\@gsl\@\@XZ
      */
-    MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> getPrimaryMinecraft();
+    MCVAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> getPrimaryMinecraft(); // NOLINT
     /**
      * @symbol ?isDedicatedServer\@DedicatedServer\@\@EEBA_NXZ
      */
-    MCVAPI bool isDedicatedServer() const;
+    MCVAPI bool isDedicatedServer() const; // NOLINT
     /**
      * @symbol ?isEduMode\@DedicatedServer\@\@EEBA_NXZ
      */
-    MCVAPI bool isEduMode() const;
+    MCVAPI bool isEduMode() const; // NOLINT
     /**
      * @symbol ?onNetworkMaxPlayersChanged\@DedicatedServer\@\@EEAAXI\@Z
      */
-    MCVAPI void onNetworkMaxPlayersChanged(unsigned int);
+    MCVAPI void onNetworkMaxPlayersChanged(unsigned int); // NOLINT
     /**
      * @symbol
      * ?requestServerShutdown\@DedicatedServer\@\@EEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCVAPI void requestServerShutdown(std::string const&);
+    MCVAPI void requestServerShutdown(std::string const&); // NOLINT
     /**
      * @symbol ?stop\@DedicatedServer\@\@UEAA_NXZ
      */
-    MCVAPI bool stop();
+    MCVAPI bool stop(); // NOLINT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~DedicatedServer();
+    MCVAPI ~DedicatedServer(); // NOLINT
 #endif
     /**
      * @symbol ??0DedicatedServer\@\@QEAA\@XZ
      */
-    MCAPI DedicatedServer();
+    MCAPI DedicatedServer(); // NOLINT
     /**
      * @symbol
      * ?runDedicatedServerLoop\@DedicatedServer\@\@QEAA?AW4StartResult\@1\@AEAVFilePathManager\@Core\@\@AEAVPropertiesSettings\@\@AEAVLevelSettings\@\@AEAVAllowListFile\@\@AEAV?$unique_ptr\@VPermissionsFile\@\@U?$default_delete\@VPermissionsFile\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI enum class DedicatedServer::StartResult
-    runDedicatedServerLoop(class Core::FilePathManager&, class PropertiesSettings&, class LevelSettings&, class AllowListFile&, std::unique_ptr<class PermissionsFile>&);
+    runDedicatedServerLoop(class Core::FilePathManager&, class PropertiesSettings&, class LevelSettings&, class AllowListFile&, std::unique_ptr<class PermissionsFile>&); // NOLINT
     /**
      * @symbol
      * ?start\@DedicatedServer\@\@QEAA?AW4StartResult\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVActivationArguments\@Bedrock\@\@\@Z
      */
-    MCAPI enum class DedicatedServer::StartResult start(std::string const&, class Bedrock::ActivationArguments const&);
+    MCAPI enum class DedicatedServer::StartResult
+    start(std::string const&, class Bedrock::ActivationArguments const&); // NOLINT
 
     // private:
     /**
      * @symbol ?initializeLogging\@DedicatedServer\@\@AEAAXXZ
      */
-    MCAPI void initializeLogging();
+    MCAPI void initializeLogging(); // NOLINT
 
 private:
 };

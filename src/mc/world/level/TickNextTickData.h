@@ -4,24 +4,23 @@
 
 class TickNextTickData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKNEXTTICKDATA
 public:
+    // prevent constructor by default
     TickNextTickData& operator=(TickNextTickData const&) = delete;
     TickNextTickData(TickNextTickData const&)            = delete;
     TickNextTickData()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ??0TickNextTickData\@\@QEAA\@AEBVBlockPos\@\@AEBVBlock\@\@AEBUTick\@\@H\@Z
      */
-    MCAPI TickNextTickData(class BlockPos const&, class Block const&, struct Tick const&, int);
+    MCAPI TickNextTickData(class BlockPos const&, class Block const&, struct Tick const&, int); // NOLINT
     /**
      * @symbol ??8TickNextTickData\@\@QEBA_NAEBV0\@\@Z
      */
-    MCAPI bool operator==(class TickNextTickData const&) const;
+    MCAPI bool operator==(class TickNextTickData const&) const; // NOLINT
     /**
      * @symbol ??OTickNextTickData\@\@QEBA_NAEBV0\@\@Z
      */
-    MCAPI bool operator>(class TickNextTickData const&) const;
+    MCAPI bool operator>(class TickNextTickData const&) const; // NOLINT
 };

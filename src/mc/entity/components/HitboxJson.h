@@ -4,12 +4,9 @@
 
 struct HitboxJson {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HITBOXJSON
 public:
+    // prevent constructor by default
     HitboxJson& operator=(HitboxJson const&) = delete;
     HitboxJson(HitboxJson const&)            = delete;
     HitboxJson()                             = delete;
-#endif
-
-public:
 };

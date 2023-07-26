@@ -6,18 +6,17 @@ namespace gametest {
 
 struct TestParameters {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETEST_TESTPARAMETERS
 public:
+    // prevent constructor by default
     TestParameters& operator=(TestParameters const&) = delete;
     TestParameters(TestParameters const&)            = delete;
     TestParameters()                                 = delete;
-#endif
 
 public:
     /**
      * @symbol ??1TestParameters\@gametest\@\@QEAA\@XZ
      */
-    MCAPI ~TestParameters();
+    MCAPI ~TestParameters(); // NOLINT
 };
 
 }; // namespace gametest

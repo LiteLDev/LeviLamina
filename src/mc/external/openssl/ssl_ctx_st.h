@@ -4,12 +4,9 @@
 
 struct ssl_ctx_st {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SSL_CTX_ST
 public:
+    // prevent constructor by default
     ssl_ctx_st& operator=(ssl_ctx_st const&) = delete;
     ssl_ctx_st(ssl_ctx_st const&)            = delete;
     ssl_ctx_st()                             = delete;
-#endif
-
-public:
 };

@@ -12,12 +12,11 @@ namespace JsonUtil { class EmptyClass; }
 
 class DespawnDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DESPAWNDEFINITION
 public:
+    // prevent constructor by default
     DespawnDefinition& operator=(DespawnDefinition const&) = delete;
     DespawnDefinition(DespawnDefinition const&)            = delete;
     DespawnDefinition()                                    = delete;
-#endif
 
 public:
     /**
@@ -26,5 +25,5 @@ public:
      */
     MCAPI static void
     buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DespawnDefinition>>&);
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DespawnDefinition>>&); // NOLINT
 };

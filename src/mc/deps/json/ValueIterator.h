@@ -11,21 +11,20 @@ namespace Json {
 
 class ValueIterator {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_JSON_VALUEITERATOR
 public:
+    // prevent constructor by default
     ValueIterator& operator=(ValueIterator const&) = delete;
     ValueIterator()                                = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ValueIterator\@Json\@\@QEAA\@AEBV01\@\@Z
      */
-    MCAPI ValueIterator(class Json::ValueIterator const&);
+    MCAPI ValueIterator(class Json::ValueIterator const&); // NOLINT
     /**
      * @symbol ??0ValueIterator\@Json\@\@QEAA\@AEBVValueConstIterator\@1\@\@Z
      */
-    MCAPI ValueIterator(class Json::ValueConstIterator const&);
+    MCAPI ValueIterator(class Json::ValueConstIterator const&); // NOLINT
 };
 
 }; // namespace Json

@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Player;
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace ScriptModuleMinecraft { struct ScriptTitleDisplayOptions; }
 // clang-format on
@@ -16,19 +17,18 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptScreenDisplay {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTSCREENDISPLAY
 public:
+    // prevent constructor by default
     ScriptScreenDisplay& operator=(ScriptScreenDisplay const&) = delete;
     ScriptScreenDisplay(ScriptScreenDisplay const&)            = delete;
     ScriptScreenDisplay()                                      = delete;
-#endif
 
 public:
     /**
      * @symbol ??4ScriptScreenDisplay\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptScreenDisplay&
-    operator=(struct ScriptModuleMinecraft::ScriptScreenDisplay&&);
+    operator=(struct ScriptModuleMinecraft::ScriptScreenDisplay&&); // NOLINT
     /**
      * @symbol
      * ?setActionBar\@ScriptScreenDisplay\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@X\@Scripting\@\@AEBV?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@V?$vector\@V?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@\@std\@\@V?$allocator\@V?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@\@std\@\@\@2\@\@2\@\@std\@\@\@Z
@@ -39,14 +39,14 @@ public:
                  struct ScriptModuleMinecraft::ScriptRawMessageInterface,
                  std::vector<
                      class std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&)
-        const;
+        const; // NOLINT
     /**
      * @symbol
      * ?setTitle\@ScriptScreenDisplay\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@X\@Scripting\@\@AEBV?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@V?$vector\@V?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@\@std\@\@V?$allocator\@V?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@\@std\@\@\@2\@\@2\@\@std\@\@V?$optional\@UScriptTitleDisplayOptions\@ScriptModuleMinecraft\@\@\@6\@\@Z
      */
     MCAPI class Scripting::Result<void>
     setTitle(class std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface, std::vector<class std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&, class std::optional<struct ScriptModuleMinecraft::ScriptTitleDisplayOptions>)
-        const;
+        const; // NOLINT
     /**
      * @symbol
      * ?updateSubtitle\@ScriptScreenDisplay\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@X\@Scripting\@\@AEBV?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@V?$vector\@V?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@\@std\@\@V?$allocator\@V?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@\@std\@\@\@2\@\@2\@\@std\@\@\@Z
@@ -57,12 +57,13 @@ public:
                    struct ScriptModuleMinecraft::ScriptRawMessageInterface,
                    std::vector<class std::variant<
                        std::string,
-                       struct ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&) const;
+                       struct ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&) const; // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptScreenDisplay\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptScreenDisplay\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptScreenDisplay> bind();
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptScreenDisplay>
+    bind(); // NOLINT
 
     // private:
     /**
@@ -71,7 +72,7 @@ public:
      */
     MCAPI class Scripting::Result<std::string>
     _getJsonString(class Player&, class std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface, std::vector<class std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&)
-        const;
+        const; // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

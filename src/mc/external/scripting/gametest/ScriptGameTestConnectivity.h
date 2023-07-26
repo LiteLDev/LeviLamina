@@ -6,21 +6,20 @@ namespace ScriptModuleGameTest {
 
 class ScriptGameTestConnectivity {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEGAMETEST_SCRIPTGAMETESTCONNECTIVITY
 public:
+    // prevent constructor by default
     ScriptGameTestConnectivity& operator=(ScriptGameTestConnectivity const&) = delete;
     ScriptGameTestConnectivity()                                             = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ScriptGameTestConnectivity\@ScriptModuleGameTest\@\@QEAA\@_N000\@Z
      */
-    MCAPI ScriptGameTestConnectivity(bool, bool, bool, bool);
+    MCAPI ScriptGameTestConnectivity(bool, bool, bool, bool); // NOLINT
     /**
      * @symbol ??0ScriptGameTestConnectivity\@ScriptModuleGameTest\@\@QEAA\@AEBV01\@\@Z
      */
-    MCAPI ScriptGameTestConnectivity(class ScriptModuleGameTest::ScriptGameTestConnectivity const&);
+    MCAPI ScriptGameTestConnectivity(class ScriptModuleGameTest::ScriptGameTestConnectivity const&); // NOLINT
 };
 
 }; // namespace ScriptModuleGameTest

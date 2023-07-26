@@ -4,20 +4,19 @@
 
 struct CrashDumpEventData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRASHDUMPEVENTDATA
 public:
+    // prevent constructor by default
     CrashDumpEventData& operator=(CrashDumpEventData const&) = delete;
     CrashDumpEventData(CrashDumpEventData const&)            = delete;
     CrashDumpEventData()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ??0CrashDumpEventData\@\@QEAA\@W4CrashDumpLogStringID\@\@0\@Z
      */
-    MCAPI CrashDumpEventData(enum class CrashDumpLogStringID, enum class CrashDumpLogStringID);
+    MCAPI CrashDumpEventData(enum class CrashDumpLogStringID, enum class CrashDumpLogStringID); // NOLINT
     /**
      * @symbol ?kFormat\@CrashDumpEventData\@\@2QBUCrashDumpFormatEntryImpl\@\@B
      */
-    MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
+    MCAPI static struct CrashDumpFormatEntryImpl const kFormat[]; // NOLINT
 };

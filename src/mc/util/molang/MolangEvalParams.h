@@ -7,86 +7,85 @@
 
 struct MolangEvalParams {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGEVALPARAMS
 public:
+    // prevent constructor by default
     MolangEvalParams& operator=(MolangEvalParams const&) = delete;
     MolangEvalParams(MolangEvalParams const&)            = delete;
     MolangEvalParams()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ?getActorFromArg\@MolangEvalParams\@\@QEBAPEAVActor\@\@AEBUMolangScriptArg\@\@\@Z
      */
-    MCAPI class Actor* getActorFromArg(struct MolangScriptArg const&) const;
+    MCAPI class Actor* getActorFromArg(struct MolangScriptArg const&) const; // NOLINT
     /**
      * @symbol ?getActorPtrFromPushedArray\@MolangEvalParams\@\@QEBAPEAVActor\@\@_K0AEA_N\@Z
      */
-    MCAPI class Actor* getActorPtrFromPushedArray(unsigned __int64, unsigned __int64, bool&) const;
+    MCAPI class Actor* getActorPtrFromPushedArray(unsigned __int64, unsigned __int64, bool&) const; // NOLINT
     /**
      * @symbol ?popActor\@MolangEvalParams\@\@QEAAPEAVActor\@\@XZ
      */
-    MCAPI class Actor* popActor();
+    MCAPI class Actor* popActor(); // NOLINT
     /**
      * @symbol ?popFloat\@MolangEvalParams\@\@QEAAMXZ
      */
-    MCAPI float popFloat();
+    MCAPI float popFloat(); // NOLINT
     /**
      * @symbol ?popHash\@MolangEvalParams\@\@QEAA_KXZ
      */
-    MCAPI unsigned __int64 popHash();
+    MCAPI unsigned __int64 popHash(); // NOLINT
     /**
      * @symbol ?popMissingVariableOrActorAddress\@MolangEvalParams\@\@QEAA_KW4MolangVariableIndex\@\@\@Z
      */
-    MCAPI unsigned __int64 popMissingVariableOrActorAddress(enum class MolangVariableIndex);
+    MCAPI unsigned __int64 popMissingVariableOrActorAddress(enum class MolangVariableIndex); // NOLINT
     /**
      * @symbol ?popMissingVariableOrActorAddress\@MolangEvalParams\@\@QEAA_KAEBVHashedString\@\@\@Z
      */
-    MCAPI unsigned __int64 popMissingVariableOrActorAddress(class HashedString const&);
+    MCAPI unsigned __int64 popMissingVariableOrActorAddress(class HashedString const&); // NOLINT
     /**
      * @symbol ?popPublicAccessMode\@MolangEvalParams\@\@QEAA_NXZ
      */
-    MCAPI bool popPublicAccessMode();
+    MCAPI bool popPublicAccessMode(); // NOLINT
     /**
      * @symbol ?popRenderParamsCopyAndPtr\@MolangEvalParams\@\@QEAAXXZ
      */
-    MCAPI void popRenderParamsCopyAndPtr();
+    MCAPI void popRenderParamsCopyAndPtr(); // NOLINT
     /**
      * @symbol ?pushLoopScope\@MolangEvalParams\@\@QEAAX_K0\@Z
      */
-    MCAPI void pushLoopScope(unsigned __int64, unsigned __int64);
+    MCAPI void pushLoopScope(unsigned __int64, unsigned __int64); // NOLINT
     /**
      * @symbol ?pushRenderParams\@MolangEvalParams\@\@QEAAXAEBVRenderParams\@\@\@Z
      */
-    MCAPI void pushRenderParams(class RenderParams const&);
+    MCAPI void pushRenderParams(class RenderParams const&); // NOLINT
     /**
      * @symbol ?pushReturnValue\@MolangEvalParams\@\@QEAAXXZ
      */
-    MCAPI void pushReturnValue();
+    MCAPI void pushReturnValue(); // NOLINT
     /**
      * @symbol ?pushValue\@MolangEvalParams\@\@QEAAXM\@Z
      */
-    MCAPI void pushValue(float);
+    MCAPI void pushValue(float); // NOLINT
     /**
      * @symbol ?renderParams\@MolangEvalParams\@\@QEAAAEAVRenderParams\@\@XZ
      */
-    MCAPI class RenderParams& renderParams();
+    MCAPI class RenderParams& renderParams(); // NOLINT
     /**
      * @symbol ?renderParams\@MolangEvalParams\@\@QEBAAEBVRenderParams\@\@XZ
      */
-    MCAPI class RenderParams const& renderParams() const;
+    MCAPI class RenderParams const& renderParams() const; // NOLINT
     /**
      * @symbol ?restoreAndPopStackState\@MolangEvalParams\@\@QEAAXXZ
      */
-    MCAPI void restoreAndPopStackState();
+    MCAPI void restoreAndPopStackState(); // NOLINT
     /**
      * @symbol ??1MolangEvalParams\@\@QEAA\@XZ
      */
-    MCAPI ~MolangEvalParams();
+    MCAPI ~MolangEvalParams(); // NOLINT
     /**
      * @symbol ?getLocalThreadEvalParams\@MolangEvalParams\@\@SAAEAU1\@XZ
      */
-    MCAPI static struct MolangEvalParams& getLocalThreadEvalParams();
+    MCAPI static struct MolangEvalParams& getLocalThreadEvalParams(); // NOLINT
 
     // private:
 };

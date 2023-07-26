@@ -12,19 +12,18 @@ namespace JsonUtil { class EmptyClass; }
 
 struct MarkVariantDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MARKVARIANTDEFINITION
 public:
+    // prevent constructor by default
     MarkVariantDefinition& operator=(MarkVariantDefinition const&) = delete;
     MarkVariantDefinition(MarkVariantDefinition const&)            = delete;
     MarkVariantDefinition()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?buildSchema\@MarkVariantDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UMarkVariantDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct MarkVariantDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      struct MarkVariantDefinition>>&); // NOLINT
 };

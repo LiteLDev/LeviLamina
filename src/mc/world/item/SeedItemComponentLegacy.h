@@ -9,40 +9,39 @@ namespace Json { class Value; }
 
 class SeedItemComponentLegacy {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SEEDITEMCOMPONENTLEGACY
 public:
+    // prevent constructor by default
     SeedItemComponentLegacy& operator=(SeedItemComponentLegacy const&) = delete;
     SeedItemComponentLegacy(SeedItemComponentLegacy const&)            = delete;
     SeedItemComponentLegacy()                                          = delete;
-#endif
 
 public:
     /**
      * @symbol ??0SeedItemComponentLegacy\@\@QEAA\@AEAVItem\@\@\@Z
      */
-    MCAPI SeedItemComponentLegacy(class Item&);
+    MCAPI SeedItemComponentLegacy(class Item&); // NOLINT
     /**
      * @symbol ?init\@SeedItemComponentLegacy\@\@QEAA_NAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
-    MCAPI bool init(class Json::Value&, class SemVersion const&);
+    MCAPI bool init(class Json::Value&, class SemVersion const&); // NOLINT
     /**
      * @symbol ?isPlanting\@SeedItemComponentLegacy\@\@QEBA_NXZ
      */
-    MCAPI bool isPlanting() const;
+    MCAPI bool isPlanting() const; // NOLINT
     /**
      * @symbol ?setPlanting\@SeedItemComponentLegacy\@\@QEAAX_N\@Z
      */
-    MCAPI void setPlanting(bool);
+    MCAPI void setPlanting(bool); // NOLINT
     /**
      * @symbol ?useOn\@SeedItemComponentLegacy\@\@QEAA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
      */
-    MCAPI bool useOn(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&);
+    MCAPI bool useOn(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&); // NOLINT
 
     // private:
     /**
      * @symbol ?_canPlant\@SeedItemComponentLegacy\@\@AEBA_NAEBVBlock\@\@\@Z
      */
-    MCAPI bool _canPlant(class Block const&) const;
+    MCAPI bool _canPlant(class Block const&) const; // NOLINT
 
 private:
 };

@@ -6,14 +6,11 @@ namespace ClientBlockPipeline {
 
 struct BlockSchematic {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTBLOCKPIPELINE_BLOCKSCHEMATIC
 public:
+    // prevent constructor by default
     BlockSchematic& operator=(BlockSchematic const&) = delete;
     BlockSchematic(BlockSchematic const&)            = delete;
     BlockSchematic()                                 = delete;
-#endif
-
-public:
 };
 
 }; // namespace ClientBlockPipeline

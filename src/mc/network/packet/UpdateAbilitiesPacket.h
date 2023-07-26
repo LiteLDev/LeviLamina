@@ -8,52 +8,51 @@
 
 class UpdateAbilitiesPacket : public ::Packet {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_UPDATEABILITIESPACKET
 public:
+    // prevent constructor by default
     UpdateAbilitiesPacket& operator=(UpdateAbilitiesPacket const&) = delete;
     UpdateAbilitiesPacket(UpdateAbilitiesPacket const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?getId\@UpdateAbilitiesPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
-    virtual enum class MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?getName\@UpdateAbilitiesPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string getName() const;
+    virtual std::string getName() const; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?write\@UpdateAbilitiesPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream&) const; // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?_read\@UpdateAbilitiesPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATEABILITIESPACKET
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~UpdateAbilitiesPacket();
+    MCVAPI ~UpdateAbilitiesPacket(); // NOLINT
 #endif
     /**
      * @symbol ??0UpdateAbilitiesPacket\@\@QEAA\@XZ
      */
-    MCAPI UpdateAbilitiesPacket();
+    MCAPI UpdateAbilitiesPacket(); // NOLINT
     /**
      * @symbol ??0UpdateAbilitiesPacket\@\@QEAA\@UActorUniqueID\@\@AEBVLayeredAbilities\@\@\@Z
      */
-    MCAPI UpdateAbilitiesPacket(struct ActorUniqueID, class LayeredAbilities const&);
+    MCAPI UpdateAbilitiesPacket(struct ActorUniqueID, class LayeredAbilities const&); // NOLINT
 };

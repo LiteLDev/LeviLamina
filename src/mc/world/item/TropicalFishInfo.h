@@ -4,16 +4,15 @@
 
 struct TropicalFishInfo {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TROPICALFISHINFO
 public:
+    // prevent constructor by default
     TropicalFishInfo& operator=(TropicalFishInfo const&) = delete;
     TropicalFishInfo(TropicalFishInfo const&)            = delete;
     TropicalFishInfo()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ??1TropicalFishInfo\@\@QEAA\@XZ
      */
-    MCAPI ~TropicalFishInfo();
+    MCAPI ~TropicalFishInfo(); // NOLINT
 };

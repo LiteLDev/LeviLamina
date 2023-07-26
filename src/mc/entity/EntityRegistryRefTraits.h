@@ -4,12 +4,9 @@
 
 struct EntityRegistryRefTraits {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYREGISTRYREFTRAITS
 public:
+    // prevent constructor by default
     EntityRegistryRefTraits& operator=(EntityRegistryRefTraits const&) = delete;
     EntityRegistryRefTraits(EntityRegistryRefTraits const&)            = delete;
     EntityRegistryRefTraits()                                          = delete;
-#endif
-
-public:
 };

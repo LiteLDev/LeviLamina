@@ -4,27 +4,26 @@
 
 class BehaviorComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEHAVIORCOMPONENT
 public:
+    // prevent constructor by default
     BehaviorComponent& operator=(BehaviorComponent const&) = delete;
     BehaviorComponent(BehaviorComponent const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0BehaviorComponent\@\@QEAA\@XZ
      */
-    MCAPI BehaviorComponent();
+    MCAPI BehaviorComponent(); // NOLINT
     /**
      * @symbol ??0BehaviorComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI BehaviorComponent(class BehaviorComponent&&);
+    MCAPI BehaviorComponent(class BehaviorComponent&&); // NOLINT
     /**
      * @symbol ??4BehaviorComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class BehaviorComponent& operator=(class BehaviorComponent&&);
+    MCAPI class BehaviorComponent& operator=(class BehaviorComponent&&); // NOLINT
     /**
      * @symbol ??1BehaviorComponent\@\@QEAA\@XZ
      */
-    MCAPI ~BehaviorComponent();
+    MCAPI ~BehaviorComponent(); // NOLINT
 };

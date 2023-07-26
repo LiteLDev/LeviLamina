@@ -6,6 +6,6 @@ namespace ContainerUtility {
 /**
  * @symbol ?getNotNoneTypeContainerComponentFromActor\@ContainerUtility\@\@YAPEAVContainerComponent\@\@PEAVActor\@\@\@Z
  */
-MCAPI class ContainerComponent* getNotNoneTypeContainerComponentFromActor(class Actor*);
+MCAPI class ContainerComponent* getNotNoneTypeContainerComponentFromActor(class Actor*); // NOLINT
 
 }; // namespace ContainerUtility

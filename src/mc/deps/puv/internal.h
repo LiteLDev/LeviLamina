@@ -11,6 +11,6 @@ namespace Puv::internal {
 /**
  * @symbol ?getAny\@internal\@Puv\@\@YAAEAVmeta_any\@entt\@\@AEAVLoadResultAny\@2\@\@Z
  */
-MCAPI class entt::meta_any& getAny(class Puv::LoadResultAny&);
+MCAPI class entt::meta_any& getAny(class Puv::LoadResultAny&); // NOLINT
 
 }; // namespace Puv::internal

@@ -6,14 +6,11 @@ namespace AgentComponents {
 
 struct AnimationCompleteFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMPONENTS_ANIMATIONCOMPLETEFLAG
 public:
+    // prevent constructor by default
     AnimationCompleteFlag& operator=(AnimationCompleteFlag const&) = delete;
     AnimationCompleteFlag(AnimationCompleteFlag const&)            = delete;
     AnimationCompleteFlag()                                        = delete;
-#endif
-
-public:
 };
 
 }; // namespace AgentComponents

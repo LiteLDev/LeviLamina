@@ -4,24 +4,23 @@
 
 struct SurfaceMaterialAdjustmentEvaluated {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SURFACEMATERIALADJUSTMENTEVALUATED
 public:
+    // prevent constructor by default
     SurfaceMaterialAdjustmentEvaluated& operator=(SurfaceMaterialAdjustmentEvaluated const&) = delete;
     SurfaceMaterialAdjustmentEvaluated(SurfaceMaterialAdjustmentEvaluated const&)            = delete;
     SurfaceMaterialAdjustmentEvaluated()                                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ?empty\@SurfaceMaterialAdjustmentEvaluated\@\@QEBA_NXZ
      */
-    MCAPI bool empty() const;
+    MCAPI bool empty() const; // NOLINT
     /**
      * @symbol ?makeAdjustments\@SurfaceMaterialAdjustmentEvaluated\@\@QEBAXAEAUSurfaceMaterialBlocks\@\@H\@Z
      */
-    MCAPI void makeAdjustments(struct SurfaceMaterialBlocks&, int) const;
+    MCAPI void makeAdjustments(struct SurfaceMaterialBlocks&, int) const; // NOLINT
     /**
      * @symbol ??1SurfaceMaterialAdjustmentEvaluated\@\@QEAA\@XZ
      */
-    MCAPI ~SurfaceMaterialAdjustmentEvaluated();
+    MCAPI ~SurfaceMaterialAdjustmentEvaluated(); // NOLINT
 };

@@ -4,20 +4,19 @@
 
 struct RopeParams {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ROPEPARAMS
 public:
+    // prevent constructor by default
     RopeParams& operator=(RopeParams const&) = delete;
     RopeParams(RopeParams const&)            = delete;
     RopeParams()                             = delete;
-#endif
 
 public:
     /**
      * @symbol ??0RopeParams\@\@QEAA\@AEBVVec3\@\@0M\@Z
      */
-    MCAPI RopeParams(class Vec3 const&, class Vec3 const&, float);
+    MCAPI RopeParams(class Vec3 const&, class Vec3 const&, float); // NOLINT
     /**
      * @symbol ?leadInit\@RopeParams\@\@QEAAXXZ
      */
-    MCAPI void leadInit();
+    MCAPI void leadInit(); // NOLINT
 };

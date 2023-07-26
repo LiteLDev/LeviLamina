@@ -11,45 +11,45 @@ namespace ActorInventoryUtils {
  * ?forEachItemInContainer\@ActorInventoryUtils\@\@YAXAEBVContainer\@\@AEBVCommandIntegerRange\@\@V?$function\@$$A6AXAEBVItemStack\@\@\@Z\@std\@\@\@Z
  */
 MCAPI void
-forEachItemInContainer(class Container const&, class CommandIntegerRange const&, class std::function<void(class ItemStack const&)>);
+forEachItemInContainer(class Container const&, class CommandIntegerRange const&, class std::function<void(class ItemStack const&)>); // NOLINT
 /**
  * @symbol
  * ?forEachItemOnActor\@ActorInventoryUtils\@\@YAXAEBVActor\@\@V?$function\@$$A6AXAEBVItemStack\@\@\@Z\@std\@\@\@Z
  */
-MCAPI void forEachItemOnActor(class Actor const&, class std::function<void(class ItemStack const&)>);
+MCAPI void forEachItemOnActor(class Actor const&, class std::function<void(class ItemStack const&)>); // NOLINT
 /**
  * @symbol
  * ?forEachItemOnActor\@ActorInventoryUtils\@\@YAXAEBVActor\@\@W4EquipmentSlot\@\@AEBVCommandIntegerRange\@\@V?$function\@$$A6AXAEBVItemStack\@\@\@Z\@std\@\@\@Z
  */
 MCAPI void
-forEachItemOnActor(class Actor const&, enum class EquipmentSlot, class CommandIntegerRange const&, class std::function<void(class ItemStack const&)>);
+forEachItemOnActor(class Actor const&, enum class EquipmentSlot, class CommandIntegerRange const&, class std::function<void(class ItemStack const&)>); // NOLINT
 /**
  * @symbol
  * ?forEachItemOnActorHotbar\@ActorInventoryUtils\@\@YAXAEBVActor\@\@AEBVCommandIntegerRange\@\@V?$function\@$$A6AXAEBVItemStack\@\@\@Z\@std\@\@\@Z
  */
 MCAPI void
-forEachItemOnActorHotbar(class Actor const&, class CommandIntegerRange const&, class std::function<void(class ItemStack const&)>);
+forEachItemOnActorHotbar(class Actor const&, class CommandIntegerRange const&, class std::function<void(class ItemStack const&)>); // NOLINT
 /**
  * @symbol
  * ?forEachItemOnActorInventory\@ActorInventoryUtils\@\@YAXAEBVActor\@\@AEBVCommandIntegerRange\@\@V?$function\@$$A6AXAEBVItemStack\@\@\@Z\@std\@\@\@Z
  */
 MCAPI void
-forEachItemOnActorInventory(class Actor const&, class CommandIntegerRange const&, class std::function<void(class ItemStack const&)>);
+forEachItemOnActorInventory(class Actor const&, class CommandIntegerRange const&, class std::function<void(class ItemStack const&)>); // NOLINT
 /**
  * @symbol ?getItem\@ActorInventoryUtils\@\@YAPEBVItemStack\@\@AEBVActor\@\@W4EquipmentSlot\@\@H\@Z
  */
-MCAPI class ItemStack const* getItem(class Actor const&, enum class EquipmentSlot, int);
+MCAPI class ItemStack const* getItem(class Actor const&, enum class EquipmentSlot, int); // NOLINT
 /**
  * @symbol
  * ?queryActorEquipmentSlotForItem\@ActorInventoryUtils\@\@YA_NAEBVActor\@\@AEBVItemInstance\@\@W4EquipmentSlot\@\@AEBVCommandIntegerRange\@\@3AEBUComparisonOptions\@ItemStackBase\@\@\@Z
  */
 MCAPI bool
-queryActorEquipmentSlotForItem(class Actor const&, class ItemInstance const&, enum class EquipmentSlot, class CommandIntegerRange const&, class CommandIntegerRange const&, struct ItemStackBase::ComparisonOptions const&);
+queryActorEquipmentSlotForItem(class Actor const&, class ItemInstance const&, enum class EquipmentSlot, class CommandIntegerRange const&, class CommandIntegerRange const&, struct ItemStackBase::ComparisonOptions const&); // NOLINT
 /**
  * @symbol
  * ?queryActorForItem\@ActorInventoryUtils\@\@YA_NAEBVActor\@\@AEBVItemInstance\@\@AEBVCommandIntegerRange\@\@AEBUComparisonOptions\@ItemStackBase\@\@\@Z
  */
 MCAPI bool
-queryActorForItem(class Actor const&, class ItemInstance const&, class CommandIntegerRange const&, struct ItemStackBase::ComparisonOptions const&);
+queryActorForItem(class Actor const&, class ItemInstance const&, class CommandIntegerRange const&, struct ItemStackBase::ComparisonOptions const&); // NOLINT
 
 }; // namespace ActorInventoryUtils

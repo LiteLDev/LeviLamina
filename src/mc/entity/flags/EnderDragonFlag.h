@@ -4,12 +4,9 @@
 
 struct EnderDragonFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDERDRAGONFLAG
 public:
+    // prevent constructor by default
     EnderDragonFlag& operator=(EnderDragonFlag const&) = delete;
     EnderDragonFlag(EnderDragonFlag const&)            = delete;
     EnderDragonFlag()                                  = delete;
-#endif
-
-public:
 };

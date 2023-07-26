@@ -9,29 +9,28 @@ namespace AgentCommands {
 
 class AttackCommand : public ::AgentCommands::Command {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMMANDS_ATTACKCOMMAND
 public:
+    // prevent constructor by default
     AttackCommand& operator=(AttackCommand const&) = delete;
     AttackCommand(AttackCommand const&)            = delete;
     AttackCommand()                                = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?execute\@AttackCommand\@AgentCommands\@\@UEAAXXZ
      */
-    virtual void execute();
+    virtual void execute(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?isDone\@AttackCommand\@AgentCommands\@\@UEAA_NXZ
      */
-    virtual bool isDone();
+    virtual bool isDone(); // NOLINT
 };
 
 }; // namespace AgentCommands

@@ -6,18 +6,17 @@ namespace CodeBuilder {
 
 struct DataMessage {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CODEBUILDER_DATAMESSAGE
 public:
+    // prevent constructor by default
     DataMessage& operator=(DataMessage const&) = delete;
     DataMessage(DataMessage const&)            = delete;
     DataMessage()                              = delete;
-#endif
 
 public:
     /**
      * @symbol ??1DataMessage\@CodeBuilder\@\@QEAA\@XZ
      */
-    MCAPI ~DataMessage();
+    MCAPI ~DataMessage(); // NOLINT
 };
 
 }; // namespace CodeBuilder

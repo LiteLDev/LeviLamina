@@ -11,6 +11,7 @@ namespace Bedrock::Threading::Burst::Details {
 /**
  * @symbol ?sStats\@Details\@Burst\@Threading\@Bedrock\@\@3U?$WorkerTaskStats\@U?$atomic\@_K\@std\@\@\@1234\@A
  */
-MCAPI extern struct Bedrock::Threading::Burst::Details::WorkerTaskStats<struct std::atomic<unsigned __int64>> sStats;
+MCAPI extern struct Bedrock::Threading::Burst::Details::WorkerTaskStats<struct std::atomic<unsigned __int64>>
+    sStats; // NOLINT
 
 }; // namespace Bedrock::Threading::Burst::Details

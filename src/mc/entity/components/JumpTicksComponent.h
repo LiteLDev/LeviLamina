@@ -4,12 +4,9 @@
 
 struct JumpTicksComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_JUMPTICKSCOMPONENT
 public:
+    // prevent constructor by default
     JumpTicksComponent& operator=(JumpTicksComponent const&) = delete;
     JumpTicksComponent(JumpTicksComponent const&)            = delete;
     JumpTicksComponent()                                     = delete;
-#endif
-
-public:
 };

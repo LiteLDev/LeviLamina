@@ -14,90 +14,84 @@ public:
     // ContentLog inner types define
     class ContentLogEndPointData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTENTLOG_CONTENTLOGENDPOINTDATA
     public:
+        // prevent constructor by default
         ContentLogEndPointData& operator=(ContentLogEndPointData const&) = delete;
         ContentLogEndPointData(ContentLogEndPointData const&)            = delete;
         ContentLogEndPointData()                                         = delete;
-#endif
 
     public:
         /**
          * @symbol ??0ContentLogEndPointData\@ContentLog\@\@QEAA\@V?$not_null\@PEAVContentLogEndPoint\@\@\@gsl\@\@\@Z
          */
-        MCAPI ContentLogEndPointData(class gsl::not_null<class ContentLogEndPoint*>);
+        MCAPI ContentLogEndPointData(class gsl::not_null<class ContentLogEndPoint*>); // NOLINT
     };
 
     class ContentLogScope {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTENTLOG_CONTENTLOGSCOPE
     public:
+        // prevent constructor by default
         ContentLogScope& operator=(ContentLogScope const&) = delete;
         ContentLogScope(ContentLogScope const&)            = delete;
         ContentLogScope()                                  = delete;
-#endif
 
     public:
         /**
          * @symbol
          * ??0ContentLogScope\@ContentLog\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
          */
-        MCAPI ContentLogScope(std::string);
+        MCAPI ContentLogScope(std::string); // NOLINT
         /**
          * @symbol ??1ContentLogScope\@ContentLog\@\@QEAA\@XZ
          */
-        MCAPI ~ContentLogScope();
+        MCAPI ~ContentLogScope(); // NOLINT
     };
 
     class ThreadSpecificData {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTENTLOG_THREADSPECIFICDATA
     public:
+        // prevent constructor by default
         ThreadSpecificData& operator=(ThreadSpecificData const&) = delete;
         ThreadSpecificData(ThreadSpecificData const&)            = delete;
         ThreadSpecificData()                                     = delete;
-#endif
-
-    public:
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTENTLOG
 public:
+    // prevent constructor by default
     ContentLog& operator=(ContentLog const&) = delete;
     ContentLog(ContentLog const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ContentLog\@\@QEAA\@XZ
      */
-    MCAPI ContentLog();
+    MCAPI ContentLog(); // NOLINT
     /**
      * @symbol ?isEnabled\@ContentLog\@\@QEBA_NXZ
      */
-    MCAPI bool isEnabled() const;
+    MCAPI bool isEnabled() const; // NOLINT
     /**
      * @symbol ?log\@ContentLog\@\@QEAAX_NW4LogLevel\@\@W4LogArea\@\@ZZ
      */
-    MCAPI void log(bool, enum class LogLevel, enum class LogArea, ...);
+    MCAPI void log(bool, enum class LogLevel, enum class LogArea, ...); // NOLINT
     /**
      * @symbol ?updateEnabledStatus\@ContentLog\@\@QEAAXXZ
      */
-    MCAPI void updateEnabledStatus();
+    MCAPI void updateEnabledStatus(); // NOLINT
     /**
      * @symbol ?getBedrockLogAreaFromContentLogArea\@ContentLog\@\@SA?BW4LogAreaID\@\@W4LogArea\@\@\@Z
      */
-    MCAPI static enum class LogAreaID const getBedrockLogAreaFromContentLogArea(enum class LogArea);
+    MCAPI static enum class LogAreaID const getBedrockLogAreaFromContentLogArea(enum class LogArea); // NOLINT
     /**
      * @symbol ?getLogAreaName\@ContentLog\@\@SAPEBDW4LogArea\@\@\@Z
      */
-    MCAPI static char const* getLogAreaName(enum class LogArea);
+    MCAPI static char const* getLogAreaName(enum class LogArea); // NOLINT
 
     // private:
     /**
      * @symbol ?_writeToLog\@ContentLog\@\@AEAAX_NW4LogArea\@\@W4LogLevel\@\@AEAPEAD\@Z
      */
-    MCAPI void _writeToLog(bool, enum class LogArea, enum class LogLevel, char*&);
+    MCAPI void _writeToLog(bool, enum class LogArea, enum class LogLevel, char*&); // NOLINT
 
 private:
 };

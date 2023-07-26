@@ -9,19 +9,18 @@ namespace TreeHelper { struct TreeParams; }
 
 class PineTreeCanopy {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PINETREECANOPY
 public:
+    // prevent constructor by default
     PineTreeCanopy& operator=(PineTreeCanopy const&) = delete;
     PineTreeCanopy(PineTreeCanopy const&)            = delete;
     PineTreeCanopy()                                 = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
@@ -29,5 +28,5 @@ public:
      */
     virtual class std::optional<class BlockPos>
     placeCanopy(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&, struct TreeHelper::TreeParams const&, std::vector<class BlockPos> const&)
-        const;
+        const; // NOLINT
 };

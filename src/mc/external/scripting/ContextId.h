@@ -6,14 +6,11 @@ namespace Scripting {
 
 struct ContextId {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTING_CONTEXTID
 public:
+    // prevent constructor by default
     ContextId& operator=(ContextId const&) = delete;
     ContextId(ContextId const&)            = delete;
     ContextId()                            = delete;
-#endif
-
-public:
 };
 
 }; // namespace Scripting

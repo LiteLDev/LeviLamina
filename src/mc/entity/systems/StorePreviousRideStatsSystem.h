@@ -9,12 +9,11 @@
 
 class StorePreviousRideStatsSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STOREPREVIOUSRIDESTATSSYSTEM
 public:
+    // prevent constructor by default
     StorePreviousRideStatsSystem& operator=(StorePreviousRideStatsSystem const&) = delete;
     StorePreviousRideStatsSystem(StorePreviousRideStatsSystem const&)            = delete;
     StorePreviousRideStatsSystem()                                               = delete;
-#endif
 
 public:
     /**
@@ -22,7 +21,7 @@ public:
      * ?_storePreviousRideStats\@StorePreviousRideStatsSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUStateVectorComponent\@\@AEAUVanillaClientGameplayComponent\@\@\@Z
      */
     MCAPI static void
-    _storePreviousRideStats(class StrictEntityContext const&, struct StateVectorComponent const&, struct VanillaClientGameplayComponent&);
+    _storePreviousRideStats(class StrictEntityContext const&, struct StateVectorComponent const&, struct VanillaClientGameplayComponent&); // NOLINT
     /**
      * @symbol
      * ?_tickStorePreviousRideStatsSystem\@StorePreviousRideStatsSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@ULocalPlayerComponentFlag\@\@\@\@UPassengerComponent\@\@\@\@$$CBUStateVectorComponent\@\@UVanillaClientGameplayComponent\@\@\@\@\@Z
@@ -35,9 +34,9 @@ public:
                                                             class FlagComponent<struct LocalPlayerComponentFlag>,
                                                             struct PassengerComponent>,
                                                         struct StateVectorComponent const,
-                                                        struct VanillaClientGameplayComponent>);
+                                                        struct VanillaClientGameplayComponent>); // NOLINT
     /**
      * @symbol ?createSystem\@StorePreviousRideStatsSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
 };

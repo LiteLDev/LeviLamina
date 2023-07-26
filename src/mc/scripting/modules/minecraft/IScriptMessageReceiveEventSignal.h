@@ -7,14 +7,11 @@ namespace ScriptModuleMinecraft {
 template <typename T0>
 class IScriptMessageReceiveEventSignal {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_ISCRIPTMESSAGERECEIVEEVENTSIGNAL
 public:
+    // prevent constructor by default
     IScriptMessageReceiveEventSignal& operator=(IScriptMessageReceiveEventSignal const&) = delete;
     IScriptMessageReceiveEventSignal(IScriptMessageReceiveEventSignal const&)            = delete;
     IScriptMessageReceiveEventSignal()                                                   = delete;
-#endif
-
-public:
 };
 
 }; // namespace ScriptModuleMinecraft

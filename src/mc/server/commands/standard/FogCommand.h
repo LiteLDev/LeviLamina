@@ -7,26 +7,25 @@
 
 class FogCommand : public ::Command {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOGCOMMAND
 public:
+    // prevent constructor by default
     FogCommand& operator=(FogCommand const&) = delete;
     FogCommand(FogCommand const&)            = delete;
     FogCommand()                             = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?execute\@FogCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol ?setup\@FogCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
-    MCAPI static void setup(class CommandRegistry&);
+    MCAPI static void setup(class CommandRegistry&); // NOLINT
 };

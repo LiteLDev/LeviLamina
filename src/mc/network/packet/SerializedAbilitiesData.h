@@ -14,40 +14,36 @@ public:
 
     struct SerializedLayer {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERIALIZEDABILITIESDATA_SERIALIZEDLAYER
     public:
+        // prevent constructor by default
         SerializedLayer& operator=(SerializedLayer const&) = delete;
         SerializedLayer(SerializedLayer const&)            = delete;
         SerializedLayer()                                  = delete;
-#endif
-
-    public:
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERIALIZEDABILITIESDATA
 public:
+    // prevent constructor by default
     SerializedAbilitiesData& operator=(SerializedAbilitiesData const&) = delete;
     SerializedAbilitiesData(SerializedAbilitiesData const&)            = delete;
     SerializedAbilitiesData()                                          = delete;
-#endif
 
 public:
     /**
      * @symbol ??0SerializedAbilitiesData\@\@QEAA\@UActorUniqueID\@\@AEBVLayeredAbilities\@\@\@Z
      */
-    MCAPI SerializedAbilitiesData(struct ActorUniqueID, class LayeredAbilities const&);
+    MCAPI SerializedAbilitiesData(struct ActorUniqueID, class LayeredAbilities const&); // NOLINT
     /**
      * @symbol ?fillIn\@SerializedAbilitiesData\@\@QEBAXAEAVLayeredAbilities\@\@\@Z
      */
-    MCAPI void fillIn(class LayeredAbilities&) const;
+    MCAPI void fillIn(class LayeredAbilities&) const; // NOLINT
     /**
      * @symbol ?getTargetPlayer\@SerializedAbilitiesData\@\@QEBA?AUActorUniqueID\@\@XZ
      */
-    MCAPI struct ActorUniqueID getTargetPlayer() const;
+    MCAPI struct ActorUniqueID getTargetPlayer() const; // NOLINT
     /**
      * @symbol ??1SerializedAbilitiesData\@\@QEAA\@XZ
      */
-    MCAPI ~SerializedAbilitiesData();
+    MCAPI ~SerializedAbilitiesData(); // NOLINT
 
     // private:
 };

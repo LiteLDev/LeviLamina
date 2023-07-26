@@ -4,23 +4,22 @@
 
 struct ContainerValidationCraftResult {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERVALIDATIONCRAFTRESULT
 public:
+    // prevent constructor by default
     ContainerValidationCraftResult& operator=(ContainerValidationCraftResult const&) = delete;
     ContainerValidationCraftResult(ContainerValidationCraftResult const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ContainerValidationCraftResult\@\@QEAA\@XZ
      */
-    MCAPI ContainerValidationCraftResult();
+    MCAPI ContainerValidationCraftResult(); // NOLINT
     /**
      * @symbol ??0ContainerValidationCraftResult\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI ContainerValidationCraftResult(struct ContainerValidationCraftResult&&);
+    MCAPI ContainerValidationCraftResult(struct ContainerValidationCraftResult&&); // NOLINT
     /**
      * @symbol ??1ContainerValidationCraftResult\@\@QEAA\@XZ
      */
-    MCAPI ~ContainerValidationCraftResult();
+    MCAPI ~ContainerValidationCraftResult(); // NOLINT
 };

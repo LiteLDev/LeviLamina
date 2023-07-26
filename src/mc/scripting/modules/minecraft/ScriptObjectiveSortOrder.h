@@ -14,12 +14,11 @@ namespace ScriptModuleMinecraft {
 
 class ScriptObjectiveSortOrder {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTOBJECTIVESORTORDER
 public:
+    // prevent constructor by default
     ScriptObjectiveSortOrder& operator=(ScriptObjectiveSortOrder const&) = delete;
     ScriptObjectiveSortOrder(ScriptObjectiveSortOrder const&)            = delete;
     ScriptObjectiveSortOrder()                                           = delete;
-#endif
 
 public:
     /**
@@ -29,7 +28,7 @@ public:
     MCAPI static class Scripting::EnumBindingBuilder<
         enum class ScriptModuleMinecraft::ScriptObjectiveSortOrderType,
         enum class ScriptModuleMinecraft::ScriptObjectiveSortOrderType>
-    bind();
+    bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

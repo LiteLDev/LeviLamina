@@ -15,57 +15,56 @@ public:
     // ScheduleCommand inner types define
     struct FunctionInfo {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCHEDULECOMMAND_FUNCTIONINFO
     public:
+        // prevent constructor by default
         FunctionInfo& operator=(FunctionInfo const&) = delete;
         FunctionInfo(FunctionInfo const&)            = delete;
         FunctionInfo()                               = delete;
-#endif
 
     public:
         /**
          * @symbol ??1FunctionInfo\@ScheduleCommand\@\@QEAA\@XZ
          */
-        MCAPI ~FunctionInfo();
+        MCAPI ~FunctionInfo(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCHEDULECOMMAND
 public:
+    // prevent constructor by default
     ScheduleCommand& operator=(ScheduleCommand const&) = delete;
     ScheduleCommand(ScheduleCommand const&)            = delete;
     ScheduleCommand()                                  = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?execute\@ScheduleCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol ?setup\@ScheduleCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
-    MCAPI static void setup(class CommandRegistry&);
+    MCAPI static void setup(class CommandRegistry&); // NOLINT
 
     // private:
     /**
      * @symbol ?_delay\@ScheduleCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void _delay(class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI void _delay(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol ?_onAreaLoaded\@ScheduleCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void _onAreaLoaded(class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI void _onAreaLoaded(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol
      * ?_tryGetFunction\@ScheduleCommand\@\@AEBA?AUFunctionInfo\@1\@AEAVFunctionManager\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI struct ScheduleCommand::FunctionInfo _tryGetFunction(class FunctionManager&, class CommandOutput&) const;
+    MCAPI struct ScheduleCommand::FunctionInfo
+    _tryGetFunction(class FunctionManager&, class CommandOutput&) const; // NOLINT
 
 private:
 };

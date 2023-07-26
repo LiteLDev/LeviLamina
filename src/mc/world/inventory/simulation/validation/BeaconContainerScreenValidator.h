@@ -7,17 +7,16 @@
 
 class BeaconContainerScreenValidator : public ::ContainerScreenValidatorBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEACONCONTAINERSCREENVALIDATOR
 public:
+    // prevent constructor by default
     BeaconContainerScreenValidator& operator=(BeaconContainerScreenValidator const&) = delete;
     BeaconContainerScreenValidator(BeaconContainerScreenValidator const&)            = delete;
     BeaconContainerScreenValidator()                                                 = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
 };

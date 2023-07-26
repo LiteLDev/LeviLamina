@@ -7,6 +7,6 @@ namespace SculkSensorBlockActorConstants {
  * @symbol
  * ?VibrationListenerTag\@SculkSensorBlockActorConstants\@\@3V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
  */
-MCAPI extern std::string const VibrationListenerTag;
+MCAPI extern std::string const VibrationListenerTag; // NOLINT
 
 }; // namespace SculkSensorBlockActorConstants

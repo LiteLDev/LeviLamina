@@ -13,32 +13,31 @@ namespace Util { struct ReplacementResults; }
 
 class LootCommand : public ::Command {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTCOMMAND
 public:
+    // prevent constructor by default
     LootCommand& operator=(LootCommand const&) = delete;
     LootCommand(LootCommand const&)            = delete;
     LootCommand()                              = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?execute\@LootCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol ?getToolItemStack\@LootCommand\@\@QEBA?AVItemStack\@\@AEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI class ItemStack getToolItemStack(class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI class ItemStack getToolItemStack(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol ?setup\@LootCommand\@\@SAXAEAVCommandRegistry\@\@VItemRegistryRef\@\@\@Z
      */
-    MCAPI static void setup(class CommandRegistry&, class ItemRegistryRef);
+    MCAPI static void setup(class CommandRegistry&, class ItemRegistryRef); // NOLINT
 
     // private:
     /**
@@ -47,21 +46,21 @@ public:
      */
     MCAPI class std::optional<std::vector<class ItemStack>>
     _getItemsFromSource(class CommandOrigin const&, class CommandOutput&, class ItemStack const&, class Level&, class AutomaticID<class Dimension, int>)
-        const;
+        const; // NOLINT
     /**
      * @symbol ?_outputError\@LootCommand\@\@AEBAXAEAVCommandOutput\@\@UReplacementResults\@Util\@\@PEBVActor\@\@\@Z
      */
-    MCAPI void _outputError(class CommandOutput&, struct Util::ReplacementResults, class Actor const*) const;
+    MCAPI void _outputError(class CommandOutput&, struct Util::ReplacementResults, class Actor const*) const; // NOLINT
     /**
      * @symbol ?_outputSuccess\@LootCommand\@\@AEBAXAEAVCommandOutput\@\@H\@Z
      */
-    MCAPI void _outputSuccess(class CommandOutput&, int) const;
+    MCAPI void _outputSuccess(class CommandOutput&, int) const; // NOLINT
     /**
      * @symbol
      * ?_placeItemsInTarget\@LootCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@AEAV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI void
-    _placeItemsInTarget(class CommandOrigin const&, class CommandOutput&, std::vector<class ItemStack>&) const;
+    MCAPI void _placeItemsInTarget(class CommandOrigin const&, class CommandOutput&, std::vector<class ItemStack>&)
+        const; // NOLINT
 
 private:
 };

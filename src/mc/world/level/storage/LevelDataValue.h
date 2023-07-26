@@ -12,45 +12,43 @@ public:
     // LevelDataValue inner types define
     struct Tag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELDATAVALUE_TAG
     public:
+        // prevent constructor by default
         Tag& operator=(Tag const&) = delete;
         Tag(Tag const&)            = delete;
-#endif
 
     public:
         /**
          * @symbol ??0Tag\@LevelDataValue\@\@QEAA\@$$QEAVCompoundTag\@\@\@Z
          */
-        MCAPI Tag(class CompoundTag&&);
+        MCAPI Tag(class CompoundTag&&); // NOLINT
         /**
          * @symbol ??0Tag\@LevelDataValue\@\@QEAA\@$$QEAU01\@\@Z
          */
-        MCAPI Tag(struct LevelDataValue::Tag&&);
+        MCAPI Tag(struct LevelDataValue::Tag&&); // NOLINT
         /**
          * @symbol ??0Tag\@LevelDataValue\@\@QEAA\@XZ
          */
-        MCAPI Tag();
+        MCAPI Tag(); // NOLINT
         /**
          * @symbol ??4Tag\@LevelDataValue\@\@QEAAAEAU01\@$$QEAU01\@\@Z
          */
-        MCAPI struct LevelDataValue::Tag& operator=(struct LevelDataValue::Tag&&);
+        MCAPI struct LevelDataValue::Tag& operator=(struct LevelDataValue::Tag&&); // NOLINT
         /**
          * @symbol ??1Tag\@LevelDataValue\@\@QEAA\@XZ
          */
-        MCAPI ~Tag();
+        MCAPI ~Tag(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELDATAVALUE
 public:
+    // prevent constructor by default
     LevelDataValue& operator=(LevelDataValue const&) = delete;
     LevelDataValue(LevelDataValue const&)            = delete;
     LevelDataValue()                                 = delete;
-#endif
 
 public:
     /**
      * @symbol ??1LevelDataValue\@\@QEAA\@XZ
      */
-    MCAPI ~LevelDataValue();
+    MCAPI ~LevelDataValue(); // NOLINT
 };

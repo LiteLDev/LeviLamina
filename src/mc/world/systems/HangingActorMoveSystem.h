@@ -4,17 +4,16 @@
 
 class HangingActorMoveSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HANGINGACTORMOVESYSTEM
 public:
+    // prevent constructor by default
     HangingActorMoveSystem& operator=(HangingActorMoveSystem const&) = delete;
     HangingActorMoveSystem(HangingActorMoveSystem const&)            = delete;
     HangingActorMoveSystem()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?createSystems\@HangingActorMoveSystem\@\@SA?AV?$vector\@UTickingSystemWithInfo\@\@V?$allocator\@UTickingSystemWithInfo\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI static std::vector<struct TickingSystemWithInfo> createSystems();
+    MCAPI static std::vector<struct TickingSystemWithInfo> createSystems(); // NOLINT
 };

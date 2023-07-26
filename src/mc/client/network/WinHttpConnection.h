@@ -7,9 +7,16 @@
 
 // auto generated forward declare list
 // clang-format off
+enum class HCWebSocketCloseStatus;
+enum class XAsyncOp;
+enum class _WINHTTP_WEB_SOCKET_BUFFER_TYPE;
 namespace xbox::httpclient { enum class proxy_type; }
 namespace xbox::httpclient { struct WinHttpCallbackContext; }
 namespace xbox::httpclient { struct XPlatSecurityInformation; }
+struct HC_CALL;
+struct HC_WEBSOCKET_OBSERVER;
+struct XAsyncBlock;
+struct XAsyncProviderData;
 // clang-format on
 
 namespace xbox::httpclient {
@@ -24,50 +31,46 @@ public:
     // WinHttpConnection inner types define
     struct WebSocketSendContext {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_XBOX_HTTPCLIENT_WINHTTPCONNECTION_WEBSOCKETSENDCONTEXT
     public:
+        // prevent constructor by default
         WebSocketSendContext& operator=(WebSocketSendContext const&) = delete;
         WebSocketSendContext(WebSocketSendContext const&)            = delete;
         WebSocketSendContext()                                       = delete;
-#endif
-
-    public:
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_XBOX_HTTPCLIENT_WINHTTPCONNECTION
 public:
+    // prevent constructor by default
     WinHttpConnection& operator=(WinHttpConnection const&) = delete;
     WinHttpConnection(WinHttpConnection const&)            = delete;
     WinHttpConnection()                                    = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_XBOX_HTTPCLIENT_WINHTTPCONNECTION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~WinHttpConnection();
+    MCVAPI ~WinHttpConnection(); // NOLINT
 #endif
     /**
      * @symbol ?Close\@WinHttpConnection\@httpclient\@xbox\@\@QEAAJV?$function\@$$A6AXXZ\@std\@\@\@Z
      */
-    MCAPI long Close(class std::function<void(void)>);
+    MCAPI long Close(class std::function<void(void)>); // NOLINT
     /**
      * @symbol ?HttpCallPerformAsync\@WinHttpConnection\@httpclient\@xbox\@\@QEAAJPEAUXAsyncBlock\@\@\@Z
      */
-    MCAPI long HttpCallPerformAsync(struct XAsyncBlock*);
+    MCAPI long HttpCallPerformAsync(struct XAsyncBlock*); // NOLINT
     /**
      * @symbol ?WebSocketConnectAsync\@WinHttpConnection\@httpclient\@xbox\@\@QEAAJPEAUXAsyncBlock\@\@\@Z
      */
-    MCAPI long WebSocketConnectAsync(struct XAsyncBlock*);
+    MCAPI long WebSocketConnectAsync(struct XAsyncBlock*); // NOLINT
     /**
      * @symbol ?WebSocketDisconnect\@WinHttpConnection\@httpclient\@xbox\@\@QEAAJW4HCWebSocketCloseStatus\@\@\@Z
      */
-    MCAPI long WebSocketDisconnect(enum class HCWebSocketCloseStatus);
+    MCAPI long WebSocketDisconnect(enum class HCWebSocketCloseStatus); // NOLINT
     /**
      * @symbol ?WebSocketSendMessageAsync\@WinHttpConnection\@httpclient\@xbox\@\@QEAAJPEAUXAsyncBlock\@\@PEBD\@Z
      */
-    MCAPI long WebSocketSendMessageAsync(struct XAsyncBlock*, char const*);
+    MCAPI long WebSocketSendMessageAsync(struct XAsyncBlock*, char const*); // NOLINT
     /**
      * @symbol
      * ?WebSocketSendMessageAsync\@WinHttpConnection\@httpclient\@xbox\@\@QEAAJPEAUXAsyncBlock\@\@PEBE_KW4_WINHTTP_WEB_SOCKET_BUFFER_TYPE\@\@\@Z
@@ -77,101 +80,103 @@ public:
         unsigned char const*,
         unsigned __int64,
         enum class _WINHTTP_WEB_SOCKET_BUFFER_TYPE
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?Initialize\@WinHttpConnection\@httpclient\@xbox\@\@SA?AV?$Result\@V?$shared_ptr\@VWinHttpConnection\@httpclient\@xbox\@\@\@std\@\@\@\@PEAXPEAUHC_WEBSOCKET_OBSERVER\@\@PEBD2W4proxy_type\@23\@$$QEAUXPlatSecurityInformation\@23\@\@Z
      */
     MCAPI static class Result<class std::shared_ptr<class xbox::httpclient::WinHttpConnection>>
-    Initialize(void*, struct HC_WEBSOCKET_OBSERVER*, char const*, char const*, enum class xbox::httpclient::proxy_type, struct xbox::httpclient::XPlatSecurityInformation&&);
+    Initialize(void*, struct HC_WEBSOCKET_OBSERVER*, char const*, char const*, enum class xbox::httpclient::proxy_type, struct xbox::httpclient::XPlatSecurityInformation&&); // NOLINT
     /**
      * @symbol
      * ?Initialize\@WinHttpConnection\@httpclient\@xbox\@\@SA?AV?$Result\@V?$shared_ptr\@VWinHttpConnection\@httpclient\@xbox\@\@\@std\@\@\@\@PEAXPEAUHC_CALL\@\@W4proxy_type\@23\@$$QEAUXPlatSecurityInformation\@23\@\@Z
      */
     MCAPI static class Result<class std::shared_ptr<class xbox::httpclient::WinHttpConnection>>
-    Initialize(void*, struct HC_CALL*, enum class xbox::httpclient::proxy_type, struct xbox::httpclient::XPlatSecurityInformation&&);
+    Initialize(void*, struct HC_CALL*, enum class xbox::httpclient::proxy_type, struct xbox::httpclient::XPlatSecurityInformation&&); // NOLINT
 
     // private:
     /**
      * @symbol ?Initialize\@WinHttpConnection\@httpclient\@xbox\@\@AEAAJXZ
      */
-    MCAPI long Initialize();
+    MCAPI long Initialize(); // NOLINT
     /**
      * @symbol ?SendRequest\@WinHttpConnection\@httpclient\@xbox\@\@AEAAXXZ
      */
-    MCAPI void SendRequest();
+    MCAPI void SendRequest(); // NOLINT
     /**
      * @symbol ?StartWinHttpClose\@WinHttpConnection\@httpclient\@xbox\@\@AEAAXXZ
      */
-    MCAPI void StartWinHttpClose();
+    MCAPI void StartWinHttpClose(); // NOLINT
     /**
      * @symbol ?WebSocketReadAsync\@WinHttpConnection\@httpclient\@xbox\@\@AEAAJXZ
      */
-    MCAPI long WebSocketReadAsync();
+    MCAPI long WebSocketReadAsync(); // NOLINT
     /**
      * @symbol ?WebSocketReadComplete\@WinHttpConnection\@httpclient\@xbox\@\@AEAAJ_N0\@Z
      */
-    MCAPI long WebSocketReadComplete(bool, bool);
+    MCAPI long WebSocketReadComplete(bool, bool); // NOLINT
     /**
      * @symbol ?WebSocketSendMessage\@WinHttpConnection\@httpclient\@xbox\@\@AEAAXAEBUWebSocketSendContext\@123\@\@Z
      */
-    MCAPI void WebSocketSendMessage(struct xbox::httpclient::WinHttpConnection::WebSocketSendContext const&);
+    MCAPI void WebSocketSendMessage(struct xbox::httpclient::WinHttpConnection::WebSocketSendContext const&); // NOLINT
     /**
      * @symbol ?complete_task\@WinHttpConnection\@httpclient\@xbox\@\@AEAAXJI\@Z
      */
-    MCAPI void complete_task(long, unsigned int);
+    MCAPI void complete_task(long, unsigned int); // NOLINT
     /**
      * @symbol ?on_websocket_disconnected\@WinHttpConnection\@httpclient\@xbox\@\@AEAAXG\@Z
      */
-    MCAPI void on_websocket_disconnected(unsigned short);
+    MCAPI void on_websocket_disconnected(unsigned short); // NOLINT
     /**
      * @symbol
      * ?WebSocketConnectProvider\@WinHttpConnection\@httpclient\@xbox\@\@CAJW4XAsyncOp\@\@PEBUXAsyncProviderData\@\@\@Z
      */
-    MCAPI static long WebSocketConnectProvider(enum class XAsyncOp, struct XAsyncProviderData const*);
+    MCAPI static long WebSocketConnectProvider(enum class XAsyncOp, struct XAsyncProviderData const*); // NOLINT
     /**
      * @symbol
      * ?WebSocketSendProvider\@WinHttpConnection\@httpclient\@xbox\@\@CAJW4XAsyncOp\@\@PEBUXAsyncProviderData\@\@\@Z
      */
-    MCAPI static long WebSocketSendProvider(enum class XAsyncOp, struct XAsyncProviderData const*);
+    MCAPI static long WebSocketSendProvider(enum class XAsyncOp, struct XAsyncProviderData const*); // NOLINT
     /**
      * @symbol ?_multiple_segment_write_data\@WinHttpConnection\@httpclient\@xbox\@\@CAXPEAV123\@\@Z
      */
-    MCAPI static void _multiple_segment_write_data(class xbox::httpclient::WinHttpConnection*);
+    MCAPI static void _multiple_segment_write_data(class xbox::httpclient::WinHttpConnection*); // NOLINT
     /**
      * @symbol ?callback_status_headers_available\@WinHttpConnection\@httpclient\@xbox\@\@CAXPEAXPEAV123\@0\@Z
      */
-    MCAPI static void callback_status_headers_available(void*, class xbox::httpclient::WinHttpConnection*, void*);
+    MCAPI static void
+    callback_status_headers_available(void*, class xbox::httpclient::WinHttpConnection*, void*); // NOLINT
     /**
      * @symbol ?callback_status_request_error\@WinHttpConnection\@httpclient\@xbox\@\@CAXPEAXPEAV123\@0\@Z
      */
-    MCAPI static void callback_status_request_error(void*, class xbox::httpclient::WinHttpConnection*, void*);
+    MCAPI static void callback_status_request_error(void*, class xbox::httpclient::WinHttpConnection*, void*); // NOLINT
     /**
      * @symbol
      * ?callback_websocket_status_headers_available\@WinHttpConnection\@httpclient\@xbox\@\@CAXPEAXPEAUWinHttpCallbackContext\@23\@\@Z
      */
     MCAPI static void
-    callback_websocket_status_headers_available(void*, struct xbox::httpclient::WinHttpCallbackContext*);
+    callback_websocket_status_headers_available(void*, struct xbox::httpclient::WinHttpCallbackContext*); // NOLINT
     /**
      * @symbol ?completion_callback\@WinHttpConnection\@httpclient\@xbox\@\@CAXPEAX_KK0K\@Z
      */
-    MCAPI static void completion_callback(void*, unsigned __int64, unsigned long, void*, unsigned long);
+    MCAPI static void completion_callback(void*, unsigned __int64, unsigned long, void*, unsigned long); // NOLINT
     /**
      * @symbol ?flush_response_buffer\@WinHttpConnection\@httpclient\@xbox\@\@CAJPEAV123\@\@Z
      */
-    MCAPI static long flush_response_buffer(class xbox::httpclient::WinHttpConnection*);
+    MCAPI static long flush_response_buffer(class xbox::httpclient::WinHttpConnection*); // NOLINT
     /**
      * @symbol ?parse_headers_string\@WinHttpConnection\@httpclient\@xbox\@\@CAXPEAUHC_CALL\@\@PEA_W\@Z
      */
-    MCAPI static void parse_headers_string(struct HC_CALL*, wchar_t*);
+    MCAPI static void parse_headers_string(struct HC_CALL*, wchar_t*); // NOLINT
     /**
      * @symbol ?parse_status_code\@WinHttpConnection\@httpclient\@xbox\@\@CAIPEAUHC_CALL\@\@PEAXPEAV123\@\@Z
      */
-    MCAPI static unsigned int parse_status_code(struct HC_CALL*, void*, class xbox::httpclient::WinHttpConnection*);
+    MCAPI static unsigned int
+    parse_status_code(struct HC_CALL*, void*, class xbox::httpclient::WinHttpConnection*); // NOLINT
     /**
      * @symbol ?read_next_response_chunk\@WinHttpConnection\@httpclient\@xbox\@\@CAXPEAV123\@K\@Z
      */
-    MCAPI static void read_next_response_chunk(class xbox::httpclient::WinHttpConnection*, unsigned long);
+    MCAPI static void read_next_response_chunk(class xbox::httpclient::WinHttpConnection*, unsigned long); // NOLINT
 
 private:
 };

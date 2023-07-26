@@ -15,36 +15,36 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptWorldSoundOptions {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTWORLDSOUNDOPTIONS
 public:
+    // prevent constructor by default
     ScriptWorldSoundOptions& operator=(ScriptWorldSoundOptions const&) = delete;
     ScriptWorldSoundOptions(ScriptWorldSoundOptions const&)            = delete;
     ScriptWorldSoundOptions()                                          = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ScriptWorldSoundOptions\@ScriptModuleMinecraft\@\@QEAA\@AEBUScriptSoundOptions\@1\@\@Z
      */
-    MCAPI ScriptWorldSoundOptions(struct ScriptModuleMinecraft::ScriptSoundOptions const&);
+    MCAPI ScriptWorldSoundOptions(struct ScriptModuleMinecraft::ScriptSoundOptions const&); // NOLINT
     /**
      * @symbol ?getPitch\@ScriptWorldSoundOptions\@ScriptModuleMinecraft\@\@QEBAMXZ
      */
-    MCAPI float getPitch() const;
+    MCAPI float getPitch() const; // NOLINT
     /**
      * @symbol ?getVolume\@ScriptWorldSoundOptions\@ScriptModuleMinecraft\@\@QEBAMXZ
      */
-    MCAPI float getVolume() const;
+    MCAPI float getVolume() const; // NOLINT
     /**
      * @symbol
      * ?validate\@ScriptWorldSoundOptions\@ScriptModuleMinecraft\@\@QEBA?AV?$optional\@UError\@Scripting\@\@\@std\@\@XZ
      */
-    MCAPI class std::optional<struct Scripting::Error> validate() const;
+    MCAPI class std::optional<struct Scripting::Error> validate() const; // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptWorldSoundOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptWorldSoundOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptWorldSoundOptions> bind();
+    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptWorldSoundOptions>
+    bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

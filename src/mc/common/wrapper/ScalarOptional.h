@@ -5,12 +5,9 @@
 template <typename T0>
 class ScalarOptional {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCALAROPTIONAL
 public:
+    // prevent constructor by default
     ScalarOptional& operator=(ScalarOptional const&) = delete;
     ScalarOptional(ScalarOptional const&)            = delete;
     ScalarOptional()                                 = delete;
-#endif
-
-public:
 };

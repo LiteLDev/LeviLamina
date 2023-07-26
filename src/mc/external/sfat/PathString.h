@@ -6,21 +6,19 @@ namespace SFAT {
 
 class PathString {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SFAT_PATHSTRING
 public:
+    // prevent constructor by default
     PathString& operator=(PathString const&) = delete;
     PathString(PathString const&)            = delete;
     PathString()                             = delete;
-#endif
 
-public:
     // private:
 
 private:
     /**
      * @symbol ?mPreferedSeparator\@PathString\@SFAT\@\@0DA
      */
-    MCAPI static char mPreferedSeparator;
+    MCAPI static char mPreferedSeparator; // NOLINT
 };
 
 }; // namespace SFAT

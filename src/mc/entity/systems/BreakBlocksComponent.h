@@ -4,24 +4,23 @@
 
 class BreakBlocksComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREAKBLOCKSCOMPONENT
 public:
+    // prevent constructor by default
     BreakBlocksComponent& operator=(BreakBlocksComponent const&) = delete;
     BreakBlocksComponent(BreakBlocksComponent const&)            = delete;
     BreakBlocksComponent()                                       = delete;
-#endif
 
 public:
     /**
      * @symbol ?breakNearbyBlocks\@BreakBlocksComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void breakNearbyBlocks(class Actor&);
+    MCAPI void breakNearbyBlocks(class Actor&); // NOLINT
     /**
      * @symbol ?initFromDefinition\@BreakBlocksComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void initFromDefinition(class Actor&);
+    MCAPI void initFromDefinition(class Actor&); // NOLINT
     /**
      * @symbol ?isBreakable\@BreakBlocksComponent\@\@SA_NPEBUBreakBlocksDescription\@\@AEBVBlockLegacy\@\@\@Z
      */
-    MCAPI static bool isBreakable(struct BreakBlocksDescription const*, class BlockLegacy const&);
+    MCAPI static bool isBreakable(struct BreakBlocksDescription const*, class BlockLegacy const&); // NOLINT
 };

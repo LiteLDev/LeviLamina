@@ -4,33 +4,32 @@
 
 struct JumpControlDescription {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_JUMPCONTROLDESCRIPTION
 public:
+    // prevent constructor by default
     JumpControlDescription& operator=(JumpControlDescription const&) = delete;
     JumpControlDescription(JumpControlDescription const&)            = delete;
     JumpControlDescription()                                         = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol ?getJsonName\@JumpControlDescription\@\@UEBAPEBDXZ
      */
-    virtual char const* getJsonName() const;
+    virtual char const* getJsonName() const; // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?deserializeData\@JumpControlDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUMPCONTROLDESCRIPTION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~JumpControlDescription();
+    MCVAPI ~JumpControlDescription(); // NOLINT
 #endif
 };

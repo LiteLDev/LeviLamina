@@ -11,24 +11,23 @@ namespace BlockFlammableVersioning {
 
 class BlockFlammable11910Upgrade {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKFLAMMABLEVERSIONING_BLOCKFLAMMABLE11910UPGRADE
 public:
+    // prevent constructor by default
     BlockFlammable11910Upgrade& operator=(BlockFlammable11910Upgrade const&) = delete;
     BlockFlammable11910Upgrade(BlockFlammable11910Upgrade const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?previousSchema\@BlockFlammable11910Upgrade\@BlockFlammableVersioning\@\@UEBAXAEAVSchemaFactory\@cereal\@\@\@Z
      */
-    virtual void previousSchema(class cereal::SchemaFactory&) const;
+    virtual void previousSchema(class cereal::SchemaFactory&) const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
@@ -37,11 +36,11 @@ public:
     virtual bool upgradeToNext(class rapidjson::GenericDocument<
                                struct rapidjson::UTF8<char>,
                                class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>,
-                               class rapidjson::CrtAllocator>&) const;
+                               class rapidjson::CrtAllocator>&) const; // NOLINT
     /**
      * @symbol ??0BlockFlammable11910Upgrade\@BlockFlammableVersioning\@\@QEAA\@XZ
      */
-    MCAPI BlockFlammable11910Upgrade();
+    MCAPI BlockFlammable11910Upgrade(); // NOLINT
 };
 
 }; // namespace BlockFlammableVersioning

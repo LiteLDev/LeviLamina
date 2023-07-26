@@ -9,40 +9,39 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptItemReleaseUseAfterEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTITEMRELEASEUSEAFTEREVENT
 public:
+    // prevent constructor by default
     ScriptItemReleaseUseAfterEvent& operator=(ScriptItemReleaseUseAfterEvent const&) = delete;
     ScriptItemReleaseUseAfterEvent()                                                 = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTITEMRELEASEUSEAFTEREVENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptItemReleaseUseAfterEvent();
+    MCVAPI ~ScriptItemReleaseUseAfterEvent(); // NOLINT
 #endif
     /**
      * @symbol ??0ScriptItemReleaseUseAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
      */
-    MCAPI ScriptItemReleaseUseAfterEvent(struct ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent const&);
+    MCAPI ScriptItemReleaseUseAfterEvent(struct ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent const&); // NOLINT
     /**
      * @symbol ??4ScriptItemReleaseUseAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent&&);
+    operator=(struct ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent&&); // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptItemReleaseUseAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptItemReleaseUseAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent>
-    bind();
+    bind(); // NOLINT
     /**
      * @symbol
      * ?bindV010\@ScriptItemReleaseUseAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptItemReleaseUseAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent>
-    bindV010();
+    bindV010(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -4,12 +4,11 @@
 
 class BarrelBlockActor {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BARRELBLOCKACTOR
 public:
+    // prevent constructor by default
     BarrelBlockActor& operator=(BarrelBlockActor const&) = delete;
     BarrelBlockActor(BarrelBlockActor const&)            = delete;
     BarrelBlockActor()                                   = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BARRELBLOCKACTOR
@@ -17,26 +16,26 @@ public:
      * @symbol
      * ?getName\@BarrelBlockActor\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCVAPI std::string getName() const;
+    MCVAPI std::string getName() const; // NOLINT
     /**
      * @symbol ?onPlace\@BarrelBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
-    MCVAPI void onPlace(class BlockSource&);
+    MCVAPI void onPlace(class BlockSource&); // NOLINT
     /**
      * @symbol ?playCloseSound\@BarrelBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
-    MCVAPI void playCloseSound(class BlockSource&);
+    MCVAPI void playCloseSound(class BlockSource&); // NOLINT
     /**
      * @symbol ?playOpenSound\@BarrelBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
-    MCVAPI void playOpenSound(class BlockSource&);
+    MCVAPI void playOpenSound(class BlockSource&); // NOLINT
     /**
      * @symbol ?startOpen\@BarrelBlockActor\@\@UEAAXAEAVPlayer\@\@\@Z
      */
-    MCVAPI void startOpen(class Player&);
+    MCVAPI void startOpen(class Player&); // NOLINT
     /**
      * @symbol ?stopOpen\@BarrelBlockActor\@\@UEAAXAEAVPlayer\@\@\@Z
      */
-    MCVAPI void stopOpen(class Player&);
+    MCVAPI void stopOpen(class Player&); // NOLINT
 #endif
 };

@@ -7,14 +7,12 @@
 
 class BlockRegistryManager {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKREGISTRYMANAGER
 public:
+    // prevent constructor by default
     BlockRegistryManager& operator=(BlockRegistryManager const&) = delete;
     BlockRegistryManager(BlockRegistryManager const&)            = delete;
     BlockRegistryManager()                                       = delete;
-#endif
 
-public:
     // private:
 
 private:
@@ -29,15 +27,15 @@ private:
         struct std::equal_to<enum class SubClientId>,
         class std::allocator<
             struct std::pair<enum class SubClientId const, class std::weak_ptr<class BlockTypeRegistry>>>>
-        mClientIdRegistryMap;
+        mClientIdRegistryMap; // NOLINT
     /**
      * @symbol ?mClientRegistry\@BlockRegistryManager\@\@0V?$weak_ptr\@VBlockTypeRegistry\@\@\@std\@\@A
      */
-    MCAPI static class std::weak_ptr<class BlockTypeRegistry> mClientRegistry;
+    MCAPI static class std::weak_ptr<class BlockTypeRegistry> mClientRegistry; // NOLINT
     /**
      * @symbol ?mServerRegistry\@BlockRegistryManager\@\@0V?$weak_ptr\@VBlockTypeRegistry\@\@\@std\@\@A
      */
-    MCAPI static class std::weak_ptr<class BlockTypeRegistry> mServerRegistry;
+    MCAPI static class std::weak_ptr<class BlockTypeRegistry> mServerRegistry; // NOLINT
     /**
      * @symbol
      * ?mThreadLocalRegistry\@BlockRegistryManager\@\@0V?$ThreadLocalObject\@V?$weak_ptr\@VBlockTypeRegistry\@\@\@std\@\@V?$allocator\@V?$weak_ptr\@VBlockTypeRegistry\@\@\@std\@\@\@2\@\@Threading\@Bedrock\@\@A
@@ -45,5 +43,5 @@ private:
     MCAPI static class Bedrock::Threading::ThreadLocalObject<
         class std::weak_ptr<class BlockTypeRegistry>,
         class std::allocator<class std::weak_ptr<class BlockTypeRegistry>>>
-        mThreadLocalRegistry;
+        mThreadLocalRegistry; // NOLINT
 };

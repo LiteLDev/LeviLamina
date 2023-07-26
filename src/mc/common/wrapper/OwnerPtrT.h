@@ -5,12 +5,9 @@
 template <typename T0>
 class OwnerPtrT {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OWNERPTRT
 public:
+    // prevent constructor by default
     OwnerPtrT& operator=(OwnerPtrT const&) = delete;
     OwnerPtrT(OwnerPtrT const&)            = delete;
     OwnerPtrT()                            = delete;
-#endif
-
-public:
 };

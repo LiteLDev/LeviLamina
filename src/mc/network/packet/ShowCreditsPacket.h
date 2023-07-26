@@ -16,52 +16,51 @@ public:
     // ShowCreditsPacket inner types define
     enum class CreditsState {};
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHOWCREDITSPACKET
 public:
+    // prevent constructor by default
     ShowCreditsPacket& operator=(ShowCreditsPacket const&) = delete;
     ShowCreditsPacket(ShowCreditsPacket const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?getId\@ShowCreditsPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
-    virtual enum class MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?getName\@ShowCreditsPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string getName() const;
+    virtual std::string getName() const; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?write\@ShowCreditsPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream&) const; // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?_read\@ShowCreditsPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SHOWCREDITSPACKET
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ShowCreditsPacket();
+    MCVAPI ~ShowCreditsPacket(); // NOLINT
 #endif
     /**
      * @symbol ??0ShowCreditsPacket\@\@QEAA\@VActorRuntimeID\@\@W4CreditsState\@0\@\@Z
      */
-    MCAPI ShowCreditsPacket(class ActorRuntimeID, enum class ShowCreditsPacket::CreditsState);
+    MCAPI ShowCreditsPacket(class ActorRuntimeID, enum class ShowCreditsPacket::CreditsState); // NOLINT
     /**
      * @symbol ??0ShowCreditsPacket\@\@QEAA\@XZ
      */
-    MCAPI ShowCreditsPacket();
+    MCAPI ShowCreditsPacket(); // NOLINT
 };

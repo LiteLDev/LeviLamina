@@ -7,19 +7,18 @@
 
 class PackDiscoveryError : public ::PackError {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKDISCOVERYERROR
 public:
+    // prevent constructor by default
     PackDiscoveryError& operator=(PackDiscoveryError const&) = delete;
     PackDiscoveryError(PackDiscoveryError const&)            = delete;
     PackDiscoveryError()                                     = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 2
      * @symbol
@@ -31,7 +30,7 @@ public:
         struct std::hash<int>,
         struct std::equal_to<int>,
         class std::allocator<struct std::pair<int const, std::string>>> const&
-    getLocErrorMessageMap() const;
+    getLocErrorMessageMap() const; // NOLINT
     /**
      * @vftbl 3
      * @symbol
@@ -43,16 +42,16 @@ public:
         struct std::hash<int>,
         struct std::equal_to<int>,
         class std::allocator<struct std::pair<int const, std::string>>> const&
-    getEventErrorMessageMap() const;
+    getEventErrorMessageMap() const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKDISCOVERYERROR
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~PackDiscoveryError();
+    MCVAPI ~PackDiscoveryError(); // NOLINT
 #endif
     /**
      * @symbol
      * ??0PackDiscoveryError\@\@QEAA\@W4PackParseErrorType\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
      */
-    MCAPI PackDiscoveryError(enum class PackParseErrorType, std::vector<std::string> const&);
+    MCAPI PackDiscoveryError(enum class PackParseErrorType, std::vector<std::string> const&); // NOLINT
 };

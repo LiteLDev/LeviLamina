@@ -4,12 +4,9 @@
 
 class DefinitionInstanceGroup {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFINITIONINSTANCEGROUP
 public:
+    // prevent constructor by default
     DefinitionInstanceGroup& operator=(DefinitionInstanceGroup const&) = delete;
     DefinitionInstanceGroup(DefinitionInstanceGroup const&)            = delete;
     DefinitionInstanceGroup()                                          = delete;
-#endif
-
-public:
 };

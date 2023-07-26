@@ -4,12 +4,11 @@
 
 class POIInstance {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_POIINSTANCE
 public:
+    // prevent constructor by default
     POIInstance& operator=(POIInstance const&) = delete;
     POIInstance(POIInstance const&)            = delete;
     POIInstance()                              = delete;
-#endif
 
 public:
     /**
@@ -27,37 +26,37 @@ public:
         std::string,
         std::string,
         std::string
-    );
+    ); // NOLINT
     /**
      * @symbol ?getPosition\@POIInstance\@\@QEBAAEBVBlockPos\@\@XZ
      */
-    MCAPI class BlockPos const& getPosition() const;
+    MCAPI class BlockPos const& getPosition() const; // NOLINT
     /**
      * @symbol ?getRadius\@POIInstance\@\@QEBAMXZ
      */
-    MCAPI float getRadius() const;
+    MCAPI float getRadius() const; // NOLINT
     /**
      * @symbol ?getSecondBlockFullAABB\@POIInstance\@\@QEAA?AVAABB\@\@AEAVBlockSource\@\@\@Z
      */
-    MCAPI class AABB getSecondBlockFullAABB(class BlockSource&);
+    MCAPI class AABB getSecondBlockFullAABB(class BlockSource&); // NOLINT
     /**
      * @symbol ?getSoundEvent\@POIInstance\@\@QEBAAEBVHashedString\@\@XZ
      */
-    MCAPI class HashedString const& getSoundEvent() const;
+    MCAPI class HashedString const& getSoundEvent() const; // NOLINT
     /**
      * @symbol ?incrementArrivalFailureCount\@POIInstance\@\@QEAAXXZ
      */
-    MCAPI void incrementArrivalFailureCount();
+    MCAPI void incrementArrivalFailureCount(); // NOLINT
     /**
      * @symbol ?resetArrivalFailureCount\@POIInstance\@\@QEAAXXZ
      */
-    MCAPI void resetArrivalFailureCount();
+    MCAPI void resetArrivalFailureCount(); // NOLINT
     /**
      * @symbol ?trySpawnParticles\@POIInstance\@\@QEBAXAEAVBlockSource\@\@AEAVRandom\@\@H\@Z
      */
-    MCAPI void trySpawnParticles(class BlockSource&, class Random&, int) const;
+    MCAPI void trySpawnParticles(class BlockSource&, class Random&, int) const; // NOLINT
     /**
      * @symbol ?useBoundingBox\@POIInstance\@\@QEBA_NXZ
      */
-    MCAPI bool useBoundingBox() const;
+    MCAPI bool useBoundingBox() const; // NOLINT
 };

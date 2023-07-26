@@ -4,16 +4,15 @@
 
 class NavigationTravelSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAVIGATIONTRAVELSYSTEM
 public:
+    // prevent constructor by default
     NavigationTravelSystem& operator=(NavigationTravelSystem const&) = delete;
     NavigationTravelSystem(NavigationTravelSystem const&)            = delete;
     NavigationTravelSystem()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol ?createNavigationTravelSystem\@NavigationTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createNavigationTravelSystem();
+    MCAPI static struct TickingSystemWithInfo createNavigationTravelSystem(); // NOLINT
 };

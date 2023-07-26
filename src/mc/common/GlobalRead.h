@@ -5,12 +5,9 @@
 template <typename... T0>
 struct GlobalRead {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLOBALREAD
 public:
+    // prevent constructor by default
     GlobalRead& operator=(GlobalRead const&) = delete;
     GlobalRead(GlobalRead const&)            = delete;
     GlobalRead()                             = delete;
-#endif
-
-public:
 };

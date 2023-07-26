@@ -7,26 +7,25 @@
 
 class WSServerCommand : public ::Command {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WSSERVERCOMMAND
 public:
+    // prevent constructor by default
     WSServerCommand& operator=(WSServerCommand const&) = delete;
     WSServerCommand(WSServerCommand const&)            = delete;
     WSServerCommand()                                  = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?execute\@WSServerCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol ?setup\@WSServerCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
-    MCAPI static void setup(class CommandRegistry&);
+    MCAPI static void setup(class CommandRegistry&); // NOLINT
 };

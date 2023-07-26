@@ -11,37 +11,35 @@ namespace Bedrock::PubSub::Detail {
 
 class FastDispatchPublisherBase_MultiThreaded {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_PUBSUB_DETAIL_FASTDISPATCHPUBLISHERBASE_MULTITHREADED
 public:
+    // prevent constructor by default
     FastDispatchPublisherBase_MultiThreaded& operator=(FastDispatchPublisherBase_MultiThreaded const&) = delete;
     FastDispatchPublisherBase_MultiThreaded(FastDispatchPublisherBase_MultiThreaded const&)            = delete;
-#endif
 
-public:
     // protected:
     /**
      * @symbol ??0FastDispatchPublisherBase_MultiThreaded\@Detail\@PubSub\@Bedrock\@\@IEAA\@XZ
      */
-    MCAPI FastDispatchPublisherBase_MultiThreaded();
+    MCAPI FastDispatchPublisherBase_MultiThreaded(); // NOLINT
     /**
      * @symbol ?_fastDispatchAddConnection\@FastDispatchPublisherBase_MultiThreaded\@Detail\@PubSub\@Bedrock\@\@IEAAXXZ
      */
-    MCAPI void _fastDispatchAddConnection();
+    MCAPI void _fastDispatchAddConnection(); // NOLINT
     /**
      * @symbol
      * ?_fastDispatchClearConnections\@FastDispatchPublisherBase_MultiThreaded\@Detail\@PubSub\@Bedrock\@\@IEAAXXZ
      */
-    MCAPI void _fastDispatchClearConnections();
+    MCAPI void _fastDispatchClearConnections(); // NOLINT
     /**
      * @symbol
      * ?_fastDispatchRemoveConnection\@FastDispatchPublisherBase_MultiThreaded\@Detail\@PubSub\@Bedrock\@\@IEAAXXZ
      */
-    MCAPI void _fastDispatchRemoveConnection();
+    MCAPI void _fastDispatchRemoveConnection(); // NOLINT
     /**
      * @symbol
      * ?_loadDispatchTargets\@FastDispatchPublisherBase_MultiThreaded\@Detail\@PubSub\@Bedrock\@\@IEAA_NAEAVDispatchTargets\@234\@\@Z
      */
-    MCAPI bool _loadDispatchTargets(class Bedrock::PubSub::Detail::DispatchTargets&);
+    MCAPI bool _loadDispatchTargets(class Bedrock::PubSub::Detail::DispatchTargets&); // NOLINT
 
 protected:
 };

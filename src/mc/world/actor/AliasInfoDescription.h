@@ -4,22 +4,21 @@
 
 struct AliasInfoDescription {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ALIASINFODESCRIPTION
 public:
+    // prevent constructor by default
     AliasInfoDescription() = delete;
-#endif
 
 public:
     /**
      * @symbol ??0AliasInfoDescription\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI AliasInfoDescription(struct AliasInfoDescription const&);
+    MCAPI AliasInfoDescription(struct AliasInfoDescription const&); // NOLINT
     /**
      * @symbol ??4AliasInfoDescription\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
-    MCAPI struct AliasInfoDescription& operator=(struct AliasInfoDescription const&);
+    MCAPI struct AliasInfoDescription& operator=(struct AliasInfoDescription const&); // NOLINT
     /**
      * @symbol ??1AliasInfoDescription\@\@QEAA\@XZ
      */
-    MCAPI ~AliasInfoDescription();
+    MCAPI ~AliasInfoDescription(); // NOLINT
 };

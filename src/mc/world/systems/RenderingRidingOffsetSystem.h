@@ -4,12 +4,11 @@
 
 class RenderingRidingOffsetSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RENDERINGRIDINGOFFSETSYSTEM
 public:
+    // prevent constructor by default
     RenderingRidingOffsetSystem& operator=(RenderingRidingOffsetSystem const&) = delete;
     RenderingRidingOffsetSystem(RenderingRidingOffsetSystem const&)            = delete;
     RenderingRidingOffsetSystem()                                              = delete;
-#endif
 
 public:
     /**
@@ -17,5 +16,5 @@ public:
      * ?getInterpolatedRenderingRidingOffset\@RenderingRidingOffsetSystem\@\@SA?AVVec3\@\@PEBUPassengerRenderingRidingOffsetComponent\@\@M\@Z
      */
     MCAPI static class Vec3
-    getInterpolatedRenderingRidingOffset(struct PassengerRenderingRidingOffsetComponent const*, float);
+    getInterpolatedRenderingRidingOffset(struct PassengerRenderingRidingOffsetComponent const*, float); // NOLINT
 };

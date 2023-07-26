@@ -4,16 +4,15 @@
 
 struct ModuleIdentifier {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MODULEIDENTIFIER
 public:
+    // prevent constructor by default
     ModuleIdentifier& operator=(ModuleIdentifier const&) = delete;
     ModuleIdentifier(ModuleIdentifier const&)            = delete;
     ModuleIdentifier()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ??1ModuleIdentifier\@\@QEAA\@XZ
      */
-    MCAPI ~ModuleIdentifier();
+    MCAPI ~ModuleIdentifier(); // NOLINT
 };

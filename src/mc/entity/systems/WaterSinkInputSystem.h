@@ -4,22 +4,21 @@
 
 class WaterSinkInputSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WATERSINKINPUTSYSTEM
 public:
+    // prevent constructor by default
     WaterSinkInputSystem& operator=(WaterSinkInputSystem const&) = delete;
     WaterSinkInputSystem(WaterSinkInputSystem const&)            = delete;
     WaterSinkInputSystem()                                       = delete;
-#endif
 
 public:
     /**
      * @symbol ?createWaterSinkInputSystem\@WaterSinkInputSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createWaterSinkInputSystem();
+    MCAPI static struct TickingSystemWithInfo createWaterSinkInputSystem(); // NOLINT
     /**
      * @symbol
      * ?doInWaterSinkInputSystem\@WaterSinkInputSystem\@\@SAXAEBUAbilitiesComponent\@\@AEBUMoveInputComponent\@\@AEAUStateVectorComponent\@\@\@Z
      */
     MCAPI static void
-    doInWaterSinkInputSystem(struct AbilitiesComponent const&, struct MoveInputComponent const&, struct StateVectorComponent&);
+    doInWaterSinkInputSystem(struct AbilitiesComponent const&, struct MoveInputComponent const&, struct StateVectorComponent&); // NOLINT
 };

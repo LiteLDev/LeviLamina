@@ -6,14 +6,11 @@ namespace ScriptModuleMinecraft::ScriptRaycasting {
 
 struct EntityHitInfo {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTRAYCASTING_ENTITYHITINFO
 public:
+    // prevent constructor by default
     EntityHitInfo& operator=(EntityHitInfo const&) = delete;
     EntityHitInfo(EntityHitInfo const&)            = delete;
     EntityHitInfo()                                = delete;
-#endif
-
-public:
 };
 
 }; // namespace ScriptModuleMinecraft::ScriptRaycasting

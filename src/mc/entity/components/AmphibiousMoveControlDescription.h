@@ -7,33 +7,32 @@
 
 class AmphibiousMoveControlDescription : public ::MoveControlDescription {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AMPHIBIOUSMOVECONTROLDESCRIPTION
 public:
+    // prevent constructor by default
     AmphibiousMoveControlDescription& operator=(AmphibiousMoveControlDescription const&) = delete;
     AmphibiousMoveControlDescription(AmphibiousMoveControlDescription const&)            = delete;
     AmphibiousMoveControlDescription()                                                   = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol ?getJsonName\@AmphibiousMoveControlDescription\@\@UEBAPEBDXZ
      */
-    virtual char const* getJsonName() const;
+    virtual char const* getJsonName() const; // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?deserializeData\@MoveControlDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
-    virtual void deserializeData(struct DeserializeDataParams);
+    virtual void deserializeData(struct DeserializeDataParams); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_AMPHIBIOUSMOVECONTROLDESCRIPTION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~AmphibiousMoveControlDescription();
+    MCVAPI ~AmphibiousMoveControlDescription(); // NOLINT
 #endif
 };

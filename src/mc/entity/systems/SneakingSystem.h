@@ -15,34 +15,33 @@
 
 class SneakingSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SNEAKINGSYSTEM
 public:
+    // prevent constructor by default
     SneakingSystem& operator=(SneakingSystem const&) = delete;
     SneakingSystem(SneakingSystem const&)            = delete;
     SneakingSystem()                                 = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1();
+    virtual void __unk_vfn_1(); // NOLINT
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2();
+    virtual void __unk_vfn_2(); // NOLINT
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3();
+    virtual void __unk_vfn_3(); // NOLINT
     /**
      * @vftbl 4
      * @symbol
@@ -55,11 +54,11 @@ public:
                       struct AddRemove<>,
                       struct GlobalRead<>,
                       struct GlobalWrite<>,
-                      struct EntityFactoryT<>>&);
+                      struct EntityFactoryT<>>&); // NOLINT
     /**
      * @symbol
      * ?_tickSneakingSystem\@SneakingSystem\@\@SAXAEAVStrictEntityContext\@\@AEBV?$FlagComponent\@UPlayerComponentFlag\@\@\@\@AEAUSneakingComponent\@\@AEAVActorOwnerComponent\@\@\@Z
      */
     MCAPI static void
-    _tickSneakingSystem(class StrictEntityContext&, class FlagComponent<struct PlayerComponentFlag> const&, struct SneakingComponent&, class ActorOwnerComponent&);
+    _tickSneakingSystem(class StrictEntityContext&, class FlagComponent<struct PlayerComponentFlag> const&, struct SneakingComponent&, class ActorOwnerComponent&); // NOLINT
 };

@@ -4,16 +4,15 @@
 
 class SetActorLinkPacketSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETACTORLINKPACKETSYSTEM
 public:
+    // prevent constructor by default
     SetActorLinkPacketSystem& operator=(SetActorLinkPacketSystem const&) = delete;
     SetActorLinkPacketSystem(SetActorLinkPacketSystem const&)            = delete;
     SetActorLinkPacketSystem()                                           = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSetActorLinkPacketSystem\@SetActorLinkPacketSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSetActorLinkPacketSystem();
+    MCAPI static struct TickingSystemWithInfo createSetActorLinkPacketSystem(); // NOLINT
 };

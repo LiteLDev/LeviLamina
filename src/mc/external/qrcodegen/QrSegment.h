@@ -14,51 +14,48 @@ public:
     // QrSegment inner types define
     class Mode {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_QRCODEGEN_QRSEGMENT_MODE
     public:
+        // prevent constructor by default
         Mode& operator=(Mode const&) = delete;
         Mode(Mode const&)            = delete;
         Mode()                       = delete;
-#endif
 
     public:
         /**
          * @symbol ?ALPHANUMERIC\@Mode\@QrSegment\@qrcodegen\@\@2V123\@B
          */
-        MCAPI static class qrcodegen::QrSegment::Mode const ALPHANUMERIC;
+        MCAPI static class qrcodegen::QrSegment::Mode const ALPHANUMERIC; // NOLINT
         /**
          * @symbol ?BYTE\@Mode\@QrSegment\@qrcodegen\@\@2V123\@B
          */
-        MCAPI static class qrcodegen::QrSegment::Mode const BYTE;
+        MCAPI static class qrcodegen::QrSegment::Mode const BYTE; // NOLINT
         /**
          * @symbol ?ECI\@Mode\@QrSegment\@qrcodegen\@\@2V123\@B
          */
-        MCAPI static class qrcodegen::QrSegment::Mode const ECI;
+        MCAPI static class qrcodegen::QrSegment::Mode const ECI; // NOLINT
         /**
          * @symbol ?KANJI\@Mode\@QrSegment\@qrcodegen\@\@2V123\@B
          */
-        MCAPI static class qrcodegen::QrSegment::Mode const KANJI;
+        MCAPI static class qrcodegen::QrSegment::Mode const KANJI; // NOLINT
         /**
          * @symbol ?NUMERIC\@Mode\@QrSegment\@qrcodegen\@\@2V123\@B
          */
-        MCAPI static class qrcodegen::QrSegment::Mode const NUMERIC;
+        MCAPI static class qrcodegen::QrSegment::Mode const NUMERIC; // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_QRCODEGEN_QRSEGMENT
 public:
+    // prevent constructor by default
     QrSegment& operator=(QrSegment const&) = delete;
     QrSegment(QrSegment const&)            = delete;
     QrSegment()                            = delete;
-#endif
 
-public:
     // private:
 
 private:
     /**
      * @symbol ?ALPHANUMERIC_CHARSET\@QrSegment\@qrcodegen\@\@0PEBDEB
      */
-    MCAPI static char const* ALPHANUMERIC_CHARSET;
+    MCAPI static char const* ALPHANUMERIC_CHARSET; // NOLINT
 };
 
 }; // namespace qrcodegen

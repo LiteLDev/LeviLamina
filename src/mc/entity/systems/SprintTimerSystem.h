@@ -9,18 +9,17 @@
 
 class SprintTimerSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPRINTTIMERSYSTEM
 public:
+    // prevent constructor by default
     SprintTimerSystem& operator=(SprintTimerSystem const&) = delete;
     SprintTimerSystem(SprintTimerSystem const&)            = delete;
     SprintTimerSystem()                                    = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSprintTimerSystem\@SprintTimerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSprintTimerSystem();
+    MCAPI static struct TickingSystemWithInfo createSprintTimerSystem(); // NOLINT
     /**
      * @symbol
      * ?tickSprintTimerSystem\@SprintTimerSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@ULocalPlayerComponentFlag\@\@\@\@\@\@$$CBUMoveInputComponent\@\@UPlayerInputRequestComponent\@\@UVanillaClientGameplayComponent\@\@\@\@\@Z
@@ -33,5 +32,5 @@ public:
                                                 class FlagComponent<struct LocalPlayerComponentFlag>>,
                                             struct MoveInputComponent const,
                                             struct PlayerInputRequestComponent,
-                                            struct VanillaClientGameplayComponent>);
+                                            struct VanillaClientGameplayComponent>); // NOLINT
 };

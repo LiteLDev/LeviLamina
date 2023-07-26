@@ -6,18 +6,17 @@ namespace CerealHelpers {
 
 struct IdentifierString {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CEREALHELPERS_IDENTIFIERSTRING
 public:
+    // prevent constructor by default
     IdentifierString& operator=(IdentifierString const&) = delete;
     IdentifierString(IdentifierString const&)            = delete;
     IdentifierString()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ??1IdentifierString\@CerealHelpers\@\@QEAA\@XZ
      */
-    MCAPI ~IdentifierString();
+    MCAPI ~IdentifierString(); // NOLINT
 };
 
 }; // namespace CerealHelpers

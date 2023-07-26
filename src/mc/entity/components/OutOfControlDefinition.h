@@ -12,27 +12,26 @@ namespace JsonUtil { class EmptyClass; }
 
 class OutOfControlDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OUTOFCONTROLDEFINITION
 public:
+    // prevent constructor by default
     OutOfControlDefinition& operator=(OutOfControlDefinition const&) = delete;
     OutOfControlDefinition(OutOfControlDefinition const&)            = delete;
     OutOfControlDefinition()                                         = delete;
-#endif
 
 public:
     /**
      * @symbol ?initialize\@OutOfControlDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVOutOfControlComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class OutOfControlComponent&) const;
+    MCAPI void initialize(class EntityContext&, class OutOfControlComponent&) const; // NOLINT
     /**
      * @symbol ?uninitialize\@OutOfControlDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVOutOfControlComponent\@\@\@Z
      */
-    MCAPI void uninitialize(class EntityContext&, class OutOfControlComponent&) const;
+    MCAPI void uninitialize(class EntityContext&, class OutOfControlComponent&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@OutOfControlDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VOutOfControlDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class OutOfControlDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      class OutOfControlDefinition>>&); // NOLINT
 };

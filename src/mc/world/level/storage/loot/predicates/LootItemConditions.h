@@ -9,12 +9,11 @@ namespace Json { class Value; }
 
 class LootItemConditions {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEMCONDITIONS
 public:
+    // prevent constructor by default
     LootItemConditions& operator=(LootItemConditions const&) = delete;
     LootItemConditions(LootItemConditions const&)            = delete;
     LootItemConditions()                                     = delete;
-#endif
 
 public:
     /**
@@ -22,10 +21,10 @@ public:
      * ?allApply\@LootItemConditions\@\@SA_NAEBV?$vector\@V?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
     MCAPI static bool
-    allApply(std::vector<std::unique_ptr<class LootItemCondition>> const&, class Random&, class LootTableContext&);
+    allApply(std::vector<std::unique_ptr<class LootItemCondition>> const&, class Random&, class LootTableContext&); // NOLINT
     /**
      * @symbol
      * ?deserialize\@LootItemConditions\@\@SA?AV?$vector\@V?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@VValue\@Json\@\@\@Z
      */
-    MCAPI static std::vector<std::unique_ptr<class LootItemCondition>> deserialize(class Json::Value);
+    MCAPI static std::vector<std::unique_ptr<class LootItemCondition>> deserialize(class Json::Value); // NOLINT
 };

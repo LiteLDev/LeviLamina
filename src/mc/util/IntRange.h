@@ -9,40 +9,39 @@ namespace Json { class Value; }
 
 struct IntRange {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTRANGE
 public:
+    // prevent constructor by default
     IntRange& operator=(IntRange const&) = delete;
     IntRange(IntRange const&)            = delete;
     IntRange()                           = delete;
-#endif
 
 public:
     /**
      * @symbol ??0IntRange\@\@QEAA\@HH\@Z
      */
-    MCAPI IntRange(int, int);
+    MCAPI IntRange(int, int); // NOLINT
     /**
      * @symbol ??0IntRange\@\@QEAA\@H\@Z
      */
-    MCAPI IntRange(int);
+    MCAPI IntRange(int); // NOLINT
     /**
      * @symbol ?getValue\@IntRange\@\@QEBAHAEAVRandom\@\@\@Z
      */
-    MCAPI int getValue(class Random&) const;
+    MCAPI int getValue(class Random&) const; // NOLINT
     /**
      * @symbol ?getValueInclusive\@IntRange\@\@QEBAHAEAVRandom\@\@\@Z
      */
-    MCAPI int getValueInclusive(class Random&) const;
+    MCAPI int getValueInclusive(class Random&) const; // NOLINT
     /**
      * @symbol ?isInRangeInclusive\@IntRange\@\@QEBA_NH\@Z
      */
-    MCAPI bool isInRangeInclusive(int) const;
+    MCAPI bool isInRangeInclusive(int) const; // NOLINT
     /**
      * @symbol ?parseJson\@IntRange\@\@QEAA_NVValue\@Json\@\@HH\@Z
      */
-    MCAPI bool parseJson(class Json::Value, int, int);
+    MCAPI bool parseJson(class Json::Value, int, int); // NOLINT
     /**
      * @symbol ?ZERO\@IntRange\@\@2U1\@B
      */
-    MCAPI static struct IntRange const ZERO;
+    MCAPI static struct IntRange const ZERO; // NOLINT
 };

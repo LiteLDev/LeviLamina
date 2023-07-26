@@ -13,6 +13,6 @@ namespace InsideEndPortalBlockSystemImpl {
  * ?tickInsideEndPortalBlock\@InsideEndPortalBlockSystemImpl\@\@YAXAEBU?$InsideBlockWithPosAndBlockComponent\@UEndPortalBlockFlag\@\@\@\@AEAVActorOwnerComponent\@\@\@Z
  */
 MCAPI void
-tickInsideEndPortalBlock(struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag> const&, class ActorOwnerComponent&);
+tickInsideEndPortalBlock(struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag> const&, class ActorOwnerComponent&); // NOLINT
 
 }; // namespace InsideEndPortalBlockSystemImpl

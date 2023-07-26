@@ -4,16 +4,15 @@
 
 struct MolangMemberVariable {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGMEMBERVARIABLE
 public:
+    // prevent constructor by default
     MolangMemberVariable& operator=(MolangMemberVariable const&) = delete;
     MolangMemberVariable(MolangMemberVariable const&)            = delete;
     MolangMemberVariable()                                       = delete;
-#endif
 
 public:
     /**
      * @symbol ??1MolangMemberVariable\@\@QEAA\@XZ
      */
-    MCAPI ~MolangMemberVariable();
+    MCAPI ~MolangMemberVariable(); // NOLINT
 };

@@ -4,19 +4,18 @@
 
 struct SpawnSettings {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPAWNSETTINGS
 public:
+    // prevent constructor by default
     SpawnSettings& operator=(SpawnSettings const&) = delete;
     SpawnSettings()                                = delete;
-#endif
 
 public:
     /**
      * @symbol ??0SpawnSettings\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI SpawnSettings(struct SpawnSettings const&);
+    MCAPI SpawnSettings(struct SpawnSettings const&); // NOLINT
     /**
      * @symbol ??1SpawnSettings\@\@QEAA\@XZ
      */
-    MCAPI ~SpawnSettings();
+    MCAPI ~SpawnSettings(); // NOLINT
 };

@@ -4,12 +4,11 @@
 
 class CDScopedEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CDSCOPEDEVENT
 public:
+    // prevent constructor by default
     CDScopedEvent& operator=(CDScopedEvent const&) = delete;
     CDScopedEvent(CDScopedEvent const&)            = delete;
     CDScopedEvent()                                = delete;
-#endif
 
 public:
     /**
@@ -19,9 +18,9 @@ public:
         enum class CrashDumpLogStringID,
         enum class CrashDumpLogStringID,
         enum class CrashDumpLogStringID
-    );
+    ); // NOLINT
     /**
      * @symbol ??1CDScopedEvent\@\@QEAA\@XZ
      */
-    MCAPI ~CDScopedEvent();
+    MCAPI ~CDScopedEvent(); // NOLINT
 };

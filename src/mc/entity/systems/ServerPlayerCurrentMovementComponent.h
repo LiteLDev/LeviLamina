@@ -4,24 +4,24 @@
 
 struct ServerPlayerCurrentMovementComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERPLAYERCURRENTMOVEMENTCOMPONENT
 public:
+    // prevent constructor by default
     ServerPlayerCurrentMovementComponent& operator=(ServerPlayerCurrentMovementComponent const&) = delete;
     ServerPlayerCurrentMovementComponent(ServerPlayerCurrentMovementComponent const&)            = delete;
     ServerPlayerCurrentMovementComponent()                                                       = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ServerPlayerCurrentMovementComponent\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI ServerPlayerCurrentMovementComponent(struct ServerPlayerCurrentMovementComponent&&);
+    MCAPI ServerPlayerCurrentMovementComponent(struct ServerPlayerCurrentMovementComponent&&); // NOLINT
     /**
      * @symbol ??4ServerPlayerCurrentMovementComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct ServerPlayerCurrentMovementComponent& operator=(struct ServerPlayerCurrentMovementComponent&&);
+    MCAPI struct ServerPlayerCurrentMovementComponent&
+    operator=(struct ServerPlayerCurrentMovementComponent&&); // NOLINT
     /**
      * @symbol ??1ServerPlayerCurrentMovementComponent\@\@QEAA\@XZ
      */
-    MCAPI ~ServerPlayerCurrentMovementComponent();
+    MCAPI ~ServerPlayerCurrentMovementComponent(); // NOLINT
 };

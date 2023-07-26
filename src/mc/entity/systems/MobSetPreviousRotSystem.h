@@ -9,18 +9,17 @@
 
 class MobSetPreviousRotSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBSETPREVIOUSROTSYSTEM
 public:
+    // prevent constructor by default
     MobSetPreviousRotSystem& operator=(MobSetPreviousRotSystem const&) = delete;
     MobSetPreviousRotSystem(MobSetPreviousRotSystem const&)            = delete;
     MobSetPreviousRotSystem()                                          = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@MobSetPreviousRotSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
     /**
      * @symbol
      * ?tick\@MobSetPreviousRotSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UMobFlag\@\@\@\@\@\@UActorHeadRotationComponent\@\@UActorRotationComponent\@\@UMobBodyRotationComponent\@\@\@\@\@Z
@@ -33,7 +32,7 @@ public:
                                class FlagComponent<struct MobFlag>>,
                            struct ActorHeadRotationComponent,
                            struct ActorRotationComponent,
-                           struct MobBodyRotationComponent>);
+                           struct MobBodyRotationComponent>); // NOLINT
 
     // private:
     /**
@@ -41,7 +40,7 @@ public:
      * ?_setPreviousRotation\@MobSetPreviousRotSystem\@\@CAXAEAVStrictEntityContext\@\@AEAUActorHeadRotationComponent\@\@AEAUActorRotationComponent\@\@AEAUMobBodyRotationComponent\@\@\@Z
      */
     MCAPI static void
-    _setPreviousRotation(class StrictEntityContext&, struct ActorHeadRotationComponent&, struct ActorRotationComponent&, struct MobBodyRotationComponent&);
+    _setPreviousRotation(class StrictEntityContext&, struct ActorHeadRotationComponent&, struct ActorRotationComponent&, struct MobBodyRotationComponent&); // NOLINT
 
 private:
 };

@@ -4,23 +4,22 @@
 
 class ItemEnchantOption {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMENCHANTOPTION
 public:
+    // prevent constructor by default
     ItemEnchantOption(ItemEnchantOption const&) = delete;
     ItemEnchantOption()                         = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ItemEnchantOption\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI ItemEnchantOption(class ItemEnchantOption&&);
+    MCAPI ItemEnchantOption(class ItemEnchantOption&&); // NOLINT
     /**
      * @symbol ??4ItemEnchantOption\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
-    MCAPI class ItemEnchantOption& operator=(class ItemEnchantOption const&);
+    MCAPI class ItemEnchantOption& operator=(class ItemEnchantOption const&); // NOLINT
     /**
      * @symbol ??1ItemEnchantOption\@\@QEAA\@XZ
      */
-    MCAPI ~ItemEnchantOption();
+    MCAPI ~ItemEnchantOption(); // NOLINT
 };

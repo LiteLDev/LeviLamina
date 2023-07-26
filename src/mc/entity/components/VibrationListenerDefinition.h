@@ -12,23 +12,22 @@ namespace JsonUtil { class EmptyClass; }
 
 class VibrationListenerDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VIBRATIONLISTENERDEFINITION
 public:
+    // prevent constructor by default
     VibrationListenerDefinition& operator=(VibrationListenerDefinition const&) = delete;
     VibrationListenerDefinition(VibrationListenerDefinition const&)            = delete;
     VibrationListenerDefinition()                                              = delete;
-#endif
 
 public:
     /**
      * @symbol ?initialize\@VibrationListenerDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&) const;
+    MCAPI void initialize(class EntityContext&) const; // NOLINT
     /**
      * @symbol
      * ?buildSchema\@VibrationListenerDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VVibrationListenerDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class VibrationListenerDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      class VibrationListenerDefinition>>&); // NOLINT
 };

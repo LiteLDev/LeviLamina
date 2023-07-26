@@ -4,22 +4,21 @@
 
 class LootItemActorHasMarkVariantCondition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEMACTORHASMARKVARIANTCONDITION
 public:
+    // prevent constructor by default
     LootItemActorHasMarkVariantCondition& operator=(LootItemActorHasMarkVariantCondition const&) = delete;
     LootItemActorHasMarkVariantCondition(LootItemActorHasMarkVariantCondition const&)            = delete;
     LootItemActorHasMarkVariantCondition()                                                       = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?applies\@LootItemActorHasMarkVariantCondition\@\@UEAA_NAEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual bool applies(class Random&, class LootTableContext&);
+    virtual bool applies(class Random&, class LootTableContext&); // NOLINT
 };

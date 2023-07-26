@@ -11,24 +11,23 @@ namespace BlockFrictionVersioning {
 
 class BlockFriction11920Upgrade {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKFRICTIONVERSIONING_BLOCKFRICTION11920UPGRADE
 public:
+    // prevent constructor by default
     BlockFriction11920Upgrade& operator=(BlockFriction11920Upgrade const&) = delete;
     BlockFriction11920Upgrade(BlockFriction11920Upgrade const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?previousSchema\@BlockFriction11920Upgrade\@BlockFrictionVersioning\@\@UEBAXAEAVSchemaFactory\@cereal\@\@\@Z
      */
-    virtual void previousSchema(class cereal::SchemaFactory&) const;
+    virtual void previousSchema(class cereal::SchemaFactory&) const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
@@ -37,11 +36,11 @@ public:
     virtual bool upgradeToNext(class rapidjson::GenericDocument<
                                struct rapidjson::UTF8<char>,
                                class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>,
-                               class rapidjson::CrtAllocator>&) const;
+                               class rapidjson::CrtAllocator>&) const; // NOLINT
     /**
      * @symbol ??0BlockFriction11920Upgrade\@BlockFrictionVersioning\@\@QEAA\@XZ
      */
-    MCAPI BlockFriction11920Upgrade();
+    MCAPI BlockFriction11920Upgrade(); // NOLINT
 };
 
 }; // namespace BlockFrictionVersioning

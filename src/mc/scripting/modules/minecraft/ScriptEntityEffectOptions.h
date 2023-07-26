@@ -9,12 +9,11 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptEntityEffectOptions {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTENTITYEFFECTOPTIONS
 public:
+    // prevent constructor by default
     ScriptEntityEffectOptions& operator=(ScriptEntityEffectOptions const&) = delete;
     ScriptEntityEffectOptions(ScriptEntityEffectOptions const&)            = delete;
     ScriptEntityEffectOptions()                                            = delete;
-#endif
 
 public:
     /**
@@ -22,7 +21,7 @@ public:
      * ?bind\@ScriptEntityEffectOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptEntityEffectOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptEntityEffectOptions>
-    bind();
+    bind(); // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

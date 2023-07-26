@@ -4,20 +4,19 @@
 
 class SchedulerComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCHEDULERCOMPONENT
 public:
+    // prevent constructor by default
     SchedulerComponent& operator=(SchedulerComponent const&) = delete;
     SchedulerComponent(SchedulerComponent const&)            = delete;
     SchedulerComponent()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ?getCurrentEventIndex\@SchedulerComponent\@\@QEBAHXZ
      */
-    MCAPI int getCurrentEventIndex() const;
+    MCAPI int getCurrentEventIndex() const; // NOLINT
     /**
      * @symbol ?setCurrentEventIndex\@SchedulerComponent\@\@QEAAXH\@Z
      */
-    MCAPI void setCurrentEventIndex(int);
+    MCAPI void setCurrentEventIndex(int); // NOLINT
 };

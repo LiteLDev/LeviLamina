@@ -12,63 +12,62 @@ namespace mce { class UUID; }
 
 class SoulSpeedEnchant : public ::Enchant {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SOULSPEEDENCHANT
 public:
+    // prevent constructor by default
     SoulSpeedEnchant& operator=(SoulSpeedEnchant const&) = delete;
     SoulSpeedEnchant(SoulSpeedEnchant const&)            = delete;
     SoulSpeedEnchant()                                   = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?getMinCost\@SoulSpeedEnchant\@\@UEBAHH\@Z
      */
-    virtual int getMinCost(int) const;
+    virtual int getMinCost(int) const; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?getMaxCost\@SoulSpeedEnchant\@\@UEBAHH\@Z
      */
-    virtual int getMaxCost(int) const;
+    virtual int getMaxCost(int) const; // NOLINT
     /**
      * @vftbl 5
      * @symbol ?getMaxLevel\@SoulSpeedEnchant\@\@UEBAHXZ
      */
-    virtual int getMaxLevel() const;
+    virtual int getMaxLevel() const; // NOLINT
     /**
      * @vftbl 10
      * @symbol __unk_vfn_10
      */
-    virtual void __unk_vfn_10();
+    virtual void __unk_vfn_10(); // NOLINT
     /**
      * @vftbl 11
      * @symbol __unk_vfn_11
      */
-    virtual void __unk_vfn_11();
+    virtual void __unk_vfn_11(); // NOLINT
     /**
      * @vftbl 12
      * @symbol __unk_vfn_12
      */
-    virtual void __unk_vfn_12();
+    virtual void __unk_vfn_12(); // NOLINT
     /**
      * @vftbl 13
      * @symbol __unk_vfn_13
      */
-    virtual void __unk_vfn_13();
+    virtual void __unk_vfn_13(); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOULSPEEDENCHANT
     /**
      * @symbol ?isDiscoverable\@SoulSpeedEnchant\@\@UEBA_NXZ
      */
-    MCVAPI bool isDiscoverable() const;
+    MCVAPI bool isDiscoverable() const; // NOLINT
     /**
      * @symbol ?isTreasureOnly\@SoulSpeedEnchant\@\@UEBA_NXZ
      */
-    MCVAPI bool isTreasureOnly() const;
+    MCVAPI bool isTreasureOnly() const; // NOLINT
 #endif
     /**
      * @symbol
@@ -81,21 +80,21 @@ public:
         class std::basic_string_view<char, struct std::char_traits<char>>,
         int,
         int
-    );
-    /**
-     * @symbol ?SOUL_SPEED_BOOST_UUID\@SoulSpeedEnchant\@\@2VUUID\@mce\@\@B
-     */
-    MCAPI static class mce::UUID const SOUL_SPEED_BOOST_UUID;
+    ); // NOLINT
     /**
      * @symbol ?getLevel\@SoulSpeedEnchant\@\@SAHAEBVActor\@\@\@Z
      */
-    MCAPI static int getLevel(class Actor const&);
+    MCAPI static int getLevel(class Actor const&); // NOLINT
     /**
      * @symbol ?getSpeedBoost\@SoulSpeedEnchant\@\@SAMH\@Z
      */
-    MCAPI static float getSpeedBoost(int);
+    MCAPI static float getSpeedBoost(int); // NOLINT
     /**
      * @symbol ?shouldSpawnParticles\@SoulSpeedEnchant\@\@SA_NAEBVActor\@\@\@Z
      */
-    MCAPI static bool shouldSpawnParticles(class Actor const&);
+    MCAPI static bool shouldSpawnParticles(class Actor const&); // NOLINT
+    /**
+     * @symbol ?SOUL_SPEED_BOOST_UUID\@SoulSpeedEnchant\@\@2VUUID\@mce\@\@B
+     */
+    MCAPI static class mce::UUID const SOUL_SPEED_BOOST_UUID; // NOLINT
 };

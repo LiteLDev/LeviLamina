@@ -6,14 +6,11 @@ namespace Bedrock {
 
 struct WorldRecoveryTelemetryEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_WORLDRECOVERYTELEMETRYEVENT
 public:
+    // prevent constructor by default
     WorldRecoveryTelemetryEvent& operator=(WorldRecoveryTelemetryEvent const&) = delete;
     WorldRecoveryTelemetryEvent(WorldRecoveryTelemetryEvent const&)            = delete;
     WorldRecoveryTelemetryEvent()                                              = delete;
-#endif
-
-public:
 };
 
 }; // namespace Bedrock

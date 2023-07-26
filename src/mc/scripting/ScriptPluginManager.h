@@ -13,12 +13,11 @@ namespace Scripting { struct ScriptContextResult; }
 
 class ScriptPluginManager {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPLUGINMANAGER
 public:
+    // prevent constructor by default
     ScriptPluginManager& operator=(ScriptPluginManager const&) = delete;
     ScriptPluginManager(ScriptPluginManager const&)            = delete;
     ScriptPluginManager()                                      = delete;
-#endif
 
 public:
     /**
@@ -26,24 +25,24 @@ public:
      * ?discoverPlugins\@ScriptPluginManager\@\@QEAA?AVScriptPluginManagerResult\@\@W4ResourceType\@ResourceInformation\@\@AEBVIScriptPluginSourceEnumerator\@\@AEBVScriptPackConfigurationManager\@\@AEBV?$vector\@V?$function\@$$A6A_NAEBVPackManifest\@\@AEBUModuleDescriptor\@Scripting\@\@1AEAVScriptPluginResult\@\@\@Z\@std\@\@V?$allocator\@V?$function\@$$A6A_NAEBVPackManifest\@\@AEBUModuleDescriptor\@Scripting\@\@1AEAVScriptPluginResult\@\@\@Z\@std\@\@\@2\@\@std\@\@\@Z
      */
     MCAPI class ScriptPluginManagerResult
-    discoverPlugins(enum class ResourceInformation::ResourceType, class IScriptPluginSourceEnumerator const&, class ScriptPackConfigurationManager const&, std::vector<class std::function<bool(class PackManifest const&, struct Scripting::ModuleDescriptor const&, struct Scripting::ModuleDescriptor const&, class ScriptPluginResult&)>> const&);
+    discoverPlugins(enum class ResourceInformation::ResourceType, class IScriptPluginSourceEnumerator const&, class ScriptPackConfigurationManager const&, std::vector<class std::function<bool(class PackManifest const&, struct Scripting::ModuleDescriptor const&, struct Scripting::ModuleDescriptor const&, class ScriptPluginResult&)>> const&); // NOLINT
     /**
      * @symbol
      * ?getPluginStats\@ScriptPluginManager\@\@QEBA?AV?$vector\@UScriptPluginStats\@\@V?$allocator\@UScriptPluginStats\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<struct ScriptPluginStats> getPluginStats() const;
+    MCAPI std::vector<struct ScriptPluginStats> getPluginStats() const; // NOLINT
     /**
      * @symbol ?releasePlugins\@ScriptPluginManager\@\@QEAAXXZ
      */
-    MCAPI void releasePlugins();
+    MCAPI void releasePlugins(); // NOLINT
     /**
      * @symbol ?runAll\@ScriptPluginManager\@\@QEAA?AVScriptPluginManagerResult\@\@XZ
      */
-    MCAPI class ScriptPluginManagerResult runAll();
+    MCAPI class ScriptPluginManagerResult runAll(); // NOLINT
     /**
      * @symbol ?getPackCapability\@ScriptPluginManager\@\@SA?AVPackCapability\@\@XZ
      */
-    MCAPI static class PackCapability getPackCapability();
+    MCAPI static class PackCapability getPackCapability(); // NOLINT
 
     // private:
     /**
@@ -52,16 +51,16 @@ public:
      */
     MCAPI std::vector<struct Scripting::ModuleDescriptor>
     _generateModuleDependencies(std::vector<struct ModuleIdentifier> const&, std::vector<struct PackIdVersion> const&)
-        const;
+        const; // NOLINT
     /**
      * @symbol
      * ?_reportContextResults\@ScriptPluginManager\@\@AEAAXAEBUScriptContextResult\@Scripting\@\@AEAVScriptPluginResult\@\@\@Z
      */
-    MCAPI void _reportContextResults(struct Scripting::ScriptContextResult const&, class ScriptPluginResult&);
+    MCAPI void _reportContextResults(struct Scripting::ScriptContextResult const&, class ScriptPluginResult&); // NOLINT
     /**
      * @symbol ?_tryAddRuntime\@ScriptPluginManager\@\@AEAAXAEBVScriptPlugin\@\@AEAVScriptPluginResult\@\@\@Z
      */
-    MCAPI void _tryAddRuntime(class ScriptPlugin const&, class ScriptPluginResult&);
+    MCAPI void _tryAddRuntime(class ScriptPlugin const&, class ScriptPluginResult&); // NOLINT
 
 private:
 };

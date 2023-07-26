@@ -4,12 +4,9 @@
 
 struct ItemActorFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMACTORFLAG
 public:
+    // prevent constructor by default
     ItemActorFlag& operator=(ItemActorFlag const&) = delete;
     ItemActorFlag(ItemActorFlag const&)            = delete;
     ItemActorFlag()                                = delete;
-#endif
-
-public:
 };

@@ -13,6 +13,6 @@ namespace InsideSweetBerryBushBlockSystemImpl {
  * ?tick\@InsideSweetBerryBushBlockSystemImpl\@\@YAXAEBU?$InsideBlockWithPosAndBlockComponent\@USweetBerryBushBlockFlag\@\@\@\@AEAVActorOwnerComponent\@\@\@Z
  */
 MCAPI void
-tick(struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag> const&, class ActorOwnerComponent&);
+tick(struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag> const&, class ActorOwnerComponent&); // NOLINT
 
 }; // namespace InsideSweetBerryBushBlockSystemImpl

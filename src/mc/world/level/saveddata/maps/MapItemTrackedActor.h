@@ -14,39 +14,35 @@ public:
 
     struct UniqueId {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MAPITEMTRACKEDACTOR_UNIQUEID
     public:
+        // prevent constructor by default
         UniqueId& operator=(UniqueId const&) = delete;
         UniqueId(UniqueId const&)            = delete;
         UniqueId()                           = delete;
-#endif
-
-    public:
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MAPITEMTRACKEDACTOR
 public:
+    // prevent constructor by default
     MapItemTrackedActor& operator=(MapItemTrackedActor const&) = delete;
     MapItemTrackedActor(MapItemTrackedActor const&)            = delete;
     MapItemTrackedActor()                                      = delete;
-#endif
 
 public:
     /**
      * @symbol ??0MapItemTrackedActor\@\@QEAA\@AEBUUniqueId\@0\@AEAVBlockSource\@\@\@Z
      */
-    MCAPI MapItemTrackedActor(struct MapItemTrackedActor::UniqueId const&, class BlockSource&);
+    MCAPI MapItemTrackedActor(struct MapItemTrackedActor::UniqueId const&, class BlockSource&); // NOLINT
     /**
      * @symbol ?getDecorationRotation\@MapItemTrackedActor\@\@QEAAMAEAVBlockSource\@\@\@Z
      */
-    MCAPI float getDecorationRotation(class BlockSource&);
+    MCAPI float getDecorationRotation(class BlockSource&); // NOLINT
     /**
      * @symbol
      * ?nextUpdatePacket\@MapItemTrackedActor\@\@QEAA?AV?$unique_ptr\@VPacket\@\@U?$default_delete\@VPacket\@\@\@std\@\@\@std\@\@AEBVMapItemSavedData\@\@\@Z
      */
-    MCAPI std::unique_ptr<class Packet> nextUpdatePacket(class MapItemSavedData const&);
+    MCAPI std::unique_ptr<class Packet> nextUpdatePacket(class MapItemSavedData const&); // NOLINT
     /**
      * @symbol ?setNeedsResend\@MapItemTrackedActor\@\@QEAAXXZ
      */
-    MCAPI void setNeedsResend();
+    MCAPI void setNeedsResend(); // NOLINT
 };

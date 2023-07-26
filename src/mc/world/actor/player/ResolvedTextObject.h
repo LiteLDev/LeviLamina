@@ -4,21 +4,20 @@
 
 class ResolvedTextObject {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOLVEDTEXTOBJECT
 public:
+    // prevent constructor by default
     ResolvedTextObject& operator=(ResolvedTextObject const&) = delete;
     ResolvedTextObject(ResolvedTextObject const&)            = delete;
     ResolvedTextObject()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol
      * ?getAsJsonString\@ResolvedTextObject\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getAsJsonString() const;
+    MCAPI std::string getAsJsonString() const; // NOLINT
     /**
      * @symbol ??1ResolvedTextObject\@\@QEAA\@XZ
      */
-    MCAPI ~ResolvedTextObject();
+    MCAPI ~ResolvedTextObject(); // NOLINT
 };

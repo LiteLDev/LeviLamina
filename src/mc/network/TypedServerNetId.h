@@ -5,12 +5,9 @@
 template <typename T0, typename T1, int T2>
 class TypedServerNetId {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TYPEDSERVERNETID
 public:
+    // prevent constructor by default
     TypedServerNetId& operator=(TypedServerNetId const&) = delete;
     TypedServerNetId(TypedServerNetId const&)            = delete;
     TypedServerNetId()                                   = delete;
-#endif
-
-public:
 };

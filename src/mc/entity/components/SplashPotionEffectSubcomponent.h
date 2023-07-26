@@ -9,48 +9,47 @@ namespace Json { class Value; }
 
 class SplashPotionEffectSubcomponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPLASHPOTIONEFFECTSUBCOMPONENT
 public:
+    // prevent constructor by default
     SplashPotionEffectSubcomponent& operator=(SplashPotionEffectSubcomponent const&) = delete;
     SplashPotionEffectSubcomponent(SplashPotionEffectSubcomponent const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?readfromJSON\@SplashPotionEffectSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
-    virtual void readfromJSON(class Json::Value&, class SemVersion const&);
+    virtual void readfromJSON(class Json::Value&, class SemVersion const&); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?writetoJSON\@SplashPotionEffectSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
-    virtual void writetoJSON(class Json::Value&) const;
+    virtual void writetoJSON(class Json::Value&) const; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?doOnHitEffect\@SplashPotionEffectSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
      */
-    virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
+    virtual void doOnHitEffect(class Actor&, class ProjectileComponent&); // NOLINT
     /**
      * @vftbl 4
      * @symbol ?getName\@SplashPotionEffectSubcomponent\@\@UEAAPEBDXZ
      */
-    virtual char const* getName();
+    virtual char const* getName(); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPLASHPOTIONEFFECTSUBCOMPONENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~SplashPotionEffectSubcomponent();
+    MCVAPI ~SplashPotionEffectSubcomponent(); // NOLINT
 #endif
     /**
      * @symbol ??0SplashPotionEffectSubcomponent\@\@QEAA\@XZ
      */
-    MCAPI SplashPotionEffectSubcomponent();
+    MCAPI SplashPotionEffectSubcomponent(); // NOLINT
     /**
      * @symbol
      * ?applyMobEffects\@SplashPotionEffectSubcomponent\@\@QEAAXAEBVMobEffectInstance\@\@AEBV?$vector\@PEAVActor\@\@V?$allocator\@PEAVActor\@\@\@std\@\@\@std\@\@AEAVActor\@\@AEBV?$shared_ptr\@$$CBVPotion\@\@\@4\@MPEAVMobEffect\@\@AEAVHitResult\@\@H\@Z
@@ -64,5 +63,5 @@ public:
         class MobEffect*,
         class HitResult&,
         int
-    );
+    ); // NOLINT
 };

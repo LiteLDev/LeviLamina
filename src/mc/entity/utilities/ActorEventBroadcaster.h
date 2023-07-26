@@ -4,16 +4,15 @@
 
 class ActorEventBroadcaster {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOREVENTBROADCASTER
 public:
+    // prevent constructor by default
     ActorEventBroadcaster& operator=(ActorEventBroadcaster const&) = delete;
     ActorEventBroadcaster(ActorEventBroadcaster const&)            = delete;
     ActorEventBroadcaster()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ?broadcastActorEvent\@ActorEventBroadcaster\@\@QEBAXAEAVActor\@\@W4ActorEvent\@\@HAEAVDimension\@\@\@Z
      */
-    MCAPI void broadcastActorEvent(class Actor&, enum class ActorEvent, int, class Dimension&) const;
+    MCAPI void broadcastActorEvent(class Actor&, enum class ActorEvent, int, class Dimension&) const; // NOLINT
 };

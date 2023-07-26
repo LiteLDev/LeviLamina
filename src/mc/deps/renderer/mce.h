@@ -19,14 +19,15 @@ MCAPI extern class std::unordered_map<
     enum class mce::RenderState,
     struct std::hash<std::string>,
     struct std::equal_to<std::string>,
-    class std::allocator<struct std::pair<std::string const, enum class mce::RenderState>>> const& featuresMap;
+    class std::allocator<struct std::pair<std::string const, enum class mce::RenderState>>> const&
+    featuresMap; // NOLINT
 /**
  * @symbol ??Dmce\@\@YA?AURadian\@0\@U10\@M\@Z
  */
-MCAPI struct mce::Radian operator*(struct mce::Radian, float);
+MCAPI struct mce::Radian operator*(struct mce::Radian, float); // NOLINT
 /**
  * @symbol ??Gmce\@\@YA?AUDegree\@0\@U10\@M\@Z
  */
-MCAPI struct mce::Degree operator-(struct mce::Degree, float);
+MCAPI struct mce::Degree operator-(struct mce::Degree, float); // NOLINT
 
 }; // namespace mce

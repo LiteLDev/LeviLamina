@@ -4,35 +4,34 @@
 
 class RandomizableBlockActorFillingContainer {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMIZABLEBLOCKACTORFILLINGCONTAINER
 public:
+    // prevent constructor by default
     RandomizableBlockActorFillingContainer& operator=(RandomizableBlockActorFillingContainer const&) = delete;
     RandomizableBlockActorFillingContainer(RandomizableBlockActorFillingContainer const&)            = delete;
     RandomizableBlockActorFillingContainer()                                                         = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMIZABLEBLOCKACTORFILLINGCONTAINER
     /**
      * @symbol ?dropContents\@RandomizableBlockActorFillingContainer\@\@UEAAXAEAVBlockSource\@\@AEBVVec3\@\@_N\@Z
      */
-    MCVAPI void dropContents(class BlockSource&, class Vec3 const&, bool);
+    MCVAPI void dropContents(class BlockSource&, class Vec3 const&, bool); // NOLINT
     /**
      * @symbol ?initializeContainerContents\@RandomizableBlockActorFillingContainer\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
-    MCVAPI void initializeContainerContents(class BlockSource&);
+    MCVAPI void initializeContainerContents(class BlockSource&); // NOLINT
     /**
      * @symbol ?setContainerChanged\@RandomizableBlockActorFillingContainer\@\@UEAAXH\@Z
      */
-    MCVAPI void setContainerChanged(int);
+    MCVAPI void setContainerChanged(int); // NOLINT
     /**
      * @symbol ?startOpen\@RandomizableBlockActorFillingContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
-    MCVAPI void startOpen(class Player&);
+    MCVAPI void startOpen(class Player&); // NOLINT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~RandomizableBlockActorFillingContainer();
+    MCVAPI ~RandomizableBlockActorFillingContainer(); // NOLINT
 #endif
     /**
      * @symbol
@@ -44,5 +43,5 @@ public:
         class BlockPos const&,
         int,
         enum class ContainerType
-    );
+    ); // NOLINT
 };

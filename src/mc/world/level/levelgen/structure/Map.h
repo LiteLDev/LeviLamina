@@ -6,14 +6,11 @@ namespace DataStructures {
 
 struct Map {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DATASTRUCTURES_MAP
 public:
+    // prevent constructor by default
     Map& operator=(Map const&) = delete;
     Map(Map const&)            = delete;
     Map()                      = delete;
-#endif
-
-public:
 };
 
 }; // namespace DataStructures

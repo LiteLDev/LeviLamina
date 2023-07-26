@@ -12,11 +12,11 @@ namespace ResourceHelper {
  * @symbol
  * ?deserializePackStackEntry\@ResourceHelper\@\@YA_NAEBVValue\@Json\@\@AEAUPackInstanceId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
  */
-MCAPI bool deserializePackStackEntry(class Json::Value const&, struct PackInstanceId&, std::string const&);
+MCAPI bool deserializePackStackEntry(class Json::Value const&, struct PackInstanceId&, std::string const&); // NOLINT
 /**
  * @symbol
  * ?stringifyResourceMetadataGeneratedWith\@ResourceHelper\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVResourceMetadata\@\@\@Z
  */
-MCAPI std::string stringifyResourceMetadataGeneratedWith(class ResourceMetadata const&);
+MCAPI std::string stringifyResourceMetadataGeneratedWith(class ResourceMetadata const&); // NOLINT
 
 }; // namespace ResourceHelper

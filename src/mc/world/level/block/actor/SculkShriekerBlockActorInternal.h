@@ -6,6 +6,6 @@ namespace SculkShriekerBlockActorInternal {
 /**
  * @symbol ?_shriek\@SculkShriekerBlockActorInternal\@\@YAXAEAVBlockSource\@\@VBlockPos\@\@AEAVPlayer\@\@\@Z
  */
-MCAPI void _shriek(class BlockSource&, class BlockPos, class Player&);
+MCAPI void _shriek(class BlockSource&, class BlockPos, class Player&); // NOLINT
 
 }; // namespace SculkShriekerBlockActorInternal

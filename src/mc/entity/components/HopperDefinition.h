@@ -12,12 +12,11 @@ namespace JsonUtil { class EmptyClass; }
 
 struct HopperDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOPPERDEFINITION
 public:
+    // prevent constructor by default
     HopperDefinition& operator=(HopperDefinition const&) = delete;
     HopperDefinition(HopperDefinition const&)            = delete;
     HopperDefinition()                                   = delete;
-#endif
 
 public:
     /**
@@ -26,5 +25,5 @@ public:
      */
     MCAPI static void
     buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct HopperDefinition>>&);
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct HopperDefinition>>&); // NOLINT
 };

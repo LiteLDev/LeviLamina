@@ -11,6 +11,6 @@ namespace CopperSlabInternal {
 /**
  * @symbol ?BlockLegacy_nullptr\@CopperSlabInternal\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> BlockLegacy_nullptr;
+MCAPI extern class WeakPtr<class BlockLegacy> BlockLegacy_nullptr; // NOLINT
 
 }; // namespace CopperSlabInternal

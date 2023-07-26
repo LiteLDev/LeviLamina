@@ -4,12 +4,9 @@
 
 class IFileReadAccess {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IFILEREADACCESS
 public:
+    // prevent constructor by default
     IFileReadAccess& operator=(IFileReadAccess const&) = delete;
     IFileReadAccess(IFileReadAccess const&)            = delete;
     IFileReadAccess()                                  = delete;
-#endif
-
-public:
 };

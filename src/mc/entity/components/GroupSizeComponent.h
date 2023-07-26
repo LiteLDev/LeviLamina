@@ -4,12 +4,9 @@
 
 class GroupSizeComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROUPSIZECOMPONENT
 public:
+    // prevent constructor by default
     GroupSizeComponent& operator=(GroupSizeComponent const&) = delete;
     GroupSizeComponent(GroupSizeComponent const&)            = delete;
     GroupSizeComponent()                                     = delete;
-#endif
-
-public:
 };

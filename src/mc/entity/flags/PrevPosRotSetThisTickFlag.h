@@ -4,12 +4,9 @@
 
 struct PrevPosRotSetThisTickFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PREVPOSROTSETTHISTICKFLAG
 public:
+    // prevent constructor by default
     PrevPosRotSetThisTickFlag& operator=(PrevPosRotSetThisTickFlag const&) = delete;
     PrevPosRotSetThisTickFlag(PrevPosRotSetThisTickFlag const&)            = delete;
     PrevPosRotSetThisTickFlag()                                            = delete;
-#endif
-
-public:
 };

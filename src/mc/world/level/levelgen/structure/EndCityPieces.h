@@ -23,37 +23,36 @@ public:
 
     class EndCityPiece : public ::TemplateStructurePiece {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDCITYPIECES_ENDCITYPIECE
     public:
+        // prevent constructor by default
         EndCityPiece& operator=(EndCityPiece const&) = delete;
         EndCityPiece(EndCityPiece const&)            = delete;
         EndCityPiece()                               = delete;
-#endif
 
     public:
         /**
          * @vftbl 0
          * @symbol __unk_vfn_0
          */
-        virtual void __unk_vfn_0();
+        virtual void __unk_vfn_0(); // NOLINT
         /**
          * @vftbl 2
          * @symbol ?getType\@EndCityPiece\@EndCityPieces\@\@UEBA?AW4StructurePieceType\@\@XZ
          */
-        virtual enum class StructurePieceType getType() const;
+        virtual enum class StructurePieceType getType() const; // NOLINT
         /**
          * @vftbl 5
          * @symbol
          * ?postProcessMobsAt\@EndCityPiece\@EndCityPieces\@\@UEAAXAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
          */
-        virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
+        virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&); // NOLINT
         /**
          * @vftbl 13
          * @symbol
          * ?_handleDataMarker\@EndCityPiece\@EndCityPieces\@\@MEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlockPos\@\@AEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
          */
         virtual void
-        _handleDataMarker(std::string const&, class BlockPos const&, class BlockSource&, class Random&, class BoundingBox const&);
+        _handleDataMarker(std::string const&, class BlockPos const&, class BlockSource&, class Random&, class BoundingBox const&); // NOLINT
         /**
          * @symbol
          * ??0EndCityPiece\@EndCityPieces\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlockPos\@\@W4Rotation\@\@_N\@Z
@@ -64,25 +63,24 @@ public:
             class BlockPos const&,
             enum class Rotation,
             bool
-        );
+        ); // NOLINT
 
         // private:
         /**
          * @symbol ?_loadAndSetup\@EndCityPiece\@EndCityPieces\@\@AEAAXAEBVBlockPos\@\@\@Z
          */
-        MCAPI void _loadAndSetup(class BlockPos const&);
+        MCAPI void _loadAndSetup(class BlockPos const&); // NOLINT
 
     private:
     };
 
     class FatTowerGenerator {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDCITYPIECES_FATTOWERGENERATOR
     public:
+        // prevent constructor by default
         FatTowerGenerator& operator=(FatTowerGenerator const&) = delete;
         FatTowerGenerator(FatTowerGenerator const&)            = delete;
         FatTowerGenerator()                                    = delete;
-#endif
 
     public:
         /**
@@ -90,17 +88,16 @@ public:
          * @symbol
          * ?generate\@FatTowerGenerator\@EndCityPieces\@\@UEAA_NV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEBV?$vector\@V?$unique_ptr\@VSectionGenerator\@EndCityPieces\@\@U?$default_delete\@VSectionGenerator\@EndCityPieces\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VSectionGenerator\@EndCityPieces\@\@U?$default_delete\@VSectionGenerator\@EndCityPieces\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@HPEAVEndCityPiece\@2\@AEBVBlockPos\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@6\@AEAVRandom\@\@\@Z
          */
-        virtual bool generate(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const&, int, class EndCityPieces::EndCityPiece*, class BlockPos const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
+        virtual bool generate(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const&, int, class EndCityPieces::EndCityPiece*, class BlockPos const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&); // NOLINT
     };
 
     class HouseTowerGenerator {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDCITYPIECES_HOUSETOWERGENERATOR
     public:
+        // prevent constructor by default
         HouseTowerGenerator& operator=(HouseTowerGenerator const&) = delete;
         HouseTowerGenerator(HouseTowerGenerator const&)            = delete;
         HouseTowerGenerator()                                      = delete;
-#endif
 
     public:
         /**
@@ -108,29 +105,25 @@ public:
          * @symbol
          * ?generate\@HouseTowerGenerator\@EndCityPieces\@\@UEAA_NV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEBV?$vector\@V?$unique_ptr\@VSectionGenerator\@EndCityPieces\@\@U?$default_delete\@VSectionGenerator\@EndCityPieces\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VSectionGenerator\@EndCityPieces\@\@U?$default_delete\@VSectionGenerator\@EndCityPieces\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@HPEAVEndCityPiece\@2\@AEBVBlockPos\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@6\@AEAVRandom\@\@\@Z
          */
-        virtual bool generate(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const&, int, class EndCityPieces::EndCityPiece*, class BlockPos const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
+        virtual bool generate(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const&, int, class EndCityPieces::EndCityPiece*, class BlockPos const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&); // NOLINT
     };
 
     class SectionGenerator {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDCITYPIECES_SECTIONGENERATOR
     public:
+        // prevent constructor by default
         SectionGenerator& operator=(SectionGenerator const&) = delete;
         SectionGenerator(SectionGenerator const&)            = delete;
         SectionGenerator()                                   = delete;
-#endif
-
-    public:
     };
 
     class TowerBridgeGenerator {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDCITYPIECES_TOWERBRIDGEGENERATOR
     public:
+        // prevent constructor by default
         TowerBridgeGenerator& operator=(TowerBridgeGenerator const&) = delete;
         TowerBridgeGenerator(TowerBridgeGenerator const&)            = delete;
         TowerBridgeGenerator()                                       = delete;
-#endif
 
     public:
         /**
@@ -138,17 +131,16 @@ public:
          * @symbol
          * ?generate\@TowerBridgeGenerator\@EndCityPieces\@\@UEAA_NV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEBV?$vector\@V?$unique_ptr\@VSectionGenerator\@EndCityPieces\@\@U?$default_delete\@VSectionGenerator\@EndCityPieces\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VSectionGenerator\@EndCityPieces\@\@U?$default_delete\@VSectionGenerator\@EndCityPieces\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@HPEAVEndCityPiece\@2\@AEBVBlockPos\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@6\@AEAVRandom\@\@\@Z
          */
-        virtual bool generate(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const&, int, class EndCityPieces::EndCityPiece*, class BlockPos const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
+        virtual bool generate(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const&, int, class EndCityPieces::EndCityPiece*, class BlockPos const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&); // NOLINT
     };
 
     class TowerGenerator {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDCITYPIECES_TOWERGENERATOR
     public:
+        // prevent constructor by default
         TowerGenerator& operator=(TowerGenerator const&) = delete;
         TowerGenerator(TowerGenerator const&)            = delete;
         TowerGenerator()                                 = delete;
-#endif
 
     public:
         /**
@@ -156,15 +148,14 @@ public:
          * @symbol
          * ?generate\@TowerGenerator\@EndCityPieces\@\@UEAA_NV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEBV?$vector\@V?$unique_ptr\@VSectionGenerator\@EndCityPieces\@\@U?$default_delete\@VSectionGenerator\@EndCityPieces\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VSectionGenerator\@EndCityPieces\@\@U?$default_delete\@VSectionGenerator\@EndCityPieces\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@HPEAVEndCityPiece\@2\@AEBVBlockPos\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@6\@AEAVRandom\@\@\@Z
          */
-        virtual bool generate(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const&, int, class EndCityPieces::EndCityPiece*, class BlockPos const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
+        virtual bool generate(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const&, int, class EndCityPieces::EndCityPiece*, class BlockPos const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDCITYPIECES
 public:
+    // prevent constructor by default
     EndCityPieces& operator=(EndCityPieces const&) = delete;
     EndCityPieces(EndCityPieces const&)            = delete;
     EndCityPieces()                                = delete;
-#endif
 
 public:
     /**
@@ -172,7 +163,7 @@ public:
      * ?startHouseTower\@EndCityPieces\@\@SAXV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEBVBlockPos\@\@W4Rotation\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@\@Z
      */
     MCAPI static void
-    startHouseTower(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class BlockPos const&, enum class Rotation, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
+    startHouseTower(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class BlockPos const&, enum class Rotation, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&); // NOLINT
 
     // private:
     /**
@@ -180,7 +171,7 @@ public:
      * ?_addHelper\@EndCityPieces\@\@CAPEAVEndCityPiece\@1\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@V?$unique_ptr\@VEndCityPiece\@EndCityPieces\@\@U?$default_delete\@VEndCityPiece\@EndCityPieces\@\@\@std\@\@\@4\@\@Z
      */
     MCAPI static class EndCityPieces::EndCityPiece*
-    _addHelper(std::vector<std::unique_ptr<class StructurePiece>>&, std::unique_ptr<class EndCityPieces::EndCityPiece>);
+    _addHelper(std::vector<std::unique_ptr<class StructurePiece>>&, std::unique_ptr<class EndCityPieces::EndCityPiece>); // NOLINT
     /**
      * @symbol
      * ?_createPiece\@EndCityPieces\@\@CA?AV?$unique_ptr\@VEndCityPiece\@EndCityPieces\@\@U?$default_delete\@VEndCityPiece\@EndCityPieces\@\@\@std\@\@\@std\@\@V?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@PEAVEndCityPiece\@1\@AEBVBlockPos\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@W4Rotation\@\@_N\@Z
@@ -192,21 +183,21 @@ public:
         std::string const&,
         enum class Rotation,
         bool
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?_recursiveChildren\@EndCityPieces\@\@CA_NV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEBV?$vector\@V?$unique_ptr\@VSectionGenerator\@EndCityPieces\@\@U?$default_delete\@VSectionGenerator\@EndCityPieces\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VSectionGenerator\@EndCityPieces\@\@U?$default_delete\@VSectionGenerator\@EndCityPieces\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@W4SectionType\@1\@HPEAVEndCityPiece\@1\@AEBVBlockPos\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@5\@AEAVRandom\@\@\@Z
      */
     MCAPI static bool
-    _recursiveChildren(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const&, enum class EndCityPieces::SectionType, int, class EndCityPieces::EndCityPiece*, class BlockPos const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
+    _recursiveChildren(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const&, enum class EndCityPieces::SectionType, int, class EndCityPieces::EndCityPiece*, class BlockPos const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&); // NOLINT
 
 private:
     /**
      * @symbol ?mInsertSettings\@EndCityPieces\@\@0VLegacyStructureSettings\@\@A
      */
-    MCAPI static class LegacyStructureSettings mInsertSettings;
+    MCAPI static class LegacyStructureSettings mInsertSettings; // NOLINT
     /**
      * @symbol ?mOverwriteSettings\@EndCityPieces\@\@0VLegacyStructureSettings\@\@A
      */
-    MCAPI static class LegacyStructureSettings mOverwriteSettings;
+    MCAPI static class LegacyStructureSettings mOverwriteSettings; // NOLINT
 };

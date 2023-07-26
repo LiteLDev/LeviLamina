@@ -18,12 +18,11 @@ namespace cereal::internal {
 
 class UndefinedSchema : public ::cereal::internal::BasicSchema {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CEREAL_INTERNAL_UNDEFINEDSCHEMA
 public:
+    // prevent constructor by default
     UndefinedSchema& operator=(UndefinedSchema const&) = delete;
     UndefinedSchema(UndefinedSchema const&)            = delete;
     UndefinedSchema()                                  = delete;
-#endif
 
 public:
     /**
@@ -33,7 +32,7 @@ public:
      */
     virtual struct cereal::internal::Result
     doValidate(struct cereal::SchemaReader&, class entt::meta_any&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&)
-        const;
+        const; // NOLINT
     /**
      * @vftbl 1
      * @symbol
@@ -41,11 +40,11 @@ public:
      */
     virtual struct cereal::internal::Result
     doLoad(struct cereal::SchemaReader&, class entt::meta_any&, struct cereal::SerializerTraits const&, class entt::meta_any const&, class cereal::SerializerContext&)
-        const;
+        const; // NOLINT
     /**
      * @symbol ?instance\@UndefinedSchema\@internal\@cereal\@\@SAAEBV123\@XZ
      */
-    MCAPI static class cereal::internal::UndefinedSchema const& instance();
+    MCAPI static class cereal::internal::UndefinedSchema const& instance(); // NOLINT
 };
 
 }; // namespace cereal::internal

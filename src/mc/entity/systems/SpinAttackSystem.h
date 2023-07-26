@@ -9,18 +9,17 @@
 
 class SpinAttackSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPINATTACKSYSTEM
 public:
+    // prevent constructor by default
     SpinAttackSystem& operator=(SpinAttackSystem const&) = delete;
     SpinAttackSystem(SpinAttackSystem const&)            = delete;
     SpinAttackSystem()                                   = delete;
-#endif
 
 public:
     /**
      * @symbol ?_spinAttack\@SpinAttackSystem\@\@SAXAEAVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
      */
-    MCAPI static void _spinAttack(class StrictEntityContext&, class ActorOwnerComponent&);
+    MCAPI static void _spinAttack(class StrictEntityContext&, class ActorOwnerComponent&); // NOLINT
     /**
      * @symbol
      * ?_tickSpinAttackSystem\@SpinAttackSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@\@\@VActorOwnerComponent\@\@\@\@\@Z
@@ -29,9 +28,9 @@ public:
                                             class StrictEntityContext,
                                             class EntityRegistryBase,
                                             struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
-                                            class ActorOwnerComponent>);
+                                            class ActorOwnerComponent>); // NOLINT
     /**
      * @symbol ?createSystem\@SpinAttackSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
 };

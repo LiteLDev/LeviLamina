@@ -6,18 +6,17 @@ namespace Common {
 
 struct BuildInfo {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMON_BUILDINFO
 public:
+    // prevent constructor by default
     BuildInfo& operator=(BuildInfo const&) = delete;
     BuildInfo(BuildInfo const&)            = delete;
     BuildInfo()                            = delete;
-#endif
 
 public:
     /**
      * @symbol ??1BuildInfo\@Common\@\@QEAA\@XZ
      */
-    MCAPI ~BuildInfo();
+    MCAPI ~BuildInfo(); // NOLINT
 };
 
 }; // namespace Common

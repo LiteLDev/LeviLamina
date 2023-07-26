@@ -7,28 +7,27 @@
 
 class CraftHandlerSmithingTable : public ::CraftHandlerBase {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTHANDLERSMITHINGTABLE
 public:
+    // prevent constructor by default
     CraftHandlerSmithingTable& operator=(CraftHandlerSmithingTable const&) = delete;
     CraftHandlerSmithingTable(CraftHandlerSmithingTable const&)            = delete;
     CraftHandlerSmithingTable()                                            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 4
      * @symbol
      * ?_handleCraftAction\@CraftHandlerSmithingTable\@\@EEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionCraftBase\@\@\@Z
      */
-    virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
+    virtual enum class ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&); // NOLINT
     /**
      * @vftbl 6
      * @symbol ?_getLevelRecipes\@CraftHandlerSmithingTable\@\@EEBAPEBVRecipes\@\@XZ
      */
-    virtual class Recipes const* _getLevelRecipes() const;
+    virtual class Recipes const* _getLevelRecipes() const; // NOLINT
 };

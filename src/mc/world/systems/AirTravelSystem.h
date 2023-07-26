@@ -4,16 +4,15 @@
 
 class AirTravelSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AIRTRAVELSYSTEM
 public:
+    // prevent constructor by default
     AirTravelSystem& operator=(AirTravelSystem const&) = delete;
     AirTravelSystem(AirTravelSystem const&)            = delete;
     AirTravelSystem()                                  = delete;
-#endif
 
 public:
     /**
      * @symbol ?createAirTravelSystem\@AirTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createAirTravelSystem();
+    MCAPI static struct TickingSystemWithInfo createAirTravelSystem(); // NOLINT
 };

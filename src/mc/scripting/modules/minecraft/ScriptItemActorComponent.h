@@ -17,24 +17,23 @@ namespace ScriptModuleMinecraft {
 
 class ScriptItemActorComponent : public ::ScriptModuleMinecraft::ScriptActorComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTITEMACTORCOMPONENT
 public:
+    // prevent constructor by default
     ScriptItemActorComponent& operator=(ScriptItemActorComponent const&) = delete;
     ScriptItemActorComponent(ScriptItemActorComponent const&)            = delete;
     ScriptItemActorComponent()                                           = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTITEMACTORCOMPONENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptItemActorComponent();
+    MCVAPI ~ScriptItemActorComponent(); // NOLINT
 #endif
     /**
      * @symbol
@@ -42,16 +41,17 @@ public:
      */
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>
-    getItemStack() const;
-    /**
-     * @symbol ?ComponentId\@ScriptItemActorComponent\@ScriptModuleMinecraft\@\@2PEBDEB
-     */
-    MCAPI static char const* ComponentId;
+    getItemStack() const; // NOLINT
     /**
      * @symbol
      * ?bind\@ScriptItemActorComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptItemActorComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemActorComponent> bind();
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemActorComponent>
+    bind(); // NOLINT
+    /**
+     * @symbol ?ComponentId\@ScriptItemActorComponent\@ScriptModuleMinecraft\@\@2PEBDEB
+     */
+    MCAPI static char const* ComponentId; // NOLINT
 };
 
 }; // namespace ScriptModuleMinecraft

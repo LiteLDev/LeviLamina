@@ -8,18 +8,17 @@
 
 class VillagerV2PreTravelSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VILLAGERV2PRETRAVELSYSTEM
 public:
+    // prevent constructor by default
     VillagerV2PreTravelSystem& operator=(VillagerV2PreTravelSystem const&) = delete;
     VillagerV2PreTravelSystem(VillagerV2PreTravelSystem const&)            = delete;
     VillagerV2PreTravelSystem()                                            = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@VillagerV2PreTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
 
     // private:
     /**
@@ -27,7 +26,7 @@ public:
      * ?_doVillagerV2PreTravel\@VillagerV2PreTravelSystem\@\@CAXAEBVStrictEntityContext\@\@AEBUSynchedActorDataComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@USkipMobTravelFlag\@\@\@\@\@\@\@Z
      */
     MCAPI static void
-    _doVillagerV2PreTravel(class StrictEntityContext const&, struct SynchedActorDataComponent const&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct SkipMobTravelFlag>>);
+    _doVillagerV2PreTravel(class StrictEntityContext const&, struct SynchedActorDataComponent const&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct SkipMobTravelFlag>>); // NOLINT
 
 private:
 };

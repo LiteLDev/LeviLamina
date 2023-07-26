@@ -4,16 +4,15 @@
 
 class LadderResetFallDamageSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LADDERRESETFALLDAMAGESYSTEM
 public:
+    // prevent constructor by default
     LadderResetFallDamageSystem& operator=(LadderResetFallDamageSystem const&) = delete;
     LadderResetFallDamageSystem(LadderResetFallDamageSystem const&)            = delete;
     LadderResetFallDamageSystem()                                              = delete;
-#endif
 
 public:
     /**
      * @symbol ?createLadderResetFallDamageSystem\@LadderResetFallDamageSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createLadderResetFallDamageSystem();
+    MCAPI static struct TickingSystemWithInfo createLadderResetFallDamageSystem(); // NOLINT
 };

@@ -11,14 +11,14 @@ namespace Crypto::Random {
 /**
  * @symbol ?generateCryptographicPlatformUUID\@Random\@Crypto\@\@YA?AVUUID\@mce\@\@XZ
  */
-MCAPI class mce::UUID generateCryptographicPlatformUUID();
+MCAPI class mce::UUID generateCryptographicPlatformUUID(); // NOLINT
 /**
  * @symbol ?generateUUID\@Random\@Crypto\@\@YA?AVUUID\@mce\@\@XZ
  */
-MCAPI class mce::UUID generateUUID();
+MCAPI class mce::UUID generateUUID(); // NOLINT
 /**
  * @symbol ?generateUUID64Bit\@Random\@Crypto\@\@YA_KXZ
  */
-MCAPI unsigned __int64 generateUUID64Bit();
+MCAPI unsigned __int64 generateUUID64Bit(); // NOLINT
 
 }; // namespace Crypto::Random

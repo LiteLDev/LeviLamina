@@ -6,10 +6,10 @@ namespace PlayJumpSoundRequestsSystem {
 /**
  * @symbol ?createCleanupSystem\@PlayJumpSoundRequestsSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
  */
-MCAPI struct TickingSystemWithInfo createCleanupSystem();
+MCAPI struct TickingSystemWithInfo createCleanupSystem(); // NOLINT
 /**
  * @symbol ?createSystem\@PlayJumpSoundRequestsSystem\@\@YA?AUTickingSystemWithInfo\@\@XZ
  */
-MCAPI struct TickingSystemWithInfo createSystem();
+MCAPI struct TickingSystemWithInfo createSystem(); // NOLINT
 
 }; // namespace PlayJumpSoundRequestsSystem

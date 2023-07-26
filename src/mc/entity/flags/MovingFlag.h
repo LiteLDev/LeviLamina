@@ -4,12 +4,9 @@
 
 struct MovingFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVINGFLAG
 public:
+    // prevent constructor by default
     MovingFlag& operator=(MovingFlag const&) = delete;
     MovingFlag(MovingFlag const&)            = delete;
     MovingFlag()                             = delete;
-#endif
-
-public:
 };

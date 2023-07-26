@@ -4,20 +4,19 @@
 
 class BedrockLoadContext {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCKLOADCONTEXT
 public:
+    // prevent constructor by default
     BedrockLoadContext& operator=(BedrockLoadContext const&) = delete;
     BedrockLoadContext(BedrockLoadContext const&)            = delete;
     BedrockLoadContext()                                     = delete;
-#endif
 
 public:
     /**
      * @symbol ??0BedrockLoadContext\@\@QEAA\@AEBVSemVersion\@\@\@Z
      */
-    MCAPI BedrockLoadContext(class SemVersion const&);
+    MCAPI BedrockLoadContext(class SemVersion const&); // NOLINT
     /**
      * @symbol ??1BedrockLoadContext\@\@QEAA\@XZ
      */
-    MCAPI ~BedrockLoadContext();
+    MCAPI ~BedrockLoadContext(); // NOLINT
 };

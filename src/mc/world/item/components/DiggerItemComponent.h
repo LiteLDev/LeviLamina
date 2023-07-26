@@ -16,79 +16,78 @@ public:
         /**
          * @symbol ??0BlockInfo\@DiggerItemComponent\@\@QEAA\@AEBU01\@\@Z
          */
-        MCAPI BlockInfo(struct DiggerItemComponent::BlockInfo const&);
+        MCAPI BlockInfo(struct DiggerItemComponent::BlockInfo const&); // NOLINT
         /**
          * @symbol ??0BlockInfo\@DiggerItemComponent\@\@QEAA\@XZ
          */
-        MCAPI BlockInfo();
+        MCAPI BlockInfo(); // NOLINT
         /**
          * @symbol ??4BlockInfo\@DiggerItemComponent\@\@QEAAAEAU01\@$$QEAU01\@\@Z
          */
-        MCAPI struct DiggerItemComponent::BlockInfo& operator=(struct DiggerItemComponent::BlockInfo&&);
+        MCAPI struct DiggerItemComponent::BlockInfo& operator=(struct DiggerItemComponent::BlockInfo&&); // NOLINT
         /**
          * @symbol ??4BlockInfo\@DiggerItemComponent\@\@QEAAAEAU01\@AEBU01\@\@Z
          */
-        MCAPI struct DiggerItemComponent::BlockInfo& operator=(struct DiggerItemComponent::BlockInfo const&);
+        MCAPI struct DiggerItemComponent::BlockInfo& operator=(struct DiggerItemComponent::BlockInfo const&); // NOLINT
         /**
          * @symbol ??8BlockInfo\@DiggerItemComponent\@\@QEBA_NAEBU01\@\@Z
          */
-        MCAPI bool operator==(struct DiggerItemComponent::BlockInfo const&) const;
+        MCAPI bool operator==(struct DiggerItemComponent::BlockInfo const&) const; // NOLINT
         /**
          * @symbol ??1BlockInfo\@DiggerItemComponent\@\@QEAA\@XZ
          */
-        MCAPI ~BlockInfo();
+        MCAPI ~BlockInfo(); // NOLINT
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIGGERITEMCOMPONENT
 public:
+    // prevent constructor by default
     DiggerItemComponent& operator=(DiggerItemComponent const&) = delete;
     DiggerItemComponent(DiggerItemComponent const&)            = delete;
     DiggerItemComponent()                                      = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?isNetworkComponent\@?$NetworkedItemComponent\@VDiggerItemComponent\@\@\@\@UEBA_NXZ
      */
-    virtual bool isNetworkComponent() const;
+    virtual bool isNetworkComponent() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2();
+    virtual void __unk_vfn_2(); // NOLINT
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3();
+    virtual void __unk_vfn_3(); // NOLINT
     /**
      * @vftbl 4
      * @symbol
      * ?buildNetworkTag\@?$NetworkedItemComponent\@VDiggerItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const; // NOLINT
     /**
      * @vftbl 5
      * @symbol
      * ?initializeFromNetwork\@?$NetworkedItemComponent\@VDiggerItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
      */
-    virtual bool initializeFromNetwork(class CompoundTag const&);
+    virtual bool initializeFromNetwork(class CompoundTag const&); // NOLINT
     /**
      * @symbol ?mineBlock\@DiggerItemComponent\@\@QEAA_NAEAVItemStack\@\@AEBVBlock\@\@HHHPEAVActor\@\@\@Z
      */
-    MCAPI bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*);
+    MCAPI bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*); // NOLINT
     /**
      * @symbol ?bindType\@DiggerItemComponent\@\@SAXXZ
      */
-    MCAPI static void bindType();
+    MCAPI static void bindType(); // NOLINT
     /**
      * @symbol ?getIdentifier\@DiggerItemComponent\@\@SAAEBVHashedString\@\@XZ
      */
-    MCAPI static class HashedString const& getIdentifier();
+    MCAPI static class HashedString const& getIdentifier(); // NOLINT
 };

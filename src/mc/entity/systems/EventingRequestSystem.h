@@ -7,18 +7,17 @@
 
 class EventingRequestSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EVENTINGREQUESTSYSTEM
 public:
+    // prevent constructor by default
     EventingRequestSystem& operator=(EventingRequestSystem const&) = delete;
     EventingRequestSystem(EventingRequestSystem const&)            = delete;
     EventingRequestSystem()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ?createSystem\@EventingRequestSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem();
+    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
 
     // private:
     /**
@@ -26,7 +25,7 @@ public:
      * ?_eventingRequestSystem\@EventingRequestSystem\@\@CAXAEBVStrictEntityContext\@\@AEAUEventingRequestQueueComponent\@\@AEAVLevelComponent\@\@\@Z
      */
     MCAPI static void
-    _eventingRequestSystem(class StrictEntityContext const&, struct EventingRequestQueueComponent&, class LevelComponent&);
+    _eventingRequestSystem(class StrictEntityContext const&, struct EventingRequestQueueComponent&, class LevelComponent&); // NOLINT
     /**
      * @symbol
      * ?_tickEventingRequestSystem\@EventingRequestSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@UEventingRequestQueueComponent\@\@VLevelComponent\@\@\@\@\@Z
@@ -35,7 +34,7 @@ public:
                                                  class StrictEntityContext,
                                                  class EntityRegistryBase,
                                                  struct EventingRequestQueueComponent,
-                                                 class LevelComponent>);
+                                                 class LevelComponent>); // NOLINT
 
 private:
 };

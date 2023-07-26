@@ -4,30 +4,29 @@
 
 class SubtreeNode {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBTREENODE
 public:
+    // prevent constructor by default
     SubtreeNode& operator=(SubtreeNode const&) = delete;
     SubtreeNode(SubtreeNode const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?tick\@SubtreeNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
-    virtual enum class BehaviorStatus tick(class Actor&);
+    virtual enum class BehaviorStatus tick(class Actor&); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?initializeFromDefinition\@SubtreeNode\@\@MEAAXAEAVActor\@\@\@Z
      */
-    virtual void initializeFromDefinition(class Actor&);
+    virtual void initializeFromDefinition(class Actor&); // NOLINT
     /**
      * @symbol ??0SubtreeNode\@\@QEAA\@XZ
      */
-    MCAPI SubtreeNode();
+    MCAPI SubtreeNode(); // NOLINT
 };

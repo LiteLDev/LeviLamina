@@ -8,56 +8,55 @@
 
 class CameraShakePacket : public ::Packet {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMERASHAKEPACKET
 public:
+    // prevent constructor by default
     CameraShakePacket& operator=(CameraShakePacket const&) = delete;
     CameraShakePacket(CameraShakePacket const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?getId\@CameraShakePacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
-    virtual enum class MinecraftPacketIds getId() const;
+    virtual enum class MinecraftPacketIds getId() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
      * ?getName\@CameraShakePacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string getName() const;
+    virtual std::string getName() const; // NOLINT
     /**
      * @vftbl 3
      * @symbol ?write\@CameraShakePacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
-    virtual void write(class BinaryStream&) const;
+    virtual void write(class BinaryStream&) const; // NOLINT
     /**
      * @vftbl 7
      * @symbol
      * ?_read\@CameraShakePacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&);
+    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAMERASHAKEPACKET
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~CameraShakePacket();
+    MCVAPI ~CameraShakePacket(); // NOLINT
 #endif
     /**
      * @symbol ??0CameraShakePacket\@\@QEAA\@MMW4CameraShakeType\@\@\@Z
      */
-    MCAPI CameraShakePacket(float, float, enum class CameraShakeType);
+    MCAPI CameraShakePacket(float, float, enum class CameraShakeType); // NOLINT
     /**
      * @symbol ??0CameraShakePacket\@\@QEAA\@XZ
      */
-    MCAPI CameraShakePacket();
+    MCAPI CameraShakePacket(); // NOLINT
     /**
      * @symbol ??0CameraShakePacket\@\@QEAA\@W4CameraShakeAction\@\@\@Z
      */
-    MCAPI CameraShakePacket(enum class CameraShakeAction);
+    MCAPI CameraShakePacket(enum class CameraShakeAction); // NOLINT
 };

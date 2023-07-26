@@ -12,39 +12,38 @@ namespace JsonUtil { class EmptyClass; }
 
 class MobEffectDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEFFECTDEFINITION
 public:
+    // prevent constructor by default
     MobEffectDefinition& operator=(MobEffectDefinition const&) = delete;
     MobEffectDefinition(MobEffectDefinition const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0MobEffectDefinition\@\@QEAA\@XZ
      */
-    MCAPI MobEffectDefinition();
+    MCAPI MobEffectDefinition(); // NOLINT
     /**
      * @symbol ?initialize\@MobEffectDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVMobEffectComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class MobEffectComponent&) const;
+    MCAPI void initialize(class EntityContext&, class MobEffectComponent&) const; // NOLINT
     /**
      * @symbol ?setCooldownTimeInTicks\@MobEffectDefinition\@\@QEAAXAEBH\@Z
      */
-    MCAPI void setCooldownTimeInTicks(int const&);
+    MCAPI void setCooldownTimeInTicks(int const&); // NOLINT
     /**
      * @symbol ?setEffectTimeInTicks\@MobEffectDefinition\@\@QEAAXAEBH\@Z
      */
-    MCAPI void setEffectTimeInTicks(int const&);
+    MCAPI void setEffectTimeInTicks(int const&); // NOLINT
     /**
      * @symbol
      * ?setMobEffectByName\@MobEffectDefinition\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void setMobEffectByName(std::string const&);
+    MCAPI void setMobEffectByName(std::string const&); // NOLINT
     /**
      * @symbol
      * ?buildSchema\@MobEffectDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VMobEffectDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MobEffectDefinition>>&);
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      class MobEffectDefinition>>&); // NOLINT
 };

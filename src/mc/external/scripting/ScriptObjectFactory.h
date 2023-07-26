@@ -6,14 +6,11 @@ namespace Scripting {
 
 class ScriptObjectFactory {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTING_SCRIPTOBJECTFACTORY
 public:
+    // prevent constructor by default
     ScriptObjectFactory& operator=(ScriptObjectFactory const&) = delete;
     ScriptObjectFactory(ScriptObjectFactory const&)            = delete;
     ScriptObjectFactory()                                      = delete;
-#endif
-
-public:
 };
 
 }; // namespace Scripting

@@ -6,19 +6,18 @@ namespace ScriptModuleMinecraft {
 
 class ScriptItemEvent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMODULEMINECRAFT_SCRIPTITEMEVENT
 public:
+    // prevent constructor by default
     ScriptItemEvent& operator=(ScriptItemEvent const&) = delete;
     ScriptItemEvent(ScriptItemEvent const&)            = delete;
     ScriptItemEvent()                                  = delete;
-#endif
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTITEMEVENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptItemEvent();
+    MCVAPI ~ScriptItemEvent(); // NOLINT
 #endif
 };
 

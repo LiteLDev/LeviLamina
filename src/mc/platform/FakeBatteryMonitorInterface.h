@@ -4,30 +4,29 @@
 
 class FakeBatteryMonitorInterface {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FAKEBATTERYMONITORINTERFACE
 public:
+    // prevent constructor by default
     FakeBatteryMonitorInterface& operator=(FakeBatteryMonitorInterface const&) = delete;
     FakeBatteryMonitorInterface(FakeBatteryMonitorInterface const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?getBatteryStatus\@FakeBatteryMonitorInterface\@\@UEBA?AW4BatteryStatus\@\@XZ
      */
-    virtual enum class BatteryStatus getBatteryStatus() const;
+    virtual enum class BatteryStatus getBatteryStatus() const; // NOLINT
     /**
      * @vftbl 2
      * @symbol ?getBatteryLevel\@FakeBatteryMonitorInterface\@\@UEBAMXZ
      */
-    virtual float getBatteryLevel() const;
+    virtual float getBatteryLevel() const; // NOLINT
     /**
      * @symbol ??0FakeBatteryMonitorInterface\@\@QEAA\@XZ
      */
-    MCAPI FakeBatteryMonitorInterface();
+    MCAPI FakeBatteryMonitorInterface(); // NOLINT
 };

@@ -7,54 +7,53 @@
 
 class BeaconContainerManagerModel : public ::LevelContainerManagerModel {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEACONCONTAINERMANAGERMODEL
 public:
+    // prevent constructor by default
     BeaconContainerManagerModel& operator=(BeaconContainerManagerModel const&) = delete;
     BeaconContainerManagerModel(BeaconContainerManagerModel const&)            = delete;
     BeaconContainerManagerModel()                                              = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 6
      * @symbol
      * ?getItemCopies\@BeaconContainerManagerModel\@\@UEBA?AV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@XZ
      */
-    virtual std::vector<class ItemStack> getItemCopies() const;
+    virtual std::vector<class ItemStack> getItemCopies() const; // NOLINT
     /**
      * @vftbl 7
      * @symbol ?setSlot\@BeaconContainerManagerModel\@\@UEAAXHAEBVItemStack\@\@_N\@Z
      */
-    virtual void setSlot(int, class ItemStack const&, bool);
+    virtual void setSlot(int, class ItemStack const&, bool); // NOLINT
     /**
      * @vftbl 8
      * @symbol ?getSlot\@BeaconContainerManagerModel\@\@UEBAAEBVItemStack\@\@H\@Z
      */
-    virtual class ItemStack const& getSlot(int) const;
+    virtual class ItemStack const& getSlot(int) const; // NOLINT
     /**
      * @vftbl 17
      * @symbol ?_postInit\@BeaconContainerManagerModel\@\@MEAA?AVContainerScreenContext\@\@XZ
      */
-    virtual class ContainerScreenContext _postInit();
+    virtual class ContainerScreenContext _postInit(); // NOLINT
     /**
      * @symbol ??0BeaconContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI BeaconContainerManagerModel(enum class ContainerID, class Player&, class BlockPos const&);
+    MCAPI BeaconContainerManagerModel(enum class ContainerID, class Player&, class BlockPos const&); // NOLINT
     /**
      * @symbol ?PAYMENT_SLOT\@BeaconContainerManagerModel\@\@2HB
      */
-    MCAPI static int const PAYMENT_SLOT;
+    MCAPI static int const PAYMENT_SLOT; // NOLINT
 
     // private:
     /**
      * @symbol ?_resetSelectionState\@BeaconContainerManagerModel\@\@AEAAXXZ
      */
-    MCAPI void _resetSelectionState();
+    MCAPI void _resetSelectionState(); // NOLINT
 
 private:
 };

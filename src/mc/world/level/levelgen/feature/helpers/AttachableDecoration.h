@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class IBlockWorldGenAPI;
+class Random;
+// clang-format on
+
 namespace TreeHelper {
 
 struct AttachableDecoration {
@@ -14,22 +22,18 @@ public:
     // AttachableDecoration inner types define
     struct DirectionMask {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TREEHELPER_ATTACHABLEDECORATION_DIRECTIONMASK
     public:
+        // prevent constructor by default
         DirectionMask& operator=(DirectionMask const&) = delete;
         DirectionMask(DirectionMask const&)            = delete;
         DirectionMask()                                = delete;
-#endif
-
-    public:
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TREEHELPER_ATTACHABLEDECORATION
 public:
+    // prevent constructor by default
     AttachableDecoration& operator=(AttachableDecoration const&) = delete;
     AttachableDecoration(AttachableDecoration const&)            = delete;
     AttachableDecoration()                                       = delete;
-#endif
 
 public:
     /**
@@ -38,11 +42,11 @@ public:
      */
     MCAPI void
     placeDecoration(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, struct TreeHelper::AttachableDecoration::DirectionMask const&)
-        const;
+        const; // NOLINT
     /**
      * @symbol ??1AttachableDecoration\@TreeHelper\@\@QEAA\@XZ
      */
-    MCAPI ~AttachableDecoration();
+    MCAPI ~AttachableDecoration(); // NOLINT
 
     // private:
     /**
@@ -51,7 +55,7 @@ public:
      */
     MCAPI void
     _placeMultiDecoration(class IBlockWorldGenAPI&, class BlockPos const&, class Block const&, class BlockPos const&)
-        const;
+        const; // NOLINT
 };
 
 }; // namespace TreeHelper

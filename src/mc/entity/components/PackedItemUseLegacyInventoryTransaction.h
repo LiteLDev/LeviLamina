@@ -4,27 +4,27 @@
 
 struct PackedItemUseLegacyInventoryTransaction {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKEDITEMUSELEGACYINVENTORYTRANSACTION
 public:
+    // prevent constructor by default
     PackedItemUseLegacyInventoryTransaction& operator=(PackedItemUseLegacyInventoryTransaction const&) = delete;
     PackedItemUseLegacyInventoryTransaction(PackedItemUseLegacyInventoryTransaction const&)            = delete;
-#endif
 
 public:
     /**
      * @symbol ??0PackedItemUseLegacyInventoryTransaction\@\@QEAA\@XZ
      */
-    MCAPI PackedItemUseLegacyInventoryTransaction();
+    MCAPI PackedItemUseLegacyInventoryTransaction(); // NOLINT
     /**
      * @symbol ??0PackedItemUseLegacyInventoryTransaction\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI PackedItemUseLegacyInventoryTransaction(struct PackedItemUseLegacyInventoryTransaction&&);
+    MCAPI PackedItemUseLegacyInventoryTransaction(struct PackedItemUseLegacyInventoryTransaction&&); // NOLINT
     /**
      * @symbol ??4PackedItemUseLegacyInventoryTransaction\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct PackedItemUseLegacyInventoryTransaction& operator=(struct PackedItemUseLegacyInventoryTransaction&&);
+    MCAPI struct PackedItemUseLegacyInventoryTransaction&
+    operator=(struct PackedItemUseLegacyInventoryTransaction&&); // NOLINT
     /**
      * @symbol ??1PackedItemUseLegacyInventoryTransaction\@\@QEAA\@XZ
      */
-    MCAPI ~PackedItemUseLegacyInventoryTransaction();
+    MCAPI ~PackedItemUseLegacyInventoryTransaction(); // NOLINT
 };

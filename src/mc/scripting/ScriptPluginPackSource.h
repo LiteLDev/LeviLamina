@@ -9,24 +9,23 @@ namespace Core { class Path; }
 
 class ScriptPluginPackSource {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPLUGINPACKSOURCE
 public:
+    // prevent constructor by default
     ScriptPluginPackSource& operator=(ScriptPluginPackSource const&) = delete;
     ScriptPluginPackSource(ScriptPluginPackSource const&)            = delete;
     ScriptPluginPackSource()                                         = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?getManifest\@ScriptPluginPackSource\@\@UEAAAEBVPackManifest\@\@XZ
      */
-    virtual class PackManifest const& getManifest();
+    virtual class PackManifest const& getManifest(); // NOLINT
     /**
      * @vftbl 2
      * @symbol
@@ -38,19 +37,19 @@ public:
         struct std::hash<std::string>,
         struct std::equal_to<std::string>,
         class std::allocator<struct std::pair<std::string const, std::string>>>
-    loadScripts(std::string const&);
+    loadScripts(std::string const&); // NOLINT
     /**
      * @vftbl 3
      * @symbol
      * ?removeRootFromPath\@ScriptPluginPackSource\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@\@Z
      */
-    virtual std::string removeRootFromPath(std::string const&);
+    virtual std::string removeRootFromPath(std::string const&); // NOLINT
 
     // private:
     /**
      * @symbol ?_removeRootFromPath\@ScriptPluginPackSource\@\@AEAA?AVPath\@Core\@\@AEBV23\@\@Z
      */
-    MCAPI class Core::Path _removeRootFromPath(class Core::Path const&);
+    MCAPI class Core::Path _removeRootFromPath(class Core::Path const&); // NOLINT
 
 private:
 };

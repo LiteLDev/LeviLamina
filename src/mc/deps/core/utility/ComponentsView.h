@@ -6,14 +6,11 @@ namespace Util::Url {
 
 struct ComponentsView {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_UTIL_URL_COMPONENTSVIEW
 public:
+    // prevent constructor by default
     ComponentsView& operator=(ComponentsView const&) = delete;
     ComponentsView(ComponentsView const&)            = delete;
     ComponentsView()                                 = delete;
-#endif
-
-public:
 };
 
 }; // namespace Util::Url

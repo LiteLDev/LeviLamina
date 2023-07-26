@@ -4,12 +4,9 @@
 
 class IUIEventTelemetry {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IUIEVENTTELEMETRY
 public:
+    // prevent constructor by default
     IUIEventTelemetry& operator=(IUIEventTelemetry const&) = delete;
     IUIEventTelemetry(IUIEventTelemetry const&)            = delete;
     IUIEventTelemetry()                                    = delete;
-#endif
-
-public:
 };

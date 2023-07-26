@@ -11,23 +11,23 @@ namespace ExpressionNodeSerializer {
 /**
  * @symbol ?fromFloat\@ExpressionNodeSerializer\@\@YAXAEAVExpressionNode\@\@M\@Z
  */
-MCAPI void fromFloat(class ExpressionNode&, float);
+MCAPI void fromFloat(class ExpressionNode&, float); // NOLINT
 /**
  * @symbol ?fromInt\@ExpressionNodeSerializer\@\@YAXAEAVExpressionNode\@\@H\@Z
  */
-MCAPI void fromInt(class ExpressionNode&, int);
+MCAPI void fromInt(class ExpressionNode&, int); // NOLINT
 /**
  * @symbol ?fromProxy\@ExpressionNodeSerializer\@\@YAXAEAVExpressionNode\@\@UExpressionNodeProxy\@1\@\@Z
  */
-MCAPI void fromProxy(class ExpressionNode&, struct ExpressionNodeSerializer::ExpressionNodeProxy);
+MCAPI void fromProxy(class ExpressionNode&, struct ExpressionNodeSerializer::ExpressionNodeProxy); // NOLINT
 /**
  * @symbol
  * ?fromString\@ExpressionNodeSerializer\@\@YAXAEAVExpressionNode\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBedrockLoadContext\@\@\@Z
  */
-MCAPI void fromString(class ExpressionNode&, std::string const&, class BedrockLoadContext const&);
+MCAPI void fromString(class ExpressionNode&, std::string const&, class BedrockLoadContext const&); // NOLINT
 /**
  * @symbol ?toProxy\@ExpressionNodeSerializer\@\@YA?AUExpressionNodeProxy\@1\@AEBVExpressionNode\@\@\@Z
  */
-MCAPI struct ExpressionNodeSerializer::ExpressionNodeProxy toProxy(class ExpressionNode const&);
+MCAPI struct ExpressionNodeSerializer::ExpressionNodeProxy toProxy(class ExpressionNode const&); // NOLINT
 
 }; // namespace ExpressionNodeSerializer

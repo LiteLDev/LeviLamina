@@ -7,28 +7,27 @@
 
 class ChunkKey {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKKEY
 public:
+    // prevent constructor by default
     ChunkKey& operator=(ChunkKey const&) = delete;
     ChunkKey(ChunkKey const&)            = delete;
     ChunkKey()                           = delete;
-#endif
 
 public:
     /**
      * @symbol ??0ChunkKey\@\@QEAA\@AEBVLevelChunk\@\@\@Z
      */
-    MCAPI ChunkKey(class LevelChunk const&);
+    MCAPI ChunkKey(class LevelChunk const&); // NOLINT
     /**
      * @symbol ??0ChunkKey\@\@QEAA\@AEBVChunkPos\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI ChunkKey(class ChunkPos const&, class AutomaticID<class Dimension, int>);
+    MCAPI ChunkKey(class ChunkPos const&, class AutomaticID<class Dimension, int>); // NOLINT
     /**
      * @symbol ?asSpan\@ChunkKey\@\@QEBA?AV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@XZ
      */
-    MCAPI class std::basic_string_view<char, struct std::char_traits<char>> asSpan() const;
+    MCAPI class std::basic_string_view<char, struct std::char_traits<char>> asSpan() const; // NOLINT
     /**
      * @symbol ?hashCode\@ChunkKey\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 hashCode() const;
+    MCAPI unsigned __int64 hashCode() const; // NOLINT
 };

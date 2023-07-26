@@ -9,51 +9,50 @@ namespace Json { class Value; }
 
 class LootItemFunction {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEMFUNCTION
 public:
+    // prevent constructor by default
     LootItemFunction& operator=(LootItemFunction const&) = delete;
     LootItemFunction(LootItemFunction const&)            = delete;
     LootItemFunction()                                   = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?apply\@RandomDyeFunction\@\@UEAAXAEAVItemStack\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual void apply(class ItemStack&, class Random&, class LootTableContext&) = 0;
+    virtual void apply(class ItemStack&, class Random&, class LootTableContext&) = 0; // NOLINT
     /**
      * @vftbl 2
      * @symbol ?apply\@LootItemFunction\@\@UEAAHAEAVItemStack\@\@AEAVRandom\@\@AEBUTrade\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual int apply(class ItemStack&, class Random&, struct Trade const&, class LootTableContext&);
+    virtual int apply(class ItemStack&, class Random&, struct Trade const&, class LootTableContext&); // NOLINT
     /**
      * @vftbl 3
      * @symbol ?apply\@RandomDyeFunction\@\@UEAAXAEAVItemInstance\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual void apply(class ItemInstance&, class Random&, class LootTableContext&) = 0;
+    virtual void apply(class ItemInstance&, class Random&, class LootTableContext&) = 0; // NOLINT
     /**
      * @vftbl 4
      * @symbol
      * ?apply\@LootItemFunction\@\@UEAAHAEAVItemInstance\@\@AEAVRandom\@\@AEBUTrade\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual int apply(class ItemInstance&, class Random&, struct Trade const&, class LootTableContext&);
+    virtual int apply(class ItemInstance&, class Random&, struct Trade const&, class LootTableContext&); // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMFUNCTION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~LootItemFunction();
+    MCVAPI ~LootItemFunction(); // NOLINT
 #endif
     /**
      * @symbol
      * ?deserialize\@LootItemFunction\@\@SA?AV?$unique_ptr\@VLootItemFunction\@\@U?$default_delete\@VLootItemFunction\@\@\@std\@\@\@std\@\@VValue\@Json\@\@\@Z
      */
-    MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value);
+    MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value); // NOLINT
 
     // private:
 
@@ -73,5 +72,5 @@ private:
             class std::function<std::unique_ptr<
                 class
                 LootItemFunction>(class Json::Value&, std::vector<std::unique_ptr<class LootItemCondition>>&)>>>> const
-        mLootingFunctions;
+        mLootingFunctions; // NOLINT
 };

@@ -7,14 +7,11 @@ namespace Scripting {
 template <typename T0>
 class Closure {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTING_CLOSURE
 public:
+    // prevent constructor by default
     Closure& operator=(Closure const&) = delete;
     Closure(Closure const&)            = delete;
     Closure()                          = delete;
-#endif
-
-public:
 };
 
 }; // namespace Scripting

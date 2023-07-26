@@ -7,105 +7,104 @@
 
 class FlowerPotBlockActor : public ::BlockActor {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOWERPOTBLOCKACTOR
 public:
+    // prevent constructor by default
     FlowerPotBlockActor& operator=(FlowerPotBlockActor const&) = delete;
     FlowerPotBlockActor(FlowerPotBlockActor const&)            = delete;
     FlowerPotBlockActor()                                      = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?load\@FlowerPotBlockActor\@\@UEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
+    virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&); // NOLINT
     /**
      * @vftbl 2
      * @symbol ?save\@FlowerPotBlockActor\@\@UEBA_NAEAVCompoundTag\@\@\@Z
      */
-    virtual bool save(class CompoundTag&) const;
+    virtual bool save(class CompoundTag&) const; // NOLINT
     /**
      * @vftbl 8
      * @symbol ?onChanged\@FlowerPotBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
-    virtual void onChanged(class BlockSource&);
+    virtual void onChanged(class BlockSource&); // NOLINT
     /**
      * @vftbl 12
      * @symbol __unk_vfn_12
      */
-    virtual void __unk_vfn_12();
+    virtual void __unk_vfn_12(); // NOLINT
     /**
      * @vftbl 18
      * @symbol __unk_vfn_18
      */
-    virtual void __unk_vfn_18();
+    virtual void __unk_vfn_18(); // NOLINT
     /**
      * @vftbl 30
      * @symbol __unk_vfn_30
      */
-    virtual void __unk_vfn_30();
+    virtual void __unk_vfn_30(); // NOLINT
     /**
      * @vftbl 31
      * @symbol __unk_vfn_31
      */
-    virtual void __unk_vfn_31();
+    virtual void __unk_vfn_31(); // NOLINT
     /**
      * @vftbl 32
      * @symbol __unk_vfn_32
      */
-    virtual void __unk_vfn_32();
+    virtual void __unk_vfn_32(); // NOLINT
     /**
      * @vftbl 33
      * @symbol __unk_vfn_33
      */
-    virtual void __unk_vfn_33();
+    virtual void __unk_vfn_33(); // NOLINT
     /**
      * @vftbl 34
      * @symbol __unk_vfn_34
      */
-    virtual void __unk_vfn_34();
+    virtual void __unk_vfn_34(); // NOLINT
     /**
      * @vftbl 35
      * @symbol __unk_vfn_35
      */
-    virtual void __unk_vfn_35();
+    virtual void __unk_vfn_35(); // NOLINT
     /**
      * @vftbl 36
      * @symbol __unk_vfn_36
      */
-    virtual void __unk_vfn_36();
+    virtual void __unk_vfn_36(); // NOLINT
     /**
      * @vftbl 39
      * @symbol __unk_vfn_39
      */
-    virtual void __unk_vfn_39();
+    virtual void __unk_vfn_39(); // NOLINT
     /**
      * @vftbl 40
      * @symbol
      * ?_getUpdatePacket\@FlowerPotBlockActor\@\@MEAA?AV?$unique_ptr\@VBlockActorDataPacket\@\@U?$default_delete\@VBlockActorDataPacket\@\@\@std\@\@\@std\@\@AEAVBlockSource\@\@\@Z
      */
-    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
+    virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&); // NOLINT
     /**
      * @vftbl 41
      * @symbol ?_onUpdatePacket\@FlowerPotBlockActor\@\@MEAAXAEBVCompoundTag\@\@AEAVBlockSource\@\@\@Z
      */
-    virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
+    virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&); // NOLINT
     /**
      * @symbol ??0FlowerPotBlockActor\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI FlowerPotBlockActor(class BlockPos const&);
+    MCAPI FlowerPotBlockActor(class BlockPos const&); // NOLINT
     /**
      * @symbol ?getPlantItem\@FlowerPotBlockActor\@\@QEBAPEBVBlock\@\@XZ
      */
-    MCAPI class Block const* getPlantItem() const;
+    MCAPI class Block const* getPlantItem() const; // NOLINT
     /**
      * @symbol ?setPlantItem\@FlowerPotBlockActor\@\@QEAAXPEBVBlock\@\@\@Z
      */
-    MCAPI void setPlantItem(class Block const*);
+    MCAPI void setPlantItem(class Block const*); // NOLINT
 };

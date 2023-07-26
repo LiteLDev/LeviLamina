@@ -7,14 +7,11 @@ namespace DataStructures {
 template <typename T0>
 class List {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DATASTRUCTURES_LIST
 public:
+    // prevent constructor by default
     List& operator=(List const&) = delete;
     List(List const&)            = delete;
     List()                       = delete;
-#endif
-
-public:
 };
 
 }; // namespace DataStructures

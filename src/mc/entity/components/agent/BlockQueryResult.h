@@ -6,14 +6,11 @@ namespace AgentComponents {
 
 struct BlockQueryResult {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMPONENTS_BLOCKQUERYRESULT
 public:
+    // prevent constructor by default
     BlockQueryResult& operator=(BlockQueryResult const&) = delete;
     BlockQueryResult(BlockQueryResult const&)            = delete;
     BlockQueryResult()                                   = delete;
-#endif
-
-public:
 };
 
 }; // namespace AgentComponents

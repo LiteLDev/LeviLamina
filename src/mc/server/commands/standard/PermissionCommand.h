@@ -7,46 +7,45 @@
 
 class PermissionCommand : public ::Command {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERMISSIONCOMMAND
 public:
+    // prevent constructor by default
     PermissionCommand& operator=(PermissionCommand const&) = delete;
     PermissionCommand(PermissionCommand const&)            = delete;
     PermissionCommand()                                    = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?execute\@PermissionCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol ?setup\@PermissionCommand\@\@SAXAEAVCommandRegistry\@\@PEAVPermissionsFile\@\@\@Z
      */
-    MCAPI static void setup(class CommandRegistry&, class PermissionsFile*);
+    MCAPI static void setup(class CommandRegistry&, class PermissionsFile*); // NOLINT
 
     // private:
     /**
      * @symbol ?list\@PermissionCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void list(class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI void list(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol ?reload\@PermissionCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void reload(class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI void reload(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
     /**
      * @symbol ?set\@PermissionCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void set(class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI void set(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
 
 private:
     /**
      * @symbol ?mPermissionsFile\@PermissionCommand\@\@0PEAVPermissionsFile\@\@EA
      */
-    MCAPI static class PermissionsFile* mPermissionsFile;
+    MCAPI static class PermissionsFile* mPermissionsFile; // NOLINT
 };

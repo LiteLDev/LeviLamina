@@ -19,25 +19,26 @@ namespace Core::ZipUtils {
  * @symbol
  * ?_zipEncodedPathToUTF8\@ZipUtils\@Core\@\@YA?AV?$PathBuffer\@V?$StackString\@D$0EAA\@\@Core\@\@\@2\@AEBVPath\@2\@\@Z
  */
-MCAPI class Core::PathBuffer<class Core::StackString<char, 1024>> _zipEncodedPathToUTF8(class Core::Path const&);
+MCAPI class Core::PathBuffer<class Core::StackString<char, 1024>>
+_zipEncodedPathToUTF8(class Core::Path const&); // NOLINT
 /**
  * @symbol ?exists\@ZipUtils\@Core\@\@YA_NAEBVPath\@2\@0\@Z
  */
-MCAPI bool exists(class Core::Path const&, class Core::Path const&);
+MCAPI bool exists(class Core::Path const&, class Core::Path const&); // NOLINT
 /**
  * @symbol ?getTranslatedUnzipResult\@ZipUtils\@Core\@\@YA?AW4UnzipResult\@12\@H\@Z
  */
-MCAPI enum class Core::ZipUtils::UnzipResult getTranslatedUnzipResult(int);
+MCAPI enum class Core::ZipUtils::UnzipResult getTranslatedUnzipResult(int); // NOLINT
 /**
  * @symbol ?getTranslatedZipResult\@ZipUtils\@Core\@\@YA?AW4ZipResult\@12\@H\@Z
  */
-MCAPI enum class Core::ZipUtils::ZipResult getTranslatedZipResult(int);
+MCAPI enum class Core::ZipUtils::ZipResult getTranslatedZipResult(int); // NOLINT
 /**
  * @symbol
  * ?unzipInTransaction\@ZipUtils\@Core\@\@YA?AW4UnzipResult\@12\@AEBVPath\@2\@0AEAVZipProgress\@12\@_NAEBVUnzipSettings\@12\@\@Z
  */
 MCAPI enum class Core::ZipUtils::UnzipResult
-unzipInTransaction(class Core::Path const&, class Core::Path const&, class Core::ZipUtils::ZipProgress&, bool, class Core::ZipUtils::UnzipSettings const&);
+unzipInTransaction(class Core::Path const&, class Core::Path const&, class Core::ZipUtils::ZipProgress&, bool, class Core::ZipUtils::UnzipSettings const&); // NOLINT
 /**
  * @symbol ?zip\@ZipUtils\@Core\@\@YA?AW4ZipResult\@12\@AEBVPath\@2\@0AEAVZipProgress\@12\@_NAEBVZipSettings\@12\@\@Z
  */
@@ -46,6 +47,6 @@ zip(class Core::Path const&,
     class Core::Path const&,
     class Core::ZipUtils::ZipProgress&,
     bool,
-    class Core::ZipUtils::ZipSettings const&);
+    class Core::ZipUtils::ZipSettings const&); // NOLINT
 
 }; // namespace Core::ZipUtils

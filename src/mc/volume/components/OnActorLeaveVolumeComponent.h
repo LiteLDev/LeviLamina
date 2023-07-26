@@ -4,16 +4,15 @@
 
 class OnActorLeaveVolumeComponent {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONACTORLEAVEVOLUMECOMPONENT
 public:
+    // prevent constructor by default
     OnActorLeaveVolumeComponent& operator=(OnActorLeaveVolumeComponent const&) = delete;
     OnActorLeaveVolumeComponent(OnActorLeaveVolumeComponent const&)            = delete;
     OnActorLeaveVolumeComponent()                                              = delete;
-#endif
 
 public:
     /**
      * @symbol ??4OnActorLeaveVolumeComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class OnActorLeaveVolumeComponent& operator=(class OnActorLeaveVolumeComponent&&);
+    MCAPI class OnActorLeaveVolumeComponent& operator=(class OnActorLeaveVolumeComponent&&); // NOLINT
 };

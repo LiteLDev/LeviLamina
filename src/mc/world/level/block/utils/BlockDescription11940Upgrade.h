@@ -11,24 +11,23 @@ namespace BlockDescriptionVersioning {
 
 class BlockDescription11940Upgrade {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKDESCRIPTIONVERSIONING_BLOCKDESCRIPTION11940UPGRADE
 public:
+    // prevent constructor by default
     BlockDescription11940Upgrade& operator=(BlockDescription11940Upgrade const&) = delete;
     BlockDescription11940Upgrade(BlockDescription11940Upgrade const&)            = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol
      * ?previousSchema\@BlockDescription11940Upgrade\@BlockDescriptionVersioning\@\@UEBAXAEAVSchemaFactory\@cereal\@\@\@Z
      */
-    virtual void previousSchema(class cereal::SchemaFactory&) const;
+    virtual void previousSchema(class cereal::SchemaFactory&) const; // NOLINT
     /**
      * @vftbl 2
      * @symbol
@@ -37,11 +36,11 @@ public:
     virtual bool upgradeToNext(class rapidjson::GenericDocument<
                                struct rapidjson::UTF8<char>,
                                class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>,
-                               class rapidjson::CrtAllocator>&) const;
+                               class rapidjson::CrtAllocator>&) const; // NOLINT
     /**
      * @symbol ??0BlockDescription11940Upgrade\@BlockDescriptionVersioning\@\@QEAA\@XZ
      */
-    MCAPI BlockDescription11940Upgrade();
+    MCAPI BlockDescription11940Upgrade(); // NOLINT
 };
 
 }; // namespace BlockDescriptionVersioning

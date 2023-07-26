@@ -4,12 +4,9 @@
 
 struct PlayerIsSleepingFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERISSLEEPINGFLAG
 public:
+    // prevent constructor by default
     PlayerIsSleepingFlag& operator=(PlayerIsSleepingFlag const&) = delete;
     PlayerIsSleepingFlag(PlayerIsSleepingFlag const&)            = delete;
     PlayerIsSleepingFlag()                                       = delete;
-#endif
-
-public:
 };

@@ -12,12 +12,11 @@ namespace JsonUtil { class EmptyClass; }
 
 struct VariantDefinition {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VARIANTDEFINITION
 public:
+    // prevent constructor by default
     VariantDefinition& operator=(VariantDefinition const&) = delete;
     VariantDefinition(VariantDefinition const&)            = delete;
     VariantDefinition()                                    = delete;
-#endif
 
 public:
     /**
@@ -26,5 +25,5 @@ public:
      */
     MCAPI static void
     buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct VariantDefinition>>&);
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct VariantDefinition>>&); // NOLINT
 };

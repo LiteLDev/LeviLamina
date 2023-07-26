@@ -11,22 +11,21 @@
 
 class MobOnPlayerJumpSystem {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBONPLAYERJUMPSYSTEM
 public:
+    // prevent constructor by default
     MobOnPlayerJumpSystem& operator=(MobOnPlayerJumpSystem const&) = delete;
     MobOnPlayerJumpSystem(MobOnPlayerJumpSystem const&)            = delete;
     MobOnPlayerJumpSystem()                                        = delete;
-#endif
 
 public:
     /**
      * @symbol ?createClientSystem\@MobOnPlayerJumpSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createClientSystem();
+    MCAPI static struct TickingSystemWithInfo createClientSystem(); // NOLINT
     /**
      * @symbol ?getPlayerJumpPendingScale\@MobOnPlayerJumpSystem\@\@SAMH\@Z
      */
-    MCAPI static float getPlayerJumpPendingScale(int);
+    MCAPI static float getPlayerJumpPendingScale(int); // NOLINT
 
     // private:
     /**
@@ -48,12 +47,12 @@ public:
             class FlagComponent<struct StopRidingRequestFlag>,
             struct MobOnPlayerJumpRequestComponent>&,
         bool
-    );
+    ); // NOLINT
     /**
      * @symbol
      * ?tickMobOnPlayerJumpClientSystem\@MobOnPlayerJumpSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@UVehicleComponent\@\@\@\@$$CBUMobOnPlayerJumpRequestComponent\@\@UJumpPendingScaleComponent\@\@USynchedActorDataComponent\@\@V?$Optional\@UHorseStandCounterComponent\@\@\@\@V?$Optional\@$$CBUPassengerComponent\@\@\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UMobAllowStandSlidingFlag\@\@\@\@V?$FlagComponent\@UExitFromPassengerFlag\@\@\@\@V?$FlagComponent\@UStopRidingRequestFlag\@\@\@\@UMobOnPlayerJumpRequestComponent\@\@\@\@\@Z
      */
-    MCAPI static void tickMobOnPlayerJumpClientSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct VehicleComponent>, struct MobOnPlayerJumpRequestComponent const, struct JumpPendingScaleComponent, struct SynchedActorDataComponent, class Optional<struct HorseStandCounterComponent>, class Optional<struct PassengerComponent const>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct MobAllowStandSlidingFlag>, class FlagComponent<struct ExitFromPassengerFlag>, class FlagComponent<struct StopRidingRequestFlag>, struct MobOnPlayerJumpRequestComponent>);
+    MCAPI static void tickMobOnPlayerJumpClientSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<struct VehicleComponent>, struct MobOnPlayerJumpRequestComponent const, struct JumpPendingScaleComponent, struct SynchedActorDataComponent, class Optional<struct HorseStandCounterComponent>, class Optional<struct PassengerComponent const>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct MobAllowStandSlidingFlag>, class FlagComponent<struct ExitFromPassengerFlag>, class FlagComponent<struct StopRidingRequestFlag>, struct MobOnPlayerJumpRequestComponent>); // NOLINT
 
 private:
 };

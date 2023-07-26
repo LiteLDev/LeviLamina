@@ -4,12 +4,9 @@
 
 struct HorizontalCollisionFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HORIZONTALCOLLISIONFLAG
 public:
+    // prevent constructor by default
     HorizontalCollisionFlag& operator=(HorizontalCollisionFlag const&) = delete;
     HorizontalCollisionFlag(HorizontalCollisionFlag const&)            = delete;
     HorizontalCollisionFlag()                                          = delete;
-#endif
-
-public:
 };

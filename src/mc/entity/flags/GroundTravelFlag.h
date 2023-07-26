@@ -4,12 +4,9 @@
 
 struct GroundTravelFlag {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GROUNDTRAVELFLAG
 public:
+    // prevent constructor by default
     GroundTravelFlag& operator=(GroundTravelFlag const&) = delete;
     GroundTravelFlag(GroundTravelFlag const&)            = delete;
     GroundTravelFlag()                                   = delete;
-#endif
-
-public:
 };

@@ -12,46 +12,45 @@ public:
     // IRequestAction inner types define
     enum class RequestActionType {};
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IREQUESTACTION
 public:
+    // prevent constructor by default
     IRequestAction& operator=(IRequestAction const&) = delete;
     IRequestAction(IRequestAction const&)            = delete;
     IRequestAction()                                 = delete;
-#endif
 
 public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0(); // NOLINT
     /**
      * @vftbl 1
      * @symbol ?execute\@TestAction\@\@UEAAXAEAVServerLevel\@\@AEAVDimension\@\@\@Z
      */
-    virtual void execute(class ServerLevel&, class Dimension&) = 0;
+    virtual void execute(class ServerLevel&, class Dimension&) = 0; // NOLINT
     /**
      * @vftbl 2
      * @symbol ?serialize\@IRequestAction\@\@UEAAXAEAVCompoundTag\@\@\@Z
      */
-    virtual void serialize(class CompoundTag&);
+    virtual void serialize(class CompoundTag&); // NOLINT
     /**
      * @vftbl 3
      * @symbol ??8IRequestAction\@\@UEBA_NAEAV0\@\@Z
      */
-    virtual bool operator==(class IRequestAction&) const;
+    virtual bool operator==(class IRequestAction&) const; // NOLINT
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IREQUESTACTION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IRequestAction();
+    MCVAPI ~IRequestAction(); // NOLINT
 #endif
     /**
      * @symbol ??0IRequestAction\@\@QEAA\@AEBW4RequestActionType\@0\@\@Z
      */
-    MCAPI IRequestAction(enum class IRequestAction::RequestActionType const&);
+    MCAPI IRequestAction(enum class IRequestAction::RequestActionType const&); // NOLINT
     /**
      * @symbol ?isValidTag\@IRequestAction\@\@SA_NAEBVCompoundTag\@\@\@Z
      */
-    MCAPI static bool isValidTag(class CompoundTag const&);
+    MCAPI static bool isValidTag(class CompoundTag const&); // NOLINT
 };
