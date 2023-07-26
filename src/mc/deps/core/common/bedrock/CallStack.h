@@ -55,14 +55,8 @@ public:
 
     struct FrameWithContext {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_CALLSTACK_FRAMEWITHCONTEXT
     public:
-        FrameWithContext& operator=(FrameWithContext const&) = delete;
-        FrameWithContext(FrameWithContext const&)            = delete;
-        FrameWithContext()                                   = delete;
-#endif
-
-    public:
+        char filler[80];
         /**
          * @symbol
          * ??0FrameWithContext\@CallStack\@Bedrock\@\@QEAA\@$$QEAUFrame\@12\@$$QEAV?$optional\@UContext\@CallStack\@Bedrock\@\@\@std\@\@\@Z
@@ -75,14 +69,8 @@ public:
         MCAPI ~FrameWithContext();
     };
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_CALLSTACK
 public:
-    CallStack& operator=(CallStack const&) = delete;
-    CallStack(CallStack const&)            = delete;
-    CallStack()                            = delete;
-#endif
-
-public:
+    std::vector<Bedrock::CallStack::FrameWithContext> vector;
     /**
      * @symbol ??0CallStack\@Bedrock\@\@QEAA\@$$QEAUFrameWithContext\@01\@\@Z
      */

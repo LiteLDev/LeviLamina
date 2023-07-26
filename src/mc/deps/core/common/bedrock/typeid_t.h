@@ -7,14 +7,17 @@ namespace Bedrock {
 template <typename T0>
 class typeid_t {
 
-#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCK_TYPEID_T
 public:
-    typeid_t& operator=(typeid_t const&) = delete;
-    typeid_t(typeid_t const&)            = delete;
-    typeid_t()                           = delete;
-#endif
+    inline static unsigned short count = 0;
 
-public:
+    unsigned short value;
+    typeid_t<T0>(typeid_t<T0> const& id) : value(id.value){};
+    typeid_t<T0>(unsigned short value) : value(value){};
+
+    MCAPI inline static std::atomic<unsigned short>& _getCounter();
 };
+
+template <typename T, typename T2>
+MCAPI typeid_t<T> type_id();
 
 }; // namespace Bedrock

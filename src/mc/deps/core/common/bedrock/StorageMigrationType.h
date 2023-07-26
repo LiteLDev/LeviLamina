@@ -4,6 +4,8 @@
 
 namespace Bedrock::StorageMigration {
 
-enum class StorageMigrationType {};
-
+enum class StorageMigrationType {
+    Unknown                   = -1,
+    AndroidApi30ScopedStorage = 0,
+};
 };
