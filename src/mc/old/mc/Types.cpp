@@ -1,4 +1,5 @@
-﻿#include "mc/Types.hpp"
+﻿#include "liteloader/api/Global.h"
+#include "mc/Types.hpp"
 #include "mc/ColorFormat.hpp"
 #include "mc/Vec3.hpp"
 #include "mc/BlockPos.hpp"

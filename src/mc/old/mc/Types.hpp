@@ -8,8 +8,8 @@
 #pragma once
 
 // enum
-#include "mc/inl/enums.inl"
 #include "liteloader/api/utils/RNG.h"
+#include "mc/inl/enums.inl"
 
 class Vec2;
 class Vec3;
@@ -120,7 +120,6 @@ public:
             b = (float)hexToNum(hex.substr(6, 2));
             return;
         }
-        return;
     };
 
     inline operator bool() const { return !(*this == NIL); }
@@ -129,7 +128,7 @@ public:
     LLAPI std::string toConsoleCode(bool foreground = true) const;
     LLAPI std::string             toNearestColorCode() const;
     LLAPI char                    toNearestParticleColorCode() const;
-    LLAPI ColorPalette            toNearestParticleColorType() const;
+    LLAPI enum class ColorPalette toNearestParticleColorType() const;
     LLAPI static class mce::Color fromConsoleCode(std::string const&);
     LLAPI static class mce::Color fromColorCode(std::string const&);
     LLAPI class mce::Color        sRGBToLinear() const;
@@ -466,7 +465,7 @@ struct SubChunkStorageUnit {
 template <typename T, typename T2, int unk>
 class TypedServerNetId {
 public:
-    T2     netId;
+    T2 netId;
     inline operator T2() { return netId; }
 };
 
@@ -549,7 +548,7 @@ public:
     }
     inline T&       operator*() { return *get(); }
     inline T const& operator*() const { return *get(); }
-    inline          operator bool() const { return get() != nullptr; }
+    inline operator bool() const { return get() != nullptr; }
 };
 
 template <typename T>
@@ -601,7 +600,7 @@ public:
     // }
     inline T& operator*() const { return *value; }
     inline T* operator->() const { return value; }
-    inline    operator bool() const { return value != nullptr; }
+    inline operator bool() const { return value != nullptr; }
 };
 
 namespace cg {
