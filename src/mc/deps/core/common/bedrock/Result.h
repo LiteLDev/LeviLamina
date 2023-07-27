@@ -1,11 +1,20 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/common/bedrock/ErrorInfo.h"
 
 namespace Bedrock {
 
 template <typename T, typename Err>
 class Result {
+
+private:
+    union {
+        T              mValue;
+        ErrorInfo<Err> mError;
+    };
+    bool mHasValue;
+
 public:
     explicit Result(T&& value) : mValue(std::move(value)), mHasValue(true) {}
 
@@ -32,17 +41,15 @@ public:
             throw std::logic_error("Bad error result access.");
         return mError;
     }
-
-private:
-    union {
-        T              mValue;
-        ErrorInfo<Err> mError;
-    };
-    bool mHasValue;
 };
 
 template <class Err>
 class Result<void, Err> {
+
+private:
+    ErrorInfo<Err> mError;
+    bool           mHasValue;
+
 public:
     explicit Result() : mHasValue(true) {}
 
@@ -67,10 +74,6 @@ public:
             throw std::logic_error("Bad error result access.");
         return mError;
     }
-
-private:
-    ErrorInfo<Err> mError;
-    bool           mHasValue;
 };
 
 }; // namespace Bedrock

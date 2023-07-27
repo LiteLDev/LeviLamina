@@ -1,12 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/BLockPos.h"
 
-class NetworkBlockPosition {
-
-public:
-    // prevent constructor by default
-    NetworkBlockPosition& operator=(NetworkBlockPosition const&) = delete;
-    NetworkBlockPosition(NetworkBlockPosition const&)            = delete;
-    NetworkBlockPosition()                                       = delete;
+class NetworkBlockPosition : public BlockPos {
 };

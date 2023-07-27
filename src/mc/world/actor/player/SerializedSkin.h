@@ -8,6 +8,12 @@
 class SerializedSkin {
 
 public:
+    enum TrustedSkinFlag : char {
+        Unset = 0x0,
+        False = 0x1,
+        True  = 0x2,
+    };
+
     /**
      * @symbol ??0SerializedSkin\@\@QEAA\@AEBVSubClientConnectionRequest\@\@\@Z
      */

@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/nbt/Tag.h"
 
+enum class SnbtFormat : unsigned char {
+    PartialNewLine = 0,
+    AlwayNewLine   = 1,
+    Minimize       = 2,
+};
+
 class CompoundTag : public ::Tag {
 
 public:
@@ -82,7 +88,7 @@ public:
      * @symbol
      * ?begin\@CompoundTag\@\@QEBA?AV?$_Tree_const_iterator\@V?$_Tree_val\@U?$_Tree_simple_types\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VCompoundTagVariant\@\@\@std\@\@\@std\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI class std::_Tree_const_iterator<class std::_Tree_val<
+    MCAPI class std::_Tree_const_iterator<class std::_Tree_val< // NOLINT
         struct std::_Tree_simple_types<struct std::pair<std::string const, class CompoundTagVariant>>>>
     begin() const; // NOLINT
     /**
@@ -98,8 +104,9 @@ public:
      * @symbol
      * ?contains\@CompoundTag\@\@QEBA_NV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@W4Type\@Tag\@\@\@Z
      */
-    MCAPI bool contains(class std::basic_string_view<char, struct std::char_traits<char>>, enum class Tag::Type)
-        const; // NOLINT
+    MCAPI bool                                                                                            // NOLINT
+        contains(class std::basic_string_view<char, struct std::char_traits<char>>, enum class Tag::Type) // NOLINT
+        const;                                                                                            // NOLINT
     /**
      * @symbol ?contains\@CompoundTag\@\@QEBA_NV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
@@ -112,7 +119,7 @@ public:
      * @symbol
      * ?end\@CompoundTag\@\@QEBA?AV?$_Tree_const_iterator\@V?$_Tree_val\@U?$_Tree_simple_types\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VCompoundTagVariant\@\@\@std\@\@\@std\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI class std::_Tree_const_iterator<class std::_Tree_val<
+    MCAPI class std::_Tree_const_iterator<class std::_Tree_val< // NOLINT
         struct std::_Tree_simple_types<struct std::pair<std::string const, class CompoundTagVariant>>>>
     end() const; // NOLINT
     /**
@@ -135,7 +142,7 @@ public:
      * @symbol
      * ?getByteArray\@CompoundTag\@\@QEBAAEBUTagMemoryChunk\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI struct TagMemoryChunk const&
+    MCAPI struct TagMemoryChunk const&                                                         // NOLINT
         getByteArray(class std::basic_string_view<char, struct std::char_traits<char>>) const; // NOLINT
     /**
      * @symbol
@@ -149,7 +156,7 @@ public:
     /**
      * @symbol ?getCompound\@CompoundTag\@\@QEBAPEBV1\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI class CompoundTag const*
+    MCAPI class CompoundTag const*                                                            // NOLINT
         getCompound(class std::basic_string_view<char, struct std::char_traits<char>>) const; // NOLINT
     /**
      * @symbol ?getFloat\@CompoundTag\@\@QEBAMV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
@@ -172,7 +179,7 @@ public:
      * @symbol
      * ?getInt64Tag\@CompoundTag\@\@QEBAPEBVInt64Tag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI class Int64Tag const*
+    MCAPI class Int64Tag const*                                                               // NOLINT
         getInt64Tag(class std::basic_string_view<char, struct std::char_traits<char>>) const; // NOLINT
     /**
      * @symbol
@@ -183,7 +190,7 @@ public:
      * @symbol
      * ?getIntTag\@CompoundTag\@\@QEBAPEBVIntTag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI class IntTag const*
+    MCAPI class IntTag const*                                                               // NOLINT
         getIntTag(class std::basic_string_view<char, struct std::char_traits<char>>) const; // NOLINT
     /**
      * @symbol ?getList\@CompoundTag\@\@QEAAPEAVListTag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
@@ -192,7 +199,7 @@ public:
     /**
      * @symbol ?getList\@CompoundTag\@\@QEBAPEBVListTag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI class ListTag const*
+    MCAPI class ListTag const*                                                            // NOLINT
         getList(class std::basic_string_view<char, struct std::char_traits<char>>) const; // NOLINT
     /**
      * @symbol ?getShort\@CompoundTag\@\@QEBAFV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
@@ -202,19 +209,19 @@ public:
      * @symbol
      * ?getShortTag\@CompoundTag\@\@QEBAPEBVShortTag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI class ShortTag const*
+    MCAPI class ShortTag const*                                                               // NOLINT
         getShortTag(class std::basic_string_view<char, struct std::char_traits<char>>) const; // NOLINT
     /**
      * @symbol
      * ?getString\@CompoundTag\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@3\@\@Z
      */
-    MCAPI std::string const&
+    MCAPI std::string const&                                                                  // NOLINT
           getString(class std::basic_string_view<char, struct std::char_traits<char>>) const; // NOLINT
     /**
      * @symbol
      * ?getStringTag\@CompoundTag\@\@QEBAPEBVStringTag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI class StringTag const*
+    MCAPI class StringTag const*                                                               // NOLINT
         getStringTag(class std::basic_string_view<char, struct std::char_traits<char>>) const; // NOLINT
     /**
      * @symbol ?isEmpty\@CompoundTag\@\@QEBA_NXZ
@@ -288,7 +295,7 @@ public:
      * @symbol
      * ?rawView\@CompoundTag\@\@QEBAAEBV?$map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VCompoundTagVariant\@\@U?$less\@X\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VCompoundTagVariant\@\@\@std\@\@\@2\@\@std\@\@XZ
      */
-    MCAPI class std::map<
+    MCAPI class std::map< // NOLINT
         std::string,
         class CompoundTagVariant,
         struct std::less<void>,

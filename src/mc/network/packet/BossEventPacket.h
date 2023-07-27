@@ -4,14 +4,26 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/enums/BossBarColor.h"
+#include "mc/enums/BossBarOverlay.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/world/ActorUniqueID.h"
+#include "mc/world/events/BossEventUpdateType.h"
 
 class BossEventPacket : public ::Packet {
 
 public:
-    // prevent constructor by default
-    BossEventPacket& operator=(BossEventPacket const&) = delete;
-    BossEventPacket(BossEventPacket const&)            = delete;
+    int                            FLAG_DARKEN;     // this+0x30
+    int                            FLAG_FOG;        // this+0x34
+    struct ActorUniqueID           mBossID;         // this+0x38
+    struct ActorUniqueID           mPlayerID;       // this+0x40
+    enum class BossEventUpdateType mEventType;      // this+0x48
+    std::string                    mName;           // this+0x50
+    float                          mHealthPercent;  // this+0x70
+    enum class BossBarColor        mColor;          // this+0x74
+    enum class BossBarOverlay      mOverlay;        // this+0x78
+    unsigned char                  mDarkenScreen;   // this+0x7C
+    unsigned char                  mCreateWorldFog; // this+0x7D
 
 public:
     /**

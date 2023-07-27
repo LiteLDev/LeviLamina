@@ -8,9 +8,9 @@
 namespace npc {
 
 enum class ActionMode : char {
-    BUTTON = 0x0,
-    CLOSE  = 0x1,
-    OPEN   = 0x2,
+    Button = 0x0,
+    Close  = 0x1,
+    Open  = 0x2,
 };
 
 struct CommandAction {

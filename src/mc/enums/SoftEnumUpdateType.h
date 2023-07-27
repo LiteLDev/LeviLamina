@@ -2,4 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class SoftEnumUpdateType {};
+enum class SoftEnumUpdateType : char {
+    Add     = 0x0,
+    Remove  = 0x1,
+    Replace = 0x2,
+};

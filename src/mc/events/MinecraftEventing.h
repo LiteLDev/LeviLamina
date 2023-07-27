@@ -16,7 +16,7 @@ namespace Bedrock { struct CrashUploadStatus; }
 namespace Bedrock { struct DeviceIdContext; }
 namespace Bedrock { struct DirectoryEntry; }
 namespace Bedrock { struct WorldRecoveryTelemetryEvent; }
-namespace Bedrock::Http { class Status; }
+namespace Bedrock::Http { class Status; }// NOLINT
 namespace Bedrock::StorageMigration { enum class StorageMigrationType; }
 namespace Connection { enum class DisconnectFailReason; }
 namespace Core { class Path; }
@@ -40,9 +40,9 @@ namespace Social::Events { enum class TelemetrySystemType; }
 namespace Util::ResourceUri { enum class ValidationStatus; }
 namespace Webview { struct TelemetryCommonProperties; }
 namespace edu { enum class Role; }
-namespace librarySearch { struct TelemetryData; }
+namespace librarySearch { struct TelemetryData; }// NOLINT
 namespace mce { class UUID; }
-namespace storeSearch { struct TelemetryData; }
+namespace storeSearch { struct TelemetryData; }// NOLINT
 // clang-format on
 
 class MinecraftEventing {
@@ -53,21 +53,198 @@ public:
     // clang-format on
 
     // MinecraftEventing inner types define
-    enum class AchievementIds {};
+    enum class AchievementIds : int {
+        ChestFullOfCobblestone          = 0x7,
+        DiamondForYou                   = 0xA,
+        IronBelly                       = 0x14,
+        IronMan                         = 0x15,
+        OnARail                         = 0x1D,
+        Overkill                        = 0x1E,
+        ReturnToSender                  = 0x25,
+        SniperDuel                      = 0x26,
+        StayinFrosty                    = 0x27,
+        TakeInventory                   = 0x28,
+        MapRoom                         = 0x32,
+        FreightStation                  = 0x34,
+        SmeltEverything                 = 0x35,
+        TasteOfYourOwnMedicine          = 0x36,
+        WhenPigsFly                     = 0x38,
+        Inception                       = 0x3A,
+        ArtificialSelection             = 0x3C,
+        FreeDiver                       = 0x3D,
+        SpawnTheWither                  = 0x3E,
+        Beaconator                      = 0x3F,
+        GreatView                       = 0x40,
+        SuperSonic                      = 0x41,
+        TheEndAgain                     = 0x42,
+        TreasureHunter                  = 0x43,
+        ShootingStar                    = 0x44,
+        FashionShow                     = 0x45,
+        Brilliance                      = 0x46,
+        SelfPublishedAuthor             = 0x47,
+        AlternativeFuel                 = 0x48,
+        SleepWithTheFishes              = 0x49,
+        Castaway                        = 0x4A,
+        ImAMarineBiologist              = 0x4B,
+        SailThe7Seas                    = 0x4C,
+        MeGold                          = 0x4D,
+        Ahoy                            = 0x4E,
+        Atlantis                        = 0x4F,
+        OnePickleTwoPickleSeaPickleFour = 0x50,
+        DoaBarrelRoll                   = 0x51,
+        Moskstraumen                    = 0x52,
+        Echolocation                    = 0x53,
+        WhereHaveYouBeen                = 0x54,
+        TopOfTheWorld                   = 0x55,
+        FruitOnTheLoom                  = 0x56,
+        SoundTheAlarm                   = 0x57,
+        BuyLowSellHigh                  = 0x58,
+        Disenchanted                    = 0x59,
+        TimeForStew                     = 0x5A,
+        BeeOurGuest                     = 0x5B,
+        TotalBeeLocation                = 0x5C,
+        StickySituation                 = 0x5D,
+        CoverMeInDebris                 = 0x5E,
+        FloatYourGoat                   = 0x5F,
+        Friend                          = 0x60,
+        WaxOnWaxOff                     = 0x61,
+        StriderRiddenInLavaInOverworld  = 0x62,
+        GoatHornAcquired                = 0x63,
+        JukeboxUsedInMeadows            = 0x64,
+        TradedAtWorldHeight             = 0x65,
+        SurvivedFallFromWorldHeight     = 0x66,
+        SneakCloseToSculkSensor         = 0x67,
+        ItSpreads                       = 0x68,
+        BirthdaySong                    = 0x69,
+        WithOurPowersCombined           = 0x6A,
+    };
 
-    enum class AcquisitionMethod {};
+    enum class AcquisitionMethod : int {
+        Unknown             = -1,
+        None                = 0x0,
+        PickedUp            = 0x1,
+        Crafted             = 0x2,
+        TakenFromChest      = 0x3,
+        TakenFromEnderchest = 0x4,
+        Bought              = 0x5,
+        Anvil               = 0x6,
+        Smelted             = 0x7,
+        Brewed              = 0x8,
+        Bottle              = 0x9,
+        Trading             = 0xA,
+        Fishing             = 0xB,
+    };
 
-    enum class BlockPlacementMethod {};
+    enum class BlockPlacementMethod : int {
+        Entity  = 0x0,
+        Command = 0x1,
+    };
 
-    enum class ChangeType {};
+    enum class ChangeType : int {
+        Unknown = 0x0,
+        Added   = 0x1,
+        Removed = 0x2,
+        Updated = 0x3,
+    };
 
-    enum class InteractionType {};
+    enum class InteractionType : int {
+        Breeding   = 0x1,
+        Taming     = 0x2,
+        Curing     = 0x3,
+        Crafted    = 0x4,
+        Shearing   = 0x5,
+        Milking    = 0x6,
+        Trading    = 0x7,
+        Feeding    = 0x8,
+        Igniting   = 0x9,
+        Coloring   = 0xA,
+        Naming     = 0xB,
+        Leashing   = 0xC,
+        Unleashing = 0xD,
+        PetSleep   = 0xE,
+        Trusting   = 0xF,
+        Commanding = 0x10,
+    };
 
-    enum class POIBlockInteractionType {};
+    enum class POIBlockInteractionType : int {
+        None                = 0x0,
+        Extend              = 0x1,
+        Clone               = 0x2,
+        Lock                = 0x3,
+        Create              = 0x4,
+        CreateLocator       = 0x5,
+        Rename              = 0x6,
+        ItemPlaced          = 0x7,
+        ItemRemoved         = 0x8,
+        Cooking             = 0x9,
+        Dousing             = 0xA,
+        Lighting            = 0xB,
+        Haystack            = 0xC,
+        Filled              = 0xD,
+        Emptied             = 0xE,
+        AddDye              = 0xF,
+        DyeItem             = 0x10,
+        ClearItem           = 0x11,
+        EnchantArrow        = 0x12,
+        CompostItemPlaced   = 0x13,
+        RecoveredBonemeal   = 0x14,
+        BookPlaced          = 0x15,
+        BookOpened          = 0x16,
+        Disenchant          = 0x17,
+        Repair              = 0x18,
+        DisenchantAndRepair = 0x19,
+    };
 
-    enum class TeleportationCause {};
+    enum class TeleportationCause : int {
+        Unknown     = 0x0,
+        Projectile  = 0x1,
+        ChorusFruit = 0x2,
+        Command     = 0x3,
+        Behavior    = 0x4,
+        Count       = 0x5,
+    };
 
-    enum class UseMethod {};
+    enum class UseMethod : int {
+        Unknown    = -1,
+        EquipArmor = 0x0,
+        Eat        = 0x1,
+        Attack     = 0x2,
+        Consume    = 0x3,
+        Throw      = 0x4,
+        Shoot      = 0x5,
+        Place      = 0x6,
+        FillBottle = 0x7,
+        FillBucket = 0x8,
+        PourBucket = 0x9,
+        UseTool    = 0xA,
+    };
+
+    enum class PoiEventBlockType : int {
+        BlastFurnace     = 0x0,
+        BrewingStand     = 0x1,
+        CartographyTable = 0x2,
+        Grindstone       = 0x3,
+        Loom             = 0x4,
+        Smoker           = 0x5,
+        Stonecutter      = 0x6,
+        Barrel           = 0x7,
+        Bell             = 0x8,
+        Campfire         = 0x9,
+        Cauldron         = 0xA,
+        Composter        = 0xB,
+        Lectern          = 0xC,
+    };
+
+    enum class ItemInteractMethod : int {
+        Use   = 0x0,
+        Place = 0x1,
+    };
+
+    enum class AccountType : int {
+        Xbl   = 0x1,
+        Guest = 0x2,
+        Other = 0x3,
+    };
 
 public:
     // prevent constructor by default
@@ -1869,7 +2046,7 @@ private:
         enum class ItemAcquisitionMethod,
         enum class MinecraftEventing::AcquisitionMethod,
         struct std::hash<enum class ItemAcquisitionMethod>,
-        struct std::equal_to<enum class ItemAcquisitionMethod>,
+        struct std::equal_to<enum class ItemAcquisitionMethod>, // NOLINT
         class std::allocator<struct std::pair<
             enum class ItemAcquisitionMethod const,
             enum class MinecraftEventing::AcquisitionMethod>>> const mAcquisitionMethodMap; // NOLINT
@@ -1881,7 +2058,7 @@ private:
         unsigned int,
         class Social::Events::PlayerTelemetry,
         struct std::hash<unsigned int>,
-        struct std::equal_to<unsigned int>,
+        struct std::equal_to<unsigned int>, // NOLINT
         class std::allocator<struct std::pair<unsigned int const, class Social::Events::PlayerTelemetry>>>
         mPlayerTelemetry; // NOLINT
     /**
@@ -1892,7 +2069,7 @@ private:
         enum class ItemUseMethod,
         enum class MinecraftEventing::UseMethod,
         struct std::hash<enum class ItemUseMethod>,
-        struct std::equal_to<enum class ItemUseMethod>,
+        struct std::equal_to<enum class ItemUseMethod>,// NOLINT
         class std::allocator<
             struct std::pair<enum class ItemUseMethod const, enum class MinecraftEventing::UseMethod>>> const
         mUseMethodMap; // NOLINT

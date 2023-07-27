@@ -14,7 +14,13 @@ public:
     // clang-format on
 
     // ComplexInventoryTransaction inner types define
-    enum class Type {};
+    enum class Type : int {
+        NormalTransaction          = 0x0,
+        InventoryMismatch          = 0x1,
+        ItemUseTransaction         = 0x2,
+        ItemUseOnEntityTransaction = 0x3,
+        ItemReleaseTransaction     = 0x4,
+    };
 
 public:
     // prevent constructor by default

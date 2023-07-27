@@ -4,16 +4,33 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/network/NetworkBlockPosition.h"
 #include "mc/network/packet/Packet.h"
 
 class UpdateBlockPacket : public ::Packet {
 
 public:
-    // prevent constructor by default
-    UpdateBlockPacket& operator=(UpdateBlockPacket const&) = delete;
-    UpdateBlockPacket(UpdateBlockPacket const&)            = delete;
+    enum class Layer : unsigned int {
+        Standard = 0,
+        Extra    = 1,
+        Count    = 2,
+    };
+    enum class Flags : unsigned char {
+        None        = 0,
+        Neighbors   = 1 << 0,
+        Network     = 1 << 1,
+        NoGraphic   = 1 << 2,
+        Priority    = 1 << 3,
+        All         = Neighbors | Network, // default value in BDS
+        AllPriority = All | Priority,
+    };
 
-public:
+    static const bool          SHARE_WITH_HANDLER = true; // constant
+    class NetworkBlockPosition mPos;                      // this+0x30
+    enum class Layer           mLayer;                    // this+0x3C
+    enum class Flags           mUpdateFlags;              // this+0x40
+    unsigned int               mRuntimeId;                // this+0x44
+
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0

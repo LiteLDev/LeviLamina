@@ -14,11 +14,32 @@ public:
     // clang-format on
 
     // Facing inner types define
-    enum class Axis {};
+    enum class Axis : int {
+        X     = 0x0,
+        Y     = 0x1,
+        Z     = 0x2,
+        Count = 0x3,
+    };
 
-    enum class Name {};
+    enum class Name : char {
+        Down          = 0x0,
+        Up            = 0x1,
+        North         = 0x2,
+        South         = 0x3,
+        West          = 0x4,
+        East          = 0x5,
+        Max           = 0x6,
+        NotDefined    = 0x6,
+        NumCullingIds = 0x7,
+    };
 
-    enum class Rotation {};
+    enum class Rotation : int {
+        None  = 0x0,
+        CCW   = 0x1, // Counter-clockwise
+        OPP   = 0x2, // Opposite
+        CW    = 0x3, // Clockwise
+        Count = 0x4,
+    };
 
     class Plane {
 
@@ -200,7 +221,7 @@ public:
         std::string,
         unsigned char,
         struct std::hash<std::string>,
-        struct std::equal_to<std::string>,
+        struct std::equal_to<std::string>,                                                               // NOLINT
         class std::allocator<struct std::pair<std::string const, unsigned char>>> const FROM_STRING_MAP; // NOLINT
     /**
      * @symbol ?NORMAL\@Facing\@\@2QBVVec3\@\@B

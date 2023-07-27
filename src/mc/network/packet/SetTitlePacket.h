@@ -14,7 +14,17 @@ public:
     // clang-format on
 
     // SetTitlePacket inner types define
-    enum class TitleType {};
+    enum class TitleType : int {
+        Clear               = 0x0,
+        Reset               = 0x1,
+        Title               = 0x2,
+        Subtitle            = 0x3,
+        Actionbar           = 0x4,
+        Times               = 0x5,
+        TitleTextObject     = 0x6,
+        SubtitleTextObject  = 0x7,
+        ActionbarTextObject = 0x8,
+    };
 
 public:
     // prevent constructor by default

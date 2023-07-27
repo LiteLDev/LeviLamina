@@ -10,14 +10,28 @@ public:
     // clang-format on
 
     // Ability inner types define
-    enum class Options {};
+    enum class Options : char {
+        None                        = 0x0,
+        NoSave                      = 0x1,
+        CommandExposed              = 0x2,
+        PermissionsInterfaceExposed = 0x4,
+    };
 
-    enum class Type {};
+    enum class Type : char {
+        Invalid = 0x0,
+        Unset   = 0x1,
+        Bool    = 0x2,
+        Float   = 0x3,
+    };
 
-public:
-    // prevent constructor by default
-    Ability& operator=(Ability const&) = delete;
-    Ability(Ability const&)            = delete;
+    union Value {
+        bool  mBoolVal;
+        float mFloatVal;
+    };
+
+    Ability::Type    mType;    // this+0x0
+    Ability::Value   mValue;   // this+0x4
+    Ability::Options mOptions; // this+0x8
 
 public:
     /**
