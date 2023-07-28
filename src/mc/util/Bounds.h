@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/Pos.h"
 
 struct Bounds {
 public:
@@ -10,15 +11,26 @@ public:
     // clang-format on
 
     // Bounds inner types define
-    enum class Option {};
+    enum class Option {
+        Default = 0x0,
+        Flatten = 0x1,
+    };
 
-public:
-    // prevent constructor by default
-    Bounds& operator=(Bounds const&) = delete;
-    Bounds(Bounds const&)            = delete;
-    Bounds()                         = delete;
+    struct Iterator {
+        class Pos            mPos;
+        struct Bounds const* mBounds;
+        int                  mIdx;
+    };
 
-public:
+    class Pos mMin;
+    class Pos mMax;
+    class Pos mDim;
+    int       mArea;
+    int       mVolume;
+    int       mSide;
+
+    Bounds() = delete;
+
     /**
      * @symbol ??0Bounds\@\@QEAA\@AEBVChunkPos\@\@0\@Z
      */

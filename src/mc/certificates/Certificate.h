@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/UnverifiedCertificate.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -10,9 +11,11 @@ namespace Json { class Value; }
 class Certificate {
 
 public:
-    // prevent constructor by default
-    Certificate& operator=(Certificate const&) = delete;
-    Certificate()                              = delete;
+    class UnverifiedCertificate  mUnverifiedCertificate;
+    std::unique_ptr<Certificate> mParentCertificate;
+    bool                         mIsValid;
+
+    Certificate() = delete;
 
 public:
     /**

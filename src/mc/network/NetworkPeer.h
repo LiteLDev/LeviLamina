@@ -10,9 +10,28 @@ public:
     // clang-format on
 
     // NetworkPeer inner types define
-    enum class DataStatus {};
+    enum class DataStatus : int {
+        HasData        = 0x0,
+        NoData         = 0x1,
+        BrokenData     = 0x2,
+        ConnectionLost = 0x3,
+    };
 
-    enum class Reliability {};
+    enum class Reliability : int {
+        Reliable            = 0x0,
+        ReliableOrdered     = 0x1,
+        Unreliable          = 0x2,
+        UnreliableSequenced = 0x3,
+    };
+
+    enum class NetworkLoad : int {
+        Unrestricted = 0x0,
+        Low          = 0x1,
+        Medium       = 0x2,
+        High         = 0x3,
+    };
+
+    using PacketRecvTimepoint = std::chrono::time_point<std::chrono::steady_clock>;
 
     struct NetworkStatus {
 
@@ -53,7 +72,7 @@ public:
      * @vftbl 3
      * @symbol ?getNetworkStatus\@CompressedNetworkPeer\@\@UEBA?AUNetworkStatus\@NetworkPeer\@\@XZ
      */
-    virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const = 0; // NOLINT
+    virtual struct NetworkStatus getNetworkStatus() const = 0; // NOLINT
     /**
      * @vftbl 4
      * @symbol ?update\@NetworkPeer\@\@UEAAXXZ

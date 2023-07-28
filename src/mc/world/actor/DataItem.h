@@ -74,7 +74,7 @@ public:
         setData(value);
         return *this;
     }
-    inline DataItem2(unsigned short key, T value) = delete;
+    inline DataItem2(unsigned short key, T const& value) = delete;
     inline static std::unique_ptr<DataItem> create(unsigned short key, T const& value) {
         return std::unique_ptr<DataItem>(new DataItem2(key, value));
     }

@@ -5,12 +5,8 @@
 class CommandRawText {
 
 public:
-    // prevent constructor by default
-    CommandRawText& operator=(CommandRawText const&) = delete;
-    CommandRawText(CommandRawText const&)            = delete;
-    CommandRawText()                                 = delete;
-
-public:
+    std::string text;
+    inline explicit operator std::string() const { return text; }
     /**
      * @symbol
      * ?getText\@CommandRawText\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ

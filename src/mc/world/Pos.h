@@ -1,12 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/BlockPos.h"
 
-class Pos {
-
-public:
-    // prevent constructor by default
-    Pos& operator=(Pos const&) = delete;
-    Pos(Pos const&)            = delete;
-    Pos()                      = delete;
+class Pos : public BlockPos {
 };

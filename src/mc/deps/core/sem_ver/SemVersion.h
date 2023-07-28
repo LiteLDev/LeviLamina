@@ -15,9 +15,16 @@ public:
     // clang-format on
 
     // SemVersion inner types define
-    enum class MatchType {};
+    enum class MatchType : int {
+        Full    = 0x0,
+        Partial = 0x1,
+        None    = 0x2,
+    };
 
-    enum class ParseOption {};
+    enum class ParseOption : int {
+        AllowWildcards = 0x0,
+        NoWildcards    = 0x1,
+    };
 
     struct any_version_constructor {
 
@@ -28,7 +35,14 @@ public:
         any_version_constructor()                                          = delete;
     };
 
-public:
+    uint16_t    mMajor;
+    uint16_t    mMinor;
+    uint16_t    mPatch;
+    std::string mPreRelease;
+    std::string mBuildMeta;
+    std::string mFullVersionString;
+    bool        mValidVersion;
+    bool        mAnyVersion;
     /**
      * @symbol
      * ??0SemVersion\@\@QEAA\@GGGAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
@@ -130,7 +144,7 @@ public:
     /**
      * @symbol ?AnyVersionConstructor\@SemVersion\@\@2Uany_version_constructor\@1\@B
      */
-    MCAPI static struct SemVersion::any_version_constructor const AnyVersionConstructor; // NOLINT
+    MCAPI static struct any_version_constructor const AnyVersionConstructor; // NOLINT
 
     // private:
     /**

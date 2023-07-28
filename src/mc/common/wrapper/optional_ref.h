@@ -5,18 +5,18 @@
 template <typename T0>
 class optional_ref {
 
-    T* value;
+    T0* value;
 
 public:
-    inline T* get() const {
+    inline T0* get() const {
         if (*this)
             return value;
         return nullptr;
     }
 
-    inline T& operator*() const { return *value; }
+    inline T0& operator*() const { return *value; }
 
-    inline T* operator->() const { return value; }
+    inline T0* operator->() const { return value; }
 
-    inline operator bool() const { return value != nullptr; }
+    inline explicit operator bool() const { return value != nullptr; }
 };

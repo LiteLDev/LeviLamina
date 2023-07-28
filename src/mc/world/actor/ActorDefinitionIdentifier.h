@@ -1,10 +1,17 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/string/HashedString.h"
 
 struct ActorDefinitionIdentifier {
 
 public:
+    std::string  mNamespace;     // 0
+    std::string  mIdentifier;    // 32
+    std::string  mInitEvent;     // 64
+    std::string  mFullName;      // 96
+    HashedString mCanonicalName; // 128
+
     /**
      * @symbol ??0ActorDefinitionIdentifier\@\@QEAA\@W4ActorType\@\@\@Z
      */

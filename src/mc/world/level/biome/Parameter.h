@@ -7,12 +7,8 @@ namespace ClimateUtils {
 struct Parameter {
 
 public:
-    // prevent constructor by default
-    Parameter& operator=(Parameter const&) = delete;
-    Parameter(Parameter const&)            = delete;
-    Parameter()                            = delete;
-
-public:
+    long long mMin; // this+0x0
+    long long mMax; // this+0x8
     /**
      * @symbol ??0Parameter\@ClimateUtils\@\@QEAA\@MM\@Z
      */

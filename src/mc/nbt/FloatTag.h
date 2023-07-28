@@ -8,11 +8,7 @@
 class FloatTag : public ::Tag {
 
 public:
-    // prevent constructor by default
-    FloatTag& operator=(FloatTag const&) = delete;
-    FloatTag(FloatTag const&)            = delete;
-
-public:
+    float data;
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0

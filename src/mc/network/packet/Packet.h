@@ -1,6 +1,11 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/Compressibility.h"
+#include "mc/enums/SubClientId.h"
+#include "mc/network/IPacketHandlerDispatcher.h"
+#include "mc/network/NetworkPeer.h"
+#include "mc/resources/PacketPriority.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -8,12 +13,28 @@
 class Packet {
 
 public:
-    // prevent constructor by default
-    Packet& operator=(Packet const&) = delete;
-    Packet(Packet const&)            = delete;
-    Packet()                         = delete;
+    static const bool                   SHARE_WITH_HANDLER = false;                                     // constant
+    enum class PacketPriority           mPriority          = PacketPriority::Medium;                    // this+0x8
+    enum class NetworkPeer::Reliability mReliability       = NetworkPeer::Reliability::ReliableOrdered; // this+0xC
+    enum class SubClientId              mClientSubId       = SubClientId::PrimaryClient;                // this+0x10
+    bool                                mIsHandled         = false;                                     // this+0x11
+    NetworkPeer::PacketRecvTimepoint    mReceiveTimepoint;                                              // this+0x18
+    const IPacketHandlerDispatcher*     mHandler      = nullptr;                                        // this+0x20
+    enum class Compressibility          mCompressible = Compressibility::Compressible;                  // this+0x28
 
-public:
+    inline explicit Packet(
+        enum class PacketPriority           priority    = PacketPriority::Medium,
+        enum class NetworkPeer::Reliability reliability = NetworkPeer::Reliability::ReliableOrdered,
+        enum class SubClientId              clientSubId = SubClientId::PrimaryClient,
+        bool                                compress    = true
+    )
+    : mPriority(priority), mReliability(reliability), mClientSubId(clientSubId) {
+        if (compress) {
+            mCompressible = Compressibility::Compressible;
+        } else {
+            mCompressible = Compressibility::Incompressible;
+        }
+    }
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0

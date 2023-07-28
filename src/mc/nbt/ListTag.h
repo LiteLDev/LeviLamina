@@ -8,11 +8,10 @@
 class ListTag : public ::Tag {
 
 public:
-    // prevent constructor by default
-    ListTag& operator=(ListTag const&) = delete;
-    ListTag(ListTag const&)            = delete;
+    using List = std::vector<std::unique_ptr<Tag>>;
 
-public:
+    List      mList;
+    Tag::Type mType;
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0

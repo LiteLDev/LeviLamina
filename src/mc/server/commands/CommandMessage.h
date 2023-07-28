@@ -1,15 +1,16 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/commands/CommandSelector.h"
 
 class CommandMessage {
 
 public:
-    // prevent constructor by default
-    CommandMessage& operator=(CommandMessage const&) = delete;
-    CommandMessage(CommandMessage const&)            = delete;
-
-public:
+    struct MessageComponent {
+        std::string                                   string;
+        std::unique_ptr<CommandSelector<class Actor>> selection;
+    };
+    std::vector<MessageComponent> components;
     /**
      * @symbol ??0CommandMessage\@\@QEAA\@XZ
      */

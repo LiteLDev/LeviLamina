@@ -30,7 +30,7 @@ public:
      * @vftbl 5
      * @symbol ?clip\@ComposterBlock\@\@UEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_N\@Z
      */
-    virtual class HitResult
+    virtual class HitResult// NOLINT
     clip(class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, bool) const; // NOLINT
     /**
      * @vftbl 7
@@ -38,7 +38,7 @@ public:
      * ?addCollisionShapes\@ComposterBlock\@\@UEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
      */
     virtual bool
-    addCollisionShapes(class Block const&, class BlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<class GetCollisionShapeInterface const>)
+    addCollisionShapes(class Block const&, class BlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<class GetCollisionShapeInterface const>)// NOLINT
         const; // NOLINT
     /**
      * @vftbl 9
@@ -46,7 +46,7 @@ public:
      * ?addAABBs\@ComposterBlock\@\@UEBAXAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@PEBVAABB\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@\@Z
      */
     virtual void
-    addAABBs(class Block const&, class BlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&)
+    addAABBs(class Block const&, class BlockSource const&, class BlockPos const&, class AABB const*, std::vector<class AABB>&)// NOLINT
         const; // NOLINT
     /**
      * @vftbl 22
@@ -350,7 +350,7 @@ public:
         unsigned __int64,
         signed char,
         struct std::hash<unsigned __int64>,
-        struct std::equal_to<unsigned __int64>,
+        struct std::equal_to<unsigned __int64>,// NOLINT
         class std::allocator<struct std::pair<unsigned __int64 const, signed char>>> const&
     _getCompostableItems(); // NOLINT
 

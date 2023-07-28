@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/nbt/TagMemoryChunk.h"
 
 // auto generated inclusion list
 #include "mc/nbt/Tag.h"
@@ -8,11 +9,7 @@
 class ByteArrayTag : public ::Tag {
 
 public:
-    // prevent constructor by default
-    ByteArrayTag& operator=(ByteArrayTag const&) = delete;
-    ByteArrayTag(ByteArrayTag const&)            = delete;
-
-public:
+    TagMemoryChunk data;
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0

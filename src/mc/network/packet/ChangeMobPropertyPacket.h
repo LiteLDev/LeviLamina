@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/ActorUniqueID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,11 +10,12 @@
 class ChangeMobPropertyPacket : public ::Packet {
 
 public:
-    // prevent constructor by default
-    ChangeMobPropertyPacket& operator=(ChangeMobPropertyPacket const&) = delete;
-    ChangeMobPropertyPacket(ChangeMobPropertyPacket const&)            = delete;
-
-public:
+    struct ActorUniqueID mUid;
+    std::string          mProperty;
+    bool                 mBool;
+    std::string          mString;
+    int                  mInt;
+    float                mFloat;
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0

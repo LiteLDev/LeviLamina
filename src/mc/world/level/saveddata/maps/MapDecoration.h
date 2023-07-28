@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/mce/Color.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,15 +16,43 @@ public:
     // clang-format on
 
     // MapDecoration inner types define
-    enum class Type {};
+    enum class Type : int {
+        MarkerWhite      = 0x0,
+        MarkerGreen      = 0x1,
+        MarkerRed        = 0x2,
+        MarkerBlue       = 0x3,
+        XWhite           = 0x4,
+        TriangleRed      = 0x5,
+        SquareWhite      = 0x6,
+        MarkerSign       = 0x7,
+        MarkerPink       = 0x8,
+        MarkerOrange     = 0x9,
+        MarkerYellow     = 0xA,
+        MarkerTeal       = 0xB,
+        TriangleGreen    = 0xC,
+        SmallSquareWhite = 0xD,
+        Mansion          = 0xE,
+        Monument         = 0xF,
+        NoDraw           = 0x10,
+        Count            = 0x11,
+
+        Player          = 0x0,
+        PlayerOffMap    = 0x6,
+        PlayerOffLimits = 0xD,
+        PlayerHidden    = 0x10,
+
+        ItemFrame = 0x1,
+    };
 
 public:
-    // prevent constructor by default
-    MapDecoration& operator=(MapDecoration const&) = delete;
-    MapDecoration(MapDecoration const&)            = delete;
-    MapDecoration()                                = delete;
+    MapDecoration() = delete;
 
-public:
+    std::string mLabel;
+    Type        mImage;
+    int8_t      mX;
+    int8_t      mY;
+    int8_t      mRotation;
+    mce::Color  mColor;
     /**
      * @symbol
      * ??0MapDecoration\@\@QEAA\@W4Type\@0\@CCCAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVColor\@mce\@\@\@Z

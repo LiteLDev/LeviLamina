@@ -8,12 +8,7 @@
 class DoubleTag : public ::Tag {
 
 public:
-    // prevent constructor by default
-    DoubleTag& operator=(DoubleTag const&) = delete;
-    DoubleTag(DoubleTag const&)            = delete;
-    DoubleTag()                            = delete;
-
-public:
+    double data;
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0

@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/nbt/CompoundTag.h"
+#include "mc/network/NetworkBlockPosition.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -12,6 +14,9 @@ public:
     // prevent constructor by default
     BlockActorDataPacket& operator=(BlockActorDataPacket const&) = delete;
     BlockActorDataPacket(BlockActorDataPacket const&)            = delete;
+
+    class NetworkBlockPosition mPos;
+    class CompoundTag          mData;
 
 public:
     /**

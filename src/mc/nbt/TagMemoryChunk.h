@@ -5,12 +5,9 @@
 struct TagMemoryChunk {
 
 public:
-    // prevent constructor by default
-    TagMemoryChunk& operator=(TagMemoryChunk const&) = delete;
-    TagMemoryChunk(TagMemoryChunk const&)            = delete;
-    TagMemoryChunk()                                 = delete;
-
-public:
+    size_t                           mElements;
+    size_t                           mSize;
+    std::unique_ptr<unsigned char[]> mBuffer;
     /**
      * @symbol ?copy\@TagMemoryChunk\@\@QEBA?AU1\@XZ
      */

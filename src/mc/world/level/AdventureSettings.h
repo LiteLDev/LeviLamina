@@ -5,11 +5,11 @@
 struct AdventureSettings {
 
 public:
-    // prevent constructor by default
-    AdventureSettings& operator=(AdventureSettings const&) = delete;
-    AdventureSettings(AdventureSettings const&)            = delete;
-
-public:
+    bool mNoPvM;
+    bool mNoMvP;
+    bool mImmutableWorld;
+    bool mShowNameTags;
+    bool mAutoJump;
     /**
      * @symbol ??0AdventureSettings\@\@QEAA\@XZ
      */

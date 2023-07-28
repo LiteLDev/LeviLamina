@@ -1,15 +1,16 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/math/Vec3.h"
 
 class CommandPosition {
 
 public:
-    // prevent constructor by default
-    CommandPosition& operator=(CommandPosition const&) = delete;
-    CommandPosition(CommandPosition const&)            = delete;
-
-public:
+    Vec3 mOffset;
+    bool mRelativeX;
+    bool mRelativeY;
+    bool mRelativeZ;
+    bool mLocal;
     /**
      * @symbol ??0CommandPosition\@\@QEAA\@XZ
      */

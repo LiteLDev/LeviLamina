@@ -8,6 +8,8 @@
 class BaseGameVersion {
 
 public:
+    class SemVersion mSemVersion;
+    bool             mNeverCompatible;
     /**
      * @symbol ??0BaseGameVersion\@\@QEAA\@AEBV0\@\@Z
      */

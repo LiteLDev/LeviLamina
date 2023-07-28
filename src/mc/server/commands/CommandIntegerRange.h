@@ -5,11 +5,9 @@
 class CommandIntegerRange {
 
 public:
-    // prevent constructor by default
-    CommandIntegerRange& operator=(CommandIntegerRange const&) = delete;
-    CommandIntegerRange(CommandIntegerRange const&)            = delete;
-
-public:
+    int  mMinValue; // this+0x0
+    int  mMaxValue; // this+0x4
+    bool mInvert;   // this+0x8
     /**
      * @symbol ??0CommandIntegerRange\@\@QEAA\@HH_N\@Z
      */

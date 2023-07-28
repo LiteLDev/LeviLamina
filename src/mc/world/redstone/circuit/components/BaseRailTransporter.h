@@ -8,12 +8,12 @@
 class BaseRailTransporter : public ::BaseCircuitComponent {
 
 public:
-    // prevent constructor by default
-    BaseRailTransporter& operator=(BaseRailTransporter const&) = delete;
-    BaseRailTransporter(BaseRailTransporter const&)            = delete;
-    BaseRailTransporter()                                      = delete;
+    enum class RailType {
+        Activator = 0x0,
+        Power     = 0x1,
+    } mRailType;
 
-public:
+    const CircuitComponentType mCircuitComponentType = CircuitComponentType::BaseRailTransporter;
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0

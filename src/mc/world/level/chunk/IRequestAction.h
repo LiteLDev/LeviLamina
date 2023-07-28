@@ -10,7 +10,13 @@ public:
     // clang-format on
 
     // IRequestAction inner types define
-    enum class RequestActionType {};
+    enum class RequestActionType : char {
+        FunctionAction           = 0x0,
+        TestAction               = 0x1,
+        StructureAnimationAction = 0x2,
+    };
+
+    RequestActionType mActionType;
 
 public:
     // prevent constructor by default

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/mce/UUID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
@@ -14,11 +15,7 @@ namespace mce { class UUID; }
 class CommandOrigin {
 
 public:
-    // prevent constructor by default
-    CommandOrigin& operator=(CommandOrigin const&) = delete;
-    CommandOrigin(CommandOrigin const&)            = delete;
-
-public:
+    mce::UUID mUUID; // this+0x8
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0

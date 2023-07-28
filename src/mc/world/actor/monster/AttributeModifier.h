@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/mce/UUID.h"
+#include "mc/enums/AttributeModifierOperation.h"
+#include "mc/enums/AttributeOperands.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -8,6 +11,13 @@ namespace mce { class UUID; }
 // clang-format on
 
 class AttributeModifier {
+
+    float                                 mAmount;
+    enum class AttributeModifierOperation mOperation;
+    enum class AttributeOperands          mOperand;
+    std::string                           mName;
+    mce::UUID                             mId;
+    bool                                  mSerialize;
 
 public:
     /**

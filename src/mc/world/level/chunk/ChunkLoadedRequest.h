@@ -1,16 +1,26 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/util/Bounds.h"
+#include "mc/world/level/chunk/IRequestAction.h"
 
 class ChunkLoadedRequest {
 
 public:
-    // prevent constructor by default
-    ChunkLoadedRequest& operator=(ChunkLoadedRequest const&) = delete;
-    ChunkLoadedRequest(ChunkLoadedRequest const&)            = delete;
-    ChunkLoadedRequest()                                     = delete;
+    ChunkLoadedRequest() = delete;
 
-public:
+    enum class AreaType : char {
+        Bounds      = 0x0,
+        Circle      = 0x1,
+        TickingArea = 0x2,
+    };
+
+    bool                                  mAllowNonTickingPlayerAndTickingAreaChunks; // this+0x0
+    enum class AreaType                   mAreaType;                                  // this+0x1
+    struct Bounds                         mBounds;                                    // this+0x4
+    std::string                           mTickingAreaName;                           // this+0x38
+    std::string                           mSerializationId;                           // this+0x58
+    std::unique_ptr<class IRequestAction> mRequestAction;                             // this+0x78
     /**
      * @symbol ??0ChunkLoadedRequest\@\@QEAA\@$$QEAV0\@\@Z
      */

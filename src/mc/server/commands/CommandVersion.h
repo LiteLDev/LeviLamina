@@ -5,12 +5,7 @@
 class CommandVersion {
 
 public:
-    // prevent constructor by default
-    CommandVersion& operator=(CommandVersion const&) = delete;
-    CommandVersion(CommandVersion const&)            = delete;
-    CommandVersion()                                 = delete;
-
-public:
+    int mFrom = 1, mTo = 0x7FFFFFFF;
     /**
      * @symbol ??0CommandVersion\@\@QEAA\@HH\@Z
      */

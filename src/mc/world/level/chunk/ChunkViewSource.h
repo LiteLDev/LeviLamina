@@ -16,6 +16,11 @@ public:
     ChunkViewSource& operator=(ChunkViewSource const&) = delete;
     ChunkViewSource()                                  = delete;
 
+
+    enum class ChunkSource::LoadMode      mParentLoadMode;
+    GridArea<std::shared_ptr<LevelChunk>> mArea;
+    ChunkSource&                          mMainSource;
+
 public:
     /**
      * @vftbl 0

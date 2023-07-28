@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/math/Vec3.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -13,6 +14,10 @@ public:
     // prevent constructor by default
     ChangeDimensionPacket& operator=(ChangeDimensionPacket const&) = delete;
     ChangeDimensionPacket(ChangeDimensionPacket const&)            = delete;
+
+    class AutomaticID<class Dimension, int> dimensionId;
+    class Vec3                              position;
+    bool                                    respawn;
 
 public:
     /**

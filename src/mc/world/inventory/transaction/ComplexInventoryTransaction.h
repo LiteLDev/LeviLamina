@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/deps/core/data/BidirectionalUnorderedMap.h"
+#include "mc/world/inventory/transaction/InventoryTransaction.h"
 
 class ComplexInventoryTransaction {
 public:
@@ -21,6 +22,9 @@ public:
         ItemUseOnEntityTransaction = 0x3,
         ItemReleaseTransaction     = 0x4,
     };
+
+    Type                 type;
+    InventoryTransaction data;
 
 public:
     // prevent constructor by default

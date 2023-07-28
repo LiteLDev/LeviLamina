@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/nbt/CompoundTag.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -12,6 +13,8 @@ public:
     // prevent constructor by default
     BiomeDefinitionListPacket& operator=(BiomeDefinitionListPacket const&) = delete;
     BiomeDefinitionListPacket(BiomeDefinitionListPacket const&)            = delete;
+
+    class CompoundTag mBiomeData;
 
 public:
     /**

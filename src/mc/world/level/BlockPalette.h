@@ -14,16 +14,22 @@ public:
     // clang-format on
 
     // BlockPalette inner types define
-    enum class PaletteType {};
+    enum class PaletteType : int {
+        Sequential = 0x0,
+        Hashed     = 0x1,
+    };
 
     struct ConstructorToken {
 
     public:
-        // prevent constructor by default
-        ConstructorToken& operator=(ConstructorToken const&) = delete;
-        ConstructorToken(ConstructorToken const&)            = delete;
-        ConstructorToken()                                   = delete;
+        char gap;
     };
+
+    std::mutex                                      mLegacyBlockStatesConversionWarningMutex;
+    std::set<std::pair<int, int>>                   mLegacyBlockStatesConversionWarningSet;
+    std::map<std::string, class BlockLegacy const*> mNameLookup;
+    std::vector<class Block const*>                 mBlockFromNetworkId;
+    class Level*                                    mLevel;
 
 public:
     // prevent constructor by default
@@ -83,7 +89,7 @@ public:
      * @symbol
      * ?convertLegacyBlocks\@BlockPalette\@\@QEBA_NV?$buffer_span_mut\@PEBVBlock\@\@\@\@V?$buffer_span\@UBlockID\@\@\@\@V?$buffer_span\@UNibblePair\@\@\@\@_K\@Z
      */
-    MCAPI bool convertLegacyBlocks(
+    MCAPI bool convertLegacyBlocks( // NOLINT
         class buffer_span_mut<class Block const*>,
         class buffer_span<struct BlockID>,
         class buffer_span<struct NibblePair>,

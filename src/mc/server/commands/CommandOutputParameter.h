@@ -13,14 +13,13 @@ public:
     // clang-format on
 
     // CommandOutputParameter inner types define
-    enum class NoCountType {};
+    enum class NoCountType : int {
+        NoCount = 0x0,
+    };
 
 public:
-    // prevent constructor by default
-    CommandOutputParameter& operator=(CommandOutputParameter const&) = delete;
-    CommandOutputParameter()                                         = delete;
-
-public:
+    std::string str;
+    int         type;
     /**
      * @symbol
      * ??0CommandOutputParameter\@\@QEAA\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z

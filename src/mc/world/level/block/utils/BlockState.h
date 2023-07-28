@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/string/HashedString.h"
 
 class BlockState {
 public:
@@ -13,12 +14,9 @@ public:
     struct StateListNode {
 
     public:
-        // prevent constructor by default
-        StateListNode& operator=(StateListNode const&) = delete;
-        StateListNode(StateListNode const&)            = delete;
-        StateListNode()                                = delete;
-
-    public:
+        BlockState::StateListNode* mNext;
+        BlockState::StateListNode* mPrev;
+        BlockState*                mState;
         /**
          * @symbol ??0StateListNode\@BlockState\@\@QEAA\@PEAV1\@\@Z
          */
@@ -38,6 +36,12 @@ public:
     BlockState& operator=(BlockState const&) = delete;
     BlockState(BlockState const&)            = delete;
     BlockState()                             = delete;
+
+    int (**_vptr_BlockState)(void);
+    size_t const             mID;
+    size_t const             mVariationCount;
+    class HashedString const mName;
+    class StateListNode      mNode;
 
 public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSTATE

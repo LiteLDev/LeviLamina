@@ -9,6 +9,7 @@ namespace Bedrock::Threading { enum class AsyncErrc; }
 // clang-format on
 
 namespace Bedrock::Threading {
+using Mutex = std::mutex;
 /**
  * @symbol ?AdoptLock\@Threading\@Bedrock\@\@3AEBUadopt_lock_t\@std\@\@EB
  */

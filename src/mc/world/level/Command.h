@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/commands/CommandFlag.h"
+#include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/server/commands/CommandRegistry.h"
 
 class Command {
 
@@ -9,7 +12,11 @@ public:
     Command& operator=(Command const&) = delete;
     Command(Command const&)            = delete;
 
-public:
+    int                               mVersion;         // this+0x8
+    class CommandRegistry const*      mRegistry;        // this+0x10
+    int                               mCommandSymbol;   // this+0x18
+    enum class CommandPermissionLevel mPermissionLevel; // this+0x1C
+    struct CommandFlag                mFlags;           // this+0x1E
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0

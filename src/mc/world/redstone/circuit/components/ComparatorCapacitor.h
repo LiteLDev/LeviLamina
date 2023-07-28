@@ -13,14 +13,21 @@ public:
     // clang-format on
 
     // ComparatorCapacitor inner types define
-    enum class Mode {};
+    enum class Mode {
+        CompareMode = 0x0,
+        SubtractMode = 0x1,
+    };
 
-public:
-    // prevent constructor by default
-    ComparatorCapacitor& operator=(ComparatorCapacitor const&) = delete;
-    ComparatorCapacitor(ComparatorCapacitor const&)            = delete;
 
-public:
+    int                        mRearAnalogStrength;
+    int                        mSideAnalogStrengthRight;
+    int                        mSideAnalogStrengthLeft;
+    int                        mOldStrength;
+    Mode                       mMode;
+    int                        mRearStrength;
+    int                        mSideStrengths;
+    bool                       mHasAnalogBeenSet;
+    const CircuitComponentType mCircuitComponentType = CircuitComponentType::ComparatorCapacitor;
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0

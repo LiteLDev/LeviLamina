@@ -4,11 +4,17 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/events/ActorEvent.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/world/ActorRuntimeID.h"
 
 class ActorEventPacket : public ::Packet {
 
 public:
+    class ActorRuntimeID  mRuntimeId;
+    enum class ActorEvent mEventId;
+    int                   mData;
+
     // prevent constructor by default
     ActorEventPacket& operator=(ActorEventPacket const&) = delete;
     ActorEventPacket(ActorEventPacket const&)            = delete;

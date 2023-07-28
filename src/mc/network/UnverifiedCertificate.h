@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/certificates/WebToken.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -10,9 +11,10 @@ namespace Json { class Value; }
 class UnverifiedCertificate {
 
 public:
-    // prevent constructor by default
-    UnverifiedCertificate& operator=(UnverifiedCertificate const&) = delete;
-    UnverifiedCertificate()                                        = delete;
+    class WebToken const                   mRawToken;
+    std::unique_ptr<UnverifiedCertificate> mParentUnverifiedCertificate;
+
+    UnverifiedCertificate() = delete;
 
 public:
     /**

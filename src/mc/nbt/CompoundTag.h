@@ -1,9 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/nbt/Tag.h"
 
 // auto generated inclusion list
-#include "mc/nbt/Tag.h"
+#include "mc/nbt/CompoundTagVariant.h"
 
 enum class SnbtFormat : unsigned char {
     PartialNewLine = 0,
@@ -14,11 +15,9 @@ enum class SnbtFormat : unsigned char {
 class CompoundTag : public ::Tag {
 
 public:
-    // prevent constructor by default
-    CompoundTag& operator=(CompoundTag const&) = delete;
-    CompoundTag(CompoundTag const&)            = delete;
+    using TagMap = std::map<std::string, class CompoundTagVariant>;
 
-public:
+    TagMap mTags;
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0

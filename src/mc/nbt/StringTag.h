@@ -8,11 +8,7 @@
 class StringTag : public ::Tag {
 
 public:
-    // prevent constructor by default
-    StringTag& operator=(StringTag const&) = delete;
-    StringTag(StringTag const&)            = delete;
-
-public:
+    std::string data;
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0

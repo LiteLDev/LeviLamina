@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/world/ActorRuntimeID.h"
 
 class AnimatePacket : public ::Packet {
 public:
@@ -14,14 +15,19 @@ public:
     // clang-format on
 
     // AnimatePacket inner types define
-    enum class Action {};
+    enum class Action {
+        NoAction         = 0x0,
+        Swing            = 0x1,
+        WakeUp           = 0x3,
+        CriticalHit      = 0x4,
+        MagicCriticalHit = 0x5,
+        RowRight         = 0x80,
+        RowLeft          = 0x81,
+    };
 
-public:
-    // prevent constructor by default
-    AnimatePacket& operator=(AnimatePacket const&) = delete;
-    AnimatePacket(AnimatePacket const&)            = delete;
-
-public:
+    ActorRuntimeID mRuntimeId;
+    Action         mAction;
+    float          mData;
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0

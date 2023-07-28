@@ -8,11 +8,7 @@
 class ByteTag : public ::Tag {
 
 public:
-    // prevent constructor by default
-    ByteTag& operator=(ByteTag const&) = delete;
-    ByteTag(ByteTag const&)            = delete;
-
-public:
+    unsigned char data;
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0

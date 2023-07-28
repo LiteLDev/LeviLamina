@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/data/GridArea.h"
@@ -8,7 +9,7 @@
 #include "mc/deps/core/utility/buffer_span_mut.h"
 #include "mc/world/level/LevelChunkGridAreaElement.h"
 
-class ChunkSource {
+class ChunkSource : public Bedrock::EnableNonOwnerReferences {
 public:
     // ChunkSource inner types declare
     // clang-format off
@@ -16,7 +17,22 @@ public:
     // clang-format on
 
     // ChunkSource inner types define
-    enum class LoadMode {};
+    enum class LoadMode : int {
+        None    = 0x0,
+        Deferred = 0x1,
+    };
+
+
+    // int                          mChunkSide;             // this+0x18
+    // Level*                       mLevel;                 // this+0x20
+    // Dimension*                   mDimension;             // this+0x28
+    // ChunkSource*                 mParent;                // this+0x30
+    // std::unique_ptr<ChunkSource> mOwnedParent;           // this+0x38
+    // LevelChunkBuilderData*       mLevelChunkBuilderData; // this+0x40
+    // std::atomic<bool>            mShuttingDown;          // this+0x48
+    // void*                        unknownPtr              // this+0x50
+
+    char filler[0x58 - sizeof(Bedrock::EnableNonOwnerReferences)];
 
 public:
     // prevent constructor by default
@@ -156,7 +172,7 @@ public:
         class ChunkPos,
         class std::weak_ptr<class LevelChunk>,
         struct std::hash<class ChunkPos>,
-        struct std::equal_to<class ChunkPos>,
+        struct std::equal_to<class ChunkPos>, // NOLINT
         class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const*
     getChunkMap(); // NOLINT
     /**
@@ -164,11 +180,11 @@ public:
      * @symbol
      * ?getStorage\@ChunkSource\@\@UEBAAEBV?$unordered_map\@VChunkPos\@\@V?$weak_ptr\@VLevelChunk\@\@\@std\@\@U?$hash\@VChunkPos\@\@\@3\@U?$equal_to\@VChunkPos\@\@\@3\@V?$allocator\@U?$pair\@$$CBVChunkPos\@\@V?$weak_ptr\@VLevelChunk\@\@\@std\@\@\@std\@\@\@3\@\@std\@\@XZ
      */
-    virtual class std::unordered_map<
+    virtual class std::unordered_map< // NOLINT
         class ChunkPos,
         class std::weak_ptr<class LevelChunk>,
         struct std::hash<class ChunkPos>,
-        struct std::equal_to<class ChunkPos>,
+        struct std::equal_to<class ChunkPos>, // NOLINT
         class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const&
     getStorage() const; // NOLINT
     /**

@@ -5,11 +5,14 @@
 class CommandItem {
 
 public:
-    // prevent constructor by default
-    CommandItem& operator=(CommandItem const&) = delete;
-    CommandItem(CommandItem const&)            = delete;
-
-public:
+    union {
+        struct {
+            short mVersion;     // this+0x0
+            bool  mOverrideAux; // this+0x2
+            int   mId;          // this+0x4
+        };
+        uint64_t mVersionId; // this+0x0
+    };
     /**
      * @symbol ??0CommandItem\@\@QEAA\@XZ
      */

@@ -1,15 +1,40 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/redstone/circuit/CircuitSceneGraph.h"
+#include "mc/world/redstone/circuit/components/BaseCircuitComponent.h"
 
 class CircuitSystem {
 
 public:
-    // prevent constructor by default
-    CircuitSystem& operator=(CircuitSystem const&) = delete;
-    CircuitSystem(CircuitSystem const&)            = delete;
+    class LevelChunkTracking {
+    public:
+        BlockPos mChunkPos;
+    };
+    bool                                           mLockGraph;
+    CircuitSceneGraph                              mSceneGraph;
+    std::vector<CircuitSystem::LevelChunkTracking> mAddedLevelChunk;
+    bool                                           mHasBeenEvaluated;
 
-public:
+    template <typename Component>
+    Component* create(
+        class BlockPos const&           pos,
+        class BlockSource*              pSource,
+        enum class CircuitComponentType type,
+        enum class FaceID               direction
+    ) {
+        if (mLockGraph) {
+            if (!mSceneGraph.getComponent(pos, type))
+                return (Component*)mSceneGraph.getFromPendingAdd(pos, type);
+        }
+        auto* pComponent = createComponent(pos, (unsigned char)direction, std::unique_ptr<BaseCircuitComponent>());
+
+        if (pComponent) {
+            pComponent->mChunkPosition.x = pos.x >> 4;
+            pComponent->mChunkPosition.z = pos.z >> 4;
+        }
+        return (Component*)pComponent;
+    }
     /**
      * @symbol ??0CircuitSystem\@\@QEAA\@XZ
      */

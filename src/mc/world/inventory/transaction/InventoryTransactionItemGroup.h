@@ -5,9 +5,14 @@
 class InventoryTransactionItemGroup {
 
 public:
-    // prevent constructor by default
-    InventoryTransactionItemGroup(InventoryTransactionItemGroup const&) = delete;
-    InventoryTransactionItemGroup()                                     = delete;
+    InventoryTransactionItemGroup() = delete;
+
+
+    int                                mItemId;   // this+0x0
+    int                                mItemAux;  // this+0x4
+    std::unique_ptr<class CompoundTag> mTag;      // this+0x8
+    int                                mCount;    // this+0x10
+    bool                               mOverflow; // this+0x14
 
 public:
     /**

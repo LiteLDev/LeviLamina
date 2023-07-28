@@ -8,11 +8,7 @@
 class IntTag : public ::Tag {
 
 public:
-    // prevent constructor by default
-    IntTag& operator=(IntTag const&) = delete;
-    IntTag(IntTag const&)            = delete;
-
-public:
+    int data;
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0

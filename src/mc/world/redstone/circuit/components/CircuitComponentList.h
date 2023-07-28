@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/FaceID.h"
+#include "mc/world/level/BlockPos.h"
 
 class CircuitComponentList {
 public:
@@ -13,19 +15,20 @@ public:
     class Item {
 
     public:
-        // prevent constructor by default
-        Item& operator=(Item const&) = delete;
-        Item(Item const&)            = delete;
-        Item()                       = delete;
+        class BaseCircuitComponent* mComponent = nullptr;
+        int                         mDampening{};
+        class BlockPos              mPos;
+        enum class FaceID           mDirection = FaceID::Unknown;
+        bool                        mDirectlyPowered{};
+        int                         mData{};
+
+        inline Item() = delete;
+
+        inline Item(BaseCircuitComponent* component, int dampening, const BlockPos& pos)
+        : mComponent(component), mDampening(dampening), mPos(pos) {}
     };
 
-public:
-    // prevent constructor by default
-    CircuitComponentList& operator=(CircuitComponentList const&) = delete;
-    CircuitComponentList(CircuitComponentList const&)            = delete;
-    CircuitComponentList()                                       = delete;
-
-public:
+    std::vector<Item> mComponents;
     /**
      * @symbol ?removeSource\@CircuitComponentList\@\@QEAA_NAEBVBlockPos\@\@PEBVBaseCircuitComponent\@\@\@Z
      */

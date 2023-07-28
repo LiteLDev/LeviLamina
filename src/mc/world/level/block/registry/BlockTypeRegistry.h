@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/string/HashedString.h"
+#include "mc/resources/BaseGameVersion.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/OwnerPtrT.h"
@@ -17,18 +19,19 @@ public:
     struct LookupByNameImplReturnType;
     // clang-format on
 
+    using BlockComplexAliasCallback = std::function<class Block const*(int)>;
+
     // BlockTypeRegistry inner types define
-    enum class LookupByNameImplResolve {};
+    enum class LookupByNameImplResolve : int {
+        BlockLegacy = 0x0,
+        Block       = 0x1,
+    };
 
     struct BlockComplexAliasBlockState {
 
     public:
-        // prevent constructor by default
-        BlockComplexAliasBlockState& operator=(BlockComplexAliasBlockState const&) = delete;
-        BlockComplexAliasBlockState(BlockComplexAliasBlockState const&)            = delete;
-        BlockComplexAliasBlockState()                                              = delete;
-
-    public:
+        class HashedString stateName;
+        int                value;
         /**
          * @symbol ??1BlockComplexAliasBlockState\@BlockTypeRegistry\@\@QEAA\@XZ
          */
@@ -38,12 +41,8 @@ public:
     class BlockComplexAliasContent {
 
     public:
-        // prevent constructor by default
-        BlockComplexAliasContent& operator=(BlockComplexAliasContent const&) = delete;
-        BlockComplexAliasContent(BlockComplexAliasContent const&)            = delete;
-        BlockComplexAliasContent()                                           = delete;
-
-    public:
+        BlockComplexAliasCallback mCallback;
+        class BaseGameVersion     mMinRequiredVersion;
         /**
          * @symbol
          * ?getRequiredBaseGameVersion\@BlockComplexAliasContent\@BlockTypeRegistry\@\@QEBAAEBVBaseGameVersion\@\@XZ
@@ -67,6 +66,9 @@ public:
         LookupByNameImplReturnType(LookupByNameImplReturnType const&)            = delete;
         LookupByNameImplReturnType()                                             = delete;
 
+        class WeakPtr<class BlockLegacy> mBlockLegacy;
+        class Block const*               mBlock;
+
     public:
         /**
          * @symbol ??0LookupByNameImplReturnType\@BlockTypeRegistry\@\@QEAA\@PEBVBlock\@\@_N\@Z
@@ -89,11 +91,14 @@ public:
     BlockTypeRegistry(BlockTypeRegistry const&)            = delete;
     BlockTypeRegistry()                                    = delete;
 
-public:
+    inline static std::map<class HashedString, class SharedPtr<class BlockLegacy>>& getBlockLookupMap() {
+        return mBlockLookupMap;
+    }
     /**
      * @symbol ?computeBlockTypeRegistryChecksum\@BlockTypeRegistry\@\@SA_KAEBVBaseGameVersion\@\@\@Z
      */
-    MCAPI static unsigned __int64 computeBlockTypeRegistryChecksum(class BaseGameVersion const&); // NOLINT
+    MCAPI static unsigned __int64                                   // NOLINT
+    computeBlockTypeRegistryChecksum(class BaseGameVersion const&); // NOLINT
     /**
      * @symbol ?finalizeBlockComponentStorage\@BlockTypeRegistry\@\@SAXXZ
      */
@@ -185,7 +190,7 @@ public:
      * @symbol
      * ?_lookupByNameImpl\@BlockTypeRegistry\@\@CA?AULookupByNameImplReturnType\@1\@AEBVHashedString\@\@HW4LookupByNameImplResolve\@1\@_N\@Z
      */
-    MCAPI static struct BlockTypeRegistry::LookupByNameImplReturnType _lookupByNameImpl(
+    MCAPI static struct LookupByNameImplReturnType _lookupByNameImpl( // NOLINT
         class HashedString const&,
         int,
         enum class BlockTypeRegistry::LookupByNameImplResolve,
@@ -201,7 +206,7 @@ private:
         class HashedString,
         class HashedString,
         struct std::hash<class HashedString>,
-        struct std::equal_to<class HashedString>,
+        struct std::equal_to<class HashedString>, // NOLINT
         class std::allocator<struct std::pair<class HashedString const, class HashedString>>>
         mBlockAliasLookupMap; // NOLINT
     /**
@@ -212,7 +217,7 @@ private:
         class HashedString,
         class BlockTypeRegistry::BlockComplexAliasContent,
         struct std::hash<class HashedString>,
-        struct std::equal_to<class HashedString>,
+        struct std::equal_to<class HashedString>, // NOLINT
         class std::allocator<
             struct std::pair<class HashedString const, class BlockTypeRegistry::BlockComplexAliasContent>>>
         mBlockComplexAliasLookupMap; // NOLINT
@@ -223,7 +228,7 @@ private:
     MCAPI static class std::map<
         class HashedString,
         std::vector<class std::reference_wrapper<class HashedString const>>,
-        struct std::less<class HashedString>,
+        struct std::less<class HashedString>, // NOLINT
         class std::allocator<struct std::pair<
             class HashedString const,
             std::vector<class std::reference_wrapper<class HashedString const>>>>>
@@ -235,7 +240,7 @@ private:
     MCAPI static class std::map<
         class HashedString,
         class SharedPtr<class BlockLegacy>,
-        struct std::less<class HashedString>,
+        struct std::less<class HashedString>, // NOLINT
         class std::allocator<struct std::pair<class HashedString const, class SharedPtr<class BlockLegacy>>>>
         mBlockLookupMap; // NOLINT
     /**
@@ -246,7 +251,7 @@ private:
         unsigned __int64,
         class HashedString,
         struct std::hash<unsigned __int64>,
-        struct std::equal_to<unsigned __int64>,
+        struct std::equal_to<unsigned __int64>, // NOLINT
         class std::allocator<struct std::pair<unsigned __int64 const, class HashedString>>>
         mBlockNameHashToStringMap; // NOLINT
     /**
@@ -257,8 +262,8 @@ private:
      * @symbol
      * ?mKnownNamespaces\@BlockTypeRegistry\@\@0V?$set\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@U?$less\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@A
      */
-    MCAPI static class std::set<std::string, struct std::less<std::string>, class std::allocator<std::string>>
-        mKnownNamespaces; // NOLINT
+    MCAPI static class std::set<std::string, struct std::less<std::string>, class std::allocator<std::string>> // NOLINT
+        mKnownNamespaces;                                                                                      // NOLINT
     /**
      * @symbol ?mRWLock\@BlockTypeRegistry\@\@0V?$shared_ptr\@VBlockTypeRegistryRWLock\@\@\@std\@\@A
      */

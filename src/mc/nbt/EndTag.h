@@ -8,12 +8,6 @@
 class EndTag : public ::Tag {
 
 public:
-    // prevent constructor by default
-    EndTag& operator=(EndTag const&) = delete;
-    EndTag(EndTag const&)            = delete;
-    EndTag()                         = delete;
-
-public:
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0

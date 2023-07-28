@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/commands/CommandFlag.h"
+#include "mc/server/commands/CommandPermissionLevel.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -20,24 +22,29 @@ public:
     // clang-format on
 
     // AvailableCommandsPacket inner types define
+
+    struct ChainedSubcommandDataValue {
+        unsigned int index;
+        unsigned int value;
+    };
+
     struct ChainedSubcommandData {
 
     public:
-        // prevent constructor by default
-        ChainedSubcommandData& operator=(ChainedSubcommandData const&) = delete;
-        ChainedSubcommandData(ChainedSubcommandData const&)            = delete;
-        ChainedSubcommandData()                                        = delete;
+        std::string                             name;
+        std::vector<ChainedSubcommandDataValue> valueIndices;
     };
 
     struct CommandData {
 
     public:
-        // prevent constructor by default
-        CommandData& operator=(CommandData const&) = delete;
-        CommandData(CommandData const&)            = delete;
-        CommandData()                              = delete;
-
-    public:
+        std::string                       name;           // 0
+        std::string                       description;    // 32
+        struct CommandFlag                flag;           // 64
+        enum class CommandPermissionLevel perm;           // 66
+        std::vector<OverloadData>         overloads;      // 72
+        std::vector<int>                  chainedOffsets; // 96
+        int                               aliasEnumIndex; // 120
         /**
          * @symbol ??0CommandData\@AvailableCommandsPacket\@\@QEAA\@$$QEAU01\@\@Z
          */
@@ -51,12 +58,9 @@ public:
     struct ConstrainedValueData {
 
     public:
-        // prevent constructor by default
-        ConstrainedValueData& operator=(ConstrainedValueData const&) = delete;
-        ConstrainedValueData(ConstrainedValueData const&)            = delete;
-        ConstrainedValueData()                                       = delete;
-
-    public:
+        int                        enumValueIndex;
+        int                        enumNameIndex;
+        std::vector<unsigned char> indices;
         /**
          * @symbol ??1ConstrainedValueData\@AvailableCommandsPacket\@\@QEAA\@XZ
          */
@@ -66,12 +70,8 @@ public:
     struct EnumData {
 
     public:
-        // prevent constructor by default
-        EnumData& operator=(EnumData const&) = delete;
-        EnumData(EnumData const&)            = delete;
-        EnumData()                           = delete;
-
-    public:
+        std::string               name;
+        std::vector<unsigned int> valueIndices;
         /**
          * @symbol ??1EnumData\@AvailableCommandsPacket\@\@QEAA\@XZ
          */
@@ -81,12 +81,8 @@ public:
     struct OverloadData {
 
     public:
-        // prevent constructor by default
-        OverloadData& operator=(OverloadData const&) = delete;
-        OverloadData(OverloadData const&)            = delete;
-        OverloadData()                               = delete;
-
-    public:
+        std::vector<ParamData> datas;
+        bool                   chained;
         /**
          * @symbol ??1OverloadData\@AvailableCommandsPacket\@\@QEAA\@XZ
          */
@@ -96,12 +92,10 @@ public:
     struct ParamData {
 
     public:
-        // prevent constructor by default
-        ParamData& operator=(ParamData const&) = delete;
-        ParamData(ParamData const&)            = delete;
-        ParamData()                            = delete;
-
-    public:
+        std::string   desc;
+        unsigned int  sym;
+        bool          optional;
+        unsigned char paramOptions;
         /**
          * @symbol ??1ParamData\@AvailableCommandsPacket\@\@QEAA\@XZ
          */
@@ -111,12 +105,8 @@ public:
     struct SoftEnumData {
 
     public:
-        // prevent constructor by default
-        SoftEnumData& operator=(SoftEnumData const&) = delete;
-        SoftEnumData(SoftEnumData const&)            = delete;
-        SoftEnumData()                               = delete;
-
-    public:
+        std::string              name;
+        std::vector<std::string> values;
         /**
          * @symbol ??1SoftEnumData\@AvailableCommandsPacket\@\@QEAA\@XZ
          */

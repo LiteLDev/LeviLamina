@@ -8,6 +8,8 @@ public:
     // prevent constructor by default
     Brightness() = delete;
 
+    unsigned char value;
+
 public:
     /**
      * @symbol ??0Brightness\@\@QEAA\@AEBU0\@\@Z

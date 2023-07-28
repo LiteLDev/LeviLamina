@@ -5,12 +5,7 @@
 class CommandBlockName {
 
 public:
-    // prevent constructor by default
-    CommandBlockName& operator=(CommandBlockName const&) = delete;
-    CommandBlockName(CommandBlockName const&)            = delete;
-    CommandBlockName()                                   = delete;
-
-public:
+    uint64_t id;
     /**
      * @symbol ??0CommandBlockName\@\@QEAA\@_K\@Z
      */

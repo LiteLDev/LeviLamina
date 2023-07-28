@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/events/ListenerInfo.h"
 
 class BlockEventDispatcher {
 
@@ -9,6 +10,9 @@ public:
     BlockEventDispatcher& operator=(BlockEventDispatcher const&) = delete;
     BlockEventDispatcher(BlockEventDispatcher const&)            = delete;
     BlockEventDispatcher()                                       = delete;
+
+    std::unordered_map<int, std::unique_ptr<class ListenerInfo>> mRegisteredListeners;
+    int                                                          mHandleCounter;
 
 public:
     /**

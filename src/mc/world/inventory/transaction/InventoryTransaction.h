@@ -5,6 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/deps/core/data/BidirectionalUnorderedMap.h"
+#include "mc/world/inventory/transaction/InventoryAction.h"
+#include "mc/world/inventory/transaction/InventoryTransactionItemGroup.h"
 
 class InventoryTransaction {
 
@@ -12,6 +14,9 @@ public:
     // prevent constructor by default
     InventoryTransaction& operator=(InventoryTransaction const&) = delete;
     InventoryTransaction()                                       = delete;
+
+    std::unordered_map<class InventorySource, std::vector<class InventoryAction>> actions; // 0x0
+    std::vector<class InventoryTransactionItemGroup>                              items;   // 0x40
 
 public:
     /**

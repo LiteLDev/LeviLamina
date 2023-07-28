@@ -7,12 +7,12 @@ namespace mce {
 class UUID {
 
 public:
-    // prevent constructor by default
-    UUID& operator=(UUID const&) = delete;
-    UUID(UUID const&)            = delete;
-    UUID()                       = delete;
+    uint64_t a, b;
 
-public:
+    inline operator bool() const { return !isEmpty(); }
+    UUID() = delete;
+    // LLAPI UUID();
+    UUID(uint64_t a, uint64_t b) : a(a), b(b) {}
     /**
      * @symbol ?asString\@UUID\@mce\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */

@@ -5,12 +5,14 @@
 struct ActorUniqueID {
 
 public:
-    // prevent constructor by default
-    ActorUniqueID& operator=(ActorUniqueID const&) = delete;
-    ActorUniqueID(ActorUniqueID const&)            = delete;
-    ActorUniqueID()                                = delete;
+    long long id;
+    ActorUniqueID() { id = -1; }
 
-public:
+    explicit ActorUniqueID(long long i) { id = i; }
+
+    [[nodiscard]] inline long long get() const { return id; }
+
+    inline explicit operator long long() const { return id; }
     /**
      * @symbol ?getHash\@ActorUniqueID\@\@QEBA_KXZ
      */

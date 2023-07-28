@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class CommandParameterOption : char {
-    None                      = 0x0,
-    EnumAutocompleteExpansion = 0x1,
-    HasSemanticConstraint     = 0x2,
-    EnumAsChainedCommand      = 0x4,
+    None                      = 0,
+    EnumAutocompleteExpansion = 1 << 0,
+    HasSemanticConstraint     = 1 << 1,
+    EnumAsChainedCommand      = 1 << 2,
 };

@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/CircuitComponentType.h"
+#include "mc/enums/FaceID.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list
 #include "mc/world/redstone/circuit/components/CircuitComponentList.h"
@@ -8,11 +11,21 @@
 class BaseCircuitComponent {
 
 public:
-    // prevent constructor by default
-    BaseCircuitComponent& operator=(BaseCircuitComponent const&) = delete;
-    BaseCircuitComponent(BaseCircuitComponent const&)            = delete;
-
-public:
+    CircuitComponentList mSources;
+    // Core::RefCountedSet<BaseCircuitComponent*> mDestinations; // DEBUG
+    bool                            mIgnoreFirstUpdate;
+    bool                            mIsFirstTime;
+    bool                            mNeedsUpdate;
+    class BlockPos                  mPos;
+    class BlockPos                  mChunkPosition;
+    bool                            mShouldEvaluate;
+    int                             mStrength;
+    enum class FaceID               mDirection;
+    bool                            mAllowPowerUp;
+    bool                            mAllowPowerDown;
+    bool                            mRemoved;
+    bool                            mConsumePowerAnyDirection;
+    enum class CircuitComponentType mCircuitComponentType;
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0

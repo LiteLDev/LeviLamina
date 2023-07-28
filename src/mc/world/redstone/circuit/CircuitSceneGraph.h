@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/redstone/circuit/components/CircuitComponentList.h"
 
 class CircuitSceneGraph {
 public:
@@ -13,12 +15,11 @@ public:
     class PendingEntry {
 
     public:
-        // prevent constructor by default
-        PendingEntry& operator=(PendingEntry const&) = delete;
-        PendingEntry(PendingEntry const&)            = delete;
-        PendingEntry()                               = delete;
+        PendingEntry() = delete;
 
-    public:
+        class BaseCircuitComponent*                 mRawComponentPtr;
+        std::unique_ptr<class BaseCircuitComponent> mComponent;
+        class BlockPos                              mPos;
         /**
          * @symbol ??0PendingEntry\@CircuitSceneGraph\@\@QEAA\@$$QEAV01\@\@Z
          */
@@ -34,11 +35,14 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    CircuitSceneGraph& operator=(CircuitSceneGraph const&) = delete;
-    CircuitSceneGraph(CircuitSceneGraph const&)            = delete;
-
-public:
+    std::unordered_map<BlockPos, std::unique_ptr<BaseCircuitComponent>> mAllComponents;
+    CircuitComponentList                                                mActiveComponents;
+    std::unordered_map<BlockPos, CircuitComponentList>                  mActiveComponentsPerChunk;
+    std::unordered_map<BlockPos, CircuitComponentList>                  mPowerAssociationMap;
+    std::unordered_map<BlockPos, PendingEntry>                          mPendingAdds;
+    std::unordered_map<BlockPos, PendingEntry>                          mPendingUpdates;
+    std::unordered_map<BlockPos, std::vector<BlockPos>>                 mComponentsToReEvaluate;
+    std::vector<PendingEntry>                                           mPendingRemoves;
     /**
      * @symbol ??0CircuitSceneGraph\@\@QEAA\@XZ
      */

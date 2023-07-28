@@ -9,8 +9,6 @@ public:
     NbtIo& operator=(NbtIo const&) = delete;
     NbtIo(NbtIo const&)            = delete;
     NbtIo()                        = delete;
-
-public:
     /**
      * @symbol
      * ?read\@NbtIo\@\@SA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@AEAVIDataInput\@\@\@Z

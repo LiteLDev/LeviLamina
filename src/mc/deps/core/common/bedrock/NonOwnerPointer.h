@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 
 namespace Bedrock {
 
@@ -8,10 +9,7 @@ template <typename T0>
 class NonOwnerPointer {
 
 public:
-
-    std::shared_ptr<T0> mPtr;
-
-    NonOwnerPointer(T0& a1) { mPtr = std::make_shared<T0>(a1); }
+    std::shared_ptr<Bedrock::EnableNonOwnerReferences::ControlBlock> mPtr;
 };
 
 }; // namespace Bedrock

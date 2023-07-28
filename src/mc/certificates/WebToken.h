@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/json/Value.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -10,9 +11,12 @@ namespace Json { class Value; }
 class WebToken {
 
 public:
-    // prevent constructor by default
-    WebToken& operator=(WebToken const&) = delete;
-    WebToken(WebToken const&)            = delete;
+  std::string mHeader;
+  Json::Value mHeaderInfo;
+  std::string mData;
+  Json::Value mDataInfo;
+  std::string mSignature;
+
     WebToken()                           = delete;
 
 public:

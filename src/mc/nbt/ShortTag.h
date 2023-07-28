@@ -8,12 +8,7 @@
 class ShortTag : public ::Tag {
 
 public:
-    // prevent constructor by default
-    ShortTag& operator=(ShortTag const&) = delete;
-    ShortTag(ShortTag const&)            = delete;
-    ShortTag()                           = delete;
-
-public:
+    short data;
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0

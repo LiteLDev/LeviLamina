@@ -5,12 +5,7 @@
 class CommandSoftEnumRegistry {
 
 public:
-    // prevent constructor by default
-    CommandSoftEnumRegistry& operator=(CommandSoftEnumRegistry const&) = delete;
-    CommandSoftEnumRegistry(CommandSoftEnumRegistry const&)            = delete;
-    CommandSoftEnumRegistry()                                          = delete;
-
-public:
+    class CommandRegistry* registry;
     /**
      * @symbol ??0CommandSoftEnumRegistry\@\@QEAA\@PEAVCommandRegistry\@\@\@Z
      */

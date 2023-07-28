@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/InventorySourceType.h"
+#include "mc/world/containers/ContainerID.h"
 
 class InventorySource {
 public:
@@ -10,13 +12,15 @@ public:
     // clang-format on
 
     // InventorySource inner types define
-    enum class InventorySourceFlags {};
+    enum class InventorySourceFlags : unsigned int {
+        NoFlag                  = 0x0,
+        WorldInteraction_Random = 0x1,
+    };
 
-public:
-    // prevent constructor by default
-    InventorySource& operator=(InventorySource const&) = delete;
-    InventorySource(InventorySource const&)            = delete;
-    InventorySource()                                  = delete;
+
+    InventorySourceType  mType        = InventorySourceType::InvalidInventory; // this+0x0
+    ContainerID          mContainerId = ContainerID::None;                     // this+0x4
+    InventorySourceFlags mFlags       = InventorySourceFlags::NoFlag;          // this+0x8
 
 public:
     /**

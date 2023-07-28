@@ -1,16 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/nbt/ListTag.h"
 
 class ListTagIntAdder {
 
 public:
-    // prevent constructor by default
-    ListTagIntAdder& operator=(ListTagIntAdder const&) = delete;
-    ListTagIntAdder(ListTagIntAdder const&)            = delete;
-    ListTagIntAdder()                                  = delete;
-
-public:
+    std::unique_ptr<ListTag> mTag;
     /**
      * @symbol ??RListTagIntAdder\@\@QEAAAEAV0\@H\@Z
      */

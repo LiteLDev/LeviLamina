@@ -3,62 +3,63 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class CommandFlagValue : unsigned short {
-    None        = 0x00,
-    Usage       = 0x01,
-    Visibility2 = 0x02,
-    Visibility4 = 0x04,
-    Visibility6 = 0x06,
-    Visibility8 = 0x08,
-    Sync        = 0x10,
-    Execute     = 0x20,
-    Type        = 0x40,
-    Cheat       = 0x80,
-    Async       = 0x100,
-    Editor      = 0x200,
+    None                         = 0,
+    UsageTest                    = 1 << 0,
+    HiddenFromCommandBlockOrigin = 1 << 1,
+    HiddenFromPlayerOrigin       = 1 << 2,
+    HiddenFromAutomationOrigin   = 1 << 3,
+    SyncLocal                    = 1 << 4,
+    ExecuteDisallowed            = 1 << 5,
+    TypeMessage                  = 1 << 6,
+    NotCheat                     = 1 << 7,
+    Async                        = 1 << 8,
+    NoEditor                     = 1 << 9,
+    Hidden                       = HiddenFromPlayerOrigin | HiddenFromCommandBlockOrigin,
+    Removed                      = Hidden | HiddenFromAutomationOrigin,
 };
 
 enum class CommandUsageFlag : unsigned short {
-    Normal = 0x00,
-    Test   = 0x1,
+    Normal = 0,
+    Test   = 1 << 0,
 };
 
 enum class CommandVisibilityFlag : unsigned short {
-    Visible                      = 0x00,
-    HiddenFromCommandBlockOrigin = 0x02,
-    HiddenFromPlayerOrigin       = 0x04,
-    Hidden                       = 0x06,
-    HiddenFromAutomationOrigin   = 0x08,
-    Removed                      = 0xe,
+    Visible                      = 0,
+    HiddenFromCommandBlockOrigin = 1 << 1,
+    HiddenFromPlayerOrigin       = 1 << 2,
+    HiddenFromAutomationOrigin   = 1 << 3,
+    Hidden                       = HiddenFromPlayerOrigin | HiddenFromCommandBlockOrigin,
+    Removed                      = Hidden | HiddenFromAutomationOrigin,
 };
 
 enum class CommandSyncFlag : unsigned short {
-    Synced = 0x00,
-    Local  = 0x10,
+    Synced = 0,
+    Local  = 1 << 4,
 };
 
 enum class CommandExecuteFlag : unsigned short {
-    Allowed    = 0x00,
-    Disallowed = 0x20,
+    Allowed    = 0,
+    Disallowed = 1 << 5,
 };
 
 enum class CommandTypeFlag : unsigned short {
-    None    = 0x00,
-    Message = 0x40,
+    None    = 0,
+    Message = 1 << 6,
 };
 
 enum class CommandCheatFlag : unsigned short {
-    Cheat    = 0x00,
-    NotCheat = 0x80,
+    Cheat    = 0,
+    NotCheat = 1 << 7,
 };
 
 enum class CommandAsyncFlag : unsigned short {
-    Synch = 0x00,
-    Async = 0x100,
+    Synch = 0,
+    Async = 1 << 8,
 };
 
 enum class CommandEditorFlag : unsigned short {
-    Editor   = 0x0,
-    NoEditor = 0x200,
+    Editor   = 0,
+    NoEditor = 1 << 9,
 };
 
 struct CommandFlag {

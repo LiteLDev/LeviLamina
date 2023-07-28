@@ -1,16 +1,42 @@
 #pragma once
 
+#ifndef COMPOUND_TAG_VARIANT_HEADER
+#define COMPOUND_TAG_VARIANT_HEADER
+
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/nbt/ByteArrayTag.h"
+#include "mc/nbt/ByteTag.h"
+#include "mc/nbt/DoubleTag.h"
+#include "mc/nbt/EndTag.h"
+#include "mc/nbt/FloatTag.h"
+#include "mc/nbt/Int64Tag.h"
+#include "mc/nbt/IntTag.h"
+#include "mc/nbt/ListTag.h"
+#include "mc/nbt/ShortTag.h"
+#include "mc/nbt/StringTag.h"
+#include "mc/nbt/CompoundTag.h"
+#include "mc/nbt/IntArrayTag.h"
+
+class CompoundTag;
 
 class CompoundTagVariant {
 
 public:
-    // prevent constructor by default
-    CompoundTagVariant& operator=(CompoundTagVariant const&) = delete;
-    CompoundTagVariant(CompoundTagVariant const&)            = delete;
-    CompoundTagVariant()                                     = delete;
+    using Variant = std::variant<
+        class EndTag,
+        class ByteTag,
+        class ShortTag,
+        class IntTag,
+        class Int64Tag,
+        class FloatTag,
+        class DoubleTag,
+        class ByteArrayTag,
+        class StringTag,
+        class ListTag,
+        class CompoundTag,
+        class IntArrayTag>;
 
-public:
+    Variant mTagStorage;
     /**
      * @symbol ?emplace\@CompoundTagVariant\@\@QEAAAEAVTag\@\@$$QEAV2\@\@Z
      */
@@ -32,3 +58,4 @@ public:
      */
     MCAPI ~CompoundTagVariant(); // NOLINT
 };
+#endif // COMPOUND_TAG_VARIANT_HEADER

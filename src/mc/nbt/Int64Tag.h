@@ -8,12 +8,7 @@
 class Int64Tag : public ::Tag {
 
 public:
-    // prevent constructor by default
-    Int64Tag& operator=(Int64Tag const&) = delete;
-    Int64Tag(Int64Tag const&)            = delete;
-    Int64Tag()                           = delete;
-
-public:
+    int64_t data;
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0

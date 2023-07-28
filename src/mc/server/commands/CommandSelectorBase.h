@@ -1,14 +1,40 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/common/InvertableFilter.h"
+#include "mc/deps/core/string/HashedString.h"
+#include "mc/server/commands/CommandPosition.h"
+#include "mc/server/commands/CommandSelectionOrder.h"
+#include "mc/server/commands/CommandSelectionType.h"
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
+#include "mc/world/level/BlockPos.h"
 
 class CommandSelectorBase {
 
 public:
-    // prevent constructor by default
-    CommandSelectorBase& operator=(CommandSelectorBase const&) = delete;
-    CommandSelectorBase(CommandSelectorBase const&)            = delete;
-    CommandSelectorBase()                                      = delete;
+    static const uint64_t                                                            Unlimited = 0xFFFFFFFF; // constant
+    int                                                                              mVersion;               // this+0x0
+    enum class CommandSelectionType                                                  mType;                  // this+0x4
+    enum class CommandSelectionOrder                                                 mOrder;                 // this+0x8
+    std::vector<InvertableFilter<std::string>>                                       mNameFilters;          // this+0x10
+    std::vector<InvertableFilter<ActorDefinitionIdentifier>>                         mTypeFilters;          // this+0x28
+    std::vector<InvertableFilter<HashedString>>                                      mFamilyFilters;        // this+0x40
+    std::vector<InvertableFilter<std::string>>                                       mTagFilters;           // this+0x58
+    std::vector<std::function<bool(class CommandOrigin const&, class Actor const&)>> mFilterChain;          // this+0x70
+    class CommandPosition                                                            mPosition;             // this+0x88
+    class BlockPos                                                                   mBoxDeltas;            // this+0x98
+    float                                                                            mRadiusMinSqr;         // this+0xA4
+    float                                                                            mRadiusMaxSqr;         // this+0xA8
+    uint64_t                                                                         mCount;                // this+0xB0
+    bool                                                                             mIncludeDeadPlayers;   // this+0xB8
+    bool                                                                             mIsPositionBound;      // this+0xB9
+    bool                                                                             mDistanceFiltered;     // this+0xBA
+    bool                                                                             mPositionFiltered;     // this+0xBB
+    bool                                                                             mCountFiltered;        // this+0xBC
+    bool                                                                             mHaveDeltas;           // this+0xBD
+    bool                                                                             mForcePlayer;          // this+0xBE
+    bool                                                                             mExcludeAgents;        // this+0xBF
+    bool                                                                             mIsExplicitIdSelector; // this+0xC0
 
 public:
     /**
