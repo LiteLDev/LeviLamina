@@ -37,6 +37,7 @@ public:
         class IntArrayTag>;
 
     Variant mTagStorage;
+
     /**
      * @symbol ?emplace\@CompoundTagVariant\@\@QEAAAEAVTag\@\@$$QEAV2\@\@Z
      */
@@ -58,4 +59,5 @@ public:
      */
     MCAPI ~CompoundTagVariant(); // NOLINT
 };
+
 #endif // COMPOUND_TAG_VARIANT_HEADER

@@ -4,9 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/network/packet/Packet.h"
+#include "mc/network/packet/BiomeDefinitionListPacket.h"
 
-class CompressedBiomeDefinitionListPacket : public ::Packet {
+class CompressedBiomeDefinitionListPacket : public ::BiomeDefinitionListPacket {
 
 public:
     // prevent constructor by default

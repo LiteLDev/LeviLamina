@@ -1,10 +1,12 @@
 #pragma once
 
+#ifndef COMPOUND_TAG_HEADER
+#define COMPOUND_TAG_HEADER
+
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/nbt/Tag.h"
 
-// auto generated inclusion list
-#include "mc/nbt/CompoundTagVariant.h"
+class CompoundTagVariant;
 
 enum class SnbtFormat : unsigned char {
     PartialNewLine = 0,
@@ -87,9 +89,7 @@ public:
      * @symbol
      * ?begin\@CompoundTag\@\@QEBA?AV?$_Tree_const_iterator\@V?$_Tree_val\@U?$_Tree_simple_types\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VCompoundTagVariant\@\@\@std\@\@\@std\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI class std::_Tree_const_iterator<class std::_Tree_val< // NOLINT
-        struct std::_Tree_simple_types<struct std::pair<std::string const, class CompoundTagVariant>>>>
-    begin() const; // NOLINT
+    MCAPI TagMap::const_iterator begin() const; // NOLINT
     /**
      * @symbol ?clear\@CompoundTag\@\@QEAAXXZ
      */
@@ -118,9 +118,7 @@ public:
      * @symbol
      * ?end\@CompoundTag\@\@QEBA?AV?$_Tree_const_iterator\@V?$_Tree_val\@U?$_Tree_simple_types\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VCompoundTagVariant\@\@\@std\@\@\@std\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI class std::_Tree_const_iterator<class std::_Tree_val< // NOLINT
-        struct std::_Tree_simple_types<struct std::pair<std::string const, class CompoundTagVariant>>>>
-    end() const; // NOLINT
+    MCAPI TagMap::const_iterator end() const; // NOLINT
     /**
      * @symbol ?get\@CompoundTag\@\@QEAAPEAVTag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
@@ -294,12 +292,7 @@ public:
      * @symbol
      * ?rawView\@CompoundTag\@\@QEBAAEBV?$map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VCompoundTagVariant\@\@U?$less\@X\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VCompoundTagVariant\@\@\@std\@\@\@2\@\@std\@\@XZ
      */
-    MCAPI class std::map< // NOLINT
-        std::string,
-        class CompoundTagVariant,
-        struct std::less<void>,
-        class std::allocator<struct std::pair<std::string const, class CompoundTagVariant>>> const&
-    rawView() const; // NOLINT
+    MCAPI class std::map<std::string,class CompoundTagVariant,std::less<void>> const& rawView() const; // NOLINT
     /**
      * @symbol ?remove\@CompoundTag\@\@QEAA_NV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
@@ -314,3 +307,7 @@ public:
      */
     MCAPI unsigned __int64 size() const; // NOLINT
 };
+
+#include "mc/nbt/CompoundTagVariant.h"
+
+#endif // COMPOUND_TAG_HEADER

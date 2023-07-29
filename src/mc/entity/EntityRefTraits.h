@@ -9,8 +9,8 @@
 struct EntityRefTraits {
 public:
     using StackRef           = EntityContext;
+    using OwnerStackRef      = StackRef;
     using WeakStorage        = WeakStorageEntity;
     using OwnerStorage       = OwnerStorageEntity;
-    using OwnerStackRef      = StackRef;
     using StackResultStorage = StackResultStorageEntity;
 };

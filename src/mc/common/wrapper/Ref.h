@@ -45,16 +45,6 @@ public:
 };
 
 template <typename T>
-struct SharePtrRefTraits {
-public:
-    using StackRef = T;
-    using WeakStorage = WeakStorageSharePtr<StackRef>;
-    using OwnerStorage = OwnerStorageSharePtr<StackRef>;
-    using OwnerStackRef = StackRef;
-    using StackResultStorage = StackResultStorageSharePtr<OwnerStackRef>;
-};
-
-template <typename T>
 class SharedCounter {
 public:
     explicit SharedCounter(T* p = nullptr) : ptr(p), share_count(1), weak_count(0) {}
