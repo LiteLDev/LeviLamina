@@ -18,6 +18,19 @@ public:
 
     inline Vec3(int _x, int _y, int _z) : x((float)_x), y((float)_y), z((float)_z){};
 
+    double operator*(const Vec3& other) const {
+        return x * other.x + y * other.y + z * other.z;
+    }
+
+    double length() const {
+        return sqrt(x * x + y * y + z * z);
+    }
+
+    static double angle(const Vec3& v1, const Vec3& v2) {
+        double cosAngle = (v1 * v2) / (v1.length() * v2.length());
+        return acos(cosAngle);
+    }
+
     MCAPI class Vec3 abs() const;
 
     MCAPI class Vec3 ceil() const;
