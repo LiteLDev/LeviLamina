@@ -14,6 +14,8 @@
 class TintMapColor {
 
 #define AFTER_EXTRA
+public:
+    std::array<mce::Color,4> colors;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TINTMAPCOLOR
