@@ -1120,7 +1120,6 @@ private:
      * @symbol
      * ?mServerItemsUsedInCreativeItems\@Item\@\@0V?$unique_ptr\@V?$set\@FU?$less\@F\@std\@\@V?$allocator\@F\@2\@\@std\@\@U?$default_delete\@V?$set\@FU?$less\@F\@std\@\@V?$allocator\@F\@2\@\@std\@\@\@2\@\@std\@\@A
      */
-    MCAPI static std::unique_ptr < std::set<short>,
-        std::default_delete<std::set<short, std::less<short>>> mServerItemsUsedInCreativeItems;
+    MCAPI static std::unique_ptr<std::set<short>> mServerItemsUsedInCreativeItems;
     // NOLINTEND
 };

@@ -267,9 +267,8 @@ MCAPI std::vector<std::string> splitLines(
     std::vector<std::string> const&,
     bool,
     bool,
-    std::basic_istream<
-        char,
-        std::char_traits<char>>& (*)(std::basic_istream<char, std::char_traits<char>>&, std::string&)
+    std::basic_istream<char, std::char_traits<char>>& (*)(std::basic_istream<char, std::char_traits<char>>&,
+                                                          std::string&)
 );
 /**
  * @symbol

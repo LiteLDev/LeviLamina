@@ -381,11 +381,6 @@ private:
      * @symbol
      * ?mQuerySets\@ExpressionNode\@\@0V?$unordered_map\@VHashedString\@\@V?$unordered_set\@VHashedString\@\@U?$hash\@VHashedString\@\@\@std\@\@U?$equal_to\@VHashedString\@\@\@3\@V?$allocator\@VHashedString\@\@\@3\@\@std\@\@U?$hash\@VHashedString\@\@\@3\@U?$equal_to\@VHashedString\@\@\@3\@V?$allocator\@U?$pair\@$$CBVHashedString\@\@V?$unordered_set\@VHashedString\@\@U?$hash\@VHashedString\@\@\@std\@\@U?$equal_to\@VHashedString\@\@\@3\@V?$allocator\@VHashedString\@\@\@3\@\@std\@\@\@std\@\@\@3\@\@std\@\@A
      */
-    MCAPI static std::unordered_map < class HashedString, std::unordered_set<class HashedString>,
-        std::hash<class HashedString>, std::equal_to<class HashedString>,
-        std::allocator<std::pair<
-            class HashedString const,
-            std::unordered_set<class HashedString, std::hash<class HashedString>, std::equal_to<class HashedString>>>>
-            mQuerySets;
+    MCAPI static std::unordered_map<class HashedString, std::unordered_set<class HashedString>> mQuerySets;
     // NOLINTEND
 };
