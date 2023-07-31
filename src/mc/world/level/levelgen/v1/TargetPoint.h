@@ -11,8 +11,10 @@ public:
     TargetPoint()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0TargetPoint\@\@QEAA\@MMMMMM\@Z
      */
-    MCAPI TargetPoint(float, float, float, float, float, float); // NOLINT
+    MCAPI TargetPoint(float, float, float, float, float, float);
+    // NOLINTEND
 };

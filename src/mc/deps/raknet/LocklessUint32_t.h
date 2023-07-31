@@ -12,18 +12,20 @@ public:
     LocklessUint32_t(LocklessUint32_t const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?Decrement\@LocklessUint32_t\@RakNet\@\@QEAAIXZ
      */
-    MCAPI unsigned int Decrement(); // NOLINT
+    MCAPI unsigned int Decrement();
     /**
      * @symbol ?Increment\@LocklessUint32_t\@RakNet\@\@QEAAIXZ
      */
-    MCAPI unsigned int Increment(); // NOLINT
+    MCAPI unsigned int Increment();
     /**
      * @symbol ??0LocklessUint32_t\@RakNet\@\@QEAA\@XZ
      */
-    MCAPI LocklessUint32_t(); // NOLINT
+    MCAPI LocklessUint32_t();
+    // NOLINTEND
 };
 
 }; // namespace RakNet

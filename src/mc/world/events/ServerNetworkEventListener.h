@@ -11,15 +11,17 @@ public:
     ServerNetworkEventListener()                                             = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKEVENTLISTENER
     /**
      * @symbol
      * ?onEvent\@ServerNetworkEventListener\@\@UEAA?AW4EventResult\@\@AEBUServerNetworkGameplayNotificationEvent\@\@\@Z
      */
-    MCVAPI enum class EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const&); // NOLINT
+    MCVAPI enum class EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const&);
     /**
      * @symbol ?onMessage\@ServerNetworkEventListener\@\@UEAA?AW4EventResult\@\@AEBUMessageEvent\@\@\@Z
      */
-    MCVAPI enum class EventResult onMessage(struct MessageEvent const&); // NOLINT
+    MCVAPI enum class EventResult onMessage(struct MessageEvent const&);
 #endif
+    // NOLINTEND
 };

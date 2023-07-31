@@ -21,13 +21,15 @@ public:
     ScriptActorLifetimeStateBinding()                                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptActorLifetimeStateBinding\@ScriptModuleMinecraft\@\@SA?AV?$EnumBindingBuilder\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ScriptActorLifetimeState\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::
         EnumBindingBuilder<std::string, enum class ScriptModuleMinecraft::ScriptActorLifetimeState>
-        bind(); // NOLINT
+        bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

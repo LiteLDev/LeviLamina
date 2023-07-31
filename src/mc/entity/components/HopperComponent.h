@@ -10,16 +10,18 @@ public:
     HopperComponent(HopperComponent const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0HopperComponent\@\@QEAA\@XZ
      */
-    MCAPI HopperComponent(); // NOLINT
+    MCAPI HopperComponent();
     /**
      * @symbol ?getLastPosition\@HopperComponent\@\@QEBA?AVBlockPos\@\@XZ
      */
-    MCAPI class BlockPos getLastPosition() const; // NOLINT
+    MCAPI class BlockPos getLastPosition() const;
     /**
      * @symbol ?pullInItems\@HopperComponent\@\@QEAA_NAEAVActor\@\@\@Z
      */
-    MCAPI bool pullInItems(class Actor&); // NOLINT
+    MCAPI bool pullInItems(class Actor&);
+    // NOLINTEND
 };

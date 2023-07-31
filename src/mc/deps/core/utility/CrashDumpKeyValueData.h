@@ -11,17 +11,14 @@ public:
     CrashDumpKeyValueData()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0CrashDumpKeyValueData\@\@QEAA\@W4CrashDumpLogStringID\@\@0H_K\@Z
      */
-    MCAPI CrashDumpKeyValueData(
-        enum class CrashDumpLogStringID,
-        enum class CrashDumpLogStringID,
-        int,
-        unsigned __int64
-    ); // NOLINT
+    MCAPI CrashDumpKeyValueData(enum class CrashDumpLogStringID, enum class CrashDumpLogStringID, int, uint64_t);
     /**
      * @symbol ?kFormat\@CrashDumpKeyValueData\@\@2QBUCrashDumpFormatEntryImpl\@\@B
      */
-    MCAPI static struct CrashDumpFormatEntryImpl const kFormat[]; // NOLINT
+    MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
+    // NOLINTEND
 };

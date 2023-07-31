@@ -11,14 +11,16 @@ public:
     IActorMovementProxy()                                      = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IACTORMOVEMENTPROXY
     /**
      * @symbol ?isFlying\@IActorMovementProxy\@\@UEBA_NXZ
      */
-    MCVAPI bool isFlying() const; // NOLINT
+    MCVAPI bool isFlying() const;
 #endif
     /**
      * @symbol ?getRegionAsConstBlockSource\@IActorMovementProxy\@\@QEBAAEBVIConstBlockSource\@\@XZ
      */
-    MCAPI class IConstBlockSource const& getRegionAsConstBlockSource() const; // NOLINT
+    MCAPI class IConstBlockSource const& getRegionAsConstBlockSource() const;
+    // NOLINTEND
 };

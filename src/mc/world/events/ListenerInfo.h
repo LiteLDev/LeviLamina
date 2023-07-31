@@ -17,8 +17,10 @@ public:
     float                                                                                      mRadiusSqr; // this+0x4C
 
 private:
+    // NOLINTBEGIN
     /**
      * @symbol ?SQRT_FLT_MAX\@ListenerInfo\@\@0MB
      */
-    MCAPI static float const SQRT_FLT_MAX; // NOLINT
+    MCAPI static float const SQRT_FLT_MAX;
+    // NOLINTEND
 };

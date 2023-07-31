@@ -10,16 +10,18 @@ public:
     ScriptPluginStats()                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4ScriptPluginStats\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
-    MCAPI struct ScriptPluginStats& operator=(struct ScriptPluginStats const&); // NOLINT
+    MCAPI struct ScriptPluginStats& operator=(struct ScriptPluginStats const&);
     /**
      * @symbol ??4ScriptPluginStats\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct ScriptPluginStats& operator=(struct ScriptPluginStats&&); // NOLINT
+    MCAPI struct ScriptPluginStats& operator=(struct ScriptPluginStats&&);
     /**
      * @symbol ??1ScriptPluginStats\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptPluginStats(); // NOLINT
+    MCAPI ~ScriptPluginStats();
+    // NOLINTEND
 };

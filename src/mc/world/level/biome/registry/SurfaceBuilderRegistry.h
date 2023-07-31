@@ -11,8 +11,10 @@ public:
     SurfaceBuilderRegistry()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?lookupForEntity\@SurfaceBuilderRegistry\@\@QEBAPEAVISurfaceBuilder\@\@AEAVEntityContext\@\@\@Z
      */
-    MCAPI class ISurfaceBuilder* lookupForEntity(class EntityContext&) const; // NOLINT
+    MCAPI class ISurfaceBuilder* lookupForEntity(class EntityContext&) const;
+    // NOLINTEND
 };

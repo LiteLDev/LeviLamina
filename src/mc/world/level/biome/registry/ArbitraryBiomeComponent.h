@@ -11,8 +11,10 @@ public:
     ArbitraryBiomeComponent()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ArbitraryBiomeComponent\@\@QEAA\@XZ
      */
-    MCAPI ~ArbitraryBiomeComponent(); // NOLINT
+    MCAPI ~ArbitraryBiomeComponent();
+    // NOLINTEND
 };

@@ -11,10 +11,12 @@ public:
     ITickingAreaView()                                   = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITICKINGAREAVIEW
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ITickingAreaView(); // NOLINT
+    MCVAPI ~ITickingAreaView();
 #endif
+    // NOLINTEND
 };

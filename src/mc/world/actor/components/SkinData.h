@@ -16,20 +16,22 @@ public:
     SkinData()                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0SkinData\@\@QEAA\@AEBVActor\@\@\@Z
      */
-    MCAPI SkinData(class Actor const&); // NOLINT
+    MCAPI SkinData(class Actor const&);
     /**
      * @symbol ??0SkinData\@\@QEAA\@AEBVValue\@Json\@\@\@Z
      */
-    MCAPI SkinData(class Json::Value const&); // NOLINT
+    MCAPI SkinData(class Json::Value const&);
     /**
      * @symbol ?applyToActor\@SkinData\@\@QEBAXAEAVActor\@\@\@Z
      */
-    MCAPI void applyToActor(class Actor&) const; // NOLINT
+    MCAPI void applyToActor(class Actor&) const;
     /**
      * @symbol ?softMatch\@SkinData\@\@QEBA_NAEBU1\@AEA_N\@Z
      */
-    MCAPI bool softMatch(struct SkinData const&, bool&) const; // NOLINT
+    MCAPI bool softMatch(struct SkinData const&, bool&) const;
+    // NOLINTEND
 };

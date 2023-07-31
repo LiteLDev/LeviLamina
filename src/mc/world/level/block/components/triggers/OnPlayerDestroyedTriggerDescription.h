@@ -19,30 +19,32 @@ public:
     OnPlayerDestroyedTriggerDescription()                                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?getName\@OnPlayerDestroyedTriggerDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string const& getName() const; // NOLINT
+    virtual std::string const& getName() const;
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2(); // NOLINT
+    virtual void __unk_vfn_2();
     /**
      * @vftbl 4
      * @symbol __unk_vfn_4
      */
-    virtual void __unk_vfn_4(); // NOLINT
+    virtual void __unk_vfn_4();
     /**
      * @symbol
      * ?NameID\@OnPlayerDestroyedTriggerDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const NameID; // NOLINT
+    MCAPI static std::string const NameID;
+    // NOLINTEND
 };

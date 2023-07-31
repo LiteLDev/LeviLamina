@@ -11,8 +11,10 @@ public:
     WorldGenClimateMappingAttributes()                                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4WorldGenClimateMappingAttributes\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class WorldGenClimateMappingAttributes& operator=(class WorldGenClimateMappingAttributes&&); // NOLINT
+    MCAPI class WorldGenClimateMappingAttributes& operator=(class WorldGenClimateMappingAttributes&&);
+    // NOLINTEND
 };

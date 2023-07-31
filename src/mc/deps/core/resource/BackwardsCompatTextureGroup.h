@@ -10,11 +10,11 @@ public:
     BackwardsCompatTextureGroup(BackwardsCompatTextureGroup const&)            = delete;
     BackwardsCompatTextureGroup()                                              = delete;
 
-    // private:
-
 private:
+    // NOLINTBEGIN
     /**
      * @symbol ?invalidInfo\@BackwardsCompatTextureGroup\@\@0VBackwardsCompatTextureInfo\@\@B
      */
-    MCAPI static class BackwardsCompatTextureInfo const invalidInfo; // NOLINT
+    MCAPI static class BackwardsCompatTextureInfo const invalidInfo;
+    // NOLINTEND
 };

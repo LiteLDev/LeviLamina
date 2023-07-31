@@ -16,6 +16,7 @@ public:
     AnimatedImageData() = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0AnimatedImageData\@\@QEAA\@W4AnimatedTextureType\@persona\@\@W4AnimationExpression\@2\@AEBUImage\@mce\@\@M\@Z
@@ -25,13 +26,14 @@ public:
         enum class persona::AnimationExpression,
         struct mce::Image const&,
         float
-    ); // NOLINT
+    );
     /**
      * @symbol ??0AnimatedImageData\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI AnimatedImageData(class AnimatedImageData const&); // NOLINT
+    MCAPI AnimatedImageData(class AnimatedImageData const&);
     /**
      * @symbol ??4AnimatedImageData\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
-    MCAPI class AnimatedImageData& operator=(class AnimatedImageData const&); // NOLINT
+    MCAPI class AnimatedImageData& operator=(class AnimatedImageData const&);
+    // NOLINTEND
 };

@@ -10,12 +10,14 @@ public:
     LevelChunkBuilderData(LevelChunkBuilderData const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0LevelChunkBuilderData\@\@QEAA\@XZ
      */
-    MCAPI LevelChunkBuilderData(); // NOLINT
+    MCAPI LevelChunkBuilderData();
     /**
      * @symbol ??1LevelChunkBuilderData\@\@QEAA\@XZ
      */
-    MCAPI ~LevelChunkBuilderData(); // NOLINT
+    MCAPI ~LevelChunkBuilderData();
+    // NOLINTEND
 };

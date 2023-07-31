@@ -9,32 +9,34 @@ public:
     SeatDescription() = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0SeatDescription\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI SeatDescription(struct SeatDescription const&); // NOLINT
+    MCAPI SeatDescription(struct SeatDescription const&);
     /**
      * @symbol ?addRotationExpressionNode\@SeatDescription\@\@QEAAXAEBVExpressionNode\@\@\@Z
      */
-    MCAPI void addRotationExpressionNode(class ExpressionNode const&); // NOLINT
+    MCAPI void addRotationExpressionNode(class ExpressionNode const&);
     /**
      * @symbol ??4SeatDescription\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
-    MCAPI struct SeatDescription& operator=(struct SeatDescription const&); // NOLINT
+    MCAPI struct SeatDescription& operator=(struct SeatDescription const&);
     /**
      * @symbol ??4SeatDescription\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct SeatDescription& operator=(struct SeatDescription&&); // NOLINT
+    MCAPI struct SeatDescription& operator=(struct SeatDescription&&);
     /**
      * @symbol ??8SeatDescription\@\@QEBA_NAEBU0\@\@Z
      */
-    MCAPI bool operator==(struct SeatDescription const&) const; // NOLINT
+    MCAPI bool operator==(struct SeatDescription const&) const;
     /**
      * @symbol ??1SeatDescription\@\@QEAA\@XZ
      */
-    MCAPI ~SeatDescription(); // NOLINT
+    MCAPI ~SeatDescription();
     /**
      * @symbol ?EMPTY\@SeatDescription\@\@2U1\@B
      */
-    MCAPI static struct SeatDescription const EMPTY; // NOLINT
+    MCAPI static struct SeatDescription const EMPTY;
+    // NOLINTEND
 };

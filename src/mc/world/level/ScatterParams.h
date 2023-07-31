@@ -21,10 +21,12 @@ public:
         ChanceInformation()                                    = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1ChanceInformation\@ScatterParams\@\@QEAA\@XZ
          */
-        MCAPI ~ChanceInformation(); // NOLINT
+        MCAPI ~ChanceInformation();
+        // NOLINTEND
     };
 
     struct CoordinateRange {
@@ -34,26 +36,28 @@ public:
         CoordinateRange& operator=(CoordinateRange const&) = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??0CoordinateRange\@ScatterParams\@\@QEAA\@XZ
          */
-        MCAPI CoordinateRange(); // NOLINT
+        MCAPI CoordinateRange();
         /**
          * @symbol ??0CoordinateRange\@ScatterParams\@\@QEAA\@AEBU01\@\@Z
          */
-        MCAPI CoordinateRange(struct ScatterParams::CoordinateRange const&); // NOLINT
+        MCAPI CoordinateRange(struct ScatterParams::CoordinateRange const&);
         /**
          * @symbol ??0CoordinateRange\@ScatterParams\@\@QEAA\@$$QEAU01\@\@Z
          */
-        MCAPI CoordinateRange(struct ScatterParams::CoordinateRange&&); // NOLINT
+        MCAPI CoordinateRange(struct ScatterParams::CoordinateRange&&);
         /**
          * @symbol ?_eval\@CoordinateRange\@ScatterParams\@\@QEBAHHHAEAIAEAVRandom\@\@\@Z
          */
-        MCAPI int _eval(int, int, unsigned int&, class Random&) const; // NOLINT
+        MCAPI int _eval(int, int, unsigned int&, class Random&) const;
         /**
          * @symbol ??1CoordinateRange\@ScatterParams\@\@QEAA\@XZ
          */
-        MCAPI ~CoordinateRange(); // NOLINT
+        MCAPI ~CoordinateRange();
+        // NOLINTEND
     };
 
     class ScatteredPositions {
@@ -65,14 +69,16 @@ public:
         ScatteredPositions()                                     = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ?empty\@ScatteredPositions\@ScatterParams\@\@QEAA_NXZ
          */
-        MCAPI bool empty(); // NOLINT
+        MCAPI bool empty();
         /**
          * @symbol ?nextPos\@ScatteredPositions\@ScatterParams\@\@QEAA?AVBlockPos\@\@XZ
          */
-        MCAPI class BlockPos nextPos(); // NOLINT
+        MCAPI class BlockPos nextPos();
+        // NOLINTEND
     };
 
 public:
@@ -82,35 +88,37 @@ public:
     ScatterParams()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?addAdditionalSaveData\@ScatterParams\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
+    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
     /**
      * @symbol ?readAdditionalSaveData\@ScatterParams\@\@QEAAXAEBVCompoundTag\@\@\@Z
      */
-    MCAPI void readAdditionalSaveData(class CompoundTag const&); // NOLINT
+    MCAPI void readAdditionalSaveData(class CompoundTag const&);
     /**
      * @symbol
      * ?scatter\@ScatterParams\@\@QEBA?AVScatteredPositions\@1\@AEAVRenderParams\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     MCAPI class ScatterParams::ScatteredPositions
-    scatter(class RenderParams&, class BlockPos const&, class Random&) const; // NOLINT
+    scatter(class RenderParams&, class BlockPos const&, class Random&) const;
     /**
      * @symbol ??1ScatterParams\@\@QEAA\@XZ
      */
-    MCAPI ~ScatterParams(); // NOLINT
+    MCAPI ~ScatterParams();
     /**
      * @symbol ?initMolangParams\@ScatterParams\@\@SAXAEAVRenderParams\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    MCAPI static void initMolangParams(class RenderParams&, class BlockPos const&, class Random&); // NOLINT
+    MCAPI static void initMolangParams(class RenderParams&, class BlockPos const&, class Random&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_getPos\@ScatterParams\@\@AEBA?AVBlockPos\@\@IAEBV2\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */
-    MCAPI class BlockPos
-    _getPos(unsigned int, class BlockPos const&, class Random&, class RenderParams&) const; // NOLINT
+    MCAPI class BlockPos _getPos(unsigned int, class BlockPos const&, class Random&, class RenderParams&) const;
     /**
      * @symbol
      * ?_parseExpressionNodeFloat\@ScatterParams\@\@AEAAXAEBVCompoundTag\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1AEAVExpressionNode\@\@M\@Z
@@ -121,7 +129,6 @@ public:
         std::string const&,
         class ExpressionNode&,
         float
-    ); // NOLINT
-
-private:
+    );
+    // NOLINTEND
 };

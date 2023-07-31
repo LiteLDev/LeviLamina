@@ -14,30 +14,32 @@ public:
     RakWebSocketClient()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 8
      * @symbol ?_updateState\@RakWebSocketClient\@\@MEAAXXZ
      */
-    virtual void _updateState(); // NOLINT
+    virtual void _updateState();
     /**
      * @vftbl 9
      * @symbol ?_genMaskingKey\@RakWebSocketClient\@\@MEBAIXZ
      */
-    virtual unsigned int _genMaskingKey() const; // NOLINT
+    virtual unsigned int _genMaskingKey() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKWEBSOCKETCLIENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~RakWebSocketClient(); // NOLINT
+    MCVAPI ~RakWebSocketClient();
 #endif
     /**
      * @symbol
      * ??0RakWebSocketClient\@\@QEAA\@V?$unique_ptr\@VTcpProxy\@\@U?$default_delete\@VTcpProxy\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI RakWebSocketClient(std::unique_ptr<class TcpProxy>); // NOLINT
+    MCAPI RakWebSocketClient(std::unique_ptr<class TcpProxy>);
+    // NOLINTEND
 };

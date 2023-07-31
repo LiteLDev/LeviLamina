@@ -11,14 +11,16 @@ public:
     PillagerOutpostStart()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?postProcess\@PillagerOutpostStart\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&); // NOLINT
+    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    // NOLINTEND
 };

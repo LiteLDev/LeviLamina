@@ -16,21 +16,22 @@ public:
     ScriptLeverActionAfterEvent()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4ScriptLeverActionAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptLeverActionAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptLeverActionAfterEvent&&); // NOLINT
+    operator=(struct ScriptModuleMinecraft::ScriptLeverActionAfterEvent&&);
     /**
      * @symbol ??1ScriptLeverActionAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptLeverActionAfterEvent(); // NOLINT
+    MCAPI ~ScriptLeverActionAfterEvent();
     /**
      * @symbol
      * ?bind\@ScriptLeverActionAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptLeverActionAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptLeverActionAfterEvent>
-    bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptLeverActionAfterEvent> bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

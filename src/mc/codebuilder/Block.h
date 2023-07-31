@@ -13,10 +13,12 @@ public:
     Block()                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1Block\@CodeBuilder\@\@QEAA\@XZ
      */
-    MCAPI ~Block(); // NOLINT
+    MCAPI ~Block();
+    // NOLINTEND
 };
 
 }; // namespace CodeBuilder

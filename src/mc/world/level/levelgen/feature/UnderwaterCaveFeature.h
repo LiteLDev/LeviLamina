@@ -19,11 +19,12 @@ public:
     UnderwaterCaveFeature(UnderwaterCaveFeature const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 5
      * @symbol
@@ -31,13 +32,14 @@ public:
      */
     virtual bool
     carveEllipsoidVolume(class IBlockWorldGenAPI&, struct CaveFeatureUtils::CarverConfiguration const&, class Random&, class ChunkPos const&, class Vec3 const&, class BoundingBox const&, float, float, struct CaveFeatureUtils::CarvingParameters const&)
-        const; // NOLINT
+        const;
     /**
      * @symbol ??0UnderwaterCaveFeature\@\@QEAA\@XZ
      */
-    MCAPI UnderwaterCaveFeature(); // NOLINT
+    MCAPI UnderwaterCaveFeature();
     /**
      * @symbol ?isDiggable\@UnderwaterCaveFeature\@\@SA_NAEBVBlock\@\@\@Z
      */
-    MCAPI static bool isDiggable(class Block const&); // NOLINT
+    MCAPI static bool isDiggable(class Block const&);
+    // NOLINTEND
 };

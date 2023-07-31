@@ -19,19 +19,21 @@ public:
     HitboxDefinition()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?addAABB\@HitboxDefinition\@\@QEAAXAEBUHitboxJson\@\@\@Z
      */
-    MCAPI void addAABB(struct HitboxJson const&); // NOLINT
+    MCAPI void addAABB(struct HitboxJson const&);
     /**
      * @symbol ?initialize\@HitboxDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVHitboxComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class HitboxComponent&) const; // NOLINT
+    MCAPI void initialize(class EntityContext&, class HitboxComponent&) const;
     /**
      * @symbol
      * ?buildSchema\@HitboxDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VHitboxDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HitboxDefinition>>&); // NOLINT
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HitboxDefinition>>&);
+    // NOLINTEND
 };

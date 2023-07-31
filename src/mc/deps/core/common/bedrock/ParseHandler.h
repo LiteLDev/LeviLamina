@@ -18,58 +18,60 @@ public:
     ParseHandler()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?Bool\@ParseHandler\@JSONObject\@Bedrock\@\@QEAA_N_N\@Z
      */
-    MCAPI bool Bool(bool); // NOLINT
+    MCAPI bool Bool(bool);
     /**
      * @symbol ?Double\@ParseHandler\@JSONObject\@Bedrock\@\@QEAA_NN\@Z
      */
-    MCAPI bool Double(double); // NOLINT
+    MCAPI bool Double(double);
     /**
      * @symbol ?Int\@ParseHandler\@JSONObject\@Bedrock\@\@QEAA_NH\@Z
      */
-    MCAPI bool Int(int); // NOLINT
+    MCAPI bool Int(int);
     /**
      * @symbol ?Int64\@ParseHandler\@JSONObject\@Bedrock\@\@QEAA_N_J\@Z
      */
-    MCAPI bool Int64(__int64); // NOLINT
+    MCAPI bool Int64(int64_t);
     /**
      * @symbol ?Key\@ParseHandler\@JSONObject\@Bedrock\@\@QEAA_NPEBDI_N\@Z
      */
-    MCAPI bool Key(char const*, unsigned int, bool); // NOLINT
+    MCAPI bool Key(char const*, unsigned int, bool);
     /**
      * @symbol ?Null\@ParseHandler\@JSONObject\@Bedrock\@\@QEAA_NXZ
      */
-    MCAPI bool Null(); // NOLINT
+    MCAPI bool Null();
     /**
      * @symbol ?StartArray\@ParseHandler\@JSONObject\@Bedrock\@\@QEAA_NXZ
      */
-    MCAPI bool StartArray(); // NOLINT
+    MCAPI bool StartArray();
     /**
      * @symbol ?StartObject\@ParseHandler\@JSONObject\@Bedrock\@\@QEAA_NXZ
      */
-    MCAPI bool StartObject(); // NOLINT
+    MCAPI bool StartObject();
     /**
      * @symbol ?String\@ParseHandler\@JSONObject\@Bedrock\@\@QEAA_NPEBDI_N\@Z
      */
-    MCAPI bool String(char const*, unsigned int, bool); // NOLINT
+    MCAPI bool String(char const*, unsigned int, bool);
     /**
      * @symbol ?Uint\@ParseHandler\@JSONObject\@Bedrock\@\@QEAA_NI\@Z
      */
-    MCAPI bool Uint(unsigned int); // NOLINT
+    MCAPI bool Uint(unsigned int);
     /**
      * @symbol ?Uint64\@ParseHandler\@JSONObject\@Bedrock\@\@QEAA_N_K\@Z
      */
-    MCAPI bool Uint64(unsigned __int64); // NOLINT
+    MCAPI bool Uint64(uint64_t);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_addObjectOrArray\@ParseHandler\@JSONObject\@Bedrock\@\@AEAA_NAEBVValueWrapper\@23\@\@Z
      */
-    MCAPI bool _addObjectOrArray(class Bedrock::JSONObject::ValueWrapper const&); // NOLINT
-
-private:
+    MCAPI bool _addObjectOrArray(class Bedrock::JSONObject::ValueWrapper const&);
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::JSONObject

@@ -10,84 +10,86 @@ public:
     Experiments(Experiments const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?Cameras\@Experiments\@\@QEBA_NXZ
      */
-    MCAPI bool Cameras() const; // NOLINT
+    MCAPI bool Cameras() const;
     /**
      * @symbol ?DataDrivenBiomes\@Experiments\@\@QEBA_NXZ
      */
-    MCAPI bool DataDrivenBiomes() const; // NOLINT
+    MCAPI bool DataDrivenBiomes() const;
     /**
      * @symbol ?DataDrivenItems\@Experiments\@\@QEBA_NXZ
      */
-    MCAPI bool DataDrivenItems() const; // NOLINT
+    MCAPI bool DataDrivenItems() const;
     /**
      * @symbol ??0Experiments\@\@QEAA\@XZ
      */
-    MCAPI Experiments(); // NOLINT
+    MCAPI Experiments();
     /**
      * @symbol ?Gametest\@Experiments\@\@QEBA_NXZ
      */
-    MCAPI bool Gametest() const; // NOLINT
+    MCAPI bool Gametest() const;
     /**
      * @symbol ?RecipeUnlocking\@Experiments\@\@QEBA_NXZ
      */
-    MCAPI bool RecipeUnlocking() const; // NOLINT
+    MCAPI bool RecipeUnlocking() const;
     /**
      * @symbol ?ShortSneaking\@Experiments\@\@QEBA_NXZ
      */
-    MCAPI bool ShortSneaking() const; // NOLINT
+    MCAPI bool ShortSneaking() const;
     /**
      * @symbol ?UpcomingCreatorFeatures\@Experiments\@\@QEBA_NXZ
      */
-    MCAPI bool UpcomingCreatorFeatures() const; // NOLINT
+    MCAPI bool UpcomingCreatorFeatures() const;
     /**
      * @symbol
      * ?getExperimentsActiveAsJSONList\@Experiments\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getExperimentsActiveAsJSONList() const; // NOLINT
+    MCAPI std::string getExperimentsActiveAsJSONList() const;
     /**
      * @symbol
      * ?getExperimentsActiveForTelemetry\@Experiments\@\@QEBA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
      */
-    MCAPI std::vector<std::string> getExperimentsActiveForTelemetry() const; // NOLINT
+    MCAPI std::vector<std::string> getExperimentsActiveForTelemetry() const;
     /**
      * @symbol ?getTagData\@Experiments\@\@QEAAXAEBVCompoundTag\@\@\@Z
      */
-    MCAPI void getTagData(class CompoundTag const&); // NOLINT
+    MCAPI void getTagData(class CompoundTag const&);
     /**
      * @symbol ?isExperimentEnabled\@Experiments\@\@QEBA_NW4AllExperiments\@\@\@Z
      */
-    MCAPI bool isExperimentEnabled(enum class AllExperiments) const; // NOLINT
+    MCAPI bool isExperimentEnabled(enum class AllExperiments) const;
     /**
      * @symbol ?setExperimentByToggleIndex\@Experiments\@\@QEAAX_K_N\@Z
      */
-    MCAPI void setExperimentByToggleIndex(unsigned __int64, bool); // NOLINT
+    MCAPI void setExperimentByToggleIndex(uint64_t, bool);
     /**
      * @symbol ?setExperimentEnabled\@Experiments\@\@QEAAXW4AllExperiments\@\@_N\@Z
      */
-    MCAPI void setExperimentEnabled(enum class AllExperiments, bool); // NOLINT
+    MCAPI void setExperimentEnabled(enum class AllExperiments, bool);
     /**
      * @symbol ?setTagData\@Experiments\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void setTagData(class CompoundTag&) const; // NOLINT
+    MCAPI void setTagData(class CompoundTag&) const;
     /**
      * @symbol ??1Experiments\@\@QEAA\@XZ
      */
-    MCAPI ~Experiments(); // NOLINT
+    MCAPI ~Experiments();
     /**
      * @symbol ?MinecraftExplorer\@Experiments\@\@SA_NXZ
      */
-    MCAPI static bool MinecraftExplorer(); // NOLINT
+    MCAPI static bool MinecraftExplorer();
     /**
      * @symbol
      * ?getExperimentTextID\@Experiments\@\@SAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4AllExperiments\@\@\@Z
      */
-    MCAPI static std::string const& getExperimentTextID(enum class AllExperiments); // NOLINT
+    MCAPI static std::string const& getExperimentTextID(enum class AllExperiments);
     /**
      * @symbol
      * ?getToggleNames\@Experiments\@\@SAAEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
      */
-    MCAPI static std::vector<std::string> const& getToggleNames(); // NOLINT
+    MCAPI static std::vector<std::string> const& getToggleNames();
+    // NOLINTEND
 };

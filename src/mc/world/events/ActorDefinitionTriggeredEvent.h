@@ -11,8 +11,10 @@ public:
     ActorDefinitionTriggeredEvent()                                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ActorDefinitionTriggeredEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorDefinitionTriggeredEvent(); // NOLINT
+    MCAPI ~ActorDefinitionTriggeredEvent();
+    // NOLINTEND
 };

@@ -11,8 +11,10 @@ public:
     EducationEditionOfferValue()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4EducationEditionOfferValue\@\@QEAAAEAV0\@W4EducationEditionOffer\@\@\@Z
      */
-    MCAPI class EducationEditionOfferValue& operator=(enum class EducationEditionOffer); // NOLINT
+    MCAPI class EducationEditionOfferValue& operator=(enum class EducationEditionOffer);
+    // NOLINTEND
 };

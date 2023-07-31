@@ -19,11 +19,12 @@ public:
     Move()                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?setup\@Move\@AgentComponents\@\@SAXAEAV12\@AEAVEntityContext\@\@W4Direction\@2\@\@Z
      */
-    MCAPI static void
-    setup(class AgentComponents::Move&, class EntityContext&, enum class AgentComponents::Direction); // NOLINT
+    MCAPI static void setup(class AgentComponents::Move&, class EntityContext&, enum class AgentComponents::Direction);
+    // NOLINTEND
 };
 
 }; // namespace AgentComponents

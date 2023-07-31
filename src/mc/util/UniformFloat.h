@@ -18,10 +18,12 @@ public:
     UniformFloat()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?generateNext\@UniformFloat\@ValueProviders\@\@QEBAMAEAVRandom\@\@\@Z
      */
-    MCAPI float generateNext(class Random&) const; // NOLINT
+    MCAPI float generateNext(class Random&) const;
+    // NOLINTEND
 };
 
 }; // namespace ValueProviders

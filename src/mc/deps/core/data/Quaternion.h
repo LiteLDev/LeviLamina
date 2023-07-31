@@ -11,8 +11,10 @@ public:
     Quaternion()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0Quaternion\@\@QEAA\@AEBVMatrix\@\@\@Z
      */
-    MCAPI Quaternion(class Matrix const&); // NOLINT
+    MCAPI Quaternion(class Matrix const&);
+    // NOLINTEND
 };

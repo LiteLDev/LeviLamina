@@ -11,8 +11,10 @@ public:
     CommandName()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1CommandName\@\@QEAA\@XZ
      */
-    MCAPI ~CommandName(); // NOLINT
+    MCAPI ~CommandName();
+    // NOLINTEND
 };

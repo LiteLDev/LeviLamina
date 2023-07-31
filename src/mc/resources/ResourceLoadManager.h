@@ -11,8 +11,10 @@ public:
     ResourceLoadManager()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?cancel\@ResourceLoadManager\@\@QEAAXW4ResourceLoadType\@\@\@Z
      */
-    MCAPI void cancel(enum class ResourceLoadType); // NOLINT
+    MCAPI void cancel(enum class ResourceLoadType);
+    // NOLINTEND
 };

@@ -17,12 +17,14 @@ public:
     GameEvent()                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getType\@GameEvent\@\@QEBA?BW4GameEventType\@GameEventConfig\@\@XZ
      */
-    MCAPI enum class GameEventConfig::GameEventType const getType() const; // NOLINT
+    MCAPI enum class GameEventConfig::GameEventType const getType() const;
     /**
      * @symbol ?isCategory\@GameEvent\@\@QEBA_NW4GameEventCategory\@GameEventConfig\@\@\@Z
      */
-    MCAPI bool isCategory(enum class GameEventConfig::GameEventCategory) const; // NOLINT
+    MCAPI bool isCategory(enum class GameEventConfig::GameEventCategory) const;
+    // NOLINTEND
 };

@@ -11,10 +11,12 @@ public:
     ISecureStorageKeySystem()                                          = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISECURESTORAGEKEYSYSTEM
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ISecureStorageKeySystem(); // NOLINT
+    MCVAPI ~ISecureStorageKeySystem();
 #endif
+    // NOLINTEND
 };

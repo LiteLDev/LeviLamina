@@ -16,12 +16,13 @@ public:
     ScriptTickEvent()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bindV010\@ScriptTickEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptTickEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptTickEvent>
-    bindV010(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptTickEvent> bindV010();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

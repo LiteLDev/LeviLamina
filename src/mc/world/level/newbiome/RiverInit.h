@@ -18,10 +18,12 @@ public:
     RiverInit()                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0RiverInit\@OperationNodeFilters\@\@QEAA\@AEBVBiomeRegistry\@\@\@Z
      */
-    MCAPI RiverInit(class BiomeRegistry const&); // NOLINT
+    MCAPI RiverInit(class BiomeRegistry const&);
+    // NOLINTEND
 };
 
 }; // namespace OperationNodeFilters

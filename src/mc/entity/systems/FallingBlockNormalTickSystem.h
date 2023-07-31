@@ -16,18 +16,21 @@ public:
     FallingBlockNormalTickSystem()                                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@FallingBlockNormalTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_doFallingBlockNormalTickSystem\@FallingBlockNormalTickSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@AEAVITickDelegate\@\@\@Z
      */
     MCAPI static void
-    _doFallingBlockNormalTickSystem(class StrictEntityContext const&, class ActorOwnerComponent&, class ITickDelegate&); // NOLINT
+    _doFallingBlockNormalTickSystem(class StrictEntityContext const&, class ActorOwnerComponent&, class ITickDelegate&);
     /**
      * @symbol
      * ?_tickFallingBlockNormalTickSystem\@FallingBlockNormalTickSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UFallingBlockFlag\@\@\@\@\@\@VActorOwnerComponent\@\@\@\@\@Z
@@ -38,7 +41,6 @@ public:
                                                         struct Include<
                                                             class FlagComponent<struct ActorMovementTickNeededFlag>,
                                                             class FlagComponent<struct FallingBlockFlag>>,
-                                                        class ActorOwnerComponent>); // NOLINT
-
-private:
+                                                        class ActorOwnerComponent>);
+    // NOLINTEND
 };

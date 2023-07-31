@@ -10,12 +10,12 @@ public:
     LoadingProgressTickingSystem(LoadingProgressTickingSystem const&)            = delete;
     LoadingProgressTickingSystem()                                               = delete;
 
-    // private:
-
 private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?mChunksNeededForLoadOffsets\@LoadingProgressTickingSystem\@\@0V?$vector\@VChunkPos\@\@V?$allocator\@VChunkPos\@\@\@std\@\@\@std\@\@B
      */
-    MCAPI static std::vector<class ChunkPos> const mChunksNeededForLoadOffsets; // NOLINT
+    MCAPI static std::vector<class ChunkPos> const mChunksNeededForLoadOffsets;
+    // NOLINTEND
 };

@@ -11,10 +11,12 @@ public:
     DirectAgentMobMovementProxy()                                              = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DIRECTAGENTMOBMOVEMENTPROXY
     /**
      * @symbol ?isFlying\@DirectAgentMobMovementProxy\@\@UEBA_NXZ
      */
-    MCVAPI bool isFlying() const; // NOLINT
+    MCVAPI bool isFlying() const;
 #endif
+    // NOLINTEND
 };

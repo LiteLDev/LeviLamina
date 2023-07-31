@@ -10,12 +10,14 @@ public:
     GetAttachPositionViews()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0GetAttachPositionViews\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI GetAttachPositionViews(struct GetAttachPositionViews const&); // NOLINT
+    MCAPI GetAttachPositionViews(struct GetAttachPositionViews const&);
     /**
      * @symbol ??0GetAttachPositionViews\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI GetAttachPositionViews(struct GetAttachPositionViews&&); // NOLINT
+    MCAPI GetAttachPositionViews(struct GetAttachPositionViews&&);
+    // NOLINTEND
 };

@@ -17,34 +17,36 @@ public:
     ValueIteratorBase()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ValueIteratorBase\@Json\@\@QEAA\@AEBV01\@\@Z
      */
-    MCAPI ValueIteratorBase(class Json::ValueIteratorBase const&); // NOLINT
+    MCAPI ValueIteratorBase(class Json::ValueIteratorBase const&);
     /**
      * @symbol ?key\@ValueIteratorBase\@Json\@\@QEBA?AVValue\@2\@XZ
      */
-    MCAPI class Json::Value key() const; // NOLINT
+    MCAPI class Json::Value key() const;
     /**
      * @symbol ?memberName\@ValueIteratorBase\@Json\@\@QEBAPEBDXZ
      */
-    MCAPI char const* memberName() const; // NOLINT
+    MCAPI char const* memberName() const;
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol ?deref\@ValueIteratorBase\@Json\@\@IEBAAEAVValue\@2\@XZ
      */
-    MCAPI class Json::Value& deref() const; // NOLINT
+    MCAPI class Json::Value& deref() const;
     /**
      * @symbol ?increment\@ValueIteratorBase\@Json\@\@IEAAXXZ
      */
-    MCAPI void increment(); // NOLINT
+    MCAPI void increment();
     /**
      * @symbol ?isEqual\@ValueIteratorBase\@Json\@\@IEBA_NAEBV12\@\@Z
      */
-    MCAPI bool isEqual(class Json::ValueIteratorBase const&) const; // NOLINT
-
-protected:
+    MCAPI bool isEqual(class Json::ValueIteratorBase const&) const;
+    // NOLINTEND
 };
 
 }; // namespace Json

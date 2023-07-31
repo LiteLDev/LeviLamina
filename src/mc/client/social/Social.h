@@ -8,9 +8,11 @@ namespace Social { class GameConnectionInfo; }
 // clang-format on
 
 namespace Social {
+// NOLINTBEGIN
 /**
  * @symbol ?INVALID_CONNECTION\@Social\@\@3VGameConnectionInfo\@1\@B
  */
-MCAPI extern class Social::GameConnectionInfo const INVALID_CONNECTION; // NOLINT
+MCAPI extern class Social::GameConnectionInfo const INVALID_CONNECTION;
+// NOLINTEND
 
 }; // namespace Social

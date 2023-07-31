@@ -11,8 +11,10 @@ public:
     RideableComponentData()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1RideableComponentData\@\@QEAA\@XZ
      */
-    MCAPI ~RideableComponentData(); // NOLINT
+    MCAPI ~RideableComponentData();
+    // NOLINTEND
 };

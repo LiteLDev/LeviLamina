@@ -13,10 +13,12 @@ public:
     ComplexAliasBlockPreSplitBlockInfo()                                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ComplexAliasBlockPreSplitBlockInfo\@ComplexAliasBlockAchievementEventHelper\@\@QEAA\@XZ
      */
-    MCAPI ~ComplexAliasBlockPreSplitBlockInfo(); // NOLINT
+    MCAPI ~ComplexAliasBlockPreSplitBlockInfo();
+    // NOLINTEND
 };
 
 }; // namespace ComplexAliasBlockAchievementEventHelper

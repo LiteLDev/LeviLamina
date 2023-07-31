@@ -13,10 +13,12 @@ public:
     NewBlockAndSplitState()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1NewBlockAndSplitState\@ComplexAliasBlockUtils\@\@QEAA\@XZ
      */
-    MCAPI ~NewBlockAndSplitState(); // NOLINT
+    MCAPI ~NewBlockAndSplitState();
+    // NOLINTEND
 };
 
 }; // namespace ComplexAliasBlockUtils

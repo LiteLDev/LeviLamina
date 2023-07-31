@@ -15,18 +15,20 @@ public:
     VillagerV2PreTravelSystem()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@VillagerV2PreTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_doVillagerV2PreTravel\@VillagerV2PreTravelSystem\@\@CAXAEBVStrictEntityContext\@\@AEBUSynchedActorDataComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@USkipMobTravelFlag\@\@\@\@\@\@\@Z
      */
     MCAPI static void
-    _doVillagerV2PreTravel(class StrictEntityContext const&, struct SynchedActorDataComponent const&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct SkipMobTravelFlag>>); // NOLINT
-
-private:
+    _doVillagerV2PreTravel(class StrictEntityContext const&, struct SynchedActorDataComponent const&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct SkipMobTravelFlag>>);
+    // NOLINTEND
 };

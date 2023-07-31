@@ -24,48 +24,50 @@ public:
         VanillaWorldChecker()                                      = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @vftbl 0
          * @symbol __unk_vfn_0
          */
-        virtual void __unk_vfn_0(); // NOLINT
+        virtual void __unk_vfn_0();
         /**
          * @vftbl 1
          * @symbol
          * ?onActiveResourcePacksChanged\@VanillaWorldChecker\@DebugEndPoint\@\@UEAAXAEAVResourcePackManager\@\@\@Z
          */
-        virtual void onActiveResourcePacksChanged(class ResourcePackManager&); // NOLINT
+        virtual void onActiveResourcePacksChanged(class ResourcePackManager&);
         /**
          * @vftbl 2
          * @symbol __unk_vfn_2
          */
-        virtual void __unk_vfn_2(); // NOLINT
+        virtual void __unk_vfn_2();
         /**
          * @vftbl 3
          * @symbol __unk_vfn_3
          */
-        virtual void __unk_vfn_3(); // NOLINT
+        virtual void __unk_vfn_3();
         /**
          * @vftbl 4
          * @symbol __unk_vfn_4
          */
-        virtual void __unk_vfn_4(); // NOLINT
+        virtual void __unk_vfn_4();
         /**
          * @vftbl 5
          * @symbol
          * ?onResourceManagerDestroyed\@VanillaWorldChecker\@DebugEndPoint\@\@UEAAXAEAVResourcePackManager\@\@\@Z
          */
-        virtual void onResourceManagerDestroyed(class ResourcePackManager&); // NOLINT
+        virtual void onResourceManagerDestroyed(class ResourcePackManager&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEBUGENDPOINT_VANILLAWORLDCHECKER
         /**
          * @symbol __unk_destructor_-1
          */
-        MCVAPI ~VanillaWorldChecker(); // NOLINT
+        MCVAPI ~VanillaWorldChecker();
 #endif
         /**
          * @symbol ?checkWorldData\@VanillaWorldChecker\@DebugEndPoint\@\@QEAAXAEBVPath\@Core\@\@\@Z
          */
-        MCAPI void checkWorldData(class Core::Path const&); // NOLINT
+        MCAPI void checkWorldData(class Core::Path const&);
+        // NOLINTEND
     };
 
 public:
@@ -75,52 +77,49 @@ public:
     DebugEndPoint()                                = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEBUGENDPOINT
     /**
      * @symbol ?contentAssert\@DebugEndPoint\@\@MEAAXW4LogArea\@\@W4LogLevel\@\@PEBD\@Z
      */
-    MCVAPI void contentAssert(enum class LogArea, enum class LogLevel, char const*); // NOLINT
+    MCVAPI void contentAssert(enum class LogArea, enum class LogLevel, char const*);
     /**
      * @symbol ?flush\@DebugEndPoint\@\@UEAAXXZ
      */
-    MCVAPI void flush(); // NOLINT
+    MCVAPI void flush();
     /**
      * @symbol ?isEnabled\@DebugEndPoint\@\@UEBA_NXZ
      */
-    MCVAPI bool isEnabled() const; // NOLINT
+    MCVAPI bool isEnabled() const;
     /**
      * @symbol ?log\@DebugEndPoint\@\@UEAAXW4LogArea\@\@W4LogLevel\@\@PEBD\@Z
      */
-    MCVAPI void log(enum class LogArea, enum class LogLevel, char const*); // NOLINT
+    MCVAPI void log(enum class LogArea, enum class LogLevel, char const*);
     /**
      * @symbol ?logOnlyOnce\@DebugEndPoint\@\@UEBA_NXZ
      */
-    MCVAPI bool logOnlyOnce() const; // NOLINT
+    MCVAPI bool logOnlyOnce() const;
     /**
      * @symbol ?setEnabled\@DebugEndPoint\@\@UEAAX_N\@Z
      */
-    MCVAPI void setEnabled(bool); // NOLINT
+    MCVAPI void setEnabled(bool);
 #endif
     /**
      * @symbol ??0DebugEndPoint\@\@QEAA\@V?$optional\@W4LogLevel\@\@\@std\@\@\@Z
      */
-    MCAPI DebugEndPoint(class std::optional<enum class LogLevel>); // NOLINT
+    MCAPI DebugEndPoint(std::optional<enum class LogLevel>);
     /**
      * @symbol ?initializeContentLogging\@DebugEndPoint\@\@QEAAXAEAVResourcePackManager\@\@AEBVPath\@Core\@\@\@Z
      */
-    MCAPI void initializeContentLogging(class ResourcePackManager&, class Core::Path const&); // NOLINT
-
-    // private:
+    MCAPI void initializeContentLogging(class ResourcePackManager&, class Core::Path const&);
+    // NOLINTEND
 
 private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?mAssertAreas\@DebugEndPoint\@\@0V?$unordered_map\@W4LogArea\@\@_NU?$hash\@W4LogArea\@\@\@std\@\@U?$equal_to\@W4LogArea\@\@\@3\@V?$allocator\@U?$pair\@$$CBW4LogArea\@\@_N\@std\@\@\@3\@\@std\@\@B
      */
-    MCAPI static class std::unordered_map<
-        enum class LogArea,
-        bool,
-        struct std::hash<enum class LogArea>,
-        struct std::equal_to<enum class LogArea>,
-        class std::allocator<struct std::pair<enum class LogArea const, bool>>> const mAssertAreas; // NOLINT
+    MCAPI static std::unordered_map<enum class LogArea, bool> const mAssertAreas;
+    // NOLINTEND
 };

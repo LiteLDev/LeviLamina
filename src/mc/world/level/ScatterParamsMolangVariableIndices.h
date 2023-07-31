@@ -11,8 +11,10 @@ public:
     ScatterParamsMolangVariableIndices()                                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?initialize\@ScatterParamsMolangVariableIndices\@\@QEAAXXZ
      */
-    MCAPI void initialize(); // NOLINT
+    MCAPI void initialize();
+    // NOLINTEND
 };

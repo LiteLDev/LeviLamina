@@ -10,16 +10,18 @@ public:
     ExperimentStorage()                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?isAnyToggleEnabled\@ExperimentStorage\@\@QEBA_NXZ
      */
-    MCAPI bool isAnyToggleEnabled() const; // NOLINT
+    MCAPI bool isAnyToggleEnabled() const;
     /**
      * @symbol ??4ExperimentStorage\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
-    MCAPI class ExperimentStorage& operator=(class ExperimentStorage const&); // NOLINT
+    MCAPI class ExperimentStorage& operator=(class ExperimentStorage const&);
     /**
      * @symbol ??1ExperimentStorage\@\@QEAA\@XZ
      */
-    MCAPI ~ExperimentStorage(); // NOLINT
+    MCAPI ~ExperimentStorage();
+    // NOLINTEND
 };

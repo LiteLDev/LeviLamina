@@ -15,23 +15,24 @@ public:
     ActionValue(ActionValue const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ActionValue\@npc\@\@QEAA\@XZ
      */
-    MCAPI ActionValue(); // NOLINT
+    MCAPI ActionValue();
     /**
      * @symbol ??4ActionValue\@npc\@\@QEAAAEAU01\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI struct npc::ActionValue&
-    operator=(class std::basic_string_view<char, struct std::char_traits<char>>); // NOLINT
+    MCAPI struct npc::ActionValue& operator=(std::string_view);
     /**
      * @symbol ?rawValue\@ActionValue\@npc\@\@QEBA?AV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@XZ
      */
-    MCAPI class std::basic_string_view<char, struct std::char_traits<char>> rawValue() const; // NOLINT
+    MCAPI std::string_view rawValue() const;
     /**
      * @symbol ??1ActionValue\@npc\@\@QEAA\@XZ
      */
-    MCAPI ~ActionValue(); // NOLINT
+    MCAPI ~ActionValue();
+    // NOLINTEND
 };
 
 }; // namespace npc

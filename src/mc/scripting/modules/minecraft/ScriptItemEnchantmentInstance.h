@@ -20,25 +20,27 @@ public:
     ScriptItemEnchantmentInstance()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ScriptItemEnchantmentInstance\@ScriptModuleMinecraft\@\@QEAA\@AEBVEnchantmentInstance\@\@\@Z
      */
-    MCAPI ScriptItemEnchantmentInstance(class EnchantmentInstance const&); // NOLINT
+    MCAPI ScriptItemEnchantmentInstance(class EnchantmentInstance const&);
     /**
      * @symbol ??4ScriptItemEnchantmentInstance\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptItemEnchantmentInstance&
-    operator=(struct ScriptModuleMinecraft::ScriptItemEnchantmentInstance const&); // NOLINT
+    operator=(struct ScriptModuleMinecraft::ScriptItemEnchantmentInstance const&);
     /**
      * @symbol ??1ScriptItemEnchantmentInstance\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptItemEnchantmentInstance(); // NOLINT
+    MCAPI ~ScriptItemEnchantmentInstance();
     /**
      * @symbol
      * ?bind\@ScriptItemEnchantmentInstance\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptItemEnchantmentInstance\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemEnchantmentInstance>
-    bind(); // NOLINT
+    bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

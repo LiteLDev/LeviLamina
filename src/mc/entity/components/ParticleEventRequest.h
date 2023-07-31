@@ -19,10 +19,12 @@ public:
         BreakingItemData()                                   = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1BreakingItemData\@ParticleEventRequest\@\@QEAA\@XZ
          */
-        MCAPI ~BreakingItemData(); // NOLINT
+        MCAPI ~BreakingItemData();
+        // NOLINTEND
     };
 
 public:

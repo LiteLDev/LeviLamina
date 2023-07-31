@@ -11,8 +11,10 @@ public:
     FogVolumetricCoefficientSetting()                                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?ZERO_SETTING\@FogVolumetricCoefficientSetting\@\@2U1\@B
      */
-    MCAPI static struct FogVolumetricCoefficientSetting const ZERO_SETTING; // NOLINT
+    MCAPI static struct FogVolumetricCoefficientSetting const ZERO_SETTING;
+    // NOLINTEND
 };

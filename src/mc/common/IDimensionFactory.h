@@ -11,10 +11,12 @@ public:
     IDimensionFactory()                                    = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDIMENSIONFACTORY
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IDimensionFactory(); // NOLINT
+    MCVAPI ~IDimensionFactory();
 #endif
+    // NOLINTEND
 };

@@ -14,32 +14,34 @@ public:
     ServerScriptDebugCommand()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?execute\@ServerScriptDebugCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
     /**
      * @symbol
      * ?setup\@ServerScriptDebugCommand\@\@SAXAEAVCommandRegistry\@\@PEAVIScriptDebugger\@\@AEBV?$optional\@UScriptSettings\@\@\@std\@\@\@Z
      */
     MCAPI static void
-    setup(class CommandRegistry&, class IScriptDebugger*, class std::optional<struct ScriptSettings> const&); // NOLINT
-
-    // private:
+    setup(class CommandRegistry&, class IScriptDebugger*, std::optional<struct ScriptSettings> const&);
+    // NOLINTEND
 
 private:
+    // NOLINTBEGIN
     /**
      * @symbol ?sForcedPort\@ServerScriptDebugCommand\@\@0V?$optional\@G\@std\@\@A
      */
-    MCAPI static class std::optional<unsigned short> sForcedPort; // NOLINT
+    MCAPI static std::optional<unsigned short> sForcedPort;
     /**
      * @symbol ?sServerScriptDebugger\@ServerScriptDebugCommand\@\@0PEAVIScriptDebugger\@\@EA
      */
-    MCAPI static class IScriptDebugger* sServerScriptDebugger; // NOLINT
+    MCAPI static class IScriptDebugger* sServerScriptDebugger;
+    // NOLINTEND
 };

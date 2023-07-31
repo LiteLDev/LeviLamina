@@ -11,10 +11,11 @@ public:
     VibrationSelector()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?addCandidate\@VibrationSelector\@\@QEAAXUTick\@\@AEBVGameEvent\@\@AEBUGameEventContext\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI void
-    addCandidate(struct Tick, class GameEvent const&, struct GameEventContext const&, class BlockPos const&); // NOLINT
+    MCAPI void addCandidate(struct Tick, class GameEvent const&, struct GameEventContext const&, class BlockPos const&);
+    // NOLINTEND
 };

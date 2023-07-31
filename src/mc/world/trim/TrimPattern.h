@@ -11,8 +11,10 @@ public:
     TrimPattern()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1TrimPattern\@\@QEAA\@XZ
      */
-    MCAPI ~TrimPattern(); // NOLINT
+    MCAPI ~TrimPattern();
+    // NOLINTEND
 };

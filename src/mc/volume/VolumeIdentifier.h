@@ -19,10 +19,12 @@ public:
         ConstrainedString()                                    = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ?bindType\@ConstrainedString\@VolumeIdentifier\@\@SAXXZ
          */
-        MCAPI static void bindType(); // NOLINT
+        MCAPI static void bindType();
+        // NOLINTEND
     };
 
 public:
@@ -32,12 +34,14 @@ public:
     VolumeIdentifier()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??8VolumeIdentifier\@\@QEBA_NAEBU0\@\@Z
      */
-    MCAPI bool operator==(struct VolumeIdentifier const&) const; // NOLINT
+    MCAPI bool operator==(struct VolumeIdentifier const&) const;
     /**
      * @symbol ?bindType\@VolumeIdentifier\@\@SAXXZ
      */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI static void bindType();
+    // NOLINTEND
 };

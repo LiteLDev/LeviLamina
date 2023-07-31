@@ -11,8 +11,10 @@ public:
     LadderResetFallDamageSystem()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createLadderResetFallDamageSystem\@LadderResetFallDamageSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createLadderResetFallDamageSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createLadderResetFallDamageSystem();
+    // NOLINTEND
 };

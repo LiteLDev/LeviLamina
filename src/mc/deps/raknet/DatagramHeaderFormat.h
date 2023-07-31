@@ -16,12 +16,14 @@ public:
     DatagramHeaderFormat()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?Deserialize\@DatagramHeaderFormat\@\@QEAAXPEAVBitStream\@RakNet\@\@\@Z
      */
-    MCAPI void Deserialize(class RakNet::BitStream*); // NOLINT
+    MCAPI void Deserialize(class RakNet::BitStream*);
     /**
      * @symbol ?Serialize\@DatagramHeaderFormat\@\@QEAAXPEAVBitStream\@RakNet\@\@\@Z
      */
-    MCAPI void Serialize(class RakNet::BitStream*); // NOLINT
+    MCAPI void Serialize(class RakNet::BitStream*);
+    // NOLINTEND
 };

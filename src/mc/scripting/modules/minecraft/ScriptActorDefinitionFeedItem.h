@@ -21,11 +21,13 @@ public:
     ScriptActorDefinitionFeedItem()                                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptActorDefinitionFeedItem\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UActorDefinitionFeedItem\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ActorDefinitionFeedItem> bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<struct ActorDefinitionFeedItem> bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -12,14 +12,16 @@ public:
     LoadTimeProfiler(LoadTimeProfiler const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0LoadTimeProfiler\@Core\@\@QEAA\@XZ
      */
-    MCAPI LoadTimeProfiler(); // NOLINT
+    MCAPI LoadTimeProfiler();
     /**
      * @symbol ?setEnabled\@LoadTimeProfiler\@Core\@\@QEAAX_N\@Z
      */
-    MCAPI void setEnabled(bool); // NOLINT
+    MCAPI void setEnabled(bool);
+    // NOLINTEND
 };
 
 }; // namespace Core

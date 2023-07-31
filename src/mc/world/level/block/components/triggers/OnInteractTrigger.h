@@ -11,14 +11,16 @@ public:
     OnInteractTrigger()                                    = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONINTERACTTRIGGER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~OnInteractTrigger(); // NOLINT
+    MCVAPI ~OnInteractTrigger();
 #endif
     /**
      * @symbol ??0OnInteractTrigger\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI OnInteractTrigger(class OnInteractTrigger&&); // NOLINT
+    MCAPI OnInteractTrigger(class OnInteractTrigger&&);
+    // NOLINTEND
 };

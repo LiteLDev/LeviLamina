@@ -11,8 +11,10 @@ public:
     OnActorLeaveVolumeComponent()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4OnActorLeaveVolumeComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class OnActorLeaveVolumeComponent& operator=(class OnActorLeaveVolumeComponent&&); // NOLINT
+    MCAPI class OnActorLeaveVolumeComponent& operator=(class OnActorLeaveVolumeComponent&&);
+    // NOLINTEND
 };

@@ -14,22 +14,24 @@ public:
     DeltaFeature()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 3
      * @symbol ?place\@DeltaFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_isValidPlacement\@DeltaFeature\@\@AEBA_NAEAVBlockSource\@\@VBlockPos\@\@\@Z
      */
-    MCAPI bool _isValidPlacement(class BlockSource&, class BlockPos) const; // NOLINT
-
-private:
+    MCAPI bool _isValidPlacement(class BlockSource&, class BlockPos) const;
+    // NOLINTEND
 };

@@ -11,14 +11,16 @@ public:
     BlockQueuedTickingComponent()                                              = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKQUEUEDTICKINGCOMPONENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~BlockQueuedTickingComponent(); // NOLINT
+    MCVAPI ~BlockQueuedTickingComponent();
 #endif
     /**
      * @symbol ??0BlockQueuedTickingComponent\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI BlockQueuedTickingComponent(struct BlockQueuedTickingComponent&&); // NOLINT
+    MCAPI BlockQueuedTickingComponent(struct BlockQueuedTickingComponent&&);
+    // NOLINTEND
 };

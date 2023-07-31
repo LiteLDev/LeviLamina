@@ -11,21 +11,23 @@ public:
     MinecraftScheduler()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?client\@MinecraftScheduler\@\@SAAEAVScheduler\@\@XZ
      */
-    MCAPI static class Scheduler& client(); // NOLINT
+    MCAPI static class Scheduler& client();
     /**
      * @symbol ?destroyClientSingleton\@MinecraftScheduler\@\@SAXXZ
      */
-    MCAPI static void destroyClientSingleton(); // NOLINT
-
-    // private:
+    MCAPI static void destroyClientSingleton();
+    // NOLINTEND
 
 private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?mInstance\@MinecraftScheduler\@\@0V?$unique_ptr\@VScheduler\@\@U?$default_delete\@VScheduler\@\@\@std\@\@\@std\@\@A
      */
-    MCAPI static std::unique_ptr<class Scheduler> mInstance; // NOLINT
+    MCAPI static std::unique_ptr<class Scheduler> mInstance;
+    // NOLINTEND
 };

@@ -11,8 +11,10 @@ public:
     UpdateEntityAfterFallOnEntityProxyBase()                                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?mDummy\@UpdateEntityAfterFallOnEntityProxyBase\@\@2VVec3\@\@A
      */
-    MCAPI static class Vec3 mDummy; // NOLINT
+    MCAPI static class Vec3 mDummy;
+    // NOLINTEND
 };

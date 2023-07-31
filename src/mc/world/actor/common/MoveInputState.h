@@ -11,8 +11,10 @@ public:
     MoveInputState()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?wantsSneak\@MoveInputState\@\@QEBA_NXZ
      */
-    MCAPI bool wantsSneak() const; // NOLINT
+    MCAPI bool wantsSneak() const;
+    // NOLINTEND
 };

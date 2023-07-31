@@ -38,28 +38,31 @@ public:
         }
     }
 
+public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0SubChunkPos\@\@QEAA\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI SubChunkPos(class BlockPos const&); // NOLINT
+    MCAPI SubChunkPos(class BlockPos const&);
     /**
      * @symbol ??BSubChunkPos\@\@QEBA?AVBlockPos\@\@XZ
      */
-    MCAPI operator class BlockPos() const; // NOLINT
+    MCAPI operator class BlockPos() const;
     /**
      * @symbol ?MAX\@SubChunkPos\@\@2V1\@B
      */
-    MCAPI static class SubChunkPos const MAX; // NOLINT
+    MCAPI static class SubChunkPos const MAX;
     /**
      * @symbol ?MIN\@SubChunkPos\@\@2V1\@B
      */
-    MCAPI static class SubChunkPos const MIN; // NOLINT
+    MCAPI static class SubChunkPos const MIN;
     /**
      * @symbol ?ONE\@SubChunkPos\@\@2V1\@B
      */
-    MCAPI static class SubChunkPos const ONE; // NOLINT
+    MCAPI static class SubChunkPos const ONE;
     /**
      * @symbol ?ZERO\@SubChunkPos\@\@2V1\@B
      */
-    MCAPI static class SubChunkPos const ZERO; // NOLINT
+    MCAPI static class SubChunkPos const ZERO;
+    // NOLINTEND
 };

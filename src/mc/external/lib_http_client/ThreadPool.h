@@ -17,26 +17,28 @@ public:
     ThreadPool(ThreadPool const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?Initialize\@ThreadPool\@OS\@\@QEAAJPEAXP6AX0AEAUThreadPoolActionStatus\@2\@\@Z\@Z
      */
-    MCAPI long Initialize(void*, void (*)(void*, struct OS::ThreadPoolActionStatus&)); // NOLINT
+    MCAPI long Initialize(void*, void (*)(void*, struct OS::ThreadPoolActionStatus&));
     /**
      * @symbol ?Submit\@ThreadPool\@OS\@\@QEAAXXZ
      */
-    MCAPI void Submit(); // NOLINT
+    MCAPI void Submit();
     /**
      * @symbol ?Terminate\@ThreadPool\@OS\@\@QEAAXXZ
      */
-    MCAPI void Terminate(); // NOLINT
+    MCAPI void Terminate();
     /**
      * @symbol ??0ThreadPool\@OS\@\@QEAA\@XZ
      */
-    MCAPI ThreadPool(); // NOLINT
+    MCAPI ThreadPool();
     /**
      * @symbol ??1ThreadPool\@OS\@\@QEAA\@XZ
      */
-    MCAPI ~ThreadPool(); // NOLINT
+    MCAPI ~ThreadPool();
+    // NOLINTEND
 };
 
 }; // namespace OS

@@ -13,10 +13,12 @@ public:
     Components()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1Components\@Url\@Util\@\@QEAA\@XZ
      */
-    MCAPI ~Components(); // NOLINT
+    MCAPI ~Components();
+    // NOLINTEND
 };
 
 }; // namespace Util::Url

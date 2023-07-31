@@ -11,8 +11,10 @@ public:
     ActorRefreshComponentsSystem()                                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@ActorRefreshComponentsSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 };

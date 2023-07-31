@@ -17,18 +17,21 @@ public:
     RakNetGUID    guid;
     SystemAddress adr;
 
+public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0AddressOrGUID\@RakNet\@\@QEAA\@AEBU01\@\@Z
      */
-    MCAPI AddressOrGUID(struct RakNet::AddressOrGUID const&); // NOLINT
+    MCAPI AddressOrGUID(struct RakNet::AddressOrGUID const&);
     /**
      * @symbol ??0AddressOrGUID\@RakNet\@\@QEAA\@AEBUSystemAddress\@1\@\@Z
      */
-    MCAPI AddressOrGUID(struct RakNet::SystemAddress const&); // NOLINT
+    MCAPI AddressOrGUID(struct RakNet::SystemAddress const&);
     /**
      * @symbol ?IsUndefined\@AddressOrGUID\@RakNet\@\@QEBA_NXZ
      */
-    MCAPI bool IsUndefined() const; // NOLINT
+    MCAPI bool IsUndefined() const;
+    // NOLINTEND
 };
 
 }; // namespace RakNet

@@ -22,21 +22,23 @@ public:
     ScriptBlockTypes(ScriptBlockTypes const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ScriptBlockTypes\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ScriptBlockTypes(); // NOLINT
+    MCAPI ScriptBlockTypes();
     /**
      * @symbol
      * ?get\@ScriptBlockTypes\@ScriptModuleMinecraft\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptBlockType\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEAVWeakLifetimeScope\@4\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockType>
-    get(class Scripting::WeakLifetimeScope&, std::string const&); // NOLINT
+    get(class Scripting::WeakLifetimeScope&, std::string const&);
     /**
      * @symbol
      * ?bind\@ScriptBlockTypes\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockTypes\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockTypes> bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockTypes> bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

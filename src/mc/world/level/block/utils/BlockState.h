@@ -17,18 +17,22 @@ public:
         BlockState::StateListNode* mNext;
         BlockState::StateListNode* mPrev;
         BlockState*                mState;
+
+    public:
+        // NOLINTBEGIN
         /**
          * @symbol ??0StateListNode\@BlockState\@\@QEAA\@PEAV1\@\@Z
          */
-        MCAPI StateListNode(class BlockState*); // NOLINT
+        MCAPI StateListNode(class BlockState*);
         /**
          * @symbol ??1StateListNode\@BlockState\@\@QEAA\@XZ
          */
-        MCAPI ~StateListNode(); // NOLINT
+        MCAPI ~StateListNode();
         /**
          * @symbol ?mHead\@StateListNode\@BlockState\@\@2PEAU12\@EA
          */
-        MCAPI static struct BlockState::StateListNode* mHead; // NOLINT
+        MCAPI static struct BlockState::StateListNode* mHead;
+        // NOLINTEND
     };
 
 public:
@@ -44,18 +48,20 @@ public:
     class StateListNode      mNode;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSTATE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~BlockState(); // NOLINT
+    MCVAPI ~BlockState();
 #endif
     /**
      * @symbol ?forEachState\@BlockState\@\@SAXV?$function\@$$A6A_NAEBVBlockState\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI static void forEachState(class std::function<bool(class BlockState const&)>); // NOLINT
+    MCAPI static void forEachState(std::function<bool(class BlockState const&)>);
     /**
      * @symbol ?getState\@BlockState\@\@SAPEBV1\@AEBVHashedString\@\@\@Z
      */
-    MCAPI static class BlockState const* getState(class HashedString const&); // NOLINT
+    MCAPI static class BlockState const* getState(class HashedString const&);
+    // NOLINTEND
 };

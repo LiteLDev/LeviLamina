@@ -11,8 +11,10 @@ public:
     MaterialReducerDataEntry()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1MaterialReducerDataEntry\@\@QEAA\@XZ
      */
-    MCAPI ~MaterialReducerDataEntry(); // NOLINT
+    MCAPI ~MaterialReducerDataEntry();
+    // NOLINTEND
 };

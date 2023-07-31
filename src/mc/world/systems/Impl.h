@@ -25,6 +25,7 @@ public:
     Impl()                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0Impl\@VanillaWorldSystems\@\@QEAA\@AEBV?$NonOwnerPointer\@VLevel\@\@\@Bedrock\@\@AEBVExperiments\@\@AEBVBaseGameVersion\@\@PEAVResourcePackManager\@\@VItemRegistryRef\@\@\@Z
@@ -35,11 +36,12 @@ public:
         class BaseGameVersion const&,
         class ResourcePackManager*,
         class ItemRegistryRef
-    ); // NOLINT
+    );
     /**
      * @symbol ?mInstance\@Impl\@VanillaWorldSystems\@\@2V?$weak_ptr\@VImpl\@VanillaWorldSystems\@\@\@std\@\@A
      */
-    MCAPI static class std::weak_ptr<class VanillaWorldSystems::Impl> mInstance; // NOLINT
+    MCAPI static std::weak_ptr<class VanillaWorldSystems::Impl> mInstance;
+    // NOLINTEND
 };
 
 }; // namespace VanillaWorldSystems

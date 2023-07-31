@@ -11,8 +11,10 @@ public:
     PerfContextTrackerReport()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PerfContextTrackerReport\@\@QEAA\@XZ
      */
-    MCAPI ~PerfContextTrackerReport(); // NOLINT
+    MCAPI ~PerfContextTrackerReport();
+    // NOLINTEND
 };

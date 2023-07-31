@@ -19,15 +19,17 @@ public:
     InsomniaDefinition()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?initialize\@InsomniaDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVInsomniaComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class InsomniaComponent&) const; // NOLINT
+    MCAPI void initialize(class EntityContext&, class InsomniaComponent&) const;
     /**
      * @symbol
      * ?buildSchema\@InsomniaDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VInsomniaDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InsomniaDefinition>>&); // NOLINT
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InsomniaDefinition>>&);
+    // NOLINTEND
 };

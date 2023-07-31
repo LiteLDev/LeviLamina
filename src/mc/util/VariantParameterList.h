@@ -10,12 +10,14 @@ public:
     VariantParameterList(VariantParameterList const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0VariantParameterList\@\@QEAA\@XZ
      */
-    MCAPI VariantParameterList(); // NOLINT
+    MCAPI VariantParameterList();
     /**
      * @symbol ?hasParameter\@VariantParameterList\@\@QEBA_NW4FilterSubject\@\@\@Z
      */
-    MCAPI bool hasParameter(enum class FilterSubject) const; // NOLINT
+    MCAPI bool hasParameter(enum class FilterSubject) const;
+    // NOLINTEND
 };

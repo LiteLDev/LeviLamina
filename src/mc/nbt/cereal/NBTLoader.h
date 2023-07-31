@@ -11,14 +11,16 @@ public:
     NBTLoader()                            = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTLOADER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~NBTLoader(); // NOLINT
+    MCVAPI ~NBTLoader();
 #endif
     /**
      * @symbol ??0NBTLoader\@\@QEAA\@V?$not_null\@PEBVCompoundTag\@\@\@gsl\@\@\@Z
      */
-    MCAPI NBTLoader(class gsl::not_null<class CompoundTag const*>); // NOLINT
+    MCAPI NBTLoader(class gsl::not_null<class CompoundTag const*>);
+    // NOLINTEND
 };

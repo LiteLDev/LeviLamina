@@ -11,8 +11,10 @@ public:
     SyncedAttribute()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1SyncedAttribute\@\@QEAA\@XZ
      */
-    MCAPI ~SyncedAttribute(); // NOLINT
+    MCAPI ~SyncedAttribute();
+    // NOLINTEND
 };

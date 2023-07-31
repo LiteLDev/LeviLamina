@@ -11,15 +11,16 @@ public:
     ContainerManagerController()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?TRANSFER_NO_DESTINATION\@ContainerManagerController\@\@2V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@B
      */
-    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> const
-        TRANSFER_NO_DESTINATION; // NOLINT
+    MCAPI static std::string_view const TRANSFER_NO_DESTINATION;
     /**
      * @symbol
      * ?TRANSFER_NO_ORIGIN\@ContainerManagerController\@\@2V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@B
      */
-    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> const TRANSFER_NO_ORIGIN; // NOLINT
+    MCAPI static std::string_view const TRANSFER_NO_ORIGIN;
+    // NOLINTEND
 };

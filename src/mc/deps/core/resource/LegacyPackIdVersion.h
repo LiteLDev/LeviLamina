@@ -11,17 +11,19 @@ public:
     LegacyPackIdVersion()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0LegacyPackIdVersion\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
-    MCAPI LegacyPackIdVersion(std::string const&, std::string const&); // NOLINT
+    MCAPI LegacyPackIdVersion(std::string const&, std::string const&);
     /**
      * @symbol ?getUpgradedPackId\@LegacyPackIdVersion\@\@QEBA?AUPackIdVersion\@\@XZ
      */
-    MCAPI struct PackIdVersion getUpgradedPackId() const; // NOLINT
+    MCAPI struct PackIdVersion getUpgradedPackId() const;
     /**
      * @symbol ??1LegacyPackIdVersion\@\@QEAA\@XZ
      */
-    MCAPI ~LegacyPackIdVersion(); // NOLINT
+    MCAPI ~LegacyPackIdVersion();
+    // NOLINTEND
 };

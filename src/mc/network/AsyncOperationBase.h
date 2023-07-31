@@ -19,28 +19,30 @@ public:
     AsyncOperationBase()                                     = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_POSITIONTRACKINGDB_ASYNCOPERATIONBASE
     /**
      * @symbol
      * ?_quit\@AsyncOperationBase\@PositionTrackingDB\@\@MEAA_NV?$weak_ptr\@VPositionTrackingDBServer\@PositionTrackingDB\@\@\@std\@\@AEAVTrackingRecord\@2\@\@Z
      */
     MCVAPI bool
-    _quit(class std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&); // NOLINT
+    _quit(std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&);
     /**
      * @symbol ?isAsync\@AsyncOperationBase\@PositionTrackingDB\@\@UEBA_NXZ
      */
-    MCVAPI bool isAsync() const; // NOLINT
+    MCVAPI bool isAsync() const;
     /**
      * @symbol ?isComplete\@AsyncOperationBase\@PositionTrackingDB\@\@UEBA_NXZ
      */
-    MCVAPI bool isComplete() const; // NOLINT
+    MCVAPI bool isComplete() const;
     /**
      * @symbol
      * ?tick\@AsyncOperationBase\@PositionTrackingDB\@\@UEAA_NV?$weak_ptr\@VPositionTrackingDBServer\@PositionTrackingDB\@\@\@std\@\@AEAVTrackingRecord\@2\@\@Z
      */
     MCVAPI bool
-    tick(class std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&); // NOLINT
+    tick(std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&);
 #endif
+    // NOLINTEND
 };
 
 }; // namespace PositionTrackingDB

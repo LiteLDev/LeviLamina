@@ -27,24 +27,27 @@ public:
     MesaSurfaceBuilder()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?init\@MesaSurfaceBuilder\@VanillaSurfaceBuilders\@\@UEAAXAEAVEntityContext\@\@I\@Z
      */
-    virtual void init(class EntityContext&, unsigned int); // NOLINT
+    virtual void init(class EntityContext&, unsigned int);
     /**
      * @vftbl 2
      * @symbol
      * ?buildSurfaceAt\@MesaSurfaceBuilder\@VanillaSurfaceBuilders\@\@UEBAXAEBUBuildParameters\@ISurfaceBuilder\@\@\@Z
      */
-    virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const&) const; // NOLINT
+    virtual void buildSurfaceAt(struct ISurfaceBuilder::BuildParameters const&) const;
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_buildSurface\@MesaSurfaceBuilder\@VanillaSurfaceBuilders\@\@AEBAXAEBVBlockPos\@\@MAEAVRandom\@\@AEAVBlockVolume\@\@HFAEBUMesaSurfaceBlocks\@\@AEBUSurfaceMaterialBlocks\@\@M\@Z
@@ -59,25 +62,24 @@ public:
         struct MesaSurfaceBlocks const&,
         struct SurfaceMaterialBlocks const&,
         float
-    ) const; // NOLINT
+    ) const;
     /**
      * @symbol ?_init\@MesaSurfaceBuilder\@VanillaSurfaceBuilders\@\@AEAAXI\@Z
      */
-    MCAPI void _init(unsigned int); // NOLINT
+    MCAPI void _init(unsigned int);
     /**
      * @symbol ?generateBands\@MesaSurfaceBuilder\@VanillaSurfaceBuilders\@\@AEAAXAEAVRandom\@\@\@Z
      */
-    MCAPI void generateBands(class Random&); // NOLINT
+    MCAPI void generateBands(class Random&);
     /**
      * @symbol ?getBand\@MesaSurfaceBuilder\@VanillaSurfaceBuilders\@\@AEBA?AW4BlockColor\@\@HHH\@Z
      */
-    MCAPI enum class BlockColor getBand(int, int, int) const; // NOLINT
+    MCAPI enum class BlockColor getBand(int, int, int) const;
     /**
      * @symbol ?makeBands\@MesaSurfaceBuilder\@VanillaSurfaceBuilders\@\@AEAAXAEAVRandom\@\@HW4BlockColor\@\@\@Z
      */
-    MCAPI void makeBands(class Random&, int, enum class BlockColor); // NOLINT
-
-private:
+    MCAPI void makeBands(class Random&, int, enum class BlockColor);
+    // NOLINTEND
 };
 
 }; // namespace VanillaSurfaceBuilders

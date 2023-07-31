@@ -11,15 +11,17 @@ public:
     CommandFunctionEntry()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?execute\@CommandFunctionEntry\@\@UEAAXAEAVFunctionManager\@\@AEBVCommandOrigin\@\@W4FunctionQueueOrder\@\@\@Z
      */
-    virtual void execute(class FunctionManager&, class CommandOrigin const&, enum class FunctionQueueOrder); // NOLINT
+    virtual void execute(class FunctionManager&, class CommandOrigin const&, enum class FunctionQueueOrder);
+    // NOLINTEND
 };

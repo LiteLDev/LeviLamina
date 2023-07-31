@@ -19,22 +19,24 @@ public:
     Upgrader()                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0Upgrader\@Puv\@\@QEAA\@VSemVersion\@\@0\@Z
      */
-    MCAPI Upgrader(class SemVersion, class SemVersion); // NOLINT
+    MCAPI Upgrader(class SemVersion, class SemVersion);
     /**
      * @symbol ?sourceVersion\@Upgrader\@Puv\@\@QEBAAEBVSemVersion\@\@XZ
      */
-    MCAPI class SemVersion const& sourceVersion() const; // NOLINT
+    MCAPI class SemVersion const& sourceVersion() const;
     /**
      * @symbol ?targetVersion\@Upgrader\@Puv\@\@QEBAAEBVSemVersion\@\@XZ
      */
-    MCAPI class SemVersion const& targetVersion() const; // NOLINT
+    MCAPI class SemVersion const& targetVersion() const;
     /**
      * @symbol ?upgrade\@Upgrader\@Puv\@\@QEBA?AVLoadResultAny\@2\@V32\@\@Z
      */
-    MCAPI class Puv::LoadResultAny upgrade(class Puv::LoadResultAny) const; // NOLINT
+    MCAPI class Puv::LoadResultAny upgrade(class Puv::LoadResultAny) const;
+    // NOLINTEND
 };
 
 }; // namespace Puv

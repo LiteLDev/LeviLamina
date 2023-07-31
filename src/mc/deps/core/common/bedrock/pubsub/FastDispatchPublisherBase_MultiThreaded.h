@@ -17,31 +17,31 @@ public:
     FastDispatchPublisherBase_MultiThreaded(FastDispatchPublisherBase_MultiThreaded const&)            = delete;
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol ??0FastDispatchPublisherBase_MultiThreaded\@Detail\@PubSub\@Bedrock\@\@IEAA\@XZ
      */
-    MCAPI FastDispatchPublisherBase_MultiThreaded(); // NOLINT
+    MCAPI FastDispatchPublisherBase_MultiThreaded();
     /**
      * @symbol ?_fastDispatchAddConnection\@FastDispatchPublisherBase_MultiThreaded\@Detail\@PubSub\@Bedrock\@\@IEAAXXZ
      */
-    MCAPI void _fastDispatchAddConnection(); // NOLINT
+    MCAPI void _fastDispatchAddConnection();
     /**
      * @symbol
      * ?_fastDispatchClearConnections\@FastDispatchPublisherBase_MultiThreaded\@Detail\@PubSub\@Bedrock\@\@IEAAXXZ
      */
-    MCAPI void _fastDispatchClearConnections(); // NOLINT
+    MCAPI void _fastDispatchClearConnections();
     /**
      * @symbol
      * ?_fastDispatchRemoveConnection\@FastDispatchPublisherBase_MultiThreaded\@Detail\@PubSub\@Bedrock\@\@IEAAXXZ
      */
-    MCAPI void _fastDispatchRemoveConnection(); // NOLINT
+    MCAPI void _fastDispatchRemoveConnection();
     /**
      * @symbol
      * ?_loadDispatchTargets\@FastDispatchPublisherBase_MultiThreaded\@Detail\@PubSub\@Bedrock\@\@IEAA_NAEAVDispatchTargets\@234\@\@Z
      */
-    MCAPI bool _loadDispatchTargets(class Bedrock::PubSub::Detail::DispatchTargets&); // NOLINT
-
-protected:
+    MCAPI bool _loadDispatchTargets(class Bedrock::PubSub::Detail::DispatchTargets&);
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::PubSub::Detail

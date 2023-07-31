@@ -11,8 +11,10 @@ public:
     VanillaBastionJigsawStructureBlockRules()                                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?initialize\@VanillaBastionJigsawStructureBlockRules\@\@SAXAEAVJigsawStructureRegistry\@\@\@Z
      */
-    MCAPI static void initialize(class JigsawStructureRegistry&); // NOLINT
+    MCAPI static void initialize(class JigsawStructureRegistry&);
+    // NOLINTEND
 };

@@ -23,22 +23,24 @@ public:
     RNS2_Windows()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?Send\@RNS2_Windows\@RakNet\@\@UEAAHPEAURNS2_SendParameters\@2\@PEBDI\@Z
      */
-    virtual int Send(struct RakNet::RNS2_SendParameters*, char const*, unsigned int); // NOLINT
+    virtual int Send(struct RakNet::RNS2_SendParameters*, char const*, unsigned int);
     /**
      * @vftbl 3
      * @symbol ?Bind\@RNS2_Windows\@RakNet\@\@UEAA?AW4RNS2BindResult\@2\@PEAURNS2_BerkleyBindParameters\@2\@PEBDI\@Z
      */
     virtual enum class RakNet::RNS2BindResult
-    Bind(struct RakNet::RNS2_BerkleyBindParameters*, char const*, unsigned int); // NOLINT
+    Bind(struct RakNet::RNS2_BerkleyBindParameters*, char const*, unsigned int);
+    // NOLINTEND
 };
 
 }; // namespace RakNet

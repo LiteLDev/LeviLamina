@@ -18,27 +18,29 @@ public:
     ScriptNavigationClimbComponent()                                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTNAVIGATIONCLIMBCOMPONENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptNavigationClimbComponent(); // NOLINT
+    MCVAPI ~ScriptNavigationClimbComponent();
 #endif
     /**
      * @symbol
      * ?bind\@ScriptNavigationClimbComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptNavigationClimbComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptNavigationClimbComponent>
-    bind(); // NOLINT
+    bind();
     /**
      * @symbol ?ComponentId\@ScriptNavigationClimbComponent\@ScriptModuleMinecraft\@\@2PEBDEB
      */
-    MCAPI static char const* ComponentId; // NOLINT
+    MCAPI static char const* ComponentId;
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

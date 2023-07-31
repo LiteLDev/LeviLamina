@@ -3,13 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace QuerySetIdentifier {
+// NOLINTBEGIN
 /**
  * @symbol ?getDefaultCollection\@QuerySetIdentifier\@\@YA?AV?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@XZ
  */
-MCAPI class gsl::span<class HashedString const, -1> getDefaultCollection(); // NOLINT
+MCAPI class gsl::span<class HashedString const> getDefaultCollection();
 /**
  * @symbol ?getTagsCollection\@QuerySetIdentifier\@\@YA?AV?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@XZ
  */
-MCAPI class gsl::span<class HashedString const, -1> getTagsCollection(); // NOLINT
+MCAPI class gsl::span<class HashedString const> getTagsCollection();
+// NOLINTEND
 
 }; // namespace QuerySetIdentifier

@@ -19,16 +19,18 @@ public:
     LegacyBlockInfo()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0LegacyBlockInfo\@SplitBlockUtils\@\@QEAA\@HVHashedString\@\@0V?$vector\@UBlockNameRefAuxVariant\@SplitBlockUtils\@\@V?$allocator\@UBlockNameRefAuxVariant\@SplitBlockUtils\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI
-    LegacyBlockInfo(int, class HashedString, class HashedString, std::vector<struct SplitBlockUtils::BlockNameRefAuxVariant>); // NOLINT
+    LegacyBlockInfo(int, class HashedString, class HashedString, std::vector<struct SplitBlockUtils::BlockNameRefAuxVariant>);
     /**
      * @symbol ??1LegacyBlockInfo\@SplitBlockUtils\@\@QEAA\@XZ
      */
-    MCAPI ~LegacyBlockInfo(); // NOLINT
+    MCAPI ~LegacyBlockInfo();
+    // NOLINTEND
 };
 
 }; // namespace SplitBlockUtils

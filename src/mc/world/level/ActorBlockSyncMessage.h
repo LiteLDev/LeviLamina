@@ -4,11 +4,6 @@
 
 struct ActorBlockSyncMessage {
 public:
-    // ActorBlockSyncMessage inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // ActorBlockSyncMessage inner types define
     enum class MessageId {};
 

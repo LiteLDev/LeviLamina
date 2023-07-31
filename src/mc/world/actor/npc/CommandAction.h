@@ -27,14 +27,16 @@ public:
     CommandAction()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??9CommandAction\@npc\@\@QEBA_NAEBU01\@\@Z
      */
-    MCAPI bool operator!=(struct npc::CommandAction const&) const; // NOLINT
+    MCAPI bool operator!=(struct npc::CommandAction const&) const;
     /**
      * @symbol ??1CommandAction\@npc\@\@QEAA\@XZ
      */
-    MCAPI ~CommandAction(); // NOLINT
+    MCAPI ~CommandAction();
+    // NOLINTEND
 };
 
 }; // namespace npc

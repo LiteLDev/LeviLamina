@@ -20,33 +20,35 @@ public:
     HuffmanEncodingTree(HuffmanEncodingTree const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?FreeMemory\@HuffmanEncodingTree\@RakNet\@\@QEAAXXZ
      */
-    MCAPI void FreeMemory(); // NOLINT
+    MCAPI void FreeMemory();
     /**
      * @symbol ?GenerateFromFrequencyTable\@HuffmanEncodingTree\@RakNet\@\@QEAAXQEAI\@Z
      */
-    MCAPI void GenerateFromFrequencyTable(unsigned int* const); // NOLINT
+    MCAPI void GenerateFromFrequencyTable(unsigned int* const);
     /**
      * @symbol ??0HuffmanEncodingTree\@RakNet\@\@QEAA\@XZ
      */
-    MCAPI HuffmanEncodingTree(); // NOLINT
+    MCAPI HuffmanEncodingTree();
     /**
      * @symbol ??1HuffmanEncodingTree\@RakNet\@\@QEAA\@XZ
      */
-    MCAPI ~HuffmanEncodingTree(); // NOLINT
+    MCAPI ~HuffmanEncodingTree();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?InsertNodeIntoSortedList\@HuffmanEncodingTree\@RakNet\@\@AEBAXPEAUHuffmanEncodingTreeNode\@\@PEAV?$LinkedList\@PEAUHuffmanEncodingTreeNode\@\@\@DataStructures\@\@\@Z
      */
     MCAPI void
     InsertNodeIntoSortedList(struct HuffmanEncodingTreeNode*, class DataStructures::LinkedList<struct HuffmanEncodingTreeNode*>*)
-        const; // NOLINT
-
-private:
+        const;
+    // NOLINTEND
 };
 
 }; // namespace RakNet

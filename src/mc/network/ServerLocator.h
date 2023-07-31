@@ -11,18 +11,20 @@ public:
     ServerLocator()                                = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERLOCATOR
     /**
      * @symbol ?_onDisable\@ServerLocator\@\@EEAAXXZ
      */
-    MCVAPI void _onDisable(); // NOLINT
+    MCVAPI void _onDisable();
     /**
      * @symbol ?_onEnable\@ServerLocator\@\@EEAAXXZ
      */
-    MCVAPI void _onEnable(); // NOLINT
+    MCVAPI void _onEnable();
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ServerLocator(); // NOLINT
+    MCVAPI ~ServerLocator();
 #endif
+    // NOLINTEND
 };

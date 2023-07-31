@@ -14,42 +14,43 @@ public:
     PlayerItemInUse()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?checkShouldUse\@PlayerItemInUse\@\@QEAA_NXZ
      */
-    MCAPI bool checkShouldUse(); // NOLINT
+    MCAPI bool checkShouldUse();
     /**
      * @symbol ?clearItemInUse\@PlayerItemInUse\@\@QEAAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void clearItemInUse(class EntityContext&); // NOLINT
+    MCAPI void clearItemInUse(class EntityContext&);
     /**
      * @symbol ?getItemInUse\@PlayerItemInUse\@\@QEBAAEBVItemStack\@\@XZ
      */
-    MCAPI class ItemStack const& getItemInUse() const; // NOLINT
+    MCAPI class ItemStack const& getItemInUse() const;
     /**
      * @symbol ?getMoveToMouthDuration\@PlayerItemInUse\@\@QEBAHXZ
      */
-    MCAPI int getMoveToMouthDuration() const; // NOLINT
+    MCAPI int getMoveToMouthDuration() const;
     /**
      * @symbol ?getUsedDuration\@PlayerItemInUse\@\@QEBAHXZ
      */
-    MCAPI int getUsedDuration() const; // NOLINT
+    MCAPI int getUsedDuration() const;
     /**
      * @symbol ?isInSlot\@PlayerItemInUse\@\@QEBA_NUSlotData\@PlayerInventory\@\@\@Z
      */
-    MCAPI bool isInSlot(struct PlayerInventory::SlotData) const; // NOLINT
+    MCAPI bool isInSlot(struct PlayerInventory::SlotData) const;
     /**
      * @symbol ?releaseUsing\@PlayerItemInUse\@\@QEAAXAEAVPlayer\@\@\@Z
      */
-    MCAPI void releaseUsing(class Player&); // NOLINT
+    MCAPI void releaseUsing(class Player&);
     /**
      * @symbol
      * ?setItemInUse\@PlayerItemInUse\@\@QEAAXAEBVItemStack\@\@AEAVEntityContext\@\@HUSlotData\@PlayerInventory\@\@\@Z
      */
-    MCAPI void
-    setItemInUse(class ItemStack const&, class EntityContext&, int, struct PlayerInventory::SlotData); // NOLINT
+    MCAPI void setItemInUse(class ItemStack const&, class EntityContext&, int, struct PlayerInventory::SlotData);
     /**
      * @symbol ??1PlayerItemInUse\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerItemInUse(); // NOLINT
+    MCAPI ~PlayerItemInUse();
+    // NOLINTEND
 };

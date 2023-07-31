@@ -11,11 +11,13 @@ template<typename T0> class FlagComponent;
 // clang-format on
 
 namespace AgentAnimationSystems {
+// NOLINTBEGIN
 /**
  * @symbol
  * ?animationTick\@AgentAnimationSystems\@\@YAXAEAVStrictEntityContext\@\@AEAVAnimating\@AgentComponents\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UAnimationCompleteFlag\@AgentComponents\@\@\@\@\@\@\@Z
  */
 MCAPI void
-animationTick(class StrictEntityContext&, class AgentComponents::Animating&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct AgentComponents::AnimationCompleteFlag>>&); // NOLINT
+animationTick(class StrictEntityContext&, class AgentComponents::Animating&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct AgentComponents::AnimationCompleteFlag>>&);
+// NOLINTEND
 
 }; // namespace AgentAnimationSystems

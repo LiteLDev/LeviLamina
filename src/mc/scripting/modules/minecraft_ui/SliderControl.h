@@ -18,20 +18,22 @@ public:
     SliderControl()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?getJson\@SliderControl\@ScriptModuleMinecraftServerUI\@\@UEBA?AVValue\@Json\@\@XZ
      */
-    virtual class Json::Value getJson() const; // NOLINT
+    virtual class Json::Value getJson() const;
     /**
      * @symbol ??0SliderControl\@ScriptModuleMinecraftServerUI\@\@QEAA\@VValue\@Json\@\@MMMV?$optional\@H\@std\@\@\@Z
      */
-    MCAPI SliderControl(class Json::Value, float, float, float, class std::optional<int>); // NOLINT
+    MCAPI SliderControl(class Json::Value, float, float, float, std::optional<int>);
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraftServerUI

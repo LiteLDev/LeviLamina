@@ -11,16 +11,18 @@ public:
     VehicleClientPositionPassengerSystem()                                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSetPositionRequestSystem\@VehicleClientPositionPassengerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSetPositionRequestSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSetPositionRequestSystem();
     /**
      * @symbol ?createSetPreviousPosRotSystem\@VehicleClientPositionPassengerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSetPreviousPosRotSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSetPreviousPosRotSystem();
     /**
      * @symbol ?createSetRotationLock\@VehicleClientPositionPassengerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSetRotationLock(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSetRotationLock();
+    // NOLINTEND
 };

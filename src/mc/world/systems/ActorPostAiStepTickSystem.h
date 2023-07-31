@@ -11,8 +11,10 @@ public:
     ActorPostAiStepTickSystem()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@ActorPostAiStepTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 };

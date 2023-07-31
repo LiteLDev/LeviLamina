@@ -13,19 +13,21 @@ public:
     StateNameProxy()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1StateNameProxy\@BlockDescriptorSerializer\@\@QEAA\@XZ
      */
-    MCAPI ~StateNameProxy(); // NOLINT
+    MCAPI ~StateNameProxy();
     /**
      * @symbol ?bindType\@StateNameProxy\@BlockDescriptorSerializer\@\@SAXXZ
      */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI static void bindType();
     /**
      * @symbol
      * ?constructFromString\@StateNameProxy\@BlockDescriptorSerializer\@\@SA?AU12\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI static struct BlockDescriptorSerializer::StateNameProxy constructFromString(std::string const&); // NOLINT
+    MCAPI static struct BlockDescriptorSerializer::StateNameProxy constructFromString(std::string const&);
+    // NOLINTEND
 };
 
 }; // namespace BlockDescriptorSerializer

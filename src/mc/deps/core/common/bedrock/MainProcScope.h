@@ -12,14 +12,16 @@ public:
     MainProcScope(MainProcScope const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0MainProcScope\@Threading\@Bedrock\@\@QEAA\@XZ
      */
-    MCAPI MainProcScope(); // NOLINT
+    MCAPI MainProcScope();
     /**
      * @symbol ??1MainProcScope\@Threading\@Bedrock\@\@QEAA\@XZ
      */
-    MCAPI ~MainProcScope(); // NOLINT
+    MCAPI ~MainProcScope();
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Threading

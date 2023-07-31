@@ -16,20 +16,22 @@ public:
     FlatWorldGeneratorOptions()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1FlatWorldGeneratorOptions\@\@QEAA\@XZ
      */
-    MCAPI ~FlatWorldGeneratorOptions(); // NOLINT
+    MCAPI ~FlatWorldGeneratorOptions();
     /**
      * @symbol ?getLayers\@FlatWorldGeneratorOptions\@\@SA?AVValue\@Json\@\@AEBVLevelData\@\@\@Z
      */
-    MCAPI static class Json::Value getLayers(class LevelData const&); // NOLINT
+    MCAPI static class Json::Value getLayers(class LevelData const&);
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol ?_load\@FlatWorldGeneratorOptions\@\@IEAA_NAEBVValue\@Json\@\@AEBVBlockPalette\@\@AEBVLevelData\@\@\@Z
      */
-    MCAPI bool _load(class Json::Value const&, class BlockPalette const&, class LevelData const&); // NOLINT
-
-protected:
+    MCAPI bool _load(class Json::Value const&, class BlockPalette const&, class LevelData const&);
+    // NOLINTEND
 };

@@ -11,12 +11,14 @@ public:
     ItemStackRequestHandlerSlotInfo()                                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??BItemStackRequestHandlerSlotInfo\@\@QEBA_NXZ
      */
-    MCAPI operator bool() const; // NOLINT
+    MCAPI operator bool() const;
     /**
      * @symbol ??1ItemStackRequestHandlerSlotInfo\@\@QEAA\@XZ
      */
-    MCAPI ~ItemStackRequestHandlerSlotInfo(); // NOLINT
+    MCAPI ~ItemStackRequestHandlerSlotInfo();
+    // NOLINTEND
 };

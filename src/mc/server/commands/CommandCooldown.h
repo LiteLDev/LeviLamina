@@ -13,10 +13,12 @@ public:
     CommandCooldown()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0CommandCooldown\@AgentComponents\@\@QEAA\@M\@Z
      */
-    MCAPI CommandCooldown(float); // NOLINT
+    MCAPI CommandCooldown(float);
+    // NOLINTEND
 };
 
 }; // namespace AgentComponents

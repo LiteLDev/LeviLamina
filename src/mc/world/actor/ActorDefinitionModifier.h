@@ -9,20 +9,22 @@ public:
     ActorDefinitionModifier() = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ActorDefinitionModifier\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI ActorDefinitionModifier(struct ActorDefinitionModifier const&); // NOLINT
+    MCAPI ActorDefinitionModifier(struct ActorDefinitionModifier const&);
     /**
      * @symbol ??4ActorDefinitionModifier\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct ActorDefinitionModifier& operator=(struct ActorDefinitionModifier&&); // NOLINT
+    MCAPI struct ActorDefinitionModifier& operator=(struct ActorDefinitionModifier&&);
     /**
      * @symbol ??4ActorDefinitionModifier\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
-    MCAPI struct ActorDefinitionModifier& operator=(struct ActorDefinitionModifier const&); // NOLINT
+    MCAPI struct ActorDefinitionModifier& operator=(struct ActorDefinitionModifier const&);
     /**
      * @symbol ??1ActorDefinitionModifier\@\@QEAA\@XZ
      */
-    MCAPI ~ActorDefinitionModifier(); // NOLINT
+    MCAPI ~ActorDefinitionModifier();
+    // NOLINTEND
 };

@@ -13,10 +13,12 @@ public:
     CarverConfiguration()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1CarverConfiguration\@CaveFeatureUtils\@\@QEAA\@XZ
      */
-    MCAPI ~CarverConfiguration(); // NOLINT
+    MCAPI ~CarverConfiguration();
+    // NOLINTEND
 };
 
 }; // namespace CaveFeatureUtils

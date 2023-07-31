@@ -11,8 +11,10 @@ public:
     LevelNotificationEvent()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1LevelNotificationEvent\@\@QEAA\@XZ
      */
-    MCAPI ~LevelNotificationEvent(); // NOLINT
+    MCAPI ~LevelNotificationEvent();
+    // NOLINTEND
 };

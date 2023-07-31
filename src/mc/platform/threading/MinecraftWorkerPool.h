@@ -14,80 +14,82 @@ public:
     MinecraftWorkerPool()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?configureMainThread\@MinecraftWorkerPool\@\@SAXXZ
      */
-    MCAPI static void configureMainThread(); // NOLINT
+    MCAPI static void configureMainThread();
     /**
      * @symbol ?configureServerThread\@MinecraftWorkerPool\@\@SAXXZ
      */
-    MCAPI static void configureServerThread(); // NOLINT
+    MCAPI static void configureServerThread();
     /**
      * @symbol ?createSingletons\@MinecraftWorkerPool\@\@SAXXZ
      */
-    MCAPI static void createSingletons(); // NOLINT
+    MCAPI static void createSingletons();
     /**
      * @symbol ?destroySingletons\@MinecraftWorkerPool\@\@SAXXZ
      */
-    MCAPI static void destroySingletons(); // NOLINT
+    MCAPI static void destroySingletons();
     /**
      * @symbol ?initializeDefaults\@MinecraftWorkerPool\@\@SAXXZ
      */
-    MCAPI static void initializeDefaults(); // NOLINT
+    MCAPI static void initializeDefaults();
     /**
      * @symbol ?loadWorkerConfigurations\@MinecraftWorkerPool\@\@SAXII\@Z
      */
-    MCAPI static void loadWorkerConfigurations(unsigned int, unsigned int); // NOLINT
+    MCAPI static void loadWorkerConfigurations(unsigned int, unsigned int);
     /**
      * @symbol ?ASYNC\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> ASYNC; // NOLINT
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> ASYNC;
     /**
      * @symbol ?CONNECTEDSTORAGE\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> CONNECTEDSTORAGE; // NOLINT
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> CONNECTEDSTORAGE;
     /**
      * @symbol ?DISK\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> DISK; // NOLINT
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> DISK;
     /**
      * @symbol ?GAMEFACE_LAYOUT\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> GAMEFACE_LAYOUT; // NOLINT
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> GAMEFACE_LAYOUT;
     /**
      * @symbol ?INPUT\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> INPUT; // NOLINT
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> INPUT;
     /**
      * @symbol ?LEVELDB\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> LEVELDB; // NOLINT
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> LEVELDB;
     /**
      * @symbol ?LEVELDB_COMPACTION\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> LEVELDB_COMPACTION; // NOLINT
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> LEVELDB_COMPACTION;
     /**
      * @symbol ?NETWORK\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> NETWORK; // NOLINT
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> NETWORK;
     /**
      * @symbol ?PYTHONRUNTIME\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> PYTHONRUNTIME; // NOLINT
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> PYTHONRUNTIME;
     /**
      * @symbol ?RENDERING\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> RENDERING; // NOLINT
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> RENDERING;
     /**
      * @symbol ?RENDERING_HELPERS\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> RENDERING_HELPERS; // NOLINT
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> RENDERING_HELPERS;
     /**
      * @symbol ?VR\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> VR; // NOLINT
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> VR;
     /**
      * @symbol ?WATCHDOG\@MinecraftWorkerPool\@\@2V?$NonOwnerPointer\@VWorkerPool\@\@\@Bedrock\@\@A
      */
-    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> WATCHDOG; // NOLINT
+    MCAPI static class Bedrock::NonOwnerPointer<class WorkerPool> WATCHDOG;
+    // NOLINTEND
 };

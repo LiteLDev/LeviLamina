@@ -16,10 +16,11 @@ public:
     SpinAttackSystem()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?_spinAttack\@SpinAttackSystem\@\@SAXAEAVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
      */
-    MCAPI static void _spinAttack(class StrictEntityContext&, class ActorOwnerComponent&); // NOLINT
+    MCAPI static void _spinAttack(class StrictEntityContext&, class ActorOwnerComponent&);
     /**
      * @symbol
      * ?_tickSpinAttackSystem\@SpinAttackSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@\@\@VActorOwnerComponent\@\@\@\@\@Z
@@ -28,9 +29,10 @@ public:
                                             class StrictEntityContext,
                                             class EntityRegistryBase,
                                             struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
-                                            class ActorOwnerComponent>); // NOLINT
+                                            class ActorOwnerComponent>);
     /**
      * @symbol ?createSystem\@SpinAttackSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 };

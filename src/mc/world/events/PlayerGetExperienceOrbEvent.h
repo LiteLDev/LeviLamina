@@ -11,8 +11,10 @@ public:
     PlayerGetExperienceOrbEvent()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PlayerGetExperienceOrbEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerGetExperienceOrbEvent(); // NOLINT
+    MCAPI ~PlayerGetExperienceOrbEvent();
+    // NOLINTEND
 };

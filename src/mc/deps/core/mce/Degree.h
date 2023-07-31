@@ -18,14 +18,16 @@ public:
     Degree()                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0Degree\@mce\@\@QEAA\@URadian\@1\@\@Z
      */
-    MCAPI Degree(struct mce::Radian); // NOLINT
+    MCAPI Degree(struct mce::Radian);
     /**
      * @symbol ?asFloat\@Degree\@mce\@\@QEBAAEBMXZ
      */
-    MCAPI float const& asFloat() const; // NOLINT
+    MCAPI float const& asFloat() const;
+    // NOLINTEND
 };
 
 }; // namespace mce

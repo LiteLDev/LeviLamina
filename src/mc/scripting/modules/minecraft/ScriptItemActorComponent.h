@@ -24,16 +24,17 @@ public:
     ScriptItemActorComponent()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTITEMACTORCOMPONENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptItemActorComponent(); // NOLINT
+    MCVAPI ~ScriptItemActorComponent();
 #endif
     /**
      * @symbol
@@ -41,17 +42,17 @@ public:
      */
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>
-    getItemStack() const; // NOLINT
+    getItemStack() const;
     /**
      * @symbol
      * ?bind\@ScriptItemActorComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptItemActorComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemActorComponent>
-    bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemActorComponent> bind();
     /**
      * @symbol ?ComponentId\@ScriptItemActorComponent\@ScriptModuleMinecraft\@\@2PEBDEB
      */
-    MCAPI static char const* ComponentId; // NOLINT
+    MCAPI static char const* ComponentId;
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

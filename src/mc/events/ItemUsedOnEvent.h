@@ -11,8 +11,10 @@ public:
     ItemUsedOnEvent()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ItemUsedOnEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ItemUsedOnEvent(); // NOLINT
+    MCAPI ~ItemUsedOnEvent();
+    // NOLINTEND
 };

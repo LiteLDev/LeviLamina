@@ -23,24 +23,22 @@ public:
         BlocksChangedInfo(BlocksChangedInfo const&)            = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??0BlocksChangedInfo\@UpdateSubChunkBlocksPacket\@\@QEAA\@XZ
          */
-        MCAPI BlocksChangedInfo(); // NOLINT
+        MCAPI BlocksChangedInfo();
         /**
          * @symbol
          * ?add\@BlocksChangedInfo\@UpdateSubChunkBlocksPacket\@\@QEAAXAEBVBlockPos\@\@IAEBVBlock\@\@HPEBUActorBlockSyncMessage\@\@\@Z
          */
         MCAPI void
-        add(class BlockPos const&,
-            unsigned int,
-            class Block const&,
-            int,
-            struct ActorBlockSyncMessage const*); // NOLINT
+        add(class BlockPos const&, unsigned int, class Block const&, int, struct ActorBlockSyncMessage const*);
         /**
          * @symbol ??1BlocksChangedInfo\@UpdateSubChunkBlocksPacket\@\@QEAA\@XZ
          */
-        MCAPI ~BlocksChangedInfo(); // NOLINT
+        MCAPI ~BlocksChangedInfo();
+        // NOLINTEND
     };
 
     struct NetworkBlockInfo {
@@ -52,10 +50,12 @@ public:
         NetworkBlockInfo()                                   = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1NetworkBlockInfo\@UpdateSubChunkBlocksPacket\@\@QEAA\@XZ
          */
-        MCAPI ~NetworkBlockInfo(); // NOLINT
+        MCAPI ~NetworkBlockInfo();
+        // NOLINTEND
     };
 
 public:
@@ -64,51 +64,53 @@ public:
     UpdateSubChunkBlocksPacket(UpdateSubChunkBlocksPacket const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?getId\@UpdateSubChunkBlocksPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
-    virtual enum class MinecraftPacketIds getId() const; // NOLINT
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl 2
      * @symbol
      * ?getName\@UpdateSubChunkBlocksPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string getName() const; // NOLINT
+    virtual std::string getName() const;
     /**
      * @vftbl 3
      * @symbol ?write\@UpdateSubChunkBlocksPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
-    virtual void write(class BinaryStream&) const; // NOLINT
+    virtual void write(class BinaryStream&) const;
     /**
      * @vftbl 7
      * @symbol
      * ?_read\@UpdateSubChunkBlocksPacket\@\@MEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&); // NOLINT
+    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATESUBCHUNKBLOCKSPACKET
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~UpdateSubChunkBlocksPacket(); // NOLINT
+    MCVAPI ~UpdateSubChunkBlocksPacket();
 #endif
     /**
      * @symbol ??0UpdateSubChunkBlocksPacket\@\@QEAA\@XZ
      */
-    MCAPI UpdateSubChunkBlocksPacket(); // NOLINT
+    MCAPI UpdateSubChunkBlocksPacket();
     /**
      * @symbol
      * ??0UpdateSubChunkBlocksPacket\@\@QEAA\@AEBV?$vector\@UNetworkBlockInfo\@UpdateSubChunkBlocksPacket\@\@V?$allocator\@UNetworkBlockInfo\@UpdateSubChunkBlocksPacket\@\@\@std\@\@\@std\@\@0\@Z
      */
     MCAPI
-    UpdateSubChunkBlocksPacket(std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const&, std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const&); // NOLINT
+    UpdateSubChunkBlocksPacket(std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const&, std::vector<struct UpdateSubChunkBlocksPacket::NetworkBlockInfo> const&);
     /**
      * @symbol ?setSubChunkPosition\@UpdateSubChunkBlocksPacket\@\@QEAAXAEBVSubChunkPos\@\@\@Z
      */
-    MCAPI void setSubChunkPosition(class SubChunkPos const&); // NOLINT
+    MCAPI void setSubChunkPosition(class SubChunkPos const&);
+    // NOLINTEND
 };

@@ -14,34 +14,36 @@ public:
     ResourceUriCommand()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?execute\@ResourceUriCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
     /**
      * @symbol ?setup\@ResourceUriCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
-    MCAPI static void setup(class CommandRegistry&); // NOLINT
+    MCAPI static void setup(class CommandRegistry&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_executeClear\@ResourceUriCommand\@\@AEBAXAEAVLevel\@\@PEAVPlayer\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void _executeClear(class Level&, class Player*, class CommandOutput&) const; // NOLINT
+    MCAPI void _executeClear(class Level&, class Player*, class CommandOutput&) const;
     /**
      * @symbol ?_executeNamed\@ResourceUriCommand\@\@AEBAXAEAVLevel\@\@PEAVPlayer\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void _executeNamed(class Level&, class Player*, class CommandOutput&) const; // NOLINT
+    MCAPI void _executeNamed(class Level&, class Player*, class CommandOutput&) const;
     /**
      * @symbol ?_executeUriOnly\@ResourceUriCommand\@\@AEBAXAEAVLevel\@\@PEAVPlayer\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void _executeUriOnly(class Level&, class Player*, class CommandOutput&) const; // NOLINT
-
-private:
+    MCAPI void _executeUriOnly(class Level&, class Player*, class CommandOutput&) const;
+    // NOLINTEND
 };

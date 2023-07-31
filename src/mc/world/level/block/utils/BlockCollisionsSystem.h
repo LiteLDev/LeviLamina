@@ -11,8 +11,10 @@ public:
     BlockCollisionsSystem()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createBlockCollisionsSystem\@BlockCollisionsSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createBlockCollisionsSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createBlockCollisionsSystem();
+    // NOLINTEND
 };

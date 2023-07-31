@@ -14,153 +14,155 @@ public:
     TransactionalWorldBlockTarget()                                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?shimPlaceForOldFeatures\@TransactionalWorldBlockTarget\@\@UEBA_NAEBVFeature\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual bool shimPlaceForOldFeatures(class Feature const&, class BlockPos const&, class Random&) const; // NOLINT
+    virtual bool shimPlaceForOldFeatures(class Feature const&, class BlockPos const&, class Random&) const;
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2(); // NOLINT
+    virtual void __unk_vfn_2();
     /**
      * @vftbl 3
      * @symbol ?tryGetLiquidBlock\@TransactionalWorldBlockTarget\@\@UEBAPEBVBlock\@\@AEBVBlockPos\@\@\@Z
      */
-    virtual class Block const* tryGetLiquidBlock(class BlockPos const&) const; // NOLINT
+    virtual class Block const* tryGetLiquidBlock(class BlockPos const&) const;
     /**
      * @vftbl 4
      * @symbol ?getBlock\@TransactionalWorldBlockTarget\@\@UEBAAEBVBlock\@\@AEBVBlockPos\@\@\@Z
      */
-    virtual class Block const& getBlock(class BlockPos const&) const; // NOLINT
+    virtual class Block const& getBlock(class BlockPos const&) const;
     /**
      * @vftbl 5
      * @symbol ?getBlockNoBoundsCheck\@TransactionalWorldBlockTarget\@\@UEBAAEBVBlock\@\@AEBVBlockPos\@\@\@Z
      */
-    virtual class Block const& getBlockNoBoundsCheck(class BlockPos const&) const; // NOLINT
+    virtual class Block const& getBlockNoBoundsCheck(class BlockPos const&) const;
     /**
      * @vftbl 6
      * @symbol ?getExtraBlock\@TransactionalWorldBlockTarget\@\@UEBAAEBVBlock\@\@AEBVBlockPos\@\@\@Z
      */
-    virtual class Block const& getExtraBlock(class BlockPos const&) const; // NOLINT
+    virtual class Block const& getExtraBlock(class BlockPos const&) const;
     /**
      * @vftbl 7
      * @symbol
      * ?fetchBlocksInBox\@TransactionalWorldBlockTarget\@\@UEAA?AV?$span\@$$CBV?$BlockDataFetchResult\@VBlock\@\@\@\@$0?0\@gsl\@\@AEBVBoundingBox\@\@V?$function\@$$A6A_NAEBVBlock\@\@\@Z\@std\@\@\@Z
      */
-    virtual class gsl::span<class BlockDataFetchResult<class Block> const, -1>
-    fetchBlocksInBox(class BoundingBox const&, class std::function<bool(class Block const&)>); // NOLINT
+    virtual class gsl::span<class BlockDataFetchResult<class Block> const>
+    fetchBlocksInBox(class BoundingBox const&, std::function<bool(class Block const&)>);
     /**
      * @vftbl 8
      * @symbol ?hasBiomeTag\@TransactionalWorldBlockTarget\@\@UEBA_N_KAEBVBlockPos\@\@\@Z
      */
-    virtual bool hasBiomeTag(unsigned __int64, class BlockPos const&) const; // NOLINT
+    virtual bool hasBiomeTag(uint64_t, class BlockPos const&) const;
     /**
      * @vftbl 9
      * @symbol ?setBlock\@TransactionalWorldBlockTarget\@\@UEAA_NAEBVBlockPos\@\@AEBVBlock\@\@H\@Z
      */
-    virtual bool setBlock(class BlockPos const&, class Block const&, int); // NOLINT
+    virtual bool setBlock(class BlockPos const&, class Block const&, int);
     /**
      * @vftbl 10
      * @symbol ?setBlockSimple\@TransactionalWorldBlockTarget\@\@UEAA_NAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
-    virtual bool setBlockSimple(class BlockPos const&, class Block const&); // NOLINT
+    virtual bool setBlockSimple(class BlockPos const&, class Block const&);
     /**
      * @vftbl 11
      * @symbol ?apply\@TransactionalWorldBlockTarget\@\@UEBA_NXZ
      */
-    virtual bool apply() const; // NOLINT
+    virtual bool apply() const;
     /**
      * @vftbl 12
      * @symbol
      * ?placeStructure\@TransactionalWorldBlockTarget\@\@UEAA_NAEBVBlockPos\@\@AEAVStructureTemplate\@\@AEAVStructureSettings\@\@\@Z
      */
-    virtual bool placeStructure(class BlockPos const&, class StructureTemplate&, class StructureSettings&); // NOLINT
+    virtual bool placeStructure(class BlockPos const&, class StructureTemplate&, class StructureSettings&);
     /**
      * @vftbl 13
      * @symbol ?mayPlace\@TransactionalWorldBlockTarget\@\@UEBA_NAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
-    virtual bool mayPlace(class BlockPos const&, class Block const&) const; // NOLINT
+    virtual bool mayPlace(class BlockPos const&, class Block const&) const;
     /**
      * @vftbl 14
      * @symbol ?canSurvive\@TransactionalWorldBlockTarget\@\@UEBA_NAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
-    virtual bool canSurvive(class BlockPos const&, class Block const&) const; // NOLINT
+    virtual bool canSurvive(class BlockPos const&, class Block const&) const;
     /**
      * @vftbl 15
      * @symbol ?canBeBuiltOver\@TransactionalWorldBlockTarget\@\@UEBA_NAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
-    virtual bool canBeBuiltOver(class BlockPos const&, class Block const&) const; // NOLINT
+    virtual bool canBeBuiltOver(class BlockPos const&, class Block const&) const;
     /**
      * @vftbl 16
      * @symbol ?getMaxHeight\@TransactionalWorldBlockTarget\@\@UEBAFXZ
      */
-    virtual short getMaxHeight() const; // NOLINT
+    virtual short getMaxHeight() const;
     /**
      * @vftbl 17
      * @symbol ?getMinHeight\@TransactionalWorldBlockTarget\@\@UEBAFXZ
      */
-    virtual short getMinHeight() const; // NOLINT
+    virtual short getMinHeight() const;
     /**
      * @vftbl 18
      * @symbol __unk_vfn_18
      */
-    virtual void __unk_vfn_18(); // NOLINT
+    virtual void __unk_vfn_18();
     /**
      * @vftbl 19
      * @symbol ?getHeightmap\@TransactionalWorldBlockTarget\@\@UEAAFHH\@Z
      */
-    virtual short getHeightmap(int, int); // NOLINT
+    virtual short getHeightmap(int, int);
     /**
      * @vftbl 20
      * @symbol ?isLegacyLevel\@TransactionalWorldBlockTarget\@\@UEAA_NXZ
      */
-    virtual bool isLegacyLevel(); // NOLINT
+    virtual bool isLegacyLevel();
     /**
      * @vftbl 21
      * @symbol ?getBiome\@TransactionalWorldBlockTarget\@\@UEBAPEBVBiome\@\@AEBVBlockPos\@\@\@Z
      */
-    virtual class Biome const* getBiome(class BlockPos const&) const; // NOLINT
+    virtual class Biome const* getBiome(class BlockPos const&) const;
     /**
      * @vftbl 22
      * @symbol ?isInBounds\@TransactionalWorldBlockTarget\@\@UEBA_NAEBVPos\@\@\@Z
      */
-    virtual bool isInBounds(class Pos const&) const; // NOLINT
+    virtual bool isInBounds(class Pos const&) const;
     /**
      * @vftbl 23
      * @symbol ?getLocalWaterLevel\@TransactionalWorldBlockTarget\@\@UEBAFAEBVBlockPos\@\@\@Z
      */
-    virtual short getLocalWaterLevel(class BlockPos const&) const; // NOLINT
+    virtual short getLocalWaterLevel(class BlockPos const&) const;
     /**
      * @vftbl 24
      * @symbol ?getLevelData\@TransactionalWorldBlockTarget\@\@UEBAAEBVLevelData\@\@XZ
      */
-    virtual class LevelData const& getLevelData() const; // NOLINT
+    virtual class LevelData const& getLevelData() const;
     /**
      * @vftbl 25
      * @symbol ?getContext\@TransactionalWorldBlockTarget\@\@UEAAAEBUWorldGenContext\@\@XZ
      */
-    virtual struct WorldGenContext const& getContext(); // NOLINT
+    virtual struct WorldGenContext const& getContext();
     /**
      * @vftbl 26
      * @symbol ?disableBlockSimple\@TransactionalWorldBlockTarget\@\@UEAAXXZ
      */
-    virtual void disableBlockSimple(); // NOLINT
+    virtual void disableBlockSimple();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TRANSACTIONALWORLDBLOCKTARGET
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~TransactionalWorldBlockTarget(); // NOLINT
+    MCVAPI ~TransactionalWorldBlockTarget();
 #endif
     /**
      * @symbol ??0TransactionalWorldBlockTarget\@\@QEAA\@AEAVIBlockWorldGenAPI\@\@\@Z
      */
-    MCAPI TransactionalWorldBlockTarget(class IBlockWorldGenAPI&); // NOLINT
+    MCAPI TransactionalWorldBlockTarget(class IBlockWorldGenAPI&);
+    // NOLINTEND
 };

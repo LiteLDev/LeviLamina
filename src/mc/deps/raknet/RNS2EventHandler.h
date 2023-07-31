@@ -13,12 +13,14 @@ public:
     RNS2EventHandler()                                   = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKNET_RNS2EVENTHANDLER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~RNS2EventHandler(); // NOLINT
+    MCVAPI ~RNS2EventHandler();
 #endif
+    // NOLINTEND
 };
 
 }; // namespace RakNet

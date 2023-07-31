@@ -11,8 +11,10 @@ public:
     SecureStorageKey()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1SecureStorageKey\@\@QEAA\@XZ
      */
-    MCAPI ~SecureStorageKey(); // NOLINT
+    MCAPI ~SecureStorageKey();
+    // NOLINTEND
 };

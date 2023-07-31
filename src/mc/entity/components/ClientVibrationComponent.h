@@ -11,12 +11,14 @@ public:
     ClientVibrationComponent()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getTicksSinceLastVibration\@ClientVibrationComponent\@\@QEBA?AV?$optional\@_K\@std\@\@AEBVILevel\@\@\@Z
      */
-    MCAPI class std::optional<unsigned __int64> getTicksSinceLastVibration(class ILevel const&) const; // NOLINT
+    MCAPI std::optional<uint64_t> getTicksSinceLastVibration(class ILevel const&) const;
     /**
      * @symbol ?setLastVibrationTick\@ClientVibrationComponent\@\@QEAAXUTick\@\@\@Z
      */
-    MCAPI void setLastVibrationTick(struct Tick); // NOLINT
+    MCAPI void setLastVibrationTick(struct Tick);
+    // NOLINTEND
 };

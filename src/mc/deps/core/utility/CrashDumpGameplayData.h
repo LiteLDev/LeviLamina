@@ -11,8 +11,10 @@ public:
     CrashDumpGameplayData()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?kFormat\@CrashDumpGameplayData\@\@2QBUCrashDumpFormatEntryImpl\@\@B
      */
-    MCAPI static struct CrashDumpFormatEntryImpl const kFormat[]; // NOLINT
+    MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
+    // NOLINTEND
 };

@@ -11,32 +11,34 @@ public:
     unsigned char value;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0Brightness\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI Brightness(struct Brightness const&); // NOLINT
+    MCAPI Brightness(struct Brightness const&);
     /**
      * @symbol ??0Brightness\@\@QEAA\@AEBE\@Z
      */
-    MCAPI Brightness(unsigned char const&); // NOLINT
+    MCAPI Brightness(unsigned char const&);
     /**
      * @symbol ??4Brightness\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
-    MCAPI struct Brightness& operator=(struct Brightness const&); // NOLINT
+    MCAPI struct Brightness& operator=(struct Brightness const&);
     /**
      * @symbol ??4Brightness\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct Brightness& operator=(struct Brightness&&); // NOLINT
+    MCAPI struct Brightness& operator=(struct Brightness&&);
     /**
      * @symbol ?INVALID\@Brightness\@\@2U1\@B
      */
-    MCAPI static struct Brightness const INVALID; // NOLINT
+    MCAPI static struct Brightness const INVALID;
     /**
      * @symbol ?MAX\@Brightness\@\@2U1\@B
      */
-    MCAPI static struct Brightness const MAX; // NOLINT
+    MCAPI static struct Brightness const MAX;
     /**
      * @symbol ?MIN\@Brightness\@\@2U1\@B
      */
-    MCAPI static struct Brightness const MIN; // NOLINT
+    MCAPI static struct Brightness const MIN;
+    // NOLINTEND
 };

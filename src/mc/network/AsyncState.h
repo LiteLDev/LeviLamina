@@ -11,8 +11,10 @@ public:
     AsyncState()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?Release\@AsyncState\@\@QEAAXXZ
      */
-    MCAPI void Release(); // NOLINT
+    MCAPI void Release();
+    // NOLINTEND
 };

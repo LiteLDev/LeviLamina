@@ -7,12 +7,16 @@ class ListTagIntAdder {
 
 public:
     std::unique_ptr<ListTag> mTag;
+
+public:
+    // NOLINTBEGIN
     /**
      * @symbol ??RListTagIntAdder\@\@QEAAAEAV0\@H\@Z
      */
-    MCAPI class ListTagIntAdder& operator()(int); // NOLINT
+    MCAPI class ListTagIntAdder& operator()(int);
     /**
      * @symbol ??1ListTagIntAdder\@\@QEAA\@XZ
      */
-    MCAPI ~ListTagIntAdder(); // NOLINT
+    MCAPI ~ListTagIntAdder();
+    // NOLINTEND
 };

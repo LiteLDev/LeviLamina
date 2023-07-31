@@ -10,23 +10,25 @@ public:
     MoveToNode(MoveToNode const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?tick\@MoveToNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
-    virtual enum class BehaviorStatus tick(class Actor&); // NOLINT
+    virtual enum class BehaviorStatus tick(class Actor&);
     /**
      * @vftbl 2
      * @symbol ?initializeFromDefinition\@MoveToNode\@\@EEAAXAEAVActor\@\@\@Z
      */
-    virtual void initializeFromDefinition(class Actor&); // NOLINT
+    virtual void initializeFromDefinition(class Actor&);
     /**
      * @symbol ??0MoveToNode\@\@QEAA\@XZ
      */
-    MCAPI MoveToNode(); // NOLINT
+    MCAPI MoveToNode();
+    // NOLINTEND
 };

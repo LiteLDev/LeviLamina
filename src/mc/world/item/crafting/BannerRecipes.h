@@ -11,8 +11,10 @@ public:
     BannerRecipes()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?addRecipes\@BannerRecipes\@\@SAXAEAVRecipes\@\@\@Z
      */
-    MCAPI static void addRecipes(class Recipes&); // NOLINT
+    MCAPI static void addRecipes(class Recipes&);
+    // NOLINTEND
 };

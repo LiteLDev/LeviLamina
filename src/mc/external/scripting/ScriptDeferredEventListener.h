@@ -11,30 +11,32 @@ public:
     ScriptDeferredEventListener()                                              = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTDEFERREDEVENTLISTENER
     /**
      * @symbol ?onFlushSystemAfterEvents\@ScriptDeferredEventListener\@\@UEAA_NXZ
      */
-    MCVAPI bool onFlushSystemAfterEvents(); // NOLINT
+    MCVAPI bool onFlushSystemAfterEvents();
     /**
      * @symbol ?onFlushWorldAfterEvents\@ScriptDeferredEventListener\@\@UEAA_NXZ
      */
-    MCVAPI bool onFlushWorldAfterEvents(); // NOLINT
+    MCVAPI bool onFlushWorldAfterEvents();
     /**
      * @symbol ?onLevelTickEnd\@ScriptDeferredEventListener\@\@UEAAXXZ
      */
-    MCVAPI void onLevelTickEnd(); // NOLINT
+    MCVAPI void onLevelTickEnd();
     /**
      * @symbol ?onPostFlushAfterEvents\@ScriptDeferredEventListener\@\@UEAAXXZ
      */
-    MCVAPI void onPostFlushAfterEvents(); // NOLINT
+    MCVAPI void onPostFlushAfterEvents();
     /**
      * @symbol ?onPreFlushAfterEvents\@ScriptDeferredEventListener\@\@UEAAXXZ
      */
-    MCVAPI void onPreFlushAfterEvents(); // NOLINT
+    MCVAPI void onPreFlushAfterEvents();
     /**
      * @symbol ?onRunSystemTick\@ScriptDeferredEventListener\@\@UEAA_NXZ
      */
-    MCVAPI bool onRunSystemTick(); // NOLINT
+    MCVAPI bool onRunSystemTick();
 #endif
+    // NOLINTEND
 };

@@ -11,8 +11,10 @@ public:
     MolangGeometryVariable()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1MolangGeometryVariable\@\@QEAA\@XZ
      */
-    MCAPI ~MolangGeometryVariable(); // NOLINT
+    MCAPI ~MolangGeometryVariable();
+    // NOLINTEND
 };

@@ -9,43 +9,45 @@ public:
     TempEPtrBase() = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol ?invalidate\@TempEPtrBase\@\@EEAAXXZ
      */
-    virtual void invalidate(); // NOLINT
+    virtual void invalidate();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TEMPEPTRBASE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~TempEPtrBase(); // NOLINT
+    MCVAPI ~TempEPtrBase();
 #endif
     /**
      * @symbol ??0TempEPtrBase\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI TempEPtrBase(class TempEPtrBase const&); // NOLINT
+    MCAPI TempEPtrBase(class TempEPtrBase const&);
     /**
      * @symbol ?isValid\@TempEPtrBase\@\@QEBA_NXZ
      */
-    MCAPI bool isValid() const; // NOLINT
+    MCAPI bool isValid() const;
     /**
      * @symbol ??4TempEPtrBase\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
-    MCAPI class TempEPtrBase& operator=(class TempEPtrBase const&); // NOLINT
+    MCAPI class TempEPtrBase& operator=(class TempEPtrBase const&);
     /**
      * @symbol ?unset\@TempEPtrBase\@\@QEAAXXZ
      */
-    MCAPI void unset(); // NOLINT
+    MCAPI void unset();
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol ?_lock\@TempEPtrBase\@\@IEBAPEAVActor\@\@XZ
      */
-    MCAPI class Actor* _lock() const; // NOLINT
+    MCAPI class Actor* _lock() const;
     /**
      * @symbol ?_set\@TempEPtrBase\@\@IEAAXPEAVActor\@\@\@Z
      */
-    MCAPI void _set(class Actor*); // NOLINT
-
-protected:
+    MCAPI void _set(class Actor*);
+    // NOLINTEND
 };

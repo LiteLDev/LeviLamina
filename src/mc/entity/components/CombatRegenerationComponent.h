@@ -11,20 +11,22 @@ public:
     CombatRegenerationComponent()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?tick\@CombatRegenerationComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void tick(class Actor&); // NOLINT
+    MCAPI void tick(class Actor&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_applyCombatBuffsToMob\@CombatRegenerationComponent\@\@AEAAXAEAVActor\@\@0\@Z
      */
-    MCAPI void _applyCombatBuffsToMob(class Actor&, class Actor&); // NOLINT
+    MCAPI void _applyCombatBuffsToMob(class Actor&, class Actor&);
     /**
      * @symbol ?_getDefinition\@CombatRegenerationComponent\@\@AEBAPEBVCombatRegenerationDefinition\@\@AEAVActor\@\@\@Z
      */
-    MCAPI class CombatRegenerationDefinition const* _getDefinition(class Actor&) const; // NOLINT
-
-private:
+    MCAPI class CombatRegenerationDefinition const* _getDefinition(class Actor&) const;
+    // NOLINTEND
 };

@@ -23,18 +23,20 @@ public:
     ScriptActorFactory()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?createHandle\@ScriptActorFactory\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@PEBVActor\@\@AEBVWeakLifetimeScope\@4\@\@Z
      */
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
-    createHandle(class Actor const*, class Scripting::WeakLifetimeScope const&); // NOLINT
+    createHandle(class Actor const*, class Scripting::WeakLifetimeScope const&);
     /**
      * @symbol
      * ?getHandle\@ScriptActorFactory\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@PEBVActor\@\@AEBVWeakLifetimeScope\@4\@\@Z
      */
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
-    getHandle(class Actor const*, class Scripting::WeakLifetimeScope const&); // NOLINT
+    getHandle(class Actor const*, class Scripting::WeakLifetimeScope const&);
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

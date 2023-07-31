@@ -19,23 +19,25 @@ public:
     ExperienceRewardDefinition()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?addBredExpressionNode\@ExperienceRewardDefinition\@\@QEAAXAEBVExpressionNode\@\@\@Z
      */
-    MCAPI void addBredExpressionNode(class ExpressionNode const&); // NOLINT
+    MCAPI void addBredExpressionNode(class ExpressionNode const&);
     /**
      * @symbol ?addDeathExpressionNode\@ExperienceRewardDefinition\@\@QEAAXAEBVExpressionNode\@\@\@Z
      */
-    MCAPI void addDeathExpressionNode(class ExpressionNode const&); // NOLINT
+    MCAPI void addDeathExpressionNode(class ExpressionNode const&);
     /**
      * @symbol ?initialize\@ExperienceRewardDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVExperienceRewardComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class ExperienceRewardComponent&) const; // NOLINT
+    MCAPI void initialize(class EntityContext&, class ExperienceRewardComponent&) const;
     /**
      * @symbol
      * ?buildSchema\@ExperienceRewardDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VExperienceRewardDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      class ExperienceRewardDefinition>>&); // NOLINT
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ExperienceRewardDefinition>>&);
+    // NOLINTEND
 };

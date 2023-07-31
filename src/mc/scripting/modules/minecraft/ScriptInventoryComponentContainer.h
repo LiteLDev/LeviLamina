@@ -29,55 +29,55 @@ public:
     ScriptInventoryComponentContainer() = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 2
      * @symbol
      * ?getEmptySlotsCount\@ScriptInventoryComponentContainer\@ScriptModuleMinecraft\@\@UEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    virtual class Scripting::Result<int> getEmptySlotsCount() const; // NOLINT
+    virtual class Scripting::Result<int> getEmptySlotsCount() const;
     /**
      * @vftbl 13
      * @symbol ?_tryGetContainer\@ScriptInventoryComponentContainer\@ScriptModuleMinecraft\@\@MEBAPEAVContainer\@\@XZ
      */
-    virtual class Container* _tryGetContainer() const; // NOLINT
+    virtual class Container* _tryGetContainer() const;
     /**
      * @vftbl 14
      * @symbol ?_getItemContext\@ScriptInventoryComponentContainer\@ScriptModuleMinecraft\@\@MEBA?AVItemContext\@\@H\@Z
      */
-    virtual class ItemContext _getItemContext(int) const; // NOLINT
+    virtual class ItemContext _getItemContext(int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTINVENTORYCOMPONENTCONTAINER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptInventoryComponentContainer(); // NOLINT
+    MCVAPI ~ScriptInventoryComponentContainer();
 #endif
     /**
      * @symbol
      * ??0ScriptInventoryComponentContainer\@ScriptModuleMinecraft\@\@QEAA\@AEBVWeakEntityRef\@\@AEBVWeakLifetimeScope\@Scripting\@\@\@Z
      */
-    MCAPI
-    ScriptInventoryComponentContainer(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&); // NOLINT
+    MCAPI ScriptInventoryComponentContainer(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&);
     /**
      * @symbol ??0ScriptInventoryComponentContainer\@ScriptModuleMinecraft\@\@QEAA\@AEBV01\@\@Z
      */
-    MCAPI
-    ScriptInventoryComponentContainer(class ScriptModuleMinecraft::ScriptInventoryComponentContainer const&); // NOLINT
+    MCAPI ScriptInventoryComponentContainer(class ScriptModuleMinecraft::ScriptInventoryComponentContainer const&);
     /**
      * @symbol ??4ScriptInventoryComponentContainer\@ScriptModuleMinecraft\@\@QEAAAEAV01\@AEBV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraft::ScriptInventoryComponentContainer&
-    operator=(class ScriptModuleMinecraft::ScriptInventoryComponentContainer const&); // NOLINT
+    operator=(class ScriptModuleMinecraft::ScriptInventoryComponentContainer const&);
     /**
      * @symbol
      * ?bindV010\@ScriptInventoryComponentContainer\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptInventoryComponentContainer\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptInventoryComponentContainer>
-    bindV010(); // NOLINT
+    bindV010();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

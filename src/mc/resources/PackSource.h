@@ -14,28 +14,30 @@ public:
     PackSource()                             = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKSOURCE
     /**
      * @symbol ?getPackOrigin\@PackSource\@\@UEBA?AW4PackOrigin\@\@XZ
      */
-    MCVAPI enum class PackOrigin getPackOrigin() const; // NOLINT
+    MCVAPI enum class PackOrigin getPackOrigin() const;
     /**
      * @symbol ?getPackType\@PackSource\@\@UEBA?AW4PackType\@\@XZ
      */
-    MCVAPI enum class PackType getPackType() const; // NOLINT
+    MCVAPI enum class PackType getPackType() const;
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~PackSource(); // NOLINT
+    MCVAPI ~PackSource();
 #endif
     /**
      * @symbol ?fetchPack\@PackSource\@\@QEAAPEAVPack\@\@AEBUPackIdVersion\@\@\@Z
      */
-    MCAPI class Pack* fetchPack(struct PackIdVersion const&); // NOLINT
+    MCAPI class Pack* fetchPack(struct PackIdVersion const&);
     /**
      * @symbol
      * ?resolveUpgradeDependencies\@PackSource\@\@QEAAXAEAVPack\@\@AEBV?$not_null\@V?$NonOwnerPointer\@$$CBVIContentKeyProvider\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
     MCAPI void
-    resolveUpgradeDependencies(class Pack&, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&); // NOLINT
+    resolveUpgradeDependencies(class Pack&, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&);
+    // NOLINTEND
 };

@@ -21,11 +21,13 @@ public:
     ScriptEquipmentSlot()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptEquipmentSlot\@ScriptModuleMinecraft\@\@SA?AV?$EnumBindingBuilder\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4EquipmentSlot\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::EnumBindingBuilder<std::string, enum class EquipmentSlot> bind(); // NOLINT
+    MCAPI static class Scripting::EnumBindingBuilder<std::string, enum class EquipmentSlot> bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

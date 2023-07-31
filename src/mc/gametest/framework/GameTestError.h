@@ -20,33 +20,35 @@ public:
     GameTestError()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0GameTestError\@gametest\@\@QEAA\@AEBU01\@\@Z
      */
-    MCAPI GameTestError(struct gametest::GameTestError const&); // NOLINT
+    MCAPI GameTestError(struct gametest::GameTestError const&);
     /**
      * @symbol ??0GameTestError\@gametest\@\@QEAA\@$$QEAU01\@\@Z
      */
-    MCAPI GameTestError(struct gametest::GameTestError&&); // NOLINT
+    MCAPI GameTestError(struct gametest::GameTestError&&);
     /**
      * @symbol
      * ??0GameTestError\@gametest\@\@QEAA\@W4GameTestErrorType\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@4\@\@Z
      */
-    MCAPI GameTestError(enum class gametest::GameTestErrorType, std::string const&, std::vector<std::string>); // NOLINT
+    MCAPI GameTestError(enum class gametest::GameTestErrorType, std::string const&, std::vector<std::string>);
     /**
      * @symbol
      * ??0GameTestError\@gametest\@\@QEAA\@W4GameTestErrorType\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI GameTestError(enum class gametest::GameTestErrorType, std::string const&); // NOLINT
+    MCAPI GameTestError(enum class gametest::GameTestErrorType, std::string const&);
     /**
      * @symbol ??1GameTestError\@gametest\@\@QEAA\@XZ
      */
-    MCAPI ~GameTestError(); // NOLINT
+    MCAPI ~GameTestError();
     /**
      * @symbol
      * ?bind\@GameTestError\@gametest\@\@SA?AV?$ErrorBindingBuilder\@UGameTestError\@gametest\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ErrorBindingBuilder<struct gametest::GameTestError> bind(); // NOLINT
+    MCAPI static class Scripting::ErrorBindingBuilder<struct gametest::GameTestError> bind();
+    // NOLINTEND
 };
 
 }; // namespace gametest

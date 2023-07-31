@@ -13,12 +13,14 @@ public:
     IRNS2_Berkley()                                = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKNET_IRNS2_BERKLEY
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IRNS2_Berkley(); // NOLINT
+    MCVAPI ~IRNS2_Berkley();
 #endif
+    // NOLINTEND
 };
 
 }; // namespace RakNet

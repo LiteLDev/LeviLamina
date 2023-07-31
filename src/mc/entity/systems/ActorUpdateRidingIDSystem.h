@@ -11,16 +11,18 @@ public:
     ActorUpdateRidingIDSystem()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createClearPrevRidingIDSystem\@ActorUpdateRidingIDSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createClearPrevRidingIDSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createClearPrevRidingIDSystem();
     /**
      * @symbol ?createClearRidingIDSystem\@ActorUpdateRidingIDSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createClearRidingIDSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createClearRidingIDSystem();
     /**
      * @symbol ?createUpdatePrevRidingIDSystem\@ActorUpdateRidingIDSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createUpdatePrevRidingIDSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createUpdatePrevRidingIDSystem();
+    // NOLINTEND
 };

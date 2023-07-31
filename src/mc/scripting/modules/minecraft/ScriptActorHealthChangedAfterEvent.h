@@ -16,21 +16,23 @@ public:
     ScriptActorHealthChangedAfterEvent()                                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4ScriptActorHealthChangedAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent&&); // NOLINT
+    operator=(struct ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent&&);
     /**
      * @symbol ??1ScriptActorHealthChangedAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptActorHealthChangedAfterEvent(); // NOLINT
+    MCAPI ~ScriptActorHealthChangedAfterEvent();
     /**
      * @symbol
      * ?bind\@ScriptActorHealthChangedAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptActorHealthChangedAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorHealthChangedAfterEvent>
-    bind(); // NOLINT
+    bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

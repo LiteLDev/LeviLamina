@@ -19,15 +19,17 @@ public:
     VibrationListenerDefinition()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?initialize\@VibrationListenerDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&) const; // NOLINT
+    MCAPI void initialize(class EntityContext&) const;
     /**
      * @symbol
      * ?buildSchema\@VibrationListenerDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VVibrationListenerDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      class VibrationListenerDefinition>>&); // NOLINT
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class VibrationListenerDefinition>>&);
+    // NOLINTEND
 };

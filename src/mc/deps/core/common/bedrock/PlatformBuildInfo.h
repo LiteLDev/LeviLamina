@@ -13,10 +13,12 @@ public:
     PlatformBuildInfo()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PlatformBuildInfo\@Bedrock\@\@QEAA\@XZ
      */
-    MCAPI ~PlatformBuildInfo(); // NOLINT
+    MCAPI ~PlatformBuildInfo();
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

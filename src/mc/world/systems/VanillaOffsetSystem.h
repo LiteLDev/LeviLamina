@@ -22,26 +22,27 @@ public:
     VanillaOffsetSystem()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1(); // NOLINT
+    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2(); // NOLINT
+    virtual void __unk_vfn_2();
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3(); // NOLINT
+    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol
@@ -59,11 +60,11 @@ public:
                       struct AddRemove<>,
                       struct GlobalRead<struct BaseGameVersionComponent>,
                       struct GlobalWrite<>,
-                      struct EntityFactoryT<>>&); // NOLINT
+                      struct EntityFactoryT<>>&);
     /**
      * @symbol ?createSystem\@VanillaOffsetSystem\@\@SA?AUTickingSystemWithInfo\@\@_N0\@Z
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(bool, bool); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem(bool, bool);
     /**
      * @symbol
      * ?getCameraPosition\@VanillaOffsetSystem\@\@SA?AVVec3\@\@AEBV2\@PEBUPassengerRenderingRidingOffsetComponent\@\@PEBUVanillaOffsetComponent\@\@M\@Z
@@ -73,9 +74,10 @@ public:
         struct PassengerRenderingRidingOffsetComponent const*,
         struct VanillaOffsetComponent const*,
         float
-    ); // NOLINT
+    );
     /**
      * @symbol ?getCameraPosition\@VanillaOffsetSystem\@\@SA?AVVec3\@\@AEBVActor\@\@M\@Z
      */
-    MCAPI static class Vec3 getCameraPosition(class Actor const&, float); // NOLINT
+    MCAPI static class Vec3 getCameraPosition(class Actor const&, float);
+    // NOLINTEND
 };

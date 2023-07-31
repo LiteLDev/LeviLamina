@@ -13,14 +13,16 @@ public:
     ValidationResult()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?isSuccess\@ValidationResult\@ResourceUri\@Util\@\@QEBA_NXZ
      */
-    MCAPI bool isSuccess() const; // NOLINT
+    MCAPI bool isSuccess() const;
     /**
      * @symbol ??1ValidationResult\@ResourceUri\@Util\@\@QEAA\@XZ
      */
-    MCAPI ~ValidationResult(); // NOLINT
+    MCAPI ~ValidationResult();
+    // NOLINTEND
 };
 
 }; // namespace Util::ResourceUri

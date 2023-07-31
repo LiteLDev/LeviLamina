@@ -16,31 +16,32 @@ public:
     ScriptPlayerJoinAfterEvent()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ScriptPlayerJoinAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@$$QEAU01\@\@Z
      */
-    MCAPI ScriptPlayerJoinAfterEvent(struct ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent&&); // NOLINT
+    MCAPI ScriptPlayerJoinAfterEvent(struct ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent&&);
     /**
      * @symbol ??4ScriptPlayerJoinAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent&&); // NOLINT
+    operator=(struct ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent&&);
     /**
      * @symbol ??1ScriptPlayerJoinAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptPlayerJoinAfterEvent(); // NOLINT
+    MCAPI ~ScriptPlayerJoinAfterEvent();
     /**
      * @symbol
      * ?bind\@ScriptPlayerJoinAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptPlayerJoinAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent>
-    bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent> bind();
     /**
      * @symbol
      * ?bindV010\@ScriptPlayerJoinAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptPlayerJoinAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent>
-    bindV010(); // NOLINT
+    bindV010();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

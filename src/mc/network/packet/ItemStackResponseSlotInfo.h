@@ -11,12 +11,14 @@ public:
     ItemStackResponseSlotInfo()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ItemStackResponseSlotInfo\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI ItemStackResponseSlotInfo(struct ItemStackResponseSlotInfo&&); // NOLINT
+    MCAPI ItemStackResponseSlotInfo(struct ItemStackResponseSlotInfo&&);
     /**
      * @symbol ??1ItemStackResponseSlotInfo\@\@QEAA\@XZ
      */
-    MCAPI ~ItemStackResponseSlotInfo(); // NOLINT
+    MCAPI ~ItemStackResponseSlotInfo();
+    // NOLINTEND
 };

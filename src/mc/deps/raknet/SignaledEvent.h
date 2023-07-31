@@ -12,30 +12,32 @@ public:
     SignaledEvent(SignaledEvent const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?CloseEvent\@SignaledEvent\@RakNet\@\@QEAAXXZ
      */
-    MCAPI void CloseEvent(); // NOLINT
+    MCAPI void CloseEvent();
     /**
      * @symbol ?InitEvent\@SignaledEvent\@RakNet\@\@QEAAXXZ
      */
-    MCAPI void InitEvent(); // NOLINT
+    MCAPI void InitEvent();
     /**
      * @symbol ?SetEvent\@SignaledEvent\@RakNet\@\@QEAAXXZ
      */
-    MCAPI void SetEvent(); // NOLINT
+    MCAPI void SetEvent();
     /**
      * @symbol ??0SignaledEvent\@RakNet\@\@QEAA\@XZ
      */
-    MCAPI SignaledEvent(); // NOLINT
+    MCAPI SignaledEvent();
     /**
      * @symbol ?WaitOnEvent\@SignaledEvent\@RakNet\@\@QEAAXH\@Z
      */
-    MCAPI void WaitOnEvent(int); // NOLINT
+    MCAPI void WaitOnEvent(int);
     /**
      * @symbol ??1SignaledEvent\@RakNet\@\@QEAA\@XZ
      */
-    MCAPI ~SignaledEvent(); // NOLINT
+    MCAPI ~SignaledEvent();
+    // NOLINTEND
 };
 
 }; // namespace RakNet

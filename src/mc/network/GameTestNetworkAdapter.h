@@ -25,28 +25,30 @@ public:
         GameTestNetworkListener()                                          = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @vftbl 0
          * @symbol __unk_vfn_0
          */
-        virtual void __unk_vfn_0(); // NOLINT
+        virtual void __unk_vfn_0();
         /**
          * @vftbl 1
          * @symbol __unk_vfn_1
          */
-        virtual void __unk_vfn_1(); // NOLINT
+        virtual void __unk_vfn_1();
         /**
          * @vftbl 2
          * @symbol
          * ?onTestPassed\@GameTestNetworkListener\@GameTestNetworkAdapter\@\@UEAAXAEAVBaseGameTestInstance\@gametest\@\@\@Z
          */
-        virtual void onTestPassed(class gametest::BaseGameTestInstance&); // NOLINT
+        virtual void onTestPassed(class gametest::BaseGameTestInstance&);
         /**
          * @vftbl 3
          * @symbol
          * ?onTestFailed\@GameTestNetworkListener\@GameTestNetworkAdapter\@\@UEAAXAEAVBaseGameTestInstance\@gametest\@\@\@Z
          */
-        virtual void onTestFailed(class gametest::BaseGameTestInstance&); // NOLINT
+        virtual void onTestFailed(class gametest::BaseGameTestInstance&);
+        // NOLINTEND
     };
 
 public:
@@ -56,14 +58,16 @@ public:
     GameTestNetworkAdapter()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0GameTestNetworkAdapter\@\@QEAA\@AEAVMinecraftGameTest\@\@\@Z
      */
-    MCAPI GameTestNetworkAdapter(class MinecraftGameTest&); // NOLINT
+    MCAPI GameTestNetworkAdapter(class MinecraftGameTest&);
     /**
      * @symbol
      * ?rungametest\@GameTestNetworkAdapter\@\@QEAAXV?$not_null\@PEAVPacketSender\@\@\@gsl\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVDimension\@\@AEBUTestParameters\@gametest\@\@\@Z
      */
     MCAPI void
-    rungametest(class gsl::not_null<class PacketSender*>, std::string const&, class Dimension&, struct gametest::TestParameters const&); // NOLINT
+    rungametest(class gsl::not_null<class PacketSender*>, std::string const&, class Dimension&, struct gametest::TestParameters const&);
+    // NOLINTEND
 };

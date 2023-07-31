@@ -26,31 +26,33 @@ public:
     SpawnClimateFinder()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0SpawnClimateFinder\@\@QEAA\@V?$vector\@UClimateParameters\@\@V?$allocator\@UClimateParameters\@\@\@std\@\@\@std\@\@AEBUOverworldNoises3d\@\@AEBVDimensionHeightRange\@\@\@Z
      */
     MCAPI
-    SpawnClimateFinder(std::vector<struct ClimateParameters>, struct OverworldNoises3d const&, class DimensionHeightRange const&); // NOLINT
+    SpawnClimateFinder(std::vector<struct ClimateParameters>, struct OverworldNoises3d const&, class DimensionHeightRange const&);
     /**
      * @symbol ?findSpawnPosition\@SpawnClimateFinder\@\@QEBA?AVBlockPos\@\@XZ
      */
-    MCAPI class BlockPos findSpawnPosition() const; // NOLINT
+    MCAPI class BlockPos findSpawnPosition() const;
     /**
      * @symbol ??1SpawnClimateFinder\@\@QEAA\@XZ
      */
-    MCAPI ~SpawnClimateFinder(); // NOLINT
+    MCAPI ~SpawnClimateFinder();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_calculateClimateFitness\@SpawnClimateFinder\@\@AEBA_JVBlockPos\@\@\@Z
      */
-    MCAPI __int64 _calculateClimateFitness(class BlockPos) const; // NOLINT
+    MCAPI int64_t _calculateClimateFitness(class BlockPos) const;
     /**
      * @symbol ?_radialSearch\@SpawnClimateFinder\@\@AEBA?AUResultDetails\@1\@U21\@HH\@Z
      */
     MCAPI struct SpawnClimateFinder::ResultDetails
-    _radialSearch(struct SpawnClimateFinder::ResultDetails, int, int) const; // NOLINT
-
-private:
+    _radialSearch(struct SpawnClimateFinder::ResultDetails, int, int) const;
+    // NOLINTEND
 };

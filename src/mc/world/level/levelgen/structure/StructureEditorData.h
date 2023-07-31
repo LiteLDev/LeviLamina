@@ -9,209 +9,211 @@ public:
     StructureEditorData& operator=(StructureEditorData const&) = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0StructureEditorData\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI StructureEditorData(class StructureEditorData&&); // NOLINT
+    MCAPI StructureEditorData(class StructureEditorData&&);
     /**
      * @symbol ??0StructureEditorData\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI StructureEditorData(class StructureEditorData const&); // NOLINT
+    MCAPI StructureEditorData(class StructureEditorData const&);
     /**
      * @symbol ??0StructureEditorData\@\@QEAA\@XZ
      */
-    MCAPI StructureEditorData(); // NOLINT
+    MCAPI StructureEditorData();
     /**
      * @symbol
      * ?getAnimationModeAsString\@StructureEditorData\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getAnimationModeAsString() const; // NOLINT
+    MCAPI std::string getAnimationModeAsString() const;
     /**
      * @symbol ?getAnimationSeconds\@StructureEditorData\@\@QEBAMXZ
      */
-    MCAPI float getAnimationSeconds() const; // NOLINT
+    MCAPI float getAnimationSeconds() const;
     /**
      * @symbol ?getIgnoreBlocks\@StructureEditorData\@\@QEBA_NXZ
      */
-    MCAPI bool getIgnoreBlocks() const; // NOLINT
+    MCAPI bool getIgnoreBlocks() const;
     /**
      * @symbol ?getIgnoreEntities\@StructureEditorData\@\@QEBA_NXZ
      */
-    MCAPI bool getIgnoreEntities() const; // NOLINT
+    MCAPI bool getIgnoreEntities() const;
     /**
      * @symbol ?getIncludePlayers\@StructureEditorData\@\@QEBA_NXZ
      */
-    MCAPI bool getIncludePlayers() const; // NOLINT
+    MCAPI bool getIncludePlayers() const;
     /**
      * @symbol ?getIntegritySeed\@StructureEditorData\@\@QEBAIXZ
      */
-    MCAPI unsigned int getIntegritySeed() const; // NOLINT
+    MCAPI unsigned int getIntegritySeed() const;
     /**
      * @symbol ?getIntegrityValue\@StructureEditorData\@\@QEBAMXZ
      */
-    MCAPI float getIntegrityValue() const; // NOLINT
+    MCAPI float getIntegrityValue() const;
     /**
      * @symbol ?getIsWaterLogged\@StructureEditorData\@\@QEBA_NXZ
      */
-    MCAPI bool getIsWaterLogged() const; // NOLINT
+    MCAPI bool getIsWaterLogged() const;
     /**
      * @symbol ?getMirror\@StructureEditorData\@\@QEBA?AW4Mirror\@\@XZ
      */
-    MCAPI enum class Mirror getMirror() const; // NOLINT
+    MCAPI enum class Mirror getMirror() const;
     /**
      * @symbol ?getPivot\@StructureEditorData\@\@QEBAAEBVVec3\@\@XZ
      */
-    MCAPI class Vec3 const& getPivot() const; // NOLINT
+    MCAPI class Vec3 const& getPivot() const;
     /**
      * @symbol ?getRedstoneSaveMode\@StructureEditorData\@\@QEBA?AW4StructureRedstoneSaveMode\@\@XZ
      */
-    MCAPI enum class StructureRedstoneSaveMode getRedstoneSaveMode() const; // NOLINT
+    MCAPI enum class StructureRedstoneSaveMode getRedstoneSaveMode() const;
     /**
      * @symbol ?getRotation\@StructureEditorData\@\@QEBA?AW4Rotation\@\@XZ
      */
-    MCAPI enum class Rotation getRotation() const; // NOLINT
+    MCAPI enum class Rotation getRotation() const;
     /**
      * @symbol ?getShowBoundingBox\@StructureEditorData\@\@QEBA_NXZ
      */
-    MCAPI bool getShowBoundingBox() const; // NOLINT
+    MCAPI bool getShowBoundingBox() const;
     /**
      * @symbol ?getStructureBlockType\@StructureEditorData\@\@QEBA?AW4StructureBlockType\@\@XZ
      */
-    MCAPI enum class StructureBlockType getStructureBlockType() const; // NOLINT
+    MCAPI enum class StructureBlockType getStructureBlockType() const;
     /**
      * @symbol
      * ?getStructureName\@StructureEditorData\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string const& getStructureName() const; // NOLINT
+    MCAPI std::string const& getStructureName() const;
     /**
      * @symbol ?getStructureOffset\@StructureEditorData\@\@QEBAAEBVBlockPos\@\@XZ
      */
-    MCAPI class BlockPos const& getStructureOffset() const; // NOLINT
+    MCAPI class BlockPos const& getStructureOffset() const;
     /**
      * @symbol ?getStructureSettings\@StructureEditorData\@\@QEBAAEBVStructureSettings\@\@XZ
      */
-    MCAPI class StructureSettings const& getStructureSettings() const; // NOLINT
+    MCAPI class StructureSettings const& getStructureSettings() const;
     /**
      * @symbol ?getStructureSize\@StructureEditorData\@\@QEBAAEBVBlockPos\@\@XZ
      */
-    MCAPI class BlockPos const& getStructureSize() const; // NOLINT
+    MCAPI class BlockPos const& getStructureSize() const;
     /**
      * @symbol ?load\@StructureEditorData\@\@QEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void load(class CompoundTag const&, class DataLoadHelper&); // NOLINT
+    MCAPI void load(class CompoundTag const&, class DataLoadHelper&);
     /**
      * @symbol ?save\@StructureEditorData\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void save(class CompoundTag&) const; // NOLINT
+    MCAPI void save(class CompoundTag&) const;
     /**
      * @symbol ?setAllowNonTickingPlayerAndTickingAreaChunks\@StructureEditorData\@\@QEAAX_N\@Z
      */
-    MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool); // NOLINT
+    MCAPI void setAllowNonTickingPlayerAndTickingAreaChunks(bool);
     /**
      * @symbol ?setAnimationMode\@StructureEditorData\@\@QEAAXW4AnimationMode\@\@\@Z
      */
-    MCAPI void setAnimationMode(enum class AnimationMode); // NOLINT
+    MCAPI void setAnimationMode(enum class AnimationMode);
     /**
      * @symbol ?setAnimationSeconds\@StructureEditorData\@\@QEAAXM\@Z
      */
-    MCAPI void setAnimationSeconds(float); // NOLINT
+    MCAPI void setAnimationSeconds(float);
     /**
      * @symbol ?setAnimationTicks\@StructureEditorData\@\@QEAAXI\@Z
      */
-    MCAPI void setAnimationTicks(unsigned int); // NOLINT
+    MCAPI void setAnimationTicks(unsigned int);
     /**
      * @symbol ?setIgnoreBlocks\@StructureEditorData\@\@QEAAX_N\@Z
      */
-    MCAPI void setIgnoreBlocks(bool); // NOLINT
+    MCAPI void setIgnoreBlocks(bool);
     /**
      * @symbol ?setIgnoreEntities\@StructureEditorData\@\@QEAAX_N\@Z
      */
-    MCAPI void setIgnoreEntities(bool); // NOLINT
+    MCAPI void setIgnoreEntities(bool);
     /**
      * @symbol ?setIntegritySeed\@StructureEditorData\@\@QEAAXI\@Z
      */
-    MCAPI void setIntegritySeed(unsigned int); // NOLINT
+    MCAPI void setIntegritySeed(unsigned int);
     /**
      * @symbol ?setIntegrityValue\@StructureEditorData\@\@QEAAXM\@Z
      */
-    MCAPI void setIntegrityValue(float); // NOLINT
+    MCAPI void setIntegrityValue(float);
     /**
      * @symbol ?setIsWaterLogged\@StructureEditorData\@\@QEAAX_N\@Z
      */
-    MCAPI void setIsWaterLogged(bool); // NOLINT
+    MCAPI void setIsWaterLogged(bool);
     /**
      * @symbol ?setLastTouchedByPlayerID\@StructureEditorData\@\@QEAAXUActorUniqueID\@\@\@Z
      */
-    MCAPI void setLastTouchedByPlayerID(struct ActorUniqueID); // NOLINT
+    MCAPI void setLastTouchedByPlayerID(struct ActorUniqueID);
     /**
      * @symbol ?setMirror\@StructureEditorData\@\@QEAAXW4Mirror\@\@\@Z
      */
-    MCAPI void setMirror(enum class Mirror); // NOLINT
+    MCAPI void setMirror(enum class Mirror);
     /**
      * @symbol ?setRotation\@StructureEditorData\@\@QEAAXW4Rotation\@\@\@Z
      */
-    MCAPI void setRotation(enum class Rotation); // NOLINT
+    MCAPI void setRotation(enum class Rotation);
     /**
      * @symbol ?setShowBoundingBox\@StructureEditorData\@\@QEAAX_N\@Z
      */
-    MCAPI void setShowBoundingBox(bool); // NOLINT
+    MCAPI void setShowBoundingBox(bool);
     /**
      * @symbol ?setStructureBlockType\@StructureEditorData\@\@QEAAXW4StructureBlockType\@\@\@Z
      */
-    MCAPI void setStructureBlockType(enum class StructureBlockType); // NOLINT
+    MCAPI void setStructureBlockType(enum class StructureBlockType);
     /**
      * @symbol
      * ?setStructureName\@StructureEditorData\@\@QEAAXV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI void setStructureName(class std::basic_string_view<char, struct std::char_traits<char>>); // NOLINT
+    MCAPI void setStructureName(std::string_view);
     /**
      * @symbol ?setStructureOffset\@StructureEditorData\@\@QEAAXAEBVBlockPos\@\@\@Z
      */
-    MCAPI void setStructureOffset(class BlockPos const&); // NOLINT
+    MCAPI void setStructureOffset(class BlockPos const&);
     /**
      * @symbol ?setStructureSize\@StructureEditorData\@\@QEAAXAEBVBlockPos\@\@\@Z
      */
-    MCAPI void setStructureSize(class BlockPos const&); // NOLINT
+    MCAPI void setStructureSize(class BlockPos const&);
     /**
      * @symbol ??1StructureEditorData\@\@QEAA\@XZ
      */
-    MCAPI ~StructureEditorData(); // NOLINT
+    MCAPI ~StructureEditorData();
     /**
      * @symbol ?getOrientedBounds\@StructureEditorData\@\@SA?AVBlockPos\@\@AEBV2\@W4Rotation\@\@\@Z
      */
-    MCAPI static class BlockPos getOrientedBounds(class BlockPos const&, enum class Rotation); // NOLINT
+    MCAPI static class BlockPos getOrientedBounds(class BlockPos const&, enum class Rotation);
     /**
      * @symbol
      * ?DEFAULT_EXPORT_NAME\@StructureEditorData\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const DEFAULT_EXPORT_NAME; // NOLINT
+    MCAPI static std::string const DEFAULT_EXPORT_NAME;
     /**
      * @symbol
      * ?DEFAULT_STRUCTURE_NAMESPACE\@StructureEditorData\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const DEFAULT_STRUCTURE_NAMESPACE; // NOLINT
+    MCAPI static std::string const DEFAULT_STRUCTURE_NAMESPACE;
     /**
      * @symbol ?MAX_STRUCTURE_OFFSET\@StructureEditorData\@\@2VBlockPos\@\@B
      */
-    MCAPI static class BlockPos const MAX_STRUCTURE_OFFSET; // NOLINT
+    MCAPI static class BlockPos const MAX_STRUCTURE_OFFSET;
     /**
      * @symbol ?MIN_STRUCTURE_OFFSET\@StructureEditorData\@\@2VBlockPos\@\@B
      */
-    MCAPI static class BlockPos const MIN_STRUCTURE_OFFSET; // NOLINT
+    MCAPI static class BlockPos const MIN_STRUCTURE_OFFSET;
     /**
      * @symbol ?MIN_STRUCTURE_SIZE\@StructureEditorData\@\@2VBlockPos\@\@B
      */
-    MCAPI static class BlockPos const MIN_STRUCTURE_SIZE; // NOLINT
+    MCAPI static class BlockPos const MIN_STRUCTURE_SIZE;
     /**
      * @symbol ?NAMESPACE_DELIMITER\@StructureEditorData\@\@2DB
      */
-    MCAPI static char const NAMESPACE_DELIMITER; // NOLINT
-
-    // private:
+    MCAPI static char const NAMESPACE_DELIMITER;
+    // NOLINTEND
 
 private:
+    // NOLINTBEGIN
     /**
      * @symbol ?DEFAULT_STRUCTURE_TYPE\@StructureEditorData\@\@0W4StructureBlockType\@\@B
      */
-    MCAPI static enum class StructureBlockType const DEFAULT_STRUCTURE_TYPE; // NOLINT
+    MCAPI static enum class StructureBlockType const DEFAULT_STRUCTURE_TYPE;
+    // NOLINTEND
 };

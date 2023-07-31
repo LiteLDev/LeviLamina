@@ -4,11 +4,6 @@
 
 class ActionEvent {
 public:
-    // ActionEvent inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // ActionEvent inner types define
     enum class ActionState {};
 
@@ -19,8 +14,10 @@ public:
     ActionEvent()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ActionEvent\@\@QEAA\@HW4ActionState\@0\@_NW4FocusImpact\@\@\@Z
      */
-    MCAPI ActionEvent(int, enum class ActionEvent::ActionState, bool, enum class FocusImpact); // NOLINT
+    MCAPI ActionEvent(int, enum class ActionEvent::ActionState, bool, enum class FocusImpact);
+    // NOLINTEND
 };

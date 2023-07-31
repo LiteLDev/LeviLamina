@@ -13,17 +13,19 @@ public:
     MultiplayerServiceObserver()                                             = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOCIAL_MULTIPLAYERSERVICEOBSERVER
     /**
      * @symbol
      * ?onUserDisconnectedBecauseConcurrentLogin\@MultiplayerServiceObserver\@Social\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCVAPI void onUserDisconnectedBecauseConcurrentLogin(std::string const&); // NOLINT
+    MCVAPI void onUserDisconnectedBecauseConcurrentLogin(std::string const&);
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~MultiplayerServiceObserver(); // NOLINT
+    MCVAPI ~MultiplayerServiceObserver();
 #endif
+    // NOLINTEND
 };
 
 }; // namespace Social

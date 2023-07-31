@@ -14,14 +14,16 @@ public:
     FloatNavigation()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 10
      * @symbol ?travel\@FloatNavigation\@\@MEAA_NAEAVNavigationComponent\@\@AEAVMob\@\@AEAM22\@Z
      */
-    virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&); // NOLINT
+    virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);
+    // NOLINTEND
 };

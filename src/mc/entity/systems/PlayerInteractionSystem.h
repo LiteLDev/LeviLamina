@@ -19,17 +19,19 @@ public:
         InteractionMappingBase()                                         = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @vftbl 0
          * @symbol __unk_vfn_0
          */
-        virtual void __unk_vfn_0(); // NOLINT
+        virtual void __unk_vfn_0();
         /**
          * @vftbl 1
          * @symbol
          * ?getInteraction\@InteractionMappingBase\@PlayerInteractionSystem\@\@UEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
          */
-        virtual bool getInteraction(class Actor&, class Player&, class ActorInteraction&); // NOLINT
+        virtual bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
+        // NOLINTEND
     };
 
 public:
@@ -39,8 +41,10 @@ public:
     PlayerInteractionSystem()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getInteraction\@PlayerInteractionSystem\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&); // NOLINT
+    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
+    // NOLINTEND
 };

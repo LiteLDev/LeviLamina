@@ -10,8 +10,10 @@ public:
     TintMapColor(TintMapColor const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0TintMapColor\@\@QEAA\@XZ
      */
-    MCAPI TintMapColor(); // NOLINT
+    MCAPI TintMapColor();
+    // NOLINTEND
 };

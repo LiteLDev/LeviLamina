@@ -18,10 +18,12 @@ public:
     RareBiomeSpot()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0RareBiomeSpot\@OperationNodeFilters\@\@QEAA\@IAEAVBiome\@\@0\@Z
      */
-    MCAPI RareBiomeSpot(unsigned int, class Biome&, class Biome&); // NOLINT
+    MCAPI RareBiomeSpot(unsigned int, class Biome&, class Biome&);
+    // NOLINTEND
 };
 
 }; // namespace OperationNodeFilters

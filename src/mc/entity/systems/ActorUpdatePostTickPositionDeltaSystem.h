@@ -11,9 +11,11 @@ public:
     ActorUpdatePostTickPositionDeltaSystem()                                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?createActorUpdatePostTickPositionDeltaSystem\@ActorUpdatePostTickPositionDeltaSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createActorUpdatePostTickPositionDeltaSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createActorUpdatePostTickPositionDeltaSystem();
+    // NOLINTEND
 };

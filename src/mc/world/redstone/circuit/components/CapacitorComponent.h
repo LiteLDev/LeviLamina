@@ -11,33 +11,35 @@ public:
     const CircuitComponentType mCircuitComponentType = CircuitComponentType::CapacitorComponent;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 17
      * @symbol __unk_vfn_17
      */
-    virtual void __unk_vfn_17(); // NOLINT
+    virtual void __unk_vfn_17();
     /**
      * @vftbl 20
      * @symbol __unk_vfn_20
      */
-    virtual void __unk_vfn_20(); // NOLINT
+    virtual void __unk_vfn_20();
     /**
      * @vftbl 23
      * @symbol ?getCircuitComponentType\@CapacitorComponent\@\@UEBA?AW4CircuitComponentType\@\@XZ
      */
-    virtual enum class CircuitComponentType getCircuitComponentType() const; // NOLINT
+    virtual enum class CircuitComponentType getCircuitComponentType() const;
     /**
      * @vftbl 25
      * @symbol ?getPoweroutDirection\@CapacitorComponent\@\@UEBAEXZ
      */
-    virtual unsigned char getPoweroutDirection() const; // NOLINT
+    virtual unsigned char getPoweroutDirection() const;
     /**
      * @symbol ??0CapacitorComponent\@\@QEAA\@XZ
      */
-    MCAPI CapacitorComponent(); // NOLINT
+    MCAPI CapacitorComponent();
+    // NOLINTEND
 };

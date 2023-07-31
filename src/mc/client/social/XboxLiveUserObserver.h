@@ -13,12 +13,14 @@ public:
     XboxLiveUserObserver()                                       = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOCIAL_XBOXLIVEUSEROBSERVER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~XboxLiveUserObserver(); // NOLINT
+    MCVAPI ~XboxLiveUserObserver();
 #endif
+    // NOLINTEND
 };
 
 }; // namespace Social

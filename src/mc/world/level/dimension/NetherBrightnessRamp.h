@@ -14,14 +14,16 @@ public:
     NetherBrightnessRamp()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 2
      * @symbol ?getBaseAmbientValue\@NetherBrightnessRamp\@\@UEBAMXZ
      */
-    virtual float getBaseAmbientValue() const; // NOLINT
+    virtual float getBaseAmbientValue() const;
+    // NOLINTEND
 };

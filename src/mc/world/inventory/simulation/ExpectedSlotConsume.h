@@ -11,9 +11,10 @@ public:
     ExpectedSlotConsume()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ExpectedSlotConsume\@\@QEAA\@W4ContainerEnumName\@\@EAEBVItemStack\@\@E\@Z
      */
-    MCAPI
-    ExpectedSlotConsume(enum class ContainerEnumName, unsigned char, class ItemStack const&, unsigned char); // NOLINT
+    MCAPI ExpectedSlotConsume(enum class ContainerEnumName, unsigned char, class ItemStack const&, unsigned char);
+    // NOLINTEND
 };

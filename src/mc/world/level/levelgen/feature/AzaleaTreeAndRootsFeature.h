@@ -14,28 +14,29 @@ public:
     AzaleaTreeAndRootsFeature()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 3
      * @symbol ?place\@AzaleaTreeAndRootsFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_isLushGroundReplaceable\@AzaleaTreeAndRootsFeature\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI bool _isLushGroundReplaceable(class BlockSource&, class BlockPos const&) const; // NOLINT
+    MCAPI bool _isLushGroundReplaceable(class BlockSource&, class BlockPos const&) const;
     /**
      * @symbol
      * ?_tryPlaceAzaleaTree\@AzaleaTreeAndRootsFeature\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@I\@Z
      */
-    MCAPI bool
-    _tryPlaceAzaleaTree(class BlockSource&, class BlockPos const&, class Random&, unsigned int) const; // NOLINT
-
-private:
+    MCAPI bool _tryPlaceAzaleaTree(class BlockSource&, class BlockPos const&, class Random&, unsigned int) const;
+    // NOLINTEND
 };

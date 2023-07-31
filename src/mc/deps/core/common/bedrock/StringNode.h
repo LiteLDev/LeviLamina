@@ -13,11 +13,13 @@ public:
     StringNode()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?set\@StringNode\@JSONObject\@Bedrock\@\@QEAA_NV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@_N\@Z
      */
-    MCAPI bool set(class std::basic_string_view<char, struct std::char_traits<char>>, bool); // NOLINT
+    MCAPI bool set(std::string_view, bool);
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::JSONObject

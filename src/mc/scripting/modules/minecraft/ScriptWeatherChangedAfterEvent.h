@@ -16,23 +16,25 @@ public:
     ScriptWeatherChangedAfterEvent()                                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4ScriptWeatherChangedAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent&&); // NOLINT
+    operator=(struct ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent&&);
     /**
      * @symbol
      * ?bind\@ScriptWeatherChangedAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptWeatherChangedAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>
-    bind(); // NOLINT
+    bind();
     /**
      * @symbol
      * ?bindV010\@ScriptWeatherChangedAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptWeatherChangedAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent>
-    bindV010(); // NOLINT
+    bindV010();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

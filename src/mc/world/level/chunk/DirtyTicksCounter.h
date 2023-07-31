@@ -10,8 +10,10 @@ public:
     DirtyTicksCounter(DirtyTicksCounter const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0DirtyTicksCounter\@\@QEAA\@XZ
      */
-    MCAPI DirtyTicksCounter(); // NOLINT
+    MCAPI DirtyTicksCounter();
+    // NOLINTEND
 };

@@ -11,6 +11,7 @@ public:
     FilterParamDefinition()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0FilterParamDefinition\@\@QEAA\@W4FilterParamType\@\@W4FilterParamRequirement\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4FilterParamOption\@\@VFilterInput\@\@UFilterStringMap\@\@\@Z
@@ -22,7 +23,7 @@ public:
         enum class FilterParamOption,
         class FilterInput,
         struct FilterStringMap
-    ); // NOLINT
+    );
     /**
      * @symbol
      * ??0FilterParamDefinition\@\@QEAA\@W4FilterParamType\@\@W4FilterParamRequirement\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VFilterInput\@\@UFilterStringMap\@\@\@Z
@@ -33,9 +34,10 @@ public:
         std::string,
         class FilterInput,
         struct FilterStringMap
-    ); // NOLINT
+    );
     /**
      * @symbol ??1FilterParamDefinition\@\@QEAA\@XZ
      */
-    MCAPI ~FilterParamDefinition(); // NOLINT
+    MCAPI ~FilterParamDefinition();
+    // NOLINTEND
 };

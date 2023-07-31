@@ -33,10 +33,12 @@ public:
         DequeuedEntry()                                = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1DequeuedEntry\@PriorityDeferredSubscriptionHub\@PubSub\@Bedrock\@\@QEAA\@XZ
          */
-        MCAPI ~DequeuedEntry(); // NOLINT
+        MCAPI ~DequeuedEntry();
+        // NOLINTEND
     };
 
     struct QueueEntry {
@@ -48,10 +50,12 @@ public:
         QueueEntry()                             = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1QueueEntry\@PriorityDeferredSubscriptionHub\@PubSub\@Bedrock\@\@QEAA\@XZ
          */
-        MCAPI ~QueueEntry(); // NOLINT
+        MCAPI ~QueueEntry();
+        // NOLINTEND
     };
 
 public:
@@ -60,44 +64,44 @@ public:
     PriorityDeferredSubscriptionHub(PriorityDeferredSubscriptionHub const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 3
      * @symbol ?flushPendingEvents\@PriorityDeferredSubscriptionHub\@PubSub\@Bedrock\@\@UEAAXXZ
      */
-    virtual void flushPendingEvents(); // NOLINT
+    virtual void flushPendingEvents();
     /**
      * @vftbl 8
      * @symbol
      * ?getHubType\@PriorityDeferredSubscriptionHub\@PubSub\@Bedrock\@\@UEBA?AW4HubType\@DeferredSubscriptionHub\@23\@XZ
      */
-    virtual enum class Bedrock::PubSub::DeferredSubscriptionHub::HubType getHubType() const; // NOLINT
+    virtual enum class Bedrock::PubSub::DeferredSubscriptionHub::HubType getHubType() const;
     /**
      * @vftbl 10
      * @symbol
      * ?_enqueue\@PriorityDeferredSubscriptionHub\@PubSub\@Bedrock\@\@EEAAXV?$function\@$$A6AXXZ\@std\@\@W4ConnectPosition\@23\@V?$optional\@H\@5\@\@Z
      */
-    virtual void
-        _enqueue(class std::function<void(void)>, enum class Bedrock::PubSub::ConnectPosition, class std::optional<int>); // NOLINT
+    virtual void _enqueue(std::function<void(void)>, enum class Bedrock::PubSub::ConnectPosition, std::optional<int>);
     /**
      * @vftbl 11
      * @symbol ?_runOneEvent\@PriorityDeferredSubscriptionHub\@PubSub\@Bedrock\@\@EEAA_NXZ
      */
-    virtual bool _runOneEvent(); // NOLINT
+    virtual bool _runOneEvent();
     /**
      * @vftbl 12
      * @symbol ?_runDequeuedEntry\@PriorityDeferredSubscriptionHub\@PubSub\@Bedrock\@\@MEAAXAEBUDequeuedEntry\@123\@\@Z
      */
-    virtual void
-    _runDequeuedEntry(struct Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry const&); // NOLINT
+    virtual void _runDequeuedEntry(struct Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry const&);
     /**
      * @symbol ??0PriorityDeferredSubscriptionHub\@PubSub\@Bedrock\@\@QEAA\@XZ
      */
-    MCAPI PriorityDeferredSubscriptionHub(); // NOLINT
+    MCAPI PriorityDeferredSubscriptionHub();
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::PubSub

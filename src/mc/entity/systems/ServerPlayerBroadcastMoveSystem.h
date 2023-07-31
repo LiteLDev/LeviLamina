@@ -11,8 +11,10 @@ public:
     ServerPlayerBroadcastMoveSystem()                                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?create\@ServerPlayerBroadcastMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo create(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo create();
+    // NOLINTEND
 };

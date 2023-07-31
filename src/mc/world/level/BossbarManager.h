@@ -11,8 +11,10 @@ public:
     BossbarManager()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1BossbarManager\@\@QEAA\@XZ
      */
-    MCAPI ~BossbarManager(); // NOLINT
+    MCAPI ~BossbarManager();
+    // NOLINTEND
 };

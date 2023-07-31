@@ -10,22 +10,24 @@ public:
     ActorEventResponseFactory(ActorEventResponseFactory const&)            = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTRESPONSEFACTORY
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ActorEventResponseFactory(); // NOLINT
+    MCVAPI ~ActorEventResponseFactory();
 #endif
     /**
      * @symbol ??0ActorEventResponseFactory\@\@QEAA\@XZ
      */
-    MCAPI ActorEventResponseFactory(); // NOLINT
+    MCAPI ActorEventResponseFactory();
     /**
      * @symbol ?initSchema\@ActorEventResponseFactory\@\@QEAAXXZ
      */
-    MCAPI void initSchema(); // NOLINT
+    MCAPI void initSchema();
     /**
      * @symbol ?initializeFactory\@ActorEventResponseFactory\@\@QEAAXAEBVExperiments\@\@\@Z
      */
-    MCAPI void initializeFactory(class Experiments const&); // NOLINT
+    MCAPI void initializeFactory(class Experiments const&);
+    // NOLINTEND
 };

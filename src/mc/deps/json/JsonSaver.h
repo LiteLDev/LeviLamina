@@ -13,17 +13,19 @@ public:
     JsonSaver()                            = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREAL_JSONSAVER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~JsonSaver(); // NOLINT
+    MCVAPI ~JsonSaver();
 #endif
     /**
      * @symbol
      * ?toString\@JsonSaver\@cereal\@\@QEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string toString(); // NOLINT
+    MCAPI std::string toString();
+    // NOLINTEND
 };
 
 }; // namespace cereal

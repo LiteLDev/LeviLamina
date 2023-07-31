@@ -21,11 +21,13 @@ public:
     ScriptSimpleBlockVolume()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptSimpleBlockVolume\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@VSimpleBlockVolume\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::InterfaceBindingBuilder<class SimpleBlockVolume> bind(); // NOLINT
+    MCAPI static class Scripting::InterfaceBindingBuilder<class SimpleBlockVolume> bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

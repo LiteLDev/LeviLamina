@@ -11,12 +11,14 @@ public:
     SendLinkPacketOfPassengersSystem()                                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createCleanupSystem\@SendLinkPacketOfPassengersSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createCleanupSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createCleanupSystem();
     /**
      * @symbol ?createSystem\@SendLinkPacketOfPassengersSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 };

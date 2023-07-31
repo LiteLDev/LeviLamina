@@ -11,8 +11,10 @@ public:
     VanillaTrailRuinsJigsawStructureBlockRules()                                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?initialize\@VanillaTrailRuinsJigsawStructureBlockRules\@\@SAXAEAVJigsawStructureRegistry\@\@\@Z
      */
-    MCAPI static void initialize(class JigsawStructureRegistry&); // NOLINT
+    MCAPI static void initialize(class JigsawStructureRegistry&);
+    // NOLINTEND
 };

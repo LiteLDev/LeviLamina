@@ -11,20 +11,22 @@ public:
     ChanceInformation()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?isValid\@ChanceInformation\@\@QEBA_NXZ
      */
-    MCAPI bool isValid() const; // NOLINT
+    MCAPI bool isValid() const;
     /**
      * @symbol ?roll\@ChanceInformation\@\@QEBA_NAEAVRandom\@\@\@Z
      */
-    MCAPI bool roll(class Random&) const; // NOLINT
+    MCAPI bool roll(class Random&) const;
     /**
      * @symbol ?set\@ChanceInformation\@\@QEAAXII\@Z
      */
-    MCAPI void set(unsigned int, unsigned int); // NOLINT
+    MCAPI void set(unsigned int, unsigned int);
     /**
      * @symbol ?set\@ChanceInformation\@\@QEAAXM\@Z
      */
-    MCAPI void set(float); // NOLINT
+    MCAPI void set(float);
+    // NOLINTEND
 };

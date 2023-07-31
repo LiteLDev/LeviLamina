@@ -13,18 +13,20 @@ public:
     HoverMoveControl(HoverMoveControl const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 2
      * @symbol ?tick\@HoverMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
      */
-    virtual void tick(class MoveControlComponent&, class Mob&); // NOLINT
+    virtual void tick(class MoveControlComponent&, class Mob&);
     /**
      * @symbol ??0HoverMoveControl\@\@QEAA\@XZ
      */
-    MCAPI HoverMoveControl(); // NOLINT
+    MCAPI HoverMoveControl();
+    // NOLINTEND
 };

@@ -10,41 +10,43 @@ public:
     FileChunkManager(FileChunkManager const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0FileChunkManager\@\@QEAA\@XZ
      */
-    MCAPI FileChunkManager(); // NOLINT
+    MCAPI FileChunkManager();
     /**
      * @symbol ?getChunkInfo\@FileChunkManager\@\@QEBA?AUFileChunkInfo\@\@H\@Z
      */
-    MCAPI struct FileChunkInfo getChunkInfo(int) const; // NOLINT
+    MCAPI struct FileChunkInfo getChunkInfo(int) const;
     /**
      * @symbol
      * ?getChunks\@FileChunkManager\@\@QEBAAEBV?$vector\@UFileChunkInfo\@\@V?$allocator\@UFileChunkInfo\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<struct FileChunkInfo> const& getChunks() const; // NOLINT
+    MCAPI std::vector<struct FileChunkInfo> const& getChunks() const;
     /**
      * @symbol ?getTotalNumberOfChunks\@FileChunkManager\@\@QEAAHXZ
      */
-    MCAPI int getTotalNumberOfChunks(); // NOLINT
+    MCAPI int getTotalNumberOfChunks();
     /**
      * @symbol ?reset\@FileChunkManager\@\@QEAAXXZ
      */
-    MCAPI void reset(); // NOLINT
+    MCAPI void reset();
     /**
      * @symbol ?reset\@FileChunkManager\@\@QEAAX_KI\@Z
      */
-    MCAPI void reset(unsigned __int64, unsigned int); // NOLINT
+    MCAPI void reset(uint64_t, unsigned int);
     /**
      * @symbol ??1FileChunkManager\@\@QEAA\@XZ
      */
-    MCAPI ~FileChunkManager(); // NOLINT
+    MCAPI ~FileChunkManager();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_generateChunkInfo\@FileChunkManager\@\@AEAAXXZ
      */
-    MCAPI void _generateChunkInfo(); // NOLINT
-
-private:
+    MCAPI void _generateChunkInfo();
+    // NOLINTEND
 };

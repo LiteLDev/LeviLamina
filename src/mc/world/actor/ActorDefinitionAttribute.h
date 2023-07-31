@@ -11,8 +11,10 @@ public:
     ActorDefinitionAttribute()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ActorDefinitionAttribute\@\@QEAA\@XZ
      */
-    MCAPI ~ActorDefinitionAttribute(); // NOLINT
+    MCAPI ~ActorDefinitionAttribute();
+    // NOLINTEND
 };

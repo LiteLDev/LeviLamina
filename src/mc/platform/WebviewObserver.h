@@ -11,47 +11,49 @@ public:
     WebviewObserver()                                  = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WEBVIEWOBSERVER
     /**
      * @symbol ?onDownloadBegin\@WebviewObserver\@\@UEAAXAEBUWebviewDownloadInfo\@\@\@Z
      */
-    MCVAPI void onDownloadBegin(struct WebviewDownloadInfo const&); // NOLINT
+    MCVAPI void onDownloadBegin(struct WebviewDownloadInfo const&);
     /**
      * @symbol ?onDownloadCanceled\@WebviewObserver\@\@UEAAXAEBUWebviewDownloadInfo\@\@\@Z
      */
-    MCVAPI void onDownloadCanceled(struct WebviewDownloadInfo const&); // NOLINT
+    MCVAPI void onDownloadCanceled(struct WebviewDownloadInfo const&);
     /**
      * @symbol ?onDownloadComplete\@WebviewObserver\@\@UEAAXAEBUWebviewDownloadInfo\@\@\@Z
      */
-    MCVAPI void onDownloadComplete(struct WebviewDownloadInfo const&); // NOLINT
+    MCVAPI void onDownloadComplete(struct WebviewDownloadInfo const&);
     /**
      * @symbol ?onDownloadUpdate\@WebviewObserver\@\@UEAAXAEBUWebviewDownloadInfo\@\@\@Z
      */
-    MCVAPI void onDownloadUpdate(struct WebviewDownloadInfo const&); // NOLINT
+    MCVAPI void onDownloadUpdate(struct WebviewDownloadInfo const&);
     /**
      * @symbol ?onError\@WebviewObserver\@\@UEAAXAEBUWebviewError\@\@\@Z
      */
-    MCVAPI void onError(struct WebviewError const&); // NOLINT
+    MCVAPI void onError(struct WebviewError const&);
     /**
      * @symbol ?onLoadingBegin\@WebviewObserver\@\@UEAAXXZ
      */
-    MCVAPI void onLoadingBegin(); // NOLINT
+    MCVAPI void onLoadingBegin();
     /**
      * @symbol ?onLoadingEnd\@WebviewObserver\@\@UEAAXXZ
      */
-    MCVAPI void onLoadingEnd(); // NOLINT
+    MCVAPI void onLoadingEnd();
     /**
      * @symbol
      * ?onMessageRecieved\@WebviewObserver\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCVAPI void onMessageRecieved(std::string const&); // NOLINT
+    MCVAPI void onMessageRecieved(std::string const&);
     /**
      * @symbol ?onWebviewChanged\@WebviewObserver\@\@UEAAXXZ
      */
-    MCVAPI void onWebviewChanged(); // NOLINT
+    MCVAPI void onWebviewChanged();
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~WebviewObserver(); // NOLINT
+    MCVAPI ~WebviewObserver();
 #endif
+    // NOLINTEND
 };

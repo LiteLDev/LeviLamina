@@ -14,39 +14,41 @@ public:
     PlayerUIContainer()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 25
      * @symbol __unk_vfn_25
      */
-    virtual void __unk_vfn_25(); // NOLINT
+    virtual void __unk_vfn_25();
     /**
      * @vftbl 26
      * @symbol __unk_vfn_26
      */
-    virtual void __unk_vfn_26(); // NOLINT
+    virtual void __unk_vfn_26();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERUICONTAINER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~PlayerUIContainer(); // NOLINT
+    MCVAPI ~PlayerUIContainer();
 #endif
     /**
      * @symbol
      * ??0PlayerUIContainer\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_NH\@Z
      */
-    MCAPI PlayerUIContainer(std::string const&, bool, int); // NOLINT
+    MCAPI PlayerUIContainer(std::string const&, bool, int);
     /**
      * @symbol ?load\@PlayerUIContainer\@\@QEAAXAEBVListTag\@\@AEBVSemVersion\@\@\@Z
      */
-    MCAPI void load(class ListTag const&, class SemVersion const&); // NOLINT
+    MCAPI void load(class ListTag const&, class SemVersion const&);
     /**
      * @symbol
      * ?save\@PlayerUIContainer\@\@QEBA?AV?$unique_ptr\@VListTag\@\@U?$default_delete\@VListTag\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::unique_ptr<class ListTag> save() const; // NOLINT
+    MCAPI std::unique_ptr<class ListTag> save() const;
+    // NOLINTEND
 };

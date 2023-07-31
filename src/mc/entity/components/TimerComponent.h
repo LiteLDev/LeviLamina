@@ -10,48 +10,50 @@ public:
     TimerComponent(TimerComponent const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0TimerComponent\@\@QEAA\@XZ
      */
-    MCAPI TimerComponent(); // NOLINT
+    MCAPI TimerComponent();
     /**
      * @symbol ?addAdditionalSaveData\@TimerComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
+    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
     /**
      * @symbol ?getHasExecuted\@TimerComponent\@\@QEBA_NXZ
      */
-    MCAPI bool getHasExecuted() const; // NOLINT
+    MCAPI bool getHasExecuted() const;
     /**
      * @symbol ?getLooping\@TimerComponent\@\@QEBA_NXZ
      */
-    MCAPI bool getLooping() const; // NOLINT
+    MCAPI bool getLooping() const;
     /**
      * @symbol ?getTimeStamp\@TimerComponent\@\@QEAA_KAEBVLevel\@\@\@Z
      */
-    MCAPI unsigned __int64 getTimeStamp(class Level const&); // NOLINT
+    MCAPI uint64_t getTimeStamp(class Level const&);
     /**
      * @symbol ??4TimerComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class TimerComponent& operator=(class TimerComponent&&); // NOLINT
+    MCAPI class TimerComponent& operator=(class TimerComponent&&);
     /**
      * @symbol ?readAdditionalSaveData\@TimerComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&); // NOLINT
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
     /**
      * @symbol ?restartTimer\@TimerComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void restartTimer(class Actor&); // NOLINT
+    MCAPI void restartTimer(class Actor&);
     /**
      * @symbol ?setHasExecuted\@TimerComponent\@\@QEAAX_N\@Z
      */
-    MCAPI void setHasExecuted(bool); // NOLINT
+    MCAPI void setHasExecuted(bool);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?getRandomTime\@TimerComponent\@\@AEAAHAEAVActor\@\@\@Z
      */
-    MCAPI int getRandomTime(class Actor&); // NOLINT
-
-private:
+    MCAPI int getRandomTime(class Actor&);
+    // NOLINTEND
 };

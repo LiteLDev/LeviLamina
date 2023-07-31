@@ -11,8 +11,10 @@ public:
     MobTravelPlayerOrLocalFilterSystem()                                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?create\@MobTravelPlayerOrLocalFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo create(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo create();
+    // NOLINTEND
 };

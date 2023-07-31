@@ -19,30 +19,32 @@ public:
     LoadResultAny()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0LoadResultAny\@Puv\@\@QEAA\@$$QEAV01\@\@Z
      */
-    MCAPI LoadResultAny(class Puv::LoadResultAny&&); // NOLINT
+    MCAPI LoadResultAny(class Puv::LoadResultAny&&);
     /**
      * @symbol ?log\@LoadResultAny\@Puv\@\@QEAAAEAULogger\@2\@XZ
      */
-    MCAPI struct Puv::Logger& log(); // NOLINT
+    MCAPI struct Puv::Logger& log();
     /**
      * @symbol ??BLoadResultAny\@Puv\@\@QEBA_NXZ
      */
-    MCAPI operator bool() const; // NOLINT
+    MCAPI operator bool() const;
     /**
      * @symbol ?version\@LoadResultAny\@Puv\@\@QEBAAEBVSemVersion\@\@XZ
      */
-    MCAPI class SemVersion const& version() const; // NOLINT
+    MCAPI class SemVersion const& version() const;
     /**
      * @symbol ??1LoadResultAny\@Puv\@\@QEAA\@XZ
      */
-    MCAPI ~LoadResultAny(); // NOLINT
+    MCAPI ~LoadResultAny();
     /**
      * @symbol ?makeError\@LoadResultAny\@Puv\@\@SA?AV12\@ULogger\@2\@\@Z
      */
-    MCAPI static class Puv::LoadResultAny makeError(struct Puv::Logger); // NOLINT
+    MCAPI static class Puv::LoadResultAny makeError(struct Puv::Logger);
+    // NOLINTEND
 };
 
 }; // namespace Puv

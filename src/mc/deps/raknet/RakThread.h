@@ -13,10 +13,12 @@ public:
     RakThread()                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?Create\@RakThread\@RakNet\@\@SAHP6AIPEAX\@Z0H\@Z
      */
-    MCAPI static int Create(unsigned int (*)(void*), void*, int); // NOLINT
+    MCAPI static int Create(unsigned int (*)(void*), void*, int);
+    // NOLINTEND
 };
 
 }; // namespace RakNet

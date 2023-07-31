@@ -10,19 +10,20 @@ public:
     HardcodedSpawnAreaRegistry(HardcodedSpawnAreaRegistry const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0HardcodedSpawnAreaRegistry\@\@QEAA\@XZ
      */
-    MCAPI HardcodedSpawnAreaRegistry(); // NOLINT
+    MCAPI HardcodedSpawnAreaRegistry();
     /**
      * @symbol
      * ?getMobSpawnsForType\@HardcodedSpawnAreaRegistry\@\@QEBAAEBV?$vector\@VMobSpawnerData\@\@V?$allocator\@VMobSpawnerData\@\@\@std\@\@\@std\@\@W4HardcodedSpawnAreaType\@\@\@Z
      */
-    MCAPI std::vector<class MobSpawnerData> const& getMobSpawnsForType(enum class HardcodedSpawnAreaType
-    ) const; // NOLINT
+    MCAPI std::vector<class MobSpawnerData> const& getMobSpawnsForType(enum class HardcodedSpawnAreaType) const;
     /**
      * @symbol
      * ?initMobSpawnsForType\@HardcodedSpawnAreaRegistry\@\@QEAAXW4HardcodedSpawnAreaType\@\@$$QEAV?$vector\@VMobSpawnerData\@\@V?$allocator\@VMobSpawnerData\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI void initMobSpawnsForType(enum class HardcodedSpawnAreaType, std::vector<class MobSpawnerData>&&); // NOLINT
+    MCAPI void initMobSpawnsForType(enum class HardcodedSpawnAreaType, std::vector<class MobSpawnerData>&&);
+    // NOLINTEND
 };

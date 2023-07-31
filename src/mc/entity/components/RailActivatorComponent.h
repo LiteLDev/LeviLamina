@@ -11,8 +11,10 @@ public:
     RailActivatorComponent()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?ejectAllPassengers\@RailActivatorComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void ejectAllPassengers(class Actor&); // NOLINT
+    MCAPI void ejectAllPassengers(class Actor&);
+    // NOLINTEND
 };

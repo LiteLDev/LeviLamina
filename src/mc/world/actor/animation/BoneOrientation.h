@@ -10,24 +10,26 @@ public:
     BoneOrientation(BoneOrientation const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0BoneOrientation\@\@QEAA\@XZ
      */
-    MCAPI BoneOrientation(); // NOLINT
+    MCAPI BoneOrientation();
     /**
      * @symbol ?getName\@BoneOrientation\@\@QEBAAEBVHashedString\@\@XZ
      */
-    MCAPI class HashedString const& getName() const; // NOLINT
+    MCAPI class HashedString const& getName() const;
     /**
      * @symbol ?getPivot\@BoneOrientation\@\@QEAAAEAVVec3\@\@XZ
      */
-    MCAPI class Vec3& getPivot(); // NOLINT
+    MCAPI class Vec3& getPivot();
     /**
      * @symbol ?getPivot\@BoneOrientation\@\@QEBAAEBVVec3\@\@XZ
      */
-    MCAPI class Vec3 const& getPivot() const; // NOLINT
+    MCAPI class Vec3 const& getPivot() const;
     /**
      * @symbol ?setDefaultPose\@BoneOrientation\@\@QEAAXXZ
      */
-    MCAPI void setDefaultPose(); // NOLINT
+    MCAPI void setDefaultPose();
+    // NOLINTEND
 };

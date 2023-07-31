@@ -11,14 +11,16 @@ public:
     OnPlayerPlacingTrigger()                                         = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLAYERPLACINGTRIGGER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~OnPlayerPlacingTrigger(); // NOLINT
+    MCVAPI ~OnPlayerPlacingTrigger();
 #endif
     /**
      * @symbol ??0OnPlayerPlacingTrigger\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI OnPlayerPlacingTrigger(class OnPlayerPlacingTrigger&&); // NOLINT
+    MCAPI OnPlayerPlacingTrigger(class OnPlayerPlacingTrigger&&);
+    // NOLINTEND
 };

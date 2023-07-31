@@ -11,8 +11,10 @@ public:
     SubpackInfoCollection()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?addSubpackInfo\@SubpackInfoCollection\@\@QEAAX$$QEAUSubpackInfo\@\@\@Z
      */
-    MCAPI void addSubpackInfo(struct SubpackInfo&&); // NOLINT
+    MCAPI void addSubpackInfo(struct SubpackInfo&&);
+    // NOLINTEND
 };

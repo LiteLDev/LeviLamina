@@ -25,10 +25,12 @@ public:
         TypeStats()                            = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1TypeStats\@ScriptPluginHandleCounter\@\@QEAA\@XZ
          */
-        MCAPI ~TypeStats(); // NOLINT
+        MCAPI ~TypeStats();
+        // NOLINTEND
     };
 
 public:
@@ -38,11 +40,12 @@ public:
     ScriptPluginHandleCounter()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
@@ -53,7 +56,7 @@ public:
         struct Scripting::ObjectHandle,
         class entt::meta_type const&,
         unsigned int
-    ); // NOLINT
+    );
     /**
      * @vftbl 2
      * @symbol
@@ -64,7 +67,7 @@ public:
         struct Scripting::ObjectHandle,
         class entt::meta_type const&,
         unsigned int
-    ); // NOLINT
+    );
     /**
      * @vftbl 3
      * @symbol
@@ -75,7 +78,7 @@ public:
         struct Scripting::ObjectHandle,
         class entt::meta_type const&,
         unsigned int
-    ); // NOLINT
+    );
     /**
      * @vftbl 4
      * @symbol
@@ -86,35 +89,34 @@ public:
         struct Scripting::ObjectHandle,
         class entt::meta_type const&,
         unsigned int
-    ); // NOLINT
+    );
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTPLUGINHANDLECOUNTER
     /**
      * @symbol
      * ?onObjectPromotedToMultipleOwners\@ScriptPluginHandleCounter\@\@UEAAXAEAVLifetimeRegistry\@Scripting\@\@UObjectHandle\@3\@\@Z
      */
-    MCVAPI void
-    onObjectPromotedToMultipleOwners(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle); // NOLINT
+    MCVAPI void onObjectPromotedToMultipleOwners(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle);
     /**
      * @symbol
      * ?onObjectReducedToSingleOwner\@ScriptPluginHandleCounter\@\@UEAAXAEAVLifetimeRegistry\@Scripting\@\@UObjectHandle\@3\@\@Z
      */
-    MCVAPI void
-    onObjectReducedToSingleOwner(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle); // NOLINT
+    MCVAPI void onObjectReducedToSingleOwner(class Scripting::LifetimeRegistry&, struct Scripting::ObjectHandle);
     /**
      * @symbol ?onPostLifetimeScopeDestroy\@ScriptPluginHandleCounter\@\@UEAAXAEAVLifetimeRegistry\@Scripting\@\@\@Z
      */
-    MCVAPI void onPostLifetimeScopeDestroy(class Scripting::LifetimeRegistry&); // NOLINT
+    MCVAPI void onPostLifetimeScopeDestroy(class Scripting::LifetimeRegistry&);
     /**
      * @symbol ?onPreLifetimeScopeDestroy\@ScriptPluginHandleCounter\@\@UEAAXAEAVLifetimeRegistry\@Scripting\@\@\@Z
      */
-    MCVAPI void onPreLifetimeScopeDestroy(class Scripting::LifetimeRegistry&); // NOLINT
+    MCVAPI void onPreLifetimeScopeDestroy(class Scripting::LifetimeRegistry&);
 #endif
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_getOrMakeStats\@ScriptPluginHandleCounter\@\@AEAAPEAUTypeStats\@1\@AEBVmeta_type\@entt\@\@\@Z
      */
-    MCAPI struct ScriptPluginHandleCounter::TypeStats* _getOrMakeStats(class entt::meta_type const&); // NOLINT
-
-private:
+    MCAPI struct ScriptPluginHandleCounter::TypeStats* _getOrMakeStats(class entt::meta_type const&);
+    // NOLINTEND
 };

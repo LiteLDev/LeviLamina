@@ -19,15 +19,17 @@ public:
         BucketContext()                     = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??4BucketContext\@ChunkRecyclerTelemetryData\@\@QEAAAEAU01\@AEBU01\@\@Z
          */
         MCAPI struct ChunkRecyclerTelemetryData::BucketContext&
-        operator=(struct ChunkRecyclerTelemetryData::BucketContext const&); // NOLINT
+        operator=(struct ChunkRecyclerTelemetryData::BucketContext const&);
         /**
          * @symbol ??1BucketContext\@ChunkRecyclerTelemetryData\@\@QEAA\@XZ
          */
-        MCAPI ~BucketContext(); // NOLINT
+        MCAPI ~BucketContext();
+        // NOLINTEND
     };
 
     class TaskInfo {
@@ -45,41 +47,42 @@ public:
     ChunkRecyclerTelemetryData(ChunkRecyclerTelemetryData const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ChunkRecyclerTelemetryData\@\@QEAA\@XZ
      */
-    MCAPI ChunkRecyclerTelemetryData(); // NOLINT
+    MCAPI ChunkRecyclerTelemetryData();
     /**
      * @symbol ?endLevel\@ChunkRecyclerTelemetryData\@\@QEAAXAEAVLevel\@\@\@Z
      */
-    MCAPI void endLevel(class Level&); // NOLINT
+    MCAPI void endLevel(class Level&);
     /**
      * @symbol ?recordCacheCheck\@ChunkRecyclerTelemetryData\@\@QEAAXAEBVLevelChunk\@\@\@Z
      */
-    MCAPI void recordCacheCheck(class LevelChunk const&); // NOLINT
+    MCAPI void recordCacheCheck(class LevelChunk const&);
     /**
      * @symbol ?recordTaskCompleted\@ChunkRecyclerTelemetryData\@\@QEAAXAEBVLevelChunk\@\@AEBVTaskInfo\@1\@\@Z
      */
-    MCAPI void
-    recordTaskCompleted(class LevelChunk const&, class ChunkRecyclerTelemetryData::TaskInfo const&); // NOLINT
+    MCAPI void recordTaskCompleted(class LevelChunk const&, class ChunkRecyclerTelemetryData::TaskInfo const&);
     /**
      * @symbol ?startLevel\@ChunkRecyclerTelemetryData\@\@QEAAXAEBVLevel\@\@\@Z
      */
-    MCAPI void startLevel(class Level const&); // NOLINT
+    MCAPI void startLevel(class Level const&);
     /**
      * @symbol ?tickLevel\@ChunkRecyclerTelemetryData\@\@QEAAXAEBVLevel\@\@\@Z
      */
-    MCAPI void tickLevel(class Level const&); // NOLINT
+    MCAPI void tickLevel(class Level const&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_reset\@ChunkRecyclerTelemetryData\@\@AEAAXXZ
      */
-    MCAPI void _reset(); // NOLINT
+    MCAPI void _reset();
     /**
      * @symbol ?_setIsLocked\@ChunkRecyclerTelemetryData\@\@AEAAXXZ
      */
-    MCAPI void _setIsLocked(); // NOLINT
-
-private:
+    MCAPI void _setIsLocked();
+    // NOLINTEND
 };

@@ -18,41 +18,43 @@ public:
     DelegatingRandom()                                   = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NOISEUTILS_DELEGATINGRANDOM
     /**
      * @symbol ?consumeCount\@DelegatingRandom\@NoiseUtils\@\@UEAAXI\@Z
      */
-    MCVAPI void consumeCount(unsigned int); // NOLINT
+    MCVAPI void consumeCount(unsigned int);
     /**
      * @symbol
      * ?fork\@DelegatingRandom\@NoiseUtils\@\@UEAA?AV?$unique_ptr\@VIRandom\@\@U?$default_delete\@VIRandom\@\@\@std\@\@\@std\@\@XZ
      */
-    MCVAPI std::unique_ptr<class IRandom> fork(); // NOLINT
+    MCVAPI std::unique_ptr<class IRandom> fork();
     /**
      * @symbol ?nextBoolean\@DelegatingRandom\@NoiseUtils\@\@UEAA_NXZ
      */
-    MCVAPI bool nextBoolean(); // NOLINT
+    MCVAPI bool nextBoolean();
     /**
      * @symbol ?nextDouble\@DelegatingRandom\@NoiseUtils\@\@UEAANXZ
      */
-    MCVAPI double nextDouble(); // NOLINT
+    MCVAPI double nextDouble();
     /**
      * @symbol ?nextGaussianDouble\@DelegatingRandom\@NoiseUtils\@\@UEAANXZ
      */
-    MCVAPI double nextGaussianDouble(); // NOLINT
+    MCVAPI double nextGaussianDouble();
     /**
      * @symbol ?nextInt\@DelegatingRandom\@NoiseUtils\@\@UEAAHH\@Z
      */
-    MCVAPI int nextInt(int); // NOLINT
+    MCVAPI int nextInt(int);
     /**
      * @symbol ?nextInt\@DelegatingRandom\@NoiseUtils\@\@UEAAHXZ
      */
-    MCVAPI int nextInt(); // NOLINT
+    MCVAPI int nextInt();
     /**
      * @symbol ?nextLong\@DelegatingRandom\@NoiseUtils\@\@UEAA_JXZ
      */
-    MCVAPI __int64 nextLong(); // NOLINT
+    MCVAPI int64_t nextLong();
 #endif
+    // NOLINTEND
 };
 
 }; // namespace NoiseUtils

@@ -11,8 +11,10 @@ public:
     FogCommandSettings()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1FogCommandSettings\@\@QEAA\@XZ
      */
-    MCAPI ~FogCommandSettings(); // NOLINT
+    MCAPI ~FogCommandSettings();
+    // NOLINTEND
 };

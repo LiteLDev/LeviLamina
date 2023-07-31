@@ -13,23 +13,25 @@ public:
     GlideMoveControl(GlideMoveControl const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?initializeInternal\@GlideMoveControl\@\@UEAAXAEAVMob\@\@PEAUMoveControlDescription\@\@\@Z
      */
-    virtual void initializeInternal(class Mob&, struct MoveControlDescription*); // NOLINT
+    virtual void initializeInternal(class Mob&, struct MoveControlDescription*);
     /**
      * @vftbl 2
      * @symbol ?tick\@GlideMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z
      */
-    virtual void tick(class MoveControlComponent&, class Mob&); // NOLINT
+    virtual void tick(class MoveControlComponent&, class Mob&);
     /**
      * @symbol ??0GlideMoveControl\@\@QEAA\@XZ
      */
-    MCAPI GlideMoveControl(); // NOLINT
+    MCAPI GlideMoveControl();
+    // NOLINTEND
 };

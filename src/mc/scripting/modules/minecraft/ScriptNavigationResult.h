@@ -21,21 +21,22 @@ public:
     ScriptNavigationResult()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?getPath\@ScriptNavigationResult\@ScriptModuleMinecraft\@\@QEBA?AV?$vector\@VVec3\@\@V?$allocator\@VVec3\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<class Vec3> getPath() const; // NOLINT
+    MCAPI std::vector<class Vec3> getPath() const;
     /**
      * @symbol ??1ScriptNavigationResult\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptNavigationResult(); // NOLINT
+    MCAPI ~ScriptNavigationResult();
     /**
      * @symbol
      * ?bind\@ScriptNavigationResult\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptNavigationResult\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptNavigationResult>
-    bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptNavigationResult> bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

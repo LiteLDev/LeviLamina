@@ -11,8 +11,10 @@ public:
     LevelAddedActorEvent()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1LevelAddedActorEvent\@\@QEAA\@XZ
      */
-    MCAPI ~LevelAddedActorEvent(); // NOLINT
+    MCAPI ~LevelAddedActorEvent();
+    // NOLINTEND
 };

@@ -11,19 +11,21 @@ public:
     LootSystem()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?registerEvents\@LootSystem\@\@UEAAXAEAV?$basic_dispatcher\@V?$allocator\@X\@std\@\@\@entt\@\@\@Z
      */
-    virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>>&); // NOLINT
+    virtual void registerEvents(class entt::basic_dispatcher<std::allocator<void>>&);
     /**
      * @vftbl 2
      * @symbol ?tick\@LootSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
-    virtual void tick(class EntityRegistry&); // NOLINT
+    virtual void tick(class EntityRegistry&);
+    // NOLINTEND
 };

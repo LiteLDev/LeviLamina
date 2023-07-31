@@ -13,10 +13,12 @@ public:
     ActiveTransfer()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?onAckReceived\@ActiveTransfer\@Server\@ClientBlobCache\@\@QEAAX_K\@Z
      */
-    MCAPI void onAckReceived(unsigned __int64); // NOLINT
+    MCAPI void onAckReceived(uint64_t);
+    // NOLINTEND
 };
 
 }; // namespace ClientBlobCache::Server

@@ -11,17 +11,21 @@ public:
         std::unique_ptr<CommandSelector<class Actor>> selection;
     };
     std::vector<MessageComponent> components;
+
+public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0CommandMessage\@\@QEAA\@XZ
      */
-    MCAPI CommandMessage(); // NOLINT
+    MCAPI CommandMessage();
     /**
      * @symbol
      * ?getMessage\@CommandMessage\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVCommandOrigin\@\@\@Z
      */
-    MCAPI std::string getMessage(class CommandOrigin const&) const; // NOLINT
+    MCAPI std::string getMessage(class CommandOrigin const&) const;
     /**
      * @symbol ??1CommandMessage\@\@QEAA\@XZ
      */
-    MCAPI ~CommandMessage(); // NOLINT
+    MCAPI ~CommandMessage();
+    // NOLINTEND
 };

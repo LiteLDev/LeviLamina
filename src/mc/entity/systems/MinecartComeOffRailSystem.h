@@ -19,24 +19,26 @@ public:
     MinecartComeOffRailSystem()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_minecartComeOffRailSystem\@MinecartComeOffRailSystem\@\@SAXAEAVStrictEntityContext\@\@AEBVRailMovementComponent\@\@AEAUStateVectorComponent\@\@V?$Optional\@$$CBV?$FlagComponent\@UOnGroundFlag\@\@\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UMoveRequestComponent\@\@\@\@\@Z
      */
     MCAPI static void
-    _minecartComeOffRailSystem(class StrictEntityContext&, class RailMovementComponent const&, struct StateVectorComponent&, class Optional<class FlagComponent<struct OnGroundFlag> const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MoveRequestComponent>); // NOLINT
+    _minecartComeOffRailSystem(class StrictEntityContext&, class RailMovementComponent const&, struct StateVectorComponent&, class Optional<class FlagComponent<struct OnGroundFlag> const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MoveRequestComponent>);
     /**
      * @symbol ?createSystem\@MinecartComeOffRailSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_tickMinecartComeOffRailSystem\@MinecartComeOffRailSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Exclude\@USnapOnRailComponent\@\@\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@\@\@$$CBVRailMovementComponent\@\@UStateVectorComponent\@\@V?$Optional\@$$CBV?$FlagComponent\@UOnGroundFlag\@\@\@\@\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UMoveRequestComponent\@\@\@\@\@Z
      */
     MCAPI static void
-        _tickMinecartComeOffRailSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Exclude<struct SnapOnRailComponent>, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>, class RailMovementComponent const, struct StateVectorComponent, class Optional<class FlagComponent<struct OnGroundFlag> const>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MoveRequestComponent>); // NOLINT
-
-private:
+        _tickMinecartComeOffRailSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Exclude<struct SnapOnRailComponent>, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>, class RailMovementComponent const, struct StateVectorComponent, class Optional<class FlagComponent<struct OnGroundFlag> const>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MoveRequestComponent>);
+    // NOLINTEND
 };

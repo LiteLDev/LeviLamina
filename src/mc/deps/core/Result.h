@@ -13,94 +13,96 @@ public:
     Result()                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0Result\@Core\@\@QEAA\@_NV?$function\@$$A6AXPEAVResult\@Core\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI Result(bool, class std::function<void(class Core::Result*)>); // NOLINT
+    MCAPI Result(bool, std::function<void(class Core::Result*)>);
     /**
      * @symbol ??0Result\@Core\@\@QEAA\@$$QEAV01\@\@Z
      */
-    MCAPI Result(class Core::Result&&); // NOLINT
+    MCAPI Result(class Core::Result&&);
     /**
      * @symbol ?architecturalProblem\@Result\@Core\@\@QEBAXXZ
      */
-    MCAPI void architecturalProblem() const; // NOLINT
+    MCAPI void architecturalProblem() const;
     /**
      * @symbol ?catastrophic\@Result\@Core\@\@QEBA_NXZ
      */
-    MCAPI bool catastrophic() const; // NOLINT
+    MCAPI bool catastrophic() const;
     /**
      * @symbol ?failed\@Result\@Core\@\@QEBA_NXZ
      */
-    MCAPI bool failed() const; // NOLINT
+    MCAPI bool failed() const;
     /**
      * @symbol ?format\@Result\@Core\@\@QEAAXPEBDZZ
      */
-    MCAPI void format(char const*, ...); // NOLINT
+    MCAPI void format(char const*, ...);
     /**
      * @symbol ?ignoreError\@Result\@Core\@\@QEBAXXZ
      */
-    MCAPI void ignoreError() const; // NOLINT
+    MCAPI void ignoreError() const;
     /**
      * @symbol ?message\@Result\@Core\@\@QEBAPEBDXZ
      */
-    MCAPI char const* message() const; // NOLINT
+    MCAPI char const* message() const;
     /**
      * @symbol ??BResult\@Core\@\@QEBA_NXZ
      */
-    MCAPI operator bool() const; // NOLINT
+    MCAPI operator bool() const;
     /**
      * @symbol ??4Result\@Core\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
-    MCAPI class Core::Result& operator=(class Core::Result&&); // NOLINT
+    MCAPI class Core::Result& operator=(class Core::Result&&);
     /**
      * @symbol ?peekFailed\@Result\@Core\@\@QEBA_NXZ
      */
-    MCAPI bool peekFailed() const; // NOLINT
+    MCAPI bool peekFailed() const;
     /**
      * @symbol ?peekSucceeded\@Result\@Core\@\@QEBA_NXZ
      */
-    MCAPI bool peekSucceeded() const; // NOLINT
+    MCAPI bool peekSucceeded() const;
     /**
      * @symbol ?succeeded\@Result\@Core\@\@QEBA_NXZ
      */
-    MCAPI bool succeeded() const; // NOLINT
+    MCAPI bool succeeded() const;
     /**
      * @symbol ?throwFailed\@Result\@Core\@\@QEBA_NXZ
      */
-    MCAPI bool throwFailed() const; // NOLINT
+    MCAPI bool throwFailed() const;
     /**
      * @symbol ??1Result\@Core\@\@QEAA\@XZ
      */
-    MCAPI ~Result(); // NOLINT
+    MCAPI ~Result();
     /**
      * @symbol ?either\@Result\@Core\@\@SA?AV12\@$$QEAV12\@0\@Z
      */
-    MCAPI static class Core::Result either(class Core::Result&&, class Core::Result&&); // NOLINT
+    MCAPI static class Core::Result either(class Core::Result&&, class Core::Result&&);
     /**
      * @symbol ?makeFailure\@Result\@Core\@\@SA?AV12\@$$QEAV?$function\@$$A6AXPEAVResult\@Core\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI static class Core::Result makeFailure(class std::function<void(class Core::Result*)>&&); // NOLINT
+    MCAPI static class Core::Result makeFailure(std::function<void(class Core::Result*)>&&);
     /**
      * @symbol ?makeFailure\@Result\@Core\@\@SA?AV12\@XZ
      */
-    MCAPI static class Core::Result makeFailure(); // NOLINT
+    MCAPI static class Core::Result makeFailure();
     /**
      * @symbol ?makeFailureNotImplemented\@Result\@Core\@\@SA?AV12\@XZ
      */
-    MCAPI static class Core::Result makeFailureNotImplemented(); // NOLINT
+    MCAPI static class Core::Result makeFailureNotImplemented();
     /**
      * @symbol ?makeFailureWithStringLiteral\@Result\@Core\@\@SA?AV12\@PEBD\@Z
      */
-    MCAPI static class Core::Result makeFailureWithStringLiteral(char const*); // NOLINT
+    MCAPI static class Core::Result makeFailureWithStringLiteral(char const*);
     /**
      * @symbol ?makeSuccess\@Result\@Core\@\@SA?AV12\@XZ
      */
-    MCAPI static class Core::Result makeSuccess(); // NOLINT
+    MCAPI static class Core::Result makeSuccess();
     /**
      * @symbol ?merge\@Result\@Core\@\@SA?AV12\@$$QEAV12\@0\@Z
      */
-    MCAPI static class Core::Result merge(class Core::Result&&, class Core::Result&&); // NOLINT
+    MCAPI static class Core::Result merge(class Core::Result&&, class Core::Result&&);
+    // NOLINTEND
 };
 
 }; // namespace Core

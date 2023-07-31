@@ -11,8 +11,10 @@ public:
     ReplayStateConfig()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ReplayStateConfig\@\@QEAA\@W4ReplayStateMode\@\@\@Z
      */
-    MCAPI ReplayStateConfig(enum class ReplayStateMode); // NOLINT
+    MCAPI ReplayStateConfig(enum class ReplayStateMode);
+    // NOLINTEND
 };

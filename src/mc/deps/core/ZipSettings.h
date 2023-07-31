@@ -12,14 +12,16 @@ public:
     ZipSettings(ZipSettings const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ZipSettings\@ZipUtils\@Core\@\@QEAA\@XZ
      */
-    MCAPI ZipSettings(); // NOLINT
+    MCAPI ZipSettings();
     /**
      * @symbol ??1ZipSettings\@ZipUtils\@Core\@\@QEAA\@XZ
      */
-    MCAPI ~ZipSettings(); // NOLINT
+    MCAPI ~ZipSettings();
+    // NOLINTEND
 };
 
 }; // namespace Core::ZipUtils

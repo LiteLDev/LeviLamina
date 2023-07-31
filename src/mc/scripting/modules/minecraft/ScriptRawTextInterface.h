@@ -21,29 +21,30 @@ public:
     ScriptRawTextInterface()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4ScriptRawTextInterface\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptRawTextInterface&
-    operator=(struct ScriptModuleMinecraft::ScriptRawTextInterface&&); // NOLINT
+    operator=(struct ScriptModuleMinecraft::ScriptRawTextInterface&&);
     /**
      * @symbol ??8ScriptRawTextInterface\@ScriptModuleMinecraft\@\@QEBA_NAEBU01\@\@Z
      */
-    MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptRawTextInterface const&) const; // NOLINT
+    MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptRawTextInterface const&) const;
     /**
      * @symbol ??1ScriptRawTextInterface\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptRawTextInterface(); // NOLINT
+    MCAPI ~ScriptRawTextInterface();
     /**
      * @symbol
      * ?bind\@ScriptRawTextInterface\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptRawTextInterface\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptRawTextInterface>
-    bind(); // NOLINT
+    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptRawTextInterface> bind();
     /**
      * @symbol ?fromJSON\@ScriptRawTextInterface\@ScriptModuleMinecraft\@\@SA?AU12\@AEBVValue\@Json\@\@\@Z
      */
-    MCAPI static struct ScriptModuleMinecraft::ScriptRawTextInterface fromJSON(class Json::Value const&); // NOLINT
+    MCAPI static struct ScriptModuleMinecraft::ScriptRawTextInterface fromJSON(class Json::Value const&);
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

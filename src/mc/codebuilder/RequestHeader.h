@@ -13,10 +13,12 @@ public:
     RequestHeader()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1RequestHeader\@CodeBuilder\@\@QEAA\@XZ
      */
-    MCAPI ~RequestHeader(); // NOLINT
+    MCAPI ~RequestHeader();
+    // NOLINTEND
 };
 
 }; // namespace CodeBuilder

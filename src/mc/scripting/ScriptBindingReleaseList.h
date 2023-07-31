@@ -19,10 +19,12 @@ public:
         ReleaseDetails()                                 = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1ReleaseDetails\@ScriptBindingReleaseList\@\@QEAA\@XZ
          */
-        MCAPI ~ReleaseDetails(); // NOLINT
+        MCAPI ~ReleaseDetails();
+        // NOLINTEND
     };
 
 public:
@@ -32,9 +34,11 @@ public:
     ScriptBindingReleaseList()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0ScriptBindingReleaseList\@\@QEAA\@V?$vector\@UReleaseDetails\@ScriptBindingReleaseList\@\@V?$allocator\@UReleaseDetails\@ScriptBindingReleaseList\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI ScriptBindingReleaseList(std::vector<struct ScriptBindingReleaseList::ReleaseDetails>); // NOLINT
+    MCAPI ScriptBindingReleaseList(std::vector<struct ScriptBindingReleaseList::ReleaseDetails>);
+    // NOLINTEND
 };

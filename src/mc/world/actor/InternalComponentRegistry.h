@@ -19,15 +19,17 @@ public:
         ComponentInfo()                                = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??4ComponentInfo\@InternalComponentRegistry\@\@QEAAAEAU01\@$$QEAU01\@\@Z
          */
         MCAPI struct InternalComponentRegistry::ComponentInfo&
-        operator=(struct InternalComponentRegistry::ComponentInfo&&); // NOLINT
+        operator=(struct InternalComponentRegistry::ComponentInfo&&);
         /**
          * @symbol ??1ComponentInfo\@InternalComponentRegistry\@\@QEAA\@XZ
          */
-        MCAPI ~ComponentInfo(); // NOLINT
+        MCAPI ~ComponentInfo();
+        // NOLINTEND
     };
 
 public:
@@ -37,47 +39,49 @@ public:
     InternalComponentRegistry()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?registerComponents\@InternalComponentRegistry\@\@UEAAXXZ
      */
-    virtual void registerComponents(); // NOLINT
+    virtual void registerComponents();
     /**
      * @symbol ?addComponentSaveData\@InternalComponentRegistry\@\@QEAAXAEBVActor\@\@AEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addComponentSaveData(class Actor const&, class CompoundTag&); // NOLINT
+    MCAPI void addComponentSaveData(class Actor const&, class CompoundTag&);
     /**
      * @symbol
      * ?initializeComponents\@InternalComponentRegistry\@\@QEBAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void initializeComponents(class Actor&, class CompoundTag const&, class DataLoadHelper&) const; // NOLINT
+    MCAPI void initializeComponents(class Actor&, class CompoundTag const&, class DataLoadHelper&) const;
     /**
      * @symbol
      * ?INTERNAL_COMPONENTS\@InternalComponentRegistry\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const INTERNAL_COMPONENTS; // NOLINT
+    MCAPI static std::string const INTERNAL_COMPONENTS;
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_initializeComponents\@InternalComponentRegistry\@\@IEBAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void _initializeComponents(class Actor&, class CompoundTag const&, class DataLoadHelper&) const; // NOLINT
+    MCAPI void _initializeComponents(class Actor&, class CompoundTag const&, class DataLoadHelper&) const;
     /**
      * @symbol
      * ?_getComponentScope\@InternalComponentRegistry\@\@KAPEBVCompoundTag\@\@AEBV2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI static class CompoundTag const* _getComponentScope(class CompoundTag const&, std::string const&); // NOLINT
+    MCAPI static class CompoundTag const* _getComponentScope(class CompoundTag const&, std::string const&);
     /**
      * @symbol
      * ?_getOrCreateComponentScope\@InternalComponentRegistry\@\@KAAEAVCompoundTag\@\@AEAV2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI static class CompoundTag& _getOrCreateComponentScope(class CompoundTag&, std::string const&); // NOLINT
-
-protected:
+    MCAPI static class CompoundTag& _getOrCreateComponentScope(class CompoundTag&, std::string const&);
+    // NOLINTEND
 };

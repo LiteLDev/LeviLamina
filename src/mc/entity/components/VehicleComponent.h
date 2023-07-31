@@ -10,8 +10,10 @@ public:
     VehicleComponent()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0VehicleComponent\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI VehicleComponent(struct VehicleComponent const&); // NOLINT
+    MCAPI VehicleComponent(struct VehicleComponent const&);
+    // NOLINTEND
 };

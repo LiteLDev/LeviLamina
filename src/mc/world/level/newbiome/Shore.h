@@ -19,10 +19,12 @@ public:
     Shore()                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0Shore\@OperationNodeFilters\@\@QEAA\@AEBVBiomeRegistry\@\@AEAVBiome\@\@\@Z
      */
-    MCAPI Shore(class BiomeRegistry const&, class Biome&); // NOLINT
+    MCAPI Shore(class BiomeRegistry const&, class Biome&);
+    // NOLINTEND
 };
 
 }; // namespace OperationNodeFilters

@@ -11,8 +11,10 @@ public:
     RecipeCraftInputs()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1RecipeCraftInputs\@\@QEAA\@XZ
      */
-    MCAPI ~RecipeCraftInputs(); // NOLINT
+    MCAPI ~RecipeCraftInputs();
+    // NOLINTEND
 };

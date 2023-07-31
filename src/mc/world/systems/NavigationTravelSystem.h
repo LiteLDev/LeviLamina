@@ -11,8 +11,10 @@ public:
     NavigationTravelSystem()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createNavigationTravelSystem\@NavigationTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createNavigationTravelSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createNavigationTravelSystem();
+    // NOLINTEND
 };

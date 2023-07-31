@@ -16,32 +16,34 @@ public:
     ScriptScoreTargetSelectorOption()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4ScriptScoreTargetSelectorOption\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&
-    operator=(struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption const&); // NOLINT
+    operator=(struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption const&);
     /**
      * @symbol ??4ScriptScoreTargetSelectorOption\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&
-    operator=(struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&&); // NOLINT
+    operator=(struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption&&);
     /**
      * @symbol ??1ScriptScoreTargetSelectorOption\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptScoreTargetSelectorOption(); // NOLINT
+    MCAPI ~ScriptScoreTargetSelectorOption();
     /**
      * @symbol
      * ?bindV010\@ScriptScoreTargetSelectorOption\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptScoreTargetSelectorOption\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption>
-    bindV010(); // NOLINT
+    bindV010();
     /**
      * @symbol
      * ?bindV1\@ScriptScoreTargetSelectorOption\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptScoreTargetSelectorOption\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptScoreTargetSelectorOption>
-    bindV1(); // NOLINT
+    bindV1();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

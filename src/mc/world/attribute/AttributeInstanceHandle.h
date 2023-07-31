@@ -11,8 +11,10 @@ public:
     AttributeInstanceHandle()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getInstance\@AttributeInstanceHandle\@\@QEBAAEBVAttributeInstance\@\@XZ
      */
-    MCAPI class AttributeInstance const& getInstance() const; // NOLINT
+    MCAPI class AttributeInstance const& getInstance() const;
+    // NOLINTEND
 };

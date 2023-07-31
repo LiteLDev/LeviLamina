@@ -17,17 +17,18 @@ public:
     BlockGeometry12010Upgrade(BlockGeometry12010Upgrade const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?previousSchema\@BlockGeometry12010Upgrade\@BlockGeometryVersioning\@\@UEBAXAEAVSchemaFactory\@cereal\@\@\@Z
      */
-    virtual void previousSchema(class cereal::SchemaFactory&) const; // NOLINT
+    virtual void previousSchema(class cereal::SchemaFactory&) const;
     /**
      * @vftbl 2
      * @symbol
@@ -36,11 +37,12 @@ public:
     virtual bool upgradeToNext(class rapidjson::GenericDocument<
                                struct rapidjson::UTF8<char>,
                                class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>,
-                               class rapidjson::CrtAllocator>&) const; // NOLINT
+                               class rapidjson::CrtAllocator>&) const;
     /**
      * @symbol ??0BlockGeometry12010Upgrade\@BlockGeometryVersioning\@\@QEAA\@XZ
      */
-    MCAPI BlockGeometry12010Upgrade(); // NOLINT
+    MCAPI BlockGeometry12010Upgrade();
+    // NOLINTEND
 };
 
 }; // namespace BlockGeometryVersioning

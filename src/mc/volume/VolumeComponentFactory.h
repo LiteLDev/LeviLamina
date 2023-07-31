@@ -11,8 +11,10 @@ public:
     VolumeComponentFactory()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?registerVolumeComponentDefinitions\@VolumeComponentFactory\@\@QEAAX_N\@Z
      */
-    MCAPI void registerVolumeComponentDefinitions(bool); // NOLINT
+    MCAPI void registerVolumeComponentDefinitions(bool);
+    // NOLINTEND
 };

@@ -10,12 +10,14 @@ public:
     BlockListEventMap()                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4BlockListEventMap\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
-    MCAPI class BlockListEventMap& operator=(class BlockListEventMap const&); // NOLINT
+    MCAPI class BlockListEventMap& operator=(class BlockListEventMap const&);
     /**
      * @symbol ??1BlockListEventMap\@\@QEAA\@XZ
      */
-    MCAPI ~BlockListEventMap(); // NOLINT
+    MCAPI ~BlockListEventMap();
+    // NOLINTEND
 };

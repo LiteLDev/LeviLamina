@@ -10,12 +10,14 @@ public:
     ScaleByAgeComponent(ScaleByAgeComponent const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ScaleByAgeComponent\@\@QEAA\@XZ
      */
-    MCAPI ScaleByAgeComponent(); // NOLINT
+    MCAPI ScaleByAgeComponent();
     /**
      * @symbol ?_initializeScale\@ScaleByAgeComponent\@\@QEAAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void _initializeScale(class EntityContext&); // NOLINT
+    MCAPI void _initializeScale(class EntityContext&);
+    // NOLINTEND
 };

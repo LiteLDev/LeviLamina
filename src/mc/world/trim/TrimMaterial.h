@@ -11,12 +11,14 @@ public:
     TrimMaterial()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0TrimMaterial\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI TrimMaterial(struct TrimMaterial&&); // NOLINT
+    MCAPI TrimMaterial(struct TrimMaterial&&);
     /**
      * @symbol ??1TrimMaterial\@\@QEAA\@XZ
      */
-    MCAPI ~TrimMaterial(); // NOLINT
+    MCAPI ~TrimMaterial();
+    // NOLINTEND
 };

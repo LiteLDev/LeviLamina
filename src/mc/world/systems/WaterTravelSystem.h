@@ -11,8 +11,10 @@ public:
     WaterTravelSystem()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createWaterTravelSystem\@WaterTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createWaterTravelSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createWaterTravelSystem();
+    // NOLINTEND
 };

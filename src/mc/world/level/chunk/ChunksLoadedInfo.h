@@ -11,15 +11,16 @@ public:
     ChunksLoadedInfo()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?getChunkViewSource\@ChunksLoadedInfo\@\@QEBA?AV?$unique_ptr\@VChunkViewSource\@\@U?$default_delete\@VChunkViewSource\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::unique_ptr<class ChunkViewSource> getChunkViewSource() const; // NOLINT
+    MCAPI std::unique_ptr<class ChunkViewSource> getChunkViewSource() const;
     /**
      * @symbol ?getChunksLoadedStatus\@ChunksLoadedInfo\@\@QEBA?AW4ChunksLoadedStatus\@\@XZ
      */
-    MCAPI enum class ChunksLoadedStatus getChunksLoadedStatus() const; // NOLINT
+    MCAPI enum class ChunksLoadedStatus getChunksLoadedStatus() const;
     /**
      * @symbol
      * ?areAllChunksLoadedAndTicking\@ChunksLoadedInfo\@\@SA?AW4ChunksLoadedStatus\@\@AEBVDimension\@\@AEAVChunkSource\@\@AEBUBounds\@\@_NUTick\@\@_N\@Z
@@ -31,7 +32,7 @@ public:
         bool,
         struct Tick,
         bool
-    ); // NOLINT
+    );
     /**
      * @symbol
      * ?calculateChunksLoadedInfo\@ChunksLoadedInfo\@\@SA?AU1\@AEBVDimension\@\@AEAVChunkSource\@\@AEBUBounds\@\@_NUTick\@\@_N55\@Z
@@ -45,5 +46,6 @@ public:
         bool,
         bool,
         bool
-    ); // NOLINT
+    );
+    // NOLINTEND
 };

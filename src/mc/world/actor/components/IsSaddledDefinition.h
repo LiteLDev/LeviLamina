@@ -19,19 +19,21 @@ public:
     IsSaddledDefinition()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?initialize\@IsSaddledDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&) const; // NOLINT
+    MCAPI void initialize(class EntityContext&) const;
     /**
      * @symbol ?uninitialize\@IsSaddledDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void uninitialize(class EntityContext&) const; // NOLINT
+    MCAPI void uninitialize(class EntityContext&) const;
     /**
      * @symbol
      * ?buildSchema\@IsSaddledDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UIsSaddledDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      struct IsSaddledDefinition>>&); // NOLINT
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsSaddledDefinition>>&);
+    // NOLINTEND
 };

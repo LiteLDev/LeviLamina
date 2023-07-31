@@ -8,109 +8,107 @@
 class LayeredAbilities {
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0LayeredAbilities\@\@QEAA\@XZ
      */
-    MCAPI LayeredAbilities(); // NOLINT
+    MCAPI LayeredAbilities();
     /**
      * @symbol ??0LayeredAbilities\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI LayeredAbilities(class LayeredAbilities const&); // NOLINT
+    MCAPI LayeredAbilities(class LayeredAbilities const&);
     /**
      * @symbol ?addSaveData\@LayeredAbilities\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addSaveData(class CompoundTag&) const; // NOLINT
+    MCAPI void addSaveData(class CompoundTag&) const;
     /**
      * @symbol
      * ?forEachAbility\@LayeredAbilities\@\@QEBAXAEBV?$function\@$$A6AXAEBVAbility\@\@PEBD\@Z\@std\@\@W4Options\@Ability\@\@\@Z
      */
-    MCAPI void forEachAbility(
-        class std::function<void(class Ability const&, char const*)> const&,
-        enum class Ability::Options
-    ) const; // NOLINT
+    MCAPI void
+    forEachAbility(std::function<void(class Ability const&, char const*)> const&, enum class Ability::Options) const;
     /**
      * @symbol
      * ?forEachAbility\@LayeredAbilities\@\@QEBAXAEBV?$function\@$$A6AXAEBVAbility\@\@W4AbilitiesIndex\@\@\@Z\@std\@\@W4Options\@Ability\@\@\@Z
      */
     MCAPI void forEachAbility(
-        class std::function<void(class Ability const&, enum class AbilitiesIndex)> const&,
+        std::function<void(class Ability const&, enum class AbilitiesIndex)> const&,
         enum class Ability::Options
-    ) const; // NOLINT
+    ) const;
     /**
      * @symbol
      * ?forEachLayer\@LayeredAbilities\@\@QEAAXAEBV?$function\@$$A6AXW4AbilitiesLayer\@\@AEAVAbilities\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI void forEachLayer(class std::function<void(enum class AbilitiesLayer, class Abilities&)> const&); // NOLINT
+    MCAPI void forEachLayer(std::function<void(enum class AbilitiesLayer, class Abilities&)> const&);
     /**
      * @symbol
      * ?forEachLayer\@LayeredAbilities\@\@QEBAXAEBV?$function\@$$A6AXW4AbilitiesLayer\@\@AEBVAbilities\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI void
-    forEachLayer(class std::function<void(enum class AbilitiesLayer, class Abilities const&)> const&) const; // NOLINT
+    MCAPI void forEachLayer(std::function<void(enum class AbilitiesLayer, class Abilities const&)> const&) const;
     /**
      * @symbol ?getAbility\@LayeredAbilities\@\@QEAAAEAVAbility\@\@W4AbilitiesLayer\@\@W4AbilitiesIndex\@\@\@Z
      */
-    MCAPI class Ability& getAbility(enum class AbilitiesLayer, enum class AbilitiesIndex); // NOLINT
+    MCAPI class Ability& getAbility(enum class AbilitiesLayer, enum class AbilitiesIndex);
     /**
      * @symbol ?getAbility\@LayeredAbilities\@\@QEBAAEBVAbility\@\@W4AbilitiesIndex\@\@\@Z
      */
-    MCAPI class Ability const& getAbility(enum class AbilitiesIndex) const; // NOLINT
+    MCAPI class Ability const& getAbility(enum class AbilitiesIndex) const;
     /**
      * @symbol ?getBool\@LayeredAbilities\@\@QEBA_NW4AbilitiesIndex\@\@\@Z
      */
-    MCAPI bool getBool(enum class AbilitiesIndex) const; // NOLINT
+    MCAPI bool getBool(enum class AbilitiesIndex) const;
     /**
      * @symbol ?getCommandPermissions\@LayeredAbilities\@\@QEBA?AW4CommandPermissionLevel\@\@XZ
      */
-    MCAPI enum class CommandPermissionLevel getCommandPermissions() const; // NOLINT
+    MCAPI enum class CommandPermissionLevel getCommandPermissions() const;
     /**
      * @symbol ?getFloat\@LayeredAbilities\@\@QEBAMW4AbilitiesIndex\@\@\@Z
      */
-    MCAPI float getFloat(enum class AbilitiesIndex) const; // NOLINT
+    MCAPI float getFloat(enum class AbilitiesIndex) const;
     /**
      * @symbol ?getLayer\@LayeredAbilities\@\@QEAAAEAVAbilities\@\@W4AbilitiesLayer\@\@\@Z
      */
-    MCAPI class Abilities& getLayer(enum class AbilitiesLayer); // NOLINT
+    MCAPI class Abilities& getLayer(enum class AbilitiesLayer);
     /**
      * @symbol ?getPermissionsHandler\@LayeredAbilities\@\@QEAAAEAVPermissionsHandler\@\@XZ
      */
-    MCAPI class PermissionsHandler& getPermissionsHandler(); // NOLINT
+    MCAPI class PermissionsHandler& getPermissionsHandler();
     /**
      * @symbol ?getPlayerPermissions\@LayeredAbilities\@\@QEBA?AW4PlayerPermissionLevel\@\@XZ
      */
-    MCAPI enum class PlayerPermissionLevel getPlayerPermissions() const; // NOLINT
+    MCAPI enum class PlayerPermissionLevel getPlayerPermissions() const;
     /**
      * @symbol ??4LayeredAbilities\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
-    MCAPI class LayeredAbilities& operator=(class LayeredAbilities const&); // NOLINT
+    MCAPI class LayeredAbilities& operator=(class LayeredAbilities const&);
     /**
      * @symbol ?setAbility\@LayeredAbilities\@\@QEAAXW4AbilitiesIndex\@\@M\@Z
      */
-    MCAPI void setAbility(enum class AbilitiesIndex, float); // NOLINT
+    MCAPI void setAbility(enum class AbilitiesIndex, float);
     /**
      * @symbol ?setAbility\@LayeredAbilities\@\@QEAAXW4AbilitiesIndex\@\@_N\@Z
      */
-    MCAPI void setAbility(enum class AbilitiesIndex, bool); // NOLINT
+    MCAPI void setAbility(enum class AbilitiesIndex, bool);
     /**
      * @symbol ?setCommandPermissions\@LayeredAbilities\@\@QEAAXW4CommandPermissionLevel\@\@\@Z
      */
-    MCAPI void setCommandPermissions(enum class CommandPermissionLevel); // NOLINT
+    MCAPI void setCommandPermissions(enum class CommandPermissionLevel);
     /**
      * @symbol ?setPlayerPermissions\@LayeredAbilities\@\@QEAAXW4PlayerPermissionLevel\@\@\@Z
      */
-    MCAPI void setPlayerPermissions(enum class PlayerPermissionLevel); // NOLINT
+    MCAPI void setPlayerPermissions(enum class PlayerPermissionLevel);
     /**
      * @symbol
      * ?DIFF_LAYER_AT\@LayeredAbilities\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const DIFF_LAYER_AT; // NOLINT
+    MCAPI static std::string const DIFF_LAYER_AT;
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_handlePlayerPermissionsChange\@LayeredAbilities\@\@AEAAXW4PlayerPermissionLevel\@\@0\@Z
      */
-    MCAPI void
-        _handlePlayerPermissionsChange(enum class PlayerPermissionLevel, enum class PlayerPermissionLevel); // NOLINT
-
-private:
+    MCAPI void _handlePlayerPermissionsChange(enum class PlayerPermissionLevel, enum class PlayerPermissionLevel);
+    // NOLINTEND
 };

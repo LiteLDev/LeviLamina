@@ -12,16 +12,18 @@ public:
     PlatformRuntimeInfo(PlatformRuntimeInfo const&)            = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_PLATFORMRUNTIMEINFO
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~PlatformRuntimeInfo(); // NOLINT
+    MCVAPI ~PlatformRuntimeInfo();
 #endif
     /**
      * @symbol ??0PlatformRuntimeInfo\@Bedrock\@\@QEAA\@XZ
      */
-    MCAPI PlatformRuntimeInfo(); // NOLINT
+    MCAPI PlatformRuntimeInfo();
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

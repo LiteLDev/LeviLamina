@@ -18,20 +18,22 @@ public:
     GameTestBatch()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0GameTestBatch\@gametest\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$vector\@V?$shared_ptr\@VBaseGameTestFunction\@gametest\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VBaseGameTestFunction\@gametest\@\@\@std\@\@\@2\@\@3\@V?$function\@$$A6AXXZ\@3\@\@Z
      */
     MCAPI
-        GameTestBatch(std::string, std::vector<class std::shared_ptr<class gametest::BaseGameTestFunction>>, class std::function<void(void)>); // NOLINT
+    GameTestBatch(std::string, std::vector<std::shared_ptr<class gametest::BaseGameTestFunction>>, std::function<void(void)>);
     /**
      * @symbol ??0GameTestBatch\@gametest\@\@QEAA\@$$QEAV01\@\@Z
      */
-    MCAPI GameTestBatch(class gametest::GameTestBatch&&); // NOLINT
+    MCAPI GameTestBatch(class gametest::GameTestBatch&&);
     /**
      * @symbol ??1GameTestBatch\@gametest\@\@QEAA\@XZ
      */
-    MCAPI ~GameTestBatch(); // NOLINT
+    MCAPI ~GameTestBatch();
+    // NOLINTEND
 };
 
 }; // namespace gametest

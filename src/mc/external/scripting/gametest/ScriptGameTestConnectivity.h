@@ -12,14 +12,16 @@ public:
     ScriptGameTestConnectivity()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ScriptGameTestConnectivity\@ScriptModuleGameTest\@\@QEAA\@_N000\@Z
      */
-    MCAPI ScriptGameTestConnectivity(bool, bool, bool, bool); // NOLINT
+    MCAPI ScriptGameTestConnectivity(bool, bool, bool, bool);
     /**
      * @symbol ??0ScriptGameTestConnectivity\@ScriptModuleGameTest\@\@QEAA\@AEBV01\@\@Z
      */
-    MCAPI ScriptGameTestConnectivity(class ScriptModuleGameTest::ScriptGameTestConnectivity const&); // NOLINT
+    MCAPI ScriptGameTestConnectivity(class ScriptModuleGameTest::ScriptGameTestConnectivity const&);
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleGameTest

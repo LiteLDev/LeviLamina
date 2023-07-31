@@ -8,9 +8,11 @@ namespace Scripting { struct Version; }
 // clang-format on
 
 namespace ScriptModuleMinecraft::Internals {
+// NOLINTBEGIN
 /**
  * @symbol ?CURRENT\@Internals\@ScriptModuleMinecraft\@\@3UVersion\@Scripting\@\@B
  */
-MCAPI extern struct Scripting::Version const CURRENT; // NOLINT
+MCAPI extern struct Scripting::Version const CURRENT;
+// NOLINTEND
 
 }; // namespace ScriptModuleMinecraft::Internals

@@ -19,10 +19,12 @@ public:
         Definition()                             = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ?initialize\@Definition\@TripodCameraActivatedComponent\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
          */
-        MCAPI void initialize(class EntityContext&, class TripodCameraActivatedComponent&) const; // NOLINT
+        MCAPI void initialize(class EntityContext&, class TripodCameraActivatedComponent&) const;
+        // NOLINTEND
     };
 
 public:

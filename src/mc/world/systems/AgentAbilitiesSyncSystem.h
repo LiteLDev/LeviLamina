@@ -17,14 +17,16 @@ public:
     AgentAbilitiesSyncSystem()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createAgentAbilitiesSyncSystem\@AgentAbilitiesSyncSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createAgentAbilitiesSyncSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createAgentAbilitiesSyncSystem();
     /**
      * @symbol
      * ?tick\@AgentAbilitiesSyncSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@VActorOwnerComponent\@\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@U?$Include\@$$CBV?$FlagComponent\@UActorTickedFlag\@\@\@\@V?$FlagComponent\@UAbilitiesDirtyFlag\@\@\@\@\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@VLevelComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UAbilitiesDirtyFlag\@\@\@\@\@\@\@Z
      */
     MCAPI static void
-        tick(class ViewT<class StrictEntityContext, class EntityRegistryBase, class ActorOwnerComponent, class FlagComponent<struct PlayerComponentFlag>, struct Include<class FlagComponent<struct ActorTickedFlag> const, class FlagComponent<struct AbilitiesDirtyFlag>>>, class ViewT<class StrictEntityContext, class EntityRegistryBase, class LevelComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct AbilitiesDirtyFlag>>); // NOLINT
+        tick(class ViewT<class StrictEntityContext, class EntityRegistryBase, class ActorOwnerComponent, class FlagComponent<struct PlayerComponentFlag>, struct Include<class FlagComponent<struct ActorTickedFlag> const, class FlagComponent<struct AbilitiesDirtyFlag>>>, class ViewT<class StrictEntityContext, class EntityRegistryBase, class LevelComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct AbilitiesDirtyFlag>>);
+    // NOLINTEND
 };

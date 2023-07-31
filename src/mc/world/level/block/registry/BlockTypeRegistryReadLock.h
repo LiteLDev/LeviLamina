@@ -11,8 +11,10 @@ public:
     BlockTypeRegistryReadLock()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1BlockTypeRegistryReadLock\@\@QEAA\@XZ
      */
-    MCAPI ~BlockTypeRegistryReadLock(); // NOLINT
+    MCAPI ~BlockTypeRegistryReadLock();
+    // NOLINTEND
 };

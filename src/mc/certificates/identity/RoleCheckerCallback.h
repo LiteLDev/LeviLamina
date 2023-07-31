@@ -11,8 +11,10 @@ public:
     RoleCheckerCallback()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1RoleCheckerCallback\@\@QEAA\@XZ
      */
-    MCAPI ~RoleCheckerCallback(); // NOLINT
+    MCAPI ~RoleCheckerCallback();
+    // NOLINTEND
 };

@@ -24,12 +24,14 @@ public:
     CacheManager()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?createTrackingRecordInLocalCache\@CacheManager\@PositionTrackingDB\@\@QEAA?AV?$not_null\@PEAVTrackingRecord\@PositionTrackingDB\@\@\@gsl\@\@AEBVPositionTrackingId\@\@AEBVBlockPos\@\@AEBV?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
     MCAPI class gsl::not_null<class PositionTrackingDB::TrackingRecord*>
-    createTrackingRecordInLocalCache(class PositionTrackingId const&, class BlockPos const&, class AutomaticID<class Dimension, int> const&); // NOLINT
+    createTrackingRecordInLocalCache(class PositionTrackingId const&, class BlockPos const&, class AutomaticID<class Dimension, int> const&);
+    // NOLINTEND
 };
 
 }; // namespace PositionTrackingDB

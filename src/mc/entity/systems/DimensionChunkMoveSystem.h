@@ -11,8 +11,10 @@ public:
     DimensionChunkMoveSystem()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createDimensionChunkMoveSystem\@DimensionChunkMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createDimensionChunkMoveSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createDimensionChunkMoveSystem();
+    // NOLINTEND
 };

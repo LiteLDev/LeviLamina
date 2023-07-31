@@ -16,16 +16,18 @@ public:
     ScriptActorHitBlockAfterEvent()                                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ScriptActorHitBlockAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptActorHitBlockAfterEvent(); // NOLINT
+    MCAPI ~ScriptActorHitBlockAfterEvent();
     /**
      * @symbol
      * ?bind\@ScriptActorHitBlockAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptActorHitBlockAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorHitBlockAfterEvent>
-    bind(); // NOLINT
+    bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

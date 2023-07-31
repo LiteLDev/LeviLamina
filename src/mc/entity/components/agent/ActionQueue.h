@@ -19,26 +19,28 @@ public:
     ActionQueue()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ActionQueue\@AgentComponents\@\@QEAA\@$$QEAV01\@\@Z
      */
-    MCAPI ActionQueue(class AgentComponents::ActionQueue&&); // NOLINT
+    MCAPI ActionQueue(class AgentComponents::ActionQueue&&);
     /**
      * @symbol ?schedule\@ActionQueue\@AgentComponents\@\@SAXAEAVEntityContext\@\@UQueueItem\@Actions\@2\@\@Z
      */
-    MCAPI static void schedule(class EntityContext&, struct AgentComponents::Actions::QueueItem); // NOLINT
+    MCAPI static void schedule(class EntityContext&, struct AgentComponents::Actions::QueueItem);
     /**
      * @symbol ?tryStartNext\@ActionQueue\@AgentComponents\@\@SAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI static void tryStartNext(class EntityContext&); // NOLINT
+    MCAPI static void tryStartNext(class EntityContext&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?pop\@ActionQueue\@AgentComponents\@\@AEAA?AUQueueItem\@Actions\@2\@XZ
      */
-    MCAPI struct AgentComponents::Actions::QueueItem pop(); // NOLINT
-
-private:
+    MCAPI struct AgentComponents::Actions::QueueItem pop();
+    // NOLINTEND
 };
 
 }; // namespace AgentComponents

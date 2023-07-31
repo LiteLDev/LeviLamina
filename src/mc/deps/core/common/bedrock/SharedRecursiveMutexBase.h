@@ -13,14 +13,16 @@ public:
     SharedRecursiveMutexBase()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?lock\@SharedRecursiveMutexBase\@Threading\@Bedrock\@\@QEAAXXZ
      */
-    MCAPI void lock(); // NOLINT
+    MCAPI void lock();
     /**
      * @symbol ?unlock\@SharedRecursiveMutexBase\@Threading\@Bedrock\@\@QEAAXXZ
      */
-    MCAPI void unlock(); // NOLINT
+    MCAPI void unlock();
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Threading

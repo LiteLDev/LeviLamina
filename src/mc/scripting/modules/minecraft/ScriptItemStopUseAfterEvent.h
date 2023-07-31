@@ -15,33 +15,34 @@ public:
     ScriptItemStopUseAfterEvent()                                              = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTITEMSTOPUSEAFTEREVENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptItemStopUseAfterEvent(); // NOLINT
+    MCVAPI ~ScriptItemStopUseAfterEvent();
 #endif
     /**
      * @symbol ??0ScriptItemStopUseAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
      */
-    MCAPI ScriptItemStopUseAfterEvent(struct ScriptModuleMinecraft::ScriptItemStopUseAfterEvent const&); // NOLINT
+    MCAPI ScriptItemStopUseAfterEvent(struct ScriptModuleMinecraft::ScriptItemStopUseAfterEvent const&);
     /**
      * @symbol ??4ScriptItemStopUseAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptItemStopUseAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptItemStopUseAfterEvent&&); // NOLINT
+    operator=(struct ScriptModuleMinecraft::ScriptItemStopUseAfterEvent&&);
     /**
      * @symbol
      * ?bind\@ScriptItemStopUseAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptItemStopUseAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemStopUseAfterEvent>
-    bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemStopUseAfterEvent> bind();
     /**
      * @symbol
      * ?bindV010\@ScriptItemStopUseAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptItemStopUseAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemStopUseAfterEvent>
-    bindV010(); // NOLINT
+    bindV010();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

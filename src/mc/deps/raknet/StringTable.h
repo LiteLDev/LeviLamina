@@ -13,26 +13,28 @@ public:
     StringTable()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?AddReference\@StringTable\@RakNet\@\@SAXXZ
      */
-    MCAPI static void AddReference(); // NOLINT
+    MCAPI static void AddReference();
     /**
      * @symbol ?RemoveReference\@StringTable\@RakNet\@\@SAXXZ
      */
-    MCAPI static void RemoveReference(); // NOLINT
-
-    // protected:
+    MCAPI static void RemoveReference();
+    // NOLINTEND
 
 protected:
+    // NOLINTBEGIN
     /**
      * @symbol ?instance\@StringTable\@RakNet\@\@1PEAV12\@EA
      */
-    MCAPI static class RakNet::StringTable* instance; // NOLINT
+    MCAPI static class RakNet::StringTable* instance;
     /**
      * @symbol ?referenceCount\@StringTable\@RakNet\@\@1HA
      */
-    MCAPI static int referenceCount; // NOLINT
+    MCAPI static int referenceCount;
+    // NOLINTEND
 };
 
 }; // namespace RakNet

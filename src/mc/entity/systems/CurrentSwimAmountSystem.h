@@ -11,18 +11,20 @@ public:
     CurrentSwimAmountSystem()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@CurrentSwimAmountSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_doCurrentSwimAmountSystem\@CurrentSwimAmountSystem\@\@CAXAEBVStrictEntityContext\@\@AEAUSwimAmountComponent\@\@AEBUSynchedActorDataComponent\@\@\@Z
      */
     MCAPI static void
-    _doCurrentSwimAmountSystem(class StrictEntityContext const&, struct SwimAmountComponent&, struct SynchedActorDataComponent const&); // NOLINT
-
-private:
+    _doCurrentSwimAmountSystem(class StrictEntityContext const&, struct SwimAmountComponent&, struct SynchedActorDataComponent const&);
+    // NOLINTEND
 };

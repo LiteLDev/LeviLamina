@@ -11,14 +11,16 @@ public:
     BlockCraftingTableComponent()                                              = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCRAFTINGTABLECOMPONENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~BlockCraftingTableComponent(); // NOLINT
+    MCVAPI ~BlockCraftingTableComponent();
 #endif
     /**
      * @symbol ??4BlockCraftingTableComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct BlockCraftingTableComponent& operator=(struct BlockCraftingTableComponent&&); // NOLINT
+    MCAPI struct BlockCraftingTableComponent& operator=(struct BlockCraftingTableComponent&&);
+    // NOLINTEND
 };

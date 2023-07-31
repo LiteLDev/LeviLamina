@@ -10,33 +10,35 @@ public:
     MobEffectComponent(MobEffectComponent const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0MobEffectComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI MobEffectComponent(class MobEffectComponent&&); // NOLINT
+    MCAPI MobEffectComponent(class MobEffectComponent&&);
     /**
      * @symbol ??0MobEffectComponent\@\@QEAA\@XZ
      */
-    MCAPI MobEffectComponent(); // NOLINT
+    MCAPI MobEffectComponent();
     /**
      * @symbol ?addAdditionalSaveData\@MobEffectComponent\@\@QEBAXAEAVCompoundTag\@\@AEBVActor\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag&, class Actor const&) const; // NOLINT
+    MCAPI void addAdditionalSaveData(class CompoundTag&, class Actor const&) const;
     /**
      * @symbol ??4MobEffectComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class MobEffectComponent& operator=(class MobEffectComponent&&); // NOLINT
+    MCAPI class MobEffectComponent& operator=(class MobEffectComponent&&);
     /**
      * @symbol
      * ?readAdditionalSaveData\@MobEffectComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&); // NOLINT
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
     /**
      * @symbol ?tick\@MobEffectComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void tick(class Actor&); // NOLINT
+    MCAPI void tick(class Actor&);
     /**
      * @symbol ??1MobEffectComponent\@\@QEAA\@XZ
      */
-    MCAPI ~MobEffectComponent(); // NOLINT
+    MCAPI ~MobEffectComponent();
+    // NOLINTEND
 };

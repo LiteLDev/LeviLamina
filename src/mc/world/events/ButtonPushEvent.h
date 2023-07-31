@@ -11,8 +11,10 @@ public:
     ButtonPushEvent()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ButtonPushEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ButtonPushEvent(); // NOLINT
+    MCAPI ~ButtonPushEvent();
+    // NOLINTEND
 };

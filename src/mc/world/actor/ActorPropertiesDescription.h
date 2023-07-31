@@ -11,20 +11,22 @@ public:
     ActorPropertiesDescription()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?getJsonName\@ActorPropertiesDescription\@\@UEBAPEBDXZ
      */
-    virtual char const* getJsonName() const; // NOLINT
+    virtual char const* getJsonName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORPROPERTIESDESCRIPTION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ActorPropertiesDescription(); // NOLINT
+    MCVAPI ~ActorPropertiesDescription();
 #endif
+    // NOLINTEND
 };

@@ -32,15 +32,16 @@ public:
         CustomFileHandlers()                                     = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??4CustomFileHandlers\@DataStore\@Bedrock\@\@QEAAAEAU012\@$$QEAU012\@\@Z
          */
-        MCAPI struct Bedrock::DataStore::CustomFileHandlers&
-        operator=(struct Bedrock::DataStore::CustomFileHandlers&&); // NOLINT
+        MCAPI struct Bedrock::DataStore::CustomFileHandlers& operator=(struct Bedrock::DataStore::CustomFileHandlers&&);
         /**
          * @symbol ??1CustomFileHandlers\@DataStore\@Bedrock\@\@QEAA\@XZ
          */
-        MCAPI ~CustomFileHandlers(); // NOLINT
+        MCAPI ~CustomFileHandlers();
+        // NOLINTEND
     };
 
     class EditorImpl {
@@ -52,44 +53,44 @@ public:
         EditorImpl()                             = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @vftbl 0
          * @symbol __unk_vfn_0
          */
-        virtual void __unk_vfn_0(); // NOLINT
+        virtual void __unk_vfn_0();
         /**
          * @vftbl 1
          * @symbol
          * ?getOwningDataStore\@EditorImpl\@DataStore\@Bedrock\@\@UEBA?AV?$not_null\@PEBVDataStore\@Bedrock\@\@\@gsl\@\@XZ
          */
-        virtual class gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore() const; // NOLINT
+        virtual class gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore() const;
         /**
          * @vftbl 2
          * @symbol
          * ?getOwningDataStore\@EditorImpl\@DataStore\@Bedrock\@\@UEAA?AV?$not_null\@PEAVDataStore\@Bedrock\@\@\@gsl\@\@XZ
          */
-        virtual class gsl::not_null<class Bedrock::DataStore*> getOwningDataStore(); // NOLINT
+        virtual class gsl::not_null<class Bedrock::DataStore*> getOwningDataStore();
         /**
          * @vftbl 3
          * @symbol
          * ?getValueForKey\@EditorImpl\@DataStore\@Bedrock\@\@UEAAPEAVNode\@JSONObject\@3\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
          */
-        virtual class Bedrock::JSONObject::Node*
-            getValueForKey(class std::basic_string_view<char, struct std::char_traits<char>>); // NOLINT
+        virtual class Bedrock::JSONObject::Node* getValueForKey(std::string_view);
         /**
          * @vftbl 4
          * @symbol
          * ?getValueForKey\@EditorImpl\@DataStore\@Bedrock\@\@UEBAPEBVNode\@JSONObject\@3\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
          */
-        virtual class Bedrock::JSONObject::Node const*
-            getValueForKey(class std::basic_string_view<char, struct std::char_traits<char>>) const; // NOLINT
+        virtual class Bedrock::JSONObject::Node const* getValueForKey(std::string_view) const;
         /**
          * @vftbl 5
          * @symbol
          * ?setValueForKey\@EditorImpl\@DataStore\@Bedrock\@\@UEAAPEAVNode\@JSONObject\@3\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@AEBVValueWrapper\@53\@\@Z
          */
         virtual class Bedrock::JSONObject::Node*
-        setValueForKey(class std::basic_string_view<char, struct std::char_traits<char>>, class Bedrock::JSONObject::ValueWrapper const&); // NOLINT
+        setValueForKey(std::string_view, class Bedrock::JSONObject::ValueWrapper const&);
+        // NOLINTEND
     };
 
     class Impl {
@@ -101,14 +102,16 @@ public:
         Impl()                       = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??0Impl\@DataStore\@Bedrock\@\@QEAA\@PEAV12\@\@Z
          */
-        MCAPI Impl(class Bedrock::DataStore*); // NOLINT
+        MCAPI Impl(class Bedrock::DataStore*);
         /**
          * @symbol ?load\@Impl\@DataStore\@Bedrock\@\@QEAAXXZ
          */
-        MCAPI void load(); // NOLINT
+        MCAPI void load();
+        // NOLINTEND
     };
 
     class Viewer {
@@ -129,30 +132,31 @@ public:
         ViewerImpl()                             = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @vftbl 0
          * @symbol __unk_vfn_0
          */
-        virtual void __unk_vfn_0(); // NOLINT
+        virtual void __unk_vfn_0();
         /**
          * @vftbl 1
          * @symbol
          * ?getOwningDataStore\@ViewerImpl\@DataStore\@Bedrock\@\@UEBA?AV?$not_null\@PEBVDataStore\@Bedrock\@\@\@gsl\@\@XZ
          */
-        virtual class gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore() const; // NOLINT
+        virtual class gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore() const;
         /**
          * @vftbl 2
          * @symbol
          * ?getOwningDataStore\@ViewerImpl\@DataStore\@Bedrock\@\@UEAA?AV?$not_null\@PEAVDataStore\@Bedrock\@\@\@gsl\@\@XZ
          */
-        virtual class gsl::not_null<class Bedrock::DataStore*> getOwningDataStore(); // NOLINT
+        virtual class gsl::not_null<class Bedrock::DataStore*> getOwningDataStore();
         /**
          * @vftbl 3
          * @symbol
          * ?getValueForKey\@ViewerImpl\@DataStore\@Bedrock\@\@UEBAPEBVNode\@JSONObject\@3\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
          */
-        virtual class Bedrock::JSONObject::Node const*
-            getValueForKey(class std::basic_string_view<char, struct std::char_traits<char>>) const; // NOLINT
+        virtual class Bedrock::JSONObject::Node const* getValueForKey(std::string_view) const;
+        // NOLINTEND
     };
 
 public:
@@ -161,28 +165,30 @@ public:
     DataStore(DataStore const&)            = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_DATASTORE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~DataStore(); // NOLINT
+    MCVAPI ~DataStore();
 #endif
     /**
      * @symbol ??0DataStore\@Bedrock\@\@QEAA\@XZ
      */
-    MCAPI DataStore(); // NOLINT
+    MCAPI DataStore();
     /**
      * @symbol ?load\@DataStore\@Bedrock\@\@QEAAXXZ
      */
-    MCAPI void load(); // NOLINT
+    MCAPI void load();
     /**
      * @symbol ?setCustomFileHandlers\@DataStore\@Bedrock\@\@QEAAXUCustomFileHandlers\@12\@\@Z
      */
-    MCAPI void setCustomFileHandlers(struct Bedrock::DataStore::CustomFileHandlers); // NOLINT
+    MCAPI void setCustomFileHandlers(struct Bedrock::DataStore::CustomFileHandlers);
     /**
      * @symbol ?setFilePath\@DataStore\@Bedrock\@\@QEAAXAEBVPath\@Core\@\@\@Z
      */
-    MCAPI void setFilePath(class Core::Path const&); // NOLINT
+    MCAPI void setFilePath(class Core::Path const&);
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

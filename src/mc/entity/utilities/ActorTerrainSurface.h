@@ -3,17 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace ActorTerrainSurface {
+// NOLINTBEGIN
 /**
  * @symbol ?getTerrainSurfaceOffset\@ActorTerrainSurface\@\@YAMAEBVEntityContext\@\@\@Z
  */
-MCAPI float getTerrainSurfaceOffset(class EntityContext const&); // NOLINT
+MCAPI float getTerrainSurfaceOffset(class EntityContext const&);
 /**
  * @symbol ?initializeActor\@ActorTerrainSurface\@\@YAXAEAVEntityContext\@\@\@Z
  */
-MCAPI void initializeActor(class EntityContext&); // NOLINT
+MCAPI void initializeActor(class EntityContext&);
 /**
  * @symbol ?setTerrainSurfaceOffset\@ActorTerrainSurface\@\@YAXAEAVEntityContext\@\@M\@Z
  */
-MCAPI void setTerrainSurfaceOffset(class EntityContext&, float); // NOLINT
+MCAPI void setTerrainSurfaceOffset(class EntityContext&, float);
+// NOLINTEND
 
 }; // namespace ActorTerrainSurface

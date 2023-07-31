@@ -11,18 +11,20 @@ public:
     TrimPatternRegistry()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?getAllEntries\@TrimPatternRegistry\@\@QEBA?AV?$vector\@UTrimPattern\@\@V?$allocator\@UTrimPattern\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<struct TrimPattern> getAllEntries() const; // NOLINT
+    MCAPI std::vector<struct TrimPattern> getAllEntries() const;
     /**
      * @symbol
      * ?getPatternIdByItem\@TrimPatternRegistry\@\@QEBA?AV?$optional\@VHashedString\@\@\@std\@\@AEBVHashedString\@\@\@Z
      */
-    MCAPI class std::optional<class HashedString> getPatternIdByItem(class HashedString const&) const; // NOLINT
+    MCAPI std::optional<class HashedString> getPatternIdByItem(class HashedString const&) const;
     /**
      * @symbol ?initializeServer\@TrimPatternRegistry\@\@QEAAXVItemRegistryRef\@\@\@Z
      */
-    MCAPI void initializeServer(class ItemRegistryRef); // NOLINT
+    MCAPI void initializeServer(class ItemRegistryRef);
+    // NOLINTEND
 };

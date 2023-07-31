@@ -11,8 +11,10 @@ public:
     FilterInputs()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1FilterInputs\@\@QEAA\@XZ
      */
-    MCAPI ~FilterInputs(); // NOLINT
+    MCAPI ~FilterInputs();
+    // NOLINTEND
 };

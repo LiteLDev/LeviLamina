@@ -13,26 +13,28 @@ public:
     PrioritizeSharedOwnership()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?lock\@PrioritizeSharedOwnership\@Threading\@Bedrock\@\@QEAAXXZ
      */
-    MCAPI void lock(); // NOLINT
+    MCAPI void lock();
     /**
      * @symbol ?lock_shared\@PrioritizeSharedOwnership\@Threading\@Bedrock\@\@QEAAXXZ
      */
-    MCAPI void lock_shared(); // NOLINT
+    MCAPI void lock_shared();
     /**
      * @symbol ?try_lock\@PrioritizeSharedOwnership\@Threading\@Bedrock\@\@QEAA_NXZ
      */
-    MCAPI bool try_lock(); // NOLINT
+    MCAPI bool try_lock();
     /**
      * @symbol ?unlock\@PrioritizeSharedOwnership\@Threading\@Bedrock\@\@QEAAXXZ
      */
-    MCAPI void unlock(); // NOLINT
+    MCAPI void unlock();
     /**
      * @symbol ?unlock_shared\@PrioritizeSharedOwnership\@Threading\@Bedrock\@\@QEAAXXZ
      */
-    MCAPI void unlock_shared(); // NOLINT
+    MCAPI void unlock_shared();
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Threading

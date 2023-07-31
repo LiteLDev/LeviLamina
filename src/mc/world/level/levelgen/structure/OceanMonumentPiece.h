@@ -14,87 +14,93 @@ public:
     OceanMonumentPiece()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 5
      * @symbol ?postProcessMobsAt\@OceanMonumentPiece\@\@UEAAXAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
-    virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&); // NOLINT
+    virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
     /**
      * @vftbl 7
      * @symbol ?getWorldX\@OceanMonumentPiece\@\@UEAAHHH\@Z
      */
-    virtual int getWorldX(int, int); // NOLINT
+    virtual int getWorldX(int, int);
     /**
      * @vftbl 8
      * @symbol ?getWorldZ\@OceanMonumentPiece\@\@UEAAHHH\@Z
      */
-    virtual int getWorldZ(int, int); // NOLINT
+    virtual int getWorldZ(int, int);
     /**
      * @vftbl 12
      * @symbol ?addHardcodedSpawnAreas\@OceanMonumentPiece\@\@UEBAXAEAVLevelChunk\@\@\@Z
      */
-    virtual void addHardcodedSpawnAreas(class LevelChunk&) const; // NOLINT
+    virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OCEANMONUMENTPIECE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~OceanMonumentPiece(); // NOLINT
+    MCVAPI ~OceanMonumentPiece();
 #endif
     /**
      * @symbol ??0OceanMonumentPiece\@\@QEAA\@AEAHAEAVBoundingBox\@\@\@Z
      */
-    MCAPI OceanMonumentPiece(int&, class BoundingBox&); // NOLINT
+    MCAPI OceanMonumentPiece(int&, class BoundingBox&);
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol ??0OceanMonumentPiece\@\@IEAA\@HAEAHV?$shared_ptr\@VRoomDefinition\@\@\@std\@\@HHH\@Z
      */
-    MCAPI OceanMonumentPiece(int, int&, class std::shared_ptr<class RoomDefinition>, int, int, int); // NOLINT
+    MCAPI OceanMonumentPiece(int, int&, std::shared_ptr<class RoomDefinition>, int, int, int);
     /**
      * @symbol ?chunkIntersects\@OceanMonumentPiece\@\@IEAA_NAEBVBoundingBox\@\@HHHH\@Z
      */
-    MCAPI bool chunkIntersects(class BoundingBox const&, int, int, int, int); // NOLINT
+    MCAPI bool chunkIntersects(class BoundingBox const&, int, int, int, int);
     /**
      * @symbol ?generateDefaultFloor\@OceanMonumentPiece\@\@IEAAXAEAVBlockSource\@\@AEBVBoundingBox\@\@HH_N\@Z
      */
-    MCAPI void generateDefaultFloor(class BlockSource&, class BoundingBox const&, int, int, bool); // NOLINT
+    MCAPI void generateDefaultFloor(class BlockSource&, class BoundingBox const&, int, int, bool);
     /**
      * @symbol ?spawnElder\@OceanMonumentPiece\@\@IEAAXAEAVBlockSource\@\@AEBVBoundingBox\@\@HHH\@Z
      */
-    MCAPI void spawnElder(class BlockSource&, class BoundingBox const&, int, int, int); // NOLINT
+    MCAPI void spawnElder(class BlockSource&, class BoundingBox const&, int, int, int);
+    // NOLINTEND
 
 protected:
+    // NOLINTBEGIN
     /**
      * @symbol ?mGridroomLeftWingConnectIndex\@OceanMonumentPiece\@\@1HA
      */
-    MCAPI static int mGridroomLeftWingConnectIndex; // NOLINT
+    MCAPI static int mGridroomLeftWingConnectIndex;
     /**
      * @symbol ?mGridroomRightWingConnectIndex\@OceanMonumentPiece\@\@1HA
      */
-    MCAPI static int mGridroomRightWingConnectIndex; // NOLINT
+    MCAPI static int mGridroomRightWingConnectIndex;
     /**
      * @symbol ?mGridroomSourceIndex\@OceanMonumentPiece\@\@1HA
      */
-    MCAPI static int mGridroomSourceIndex; // NOLINT
+    MCAPI static int mGridroomSourceIndex;
     /**
      * @symbol ?mGridroomTopConnectIndex\@OceanMonumentPiece\@\@1HA
      */
-    MCAPI static int mGridroomTopConnectIndex; // NOLINT
+    MCAPI static int mGridroomTopConnectIndex;
     /**
      * @symbol ?mLeftWingIndex\@OceanMonumentPiece\@\@1HB
      */
-    MCAPI static int const mLeftWingIndex; // NOLINT
+    MCAPI static int const mLeftWingIndex;
     /**
      * @symbol ?mPenthouseIndex\@OceanMonumentPiece\@\@1HB
      */
-    MCAPI static int const mPenthouseIndex; // NOLINT
+    MCAPI static int const mPenthouseIndex;
     /**
      * @symbol ?mRightWingIndex\@OceanMonumentPiece\@\@1HB
      */
-    MCAPI static int const mRightWingIndex; // NOLINT
+    MCAPI static int const mRightWingIndex;
+    // NOLINTEND
 };

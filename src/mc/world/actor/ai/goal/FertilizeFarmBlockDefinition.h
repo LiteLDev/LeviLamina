@@ -18,18 +18,20 @@ public:
     FertilizeFarmBlockDefinition(FertilizeFarmBlockDefinition const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0FertilizeFarmBlockDefinition\@\@QEAA\@XZ
      */
-    MCAPI FertilizeFarmBlockDefinition(); // NOLINT
+    MCAPI FertilizeFarmBlockDefinition();
     /**
      * @symbol ?initialize\@FertilizeFarmBlockDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVFertilizeFarmBlockGoal\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class FertilizeFarmBlockGoal&) const; // NOLINT
+    MCAPI void initialize(class EntityContext&, class FertilizeFarmBlockGoal&) const;
     /**
      * @symbol
      * ?buildSchema\@FertilizeFarmBlockDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VFertilizeFarmBlockDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void
-    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class FertilizeFarmBlockDefinition>>&); // NOLINT
+    buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class FertilizeFarmBlockDefinition>>&);
+    // NOLINTEND
 };

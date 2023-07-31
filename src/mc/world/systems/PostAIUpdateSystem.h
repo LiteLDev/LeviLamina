@@ -16,18 +16,20 @@ public:
     PostAIUpdateSystem()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@PostAIUpdateSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?doPostAiUpdate\@PostAIUpdateSystem\@\@CAXAEAVStrictEntityContext\@\@AEBUAttributesComponent\@\@V?$Optional\@$$CBV?$FlagComponent\@UOnGroundFlag\@\@\@\@\@\@AEAUNoActionTimeComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UWasOnGroundFlag\@\@\@\@\@\@\@Z
      */
     MCAPI static void
-    doPostAiUpdate(class StrictEntityContext&, struct AttributesComponent const&, class Optional<class FlagComponent<struct OnGroundFlag> const>, struct NoActionTimeComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct WasOnGroundFlag>>); // NOLINT
-
-private:
+    doPostAiUpdate(class StrictEntityContext&, struct AttributesComponent const&, class Optional<class FlagComponent<struct OnGroundFlag> const>, struct NoActionTimeComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct WasOnGroundFlag>>);
+    // NOLINTEND
 };

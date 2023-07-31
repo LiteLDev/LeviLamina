@@ -11,8 +11,10 @@ public:
     StorePreviousClientInputSystem()                                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createStorePreviousClientInputSystem\@StorePreviousClientInputSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createStorePreviousClientInputSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createStorePreviousClientInputSystem();
+    // NOLINTEND
 };

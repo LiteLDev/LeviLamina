@@ -14,18 +14,20 @@ public:
     WitherBossPreAIStepSystem()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@WitherBossPreAIStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_doWitherBossPreAIStepSystem\@WitherBossPreAIStepSystem\@\@CAXAEAVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UWitherBossPreAIStepResultComponent\@\@\@\@\@Z
      */
     MCAPI static void
-    _doWitherBossPreAIStepSystem(class StrictEntityContext&, class ActorOwnerComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct WitherBossPreAIStepResultComponent>); // NOLINT
-
-private:
+    _doWitherBossPreAIStepSystem(class StrictEntityContext&, class ActorOwnerComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct WitherBossPreAIStepResultComponent>);
+    // NOLINTEND
 };

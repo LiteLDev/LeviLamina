@@ -11,8 +11,10 @@ public:
     MoveInputComponent()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4MoveInputComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct MoveInputComponent& operator=(struct MoveInputComponent&&); // NOLINT
+    MCAPI struct MoveInputComponent& operator=(struct MoveInputComponent&&);
+    // NOLINTEND
 };

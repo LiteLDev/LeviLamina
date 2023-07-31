@@ -15,16 +15,18 @@ public:
     bool                               mOverflow; // this+0x14
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getItemInstance\@InventoryTransactionItemGroup\@\@QEBA?AVItemStack\@\@XZ
      */
-    MCAPI class ItemStack getItemInstance() const; // NOLINT
+    MCAPI class ItemStack getItemInstance() const;
     /**
      * @symbol ??4InventoryTransactionItemGroup\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
-    MCAPI class InventoryTransactionItemGroup& operator=(class InventoryTransactionItemGroup const&); // NOLINT
+    MCAPI class InventoryTransactionItemGroup& operator=(class InventoryTransactionItemGroup const&);
     /**
      * @symbol ??1InventoryTransactionItemGroup\@\@QEAA\@XZ
      */
-    MCAPI ~InventoryTransactionItemGroup(); // NOLINT
+    MCAPI ~InventoryTransactionItemGroup();
+    // NOLINTEND
 };

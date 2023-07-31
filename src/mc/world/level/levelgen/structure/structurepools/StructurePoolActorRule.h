@@ -11,9 +11,11 @@ public:
     StructurePoolActorRule()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0StructurePoolActorRule\@\@QEAA\@$$QEAV?$unique_ptr\@VIStructurePoolActorPredicate\@\@U?$default_delete\@VIStructurePoolActorPredicate\@\@\@std\@\@\@std\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@2\@\@Z
      */
-    MCAPI StructurePoolActorRule(std::unique_ptr<class IStructurePoolActorPredicate>&&, std::string); // NOLINT
+    MCAPI StructurePoolActorRule(std::unique_ptr<class IStructurePoolActorPredicate>&&, std::string);
+    // NOLINTEND
 };

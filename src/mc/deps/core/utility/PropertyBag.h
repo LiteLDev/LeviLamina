@@ -15,25 +15,27 @@ public:
     PropertyBag(PropertyBag const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0PropertyBag\@\@QEAA\@XZ
      */
-    MCAPI PropertyBag(); // NOLINT
+    MCAPI PropertyBag();
     /**
      * @symbol ??0PropertyBag\@\@QEAA\@AEBVValue\@Json\@\@\@Z
      */
-    MCAPI PropertyBag(class Json::Value const&); // NOLINT
+    MCAPI PropertyBag(class Json::Value const&);
     /**
      * @symbol ?toJsonValue\@PropertyBag\@\@QEBAAEBVValue\@Json\@\@XZ
      */
-    MCAPI class Json::Value const& toJsonValue() const; // NOLINT
+    MCAPI class Json::Value const& toJsonValue() const;
     /**
      * @symbol
      * ?toString\@PropertyBag\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string toString() const; // NOLINT
+    MCAPI std::string toString() const;
     /**
      * @symbol ?EMPTY\@PropertyBag\@\@2V1\@A
      */
-    MCAPI static class PropertyBag EMPTY; // NOLINT
+    MCAPI static class PropertyBag EMPTY;
+    // NOLINTEND
 };

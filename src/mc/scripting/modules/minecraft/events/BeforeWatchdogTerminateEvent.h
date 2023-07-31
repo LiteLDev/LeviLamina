@@ -11,8 +11,10 @@ public:
     BeforeWatchdogTerminateEvent()                                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1BeforeWatchdogTerminateEvent\@\@QEAA\@XZ
      */
-    MCAPI ~BeforeWatchdogTerminateEvent(); // NOLINT
+    MCAPI ~BeforeWatchdogTerminateEvent();
+    // NOLINTEND
 };

@@ -13,12 +13,14 @@ public:
     IManager()                           = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CODEBUILDER_IMANAGER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IManager(); // NOLINT
+    MCVAPI ~IManager();
 #endif
+    // NOLINTEND
 };
 
 }; // namespace CodeBuilder

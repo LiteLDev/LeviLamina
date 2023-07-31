@@ -13,10 +13,12 @@ public:
     EncryptionRequest()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1EncryptionRequest\@CodeBuilder\@\@QEAA\@XZ
      */
-    MCAPI ~EncryptionRequest(); // NOLINT
+    MCAPI ~EncryptionRequest();
+    // NOLINTEND
 };
 
 }; // namespace CodeBuilder

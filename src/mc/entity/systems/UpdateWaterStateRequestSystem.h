@@ -11,8 +11,10 @@ public:
     UpdateWaterStateRequestSystem()                                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@UpdateWaterStateRequestSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 };

@@ -8,25 +8,27 @@ template<typename T0> class WeakPtr;
 // clang-format on
 
 namespace BedrockBlockTypes {
+// NOLINTBEGIN
 /**
  * @symbol ?mAir\@BedrockBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mAir; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mAir;
 /**
  * @symbol ?mClientRequestPlaceholderBlock\@BedrockBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mClientRequestPlaceholderBlock; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mClientRequestPlaceholderBlock;
 /**
  * @symbol ?mUnknown\@BedrockBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mUnknown; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mUnknown;
 /**
  * @symbol ?registerBlocks\@BedrockBlockTypes\@\@YAXXZ
  */
-MCAPI void registerBlocks(); // NOLINT
+MCAPI void registerBlocks();
 /**
  * @symbol ?unregisterBlocks\@BedrockBlockTypes\@\@YAXXZ
  */
-MCAPI void unregisterBlocks(); // NOLINT
+MCAPI void unregisterBlocks();
+// NOLINTEND
 
 }; // namespace BedrockBlockTypes

@@ -6,11 +6,6 @@
 
 class InventorySource {
 public:
-    // InventorySource inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // InventorySource inner types define
     enum class InventorySourceFlags : unsigned int {
         NoFlag                  = 0x0,
@@ -23,8 +18,10 @@ public:
     InventorySourceFlags mFlags       = InventorySourceFlags::NoFlag;          // this+0x8
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??8InventorySource\@\@QEBA_NAEBV0\@\@Z
      */
-    MCAPI bool operator==(class InventorySource const&) const; // NOLINT
+    MCAPI bool operator==(class InventorySource const&) const;
+    // NOLINTEND
 };

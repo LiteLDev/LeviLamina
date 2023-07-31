@@ -33,39 +33,40 @@ public:
         Node()                       = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??0Node\@RTree\@\@QEAA\@AEBV01\@\@Z
          */
-        MCAPI Node(class RTree::Node const&); // NOLINT
+        MCAPI Node(class RTree::Node const&);
         /**
          * @symbol ??4Node\@RTree\@\@QEAAAEAV01\@$$QEAV01\@\@Z
          */
-        MCAPI class RTree::Node& operator=(class RTree::Node&&); // NOLINT
+        MCAPI class RTree::Node& operator=(class RTree::Node&&);
         /**
          * @symbol
          * ?search\@Node\@RTree\@\@QEBAXAEBUTargetSpace\@ClimateUtils\@\@AEAU?$pair\@PEBVNode\@RTree\@\@_J\@std\@\@\@Z
          */
-        MCAPI void search(struct ClimateUtils::TargetSpace const&, struct std::pair<class RTree::Node const*, __int64>&)
-            const; // NOLINT
+        MCAPI void search(struct ClimateUtils::TargetSpace const&, std::pair<class RTree::Node const*, int64_t>&) const;
         /**
          * @symbol ??1Node\@RTree\@\@QEAA\@XZ
          */
-        MCAPI ~Node(); // NOLINT
+        MCAPI ~Node();
         /**
          * @symbol
          * ?branch\@Node\@RTree\@\@SA?AV?$optional\@VNode\@RTree\@\@\@std\@\@$$QEAV?$vector\@VNode\@RTree\@\@V?$allocator\@VNode\@RTree\@\@\@std\@\@\@4\@\@Z
          */
-        MCAPI static class std::optional<class RTree::Node> branch(std::vector<class RTree::Node>&&); // NOLINT
+        MCAPI static std::optional<class RTree::Node> branch(std::vector<class RTree::Node>&&);
         /**
          * @symbol
          * ?bucketize\@Node\@RTree\@\@SA?AV?$vector\@VNode\@RTree\@\@V?$allocator\@VNode\@RTree\@\@\@std\@\@\@std\@\@$$QEAV34\@\@Z
          */
-        MCAPI static std::vector<class RTree::Node> bucketize(std::vector<class RTree::Node>&&); // NOLINT
+        MCAPI static std::vector<class RTree::Node> bucketize(std::vector<class RTree::Node>&&);
         /**
          * @symbol
          * ?sort\@Node\@RTree\@\@SAXAEAV?$vector\@VNode\@RTree\@\@V?$allocator\@VNode\@RTree\@\@\@std\@\@\@std\@\@H_N\@Z
          */
-        MCAPI static void sort(std::vector<class RTree::Node>&, int, bool); // NOLINT
+        MCAPI static void sort(std::vector<class RTree::Node>&, int, bool);
+        // NOLINTEND
     };
 
 public:
@@ -75,22 +76,24 @@ public:
     RTree()                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1RTree\@\@QEAA\@XZ
      */
-    MCAPI ~RTree(); // NOLINT
+    MCAPI ~RTree();
     /**
      * @symbol
      * ?create\@RTree\@\@SA?AV?$optional\@VRTree\@\@\@std\@\@AEBV?$vector\@UBiomeNoiseTarget\@\@V?$allocator\@UBiomeNoiseTarget\@\@\@std\@\@\@3\@\@Z
      */
-    MCAPI static class std::optional<class RTree> create(std::vector<struct BiomeNoiseTarget> const&); // NOLINT
+    MCAPI static std::optional<class RTree> create(std::vector<struct BiomeNoiseTarget> const&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?build\@RTree\@\@CA?AV?$optional\@VNode\@RTree\@\@\@std\@\@$$QEAV?$vector\@VNode\@RTree\@\@V?$allocator\@VNode\@RTree\@\@\@std\@\@\@3\@\@Z
      */
-    MCAPI static class std::optional<class RTree::Node> build(std::vector<class RTree::Node>&&); // NOLINT
-
-private:
+    MCAPI static std::optional<class RTree::Node> build(std::vector<class RTree::Node>&&);
+    // NOLINTEND
 };

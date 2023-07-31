@@ -10,20 +10,22 @@ public:
     BehaviorComponent(BehaviorComponent const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0BehaviorComponent\@\@QEAA\@XZ
      */
-    MCAPI BehaviorComponent(); // NOLINT
+    MCAPI BehaviorComponent();
     /**
      * @symbol ??0BehaviorComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI BehaviorComponent(class BehaviorComponent&&); // NOLINT
+    MCAPI BehaviorComponent(class BehaviorComponent&&);
     /**
      * @symbol ??4BehaviorComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class BehaviorComponent& operator=(class BehaviorComponent&&); // NOLINT
+    MCAPI class BehaviorComponent& operator=(class BehaviorComponent&&);
     /**
      * @symbol ??1BehaviorComponent\@\@QEAA\@XZ
      */
-    MCAPI ~BehaviorComponent(); // NOLINT
+    MCAPI ~BehaviorComponent();
+    // NOLINTEND
 };

@@ -10,23 +10,25 @@ public:
     WaterMovementDescription(WaterMovementDescription const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol ?getJsonName\@WaterMovementDescription\@\@UEBAPEBDXZ
      */
-    virtual char const* getJsonName() const; // NOLINT
+    virtual char const* getJsonName() const;
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1(); // NOLINT
+    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol ?deserializeData\@WaterMovementDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
-    virtual void deserializeData(struct DeserializeDataParams); // NOLINT
+    virtual void deserializeData(struct DeserializeDataParams);
     /**
      * @symbol ??0WaterMovementDescription\@\@QEAA\@XZ
      */
-    MCAPI WaterMovementDescription(); // NOLINT
+    MCAPI WaterMovementDescription();
+    // NOLINTEND
 };

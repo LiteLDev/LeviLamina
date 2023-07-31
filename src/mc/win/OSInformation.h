@@ -11,8 +11,10 @@ public:
     OSInformation()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1OSInformation\@\@QEAA\@XZ
      */
-    MCAPI ~OSInformation(); // NOLINT
+    MCAPI ~OSInformation();
+    // NOLINTEND
 };

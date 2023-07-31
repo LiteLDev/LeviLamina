@@ -21,11 +21,13 @@ public:
     ScriptSeat()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptSeat\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@USeatDescription\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<struct SeatDescription> bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<struct SeatDescription> bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

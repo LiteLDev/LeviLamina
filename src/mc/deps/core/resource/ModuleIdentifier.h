@@ -11,8 +11,10 @@ public:
     ModuleIdentifier()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ModuleIdentifier\@\@QEAA\@XZ
      */
-    MCAPI ~ModuleIdentifier(); // NOLINT
+    MCAPI ~ModuleIdentifier();
+    // NOLINTEND
 };

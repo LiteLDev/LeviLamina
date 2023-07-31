@@ -18,28 +18,26 @@ public:
     StructurePoolBlockPredicateCappedArcheologyBlockReplacement() = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 3
      * @symbol
      * ?finalize\@StructurePoolBlockPredicateCappedArcheologyBlockReplacement\@\@UEAA_NAEAVBlockSource\@\@AEAVIRandom\@\@\@Z
      */
-    virtual bool finalize(class BlockSource&, class IRandom&); // NOLINT
+    virtual bool finalize(class BlockSource&, class IRandom&);
     /**
      * @symbol
      * ??0StructurePoolBlockPredicateCappedArcheologyBlockReplacement\@\@QEAA\@AEBV?$map\@VHashedString\@\@V1\@U?$less\@VHashedString\@\@\@std\@\@V?$allocator\@U?$pair\@$$CBVHashedString\@\@V1\@\@std\@\@\@3\@\@std\@\@_KW4Placement\@BrushableBlockActor\@\@\@Z
      */
     MCAPI StructurePoolBlockPredicateCappedArcheologyBlockReplacement(
-        class std::map<
-            class HashedString,
-            class HashedString,
-            struct std::less<class HashedString>,
-            class std::allocator<struct std::pair<class HashedString const, class HashedString>>> const&,
-        unsigned __int64,
+        std::map<class HashedString, class HashedString> const&,
+        uint64_t,
         enum class BrushableBlockActor::Placement
-    ); // NOLINT
+    );
+    // NOLINTEND
 };

@@ -22,22 +22,22 @@ public:
     ScriptEntityRaycastHit()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0ScriptEntityRaycastHit\@ScriptModuleMinecraft\@\@QEAA\@AEBVWeakEntityRef\@\@MAEBVWeakLifetimeScope\@Scripting\@\@\@Z
      */
-    MCAPI
-    ScriptEntityRaycastHit(class WeakEntityRef const&, float, class Scripting::WeakLifetimeScope const&); // NOLINT
+    MCAPI ScriptEntityRaycastHit(class WeakEntityRef const&, float, class Scripting::WeakLifetimeScope const&);
     /**
      * @symbol ??1ScriptEntityRaycastHit\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptEntityRaycastHit(); // NOLINT
+    MCAPI ~ScriptEntityRaycastHit();
     /**
      * @symbol
      * ?bind\@ScriptEntityRaycastHit\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@VScriptEntityRaycastHit\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptEntityRaycastHit>
-    bind(); // NOLINT
+    MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptEntityRaycastHit> bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

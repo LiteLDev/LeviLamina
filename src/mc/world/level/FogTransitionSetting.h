@@ -11,8 +11,10 @@ public:
     FogTransitionSetting()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?ZERO_SETTING\@FogTransitionSetting\@\@2U1\@B
      */
-    MCAPI static struct FogTransitionSetting const ZERO_SETTING; // NOLINT
+    MCAPI static struct FogTransitionSetting const ZERO_SETTING;
+    // NOLINTEND
 };

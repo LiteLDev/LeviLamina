@@ -11,20 +11,22 @@ public:
     GameEventMovementTrackingComponent()                                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?initializeFromCode\@GameEventMovementTrackingComponent\@\@QEAAXAEAVActor\@\@_N\@Z
      */
-    MCAPI void initializeFromCode(class Actor&, bool); // NOLINT
+    MCAPI void initializeFromCode(class Actor&, bool);
     /**
      * @symbol ?shouldEmitEntityMoveGameEvent\@GameEventMovementTrackingComponent\@\@QEAA_NXZ
      */
-    MCAPI bool shouldEmitEntityMoveGameEvent(); // NOLINT
+    MCAPI bool shouldEmitEntityMoveGameEvent();
     /**
      * @symbol ?shouldEmitFlapGameEvent\@GameEventMovementTrackingComponent\@\@QEAA_NXZ
      */
-    MCAPI bool shouldEmitFlapGameEvent(); // NOLINT
+    MCAPI bool shouldEmitFlapGameEvent();
     /**
      * @symbol ?shouldEmitSwimGameEvent\@GameEventMovementTrackingComponent\@\@QEAA_NXZ
      */
-    MCAPI bool shouldEmitSwimGameEvent(); // NOLINT
+    MCAPI bool shouldEmitSwimGameEvent();
+    // NOLINTEND
 };

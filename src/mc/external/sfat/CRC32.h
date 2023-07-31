@@ -12,13 +12,13 @@ public:
     CRC32(CRC32 const&)            = delete;
     CRC32()                        = delete;
 
-    // private:
-
 private:
+    // NOLINTBEGIN
     /**
      * @symbol ?table\@CRC32\@SFAT\@\@0QBIB
      */
-    MCAPI static unsigned int const table[]; // NOLINT
+    MCAPI static unsigned int const table[];
+    // NOLINTEND
 };
 
 }; // namespace SFAT

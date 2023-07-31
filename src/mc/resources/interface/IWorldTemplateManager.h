@@ -11,10 +11,12 @@ public:
     IWorldTemplateManager()                                        = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IWORLDTEMPLATEMANAGER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IWorldTemplateManager(); // NOLINT
+    MCVAPI ~IWorldTemplateManager();
 #endif
+    // NOLINTEND
 };

@@ -14,20 +14,22 @@ public:
     EndIslandFeature()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 3
      * @symbol ?place\@EndIslandFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENDISLANDFEATURE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~EndIslandFeature(); // NOLINT
+    MCVAPI ~EndIslandFeature();
 #endif
+    // NOLINTEND
 };

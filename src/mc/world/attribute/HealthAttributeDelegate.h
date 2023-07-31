@@ -11,38 +11,40 @@ public:
     HealthAttributeDelegate()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?tick\@HealthAttributeDelegate\@\@UEAAXXZ
      */
-    virtual void tick(); // NOLINT
+    virtual void tick();
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2(); // NOLINT
+    virtual void __unk_vfn_2();
     /**
      * @vftbl 3
      * @symbol ?willChange\@HealthAttributeDelegate\@\@UEAA_NMMAEBVAttributeBuff\@\@\@Z
      */
-    virtual bool willChange(float, float, class AttributeBuff const&); // NOLINT
+    virtual bool willChange(float, float, class AttributeBuff const&);
     /**
      * @vftbl 4
      * @symbol ?change\@HealthAttributeDelegate\@\@UEAAMMMAEBVAttributeBuff\@\@\@Z
      */
-    virtual float change(float, float, class AttributeBuff const&); // NOLINT
+    virtual float change(float, float, class AttributeBuff const&);
     /**
      * @vftbl 5
      * @symbol ?getBuffValueWithModifiers\@HealthAttributeDelegate\@\@UEBAMAEBVAttributeBuff\@\@\@Z
      */
-    virtual float getBuffValueWithModifiers(class AttributeBuff const&) const; // NOLINT
+    virtual float getBuffValueWithModifiers(class AttributeBuff const&) const;
     /**
      * @symbol ??0HealthAttributeDelegate\@\@QEAA\@AEBVAttributeInstance\@\@PEAVMob\@\@\@Z
      */
-    MCAPI HealthAttributeDelegate(class AttributeInstance const&, class Mob*); // NOLINT
+    MCAPI HealthAttributeDelegate(class AttributeInstance const&, class Mob*);
+    // NOLINTEND
 };

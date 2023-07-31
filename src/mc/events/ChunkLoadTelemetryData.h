@@ -24,10 +24,12 @@ public:
         ServerChunkLoading()                                     = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ?toJson\@ServerChunkLoading\@ChunkLoadTelemetryData\@\@QEBA?AVValue\@Json\@\@XZ
          */
-        MCAPI class Json::Value toJson() const; // NOLINT
+        MCAPI class Json::Value toJson() const;
+        // NOLINTEND
     };
 
 public:
@@ -37,12 +39,14 @@ public:
     ChunkLoadTelemetryData()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?recordLoadedChunk\@ChunkLoadTelemetryData\@\@QEAAXAEBVLevelChunk\@\@\@Z
      */
-    MCAPI void recordLoadedChunk(class LevelChunk const&); // NOLINT
+    MCAPI void recordLoadedChunk(class LevelChunk const&);
     /**
      * @symbol ?toJson\@ChunkLoadTelemetryData\@\@QEBA?AVValue\@Json\@\@XZ
      */
-    MCAPI class Json::Value toJson() const; // NOLINT
+    MCAPI class Json::Value toJson() const;
+    // NOLINTEND
 };

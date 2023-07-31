@@ -11,8 +11,10 @@ public:
     DeserializeDataParams()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1DeserializeDataParams\@\@QEAA\@XZ
      */
-    MCAPI ~DeserializeDataParams(); // NOLINT
+    MCAPI ~DeserializeDataParams();
+    // NOLINTEND
 };

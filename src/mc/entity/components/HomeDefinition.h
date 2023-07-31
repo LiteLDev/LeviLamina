@@ -18,19 +18,21 @@ public:
     HomeDefinition(HomeDefinition const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0HomeDefinition\@\@QEAA\@XZ
      */
-    MCAPI HomeDefinition(); // NOLINT
+    MCAPI HomeDefinition();
     /**
      * @symbol ?initialize\@HomeDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVHomeComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class HomeComponent&) const; // NOLINT
+    MCAPI void initialize(class EntityContext&, class HomeComponent&) const;
     /**
      * @symbol
      * ?buildSchema\@HomeDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VHomeDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HomeDefinition>>&); // NOLINT
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HomeDefinition>>&);
+    // NOLINTEND
 };

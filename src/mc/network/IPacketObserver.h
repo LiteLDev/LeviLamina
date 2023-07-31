@@ -11,10 +11,12 @@ public:
     IPacketObserver()                                  = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IPACKETOBSERVER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IPacketObserver(); // NOLINT
+    MCVAPI ~IPacketObserver();
 #endif
+    // NOLINTEND
 };

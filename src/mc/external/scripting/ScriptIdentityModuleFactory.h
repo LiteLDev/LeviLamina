@@ -15,15 +15,15 @@ public:
     ScriptIdentityModuleFactory(ScriptIdentityModuleFactory const&)            = delete;
     ScriptIdentityModuleFactory()                                              = delete;
 
-    // private:
-
 private:
+    // NOLINTBEGIN
     /**
      * @symbol ?ModuleName\@ScriptIdentityModuleFactory\@\@0PEBDEB
      */
-    MCAPI static char const* ModuleName; // NOLINT
+    MCAPI static char const* ModuleName;
     /**
      * @symbol ?ModuleUUID\@ScriptIdentityModuleFactory\@\@0VUUID\@mce\@\@B
      */
-    MCAPI static class mce::UUID const ModuleUUID; // NOLINT
+    MCAPI static class mce::UUID const ModuleUUID;
+    // NOLINTEND
 };

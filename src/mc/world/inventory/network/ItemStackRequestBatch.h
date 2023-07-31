@@ -14,18 +14,20 @@ public:
     ItemStackRequestBatch()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?write\@ItemStackRequestBatch\@\@QEBAXAEAVBinaryStream\@\@\@Z
      */
-    MCAPI void write(class BinaryStream&) const; // NOLINT
+    MCAPI void write(class BinaryStream&) const;
     /**
      * @symbol ??1ItemStackRequestBatch\@\@QEAA\@XZ
      */
-    MCAPI ~ItemStackRequestBatch(); // NOLINT
+    MCAPI ~ItemStackRequestBatch();
     /**
      * @symbol
      * ?read\@ItemStackRequestBatch\@\@SA?AV?$Result\@V?$unique_ptr\@VItemStackRequestBatch\@\@U?$default_delete\@VItemStackRequestBatch\@\@\@std\@\@\@std\@\@Verror_code\@2\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestBatch>, class std::error_code>
-    read(class ReadOnlyBinaryStream&); // NOLINT
+    MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestBatch>, std::error_code>
+    read(class ReadOnlyBinaryStream&);
+    // NOLINTEND
 };

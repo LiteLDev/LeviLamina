@@ -10,23 +10,25 @@ public:
     InteractActionNode(InteractActionNode const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?tick\@InteractActionNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
-    virtual enum class BehaviorStatus tick(class Actor&); // NOLINT
+    virtual enum class BehaviorStatus tick(class Actor&);
     /**
      * @vftbl 2
      * @symbol ?initializeFromDefinition\@InteractActionNode\@\@EEAAXAEAVActor\@\@\@Z
      */
-    virtual void initializeFromDefinition(class Actor&); // NOLINT
+    virtual void initializeFromDefinition(class Actor&);
     /**
      * @symbol ??0InteractActionNode\@\@QEAA\@XZ
      */
-    MCAPI InteractActionNode(); // NOLINT
+    MCAPI InteractActionNode();
+    // NOLINTEND
 };

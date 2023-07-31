@@ -13,10 +13,12 @@ public:
     Property()                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1Property\@Events\@Social\@\@QEAA\@XZ
      */
-    MCAPI ~Property(); // NOLINT
+    MCAPI ~Property();
+    // NOLINTEND
 };
 
 }; // namespace Social::Events

@@ -13,10 +13,12 @@ public:
     ReflectionCtx()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?global\@ReflectionCtx\@cereal\@\@SAAEAU12\@XZ
      */
-    MCAPI static struct cereal::ReflectionCtx& global(); // NOLINT
+    MCAPI static struct cereal::ReflectionCtx& global();
+    // NOLINTEND
 };
 
 }; // namespace cereal

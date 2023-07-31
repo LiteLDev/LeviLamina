@@ -4,11 +4,6 @@
 
 class IConnectionEventing {
 public:
-    // IConnectionEventing inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // IConnectionEventing inner types define
     enum class ConnectionFailureReason {};
 

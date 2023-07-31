@@ -23,20 +23,22 @@ public:
     DeferredScriptCommand()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?execute\@DeferredScriptCommand\@\@UEAAXAEAVMinecraftCommands\@\@\@Z
      */
-    virtual void execute(class MinecraftCommands&); // NOLINT
+    virtual void execute(class MinecraftCommands&);
     /**
      * @symbol
      * ??0DeferredScriptCommand\@\@QEAA\@V?$unique_ptr\@VScriptCommand\@\@U?$default_delete\@VScriptCommand\@\@\@std\@\@\@std\@\@V?$unique_ptr\@VCommandContext\@\@U?$default_delete\@VCommandContext\@\@\@std\@\@\@2\@VWeakLifetimeScope\@Scripting\@\@V?$Promise\@V?$StrongTypedObjectHandle\@UScriptCommandResult\@ScriptModuleMinecraft\@\@\@Scripting\@\@UScriptCommandError\@ScriptModuleMinecraft\@\@X\@5\@\@Z
      */
     MCAPI
-        DeferredScriptCommand(std::unique_ptr<class ScriptCommand>, std::unique_ptr<class CommandContext>, class Scripting::WeakLifetimeScope, class Scripting::Promise<class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptCommandResult>, struct ScriptModuleMinecraft::ScriptCommandError, void>); // NOLINT
+    DeferredScriptCommand(std::unique_ptr<class ScriptCommand>, std::unique_ptr<class CommandContext>, class Scripting::WeakLifetimeScope, class Scripting::Promise<class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraft::ScriptCommandResult>, struct ScriptModuleMinecraft::ScriptCommandError, void>);
+    // NOLINTEND
 };

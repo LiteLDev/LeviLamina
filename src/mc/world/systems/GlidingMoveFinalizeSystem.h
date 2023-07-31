@@ -14,24 +14,26 @@ public:
     GlidingMoveFinalizeSystem()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_tickCollisionDamageCalculate\@GlidingMoveFinalizeSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUMobTravelComponent\@\@AEBUStateVectorComponent\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UGlidingCollisionDamageComponent\@\@\@\@AEBVIConstBlockSource\@\@\@Z
      */
     MCAPI static void
-    _tickCollisionDamageCalculate(class StrictEntityContext const&, struct MobTravelComponent const&, struct StateVectorComponent const&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct GlidingCollisionDamageComponent>&, class IConstBlockSource const&); // NOLINT
+    _tickCollisionDamageCalculate(class StrictEntityContext const&, struct MobTravelComponent const&, struct StateVectorComponent const&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct GlidingCollisionDamageComponent>&, class IConstBlockSource const&);
     /**
      * @symbol
      * ?_tickCollisionDamageHurt\@GlidingMoveFinalizeSystem\@\@SAXAEAVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@AEBUGlidingCollisionDamageComponent\@\@\@Z
      */
     MCAPI static void
-    _tickCollisionDamageHurt(class StrictEntityContext&, class ActorOwnerComponent&, struct GlidingCollisionDamageComponent const&); // NOLINT
+    _tickCollisionDamageHurt(class StrictEntityContext&, class ActorOwnerComponent&, struct GlidingCollisionDamageComponent const&);
     /**
      * @symbol ?createCollisionDamageCalculateSystem\@GlidingMoveFinalizeSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createCollisionDamageCalculateSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createCollisionDamageCalculateSystem();
     /**
      * @symbol ?createCollisionDamageHurtSystem\@GlidingMoveFinalizeSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createCollisionDamageHurtSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createCollisionDamageHurtSystem();
+    // NOLINTEND
 };

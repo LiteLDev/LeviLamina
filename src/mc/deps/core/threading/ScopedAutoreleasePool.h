@@ -10,16 +10,18 @@ public:
     ScopedAutoreleasePool(ScopedAutoreleasePool const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ScopedAutoreleasePool\@\@QEAA\@XZ
      */
-    MCAPI ScopedAutoreleasePool(); // NOLINT
+    MCAPI ScopedAutoreleasePool();
     /**
      * @symbol ?drain\@ScopedAutoreleasePool\@\@QEAAXXZ
      */
-    MCAPI void drain(); // NOLINT
+    MCAPI void drain();
     /**
      * @symbol ??1ScopedAutoreleasePool\@\@QEAA\@XZ
      */
-    MCAPI ~ScopedAutoreleasePool(); // NOLINT
+    MCAPI ~ScopedAutoreleasePool();
+    // NOLINTEND
 };

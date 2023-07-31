@@ -11,8 +11,10 @@ public:
     MolangContextVariableMapWithCleanup()                                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1MolangContextVariableMapWithCleanup\@\@QEAA\@XZ
      */
-    MCAPI ~MolangContextVariableMapWithCleanup(); // NOLINT
+    MCAPI ~MolangContextVariableMapWithCleanup();
+    // NOLINTEND
 };

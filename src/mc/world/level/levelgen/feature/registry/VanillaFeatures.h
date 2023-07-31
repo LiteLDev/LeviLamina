@@ -11,14 +11,15 @@ public:
     VanillaFeatures()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?registerFeatureTypes\@VanillaFeatures\@\@SAXAEAVFeatureTypeFactory\@\@\@Z
      */
-    MCAPI static void registerFeatureTypes(class FeatureTypeFactory&); // NOLINT
+    MCAPI static void registerFeatureTypes(class FeatureTypeFactory&);
     /**
      * @symbol
      * ?registerFeatures\@VanillaFeatures\@\@SAXAEAVFeatureRegistry\@\@AEBVBaseGameVersion\@\@AEBVExperiments\@\@\@Z
      */
-    MCAPI static void
-    registerFeatures(class FeatureRegistry&, class BaseGameVersion const&, class Experiments const&); // NOLINT
+    MCAPI static void registerFeatures(class FeatureRegistry&, class BaseGameVersion const&, class Experiments const&);
+    // NOLINTEND
 };

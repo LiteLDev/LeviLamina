@@ -14,53 +14,52 @@ public:
     MineshaftCorridor()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 2
      * @symbol ?getType\@MineshaftCorridor\@\@UEBA?AW4StructurePieceType\@\@XZ
      */
-    virtual enum class StructurePieceType getType() const; // NOLINT
+    virtual enum class StructurePieceType getType() const;
     /**
      * @vftbl 3
      * @symbol
      * ?addChildren\@MineshaftCorridor\@\@UEAAXAEAVStructurePiece\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@\@Z
      */
-    virtual void
-    addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&); // NOLINT
+    virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
     /**
      * @vftbl 4
      * @symbol ?postProcess\@MineshaftCorridor\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&); // NOLINT
+    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
     /**
      * @vftbl 5
      * @symbol ?postProcessMobsAt\@MineshaftCorridor\@\@UEAAXAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
-    virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&); // NOLINT
+    virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
     /**
      * @symbol ?_placeCobWeb\@MineshaftCorridor\@\@QEAAXAEAVBlockSource\@\@AEBVBoundingBox\@\@AEAVRandom\@\@MHHH\@Z
      */
-    MCAPI void
-    _placeCobWeb(class BlockSource&, class BoundingBox const&, class Random&, float, int, int, int); // NOLINT
+    MCAPI void _placeCobWeb(class BlockSource&, class BoundingBox const&, class Random&, float, int, int, int);
     /**
      * @symbol ?_placeSupport\@MineshaftCorridor\@\@QEAAXAEAVBlockSource\@\@AEBVBoundingBox\@\@HHHHHAEAVRandom\@\@\@Z
      */
-    MCAPI void
-    _placeSupport(class BlockSource&, class BoundingBox const&, int, int, int, int, int, class Random&); // NOLINT
+    MCAPI void _placeSupport(class BlockSource&, class BoundingBox const&, int, int, int, int, int, class Random&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_fillPillarDownOrChainUp\@MineshaftCorridor\@\@AEAAXAEAVBlockSource\@\@HHHAEBVBoundingBox\@\@\@Z
      */
-    MCAPI void _fillPillarDownOrChainUp(class BlockSource&, int, int, int, class BoundingBox const&); // NOLINT
+    MCAPI void _fillPillarDownOrChainUp(class BlockSource&, int, int, int, class BoundingBox const&);
     /**
      * @symbol ?_placeDoubleLowerOrUpperSupport\@MineshaftCorridor\@\@AEAAXAEAVBlockSource\@\@AEBVBoundingBox\@\@HHH\@Z
      */
-    MCAPI void _placeDoubleLowerOrUpperSupport(class BlockSource&, class BoundingBox const&, int, int, int); // NOLINT
-
-private:
+    MCAPI void _placeDoubleLowerOrUpperSupport(class BlockSource&, class BoundingBox const&, int, int, int);
+    // NOLINTEND
 };

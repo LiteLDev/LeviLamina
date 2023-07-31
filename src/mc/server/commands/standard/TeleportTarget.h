@@ -18,8 +18,12 @@ public:
     std::optional<Vec2>                           mRotation;      // this+0x0
     std::optional<struct TeleportData>            mData;          // this+0xC
     std::unique_ptr<class ChangeDimensionRequest> mChangeRequest; // this+0x28
+
+public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1TeleportTarget\@\@QEAA\@XZ
      */
-    MCAPI ~TeleportTarget(); // NOLINT
+    MCAPI ~TeleportTarget();
+    // NOLINTEND
 };

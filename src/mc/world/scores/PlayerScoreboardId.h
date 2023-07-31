@@ -10,16 +10,18 @@ public:
     PlayerScoreboardId(PlayerScoreboardId const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0PlayerScoreboardId\@\@QEAA\@XZ
      */
-    MCAPI PlayerScoreboardId(); // NOLINT
+    MCAPI PlayerScoreboardId();
     /**
      * @symbol ??0PlayerScoreboardId\@\@QEAA\@_J\@Z
      */
-    MCAPI PlayerScoreboardId(__int64); // NOLINT
+    MCAPI PlayerScoreboardId(int64_t);
     /**
      * @symbol ?INVALID\@PlayerScoreboardId\@\@2U1\@B
      */
-    MCAPI static struct PlayerScoreboardId const INVALID; // NOLINT
+    MCAPI static struct PlayerScoreboardId const INVALID;
+    // NOLINTEND
 };

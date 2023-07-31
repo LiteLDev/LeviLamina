@@ -11,13 +11,15 @@ public:
     PassengerFreezeMovementSystem()                                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@PassengerFreezeMovementSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
     /**
      * @symbol
      * ?freezeMovement\@PassengerFreezeMovementSystem\@\@SAXAEAVStrictEntityContext\@\@AEAUStateVectorComponent\@\@\@Z
      */
-    MCAPI static void freezeMovement(class StrictEntityContext&, struct StateVectorComponent&); // NOLINT
+    MCAPI static void freezeMovement(class StrictEntityContext&, struct StateVectorComponent&);
+    // NOLINTEND
 };

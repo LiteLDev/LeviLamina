@@ -10,57 +10,59 @@ public:
     MountTamingComponent(MountTamingComponent const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0MountTamingComponent\@\@QEAA\@XZ
      */
-    MCAPI MountTamingComponent(); // NOLINT
+    MCAPI MountTamingComponent();
     /**
      * @symbol ?addAdditionalSaveData\@MountTamingComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
+    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
     /**
      * @symbol ?becomeTame\@MountTamingComponent\@\@QEAAXAEAVActor\@\@_N\@Z
      */
-    MCAPI void becomeTame(class Actor&, bool); // NOLINT
+    MCAPI void becomeTame(class Actor&, bool);
     /**
      * @symbol ?getCounter\@MountTamingComponent\@\@QEAAAEAHXZ
      */
-    MCAPI int& getCounter(); // NOLINT
+    MCAPI int& getCounter();
     /**
      * @symbol ?getInteraction\@MountTamingComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&); // NOLINT
+    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
     /**
      * @symbol ?getTemper\@MountTamingComponent\@\@QEAAAEAHXZ
      */
-    MCAPI int& getTemper(); // NOLINT
+    MCAPI int& getTemper();
     /**
      * @symbol ?getTemperMod\@MountTamingComponent\@\@QEBAHXZ
      */
-    MCAPI int getTemperMod() const; // NOLINT
+    MCAPI int getTemperMod() const;
     /**
      * @symbol ?getWaitCount\@MountTamingComponent\@\@QEBAHXZ
      */
-    MCAPI int getWaitCount() const; // NOLINT
+    MCAPI int getWaitCount() const;
     /**
      * @symbol
      * ?readAdditionalSaveData\@MountTamingComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&); // NOLINT
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
     /**
      * @symbol ?tameToPlayer\@MountTamingComponent\@\@QEAAXAEAVActor\@\@AEAVPlayer\@\@_N\@Z
      */
-    MCAPI void tameToPlayer(class Actor&, class Player&, bool); // NOLINT
+    MCAPI void tameToPlayer(class Actor&, class Player&, bool);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_feedItem\@MountTamingComponent\@\@AEAAXAEAVActor\@\@AEAVPlayer\@\@H\@Z
      */
-    MCAPI void _feedItem(class Actor&, class Player&, int); // NOLINT
+    MCAPI void _feedItem(class Actor&, class Player&, int);
     /**
      * @symbol ?_autoReject\@MountTamingComponent\@\@CA_NAEBVItemStack\@\@PEBVMountTameableDefinition\@\@\@Z
      */
-    MCAPI static bool _autoReject(class ItemStack const&, class MountTameableDefinition const*); // NOLINT
-
-private:
+    MCAPI static bool _autoReject(class ItemStack const&, class MountTameableDefinition const*);
+    // NOLINTEND
 };

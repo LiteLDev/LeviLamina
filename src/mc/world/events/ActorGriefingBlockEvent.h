@@ -10,12 +10,14 @@ public:
     ActorGriefingBlockEvent()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ActorGriefingBlockEvent\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI ActorGriefingBlockEvent(struct ActorGriefingBlockEvent const&); // NOLINT
+    MCAPI ActorGriefingBlockEvent(struct ActorGriefingBlockEvent const&);
     /**
      * @symbol ??1ActorGriefingBlockEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorGriefingBlockEvent(); // NOLINT
+    MCAPI ~ActorGriefingBlockEvent();
+    // NOLINTEND
 };

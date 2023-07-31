@@ -11,8 +11,10 @@ public:
     MolangQueryFunctionPtr()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1MolangQueryFunctionPtr\@\@QEAA\@XZ
      */
-    MCAPI ~MolangQueryFunctionPtr(); // NOLINT
+    MCAPI ~MolangQueryFunctionPtr();
+    // NOLINTEND
 };

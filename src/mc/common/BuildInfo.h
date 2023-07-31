@@ -13,10 +13,12 @@ public:
     BuildInfo()                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1BuildInfo\@Common\@\@QEAA\@XZ
      */
-    MCAPI ~BuildInfo(); // NOLINT
+    MCAPI ~BuildInfo();
+    // NOLINTEND
 };
 
 }; // namespace Common

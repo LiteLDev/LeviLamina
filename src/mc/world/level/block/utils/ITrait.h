@@ -13,10 +13,12 @@ public:
     ITrait()                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?bindType\@ITrait\@BlockTrait\@\@SAXXZ
      */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI static void bindType();
+    // NOLINTEND
 };
 
 }; // namespace BlockTrait

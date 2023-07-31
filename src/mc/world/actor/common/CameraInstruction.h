@@ -29,10 +29,12 @@ public:
             ColorOption()                              = delete;
 
         public:
+            // NOLINTBEGIN
             /**
              * @symbol ?bindType\@ColorOption\@FadeInstruction\@CameraInstruction\@\@SAXXZ
              */
-            MCAPI static void bindType(); // NOLINT
+            MCAPI static void bindType();
+            // NOLINTEND
         };
 
         struct TimeOption {
@@ -44,10 +46,12 @@ public:
             TimeOption()                             = delete;
 
         public:
+            // NOLINTBEGIN
             /**
              * @symbol ?bindType\@TimeOption\@FadeInstruction\@CameraInstruction\@\@SAXXZ
              */
-            MCAPI static void bindType(); // NOLINT
+            MCAPI static void bindType();
+            // NOLINTEND
         };
 
     public:
@@ -57,14 +61,16 @@ public:
         FadeInstruction()                                  = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??8FadeInstruction\@CameraInstruction\@\@QEBA_NAEBU01\@\@Z
          */
-        MCAPI bool operator==(struct CameraInstruction::FadeInstruction const&) const; // NOLINT
+        MCAPI bool operator==(struct CameraInstruction::FadeInstruction const&) const;
         /**
          * @symbol ?bindType\@FadeInstruction\@CameraInstruction\@\@SAXXZ
          */
-        MCAPI static void bindType(); // NOLINT
+        MCAPI static void bindType();
+        // NOLINTEND
     };
 
     struct SetInstruction {
@@ -85,10 +91,12 @@ public:
             EaseOption()                             = delete;
 
         public:
+            // NOLINTBEGIN
             /**
              * @symbol ?bindType\@EaseOption\@SetInstruction\@CameraInstruction\@\@SAXXZ
              */
-            MCAPI static void bindType(); // NOLINT
+            MCAPI static void bindType();
+            // NOLINTEND
         };
 
         struct RotOption {
@@ -100,10 +108,12 @@ public:
             RotOption()                            = delete;
 
         public:
+            // NOLINTBEGIN
             /**
              * @symbol ?bindType\@RotOption\@SetInstruction\@CameraInstruction\@\@SAXXZ
              */
-            MCAPI static void bindType(); // NOLINT
+            MCAPI static void bindType();
+            // NOLINTEND
         };
 
     public:
@@ -112,23 +122,24 @@ public:
         SetInstruction()                      = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??4SetInstruction\@CameraInstruction\@\@QEAAAEAU01\@AEBU01\@\@Z
          */
-        MCAPI struct CameraInstruction::SetInstruction&
-        operator=(struct CameraInstruction::SetInstruction const&); // NOLINT
+        MCAPI struct CameraInstruction::SetInstruction& operator=(struct CameraInstruction::SetInstruction const&);
         /**
          * @symbol ??4SetInstruction\@CameraInstruction\@\@QEAAAEAU01\@$$QEAU01\@\@Z
          */
-        MCAPI struct CameraInstruction::SetInstruction& operator=(struct CameraInstruction::SetInstruction&&); // NOLINT
+        MCAPI struct CameraInstruction::SetInstruction& operator=(struct CameraInstruction::SetInstruction&&);
         /**
          * @symbol ??8SetInstruction\@CameraInstruction\@\@QEBA_NAEBU01\@\@Z
          */
-        MCAPI bool operator==(struct CameraInstruction::SetInstruction const&) const; // NOLINT
+        MCAPI bool operator==(struct CameraInstruction::SetInstruction const&) const;
         /**
          * @symbol ?bindType\@SetInstruction\@CameraInstruction\@\@SAXXZ
          */
-        MCAPI static void bindType(); // NOLINT
+        MCAPI static void bindType();
+        // NOLINTEND
     };
 
 public:
@@ -138,12 +149,14 @@ public:
     CameraInstruction()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??8CameraInstruction\@\@QEBA_NAEBU0\@\@Z
      */
-    MCAPI bool operator==(struct CameraInstruction const&) const; // NOLINT
+    MCAPI bool operator==(struct CameraInstruction const&) const;
     /**
      * @symbol ?bindType\@CameraInstruction\@\@SAXXZ
      */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI static void bindType();
+    // NOLINTEND
 };

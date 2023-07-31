@@ -11,8 +11,10 @@ public:
     PlayerEatFoodEvent()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PlayerEatFoodEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerEatFoodEvent(); // NOLINT
+    MCAPI ~PlayerEatFoodEvent();
+    // NOLINTEND
 };

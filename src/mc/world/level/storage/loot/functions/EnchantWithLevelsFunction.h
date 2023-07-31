@@ -11,24 +11,26 @@ public:
     EnchantWithLevelsFunction()                                            = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENCHANTWITHLEVELSFUNCTION
     /**
      * @symbol ?apply\@EnchantWithLevelsFunction\@\@UEAAXAEAVItemStack\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
-    MCVAPI void apply(class ItemStack&, class Random&, class LootTableContext&); // NOLINT
+    MCVAPI void apply(class ItemStack&, class Random&, class LootTableContext&);
     /**
      * @symbol ?apply\@EnchantWithLevelsFunction\@\@UEAAXAEAVItemInstance\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
-    MCVAPI void apply(class ItemInstance&, class Random&, class LootTableContext&); // NOLINT
+    MCVAPI void apply(class ItemInstance&, class Random&, class LootTableContext&);
     /**
      * @symbol
      * ?apply\@EnchantWithLevelsFunction\@\@UEAAHAEAVItemStack\@\@AEAVRandom\@\@AEBUTrade\@\@AEAVLootTableContext\@\@\@Z
      */
-    MCVAPI int apply(class ItemStack&, class Random&, struct Trade const&, class LootTableContext&); // NOLINT
+    MCVAPI int apply(class ItemStack&, class Random&, struct Trade const&, class LootTableContext&);
     /**
      * @symbol
      * ?apply\@EnchantWithLevelsFunction\@\@UEAAHAEAVItemInstance\@\@AEAVRandom\@\@AEBUTrade\@\@AEAVLootTableContext\@\@\@Z
      */
-    MCVAPI int apply(class ItemInstance&, class Random&, struct Trade const&, class LootTableContext&); // NOLINT
+    MCVAPI int apply(class ItemInstance&, class Random&, struct Trade const&, class LootTableContext&);
 #endif
+    // NOLINTEND
 };

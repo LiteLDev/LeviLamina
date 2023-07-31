@@ -16,11 +16,12 @@ public:
     RegionHillsOperationNode()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 3
      * @symbol
@@ -31,17 +32,17 @@ public:
         class Pos2d const&,
         class Pos2d const&,
         int
-    ) const; // NOLINT
+    ) const;
     /**
      * @vftbl 4
      * @symbol ?_getAreaRead\@RegionHillsOperationNode\@\@MEBA?AV?$tuple\@VPos2d\@\@V1\@\@std\@\@AEBVPos2d\@\@0\@Z
      */
-    virtual class std::tuple<class Pos2d, class Pos2d>
-    _getAreaRead(class Pos2d const&, class Pos2d const&) const; // NOLINT
+    virtual std::tuple<class Pos2d, class Pos2d> _getAreaRead(class Pos2d const&, class Pos2d const&) const;
     /**
      * @symbol
      * ??0RegionHillsOperationNode\@\@QEAA\@IAEAV?$shared_ptr\@V?$OperationNode\@PEAVBiome\@\@VPos2d\@\@\@\@\@std\@\@AEAV?$shared_ptr\@V?$OperationNode\@HVPos2d\@\@\@\@\@2\@AEBVBiomeRegistry\@\@\@Z
      */
     MCAPI
-    RegionHillsOperationNode(unsigned int, class std::shared_ptr<class OperationNode<class Biome*, class Pos2d>>&, class std::shared_ptr<class OperationNode<int, class Pos2d>>&, class BiomeRegistry const&); // NOLINT
+    RegionHillsOperationNode(unsigned int, std::shared_ptr<class OperationNode<class Biome*, class Pos2d>>&, std::shared_ptr<class OperationNode<int, class Pos2d>>&, class BiomeRegistry const&);
+    // NOLINTEND
 };

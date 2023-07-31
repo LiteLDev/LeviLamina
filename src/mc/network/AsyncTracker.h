@@ -11,8 +11,10 @@ public:
     AsyncTracker()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?hasAsyncOperationTimedOut\@AsyncTracker\@\@QEAA_NXZ
      */
-    MCAPI bool hasAsyncOperationTimedOut(); // NOLINT
+    MCAPI bool hasAsyncOperationTimedOut();
+    // NOLINTEND
 };

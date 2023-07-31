@@ -15,27 +15,29 @@ public:
     ScriptItemStartUseOnAfterEvent()                                                 = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTITEMSTARTUSEONAFTEREVENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptItemStartUseOnAfterEvent(); // NOLINT
+    MCVAPI ~ScriptItemStartUseOnAfterEvent();
 #endif
     /**
      * @symbol ??0ScriptItemStartUseOnAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
      */
-    MCAPI ScriptItemStartUseOnAfterEvent(struct ScriptModuleMinecraft::ScriptItemStartUseOnAfterEvent const&); // NOLINT
+    MCAPI ScriptItemStartUseOnAfterEvent(struct ScriptModuleMinecraft::ScriptItemStartUseOnAfterEvent const&);
     /**
      * @symbol ??4ScriptItemStartUseOnAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptItemStartUseOnAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptItemStartUseOnAfterEvent&&); // NOLINT
+    operator=(struct ScriptModuleMinecraft::ScriptItemStartUseOnAfterEvent&&);
     /**
      * @symbol
      * ?bind\@ScriptItemStartUseOnAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptItemStartUseOnAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemStartUseOnAfterEvent>
-    bind(); // NOLINT
+    bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

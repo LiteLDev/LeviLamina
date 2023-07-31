@@ -13,18 +13,20 @@ public:
     AssignedThread()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?assign\@AssignedThread\@Threading\@Bedrock\@\@QEAAXAEBVid\@thread\@std\@\@\@Z
      */
-    MCAPI void assign(class std::thread::id const&); // NOLINT
+    MCAPI void assign(std::thread::id const&);
     /**
      * @symbol ?isOnThread\@AssignedThread\@Threading\@Bedrock\@\@QEBA_NXZ
      */
-    MCAPI bool isOnThread() const; // NOLINT
+    MCAPI bool isOnThread() const;
     /**
      * @symbol ??8AssignedThread\@Threading\@Bedrock\@\@QEBA_NAEBVid\@thread\@std\@\@\@Z
      */
-    MCAPI bool operator==(class std::thread::id const&) const; // NOLINT
+    MCAPI bool operator==(std::thread::id const&) const;
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Threading

@@ -16,13 +16,15 @@ public:
     PackSettingsFactory()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getPackSettings\@PackSettingsFactory\@\@QEAAPEAVPackSettings\@\@AEBVPackManifest\@\@\@Z
      */
-    MCAPI class PackSettings* getPackSettings(class PackManifest const&); // NOLINT
+    MCAPI class PackSettings* getPackSettings(class PackManifest const&);
     /**
      * @symbol
      * ?loadPackSettings\@PackSettingsFactory\@\@QEAAPEAVPackSettings\@\@AEBUPackIdVersion\@\@AEBVValue\@Json\@\@\@Z
      */
-    MCAPI class PackSettings* loadPackSettings(struct PackIdVersion const&, class Json::Value const&); // NOLINT
+    MCAPI class PackSettings* loadPackSettings(struct PackIdVersion const&, class Json::Value const&);
+    // NOLINTEND
 };

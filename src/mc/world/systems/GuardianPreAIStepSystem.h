@@ -11,18 +11,19 @@ public:
     GuardianPreAIStepSystem()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@GuardianPreAIStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_doGuardianPreAIStepSystem\@GuardianPreAIStepSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
      */
-    MCAPI static void
-    _doGuardianPreAIStepSystem(class StrictEntityContext const&, class ActorOwnerComponent&); // NOLINT
-
-private:
+    MCAPI static void _doGuardianPreAIStepSystem(class StrictEntityContext const&, class ActorOwnerComponent&);
+    // NOLINTEND
 };

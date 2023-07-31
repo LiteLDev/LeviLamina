@@ -16,19 +16,21 @@ public:
     LootItemActorKilledCondition()                                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?applies\@LootItemActorKilledCondition\@\@UEAA_NAEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual bool applies(class Random&, class LootTableContext&); // NOLINT
+    virtual bool applies(class Random&, class LootTableContext&);
     /**
      * @symbol
      * ?deserialize\@LootItemActorKilledCondition\@\@SA?AV?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@VValue\@Json\@\@\@Z
      */
-    MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value); // NOLINT
+    MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
+    // NOLINTEND
 };

@@ -11,16 +11,18 @@ public:
     AttributeCollection()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?hasAttribute\@AttributeCollection\@\@SA_NAEBVHashedString\@\@\@Z
      */
-    MCAPI static bool hasAttribute(class HashedString const&); // NOLINT
+    MCAPI static bool hasAttribute(class HashedString const&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?instance\@AttributeCollection\@\@CAAEAV1\@XZ
      */
-    MCAPI static class AttributeCollection& instance(); // NOLINT
-
-private:
+    MCAPI static class AttributeCollection& instance();
+    // NOLINTEND
 };

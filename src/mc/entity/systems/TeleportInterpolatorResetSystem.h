@@ -17,11 +17,12 @@ public:
     TeleportInterpolatorResetSystem()                                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?createTeleportInterpolatorResetSystem\@TeleportInterpolatorResetSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createTeleportInterpolatorResetSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createTeleportInterpolatorResetSystem();
     /**
      * @symbol
      * ?tickTeleportInterpolatorResetSystem\@TeleportInterpolatorResetSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UServerPlayerComponentFlag\@\@\@\@\@\@V?$Optional\@UMovementInterpolatorComponent\@\@\@\@$$CBUPlayerPositionModeComponent\@\@UFallDistanceComponent\@\@UStateVectorComponent\@\@\@\@\@Z
@@ -35,5 +36,6 @@ public:
                                                           class Optional<struct MovementInterpolatorComponent>,
                                                           struct PlayerPositionModeComponent const,
                                                           struct FallDistanceComponent,
-                                                          struct StateVectorComponent>); // NOLINT
+                                                          struct StateVectorComponent>);
+    // NOLINTEND
 };

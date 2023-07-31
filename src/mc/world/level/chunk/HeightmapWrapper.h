@@ -11,12 +11,14 @@ public:
     HeightmapWrapper()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?empty\@HeightmapWrapper\@\@QEBA_NXZ
      */
-    MCAPI bool empty() const; // NOLINT
+    MCAPI bool empty() const;
     /**
      * @symbol ?getHeightAt\@HeightmapWrapper\@\@QEBAFAEBVPos\@\@\@Z
      */
-    MCAPI short getHeightAt(class Pos const&) const; // NOLINT
+    MCAPI short getHeightAt(class Pos const&) const;
+    // NOLINTEND
 };

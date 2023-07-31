@@ -11,8 +11,10 @@ public:
     BehaviorTreeDefinition()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getRoot\@BehaviorTreeDefinition\@\@QEBAPEBVBehaviorDefinition\@\@XZ
      */
-    MCAPI class BehaviorDefinition const* getRoot() const; // NOLINT
+    MCAPI class BehaviorDefinition const* getRoot() const;
+    // NOLINTEND
 };

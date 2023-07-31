@@ -18,24 +18,26 @@ public:
     TameableDefinition(TameableDefinition const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0TameableDefinition\@\@QEAA\@XZ
      */
-    MCAPI TameableDefinition(); // NOLINT
+    MCAPI TameableDefinition();
     /**
      * @symbol
      * ?addTamingItemByName\@TameableDefinition\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void addTamingItemByName(std::string const&); // NOLINT
+    MCAPI void addTamingItemByName(std::string const&);
     /**
      * @symbol ?initialize\@TameableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVTameableComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class TameableComponent&) const; // NOLINT
+    MCAPI void initialize(class EntityContext&, class TameableComponent&) const;
     /**
      * @symbol
      * ?buildSchema\@TameableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VTameableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TameableDefinition>>&); // NOLINT
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TameableDefinition>>&);
+    // NOLINTEND
 };

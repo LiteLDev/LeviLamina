@@ -25,49 +25,50 @@ public:
     File()                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?close\@File\@Core\@\@QEAA?AVResult\@2\@XZ
      */
-    MCAPI class Core::Result close(); // NOLINT
+    MCAPI class Core::Result close();
     /**
      * @symbol ?open\@File\@Core\@\@QEAA?AVResult\@2\@AEBVPath\@2\@VFileOpenMode\@2\@W4FileBufferingMode\@2\@\@Z
      */
     MCAPI class Core::Result
-    open(class Core::Path const&, class Core::FileOpenMode, enum class Core::FileBufferingMode); // NOLINT
+    open(class Core::Path const&, class Core::FileOpenMode, enum class Core::FileBufferingMode);
     /**
      * @symbol ?setLoggingEnabled\@File\@Core\@\@QEAAX_N\@Z
      */
-    MCAPI void setLoggingEnabled(bool); // NOLINT
+    MCAPI void setLoggingEnabled(bool);
     /**
      * @symbol ?write\@File\@Core\@\@QEAA?AVResult\@2\@PEBX_K\@Z
      */
-    MCAPI class Core::Result write(void const*, unsigned __int64); // NOLINT
+    MCAPI class Core::Result write(void const*, uint64_t);
     /**
      * @symbol ??1File\@Core\@\@QEAA\@XZ
      */
-    MCAPI ~File(); // NOLINT
+    MCAPI ~File();
     /**
      * @symbol ?cleanPath\@File\@Core\@\@SA?AV?$PathBuffer\@V?$StackString\@D$0EAA\@\@Core\@\@\@2\@AEBVPath\@2\@\@Z
      */
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>>
-    cleanPath(class Core::Path const&); // NOLINT
+    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> cleanPath(class Core::Path const&);
     /**
      * @symbol
      * ?cleanPathSeparators\@File\@Core\@\@SA?AV?$PathBuffer\@V?$StackString\@D$0EAA\@\@Core\@\@\@2\@AEBVPath\@2\@\@Z
      */
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>>
-    cleanPathSeparators(class Core::Path const&); // NOLINT
+    cleanPathSeparators(class Core::Path const&);
     /**
      * @symbol
      * ?writeCreateOrAppendFileData\@File\@Core\@\@SA?AVResult\@2\@AEBVPath\@2\@_K1AEBV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@\@Z
      */
     MCAPI static class Core::Result
-    writeCreateOrAppendFileData(class Core::Path const&, unsigned __int64, unsigned __int64, std::vector<unsigned char> const&); // NOLINT
+    writeCreateOrAppendFileData(class Core::Path const&, uint64_t, uint64_t, std::vector<unsigned char> const&);
     /**
      * @symbol ?writeCreateOrAppendFileData\@File\@Core\@\@SA?AVResult\@2\@AEBVPath\@2\@_K1PEBE\@Z
      */
     MCAPI static class Core::Result
-    writeCreateOrAppendFileData(class Core::Path const&, unsigned __int64, unsigned __int64, unsigned char const*); // NOLINT
+    writeCreateOrAppendFileData(class Core::Path const&, uint64_t, uint64_t, unsigned char const*);
+    // NOLINTEND
 };
 
 }; // namespace Core

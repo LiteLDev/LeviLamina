@@ -11,12 +11,14 @@ public:
     CollisionBoxComponent()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?fromVec3\@CollisionBoxComponent\@\@QEAAXAEBVVec3\@\@\@Z
      */
-    MCAPI void fromVec3(class Vec3 const&); // NOLINT
+    MCAPI void fromVec3(class Vec3 const&);
     /**
      * @symbol ?getDefaultBB\@CollisionBoxComponent\@\@QEBAAEBVVec2\@\@XZ
      */
-    MCAPI class Vec2 const& getDefaultBB() const; // NOLINT
+    MCAPI class Vec2 const& getDefaultBB() const;
+    // NOLINTEND
 };

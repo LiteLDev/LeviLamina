@@ -11,8 +11,10 @@ public:
     ActorDroppedItemEvent()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ActorDroppedItemEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorDroppedItemEvent(); // NOLINT
+    MCAPI ~ActorDroppedItemEvent();
+    // NOLINTEND
 };

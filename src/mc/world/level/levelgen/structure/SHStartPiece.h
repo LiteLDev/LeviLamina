@@ -14,14 +14,16 @@ public:
     SHStartPiece()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 2
      * @symbol ?getType\@SHStartPiece\@\@UEBA?AW4StructurePieceType\@\@XZ
      */
-    virtual enum class StructurePieceType getType() const; // NOLINT
+    virtual enum class StructurePieceType getType() const;
+    // NOLINTEND
 };

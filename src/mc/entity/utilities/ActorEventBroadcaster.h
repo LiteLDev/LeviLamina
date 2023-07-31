@@ -11,8 +11,10 @@ public:
     ActorEventBroadcaster()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?broadcastActorEvent\@ActorEventBroadcaster\@\@QEBAXAEAVActor\@\@W4ActorEvent\@\@HAEAVDimension\@\@\@Z
      */
-    MCAPI void broadcastActorEvent(class Actor&, enum class ActorEvent, int, class Dimension&) const; // NOLINT
+    MCAPI void broadcastActorEvent(class Actor&, enum class ActorEvent, int, class Dimension&) const;
+    // NOLINTEND
 };

@@ -11,8 +11,10 @@ public:
     ExternalRecipeStore()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?setBlockReducer\@ExternalRecipeStore\@\@QEAAXPEAVBlockReducer\@\@\@Z
      */
-    MCAPI void setBlockReducer(class BlockReducer*); // NOLINT
+    MCAPI void setBlockReducer(class BlockReducer*);
+    // NOLINTEND
 };

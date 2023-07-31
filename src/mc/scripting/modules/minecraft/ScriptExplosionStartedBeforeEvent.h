@@ -20,36 +20,36 @@ public:
     ScriptExplosionStartedBeforeEvent()                                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ScriptExplosionStartedBeforeEvent\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
      */
-    MCAPI
-    ScriptExplosionStartedBeforeEvent(struct ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent const&); // NOLINT
+    MCAPI ScriptExplosionStartedBeforeEvent(struct ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent const&);
     /**
      * @symbol ??0ScriptExplosionStartedBeforeEvent\@ScriptModuleMinecraft\@\@QEAA\@$$QEAU01\@\@Z
      */
-    MCAPI
-    ScriptExplosionStartedBeforeEvent(struct ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent&&); // NOLINT
+    MCAPI ScriptExplosionStartedBeforeEvent(struct ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent&&);
     /**
      * @symbol ??4ScriptExplosionStartedBeforeEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent&&); // NOLINT
+    operator=(struct ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent&&);
     /**
      * @symbol
      * ?setImpactedBlocks\@ScriptExplosionStartedBeforeEvent\@ScriptModuleMinecraft\@\@QEAAXAEBV?$vector\@VVec3\@\@V?$allocator\@VVec3\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI void setImpactedBlocks(std::vector<class Vec3> const&); // NOLINT
+    MCAPI void setImpactedBlocks(std::vector<class Vec3> const&);
     /**
      * @symbol ??1ScriptExplosionStartedBeforeEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptExplosionStartedBeforeEvent(); // NOLINT
+    MCAPI ~ScriptExplosionStartedBeforeEvent();
     /**
      * @symbol
      * ?bind\@ScriptExplosionStartedBeforeEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptExplosionStartedBeforeEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent>
-    bind(); // NOLINT
+    bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

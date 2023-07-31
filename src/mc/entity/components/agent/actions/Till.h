@@ -13,10 +13,12 @@ public:
     Till()                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1Till\@Actions\@AgentComponents\@\@QEAA\@XZ
      */
-    MCAPI ~Till(); // NOLINT
+    MCAPI ~Till();
+    // NOLINTEND
 };
 
 }; // namespace AgentComponents::Actions

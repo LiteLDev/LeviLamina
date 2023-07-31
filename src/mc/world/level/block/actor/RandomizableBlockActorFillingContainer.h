@@ -11,27 +11,28 @@ public:
     RandomizableBlockActorFillingContainer()                                                         = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOMIZABLEBLOCKACTORFILLINGCONTAINER
     /**
      * @symbol ?dropContents\@RandomizableBlockActorFillingContainer\@\@UEAAXAEAVBlockSource\@\@AEBVVec3\@\@_N\@Z
      */
-    MCVAPI void dropContents(class BlockSource&, class Vec3 const&, bool); // NOLINT
+    MCVAPI void dropContents(class BlockSource&, class Vec3 const&, bool);
     /**
      * @symbol ?initializeContainerContents\@RandomizableBlockActorFillingContainer\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
-    MCVAPI void initializeContainerContents(class BlockSource&); // NOLINT
+    MCVAPI void initializeContainerContents(class BlockSource&);
     /**
      * @symbol ?setContainerChanged\@RandomizableBlockActorFillingContainer\@\@UEAAXH\@Z
      */
-    MCVAPI void setContainerChanged(int); // NOLINT
+    MCVAPI void setContainerChanged(int);
     /**
      * @symbol ?startOpen\@RandomizableBlockActorFillingContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
-    MCVAPI void startOpen(class Player&); // NOLINT
+    MCVAPI void startOpen(class Player&);
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~RandomizableBlockActorFillingContainer(); // NOLINT
+    MCVAPI ~RandomizableBlockActorFillingContainer();
 #endif
     /**
      * @symbol
@@ -43,5 +44,6 @@ public:
         class BlockPos const&,
         int,
         enum class ContainerType
-    ); // NOLINT
+    );
+    // NOLINTEND
 };

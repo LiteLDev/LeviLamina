@@ -14,16 +14,18 @@ public:
     BedrockItems()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?registerItems\@BedrockItems\@\@SAXVItemRegistryRef\@\@\@Z
      */
-    MCAPI static void registerItems(class ItemRegistryRef); // NOLINT
+    MCAPI static void registerItems(class ItemRegistryRef);
     /**
      * @symbol ?unregisterItems\@BedrockItems\@\@SAXVItemRegistryRef\@\@\@Z
      */
-    MCAPI static void unregisterItems(class ItemRegistryRef); // NOLINT
+    MCAPI static void unregisterItems(class ItemRegistryRef);
     /**
      * @symbol ?mAir\@BedrockItems\@\@2V?$WeakPtr\@VItem\@\@\@\@A
      */
-    MCAPI static class WeakPtr<class Item> mAir; // NOLINT
+    MCAPI static class WeakPtr<class Item> mAir;
+    // NOLINTEND
 };

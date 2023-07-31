@@ -15,29 +15,31 @@ public:
     ScriptActorHitAfterEvent()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ScriptActorHitAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
      */
-    MCAPI ScriptActorHitAfterEvent(struct ScriptModuleMinecraft::ScriptActorHitAfterEvent const&); // NOLINT
+    MCAPI ScriptActorHitAfterEvent(struct ScriptModuleMinecraft::ScriptActorHitAfterEvent const&);
     /**
      * @symbol ??0ScriptActorHitAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@$$QEAU01\@\@Z
      */
-    MCAPI ScriptActorHitAfterEvent(struct ScriptModuleMinecraft::ScriptActorHitAfterEvent&&); // NOLINT
+    MCAPI ScriptActorHitAfterEvent(struct ScriptModuleMinecraft::ScriptActorHitAfterEvent&&);
     /**
      * @symbol ??4ScriptActorHitAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptActorHitAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptActorHitAfterEvent&&); // NOLINT
+    operator=(struct ScriptModuleMinecraft::ScriptActorHitAfterEvent&&);
     /**
      * @symbol ??1ScriptActorHitAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptActorHitAfterEvent(); // NOLINT
+    MCAPI ~ScriptActorHitAfterEvent();
     /**
      * @symbol
      * ?bindV010\@ScriptActorHitAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptActorHitAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorHitAfterEvent>
-    bindV010(); // NOLINT
+    bindV010();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

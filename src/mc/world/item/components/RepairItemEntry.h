@@ -10,16 +10,18 @@ public:
     RepairItemEntry()                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4RepairItemEntry\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct RepairItemEntry& operator=(struct RepairItemEntry&&); // NOLINT
+    MCAPI struct RepairItemEntry& operator=(struct RepairItemEntry&&);
     /**
      * @symbol ??4RepairItemEntry\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
-    MCAPI struct RepairItemEntry& operator=(struct RepairItemEntry const&); // NOLINT
+    MCAPI struct RepairItemEntry& operator=(struct RepairItemEntry const&);
     /**
      * @symbol ??1RepairItemEntry\@\@QEAA\@XZ
      */
-    MCAPI ~RepairItemEntry(); // NOLINT
+    MCAPI ~RepairItemEntry();
+    // NOLINTEND
 };

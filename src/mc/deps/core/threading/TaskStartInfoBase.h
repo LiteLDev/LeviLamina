@@ -11,8 +11,10 @@ public:
     TaskStartInfoBase()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?NoAffinity\@TaskStartInfoBase\@\@2Vid\@thread\@std\@\@B
      */
-    MCAPI static class std::thread::id const NoAffinity; // NOLINT
+    MCAPI static std::thread::id const NoAffinity;
+    // NOLINTEND
 };

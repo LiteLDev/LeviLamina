@@ -11,10 +11,12 @@ public:
     ContainerSizeChangeListener()                                              = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSIZECHANGELISTENER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ContainerSizeChangeListener(); // NOLINT
+    MCVAPI ~ContainerSizeChangeListener();
 #endif
+    // NOLINTEND
 };

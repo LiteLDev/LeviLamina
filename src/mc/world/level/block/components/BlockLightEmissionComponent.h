@@ -11,8 +11,10 @@ public:
     BlockLightEmissionComponent()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?usesNewComponentStorage\@BlockLightEmissionComponent\@\@SA_NXZ
      */
-    MCAPI static bool usesNewComponentStorage(); // NOLINT
+    MCAPI static bool usesNewComponentStorage();
+    // NOLINTEND
 };

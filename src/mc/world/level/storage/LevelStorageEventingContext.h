@@ -11,8 +11,10 @@ public:
     LevelStorageEventingContext()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1LevelStorageEventingContext\@\@QEAA\@XZ
      */
-    MCAPI ~LevelStorageEventingContext(); // NOLINT
+    MCAPI ~LevelStorageEventingContext();
+    // NOLINTEND
 };

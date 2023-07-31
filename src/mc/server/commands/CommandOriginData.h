@@ -5,20 +5,22 @@
 struct CommandOriginData {
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0CommandOriginData\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI CommandOriginData(struct CommandOriginData const&); // NOLINT
+    MCAPI CommandOriginData(struct CommandOriginData const&);
     /**
      * @symbol ??0CommandOriginData\@\@QEAA\@XZ
      */
-    MCAPI CommandOriginData(); // NOLINT
+    MCAPI CommandOriginData();
     /**
      * @symbol ??4CommandOriginData\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
-    MCAPI struct CommandOriginData& operator=(struct CommandOriginData const&); // NOLINT
+    MCAPI struct CommandOriginData& operator=(struct CommandOriginData const&);
     /**
      * @symbol ??1CommandOriginData\@\@QEAA\@XZ
      */
-    MCAPI ~CommandOriginData(); // NOLINT
+    MCAPI ~CommandOriginData();
+    // NOLINTEND
 };

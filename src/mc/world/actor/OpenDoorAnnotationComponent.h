@@ -10,32 +10,34 @@ public:
     OpenDoorAnnotationComponent(OpenDoorAnnotationComponent const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0OpenDoorAnnotationComponent\@\@QEAA\@XZ
      */
-    MCAPI OpenDoorAnnotationComponent(); // NOLINT
+    MCAPI OpenDoorAnnotationComponent();
     /**
      * @symbol ??0OpenDoorAnnotationComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI OpenDoorAnnotationComponent(class OpenDoorAnnotationComponent&&); // NOLINT
+    MCAPI OpenDoorAnnotationComponent(class OpenDoorAnnotationComponent&&);
     /**
      * @symbol ?checkPath\@OpenDoorAnnotationComponent\@\@QEAAXAEAVMob\@\@\@Z
      */
-    MCAPI void checkPath(class Mob&); // NOLINT
+    MCAPI void checkPath(class Mob&);
     /**
      * @symbol ?initFromDefinition\@OpenDoorAnnotationComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void initFromDefinition(class Actor&); // NOLINT
+    MCAPI void initFromDefinition(class Actor&);
     /**
      * @symbol ?onComponentRemoved\@OpenDoorAnnotationComponent\@\@QEAAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void onComponentRemoved(class EntityContext&); // NOLINT
+    MCAPI void onComponentRemoved(class EntityContext&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_cleanUp\@OpenDoorAnnotationComponent\@\@AEAAXAEAVMob\@\@\@Z
      */
-    MCAPI void _cleanUp(class Mob&); // NOLINT
-
-private:
+    MCAPI void _cleanUp(class Mob&);
+    // NOLINTEND
 };

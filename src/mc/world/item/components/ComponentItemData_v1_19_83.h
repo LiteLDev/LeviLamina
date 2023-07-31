@@ -11,16 +11,18 @@ public:
     ComponentItemData_v1_19_83()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ComponentItemData_v1_19_83\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI ComponentItemData_v1_19_83(struct ComponentItemData_v1_19_83&&); // NOLINT
+    MCAPI ComponentItemData_v1_19_83(struct ComponentItemData_v1_19_83&&);
     /**
      * @symbol ??1ComponentItemData_v1_19_83\@\@QEAA\@XZ
      */
-    MCAPI ~ComponentItemData_v1_19_83(); // NOLINT
+    MCAPI ~ComponentItemData_v1_19_83();
     /**
      * @symbol ?VERSION\@ComponentItemData_v1_19_83\@\@2VSemVersion\@\@B
      */
-    MCAPI static class SemVersion const VERSION; // NOLINT
+    MCAPI static class SemVersion const VERSION;
+    // NOLINTEND
 };

@@ -4,11 +4,6 @@
 
 class Ability {
 public:
-    // Ability inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // Ability inner types define
     enum class Options : char {
         None                        = 0x0,
@@ -34,48 +29,50 @@ public:
     Ability::Options mOptions; // this+0x8
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0Ability\@\@QEAA\@XZ
      */
-    MCAPI Ability(); // NOLINT
+    MCAPI Ability();
     /**
      * @symbol ??0Ability\@\@QEAA\@_NW4Options\@0\@\@Z
      */
-    MCAPI Ability(bool, enum class Ability::Options); // NOLINT
+    MCAPI Ability(bool, enum class Ability::Options);
     /**
      * @symbol ?getBool\@Ability\@\@QEBA_NXZ
      */
-    MCAPI bool getBool() const; // NOLINT
+    MCAPI bool getBool() const;
     /**
      * @symbol ?getFloat\@Ability\@\@QEBAMXZ
      */
-    MCAPI float getFloat() const; // NOLINT
+    MCAPI float getFloat() const;
     /**
      * @symbol ?getType\@Ability\@\@QEBA?AW4Type\@1\@XZ
      */
-    MCAPI enum class Ability::Type getType() const; // NOLINT
+    MCAPI enum class Ability::Type getType() const;
     /**
      * @symbol ?hasOption\@Ability\@\@QEBA_NW4Options\@1\@\@Z
      */
-    MCAPI bool hasOption(enum class Ability::Options) const; // NOLINT
+    MCAPI bool hasOption(enum class Ability::Options) const;
     /**
      * @symbol ?isSet\@Ability\@\@QEBA_NXZ
      */
-    MCAPI bool isSet() const; // NOLINT
+    MCAPI bool isSet() const;
     /**
      * @symbol ??9Ability\@\@QEBA_NAEBV0\@\@Z
      */
-    MCAPI bool operator!=(class Ability const&) const; // NOLINT
+    MCAPI bool operator!=(class Ability const&) const;
     /**
      * @symbol ?setBool\@Ability\@\@QEAAX_N\@Z
      */
-    MCAPI void setBool(bool); // NOLINT
+    MCAPI void setBool(bool);
     /**
      * @symbol ?setFloat\@Ability\@\@QEAAXM\@Z
      */
-    MCAPI void setFloat(float); // NOLINT
+    MCAPI void setFloat(float);
     /**
      * @symbol ?unSet\@Ability\@\@QEAAXXZ
      */
-    MCAPI void unSet(); // NOLINT
+    MCAPI void unSet();
+    // NOLINTEND
 };

@@ -11,29 +11,31 @@ public:
     AutomationBehaviorTreeGroup()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0AutomationBehaviorTreeGroup\@\@QEAA\@AEAVResourcePackManager\@\@AEAVBehaviorFactory\@\@\@Z
      */
-    MCAPI AutomationBehaviorTreeGroup(class ResourcePackManager&, class BehaviorFactory&); // NOLINT
+    MCAPI AutomationBehaviorTreeGroup(class ResourcePackManager&, class BehaviorFactory&);
     /**
      * @symbol
      * ?tryGetDefinition\@AutomationBehaviorTreeGroup\@\@QEAA?AVBehaviorTreeDefinitionPtr\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI class BehaviorTreeDefinitionPtr tryGetDefinition(std::string const&); // NOLINT
+    MCAPI class BehaviorTreeDefinitionPtr tryGetDefinition(std::string const&);
     /**
      * @symbol ??1AutomationBehaviorTreeGroup\@\@QEAA\@XZ
      */
-    MCAPI ~AutomationBehaviorTreeGroup(); // NOLINT
+    MCAPI ~AutomationBehaviorTreeGroup();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_addRef\@AutomationBehaviorTreeGroup\@\@AEAAXAEAVBehaviorTreeDefinitionPtr\@\@\@Z
      */
-    MCAPI void _addRef(class BehaviorTreeDefinitionPtr&); // NOLINT
+    MCAPI void _addRef(class BehaviorTreeDefinitionPtr&);
     /**
      * @symbol ?_removeRef\@AutomationBehaviorTreeGroup\@\@AEAAXAEAVBehaviorTreeDefinitionPtr\@\@\@Z
      */
-    MCAPI void _removeRef(class BehaviorTreeDefinitionPtr&); // NOLINT
-
-private:
+    MCAPI void _removeRef(class BehaviorTreeDefinitionPtr&);
+    // NOLINTEND
 };

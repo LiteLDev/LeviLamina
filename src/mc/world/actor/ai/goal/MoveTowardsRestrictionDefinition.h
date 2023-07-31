@@ -11,9 +11,11 @@ public:
     MoveTowardsRestrictionDefinition()                                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?initialize\@MoveTowardsRestrictionDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVMoveTowardsRestrictionGoal\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class MoveTowardsRestrictionGoal&) const; // NOLINT
+    MCAPI void initialize(class EntityContext&, class MoveTowardsRestrictionGoal&) const;
+    // NOLINTEND
 };

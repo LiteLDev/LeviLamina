@@ -25,6 +25,7 @@ public:
     UndefinedSchema()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol
@@ -32,7 +33,7 @@ public:
      */
     virtual struct cereal::internal::Result
     doValidate(struct cereal::SchemaReader&, class entt::meta_any&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&)
-        const; // NOLINT
+        const;
     /**
      * @vftbl 1
      * @symbol
@@ -40,11 +41,12 @@ public:
      */
     virtual struct cereal::internal::Result
     doLoad(struct cereal::SchemaReader&, class entt::meta_any&, struct cereal::SerializerTraits const&, class entt::meta_any const&, class cereal::SerializerContext&)
-        const; // NOLINT
+        const;
     /**
      * @symbol ?instance\@UndefinedSchema\@internal\@cereal\@\@SAAEBV123\@XZ
      */
-    MCAPI static class cereal::internal::UndefinedSchema const& instance(); // NOLINT
+    MCAPI static class cereal::internal::UndefinedSchema const& instance();
+    // NOLINTEND
 };
 
 }; // namespace cereal::internal

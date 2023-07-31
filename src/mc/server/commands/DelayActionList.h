@@ -10,23 +10,20 @@ public:
     DelayActionList(DelayActionList const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0DelayActionList\@\@QEAA\@XZ
      */
-    MCAPI DelayActionList(); // NOLINT
+    MCAPI DelayActionList();
     /**
      * @symbol
      * ?queueRequestOrExecuteAction\@DelayActionList\@\@QEAA?AW4QueueRequestResult\@\@VDelayRequest\@\@AEAVServerLevel\@\@AEAVDimension\@\@_K_N\@Z
      */
-    MCAPI enum class QueueRequestResult queueRequestOrExecuteAction(
-        class DelayRequest,
-        class ServerLevel&,
-        class Dimension&,
-        unsigned __int64,
-        bool
-    ); // NOLINT
+    MCAPI enum class QueueRequestResult
+    queueRequestOrExecuteAction(class DelayRequest, class ServerLevel&, class Dimension&, uint64_t, bool);
     /**
      * @symbol ?tick\@DelayActionList\@\@QEAAXAEAVServerLevel\@\@AEAVDimension\@\@_K\@Z
      */
-    MCAPI void tick(class ServerLevel&, class Dimension&, unsigned __int64); // NOLINT
+    MCAPI void tick(class ServerLevel&, class Dimension&, uint64_t);
+    // NOLINTEND
 };

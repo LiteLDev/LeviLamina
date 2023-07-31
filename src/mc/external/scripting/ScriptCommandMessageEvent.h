@@ -11,8 +11,10 @@ public:
     ScriptCommandMessageEvent()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ScriptCommandMessageEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptCommandMessageEvent(); // NOLINT
+    MCAPI ~ScriptCommandMessageEvent();
+    // NOLINTEND
 };

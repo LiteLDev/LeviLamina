@@ -14,20 +14,22 @@ public:
     NavigationFlyDescription()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol ?getJsonName\@NavigationFlyDescription\@\@UEBAPEBDXZ
      */
-    virtual char const* getJsonName() const; // NOLINT
+    virtual char const* getJsonName() const;
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1(); // NOLINT
+    virtual void __unk_vfn_1();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONFLYDESCRIPTION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~NavigationFlyDescription(); // NOLINT
+    MCVAPI ~NavigationFlyDescription();
 #endif
+    // NOLINTEND
 };

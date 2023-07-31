@@ -11,8 +11,10 @@ public:
     CommandOriginIdentity()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1CommandOriginIdentity\@\@QEAA\@XZ
      */
-    MCAPI ~CommandOriginIdentity(); // NOLINT
+    MCAPI ~CommandOriginIdentity();
+    // NOLINTEND
 };

@@ -14,12 +14,14 @@ public:
     _ProfilerLiteTimer()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0_ProfilerLiteTimer\@\@QEAA\@AEAUScopedData\@ProfilerLite\@\@Vid\@thread\@std\@\@\@Z
      */
-    MCAPI _ProfilerLiteTimer(struct ProfilerLite::ScopedData&, class std::thread::id); // NOLINT
+    MCAPI _ProfilerLiteTimer(struct ProfilerLite::ScopedData&, std::thread::id);
     /**
      * @symbol ??1_ProfilerLiteTimer\@\@QEAA\@XZ
      */
-    MCAPI ~_ProfilerLiteTimer(); // NOLINT
+    MCAPI ~_ProfilerLiteTimer();
+    // NOLINTEND
 };

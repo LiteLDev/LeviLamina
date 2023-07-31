@@ -11,20 +11,22 @@ public:
     ITreeFeature()                               = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITREEFEATURE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ITreeFeature(); // NOLINT
+    MCVAPI ~ITreeFeature();
 #endif
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_place\@ITreeFeature\@\@IEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */
-    MCAPI class std::optional<class BlockPos>
-    _place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const; // NOLINT
-
-protected:
+    MCAPI std::optional<class BlockPos>
+          _place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    // NOLINTEND
 };

@@ -19,24 +19,25 @@ public:
     StorageAreaState()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?checkUserStorage\@StorageAreaState\@Core\@\@QEAAXAEAV?$weak_ptr\@VFileStorageArea\@Core\@\@\@std\@\@_K1\@Z
      */
-    MCAPI void
-    checkUserStorage(class std::weak_ptr<class Core::FileStorageArea>&, unsigned __int64, unsigned __int64); // NOLINT
+    MCAPI void checkUserStorage(std::weak_ptr<class Core::FileStorageArea>&, uint64_t, uint64_t);
     /**
      * @symbol ?isOutOfDiskSpaceError\@StorageAreaState\@Core\@\@QEBA_NXZ
      */
-    MCAPI bool isOutOfDiskSpaceError() const; // NOLINT
+    MCAPI bool isOutOfDiskSpaceError() const;
     /**
      * @symbol ?notifyCriticalDiskError\@StorageAreaState\@Core\@\@QEAAXAEBW4LevelStorageState\@2\@\@Z
      */
-    MCAPI void notifyCriticalDiskError(enum class Core::LevelStorageState const&); // NOLINT
+    MCAPI void notifyCriticalDiskError(enum class Core::LevelStorageState const&);
     /**
      * @symbol ??1StorageAreaState\@Core\@\@QEAA\@XZ
      */
-    MCAPI ~StorageAreaState(); // NOLINT
+    MCAPI ~StorageAreaState();
+    // NOLINTEND
 };
 
 }; // namespace Core

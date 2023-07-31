@@ -28,24 +28,26 @@ public:
     ChunkLocalNoiseCache(ChunkLocalNoiseCache const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ChunkLocalNoiseCache\@\@QEAA\@V?$DividedPos2d\@$03\@\@H\@Z
      */
-    MCAPI ChunkLocalNoiseCache(class DividedPos2d<4>, int); // NOLINT
+    MCAPI ChunkLocalNoiseCache(class DividedPos2d<4>, int);
     /**
      * @symbol ??0ChunkLocalNoiseCache\@\@QEAA\@XZ
      */
-    MCAPI ChunkLocalNoiseCache(); // NOLINT
+    MCAPI ChunkLocalNoiseCache();
     /**
      * @symbol ?getCacheEntry\@ChunkLocalNoiseCache\@\@QEBAAEBUCacheEntry\@1\@AEBV?$DividedPos2d\@$03\@\@\@Z
      */
-    MCAPI struct ChunkLocalNoiseCache::CacheEntry const& getCacheEntry(class DividedPos2d<4> const&) const; // NOLINT
+    MCAPI struct ChunkLocalNoiseCache::CacheEntry const& getCacheEntry(class DividedPos2d<4> const&) const;
     /**
      * @symbol ?setCacheEntry\@ChunkLocalNoiseCache\@\@QEAAXAEBV?$DividedPos2d\@$03\@\@AEBUCacheEntry\@1\@\@Z
      */
-    MCAPI void setCacheEntry(class DividedPos2d<4> const&, struct ChunkLocalNoiseCache::CacheEntry const&); // NOLINT
+    MCAPI void setCacheEntry(class DividedPos2d<4> const&, struct ChunkLocalNoiseCache::CacheEntry const&);
     /**
      * @symbol ??1ChunkLocalNoiseCache\@\@QEAA\@XZ
      */
-    MCAPI ~ChunkLocalNoiseCache(); // NOLINT
+    MCAPI ~ChunkLocalNoiseCache();
+    // NOLINTEND
 };

@@ -11,8 +11,10 @@ public:
     AABBBucket()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?mergeAABBs\@AABBBucket\@\@QEAAXXZ
      */
-    MCAPI void mergeAABBs(); // NOLINT
+    MCAPI void mergeAABBs();
+    // NOLINTEND
 };

@@ -17,8 +17,11 @@ public:
 
     constexpr Tick() : t(0){};
 
+public:
+    // NOLINTBEGIN
     /**
      * @symbol ?MAX\@Tick\@\@2U1\@B
      */
-    MCAPI static struct Tick const MAX; // NOLINT
+    MCAPI static struct Tick const MAX;
+    // NOLINTEND
 };

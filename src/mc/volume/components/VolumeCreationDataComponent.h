@@ -11,8 +11,10 @@ public:
     VolumeCreationDataComponent()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1VolumeCreationDataComponent\@\@QEAA\@XZ
      */
-    MCAPI ~VolumeCreationDataComponent(); // NOLINT
+    MCAPI ~VolumeCreationDataComponent();
+    // NOLINTEND
 };

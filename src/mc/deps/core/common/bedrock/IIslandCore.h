@@ -13,12 +13,14 @@ public:
     IIslandCore()                              = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_IISLANDCORE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IIslandCore(); // NOLINT
+    MCVAPI ~IIslandCore();
 #endif
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

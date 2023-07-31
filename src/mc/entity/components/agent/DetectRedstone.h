@@ -19,14 +19,13 @@ public:
     DetectRedstone()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?setup\@DetectRedstone\@AgentComponents\@\@SAXAEAV12\@AEAVEntityContext\@\@W4Direction\@2\@\@Z
      */
-    MCAPI static void setup(
-        class AgentComponents::DetectRedstone&,
-        class EntityContext&,
-        enum class AgentComponents::Direction
-    ); // NOLINT
+    MCAPI static void
+    setup(class AgentComponents::DetectRedstone&, class EntityContext&, enum class AgentComponents::Direction);
+    // NOLINTEND
 };
 
 }; // namespace AgentComponents

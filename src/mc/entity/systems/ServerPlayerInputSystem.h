@@ -11,14 +11,16 @@ public:
     ServerPlayerInputSystem()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?create\@ServerPlayerInputSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo create(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo create();
     /**
      * @symbol
      * ?onPlayerAuthInputPacket\@ServerPlayerInputSystem\@\@SAXAEAUServerPlayerMovementComponent\@\@AEBVPlayerAuthInputPacket\@\@\@Z
      */
     MCAPI static void
-    onPlayerAuthInputPacket(struct ServerPlayerMovementComponent&, class PlayerAuthInputPacket const&); // NOLINT
+    onPlayerAuthInputPacket(struct ServerPlayerMovementComponent&, class PlayerAuthInputPacket const&);
+    // NOLINTEND
 };

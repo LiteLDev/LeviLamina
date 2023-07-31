@@ -11,36 +11,38 @@ public:
     ExhaustionComponent()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getAttackValue\@ExhaustionComponent\@\@QEBAMXZ
      */
-    MCAPI float getAttackValue() const; // NOLINT
+    MCAPI float getAttackValue() const;
     /**
      * @symbol ?getHealValue\@ExhaustionComponent\@\@QEBAMXZ
      */
-    MCAPI float getHealValue() const; // NOLINT
+    MCAPI float getHealValue() const;
     /**
      * @symbol ?getJumpValue\@ExhaustionComponent\@\@QEBAMXZ
      */
-    MCAPI float getJumpValue() const; // NOLINT
+    MCAPI float getJumpValue() const;
     /**
      * @symbol ?getMiningValue\@ExhaustionComponent\@\@QEBAMXZ
      */
-    MCAPI float getMiningValue() const; // NOLINT
+    MCAPI float getMiningValue() const;
     /**
      * @symbol ?getSprintJumpValue\@ExhaustionComponent\@\@QEBAMXZ
      */
-    MCAPI float getSprintJumpValue() const; // NOLINT
+    MCAPI float getSprintJumpValue() const;
     /**
      * @symbol ?getSprintValue\@ExhaustionComponent\@\@QEBAMXZ
      */
-    MCAPI float getSprintValue() const; // NOLINT
+    MCAPI float getSprintValue() const;
     /**
      * @symbol ?getSwimValue\@ExhaustionComponent\@\@QEBAMXZ
      */
-    MCAPI float getSwimValue() const; // NOLINT
+    MCAPI float getSwimValue() const;
     /**
      * @symbol ?getWalkValue\@ExhaustionComponent\@\@QEBAMXZ
      */
-    MCAPI float getWalkValue() const; // NOLINT
+    MCAPI float getWalkValue() const;
+    // NOLINTEND
 };

@@ -11,8 +11,10 @@ public:
     DeserializedChunkLoadedRequest()                                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1DeserializedChunkLoadedRequest\@\@QEAA\@XZ
      */
-    MCAPI ~DeserializedChunkLoadedRequest(); // NOLINT
+    MCAPI ~DeserializedChunkLoadedRequest();
+    // NOLINTEND
 };

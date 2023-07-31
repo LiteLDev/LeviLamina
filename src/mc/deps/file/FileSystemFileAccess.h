@@ -25,16 +25,18 @@ public:
         FileSystemFileReadAccess()                                           = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @vftbl 0
          * @symbol __unk_vfn_0
          */
-        virtual void __unk_vfn_0(); // NOLINT
+        virtual void __unk_vfn_0();
         /**
          * @vftbl 1
          * @symbol ?fread\@FileSystemFileReadAccess\@FileSystemFileAccess\@\@UEBA_KPEAX_K10\@Z
          */
-        virtual unsigned __int64 fread(void*, unsigned __int64, unsigned __int64, void*) const; // NOLINT
+        virtual uint64_t fread(void*, uint64_t, uint64_t, void*) const;
+        // NOLINTEND
     };
 
     class FileSystemFileWriteAccess {
@@ -46,16 +48,18 @@ public:
         FileSystemFileWriteAccess()                                            = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @vftbl 0
          * @symbol __unk_vfn_0
          */
-        virtual void __unk_vfn_0(); // NOLINT
+        virtual void __unk_vfn_0();
         /**
          * @vftbl 1
          * @symbol ?fwrite\@FileSystemFileWriteAccess\@FileSystemFileAccess\@\@UEAA_KPEBX_K1PEAX\@Z
          */
-        virtual unsigned __int64 fwrite(void const*, unsigned __int64, unsigned __int64, void*); // NOLINT
+        virtual uint64_t fwrite(void const*, uint64_t, uint64_t, void*);
+        // NOLINTEND
     };
 
 public:
@@ -65,49 +69,51 @@ public:
     FileSystemFileAccess()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?fopen\@FileSystemFileAccess\@\@UEAAPEAXAEBVPath\@Core\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void* fopen(class Core::Path const&, std::string const&); // NOLINT
+    virtual void* fopen(class Core::Path const&, std::string const&);
     /**
      * @vftbl 2
      * @symbol ?fclose\@FileSystemFileAccess\@\@UEAAHPEAX\@Z
      */
-    virtual int fclose(void*); // NOLINT
+    virtual int fclose(void*);
     /**
      * @vftbl 3
      * @symbol ?fseek\@FileSystemFileAccess\@\@UEAAHPEAX_JH\@Z
      */
-    virtual int fseek(void*, __int64, int); // NOLINT
+    virtual int fseek(void*, int64_t, int);
     /**
      * @vftbl 4
      * @symbol ?ftell\@FileSystemFileAccess\@\@UEAA_JPEAX\@Z
      */
-    virtual __int64 ftell(void*); // NOLINT
+    virtual int64_t ftell(void*);
     /**
      * @vftbl 5
      * @symbol ?getReadInterface\@FileSystemFileAccess\@\@UEBAPEBVIFileReadAccess\@\@XZ
      */
-    virtual class IFileReadAccess const* getReadInterface() const; // NOLINT
+    virtual class IFileReadAccess const* getReadInterface() const;
     /**
      * @vftbl 6
      * @symbol ?getWriteInterface\@FileSystemFileAccess\@\@UEAAPEAVIFileWriteAccess\@\@XZ
      */
-    virtual class IFileWriteAccess* getWriteInterface(); // NOLINT
+    virtual class IFileWriteAccess* getWriteInterface();
     /**
      * @vftbl 7
      * @symbol ?unload\@FileSystemFileAccess\@\@UEAAXXZ
      */
-    virtual void unload(); // NOLINT
+    virtual void unload();
     /**
      * @symbol ??0FileSystemFileAccess\@\@QEAA\@W4FileSystemMode\@\@\@Z
      */
-    MCAPI FileSystemFileAccess(enum class FileSystemMode); // NOLINT
+    MCAPI FileSystemFileAccess(enum class FileSystemMode);
+    // NOLINTEND
 };

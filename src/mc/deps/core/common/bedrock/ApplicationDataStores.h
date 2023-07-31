@@ -22,38 +22,40 @@ public:
     ApplicationDataStores()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?init\@ApplicationDataStores\@Bedrock\@\@UEAAXXZ
      */
-    virtual void init(); // NOLINT
+    virtual void init();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_APPLICATIONDATASTORES
     /**
      * @symbol
      * ?getDataStore\@ApplicationDataStores\@Bedrock\@\@UEBA?AV?$NonOwnerPointer\@$$CBVDataStore\@Bedrock\@\@\@2\@W4DataStores\@IApplicationDataStores\@2\@\@Z
      */
     MCVAPI class Bedrock::NonOwnerPointer<class Bedrock::DataStore const>
-        getDataStore(enum class Bedrock::IApplicationDataStores::DataStores) const; // NOLINT
+        getDataStore(enum class Bedrock::IApplicationDataStores::DataStores) const;
     /**
      * @symbol
      * ?getDataStore\@ApplicationDataStores\@Bedrock\@\@UEAA?AV?$NonOwnerPointer\@VDataStore\@Bedrock\@\@\@2\@W4DataStores\@IApplicationDataStores\@2\@\@Z
      */
     MCVAPI class Bedrock::NonOwnerPointer<class Bedrock::DataStore>
-        getDataStore(enum class Bedrock::IApplicationDataStores::DataStores); // NOLINT
+        getDataStore(enum class Bedrock::IApplicationDataStores::DataStores);
 #endif
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_initDataStore\@ApplicationDataStores\@Bedrock\@\@AEAAXW4DataStores\@IApplicationDataStores\@2\@\@Z
      */
-    MCAPI void _initDataStore(enum class Bedrock::IApplicationDataStores::DataStores); // NOLINT
-
-private:
+    MCAPI void _initDataStore(enum class Bedrock::IApplicationDataStores::DataStores);
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

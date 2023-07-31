@@ -11,20 +11,22 @@ public:
     SynchedActorDataReader()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getInt\@SynchedActorDataReader\@\@QEBAHG\@Z
      */
-    MCAPI int getInt(unsigned short) const; // NOLINT
+    MCAPI int getInt(unsigned short) const;
     /**
      * @symbol ?getPosition\@SynchedActorDataReader\@\@QEBA?AVBlockPos\@\@G\@Z
      */
-    MCAPI class BlockPos getPosition(unsigned short) const; // NOLINT
+    MCAPI class BlockPos getPosition(unsigned short) const;
     /**
      * @symbol ?getStatusFlag\@SynchedActorDataReader\@\@QEBA_NW4ActorFlags\@\@\@Z
      */
-    MCAPI bool getStatusFlag(enum class ActorFlags) const; // NOLINT
+    MCAPI bool getStatusFlag(enum class ActorFlags) const;
     /**
      * @symbol ?getVec3\@SynchedActorDataReader\@\@QEBA?AVVec3\@\@G\@Z
      */
-    MCAPI class Vec3 getVec3(unsigned short) const; // NOLINT
+    MCAPI class Vec3 getVec3(unsigned short) const;
+    // NOLINTEND
 };

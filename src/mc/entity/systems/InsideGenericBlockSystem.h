@@ -11,8 +11,10 @@ public:
     InsideGenericBlockSystem()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@InsideGenericBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 };

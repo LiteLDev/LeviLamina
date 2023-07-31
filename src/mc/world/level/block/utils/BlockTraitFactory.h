@@ -19,10 +19,12 @@ public:
         Constructor()                              = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1Constructor\@BlockTraitFactory\@\@QEAA\@XZ
          */
-        MCAPI ~Constructor(); // NOLINT
+        MCAPI ~Constructor();
+        // NOLINTEND
     };
 
 public:
@@ -32,23 +34,19 @@ public:
     BlockTraitFactory()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1BlockTraitFactory\@\@QEAA\@XZ
      */
-    MCAPI ~BlockTraitFactory(); // NOLINT
+    MCAPI ~BlockTraitFactory();
     /**
      * @symbol ?registerAllTraits\@BlockTraitFactory\@\@SAXXZ
      */
-    MCAPI static void registerAllTraits(); // NOLINT
+    MCAPI static void registerAllTraits();
     /**
      * @symbol
      * ?mRegisteredTraits\@BlockTraitFactory\@\@2V?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UConstructor\@BlockTraitFactory\@\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UConstructor\@BlockTraitFactory\@\@\@std\@\@\@2\@\@std\@\@A
      */
-    MCAPI static class std::unordered_map<
-        std::string,
-        struct BlockTraitFactory::Constructor,
-        struct std::hash<std::string>,
-        struct std::equal_to<std::string>,
-        class std::allocator<struct std::pair<std::string const, struct BlockTraitFactory::Constructor>>>
-        mRegisteredTraits; // NOLINT
+    MCAPI static std::unordered_map<std::string, struct BlockTraitFactory::Constructor> mRegisteredTraits;
+    // NOLINTEND
 };

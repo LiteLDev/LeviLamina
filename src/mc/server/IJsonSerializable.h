@@ -11,10 +11,12 @@ public:
     IJsonSerializable()                                    = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IJSONSERIALIZABLE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IJsonSerializable(); // NOLINT
+    MCVAPI ~IJsonSerializable();
 #endif
+    // NOLINTEND
 };

@@ -14,15 +14,17 @@ public:
     RuinedPortalStart()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @symbol
      * ??0RuinedPortalStart\@\@QEAA\@AEAVBiomeRegistry\@\@AEBVBiomeSource\@\@HHAEBVIPreliminarySurfaceProvider\@\@\@Z
      */
     MCAPI
-    RuinedPortalStart(class BiomeRegistry&, class BiomeSource const&, int, int, class IPreliminarySurfaceProvider const&); // NOLINT
+    RuinedPortalStart(class BiomeRegistry&, class BiomeSource const&, int, int, class IPreliminarySurfaceProvider const&);
+    // NOLINTEND
 };

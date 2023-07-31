@@ -11,16 +11,18 @@ public:
     TimeAccumulator()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getCount\@TimeAccumulator\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 getCount() const; // NOLINT
+    MCAPI uint64_t getCount() const;
     /**
      * @symbol ?getTimeSumAverageMS\@TimeAccumulator\@\@QEBAMXZ
      */
-    MCAPI float getTimeSumAverageMS() const; // NOLINT
+    MCAPI float getTimeSumAverageMS() const;
     /**
      * @symbol ?getTimeSumAverageSeconds\@TimeAccumulator\@\@QEBAMXZ
      */
-    MCAPI float getTimeSumAverageSeconds() const; // NOLINT
+    MCAPI float getTimeSumAverageSeconds() const;
+    // NOLINTEND
 };

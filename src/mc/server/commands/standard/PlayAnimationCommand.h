@@ -14,32 +14,34 @@ public:
     PlayAnimationCommand()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?execute\@PlayAnimationCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYANIMATIONCOMMAND
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~PlayAnimationCommand(); // NOLINT
+    MCVAPI ~PlayAnimationCommand();
 #endif
     /**
      * @symbol ?setup\@PlayAnimationCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
-    MCAPI static void setup(class CommandRegistry&); // NOLINT
-
-    // private:
+    MCAPI static void setup(class CommandRegistry&);
+    // NOLINTEND
 
 private:
+    // NOLINTBEGIN
     /**
      * @symbol ?mStopExpressionVersion\@PlayAnimationCommand\@\@0W4MolangVersion\@\@B
      */
-    MCAPI static enum class MolangVersion const mStopExpressionVersion; // NOLINT
+    MCAPI static enum class MolangVersion const mStopExpressionVersion;
+    // NOLINTEND
 };

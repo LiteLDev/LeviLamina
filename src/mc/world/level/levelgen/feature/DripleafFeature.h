@@ -14,22 +14,24 @@ public:
     DripleafFeature()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 3
      * @symbol ?place\@DripleafFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_placeBigDripleaf\@DripleafFeature\@\@CA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    MCAPI static bool _placeBigDripleaf(class BlockSource&, class BlockPos const&, class Random&); // NOLINT
-
-private:
+    MCAPI static bool _placeBigDripleaf(class BlockSource&, class BlockPos const&, class Random&);
+    // NOLINTEND
 };

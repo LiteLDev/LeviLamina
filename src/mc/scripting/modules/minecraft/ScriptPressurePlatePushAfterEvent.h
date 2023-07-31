@@ -16,21 +16,23 @@ public:
     ScriptPressurePlatePushAfterEvent()                                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4ScriptPressurePlatePushAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptPressurePlatePushAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptPressurePlatePushAfterEvent&&); // NOLINT
+    operator=(struct ScriptModuleMinecraft::ScriptPressurePlatePushAfterEvent&&);
     /**
      * @symbol ??1ScriptPressurePlatePushAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptPressurePlatePushAfterEvent(); // NOLINT
+    MCAPI ~ScriptPressurePlatePushAfterEvent();
     /**
      * @symbol
      * ?bind\@ScriptPressurePlatePushAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptPressurePlatePushAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptPressurePlatePushAfterEvent>
-    bind(); // NOLINT
+    bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

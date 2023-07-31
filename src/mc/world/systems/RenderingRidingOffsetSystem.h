@@ -11,10 +11,12 @@ public:
     RenderingRidingOffsetSystem()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?getInterpolatedRenderingRidingOffset\@RenderingRidingOffsetSystem\@\@SA?AVVec3\@\@PEBUPassengerRenderingRidingOffsetComponent\@\@M\@Z
      */
     MCAPI static class Vec3
-    getInterpolatedRenderingRidingOffset(struct PassengerRenderingRidingOffsetComponent const*, float); // NOLINT
+    getInterpolatedRenderingRidingOffset(struct PassengerRenderingRidingOffsetComponent const*, float);
+    // NOLINTEND
 };

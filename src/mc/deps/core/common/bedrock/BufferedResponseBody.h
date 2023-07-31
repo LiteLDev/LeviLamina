@@ -18,46 +18,48 @@ public:
     BufferedResponseBody()                                       = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_HTTP_BUFFEREDRESPONSEBODY
     /**
      * @symbol ?cancel\@BufferedResponseBody\@Http\@Bedrock\@\@MEAAXXZ
      */
-    MCVAPI void cancel(); // NOLINT
+    MCVAPI void cancel();
     /**
      * @symbol ?complete\@BufferedResponseBody\@Http\@Bedrock\@\@MEAAXXZ
      */
-    MCVAPI void complete(); // NOLINT
+    MCVAPI void complete();
     /**
      * @symbol ?getLoggableData\@BufferedResponseBody\@Http\@Bedrock\@\@MEBA?AV?$span\@$$CBE$0?0\@gsl\@\@XZ
      */
-    MCVAPI class gsl::span<unsigned char const, -1> getLoggableData() const; // NOLINT
+    MCVAPI class gsl::span<unsigned char const> getLoggableData() const;
     /**
      * @symbol
      * ?getLoggableDestination\@BufferedResponseBody\@Http\@Bedrock\@\@MEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCVAPI std::string const& getLoggableDestination() const; // NOLINT
+    MCVAPI std::string const& getLoggableDestination() const;
     /**
      * @symbol ?getType\@BufferedResponseBody\@Http\@Bedrock\@\@MEBA?AW4ResponseBodyType\@23\@XZ
      */
-    MCVAPI enum class Bedrock::Http::ResponseBodyType getType() const; // NOLINT
+    MCVAPI enum class Bedrock::Http::ResponseBodyType getType() const;
     /**
      * @symbol ?start\@BufferedResponseBody\@Http\@Bedrock\@\@MEAA?AVerror_code\@std\@\@V?$optional\@_K\@5\@\@Z
      */
-    MCVAPI class std::error_code start(class std::optional<unsigned __int64>); // NOLINT
+    MCVAPI std::error_code start(std::optional<uint64_t>);
     /**
      * @symbol ?write\@BufferedResponseBody\@Http\@Bedrock\@\@MEAA?AVerror_code\@std\@\@V?$span\@$$CBE$0?0\@gsl\@\@\@Z
      */
-    MCVAPI class std::error_code write(class gsl::span<unsigned char const, -1>); // NOLINT
+    MCVAPI std::error_code write(class gsl::span<unsigned char const>);
 #endif
     /**
      * @symbol ?get\@BufferedResponseBody\@Http\@Bedrock\@\@QEBA?AV?$span\@$$CBE$0?0\@gsl\@\@XZ
      */
-    MCAPI class gsl::span<unsigned char const, -1> get() const; // NOLINT
+    MCAPI class gsl::span<unsigned char const> get() const;
     /**
      * @symbol
      * ?create\@BufferedResponseBody\@Http\@Bedrock\@\@SA?AV?$shared_ptr\@VBufferedResponseBody\@Http\@Bedrock\@\@\@std\@\@XZ
      */
-    MCAPI static class std::shared_ptr<class Bedrock::Http::BufferedResponseBody> create(); // NOLINT
+    MCAPI static std::shared_ptr<class Bedrock::Http::BufferedResponseBody> create();
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Http

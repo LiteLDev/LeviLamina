@@ -11,10 +11,12 @@ public:
     AddActorBasePacket()                                     = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDACTORBASEPACKET
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~AddActorBasePacket(); // NOLINT
+    MCVAPI ~AddActorBasePacket();
 #endif
+    // NOLINTEND
 };

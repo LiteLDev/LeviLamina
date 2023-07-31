@@ -16,205 +16,206 @@ public:
     FallingBlockActor()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 10
      * @symbol
      * ?reloadHardcoded\@FallingBlockActor\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
-    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const&); // NOLINT
+    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const&);
     /**
      * @vftbl 16
      * @symbol __unk_vfn_16
      */
-    virtual void __unk_vfn_16(); // NOLINT
+    virtual void __unk_vfn_16();
     /**
      * @vftbl 35
      * @symbol __unk_vfn_35
      */
-    virtual void __unk_vfn_35(); // NOLINT
+    virtual void __unk_vfn_35();
     /**
      * @vftbl 38
      * @symbol ?teleportTo\@FallingBlockActor\@\@UEAAXAEBVVec3\@\@_NHH1\@Z
      */
-    virtual void teleportTo(class Vec3 const&, bool, int, int, bool); // NOLINT
+    virtual void teleportTo(class Vec3 const&, bool, int, int, bool);
     /**
      * @vftbl 43
      * @symbol ?normalTick\@FallingBlockActor\@\@UEAAXXZ
      */
-    virtual void normalTick(); // NOLINT
+    virtual void normalTick();
     /**
      * @vftbl 55
      * @symbol __unk_vfn_55
      */
-    virtual void __unk_vfn_55(); // NOLINT
+    virtual void __unk_vfn_55();
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
      */
-    virtual void __unk_vfn_62(); // NOLINT
+    virtual void __unk_vfn_62();
     /**
      * @vftbl 68
      * @symbol ?getShadowHeightOffs\@FallingBlockActor\@\@UEAAMXZ
      */
-    virtual float getShadowHeightOffs(); // NOLINT
+    virtual float getShadowHeightOffs();
     /**
      * @vftbl 69
      * @symbol ?getShadowRadius\@FallingBlockActor\@\@UEBAMXZ
      */
-    virtual float getShadowRadius() const; // NOLINT
+    virtual float getShadowRadius() const;
     /**
      * @vftbl 71
      * @symbol __unk_vfn_71
      */
-    virtual void __unk_vfn_71(); // NOLINT
+    virtual void __unk_vfn_71();
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
      */
-    virtual void __unk_vfn_77(); // NOLINT
+    virtual void __unk_vfn_77();
     /**
      * @vftbl 82
      * @symbol ?isPickable\@FallingBlockActor\@\@UEAA_NXZ
      */
-    virtual bool isPickable(); // NOLINT
+    virtual bool isPickable();
     /**
      * @vftbl 83
      * @symbol __unk_vfn_83
      */
-    virtual void __unk_vfn_83(); // NOLINT
+    virtual void __unk_vfn_83();
     /**
      * @vftbl 86
      * @symbol __unk_vfn_86
      */
-    virtual void __unk_vfn_86(); // NOLINT
+    virtual void __unk_vfn_86();
     /**
      * @vftbl 93
      * @symbol __unk_vfn_93
      */
-    virtual void __unk_vfn_93(); // NOLINT
+    virtual void __unk_vfn_93();
     /**
      * @vftbl 95
      * @symbol __unk_vfn_95
      */
-    virtual void __unk_vfn_95(); // NOLINT
+    virtual void __unk_vfn_95();
     /**
      * @vftbl 96
      * @symbol __unk_vfn_96
      */
-    virtual void __unk_vfn_96(); // NOLINT
+    virtual void __unk_vfn_96();
     /**
      * @vftbl 98
      * @symbol __unk_vfn_98
      */
-    virtual void __unk_vfn_98(); // NOLINT
+    virtual void __unk_vfn_98();
     /**
      * @vftbl 163
      * @symbol ?canChangeDimensionsUsingPortal\@FallingBlockActor\@\@UEBA_NXZ
      */
-    virtual bool canChangeDimensionsUsingPortal() const; // NOLINT
+    virtual bool canChangeDimensionsUsingPortal() const;
     /**
      * @vftbl 164
      * @symbol __unk_vfn_164
      */
-    virtual void __unk_vfn_164(); // NOLINT
+    virtual void __unk_vfn_164();
     /**
      * @vftbl 168
      * @symbol ?causeFallDamage\@FallingBlockActor\@\@UEAAXMMVActorDamageSource\@\@\@Z
      */
-    virtual void causeFallDamage(float, float, class ActorDamageSource); // NOLINT
+    virtual void causeFallDamage(float, float, class ActorDamageSource);
     /**
      * @vftbl 173
      * @symbol ?onSynchedDataUpdate\@FallingBlockActor\@\@UEAAXH\@Z
      */
-    virtual void onSynchedDataUpdate(int); // NOLINT
+    virtual void onSynchedDataUpdate(int);
     /**
      * @vftbl 178
      * @symbol __unk_vfn_178
      */
-    virtual void __unk_vfn_178(); // NOLINT
+    virtual void __unk_vfn_178();
     /**
      * @vftbl 202
      * @symbol __unk_vfn_202
      */
-    virtual void __unk_vfn_202(); // NOLINT
+    virtual void __unk_vfn_202();
     /**
      * @vftbl 203
      * @symbol __unk_vfn_203
      */
-    virtual void __unk_vfn_203(); // NOLINT
+    virtual void __unk_vfn_203();
     /**
      * @vftbl 219
      * @symbol __unk_vfn_219
      */
-    virtual void __unk_vfn_219(); // NOLINT
+    virtual void __unk_vfn_219();
     /**
      * @vftbl 222
      * @symbol __unk_vfn_222
      */
-    virtual void __unk_vfn_222(); // NOLINT
+    virtual void __unk_vfn_222();
     /**
      * @vftbl 239
      * @symbol __unk_vfn_239
      */
-    virtual void __unk_vfn_239(); // NOLINT
+    virtual void __unk_vfn_239();
     /**
      * @vftbl 240
      * @symbol ?_hurt\@FallingBlockActor\@\@MEAA_NAEBVActorDamageSource\@\@M_N1\@Z
      */
-    virtual bool _hurt(class ActorDamageSource const&, float, bool, bool); // NOLINT
+    virtual bool _hurt(class ActorDamageSource const&, float, bool, bool);
     /**
      * @vftbl 243
      * @symbol ?readAdditionalSaveData\@FallingBlockActor\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&); // NOLINT
+    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /**
      * @vftbl 244
      * @symbol ?addAdditionalSaveData\@FallingBlockActor\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
-    virtual void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
+    virtual void addAdditionalSaveData(class CompoundTag&) const;
     /**
      * @vftbl 247
      * @symbol __unk_vfn_247
      */
-    virtual void __unk_vfn_247(); // NOLINT
+    virtual void __unk_vfn_247();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FALLINGBLOCKACTOR
     /**
      * @symbol ?getDeletionDelayTimeSeconds\@FallingBlockActor\@\@UEBAMXZ
      */
-    MCVAPI float getDeletionDelayTimeSeconds() const; // NOLINT
+    MCVAPI float getDeletionDelayTimeSeconds() const;
 #endif
     /**
      * @symbol
      * ??0FallingBlockActor\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
-    MCAPI
-    FallingBlockActor(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&); // NOLINT
+    MCAPI FallingBlockActor(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
     /**
      * @symbol ?breakBlock\@FallingBlockActor\@\@QEAAXXZ
      */
-    MCAPI void breakBlock(); // NOLINT
+    MCAPI void breakBlock();
     /**
      * @symbol ?doNormalTick\@FallingBlockActor\@\@QEAAXAEAVITickDelegate\@\@\@Z
      */
-    MCAPI void doNormalTick(class ITickDelegate&); // NOLINT
+    MCAPI void doNormalTick(class ITickDelegate&);
     /**
      * @symbol ?getFallingBlock\@FallingBlockActor\@\@QEBAAEBVBlock\@\@XZ
      */
-    MCAPI class Block const& getFallingBlock() const; // NOLINT
+    MCAPI class Block const& getFallingBlock() const;
     /**
      * @symbol ?setFallDamageAmount\@FallingBlockActor\@\@QEAAXM\@Z
      */
-    MCAPI void setFallDamageAmount(float); // NOLINT
+    MCAPI void setFallDamageAmount(float);
     /**
      * @symbol ?setFallingBlock\@FallingBlockActor\@\@QEAAXAEBVBlock\@\@_N\@Z
      */
-    MCAPI void setFallingBlock(class Block const&, bool); // NOLINT
+    MCAPI void setFallingBlock(class Block const&, bool);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_waitRemoval\@FallingBlockActor\@\@AEAAXXZ
      */
-    MCAPI void _waitRemoval(); // NOLINT
-
-private:
+    MCAPI void _waitRemoval();
+    // NOLINTEND
 };

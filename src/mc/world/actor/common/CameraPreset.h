@@ -9,24 +9,26 @@ public:
     CameraPreset() = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0CameraPreset\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI CameraPreset(struct CameraPreset const&); // NOLINT
+    MCAPI CameraPreset(struct CameraPreset const&);
     /**
      * @symbol ??4CameraPreset\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
-    MCAPI struct CameraPreset& operator=(struct CameraPreset const&); // NOLINT
+    MCAPI struct CameraPreset& operator=(struct CameraPreset const&);
     /**
      * @symbol ??4CameraPreset\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct CameraPreset& operator=(struct CameraPreset&&); // NOLINT
+    MCAPI struct CameraPreset& operator=(struct CameraPreset&&);
     /**
      * @symbol ??1CameraPreset\@\@QEAA\@XZ
      */
-    MCAPI ~CameraPreset(); // NOLINT
+    MCAPI ~CameraPreset();
     /**
      * @symbol ?bindType\@CameraPreset\@\@SAXXZ
      */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI static void bindType();
+    // NOLINTEND
 };

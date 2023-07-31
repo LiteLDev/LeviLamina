@@ -23,10 +23,12 @@ public:
         PlainData()                            = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1PlainData\@SoundEventRequest\@\@QEAA\@XZ
          */
-        MCAPI ~PlainData(); // NOLINT
+        MCAPI ~PlainData();
+        // NOLINTEND
     };
 
     struct SynchronizedPlainData {
@@ -45,24 +47,26 @@ public:
     SoundEventRequest()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0SoundEventRequest\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI SoundEventRequest(struct SoundEventRequest&&); // NOLINT
+    MCAPI SoundEventRequest(struct SoundEventRequest&&);
     /**
      * @symbol ??1SoundEventRequest\@\@QEAA\@XZ
      */
-    MCAPI ~SoundEventRequest(); // NOLINT
+    MCAPI ~SoundEventRequest();
     /**
      * @symbol
      * ?tryPlaySound\@SoundEventRequest\@\@SA?AV?$optional\@USoundEventRequest\@\@\@std\@\@V?$AutomaticID\@VDimension\@\@H\@\@AEBVSynchedActorData\@\@AEBUActorDefinitionIdentifier\@\@W4LevelSoundEvent\@\@AEBVVec3\@\@H\@Z
      */
-    MCAPI static class std::optional<struct SoundEventRequest> tryPlaySound(
+    MCAPI static std::optional<struct SoundEventRequest> tryPlaySound(
         class AutomaticID<class Dimension, int>,
         class SynchedActorData const&,
         struct ActorDefinitionIdentifier const&,
         enum class LevelSoundEvent,
         class Vec3 const&,
         int
-    ); // NOLINT
+    );
+    // NOLINTEND
 };

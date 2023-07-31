@@ -11,26 +11,28 @@ public:
     ResourcePackListener()                                       = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKLISTENER
     /**
      * @symbol ?onBaseGamePackDownloadComplete\@ResourcePackListener\@\@UEAAXXZ
      */
-    MCVAPI void onBaseGamePackDownloadComplete(); // NOLINT
+    MCVAPI void onBaseGamePackDownloadComplete();
     /**
      * @symbol ?onFullPackStackInvalid\@ResourcePackListener\@\@UEAAXXZ
      */
-    MCVAPI void onFullPackStackInvalid(); // NOLINT
+    MCVAPI void onFullPackStackInvalid();
     /**
      * @symbol ?onLanguageSubpacksChanged\@ResourcePackListener\@\@UEAAXXZ
      */
-    MCVAPI void onLanguageSubpacksChanged(); // NOLINT
+    MCVAPI void onLanguageSubpacksChanged();
     /**
      * @symbol ?onResourceManagerDestroyed\@ResourcePackListener\@\@UEAAXAEAVResourcePackManager\@\@\@Z
      */
-    MCVAPI void onResourceManagerDestroyed(class ResourcePackManager&); // NOLINT
+    MCVAPI void onResourceManagerDestroyed(class ResourcePackManager&);
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ResourcePackListener(); // NOLINT
+    MCVAPI ~ResourcePackListener();
 #endif
+    // NOLINTEND
 };

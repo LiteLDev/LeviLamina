@@ -13,12 +13,14 @@ public:
     Source()                         = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SNAPPY_SOURCE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~Source(); // NOLINT
+    MCVAPI ~Source();
 #endif
+    // NOLINTEND
 };
 
 }; // namespace snappy

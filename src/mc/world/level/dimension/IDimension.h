@@ -11,10 +11,12 @@ public:
     IDimension()                             = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IDIMENSION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IDimension(); // NOLINT
+    MCVAPI ~IDimension();
 #endif
+    // NOLINTEND
 };

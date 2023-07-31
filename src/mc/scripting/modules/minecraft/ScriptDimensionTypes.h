@@ -22,26 +22,27 @@ public:
     ScriptDimensionTypes()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptDimensionTypes\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptDimensionTypes\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptDimensionTypes>
-    bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptDimensionTypes> bind();
     /**
      * @symbol
      * ?fromString\@ScriptDimensionTypes\@ScriptModuleMinecraft\@\@SA?AV?$AutomaticID\@VDimension\@\@H\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI static class AutomaticID<class Dimension, int> fromString(std::string const&); // NOLINT
-
-    // private:
+    MCAPI static class AutomaticID<class Dimension, int> fromString(std::string const&);
+    // NOLINTEND
 
 private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?sMinecraftNamespace\@ScriptDimensionTypes\@ScriptModuleMinecraft\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const sMinecraftNamespace; // NOLINT
+    MCAPI static std::string const sMinecraftNamespace;
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -17,18 +17,20 @@ public:
     ZipFileRestrictions(ZipFileRestrictions const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ZipFileRestrictions\@ZipUtils\@Core\@\@QEAA\@XZ
      */
-    MCAPI ZipFileRestrictions(); // NOLINT
+    MCAPI ZipFileRestrictions();
     /**
      * @symbol ?allowFile\@ZipFileRestrictions\@ZipUtils\@Core\@\@QEBA_NAEBVPath\@3\@\@Z
      */
-    MCAPI bool allowFile(class Core::Path const&) const; // NOLINT
+    MCAPI bool allowFile(class Core::Path const&) const;
     /**
      * @symbol ??1ZipFileRestrictions\@ZipUtils\@Core\@\@QEAA\@XZ
      */
-    MCAPI ~ZipFileRestrictions(); // NOLINT
+    MCAPI ~ZipFileRestrictions();
+    // NOLINTEND
 };
 
 }; // namespace Core::ZipUtils

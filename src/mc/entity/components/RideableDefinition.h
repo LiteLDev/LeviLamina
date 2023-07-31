@@ -19,20 +19,22 @@ public:
     RideableDefinition()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?addFamilyTypeByName\@RideableDefinition\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void addFamilyTypeByName(std::string const&); // NOLINT
+    MCAPI void addFamilyTypeByName(std::string const&);
     /**
      * @symbol ?initialize\@RideableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVRideableComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class RideableComponent&) const; // NOLINT
+    MCAPI void initialize(class EntityContext&, class RideableComponent&) const;
     /**
      * @symbol
      * ?buildSchema\@RideableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VRideableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RideableDefinition>>&); // NOLINT
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RideableDefinition>>&);
+    // NOLINTEND
 };

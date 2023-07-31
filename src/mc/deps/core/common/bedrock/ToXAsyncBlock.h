@@ -23,29 +23,30 @@ public:
     ToXAsyncBlock()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @symbol
      * ?create\@ToXAsyncBlock\@AsyncResult\@Threading\@Bedrock\@\@SA?AV?$shared_ptr\@VToXAsyncBlock\@AsyncResult\@Threading\@Bedrock\@\@\@std\@\@PEAUXTaskQueueObject\@\@\@Z
      */
-    MCAPI static class std::shared_ptr<class Bedrock::Threading::AsyncResult::ToXAsyncBlock>
-    create(struct XTaskQueueObject*); // NOLINT
+    MCAPI static std::shared_ptr<class Bedrock::Threading::AsyncResult::ToXAsyncBlock> create(struct XTaskQueueObject*);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_getAsyncBlock\@ToXAsyncBlock\@AsyncResult\@Threading\@Bedrock\@\@AEAAPEAUXAsyncBlock\@\@XZ
      */
-    MCAPI struct XAsyncBlock* _getAsyncBlock(); // NOLINT
+    MCAPI struct XAsyncBlock* _getAsyncBlock();
     /**
      * @symbol ?_handleResult\@ToXAsyncBlock\@AsyncResult\@Threading\@Bedrock\@\@AEAAXJ\@Z
      */
-    MCAPI void _handleResult(long); // NOLINT
-
-private:
+    MCAPI void _handleResult(long);
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Threading::AsyncResult

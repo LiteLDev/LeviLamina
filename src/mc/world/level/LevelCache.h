@@ -11,8 +11,10 @@ public:
     LevelCache()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1LevelCache\@\@QEAA\@XZ
      */
-    MCAPI ~LevelCache(); // NOLINT
+    MCAPI ~LevelCache();
+    // NOLINTEND
 };

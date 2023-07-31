@@ -20,12 +20,14 @@ public:
         IWorldAccessor()                                 = delete;
 
     public:
+        // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESPAWNCOMPONENT_IWORLDACCESSOR
         /**
          * @symbol __unk_destructor_-1
          */
-        MCVAPI ~IWorldAccessor(); // NOLINT
+        MCVAPI ~IWorldAccessor();
 #endif
+        // NOLINTEND
     };
 
     class WorldAccessor {
@@ -37,53 +39,55 @@ public:
         WorldAccessor()                                = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @vftbl 0
          * @symbol __unk_vfn_0
          */
-        virtual void __unk_vfn_0(); // NOLINT
+        virtual void __unk_vfn_0();
         /**
          * @vftbl 1
          * @symbol ?fetchAnyInteractablePlayer\@WorldAccessor\@DespawnComponent\@\@UEBAPEAVPlayer\@\@AEBVVec3\@\@M\@Z
          */
-        virtual class Player* fetchAnyInteractablePlayer(class Vec3 const&, float) const; // NOLINT
+        virtual class Player* fetchAnyInteractablePlayer(class Vec3 const&, float) const;
         /**
          * @vftbl 2
          * @symbol ?getChunkTickRange\@WorldAccessor\@DespawnComponent\@\@UEBAIXZ
          */
-        virtual unsigned int getChunkTickRange() const; // NOLINT
+        virtual unsigned int getChunkTickRange() const;
         /**
          * @vftbl 3
          * @symbol ?areChunksFullyLoaded\@WorldAccessor\@DespawnComponent\@\@UEBA_NAEBVBlockPos\@\@H\@Z
          */
-        virtual bool areChunksFullyLoaded(class BlockPos const&, int) const; // NOLINT
+        virtual bool areChunksFullyLoaded(class BlockPos const&, int) const;
         /**
          * @vftbl 4
          * @symbol ?hasUntickedNeighborChunk\@WorldAccessor\@DespawnComponent\@\@UEBA_NAEBVChunkPos\@\@H\@Z
          */
-        virtual bool hasUntickedNeighborChunk(class ChunkPos const&, int) const; // NOLINT
+        virtual bool hasUntickedNeighborChunk(class ChunkPos const&, int) const;
         /**
          * @vftbl 5
          * @symbol ?getChanceRandomize\@WorldAccessor\@DespawnComponent\@\@UEAAAEAVRandomize\@\@XZ
          */
-        virtual class Randomize& getChanceRandomize(); // NOLINT
+        virtual class Randomize& getChanceRandomize();
         /**
          * @vftbl 6
          * @symbol
          * ?getActorNoActionTime\@WorldAccessor\@DespawnComponent\@\@UEBA?AV?$optional\@H\@std\@\@AEBVActor\@\@\@Z
          */
-        virtual class std::optional<int> getActorNoActionTime(class Actor const&) const; // NOLINT
+        virtual std::optional<int> getActorNoActionTime(class Actor const&) const;
         /**
          * @vftbl 7
          * @symbol ?resetActorNoActionTime\@WorldAccessor\@DespawnComponent\@\@UEAAXAEAVActor\@\@\@Z
          */
-        virtual void resetActorNoActionTime(class Actor&); // NOLINT
+        virtual void resetActorNoActionTime(class Actor&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESPAWNCOMPONENT_WORLDACCESSOR
         /**
          * @symbol __unk_destructor_-1
          */
-        MCVAPI ~WorldAccessor(); // NOLINT
+        MCVAPI ~WorldAccessor();
 #endif
+        // NOLINTEND
     };
 
 public:
@@ -93,27 +97,29 @@ public:
     DespawnComponent()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?onDespawn\@DespawnComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void onDespawn(class Actor&); // NOLINT
+    MCAPI void onDespawn(class Actor&);
     /**
      * @symbol ?tick\@DespawnComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void tick(class Actor&); // NOLINT
+    MCAPI void tick(class Actor&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_tryStandardDespawnRules\@DespawnComponent\@\@AEBA_NAEAVActor\@\@AEBVDespawnDefinition\@\@AEAVIWorldAccessor\@1\@\@Z
      */
     MCAPI bool
     _tryStandardDespawnRules(class Actor&, class DespawnDefinition const&, class DespawnComponent::IWorldAccessor&)
-        const; // NOLINT
+        const;
     /**
      * @symbol ?getDefinition\@DespawnComponent\@\@AEBAAEBVDespawnDefinition\@\@AEAVActor\@\@\@Z
      */
-    MCAPI class DespawnDefinition const& getDefinition(class Actor&) const; // NOLINT
-
-private:
+    MCAPI class DespawnDefinition const& getDefinition(class Actor&) const;
+    // NOLINTEND
 };

@@ -11,167 +11,169 @@ public:
     EconomyTradeableComponent()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0EconomyTradeableComponent\@\@QEAA\@AEAVActor\@\@\@Z
      */
-    MCAPI EconomyTradeableComponent(class Actor&); // NOLINT
+    MCAPI EconomyTradeableComponent(class Actor&);
     /**
      * @symbol ?addAdditionalSaveData\@EconomyTradeableComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
+    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
     /**
      * @symbol ?createDataPacket\@EconomyTradeableComponent\@\@QEAA?AVUpdateTradePacket\@\@W4ContainerID\@\@\@Z
      */
-    MCAPI class UpdateTradePacket createDataPacket(enum class ContainerID); // NOLINT
+    MCAPI class UpdateTradePacket createDataPacket(enum class ContainerID);
     /**
      * @symbol ?fixVillagerTierToMatchTradeList\@EconomyTradeableComponent\@\@QEAAXPEAVMerchantRecipeList\@\@\@Z
      */
-    MCAPI void fixVillagerTierToMatchTradeList(class MerchantRecipeList*); // NOLINT
+    MCAPI void fixVillagerTierToMatchTradeList(class MerchantRecipeList*);
     /**
      * @symbol ?getCurrentCuredDiscount\@EconomyTradeableComponent\@\@QEBA?AUIntRange\@\@XZ
      */
-    MCAPI struct IntRange getCurrentCuredDiscount() const; // NOLINT
+    MCAPI struct IntRange getCurrentCuredDiscount() const;
     /**
      * @symbol ?getCurrentNearbyCuredDiscount\@EconomyTradeableComponent\@\@QEBAHXZ
      */
-    MCAPI int getCurrentNearbyCuredDiscount() const; // NOLINT
+    MCAPI int getCurrentNearbyCuredDiscount() const;
     /**
      * @symbol ?getCurrentTradeExp\@EconomyTradeableComponent\@\@QEBAIXZ
      */
-    MCAPI unsigned int getCurrentTradeExp() const; // NOLINT
+    MCAPI unsigned int getCurrentTradeExp() const;
     /**
      * @symbol
      * ?getDisplayName\@EconomyTradeableComponent\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string const& getDisplayName() const; // NOLINT
+    MCAPI std::string const& getDisplayName() const;
     /**
      * @symbol ?getInteraction\@EconomyTradeableComponent\@\@QEAA_NAEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
-    MCAPI bool getInteraction(class Player&, class ActorInteraction&); // NOLINT
+    MCAPI bool getInteraction(class Player&, class ActorInteraction&);
     /**
      * @symbol ?getOffers\@EconomyTradeableComponent\@\@QEAAPEAVMerchantRecipeList\@\@XZ
      */
-    MCAPI class MerchantRecipeList* getOffers(); // NOLINT
+    MCAPI class MerchantRecipeList* getOffers();
     /**
      * @symbol ?getRiches\@EconomyTradeableComponent\@\@QEBAHXZ
      */
-    MCAPI int getRiches() const; // NOLINT
+    MCAPI int getRiches() const;
     /**
      * @symbol ?getTradeTier\@EconomyTradeableComponent\@\@QEBAIXZ
      */
-    MCAPI unsigned int getTradeTier() const; // NOLINT
+    MCAPI unsigned int getTradeTier() const;
     /**
      * @symbol ?hasSupplyRemaining\@EconomyTradeableComponent\@\@QEBA_NXZ
      */
-    MCAPI bool hasSupplyRemaining() const; // NOLINT
+    MCAPI bool hasSupplyRemaining() const;
     /**
      * @symbol ?initFromDefinition\@EconomyTradeableComponent\@\@QEAAXXZ
      */
-    MCAPI void initFromDefinition(); // NOLINT
+    MCAPI void initFromDefinition();
     /**
      * @symbol
      * ?loadDisplayName\@EconomyTradeableComponent\@\@QEAAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string const& loadDisplayName(); // NOLINT
+    MCAPI std::string const& loadDisplayName();
     /**
      * @symbol ?loadOffersFromTag\@EconomyTradeableComponent\@\@QEAAXPEBVCompoundTag\@\@\@Z
      */
-    MCAPI void loadOffersFromTag(class CompoundTag const*); // NOLINT
+    MCAPI void loadOffersFromTag(class CompoundTag const*);
     /**
      * @symbol ?matchExpAndTier\@EconomyTradeableComponent\@\@QEAAXXZ
      */
-    MCAPI void matchExpAndTier(); // NOLINT
+    MCAPI void matchExpAndTier();
     /**
      * @symbol ?newServerAiStep\@EconomyTradeableComponent\@\@QEAAXXZ
      */
-    MCAPI void newServerAiStep(); // NOLINT
+    MCAPI void newServerAiStep();
     /**
      * @symbol ?notifyTrade\@EconomyTradeableComponent\@\@QEAAXH\@Z
      */
-    MCAPI void notifyTrade(int); // NOLINT
+    MCAPI void notifyTrade(int);
     /**
      * @symbol ?readAdditionalSaveData\@EconomyTradeableComponent\@\@QEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&); // NOLINT
+    MCAPI void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /**
      * @symbol ?reloadComponent\@EconomyTradeableComponent\@\@QEAAXXZ
      */
-    MCAPI void reloadComponent(); // NOLINT
+    MCAPI void reloadComponent();
     /**
      * @symbol ?resupplyTrades\@EconomyTradeableComponent\@\@QEAAXXZ
      */
-    MCAPI void resupplyTrades(); // NOLINT
+    MCAPI void resupplyTrades();
     /**
      * @symbol ?setNearbyCuredDiscount\@EconomyTradeableComponent\@\@QEAAXH\@Z
      */
-    MCAPI void setNearbyCuredDiscount(int); // NOLINT
+    MCAPI void setNearbyCuredDiscount(int);
     /**
      * @symbol ?setOffers\@EconomyTradeableComponent\@\@QEAAXAEAVMerchantRecipeList\@\@\@Z
      */
-    MCAPI void setOffers(class MerchantRecipeList&); // NOLINT
+    MCAPI void setOffers(class MerchantRecipeList&);
     /**
      * @symbol ?setRiches\@EconomyTradeableComponent\@\@QEAAXH\@Z
      */
-    MCAPI void setRiches(int); // NOLINT
+    MCAPI void setRiches(int);
     /**
      * @symbol ?shouldConvertTrades\@EconomyTradeableComponent\@\@QEBA_NXZ
      */
-    MCAPI bool shouldConvertTrades() const; // NOLINT
+    MCAPI bool shouldConvertTrades() const;
     /**
      * @symbol ?shouldPersistTrades\@EconomyTradeableComponent\@\@QEBA_NXZ
      */
-    MCAPI bool shouldPersistTrades() const; // NOLINT
+    MCAPI bool shouldPersistTrades() const;
     /**
      * @symbol ?showTradeScreen\@EconomyTradeableComponent\@\@QEAA_NXZ
      */
-    MCAPI bool showTradeScreen(); // NOLINT
+    MCAPI bool showTradeScreen();
     /**
      * @symbol ?tickDiscountDegradationTimer\@EconomyTradeableComponent\@\@QEAAXUTick\@\@\@Z
      */
-    MCAPI void tickDiscountDegradationTimer(struct Tick); // NOLINT
+    MCAPI void tickDiscountDegradationTimer(struct Tick);
     /**
      * @symbol ?tryIncrementCuredDiscount\@EconomyTradeableComponent\@\@QEAAXXZ
      */
-    MCAPI void tryIncrementCuredDiscount(); // NOLINT
+    MCAPI void tryIncrementCuredDiscount();
     /**
      * @symbol ?tryIncrementNearbyCuredDiscount\@EconomyTradeableComponent\@\@QEAAXXZ
      */
-    MCAPI void tryIncrementNearbyCuredDiscount(); // NOLINT
+    MCAPI void tryIncrementNearbyCuredDiscount();
     /**
      * @symbol ?tryToTransferOldOffers\@EconomyTradeableComponent\@\@QEAAXPEAVMerchantRecipeList\@\@\@Z
      */
-    MCAPI void tryToTransferOldOffers(class MerchantRecipeList*); // NOLINT
+    MCAPI void tryToTransferOldOffers(class MerchantRecipeList*);
     /**
      * @symbol ?isUseNewTradeScreen\@EconomyTradeableComponent\@\@SA_NAEBVActor\@\@\@Z
      */
-    MCAPI static bool isUseNewTradeScreen(class Actor const&); // NOLINT
+    MCAPI static bool isUseNewTradeScreen(class Actor const&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_generateTrades\@EconomyTradeableComponent\@\@AEAA_NXZ
      */
-    MCAPI bool _generateTrades(); // NOLINT
+    MCAPI bool _generateTrades();
     /**
      * @symbol ?_getTradeTable\@EconomyTradeableComponent\@\@AEAAPEAUTradeTable\@\@XZ
      */
-    MCAPI struct TradeTable* _getTradeTable(); // NOLINT
+    MCAPI struct TradeTable* _getTradeTable();
     /**
      * @symbol ?_getTradeTierFromCurrentExp\@EconomyTradeableComponent\@\@AEBAIXZ
      */
-    MCAPI unsigned int _getTradeTierFromCurrentExp() const; // NOLINT
+    MCAPI unsigned int _getTradeTierFromCurrentExp() const;
     /**
      * @symbol
      * ?_rearrangeTradeList\@EconomyTradeableComponent\@\@AEAAXAEAV?$vector\@UTrade\@\@V?$allocator\@UTrade\@\@\@std\@\@\@std\@\@_K\@Z
      */
-    MCAPI void _rearrangeTradeList(std::vector<struct Trade>&, unsigned __int64); // NOLINT
+    MCAPI void _rearrangeTradeList(std::vector<struct Trade>&, uint64_t);
     /**
      * @symbol ?_setMaxTradeTier\@EconomyTradeableComponent\@\@AEAAXH\@Z
      */
-    MCAPI void _setMaxTradeTier(int); // NOLINT
+    MCAPI void _setMaxTradeTier(int);
     /**
      * @symbol ?_setTradeTier\@EconomyTradeableComponent\@\@AEAAXH\@Z
      */
-    MCAPI void _setTradeTier(int); // NOLINT
-
-private:
+    MCAPI void _setTradeTier(int);
+    // NOLINTEND
 };

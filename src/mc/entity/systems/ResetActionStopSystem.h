@@ -11,8 +11,10 @@ public:
     ResetActionStopSystem()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createResetActionStopSystem\@ResetActionStopSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createResetActionStopSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createResetActionStopSystem();
+    // NOLINTEND
 };

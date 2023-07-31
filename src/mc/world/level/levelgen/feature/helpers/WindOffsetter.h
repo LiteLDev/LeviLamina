@@ -19,18 +19,20 @@ public:
     WindOffsetter(WindOffsetter const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0WindOffsetter\@DripstoneUtils\@\@QEAA\@XZ
      */
-    MCAPI WindOffsetter(); // NOLINT
+    MCAPI WindOffsetter();
     /**
      * @symbol ??0WindOffsetter\@DripstoneUtils\@\@QEAA\@HAEAVRandom\@\@AEBUUniformFloat\@ValueProviders\@\@\@Z
      */
-    MCAPI WindOffsetter(int, class Random&, struct ValueProviders::UniformFloat const&); // NOLINT
+    MCAPI WindOffsetter(int, class Random&, struct ValueProviders::UniformFloat const&);
     /**
      * @symbol ?offset\@WindOffsetter\@DripstoneUtils\@\@QEBA?AVBlockPos\@\@V3\@\@Z
      */
-    MCAPI class BlockPos offset(class BlockPos) const; // NOLINT
+    MCAPI class BlockPos offset(class BlockPos) const;
+    // NOLINTEND
 };
 
 }; // namespace DripstoneUtils

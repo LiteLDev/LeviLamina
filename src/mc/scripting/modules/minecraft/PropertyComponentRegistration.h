@@ -13,10 +13,12 @@ public:
     PropertyComponentRegistration()                                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PropertyComponentRegistration\@ScriptPropertyComponents\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~PropertyComponentRegistration(); // NOLINT
+    MCAPI ~PropertyComponentRegistration();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft::ScriptPropertyComponents

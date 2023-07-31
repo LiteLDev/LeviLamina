@@ -11,100 +11,102 @@ public:
     AppPlatformListener()                                      = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORMLISTENER
     /**
      * @symbol ?onAppFocusGained\@AppPlatformListener\@\@UEAAXXZ
      */
-    MCVAPI void onAppFocusGained(); // NOLINT
+    MCVAPI void onAppFocusGained();
     /**
      * @symbol ?onAppFocusLost\@AppPlatformListener\@\@UEAAXXZ
      */
-    MCVAPI void onAppFocusLost(); // NOLINT
+    MCVAPI void onAppFocusLost();
     /**
      * @symbol ?onAppPaused\@AppPlatformListener\@\@UEAAXXZ
      */
-    MCVAPI void onAppPaused(); // NOLINT
+    MCVAPI void onAppPaused();
     /**
      * @symbol ?onAppPreSuspended\@AppPlatformListener\@\@UEAAXXZ
      */
-    MCVAPI void onAppPreSuspended(); // NOLINT
+    MCVAPI void onAppPreSuspended();
     /**
      * @symbol ?onAppResumed\@AppPlatformListener\@\@UEAAXXZ
      */
-    MCVAPI void onAppResumed(); // NOLINT
+    MCVAPI void onAppResumed();
     /**
      * @symbol ?onAppSurfaceCreated\@AppPlatformListener\@\@UEAAXXZ
      */
-    MCVAPI void onAppSurfaceCreated(); // NOLINT
+    MCVAPI void onAppSurfaceCreated();
     /**
      * @symbol ?onAppSurfaceDestroyed\@AppPlatformListener\@\@UEAAXXZ
      */
-    MCVAPI void onAppSurfaceDestroyed(); // NOLINT
+    MCVAPI void onAppSurfaceDestroyed();
     /**
      * @symbol ?onAppSuspended\@AppPlatformListener\@\@UEAAXXZ
      */
-    MCVAPI void onAppSuspended(); // NOLINT
+    MCVAPI void onAppSuspended();
     /**
      * @symbol ?onAppTerminated\@AppPlatformListener\@\@UEAAXXZ
      */
-    MCVAPI void onAppTerminated(); // NOLINT
+    MCVAPI void onAppTerminated();
     /**
      * @symbol ?onAppUnpaused\@AppPlatformListener\@\@UEAAXXZ
      */
-    MCVAPI void onAppUnpaused(); // NOLINT
+    MCVAPI void onAppUnpaused();
     /**
      * @symbol
      * ?onClipboardCopy\@AppPlatformListener\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCVAPI void onClipboardCopy(std::string const&); // NOLINT
+    MCVAPI void onClipboardCopy(std::string const&);
     /**
      * @symbol
      * ?onClipboardPaste\@AppPlatformListener\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCVAPI void onClipboardPaste(std::string const&); // NOLINT
+    MCVAPI void onClipboardPaste(std::string const&);
     /**
      * @symbol ?onDeviceLost\@AppPlatformListener\@\@UEAAXXZ
      */
-    MCVAPI void onDeviceLost(); // NOLINT
+    MCVAPI void onDeviceLost();
     /**
      * @symbol ?onLowMemory\@AppPlatformListener\@\@UEAAXXZ
      */
-    MCVAPI void onLowMemory(); // NOLINT
+    MCVAPI void onLowMemory();
     /**
      * @symbol ?onOperationModeChanged\@AppPlatformListener\@\@UEAAXW4OperationMode\@\@\@Z
      */
-    MCVAPI void onOperationModeChanged(enum class OperationMode); // NOLINT
+    MCVAPI void onOperationModeChanged(enum class OperationMode);
     /**
      * @symbol ?onPerformanceModeChanged\@AppPlatformListener\@\@UEAAX_N\@Z
      */
-    MCVAPI void onPerformanceModeChanged(bool); // NOLINT
+    MCVAPI void onPerformanceModeChanged(bool);
     /**
      * @symbol ?onPushNotificationReceived\@AppPlatformListener\@\@UEAAXAEBVPushNotificationMessage\@\@\@Z
      */
-    MCVAPI void onPushNotificationReceived(class PushNotificationMessage const&); // NOLINT
+    MCVAPI void onPushNotificationReceived(class PushNotificationMessage const&);
     /**
      * @symbol ?onResizeBegin\@AppPlatformListener\@\@UEAAXXZ
      */
-    MCVAPI void onResizeBegin(); // NOLINT
+    MCVAPI void onResizeBegin();
     /**
      * @symbol ?onResizeEnd\@AppPlatformListener\@\@UEAAXXZ
      */
-    MCVAPI void onResizeEnd(); // NOLINT
+    MCVAPI void onResizeEnd();
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~AppPlatformListener(); // NOLINT
+    MCVAPI ~AppPlatformListener();
 #endif
     /**
      * @symbol ??0AppPlatformListener\@\@QEAA\@_N\@Z
      */
-    MCAPI AppPlatformListener(bool); // NOLINT
+    MCAPI AppPlatformListener(bool);
     /**
      * @symbol ?initListener\@AppPlatformListener\@\@QEAAXM\@Z
      */
-    MCAPI void initListener(float); // NOLINT
+    MCAPI void initListener(float);
     /**
      * @symbol ?terminate\@AppPlatformListener\@\@QEAAXXZ
      */
-    MCAPI void terminate(); // NOLINT
+    MCAPI void terminate();
+    // NOLINTEND
 };

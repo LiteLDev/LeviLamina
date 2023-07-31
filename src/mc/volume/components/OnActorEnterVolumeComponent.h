@@ -11,8 +11,10 @@ public:
     OnActorEnterVolumeComponent()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4OnActorEnterVolumeComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class OnActorEnterVolumeComponent& operator=(class OnActorEnterVolumeComponent&&); // NOLINT
+    MCAPI class OnActorEnterVolumeComponent& operator=(class OnActorEnterVolumeComponent&&);
+    // NOLINTEND
 };

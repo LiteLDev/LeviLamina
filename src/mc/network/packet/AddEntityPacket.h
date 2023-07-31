@@ -14,30 +14,32 @@ public:
     AddEntityPacket(AddEntityPacket const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?getId\@AddEntityPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
-    virtual enum class MinecraftPacketIds getId() const; // NOLINT
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl 2
      * @symbol
      * ?getName\@AddEntityPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string getName() const; // NOLINT
+    virtual std::string getName() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ADDENTITYPACKET
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~AddEntityPacket(); // NOLINT
+    MCVAPI ~AddEntityPacket();
 #endif
     /**
      * @symbol ??0AddEntityPacket\@\@QEAA\@XZ
      */
-    MCAPI AddEntityPacket(); // NOLINT
+    MCAPI AddEntityPacket();
+    // NOLINTEND
 };

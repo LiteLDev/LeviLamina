@@ -21,6 +21,7 @@ public:
         BuildParameters()                                  = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol
          * ??0BuildParameters\@ISurfaceBuilder\@\@QEAA\@AEBVBiome\@\@AEAVRandom\@\@AEAVBlockVolume\@\@AEBVBlockPos\@\@MFAEBV?$unique_ptr\@VPerlinSimplexNoise\@\@U?$default_delete\@VPerlinSimplexNoise\@\@\@std\@\@\@std\@\@W4WaterLevelStrategy\@1\@HAEBVHeightmapWrapper\@\@_N\@Z
@@ -37,7 +38,8 @@ public:
             int,
             class HeightmapWrapper const&,
             bool
-        ); // NOLINT
+        );
+        // NOLINTEND
     };
 
 public:

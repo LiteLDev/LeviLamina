@@ -10,23 +10,25 @@ public:
     ShootBowNode(ShootBowNode const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?tick\@ShootBowNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
-    virtual enum class BehaviorStatus tick(class Actor&); // NOLINT
+    virtual enum class BehaviorStatus tick(class Actor&);
     /**
      * @vftbl 2
      * @symbol ?initializeFromDefinition\@ShootBowNode\@\@EEAAXAEAVActor\@\@\@Z
      */
-    virtual void initializeFromDefinition(class Actor&); // NOLINT
+    virtual void initializeFromDefinition(class Actor&);
     /**
      * @symbol ??0ShootBowNode\@\@QEAA\@XZ
      */
-    MCAPI ShootBowNode(); // NOLINT
+    MCAPI ShootBowNode();
+    // NOLINTEND
 };

@@ -10,12 +10,14 @@ public:
     LeverActionEvent()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0LeverActionEvent\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI LeverActionEvent(struct LeverActionEvent const&); // NOLINT
+    MCAPI LeverActionEvent(struct LeverActionEvent const&);
     /**
      * @symbol ??1LeverActionEvent\@\@QEAA\@XZ
      */
-    MCAPI ~LeverActionEvent(); // NOLINT
+    MCAPI ~LeverActionEvent();
+    // NOLINTEND
 };

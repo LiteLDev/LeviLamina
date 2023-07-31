@@ -11,8 +11,10 @@ public:
     MessageEvent()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1MessageEvent\@\@QEAA\@XZ
      */
-    MCAPI ~MessageEvent(); // NOLINT
+    MCAPI ~MessageEvent();
+    // NOLINTEND
 };

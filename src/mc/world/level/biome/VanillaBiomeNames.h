@@ -3,349 +3,351 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace VanillaBiomeNames {
+// NOLINTBEGIN
 /**
  * @symbol ?BambooJungle\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const BambooJungle; // NOLINT
+MCAPI extern class HashedString const BambooJungle;
 /**
  * @symbol ?BambooJungleHills\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const BambooJungleHills; // NOLINT
+MCAPI extern class HashedString const BambooJungleHills;
 /**
  * @symbol ?BasaltDeltas\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const BasaltDeltas; // NOLINT
+MCAPI extern class HashedString const BasaltDeltas;
 /**
  * @symbol ?Beach\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const Beach; // NOLINT
+MCAPI extern class HashedString const Beach;
 /**
  * @symbol ?BirchForest\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const BirchForest; // NOLINT
+MCAPI extern class HashedString const BirchForest;
 /**
  * @symbol ?BirchForestHills\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const BirchForestHills; // NOLINT
+MCAPI extern class HashedString const BirchForestHills;
 /**
  * @symbol ?BirchForestHillsMutated\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const BirchForestHillsMutated; // NOLINT
+MCAPI extern class HashedString const BirchForestHillsMutated;
 /**
  * @symbol ?BirchForestMutated\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const BirchForestMutated; // NOLINT
+MCAPI extern class HashedString const BirchForestMutated;
 /**
  * @symbol ?CherryGrove\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const CherryGrove; // NOLINT
+MCAPI extern class HashedString const CherryGrove;
 /**
  * @symbol ?ColdBeach\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const ColdBeach; // NOLINT
+MCAPI extern class HashedString const ColdBeach;
 /**
  * @symbol ?ColdOcean\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const ColdOcean; // NOLINT
+MCAPI extern class HashedString const ColdOcean;
 /**
  * @symbol ?ColdTaiga\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const ColdTaiga; // NOLINT
+MCAPI extern class HashedString const ColdTaiga;
 /**
  * @symbol ?ColdTaigaHills\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const ColdTaigaHills; // NOLINT
+MCAPI extern class HashedString const ColdTaigaHills;
 /**
  * @symbol ?ColdTaigaMutated\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const ColdTaigaMutated; // NOLINT
+MCAPI extern class HashedString const ColdTaigaMutated;
 /**
  * @symbol ?CrimsonForest\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const CrimsonForest; // NOLINT
+MCAPI extern class HashedString const CrimsonForest;
 /**
  * @symbol ?DeepColdOcean\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const DeepColdOcean; // NOLINT
+MCAPI extern class HashedString const DeepColdOcean;
 /**
  * @symbol ?DeepDark\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const DeepDark; // NOLINT
+MCAPI extern class HashedString const DeepDark;
 /**
  * @symbol ?DeepFrozenOcean\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const DeepFrozenOcean; // NOLINT
+MCAPI extern class HashedString const DeepFrozenOcean;
 /**
  * @symbol ?DeepLukewarmOcean\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const DeepLukewarmOcean; // NOLINT
+MCAPI extern class HashedString const DeepLukewarmOcean;
 /**
  * @symbol ?DeepOcean\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const DeepOcean; // NOLINT
+MCAPI extern class HashedString const DeepOcean;
 /**
  * @symbol ?DeepWarmOcean\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const DeepWarmOcean; // NOLINT
+MCAPI extern class HashedString const DeepWarmOcean;
 /**
  * @symbol ?Desert\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const Desert; // NOLINT
+MCAPI extern class HashedString const Desert;
 /**
  * @symbol ?DesertHills\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const DesertHills; // NOLINT
+MCAPI extern class HashedString const DesertHills;
 /**
  * @symbol ?DesertMutated\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const DesertMutated; // NOLINT
+MCAPI extern class HashedString const DesertMutated;
 /**
  * @symbol ?DripstoneCaves\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const DripstoneCaves; // NOLINT
+MCAPI extern class HashedString const DripstoneCaves;
 /**
  * @symbol ?ExtremeHills\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const ExtremeHills; // NOLINT
+MCAPI extern class HashedString const ExtremeHills;
 /**
  * @symbol ?ExtremeHillsEdge\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const ExtremeHillsEdge; // NOLINT
+MCAPI extern class HashedString const ExtremeHillsEdge;
 /**
  * @symbol ?ExtremeHillsMutated\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const ExtremeHillsMutated; // NOLINT
+MCAPI extern class HashedString const ExtremeHillsMutated;
 /**
  * @symbol ?ExtremeHillsPlusTrees\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const ExtremeHillsPlusTrees; // NOLINT
+MCAPI extern class HashedString const ExtremeHillsPlusTrees;
 /**
  * @symbol ?ExtremeHillsPlusTreesMutated\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const ExtremeHillsPlusTreesMutated; // NOLINT
+MCAPI extern class HashedString const ExtremeHillsPlusTreesMutated;
 /**
  * @symbol ?FlowerForest\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const FlowerForest; // NOLINT
+MCAPI extern class HashedString const FlowerForest;
 /**
  * @symbol ?Forest\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const Forest; // NOLINT
+MCAPI extern class HashedString const Forest;
 /**
  * @symbol ?ForestHills\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const ForestHills; // NOLINT
+MCAPI extern class HashedString const ForestHills;
 /**
  * @symbol ?FrozenOcean\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const FrozenOcean; // NOLINT
+MCAPI extern class HashedString const FrozenOcean;
 /**
  * @symbol ?FrozenPeaks\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const FrozenPeaks; // NOLINT
+MCAPI extern class HashedString const FrozenPeaks;
 /**
  * @symbol ?FrozenRiver\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const FrozenRiver; // NOLINT
+MCAPI extern class HashedString const FrozenRiver;
 /**
  * @symbol ?Grove\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const Grove; // NOLINT
+MCAPI extern class HashedString const Grove;
 /**
  * @symbol ?Hell\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const Hell; // NOLINT
+MCAPI extern class HashedString const Hell;
 /**
  * @symbol ?IceMountains\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const IceMountains; // NOLINT
+MCAPI extern class HashedString const IceMountains;
 /**
  * @symbol ?IcePlains\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const IcePlains; // NOLINT
+MCAPI extern class HashedString const IcePlains;
 /**
  * @symbol ?IcePlainsSpikes\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const IcePlainsSpikes; // NOLINT
+MCAPI extern class HashedString const IcePlainsSpikes;
 /**
  * @symbol ?JaggedPeaks\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const JaggedPeaks; // NOLINT
+MCAPI extern class HashedString const JaggedPeaks;
 /**
  * @symbol ?Jungle\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const Jungle; // NOLINT
+MCAPI extern class HashedString const Jungle;
 /**
  * @symbol ?JungleEdge\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const JungleEdge; // NOLINT
+MCAPI extern class HashedString const JungleEdge;
 /**
  * @symbol ?JungleEdgeMutated\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const JungleEdgeMutated; // NOLINT
+MCAPI extern class HashedString const JungleEdgeMutated;
 /**
  * @symbol ?JungleHills\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const JungleHills; // NOLINT
+MCAPI extern class HashedString const JungleHills;
 /**
  * @symbol ?JungleMutated\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const JungleMutated; // NOLINT
+MCAPI extern class HashedString const JungleMutated;
 /**
  * @symbol ?LegacyFrozenOcean\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const LegacyFrozenOcean; // NOLINT
+MCAPI extern class HashedString const LegacyFrozenOcean;
 /**
  * @symbol ?LukewarmOcean\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const LukewarmOcean; // NOLINT
+MCAPI extern class HashedString const LukewarmOcean;
 /**
  * @symbol ?LushCaves\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const LushCaves; // NOLINT
+MCAPI extern class HashedString const LushCaves;
 /**
  * @symbol ?MangroveSwamp\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const MangroveSwamp; // NOLINT
+MCAPI extern class HashedString const MangroveSwamp;
 /**
  * @symbol ?Meadow\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const Meadow; // NOLINT
+MCAPI extern class HashedString const Meadow;
 /**
  * @symbol ?MegaTaiga\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const MegaTaiga; // NOLINT
+MCAPI extern class HashedString const MegaTaiga;
 /**
  * @symbol ?MegaTaigaHills\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const MegaTaigaHills; // NOLINT
+MCAPI extern class HashedString const MegaTaigaHills;
 /**
  * @symbol ?Mesa\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const Mesa; // NOLINT
+MCAPI extern class HashedString const Mesa;
 /**
  * @symbol ?MesaBryce\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const MesaBryce; // NOLINT
+MCAPI extern class HashedString const MesaBryce;
 /**
  * @symbol ?MesaPlateau\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const MesaPlateau; // NOLINT
+MCAPI extern class HashedString const MesaPlateau;
 /**
  * @symbol ?MesaPlateauMutated\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const MesaPlateauMutated; // NOLINT
+MCAPI extern class HashedString const MesaPlateauMutated;
 /**
  * @symbol ?MesaPlateauStone\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const MesaPlateauStone; // NOLINT
+MCAPI extern class HashedString const MesaPlateauStone;
 /**
  * @symbol ?MesaPlateauStoneMutated\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const MesaPlateauStoneMutated; // NOLINT
+MCAPI extern class HashedString const MesaPlateauStoneMutated;
 /**
  * @symbol ?MushroomIsland\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const MushroomIsland; // NOLINT
+MCAPI extern class HashedString const MushroomIsland;
 /**
  * @symbol ?MushroomIslandShore\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const MushroomIslandShore; // NOLINT
+MCAPI extern class HashedString const MushroomIslandShore;
 /**
  * @symbol ?Ocean\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const Ocean; // NOLINT
+MCAPI extern class HashedString const Ocean;
 /**
  * @symbol ?Plains\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const Plains; // NOLINT
+MCAPI extern class HashedString const Plains;
 /**
  * @symbol ?RedwoodTaigaHillsMutated\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const RedwoodTaigaHillsMutated; // NOLINT
+MCAPI extern class HashedString const RedwoodTaigaHillsMutated;
 /**
  * @symbol ?RedwoodTaigaMutated\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const RedwoodTaigaMutated; // NOLINT
+MCAPI extern class HashedString const RedwoodTaigaMutated;
 /**
  * @symbol ?River\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const River; // NOLINT
+MCAPI extern class HashedString const River;
 /**
  * @symbol ?RoofedForest\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const RoofedForest; // NOLINT
+MCAPI extern class HashedString const RoofedForest;
 /**
  * @symbol ?RoofedForestMutated\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const RoofedForestMutated; // NOLINT
+MCAPI extern class HashedString const RoofedForestMutated;
 /**
  * @symbol ?Savanna\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const Savanna; // NOLINT
+MCAPI extern class HashedString const Savanna;
 /**
  * @symbol ?SavannaMutated\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const SavannaMutated; // NOLINT
+MCAPI extern class HashedString const SavannaMutated;
 /**
  * @symbol ?SavannaPlateau\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const SavannaPlateau; // NOLINT
+MCAPI extern class HashedString const SavannaPlateau;
 /**
  * @symbol ?SavannaPlateauMutated\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const SavannaPlateauMutated; // NOLINT
+MCAPI extern class HashedString const SavannaPlateauMutated;
 /**
  * @symbol ?SnowySlopes\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const SnowySlopes; // NOLINT
+MCAPI extern class HashedString const SnowySlopes;
 /**
  * @symbol ?SoulsandValley\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const SoulsandValley; // NOLINT
+MCAPI extern class HashedString const SoulsandValley;
 /**
  * @symbol ?StoneBeach\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const StoneBeach; // NOLINT
+MCAPI extern class HashedString const StoneBeach;
 /**
  * @symbol ?StonyPeaks\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const StonyPeaks; // NOLINT
+MCAPI extern class HashedString const StonyPeaks;
 /**
  * @symbol ?SunflowerPlains\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const SunflowerPlains; // NOLINT
+MCAPI extern class HashedString const SunflowerPlains;
 /**
  * @symbol ?Swampland\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const Swampland; // NOLINT
+MCAPI extern class HashedString const Swampland;
 /**
  * @symbol ?SwamplandMutated\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const SwamplandMutated; // NOLINT
+MCAPI extern class HashedString const SwamplandMutated;
 /**
  * @symbol ?Taiga\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const Taiga; // NOLINT
+MCAPI extern class HashedString const Taiga;
 /**
  * @symbol ?TaigaHills\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const TaigaHills; // NOLINT
+MCAPI extern class HashedString const TaigaHills;
 /**
  * @symbol ?TaigaMutated\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const TaigaMutated; // NOLINT
+MCAPI extern class HashedString const TaigaMutated;
 /**
  * @symbol ?TheEnd\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const TheEnd; // NOLINT
+MCAPI extern class HashedString const TheEnd;
 /**
  * @symbol ?WarmOcean\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const WarmOcean; // NOLINT
+MCAPI extern class HashedString const WarmOcean;
 /**
  * @symbol ?WarpedForest\@VanillaBiomeNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const WarpedForest; // NOLINT
+MCAPI extern class HashedString const WarpedForest;
+// NOLINTEND
 
 }; // namespace VanillaBiomeNames

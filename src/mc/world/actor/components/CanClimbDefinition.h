@@ -19,19 +19,21 @@ public:
     CanClimbDefinition()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?initialize\@CanClimbDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&) const; // NOLINT
+    MCAPI void initialize(class EntityContext&) const;
     /**
      * @symbol ?uninitialize\@CanClimbDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void uninitialize(class EntityContext&) const; // NOLINT
+    MCAPI void uninitialize(class EntityContext&) const;
     /**
      * @symbol
      * ?buildSchema\@CanClimbDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UCanClimbDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      struct CanClimbDefinition>>&); // NOLINT
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct CanClimbDefinition>>&);
+    // NOLINTEND
 };

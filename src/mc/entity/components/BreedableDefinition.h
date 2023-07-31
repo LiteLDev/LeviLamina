@@ -18,45 +18,47 @@ public:
     BreedableDefinition(BreedableDefinition const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0BreedableDefinition\@\@QEAA\@XZ
      */
-    MCAPI BreedableDefinition(); // NOLINT
+    MCAPI BreedableDefinition();
     /**
      * @symbol ?addBreedItem\@BreedableDefinition\@\@QEAAXAEBVItemDescriptor\@\@\@Z
      */
-    MCAPI void addBreedItem(class ItemDescriptor const&); // NOLINT
+    MCAPI void addBreedItem(class ItemDescriptor const&);
     /**
      * @symbol ?addBreedableType\@BreedableDefinition\@\@QEAAXAEBUBreedableType\@\@\@Z
      */
-    MCAPI void addBreedableType(struct BreedableType const&); // NOLINT
+    MCAPI void addBreedableType(struct BreedableType const&);
     /**
      * @symbol ?addEnvironmentRequirement\@BreedableDefinition\@\@QEAAXAEBUEnvironmentRequirement\@\@\@Z
      */
-    MCAPI void addEnvironmentRequirement(struct EnvironmentRequirement const&); // NOLINT
+    MCAPI void addEnvironmentRequirement(struct EnvironmentRequirement const&);
     /**
      * @symbol
      * ?addParentCentricAttributeBlending\@BreedableDefinition\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void addParentCentricAttributeBlending(std::string const&); // NOLINT
+    MCAPI void addParentCentricAttributeBlending(std::string const&);
     /**
      * @symbol ?initialize\@BreedableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVBreedableComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class BreedableComponent&) const; // NOLINT
+    MCAPI void initialize(class EntityContext&, class BreedableComponent&) const;
     /**
      * @symbol
      * ?setMutationStrategy\@BreedableDefinition\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void setMutationStrategy(std::string const&); // NOLINT
+    MCAPI void setMutationStrategy(std::string const&);
     /**
      * @symbol ??1BreedableDefinition\@\@QEAA\@XZ
      */
-    MCAPI ~BreedableDefinition(); // NOLINT
+    MCAPI ~BreedableDefinition();
     /**
      * @symbol
      * ?buildSchema\@BreedableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VBreedableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      class BreedableDefinition>>&); // NOLINT
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BreedableDefinition>>&);
+    // NOLINTEND
 };

@@ -11,29 +11,31 @@ public:
     SaveTransactionManager()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0SaveTransactionManager\@\@QEAA\@AEAVWorkerPool\@\@AEAVScheduler\@\@V?$function\@$$A6AX_N\@Z\@std\@\@\@Z
      */
-    MCAPI SaveTransactionManager(class WorkerPool&, class Scheduler&, class std::function<void(bool)>); // NOLINT
+    MCAPI SaveTransactionManager(class WorkerPool&, class Scheduler&, std::function<void(bool)>);
     /**
      * @symbol ?onBeginCompaction\@SaveTransactionManager\@\@QEAAXXZ
      */
-    MCAPI void onBeginCompaction(); // NOLINT
+    MCAPI void onBeginCompaction();
     /**
      * @symbol ?onEndCompaction\@SaveTransactionManager\@\@QEAAXXZ
      */
-    MCAPI void onEndCompaction(); // NOLINT
+    MCAPI void onEndCompaction();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_hideGlobalSaveIcon\@SaveTransactionManager\@\@AEAAXXZ
      */
-    MCAPI void _hideGlobalSaveIcon(); // NOLINT
+    MCAPI void _hideGlobalSaveIcon();
     /**
      * @symbol ?_showGlobalSaveIcon\@SaveTransactionManager\@\@AEAAXXZ
      */
-    MCAPI void _showGlobalSaveIcon(); // NOLINT
-
-private:
+    MCAPI void _showGlobalSaveIcon();
+    // NOLINTEND
 };

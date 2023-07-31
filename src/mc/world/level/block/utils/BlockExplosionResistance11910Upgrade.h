@@ -17,17 +17,18 @@ public:
     BlockExplosionResistance11910Upgrade(BlockExplosionResistance11910Upgrade const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?previousSchema\@BlockExplosionResistance11910Upgrade\@BlockExplosionResistanceVersioning\@\@UEBAXAEAVSchemaFactory\@cereal\@\@\@Z
      */
-    virtual void previousSchema(class cereal::SchemaFactory&) const; // NOLINT
+    virtual void previousSchema(class cereal::SchemaFactory&) const;
     /**
      * @vftbl 2
      * @symbol
@@ -36,11 +37,12 @@ public:
     virtual bool upgradeToNext(class rapidjson::GenericDocument<
                                struct rapidjson::UTF8<char>,
                                class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>,
-                               class rapidjson::CrtAllocator>&) const; // NOLINT
+                               class rapidjson::CrtAllocator>&) const;
     /**
      * @symbol ??0BlockExplosionResistance11910Upgrade\@BlockExplosionResistanceVersioning\@\@QEAA\@XZ
      */
-    MCAPI BlockExplosionResistance11910Upgrade(); // NOLINT
+    MCAPI BlockExplosionResistance11910Upgrade();
+    // NOLINTEND
 };
 
 }; // namespace BlockExplosionResistanceVersioning

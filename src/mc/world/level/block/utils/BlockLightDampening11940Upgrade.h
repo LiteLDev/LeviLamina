@@ -17,17 +17,18 @@ public:
     BlockLightDampening11940Upgrade(BlockLightDampening11940Upgrade const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?previousSchema\@BlockLightDampening11940Upgrade\@BlockLightDampeningVersioning\@\@UEBAXAEAVSchemaFactory\@cereal\@\@\@Z
      */
-    virtual void previousSchema(class cereal::SchemaFactory&) const; // NOLINT
+    virtual void previousSchema(class cereal::SchemaFactory&) const;
     /**
      * @vftbl 2
      * @symbol
@@ -36,11 +37,12 @@ public:
     virtual bool upgradeToNext(class rapidjson::GenericDocument<
                                struct rapidjson::UTF8<char>,
                                class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>,
-                               class rapidjson::CrtAllocator>&) const; // NOLINT
+                               class rapidjson::CrtAllocator>&) const;
     /**
      * @symbol ??0BlockLightDampening11940Upgrade\@BlockLightDampeningVersioning\@\@QEAA\@XZ
      */
-    MCAPI BlockLightDampening11940Upgrade(); // NOLINT
+    MCAPI BlockLightDampening11940Upgrade();
+    // NOLINTEND
 };
 
 }; // namespace BlockLightDampeningVersioning

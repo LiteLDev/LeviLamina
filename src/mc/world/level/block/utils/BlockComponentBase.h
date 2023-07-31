@@ -11,10 +11,12 @@ public:
     BlockComponentBase()                                     = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCOMPONENTBASE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~BlockComponentBase(); // NOLINT
+    MCVAPI ~BlockComponentBase();
 #endif
+    // NOLINTEND
 };

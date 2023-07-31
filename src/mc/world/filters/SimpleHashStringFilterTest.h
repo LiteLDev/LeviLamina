@@ -19,14 +19,16 @@ public:
     SimpleHashStringFilterTest()                                             = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLEHASHSTRINGFILTERTEST
     /**
      * @symbol ?_serializeValue\@SimpleHashStringFilterTest\@\@MEBA?AVValue\@Json\@\@XZ
      */
-    MCVAPI class Json::Value _serializeValue() const; // NOLINT
+    MCVAPI class Json::Value _serializeValue() const;
     /**
      * @symbol ?setup\@SimpleHashStringFilterTest\@\@UEAA_NAEBUDefinition\@FilterTest\@\@AEBUFilterInputs\@\@\@Z
      */
-    MCVAPI bool setup(struct FilterTest::Definition const&, struct FilterInputs const&); // NOLINT
+    MCVAPI bool setup(struct FilterTest::Definition const&, struct FilterInputs const&);
 #endif
+    // NOLINTEND
 };

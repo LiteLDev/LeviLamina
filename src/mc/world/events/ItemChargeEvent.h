@@ -10,12 +10,14 @@ public:
     ItemChargeEvent()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ItemChargeEvent\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI ItemChargeEvent(struct ItemChargeEvent const&); // NOLINT
+    MCAPI ItemChargeEvent(struct ItemChargeEvent const&);
     /**
      * @symbol ??0ItemChargeEvent\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI ItemChargeEvent(struct ItemChargeEvent&&); // NOLINT
+    MCAPI ItemChargeEvent(struct ItemChargeEvent&&);
+    // NOLINTEND
 };

@@ -11,8 +11,10 @@ public:
     BiomeHeight()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?MIN_DEPTH\@BiomeHeight\@\@2MB
      */
-    MCAPI static float const MIN_DEPTH; // NOLINT
+    MCAPI static float const MIN_DEPTH;
+    // NOLINTEND
 };

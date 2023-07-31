@@ -16,34 +16,35 @@ public:
     ScriptItemEnchantmentType()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ScriptItemEnchantmentType\@ScriptModuleMinecraft\@\@QEAA\@AEBW4Type\@Enchant\@\@\@Z
      */
-    MCAPI ScriptItemEnchantmentType(enum class Enchant::Type const&); // NOLINT
+    MCAPI ScriptItemEnchantmentType(enum class Enchant::Type const&);
     /**
      * @symbol
      * ?getName\@ScriptItemEnchantmentType\@ScriptModuleMinecraft\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getName() const; // NOLINT
+    MCAPI std::string getName() const;
     /**
      * @symbol ??4ScriptItemEnchantmentType\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptItemEnchantmentType&
-    operator=(struct ScriptModuleMinecraft::ScriptItemEnchantmentType const&); // NOLINT
+    operator=(struct ScriptModuleMinecraft::ScriptItemEnchantmentType const&);
     /**
      * @symbol ??8ScriptItemEnchantmentType\@ScriptModuleMinecraft\@\@QEBA_NAEBU01\@\@Z
      */
-    MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptItemEnchantmentType const&) const; // NOLINT
+    MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptItemEnchantmentType const&) const;
     /**
      * @symbol ??1ScriptItemEnchantmentType\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptItemEnchantmentType(); // NOLINT
+    MCAPI ~ScriptItemEnchantmentType();
     /**
      * @symbol
      * ?bind\@ScriptItemEnchantmentType\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptItemEnchantmentType\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemEnchantmentType>
-    bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemEnchantmentType> bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

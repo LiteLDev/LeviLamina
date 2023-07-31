@@ -14,10 +14,12 @@ public:
     VanillaVillageJigsawStructureElements()                                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?initialize\@VanillaVillageJigsawStructureElements\@\@SAXV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEAVFeatureRegistry\@\@AEAVJigsawStructureRegistry\@\@\@Z
      */
     MCAPI static void
-    initialize(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class FeatureRegistry&, class JigsawStructureRegistry&); // NOLINT
+    initialize(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class FeatureRegistry&, class JigsawStructureRegistry&);
+    // NOLINTEND
 };

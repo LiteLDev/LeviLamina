@@ -19,15 +19,17 @@ public:
     ColorDefinition()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?setColorChoice\@ColorDefinition\@\@QEAAXAEBH\@Z
      */
-    MCAPI void setColorChoice(int const&); // NOLINT
+    MCAPI void setColorChoice(int const&);
     /**
      * @symbol
      * ?buildSchema\@ColorDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UColorDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ColorDefinition>>&); // NOLINT
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct ColorDefinition>>&);
+    // NOLINTEND
 };

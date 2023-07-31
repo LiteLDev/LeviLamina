@@ -11,16 +11,18 @@ public:
     BalloonableComponent()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getInteraction\@BalloonableComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&); // NOLINT
+    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?attach\@BalloonableComponent\@\@AEAA_NAEAVActor\@\@0AEAVItemStack\@\@\@Z
      */
-    MCAPI bool attach(class Actor&, class Actor&, class ItemStack&); // NOLINT
-
-private:
+    MCAPI bool attach(class Actor&, class Actor&, class ItemStack&);
+    // NOLINTEND
 };

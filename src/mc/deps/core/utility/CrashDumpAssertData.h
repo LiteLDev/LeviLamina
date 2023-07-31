@@ -11,8 +11,10 @@ public:
     CrashDumpAssertData()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?kFormat\@CrashDumpAssertData\@\@2QBUCrashDumpFormatEntryImpl\@\@B
      */
-    MCAPI static struct CrashDumpFormatEntryImpl const kFormat[]; // NOLINT
+    MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
+    // NOLINTEND
 };

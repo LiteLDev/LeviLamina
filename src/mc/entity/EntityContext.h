@@ -15,16 +15,18 @@ public:
     }
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0EntityContext\@\@QEAA\@AEAVEntityRegistry\@\@VEntityId\@\@\@Z
      */
-    MCAPI EntityContext(class EntityRegistry&, class EntityId); // NOLINT
+    MCAPI EntityContext(class EntityRegistry&, class EntityId);
     /**
      * @symbol ?_registry\@EntityContext\@\@QEBAAEAVEntityRegistry\@\@XZ
      */
-    MCAPI class EntityRegistry& _registry() const; // NOLINT
+    MCAPI class EntityRegistry& _registry() const;
     /**
      * @symbol ?getWeakRef\@EntityContext\@\@QEBA?AV?$WeakRefT\@UEntityRefTraits\@\@\@\@XZ
      */
-    MCAPI class WeakRefT<struct EntityRefTraits> getWeakRef() const; // NOLINT
+    MCAPI class WeakRefT<struct EntityRefTraits> getWeakRef() const;
+    // NOLINTEND
 };

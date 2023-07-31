@@ -19,28 +19,30 @@ public:
     BoolOption()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?save\@BoolOption\@\@UEAAXAEAV?$vector\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@\@std\@\@V?$allocator\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@\@std\@\@\@2\@\@std\@\@\@Z
      */
-    virtual void save(std::vector<struct std::pair<std::string, std::string>>&); // NOLINT
+    virtual void save(std::vector<std::pair<std::string, std::string>>&);
     /**
      * @vftbl 2
      * @symbol ?load\@BoolOption\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void load(std::string const&); // NOLINT
+    virtual void load(std::string const&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_set\@BoolOption\@\@AEAAX_N0\@Z
      */
-    MCAPI void _set(bool, bool); // NOLINT
-
-private:
+    MCAPI void _set(bool, bool);
+    // NOLINTEND
 };

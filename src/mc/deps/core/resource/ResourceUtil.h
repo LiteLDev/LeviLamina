@@ -11,16 +11,16 @@ public:
     ResourceUtil()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?pathFromString\@ResourceUtil\@\@SA?AW4ResourceFileSystem\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI static enum class ResourceFileSystem
-        pathFromString(class std::basic_string_view<char, struct std::char_traits<char>>); // NOLINT
+    MCAPI static enum class ResourceFileSystem pathFromString(std::string_view);
     /**
      * @symbol
      * ?stringFromPath\@ResourceUtil\@\@SA?AV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@W4ResourceFileSystem\@\@\@Z
      */
-    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>>
-        stringFromPath(enum class ResourceFileSystem); // NOLINT
+    MCAPI static std::string_view stringFromPath(enum class ResourceFileSystem);
+    // NOLINTEND
 };

@@ -14,26 +14,27 @@ public:
     MineshaftPiece()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 6
      * @symbol ?isInInvalidLocation\@MineshaftPiece\@\@UEAA_NAEAVBlockSource\@\@AEBVBoundingBox\@\@\@Z
      */
-    virtual bool isInInvalidLocation(class BlockSource&, class BoundingBox const&); // NOLINT
+    virtual bool isInInvalidLocation(class BlockSource&, class BoundingBox const&);
     /**
      * @vftbl 10
      * @symbol ?canBeReplaced\@MineshaftPiece\@\@UEAA_NAEAVBlockSource\@\@HHHAEBVBoundingBox\@\@\@Z
      */
-    virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&); // NOLINT
+    virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MINESHAFTPIECE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~MineshaftPiece(); // NOLINT
+    MCVAPI ~MineshaftPiece();
 #endif
     /**
      * @symbol
@@ -48,7 +49,7 @@ public:
         int,
         int,
         int
-    ); // NOLINT
+    );
     /**
      * @symbol
      * ?generateAndAddPiece\@MineshaftPiece\@\@QEAAPEAVStructurePiece\@\@AEAV2\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@HHHHH\@Z
@@ -62,9 +63,10 @@ public:
         int,
         int,
         int
-    ); // NOLINT
+    );
     /**
      * @symbol ?setPlanksBlock\@MineshaftPiece\@\@QEAAXAEAVBlockSource\@\@AEBVBlock\@\@HHH\@Z
      */
-    MCAPI void setPlanksBlock(class BlockSource&, class Block const&, int, int, int); // NOLINT
+    MCAPI void setPlanksBlock(class BlockSource&, class Block const&, int, int, int);
+    // NOLINTEND
 };

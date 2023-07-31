@@ -19,24 +19,26 @@ public:
     ThrownPotionEffectSubcomponent()                                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 2
      * @symbol ?writetoJSON\@ThrownPotionEffectSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
-    virtual void writetoJSON(class Json::Value&) const; // NOLINT
+    virtual void writetoJSON(class Json::Value&) const;
     /**
      * @vftbl 3
      * @symbol ?doOnHitEffect\@ThrownPotionEffectSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
      */
-    virtual void doOnHitEffect(class Actor&, class ProjectileComponent&); // NOLINT
+    virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
     /**
      * @vftbl 4
      * @symbol ?getName\@ThrownPotionEffectSubcomponent\@\@UEAAPEBDXZ
      */
-    virtual char const* getName(); // NOLINT
+    virtual char const* getName();
+    // NOLINTEND
 };

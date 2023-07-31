@@ -11,29 +11,31 @@ public:
     DamageOverTimeComponent()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?addAdditionalSaveData\@DamageOverTimeComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
+    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
     /**
      * @symbol ?getDamageTime\@DamageOverTimeComponent\@\@QEBAHXZ
      */
-    MCAPI int getDamageTime() const; // NOLINT
+    MCAPI int getDamageTime() const;
     /**
      * @symbol ?getDamageTimeInterval\@DamageOverTimeComponent\@\@QEBAHXZ
      */
-    MCAPI int getDamageTimeInterval() const; // NOLINT
+    MCAPI int getDamageTimeInterval() const;
     /**
      * @symbol ?getHurtValue\@DamageOverTimeComponent\@\@QEBAHXZ
      */
-    MCAPI int getHurtValue() const; // NOLINT
+    MCAPI int getHurtValue() const;
     /**
      * @symbol
      * ?readAdditionalSaveData\@DamageOverTimeComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&); // NOLINT
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
     /**
      * @symbol ?setDamageTime\@DamageOverTimeComponent\@\@QEAAXH\@Z
      */
-    MCAPI void setDamageTime(int); // NOLINT
+    MCAPI void setDamageTime(int);
+    // NOLINTEND
 };

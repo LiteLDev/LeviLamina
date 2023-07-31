@@ -23,12 +23,14 @@ public:
     ScriptItemChargeAfterEvent()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0ScriptItemChargeAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@V?$StrongTypedObjectHandle\@VScriptItemStack\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBUItemChargeEvent\@\@AEBVWeakLifetimeScope\@3\@\@Z
      */
     MCAPI
-    ScriptItemChargeAfterEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, struct ItemChargeEvent const&, class Scripting::WeakLifetimeScope const&); // NOLINT
+    ScriptItemChargeAfterEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, struct ItemChargeEvent const&, class Scripting::WeakLifetimeScope const&);
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -11,8 +11,10 @@ public:
     AsyncBlockInternalGuard()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0AsyncBlockInternalGuard\@\@QEAA\@PEAUXAsyncBlock\@\@\@Z
      */
-    MCAPI AsyncBlockInternalGuard(struct XAsyncBlock*); // NOLINT
+    MCAPI AsyncBlockInternalGuard(struct XAsyncBlock*);
+    // NOLINTEND
 };

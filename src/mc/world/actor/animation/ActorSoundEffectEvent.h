@@ -11,8 +11,10 @@ public:
     ActorSoundEffectEvent()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ActorSoundEffectEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorSoundEffectEvent(); // NOLINT
+    MCAPI ~ActorSoundEffectEvent();
+    // NOLINTEND
 };

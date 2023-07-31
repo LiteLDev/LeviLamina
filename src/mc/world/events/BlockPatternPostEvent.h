@@ -11,8 +11,10 @@ public:
     BlockPatternPostEvent()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1BlockPatternPostEvent\@\@QEAA\@XZ
      */
-    MCAPI ~BlockPatternPostEvent(); // NOLINT
+    MCAPI ~BlockPatternPostEvent();
+    // NOLINTEND
 };

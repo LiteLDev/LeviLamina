@@ -13,10 +13,12 @@ public:
     PlaceBlock()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PlaceBlock\@Actions\@AgentComponents\@\@QEAA\@XZ
      */
-    MCAPI ~PlaceBlock(); // NOLINT
+    MCAPI ~PlaceBlock();
+    // NOLINTEND
 };
 
 }; // namespace AgentComponents::Actions

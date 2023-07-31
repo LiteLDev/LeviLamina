@@ -10,32 +10,34 @@ public:
     SpinLock(SpinLock const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0SpinLock\@\@QEAA\@XZ
      */
-    MCAPI SpinLock(); // NOLINT
+    MCAPI SpinLock();
     /**
      * @symbol ?lock\@SpinLock\@\@QEAAXXZ
      */
-    MCAPI void lock(); // NOLINT
+    MCAPI void lock();
     /**
      * @symbol ?try_lock\@SpinLock\@\@QEAA_NXZ
      */
-    MCAPI bool try_lock(); // NOLINT
+    MCAPI bool try_lock();
     /**
      * @symbol ?unlock\@SpinLock\@\@QEAAXXZ
      */
-    MCAPI void unlock(); // NOLINT
+    MCAPI void unlock();
     /**
      * @symbol ??1SpinLock\@\@QEAA\@XZ
      */
-    MCAPI ~SpinLock(); // NOLINT
+    MCAPI ~SpinLock();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_getThreadId\@SpinLock\@\@AEAA_KXZ
      */
-    MCAPI unsigned __int64 _getThreadId(); // NOLINT
-
-private:
+    MCAPI uint64_t _getThreadId();
+    // NOLINTEND
 };

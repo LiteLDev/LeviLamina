@@ -11,10 +11,12 @@ public:
     MoveControlDescription()                                         = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROLDESCRIPTION
     /**
      * @symbol ?deserializeData\@MoveControlDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
-    MCVAPI void deserializeData(struct DeserializeDataParams); // NOLINT
+    MCVAPI void deserializeData(struct DeserializeDataParams);
 #endif
+    // NOLINTEND
 };

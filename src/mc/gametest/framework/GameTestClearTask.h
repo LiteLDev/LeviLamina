@@ -11,12 +11,14 @@ public:
     GameTestClearTask()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0GameTestClearTask\@\@QEAA\@AEAVDimension\@\@AEBVBoundingBox\@\@\@Z
      */
-    MCAPI GameTestClearTask(class Dimension&, class BoundingBox const&); // NOLINT
+    MCAPI GameTestClearTask(class Dimension&, class BoundingBox const&);
     /**
      * @symbol ?tick\@GameTestClearTask\@\@QEAAXXZ
      */
-    MCAPI void tick(); // NOLINT
+    MCAPI void tick();
+    // NOLINTEND
 };

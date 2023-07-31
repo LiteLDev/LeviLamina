@@ -10,8 +10,10 @@ public:
     AllWorkerConfigurations(AllWorkerConfigurations const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0AllWorkerConfigurations\@\@QEAA\@XZ
      */
-    MCAPI AllWorkerConfigurations(); // NOLINT
+    MCAPI AllWorkerConfigurations();
+    // NOLINTEND
 };

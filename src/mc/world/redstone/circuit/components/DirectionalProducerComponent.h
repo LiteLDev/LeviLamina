@@ -13,33 +13,35 @@ public:
     DirectionalProducerComponent(DirectionalProducerComponent const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 12
      * @symbol
      * ?allowConnection\@DirectionalProducerComponent\@\@UEAA_NAEAVCircuitSceneGraph\@\@AEBVCircuitTrackingInfo\@\@AEA_N\@Z
      */
-    virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&); // NOLINT
+    virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
     /**
      * @vftbl 17
      * @symbol __unk_vfn_17
      */
-    virtual void __unk_vfn_17(); // NOLINT
+    virtual void __unk_vfn_17();
     /**
      * @vftbl 20
      * @symbol __unk_vfn_20
      */
-    virtual void __unk_vfn_20(); // NOLINT
+    virtual void __unk_vfn_20();
     /**
      * @symbol ??0DirectionalProducerComponent\@\@QEAA\@XZ
      */
-    MCAPI DirectionalProducerComponent(); // NOLINT
+    MCAPI DirectionalProducerComponent();
     /**
      * @symbol ?setAllowedConnections\@DirectionalProducerComponent\@\@QEAAXV?$bitset\@$05\@std\@\@\@Z
      */
-    MCAPI void setAllowedConnections(class std::bitset<6>); // NOLINT
+    MCAPI void setAllowedConnections(std::bitset<6>);
+    // NOLINTEND
 };

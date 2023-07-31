@@ -11,8 +11,10 @@ public:
     MesaSurfaceAttributes()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1MesaSurfaceAttributes\@\@QEAA\@XZ
      */
-    MCAPI ~MesaSurfaceAttributes(); // NOLINT
+    MCAPI ~MesaSurfaceAttributes();
+    // NOLINTEND
 };

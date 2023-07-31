@@ -19,10 +19,12 @@ public:
         ConditionalSound()                                   = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1ConditionalSound\@AngerLevelComponent\@\@QEAA\@XZ
          */
-        MCAPI ~ConditionalSound(); // NOLINT
+        MCAPI ~ConditionalSound();
+        // NOLINTEND
     };
 
 public:
@@ -31,93 +33,94 @@ public:
     AngerLevelComponent()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0AngerLevelComponent\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI AngerLevelComponent(class AngerLevelComponent const&); // NOLINT
+    MCAPI AngerLevelComponent(class AngerLevelComponent const&);
     /**
      * @symbol ??0AngerLevelComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI AngerLevelComponent(class AngerLevelComponent&&); // NOLINT
+    MCAPI AngerLevelComponent(class AngerLevelComponent&&);
     /**
      * @symbol ?addAdditionalSaveData\@AngerLevelComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
+    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
     /**
      * @symbol ?belowAngryThreshold\@AngerLevelComponent\@\@QEBA_NUActorUniqueID\@\@\@Z
      */
-    MCAPI bool belowAngryThreshold(struct ActorUniqueID) const; // NOLINT
+    MCAPI bool belowAngryThreshold(struct ActorUniqueID) const;
     /**
      * @symbol ?canBeNuisance\@AngerLevelComponent\@\@QEBA_NPEAVActor\@\@0\@Z
      */
-    MCAPI bool canBeNuisance(class Actor*, class Actor*) const; // NOLINT
+    MCAPI bool canBeNuisance(class Actor*, class Actor*) const;
     /**
      * @symbol ?getAngerForAnimations\@AngerLevelComponent\@\@QEBAHAEAVActor\@\@\@Z
      */
-    MCAPI int getAngerForAnimations(class Actor&) const; // NOLINT
+    MCAPI int getAngerForAnimations(class Actor&) const;
     /**
      * @symbol
      * ?getTopActiveNuisance\@AngerLevelComponent\@\@QEBA?AV?$optional\@U?$pair\@PEAVActor\@\@H\@std\@\@\@std\@\@PEAVActor\@\@AEBVILevel\@\@\@Z
      */
-    MCAPI class std::optional<struct std::pair<class Actor*, int>>
-    getTopActiveNuisance(class Actor*, class ILevel const&) const; // NOLINT
+    MCAPI std::optional<std::pair<class Actor*, int>> getTopActiveNuisance(class Actor*, class ILevel const&) const;
     /**
      * @symbol ?isAngry\@AngerLevelComponent\@\@QEBA_NXZ
      */
-    MCAPI bool isAngry() const; // NOLINT
+    MCAPI bool isAngry() const;
     /**
      * @symbol ??4AngerLevelComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class AngerLevelComponent& operator=(class AngerLevelComponent&&); // NOLINT
+    MCAPI class AngerLevelComponent& operator=(class AngerLevelComponent&&);
     /**
      * @symbol
      * ?readAdditionalSaveData\@AngerLevelComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&); // NOLINT
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
     /**
      * @symbol ?tick\@AngerLevelComponent\@\@QEAAXPEAVActor\@\@AEBVILevel\@\@\@Z
      */
-    MCAPI void tick(class Actor*, class ILevel const&); // NOLINT
+    MCAPI void tick(class Actor*, class ILevel const&);
     /**
      * @symbol ?tryIncreaseAngerAt\@AngerLevelComponent\@\@QEAAXAEAVActor\@\@0H_N\@Z
      */
-    MCAPI void tryIncreaseAngerAt(class Actor&, class Actor&, int, bool); // NOLINT
+    MCAPI void tryIncreaseAngerAt(class Actor&, class Actor&, int, bool);
     /**
      * @symbol ??1AngerLevelComponent\@\@QEAA\@XZ
      */
-    MCAPI ~AngerLevelComponent(); // NOLINT
+    MCAPI ~AngerLevelComponent();
     /**
      * @symbol ?DEFAULT_ANGER_DECREMENT_INTERVAL_SECONDS\@AngerLevelComponent\@\@2MB
      */
-    MCAPI static float const DEFAULT_ANGER_DECREMENT_INTERVAL_SECONDS; // NOLINT
+    MCAPI static float const DEFAULT_ANGER_DECREMENT_INTERVAL_SECONDS;
     /**
      * @symbol ?DEFAULT_ANGRY_BOOST\@AngerLevelComponent\@\@2HB
      */
-    MCAPI static int const DEFAULT_ANGRY_BOOST; // NOLINT
+    MCAPI static int const DEFAULT_ANGRY_BOOST;
     /**
      * @symbol ?DEFAULT_ANGRY_THRESHOLD\@AngerLevelComponent\@\@2HB
      */
-    MCAPI static int const DEFAULT_ANGRY_THRESHOLD; // NOLINT
+    MCAPI static int const DEFAULT_ANGRY_THRESHOLD;
     /**
      * @symbol ?DEFAULT_MAX_ANGER_LEVEL\@AngerLevelComponent\@\@2HB
      */
-    MCAPI static int const DEFAULT_MAX_ANGER_LEVEL; // NOLINT
+    MCAPI static int const DEFAULT_MAX_ANGER_LEVEL;
     /**
      * @symbol ?DEFAULT_SHOULD_REMOVE_TARGET\@AngerLevelComponent\@\@2_NB
      */
-    MCAPI static bool const DEFAULT_SHOULD_REMOVE_TARGET; // NOLINT
+    MCAPI static bool const DEFAULT_SHOULD_REMOVE_TARGET;
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_createOrModifyAngerLevel\@AngerLevelComponent\@\@AEAAXAEBVActor\@\@AEBV?$function\@$$A6AHH\@Z\@std\@\@\@Z
      */
-    MCAPI void _createOrModifyAngerLevel(class Actor const&, class std::function<int(int)> const&); // NOLINT
+    MCAPI void _createOrModifyAngerLevel(class Actor const&, std::function<int(int)> const&);
     /**
      * @symbol
      * ?_getListeningSoundEvent\@AngerLevelComponent\@\@AEBA?AV?$optional\@W4LevelSoundEvent\@\@\@std\@\@AEAVActor\@\@\@Z
      */
-    MCAPI class std::optional<enum class LevelSoundEvent> _getListeningSoundEvent(class Actor&) const; // NOLINT
-
-private:
+    MCAPI std::optional<enum class LevelSoundEvent> _getListeningSoundEvent(class Actor&) const;
+    // NOLINTEND
 };

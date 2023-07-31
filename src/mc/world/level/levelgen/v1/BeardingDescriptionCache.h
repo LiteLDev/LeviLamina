@@ -11,8 +11,10 @@ public:
     BeardingDescriptionCache()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0BeardingDescriptionCache\@\@QEAA\@AEBVBoundingBox\@\@H\@Z
      */
-    MCAPI BeardingDescriptionCache(class BoundingBox const&, int); // NOLINT
+    MCAPI BeardingDescriptionCache(class BoundingBox const&, int);
+    // NOLINTEND
 };

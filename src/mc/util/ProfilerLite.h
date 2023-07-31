@@ -19,10 +19,12 @@ public:
         ScopedData()                             = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1ScopedData\@ProfilerLite\@\@QEAA\@XZ
          */
-        MCAPI ~ScopedData(); // NOLINT
+        MCAPI ~ScopedData();
+        // NOLINTEND
     };
 
 public:
@@ -31,45 +33,41 @@ public:
     ProfilerLite(ProfilerLite const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ProfilerLite\@\@QEAA\@XZ
      */
-    MCAPI ProfilerLite(); // NOLINT
+    MCAPI ProfilerLite();
     /**
      * @symbol
      * ?calculateAndSetServerNetworkTime\@ProfilerLite\@\@QEAAXV?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@std\@\@\@Z
      */
-    MCAPI void calculateAndSetServerNetworkTime(class std::chrono::time_point<
-                                                struct std::chrono::steady_clock,
-                                                class std::chrono::
-                                                    duration<__int64, struct std::ratio<1, 1000000000>>>); // NOLINT
+    MCAPI void calculateAndSetServerNetworkTime(std::chrono::time_point<std::chrono::steady_clock>);
     /**
      * @symbol
      * ?calculateAndSetServerTickTimes\@ProfilerLite\@\@QEAAXV?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@std\@\@\@Z
      */
-    MCAPI void calculateAndSetServerTickTimes(class std::chrono::time_point<
-                                              struct std::chrono::steady_clock,
-                                              class std::chrono::
-                                                  duration<__int64, struct std::ratio<1, 1000000000>>>); // NOLINT
+    MCAPI void calculateAndSetServerTickTimes(std::chrono::time_point<std::chrono::steady_clock>);
     /**
      * @symbol
      * ?getServerTickTime\@ProfilerLite\@\@QEBA?AV?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@chrono\@std\@\@XZ
      */
-    MCAPI class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> getServerTickTime() const; // NOLINT
+    MCAPI std::chrono::nanoseconds getServerTickTime() const;
     /**
      * @symbol ??1ProfilerLite\@\@QEAA\@XZ
      */
-    MCAPI ~ProfilerLite(); // NOLINT
+    MCAPI ~ProfilerLite();
     /**
      * @symbol ?sEmptyThreadID\@ProfilerLite\@\@2Vid\@thread\@std\@\@A
      */
-    MCAPI static class std::thread::id sEmptyThreadID; // NOLINT
-
-    // private:
+    MCAPI static std::thread::id sEmptyThreadID;
+    // NOLINTEND
 
 private:
+    // NOLINTBEGIN
     /**
      * @symbol ?gProfilerLiteInstance\@ProfilerLite\@\@0V1\@A
      */
-    MCAPI static class ProfilerLite gProfilerLiteInstance; // NOLINT
+    MCAPI static class ProfilerLite gProfilerLiteInstance;
+    // NOLINTEND
 };

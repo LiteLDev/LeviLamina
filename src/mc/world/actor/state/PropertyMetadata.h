@@ -4,11 +4,6 @@
 
 class PropertyMetadata {
 public:
-    // PropertyMetadata inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // PropertyMetadata inner types define
     enum class ContainedType {};
 
@@ -19,8 +14,10 @@ public:
     PropertyMetadata()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PropertyMetadata\@\@QEAA\@XZ
      */
-    MCAPI ~PropertyMetadata(); // NOLINT
+    MCAPI ~PropertyMetadata();
+    // NOLINTEND
 };

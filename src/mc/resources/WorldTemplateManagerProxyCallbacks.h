@@ -11,8 +11,10 @@ public:
     WorldTemplateManagerProxyCallbacks()                                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1WorldTemplateManagerProxyCallbacks\@\@QEAA\@XZ
      */
-    MCAPI ~WorldTemplateManagerProxyCallbacks(); // NOLINT
+    MCAPI ~WorldTemplateManagerProxyCallbacks();
+    // NOLINTEND
 };

@@ -29,12 +29,15 @@ public:
     };
 
     std::vector<Item> mComponents;
+public:
+    // NOLINTBEGIN
     /**
      * @symbol ?removeSource\@CircuitComponentList\@\@QEAA_NAEBVBlockPos\@\@PEBVBaseCircuitComponent\@\@\@Z
      */
-    MCAPI bool removeSource(class BlockPos const&, class BaseCircuitComponent const*); // NOLINT
+    MCAPI bool removeSource(class BlockPos const&, class BaseCircuitComponent const*);
     /**
      * @symbol ??1CircuitComponentList\@\@QEAA\@XZ
      */
-    MCAPI ~CircuitComponentList(); // NOLINT
+    MCAPI ~CircuitComponentList();
+    // NOLINTEND
 };

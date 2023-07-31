@@ -10,16 +10,18 @@ public:
     LegacyStructureBlockPalette(LegacyStructureBlockPalette const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0LegacyStructureBlockPalette\@\@QEAA\@XZ
      */
-    MCAPI LegacyStructureBlockPalette(); // NOLINT
+    MCAPI LegacyStructureBlockPalette();
     /**
      * @symbol ?getBlock\@LegacyStructureBlockPalette\@\@QEAAAEBVBlock\@\@H\@Z
      */
-    MCAPI class Block const& getBlock(int); // NOLINT
+    MCAPI class Block const& getBlock(int);
     /**
      * @symbol ??1LegacyStructureBlockPalette\@\@QEAA\@XZ
      */
-    MCAPI ~LegacyStructureBlockPalette(); // NOLINT
+    MCAPI ~LegacyStructureBlockPalette();
+    // NOLINTEND
 };

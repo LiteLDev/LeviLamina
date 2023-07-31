@@ -11,8 +11,10 @@ public:
     ActorAnimationGroupParseMetaData()                                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ActorAnimationGroupParseMetaData\@\@QEAA\@XZ
      */
-    MCAPI ~ActorAnimationGroupParseMetaData(); // NOLINT
+    MCAPI ~ActorAnimationGroupParseMetaData();
+    // NOLINTEND
 };

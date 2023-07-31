@@ -11,25 +11,27 @@ public:
     MoveControlSwayDescription()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol ?getJsonName\@MoveControlSwayDescription\@\@UEBAPEBDXZ
      */
-    virtual char const* getJsonName() const; // NOLINT
+    virtual char const* getJsonName() const;
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1(); // NOLINT
+    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol ?deserializeData\@MoveControlSwayDescription\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
-    virtual void deserializeData(struct DeserializeDataParams); // NOLINT
+    virtual void deserializeData(struct DeserializeDataParams);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVECONTROLSWAYDESCRIPTION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~MoveControlSwayDescription(); // NOLINT
+    MCVAPI ~MoveControlSwayDescription();
 #endif
+    // NOLINTEND
 };

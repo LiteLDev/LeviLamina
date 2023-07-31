@@ -21,34 +21,36 @@ public:
     DBStorageEnvironmentChain()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0DBStorageEnvironmentChain\@\@QEAA\@AEBUDBStorageConfig\@\@AEBVPath\@Core\@\@V?$not_null\@V?$NonOwnerPointer\@VLevelDbEnv\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
     MCAPI
-    DBStorageEnvironmentChain(struct DBStorageConfig const&, class Core::Path const&, class gsl::not_null<class Bedrock::NonOwnerPointer<class LevelDbEnv>>); // NOLINT
+    DBStorageEnvironmentChain(struct DBStorageConfig const&, class Core::Path const&, class gsl::not_null<class Bedrock::NonOwnerPointer<class LevelDbEnv>>);
     /**
      * @symbol ?isChainValid\@DBStorageEnvironmentChain\@\@QEBA?AVResult\@Core\@\@_N\@Z
      */
-    MCAPI class Core::Result isChainValid(bool) const; // NOLINT
+    MCAPI class Core::Result isChainValid(bool) const;
     /**
      * @symbol ??1DBStorageEnvironmentChain\@\@QEAA\@XZ
      */
-    MCAPI ~DBStorageEnvironmentChain(); // NOLINT
+    MCAPI ~DBStorageEnvironmentChain();
     /**
      * @symbol
      * ?isContentKeyValid\@DBStorageEnvironmentChain\@\@SA_NPEAVEnv\@leveldb\@\@AEBVPath\@Core\@\@AEBVContentIdentity\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$shared_ptr\@VFileStorageArea\@Core\@\@\@8\@\@Z
      */
     MCAPI static bool
-    isContentKeyValid(class leveldb::Env*, class Core::Path const&, class ContentIdentity const&, std::string const&, class std::shared_ptr<class Core::FileStorageArea>); // NOLINT
+    isContentKeyValid(class leveldb::Env*, class Core::Path const&, class ContentIdentity const&, std::string const&, std::shared_ptr<class Core::FileStorageArea>);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?createFlushableEnv\@DBStorageEnvironmentChain\@\@CA?AV?$unique_ptr\@VFlushableEnv\@\@U?$default_delete\@VFlushableEnv\@\@\@std\@\@\@std\@\@PEAVEnv\@leveldb\@\@V?$shared_ptr\@VFileStorageArea\@Core\@\@\@3\@AEBVPath\@Core\@\@\@Z
      */
     MCAPI static std::unique_ptr<class FlushableEnv>
-    createFlushableEnv(class leveldb::Env*, class std::shared_ptr<class Core::FileStorageArea>, class Core::Path const&); // NOLINT
-
-private:
+    createFlushableEnv(class leveldb::Env*, std::shared_ptr<class Core::FileStorageArea>, class Core::Path const&);
+    // NOLINTEND
 };

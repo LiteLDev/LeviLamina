@@ -11,16 +11,18 @@ public:
     FileChunkInfo()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0FileChunkInfo\@\@QEAA\@H_K0\@Z
      */
-    MCAPI FileChunkInfo(int, unsigned __int64, unsigned __int64); // NOLINT
+    MCAPI FileChunkInfo(int, uint64_t, uint64_t);
     /**
      * @symbol ?isValid\@FileChunkInfo\@\@QEBA_NXZ
      */
-    MCAPI bool isValid() const; // NOLINT
+    MCAPI bool isValid() const;
     /**
      * @symbol ?size\@FileChunkInfo\@\@QEBAHXZ
      */
-    MCAPI int size() const; // NOLINT
+    MCAPI int size() const;
+    // NOLINTEND
 };

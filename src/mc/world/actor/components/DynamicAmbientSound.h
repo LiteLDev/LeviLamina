@@ -11,8 +11,10 @@ public:
     DynamicAmbientSound()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1DynamicAmbientSound\@\@QEAA\@XZ
      */
-    MCAPI ~DynamicAmbientSound(); // NOLINT
+    MCAPI ~DynamicAmbientSound();
+    // NOLINTEND
 };

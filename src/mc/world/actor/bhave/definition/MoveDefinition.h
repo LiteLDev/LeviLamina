@@ -19,20 +19,22 @@ public:
     MoveDefinition()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?load\@MoveDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */
-    virtual void load(class Json::Value, class BehaviorFactory const&); // NOLINT
+    virtual void load(class Json::Value, class BehaviorFactory const&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEDEFINITION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~MoveDefinition(); // NOLINT
+    MCVAPI ~MoveDefinition();
 #endif
+    // NOLINTEND
 };

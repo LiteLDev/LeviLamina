@@ -20,40 +20,42 @@ public:
     NetworkItemInstanceDescriptor()                                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKITEMINSTANCEDESCRIPTOR
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~NetworkItemInstanceDescriptor(); // NOLINT
+    MCVAPI ~NetworkItemInstanceDescriptor();
 #endif
     /**
      * @symbol ??0NetworkItemInstanceDescriptor\@\@QEAA\@AEBVItemStackDescriptor\@\@\@Z
      */
-    MCAPI NetworkItemInstanceDescriptor(class ItemStackDescriptor const&); // NOLINT
+    MCAPI NetworkItemInstanceDescriptor(class ItemStackDescriptor const&);
     /**
      * @symbol ??0NetworkItemInstanceDescriptor\@\@QEAA\@AEBVItemInstance\@\@\@Z
      */
-    MCAPI NetworkItemInstanceDescriptor(class ItemInstance const&); // NOLINT
+    MCAPI NetworkItemInstanceDescriptor(class ItemInstance const&);
     /**
      * @symbol ??0NetworkItemInstanceDescriptor\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI NetworkItemInstanceDescriptor(class NetworkItemInstanceDescriptor&&); // NOLINT
+    MCAPI NetworkItemInstanceDescriptor(class NetworkItemInstanceDescriptor&&);
     /**
      * @symbol ?getItemInstance\@NetworkItemInstanceDescriptor\@\@QEBA?AVItemInstance\@\@AEBVBlockPalette\@\@\@Z
      */
-    MCAPI class ItemInstance getItemInstance(class BlockPalette const&) const; // NOLINT
+    MCAPI class ItemInstance getItemInstance(class BlockPalette const&) const;
     /**
      * @symbol
      * ?read\@NetworkItemInstanceDescriptor\@\@QEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    MCAPI class Bedrock::Result<void, class std::error_code> read(class ReadOnlyBinaryStream&); // NOLINT
+    MCAPI class Bedrock::Result<void, std::error_code> read(class ReadOnlyBinaryStream&);
     /**
      * @symbol ?write\@NetworkItemInstanceDescriptor\@\@QEBAXAEAVBinaryStream\@\@\@Z
      */
-    MCAPI void write(class BinaryStream&) const; // NOLINT
+    MCAPI void write(class BinaryStream&) const;
+    // NOLINTEND
 };

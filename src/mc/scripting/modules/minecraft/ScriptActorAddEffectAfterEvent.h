@@ -16,21 +16,23 @@ public:
     ScriptActorAddEffectAfterEvent()                                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4ScriptActorAddEffectAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptActorAddEffectAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptActorAddEffectAfterEvent&&); // NOLINT
+    operator=(struct ScriptModuleMinecraft::ScriptActorAddEffectAfterEvent&&);
     /**
      * @symbol ??1ScriptActorAddEffectAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptActorAddEffectAfterEvent(); // NOLINT
+    MCAPI ~ScriptActorAddEffectAfterEvent();
     /**
      * @symbol
      * ?bind\@ScriptActorAddEffectAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptActorAddEffectAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorAddEffectAfterEvent>
-    bind(); // NOLINT
+    bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

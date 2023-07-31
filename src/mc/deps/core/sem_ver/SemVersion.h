@@ -43,114 +43,117 @@ public:
     std::string mFullVersionString;
     bool        mValidVersion;
     bool        mAnyVersion;
+public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0SemVersion\@\@QEAA\@GGGAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
-    MCAPI SemVersion(unsigned short, unsigned short, unsigned short, std::string const&, std::string const&); // NOLINT
+    MCAPI SemVersion(unsigned short, unsigned short, unsigned short, std::string const&, std::string const&);
     /**
      * @symbol ??0SemVersion\@\@QEAA\@XZ
      */
-    MCAPI SemVersion(); // NOLINT
+    MCAPI SemVersion();
     /**
      * @symbol ??0SemVersion\@\@QEAA\@Uany_version_constructor\@0\@\@Z
      */
-    MCAPI SemVersion(struct SemVersion::any_version_constructor); // NOLINT
+    MCAPI SemVersion(struct SemVersion::any_version_constructor);
     /**
      * @symbol ??0SemVersion\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI SemVersion(class SemVersion const&); // NOLINT
+    MCAPI SemVersion(class SemVersion const&);
     /**
      * @symbol
      * ?asString\@SemVersion\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string const& asString() const; // NOLINT
+    MCAPI std::string const& asString() const;
     /**
      * @symbol ?getMajor\@SemVersion\@\@QEBAGXZ
      */
-    MCAPI unsigned short getMajor() const; // NOLINT
+    MCAPI unsigned short getMajor() const;
     /**
      * @symbol ?getMinor\@SemVersion\@\@QEBAGXZ
      */
-    MCAPI unsigned short getMinor() const; // NOLINT
+    MCAPI unsigned short getMinor() const;
     /**
      * @symbol ?getPatch\@SemVersion\@\@QEBAGXZ
      */
-    MCAPI unsigned short getPatch() const; // NOLINT
+    MCAPI unsigned short getPatch() const;
     /**
      * @symbol
      * ?getPreRelease\@SemVersion\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string const& getPreRelease() const; // NOLINT
+    MCAPI std::string const& getPreRelease() const;
     /**
      * @symbol ?isAnyVersion\@SemVersion\@\@QEBA_NXZ
      */
-    MCAPI bool isAnyVersion() const; // NOLINT
+    MCAPI bool isAnyVersion() const;
     /**
      * @symbol ?isValid\@SemVersion\@\@QEBA_NXZ
      */
-    MCAPI bool isValid() const; // NOLINT
+    MCAPI bool isValid() const;
     /**
      * @symbol ??9SemVersion\@\@QEBA_NAEBV0\@\@Z
      */
-    MCAPI bool operator!=(class SemVersion const&) const; // NOLINT
+    MCAPI bool operator!=(class SemVersion const&) const;
     /**
      * @symbol ??MSemVersion\@\@QEBA_NAEBV0\@\@Z
      */
-    MCAPI bool operator<(class SemVersion const&) const; // NOLINT
+    MCAPI bool operator<(class SemVersion const&) const;
     /**
      * @symbol ??NSemVersion\@\@QEBA_NAEBV0\@\@Z
      */
-    MCAPI bool operator<=(class SemVersion const&) const; // NOLINT
+    MCAPI bool operator<=(class SemVersion const&) const;
     /**
      * @symbol ??4SemVersion\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
-    MCAPI class SemVersion& operator=(class SemVersion const&); // NOLINT
+    MCAPI class SemVersion& operator=(class SemVersion const&);
     /**
      * @symbol ??8SemVersion\@\@QEBA_NAEBV0\@\@Z
      */
-    MCAPI bool operator==(class SemVersion const&) const; // NOLINT
+    MCAPI bool operator==(class SemVersion const&) const;
     /**
      * @symbol ??OSemVersion\@\@QEBA_NAEBV0\@\@Z
      */
-    MCAPI bool operator>(class SemVersion const&) const; // NOLINT
+    MCAPI bool operator>(class SemVersion const&) const;
     /**
      * @symbol ??PSemVersion\@\@QEBA_NAEBV0\@\@Z
      */
-    MCAPI bool operator>=(class SemVersion const&) const; // NOLINT
+    MCAPI bool operator>=(class SemVersion const&) const;
     /**
      * @symbol ?satisfies\@SemVersion\@\@QEBA_NAEBV1\@\@Z
      */
-    MCAPI bool satisfies(class SemVersion const&) const; // NOLINT
+    MCAPI bool satisfies(class SemVersion const&) const;
     /**
      * @symbol ??1SemVersion\@\@QEAA\@XZ
      */
-    MCAPI ~SemVersion(); // NOLINT
+    MCAPI ~SemVersion();
     /**
      * @symbol ?fromJson\@SemVersion\@\@SA?AW4MatchType\@1\@AEBVValue\@Json\@\@AEAV1\@W4ParseOption\@1\@\@Z
      */
     MCAPI static enum class SemVersion::MatchType
-    fromJson(class Json::Value const&, class SemVersion&, enum class SemVersion::ParseOption); // NOLINT
+    fromJson(class Json::Value const&, class SemVersion&, enum class SemVersion::ParseOption);
     /**
      * @symbol ?fromJsonArray\@SemVersion\@\@SA?AW4MatchType\@1\@AEBVValue\@Json\@\@AEAV1\@\@Z
      */
-    MCAPI static enum class SemVersion::MatchType fromJsonArray(class Json::Value const&, class SemVersion&); // NOLINT
+    MCAPI static enum class SemVersion::MatchType fromJsonArray(class Json::Value const&, class SemVersion&);
     /**
      * @symbol
      * ?fromString\@SemVersion\@\@SA?AW4MatchType\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV1\@W4ParseOption\@1\@\@Z
      */
     MCAPI static enum class SemVersion::MatchType
-    fromString(std::string const&, class SemVersion&, enum class SemVersion::ParseOption); // NOLINT
+    fromString(std::string const&, class SemVersion&, enum class SemVersion::ParseOption);
     /**
      * @symbol ?AnyVersionConstructor\@SemVersion\@\@2Uany_version_constructor\@1\@B
      */
-    MCAPI static struct any_version_constructor const AnyVersionConstructor; // NOLINT
+    MCAPI static struct any_version_constructor const AnyVersionConstructor;
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_parseVersionToString\@SemVersion\@\@AEAAXXZ
      */
-    MCAPI void _parseVersionToString(); // NOLINT
-
-private:
+    MCAPI void _parseVersionToString();
+    // NOLINTEND
 };

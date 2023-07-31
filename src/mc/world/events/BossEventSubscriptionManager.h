@@ -11,10 +11,12 @@ public:
     BossEventSubscriptionManager()                                               = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BOSSEVENTSUBSCRIPTIONMANAGER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~BossEventSubscriptionManager(); // NOLINT
+    MCVAPI ~BossEventSubscriptionManager();
 #endif
+    // NOLINTEND
 };

@@ -11,8 +11,10 @@ public:
     BlockPatternPreEvent()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1BlockPatternPreEvent\@\@QEAA\@XZ
      */
-    MCAPI ~BlockPatternPreEvent(); // NOLINT
+    MCAPI ~BlockPatternPreEvent();
+    // NOLINTEND
 };

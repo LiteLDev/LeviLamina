@@ -19,19 +19,21 @@ public:
     IsIgnitedDefinition()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?initialize\@IsIgnitedDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&) const; // NOLINT
+    MCAPI void initialize(class EntityContext&) const;
     /**
      * @symbol ?uninitialize\@IsIgnitedDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void uninitialize(class EntityContext&) const; // NOLINT
+    MCAPI void uninitialize(class EntityContext&) const;
     /**
      * @symbol
      * ?buildSchema\@IsIgnitedDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UIsIgnitedDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      struct IsIgnitedDefinition>>&); // NOLINT
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsIgnitedDefinition>>&);
+    // NOLINTEND
 };

@@ -11,8 +11,10 @@ public:
     AssertHandlerContext()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1AssertHandlerContext\@\@QEAA\@XZ
      */
-    MCAPI ~AssertHandlerContext(); // NOLINT
+    MCAPI ~AssertHandlerContext();
+    // NOLINTEND
 };

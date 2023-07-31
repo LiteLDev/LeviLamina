@@ -11,12 +11,14 @@ public:
     ActorMoveSystem()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createActorMoveSystem\@ActorMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createActorMoveSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createActorMoveSystem();
     /**
      * @symbol ?createUpdateHitboxSystem\@ActorMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createUpdateHitboxSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createUpdateHitboxSystem();
+    // NOLINTEND
 };

@@ -11,16 +11,18 @@ public:
     PackCapabilityRegistry()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0PackCapabilityRegistry\@\@QEAA\@AEBV?$initializer_list\@VPackCapability\@\@\@std\@\@\@Z
      */
-    MCAPI PackCapabilityRegistry(class std::initializer_list<class PackCapability> const&); // NOLINT
+    MCAPI PackCapabilityRegistry(std::initializer_list<class PackCapability> const&);
     /**
      * @symbol ?merge\@PackCapabilityRegistry\@\@QEAAXAEAV1\@\@Z
      */
-    MCAPI void merge(class PackCapabilityRegistry&); // NOLINT
+    MCAPI void merge(class PackCapabilityRegistry&);
     /**
      * @symbol ??1PackCapabilityRegistry\@\@QEAA\@XZ
      */
-    MCAPI ~PackCapabilityRegistry(); // NOLINT
+    MCAPI ~PackCapabilityRegistry();
+    // NOLINTEND
 };

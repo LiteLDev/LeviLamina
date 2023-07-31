@@ -14,16 +14,18 @@ public:
     int                         mHandle;     // this+0x0
     class BlockEventDispatcher* mDispatcher; // this+0x8
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4BlockEventDispatcherToken\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class BlockEventDispatcherToken& operator=(class BlockEventDispatcherToken&&); // NOLINT
+    MCAPI class BlockEventDispatcherToken& operator=(class BlockEventDispatcherToken&&);
     /**
      * @symbol ?unregister\@BlockEventDispatcherToken\@\@QEAAXXZ
      */
-    MCAPI void unregister(); // NOLINT
+    MCAPI void unregister();
     /**
      * @symbol ??1BlockEventDispatcherToken\@\@QEAA\@XZ
      */
-    MCAPI ~BlockEventDispatcherToken(); // NOLINT
+    MCAPI ~BlockEventDispatcherToken();
+    // NOLINTEND
 };

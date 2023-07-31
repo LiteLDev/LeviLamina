@@ -11,12 +11,14 @@ public:
     TagUpdateToken()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0TagUpdateToken\@\@QEAA\@V?$weak_ptr\@U?$atomic\@H\@std\@\@\@std\@\@\@Z
      */
-    MCAPI TagUpdateToken(class std::weak_ptr<struct std::atomic<int>>); // NOLINT
+    MCAPI TagUpdateToken(std::weak_ptr<std::atomic<int>>);
     /**
      * @symbol ??1TagUpdateToken\@\@QEAA\@XZ
      */
-    MCAPI ~TagUpdateToken(); // NOLINT
+    MCAPI ~TagUpdateToken();
+    // NOLINTEND
 };

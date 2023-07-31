@@ -100,15 +100,16 @@ public:
     /**
      * @symbol ?bindType\@HashedString\@\@SAXXZ
      */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI static void bindType();
     /**
      * @symbol ?getEmptyString\@HashedString\@\@SAAEBV1\@XZ
      */
-    MCAPI static class HashedString const& getEmptyString(); // NOLINT
+    MCAPI static class HashedString const& getEmptyString();
     /**
      * @symbol ?defaultErrorValue\@HashedString\@\@2V1\@A
      */
-    MCAPI static class HashedString defaultErrorValue; // NOLINT
+    MCAPI static class HashedString defaultErrorValue;
+    // NOLINTEND
 };
 
 

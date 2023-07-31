@@ -14,91 +14,88 @@ public:
     PlayerUIContainerModelBase()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol ?containerContentChanged\@PlayerUIContainerModelBase\@\@UEAAXH\@Z
      */
-    virtual void containerContentChanged(int); // NOLINT
+    virtual void containerContentChanged(int);
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1(); // NOLINT
+    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol ?postInit\@PlayerUIContainerModelBase\@\@UEAAXXZ
      */
-    virtual void postInit(); // NOLINT
+    virtual void postInit();
     /**
      * @vftbl 3
      * @symbol ?releaseResources\@PlayerUIContainerModelBase\@\@UEAAXXZ
      */
-    virtual void releaseResources(); // NOLINT
+    virtual void releaseResources();
     /**
      * @vftbl 6
      * @symbol __unk_vfn_6
      */
-    virtual void __unk_vfn_6(); // NOLINT
+    virtual void __unk_vfn_6();
     /**
      * @vftbl 7
      * @symbol ?getContainerWeakRef\@PlayerUIContainerModelBase\@\@UEBA?AVContainerWeakRef\@\@XZ
      */
-    virtual class ContainerWeakRef getContainerWeakRef() const; // NOLINT
+    virtual class ContainerWeakRef getContainerWeakRef() const;
     /**
      * @vftbl 12
      * @symbol __unk_vfn_12
      */
-    virtual void __unk_vfn_12(); // NOLINT
+    virtual void __unk_vfn_12();
     /**
      * @vftbl 14
      * @symbol ?isValid\@PlayerUIContainerModelBase\@\@UEAA_NXZ
      */
-    virtual bool isValid(); // NOLINT
+    virtual bool isValid();
     /**
      * @vftbl 15
      * @symbol __unk_vfn_15
      */
-    virtual void __unk_vfn_15(); // NOLINT
+    virtual void __unk_vfn_15();
     /**
      * @vftbl 16
      * @symbol __unk_vfn_16
      */
-    virtual void __unk_vfn_16(); // NOLINT
+    virtual void __unk_vfn_16();
     /**
      * @vftbl 19
      * @symbol __unk_vfn_19
      */
-    virtual void __unk_vfn_19(); // NOLINT
+    virtual void __unk_vfn_19();
     /**
      * @vftbl 20
      * @symbol ?_getContainer\@PlayerUIContainerModelBase\@\@MEBAPEAVContainer\@\@XZ
      */
-    virtual class Container* _getContainer() const; // NOLINT
+    virtual class Container* _getContainer() const;
     /**
      * @vftbl 21
      * @symbol ?_getContainerOffset\@PlayerUIContainerModelBase\@\@MEBAHXZ
      */
-    virtual int _getContainerOffset() const; // NOLINT
+    virtual int _getContainerOffset() const;
     /**
      * @vftbl 22
      * @symbol ?_onItemChanged\@PlayerUIContainerModelBase\@\@MEAAXHAEBVItemStack\@\@0\@Z
      */
-    virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&); // NOLINT
+    virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
     /**
      * @symbol ??0PlayerUIContainerModelBase\@\@QEAA\@W4ContainerEnumName\@\@AEAVPlayer\@\@HW4ContainerCategory\@\@\@Z
      */
-    MCAPI PlayerUIContainerModelBase(
-        enum class ContainerEnumName,
-        class Player&,
-        int,
-        enum class ContainerCategory
-    ); // NOLINT
+    MCAPI PlayerUIContainerModelBase(enum class ContainerEnumName, class Player&, int, enum class ContainerCategory);
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol ?_refreshContainer\@PlayerUIContainerModelBase\@\@IEAAX_N\@Z
      */
-    MCAPI void _refreshContainer(bool); // NOLINT
-
-protected:
+    MCAPI void _refreshContainer(bool);
+    // NOLINTEND
 };

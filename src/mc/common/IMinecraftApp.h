@@ -11,10 +11,12 @@ public:
     IMinecraftApp()                                = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMINECRAFTAPP
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IMinecraftApp(); // NOLINT
+    MCVAPI ~IMinecraftApp();
 #endif
+    // NOLINTEND
 };

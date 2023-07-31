@@ -11,8 +11,10 @@ public:
     ServerInstanceNotificationEvent()                                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ServerInstanceNotificationEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ServerInstanceNotificationEvent(); // NOLINT
+    MCAPI ~ServerInstanceNotificationEvent();
+    // NOLINTEND
 };

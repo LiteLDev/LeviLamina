@@ -26,16 +26,18 @@ public:
     MountainAttributes()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0MountainAttributes\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI MountainAttributes(struct MountainAttributes&&); // NOLINT
+    MCAPI MountainAttributes(struct MountainAttributes&&);
     /**
      * @symbol ??4MountainAttributes\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct MountainAttributes& operator=(struct MountainAttributes&&); // NOLINT
+    MCAPI struct MountainAttributes& operator=(struct MountainAttributes&&);
     /**
      * @symbol ??1MountainAttributes\@\@QEAA\@XZ
      */
-    MCAPI ~MountainAttributes(); // NOLINT
+    MCAPI ~MountainAttributes();
+    // NOLINTEND
 };

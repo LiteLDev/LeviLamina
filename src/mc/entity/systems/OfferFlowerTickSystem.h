@@ -15,18 +15,20 @@ public:
     OfferFlowerTickSystem()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@OfferFlowerTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_doOfferFlowerTickSystem\@OfferFlowerTickSystem\@\@CAXAEBVStrictEntityContext\@\@AEAUOfferFlowerTickComponent\@\@\@Z
      */
-    MCAPI static void
-    _doOfferFlowerTickSystem(class StrictEntityContext const&, struct OfferFlowerTickComponent&); // NOLINT
+    MCAPI static void _doOfferFlowerTickSystem(class StrictEntityContext const&, struct OfferFlowerTickComponent&);
     /**
      * @symbol
      * ?_tickOfferFlowerTickSystem\@OfferFlowerTickSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@VActorTickNeededComponent\@\@\@\@UOfferFlowerTickComponent\@\@\@\@\@Z
@@ -35,7 +37,6 @@ public:
                                                  class StrictEntityContext,
                                                  class EntityRegistryBase,
                                                  struct Include<class ActorTickNeededComponent>,
-                                                 struct OfferFlowerTickComponent>); // NOLINT
-
-private:
+                                                 struct OfferFlowerTickComponent>);
+    // NOLINTEND
 };

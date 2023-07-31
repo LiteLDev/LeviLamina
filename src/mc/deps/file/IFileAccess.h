@@ -10,14 +10,16 @@ public:
     IFileAccess(IFileAccess const&)            = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFILEACCESS
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IFileAccess(); // NOLINT
+    MCVAPI ~IFileAccess();
 #endif
     /**
      * @symbol ??0IFileAccess\@\@QEAA\@XZ
      */
-    MCAPI IFileAccess(); // NOLINT
+    MCAPI IFileAccess();
+    // NOLINTEND
 };

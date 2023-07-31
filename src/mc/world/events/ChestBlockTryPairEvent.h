@@ -11,8 +11,10 @@ public:
     ChestBlockTryPairEvent()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ChestBlockTryPairEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ChestBlockTryPairEvent(); // NOLINT
+    MCAPI ~ChestBlockTryPairEvent();
+    // NOLINTEND
 };

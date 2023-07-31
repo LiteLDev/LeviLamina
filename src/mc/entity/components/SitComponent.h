@@ -11,8 +11,10 @@ public:
     SitComponent()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getInteraction\@SitComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&); // NOLINT
+    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
+    // NOLINTEND
 };

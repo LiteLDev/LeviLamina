@@ -10,50 +10,52 @@ public:
     FoodItemComponent()                         = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FOODITEMCOMPONENT
     /**
      * @symbol ?canAlwaysEat\@FoodItemComponent\@\@UEBA_NXZ
      */
-    MCVAPI bool canAlwaysEat() const; // NOLINT
+    MCVAPI bool canAlwaysEat() const;
     /**
      * @symbol ?eatItem\@FoodItemComponent\@\@UEAAPEBVItem\@\@AEAVItemStack\@\@AEAVActor\@\@AEAVLevel\@\@\@Z
      */
-    MCVAPI class Item const* eatItem(class ItemStack&, class Actor&, class Level&); // NOLINT
+    MCVAPI class Item const* eatItem(class ItemStack&, class Actor&, class Level&);
     /**
      * @symbol ?getNutrition\@FoodItemComponent\@\@UEBAHXZ
      */
-    MCVAPI int getNutrition() const; // NOLINT
+    MCVAPI int getNutrition() const;
     /**
      * @symbol ?getSaturationModifier\@FoodItemComponent\@\@UEBAMXZ
      */
-    MCVAPI float getSaturationModifier() const; // NOLINT
+    MCVAPI float getSaturationModifier() const;
     /**
      * @symbol ?use\@FoodItemComponent\@\@UEAA_NAEAVItemStack\@\@AEAVPlayer\@\@\@Z
      */
-    MCVAPI bool use(class ItemStack&, class Player&); // NOLINT
+    MCVAPI bool use(class ItemStack&, class Player&);
     /**
      * @symbol ?useTimeDepleted\@FoodItemComponent\@\@UEAAPEBVItem\@\@AEAVItemStack\@\@AEAVPlayer\@\@AEAVLevel\@\@\@Z
      */
-    MCVAPI class Item const* useTimeDepleted(class ItemStack&, class Player&, class Level&); // NOLINT
+    MCVAPI class Item const* useTimeDepleted(class ItemStack&, class Player&, class Level&);
 #endif
     /**
      * @symbol ?getUsingConvertsToItemDescriptor\@FoodItemComponent\@\@QEBA?AVItemDescriptor\@\@XZ
      */
-    MCAPI class ItemDescriptor getUsingConvertsToItemDescriptor() const; // NOLINT
+    MCAPI class ItemDescriptor getUsingConvertsToItemDescriptor() const;
     /**
      * @symbol ??4FoodItemComponent\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
-    MCAPI class FoodItemComponent& operator=(class FoodItemComponent const&); // NOLINT
+    MCAPI class FoodItemComponent& operator=(class FoodItemComponent const&);
     /**
      * @symbol ?bindType\@FoodItemComponent\@\@SAXXZ
      */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier\@FoodItemComponent\@\@SAAEBVHashedString\@\@XZ
      */
-    MCAPI static class HashedString const& getIdentifier(); // NOLINT
+    MCAPI static class HashedString const& getIdentifier();
     /**
      * @symbol ?registerVersionUpgrades\@FoodItemComponent\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
      */
-    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet&); // NOLINT
+    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet&);
+    // NOLINTEND
 };

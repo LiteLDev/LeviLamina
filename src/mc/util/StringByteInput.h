@@ -14,67 +14,69 @@ public:
     StringByteInput()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?readString\@BytesDataInput\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string readString(); // NOLINT
+    virtual std::string readString();
     /**
      * @vftbl 2
      * @symbol
      * ?readLongString\@BytesDataInput\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string readLongString(); // NOLINT
+    virtual std::string readLongString();
     /**
      * @vftbl 3
      * @symbol ?readFloat\@BigEndianStringByteInput\@\@UEAAMXZ
      */
-    virtual float readFloat(); // NOLINT
+    virtual float readFloat();
     /**
      * @vftbl 4
      * @symbol ?readDouble\@BigEndianStringByteInput\@\@UEAANXZ
      */
-    virtual double readDouble(); // NOLINT
+    virtual double readDouble();
     /**
      * @vftbl 5
      * @symbol ?readByte\@BytesDataInput\@\@UEAADXZ
      */
-    virtual char readByte(); // NOLINT
+    virtual char readByte();
     /**
      * @vftbl 6
      * @symbol ?readShort\@BigEndianStringByteInput\@\@UEAAFXZ
      */
-    virtual short readShort(); // NOLINT
+    virtual short readShort();
     /**
      * @vftbl 7
      * @symbol ?readInt\@BigEndianStringByteInput\@\@UEAAHXZ
      */
-    virtual int readInt(); // NOLINT
+    virtual int readInt();
     /**
      * @vftbl 8
      * @symbol ?readLongLong\@BigEndianStringByteInput\@\@UEAA_JXZ
      */
-    virtual __int64 readLongLong(); // NOLINT
+    virtual int64_t readLongLong();
     /**
      * @vftbl 9
      * @symbol ?readBytes\@StringByteInput\@\@UEAA_NPEAX_K\@Z
      */
-    virtual bool readBytes(void*, unsigned __int64); // NOLINT
+    virtual bool readBytes(void*, uint64_t);
     /**
      * @vftbl 10
      * @symbol ?numBytesLeft\@StringByteInput\@\@UEBA_KXZ
      */
-    virtual unsigned __int64 numBytesLeft() const; // NOLINT
+    virtual uint64_t numBytesLeft() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRINGBYTEINPUT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~StringByteInput(); // NOLINT
+    MCVAPI ~StringByteInput();
 #endif
+    // NOLINTEND
 };

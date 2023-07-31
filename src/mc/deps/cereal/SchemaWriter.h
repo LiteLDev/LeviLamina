@@ -13,12 +13,14 @@ public:
     SchemaWriter()                               = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREAL_SCHEMAWRITER
     /**
      * @symbol ?isSequenceWriter\@SchemaWriter\@cereal\@\@UEBA_NXZ
      */
-    MCVAPI bool isSequenceWriter() const; // NOLINT
+    MCVAPI bool isSequenceWriter() const;
 #endif
+    // NOLINTEND
 };
 
 }; // namespace cereal

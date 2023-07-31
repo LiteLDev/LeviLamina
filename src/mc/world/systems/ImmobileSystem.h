@@ -17,24 +17,26 @@ public:
     ImmobileSystem()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@ImmobileSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
     /**
      * @symbol
      * ?tickImmobileSystem\@ImmobileSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UMobIsImmobileFlag\@\@\@\@\@\@ULocalMoveVelocityComponent\@\@UMobRotationComponent\@\@UStateVectorComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UMobIsJumpingFlag\@\@\@\@\@\@\@Z
      */
     MCAPI static void
-        tickImmobileSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct MobIsImmobileFlag>>, struct LocalMoveVelocityComponent, struct MobRotationComponent, struct StateVectorComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct MobIsJumpingFlag>>); // NOLINT
+        tickImmobileSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct MobIsImmobileFlag>>, struct LocalMoveVelocityComponent, struct MobRotationComponent, struct StateVectorComponent>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct MobIsJumpingFlag>>);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?doImmobileSystem\@ImmobileSystem\@\@CAXAEBVStrictEntityContext\@\@AEAULocalMoveVelocityComponent\@\@AEAUMobRotationComponent\@\@AEAUStateVectorComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UMobIsJumpingFlag\@\@\@\@\@\@\@Z
      */
     MCAPI static void
-    doImmobileSystem(class StrictEntityContext const&, struct LocalMoveVelocityComponent&, struct MobRotationComponent&, struct StateVectorComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct MobIsJumpingFlag>>); // NOLINT
-
-private:
+    doImmobileSystem(class StrictEntityContext const&, struct LocalMoveVelocityComponent&, struct MobRotationComponent&, struct StateVectorComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct MobIsJumpingFlag>>);
+    // NOLINTEND
 };

@@ -14,14 +14,16 @@ public:
     MobTravelPlaceholderFilterSystem()                                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?create\@MobTravelPlaceholderFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo create(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo create();
     /**
      * @symbol
      * ?tick\@MobTravelPlaceholderFilterSystem\@\@SAXAEBVStrictEntityContext\@\@AEAUStateVectorComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UMobTravelComponent\@\@\@\@AEBVIConstBlockSource\@\@\@Z
      */
     MCAPI static void
-    tick(class StrictEntityContext const&, struct StateVectorComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MobTravelComponent>, class IConstBlockSource const&); // NOLINT
+    tick(class StrictEntityContext const&, struct StateVectorComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MobTravelComponent>, class IConstBlockSource const&);
+    // NOLINTEND
 };

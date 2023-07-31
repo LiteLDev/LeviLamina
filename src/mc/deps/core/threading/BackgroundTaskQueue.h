@@ -10,40 +10,42 @@ public:
     BackgroundTaskQueue(BackgroundTaskQueue const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0BackgroundTaskQueue\@\@QEAA\@XZ
      */
-    MCAPI BackgroundTaskQueue(); // NOLINT
+    MCAPI BackgroundTaskQueue();
     /**
      * @symbol ?flush\@BackgroundTaskQueue\@\@QEAAXXZ
      */
-    MCAPI void flush(); // NOLINT
+    MCAPI void flush();
     /**
      * @symbol ?getApproximateTaskCount\@BackgroundTaskQueue\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 getApproximateTaskCount() const; // NOLINT
+    MCAPI uint64_t getApproximateTaskCount() const;
     /**
      * @symbol ?queue\@BackgroundTaskQueue\@\@QEAAXV?$shared_ptr\@VBackgroundTaskBase\@\@\@std\@\@_N\@Z
      */
-    MCAPI void queue(class std::shared_ptr<class BackgroundTaskBase>, bool); // NOLINT
+    MCAPI void queue(std::shared_ptr<class BackgroundTaskBase>, bool);
     /**
      * @symbol ?resortPriorityQueue\@BackgroundTaskQueue\@\@QEAAXXZ
      */
-    MCAPI void resortPriorityQueue(); // NOLINT
+    MCAPI void resortPriorityQueue();
     /**
      * @symbol ?tryPop\@BackgroundTaskQueue\@\@QEAA?AV?$shared_ptr\@VBackgroundTaskBase\@\@\@std\@\@H\@Z
      */
-    MCAPI class std::shared_ptr<class BackgroundTaskBase> tryPop(int); // NOLINT
+    MCAPI std::shared_ptr<class BackgroundTaskBase> tryPop(int);
     /**
      * @symbol ??1BackgroundTaskQueue\@\@QEAA\@XZ
      */
-    MCAPI ~BackgroundTaskQueue(); // NOLINT
+    MCAPI ~BackgroundTaskQueue();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_fetchAllAvailableTasks\@BackgroundTaskQueue\@\@AEAA_NXZ
      */
-    MCAPI bool _fetchAllAvailableTasks(); // NOLINT
-
-private:
+    MCAPI bool _fetchAllAvailableTasks();
+    // NOLINTEND
 };

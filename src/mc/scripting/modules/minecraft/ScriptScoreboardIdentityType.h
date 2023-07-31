@@ -21,6 +21,7 @@ public:
     ScriptScoreboardIdentityType()                                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bindV010\@ScriptScoreboardIdentityType\@ScriptModuleMinecraft\@\@SA?AV?$EnumBindingBuilder\@W4ScriptScoreboardIdentityType_t\@ScriptModuleMinecraft\@\@W412\@\@Scripting\@\@XZ
@@ -28,14 +29,15 @@ public:
     MCAPI static class Scripting::EnumBindingBuilder<
         enum class ScriptModuleMinecraft::ScriptScoreboardIdentityType_t,
         enum class ScriptModuleMinecraft::ScriptScoreboardIdentityType_t>
-    bindV010(); // NOLINT
+    bindV010();
     /**
      * @symbol
      * ?bindV1\@ScriptScoreboardIdentityType\@ScriptModuleMinecraft\@\@SA?AV?$EnumBindingBuilder\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ScriptScoreboardIdentityType_t\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::
         EnumBindingBuilder<std::string, enum class ScriptModuleMinecraft::ScriptScoreboardIdentityType_t>
-        bindV1(); // NOLINT
+        bindV1();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

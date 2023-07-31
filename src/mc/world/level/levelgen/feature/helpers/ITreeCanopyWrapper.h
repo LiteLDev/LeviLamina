@@ -11,8 +11,10 @@ public:
     ITreeCanopyWrapper()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ITreeCanopyWrapper\@\@QEAA\@XZ
      */
-    MCAPI ~ITreeCanopyWrapper(); // NOLINT
+    MCAPI ~ITreeCanopyWrapper();
+    // NOLINTEND
 };

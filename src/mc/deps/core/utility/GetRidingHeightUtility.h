@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace GetRidingHeightUtility {
+// NOLINTBEGIN
 /**
  * @symbol
  * ?getRidingHeight\@GetRidingHeightUtility\@\@YAMVSynchedActorDataReader\@\@PEBURidingHeightComponent\@\@PEBUAdultRidingHeightOffsetComponent\@\@M\@Z
@@ -12,6 +13,7 @@ MCAPI float getRidingHeight(
     struct RidingHeightComponent const*,
     struct AdultRidingHeightOffsetComponent const*,
     float
-); // NOLINT
+);
+// NOLINTEND
 
 }; // namespace GetRidingHeightUtility

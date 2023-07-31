@@ -21,23 +21,25 @@ public:
     ScriptScriptingEventListener()                                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?onEvent\@ScriptScriptingEventListener\@ScriptModuleMinecraft\@\@UEAA?AW4EventResult\@\@AEBUScriptCommandMessageEvent\@\@\@Z
      */
-    virtual enum class EventResult onEvent(struct ScriptCommandMessageEvent const&); // NOLINT
+    virtual enum class EventResult onEvent(struct ScriptCommandMessageEvent const&);
     /**
      * @vftbl 2
      * @symbol
      * ?onEvent\@?$EventListenerDispatcher\@VScriptingEventListener\@\@\@\@MEAA?AW4EventResult\@\@AEBUScriptingNotificationEvent\@\@\@Z
      */
-    virtual enum class EventResult onEvent(struct ScriptingNotificationEvent const&); // NOLINT
+    virtual enum class EventResult onEvent(struct ScriptingNotificationEvent const&);
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

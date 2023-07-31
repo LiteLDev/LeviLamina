@@ -11,16 +11,18 @@ public:
     DashComponent()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getCooldownTime\@DashComponent\@\@QEBA?BIXZ
      */
-    MCAPI unsigned int const getCooldownTime() const; // NOLINT
+    MCAPI unsigned int const getCooldownTime() const;
     /**
      * @symbol ?getHorizontalMomentum\@DashComponent\@\@QEBA?BMXZ
      */
-    MCAPI float const getHorizontalMomentum() const; // NOLINT
+    MCAPI float const getHorizontalMomentum() const;
     /**
      * @symbol ?getVerticalMomentum\@DashComponent\@\@QEBA?BMXZ
      */
-    MCAPI float const getVerticalMomentum() const; // NOLINT
+    MCAPI float const getVerticalMomentum() const;
+    // NOLINTEND
 };

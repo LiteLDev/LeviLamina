@@ -18,13 +18,12 @@ public:
     RNS2_Windows_Linux_360()                                         = delete;
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol ?Send_Windows_Linux_360NoVDP\@RNS2_Windows_Linux_360\@RakNet\@\@KAHHPEAURNS2_SendParameters\@2\@PEBDI\@Z
      */
-    MCAPI static int
-    Send_Windows_Linux_360NoVDP(int, struct RakNet::RNS2_SendParameters*, char const*, unsigned int); // NOLINT
-
-protected:
+    MCAPI static int Send_Windows_Linux_360NoVDP(int, struct RakNet::RNS2_SendParameters*, char const*, unsigned int);
+    // NOLINTEND
 };
 
 }; // namespace RakNet

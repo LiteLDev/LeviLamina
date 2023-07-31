@@ -11,8 +11,10 @@ public:
     LevelChunkPhase1Deleter()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??RLevelChunkPhase1Deleter\@\@QEAAXPEAVLevelChunk\@\@\@Z
      */
-    MCAPI void operator()(class LevelChunk*); // NOLINT
+    MCAPI void operator()(class LevelChunk*);
+    // NOLINTEND
 };

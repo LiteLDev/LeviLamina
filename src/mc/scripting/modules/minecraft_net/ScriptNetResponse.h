@@ -16,25 +16,26 @@ public:
     ScriptNetResponse()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ScriptNetResponse\@ScriptModuleMinecraftNet\@\@QEAA\@$$QEAU01\@\@Z
      */
-    MCAPI ScriptNetResponse(struct ScriptModuleMinecraftNet::ScriptNetResponse&&); // NOLINT
+    MCAPI ScriptNetResponse(struct ScriptModuleMinecraftNet::ScriptNetResponse&&);
     /**
      * @symbol ??4ScriptNetResponse\@ScriptModuleMinecraftNet\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraftNet::ScriptNetResponse&
-    operator=(struct ScriptModuleMinecraftNet::ScriptNetResponse&&); // NOLINT
+    operator=(struct ScriptModuleMinecraftNet::ScriptNetResponse&&);
     /**
      * @symbol ??1ScriptNetResponse\@ScriptModuleMinecraftNet\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptNetResponse(); // NOLINT
+    MCAPI ~ScriptNetResponse();
     /**
      * @symbol
      * ?bind\@ScriptNetResponse\@ScriptModuleMinecraftNet\@\@SA?AV?$ClassBindingBuilder\@UScriptNetResponse\@ScriptModuleMinecraftNet\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraftNet::ScriptNetResponse>
-    bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraftNet::ScriptNetResponse> bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraftNet

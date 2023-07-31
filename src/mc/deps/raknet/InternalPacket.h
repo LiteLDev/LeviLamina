@@ -12,10 +12,12 @@ public:
     InternalPacket()                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4InternalPacket\@RakNet\@\@QEAAAEAU01\@AEBU01\@\@Z
      */
-    MCAPI struct RakNet::InternalPacket& operator=(struct RakNet::InternalPacket const&); // NOLINT
+    MCAPI struct RakNet::InternalPacket& operator=(struct RakNet::InternalPacket const&);
+    // NOLINTEND
 };
 
 }; // namespace RakNet

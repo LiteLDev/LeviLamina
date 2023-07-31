@@ -6,11 +6,6 @@ namespace Bedrock {
 
 class IApplicationDataStores {
 public:
-    // IApplicationDataStores inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // IApplicationDataStores inner types define
     enum class DataStores {};
 
@@ -21,12 +16,14 @@ public:
     IApplicationDataStores()                                         = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_IAPPLICATIONDATASTORES
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IApplicationDataStores(); // NOLINT
+    MCVAPI ~IApplicationDataStores();
 #endif
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

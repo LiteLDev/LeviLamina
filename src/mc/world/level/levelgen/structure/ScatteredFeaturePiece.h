@@ -14,27 +14,29 @@ public:
     ScatteredFeaturePiece()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCATTEREDFEATUREPIECE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScatteredFeaturePiece(); // NOLINT
+    MCVAPI ~ScatteredFeaturePiece();
 #endif
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ScatteredFeaturePiece\@\@IEAA\@HHHHHH\@Z
      */
-    MCAPI ScatteredFeaturePiece(int, int, int, int, int, int); // NOLINT
+    MCAPI ScatteredFeaturePiece(int, int, int, int, int, int);
     /**
      * @symbol ?updateAverageGroundHeight\@ScatteredFeaturePiece\@\@IEAA_NAEAVBlockSource\@\@AEBVBoundingBox\@\@H\@Z
      */
-    MCAPI bool updateAverageGroundHeight(class BlockSource&, class BoundingBox const&, int); // NOLINT
-
-protected:
+    MCAPI bool updateAverageGroundHeight(class BlockSource&, class BoundingBox const&, int);
+    // NOLINTEND
 };

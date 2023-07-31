@@ -18,26 +18,28 @@ public:
         Tag(Tag const&)            = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??0Tag\@LevelDataValue\@\@QEAA\@$$QEAVCompoundTag\@\@\@Z
          */
-        MCAPI Tag(class CompoundTag&&); // NOLINT
+        MCAPI Tag(class CompoundTag&&);
         /**
          * @symbol ??0Tag\@LevelDataValue\@\@QEAA\@$$QEAU01\@\@Z
          */
-        MCAPI Tag(struct LevelDataValue::Tag&&); // NOLINT
+        MCAPI Tag(struct LevelDataValue::Tag&&);
         /**
          * @symbol ??0Tag\@LevelDataValue\@\@QEAA\@XZ
          */
-        MCAPI Tag(); // NOLINT
+        MCAPI Tag();
         /**
          * @symbol ??4Tag\@LevelDataValue\@\@QEAAAEAU01\@$$QEAU01\@\@Z
          */
-        MCAPI struct LevelDataValue::Tag& operator=(struct LevelDataValue::Tag&&); // NOLINT
+        MCAPI struct LevelDataValue::Tag& operator=(struct LevelDataValue::Tag&&);
         /**
          * @symbol ??1Tag\@LevelDataValue\@\@QEAA\@XZ
          */
-        MCAPI ~Tag(); // NOLINT
+        MCAPI ~Tag();
+        // NOLINTEND
     };
 
 public:
@@ -47,8 +49,10 @@ public:
     LevelDataValue()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1LevelDataValue\@\@QEAA\@XZ
      */
-    MCAPI ~LevelDataValue(); // NOLINT
+    MCAPI ~LevelDataValue();
+    // NOLINTEND
 };

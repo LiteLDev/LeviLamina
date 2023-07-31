@@ -11,8 +11,10 @@ public:
     ItemStackRequestSlotInfo()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ItemStackRequestSlotInfo\@\@QEAA\@XZ
      */
-    MCAPI ~ItemStackRequestSlotInfo(); // NOLINT
+    MCAPI ~ItemStackRequestSlotInfo();
+    // NOLINTEND
 };

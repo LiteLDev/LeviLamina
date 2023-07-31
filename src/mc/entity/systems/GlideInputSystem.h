@@ -11,14 +11,16 @@ public:
     GlideInputSystem()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createGlideInputSystem\@GlideInputSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createGlideInputSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createGlideInputSystem();
     /**
      * @symbol
      * ?doGlideInputSystem\@GlideInputSystem\@\@SAXAEBUAbilitiesComponent\@\@AEBUFallFlyTicksComponent\@\@AEBUMoveInputComponent\@\@AEBUSynchedActorDataComponent\@\@AEAUStateVectorComponent\@\@\@Z
      */
     MCAPI static void
-    doGlideInputSystem(struct AbilitiesComponent const&, struct FallFlyTicksComponent const&, struct MoveInputComponent const&, struct SynchedActorDataComponent const&, struct StateVectorComponent&); // NOLINT
+    doGlideInputSystem(struct AbilitiesComponent const&, struct FallFlyTicksComponent const&, struct MoveInputComponent const&, struct SynchedActorDataComponent const&, struct StateVectorComponent&);
+    // NOLINTEND
 };

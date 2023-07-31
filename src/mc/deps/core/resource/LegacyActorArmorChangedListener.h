@@ -11,17 +11,19 @@ public:
     LegacyActorArmorChangedListener()                                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol ?containerContentChanged\@LegacyActorArmorChangedListener\@\@UEAAXH\@Z
      */
-    virtual void containerContentChanged(int); // NOLINT
+    virtual void containerContentChanged(int);
     /**
      * @symbol ?containerContentChanged\@LegacyActorArmorChangedListener\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void containerContentChanged(class Actor&); // NOLINT
+    MCAPI void containerContentChanged(class Actor&);
     /**
      * @symbol ?initializeEntity\@LegacyActorArmorChangedListener\@\@SAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI static void initializeEntity(class EntityContext&); // NOLINT
+    MCAPI static void initializeEntity(class EntityContext&);
+    // NOLINTEND
 };

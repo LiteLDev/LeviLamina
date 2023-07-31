@@ -21,12 +21,14 @@ public:
         DataProxy()                            = delete;
 
     public:
+        // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEHAVIORDATA_DATAPROXY
         /**
          * @symbol __unk_destructor_-1
          */
-        MCVAPI ~DataProxy(); // NOLINT
+        MCVAPI ~DataProxy();
 #endif
+        // NOLINTEND
     };
 
 public:
@@ -36,14 +38,16 @@ public:
     BehaviorData()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?copyData\@BehaviorData\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0AEAV1\@\@Z
      */
-    MCAPI void copyData(std::string const&, std::string const&, class BehaviorData&); // NOLINT
+    MCAPI void copyData(std::string const&, std::string const&, class BehaviorData&);
     /**
      * @symbol
      * ?hasDataOfType\@BehaviorData\@\@QEBA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4DataType\@1\@\@Z
      */
-    MCAPI bool hasDataOfType(std::string const&, enum class BehaviorData::DataType) const; // NOLINT
+    MCAPI bool hasDataOfType(std::string const&, enum class BehaviorData::DataType) const;
+    // NOLINTEND
 };

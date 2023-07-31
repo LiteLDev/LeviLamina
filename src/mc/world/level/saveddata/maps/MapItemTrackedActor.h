@@ -28,21 +28,23 @@ public:
     MapItemTrackedActor()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0MapItemTrackedActor\@\@QEAA\@AEBUUniqueId\@0\@AEAVBlockSource\@\@\@Z
      */
-    MCAPI MapItemTrackedActor(struct MapItemTrackedActor::UniqueId const&, class BlockSource&); // NOLINT
+    MCAPI MapItemTrackedActor(struct MapItemTrackedActor::UniqueId const&, class BlockSource&);
     /**
      * @symbol ?getDecorationRotation\@MapItemTrackedActor\@\@QEAAMAEAVBlockSource\@\@\@Z
      */
-    MCAPI float getDecorationRotation(class BlockSource&); // NOLINT
+    MCAPI float getDecorationRotation(class BlockSource&);
     /**
      * @symbol
      * ?nextUpdatePacket\@MapItemTrackedActor\@\@QEAA?AV?$unique_ptr\@VPacket\@\@U?$default_delete\@VPacket\@\@\@std\@\@\@std\@\@AEBVMapItemSavedData\@\@\@Z
      */
-    MCAPI std::unique_ptr<class Packet> nextUpdatePacket(class MapItemSavedData const&); // NOLINT
+    MCAPI std::unique_ptr<class Packet> nextUpdatePacket(class MapItemSavedData const&);
     /**
      * @symbol ?setNeedsResend\@MapItemTrackedActor\@\@QEAAXXZ
      */
-    MCAPI void setNeedsResend(); // NOLINT
+    MCAPI void setNeedsResend();
+    // NOLINTEND
 };

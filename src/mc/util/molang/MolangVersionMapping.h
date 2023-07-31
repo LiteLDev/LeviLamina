@@ -11,8 +11,10 @@ public:
     MolangVersionMapping()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getVersion\@MolangVersionMapping\@\@SA?BW4MolangVersion\@\@AEBVSemVersion\@\@\@Z
      */
-    MCAPI static enum class MolangVersion const getVersion(class SemVersion const&); // NOLINT
+    MCAPI static enum class MolangVersion const getVersion(class SemVersion const&);
+    // NOLINTEND
 };

@@ -14,18 +14,21 @@ public:
     EventingRequestSystem()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@EventingRequestSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_eventingRequestSystem\@EventingRequestSystem\@\@CAXAEBVStrictEntityContext\@\@AEAUEventingRequestQueueComponent\@\@AEAVLevelComponent\@\@\@Z
      */
     MCAPI static void
-    _eventingRequestSystem(class StrictEntityContext const&, struct EventingRequestQueueComponent&, class LevelComponent&); // NOLINT
+    _eventingRequestSystem(class StrictEntityContext const&, struct EventingRequestQueueComponent&, class LevelComponent&);
     /**
      * @symbol
      * ?_tickEventingRequestSystem\@EventingRequestSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@UEventingRequestQueueComponent\@\@VLevelComponent\@\@\@\@\@Z
@@ -34,7 +37,6 @@ public:
                                                  class StrictEntityContext,
                                                  class EntityRegistryBase,
                                                  struct EventingRequestQueueComponent,
-                                                 class LevelComponent>); // NOLINT
-
-private:
+                                                 class LevelComponent>);
+    // NOLINTEND
 };

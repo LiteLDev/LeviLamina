@@ -11,16 +11,18 @@ public:
     ItemGroup()                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ItemGroup\@\@QEAA\@AEBVItemInstance\@\@\@Z
      */
-    MCAPI ItemGroup(class ItemInstance const&); // NOLINT
+    MCAPI ItemGroup(class ItemInstance const&);
     /**
      * @symbol ?isEmpty\@ItemGroup\@\@QEBA_NXZ
      */
-    MCAPI bool isEmpty() const; // NOLINT
+    MCAPI bool isEmpty() const;
     /**
      * @symbol ??1ItemGroup\@\@QEAA\@XZ
      */
-    MCAPI ~ItemGroup(); // NOLINT
+    MCAPI ~ItemGroup();
+    // NOLINTEND
 };

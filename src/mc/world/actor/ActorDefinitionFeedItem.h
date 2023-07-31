@@ -11,8 +11,10 @@ public:
     ActorDefinitionFeedItem()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ActorDefinitionFeedItem\@\@QEAA\@XZ
      */
-    MCAPI ~ActorDefinitionFeedItem(); // NOLINT
+    MCAPI ~ActorDefinitionFeedItem();
+    // NOLINTEND
 };

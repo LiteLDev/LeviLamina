@@ -14,32 +14,34 @@ public:
     LakeFeature()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 3
      * @symbol ?place\@LakeFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LAKEFEATURE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~LakeFeature(); // NOLINT
+    MCVAPI ~LakeFeature();
 #endif
     /**
      * @symbol ??0LakeFeature\@\@QEAA\@AEBVBlock\@\@V?$optional\@VXoroshiroPositionalRandomFactory\@\@\@std\@\@\@Z
      */
-    MCAPI LakeFeature(class Block const&, class std::optional<class XoroshiroPositionalRandomFactory>); // NOLINT
+    MCAPI LakeFeature(class Block const&, std::optional<class XoroshiroPositionalRandomFactory>);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_check\@LakeFeature\@\@AEBA_NAEBVBlockPos\@\@V?$span\@_N$0IAA\@\@gsl\@\@\@Z
      */
-    MCAPI bool _check(class BlockPos const&, class gsl::span<bool, 2048>) const; // NOLINT
-
-private:
+    MCAPI bool _check(class BlockPos const&, class gsl::span<bool, 2048>) const;
+    // NOLINTEND
 };

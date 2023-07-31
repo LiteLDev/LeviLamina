@@ -19,14 +19,16 @@ public:
     FindActorDefinition()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?load\@FindActorDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */
-    virtual void load(class Json::Value, class BehaviorFactory const&); // NOLINT
+    virtual void load(class Json::Value, class BehaviorFactory const&);
+    // NOLINTEND
 };

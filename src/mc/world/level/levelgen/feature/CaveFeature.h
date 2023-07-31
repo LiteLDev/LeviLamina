@@ -46,24 +46,25 @@ public:
     CaveFeature(CaveFeature const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?place\@CaveFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */
-    virtual class std::optional<class BlockPos>
-    place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const; // NOLINT
+    virtual std::optional<class BlockPos>
+    place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
     /**
      * @vftbl 2
      * @symbol
      * ?isValidPlacement\@CaveFeature\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual bool isValidPlacement(std::string const&); // NOLINT
+    virtual bool isValidPlacement(std::string const&);
     /**
      * @vftbl 3
      * @symbol
@@ -71,14 +72,14 @@ public:
      */
     virtual void
     addRoom(class IBlockWorldGenAPI&, struct CaveFeatureUtils::CarverConfiguration const&, class Random&, class ChunkPos const&, class Vec3 const&, class RenderParams&, struct CaveFeatureUtils::CarvingParameters const&, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>&)
-        const; // NOLINT
+        const;
     /**
      * @vftbl 4
      * @symbol
      * ?addTunnel\@CaveFeature\@\@MEBAXAEAVIBlockWorldGenAPI\@\@AEBUCarverConfiguration\@CaveFeatureUtils\@\@AEAVRandom\@\@AEBVChunkPos\@\@AEBVVec3\@\@MMMHHMAEAVRenderParams\@\@AEBUCarvingParameters\@4\@AEAV?$vector\@UCarveEllipsoidParams\@CachedMetaData\@CaveFeature\@\@V?$allocator\@UCarveEllipsoidParams\@CachedMetaData\@CaveFeature\@\@\@std\@\@\@std\@\@\@Z
      */
     virtual void addTunnel(class IBlockWorldGenAPI&, struct CaveFeatureUtils::CarverConfiguration const&, class Random&, class ChunkPos const&, class Vec3 const&, float, float, float, int, int, float, class RenderParams&, struct CaveFeatureUtils::CarvingParameters const&, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>&)
-        const; // NOLINT
+        const;
     /**
      * @vftbl 5
      * @symbol
@@ -86,7 +87,7 @@ public:
      */
     virtual bool
     carveEllipsoidVolume(class IBlockWorldGenAPI&, struct CaveFeatureUtils::CarverConfiguration const&, class Random&, class ChunkPos const&, class Vec3 const&, class BoundingBox const&, float, float, struct CaveFeatureUtils::CarvingParameters const&)
-        const; // NOLINT
+        const;
     /**
      * @vftbl 6
      * @symbol
@@ -94,23 +95,25 @@ public:
      */
     virtual void
     addFeature(class IBlockWorldGenAPI&, class ChunkPos const&, class Random&, class ChunkPos const&, class RenderParams&, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>&)
-        const; // NOLINT
+        const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CAVEFEATURE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~CaveFeature(); // NOLINT
+    MCVAPI ~CaveFeature();
 #endif
     /**
      * @symbol ??0CaveFeature\@\@QEAA\@XZ
      */
-    MCAPI CaveFeature(); // NOLINT
+    MCAPI CaveFeature();
     /**
      * @symbol ?getWidthModifier\@CaveFeature\@\@QEBAMAEAVRenderParams\@\@\@Z
      */
-    MCAPI float getWidthModifier(class RenderParams&) const; // NOLINT
+    MCAPI float getWidthModifier(class RenderParams&) const;
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?carveBlock\@CaveFeature\@\@IEBA_NAEAVIBlockWorldGenAPI\@\@AEBUCarverConfiguration\@CaveFeatureUtils\@\@VBlockPos\@\@PEA_N_NAEBVVec3\@\@HV5\@\@Z
@@ -124,22 +127,21 @@ public:
         class Vec3 const&,
         int,
         class BlockPos
-    ) const; // NOLINT
+    ) const;
     /**
      * @symbol
      * ?carveEllipsoid\@CaveFeature\@\@IEBA_NAEAVIBlockWorldGenAPI\@\@AEBUCarverConfiguration\@CaveFeatureUtils\@\@AEAVRandom\@\@AEBVChunkPos\@\@AEBVVec3\@\@MMAEBUCarvingParameters\@4\@\@Z
      */
     MCAPI bool
     carveEllipsoid(class IBlockWorldGenAPI&, struct CaveFeatureUtils::CarverConfiguration const&, class Random&, class ChunkPos const&, class Vec3 const&, float, float, struct CaveFeatureUtils::CarvingParameters const&)
-        const; // NOLINT
+        const;
     /**
      * @symbol ?detectWater\@CaveFeature\@\@IEBA_NAEAVIBlockWorldGenAPI\@\@AEBVBoundingBox\@\@\@Z
      */
-    MCAPI bool detectWater(class IBlockWorldGenAPI&, class BoundingBox const&) const; // NOLINT
+    MCAPI bool detectWater(class IBlockWorldGenAPI&, class BoundingBox const&) const;
     /**
      * @symbol ?shouldSkipCarving\@CaveFeature\@\@KA_NMMMMM\@Z
      */
-    MCAPI static bool shouldSkipCarving(float, float, float, float, float); // NOLINT
-
-protected:
+    MCAPI static bool shouldSkipCarving(float, float, float, float, float);
+    // NOLINTEND
 };

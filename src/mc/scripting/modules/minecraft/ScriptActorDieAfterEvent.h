@@ -16,21 +16,22 @@ public:
     ScriptActorDieAfterEvent()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4ScriptActorDieAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptActorDieAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptActorDieAfterEvent&&); // NOLINT
+    operator=(struct ScriptModuleMinecraft::ScriptActorDieAfterEvent&&);
     /**
      * @symbol ??1ScriptActorDieAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptActorDieAfterEvent(); // NOLINT
+    MCAPI ~ScriptActorDieAfterEvent();
     /**
      * @symbol
      * ?bind\@ScriptActorDieAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptActorDieAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorDieAfterEvent>
-    bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorDieAfterEvent> bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -18,22 +18,24 @@ public:
     VolumeStorageDefinition()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?addDefinitionData\@VolumeStorageDefinition\@VolumeInstanceData\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void addDefinitionData(class EntityContext&) const; // NOLINT
+    MCAPI void addDefinitionData(class EntityContext&) const;
     /**
      * @symbol ??1VolumeStorageDefinition\@VolumeInstanceData\@\@QEAA\@XZ
      */
-    MCAPI ~VolumeStorageDefinition(); // NOLINT
+    MCAPI ~VolumeStorageDefinition();
     /**
      * @symbol ?bindType\@VolumeStorageDefinition\@VolumeInstanceData\@\@SAXXZ
      */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI static void bindType();
     /**
      * @symbol ?fromEntity\@VolumeStorageDefinition\@VolumeInstanceData\@\@SA?AU12\@AEBVEntityContext\@\@\@Z
      */
-    MCAPI static struct VolumeInstanceData::VolumeStorageDefinition fromEntity(class EntityContext const&); // NOLINT
+    MCAPI static struct VolumeInstanceData::VolumeStorageDefinition fromEntity(class EntityContext const&);
+    // NOLINTEND
 };
 
 }; // namespace VolumeInstanceData

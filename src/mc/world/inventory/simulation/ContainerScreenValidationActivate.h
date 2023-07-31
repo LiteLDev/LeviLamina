@@ -14,14 +14,16 @@ public:
     ContainerScreenValidationActivate()                                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 3
      * @symbol ?tryActivate\@ContainerScreenValidationActivate\@\@EEAA?AUContainerValidationResult\@\@XZ
      */
-    virtual struct ContainerValidationResult tryActivate(); // NOLINT
+    virtual struct ContainerValidationResult tryActivate();
+    // NOLINTEND
 };

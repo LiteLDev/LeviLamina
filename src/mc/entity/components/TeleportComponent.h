@@ -10,60 +10,62 @@ public:
     TeleportComponent(TeleportComponent const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0TeleportComponent\@\@QEAA\@XZ
      */
-    MCAPI TeleportComponent(); // NOLINT
+    MCAPI TeleportComponent();
     /**
      * @symbol ?getDarkTeleportChance\@TeleportComponent\@\@QEAAMXZ
      */
-    MCAPI float getDarkTeleportChance(); // NOLINT
+    MCAPI float getDarkTeleportChance();
     /**
      * @symbol ?getLightTeleportChance\@TeleportComponent\@\@QEAAMXZ
      */
-    MCAPI float getLightTeleportChance(); // NOLINT
+    MCAPI float getLightTeleportChance();
     /**
      * @symbol ?getMaxTeleportTime\@TeleportComponent\@\@QEAAHXZ
      */
-    MCAPI int getMaxTeleportTime(); // NOLINT
+    MCAPI int getMaxTeleportTime();
     /**
      * @symbol ?getMinTeleportTime\@TeleportComponent\@\@QEAAHXZ
      */
-    MCAPI int getMinTeleportTime(); // NOLINT
+    MCAPI int getMinTeleportTime();
     /**
      * @symbol ?getRandomTeleports\@TeleportComponent\@\@QEAA_NXZ
      */
-    MCAPI bool getRandomTeleports(); // NOLINT
+    MCAPI bool getRandomTeleports();
     /**
      * @symbol ?getTargetDistance\@TeleportComponent\@\@QEAAMXZ
      */
-    MCAPI float getTargetDistance(); // NOLINT
+    MCAPI float getTargetDistance();
     /**
      * @symbol ?getTargetTeleportChance\@TeleportComponent\@\@QEAAMXZ
      */
-    MCAPI float getTargetTeleportChance(); // NOLINT
+    MCAPI float getTargetTeleportChance();
     /**
      * @symbol ?getTeleportTime\@TeleportComponent\@\@QEAAHXZ
      */
-    MCAPI int getTeleportTime(); // NOLINT
+    MCAPI int getTeleportTime();
     /**
      * @symbol ?initFromDefinition\@TeleportComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void initFromDefinition(class Actor&); // NOLINT
+    MCAPI void initFromDefinition(class Actor&);
     /**
      * @symbol ?randomTeleport\@TeleportComponent\@\@QEAA_NAEAVActor\@\@\@Z
      */
-    MCAPI bool randomTeleport(class Actor&); // NOLINT
+    MCAPI bool randomTeleport(class Actor&);
     /**
      * @symbol ?setTeleportTime\@TeleportComponent\@\@QEAAXH\@Z
      */
-    MCAPI void setTeleportTime(int); // NOLINT
+    MCAPI void setTeleportTime(int);
     /**
      * @symbol ?teleport\@TeleportComponent\@\@QEAA_NAEAVActor\@\@AEBVVec3\@\@\@Z
      */
-    MCAPI bool teleport(class Actor&, class Vec3 const&); // NOLINT
+    MCAPI bool teleport(class Actor&, class Vec3 const&);
     /**
      * @symbol ?teleportTowards\@TeleportComponent\@\@QEAA_NAEAVActor\@\@AEBV2\@\@Z
      */
-    MCAPI bool teleportTowards(class Actor&, class Actor const&); // NOLINT
+    MCAPI bool teleportTowards(class Actor&, class Actor const&);
+    // NOLINTEND
 };

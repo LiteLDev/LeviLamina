@@ -19,10 +19,12 @@ public:
         AtomicAccumulator()                                    = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ?reset\@AtomicAccumulator\@DBStoragePerformanceData\@\@QEAAXXZ
          */
-        MCAPI void reset(); // NOLINT
+        MCAPI void reset();
+        // NOLINTEND
     };
 
 public:
@@ -32,16 +34,18 @@ public:
     DBStoragePerformanceData()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?resetAll\@DBStoragePerformanceData\@\@QEAAXXZ
      */
-    MCAPI void resetAll(); // NOLINT
+    MCAPI void resetAll();
     /**
      * @symbol ?CATEGORY_NAMES\@DBStoragePerformanceData\@\@2V?$array\@PEBD$0N\@\@std\@\@A
      */
-    MCAPI static class std::array<char const*, 13> CATEGORY_NAMES; // NOLINT
+    MCAPI static std::array<char const*, 13> CATEGORY_NAMES;
     /**
      * @symbol ?OPERATION_NAMES\@DBStoragePerformanceData\@\@2V?$array\@PEBD$03\@std\@\@A
      */
-    MCAPI static class std::array<char const*, 4> OPERATION_NAMES; // NOLINT
+    MCAPI static std::array<char const*, 4> OPERATION_NAMES;
+    // NOLINTEND
 };

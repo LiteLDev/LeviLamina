@@ -28,15 +28,16 @@ public:
         LogEntry()                = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??4LogEntry\@SerializerContext\@cereal\@\@QEAAAEAU012\@AEBU012\@\@Z
          */
-        MCAPI struct cereal::SerializerContext::LogEntry&
-        operator=(struct cereal::SerializerContext::LogEntry const&); // NOLINT
+        MCAPI struct cereal::SerializerContext::LogEntry& operator=(struct cereal::SerializerContext::LogEntry const&);
         /**
          * @symbol ??1LogEntry\@SerializerContext\@cereal\@\@QEAA\@XZ
          */
-        MCAPI ~LogEntry(); // NOLINT
+        MCAPI ~LogEntry();
+        // NOLINTEND
     };
 
     class ScopedPop {
@@ -48,10 +49,12 @@ public:
         ScopedPop()                            = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1ScopedPop\@SerializerContext\@cereal\@\@QEAA\@XZ
          */
-        MCAPI ~ScopedPop(); // NOLINT
+        MCAPI ~ScopedPop();
+        // NOLINTEND
     };
 
 public:
@@ -59,62 +62,63 @@ public:
     SerializerContext& operator=(SerializerContext const&) = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0SerializerContext\@cereal\@\@QEAA\@XZ
      */
-    MCAPI SerializerContext(); // NOLINT
+    MCAPI SerializerContext();
     /**
      * @symbol ??0SerializerContext\@cereal\@\@QEAA\@AEBV01\@\@Z
      */
-    MCAPI SerializerContext(class cereal::SerializerContext const&); // NOLINT
+    MCAPI SerializerContext(class cereal::SerializerContext const&);
     /**
      * @symbol ?clear\@SerializerContext\@cereal\@\@QEAAXXZ
      */
-    MCAPI void clear(); // NOLINT
+    MCAPI void clear();
     /**
      * @symbol ?consumeContext\@SerializerContext\@cereal\@\@QEAAX$$QEAV12\@\@Z
      */
-    MCAPI void consumeContext(class cereal::SerializerContext&&); // NOLINT
+    MCAPI void consumeContext(class cereal::SerializerContext&&);
     /**
      * @symbol ?detachContext\@SerializerContext\@cereal\@\@QEAA?AV12\@XZ
      */
-    MCAPI class cereal::SerializerContext detachContext(); // NOLINT
+    MCAPI class cereal::SerializerContext detachContext();
     /**
      * @symbol
      * ?getErrors\@SerializerContext\@cereal\@\@QEBA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
      */
-    MCAPI std::vector<std::string> getErrors() const; // NOLINT
+    MCAPI std::vector<std::string> getErrors() const;
     /**
      * @symbol
      * ?getLog\@SerializerContext\@cereal\@\@QEBAAEBV?$vector\@ULogEntry\@SerializerContext\@cereal\@\@V?$allocator\@ULogEntry\@SerializerContext\@cereal\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<struct cereal::SerializerContext::LogEntry> const& getLog() const; // NOLINT
+    MCAPI std::vector<struct cereal::SerializerContext::LogEntry> const& getLog() const;
     /**
      * @symbol
      * ?log\@SerializerContext\@cereal\@\@QEAA?AW4ResultCode\@internal\@2\@W4342\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI enum class cereal::internal::ResultCode log(enum class cereal::internal::ResultCode, std::string); // NOLINT
+    MCAPI enum class cereal::internal::ResultCode log(enum class cereal::internal::ResultCode, std::string);
     /**
      * @symbol ?popContext\@SerializerContext\@cereal\@\@QEAAXXZ
      */
-    MCAPI void popContext(); // NOLINT
+    MCAPI void popContext();
     /**
      * @symbol
      * ?pushContext\@SerializerContext\@cereal\@\@QEAAAEAV12\@U?$pair\@W4ContextType\@SerializerContext\@cereal\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI class cereal::SerializerContext&
-        pushContext(struct std::pair<enum class cereal::SerializerContext::ContextType, std::string>); // NOLINT
+        pushContext(std::pair<enum class cereal::SerializerContext::ContextType, std::string>);
     /**
      * @symbol ??1SerializerContext\@cereal\@\@QEAA\@XZ
      */
-    MCAPI ~SerializerContext(); // NOLINT
+    MCAPI ~SerializerContext();
     /**
      * @symbol
      * ?contextString\@SerializerContext\@cereal\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@U?$pair\@W4ContextType\@SerializerContext\@cereal\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@V?$allocator\@U?$pair\@W4ContextType\@SerializerContext\@cereal\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@2\@\@4\@\@Z
      */
     MCAPI static std::string
-    contextString(std::vector<
-                  struct std::pair<enum class cereal::SerializerContext::ContextType, std::string>> const&); // NOLINT
+    contextString(std::vector<std::pair<enum class cereal::SerializerContext::ContextType, std::string>> const&);
+    // NOLINTEND
 };
 
 }; // namespace cereal

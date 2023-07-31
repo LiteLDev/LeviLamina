@@ -11,8 +11,10 @@ public:
     ScriptingInitializeEvent()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ScriptingInitializeEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptingInitializeEvent(); // NOLINT
+    MCAPI ~ScriptingInitializeEvent();
+    // NOLINTEND
 };

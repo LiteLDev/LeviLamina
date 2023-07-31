@@ -20,14 +20,16 @@ public:
         TimeAndValue2(TimeAndValue2 const&)            = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??0TimeAndValue2\@BPSTracker\@RakNet\@\@QEAA\@XZ
          */
-        MCAPI TimeAndValue2(); // NOLINT
+        MCAPI TimeAndValue2();
         /**
          * @symbol ??1TimeAndValue2\@BPSTracker\@RakNet\@\@QEAA\@XZ
          */
-        MCAPI ~TimeAndValue2(); // NOLINT
+        MCAPI ~TimeAndValue2();
+        // NOLINTEND
     };
 
 public:
@@ -36,14 +38,16 @@ public:
     BPSTracker(BPSTracker const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0BPSTracker\@RakNet\@\@QEAA\@XZ
      */
-    MCAPI BPSTracker(); // NOLINT
+    MCAPI BPSTracker();
     /**
      * @symbol ??1BPSTracker\@RakNet\@\@QEAA\@XZ
      */
-    MCAPI ~BPSTracker(); // NOLINT
+    MCAPI ~BPSTracker();
+    // NOLINTEND
 };
 
 }; // namespace RakNet

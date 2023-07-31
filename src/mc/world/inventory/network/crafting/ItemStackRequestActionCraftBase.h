@@ -11,18 +11,20 @@ public:
     ItemStackRequestActionCraftBase()                                                  = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTBASE
     /**
      * @symbol ?getCraftAction\@ItemStackRequestActionCraftBase\@\@UEBAPEBV1\@XZ
      */
-    MCVAPI class ItemStackRequestActionCraftBase const* getCraftAction() const; // NOLINT
+    MCVAPI class ItemStackRequestActionCraftBase const* getCraftAction() const;
     /**
      * @symbol ?postLoadItems_DEPRECATEDASKTYLAING\@ItemStackRequestActionCraftBase\@\@UEAAXAEAVBlockPalette\@\@_N\@Z
      */
-    MCVAPI void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette&, bool); // NOLINT
+    MCVAPI void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette&, bool);
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ItemStackRequestActionCraftBase(); // NOLINT
+    MCVAPI ~ItemStackRequestActionCraftBase();
 #endif
+    // NOLINTEND
 };

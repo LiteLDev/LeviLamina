@@ -11,8 +11,10 @@ public:
     ExternalLinkSettings()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ExternalLinkSettings\@\@QEAA\@XZ
      */
-    MCAPI ~ExternalLinkSettings(); // NOLINT
+    MCAPI ~ExternalLinkSettings();
+    // NOLINTEND
 };

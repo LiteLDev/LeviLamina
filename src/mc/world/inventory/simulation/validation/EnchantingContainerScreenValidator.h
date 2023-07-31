@@ -13,13 +13,15 @@ public:
     EnchantingContainerScreenValidator(EnchantingContainerScreenValidator const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @symbol ??0EnchantingContainerScreenValidator\@\@QEAA\@XZ
      */
-    MCAPI EnchantingContainerScreenValidator(); // NOLINT
+    MCAPI EnchantingContainerScreenValidator();
+    // NOLINTEND
 };

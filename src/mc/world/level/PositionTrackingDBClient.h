@@ -20,12 +20,14 @@ public:
     PositionTrackingDBClient()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?findTracker\@PositionTrackingDBClient\@PositionTrackingDB\@\@QEAA?AW4ResultCode\@2\@AEBVPositionTrackingId\@\@PEAPEAVTrackingRecord\@2\@\@Z
      */
     MCAPI enum class PositionTrackingDB::ResultCode
-    findTracker(class PositionTrackingId const&, class PositionTrackingDB::TrackingRecord**); // NOLINT
+    findTracker(class PositionTrackingId const&, class PositionTrackingDB::TrackingRecord**);
+    // NOLINTEND
 };
 
 }; // namespace PositionTrackingDB

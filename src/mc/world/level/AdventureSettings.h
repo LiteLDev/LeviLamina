@@ -10,8 +10,12 @@ public:
     bool mImmutableWorld;
     bool mShowNameTags;
     bool mAutoJump;
+
+public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0AdventureSettings\@\@QEAA\@XZ
      */
-    MCAPI AdventureSettings(); // NOLINT
+    MCAPI AdventureSettings();
+    // NOLINTEND
 };

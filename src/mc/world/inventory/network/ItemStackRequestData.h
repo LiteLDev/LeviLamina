@@ -14,23 +14,25 @@ public:
     ItemStackRequestData()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?tryFindAction\@ItemStackRequestData\@\@QEBAPEBVItemStackRequestAction\@\@W4ItemStackRequestActionType\@\@\@Z
      */
-    MCAPI class ItemStackRequestAction const* tryFindAction(enum class ItemStackRequestActionType) const; // NOLINT
+    MCAPI class ItemStackRequestAction const* tryFindAction(enum class ItemStackRequestActionType) const;
     /**
      * @symbol ?write\@ItemStackRequestData\@\@QEBAXAEAVBinaryStream\@\@\@Z
      */
-    MCAPI void write(class BinaryStream&) const; // NOLINT
+    MCAPI void write(class BinaryStream&) const;
     /**
      * @symbol ??1ItemStackRequestData\@\@QEAA\@XZ
      */
-    MCAPI ~ItemStackRequestData(); // NOLINT
+    MCAPI ~ItemStackRequestData();
     /**
      * @symbol
      * ?read\@ItemStackRequestData\@\@SA?AV?$Result\@V?$unique_ptr\@VItemStackRequestData\@\@U?$default_delete\@VItemStackRequestData\@\@\@std\@\@\@std\@\@Verror_code\@2\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestData>, class std::error_code>
-    read(class ReadOnlyBinaryStream&); // NOLINT
+    MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestData>, std::error_code>
+    read(class ReadOnlyBinaryStream&);
+    // NOLINTEND
 };

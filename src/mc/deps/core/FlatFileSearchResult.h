@@ -13,10 +13,12 @@ public:
     FlatFileSearchResult()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1FlatFileSearchResult\@Core\@\@QEAA\@XZ
      */
-    MCAPI ~FlatFileSearchResult(); // NOLINT
+    MCAPI ~FlatFileSearchResult();
+    // NOLINTEND
 };
 
 }; // namespace Core

@@ -14,32 +14,32 @@ public:
     HelpCommand()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?execute\@HelpCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
     /**
      * @symbol ?setup\@HelpCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
-    MCAPI static void setup(class CommandRegistry&); // NOLINT
+    MCAPI static void setup(class CommandRegistry&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?getCommandHelp\@HelpCommand\@\@AEBAXAEBVCommandRegistry\@\@AEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void
-    getCommandHelp(class CommandRegistry const&, class CommandOrigin const&, class CommandOutput&) const; // NOLINT
+    MCAPI void getCommandHelp(class CommandRegistry const&, class CommandOrigin const&, class CommandOutput&) const;
     /**
      * @symbol ?getHelpPage\@HelpCommand\@\@AEBAXAEBVCommandRegistry\@\@AEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void
-    getHelpPage(class CommandRegistry const&, class CommandOrigin const&, class CommandOutput&) const; // NOLINT
-
-private:
+    MCAPI void getHelpPage(class CommandRegistry const&, class CommandOrigin const&, class CommandOutput&) const;
+    // NOLINTEND
 };

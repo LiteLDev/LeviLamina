@@ -14,18 +14,20 @@ public:
     VariableMaxAutoStepSystem()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@VariableMaxAutoStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_tickEntity\@VariableMaxAutoStepSystem\@\@CAXAEBVStrictEntityContext\@\@V?$Optional\@$$CBUVehicleComponent\@\@\@\@AEBUVariableMaxAutoStepComponent\@\@AEAUMaxAutoStepComponent\@\@AEBUAABBShapeComponent\@\@AEBUStateVectorComponent\@\@AEBUSynchedActorDataComponent\@\@AEBVActorMovementProxyComponent\@\@\@Z
      */
     MCAPI static void
-    _tickEntity(class StrictEntityContext const&, class Optional<struct VehicleComponent const>, struct VariableMaxAutoStepComponent const&, struct MaxAutoStepComponent&, struct AABBShapeComponent const&, struct StateVectorComponent const&, struct SynchedActorDataComponent const&, class ActorMovementProxyComponent const&); // NOLINT
-
-private:
+    _tickEntity(class StrictEntityContext const&, class Optional<struct VehicleComponent const>, struct VariableMaxAutoStepComponent const&, struct MaxAutoStepComponent&, struct AABBShapeComponent const&, struct StateVectorComponent const&, struct SynchedActorDataComponent const&, class ActorMovementProxyComponent const&);
+    // NOLINTEND
 };

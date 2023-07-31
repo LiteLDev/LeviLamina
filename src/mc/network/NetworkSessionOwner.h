@@ -10,12 +10,14 @@ public:
     NetworkSessionOwner(NetworkSessionOwner const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0NetworkSessionOwner\@\@QEAA\@XZ
      */
-    MCAPI NetworkSessionOwner(); // NOLINT
+    MCAPI NetworkSessionOwner();
     /**
      * @symbol ?getTransportLayer\@NetworkSessionOwner\@\@QEBA?AW4TransportLayer\@\@XZ
      */
-    MCAPI enum class TransportLayer getTransportLayer() const; // NOLINT
+    MCAPI enum class TransportLayer getTransportLayer() const;
+    // NOLINTEND
 };

@@ -11,8 +11,10 @@ public:
     RandomSearchAndDigItemChoiceEntry()                                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1RandomSearchAndDigItemChoiceEntry\@\@QEAA\@XZ
      */
-    MCAPI ~RandomSearchAndDigItemChoiceEntry(); // NOLINT
+    MCAPI ~RandomSearchAndDigItemChoiceEntry();
+    // NOLINTEND
 };

@@ -16,22 +16,24 @@ public:
     LootPool()                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?addRandomItems\@LootPool\@\@QEAAXAEAV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
-    MCAPI void addRandomItems(std::vector<class ItemStack>&, class Random&, class LootTableContext&); // NOLINT
+    MCAPI void addRandomItems(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
     /**
      * @symbol ?deserialize\@LootPool\@\@QEAAXAEBVValue\@Json\@\@\@Z
      */
-    MCAPI void deserialize(class Json::Value const&); // NOLINT
+    MCAPI void deserialize(class Json::Value const&);
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?addRandomItem\@LootPool\@\@IEAAXAEAV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
-    MCAPI void addRandomItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&); // NOLINT
-
-protected:
+    MCAPI void addRandomItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
+    // NOLINTEND
 };

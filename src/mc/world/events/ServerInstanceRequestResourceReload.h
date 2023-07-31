@@ -11,8 +11,10 @@ public:
     ServerInstanceRequestResourceReload()                                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ServerInstanceRequestResourceReload\@\@QEAA\@XZ
      */
-    MCAPI ~ServerInstanceRequestResourceReload(); // NOLINT
+    MCAPI ~ServerInstanceRequestResourceReload();
+    // NOLINTEND
 };

@@ -11,8 +11,10 @@ public:
     PlayerFormCloseEvent()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PlayerFormCloseEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerFormCloseEvent(); // NOLINT
+    MCAPI ~PlayerFormCloseEvent();
+    // NOLINTEND
 };

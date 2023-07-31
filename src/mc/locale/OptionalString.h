@@ -11,8 +11,10 @@ public:
     OptionalString()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1OptionalString\@\@QEAA\@XZ
      */
-    MCAPI ~OptionalString(); // NOLINT
+    MCAPI ~OptionalString();
+    // NOLINTEND
 };

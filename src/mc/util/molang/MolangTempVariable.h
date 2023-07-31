@@ -11,12 +11,14 @@ public:
     MolangTempVariable()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0MolangTempVariable\@\@QEAA\@AEBVHashedString\@\@\@Z
      */
-    MCAPI MolangTempVariable(class HashedString const&); // NOLINT
+    MCAPI MolangTempVariable(class HashedString const&);
     /**
      * @symbol ??1MolangTempVariable\@\@QEAA\@XZ
      */
-    MCAPI ~MolangTempVariable(); // NOLINT
+    MCAPI ~MolangTempVariable();
+    // NOLINTEND
 };

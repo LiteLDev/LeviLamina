@@ -11,8 +11,10 @@ public:
     TradeGroup()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1TradeGroup\@\@QEAA\@XZ
      */
-    MCAPI ~TradeGroup(); // NOLINT
+    MCAPI ~TradeGroup();
+    // NOLINTEND
 };

@@ -17,20 +17,22 @@ public:
     MathUtility()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?floatEqualsEpsilon\@MathUtility\@mce\@\@SA_NMMM\@Z
      */
-    MCAPI static bool floatEqualsEpsilon(float, float, float); // NOLINT
+    MCAPI static bool floatEqualsEpsilon(float, float, float);
     /**
      * @symbol
      * ?generateRotationAroundPivotMat\@MathUtility\@mce\@\@SA?AU?$mat\@$03$03M$0A\@\@glm\@\@AEBU34\@AEBU?$vec\@$02M$0A\@\@4\@\@Z
      */
     MCAPI static struct glm::mat<4, 4, float, 0>
-    generateRotationAroundPivotMat(struct glm::mat<4, 4, float, 0> const&, struct glm::vec<3, float, 0> const&); // NOLINT
+    generateRotationAroundPivotMat(struct glm::mat<4, 4, float, 0> const&, struct glm::vec<3, float, 0> const&);
     /**
      * @symbol ?rotateVec2\@MathUtility\@mce\@\@SA?AU?$vec\@$01M$0A\@\@glm\@\@AEBU34\@M\@Z
      */
-    MCAPI static struct glm::vec<2, float, 0> rotateVec2(struct glm::vec<2, float, 0> const&, float); // NOLINT
+    MCAPI static struct glm::vec<2, float, 0> rotateVec2(struct glm::vec<2, float, 0> const&, float);
+    // NOLINTEND
 };
 
 }; // namespace mce

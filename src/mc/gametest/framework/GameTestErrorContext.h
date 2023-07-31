@@ -16,11 +16,13 @@ public:
     GameTestErrorContext()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@GameTestErrorContext\@gametest\@\@SA?AV?$InterfaceBindingBuilder\@UGameTestErrorContext\@gametest\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct gametest::GameTestErrorContext> bind(); // NOLINT
+    MCAPI static class Scripting::InterfaceBindingBuilder<struct gametest::GameTestErrorContext> bind();
+    // NOLINTEND
 };
 
 }; // namespace gametest

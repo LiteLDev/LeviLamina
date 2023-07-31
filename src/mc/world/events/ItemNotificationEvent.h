@@ -11,8 +11,10 @@ public:
     ItemNotificationEvent()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ItemNotificationEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ItemNotificationEvent(); // NOLINT
+    MCAPI ~ItemNotificationEvent();
+    // NOLINTEND
 };

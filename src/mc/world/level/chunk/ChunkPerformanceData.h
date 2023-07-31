@@ -18,14 +18,16 @@ public:
         AtomicMemoryAccumulator(AtomicMemoryAccumulator const&)            = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??0AtomicMemoryAccumulator\@ChunkPerformanceData\@\@QEAA\@XZ
          */
-        MCAPI AtomicMemoryAccumulator(); // NOLINT
+        MCAPI AtomicMemoryAccumulator();
         /**
          * @symbol ?getMemoryAverage\@AtomicMemoryAccumulator\@ChunkPerformanceData\@\@QEBA_KXZ
          */
-        MCAPI unsigned __int64 getMemoryAverage() const; // NOLINT
+        MCAPI uint64_t getMemoryAverage() const;
+        // NOLINTEND
     };
 
 public:
@@ -34,16 +36,18 @@ public:
     ChunkPerformanceData(ChunkPerformanceData const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ChunkPerformanceData\@\@QEAA\@XZ
      */
-    MCAPI ChunkPerformanceData(); // NOLINT
+    MCAPI ChunkPerformanceData();
     /**
      * @symbol ?recordLoadedChunk\@ChunkPerformanceData\@\@QEAAXAEBVLevelChunk\@\@\@Z
      */
-    MCAPI void recordLoadedChunk(class LevelChunk const&); // NOLINT
+    MCAPI void recordLoadedChunk(class LevelChunk const&);
     /**
      * @symbol ?resetAll\@ChunkPerformanceData\@\@QEAAXXZ
      */
-    MCAPI void resetAll(); // NOLINT
+    MCAPI void resetAll();
+    // NOLINTEND
 };

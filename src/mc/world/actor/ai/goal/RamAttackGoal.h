@@ -26,36 +26,38 @@ public:
         Definition(Definition const&)            = delete;
 
     public:
+        // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAMATTACKGOAL_DEFINITION
         /**
          * @symbol __unk_destructor_-1
          */
-        MCVAPI ~Definition(); // NOLINT
+        MCVAPI ~Definition();
 #endif
         /**
          * @symbol ??0Definition\@RamAttackGoal\@\@QEAA\@XZ
          */
-        MCAPI Definition(); // NOLINT
+        MCAPI Definition();
         /**
          * @symbol
          * ?addPreRamSoundEventByName\@Definition\@RamAttackGoal\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
          */
-        MCAPI void addPreRamSoundEventByName(std::string const&); // NOLINT
+        MCAPI void addPreRamSoundEventByName(std::string const&);
         /**
          * @symbol
          * ?addRamImpactSoundEventByName\@Definition\@RamAttackGoal\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
          */
-        MCAPI void addRamImpactSoundEventByName(std::string const&); // NOLINT
+        MCAPI void addRamImpactSoundEventByName(std::string const&);
         /**
          * @symbol ?initialize\@Definition\@RamAttackGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
          */
-        MCAPI void initialize(class EntityContext&, class RamAttackGoal&) const; // NOLINT
+        MCAPI void initialize(class EntityContext&, class RamAttackGoal&) const;
         /**
          * @symbol
          * ?buildSchema\@Definition\@RamAttackGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDefinition\@RamAttackGoal\@\@\@JsonUtil\@\@\@4\@\@Z
          */
         MCAPI static void
-        buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RamAttackGoal::Definition>>&); // NOLINT
+        buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RamAttackGoal::Definition>>&);
+        // NOLINTEND
     };
 
 public:
@@ -65,80 +67,83 @@ public:
     RamAttackGoal()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?canUse\@RamAttackGoal\@\@UEAA_NXZ
      */
-    virtual bool canUse(); // NOLINT
+    virtual bool canUse();
     /**
      * @vftbl 2
      * @symbol ?canContinueToUse\@RamAttackGoal\@\@UEAA_NXZ
      */
-    virtual bool canContinueToUse(); // NOLINT
+    virtual bool canContinueToUse();
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3(); // NOLINT
+    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol ?start\@RamAttackGoal\@\@UEAAXXZ
      */
-    virtual void start(); // NOLINT
+    virtual void start();
     /**
      * @vftbl 5
      * @symbol ?stop\@RamAttackGoal\@\@UEAAXXZ
      */
-    virtual void stop(); // NOLINT
+    virtual void stop();
     /**
      * @vftbl 6
      * @symbol ?tick\@RamAttackGoal\@\@UEAAXXZ
      */
-    virtual void tick(); // NOLINT
+    virtual void tick();
     /**
      * @vftbl 7
      * @symbol
      * ?appendDebugInfo\@RamAttackGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void appendDebugInfo(std::string&) const; // NOLINT
+    virtual void appendDebugInfo(std::string&) const;
     /**
      * @symbol ??0RamAttackGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
-    MCAPI RamAttackGoal(class Mob&); // NOLINT
+    MCAPI RamAttackGoal(class Mob&);
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol ?_initiateRamAttack\@RamAttackGoal\@\@IEAA_NXZ
      */
-    MCAPI bool _initiateRamAttack(); // NOLINT
+    MCAPI bool _initiateRamAttack();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_hasChargePath\@RamAttackGoal\@\@AEAA_NXZ
      */
-    MCAPI bool _hasChargePath(); // NOLINT
+    MCAPI bool _hasChargePath();
     /**
      * @symbol ?_pathablePos\@RamAttackGoal\@\@AEAA_NAEBVBlockSource\@\@VBlockPos\@\@\@Z
      */
-    MCAPI bool _pathablePos(class BlockSource const&, class BlockPos); // NOLINT
+    MCAPI bool _pathablePos(class BlockSource const&, class BlockPos);
     /**
      * @symbol ?_resetCooldown\@RamAttackGoal\@\@AEAAXXZ
      */
-    MCAPI void _resetCooldown(); // NOLINT
+    MCAPI void _resetCooldown();
     /**
      * @symbol ?_tryKnockbackTarget\@RamAttackGoal\@\@AEAAXXZ
      */
-    MCAPI void _tryKnockbackTarget(); // NOLINT
+    MCAPI void _tryKnockbackTarget();
     /**
      * @symbol ?_verifyTargetStillInPositionAndPrepareForRamAttack\@RamAttackGoal\@\@AEAA_NXZ
      */
-    MCAPI bool _verifyTargetStillInPositionAndPrepareForRamAttack(); // NOLINT
-
-protected:
-private:
+    MCAPI bool _verifyTargetStillInPositionAndPrepareForRamAttack();
+    // NOLINTEND
 };

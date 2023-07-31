@@ -21,11 +21,12 @@ public:
     VehicleStateProvider()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
@@ -33,13 +34,14 @@ public:
      */
     virtual bool
     canAddPassenger(std::vector<struct StrictActorIDEntityContextPair> const&, struct RideableComponentData const&, class RideableComponentHelpers::IRideableActor const&, class RideableComponentHelpers::IRideableActor const&)
-        const; // NOLINT
+        const;
     /**
      * @symbol
      * ?isPassenger\@VehicleStateProvider\@RideableComponentHelpers\@\@SA_NAEBV?$vector\@UStrictActorIDEntityContextPair\@\@V?$allocator\@UStrictActorIDEntityContextPair\@\@\@std\@\@\@std\@\@AEBUActorUniqueID\@\@\@Z
      */
     MCAPI static bool
-    isPassenger(std::vector<struct StrictActorIDEntityContextPair> const&, struct ActorUniqueID const&); // NOLINT
+    isPassenger(std::vector<struct StrictActorIDEntityContextPair> const&, struct ActorUniqueID const&);
+    // NOLINTEND
 };
 
 }; // namespace RideableComponentHelpers

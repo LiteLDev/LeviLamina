@@ -36,26 +36,30 @@ public:
     AttachableDecoration()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?placeDecoration\@AttachableDecoration\@TreeHelper\@\@QEBAXAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEBUDirectionMask\@12\@\@Z
      */
     MCAPI void
     placeDecoration(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, struct TreeHelper::AttachableDecoration::DirectionMask const&)
-        const; // NOLINT
+        const;
     /**
      * @symbol ??1AttachableDecoration\@TreeHelper\@\@QEAA\@XZ
      */
-    MCAPI ~AttachableDecoration(); // NOLINT
+    MCAPI ~AttachableDecoration();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_placeMultiDecoration\@AttachableDecoration\@TreeHelper\@\@AEBAXAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEBVBlock\@\@1\@Z
      */
     MCAPI void
     _placeMultiDecoration(class IBlockWorldGenAPI&, class BlockPos const&, class Block const&, class BlockPos const&)
-        const; // NOLINT
+        const;
+    // NOLINTEND
 };
 
 }; // namespace TreeHelper

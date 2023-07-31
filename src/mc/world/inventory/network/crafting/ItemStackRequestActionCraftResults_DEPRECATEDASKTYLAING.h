@@ -15,24 +15,26 @@ public:
         delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONCRAFTRESULTS_DEPRECATEDASKTYLAING
     /**
      * @symbol
      * ?_read\@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING\@\@MEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    MCVAPI class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&); // NOLINT
+    MCVAPI class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
     /**
      * @symbol ?_write\@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING\@\@MEBAXAEAVBinaryStream\@\@\@Z
      */
-    MCVAPI void _write(class BinaryStream&) const; // NOLINT
+    MCVAPI void _write(class BinaryStream&) const;
     /**
      * @symbol
      * ?postLoadItems_DEPRECATEDASKTYLAING\@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING\@\@UEAAXAEAVBlockPalette\@\@_N\@Z
      */
-    MCVAPI void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette&, bool); // NOLINT
+    MCVAPI void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette&, bool);
 #endif
     /**
      * @symbol ??0ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING\@\@QEAA\@XZ
      */
-    MCAPI ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING(); // NOLINT
+    MCAPI ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING();
+    // NOLINTEND
 };

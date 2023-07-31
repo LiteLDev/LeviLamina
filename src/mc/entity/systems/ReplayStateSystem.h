@@ -11,12 +11,14 @@ public:
     ReplayStateSystem()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createAddReplayStateComponentSystem\@ReplayStateSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createAddReplayStateComponentSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createAddReplayStateComponentSystem();
     /**
      * @symbol ?createReplayStateSystem\@ReplayStateSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createReplayStateSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createReplayStateSystem();
+    // NOLINTEND
 };

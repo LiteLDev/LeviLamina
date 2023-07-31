@@ -11,32 +11,34 @@ public:
     CelebrateHuntComponent()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getCelebrateSound\@CelebrateHuntComponent\@\@QEBA?BW4LevelSoundEvent\@\@AEBVMob\@\@\@Z
      */
-    MCAPI enum class LevelSoundEvent const getCelebrateSound(class Mob const&) const; // NOLINT
+    MCAPI enum class LevelSoundEvent const getCelebrateSound(class Mob const&) const;
     /**
      * @symbol ?getCelebrateUntil\@CelebrateHuntComponent\@\@QEBA?BUTick\@\@XZ
      */
-    MCAPI struct Tick const getCelebrateUntil() const; // NOLINT
+    MCAPI struct Tick const getCelebrateUntil() const;
     /**
      * @symbol ?getNextSoundEventTick\@CelebrateHuntComponent\@\@QEBA?BUTick\@\@XZ
      */
-    MCAPI struct Tick const getNextSoundEventTick() const; // NOLINT
+    MCAPI struct Tick const getNextSoundEventTick() const;
     /**
      * @symbol ?isCelebrating\@CelebrateHuntComponent\@\@QEBA_NXZ
      */
-    MCAPI bool isCelebrating() const; // NOLINT
+    MCAPI bool isCelebrating() const;
     /**
      * @symbol ?setNextSoundEventTick\@CelebrateHuntComponent\@\@QEAAXAEBVMob\@\@\@Z
      */
-    MCAPI void setNextSoundEventTick(class Mob const&); // NOLINT
+    MCAPI void setNextSoundEventTick(class Mob const&);
     /**
      * @symbol ?startCelebrating\@CelebrateHuntComponent\@\@QEAAXAEBUTick\@\@\@Z
      */
-    MCAPI void startCelebrating(struct Tick const&); // NOLINT
+    MCAPI void startCelebrating(struct Tick const&);
     /**
      * @symbol ?stopCelebrating\@CelebrateHuntComponent\@\@QEAAXXZ
      */
-    MCAPI void stopCelebrating(); // NOLINT
+    MCAPI void stopCelebrating();
+    // NOLINTEND
 };

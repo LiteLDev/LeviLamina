@@ -14,19 +14,21 @@ public:
     AbsorptionMobEffect()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?applyEffects\@AbsorptionMobEffect\@\@UEBAXPEAVActor\@\@HH\@Z
      */
-    virtual void applyEffects(class Actor*, int, int) const; // NOLINT
+    virtual void applyEffects(class Actor*, int, int) const;
     /**
      * @vftbl 2
      * @symbol ?removeEffects\@AbsorptionMobEffect\@\@UEAAXPEAVActor\@\@\@Z
      */
-    virtual void removeEffects(class Actor*); // NOLINT
+    virtual void removeEffects(class Actor*);
+    // NOLINTEND
 };

@@ -13,10 +13,12 @@ public:
     BitSet()                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?npos\@BitSet\@SFAT\@\@2_KB
      */
-    MCAPI static unsigned __int64 const npos; // NOLINT
+    MCAPI static uint64_t const npos;
+    // NOLINTEND
 };
 
 }; // namespace SFAT

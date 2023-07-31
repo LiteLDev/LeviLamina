@@ -11,8 +11,10 @@ public:
     KnockBackEvent()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1KnockBackEvent\@\@QEAA\@XZ
      */
-    MCAPI ~KnockBackEvent(); // NOLINT
+    MCAPI ~KnockBackEvent();
+    // NOLINTEND
 };

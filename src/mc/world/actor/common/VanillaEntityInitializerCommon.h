@@ -11,14 +11,16 @@ public:
     VanillaEntityInitializerCommon()                                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?initActorComponents\@VanillaEntityInitializerCommon\@\@SAXW4EntityHost\@\@V?$unique_ptr\@VActor\@\@U?$default_delete\@VActor\@\@\@std\@\@\@std\@\@AEAVEntityContext\@\@AEBV5\@\@Z
      */
     MCAPI static void
-    initActorComponents(enum class EntityHost, std::unique_ptr<class Actor>, class EntityContext&, class EntityContext const&); // NOLINT
+    initActorComponents(enum class EntityHost, std::unique_ptr<class Actor>, class EntityContext&, class EntityContext const&);
     /**
      * @symbol ?initLevelEntityDependentComponents\@VanillaEntityInitializerCommon\@\@SAXAEAVEntityContext\@\@AEBV2\@\@Z
      */
-    MCAPI static void initLevelEntityDependentComponents(class EntityContext&, class EntityContext const&); // NOLINT
+    MCAPI static void initLevelEntityDependentComponents(class EntityContext&, class EntityContext const&);
+    // NOLINTEND
 };

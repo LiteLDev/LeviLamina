@@ -12,14 +12,16 @@ public:
     UnzipSettings(UnzipSettings const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0UnzipSettings\@ZipUtils\@Core\@\@QEAA\@XZ
      */
-    MCAPI UnzipSettings(); // NOLINT
+    MCAPI UnzipSettings();
     /**
      * @symbol ??1UnzipSettings\@ZipUtils\@Core\@\@QEAA\@XZ
      */
-    MCAPI ~UnzipSettings(); // NOLINT
+    MCAPI ~UnzipSettings();
+    // NOLINTEND
 };
 
 }; // namespace Core::ZipUtils

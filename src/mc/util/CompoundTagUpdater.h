@@ -11,12 +11,14 @@ public:
     CompoundTagUpdater()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?update\@CompoundTagUpdater\@\@QEBA_NAEAVCompoundTag\@\@\@Z
      */
-    MCAPI bool update(class CompoundTag&) const; // NOLINT
+    MCAPI bool update(class CompoundTag&) const;
     /**
      * @symbol ??1CompoundTagUpdater\@\@QEAA\@XZ
      */
-    MCAPI ~CompoundTagUpdater(); // NOLINT
+    MCAPI ~CompoundTagUpdater();
+    // NOLINTEND
 };

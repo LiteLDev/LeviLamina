@@ -14,78 +14,78 @@ public:
     MolangEvalParams()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getActorFromArg\@MolangEvalParams\@\@QEBAPEAVActor\@\@AEBUMolangScriptArg\@\@\@Z
      */
-    MCAPI class Actor* getActorFromArg(struct MolangScriptArg const&) const; // NOLINT
+    MCAPI class Actor* getActorFromArg(struct MolangScriptArg const&) const;
     /**
      * @symbol ?getActorPtrFromPushedArray\@MolangEvalParams\@\@QEBAPEAVActor\@\@_K0AEA_N\@Z
      */
-    MCAPI class Actor* getActorPtrFromPushedArray(unsigned __int64, unsigned __int64, bool&) const; // NOLINT
+    MCAPI class Actor* getActorPtrFromPushedArray(uint64_t, uint64_t, bool&) const;
     /**
      * @symbol ?popActor\@MolangEvalParams\@\@QEAAPEAVActor\@\@XZ
      */
-    MCAPI class Actor* popActor(); // NOLINT
+    MCAPI class Actor* popActor();
     /**
      * @symbol ?popFloat\@MolangEvalParams\@\@QEAAMXZ
      */
-    MCAPI float popFloat(); // NOLINT
+    MCAPI float popFloat();
     /**
      * @symbol ?popHash\@MolangEvalParams\@\@QEAA_KXZ
      */
-    MCAPI unsigned __int64 popHash(); // NOLINT
+    MCAPI uint64_t popHash();
     /**
      * @symbol ?popMissingVariableOrActorAddress\@MolangEvalParams\@\@QEAA_KW4MolangVariableIndex\@\@\@Z
      */
-    MCAPI unsigned __int64 popMissingVariableOrActorAddress(enum class MolangVariableIndex); // NOLINT
+    MCAPI uint64_t popMissingVariableOrActorAddress(enum class MolangVariableIndex);
     /**
      * @symbol ?popMissingVariableOrActorAddress\@MolangEvalParams\@\@QEAA_KAEBVHashedString\@\@\@Z
      */
-    MCAPI unsigned __int64 popMissingVariableOrActorAddress(class HashedString const&); // NOLINT
+    MCAPI uint64_t popMissingVariableOrActorAddress(class HashedString const&);
     /**
      * @symbol ?popPublicAccessMode\@MolangEvalParams\@\@QEAA_NXZ
      */
-    MCAPI bool popPublicAccessMode(); // NOLINT
+    MCAPI bool popPublicAccessMode();
     /**
      * @symbol ?popRenderParamsCopyAndPtr\@MolangEvalParams\@\@QEAAXXZ
      */
-    MCAPI void popRenderParamsCopyAndPtr(); // NOLINT
+    MCAPI void popRenderParamsCopyAndPtr();
     /**
      * @symbol ?pushLoopScope\@MolangEvalParams\@\@QEAAX_K0\@Z
      */
-    MCAPI void pushLoopScope(unsigned __int64, unsigned __int64); // NOLINT
+    MCAPI void pushLoopScope(uint64_t, uint64_t);
     /**
      * @symbol ?pushRenderParams\@MolangEvalParams\@\@QEAAXAEBVRenderParams\@\@\@Z
      */
-    MCAPI void pushRenderParams(class RenderParams const&); // NOLINT
+    MCAPI void pushRenderParams(class RenderParams const&);
     /**
      * @symbol ?pushReturnValue\@MolangEvalParams\@\@QEAAXXZ
      */
-    MCAPI void pushReturnValue(); // NOLINT
+    MCAPI void pushReturnValue();
     /**
      * @symbol ?pushValue\@MolangEvalParams\@\@QEAAXM\@Z
      */
-    MCAPI void pushValue(float); // NOLINT
+    MCAPI void pushValue(float);
     /**
      * @symbol ?renderParams\@MolangEvalParams\@\@QEAAAEAVRenderParams\@\@XZ
      */
-    MCAPI class RenderParams& renderParams(); // NOLINT
+    MCAPI class RenderParams& renderParams();
     /**
      * @symbol ?renderParams\@MolangEvalParams\@\@QEBAAEBVRenderParams\@\@XZ
      */
-    MCAPI class RenderParams const& renderParams() const; // NOLINT
+    MCAPI class RenderParams const& renderParams() const;
     /**
      * @symbol ?restoreAndPopStackState\@MolangEvalParams\@\@QEAAXXZ
      */
-    MCAPI void restoreAndPopStackState(); // NOLINT
+    MCAPI void restoreAndPopStackState();
     /**
      * @symbol ??1MolangEvalParams\@\@QEAA\@XZ
      */
-    MCAPI ~MolangEvalParams(); // NOLINT
+    MCAPI ~MolangEvalParams();
     /**
      * @symbol ?getLocalThreadEvalParams\@MolangEvalParams\@\@SAAEAU1\@XZ
      */
-    MCAPI static struct MolangEvalParams& getLocalThreadEvalParams(); // NOLINT
-
-    // private:
+    MCAPI static struct MolangEvalParams& getLocalThreadEvalParams();
+    // NOLINTEND
 };

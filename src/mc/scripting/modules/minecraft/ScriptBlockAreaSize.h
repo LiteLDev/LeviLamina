@@ -16,16 +16,17 @@ public:
     ScriptBlockAreaSize()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??8ScriptBlockAreaSize\@ScriptModuleMinecraft\@\@QEBA_NAEBV01\@\@Z
      */
-    MCAPI bool operator==(class ScriptModuleMinecraft::ScriptBlockAreaSize const&) const; // NOLINT
+    MCAPI bool operator==(class ScriptModuleMinecraft::ScriptBlockAreaSize const&) const;
     /**
      * @symbol
      * ?bind\@ScriptBlockAreaSize\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockAreaSize\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockAreaSize>
-    bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockAreaSize> bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

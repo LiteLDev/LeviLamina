@@ -11,14 +11,16 @@ public:
     ITickingArea()                               = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITICKINGAREA
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ITickingArea(); // NOLINT
+    MCVAPI ~ITickingArea();
 #endif
     /**
      * @symbol ?serialize\@ITickingArea\@\@QEBA?AVCompoundTag\@\@XZ
      */
-    MCAPI class CompoundTag serialize() const; // NOLINT
+    MCAPI class CompoundTag serialize() const;
+    // NOLINTEND
 };

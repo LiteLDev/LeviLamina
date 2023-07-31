@@ -11,8 +11,10 @@ public:
     SetActorLinkPacketSystem()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSetActorLinkPacketSystem\@SetActorLinkPacketSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSetActorLinkPacketSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSetActorLinkPacketSystem();
+    // NOLINTEND
 };

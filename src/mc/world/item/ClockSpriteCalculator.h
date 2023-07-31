@@ -10,16 +10,18 @@ public:
     ClockSpriteCalculator(ClockSpriteCalculator const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ClockSpriteCalculator\@\@QEAA\@XZ
      */
-    MCAPI ClockSpriteCalculator(); // NOLINT
+    MCAPI ClockSpriteCalculator();
     /**
      * @symbol ?update\@ClockSpriteCalculator\@\@QEAAHAEBVBlockSource\@\@AEBVVec3\@\@_N\@Z
      */
-    MCAPI int update(class BlockSource const&, class Vec3 const&, bool); // NOLINT
+    MCAPI int update(class BlockSource const&, class Vec3 const&, bool);
     /**
      * @symbol ?update\@ClockSpriteCalculator\@\@QEAAHAEAVActor\@\@_N\@Z
      */
-    MCAPI int update(class Actor&, bool); // NOLINT
+    MCAPI int update(class Actor&, bool);
+    // NOLINTEND
 };

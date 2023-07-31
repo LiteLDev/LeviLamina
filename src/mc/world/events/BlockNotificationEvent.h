@@ -11,8 +11,10 @@ public:
     BlockNotificationEvent()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1BlockNotificationEvent\@\@QEAA\@XZ
      */
-    MCAPI ~BlockNotificationEvent(); // NOLINT
+    MCAPI ~BlockNotificationEvent();
+    // NOLINTEND
 };

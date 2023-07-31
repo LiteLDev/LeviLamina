@@ -11,12 +11,14 @@ public:
     TriggerJumpSystem()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createCleanupSystem\@TriggerJumpSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createCleanupSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createCleanupSystem();
     /**
      * @symbol ?createTriggerJumpSystem\@TriggerJumpSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createTriggerJumpSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createTriggerJumpSystem();
+    // NOLINTEND
 };

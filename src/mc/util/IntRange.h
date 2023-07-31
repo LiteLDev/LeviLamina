@@ -16,32 +16,34 @@ public:
     IntRange()                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0IntRange\@\@QEAA\@HH\@Z
      */
-    MCAPI IntRange(int, int); // NOLINT
+    MCAPI IntRange(int, int);
     /**
      * @symbol ??0IntRange\@\@QEAA\@H\@Z
      */
-    MCAPI IntRange(int); // NOLINT
+    MCAPI IntRange(int);
     /**
      * @symbol ?getValue\@IntRange\@\@QEBAHAEAVRandom\@\@\@Z
      */
-    MCAPI int getValue(class Random&) const; // NOLINT
+    MCAPI int getValue(class Random&) const;
     /**
      * @symbol ?getValueInclusive\@IntRange\@\@QEBAHAEAVRandom\@\@\@Z
      */
-    MCAPI int getValueInclusive(class Random&) const; // NOLINT
+    MCAPI int getValueInclusive(class Random&) const;
     /**
      * @symbol ?isInRangeInclusive\@IntRange\@\@QEBA_NH\@Z
      */
-    MCAPI bool isInRangeInclusive(int) const; // NOLINT
+    MCAPI bool isInRangeInclusive(int) const;
     /**
      * @symbol ?parseJson\@IntRange\@\@QEAA_NVValue\@Json\@\@HH\@Z
      */
-    MCAPI bool parseJson(class Json::Value, int, int); // NOLINT
+    MCAPI bool parseJson(class Json::Value, int, int);
     /**
      * @symbol ?ZERO\@IntRange\@\@2U1\@B
      */
-    MCAPI static struct IntRange const ZERO; // NOLINT
+    MCAPI static struct IntRange const ZERO;
+    // NOLINTEND
 };

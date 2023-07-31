@@ -6,11 +6,6 @@ namespace Bedrock::PubSub {
 
 class DeferredSubscriptionHub {
 public:
-    // DeferredSubscriptionHub inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // DeferredSubscriptionHub inner types define
     enum class HubType {};
 
@@ -21,11 +16,13 @@ public:
     DeferredSubscriptionHub()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?makePriorityHub\@DeferredSubscriptionHub\@PubSub\@Bedrock\@\@SA?AV?$unique_ptr\@VDeferredSubscriptionHub\@PubSub\@Bedrock\@\@U?$default_delete\@VDeferredSubscriptionHub\@PubSub\@Bedrock\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI static std::unique_ptr<class Bedrock::PubSub::DeferredSubscriptionHub> makePriorityHub(); // NOLINT
+    MCAPI static std::unique_ptr<class Bedrock::PubSub::DeferredSubscriptionHub> makePriorityHub();
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::PubSub

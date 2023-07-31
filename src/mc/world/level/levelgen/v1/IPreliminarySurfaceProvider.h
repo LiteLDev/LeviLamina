@@ -11,10 +11,12 @@ public:
     IPreliminarySurfaceProvider()                                              = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IPRELIMINARYSURFACEPROVIDER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IPreliminarySurfaceProvider(); // NOLINT
+    MCVAPI ~IPreliminarySurfaceProvider();
 #endif
+    // NOLINTEND
 };

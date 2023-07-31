@@ -11,8 +11,10 @@ public:
     NetworkPacketEventCoordinator()                                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?sendPacketReceivedFrom\@NetworkPacketEventCoordinator\@\@QEAAXAEBVPacketHeader\@\@AEBVPacket\@\@\@Z
      */
-    MCAPI void sendPacketReceivedFrom(class PacketHeader const&, class Packet const&); // NOLINT
+    MCAPI void sendPacketReceivedFrom(class PacketHeader const&, class Packet const&);
+    // NOLINTEND
 };

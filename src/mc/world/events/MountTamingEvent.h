@@ -11,8 +11,10 @@ public:
     MountTamingEvent()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1MountTamingEvent\@\@QEAA\@XZ
      */
-    MCAPI ~MountTamingEvent(); // NOLINT
+    MCAPI ~MountTamingEvent();
+    // NOLINTEND
 };

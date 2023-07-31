@@ -11,13 +11,15 @@ public:
     SoulSpeedAttributeSystem()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_tryProcessSoulSpeed\@SoulSpeedAttributeSystem\@\@SAXAEAVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
      */
-    MCAPI static void _tryProcessSoulSpeed(class StrictEntityContext&, class ActorOwnerComponent&); // NOLINT
+    MCAPI static void _tryProcessSoulSpeed(class StrictEntityContext&, class ActorOwnerComponent&);
     /**
      * @symbol ?createSystem\@SoulSpeedAttributeSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 };

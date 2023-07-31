@@ -11,8 +11,10 @@ public:
     BlockRandomTickEvent()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1BlockRandomTickEvent\@\@QEAA\@XZ
      */
-    MCAPI ~BlockRandomTickEvent(); // NOLINT
+    MCAPI ~BlockRandomTickEvent();
+    // NOLINTEND
 };

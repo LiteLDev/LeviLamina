@@ -13,10 +13,12 @@ public:
     VersionInfo()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1VersionInfo\@MolangVersionMap\@\@QEAA\@XZ
      */
-    MCAPI ~VersionInfo(); // NOLINT
+    MCAPI ~VersionInfo();
+    // NOLINTEND
 };
 
 }; // namespace MolangVersionMap

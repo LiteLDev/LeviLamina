@@ -14,18 +14,20 @@ public:
     ItemUseMethodMap()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?getItemUseMethodName\@ItemUseMethodMap\@\@SAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ItemUseMethod\@\@\@Z
      */
-    MCAPI static std::string const& getItemUseMethodName(enum class ItemUseMethod); // NOLINT
-
-    // private:
+    MCAPI static std::string const& getItemUseMethodName(enum class ItemUseMethod);
+    // NOLINTEND
 
 private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?mMap\@ItemUseMethodMap\@\@0V?$BidirectionalUnorderedMap\@W4ItemUseMethod\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@\@B
      */
-    MCAPI static class BidirectionalUnorderedMap<enum class ItemUseMethod, std::string> const mMap; // NOLINT
+    MCAPI static class BidirectionalUnorderedMap<enum class ItemUseMethod, std::string> const mMap;
+    // NOLINTEND
 };

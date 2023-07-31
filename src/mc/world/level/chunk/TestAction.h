@@ -14,19 +14,21 @@ public:
     TestAction()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?execute\@TestAction\@\@UEAAXAEAVServerLevel\@\@AEAVDimension\@\@\@Z
      */
-    virtual void execute(class ServerLevel&, class Dimension&); // NOLINT
+    virtual void execute(class ServerLevel&, class Dimension&);
     /**
      * @vftbl 3
      * @symbol ??8TestAction\@\@UEBA_NAEAVIRequestAction\@\@\@Z
      */
-    virtual bool operator==(class IRequestAction&) const; // NOLINT
+    virtual bool operator==(class IRequestAction&) const;
+    // NOLINTEND
 };

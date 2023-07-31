@@ -11,8 +11,10 @@ public:
     GameEventPair()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1GameEventPair\@\@QEAA\@XZ
      */
-    MCAPI ~GameEventPair(); // NOLINT
+    MCAPI ~GameEventPair();
+    // NOLINTEND
 };

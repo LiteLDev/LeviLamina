@@ -11,13 +11,15 @@ public:
     ServerPlayerSendPlayerOnGroundSystem()                                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_sendPlayerOnGround\@ServerPlayerSendPlayerOnGroundSystem\@\@SAXAEAVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
      */
-    MCAPI static void _sendPlayerOnGround(class StrictEntityContext&, class ActorOwnerComponent&); // NOLINT
+    MCAPI static void _sendPlayerOnGround(class StrictEntityContext&, class ActorOwnerComponent&);
     /**
      * @symbol ?createSystem\@ServerPlayerSendPlayerOnGroundSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 };

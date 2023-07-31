@@ -30,26 +30,27 @@ public:
     SystemImpl()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1(); // NOLINT
+    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2(); // NOLINT
+    virtual void __unk_vfn_2();
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3(); // NOLINT
+    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol
@@ -62,22 +63,23 @@ public:
                       struct AddRemove<>,
                       struct GlobalRead<>,
                       struct GlobalWrite<>,
-                      struct EntityFactoryT<>>&); // NOLINT
+                      struct EntityFactoryT<>>&);
     /**
      * @vftbl 5
      * @symbol
      * ?singleTick\@SystemImpl\@ServerStandInCauldronSystem\@\@MEAAXAEAV?$StrictExecutionContext\@U?$Filter\@UUpdateWaterStateRequestComponent\@\@\@\@U?$Read\@VActorOwnerComponent\@\@\@\@U?$Write\@$$V\@\@U?$AddRemove\@$$V\@\@U?$GlobalRead\@$$V\@\@U?$GlobalWrite\@$$V\@\@U?$EntityFactoryT\@$$V\@\@\@\@AEAVStrictEntityContext\@\@\@Z
      */
     virtual void
-    singleTick(class StrictExecutionContext<struct Filter<struct UpdateWaterStateRequestComponent>, struct Read<class ActorOwnerComponent>, struct Write<>, struct AddRemove<>, struct GlobalRead<>, struct GlobalWrite<>, struct EntityFactoryT<>>&, class StrictEntityContext&); // NOLINT
+    singleTick(class StrictExecutionContext<struct Filter<struct UpdateWaterStateRequestComponent>, struct Read<class ActorOwnerComponent>, struct Write<>, struct AddRemove<>, struct GlobalRead<>, struct GlobalWrite<>, struct EntityFactoryT<>>&, class StrictEntityContext&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_checkInsideCauldron\@SystemImpl\@ServerStandInCauldronSystem\@\@CAXAEAVActorOwnerComponent\@\@\@Z
      */
-    MCAPI static void _checkInsideCauldron(class ActorOwnerComponent&); // NOLINT
-
-private:
+    MCAPI static void _checkInsideCauldron(class ActorOwnerComponent&);
+    // NOLINTEND
 };
 
 }; // namespace ServerStandInCauldronSystem

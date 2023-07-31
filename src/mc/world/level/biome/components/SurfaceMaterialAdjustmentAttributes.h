@@ -11,6 +11,7 @@ public:
     SurfaceMaterialAdjustmentAttributes()                                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?evaluateAdjustments\@SurfaceMaterialAdjustmentAttributes\@\@QEBA?AUSurfaceMaterialAdjustmentEvaluated\@\@AEAVRenderParams\@\@V?$not_null\@PEAVPerlinSimplexNoise\@\@\@gsl\@\@AEBVBlockPos\@\@HH\@Z
@@ -21,11 +22,11 @@ public:
         class BlockPos const&,
         int,
         int
-    ) const; // NOLINT
+    ) const;
     /**
      * @symbol ??4SurfaceMaterialAdjustmentAttributes\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct SurfaceMaterialAdjustmentAttributes& operator=(struct SurfaceMaterialAdjustmentAttributes&&); // NOLINT
+    MCAPI struct SurfaceMaterialAdjustmentAttributes& operator=(struct SurfaceMaterialAdjustmentAttributes&&);
     /**
      * @symbol
      * ?parseExpressionNodeFloat\@SurfaceMaterialAdjustmentAttributes\@\@QEAAXAEBVCompoundTag\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1AEAVExpressionNode\@\@M\@Z
@@ -36,5 +37,6 @@ public:
         std::string const&,
         class ExpressionNode&,
         float
-    ); // NOLINT
+    );
+    // NOLINTEND
 };

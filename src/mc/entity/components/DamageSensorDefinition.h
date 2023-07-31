@@ -19,23 +19,25 @@ public:
     DamageSensorDefinition()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?addDamageSensorTrigger\@DamageSensorDefinition\@\@QEAAXAEBUDamageSensorTrigger\@\@\@Z
      */
-    MCAPI void addDamageSensorTrigger(struct DamageSensorTrigger const&); // NOLINT
+    MCAPI void addDamageSensorTrigger(struct DamageSensorTrigger const&);
     /**
      * @symbol ?initialize\@DamageSensorDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVDamageSensorComponent\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&, class DamageSensorComponent&) const; // NOLINT
+    MCAPI void initialize(class EntityContext&, class DamageSensorComponent&) const;
     /**
      * @symbol ?uninitialize\@DamageSensorDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVDamageSensorComponent\@\@\@Z
      */
-    MCAPI void uninitialize(class EntityContext&, class DamageSensorComponent&) const; // NOLINT
+    MCAPI void uninitialize(class EntityContext&, class DamageSensorComponent&) const;
     /**
      * @symbol
      * ?buildSchema\@DamageSensorDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDamageSensorDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      class DamageSensorDefinition>>&); // NOLINT
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DamageSensorDefinition>>&);
+    // NOLINTEND
 };

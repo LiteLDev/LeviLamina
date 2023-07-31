@@ -24,46 +24,47 @@ public:
     ScriptMobEffectInstance()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getAmplifier\@ScriptMobEffectInstance\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getAmplifier() const; // NOLINT
+    MCAPI class Scripting::Result<int> getAmplifier() const;
     /**
      * @symbol
      * ?getDisplayName\@ScriptMobEffectInstance\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<std::string> getDisplayName() const; // NOLINT
+    MCAPI class Scripting::Result<std::string> getDisplayName() const;
     /**
      * @symbol
      * ?getDisplayName_010\@ScriptMobEffectInstance\@ScriptModuleMinecraft\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getDisplayName_010() const; // NOLINT
+    MCAPI std::string getDisplayName_010() const;
     /**
      * @symbol ?getDuration\@ScriptMobEffectInstance\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<int> getDuration() const; // NOLINT
+    MCAPI class Scripting::Result<int> getDuration() const;
     /**
      * @symbol
      * ?getTypeId\@ScriptMobEffectInstance\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<std::string> getTypeId() const; // NOLINT
+    MCAPI class Scripting::Result<std::string> getTypeId() const;
     /**
      * @symbol ??4ScriptMobEffectInstance\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraft::ScriptMobEffectInstance&
-    operator=(class ScriptModuleMinecraft::ScriptMobEffectInstance&&); // NOLINT
+    operator=(class ScriptModuleMinecraft::ScriptMobEffectInstance&&);
     /**
      * @symbol
      * ?bind\@ScriptMobEffectInstance\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptMobEffectInstance\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMobEffectInstance>
-    bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMobEffectInstance> bind();
     /**
      * @symbol
      * ?getHandle\@ScriptMobEffectInstance\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptMobEffectInstance\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBVActor\@\@IAEBVWeakLifetimeScope\@4\@\@Z
      */
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptMobEffectInstance>
-    getHandle(class Actor const&, unsigned int, class Scripting::WeakLifetimeScope const&); // NOLINT
+    getHandle(class Actor const&, unsigned int, class Scripting::WeakLifetimeScope const&);
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

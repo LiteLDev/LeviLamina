@@ -19,24 +19,24 @@ public:
     ResultLogger()                               = delete;
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_logger\@ResultLogger\@Bedrock\@\@CAAEAV?$function\@$$A6AXV?$optional\@W4LogLevel\@Bedrock\@\@\@std\@\@V?$optional\@I\@2\@AEBVerror_code\@2\@AEBUCallStack\@Bedrock\@\@\@Z\@std\@\@XZ
      */
-    MCAPI static class std::function<
-        void(class std::optional<enum class Bedrock::LogLevel>, class std::optional<unsigned int>, class std::error_code const&, struct Bedrock::CallStack const&)>&
-    _logger(); // NOLINT
+    MCAPI static std::function<
+        void(std::optional<enum class Bedrock::LogLevel>, std::optional<unsigned int>, std::error_code const&, struct Bedrock::CallStack const&)>&
+    _logger();
     /**
      * @symbol
      * ?log\@ResultLogger\@Bedrock\@\@CAXV?$optional\@W4LogLevel\@Bedrock\@\@\@std\@\@V?$optional\@I\@4\@AEBVerror_code\@4\@AEBUCallStack\@2\@\@Z
      */
     MCAPI static void
-    log(class std::optional<enum class Bedrock::LogLevel>,
-        class std::optional<unsigned int>,
-        class std::error_code const&,
-        struct Bedrock::CallStack const&); // NOLINT
-
-private:
+    log(std::optional<enum class Bedrock::LogLevel>,
+        std::optional<unsigned int>,
+        std::error_code const&,
+        struct Bedrock::CallStack const&);
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

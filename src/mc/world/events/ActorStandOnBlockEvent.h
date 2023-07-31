@@ -11,8 +11,10 @@ public:
     ActorStandOnBlockEvent()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ActorStandOnBlockEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorStandOnBlockEvent(); // NOLINT
+    MCAPI ~ActorStandOnBlockEvent();
+    // NOLINTEND
 };

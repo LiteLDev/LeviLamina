@@ -14,10 +14,11 @@ public:
     PlayerBlockActionData()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?read\@PlayerBlockActionData\@\@SA?AV?$Result\@UPlayerBlockActionData\@\@Verror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    MCAPI static class Bedrock::Result<struct PlayerBlockActionData, class std::error_code>
-    read(class ReadOnlyBinaryStream&); // NOLINT
+    MCAPI static class Bedrock::Result<struct PlayerBlockActionData, std::error_code> read(class ReadOnlyBinaryStream&);
+    // NOLINTEND
 };

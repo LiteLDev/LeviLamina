@@ -11,23 +11,25 @@ public:
     Description()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol ?getJsonName\@BehaviorTreeDescription\@\@UEBAPEBDXZ
      */
-    virtual char const* getJsonName() const = 0; // NOLINT
+    virtual char const* getJsonName() const = 0;
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1(); // NOLINT
+    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol ?deserializeData\@Description\@\@UEAAXUDeserializeDataParams\@\@\@Z
      */
-    virtual void deserializeData(struct DeserializeDataParams); // NOLINT
+    virtual void deserializeData(struct DeserializeDataParams);
     /**
      * @symbol ?parseDescription\@Description\@\@QEAAPEAU1\@UDeserializeDataParams\@\@\@Z
      */
-    MCAPI struct Description* parseDescription(struct DeserializeDataParams); // NOLINT
+    MCAPI struct Description* parseDescription(struct DeserializeDataParams);
+    // NOLINTEND
 };

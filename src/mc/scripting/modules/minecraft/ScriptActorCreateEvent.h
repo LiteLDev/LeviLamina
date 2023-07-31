@@ -16,16 +16,17 @@ public:
     ScriptActorCreateEvent()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ScriptActorCreateEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptActorCreateEvent(); // NOLINT
+    MCAPI ~ScriptActorCreateEvent();
     /**
      * @symbol
      * ?bindV010\@ScriptActorCreateEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptActorCreateEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorCreateEvent>
-    bindV010(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorCreateEvent> bindV010();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

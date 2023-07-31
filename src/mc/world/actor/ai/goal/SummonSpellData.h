@@ -9,16 +9,18 @@ public:
     SummonSpellData() = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0SummonSpellData\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI SummonSpellData(struct SummonSpellData const&); // NOLINT
+    MCAPI SummonSpellData(struct SummonSpellData const&);
     /**
      * @symbol ??4SummonSpellData\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
-    MCAPI struct SummonSpellData& operator=(struct SummonSpellData const&); // NOLINT
+    MCAPI struct SummonSpellData& operator=(struct SummonSpellData const&);
     /**
      * @symbol ??1SummonSpellData\@\@QEAA\@XZ
      */
-    MCAPI ~SummonSpellData(); // NOLINT
+    MCAPI ~SummonSpellData();
+    // NOLINTEND
 };

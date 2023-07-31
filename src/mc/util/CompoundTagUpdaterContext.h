@@ -10,30 +10,32 @@ public:
     CompoundTagUpdaterContext(CompoundTagUpdaterContext const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0CompoundTagUpdaterContext\@\@QEAA\@XZ
      */
-    MCAPI CompoundTagUpdaterContext(); // NOLINT
+    MCAPI CompoundTagUpdaterContext();
     /**
      * @symbol ?addUpdater\@CompoundTagUpdaterContext\@\@QEAA?AVCompoundTagUpdaterBuilder\@\@EEE\@Z
      */
-    MCAPI class CompoundTagUpdaterBuilder addUpdater(unsigned char, unsigned char, unsigned char); // NOLINT
+    MCAPI class CompoundTagUpdaterBuilder addUpdater(unsigned char, unsigned char, unsigned char);
     /**
      * @symbol ?sortUpdaters\@CompoundTagUpdaterContext\@\@QEAAXXZ
      */
-    MCAPI void sortUpdaters(); // NOLINT
+    MCAPI void sortUpdaters();
     /**
      * @symbol ?update\@CompoundTagUpdaterContext\@\@QEAA?AW4CompoundTagUpdaterResult\@\@AEAVCompoundTag\@\@I\@Z
      */
-    MCAPI enum class CompoundTagUpdaterResult update(class CompoundTag&, unsigned int); // NOLINT
+    MCAPI enum class CompoundTagUpdaterResult update(class CompoundTag&, unsigned int);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?comparisonPredicate\@CompoundTagUpdaterContext\@\@CA_NAEBV?$unique_ptr\@VCompoundTagUpdater\@\@U?$default_delete\@VCompoundTagUpdater\@\@\@std\@\@\@std\@\@0\@Z
      */
     MCAPI static bool
-    comparisonPredicate(std::unique_ptr<class CompoundTagUpdater> const&, std::unique_ptr<class CompoundTagUpdater> const&); // NOLINT
-
-private:
+    comparisonPredicate(std::unique_ptr<class CompoundTagUpdater> const&, std::unique_ptr<class CompoundTagUpdater> const&);
+    // NOLINTEND
 };

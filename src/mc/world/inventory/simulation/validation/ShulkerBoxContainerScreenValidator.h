@@ -13,13 +13,15 @@ public:
     ShulkerBoxContainerScreenValidator(ShulkerBoxContainerScreenValidator const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @symbol ??0ShulkerBoxContainerScreenValidator\@\@QEAA\@XZ
      */
-    MCAPI ShulkerBoxContainerScreenValidator(); // NOLINT
+    MCAPI ShulkerBoxContainerScreenValidator();
+    // NOLINTEND
 };

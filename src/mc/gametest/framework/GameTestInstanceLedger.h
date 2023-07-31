@@ -19,36 +19,38 @@ public:
     GameTestInstanceLedger()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?onTestStructureLoaded\@GameTestInstanceLedger\@\@UEAAXAEAVBaseGameTestInstance\@gametest\@\@\@Z
      */
-    virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&); // NOLINT
+    virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
     /**
      * @symbol ??0GameTestInstanceLedger\@\@QEAA\@AEAVLevelStorage\@\@\@Z
      */
-    MCAPI GameTestInstanceLedger(class LevelStorage&); // NOLINT
+    MCAPI GameTestInstanceLedger(class LevelStorage&);
     /**
      * @symbol ?clear\@GameTestInstanceLedger\@\@QEAAXV?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI void clear(class AutomaticID<class Dimension, int>); // NOLINT
+    MCAPI void clear(class AutomaticID<class Dimension, int>);
     /**
      * @symbol
      * ?getBoundingBoxes\@GameTestInstanceLedger\@\@QEBA?AV?$vector\@VBoundingBox\@\@V?$allocator\@VBoundingBox\@\@\@std\@\@\@std\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI std::vector<class BoundingBox> getBoundingBoxes(class AutomaticID<class Dimension, int>) const; // NOLINT
-
-    // private:
+    MCAPI std::vector<class BoundingBox> getBoundingBoxes(class AutomaticID<class Dimension, int>) const;
+    // NOLINTEND
 
 private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?GAME_TEST_INSTANCE_PREFIX\@GameTestInstanceLedger\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const GAME_TEST_INSTANCE_PREFIX; // NOLINT
+    MCAPI static std::string const GAME_TEST_INSTANCE_PREFIX;
+    // NOLINTEND
 };

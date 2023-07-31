@@ -19,35 +19,37 @@ public:
     RandomDyeFunction()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?apply\@RandomDyeFunction\@\@UEAAXAEAVItemStack\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual void apply(class ItemStack&, class Random&, class LootTableContext&); // NOLINT
+    virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
     /**
      * @vftbl 3
      * @symbol ?apply\@RandomDyeFunction\@\@UEAAXAEAVItemInstance\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual void apply(class ItemInstance&, class Random&, class LootTableContext&); // NOLINT
+    virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_applyBase\@RandomDyeFunction\@\@AEBAXAEAVItemStackBase\@\@AEAVRandom\@\@\@Z
      */
-    MCAPI void _applyBase(class ItemStackBase&, class Random&) const; // NOLINT
+    MCAPI void _applyBase(class ItemStackBase&, class Random&) const;
     /**
      * @symbol ?_getRandomArmorColor\@RandomDyeFunction\@\@AEBA?AVColor\@mce\@\@AEAVRandom\@\@\@Z
      */
-    MCAPI class mce::Color _getRandomArmorColor(class Random&) const; // NOLINT
+    MCAPI class mce::Color _getRandomArmorColor(class Random&) const;
     /**
      * @symbol ?_getRandomDyeColor\@RandomDyeFunction\@\@AEBA?AVColor\@mce\@\@AEAVRandom\@\@\@Z
      */
-    MCAPI class mce::Color _getRandomDyeColor(class Random&) const; // NOLINT
-
-private:
+    MCAPI class mce::Color _getRandomDyeColor(class Random&) const;
+    // NOLINTEND
 };

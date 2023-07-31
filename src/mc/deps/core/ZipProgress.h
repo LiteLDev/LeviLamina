@@ -12,26 +12,28 @@ public:
     ZipProgress(ZipProgress const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?clear\@ZipProgress\@ZipUtils\@Core\@\@UEAAXXZ
      */
-    virtual void clear(); // NOLINT
+    virtual void clear();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CORE_ZIPUTILS_ZIPPROGRESS
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ZipProgress(); // NOLINT
+    MCVAPI ~ZipProgress();
 #endif
     /**
      * @symbol ??0ZipProgress\@ZipUtils\@Core\@\@QEAA\@XZ
      */
-    MCAPI ZipProgress(); // NOLINT
+    MCAPI ZipProgress();
+    // NOLINTEND
 };
 
 }; // namespace Core::ZipUtils

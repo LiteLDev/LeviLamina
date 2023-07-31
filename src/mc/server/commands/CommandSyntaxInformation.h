@@ -10,12 +10,14 @@ public:
     CommandSyntaxInformation(CommandSyntaxInformation const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0CommandSyntaxInformation\@\@QEAA\@XZ
      */
-    MCAPI CommandSyntaxInformation(); // NOLINT
+    MCAPI CommandSyntaxInformation();
     /**
      * @symbol ??1CommandSyntaxInformation\@\@QEAA\@XZ
      */
-    MCAPI ~CommandSyntaxInformation(); // NOLINT
+    MCAPI ~CommandSyntaxInformation();
+    // NOLINTEND
 };

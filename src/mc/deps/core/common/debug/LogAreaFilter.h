@@ -18,10 +18,12 @@ public:
     LogAreaFilter()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?toggleFilter\@LogAreaFilter\@BedrockLog\@\@QEAAXW4LogAreaID\@\@\@Z
      */
-    MCAPI void toggleFilter(enum class LogAreaID); // NOLINT
+    MCAPI void toggleFilter(enum class LogAreaID);
+    // NOLINTEND
 };
 
 }; // namespace BedrockLog

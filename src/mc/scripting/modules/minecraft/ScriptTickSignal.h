@@ -26,10 +26,12 @@ public:
         PendingSubscribe()                                   = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1PendingSubscribe\@ScriptTickSignal\@ScriptModuleMinecraft\@\@QEAA\@XZ
          */
-        MCAPI ~PendingSubscribe(); // NOLINT
+        MCAPI ~PendingSubscribe();
+        // NOLINTEND
     };
 
     struct PendingUnsubscribe {
@@ -50,10 +52,12 @@ public:
         Slot()                       = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1Slot\@ScriptTickSignal\@ScriptModuleMinecraft\@\@QEAA\@XZ
          */
-        MCAPI ~Slot(); // NOLINT
+        MCAPI ~Slot();
+        // NOLINTEND
     };
 
 public:
@@ -63,45 +67,46 @@ public:
     ScriptTickSignal()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?scheduleInterval\@ScriptTickSignal\@ScriptModuleMinecraft\@\@QEAAI$$QEAV?$Closure\@$$A6AXXZ$$V\@Scripting\@\@II\@Z
      */
-    MCAPI unsigned int scheduleInterval(class Scripting::Closure<void(void)>&&, unsigned int, unsigned int); // NOLINT
+    MCAPI unsigned int scheduleInterval(class Scripting::Closure<void(void)>&&, unsigned int, unsigned int);
     /**
      * @symbol
      * ?scheduleTimeout\@ScriptTickSignal\@ScriptModuleMinecraft\@\@QEAAI$$QEAV?$Closure\@$$A6AXXZ$$V\@Scripting\@\@II\@Z
      */
-    MCAPI unsigned int scheduleTimeout(class Scripting::Closure<void(void)>&&, unsigned int, unsigned int); // NOLINT
+    MCAPI unsigned int scheduleTimeout(class Scripting::Closure<void(void)>&&, unsigned int, unsigned int);
     /**
      * @symbol
      * ?scheduleTimeoutSafe\@ScriptTickSignal\@ScriptModuleMinecraft\@\@QEAAI$$QEAV?$Closure\@$$A6AXXZ$$V\@Scripting\@\@I\@Z
      */
-    MCAPI unsigned int scheduleTimeoutSafe(class Scripting::Closure<void(void)>&&, unsigned int); // NOLINT
+    MCAPI unsigned int scheduleTimeoutSafe(class Scripting::Closure<void(void)>&&, unsigned int);
     /**
      * @symbol ?unschedule\@ScriptTickSignal\@ScriptModuleMinecraft\@\@QEAAXI\@Z
      */
-    MCAPI void unschedule(unsigned int); // NOLINT
+    MCAPI void unschedule(unsigned int);
     /**
      * @symbol ??1ScriptTickSignal\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptTickSignal(); // NOLINT
+    MCAPI ~ScriptTickSignal();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_processActive\@ScriptTickSignal\@ScriptModuleMinecraft\@\@AEAA_NAEAV?$vector\@USlot\@ScriptTickSignal\@ScriptModuleMinecraft\@\@V?$allocator\@USlot\@ScriptTickSignal\@ScriptModuleMinecraft\@\@\@std\@\@\@std\@\@I\@Z
      */
-    MCAPI bool
-    _processActive(std::vector<struct ScriptModuleMinecraft::ScriptTickSignal::Slot>&, unsigned int); // NOLINT
+    MCAPI bool _processActive(std::vector<struct ScriptModuleMinecraft::ScriptTickSignal::Slot>&, unsigned int);
     /**
      * @symbol
      * ?_processPending\@ScriptTickSignal\@ScriptModuleMinecraft\@\@AEAAXAEAV?$vector\@V?$variant\@UPendingSubscribe\@ScriptTickSignal\@ScriptModuleMinecraft\@\@UPendingUnsubscribe\@23\@\@std\@\@V?$allocator\@V?$variant\@UPendingSubscribe\@ScriptTickSignal\@ScriptModuleMinecraft\@\@UPendingUnsubscribe\@23\@\@std\@\@\@2\@\@std\@\@AEAV?$vector\@USlot\@ScriptTickSignal\@ScriptModuleMinecraft\@\@V?$allocator\@USlot\@ScriptTickSignal\@ScriptModuleMinecraft\@\@\@std\@\@\@4\@\@Z
      */
     MCAPI void
-    _processPending(std::vector<class std::variant<struct ScriptModuleMinecraft::ScriptTickSignal::PendingSubscribe, struct ScriptModuleMinecraft::ScriptTickSignal::PendingUnsubscribe>>&, std::vector<struct ScriptModuleMinecraft::ScriptTickSignal::Slot>&); // NOLINT
-
-private:
+    _processPending(std::vector<std::variant<struct ScriptModuleMinecraft::ScriptTickSignal::PendingSubscribe, struct ScriptModuleMinecraft::ScriptTickSignal::PendingUnsubscribe>>&, std::vector<struct ScriptModuleMinecraft::ScriptTickSignal::Slot>&);
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

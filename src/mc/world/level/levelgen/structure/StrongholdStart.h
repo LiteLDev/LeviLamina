@@ -14,26 +14,28 @@ public:
     StrongholdStart()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 2
      * @symbol ?isValid\@StrongholdStart\@\@UEBA_NXZ
      */
-    virtual bool isValid() const; // NOLINT
+    virtual bool isValid() const;
     /**
      * @symbol ??0StrongholdStart\@\@QEAA\@AEAVDimension\@\@AEAVRandom\@\@HH\@Z
      */
-    MCAPI StrongholdStart(class Dimension&, class Random&, int, int); // NOLINT
+    MCAPI StrongholdStart(class Dimension&, class Random&, int, int);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_initializePieceSet\@StrongholdStart\@\@AEAAXAEAVRandom\@\@\@Z
      */
-    MCAPI void _initializePieceSet(class Random&); // NOLINT
-
-private:
+    MCAPI void _initializePieceSet(class Random&);
+    // NOLINTEND
 };

@@ -16,12 +16,14 @@ public:
     ScriptMinecraftBlockProperties()                                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptMinecraftBlockProperties\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptMinecraftBlockProperties\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMinecraftBlockProperties>
-    bind(); // NOLINT
+    bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

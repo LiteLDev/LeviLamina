@@ -10,11 +10,11 @@ public:
     LodestoneCompassComponentCalculator(LodestoneCompassComponentCalculator const&)            = delete;
     LodestoneCompassComponentCalculator()                                                      = delete;
 
-    // private:
-
 private:
+    // NOLINTBEGIN
     /**
      * @symbol ?COOLDOWN_TIME_SECONDS\@LodestoneCompassComponentCalculator\@\@0MA
      */
-    MCAPI static float COOLDOWN_TIME_SECONDS; // NOLINT
+    MCAPI static float COOLDOWN_TIME_SECONDS;
+    // NOLINTEND
 };

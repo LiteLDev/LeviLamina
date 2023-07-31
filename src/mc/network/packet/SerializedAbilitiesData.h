@@ -28,22 +28,22 @@ public:
     SerializedAbilitiesData()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0SerializedAbilitiesData\@\@QEAA\@UActorUniqueID\@\@AEBVLayeredAbilities\@\@\@Z
      */
-    MCAPI SerializedAbilitiesData(struct ActorUniqueID, class LayeredAbilities const&); // NOLINT
+    MCAPI SerializedAbilitiesData(struct ActorUniqueID, class LayeredAbilities const&);
     /**
      * @symbol ?fillIn\@SerializedAbilitiesData\@\@QEBAXAEAVLayeredAbilities\@\@\@Z
      */
-    MCAPI void fillIn(class LayeredAbilities&) const; // NOLINT
+    MCAPI void fillIn(class LayeredAbilities&) const;
     /**
      * @symbol ?getTargetPlayer\@SerializedAbilitiesData\@\@QEBA?AUActorUniqueID\@\@XZ
      */
-    MCAPI struct ActorUniqueID getTargetPlayer() const; // NOLINT
+    MCAPI struct ActorUniqueID getTargetPlayer() const;
     /**
      * @symbol ??1SerializedAbilitiesData\@\@QEAA\@XZ
      */
-    MCAPI ~SerializedAbilitiesData(); // NOLINT
-
-    // private:
+    MCAPI ~SerializedAbilitiesData();
+    // NOLINTEND
 };

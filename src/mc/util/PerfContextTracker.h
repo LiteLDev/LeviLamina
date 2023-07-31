@@ -20,26 +20,28 @@ public:
         Duration(Duration const&)            = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @vftbl 0
          * @symbol __unk_vfn_0
          */
-        virtual void __unk_vfn_0(); // NOLINT
+        virtual void __unk_vfn_0();
         /**
          * @vftbl 1
          * @symbol ?reset\@Duration\@PerfContextTracker\@\@UEAAXXZ
          */
-        virtual void reset(); // NOLINT
+        virtual void reset();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PERFCONTEXTTRACKER_DURATION
         /**
          * @symbol __unk_destructor_-1
          */
-        MCVAPI ~Duration(); // NOLINT
+        MCVAPI ~Duration();
 #endif
         /**
          * @symbol ??0Duration\@PerfContextTracker\@\@QEAA\@XZ
          */
-        MCAPI Duration(); // NOLINT
+        MCAPI Duration();
+        // NOLINTEND
     };
 
     class EventScope {
@@ -51,14 +53,16 @@ public:
         EventScope()                             = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??0EventScope\@PerfContextTracker\@\@QEAA\@W4PerfContextEvent\@\@\@Z
          */
-        MCAPI EventScope(enum class PerfContextEvent); // NOLINT
+        MCAPI EventScope(enum class PerfContextEvent);
         /**
          * @symbol ??1EventScope\@PerfContextTracker\@\@QEAA\@XZ
          */
-        MCAPI ~EventScope(); // NOLINT
+        MCAPI ~EventScope();
+        // NOLINTEND
     };
 
     class Timer {
@@ -70,16 +74,18 @@ public:
         Timer()                        = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @vftbl 0
          * @symbol __unk_vfn_0
          */
-        virtual void __unk_vfn_0(); // NOLINT
+        virtual void __unk_vfn_0();
         /**
          * @vftbl 1
          * @symbol ?reset\@Timer\@PerfContextTracker\@\@UEAAXXZ
          */
-        virtual void reset(); // NOLINT
+        virtual void reset();
+        // NOLINTEND
     };
 
 public:
@@ -88,28 +94,30 @@ public:
     PerfContextTracker(PerfContextTracker const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0PerfContextTracker\@\@QEAA\@XZ
      */
-    MCAPI PerfContextTracker(); // NOLINT
+    MCAPI PerfContextTracker();
     /**
      * @symbol ?incrementPacketReceivedInfo\@PerfContextTracker\@\@QEAAXI\@Z
      */
-    MCAPI void incrementPacketReceivedInfo(unsigned int); // NOLINT
+    MCAPI void incrementPacketReceivedInfo(unsigned int);
     /**
      * @symbol ?incrementPacketSentInfo\@PerfContextTracker\@\@QEAAXI\@Z
      */
-    MCAPI void incrementPacketSentInfo(unsigned int); // NOLINT
+    MCAPI void incrementPacketSentInfo(unsigned int);
     /**
      * @symbol ?getInstance\@PerfContextTracker\@\@SAAEAV1\@XZ
      */
-    MCAPI static class PerfContextTracker& getInstance(); // NOLINT
+    MCAPI static class PerfContextTracker& getInstance();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_resetStats\@PerfContextTracker\@\@AEAAXXZ
      */
-    MCAPI void _resetStats(); // NOLINT
-
-private:
+    MCAPI void _resetStats();
+    // NOLINTEND
 };

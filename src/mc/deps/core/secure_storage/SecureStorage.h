@@ -11,10 +11,12 @@ public:
     SecureStorage()                                = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SECURESTORAGE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~SecureStorage(); // NOLINT
+    MCVAPI ~SecureStorage();
 #endif
+    // NOLINTEND
 };

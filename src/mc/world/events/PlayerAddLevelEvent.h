@@ -11,8 +11,10 @@ public:
     PlayerAddLevelEvent()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PlayerAddLevelEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerAddLevelEvent(); // NOLINT
+    MCAPI ~PlayerAddLevelEvent();
+    // NOLINTEND
 };

@@ -11,19 +11,21 @@ public:
     ItemEventResponseFactory()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?initializeFactory\@ItemEventResponseFactory\@\@UEAAXAEBVExperiments\@\@\@Z
      */
-    virtual void initializeFactory(class Experiments const&); // NOLINT
+    virtual void initializeFactory(class Experiments const&);
     /**
      * @vftbl 2
      * @symbol ?initSchema\@ItemEventResponseFactory\@\@UEAAXXZ
      */
-    virtual void initSchema(); // NOLINT
+    virtual void initSchema();
+    // NOLINTEND
 };

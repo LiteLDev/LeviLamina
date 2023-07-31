@@ -23,32 +23,33 @@ public:
     ScriptBlockRaycastHit()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0ScriptBlockRaycastHit\@ScriptModuleMinecraft\@\@QEAA\@AEAVBlockSource\@\@AEBVBlockPos\@\@EAEBVVec3\@\@AEBVWeakLifetimeScope\@Scripting\@\@\@Z
      */
     MCAPI
-    ScriptBlockRaycastHit(class BlockSource&, class BlockPos const&, unsigned char, class Vec3 const&, class Scripting::WeakLifetimeScope const&); // NOLINT
+    ScriptBlockRaycastHit(class BlockSource&, class BlockPos const&, unsigned char, class Vec3 const&, class Scripting::WeakLifetimeScope const&);
     /**
      * @symbol ??4ScriptBlockRaycastHit\@ScriptModuleMinecraft\@\@QEAAAEAV01\@AEBV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraft::ScriptBlockRaycastHit&
-    operator=(class ScriptModuleMinecraft::ScriptBlockRaycastHit const&); // NOLINT
+    operator=(class ScriptModuleMinecraft::ScriptBlockRaycastHit const&);
     /**
      * @symbol ??4ScriptBlockRaycastHit\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraft::ScriptBlockRaycastHit&
-    operator=(class ScriptModuleMinecraft::ScriptBlockRaycastHit&&); // NOLINT
+    operator=(class ScriptModuleMinecraft::ScriptBlockRaycastHit&&);
     /**
      * @symbol ??1ScriptBlockRaycastHit\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptBlockRaycastHit(); // NOLINT
+    MCAPI ~ScriptBlockRaycastHit();
     /**
      * @symbol
      * ?bind\@ScriptBlockRaycastHit\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@VScriptBlockRaycastHit\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptBlockRaycastHit>
-    bind(); // NOLINT
+    MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptBlockRaycastHit> bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -11,29 +11,31 @@ public:
     InsomniaComponent()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?addAdditionalSaveData\@InsomniaComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
+    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
     /**
      * @symbol ?getInsomniaTimerTicks\@InsomniaComponent\@\@QEBAHXZ
      */
-    MCAPI int getInsomniaTimerTicks() const; // NOLINT
+    MCAPI int getInsomniaTimerTicks() const;
     /**
      * @symbol ?getTicksUntilInsomnia\@InsomniaComponent\@\@QEBAHXZ
      */
-    MCAPI int getTicksUntilInsomnia() const; // NOLINT
+    MCAPI int getTicksUntilInsomnia() const;
     /**
      * @symbol ?incrementTimeSinceRest\@InsomniaComponent\@\@QEAAHXZ
      */
-    MCAPI int incrementTimeSinceRest(); // NOLINT
+    MCAPI int incrementTimeSinceRest();
     /**
      * @symbol
      * ?readAdditionalSaveData\@InsomniaComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&); // NOLINT
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
     /**
      * @symbol ?restartTimer\@InsomniaComponent\@\@QEAAXXZ
      */
-    MCAPI void restartTimer(); // NOLINT
+    MCAPI void restartTimer();
+    // NOLINTEND
 };

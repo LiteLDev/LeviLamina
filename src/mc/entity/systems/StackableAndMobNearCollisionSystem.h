@@ -18,14 +18,16 @@ public:
     StackableAndMobNearCollisionSystem()                                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?create\@StackableAndMobNearCollisionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo create(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo create();
     /**
      * @symbol
      * ?tick\@StackableAndMobNearCollisionSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBUAABBShapeComponent\@\@$$CBUDimensionTypeComponent\@\@$$CBUSynchedActorDataComponent\@\@V?$Optional\@$$CBV?$FlagComponent\@UCollidableMobNearFlag\@\@\@\@\@\@UMoveRequestComponent\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBUAABBShapeComponent\@\@$$CBUSynchedActorDataComponent\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UCollidableMobFlag\@\@\@\@\@\@$$CBUAABBShapeComponent\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UFallingBlockFlag\@\@\@\@\@\@\@\@V?$OptionalGlobalT\@ULocalSpatialEntityFetcherFactoryComponent\@\@VEntityRegistryBase\@\@\@\@\@Z
      */
     MCAPI static void
-        tick(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct AABBShapeComponent const, struct DimensionTypeComponent const, struct SynchedActorDataComponent const, class Optional<class FlagComponent<struct CollidableMobNearFlag> const>, struct MoveRequestComponent>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct AABBShapeComponent const, struct SynchedActorDataComponent const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct CollidableMobFlag>>, struct AABBShapeComponent const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct FallingBlockFlag>>>, class OptionalGlobalT<struct LocalSpatialEntityFetcherFactoryComponent, class EntityRegistryBase>); // NOLINT
+        tick(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct AABBShapeComponent const, struct DimensionTypeComponent const, struct SynchedActorDataComponent const, class Optional<class FlagComponent<struct CollidableMobNearFlag> const>, struct MoveRequestComponent>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct AABBShapeComponent const, struct SynchedActorDataComponent const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct CollidableMobFlag>>, struct AABBShapeComponent const>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct FallingBlockFlag>>>, class OptionalGlobalT<struct LocalSpatialEntityFetcherFactoryComponent, class EntityRegistryBase>);
+    // NOLINTEND
 };

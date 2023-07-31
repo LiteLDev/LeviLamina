@@ -4,11 +4,6 @@
 
 class PlayerPositionModeComponent {
 public:
-    // PlayerPositionModeComponent inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // PlayerPositionModeComponent inner types define
     enum class PositionMode {};
 

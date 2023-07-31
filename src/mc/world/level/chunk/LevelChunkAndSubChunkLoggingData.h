@@ -11,12 +11,14 @@ public:
     LevelChunkAndSubChunkLoggingData()                                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?logLevelChunkEvent\@LevelChunkAndSubChunkLoggingData\@\@SAXAEBVChunkPos\@\@PEBD_N\@Z
      */
-    MCAPI static void logLevelChunkEvent(class ChunkPos const&, char const*, bool); // NOLINT
+    MCAPI static void logLevelChunkEvent(class ChunkPos const&, char const*, bool);
     /**
      * @symbol ?logSubChunkEvent\@LevelChunkAndSubChunkLoggingData\@\@SAXAEBVSubChunkPos\@\@PEBD_N\@Z
      */
-    MCAPI static void logSubChunkEvent(class SubChunkPos const&, char const*, bool); // NOLINT
+    MCAPI static void logSubChunkEvent(class SubChunkPos const&, char const*, bool);
+    // NOLINTEND
 };

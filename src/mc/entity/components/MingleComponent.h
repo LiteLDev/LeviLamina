@@ -4,11 +4,6 @@
 
 class MingleComponent {
 public:
-    // MingleComponent inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // MingleComponent inner types define
     enum class MingleState {};
 
@@ -18,28 +13,30 @@ public:
     MingleComponent(MingleComponent const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0MingleComponent\@\@QEAA\@XZ
      */
-    MCAPI MingleComponent(); // NOLINT
+    MCAPI MingleComponent();
     /**
      * @symbol ?clearPreviousPartnerId\@MingleComponent\@\@QEAAAEAV1\@XZ
      */
-    MCAPI class MingleComponent& clearPreviousPartnerId(); // NOLINT
+    MCAPI class MingleComponent& clearPreviousPartnerId();
     /**
      * @symbol ?fetchCurrentPartner\@MingleComponent\@\@QEBAPEAVActor\@\@AEBV2\@\@Z
      */
-    MCAPI class Actor* fetchCurrentPartner(class Actor const&) const; // NOLINT
+    MCAPI class Actor* fetchCurrentPartner(class Actor const&) const;
     /**
      * @symbol ?resetState\@MingleComponent\@\@QEAAXXZ
      */
-    MCAPI void resetState(); // NOLINT
+    MCAPI void resetState();
     /**
      * @symbol ?setMingleState\@MingleComponent\@\@QEAAAEAV1\@W4MingleState\@1\@\@Z
      */
-    MCAPI class MingleComponent& setMingleState(enum class MingleComponent::MingleState); // NOLINT
+    MCAPI class MingleComponent& setMingleState(enum class MingleComponent::MingleState);
     /**
      * @symbol ?setPartnerId\@MingleComponent\@\@QEAAAEAV1\@UActorUniqueID\@\@\@Z
      */
-    MCAPI class MingleComponent& setPartnerId(struct ActorUniqueID); // NOLINT
+    MCAPI class MingleComponent& setPartnerId(struct ActorUniqueID);
+    // NOLINTEND
 };

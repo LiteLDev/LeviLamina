@@ -11,8 +11,10 @@ public:
     PlayerFormResponseEvent()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PlayerFormResponseEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerFormResponseEvent(); // NOLINT
+    MCAPI ~PlayerFormResponseEvent();
+    // NOLINTEND
 };

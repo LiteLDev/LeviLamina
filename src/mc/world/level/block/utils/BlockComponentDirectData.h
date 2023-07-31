@@ -11,8 +11,10 @@ public:
     BlockComponentDirectData()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?finalize\@BlockComponentDirectData\@\@QEAAXAEBVBlock\@\@\@Z
      */
-    MCAPI void finalize(class Block const&); // NOLINT
+    MCAPI void finalize(class Block const&);
+    // NOLINTEND
 };

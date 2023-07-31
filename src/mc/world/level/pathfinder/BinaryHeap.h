@@ -10,40 +10,42 @@ public:
     BinaryHeap(BinaryHeap const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0BinaryHeap\@\@QEAA\@XZ
      */
-    MCAPI BinaryHeap(); // NOLINT
+    MCAPI BinaryHeap();
     /**
      * @symbol ?changeCost\@BinaryHeap\@\@QEAAXPEAVPathfinderNode\@\@M\@Z
      */
-    MCAPI void changeCost(class PathfinderNode*, float); // NOLINT
+    MCAPI void changeCost(class PathfinderNode*, float);
     /**
      * @symbol ?clear\@BinaryHeap\@\@QEAAXXZ
      */
-    MCAPI void clear(); // NOLINT
+    MCAPI void clear();
     /**
      * @symbol ?insert\@BinaryHeap\@\@QEAAPEAVPathfinderNode\@\@PEAV2\@\@Z
      */
-    MCAPI class PathfinderNode* insert(class PathfinderNode*); // NOLINT
+    MCAPI class PathfinderNode* insert(class PathfinderNode*);
     /**
      * @symbol ?isEmpty\@BinaryHeap\@\@QEAA_NXZ
      */
-    MCAPI bool isEmpty(); // NOLINT
+    MCAPI bool isEmpty();
     /**
      * @symbol ?pop\@BinaryHeap\@\@QEAAPEAVPathfinderNode\@\@XZ
      */
-    MCAPI class PathfinderNode* pop(); // NOLINT
+    MCAPI class PathfinderNode* pop();
     /**
      * @symbol ??1BinaryHeap\@\@QEAA\@XZ
      */
-    MCAPI ~BinaryHeap(); // NOLINT
+    MCAPI ~BinaryHeap();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?downHeap\@BinaryHeap\@\@AEAAXH\@Z
      */
-    MCAPI void downHeap(int); // NOLINT
-
-private:
+    MCAPI void downHeap(int);
+    // NOLINTEND
 };

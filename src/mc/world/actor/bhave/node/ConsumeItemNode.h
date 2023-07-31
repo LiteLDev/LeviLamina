@@ -10,18 +10,20 @@ public:
     ConsumeItemNode(ConsumeItemNode const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?tick\@ConsumeItemNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
-    virtual enum class BehaviorStatus tick(class Actor&); // NOLINT
+    virtual enum class BehaviorStatus tick(class Actor&);
     /**
      * @symbol ??0ConsumeItemNode\@\@QEAA\@XZ
      */
-    MCAPI ConsumeItemNode(); // NOLINT
+    MCAPI ConsumeItemNode();
+    // NOLINTEND
 };

@@ -11,12 +11,14 @@ public:
     PropertySyncData()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4PropertySyncData\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct PropertySyncData& operator=(struct PropertySyncData&&); // NOLINT
+    MCAPI struct PropertySyncData& operator=(struct PropertySyncData&&);
     /**
      * @symbol ??1PropertySyncData\@\@QEAA\@XZ
      */
-    MCAPI ~PropertySyncData(); // NOLINT
+    MCAPI ~PropertySyncData();
+    // NOLINTEND
 };

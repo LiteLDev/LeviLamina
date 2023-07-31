@@ -11,27 +11,28 @@ public:
     SignalServiceSigninJob()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?signin\@SignalServiceSigninJob\@\@UEAAX_NV?$optional\@V?$duration\@_JU?$ratio\@$00$00\@std\@\@\@chrono\@std\@\@\@std\@\@\@Z
      */
-    virtual void
-    signin(bool, class std::optional<class std::chrono::duration<__int64, struct std::ratio<1, 1>>>); // NOLINT
+    virtual void signin(bool, std::optional<std::chrono::seconds>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIGNALSERVICESIGNINJOB
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~SignalServiceSigninJob(); // NOLINT
+    MCVAPI ~SignalServiceSigninJob();
 #endif
     /**
      * @symbol
      * ??0SignalServiceSigninJob\@\@QEAA\@$$QEAV?$function\@$$A6AX_N\@Z\@std\@\@$$QEAV?$function\@$$A6AXXZ\@2\@\@Z
      */
-    MCAPI SignalServiceSigninJob(class std::function<void(bool)>&&, class std::function<void(void)>&&); // NOLINT
+    MCAPI SignalServiceSigninJob(std::function<void(bool)>&&, std::function<void(void)>&&);
+    // NOLINTEND
 };

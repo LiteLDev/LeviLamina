@@ -11,8 +11,10 @@ public:
     CustomSaveComponent()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?save\@CustomSaveComponent\@\@QEAA_NAEAVLevelStorage\@\@AEAVActor\@\@\@Z
      */
-    MCAPI bool save(class LevelStorage&, class Actor&); // NOLINT
+    MCAPI bool save(class LevelStorage&, class Actor&);
+    // NOLINTEND
 };

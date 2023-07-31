@@ -19,10 +19,12 @@ public:
     AddMushroomIsland()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0AddMushroomIsland\@OperationNodeFilters\@\@QEAA\@AEAVBiome\@\@AEBVBiomeRegistry\@\@\@Z
      */
-    MCAPI AddMushroomIsland(class Biome&, class BiomeRegistry const&); // NOLINT
+    MCAPI AddMushroomIsland(class Biome&, class BiomeRegistry const&);
+    // NOLINTEND
 };
 
 }; // namespace OperationNodeFilters

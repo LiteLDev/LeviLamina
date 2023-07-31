@@ -15,28 +15,30 @@ public:
     WeakEntityRef()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0WeakEntityRef\@\@QEAA\@V?$WeakRefT\@UEntityRefTraits\@\@\@\@\@Z
      */
-    MCAPI WeakEntityRef(class WeakRefT<struct EntityRefTraits>); // NOLINT
+    MCAPI WeakEntityRef(class WeakRefT<struct EntityRefTraits>);
     /**
      * @symbol ??9WeakEntityRef\@\@QEBA_NV0\@\@Z
      */
-    MCAPI bool operator!=(class WeakEntityRef) const; // NOLINT
+    MCAPI bool operator!=(class WeakEntityRef) const;
     /**
      * @symbol ??4WeakEntityRef\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class WeakEntityRef& operator=(class WeakEntityRef&&); // NOLINT
+    MCAPI class WeakEntityRef& operator=(class WeakEntityRef&&);
     /**
      * @symbol ??8WeakEntityRef\@\@QEBA_NV?$WeakRefT\@UEntityRefTraits\@\@\@\@\@Z
      */
-    MCAPI bool operator==(class WeakRefT<struct EntityRefTraits>) const; // NOLINT
+    MCAPI bool operator==(class WeakRefT<struct EntityRefTraits>) const;
     /**
      * @symbol ??8WeakEntityRef\@\@QEBA_NV0\@\@Z
      */
-    MCAPI bool operator==(class WeakEntityRef) const; // NOLINT
+    MCAPI bool operator==(class WeakEntityRef) const;
     /**
      * @symbol ??1WeakEntityRef\@\@QEAA\@XZ
      */
-    MCAPI ~WeakEntityRef(); // NOLINT
+    MCAPI ~WeakEntityRef();
+    // NOLINTEND
 };

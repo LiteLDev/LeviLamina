@@ -10,16 +10,18 @@ public:
     ChunkViewOwner()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ChunkViewOwner\@\@QEAA\@AEBVNetworkIdentifier\@\@W4SubClientId\@\@\@Z
      */
-    MCAPI ChunkViewOwner(class NetworkIdentifier const&, enum class SubClientId); // NOLINT
+    MCAPI ChunkViewOwner(class NetworkIdentifier const&, enum class SubClientId);
     /**
      * @symbol ??0ChunkViewOwner\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI ChunkViewOwner(class ChunkViewOwner const&); // NOLINT
+    MCAPI ChunkViewOwner(class ChunkViewOwner const&);
     /**
      * @symbol ?getHash\@ChunkViewOwner\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 getHash() const; // NOLINT
+    MCAPI uint64_t getHash() const;
+    // NOLINTEND
 };

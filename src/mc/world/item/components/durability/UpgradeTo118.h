@@ -17,16 +17,17 @@ public:
     UpgradeTo118(UpgradeTo118 const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?previousSchema\@UpgradeTo118\@DurabilityItemComponentVersioning\@\@UEBAXAEAVSchemaFactory\@cereal\@\@\@Z
      */
-    virtual void previousSchema(class cereal::SchemaFactory&) const; // NOLINT
+    virtual void previousSchema(class cereal::SchemaFactory&) const;
     /**
      * @vftbl 2
      * @symbol
@@ -35,11 +36,12 @@ public:
     virtual bool upgradeToNext(class rapidjson::GenericDocument<
                                struct rapidjson::UTF8<char>,
                                class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>,
-                               class rapidjson::CrtAllocator>&) const; // NOLINT
+                               class rapidjson::CrtAllocator>&) const;
     /**
      * @symbol ??0UpgradeTo118\@DurabilityItemComponentVersioning\@\@QEAA\@XZ
      */
-    MCAPI UpgradeTo118(); // NOLINT
+    MCAPI UpgradeTo118();
+    // NOLINTEND
 };
 
 }; // namespace DurabilityItemComponentVersioning

@@ -11,8 +11,10 @@ public:
     ActorEquippedArmorEvent()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ActorEquippedArmorEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorEquippedArmorEvent(); // NOLINT
+    MCAPI ~ActorEquippedArmorEvent();
+    // NOLINTEND
 };

@@ -11,47 +11,48 @@ public:
     StalkAndPounceOnTargetGoal()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?canUse\@StalkAndPounceOnTargetGoal\@\@UEAA_NXZ
      */
-    virtual bool canUse(); // NOLINT
+    virtual bool canUse();
     /**
      * @vftbl 2
      * @symbol ?canContinueToUse\@StalkAndPounceOnTargetGoal\@\@UEAA_NXZ
      */
-    virtual bool canContinueToUse(); // NOLINT
+    virtual bool canContinueToUse();
     /**
      * @vftbl 3
      * @symbol ?canBeInterrupted\@StalkAndPounceOnTargetGoal\@\@UEAA_NXZ
      */
-    virtual bool canBeInterrupted(); // NOLINT
+    virtual bool canBeInterrupted();
     /**
      * @vftbl 4
      * @symbol ?start\@StalkAndPounceOnTargetGoal\@\@UEAAXXZ
      */
-    virtual void start(); // NOLINT
+    virtual void start();
     /**
      * @vftbl 5
      * @symbol ?stop\@StalkAndPounceOnTargetGoal\@\@UEAAXXZ
      */
-    virtual void stop(); // NOLINT
+    virtual void stop();
     /**
      * @vftbl 6
      * @symbol ?tick\@StalkAndPounceOnTargetGoal\@\@UEAAXXZ
      */
-    virtual void tick(); // NOLINT
+    virtual void tick();
     /**
      * @vftbl 7
      * @symbol
      * ?appendDebugInfo\@StalkAndPounceOnTargetGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void appendDebugInfo(std::string&) const; // NOLINT
+    virtual void appendDebugInfo(std::string&) const;
     /**
      * @symbol ??0StalkAndPounceOnTargetGoal\@\@QEAA\@AEAVMob\@\@AEBVActorFilterGroup\@\@MMMMMMMM_N\@Z
      */
@@ -67,17 +68,18 @@ public:
         float,
         float,
         bool
-    ); // NOLINT
+    );
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_isStuckBlock\@StalkAndPounceOnTargetGoal\@\@AEBA_NVBlockPos\@\@\@Z
      */
-    MCAPI bool _isStuckBlock(class BlockPos) const; // NOLINT
+    MCAPI bool _isStuckBlock(class BlockPos) const;
     /**
      * @symbol ?_preparePounce\@StalkAndPounceOnTargetGoal\@\@AEAAXAEBVVec3\@\@0\@Z
      */
-    MCAPI void _preparePounce(class Vec3 const&, class Vec3 const&); // NOLINT
-
-private:
+    MCAPI void _preparePounce(class Vec3 const&, class Vec3 const&);
+    // NOLINTEND
 };

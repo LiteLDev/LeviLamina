@@ -12,18 +12,20 @@ public:
     SummaryEvent()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0SummaryEvent\@Events\@Social\@\@QEAA\@AEBV012\@\@Z
      */
-    MCAPI SummaryEvent(class Social::Events::SummaryEvent const&); // NOLINT
+    MCAPI SummaryEvent(class Social::Events::SummaryEvent const&);
     /**
      * @symbol ?summarize\@SummaryEvent\@Events\@Social\@\@QEAAXAEBV123\@\@Z
      */
-    MCAPI void summarize(class Social::Events::SummaryEvent const&); // NOLINT
+    MCAPI void summarize(class Social::Events::SummaryEvent const&);
     /**
      * @symbol ??1SummaryEvent\@Events\@Social\@\@QEAA\@XZ
      */
-    MCAPI ~SummaryEvent(); // NOLINT
+    MCAPI ~SummaryEvent();
+    // NOLINTEND
 };
 
 }; // namespace Social::Events

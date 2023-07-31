@@ -13,15 +13,17 @@ public:
     Event()                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0Event\@CodeBuilder\@Util\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI Event(std::string const&); // NOLINT
+    MCAPI Event(std::string const&);
     /**
      * @symbol ??1Event\@CodeBuilder\@Util\@\@QEAA\@XZ
      */
-    MCAPI ~Event(); // NOLINT
+    MCAPI ~Event();
+    // NOLINTEND
 };
 
 }; // namespace Util::CodeBuilder

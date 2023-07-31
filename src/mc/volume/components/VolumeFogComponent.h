@@ -11,8 +11,10 @@ public:
     VolumeFogComponent()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4VolumeFogComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class VolumeFogComponent& operator=(class VolumeFogComponent&&); // NOLINT
+    MCAPI class VolumeFogComponent& operator=(class VolumeFogComponent&&);
+    // NOLINTEND
 };

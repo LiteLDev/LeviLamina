@@ -22,22 +22,24 @@ public:
         ScopedItemRegistry()                                     = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??0ScopedItemRegistry\@ItemRegistryManager\@\@QEAA\@VItemRegistryRef\@\@\@Z
          */
-        MCAPI ScopedItemRegistry(class ItemRegistryRef); // NOLINT
+        MCAPI ScopedItemRegistry(class ItemRegistryRef);
         /**
          * @symbol ??0ScopedItemRegistry\@ItemRegistryManager\@\@QEAA\@V?$weak_ptr\@VItemRegistry\@\@\@std\@\@\@Z
          */
-        MCAPI ScopedItemRegistry(class std::weak_ptr<class ItemRegistry>); // NOLINT
+        MCAPI ScopedItemRegistry(std::weak_ptr<class ItemRegistry>);
         /**
          * @symbol ?construct\@ScopedItemRegistry\@ItemRegistryManager\@\@QEAAXVItemRegistryRef\@\@\@Z
          */
-        MCAPI void construct(class ItemRegistryRef); // NOLINT
+        MCAPI void construct(class ItemRegistryRef);
         /**
          * @symbol ??1ScopedItemRegistry\@ItemRegistryManager\@\@QEAA\@XZ
          */
-        MCAPI ~ScopedItemRegistry(); // NOLINT
+        MCAPI ~ScopedItemRegistry();
+        // NOLINTEND
     };
 
 public:
@@ -47,28 +49,29 @@ public:
     ItemRegistryManager()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getItemRegistry\@ItemRegistryManager\@\@SA?AVItemRegistryRef\@\@XZ
      */
-    MCAPI static class ItemRegistryRef getItemRegistry(); // NOLINT
+    MCAPI static class ItemRegistryRef getItemRegistry();
     /**
      * @symbol ?resetItemRegistry\@ItemRegistryManager\@\@SAXXZ
      */
-    MCAPI static void resetItemRegistry(); // NOLINT
+    MCAPI static void resetItemRegistry();
     /**
      * @symbol ?setItemRegistry\@ItemRegistryManager\@\@SAXVItemRegistryRef\@\@\@Z
      */
-    MCAPI static void setItemRegistry(class ItemRegistryRef); // NOLINT
-
-    // private:
+    MCAPI static void setItemRegistry(class ItemRegistryRef);
+    // NOLINTEND
 
 private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?mThreadLocalRegistry\@ItemRegistryManager\@\@0V?$ThreadLocalObject\@V?$weak_ptr\@VItemRegistry\@\@\@std\@\@V?$allocator\@V?$weak_ptr\@VItemRegistry\@\@\@std\@\@\@2\@\@Threading\@Bedrock\@\@A
      */
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<
-        class std::weak_ptr<class ItemRegistry>,
-        class std::allocator<class std::weak_ptr<class ItemRegistry>>>
-        mThreadLocalRegistry; // NOLINT
+    MCAPI static class Bedrock::Threading::
+        ThreadLocalObject<std::weak_ptr<class ItemRegistry>, std::allocator<std::weak_ptr<class ItemRegistry>>>
+            mThreadLocalRegistry;
+    // NOLINTEND
 };

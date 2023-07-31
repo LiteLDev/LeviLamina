@@ -14,45 +14,47 @@ public:
     CurseVanishingEnchant()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 2
      * @symbol ?getMinCost\@CurseVanishingEnchant\@\@UEBAHH\@Z
      */
-    virtual int getMinCost(int) const; // NOLINT
+    virtual int getMinCost(int) const;
     /**
      * @vftbl 3
      * @symbol ?getMaxCost\@CurseVanishingEnchant\@\@UEBAHH\@Z
      */
-    virtual int getMaxCost(int) const; // NOLINT
+    virtual int getMaxCost(int) const;
     /**
      * @vftbl 10
      * @symbol __unk_vfn_10
      */
-    virtual void __unk_vfn_10(); // NOLINT
+    virtual void __unk_vfn_10();
     /**
      * @vftbl 11
      * @symbol __unk_vfn_11
      */
-    virtual void __unk_vfn_11(); // NOLINT
+    virtual void __unk_vfn_11();
     /**
      * @vftbl 12
      * @symbol __unk_vfn_12
      */
-    virtual void __unk_vfn_12(); // NOLINT
+    virtual void __unk_vfn_12();
     /**
      * @vftbl 13
      * @symbol __unk_vfn_13
      */
-    virtual void __unk_vfn_13(); // NOLINT
+    virtual void __unk_vfn_13();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CURSEVANISHINGENCHANT
     /**
      * @symbol ?isTreasureOnly\@CurseVanishingEnchant\@\@UEBA_NXZ
      */
-    MCVAPI bool isTreasureOnly() const; // NOLINT
+    MCVAPI bool isTreasureOnly() const;
 #endif
+    // NOLINTEND
 };

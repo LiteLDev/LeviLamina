@@ -11,12 +11,14 @@ public:
     GroundAndAirMoveFinalizeSystem()                                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createAirMoveFinalizeSystem\@GroundAndAirMoveFinalizeSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createAirMoveFinalizeSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createAirMoveFinalizeSystem();
     /**
      * @symbol ?createGroundMoveFinalizeSystem\@GroundAndAirMoveFinalizeSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createGroundMoveFinalizeSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createGroundMoveFinalizeSystem();
+    // NOLINTEND
 };

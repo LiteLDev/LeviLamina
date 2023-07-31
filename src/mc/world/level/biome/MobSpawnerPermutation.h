@@ -11,8 +11,10 @@ public:
     MobSpawnerPermutation()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1MobSpawnerPermutation\@\@QEAA\@XZ
      */
-    MCAPI ~MobSpawnerPermutation(); // NOLINT
+    MCAPI ~MobSpawnerPermutation();
+    // NOLINTEND
 };

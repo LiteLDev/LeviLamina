@@ -11,8 +11,10 @@ public:
     PlayerInitialSpawnEvent()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PlayerInitialSpawnEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerInitialSpawnEvent(); // NOLINT
+    MCAPI ~PlayerInitialSpawnEvent();
+    // NOLINTEND
 };

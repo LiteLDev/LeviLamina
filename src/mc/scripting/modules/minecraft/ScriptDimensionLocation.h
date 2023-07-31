@@ -15,26 +15,27 @@ public:
     ScriptDimensionLocation()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4ScriptDimensionLocation\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptDimensionLocation&
-    operator=(struct ScriptModuleMinecraft::ScriptDimensionLocation const&); // NOLINT
+    operator=(struct ScriptModuleMinecraft::ScriptDimensionLocation const&);
     /**
      * @symbol ??4ScriptDimensionLocation\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptDimensionLocation&
-    operator=(struct ScriptModuleMinecraft::ScriptDimensionLocation&&); // NOLINT
+    operator=(struct ScriptModuleMinecraft::ScriptDimensionLocation&&);
     /**
      * @symbol ??1ScriptDimensionLocation\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptDimensionLocation(); // NOLINT
+    MCAPI ~ScriptDimensionLocation();
     /**
      * @symbol
      * ?bind\@ScriptDimensionLocation\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptDimensionLocation\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptDimensionLocation>
-    bind(); // NOLINT
+    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptDimensionLocation> bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

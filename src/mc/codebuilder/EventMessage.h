@@ -13,10 +13,12 @@ public:
     EventMessage()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1EventMessage\@CodeBuilder\@\@QEAA\@XZ
      */
-    MCAPI ~EventMessage(); // NOLINT
+    MCAPI ~EventMessage();
+    // NOLINTEND
 };
 
 }; // namespace CodeBuilder

@@ -23,60 +23,61 @@ public:
     ScriptGameTestSequence()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0ScriptGameTestSequence\@ScriptModuleGameTest\@\@QEAA\@AEAVGameTestSequence\@gametest\@\@VWeakLifetimeScope\@Scripting\@\@\@Z
      */
-    MCAPI ScriptGameTestSequence(class gametest::GameTestSequence&, class Scripting::WeakLifetimeScope); // NOLINT
+    MCAPI ScriptGameTestSequence(class gametest::GameTestSequence&, class Scripting::WeakLifetimeScope);
     /**
      * @symbol
      * ?thenExecute\@ScriptGameTestSequence\@ScriptModuleGameTest\@\@QEAA?AV?$WeakTypedObjectHandle\@VScriptGameTestSequence\@ScriptModuleGameTest\@\@\@Scripting\@\@V?$Closure\@$$A6AXXZ$$V\@4\@\@Z
      */
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestSequence>
-        thenExecute(class Scripting::Closure<void(void)>); // NOLINT
+        thenExecute(class Scripting::Closure<void(void)>);
     /**
      * @symbol
      * ?thenExecuteAfter\@ScriptGameTestSequence\@ScriptModuleGameTest\@\@QEAA?AV?$WeakTypedObjectHandle\@VScriptGameTestSequence\@ScriptModuleGameTest\@\@\@Scripting\@\@HV?$Closure\@$$A6AXXZ$$V\@4\@\@Z
      */
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestSequence>
-    thenExecuteAfter(int, class Scripting::Closure<void(void)>); // NOLINT
+    thenExecuteAfter(int, class Scripting::Closure<void(void)>);
     /**
      * @symbol
      * ?thenExecuteFor\@ScriptGameTestSequence\@ScriptModuleGameTest\@\@QEAA?AV?$WeakTypedObjectHandle\@VScriptGameTestSequence\@ScriptModuleGameTest\@\@\@Scripting\@\@HV?$Closure\@$$A6AXXZ$$V\@4\@\@Z
      */
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestSequence>
-    thenExecuteFor(int, class Scripting::Closure<void(void)>); // NOLINT
+    thenExecuteFor(int, class Scripting::Closure<void(void)>);
     /**
      * @symbol
      * ?thenFail\@ScriptGameTestSequence\@ScriptModuleGameTest\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void thenFail(std::string); // NOLINT
+    MCAPI void thenFail(std::string);
     /**
      * @symbol
      * ?thenIdle\@ScriptGameTestSequence\@ScriptModuleGameTest\@\@QEAA?AV?$WeakTypedObjectHandle\@VScriptGameTestSequence\@ScriptModuleGameTest\@\@\@Scripting\@\@H\@Z
      */
-    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestSequence> thenIdle(int
-    ); // NOLINT
+    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestSequence> thenIdle(int);
     /**
      * @symbol ?thenSucceed\@ScriptGameTestSequence\@ScriptModuleGameTest\@\@QEAAXXZ
      */
-    MCAPI void thenSucceed(); // NOLINT
+    MCAPI void thenSucceed();
     /**
      * @symbol
      * ?thenWait\@ScriptGameTestSequence\@ScriptModuleGameTest\@\@QEAA?AV?$WeakTypedObjectHandle\@VScriptGameTestSequence\@ScriptModuleGameTest\@\@\@Scripting\@\@V?$Closure\@$$A6AXXZ$$V\@4\@\@Z
      */
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestSequence>
-        thenWait(class Scripting::Closure<void(void)>); // NOLINT
+        thenWait(class Scripting::Closure<void(void)>);
     /**
      * @symbol
      * ?thenWaitAfter\@ScriptGameTestSequence\@ScriptModuleGameTest\@\@QEAA?AV?$WeakTypedObjectHandle\@VScriptGameTestSequence\@ScriptModuleGameTest\@\@\@Scripting\@\@HV?$Closure\@$$A6AXXZ$$V\@4\@\@Z
      */
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestSequence>
-    thenWaitAfter(int, class Scripting::Closure<void(void)>); // NOLINT
+    thenWaitAfter(int, class Scripting::Closure<void(void)>);
     /**
      * @symbol ??1ScriptGameTestSequence\@ScriptModuleGameTest\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptGameTestSequence(); // NOLINT
+    MCAPI ~ScriptGameTestSequence();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleGameTest

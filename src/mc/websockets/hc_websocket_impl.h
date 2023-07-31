@@ -13,12 +13,14 @@ public:
     hc_websocket_impl()                                    = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_XBOX_HTTPCLIENT_HC_WEBSOCKET_IMPL
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~hc_websocket_impl(); // NOLINT
+    MCVAPI ~hc_websocket_impl();
 #endif
+    // NOLINTEND
 };
 
 }; // namespace xbox::httpclient

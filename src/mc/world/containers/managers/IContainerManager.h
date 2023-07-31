@@ -11,10 +11,12 @@ public:
     IContainerManager()                                    = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONTAINERMANAGER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IContainerManager(); // NOLINT
+    MCVAPI ~IContainerManager();
 #endif
+    // NOLINTEND
 };

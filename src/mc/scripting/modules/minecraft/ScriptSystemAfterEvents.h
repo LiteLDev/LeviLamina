@@ -37,32 +37,34 @@ public:
         ScriptSystemAfterEventsDeferredEventListener()                                                    = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @vftbl 0
          * @symbol __unk_vfn_0
          */
-        virtual void __unk_vfn_0(); // NOLINT
+        virtual void __unk_vfn_0();
         /**
          * @vftbl 1
          * @symbol __unk_vfn_1
          */
-        virtual void __unk_vfn_1(); // NOLINT
+        virtual void __unk_vfn_1();
         /**
          * @vftbl 2
          * @symbol __unk_vfn_2
          */
-        virtual void __unk_vfn_2(); // NOLINT
+        virtual void __unk_vfn_2();
         /**
          * @vftbl 3
          * @symbol __unk_vfn_3
          */
-        virtual void __unk_vfn_3(); // NOLINT
+        virtual void __unk_vfn_3();
         /**
          * @vftbl 4
          * @symbol
          * ?onFlushSystemAfterEvents\@ScriptSystemAfterEventsDeferredEventListener\@ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@UEAA_NXZ
          */
-        virtual bool onFlushSystemAfterEvents(); // NOLINT
+        virtual bool onFlushSystemAfterEvents();
+        // NOLINTEND
     };
 
 public:
@@ -72,52 +74,52 @@ public:
     ScriptSystemAfterEvents()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@QEAA\@AEBVWeakLifetimeScope\@Scripting\@\@V?$not_null\@PEAVServerLevel\@\@\@gsl\@\@\@Z
      */
-    MCAPI
-    ScriptSystemAfterEvents(class Scripting::WeakLifetimeScope const&, class gsl::not_null<class ServerLevel*>); // NOLINT
+    MCAPI ScriptSystemAfterEvents(class Scripting::WeakLifetimeScope const&, class gsl::not_null<class ServerLevel*>);
     /**
      * @symbol ??0ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@QEAA\@$$QEAV01\@\@Z
      */
-    MCAPI ScriptSystemAfterEvents(class ScriptModuleMinecraft::ScriptSystemAfterEvents&&); // NOLINT
+    MCAPI ScriptSystemAfterEvents(class ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
     /**
      * @symbol ?getScriptTickSignal\@ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@QEAAAEAVScriptTickSignal\@2\@XZ
      */
-    MCAPI class ScriptModuleMinecraft::ScriptTickSignal& getScriptTickSignal(); // NOLINT
+    MCAPI class ScriptModuleMinecraft::ScriptTickSignal& getScriptTickSignal();
     /**
      * @symbol
      * ?onScriptCommandMessageEvent\@ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@QEAAXV?$StrongTypedObjectHandle\@UScriptEventCommandMessageAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Z
      */
-    MCAPI void
-        onScriptCommandMessageEvent(class Scripting::StrongTypedObjectHandle<
-                                    struct ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent>); // NOLINT
+    MCAPI void onScriptCommandMessageEvent(class Scripting::StrongTypedObjectHandle<
+                                           struct ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent>);
     /**
      * @symbol ??4ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraft::ScriptSystemAfterEvents&
-    operator=(class ScriptModuleMinecraft::ScriptSystemAfterEvents&&); // NOLINT
+    operator=(class ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
     /**
      * @symbol
      * ?registerListener\@ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@QEAAXU?$TypedObjectHandle\@VScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Z
      */
-    MCAPI void registerListener(struct Scripting::TypedObjectHandle<
-                                class ScriptModuleMinecraft::ScriptSystemAfterEvents>); // NOLINT
+    MCAPI void
+        registerListener(struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptSystemAfterEvents>);
     /**
      * @symbol ??1ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptSystemAfterEvents(); // NOLINT
+    MCAPI ~ScriptSystemAfterEvents();
     /**
      * @symbol ?bind\@ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@SAXAEAVModuleBindingBuilder\@Scripting\@\@\@Z
      */
-    MCAPI static void bind(class Scripting::ModuleBindingBuilder&); // NOLINT
+    MCAPI static void bind(class Scripting::ModuleBindingBuilder&);
     /**
      * @symbol
      * ?generateOrderDocumentationForVersion\@ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@SAXAEBUModuleDescriptor\@Scripting\@\@AEAVValue\@Json\@\@\@Z
      */
     MCAPI static void
-    generateOrderDocumentationForVersion(struct Scripting::ModuleDescriptor const&, class Json::Value&); // NOLINT
+    generateOrderDocumentationForVersion(struct Scripting::ModuleDescriptor const&, class Json::Value&);
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

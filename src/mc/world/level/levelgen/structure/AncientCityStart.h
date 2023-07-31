@@ -14,14 +14,16 @@ public:
     AncientCityStart()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 2
      * @symbol ?isValid\@AncientCityStart\@\@UEBA_NXZ
      */
-    virtual bool isValid() const; // NOLINT
+    virtual bool isValid() const;
+    // NOLINTEND
 };

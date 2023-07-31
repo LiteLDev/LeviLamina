@@ -11,13 +11,14 @@ public:
     PlayerChangeDimensionRequestComponent()                                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4PlayerChangeDimensionRequestComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct PlayerChangeDimensionRequestComponent&
-    operator=(struct PlayerChangeDimensionRequestComponent&&); // NOLINT
+    MCAPI struct PlayerChangeDimensionRequestComponent& operator=(struct PlayerChangeDimensionRequestComponent&&);
     /**
      * @symbol ??1PlayerChangeDimensionRequestComponent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerChangeDimensionRequestComponent(); // NOLINT
+    MCAPI ~PlayerChangeDimensionRequestComponent();
+    // NOLINTEND
 };

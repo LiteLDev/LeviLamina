@@ -11,20 +11,22 @@ public:
     HitboxComponent()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?addAdditionalSaveData\@HitboxComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
+    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
     /**
      * @symbol ?fromCompoundTag\@HitboxComponent\@\@QEAAXAEBVCompoundTag\@\@\@Z
      */
-    MCAPI void fromCompoundTag(class CompoundTag const&); // NOLINT
+    MCAPI void fromCompoundTag(class CompoundTag const&);
     /**
      * @symbol ??4HitboxComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class HitboxComponent& operator=(class HitboxComponent&&); // NOLINT
+    MCAPI class HitboxComponent& operator=(class HitboxComponent&&);
     /**
      * @symbol ?toCompoundTag\@HitboxComponent\@\@QEAAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void toCompoundTag(class CompoundTag&); // NOLINT
+    MCAPI void toCompoundTag(class CompoundTag&);
+    // NOLINTEND
 };

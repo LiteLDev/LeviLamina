@@ -11,12 +11,14 @@ public:
     BedHelper()                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getBedRotation\@BedHelper\@\@QEBAMH\@Z
      */
-    MCAPI float getBedRotation(int) const; // NOLINT
+    MCAPI float getBedRotation(int) const;
     /**
      * @symbol ?setBedPositionOffsets\@BedHelper\@\@QEAAXHAEAM0AEAVVec3\@\@\@Z
      */
-    MCAPI void setBedPositionOffsets(int, float&, float&, class Vec3&); // NOLINT
+    MCAPI void setBedPositionOffsets(int, float&, float&, class Vec3&);
+    // NOLINTEND
 };

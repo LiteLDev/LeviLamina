@@ -11,10 +11,10 @@ public:
     ActorComponentFactory()                                        = delete;
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_initialize\@ActorComponentFactory\@\@AEAAXAEBVExperiments\@\@\@Z
      */
-    MCAPI void _initialize(class Experiments const&); // NOLINT
-
-private:
+    MCAPI void _initialize(class Experiments const&);
+    // NOLINTEND
 };

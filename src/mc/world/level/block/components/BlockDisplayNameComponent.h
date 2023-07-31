@@ -11,10 +11,12 @@ public:
     BlockDisplayNameComponent()                                            = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKDISPLAYNAMECOMPONENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~BlockDisplayNameComponent(); // NOLINT
+    MCVAPI ~BlockDisplayNameComponent();
 #endif
+    // NOLINTEND
 };

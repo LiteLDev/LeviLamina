@@ -11,8 +11,10 @@ public:
     PlayerNotificationEvent()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PlayerNotificationEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerNotificationEvent(); // NOLINT
+    MCAPI ~PlayerNotificationEvent();
+    // NOLINTEND
 };

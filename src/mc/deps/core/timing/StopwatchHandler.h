@@ -11,8 +11,10 @@ public:
     StopwatchHandler()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?clearAll\@StopwatchHandler\@\@QEAAXXZ
      */
-    MCAPI void clearAll(); // NOLINT
+    MCAPI void clearAll();
+    // NOLINTEND
 };

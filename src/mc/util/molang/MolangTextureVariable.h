@@ -11,8 +11,10 @@ public:
     MolangTextureVariable()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1MolangTextureVariable\@\@QEAA\@XZ
      */
-    MCAPI ~MolangTextureVariable(); // NOLINT
+    MCAPI ~MolangTextureVariable();
+    // NOLINTEND
 };

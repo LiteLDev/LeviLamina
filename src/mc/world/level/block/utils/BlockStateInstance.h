@@ -11,12 +11,14 @@ public:
     BlockStateInstance()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?initState\@BlockStateInstance\@\@QEAAXAEAIIIAEBVBlockState\@\@\@Z
      */
-    MCAPI void initState(unsigned int&, unsigned int, unsigned int, class BlockState const&); // NOLINT
+    MCAPI void initState(unsigned int&, unsigned int, unsigned int, class BlockState const&);
     /**
      * @symbol ?isValidData\@BlockStateInstance\@\@QEBA_NI\@Z
      */
-    MCAPI bool isValidData(unsigned int) const; // NOLINT
+    MCAPI bool isValidData(unsigned int) const;
+    // NOLINTEND
 };

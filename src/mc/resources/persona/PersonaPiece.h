@@ -10,16 +10,18 @@ public:
     PersonaPiece(PersonaPiece const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0PersonaPiece\@\@QEAA\@XZ
      */
-    MCAPI PersonaPiece(); // NOLINT
+    MCAPI PersonaPiece();
     /**
      * @symbol ??1PersonaPiece\@\@QEAA\@XZ
      */
-    MCAPI ~PersonaPiece(); // NOLINT
+    MCAPI ~PersonaPiece();
     /**
      * @symbol ?INVALID_PIECE\@PersonaPiece\@\@2V1\@B
      */
-    MCAPI static class PersonaPiece const INVALID_PIECE; // NOLINT
+    MCAPI static class PersonaPiece const INVALID_PIECE;
+    // NOLINTEND
 };

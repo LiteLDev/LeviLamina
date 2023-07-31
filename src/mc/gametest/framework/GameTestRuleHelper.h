@@ -18,30 +18,32 @@ public:
     GameTestRuleHelper()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?addRuleToClear\@GameTestRuleHelper\@gametest\@\@UEAAXH\@Z
      */
-    virtual void addRuleToClear(int); // NOLINT
+    virtual void addRuleToClear(int);
     /**
      * @vftbl 2
      * @symbol ?clearRules\@GameTestRuleHelper\@gametest\@\@UEAAXXZ
      */
-    virtual void clearRules(); // NOLINT
+    virtual void clearRules();
     /**
      * @vftbl 3
      * @symbol ?restoreRules\@GameTestRuleHelper\@gametest\@\@UEAAXXZ
      */
-    virtual void restoreRules(); // NOLINT
+    virtual void restoreRules();
     /**
      * @symbol ??0GameTestRuleHelper\@gametest\@\@QEAA\@AEAVILevel\@\@\@Z
      */
-    MCAPI GameTestRuleHelper(class ILevel&); // NOLINT
+    MCAPI GameTestRuleHelper(class ILevel&);
+    // NOLINTEND
 };
 
 }; // namespace gametest

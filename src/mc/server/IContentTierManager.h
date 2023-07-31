@@ -11,10 +11,12 @@ public:
     IContentTierManager()                                      = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICONTENTTIERMANAGER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IContentTierManager(); // NOLINT
+    MCVAPI ~IContentTierManager();
 #endif
+    // NOLINTEND
 };

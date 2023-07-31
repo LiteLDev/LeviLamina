@@ -11,30 +11,32 @@ public:
     ActorPermutationEventHandler()                                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ActorPermutationEventHandler\@\@QEAA\@AEAVActor\@\@\@Z
      */
-    MCAPI ActorPermutationEventHandler(class Actor&); // NOLINT
+    MCAPI ActorPermutationEventHandler(class Actor&);
     /**
      * @symbol
      * ?checkActiveComponents\@ActorPermutationEventHandler\@\@QEAAXV?$shared_ptr\@VActorPermutation\@\@\@std\@\@\@Z
      */
-    MCAPI void checkActiveComponents(class std::shared_ptr<class ActorPermutation>); // NOLINT
+    MCAPI void checkActiveComponents(std::shared_ptr<class ActorPermutation>);
     /**
      * @symbol ?getPermutationDescriptor\@ActorPermutationEventHandler\@\@QEAAPEAVActorDefinitionDescriptor\@\@XZ
      */
-    MCAPI class ActorDefinitionDescriptor* getPermutationDescriptor(); // NOLINT
+    MCAPI class ActorDefinitionDescriptor* getPermutationDescriptor();
     /**
      * @symbol ?hasChanged\@ActorPermutationEventHandler\@\@QEAA_NXZ
      */
-    MCAPI bool hasChanged(); // NOLINT
+    MCAPI bool hasChanged();
     /**
      * @symbol
      * ?initPermutations\@ActorPermutationEventHandler\@\@QEAAXAEAV?$vector\@V?$shared_ptr\@VActorPermutation\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VActorPermutation\@\@\@std\@\@\@2\@\@std\@\@\@Z
      */
-    MCAPI void initPermutations(std::vector<class std::shared_ptr<class ActorPermutation>>&); // NOLINT
+    MCAPI void initPermutations(std::vector<std::shared_ptr<class ActorPermutation>>&);
     /**
      * @symbol ?reload\@ActorPermutationEventHandler\@\@QEAAXAEAVRenderParams\@\@\@Z
      */
-    MCAPI void reload(class RenderParams&); // NOLINT
+    MCAPI void reload(class RenderParams&);
+    // NOLINTEND
 };

@@ -19,15 +19,17 @@ public:
     SoundVolumeDefinition()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?initialize\@SoundVolumeDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void initialize(class EntityContext&) const; // NOLINT
+    MCAPI void initialize(class EntityContext&) const;
     /**
      * @symbol
      * ?buildSchema\@SoundVolumeDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@USoundVolumeDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      struct SoundVolumeDefinition>>&); // NOLINT
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct SoundVolumeDefinition>>&);
+    // NOLINTEND
 };

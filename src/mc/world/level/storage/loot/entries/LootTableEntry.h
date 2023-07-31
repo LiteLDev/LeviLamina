@@ -11,10 +11,12 @@ public:
     LootTableEntry()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol
      * ?_createItem\@LootTableEntry\@\@MEAA_NAEAV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
      */
-    virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&); // NOLINT
+    virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
+    // NOLINTEND
 };

@@ -11,8 +11,10 @@ public:
     ActorSpawnRuleDefinition()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ActorSpawnRuleDefinition\@\@QEAA\@XZ
      */
-    MCAPI ~ActorSpawnRuleDefinition(); // NOLINT
+    MCAPI ~ActorSpawnRuleDefinition();
+    // NOLINTEND
 };

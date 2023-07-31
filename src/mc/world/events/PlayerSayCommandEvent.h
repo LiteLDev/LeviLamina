@@ -11,8 +11,10 @@ public:
     PlayerSayCommandEvent()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PlayerSayCommandEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerSayCommandEvent(); // NOLINT
+    MCAPI ~PlayerSayCommandEvent();
+    // NOLINTEND
 };

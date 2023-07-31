@@ -16,6 +16,7 @@ public:
     ClimateParameters()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ClimateParameters\@\@QEAA\@UParameter\@ClimateUtils\@\@00000M\@Z
      */
@@ -27,5 +28,6 @@ public:
         struct ClimateUtils::Parameter,
         struct ClimateUtils::Parameter,
         float
-    ); // NOLINT
+    );
+    // NOLINTEND
 };

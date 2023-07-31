@@ -11,12 +11,14 @@ public:
     RemovePassengersComponent()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4RemovePassengersComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct RemovePassengersComponent& operator=(struct RemovePassengersComponent&&); // NOLINT
+    MCAPI struct RemovePassengersComponent& operator=(struct RemovePassengersComponent&&);
     /**
      * @symbol ??1RemovePassengersComponent\@\@QEAA\@XZ
      */
-    MCAPI ~RemovePassengersComponent(); // NOLINT
+    MCAPI ~RemovePassengersComponent();
+    // NOLINTEND
 };

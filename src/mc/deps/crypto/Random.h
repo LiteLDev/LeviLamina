@@ -8,17 +8,19 @@ namespace mce { class UUID; }
 // clang-format on
 
 namespace Crypto::Random {
+// NOLINTBEGIN
 /**
  * @symbol ?generateCryptographicPlatformUUID\@Random\@Crypto\@\@YA?AVUUID\@mce\@\@XZ
  */
-MCAPI class mce::UUID generateCryptographicPlatformUUID(); // NOLINT
+MCAPI class mce::UUID generateCryptographicPlatformUUID();
 /**
  * @symbol ?generateUUID\@Random\@Crypto\@\@YA?AVUUID\@mce\@\@XZ
  */
-MCAPI class mce::UUID generateUUID(); // NOLINT
+MCAPI class mce::UUID generateUUID();
 /**
  * @symbol ?generateUUID64Bit\@Random\@Crypto\@\@YA_KXZ
  */
-MCAPI unsigned __int64 generateUUID64Bit(); // NOLINT
+MCAPI uint64_t generateUUID64Bit();
+// NOLINTEND
 
 }; // namespace Crypto::Random

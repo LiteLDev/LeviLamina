@@ -15,40 +15,43 @@ public:
     OreVeinifierNoises()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0OreVeinifierNoises\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI OreVeinifierNoises(class OreVeinifierNoises const&); // NOLINT
+    MCAPI OreVeinifierNoises(class OreVeinifierNoises const&);
     /**
      * @symbol ?getPositionalRandomFactory\@OreVeinifierNoises\@\@QEBAAEBVXoroshiroPositionalRandomFactory\@\@XZ
      */
-    MCAPI class XoroshiroPositionalRandomFactory const& getPositionalRandomFactory() const; // NOLINT
+    MCAPI class XoroshiroPositionalRandomFactory const& getPositionalRandomFactory() const;
     /**
      * @symbol ?sampleGapNoise\@OreVeinifierNoises\@\@QEBAMMMM\@Z
      */
-    MCAPI float sampleGapNoise(float, float, float) const; // NOLINT
+    MCAPI float sampleGapNoise(float, float, float) const;
     /**
      * @symbol ?sampleVeinNoiseA\@OreVeinifierNoises\@\@QEBAMMMM\@Z
      */
-    MCAPI float sampleVeinNoiseA(float, float, float) const; // NOLINT
+    MCAPI float sampleVeinNoiseA(float, float, float) const;
     /**
      * @symbol ?sampleVeinNoiseB\@OreVeinifierNoises\@\@QEBAMMMM\@Z
      */
-    MCAPI float sampleVeinNoiseB(float, float, float) const; // NOLINT
+    MCAPI float sampleVeinNoiseB(float, float, float) const;
     /**
      * @symbol ?sampleVeininessNoise\@OreVeinifierNoises\@\@QEBAMMMM\@Z
      */
-    MCAPI float sampleVeininessNoise(float, float, float) const; // NOLINT
+    MCAPI float sampleVeininessNoise(float, float, float) const;
     /**
      * @symbol ??1OreVeinifierNoises\@\@QEAA\@XZ
      */
-    MCAPI ~OreVeinifierNoises(); // NOLINT
+    MCAPI ~OreVeinifierNoises();
     /**
      * @symbol ?make\@OreVeinifierNoises\@\@SA?AV1\@AEBVXoroshiroPositionalRandomFactory\@\@\@Z
      */
-    MCAPI static class OreVeinifierNoises make(class XoroshiroPositionalRandomFactory const&); // NOLINT
+    MCAPI static class OreVeinifierNoises make(class XoroshiroPositionalRandomFactory const&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0OreVeinifierNoises\@\@AEAA\@V?$NormalNoiseImpl\@$0A\@V?$MultiOctaveNoiseImpl\@$0A\@V?$ParityImprovedNoiseImpl\@$0A\@\@\@\@\@\@\@000VXoroshiroPositionalRandomFactory\@\@\@Z
@@ -59,7 +62,6 @@ public:
         class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>,
         class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>,
         class XoroshiroPositionalRandomFactory
-    ); // NOLINT
-
-private:
+    );
+    // NOLINTEND
 };

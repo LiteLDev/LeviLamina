@@ -11,12 +11,14 @@ public:
     SchedulerComponent()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getCurrentEventIndex\@SchedulerComponent\@\@QEBAHXZ
      */
-    MCAPI int getCurrentEventIndex() const; // NOLINT
+    MCAPI int getCurrentEventIndex() const;
     /**
      * @symbol ?setCurrentEventIndex\@SchedulerComponent\@\@QEAAXH\@Z
      */
-    MCAPI void setCurrentEventIndex(int); // NOLINT
+    MCAPI void setCurrentEventIndex(int);
+    // NOLINTEND
 };

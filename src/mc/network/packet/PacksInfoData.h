@@ -11,12 +11,14 @@ public:
     PacksInfoData()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getBehaviorPackSize\@PacksInfoData\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 getBehaviorPackSize() const; // NOLINT
+    MCAPI uint64_t getBehaviorPackSize() const;
     /**
      * @symbol ?getResourcePackSize\@PacksInfoData\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 getResourcePackSize() const; // NOLINT
+    MCAPI uint64_t getResourcePackSize() const;
+    // NOLINTEND
 };

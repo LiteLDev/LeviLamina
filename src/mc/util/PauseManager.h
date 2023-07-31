@@ -15,14 +15,16 @@ public:
     PauseManager()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?getSimulationType\@PauseManager\@\@SA?AW4SimulationType\@\@V?$StackRefResultT\@U?$SharePtrRefTraits\@$$CBVPauseManager\@\@\@\@\@\@\@Z
      */
     MCAPI static enum class SimulationType
-        getSimulationType(class StackRefResultT<struct SharePtrRefTraits<class PauseManager const>>); // NOLINT
+        getSimulationType(class StackRefResultT<struct SharePtrRefTraits<class PauseManager const>>);
     /**
      * @symbol ?DEFAULT_SIMULATION_TYPE\@PauseManager\@\@2W4SimulationType\@\@B
      */
-    MCAPI static enum class SimulationType const DEFAULT_SIMULATION_TYPE; // NOLINT
+    MCAPI static enum class SimulationType const DEFAULT_SIMULATION_TYPE;
+    // NOLINTEND
 };

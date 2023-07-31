@@ -11,12 +11,14 @@ public:
     MolangDataDrivenGeometry()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??8MolangDataDrivenGeometry\@\@QEBA_NAEBU0\@\@Z
      */
-    MCAPI bool operator==(struct MolangDataDrivenGeometry const&) const; // NOLINT
+    MCAPI bool operator==(struct MolangDataDrivenGeometry const&) const;
     /**
      * @symbol ??1MolangDataDrivenGeometry\@\@QEAA\@XZ
      */
-    MCAPI ~MolangDataDrivenGeometry(); // NOLINT
+    MCAPI ~MolangDataDrivenGeometry();
+    // NOLINTEND
 };

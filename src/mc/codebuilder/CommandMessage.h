@@ -13,10 +13,12 @@ public:
     CommandMessage()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1CommandMessage\@CodeBuilder\@\@QEAA\@XZ
      */
-    MCAPI ~CommandMessage(); // NOLINT
+    MCAPI ~CommandMessage();
+    // NOLINTEND
 };
 
 }; // namespace CodeBuilder

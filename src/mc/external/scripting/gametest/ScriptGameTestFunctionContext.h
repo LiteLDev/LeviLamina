@@ -23,18 +23,19 @@ public:
     ScriptGameTestFunctionContext()                                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0ScriptGameTestFunctionContext\@ScriptModuleGameTest\@\@QEAA\@VWeakLifetimeScope\@Scripting\@\@AEAVBaseGameTestHelper\@gametest\@\@\@Z
      */
-    MCAPI
-    ScriptGameTestFunctionContext(class Scripting::WeakLifetimeScope, class gametest::BaseGameTestHelper&); // NOLINT
+    MCAPI ScriptGameTestFunctionContext(class Scripting::WeakLifetimeScope, class gametest::BaseGameTestHelper&);
     /**
      * @symbol
      * ?getScriptGameTestHelper\@ScriptGameTestFunctionContext\@ScriptModuleGameTest\@\@QEAA?AV?$WeakTypedObjectHandle\@VScriptGameTestHelper\@ScriptModuleGameTest\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestHelper>
-    getScriptGameTestHelper(); // NOLINT
+    getScriptGameTestHelper();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleGameTest

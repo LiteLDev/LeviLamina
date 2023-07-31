@@ -11,8 +11,10 @@ public:
     DesiredMoveDirectionSystem()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createDesiredMoveDirectionSystem\@DesiredMoveDirectionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createDesiredMoveDirectionSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createDesiredMoveDirectionSystem();
+    // NOLINTEND
 };

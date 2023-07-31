@@ -11,8 +11,10 @@ public:
     ActorUseItemEvent()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ActorUseItemEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorUseItemEvent(); // NOLINT
+    MCAPI ~ActorUseItemEvent();
+    // NOLINTEND
 };

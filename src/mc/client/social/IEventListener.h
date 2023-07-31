@@ -22,29 +22,31 @@ public:
     IEventListener()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0() = 0; // NOLINT
+    virtual void __unk_vfn_0() = 0;
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1(); // NOLINT
+    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol
      * ?recordSummaryEvent\@IEventListener\@Events\@Social\@\@UEAAXAEBVSummaryEvent\@23\@AEBV?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@\@Z
      */
     virtual void
-    recordSummaryEvent(class Social::Events::SummaryEvent const&, class Bedrock::NonOwnerPointer<class AppPlatform> const&); // NOLINT
+    recordSummaryEvent(class Social::Events::SummaryEvent const&, class Bedrock::NonOwnerPointer<class AppPlatform> const&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOCIAL_EVENTS_IEVENTLISTENER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IEventListener(); // NOLINT
+    MCVAPI ~IEventListener();
 #endif
+    // NOLINTEND
 };
 
 }; // namespace Social::Events

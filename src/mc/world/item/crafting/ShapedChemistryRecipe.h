@@ -19,28 +19,30 @@ public:
     ShapedChemistryRecipe()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 5
      * @symbol __unk_vfn_5
      */
-    virtual void __unk_vfn_5(); // NOLINT
+    virtual void __unk_vfn_5();
     /**
      * @vftbl 6
      * @symbol ?matches\@ShapedChemistryRecipe\@\@UEBA_NAEBVCraftingContainer\@\@AEBVCraftingContext\@\@\@Z
      */
-    virtual bool matches(class CraftingContainer const&, class CraftingContext const&) const; // NOLINT
+    virtual bool matches(class CraftingContainer const&, class CraftingContext const&) const;
     /**
      * @vftbl 8
      * @symbol ?getId\@ShapedChemistryRecipe\@\@UEBAAEBVUUID\@mce\@\@XZ
      */
-    virtual class mce::UUID const& getId() const; // NOLINT
+    virtual class mce::UUID const& getId() const;
     /**
      * @symbol ?ID\@ShapedChemistryRecipe\@\@2VUUID\@mce\@\@B
      */
-    MCAPI static class mce::UUID const ID; // NOLINT
+    MCAPI static class mce::UUID const ID;
+    // NOLINTEND
 };

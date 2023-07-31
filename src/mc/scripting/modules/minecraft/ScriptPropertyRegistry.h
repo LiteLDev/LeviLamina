@@ -24,28 +24,29 @@ public:
     ScriptPropertyRegistry()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ScriptPropertyRegistry\@ScriptModuleMinecraft\@\@QEAA\@AEAVServerLevel\@\@\@Z
      */
-    MCAPI ScriptPropertyRegistry(class ServerLevel&); // NOLINT
+    MCAPI ScriptPropertyRegistry(class ServerLevel&);
     /**
      * @symbol
      * ?registerEntityTypeDynamicProperties\@ScriptPropertyRegistry\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEBVScriptDynamicPropertiesDefinition\@2\@AEAVScriptActorType\@2\@\@Z
      */
     MCAPI class Scripting::Result<void>
-    registerEntityTypeDynamicProperties(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&, class ScriptModuleMinecraft::ScriptActorType&); // NOLINT
+    registerEntityTypeDynamicProperties(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&, class ScriptModuleMinecraft::ScriptActorType&);
     /**
      * @symbol
      * ?registerWorldDynamicProperties\@ScriptPropertyRegistry\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEBVScriptDynamicPropertiesDefinition\@2\@\@Z
      */
     MCAPI class Scripting::Result<void>
-    registerWorldDynamicProperties(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&); // NOLINT
+    registerWorldDynamicProperties(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&);
     /**
      * @symbol
      * ?bind\@ScriptPropertyRegistry\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptPropertyRegistry\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptPropertyRegistry>
-    bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptPropertyRegistry> bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

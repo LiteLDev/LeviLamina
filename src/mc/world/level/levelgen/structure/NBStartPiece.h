@@ -14,18 +14,20 @@ public:
     NBStartPiece()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 2
      * @symbol ?getType\@NBStartPiece\@\@UEBA?AW4StructurePieceType\@\@XZ
      */
-    virtual enum class StructurePieceType getType() const; // NOLINT
+    virtual enum class StructurePieceType getType() const;
     /**
      * @symbol ??0NBStartPiece\@\@QEAA\@AEAVRandom\@\@HH\@Z
      */
-    MCAPI NBStartPiece(class Random&, int, int); // NOLINT
+    MCAPI NBStartPiece(class Random&, int, int);
+    // NOLINTEND
 };

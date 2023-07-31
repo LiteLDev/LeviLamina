@@ -11,29 +11,31 @@ public:
     ServerPlayerMovementSystem()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_updateFallDistance\@ServerPlayerMovementSystem\@\@SAXAEBUServerPlayerCurrentMovementComponent\@\@AEBUStateVectorComponent\@\@AEAUFallDistanceComponent\@\@\@Z
      */
     MCAPI static void
-    _updateFallDistance(struct ServerPlayerCurrentMovementComponent const&, struct StateVectorComponent const&, struct FallDistanceComponent&); // NOLINT
+    _updateFallDistance(struct ServerPlayerCurrentMovementComponent const&, struct StateVectorComponent const&, struct FallDistanceComponent&);
     /**
      * @symbol
      * ?createPostInputSystems\@ServerPlayerMovementSystem\@\@SA?AV?$array\@UTickingSystemWithInfo\@\@$01\@std\@\@XZ
      */
-    MCAPI static class std::array<struct TickingSystemWithInfo, 2> createPostInputSystems(); // NOLINT
+    MCAPI static std::array<struct TickingSystemWithInfo, 2> createPostInputSystems();
     /**
      * @symbol
      * ?createPostTravelSystems\@ServerPlayerMovementSystem\@\@SA?AV?$array\@UTickingSystemWithInfo\@\@$03\@std\@\@XZ
      */
-    MCAPI static class std::array<struct TickingSystemWithInfo, 4> createPostTravelSystems(); // NOLINT
+    MCAPI static std::array<struct TickingSystemWithInfo, 4> createPostTravelSystems();
     /**
      * @symbol
      * ?createPreInputSystems\@ServerPlayerMovementSystem\@\@SA?AV?$array\@UTickingSystemWithInfo\@\@$02\@std\@\@XZ
      */
-    MCAPI static class std::array<struct TickingSystemWithInfo, 3> createPreInputSystems(); // NOLINT
+    MCAPI static std::array<struct TickingSystemWithInfo, 3> createPreInputSystems();
     /**
      * @symbol ?createServerPlayerMovementFinalSystem\@ServerPlayerMovementSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createServerPlayerMovementFinalSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createServerPlayerMovementFinalSystem();
+    // NOLINTEND
 };

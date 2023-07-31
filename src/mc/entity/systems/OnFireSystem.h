@@ -11,32 +11,34 @@ public:
     OnFireSystem()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?extinguishFire\@OnFireSystem\@\@SAXAEAVActor\@\@\@Z
      */
-    MCAPI static void extinguishFire(class Actor&); // NOLINT
+    MCAPI static void extinguishFire(class Actor&);
     /**
      * @symbol ?onFireChanged\@OnFireSystem\@\@SAXAEAVActor\@\@\@Z
      */
-    MCAPI static void onFireChanged(class Actor&); // NOLINT
+    MCAPI static void onFireChanged(class Actor&);
     /**
      * @symbol ?setOnFire\@OnFireSystem\@\@SAXAEAVActor\@\@H\@Z
      */
-    MCAPI static void setOnFire(class Actor&, int); // NOLINT
+    MCAPI static void setOnFire(class Actor&, int);
     /**
      * @symbol ?setOnFireNoEffects\@OnFireSystem\@\@SAXAEAVActor\@\@H\@Z
      */
-    MCAPI static void setOnFireNoEffects(class Actor&, int); // NOLINT
+    MCAPI static void setOnFireNoEffects(class Actor&, int);
     /**
      * @symbol ?stopFire\@OnFireSystem\@\@SAXAEAVActor\@\@\@Z
      */
-    MCAPI static void stopFire(class Actor&); // NOLINT
+    MCAPI static void stopFire(class Actor&);
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol ?_extinguishFireIfInWater\@OnFireSystem\@\@KA_NAEAVActor\@\@\@Z
      */
-    MCAPI static bool _extinguishFireIfInWater(class Actor&); // NOLINT
-
-protected:
+    MCAPI static bool _extinguishFireIfInWater(class Actor&);
+    // NOLINTEND
 };

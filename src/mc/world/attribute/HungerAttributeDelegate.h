@@ -14,23 +14,25 @@ public:
     HungerAttributeDelegate()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?tick\@HungerAttributeDelegate\@\@UEAAXXZ
      */
-    virtual void tick(); // NOLINT
+    virtual void tick();
     /**
      * @vftbl 2
      * @symbol ?notify\@HungerAttributeDelegate\@\@UEAAX_J\@Z
      */
-    virtual void notify(__int64); // NOLINT
+    virtual void notify(int64_t);
     /**
      * @symbol ??0HungerAttributeDelegate\@\@QEAA\@AEBVAttributeInstance\@\@PEAVPlayer\@\@\@Z
      */
-    MCAPI HungerAttributeDelegate(class AttributeInstance const&, class Player*); // NOLINT
+    MCAPI HungerAttributeDelegate(class AttributeInstance const&, class Player*);
+    // NOLINTEND
 };

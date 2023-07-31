@@ -10,10 +10,11 @@ namespace Core::Profile { enum class CounterFormat; }
 // clang-format on
 
 namespace Core::Profile {
+// NOLINTBEGIN
 /**
  * @symbol ?counterSet\@Profile\@Core\@\@YAXVCounterTokenMarker\@12\@_J\@Z
  */
-MCAPI void counterSet(class Core::Profile::CounterTokenMarker, __int64); // NOLINT
+MCAPI void counterSet(class Core::Profile::CounterTokenMarker, int64_t);
 /**
  * @symbol
  * ?generateCounterTokenWithConfig\@Profile\@Core\@\@YA?AVCounterTokenMarker\@12\@PEBDW4CounterFormat\@12\@_JW4CounterFlags\@12\@\@Z
@@ -21,44 +22,45 @@ MCAPI void counterSet(class Core::Profile::CounterTokenMarker, __int64); // NOLI
 MCAPI class Core::Profile::CounterTokenMarker generateCounterTokenWithConfig(
     char const*,
     enum class Core::Profile::CounterFormat,
-    __int64,
+    int64_t,
     enum class Core::Profile::CounterFlags
-); // NOLINT
+);
 /**
  * @symbol ?initializeProfile\@Profile\@Core\@\@YAXXZ
  */
-MCAPI void initializeProfile(); // NOLINT
+MCAPI void initializeProfile();
 /**
  * @symbol ?onFileOpenFailed\@Profile\@Core\@\@YAX_N\@Z
  */
-MCAPI void onFileOpenFailed(bool); // NOLINT
+MCAPI void onFileOpenFailed(bool);
 /**
  * @symbol ?onFileOpenRequest\@Profile\@Core\@\@YAX_N\@Z
  */
-MCAPI void onFileOpenRequest(bool); // NOLINT
+MCAPI void onFileOpenRequest(bool);
 /**
  * @symbol ?onFileOpenRetry\@Profile\@Core\@\@YAX_N\@Z
  */
-MCAPI void onFileOpenRetry(bool); // NOLINT
+MCAPI void onFileOpenRetry(bool);
 /**
  * @symbol ?onFileOpenRetrySuccess\@Profile\@Core\@\@YAX_N\@Z
  */
-MCAPI void onFileOpenRetrySuccess(bool); // NOLINT
+MCAPI void onFileOpenRetrySuccess(bool);
 /**
  * @symbol ?onMainThreadCreate\@Profile\@Core\@\@YAXXZ
  */
-MCAPI void onMainThreadCreate(); // NOLINT
+MCAPI void onMainThreadCreate();
 /**
  * @symbol ?onThreadDestroy\@Profile\@Core\@\@YAXXZ
  */
-MCAPI void onThreadDestroy(); // NOLINT
+MCAPI void onThreadDestroy();
 /**
  * @symbol ?profileFlip\@Profile\@Core\@\@YAXXZ
  */
-MCAPI void profileFlip(); // NOLINT
+MCAPI void profileFlip();
 /**
  * @symbol ?shutdownProfile\@Profile\@Core\@\@YAXXZ
  */
-MCAPI void shutdownProfile(); // NOLINT
+MCAPI void shutdownProfile();
+// NOLINTEND
 
 }; // namespace Core::Profile

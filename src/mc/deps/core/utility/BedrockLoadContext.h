@@ -11,12 +11,14 @@ public:
     BedrockLoadContext()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0BedrockLoadContext\@\@QEAA\@AEBVSemVersion\@\@\@Z
      */
-    MCAPI BedrockLoadContext(class SemVersion const&); // NOLINT
+    MCAPI BedrockLoadContext(class SemVersion const&);
     /**
      * @symbol ??1BedrockLoadContext\@\@QEAA\@XZ
      */
-    MCAPI ~BedrockLoadContext(); // NOLINT
+    MCAPI ~BedrockLoadContext();
+    // NOLINTEND
 };

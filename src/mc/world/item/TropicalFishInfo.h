@@ -11,8 +11,10 @@ public:
     TropicalFishInfo()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1TropicalFishInfo\@\@QEAA\@XZ
      */
-    MCAPI ~TropicalFishInfo(); // NOLINT
+    MCAPI ~TropicalFishInfo();
+    // NOLINTEND
 };

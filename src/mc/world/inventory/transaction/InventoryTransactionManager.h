@@ -11,28 +11,30 @@ public:
     InventoryTransactionManager()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?_createServerSideAction\@InventoryTransactionManager\@\@QEAAXAEBVItemStack\@\@0\@Z
      */
-    MCAPI void _createServerSideAction(class ItemStack const&, class ItemStack const&); // NOLINT
+    MCAPI void _createServerSideAction(class ItemStack const&, class ItemStack const&);
     /**
      * @symbol ?_logExpectedActions\@InventoryTransactionManager\@\@QEBAXXZ
      */
-    MCAPI void _logExpectedActions() const; // NOLINT
+    MCAPI void _logExpectedActions() const;
     /**
      * @symbol ?addAction\@InventoryTransactionManager\@\@QEAAXAEBVInventoryAction\@\@_N\@Z
      */
-    MCAPI void addAction(class InventoryAction const&, bool); // NOLINT
+    MCAPI void addAction(class InventoryAction const&, bool);
     /**
      * @symbol ?addExpectedAction\@InventoryTransactionManager\@\@QEAAXAEBVInventoryAction\@\@\@Z
      */
-    MCAPI void addExpectedAction(class InventoryAction const&); // NOLINT
+    MCAPI void addExpectedAction(class InventoryAction const&);
     /**
      * @symbol ?forceBalanceTransaction\@InventoryTransactionManager\@\@QEAAXXZ
      */
-    MCAPI void forceBalanceTransaction(); // NOLINT
+    MCAPI void forceBalanceTransaction();
     /**
      * @symbol ??1InventoryTransactionManager\@\@QEAA\@XZ
      */
-    MCAPI ~InventoryTransactionManager(); // NOLINT
+    MCAPI ~InventoryTransactionManager();
+    // NOLINTEND
 };

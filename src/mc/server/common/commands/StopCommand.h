@@ -14,26 +14,28 @@ public:
     StopCommand()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?execute\@StopCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
     /**
      * @symbol ?setup\@StopCommand\@\@SAXAEAVCommandRegistry\@\@AEAVDedicatedServer\@\@\@Z
      */
-    MCAPI static void setup(class CommandRegistry&, class DedicatedServer&); // NOLINT
-
-    // private:
+    MCAPI static void setup(class CommandRegistry&, class DedicatedServer&);
+    // NOLINTEND
 
 private:
+    // NOLINTBEGIN
     /**
      * @symbol ?mServer\@StopCommand\@\@0PEAVDedicatedServer\@\@EA
      */
-    MCAPI static class DedicatedServer* mServer; // NOLINT
+    MCAPI static class DedicatedServer* mServer;
+    // NOLINTEND
 };

@@ -11,8 +11,10 @@ public:
     ActorPathingData()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ActorPathingData\@\@QEAA\@XZ
      */
-    MCAPI ~ActorPathingData(); // NOLINT
+    MCAPI ~ActorPathingData();
+    // NOLINTEND
 };

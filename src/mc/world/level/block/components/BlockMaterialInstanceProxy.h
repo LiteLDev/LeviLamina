@@ -10,16 +10,18 @@ public:
     BlockMaterialInstanceProxy()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0BlockMaterialInstanceProxy\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI BlockMaterialInstanceProxy(struct BlockMaterialInstanceProxy const&); // NOLINT
+    MCAPI BlockMaterialInstanceProxy(struct BlockMaterialInstanceProxy const&);
     /**
      * @symbol ??1BlockMaterialInstanceProxy\@\@QEAA\@XZ
      */
-    MCAPI ~BlockMaterialInstanceProxy(); // NOLINT
+    MCAPI ~BlockMaterialInstanceProxy();
     /**
      * @symbol ?bindType\@BlockMaterialInstanceProxy\@\@SAXXZ
      */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI static void bindType();
+    // NOLINTEND
 };

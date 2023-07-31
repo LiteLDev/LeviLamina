@@ -11,18 +11,22 @@ public:
     BlockStateDefinition()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4BlockStateDefinition\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct BlockStateDefinition& operator=(struct BlockStateDefinition&&); // NOLINT
+    MCAPI struct BlockStateDefinition& operator=(struct BlockStateDefinition&&);
     /**
      * @symbol ??1BlockStateDefinition\@\@QEAA\@XZ
      */
-    MCAPI ~BlockStateDefinition(); // NOLINT
+    MCAPI ~BlockStateDefinition();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_copy\@BlockStateDefinition\@\@AEAAXAEBU1\@\@Z
      */
-    MCAPI void _copy(struct BlockStateDefinition const&); // NOLINT
+    MCAPI void _copy(struct BlockStateDefinition const&);
+    // NOLINTEND
 };

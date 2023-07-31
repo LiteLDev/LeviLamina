@@ -22,30 +22,32 @@ public:
         EndSpike()                           = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??0EndSpike\@SpikeFeature\@\@QEAA\@HHHH_N\@Z
          */
-        MCAPI EndSpike(int, int, int, int, bool); // NOLINT
+        MCAPI EndSpike(int, int, int, int, bool);
         /**
          * @symbol ?getCenterX\@EndSpike\@SpikeFeature\@\@QEBAHXZ
          */
-        MCAPI int getCenterX() const; // NOLINT
+        MCAPI int getCenterX() const;
         /**
          * @symbol ?getCenterZ\@EndSpike\@SpikeFeature\@\@QEBAHXZ
          */
-        MCAPI int getCenterZ() const; // NOLINT
+        MCAPI int getCenterZ() const;
         /**
          * @symbol ?getHeight\@EndSpike\@SpikeFeature\@\@QEBAHXZ
          */
-        MCAPI int getHeight() const; // NOLINT
+        MCAPI int getHeight() const;
         /**
          * @symbol ?getTopBoundingBox\@EndSpike\@SpikeFeature\@\@QEBA?AVAABB\@\@XZ
          */
-        MCAPI class AABB getTopBoundingBox() const; // NOLINT
+        MCAPI class AABB getTopBoundingBox() const;
         /**
          * @symbol ?startsInChunk\@EndSpike\@SpikeFeature\@\@QEBA_NAEBVBlockPos\@\@\@Z
          */
-        MCAPI bool startsInChunk(class BlockPos const&) const; // NOLINT
+        MCAPI bool startsInChunk(class BlockPos const&) const;
+        // NOLINTEND
     };
 
 public:
@@ -55,40 +57,42 @@ public:
     SpikeFeature()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 3
      * @symbol ?place\@SpikeFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SPIKEFEATURE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~SpikeFeature(); // NOLINT
+    MCVAPI ~SpikeFeature();
 #endif
     /**
      * @symbol ??0SpikeFeature\@\@QEAA\@AEBVEndSpike\@0\@\@Z
      */
-    MCAPI SpikeFeature(class SpikeFeature::EndSpike const&); // NOLINT
+    MCAPI SpikeFeature(class SpikeFeature::EndSpike const&);
     /**
      * @symbol ?placeManually\@SpikeFeature\@\@QEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@PEAVActor\@\@\@Z
      */
-    MCAPI bool placeManually(class BlockSource&, class BlockPos const&, class Random&, class Actor*); // NOLINT
+    MCAPI bool placeManually(class BlockSource&, class BlockPos const&, class Random&, class Actor*);
     /**
      * @symbol ?postProcessMobsAt\@SpikeFeature\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    MCAPI void postProcessMobsAt(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
+    MCAPI void postProcessMobsAt(class BlockSource&, class BlockPos const&, class Random&) const;
     /**
      * @symbol ?setCrystalBeamTarget\@SpikeFeature\@\@QEAAXAEBVBlockPos\@\@\@Z
      */
-    MCAPI void setCrystalBeamTarget(class BlockPos const&); // NOLINT
+    MCAPI void setCrystalBeamTarget(class BlockPos const&);
     /**
      * @symbol ?setCrystalInvulnerable\@SpikeFeature\@\@QEAAX_N\@Z
      */
-    MCAPI void setCrystalInvulnerable(bool); // NOLINT
+    MCAPI void setCrystalInvulnerable(bool);
+    // NOLINTEND
 };
