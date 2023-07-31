@@ -20,30 +20,32 @@ public:
         FromCenter()                             = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??0FromCenter\@BlockPosIterator\@\@QEAA\@AEBVBlockPos\@\@0\@Z
          */
-        MCAPI FromCenter(class BlockPos const&, class BlockPos const&); // NOLINT
+        MCAPI FromCenter(class BlockPos const&, class BlockPos const&);
         /**
          * @symbol ?begin\@FromCenter\@BlockPosIterator\@\@QEBA?AV12\@XZ
          */
-        MCAPI class BlockPosIterator::FromCenter begin() const; // NOLINT
+        MCAPI class BlockPosIterator::FromCenter begin() const;
         /**
          * @symbol ?end\@FromCenter\@BlockPosIterator\@\@QEBA?AV12\@XZ
          */
-        MCAPI class BlockPosIterator::FromCenter end() const; // NOLINT
+        MCAPI class BlockPosIterator::FromCenter end() const;
         /**
          * @symbol ??9FromCenter\@BlockPosIterator\@\@QEBA_NAEBV01\@\@Z
          */
-        MCAPI bool operator!=(class BlockPosIterator::FromCenter const&) const; // NOLINT
+        MCAPI bool operator!=(class BlockPosIterator::FromCenter const&) const;
         /**
          * @symbol ??DFromCenter\@BlockPosIterator\@\@QEAAAEBVBlockPos\@\@XZ
          */
-        MCAPI class BlockPos const& operator*(); // NOLINT
+        MCAPI class BlockPos const& operator*();
         /**
          * @symbol ??EFromCenter\@BlockPosIterator\@\@QEAAAEAV01\@XZ
          */
-        MCAPI class BlockPosIterator::FromCenter& operator++(); // NOLINT
+        MCAPI class BlockPosIterator::FromCenter& operator++();
+        // NOLINTEND
     };
 
     class ManhattanDistance {
@@ -55,30 +57,32 @@ public:
         ManhattanDistance()                                    = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??0ManhattanDistance\@BlockPosIterator\@\@QEAA\@AEBVBlockPos\@\@H\@Z
          */
-        MCAPI ManhattanDistance(class BlockPos const&, int); // NOLINT
+        MCAPI ManhattanDistance(class BlockPos const&, int);
         /**
          * @symbol ?begin\@ManhattanDistance\@BlockPosIterator\@\@QEBA?AV12\@XZ
          */
-        MCAPI class BlockPosIterator::ManhattanDistance begin() const; // NOLINT
+        MCAPI class BlockPosIterator::ManhattanDistance begin() const;
         /**
          * @symbol ?end\@ManhattanDistance\@BlockPosIterator\@\@QEBA?AV12\@XZ
          */
-        MCAPI class BlockPosIterator::ManhattanDistance end() const; // NOLINT
+        MCAPI class BlockPosIterator::ManhattanDistance end() const;
         /**
          * @symbol ??9ManhattanDistance\@BlockPosIterator\@\@QEBA_NAEBV01\@\@Z
          */
-        MCAPI bool operator!=(class BlockPosIterator::ManhattanDistance const&) const; // NOLINT
+        MCAPI bool operator!=(class BlockPosIterator::ManhattanDistance const&) const;
         /**
          * @symbol ??DManhattanDistance\@BlockPosIterator\@\@QEAAAEBVBlockPos\@\@XZ
          */
-        MCAPI class BlockPos const& operator*(); // NOLINT
+        MCAPI class BlockPos const& operator*();
         /**
          * @symbol ??EManhattanDistance\@BlockPosIterator\@\@QEAAAEAV01\@XZ
          */
-        MCAPI class BlockPosIterator::ManhattanDistance& operator++(); // NOLINT
+        MCAPI class BlockPosIterator::ManhattanDistance& operator++();
+        // NOLINTEND
     };
 
 public:
@@ -88,28 +92,30 @@ public:
     BlockPosIterator()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0BlockPosIterator\@\@QEAA\@AEBVBlockPos\@\@0\@Z
      */
-    MCAPI BlockPosIterator(class BlockPos const&, class BlockPos const&); // NOLINT
+    MCAPI BlockPosIterator(class BlockPos const&, class BlockPos const&);
     /**
      * @symbol ?begin\@BlockPosIterator\@\@QEBA?AV1\@XZ
      */
-    MCAPI class BlockPosIterator begin() const; // NOLINT
+    MCAPI class BlockPosIterator begin() const;
     /**
      * @symbol ?end\@BlockPosIterator\@\@QEBA?AV1\@XZ
      */
-    MCAPI class BlockPosIterator end() const; // NOLINT
+    MCAPI class BlockPosIterator end() const;
     /**
      * @symbol ??9BlockPosIterator\@\@QEBA_NAEBV0\@\@Z
      */
-    MCAPI bool operator!=(class BlockPosIterator const&) const; // NOLINT
+    MCAPI bool operator!=(class BlockPosIterator const&) const;
     /**
      * @symbol ??DBlockPosIterator\@\@QEAAAEBVBlockPos\@\@XZ
      */
-    MCAPI class BlockPos const& operator*(); // NOLINT
+    MCAPI class BlockPos const& operator*();
     /**
      * @symbol ??EBlockPosIterator\@\@QEAAAEAV0\@XZ
      */
-    MCAPI class BlockPosIterator& operator++(); // NOLINT
+    MCAPI class BlockPosIterator& operator++();
+    // NOLINTEND
 };

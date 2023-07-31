@@ -11,14 +11,16 @@ public:
     OnPlacedTrigger()                                  = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONPLACEDTRIGGER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~OnPlacedTrigger(); // NOLINT
+    MCVAPI ~OnPlacedTrigger();
 #endif
     /**
      * @symbol ??0OnPlacedTrigger\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI OnPlacedTrigger(class OnPlacedTrigger&&); // NOLINT
+    MCAPI OnPlacedTrigger(class OnPlacedTrigger&&);
+    // NOLINTEND
 };

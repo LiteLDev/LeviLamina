@@ -18,6 +18,7 @@ public:
     MemoryPage()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0MemoryPage\@JSONObject\@Bedrock\@\@QEAA\@V?$not_null\@PEAVDocument\@JSONObject\@Bedrock\@\@\@gsl\@\@PEAV012\@II\@Z
@@ -27,36 +28,37 @@ public:
         class Bedrock::JSONObject::MemoryPage*,
         unsigned int,
         unsigned int
-    ); // NOLINT
+    );
     /**
      * @symbol ?allocateBack\@MemoryPage\@JSONObject\@Bedrock\@\@QEAAPEAX_K0\@Z
      */
-    MCAPI void* allocateBack(unsigned __int64, unsigned __int64); // NOLINT
+    MCAPI void* allocateBack(uint64_t, uint64_t);
     /**
      * @symbol ?allocateFront\@MemoryPage\@JSONObject\@Bedrock\@\@QEAAPEAX_K0\@Z
      */
-    MCAPI void* allocateFront(unsigned __int64, unsigned __int64); // NOLINT
+    MCAPI void* allocateFront(uint64_t, uint64_t);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_allocate\@MemoryPage\@JSONObject\@Bedrock\@\@AEAAPEAXP8123\@EAA_K_K0\@ZP8123\@EAAPEAX00\@Z00\@Z
      */
     MCAPI void* _allocate(
-        unsigned __int64 (Bedrock::JSONObject::MemoryPage::*)(unsigned __int64, unsigned __int64),
-        void* (Bedrock::JSONObject::MemoryPage::*)(unsigned __int64, unsigned __int64),
-        unsigned __int64,
-        unsigned __int64
-    ); // NOLINT
+        uint64_t (Bedrock::JSONObject::MemoryPage::*)(uint64_t, uint64_t),
+        void* (Bedrock::JSONObject::MemoryPage::*)(uint64_t, uint64_t),
+        uint64_t,
+        uint64_t
+    );
     /**
      * @symbol ?_tryAllocateBack\@MemoryPage\@JSONObject\@Bedrock\@\@AEAA_K_K0\@Z
      */
-    MCAPI unsigned __int64 _tryAllocateBack(unsigned __int64, unsigned __int64); // NOLINT
+    MCAPI uint64_t _tryAllocateBack(uint64_t, uint64_t);
     /**
      * @symbol ?_tryAllocateFront\@MemoryPage\@JSONObject\@Bedrock\@\@AEAA_K_K0\@Z
      */
-    MCAPI unsigned __int64 _tryAllocateFront(unsigned __int64, unsigned __int64); // NOLINT
-
-private:
+    MCAPI uint64_t _tryAllocateFront(uint64_t, uint64_t);
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::JSONObject

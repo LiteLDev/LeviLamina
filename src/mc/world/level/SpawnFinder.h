@@ -11,14 +11,15 @@ public:
     SpawnFinder()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?findStandupPosition\@SpawnFinder\@\@SA?AV?$optional\@VBlockPos\@\@\@std\@\@AEBVBlockPos\@\@AEBVBlockSource\@\@\@Z
      */
-    MCAPI static class std::optional<class BlockPos>
-    findStandupPosition(class BlockPos const&, class BlockSource const&); // NOLINT
+    MCAPI static std::optional<class BlockPos> findStandupPosition(class BlockPos const&, class BlockSource const&);
     /**
      * @symbol ?isStandupPosition\@SpawnFinder\@\@SA_NAEBVBlockPos\@\@AEBVBlockSource\@\@\@Z
      */
-    MCAPI static bool isStandupPosition(class BlockPos const&, class BlockSource const&); // NOLINT
+    MCAPI static bool isStandupPosition(class BlockPos const&, class BlockSource const&);
+    // NOLINTEND
 };

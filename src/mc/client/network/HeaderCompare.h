@@ -16,13 +16,15 @@ public:
     HeaderCompare()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??RHeaderCompare\@httpclient\@xbox\@\@QEBA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$http_stl_allocator\@D\@\@\@std\@\@0\@Z
      */
     MCAPI bool
-    operator()(class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> const&, class std::basic_string<char, struct std::char_traits<char>, class http_stl_allocator<char>> const&)
-        const; // NOLINT
+    operator()(std::basic_string<char, std::char_traits<char>, class http_stl_allocator<char>> const&, std::basic_string<char, std::char_traits<char>, class http_stl_allocator<char>> const&)
+        const;
+    // NOLINTEND
 };
 
 }; // namespace xbox::httpclient

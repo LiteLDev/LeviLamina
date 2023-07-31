@@ -16,10 +16,12 @@ public:
     River()                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??RRiver\@OperationNodeFilters\@\@QEBA_NAEAU?$NeighborhoodReader\@H$00$00\@OperationNodeDetails\@\@\@Z
      */
-    MCAPI bool operator()(struct OperationNodeDetails::NeighborhoodReader<int, 1, 1>&) const; // NOLINT
+    MCAPI bool operator()(struct OperationNodeDetails::NeighborhoodReader<int, 1, 1>&) const;
+    // NOLINTEND
 };
 
 }; // namespace OperationNodeFilters

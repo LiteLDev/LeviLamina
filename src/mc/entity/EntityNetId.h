@@ -14,14 +14,15 @@ public:
     EntityNetId()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?_serverGetEntityNetId\@EntityNetId\@\@SA?AV1\@AEBVEntityContext\@\@\@Z
      */
-    MCAPI static class EntityNetId _serverGetEntityNetId(class EntityContext const&); // NOLINT
+    MCAPI static class EntityNetId _serverGetEntityNetId(class EntityContext const&);
     /**
      * @symbol
      * ?deserialize\@EntityNetId\@\@SA?AV?$Result\@VEntityNetId\@\@Verror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    MCAPI static class Bedrock::Result<class EntityNetId, class std::error_code>
-    deserialize(class ReadOnlyBinaryStream&); // NOLINT
+    MCAPI static class Bedrock::Result<class EntityNetId, std::error_code> deserialize(class ReadOnlyBinaryStream&);
+    // NOLINTEND
 };

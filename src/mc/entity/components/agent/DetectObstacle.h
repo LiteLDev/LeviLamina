@@ -19,14 +19,13 @@ public:
     DetectObstacle()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?setup\@DetectObstacle\@AgentComponents\@\@SAXAEAV12\@AEAVEntityContext\@\@W4Direction\@2\@\@Z
      */
-    MCAPI static void setup(
-        class AgentComponents::DetectObstacle&,
-        class EntityContext&,
-        enum class AgentComponents::Direction
-    ); // NOLINT
+    MCAPI static void
+    setup(class AgentComponents::DetectObstacle&, class EntityContext&, enum class AgentComponents::Direction);
+    // NOLINTEND
 };
 
 }; // namespace AgentComponents

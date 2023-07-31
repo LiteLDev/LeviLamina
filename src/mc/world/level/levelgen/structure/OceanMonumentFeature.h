@@ -14,21 +14,22 @@ public:
     OceanMonumentFeature()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?shouldAddHardcodedSpawnAreas\@OceanMonumentFeature\@\@UEBA_NXZ
      */
-    virtual bool shouldAddHardcodedSpawnAreas() const; // NOLINT
+    virtual bool shouldAddHardcodedSpawnAreas() const;
     /**
      * @vftbl 2
      * @symbol ?shouldPostProcessMobs\@OceanMonumentFeature\@\@UEBA_NXZ
      */
-    virtual bool shouldPostProcessMobs() const; // NOLINT
+    virtual bool shouldPostProcessMobs() const;
     /**
      * @vftbl 3
      * @symbol
@@ -41,28 +42,29 @@ public:
         class BlockPos&,
         class IPreliminarySurfaceProvider const&,
         bool
-    ); // NOLINT
+    );
     /**
      * @vftbl 4
      * @symbol ?initMobSpawnTypes\@OceanMonumentFeature\@\@UEAAXAEAVHardcodedSpawnAreaRegistry\@\@\@Z
      */
-    virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry&); // NOLINT
+    virtual void initMobSpawnTypes(class HardcodedSpawnAreaRegistry&);
     /**
      * @vftbl 5
      * @symbol
      * ?isFeatureChunk\@OceanMonumentFeature\@\@UEAA_NAEBVBiomeSource\@\@AEAVRandom\@\@AEBVChunkPos\@\@IAEBVIPreliminarySurfaceProvider\@\@AEBVDimension\@\@\@Z
      */
     virtual bool
-    isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, class IPreliminarySurfaceProvider const&, class Dimension const&); // NOLINT
+    isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, class IPreliminarySurfaceProvider const&, class Dimension const&);
     /**
      * @vftbl 6
      * @symbol
      * ?createStructureStart\@OceanMonumentFeature\@\@MEAA?AV?$unique_ptr\@VStructureStart\@\@U?$default_delete\@VStructureStart\@\@\@std\@\@\@std\@\@AEAVDimension\@\@AEBVBiomeSource\@\@AEAVRandom\@\@AEBVChunkPos\@\@AEBVIPreliminarySurfaceProvider\@\@\@Z
      */
     virtual std::unique_ptr<class StructureStart>
-    createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&); // NOLINT
+    createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
     /**
      * @symbol ??0OceanMonumentFeature\@\@QEAA\@I\@Z
      */
-    MCAPI OceanMonumentFeature(unsigned int); // NOLINT
+    MCAPI OceanMonumentFeature(unsigned int);
+    // NOLINTEND
 };

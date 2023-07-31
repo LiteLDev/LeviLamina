@@ -21,20 +21,22 @@ public:
     ScriptFormRejectError()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ScriptFormRejectError\@ScriptModuleMinecraftServerUI\@\@QEAA\@W4ScriptFormRejectReason\@1\@\@Z
      */
-    MCAPI ScriptFormRejectError(enum class ScriptModuleMinecraftServerUI::ScriptFormRejectReason); // NOLINT
-    /**
-     * @symbol ??1ScriptFormRejectError\@ScriptModuleMinecraftServerUI\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptFormRejectError(); // NOLINT
+    MCAPI ScriptFormRejectError(enum class ScriptModuleMinecraftServerUI::ScriptFormRejectReason);
     /**
      * @symbol
      * ?bind\@ScriptFormRejectError\@ScriptModuleMinecraftServerUI\@\@SA?AV?$ErrorBindingBuilder\@VScriptFormRejectError\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ErrorBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptFormRejectError>
-    bind(); // NOLINT
+    bind();
+    /**
+     * @symbol ??1ScriptFormRejectError\@ScriptModuleMinecraftServerUI\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptFormRejectError();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraftServerUI

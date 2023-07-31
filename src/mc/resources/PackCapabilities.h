@@ -8,13 +8,13 @@ namespace Bedrock { template<typename T0> class NonOwnerPointer; }
 // clang-format on
 
 namespace PackCapabilities {
+// NOLINTBEGIN
 /**
  * @symbol
  * ?createRegistry\@PackCapabilities\@\@YA?AVPackCapabilityRegistry\@\@V?$NonOwnerPointer\@VIAdvancedGraphicsOptions\@\@\@Bedrock\@\@V2\@\@Z
  */
-MCAPI class PackCapabilityRegistry createRegistry(
-    class Bedrock::NonOwnerPointer<class IAdvancedGraphicsOptions>,
-    class PackCapabilityRegistry
-); // NOLINT
+MCAPI class PackCapabilityRegistry
+    createRegistry(class Bedrock::NonOwnerPointer<class IAdvancedGraphicsOptions>, class PackCapabilityRegistry);
+// NOLINTEND
 
 }; // namespace PackCapabilities

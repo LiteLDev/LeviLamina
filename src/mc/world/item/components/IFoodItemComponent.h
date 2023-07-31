@@ -11,16 +11,18 @@ public:
     IFoodItemComponent()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?CAN_ALWAYS_EAT\@IFoodItemComponent\@\@2QBDB
      */
-    MCAPI static char const CAN_ALWAYS_EAT[]; // NOLINT
+    MCAPI static char const CAN_ALWAYS_EAT[];
     /**
      * @symbol ?NUTRITION\@IFoodItemComponent\@\@2QBDB
      */
-    MCAPI static char const NUTRITION[]; // NOLINT
+    MCAPI static char const NUTRITION[];
     /**
      * @symbol ?SATURATION_MODIFIER\@IFoodItemComponent\@\@2QBDB
      */
-    MCAPI static char const SATURATION_MODIFIER[]; // NOLINT
+    MCAPI static char const SATURATION_MODIFIER[];
+    // NOLINTEND
 };

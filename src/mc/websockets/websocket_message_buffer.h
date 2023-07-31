@@ -13,10 +13,12 @@ public:
     websocket_message_buffer()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1websocket_message_buffer\@httpclient\@xbox\@\@QEAA\@XZ
      */
-    MCAPI ~websocket_message_buffer(); // NOLINT
+    MCAPI ~websocket_message_buffer();
+    // NOLINTEND
 };
 
 }; // namespace xbox::httpclient

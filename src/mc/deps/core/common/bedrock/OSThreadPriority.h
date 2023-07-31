@@ -13,22 +13,24 @@ public:
     OSThreadPriority()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?Elevated\@OSThreadPriority\@Threading\@Bedrock\@\@2V123\@B
      */
-    MCAPI static class Bedrock::Threading::OSThreadPriority const Elevated; // NOLINT
+    MCAPI static class Bedrock::Threading::OSThreadPriority const Elevated;
     /**
      * @symbol ?High\@OSThreadPriority\@Threading\@Bedrock\@\@2V123\@B
      */
-    MCAPI static class Bedrock::Threading::OSThreadPriority const High; // NOLINT
+    MCAPI static class Bedrock::Threading::OSThreadPriority const High;
     /**
      * @symbol ?Low\@OSThreadPriority\@Threading\@Bedrock\@\@2V123\@B
      */
-    MCAPI static class Bedrock::Threading::OSThreadPriority const Low; // NOLINT
+    MCAPI static class Bedrock::Threading::OSThreadPriority const Low;
     /**
      * @symbol ?Normal\@OSThreadPriority\@Threading\@Bedrock\@\@2V123\@B
      */
-    MCAPI static class Bedrock::Threading::OSThreadPriority const Normal; // NOLINT
+    MCAPI static class Bedrock::Threading::OSThreadPriority const Normal;
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Threading

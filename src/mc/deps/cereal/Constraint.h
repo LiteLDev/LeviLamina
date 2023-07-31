@@ -18,16 +18,18 @@ public:
     Constraint()                             = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREAL_CONSTRAINT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~Constraint(); // NOLINT
+    MCVAPI ~Constraint();
 #endif
     /**
      * @symbol ?validate\@Constraint\@cereal\@\@QEBA_NAEBVmeta_any\@entt\@\@AEAVSerializerContext\@2\@\@Z
      */
-    MCAPI bool validate(class entt::meta_any const&, class cereal::SerializerContext&) const; // NOLINT
+    MCAPI bool validate(class entt::meta_any const&, class cereal::SerializerContext&) const;
+    // NOLINTEND
 };
 
 }; // namespace cereal

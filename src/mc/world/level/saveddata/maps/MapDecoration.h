@@ -9,11 +9,6 @@ namespace mce { class Color; }
 
 class MapDecoration {
 public:
-    // MapDecoration inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // MapDecoration inner types define
     enum class Type {};
 
@@ -24,39 +19,41 @@ public:
     MapDecoration()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0MapDecoration\@\@QEAA\@W4Type\@0\@CCCAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVColor\@mce\@\@\@Z
      */
     MCAPI
-    MapDecoration(enum class MapDecoration::Type, signed char, signed char, signed char, std::string const&, class mce::Color const&); // NOLINT
+    MapDecoration(enum class MapDecoration::Type, signed char, signed char, signed char, std::string const&, class mce::Color const&);
     /**
      * @symbol ?getColor\@MapDecoration\@\@QEBAAEBVColor\@mce\@\@XZ
      */
-    MCAPI class mce::Color const& getColor() const; // NOLINT
+    MCAPI class mce::Color const& getColor() const;
     /**
      * @symbol ?getImg\@MapDecoration\@\@QEBA?AW4Type\@1\@XZ
      */
-    MCAPI enum class MapDecoration::Type getImg() const; // NOLINT
+    MCAPI enum class MapDecoration::Type getImg() const;
     /**
      * @symbol
      * ?getLabel\@MapDecoration\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string const& getLabel() const; // NOLINT
+    MCAPI std::string const& getLabel() const;
     /**
      * @symbol ?getRot\@MapDecoration\@\@QEBACXZ
      */
-    MCAPI signed char getRot() const; // NOLINT
+    MCAPI signed char getRot() const;
     /**
      * @symbol ?getX\@MapDecoration\@\@QEBACXZ
      */
-    MCAPI signed char getX() const; // NOLINT
+    MCAPI signed char getX() const;
     /**
      * @symbol ?getY\@MapDecoration\@\@QEBACXZ
      */
-    MCAPI signed char getY() const; // NOLINT
+    MCAPI signed char getY() const;
     /**
      * @symbol ??1MapDecoration\@\@QEAA\@XZ
      */
-    MCAPI ~MapDecoration(); // NOLINT
+    MCAPI ~MapDecoration();
+    // NOLINTEND
 };

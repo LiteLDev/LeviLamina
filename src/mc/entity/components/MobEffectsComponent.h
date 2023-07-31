@@ -11,8 +11,10 @@ public:
     MobEffectsComponent()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4MobEffectsComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct MobEffectsComponent& operator=(struct MobEffectsComponent&&); // NOLINT
+    MCAPI struct MobEffectsComponent& operator=(struct MobEffectsComponent&&);
+    // NOLINTEND
 };

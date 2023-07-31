@@ -19,19 +19,21 @@ public:
     IsStackableDefinition()                                        = delete;
 
 public:
-    /**
-     * @symbol ?initialize\@IsStackableDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&) const; // NOLINT
-    /**
-     * @symbol ?uninitialize\@IsStackableDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
-    MCAPI void uninitialize(class EntityContext&) const; // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?buildSchema\@IsStackableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UIsStackableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      struct IsStackableDefinition>>&); // NOLINT
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsStackableDefinition>>&);
+    /**
+     * @symbol ?initialize\@IsStackableDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&) const;
+    /**
+     * @symbol ?uninitialize\@IsStackableDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
+     */
+    MCAPI void uninitialize(class EntityContext&) const;
+    // NOLINTEND
 };

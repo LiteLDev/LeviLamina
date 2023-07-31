@@ -11,8 +11,10 @@ public:
     MobTravelTeleportedFilterSystem()                                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?create\@MobTravelTeleportedFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo create(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo create();
+    // NOLINTEND
 };

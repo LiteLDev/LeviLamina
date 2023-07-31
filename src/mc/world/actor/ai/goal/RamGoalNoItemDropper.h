@@ -18,20 +18,22 @@ public:
     RamGoalNoItemDropper()                                       = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAMATTACKGOALUTILS_RAMGOALNOITEMDROPPER
     /**
      * @symbol ?checkForHornDropOnCollision\@RamGoalNoItemDropper\@RamAttackGoalUtils\@\@UEAAXVVec3\@\@\@Z
      */
-    MCVAPI void checkForHornDropOnCollision(class Vec3); // NOLINT
+    MCVAPI void checkForHornDropOnCollision(class Vec3);
     /**
      * @symbol ?dontDropHorn\@RamGoalNoItemDropper\@RamAttackGoalUtils\@\@UEAAXXZ
      */
-    MCVAPI void dontDropHorn(); // NOLINT
+    MCVAPI void dontDropHorn();
     /**
      * @symbol ?tryDropHorn\@RamGoalNoItemDropper\@RamAttackGoalUtils\@\@UEBAXVVec3\@\@\@Z
      */
-    MCVAPI void tryDropHorn(class Vec3) const; // NOLINT
+    MCVAPI void tryDropHorn(class Vec3) const;
 #endif
+    // NOLINTEND
 };
 
 }; // namespace RamAttackGoalUtils

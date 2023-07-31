@@ -15,18 +15,20 @@ public:
     HorsePostTravelSystem()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@HorsePostTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_doHorsePostTravelSystem\@HorsePostTravelSystem\@\@CAXAEBVStrictEntityContext\@\@V?$Optional\@$$CBV?$FlagComponent\@UWasOnGroundPreTravelFlag\@\@\@\@\@\@AEAVActorOwnerComponent\@\@\@Z
      */
     MCAPI static void
-    _doHorsePostTravelSystem(class StrictEntityContext const&, class Optional<class FlagComponent<struct WasOnGroundPreTravelFlag> const>, class ActorOwnerComponent&); // NOLINT
-
-private:
+    _doHorsePostTravelSystem(class StrictEntityContext const&, class Optional<class FlagComponent<struct WasOnGroundPreTravelFlag> const>, class ActorOwnerComponent&);
+    // NOLINTEND
 };

@@ -13,148 +13,150 @@ public:
     ContainerComponent(ContainerComponent const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol ?containerContentChanged\@ContainerComponent\@\@UEAAXH\@Z
      */
-    virtual void containerContentChanged(int); // NOLINT
+    virtual void containerContentChanged(int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERCOMPONENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ContainerComponent(); // NOLINT
+    MCVAPI ~ContainerComponent();
 #endif
     /**
      * @symbol ??0ContainerComponent\@\@QEAA\@XZ
      */
-    MCAPI ContainerComponent(); // NOLINT
+    MCAPI ContainerComponent();
     /**
      * @symbol ??0ContainerComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI ContainerComponent(class ContainerComponent&&); // NOLINT
+    MCAPI ContainerComponent(class ContainerComponent&&);
     /**
      * @symbol ?_getRawContainerPtr\@ContainerComponent\@\@QEAAPEAVFillingContainer\@\@XZ
      */
-    MCAPI class FillingContainer* _getRawContainerPtr(); // NOLINT
+    MCAPI class FillingContainer* _getRawContainerPtr();
     /**
      * @symbol ?addAdditionalSaveData\@ContainerComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
+    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
     /**
      * @symbol ?addItem\@ContainerComponent\@\@QEAA_NAEAVItemActor\@\@\@Z
      */
-    MCAPI bool addItem(class ItemActor&); // NOLINT
+    MCAPI bool addItem(class ItemActor&);
     /**
      * @symbol ?addItem\@ContainerComponent\@\@QEAA_NAEAVItemStack\@\@HH\@Z
      */
-    MCAPI bool addItem(class ItemStack&, int, int); // NOLINT
+    MCAPI bool addItem(class ItemStack&, int, int);
     /**
      * @symbol ?addItem\@ContainerComponent\@\@QEAA_NAEAVItemStack\@\@\@Z
      */
-    MCAPI bool addItem(class ItemStack&); // NOLINT
+    MCAPI bool addItem(class ItemStack&);
     /**
      * @symbol ?canBeSiphonedFrom\@ContainerComponent\@\@QEBA_NXZ
      */
-    MCAPI bool canBeSiphonedFrom() const; // NOLINT
+    MCAPI bool canBeSiphonedFrom() const;
     /**
      * @symbol ?canOpenContainer\@ContainerComponent\@\@QEBA_NAEBVActor\@\@AEAVPlayer\@\@\@Z
      */
-    MCAPI bool canOpenContainer(class Actor const&, class Player&) const; // NOLINT
+    MCAPI bool canOpenContainer(class Actor const&, class Player&) const;
     /**
      * @symbol ?countItemsOfType\@ContainerComponent\@\@QEBAHAEBVItemStack\@\@\@Z
      */
-    MCAPI int countItemsOfType(class ItemStack const&) const; // NOLINT
+    MCAPI int countItemsOfType(class ItemStack const&) const;
     /**
      * @symbol ?dropContents\@ContainerComponent\@\@QEAAXAEAVBlockSource\@\@AEBVVec3\@\@_N\@Z
      */
-    MCAPI void dropContents(class BlockSource&, class Vec3 const&, bool); // NOLINT
+    MCAPI void dropContents(class BlockSource&, class Vec3 const&, bool);
     /**
      * @symbol ?findFirstSlotForItem\@ContainerComponent\@\@QEBAHAEBVItemStack\@\@\@Z
      */
-    MCAPI int findFirstSlotForItem(class ItemStack const&) const; // NOLINT
+    MCAPI int findFirstSlotForItem(class ItemStack const&) const;
     /**
      * @symbol ?getContainerSize\@ContainerComponent\@\@QEBAHXZ
      */
-    MCAPI int getContainerSize() const; // NOLINT
+    MCAPI int getContainerSize() const;
     /**
      * @symbol ?getEmptySlotsCount\@ContainerComponent\@\@QEBAHXZ
      */
-    MCAPI int getEmptySlotsCount() const; // NOLINT
+    MCAPI int getEmptySlotsCount() const;
     /**
      * @symbol ?getItem\@ContainerComponent\@\@QEBAAEBVItemStack\@\@H\@Z
      */
-    MCAPI class ItemStack const& getItem(int) const; // NOLINT
+    MCAPI class ItemStack const& getItem(int) const;
     /**
      * @symbol
      * ?getSlots\@ContainerComponent\@\@QEBA?BV?$vector\@PEBVItemStack\@\@V?$allocator\@PEBVItemStack\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<class ItemStack const*> const getSlots() const; // NOLINT
+    MCAPI std::vector<class ItemStack const*> const getSlots() const;
     /**
      * @symbol ?hasRoomForItem\@ContainerComponent\@\@QEAA_NAEBVItemActor\@\@\@Z
      */
-    MCAPI bool hasRoomForItem(class ItemActor const&); // NOLINT
+    MCAPI bool hasRoomForItem(class ItemActor const&);
     /**
      * @symbol ?hasRoomForItem\@ContainerComponent\@\@QEAA_NAEBVItemStack\@\@\@Z
      */
-    MCAPI bool hasRoomForItem(class ItemStack const&); // NOLINT
+    MCAPI bool hasRoomForItem(class ItemStack const&);
     /**
      * @symbol ?initFromDefinition\@ContainerComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void initFromDefinition(class Actor&); // NOLINT
+    MCAPI void initFromDefinition(class Actor&);
     /**
      * @symbol ?isEmpty\@ContainerComponent\@\@QEBA_NXZ
      */
-    MCAPI bool isEmpty() const; // NOLINT
+    MCAPI bool isEmpty() const;
     /**
      * @symbol ?isPrivate\@ContainerComponent\@\@QEBA_NXZ
      */
-    MCAPI bool isPrivate() const; // NOLINT
+    MCAPI bool isPrivate() const;
     /**
      * @symbol ?openContainer\@ContainerComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@\@Z
      */
-    MCAPI bool openContainer(class Actor&, class Player&); // NOLINT
+    MCAPI bool openContainer(class Actor&, class Player&);
     /**
      * @symbol ??4ContainerComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class ContainerComponent& operator=(class ContainerComponent&&); // NOLINT
+    MCAPI class ContainerComponent& operator=(class ContainerComponent&&);
     /**
      * @symbol
      * ?readAdditionalSaveData\@ContainerComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&); // NOLINT
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
     /**
      * @symbol ?rebuildContainer\@ContainerComponent\@\@QEAAXAEAVActor\@\@W4ContainerType\@\@H_NH2\@Z
      */
-    MCAPI void rebuildContainer(class Actor&, enum class ContainerType, int, bool, int, bool); // NOLINT
+    MCAPI void rebuildContainer(class Actor&, enum class ContainerType, int, bool, int, bool);
     /**
      * @symbol ?removeItem\@ContainerComponent\@\@QEAAXHH\@Z
      */
-    MCAPI void removeItem(int, int); // NOLINT
+    MCAPI void removeItem(int, int);
     /**
      * @symbol ?removeItemsOfType\@ContainerComponent\@\@QEAAXAEBVItemStack\@\@H\@Z
      */
-    MCAPI void removeItemsOfType(class ItemStack const&, int); // NOLINT
+    MCAPI void removeItemsOfType(class ItemStack const&, int);
     /**
      * @symbol
      * ?serverInitItemStackIds\@ContainerComponent\@\@QEAAXHHV?$function\@$$A6AXHAEBVItemStack\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI void serverInitItemStackIds(int, int, class std::function<void(int, class ItemStack const&)>); // NOLINT
+    MCAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
     /**
      * @symbol
      * ?setCustomName\@ContainerComponent\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void setCustomName(std::string const&); // NOLINT
+    MCAPI void setCustomName(std::string const&);
     /**
      * @symbol ?setItem\@ContainerComponent\@\@QEAA_NHAEBVItemStack\@\@\@Z
      */
-    MCAPI bool setItem(int, class ItemStack const&); // NOLINT
+    MCAPI bool setItem(int, class ItemStack const&);
     /**
      * @symbol
      * ?setLootTable\@ContainerComponent\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI void setLootTable(std::string const&, int); // NOLINT
+    MCAPI void setLootTable(std::string const&, int);
     /**
      * @symbol ?unpackLootTable\@ContainerComponent\@\@QEAAXAEAVLevel\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI void unpackLootTable(class Level&, class AutomaticID<class Dimension, int>); // NOLINT
+    MCAPI void unpackLootTable(class Level&, class AutomaticID<class Dimension, int>);
+    // NOLINTEND
 };

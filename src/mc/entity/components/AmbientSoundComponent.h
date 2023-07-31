@@ -11,8 +11,10 @@ public:
     AmbientSoundComponent()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?setAmbientSoundRemainingTime\@AmbientSoundComponent\@\@SAXAEAVActor\@\@M\@Z
      */
-    MCAPI static void setAmbientSoundRemainingTime(class Actor&, float); // NOLINT
+    MCAPI static void setAmbientSoundRemainingTime(class Actor&, float);
+    // NOLINTEND
 };

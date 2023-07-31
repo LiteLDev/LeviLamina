@@ -11,10 +11,11 @@ public:
     LiquidPhysicsSystemImpl()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?_applyFlow\@LiquidPhysicsSystemImpl\@\@SAXAEAUStateVectorComponent\@\@VVec3\@\@W4MaterialType\@\@\@Z
      */
-    MCAPI static void _applyFlow(struct StateVectorComponent&, class Vec3, enum class MaterialType); // NOLINT
+    MCAPI static void _applyFlow(struct StateVectorComponent&, class Vec3, enum class MaterialType);
     /**
      * @symbol
      * ?_hasAdjacentFlowingBlock\@LiquidPhysicsSystemImpl\@\@SA_NAEBV?$vector\@ULiquidBlockEntry\@\@V?$allocator\@ULiquidBlockEntry\@\@\@std\@\@\@std\@\@AEBVIConstBlockSource\@\@W4MaterialType\@\@\@Z
@@ -23,10 +24,11 @@ public:
         std::vector<struct LiquidBlockEntry> const&,
         class IConstBlockSource const&,
         enum class MaterialType
-    ); // NOLINT
+    );
     /**
      * @symbol
      * ?_hasFlowingBlock\@LiquidPhysicsSystemImpl\@\@SA_NAEBV?$vector\@ULiquidBlockEntry\@\@V?$allocator\@ULiquidBlockEntry\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI static bool _hasFlowingBlock(std::vector<struct LiquidBlockEntry> const&); // NOLINT
+    MCAPI static bool _hasFlowingBlock(std::vector<struct LiquidBlockEntry> const&);
+    // NOLINTEND
 };

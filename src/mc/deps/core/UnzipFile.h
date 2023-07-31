@@ -23,47 +23,47 @@ public:
     UnzipFile()                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0UnzipFile\@Core\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VIFileAccess\@\@\@Bedrock\@\@\@gsl\@\@AEBVPath\@1\@\@Z
      */
-    MCAPI
-    UnzipFile(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>>, class Core::Path const&); // NOLINT
+    MCAPI UnzipFile(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess>>, class Core::Path const&);
     /**
      * @symbol
      * ?appendCurrentFileContents\@UnzipFile\@Core\@\@QEAAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_KV?$function\@$$A6AXHAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z\@4\@\@Z
      */
-    MCAPI void
-    appendCurrentFileContents(std::string&, unsigned __int64, class std::function<void(int, std::string const&)>); // NOLINT
+    MCAPI void appendCurrentFileContents(std::string&, uint64_t, std::function<void(int, std::string const&)>);
     /**
      * @symbol
      * ?getCurrentFileName\@UnzipFile\@Core\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getCurrentFileName() const; // NOLINT
+    MCAPI std::string getCurrentFileName() const;
     /**
      * @symbol ?goToFirstFile\@UnzipFile\@Core\@\@QEAA?AW4UnzipResult\@ZipUtils\@2\@XZ
      */
-    MCAPI enum class Core::ZipUtils::UnzipResult goToFirstFile(); // NOLINT
+    MCAPI enum class Core::ZipUtils::UnzipResult goToFirstFile();
     /**
      * @symbol ?goToNextFile\@UnzipFile\@Core\@\@QEAA?AW4UnzipResult\@ZipUtils\@2\@XZ
      */
-    MCAPI enum class Core::ZipUtils::UnzipResult goToNextFile(); // NOLINT
+    MCAPI enum class Core::ZipUtils::UnzipResult goToNextFile();
     /**
      * @symbol ?isGood\@UnzipFile\@Core\@\@QEBA_NXZ
      */
-    MCAPI bool isGood() const; // NOLINT
+    MCAPI bool isGood() const;
     /**
      * @symbol ?locateFile\@UnzipFile\@Core\@\@QEAA?AW4UnzipResult\@ZipUtils\@2\@PEBDH\@Z
      */
-    MCAPI enum class Core::ZipUtils::UnzipResult locateFile(char const*, int); // NOLINT
+    MCAPI enum class Core::ZipUtils::UnzipResult locateFile(char const*, int);
     /**
      * @symbol ?openCurrentFileForReading\@UnzipFile\@Core\@\@QEAA?AW4UnzipResult\@ZipUtils\@2\@XZ
      */
-    MCAPI enum class Core::ZipUtils::UnzipResult openCurrentFileForReading(); // NOLINT
+    MCAPI enum class Core::ZipUtils::UnzipResult openCurrentFileForReading();
     /**
      * @symbol ??1UnzipFile\@Core\@\@QEAA\@XZ
      */
-    MCAPI ~UnzipFile(); // NOLINT
+    MCAPI ~UnzipFile();
+    // NOLINTEND
 };
 
 }; // namespace Core

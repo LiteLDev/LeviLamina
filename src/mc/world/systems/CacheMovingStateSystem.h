@@ -10,16 +10,19 @@ template<typename T0> class Optional;
 // clang-format on
 
 namespace CacheMovingStateSystem {
+// NOLINTBEGIN
 /**
  * @symbol
  * ?tickEntity\@CacheMovingStateSystem\@\@YAXAEAVStrictEntityContext\@\@AEAUSynchedActorDataComponent\@\@AEAUActorRotationComponent\@\@V?$Optional\@V?$FlagComponent\@UMovingFlag\@\@\@\@\@\@\@Z
  */
 MCAPI void
-tickEntity(class StrictEntityContext&, struct SynchedActorDataComponent&, struct ActorRotationComponent&, class Optional<class FlagComponent<struct MovingFlag>>); // NOLINT
+tickEntity(class StrictEntityContext&, struct SynchedActorDataComponent&, struct ActorRotationComponent&, class Optional<class FlagComponent<struct MovingFlag>>);
 /**
  * @symbol
  * ?tickPassengerEntity\@CacheMovingStateSystem\@\@YAXAEAVStrictEntityContext\@\@AEBUPassengerComponent\@\@AEAUSynchedActorDataComponent\@\@AEAUActorRotationComponent\@\@V?$Optional\@V?$FlagComponent\@UMovingFlag\@\@\@\@\@\@AEBV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@V?$FlagComponent\@UControlledByLocalInstanceFlag\@\@\@\@\@\@\@Z
  */
-MCAPI void tickPassengerEntity(class StrictEntityContext&, struct PassengerComponent const&, struct SynchedActorDataComponent&, struct ActorRotationComponent&, class Optional<class FlagComponent<struct MovingFlag>>, class ViewT<class StrictEntityContext, class EntityRegistryBase, class FlagComponent<struct ControlledByLocalInstanceFlag>> const&); // NOLINT
+MCAPI void
+tickPassengerEntity(class StrictEntityContext&, struct PassengerComponent const&, struct SynchedActorDataComponent&, struct ActorRotationComponent&, class Optional<class FlagComponent<struct MovingFlag>>, class ViewT<class StrictEntityContext, class EntityRegistryBase, class FlagComponent<struct ControlledByLocalInstanceFlag>> const&);
+// NOLINTEND
 
 }; // namespace CacheMovingStateSystem

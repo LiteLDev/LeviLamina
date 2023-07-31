@@ -11,12 +11,14 @@ public:
     BlockPosTrackerComponent()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0BlockPosTrackerComponent\@\@QEAA\@_NAEBVBlockPos\@\@\@Z
      */
-    MCAPI BlockPosTrackerComponent(bool, class BlockPos const&); // NOLINT
+    MCAPI BlockPosTrackerComponent(bool, class BlockPos const&);
     /**
      * @symbol ?onRemove\@BlockPosTrackerComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void onRemove(class Actor&); // NOLINT
+    MCAPI void onRemove(class Actor&);
+    // NOLINTEND
 };

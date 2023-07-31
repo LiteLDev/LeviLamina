@@ -11,8 +11,10 @@ public:
     BlockSet()                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1BlockSet\@\@QEAA\@XZ
      */
-    MCAPI ~BlockSet(); // NOLINT
+    MCAPI ~BlockSet();
+    // NOLINTEND
 };

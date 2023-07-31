@@ -11,12 +11,14 @@ public:
     CrashDumpFrameData()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0CrashDumpFrameData\@\@QEAA\@HH_KMMMM\@Z
      */
-    MCAPI CrashDumpFrameData(int, int, unsigned __int64, float, float, float, float); // NOLINT
+    MCAPI CrashDumpFrameData(int, int, uint64_t, float, float, float, float);
     /**
      * @symbol ?kFormat\@CrashDumpFrameData\@\@2QBUCrashDumpFormatEntryImpl\@\@B
      */
-    MCAPI static struct CrashDumpFormatEntryImpl const kFormat[]; // NOLINT
+    MCAPI static struct CrashDumpFormatEntryImpl const kFormat[];
+    // NOLINTEND
 };

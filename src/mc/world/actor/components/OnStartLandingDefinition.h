@@ -19,11 +19,13 @@ public:
     OnStartLandingDefinition()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?buildSchema\@OnStartLandingDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UOnStartLandingDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      struct OnStartLandingDefinition>>&); // NOLINT
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct OnStartLandingDefinition>>&);
+    // NOLINTEND
 };

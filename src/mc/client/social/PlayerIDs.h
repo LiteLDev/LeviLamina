@@ -13,10 +13,12 @@ public:
     PlayerIDs()                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PlayerIDs\@Social\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerIDs(); // NOLINT
+    MCAPI ~PlayerIDs();
+    // NOLINTEND
 };
 
 }; // namespace Social

@@ -13,14 +13,16 @@ public:
     ExpressionNodeProxy()                                      = delete;
 
 public:
-    /**
-     * @symbol ??1ExpressionNodeProxy\@ExpressionNodeSerializer\@\@QEAA\@XZ
-     */
-    MCAPI ~ExpressionNodeProxy(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol ?bindType\@ExpressionNodeProxy\@ExpressionNodeSerializer\@\@SAXXZ
      */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI static void bindType();
+    /**
+     * @symbol ??1ExpressionNodeProxy\@ExpressionNodeSerializer\@\@QEAA\@XZ
+     */
+    MCAPI ~ExpressionNodeProxy();
+    // NOLINTEND
 };
 
 }; // namespace ExpressionNodeSerializer

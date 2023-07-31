@@ -11,8 +11,10 @@ public:
     GatheringServerInfo()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1GatheringServerInfo\@\@QEAA\@XZ
      */
-    MCAPI ~GatheringServerInfo(); // NOLINT
+    MCAPI ~GatheringServerInfo();
+    // NOLINTEND
 };

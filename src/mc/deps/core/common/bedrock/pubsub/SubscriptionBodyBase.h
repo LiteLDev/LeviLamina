@@ -18,30 +18,32 @@ public:
     SubscriptionBodyBase()                                       = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_PUBSUB_DETAIL_SUBSCRIPTIONBODYBASE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~SubscriptionBodyBase(); // NOLINT
+    MCVAPI ~SubscriptionBodyBase();
 #endif
     /**
      * @symbol
      * ??0SubscriptionBodyBase\@Detail\@PubSub\@Bedrock\@\@QEAA\@$$QEAV?$unique_ptr\@VSubscriptionContext\@PubSub\@Bedrock\@\@U?$default_delete\@VSubscriptionContext\@PubSub\@Bedrock\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI SubscriptionBodyBase(std::unique_ptr<class Bedrock::PubSub::SubscriptionContext>&&); // NOLINT
+    MCAPI SubscriptionBodyBase(std::unique_ptr<class Bedrock::PubSub::SubscriptionContext>&&);
     /**
      * @symbol
      * ?getStrongSelf\@SubscriptionBodyBase\@Detail\@PubSub\@Bedrock\@\@QEAAAEAV?$shared_ptr\@VSubscriptionBodyBase\@Detail\@PubSub\@Bedrock\@\@\@std\@\@XZ
      */
-    MCAPI class std::shared_ptr<class Bedrock::PubSub::Detail::SubscriptionBodyBase>& getStrongSelf(); // NOLINT
+    MCAPI std::shared_ptr<class Bedrock::PubSub::Detail::SubscriptionBodyBase>& getStrongSelf();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_disconnect\@SubscriptionBodyBase\@Detail\@PubSub\@Bedrock\@\@AEAAXXZ
      */
-    MCAPI void _disconnect(); // NOLINT
-
-private:
+    MCAPI void _disconnect();
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::PubSub::Detail

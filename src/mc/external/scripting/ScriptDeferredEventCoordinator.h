@@ -19,10 +19,12 @@ public:
         DocumentableEventExecution()                                             = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1DocumentableEventExecution\@ScriptDeferredEventCoordinator\@\@QEAA\@XZ
          */
-        MCAPI ~DocumentableEventExecution(); // NOLINT
+        MCAPI ~DocumentableEventExecution();
+        // NOLINTEND
     };
 
 public:
@@ -32,26 +34,32 @@ public:
     ScriptDeferredEventCoordinator()                                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?sendAllDeferredEvents\@ScriptDeferredEventCoordinator\@\@QEAAXXZ
      */
-    MCAPI void sendAllDeferredEvents(); // NOLINT
+    MCAPI void sendAllDeferredEvents();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_sendFlushSystemAfterEvents\@ScriptDeferredEventCoordinator\@\@AEAA_NXZ
      */
-    MCAPI bool _sendFlushSystemAfterEvents(); // NOLINT
+    MCAPI bool _sendFlushSystemAfterEvents();
     /**
      * @symbol ?_sendFlushWorldAfterEvents\@ScriptDeferredEventCoordinator\@\@AEAA_NXZ
      */
-    MCAPI bool _sendFlushWorldAfterEvents(); // NOLINT
+    MCAPI bool _sendFlushWorldAfterEvents();
+    // NOLINTEND
 
 private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?sEventExecutionOrder\@ScriptDeferredEventCoordinator\@\@0V?$vector\@UDocumentableEventExecution\@ScriptDeferredEventCoordinator\@\@V?$allocator\@UDocumentableEventExecution\@ScriptDeferredEventCoordinator\@\@\@std\@\@\@std\@\@B
      */
     MCAPI static std::vector<struct ScriptDeferredEventCoordinator::DocumentableEventExecution> const
-        sEventExecutionOrder; // NOLINT
+        sEventExecutionOrder;
+    // NOLINTEND
 };

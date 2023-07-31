@@ -11,12 +11,14 @@ public:
     ServerLevelEventCoordinator()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?sendLevelAddedPlayer\@ServerLevelEventCoordinator\@\@QEAAXAEAVLevel\@\@AEAVPlayer\@\@\@Z
      */
-    MCAPI void sendLevelAddedPlayer(class Level&, class Player&); // NOLINT
+    MCAPI void sendLevelAddedPlayer(class Level&, class Player&);
     /**
      * @symbol ?sendLevelRemovedPlayer\@ServerLevelEventCoordinator\@\@QEAAXAEAVLevel\@\@AEAVPlayer\@\@\@Z
      */
-    MCAPI void sendLevelRemovedPlayer(class Level&, class Player&); // NOLINT
+    MCAPI void sendLevelRemovedPlayer(class Level&, class Player&);
+    // NOLINTEND
 };

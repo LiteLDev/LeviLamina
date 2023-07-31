@@ -11,8 +11,10 @@ public:
     ActorHealthChangedEvent()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ActorHealthChangedEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorHealthChangedEvent(); // NOLINT
+    MCAPI ~ActorHealthChangedEvent();
+    // NOLINTEND
 };

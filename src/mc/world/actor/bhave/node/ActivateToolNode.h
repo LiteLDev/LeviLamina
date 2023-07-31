@@ -10,23 +10,25 @@ public:
     ActivateToolNode(ActivateToolNode const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?tick\@ActivateToolNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
-    virtual enum class BehaviorStatus tick(class Actor&); // NOLINT
+    virtual enum class BehaviorStatus tick(class Actor&);
     /**
      * @vftbl 2
      * @symbol ?initializeFromDefinition\@ActivateToolNode\@\@EEAAXAEAVActor\@\@\@Z
      */
-    virtual void initializeFromDefinition(class Actor&); // NOLINT
+    virtual void initializeFromDefinition(class Actor&);
     /**
      * @symbol ??0ActivateToolNode\@\@QEAA\@XZ
      */
-    MCAPI ActivateToolNode(); // NOLINT
+    MCAPI ActivateToolNode();
+    // NOLINTEND
 };

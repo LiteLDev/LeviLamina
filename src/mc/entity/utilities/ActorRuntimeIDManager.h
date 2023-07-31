@@ -10,57 +10,59 @@ public:
     ActorRuntimeIDManager(ActorRuntimeIDManager const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ActorRuntimeIDManager\@\@QEAA\@XZ
      */
-    MCAPI ActorRuntimeIDManager(); // NOLINT
+    MCAPI ActorRuntimeIDManager();
     /**
      * @symbol ?addRuntimeActorEntity\@ActorRuntimeIDManager\@\@QEAAXVActorRuntimeID\@\@VWeakEntityRef\@\@\@Z
      */
-    MCAPI void addRuntimeActorEntity(class ActorRuntimeID, class WeakEntityRef); // NOLINT
+    MCAPI void addRuntimeActorEntity(class ActorRuntimeID, class WeakEntityRef);
     /**
      * @symbol ?getNextRuntimeID\@ActorRuntimeIDManager\@\@QEAA?AVActorRuntimeID\@\@XZ
      */
-    MCAPI class ActorRuntimeID getNextRuntimeID(); // NOLINT
+    MCAPI class ActorRuntimeID getNextRuntimeID();
     /**
      * @symbol ?getRuntimeActorEntity\@ActorRuntimeIDManager\@\@QEBAPEAVActor\@\@VActorRuntimeID\@\@_N\@Z
      */
-    MCAPI class Actor* getRuntimeActorEntity(class ActorRuntimeID, bool) const; // NOLINT
+    MCAPI class Actor* getRuntimeActorEntity(class ActorRuntimeID, bool) const;
     /**
      * @symbol
      * ?getRuntimeActorList\@ActorRuntimeIDManager\@\@QEBA?AV?$vector\@PEAVActor\@\@V?$allocator\@PEAVActor\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<class Actor*> getRuntimeActorList() const; // NOLINT
+    MCAPI std::vector<class Actor*> getRuntimeActorList() const;
     /**
      * @symbol ?initialize\@ActorRuntimeIDManager\@\@QEAAXAEAVActorManager\@\@AEAVGameplayUserManager\@\@\@Z
      */
-    MCAPI void initialize(class ActorManager&, class GameplayUserManager&); // NOLINT
+    MCAPI void initialize(class ActorManager&, class GameplayUserManager&);
     /**
      * @symbol ?removeRuntimeActorEntity\@ActorRuntimeIDManager\@\@QEAAXVActorRuntimeID\@\@\@Z
      */
-    MCAPI void removeRuntimeActorEntity(class ActorRuntimeID); // NOLINT
+    MCAPI void removeRuntimeActorEntity(class ActorRuntimeID);
     /**
      * @symbol ??1ActorRuntimeIDManager\@\@QEAA\@XZ
      */
-    MCAPI ~ActorRuntimeIDManager(); // NOLINT
+    MCAPI ~ActorRuntimeIDManager();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_addEntity\@ActorRuntimeIDManager\@\@AEAAXAEBVEntityContext\@\@\@Z
      */
-    MCAPI void _addEntity(class EntityContext const&); // NOLINT
+    MCAPI void _addEntity(class EntityContext const&);
     /**
      * @symbol ?_onActorAdded\@ActorRuntimeIDManager\@\@AEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void _onActorAdded(class Actor&); // NOLINT
+    MCAPI void _onActorAdded(class Actor&);
     /**
      * @symbol ?_onRemoveActorEntityReferences\@ActorRuntimeIDManager\@\@AEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void _onRemoveActorEntityReferences(class Actor&); // NOLINT
+    MCAPI void _onRemoveActorEntityReferences(class Actor&);
     /**
      * @symbol ?_removeEntity\@ActorRuntimeIDManager\@\@AEAAXAEBVEntityContext\@\@\@Z
      */
-    MCAPI void _removeEntity(class EntityContext const&); // NOLINT
-
-private:
+    MCAPI void _removeEntity(class EntityContext const&);
+    // NOLINTEND
 };

@@ -9,16 +9,18 @@ public:
     AliasInfoDescription() = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0AliasInfoDescription\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI AliasInfoDescription(struct AliasInfoDescription const&); // NOLINT
+    MCAPI AliasInfoDescription(struct AliasInfoDescription const&);
     /**
      * @symbol ??4AliasInfoDescription\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
-    MCAPI struct AliasInfoDescription& operator=(struct AliasInfoDescription const&); // NOLINT
+    MCAPI struct AliasInfoDescription& operator=(struct AliasInfoDescription const&);
     /**
      * @symbol ??1AliasInfoDescription\@\@QEAA\@XZ
      */
-    MCAPI ~AliasInfoDescription(); // NOLINT
+    MCAPI ~AliasInfoDescription();
+    // NOLINTEND
 };

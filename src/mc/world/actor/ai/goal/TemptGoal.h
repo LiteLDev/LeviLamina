@@ -10,49 +10,51 @@ public:
     TemptGoal()                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?canUse\@TemptGoal\@\@UEAA_NXZ
      */
-    virtual bool canUse(); // NOLINT
+    virtual bool canUse();
     /**
      * @vftbl 2
      * @symbol ?canContinueToUse\@TemptGoal\@\@UEAA_NXZ
      */
-    virtual bool canContinueToUse(); // NOLINT
+    virtual bool canContinueToUse();
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3(); // NOLINT
+    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol ?start\@TemptGoal\@\@UEAAXXZ
      */
-    virtual void start(); // NOLINT
+    virtual void start();
     /**
      * @vftbl 5
      * @symbol ?stop\@TemptGoal\@\@UEAAXXZ
      */
-    virtual void stop(); // NOLINT
+    virtual void stop();
     /**
      * @vftbl 6
      * @symbol ?tick\@TemptGoal\@\@UEAAXXZ
      */
-    virtual void tick(); // NOLINT
+    virtual void tick();
     /**
      * @vftbl 7
      * @symbol
      * ?appendDebugInfo\@TemptGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void appendDebugInfo(std::string&) const; // NOLINT
+    virtual void appendDebugInfo(std::string&) const;
     /**
      * @symbol ??0TemptGoal\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI TemptGoal(class TemptGoal const&); // NOLINT
+    MCAPI TemptGoal(class TemptGoal const&);
+    // NOLINTEND
 };

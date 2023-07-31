@@ -13,14 +13,16 @@ public:
     BlockDescriptorProxy()                                       = delete;
 
 public:
-    /**
-     * @symbol ??1BlockDescriptorProxy\@BlockDescriptorSerializer\@\@QEAA\@XZ
-     */
-    MCAPI ~BlockDescriptorProxy(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol ?bindType\@BlockDescriptorProxy\@BlockDescriptorSerializer\@\@SAXXZ
      */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI static void bindType();
+    /**
+     * @symbol ??1BlockDescriptorProxy\@BlockDescriptorSerializer\@\@QEAA\@XZ
+     */
+    MCAPI ~BlockDescriptorProxy();
+    // NOLINTEND
 };
 
 }; // namespace BlockDescriptorSerializer

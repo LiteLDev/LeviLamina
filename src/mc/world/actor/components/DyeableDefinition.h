@@ -19,11 +19,13 @@ public:
     DyeableDefinition()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?buildSchema\@DyeableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UDyeableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct DyeableDefinition>>&); // NOLINT
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct DyeableDefinition>>&);
+    // NOLINTEND
 };

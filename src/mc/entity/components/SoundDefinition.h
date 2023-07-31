@@ -11,8 +11,10 @@ public:
     SoundDefinition()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1SoundDefinition\@\@QEAA\@XZ
      */
-    MCAPI ~SoundDefinition(); // NOLINT
+    MCAPI ~SoundDefinition();
+    // NOLINTEND
 };

@@ -11,9 +11,11 @@ public:
     StructureIntegrityProcessor()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?generateFlagsForIndices\@StructureIntegrityProcessor\@\@QEBA?AV?$vector\@_NV?$allocator\@_N\@std\@\@\@std\@\@HH\@Z
      */
-    MCAPI std::vector<bool> generateFlagsForIndices(int, int) const; // NOLINT
+    MCAPI std::vector<bool> generateFlagsForIndices(int, int) const;
+    // NOLINTEND
 };

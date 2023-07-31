@@ -82,14 +82,16 @@ public:
     IMinecraftEventing()                                     = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMINECRAFTEVENTING
     /**
      * @symbol ?updatePlayerUndergroundStatus\@IMinecraftEventing\@\@UEAAXPEAVPlayer\@\@_N\@Z
      */
-    MCVAPI void updatePlayerUndergroundStatus(class Player*, bool); // NOLINT
+    MCVAPI void updatePlayerUndergroundStatus(class Player*, bool);
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IMinecraftEventing(); // NOLINT
+    MCVAPI ~IMinecraftEventing();
 #endif
+    // NOLINTEND
 };

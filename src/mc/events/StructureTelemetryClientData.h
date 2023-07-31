@@ -11,20 +11,22 @@ public:
     StructureTelemetryClientData()                                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getMirrorEditCount\@StructureTelemetryClientData\@\@QEBAIXZ
      */
-    MCAPI unsigned int getMirrorEditCount() const; // NOLINT
+    MCAPI unsigned int getMirrorEditCount() const;
     /**
      * @symbol ?getOffsetEditCount\@StructureTelemetryClientData\@\@QEBAIXZ
      */
-    MCAPI unsigned int getOffsetEditCount() const; // NOLINT
+    MCAPI unsigned int getOffsetEditCount() const;
     /**
      * @symbol ?getRotationEditCount\@StructureTelemetryClientData\@\@QEBAIXZ
      */
-    MCAPI unsigned int getRotationEditCount() const; // NOLINT
+    MCAPI unsigned int getRotationEditCount() const;
     /**
      * @symbol ?getSizeEditCount\@StructureTelemetryClientData\@\@QEBAIXZ
      */
-    MCAPI unsigned int getSizeEditCount() const; // NOLINT
+    MCAPI unsigned int getSizeEditCount() const;
+    // NOLINTEND
 };

@@ -18,15 +18,17 @@ public:
     LeashableDefinition(LeashableDefinition const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0LeashableDefinition\@\@QEAA\@XZ
      */
-    MCAPI LeashableDefinition(); // NOLINT
+    MCAPI LeashableDefinition();
     /**
      * @symbol
      * ?buildSchema\@LeashableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VLeashableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      class LeashableDefinition>>&); // NOLINT
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class LeashableDefinition>>&);
+    // NOLINTEND
 };

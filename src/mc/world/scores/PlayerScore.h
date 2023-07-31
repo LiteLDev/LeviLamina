@@ -11,8 +11,10 @@ public:
     PlayerScore()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getId\@PlayerScore\@\@QEBAAEBUScoreboardId\@\@XZ
      */
-    MCAPI struct ScoreboardId const& getId() const; // NOLINT
+    MCAPI struct ScoreboardId const& getId() const;
+    // NOLINTEND
 };

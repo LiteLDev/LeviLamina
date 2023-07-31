@@ -23,29 +23,30 @@ public:
     Manager()                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?getAutomationClient\@Manager\@CodeBuilder\@\@UEBA?AV?$not_null\@V?$NonOwnerPointer\@VAutomationClient\@Automation\@\@\@Bedrock\@\@\@gsl\@\@XZ
      */
     virtual class gsl::not_null<class Bedrock::NonOwnerPointer<class Automation::AutomationClient>>
-    getAutomationClient() const; // NOLINT
+    getAutomationClient() const;
     /**
      * @vftbl 2
      * @symbol
      * ?getEventing\@Manager\@CodeBuilder\@\@UEBA?AV?$not_null\@V?$NonOwnerPointer\@VIMessenger\@CodeBuilder\@\@\@Bedrock\@\@\@gsl\@\@XZ
      */
-    virtual class gsl::not_null<class Bedrock::NonOwnerPointer<class CodeBuilder::IMessenger>>
-    getEventing() const; // NOLINT
+    virtual class gsl::not_null<class Bedrock::NonOwnerPointer<class CodeBuilder::IMessenger>> getEventing() const;
     /**
      * @symbol ??0Manager\@CodeBuilder\@\@QEAA\@AEAVIMinecraftApp\@\@\@Z
      */
-    MCAPI Manager(class IMinecraftApp&); // NOLINT
+    MCAPI Manager(class IMinecraftApp&);
+    // NOLINTEND
 };
 
 }; // namespace CodeBuilder

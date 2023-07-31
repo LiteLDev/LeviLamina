@@ -11,9 +11,11 @@ public:
     SlotDropChance()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?setEquipmentSlot\@SlotDropChance\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void setEquipmentSlot(std::string const&); // NOLINT
+    MCAPI void setEquipmentSlot(std::string const&);
+    // NOLINTEND
 };

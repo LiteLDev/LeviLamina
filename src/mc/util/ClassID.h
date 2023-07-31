@@ -11,10 +11,10 @@ public:
     ClassID()                          = delete;
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?getNextID\@ClassID\@\@CA_KXZ
      */
-    MCAPI static unsigned __int64 getNextID(); // NOLINT
-
-private:
+    MCAPI static uint64_t getNextID();
+    // NOLINTEND
 };

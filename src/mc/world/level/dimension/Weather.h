@@ -14,212 +14,214 @@ public:
     Weather()                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1(); // NOLINT
+    virtual void __unk_vfn_1();
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3(); // NOLINT
+    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol __unk_vfn_4
      */
-    virtual void __unk_vfn_4(); // NOLINT
+    virtual void __unk_vfn_4();
     /**
      * @vftbl 6
      * @symbol __unk_vfn_6
      */
-    virtual void __unk_vfn_6(); // NOLINT
+    virtual void __unk_vfn_6();
     /**
      * @vftbl 7
      * @symbol __unk_vfn_7
      */
-    virtual void __unk_vfn_7(); // NOLINT
+    virtual void __unk_vfn_7();
     /**
      * @vftbl 8
      * @symbol __unk_vfn_8
      */
-    virtual void __unk_vfn_8(); // NOLINT
+    virtual void __unk_vfn_8();
     /**
      * @vftbl 9
      * @symbol __unk_vfn_9
      */
-    virtual void __unk_vfn_9(); // NOLINT
+    virtual void __unk_vfn_9();
     /**
      * @vftbl 10
      * @symbol __unk_vfn_10
      */
-    virtual void __unk_vfn_10(); // NOLINT
+    virtual void __unk_vfn_10();
     /**
      * @vftbl 11
      * @symbol __unk_vfn_11
      */
-    virtual void __unk_vfn_11(); // NOLINT
+    virtual void __unk_vfn_11();
     /**
      * @vftbl 12
      * @symbol __unk_vfn_12
      */
-    virtual void __unk_vfn_12(); // NOLINT
+    virtual void __unk_vfn_12();
     /**
      * @vftbl 13
      * @symbol __unk_vfn_13
      */
-    virtual void __unk_vfn_13(); // NOLINT
+    virtual void __unk_vfn_13();
     /**
      * @vftbl 14
      * @symbol __unk_vfn_14
      */
-    virtual void __unk_vfn_14(); // NOLINT
+    virtual void __unk_vfn_14();
     /**
      * @vftbl 15
      * @symbol __unk_vfn_15
      */
-    virtual void __unk_vfn_15(); // NOLINT
+    virtual void __unk_vfn_15();
     /**
      * @vftbl 16
      * @symbol __unk_vfn_16
      */
-    virtual void __unk_vfn_16(); // NOLINT
+    virtual void __unk_vfn_16();
     /**
      * @vftbl 17
      * @symbol __unk_vfn_17
      */
-    virtual void __unk_vfn_17(); // NOLINT
+    virtual void __unk_vfn_17();
     /**
      * @vftbl 18
      * @symbol __unk_vfn_18
      */
-    virtual void __unk_vfn_18(); // NOLINT
+    virtual void __unk_vfn_18();
     /**
      * @vftbl 19
      * @symbol __unk_vfn_19
      */
-    virtual void __unk_vfn_19(); // NOLINT
+    virtual void __unk_vfn_19();
     /**
      * @vftbl 20
      * @symbol __unk_vfn_20
      */
-    virtual void __unk_vfn_20(); // NOLINT
+    virtual void __unk_vfn_20();
     /**
      * @vftbl 21
      * @symbol __unk_vfn_21
      */
-    virtual void __unk_vfn_21(); // NOLINT
+    virtual void __unk_vfn_21();
     /**
      * @vftbl 22
      * @symbol __unk_vfn_22
      */
-    virtual void __unk_vfn_22(); // NOLINT
+    virtual void __unk_vfn_22();
     /**
      * @vftbl 23
      * @symbol __unk_vfn_23
      */
-    virtual void __unk_vfn_23(); // NOLINT
+    virtual void __unk_vfn_23();
     /**
      * @vftbl 24
      * @symbol __unk_vfn_24
      */
-    virtual void __unk_vfn_24(); // NOLINT
+    virtual void __unk_vfn_24();
     /**
      * @vftbl 25
      * @symbol ?levelEvent\@Weather\@\@UEAAXW4LevelEvent\@\@AEBVVec3\@\@H\@Z
      */
-    virtual void levelEvent(enum class LevelEvent, class Vec3 const&, int); // NOLINT
+    virtual void levelEvent(enum class LevelEvent, class Vec3 const&, int);
     /**
      * @symbol ??0Weather\@\@QEAA\@AEAVDimension\@\@AEAVIRandom\@\@\@Z
      */
-    MCAPI Weather(class Dimension&, class IRandom&); // NOLINT
-    /**
-     * @symbol ?calcSnowBlockDepth\@Weather\@\@QEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
-     */
-    MCAPI int calcSnowBlockDepth(class BlockSource&, class BlockPos const&, int) const; // NOLINT
-    /**
-     * @symbol ?canPlaceTopSnow\@Weather\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@_N2PEAH\@Z
-     */
-    MCAPI bool canPlaceTopSnow(class BlockSource&, class BlockPos const&, bool, bool, int*) const; // NOLINT
-    /**
-     * @symbol ?getFogLevel\@Weather\@\@QEBAMXZ
-     */
-    MCAPI float getFogLevel() const; // NOLINT
-    /**
-     * @symbol ?getLightningLevel\@Weather\@\@QEBAMM\@Z
-     */
-    MCAPI float getLightningLevel(float) const; // NOLINT
-    /**
-     * @symbol ?getRainLevel\@Weather\@\@QEBAMM\@Z
-     */
-    MCAPI float getRainLevel(float) const; // NOLINT
-    /**
-     * @symbol ?isLightning\@Weather\@\@QEBA_NXZ
-     */
-    MCAPI bool isLightning() const; // NOLINT
-    /**
-     * @symbol ?isPrecipitatingAt\@Weather\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI bool isPrecipitatingAt(class BlockSource&, class BlockPos const&) const; // NOLINT
-    /**
-     * @symbol ?isRaining\@Weather\@\@QEBA_NXZ
-     */
-    MCAPI bool isRaining() const; // NOLINT
-    /**
-     * @symbol ?isRainingAt\@Weather\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI bool isRainingAt(class BlockSource&, class BlockPos const&) const; // NOLINT
-    /**
-     * @symbol ?isSnowingAt\@Weather\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI bool isSnowingAt(class BlockSource&, class BlockPos const&) const; // NOLINT
-    /**
-     * @symbol ?serverTick\@Weather\@\@QEAAXXZ
-     */
-    MCAPI void serverTick(); // NOLINT
-    /**
-     * @symbol ?setSkyFlashTime\@Weather\@\@QEAAXH\@Z
-     */
-    MCAPI void setSkyFlashTime(int); // NOLINT
-    /**
-     * @symbol ?setTargetLightningLevel\@Weather\@\@QEAAXM\@Z
-     */
-    MCAPI void setTargetLightningLevel(float); // NOLINT
-    /**
-     * @symbol ?setTargetRainLevel\@Weather\@\@QEAAXM\@Z
-     */
-    MCAPI void setTargetRainLevel(float); // NOLINT
-    /**
-     * @symbol ?stop\@Weather\@\@QEAAXXZ
-     */
-    MCAPI void stop(); // NOLINT
-    /**
-     * @symbol ?tick\@Weather\@\@QEAAXXZ
-     */
-    MCAPI void tick(); // NOLINT
-    /**
-     * @symbol ?tryToPlaceTopSnow\@Weather\@\@QEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@_N2\@Z
-     */
-    MCAPI bool tryToPlaceTopSnow(class BlockSource&, class BlockPos const&, bool, bool); // NOLINT
+    MCAPI Weather(class Dimension&, class IRandom&);
     /**
      * @symbol ?calcLightningCycleTime\@Weather\@\@SAHAEAVIRandom\@\@\@Z
      */
-    MCAPI static int calcLightningCycleTime(class IRandom&); // NOLINT
+    MCAPI static int calcLightningCycleTime(class IRandom&);
     /**
      * @symbol ?calcRainCycleTime\@Weather\@\@SAHAEAVIRandom\@\@\@Z
      */
-    MCAPI static int calcRainCycleTime(class IRandom&); // NOLINT
+    MCAPI static int calcRainCycleTime(class IRandom&);
     /**
      * @symbol ?calcRainDuration\@Weather\@\@SAHAEAVIRandom\@\@\@Z
      */
-    MCAPI static int calcRainDuration(class IRandom&); // NOLINT
+    MCAPI static int calcRainDuration(class IRandom&);
+    /**
+     * @symbol ?calcSnowBlockDepth\@Weather\@\@QEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
+     */
+    MCAPI int calcSnowBlockDepth(class BlockSource&, class BlockPos const&, int) const;
+    /**
+     * @symbol ?canPlaceTopSnow\@Weather\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@_N2PEAH\@Z
+     */
+    MCAPI bool canPlaceTopSnow(class BlockSource&, class BlockPos const&, bool, bool, int*) const;
+    /**
+     * @symbol ?getFogLevel\@Weather\@\@QEBAMXZ
+     */
+    MCAPI float getFogLevel() const;
+    /**
+     * @symbol ?getLightningLevel\@Weather\@\@QEBAMM\@Z
+     */
+    MCAPI float getLightningLevel(float) const;
+    /**
+     * @symbol ?getRainLevel\@Weather\@\@QEBAMM\@Z
+     */
+    MCAPI float getRainLevel(float) const;
+    /**
+     * @symbol ?isLightning\@Weather\@\@QEBA_NXZ
+     */
+    MCAPI bool isLightning() const;
+    /**
+     * @symbol ?isPrecipitatingAt\@Weather\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI bool isPrecipitatingAt(class BlockSource&, class BlockPos const&) const;
+    /**
+     * @symbol ?isRaining\@Weather\@\@QEBA_NXZ
+     */
+    MCAPI bool isRaining() const;
+    /**
+     * @symbol ?isRainingAt\@Weather\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI bool isRainingAt(class BlockSource&, class BlockPos const&) const;
+    /**
+     * @symbol ?isSnowingAt\@Weather\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI bool isSnowingAt(class BlockSource&, class BlockPos const&) const;
     /**
      * @symbol ?rebuildTopSnowToDepth\@Weather\@\@SAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
-    MCAPI static void rebuildTopSnowToDepth(class BlockSource&, class BlockPos const&, int); // NOLINT
+    MCAPI static void rebuildTopSnowToDepth(class BlockSource&, class BlockPos const&, int);
+    /**
+     * @symbol ?serverTick\@Weather\@\@QEAAXXZ
+     */
+    MCAPI void serverTick();
+    /**
+     * @symbol ?setSkyFlashTime\@Weather\@\@QEAAXH\@Z
+     */
+    MCAPI void setSkyFlashTime(int);
+    /**
+     * @symbol ?setTargetLightningLevel\@Weather\@\@QEAAXM\@Z
+     */
+    MCAPI void setTargetLightningLevel(float);
+    /**
+     * @symbol ?setTargetRainLevel\@Weather\@\@QEAAXM\@Z
+     */
+    MCAPI void setTargetRainLevel(float);
+    /**
+     * @symbol ?stop\@Weather\@\@QEAAXXZ
+     */
+    MCAPI void stop();
+    /**
+     * @symbol ?tick\@Weather\@\@QEAAXXZ
+     */
+    MCAPI void tick();
+    /**
+     * @symbol ?tryToPlaceTopSnow\@Weather\@\@QEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@_N2\@Z
+     */
+    MCAPI bool tryToPlaceTopSnow(class BlockSource&, class BlockPos const&, bool, bool);
+    // NOLINTEND
 };

@@ -23,24 +23,26 @@ public:
     ScriptBlockStates()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptBlockStates\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockStates\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockStates> bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockStates> bind();
     /**
      * @symbol
      * ?get\@ScriptBlockStates\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptBlockStateType\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBVWeakLifetimeScope\@4\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockStateType>
-    get(class Scripting::WeakLifetimeScope const&, std::string const&); // NOLINT
+    get(class Scripting::WeakLifetimeScope const&, std::string const&);
     /**
      * @symbol
      * ?getAll\@ScriptBlockStates\@ScriptModuleMinecraft\@\@SA?AV?$vector\@V?$StrongTypedObjectHandle\@VScriptBlockStateType\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$allocator\@V?$StrongTypedObjectHandle\@VScriptBlockStateType\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@std\@\@\@std\@\@AEBVWeakLifetimeScope\@Scripting\@\@\@Z
      */
     MCAPI static std::vector<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockStateType>>
-    getAll(class Scripting::WeakLifetimeScope const&); // NOLINT
+    getAll(class Scripting::WeakLifetimeScope const&);
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

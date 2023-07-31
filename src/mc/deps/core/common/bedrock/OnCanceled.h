@@ -21,26 +21,28 @@ public:
     OnCanceled()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 7
      * @symbol __unk_vfn_7
      */
-    virtual void __unk_vfn_7(); // NOLINT
+    virtual void __unk_vfn_7();
     /**
      * @vftbl 8
      * @symbol __unk_vfn_8
      */
-    virtual void __unk_vfn_8(); // NOLINT
+    virtual void __unk_vfn_8();
     /**
      * @vftbl 9
      * @symbol __unk_vfn_9
      */
-    virtual void __unk_vfn_9(); // NOLINT
+    virtual void __unk_vfn_9();
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Threading::AsyncResult

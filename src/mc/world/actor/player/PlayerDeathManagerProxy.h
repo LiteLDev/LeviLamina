@@ -11,23 +11,25 @@ public:
     PlayerDeathManagerProxy()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?fetchActor\@PlayerDeathManagerProxy\@\@UEBAPEAVActor\@\@UActorUniqueID\@\@\@Z
      */
-    virtual class Actor* fetchActor(struct ActorUniqueID) const; // NOLINT
+    virtual class Actor* fetchActor(struct ActorUniqueID) const;
     /**
      * @vftbl 2
      * @symbol ?shouldShowDeathMessages\@PlayerDeathManagerProxy\@\@UEBA_NXZ
      */
-    virtual bool shouldShowDeathMessages() const; // NOLINT
+    virtual bool shouldShowDeathMessages() const;
     /**
      * @symbol ??0PlayerDeathManagerProxy\@\@QEAA\@AEAVServerLevel\@\@\@Z
      */
-    MCAPI PlayerDeathManagerProxy(class ServerLevel&); // NOLINT
+    MCAPI PlayerDeathManagerProxy(class ServerLevel&);
+    // NOLINTEND
 };

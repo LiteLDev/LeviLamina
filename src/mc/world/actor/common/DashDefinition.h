@@ -19,19 +19,21 @@ public:
     DashDefinition()                                 = delete;
 
 public:
-    /**
-     * @symbol ?initialize\@DashDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVDashComponent\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class DashComponent&) const; // NOLINT
-    /**
-     * @symbol ?uninitialize\@DashDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVDashComponent\@\@\@Z
-     */
-    MCAPI void uninitialize(class EntityContext&, class DashComponent&) const; // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?buildSchema\@DashDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDashDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DashDefinition>>&); // NOLINT
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DashDefinition>>&);
+    /**
+     * @symbol ?initialize\@DashDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVDashComponent\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class DashComponent&) const;
+    /**
+     * @symbol ?uninitialize\@DashDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVDashComponent\@\@\@Z
+     */
+    MCAPI void uninitialize(class EntityContext&, class DashComponent&) const;
+    // NOLINTEND
 };

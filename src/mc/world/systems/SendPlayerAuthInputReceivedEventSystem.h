@@ -14,14 +14,16 @@ public:
     SendPlayerAuthInputReceivedEventSystem()                                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_doSendPlayerAuthInputReceivedEvent\@SendPlayerAuthInputReceivedEventSystem\@\@SAXAEAVStrictEntityContext\@\@AEBV?$FlagComponent\@UPlayerComponentFlag\@\@\@\@AEAVActorOwnerComponent\@\@\@Z
      */
     MCAPI static void
-    _doSendPlayerAuthInputReceivedEvent(class StrictEntityContext&, class FlagComponent<struct PlayerComponentFlag> const&, class ActorOwnerComponent&); // NOLINT
+    _doSendPlayerAuthInputReceivedEvent(class StrictEntityContext&, class FlagComponent<struct PlayerComponentFlag> const&, class ActorOwnerComponent&);
     /**
      * @symbol ?create\@SendPlayerAuthInputReceivedEventSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo create(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo create();
+    // NOLINTEND
 };

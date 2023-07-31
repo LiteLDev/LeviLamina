@@ -10,18 +10,20 @@ public:
     PlaceBlockNode(PlaceBlockNode const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?tick\@PlaceBlockNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
-    virtual enum class BehaviorStatus tick(class Actor&); // NOLINT
+    virtual enum class BehaviorStatus tick(class Actor&);
     /**
      * @symbol ??0PlaceBlockNode\@\@QEAA\@XZ
      */
-    MCAPI PlaceBlockNode(); // NOLINT
+    MCAPI PlaceBlockNode();
+    // NOLINTEND
 };

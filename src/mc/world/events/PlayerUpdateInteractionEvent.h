@@ -11,8 +11,10 @@ public:
     PlayerUpdateInteractionEvent()                                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PlayerUpdateInteractionEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerUpdateInteractionEvent(); // NOLINT
+    MCAPI ~PlayerUpdateInteractionEvent();
+    // NOLINTEND
 };

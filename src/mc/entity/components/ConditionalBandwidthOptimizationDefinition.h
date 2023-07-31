@@ -19,30 +19,32 @@ public:
     ConditionalBandwidthOptimizationDefinition()                                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?addConditionalBandwidthOptimization\@ConditionalBandwidthOptimizationDefinition\@\@QEAAXAEBUConditionalBandwidthOptimization\@\@\@Z
      */
-    MCAPI void addConditionalBandwidthOptimization(struct ConditionalBandwidthOptimization const&); // NOLINT
+    MCAPI void addConditionalBandwidthOptimization(struct ConditionalBandwidthOptimization const&);
     /**
      * @symbol
      * ?addDefaultBandwidthOptimization\@ConditionalBandwidthOptimizationDefinition\@\@QEAAXAEBUConditionalBandwidthOptimization\@\@\@Z
      */
-    MCAPI void addDefaultBandwidthOptimization(struct ConditionalBandwidthOptimization const&); // NOLINT
-    /**
-     * @symbol
-     * ?initialize\@ConditionalBandwidthOptimizationDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVConditionalBandwidthOptimizationComponent\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class ConditionalBandwidthOptimizationComponent&) const; // NOLINT
-    /**
-     * @symbol ??1ConditionalBandwidthOptimizationDefinition\@\@QEAA\@XZ
-     */
-    MCAPI ~ConditionalBandwidthOptimizationDefinition(); // NOLINT
+    MCAPI void addDefaultBandwidthOptimization(struct ConditionalBandwidthOptimization const&);
     /**
      * @symbol
      * ?buildSchema\@ConditionalBandwidthOptimizationDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VConditionalBandwidthOptimizationDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+    MCAPI static void buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
                                       class JsonUtil::EmptyClass,
-                                      class ConditionalBandwidthOptimizationDefinition>>&); // NOLINT
+                                      class ConditionalBandwidthOptimizationDefinition>>&);
+    /**
+     * @symbol
+     * ?initialize\@ConditionalBandwidthOptimizationDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVConditionalBandwidthOptimizationComponent\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class ConditionalBandwidthOptimizationComponent&) const;
+    /**
+     * @symbol ??1ConditionalBandwidthOptimizationDefinition\@\@QEAA\@XZ
+     */
+    MCAPI ~ConditionalBandwidthOptimizationDefinition();
+    // NOLINTEND
 };

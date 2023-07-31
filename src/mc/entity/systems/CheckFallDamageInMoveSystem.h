@@ -11,8 +11,10 @@ public:
     CheckFallDamageInMoveSystem()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@CheckFallDamageInMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 };

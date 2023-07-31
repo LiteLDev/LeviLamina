@@ -19,20 +19,22 @@ public:
     AmbientSoundIntervalDefinition()                                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?addDynamic\@AmbientSoundIntervalDefinition\@\@QEAAXAEBUDynamicAmbientSound\@\@\@Z
      */
-    MCAPI void addDynamic(struct DynamicAmbientSound const&); // NOLINT
-    /**
-     * @symbol
-     * ?initialize\@AmbientSoundIntervalDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVAmbientSoundServerComponent\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class AmbientSoundServerComponent&) const; // NOLINT
+    MCAPI void addDynamic(struct DynamicAmbientSound const&);
     /**
      * @symbol
      * ?buildSchema\@AmbientSoundIntervalDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UAmbientSoundIntervalDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+    MCAPI static void buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
                                       class JsonUtil::EmptyClass,
-                                      struct AmbientSoundIntervalDefinition>>&); // NOLINT
+                                      struct AmbientSoundIntervalDefinition>>&);
+    /**
+     * @symbol
+     * ?initialize\@AmbientSoundIntervalDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVAmbientSoundServerComponent\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class AmbientSoundServerComponent&) const;
+    // NOLINTEND
 };

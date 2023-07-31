@@ -19,10 +19,12 @@ public:
     AddBiomeIsland()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0AddBiomeIsland\@OperationNodeFilters\@\@QEAA\@AEBVBiomeRegistry\@\@AEAVBiome\@\@1\@Z
      */
-    MCAPI AddBiomeIsland(class BiomeRegistry const&, class Biome&, class Biome&); // NOLINT
+    MCAPI AddBiomeIsland(class BiomeRegistry const&, class Biome&, class Biome&);
+    // NOLINTEND
 };
 
 }; // namespace OperationNodeFilters

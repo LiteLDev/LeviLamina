@@ -15,16 +15,17 @@ public:
     RotateAndSetVelocitySystem()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@RotateAndSetVelocitySystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
     /**
      * @symbol
      * ?doTick\@RotateAndSetVelocitySystem\@\@SAXAEBUMoveInputComponent\@\@AEBUPlayerInputModeComponent\@\@AEBUVRMoveAdjustAngleComponent\@\@AEAULocalMoveVelocityComponent\@\@\@Z
      */
     MCAPI static void
-    doTick(struct MoveInputComponent const&, struct PlayerInputModeComponent const&, struct VRMoveAdjustAngleComponent const&, struct LocalMoveVelocityComponent&); // NOLINT
+    doTick(struct MoveInputComponent const&, struct PlayerInputModeComponent const&, struct VRMoveAdjustAngleComponent const&, struct LocalMoveVelocityComponent&);
     /**
      * @symbol
      * ?tick\@RotateAndSetVelocitySystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@UPlayerInputRequestComponent\@\@\@\@$$CBUMoveInputComponent\@\@$$CBUPlayerInputModeComponent\@\@$$CBUVRMoveAdjustAngleComponent\@\@ULocalMoveVelocityComponent\@\@\@\@\@Z
@@ -36,5 +37,6 @@ public:
                            struct MoveInputComponent const,
                            struct PlayerInputModeComponent const,
                            struct VRMoveAdjustAngleComponent const,
-                           struct LocalMoveVelocityComponent>); // NOLINT
+                           struct LocalMoveVelocityComponent>);
+    // NOLINTEND
 };

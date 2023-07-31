@@ -11,8 +11,10 @@ public:
     EduAppConfigs()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?EDUResourcePack\@EduAppConfigs\@\@2UPackIdVersion\@\@B
      */
-    MCAPI static struct PackIdVersion const EDUResourcePack; // NOLINT
+    MCAPI static struct PackIdVersion const EDUResourcePack;
+    // NOLINTEND
 };

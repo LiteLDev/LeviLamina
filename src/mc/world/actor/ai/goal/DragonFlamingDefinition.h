@@ -18,28 +18,30 @@ public:
     DragonFlamingDefinition(DragonFlamingDefinition const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?validateMobType\@DragonFlamingDefinition\@\@UEBA_NAEAVMob\@\@\@Z
      */
-    virtual bool validateMobType(class Mob&) const; // NOLINT
+    virtual bool validateMobType(class Mob&) const;
     /**
      * @symbol ??0DragonFlamingDefinition\@\@QEAA\@XZ
      */
-    MCAPI DragonFlamingDefinition(); // NOLINT
-    /**
-     * @symbol ?initialize\@DragonFlamingDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVDragonFlamingGoal\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class DragonFlamingGoal&) const; // NOLINT
+    MCAPI DragonFlamingDefinition();
     /**
      * @symbol
      * ?buildSchema\@DragonFlamingDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDragonFlamingDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void
-    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DragonFlamingDefinition>>&); // NOLINT
+    buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DragonFlamingDefinition>>&);
+    /**
+     * @symbol ?initialize\@DragonFlamingDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVDragonFlamingGoal\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class DragonFlamingGoal&) const;
+    // NOLINTEND
 };

@@ -16,18 +16,20 @@ public:
     ExtendedCertificate()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getIdentity\@ExtendedCertificate\@\@SA?AVUUID\@mce\@\@AEBVCertificate\@\@\@Z
      */
-    MCAPI static class mce::UUID getIdentity(class Certificate const&); // NOLINT
+    MCAPI static class mce::UUID getIdentity(class Certificate const&);
     /**
      * @symbol
      * ?getIdentityName\@ExtendedCertificate\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVCertificate\@\@\@Z
      */
-    MCAPI static std::string getIdentityName(class Certificate const&); // NOLINT
+    MCAPI static std::string getIdentityName(class Certificate const&);
     /**
      * @symbol
      * ?getXuid\@ExtendedCertificate\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVCertificate\@\@\@Z
      */
-    MCAPI static std::string getXuid(class Certificate const&); // NOLINT
+    MCAPI static std::string getXuid(class Certificate const&);
+    // NOLINTEND
 };

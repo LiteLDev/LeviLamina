@@ -8,11 +8,13 @@ template<typename T0> struct InsideBlockWithPosComponent;
 // clang-format on
 
 namespace InsideWaterlilyBlockSystemImpl {
+// NOLINTBEGIN
 /**
  * @symbol
  * ?tickDestroyWaterlily\@InsideWaterlilyBlockSystemImpl\@\@YAXAEBU?$InsideBlockWithPosComponent\@UWaterlilyBlockFlag\@\@\@\@AEAVActorOwnerComponent\@\@\@Z
  */
 MCAPI void
-tickDestroyWaterlily(struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag> const&, class ActorOwnerComponent&); // NOLINT
+tickDestroyWaterlily(struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag> const&, class ActorOwnerComponent&);
+// NOLINTEND
 
 }; // namespace InsideWaterlilyBlockSystemImpl

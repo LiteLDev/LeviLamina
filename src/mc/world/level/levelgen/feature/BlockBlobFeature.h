@@ -14,18 +14,20 @@ public:
     BlockBlobFeature()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 3
      * @symbol ?place\@BlockBlobFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
     /**
      * @symbol ??0BlockBlobFeature\@\@QEAA\@AEBVBlock\@\@H\@Z
      */
-    MCAPI BlockBlobFeature(class Block const&, int); // NOLINT
+    MCAPI BlockBlobFeature(class Block const&, int);
+    // NOLINTEND
 };

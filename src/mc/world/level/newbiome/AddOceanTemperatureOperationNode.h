@@ -15,16 +15,17 @@ public:
     AddOceanTemperatureOperationNode()                                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2(); // NOLINT
+    virtual void __unk_vfn_2();
     /**
      * @vftbl 3
      * @symbol
@@ -32,5 +33,6 @@ public:
      */
     virtual void
     _fillArea(class OperationNodeDetails::WorkingData<enum class BiomeTemperatureCategory, char>&, class Pos2d const&, class Pos2d const&)
-        const; // NOLINT
+        const;
+    // NOLINTEND
 };

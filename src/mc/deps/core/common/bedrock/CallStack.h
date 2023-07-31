@@ -28,16 +28,17 @@ public:
         Context()                          = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol
          * ??0Context\@CallStack\@Bedrock\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$optional\@W4LogLevel\@Bedrock\@\@\@4\@V?$optional\@I\@4\@\@Z
          */
-        MCAPI
-            Context(std::string, class std::optional<enum class Bedrock::LogLevel>, class std::optional<unsigned int>); // NOLINT
+        MCAPI Context(std::string, std::optional<enum class Bedrock::LogLevel>, std::optional<unsigned int>);
         /**
          * @symbol ??1Context\@CallStack\@Bedrock\@\@QEAA\@XZ
          */
-        MCAPI ~Context(); // NOLINT
+        MCAPI ~Context();
+        // NOLINTEND
     };
 
     struct Frame {
@@ -58,16 +59,17 @@ public:
         FrameWithContext()                                   = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol
          * ??0FrameWithContext\@CallStack\@Bedrock\@\@QEAA\@$$QEAUFrame\@12\@$$QEAV?$optional\@UContext\@CallStack\@Bedrock\@\@\@std\@\@\@Z
          */
-        MCAPI
-        FrameWithContext(struct Bedrock::CallStack::Frame&&, class std::optional<struct Bedrock::CallStack::Context>&&); // NOLINT
+        MCAPI FrameWithContext(struct Bedrock::CallStack::Frame&&, std::optional<struct Bedrock::CallStack::Context>&&);
         /**
          * @symbol ??1FrameWithContext\@CallStack\@Bedrock\@\@QEAA\@XZ
          */
-        MCAPI ~FrameWithContext(); // NOLINT
+        MCAPI ~FrameWithContext();
+        // NOLINTEND
     };
 
 public:
@@ -77,14 +79,16 @@ public:
     CallStack()                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0CallStack\@Bedrock\@\@QEAA\@$$QEAUFrameWithContext\@01\@\@Z
      */
-    MCAPI CallStack(struct Bedrock::CallStack::FrameWithContext&&); // NOLINT
+    MCAPI CallStack(struct Bedrock::CallStack::FrameWithContext&&);
     /**
      * @symbol ??1CallStack\@Bedrock\@\@QEAA\@XZ
      */
-    MCAPI ~CallStack(); // NOLINT
+    MCAPI ~CallStack();
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

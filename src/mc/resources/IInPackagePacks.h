@@ -24,10 +24,12 @@ public:
         MetaData()                           = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??0MetaData\@IInPackagePacks\@\@QEAA\@AEBVPath\@Core\@\@_NW4PackCategory\@\@\@Z
          */
-        MCAPI MetaData(class Core::Path const&, bool, enum class PackCategory); // NOLINT
+        MCAPI MetaData(class Core::Path const&, bool, enum class PackCategory);
+        // NOLINTEND
     };
 
 public:

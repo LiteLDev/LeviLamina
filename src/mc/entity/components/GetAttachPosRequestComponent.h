@@ -11,8 +11,10 @@ public:
     GetAttachPosRequestComponent()                                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4GetAttachPosRequestComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct GetAttachPosRequestComponent& operator=(struct GetAttachPosRequestComponent&&); // NOLINT
+    MCAPI struct GetAttachPosRequestComponent& operator=(struct GetAttachPosRequestComponent&&);
+    // NOLINTEND
 };

@@ -11,8 +11,10 @@ public:
     ServerPlayerMovementComponent()                                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ServerPlayerMovementComponent\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI ServerPlayerMovementComponent(struct ServerPlayerMovementComponent&&); // NOLINT
+    MCAPI ServerPlayerMovementComponent(struct ServerPlayerMovementComponent&&);
+    // NOLINTEND
 };

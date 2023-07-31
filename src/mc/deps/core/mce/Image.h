@@ -19,30 +19,32 @@ public:
     Image()                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0Image\@mce\@\@QEAA\@IIW4ImageFormat\@1\@W4ImageUsage\@1\@\@Z
      */
-    MCAPI Image(unsigned int, unsigned int, enum class mce::ImageFormat, enum class mce::ImageUsage); // NOLINT
+    MCAPI Image(unsigned int, unsigned int, enum class mce::ImageFormat, enum class mce::ImageUsage);
     /**
      * @symbol ?clone\@Image\@mce\@\@QEBA?AU12\@XZ
      */
-    MCAPI struct mce::Image clone() const; // NOLINT
+    MCAPI struct mce::Image clone() const;
     /**
      * @symbol ?isEmpty\@Image\@mce\@\@QEBA_NXZ
      */
-    MCAPI bool isEmpty() const; // NOLINT
+    MCAPI bool isEmpty() const;
     /**
      * @symbol ??4Image\@mce\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
-    MCAPI struct mce::Image& operator=(struct mce::Image&&); // NOLINT
+    MCAPI struct mce::Image& operator=(struct mce::Image&&);
     /**
      * @symbol ?resizeImageBytesToFitImageDescription\@Image\@mce\@\@QEAAXXZ
      */
-    MCAPI void resizeImageBytesToFitImageDescription(); // NOLINT
+    MCAPI void resizeImageBytesToFitImageDescription();
     /**
      * @symbol ??1Image\@mce\@\@QEAA\@XZ
      */
-    MCAPI ~Image(); // NOLINT
+    MCAPI ~Image();
+    // NOLINTEND
 };
 
 }; // namespace mce

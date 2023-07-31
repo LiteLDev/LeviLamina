@@ -16,10 +16,11 @@ public:
     ResetFrictionModifierSystem()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@ResetFrictionModifierSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
     /**
      * @symbol
      * ?tickResetFrictionModifierSystem\@ResetFrictionModifierSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@UPlayerInputRequestComponent\@\@\@\@UFrictionModifierComponent\@\@\@\@\@Z
@@ -30,5 +31,6 @@ public:
                                                       struct Include<
                                                           class FlagComponent<struct ActorMovementTickNeededFlag>,
                                                           struct PlayerInputRequestComponent>,
-                                                      struct FrictionModifierComponent>); // NOLINT
+                                                      struct FrictionModifierComponent>);
+    // NOLINTEND
 };

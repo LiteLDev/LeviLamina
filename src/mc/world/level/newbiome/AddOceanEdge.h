@@ -21,13 +21,14 @@ public:
     AddOceanEdge()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??RAddOceanEdge\@OperationNodeFilters\@\@QEBA?AW4BiomeTemperatureCategory\@\@AEAU?$NeighborhoodReader\@W4BiomeTemperatureCategory\@\@$00$00\@OperationNodeDetails\@\@\@Z
      */
     MCAPI enum class BiomeTemperatureCategory
-    operator()(struct OperationNodeDetails::NeighborhoodReader<enum class BiomeTemperatureCategory, 1, 1>&)
-        const; // NOLINT
+    operator()(struct OperationNodeDetails::NeighborhoodReader<enum class BiomeTemperatureCategory, 1, 1>&) const;
+    // NOLINTEND
 };
 
 }; // namespace OperationNodeFilters

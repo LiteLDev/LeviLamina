@@ -17,253 +17,254 @@ public:
     Slime()                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 10
      * @symbol ?reloadHardcoded\@Slime\@\@UEAAXW4InitializationMethod\@Actor\@\@AEBVVariantParameterList\@\@\@Z
      */
-    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const&); // NOLINT
+    virtual void reloadHardcoded(enum class Actor::InitializationMethod, class VariantParameterList const&);
     /**
      * @vftbl 16
      * @symbol __unk_vfn_16
      */
-    virtual void __unk_vfn_16(); // NOLINT
+    virtual void __unk_vfn_16();
     /**
      * @vftbl 19
      * @symbol ?remove\@Slime\@\@UEAAXXZ
      */
-    virtual void remove(); // NOLINT
+    virtual void remove();
     /**
      * @vftbl 35
      * @symbol __unk_vfn_35
      */
-    virtual void __unk_vfn_35(); // NOLINT
+    virtual void __unk_vfn_35();
     /**
      * @vftbl 55
      * @symbol __unk_vfn_55
      */
-    virtual void __unk_vfn_55(); // NOLINT
+    virtual void __unk_vfn_55();
     /**
      * @vftbl 62
      * @symbol __unk_vfn_62
      */
-    virtual void __unk_vfn_62(); // NOLINT
+    virtual void __unk_vfn_62();
     /**
      * @vftbl 69
      * @symbol ?getShadowRadius\@Slime\@\@UEBAMXZ
      */
-    virtual float getShadowRadius() const; // NOLINT
+    virtual float getShadowRadius() const;
     /**
      * @vftbl 71
      * @symbol __unk_vfn_71
      */
-    virtual void __unk_vfn_71(); // NOLINT
+    virtual void __unk_vfn_71();
     /**
      * @vftbl 77
      * @symbol __unk_vfn_77
      */
-    virtual void __unk_vfn_77(); // NOLINT
+    virtual void __unk_vfn_77();
     /**
      * @vftbl 83
      * @symbol __unk_vfn_83
      */
-    virtual void __unk_vfn_83(); // NOLINT
+    virtual void __unk_vfn_83();
     /**
      * @vftbl 86
      * @symbol __unk_vfn_86
      */
-    virtual void __unk_vfn_86(); // NOLINT
+    virtual void __unk_vfn_86();
     /**
      * @vftbl 93
      * @symbol __unk_vfn_93
      */
-    virtual void __unk_vfn_93(); // NOLINT
+    virtual void __unk_vfn_93();
     /**
      * @vftbl 95
      * @symbol __unk_vfn_95
      */
-    virtual void __unk_vfn_95(); // NOLINT
+    virtual void __unk_vfn_95();
     /**
      * @vftbl 96
      * @symbol __unk_vfn_96
      */
-    virtual void __unk_vfn_96(); // NOLINT
+    virtual void __unk_vfn_96();
     /**
      * @vftbl 98
      * @symbol __unk_vfn_98
      */
-    virtual void __unk_vfn_98(); // NOLINT
+    virtual void __unk_vfn_98();
     /**
      * @vftbl 164
      * @symbol __unk_vfn_164
      */
-    virtual void __unk_vfn_164(); // NOLINT
+    virtual void __unk_vfn_164();
     /**
      * @vftbl 173
      * @symbol ?onSynchedDataUpdate\@Slime\@\@UEAAXH\@Z
      */
-    virtual void onSynchedDataUpdate(int); // NOLINT
+    virtual void onSynchedDataUpdate(int);
     /**
      * @vftbl 178
      * @symbol __unk_vfn_178
      */
-    virtual void __unk_vfn_178(); // NOLINT
+    virtual void __unk_vfn_178();
     /**
      * @vftbl 202
      * @symbol __unk_vfn_202
      */
-    virtual void __unk_vfn_202(); // NOLINT
+    virtual void __unk_vfn_202();
     /**
      * @vftbl 203
      * @symbol __unk_vfn_203
      */
-    virtual void __unk_vfn_203(); // NOLINT
+    virtual void __unk_vfn_203();
     /**
      * @vftbl 219
      * @symbol __unk_vfn_219
      */
-    virtual void __unk_vfn_219(); // NOLINT
+    virtual void __unk_vfn_219();
     /**
      * @vftbl 222
      * @symbol __unk_vfn_222
      */
-    virtual void __unk_vfn_222(); // NOLINT
+    virtual void __unk_vfn_222();
     /**
      * @vftbl 239
      * @symbol __unk_vfn_239
      */
-    virtual void __unk_vfn_239(); // NOLINT
+    virtual void __unk_vfn_239();
     /**
      * @vftbl 243
      * @symbol ?readAdditionalSaveData\@Slime\@\@MEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&); // NOLINT
+    virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /**
      * @vftbl 244
      * @symbol ?addAdditionalSaveData\@Slime\@\@MEBAXAEAVCompoundTag\@\@\@Z
      */
-    virtual void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
+    virtual void addAdditionalSaveData(class CompoundTag&) const;
     /**
      * @vftbl 247
      * @symbol __unk_vfn_247
      */
-    virtual void __unk_vfn_247(); // NOLINT
+    virtual void __unk_vfn_247();
     /**
      * @vftbl 253
      * @symbol __unk_vfn_253
      */
-    virtual void __unk_vfn_253(); // NOLINT
+    virtual void __unk_vfn_253();
     /**
      * @vftbl 264
      * @symbol ?aiStep\@Slime\@\@UEAAXXZ
      */
-    virtual void aiStep(); // NOLINT
+    virtual void aiStep();
     /**
      * @vftbl 268
      * @symbol ?checkSpawnRules\@Slime\@\@UEAA_N_N\@Z
      */
-    virtual bool checkSpawnRules(bool); // NOLINT
+    virtual bool checkSpawnRules(bool);
     /**
      * @vftbl 276
      * @symbol __unk_vfn_276
      */
-    virtual void __unk_vfn_276(); // NOLINT
+    virtual void __unk_vfn_276();
     /**
      * @vftbl 280
      * @symbol __unk_vfn_280
      */
-    virtual void __unk_vfn_280(); // NOLINT
+    virtual void __unk_vfn_280();
     /**
      * @vftbl 312
      * @symbol ?_getWalkTargetValue\@Slime\@\@MEAAMAEBVBlockPos\@\@\@Z
      */
-    virtual float _getWalkTargetValue(class BlockPos const&); // NOLINT
+    virtual float _getWalkTargetValue(class BlockPos const&);
     /**
      * @vftbl 323
      * @symbol __unk_vfn_323
      */
-    virtual void __unk_vfn_323(); // NOLINT
+    virtual void __unk_vfn_323();
     /**
      * @vftbl 326
      * @symbol ?getSquishSound\@Slime\@\@UEAA?AW4LevelSoundEvent\@\@XZ
      */
-    virtual enum class LevelSoundEvent getSquishSound(); // NOLINT
+    virtual enum class LevelSoundEvent getSquishSound();
     /**
      * @vftbl 327
      * @symbol ?setSlimeSize\@Slime\@\@MEAAXH\@Z
      */
-    virtual void setSlimeSize(int); // NOLINT
+    virtual void setSlimeSize(int);
     /**
      * @vftbl 328
      * @symbol ?doPlayJumpSound\@Slime\@\@MEAA_NXZ
      */
-    virtual bool doPlayJumpSound(); // NOLINT
+    virtual bool doPlayJumpSound();
     /**
      * @vftbl 329
      * @symbol ?doPlayLandSound\@Slime\@\@MEAA_NXZ
      */
-    virtual bool doPlayLandSound(); // NOLINT
+    virtual bool doPlayLandSound();
     /**
      * @vftbl 330
      * @symbol ?playJumpSound\@Slime\@\@MEAAXXZ
      */
-    virtual void playJumpSound(); // NOLINT
+    virtual void playJumpSound();
     /**
      * @vftbl 331
      * @symbol ?playLandSound\@Slime\@\@MEAAXXZ
      */
-    virtual void playLandSound(); // NOLINT
+    virtual void playLandSound();
     /**
      * @vftbl 332
      * @symbol ?decreaseSquish\@Slime\@\@MEAAXXZ
      */
-    virtual void decreaseSquish(); // NOLINT
+    virtual void decreaseSquish();
     /**
      * @vftbl 333
      * @symbol ?createChild\@Slime\@\@MEAA?AV?$OwnerPtrT\@UEntityRefTraits\@\@\@\@H\@Z
      */
-    virtual class OwnerPtrT<struct EntityRefTraits> createChild(int); // NOLINT
+    virtual class OwnerPtrT<struct EntityRefTraits> createChild(int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLIME
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~Slime(); // NOLINT
+    MCVAPI ~Slime();
 #endif
     /**
      * @symbol ??0Slime\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
-    MCAPI Slime(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&); // NOLINT
+    MCAPI Slime(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
     /**
      * @symbol ?getOldSquishValue\@Slime\@\@QEBAMXZ
      */
-    MCAPI float getOldSquishValue() const; // NOLINT
-    /**
-     * @symbol ?getSquishValue\@Slime\@\@QEBAMXZ
-     */
-    MCAPI float getSquishValue() const; // NOLINT
-    /**
-     * @symbol ?postNormalTick\@Slime\@\@QEAAX_N\@Z
-     */
-    MCAPI void postNormalTick(bool); // NOLINT
-    /**
-     * @symbol ?preNormalTick\@Slime\@\@QEAAXXZ
-     */
-    MCAPI void preNormalTick(); // NOLINT
+    MCAPI float getOldSquishValue() const;
     /**
      * @symbol
      * ?getSpawnRulesCallback\@Slime\@\@SA?AV?$function\@$$A6A_NAEBVSpawnConditions\@\@AEAVBlockSource\@\@\@Z\@std\@\@XZ
      */
-    MCAPI static class std::function<bool(class SpawnConditions const&, class BlockSource&)>
-    getSpawnRulesCallback(); // NOLINT
+    MCAPI static std::function<bool(class SpawnConditions const&, class BlockSource&)> getSpawnRulesCallback();
+    /**
+     * @symbol ?getSquishValue\@Slime\@\@QEBAMXZ
+     */
+    MCAPI float getSquishValue() const;
+    /**
+     * @symbol ?postNormalTick\@Slime\@\@QEAAX_N\@Z
+     */
+    MCAPI void postNormalTick(bool);
+    /**
+     * @symbol ?preNormalTick\@Slime\@\@QEAAXXZ
+     */
+    MCAPI void preNormalTick();
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol ?justJumped\@Slime\@\@IEAAXXZ
      */
-    MCAPI void justJumped(); // NOLINT
+    MCAPI void justJumped();
     /**
      * @symbol ?justLanded\@Slime\@\@IEAAXXZ
      */
-    MCAPI void justLanded(); // NOLINT
-
-protected:
+    MCAPI void justLanded();
+    // NOLINTEND
 };

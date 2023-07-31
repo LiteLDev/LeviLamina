@@ -10,20 +10,22 @@ public:
     WaterMovementComponent(WaterMovementComponent const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0WaterMovementComponent\@\@QEAA\@XZ
      */
-    MCAPI WaterMovementComponent(); // NOLINT
-    /**
-     * @symbol ?getDragFactor\@WaterMovementComponent\@\@QEBAMXZ
-     */
-    MCAPI float getDragFactor() const; // NOLINT
-    /**
-     * @symbol ?initFromDefinition\@WaterMovementComponent\@\@QEAAXAEAVActor\@\@\@Z
-     */
-    MCAPI void initFromDefinition(class Actor&); // NOLINT
+    MCAPI WaterMovementComponent();
     /**
      * @symbol ?getDefaultDragFactor\@WaterMovementComponent\@\@SAMXZ
      */
-    MCAPI static float getDefaultDragFactor(); // NOLINT
+    MCAPI static float getDefaultDragFactor();
+    /**
+     * @symbol ?getDragFactor\@WaterMovementComponent\@\@QEBAMXZ
+     */
+    MCAPI float getDragFactor() const;
+    /**
+     * @symbol ?initFromDefinition\@WaterMovementComponent\@\@QEAAXAEAVActor\@\@\@Z
+     */
+    MCAPI void initFromDefinition(class Actor&);
+    // NOLINTEND
 };

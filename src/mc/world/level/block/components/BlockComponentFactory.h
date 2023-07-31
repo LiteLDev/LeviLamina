@@ -23,15 +23,16 @@ public:
         Constructor()                   = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??4Constructor\@BlockComponentFactory\@\@QEAAAEAU01\@AEBU01\@\@Z
          */
-        MCAPI struct BlockComponentFactory::Constructor&
-        operator=(struct BlockComponentFactory::Constructor const&); // NOLINT
+        MCAPI struct BlockComponentFactory::Constructor& operator=(struct BlockComponentFactory::Constructor const&);
         /**
          * @symbol ??1Constructor\@BlockComponentFactory\@\@QEAA\@XZ
          */
-        MCAPI ~Constructor(); // NOLINT
+        MCAPI ~Constructor();
+        // NOLINTEND
     };
 
 public:
@@ -41,52 +42,42 @@ public:
     BlockComponentFactory()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0BlockComponentFactory\@\@QEAA\@AEBVExperiments\@\@\@Z
      */
-    MCAPI BlockComponentFactory(class Experiments const&); // NOLINT
-    /**
-     * @symbol ?initializeFactory\@BlockComponentFactory\@\@QEAAXAEBVExperiments\@\@\@Z
-     */
-    MCAPI void initializeFactory(class Experiments const&); // NOLINT
+    MCAPI BlockComponentFactory(class Experiments const&);
     /**
      * @symbol ?addAllComponentUpgrades\@BlockComponentFactory\@\@SAXAEAVCerealDocumentUpgrader\@\@\@Z
      */
-    MCAPI static void addAllComponentUpgrades(class CerealDocumentUpgrader&); // NOLINT
+    MCAPI static void addAllComponentUpgrades(class CerealDocumentUpgrader&);
     /**
      * @symbol ?bindAllComponentSchemas\@BlockComponentFactory\@\@SAXAEAVSchemaFactory\@cereal\@\@AEBVSemVersion\@\@\@Z
      */
-    MCAPI static void bindAllComponentSchemas(class cereal::SchemaFactory&, class SemVersion const&); // NOLINT
+    MCAPI static void bindAllComponentSchemas(class cereal::SchemaFactory&, class SemVersion const&);
+    /**
+     * @symbol ?initializeFactory\@BlockComponentFactory\@\@QEAAXAEBVExperiments\@\@\@Z
+     */
+    MCAPI void initializeFactory(class Experiments const&);
     /**
      * @symbol ?registerAllCerealDescriptions\@BlockComponentFactory\@\@SAXXZ
      */
-    MCAPI static void registerAllCerealDescriptions(); // NOLINT
+    MCAPI static void registerAllCerealDescriptions();
     /**
      * @symbol
      * ?registerComponentUpgrade\@BlockComponentFactory\@\@SAXAEAVCerealDocumentUpgrader\@\@V?$shared_ptr\@VCerealSchemaUpgrade\@\@\@std\@\@\@Z
      */
     MCAPI static void
-    registerComponentUpgrade(class CerealDocumentUpgrader&, class std::shared_ptr<class CerealSchemaUpgrade>); // NOLINT
+    registerComponentUpgrade(class CerealDocumentUpgrader&, std::shared_ptr<class CerealSchemaUpgrade>);
     /**
      * @symbol
      * ?mRegisteredCerealComponents\@BlockComponentFactory\@\@2V?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UConstructor\@BlockComponentFactory\@\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UConstructor\@BlockComponentFactory\@\@\@std\@\@\@2\@\@std\@\@A
      */
-    MCAPI static class std::unordered_map<
-        std::string,
-        struct BlockComponentFactory::Constructor,
-        struct std::hash<std::string>,
-        struct std::equal_to<std::string>,
-        class std::allocator<struct std::pair<std::string const, struct BlockComponentFactory::Constructor>>>
-        mRegisteredCerealComponents; // NOLINT
+    MCAPI static std::unordered_map<std::string, struct BlockComponentFactory::Constructor> mRegisteredCerealComponents;
     /**
      * @symbol
      * ?mRegisteredDeprecatedCerealComponents\@BlockComponentFactory\@\@2V?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@\@std\@\@\@2\@\@std\@\@A
      */
-    MCAPI static class std::unordered_map<
-        std::string,
-        std::string,
-        struct std::hash<std::string>,
-        struct std::equal_to<std::string>,
-        class std::allocator<struct std::pair<std::string const, std::string>>>
-        mRegisteredDeprecatedCerealComponents; // NOLINT
+    MCAPI static std::unordered_map<std::string, std::string> mRegisteredDeprecatedCerealComponents;
+    // NOLINTEND
 };

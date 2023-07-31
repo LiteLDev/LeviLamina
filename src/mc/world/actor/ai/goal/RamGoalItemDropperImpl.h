@@ -18,26 +18,28 @@ public:
     RamGoalItemDropperImpl()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?tryDropHorn\@RamGoalItemDropperImpl\@RamAttackGoalUtils\@\@UEBAXVVec3\@\@\@Z
      */
-    virtual void tryDropHorn(class Vec3) const; // NOLINT
+    virtual void tryDropHorn(class Vec3) const;
     /**
      * @vftbl 2
      * @symbol ?checkForHornDropOnCollision\@RamGoalItemDropperImpl\@RamAttackGoalUtils\@\@UEAAXVVec3\@\@\@Z
      */
-    virtual void checkForHornDropOnCollision(class Vec3); // NOLINT
+    virtual void checkForHornDropOnCollision(class Vec3);
     /**
      * @vftbl 3
      * @symbol ?dontDropHorn\@RamGoalItemDropperImpl\@RamAttackGoalUtils\@\@UEAAXXZ
      */
-    virtual void dontDropHorn(); // NOLINT
+    virtual void dontDropHorn();
+    // NOLINTEND
 };
 
 }; // namespace RamAttackGoalUtils

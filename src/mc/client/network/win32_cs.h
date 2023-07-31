@@ -13,10 +13,12 @@ public:
     win32_cs()                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1win32_cs\@httpclient\@xbox\@\@QEAA\@XZ
      */
-    MCAPI ~win32_cs(); // NOLINT
+    MCAPI ~win32_cs();
+    // NOLINTEND
 };
 
 }; // namespace xbox::httpclient

@@ -14,24 +14,25 @@ public:
     BasaltPillarFeature()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 3
      * @symbol ?place\@BasaltPillarFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const; // NOLINT
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_growColumn\@BasaltPillarFeature\@\@AEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@MAEBVBlock\@\@\@Z
      */
-    MCAPI bool
-    _growColumn(class BlockSource&, class BlockPos const&, class Random&, float, class Block const&) const; // NOLINT
-
-private:
+    MCAPI bool _growColumn(class BlockSource&, class BlockPos const&, class Random&, float, class Block const&) const;
+    // NOLINTEND
 };

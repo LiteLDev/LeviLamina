@@ -11,8 +11,10 @@ public:
     PlayerAddExpEvent()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PlayerAddExpEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerAddExpEvent(); // NOLINT
+    MCAPI ~PlayerAddExpEvent();
+    // NOLINTEND
 };

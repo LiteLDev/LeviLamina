@@ -14,26 +14,28 @@ public:
     UPNPInterface()                                = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPNPINTERFACE
     /**
      * @symbol ?_onDisable\@UPNPInterface\@\@EEAAXXZ
      */
-    MCVAPI void _onDisable(); // NOLINT
+    MCVAPI void _onDisable();
     /**
      * @symbol ?_onEnable\@UPNPInterface\@\@EEAAXXZ
      */
-    MCVAPI void _onEnable(); // NOLINT
+    MCVAPI void _onEnable();
 #endif
     /**
      * @symbol ??0UPNPInterface\@\@QEAA\@AEBV?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@\@Z
      */
-    MCAPI UPNPInterface(class Bedrock::NonOwnerPointer<class AppPlatform> const&); // NOLINT
+    MCAPI UPNPInterface(class Bedrock::NonOwnerPointer<class AppPlatform> const&);
     /**
      * @symbol ?reset\@UPNPInterface\@\@QEAAXXZ
      */
-    MCAPI void reset(); // NOLINT
+    MCAPI void reset();
     /**
      * @symbol ?tick\@UPNPInterface\@\@QEAAXXZ
      */
-    MCAPI void tick(); // NOLINT
+    MCAPI void tick();
+    // NOLINTEND
 };

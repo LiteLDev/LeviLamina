@@ -16,30 +16,32 @@ public:
     TextObjectLocalizedTextWithParams()                                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?asString\@TextObjectLocalizedTextWithParams\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string asString() const; // NOLINT
+    virtual std::string asString() const;
     /**
      * @vftbl 2
      * @symbol ?asJsonValue\@TextObjectLocalizedTextWithParams\@\@UEBA?AVValue\@Json\@\@XZ
      */
-    virtual class Json::Value asJsonValue() const; // NOLINT
+    virtual class Json::Value asJsonValue() const;
     /**
      * @vftbl 3
      * @symbol ?resolve\@TextObjectLocalizedTextWithParams\@\@UEBA?AVValue\@Json\@\@AEBUResolveData\@\@\@Z
      */
-    virtual class Json::Value resolve(struct ResolveData const&) const; // NOLINT
+    virtual class Json::Value resolve(struct ResolveData const&) const;
     /**
      * @symbol
      * ??0TextObjectLocalizedTextWithParams\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@2\@\@Z
      */
-    MCAPI TextObjectLocalizedTextWithParams(std::string, std::vector<std::string> const&); // NOLINT
+    MCAPI TextObjectLocalizedTextWithParams(std::string, std::vector<std::string> const&);
+    // NOLINTEND
 };

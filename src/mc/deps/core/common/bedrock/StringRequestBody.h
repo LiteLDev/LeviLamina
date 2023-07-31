@@ -13,12 +13,14 @@ public:
     StringRequestBody()                                    = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_HTTP_STRINGREQUESTBODY
     /**
      * @symbol ?getLoggableData\@StringRequestBody\@Http\@Bedrock\@\@MEBA?AV?$span\@$$CBE$0?0\@gsl\@\@XZ
      */
-    MCVAPI class gsl::span<unsigned char const, -1> getLoggableData() const; // NOLINT
+    MCVAPI class gsl::span<unsigned char const> getLoggableData() const;
 #endif
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Http

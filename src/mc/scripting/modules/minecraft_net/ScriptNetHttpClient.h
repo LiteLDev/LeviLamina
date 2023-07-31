@@ -37,11 +37,12 @@ public:
         RequestProcessor()                                   = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol
          * ??0RequestProcessor\@ScriptNetHttpClient\@ScriptModuleMinecraftNet\@\@QEAA\@$$QEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$NonOwnerPointer\@VScheduler\@\@\@Bedrock\@\@\@Z
          */
-        MCAPI RequestProcessor(std::string&&, class Bedrock::NonOwnerPointer<class Scheduler>); // NOLINT
+        MCAPI RequestProcessor(std::string&&, class Bedrock::NonOwnerPointer<class Scheduler>);
         /**
          * @symbol
          * ?process\@RequestProcessor\@ScriptNetHttpClient\@ScriptModuleMinecraftNet\@\@QEAA?AV?$Promise\@V?$StrongTypedObjectHandle\@UScriptNetResponse\@ScriptModuleMinecraftNet\@\@\@Scripting\@\@UError\@2\@X\@Scripting\@\@AEBVWeakLifetimeScope\@5\@AEAVScriptObjectFactory\@5\@AEBV?$StrongTypedObjectHandle\@UScriptNetRequest\@ScriptModuleMinecraftNet\@\@\@5\@\@Z
@@ -50,7 +51,8 @@ public:
             class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetResponse>,
             struct Scripting::Error,
             void>
-        process(class Scripting::WeakLifetimeScope const&, class Scripting::ScriptObjectFactory&, class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetRequest> const&); // NOLINT
+        process(class Scripting::WeakLifetimeScope const&, class Scripting::ScriptObjectFactory&, class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetRequest> const&);
+        // NOLINTEND
     };
 
 public:
@@ -59,16 +61,22 @@ public:
     ScriptNetHttpClient()                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0ScriptNetHttpClient\@ScriptModuleMinecraftNet\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$NonOwnerPointer\@VScheduler\@\@\@Bedrock\@\@\@Z
      */
-    MCAPI ScriptNetHttpClient(std::string const&, class Bedrock::NonOwnerPointer<class Scheduler>); // NOLINT
+    MCAPI ScriptNetHttpClient(std::string const&, class Bedrock::NonOwnerPointer<class Scheduler>);
+    /**
+     * @symbol
+     * ?bind\@ScriptNetHttpClient\@ScriptModuleMinecraftNet\@\@SA?AV?$ClassBindingBuilder\@UScriptNetHttpClient\@ScriptModuleMinecraftNet\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraftNet::ScriptNetHttpClient> bind();
     /**
      * @symbol
      * ?cancelAll\@ScriptNetHttpClient\@ScriptModuleMinecraftNet\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void cancelAll(std::string const&); // NOLINT
+    MCAPI void cancelAll(std::string const&);
     /**
      * @symbol
      * ?get\@ScriptNetHttpClient\@ScriptModuleMinecraftNet\@\@QEAA?AV?$Promise\@V?$StrongTypedObjectHandle\@UScriptNetResponse\@ScriptModuleMinecraftNet\@\@\@Scripting\@\@UError\@2\@X\@Scripting\@\@AEBVWeakLifetimeScope\@4\@AEAVScriptObjectFactory\@4\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -77,12 +85,12 @@ public:
         class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetResponse>,
         struct Scripting::Error,
         void>
-    get(class Scripting::WeakLifetimeScope const&, class Scripting::ScriptObjectFactory&, std::string const&); // NOLINT
+    get(class Scripting::WeakLifetimeScope const&, class Scripting::ScriptObjectFactory&, std::string const&);
     /**
      * @symbol ??4ScriptNetHttpClient\@ScriptModuleMinecraftNet\@\@QEAAAEAU01\@AEBU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraftNet::ScriptNetHttpClient&
-    operator=(struct ScriptModuleMinecraftNet::ScriptNetHttpClient const&); // NOLINT
+    operator=(struct ScriptModuleMinecraftNet::ScriptNetHttpClient const&);
     /**
      * @symbol
      * ?request\@ScriptNetHttpClient\@ScriptModuleMinecraftNet\@\@QEAA?AV?$Promise\@V?$StrongTypedObjectHandle\@UScriptNetResponse\@ScriptModuleMinecraftNet\@\@\@Scripting\@\@UError\@2\@X\@Scripting\@\@AEBVWeakLifetimeScope\@4\@AEAVScriptObjectFactory\@4\@AEBV?$StrongTypedObjectHandle\@UScriptNetRequest\@ScriptModuleMinecraftNet\@\@\@4\@\@Z
@@ -91,17 +99,12 @@ public:
         class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetResponse>,
         struct Scripting::Error,
         void>
-    request(class Scripting::WeakLifetimeScope const&, class Scripting::ScriptObjectFactory&, class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetRequest> const&); // NOLINT
+    request(class Scripting::WeakLifetimeScope const&, class Scripting::ScriptObjectFactory&, class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetRequest> const&);
     /**
      * @symbol ??1ScriptNetHttpClient\@ScriptModuleMinecraftNet\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptNetHttpClient(); // NOLINT
-    /**
-     * @symbol
-     * ?bind\@ScriptNetHttpClient\@ScriptModuleMinecraftNet\@\@SA?AV?$ClassBindingBuilder\@UScriptNetHttpClient\@ScriptModuleMinecraftNet\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraftNet::ScriptNetHttpClient>
-    bind(); // NOLINT
+    MCAPI ~ScriptNetHttpClient();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraftNet

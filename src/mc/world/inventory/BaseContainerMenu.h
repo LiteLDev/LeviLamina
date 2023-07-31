@@ -11,54 +11,56 @@ public:
     BaseContainerMenu()                                    = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASECONTAINERMENU
     /**
      * @symbol ?broadcastChanges\@BaseContainerMenu\@\@UEAAXXZ
      */
-    MCVAPI void broadcastChanges(); // NOLINT
+    MCVAPI void broadcastChanges();
     /**
      * @symbol ?containerContentChanged\@BaseContainerMenu\@\@UEAAXH\@Z
      */
-    MCVAPI void containerContentChanged(int); // NOLINT
+    MCVAPI void containerContentChanged(int);
     /**
      * @symbol ?getContainerId\@BaseContainerMenu\@\@UEBA?AW4ContainerID\@\@XZ
      */
-    MCVAPI enum class ContainerID getContainerId() const; // NOLINT
+    MCVAPI enum class ContainerID getContainerId() const;
     /**
      * @symbol ?getContainerType\@BaseContainerMenu\@\@UEBA?AW4ContainerType\@\@XZ
      */
-    MCVAPI enum class ContainerType getContainerType() const; // NOLINT
+    MCVAPI enum class ContainerType getContainerType() const;
     /**
      * @symbol ?isResultSlot\@BaseContainerMenu\@\@UEAA_NH\@Z
      */
-    MCVAPI bool isResultSlot(int); // NOLINT
+    MCVAPI bool isResultSlot(int);
     /**
      * @symbol ?isSlotDirty\@BaseContainerMenu\@\@UEAA_NH\@Z
      */
-    MCVAPI bool isSlotDirty(int); // NOLINT
+    MCVAPI bool isSlotDirty(int);
     /**
      * @symbol ?setContainerId\@BaseContainerMenu\@\@UEAAXW4ContainerID\@\@\@Z
      */
-    MCVAPI void setContainerId(enum class ContainerID); // NOLINT
+    MCVAPI void setContainerId(enum class ContainerID);
     /**
      * @symbol ?setContainerType\@BaseContainerMenu\@\@UEAAXW4ContainerType\@\@\@Z
      */
-    MCVAPI void setContainerType(enum class ContainerType); // NOLINT
+    MCVAPI void setContainerType(enum class ContainerType);
     /**
      * @symbol ?setData\@BaseContainerMenu\@\@UEAAXHH\@Z
      */
-    MCVAPI void setData(int, int); // NOLINT
+    MCVAPI void setData(int, int);
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~BaseContainerMenu(); // NOLINT
+    MCVAPI ~BaseContainerMenu();
 #endif
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol ?_saveLastSlots\@BaseContainerMenu\@\@IEAAXPEAVContainer\@\@\@Z
      */
-    MCAPI void _saveLastSlots(class Container*); // NOLINT
-
-protected:
+    MCAPI void _saveLastSlots(class Container*);
+    // NOLINTEND
 };

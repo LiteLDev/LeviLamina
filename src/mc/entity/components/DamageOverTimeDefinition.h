@@ -19,15 +19,17 @@ public:
     DamageOverTimeDefinition()                                           = delete;
 
 public:
-    /**
-     * @symbol ?initialize\@DamageOverTimeDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVDamageOverTimeComponent\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class DamageOverTimeComponent&) const; // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?buildSchema\@DamageOverTimeDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDamageOverTimeDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      class DamageOverTimeDefinition>>&); // NOLINT
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DamageOverTimeDefinition>>&);
+    /**
+     * @symbol ?initialize\@DamageOverTimeDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVDamageOverTimeComponent\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class DamageOverTimeComponent&) const;
+    // NOLINTEND
 };

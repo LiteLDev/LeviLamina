@@ -11,8 +11,10 @@ public:
     TravelTypeSensingSystem()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createTravelTypeSensingSystem\@TravelTypeSensingSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createTravelTypeSensingSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createTravelTypeSensingSystem();
+    // NOLINTEND
 };

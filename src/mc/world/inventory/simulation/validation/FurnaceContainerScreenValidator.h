@@ -13,26 +13,28 @@ public:
     FurnaceContainerScreenValidator(FurnaceContainerScreenValidator const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?postCommitItemRemoved\@FurnaceContainerScreenValidator\@\@UEAA?AV?$shared_ptr\@VContainerValidationCommitObject\@\@\@std\@\@W4ContainerEnumName\@\@HAEBVItemStack\@\@\@Z
      */
-    virtual class std::shared_ptr<class ContainerValidationCommitObject>
-    postCommitItemRemoved(enum class ContainerEnumName, int, class ItemStack const&); // NOLINT
+    virtual std::shared_ptr<class ContainerValidationCommitObject>
+    postCommitItemRemoved(enum class ContainerEnumName, int, class ItemStack const&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FURNACECONTAINERSCREENVALIDATOR
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~FurnaceContainerScreenValidator(); // NOLINT
+    MCVAPI ~FurnaceContainerScreenValidator();
 #endif
     /**
      * @symbol ??0FurnaceContainerScreenValidator\@\@QEAA\@XZ
      */
-    MCAPI FurnaceContainerScreenValidator(); // NOLINT
+    MCAPI FurnaceContainerScreenValidator();
+    // NOLINTEND
 };

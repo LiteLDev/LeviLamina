@@ -14,20 +14,22 @@ public:
     WorldPackHistory& operator=(WorldPackHistory const&) = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0WorldPackHistory\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI WorldPackHistory(class WorldPackHistory const&); // NOLINT
+    MCAPI WorldPackHistory(class WorldPackHistory const&);
     /**
      * @symbol ??0WorldPackHistory\@\@QEAA\@XZ
      */
-    MCAPI WorldPackHistory(); // NOLINT
+    MCAPI WorldPackHistory();
     /**
      * @symbol ?initializeFromJson\@WorldPackHistory\@\@QEAA_NAEBVValue\@Json\@\@\@Z
      */
-    MCAPI bool initializeFromJson(class Json::Value const&); // NOLINT
+    MCAPI bool initializeFromJson(class Json::Value const&);
     /**
      * @symbol ??1WorldPackHistory\@\@QEAA\@XZ
      */
-    MCAPI ~WorldPackHistory(); // NOLINT
+    MCAPI ~WorldPackHistory();
+    // NOLINTEND
 };

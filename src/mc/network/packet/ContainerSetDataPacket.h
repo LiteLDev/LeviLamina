@@ -14,45 +14,47 @@ public:
     ContainerSetDataPacket(ContainerSetDataPacket const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?getId\@ContainerSetDataPacket\@\@UEBA?AW4MinecraftPacketIds\@\@XZ
      */
-    virtual enum class MinecraftPacketIds getId() const; // NOLINT
+    virtual enum class MinecraftPacketIds getId() const;
     /**
      * @vftbl 2
      * @symbol
      * ?getName\@ContainerSetDataPacket\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string getName() const; // NOLINT
+    virtual std::string getName() const;
     /**
      * @vftbl 3
      * @symbol ?write\@ContainerSetDataPacket\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
-    virtual void write(class BinaryStream&) const; // NOLINT
+    virtual void write(class BinaryStream&) const;
     /**
      * @vftbl 7
      * @symbol
      * ?_read\@ContainerSetDataPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual class Bedrock::Result<void, class std::error_code> _read(class ReadOnlyBinaryStream&); // NOLINT
+    virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERSETDATAPACKET
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ContainerSetDataPacket(); // NOLINT
+    MCVAPI ~ContainerSetDataPacket();
 #endif
     /**
      * @symbol ??0ContainerSetDataPacket\@\@QEAA\@XZ
      */
-    MCAPI ContainerSetDataPacket(); // NOLINT
+    MCAPI ContainerSetDataPacket();
     /**
      * @symbol ??0ContainerSetDataPacket\@\@QEAA\@W4ContainerID\@\@HH\@Z
      */
-    MCAPI ContainerSetDataPacket(enum class ContainerID, int, int); // NOLINT
+    MCAPI ContainerSetDataPacket(enum class ContainerID, int, int);
+    // NOLINTEND
 };

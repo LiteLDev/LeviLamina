@@ -13,14 +13,16 @@ public:
     ProfileThread()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ProfileThread\@Profile\@Core\@\@QEAA\@PEBD\@Z
      */
-    MCAPI ProfileThread(char const*); // NOLINT
+    MCAPI ProfileThread(char const*);
     /**
      * @symbol ??1ProfileThread\@Profile\@Core\@\@QEAA\@XZ
      */
-    MCAPI ~ProfileThread(); // NOLINT
+    MCAPI ~ProfileThread();
+    // NOLINTEND
 };
 
 }; // namespace Core::Profile

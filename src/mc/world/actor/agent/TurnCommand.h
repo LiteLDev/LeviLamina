@@ -16,26 +16,28 @@ public:
     TurnCommand()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?execute\@TurnCommand\@AgentCommands\@\@UEAAXXZ
      */
-    virtual void execute(); // NOLINT
+    virtual void execute();
     /**
      * @vftbl 2
      * @symbol ?isDone\@TurnCommand\@AgentCommands\@\@UEAA_NXZ
      */
-    virtual bool isDone(); // NOLINT
+    virtual bool isDone();
     /**
      * @vftbl 3
      * @symbol ?tick\@TurnCommand\@AgentCommands\@\@UEAAXXZ
      */
-    virtual void tick(); // NOLINT
+    virtual void tick();
+    // NOLINTEND
 };
 
 }; // namespace AgentCommands

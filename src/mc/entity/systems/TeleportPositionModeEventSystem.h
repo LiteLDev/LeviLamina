@@ -11,9 +11,11 @@ public:
     TeleportPositionModeEventSystem()                                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?createTeleportPositionModeEventSystem\@TeleportPositionModeEventSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createTeleportPositionModeEventSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createTeleportPositionModeEventSystem();
+    // NOLINTEND
 };

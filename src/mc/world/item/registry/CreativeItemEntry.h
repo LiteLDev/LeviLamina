@@ -14,25 +14,26 @@ public:
     CreativeItemEntry()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0CreativeItemEntry\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI CreativeItemEntry(class CreativeItemEntry&&); // NOLINT
+    MCAPI CreativeItemEntry(class CreativeItemEntry&&);
     /**
      * @symbol ?getCreativeNetId\@CreativeItemEntry\@\@QEBAAEBV?$TypedServerNetId\@UCreativeItemNetIdTag\@\@I$0A\@\@\@XZ
      */
-    MCAPI class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const&
-    getCreativeNetId() const; // NOLINT
+    MCAPI class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const& getCreativeNetId() const;
     /**
      * @symbol ?getGroup\@CreativeItemEntry\@\@QEBAPEAVCreativeGroupInfo\@\@XZ
      */
-    MCAPI class CreativeGroupInfo* getGroup() const; // NOLINT
+    MCAPI class CreativeGroupInfo* getGroup() const;
     /**
      * @symbol ?getIndex\@CreativeItemEntry\@\@QEBAIXZ
      */
-    MCAPI unsigned int getIndex() const; // NOLINT
+    MCAPI unsigned int getIndex() const;
     /**
      * @symbol ?getItemInstance\@CreativeItemEntry\@\@QEBAAEBVItemInstance\@\@XZ
      */
-    MCAPI class ItemInstance const& getItemInstance() const; // NOLINT
+    MCAPI class ItemInstance const& getItemInstance() const;
+    // NOLINTEND
 };

@@ -11,16 +11,18 @@ public:
     PlayerMoveSystems()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createLocalPlayerPreMoveJumpSystem\@PlayerMoveSystems\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createLocalPlayerPreMoveJumpSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createLocalPlayerPreMoveJumpSystem();
     /**
      * @symbol ?createLocalPlayerPreMoveSystem\@PlayerMoveSystems\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createLocalPlayerPreMoveSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createLocalPlayerPreMoveSystem();
     /**
      * @symbol ?createPlayerPostMoveSystem\@PlayerMoveSystems\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createPlayerPostMoveSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createPlayerPostMoveSystem();
+    // NOLINTEND
 };

@@ -26,12 +26,13 @@ public:
     FlatFileOperations()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?copyFlatFile\@FlatFileOperations\@Core\@\@SA?AVResult\@2\@PEAVFileSystemImpl\@2\@AEBVPath\@2\@01AEBV?$vector\@UExcludedPath\@Core\@\@V?$allocator\@UExcludedPath\@Core\@\@\@std\@\@\@std\@\@2\@Z
      */
     MCAPI static class Core::Result
-    copyFlatFile(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&, std::vector<struct Core::ExcludedPath> const&, std::vector<struct Core::ExcludedPath> const&); // NOLINT
+    copyFlatFile(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&, std::vector<struct Core::ExcludedPath> const&, std::vector<struct Core::ExcludedPath> const&);
     /**
      * @symbol
      * ?createFlatFile\@FlatFileOperations\@Core\@\@SA?AVResult\@2\@PEAVFileSystemImpl\@2\@AEBVPath\@2\@01AEBV?$vector\@UExcludedPath\@Core\@\@V?$allocator\@UExcludedPath\@Core\@\@\@std\@\@\@std\@\@_N\@Z
@@ -43,7 +44,7 @@ public:
         class Core::Path const&,
         std::vector<struct Core::ExcludedPath> const&,
         bool
-    ); // NOLINT
+    );
     /**
      * @symbol
      * ?replaceFlatFileManifest\@FlatFileOperations\@Core\@\@SA?AVResult\@2\@AEAVFileSystemImpl\@2\@AEBVPath\@2\@AEBV?$vector\@VFlatFileManifestInfo\@Core\@\@V?$allocator\@VFlatFileManifestInfo\@Core\@\@\@std\@\@\@std\@\@_N\@Z
@@ -53,41 +54,41 @@ public:
         class Core::Path const&,
         std::vector<class Core::FlatFileManifestInfo> const&,
         bool
-    ); // NOLINT
+    );
     /**
      * @symbol
      * ?transferFlatFileDirectory\@FlatFileOperations\@Core\@\@SA?AVResult\@2\@PEAVFileSystemImpl\@2\@AEBVPath\@2\@01\@Z
      */
     MCAPI static class Core::Result
-    transferFlatFileDirectory(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&); // NOLINT
+    transferFlatFileDirectory(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&);
     /**
      * @symbol ?FLAT_FILE_CURRENT_VERSION\@FlatFileOperations\@Core\@\@2_KB
      */
-    MCAPI static unsigned __int64 const FLAT_FILE_CURRENT_VERSION; // NOLINT
+    MCAPI static uint64_t const FLAT_FILE_CURRENT_VERSION;
     /**
      * @symbol
      * ?FLAT_FILE_EMPTY_MANIFEST_FILE\@FlatFileOperations\@Core\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const FLAT_FILE_EMPTY_MANIFEST_FILE; // NOLINT
+    MCAPI static std::string const FLAT_FILE_EMPTY_MANIFEST_FILE;
     /**
      * @symbol
      * ?FLAT_FILE_EXTENSION\@FlatFileOperations\@Core\@\@2V?$PathBuffer\@V?$StackString\@D$0EAA\@\@Core\@\@\@2\@B
      */
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const FLAT_FILE_EXTENSION; // NOLINT
+    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const FLAT_FILE_EXTENSION;
     /**
      * @symbol ?FLAT_FILE_INVALID_VERSION\@FlatFileOperations\@Core\@\@2_KB
      */
-    MCAPI static unsigned __int64 const FLAT_FILE_INVALID_VERSION; // NOLINT
+    MCAPI static uint64_t const FLAT_FILE_INVALID_VERSION;
     /**
      * @symbol
      * ?FLAT_FILE_MANIFEST_EXTENSION\@FlatFileOperations\@Core\@\@2V?$PathBuffer\@V?$StackString\@D$0EAA\@\@Core\@\@\@2\@B
      */
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const
-        FLAT_FILE_MANIFEST_EXTENSION; // NOLINT
+    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> const FLAT_FILE_MANIFEST_EXTENSION;
     /**
      * @symbol ?FLAT_FILE_WRITE_CHUNK_SIZE\@FlatFileOperations\@Core\@\@2_KB
      */
-    MCAPI static unsigned __int64 const FLAT_FILE_WRITE_CHUNK_SIZE; // NOLINT
+    MCAPI static uint64_t const FLAT_FILE_WRITE_CHUNK_SIZE;
+    // NOLINTEND
 };
 
 }; // namespace Core

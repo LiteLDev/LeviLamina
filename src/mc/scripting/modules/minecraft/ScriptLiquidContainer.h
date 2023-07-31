@@ -16,12 +16,13 @@ public:
     ScriptLiquidContainer()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptLiquidContainer\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptLiquidContainer\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptLiquidContainer>
-    bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptLiquidContainer> bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -11,8 +11,10 @@ public:
     BlockLightDampeningComponent()                                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?usesNewComponentStorage\@BlockLightDampeningComponent\@\@SA_NXZ
      */
-    MCAPI static bool usesNewComponentStorage(); // NOLINT
+    MCAPI static bool usesNewComponentStorage();
+    // NOLINTEND
 };

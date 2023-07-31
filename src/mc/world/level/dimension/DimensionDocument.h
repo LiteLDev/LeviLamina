@@ -37,10 +37,12 @@ public:
                 Bounds()                         = delete;
 
             public:
+                // NOLINTBEGIN
                 /**
                  * @symbol ?bindType\@Bounds\@Components\@Dimension\@DimensionDocument\@\@SAXXZ
                  */
-                MCAPI static void bindType(); // NOLINT
+                MCAPI static void bindType();
+                // NOLINTEND
             };
 
             struct Generation {
@@ -52,10 +54,12 @@ public:
                 Generation()                             = delete;
 
             public:
+                // NOLINTBEGIN
                 /**
                  * @symbol ?bindType\@Generation\@Components\@Dimension\@DimensionDocument\@\@SAXXZ
                  */
-                MCAPI static void bindType(); // NOLINT
+                MCAPI static void bindType();
+                // NOLINTEND
             };
 
         public:
@@ -64,19 +68,21 @@ public:
             Components()                  = delete;
 
         public:
+            // NOLINTBEGIN
+            /**
+             * @symbol ?bindType\@Components\@Dimension\@DimensionDocument\@\@SAXXZ
+             */
+            MCAPI static void bindType();
             /**
              * @symbol ??4Components\@Dimension\@DimensionDocument\@\@QEAAAEAU012\@AEBU012\@\@Z
              */
             MCAPI struct DimensionDocument::Dimension::Components&
-            operator=(struct DimensionDocument::Dimension::Components const&); // NOLINT
+            operator=(struct DimensionDocument::Dimension::Components const&);
             /**
              * @symbol ??1Components\@Dimension\@DimensionDocument\@\@QEAA\@XZ
              */
-            MCAPI ~Components(); // NOLINT
-            /**
-             * @symbol ?bindType\@Components\@Dimension\@DimensionDocument\@\@SAXXZ
-             */
-            MCAPI static void bindType(); // NOLINT
+            MCAPI ~Components();
+            // NOLINTEND
         };
 
         struct Description {
@@ -88,14 +94,16 @@ public:
             Description()                              = delete;
 
         public:
-            /**
-             * @symbol ??1Description\@Dimension\@DimensionDocument\@\@QEAA\@XZ
-             */
-            MCAPI ~Description(); // NOLINT
+            // NOLINTBEGIN
             /**
              * @symbol ?bindType\@Description\@Dimension\@DimensionDocument\@\@SAXXZ
              */
-            MCAPI static void bindType(); // NOLINT
+            MCAPI static void bindType();
+            /**
+             * @symbol ??1Description\@Dimension\@DimensionDocument\@\@QEAA\@XZ
+             */
+            MCAPI ~Description();
+            // NOLINTEND
         };
 
     public:
@@ -104,22 +112,24 @@ public:
         Dimension()                 = delete;
 
     public:
-        /**
-         * @symbol ??4Dimension\@DimensionDocument\@\@QEAAAEAU01\@AEBU01\@\@Z
-         */
-        MCAPI struct DimensionDocument::Dimension& operator=(struct DimensionDocument::Dimension const&); // NOLINT
-        /**
-         * @symbol ??4Dimension\@DimensionDocument\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-         */
-        MCAPI struct DimensionDocument::Dimension& operator=(struct DimensionDocument::Dimension&&); // NOLINT
-        /**
-         * @symbol ??1Dimension\@DimensionDocument\@\@QEAA\@XZ
-         */
-        MCAPI ~Dimension(); // NOLINT
+        // NOLINTBEGIN
         /**
          * @symbol ?bindType\@Dimension\@DimensionDocument\@\@SAXXZ
          */
-        MCAPI static void bindType(); // NOLINT
+        MCAPI static void bindType();
+        /**
+         * @symbol ??4Dimension\@DimensionDocument\@\@QEAAAEAU01\@AEBU01\@\@Z
+         */
+        MCAPI struct DimensionDocument::Dimension& operator=(struct DimensionDocument::Dimension const&);
+        /**
+         * @symbol ??4Dimension\@DimensionDocument\@\@QEAAAEAU01\@$$QEAU01\@\@Z
+         */
+        MCAPI struct DimensionDocument::Dimension& operator=(struct DimensionDocument::Dimension&&);
+        /**
+         * @symbol ??1Dimension\@DimensionDocument\@\@QEAA\@XZ
+         */
+        MCAPI ~Dimension();
+        // NOLINTEND
     };
 
 public:
@@ -128,16 +138,18 @@ public:
     DimensionDocument(DimensionDocument const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0DimensionDocument\@\@QEAA\@XZ
      */
-    MCAPI DimensionDocument(); // NOLINT
-    /**
-     * @symbol ??1DimensionDocument\@\@QEAA\@XZ
-     */
-    MCAPI ~DimensionDocument(); // NOLINT
+    MCAPI DimensionDocument();
     /**
      * @symbol ?bindType\@DimensionDocument\@\@SAXXZ
      */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI static void bindType();
+    /**
+     * @symbol ??1DimensionDocument\@\@QEAA\@XZ
+     */
+    MCAPI ~DimensionDocument();
+    // NOLINTEND
 };

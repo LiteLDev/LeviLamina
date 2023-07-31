@@ -11,8 +11,10 @@ public:
     VRBobControlSystem()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?create\@VRBobControlSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo create(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo create();
+    // NOLINTEND
 };

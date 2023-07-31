@@ -10,20 +10,22 @@ public:
     DanceComponent(DanceComponent const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0DanceComponent\@\@QEAA\@XZ
      */
-    MCAPI DanceComponent(); // NOLINT
+    MCAPI DanceComponent();
     /**
      * @symbol ?inListenDistance\@DanceComponent\@\@QEBA_NAEBVVec3\@\@\@Z
      */
-    MCAPI bool inListenDistance(class Vec3 const&) const; // NOLINT
+    MCAPI bool inListenDistance(class Vec3 const&) const;
     /**
      * @symbol ?initFromDefinition\@DanceComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void initFromDefinition(class Actor&); // NOLINT
+    MCAPI void initFromDefinition(class Actor&);
     /**
      * @symbol ?initFromDefinition\@DanceComponent\@\@QEAAXAEAVActor\@\@M\@Z
      */
-    MCAPI void initFromDefinition(class Actor&, float); // NOLINT
+    MCAPI void initFromDefinition(class Actor&, float);
+    // NOLINTEND
 };

@@ -19,9 +19,11 @@ public:
     ConsumeItemDefinition()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
+    // NOLINTEND
 };

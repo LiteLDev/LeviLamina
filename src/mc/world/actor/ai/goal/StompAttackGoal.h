@@ -14,67 +14,69 @@ public:
     StompAttackGoal()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?canUse\@StompAttackGoal\@\@UEAA_NXZ
      */
-    virtual bool canUse(); // NOLINT
+    virtual bool canUse();
     /**
      * @vftbl 2
      * @symbol ?canContinueToUse\@StompAttackGoal\@\@UEAA_NXZ
      */
-    virtual bool canContinueToUse(); // NOLINT
+    virtual bool canContinueToUse();
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3(); // NOLINT
+    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol ?start\@StompAttackGoal\@\@UEAAXXZ
      */
-    virtual void start(); // NOLINT
+    virtual void start();
     /**
      * @vftbl 5
      * @symbol ?stop\@StompAttackGoal\@\@UEAAXXZ
      */
-    virtual void stop(); // NOLINT
+    virtual void stop();
     /**
      * @vftbl 6
      * @symbol ?tick\@StompAttackGoal\@\@UEAAXXZ
      */
-    virtual void tick(); // NOLINT
+    virtual void tick();
     /**
      * @vftbl 7
      * @symbol
      * ?appendDebugInfo\@StompAttackGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void appendDebugInfo(std::string&) const; // NOLINT
+    virtual void appendDebugInfo(std::string&) const;
     /**
      * @vftbl 8
      * @symbol __unk_vfn_8
      */
-    virtual void __unk_vfn_8(); // NOLINT
+    virtual void __unk_vfn_8();
     /**
      * @vftbl 9
      * @symbol __unk_vfn_9
      */
-    virtual void __unk_vfn_9(); // NOLINT
+    virtual void __unk_vfn_9();
     /**
      * @symbol ??0StompAttackGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
-    MCAPI StompAttackGoal(class Mob&); // NOLINT
+    MCAPI StompAttackGoal(class Mob&);
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol ?_attemptAttack\@StompAttackGoal\@\@IEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void _attemptAttack(class Actor&); // NOLINT
-
-protected:
+    MCAPI void _attemptAttack(class Actor&);
+    // NOLINTEND
 };

@@ -11,8 +11,10 @@ public:
     LocalSpatialEntityFetcher()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1LocalSpatialEntityFetcher\@\@QEAA\@XZ
      */
-    MCAPI ~LocalSpatialEntityFetcher(); // NOLINT
+    MCAPI ~LocalSpatialEntityFetcher();
+    // NOLINTEND
 };

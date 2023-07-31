@@ -11,54 +11,56 @@ public:
     MaxStackSizeItemComponent()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?isNetworkComponent\@?$NetworkedItemComponent\@VMaxStackSizeItemComponent\@\@\@\@UEBA_NXZ
      */
-    virtual bool isNetworkComponent() const; // NOLINT
+    virtual bool isNetworkComponent() const;
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2(); // NOLINT
+    virtual void __unk_vfn_2();
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3(); // NOLINT
+    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol
      * ?buildNetworkTag\@?$NetworkedItemComponent\@VMaxStackSizeItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const; // NOLINT
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl 5
      * @symbol
      * ?initializeFromNetwork\@?$NetworkedItemComponent\@VMaxStackSizeItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
      */
-    virtual bool initializeFromNetwork(class CompoundTag const&); // NOLINT
+    virtual bool initializeFromNetwork(class CompoundTag const&);
     /**
      * @vftbl 6
      * @symbol __unk_vfn_6
      */
-    virtual void __unk_vfn_6(); // NOLINT
+    virtual void __unk_vfn_6();
     /**
      * @vftbl 7
      * @symbol ?initializeComponent\@MaxStackSizeItemComponent\@\@UEBAXXZ
      */
-    virtual void initializeComponent() const; // NOLINT
+    virtual void initializeComponent() const;
     /**
      * @symbol ?bindType\@MaxStackSizeItemComponent\@\@SAXXZ
      */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier\@MaxStackSizeItemComponent\@\@SAAEBVHashedString\@\@XZ
      */
-    MCAPI static class HashedString const& getIdentifier(); // NOLINT
+    MCAPI static class HashedString const& getIdentifier();
+    // NOLINTEND
 };

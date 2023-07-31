@@ -16,21 +16,23 @@ public:
     ScriptActorHitEntityAfterEvent()                                                 = delete;
 
 public:
-    /**
-     * @symbol ??4ScriptActorHitEntityAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-     */
-    MCAPI struct ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent&&); // NOLINT
-    /**
-     * @symbol ??1ScriptActorHitEntityAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptActorHitEntityAfterEvent(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptActorHitEntityAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptActorHitEntityAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent>
-    bind(); // NOLINT
+    bind();
+    /**
+     * @symbol ??4ScriptActorHitEntityAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
+     */
+    MCAPI struct ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent&&);
+    /**
+     * @symbol ??1ScriptActorHitEntityAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptActorHitEntityAfterEvent();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

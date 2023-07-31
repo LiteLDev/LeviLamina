@@ -19,19 +19,21 @@ public:
     CanFlyDefinition()                                   = delete;
 
 public:
-    /**
-     * @symbol ?initialize\@CanFlyDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&) const; // NOLINT
-    /**
-     * @symbol ?uninitialize\@CanFlyDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
-    MCAPI void uninitialize(class EntityContext&) const; // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?buildSchema\@CanFlyDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UCanFlyDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct CanFlyDefinition>>&); // NOLINT
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct CanFlyDefinition>>&);
+    /**
+     * @symbol ?initialize\@CanFlyDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&) const;
+    /**
+     * @symbol ?uninitialize\@CanFlyDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
+     */
+    MCAPI void uninitialize(class EntityContext&) const;
+    // NOLINTEND
 };

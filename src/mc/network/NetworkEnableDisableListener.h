@@ -14,42 +14,44 @@ public:
     NetworkEnableDisableListener()                                               = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETWORKENABLEDISABLELISTENER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~NetworkEnableDisableListener(); // NOLINT
+    MCVAPI ~NetworkEnableDisableListener();
 #endif
     /**
      * @symbol ??0NetworkEnableDisableListener\@\@QEAA\@AEBV?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@\@Z
      */
-    MCAPI NetworkEnableDisableListener(class Bedrock::NonOwnerPointer<class AppPlatform> const&); // NOLINT
+    MCAPI NetworkEnableDisableListener(class Bedrock::NonOwnerPointer<class AppPlatform> const&);
     /**
      * @symbol ?disable\@NetworkEnableDisableListener\@\@QEAAXXZ
      */
-    MCAPI void disable(); // NOLINT
+    MCAPI void disable();
     /**
      * @symbol ?isDisabled\@NetworkEnableDisableListener\@\@QEBA_NXZ
      */
-    MCAPI bool isDisabled() const; // NOLINT
+    MCAPI bool isDisabled() const;
     /**
      * @symbol ?isEnabled\@NetworkEnableDisableListener\@\@QEBA_NXZ
      */
-    MCAPI bool isEnabled() const; // NOLINT
+    MCAPI bool isEnabled() const;
     /**
      * @symbol ?isNetworkAllowed\@NetworkEnableDisableListener\@\@QEBA_NXZ
      */
-    MCAPI bool isNetworkAllowed() const; // NOLINT
+    MCAPI bool isNetworkAllowed() const;
     /**
      * @symbol ?isUninitialized\@NetworkEnableDisableListener\@\@QEBA_NXZ
      */
-    MCAPI bool isUninitialized() const; // NOLINT
+    MCAPI bool isUninitialized() const;
     /**
      * @symbol ?tryEnable\@NetworkEnableDisableListener\@\@QEAAXXZ
      */
-    MCAPI void tryEnable(); // NOLINT
+    MCAPI void tryEnable();
     /**
      * @symbol ?uninitialize\@NetworkEnableDisableListener\@\@QEAAXXZ
      */
-    MCAPI void uninitialize(); // NOLINT
+    MCAPI void uninitialize();
+    // NOLINTEND
 };

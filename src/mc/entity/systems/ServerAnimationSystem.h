@@ -11,8 +11,10 @@ public:
     ServerAnimationSystem()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createServerAnimationSystem\@ServerAnimationSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createServerAnimationSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createServerAnimationSystem();
+    // NOLINTEND
 };

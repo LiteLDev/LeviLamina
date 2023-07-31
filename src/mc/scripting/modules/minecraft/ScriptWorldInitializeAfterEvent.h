@@ -16,22 +16,24 @@ public:
     ScriptWorldInitializeAfterEvent()                                                  = delete;
 
 public:
-    /**
-     * @symbol ??1ScriptWorldInitializeAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptWorldInitializeAfterEvent(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptWorldInitializeAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptWorldInitializeAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptWorldInitializeAfterEvent>
-    bind(); // NOLINT
+    bind();
     /**
      * @symbol
      * ?bindV010\@ScriptWorldInitializeAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptWorldInitializeAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptWorldInitializeAfterEvent>
-    bindV010(); // NOLINT
+    bindV010();
+    /**
+     * @symbol ??1ScriptWorldInitializeAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptWorldInitializeAfterEvent();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

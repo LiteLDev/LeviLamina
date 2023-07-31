@@ -13,10 +13,12 @@ public:
     LevelStorageResult()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1LevelStorageResult\@Core\@\@QEAA\@XZ
      */
-    MCAPI ~LevelStorageResult(); // NOLINT
+    MCAPI ~LevelStorageResult();
+    // NOLINTEND
 };
 
 }; // namespace Core

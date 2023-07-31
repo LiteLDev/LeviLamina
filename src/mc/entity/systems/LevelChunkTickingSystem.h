@@ -11,41 +11,41 @@ public:
     LevelChunkTickingSystem()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1(); // NOLINT
+    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol ?tick\@LevelChunkTickingSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
-    virtual void tick(class EntityRegistry&); // NOLINT
+    virtual void tick(class EntityRegistry&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_determineLevelChunksToTick\@LevelChunkTickingSystem\@\@CAXAEBVActor\@\@AEAVBlockSource\@\@AEAVLoadedChunksComponent\@\@AEAV?$vector\@V?$shared_ptr\@VLevelChunk\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VLevelChunk\@\@\@std\@\@\@2\@\@std\@\@3AEBUTick\@\@\@Z
      */
     MCAPI static void
-    _determineLevelChunksToTick(class Actor const&, class BlockSource&, class LoadedChunksComponent&, std::vector<class std::shared_ptr<class LevelChunk>>&, std::vector<class std::shared_ptr<class LevelChunk>>&, struct Tick const&); // NOLINT
+    _determineLevelChunksToTick(class Actor const&, class BlockSource&, class LoadedChunksComponent&, std::vector<std::shared_ptr<class LevelChunk>>&, std::vector<std::shared_ptr<class LevelChunk>>&, struct Tick const&);
     /**
      * @symbol
      * ?_tickLevelChunksAroundActor\@LevelChunkTickingSystem\@\@CAXAEAVActor\@\@AEAVBlockSource\@\@AEAVLoadedChunksComponent\@\@\@Z
      */
-    MCAPI static void
-    _tickLevelChunksAroundActor(class Actor&, class BlockSource&, class LoadedChunksComponent&); // NOLINT
+    MCAPI static void _tickLevelChunksAroundActor(class Actor&, class BlockSource&, class LoadedChunksComponent&);
     /**
      * @symbol
      * ?_tickLevelChunksAroundActorView\@LevelChunkTickingSystem\@\@CAXAEAVActorOwnerComponent\@\@AEAVLoadedChunksComponent\@\@\@Z
      */
-    MCAPI static void
-    _tickLevelChunksAroundActorView(class ActorOwnerComponent&, class LoadedChunksComponent&); // NOLINT
-
-private:
+    MCAPI static void _tickLevelChunksAroundActorView(class ActorOwnerComponent&, class LoadedChunksComponent&);
+    // NOLINTEND
 };

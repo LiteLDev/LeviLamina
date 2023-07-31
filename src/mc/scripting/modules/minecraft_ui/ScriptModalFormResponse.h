@@ -16,21 +16,23 @@ public:
     ScriptModalFormResponse()                                          = delete;
 
 public:
-    /**
-     * @symbol ??4ScriptModalFormResponse\@ScriptModuleMinecraftServerUI\@\@QEAAAEAV01\@$$QEAV01\@\@Z
-     */
-    MCAPI class ScriptModuleMinecraftServerUI::ScriptModalFormResponse&
-    operator=(class ScriptModuleMinecraftServerUI::ScriptModalFormResponse&&); // NOLINT
-    /**
-     * @symbol ??1ScriptModalFormResponse\@ScriptModuleMinecraftServerUI\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptModalFormResponse(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptModalFormResponse\@ScriptModuleMinecraftServerUI\@\@SA?AV?$ClassBindingBuilder\@VScriptModalFormResponse\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptModalFormResponse>
-    bind(); // NOLINT
+    bind();
+    /**
+     * @symbol ??4ScriptModalFormResponse\@ScriptModuleMinecraftServerUI\@\@QEAAAEAV01\@$$QEAV01\@\@Z
+     */
+    MCAPI class ScriptModuleMinecraftServerUI::ScriptModalFormResponse&
+    operator=(class ScriptModuleMinecraftServerUI::ScriptModalFormResponse&&);
+    /**
+     * @symbol ??1ScriptModalFormResponse\@ScriptModuleMinecraftServerUI\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptModalFormResponse();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraftServerUI

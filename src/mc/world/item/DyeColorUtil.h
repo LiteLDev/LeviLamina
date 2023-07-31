@@ -11,32 +11,34 @@ public:
     DyeColorUtil()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getAuxValue\@DyeColorUtil\@\@SAHW4ItemColor\@\@\@Z
      */
-    MCAPI static int getAuxValue(enum class ItemColor); // NOLINT
+    MCAPI static int getAuxValue(enum class ItemColor);
     /**
      * @symbol ?getItemColor\@DyeColorUtil\@\@SA?AW4ItemColor\@\@H\@Z
      */
-    MCAPI static enum class ItemColor getItemColor(int); // NOLINT
+    MCAPI static enum class ItemColor getItemColor(int);
     /**
      * @symbol ?getRandomItemColor\@DyeColorUtil\@\@SA?AW4ItemColor\@\@AEAVRandom\@\@\@Z
      */
-    MCAPI static enum class ItemColor getRandomItemColor(class Random&); // NOLINT
+    MCAPI static enum class ItemColor getRandomItemColor(class Random&);
     /**
      * @symbol ?COLOR_TO_AUX\@DyeColorUtil\@\@2V?$array\@F$0BA\@\@std\@\@B
      */
-    MCAPI static class std::array<short, 16> const COLOR_TO_AUX; // NOLINT
+    MCAPI static std::array<short, 16> const COLOR_TO_AUX;
     /**
      * @symbol ?DEPRECATED_DYE_AUX_VALUES\@DyeColorUtil\@\@2V?$array\@F$03\@std\@\@B
      */
-    MCAPI static class std::array<short, 4> const DEPRECATED_DYE_AUX_VALUES; // NOLINT
+    MCAPI static std::array<short, 4> const DEPRECATED_DYE_AUX_VALUES;
     /**
      * @symbol ?DYE_AUX_VALUES\@DyeColorUtil\@\@2V?$array\@F$0BA\@\@std\@\@B
      */
-    MCAPI static class std::array<short, 16> const DYE_AUX_VALUES; // NOLINT
+    MCAPI static std::array<short, 16> const DYE_AUX_VALUES;
     /**
      * @symbol ?mColorMap\@DyeColorUtil\@\@2V?$array\@W4ItemColor\@\@$0BE\@\@std\@\@B
      */
-    MCAPI static class std::array<enum class ItemColor, 20> const mColorMap; // NOLINT
+    MCAPI static std::array<enum class ItemColor, 20> const mColorMap;
+    // NOLINTEND
 };

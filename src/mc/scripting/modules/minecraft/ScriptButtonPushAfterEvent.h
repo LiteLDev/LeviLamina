@@ -16,21 +16,22 @@ public:
     ScriptButtonPushAfterEvent()                                             = delete;
 
 public:
-    /**
-     * @symbol ??4ScriptButtonPushAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-     */
-    MCAPI struct ScriptModuleMinecraft::ScriptButtonPushAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptButtonPushAfterEvent&&); // NOLINT
-    /**
-     * @symbol ??1ScriptButtonPushAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptButtonPushAfterEvent(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptButtonPushAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptButtonPushAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptButtonPushAfterEvent>
-    bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptButtonPushAfterEvent> bind();
+    /**
+     * @symbol ??4ScriptButtonPushAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
+     */
+    MCAPI struct ScriptModuleMinecraft::ScriptButtonPushAfterEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptButtonPushAfterEvent&&);
+    /**
+     * @symbol ??1ScriptButtonPushAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptButtonPushAfterEvent();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

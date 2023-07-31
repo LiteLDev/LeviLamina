@@ -10,12 +10,14 @@ public:
     SpawnSettings()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0SpawnSettings\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI SpawnSettings(struct SpawnSettings const&); // NOLINT
+    MCAPI SpawnSettings(struct SpawnSettings const&);
     /**
      * @symbol ??1SpawnSettings\@\@QEAA\@XZ
      */
-    MCAPI ~SpawnSettings(); // NOLINT
+    MCAPI ~SpawnSettings();
+    // NOLINTEND
 };

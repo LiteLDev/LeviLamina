@@ -11,8 +11,10 @@ public:
     RopeAABB()                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getContactPoint\@RopeAABB\@\@QEBA_NAEBVVec3\@\@MAEAUAABBContactPoint\@\@\@Z
      */
-    MCAPI bool getContactPoint(class Vec3 const&, float, struct AABBContactPoint&) const; // NOLINT
+    MCAPI bool getContactPoint(class Vec3 const&, float, struct AABBContactPoint&) const;
+    // NOLINTEND
 };

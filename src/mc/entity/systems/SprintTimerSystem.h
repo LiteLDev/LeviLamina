@@ -16,10 +16,11 @@ public:
     SprintTimerSystem()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSprintTimerSystem\@SprintTimerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSprintTimerSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSprintTimerSystem();
     /**
      * @symbol
      * ?tickSprintTimerSystem\@SprintTimerSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@ULocalPlayerComponentFlag\@\@\@\@\@\@$$CBUMoveInputComponent\@\@UPlayerInputRequestComponent\@\@UVanillaClientGameplayComponent\@\@\@\@\@Z
@@ -32,5 +33,6 @@ public:
                                                 class FlagComponent<struct LocalPlayerComponentFlag>>,
                                             struct MoveInputComponent const,
                                             struct PlayerInputRequestComponent,
-                                            struct VanillaClientGameplayComponent>); // NOLINT
+                                            struct VanillaClientGameplayComponent>);
+    // NOLINTEND
 };

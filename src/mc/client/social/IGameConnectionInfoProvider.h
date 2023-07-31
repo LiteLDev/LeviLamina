@@ -13,12 +13,14 @@ public:
     IGameConnectionInfoProvider()                                              = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SOCIAL_IGAMECONNECTIONINFOPROVIDER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IGameConnectionInfoProvider(); // NOLINT
+    MCVAPI ~IGameConnectionInfoProvider();
 #endif
+    // NOLINTEND
 };
 
 }; // namespace Social

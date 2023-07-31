@@ -11,12 +11,14 @@ public:
     ActorUniqueID()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getHash\@ActorUniqueID\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 getHash() const; // NOLINT
+    MCAPI uint64_t getHash() const;
     /**
      * @symbol ?INVALID_ID\@ActorUniqueID\@\@2U1\@B
      */
-    MCAPI static struct ActorUniqueID const INVALID_ID; // NOLINT
+    MCAPI static struct ActorUniqueID const INVALID_ID;
+    // NOLINTEND
 };

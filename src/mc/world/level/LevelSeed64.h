@@ -11,12 +11,14 @@ public:
     LevelSeed64()                              = delete;
 
 public:
-    /**
-     * @symbol ?to32BitRandomSeed\@LevelSeed64\@\@QEBAIXZ
-     */
-    MCAPI unsigned int to32BitRandomSeed() const; // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol ?fromUnsigned32\@LevelSeed64\@\@SA?AV1\@I\@Z
      */
-    MCAPI static class LevelSeed64 fromUnsigned32(unsigned int); // NOLINT
+    MCAPI static class LevelSeed64 fromUnsigned32(unsigned int);
+    /**
+     * @symbol ?to32BitRandomSeed\@LevelSeed64\@\@QEBAIXZ
+     */
+    MCAPI unsigned int to32BitRandomSeed() const;
+    // NOLINTEND
 };

@@ -17,16 +17,18 @@ public:
     RegionFile()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0RegionFile\@\@QEAA\@AEBVPath\@Core\@\@\@Z
      */
-    MCAPI RegionFile(class Core::Path const&); // NOLINT
+    MCAPI RegionFile(class Core::Path const&);
     /**
      * @symbol ?open\@RegionFile\@\@QEAA_NXZ
      */
-    MCAPI bool open(); // NOLINT
+    MCAPI bool open();
     /**
      * @symbol ?readChunk\@RegionFile\@\@QEAA_NHHPEAPEAVBitStream\@RakNet\@\@\@Z
      */
-    MCAPI bool readChunk(int, int, class RakNet::BitStream**); // NOLINT
+    MCAPI bool readChunk(int, int, class RakNet::BitStream**);
+    // NOLINTEND
 };

@@ -11,28 +11,30 @@ public:
     SavedDataStorage()                                   = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAVEDDATASTORAGE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~SavedDataStorage(); // NOLINT
+    MCVAPI ~SavedDataStorage();
 #endif
     /**
      * @symbol ??0SavedDataStorage\@\@QEAA\@PEAVLevelStorage\@\@\@Z
      */
-    MCAPI SavedDataStorage(class LevelStorage*); // NOLINT
+    MCAPI SavedDataStorage(class LevelStorage*);
     /**
      * @symbol
      * ?loadAndSet\@SavedDataStorage\@\@QEAA_NAEAVSavedData\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI bool loadAndSet(class SavedData&, std::string const&); // NOLINT
+    MCAPI bool loadAndSet(class SavedData&, std::string const&);
     /**
      * @symbol ?save\@SavedDataStorage\@\@QEAAXXZ
      */
-    MCAPI void save(); // NOLINT
+    MCAPI void save();
     /**
      * @symbol
      * ?set\@SavedDataStorage\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVSavedData\@\@\@Z
      */
-    MCAPI void set(std::string const&, class SavedData&); // NOLINT
+    MCAPI void set(std::string const&, class SavedData&);
+    // NOLINTEND
 };

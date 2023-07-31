@@ -10,12 +10,14 @@ public:
     ActorAcquiredItemEvent()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ActorAcquiredItemEvent\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI ActorAcquiredItemEvent(struct ActorAcquiredItemEvent const&); // NOLINT
+    MCAPI ActorAcquiredItemEvent(struct ActorAcquiredItemEvent const&);
     /**
      * @symbol ??1ActorAcquiredItemEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorAcquiredItemEvent(); // NOLINT
+    MCAPI ~ActorAcquiredItemEvent();
+    // NOLINTEND
 };

@@ -11,8 +11,10 @@ public:
     AirTravelSystem()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createAirTravelSystem\@AirTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createAirTravelSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createAirTravelSystem();
+    // NOLINTEND
 };

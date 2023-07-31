@@ -11,8 +11,10 @@ public:
     SpawnActorEntry()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1SpawnActorEntry\@\@QEAA\@XZ
      */
-    MCAPI ~SpawnActorEntry(); // NOLINT
+    MCAPI ~SpawnActorEntry();
+    // NOLINTEND
 };

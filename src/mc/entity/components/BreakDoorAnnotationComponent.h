@@ -10,40 +10,42 @@ public:
     BreakDoorAnnotationComponent(BreakDoorAnnotationComponent const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0BreakDoorAnnotationComponent\@\@QEAA\@XZ
      */
-    MCAPI BreakDoorAnnotationComponent(); // NOLINT
+    MCAPI BreakDoorAnnotationComponent();
     /**
      * @symbol ?canMobBreakDoor\@BreakDoorAnnotationComponent\@\@QEBA_NAEAVMob\@\@AEBVPath\@\@\@Z
      */
-    MCAPI bool canMobBreakDoor(class Mob&, class Path const&) const; // NOLINT
+    MCAPI bool canMobBreakDoor(class Mob&, class Path const&) const;
     /**
      * @symbol ?clearProgress\@BreakDoorAnnotationComponent\@\@QEAAXAEAVMob\@\@\@Z
      */
-    MCAPI void clearProgress(class Mob&); // NOLINT
+    MCAPI void clearProgress(class Mob&);
     /**
      * @symbol ?initFromDefinition\@BreakDoorAnnotationComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void initFromDefinition(class Actor&); // NOLINT
+    MCAPI void initFromDefinition(class Actor&);
     /**
      * @symbol ?obstructionCheck\@BreakDoorAnnotationComponent\@\@QEAAXAEAVMob\@\@\@Z
      */
-    MCAPI void obstructionCheck(class Mob&); // NOLINT
+    MCAPI void obstructionCheck(class Mob&);
     /**
      * @symbol ?onComponentRemoved\@BreakDoorAnnotationComponent\@\@QEAAXAEAVEntityContext\@\@\@Z
      */
-    MCAPI void onComponentRemoved(class EntityContext&); // NOLINT
+    MCAPI void onComponentRemoved(class EntityContext&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_cleanUp\@BreakDoorAnnotationComponent\@\@AEAAXAEAVMob\@\@\@Z
      */
-    MCAPI void _cleanUp(class Mob&); // NOLINT
+    MCAPI void _cleanUp(class Mob&);
     /**
      * @symbol ?_shouldBreakDoor\@BreakDoorAnnotationComponent\@\@AEAA_NAEAVMob\@\@\@Z
      */
-    MCAPI bool _shouldBreakDoor(class Mob&); // NOLINT
-
-private:
+    MCAPI bool _shouldBreakDoor(class Mob&);
+    // NOLINTEND
 };

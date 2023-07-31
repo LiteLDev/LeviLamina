@@ -11,43 +11,45 @@ public:
     BrazeSDKManager()                                  = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BRAZESDKMANAGER
     /**
      * @symbol ?_disableBrazeSDK\@BrazeSDKManager\@\@MEAAXXZ
      */
-    MCVAPI void _disableBrazeSDK(); // NOLINT
+    MCVAPI void _disableBrazeSDK();
     /**
      * @symbol ?_enableBrazeSDK\@BrazeSDKManager\@\@MEAAXXZ
      */
-    MCVAPI void _enableBrazeSDK(); // NOLINT
+    MCVAPI void _enableBrazeSDK();
     /**
      * @symbol ?disableBrazeSDK\@BrazeSDKManager\@\@UEAAXXZ
      */
-    MCVAPI void disableBrazeSDK(); // NOLINT
+    MCVAPI void disableBrazeSDK();
     /**
      * @symbol ?enableBrazeSDK\@BrazeSDKManager\@\@UEAAXXZ
      */
-    MCVAPI void enableBrazeSDK(); // NOLINT
+    MCVAPI void enableBrazeSDK();
     /**
      * @symbol
      * ?setBrazeId\@BrazeSDKManager\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCVAPI void setBrazeId(std::string const&); // NOLINT
+    MCVAPI void setBrazeId(std::string const&);
 #endif
-
-    // private:
+    // NOLINTEND
 
 private:
+    // NOLINTBEGIN
     /**
      * @symbol ?mInitialized\@BrazeSDKManager\@\@0_NA
      */
-    MCAPI static bool mInitialized; // NOLINT
+    MCAPI static bool mInitialized;
     /**
      * @symbol ?mInstance\@BrazeSDKManager\@\@0V?$shared_ptr\@VBrazeSDKManager\@\@\@std\@\@A
      */
-    MCAPI static class std::shared_ptr<class BrazeSDKManager> mInstance; // NOLINT
+    MCAPI static std::shared_ptr<class BrazeSDKManager> mInstance;
     /**
      * @symbol ?mIsReady\@BrazeSDKManager\@\@0_NA
      */
-    MCAPI static bool mIsReady; // NOLINT
+    MCAPI static bool mIsReady;
+    // NOLINTEND
 };

@@ -11,12 +11,14 @@ public:
     FrostWalkSystem()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?_tryFrostWalk\@FrostWalkSystem\@\@SAXAEAVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
      */
-    MCAPI static void _tryFrostWalk(class StrictEntityContext&, class ActorOwnerComponent&); // NOLINT
+    MCAPI static void _tryFrostWalk(class StrictEntityContext&, class ActorOwnerComponent&);
     /**
      * @symbol ?createSystem\@FrostWalkSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 };

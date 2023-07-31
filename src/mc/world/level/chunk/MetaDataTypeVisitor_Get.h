@@ -11,8 +11,10 @@ public:
     MetaDataTypeVisitor_Get()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1MetaDataTypeVisitor_Get\@\@QEAA\@XZ
      */
-    MCAPI ~MetaDataTypeVisitor_Get(); // NOLINT
+    MCAPI ~MetaDataTypeVisitor_Get();
+    // NOLINTEND
 };

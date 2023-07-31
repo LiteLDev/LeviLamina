@@ -15,23 +15,25 @@ public:
     ServerNetworkEventCoordinator()                                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getServerNetworkEventHandler\@ServerNetworkEventCoordinator\@\@QEAAAEAVServerNetworkEventHandler\@\@XZ
      */
-    MCAPI class ServerNetworkEventHandler& getServerNetworkEventHandler(); // NOLINT
+    MCAPI class ServerNetworkEventHandler& getServerNetworkEventHandler();
     /**
      * @symbol
      * ?registerServerNetworkEventHandler\@ServerNetworkEventCoordinator\@\@QEAAX$$QEAV?$unique_ptr\@VServerNetworkEventHandler\@\@U?$default_delete\@VServerNetworkEventHandler\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI void registerServerNetworkEventHandler(std::unique_ptr<class ServerNetworkEventHandler>&&); // NOLINT
+    MCAPI void registerServerNetworkEventHandler(std::unique_ptr<class ServerNetworkEventHandler>&&);
     /**
      * @symbol
      * ?sendEvent\@ServerNetworkEventCoordinator\@\@QEAA?AW4CoordinatorResult\@\@V?$EventRef\@U?$MutableServerNetworkGameplayEvent\@W4CoordinatorResult\@\@\@\@\@\@\@Z
      */
     MCAPI enum class CoordinatorResult
-        sendEvent(class EventRef<struct MutableServerNetworkGameplayEvent<enum class CoordinatorResult>>); // NOLINT
+        sendEvent(class EventRef<struct MutableServerNetworkGameplayEvent<enum class CoordinatorResult>>);
     /**
      * @symbol ?sendMessage\@ServerNetworkEventCoordinator\@\@QEAAXAEAUMessageEvent\@\@\@Z
      */
-    MCAPI void sendMessage(struct MessageEvent&); // NOLINT
+    MCAPI void sendMessage(struct MessageEvent&);
+    // NOLINTEND
 };

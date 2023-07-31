@@ -11,8 +11,10 @@ public:
     BiomeMetadata()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1BiomeMetadata\@\@QEAA\@XZ
      */
-    MCAPI ~BiomeMetadata(); // NOLINT
+    MCAPI ~BiomeMetadata();
+    // NOLINTEND
 };

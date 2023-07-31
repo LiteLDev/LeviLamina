@@ -19,10 +19,12 @@ public:
     TreeParams()                             = delete;
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_placeBaseBlockCircle\@TreeParams\@TreeHelper\@\@AEBAXAEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI void _placeBaseBlockCircle(class IBlockWorldGenAPI&, class BlockPos const&) const; // NOLINT
+    MCAPI void _placeBaseBlockCircle(class IBlockWorldGenAPI&, class BlockPos const&) const;
+    // NOLINTEND
 };
 
 }; // namespace TreeHelper

@@ -11,8 +11,10 @@ public:
     NetworkAddress()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1NetworkAddress\@\@QEAA\@XZ
      */
-    MCAPI ~NetworkAddress(); // NOLINT
+    MCAPI ~NetworkAddress();
+    // NOLINTEND
 };

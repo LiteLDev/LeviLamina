@@ -13,111 +13,113 @@ public:
     FileStdStreamBuf()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?_Lock\@?$basic_streambuf\@DU?$char_traits\@D\@std\@\@\@std\@\@UEAAXXZ
      */
-    virtual void _Lock(); // NOLINT
+    virtual void _Lock();
     /**
      * @vftbl 2
      * @symbol ?_Unlock\@?$basic_streambuf\@DU?$char_traits\@D\@std\@\@\@std\@\@UEAAXXZ
      */
-    virtual void _Unlock(); // NOLINT
+    virtual void _Unlock();
     /**
      * @vftbl 3
      * @symbol ?overflow\@FileStdStreamBuf\@Core\@\@UEAAHH\@Z
      */
-    virtual int overflow(int); // NOLINT
+    virtual int overflow(int);
     /**
      * @vftbl 4
      * @symbol ?pbackfail\@?$basic_streambuf\@DU?$char_traits\@D\@std\@\@\@std\@\@MEAAHH\@Z
      */
-    virtual int pbackfail(int); // NOLINT
+    virtual int pbackfail(int);
     /**
      * @vftbl 5
      * @symbol ?showmanyc\@?$basic_streambuf\@DU?$char_traits\@D\@std\@\@\@std\@\@MEAA_JXZ
      */
-    virtual __int64 showmanyc(); // NOLINT
+    virtual int64_t showmanyc();
     /**
      * @vftbl 6
      * @symbol ?underflow\@FileStdStreamBuf\@Core\@\@UEAAHXZ
      */
-    virtual int underflow(); // NOLINT
+    virtual int underflow();
     /**
      * @vftbl 7
      * @symbol ?uflow\@?$basic_streambuf\@DU?$char_traits\@D\@std\@\@\@std\@\@MEAAHXZ
      */
-    virtual int uflow(); // NOLINT
+    virtual int uflow();
     /**
      * @vftbl 8
      * @symbol ?xsgetn\@?$basic_streambuf\@DU?$char_traits\@D\@std\@\@\@std\@\@MEAA_JPEAD_J\@Z
      */
-    virtual __int64 xsgetn(char*, __int64); // NOLINT
+    virtual int64_t xsgetn(char*, int64_t);
     /**
      * @vftbl 9
      * @symbol ?xsputn\@?$basic_streambuf\@DU?$char_traits\@D\@std\@\@\@std\@\@MEAA_JPEBD_J\@Z
      */
-    virtual __int64 xsputn(char const*, __int64); // NOLINT
+    virtual int64_t xsputn(char const*, int64_t);
     /**
      * @vftbl 10
      * @symbol ?seekoff\@FileStdStreamBuf\@Core\@\@UEAA?AV?$fpos\@U_Mbstatet\@\@\@std\@\@_JHH\@Z
      */
-    virtual class std::fpos<struct _Mbstatet> seekoff(__int64, int, int); // NOLINT
+    virtual std::fpos<struct _Mbstatet> seekoff(int64_t, int, int);
     /**
      * @vftbl 11
      * @symbol ?seekpos\@FileStdStreamBuf\@Core\@\@UEAA?AV?$fpos\@U_Mbstatet\@\@\@std\@\@V34\@H\@Z
      */
-    virtual class std::fpos<struct _Mbstatet> seekpos(class std::fpos<struct _Mbstatet>, int); // NOLINT
+    virtual std::fpos<struct _Mbstatet> seekpos(std::fpos<struct _Mbstatet>, int);
     /**
      * @vftbl 12
      * @symbol ?setbuf\@?$basic_streambuf\@DU?$char_traits\@D\@std\@\@\@std\@\@MEAAPEAV12\@PEAD_J\@Z
      */
-    virtual class std::basic_streambuf<char, struct std::char_traits<char>>* setbuf(char*, __int64); // NOLINT
+    virtual std::basic_streambuf<char, std::char_traits<char>>* setbuf(char*, int64_t);
     /**
      * @vftbl 13
      * @symbol ?sync\@FileStdStreamBuf\@Core\@\@UEAAHXZ
      */
-    virtual int sync(); // NOLINT
+    virtual int sync();
     /**
      * @vftbl 14
      * @symbol ?imbue\@?$basic_streambuf\@DU?$char_traits\@D\@std\@\@\@std\@\@MEAAXAEBVlocale\@2\@\@Z
      */
-    virtual void imbue(class std::locale const&); // NOLINT
+    virtual void imbue(std::locale const&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CORE_FILESTDSTREAMBUF
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~FileStdStreamBuf(); // NOLINT
+    MCVAPI ~FileStdStreamBuf();
 #endif
     /**
      * @symbol ??0FileStdStreamBuf\@Core\@\@QEAA\@_K\@Z
      */
-    MCAPI FileStdStreamBuf(unsigned __int64); // NOLINT
+    MCAPI FileStdStreamBuf(uint64_t);
     /**
      * @symbol ?close\@FileStdStreamBuf\@Core\@\@QEAAXXZ
      */
-    MCAPI void close(); // NOLINT
+    MCAPI void close();
     /**
      * @symbol ?isOpen\@FileStdStreamBuf\@Core\@\@QEBA_NXZ
      */
-    MCAPI bool isOpen() const; // NOLINT
+    MCAPI bool isOpen() const;
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_Init\@FileStdStreamBuf\@Core\@\@AEAAXXZ
      */
-    MCAPI void _Init(); // NOLINT
+    MCAPI void _Init();
     /**
      * @symbol ?_flushoutput\@FileStdStreamBuf\@Core\@\@AEAAHXZ
      */
-    MCAPI int _flushoutput(); // NOLINT
-
-private:
+    MCAPI int _flushoutput();
+    // NOLINTEND
 };
 
 }; // namespace Core

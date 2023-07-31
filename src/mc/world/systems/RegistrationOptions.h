@@ -20,16 +20,18 @@ public:
     RegistrationOptions()                                      = delete;
 
 public:
-    /**
-     * @symbol ??1RegistrationOptions\@VanillaSystemsRegistration\@\@QEAA\@XZ
-     */
-    MCAPI ~RegistrationOptions(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?getDefault\@RegistrationOptions\@VanillaSystemsRegistration\@\@SA?AU12\@AEBVExperiments\@\@_NAEBUPlayerMovementSettings\@\@AEBVBaseGameVersion\@\@\@Z
      */
     MCAPI static struct VanillaSystemsRegistration::RegistrationOptions
-    getDefault(class Experiments const&, bool, struct PlayerMovementSettings const&, class BaseGameVersion const&); // NOLINT
+    getDefault(class Experiments const&, bool, struct PlayerMovementSettings const&, class BaseGameVersion const&);
+    /**
+     * @symbol ??1RegistrationOptions\@VanillaSystemsRegistration\@\@QEAA\@XZ
+     */
+    MCAPI ~RegistrationOptions();
+    // NOLINTEND
 };
 
 }; // namespace VanillaSystemsRegistration

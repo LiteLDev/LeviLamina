@@ -10,16 +10,18 @@ public:
     GiveableTrigger()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0GiveableTrigger\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI GiveableTrigger(struct GiveableTrigger const&); // NOLINT
+    MCAPI GiveableTrigger(struct GiveableTrigger const&);
     /**
      * @symbol ?addItem\@GiveableTrigger\@\@QEAAXAEBVItemDescriptor\@\@\@Z
      */
-    MCAPI void addItem(class ItemDescriptor const&); // NOLINT
+    MCAPI void addItem(class ItemDescriptor const&);
     /**
      * @symbol ??1GiveableTrigger\@\@QEAA\@XZ
      */
-    MCAPI ~GiveableTrigger(); // NOLINT
+    MCAPI ~GiveableTrigger();
+    // NOLINTEND
 };

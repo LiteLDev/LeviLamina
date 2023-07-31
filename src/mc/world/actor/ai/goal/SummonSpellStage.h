@@ -10,12 +10,14 @@ public:
     SummonSpellStage()                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4SummonSpellStage\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
-    MCAPI struct SummonSpellStage& operator=(struct SummonSpellStage const&); // NOLINT
+    MCAPI struct SummonSpellStage& operator=(struct SummonSpellStage const&);
     /**
      * @symbol ??1SummonSpellStage\@\@QEAA\@XZ
      */
-    MCAPI ~SummonSpellStage(); // NOLINT
+    MCAPI ~SummonSpellStage();
+    // NOLINTEND
 };

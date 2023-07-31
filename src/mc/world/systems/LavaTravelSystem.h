@@ -11,8 +11,10 @@ public:
     LavaTravelSystem()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createLavaTravelSystem\@LavaTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createLavaTravelSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createLavaTravelSystem();
+    // NOLINTEND
 };

@@ -10,11 +10,12 @@ public:
     CraftableCompounds(CraftableCompounds const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
@@ -25,43 +26,45 @@ public:
         class ItemStack const&,
         enum class LabTableReactionType,
         enum class CompoundContainerType
-    ); // NOLINT
+    );
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRAFTABLECOMPOUNDS
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~CraftableCompounds(); // NOLINT
+    MCVAPI ~CraftableCompounds();
 #endif
     /**
      * @symbol ??0CraftableCompounds\@\@QEAA\@XZ
      */
-    MCAPI CraftableCompounds(); // NOLINT
+    MCAPI CraftableCompounds();
     /**
      * @symbol
      * ?getComponents\@CraftableCompounds\@\@QEBAPEBV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEBVItemDescriptor\@\@\@Z
      */
-    MCAPI std::vector<class ItemStack> const* getComponents(class ItemDescriptor const&) const; // NOLINT
+    MCAPI std::vector<class ItemStack> const* getComponents(class ItemDescriptor const&) const;
     /**
      * @symbol
      * ?getCompound\@CraftableCompounds\@\@QEAAAEBVItemStack\@\@AEBV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI class ItemStack const& getCompound(std::vector<class ItemStack> const&); // NOLINT
+    MCAPI class ItemStack const& getCompound(std::vector<class ItemStack> const&);
     /**
      * @symbol
      * ?getReaction\@CraftableCompounds\@\@QEAA?AW4LabTableReactionType\@\@AEBV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI enum class LabTableReactionType getReaction(std::vector<class ItemStack> const&); // NOLINT
+    MCAPI enum class LabTableReactionType getReaction(std::vector<class ItemStack> const&);
     /**
      * @symbol ?registerCompounds\@CraftableCompounds\@\@QEAAXXZ
      */
-    MCAPI void registerCompounds(); // NOLINT
+    MCAPI void registerCompounds();
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_getCompoundId\@CraftableCompounds\@\@IEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@3\@\@Z
      */
-    MCAPI std::string _getCompoundId(std::vector<class ItemStack> const&); // NOLINT
+    MCAPI std::string _getCompoundId(std::vector<class ItemStack> const&);
     /**
      * @symbol
      * ?_registerCompound\@CraftableCompounds\@\@IEAAXAEBV?$vector\@UChemistryIngredient\@\@V?$allocator\@UChemistryIngredient\@\@\@std\@\@\@std\@\@W4CompoundType\@\@W4LabTableReactionType\@\@W4CompoundContainerType\@\@H\@Z
@@ -72,7 +75,7 @@ public:
         enum class LabTableReactionType,
         enum class CompoundContainerType,
         int
-    ); // NOLINT
+    );
     /**
      * @symbol
      * ?_registerCompound\@CraftableCompounds\@\@IEAAXAEBV?$vector\@UChemistryIngredient\@\@V?$allocator\@UChemistryIngredient\@\@\@std\@\@\@std\@\@AEBVItemStack\@\@W4LabTableReactionType\@\@W4CompoundContainerType\@\@\@Z
@@ -82,7 +85,6 @@ public:
         class ItemStack const&,
         enum class LabTableReactionType,
         enum class CompoundContainerType
-    ); // NOLINT
-
-protected:
+    );
+    // NOLINTEND
 };

@@ -14,51 +14,52 @@ public:
     FrostWalkerEnchant()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 2
      * @symbol ?getMinCost\@FrostWalkerEnchant\@\@UEBAHH\@Z
      */
-    virtual int getMinCost(int) const; // NOLINT
+    virtual int getMinCost(int) const;
     /**
      * @vftbl 3
      * @symbol ?getMaxCost\@FrostWalkerEnchant\@\@UEBAHH\@Z
      */
-    virtual int getMaxCost(int) const; // NOLINT
+    virtual int getMaxCost(int) const;
     /**
      * @vftbl 5
      * @symbol ?getMaxLevel\@FrostWalkerEnchant\@\@UEBAHXZ
      */
-    virtual int getMaxLevel() const; // NOLINT
+    virtual int getMaxLevel() const;
     /**
      * @vftbl 10
      * @symbol __unk_vfn_10
      */
-    virtual void __unk_vfn_10(); // NOLINT
+    virtual void __unk_vfn_10();
     /**
      * @vftbl 11
      * @symbol __unk_vfn_11
      */
-    virtual void __unk_vfn_11(); // NOLINT
+    virtual void __unk_vfn_11();
     /**
      * @vftbl 12
      * @symbol __unk_vfn_12
      */
-    virtual void __unk_vfn_12(); // NOLINT
+    virtual void __unk_vfn_12();
     /**
      * @vftbl 13
      * @symbol __unk_vfn_13
      */
-    virtual void __unk_vfn_13(); // NOLINT
+    virtual void __unk_vfn_13();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FROSTWALKERENCHANT
     /**
      * @symbol ?isTreasureOnly\@FrostWalkerEnchant\@\@UEBA_NXZ
      */
-    MCVAPI bool isTreasureOnly() const; // NOLINT
+    MCVAPI bool isTreasureOnly() const;
 #endif
     /**
      * @symbol
@@ -67,9 +68,10 @@ public:
     MCAPI FrostWalkerEnchant(
         enum class Enchant::Type,
         enum class Enchant::Frequency,
-        class std::basic_string_view<char, struct std::char_traits<char>>,
-        class std::basic_string_view<char, struct std::char_traits<char>>,
+        std::string_view,
+        std::string_view,
         int,
         int
-    ); // NOLINT
+    );
+    // NOLINTEND
 };

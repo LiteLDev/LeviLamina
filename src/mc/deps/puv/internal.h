@@ -8,9 +8,11 @@ namespace Puv { class LoadResultAny; }
 // clang-format on
 
 namespace Puv::internal {
+// NOLINTBEGIN
 /**
  * @symbol ?getAny\@internal\@Puv\@\@YAAEAVmeta_any\@entt\@\@AEAVLoadResultAny\@2\@\@Z
  */
-MCAPI class entt::meta_any& getAny(class Puv::LoadResultAny&); // NOLINT
+MCAPI class entt::meta_any& getAny(class Puv::LoadResultAny&);
+// NOLINTEND
 
 }; // namespace Puv::internal

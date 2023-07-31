@@ -11,8 +11,10 @@ public:
     WorkerPoolGlobalState()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1WorkerPoolGlobalState\@\@QEAA\@XZ
      */
-    MCAPI ~WorkerPoolGlobalState(); // NOLINT
+    MCAPI ~WorkerPoolGlobalState();
+    // NOLINTEND
 };

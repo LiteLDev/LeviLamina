@@ -9,11 +9,6 @@ namespace RakNet { class BitStream; }
 
 class HttpHeaders {
 public:
-    // HttpHeaders inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // HttpHeaders inner types define
     enum class ParseState {};
 
@@ -24,26 +19,28 @@ public:
     HttpHeaders()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?clear\@HttpHeaders\@\@QEAAXXZ
      */
-    MCAPI void clear(); // NOLINT
+    MCAPI void clear();
     /**
      * @symbol
      * ?getHeader\@HttpHeaders\@\@QEBA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV23\@\@Z
      */
-    MCAPI bool getHeader(std::string const&, std::string&) const; // NOLINT
+    MCAPI bool getHeader(std::string const&, std::string&) const;
     /**
      * @symbol
      * ?getStatusCode\@HttpHeaders\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getStatusCode() const; // NOLINT
+    MCAPI std::string getStatusCode() const;
     /**
      * @symbol ?parse\@HttpHeaders\@\@QEAA?AW4ParseState\@1\@AEAVBitStream\@RakNet\@\@\@Z
      */
-    MCAPI enum class HttpHeaders::ParseState parse(class RakNet::BitStream&); // NOLINT
+    MCAPI enum class HttpHeaders::ParseState parse(class RakNet::BitStream&);
     /**
      * @symbol ??1HttpHeaders\@\@QEAA\@XZ
      */
-    MCAPI ~HttpHeaders(); // NOLINT
+    MCAPI ~HttpHeaders();
+    // NOLINTEND
 };

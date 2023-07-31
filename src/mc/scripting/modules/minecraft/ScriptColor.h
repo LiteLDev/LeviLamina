@@ -22,24 +22,26 @@ public:
     ScriptColor()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ScriptColor\@ScriptModuleMinecraft\@\@QEAA\@AEBVColor\@mce\@\@\@Z
      */
-    MCAPI ScriptColor(class mce::Color const&); // NOLINT
-    /**
-     * @symbol ?getColor\@ScriptColor\@ScriptModuleMinecraft\@\@QEBAAEBVColor\@mce\@\@XZ
-     */
-    MCAPI class mce::Color const& getColor() const; // NOLINT
+    MCAPI ScriptColor(class mce::Color const&);
     /**
      * @symbol
      * ?bind\@ScriptColor\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@VScriptColor\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptColor> bind(); // NOLINT
+    MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptColor> bind();
     /**
      * @symbol
      * ?bindV010\@ScriptColor\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptColor\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptColor> bindV010(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptColor> bindV010();
+    /**
+     * @symbol ?getColor\@ScriptColor\@ScriptModuleMinecraft\@\@QEBAAEBVColor\@mce\@\@XZ
+     */
+    MCAPI class mce::Color const& getColor() const;
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

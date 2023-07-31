@@ -11,8 +11,10 @@ public:
     EducationLocalLevelSettings()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1EducationLocalLevelSettings\@\@QEAA\@XZ
      */
-    MCAPI ~EducationLocalLevelSettings(); // NOLINT
+    MCAPI ~EducationLocalLevelSettings();
+    // NOLINTEND
 };

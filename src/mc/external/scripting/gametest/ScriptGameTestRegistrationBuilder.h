@@ -22,91 +22,92 @@ public:
     ScriptGameTestRegistrationBuilder()                                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA\@$$QEAV01\@\@Z
      */
-    MCAPI ScriptGameTestRegistrationBuilder(class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder&&); // NOLINT
+    MCAPI ScriptGameTestRegistrationBuilder(class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder&&);
     /**
      * @symbol
      * ??0ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA\@V?$shared_ptr\@VBaseScriptGameTestFunction\@ScriptModuleGameTest\@\@\@std\@\@\@Z
      */
-    MCAPI ScriptGameTestRegistrationBuilder(class std::shared_ptr<
-                                            class ScriptModuleGameTest::BaseScriptGameTestFunction>); // NOLINT
+    MCAPI ScriptGameTestRegistrationBuilder(std::shared_ptr<class ScriptModuleGameTest::BaseScriptGameTestFunction>);
     /**
      * @symbol
      * ?batch\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-        batch(std::string); // NOLINT
+        batch(std::string);
     /**
      * @symbol
      * ?maxAttempts\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@H\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    maxAttempts(int); // NOLINT
+    maxAttempts(int);
     /**
      * @symbol
      * ?maxTicks\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@H\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    maxTicks(int); // NOLINT
+    maxTicks(int);
     /**
      * @symbol ??4ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
     MCAPI class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder&
-    operator=(class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder&&); // NOLINT
+    operator=(class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder&&);
     /**
      * @symbol
      * ?padding\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@H\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    padding(int); // NOLINT
+    padding(int);
     /**
      * @symbol
      * ?required\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@_N\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    required(bool); // NOLINT
+    required(bool);
     /**
      * @symbol
      * ?requiredSuccessfulAttempts\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@H\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    requiredSuccessfulAttempts(int); // NOLINT
+    requiredSuccessfulAttempts(int);
     /**
      * @symbol
      * ?rotate\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@_N\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    rotate(bool); // NOLINT
+    rotate(bool);
     /**
      * @symbol
      * ?setScriptObjectHandle\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAAXV?$WeakTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@\@Z
      */
     MCAPI void setScriptObjectHandle(class Scripting::WeakTypedObjectHandle<
-                                     class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>); // NOLINT
+                                     class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>);
     /**
      * @symbol
      * ?setupTicks\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@H\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    setupTicks(int); // NOLINT
+    setupTicks(int);
     /**
      * @symbol
      * ?structureName\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-        structureName(std::string); // NOLINT
+        structureName(std::string);
     /**
      * @symbol
      * ?tag\@ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@\@Scripting\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-        tag(std::string); // NOLINT
+        tag(std::string);
     /**
      * @symbol ??1ScriptGameTestRegistrationBuilder\@ScriptModuleGameTest\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptGameTestRegistrationBuilder(); // NOLINT
+    MCAPI ~ScriptGameTestRegistrationBuilder();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleGameTest

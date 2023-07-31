@@ -10,12 +10,14 @@ public:
     BlockPatternEvent()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0BlockPatternEvent\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI BlockPatternEvent(struct BlockPatternEvent const&); // NOLINT
+    MCAPI BlockPatternEvent(struct BlockPatternEvent const&);
     /**
      * @symbol ??1BlockPatternEvent\@\@QEAA\@XZ
      */
-    MCAPI ~BlockPatternEvent(); // NOLINT
+    MCAPI ~BlockPatternEvent();
+    // NOLINTEND
 };

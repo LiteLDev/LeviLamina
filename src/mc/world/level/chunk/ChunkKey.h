@@ -14,20 +14,22 @@ public:
     ChunkKey()                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ChunkKey\@\@QEAA\@AEBVLevelChunk\@\@\@Z
      */
-    MCAPI ChunkKey(class LevelChunk const&); // NOLINT
+    MCAPI ChunkKey(class LevelChunk const&);
     /**
      * @symbol ??0ChunkKey\@\@QEAA\@AEBVChunkPos\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI ChunkKey(class ChunkPos const&, class AutomaticID<class Dimension, int>); // NOLINT
+    MCAPI ChunkKey(class ChunkPos const&, class AutomaticID<class Dimension, int>);
     /**
      * @symbol ?asSpan\@ChunkKey\@\@QEBA?AV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@XZ
      */
-    MCAPI class std::basic_string_view<char, struct std::char_traits<char>> asSpan() const; // NOLINT
+    MCAPI std::string_view asSpan() const;
     /**
      * @symbol ?hashCode\@ChunkKey\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 hashCode() const; // NOLINT
+    MCAPI uint64_t hashCode() const;
+    // NOLINTEND
 };

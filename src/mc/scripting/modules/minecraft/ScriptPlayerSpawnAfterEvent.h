@@ -16,16 +16,17 @@ public:
     ScriptPlayerSpawnAfterEvent()                                              = delete;
 
 public:
-    /**
-     * @symbol ??1ScriptPlayerSpawnAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptPlayerSpawnAfterEvent(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptPlayerSpawnAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptPlayerSpawnAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptPlayerSpawnAfterEvent>
-    bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptPlayerSpawnAfterEvent> bind();
+    /**
+     * @symbol ??1ScriptPlayerSpawnAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptPlayerSpawnAfterEvent();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

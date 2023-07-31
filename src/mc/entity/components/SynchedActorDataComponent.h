@@ -11,8 +11,10 @@ public:
     SynchedActorDataComponent()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1SynchedActorDataComponent\@\@QEAA\@XZ
      */
-    MCAPI ~SynchedActorDataComponent(); // NOLINT
+    MCAPI ~SynchedActorDataComponent();
+    // NOLINTEND
 };

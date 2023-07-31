@@ -11,12 +11,14 @@ public:
     TradeItem()                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4TradeItem\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct TradeItem& operator=(struct TradeItem&&); // NOLINT
+    MCAPI struct TradeItem& operator=(struct TradeItem&&);
     /**
      * @symbol ??1TradeItem\@\@QEAA\@XZ
      */
-    MCAPI ~TradeItem(); // NOLINT
+    MCAPI ~TradeItem();
+    // NOLINTEND
 };

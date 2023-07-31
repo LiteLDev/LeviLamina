@@ -10,12 +10,14 @@ public:
     CommunitySiftConfig(CommunitySiftConfig const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0CommunitySiftConfig\@\@QEAA\@XZ
      */
-    MCAPI CommunitySiftConfig(); // NOLINT
+    MCAPI CommunitySiftConfig();
     /**
      * @symbol ??1CommunitySiftConfig\@\@QEAA\@XZ
      */
-    MCAPI ~CommunitySiftConfig(); // NOLINT
+    MCAPI ~CommunitySiftConfig();
+    // NOLINTEND
 };

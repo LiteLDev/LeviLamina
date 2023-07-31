@@ -11,8 +11,10 @@ public:
     DamageCondition()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1DamageCondition\@\@QEAA\@XZ
      */
-    MCAPI ~DamageCondition(); // NOLINT
+    MCAPI ~DamageCondition();
+    // NOLINTEND
 };

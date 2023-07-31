@@ -10,12 +10,14 @@ public:
     ActorAddEffectEvent()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ActorAddEffectEvent\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI ActorAddEffectEvent(struct ActorAddEffectEvent const&); // NOLINT
+    MCAPI ActorAddEffectEvent(struct ActorAddEffectEvent const&);
     /**
      * @symbol ??1ActorAddEffectEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorAddEffectEvent(); // NOLINT
+    MCAPI ~ActorAddEffectEvent();
+    // NOLINTEND
 };

@@ -13,10 +13,12 @@ public:
     DataStoreInfo()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1DataStoreInfo\@DataStoreDetail\@Bedrock\@\@QEAA\@XZ
      */
-    MCAPI ~DataStoreInfo(); // NOLINT
+    MCAPI ~DataStoreInfo();
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::DataStoreDetail

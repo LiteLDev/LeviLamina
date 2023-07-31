@@ -20,24 +20,26 @@ public:
     TransactionFrame()                                   = delete;
 
 public:
-    /**
-     * @symbol ??1TransactionFrame\@Core\@\@QEAA\@XZ
-     */
-    MCAPI ~TransactionFrame(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?exec\@TransactionFrame\@Core\@\@SA?AVResult\@2\@W4FileAccessType\@2\@AEBVPath\@2\@AEBV?$function\@$$A6A?AVResult\@Core\@\@AEAVTransactionFrame\@2\@\@Z\@std\@\@\@Z
      */
     MCAPI static class Core::Result
-    exec(enum class Core::FileAccessType, class Core::Path const&, class std::function<class Core::Result(class Core::TransactionFrame&)> const&); // NOLINT
+    exec(enum class Core::FileAccessType, class Core::Path const&, std::function<class Core::Result(class Core::TransactionFrame&)> const&);
+    /**
+     * @symbol ??1TransactionFrame\@Core\@\@QEAA\@XZ
+     */
+    MCAPI ~TransactionFrame();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ??0TransactionFrame\@Core\@\@AEAA\@W4FileAccessType\@1\@AEBVPath\@1\@\@Z
      */
-    MCAPI TransactionFrame(enum class Core::FileAccessType, class Core::Path const&); // NOLINT
-
-private:
+    MCAPI TransactionFrame(enum class Core::FileAccessType, class Core::Path const&);
+    // NOLINTEND
 };
 
 }; // namespace Core

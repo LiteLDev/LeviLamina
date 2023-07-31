@@ -16,28 +16,30 @@ public:
     CommandPropertyBag()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0CommandPropertyBag\@\@QEAA\@AEBVValue\@Json\@\@\@Z
      */
-    MCAPI CommandPropertyBag(class Json::Value const&); // NOLINT
+    MCAPI CommandPropertyBag(class Json::Value const&);
     /**
      * @symbol
      * ?addToResultList\@CommandPropertyBag\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
-    MCAPI void addToResultList(std::string const&, std::string const&); // NOLINT
+    MCAPI void addToResultList(std::string const&, std::string const&);
     /**
      * @symbol
      * ?set\@CommandPropertyBag\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVValue\@Json\@\@\@Z
      */
-    MCAPI void set(std::string const&, class Json::Value const&); // NOLINT
+    MCAPI void set(std::string const&, class Json::Value const&);
     /**
      * @symbol
      * ?set\@CommandPropertyBag\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VVec3\@\@\@Z
      */
-    MCAPI void set(std::string const&, class Vec3); // NOLINT
+    MCAPI void set(std::string const&, class Vec3);
     /**
      * @symbol
      * ?set\@CommandPropertyBag\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI void set(std::string const&, class BlockPos const&); // NOLINT
+    MCAPI void set(std::string const&, class BlockPos const&);
+    // NOLINTEND
 };

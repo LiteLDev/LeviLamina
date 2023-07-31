@@ -21,6 +21,7 @@ public:
     ScriptObjectiveSortOrder()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptObjectiveSortOrder\@ScriptModuleMinecraft\@\@SA?AV?$EnumBindingBuilder\@W4ScriptObjectiveSortOrderType\@ScriptModuleMinecraft\@\@W412\@\@Scripting\@\@XZ
@@ -28,7 +29,8 @@ public:
     MCAPI static class Scripting::EnumBindingBuilder<
         enum class ScriptModuleMinecraft::ScriptObjectiveSortOrderType,
         enum class ScriptModuleMinecraft::ScriptObjectiveSortOrderType>
-    bind(); // NOLINT
+    bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

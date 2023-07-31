@@ -13,13 +13,15 @@ public:
     BlastFurnaceContainerScreenValidator(BlastFurnaceContainerScreenValidator const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @symbol ??0BlastFurnaceContainerScreenValidator\@\@QEAA\@XZ
      */
-    MCAPI BlastFurnaceContainerScreenValidator(); // NOLINT
+    MCAPI BlastFurnaceContainerScreenValidator();
+    // NOLINTEND
 };

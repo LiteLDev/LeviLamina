@@ -11,18 +11,20 @@ public:
     FunctionEntry()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?execute\@FunctionEntry\@\@UEAAXAEAVFunctionManager\@\@AEBVCommandOrigin\@\@W4FunctionQueueOrder\@\@\@Z
      */
-    virtual void execute(class FunctionManager&, class CommandOrigin const&, enum class FunctionQueueOrder); // NOLINT
+    virtual void execute(class FunctionManager&, class CommandOrigin const&, enum class FunctionQueueOrder);
     /**
      * @symbol ?getErrorState\@FunctionEntry\@\@QEBA?AW4FunctionState\@\@XZ
      */
-    MCAPI enum class FunctionState getErrorState() const; // NOLINT
+    MCAPI enum class FunctionState getErrorState() const;
+    // NOLINTEND
 };

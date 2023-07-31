@@ -11,53 +11,55 @@ public:
     SwimWithEntityGoal()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?canUse\@SwimWithEntityGoal\@\@UEAA_NXZ
      */
-    virtual bool canUse(); // NOLINT
+    virtual bool canUse();
     /**
      * @vftbl 2
      * @symbol ?canContinueToUse\@SwimWithEntityGoal\@\@UEAA_NXZ
      */
-    virtual bool canContinueToUse(); // NOLINT
+    virtual bool canContinueToUse();
     /**
      * @vftbl 3
      * @symbol ?canBeInterrupted\@SwimWithEntityGoal\@\@UEAA_NXZ
      */
-    virtual bool canBeInterrupted(); // NOLINT
+    virtual bool canBeInterrupted();
     /**
      * @vftbl 4
      * @symbol ?start\@SwimWithEntityGoal\@\@UEAAXXZ
      */
-    virtual void start(); // NOLINT
+    virtual void start();
     /**
      * @vftbl 5
      * @symbol ?stop\@SwimWithEntityGoal\@\@UEAAXXZ
      */
-    virtual void stop(); // NOLINT
+    virtual void stop();
     /**
      * @vftbl 6
      * @symbol ?tick\@SwimWithEntityGoal\@\@UEAAXXZ
      */
-    virtual void tick(); // NOLINT
+    virtual void tick();
     /**
      * @vftbl 7
      * @symbol
      * ?appendDebugInfo\@SwimWithEntityGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void appendDebugInfo(std::string&) const; // NOLINT
+    virtual void appendDebugInfo(std::string&) const;
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_setWantedMob\@SwimWithEntityGoal\@\@AEAA_NXZ
      */
-    MCAPI bool _setWantedMob(); // NOLINT
-
-private:
+    MCAPI bool _setWantedMob();
+    // NOLINTEND
 };

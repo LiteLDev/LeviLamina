@@ -13,12 +13,14 @@ public:
     IClient()                          = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CODEBUILDER_ICLIENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IClient(); // NOLINT
+    MCVAPI ~IClient();
 #endif
+    // NOLINTEND
 };
 
 }; // namespace CodeBuilder

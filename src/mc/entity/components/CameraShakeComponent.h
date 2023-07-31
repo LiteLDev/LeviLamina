@@ -11,8 +11,10 @@ public:
     CameraShakeComponent()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getMaxIntensity\@CameraShakeComponent\@\@SAMXZ
      */
-    MCAPI static float getMaxIntensity(); // NOLINT
+    MCAPI static float getMaxIntensity();
+    // NOLINTEND
 };

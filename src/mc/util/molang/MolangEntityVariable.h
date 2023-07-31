@@ -11,12 +11,14 @@ public:
     MolangEntityVariable()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0MolangEntityVariable\@\@QEAA\@AEBVHashedString\@\@\@Z
      */
-    MCAPI MolangEntityVariable(class HashedString const&); // NOLINT
+    MCAPI MolangEntityVariable(class HashedString const&);
     /**
      * @symbol ??1MolangEntityVariable\@\@QEAA\@XZ
      */
-    MCAPI ~MolangEntityVariable(); // NOLINT
+    MCAPI ~MolangEntityVariable();
+    // NOLINTEND
 };

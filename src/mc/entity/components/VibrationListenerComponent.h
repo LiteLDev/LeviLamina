@@ -11,13 +11,15 @@ public:
     VibrationListenerComponent()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?addAdditionalSaveData\@VibrationListenerComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
+    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
     /**
      * @symbol
      * ?readAdditionalSaveData\@VibrationListenerComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&); // NOLINT
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    // NOLINTEND
 };

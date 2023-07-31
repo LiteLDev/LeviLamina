@@ -10,12 +10,14 @@ public:
     TrailComponent(TrailComponent const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0TrailComponent\@\@QEAA\@XZ
      */
-    MCAPI TrailComponent(); // NOLINT
+    MCAPI TrailComponent();
     /**
      * @symbol ?initFromDefinition\@TrailComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void initFromDefinition(class Actor&); // NOLINT
+    MCAPI void initFromDefinition(class Actor&);
+    // NOLINTEND
 };

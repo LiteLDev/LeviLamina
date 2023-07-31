@@ -11,8 +11,10 @@ public:
     PlayerStorageIds()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PlayerStorageIds\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerStorageIds(); // NOLINT
+    MCAPI ~PlayerStorageIds();
+    // NOLINTEND
 };

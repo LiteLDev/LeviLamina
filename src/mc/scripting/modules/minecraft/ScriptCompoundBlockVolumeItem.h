@@ -21,11 +21,13 @@ public:
     ScriptCompoundBlockVolumeItem()                                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bindInterface\@ScriptCompoundBlockVolumeItem\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@VCompoundBlockVolumeItem\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::InterfaceBindingBuilder<class CompoundBlockVolumeItem> bindInterface(); // NOLINT
+    MCAPI static class Scripting::InterfaceBindingBuilder<class CompoundBlockVolumeItem> bindInterface();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

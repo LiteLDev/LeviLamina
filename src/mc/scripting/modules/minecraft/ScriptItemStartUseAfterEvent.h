@@ -15,33 +15,35 @@ public:
     ScriptItemStartUseAfterEvent()                                               = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTITEMSTARTUSEAFTEREVENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptItemStartUseAfterEvent(); // NOLINT
+    MCVAPI ~ScriptItemStartUseAfterEvent();
 #endif
     /**
      * @symbol ??0ScriptItemStartUseAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
      */
-    MCAPI ScriptItemStartUseAfterEvent(struct ScriptModuleMinecraft::ScriptItemStartUseAfterEvent const&); // NOLINT
-    /**
-     * @symbol ??4ScriptItemStartUseAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-     */
-    MCAPI struct ScriptModuleMinecraft::ScriptItemStartUseAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptItemStartUseAfterEvent&&); // NOLINT
+    MCAPI ScriptItemStartUseAfterEvent(struct ScriptModuleMinecraft::ScriptItemStartUseAfterEvent const&);
     /**
      * @symbol
      * ?bind\@ScriptItemStartUseAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptItemStartUseAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemStartUseAfterEvent>
-    bind(); // NOLINT
+    bind();
     /**
      * @symbol
      * ?bindV010\@ScriptItemStartUseAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptItemStartUseAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemStartUseAfterEvent>
-    bindV010(); // NOLINT
+    bindV010();
+    /**
+     * @symbol ??4ScriptItemStartUseAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
+     */
+    MCAPI struct ScriptModuleMinecraft::ScriptItemStartUseAfterEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptItemStartUseAfterEvent&&);
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

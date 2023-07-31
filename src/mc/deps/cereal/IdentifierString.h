@@ -13,10 +13,12 @@ public:
     IdentifierString()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1IdentifierString\@CerealHelpers\@\@QEAA\@XZ
      */
-    MCAPI ~IdentifierString(); // NOLINT
+    MCAPI ~IdentifierString();
+    // NOLINTEND
 };
 
 }; // namespace CerealHelpers

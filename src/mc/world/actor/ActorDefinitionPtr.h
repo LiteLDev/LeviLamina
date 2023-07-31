@@ -11,12 +11,14 @@ public:
     ActorDefinitionPtr()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ActorDefinitionPtr\@\@QEAA\@XZ
      */
-    MCAPI ~ActorDefinitionPtr(); // NOLINT
+    MCAPI ~ActorDefinitionPtr();
     /**
      * @symbol ?NONE\@ActorDefinitionPtr\@\@2V1\@B
      */
-    MCAPI static class ActorDefinitionPtr const NONE; // NOLINT
+    MCAPI static class ActorDefinitionPtr const NONE;
+    // NOLINTEND
 };

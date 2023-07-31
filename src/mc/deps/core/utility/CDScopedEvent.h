@@ -11,6 +11,7 @@ public:
     CDScopedEvent()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0CDScopedEvent\@\@QEAA\@W4CrashDumpLogStringID\@\@00\@Z
      */
@@ -18,9 +19,10 @@ public:
         enum class CrashDumpLogStringID,
         enum class CrashDumpLogStringID,
         enum class CrashDumpLogStringID
-    ); // NOLINT
+    );
     /**
      * @symbol ??1CDScopedEvent\@\@QEAA\@XZ
      */
-    MCAPI ~CDScopedEvent(); // NOLINT
+    MCAPI ~CDScopedEvent();
+    // NOLINTEND
 };

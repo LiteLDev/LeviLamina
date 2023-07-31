@@ -16,80 +16,82 @@ public:
     NpcSceneDialogueData()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?getDialogueText\@NpcSceneDialogueData\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string const& getDialogueText() const; // NOLINT
+    virtual std::string const& getDialogueText() const;
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2(); // NOLINT
+    virtual void __unk_vfn_2();
     /**
      * @vftbl 3
      * @symbol
      * ?getNameText\@NpcSceneDialogueData\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string const& getNameText() const; // NOLINT
+    virtual std::string const& getNameText() const;
     /**
      * @vftbl 4
      * @symbol
      * ?getNameRawText\@NpcSceneDialogueData\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string const& getNameRawText() const; // NOLINT
+    virtual std::string const& getNameRawText() const;
     /**
      * @vftbl 5
      * @symbol
      * ?getSceneName\@NpcSceneDialogueData\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string const& getSceneName() const; // NOLINT
+    virtual std::string const& getSceneName() const;
     /**
      * @vftbl 6
      * @symbol __unk_vfn_6
      */
-    virtual void __unk_vfn_6(); // NOLINT
+    virtual void __unk_vfn_6();
     /**
      * @vftbl 7
      * @symbol __unk_vfn_7
      */
-    virtual void __unk_vfn_7(); // NOLINT
+    virtual void __unk_vfn_7();
     /**
      * @vftbl 8
      * @symbol ?getActorUniqueID\@NpcSceneDialogueData\@\@UEAA?AUActorUniqueID\@\@XZ
      */
-    virtual struct ActorUniqueID getActorUniqueID(); // NOLINT
+    virtual struct ActorUniqueID getActorUniqueID();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCSCENEDIALOGUEDATA
     /**
      * @symbol ?getActionsContainer\@NpcSceneDialogueData\@\@UEAAPEAUActionContainer\@npc\@\@XZ
      */
-    MCVAPI struct npc::ActionContainer* getActionsContainer(); // NOLINT
+    MCVAPI struct npc::ActionContainer* getActionsContainer();
     /**
      * @symbol ?getActionsContainer\@NpcSceneDialogueData\@\@UEBAPEBUActionContainer\@npc\@\@XZ
      */
-    MCVAPI struct npc::ActionContainer const* getActionsContainer() const; // NOLINT
+    MCVAPI struct npc::ActionContainer const* getActionsContainer() const;
     /**
      * @symbol ?getActor\@NpcSceneDialogueData\@\@UEAAPEAVActor\@\@XZ
      */
-    MCVAPI class Actor* getActor(); // NOLINT
+    MCVAPI class Actor* getActor();
     /**
      * @symbol ?getActor\@NpcSceneDialogueData\@\@UEBAPEBVActor\@\@XZ
      */
-    MCVAPI class Actor const* getActor() const; // NOLINT
+    MCVAPI class Actor const* getActor() const;
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~NpcSceneDialogueData(); // NOLINT
+    MCVAPI ~NpcSceneDialogueData();
 #endif
     /**
      * @symbol
      * ??0NpcSceneDialogueData\@\@QEAA\@VWeakEntityRef\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI NpcSceneDialogueData(class WeakEntityRef, std::string const&); // NOLINT
+    MCAPI NpcSceneDialogueData(class WeakEntityRef, std::string const&);
+    // NOLINTEND
 };

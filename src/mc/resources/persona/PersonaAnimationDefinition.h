@@ -11,12 +11,14 @@ public:
     PersonaAnimationDefinition()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PersonaAnimationDefinition\@\@QEAA\@XZ
      */
-    MCAPI ~PersonaAnimationDefinition(); // NOLINT
+    MCAPI ~PersonaAnimationDefinition();
     /**
      * @symbol ?INVALID_ANIMATION_DEFINITION\@PersonaAnimationDefinition\@\@2U1\@B
      */
-    MCAPI static struct PersonaAnimationDefinition const INVALID_ANIMATION_DEFINITION; // NOLINT
+    MCAPI static struct PersonaAnimationDefinition const INVALID_ANIMATION_DEFINITION;
+    // NOLINTEND
 };

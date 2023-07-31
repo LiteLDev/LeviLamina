@@ -10,42 +10,44 @@ public:
     Stopwatch(Stopwatch const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?stop\@Stopwatch\@\@UEAANXZ
      */
-    virtual double stop(); // NOLINT
+    virtual double stop();
     /**
      * @vftbl 2
      * @symbol ?stopContinue\@Stopwatch\@\@UEAANXZ
      */
-    virtual double stopContinue(); // NOLINT
+    virtual double stopContinue();
     /**
      * @vftbl 3
      * @symbol ?print\@Stopwatch\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void print(std::string const&); // NOLINT
+    virtual void print(std::string const&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STOPWATCH
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~Stopwatch(); // NOLINT
+    MCVAPI ~Stopwatch();
 #endif
     /**
      * @symbol ??0Stopwatch\@\@QEAA\@XZ
      */
-    MCAPI Stopwatch(); // NOLINT
+    MCAPI Stopwatch();
     /**
      * @symbol ?reset\@Stopwatch\@\@QEAAXXZ
      */
-    MCAPI void reset(); // NOLINT
+    MCAPI void reset();
     /**
      * @symbol ?start\@Stopwatch\@\@QEAAXXZ
      */
-    MCAPI void start(); // NOLINT
+    MCAPI void start();
+    // NOLINTEND
 };

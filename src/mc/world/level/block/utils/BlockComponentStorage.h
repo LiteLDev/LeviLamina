@@ -11,18 +11,20 @@ public:
     BlockComponentStorage()                                        = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCOMPONENTSTORAGE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~BlockComponentStorage(); // NOLINT
+    MCVAPI ~BlockComponentStorage();
 #endif
     /**
      * @symbol ?allowComponentReplacement\@BlockComponentStorage\@\@QEAAXXZ
      */
-    MCAPI void allowComponentReplacement(); // NOLINT
+    MCAPI void allowComponentReplacement();
     /**
      * @symbol ?finalizeComponents\@BlockComponentStorage\@\@QEAAXXZ
      */
-    MCAPI void finalizeComponents(); // NOLINT
+    MCAPI void finalizeComponents();
+    // NOLINTEND
 };

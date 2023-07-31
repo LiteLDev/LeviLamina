@@ -15,31 +15,31 @@ public:
     ScriptEventCommandMessageAfterEvent()                                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ScriptEventCommandMessageAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@$$QEAU01\@\@Z
      */
-    MCAPI
-    ScriptEventCommandMessageAfterEvent(struct ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&&); // NOLINT
+    MCAPI ScriptEventCommandMessageAfterEvent(struct ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&&);
     /**
      * @symbol ??0ScriptEventCommandMessageAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
      */
-    MCAPI ScriptEventCommandMessageAfterEvent(struct ScriptModuleMinecraft::
-                                                  ScriptEventCommandMessageAfterEvent const&); // NOLINT
-    /**
-     * @symbol ??4ScriptEventCommandMessageAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-     */
-    MCAPI struct ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&&); // NOLINT
-    /**
-     * @symbol ??1ScriptEventCommandMessageAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptEventCommandMessageAfterEvent(); // NOLINT
+    MCAPI ScriptEventCommandMessageAfterEvent(struct ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent const&);
     /**
      * @symbol
      * ?bind\@ScriptEventCommandMessageAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptEventCommandMessageAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent>
-    bind(); // NOLINT
+    bind();
+    /**
+     * @symbol ??4ScriptEventCommandMessageAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
+     */
+    MCAPI struct ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptEventCommandMessageAfterEvent&&);
+    /**
+     * @symbol ??1ScriptEventCommandMessageAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptEventCommandMessageAfterEvent();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

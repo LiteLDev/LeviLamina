@@ -11,16 +11,18 @@ public:
     SurfaceMaterialAdjustmentEvaluated()                                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?empty\@SurfaceMaterialAdjustmentEvaluated\@\@QEBA_NXZ
      */
-    MCAPI bool empty() const; // NOLINT
+    MCAPI bool empty() const;
     /**
      * @symbol ?makeAdjustments\@SurfaceMaterialAdjustmentEvaluated\@\@QEBAXAEAUSurfaceMaterialBlocks\@\@H\@Z
      */
-    MCAPI void makeAdjustments(struct SurfaceMaterialBlocks&, int) const; // NOLINT
+    MCAPI void makeAdjustments(struct SurfaceMaterialBlocks&, int) const;
     /**
      * @symbol ??1SurfaceMaterialAdjustmentEvaluated\@\@QEAA\@XZ
      */
-    MCAPI ~SurfaceMaterialAdjustmentEvaluated(); // NOLINT
+    MCAPI ~SurfaceMaterialAdjustmentEvaluated();
+    // NOLINTEND
 };

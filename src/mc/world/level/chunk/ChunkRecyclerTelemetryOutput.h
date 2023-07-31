@@ -11,8 +11,10 @@ public:
     ChunkRecyclerTelemetryOutput()                                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ChunkRecyclerTelemetryOutput\@\@QEAA\@XZ
      */
-    MCAPI ~ChunkRecyclerTelemetryOutput(); // NOLINT
+    MCAPI ~ChunkRecyclerTelemetryOutput();
+    // NOLINTEND
 };

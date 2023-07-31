@@ -10,68 +10,70 @@ public:
     CircuitSystem(CircuitSystem const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0CircuitSystem\@\@QEAA\@XZ
      */
-    MCAPI CircuitSystem(); // NOLINT
+    MCAPI CircuitSystem();
     /**
      * @symbol ?evaluate\@CircuitSystem\@\@QEAAXPEAVBlockSource\@\@\@Z
      */
-    MCAPI void evaluate(class BlockSource*); // NOLINT
+    MCAPI void evaluate(class BlockSource*);
     /**
      * @symbol ?getStrength\@CircuitSystem\@\@QEAAHAEBVBlockPos\@\@\@Z
      */
-    MCAPI int getStrength(class BlockPos const&); // NOLINT
+    MCAPI int getStrength(class BlockPos const&);
     /**
      * @symbol ?invalidatePos\@CircuitSystem\@\@QEAAXAEBVBlockPos\@\@\@Z
      */
-    MCAPI void invalidatePos(class BlockPos const&); // NOLINT
+    MCAPI void invalidatePos(class BlockPos const&);
     /**
      * @symbol ?isAvailableAt\@CircuitSystem\@\@QEAA_NAEBVBlockPos\@\@\@Z
      */
-    MCAPI bool isAvailableAt(class BlockPos const&); // NOLINT
+    MCAPI bool isAvailableAt(class BlockPos const&);
     /**
      * @symbol ?isConnectionAllowed\@CircuitSystem\@\@QEAA_NAEAVBaseCircuitComponent\@\@AEBVBlockPos\@\@E_N\@Z
      */
-    MCAPI bool isConnectionAllowed(class BaseCircuitComponent&, class BlockPos const&, unsigned char, bool); // NOLINT
+    MCAPI bool isConnectionAllowed(class BaseCircuitComponent&, class BlockPos const&, unsigned char, bool);
     /**
      * @symbol ?preSetupPoweredBlocks\@CircuitSystem\@\@QEAAXAEBVChunkPos\@\@\@Z
      */
-    MCAPI void preSetupPoweredBlocks(class ChunkPos const&); // NOLINT
+    MCAPI void preSetupPoweredBlocks(class ChunkPos const&);
     /**
      * @symbol ?removeComponents\@CircuitSystem\@\@QEAAXAEBVBlockPos\@\@\@Z
      */
-    MCAPI void removeComponents(class BlockPos const&); // NOLINT
+    MCAPI void removeComponents(class BlockPos const&);
     /**
      * @symbol ?setStrength\@CircuitSystem\@\@QEAAXAEBVBlockPos\@\@H\@Z
      */
-    MCAPI void setStrength(class BlockPos const&, int); // NOLINT
+    MCAPI void setStrength(class BlockPos const&, int);
     /**
      * @symbol ?updateBlocks\@CircuitSystem\@\@QEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI void updateBlocks(class BlockSource&, class BlockPos const&); // NOLINT
+    MCAPI void updateBlocks(class BlockSource&, class BlockPos const&);
     /**
      * @symbol ?updateDependencies\@CircuitSystem\@\@QEAAXPEAVBlockSource\@\@\@Z
      */
-    MCAPI void updateDependencies(class BlockSource*); // NOLINT
+    MCAPI void updateDependencies(class BlockSource*);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?createComponent\@CircuitSystem\@\@AEAAPEAVBaseCircuitComponent\@\@AEBVBlockPos\@\@EV?$unique_ptr\@VBaseCircuitComponent\@\@U?$default_delete\@VBaseCircuitComponent\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI class BaseCircuitComponent*
-    createComponent(class BlockPos const&, unsigned char, std::unique_ptr<class BaseCircuitComponent>); // NOLINT
+    createComponent(class BlockPos const&, unsigned char, std::unique_ptr<class BaseCircuitComponent>);
     /**
      * @symbol ?evaluateComponents\@CircuitSystem\@\@AEAAX_N\@Z
      */
-    MCAPI void evaluateComponents(bool); // NOLINT
+    MCAPI void evaluateComponents(bool);
     /**
      * @symbol
      * ?updateIndividualBlock\@CircuitSystem\@\@AEAAXV?$not_null\@PEAVBaseCircuitComponent\@\@\@gsl\@\@AEBVBlockPos\@\@1AEAVBlockSource\@\@\@Z
      */
     MCAPI void
-    updateIndividualBlock(class gsl::not_null<class BaseCircuitComponent*>, class BlockPos const&, class BlockPos const&, class BlockSource&); // NOLINT
-
-private:
+    updateIndividualBlock(class gsl::not_null<class BaseCircuitComponent*>, class BlockPos const&, class BlockPos const&, class BlockSource&);
+    // NOLINTEND
 };

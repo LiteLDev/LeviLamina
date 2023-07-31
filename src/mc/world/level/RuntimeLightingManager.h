@@ -19,10 +19,12 @@ public:
         RuntimeLightingSubchunkList()                                              = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1RuntimeLightingSubchunkList\@RuntimeLightingManager\@\@QEAA\@XZ
          */
-        MCAPI ~RuntimeLightingSubchunkList(); // NOLINT
+        MCAPI ~RuntimeLightingSubchunkList();
+        // NOLINTEND
     };
 
 public:
@@ -32,14 +34,15 @@ public:
     RuntimeLightingManager()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0RuntimeLightingManager\@\@QEAA\@AEAVDimension\@\@\@Z
      */
-    MCAPI RuntimeLightingManager(class Dimension&); // NOLINT
+    MCAPI RuntimeLightingManager(class Dimension&);
     /**
      * @symbol ?flushRunTimeLighting\@RuntimeLightingManager\@\@QEAAXXZ
      */
-    MCAPI void flushRunTimeLighting(); // NOLINT
+    MCAPI void flushRunTimeLighting();
     /**
      * @symbol ?updateBlockLight\@RuntimeLightingManager\@\@QEAAXAEBVBlockPos\@\@UBrightness\@\@111_N\@Z
      */
@@ -50,32 +53,32 @@ public:
         struct Brightness,
         struct Brightness,
         bool
-    ); // NOLINT
+    );
     /**
      * @symbol ??1RuntimeLightingManager\@\@QEAA\@XZ
      */
-    MCAPI ~RuntimeLightingManager(); // NOLINT
+    MCAPI ~RuntimeLightingManager();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_checkForRelightingTask\@RuntimeLightingManager\@\@AEAAXV?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@chrono\@std\@\@\@Z
      */
-    MCAPI void
-        _checkForRelightingTask(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>); // NOLINT
+    MCAPI void _checkForRelightingTask(std::chrono::nanoseconds);
     /**
      * @symbol ?_getListOfChunksWithPlayerDistance\@RuntimeLightingManager\@\@AEAAXXZ
      */
-    MCAPI void _getListOfChunksWithPlayerDistance(); // NOLINT
+    MCAPI void _getListOfChunksWithPlayerDistance();
     /**
      * @symbol
      * ?_relightChunks\@RuntimeLightingManager\@\@AEAAXV?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@chrono\@std\@\@\@Z
      */
-    MCAPI void _relightChunks(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>); // NOLINT
+    MCAPI void _relightChunks(std::chrono::nanoseconds);
     /**
      * @symbol ?_removeProcessedSubchunks\@RuntimeLightingManager\@\@AEAAXXZ
      */
-    MCAPI void _removeProcessedSubchunks(); // NOLINT
-
-private:
+    MCAPI void _removeProcessedSubchunks();
+    // NOLINTEND
 };

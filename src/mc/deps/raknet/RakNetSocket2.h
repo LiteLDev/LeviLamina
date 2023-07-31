@@ -13,21 +13,23 @@ public:
     RakNetSocket2()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0() = 0; // NOLINT
+    virtual void __unk_vfn_0() = 0;
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1(); // NOLINT
+    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol ?SetMulticastInterface\@RakNetSocket2\@RakNet\@\@UEAAXH\@Z
      */
-    virtual void SetMulticastInterface(int); // NOLINT
+    virtual void SetMulticastInterface(int);
+    // NOLINTEND
 };
 
 }; // namespace RakNet

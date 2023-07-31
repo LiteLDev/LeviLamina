@@ -11,8 +11,10 @@ public:
     DBStorageConfig()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1DBStorageConfig\@\@QEAA\@XZ
      */
-    MCAPI ~DBStorageConfig(); // NOLINT
+    MCAPI ~DBStorageConfig();
+    // NOLINTEND
 };

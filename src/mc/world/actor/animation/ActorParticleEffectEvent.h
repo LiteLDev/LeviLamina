@@ -11,8 +11,10 @@ public:
     ActorParticleEffectEvent()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ActorParticleEffectEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorParticleEffectEvent(); // NOLINT
+    MCAPI ~ActorParticleEffectEvent();
+    // NOLINTEND
 };

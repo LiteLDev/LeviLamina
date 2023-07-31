@@ -10,20 +10,22 @@ public:
     ComponentInfo()                     = delete;
 
 public:
-    /**
-     * @symbol ??4ComponentInfo\@\@QEAAAEAU0\@AEBU0\@\@Z
-     */
-    MCAPI struct ComponentInfo& operator=(struct ComponentInfo const&); // NOLINT
-    /**
-     * @symbol ??4ComponentInfo\@\@QEAAAEAU0\@$$QEAU0\@\@Z
-     */
-    MCAPI struct ComponentInfo& operator=(struct ComponentInfo&&); // NOLINT
-    /**
-     * @symbol ??1ComponentInfo\@\@QEAA\@XZ
-     */
-    MCAPI ~ComponentInfo(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol ?bindType\@ComponentInfo\@\@SAXXZ
      */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI static void bindType();
+    /**
+     * @symbol ??4ComponentInfo\@\@QEAAAEAU0\@AEBU0\@\@Z
+     */
+    MCAPI struct ComponentInfo& operator=(struct ComponentInfo const&);
+    /**
+     * @symbol ??4ComponentInfo\@\@QEAAAEAU0\@$$QEAU0\@\@Z
+     */
+    MCAPI struct ComponentInfo& operator=(struct ComponentInfo&&);
+    /**
+     * @symbol ??1ComponentInfo\@\@QEAA\@XZ
+     */
+    MCAPI ~ComponentInfo();
+    // NOLINTEND
 };

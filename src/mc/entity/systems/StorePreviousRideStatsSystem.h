@@ -16,12 +16,13 @@ public:
     StorePreviousRideStatsSystem()                                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_storePreviousRideStats\@StorePreviousRideStatsSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUStateVectorComponent\@\@AEAUVanillaClientGameplayComponent\@\@\@Z
      */
     MCAPI static void
-    _storePreviousRideStats(class StrictEntityContext const&, struct StateVectorComponent const&, struct VanillaClientGameplayComponent&); // NOLINT
+    _storePreviousRideStats(class StrictEntityContext const&, struct StateVectorComponent const&, struct VanillaClientGameplayComponent&);
     /**
      * @symbol
      * ?_tickStorePreviousRideStatsSystem\@StorePreviousRideStatsSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@ULocalPlayerComponentFlag\@\@\@\@UPassengerComponent\@\@\@\@$$CBUStateVectorComponent\@\@UVanillaClientGameplayComponent\@\@\@\@\@Z
@@ -34,9 +35,10 @@ public:
                                                             class FlagComponent<struct LocalPlayerComponentFlag>,
                                                             struct PassengerComponent>,
                                                         struct StateVectorComponent const,
-                                                        struct VanillaClientGameplayComponent>); // NOLINT
+                                                        struct VanillaClientGameplayComponent>);
     /**
      * @symbol ?createSystem\@StorePreviousRideStatsSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 };

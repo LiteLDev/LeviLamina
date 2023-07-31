@@ -11,17 +11,19 @@ public:
     BlazePreTravelSystem()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@BlazePreTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_doBlazePreTravelSystem\@BlazePreTravelSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
      */
-    MCAPI static void _doBlazePreTravelSystem(class StrictEntityContext const&, class ActorOwnerComponent&); // NOLINT
-
-private:
+    MCAPI static void _doBlazePreTravelSystem(class StrictEntityContext const&, class ActorOwnerComponent&);
+    // NOLINTEND
 };

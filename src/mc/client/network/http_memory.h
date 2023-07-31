@@ -13,14 +13,16 @@ public:
     http_memory()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?mem_alloc\@http_memory\@httpclient\@xbox\@\@SAPEAX_K\@Z
      */
-    MCAPI static void* mem_alloc(unsigned __int64); // NOLINT
+    MCAPI static void* mem_alloc(uint64_t);
     /**
      * @symbol ?mem_free\@http_memory\@httpclient\@xbox\@\@SAXPEAX\@Z
      */
-    MCAPI static void mem_free(void*); // NOLINT
+    MCAPI static void mem_free(void*);
+    // NOLINTEND
 };
 
 }; // namespace xbox::httpclient

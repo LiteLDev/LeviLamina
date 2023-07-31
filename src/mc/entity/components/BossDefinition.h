@@ -18,19 +18,21 @@ public:
     BossDefinition(BossDefinition const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0BossDefinition\@\@QEAA\@XZ
      */
-    MCAPI BossDefinition(); // NOLINT
-    /**
-     * @symbol ?initialize\@BossDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVBossComponent\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class BossComponent&) const; // NOLINT
+    MCAPI BossDefinition();
     /**
      * @symbol
      * ?buildSchema\@BossDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VBossDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BossDefinition>>&); // NOLINT
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BossDefinition>>&);
+    /**
+     * @symbol ?initialize\@BossDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVBossComponent\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class BossComponent&) const;
+    // NOLINTEND
 };

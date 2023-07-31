@@ -11,22 +11,24 @@ public:
     GameRulesChangedPacketData()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?addRule\@GameRulesChangedPacketData\@\@QEAAXAEBVGameRule\@\@\@Z
      */
-    MCAPI void addRule(class GameRule const&); // NOLINT
+    MCAPI void addRule(class GameRule const&);
     /**
      * @symbol
      * ?getRules\@GameRulesChangedPacketData\@\@QEBAAEBV?$vector\@VGameRule\@\@V?$allocator\@VGameRule\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<class GameRule> const& getRules() const; // NOLINT
+    MCAPI std::vector<class GameRule> const& getRules() const;
     /**
      * @symbol
      * ?setRules\@GameRulesChangedPacketData\@\@QEAAXV?$vector\@VGameRule\@\@V?$allocator\@VGameRule\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI void setRules(std::vector<class GameRule>); // NOLINT
+    MCAPI void setRules(std::vector<class GameRule>);
     /**
      * @symbol ??1GameRulesChangedPacketData\@\@QEAA\@XZ
      */
-    MCAPI ~GameRulesChangedPacketData(); // NOLINT
+    MCAPI ~GameRulesChangedPacketData();
+    // NOLINTEND
 };

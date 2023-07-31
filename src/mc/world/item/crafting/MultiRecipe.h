@@ -19,34 +19,36 @@ public:
     MultiRecipe()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 5
      * @symbol __unk_vfn_5
      */
-    virtual void __unk_vfn_5(); // NOLINT
+    virtual void __unk_vfn_5();
     /**
      * @vftbl 9
      * @symbol ?isMultiRecipe\@MultiRecipe\@\@EEBA_NXZ
      */
-    virtual bool isMultiRecipe() const; // NOLINT
+    virtual bool isMultiRecipe() const;
     /**
      * @vftbl 10
      * @symbol ?hasDataDrivenResult\@MultiRecipe\@\@EEBA_NXZ
      */
-    virtual bool hasDataDrivenResult() const; // NOLINT
+    virtual bool hasDataDrivenResult() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTIRECIPE
     /**
      * @symbol ?isShapeless\@MultiRecipe\@\@EEBA_NXZ
      */
-    MCVAPI bool isShapeless() const; // NOLINT
+    MCVAPI bool isShapeless() const;
 #endif
     /**
      * @symbol ??0MultiRecipe\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@VHashedString\@\@\@Z
      */
-    MCAPI MultiRecipe(class std::basic_string_view<char, struct std::char_traits<char>>, class HashedString); // NOLINT
+    MCAPI MultiRecipe(std::string_view, class HashedString);
+    // NOLINTEND
 };

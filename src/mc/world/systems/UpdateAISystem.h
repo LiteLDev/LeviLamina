@@ -11,8 +11,10 @@ public:
     UpdateAISystem()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@UpdateAISystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 };

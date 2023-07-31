@@ -11,24 +11,26 @@ public:
     PartiallyExposedBlobFeature()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?place\@PartiallyExposedBlobFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */
-    virtual class std::optional<class BlockPos>
-    place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const; // NOLINT
+    virtual std::optional<class BlockPos>
+    place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?isWaterOrAir\@PartiallyExposedBlobFeature\@\@CA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI static bool isWaterOrAir(class IBlockWorldGenAPI const&, class BlockPos const&); // NOLINT
-
-private:
+    MCAPI static bool isWaterOrAir(class IBlockWorldGenAPI const&, class BlockPos const&);
+    // NOLINTEND
 };

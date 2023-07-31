@@ -13,10 +13,12 @@ public:
     StringConstraint()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1StringConstraint\@internal\@cereal\@\@QEAA\@XZ
      */
-    MCAPI ~StringConstraint(); // NOLINT
+    MCAPI ~StringConstraint();
+    // NOLINTEND
 };
 
 }; // namespace cereal::internal

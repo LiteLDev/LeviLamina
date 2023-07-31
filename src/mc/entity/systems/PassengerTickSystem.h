@@ -11,16 +11,18 @@ public:
     PassengerTickSystem()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createMobPostPassengerTickSystem\@PassengerTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createMobPostPassengerTickSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createMobPostPassengerTickSystem();
     /**
      * @symbol ?createPlayerPostPassengerTickSystem\@PassengerTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createPlayerPostPassengerTickSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createPlayerPostPassengerTickSystem();
     /**
      * @symbol ?createPlayerPrePassengerTickSystem\@PassengerTickSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createPlayerPrePassengerTickSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createPlayerPrePassengerTickSystem();
+    // NOLINTEND
 };

@@ -13,119 +13,121 @@ public:
     ListTag(ListTag const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?deleteChildren\@ListTag\@\@UEAAXXZ
      */
-    virtual void deleteChildren(); // NOLINT
+    virtual void deleteChildren();
     /**
      * @vftbl 2
      * @symbol ?write\@ListTag\@\@UEBAXAEAVIDataOutput\@\@\@Z
      */
-    virtual void write(class IDataOutput&) const; // NOLINT
+    virtual void write(class IDataOutput&) const;
     /**
      * @vftbl 3
      * @symbol ?load\@ListTag\@\@UEAAXAEAVIDataInput\@\@\@Z
      */
-    virtual void load(class IDataInput&); // NOLINT
+    virtual void load(class IDataInput&);
     /**
      * @vftbl 4
      * @symbol ?toString\@ListTag\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual std::string toString() const; // NOLINT
+    virtual std::string toString() const;
     /**
      * @vftbl 5
      * @symbol ?getId\@ListTag\@\@UEBA?AW4Type\@Tag\@\@XZ
      */
-    virtual enum class Tag::Type getId() const; // NOLINT
+    virtual enum class Tag::Type getId() const;
     /**
      * @vftbl 6
      * @symbol ?equals\@ListTag\@\@UEBA_NAEBVTag\@\@\@Z
      */
-    virtual bool equals(class Tag const&) const; // NOLINT
+    virtual bool equals(class Tag const&) const;
     /**
      * @vftbl 8
      * @symbol
      * ?print\@ListTag\@\@UEBAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVPrintStream\@\@\@Z
      */
-    virtual void print(std::string const&, class PrintStream&) const; // NOLINT
+    virtual void print(std::string const&, class PrintStream&) const;
     /**
      * @vftbl 9
      * @symbol ?copy\@ListTag\@\@UEBA?AV?$unique_ptr\@VTag\@\@U?$default_delete\@VTag\@\@\@std\@\@\@std\@\@XZ
      */
-    virtual std::unique_ptr<class Tag> copy() const; // NOLINT
+    virtual std::unique_ptr<class Tag> copy() const;
     /**
      * @vftbl 10
      * @symbol ?hash\@ListTag\@\@UEBA_KXZ
      */
-    virtual unsigned __int64 hash() const; // NOLINT
+    virtual uint64_t hash() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LISTTAG
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ListTag(); // NOLINT
+    MCVAPI ~ListTag();
 #endif
     /**
      * @symbol ??0ListTag\@\@QEAA\@XZ
      */
-    MCAPI ListTag(); // NOLINT
+    MCAPI ListTag();
     /**
      * @symbol ?add\@ListTag\@\@QEAAXV?$unique_ptr\@VTag\@\@U?$default_delete\@VTag\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI void add(std::unique_ptr<class Tag>); // NOLINT
+    MCAPI void add(std::unique_ptr<class Tag>);
     /**
      * @symbol
      * ?copyList\@ListTag\@\@QEBA?AV?$unique_ptr\@VListTag\@\@U?$default_delete\@VListTag\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::unique_ptr<class ListTag> copyList() const; // NOLINT
+    MCAPI std::unique_ptr<class ListTag> copyList() const;
     /**
      * @symbol ?erase\@ListTag\@\@QEAAX_K\@Z
      */
-    MCAPI void erase(unsigned __int64); // NOLINT
+    MCAPI void erase(uint64_t);
     /**
      * @symbol ?forEachCompoundTag\@ListTag\@\@QEBAXV?$function\@$$A6AXAEBVCompoundTag\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI void forEachCompoundTag(class std::function<void(class CompoundTag const&)>) const; // NOLINT
+    MCAPI void forEachCompoundTag(std::function<void(class CompoundTag const&)>) const;
     /**
      * @symbol ?get\@ListTag\@\@QEBAPEAVTag\@\@H\@Z
      */
-    MCAPI class Tag* get(int) const; // NOLINT
+    MCAPI class Tag* get(int) const;
     /**
      * @symbol ?getCompound\@ListTag\@\@QEAAPEAVCompoundTag\@\@_K\@Z
      */
-    MCAPI class CompoundTag* getCompound(unsigned __int64); // NOLINT
+    MCAPI class CompoundTag* getCompound(uint64_t);
     /**
      * @symbol ?getCompound\@ListTag\@\@QEBAPEBVCompoundTag\@\@_K\@Z
      */
-    MCAPI class CompoundTag const* getCompound(unsigned __int64) const; // NOLINT
+    MCAPI class CompoundTag const* getCompound(uint64_t) const;
     /**
      * @symbol ?getDouble\@ListTag\@\@QEBANH\@Z
      */
-    MCAPI double getDouble(int) const; // NOLINT
+    MCAPI double getDouble(int) const;
     /**
      * @symbol ?getFloat\@ListTag\@\@QEBAMH\@Z
      */
-    MCAPI float getFloat(int) const; // NOLINT
+    MCAPI float getFloat(int) const;
     /**
      * @symbol ?getInt\@ListTag\@\@QEBAHH\@Z
      */
-    MCAPI int getInt(int) const; // NOLINT
+    MCAPI int getInt(int) const;
     /**
      * @symbol
      * ?getString\@ListTag\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    MCAPI std::string const& getString(int) const; // NOLINT
+    MCAPI std::string const& getString(int) const;
     /**
      * @symbol ?popBack\@ListTag\@\@QEAAXXZ
      */
-    MCAPI void popBack(); // NOLINT
+    MCAPI void popBack();
     /**
      * @symbol ?size\@ListTag\@\@QEBAHXZ
      */
-    MCAPI int size() const; // NOLINT
+    MCAPI int size() const;
+    // NOLINTEND
 };

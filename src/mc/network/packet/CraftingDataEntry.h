@@ -11,20 +11,22 @@ public:
     CraftingDataEntry()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?fillFromMultiRecipe\@CraftingDataEntry\@\@QEAAXAEBVMultiRecipe\@\@\@Z
      */
-    MCAPI void fillFromMultiRecipe(class MultiRecipe const&); // NOLINT
+    MCAPI void fillFromMultiRecipe(class MultiRecipe const&);
     /**
      * @symbol ?fillFromRecipe\@CraftingDataEntry\@\@QEAAXAEBVRecipe\@\@\@Z
      */
-    MCAPI void fillFromRecipe(class Recipe const&); // NOLINT
+    MCAPI void fillFromRecipe(class Recipe const&);
     /**
      * @symbol ?write\@CraftingDataEntry\@\@QEBAXAEAVBinaryStream\@\@\@Z
      */
-    MCAPI void write(class BinaryStream&) const; // NOLINT
+    MCAPI void write(class BinaryStream&) const;
     /**
      * @symbol ??1CraftingDataEntry\@\@QEAA\@XZ
      */
-    MCAPI ~CraftingDataEntry(); // NOLINT
+    MCAPI ~CraftingDataEntry();
+    // NOLINTEND
 };

@@ -11,8 +11,10 @@ public:
     EntitySystemsInfo()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?bindType\@EntitySystemsInfo\@\@SAXXZ
      */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI static void bindType();
+    // NOLINTEND
 };

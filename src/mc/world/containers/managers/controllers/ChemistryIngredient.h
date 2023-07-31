@@ -11,8 +11,10 @@ public:
     ChemistryIngredient()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ChemistryIngredient\@\@QEAA\@XZ
      */
-    MCAPI ~ChemistryIngredient(); // NOLINT
+    MCAPI ~ChemistryIngredient();
+    // NOLINTEND
 };

@@ -22,54 +22,56 @@ public:
     DestroyOperation()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?tick\@AsyncOperationBase\@PositionTrackingDB\@\@UEAA_NV?$weak_ptr\@VPositionTrackingDBServer\@PositionTrackingDB\@\@\@std\@\@AEAVTrackingRecord\@2\@\@Z
      */
     virtual bool
-    tick(class std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&); // NOLINT
+    tick(std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&);
     /**
      * @vftbl 2
      * @symbol ?getDescription\@DestroyOperation\@PositionTrackingDB\@\@UEBAPEBDXZ
      */
-    virtual char const* getDescription() const; // NOLINT
+    virtual char const* getDescription() const;
     /**
      * @vftbl 3
      * @symbol ?isAsync\@AsyncOperationBase\@PositionTrackingDB\@\@UEBA_NXZ
      */
-    virtual bool isAsync() const; // NOLINT
+    virtual bool isAsync() const;
     /**
      * @vftbl 4
      * @symbol ?isComplete\@AsyncOperationBase\@PositionTrackingDB\@\@UEBA_NXZ
      */
-    virtual bool isComplete() const; // NOLINT
+    virtual bool isComplete() const;
     /**
      * @vftbl 5
      * @symbol
      * ?_init\@DestroyOperation\@PositionTrackingDB\@\@MEAA_NV?$weak_ptr\@VPositionTrackingDBServer\@PositionTrackingDB\@\@\@std\@\@AEAVTrackingRecord\@2\@\@Z
      */
     virtual bool
-    _init(class std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&); // NOLINT
+    _init(std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&);
     /**
      * @vftbl 6
      * @symbol
      * ?_tick\@DestroyOperation\@PositionTrackingDB\@\@MEAA_NV?$weak_ptr\@VPositionTrackingDBServer\@PositionTrackingDB\@\@\@std\@\@AEAVTrackingRecord\@2\@\@Z
      */
     virtual bool
-    _tick(class std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&); // NOLINT
+    _tick(std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&);
     /**
      * @vftbl 7
      * @symbol
      * ?_quit\@AsyncOperationBase\@PositionTrackingDB\@\@MEAA_NV?$weak_ptr\@VPositionTrackingDBServer\@PositionTrackingDB\@\@\@std\@\@AEAVTrackingRecord\@2\@\@Z
      */
     virtual bool
-    _quit(class std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&); // NOLINT
+    _quit(std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, class PositionTrackingDB::TrackingRecord&);
+    // NOLINTEND
 };
 
 }; // namespace PositionTrackingDB

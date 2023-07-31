@@ -21,11 +21,13 @@ public:
     ScriptDefinitionTrigger()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptDefinitionTrigger\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VActorDefinitionTrigger\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ActorDefinitionTrigger> bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<class ActorDefinitionTrigger> bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -14,20 +14,22 @@ public:
     OpenDoorAnnotationDescription()                                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol ?getJsonName\@OpenDoorAnnotationDescription\@\@UEBAPEBDXZ
      */
-    virtual char const* getJsonName() const; // NOLINT
+    virtual char const* getJsonName() const;
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1(); // NOLINT
+    virtual void __unk_vfn_1();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_OPENDOORANNOTATIONDESCRIPTION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~OpenDoorAnnotationDescription(); // NOLINT
+    MCVAPI ~OpenDoorAnnotationDescription();
 #endif
+    // NOLINTEND
 };

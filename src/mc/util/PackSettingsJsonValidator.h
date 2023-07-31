@@ -14,8 +14,10 @@ public:
     PackSettingsJsonValidator()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getValidator\@PackSettingsJsonValidator\@\@SA?AVProperty\@JsonValidator\@\@XZ
      */
-    MCAPI static class JsonValidator::Property getValidator(); // NOLINT
+    MCAPI static class JsonValidator::Property getValidator();
+    // NOLINTEND
 };

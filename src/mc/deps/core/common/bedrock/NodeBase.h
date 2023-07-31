@@ -28,26 +28,25 @@ public:
     NodeBase()                           = delete;
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol ?_getBase\@NodeBase\@JSONObject\@Bedrock\@\@IEBAAEBV123\@VOffset\@123\@E\@Z
      */
     MCAPI class Bedrock::JSONObject::NodeBase const&
-    _getBase(class Bedrock::JSONObject::NodeBase::Offset, unsigned char) const; // NOLINT
+    _getBase(class Bedrock::JSONObject::NodeBase::Offset, unsigned char) const;
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?list_set_next\@NodeBase\@JSONObject\@Bedrock\@\@CAXAEAV123\@0\@Z
      */
-    MCAPI static void
-    list_set_next(class Bedrock::JSONObject::NodeBase&, class Bedrock::JSONObject::NodeBase&); // NOLINT
+    MCAPI static void list_set_next(class Bedrock::JSONObject::NodeBase&, class Bedrock::JSONObject::NodeBase&);
     /**
      * @symbol ?list_set_prev\@NodeBase\@JSONObject\@Bedrock\@\@CAXAEAV123\@0\@Z
      */
-    MCAPI static void
-    list_set_prev(class Bedrock::JSONObject::NodeBase&, class Bedrock::JSONObject::NodeBase&); // NOLINT
-
-protected:
-private:
+    MCAPI static void list_set_prev(class Bedrock::JSONObject::NodeBase&, class Bedrock::JSONObject::NodeBase&);
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::JSONObject

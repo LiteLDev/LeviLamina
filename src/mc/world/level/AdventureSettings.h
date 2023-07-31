@@ -10,8 +10,10 @@ public:
     AdventureSettings(AdventureSettings const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0AdventureSettings\@\@QEAA\@XZ
      */
-    MCAPI AdventureSettings(); // NOLINT
+    MCAPI AdventureSettings();
+    // NOLINTEND
 };

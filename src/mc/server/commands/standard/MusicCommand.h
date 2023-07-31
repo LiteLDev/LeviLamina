@@ -14,34 +14,36 @@ public:
     MusicCommand()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?execute\@MusicCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
     /**
      * @symbol ?setup\@MusicCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
-    MCAPI static void setup(class CommandRegistry&); // NOLINT
+    MCAPI static void setup(class CommandRegistry&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_handleActionQueueOrPlay\@MusicCommand\@\@AEBAXAEAVCompoundTag\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void _handleActionQueueOrPlay(class CompoundTag&, class CommandOutput&) const; // NOLINT
+    MCAPI void _handleActionQueueOrPlay(class CompoundTag&, class CommandOutput&) const;
     /**
      * @symbol ?_handleActionStop\@MusicCommand\@\@AEBAXAEAVCompoundTag\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void _handleActionStop(class CompoundTag&, class CommandOutput&) const; // NOLINT
+    MCAPI void _handleActionStop(class CompoundTag&, class CommandOutput&) const;
     /**
      * @symbol ?_handleActionVolume\@MusicCommand\@\@AEBAXAEAVCompoundTag\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void _handleActionVolume(class CompoundTag&, class CommandOutput&) const; // NOLINT
-
-private:
+    MCAPI void _handleActionVolume(class CompoundTag&, class CommandOutput&) const;
+    // NOLINTEND
 };

@@ -15,32 +15,33 @@ public:
     ScriptActorApplyDamageByProjectileOptions()                                                 = delete;
 
 public:
-    /**
-     * @symbol ??4ScriptActorApplyDamageByProjectileOptions\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
-     */
-    MCAPI struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const&); // NOLINT
-    /**
-     * @symbol ??4ScriptActorApplyDamageByProjectileOptions\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-     */
-    MCAPI struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions&&); // NOLINT
-    /**
-     * @symbol ??8ScriptActorApplyDamageByProjectileOptions\@ScriptModuleMinecraft\@\@QEBA_NAEBU01\@\@Z
-     */
-    MCAPI bool
-    operator==(struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const&) const; // NOLINT
-    /**
-     * @symbol ??1ScriptActorApplyDamageByProjectileOptions\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptActorApplyDamageByProjectileOptions(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptActorApplyDamageByProjectileOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptActorApplyDamageByProjectileOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::InterfaceBindingBuilder<
         struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions>
-    bind(); // NOLINT
+    bind();
+    /**
+     * @symbol ??4ScriptActorApplyDamageByProjectileOptions\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
+     */
+    MCAPI struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions&
+    operator=(struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const&);
+    /**
+     * @symbol ??4ScriptActorApplyDamageByProjectileOptions\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
+     */
+    MCAPI struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions&
+    operator=(struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions&&);
+    /**
+     * @symbol ??8ScriptActorApplyDamageByProjectileOptions\@ScriptModuleMinecraft\@\@QEBA_NAEBU01\@\@Z
+     */
+    MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions const&) const;
+    /**
+     * @symbol ??1ScriptActorApplyDamageByProjectileOptions\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptActorApplyDamageByProjectileOptions();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

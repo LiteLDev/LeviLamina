@@ -14,15 +14,17 @@ public:
     VanillaInPackagePacks()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?getPacks\@VanillaInPackagePacks\@\@UEBA?AV?$vector\@UMetaData\@IInPackagePacks\@\@V?$allocator\@UMetaData\@IInPackagePacks\@\@\@std\@\@\@std\@\@W4PackType\@\@\@Z
      */
-    virtual std::vector<struct IInPackagePacks::MetaData> getPacks(enum class PackType) const; // NOLINT
+    virtual std::vector<struct IInPackagePacks::MetaData> getPacks(enum class PackType) const;
+    // NOLINTEND
 };

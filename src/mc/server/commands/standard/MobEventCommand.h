@@ -22,10 +22,12 @@ public:
         InitProxy()                            = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??0InitProxy\@MobEventCommand\@\@QEAA\@AEAVServerLevel\@\@\@Z
          */
-        MCAPI InitProxy(class ServerLevel&); // NOLINT
+        MCAPI InitProxy(class ServerLevel&);
+        // NOLINTEND
     };
 
 public:
@@ -35,18 +37,20 @@ public:
     MobEventCommand()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?execute\@MobEventCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
     /**
      * @symbol ?setup\@MobEventCommand\@\@SAXAEAVCommandRegistry\@\@$$QEAUInitProxy\@1\@\@Z
      */
-    MCAPI static void setup(class CommandRegistry&, struct MobEventCommand::InitProxy&&); // NOLINT
+    MCAPI static void setup(class CommandRegistry&, struct MobEventCommand::InitProxy&&);
+    // NOLINTEND
 };

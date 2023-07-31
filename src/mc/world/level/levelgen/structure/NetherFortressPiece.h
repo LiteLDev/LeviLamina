@@ -14,31 +14,32 @@ public:
     NetherFortressPiece()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 4
      * @symbol ?postProcess\@NetherFortressPiece\@\@UEAA_NAEAVBlockSource\@\@AEAVRandom\@\@AEBVBoundingBox\@\@\@Z
      */
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&); // NOLINT
+    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
     /**
      * @vftbl 12
      * @symbol ?addHardcodedSpawnAreas\@NetherFortressPiece\@\@UEBAXAEAVLevelChunk\@\@\@Z
      */
-    virtual void addHardcodedSpawnAreas(class LevelChunk&) const; // NOLINT
+    virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERFORTRESSPIECE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~NetherFortressPiece(); // NOLINT
+    MCVAPI ~NetherFortressPiece();
 #endif
     /**
      * @symbol ??0NetherFortressPiece\@\@QEAA\@H\@Z
      */
-    MCAPI NetherFortressPiece(int); // NOLINT
+    MCAPI NetherFortressPiece(int);
     /**
      * @symbol
      * ?findAndCreateBridgePieceFactory\@NetherFortressPiece\@\@QEAA?AV?$unique_ptr\@VNetherFortressPiece\@\@U?$default_delete\@VNetherFortressPiece\@\@\@std\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@3\@AEAVRandom\@\@HHHHH\@Z
@@ -52,7 +53,7 @@ public:
         int,
         int,
         int
-    ); // NOLINT
+    );
     /**
      * @symbol
      * ?generateAndAddPiece\@NetherFortressPiece\@\@QEAAPEAVStructurePiece\@\@AEAVNBStartPiece\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@HHHHH_N\@Z
@@ -67,7 +68,7 @@ public:
         int,
         int,
         bool
-    ); // NOLINT
+    );
     /**
      * @symbol
      * ?generateChildForward\@NetherFortressPiece\@\@QEAAPEAVStructurePiece\@\@AEAVNBStartPiece\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@HH_N\@Z
@@ -79,7 +80,7 @@ public:
         int,
         int,
         bool
-    ); // NOLINT
+    );
     /**
      * @symbol
      * ?generateChildLeft\@NetherFortressPiece\@\@QEAAPEAVStructurePiece\@\@AEAVNBStartPiece\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@HH_N\@Z
@@ -91,7 +92,7 @@ public:
         int,
         int,
         bool
-    ); // NOLINT
+    );
     /**
      * @symbol
      * ?generateChildRight\@NetherFortressPiece\@\@QEAAPEAVStructurePiece\@\@AEAVNBStartPiece\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEAVRandom\@\@HH_N\@Z
@@ -103,7 +104,7 @@ public:
         int,
         int,
         bool
-    ); // NOLINT
+    );
     /**
      * @symbol
      * ?generatePiece\@NetherFortressPiece\@\@QEAA?AV?$unique_ptr\@VNetherFortressPiece\@\@U?$default_delete\@VNetherFortressPiece\@\@\@std\@\@\@std\@\@AEAVNBStartPiece\@\@AEAV?$vector\@VPieceWeight\@\@V?$allocator\@VPieceWeight\@\@\@std\@\@\@3\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@3\@AEAVRandom\@\@HHHHH\@Z
@@ -118,5 +119,6 @@ public:
         int,
         int,
         int
-    ); // NOLINT
+    );
+    // NOLINTEND
 };

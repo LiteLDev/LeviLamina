@@ -18,35 +18,36 @@ public:
     DiskAccessTracker(DiskAccessTracker const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0DiskAccessTracker\@Core\@\@QEAA\@XZ
      */
-    MCAPI DiskAccessTracker(); // NOLINT
+    MCAPI DiskAccessTracker();
     /**
      * @symbol ?addIgnoredPath\@DiskAccessTracker\@Core\@\@QEAAXAEBVPath\@2\@\@Z
      */
-    MCAPI void addIgnoredPath(class Core::Path const&); // NOLINT
-    /**
-     * @symbol ?trackWriteAmount\@DiskAccessTracker\@Core\@\@QEAAXAEBVPath\@2\@_KW4WriteOperation\@2\@\@Z
-     */
-    MCAPI void trackWriteAmount(class Core::Path const&, unsigned __int64, enum class Core::WriteOperation); // NOLINT
-    /**
-     * @symbol ?trackWriteOperation\@DiskAccessTracker\@Core\@\@QEAAXAEBVPath\@2\@W4WriteOperation\@2\@\@Z
-     */
-    MCAPI void trackWriteOperation(class Core::Path const&, enum class Core::WriteOperation); // NOLINT
+    MCAPI void addIgnoredPath(class Core::Path const&);
     /**
      * @symbol ?getDiskAccessTracker\@DiskAccessTracker\@Core\@\@SAAEAV12\@XZ
      */
-    MCAPI static class Core::DiskAccessTracker& getDiskAccessTracker(); // NOLINT
+    MCAPI static class Core::DiskAccessTracker& getDiskAccessTracker();
+    /**
+     * @symbol ?trackWriteAmount\@DiskAccessTracker\@Core\@\@QEAAXAEBVPath\@2\@_KW4WriteOperation\@2\@\@Z
+     */
+    MCAPI void trackWriteAmount(class Core::Path const&, uint64_t, enum class Core::WriteOperation);
+    /**
+     * @symbol ?trackWriteOperation\@DiskAccessTracker\@Core\@\@QEAAXAEBVPath\@2\@W4WriteOperation\@2\@\@Z
+     */
+    MCAPI void trackWriteOperation(class Core::Path const&, enum class Core::WriteOperation);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_addNewWriteOperation\@DiskAccessTracker\@Core\@\@AEAAX_KW4WriteOperation\@2\@AEBVPath\@2\@\@Z
      */
-    MCAPI void
-    _addNewWriteOperation(unsigned __int64, enum class Core::WriteOperation, class Core::Path const&); // NOLINT
-
-private:
+    MCAPI void _addNewWriteOperation(uint64_t, enum class Core::WriteOperation, class Core::Path const&);
+    // NOLINTEND
 };
 
 }; // namespace Core

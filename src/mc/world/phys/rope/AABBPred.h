@@ -11,8 +11,10 @@ public:
     AABBPred()                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??RAABBPred\@\@QEBA_NAEBVAABB\@\@0\@Z
      */
-    MCAPI bool operator()(class AABB const&, class AABB const&) const; // NOLINT
+    MCAPI bool operator()(class AABB const&, class AABB const&) const;
+    // NOLINTEND
 };

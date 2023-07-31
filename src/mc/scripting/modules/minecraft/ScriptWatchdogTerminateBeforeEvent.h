@@ -22,18 +22,20 @@ public:
     ScriptWatchdogTerminateBeforeEvent()                                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0ScriptWatchdogTerminateBeforeEvent\@ScriptModuleMinecraft\@\@QEAA\@AEBUBeforeWatchdogTerminateEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@\@Z
      */
     MCAPI
-    ScriptWatchdogTerminateBeforeEvent(struct BeforeWatchdogTerminateEvent const&, class Scripting::WeakLifetimeScope const&); // NOLINT
+    ScriptWatchdogTerminateBeforeEvent(struct BeforeWatchdogTerminateEvent const&, class Scripting::WeakLifetimeScope const&);
     /**
      * @symbol
      * ?bind\@ScriptWatchdogTerminateBeforeEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptWatchdogTerminateBeforeEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptWatchdogTerminateBeforeEvent>
-    bind(); // NOLINT
+    bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

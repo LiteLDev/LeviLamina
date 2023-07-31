@@ -11,8 +11,10 @@ public:
     PieceWeight()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PieceWeight\@\@QEAA\@XZ
      */
-    MCAPI ~PieceWeight(); // NOLINT
+    MCAPI ~PieceWeight();
+    // NOLINTEND
 };

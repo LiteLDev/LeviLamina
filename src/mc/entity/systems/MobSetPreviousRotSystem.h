@@ -16,10 +16,11 @@ public:
     MobSetPreviousRotSystem()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@MobSetPreviousRotSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
     /**
      * @symbol
      * ?tick\@MobSetPreviousRotSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@UMobFlag\@\@\@\@\@\@UActorHeadRotationComponent\@\@UActorRotationComponent\@\@UMobBodyRotationComponent\@\@\@\@\@Z
@@ -32,15 +33,16 @@ public:
                                class FlagComponent<struct MobFlag>>,
                            struct ActorHeadRotationComponent,
                            struct ActorRotationComponent,
-                           struct MobBodyRotationComponent>); // NOLINT
+                           struct MobBodyRotationComponent>);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_setPreviousRotation\@MobSetPreviousRotSystem\@\@CAXAEAVStrictEntityContext\@\@AEAUActorHeadRotationComponent\@\@AEAUActorRotationComponent\@\@AEAUMobBodyRotationComponent\@\@\@Z
      */
     MCAPI static void
-    _setPreviousRotation(class StrictEntityContext&, struct ActorHeadRotationComponent&, struct ActorRotationComponent&, struct MobBodyRotationComponent&); // NOLINT
-
-private:
+    _setPreviousRotation(class StrictEntityContext&, struct ActorHeadRotationComponent&, struct ActorRotationComponent&, struct MobBodyRotationComponent&);
+    // NOLINTEND
 };

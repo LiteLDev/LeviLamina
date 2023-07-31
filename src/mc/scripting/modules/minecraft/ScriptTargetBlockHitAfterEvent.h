@@ -15,25 +15,27 @@ public:
     ScriptTargetBlockHitAfterEvent()                                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ScriptTargetBlockHitAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
      */
-    MCAPI ScriptTargetBlockHitAfterEvent(struct ScriptModuleMinecraft::ScriptTargetBlockHitAfterEvent const&); // NOLINT
-    /**
-     * @symbol ??4ScriptTargetBlockHitAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-     */
-    MCAPI struct ScriptModuleMinecraft::ScriptTargetBlockHitAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptTargetBlockHitAfterEvent&&); // NOLINT
-    /**
-     * @symbol ??1ScriptTargetBlockHitAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptTargetBlockHitAfterEvent(); // NOLINT
+    MCAPI ScriptTargetBlockHitAfterEvent(struct ScriptModuleMinecraft::ScriptTargetBlockHitAfterEvent const&);
     /**
      * @symbol
      * ?bind\@ScriptTargetBlockHitAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptTargetBlockHitAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptTargetBlockHitAfterEvent>
-    bind(); // NOLINT
+    bind();
+    /**
+     * @symbol ??4ScriptTargetBlockHitAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
+     */
+    MCAPI struct ScriptModuleMinecraft::ScriptTargetBlockHitAfterEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptTargetBlockHitAfterEvent&&);
+    /**
+     * @symbol ??1ScriptTargetBlockHitAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptTargetBlockHitAfterEvent();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

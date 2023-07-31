@@ -4,11 +4,6 @@
 
 class Potion {
 public:
-    // Potion inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // Potion inner types define
     enum class PotionType {};
 
@@ -20,10 +15,11 @@ public:
     Potion()                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0Potion\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI Potion(class Potion const&); // NOLINT
+    MCAPI Potion(class Potion const&);
     /**
      * @symbol
      * ?appendFormattedPotionText\@Potion\@\@QEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4PotionType\@1\@W4PotionVariant\@1\@AEBVPlayer\@\@M\@Z
@@ -34,323 +30,316 @@ public:
         enum class Potion::PotionVariant,
         class Player const&,
         float
-    ) const; // NOLINT
+    ) const;
     /**
      * @symbol
      * ?effectDurationToString\@Potion\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4PotionType\@1\@MAEBVMobEffectInstance\@\@\@Z
      */
     MCAPI std::string
-          effectDurationToString(enum class Potion::PotionType, float, class MobEffectInstance const&) const; // NOLINT
+          effectDurationToString(enum class Potion::PotionType, float, class MobEffectInstance const&) const;
     /**
      * @symbol
      * ?effectPotencyToString\@Potion\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVMobEffectInstance\@\@\@Z
      */
-    MCAPI std::string effectPotencyToString(class MobEffectInstance const&) const; // NOLINT
+    MCAPI std::string effectPotencyToString(class MobEffectInstance const&) const;
+    /**
+     * @symbol
+     * ?getBasePotion\@Potion\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4PotionType\@1\@\@Z
+     */
+    MCAPI static std::string getBasePotion(enum class Potion::PotionType);
     /**
      * @symbol
      * ?getDescriptionId\@Potion\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getDescriptionId() const; // NOLINT
+    MCAPI std::string getDescriptionId() const;
     /**
      * @symbol
      * ?getDescriptionId\@Potion\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4PotionType\@1\@\@Z
      */
-    MCAPI std::string getDescriptionId(enum class Potion::PotionType) const; // NOLINT
+    MCAPI std::string getDescriptionId(enum class Potion::PotionType) const;
     /**
      * @symbol ?getMobEffect\@Potion\@\@QEBAAEBVMobEffectInstance\@\@XZ
      */
-    MCAPI class MobEffectInstance const& getMobEffect() const; // NOLINT
+    MCAPI class MobEffectInstance const& getMobEffect() const;
     /**
      * @symbol ?getMobEffectId\@Potion\@\@QEBAHXZ
      */
-    MCAPI int getMobEffectId() const; // NOLINT
+    MCAPI int getMobEffectId() const;
     /**
      * @symbol
      * ?getMobEffects\@Potion\@\@QEBAAEBV?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<class MobEffectInstance> const& getMobEffects() const; // NOLINT
+    MCAPI std::vector<class MobEffectInstance> const& getMobEffects() const;
     /**
      * @symbol
      * ?getPotentencyDescription\@Potion\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4PotionType\@1\@MV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@3\@AEBVMobEffectInstance\@\@\@Z
      */
     MCAPI std::string
-    getPotentencyDescription(enum class Potion::PotionType, float, class std::basic_string_view<char, struct std::char_traits<char>>, class MobEffectInstance const&)
-        const; // NOLINT
+    getPotentencyDescription(enum class Potion::PotionType, float, std::string_view, class MobEffectInstance const&)
+        const;
     /**
      * @symbol
      * ?getPotentencyDescription\@Potion\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4PotionType\@1\@M\@Z
      */
-    MCAPI std::string getPotentencyDescription(enum class Potion::PotionType, float) const; // NOLINT
-    /**
-     * @symbol ?getPotionId\@Potion\@\@QEBAHXZ
-     */
-    MCAPI int getPotionId() const; // NOLINT
-    /**
-     * @symbol ?getPotionVariant\@Potion\@\@QEBA?AW4PotionVariant\@1\@XZ
-     */
-    MCAPI enum class Potion::PotionVariant getPotionVariant() const; // NOLINT
-    /**
-     * @symbol ?getPrefix\@Potion\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string getPrefix() const; // NOLINT
-    /**
-     * @symbol ??1Potion\@\@QEAA\@XZ
-     */
-    MCAPI ~Potion(); // NOLINT
-    /**
-     * @symbol
-     * ?getBasePotion\@Potion\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4PotionType\@1\@\@Z
-     */
-    MCAPI static std::string getBasePotion(enum class Potion::PotionType); // NOLINT
+    MCAPI std::string getPotentencyDescription(enum class Potion::PotionType, float) const;
     /**
      * @symbol
      * ?getPotion\@Potion\@\@SA?AV?$shared_ptr\@$$CBVPotion\@\@\@std\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@3\@\@Z
      */
-    MCAPI static class std::shared_ptr<class Potion const>
-        getPotion(class std::basic_string_view<char, struct std::char_traits<char>>); // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> getPotion(std::string_view);
     /**
      * @symbol ?getPotion\@Potion\@\@SA?AV?$shared_ptr\@$$CBVPotion\@\@\@std\@\@H\@Z
      */
-    MCAPI static class std::shared_ptr<class Potion const> getPotion(int); // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> getPotion(int);
     /**
      * @symbol ?getPotionCount\@Potion\@\@SAHXZ
      */
-    MCAPI static int getPotionCount(); // NOLINT
+    MCAPI static int getPotionCount();
+    /**
+     * @symbol ?getPotionId\@Potion\@\@QEBAHXZ
+     */
+    MCAPI int getPotionId() const;
+    /**
+     * @symbol ?getPotionVariant\@Potion\@\@QEBA?AW4PotionVariant\@1\@XZ
+     */
+    MCAPI enum class Potion::PotionVariant getPotionVariant() const;
+    /**
+     * @symbol ?getPrefix\@Potion\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     */
+    MCAPI std::string getPrefix() const;
     /**
      * @symbol ?initPotions\@Potion\@\@SAXXZ
      */
-    MCAPI static void initPotions(); // NOLINT
+    MCAPI static void initPotions();
     /**
      * @symbol ?shutdownPotions\@Potion\@\@SAXXZ
      */
-    MCAPI static void shutdownPotions(); // NOLINT
+    MCAPI static void shutdownPotions();
+    /**
+     * @symbol ??1Potion\@\@QEAA\@XZ
+     */
+    MCAPI ~Potion();
     /**
      * @symbol ?Awkward\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const Awkward; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const Awkward;
     /**
      * @symbol ?FireResistance\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const FireResistance; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const FireResistance;
     /**
      * @symbol ?Harming\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const Harming; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const Harming;
     /**
      * @symbol ?Healing\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const Healing; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const Healing;
     /**
      * @symbol ?Invisibility\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const Invisibility; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const Invisibility;
     /**
      * @symbol ?Leaping\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const Leaping; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const Leaping;
     /**
      * @symbol ?LongFireResistance\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const LongFireResistance; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const LongFireResistance;
     /**
      * @symbol ?LongInvisibility\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const LongInvisibility; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const LongInvisibility;
     /**
      * @symbol ?LongLeaping\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const LongLeaping; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const LongLeaping;
     /**
      * @symbol ?LongMundane\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const LongMundane; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const LongMundane;
     /**
      * @symbol ?LongNightvision\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const LongNightvision; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const LongNightvision;
     /**
      * @symbol ?LongPoison\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const LongPoison; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const LongPoison;
     /**
      * @symbol ?LongRegeneration\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const LongRegeneration; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const LongRegeneration;
     /**
      * @symbol ?LongSlowFalling\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const LongSlowFalling; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const LongSlowFalling;
     /**
      * @symbol ?LongSlowness\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const LongSlowness; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const LongSlowness;
     /**
      * @symbol ?LongStrength\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const LongStrength; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const LongStrength;
     /**
      * @symbol ?LongSwiftness\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const LongSwiftness; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const LongSwiftness;
     /**
      * @symbol ?LongTurtleMaster\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const LongTurtleMaster; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const LongTurtleMaster;
     /**
      * @symbol ?LongWaterBreathing\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const LongWaterBreathing; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const LongWaterBreathing;
     /**
      * @symbol ?LongWeakness\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const LongWeakness; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const LongWeakness;
     /**
      * @symbol ?Mundane\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const Mundane; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const Mundane;
     /**
      * @symbol ?Nightvision\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const Nightvision; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const Nightvision;
     /**
      * @symbol ?Poison\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const Poison; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const Poison;
     /**
      * @symbol ?Regeneration\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const Regeneration; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const Regeneration;
     /**
      * @symbol ?SlowFalling\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const SlowFalling; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const SlowFalling;
     /**
      * @symbol ?Slowness\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const Slowness; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const Slowness;
     /**
      * @symbol ?Strength\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const Strength; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const Strength;
     /**
      * @symbol ?StrongHarming\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const StrongHarming; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const StrongHarming;
     /**
      * @symbol ?StrongHealing\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const StrongHealing; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const StrongHealing;
     /**
      * @symbol ?StrongLeaping\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const StrongLeaping; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const StrongLeaping;
     /**
      * @symbol ?StrongPoison\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const StrongPoison; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const StrongPoison;
     /**
      * @symbol ?StrongRegeneration\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const StrongRegeneration; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const StrongRegeneration;
     /**
      * @symbol ?StrongSlowness\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const StrongSlowness; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const StrongSlowness;
     /**
      * @symbol ?StrongStrength\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const StrongStrength; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const StrongStrength;
     /**
      * @symbol ?StrongSwiftness\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const StrongSwiftness; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const StrongSwiftness;
     /**
      * @symbol ?StrongTurtleMaster\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const StrongTurtleMaster; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const StrongTurtleMaster;
     /**
      * @symbol ?Swiftness\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const Swiftness; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const Swiftness;
     /**
      * @symbol ?Thick\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const Thick; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const Thick;
     /**
      * @symbol ?TurtleMaster\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const TurtleMaster; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const TurtleMaster;
     /**
      * @symbol ?Water\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const Water; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const Water;
     /**
      * @symbol ?WaterBreathing\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const WaterBreathing; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const WaterBreathing;
     /**
      * @symbol ?Weakness\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const Weakness; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const Weakness;
     /**
      * @symbol ?Wither\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */
-    MCAPI static class std::shared_ptr<class Potion const> const Wither; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> const Wither;
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0Potion\@\@AEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@2\@V?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@2\@W4PotionVariant\@0\@\@Z
      */
     MCAPI Potion(
-        class std::basic_string_view<char, struct std::char_traits<char>>,
+        std::string_view,
         std::vector<std::string>,
         std::vector<class MobEffectInstance>,
         enum class Potion::PotionVariant
-    ); // NOLINT
+    );
     /**
      * @symbol
      * ??0Potion\@\@AEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@0AEBVMobEffectInstance\@\@W4PotionVariant\@0\@\@Z
      */
-    MCAPI Potion(
-        class std::basic_string_view<char, struct std::char_traits<char>>,
-        class std::basic_string_view<char, struct std::char_traits<char>>,
-        class MobEffectInstance const&,
-        enum class Potion::PotionVariant
-    ); // NOLINT
+    MCAPI Potion(std::string_view, std::string_view, class MobEffectInstance const&, enum class Potion::PotionVariant);
     /**
      * @symbol
      * ?_getDescriptionIdCombiningStrings\@Potion\@\@AEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4PotionType\@1\@\@Z
      */
-    MCAPI std::string _getDescriptionIdCombiningStrings(enum class Potion::PotionType) const; // NOLINT
+    MCAPI std::string _getDescriptionIdCombiningStrings(enum class Potion::PotionType) const;
     /**
      * @symbol
      * ?_getDescriptionIdSingleString\@Potion\@\@AEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4PotionType\@1\@\@Z
      */
-    MCAPI std::string _getDescriptionIdSingleString(enum class Potion::PotionType) const; // NOLINT
+    MCAPI std::string _getDescriptionIdSingleString(enum class Potion::PotionType) const;
     /**
      * @symbol ?addPotion\@Potion\@\@CAXV?$shared_ptr\@$$CBVPotion\@\@\@std\@\@\@Z
      */
-    MCAPI static void addPotion(class std::shared_ptr<class Potion const>); // NOLINT
+    MCAPI static void addPotion(std::shared_ptr<class Potion const>);
+    // NOLINTEND
 
 private:
+    // NOLINTBEGIN
     /**
      * @symbol ?mLastId\@Potion\@\@0HA
      */
-    MCAPI static int mLastId; // NOLINT
+    MCAPI static int mLastId;
     /**
      * @symbol ?mPotionsById\@Potion\@\@0PAV?$shared_ptr\@$$CBVPotion\@\@\@std\@\@A
      */
-    MCAPI static class std::shared_ptr<class Potion const> mPotionsById[]; // NOLINT
+    MCAPI static std::shared_ptr<class Potion const> mPotionsById[];
     /**
      * @symbol
      * ?mPotionsByName\@Potion\@\@0V?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HU?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@std\@\@\@2\@\@std\@\@A
      */
-    MCAPI static class std::unordered_map<
-        std::string,
-        int,
-        struct std::hash<std::string>,
-        struct std::equal_to<std::string>,
-        class std::allocator<struct std::pair<std::string const, int>>>
-        mPotionsByName; // NOLINT
+    MCAPI static std::unordered_map<std::string, int> mPotionsByName;
+    // NOLINTEND
 };

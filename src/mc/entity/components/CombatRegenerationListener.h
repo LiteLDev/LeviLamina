@@ -11,14 +11,16 @@ public:
     CombatRegenerationListener()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?onEvent\@CombatRegenerationListener\@\@UEAA?AW4EventResult\@\@AEBUActorNotificationEvent\@\@\@Z
      */
-    virtual enum class EventResult onEvent(struct ActorNotificationEvent const&); // NOLINT
+    virtual enum class EventResult onEvent(struct ActorNotificationEvent const&);
+    // NOLINTEND
 };

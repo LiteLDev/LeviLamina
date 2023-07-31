@@ -11,8 +11,10 @@ public:
     ActorStartRidingEvent()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ActorStartRidingEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorStartRidingEvent(); // NOLINT
+    MCAPI ~ActorStartRidingEvent();
+    // NOLINTEND
 };

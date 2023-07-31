@@ -15,20 +15,23 @@ public:
     AquiferNoises()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0AquiferNoises\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI AquiferNoises(class AquiferNoises const&); // NOLINT
-    /**
-     * @symbol ??1AquiferNoises\@\@QEAA\@XZ
-     */
-    MCAPI ~AquiferNoises(); // NOLINT
+    MCAPI AquiferNoises(class AquiferNoises const&);
     /**
      * @symbol ?make\@AquiferNoises\@\@SA?AV1\@AEBVXoroshiroPositionalRandomFactory\@\@\@Z
      */
-    MCAPI static class AquiferNoises make(class XoroshiroPositionalRandomFactory const&); // NOLINT
+    MCAPI static class AquiferNoises make(class XoroshiroPositionalRandomFactory const&);
+    /**
+     * @symbol ??1AquiferNoises\@\@QEAA\@XZ
+     */
+    MCAPI ~AquiferNoises();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0AquiferNoises\@\@AEAA\@V?$NormalNoiseImpl\@$0A\@V?$MultiOctaveNoiseImpl\@$0A\@V?$ParityImprovedNoiseImpl\@$0A\@\@\@\@\@\@\@000VXoroshiroPositionalRandomFactory\@\@\@Z
@@ -39,7 +42,6 @@ public:
         class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>,
         class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>,
         class XoroshiroPositionalRandomFactory
-    ); // NOLINT
-
-private:
+    );
+    // NOLINTEND
 };

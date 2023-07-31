@@ -4,11 +4,6 @@
 
 class CommandBlockNameResult {
 public:
-    // CommandBlockNameResult inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // CommandBlockNameResult inner types define
     enum class Result {};
 
@@ -19,28 +14,30 @@ public:
     CommandBlockNameResult()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0CommandBlockNameResult\@\@QEAA\@AEBVHashedString\@\@PEBVBlock\@\@_N\@Z
      */
-    MCAPI CommandBlockNameResult(class HashedString const&, class Block const*, bool); // NOLINT
+    MCAPI CommandBlockNameResult(class HashedString const&, class Block const*, bool);
     /**
      * @symbol ?getBlock\@CommandBlockNameResult\@\@QEBAPEBVBlock\@\@XZ
      */
-    MCAPI class Block const* getBlock() const; // NOLINT
+    MCAPI class Block const* getBlock() const;
     /**
      * @symbol ?getResult\@CommandBlockNameResult\@\@QEBA?AW4Result\@1\@XZ
      */
-    MCAPI enum class CommandBlockNameResult::Result getResult() const; // NOLINT
+    MCAPI enum class CommandBlockNameResult::Result getResult() const;
     /**
      * @symbol ?isComplexAlias\@CommandBlockNameResult\@\@QEBA_NXZ
      */
-    MCAPI bool isComplexAlias() const; // NOLINT
+    MCAPI bool isComplexAlias() const;
     /**
      * @symbol ?isSameBlock\@CommandBlockNameResult\@\@QEBA_NAEBVBlock\@\@_N\@Z
      */
-    MCAPI bool isSameBlock(class Block const&, bool) const; // NOLINT
+    MCAPI bool isSameBlock(class Block const&, bool) const;
     /**
      * @symbol ??1CommandBlockNameResult\@\@QEAA\@XZ
      */
-    MCAPI ~CommandBlockNameResult(); // NOLINT
+    MCAPI ~CommandBlockNameResult();
+    // NOLINTEND
 };

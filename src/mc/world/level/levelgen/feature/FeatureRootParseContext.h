@@ -13,10 +13,12 @@ public:
     FeatureRootParseContext()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1FeatureRootParseContext\@FeatureLoading\@\@QEAA\@XZ
      */
-    MCAPI ~FeatureRootParseContext(); // NOLINT
+    MCAPI ~FeatureRootParseContext();
+    // NOLINTEND
 };
 
 }; // namespace FeatureLoading

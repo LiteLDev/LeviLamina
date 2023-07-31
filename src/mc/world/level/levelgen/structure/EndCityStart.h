@@ -14,22 +14,24 @@ public:
     EndCityStart()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 2
      * @symbol ?isValid\@EndCityStart\@\@UEBA_NXZ
      */
-    virtual bool isValid() const; // NOLINT
+    virtual bool isValid() const;
     /**
      * @symbol ??0EndCityStart\@\@QEAA\@AEAVDimension\@\@AEAVRandom\@\@AEBVChunkPos\@\@\@Z
      */
-    MCAPI EndCityStart(class Dimension&, class Random&, class ChunkPos const&); // NOLINT
+    MCAPI EndCityStart(class Dimension&, class Random&, class ChunkPos const&);
     /**
      * @symbol ?getYPositionForFeature\@EndCityStart\@\@SAHAEBVChunkPos\@\@AEAVDimension\@\@\@Z
      */
-    MCAPI static int getYPositionForFeature(class ChunkPos const&, class Dimension&); // NOLINT
+    MCAPI static int getYPositionForFeature(class ChunkPos const&, class Dimension&);
+    // NOLINTEND
 };

@@ -17,17 +17,18 @@ public:
     BlockDisplayName11930Upgrade(BlockDisplayName11930Upgrade const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?previousSchema\@BlockDisplayName11930Upgrade\@BlockDisplayNameVersioning\@\@UEBAXAEAVSchemaFactory\@cereal\@\@\@Z
      */
-    virtual void previousSchema(class cereal::SchemaFactory&) const; // NOLINT
+    virtual void previousSchema(class cereal::SchemaFactory&) const;
     /**
      * @vftbl 2
      * @symbol
@@ -36,11 +37,12 @@ public:
     virtual bool upgradeToNext(class rapidjson::GenericDocument<
                                struct rapidjson::UTF8<char>,
                                class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>,
-                               class rapidjson::CrtAllocator>&) const; // NOLINT
+                               class rapidjson::CrtAllocator>&) const;
     /**
      * @symbol ??0BlockDisplayName11930Upgrade\@BlockDisplayNameVersioning\@\@QEAA\@XZ
      */
-    MCAPI BlockDisplayName11930Upgrade(); // NOLINT
+    MCAPI BlockDisplayName11930Upgrade();
+    // NOLINTEND
 };
 
 }; // namespace BlockDisplayNameVersioning

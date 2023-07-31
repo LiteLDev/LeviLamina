@@ -16,12 +16,14 @@ public:
     EntityTypes()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?parseJson\@EntityTypes\@\@QEAA_NAEBVValue\@Json\@\@\@Z
      */
-    MCAPI bool parseJson(class Json::Value const&); // NOLINT
+    MCAPI bool parseJson(class Json::Value const&);
     /**
      * @symbol ??1EntityTypes\@\@QEAA\@XZ
      */
-    MCAPI ~EntityTypes(); // NOLINT
+    MCAPI ~EntityTypes();
+    // NOLINTEND
 };

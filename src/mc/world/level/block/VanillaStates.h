@@ -9,538 +9,539 @@ template<typename T0> class BlockStateVariant;
 // clang-format on
 
 namespace VanillaStates {
+// NOLINTBEGIN
 /**
  * @symbol ?Active\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const Active; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const Active;
 /**
  * @symbol ?Age\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const Age; // NOLINT
+MCAPI extern class BlockStateVariant<int> const Age;
 /**
  * @symbol ?AgeBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const AgeBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const AgeBit;
 /**
  * @symbol ?AllowUnderwaterBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const AllowUnderwaterBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const AllowUnderwaterBit;
 /**
  * @symbol ?AttachedBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const AttachedBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const AttachedBit;
 /**
  * @symbol ?Attachment\@VanillaStates\@\@3V?$BlockStateVariant\@W4AttachmentType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class AttachmentType> const Attachment; // NOLINT
+MCAPI extern class BlockStateVariant<enum class AttachmentType> const Attachment;
 /**
  * @symbol ?BambooLeafSize\@VanillaStates\@\@3V?$BlockStateVariant\@W4LeafSize\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class LeafSize> const BambooLeafSize; // NOLINT
+MCAPI extern class BlockStateVariant<enum class LeafSize> const BambooLeafSize;
 /**
  * @symbol ?BambooThickness\@VanillaStates\@\@3V?$BlockStateVariant\@W4StalkThickness\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class StalkThickness> const BambooThickness; // NOLINT
+MCAPI extern class BlockStateVariant<enum class StalkThickness> const BambooThickness;
 /**
  * @symbol ?BeehiveHoneyLevel\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const BeehiveHoneyLevel; // NOLINT
+MCAPI extern class BlockStateVariant<int> const BeehiveHoneyLevel;
 /**
  * @symbol ?BigDripleafHead\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const BigDripleafHead; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const BigDripleafHead;
 /**
  * @symbol ?BigDripleafTilt\@VanillaStates\@\@3V?$BlockStateVariant\@W4BigDripleafTilt\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class BigDripleafTilt> const BigDripleafTilt; // NOLINT
+MCAPI extern class BlockStateVariant<enum class BigDripleafTilt> const BigDripleafTilt;
 /**
  * @symbol ?BiteCounter\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const BiteCounter; // NOLINT
+MCAPI extern class BlockStateVariant<int> const BiteCounter;
 /**
  * @symbol ?BlockLightLevel\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const BlockLightLevel; // NOLINT
+MCAPI extern class BlockStateVariant<int> const BlockLightLevel;
 /**
  * @symbol ?Bloom\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const Bloom; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const Bloom;
 /**
  * @symbol ?BookshelfOccupiedSlots\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const BookshelfOccupiedSlots; // NOLINT
+MCAPI extern class BlockStateVariant<int> const BookshelfOccupiedSlots;
 /**
  * @symbol ?BrewingStandSlotABit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const BrewingStandSlotABit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const BrewingStandSlotABit;
 /**
  * @symbol ?BrewingStandSlotBBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const BrewingStandSlotBBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const BrewingStandSlotBBit;
 /**
  * @symbol ?BrewingStandSlotCBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const BrewingStandSlotCBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const BrewingStandSlotCBit;
 /**
  * @symbol ?BrushedProgress\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const BrushedProgress; // NOLINT
+MCAPI extern class BlockStateVariant<int> const BrushedProgress;
 /**
  * @symbol ?ButtonPressedBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const ButtonPressedBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const ButtonPressedBit;
 /**
  * @symbol ?CanSummon\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const CanSummon; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const CanSummon;
 /**
  * @symbol ?Candles\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const Candles; // NOLINT
+MCAPI extern class BlockStateVariant<int> const Candles;
 /**
  * @symbol ?CauldronLiquid\@VanillaStates\@\@3V?$BlockStateVariant\@W4CauldronLiquidType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class CauldronLiquidType> const CauldronLiquid; // NOLINT
+MCAPI extern class BlockStateVariant<enum class CauldronLiquidType> const CauldronLiquid;
 /**
  * @symbol ?ChemistryTableType\@VanillaStates\@\@3V?$BlockStateVariant\@W4ChemistryTableType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class ChemistryTableType> const ChemistryTableType; // NOLINT
+MCAPI extern class BlockStateVariant<enum class ChemistryTableType> const ChemistryTableType;
 /**
  * @symbol ?ChiselType\@VanillaStates\@\@3V?$BlockStateVariant\@W4ChiselType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class ChiselType> const ChiselType; // NOLINT
+MCAPI extern class BlockStateVariant<enum class ChiselType> const ChiselType;
 /**
  * @symbol ?ClusterCount\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const ClusterCount; // NOLINT
+MCAPI extern class BlockStateVariant<int> const ClusterCount;
 /**
  * @symbol ?Color\@VanillaStates\@\@3V?$BlockStateVariant\@W4BlockColor\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class BlockColor> const Color; // NOLINT
+MCAPI extern class BlockStateVariant<enum class BlockColor> const Color;
 /**
  * @symbol ?ColorBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const ColorBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const ColorBit;
 /**
  * @symbol ?ComposterFillLevel\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const ComposterFillLevel; // NOLINT
+MCAPI extern class BlockStateVariant<int> const ComposterFillLevel;
 /**
  * @symbol ?ConditionalBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const ConditionalBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const ConditionalBit;
 /**
  * @symbol ?CoralColor\@VanillaStates\@\@3V?$BlockStateVariant\@W4CoralColor\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class CoralColor> const CoralColor; // NOLINT
+MCAPI extern class BlockStateVariant<enum class CoralColor> const CoralColor;
 /**
  * @symbol ?CoralDirection\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const CoralDirection; // NOLINT
+MCAPI extern class BlockStateVariant<int> const CoralDirection;
 /**
  * @symbol ?CoralFanDirection\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const CoralFanDirection; // NOLINT
+MCAPI extern class BlockStateVariant<int> const CoralFanDirection;
 /**
  * @symbol ?CoralHangTypeBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const CoralHangTypeBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const CoralHangTypeBit;
 /**
  * @symbol ?CoveredBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const CoveredBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const CoveredBit;
 /**
  * @symbol ?CrackedState\@VanillaStates\@\@3V?$BlockStateVariant\@W4HatchLevel\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class HatchLevel> const CrackedState; // NOLINT
+MCAPI extern class BlockStateVariant<enum class HatchLevel> const CrackedState;
 /**
  * @symbol ?DEPRECATED\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const DEPRECATED; // NOLINT
+MCAPI extern class BlockStateVariant<int> const DEPRECATED;
 /**
  * @symbol ?Damage\@VanillaStates\@\@3V?$BlockStateVariant\@W4AnvilDamage\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class AnvilDamage> const Damage; // NOLINT
+MCAPI extern class BlockStateVariant<enum class AnvilDamage> const Damage;
 /**
  * @symbol ?DeadBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const DeadBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const DeadBit;
 /**
  * @symbol ?Direction\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const Direction; // NOLINT
+MCAPI extern class BlockStateVariant<int> const Direction;
 /**
  * @symbol ?DirtType\@VanillaStates\@\@3V?$BlockStateVariant\@W4DirtType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class DirtType> const DirtType; // NOLINT
+MCAPI extern class BlockStateVariant<enum class DirtType> const DirtType;
 /**
  * @symbol ?DisarmedBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const DisarmedBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const DisarmedBit;
 /**
  * @symbol ?DoorHingeBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const DoorHingeBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const DoorHingeBit;
 /**
  * @symbol ?DoublePlantType\@VanillaStates\@\@3V?$BlockStateVariant\@W4DoublePlantType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class DoublePlantType> const DoublePlantType; // NOLINT
+MCAPI extern class BlockStateVariant<enum class DoublePlantType> const DoublePlantType;
 /**
  * @symbol ?DragDown\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const DragDown; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const DragDown;
 /**
  * @symbol ?DripstoneThickness\@VanillaStates\@\@3V?$BlockStateVariant\@W4DripstoneThickness\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class DripstoneThickness> const DripstoneThickness; // NOLINT
+MCAPI extern class BlockStateVariant<enum class DripstoneThickness> const DripstoneThickness;
 /**
  * @symbol ?EndPortalEyeBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const EndPortalEyeBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const EndPortalEyeBit;
 /**
  * @symbol ?ExplodeBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const ExplodeBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const ExplodeBit;
 /**
  * @symbol ?Extinguished\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const Extinguished; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const Extinguished;
 /**
  * @symbol ?FacingDirection\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const FacingDirection; // NOLINT
+MCAPI extern class BlockStateVariant<int> const FacingDirection;
 /**
  * @symbol ?FillLevel\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const FillLevel; // NOLINT
+MCAPI extern class BlockStateVariant<int> const FillLevel;
 /**
  * @symbol ?FlowerType\@VanillaStates\@\@3V?$BlockStateVariant\@W4FlowerType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class FlowerType> const FlowerType; // NOLINT
+MCAPI extern class BlockStateVariant<enum class FlowerType> const FlowerType;
 /**
  * @symbol ?GrowingPlantAge\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const GrowingPlantAge; // NOLINT
+MCAPI extern class BlockStateVariant<int> const GrowingPlantAge;
 /**
  * @symbol ?Growth\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const Growth; // NOLINT
+MCAPI extern class BlockStateVariant<int> const Growth;
 /**
  * @symbol ?HangingBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const HangingBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const HangingBit;
 /**
  * @symbol ?HeadPieceBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const HeadPieceBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const HeadPieceBit;
 /**
  * @symbol ?Height\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const Height; // NOLINT
+MCAPI extern class BlockStateVariant<int> const Height;
 /**
  * @symbol ?HugeMushroomBits\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const HugeMushroomBits; // NOLINT
+MCAPI extern class BlockStateVariant<int> const HugeMushroomBits;
 /**
  * @symbol ?InWallBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const InWallBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const InWallBit;
 /**
  * @symbol ?InfiniburnBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const InfiniburnBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const InfiniburnBit;
 /**
  * @symbol ?ItemFrameMapBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const ItemFrameMapBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const ItemFrameMapBit;
 /**
  * @symbol ?ItemFramePhotoBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const ItemFramePhotoBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const ItemFramePhotoBit;
 /**
  * @symbol ?KelpAge\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const KelpAge; // NOLINT
+MCAPI extern class BlockStateVariant<int> const KelpAge;
 /**
  * @symbol ?LeverDirection\@VanillaStates\@\@3V?$BlockStateVariant\@W4LeverDirection\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class LeverDirection> const LeverDirection; // NOLINT
+MCAPI extern class BlockStateVariant<enum class LeverDirection> const LeverDirection;
 /**
  * @symbol ?LiquidDepth\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const LiquidDepth; // NOLINT
+MCAPI extern class BlockStateVariant<int> const LiquidDepth;
 /**
  * @symbol ?Lit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const Lit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const Lit;
 /**
  * @symbol ?MoisturizedAmount\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const MoisturizedAmount; // NOLINT
+MCAPI extern class BlockStateVariant<int> const MoisturizedAmount;
 /**
  * @symbol ?MonsterEggStoneType\@VanillaStates\@\@3V?$BlockStateVariant\@W4MonsterEggStoneType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class MonsterEggStoneType> const MonsterEggStoneType; // NOLINT
+MCAPI extern class BlockStateVariant<enum class MonsterEggStoneType> const MonsterEggStoneType;
 /**
  * @symbol ?MultiFaceDirectionBits\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const MultiFaceDirectionBits; // NOLINT
+MCAPI extern class BlockStateVariant<int> const MultiFaceDirectionBits;
 /**
  * @symbol ?NewLeavesType\@VanillaStates\@\@3V?$BlockStateVariant\@W4NewLeavesType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class NewLeavesType> const NewLeavesType; // NOLINT
+MCAPI extern class BlockStateVariant<enum class NewLeavesType> const NewLeavesType;
 /**
  * @symbol ?NewLogType\@VanillaStates\@\@3V?$BlockStateVariant\@W4NewLogType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class NewLogType> const NewLogType; // NOLINT
+MCAPI extern class BlockStateVariant<enum class NewLogType> const NewLogType;
 /**
  * @symbol ?NoDropBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const NoDropBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const NoDropBit;
 /**
  * @symbol ?OccupiedBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const OccupiedBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const OccupiedBit;
 /**
  * @symbol ?OldLeavesType\@VanillaStates\@\@3V?$BlockStateVariant\@W4OldLeavesType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class OldLeavesType> const OldLeavesType; // NOLINT
+MCAPI extern class BlockStateVariant<enum class OldLeavesType> const OldLeavesType;
 /**
  * @symbol ?OldLogType\@VanillaStates\@\@3V?$BlockStateVariant\@W4OldLogType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class OldLogType> const OldLogType; // NOLINT
+MCAPI extern class BlockStateVariant<enum class OldLogType> const OldLogType;
 /**
  * @symbol ?OpenBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const OpenBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const OpenBit;
 /**
  * @symbol ?OutputLitBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const OutputLitBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const OutputLitBit;
 /**
  * @symbol ?OutputSubtractBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const OutputSubtractBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const OutputSubtractBit;
 /**
  * @symbol ?PersistentBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const PersistentBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const PersistentBit;
 /**
  * @symbol ?PillarAxis\@VanillaStates\@\@3V?$BlockStateVariant\@W4PillarAxis\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class PillarAxis> const PillarAxis; // NOLINT
+MCAPI extern class BlockStateVariant<enum class PillarAxis> const PillarAxis;
 /**
  * @symbol ?PortalAxis\@VanillaStates\@\@3V?$BlockStateVariant\@W4PortalAxis\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class PortalAxis> const PortalAxis; // NOLINT
+MCAPI extern class BlockStateVariant<enum class PortalAxis> const PortalAxis;
 /**
  * @symbol ?PoweredBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const PoweredBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const PoweredBit;
 /**
  * @symbol ?PrismarineBlockType\@VanillaStates\@\@3V?$BlockStateVariant\@W4PrismarineBlockType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class PrismarineBlockType> const PrismarineBlockType; // NOLINT
+MCAPI extern class BlockStateVariant<enum class PrismarineBlockType> const PrismarineBlockType;
 /**
  * @symbol ?PropaguleStage\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const PropaguleStage; // NOLINT
+MCAPI extern class BlockStateVariant<int> const PropaguleStage;
 /**
  * @symbol ?RailDataBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const RailDataBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const RailDataBit;
 /**
  * @symbol ?RailDirection\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const RailDirection; // NOLINT
+MCAPI extern class BlockStateVariant<int> const RailDirection;
 /**
  * @symbol ?RedstoneSignal\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const RedstoneSignal; // NOLINT
+MCAPI extern class BlockStateVariant<int> const RedstoneSignal;
 /**
  * @symbol ?RepeaterDelay\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const RepeaterDelay; // NOLINT
+MCAPI extern class BlockStateVariant<int> const RepeaterDelay;
 /**
  * @symbol ?RespawnAnchorCharge\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const RespawnAnchorCharge; // NOLINT
+MCAPI extern class BlockStateVariant<int> const RespawnAnchorCharge;
 /**
  * @symbol ?Rotation\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const Rotation; // NOLINT
+MCAPI extern class BlockStateVariant<int> const Rotation;
 /**
  * @symbol ?SandType\@VanillaStates\@\@3V?$BlockStateVariant\@W4SandType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class SandType> const SandType; // NOLINT
+MCAPI extern class BlockStateVariant<enum class SandType> const SandType;
 /**
  * @symbol ?SandstoneType\@VanillaStates\@\@3V?$BlockStateVariant\@W4SandstoneType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class SandstoneType> const SandstoneType; // NOLINT
+MCAPI extern class BlockStateVariant<enum class SandstoneType> const SandstoneType;
 /**
  * @symbol ?SaplingType\@VanillaStates\@\@3V?$BlockStateVariant\@W4SaplingType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class SaplingType> const SaplingType; // NOLINT
+MCAPI extern class BlockStateVariant<enum class SaplingType> const SaplingType;
 /**
  * @symbol ?SculkSensorPhase\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const SculkSensorPhase; // NOLINT
+MCAPI extern class BlockStateVariant<int> const SculkSensorPhase;
 /**
  * @symbol ?SeagrassType\@VanillaStates\@\@3V?$BlockStateVariant\@W4SeagrassType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class SeagrassType> const SeagrassType; // NOLINT
+MCAPI extern class BlockStateVariant<enum class SeagrassType> const SeagrassType;
 /**
  * @symbol ?SpongeType\@VanillaStates\@\@3V?$BlockStateVariant\@W4SpongeType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class SpongeType> const SpongeType; // NOLINT
+MCAPI extern class BlockStateVariant<enum class SpongeType> const SpongeType;
 /**
  * @symbol ?Stability\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const Stability; // NOLINT
+MCAPI extern class BlockStateVariant<int> const Stability;
 /**
  * @symbol ?StabilityCheckBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const StabilityCheckBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const StabilityCheckBit;
 /**
  * @symbol ?StandingRotation\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const StandingRotation; // NOLINT
+MCAPI extern class BlockStateVariant<int> const StandingRotation;
 /**
  * @symbol ?StoneBrickType\@VanillaStates\@\@3V?$BlockStateVariant\@W4StoneBrickType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class StoneBrickType> const StoneBrickType; // NOLINT
+MCAPI extern class BlockStateVariant<enum class StoneBrickType> const StoneBrickType;
 /**
  * @symbol ?StoneSlabType\@VanillaStates\@\@3V?$BlockStateVariant\@W4StoneSlabType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class StoneSlabType> const StoneSlabType; // NOLINT
+MCAPI extern class BlockStateVariant<enum class StoneSlabType> const StoneSlabType;
 /**
  * @symbol ?StoneSlabType2\@VanillaStates\@\@3V?$BlockStateVariant\@W4StoneSlabType2\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class StoneSlabType2> const StoneSlabType2; // NOLINT
+MCAPI extern class BlockStateVariant<enum class StoneSlabType2> const StoneSlabType2;
 /**
  * @symbol ?StoneSlabType3\@VanillaStates\@\@3V?$BlockStateVariant\@W4StoneSlabType3\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class StoneSlabType3> const StoneSlabType3; // NOLINT
+MCAPI extern class BlockStateVariant<enum class StoneSlabType3> const StoneSlabType3;
 /**
  * @symbol ?StoneSlabType4\@VanillaStates\@\@3V?$BlockStateVariant\@W4StoneSlabType4\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class StoneSlabType4> const StoneSlabType4; // NOLINT
+MCAPI extern class BlockStateVariant<enum class StoneSlabType4> const StoneSlabType4;
 /**
  * @symbol ?StoneType\@VanillaStates\@\@3V?$BlockStateVariant\@W4StoneType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class StoneType> const StoneType; // NOLINT
+MCAPI extern class BlockStateVariant<enum class StoneType> const StoneType;
 /**
  * @symbol ?StrippedBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const StrippedBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const StrippedBit;
 /**
  * @symbol ?StructureBlockType\@VanillaStates\@\@3V?$BlockStateVariant\@W4StructureBlockType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class StructureBlockType> const StructureBlockType; // NOLINT
+MCAPI extern class BlockStateVariant<enum class StructureBlockType> const StructureBlockType;
 /**
  * @symbol ?StructureVoidType\@VanillaStates\@\@3V?$BlockStateVariant\@W4StructureVoidType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class StructureVoidType> const StructureVoidType; // NOLINT
+MCAPI extern class BlockStateVariant<enum class StructureVoidType> const StructureVoidType;
 /**
  * @symbol ?SuspendedBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const SuspendedBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const SuspendedBit;
 /**
  * @symbol ?TallGrassType\@VanillaStates\@\@3V?$BlockStateVariant\@W4TallGrassType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class TallGrassType> const TallGrassType; // NOLINT
+MCAPI extern class BlockStateVariant<enum class TallGrassType> const TallGrassType;
 /**
  * @symbol ?ToggleBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const ToggleBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const ToggleBit;
 /**
  * @symbol ?TopSlotBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const TopSlotBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const TopSlotBit;
 /**
  * @symbol ?TorchFacingDirection\@VanillaStates\@\@3V?$BlockStateVariant\@W4TorchFacing\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class TorchFacing> const TorchFacingDirection; // NOLINT
+MCAPI extern class BlockStateVariant<enum class TorchFacing> const TorchFacingDirection;
 /**
  * @symbol ?TriggeredBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const TriggeredBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const TriggeredBit;
 /**
  * @symbol ?TurtleEggCount\@VanillaStates\@\@3V?$BlockStateVariant\@W4EggCount\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class EggCount> const TurtleEggCount; // NOLINT
+MCAPI extern class BlockStateVariant<enum class EggCount> const TurtleEggCount;
 /**
  * @symbol ?TwistingVinesAge\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const TwistingVinesAge; // NOLINT
+MCAPI extern class BlockStateVariant<int> const TwistingVinesAge;
 /**
  * @symbol ?UpdateBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const UpdateBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const UpdateBit;
 /**
  * @symbol ?UpperBlockBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const UpperBlockBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const UpperBlockBit;
 /**
  * @symbol ?UpsideDownBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const UpsideDownBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const UpsideDownBit;
 /**
  * @symbol ?VineDirectionBits\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const VineDirectionBits; // NOLINT
+MCAPI extern class BlockStateVariant<int> const VineDirectionBits;
 /**
  * @symbol ?WallBlockType\@VanillaStates\@\@3V?$BlockStateVariant\@W4WallBlockType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class WallBlockType> const WallBlockType; // NOLINT
+MCAPI extern class BlockStateVariant<enum class WallBlockType> const WallBlockType;
 /**
  * @symbol ?WallConnectionTypeEast\@VanillaStates\@\@3V?$BlockStateVariant\@W4WallConnectionType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class WallConnectionType> const WallConnectionTypeEast; // NOLINT
+MCAPI extern class BlockStateVariant<enum class WallConnectionType> const WallConnectionTypeEast;
 /**
  * @symbol ?WallConnectionTypeNorth\@VanillaStates\@\@3V?$BlockStateVariant\@W4WallConnectionType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class WallConnectionType> const WallConnectionTypeNorth; // NOLINT
+MCAPI extern class BlockStateVariant<enum class WallConnectionType> const WallConnectionTypeNorth;
 /**
  * @symbol ?WallConnectionTypeSouth\@VanillaStates\@\@3V?$BlockStateVariant\@W4WallConnectionType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class WallConnectionType> const WallConnectionTypeSouth; // NOLINT
+MCAPI extern class BlockStateVariant<enum class WallConnectionType> const WallConnectionTypeSouth;
 /**
  * @symbol ?WallConnectionTypeWest\@VanillaStates\@\@3V?$BlockStateVariant\@W4WallConnectionType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class WallConnectionType> const WallConnectionTypeWest; // NOLINT
+MCAPI extern class BlockStateVariant<enum class WallConnectionType> const WallConnectionTypeWest;
 /**
  * @symbol ?WallPostBit\@VanillaStates\@\@3V?$BlockStateVariant\@_N\@\@B
  */
-MCAPI extern class BlockStateVariant<bool> const WallPostBit; // NOLINT
+MCAPI extern class BlockStateVariant<bool> const WallPostBit;
 /**
  * @symbol ?WeepingVinesAge\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const WeepingVinesAge; // NOLINT
+MCAPI extern class BlockStateVariant<int> const WeepingVinesAge;
 /**
  * @symbol ?WeirdoDirection\@VanillaStates\@\@3V?$BlockStateVariant\@H\@\@B
  */
-MCAPI extern class BlockStateVariant<int> const WeirdoDirection; // NOLINT
+MCAPI extern class BlockStateVariant<int> const WeirdoDirection;
 /**
  * @symbol ?WoodType\@VanillaStates\@\@3V?$BlockStateVariant\@W4WoodType\@\@\@\@B
  */
-MCAPI extern class BlockStateVariant<enum class WoodType> const WoodType; // NOLINT
+MCAPI extern class BlockStateVariant<enum class WoodType> const WoodType;
 /**
  * @symbol ?getState\@VanillaStates\@\@YAPEBVBlockState\@\@AEBVHashedString\@\@\@Z
  */
-MCAPI class BlockState const* getState(class HashedString const&); // NOLINT
+MCAPI class BlockState const* getState(class HashedString const&);
 /**
  * @symbol ?getState\@VanillaStates\@\@YAPEBVBlockState\@\@AEBVHashedString\@\@AEAUCachedBlockStateMapPtr\@1\@\@Z
  */
-MCAPI class BlockState const*
-getState(class HashedString const&, struct VanillaStates::CachedBlockStateMapPtr&); // NOLINT
+MCAPI class BlockState const* getState(class HashedString const&, struct VanillaStates::CachedBlockStateMapPtr&);
 /**
  * @symbol ?registerStates\@VanillaStates\@\@YAXXZ
  */
-MCAPI void registerStates(); // NOLINT
+MCAPI void registerStates();
 /**
  * @symbol ?unregisterStates\@VanillaStates\@\@YAXXZ
  */
-MCAPI void unregisterStates(); // NOLINT
+MCAPI void unregisterStates();
+// NOLINTEND
 
 }; // namespace VanillaStates

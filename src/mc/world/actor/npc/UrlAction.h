@@ -13,14 +13,16 @@ public:
     UrlAction()                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??9UrlAction\@npc\@\@QEBA_NAEBU01\@\@Z
      */
-    MCAPI bool operator!=(struct npc::UrlAction const&) const; // NOLINT
+    MCAPI bool operator!=(struct npc::UrlAction const&) const;
     /**
      * @symbol ??1UrlAction\@npc\@\@QEAA\@XZ
      */
-    MCAPI ~UrlAction(); // NOLINT
+    MCAPI ~UrlAction();
+    // NOLINTEND
 };
 
 }; // namespace npc

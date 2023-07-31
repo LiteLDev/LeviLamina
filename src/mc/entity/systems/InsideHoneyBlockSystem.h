@@ -11,8 +11,10 @@ public:
     InsideHoneyBlockSystem()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createEventsSystem\@InsideHoneyBlockSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createEventsSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createEventsSystem();
+    // NOLINTEND
 };

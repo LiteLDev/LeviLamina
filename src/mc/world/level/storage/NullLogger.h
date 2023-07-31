@@ -11,18 +11,20 @@ public:
     NullLogger()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?Logv\@NullLogger\@\@UEAAXPEBDPEAD\@Z
      */
-    virtual void Logv(char const*, char*); // NOLINT
+    virtual void Logv(char const*, char*);
     /**
      * @symbol ?instance\@NullLogger\@\@2V1\@A
      */
-    MCAPI static class NullLogger instance; // NOLINT
+    MCAPI static class NullLogger instance;
+    // NOLINTEND
 };

@@ -19,19 +19,21 @@ public:
     IsShakingDefinition()                                      = delete;
 
 public:
-    /**
-     * @symbol ?initialize\@IsShakingDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&) const; // NOLINT
-    /**
-     * @symbol ?uninitialize\@IsShakingDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
-    MCAPI void uninitialize(class EntityContext&) const; // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?buildSchema\@IsShakingDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UIsShakingDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      struct IsShakingDefinition>>&); // NOLINT
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsShakingDefinition>>&);
+    /**
+     * @symbol ?initialize\@IsShakingDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&) const;
+    /**
+     * @symbol ?uninitialize\@IsShakingDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
+     */
+    MCAPI void uninitialize(class EntityContext&) const;
+    // NOLINTEND
 };

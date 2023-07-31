@@ -14,60 +14,62 @@ public:
     StringByteOutput()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?writeString\@BytesDataOutput\@\@UEAAXV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    virtual void writeString(class std::basic_string_view<char, struct std::char_traits<char>>); // NOLINT
+    virtual void writeString(std::string_view);
     /**
      * @vftbl 2
      * @symbol ?writeLongString\@BytesDataOutput\@\@UEAAXV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    virtual void writeLongString(class std::basic_string_view<char, struct std::char_traits<char>>); // NOLINT
+    virtual void writeLongString(std::string_view);
     /**
      * @vftbl 3
      * @symbol ?writeFloat\@BigEndianStringByteOutput\@\@UEAAXM\@Z
      */
-    virtual void writeFloat(float); // NOLINT
+    virtual void writeFloat(float);
     /**
      * @vftbl 4
      * @symbol ?writeDouble\@BigEndianStringByteOutput\@\@UEAAXN\@Z
      */
-    virtual void writeDouble(double); // NOLINT
+    virtual void writeDouble(double);
     /**
      * @vftbl 5
      * @symbol ?writeByte\@BytesDataOutput\@\@UEAAXD\@Z
      */
-    virtual void writeByte(char); // NOLINT
+    virtual void writeByte(char);
     /**
      * @vftbl 6
      * @symbol ?writeShort\@BigEndianStringByteOutput\@\@UEAAXF\@Z
      */
-    virtual void writeShort(short); // NOLINT
+    virtual void writeShort(short);
     /**
      * @vftbl 7
      * @symbol ?writeInt\@BigEndianStringByteOutput\@\@UEAAXH\@Z
      */
-    virtual void writeInt(int); // NOLINT
+    virtual void writeInt(int);
     /**
      * @vftbl 8
      * @symbol ?writeLongLong\@BigEndianStringByteOutput\@\@UEAAX_J\@Z
      */
-    virtual void writeLongLong(__int64); // NOLINT
+    virtual void writeLongLong(int64_t);
     /**
      * @vftbl 9
      * @symbol ?writeBytes\@StringByteOutput\@\@UEAAXPEBX_K\@Z
      */
-    virtual void writeBytes(void const*, unsigned __int64); // NOLINT
+    virtual void writeBytes(void const*, uint64_t);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRINGBYTEOUTPUT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~StringByteOutput(); // NOLINT
+    MCVAPI ~StringByteOutput();
 #endif
+    // NOLINTEND
 };

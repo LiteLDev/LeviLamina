@@ -18,24 +18,26 @@ public:
     MeleeAttackDefinition(MeleeAttackDefinition const&)            = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MELEEATTACKDEFINITION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~MeleeAttackDefinition(); // NOLINT
+    MCVAPI ~MeleeAttackDefinition();
 #endif
     /**
      * @symbol ??0MeleeAttackDefinition\@\@QEAA\@XZ
      */
-    MCAPI MeleeAttackDefinition(); // NOLINT
-    /**
-     * @symbol ?initialize\@MeleeAttackDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVMeleeAttackGoal\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class MeleeAttackGoal&) const; // NOLINT
+    MCAPI MeleeAttackDefinition();
     /**
      * @symbol
      * ?buildSchema\@MeleeAttackDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VMeleeAttackDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void
-    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MeleeAttackDefinition>>&); // NOLINT
+    buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MeleeAttackDefinition>>&);
+    /**
+     * @symbol ?initialize\@MeleeAttackDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVMeleeAttackGoal\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class MeleeAttackGoal&) const;
+    // NOLINTEND
 };

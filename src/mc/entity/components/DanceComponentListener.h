@@ -11,16 +11,19 @@ public:
     DanceComponentListener()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?setLevel\@DanceComponentListener\@\@QEAAXAEAVLevel\@\@\@Z
      */
-    MCAPI void setLevel(class Level&); // NOLINT
+    MCAPI void setLevel(class Level&);
     /**
      * @symbol ??1DanceComponentListener\@\@QEAA\@XZ
      */
-    MCAPI ~DanceComponentListener(); // NOLINT
+    MCAPI ~DanceComponentListener();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_onLevelSoundEvent\@DanceComponentListener\@\@AEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@HAEBUActorDefinitionIdentifier\@\@_N3\@Z
@@ -32,7 +35,6 @@ public:
         struct ActorDefinitionIdentifier const&,
         bool,
         bool
-    ); // NOLINT
-
-private:
+    );
+    // NOLINTEND
 };

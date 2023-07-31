@@ -11,12 +11,14 @@ public:
     HasItemFilter()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0HasItemFilter\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI HasItemFilter(struct HasItemFilter&&); // NOLINT
+    MCAPI HasItemFilter(struct HasItemFilter&&);
     /**
      * @symbol ??1HasItemFilter\@\@QEAA\@XZ
      */
-    MCAPI ~HasItemFilter(); // NOLINT
+    MCAPI ~HasItemFilter();
+    // NOLINTEND
 };

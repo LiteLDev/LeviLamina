@@ -25,6 +25,7 @@ public:
     DeprecatedSchema()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol
@@ -32,7 +33,7 @@ public:
      */
     virtual struct cereal::internal::Result
     doValidate(struct cereal::SchemaReader&, class entt::meta_any&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&)
-        const; // NOLINT
+        const;
     /**
      * @vftbl 1
      * @symbol
@@ -40,7 +41,8 @@ public:
      */
     virtual struct cereal::internal::Result
     doLoad(struct cereal::SchemaReader&, class entt::meta_any&, struct cereal::SerializerTraits const&, class entt::meta_any const&, class cereal::SerializerContext&)
-        const; // NOLINT
+        const;
+    // NOLINTEND
 };
 
 }; // namespace cereal::internal

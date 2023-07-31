@@ -16,21 +16,22 @@ public:
     ScriptActorTypeIterator()                                          = delete;
 
 public:
-    /**
-     * @symbol ??4ScriptActorTypeIterator\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
-     */
-    MCAPI class ScriptModuleMinecraft::ScriptActorTypeIterator&
-    operator=(class ScriptModuleMinecraft::ScriptActorTypeIterator&&); // NOLINT
-    /**
-     * @symbol ??1ScriptActorTypeIterator\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptActorTypeIterator(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptActorTypeIterator\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptActorTypeIterator\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptActorTypeIterator>
-    bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptActorTypeIterator> bind();
+    /**
+     * @symbol ??4ScriptActorTypeIterator\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
+     */
+    MCAPI class ScriptModuleMinecraft::ScriptActorTypeIterator&
+    operator=(class ScriptModuleMinecraft::ScriptActorTypeIterator&&);
+    /**
+     * @symbol ??1ScriptActorTypeIterator\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptActorTypeIterator();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

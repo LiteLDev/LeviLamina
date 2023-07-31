@@ -11,16 +11,18 @@ public:
     EndPortalShape()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0EndPortalShape\@\@QEAA\@AEAVBlockSource\@\@VBlockPos\@\@\@Z
      */
-    MCAPI EndPortalShape(class BlockSource&, class BlockPos); // NOLINT
+    MCAPI EndPortalShape(class BlockSource&, class BlockPos);
     /**
      * @symbol ?isValid\@EndPortalShape\@\@QEAA_NAEAVBlockSource\@\@\@Z
      */
-    MCAPI bool isValid(class BlockSource&); // NOLINT
+    MCAPI bool isValid(class BlockSource&);
     /**
      * @symbol ??1EndPortalShape\@\@QEAA\@XZ
      */
-    MCAPI ~EndPortalShape(); // NOLINT
+    MCAPI ~EndPortalShape();
+    // NOLINTEND
 };

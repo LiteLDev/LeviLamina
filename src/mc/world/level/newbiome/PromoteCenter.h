@@ -21,15 +21,17 @@ public:
     PromoteCenter()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0PromoteCenter\@OperationNodeFilters\@\@QEAA\@AEAVBiome\@\@0\@Z
      */
-    MCAPI PromoteCenter(class Biome&, class Biome&); // NOLINT
+    MCAPI PromoteCenter(class Biome&, class Biome&);
     /**
      * @symbol
      * ??RPromoteCenter\@OperationNodeFilters\@\@QEBAPEAVBiome\@\@AEAU?$NeighborhoodReader\@PEAVBiome\@\@$00$00\@OperationNodeDetails\@\@\@Z
      */
-    MCAPI class Biome* operator()(struct OperationNodeDetails::NeighborhoodReader<class Biome*, 1, 1>&) const; // NOLINT
+    MCAPI class Biome* operator()(struct OperationNodeDetails::NeighborhoodReader<class Biome*, 1, 1>&) const;
+    // NOLINTEND
 };
 
 }; // namespace OperationNodeFilters

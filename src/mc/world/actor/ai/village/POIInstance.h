@@ -11,6 +11,7 @@ public:
     POIInstance()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0POIInstance\@\@QEAA\@AEBVBlockPos\@\@_NV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4POIType\@\@M_K4222\@Z
@@ -21,42 +22,43 @@ public:
         std::string,
         enum class POIType,
         float,
-        unsigned __int64,
-        unsigned __int64,
+        uint64_t,
+        uint64_t,
         std::string,
         std::string,
         std::string
-    ); // NOLINT
+    );
     /**
      * @symbol ?getPosition\@POIInstance\@\@QEBAAEBVBlockPos\@\@XZ
      */
-    MCAPI class BlockPos const& getPosition() const; // NOLINT
+    MCAPI class BlockPos const& getPosition() const;
     /**
      * @symbol ?getRadius\@POIInstance\@\@QEBAMXZ
      */
-    MCAPI float getRadius() const; // NOLINT
+    MCAPI float getRadius() const;
     /**
      * @symbol ?getSecondBlockFullAABB\@POIInstance\@\@QEAA?AVAABB\@\@AEAVBlockSource\@\@\@Z
      */
-    MCAPI class AABB getSecondBlockFullAABB(class BlockSource&); // NOLINT
+    MCAPI class AABB getSecondBlockFullAABB(class BlockSource&);
     /**
      * @symbol ?getSoundEvent\@POIInstance\@\@QEBAAEBVHashedString\@\@XZ
      */
-    MCAPI class HashedString const& getSoundEvent() const; // NOLINT
+    MCAPI class HashedString const& getSoundEvent() const;
     /**
      * @symbol ?incrementArrivalFailureCount\@POIInstance\@\@QEAAXXZ
      */
-    MCAPI void incrementArrivalFailureCount(); // NOLINT
+    MCAPI void incrementArrivalFailureCount();
     /**
      * @symbol ?resetArrivalFailureCount\@POIInstance\@\@QEAAXXZ
      */
-    MCAPI void resetArrivalFailureCount(); // NOLINT
+    MCAPI void resetArrivalFailureCount();
     /**
      * @symbol ?trySpawnParticles\@POIInstance\@\@QEBAXAEAVBlockSource\@\@AEAVRandom\@\@H\@Z
      */
-    MCAPI void trySpawnParticles(class BlockSource&, class Random&, int) const; // NOLINT
+    MCAPI void trySpawnParticles(class BlockSource&, class Random&, int) const;
     /**
      * @symbol ?useBoundingBox\@POIInstance\@\@QEBA_NXZ
      */
-    MCAPI bool useBoundingBox() const; // NOLINT
+    MCAPI bool useBoundingBox() const;
+    // NOLINTEND
 };

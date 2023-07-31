@@ -11,24 +11,26 @@ public:
     Amplifier()                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?getAmount\@Amplifier\@\@UEBAMHM\@Z
      */
-    virtual float getAmount(int, float) const; // NOLINT
+    virtual float getAmount(int, float) const;
     /**
      * @vftbl 2
      * @symbol ?shouldBuff\@Amplifier\@\@UEBA_NHH\@Z
      */
-    virtual bool shouldBuff(int, int) const; // NOLINT
+    virtual bool shouldBuff(int, int) const;
     /**
      * @vftbl 3
      * @symbol ?getTickInterval\@Amplifier\@\@UEBAHH\@Z
      */
-    virtual int getTickInterval(int) const; // NOLINT
+    virtual int getTickInterval(int) const;
+    // NOLINTEND
 };

@@ -11,8 +11,10 @@ public:
     ScriptingNotificationEvent()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ScriptingNotificationEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptingNotificationEvent(); // NOLINT
+    MCAPI ~ScriptingNotificationEvent();
+    // NOLINTEND
 };

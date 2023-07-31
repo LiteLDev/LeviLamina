@@ -11,8 +11,10 @@ public:
     BlockSelectionBoxProcessor()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?_tryBake\@BlockSelectionBoxProcessor\@\@SAXAEBVMatrix\@\@PEAUBlockSelectionBoxComponent\@\@\@Z
      */
-    MCAPI static void _tryBake(class Matrix const&, struct BlockSelectionBoxComponent*); // NOLINT
+    MCAPI static void _tryBake(class Matrix const&, struct BlockSelectionBoxComponent*);
+    // NOLINTEND
 };

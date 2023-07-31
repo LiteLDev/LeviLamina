@@ -13,10 +13,12 @@ public:
     SocketDescriptor()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0SocketDescriptor\@RakNet\@\@QEAA\@GPEBD\@Z
      */
-    MCAPI SocketDescriptor(unsigned short, char const*); // NOLINT
+    MCAPI SocketDescriptor(unsigned short, char const*);
+    // NOLINTEND
 };
 
 }; // namespace RakNet

@@ -9,18 +9,20 @@ public:
     WorkDefinition(WorkDefinition const&) = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKDEFINITION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~WorkDefinition(); // NOLINT
+    MCVAPI ~WorkDefinition();
 #endif
     /**
      * @symbol ??0WorkDefinition\@\@QEAA\@XZ
      */
-    MCAPI WorkDefinition(); // NOLINT
+    MCAPI WorkDefinition();
     /**
      * @symbol ??4WorkDefinition\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
-    MCAPI class WorkDefinition& operator=(class WorkDefinition const&); // NOLINT
+    MCAPI class WorkDefinition& operator=(class WorkDefinition const&);
+    // NOLINTEND
 };

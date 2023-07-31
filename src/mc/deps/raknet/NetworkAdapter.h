@@ -13,10 +13,12 @@ public:
     NetworkAdapter()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?GetNumberOfAddresses\@NetworkAdapter\@RakNet\@\@QEAAIXZ
      */
-    MCAPI unsigned int GetNumberOfAddresses(); // NOLINT
+    MCAPI unsigned int GetNumberOfAddresses();
+    // NOLINTEND
 };
 
 }; // namespace RakNet

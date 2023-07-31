@@ -18,18 +18,20 @@ public:
     DragonChargePlayerDefinition(DragonChargePlayerDefinition const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0DragonChargePlayerDefinition\@\@QEAA\@XZ
      */
-    MCAPI DragonChargePlayerDefinition(); // NOLINT
-    /**
-     * @symbol ?initialize\@DragonChargePlayerDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVDragonChargePlayerGoal\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class DragonChargePlayerGoal&) const; // NOLINT
+    MCAPI DragonChargePlayerDefinition();
     /**
      * @symbol
      * ?buildSchema\@DragonChargePlayerDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDragonChargePlayerDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void
-    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DragonChargePlayerDefinition>>&); // NOLINT
+    buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DragonChargePlayerDefinition>>&);
+    /**
+     * @symbol ?initialize\@DragonChargePlayerDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVDragonChargePlayerGoal\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class DragonChargePlayerGoal&) const;
+    // NOLINTEND
 };

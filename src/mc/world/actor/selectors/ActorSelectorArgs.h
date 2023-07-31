@@ -10,16 +10,18 @@ public:
     ActorSelectorArgs(ActorSelectorArgs const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ActorSelectorArgs\@\@QEAA\@XZ
      */
-    MCAPI ActorSelectorArgs(); // NOLINT
+    MCAPI ActorSelectorArgs();
     /**
      * @symbol ??1ActorSelectorArgs\@\@QEAA\@XZ
      */
-    MCAPI ~ActorSelectorArgs(); // NOLINT
+    MCAPI ~ActorSelectorArgs();
     /**
      * @symbol ?DEFAULT_LEVEL\@ActorSelectorArgs\@\@2U?$pair\@HH\@std\@\@B
      */
-    MCAPI static struct std::pair<int, int> const DEFAULT_LEVEL; // NOLINT
+    MCAPI static std::pair<int, int> const DEFAULT_LEVEL;
+    // NOLINTEND
 };

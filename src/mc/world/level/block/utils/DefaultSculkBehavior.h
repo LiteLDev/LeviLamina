@@ -11,21 +11,22 @@ public:
     DefaultSculkBehavior()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol ?updateDecayDelay\@DefaultSculkBehavior\@\@UEBAHH\@Z
      */
-    virtual int updateDecayDelay(int) const; // NOLINT
+    virtual int updateDecayDelay(int) const;
     /**
      * @vftbl 1
      * @symbol ?updateFacingData\@DefaultSculkBehavior\@\@UEBAHHAEBVBlock\@\@\@Z
      */
-    virtual int updateFacingData(int, class Block const&) const; // NOLINT
+    virtual int updateFacingData(int, class Block const&) const;
     /**
      * @vftbl 2
      * @symbol ?canChangeBlockOnSpread\@DefaultSculkBehavior\@\@UEBA_NXZ
      */
-    virtual bool canChangeBlockOnSpread() const; // NOLINT
+    virtual bool canChangeBlockOnSpread() const;
     /**
      * @vftbl 3
      * @symbol
@@ -33,7 +34,7 @@ public:
      */
     virtual bool
     attemptSpreadVeins(class IBlockWorldGenAPI&, class BlockPos const&, class Block const&, int, class SculkSpreader&)
-        const; // NOLINT
+        const;
     /**
      * @vftbl 4
      * @symbol
@@ -49,11 +50,12 @@ public:
         class Random&,
         class SculkSpreader&,
         bool
-    ) const; // NOLINT
+    ) const;
     /**
      * @vftbl 5
      * @symbol
      * ?onDischarged\@DefaultSculkBehavior\@\@UEBAXAEAVIBlockWorldGenAPI\@\@PEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
-    virtual void onDischarged(class IBlockWorldGenAPI&, class BlockSource*, class BlockPos const&) const; // NOLINT
+    virtual void onDischarged(class IBlockWorldGenAPI&, class BlockSource*, class BlockPos const&) const;
+    // NOLINTEND
 };

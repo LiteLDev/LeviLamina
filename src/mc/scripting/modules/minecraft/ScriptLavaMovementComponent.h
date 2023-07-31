@@ -18,27 +18,28 @@ public:
     ScriptLavaMovementComponent()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTLAVAMOVEMENTCOMPONENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptLavaMovementComponent(); // NOLINT
+    MCVAPI ~ScriptLavaMovementComponent();
 #endif
     /**
      * @symbol
      * ?bind\@ScriptLavaMovementComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptLavaMovementComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptLavaMovementComponent>
-    bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptLavaMovementComponent> bind();
     /**
      * @symbol ?ComponentId\@ScriptLavaMovementComponent\@ScriptModuleMinecraft\@\@2PEBDEB
      */
-    MCAPI static char const* ComponentId; // NOLINT
+    MCAPI static char const* ComponentId;
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

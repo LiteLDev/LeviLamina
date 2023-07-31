@@ -28,12 +28,14 @@ public:
         Definition()                             = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol
          * ?buildSchema\@Definition\@FeelingHappyGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDefinition\@FeelingHappyGoal\@\@\@JsonUtil\@\@\@4\@\@Z
          */
         MCAPI static void
-        buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class FeelingHappyGoal::Definition>>&); // NOLINT
+        buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class FeelingHappyGoal::Definition>>&);
+        // NOLINTEND
     };
 
 public:
@@ -43,18 +45,20 @@ public:
     FeelingHappyGoal()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3(); // NOLINT
+    virtual void __unk_vfn_3();
     /**
      * @symbol ??0FeelingHappyGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */
-    MCAPI FeelingHappyGoal(class Mob&); // NOLINT
+    MCAPI FeelingHappyGoal(class Mob&);
+    // NOLINTEND
 };

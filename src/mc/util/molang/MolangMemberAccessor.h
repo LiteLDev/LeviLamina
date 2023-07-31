@@ -11,8 +11,10 @@ public:
     MolangMemberAccessor()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1MolangMemberAccessor\@\@QEAA\@XZ
      */
-    MCAPI ~MolangMemberAccessor(); // NOLINT
+    MCAPI ~MolangMemberAccessor();
+    // NOLINTEND
 };

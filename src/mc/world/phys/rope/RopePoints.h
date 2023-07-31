@@ -11,8 +11,10 @@ public:
     RopePoints()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1RopePoints\@\@QEAA\@XZ
      */
-    MCAPI ~RopePoints(); // NOLINT
+    MCAPI ~RopePoints();
+    // NOLINTEND
 };

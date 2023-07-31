@@ -19,10 +19,12 @@ public:
         MatingResult()                               = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1MatingResult\@BreedableComponent\@\@QEAA\@XZ
          */
-        MCAPI ~MatingResult(); // NOLINT
+        MCAPI ~MatingResult();
+        // NOLINTEND
     };
 
 public:
@@ -31,67 +33,68 @@ public:
     BreedableComponent(BreedableComponent const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0BreedableComponent\@\@QEAA\@XZ
      */
-    MCAPI BreedableComponent(); // NOLINT
+    MCAPI BreedableComponent();
     /**
      * @symbol ?addAdditionalSaveData\@BreedableComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
+    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
     /**
      * @symbol ?canMate\@BreedableComponent\@\@QEBA_NAEBVActor\@\@0\@Z
      */
-    MCAPI bool canMate(class Actor const&, class Actor const&) const; // NOLINT
+    MCAPI bool canMate(class Actor const&, class Actor const&) const;
     /**
      * @symbol ?decrementBreedCooldown\@BreedableComponent\@\@QEAAXXZ
      */
-    MCAPI void decrementBreedCooldown(); // NOLINT
+    MCAPI void decrementBreedCooldown();
     /**
      * @symbol ?decrementLoveTimer\@BreedableComponent\@\@QEAAXXZ
      */
-    MCAPI void decrementLoveTimer(); // NOLINT
+    MCAPI void decrementLoveTimer();
     /**
      * @symbol ?getBreedCooldown\@BreedableComponent\@\@QEBAHXZ
      */
-    MCAPI int getBreedCooldown() const; // NOLINT
+    MCAPI int getBreedCooldown() const;
     /**
      * @symbol ?getInteraction\@BreedableComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&); // NOLINT
+    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
     /**
      * @symbol ?getLoveCause\@BreedableComponent\@\@QEBAPEAVPlayer\@\@AEBVActor\@\@\@Z
      */
-    MCAPI class Player* getLoveCause(class Actor const&) const; // NOLINT
+    MCAPI class Player* getLoveCause(class Actor const&) const;
     /**
      * @symbol ?getLoveTimer\@BreedableComponent\@\@QEBAHXZ
      */
-    MCAPI int getLoveTimer() const; // NOLINT
+    MCAPI int getLoveTimer() const;
     /**
      * @symbol ?mate\@BreedableComponent\@\@QEAA?AUMatingResult\@1\@AEAVActor\@\@0\@Z
      */
-    MCAPI struct BreedableComponent::MatingResult mate(class Actor&, class Actor&); // NOLINT
+    MCAPI struct BreedableComponent::MatingResult mate(class Actor&, class Actor&);
     /**
      * @symbol ?meetsSittingRequirements\@BreedableComponent\@\@QEBA_NAEBVActor\@\@\@Z
      */
-    MCAPI bool meetsSittingRequirements(class Actor const&) const; // NOLINT
+    MCAPI bool meetsSittingRequirements(class Actor const&) const;
     /**
      * @symbol
      * ?readAdditionalSaveData\@BreedableComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&); // NOLINT
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
     /**
      * @symbol ?resetLove\@BreedableComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void resetLove(class Actor&); // NOLINT
+    MCAPI void resetLove(class Actor&);
     /**
      * @symbol ?setInLove\@BreedableComponent\@\@QEAAXAEAVActor\@\@PEBVPlayer\@\@\@Z
      */
-    MCAPI void setInLove(class Actor&, class Player const*); // NOLINT
+    MCAPI void setInLove(class Actor&, class Player const*);
     /**
      * @symbol ?setLoveTimer\@BreedableComponent\@\@QEAAXH\@Z
      */
-    MCAPI void setLoveTimer(int); // NOLINT
+    MCAPI void setLoveTimer(int);
     /**
      * @symbol
      * ?setOffspringAttributesWithParentCentricBlending\@BreedableComponent\@\@SAXAEAVAttributeInstance\@\@AEBV2\@1AEAVIRandom\@\@MM\@Z
@@ -103,42 +106,43 @@ public:
         class IRandom&,
         float,
         float
-    ); // NOLINT
+    );
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_canBreed\@BreedableComponent\@\@AEAA_NAEAVActor\@\@AEAVPlayer\@\@AEBVItemStack\@\@\@Z
      */
-    MCAPI bool _canBreed(class Actor&, class Player&, class ItemStack const&); // NOLINT
+    MCAPI bool _canBreed(class Actor&, class Player&, class ItemStack const&);
     /**
      * @symbol
      * ?_determineBreedType\@BreedableComponent\@\@AEBA?AV?$optional\@UBreedableType\@\@\@std\@\@AEBVActor\@\@\@Z
      */
-    MCAPI class std::optional<struct BreedableType> _determineBreedType(class Actor const&) const; // NOLINT
+    MCAPI std::optional<struct BreedableType> _determineBreedType(class Actor const&) const;
     /**
      * @symbol ?_handleMate\@BreedableComponent\@\@AEAAPEAVActor\@\@AEAV2\@0\@Z
      */
-    MCAPI class Actor* _handleMate(class Actor&, class Actor&); // NOLINT
+    MCAPI class Actor* _handleMate(class Actor&, class Actor&);
     /**
      * @symbol ?_handlePregnancy\@BreedableComponent\@\@AEAAXAEAVActor\@\@0\@Z
      */
-    MCAPI void _handlePregnancy(class Actor&, class Actor&); // NOLINT
+    MCAPI void _handlePregnancy(class Actor&, class Actor&);
     /**
      * @symbol ?_meetsEnvironmentRequirements\@BreedableComponent\@\@AEBA_NAEAVActor\@\@\@Z
      */
-    MCAPI bool _meetsEnvironmentRequirements(class Actor&) const; // NOLINT
+    MCAPI bool _meetsEnvironmentRequirements(class Actor&) const;
     /**
      * @symbol ?_spawnExperienceOrbs\@BreedableComponent\@\@AEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void _spawnExperienceOrbs(class Actor&); // NOLINT
+    MCAPI void _spawnExperienceOrbs(class Actor&);
     /**
      * @symbol ?_spawnLoveParticles\@BreedableComponent\@\@AEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void _spawnLoveParticles(class Actor&); // NOLINT
+    MCAPI void _spawnLoveParticles(class Actor&);
     /**
      * @symbol ?_useBreedItem\@BreedableComponent\@\@AEAAXAEAVActor\@\@AEAVPlayer\@\@AEBVItemStack\@\@\@Z
      */
-    MCAPI void _useBreedItem(class Actor&, class Player&, class ItemStack const&); // NOLINT
-
-private:
+    MCAPI void _useBreedItem(class Actor&, class Player&, class ItemStack const&);
+    // NOLINTEND
 };

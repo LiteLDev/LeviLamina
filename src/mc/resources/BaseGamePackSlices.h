@@ -24,10 +24,12 @@ public:
         BaseGameVersionPack()                                      = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1BaseGameVersionPack\@BaseGamePackSlices\@\@QEAA\@XZ
          */
-        MCAPI ~BaseGameVersionPack(); // NOLINT
+        MCAPI ~BaseGameVersionPack();
+        // NOLINTEND
     };
 
 public:
@@ -36,25 +38,26 @@ public:
     BaseGamePackSlices(BaseGamePackSlices const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0BaseGamePackSlices\@\@QEAA\@XZ
      */
-    MCAPI BaseGamePackSlices(); // NOLINT
+    MCAPI BaseGamePackSlices();
     /**
      * @symbol
      * ?addFromVersions\@BaseGamePackSlices\@\@QEAAXAEBV?$vector\@VBaseGameVersion\@\@V?$allocator\@VBaseGameVersion\@\@\@std\@\@\@std\@\@AEBVIResourcePackRepository\@\@AEBVUUID\@mce\@\@\@Z
      */
     MCAPI void
-    addFromVersions(std::vector<class BaseGameVersion> const&, class IResourcePackRepository const&, class mce::UUID const&); // NOLINT
+    addFromVersions(std::vector<class BaseGameVersion> const&, class IResourcePackRepository const&, class mce::UUID const&);
     /**
      * @symbol
      * ?applyPackSlices\@BaseGamePackSlices\@\@QEBAXAEBVBaseGameVersion\@\@AEBVIResourcePackRepository\@\@AEAVResourcePackStack\@\@\@Z
      */
     MCAPI void
-    applyPackSlices(class BaseGameVersion const&, class IResourcePackRepository const&, class ResourcePackStack&)
-        const; // NOLINT
+    applyPackSlices(class BaseGameVersion const&, class IResourcePackRepository const&, class ResourcePackStack&) const;
     /**
      * @symbol ??1BaseGamePackSlices\@\@QEAA\@XZ
      */
-    MCAPI ~BaseGamePackSlices(); // NOLINT
+    MCAPI ~BaseGamePackSlices();
+    // NOLINTEND
 };

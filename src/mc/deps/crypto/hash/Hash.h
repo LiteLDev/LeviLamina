@@ -19,50 +19,52 @@ public:
     Hash()                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?reset\@Hash\@1Crypto\@\@UEAAXXZ
      */
-    virtual void reset(); // NOLINT
+    virtual void reset();
     /**
      * @vftbl 2
      * @symbol ?update\@Hash\@1Crypto\@\@UEAAXPEBXI\@Z
      */
-    virtual void update(void const*, unsigned int); // NOLINT
+    virtual void update(void const*, unsigned int);
     /**
      * @vftbl 3
      * @symbol ?final\@Hash\@1Crypto\@\@UEAAXPEAE\@Z
      */
-    virtual void final(unsigned char*); // NOLINT
+    virtual void final(unsigned char*);
     /**
      * @vftbl 4
      * @symbol ?resultSize\@Hash\@1Crypto\@\@UEBA_KXZ
      */
-    virtual unsigned __int64 resultSize() const; // NOLINT
+    virtual uint64_t resultSize() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CRYPTO_HASH_HASH
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~Hash(); // NOLINT
+    MCVAPI ~Hash();
 #endif
     /**
      * @symbol ??0Hash\@0Crypto\@\@QEAA\@W4HashType\@01\@\@Z
      */
-    MCAPI Hash(enum class Crypto::Hash::HashType); // NOLINT
+    MCAPI Hash(enum class Crypto::Hash::HashType);
     /**
      * @symbol
      * ?final\@Hash\@1Crypto\@\@QEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string final(); // NOLINT
+    MCAPI std::string final();
     /**
      * @symbol ?getUUID\@Hash\@1Crypto\@\@QEAA?AVUUID\@mce\@\@XZ
      */
-    MCAPI class mce::UUID getUUID(); // NOLINT
+    MCAPI class mce::UUID getUUID();
+    // NOLINTEND
 };
 
 }; // namespace Crypto::Hash

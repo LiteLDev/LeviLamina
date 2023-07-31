@@ -11,8 +11,10 @@ public:
     HorsePreTravelSystem()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createHorsePreTravelSystem\@HorsePreTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createHorsePreTravelSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createHorsePreTravelSystem();
+    // NOLINTEND
 };

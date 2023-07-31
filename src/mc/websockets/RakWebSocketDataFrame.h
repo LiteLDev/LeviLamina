@@ -16,6 +16,7 @@ public:
     RakWebSocketDataFrame()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?writeFrameToStream\@RakWebSocketDataFrame\@\@SAXAEAVBitStream\@RakNet\@\@PEBEIW4OpCode\@\@_NI\@Z
      */
@@ -26,5 +27,6 @@ public:
         enum class OpCode,
         bool,
         unsigned int
-    ); // NOLINT
+    );
+    // NOLINTEND
 };

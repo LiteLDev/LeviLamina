@@ -18,19 +18,21 @@ public:
     MountTameableDefinition(MountTameableDefinition const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0MountTameableDefinition\@\@QEAA\@XZ
      */
-    MCAPI MountTameableDefinition(); // NOLINT
-    /**
-     * @symbol ?initialize\@MountTameableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVMountTamingComponent\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class MountTamingComponent&) const; // NOLINT
+    MCAPI MountTameableDefinition();
     /**
      * @symbol
      * ?buildSchema\@MountTameableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VMountTameableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      class MountTameableDefinition>>&); // NOLINT
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MountTameableDefinition>>&);
+    /**
+     * @symbol ?initialize\@MountTameableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVMountTamingComponent\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class MountTamingComponent&) const;
+    // NOLINTEND
 };

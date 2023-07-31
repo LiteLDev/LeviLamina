@@ -11,16 +11,18 @@ public:
     BreakBlocksComponent()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?breakNearbyBlocks\@BreakBlocksComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void breakNearbyBlocks(class Actor&); // NOLINT
+    MCAPI void breakNearbyBlocks(class Actor&);
     /**
      * @symbol ?initFromDefinition\@BreakBlocksComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void initFromDefinition(class Actor&); // NOLINT
+    MCAPI void initFromDefinition(class Actor&);
     /**
      * @symbol ?isBreakable\@BreakBlocksComponent\@\@SA_NPEBUBreakBlocksDescription\@\@AEBVBlockLegacy\@\@\@Z
      */
-    MCAPI static bool isBreakable(struct BreakBlocksDescription const*, class BlockLegacy const&); // NOLINT
+    MCAPI static bool isBreakable(struct BreakBlocksDescription const*, class BlockLegacy const&);
+    // NOLINTEND
 };

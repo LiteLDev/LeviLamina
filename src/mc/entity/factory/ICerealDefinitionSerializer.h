@@ -11,10 +11,12 @@ public:
     ICerealDefinitionSerializer()                                              = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ICEREALDEFINITIONSERIALIZER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ICerealDefinitionSerializer(); // NOLINT
+    MCVAPI ~ICerealDefinitionSerializer();
 #endif
+    // NOLINTEND
 };

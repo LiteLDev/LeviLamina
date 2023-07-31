@@ -11,28 +11,30 @@ public:
     ExperienceRewardCommitObject()                                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?append\@ExperienceRewardCommitObject\@\@UEAA_NPEAVContainerValidationCommitObject\@\@\@Z
      */
-    virtual bool append(class ContainerValidationCommitObject*); // NOLINT
+    virtual bool append(class ContainerValidationCommitObject*);
     /**
      * @vftbl 2
      * @symbol ?canCommit\@ExperienceRewardCommitObject\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
      */
-    virtual bool canCommit(class ContainerScreenContext const&) const; // NOLINT
+    virtual bool canCommit(class ContainerScreenContext const&) const;
     /**
      * @vftbl 3
      * @symbol ?commit\@ExperienceRewardCommitObject\@\@UEAAXAEBVContainerScreenContext\@\@\@Z
      */
-    virtual void commit(class ContainerScreenContext const&); // NOLINT
+    virtual void commit(class ContainerScreenContext const&);
     /**
      * @symbol ??0ExperienceRewardCommitObject\@\@QEAA\@H\@Z
      */
-    MCAPI ExperienceRewardCommitObject(int); // NOLINT
+    MCAPI ExperienceRewardCommitObject(int);
+    // NOLINTEND
 };

@@ -16,19 +16,21 @@ public:
     SemVersionConstraint()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol ?doValidate\@SemVersionConstraint\@\@EEBA_NAEBVmeta_any\@entt\@\@AEAVSerializerContext\@cereal\@\@\@Z
      */
-    virtual bool doValidate(class entt::meta_any const&, class cereal::SerializerContext&) const; // NOLINT
+    virtual bool doValidate(class entt::meta_any const&, class cereal::SerializerContext&) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SEMVERSIONCONSTRAINT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~SemVersionConstraint(); // NOLINT
+    MCVAPI ~SemVersionConstraint();
 #endif
     /**
      * @symbol ?min\@SemVersionConstraint\@\@QEAAAEAV1\@AEBVSemVersion\@\@\@Z
      */
-    MCAPI class SemVersionConstraint& min(class SemVersion const&); // NOLINT
+    MCAPI class SemVersionConstraint& min(class SemVersion const&);
+    // NOLINTEND
 };

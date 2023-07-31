@@ -13,10 +13,12 @@ public:
     LocIdString()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1LocIdString\@CerealHelpers\@\@QEAA\@XZ
      */
-    MCAPI ~LocIdString(); // NOLINT
+    MCAPI ~LocIdString();
+    // NOLINTEND
 };
 
 }; // namespace CerealHelpers

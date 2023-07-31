@@ -11,8 +11,10 @@ public:
     websocket_outgoing_message()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1websocket_outgoing_message\@\@QEAA\@XZ
      */
-    MCAPI ~websocket_outgoing_message(); // NOLINT
+    MCAPI ~websocket_outgoing_message();
+    // NOLINTEND
 };

@@ -13,14 +13,16 @@ public:
     ValueWrapper()                               = delete;
 
 public:
-    /**
-     * @symbol ??1ValueWrapper\@JSONObject\@Bedrock\@\@QEAA\@XZ
-     */
-    MCAPI ~ValueWrapper(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol ?emptyObject\@ValueWrapper\@JSONObject\@Bedrock\@\@SA?AV123\@XZ
      */
-    MCAPI static class Bedrock::JSONObject::ValueWrapper emptyObject(); // NOLINT
+    MCAPI static class Bedrock::JSONObject::ValueWrapper emptyObject();
+    /**
+     * @symbol ??1ValueWrapper\@JSONObject\@Bedrock\@\@QEAA\@XZ
+     */
+    MCAPI ~ValueWrapper();
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::JSONObject

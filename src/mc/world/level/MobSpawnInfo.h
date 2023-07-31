@@ -11,8 +11,10 @@ public:
     MobSpawnInfo()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?categoryID\@MobSpawnInfo\@\@SAHW4ActorType\@\@\@Z
      */
-    MCAPI static int categoryID(enum class ActorType); // NOLINT
+    MCAPI static int categoryID(enum class ActorType);
+    // NOLINTEND
 };

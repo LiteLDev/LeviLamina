@@ -16,17 +16,19 @@ public:
     ScriptPluginManagerResult()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?getOrCreatePluginResults\@ScriptPluginManagerResult\@\@QEAAAEAVScriptPluginResult\@\@AEBUModuleDescriptor\@Scripting\@\@\@Z
      */
-    MCAPI class ScriptPluginResult& getOrCreatePluginResults(struct Scripting::ModuleDescriptor const&); // NOLINT
+    MCAPI class ScriptPluginResult& getOrCreatePluginResults(struct Scripting::ModuleDescriptor const&);
     /**
      * @symbol ?writeToContentLog\@ScriptPluginManagerResult\@\@QEBAXXZ
      */
-    MCAPI void writeToContentLog() const; // NOLINT
+    MCAPI void writeToContentLog() const;
     /**
      * @symbol ??1ScriptPluginManagerResult\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptPluginManagerResult(); // NOLINT
+    MCAPI ~ScriptPluginManagerResult();
+    // NOLINTEND
 };

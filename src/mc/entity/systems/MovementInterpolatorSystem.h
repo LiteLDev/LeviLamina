@@ -11,12 +11,14 @@ public:
     MovementInterpolatorSystem()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createOnGroundPostTickSystem\@MovementInterpolatorSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createOnGroundPostTickSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createOnGroundPostTickSystem();
     /**
      * @symbol ?createTickSystem\@MovementInterpolatorSystem\@\@SA?AUTickingSystemWithInfo\@\@_N\@Z
      */
-    MCAPI static struct TickingSystemWithInfo createTickSystem(bool); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createTickSystem(bool);
+    // NOLINTEND
 };

@@ -11,17 +11,19 @@ public:
     CommandContext()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0CommandContext\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VCommandOrigin\@\@U?$default_delete\@VCommandOrigin\@\@\@std\@\@\@2\@H\@Z
      */
-    MCAPI CommandContext(std::string const&, std::unique_ptr<class CommandOrigin>, int); // NOLINT
+    MCAPI CommandContext(std::string const&, std::unique_ptr<class CommandOrigin>, int);
     /**
      * @symbol ?getCommandOrigin\@CommandContext\@\@QEBAAEBVCommandOrigin\@\@XZ
      */
-    MCAPI class CommandOrigin const& getCommandOrigin() const; // NOLINT
+    MCAPI class CommandOrigin const& getCommandOrigin() const;
     /**
      * @symbol ??1CommandContext\@\@QEAA\@XZ
      */
-    MCAPI ~CommandContext(); // NOLINT
+    MCAPI ~CommandContext();
+    // NOLINTEND
 };

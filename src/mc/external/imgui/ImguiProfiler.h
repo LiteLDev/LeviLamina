@@ -23,16 +23,18 @@ public:
         ManualTimer()                              = delete;
 
     public:
+        // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMGUIPROFILER_MANUALTIMER
         /**
          * @symbol __unk_destructor_-1
          */
-        MCVAPI ~ManualTimer(); // NOLINT
+        MCVAPI ~ManualTimer();
 #endif
         /**
          * @symbol ?mark\@ManualTimer\@ImguiProfiler\@\@QEAAXXZ
          */
-        MCAPI void mark(); // NOLINT
+        MCAPI void mark();
+        // NOLINTEND
     };
 
     struct Record {
@@ -62,14 +64,16 @@ public:
             FullStackRecord()                                  = delete;
 
         public:
+            // NOLINTBEGIN
             /**
              * @symbol ??0FullStackRecord\@RecordGroup\@ImguiProfiler\@\@QEAA\@$$QEAU012\@\@Z
              */
-            MCAPI FullStackRecord(struct ImguiProfiler::RecordGroup::FullStackRecord&&); // NOLINT
+            MCAPI FullStackRecord(struct ImguiProfiler::RecordGroup::FullStackRecord&&);
             /**
              * @symbol ??1FullStackRecord\@RecordGroup\@ImguiProfiler\@\@QEAA\@XZ
              */
-            MCAPI ~FullStackRecord(); // NOLINT
+            MCAPI ~FullStackRecord();
+            // NOLINTEND
         };
 
         struct Record {
@@ -80,19 +84,20 @@ public:
             Record()                         = delete;
 
         public:
+            // NOLINTBEGIN
             /**
              * @symbol ??0Record\@RecordGroup\@ImguiProfiler\@\@QEAA\@AEBU012\@\@Z
              */
-            MCAPI Record(struct ImguiProfiler::RecordGroup::Record const&); // NOLINT
+            MCAPI Record(struct ImguiProfiler::RecordGroup::Record const&);
             /**
              * @symbol ??4Record\@RecordGroup\@ImguiProfiler\@\@QEAAAEAU012\@$$QEAU012\@\@Z
              */
-            MCAPI struct ImguiProfiler::RecordGroup::Record&
-            operator=(struct ImguiProfiler::RecordGroup::Record&&); // NOLINT
+            MCAPI struct ImguiProfiler::RecordGroup::Record& operator=(struct ImguiProfiler::RecordGroup::Record&&);
             /**
              * @symbol ??1Record\@RecordGroup\@ImguiProfiler\@\@QEAA\@XZ
              */
-            MCAPI ~Record(); // NOLINT
+            MCAPI ~Record();
+            // NOLINTEND
         };
 
     public:
@@ -102,18 +107,22 @@ public:
         RecordGroup()                              = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol
          * ??ARecordGroup\@ImguiProfiler\@\@QEAAAEAUFullStackRecord\@01\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
          */
-        MCAPI struct ImguiProfiler::RecordGroup::FullStackRecord& operator[](std::string const&); // NOLINT
+        MCAPI struct ImguiProfiler::RecordGroup::FullStackRecord& operator[](std::string const&);
+        // NOLINTEND
 
         // private:
+        // NOLINTBEGIN
         /**
          * @symbol ?isGreaterThan\@RecordGroup\@ImguiProfiler\@\@AEAA_NAEBUFullStackRecord\@12\@0\@Z
          */
         MCAPI bool
-        isGreaterThan(struct ImguiProfiler::RecordGroup::FullStackRecord const&, struct ImguiProfiler::RecordGroup::FullStackRecord const&); // NOLINT
+        isGreaterThan(struct ImguiProfiler::RecordGroup::FullStackRecord const&, struct ImguiProfiler::RecordGroup::FullStackRecord const&);
+        // NOLINTEND
     };
 
     class ScopedTimer {
@@ -125,16 +134,18 @@ public:
         ScopedTimer()                              = delete;
 
     public:
+        // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IMGUIPROFILER_SCOPEDTIMER
         /**
          * @symbol __unk_destructor_-1
          */
-        MCVAPI ~ScopedTimer(); // NOLINT
+        MCVAPI ~ScopedTimer();
 #endif
         /**
          * @symbol ??0ScopedTimer\@ImguiProfiler\@\@QEAA\@PEBD0_N\@Z
          */
-        MCAPI ScopedTimer(char const*, char const*, bool); // NOLINT
+        MCAPI ScopedTimer(char const*, char const*, bool);
+        // NOLINTEND
     };
 
     class Timer {
@@ -153,11 +164,11 @@ public:
     ImguiProfiler()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?getTimeAccumulator\@ImguiProfiler\@\@QEAA?AVTimeAccumulator\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0_N\@Z
      */
-    MCAPI class TimeAccumulator getTimeAccumulator(std::string const&, std::string const&, bool); // NOLINT
-
-    // private:
+    MCAPI class TimeAccumulator getTimeAccumulator(std::string const&, std::string const&, bool);
+    // NOLINTEND
 };

@@ -11,20 +11,22 @@ public:
     SuspectTrackingComponent()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?clearSuspiciousPos\@SuspectTrackingComponent\@\@QEAAXXZ
      */
-    MCAPI void clearSuspiciousPos(); // NOLINT
+    MCAPI void clearSuspiciousPos();
     /**
      * @symbol ?getSuspiciousPos\@SuspectTrackingComponent\@\@QEBA?AV?$optional\@VBlockPos\@\@\@std\@\@XZ
      */
-    MCAPI class std::optional<class BlockPos> getSuspiciousPos() const; // NOLINT
+    MCAPI std::optional<class BlockPos> getSuspiciousPos() const;
     /**
      * @symbol ?getTicksSinceLastSuspect\@SuspectTrackingComponent\@\@QEBA?AV?$optional\@_K\@std\@\@AEBVILevel\@\@\@Z
      */
-    MCAPI class std::optional<unsigned __int64> getTicksSinceLastSuspect(class ILevel const&) const; // NOLINT
+    MCAPI std::optional<uint64_t> getTicksSinceLastSuspect(class ILevel const&) const;
     /**
      * @symbol ?setSuspiciousPos\@SuspectTrackingComponent\@\@QEAAXV?$optional\@VBlockPos\@\@\@std\@\@UTick\@\@\@Z
      */
-    MCAPI void setSuspiciousPos(class std::optional<class BlockPos>, struct Tick); // NOLINT
+    MCAPI void setSuspiciousPos(std::optional<class BlockPos>, struct Tick);
+    // NOLINTEND
 };

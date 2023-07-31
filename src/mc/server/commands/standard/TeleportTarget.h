@@ -11,8 +11,10 @@ public:
     TeleportTarget()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1TeleportTarget\@\@QEAA\@XZ
      */
-    MCAPI ~TeleportTarget(); // NOLINT
+    MCAPI ~TeleportTarget();
+    // NOLINTEND
 };

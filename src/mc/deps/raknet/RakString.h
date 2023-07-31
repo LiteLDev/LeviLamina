@@ -34,78 +34,80 @@ public:
     RakString& operator=(RakString const&) = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?Deserialize\@RakString\@RakNet\@\@QEAA_NPEAVBitStream\@2\@\@Z
      */
-    MCAPI bool Deserialize(class RakNet::BitStream*); // NOLINT
-    /**
-     * @symbol ?GetLength\@RakString\@RakNet\@\@QEBA_KXZ
-     */
-    MCAPI unsigned __int64 GetLength() const; // NOLINT
-    /**
-     * @symbol ?IsEmpty\@RakString\@RakNet\@\@QEBA_NXZ
-     */
-    MCAPI bool IsEmpty() const; // NOLINT
-    /**
-     * @symbol ??0RakString\@RakNet\@\@QEAA\@AEBV01\@\@Z
-     */
-    MCAPI RakString(class RakNet::RakString const&); // NOLINT
-    /**
-     * @symbol ??0RakString\@RakNet\@\@QEAA\@PEBDZZ
-     */
-    MCAPI RakString(char const*, ...); // NOLINT
-    /**
-     * @symbol ??0RakString\@RakNet\@\@QEAA\@XZ
-     */
-    MCAPI RakString(); // NOLINT
-    /**
-     * @symbol ??4RakString\@RakNet\@\@QEAAAEAV01\@PEBD\@Z
-     */
-    MCAPI class RakNet::RakString& operator=(char const*); // NOLINT
-    /**
-     * @symbol ??4RakString\@RakNet\@\@QEAAAEAV01\@PEAD\@Z
-     */
-    MCAPI class RakNet::RakString& operator=(char*); // NOLINT
-    /**
-     * @symbol ??8RakString\@RakNet\@\@QEBA_NAEBV01\@\@Z
-     */
-    MCAPI bool operator==(class RakNet::RakString const&) const; // NOLINT
-    /**
-     * @symbol ??1RakString\@RakNet\@\@QEAA\@XZ
-     */
-    MCAPI ~RakString(); // NOLINT
+    MCAPI bool Deserialize(class RakNet::BitStream*);
     /**
      * @symbol ?FreeMemoryNoMutex\@RakString\@RakNet\@\@SAXXZ
      */
-    MCAPI static void FreeMemoryNoMutex(); // NOLINT
+    MCAPI static void FreeMemoryNoMutex();
+    /**
+     * @symbol ?GetLength\@RakString\@RakNet\@\@QEBA_KXZ
+     */
+    MCAPI uint64_t GetLength() const;
+    /**
+     * @symbol ?IsEmpty\@RakString\@RakNet\@\@QEBA_NXZ
+     */
+    MCAPI bool IsEmpty() const;
+    /**
+     * @symbol ??0RakString\@RakNet\@\@QEAA\@AEBV01\@\@Z
+     */
+    MCAPI RakString(class RakNet::RakString const&);
+    /**
+     * @symbol ??0RakString\@RakNet\@\@QEAA\@PEBDZZ
+     */
+    MCAPI RakString(char const*, ...);
+    /**
+     * @symbol ??0RakString\@RakNet\@\@QEAA\@XZ
+     */
+    MCAPI RakString();
+    /**
+     * @symbol ??4RakString\@RakNet\@\@QEAAAEAV01\@PEBD\@Z
+     */
+    MCAPI class RakNet::RakString& operator=(char const*);
+    /**
+     * @symbol ??4RakString\@RakNet\@\@QEAAAEAV01\@PEAD\@Z
+     */
+    MCAPI class RakNet::RakString& operator=(char*);
+    /**
+     * @symbol ??8RakString\@RakNet\@\@QEBA_NAEBV01\@\@Z
+     */
+    MCAPI bool operator==(class RakNet::RakString const&) const;
+    /**
+     * @symbol ??1RakString\@RakNet\@\@QEAA\@XZ
+     */
+    MCAPI ~RakString();
     /**
      * @symbol ?emptyString\@RakString\@RakNet\@\@2USharedString\@12\@A
      */
-    MCAPI static struct RakNet::RakString::SharedString emptyString; // NOLINT
+    MCAPI static struct RakNet::RakString::SharedString emptyString;
     /**
      * @symbol ?freeList\@RakString\@RakNet\@\@2V?$List\@PEAUSharedString\@RakString\@RakNet\@\@\@DataStructures\@\@A
      */
-    MCAPI static class DataStructures::List<struct RakNet::RakString::SharedString*> freeList; // NOLINT
+    MCAPI static class DataStructures::List<struct RakNet::RakString::SharedString*> freeList;
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol ?Allocate\@RakString\@RakNet\@\@IEAAX_K\@Z
      */
-    MCAPI void Allocate(unsigned __int64); // NOLINT
+    MCAPI void Allocate(uint64_t);
     /**
      * @symbol ?Assign\@RakString\@RakNet\@\@IEAAXPEBDPEAD\@Z
      */
-    MCAPI void Assign(char const*, char*); // NOLINT
+    MCAPI void Assign(char const*, char*);
     /**
      * @symbol ?Assign\@RakString\@RakNet\@\@IEAAXPEBD\@Z
      */
-    MCAPI void Assign(char const*); // NOLINT
+    MCAPI void Assign(char const*);
     /**
      * @symbol ?Free\@RakString\@RakNet\@\@IEAAXXZ
      */
-    MCAPI void Free(); // NOLINT
-
-protected:
+    MCAPI void Free();
+    // NOLINTEND
 };
 
 }; // namespace RakNet

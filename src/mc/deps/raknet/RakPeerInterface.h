@@ -13,20 +13,22 @@ public:
     RakPeerInterface()                                   = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKNET_RAKPEERINTERFACE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~RakPeerInterface(); // NOLINT
+    MCVAPI ~RakPeerInterface();
 #endif
     /**
      * @symbol ?DestroyInstance\@RakPeerInterface\@RakNet\@\@SAXPEAV12\@\@Z
      */
-    MCAPI static void DestroyInstance(class RakNet::RakPeerInterface*); // NOLINT
+    MCAPI static void DestroyInstance(class RakNet::RakPeerInterface*);
     /**
      * @symbol ?GetInstance\@RakPeerInterface\@RakNet\@\@SAPEAV12\@XZ
      */
-    MCAPI static class RakNet::RakPeerInterface* GetInstance(); // NOLINT
+    MCAPI static class RakNet::RakPeerInterface* GetInstance();
+    // NOLINTEND
 };
 
 }; // namespace RakNet

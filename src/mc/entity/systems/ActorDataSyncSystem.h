@@ -11,8 +11,10 @@ public:
     ActorDataSyncSystem()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createActorDataSyncSystem\@ActorDataSyncSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createActorDataSyncSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createActorDataSyncSystem();
+    // NOLINTEND
 };

@@ -9,11 +9,6 @@ namespace Bedrock::Threading { class OSThreadPriority; }
 
 class BackgroundWorker {
 public:
-    // BackgroundWorker inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // BackgroundWorker inner types define
     enum class RunOneResult {};
 
@@ -24,26 +19,27 @@ public:
     BackgroundWorker()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?isAsync\@BackgroundWorker\@\@UEBA_NXZ
      */
-    virtual bool isAsync() const; // NOLINT
+    virtual bool isAsync() const;
     /**
      * @vftbl 2
      * @symbol ?canTaskRunAgain\@BackgroundWorker\@\@UEBA_NXZ
      */
-    virtual bool canTaskRunAgain() const; // NOLINT
+    virtual bool canTaskRunAgain() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BACKGROUNDWORKER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~BackgroundWorker(); // NOLINT
+    MCVAPI ~BackgroundWorker();
 #endif
     /**
      * @symbol
@@ -53,61 +49,66 @@ public:
         std::string,
         bool,
         class Bedrock::Threading::OSThreadPriority const&,
-        class std::optional<unsigned __int64>,
-        class std::optional<int>,
+        std::optional<uint64_t>,
+        std::optional<int>,
         class WorkerPool&,
         bool
-    ); // NOLINT
+    );
     /**
      * @symbol ?getApproximateTaskCount\@BackgroundWorker\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 getApproximateTaskCount() const; // NOLINT
-    /**
-     * @symbol ?getThreadId\@BackgroundWorker\@\@QEBA?AVid\@thread\@std\@\@XZ
-     */
-    MCAPI class std::thread::id getThreadId() const; // NOLINT
-    /**
-     * @symbol ?isIdle\@BackgroundWorker\@\@QEBA_NXZ
-     */
-    MCAPI bool isIdle() const; // NOLINT
-    /**
-     * @symbol ?queue\@BackgroundWorker\@\@QEAAXV?$shared_ptr\@VBackgroundTaskBase\@\@\@std\@\@\@Z
-     */
-    MCAPI void queue(class std::shared_ptr<class BackgroundTaskBase>); // NOLINT
-    /**
-     * @symbol ?requestStop\@BackgroundWorker\@\@QEAAX_N\@Z
-     */
-    MCAPI void requestStop(bool); // NOLINT
-    /**
-     * @symbol ?resortPriorityQueue\@BackgroundWorker\@\@QEAAXXZ
-     */
-    MCAPI void resortPriorityQueue(); // NOLINT
-    /**
-     * @symbol ?start\@BackgroundWorker\@\@QEAAXXZ
-     */
-    MCAPI void start(); // NOLINT
-    /**
-     * @symbol ?wake\@BackgroundWorker\@\@QEAAXXZ
-     */
-    MCAPI void wake(); // NOLINT
+    MCAPI uint64_t getApproximateTaskCount() const;
     /**
      * @symbol ?getLocal\@BackgroundWorker\@\@SAPEAV1\@XZ
      */
-    MCAPI static class BackgroundWorker* getLocal(); // NOLINT
+    MCAPI static class BackgroundWorker* getLocal();
+    /**
+     * @symbol ?getThreadId\@BackgroundWorker\@\@QEBA?AVid\@thread\@std\@\@XZ
+     */
+    MCAPI std::thread::id getThreadId() const;
+    /**
+     * @symbol ?isIdle\@BackgroundWorker\@\@QEBA_NXZ
+     */
+    MCAPI bool isIdle() const;
+    /**
+     * @symbol ?queue\@BackgroundWorker\@\@QEAAXV?$shared_ptr\@VBackgroundTaskBase\@\@\@std\@\@\@Z
+     */
+    MCAPI void queue(std::shared_ptr<class BackgroundTaskBase>);
+    /**
+     * @symbol ?requestStop\@BackgroundWorker\@\@QEAAX_N\@Z
+     */
+    MCAPI void requestStop(bool);
+    /**
+     * @symbol ?resortPriorityQueue\@BackgroundWorker\@\@QEAAXXZ
+     */
+    MCAPI void resortPriorityQueue();
+    /**
+     * @symbol ?start\@BackgroundWorker\@\@QEAAXXZ
+     */
+    MCAPI void start();
+    /**
+     * @symbol ?wake\@BackgroundWorker\@\@QEAAXXZ
+     */
+    MCAPI void wake();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_processNextTask\@BackgroundWorker\@\@AEAA_NXZ
      */
-    MCAPI bool _processNextTask(); // NOLINT
+    MCAPI bool _processNextTask();
     /**
      * @symbol ?_runOneTask\@BackgroundWorker\@\@AEAA?AW4RunOneResult\@1\@XZ
      */
-    MCAPI enum class BackgroundWorker::RunOneResult _runOneTask(); // NOLINT
+    MCAPI enum class BackgroundWorker::RunOneResult _runOneTask();
+    // NOLINTEND
 
 private:
+    // NOLINTBEGIN
     /**
      * @symbol ?gLocalWorkerMappingSingleton\@BackgroundWorker\@\@0PEAV1\@EA
      */
-    MCAPI static class BackgroundWorker* gLocalWorkerMappingSingleton; // NOLINT
+    MCAPI static class BackgroundWorker* gLocalWorkerMappingSingleton;
+    // NOLINTEND
 };

@@ -11,12 +11,14 @@ public:
     VibrationInfo()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?load\@VibrationInfo\@\@QEAAXAEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void load(class CompoundTag const&, class DataLoadHelper&); // NOLINT
+    MCAPI void load(class CompoundTag const&, class DataLoadHelper&);
     /**
      * @symbol ?save\@VibrationInfo\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void save(class CompoundTag&) const; // NOLINT
+    MCAPI void save(class CompoundTag&) const;
+    // NOLINTEND
 };

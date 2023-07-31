@@ -11,8 +11,10 @@ public:
     LocalConstBlockSource()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1LocalConstBlockSource\@\@QEAA\@XZ
      */
-    MCAPI ~LocalConstBlockSource(); // NOLINT
+    MCAPI ~LocalConstBlockSource();
+    // NOLINTEND
 };

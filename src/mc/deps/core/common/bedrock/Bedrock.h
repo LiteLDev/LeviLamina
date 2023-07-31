@@ -3,17 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace Bedrock {
+// NOLINTBEGIN
 /**
  * @symbol ?strtoint32\@Bedrock\@\@YAHPEBDPEAPEADH\@Z
  */
-MCAPI int strtoint32(char const*, char**, int); // NOLINT
+MCAPI int strtoint32(char const*, char**, int);
 /**
  * @symbol ?strtouint32\@Bedrock\@\@YAIPEBDPEAPEADH\@Z
  */
-MCAPI unsigned int strtouint32(char const*, char**, int); // NOLINT
+MCAPI unsigned int strtouint32(char const*, char**, int);
 /**
  * @symbol ?throw_system_error\@Bedrock\@\@YAXW4errc\@std\@\@\@Z
  */
-MCAPI void throw_system_error(enum class std::errc); // NOLINT
+MCAPI void throw_system_error(std::errc);
+// NOLINTEND
 
 }; // namespace Bedrock

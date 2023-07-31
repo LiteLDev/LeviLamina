@@ -14,30 +14,32 @@ public:
     LocateCommand()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?execute\@LocateCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
     /**
      * @symbol ?setup\@LocateCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
-    MCAPI static void setup(class CommandRegistry&); // NOLINT
+    MCAPI static void setup(class CommandRegistry&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_executeLocateBiome\@LocateCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void _executeLocateBiome(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
+    MCAPI void _executeLocateBiome(class CommandOrigin const&, class CommandOutput&) const;
     /**
      * @symbol ?_executeLocateStructure\@LocateCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void _executeLocateStructure(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
-
-private:
+    MCAPI void _executeLocateStructure(class CommandOrigin const&, class CommandOutput&) const;
+    // NOLINTEND
 };

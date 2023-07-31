@@ -22,26 +22,27 @@ public:
     SneakingSystem()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1(); // NOLINT
+    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2(); // NOLINT
+    virtual void __unk_vfn_2();
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3(); // NOLINT
+    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol
@@ -54,11 +55,12 @@ public:
                       struct AddRemove<>,
                       struct GlobalRead<>,
                       struct GlobalWrite<>,
-                      struct EntityFactoryT<>>&); // NOLINT
+                      struct EntityFactoryT<>>&);
     /**
      * @symbol
      * ?_tickSneakingSystem\@SneakingSystem\@\@SAXAEAVStrictEntityContext\@\@AEBV?$FlagComponent\@UPlayerComponentFlag\@\@\@\@AEAUSneakingComponent\@\@AEAVActorOwnerComponent\@\@\@Z
      */
     MCAPI static void
-    _tickSneakingSystem(class StrictEntityContext&, class FlagComponent<struct PlayerComponentFlag> const&, struct SneakingComponent&, class ActorOwnerComponent&); // NOLINT
+    _tickSneakingSystem(class StrictEntityContext&, class FlagComponent<struct PlayerComponentFlag> const&, struct SneakingComponent&, class ActorOwnerComponent&);
+    // NOLINTEND
 };

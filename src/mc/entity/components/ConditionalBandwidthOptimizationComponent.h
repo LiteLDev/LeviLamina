@@ -11,27 +11,28 @@ public:
     ConditionalBandwidthOptimizationComponent()                                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ConditionalBandwidthOptimizationComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI ConditionalBandwidthOptimizationComponent(class ConditionalBandwidthOptimizationComponent&&); // NOLINT
+    MCAPI ConditionalBandwidthOptimizationComponent(class ConditionalBandwidthOptimizationComponent&&);
     /**
      * @symbol
      * ?getCurrentOptimizationValues\@ConditionalBandwidthOptimizationComponent\@\@QEAA?AUConditionalBandwidthOptimization\@\@AEAVActor\@\@\@Z
      */
-    MCAPI struct ConditionalBandwidthOptimization getCurrentOptimizationValues(class Actor&); // NOLINT
+    MCAPI struct ConditionalBandwidthOptimization getCurrentOptimizationValues(class Actor&);
     /**
      * @symbol
      * ?initFromDefinition\@ConditionalBandwidthOptimizationComponent\@\@QEAAXAEAVActor\@\@AEBVConditionalBandwidthOptimizationDefinition\@\@\@Z
      */
-    MCAPI void initFromDefinition(class Actor&, class ConditionalBandwidthOptimizationDefinition const&); // NOLINT
+    MCAPI void initFromDefinition(class Actor&, class ConditionalBandwidthOptimizationDefinition const&);
     /**
      * @symbol ??4ConditionalBandwidthOptimizationComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class ConditionalBandwidthOptimizationComponent&
-    operator=(class ConditionalBandwidthOptimizationComponent&&); // NOLINT
+    MCAPI class ConditionalBandwidthOptimizationComponent& operator=(class ConditionalBandwidthOptimizationComponent&&);
     /**
      * @symbol ??1ConditionalBandwidthOptimizationComponent\@\@QEAA\@XZ
      */
-    MCAPI ~ConditionalBandwidthOptimizationComponent(); // NOLINT
+    MCAPI ~ConditionalBandwidthOptimizationComponent();
+    // NOLINTEND
 };

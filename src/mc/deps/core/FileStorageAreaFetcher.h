@@ -20,18 +20,20 @@ public:
     FileStorageAreaFetcher()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?getStorageAreaForPath\@FileStorageAreaFetcher\@Core\@\@UEBA?AVResult\@2\@AEAV?$shared_ptr\@VFileStorageArea\@Core\@\@\@std\@\@AEBVPath\@2\@\@Z
      */
     virtual class Core::Result
-    getStorageAreaForPath(class std::shared_ptr<class Core::FileStorageArea>&, class Core::Path const&) const; // NOLINT
+    getStorageAreaForPath(std::shared_ptr<class Core::FileStorageArea>&, class Core::Path const&) const;
+    // NOLINTEND
 };
 
 }; // namespace Core

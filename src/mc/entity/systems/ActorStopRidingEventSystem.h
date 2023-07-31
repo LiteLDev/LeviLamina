@@ -11,12 +11,14 @@ public:
     ActorStopRidingEventSystem()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createCancelableEventSystem\@ActorStopRidingEventSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createCancelableEventSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createCancelableEventSystem();
     /**
      * @symbol ?createSystem\@ActorStopRidingEventSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 };

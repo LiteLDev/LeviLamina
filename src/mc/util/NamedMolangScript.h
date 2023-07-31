@@ -11,8 +11,10 @@ public:
     NamedMolangScript()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1NamedMolangScript\@\@QEAA\@XZ
      */
-    MCAPI ~NamedMolangScript(); // NOLINT
+    MCAPI ~NamedMolangScript();
+    // NOLINTEND
 };

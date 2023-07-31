@@ -13,10 +13,12 @@ public:
     TestParameters()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1TestParameters\@gametest\@\@QEAA\@XZ
      */
-    MCAPI ~TestParameters(); // NOLINT
+    MCAPI ~TestParameters();
+    // NOLINTEND
 };
 
 }; // namespace gametest

@@ -19,11 +19,13 @@ public:
     BalloonableDefinition()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?buildSchema\@BalloonableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VBalloonableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      class BalloonableDefinition>>&); // NOLINT
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BalloonableDefinition>>&);
+    // NOLINTEND
 };

@@ -11,14 +11,16 @@ public:
     BlockRandomTickingComponent()                                              = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKRANDOMTICKINGCOMPONENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~BlockRandomTickingComponent(); // NOLINT
+    MCVAPI ~BlockRandomTickingComponent();
 #endif
     /**
      * @symbol ??0BlockRandomTickingComponent\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI BlockRandomTickingComponent(struct BlockRandomTickingComponent&&); // NOLINT
+    MCAPI BlockRandomTickingComponent(struct BlockRandomTickingComponent&&);
+    // NOLINTEND
 };

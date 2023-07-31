@@ -11,10 +11,12 @@ public:
     ServerMetrics()                                = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERMETRICS
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ServerMetrics(); // NOLINT
+    MCVAPI ~ServerMetrics();
 #endif
+    // NOLINTEND
 };

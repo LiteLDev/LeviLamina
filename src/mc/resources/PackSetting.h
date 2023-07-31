@@ -16,12 +16,14 @@ public:
     PackSetting()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?set\@PackSetting\@\@QEAAXAEBVValue\@Json\@\@\@Z
      */
-    MCAPI void set(class Json::Value const&); // NOLINT
+    MCAPI void set(class Json::Value const&);
     /**
      * @symbol ??1PackSetting\@\@QEAA\@XZ
      */
-    MCAPI ~PackSetting(); // NOLINT
+    MCAPI ~PackSetting();
+    // NOLINTEND
 };

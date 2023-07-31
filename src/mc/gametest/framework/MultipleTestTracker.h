@@ -19,55 +19,56 @@ public:
     MultipleTestTracker()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0MultipleTestTracker\@gametest\@\@QEAA\@AEBV?$vector\@V?$shared_ptr\@VBaseGameTestInstance\@gametest\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VBaseGameTestInstance\@gametest\@\@\@std\@\@\@2\@\@std\@\@\@Z
      */
-    MCAPI
-    MultipleTestTracker(std::vector<class std::shared_ptr<class gametest::BaseGameTestInstance>> const&); // NOLINT
+    MCAPI MultipleTestTracker(std::vector<std::shared_ptr<class gametest::BaseGameTestInstance>> const&);
     /**
      * @symbol
      * ?addListener\@MultipleTestTracker\@gametest\@\@QEAAXV?$shared_ptr\@VIGameTestListener\@gametest\@\@\@std\@\@\@Z
      */
-    MCAPI void addListener(class std::shared_ptr<class gametest::IGameTestListener>); // NOLINT
+    MCAPI void addListener(std::shared_ptr<class gametest::IGameTestListener>);
     /**
      * @symbol ?isDone\@MultipleTestTracker\@gametest\@\@QEBA_NXZ
      */
-    MCAPI bool isDone() const; // NOLINT
+    MCAPI bool isDone() const;
     /**
      * @symbol
      * ?removeListener\@MultipleTestTracker\@gametest\@\@QEAAXV?$shared_ptr\@VIGameTestListener\@gametest\@\@\@std\@\@\@Z
      */
-    MCAPI void removeListener(class std::shared_ptr<class gametest::IGameTestListener>); // NOLINT
-
-    // private:
+    MCAPI void removeListener(std::shared_ptr<class gametest::IGameTestListener>);
+    // NOLINTEND
 
 private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?sFailedOptionalTest\@MultipleTestTracker\@gametest\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const sFailedOptionalTest; // NOLINT
+    MCAPI static std::string const sFailedOptionalTest;
     /**
      * @symbol
      * ?sFailedRequiredTest\@MultipleTestTracker\@gametest\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const sFailedRequiredTest; // NOLINT
+    MCAPI static std::string const sFailedRequiredTest;
     /**
      * @symbol
      * ?sNotStartedTest\@MultipleTestTracker\@gametest\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const sNotStartedTest; // NOLINT
+    MCAPI static std::string const sNotStartedTest;
     /**
      * @symbol
      * ?sOnGoingTest\@MultipleTestTracker\@gametest\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const sOnGoingTest; // NOLINT
+    MCAPI static std::string const sOnGoingTest;
     /**
      * @symbol
      * ?sSuccessfulTest\@MultipleTestTracker\@gametest\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const sSuccessfulTest; // NOLINT
+    MCAPI static std::string const sSuccessfulTest;
+    // NOLINTEND
 };
 
 }; // namespace gametest

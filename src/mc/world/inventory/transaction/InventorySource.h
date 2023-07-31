@@ -4,11 +4,6 @@
 
 class InventorySource {
 public:
-    // InventorySource inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // InventorySource inner types define
     enum class InventorySourceFlags {};
 
@@ -19,8 +14,10 @@ public:
     InventorySource()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??8InventorySource\@\@QEBA_NAEBV0\@\@Z
      */
-    MCAPI bool operator==(class InventorySource const&) const; // NOLINT
+    MCAPI bool operator==(class InventorySource const&) const;
+    // NOLINTEND
 };

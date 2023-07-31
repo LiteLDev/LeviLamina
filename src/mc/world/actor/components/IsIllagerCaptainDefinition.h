@@ -19,19 +19,21 @@ public:
     IsIllagerCaptainDefinition()                                             = delete;
 
 public:
-    /**
-     * @symbol ?initialize\@IsIllagerCaptainDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&) const; // NOLINT
-    /**
-     * @symbol ?uninitialize\@IsIllagerCaptainDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
-    MCAPI void uninitialize(class EntityContext&) const; // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?buildSchema\@IsIllagerCaptainDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UIsIllagerCaptainDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      struct IsIllagerCaptainDefinition>>&); // NOLINT
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsIllagerCaptainDefinition>>&);
+    /**
+     * @symbol ?initialize\@IsIllagerCaptainDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&) const;
+    /**
+     * @symbol ?uninitialize\@IsIllagerCaptainDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
+     */
+    MCAPI void uninitialize(class EntityContext&) const;
+    // NOLINTEND
 };

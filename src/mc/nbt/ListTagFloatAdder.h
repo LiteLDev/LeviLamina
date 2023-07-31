@@ -11,12 +11,14 @@ public:
     ListTagFloatAdder()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??RListTagFloatAdder\@\@QEAAAEAV0\@M\@Z
      */
-    MCAPI class ListTagFloatAdder& operator()(float); // NOLINT
+    MCAPI class ListTagFloatAdder& operator()(float);
     /**
      * @symbol ??1ListTagFloatAdder\@\@QEAA\@XZ
      */
-    MCAPI ~ListTagFloatAdder(); // NOLINT
+    MCAPI ~ListTagFloatAdder();
+    // NOLINTEND
 };

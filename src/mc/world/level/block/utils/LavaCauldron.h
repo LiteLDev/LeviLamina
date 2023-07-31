@@ -3,10 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace VanillaComplexAliasBlockUtils::LavaCauldron {
+// NOLINTBEGIN
 /**
  * @symbol
  * ?getComplexAliasCallback\@LavaCauldron\@VanillaComplexAliasBlockUtils\@\@YA?AV?$function\@$$A6APEBVBlock\@\@H\@Z\@std\@\@XZ
  */
-MCAPI class std::function<class Block const*(int)> getComplexAliasCallback(); // NOLINT
+MCAPI std::function<class Block const*(int)> getComplexAliasCallback();
+// NOLINTEND
 
 }; // namespace VanillaComplexAliasBlockUtils::LavaCauldron

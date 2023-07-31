@@ -18,19 +18,21 @@ public:
     PhysicsDefinition(PhysicsDefinition const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0PhysicsDefinition\@\@QEAA\@XZ
      */
-    MCAPI PhysicsDefinition(); // NOLINT
-    /**
-     * @symbol ?initialize\@PhysicsDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVPhysicsComponent\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class PhysicsComponent&) const; // NOLINT
+    MCAPI PhysicsDefinition();
     /**
      * @symbol
      * ?buildSchema\@PhysicsDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VPhysicsDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class PhysicsDefinition>>&); // NOLINT
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class PhysicsDefinition>>&);
+    /**
+     * @symbol ?initialize\@PhysicsDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVPhysicsComponent\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class PhysicsComponent&) const;
+    // NOLINTEND
 };

@@ -22,52 +22,54 @@ public:
     FlatFileManifestInfo(FlatFileManifestInfo const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0FlatFileManifestInfo\@Core\@\@QEAA\@XZ
      */
-    MCAPI FlatFileManifestInfo(); // NOLINT
+    MCAPI FlatFileManifestInfo();
     /**
      * @symbol ?getFileSize\@FlatFileManifestInfo\@Core\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 getFileSize() const; // NOLINT
+    MCAPI uint64_t getFileSize() const;
     /**
      * @symbol ?getFileType\@FlatFileManifestInfo\@Core\@\@QEBA?AW4FileType\@2\@XZ
      */
-    MCAPI enum class Core::FileType getFileType() const; // NOLINT
+    MCAPI enum class Core::FileType getFileType() const;
     /**
      * @symbol
      * ?getPath\@FlatFileManifestInfo\@Core\@\@QEBAAEBV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@XZ
      */
-    MCAPI class Core::PathBuffer<std::string> const& getPath() const; // NOLINT
+    MCAPI class Core::PathBuffer<std::string> const& getPath() const;
     /**
      * @symbol ?getSeekPos\@FlatFileManifestInfo\@Core\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 getSeekPos() const; // NOLINT
+    MCAPI uint64_t getSeekPos() const;
     /**
      * @symbol ?isDeleted\@FlatFileManifestInfo\@Core\@\@QEBA_NXZ
      */
-    MCAPI bool isDeleted() const; // NOLINT
+    MCAPI bool isDeleted() const;
     /**
      * @symbol ?isDirectory\@FlatFileManifestInfo\@Core\@\@QEBA_NXZ
      */
-    MCAPI bool isDirectory() const; // NOLINT
+    MCAPI bool isDirectory() const;
     /**
      * @symbol ?isFile\@FlatFileManifestInfo\@Core\@\@QEBA_NXZ
      */
-    MCAPI bool isFile() const; // NOLINT
+    MCAPI bool isFile() const;
     /**
      * @symbol
      * ?readFromStream\@FlatFileManifestInfo\@Core\@\@QEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    MCAPI class Bedrock::Result<void, class std::error_code> readFromStream(class ReadOnlyBinaryStream&); // NOLINT
+    MCAPI class Bedrock::Result<void, std::error_code> readFromStream(class ReadOnlyBinaryStream&);
     /**
      * @symbol ?setDeleted\@FlatFileManifestInfo\@Core\@\@QEAAX_N\@Z
      */
-    MCAPI void setDeleted(bool); // NOLINT
+    MCAPI void setDeleted(bool);
     /**
      * @symbol ??1FlatFileManifestInfo\@Core\@\@QEAA\@XZ
      */
-    MCAPI ~FlatFileManifestInfo(); // NOLINT
+    MCAPI ~FlatFileManifestInfo();
+    // NOLINTEND
 };
 
 }; // namespace Core

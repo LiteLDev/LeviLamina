@@ -16,16 +16,17 @@ public:
     ScriptScoreboardScoreInfo()                                            = delete;
 
 public:
-    /**
-     * @symbol ??1ScriptScoreboardScoreInfo\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptScoreboardScoreInfo(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptScoreboardScoreInfo\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptScoreboardScoreInfo\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptScoreboardScoreInfo>
-    bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptScoreboardScoreInfo> bind();
+    /**
+     * @symbol ??1ScriptScoreboardScoreInfo\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptScoreboardScoreInfo();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

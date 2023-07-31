@@ -18,15 +18,17 @@ public:
     ScriptEffectType()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getEffect\@ScriptEffectType\@ScriptModuleMinecraft\@\@QEBAAEBVMobEffect\@\@XZ
      */
-    MCAPI class MobEffect const& getEffect() const; // NOLINT
+    MCAPI class MobEffect const& getEffect() const;
     /**
      * @symbol
      * ?getName\@ScriptEffectType\@ScriptModuleMinecraft\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string getName() const; // NOLINT
+    MCAPI std::string getName() const;
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

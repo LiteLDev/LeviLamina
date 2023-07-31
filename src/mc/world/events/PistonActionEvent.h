@@ -11,8 +11,10 @@ public:
     PistonActionEvent()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PistonActionEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PistonActionEvent(); // NOLINT
+    MCAPI ~PistonActionEvent();
+    // NOLINTEND
 };

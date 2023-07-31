@@ -11,13 +11,15 @@ public:
     LootTables()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?lookupByName\@LootTables\@\@QEAAPEAVLootTable\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVResourcePackManager\@\@\@Z
      */
-    MCAPI class LootTable* lookupByName(std::string const&, class ResourcePackManager&); // NOLINT
+    MCAPI class LootTable* lookupByName(std::string const&, class ResourcePackManager&);
     /**
      * @symbol ??1LootTables\@\@QEAA\@XZ
      */
-    MCAPI ~LootTables(); // NOLINT
+    MCAPI ~LootTables();
+    // NOLINTEND
 };

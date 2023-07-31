@@ -15,13 +15,15 @@ public:
     NoClipOrNoBlockMoveFilterSystem()                                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?create\@NoClipOrNoBlockMoveFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo create(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo create();
     /**
      * @symbol
      * ?tick\@NoClipOrNoBlockMoveFilterSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUMoveRequestComponent\@\@AEBUOffsetsComponent\@\@V?$Optional\@$$CBUSlideOffsetComponent\@\@\@\@AEBUSynchedActorDataComponent\@\@AEAUAABBShapeComponent\@\@AEAUStateVectorComponent\@\@AEAUSubBBsComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UMoveRequestComponent\@\@\@\@AEBVIConstBlockSource\@\@\@Z
      */
-    MCAPI static void tick(class StrictEntityContext const&, struct MoveRequestComponent const&, struct OffsetsComponent const&, class Optional<struct SlideOffsetComponent const>, struct SynchedActorDataComponent const&, struct AABBShapeComponent&, struct StateVectorComponent&, struct SubBBsComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MoveRequestComponent>, class IConstBlockSource const&); // NOLINT
+    MCAPI static void tick(class StrictEntityContext const&, struct MoveRequestComponent const&, struct OffsetsComponent const&, class Optional<struct SlideOffsetComponent const>, struct SynchedActorDataComponent const&, struct AABBShapeComponent&, struct StateVectorComponent&, struct SubBBsComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MoveRequestComponent>, class IConstBlockSource const&);
+    // NOLINTEND
 };

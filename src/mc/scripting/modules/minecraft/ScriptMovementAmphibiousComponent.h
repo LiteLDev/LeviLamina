@@ -18,33 +18,35 @@ public:
     ScriptMovementAmphibiousComponent()                                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTMOVEMENTAMPHIBIOUSCOMPONENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptMovementAmphibiousComponent(); // NOLINT
+    MCVAPI ~ScriptMovementAmphibiousComponent();
 #endif
     /**
      * @symbol
      * ?bind\@ScriptMovementAmphibiousComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptMovementAmphibiousComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMovementAmphibiousComponent>
-    bind(); // NOLINT
+    bind();
     /**
      * @symbol
      * ?bindV010\@ScriptMovementAmphibiousComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptMovementAmphibiousComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMovementAmphibiousComponent>
-    bindV010(); // NOLINT
+    bindV010();
     /**
      * @symbol ?ComponentId\@ScriptMovementAmphibiousComponent\@ScriptModuleMinecraft\@\@2PEBDEB
      */
-    MCAPI static char const* ComponentId; // NOLINT
+    MCAPI static char const* ComponentId;
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

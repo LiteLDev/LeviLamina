@@ -10,12 +10,14 @@ public:
     TripWireTripEvent()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0TripWireTripEvent\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI TripWireTripEvent(struct TripWireTripEvent const&); // NOLINT
+    MCAPI TripWireTripEvent(struct TripWireTripEvent const&);
     /**
      * @symbol ??1TripWireTripEvent\@\@QEAA\@XZ
      */
-    MCAPI ~TripWireTripEvent(); // NOLINT
+    MCAPI ~TripWireTripEvent();
+    // NOLINTEND
 };

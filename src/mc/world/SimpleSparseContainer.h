@@ -11,61 +11,63 @@ public:
     SimpleSparseContainer()                                        = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLESPARSECONTAINER
     /**
      * @symbol ?containerContentChanged\@SimpleSparseContainer\@\@EEAAXH\@Z
      */
-    MCVAPI void containerContentChanged(int); // NOLINT
+    MCVAPI void containerContentChanged(int);
     /**
      * @symbol ?getContainerSize\@SimpleSparseContainer\@\@UEBAHXZ
      */
-    MCVAPI int getContainerSize() const; // NOLINT
+    MCVAPI int getContainerSize() const;
     /**
      * @symbol ?getItem\@SimpleSparseContainer\@\@UEBAAEBVItemStack\@\@H\@Z
      */
-    MCVAPI class ItemStack const& getItem(int) const; // NOLINT
+    MCVAPI class ItemStack const& getItem(int) const;
     /**
      * @symbol ?getMaxStackSize\@SimpleSparseContainer\@\@UEBAHXZ
      */
-    MCVAPI int getMaxStackSize() const; // NOLINT
+    MCVAPI int getMaxStackSize() const;
     /**
      * @symbol
      * ?serverInitItemStackIds\@SimpleSparseContainer\@\@EEAAXHHV?$function\@$$A6AXHAEBVItemStack\@\@\@Z\@std\@\@\@Z
      */
-    MCVAPI void serverInitItemStackIds(int, int, class std::function<void(int, class ItemStack const&)>); // NOLINT
+    MCVAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
     /**
      * @symbol ?setItem\@SimpleSparseContainer\@\@UEAAXHAEBVItemStack\@\@\@Z
      */
-    MCVAPI void setItem(int, class ItemStack const&); // NOLINT
+    MCVAPI void setItem(int, class ItemStack const&);
     /**
      * @symbol ?startOpen\@SimpleSparseContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
-    MCVAPI void startOpen(class Player&); // NOLINT
+    MCVAPI void startOpen(class Player&);
     /**
      * @symbol ?stopOpen\@SimpleSparseContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
-    MCVAPI void stopOpen(class Player&); // NOLINT
+    MCVAPI void stopOpen(class Player&);
 #endif
     /**
      * @symbol
      * ??0SimpleSparseContainer\@\@QEAA\@AEAVContainer\@\@W4SparseContainerBackingSetType\@\@V?$unique_ptr\@VISparseContainerSetListener\@\@U?$default_delete\@VISparseContainerSetListener\@\@\@std\@\@\@std\@\@V?$unique_ptr\@VIPlayerContainerSetter\@\@U?$default_delete\@VIPlayerContainerSetter\@\@\@std\@\@\@4\@\@Z
      */
     MCAPI
-    SimpleSparseContainer(class Container&, enum class SparseContainerBackingSetType, std::unique_ptr<class ISparseContainerSetListener>, std::unique_ptr<class IPlayerContainerSetter>); // NOLINT
+    SimpleSparseContainer(class Container&, enum class SparseContainerBackingSetType, std::unique_ptr<class ISparseContainerSetListener>, std::unique_ptr<class IPlayerContainerSetter>);
     /**
      * @symbol ?clearItem\@SimpleSparseContainer\@\@QEAAXH\@Z
      */
-    MCAPI void clearItem(int); // NOLINT
+    MCAPI void clearItem(int);
     /**
      * @symbol ?pushAllToBackingContainer\@SimpleSparseContainer\@\@QEAAXXZ
      */
-    MCAPI void pushAllToBackingContainer(); // NOLINT
+    MCAPI void pushAllToBackingContainer();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_setBackingContainerSlot\@SimpleSparseContainer\@\@AEAAXHAEBVItemStack\@\@\@Z
      */
-    MCAPI void _setBackingContainerSlot(int, class ItemStack const&); // NOLINT
-
-private:
+    MCAPI void _setBackingContainerSlot(int, class ItemStack const&);
+    // NOLINTEND
 };

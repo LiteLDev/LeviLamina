@@ -25,18 +25,19 @@ public:
         ConfigListener()                                 = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol
          * ?getConfigAsync\@ConfigListener\@NetherNetSignalServiceSigninJob\@\@QEAA?AV?$shared_ptr\@V?$IAsyncResult\@V?$tuple\@UUrl\@NetherNetSignalServiceSigninJob\@\@UToken\@2\@\@std\@\@\@Threading\@Bedrock\@\@\@std\@\@XZ
          */
-        MCAPI class std::shared_ptr<class Bedrock::Threading::IAsyncResult<class std::tuple<
-            struct NetherNetSignalServiceSigninJob::Url,
-            struct NetherNetSignalServiceSigninJob::Token>>>
-        getConfigAsync(); // NOLINT
+        MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<
+            std::tuple<struct NetherNetSignalServiceSigninJob::Url, struct NetherNetSignalServiceSigninJob::Token>>>
+              getConfigAsync();
         /**
          * @symbol ??1ConfigListener\@NetherNetSignalServiceSigninJob\@\@QEAA\@XZ
          */
-        MCAPI ~ConfigListener(); // NOLINT
+        MCAPI ~ConfigListener();
+        // NOLINTEND
     };
 
     struct Token {
@@ -48,10 +49,12 @@ public:
         Token()                        = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1Token\@NetherNetSignalServiceSigninJob\@\@QEAA\@XZ
          */
-        MCAPI ~Token(); // NOLINT
+        MCAPI ~Token();
+        // NOLINTEND
     };
 
     struct Url {
@@ -63,10 +66,12 @@ public:
         Url()                      = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1Url\@NetherNetSignalServiceSigninJob\@\@QEAA\@XZ
          */
-        MCAPI ~Url(); // NOLINT
+        MCAPI ~Url();
+        // NOLINTEND
     };
 
 public:
@@ -76,17 +81,17 @@ public:
     NetherNetSignalServiceSigninJob()                                                  = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NETHERNETSIGNALSERVICESIGNINJOB
     /**
      * @symbol
      * ?signin\@NetherNetSignalServiceSigninJob\@\@UEAAX_NV?$optional\@V?$duration\@_JU?$ratio\@$00$00\@std\@\@\@chrono\@std\@\@\@std\@\@\@Z
      */
-    MCVAPI void
-    signin(bool, class std::optional<class std::chrono::duration<__int64, struct std::ratio<1, 1>>>); // NOLINT
+    MCVAPI void signin(bool, std::optional<std::chrono::seconds>);
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~NetherNetSignalServiceSigninJob(); // NOLINT
+    MCVAPI ~NetherNetSignalServiceSigninJob();
 #endif
     /**
      * @symbol
@@ -94,19 +99,21 @@ public:
      */
     MCAPI NetherNetSignalServiceSigninJob(
         class gsl::not_null<class Bedrock::NonOwnerPointer<struct NetherNetConnector>>&&,
-        class std::function<void(bool)>&&,
-        class std::function<void(void)>&&,
+        std::function<void(bool)>&&,
+        std::function<void(void)>&&,
         class gsl::not_null<class Bedrock::NonOwnerPointer<class DisconnectionRequestHandler>>,
         class gsl::not_null<class Bedrock::NonOwnerPointer<class ServicesManager>>,
         class gsl::not_null<class Bedrock::NonOwnerPointer<class IMinecraftEventing>>,
         bool
-    ); // NOLINT
+    );
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_executeOnMainThread\@NetherNetSignalServiceSigninJob\@\@AEAAX$$QEAV?$function\@$$A6AXXZ\@std\@\@\@Z
      */
-    MCAPI void _executeOnMainThread(class std::function<void(void)>&&); // NOLINT
+    MCAPI void _executeOnMainThread(std::function<void(void)>&&);
     /**
      * @symbol ?_signin\@NetherNetSignalServiceSigninJob\@\@AEAAXAEBUUrl\@1\@AEBUToken\@1\@_N\@Z
      */
@@ -114,7 +121,6 @@ public:
         struct NetherNetSignalServiceSigninJob::Url const&,
         struct NetherNetSignalServiceSigninJob::Token const&,
         bool
-    ); // NOLINT
-
-private:
+    );
+    // NOLINTEND
 };

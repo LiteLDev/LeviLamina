@@ -17,18 +17,20 @@ public:
     ScriptEntityRaycastOptions()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptEntityRaycastOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptEntityRaycastOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptEntityRaycastOptions>
-    bind(); // NOLINT
+    bind();
     /**
      * @symbol
      * ?bindV010\@ScriptEntityRaycastOptions\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptEntityRaycastOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptEntityRaycastOptions>
-    bindV010(); // NOLINT
+    bindV010();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

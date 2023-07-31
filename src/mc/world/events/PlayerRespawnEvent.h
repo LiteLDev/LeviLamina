@@ -11,8 +11,10 @@ public:
     PlayerRespawnEvent()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PlayerRespawnEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerRespawnEvent(); // NOLINT
+    MCAPI ~PlayerRespawnEvent();
+    // NOLINTEND
 };

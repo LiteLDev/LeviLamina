@@ -13,10 +13,12 @@ public:
     PathPart()                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PathPart\@Core\@\@QEAA\@XZ
      */
-    MCAPI ~PathPart(); // NOLINT
+    MCAPI ~PathPart();
+    // NOLINTEND
 };
 
 }; // namespace Core

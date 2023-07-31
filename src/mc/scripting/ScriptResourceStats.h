@@ -11,17 +11,19 @@ public:
     ScriptResourceStats()                                      = delete;
 
 public:
+    // NOLINTBEGIN
+    /**
+     * @symbol ?bindType\@ScriptResourceStats\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     /**
      * @symbol
      * ?serialize\@ScriptResourceStats\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string serialize() const; // NOLINT
+    MCAPI std::string serialize() const;
     /**
      * @symbol ??1ScriptResourceStats\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptResourceStats(); // NOLINT
-    /**
-     * @symbol ?bindType\@ScriptResourceStats\@\@SAXXZ
-     */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI ~ScriptResourceStats();
+    // NOLINTEND
 };

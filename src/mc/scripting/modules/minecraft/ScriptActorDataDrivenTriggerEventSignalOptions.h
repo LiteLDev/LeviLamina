@@ -13,21 +13,22 @@ public:
     ScriptActorDataDrivenTriggerEventSignalOptions()                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ScriptActorDataDrivenTriggerEventSignalOptions\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
      */
-    MCAPI
-    ScriptActorDataDrivenTriggerEventSignalOptions(struct ScriptModuleMinecraft::
-                                                       ScriptActorDataDrivenTriggerEventSignalOptions const&); // NOLINT
+    MCAPI ScriptActorDataDrivenTriggerEventSignalOptions(struct ScriptModuleMinecraft::
+                                                             ScriptActorDataDrivenTriggerEventSignalOptions const&);
     /**
      * @symbol ??4ScriptActorDataDrivenTriggerEventSignalOptions\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptActorDataDrivenTriggerEventSignalOptions&
-    operator=(struct ScriptModuleMinecraft::ScriptActorDataDrivenTriggerEventSignalOptions&&); // NOLINT
+    operator=(struct ScriptModuleMinecraft::ScriptActorDataDrivenTriggerEventSignalOptions&&);
     /**
      * @symbol ??1ScriptActorDataDrivenTriggerEventSignalOptions\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptActorDataDrivenTriggerEventSignalOptions(); // NOLINT
+    MCAPI ~ScriptActorDataDrivenTriggerEventSignalOptions();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

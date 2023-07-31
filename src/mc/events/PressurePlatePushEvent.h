@@ -10,12 +10,14 @@ public:
     PressurePlatePushEvent()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0PressurePlatePushEvent\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI PressurePlatePushEvent(struct PressurePlatePushEvent const&); // NOLINT
+    MCAPI PressurePlatePushEvent(struct PressurePlatePushEvent const&);
     /**
      * @symbol ??1PressurePlatePushEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PressurePlatePushEvent(); // NOLINT
+    MCAPI ~PressurePlatePushEvent();
+    // NOLINTEND
 };

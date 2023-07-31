@@ -11,109 +11,115 @@ public:
     SnackGoal()                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?canUse\@SnackGoal\@\@UEAA_NXZ
      */
-    virtual bool canUse(); // NOLINT
+    virtual bool canUse();
     /**
      * @vftbl 2
      * @symbol ?canContinueToUse\@SnackGoal\@\@UEAA_NXZ
      */
-    virtual bool canContinueToUse(); // NOLINT
+    virtual bool canContinueToUse();
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3(); // NOLINT
+    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol ?start\@SnackGoal\@\@UEAAXXZ
      */
-    virtual void start(); // NOLINT
+    virtual void start();
     /**
      * @vftbl 5
      * @symbol ?stop\@SnackGoal\@\@UEAAXXZ
      */
-    virtual void stop(); // NOLINT
+    virtual void stop();
     /**
      * @vftbl 6
      * @symbol ?tick\@SnackGoal\@\@UEAAXXZ
      */
-    virtual void tick(); // NOLINT
+    virtual void tick();
     /**
      * @vftbl 7
      * @symbol
      * ?appendDebugInfo\@SnackGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void appendDebugInfo(std::string&) const; // NOLINT
+    virtual void appendDebugInfo(std::string&) const;
     /**
      * @vftbl 8
      * @symbol __unk_vfn_8
      */
-    virtual void __unk_vfn_8(); // NOLINT
+    virtual void __unk_vfn_8();
     /**
      * @vftbl 9
      * @symbol __unk_vfn_9
      */
-    virtual void __unk_vfn_9(); // NOLINT
+    virtual void __unk_vfn_9();
     /**
      * @vftbl 10
      * @symbol ?getRandomEatingEnd\@SnackGoal\@\@MEBAHXZ
      */
-    virtual int getRandomEatingEnd() const; // NOLINT
+    virtual int getRandomEatingEnd() const;
     /**
      * @symbol
      * ??0SnackGoal\@\@QEAA\@AEAVMob\@\@AEBV?$vector\@VItemDescriptor\@\@V?$allocator\@VItemDescriptor\@\@\@std\@\@\@std\@\@MMM\@Z
      */
-    MCAPI SnackGoal(class Mob&, std::vector<class ItemDescriptor> const&, float, float, float); // NOLINT
+    MCAPI SnackGoal(class Mob&, std::vector<class ItemDescriptor> const&, float, float, float);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_hasSnackableItems\@SnackGoal\@\@AEAA_NXZ
      */
-    MCAPI bool _hasSnackableItems(); // NOLINT
+    MCAPI bool _hasSnackableItems();
     /**
      * @symbol ?_isSnackableItem\@SnackGoal\@\@AEBA_NAEBVItemStack\@\@\@Z
      */
-    MCAPI bool _isSnackableItem(class ItemStack const&) const; // NOLINT
+    MCAPI bool _isSnackableItem(class ItemStack const&) const;
     /**
      * @symbol ?_updateHand\@SnackGoal\@\@AEAAXAEBVItemStack\@\@\@Z
      */
-    MCAPI void _updateHand(class ItemStack const&); // NOLINT
+    MCAPI void _updateHand(class ItemStack const&);
+    // NOLINTEND
 
 private:
+    // NOLINTBEGIN
     /**
      * @symbol ?CHEW_CHANCE\@SnackGoal\@\@0HB
      */
-    MCAPI static int const CHEW_CHANCE; // NOLINT
+    MCAPI static int const CHEW_CHANCE;
     /**
      * @symbol ?EATING_TIME\@SnackGoal\@\@0HB
      */
-    MCAPI static int const EATING_TIME; // NOLINT
+    MCAPI static int const EATING_TIME;
     /**
      * @symbol ?PATH_RANGE\@SnackGoal\@\@0MB
      */
-    MCAPI static float const PATH_RANGE; // NOLINT
+    MCAPI static float const PATH_RANGE;
     /**
      * @symbol ?RANDOM_EATING_END\@SnackGoal\@\@0HB
      */
-    MCAPI static int const RANDOM_EATING_END; // NOLINT
+    MCAPI static int const RANDOM_EATING_END;
     /**
      * @symbol ?RANDOM_EATING_START\@SnackGoal\@\@0HB
      */
-    MCAPI static int const RANDOM_EATING_START; // NOLINT
+    MCAPI static int const RANDOM_EATING_START;
     /**
      * @symbol ?SEARCH_SIZE\@SnackGoal\@\@0MB
      */
-    MCAPI static float const SEARCH_SIZE; // NOLINT
+    MCAPI static float const SEARCH_SIZE;
     /**
      * @symbol ?STOP_DIST_SQRD\@SnackGoal\@\@0MB
      */
-    MCAPI static float const STOP_DIST_SQRD; // NOLINT
+    MCAPI static float const STOP_DIST_SQRD;
+    // NOLINTEND
 };

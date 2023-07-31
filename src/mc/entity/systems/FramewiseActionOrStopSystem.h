@@ -16,10 +16,11 @@ public:
     FramewiseActionOrStopSystem()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createFramewiseActionOrStopSystem\@FramewiseActionOrStopSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createFramewiseActionOrStopSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createFramewiseActionOrStopSystem();
     /**
      * @symbol
      * ?tickFramewiseActionOrStopSystem\@FramewiseActionOrStopSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@ULocalPlayerComponentFlag\@\@\@\@UPlayerInputRequestComponent\@\@\@\@$$CBULocalMoveVelocityComponent\@\@UActionOrStopComponent\@\@\@\@\@Z
@@ -32,15 +33,16 @@ public:
                                                           class FlagComponent<struct LocalPlayerComponentFlag>,
                                                           struct PlayerInputRequestComponent>,
                                                       struct LocalMoveVelocityComponent const,
-                                                      struct ActionOrStopComponent>); // NOLINT
+                                                      struct ActionOrStopComponent>);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?doFramewiseActionOrStopSystem\@FramewiseActionOrStopSystem\@\@CAXAEBULocalMoveVelocityComponent\@\@AEAUActionOrStopComponent\@\@\@Z
      */
     MCAPI static void
-    doFramewiseActionOrStopSystem(struct LocalMoveVelocityComponent const&, struct ActionOrStopComponent&); // NOLINT
-
-private:
+    doFramewiseActionOrStopSystem(struct LocalMoveVelocityComponent const&, struct ActionOrStopComponent&);
+    // NOLINTEND
 };

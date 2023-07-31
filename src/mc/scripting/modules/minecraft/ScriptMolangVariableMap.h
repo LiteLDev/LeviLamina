@@ -25,61 +25,62 @@ public:
     ScriptMolangVariableMap()                                          = delete;
 
 public:
+    // NOLINTBEGIN
+    /**
+     * @symbol
+     * ?bind\@ScriptMolangVariableMap\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptMolangVariableMap\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMolangVariableMap> bind();
     /**
      * @symbol ?getVariableMap\@ScriptMolangVariableMap\@ScriptModuleMinecraft\@\@QEAAAEAVMolangVariableMap\@\@XZ
      */
-    MCAPI class MolangVariableMap& getVariableMap(); // NOLINT
+    MCAPI class MolangVariableMap& getVariableMap();
     /**
      * @symbol ??4ScriptMolangVariableMap\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraft::ScriptMolangVariableMap&
-    operator=(class ScriptModuleMinecraft::ScriptMolangVariableMap&&); // NOLINT
+    operator=(class ScriptModuleMinecraft::ScriptMolangVariableMap&&);
     /**
      * @symbol
      * ?setColorRBG\@ScriptMolangVariableMap\@ScriptModuleMinecraft\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptMolangVariableMap\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVScriptColor\@2\@\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptMolangVariableMap>
-    setColorRBG(std::string const&, class ScriptModuleMinecraft::ScriptColor const&); // NOLINT
+    setColorRBG(std::string const&, class ScriptModuleMinecraft::ScriptColor const&);
     /**
      * @symbol
      * ?setColorRBGA\@ScriptMolangVariableMap\@ScriptModuleMinecraft\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptMolangVariableMap\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVScriptColor\@2\@\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptMolangVariableMap>
-    setColorRBGA(std::string const&, class ScriptModuleMinecraft::ScriptColor const&); // NOLINT
+    setColorRBGA(std::string const&, class ScriptModuleMinecraft::ScriptColor const&);
     /**
      * @symbol
      * ?setSpeedAndDirection\@ScriptMolangVariableMap\@ScriptModuleMinecraft\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptMolangVariableMap\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@MAEBVVec3\@\@\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptMolangVariableMap>
-    setSpeedAndDirection(std::string const&, float, class Vec3 const&); // NOLINT
+    setSpeedAndDirection(std::string const&, float, class Vec3 const&);
     /**
      * @symbol
      * ?setSpeedAndDirection_V010\@ScriptMolangVariableMap\@ScriptModuleMinecraft\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptMolangVariableMap\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@MAEBVScriptVector\@2\@\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptMolangVariableMap>
-    setSpeedAndDirection_V010(std::string const&, float, class ScriptModuleMinecraft::ScriptVector const&); // NOLINT
+    setSpeedAndDirection_V010(std::string const&, float, class ScriptModuleMinecraft::ScriptVector const&);
     /**
      * @symbol
      * ?setVector3\@ScriptMolangVariableMap\@ScriptModuleMinecraft\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptMolangVariableMap\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVVec3\@\@\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptMolangVariableMap>
-    setVector3(std::string const&, class Vec3 const&); // NOLINT
+    setVector3(std::string const&, class Vec3 const&);
     /**
      * @symbol
      * ?setVector3_V010\@ScriptMolangVariableMap\@ScriptModuleMinecraft\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptMolangVariableMap\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVScriptVector\@2\@\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptMolangVariableMap>
-    setVector3_V010(std::string const&, class ScriptModuleMinecraft::ScriptVector const&); // NOLINT
+    setVector3_V010(std::string const&, class ScriptModuleMinecraft::ScriptVector const&);
     /**
      * @symbol ??1ScriptMolangVariableMap\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptMolangVariableMap(); // NOLINT
-    /**
-     * @symbol
-     * ?bind\@ScriptMolangVariableMap\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptMolangVariableMap\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMolangVariableMap>
-    bind(); // NOLINT
+    MCAPI ~ScriptMolangVariableMap();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

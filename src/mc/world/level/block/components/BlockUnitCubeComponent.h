@@ -16,9 +16,11 @@ public:
     BlockUnitCubeComponent()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?mBlockSchematic\@BlockUnitCubeComponent\@\@2V?$shared_ptr\@UBlockSchematic\@ClientBlockPipeline\@\@\@std\@\@A
      */
-    MCAPI static class std::shared_ptr<struct ClientBlockPipeline::BlockSchematic> mBlockSchematic; // NOLINT
+    MCAPI static std::shared_ptr<struct ClientBlockPipeline::BlockSchematic> mBlockSchematic;
+    // NOLINTEND
 };

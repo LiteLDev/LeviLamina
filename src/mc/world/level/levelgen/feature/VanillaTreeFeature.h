@@ -22,20 +22,23 @@ public:
     VanillaTreeFeature()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?place\@VanillaTreeFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */
-    virtual class std::optional<class BlockPos>
-    place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const; // NOLINT
+    virtual std::optional<class BlockPos>
+    place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_buildSchema\@VanillaTreeFeature\@\@CAXAEAV?$JsonSchemaObjectNode\@V?$JsonParseState\@VEmptyClass\@JsonUtil\@\@UFeatureRootParseContext\@FeatureLoading\@\@\@JsonUtil\@\@U?$ConcreteFeatureHolder\@VVanillaTreeFeature\@\@\@FeatureLoading\@\@\@JsonUtil\@\@\@Z
@@ -44,23 +47,22 @@ public:
     _buildSchema(class JsonUtil::JsonSchemaObjectNode<
                  class JsonUtil::
                      JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>,
-                 struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>>&); // NOLINT
+                 struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>>&);
     /**
      * @symbol
      * ?_buildVanillaCanopyVariants\@VanillaTreeFeature\@\@CAXAEAV?$JsonSchemaObjectNode\@V?$JsonParseState\@VEmptyClass\@JsonUtil\@\@UFeatureRootParseContext\@FeatureLoading\@\@\@JsonUtil\@\@U?$ConcreteFeatureHolder\@VVanillaTreeFeature\@\@\@FeatureLoading\@\@\@JsonUtil\@\@V?$function\@$$A6AAEAVITreeCanopyWrapper\@\@PEAU?$ConcreteFeatureHolder\@VVanillaTreeFeature\@\@\@FeatureLoading\@\@\@Z\@std\@\@\@Z
      */
     MCAPI static void
-    _buildVanillaCanopyVariants(class JsonUtil::JsonSchemaObjectNode<class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>, struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>>&, class std::function<class ITreeCanopyWrapper&(struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>*)>); // NOLINT
+    _buildVanillaCanopyVariants(class JsonUtil::JsonSchemaObjectNode<class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>, struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>>&, std::function<class ITreeCanopyWrapper&(struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>*)>);
     /**
      * @symbol
      * ?_buildVanillaRootVariants\@VanillaTreeFeature\@\@CAXAEAV?$JsonSchemaObjectNode\@V?$JsonParseState\@VEmptyClass\@JsonUtil\@\@UFeatureRootParseContext\@FeatureLoading\@\@\@JsonUtil\@\@U?$ConcreteFeatureHolder\@VVanillaTreeFeature\@\@\@FeatureLoading\@\@\@JsonUtil\@\@V?$function\@$$A6AAEAVITreeRootWrapper\@\@PEAU?$ConcreteFeatureHolder\@VVanillaTreeFeature\@\@\@FeatureLoading\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI static void _buildVanillaRootVariants(class JsonUtil::JsonSchemaObjectNode<class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>, struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>>&, class std::function<class ITreeRootWrapper&(struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>*)>); // NOLINT
+    MCAPI static void _buildVanillaRootVariants(class JsonUtil::JsonSchemaObjectNode<class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>, struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>>&, std::function<class ITreeRootWrapper&(struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>*)>);
     /**
      * @symbol
      * ?_buildVanillaTrunkVariants\@VanillaTreeFeature\@\@CAXAEAV?$JsonSchemaObjectNode\@V?$JsonParseState\@VEmptyClass\@JsonUtil\@\@UFeatureRootParseContext\@FeatureLoading\@\@\@JsonUtil\@\@U?$ConcreteFeatureHolder\@VVanillaTreeFeature\@\@\@FeatureLoading\@\@\@JsonUtil\@\@V?$function\@$$A6AAEAVITreeTrunkWrapper\@\@PEAU?$ConcreteFeatureHolder\@VVanillaTreeFeature\@\@\@FeatureLoading\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI static void _buildVanillaTrunkVariants(class JsonUtil::JsonSchemaObjectNode<class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>, struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>>&, class std::function<class ITreeTrunkWrapper&(struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>*)>); // NOLINT
-
-private:
+    MCAPI static void _buildVanillaTrunkVariants(class JsonUtil::JsonSchemaObjectNode<class JsonUtil::JsonParseState<class JsonUtil::EmptyClass, struct FeatureLoading::FeatureRootParseContext>, struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>>&, std::function<class ITreeTrunkWrapper&(struct FeatureLoading::ConcreteFeatureHolder<class VanillaTreeFeature>*)>);
+    // NOLINTEND
 };

@@ -11,8 +11,10 @@ public:
     GameRuleId()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0GameRuleId\@\@QEAA\@H\@Z
      */
-    MCAPI GameRuleId(int); // NOLINT
+    MCAPI GameRuleId(int);
+    // NOLINTEND
 };

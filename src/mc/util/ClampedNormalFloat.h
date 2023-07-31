@@ -18,14 +18,16 @@ public:
     ClampedNormalFloat()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?generateNext\@ClampedNormalFloat\@ValueProviders\@\@QEBAMAEAVRandom\@\@\@Z
      */
-    MCAPI float generateNext(class Random&) const; // NOLINT
+    MCAPI float generateNext(class Random&) const;
     /**
      * @symbol ?generateNext\@ClampedNormalFloat\@ValueProviders\@\@SAMAEAVRandom\@\@MMMM\@Z
      */
-    MCAPI static float generateNext(class Random&, float, float, float, float); // NOLINT
+    MCAPI static float generateNext(class Random&, float, float, float, float);
+    // NOLINTEND
 };
 
 }; // namespace ValueProviders

@@ -11,19 +11,20 @@ public:
     GroundedConstraint()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?isSatisfied\@GroundedConstraint\@\@UEBA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEBW4Rotation\@\@\@Z
      */
-    virtual bool
-    isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, enum class Rotation const&) const; // NOLINT
+    virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, enum class Rotation const&) const;
     /**
      * @symbol ??0GroundedConstraint\@\@QEAA\@AEAVStructureTemplate\@\@\@Z
      */
-    MCAPI GroundedConstraint(class StructureTemplate&); // NOLINT
+    MCAPI GroundedConstraint(class StructureTemplate&);
+    // NOLINTEND
 };

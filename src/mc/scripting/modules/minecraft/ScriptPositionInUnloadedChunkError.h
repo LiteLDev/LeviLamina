@@ -21,20 +21,22 @@ public:
     ScriptPositionInUnloadedChunkError()                                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ScriptPositionInUnloadedChunkError\@ScriptModuleMinecraft\@\@QEAA\@AEBVVec3\@\@\@Z
      */
-    MCAPI ScriptPositionInUnloadedChunkError(class Vec3 const&); // NOLINT
-    /**
-     * @symbol ??1ScriptPositionInUnloadedChunkError\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptPositionInUnloadedChunkError(); // NOLINT
+    MCAPI ScriptPositionInUnloadedChunkError(class Vec3 const&);
     /**
      * @symbol
      * ?bind\@ScriptPositionInUnloadedChunkError\@ScriptModuleMinecraft\@\@SA?AV?$ErrorBindingBuilder\@UScriptPositionInUnloadedChunkError\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ErrorBindingBuilder<struct ScriptModuleMinecraft::ScriptPositionInUnloadedChunkError>
-    bind(); // NOLINT
+    bind();
+    /**
+     * @symbol ??1ScriptPositionInUnloadedChunkError\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptPositionInUnloadedChunkError();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

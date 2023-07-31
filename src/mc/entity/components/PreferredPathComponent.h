@@ -11,12 +11,14 @@ public:
     PreferredPathComponent()                                         = delete;
 
 public:
-    /**
-     * @symbol ?initFromDefinition\@PreferredPathComponent\@\@QEAAXAEAVActor\@\@\@Z
-     */
-    MCAPI void initFromDefinition(class Actor&); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol ?getPreferredPath\@PreferredPathComponent\@\@SAAEBUPreferredPathDescription\@\@AEBVActor\@\@\@Z
      */
-    MCAPI static struct PreferredPathDescription const& getPreferredPath(class Actor const&); // NOLINT
+    MCAPI static struct PreferredPathDescription const& getPreferredPath(class Actor const&);
+    /**
+     * @symbol ?initFromDefinition\@PreferredPathComponent\@\@QEAAXAEAVActor\@\@\@Z
+     */
+    MCAPI void initFromDefinition(class Actor&);
+    // NOLINTEND
 };

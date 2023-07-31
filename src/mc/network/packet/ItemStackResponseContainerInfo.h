@@ -11,12 +11,14 @@ public:
     ItemStackResponseContainerInfo()                                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ItemStackResponseContainerInfo\@\@QEAA\@W4ContainerEnumName\@\@\@Z
      */
-    MCAPI ItemStackResponseContainerInfo(enum class ContainerEnumName); // NOLINT
+    MCAPI ItemStackResponseContainerInfo(enum class ContainerEnumName);
     /**
      * @symbol ??1ItemStackResponseContainerInfo\@\@QEAA\@XZ
      */
-    MCAPI ~ItemStackResponseContainerInfo(); // NOLINT
+    MCAPI ~ItemStackResponseContainerInfo();
+    // NOLINTEND
 };

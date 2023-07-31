@@ -18,17 +18,19 @@ public:
     NullConstraint()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol ?doValidate\@NullConstraint\@cereal\@\@EEBA_NAEBVmeta_any\@entt\@\@AEAVSerializerContext\@2\@\@Z
      */
-    virtual bool doValidate(class entt::meta_any const&, class cereal::SerializerContext&) const; // NOLINT
+    virtual bool doValidate(class entt::meta_any const&, class cereal::SerializerContext&) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREAL_NULLCONSTRAINT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~NullConstraint(); // NOLINT
+    MCVAPI ~NullConstraint();
 #endif
+    // NOLINTEND
 };
 
 }; // namespace cereal

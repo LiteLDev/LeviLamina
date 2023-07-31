@@ -14,40 +14,42 @@ public:
     BigEndianStringByteOutput()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 3
      * @symbol ?writeFloat\@BigEndianStringByteOutput\@\@UEAAXM\@Z
      */
-    virtual void writeFloat(float); // NOLINT
+    virtual void writeFloat(float);
     /**
      * @vftbl 4
      * @symbol ?writeDouble\@BigEndianStringByteOutput\@\@UEAAXN\@Z
      */
-    virtual void writeDouble(double); // NOLINT
+    virtual void writeDouble(double);
     /**
      * @vftbl 6
      * @symbol ?writeShort\@BigEndianStringByteOutput\@\@UEAAXF\@Z
      */
-    virtual void writeShort(short); // NOLINT
+    virtual void writeShort(short);
     /**
      * @vftbl 7
      * @symbol ?writeInt\@BigEndianStringByteOutput\@\@UEAAXH\@Z
      */
-    virtual void writeInt(int); // NOLINT
+    virtual void writeInt(int);
     /**
      * @vftbl 8
      * @symbol ?writeLongLong\@BigEndianStringByteOutput\@\@UEAAX_J\@Z
      */
-    virtual void writeLongLong(__int64); // NOLINT
+    virtual void writeLongLong(int64_t);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIGENDIANSTRINGBYTEOUTPUT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~BigEndianStringByteOutput(); // NOLINT
+    MCVAPI ~BigEndianStringByteOutput();
 #endif
+    // NOLINTEND
 };

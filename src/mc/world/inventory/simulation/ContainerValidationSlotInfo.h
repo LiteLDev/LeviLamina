@@ -11,8 +11,10 @@ public:
     ContainerValidationSlotInfo()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ContainerValidationSlotInfo\@\@QEAA\@XZ
      */
-    MCAPI ~ContainerValidationSlotInfo(); // NOLINT
+    MCAPI ~ContainerValidationSlotInfo();
+    // NOLINTEND
 };

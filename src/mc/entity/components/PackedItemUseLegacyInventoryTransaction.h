@@ -10,21 +10,22 @@ public:
     PackedItemUseLegacyInventoryTransaction(PackedItemUseLegacyInventoryTransaction const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0PackedItemUseLegacyInventoryTransaction\@\@QEAA\@XZ
      */
-    MCAPI PackedItemUseLegacyInventoryTransaction(); // NOLINT
+    MCAPI PackedItemUseLegacyInventoryTransaction();
     /**
      * @symbol ??0PackedItemUseLegacyInventoryTransaction\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI PackedItemUseLegacyInventoryTransaction(struct PackedItemUseLegacyInventoryTransaction&&); // NOLINT
+    MCAPI PackedItemUseLegacyInventoryTransaction(struct PackedItemUseLegacyInventoryTransaction&&);
     /**
      * @symbol ??4PackedItemUseLegacyInventoryTransaction\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct PackedItemUseLegacyInventoryTransaction&
-    operator=(struct PackedItemUseLegacyInventoryTransaction&&); // NOLINT
+    MCAPI struct PackedItemUseLegacyInventoryTransaction& operator=(struct PackedItemUseLegacyInventoryTransaction&&);
     /**
      * @symbol ??1PackedItemUseLegacyInventoryTransaction\@\@QEAA\@XZ
      */
-    MCAPI ~PackedItemUseLegacyInventoryTransaction(); // NOLINT
+    MCAPI ~PackedItemUseLegacyInventoryTransaction();
+    // NOLINTEND
 };

@@ -16,12 +16,14 @@ public:
     BaseScriptFormResponse()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@BaseScriptFormResponse\@ScriptModuleMinecraftServerUI\@\@SA?AV?$ClassBindingBuilder\@VBaseScriptFormResponse\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerUI::BaseScriptFormResponse>
-    bind(); // NOLINT
+    bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraftServerUI

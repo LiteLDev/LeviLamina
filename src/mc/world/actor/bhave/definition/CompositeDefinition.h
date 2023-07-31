@@ -16,16 +16,19 @@ public:
     CompositeDefinition()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?get\@CompositeDefinition\@\@QEBAPEBVBehaviorDefinition\@\@_K\@Z
      */
-    MCAPI class BehaviorDefinition const* get(unsigned __int64) const; // NOLINT
+    MCAPI class BehaviorDefinition const* get(uint64_t) const;
     /**
      * @symbol ?getCount\@CompositeDefinition\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 getCount() const; // NOLINT
+    MCAPI uint64_t getCount() const;
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_compositeLoadChildrenBehaviors\@CompositeDefinition\@\@KAXVValue\@Json\@\@AEAV?$vector\@V?$unique_ptr\@VBehaviorDefinition\@\@U?$default_delete\@VBehaviorDefinition\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VBehaviorDefinition\@\@U?$default_delete\@VBehaviorDefinition\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEBVBehaviorFactory\@\@VBehaviorTreeDefinitionPtr\@\@\@Z
@@ -35,7 +38,6 @@ public:
         std::vector<std::unique_ptr<class BehaviorDefinition>>&,
         class BehaviorFactory const&,
         class BehaviorTreeDefinitionPtr
-    ); // NOLINT
-
-protected:
+    );
+    // NOLINTEND
 };

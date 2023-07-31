@@ -11,8 +11,10 @@ public:
     PressurePlatePopEvent()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PressurePlatePopEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PressurePlatePopEvent(); // NOLINT
+    MCAPI ~PressurePlatePopEvent();
+    // NOLINTEND
 };

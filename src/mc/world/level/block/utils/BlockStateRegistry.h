@@ -11,16 +11,18 @@ public:
     BlockStateRegistry()                                     = delete;
 
 public:
-    /**
-     * @symbol ?registerBlockState\@BlockStateRegistry\@\@QEAAXAEBVBlockState\@\@\@Z
-     */
-    MCAPI void registerBlockState(class BlockState const&); // NOLINT
-    /**
-     * @symbol ?unregisterBlockStates\@BlockStateRegistry\@\@QEAAXXZ
-     */
-    MCAPI void unregisterBlockStates(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol ?get\@BlockStateRegistry\@\@SAAEAV1\@XZ
      */
-    MCAPI static class BlockStateRegistry& get(); // NOLINT
+    MCAPI static class BlockStateRegistry& get();
+    /**
+     * @symbol ?registerBlockState\@BlockStateRegistry\@\@QEAAXAEBVBlockState\@\@\@Z
+     */
+    MCAPI void registerBlockState(class BlockState const&);
+    /**
+     * @symbol ?unregisterBlockStates\@BlockStateRegistry\@\@QEAAXXZ
+     */
+    MCAPI void unregisterBlockStates();
+    // NOLINTEND
 };

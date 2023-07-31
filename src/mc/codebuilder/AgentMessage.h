@@ -13,10 +13,12 @@ public:
     AgentMessage()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1AgentMessage\@CodeBuilder\@\@QEAA\@XZ
      */
-    MCAPI ~AgentMessage(); // NOLINT
+    MCAPI ~AgentMessage();
+    // NOLINTEND
 };
 
 }; // namespace CodeBuilder

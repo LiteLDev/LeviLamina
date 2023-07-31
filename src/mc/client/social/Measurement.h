@@ -13,10 +13,12 @@ public:
     Measurement()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1Measurement\@Events\@Social\@\@QEAA\@XZ
      */
-    MCAPI ~Measurement(); // NOLINT
+    MCAPI ~Measurement();
+    // NOLINTEND
 };
 
 }; // namespace Social::Events

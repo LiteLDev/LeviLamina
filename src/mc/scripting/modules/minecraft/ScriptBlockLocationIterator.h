@@ -21,30 +21,31 @@ public:
     ScriptBlockLocationIterator()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ScriptBlockLocationIterator\@ScriptModuleMinecraft\@\@QEAA\@$$QEAV01\@\@Z
      */
-    MCAPI ScriptBlockLocationIterator(class ScriptModuleMinecraft::ScriptBlockLocationIterator&&); // NOLINT
+    MCAPI ScriptBlockLocationIterator(class ScriptModuleMinecraft::ScriptBlockLocationIterator&&);
     /**
      * @symbol
      * ??0ScriptBlockLocationIterator\@ScriptModuleMinecraft\@\@QEAA\@V?$unique_ptr\@VBaseBlockLocationIterator\@\@U?$default_delete\@VBaseBlockLocationIterator\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI ScriptBlockLocationIterator(std::unique_ptr<class BaseBlockLocationIterator>); // NOLINT
-    /**
-     * @symbol ??4ScriptBlockLocationIterator\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
-     */
-    MCAPI class ScriptModuleMinecraft::ScriptBlockLocationIterator&
-    operator=(class ScriptModuleMinecraft::ScriptBlockLocationIterator&&); // NOLINT
-    /**
-     * @symbol ??1ScriptBlockLocationIterator\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptBlockLocationIterator(); // NOLINT
+    MCAPI ScriptBlockLocationIterator(std::unique_ptr<class BaseBlockLocationIterator>);
     /**
      * @symbol
      * ?bind\@ScriptBlockLocationIterator\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockLocationIterator\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockLocationIterator>
-    bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockLocationIterator> bind();
+    /**
+     * @symbol ??4ScriptBlockLocationIterator\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
+     */
+    MCAPI class ScriptModuleMinecraft::ScriptBlockLocationIterator&
+    operator=(class ScriptModuleMinecraft::ScriptBlockLocationIterator&&);
+    /**
+     * @symbol ??1ScriptBlockLocationIterator\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptBlockLocationIterator();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -14,49 +14,51 @@ public:
     Feature()                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?place\@Feature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */
-    virtual class std::optional<class BlockPos>
-    place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const; // NOLINT
+    virtual std::optional<class BlockPos>
+    place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
     /**
      * @vftbl 2
      * @symbol
      * ?isValidPlacement\@IFeature\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual bool isValidPlacement(std::string const&); // NOLINT
+    virtual bool isValidPlacement(std::string const&);
     /**
      * @vftbl 3
      * @symbol ?place\@LegacySmallMushroomsFeature\@\@UEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const = 0; // NOLINT
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FEATURE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~Feature(); // NOLINT
+    MCVAPI ~Feature();
 #endif
     /**
      * @symbol ??0Feature\@\@QEAA\@PEAVActor\@\@\@Z
      */
-    MCAPI Feature(class Actor*); // NOLINT
+    MCAPI Feature(class Actor*);
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol ?_placeBlock\@Feature\@\@IEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
-    MCAPI bool _placeBlock(class BlockSource&, class BlockPos const&, class Block const&) const; // NOLINT
+    MCAPI bool _placeBlock(class BlockSource&, class BlockPos const&, class Block const&) const;
     /**
      * @symbol ?_setManuallyPlaced\@Feature\@\@IEAAXPEAVActor\@\@\@Z
      */
-    MCAPI void _setManuallyPlaced(class Actor*); // NOLINT
-
-protected:
+    MCAPI void _setManuallyPlaced(class Actor*);
+    // NOLINTEND
 };

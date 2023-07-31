@@ -7,11 +7,6 @@
 
 class SparseContainerClient {
 public:
-    // SparseContainerClient inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // SparseContainerClient inner types define
     enum class PushSlotPredictionResult {};
 
@@ -22,19 +17,21 @@ public:
     SparseContainerClient()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?_networkUpdateItem\@SparseContainerClient\@\@QEAAXHAEBVItemStack\@\@\@Z
      */
-    MCAPI void _networkUpdateItem(int, class ItemStack const&); // NOLINT
-
-    // private:
+    MCAPI void _networkUpdateItem(int, class ItemStack const&);
+    // NOLINTEND
 
 private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?pushSlotPredictionResultMap\@SparseContainerClient\@\@0V?$BidirectionalUnorderedMap\@W4PushSlotPredictionResult\@SparseContainerClient\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@\@B
      */
     MCAPI static class BidirectionalUnorderedMap<
         enum class SparseContainerClient::PushSlotPredictionResult,
-        std::string> const pushSlotPredictionResultMap; // NOLINT
+        std::string> const pushSlotPredictionResultMap;
+    // NOLINTEND
 };

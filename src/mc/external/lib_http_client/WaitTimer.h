@@ -12,34 +12,36 @@ public:
     WaitTimer(WaitTimer const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?Cancel\@WaitTimer\@OS\@\@QEAAXXZ
      */
-    MCAPI void Cancel(); // NOLINT
+    MCAPI void Cancel();
     /**
      * @symbol ?GetAbsoluteTime\@WaitTimer\@OS\@\@QEAA_KI\@Z
      */
-    MCAPI unsigned __int64 GetAbsoluteTime(unsigned int); // NOLINT
+    MCAPI uint64_t GetAbsoluteTime(unsigned int);
     /**
      * @symbol ?Initialize\@WaitTimer\@OS\@\@QEAAJPEAXP6AX0\@Z\@Z
      */
-    MCAPI long Initialize(void*, void (*)(void*)); // NOLINT
+    MCAPI long Initialize(void*, void (*)(void*));
     /**
      * @symbol ?Start\@WaitTimer\@OS\@\@QEAAX_K\@Z
      */
-    MCAPI void Start(unsigned __int64); // NOLINT
+    MCAPI void Start(uint64_t);
     /**
      * @symbol ?Terminate\@WaitTimer\@OS\@\@QEAAXXZ
      */
-    MCAPI void Terminate(); // NOLINT
+    MCAPI void Terminate();
     /**
      * @symbol ??0WaitTimer\@OS\@\@QEAA\@XZ
      */
-    MCAPI WaitTimer(); // NOLINT
+    MCAPI WaitTimer();
     /**
      * @symbol ??1WaitTimer\@OS\@\@QEAA\@XZ
      */
-    MCAPI ~WaitTimer(); // NOLINT
+    MCAPI ~WaitTimer();
+    // NOLINTEND
 };
 
 }; // namespace OS

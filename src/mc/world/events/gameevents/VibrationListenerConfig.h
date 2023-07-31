@@ -11,14 +11,16 @@ public:
     VibrationListenerConfig()                                          = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VIBRATIONLISTENERCONFIG
     /**
      * @symbol ?isValidVibration\@VibrationListenerConfig\@\@UEAA_NAEBVGameEvent\@\@\@Z
      */
-    MCVAPI bool isValidVibration(class GameEvent const&); // NOLINT
+    MCVAPI bool isValidVibration(class GameEvent const&);
     /**
      * @symbol ?onSerializableDataChanged\@VibrationListenerConfig\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
-    MCVAPI void onSerializableDataChanged(class BlockSource&); // NOLINT
+    MCVAPI void onSerializableDataChanged(class BlockSource&);
 #endif
+    // NOLINTEND
 };

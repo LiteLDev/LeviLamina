@@ -16,16 +16,18 @@ public:
     ScriptEntityHitInformation()                                             = delete;
 
 public:
-    /**
-     * @symbol ??1ScriptEntityHitInformation\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptEntityHitInformation(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptEntityHitInformation\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptEntityHitInformation\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptEntityHitInformation>
-    bind(); // NOLINT
+    bind();
+    /**
+     * @symbol ??1ScriptEntityHitInformation\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptEntityHitInformation();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

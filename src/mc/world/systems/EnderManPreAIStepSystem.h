@@ -11,8 +11,10 @@ public:
     EnderManPreAIStepSystem()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@EnderManPreAIStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 };

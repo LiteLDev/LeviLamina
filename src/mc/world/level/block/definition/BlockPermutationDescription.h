@@ -11,8 +11,10 @@ public:
     BlockPermutationDescription()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1BlockPermutationDescription\@\@QEAA\@XZ
      */
-    MCAPI ~BlockPermutationDescription(); // NOLINT
+    MCAPI ~BlockPermutationDescription();
+    // NOLINTEND
 };

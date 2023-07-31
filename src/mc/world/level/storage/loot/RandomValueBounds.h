@@ -16,24 +16,26 @@ public:
     RandomValueBounds()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?deserialize\@RandomValueBounds\@\@QEAAXAEBVValue\@Json\@\@\@Z
      */
-    MCAPI void deserialize(class Json::Value const&); // NOLINT
+    MCAPI void deserialize(class Json::Value const&);
     /**
      * @symbol ?getFloat\@RandomValueBounds\@\@QEBAMAEAVRandom\@\@\@Z
      */
-    MCAPI float getFloat(class Random&) const; // NOLINT
+    MCAPI float getFloat(class Random&) const;
     /**
      * @symbol ?getInt\@RandomValueBounds\@\@QEBAHAEAVRandom\@\@\@Z
      */
-    MCAPI int getInt(class Random&) const; // NOLINT
+    MCAPI int getInt(class Random&) const;
     /**
      * @symbol ?getMax\@RandomValueBounds\@\@QEBAMXZ
      */
-    MCAPI float getMax() const; // NOLINT
+    MCAPI float getMax() const;
     /**
      * @symbol ?getMin\@RandomValueBounds\@\@QEBAMXZ
      */
-    MCAPI float getMin() const; // NOLINT
+    MCAPI float getMin() const;
+    // NOLINTEND
 };

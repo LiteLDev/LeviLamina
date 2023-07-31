@@ -13,12 +13,14 @@ public:
     ScriptItemEvent()                                  = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTITEMEVENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptItemEvent(); // NOLINT
+    MCVAPI ~ScriptItemEvent();
 #endif
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

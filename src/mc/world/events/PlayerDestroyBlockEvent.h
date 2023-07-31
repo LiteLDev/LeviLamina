@@ -11,8 +11,10 @@ public:
     PlayerDestroyBlockEvent()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PlayerDestroyBlockEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerDestroyBlockEvent(); // NOLINT
+    MCAPI ~PlayerDestroyBlockEvent();
+    // NOLINTEND
 };

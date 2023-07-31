@@ -14,12 +14,11 @@ public:
     BlockSourceFactoryImpl()                                         = delete;
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_createOrUpdate\@BlockSourceFactoryImpl\@\@IEBAXAEAVMockableOwnedBlockSource\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
-    MCAPI void
-    _createOrUpdate(class MockableOwnedBlockSource&, class AutomaticID<class Dimension, int>) const; // NOLINT
-
-protected:
+    MCAPI void _createOrUpdate(class MockableOwnedBlockSource&, class AutomaticID<class Dimension, int>) const;
+    // NOLINTEND
 };

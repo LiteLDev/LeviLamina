@@ -11,8 +11,10 @@ public:
     ActorHurtEvent()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ActorHurtEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorHurtEvent(); // NOLINT
+    MCAPI ~ActorHurtEvent();
+    // NOLINTEND
 };

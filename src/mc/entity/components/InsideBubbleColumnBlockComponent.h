@@ -11,8 +11,10 @@ public:
     InsideBubbleColumnBlockComponent()                                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4InsideBubbleColumnBlockComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct InsideBubbleColumnBlockComponent& operator=(struct InsideBubbleColumnBlockComponent&&); // NOLINT
+    MCAPI struct InsideBubbleColumnBlockComponent& operator=(struct InsideBubbleColumnBlockComponent&&);
+    // NOLINTEND
 };

@@ -22,19 +22,21 @@ public:
         HistoryCache()                               = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol
          * ?toString\@HistoryCache\@PredictedMovementComponent\@\@QEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
          */
-        MCAPI std::string toString(); // NOLINT
+        MCAPI std::string toString();
+        // NOLINTEND
 
         // private:
+        // NOLINTBEGIN
         /**
          * @symbol ?_clearHistory\@HistoryCache\@PredictedMovementComponent\@\@AEAAXXZ
          */
-        MCAPI void _clearHistory(); // NOLINT
-
-    private:
+        MCAPI void _clearHistory();
+        // NOLINTEND
     };
 
     class HistoryTimestampData {
@@ -45,13 +47,13 @@ public:
         HistoryTimestampData(HistoryTimestampData const&)            = delete;
         HistoryTimestampData()                                       = delete;
 
-        // private:
-
     private:
+        // NOLINTBEGIN
         /**
          * @symbol ?mSequenceIdGenerator\@HistoryTimestampData\@PredictedMovementComponent\@\@0IA
          */
-        MCAPI static unsigned int mSequenceIdGenerator; // NOLINT
+        MCAPI static unsigned int mSequenceIdGenerator;
+        // NOLINTEND
     };
 
     struct PredictionDbgData {
@@ -63,15 +65,17 @@ public:
         PredictionDbgData()                                    = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol
          * ?toString\@PredictionDbgData\@PredictedMovementComponent\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
          */
-        MCAPI std::string toString() const; // NOLINT
+        MCAPI std::string toString() const;
         /**
          * @symbol ??1PredictionDbgData\@PredictedMovementComponent\@\@QEAA\@XZ
          */
-        MCAPI ~PredictionDbgData(); // NOLINT
+        MCAPI ~PredictionDbgData();
+        // NOLINTEND
     };
 
     struct RuntimePredictionData {
@@ -90,13 +94,13 @@ public:
             LerpedInterval(LerpedInterval const&)            = delete;
             LerpedInterval()                                 = delete;
 
-            // private:
-
         private:
+            // NOLINTBEGIN
             /**
              * @symbol ?mMaxTicks\@LerpedInterval\@RuntimePredictionData\@PredictedMovementComponent\@\@0IB
              */
-            MCAPI static unsigned int const mMaxTicks; // NOLINT
+            MCAPI static unsigned int const mMaxTicks;
+            // NOLINTEND
         };
 
     public:
@@ -105,14 +109,16 @@ public:
         RuntimePredictionData(RuntimePredictionData const&)            = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??0RuntimePredictionData\@PredictedMovementComponent\@\@QEAA\@XZ
          */
-        MCAPI RuntimePredictionData(); // NOLINT
+        MCAPI RuntimePredictionData();
         /**
          * @symbol ?reset\@RuntimePredictionData\@PredictedMovementComponent\@\@QEAAXXZ
          */
-        MCAPI void reset(); // NOLINT
+        MCAPI void reset();
+        // NOLINTEND
     };
 
 public:
@@ -122,65 +128,62 @@ public:
     PredictedMovementComponent()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0PredictedMovementComponent\@\@QEAA\@AEAVActor\@\@\@Z
      */
-    MCAPI PredictedMovementComponent(class Actor&); // NOLINT
+    MCAPI PredictedMovementComponent(class Actor&);
     /**
      * @symbol ?isEnabled\@PredictedMovementComponent\@\@QEBA_NXZ
      */
-    MCAPI bool isEnabled() const; // NOLINT
+    MCAPI bool isEnabled() const;
     /**
      * @symbol ?reset\@PredictedMovementComponent\@\@QEAAXXZ
      */
-    MCAPI void reset(); // NOLINT
+    MCAPI void reset();
     /**
      * @symbol
      * ?tick\@PredictedMovementComponent\@\@QEAAXAEBV?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@std\@\@\@Z
      */
-    MCAPI void tick(class std::chrono::time_point<
-                    struct std::chrono::steady_clock,
-                    class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> const&); // NOLINT
+    MCAPI void tick(std::chrono::time_point<std::chrono::steady_clock> const&);
     /**
      * @symbol ??1PredictedMovementComponent\@\@QEAA\@XZ
      */
-    MCAPI ~PredictedMovementComponent(); // NOLINT
+    MCAPI ~PredictedMovementComponent();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_debugLog\@PredictedMovementComponent\@\@AEBAXAEBUPredictionDbgData\@1\@\@Z
      */
-    MCAPI void _debugLog(struct PredictedMovementComponent::PredictionDbgData const&) const; // NOLINT
+    MCAPI void _debugLog(struct PredictedMovementComponent::PredictionDbgData const&) const;
     /**
      * @symbol ?_isDebugLoggingEnabled\@PredictedMovementComponent\@\@AEBA_NXZ
      */
-    MCAPI bool _isDebugLoggingEnabled() const; // NOLINT
+    MCAPI bool _isDebugLoggingEnabled() const;
     /**
      * @symbol
      * ?_tickNextPosition\@PredictedMovementComponent\@\@AEAAXAEBV?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@std\@\@\@Z
      */
-    MCAPI void
-    _tickNextPosition(class std::chrono::time_point<
-                      struct std::chrono::steady_clock,
-                      class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> const&); // NOLINT
+    MCAPI void _tickNextPosition(std::chrono::time_point<std::chrono::steady_clock> const&);
     /**
      * @symbol
      * ?_tryInterpolate\@PredictedMovementComponent\@\@AEAA_NAEBV?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@std\@\@\@Z
      */
-    MCAPI bool
-    _tryInterpolate(class std::chrono::time_point<
-                    struct std::chrono::steady_clock,
-                    class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> const&); // NOLINT
+    MCAPI bool _tryInterpolate(std::chrono::time_point<std::chrono::steady_clock> const&);
+    // NOLINTEND
 
 private:
+    // NOLINTBEGIN
     /**
      * @symbol ?LERP_STEP_SIZE\@PredictedMovementComponent\@\@0IB
      */
-    MCAPI static unsigned int const LERP_STEP_SIZE; // NOLINT
+    MCAPI static unsigned int const LERP_STEP_SIZE;
     /**
      * @symbol
      * ?mGlobalRuntimePredictionData\@PredictedMovementComponent\@\@0V?$unique_ptr\@URuntimePredictionData\@PredictedMovementComponent\@\@U?$default_delete\@URuntimePredictionData\@PredictedMovementComponent\@\@\@std\@\@\@std\@\@A
      */
-    MCAPI static std::unique_ptr<struct PredictedMovementComponent::RuntimePredictionData>
-        mGlobalRuntimePredictionData; // NOLINT
+    MCAPI static std::unique_ptr<struct PredictedMovementComponent::RuntimePredictionData> mGlobalRuntimePredictionData;
+    // NOLINTEND
 };

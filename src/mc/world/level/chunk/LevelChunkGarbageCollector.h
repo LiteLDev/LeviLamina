@@ -11,24 +11,26 @@ public:
     LevelChunkGarbageCollector()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0LevelChunkGarbageCollector\@\@QEAA\@AEAVDimension\@\@\@Z
      */
-    MCAPI LevelChunkGarbageCollector(class Dimension&); // NOLINT
+    MCAPI LevelChunkGarbageCollector(class Dimension&);
     /**
      * @symbol ?getPendingDeletesCount\@LevelChunkGarbageCollector\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 getPendingDeletesCount() const; // NOLINT
+    MCAPI uint64_t getPendingDeletesCount() const;
     /**
      * @symbol ??1LevelChunkGarbageCollector\@\@QEAA\@XZ
      */
-    MCAPI ~LevelChunkGarbageCollector(); // NOLINT
+    MCAPI ~LevelChunkGarbageCollector();
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol ?flush\@LevelChunkGarbageCollector\@\@IEAAXXZ
      */
-    MCAPI void flush(); // NOLINT
-
-protected:
+    MCAPI void flush();
+    // NOLINTEND
 };

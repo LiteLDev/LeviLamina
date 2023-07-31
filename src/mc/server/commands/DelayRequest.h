@@ -11,13 +11,15 @@ public:
     DelayRequest()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0DelayRequest\@\@QEAA\@V?$unique_ptr\@VIRequestAction\@\@U?$default_delete\@VIRequestAction\@\@\@std\@\@\@std\@\@_K\@Z
      */
-    MCAPI DelayRequest(std::unique_ptr<class IRequestAction>, unsigned __int64); // NOLINT
+    MCAPI DelayRequest(std::unique_ptr<class IRequestAction>, uint64_t);
     /**
      * @symbol ??1DelayRequest\@\@QEAA\@XZ
      */
-    MCAPI ~DelayRequest(); // NOLINT
+    MCAPI ~DelayRequest();
+    // NOLINTEND
 };

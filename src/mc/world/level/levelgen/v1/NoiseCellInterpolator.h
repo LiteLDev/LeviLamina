@@ -11,28 +11,30 @@ public:
     NoiseCellInterpolator()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0NoiseCellInterpolator\@\@QEAA\@V?$span\@$$CBM$0?0\@gsl\@\@HH\@Z
      */
-    MCAPI NoiseCellInterpolator(class gsl::span<float const, -1>, int, int); // NOLINT
+    MCAPI NoiseCellInterpolator(class gsl::span<float const>, int, int);
     /**
      * @symbol ??0NoiseCellInterpolator\@\@QEAA\@V?$span\@$$CBM$0?0\@gsl\@\@\@Z
      */
-    MCAPI NoiseCellInterpolator(class gsl::span<float const, -1>); // NOLINT
+    MCAPI NoiseCellInterpolator(class gsl::span<float const>);
     /**
      * @symbol ?getLerpedValue\@NoiseCellInterpolator\@\@QEBAMXZ
      */
-    MCAPI float getLerpedValue() const; // NOLINT
+    MCAPI float getLerpedValue() const;
     /**
      * @symbol ?selectCellXZ\@NoiseCellInterpolator\@\@QEAAXHHHH\@Z
      */
-    MCAPI void selectCellXZ(int, int, int, int); // NOLINT
+    MCAPI void selectCellXZ(int, int, int, int);
     /**
      * @symbol ?updateForX\@NoiseCellInterpolator\@\@QEAAXE\@Z
      */
-    MCAPI void updateForX(unsigned char); // NOLINT
+    MCAPI void updateForX(unsigned char);
     /**
      * @symbol ?updateForZ\@NoiseCellInterpolator\@\@QEAAXE\@Z
      */
-    MCAPI void updateForZ(unsigned char); // NOLINT
+    MCAPI void updateForZ(unsigned char);
+    // NOLINTEND
 };

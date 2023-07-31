@@ -16,17 +16,19 @@ public:
     ScriptScoreboardObjectiveDisplayOptions()                                                          = delete;
 
 public:
-    /**
-     * @symbol ??1ScriptScoreboardObjectiveDisplayOptions\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptScoreboardObjectiveDisplayOptions(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptScoreboardObjectiveDisplayOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@VScriptScoreboardObjectiveDisplayOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::InterfaceBindingBuilder<
         class ScriptModuleMinecraft::ScriptScoreboardObjectiveDisplayOptions>
-    bind(); // NOLINT
+    bind();
+    /**
+     * @symbol ??1ScriptScoreboardObjectiveDisplayOptions\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptScoreboardObjectiveDisplayOptions();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

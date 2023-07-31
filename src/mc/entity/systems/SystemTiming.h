@@ -11,8 +11,10 @@ public:
     SystemTiming()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1SystemTiming\@\@QEAA\@XZ
      */
-    MCAPI ~SystemTiming(); // NOLINT
+    MCAPI ~SystemTiming();
+    // NOLINTEND
 };

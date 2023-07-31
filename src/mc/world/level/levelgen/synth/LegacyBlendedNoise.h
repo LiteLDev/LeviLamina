@@ -11,12 +11,14 @@ public:
     LegacyBlendedNoise()                                     = delete;
 
 public:
-    /**
-     * @symbol ??1LegacyBlendedNoise\@\@QEAA\@XZ
-     */
-    MCAPI ~LegacyBlendedNoise(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol ?make\@LegacyBlendedNoise\@\@SA?AV1\@AEAVIRandom\@\@\@Z
      */
-    MCAPI static class LegacyBlendedNoise make(class IRandom&); // NOLINT
+    MCAPI static class LegacyBlendedNoise make(class IRandom&);
+    /**
+     * @symbol ??1LegacyBlendedNoise\@\@QEAA\@XZ
+     */
+    MCAPI ~LegacyBlendedNoise();
+    // NOLINTEND
 };

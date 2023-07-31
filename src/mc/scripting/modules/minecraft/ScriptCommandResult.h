@@ -16,12 +16,13 @@ public:
     ScriptCommandResult()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptCommandResult\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptCommandResult\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptCommandResult>
-    bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptCommandResult> bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -29,12 +29,14 @@ public:
         IPSupportInterface()                                     = delete;
 
     public:
+        // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKPEERHELPER_IPSUPPORTINTERFACE
         /**
          * @symbol __unk_destructor_-1
          */
-        MCVAPI ~IPSupportInterface(); // NOLINT
+        MCVAPI ~IPSupportInterface();
 #endif
+        // NOLINTEND
     };
 
 public:
@@ -44,34 +46,35 @@ public:
     RakPeerHelper()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0RakPeerHelper\@\@QEAA\@AEAVIPSupportInterface\@0\@\@Z
      */
-    MCAPI RakPeerHelper(class RakPeerHelper::IPSupportInterface&); // NOLINT
+    MCAPI RakPeerHelper(class RakPeerHelper::IPSupportInterface&);
     /**
      * @symbol ?getConnectionIndex\@RakPeerHelper\@\@QEBAHAEBVGameConnectionInfo\@Social\@\@\@Z
      */
-    MCAPI int getConnectionIndex(class Social::GameConnectionInfo const&) const; // NOLINT
+    MCAPI int getConnectionIndex(class Social::GameConnectionInfo const&) const;
     /**
      * @symbol ?getIPv4BoundPort\@RakPeerHelper\@\@QEBAGXZ
      */
-    MCAPI unsigned short getIPv4BoundPort() const; // NOLINT
+    MCAPI unsigned short getIPv4BoundPort() const;
     /**
      * @symbol ?getIPv4ConnectionIndex\@RakPeerHelper\@\@QEBAHXZ
      */
-    MCAPI int getIPv4ConnectionIndex() const; // NOLINT
+    MCAPI int getIPv4ConnectionIndex() const;
     /**
      * @symbol ?getIPv6BoundPort\@RakPeerHelper\@\@QEBAGXZ
      */
-    MCAPI unsigned short getIPv6BoundPort() const; // NOLINT
+    MCAPI unsigned short getIPv6BoundPort() const;
     /**
      * @symbol ?isIPv4Supported\@RakPeerHelper\@\@QEBA_NXZ
      */
-    MCAPI bool isIPv4Supported() const; // NOLINT
+    MCAPI bool isIPv4Supported() const;
     /**
      * @symbol ?isIPv6Supported\@RakPeerHelper\@\@QEBA_NXZ
      */
-    MCAPI bool isIPv6Supported() const; // NOLINT
+    MCAPI bool isIPv6Supported() const;
     /**
      * @symbol
      * ?peerStartup\@RakPeerHelper\@\@QEAA?AW4StartupResult\@RakNet\@\@PEAVRakPeerInterface\@3\@AEBUConnectionDefinition\@\@W4PeerPurpose\@1\@\@Z
@@ -80,17 +83,19 @@ public:
         class RakNet::RakPeerInterface*,
         struct ConnectionDefinition const&,
         enum class RakPeerHelper::PeerPurpose
-    ); // NOLINT
+    );
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?LogIPSupport\@RakPeerHelper\@\@AEAAXW4PeerPurpose\@1\@\@Z
      */
-    MCAPI void LogIPSupport(enum class RakPeerHelper::PeerPurpose); // NOLINT
+    MCAPI void LogIPSupport(enum class RakPeerHelper::PeerPurpose);
     /**
      * @symbol ?_resetToIPv6Only\@RakPeerHelper\@\@AEAAXV?$span\@USocketDescriptor\@RakNet\@\@$01\@gsl\@\@AEAH\@Z
      */
-    MCAPI void _resetToIPv6Only(class gsl::span<struct RakNet::SocketDescriptor, 2>, int&); // NOLINT
+    MCAPI void _resetToIPv6Only(class gsl::span<struct RakNet::SocketDescriptor, 2>, int&);
     /**
      * @symbol
      * ?_startupInternal\@RakPeerHelper\@\@AEAA?AW4StartupResult\@RakNet\@\@V?$not_null\@PEAVRakPeerInterface\@RakNet\@\@\@gsl\@\@AEBUConnectionDefinition\@\@PEAUSocketDescriptor\@3\@AEAHH\@Z
@@ -101,7 +106,6 @@ public:
         struct RakNet::SocketDescriptor*,
         int&,
         int
-    ); // NOLINT
-
-private:
+    );
+    // NOLINTEND
 };

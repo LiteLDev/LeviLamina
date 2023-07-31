@@ -11,16 +11,18 @@ public:
     PredictedMovementValues()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?DEFAULT_INTERPOLATION_WINDOW_SIZE_IN_TICKS\@PredictedMovementValues\@\@2_JB
      */
-    MCAPI static __int64 const DEFAULT_INTERPOLATION_WINDOW_SIZE_IN_TICKS; // NOLINT
+    MCAPI static int64_t const DEFAULT_INTERPOLATION_WINDOW_SIZE_IN_TICKS;
     /**
      * @symbol ?DEFAULT_USE_AGGRESSIVE_TICK_INTERVAL\@PredictedMovementValues\@\@2_NB
      */
-    MCAPI static bool const DEFAULT_USE_AGGRESSIVE_TICK_INTERVAL; // NOLINT
+    MCAPI static bool const DEFAULT_USE_AGGRESSIVE_TICK_INTERVAL;
     /**
      * @symbol ?SMALL_INTERPOLATION_WINDOW_SIZE_IN_TICKS\@PredictedMovementValues\@\@2_JB
      */
-    MCAPI static __int64 const SMALL_INTERPOLATION_WINDOW_SIZE_IN_TICKS; // NOLINT
+    MCAPI static int64_t const SMALL_INTERPOLATION_WINDOW_SIZE_IN_TICKS;
+    // NOLINTEND
 };

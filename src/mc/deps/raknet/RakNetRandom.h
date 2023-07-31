@@ -12,18 +12,20 @@ public:
     RakNetRandom(RakNetRandom const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0RakNetRandom\@RakNet\@\@QEAA\@XZ
      */
-    MCAPI RakNetRandom(); // NOLINT
+    MCAPI RakNetRandom();
     /**
      * @symbol ?SeedMT\@RakNetRandom\@RakNet\@\@QEAAXI\@Z
      */
-    MCAPI void SeedMT(unsigned int); // NOLINT
+    MCAPI void SeedMT(unsigned int);
     /**
      * @symbol ??1RakNetRandom\@RakNet\@\@QEAA\@XZ
      */
-    MCAPI ~RakNetRandom(); // NOLINT
+    MCAPI ~RakNetRandom();
+    // NOLINTEND
 };
 
 }; // namespace RakNet

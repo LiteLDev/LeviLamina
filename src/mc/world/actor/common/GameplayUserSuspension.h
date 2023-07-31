@@ -4,11 +4,6 @@
 
 class GameplayUserSuspension {
 public:
-    // GameplayUserSuspension inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // GameplayUserSuspension inner types define
     enum class State {};
 
@@ -19,8 +14,10 @@ public:
     GameplayUserSuspension()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0GameplayUserSuspension\@\@QEAA\@VWeakEntityRef\@\@W4State\@0\@\@Z
      */
-    MCAPI GameplayUserSuspension(class WeakEntityRef, enum class GameplayUserSuspension::State); // NOLINT
+    MCAPI GameplayUserSuspension(class WeakEntityRef, enum class GameplayUserSuspension::State);
+    // NOLINTEND
 };

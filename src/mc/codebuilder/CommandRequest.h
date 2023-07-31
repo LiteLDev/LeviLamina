@@ -13,10 +13,12 @@ public:
     CommandRequest()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1CommandRequest\@CodeBuilder\@\@QEAA\@XZ
      */
-    MCAPI ~CommandRequest(); // NOLINT
+    MCAPI ~CommandRequest();
+    // NOLINTEND
 };
 
 }; // namespace CodeBuilder

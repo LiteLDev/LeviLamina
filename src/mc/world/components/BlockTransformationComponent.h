@@ -19,14 +19,16 @@ public:
         RotationType()                               = delete;
 
     public:
-        /**
-         * @symbol ?rotationTypeFromVec3\@RotationType\@BlockTransformationComponent\@\@QEAAXAEBVVec3\@\@\@Z
-         */
-        MCAPI void rotationTypeFromVec3(class Vec3 const&); // NOLINT
+        // NOLINTBEGIN
         /**
          * @symbol ?bindType\@RotationType\@BlockTransformationComponent\@\@SAXXZ
          */
-        MCAPI static void bindType(); // NOLINT
+        MCAPI static void bindType();
+        /**
+         * @symbol ?rotationTypeFromVec3\@RotationType\@BlockTransformationComponent\@\@QEAAXAEBVVec3\@\@\@Z
+         */
+        MCAPI void rotationTypeFromVec3(class Vec3 const&);
+        // NOLINTEND
     };
 
 public:
@@ -36,21 +38,23 @@ public:
     BlockTransformationComponent()                                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0BlockTransformationComponent\@\@QEAA\@AEBVVec3\@\@AEBURotationType\@0\@0\@Z
      */
     MCAPI
-    BlockTransformationComponent(class Vec3 const&, struct BlockTransformationComponent::RotationType const&, class Vec3 const&); // NOLINT
+    BlockTransformationComponent(class Vec3 const&, struct BlockTransformationComponent::RotationType const&, class Vec3 const&);
     /**
      * @symbol ??0BlockTransformationComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI BlockTransformationComponent(class BlockTransformationComponent&&); // NOLINT
+    MCAPI BlockTransformationComponent(class BlockTransformationComponent&&);
     /**
      * @symbol ?getTransformationMatrix\@BlockTransformationComponent\@\@QEBAAEBVMatrix\@\@XZ
      */
-    MCAPI class Matrix const& getTransformationMatrix() const; // NOLINT
+    MCAPI class Matrix const& getTransformationMatrix() const;
     /**
      * @symbol ?setRotation\@BlockTransformationComponent\@\@QEAAXAEBURotationType\@1\@\@Z
      */
-    MCAPI void setRotation(struct BlockTransformationComponent::RotationType const&); // NOLINT
+    MCAPI void setRotation(struct BlockTransformationComponent::RotationType const&);
+    // NOLINTEND
 };

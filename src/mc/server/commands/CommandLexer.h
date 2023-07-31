@@ -26,8 +26,10 @@ public:
     CommandLexer()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?step\@CommandLexer\@\@QEAAXXZ
      */
-    MCAPI void step(); // NOLINT
+    MCAPI void step();
+    // NOLINTEND
 };

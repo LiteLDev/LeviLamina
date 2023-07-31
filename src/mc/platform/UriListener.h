@@ -11,10 +11,12 @@ public:
     UriListener()                              = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_URILISTENER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~UriListener(); // NOLINT
+    MCVAPI ~UriListener();
 #endif
+    // NOLINTEND
 };

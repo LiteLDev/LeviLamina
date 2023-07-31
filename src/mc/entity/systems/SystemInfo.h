@@ -5,28 +5,30 @@
 struct SystemInfo {
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0SystemInfo\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI SystemInfo(struct SystemInfo const&); // NOLINT
+    MCAPI SystemInfo(struct SystemInfo const&);
     /**
      * @symbol ??0SystemInfo\@\@QEAA\@XZ
      */
-    MCAPI SystemInfo(); // NOLINT
-    /**
-     * @symbol ??4SystemInfo\@\@QEAAAEAU0\@AEBU0\@\@Z
-     */
-    MCAPI struct SystemInfo& operator=(struct SystemInfo const&); // NOLINT
-    /**
-     * @symbol ??4SystemInfo\@\@QEAAAEAU0\@$$QEAU0\@\@Z
-     */
-    MCAPI struct SystemInfo& operator=(struct SystemInfo&&); // NOLINT
-    /**
-     * @symbol ??1SystemInfo\@\@QEAA\@XZ
-     */
-    MCAPI ~SystemInfo(); // NOLINT
+    MCAPI SystemInfo();
     /**
      * @symbol ?bindType\@SystemInfo\@\@SAXXZ
      */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI static void bindType();
+    /**
+     * @symbol ??4SystemInfo\@\@QEAAAEAU0\@AEBU0\@\@Z
+     */
+    MCAPI struct SystemInfo& operator=(struct SystemInfo const&);
+    /**
+     * @symbol ??4SystemInfo\@\@QEAAAEAU0\@$$QEAU0\@\@Z
+     */
+    MCAPI struct SystemInfo& operator=(struct SystemInfo&&);
+    /**
+     * @symbol ??1SystemInfo\@\@QEAA\@XZ
+     */
+    MCAPI ~SystemInfo();
+    // NOLINTEND
 };

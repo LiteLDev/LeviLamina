@@ -17,13 +17,15 @@ public:
     PlayerPreMobTravelSystem()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createPlayerPreMobTravelSystem\@PlayerPreMobTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createPlayerPreMobTravelSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createPlayerPreMobTravelSystem();
     /**
      * @symbol
      * ?tickPlayerPreMobTravelSystem\@PlayerPreMobTravelSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@UMobTravelComponent\@\@\@\@$$CBUAbilitiesComponent\@\@$$CBUStateVectorComponent\@\@$$CBUFlySpeedComponent\@\@\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UPlayerPreMobTravelComponent\@\@\@\@\@Z
      */
-    MCAPI static void tickPlayerPreMobTravelSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PlayerComponentFlag>, struct MobTravelComponent>, struct AbilitiesComponent const, struct StateVectorComponent const, struct FlySpeedComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct PlayerPreMobTravelComponent>); // NOLINT
+    MCAPI static void tickPlayerPreMobTravelSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PlayerComponentFlag>, struct MobTravelComponent>, struct AbilitiesComponent const, struct StateVectorComponent const, struct FlySpeedComponent const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct PlayerPreMobTravelComponent>);
+    // NOLINTEND
 };

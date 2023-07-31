@@ -18,14 +18,16 @@ public:
     Radian()                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0Radian\@mce\@\@QEAA\@UDegree\@1\@\@Z
      */
-    MCAPI Radian(struct mce::Degree); // NOLINT
+    MCAPI Radian(struct mce::Degree);
     /**
      * @symbol ?asFloat\@Radian\@mce\@\@QEBAAEBMXZ
      */
-    MCAPI float const& asFloat() const; // NOLINT
+    MCAPI float const& asFloat() const;
+    // NOLINTEND
 };
 
 }; // namespace mce

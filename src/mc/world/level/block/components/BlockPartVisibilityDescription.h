@@ -11,9 +11,11 @@ public:
     BlockPartVisibilityDescription()                                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?NameID\@BlockPartVisibilityDescription\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const NameID; // NOLINT
+    MCAPI static std::string const NameID;
+    // NOLINTEND
 };

@@ -11,8 +11,10 @@ public:
     ActorMovementTickFilterSystem()                                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createBase\@ActorMovementTickFilterSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createBase(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createBase();
+    // NOLINTEND
 };

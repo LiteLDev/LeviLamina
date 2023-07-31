@@ -11,8 +11,10 @@ public:
     Performance()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?watches\@Performance\@\@2VStopwatchHandler\@\@A
      */
-    MCAPI static class StopwatchHandler watches; // NOLINT
+    MCAPI static class StopwatchHandler watches;
+    // NOLINTEND
 };

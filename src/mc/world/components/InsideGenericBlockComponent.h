@@ -11,8 +11,10 @@ public:
     InsideGenericBlockComponent()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4InsideGenericBlockComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct InsideGenericBlockComponent& operator=(struct InsideGenericBlockComponent&&); // NOLINT
+    MCAPI struct InsideGenericBlockComponent& operator=(struct InsideGenericBlockComponent&&);
+    // NOLINTEND
 };

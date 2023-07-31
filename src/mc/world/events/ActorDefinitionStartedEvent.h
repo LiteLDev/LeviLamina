@@ -11,8 +11,10 @@ public:
     ActorDefinitionStartedEvent()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ActorDefinitionStartedEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorDefinitionStartedEvent(); // NOLINT
+    MCAPI ~ActorDefinitionStartedEvent();
+    // NOLINTEND
 };

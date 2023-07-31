@@ -10,12 +10,14 @@ public:
     CallbackTokenCancelState(CallbackTokenCancelState const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0CallbackTokenCancelState\@\@QEAA\@XZ
      */
-    MCAPI CallbackTokenCancelState(); // NOLINT
+    MCAPI CallbackTokenCancelState();
     /**
      * @symbol ?wasCanceled\@CallbackTokenCancelState\@\@QEBA_NXZ
      */
-    MCAPI bool wasCanceled() const; // NOLINT
+    MCAPI bool wasCanceled() const;
+    // NOLINTEND
 };

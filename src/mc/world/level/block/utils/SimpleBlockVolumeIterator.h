@@ -14,13 +14,15 @@ public:
     SimpleBlockVolumeIterator()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @symbol ??0SimpleBlockVolumeIterator\@\@QEAA\@AEBVSimpleBlockVolume\@\@_N\@Z
      */
-    MCAPI SimpleBlockVolumeIterator(class SimpleBlockVolume const&, bool); // NOLINT
+    MCAPI SimpleBlockVolumeIterator(class SimpleBlockVolume const&, bool);
+    // NOLINTEND
 };

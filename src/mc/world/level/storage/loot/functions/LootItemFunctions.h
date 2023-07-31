@@ -16,9 +16,11 @@ public:
     LootItemFunctions()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?deserialize\@LootItemFunctions\@\@SA?AV?$vector\@V?$unique_ptr\@VLootItemFunction\@\@U?$default_delete\@VLootItemFunction\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VLootItemFunction\@\@U?$default_delete\@VLootItemFunction\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@VValue\@Json\@\@\@Z
      */
-    MCAPI static std::vector<std::unique_ptr<class LootItemFunction>> deserialize(class Json::Value); // NOLINT
+    MCAPI static std::vector<std::unique_ptr<class LootItemFunction>> deserialize(class Json::Value);
+    // NOLINTEND
 };

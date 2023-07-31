@@ -18,19 +18,21 @@ public:
     FlockingDefinition(FlockingDefinition const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0FlockingDefinition\@\@QEAA\@XZ
      */
-    MCAPI FlockingDefinition(); // NOLINT
-    /**
-     * @symbol ?initialize\@FlockingDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVFlockingComponent\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class FlockingComponent&) const; // NOLINT
+    MCAPI FlockingDefinition();
     /**
      * @symbol
      * ?buildSchema\@FlockingDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VFlockingDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class FlockingDefinition>>&); // NOLINT
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class FlockingDefinition>>&);
+    /**
+     * @symbol ?initialize\@FlockingDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVFlockingComponent\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class FlockingComponent&) const;
+    // NOLINTEND
 };

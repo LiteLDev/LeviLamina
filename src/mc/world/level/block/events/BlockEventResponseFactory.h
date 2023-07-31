@@ -11,25 +11,27 @@ public:
     BlockEventResponseFactory()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?initializeFactory\@BlockEventResponseFactory\@\@UEAAXAEBVExperiments\@\@\@Z
      */
-    virtual void initializeFactory(class Experiments const&); // NOLINT
+    virtual void initializeFactory(class Experiments const&);
     /**
      * @vftbl 2
      * @symbol ?initSchema\@BlockEventResponseFactory\@\@UEAAXXZ
      */
-    virtual void initSchema(); // NOLINT
+    virtual void initSchema();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKEVENTRESPONSEFACTORY
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~BlockEventResponseFactory(); // NOLINT
+    MCVAPI ~BlockEventResponseFactory();
 #endif
+    // NOLINTEND
 };

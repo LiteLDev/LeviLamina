@@ -25,17 +25,18 @@ public:
     ScatteredFeatureStart()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @symbol
      * ??0ScatteredFeatureStart\@RandomScatteredLargeFeatureDetails\@\@QEAA\@AEBVBiomeSource\@\@FHHAEBVIPreliminarySurfaceProvider\@\@\@Z
      */
-    MCAPI
-    ScatteredFeatureStart(class BiomeSource const&, short, int, int, class IPreliminarySurfaceProvider const&); // NOLINT
+    MCAPI ScatteredFeatureStart(class BiomeSource const&, short, int, int, class IPreliminarySurfaceProvider const&);
+    // NOLINTEND
 };
 
 }; // namespace RandomScatteredLargeFeatureDetails

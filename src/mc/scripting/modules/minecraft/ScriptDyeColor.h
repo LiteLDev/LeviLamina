@@ -21,11 +21,13 @@ public:
     ScriptDyeColor()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptDyeColor\@ScriptModuleMinecraft\@\@SA?AV?$EnumBindingBuilder\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ItemColor\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::EnumBindingBuilder<std::string, enum class ItemColor> bind(); // NOLINT
+    MCAPI static class Scripting::EnumBindingBuilder<std::string, enum class ItemColor> bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

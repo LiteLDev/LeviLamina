@@ -11,17 +11,19 @@ public:
     ParameterList()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ParameterList\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI ParameterList(class ParameterList&&); // NOLINT
+    MCAPI ParameterList(class ParameterList&&);
     /**
      * @symbol
      * ??0ParameterList\@\@QEAA\@AEBV?$vector\@UBiomeNoiseTarget\@\@V?$allocator\@UBiomeNoiseTarget\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI ParameterList(std::vector<struct BiomeNoiseTarget> const&); // NOLINT
+    MCAPI ParameterList(std::vector<struct BiomeNoiseTarget> const&);
     /**
      * @symbol ??1ParameterList\@\@QEAA\@XZ
      */
-    MCAPI ~ParameterList(); // NOLINT
+    MCAPI ~ParameterList();
+    // NOLINTEND
 };

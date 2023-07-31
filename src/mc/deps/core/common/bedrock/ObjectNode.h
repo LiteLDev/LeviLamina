@@ -34,23 +34,22 @@ public:
     ObjectNode()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?clear\@ObjectNode\@JSONObject\@Bedrock\@\@QEAAXXZ
      */
-    MCAPI void clear(); // NOLINT
+    MCAPI void clear();
     /**
      * @symbol
      * ?insert\@ObjectNode\@JSONObject\@Bedrock\@\@QEAA?AV?$iterator_base\@$0A\@\@123\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@AEBVValueWrapper\@23\@_N\@Z
      */
-    MCAPI class Bedrock::JSONObject::ObjectNode::iterator_base<0> insert(
-        class std::basic_string_view<char, struct std::char_traits<char>>,
-        class Bedrock::JSONObject::ValueWrapper const&,
-        bool
-    ); // NOLINT
+    MCAPI class Bedrock::JSONObject::ObjectNode::iterator_base<0>
+    insert(std::string_view, class Bedrock::JSONObject::ValueWrapper const&, bool);
     /**
      * @symbol ?setContents\@ObjectNode\@JSONObject\@Bedrock\@\@QEAA_NAEBVValueWrapper\@23\@\@Z
      */
-    MCAPI bool setContents(class Bedrock::JSONObject::ValueWrapper const&); // NOLINT
+    MCAPI bool setContents(class Bedrock::JSONObject::ValueWrapper const&);
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::JSONObject

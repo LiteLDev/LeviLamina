@@ -11,16 +11,18 @@ public:
     PeekComponent()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getDuration\@PeekComponent\@\@QEAAAEAHXZ
      */
-    MCAPI int& getDuration(); // NOLINT
+    MCAPI int& getDuration();
     /**
      * @symbol ?getHadTarget\@PeekComponent\@\@QEBA_NXZ
      */
-    MCAPI bool getHadTarget() const; // NOLINT
+    MCAPI bool getHadTarget() const;
     /**
      * @symbol ?setHadTarget\@PeekComponent\@\@QEAAX_N\@Z
      */
-    MCAPI void setHadTarget(bool); // NOLINT
+    MCAPI void setHadTarget(bool);
+    // NOLINTEND
 };

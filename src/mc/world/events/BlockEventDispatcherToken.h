@@ -11,16 +11,18 @@ public:
     BlockEventDispatcherToken()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4BlockEventDispatcherToken\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class BlockEventDispatcherToken& operator=(class BlockEventDispatcherToken&&); // NOLINT
+    MCAPI class BlockEventDispatcherToken& operator=(class BlockEventDispatcherToken&&);
     /**
      * @symbol ?unregister\@BlockEventDispatcherToken\@\@QEAAXXZ
      */
-    MCAPI void unregister(); // NOLINT
+    MCAPI void unregister();
     /**
      * @symbol ??1BlockEventDispatcherToken\@\@QEAA\@XZ
      */
-    MCAPI ~BlockEventDispatcherToken(); // NOLINT
+    MCAPI ~BlockEventDispatcherToken();
+    // NOLINTEND
 };

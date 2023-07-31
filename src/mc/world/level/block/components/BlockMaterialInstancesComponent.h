@@ -11,16 +11,18 @@ public:
     BlockMaterialInstancesComponent()                                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0BlockMaterialInstancesComponent\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI BlockMaterialInstancesComponent(struct BlockMaterialInstancesComponent&&); // NOLINT
+    MCAPI BlockMaterialInstancesComponent(struct BlockMaterialInstancesComponent&&);
     /**
      * @symbol ?getRenderLayer\@BlockMaterialInstancesComponent\@\@QEBA?AW4BlockRenderLayer\@\@XZ
      */
-    MCAPI enum class BlockRenderLayer getRenderLayer() const; // NOLINT
+    MCAPI enum class BlockRenderLayer getRenderLayer() const;
     /**
      * @symbol ??4BlockMaterialInstancesComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct BlockMaterialInstancesComponent& operator=(struct BlockMaterialInstancesComponent&&); // NOLINT
+    MCAPI struct BlockMaterialInstancesComponent& operator=(struct BlockMaterialInstancesComponent&&);
+    // NOLINTEND
 };

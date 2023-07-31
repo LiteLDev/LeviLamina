@@ -28,12 +28,14 @@ public:
     IRequestBody()                               = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_HTTP_INTERNAL_IREQUESTBODY
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IRequestBody(); // NOLINT
+    MCVAPI ~IRequestBody();
 #endif
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Http::Internal

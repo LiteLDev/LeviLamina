@@ -11,12 +11,14 @@ public:
     FlagPassengerRemovalSystem()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createDeferredSystem\@FlagPassengerRemovalSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createDeferredSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createDeferredSystem();
     /**
      * @symbol ?createImmediateSystem\@FlagPassengerRemovalSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createImmediateSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createImmediateSystem();
+    // NOLINTEND
 };

@@ -11,14 +11,16 @@ public:
     ScriptTickListener()                                     = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTTICKLISTENER
     /**
      * @symbol ?onLevelRemovedPlayer\@ScriptTickListener\@\@UEAA?AW4EventResult\@\@AEAVLevel\@\@AEAVPlayer\@\@\@Z
      */
-    MCVAPI enum class EventResult onLevelRemovedPlayer(class Level&, class Player&); // NOLINT
+    MCVAPI enum class EventResult onLevelRemovedPlayer(class Level&, class Player&);
     /**
      * @symbol ?onLevelTickEnd\@ScriptTickListener\@\@UEAAXXZ
      */
-    MCVAPI void onLevelTickEnd(); // NOLINT
+    MCVAPI void onLevelTickEnd();
 #endif
+    // NOLINTEND
 };

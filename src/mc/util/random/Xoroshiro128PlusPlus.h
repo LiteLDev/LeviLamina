@@ -11,8 +11,10 @@ public:
     Xoroshiro128PlusPlus()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?nextLong\@Xoroshiro128PlusPlus\@\@QEAA_JXZ
      */
-    MCAPI __int64 nextLong(); // NOLINT
+    MCAPI int64_t nextLong();
+    // NOLINTEND
 };

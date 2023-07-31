@@ -11,12 +11,14 @@ public:
     TickingSystemWithInfo()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0TickingSystemWithInfo\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI TickingSystemWithInfo(struct TickingSystemWithInfo&&); // NOLINT
+    MCAPI TickingSystemWithInfo(struct TickingSystemWithInfo&&);
     /**
      * @symbol ??1TickingSystemWithInfo\@\@QEAA\@XZ
      */
-    MCAPI ~TickingSystemWithInfo(); // NOLINT
+    MCAPI ~TickingSystemWithInfo();
+    // NOLINTEND
 };

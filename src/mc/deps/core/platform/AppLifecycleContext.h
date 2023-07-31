@@ -10,8 +10,10 @@ public:
     AppLifecycleContext(AppLifecycleContext const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0AppLifecycleContext\@\@QEAA\@XZ
      */
-    MCAPI AppLifecycleContext(); // NOLINT
+    MCAPI AppLifecycleContext();
+    // NOLINTEND
 };

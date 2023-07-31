@@ -24,18 +24,20 @@ public:
         LargeDripstone()                                 = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol
          * ?moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary\@LargeDripstone\@LargeDripstoneFeature\@\@QEAA_NAEAVIBlockWorldGenAPI\@\@AEBVWindOffsetter\@DripstoneUtils\@\@\@Z
          */
         MCAPI bool
-        moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary(class IBlockWorldGenAPI&, class DripstoneUtils::WindOffsetter const&); // NOLINT
+        moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary(class IBlockWorldGenAPI&, class DripstoneUtils::WindOffsetter const&);
         /**
          * @symbol
          * ?placeBlocks\@LargeDripstone\@LargeDripstoneFeature\@\@QEBAXAEAVIBlockWorldGenAPI\@\@AEAVRandom\@\@AEBVWindOffsetter\@DripstoneUtils\@\@\@Z
          */
-        MCAPI void placeBlocks(class IBlockWorldGenAPI&, class Random&, class DripstoneUtils::WindOffsetter const&)
-            const; // NOLINT
+        MCAPI void
+        placeBlocks(class IBlockWorldGenAPI&, class Random&, class DripstoneUtils::WindOffsetter const&) const;
+        // NOLINTEND
     };
 
 public:
@@ -45,16 +47,18 @@ public:
     LargeDripstoneFeature()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?place\@LargeDripstoneFeature\@\@UEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
      */
-    virtual class std::optional<class BlockPos>
-    place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const; // NOLINT
+    virtual std::optional<class BlockPos>
+    place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    // NOLINTEND
 };

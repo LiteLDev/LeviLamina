@@ -21,28 +21,30 @@ public:
     ScriptCompoundBlockVolume()                                 = delete;
 
 public:
-    /**
-     * @symbol ??4ScriptCompoundBlockVolume\@ScriptModuleMinecraft\@\@QEAAAEAV01\@AEBV01\@\@Z
-     */
-    MCAPI class ScriptModuleMinecraft::ScriptCompoundBlockVolume&
-    operator=(class ScriptModuleMinecraft::ScriptCompoundBlockVolume const&); // NOLINT
-    /**
-     * @symbol ??1ScriptCompoundBlockVolume\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptCompoundBlockVolume(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bindClass\@ScriptCompoundBlockVolume\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptCompoundBlockVolume\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptCompoundBlockVolume>
-    bindClass(); // NOLINT
+    bindClass();
     /**
      * @symbol
      * ?bindEnums\@ScriptCompoundBlockVolume\@ScriptModuleMinecraft\@\@SA?AV?$EnumBindingBuilder\@W4CompoundBlockVolumeAction\@\@W41\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::
         EnumBindingBuilder<enum class CompoundBlockVolumeAction, enum class CompoundBlockVolumeAction>
-        bindEnums(); // NOLINT
+        bindEnums();
+    /**
+     * @symbol ??4ScriptCompoundBlockVolume\@ScriptModuleMinecraft\@\@QEAAAEAV01\@AEBV01\@\@Z
+     */
+    MCAPI class ScriptModuleMinecraft::ScriptCompoundBlockVolume&
+    operator=(class ScriptModuleMinecraft::ScriptCompoundBlockVolume const&);
+    /**
+     * @symbol ??1ScriptCompoundBlockVolume\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptCompoundBlockVolume();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

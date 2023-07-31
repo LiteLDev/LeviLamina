@@ -17,11 +17,13 @@ public:
     ScriptFeedItemEffect()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptFeedItemEffect\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UEffect\@FeedItem\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<struct FeedItem::Effect> bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<struct FeedItem::Effect> bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

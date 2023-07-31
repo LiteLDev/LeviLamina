@@ -11,8 +11,10 @@ public:
     ActorNotificationEvent()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ActorNotificationEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorNotificationEvent(); // NOLINT
+    MCAPI ~ActorNotificationEvent();
+    // NOLINTEND
 };

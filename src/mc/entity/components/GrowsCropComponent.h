@@ -10,17 +10,19 @@ public:
     GrowsCropComponent(GrowsCropComponent const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0GrowsCropComponent\@\@QEAA\@XZ
      */
-    MCAPI GrowsCropComponent(); // NOLINT
+    MCAPI GrowsCropComponent();
     /**
      * @symbol ?addAdditionalSaveData\@GrowsCropComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
+    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
     /**
      * @symbol
      * ?readAdditionalSaveData\@GrowsCropComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&); // NOLINT
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    // NOLINTEND
 };

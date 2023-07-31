@@ -18,28 +18,30 @@ public:
     GameConnectionInfo(GameConnectionInfo const&) = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0GameConnectionInfo\@Social\@\@QEAA\@XZ
      */
-    MCAPI GameConnectionInfo(); // NOLINT
+    MCAPI GameConnectionInfo();
     /**
      * @symbol
      * ??0GameConnectionInfo\@Social\@\@QEAA\@USystemAddress\@RakNet\@\@AEBVThirdPartyInfo\@\@AEBVGatheringServerInfo\@\@\@Z
      */
     MCAPI
-    GameConnectionInfo(struct RakNet::SystemAddress, class ThirdPartyInfo const&, class GatheringServerInfo const&); // NOLINT
+    GameConnectionInfo(struct RakNet::SystemAddress, class ThirdPartyInfo const&, class GatheringServerInfo const&);
     /**
      * @symbol ??4GameConnectionInfo\@Social\@\@QEAAAEAV01\@AEBV01\@\@Z
      */
-    MCAPI class Social::GameConnectionInfo& operator=(class Social::GameConnectionInfo const&); // NOLINT
+    MCAPI class Social::GameConnectionInfo& operator=(class Social::GameConnectionInfo const&);
     /**
      * @symbol ?typeAsString\@GameConnectionInfo\@Social\@\@QEBAPEBDXZ
      */
-    MCAPI char const* typeAsString() const; // NOLINT
+    MCAPI char const* typeAsString() const;
     /**
      * @symbol ??1GameConnectionInfo\@Social\@\@QEAA\@XZ
      */
-    MCAPI ~GameConnectionInfo(); // NOLINT
+    MCAPI ~GameConnectionInfo();
+    // NOLINTEND
 };
 
 }; // namespace Social

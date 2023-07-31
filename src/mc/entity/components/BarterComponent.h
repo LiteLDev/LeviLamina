@@ -11,12 +11,14 @@ public:
     BarterComponent()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?onBarterItemPickedUp\@BarterComponent\@\@QEAAXAEBVActor\@\@UActorUniqueID\@\@F\@Z
      */
-    MCAPI void onBarterItemPickedUp(class Actor const&, struct ActorUniqueID, short); // NOLINT
+    MCAPI void onBarterItemPickedUp(class Actor const&, struct ActorUniqueID, short);
     /**
      * @symbol ?stopBarter\@BarterComponent\@\@QEAAXXZ
      */
-    MCAPI void stopBarter(); // NOLINT
+    MCAPI void stopBarter();
+    // NOLINTEND
 };

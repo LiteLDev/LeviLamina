@@ -9,11 +9,12 @@ namespace gametest { enum class GameTestErrorType; }
 // clang-format on
 
 namespace gametest {
+// NOLINTBEGIN
 /**
  * @symbol
  * ?bindGameTestErrorType\@gametest\@\@YA?AV?$EnumBindingBuilder\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4GameTestErrorType\@gametest\@\@\@Scripting\@\@XZ
  */
-MCAPI class Scripting::EnumBindingBuilder<std::string, enum class gametest::GameTestErrorType>
-bindGameTestErrorType(); // NOLINT
+MCAPI class Scripting::EnumBindingBuilder<std::string, enum class gametest::GameTestErrorType> bindGameTestErrorType();
+// NOLINTEND
 
 }; // namespace gametest

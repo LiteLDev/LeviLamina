@@ -18,29 +18,31 @@ public:
     NumericConstraint()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol ?doValidate\@NumericConstraint\@cereal\@\@EEBA_NAEBVmeta_any\@entt\@\@AEAVSerializerContext\@2\@\@Z
      */
-    virtual bool doValidate(class entt::meta_any const&, class cereal::SerializerContext&) const; // NOLINT
+    virtual bool doValidate(class entt::meta_any const&, class cereal::SerializerContext&) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREAL_NUMERICCONSTRAINT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~NumericConstraint(); // NOLINT
+    MCVAPI ~NumericConstraint();
 #endif
     /**
      * @symbol ?max\@NumericConstraint\@cereal\@\@QEAAAEAV12\@N\@Z
      */
-    MCAPI class cereal::NumericConstraint& max(double); // NOLINT
+    MCAPI class cereal::NumericConstraint& max(double);
     /**
      * @symbol ?min\@NumericConstraint\@cereal\@\@QEAAAEAV12\@N\@Z
      */
-    MCAPI class cereal::NumericConstraint& min(double); // NOLINT
+    MCAPI class cereal::NumericConstraint& min(double);
     /**
      * @symbol ?range\@NumericConstraint\@cereal\@\@QEAAAEAV12\@NN\@Z
      */
-    MCAPI class cereal::NumericConstraint& range(double, double); // NOLINT
+    MCAPI class cereal::NumericConstraint& range(double, double);
+    // NOLINTEND
 };
 
 }; // namespace cereal

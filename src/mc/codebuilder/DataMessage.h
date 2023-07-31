@@ -13,10 +13,12 @@ public:
     DataMessage()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1DataMessage\@CodeBuilder\@\@QEAA\@XZ
      */
-    MCAPI ~DataMessage(); // NOLINT
+    MCAPI ~DataMessage();
+    // NOLINTEND
 };
 
 }; // namespace CodeBuilder

@@ -11,10 +11,12 @@ public:
     _TickPtr()                           = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL__TICKPTR
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~_TickPtr(); // NOLINT
+    MCVAPI ~_TickPtr();
 #endif
+    // NOLINTEND
 };

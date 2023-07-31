@@ -19,55 +19,57 @@ public:
     ResourceLocation(ResourceLocation const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ResourceLocation\@\@QEAA\@AEBVPath\@Core\@\@W4ResourceFileSystem\@\@\@Z
      */
-    MCAPI ResourceLocation(class Core::Path const&, enum class ResourceFileSystem); // NOLINT
+    MCAPI ResourceLocation(class Core::Path const&, enum class ResourceFileSystem);
     /**
      * @symbol ??0ResourceLocation\@\@QEAA\@AEBVPath\@Core\@\@\@Z
      */
-    MCAPI ResourceLocation(class Core::Path const&); // NOLINT
+    MCAPI ResourceLocation(class Core::Path const&);
     /**
      * @symbol ??0ResourceLocation\@\@QEAA\@XZ
      */
-    MCAPI ResourceLocation(); // NOLINT
+    MCAPI ResourceLocation();
+    /**
+     * @symbol ?getEmptyLocation\@ResourceLocation\@\@SAAEBV1\@XZ
+     */
+    MCAPI static class ResourceLocation const& getEmptyLocation();
     /**
      * @symbol
      * ?getFullPath\@ResourceLocation\@\@QEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
-    MCAPI class Core::PathBuffer<std::string> getFullPath() const; // NOLINT
+    MCAPI class Core::PathBuffer<std::string> getFullPath() const;
     /**
      * @symbol
      * ?getRelativePath\@ResourceLocation\@\@QEBAAEBV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
-    MCAPI class Core::PathBuffer<std::string> const& getRelativePath() const; // NOLINT
+    MCAPI class Core::PathBuffer<std::string> const& getRelativePath() const;
     /**
      * @symbol ??8ResourceLocation\@\@QEBA_NAEBV0\@\@Z
      */
-    MCAPI bool operator==(class ResourceLocation const&) const; // NOLINT
+    MCAPI bool operator==(class ResourceLocation const&) const;
     /**
      * @symbol ?serialize\@ResourceLocation\@\@QEBAXAEAVValue\@Json\@\@\@Z
      */
-    MCAPI void serialize(class Json::Value&) const; // NOLINT
+    MCAPI void serialize(class Json::Value&) const;
     /**
      * @symbol
      * ?setRelativePath\@ResourceLocation\@\@QEAAXAEBV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@\@Z
      */
-    MCAPI void setRelativePath(class Core::PathBuffer<std::string> const&); // NOLINT
+    MCAPI void setRelativePath(class Core::PathBuffer<std::string> const&);
     /**
      * @symbol ??1ResourceLocation\@\@QEAA\@XZ
      */
-    MCAPI ~ResourceLocation(); // NOLINT
-    /**
-     * @symbol ?getEmptyLocation\@ResourceLocation\@\@SAAEBV1\@XZ
-     */
-    MCAPI static class ResourceLocation const& getEmptyLocation(); // NOLINT
+    MCAPI ~ResourceLocation();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_computeHashes\@ResourceLocation\@\@AEAAXXZ
      */
-    MCAPI void _computeHashes(); // NOLINT
-
-private:
+    MCAPI void _computeHashes();
+    // NOLINTEND
 };

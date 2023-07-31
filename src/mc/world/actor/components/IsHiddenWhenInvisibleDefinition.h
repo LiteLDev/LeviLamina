@@ -19,19 +19,21 @@ public:
     IsHiddenWhenInvisibleDefinition()                                                  = delete;
 
 public:
-    /**
-     * @symbol ?initialize\@IsHiddenWhenInvisibleDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&) const; // NOLINT
-    /**
-     * @symbol ?uninitialize\@IsHiddenWhenInvisibleDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
-     */
-    MCAPI void uninitialize(class EntityContext&) const; // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?buildSchema\@IsHiddenWhenInvisibleDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UIsHiddenWhenInvisibleDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+    MCAPI static void buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
                                       class JsonUtil::EmptyClass,
-                                      struct IsHiddenWhenInvisibleDefinition>>&); // NOLINT
+                                      struct IsHiddenWhenInvisibleDefinition>>&);
+    /**
+     * @symbol ?initialize\@IsHiddenWhenInvisibleDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&) const;
+    /**
+     * @symbol ?uninitialize\@IsHiddenWhenInvisibleDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
+     */
+    MCAPI void uninitialize(class EntityContext&) const;
+    // NOLINTEND
 };

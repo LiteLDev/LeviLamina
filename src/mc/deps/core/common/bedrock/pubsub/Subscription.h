@@ -12,18 +12,20 @@ public:
     Subscription(Subscription const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0Subscription\@PubSub\@Bedrock\@\@QEAA\@XZ
      */
-    MCAPI Subscription(); // NOLINT
+    MCAPI Subscription();
     /**
      * @symbol ??4Subscription\@PubSub\@Bedrock\@\@QEAAAEAV012\@$$QEAV012\@\@Z
      */
-    MCAPI class Bedrock::PubSub::Subscription& operator=(class Bedrock::PubSub::Subscription&&); // NOLINT
+    MCAPI class Bedrock::PubSub::Subscription& operator=(class Bedrock::PubSub::Subscription&&);
     /**
      * @symbol ??1Subscription\@PubSub\@Bedrock\@\@QEAA\@XZ
      */
-    MCAPI ~Subscription(); // NOLINT
+    MCAPI ~Subscription();
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::PubSub

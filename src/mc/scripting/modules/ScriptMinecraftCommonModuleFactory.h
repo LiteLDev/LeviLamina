@@ -16,8 +16,10 @@ public:
     ScriptMinecraftCommonModuleFactory()                                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?addCommon\@ScriptMinecraftCommonModuleFactory\@\@QEAAXAEAVModuleBindingBuilder\@Scripting\@\@\@Z
      */
-    MCAPI void addCommon(class Scripting::ModuleBindingBuilder&); // NOLINT
+    MCAPI void addCommon(class Scripting::ModuleBindingBuilder&);
+    // NOLINTEND
 };

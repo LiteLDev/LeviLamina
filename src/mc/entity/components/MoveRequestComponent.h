@@ -11,8 +11,10 @@ public:
     MoveRequestComponent()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4MoveRequestComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct MoveRequestComponent& operator=(struct MoveRequestComponent&&); // NOLINT
+    MCAPI struct MoveRequestComponent& operator=(struct MoveRequestComponent&&);
+    // NOLINTEND
 };

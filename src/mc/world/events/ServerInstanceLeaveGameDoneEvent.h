@@ -11,8 +11,10 @@ public:
     ServerInstanceLeaveGameDoneEvent()                                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ServerInstanceLeaveGameDoneEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ServerInstanceLeaveGameDoneEvent(); // NOLINT
+    MCAPI ~ServerInstanceLeaveGameDoneEvent();
+    // NOLINTEND
 };

@@ -10,20 +10,22 @@ public:
     PropertyValues()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0PropertyValues\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI PropertyValues(struct PropertyValues const&); // NOLINT
+    MCAPI PropertyValues(struct PropertyValues const&);
     /**
      * @symbol ??4PropertyValues\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct PropertyValues& operator=(struct PropertyValues&&); // NOLINT
+    MCAPI struct PropertyValues& operator=(struct PropertyValues&&);
     /**
      * @symbol ?resize\@PropertyValues\@\@QEAAX_K000\@Z
      */
-    MCAPI void resize(unsigned __int64, unsigned __int64, unsigned __int64, unsigned __int64); // NOLINT
+    MCAPI void resize(uint64_t, uint64_t, uint64_t, uint64_t);
     /**
      * @symbol ??1PropertyValues\@\@QEAA\@XZ
      */
-    MCAPI ~PropertyValues(); // NOLINT
+    MCAPI ~PropertyValues();
+    // NOLINTEND
 };

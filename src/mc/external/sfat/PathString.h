@@ -12,13 +12,13 @@ public:
     PathString(PathString const&)            = delete;
     PathString()                             = delete;
 
-    // private:
-
 private:
+    // NOLINTBEGIN
     /**
      * @symbol ?mPreferedSeparator\@PathString\@SFAT\@\@0DA
      */
-    MCAPI static char mPreferedSeparator; // NOLINT
+    MCAPI static char mPreferedSeparator;
+    // NOLINTEND
 };
 
 }; // namespace SFAT

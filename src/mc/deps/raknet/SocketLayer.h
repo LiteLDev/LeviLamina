@@ -19,23 +19,25 @@ public:
     SocketLayer()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?GetMyAdapters\@SocketLayer\@RakNet\@\@SAXQEAUNetworkAdapter\@2\@\@Z
      */
-    MCAPI static void GetMyAdapters(struct RakNet::NetworkAdapter* const); // NOLINT
+    MCAPI static void GetMyAdapters(struct RakNet::NetworkAdapter* const);
     /**
      * @symbol ?GetSubNetForSocketAndIp\@SocketLayer\@RakNet\@\@SA?AVRakString\@2\@V32\@\@Z
      */
-    MCAPI static class RakNet::RakString GetSubNetForSocketAndIp(class RakNet::RakString); // NOLINT
-
-    // private:
+    MCAPI static class RakNet::RakString GetSubNetForSocketAndIp(class RakNet::RakString);
+    // NOLINTEND
 
 private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?mPlatformAdapterOverride\@SocketLayer\@RakNet\@\@0V?$function\@$$A6A?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ\@std\@\@A
      */
-    MCAPI static class std::function<std::vector<std::string>(void)> mPlatformAdapterOverride; // NOLINT
+    MCAPI static std::function<std::vector<std::string>(void)> mPlatformAdapterOverride;
+    // NOLINTEND
 };
 
 }; // namespace RakNet

@@ -11,8 +11,10 @@ public:
     InsideBubbleColumnSystem()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSpawnBubbleColumnParticlesSystem\@InsideBubbleColumnSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSpawnBubbleColumnParticlesSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSpawnBubbleColumnParticlesSystem();
+    // NOLINTEND
 };

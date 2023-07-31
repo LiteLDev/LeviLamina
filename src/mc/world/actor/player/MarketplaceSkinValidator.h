@@ -11,9 +11,11 @@ public:
     MarketplaceSkinValidator()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?checkIfValid\@MarketplaceSkinValidator\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI static bool checkIfValid(std::string const&); // NOLINT
+    MCAPI static bool checkIfValid(std::string const&);
+    // NOLINTEND
 };

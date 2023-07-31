@@ -19,30 +19,32 @@ public:
     LoadResultAny()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0LoadResultAny\@Puv\@\@QEAA\@$$QEAV01\@\@Z
      */
-    MCAPI LoadResultAny(class Puv::LoadResultAny&&); // NOLINT
+    MCAPI LoadResultAny(class Puv::LoadResultAny&&);
     /**
      * @symbol ?log\@LoadResultAny\@Puv\@\@QEAAAEAULogger\@2\@XZ
      */
-    MCAPI struct Puv::Logger& log(); // NOLINT
-    /**
-     * @symbol ??BLoadResultAny\@Puv\@\@QEBA_NXZ
-     */
-    MCAPI operator bool() const; // NOLINT
-    /**
-     * @symbol ?version\@LoadResultAny\@Puv\@\@QEBAAEBVSemVersion\@\@XZ
-     */
-    MCAPI class SemVersion const& version() const; // NOLINT
-    /**
-     * @symbol ??1LoadResultAny\@Puv\@\@QEAA\@XZ
-     */
-    MCAPI ~LoadResultAny(); // NOLINT
+    MCAPI struct Puv::Logger& log();
     /**
      * @symbol ?makeError\@LoadResultAny\@Puv\@\@SA?AV12\@ULogger\@2\@\@Z
      */
-    MCAPI static class Puv::LoadResultAny makeError(struct Puv::Logger); // NOLINT
+    MCAPI static class Puv::LoadResultAny makeError(struct Puv::Logger);
+    /**
+     * @symbol ??BLoadResultAny\@Puv\@\@QEBA_NXZ
+     */
+    MCAPI operator bool() const;
+    /**
+     * @symbol ?version\@LoadResultAny\@Puv\@\@QEBAAEBVSemVersion\@\@XZ
+     */
+    MCAPI class SemVersion const& version() const;
+    /**
+     * @symbol ??1LoadResultAny\@Puv\@\@QEAA\@XZ
+     */
+    MCAPI ~LoadResultAny();
+    // NOLINTEND
 };
 
 }; // namespace Puv

@@ -18,14 +18,16 @@ public:
     ComposedAssertMessage()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?compose\@ComposedAssertMessage\@DebugUtils\@\@QEAAXAEBUAssertHandlerContext\@\@\@Z
      */
-    MCAPI void compose(struct AssertHandlerContext const&); // NOLINT
+    MCAPI void compose(struct AssertHandlerContext const&);
     /**
      * @symbol ??1ComposedAssertMessage\@DebugUtils\@\@QEAA\@XZ
      */
-    MCAPI ~ComposedAssertMessage(); // NOLINT
+    MCAPI ~ComposedAssertMessage();
+    // NOLINTEND
 };
 
 }; // namespace DebugUtils

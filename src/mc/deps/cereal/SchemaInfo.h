@@ -13,10 +13,12 @@ public:
     SchemaInfo()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1SchemaInfo\@CerealHelpers\@\@QEAA\@XZ
      */
-    MCAPI ~SchemaInfo(); // NOLINT
+    MCAPI ~SchemaInfo();
+    // NOLINTEND
 };
 
 }; // namespace CerealHelpers

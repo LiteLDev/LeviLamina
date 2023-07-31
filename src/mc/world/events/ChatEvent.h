@@ -10,12 +10,14 @@ public:
     ChatEvent()                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ChatEvent\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI ChatEvent(struct ChatEvent const&); // NOLINT
+    MCAPI ChatEvent(struct ChatEvent const&);
     /**
      * @symbol ??1ChatEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ChatEvent(); // NOLINT
+    MCAPI ~ChatEvent();
+    // NOLINTEND
 };

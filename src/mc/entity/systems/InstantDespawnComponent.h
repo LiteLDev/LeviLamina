@@ -11,12 +11,14 @@ public:
     InstantDespawnComponent()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?onDespawn\@InstantDespawnComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void onDespawn(class Actor&); // NOLINT
+    MCAPI void onDespawn(class Actor&);
     /**
      * @symbol ?tick\@InstantDespawnComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void tick(class Actor&); // NOLINT
+    MCAPI void tick(class Actor&);
+    // NOLINTEND
 };

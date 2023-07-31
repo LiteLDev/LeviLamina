@@ -15,11 +15,6 @@ namespace PositionTrackingDB {
 
 class TrackingRecord {
 public:
-    // TrackingRecord inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // TrackingRecord inner types define
     enum class RecordStatus {};
 
@@ -30,41 +25,43 @@ public:
     TrackingRecord()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getEntity\@TrackingRecord\@PositionTrackingDB\@\@QEAAAEAVEntityContext\@\@XZ
      */
-    MCAPI class EntityContext& getEntity(); // NOLINT
+    MCAPI class EntityContext& getEntity();
     /**
      * @symbol ?getId\@TrackingRecord\@PositionTrackingDB\@\@QEBAAEBVPositionTrackingId\@\@XZ
      */
-    MCAPI class PositionTrackingId const& getId() const; // NOLINT
+    MCAPI class PositionTrackingId const& getId() const;
     /**
      * @symbol ?getStatus\@TrackingRecord\@PositionTrackingDB\@\@QEBA?BW4RecordStatus\@12\@XZ
      */
-    MCAPI enum class PositionTrackingDB::TrackingRecord::RecordStatus const getStatus() const; // NOLINT
+    MCAPI enum class PositionTrackingDB::TrackingRecord::RecordStatus const getStatus() const;
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_addTransaction\@TrackingRecord\@PositionTrackingDB\@\@IEAA_NV?$weak_ptr\@VPositionTrackingDBServer\@PositionTrackingDB\@\@\@std\@\@V?$unique_ptr\@VOperationBase\@PositionTrackingDB\@\@U?$default_delete\@VOperationBase\@PositionTrackingDB\@\@\@std\@\@\@4\@\@Z
      */
     MCAPI bool
-        _addTransaction(class std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, std::unique_ptr<class PositionTrackingDB::OperationBase>); // NOLINT
+        _addTransaction(std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>, std::unique_ptr<class PositionTrackingDB::OperationBase>);
     /**
      * @symbol ?deserialize\@TrackingRecord\@PositionTrackingDB\@\@IEAAXAEBVCompoundTag\@\@\@Z
      */
-    MCAPI void deserialize(class CompoundTag const&); // NOLINT
+    MCAPI void deserialize(class CompoundTag const&);
     /**
      * @symbol
      * ?loadRecordFromStorage\@TrackingRecord\@PositionTrackingDB\@\@IEAA_NV?$weak_ptr\@VPositionTrackingDBServer\@PositionTrackingDB\@\@\@std\@\@\@Z
      */
-    MCAPI bool loadRecordFromStorage(class std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>); // NOLINT
+    MCAPI bool loadRecordFromStorage(std::weak_ptr<class PositionTrackingDB::PositionTrackingDBServer>);
     /**
      * @symbol ?serialize\@TrackingRecord\@PositionTrackingDB\@\@IEBA?AVCompoundTag\@\@XZ
      */
-    MCAPI class CompoundTag serialize() const; // NOLINT
-
-protected:
+    MCAPI class CompoundTag serialize() const;
+    // NOLINTEND
 };
 
 }; // namespace PositionTrackingDB

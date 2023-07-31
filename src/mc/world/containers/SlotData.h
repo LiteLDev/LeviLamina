@@ -10,16 +10,18 @@ public:
     SlotData(SlotData const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0SlotData\@\@QEAA\@XZ
      */
-    MCAPI SlotData(); // NOLINT
+    MCAPI SlotData();
     /**
      * @symbol ??1SlotData\@\@QEAA\@XZ
      */
-    MCAPI ~SlotData(); // NOLINT
+    MCAPI ~SlotData();
     /**
      * @symbol ?UNKNOWN_LOCATION\@SlotData\@\@2U1\@A
      */
-    MCAPI static struct SlotData UNKNOWN_LOCATION; // NOLINT
+    MCAPI static struct SlotData UNKNOWN_LOCATION;
+    // NOLINTEND
 };

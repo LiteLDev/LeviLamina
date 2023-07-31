@@ -11,8 +11,10 @@ public:
     ExternalDataComponent()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ExternalDataComponent\@\@QEAA\@XZ
      */
-    MCAPI ~ExternalDataComponent(); // NOLINT
+    MCAPI ~ExternalDataComponent();
+    // NOLINTEND
 };

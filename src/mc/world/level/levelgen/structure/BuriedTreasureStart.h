@@ -14,13 +14,15 @@ public:
     BuriedTreasureStart()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @symbol ??0BuriedTreasureStart\@\@QEAA\@AEAVDimension\@\@AEAVRandom\@\@HH\@Z
      */
-    MCAPI BuriedTreasureStart(class Dimension&, class Random&, int, int); // NOLINT
+    MCAPI BuriedTreasureStart(class Dimension&, class Random&, int, int);
+    // NOLINTEND
 };

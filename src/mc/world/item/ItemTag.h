@@ -11,8 +11,10 @@ public:
     ItemTag()                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ItemTag\@\@QEAA\@XZ
      */
-    MCAPI ~ItemTag(); // NOLINT
+    MCAPI ~ItemTag();
+    // NOLINTEND
 };

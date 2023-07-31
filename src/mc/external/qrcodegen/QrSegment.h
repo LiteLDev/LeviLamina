@@ -21,26 +21,28 @@ public:
         Mode()                       = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ?ALPHANUMERIC\@Mode\@QrSegment\@qrcodegen\@\@2V123\@B
          */
-        MCAPI static class qrcodegen::QrSegment::Mode const ALPHANUMERIC; // NOLINT
+        MCAPI static class qrcodegen::QrSegment::Mode const ALPHANUMERIC;
         /**
          * @symbol ?BYTE\@Mode\@QrSegment\@qrcodegen\@\@2V123\@B
          */
-        MCAPI static class qrcodegen::QrSegment::Mode const BYTE; // NOLINT
+        MCAPI static class qrcodegen::QrSegment::Mode const BYTE;
         /**
          * @symbol ?ECI\@Mode\@QrSegment\@qrcodegen\@\@2V123\@B
          */
-        MCAPI static class qrcodegen::QrSegment::Mode const ECI; // NOLINT
+        MCAPI static class qrcodegen::QrSegment::Mode const ECI;
         /**
          * @symbol ?KANJI\@Mode\@QrSegment\@qrcodegen\@\@2V123\@B
          */
-        MCAPI static class qrcodegen::QrSegment::Mode const KANJI; // NOLINT
+        MCAPI static class qrcodegen::QrSegment::Mode const KANJI;
         /**
          * @symbol ?NUMERIC\@Mode\@QrSegment\@qrcodegen\@\@2V123\@B
          */
-        MCAPI static class qrcodegen::QrSegment::Mode const NUMERIC; // NOLINT
+        MCAPI static class qrcodegen::QrSegment::Mode const NUMERIC;
+        // NOLINTEND
     };
 
 public:
@@ -49,13 +51,13 @@ public:
     QrSegment(QrSegment const&)            = delete;
     QrSegment()                            = delete;
 
-    // private:
-
 private:
+    // NOLINTBEGIN
     /**
      * @symbol ?ALPHANUMERIC_CHARSET\@QrSegment\@qrcodegen\@\@0PEBDEB
      */
-    MCAPI static char const* ALPHANUMERIC_CHARSET; // NOLINT
+    MCAPI static char const* ALPHANUMERIC_CHARSET;
+    // NOLINTEND
 };
 
 }; // namespace qrcodegen

@@ -11,8 +11,10 @@ public:
     WaterMoveFinalizeSystem()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createWaterMoveFinalizeSystem\@WaterMoveFinalizeSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createWaterMoveFinalizeSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createWaterMoveFinalizeSystem();
+    // NOLINTEND
 };

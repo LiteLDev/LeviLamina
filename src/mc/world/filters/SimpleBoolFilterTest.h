@@ -19,14 +19,16 @@ public:
     SimpleBoolFilterTest()                                       = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SIMPLEBOOLFILTERTEST
     /**
      * @symbol ?_serializeValue\@SimpleBoolFilterTest\@\@MEBA?AVValue\@Json\@\@XZ
      */
-    MCVAPI class Json::Value _serializeValue() const; // NOLINT
+    MCVAPI class Json::Value _serializeValue() const;
     /**
      * @symbol ?setup\@SimpleBoolFilterTest\@\@UEAA_NAEBUDefinition\@FilterTest\@\@AEBUFilterInputs\@\@\@Z
      */
-    MCVAPI bool setup(struct FilterTest::Definition const&, struct FilterInputs const&); // NOLINT
+    MCVAPI bool setup(struct FilterTest::Definition const&, struct FilterInputs const&);
 #endif
+    // NOLINTEND
 };

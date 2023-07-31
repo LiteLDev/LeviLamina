@@ -11,8 +11,10 @@ public:
     CommandChainedSubcommand()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getCommand\@CommandChainedSubcommand\@\@QEBAPEBVCommand\@\@XZ
      */
-    MCAPI class Command const* getCommand() const; // NOLINT
+    MCAPI class Command const* getCommand() const;
+    // NOLINTEND
 };

@@ -16,38 +16,40 @@ public:
     PhotoStorage()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0PhotoStorage\@\@QEAA\@AEBVPath\@Core\@\@\@Z
      */
-    MCAPI PhotoStorage(class Core::Path const&); // NOLINT
+    MCAPI PhotoStorage(class Core::Path const&);
     /**
      * @symbol ??1PhotoStorage\@\@QEAA\@XZ
      */
-    MCAPI ~PhotoStorage(); // NOLINT
+    MCAPI ~PhotoStorage();
     /**
      * @symbol ?BOOKS_DIR\@PhotoStorage\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const BOOKS_DIR; // NOLINT
+    MCAPI static std::string const BOOKS_DIR;
     /**
      * @symbol
      * ?MANIFEST_NAME\@PhotoStorage\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const MANIFEST_NAME; // NOLINT
+    MCAPI static std::string const MANIFEST_NAME;
     /**
      * @symbol
      * ?PHOTOITEM_DIR\@PhotoStorage\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const PHOTOITEM_DIR; // NOLINT
+    MCAPI static std::string const PHOTOITEM_DIR;
     /**
      * @symbol ?PHOTO_DIR\@PhotoStorage\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const PHOTO_DIR; // NOLINT
+    MCAPI static std::string const PHOTO_DIR;
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_readManifest\@PhotoStorage\@\@AEAAXXZ
      */
-    MCAPI void _readManifest(); // NOLINT
-
-private:
+    MCAPI void _readManifest();
+    // NOLINTEND
 };

@@ -21,11 +21,13 @@ public:
     ScriptDefinitionModifier()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptDefinitionModifier\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UActorDefinitionModifier\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ActorDefinitionModifier> bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<struct ActorDefinitionModifier> bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

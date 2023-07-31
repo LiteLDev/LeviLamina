@@ -11,12 +11,14 @@ public:
     AddRiderComponent()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?reloadComponent\@AddRiderComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void reloadComponent(class Actor&); // NOLINT
+    MCAPI void reloadComponent(class Actor&);
     /**
      * @symbol ??1AddRiderComponent\@\@QEAA\@XZ
      */
-    MCAPI ~AddRiderComponent(); // NOLINT
+    MCAPI ~AddRiderComponent();
+    // NOLINTEND
 };

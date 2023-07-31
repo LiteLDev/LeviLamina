@@ -16,35 +16,36 @@ public:
     ContentLogFileEndPoint()                                         = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTENTLOGFILEENDPOINT
     /**
      * @symbol ?flush\@ContentLogFileEndPoint\@\@UEAAXXZ
      */
-    MCVAPI void flush(); // NOLINT
+    MCVAPI void flush();
     /**
      * @symbol ?isEnabled\@ContentLogFileEndPoint\@\@UEBA_NXZ
      */
-    MCVAPI bool isEnabled() const; // NOLINT
+    MCVAPI bool isEnabled() const;
     /**
      * @symbol ?log\@ContentLogFileEndPoint\@\@UEAAXW4LogArea\@\@W4LogLevel\@\@PEBD\@Z
      */
-    MCVAPI void log(enum class LogArea, enum class LogLevel, char const*); // NOLINT
+    MCVAPI void log(enum class LogArea, enum class LogLevel, char const*);
     /**
      * @symbol ?logOnlyOnce\@ContentLogFileEndPoint\@\@UEBA_NXZ
      */
-    MCVAPI bool logOnlyOnce() const; // NOLINT
+    MCVAPI bool logOnlyOnce() const;
     /**
      * @symbol ?setEnabled\@ContentLogFileEndPoint\@\@UEAAX_N\@Z
      */
-    MCVAPI void setEnabled(bool); // NOLINT
+    MCVAPI void setEnabled(bool);
 #endif
     /**
      * @symbol ??0ContentLogFileEndPoint\@\@QEAA\@VPath\@Core\@\@0V?$optional\@W4LogLevel\@\@\@std\@\@\@Z
      */
-    MCAPI
-        ContentLogFileEndPoint(class Core::Path, class Core::Path, class std::optional<enum class LogLevel>); // NOLINT
+    MCAPI ContentLogFileEndPoint(class Core::Path, class Core::Path, std::optional<enum class LogLevel>);
     /**
      * @symbol ?FILE_NAME\@ContentLogFileEndPoint\@\@2V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@B
      */
-    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> const FILE_NAME; // NOLINT
+    MCAPI static std::string_view const FILE_NAME;
+    // NOLINTEND
 };

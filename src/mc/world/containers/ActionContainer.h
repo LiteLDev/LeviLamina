@@ -19,42 +19,42 @@ public:
     ActionContainer()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?at\@ActionContainer\@npc\@\@QEAAPEAV?$variant\@UCommandAction\@npc\@\@UUrlAction\@2\@\@std\@\@_K\@Z
      */
-    MCAPI class std::variant<struct npc::CommandAction, struct npc::UrlAction>* at(unsigned __int64); // NOLINT
+    MCAPI std::variant<struct npc::CommandAction, struct npc::UrlAction>* at(uint64_t);
     /**
      * @symbol ?at\@ActionContainer\@npc\@\@QEBAPEBV?$variant\@UCommandAction\@npc\@\@UUrlAction\@2\@\@std\@\@_K\@Z
      */
-    MCAPI class std::variant<struct npc::CommandAction, struct npc::UrlAction> const* at(unsigned __int64
-    ) const; // NOLINT
+    MCAPI std::variant<struct npc::CommandAction, struct npc::UrlAction> const* at(uint64_t) const;
     /**
      * @symbol ?countUrl\@ActionContainer\@npc\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 countUrl() const; // NOLINT
+    MCAPI uint64_t countUrl() const;
     /**
      * @symbol
      * ?data\@ActionContainer\@npc\@\@QEBAAEBV?$vector\@V?$variant\@UCommandAction\@npc\@\@UUrlAction\@2\@\@std\@\@V?$allocator\@V?$variant\@UCommandAction\@npc\@\@UUrlAction\@2\@\@std\@\@\@2\@\@std\@\@XZ
      */
-    MCAPI std::vector<class std::variant<struct npc::CommandAction, struct npc::UrlAction>> const&
-          data() const; // NOLINT
+    MCAPI std::vector<std::variant<struct npc::CommandAction, struct npc::UrlAction>> const& data() const;
     /**
      * @symbol ?push\@ActionContainer\@npc\@\@QEAAX$$QEAV?$variant\@UCommandAction\@npc\@\@UUrlAction\@2\@\@std\@\@\@Z
      */
-    MCAPI void push(class std::variant<struct npc::CommandAction, struct npc::UrlAction>&&); // NOLINT
+    MCAPI void push(std::variant<struct npc::CommandAction, struct npc::UrlAction>&&);
     /**
      * @symbol
      * ?reset\@ActionContainer\@npc\@\@QEAAX$$QEAV?$vector\@V?$variant\@UCommandAction\@npc\@\@UUrlAction\@2\@\@std\@\@V?$allocator\@V?$variant\@UCommandAction\@npc\@\@UUrlAction\@2\@\@std\@\@\@2\@\@std\@\@\@Z
      */
-    MCAPI void reset(std::vector<class std::variant<struct npc::CommandAction, struct npc::UrlAction>>&&); // NOLINT
+    MCAPI void reset(std::vector<std::variant<struct npc::CommandAction, struct npc::UrlAction>>&&);
     /**
      * @symbol ?size\@ActionContainer\@npc\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 size() const; // NOLINT
+    MCAPI uint64_t size() const;
     /**
      * @symbol ??1ActionContainer\@npc\@\@QEAA\@XZ
      */
-    MCAPI ~ActionContainer(); // NOLINT
+    MCAPI ~ActionContainer();
+    // NOLINTEND
 };
 
 }; // namespace npc

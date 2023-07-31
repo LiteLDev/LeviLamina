@@ -13,10 +13,12 @@ public:
     NewCoralBlockAndSplitStates()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1NewCoralBlockAndSplitStates\@ComplexAliasBlockUtils\@\@QEAA\@XZ
      */
-    MCAPI ~NewCoralBlockAndSplitStates(); // NOLINT
+    MCAPI ~NewCoralBlockAndSplitStates();
+    // NOLINTEND
 };
 
 }; // namespace ComplexAliasBlockUtils

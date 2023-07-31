@@ -11,8 +11,10 @@ public:
     MinecraftPackets()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createPacket\@MinecraftPackets\@\@SA?AV?$shared_ptr\@VPacket\@\@\@std\@\@W4MinecraftPacketIds\@\@\@Z
      */
-    MCAPI static class std::shared_ptr<class Packet> createPacket(enum class MinecraftPacketIds); // NOLINT
+    MCAPI static std::shared_ptr<class Packet> createPacket(enum class MinecraftPacketIds);
+    // NOLINTEND
 };

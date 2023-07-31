@@ -11,8 +11,10 @@ public:
     TradeTier()                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1TradeTier\@\@QEAA\@XZ
      */
-    MCAPI ~TradeTier(); // NOLINT
+    MCAPI ~TradeTier();
+    // NOLINTEND
 };

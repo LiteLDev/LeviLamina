@@ -8,10 +8,12 @@ template<typename T0, typename T1, typename T2> class OwnerPtrFactory;
 // clang-format on
 
 namespace VanillaDimensionFactory {
+// NOLINTBEGIN
 /**
  * @symbol
  * ?registerDimensionTypes\@VanillaDimensionFactory\@\@YAXAEAV?$OwnerPtrFactory\@VDimension\@\@AEAVILevel\@\@AEAVScheduler\@\@\@\@\@Z
  */
-MCAPI void registerDimensionTypes(class OwnerPtrFactory<class Dimension, class ILevel&, class Scheduler&>&); // NOLINT
+MCAPI void registerDimensionTypes(class OwnerPtrFactory<class Dimension, class ILevel&, class Scheduler&>&);
+// NOLINTEND
 
 }; // namespace VanillaDimensionFactory

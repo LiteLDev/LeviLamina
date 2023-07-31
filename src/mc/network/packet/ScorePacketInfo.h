@@ -11,12 +11,14 @@ public:
     ScorePacketInfo()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ScorePacketInfo\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI ScorePacketInfo(struct ScorePacketInfo&&); // NOLINT
+    MCAPI ScorePacketInfo(struct ScorePacketInfo&&);
     /**
      * @symbol ??1ScorePacketInfo\@\@QEAA\@XZ
      */
-    MCAPI ~ScorePacketInfo(); // NOLINT
+    MCAPI ~ScorePacketInfo();
+    // NOLINTEND
 };

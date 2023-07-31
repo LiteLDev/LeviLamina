@@ -11,14 +11,16 @@ public:
     WaterSinkInputSystem()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createWaterSinkInputSystem\@WaterSinkInputSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createWaterSinkInputSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createWaterSinkInputSystem();
     /**
      * @symbol
      * ?doInWaterSinkInputSystem\@WaterSinkInputSystem\@\@SAXAEBUAbilitiesComponent\@\@AEBUMoveInputComponent\@\@AEAUStateVectorComponent\@\@\@Z
      */
     MCAPI static void
-    doInWaterSinkInputSystem(struct AbilitiesComponent const&, struct MoveInputComponent const&, struct StateVectorComponent&); // NOLINT
+    doInWaterSinkInputSystem(struct AbilitiesComponent const&, struct MoveInputComponent const&, struct StateVectorComponent&);
+    // NOLINTEND
 };

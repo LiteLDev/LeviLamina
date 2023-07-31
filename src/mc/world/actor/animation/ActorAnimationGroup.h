@@ -15,19 +15,20 @@ public:
     ActorAnimationGroup(ActorAnimationGroup const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ActorAnimationGroup\@\@QEAA\@XZ
      */
-    MCAPI ActorAnimationGroup(); // NOLINT
+    MCAPI ActorAnimationGroup();
     /**
      * @symbol ?getActorAnimation\@ActorAnimationGroup\@\@QEAA?AVActorSkeletalAnimationPtr\@\@AEBVHashedString\@\@\@Z
      */
-    MCAPI class ActorSkeletalAnimationPtr getActorAnimation(class HashedString const&); // NOLINT
+    MCAPI class ActorSkeletalAnimationPtr getActorAnimation(class HashedString const&);
     /**
      * @symbol
      * ?getActorAnimationInfo\@ActorAnimationGroup\@\@QEAA?AV?$shared_ptr\@VActorAnimationInfo\@\@\@std\@\@AEBVHashedString\@\@\@Z
      */
-    MCAPI class std::shared_ptr<class ActorAnimationInfo> getActorAnimationInfo(class HashedString const&); // NOLINT
+    MCAPI std::shared_ptr<class ActorAnimationInfo> getActorAnimationInfo(class HashedString const&);
     /**
      * @symbol
      * ?loadActorAnimation\@ActorAnimationGroup\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPath\@Core\@\@AEAVPackStats\@\@AEBVSemVersion\@\@W4CurrentCmdVersion\@\@_N\@Z
@@ -39,9 +40,10 @@ public:
         class SemVersion const&,
         enum class CurrentCmdVersion,
         bool
-    ); // NOLINT
+    );
     /**
      * @symbol ?loadActorAnimationsSync\@ActorAnimationGroup\@\@QEAAXAEAVResourcePackManager\@\@\@Z
      */
-    MCAPI void loadActorAnimationsSync(class ResourcePackManager&); // NOLINT
+    MCAPI void loadActorAnimationsSync(class ResourcePackManager&);
+    // NOLINTEND
 };

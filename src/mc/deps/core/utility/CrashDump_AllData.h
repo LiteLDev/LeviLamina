@@ -10,8 +10,10 @@ public:
     CrashDump_AllData(CrashDump_AllData const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0CrashDump_AllData\@\@QEAA\@XZ
      */
-    MCAPI CrashDump_AllData(); // NOLINT
+    MCAPI CrashDump_AllData();
+    // NOLINTEND
 };

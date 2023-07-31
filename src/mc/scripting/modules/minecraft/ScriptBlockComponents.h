@@ -18,10 +18,12 @@ public:
     ScriptBlockComponents()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?bind\@ScriptBlockComponents\@ScriptModuleMinecraft\@\@SAXAEAVModuleBindingBuilder\@Scripting\@\@\@Z
      */
-    MCAPI static void bind(class Scripting::ModuleBindingBuilder&); // NOLINT
+    MCAPI static void bind(class Scripting::ModuleBindingBuilder&);
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

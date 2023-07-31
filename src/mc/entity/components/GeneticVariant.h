@@ -10,12 +10,14 @@ public:
     GeneticVariant()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0GeneticVariant\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI GeneticVariant(struct GeneticVariant const&); // NOLINT
+    MCAPI GeneticVariant(struct GeneticVariant const&);
     /**
      * @symbol ??1GeneticVariant\@\@QEAA\@XZ
      */
-    MCAPI ~GeneticVariant(); // NOLINT
+    MCAPI ~GeneticVariant();
+    // NOLINTEND
 };

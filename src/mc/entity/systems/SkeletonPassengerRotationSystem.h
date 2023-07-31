@@ -11,9 +11,11 @@ public:
     SkeletonPassengerRotationSystem()                                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?createSkeletonPassengerRotationSystem\@SkeletonPassengerRotationSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSkeletonPassengerRotationSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSkeletonPassengerRotationSystem();
+    // NOLINTEND
 };

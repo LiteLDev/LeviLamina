@@ -11,12 +11,14 @@ public:
     BoostItem()                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?setReplacementItemDescriptor\@BoostItem\@\@QEAAXAEBVItemDescriptor\@\@\@Z
      */
-    MCAPI void setReplacementItemDescriptor(class ItemDescriptor const&); // NOLINT
+    MCAPI void setReplacementItemDescriptor(class ItemDescriptor const&);
     /**
      * @symbol ??1BoostItem\@\@QEAA\@XZ
      */
-    MCAPI ~BoostItem(); // NOLINT
+    MCAPI ~BoostItem();
+    // NOLINTEND
 };

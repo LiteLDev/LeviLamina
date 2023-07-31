@@ -16,10 +16,11 @@ public:
     FlyTravelSystem()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createFlyTravelSystem\@FlyTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createFlyTravelSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createFlyTravelSystem();
     /**
      * @symbol
      * ?tickFlyTravelSystem\@FlyTravelSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@UMobTravelComponent\@\@\@\@$$CBUAbilitiesComponent\@\@$$CBUSynchedActorDataComponent\@\@UFlySpeedComponent\@\@\@\@\@Z
@@ -31,5 +32,6 @@ public:
                             struct Include<class FlagComponent<struct PlayerComponentFlag>, struct MobTravelComponent>,
                             struct AbilitiesComponent const,
                             struct SynchedActorDataComponent const,
-                            struct FlySpeedComponent>); // NOLINT
+                            struct FlySpeedComponent>);
+    // NOLINTEND
 };

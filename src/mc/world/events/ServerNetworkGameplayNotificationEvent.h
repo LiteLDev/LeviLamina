@@ -11,8 +11,10 @@ public:
     ServerNetworkGameplayNotificationEvent()                                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ServerNetworkGameplayNotificationEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ServerNetworkGameplayNotificationEvent(); // NOLINT
+    MCAPI ~ServerNetworkGameplayNotificationEvent();
+    // NOLINTEND
 };

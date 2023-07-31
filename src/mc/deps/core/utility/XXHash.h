@@ -13,12 +13,12 @@ public:
     XXHash()                         = delete;
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_hash64Impl\@XXHash\@Util\@\@CA_KPEBX_K1\@Z
      */
-    MCAPI static unsigned __int64 _hash64Impl(void const*, unsigned __int64, unsigned __int64); // NOLINT
-
-private:
+    MCAPI static uint64_t _hash64Impl(void const*, uint64_t, uint64_t);
+    // NOLINTEND
 };
 
 }; // namespace Util

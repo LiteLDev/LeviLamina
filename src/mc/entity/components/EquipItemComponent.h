@@ -27,17 +27,19 @@ public:
         Definition()                             = delete;
 
     public:
-        /**
-         * @symbol ?initialize\@Definition\@EquipItemComponent\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
-        MCAPI void initialize(class EntityContext&, class EquipItemComponent&) const; // NOLINT
+        // NOLINTBEGIN
         /**
          * @symbol
          * ?buildSchema\@Definition\@EquipItemComponent\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDefinition\@EquipItemComponent\@\@\@JsonUtil\@\@\@std\@\@\@Z
          */
-        MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+        MCAPI static void buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
                                           class JsonUtil::EmptyClass,
-                                          class EquipItemComponent::Definition>>&); // NOLINT
+                                          class EquipItemComponent::Definition>>&);
+        /**
+         * @symbol ?initialize\@Definition\@EquipItemComponent\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
+         */
+        MCAPI void initialize(class EntityContext&, class EquipItemComponent&) const;
+        // NOLINTEND
     };
 
 public:
@@ -47,12 +49,14 @@ public:
     EquipItemComponent()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?onEquipItemPickedUp\@EquipItemComponent\@\@QEAAXVItemStack\@\@H\@Z
      */
-    MCAPI void onEquipItemPickedUp(class ItemStack, int); // NOLINT
+    MCAPI void onEquipItemPickedUp(class ItemStack, int);
     /**
      * @symbol ??1EquipItemComponent\@\@QEAA\@XZ
      */
-    MCAPI ~EquipItemComponent(); // NOLINT
+    MCAPI ~EquipItemComponent();
+    // NOLINTEND
 };

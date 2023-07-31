@@ -3,9 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace Achievements {
+// NOLINTBEGIN
 /**
  * @symbol ?getIndexForFroglight\@Achievements\@\@YAHAEBVItemStack\@\@\@Z
  */
-MCAPI int getIndexForFroglight(class ItemStack const&); // NOLINT
+MCAPI int getIndexForFroglight(class ItemStack const&);
+// NOLINTEND
 
 }; // namespace Achievements

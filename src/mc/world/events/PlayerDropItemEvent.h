@@ -11,8 +11,10 @@ public:
     PlayerDropItemEvent()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PlayerDropItemEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerDropItemEvent(); // NOLINT
+    MCAPI ~PlayerDropItemEvent();
+    // NOLINTEND
 };

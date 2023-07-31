@@ -9,11 +9,13 @@ namespace ClimateUtils { struct TargetSpace; }
 // clang-format on
 
 namespace ClimateUtils {
+// NOLINTBEGIN
 /**
  * @symbol
  * ?squareDistance\@ClimateUtils\@\@YA_JAEBV?$array\@UParameter\@ClimateUtils\@\@$06\@std\@\@AEBUTargetSpace\@1\@\@Z
  */
-MCAPI __int64
-squareDistance(class std::array<struct ClimateUtils::Parameter, 7> const&, struct ClimateUtils::TargetSpace const&); // NOLINT
+MCAPI int64_t
+squareDistance(std::array<struct ClimateUtils::Parameter, 7> const&, struct ClimateUtils::TargetSpace const&);
+// NOLINTEND
 
 }; // namespace ClimateUtils

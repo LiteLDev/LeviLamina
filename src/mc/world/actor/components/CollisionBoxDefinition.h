@@ -19,23 +19,25 @@ public:
     CollisionBoxDefinition()                                         = delete;
 
 public:
-    /**
-     * @symbol ?initialize\@CollisionBoxDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVCollisionBoxComponent\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class CollisionBoxComponent&) const; // NOLINT
-    /**
-     * @symbol ?setHeight\@CollisionBoxDefinition\@\@QEAAXAEBM\@Z
-     */
-    MCAPI void setHeight(float const&); // NOLINT
-    /**
-     * @symbol ?setWidth\@CollisionBoxDefinition\@\@QEAAXAEBM\@Z
-     */
-    MCAPI void setWidth(float const&); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?buildSchema\@CollisionBoxDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VCollisionBoxDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      class CollisionBoxDefinition>>&); // NOLINT
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class CollisionBoxDefinition>>&);
+    /**
+     * @symbol ?initialize\@CollisionBoxDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVCollisionBoxComponent\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class CollisionBoxComponent&) const;
+    /**
+     * @symbol ?setHeight\@CollisionBoxDefinition\@\@QEAAXAEBM\@Z
+     */
+    MCAPI void setHeight(float const&);
+    /**
+     * @symbol ?setWidth\@CollisionBoxDefinition\@\@QEAAXAEBM\@Z
+     */
+    MCAPI void setWidth(float const&);
+    // NOLINTEND
 };

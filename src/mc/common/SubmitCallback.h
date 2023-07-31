@@ -11,14 +11,16 @@ public:
     SubmitCallback()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?Register\@SubmitCallback\@\@QEAAJPEAXP6AX0PEAUXTaskQueueObject\@\@W4XTaskQueuePort\@\@\@ZPEAUXTaskQueueRegistrationToken\@\@\@Z
      */
     MCAPI long
-    Register(void*, void (*)(void*, struct XTaskQueueObject*, enum class XTaskQueuePort), struct XTaskQueueRegistrationToken*); // NOLINT
+    Register(void*, void (*)(void*, struct XTaskQueueObject*, enum class XTaskQueuePort), struct XTaskQueueRegistrationToken*);
     /**
      * @symbol ?Unregister\@SubmitCallback\@\@QEAAXUXTaskQueueRegistrationToken\@\@\@Z
      */
-    MCAPI void Unregister(struct XTaskQueueRegistrationToken); // NOLINT
+    MCAPI void Unregister(struct XTaskQueueRegistrationToken);
+    // NOLINTEND
 };

@@ -11,12 +11,14 @@ public:
     GeneDefinition()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?addGeneticVariant\@GeneDefinition\@\@QEAAXAEBUGeneticVariant\@\@\@Z
      */
-    MCAPI void addGeneticVariant(struct GeneticVariant const&); // NOLINT
+    MCAPI void addGeneticVariant(struct GeneticVariant const&);
     /**
      * @symbol ??1GeneDefinition\@\@QEAA\@XZ
      */
-    MCAPI ~GeneDefinition(); // NOLINT
+    MCAPI ~GeneDefinition();
+    // NOLINTEND
 };

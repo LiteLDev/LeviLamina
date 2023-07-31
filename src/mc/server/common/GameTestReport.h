@@ -11,12 +11,14 @@ public:
     GameTestReport()                                 = delete;
 
 public:
-    /**
-     * @symbol ??1GameTestReport\@\@QEAA\@XZ
-     */
-    MCAPI ~GameTestReport(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol ?bindType\@GameTestReport\@\@SAXXZ
      */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI static void bindType();
+    /**
+     * @symbol ??1GameTestReport\@\@QEAA\@XZ
+     */
+    MCAPI ~GameTestReport();
+    // NOLINTEND
 };

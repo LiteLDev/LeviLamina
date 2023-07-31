@@ -11,10 +11,12 @@ public:
     IResourcePackRepository()                                          = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IRESOURCEPACKREPOSITORY
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~IResourcePackRepository(); // NOLINT
+    MCVAPI ~IResourcePackRepository();
 #endif
+    // NOLINTEND
 };

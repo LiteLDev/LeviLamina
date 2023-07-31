@@ -11,10 +11,12 @@ public:
     DeferredCommandBase()                                      = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFERREDCOMMANDBASE
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~DeferredCommandBase(); // NOLINT
+    MCVAPI ~DeferredCommandBase();
 #endif
+    // NOLINTEND
 };

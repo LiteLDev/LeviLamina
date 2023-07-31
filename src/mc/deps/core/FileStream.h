@@ -17,22 +17,24 @@ public:
     FileStream(FileStream const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0FileStream\@Core\@\@QEAA\@AEBVPath\@1\@H\@Z
      */
-    MCAPI FileStream(class Core::Path const&, int); // NOLINT
+    MCAPI FileStream(class Core::Path const&, int);
     /**
      * @symbol ??0FileStream\@Core\@\@QEAA\@XZ
      */
-    MCAPI FileStream(); // NOLINT
+    MCAPI FileStream();
     /**
      * @symbol ?open\@FileStream\@Core\@\@QEAAXAEBVPath\@2\@H\@Z
      */
-    MCAPI void open(class Core::Path const&, int); // NOLINT
+    MCAPI void open(class Core::Path const&, int);
     /**
      * @symbol ?setLoggingEnabled\@FileStream\@Core\@\@QEAAX_N\@Z
      */
-    MCAPI void setLoggingEnabled(bool); // NOLINT
+    MCAPI void setLoggingEnabled(bool);
+    // NOLINTEND
 };
 
 }; // namespace Core

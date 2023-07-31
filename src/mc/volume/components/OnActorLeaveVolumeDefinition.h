@@ -11,21 +11,23 @@ public:
     OnActorLeaveVolumeDefinition()                                               = delete;
 
 public:
-    /**
-     * @symbol ??4OnActorLeaveVolumeDefinition\@\@QEAAAEAU0\@$$QEAU0\@\@Z
-     */
-    MCAPI struct OnActorLeaveVolumeDefinition& operator=(struct OnActorLeaveVolumeDefinition&&); // NOLINT
-    /**
-     * @symbol ??1OnActorLeaveVolumeDefinition\@\@QEAA\@XZ
-     */
-    MCAPI ~OnActorLeaveVolumeDefinition(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol ?bindType\@OnActorLeaveVolumeDefinition\@\@SAXXZ
      */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI static void bindType();
+    /**
+     * @symbol ??4OnActorLeaveVolumeDefinition\@\@QEAAAEAU0\@$$QEAU0\@\@Z
+     */
+    MCAPI struct OnActorLeaveVolumeDefinition& operator=(struct OnActorLeaveVolumeDefinition&&);
+    /**
+     * @symbol ??1OnActorLeaveVolumeDefinition\@\@QEAA\@XZ
+     */
+    MCAPI ~OnActorLeaveVolumeDefinition();
     /**
      * @symbol
      * ?NAME\@OnActorLeaveVolumeDefinition\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const NAME; // NOLINT
+    MCAPI static std::string const NAME;
+    // NOLINTEND
 };

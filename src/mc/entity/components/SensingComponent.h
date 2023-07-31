@@ -11,16 +11,18 @@ public:
     SensingComponent()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?canSee\@SensingComponent\@\@QEAA_NAEAVMob\@\@AEBVActor\@\@\@Z
      */
-    MCAPI bool canSee(class Mob&, class Actor const&); // NOLINT
+    MCAPI bool canSee(class Mob&, class Actor const&);
     /**
      * @symbol ?reset\@SensingComponent\@\@QEAAXXZ
      */
-    MCAPI void reset(); // NOLINT
+    MCAPI void reset();
     /**
      * @symbol ?withinFOV\@SensingComponent\@\@QEAA_NAEAVMob\@\@AEBVVec3\@\@M\@Z
      */
-    MCAPI bool withinFOV(class Mob&, class Vec3 const&, float); // NOLINT
+    MCAPI bool withinFOV(class Mob&, class Vec3 const&, float);
+    // NOLINTEND
 };

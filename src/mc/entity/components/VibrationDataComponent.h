@@ -11,20 +11,22 @@ public:
     VibrationDataComponent()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?clearLastVibrationPos\@VibrationDataComponent\@\@QEAAXXZ
      */
-    MCAPI void clearLastVibrationPos(); // NOLINT
+    MCAPI void clearLastVibrationPos();
     /**
      * @symbol ?getLastVibrationPos\@VibrationDataComponent\@\@QEBAAEBV?$optional\@VBlockPos\@\@\@std\@\@XZ
      */
-    MCAPI class std::optional<class BlockPos> const& getLastVibrationPos() const; // NOLINT
+    MCAPI std::optional<class BlockPos> const& getLastVibrationPos() const;
     /**
      * @symbol ?getTicksSinceLastVibration\@VibrationDataComponent\@\@QEBA?AV?$optional\@_K\@std\@\@AEBVILevel\@\@\@Z
      */
-    MCAPI class std::optional<unsigned __int64> getTicksSinceLastVibration(class ILevel const&) const; // NOLINT
+    MCAPI std::optional<uint64_t> getTicksSinceLastVibration(class ILevel const&) const;
     /**
      * @symbol ?setLastVibrationPos\@VibrationDataComponent\@\@QEAAXVBlockPos\@\@UTick\@\@\@Z
      */
-    MCAPI void setLastVibrationPos(class BlockPos, struct Tick); // NOLINT
+    MCAPI void setLastVibrationPos(class BlockPos, struct Tick);
+    // NOLINTEND
 };

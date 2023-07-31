@@ -10,20 +10,22 @@ public:
     SurfaceMaterialAttributes()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0SurfaceMaterialAttributes\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI SurfaceMaterialAttributes(struct SurfaceMaterialAttributes&&); // NOLINT
+    MCAPI SurfaceMaterialAttributes(struct SurfaceMaterialAttributes&&);
     /**
      * @symbol ??0SurfaceMaterialAttributes\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI SurfaceMaterialAttributes(struct SurfaceMaterialAttributes const&); // NOLINT
+    MCAPI SurfaceMaterialAttributes(struct SurfaceMaterialAttributes const&);
     /**
      * @symbol ??4SurfaceMaterialAttributes\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct SurfaceMaterialAttributes& operator=(struct SurfaceMaterialAttributes&&); // NOLINT
+    MCAPI struct SurfaceMaterialAttributes& operator=(struct SurfaceMaterialAttributes&&);
     /**
      * @symbol ??1SurfaceMaterialAttributes\@\@QEAA\@XZ
      */
-    MCAPI ~SurfaceMaterialAttributes(); // NOLINT
+    MCAPI ~SurfaceMaterialAttributes();
+    // NOLINTEND
 };

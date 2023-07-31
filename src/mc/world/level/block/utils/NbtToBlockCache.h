@@ -13,10 +13,12 @@ public:
     NbtToBlockCache()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1NbtToBlockCache\@BlockSerializationUtils\@\@QEAA\@XZ
      */
-    MCAPI ~NbtToBlockCache(); // NOLINT
+    MCAPI ~NbtToBlockCache();
+    // NOLINTEND
 };
 
 }; // namespace BlockSerializationUtils

@@ -11,8 +11,10 @@ public:
     KeyOrNameResult()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1KeyOrNameResult\@\@QEAA\@XZ
      */
-    MCAPI ~KeyOrNameResult(); // NOLINT
+    MCAPI ~KeyOrNameResult();
+    // NOLINTEND
 };

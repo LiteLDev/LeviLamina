@@ -29,35 +29,37 @@ public:
     DimensionDefinitionGroup()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0DimensionDefinitionGroup\@\@QEAA\@QEAVResourcePackManager\@\@_N\@Z
      */
-    MCAPI DimensionDefinitionGroup(class ResourcePackManager* const, bool); // NOLINT
+    MCAPI DimensionDefinitionGroup(class ResourcePackManager* const, bool);
     /**
      * @symbol
      * ?getDimensionDefinition\@DimensionDefinitionGroup\@\@QEBA?AV?$optional\@UDimensionDefinition\@DimensionDefinitionGroup\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
      */
-    MCAPI class std::optional<struct DimensionDefinitionGroup::DimensionDefinition>
-    getDimensionDefinition(std::string const&) const; // NOLINT
+    MCAPI std::optional<struct DimensionDefinitionGroup::DimensionDefinition>
+          getDimensionDefinition(std::string const&) const;
     /**
      * @symbol ?isEmpty\@DimensionDefinitionGroup\@\@QEBA_NXZ
      */
-    MCAPI bool isEmpty() const; // NOLINT
+    MCAPI bool isEmpty() const;
     /**
      * @symbol
      * ?tryAddDimensionDefinitionByString\@DimensionDefinitionGroup\@\@QEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI bool tryAddDimensionDefinitionByString(std::string const&); // NOLINT
+    MCAPI bool tryAddDimensionDefinitionByString(std::string const&);
     /**
      * @symbol ??1DimensionDefinitionGroup\@\@QEAA\@XZ
      */
-    MCAPI ~DimensionDefinitionGroup(); // NOLINT
+    MCAPI ~DimensionDefinitionGroup();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_checkValidDimensionBounds\@DimensionDefinitionGroup\@\@AEAA_NAEBUDimension\@DimensionDocument\@\@\@Z
      */
-    MCAPI bool _checkValidDimensionBounds(struct DimensionDocument::Dimension const&); // NOLINT
-
-private:
+    MCAPI bool _checkValidDimensionBounds(struct DimensionDocument::Dimension const&);
+    // NOLINTEND
 };

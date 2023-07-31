@@ -11,8 +11,10 @@ public:
     GameTestSaveData()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1GameTestSaveData\@\@QEAA\@XZ
      */
-    MCAPI ~GameTestSaveData(); // NOLINT
+    MCAPI ~GameTestSaveData();
+    // NOLINTEND
 };

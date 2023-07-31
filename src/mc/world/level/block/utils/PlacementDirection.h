@@ -33,12 +33,14 @@ public:
         EnabledStates()                                = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol
          * ?fromStringVector\@EnabledStates\@PlacementDirection\@BlockTrait\@\@SAXAEAU123\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
          */
         MCAPI static void
-        fromStringVector(struct BlockTrait::PlacementDirection::EnabledStates&, std::vector<std::string> const&); // NOLINT
+        fromStringVector(struct BlockTrait::PlacementDirection::EnabledStates&, std::vector<std::string> const&);
+        // NOLINTEND
     };
 
     class UpdateCardinalGetPlacementBlockCallback {
@@ -50,11 +52,12 @@ public:
         UpdateCardinalGetPlacementBlockCallback()                                                          = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @vftbl 0
          * @symbol __unk_vfn_0
          */
-        virtual void __unk_vfn_0(); // NOLINT
+        virtual void __unk_vfn_0();
         /**
          * @vftbl 1
          * @symbol
@@ -67,7 +70,8 @@ public:
             unsigned char,
             class Vec3 const&,
             int
-        ) const; // NOLINT
+        ) const;
+        // NOLINTEND
     };
 
     class UpdateFacingGetPlacementBlockCallback {
@@ -79,11 +83,12 @@ public:
         UpdateFacingGetPlacementBlockCallback()                                                        = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @vftbl 0
          * @symbol __unk_vfn_0
          */
-        virtual void __unk_vfn_0(); // NOLINT
+        virtual void __unk_vfn_0();
         /**
          * @vftbl 1
          * @symbol
@@ -96,7 +101,8 @@ public:
             unsigned char,
             class Vec3 const&,
             int
-        ) const; // NOLINT
+        ) const;
+        // NOLINTEND
     };
 
 public:
@@ -106,50 +112,52 @@ public:
     PlacementDirection()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?applyToBlockLegacy\@PlacementDirection\@BlockTrait\@\@UEBAXAEAVBlockLegacy\@\@\@Z
      */
-    virtual void applyToBlockLegacy(class BlockLegacy&) const; // NOLINT
+    virtual void applyToBlockLegacy(class BlockLegacy&) const;
     /**
      * @vftbl 2
      * @symbol
      * ?buildNetworkTag\@PlacementDirection\@BlockTrait\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const; // NOLINT
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl 3
      * @symbol ?initializeFromNetwork\@PlacementDirection\@BlockTrait\@\@UEAAXAEBVCompoundTag\@\@\@Z
      */
-    virtual void initializeFromNetwork(class CompoundTag const&); // NOLINT
+    virtual void initializeFromNetwork(class CompoundTag const&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKTRAIT_PLACEMENTDIRECTION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~PlacementDirection(); // NOLINT
+    MCVAPI ~PlacementDirection();
 #endif
     /**
      * @symbol ??0PlacementDirection\@BlockTrait\@\@QEAA\@_N0M\@Z
      */
-    MCAPI PlacementDirection(bool, bool, float); // NOLINT
-    /**
-     * @symbol ?setRotationOffset\@PlacementDirection\@BlockTrait\@\@QEAAXAEBM\@Z
-     */
-    MCAPI void setRotationOffset(float const&); // NOLINT
+    MCAPI PlacementDirection(bool, bool, float);
     /**
      * @symbol ?bindType\@PlacementDirection\@BlockTrait\@\@SAXXZ
      */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI static void bindType();
     /**
      * @symbol
      * ?getName\@PlacementDirection\@BlockTrait\@\@SAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI static std::string const& getName(); // NOLINT
+    MCAPI static std::string const& getName();
+    /**
+     * @symbol ?setRotationOffset\@PlacementDirection\@BlockTrait\@\@QEAAXAEBM\@Z
+     */
+    MCAPI void setRotationOffset(float const&);
+    // NOLINTEND
 };
 
 }; // namespace BlockTrait

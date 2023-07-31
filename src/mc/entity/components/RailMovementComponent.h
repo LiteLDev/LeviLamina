@@ -10,12 +10,14 @@ public:
     RailMovementComponent(RailMovementComponent const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0RailMovementComponent\@\@QEAA\@XZ
      */
-    MCAPI RailMovementComponent(); // NOLINT
+    MCAPI RailMovementComponent();
     /**
      * @symbol ?getMaxSpeed\@RailMovementComponent\@\@QEBAMXZ
      */
-    MCAPI float getMaxSpeed() const; // NOLINT
+    MCAPI float getMaxSpeed() const;
+    // NOLINTEND
 };

@@ -10,12 +10,14 @@ public:
     ResourceMetadata(ResourceMetadata const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ResourceMetadata\@\@QEAA\@XZ
      */
-    MCAPI ResourceMetadata(); // NOLINT
+    MCAPI ResourceMetadata();
     /**
      * @symbol ??1ResourceMetadata\@\@QEAA\@XZ
      */
-    MCAPI ~ResourceMetadata(); // NOLINT
+    MCAPI ~ResourceMetadata();
+    // NOLINTEND
 };

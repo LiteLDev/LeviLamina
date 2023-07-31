@@ -18,18 +18,20 @@ public:
     AvoidMobTypeDefinition(AvoidMobTypeDefinition const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0AvoidMobTypeDefinition\@\@QEAA\@XZ
      */
-    MCAPI AvoidMobTypeDefinition(); // NOLINT
-    /**
-     * @symbol ?initialize\@AvoidMobTypeDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVAvoidMobTypeGoal\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class AvoidMobTypeGoal&) const; // NOLINT
+    MCAPI AvoidMobTypeDefinition();
     /**
      * @symbol
      * ?buildSchema\@AvoidMobTypeDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VAvoidMobTypeDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void
-    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AvoidMobTypeDefinition>>&); // NOLINT
+    buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AvoidMobTypeDefinition>>&);
+    /**
+     * @symbol ?initialize\@AvoidMobTypeDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVAvoidMobTypeGoal\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class AvoidMobTypeGoal&) const;
+    // NOLINTEND
 };

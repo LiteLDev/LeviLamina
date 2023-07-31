@@ -17,35 +17,37 @@ public:
     FastWriter(FastWriter const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?write\@FastWriter\@Json\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVValue\@2\@\@Z
      */
-    virtual std::string write(class Json::Value const&); // NOLINT
+    virtual std::string write(class Json::Value const&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JSON_FASTWRITER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~FastWriter(); // NOLINT
+    MCVAPI ~FastWriter();
 #endif
     /**
      * @symbol ??0FastWriter\@Json\@\@QEAA\@XZ
      */
-    MCAPI FastWriter(); // NOLINT
+    MCAPI FastWriter();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?writeValue\@FastWriter\@Json\@\@AEAAXAEBVValue\@2\@\@Z
      */
-    MCAPI void writeValue(class Json::Value const&); // NOLINT
-
-private:
+    MCAPI void writeValue(class Json::Value const&);
+    // NOLINTEND
 };
 
 }; // namespace Json

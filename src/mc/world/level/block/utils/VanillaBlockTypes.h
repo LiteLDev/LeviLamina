@@ -8,109 +8,111 @@ template<typename T0> class WeakPtr;
 // clang-format on
 
 namespace VanillaBlockTypes {
+// NOLINTBEGIN
 /**
  * @symbol ?mBambooSapling\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mBambooSapling; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mBambooSapling;
 /**
  * @symbol ?mCutCopperStairs\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mCutCopperStairs; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mCutCopperStairs;
 /**
  * @symbol ?mExposedCutCopperStairs\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mExposedCutCopperStairs; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mExposedCutCopperStairs;
 /**
  * @symbol ?mGildedBlackstone\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mGildedBlackstone; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mGildedBlackstone;
 /**
  * @symbol ?mGoldBlock\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mGoldBlock; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mGoldBlock;
 /**
  * @symbol ?mGrassPathBlock\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mGrassPathBlock; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mGrassPathBlock;
 /**
  * @symbol ?mLodestoneBlock\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mLodestoneBlock; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mLodestoneBlock;
 /**
  * @symbol ?mMagmaBlock\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mMagmaBlock; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mMagmaBlock;
 /**
  * @symbol ?mMangroveWood\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mMangroveWood; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mMangroveWood;
 /**
  * @symbol ?mOxidizedCutCopperStairs\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mOxidizedCutCopperStairs; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mOxidizedCutCopperStairs;
 /**
  * @symbol ?mPolishedBlackstone\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mPolishedBlackstone; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mPolishedBlackstone;
 /**
  * @symbol ?mPolishedBlackstoneBrickDoubleSlab\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mPolishedBlackstoneBrickDoubleSlab; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mPolishedBlackstoneBrickDoubleSlab;
 /**
  * @symbol ?mPolishedBlackstoneBrickSlab\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mPolishedBlackstoneBrickSlab; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mPolishedBlackstoneBrickSlab;
 /**
  * @symbol ?mPolishedDeepslate\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mPolishedDeepslate; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mPolishedDeepslate;
 /**
  * @symbol ?mPortal\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mPortal; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mPortal;
 /**
  * @symbol ?mQuartzBricks\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mQuartzBricks; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mQuartzBricks;
 /**
  * @symbol ?mSmoothStone\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mSmoothStone; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mSmoothStone;
 /**
  * @symbol ?mSnifferEgg\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mSnifferEgg; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mSnifferEgg;
 /**
  * @symbol ?mStrippedMangroveWood\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mStrippedMangroveWood; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mStrippedMangroveWood;
 /**
  * @symbol ?mWaxedCutCopperStairs\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mWaxedCutCopperStairs; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mWaxedCutCopperStairs;
 /**
  * @symbol ?mWaxedExposedCutCopperStairs\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mWaxedExposedCutCopperStairs; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mWaxedExposedCutCopperStairs;
 /**
  * @symbol ?mWaxedOxidizedCutCopperStairs\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mWaxedOxidizedCutCopperStairs; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mWaxedOxidizedCutCopperStairs;
 /**
  * @symbol ?mWaxedWeatheredCutCopperStairs\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mWaxedWeatheredCutCopperStairs; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mWaxedWeatheredCutCopperStairs;
 /**
  * @symbol ?mWeatheredCutCopperStairs\@VanillaBlockTypes\@\@3V?$WeakPtr\@VBlockLegacy\@\@\@\@A
  */
-MCAPI extern class WeakPtr<class BlockLegacy> mWeatheredCutCopperStairs; // NOLINT
+MCAPI extern class WeakPtr<class BlockLegacy> mWeatheredCutCopperStairs;
 /**
  * @symbol ?registerBlocks\@VanillaBlockTypes\@\@YAXAEBVBaseGameVersion\@\@AEBVExperiments\@\@\@Z
  */
-MCAPI void registerBlocks(class BaseGameVersion const&, class Experiments const&); // NOLINT
+MCAPI void registerBlocks(class BaseGameVersion const&, class Experiments const&);
 /**
  * @symbol ?unregisterBlocks\@VanillaBlockTypes\@\@YAXXZ
  */
-MCAPI void unregisterBlocks(); // NOLINT
+MCAPI void unregisterBlocks();
+// NOLINTEND
 
 }; // namespace VanillaBlockTypes

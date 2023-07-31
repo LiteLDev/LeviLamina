@@ -11,8 +11,10 @@ public:
     SendPacketsComponent()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4SendPacketsComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct SendPacketsComponent& operator=(struct SendPacketsComponent&&); // NOLINT
+    MCAPI struct SendPacketsComponent& operator=(struct SendPacketsComponent&&);
+    // NOLINTEND
 };

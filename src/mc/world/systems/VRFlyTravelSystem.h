@@ -15,18 +15,19 @@ public:
     VRFlyTravelSystem()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_postPlayerTravelSystem\@VRFlyTravelSystem\@\@SAXAEBULocalPlayerPrePlayerTravelComponent\@\@AEAUAbilitiesComponent\@\@\@Z
      */
     MCAPI static void
-    _postPlayerTravelSystem(struct LocalPlayerPrePlayerTravelComponent const&, struct AbilitiesComponent&); // NOLINT
+    _postPlayerTravelSystem(struct LocalPlayerPrePlayerTravelComponent const&, struct AbilitiesComponent&);
     /**
      * @symbol
      * ?_prePlayerTravelSystem\@VRFlyTravelSystem\@\@SAXAEBVStrictEntityContext\@\@AEBUPlayerInputModeComponent\@\@AEAUMobTravelComponent\@\@AEAUAbilitiesComponent\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@ULocalPlayerPrePlayerTravelComponent\@\@\@\@\@Z
      */
     MCAPI static void
-    _prePlayerTravelSystem(class StrictEntityContext const&, struct PlayerInputModeComponent const&, struct MobTravelComponent&, struct AbilitiesComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct LocalPlayerPrePlayerTravelComponent>); // NOLINT
+    _prePlayerTravelSystem(class StrictEntityContext const&, struct PlayerInputModeComponent const&, struct MobTravelComponent&, struct AbilitiesComponent&, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct LocalPlayerPrePlayerTravelComponent>);
     /**
      * @symbol
      * ?_tickPostPlayerTravelSystem\@VRFlyTravelSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBULocalPlayerPrePlayerTravelComponent\@\@UAbilitiesComponent\@\@\@\@\@Z
@@ -35,13 +36,14 @@ public:
                                                   class StrictEntityContext,
                                                   class EntityRegistryBase,
                                                   struct LocalPlayerPrePlayerTravelComponent const,
-                                                  struct AbilitiesComponent>); // NOLINT
+                                                  struct AbilitiesComponent>);
     /**
      * @symbol ?createPostPlayerTravelSystem\@VRFlyTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createPostPlayerTravelSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createPostPlayerTravelSystem();
     /**
      * @symbol ?createPrePlayerTravelSystem\@VRFlyTravelSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createPrePlayerTravelSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createPrePlayerTravelSystem();
+    // NOLINTEND
 };

@@ -11,22 +11,24 @@ public:
     PetSleepWithOwnerState()                                         = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PETSLEEPWITHOWNERSTATE
     /**
      * @symbol ?start\@PetSleepWithOwnerState\@\@UEAAXXZ
      */
-    MCVAPI void start(); // NOLINT
+    MCVAPI void start();
     /**
      * @symbol ?stop\@PetSleepWithOwnerState\@\@UEAAXXZ
      */
-    MCVAPI void stop(); // NOLINT
+    MCVAPI void stop();
 #endif
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol ?dampenSpeed\@PetSleepWithOwnerState\@\@IEAAXXZ
      */
-    MCAPI void dampenSpeed(); // NOLINT
-
-protected:
+    MCAPI void dampenSpeed();
+    // NOLINTEND
 };

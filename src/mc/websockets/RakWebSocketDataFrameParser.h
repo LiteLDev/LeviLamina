@@ -16,23 +16,24 @@ public:
     RakWebSocketDataFrameParser()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?readFrame\@RakWebSocketDataFrameParser\@\@QEAA?AV?$shared_ptr\@VRakWebSocketDataFrame\@\@\@std\@\@AEAVBitStream\@RakNet\@\@\@Z
      */
-    MCAPI class std::shared_ptr<class RakWebSocketDataFrame> readFrame(class RakNet::BitStream&); // NOLINT
+    MCAPI std::shared_ptr<class RakWebSocketDataFrame> readFrame(class RakNet::BitStream&);
     /**
      * @symbol ??1RakWebSocketDataFrameParser\@\@QEAA\@XZ
      */
-    MCAPI ~RakWebSocketDataFrameParser(); // NOLINT
+    MCAPI ~RakWebSocketDataFrameParser();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_failReadFrame\@RakWebSocketDataFrameParser\@\@AEAA?AV?$shared_ptr\@VRakWebSocketDataFrame\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@W4CloseStatusCode\@\@\@Z
      */
-    MCAPI class std::shared_ptr<class RakWebSocketDataFrame>
-    _failReadFrame(std::string const&, enum class CloseStatusCode); // NOLINT
-
-private:
+    MCAPI std::shared_ptr<class RakWebSocketDataFrame> _failReadFrame(std::string const&, enum class CloseStatusCode);
+    // NOLINTEND
 };

@@ -10,12 +10,14 @@ public:
     DefinitionModifier()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0DefinitionModifier\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI DefinitionModifier(struct DefinitionModifier const&); // NOLINT
+    MCAPI DefinitionModifier(struct DefinitionModifier const&);
     /**
      * @symbol ??1DefinitionModifier\@\@QEAA\@XZ
      */
-    MCAPI ~DefinitionModifier(); // NOLINT
+    MCAPI ~DefinitionModifier();
+    // NOLINTEND
 };

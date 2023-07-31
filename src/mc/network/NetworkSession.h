@@ -11,8 +11,10 @@ public:
     NetworkSession()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getTransportLayer\@NetworkSession\@\@QEBA?AW4TransportLayer\@\@XZ
      */
-    MCAPI enum class TransportLayer getTransportLayer() const; // NOLINT
+    MCAPI enum class TransportLayer getTransportLayer() const;
+    // NOLINTEND
 };

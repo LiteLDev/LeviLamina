@@ -13,18 +13,20 @@ public:
     FileOpenMode()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0FileOpenMode\@Core\@\@QEAA\@PEBD\@Z
      */
-    MCAPI FileOpenMode(char const*); // NOLINT
+    MCAPI FileOpenMode(char const*);
     /**
      * @symbol ??0FileOpenMode\@Core\@\@QEAA\@H\@Z
      */
-    MCAPI FileOpenMode(int); // NOLINT
+    MCAPI FileOpenMode(int);
     /**
      * @symbol ?cModeWide\@FileOpenMode\@Core\@\@QEAAPEB_WXZ
      */
-    MCAPI wchar_t const* cModeWide(); // NOLINT
+    MCAPI wchar_t const* cModeWide();
+    // NOLINTEND
 };
 
 }; // namespace Core

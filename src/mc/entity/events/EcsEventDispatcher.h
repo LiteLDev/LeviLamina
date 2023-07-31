@@ -11,8 +11,10 @@ public:
     EcsEventDispatcher()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?update\@EcsEventDispatcher\@\@QEAAXXZ
      */
-    MCAPI void update(); // NOLINT
+    MCAPI void update();
+    // NOLINTEND
 };

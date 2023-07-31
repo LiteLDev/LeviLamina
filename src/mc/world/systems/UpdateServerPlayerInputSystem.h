@@ -11,12 +11,14 @@ public:
     UpdateServerPlayerInputSystem()                                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createPlayerInputUpdateSystem\@UpdateServerPlayerInputSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createPlayerInputUpdateSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createPlayerInputUpdateSystem();
     /**
      * @symbol ?createSneakUpdateSystem\@UpdateServerPlayerInputSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSneakUpdateSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSneakUpdateSystem();
+    // NOLINTEND
 };

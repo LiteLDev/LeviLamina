@@ -14,16 +14,18 @@ public:
     ServerCorrectionPolicy()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 3
      * @symbol
      * ?shouldCorrectMovement\@ServerCorrectionPolicy\@\@UEAA?AUMovementCorrection\@\@AEAUIActorMovementProxy\@\@AEBVPlayerAuthInputPacket\@\@_K\@Z
      */
     virtual struct MovementCorrection
-    shouldCorrectMovement(struct IActorMovementProxy&, class PlayerAuthInputPacket const&, unsigned __int64); // NOLINT
+    shouldCorrectMovement(struct IActorMovementProxy&, class PlayerAuthInputPacket const&, uint64_t);
+    // NOLINTEND
 };

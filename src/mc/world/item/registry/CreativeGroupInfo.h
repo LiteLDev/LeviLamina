@@ -10,12 +10,14 @@ public:
     CreativeGroupInfo()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0CreativeGroupInfo\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI CreativeGroupInfo(class CreativeGroupInfo const&); // NOLINT
+    MCAPI CreativeGroupInfo(class CreativeGroupInfo const&);
     /**
      * @symbol ?addCreativeItem\@CreativeGroupInfo\@\@QEAAXPEAVCreativeItemEntry\@\@\@Z
      */
-    MCAPI void addCreativeItem(class CreativeItemEntry*); // NOLINT
+    MCAPI void addCreativeItem(class CreativeItemEntry*);
+    // NOLINTEND
 };

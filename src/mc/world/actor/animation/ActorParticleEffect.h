@@ -10,8 +10,10 @@ public:
     ActorParticleEffect(ActorParticleEffect const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ActorParticleEffect\@\@QEAA\@XZ
      */
-    MCAPI ActorParticleEffect(); // NOLINT
+    MCAPI ActorParticleEffect();
+    // NOLINTEND
 };

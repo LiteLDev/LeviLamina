@@ -8,10 +8,12 @@ namespace Util::ResourceUri { struct ValidationResult; }
 // clang-format on
 
 namespace Util::ResourceUri {
+// NOLINTBEGIN
 /**
  * @symbol
  * ?validateUri\@ResourceUri\@Util\@\@YA?AUValidationResult\@12\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
  */
-MCAPI struct Util::ResourceUri::ValidationResult validateUri(std::string const&); // NOLINT
+MCAPI struct Util::ResourceUri::ValidationResult validateUri(std::string const&);
+// NOLINTEND
 
 }; // namespace Util::ResourceUri

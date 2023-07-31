@@ -10,12 +10,14 @@ public:
     ActorStopRidingEvent()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ActorStopRidingEvent\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI ActorStopRidingEvent(struct ActorStopRidingEvent const&); // NOLINT
+    MCAPI ActorStopRidingEvent(struct ActorStopRidingEvent const&);
     /**
      * @symbol ??1ActorStopRidingEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorStopRidingEvent(); // NOLINT
+    MCAPI ~ActorStopRidingEvent();
+    // NOLINTEND
 };

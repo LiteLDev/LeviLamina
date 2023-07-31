@@ -11,8 +11,10 @@ public:
     ActorGoalFactory()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?_initializeBedrock\@ActorGoalFactory\@\@QEAAXXZ
      */
-    MCAPI void _initializeBedrock(); // NOLINT
+    MCAPI void _initializeBedrock();
+    // NOLINTEND
 };

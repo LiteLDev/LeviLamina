@@ -11,8 +11,10 @@ public:
     BlockMapColorComponent()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?usesNewComponentStorage\@BlockMapColorComponent\@\@SA_NXZ
      */
-    MCAPI static bool usesNewComponentStorage(); // NOLINT
+    MCAPI static bool usesNewComponentStorage();
+    // NOLINTEND
 };

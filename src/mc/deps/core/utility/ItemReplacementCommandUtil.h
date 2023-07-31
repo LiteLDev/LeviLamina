@@ -23,20 +23,21 @@ public:
     ItemReplacementCommandUtil()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?replaceActorSlotsOrError\@ItemReplacementCommandUtil\@Util\@\@SA?AUReplacementResults\@2\@AEAUActorReplacementParams\@2\@\@Z
      */
-    MCAPI static struct Util::ReplacementResults
-    replaceActorSlotsOrError(struct Util::ActorReplacementParams&); // NOLINT
+    MCAPI static struct Util::ReplacementResults replaceActorSlotsOrError(struct Util::ActorReplacementParams&);
     /**
      * @symbol
      * ?replaceContainerSlotsOrError\@ItemReplacementCommandUtil\@Util\@\@SA?AUReplacementResults\@2\@AEAUContainerReplacementParams\@2\@\@Z
      */
-    MCAPI static struct Util::ReplacementResults
-    replaceContainerSlotsOrError(struct Util::ContainerReplacementParams&); // NOLINT
+    MCAPI static struct Util::ReplacementResults replaceContainerSlotsOrError(struct Util::ContainerReplacementParams&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_replaceArmorSlots\@ItemReplacementCommandUtil\@Util\@\@CAXAEAUReplacementResults\@2\@AEAVActor\@\@V?$span\@$$CBVItemStack\@\@$0?0\@gsl\@\@W4EquipmentSlot\@\@H\@Z
@@ -44,18 +45,17 @@ public:
     MCAPI static void _replaceArmorSlots(
         struct Util::ReplacementResults&,
         class Actor&,
-        class gsl::span<class ItemStack const, -1>,
+        class gsl::span<class ItemStack const>,
         enum class EquipmentSlot,
         int
-    ); // NOLINT
+    );
     /**
      * @symbol
      * ?_slotBoundsValid\@ItemReplacementCommandUtil\@Util\@\@CA_NAEAUReplacementResults\@2\@HHV?$optional\@H\@std\@\@1\@Z
      */
     MCAPI static bool
-    _slotBoundsValid(struct Util::ReplacementResults&, int, int, class std::optional<int>, class std::optional<int>); // NOLINT
-
-private:
+    _slotBoundsValid(struct Util::ReplacementResults&, int, int, std::optional<int>, std::optional<int>);
+    // NOLINTEND
 };
 
 }; // namespace Util

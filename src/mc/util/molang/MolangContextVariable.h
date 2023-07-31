@@ -11,12 +11,14 @@ public:
     MolangContextVariable()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0MolangContextVariable\@\@QEAA\@AEBVHashedString\@\@\@Z
      */
-    MCAPI MolangContextVariable(class HashedString const&); // NOLINT
+    MCAPI MolangContextVariable(class HashedString const&);
     /**
      * @symbol ??1MolangContextVariable\@\@QEAA\@XZ
      */
-    MCAPI ~MolangContextVariable(); // NOLINT
+    MCAPI ~MolangContextVariable();
+    // NOLINTEND
 };

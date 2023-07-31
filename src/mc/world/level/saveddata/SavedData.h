@@ -11,10 +11,12 @@ public:
     SavedData()                            = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SAVEDDATA
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~SavedData(); // NOLINT
+    MCVAPI ~SavedData();
 #endif
+    // NOLINTEND
 };

@@ -19,11 +19,13 @@ public:
     DefaultLookAngleDefinition()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?buildSchema\@DefaultLookAngleDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UDefaultLookAngleDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      struct DefaultLookAngleDefinition>>&); // NOLINT
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct DefaultLookAngleDefinition>>&);
+    // NOLINTEND
 };

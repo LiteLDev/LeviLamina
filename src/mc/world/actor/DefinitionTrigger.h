@@ -11,16 +11,18 @@ public:
     DefinitionTrigger()                                    = delete;
 
 public:
-    /**
-     * @symbol ?canTrigger\@DefinitionTrigger\@\@QEBA_NAEAVRenderParams\@\@\@Z
-     */
-    MCAPI bool canTrigger(class RenderParams&) const; // NOLINT
-    /**
-     * @symbol ??1DefinitionTrigger\@\@QEAA\@XZ
-     */
-    MCAPI ~DefinitionTrigger(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol ?bindType\@DefinitionTrigger\@\@SAXXZ
      */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI static void bindType();
+    /**
+     * @symbol ?canTrigger\@DefinitionTrigger\@\@QEBA_NAEAVRenderParams\@\@\@Z
+     */
+    MCAPI bool canTrigger(class RenderParams&) const;
+    /**
+     * @symbol ??1DefinitionTrigger\@\@QEAA\@XZ
+     */
+    MCAPI ~DefinitionTrigger();
+    // NOLINTEND
 };

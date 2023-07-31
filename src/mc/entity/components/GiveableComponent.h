@@ -11,8 +11,10 @@ public:
     GiveableComponent()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getInteraction\@GiveableComponent\@\@QEAA_NAEAVActor\@\@AEAVPlayer\@\@AEAVActorInteraction\@\@\@Z
      */
-    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&); // NOLINT
+    MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
+    // NOLINTEND
 };

@@ -4,11 +4,6 @@
 
 class RecipeUnlockingRequirement {
 public:
-    // RecipeUnlockingRequirement inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // RecipeUnlockingRequirement inner types define
     enum class UnlockingContext {};
 
@@ -18,39 +13,40 @@ public:
     RecipeUnlockingRequirement(RecipeUnlockingRequirement const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0RecipeUnlockingRequirement\@\@QEAA\@W4UnlockingContext\@0\@\@Z
      */
-    MCAPI RecipeUnlockingRequirement(enum class RecipeUnlockingRequirement::UnlockingContext); // NOLINT
+    MCAPI RecipeUnlockingRequirement(enum class RecipeUnlockingRequirement::UnlockingContext);
     /**
      * @symbol
      * ??0RecipeUnlockingRequirement\@\@QEAA\@V?$vector\@VRecipeIngredient\@\@V?$allocator\@VRecipeIngredient\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI RecipeUnlockingRequirement(std::vector<class RecipeIngredient>); // NOLINT
+    MCAPI RecipeUnlockingRequirement(std::vector<class RecipeIngredient>);
     /**
      * @symbol ??0RecipeUnlockingRequirement\@\@QEAA\@XZ
      */
-    MCAPI RecipeUnlockingRequirement(); // NOLINT
+    MCAPI RecipeUnlockingRequirement();
     /**
      * @symbol ?canBeUnlockedByContext\@RecipeUnlockingRequirement\@\@QEBA_NW4UnlockingContext\@1\@\@Z
      */
-    MCAPI bool canBeUnlockedByContext(enum class RecipeUnlockingRequirement::UnlockingContext) const; // NOLINT
+    MCAPI bool canBeUnlockedByContext(enum class RecipeUnlockingRequirement::UnlockingContext) const;
     /**
      * @symbol ?canBeUnlockedByIngredient\@RecipeUnlockingRequirement\@\@QEBA_NAEBVRecipeIngredient\@\@\@Z
      */
-    MCAPI bool canBeUnlockedByIngredient(class RecipeIngredient const&) const; // NOLINT
+    MCAPI bool canBeUnlockedByIngredient(class RecipeIngredient const&) const;
     /**
      * @symbol ?isUnlockable\@RecipeUnlockingRequirement\@\@QEBA_NXZ
      */
-    MCAPI bool isUnlockable() const; // NOLINT
-    /**
-     * @symbol ??1RecipeUnlockingRequirement\@\@QEAA\@XZ
-     */
-    MCAPI ~RecipeUnlockingRequirement(); // NOLINT
+    MCAPI bool isUnlockable() const;
     /**
      * @symbol
      * ?unlockingContextFromString\@RecipeUnlockingRequirement\@\@SA?AW4UnlockingContext\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI static enum class RecipeUnlockingRequirement::UnlockingContext
-    unlockingContextFromString(std::string const&); // NOLINT
+    MCAPI static enum class RecipeUnlockingRequirement::UnlockingContext unlockingContextFromString(std::string const&);
+    /**
+     * @symbol ??1RecipeUnlockingRequirement\@\@QEAA\@XZ
+     */
+    MCAPI ~RecipeUnlockingRequirement();
+    // NOLINTEND
 };

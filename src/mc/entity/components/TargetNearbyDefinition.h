@@ -19,11 +19,13 @@ public:
     TargetNearbyDefinition()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?buildSchema\@TargetNearbyDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VTargetNearbyDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      class TargetNearbyDefinition>>&); // NOLINT
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TargetNearbyDefinition>>&);
+    // NOLINTEND
 };

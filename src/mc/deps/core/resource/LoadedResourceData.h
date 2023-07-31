@@ -11,8 +11,10 @@ public:
     LoadedResourceData()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1LoadedResourceData\@\@QEAA\@XZ
      */
-    MCAPI ~LoadedResourceData(); // NOLINT
+    MCAPI ~LoadedResourceData();
+    // NOLINTEND
 };

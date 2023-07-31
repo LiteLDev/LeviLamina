@@ -3,25 +3,27 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace BedrockBlockNames {
+// NOLINTBEGIN
 /**
  * @symbol ?Air\@BedrockBlockNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const Air; // NOLINT
+MCAPI extern class HashedString const Air;
 /**
  * @symbol ?ClientRequestPlaceholderBlock\@BedrockBlockNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const ClientRequestPlaceholderBlock; // NOLINT
+MCAPI extern class HashedString const ClientRequestPlaceholderBlock;
 /**
  * @symbol ?Unknown\@BedrockBlockNames\@\@3VHashedString\@\@B
  */
-MCAPI extern class HashedString const Unknown; // NOLINT
+MCAPI extern class HashedString const Unknown;
 /**
  * @symbol ?cleanupBedrockBlockNames\@BedrockBlockNames\@\@YAXXZ
  */
-MCAPI void cleanupBedrockBlockNames(); // NOLINT
+MCAPI void cleanupBedrockBlockNames();
 /**
  * @symbol ?initBedrockBlockNames\@BedrockBlockNames\@\@YAXXZ
  */
-MCAPI void initBedrockBlockNames(); // NOLINT
+MCAPI void initBedrockBlockNames();
+// NOLINTEND
 
 }; // namespace BedrockBlockNames

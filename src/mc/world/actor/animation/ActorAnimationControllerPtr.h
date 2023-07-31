@@ -11,20 +11,22 @@ public:
     ActorAnimationControllerPtr()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getName\@ActorAnimationControllerPtr\@\@QEBAAEBVHashedString\@\@XZ
      */
-    MCAPI class HashedString const& getName() const; // NOLINT
+    MCAPI class HashedString const& getName() const;
     /**
      * @symbol ?isNull\@ActorAnimationControllerPtr\@\@QEBA_NXZ
      */
-    MCAPI bool isNull() const; // NOLINT
+    MCAPI bool isNull() const;
     /**
      * @symbol ??1ActorAnimationControllerPtr\@\@QEAA\@XZ
      */
-    MCAPI ~ActorAnimationControllerPtr(); // NOLINT
+    MCAPI ~ActorAnimationControllerPtr();
     /**
      * @symbol ?NONE\@ActorAnimationControllerPtr\@\@2V1\@B
      */
-    MCAPI static class ActorAnimationControllerPtr const NONE; // NOLINT
+    MCAPI static class ActorAnimationControllerPtr const NONE;
+    // NOLINTEND
 };

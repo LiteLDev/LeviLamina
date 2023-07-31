@@ -18,14 +18,15 @@ public:
     LevelData()                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0LevelData\@\@QEAA\@_N\@Z
      */
-    MCAPI LevelData(bool); // NOLINT
+    MCAPI LevelData(bool);
     /**
      * @symbol ??0LevelData\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI LevelData(class LevelData&&); // NOLINT
+    MCAPI LevelData(class LevelData&&);
     /**
      * @symbol
      * ??0LevelData\@\@QEAA\@AEBVLevelSettings\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4GeneratorType\@\@AEBVBlockPos\@\@_NW4EducationEditionOffer\@\@MM\@Z
@@ -39,572 +40,573 @@ public:
         enum class EducationEditionOffer,
         float,
         float
-    ); // NOLINT
+    );
     /**
      * @symbol ?achievementsWillBeDisabledOnLoad\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool achievementsWillBeDisabledOnLoad() const; // NOLINT
+    MCAPI bool achievementsWillBeDisabledOnLoad() const;
     /**
      * @symbol
      * ?createTag\@LevelData\@\@QEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::unique_ptr<class CompoundTag> createTag() const; // NOLINT
+    MCAPI std::unique_ptr<class CompoundTag> createTag() const;
     /**
      * @symbol ?disableAchievements\@LevelData\@\@QEAAXXZ
      */
-    MCAPI void disableAchievements(); // NOLINT
+    MCAPI void disableAchievements();
     /**
      * @symbol ?educationFeaturesEnabled\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool educationFeaturesEnabled() const; // NOLINT
+    MCAPI bool educationFeaturesEnabled() const;
     /**
      * @symbol ?getAdventureModeOverridesEnabled\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool getAdventureModeOverridesEnabled() const; // NOLINT
+    MCAPI bool getAdventureModeOverridesEnabled() const;
     /**
      * @symbol ?getAdventureSettings\@LevelData\@\@QEAAAEAUAdventureSettings\@\@XZ
      */
-    MCAPI struct AdventureSettings& getAdventureSettings(); // NOLINT
+    MCAPI struct AdventureSettings& getAdventureSettings();
     /**
      * @symbol ?getAdventureSettings\@LevelData\@\@QEBAAEBUAdventureSettings\@\@XZ
      */
-    MCAPI struct AdventureSettings const& getAdventureSettings() const; // NOLINT
+    MCAPI struct AdventureSettings const& getAdventureSettings() const;
     /**
      * @symbol ?getBaseGameVersion\@LevelData\@\@QEBAAEBVBaseGameVersion\@\@XZ
      */
-    MCAPI class BaseGameVersion const& getBaseGameVersion() const; // NOLINT
+    MCAPI class BaseGameVersion const& getBaseGameVersion() const;
     /**
      * @symbol
      * ?getBiomeOverride\@LevelData\@\@QEBA?BV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string const getBiomeOverride() const; // NOLINT
+    MCAPI std::string const getBiomeOverride() const;
     /**
      * @symbol ?getBonusChestSpawned\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool getBonusChestSpawned() const; // NOLINT
+    MCAPI bool getBonusChestSpawned() const;
     /**
      * @symbol ?getChatRestrictionLevel\@LevelData\@\@QEBA?AW4ChatRestrictionLevel\@\@XZ
      */
-    MCAPI enum class ChatRestrictionLevel getChatRestrictionLevel() const; // NOLINT
+    MCAPI enum class ChatRestrictionLevel getChatRestrictionLevel() const;
     /**
      * @symbol ?getCurrentTick\@LevelData\@\@QEBAAEBUTick\@\@XZ
      */
-    MCAPI struct Tick const& getCurrentTick() const; // NOLINT
+    MCAPI struct Tick const& getCurrentTick() const;
     /**
      * @symbol ?getCustomSkinsDisabled\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool getCustomSkinsDisabled() const; // NOLINT
+    MCAPI bool getCustomSkinsDisabled() const;
     /**
      * @symbol ?getDaylightCycle\@LevelData\@\@QEBA?AW4DaylightCycle\@\@XZ
      */
-    MCAPI enum class DaylightCycle getDaylightCycle() const; // NOLINT
+    MCAPI enum class DaylightCycle getDaylightCycle() const;
     /**
      * @symbol ?getDefaultAbilities\@LevelData\@\@QEAAAEAVAbilities\@\@XZ
      */
-    MCAPI class Abilities& getDefaultAbilities(); // NOLINT
+    MCAPI class Abilities& getDefaultAbilities();
     /**
      * @symbol ?getDefaultPermissions\@LevelData\@\@QEBAAEBVPermissionsHandler\@\@XZ
      */
-    MCAPI class PermissionsHandler const& getDefaultPermissions() const; // NOLINT
+    MCAPI class PermissionsHandler const& getDefaultPermissions() const;
     /**
      * @symbol ?getDefaultPermissions\@LevelData\@\@QEAAAEAVPermissionsHandler\@\@XZ
      */
-    MCAPI class PermissionsHandler& getDefaultPermissions(); // NOLINT
+    MCAPI class PermissionsHandler& getDefaultPermissions();
     /**
      * @symbol ?getEduSharedUriResource\@LevelData\@\@QEBAAEBVCompoundTag\@\@XZ
      */
-    MCAPI class CompoundTag const& getEduSharedUriResource() const; // NOLINT
+    MCAPI class CompoundTag const& getEduSharedUriResource() const;
     /**
      * @symbol ?getEducationEditionOffer\@LevelData\@\@QEBA?AW4EducationEditionOffer\@\@XZ
      */
-    MCAPI enum class EducationEditionOffer getEducationEditionOffer() const; // NOLINT
+    MCAPI enum class EducationEditionOffer getEducationEditionOffer() const;
     /**
      * @symbol
      * ?getEducationOid\@LevelData\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string const& getEducationOid() const; // NOLINT
+    MCAPI std::string const& getEducationOid() const;
     /**
      * @symbol
      * ?getEducationProductId\@LevelData\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string const& getEducationProductId() const; // NOLINT
+    MCAPI std::string const& getEducationProductId() const;
     /**
      * @symbol ?getEmoteChatMuted\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool getEmoteChatMuted() const; // NOLINT
+    MCAPI bool getEmoteChatMuted() const;
     /**
      * @symbol ?getExperiments\@LevelData\@\@QEBAAEBVExperiments\@\@XZ
      */
-    MCAPI class Experiments const& getExperiments() const; // NOLINT
+    MCAPI class Experiments const& getExperiments() const;
     /**
      * @symbol ?getExperiments\@LevelData\@\@QEAAAEAVExperiments\@\@XZ
      */
-    MCAPI class Experiments& getExperiments(); // NOLINT
+    MCAPI class Experiments& getExperiments();
     /**
      * @symbol ?getFlatWorldGeneratorOptions\@LevelData\@\@QEBAAEBVValue\@Json\@\@XZ
      */
-    MCAPI class Json::Value const& getFlatWorldGeneratorOptions() const; // NOLINT
+    MCAPI class Json::Value const& getFlatWorldGeneratorOptions() const;
     /**
      * @symbol ?getForceGameType\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool getForceGameType() const; // NOLINT
+    MCAPI bool getForceGameType() const;
     /**
      * @symbol ?getGameDifficulty\@LevelData\@\@QEBA?AW4Difficulty\@\@XZ
      */
-    MCAPI enum class Difficulty getGameDifficulty() const; // NOLINT
+    MCAPI enum class Difficulty getGameDifficulty() const;
     /**
      * @symbol ?getGameRules\@LevelData\@\@QEBAAEBVGameRules\@\@XZ
      */
-    MCAPI class GameRules const& getGameRules() const; // NOLINT
+    MCAPI class GameRules const& getGameRules() const;
     /**
      * @symbol ?getGameRules\@LevelData\@\@QEAAAEAVGameRules\@\@XZ
      */
-    MCAPI class GameRules& getGameRules(); // NOLINT
+    MCAPI class GameRules& getGameRules();
     /**
      * @symbol ?getGameType\@LevelData\@\@QEBA?AW4GameType\@\@XZ
      */
-    MCAPI enum class GameType getGameType() const; // NOLINT
+    MCAPI enum class GameType getGameType() const;
     /**
      * @symbol ?getGenerator\@LevelData\@\@QEBA?AW4GeneratorType\@\@XZ
      */
-    MCAPI enum class GeneratorType getGenerator() const; // NOLINT
+    MCAPI enum class GeneratorType getGenerator() const;
     /**
      * @symbol ?getLANBroadcast\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool getLANBroadcast() const; // NOLINT
+    MCAPI bool getLANBroadcast() const;
     /**
      * @symbol ?getLANBroadcastIntent\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool getLANBroadcastIntent() const; // NOLINT
+    MCAPI bool getLANBroadcastIntent() const;
     /**
      * @symbol
      * ?getLevelName\@LevelData\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string const& getLevelName() const; // NOLINT
+    MCAPI std::string const& getLevelName() const;
     /**
      * @symbol ?getLightningLevel\@LevelData\@\@QEBAMXZ
      */
-    MCAPI float getLightningLevel() const; // NOLINT
+    MCAPI float getLightningLevel() const;
     /**
      * @symbol ?getLightningTime\@LevelData\@\@QEBAHXZ
      */
-    MCAPI int getLightningTime() const; // NOLINT
+    MCAPI int getLightningTime() const;
     /**
      * @symbol ?getLimitedWorldDepth\@LevelData\@\@QEBAHXZ
      */
-    MCAPI int getLimitedWorldDepth() const; // NOLINT
+    MCAPI int getLimitedWorldDepth() const;
     /**
      * @symbol ?getLimitedWorldWidth\@LevelData\@\@QEBAHXZ
      */
-    MCAPI int getLimitedWorldWidth() const; // NOLINT
+    MCAPI int getLimitedWorldWidth() const;
     /**
      * @symbol ?getMultiplayerGameIntent\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool getMultiplayerGameIntent() const; // NOLINT
+    MCAPI bool getMultiplayerGameIntent() const;
     /**
      * @symbol ?getNetherScale\@LevelData\@\@QEBAHXZ
      */
-    MCAPI int getNetherScale() const; // NOLINT
+    MCAPI int getNetherScale() const;
     /**
      * @symbol ?getNetherType\@LevelData\@\@QEBA?AW4NetherWorldType\@\@XZ
      */
-    MCAPI enum class NetherWorldType getNetherType() const; // NOLINT
+    MCAPI enum class NetherWorldType getNetherType() const;
     /**
      * @symbol ?getOnlySpawnV1Villagers\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool getOnlySpawnV1Villagers() const; // NOLINT
+    MCAPI bool getOnlySpawnV1Villagers() const;
     /**
      * @symbol ?getPersonaDisabled\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool getPersonaDisabled() const; // NOLINT
+    MCAPI bool getPersonaDisabled() const;
     /**
      * @symbol ?getPlatformBroadcastIntent\@LevelData\@\@QEBA?AW4GamePublishSetting\@Social\@\@XZ
      */
-    MCAPI enum class Social::GamePublishSetting getPlatformBroadcastIntent() const; // NOLINT
+    MCAPI enum class Social::GamePublishSetting getPlatformBroadcastIntent() const;
     /**
      * @symbol ?getPlatformBroadcastMode\@LevelData\@\@QEBA?AW4GamePublishSetting\@Social\@\@XZ
      */
-    MCAPI enum class Social::GamePublishSetting getPlatformBroadcastMode() const; // NOLINT
+    MCAPI enum class Social::GamePublishSetting getPlatformBroadcastMode() const;
     /**
      * @symbol ?getPremiumTemplateContentIdentity\@LevelData\@\@QEBAAEBVContentIdentity\@\@XZ
      */
-    MCAPI class ContentIdentity const& getPremiumTemplateContentIdentity() const; // NOLINT
+    MCAPI class ContentIdentity const& getPremiumTemplateContentIdentity() const;
     /**
      * @symbol ?getRainLevel\@LevelData\@\@QEBAMXZ
      */
-    MCAPI float getRainLevel() const; // NOLINT
+    MCAPI float getRainLevel() const;
     /**
      * @symbol ?getRainTime\@LevelData\@\@QEBAHXZ
      */
-    MCAPI int getRainTime() const; // NOLINT
+    MCAPI int getRainTime() const;
     /**
      * @symbol ?getSeed\@LevelData\@\@QEBA?AVLevelSeed64\@\@XZ
      */
-    MCAPI class LevelSeed64 getSeed() const; // NOLINT
+    MCAPI class LevelSeed64 getSeed() const;
     /**
      * @symbol ?getServerChunkTickRange\@LevelData\@\@QEBAIXZ
      */
-    MCAPI unsigned int getServerChunkTickRange() const; // NOLINT
+    MCAPI unsigned int getServerChunkTickRange() const;
     /**
      * @symbol ?getSpawnPos\@LevelData\@\@QEBAAEBVBlockPos\@\@XZ
      */
-    MCAPI class BlockPos const& getSpawnPos() const; // NOLINT
+    MCAPI class BlockPos const& getSpawnPos() const;
     /**
      * @symbol ?getSpawnSettings\@LevelData\@\@QEBAAEBUSpawnSettings\@\@XZ
      */
-    MCAPI struct SpawnSettings const& getSpawnSettings() const; // NOLINT
+    MCAPI struct SpawnSettings const& getSpawnSettings() const;
     /**
      * @symbol ?getStorageVersion\@LevelData\@\@QEBA?AW4StorageVersion\@\@XZ
      */
-    MCAPI enum class StorageVersion getStorageVersion() const; // NOLINT
+    MCAPI enum class StorageVersion getStorageVersion() const;
     /**
      * @symbol ?getStoredGenerator\@LevelData\@\@QEBA?AW4GeneratorType\@\@XZ
      */
-    MCAPI enum class GeneratorType getStoredGenerator() const; // NOLINT
+    MCAPI enum class GeneratorType getStoredGenerator() const;
     /**
      * @symbol ?getTagData\@LevelData\@\@QEAAXAEBVCompoundTag\@\@\@Z
      */
-    MCAPI void getTagData(class CompoundTag const&); // NOLINT
+    MCAPI void getTagData(class CompoundTag const&);
     /**
      * @symbol ?getTime\@LevelData\@\@QEBAHXZ
      */
-    MCAPI int getTime() const; // NOLINT
+    MCAPI int getTime() const;
     /**
      * @symbol ?getUseMsaGamertagsOnly\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool getUseMsaGamertagsOnly() const; // NOLINT
+    MCAPI bool getUseMsaGamertagsOnly() const;
     /**
      * @symbol ?getWorldCenter\@LevelData\@\@QEBAAEBVBlockPos\@\@XZ
      */
-    MCAPI class BlockPos const& getWorldCenter() const; // NOLINT
+    MCAPI class BlockPos const& getWorldCenter() const;
     /**
      * @symbol ?getWorldStartCount\@LevelData\@\@QEBAIXZ
      */
-    MCAPI unsigned int getWorldStartCount() const; // NOLINT
+    MCAPI unsigned int getWorldStartCount() const;
     /**
      * @symbol ?getWorldTemplateIdentity\@LevelData\@\@QEBAAEBUPackIdVersion\@\@XZ
      */
-    MCAPI struct PackIdVersion const& getWorldTemplateIdentity() const; // NOLINT
+    MCAPI struct PackIdVersion const& getWorldTemplateIdentity() const;
     /**
      * @symbol ?getWorldVersion\@LevelData\@\@QEBA?AW4WorldVersion\@\@XZ
      */
-    MCAPI enum class WorldVersion getWorldVersion() const; // NOLINT
+    MCAPI enum class WorldVersion getWorldVersion() const;
     /**
      * @symbol ?getXBLBroadcastIntent\@LevelData\@\@QEBA?AW4GamePublishSetting\@Social\@\@XZ
      */
-    MCAPI enum class Social::GamePublishSetting getXBLBroadcastIntent() const; // NOLINT
+    MCAPI enum class Social::GamePublishSetting getXBLBroadcastIntent() const;
     /**
      * @symbol ?getXBLBroadcastMode\@LevelData\@\@QEBA?AW4GamePublishSetting\@Social\@\@XZ
      */
-    MCAPI enum class Social::GamePublishSetting getXBLBroadcastMode() const; // NOLINT
+    MCAPI enum class Social::GamePublishSetting getXBLBroadcastMode() const;
     /**
      * @symbol ?hasAchievementsDisabled\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool hasAchievementsDisabled() const; // NOLINT
+    MCAPI bool hasAchievementsDisabled() const;
     /**
      * @symbol ?hasBonusChestEnabled\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool hasBonusChestEnabled() const; // NOLINT
+    MCAPI bool hasBonusChestEnabled() const;
     /**
      * @symbol ?hasCheatsEnabled\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool hasCheatsEnabled() const; // NOLINT
+    MCAPI bool hasCheatsEnabled() const;
     /**
      * @symbol ?hasCommandsEnabled\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool hasCommandsEnabled() const; // NOLINT
+    MCAPI bool hasCommandsEnabled() const;
     /**
      * @symbol ?hasConfirmedPlatformLockedContent\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool hasConfirmedPlatformLockedContent() const; // NOLINT
+    MCAPI bool hasConfirmedPlatformLockedContent() const;
     /**
      * @symbol ?hasLockedBehaviorPack\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool hasLockedBehaviorPack() const; // NOLINT
+    MCAPI bool hasLockedBehaviorPack() const;
     /**
      * @symbol ?hasLockedResourcePack\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool hasLockedResourcePack() const; // NOLINT
+    MCAPI bool hasLockedResourcePack() const;
     /**
      * @symbol ?hasMapsCenteredToOrigin\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool hasMapsCenteredToOrigin() const; // NOLINT
+    MCAPI bool hasMapsCenteredToOrigin() const;
     /**
      * @symbol ?hasStartWithMapEnabled\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool hasStartWithMapEnabled() const; // NOLINT
+    MCAPI bool hasStartWithMapEnabled() const;
     /**
      * @symbol ?incrementTick\@LevelData\@\@QEAAXXZ
      */
-    MCAPI void incrementTick(); // NOLINT
+    MCAPI void incrementTick();
     /**
      * @symbol ?isCreatedInEditor\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool isCreatedInEditor() const; // NOLINT
+    MCAPI bool isCreatedInEditor() const;
     /**
      * @symbol ?isEditorWorld\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool isEditorWorld() const; // NOLINT
+    MCAPI bool isEditorWorld() const;
     /**
      * @symbol ?isEducationEditionLevel\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool isEducationEditionLevel() const; // NOLINT
+    MCAPI bool isEducationEditionLevel() const;
     /**
      * @symbol ?isExportedFromEditor\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool isExportedFromEditor() const; // NOLINT
+    MCAPI bool isExportedFromEditor() const;
     /**
      * @symbol ?isFromLockedTemplate\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool isFromLockedTemplate() const; // NOLINT
+    MCAPI bool isFromLockedTemplate() const;
     /**
      * @symbol ?isFromWorldTemplate\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool isFromWorldTemplate() const; // NOLINT
+    MCAPI bool isFromWorldTemplate() const;
     /**
      * @symbol ?isLegacyLevel\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool isLegacyLevel() const; // NOLINT
+    MCAPI bool isLegacyLevel() const;
     /**
      * @symbol ?isLightning\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool isLightning() const; // NOLINT
+    MCAPI bool isLightning() const;
     /**
      * @symbol ?isMultiplayerGame\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool isMultiplayerGame() const; // NOLINT
+    MCAPI bool isMultiplayerGame() const;
     /**
      * @symbol ?isPremiumWorldTemplate\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool isPremiumWorldTemplate() const; // NOLINT
+    MCAPI bool isPremiumWorldTemplate() const;
     /**
      * @symbol ?isRaining\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool isRaining() const; // NOLINT
+    MCAPI bool isRaining() const;
     /**
      * @symbol ?isTexturepacksRequired\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool isTexturepacksRequired() const; // NOLINT
+    MCAPI bool isTexturepacksRequired() const;
     /**
      * @symbol ?isWorldTemplateOptionLocked\@LevelData\@\@QEBA_NXZ
      */
-    MCAPI bool isWorldTemplateOptionLocked() const; // NOLINT
+    MCAPI bool isWorldTemplateOptionLocked() const;
     /**
      * @symbol ??4LevelData\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class LevelData& operator=(class LevelData&&); // NOLINT
+    MCAPI class LevelData& operator=(class LevelData&&);
     /**
      * @symbol ?recordStartUp\@LevelData\@\@QEAAXXZ
      */
-    MCAPI void recordStartUp(); // NOLINT
+    MCAPI void recordStartUp();
     /**
      * @symbol ?setAdventureModeOverridesEnabled\@LevelData\@\@QEAAX_N\@Z
      */
-    MCAPI void setAdventureModeOverridesEnabled(bool); // NOLINT
+    MCAPI void setAdventureModeOverridesEnabled(bool);
     /**
      * @symbol ?setBaseGameVersion\@LevelData\@\@QEAAXAEBVBaseGameVersion\@\@\@Z
      */
-    MCAPI void setBaseGameVersion(class BaseGameVersion const&); // NOLINT
+    MCAPI void setBaseGameVersion(class BaseGameVersion const&);
     /**
      * @symbol ?setBonusChestSpawned\@LevelData\@\@QEAAX_N\@Z
      */
-    MCAPI void setBonusChestSpawned(bool); // NOLINT
+    MCAPI void setBonusChestSpawned(bool);
     /**
      * @symbol ?setChatRestrictionLevel\@LevelData\@\@QEAAXW4ChatRestrictionLevel\@\@\@Z
      */
-    MCAPI void setChatRestrictionLevel(enum class ChatRestrictionLevel); // NOLINT
+    MCAPI void setChatRestrictionLevel(enum class ChatRestrictionLevel);
     /**
      * @symbol ?setCommandsEnabled\@LevelData\@\@QEAAX_N\@Z
      */
-    MCAPI void setCommandsEnabled(bool); // NOLINT
+    MCAPI void setCommandsEnabled(bool);
     /**
      * @symbol ?setCustomSkinsDisabled\@LevelData\@\@QEAAX_N\@Z
      */
-    MCAPI void setCustomSkinsDisabled(bool); // NOLINT
+    MCAPI void setCustomSkinsDisabled(bool);
     /**
      * @symbol ?setDataDrivenGenerator\@LevelData\@\@QEAAXW4GeneratorType\@\@\@Z
      */
-    MCAPI void setDataDrivenGenerator(enum class GeneratorType); // NOLINT
+    MCAPI void setDataDrivenGenerator(enum class GeneratorType);
     /**
      * @symbol ?setEduSharedUriResource\@LevelData\@\@QEAAXAEBUEduSharedUriResource\@\@\@Z
      */
-    MCAPI void setEduSharedUriResource(struct EduSharedUriResource const&); // NOLINT
+    MCAPI void setEduSharedUriResource(struct EduSharedUriResource const&);
     /**
      * @symbol ?setEducationEditionOffer\@LevelData\@\@QEAAXW4EducationEditionOffer\@\@\@Z
      */
-    MCAPI void setEducationEditionOffer(enum class EducationEditionOffer); // NOLINT
+    MCAPI void setEducationEditionOffer(enum class EducationEditionOffer);
     /**
      * @symbol ?setEducationFeaturesEnabled\@LevelData\@\@QEAAX_N\@Z
      */
-    MCAPI void setEducationFeaturesEnabled(bool); // NOLINT
+    MCAPI void setEducationFeaturesEnabled(bool);
     /**
      * @symbol
      * ?setEducationOid\@LevelData\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void setEducationOid(std::string const&); // NOLINT
+    MCAPI void setEducationOid(std::string const&);
     /**
      * @symbol ?setEmoteChatMuted\@LevelData\@\@QEAAX_N\@Z
      */
-    MCAPI void setEmoteChatMuted(bool); // NOLINT
+    MCAPI void setEmoteChatMuted(bool);
     /**
      * @symbol ?setForceGameType\@LevelData\@\@QEAAX_N\@Z
      */
-    MCAPI void setForceGameType(bool); // NOLINT
+    MCAPI void setForceGameType(bool);
     /**
      * @symbol ?setGameDifficulty\@LevelData\@\@QEAAXW4Difficulty\@\@\@Z
      */
-    MCAPI void setGameDifficulty(enum class Difficulty); // NOLINT
+    MCAPI void setGameDifficulty(enum class Difficulty);
     /**
      * @symbol ?setGameType\@LevelData\@\@QEAAXW4GameType\@\@\@Z
      */
-    MCAPI void setGameType(enum class GameType); // NOLINT
+    MCAPI void setGameType(enum class GameType);
     /**
      * @symbol ?setGenerator\@LevelData\@\@QEAAXW4GeneratorType\@\@\@Z
      */
-    MCAPI void setGenerator(enum class GeneratorType); // NOLINT
+    MCAPI void setGenerator(enum class GeneratorType);
     /**
      * @symbol ?setHasLockedBehaviorPack\@LevelData\@\@QEAAX_N\@Z
      */
-    MCAPI void setHasLockedBehaviorPack(bool); // NOLINT
+    MCAPI void setHasLockedBehaviorPack(bool);
     /**
      * @symbol ?setHasLockedResourcePack\@LevelData\@\@QEAAX_N\@Z
      */
-    MCAPI void setHasLockedResourcePack(bool); // NOLINT
+    MCAPI void setHasLockedResourcePack(bool);
     /**
      * @symbol ?setLANBroadcast\@LevelData\@\@QEAAX_N\@Z
      */
-    MCAPI void setLANBroadcast(bool); // NOLINT
+    MCAPI void setLANBroadcast(bool);
     /**
      * @symbol ?setLANBroadcastIntent\@LevelData\@\@QEAAX_N\@Z
      */
-    MCAPI void setLANBroadcastIntent(bool); // NOLINT
+    MCAPI void setLANBroadcastIntent(bool);
     /**
      * @symbol
      * ?setLevelName\@LevelData\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void setLevelName(std::string const&); // NOLINT
+    MCAPI void setLevelName(std::string const&);
     /**
      * @symbol ?setLightningLevel\@LevelData\@\@QEAAXM\@Z
      */
-    MCAPI void setLightningLevel(float); // NOLINT
+    MCAPI void setLightningLevel(float);
     /**
      * @symbol ?setLightningTime\@LevelData\@\@QEAAXH\@Z
      */
-    MCAPI void setLightningTime(int); // NOLINT
+    MCAPI void setLightningTime(int);
     /**
      * @symbol ?setMultiplayerGame\@LevelData\@\@QEAAX_N\@Z
      */
-    MCAPI void setMultiplayerGame(bool); // NOLINT
+    MCAPI void setMultiplayerGame(bool);
     /**
      * @symbol ?setMultiplayerGameIntent\@LevelData\@\@QEAAX_N\@Z
      */
-    MCAPI void setMultiplayerGameIntent(bool); // NOLINT
+    MCAPI void setMultiplayerGameIntent(bool);
     /**
      * @symbol ?setOnlySpawnV1Villagers\@LevelData\@\@QEAAX_N\@Z
      */
-    MCAPI void setOnlySpawnV1Villagers(bool); // NOLINT
+    MCAPI void setOnlySpawnV1Villagers(bool);
     /**
      * @symbol ?setPersonaDisabled\@LevelData\@\@QEAAX_N\@Z
      */
-    MCAPI void setPersonaDisabled(bool); // NOLINT
+    MCAPI void setPersonaDisabled(bool);
     /**
      * @symbol ?setPlatformBroadcastIntent\@LevelData\@\@QEAAXW4GamePublishSetting\@Social\@\@\@Z
      */
-    MCAPI void setPlatformBroadcastIntent(enum class Social::GamePublishSetting); // NOLINT
+    MCAPI void setPlatformBroadcastIntent(enum class Social::GamePublishSetting);
     /**
      * @symbol ?setPlatformBroadcastMode\@LevelData\@\@QEAAXW4GamePublishSetting\@Social\@\@\@Z
      */
-    MCAPI void setPlatformBroadcastMode(enum class Social::GamePublishSetting); // NOLINT
+    MCAPI void setPlatformBroadcastMode(enum class Social::GamePublishSetting);
     /**
      * @symbol ?setPremiumTemplateContentIdentity\@LevelData\@\@QEAAXAEBVContentIdentity\@\@\@Z
      */
-    MCAPI void setPremiumTemplateContentIdentity(class ContentIdentity const&); // NOLINT
+    MCAPI void setPremiumTemplateContentIdentity(class ContentIdentity const&);
     /**
      * @symbol ?setRainLevel\@LevelData\@\@QEAAXM\@Z
      */
-    MCAPI void setRainLevel(float); // NOLINT
+    MCAPI void setRainLevel(float);
     /**
      * @symbol ?setRainTime\@LevelData\@\@QEAAXH\@Z
      */
-    MCAPI void setRainTime(int); // NOLINT
+    MCAPI void setRainTime(int);
     /**
      * @symbol ?setSeed\@LevelData\@\@QEAAXVLevelSeed64\@\@\@Z
      */
-    MCAPI void setSeed(class LevelSeed64); // NOLINT
+    MCAPI void setSeed(class LevelSeed64);
     /**
      * @symbol ?setServerChunkTickRange\@LevelData\@\@QEAAXI\@Z
      */
-    MCAPI void setServerChunkTickRange(unsigned int); // NOLINT
+    MCAPI void setServerChunkTickRange(unsigned int);
     /**
      * @symbol ?setSpawnPos\@LevelData\@\@QEAAXAEBVBlockPos\@\@\@Z
      */
-    MCAPI void setSpawnPos(class BlockPos const&); // NOLINT
+    MCAPI void setSpawnPos(class BlockPos const&);
     /**
      * @symbol ?setStorageVersion\@LevelData\@\@QEAAXW4StorageVersion\@\@\@Z
      */
-    MCAPI void setStorageVersion(enum class StorageVersion); // NOLINT
+    MCAPI void setStorageVersion(enum class StorageVersion);
     /**
      * @symbol ?setTagData\@LevelData\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void setTagData(class CompoundTag&) const; // NOLINT
+    MCAPI void setTagData(class CompoundTag&) const;
     /**
      * @symbol ?setTexturepacksRequired\@LevelData\@\@QEAAX_N\@Z
      */
-    MCAPI void setTexturepacksRequired(bool); // NOLINT
+    MCAPI void setTexturepacksRequired(bool);
     /**
      * @symbol ?setTime\@LevelData\@\@QEAAXH\@Z
      */
-    MCAPI void setTime(int); // NOLINT
+    MCAPI void setTime(int);
     /**
      * @symbol ?setUseMsaGamertagsOnly\@LevelData\@\@QEAAX_N\@Z
      */
-    MCAPI void setUseMsaGamertagsOnly(bool); // NOLINT
+    MCAPI void setUseMsaGamertagsOnly(bool);
     /**
      * @symbol ?setWorldTemplateIdentity\@LevelData\@\@QEAAXAEBUPackIdVersion\@\@\@Z
      */
-    MCAPI void setWorldTemplateIdentity(struct PackIdVersion const&); // NOLINT
+    MCAPI void setWorldTemplateIdentity(struct PackIdVersion const&);
     /**
      * @symbol ?setWorldTemplateOptionLocked\@LevelData\@\@QEAAX_N\@Z
      */
-    MCAPI void setWorldTemplateOptionLocked(bool); // NOLINT
+    MCAPI void setWorldTemplateOptionLocked(bool);
     /**
      * @symbol ?setWorldVersion\@LevelData\@\@QEAAXW4WorldVersion\@\@\@Z
      */
-    MCAPI void setWorldVersion(enum class WorldVersion); // NOLINT
+    MCAPI void setWorldVersion(enum class WorldVersion);
     /**
      * @symbol ?setXBLBroadcastIntent\@LevelData\@\@QEAAXW4GamePublishSetting\@Social\@\@\@Z
      */
-    MCAPI void setXBLBroadcastIntent(enum class Social::GamePublishSetting); // NOLINT
+    MCAPI void setXBLBroadcastIntent(enum class Social::GamePublishSetting);
     /**
      * @symbol ?setXBLBroadcastMode\@LevelData\@\@QEAAXW4GamePublishSetting\@Social\@\@\@Z
      */
-    MCAPI void setXBLBroadcastMode(enum class Social::GamePublishSetting); // NOLINT
+    MCAPI void setXBLBroadcastMode(enum class Social::GamePublishSetting);
     /**
      * @symbol ?touchLastLoadedWithVersion\@LevelData\@\@QEAAXXZ
      */
-    MCAPI void touchLastLoadedWithVersion(); // NOLINT
+    MCAPI void touchLastLoadedWithVersion();
     /**
      * @symbol ?updateLastTimePlayed\@LevelData\@\@QEBAXXZ
      */
-    MCAPI void updateLastTimePlayed() const; // NOLINT
+    MCAPI void updateLastTimePlayed() const;
     /**
      * @symbol ?v1_read\@LevelData\@\@QEAAXAEAVBitStream\@RakNet\@\@W4StorageVersion\@\@\@Z
      */
-    MCAPI void v1_read(class RakNet::BitStream&, enum class StorageVersion); // NOLINT
+    MCAPI void v1_read(class RakNet::BitStream&, enum class StorageVersion);
     /**
      * @symbol ??1LevelData\@\@QEAA\@XZ
      */
-    MCAPI ~LevelData(); // NOLINT
+    MCAPI ~LevelData();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_determineMaxBaseGameVersion\@LevelData\@\@AEAAXXZ
      */
-    MCAPI void _determineMaxBaseGameVersion(); // NOLINT
+    MCAPI void _determineMaxBaseGameVersion();
     /**
      * @symbol ?_setValue\@LevelData\@\@AEAAXAEBVHashedString\@\@$$QEAULevelDataValue\@\@\@Z
      */
-    MCAPI void _setValue(class HashedString const&, struct LevelDataValue&&); // NOLINT
-
-private:
+    MCAPI void _setValue(class HashedString const&, struct LevelDataValue&&);
+    // NOLINTEND
 };

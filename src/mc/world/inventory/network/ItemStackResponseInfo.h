@@ -10,16 +10,18 @@ public:
     ItemStackResponseInfo(ItemStackResponseInfo const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ItemStackResponseInfo\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI ItemStackResponseInfo(struct ItemStackResponseInfo&&); // NOLINT
+    MCAPI ItemStackResponseInfo(struct ItemStackResponseInfo&&);
     /**
      * @symbol ??0ItemStackResponseInfo\@\@QEAA\@XZ
      */
-    MCAPI ItemStackResponseInfo(); // NOLINT
+    MCAPI ItemStackResponseInfo();
     /**
      * @symbol ??1ItemStackResponseInfo\@\@QEAA\@XZ
      */
-    MCAPI ~ItemStackResponseInfo(); // NOLINT
+    MCAPI ~ItemStackResponseInfo();
+    // NOLINTEND
 };

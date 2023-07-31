@@ -12,18 +12,20 @@ public:
     SummaryProperty()                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4SummaryProperty\@Events\@Social\@\@QEAAAEAV012\@AEBV012\@\@Z
      */
-    MCAPI class Social::Events::SummaryProperty& operator=(class Social::Events::SummaryProperty const&); // NOLINT
+    MCAPI class Social::Events::SummaryProperty& operator=(class Social::Events::SummaryProperty const&);
     /**
      * @symbol ?summarize\@SummaryProperty\@Events\@Social\@\@QEAAXAEBV123\@\@Z
      */
-    MCAPI void summarize(class Social::Events::SummaryProperty const&); // NOLINT
+    MCAPI void summarize(class Social::Events::SummaryProperty const&);
     /**
      * @symbol ??1SummaryProperty\@Events\@Social\@\@QEAA\@XZ
      */
-    MCAPI ~SummaryProperty(); // NOLINT
+    MCAPI ~SummaryProperty();
+    // NOLINTEND
 };
 
 }; // namespace Social::Events

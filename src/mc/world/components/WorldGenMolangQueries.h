@@ -3,9 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace WorldGenMolangQueries {
+// NOLINTBEGIN
 /**
  * @symbol ?registerWorldGenMolangQueries\@WorldGenMolangQueries\@\@YAXXZ
  */
-MCAPI void registerWorldGenMolangQueries(); // NOLINT
+MCAPI void registerWorldGenMolangQueries();
+// NOLINTEND
 
 }; // namespace WorldGenMolangQueries

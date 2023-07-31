@@ -19,12 +19,12 @@ public:
     WaitTimerImpl()                                = delete;
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?WaitCallback\@WaitTimerImpl\@OS\@\@CAXPEAU_TP_CALLBACK_INSTANCE\@\@PEAXPEAU_TP_TIMER\@\@\@Z
      */
-    MCAPI static void WaitCallback(struct _TP_CALLBACK_INSTANCE*, void*, struct _TP_TIMER*); // NOLINT
-
-private:
+    MCAPI static void WaitCallback(struct _TP_CALLBACK_INSTANCE*, void*, struct _TP_TIMER*);
+    // NOLINTEND
 };
 
 }; // namespace OS

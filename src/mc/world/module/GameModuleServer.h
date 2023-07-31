@@ -10,14 +10,16 @@ public:
     GameModuleServer(GameModuleServer const&)            = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMEMODULESERVER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~GameModuleServer(); // NOLINT
+    MCVAPI ~GameModuleServer();
 #endif
     /**
      * @symbol ??0GameModuleServer\@\@QEAA\@XZ
      */
-    MCAPI GameModuleServer(); // NOLINT
+    MCAPI GameModuleServer();
+    // NOLINTEND
 };

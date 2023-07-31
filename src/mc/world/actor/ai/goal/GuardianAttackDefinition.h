@@ -18,28 +18,30 @@ public:
     GuardianAttackDefinition(GuardianAttackDefinition const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?validateMobType\@GuardianAttackDefinition\@\@UEBA_NAEAVMob\@\@\@Z
      */
-    virtual bool validateMobType(class Mob&) const; // NOLINT
+    virtual bool validateMobType(class Mob&) const;
     /**
      * @symbol ??0GuardianAttackDefinition\@\@QEAA\@XZ
      */
-    MCAPI GuardianAttackDefinition(); // NOLINT
-    /**
-     * @symbol ?initialize\@GuardianAttackDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVGuardianAttackGoal\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class GuardianAttackGoal&) const; // NOLINT
+    MCAPI GuardianAttackDefinition();
     /**
      * @symbol
      * ?buildSchema\@GuardianAttackDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VGuardianAttackDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void
-    buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GuardianAttackDefinition>>&); // NOLINT
+    buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GuardianAttackDefinition>>&);
+    /**
+     * @symbol ?initialize\@GuardianAttackDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVGuardianAttackGoal\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class GuardianAttackGoal&) const;
+    // NOLINTEND
 };

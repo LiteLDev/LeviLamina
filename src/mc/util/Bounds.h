@@ -4,11 +4,6 @@
 
 struct Bounds {
 public:
-    // Bounds inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // Bounds inner types define
     enum class Option {};
 
@@ -19,16 +14,18 @@ public:
     Bounds()                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0Bounds\@\@QEAA\@AEBVChunkPos\@\@0\@Z
      */
-    MCAPI Bounds(class ChunkPos const&, class ChunkPos const&); // NOLINT
+    MCAPI Bounds(class ChunkPos const&, class ChunkPos const&);
     /**
      * @symbol ??0Bounds\@\@QEAA\@AEBVBlockPos\@\@0HW4Option\@0\@\@Z
      */
-    MCAPI Bounds(class BlockPos const&, class BlockPos const&, int, enum class Bounds::Option); // NOLINT
+    MCAPI Bounds(class BlockPos const&, class BlockPos const&, int, enum class Bounds::Option);
     /**
      * @symbol ??0Bounds\@\@QEAA\@AEBVBlockPos\@\@HHFF\@Z
      */
-    MCAPI Bounds(class BlockPos const&, int, int, short, short); // NOLINT
+    MCAPI Bounds(class BlockPos const&, int, int, short, short);
+    // NOLINTEND
 };

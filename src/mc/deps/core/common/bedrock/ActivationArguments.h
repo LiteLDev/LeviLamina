@@ -13,14 +13,16 @@ public:
     ActivationArguments()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?preParseArguments\@ActivationArguments\@Bedrock\@\@QEAAXXZ
      */
-    MCAPI void preParseArguments(); // NOLINT
+    MCAPI void preParseArguments();
     /**
      * @symbol ??1ActivationArguments\@Bedrock\@\@QEAA\@XZ
      */
-    MCAPI ~ActivationArguments(); // NOLINT
+    MCAPI ~ActivationArguments();
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

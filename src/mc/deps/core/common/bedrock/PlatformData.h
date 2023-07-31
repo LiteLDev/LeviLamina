@@ -13,10 +13,12 @@ public:
     PlatformData()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?get\@PlatformData\@PlatformUtils\@Bedrock\@\@SAAEAU123\@XZ
      */
-    MCAPI static struct Bedrock::PlatformUtils::PlatformData& get(); // NOLINT
+    MCAPI static struct Bedrock::PlatformUtils::PlatformData& get();
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::PlatformUtils

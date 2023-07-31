@@ -11,12 +11,14 @@ public:
     AmbientSoundServerComponent()                                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4AmbientSoundServerComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
-    MCAPI class AmbientSoundServerComponent& operator=(class AmbientSoundServerComponent&&); // NOLINT
+    MCAPI class AmbientSoundServerComponent& operator=(class AmbientSoundServerComponent&&);
     /**
      * @symbol ??1AmbientSoundServerComponent\@\@QEAA\@XZ
      */
-    MCAPI ~AmbientSoundServerComponent(); // NOLINT
+    MCAPI ~AmbientSoundServerComponent();
+    // NOLINTEND
 };

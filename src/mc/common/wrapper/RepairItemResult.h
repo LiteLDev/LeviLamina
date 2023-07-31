@@ -11,8 +11,10 @@ public:
     RepairItemResult()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1RepairItemResult\@\@QEAA\@XZ
      */
-    MCAPI ~RepairItemResult(); // NOLINT
+    MCAPI ~RepairItemResult();
+    // NOLINTEND
 };

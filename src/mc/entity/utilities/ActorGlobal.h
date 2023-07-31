@@ -3,13 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace ActorGlobal {
+// NOLINTBEGIN
 /**
  * @symbol ?addActorGlobalComponents\@ActorGlobal\@\@YAXAEAVEntityContext\@\@\@Z
  */
-MCAPI void addActorGlobalComponents(class EntityContext&); // NOLINT
+MCAPI void addActorGlobalComponents(class EntityContext&);
 /**
  * @symbol ?removeActorGlobalComponents\@ActorGlobal\@\@YAXAEAVEntityContext\@\@\@Z
  */
-MCAPI void removeActorGlobalComponents(class EntityContext&); // NOLINT
+MCAPI void removeActorGlobalComponents(class EntityContext&);
+// NOLINTEND
 
 }; // namespace ActorGlobal

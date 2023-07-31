@@ -13,23 +13,25 @@ public:
     CompoundProxy()                                = delete;
 
 public:
+    // NOLINTBEGIN
+    /**
+     * @symbol ?bindType\@CompoundProxy\@BlockDescriptorSerializer\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     /**
      * @symbol ?fromInt\@CompoundProxy\@BlockDescriptorSerializer\@\@QEAAXH\@Z
      */
-    MCAPI void fromInt(int); // NOLINT
+    MCAPI void fromInt(int);
     /**
      * @symbol
      * ?fromString\@CompoundProxy\@BlockDescriptorSerializer\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void fromString(std::string); // NOLINT
+    MCAPI void fromString(std::string);
     /**
      * @symbol ??1CompoundProxy\@BlockDescriptorSerializer\@\@QEAA\@XZ
      */
-    MCAPI ~CompoundProxy(); // NOLINT
-    /**
-     * @symbol ?bindType\@CompoundProxy\@BlockDescriptorSerializer\@\@SAXXZ
-     */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI ~CompoundProxy();
+    // NOLINTEND
 };
 
 }; // namespace BlockDescriptorSerializer

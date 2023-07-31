@@ -8,11 +8,13 @@ template<typename T0> struct InsideBlockWithPosAndBlockComponent;
 // clang-format on
 
 namespace InsideSweetBerryBushBlockSystemImpl {
+// NOLINTBEGIN
 /**
  * @symbol
  * ?tick\@InsideSweetBerryBushBlockSystemImpl\@\@YAXAEBU?$InsideBlockWithPosAndBlockComponent\@USweetBerryBushBlockFlag\@\@\@\@AEAVActorOwnerComponent\@\@\@Z
  */
 MCAPI void
-tick(struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag> const&, class ActorOwnerComponent&); // NOLINT
+tick(struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag> const&, class ActorOwnerComponent&);
+// NOLINTEND
 
 }; // namespace InsideSweetBerryBushBlockSystemImpl

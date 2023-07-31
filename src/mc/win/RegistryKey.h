@@ -11,8 +11,10 @@ public:
     RegistryKey()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1RegistryKey\@\@QEAA\@XZ
      */
-    MCAPI ~RegistryKey(); // NOLINT
+    MCAPI ~RegistryKey();
+    // NOLINTEND
 };

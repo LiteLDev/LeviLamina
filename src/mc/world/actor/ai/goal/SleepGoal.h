@@ -14,76 +14,78 @@ public:
     SleepGoal()                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?canUse\@SleepGoal\@\@UEAA_NXZ
      */
-    virtual bool canUse(); // NOLINT
+    virtual bool canUse();
     /**
      * @vftbl 2
      * @symbol ?canContinueToUse\@SleepGoal\@\@UEAA_NXZ
      */
-    virtual bool canContinueToUse(); // NOLINT
+    virtual bool canContinueToUse();
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3(); // NOLINT
+    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol ?start\@SleepGoal\@\@UEAAXXZ
      */
-    virtual void start(); // NOLINT
+    virtual void start();
     /**
      * @vftbl 5
      * @symbol ?stop\@SleepGoal\@\@UEAAXXZ
      */
-    virtual void stop(); // NOLINT
+    virtual void stop();
     /**
      * @vftbl 6
      * @symbol ?tick\@SleepGoal\@\@UEAAXXZ
      */
-    virtual void tick(); // NOLINT
+    virtual void tick();
     /**
      * @vftbl 7
      * @symbol
      * ?appendDebugInfo\@SleepGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void appendDebugInfo(std::string&) const; // NOLINT
+    virtual void appendDebugInfo(std::string&) const;
     /**
      * @vftbl 8
      * @symbol __unk_vfn_8
      */
-    virtual void __unk_vfn_8(); // NOLINT
+    virtual void __unk_vfn_8();
     /**
      * @vftbl 9
      * @symbol __unk_vfn_9
      */
-    virtual void __unk_vfn_9(); // NOLINT
+    virtual void __unk_vfn_9();
     /**
      * @vftbl 16
      * @symbol ?_getRepathTime\@SleepGoal\@\@EEBA_KXZ
      */
-    virtual unsigned __int64 _getRepathTime() const; // NOLINT
+    virtual uint64_t _getRepathTime() const;
     /**
      * @symbol ??0SleepGoal\@\@QEAA\@AEAVMob\@\@MMM_NMHM\@Z
      */
-    MCAPI SleepGoal(class Mob&, float, float, float, bool, float, int, float); // NOLINT
+    MCAPI SleepGoal(class Mob&, float, float, float, bool, float, int, float);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_lockPosToBedPos\@SleepGoal\@\@AEAAXXZ
      */
-    MCAPI void _lockPosToBedPos(); // NOLINT
+    MCAPI void _lockPosToBedPos();
     /**
      * @symbol ?_wakeUp\@SleepGoal\@\@AEAAXXZ
      */
-    MCAPI void _wakeUp(); // NOLINT
-
-private:
+    MCAPI void _wakeUp();
+    // NOLINTEND
 };

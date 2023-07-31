@@ -16,12 +16,14 @@ public:
     ScriptEntityEffectOptions()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptEntityEffectOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptEntityEffectOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptEntityEffectOptions>
-    bind(); // NOLINT
+    bind();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

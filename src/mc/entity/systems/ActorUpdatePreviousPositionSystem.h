@@ -16,10 +16,11 @@ public:
     ActorUpdatePreviousPositionSystem()                                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?create\@ActorUpdatePreviousPositionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo create(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo create();
     /**
      * @symbol
      * ?tickSystem\@ActorUpdatePreviousPositionSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@\@\@VActorOwnerComponent\@\@\@\@\@Z
@@ -28,5 +29,6 @@ public:
                                  class StrictEntityContext,
                                  class EntityRegistryBase,
                                  struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
-                                 class ActorOwnerComponent>); // NOLINT
+                                 class ActorOwnerComponent>);
+    // NOLINTEND
 };

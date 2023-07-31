@@ -16,21 +16,22 @@ public:
     ScriptBlockBreakAfterEvent()                                             = delete;
 
 public:
-    /**
-     * @symbol ??4ScriptBlockBreakAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-     */
-    MCAPI struct ScriptModuleMinecraft::ScriptBlockBreakAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptBlockBreakAfterEvent&&); // NOLINT
-    /**
-     * @symbol ??1ScriptBlockBreakAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptBlockBreakAfterEvent(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptBlockBreakAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptBlockBreakAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptBlockBreakAfterEvent>
-    bind(); // NOLINT
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptBlockBreakAfterEvent> bind();
+    /**
+     * @symbol ??4ScriptBlockBreakAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
+     */
+    MCAPI struct ScriptModuleMinecraft::ScriptBlockBreakAfterEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptBlockBreakAfterEvent&&);
+    /**
+     * @symbol ??1ScriptBlockBreakAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptBlockBreakAfterEvent();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

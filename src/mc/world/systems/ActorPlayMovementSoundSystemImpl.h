@@ -11,10 +11,11 @@ template<typename... T0> struct Include;
 // clang-format on
 
 namespace ActorPlayMovementSoundSystemImpl {
+// NOLINTBEGIN
 /**
  * @symbol ?doPlayMovementSound\@ActorPlayMovementSoundSystemImpl\@\@YAXAEAVActorOwnerComponent\@\@\@Z
  */
-MCAPI void doPlayMovementSound(class ActorOwnerComponent&); // NOLINT
+MCAPI void doPlayMovementSound(class ActorOwnerComponent&);
 /**
  * @symbol
  * ?tick\@ActorPlayMovementSoundSystemImpl\@\@YAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@\@\@U?$Exclude\@UPassengerComponent\@\@V?$FlagComponent\@UActorRemovedFlag\@\@\@\@\@\@VActorOwnerComponent\@\@\@\@\@Z
@@ -24,6 +25,7 @@ MCAPI void tick(class ViewT<
                 class EntityRegistryBase,
                 struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
                 struct Exclude<struct PassengerComponent, class FlagComponent<struct ActorRemovedFlag>>,
-                class ActorOwnerComponent>); // NOLINT
+                class ActorOwnerComponent>);
+// NOLINTEND
 
 }; // namespace ActorPlayMovementSoundSystemImpl

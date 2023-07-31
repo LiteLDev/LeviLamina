@@ -11,8 +11,10 @@ public:
     ChemistryRecipes()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?addRecipes\@ChemistryRecipes\@\@SAXAEAVRecipes\@\@\@Z
      */
-    MCAPI static void addRecipes(class Recipes&); // NOLINT
+    MCAPI static void addRecipes(class Recipes&);
+    // NOLINTEND
 };

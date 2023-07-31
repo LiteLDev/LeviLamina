@@ -14,76 +14,79 @@ public:
     FurnaceContainerManagerModel()                                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 6
      * @symbol
      * ?getItemCopies\@FurnaceContainerManagerModel\@\@UEBA?AV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@XZ
      */
-    virtual std::vector<class ItemStack> getItemCopies() const; // NOLINT
+    virtual std::vector<class ItemStack> getItemCopies() const;
     /**
      * @vftbl 7
      * @symbol ?setSlot\@FurnaceContainerManagerModel\@\@UEAAXHAEBVItemStack\@\@_N\@Z
      */
-    virtual void setSlot(int, class ItemStack const&, bool); // NOLINT
+    virtual void setSlot(int, class ItemStack const&, bool);
     /**
      * @vftbl 8
      * @symbol ?getSlot\@FurnaceContainerManagerModel\@\@UEBAAEBVItemStack\@\@H\@Z
      */
-    virtual class ItemStack const& getSlot(int) const; // NOLINT
+    virtual class ItemStack const& getSlot(int) const;
     /**
      * @vftbl 9
      * @symbol ?setData\@FurnaceContainerManagerModel\@\@UEAAXHH\@Z
      */
-    virtual void setData(int, int); // NOLINT
+    virtual void setData(int, int);
     /**
      * @vftbl 10
      * @symbol ?broadcastChanges\@FurnaceContainerManagerModel\@\@UEAAXXZ
      */
-    virtual void broadcastChanges(); // NOLINT
+    virtual void broadcastChanges();
     /**
      * @vftbl 16
      * @symbol ?isValid\@FurnaceContainerManagerModel\@\@UEAA_NM\@Z
      */
-    virtual bool isValid(float); // NOLINT
+    virtual bool isValid(float);
     /**
      * @vftbl 17
      * @symbol ?_postInit\@FurnaceContainerManagerModel\@\@MEAA?AVContainerScreenContext\@\@XZ
      */
-    virtual class ContainerScreenContext _postInit(); // NOLINT
+    virtual class ContainerScreenContext _postInit();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FURNACECONTAINERMANAGERMODEL
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~FurnaceContainerManagerModel(); // NOLINT
+    MCVAPI ~FurnaceContainerManagerModel();
 #endif
     /**
      * @symbol ??0FurnaceContainerManagerModel\@\@QEAA\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
-    MCAPI FurnaceContainerManagerModel(enum class ContainerID, class Player&, class BlockPos const&); // NOLINT
+    MCAPI FurnaceContainerManagerModel(enum class ContainerID, class Player&, class BlockPos const&);
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0FurnaceContainerManagerModel\@\@IEAA\@AEBVHashedString\@\@W4ContainerType\@\@W4BlockActorType\@\@W4ContainerID\@\@AEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI
-    FurnaceContainerManagerModel(class HashedString const&, enum class ContainerType, enum class BlockActorType, enum class ContainerID, class Player&, class BlockPos const&); // NOLINT
+    FurnaceContainerManagerModel(class HashedString const&, enum class ContainerType, enum class BlockActorType, enum class ContainerID, class Player&, class BlockPos const&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_getFurnaceEntity\@FurnaceContainerManagerModel\@\@AEAAPEAVFurnaceBlockActor\@\@XZ
      */
-    MCAPI class FurnaceBlockActor* _getFurnaceEntity(); // NOLINT
+    MCAPI class FurnaceBlockActor* _getFurnaceEntity();
     /**
      * @symbol ?_updateResultSlotInfo\@FurnaceContainerManagerModel\@\@AEAAXXZ
      */
-    MCAPI void _updateResultSlotInfo(); // NOLINT
-
-protected:
-private:
+    MCAPI void _updateResultSlotInfo();
+    // NOLINTEND
 };

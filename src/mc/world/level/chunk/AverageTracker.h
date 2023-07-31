@@ -11,8 +11,10 @@ public:
     AverageTracker()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?addSample\@AverageTracker\@\@QEAAXV?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@chrono\@std\@\@\@Z
      */
-    MCAPI void addSample(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>); // NOLINT
+    MCAPI void addSample(std::chrono::nanoseconds);
+    // NOLINTEND
 };

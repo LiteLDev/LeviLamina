@@ -11,18 +11,20 @@ public:
     IWebviewTelemetry()                                    = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IWEBVIEWTELEMETRY
     /**
      * @symbol ?onDownloadBegin\@IWebviewTelemetry\@\@UEAAXAEBUWebviewDownloadInfo\@\@\@Z
      */
-    MCVAPI void onDownloadBegin(struct WebviewDownloadInfo const&); // NOLINT
+    MCVAPI void onDownloadBegin(struct WebviewDownloadInfo const&);
     /**
      * @symbol ?onDownloadCanceled\@IWebviewTelemetry\@\@UEAAXAEBUWebviewDownloadInfo\@\@\@Z
      */
-    MCVAPI void onDownloadCanceled(struct WebviewDownloadInfo const&); // NOLINT
+    MCVAPI void onDownloadCanceled(struct WebviewDownloadInfo const&);
     /**
      * @symbol ?onDownloadComplete\@IWebviewTelemetry\@\@UEAAXAEBUWebviewDownloadInfo\@\@\@Z
      */
-    MCVAPI void onDownloadComplete(struct WebviewDownloadInfo const&); // NOLINT
+    MCVAPI void onDownloadComplete(struct WebviewDownloadInfo const&);
 #endif
+    // NOLINTEND
 };

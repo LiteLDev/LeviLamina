@@ -18,25 +18,26 @@ public:
     TransferBuilder(TransferBuilder const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0TransferBuilder\@Server\@ClientBlobCache\@\@QEAA\@AEAVActiveTransfersManager\@12\@AEBVNetworkIdentifier\@\@\@Z
      */
-    MCAPI
-    TransferBuilder(class ClientBlobCache::Server::ActiveTransfersManager&, class NetworkIdentifier const&); // NOLINT
+    MCAPI TransferBuilder(class ClientBlobCache::Server::ActiveTransfersManager&, class NetworkIdentifier const&);
     /**
      * @symbol ??0TransferBuilder\@Server\@ClientBlobCache\@\@QEAA\@XZ
      */
-    MCAPI TransferBuilder(); // NOLINT
+    MCAPI TransferBuilder();
     /**
      * @symbol
      * ?add\@TransferBuilder\@Server\@ClientBlobCache\@\@QEAAX_KAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
-    MCAPI void add(unsigned __int64, std::string&, bool); // NOLINT
+    MCAPI void add(uint64_t, std::string&, bool);
     /**
      * @symbol ??1TransferBuilder\@Server\@ClientBlobCache\@\@QEAA\@XZ
      */
-    MCAPI ~TransferBuilder(); // NOLINT
+    MCAPI ~TransferBuilder();
+    // NOLINTEND
 };
 
 }; // namespace ClientBlobCache::Server

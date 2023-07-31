@@ -10,14 +10,18 @@ public:
     BeardKernel(BeardKernel const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0BeardKernel\@\@QEAA\@XZ
      */
-    MCAPI BeardKernel(); // NOLINT
+    MCAPI BeardKernel();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?createBeardKernel\@BeardKernel\@\@AEAA?BV?$array\@M$0DGAA\@\@std\@\@XZ
      */
-    MCAPI class std::array<float, 13824> const createBeardKernel(); // NOLINT
+    MCAPI std::array<float, 13824> const createBeardKernel();
+    // NOLINTEND
 };

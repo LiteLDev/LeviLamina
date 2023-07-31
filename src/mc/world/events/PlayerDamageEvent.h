@@ -14,13 +14,15 @@ public:
     PlayerDamageEvent()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0PlayerDamageEvent\@\@QEAA\@V?$WeakRefT\@UEntityRefTraits\@\@\@\@V?$unique_ptr\@VActorDamageSource\@\@U?$default_delete\@VActorDamageSource\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI PlayerDamageEvent(class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class ActorDamageSource>); // NOLINT
+    MCAPI PlayerDamageEvent(class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class ActorDamageSource>);
     /**
      * @symbol ??1PlayerDamageEvent\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerDamageEvent(); // NOLINT
+    MCAPI ~PlayerDamageEvent();
+    // NOLINTEND
 };

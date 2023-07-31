@@ -11,8 +11,10 @@ public:
     AsyncStateRef()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1AsyncStateRef\@\@QEAA\@XZ
      */
-    MCAPI ~AsyncStateRef(); // NOLINT
+    MCAPI ~AsyncStateRef();
+    // NOLINTEND
 };

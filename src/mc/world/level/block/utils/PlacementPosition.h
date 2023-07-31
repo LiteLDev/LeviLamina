@@ -33,12 +33,14 @@ public:
         EnabledStates()                                = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol
          * ?fromStringVector\@EnabledStates\@PlacementPosition\@BlockTrait\@\@SAXAEAU123\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
          */
         MCAPI static void
-        fromStringVector(struct BlockTrait::PlacementPosition::EnabledStates&, std::vector<std::string> const&); // NOLINT
+        fromStringVector(struct BlockTrait::PlacementPosition::EnabledStates&, std::vector<std::string> const&);
+        // NOLINTEND
     };
 
     class UpdateBlockFaceGetPlacementBlockCallback {
@@ -50,11 +52,12 @@ public:
         UpdateBlockFaceGetPlacementBlockCallback()                                                           = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @vftbl 0
          * @symbol __unk_vfn_0
          */
-        virtual void __unk_vfn_0(); // NOLINT
+        virtual void __unk_vfn_0();
         /**
          * @vftbl 1
          * @symbol
@@ -67,7 +70,8 @@ public:
             unsigned char,
             class Vec3 const&,
             int
-        ) const; // NOLINT
+        ) const;
+        // NOLINTEND
     };
 
     class UpdateVerticalHalfGetPlacementBlockCallback {
@@ -80,11 +84,12 @@ public:
         UpdateVerticalHalfGetPlacementBlockCallback()                                                   = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @vftbl 0
          * @symbol __unk_vfn_0
          */
-        virtual void __unk_vfn_0(); // NOLINT
+        virtual void __unk_vfn_0();
         /**
          * @vftbl 1
          * @symbol
@@ -97,7 +102,8 @@ public:
             unsigned char,
             class Vec3 const&,
             int
-        ) const; // NOLINT
+        ) const;
+        // NOLINTEND
     };
 
 public:
@@ -107,36 +113,38 @@ public:
     PlacementPosition()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?applyToBlockLegacy\@PlacementPosition\@BlockTrait\@\@UEBAXAEAVBlockLegacy\@\@\@Z
      */
-    virtual void applyToBlockLegacy(class BlockLegacy&) const; // NOLINT
+    virtual void applyToBlockLegacy(class BlockLegacy&) const;
     /**
      * @vftbl 2
      * @symbol
      * ?buildNetworkTag\@PlacementPosition\@BlockTrait\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const; // NOLINT
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl 3
      * @symbol ?initializeFromNetwork\@PlacementPosition\@BlockTrait\@\@UEAAXAEBVCompoundTag\@\@\@Z
      */
-    virtual void initializeFromNetwork(class CompoundTag const&); // NOLINT
+    virtual void initializeFromNetwork(class CompoundTag const&);
     /**
      * @symbol ?bindType\@PlacementPosition\@BlockTrait\@\@SAXXZ
      */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI static void bindType();
     /**
      * @symbol
      * ?getName\@PlacementPosition\@BlockTrait\@\@SAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI static std::string const& getName(); // NOLINT
+    MCAPI static std::string const& getName();
+    // NOLINTEND
 };
 
 }; // namespace BlockTrait

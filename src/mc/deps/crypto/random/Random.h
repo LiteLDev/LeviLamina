@@ -12,19 +12,21 @@ public:
     Random(Random const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0Random\@0Crypto\@\@QEAA\@XZ
      */
-    MCAPI Random(); // NOLINT
+    MCAPI Random();
     /**
      * @symbol ?fillData\@Random\@1Crypto\@\@QEAAXPEADI\@Z
      */
-    MCAPI void fillData(char*, unsigned int); // NOLINT
+    MCAPI void fillData(char*, unsigned int);
     /**
      * @symbol
      * ?getBytes\@Random\@1Crypto\@\@QEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@I\@Z
      */
-    MCAPI std::string getBytes(unsigned int); // NOLINT
+    MCAPI std::string getBytes(unsigned int);
+    // NOLINTEND
 };
 
 }; // namespace Crypto::Random

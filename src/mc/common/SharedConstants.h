@@ -8,125 +8,127 @@ namespace CodeBuilder { enum class ProtocolVersion; }
 // clang-format on
 
 namespace SharedConstants {
+// NOLINTBEGIN
 /**
  * @symbol ?CodeBuilderProtocolVersion\@SharedConstants\@\@3W4ProtocolVersion\@CodeBuilder\@\@B
  */
-MCAPI extern enum class CodeBuilder::ProtocolVersion const CodeBuilderProtocolVersion; // NOLINT
+MCAPI extern enum class CodeBuilder::ProtocolVersion const CodeBuilderProtocolVersion;
 /**
  * @symbol ?CurrentActorDigestFormat\@SharedConstants\@\@3W4ActorDigestFormat\@\@B
  */
-MCAPI extern enum class ActorDigestFormat const CurrentActorDigestFormat; // NOLINT
+MCAPI extern enum class ActorDigestFormat const CurrentActorDigestFormat;
 /**
  * @symbol ?CurrentBlendVersion\@SharedConstants\@\@3W4BlendVersion\@\@B
  */
-MCAPI extern enum class BlendVersion const CurrentBlendVersion; // NOLINT
+MCAPI extern enum class BlendVersion const CurrentBlendVersion;
 /**
  * @symbol ?CurrentGameSemVersion\@SharedConstants\@\@3VSemVersion\@\@B
  */
-MCAPI extern class SemVersion const CurrentGameSemVersion; // NOLINT
+MCAPI extern class SemVersion const CurrentGameSemVersion;
 /**
  * @symbol ?CurrentLevelChunkFormat\@SharedConstants\@\@3W4LevelChunkFormat\@\@B
  */
-MCAPI extern enum class LevelChunkFormat const CurrentLevelChunkFormat; // NOLINT
+MCAPI extern enum class LevelChunkFormat const CurrentLevelChunkFormat;
 /**
  * @symbol ?CurrentStorageVersion\@SharedConstants\@\@3W4StorageVersion\@\@B
  */
-MCAPI extern enum class StorageVersion const CurrentStorageVersion; // NOLINT
+MCAPI extern enum class StorageVersion const CurrentStorageVersion;
 /**
  * @symbol ?CurrentSubChunkFormat\@SharedConstants\@\@3W4SubChunkFormat\@\@B
  */
-MCAPI extern enum class SubChunkFormat const CurrentSubChunkFormat; // NOLINT
+MCAPI extern enum class SubChunkFormat const CurrentSubChunkFormat;
 /**
  * @symbol ?DevInitiallyMuteMusic\@SharedConstants\@\@3_NB
  */
-MCAPI extern bool const DevInitiallyMuteMusic; // NOLINT
+MCAPI extern bool const DevInitiallyMuteMusic;
 /**
  * @symbol ?EduDiscoveryProtocolVersion\@SharedConstants\@\@3HB
  */
-MCAPI extern int const EduDiscoveryProtocolVersion; // NOLINT
+MCAPI extern int const EduDiscoveryProtocolVersion;
 /**
  * @symbol ?IsAnyBeta\@SharedConstants\@\@3_NB
  */
-MCAPI extern bool const IsAnyBeta; // NOLINT
+MCAPI extern bool const IsAnyBeta;
 /**
  * @symbol ?IsBeta\@SharedConstants\@\@3_NB
  */
-MCAPI extern bool const IsBeta; // NOLINT
+MCAPI extern bool const IsBeta;
 /**
  * @symbol ?IsDevBuild\@SharedConstants\@\@3_NB
  */
-MCAPI extern bool const IsDevBuild; // NOLINT
+MCAPI extern bool const IsDevBuild;
 /**
  * @symbol ?IsPlaytest\@SharedConstants\@\@3_NB
  */
-MCAPI extern bool const IsPlaytest; // NOLINT
+MCAPI extern bool const IsPlaytest;
 /**
  * @symbol ?IsPreviewApp\@SharedConstants\@\@3_NB
  */
-MCAPI extern bool const IsPreviewApp; // NOLINT
+MCAPI extern bool const IsPreviewApp;
 /**
  * @symbol ?IsWin32Platform\@SharedConstants\@\@3_NB
  */
-MCAPI extern bool const IsWin32Platform; // NOLINT
+MCAPI extern bool const IsWin32Platform;
 /**
  * @symbol ?LevelDBCompressorID\@SharedConstants\@\@3HB
  */
-MCAPI extern int const LevelDBCompressorID; // NOLINT
+MCAPI extern int const LevelDBCompressorID;
 /**
  * @symbol ?MajorVersion\@SharedConstants\@\@3HB
  */
-MCAPI extern int const MajorVersion; // NOLINT
+MCAPI extern int const MajorVersion;
 /**
  * @symbol ?MaxChatLength\@SharedConstants\@\@3HB
  */
-MCAPI extern int const MaxChatLength; // NOLINT
+MCAPI extern int const MaxChatLength;
 /**
  * @symbol ?MinTickingChunksRadius\@SharedConstants\@\@3IB
  */
-MCAPI extern unsigned int const MinTickingChunksRadius; // NOLINT
+MCAPI extern unsigned int const MinTickingChunksRadius;
 /**
  * @symbol ?MinimumCompatibleGameVersionForLevelData\@SharedConstants\@\@3VGameVersion\@\@B
  */
-MCAPI extern class GameVersion const MinimumCompatibleGameVersionForLevelData; // NOLINT
+MCAPI extern class GameVersion const MinimumCompatibleGameVersionForLevelData;
 /**
  * @symbol ?MinorVersion\@SharedConstants\@\@3HB
  */
-MCAPI extern int const MinorVersion; // NOLINT
+MCAPI extern int const MinorVersion;
 /**
  * @symbol ?NetworkDefaultGamePort\@SharedConstants\@\@3GB
  */
-MCAPI extern unsigned short const NetworkDefaultGamePort; // NOLINT
+MCAPI extern unsigned short const NetworkDefaultGamePort;
 /**
  * @symbol ?NetworkDefaultGamePortv6\@SharedConstants\@\@3GB
  */
-MCAPI extern unsigned short const NetworkDefaultGamePortv6; // NOLINT
+MCAPI extern unsigned short const NetworkDefaultGamePortv6;
 /**
  * @symbol ?NetworkDefaultMaxConnections\@SharedConstants\@\@3HB
  */
-MCAPI extern int const NetworkDefaultMaxConnections; // NOLINT
+MCAPI extern int const NetworkDefaultMaxConnections;
 /**
  * @symbol ?NetworkEphemeralPort\@SharedConstants\@\@3GB
  */
-MCAPI extern unsigned short const NetworkEphemeralPort; // NOLINT
+MCAPI extern unsigned short const NetworkEphemeralPort;
 /**
  * @symbol ?NetworkMaxPlayerCount\@SharedConstants\@\@3HB
  */
-MCAPI extern int const NetworkMaxPlayerCount; // NOLINT
+MCAPI extern int const NetworkMaxPlayerCount;
 /**
  * @symbol ?NetworkProtocolVersion\@SharedConstants\@\@3HB
  */
-MCAPI extern int const NetworkProtocolVersion; // NOLINT
+MCAPI extern int const NetworkProtocolVersion;
 /**
  * @symbol ?PatchVersion\@SharedConstants\@\@3HB
  */
-MCAPI extern int const PatchVersion; // NOLINT
+MCAPI extern int const PatchVersion;
 /**
  * @symbol ?RevisionVersion\@SharedConstants\@\@3HB
  */
-MCAPI extern int const RevisionVersion; // NOLINT
+MCAPI extern int const RevisionVersion;
 /**
  * @symbol ?StoreVersion\@SharedConstants\@\@3HB
  */
-MCAPI extern int const StoreVersion; // NOLINT
+MCAPI extern int const StoreVersion;
+// NOLINTEND
 
 }; // namespace SharedConstants

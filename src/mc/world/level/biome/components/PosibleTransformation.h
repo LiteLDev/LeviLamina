@@ -10,12 +10,14 @@ public:
     PosibleTransformation()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??4PosibleTransformation\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
-    MCAPI struct PosibleTransformation& operator=(struct PosibleTransformation const&); // NOLINT
+    MCAPI struct PosibleTransformation& operator=(struct PosibleTransformation const&);
     /**
      * @symbol ??1PosibleTransformation\@\@QEAA\@XZ
      */
-    MCAPI ~PosibleTransformation(); // NOLINT
+    MCAPI ~PosibleTransformation();
+    // NOLINTEND
 };

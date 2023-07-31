@@ -11,8 +11,10 @@ public:
     SoundEventRequestQueueComponent()                                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0SoundEventRequestQueueComponent\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI SoundEventRequestQueueComponent(struct SoundEventRequestQueueComponent&&); // NOLINT
+    MCAPI SoundEventRequestQueueComponent(struct SoundEventRequestQueueComponent&&);
+    // NOLINTEND
 };

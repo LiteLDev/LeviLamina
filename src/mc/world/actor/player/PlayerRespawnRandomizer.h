@@ -11,8 +11,10 @@ public:
     PlayerRespawnRandomizer()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PlayerRespawnRandomizer\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerRespawnRandomizer(); // NOLINT
+    MCAPI ~PlayerRespawnRandomizer();
+    // NOLINTEND
 };

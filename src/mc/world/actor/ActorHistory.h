@@ -19,10 +19,12 @@ public:
         Snapshot()                           = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1Snapshot\@ActorHistory\@\@QEAA\@XZ
          */
-        MCAPI ~Snapshot(); // NOLINT
+        MCAPI ~Snapshot();
+        // NOLINTEND
     };
 
 public:
@@ -32,17 +34,18 @@ public:
     ActorHistory()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?addFrame\@ActorHistory\@\@QEAA_NAEAUIActorMovementProxy\@\@_KAEAVEntityRegistry\@\@\@Z
      */
-    MCAPI bool addFrame(struct IActorMovementProxy&, unsigned __int64, class EntityRegistry&); // NOLINT
+    MCAPI bool addFrame(struct IActorMovementProxy&, uint64_t, class EntityRegistry&);
     /**
      * @symbol ?createSnapshot\@ActorHistory\@\@QEBA?AUSnapshot\@1\@AEAUIActorMovementProxy\@\@AEAVEntityRegistry\@\@\@Z
      */
-    MCAPI struct ActorHistory::Snapshot
-    createSnapshot(struct IActorMovementProxy&, class EntityRegistry&) const; // NOLINT
+    MCAPI struct ActorHistory::Snapshot createSnapshot(struct IActorMovementProxy&, class EntityRegistry&) const;
     /**
      * @symbol ??1ActorHistory\@\@QEAA\@XZ
      */
-    MCAPI ~ActorHistory(); // NOLINT
+    MCAPI ~ActorHistory();
+    // NOLINTEND
 };

@@ -11,17 +11,19 @@ public:
     ActorAnimationControllerState()                                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?addVariable\@ActorAnimationControllerState\@\@QEAAAEAVStateAnimationVariable\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI class StateAnimationVariable& addVariable(std::string const&); // NOLINT
+    MCAPI class StateAnimationVariable& addVariable(std::string const&);
     /**
      * @symbol ?setBlendTransitionTime\@ActorAnimationControllerState\@\@QEAAXM\@Z
      */
-    MCAPI void setBlendTransitionTime(float); // NOLINT
+    MCAPI void setBlendTransitionTime(float);
     /**
      * @symbol ?setVariables\@ActorAnimationControllerState\@\@QEBAXAEAVRenderParams\@\@\@Z
      */
-    MCAPI void setVariables(class RenderParams&) const; // NOLINT
+    MCAPI void setVariables(class RenderParams&) const;
+    // NOLINTEND
 };

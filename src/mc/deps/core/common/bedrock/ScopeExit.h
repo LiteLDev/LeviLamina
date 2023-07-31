@@ -13,10 +13,12 @@ public:
     ScopeExit()                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ScopeExit\@Bedrock\@\@QEAA\@XZ
      */
-    MCAPI ~ScopeExit(); // NOLINT
+    MCAPI ~ScopeExit();
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

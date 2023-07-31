@@ -25,10 +25,12 @@ public:
         MultiPartStreamHelper()                                        = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1MultiPartStreamHelper\@FileUploadManager\@\@QEAA\@XZ
          */
-        MCAPI ~MultiPartStreamHelper(); // NOLINT
+        MCAPI ~MultiPartStreamHelper();
+        // NOLINTEND
     };
 
 public:
@@ -38,89 +40,94 @@ public:
     FileUploadManager()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?getUploadProgress\@FileUploadManager\@\@UEBAMXZ
      */
-    virtual float getUploadProgress() const; // NOLINT
+    virtual float getUploadProgress() const;
     /**
      * @vftbl 2
      * @symbol
      * ?uploadFileToRealmStorage\@ResourcePackFileUploadManager\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPath\@Core\@\@H0\@Z
      */
-    virtual void
-    uploadFileToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&) = 0; // NOLINT
+    virtual void uploadFileToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&) = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILEUPLOADMANAGER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~FileUploadManager(); // NOLINT
+    MCVAPI ~FileUploadManager();
 #endif
     /**
      * @symbol ??0FileUploadManager\@\@QEAA\@AEAVTaskGroup\@\@V?$shared_ptr\@VIFileChunkUploader\@\@\@std\@\@\@Z
      */
-    MCAPI FileUploadManager(class TaskGroup&, class std::shared_ptr<class IFileChunkUploader>); // NOLINT
+    MCAPI FileUploadManager(class TaskGroup&, std::shared_ptr<class IFileChunkUploader>);
     /**
      * @symbol ?addCallbackQueue\@FileUploadManager\@\@QEAAXV?$function\@$$A6AXXZ\@std\@\@\@Z
      */
-    MCAPI void addCallbackQueue(class std::function<void(void)>); // NOLINT
+    MCAPI void addCallbackQueue(std::function<void(void)>);
     /**
      * @symbol ?setFailed\@FileUploadManager\@\@QEAAXW4UploadError\@\@\@Z
      */
-    MCAPI void setFailed(enum class UploadError); // NOLINT
+    MCAPI void setFailed(enum class UploadError);
     /**
      * @symbol ?setUseStream\@FileUploadManager\@\@QEAAX_N\@Z
      */
-    MCAPI void setUseStream(bool); // NOLINT
+    MCAPI void setUseStream(bool);
     /**
      * @symbol ?update\@FileUploadManager\@\@QEAAXXZ
      */
-    MCAPI void update(); // NOLINT
+    MCAPI void update();
     /**
      * @symbol ?uploadChunk\@FileUploadManager\@\@QEAAXH\@Z
      */
-    MCAPI void uploadChunk(int); // NOLINT
+    MCAPI void uploadChunk(int);
     /**
      * @symbol
      * ?uploadFile\@FileUploadManager\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPath\@Core\@\@_NAEBVValue\@Json\@\@\@Z
      */
-    MCAPI void uploadFile(std::string const&, class Core::Path const&, bool, class Json::Value const&); // NOLINT
+    MCAPI void uploadFile(std::string const&, class Core::Path const&, bool, class Json::Value const&);
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol ?_generateMultiPartHelper\@FileUploadManager\@\@IEAAXXZ
      */
-    MCAPI void _generateMultiPartHelper(); // NOLINT
+    MCAPI void _generateMultiPartHelper();
     /**
      * @symbol ?_resumeUpload\@FileUploadManager\@\@IEAAXXZ
      */
-    MCAPI void _resumeUpload(); // NOLINT
+    MCAPI void _resumeUpload();
     /**
      * @symbol ?_uploadChunk\@FileUploadManager\@\@IEAAXAEBUFileChunkInfo\@\@\@Z
      */
-    MCAPI void _uploadChunk(struct FileChunkInfo const&); // NOLINT
+    MCAPI void _uploadChunk(struct FileChunkInfo const&);
     /**
      * @symbol ?_uploadStream\@FileUploadManager\@\@IEAAXXZ
      */
-    MCAPI void _uploadStream(); // NOLINT
-
-    // private:
+    MCAPI void _uploadStream();
+    // NOLINTEND
 
 protected:
+    // NOLINTBEGIN
     /**
      * @symbol ?CHUNK_UPLOAD_SIZE\@FileUploadManager\@\@1HB
      */
-    MCAPI static int const CHUNK_UPLOAD_SIZE; // NOLINT
+    MCAPI static int const CHUNK_UPLOAD_SIZE;
+    // NOLINTEND
 
 private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?BOUNDARY\@FileUploadManager\@\@0V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
-    MCAPI static std::string const BOUNDARY; // NOLINT
+    MCAPI static std::string const BOUNDARY;
+    // NOLINTEND
 };

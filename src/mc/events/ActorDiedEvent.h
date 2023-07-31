@@ -11,8 +11,10 @@ public:
     ActorDiedEvent()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ActorDiedEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ActorDiedEvent(); // NOLINT
+    MCAPI ~ActorDiedEvent();
+    // NOLINTEND
 };

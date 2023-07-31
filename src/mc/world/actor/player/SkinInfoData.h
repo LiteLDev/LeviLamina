@@ -11,8 +11,10 @@ public:
     SkinInfoData()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?isValidSize\@SkinInfoData\@\@SA_N_K\@Z
      */
-    MCAPI static bool isValidSize(unsigned __int64); // NOLINT
+    MCAPI static bool isValidSize(uint64_t);
+    // NOLINTEND
 };

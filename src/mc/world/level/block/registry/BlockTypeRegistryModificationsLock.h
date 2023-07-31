@@ -11,8 +11,10 @@ public:
     BlockTypeRegistryModificationsLock()                                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1BlockTypeRegistryModificationsLock\@\@QEAA\@XZ
      */
-    MCAPI ~BlockTypeRegistryModificationsLock(); // NOLINT
+    MCAPI ~BlockTypeRegistryModificationsLock();
+    // NOLINTEND
 };

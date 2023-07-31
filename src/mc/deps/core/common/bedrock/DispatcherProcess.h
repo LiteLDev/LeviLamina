@@ -22,49 +22,51 @@ public:
     DispatcherProcess()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?send\@HttpUrlValidator\@Http\@Bedrock\@\@UEAA?AV?$shared_ptr\@V?$IAsyncResult\@VResponse\@Http\@Bedrock\@\@\@Threading\@Bedrock\@\@\@std\@\@$$QEAVRequest\@23\@\@Z
      */
-    virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
-    send(class Bedrock::Http::Request&&) = 0; // NOLINT
+    virtual std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
+    send(class Bedrock::Http::Request&&) = 0;
     /**
      * @vftbl 2
      * @symbol ?initialize\@DispatcherProcess\@Http\@Bedrock\@\@UEAAXXZ
      */
-    virtual void initialize(); // NOLINT
+    virtual void initialize();
     /**
      * @vftbl 3
      * @symbol ?shutdown\@DispatcherProcess\@Http\@Bedrock\@\@UEAAXXZ
      */
-    virtual void shutdown(); // NOLINT
+    virtual void shutdown();
     /**
      * @vftbl 4
      * @symbol ?suspend\@DispatcherProcess\@Http\@Bedrock\@\@UEAAXXZ
      */
-    virtual void suspend(); // NOLINT
+    virtual void suspend();
     /**
      * @vftbl 5
      * @symbol ?resume\@DispatcherProcess\@Http\@Bedrock\@\@UEAAXXZ
      */
-    virtual void resume(); // NOLINT
+    virtual void resume();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_HTTP_DISPATCHERPROCESS
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~DispatcherProcess(); // NOLINT
+    MCVAPI ~DispatcherProcess();
 #endif
     /**
      * @symbol
      * ??0DispatcherProcess\@Http\@Bedrock\@\@QEAA\@V?$shared_ptr\@VDispatcherProcess\@Http\@Bedrock\@\@\@std\@\@\@Z
      */
-    MCAPI DispatcherProcess(class std::shared_ptr<class Bedrock::Http::DispatcherProcess>); // NOLINT
+    MCAPI DispatcherProcess(std::shared_ptr<class Bedrock::Http::DispatcherProcess>);
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Http

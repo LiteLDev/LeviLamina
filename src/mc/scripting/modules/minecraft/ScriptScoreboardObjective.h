@@ -26,86 +26,87 @@ public:
     ScriptScoreboardObjective()                                            = delete;
 
 public:
+    // NOLINTBEGIN
+    /**
+     * @symbol
+     * ?bind\@ScriptScoreboardObjective\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptScoreboardObjective\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptScoreboardObjective> bind();
     /**
      * @symbol
      * ?getDisplayName\@ScriptScoreboardObjective\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<std::string> getDisplayName() const; // NOLINT
+    MCAPI class Scripting::Result<std::string> getDisplayName() const;
     /**
      * @symbol
      * ?getObjectiveId\@ScriptScoreboardObjective\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Scripting\@\@XZ
      */
-    MCAPI class Scripting::Result<std::string> getObjectiveId() const; // NOLINT
+    MCAPI class Scripting::Result<std::string> getObjectiveId() const;
     /**
      * @symbol
      * ?getParticipants\@ScriptScoreboardObjective\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$vector\@V?$StrongTypedObjectHandle\@VScriptScoreboardIdentity\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$allocator\@V?$StrongTypedObjectHandle\@VScriptScoreboardIdentity\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@std\@\@\@std\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<
         std::vector<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>>>
-    getParticipants() const; // NOLINT
+    getParticipants() const;
     /**
      * @symbol
      * ?getScore\@ScriptScoreboardObjective\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$optional\@H\@std\@\@\@Scripting\@\@AEBV?$variant\@V?$StrongTypedObjectHandle\@VScriptScoreboardIdentity\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@2\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI class Scripting::Result<class std::optional<int>>
-    getScore(class std::variant<
+    MCAPI class Scripting::Result<std::optional<int>>
+    getScore(std::variant<
              class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>,
              class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
-             std::string> const&) const; // NOLINT
+             std::string> const&) const;
     /**
      * @symbol
      * ?getScores\@ScriptScoreboardObjective\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$vector\@VScriptScoreboardScoreInfo\@ScriptModuleMinecraft\@\@V?$allocator\@VScriptScoreboardScoreInfo\@ScriptModuleMinecraft\@\@\@std\@\@\@std\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<std::vector<class ScriptModuleMinecraft::ScriptScoreboardScoreInfo>>
-    getScores() const; // NOLINT
+    getScores() const;
     /**
      * @symbol
      * ?hasParticipant\@ScriptScoreboardObjective\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@_N\@Scripting\@\@AEBV?$variant\@V?$StrongTypedObjectHandle\@VScriptScoreboardIdentity\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@2\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<bool>
-    hasParticipant(class std::variant<
+    hasParticipant(std::variant<
                    class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>,
                    class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
-                   std::string> const&) const; // NOLINT
+                   std::string> const&) const;
     /**
      * @symbol ??4ScriptScoreboardObjective\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraft::ScriptScoreboardObjective&
-    operator=(class ScriptModuleMinecraft::ScriptScoreboardObjective&&); // NOLINT
+    operator=(class ScriptModuleMinecraft::ScriptScoreboardObjective&&);
     /**
      * @symbol
      * ?removeParticipant\@ScriptScoreboardObjective\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@_N\@Scripting\@\@AEAV?$variant\@V?$StrongTypedObjectHandle\@VScriptScoreboardIdentity\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@2\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<bool>
-    removeParticipant(class std::variant<
+    removeParticipant(std::variant<
                       class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>,
                       class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
-                      std::string>&); // NOLINT
+                      std::string>&);
     /**
      * @symbol
      * ?setScore\@ScriptScoreboardObjective\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEAV?$variant\@V?$StrongTypedObjectHandle\@VScriptScoreboardIdentity\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@2\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@H\@Z
      */
     MCAPI class Scripting::Result<void> setScore(
-        class std::variant<
+        std::variant<
             class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboardIdentity>,
             class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>,
             std::string>&,
         int
-    ); // NOLINT
+    );
     /**
      * @symbol ?tryGetObjective\@ScriptScoreboardObjective\@ScriptModuleMinecraft\@\@QEBAPEAVObjective\@\@XZ
      */
-    MCAPI class Objective* tryGetObjective() const; // NOLINT
+    MCAPI class Objective* tryGetObjective() const;
     /**
      * @symbol ??1ScriptScoreboardObjective\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
-    MCAPI ~ScriptScoreboardObjective(); // NOLINT
-    /**
-     * @symbol
-     * ?bind\@ScriptScoreboardObjective\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptScoreboardObjective\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptScoreboardObjective>
-    bind(); // NOLINT
+    MCAPI ~ScriptScoreboardObjective();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -10,23 +10,25 @@ public:
     LookAtActorNode(LookAtActorNode const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?tick\@LookAtActorNode\@\@UEAA?AW4BehaviorStatus\@\@AEAVActor\@\@\@Z
      */
-    virtual enum class BehaviorStatus tick(class Actor&); // NOLINT
+    virtual enum class BehaviorStatus tick(class Actor&);
     /**
      * @vftbl 2
      * @symbol ?initializeFromDefinition\@LookAtActorNode\@\@EEAAXAEAVActor\@\@\@Z
      */
-    virtual void initializeFromDefinition(class Actor&); // NOLINT
+    virtual void initializeFromDefinition(class Actor&);
     /**
      * @symbol ??0LookAtActorNode\@\@QEAA\@XZ
      */
-    MCAPI LookAtActorNode(); // NOLINT
+    MCAPI LookAtActorNode();
+    // NOLINTEND
 };

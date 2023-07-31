@@ -13,10 +13,12 @@ public:
     ParseResult()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?isError\@ParseResult\@JSONObject\@Bedrock\@\@QEBA_NXZ
      */
-    MCAPI bool isError() const; // NOLINT
+    MCAPI bool isError() const;
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::JSONObject

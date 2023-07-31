@@ -11,8 +11,10 @@ public:
     DynamicPropertyDefinition()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1DynamicPropertyDefinition\@\@QEAA\@XZ
      */
-    MCAPI ~DynamicPropertyDefinition(); // NOLINT
+    MCAPI ~DynamicPropertyDefinition();
+    // NOLINTEND
 };

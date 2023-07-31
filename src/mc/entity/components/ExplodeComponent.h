@@ -10,53 +10,55 @@ public:
     ExplodeComponent(ExplodeComponent const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ExplodeComponent\@\@QEAA\@XZ
      */
-    MCAPI ExplodeComponent(); // NOLINT
+    MCAPI ExplodeComponent();
     /**
      * @symbol ?addAdditionalSaveData\@ExplodeComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
+    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
     /**
      * @symbol ?explode\@ExplodeComponent\@\@QEAAXAEAVActor\@\@AEBVVec3\@\@\@Z
      */
-    MCAPI void explode(class Actor&, class Vec3 const&); // NOLINT
+    MCAPI void explode(class Actor&, class Vec3 const&);
     /**
      * @symbol ?getFuseLength\@ExplodeComponent\@\@QEBAHXZ
      */
-    MCAPI int getFuseLength() const; // NOLINT
+    MCAPI int getFuseLength() const;
     /**
      * @symbol ?getInitialFuseLength\@ExplodeComponent\@\@QEBAHXZ
      */
-    MCAPI int getInitialFuseLength() const; // NOLINT
+    MCAPI int getInitialFuseLength() const;
     /**
      * @symbol ?getIsFuseLit\@ExplodeComponent\@\@QEBA_NXZ
      */
-    MCAPI bool getIsFuseLit() const; // NOLINT
+    MCAPI bool getIsFuseLit() const;
     /**
      * @symbol ?isFuseLit\@ExplodeComponent\@\@QEBA_NXZ
      */
-    MCAPI bool isFuseLit() const; // NOLINT
+    MCAPI bool isFuseLit() const;
     /**
      * @symbol
      * ?readAdditionalSaveData\@ExplodeComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&); // NOLINT
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
     /**
      * @symbol ?requiresTntExplodeGameRuleEnabled\@ExplodeComponent\@\@QEBA_NXZ
      */
-    MCAPI bool requiresTntExplodeGameRuleEnabled() const; // NOLINT
+    MCAPI bool requiresTntExplodeGameRuleEnabled() const;
     /**
      * @symbol ?setAllowUnderwater\@ExplodeComponent\@\@QEAAX_N\@Z
      */
-    MCAPI void setAllowUnderwater(bool); // NOLINT
+    MCAPI void setAllowUnderwater(bool);
     /**
      * @symbol ?setFuseLength\@ExplodeComponent\@\@QEAAXH\@Z
      */
-    MCAPI void setFuseLength(int); // NOLINT
+    MCAPI void setFuseLength(int);
     /**
      * @symbol ?setTntExpodeGameRuleRequired\@ExplodeComponent\@\@QEAAXXZ
      */
-    MCAPI void setTntExpodeGameRuleRequired(); // NOLINT
+    MCAPI void setTntExpodeGameRuleRequired();
+    // NOLINTEND
 };

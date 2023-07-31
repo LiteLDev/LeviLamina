@@ -11,8 +11,10 @@ public:
     SetPreviousWalkDistSystem()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@SetPreviousWalkDistSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 };

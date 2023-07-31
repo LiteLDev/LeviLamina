@@ -10,12 +10,14 @@ public:
     ItemDefinitionEventTriggeredEvent()                                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ItemDefinitionEventTriggeredEvent\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI ItemDefinitionEventTriggeredEvent(struct ItemDefinitionEventTriggeredEvent const&); // NOLINT
+    MCAPI ItemDefinitionEventTriggeredEvent(struct ItemDefinitionEventTriggeredEvent const&);
     /**
      * @symbol ??1ItemDefinitionEventTriggeredEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ItemDefinitionEventTriggeredEvent(); // NOLINT
+    MCAPI ~ItemDefinitionEventTriggeredEvent();
+    // NOLINTEND
 };

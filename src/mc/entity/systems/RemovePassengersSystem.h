@@ -11,8 +11,10 @@ public:
     RemovePassengersSystem()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createRemovePassengersSystem\@RemovePassengersSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createRemovePassengersSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createRemovePassengersSystem();
+    // NOLINTEND
 };

@@ -13,10 +13,12 @@ public:
     shared_ptr_cache()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?remove\@shared_ptr_cache\@httpclient\@xbox\@\@SAXPEAX\@Z
      */
-    MCAPI static void remove(void*); // NOLINT
+    MCAPI static void remove(void*);
+    // NOLINTEND
 };
 
 }; // namespace xbox::httpclient

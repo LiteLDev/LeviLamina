@@ -19,19 +19,21 @@ public:
     Node()                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?asObject\@Node\@JSONObject\@Bedrock\@\@QEAAPEAVObjectNode\@23\@XZ
      */
-    MCAPI class Bedrock::JSONObject::ObjectNode* asObject(); // NOLINT
+    MCAPI class Bedrock::JSONObject::ObjectNode* asObject();
     /**
      * @symbol ??4Node\@JSONObject\@Bedrock\@\@QEAAPEAV012\@AEBVValueWrapper\@12\@\@Z
      */
-    MCAPI class Bedrock::JSONObject::Node* operator=(class Bedrock::JSONObject::ValueWrapper const&); // NOLINT
+    MCAPI class Bedrock::JSONObject::Node* operator=(class Bedrock::JSONObject::ValueWrapper const&);
     /**
      * @symbol
      * ?toJSONString\@Node\@JSONObject\@Bedrock\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string toJSONString() const; // NOLINT
+    MCAPI std::string toJSONString() const;
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::JSONObject

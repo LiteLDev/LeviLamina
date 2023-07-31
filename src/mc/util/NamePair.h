@@ -13,10 +13,12 @@ public:
     NamePair()                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1NamePair\@TextureSetHelpers\@\@QEAA\@XZ
      */
-    MCAPI ~NamePair(); // NOLINT
+    MCAPI ~NamePair();
+    // NOLINTEND
 };
 
 }; // namespace TextureSetHelpers

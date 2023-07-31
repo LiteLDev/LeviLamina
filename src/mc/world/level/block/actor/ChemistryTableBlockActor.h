@@ -11,99 +11,100 @@ public:
     ChemistryTableBlockActor()                                           = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CHEMISTRYTABLEBLOCKACTOR
     /**
      * @symbol ?getContainer\@ChemistryTableBlockActor\@\@UEAAPEAVContainer\@\@XZ
      */
-    MCVAPI class Container* getContainer(); // NOLINT
+    MCVAPI class Container* getContainer();
     /**
      * @symbol ?getContainer\@ChemistryTableBlockActor\@\@UEBAPEBVContainer\@\@XZ
      */
-    MCVAPI class Container const* getContainer() const; // NOLINT
+    MCVAPI class Container const* getContainer() const;
     /**
      * @symbol ?getContainerSize\@ChemistryTableBlockActor\@\@UEBAHXZ
      */
-    MCVAPI int getContainerSize() const; // NOLINT
+    MCVAPI int getContainerSize() const;
     /**
      * @symbol ?getItem\@ChemistryTableBlockActor\@\@UEBAAEBVItemStack\@\@H\@Z
      */
-    MCVAPI class ItemStack const& getItem(int) const; // NOLINT
+    MCVAPI class ItemStack const& getItem(int) const;
     /**
      * @symbol ?getMaxStackSize\@ChemistryTableBlockActor\@\@UEBAHXZ
      */
-    MCVAPI int getMaxStackSize() const; // NOLINT
+    MCVAPI int getMaxStackSize() const;
     /**
      * @symbol ?load\@ChemistryTableBlockActor\@\@UEAAXAEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCVAPI void load(class Level&, class CompoundTag const&, class DataLoadHelper&); // NOLINT
+    MCVAPI void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
     /**
      * @symbol ?onRemoved\@ChemistryTableBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
-    MCVAPI void onRemoved(class BlockSource&); // NOLINT
+    MCVAPI void onRemoved(class BlockSource&);
     /**
      * @symbol ?save\@ChemistryTableBlockActor\@\@UEBA_NAEAVCompoundTag\@\@\@Z
      */
-    MCVAPI bool save(class CompoundTag&) const; // NOLINT
+    MCVAPI bool save(class CompoundTag&) const;
     /**
      * @symbol
      * ?serverInitItemStackIds\@ChemistryTableBlockActor\@\@UEAAXHHV?$function\@$$A6AXHAEBVItemStack\@\@\@Z\@std\@\@\@Z
      */
-    MCVAPI void serverInitItemStackIds(int, int, class std::function<void(int, class ItemStack const&)>); // NOLINT
+    MCVAPI void serverInitItemStackIds(int, int, std::function<void(int, class ItemStack const&)>);
     /**
      * @symbol ?setItem\@ChemistryTableBlockActor\@\@UEAAXHAEBVItemStack\@\@\@Z
      */
-    MCVAPI void setItem(int, class ItemStack const&); // NOLINT
+    MCVAPI void setItem(int, class ItemStack const&);
     /**
      * @symbol ?startOpen\@ChemistryTableBlockActor\@\@UEAAXAEAVPlayer\@\@\@Z
      */
-    MCVAPI void startOpen(class Player&); // NOLINT
+    MCVAPI void startOpen(class Player&);
     /**
      * @symbol ?stopOpen\@ChemistryTableBlockActor\@\@UEAAXAEAVPlayer\@\@\@Z
      */
-    MCVAPI void stopOpen(class Player&); // NOLINT
+    MCVAPI void stopOpen(class Player&);
     /**
      * @symbol ?tick\@ChemistryTableBlockActor\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
-    MCVAPI void tick(class BlockSource&); // NOLINT
+    MCVAPI void tick(class BlockSource&);
 #endif
     /**
      * @symbol ?isSameType\@ChemistryTableBlockActor\@\@QEBA_NW4ChemistryTableType\@\@\@Z
      */
-    MCAPI bool isSameType(enum class ChemistryTableType) const; // NOLINT
+    MCAPI bool isSameType(enum class ChemistryTableType) const;
     /**
      * @symbol ?playerOpenLabTable\@ChemistryTableBlockActor\@\@QEAAXAEAVPlayer\@\@\@Z
      */
-    MCAPI void playerOpenLabTable(class Player&); // NOLINT
+    MCAPI void playerOpenLabTable(class Player&);
     /**
      * @symbol ?reset\@ChemistryTableBlockActor\@\@QEAAXAEAVBlockSource\@\@\@Z
      */
-    MCAPI void reset(class BlockSource&); // NOLINT
+    MCAPI void reset(class BlockSource&);
     /**
      * @symbol
      * ?serverCombine\@ChemistryTableBlockActor\@\@QEAAXAEAVBlockSource\@\@AEBV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI void serverCombine(class BlockSource&, std::vector<class ItemStack> const&); // NOLINT
+    MCAPI void serverCombine(class BlockSource&, std::vector<class ItemStack> const&);
     /**
      * @symbol
      * ?serverLabTablePacket_DEPRECATED\@ChemistryTableBlockActor\@\@QEAAXAEBVLabTablePacket\@\@AEAVBlockSource\@\@\@Z
      */
-    MCAPI void serverLabTablePacket_DEPRECATED(class LabTablePacket const&, class BlockSource&); // NOLINT
+    MCAPI void serverLabTablePacket_DEPRECATED(class LabTablePacket const&, class BlockSource&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_createReaction\@ChemistryTableBlockActor\@\@AEAA?AV?$unique_ptr\@VLabTableReaction\@\@U?$default_delete\@VLabTableReaction\@\@\@std\@\@\@std\@\@AEAVRandom\@\@AEBV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@3\@\@Z
      */
-    MCAPI std::unique_ptr<class LabTableReaction>
-          _createReaction(class Random&, std::vector<class ItemStack> const&); // NOLINT
+    MCAPI std::unique_ptr<class LabTableReaction> _createReaction(class Random&, std::vector<class ItemStack> const&);
     /**
      * @symbol ?_popPendingReactionOutput\@ChemistryTableBlockActor\@\@AEAAXAEAVBlockSource\@\@\@Z
      */
-    MCAPI void _popPendingReactionOutput(class BlockSource&); // NOLINT
+    MCAPI void _popPendingReactionOutput(class BlockSource&);
     /**
      * @symbol ?_updateType\@ChemistryTableBlockActor\@\@AEAA?AW4ChemistryTableType\@\@AEAVBlockSource\@\@\@Z
      */
-    MCAPI enum class ChemistryTableType _updateType(class BlockSource&); // NOLINT
-
-private:
+    MCAPI enum class ChemistryTableType _updateType(class BlockSource&);
+    // NOLINTEND
 };

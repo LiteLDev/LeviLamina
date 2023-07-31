@@ -9,11 +9,6 @@ namespace Bedrock::Threading { enum class AsyncStatus; }
 
 class TaskStatus {
 public:
-    // TaskStatus inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // TaskStatus inner types define
     enum class Value {};
 
@@ -23,24 +18,26 @@ public:
     TaskStatus(TaskStatus const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0TaskStatus\@\@QEAA\@XZ
      */
-    MCAPI TaskStatus(); // NOLINT
+    MCAPI TaskStatus();
     /**
      * @symbol ?isComplete\@TaskStatus\@\@QEBA_NXZ
      */
-    MCAPI bool isComplete() const; // NOLINT
+    MCAPI bool isComplete() const;
     /**
      * @symbol ??BTaskStatus\@\@QEBA?AW4Value\@0\@XZ
      */
-    MCAPI operator enum TaskStatus::Value() const; // NOLINT
+    MCAPI operator enum TaskStatus::Value() const;
     /**
      * @symbol ?toAsyncStatus\@TaskStatus\@\@QEBA?AW4AsyncStatus\@Threading\@Bedrock\@\@XZ
      */
-    MCAPI enum class Bedrock::Threading::AsyncStatus toAsyncStatus() const; // NOLINT
+    MCAPI enum class Bedrock::Threading::AsyncStatus toAsyncStatus() const;
     /**
      * @symbol ?toErrorCode\@TaskStatus\@\@QEBA?AVerror_code\@std\@\@XZ
      */
-    MCAPI class std::error_code toErrorCode() const; // NOLINT
+    MCAPI std::error_code toErrorCode() const;
+    // NOLINTEND
 };

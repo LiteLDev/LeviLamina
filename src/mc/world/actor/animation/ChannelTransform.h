@@ -11,8 +11,10 @@ public:
     ChannelTransform()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getDataValues\@ChannelTransform\@\@QEBA_NAEAVVec3\@\@0\@Z
      */
-    MCAPI bool getDataValues(class Vec3&, class Vec3&) const; // NOLINT
+    MCAPI bool getDataValues(class Vec3&, class Vec3&) const;
+    // NOLINTEND
 };

@@ -12,14 +12,16 @@ public:
     SignalReceiver(SignalReceiver const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0SignalReceiver\@Bedrock\@\@QEAA\@XZ
      */
-    MCAPI SignalReceiver(); // NOLINT
+    MCAPI SignalReceiver();
     /**
      * @symbol ??1SignalReceiver\@Bedrock\@\@QEAA\@XZ
      */
-    MCAPI ~SignalReceiver(); // NOLINT
+    MCAPI ~SignalReceiver();
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

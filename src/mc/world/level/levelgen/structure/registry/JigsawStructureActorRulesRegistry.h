@@ -10,23 +10,25 @@ public:
     JigsawStructureActorRulesRegistry(JigsawStructureActorRulesRegistry const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0JigsawStructureActorRulesRegistry\@\@QEAA\@XZ
      */
-    MCAPI JigsawStructureActorRulesRegistry(); // NOLINT
+    MCAPI JigsawStructureActorRulesRegistry();
     /**
      * @symbol
      * ?lookupByName\@JigsawStructureActorRulesRegistry\@\@QEBAPEBV?$vector\@V?$unique_ptr\@VStructurePoolActorRule\@\@U?$default_delete\@VStructurePoolActorRule\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePoolActorRule\@\@U?$default_delete\@VStructurePoolActorRule\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
      */
-    MCAPI std::vector<std::unique_ptr<class StructurePoolActorRule>> const* lookupByName(std::string) const; // NOLINT
+    MCAPI std::vector<std::unique_ptr<class StructurePoolActorRule>> const* lookupByName(std::string) const;
     /**
      * @symbol
      * ?registerActorRules\@JigsawStructureActorRulesRegistry\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$QEAV?$unique_ptr\@V?$vector\@V?$unique_ptr\@VStructurePoolActorRule\@\@U?$default_delete\@VStructurePoolActorRule\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePoolActorRule\@\@U?$default_delete\@VStructurePoolActorRule\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@U?$default_delete\@V?$vector\@V?$unique_ptr\@VStructurePoolActorRule\@\@U?$default_delete\@VStructurePoolActorRule\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePoolActorRule\@\@U?$default_delete\@VStructurePoolActorRule\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@\@2\@\@3\@\@Z
      */
     MCAPI void
-    registerActorRules(std::string, std::unique_ptr<std::vector<class std::unique_ptr<class StructurePoolActorRule, struct std::default_delete<class StructurePoolActorRule>>>>&&); // NOLINT
+    registerActorRules(std::string, std::unique_ptr<std::vector<std::unique_ptr<class StructurePoolActorRule, std::default_delete<class StructurePoolActorRule>>>>&&);
     /**
      * @symbol ??1JigsawStructureActorRulesRegistry\@\@QEAA\@XZ
      */
-    MCAPI ~JigsawStructureActorRulesRegistry(); // NOLINT
+    MCAPI ~JigsawStructureActorRulesRegistry();
+    // NOLINTEND
 };

@@ -14,20 +14,22 @@ public:
     NavigationFloatDescription()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol ?getJsonName\@NavigationFloatDescription\@\@UEBAPEBDXZ
      */
-    virtual char const* getJsonName() const; // NOLINT
+    virtual char const* getJsonName() const;
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1(); // NOLINT
+    virtual void __unk_vfn_1();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NAVIGATIONFLOATDESCRIPTION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~NavigationFloatDescription(); // NOLINT
+    MCVAPI ~NavigationFloatDescription();
 #endif
+    // NOLINTEND
 };

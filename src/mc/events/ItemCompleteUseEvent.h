@@ -11,8 +11,10 @@ public:
     ItemCompleteUseEvent()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ItemCompleteUseEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ItemCompleteUseEvent(); // NOLINT
+    MCAPI ~ItemCompleteUseEvent();
+    // NOLINTEND
 };

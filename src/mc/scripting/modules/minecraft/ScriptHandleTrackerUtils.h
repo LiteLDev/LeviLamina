@@ -8,10 +8,12 @@ namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
 namespace ScriptModuleMinecraft::ScriptHandleTrackerUtils {
+// NOLINTBEGIN
 /**
  * @symbol
  * ?removeAllTrackedHandles\@ScriptHandleTrackerUtils\@ScriptModuleMinecraft\@\@YAXAEBVWeakLifetimeScope\@Scripting\@\@\@Z
  */
-MCAPI void removeAllTrackedHandles(class Scripting::WeakLifetimeScope const&); // NOLINT
+MCAPI void removeAllTrackedHandles(class Scripting::WeakLifetimeScope const&);
+// NOLINTEND
 
 }; // namespace ScriptModuleMinecraft::ScriptHandleTrackerUtils

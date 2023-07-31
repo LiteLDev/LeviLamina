@@ -14,39 +14,40 @@ public:
     ScreenHandlerLabTable()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?handleAction\@ScreenHandlerLabTable\@\@MEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestAction\@\@\@Z
      */
-    virtual enum class ItemStackNetResult handleAction(class ItemStackRequestAction const&); // NOLINT
+    virtual enum class ItemStackNetResult handleAction(class ItemStackRequestAction const&);
     /**
      * @vftbl 2
      * @symbol ?endRequest\@ScreenHandlerLabTable\@\@MEAA?AW4ItemStackNetResult\@\@XZ
      */
-    virtual enum class ItemStackNetResult endRequest(); // NOLINT
+    virtual enum class ItemStackNetResult endRequest();
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3(); // NOLINT
+    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol ?postRequest\@ScreenHandlerLabTable\@\@MEAAX_N\@Z
      */
-    virtual void postRequest(bool); // NOLINT
+    virtual void postRequest(bool);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_handleLabTableCombine\@ScreenHandlerLabTable\@\@AEAA?AW4ItemStackNetResult\@\@AEBV?$ItemStackRequestActionDataless\@$08\@\@\@Z
      */
-    MCAPI enum class ItemStackNetResult
-    _handleLabTableCombine(class ItemStackRequestActionDataless<9> const&); // NOLINT
-
-private:
+    MCAPI enum class ItemStackNetResult _handleLabTableCombine(class ItemStackRequestActionDataless<9> const&);
+    // NOLINTEND
 };

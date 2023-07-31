@@ -11,12 +11,14 @@ public:
     CommandArea()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getDimensionBlockSource\@CommandArea\@\@QEAAAEAVBlockSource\@\@XZ
      */
-    MCAPI class BlockSource& getDimensionBlockSource(); // NOLINT
+    MCAPI class BlockSource& getDimensionBlockSource();
     /**
      * @symbol ??1CommandArea\@\@QEAA\@XZ
      */
-    MCAPI ~CommandArea(); // NOLINT
+    MCAPI ~CommandArea();
+    // NOLINTEND
 };

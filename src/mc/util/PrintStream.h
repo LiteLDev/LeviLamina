@@ -11,26 +11,28 @@ public:
     PrintStream()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?print\@PrintStream\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void print(std::string const&); // NOLINT
+    virtual void print(std::string const&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PRINTSTREAM
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~PrintStream(); // NOLINT
+    MCVAPI ~PrintStream();
 #endif
     /**
      * @symbol
      * ?println\@PrintStream\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI void println(std::string const&); // NOLINT
+    MCAPI void println(std::string const&);
+    // NOLINTEND
 };

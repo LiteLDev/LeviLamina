@@ -20,10 +20,12 @@ public:
     BiomeInit()                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0BiomeInit\@OperationNodeFilters\@\@QEAA\@AEBVBiomeRegistry\@\@AEAVBiome\@\@1W4GeneratorType\@\@\@Z
      */
-    MCAPI BiomeInit(class BiomeRegistry const&, class Biome&, class Biome&, enum class GeneratorType); // NOLINT
+    MCAPI BiomeInit(class BiomeRegistry const&, class Biome&, class Biome&, enum class GeneratorType);
+    // NOLINTEND
 };
 
 }; // namespace OperationNodeFilters

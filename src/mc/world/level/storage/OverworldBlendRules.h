@@ -11,8 +11,10 @@ public:
     OverworldBlendRules()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1OverworldBlendRules\@\@QEAA\@XZ
      */
-    MCAPI ~OverworldBlendRules(); // NOLINT
+    MCAPI ~OverworldBlendRules();
+    // NOLINTEND
 };

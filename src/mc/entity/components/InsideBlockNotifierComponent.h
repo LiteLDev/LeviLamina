@@ -11,21 +11,23 @@ public:
     InsideBlockNotifierComponent()                                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?getBlockList\@InsideBlockNotifierComponent\@\@QEBAAEBV?$vector\@VInsideBlockEventMap\@\@V?$allocator\@VInsideBlockEventMap\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<class InsideBlockEventMap> const& getBlockList() const; // NOLINT
+    MCAPI std::vector<class InsideBlockEventMap> const& getBlockList() const;
     /**
      * @symbol ?isTrackedBlock\@InsideBlockNotifierComponent\@\@QEBA_NAEBVBlock\@\@\@Z
      */
-    MCAPI bool isTrackedBlock(class Block const&) const; // NOLINT
+    MCAPI bool isTrackedBlock(class Block const&) const;
     /**
      * @symbol ?resetBlocksInsideState\@InsideBlockNotifierComponent\@\@QEAAXXZ
      */
-    MCAPI void resetBlocksInsideState(); // NOLINT
+    MCAPI void resetBlocksInsideState();
     /**
      * @symbol ?setInsideBlock\@InsideBlockNotifierComponent\@\@QEAAXAEBVBlock\@\@_N\@Z
      */
-    MCAPI void setInsideBlock(class Block const&, bool); // NOLINT
+    MCAPI void setInsideBlock(class Block const&, bool);
+    // NOLINTEND
 };

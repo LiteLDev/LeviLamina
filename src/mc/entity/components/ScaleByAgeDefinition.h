@@ -18,19 +18,21 @@ public:
     ScaleByAgeDefinition(ScaleByAgeDefinition const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ScaleByAgeDefinition\@\@QEAA\@XZ
      */
-    MCAPI ScaleByAgeDefinition(); // NOLINT
-    /**
-     * @symbol ?initialize\@ScaleByAgeDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVScaleByAgeComponent\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class ScaleByAgeComponent&) const; // NOLINT
+    MCAPI ScaleByAgeDefinition();
     /**
      * @symbol
      * ?buildSchema\@ScaleByAgeDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VScaleByAgeDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      class ScaleByAgeDefinition>>&); // NOLINT
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ScaleByAgeDefinition>>&);
+    /**
+     * @symbol ?initialize\@ScaleByAgeDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVScaleByAgeComponent\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class ScaleByAgeComponent&) const;
+    // NOLINTEND
 };

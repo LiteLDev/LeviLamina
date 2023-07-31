@@ -10,11 +10,11 @@ public:
     BrushEffectsCooldownComponent(BrushEffectsCooldownComponent const&)            = delete;
     BrushEffectsCooldownComponent()                                                = delete;
 
-    // private:
-
 private:
+    // NOLINTBEGIN
     /**
      * @symbol ?EXPIRED_TICK\@BrushEffectsCooldownComponent\@\@0VExpiringTick\@\@B
      */
-    MCAPI static class ExpiringTick const EXPIRED_TICK; // NOLINT
+    MCAPI static class ExpiringTick const EXPIRED_TICK;
+    // NOLINTEND
 };

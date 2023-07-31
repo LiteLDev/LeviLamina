@@ -11,37 +11,39 @@ public:
     FreezingComponent()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?addAdditionalSaveData\@FreezingComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
-    MCAPI void addAdditionalSaveData(class CompoundTag&) const; // NOLINT
+    MCAPI void addAdditionalSaveData(class CompoundTag&) const;
     /**
      * @symbol ?decreaseFreezingEffect\@FreezingComponent\@\@QEAAXXZ
      */
-    MCAPI void decreaseFreezingEffect(); // NOLINT
+    MCAPI void decreaseFreezingEffect();
     /**
      * @symbol ?getFreezingEffectStrength\@FreezingComponent\@\@QEBAMXZ
      */
-    MCAPI float getFreezingEffectStrength() const; // NOLINT
+    MCAPI float getFreezingEffectStrength() const;
     /**
      * @symbol ?increaseFreezingEffect\@FreezingComponent\@\@QEAAXXZ
      */
-    MCAPI void increaseFreezingEffect(); // NOLINT
+    MCAPI void increaseFreezingEffect();
     /**
      * @symbol ?isFullyFrozen\@FreezingComponent\@\@QEBA_NXZ
      */
-    MCAPI bool isFullyFrozen() const; // NOLINT
+    MCAPI bool isFullyFrozen() const;
     /**
      * @symbol ?isFullyUnfrozen\@FreezingComponent\@\@QEBA_NXZ
      */
-    MCAPI bool isFullyUnfrozen() const; // NOLINT
+    MCAPI bool isFullyUnfrozen() const;
     /**
      * @symbol
      * ?readAdditionalSaveData\@FreezingComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
-    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&); // NOLINT
+    MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
     /**
      * @symbol ?resetFreezingEffect\@FreezingComponent\@\@QEAAXXZ
      */
-    MCAPI void resetFreezingEffect(); // NOLINT
+    MCAPI void resetFreezingEffect();
+    // NOLINTEND
 };

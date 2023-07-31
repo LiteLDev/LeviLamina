@@ -24,10 +24,12 @@ public:
         FromRequest()                              = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1FromRequest\@ScriptFormPromiseTracker\@\@QEAA\@XZ
          */
-        MCAPI ~FromRequest(); // NOLINT
+        MCAPI ~FromRequest();
+        // NOLINTEND
     };
 
 public:
@@ -36,30 +38,32 @@ public:
     ScriptFormPromiseTracker(ScriptFormPromiseTracker const&)            = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTFORMPROMISETRACKER
     /**
      * @symbol ?onEvent\@ScriptFormPromiseTracker\@\@UEAA?AW4EventResult\@\@AEBUPlayerFormResponseEvent\@\@\@Z
      */
-    MCVAPI enum class EventResult onEvent(struct PlayerFormResponseEvent const&); // NOLINT
+    MCVAPI enum class EventResult onEvent(struct PlayerFormResponseEvent const&);
     /**
      * @symbol ?onEvent\@ScriptFormPromiseTracker\@\@UEAA?AW4EventResult\@\@AEBUPlayerFormCloseEvent\@\@\@Z
      */
-    MCVAPI enum class EventResult onEvent(struct PlayerFormCloseEvent const&); // NOLINT
+    MCVAPI enum class EventResult onEvent(struct PlayerFormCloseEvent const&);
 #endif
     /**
      * @symbol ??0ScriptFormPromiseTracker\@\@QEAA\@XZ
      */
-    MCAPI ScriptFormPromiseTracker(); // NOLINT
+    MCAPI ScriptFormPromiseTracker();
     /**
      * @symbol ?handleFormResponse\@ScriptFormPromiseTracker\@\@QEAAXIAEBVValue\@Json\@\@\@Z
      */
-    MCAPI void handleFormResponse(unsigned int, class Json::Value const&); // NOLINT
+    MCAPI void handleFormResponse(unsigned int, class Json::Value const&);
     /**
      * @symbol ?handlePlayerQuit\@ScriptFormPromiseTracker\@\@QEAAXAEBVNetworkIdentifier\@\@\@Z
      */
-    MCAPI void handlePlayerQuit(class NetworkIdentifier const&); // NOLINT
+    MCAPI void handlePlayerQuit(class NetworkIdentifier const&);
     /**
      * @symbol ?rejectAllForShutdown\@ScriptFormPromiseTracker\@\@QEAAXXZ
      */
-    MCAPI void rejectAllForShutdown(); // NOLINT
+    MCAPI void rejectAllForShutdown();
+    // NOLINTEND
 };

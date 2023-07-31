@@ -14,34 +14,36 @@ public:
     GenericPathNavigation()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?initializeInternal\@GenericPathNavigation\@\@UEAAXAEAVMob\@\@PEAUNavigationDescription\@\@\@Z
      */
-    virtual void initializeInternal(class Mob&, struct NavigationDescription*); // NOLINT
+    virtual void initializeInternal(class Mob&, struct NavigationDescription*);
     /**
      * @vftbl 2
      * @symbol ?tick\@GenericPathNavigation\@\@MEAAXAEAVNavigationComponent\@\@AEAVMob\@\@\@Z
      */
-    virtual void tick(class NavigationComponent&, class Mob&); // NOLINT
+    virtual void tick(class NavigationComponent&, class Mob&);
     /**
      * @vftbl 3
      * @symbol ?getTempMobPos\@GenericPathNavigation\@\@MEBA?AVVec3\@\@AEBVMob\@\@\@Z
      */
-    virtual class Vec3 getTempMobPos(class Mob const&) const; // NOLINT
+    virtual class Vec3 getTempMobPos(class Mob const&) const;
     /**
      * @vftbl 9
      * @symbol ?stop\@GenericPathNavigation\@\@MEAAXAEAVNavigationComponent\@\@AEAVMob\@\@\@Z
      */
-    virtual void stop(class NavigationComponent&, class Mob&); // NOLINT
+    virtual void stop(class NavigationComponent&, class Mob&);
     /**
      * @vftbl 12
      * @symbol ?updatePath\@GenericPathNavigation\@\@MEAAXAEAVNavigationComponent\@\@AEAVMob\@\@\@Z
      */
-    virtual void updatePath(class NavigationComponent&, class Mob&); // NOLINT
+    virtual void updatePath(class NavigationComponent&, class Mob&);
+    // NOLINTEND
 };

@@ -11,24 +11,25 @@ public:
     TrimMaterialRegistry()                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?getAllEntries\@TrimMaterialRegistry\@\@QEBAAEBV?$vector\@UTrimMaterial\@\@V?$allocator\@UTrimMaterial\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<struct TrimMaterial> const& getAllEntries() const; // NOLINT
+    MCAPI std::vector<struct TrimMaterial> const& getAllEntries() const;
     /**
      * @symbol
      * ?getTrimMaterialByItemName\@TrimMaterialRegistry\@\@QEBA?AV?$optional\@UTrimMaterial\@\@\@std\@\@AEBVHashedString\@\@\@Z
      */
-    MCAPI class std::optional<struct TrimMaterial> getTrimMaterialByItemName(class HashedString const&) const; // NOLINT
+    MCAPI std::optional<struct TrimMaterial> getTrimMaterialByItemName(class HashedString const&) const;
     /**
      * @symbol
      * ?getTrimMaterialByMaterialId\@TrimMaterialRegistry\@\@QEBA?AV?$optional\@UTrimMaterial\@\@\@std\@\@AEBVHashedString\@\@\@Z
      */
-    MCAPI class std::optional<struct TrimMaterial>
-    getTrimMaterialByMaterialId(class HashedString const&) const; // NOLINT
+    MCAPI std::optional<struct TrimMaterial> getTrimMaterialByMaterialId(class HashedString const&) const;
     /**
      * @symbol ?initializeServer\@TrimMaterialRegistry\@\@QEAAXXZ
      */
-    MCAPI void initializeServer(); // NOLINT
+    MCAPI void initializeServer();
+    // NOLINTEND
 };

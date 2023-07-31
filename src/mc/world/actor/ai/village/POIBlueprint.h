@@ -11,6 +11,7 @@ public:
     POIBlueprint()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0POIBlueprint\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4POIType\@\@M_N_K3000\@Z
@@ -20,10 +21,11 @@ public:
         enum class POIType,
         float,
         bool,
-        unsigned __int64,
-        unsigned __int64,
+        uint64_t,
+        uint64_t,
         std::string,
         std::string,
         std::string
-    ); // NOLINT
+    );
+    // NOLINTEND
 };

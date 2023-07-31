@@ -13,10 +13,12 @@ public:
     BorderCellEntry()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1BorderCellEntry\@BlendingDataFactoryUtil\@\@QEAA\@XZ
      */
-    MCAPI ~BorderCellEntry(); // NOLINT
+    MCAPI ~BorderCellEntry();
+    // NOLINTEND
 };
 
 }; // namespace BlendingDataFactoryUtil

@@ -10,12 +10,14 @@ public:
     SyncedPlayerMovementSettings(SyncedPlayerMovementSettings const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0SyncedPlayerMovementSettings\@\@QEAA\@AEBUPlayerMovementSettings\@\@\@Z
      */
-    MCAPI SyncedPlayerMovementSettings(struct PlayerMovementSettings const&); // NOLINT
+    MCAPI SyncedPlayerMovementSettings(struct PlayerMovementSettings const&);
     /**
      * @symbol ??0SyncedPlayerMovementSettings\@\@QEAA\@XZ
      */
-    MCAPI SyncedPlayerMovementSettings(); // NOLINT
+    MCAPI SyncedPlayerMovementSettings();
+    // NOLINTEND
 };

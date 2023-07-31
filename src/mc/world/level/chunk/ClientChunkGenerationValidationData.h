@@ -11,16 +11,19 @@ public:
     ClientChunkGenerationValidationData()                                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?captureServerChunkData\@ClientChunkGenerationValidationData\@\@QEAAXAEAVChunkSource\@\@\@Z
      */
-    MCAPI void captureServerChunkData(class ChunkSource&); // NOLINT
+    MCAPI void captureServerChunkData(class ChunkSource&);
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_captureChunkData\@ClientChunkGenerationValidationData\@\@IEAAXAEAV?$map\@VChunkPos\@\@V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@U?$less\@VChunkPos\@\@\@3\@V?$allocator\@U?$pair\@$$CBVChunkPos\@\@V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@std\@\@\@3\@\@std\@\@AEAVChunkSource\@\@\@Z
      */
-    MCAPI void
-    _captureChunkData(class std::map<class ChunkPos, std::vector<std::string>, struct std::less<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::vector<std::string>>>>&, class ChunkSource&); // NOLINT
+    MCAPI void _captureChunkData(std::map<class ChunkPos, std::vector<std::string>>&, class ChunkSource&);
+    // NOLINTEND
 };

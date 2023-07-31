@@ -13,12 +13,14 @@ public:
     PublisherDisconnector()                                        = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_PUBSUB_DETAIL_PUBLISHERDISCONNECTOR
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~PublisherDisconnector(); // NOLINT
+    MCVAPI ~PublisherDisconnector();
 #endif
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::PubSub::Detail

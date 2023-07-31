@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace VRBobControlSystemInternal {
+// NOLINTBEGIN
 /**
  * @symbol
  * ?tickVRBobControl\@VRBobControlSystemInternal\@\@YAXAEBVStrictEntityContext\@\@AEBUAABBShapeComponent\@\@AEBUAbilitiesComponent\@\@AEBUPlayerInputModeComponent\@\@AEAUStateVectorComponent\@\@AEBVIConstBlockSource\@\@\@Z
  */
 MCAPI void
-tickVRBobControl(class StrictEntityContext const&, struct AABBShapeComponent const&, struct AbilitiesComponent const&, struct PlayerInputModeComponent const&, struct StateVectorComponent&, class IConstBlockSource const&); // NOLINT
+tickVRBobControl(class StrictEntityContext const&, struct AABBShapeComponent const&, struct AbilitiesComponent const&, struct PlayerInputModeComponent const&, struct StateVectorComponent&, class IConstBlockSource const&);
+// NOLINTEND
 
 }; // namespace VRBobControlSystemInternal

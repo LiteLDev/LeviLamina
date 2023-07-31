@@ -18,12 +18,13 @@ public:
     RetryPolicy()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?getDelay\@RetryPolicy\@Http\@Bedrock\@\@QEBA?AV?$optional\@V?$duration\@_JU?$ratio\@$00$00\@std\@\@\@chrono\@std\@\@\@std\@\@AEBVResponse\@23\@\@Z
      */
-    MCAPI class std::optional<class std::chrono::duration<__int64, struct std::ratio<1, 1>>>
-    getDelay(class Bedrock::Http::Response const&) const; // NOLINT
+    MCAPI std::optional<std::chrono::seconds> getDelay(class Bedrock::Http::Response const&) const;
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Http

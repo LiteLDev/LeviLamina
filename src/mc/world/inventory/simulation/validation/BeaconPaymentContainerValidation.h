@@ -14,63 +14,63 @@ public:
     BeaconPaymentContainerValidation()                                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?isValidSlotForContainer\@ContainerValidationBase\@\@UEBA_NAEBVContainerScreenContext\@\@AEBVContainer\@\@H\@Z
      */
-    virtual bool
-    isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const; // NOLINT
+    virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
     /**
      * @vftbl 2
      * @symbol
      * ?isItemAllowedInSlot\@BeaconPaymentContainerValidation\@\@UEBA_NAEBVContainerScreenContext\@\@HAEBVItemStackBase\@\@H\@Z
      */
-    virtual bool
-    isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const; // NOLINT
+    virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3(); // NOLINT
+    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol ?isItemAllowedToAdd\@BeaconPaymentContainerValidation\@\@UEBA_NAEBVItemStack\@\@\@Z
      */
-    virtual bool isItemAllowedToAdd(class ItemStack const&) const; // NOLINT
+    virtual bool isItemAllowedToAdd(class ItemStack const&) const;
     /**
      * @vftbl 5
      * @symbol __unk_vfn_5
      */
-    virtual void __unk_vfn_5(); // NOLINT
+    virtual void __unk_vfn_5();
     /**
      * @vftbl 6
      * @symbol ?canItemMoveToContainer\@ContainerValidationBase\@\@UEBA_NAEBVItemStackBase\@\@\@Z
      */
-    virtual bool canItemMoveToContainer(class ItemStackBase const&) const; // NOLINT
+    virtual bool canItemMoveToContainer(class ItemStackBase const&) const;
     /**
      * @vftbl 7
      * @symbol __unk_vfn_7
      */
-    virtual void __unk_vfn_7(); // NOLINT
+    virtual void __unk_vfn_7();
     /**
      * @vftbl 8
      * @symbol ?getContainerOffset\@BeaconPaymentContainerValidation\@\@UEBAHAEBVContainerScreenContext\@\@\@Z
      */
-    virtual int getContainerOffset(class ContainerScreenContext const&) const; // NOLINT
+    virtual int getContainerOffset(class ContainerScreenContext const&) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEACONPAYMENTCONTAINERVALIDATION
     /**
      * @symbol ?canDestroy\@BeaconPaymentContainerValidation\@\@UEBA_NAEBVContainerScreenContext\@\@\@Z
      */
-    MCVAPI bool canDestroy(class ContainerScreenContext const&) const; // NOLINT
+    MCVAPI bool canDestroy(class ContainerScreenContext const&) const;
     /**
      * @symbol ?getAvailableSetCount\@BeaconPaymentContainerValidation\@\@UEBAHHAEBVItemStackBase\@\@\@Z
      */
-    MCVAPI int getAvailableSetCount(int, class ItemStackBase const&) const; // NOLINT
+    MCVAPI int getAvailableSetCount(int, class ItemStackBase const&) const;
 #endif
+    // NOLINTEND
 };

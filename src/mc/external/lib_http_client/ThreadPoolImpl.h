@@ -27,16 +27,18 @@ public:
         ActionStatusImpl()                                   = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @vftbl 0
          * @symbol ?Complete\@ActionStatusImpl\@ThreadPoolImpl\@OS\@\@UEAAXXZ
          */
-        virtual void Complete(); // NOLINT
+        virtual void Complete();
         /**
          * @vftbl 1
          * @symbol ?MayRunLong\@ActionStatusImpl\@ThreadPoolImpl\@OS\@\@UEAAXXZ
          */
-        virtual void MayRunLong(); // NOLINT
+        virtual void MayRunLong();
+        // NOLINTEND
     };
 
 public:
@@ -46,12 +48,12 @@ public:
     ThreadPoolImpl()                                 = delete;
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?TPCallback\@ThreadPoolImpl\@OS\@\@CAXPEAU_TP_CALLBACK_INSTANCE\@\@PEAXPEAU_TP_WORK\@\@\@Z
      */
-    MCAPI static void TPCallback(struct _TP_CALLBACK_INSTANCE*, void*, struct _TP_WORK*); // NOLINT
-
-private:
+    MCAPI static void TPCallback(struct _TP_CALLBACK_INSTANCE*, void*, struct _TP_WORK*);
+    // NOLINTEND
 };
 
 }; // namespace OS

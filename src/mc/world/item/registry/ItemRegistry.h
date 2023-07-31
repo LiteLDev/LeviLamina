@@ -30,10 +30,12 @@ public:
         ComplexAlias()                               = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1ComplexAlias\@ItemRegistry\@\@QEAA\@XZ
          */
-        MCAPI ~ComplexAlias(); // NOLINT
+        MCAPI ~ComplexAlias();
+        // NOLINTEND
     };
 
     struct ItemAlias {
@@ -45,10 +47,12 @@ public:
         ItemAlias()                            = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1ItemAlias\@ItemRegistry\@\@QEAA\@XZ
          */
-        MCAPI ~ItemAlias(); // NOLINT
+        MCAPI ~ItemAlias();
+        // NOLINTEND
     };
 
     struct ItemHashAlias {
@@ -60,10 +64,12 @@ public:
         ItemHashAlias()                                = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1ItemHashAlias\@ItemRegistry\@\@QEAA\@XZ
          */
-        MCAPI ~ItemHashAlias(); // NOLINT
+        MCAPI ~ItemHashAlias();
+        // NOLINTEND
     };
 
 public:
@@ -72,31 +78,34 @@ public:
     ItemRegistry(ItemRegistry const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ItemRegistry\@\@QEAA\@XZ
      */
-    MCAPI ItemRegistry(); // NOLINT
+    MCAPI ItemRegistry();
     /**
      * @symbol ??1ItemRegistry\@\@QEAA\@XZ
      */
-    MCAPI ~ItemRegistry(); // NOLINT
+    MCAPI ~ItemRegistry();
     /**
      * @symbol ?MINECRAFT_NAMESPACE\@ItemRegistry\@\@2V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@B
      */
-    MCAPI static class std::basic_string_view<char, struct std::char_traits<char>> const MINECRAFT_NAMESPACE; // NOLINT
+    MCAPI static std::string_view const MINECRAFT_NAMESPACE;
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_loadItemData\@ItemRegistry\@\@AEAAXAEAVResourcePackManager\@\@V?$function\@$$A6AXAEAV?$WeakPtr\@VItem\@\@\@\@AEAVValue\@Json\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@\@Z\@std\@\@AEBVExperiments\@\@W4ItemVersion\@\@\@Z
      */
     MCAPI void _loadItemData(
         class ResourcePackManager&,
-        class std::function<
+        std::function<
             void(class WeakPtr<class Item>&, class Json::Value&, class SemVersion const&, bool, class Experiments const&)>,
         class Experiments const&,
         enum class ItemVersion
-    ); // NOLINT
+    );
     /**
      * @symbol
      * ?_loadItemDefinition\@ItemRegistry\@\@AEAAXAEAVValue\@Json\@\@_NV?$function\@$$A6AXAEAV?$WeakPtr\@VItem\@\@\@\@AEAVValue\@Json\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@\@Z\@std\@\@AEBVExperiments\@\@W4ItemVersion\@\@W4PackType\@\@\@Z
@@ -104,12 +113,12 @@ public:
     MCAPI void _loadItemDefinition(
         class Json::Value&,
         bool,
-        class std::function<
+        std::function<
             void(class WeakPtr<class Item>&, class Json::Value&, class SemVersion const&, bool, class Experiments const&)>,
         class Experiments const&,
         enum class ItemVersion,
         enum class PackType
-    ); // NOLINT
+    );
     /**
      * @symbol
      * ?_parseItemDefinition\@ItemRegistry\@\@AEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@_NV?$function\@$$A6AXAEAV?$WeakPtr\@VItem\@\@\@\@AEAVValue\@Json\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@\@Z\@3\@AEBVExperiments\@\@W4ItemVersion\@\@W4PackType\@\@\@Z
@@ -117,118 +126,113 @@ public:
     MCAPI std::string _parseItemDefinition(
         std::string const&,
         bool,
-        class std::function<
+        std::function<
             void(class WeakPtr<class Item>&, class Json::Value&, class SemVersion const&, bool, class Experiments const&)>,
         class Experiments const&,
         enum class ItemVersion,
         enum class PackType
-    ); // NOLINT
+    );
     /**
      * @symbol ?addItemToTagMap\@ItemRegistry\@\@AEAAXAEBVItem\@\@\@Z
      */
-    MCAPI void addItemToTagMap(class Item const&); // NOLINT
+    MCAPI void addItemToTagMap(class Item const&);
     /**
      * @symbol ?clearItemAndCreativeItemRegistry\@ItemRegistry\@\@AEAAXXZ
      */
-    MCAPI void clearItemAndCreativeItemRegistry(); // NOLINT
+    MCAPI void clearItemAndCreativeItemRegistry();
     /**
      * @symbol
      * ?digestServerItemComponents\@ItemRegistry\@\@AEAAXAEBV?$vector\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VCompoundTag\@\@\@std\@\@V?$allocator\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VCompoundTag\@\@\@std\@\@\@2\@\@std\@\@\@Z
      */
-    MCAPI void
-    digestServerItemComponents(std::vector<struct std::pair<std::string, class CompoundTag>> const&); // NOLINT
+    MCAPI void digestServerItemComponents(std::vector<std::pair<std::string, class CompoundTag>> const&);
     /**
      * @symbol ?finishedRegistration\@ItemRegistry\@\@AEAAXXZ
      */
-    MCAPI void finishedRegistration(); // NOLINT
+    MCAPI void finishedRegistration();
     /**
      * @symbol ?getItem\@ItemRegistry\@\@AEAA?AV?$WeakPtr\@VItem\@\@\@\@F\@Z
      */
-    MCAPI class WeakPtr<class Item> getItem(short); // NOLINT
+    MCAPI class WeakPtr<class Item> getItem(short);
     /**
      * @symbol ?getItem\@ItemRegistry\@\@AEAA?AV?$WeakPtr\@VItem\@\@\@\@AEBVHashedString\@\@\@Z
      */
-    MCAPI class WeakPtr<class Item> getItem(class HashedString const&); // NOLINT
+    MCAPI class WeakPtr<class Item> getItem(class HashedString const&);
     /**
      * @symbol ?getNameFromAlias\@ItemRegistry\@\@AEBA?AU?$pair\@VHashedString\@\@H\@std\@\@AEBVHashedString\@\@H\@Z
      */
-    MCAPI struct std::pair<class HashedString, int> getNameFromAlias(class HashedString const&, int) const; // NOLINT
+    MCAPI std::pair<class HashedString, int> getNameFromAlias(class HashedString const&, int) const;
     /**
      * @symbol ?getRef\@ItemRegistry\@\@AEAA?AVItemRegistryRef\@\@XZ
      */
-    MCAPI class ItemRegistryRef getRef(); // NOLINT
+    MCAPI class ItemRegistryRef getRef();
     /**
      * @symbol ?init\@ItemRegistry\@\@AEAAXAEBVExperiments\@\@AEBVBaseGameVersion\@\@PEAVResourcePackManager\@\@\@Z
      */
-    MCAPI void init(class Experiments const&, class BaseGameVersion const&, class ResourcePackManager*); // NOLINT
+    MCAPI void init(class Experiments const&, class BaseGameVersion const&, class ResourcePackManager*);
     /**
      * @symbol
      * ?initCreativeItemsServer\@ItemRegistry\@\@AEAAXPEAVActorInfoRegistry\@\@PEAVBlockDefinitionGroup\@\@_NAEBVExperiments\@\@V?$function\@$$A6AXVItemRegistryRef\@\@PEAVActorInfoRegistry\@\@PEAVBlockDefinitionGroup\@\@PEAVCreativeItemRegistry\@\@_NAEBVBaseGameVersion\@\@AEBVExperiments\@\@\@Z\@std\@\@\@Z
      */
     MCAPI void
-    initCreativeItemsServer(class ActorInfoRegistry*, class BlockDefinitionGroup*, bool, class Experiments const&, class std::function<void(class ItemRegistryRef, class ActorInfoRegistry*, class BlockDefinitionGroup*, class CreativeItemRegistry*, bool, class BaseGameVersion const&, class Experiments const&)>); // NOLINT
+    initCreativeItemsServer(class ActorInfoRegistry*, class BlockDefinitionGroup*, bool, class Experiments const&, std::function<void(class ItemRegistryRef, class ActorInfoRegistry*, class BlockDefinitionGroup*, class CreativeItemRegistry*, bool, class BaseGameVersion const&, class Experiments const&)>);
     /**
      * @symbol ?initServerData\@ItemRegistry\@\@AEAAXAEAVResourcePackManager\@\@AEBVExperiments\@\@W4ItemVersion\@\@\@Z
      */
-    MCAPI void initServerData(class ResourcePackManager&, class Experiments const&, enum class ItemVersion); // NOLINT
+    MCAPI void initServerData(class ResourcePackManager&, class Experiments const&, enum class ItemVersion);
     /**
      * @symbol ?isComponentBasedItemSchema\@ItemRegistry\@\@AEAA_NAEBVSemVersion\@\@AEBVValue\@Json\@\@\@Z
      */
-    MCAPI bool isComponentBasedItemSchema(class SemVersion const&, class Json::Value const&); // NOLINT
+    MCAPI bool isComponentBasedItemSchema(class SemVersion const&, class Json::Value const&);
     /**
      * @symbol ?lookupByName\@ItemRegistry\@\@AEBA?AV?$WeakPtr\@VItem\@\@\@\@AEBVHashedString\@\@\@Z
      */
-    MCAPI class WeakPtr<class Item> lookupByName(class HashedString const&) const; // NOLINT
+    MCAPI class WeakPtr<class Item> lookupByName(class HashedString const&) const;
     /**
      * @symbol
      * ?lookupByName\@ItemRegistry\@\@AEBA?AV?$WeakPtr\@VItem\@\@\@\@AEAHV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI class WeakPtr<class Item>
-    lookupByName(int&, class std::basic_string_view<char, struct std::char_traits<char>>) const; // NOLINT
+    MCAPI class WeakPtr<class Item> lookupByName(int&, std::string_view) const;
     /**
      * @symbol
      * ?lookupByNameNoAlias\@ItemRegistry\@\@AEBA?AV?$WeakPtr\@VItem\@\@\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI class WeakPtr<class Item>
-        lookupByNameNoAlias(class std::basic_string_view<char, struct std::char_traits<char>>) const; // NOLINT
+    MCAPI class WeakPtr<class Item> lookupByNameNoAlias(std::string_view) const;
     /**
      * @symbol ?lookupByNameNoParsing\@ItemRegistry\@\@AEBA?AV?$WeakPtr\@VItem\@\@\@\@AEAHAEBVHashedString\@\@\@Z
      */
-    MCAPI class WeakPtr<class Item> lookupByNameNoParsing(int&, class HashedString const&) const; // NOLINT
+    MCAPI class WeakPtr<class Item> lookupByNameNoParsing(int&, class HashedString const&) const;
     /**
      * @symbol ?registerAlias\@ItemRegistry\@\@AEAAXAEBVHashedString\@\@0AEBVBaseGameVersion\@\@\@Z
      */
-    MCAPI void
-    registerAlias(class HashedString const&, class HashedString const&, class BaseGameVersion const&); // NOLINT
+    MCAPI void registerAlias(class HashedString const&, class HashedString const&, class BaseGameVersion const&);
     /**
      * @symbol
      * ?registerComplexAlias\@ItemRegistry\@\@AEAA?AV?$WeakPtr\@VItem\@\@\@\@AEBVHashedString\@\@AEBUComplexAlias\@1\@\@Z
      */
     MCAPI class WeakPtr<class Item>
-    registerComplexAlias(class HashedString const&, struct ItemRegistry::ComplexAlias const&); // NOLINT
+    registerComplexAlias(class HashedString const&, struct ItemRegistry::ComplexAlias const&);
     /**
      * @symbol ?registerItem\@ItemRegistry\@\@AEAAXV?$SharedPtr\@VItem\@\@\@\@\@Z
      */
-    MCAPI void registerItem(class SharedPtr<class Item>); // NOLINT
+    MCAPI void registerItem(class SharedPtr<class Item>);
     /**
      * @symbol ?registerLegacyID\@ItemRegistry\@\@AEAAXAEBVHashedString\@\@F\@Z
      */
-    MCAPI void registerLegacyID(class HashedString const&, short); // NOLINT
+    MCAPI void registerLegacyID(class HashedString const&, short);
     /**
      * @symbol ?registerLegacyMapping\@ItemRegistry\@\@AEAAXAEBVHashedString\@\@0AEBVBaseGameVersion\@\@\@Z
      */
     MCAPI void
-    registerLegacyMapping(class HashedString const&, class HashedString const&, class BaseGameVersion const&); // NOLINT
+    registerLegacyMapping(class HashedString const&, class HashedString const&, class BaseGameVersion const&);
     /**
      * @symbol ?unregisterItem\@ItemRegistry\@\@AEAAXAEBVHashedString\@\@\@Z
      */
-    MCAPI void unregisterItem(class HashedString const&); // NOLINT
+    MCAPI void unregisterItem(class HashedString const&);
     /**
      * @symbol
      * ?validateServerItemComponents\@ItemRegistry\@\@AEAA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEBV?$vector\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VCompoundTag\@\@\@std\@\@V?$allocator\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VCompoundTag\@\@\@std\@\@\@2\@\@3\@\@Z
      */
     MCAPI std::vector<std::string>
-          validateServerItemComponents(std::vector<struct std::pair<std::string, class CompoundTag>> const&); // NOLINT
-
-private:
+          validateServerItemComponents(std::vector<std::pair<std::string, class CompoundTag>> const&);
+    // NOLINTEND
 };

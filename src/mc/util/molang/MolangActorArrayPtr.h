@@ -11,12 +11,14 @@ public:
     MolangActorArrayPtr()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0MolangActorArrayPtr\@\@QEAA\@V?$vector\@PEAVActor\@\@V?$allocator\@PEAVActor\@\@\@std\@\@\@std\@\@\@Z
      */
-    MCAPI MolangActorArrayPtr(std::vector<class Actor*>); // NOLINT
+    MCAPI MolangActorArrayPtr(std::vector<class Actor*>);
     /**
      * @symbol ??1MolangActorArrayPtr\@\@QEAA\@XZ
      */
-    MCAPI ~MolangActorArrayPtr(); // NOLINT
+    MCAPI ~MolangActorArrayPtr();
+    // NOLINTEND
 };

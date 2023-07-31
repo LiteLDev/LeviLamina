@@ -3,9 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace ApiDiag {
+// NOLINTBEGIN
 /**
  * @symbol ?g_globalApiRefs\@ApiDiag\@\@3U?$atomic\@I\@std\@\@A
  */
-MCAPI extern struct std::atomic<unsigned int> g_globalApiRefs; // NOLINT
+MCAPI extern std::atomic<unsigned int> g_globalApiRefs;
+// NOLINTEND
 
 }; // namespace ApiDiag

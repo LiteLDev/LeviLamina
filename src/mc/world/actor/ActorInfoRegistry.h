@@ -10,40 +10,42 @@ public:
     ActorInfoRegistry(ActorInfoRegistry const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ActorInfoRegistry\@\@QEAA\@XZ
      */
-    MCAPI ActorInfoRegistry(); // NOLINT
+    MCAPI ActorInfoRegistry();
     /**
      * @symbol ?getActorInfo\@ActorInfoRegistry\@\@QEBAAEBUActorInfo\@\@I\@Z
      */
-    MCAPI struct ActorInfo const& getActorInfo(unsigned int) const; // NOLINT
+    MCAPI struct ActorInfo const& getActorInfo(unsigned int) const;
     /**
      * @symbol ?getActorInfoId\@ActorInfoRegistry\@\@QEBAIAEB_K\@Z
      */
-    MCAPI unsigned int getActorInfoId(unsigned __int64 const&) const; // NOLINT
+    MCAPI unsigned int getActorInfoId(uint64_t const&) const;
     /**
      * @symbol
      * ?getActorInfoId\@ActorInfoRegistry\@\@QEBAIAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI unsigned int getActorInfoId(std::string const&) const; // NOLINT
+    MCAPI unsigned int getActorInfoId(std::string const&) const;
     /**
      * @symbol
      * ?getActorInfoList\@ActorInfoRegistry\@\@QEBA?AV?$vector\@UActorInfo\@\@V?$allocator\@UActorInfo\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI std::vector<struct ActorInfo> getActorInfoList() const; // NOLINT
+    MCAPI std::vector<struct ActorInfo> getActorInfoList() const;
     /**
      * @symbol
      * ?isSpawnEggAvailable\@ActorInfoRegistry\@\@QEAA_NV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI bool isSpawnEggAvailable(std::string); // NOLINT
+    MCAPI bool isSpawnEggAvailable(std::string);
     /**
      * @symbol ?registerActorInfo\@ActorInfoRegistry\@\@QEAAXAEBUActorInfo\@\@\@Z
      */
-    MCAPI void registerActorInfo(struct ActorInfo const&); // NOLINT
+    MCAPI void registerActorInfo(struct ActorInfo const&);
     /**
      * @symbol
      * ?setSpawnEggAvailable\@ActorInfoRegistry\@\@QEAAXV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
-    MCAPI void setSpawnEggAvailable(std::string, bool); // NOLINT
+    MCAPI void setSpawnEggAvailable(std::string, bool);
+    // NOLINTEND
 };

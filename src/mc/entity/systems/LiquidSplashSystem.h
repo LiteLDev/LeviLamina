@@ -16,17 +16,19 @@ public:
     LiquidSplashSystem()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@LiquidSplashSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_tickLiquidSplash\@LiquidSplashSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UWaterSplashEffectRequestFlag\@\@\@\@\@\@VActorOwnerComponent\@\@\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UPostSplashGameEventRequestFlag\@\@\@\@\@\@VActorOwnerComponent\@\@\@\@\@Z
      */
-    MCAPI static void _tickLiquidSplash(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct WaterSplashEffectRequestFlag>>, class ActorOwnerComponent>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PostSplashGameEventRequestFlag>>, class ActorOwnerComponent>); // NOLINT
-
-private:
+    MCAPI static void _tickLiquidSplash(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct WaterSplashEffectRequestFlag>>, class ActorOwnerComponent>, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct PostSplashGameEventRequestFlag>>, class ActorOwnerComponent>);
+    // NOLINTEND
 };

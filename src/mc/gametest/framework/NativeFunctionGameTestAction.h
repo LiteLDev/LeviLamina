@@ -18,23 +18,24 @@ public:
     NativeFunctionGameTestAction()                                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol
      * ?run\@NativeFunctionGameTestAction\@gametest\@\@UEAA?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@XZ
      */
-    virtual class std::optional<struct gametest::GameTestError> run(); // NOLINT
+    virtual std::optional<struct gametest::GameTestError> run();
     /**
      * @symbol
      * ??0NativeFunctionGameTestAction\@gametest\@\@QEAA\@V?$function\@$$A6A?AV?$optional\@UGameTestError\@gametest\@\@\@std\@\@XZ\@std\@\@\@Z
      */
-    MCAPI NativeFunctionGameTestAction(class std::function<class std::optional<struct gametest::GameTestError>(void
-                                       )>); // NOLINT
+    MCAPI NativeFunctionGameTestAction(std::function<std::optional<struct gametest::GameTestError>(void)>);
+    // NOLINTEND
 };
 
 }; // namespace gametest

@@ -10,12 +10,14 @@ public:
     ItemStopUseOnEvent()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ItemStopUseOnEvent\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI ItemStopUseOnEvent(struct ItemStopUseOnEvent const&); // NOLINT
+    MCAPI ItemStopUseOnEvent(struct ItemStopUseOnEvent const&);
     /**
      * @symbol ??1ItemStopUseOnEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ItemStopUseOnEvent(); // NOLINT
+    MCAPI ~ItemStopUseOnEvent();
+    // NOLINTEND
 };

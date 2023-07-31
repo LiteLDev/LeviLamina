@@ -11,16 +11,18 @@ public:
     CompoundBlockVolumeItem()                                          = delete;
 
 public:
-    /**
-     * @symbol ??9CompoundBlockVolumeItem\@\@QEBA_NAEBV0\@\@Z
-     */
-    MCAPI bool operator!=(class CompoundBlockVolumeItem const&) const; // NOLINT
-    /**
-     * @symbol ??8CompoundBlockVolumeItem\@\@QEBA_NAEBV0\@\@Z
-     */
-    MCAPI bool operator==(class CompoundBlockVolumeItem const&) const; // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol ?bindType\@CompoundBlockVolumeItem\@\@SAXXZ
      */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI static void bindType();
+    /**
+     * @symbol ??9CompoundBlockVolumeItem\@\@QEBA_NAEBV0\@\@Z
+     */
+    MCAPI bool operator!=(class CompoundBlockVolumeItem const&) const;
+    /**
+     * @symbol ??8CompoundBlockVolumeItem\@\@QEBA_NAEBV0\@\@Z
+     */
+    MCAPI bool operator==(class CompoundBlockVolumeItem const&) const;
+    // NOLINTEND
 };

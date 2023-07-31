@@ -10,11 +10,13 @@ template<typename T0> class Optional;
 // clang-format on
 
 namespace CheckFallDamageInMoveSystemImpl {
+// NOLINTBEGIN
 /**
  * @symbol
  * ?checkFallDamageInMove\@CheckFallDamageInMoveSystemImpl\@\@YAXAEAVStrictEntityContext\@\@AEBUMoveRequestComponent\@\@V?$Optional\@$$CBV?$FlagComponent\@UOnGroundFlag\@\@\@\@\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UCheckFallDamageRequestComponent\@\@\@\@\@Z
  */
 MCAPI void
-checkFallDamageInMove(class StrictEntityContext&, struct MoveRequestComponent const&, class Optional<class FlagComponent<struct OnGroundFlag> const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct CheckFallDamageRequestComponent>&); // NOLINT
+checkFallDamageInMove(class StrictEntityContext&, struct MoveRequestComponent const&, class Optional<class FlagComponent<struct OnGroundFlag> const>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct CheckFallDamageRequestComponent>&);
+// NOLINTEND
 
 }; // namespace CheckFallDamageInMoveSystemImpl

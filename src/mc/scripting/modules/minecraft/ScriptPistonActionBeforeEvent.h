@@ -16,21 +16,23 @@ public:
     ScriptPistonActionBeforeEvent()                                                = delete;
 
 public:
-    /**
-     * @symbol ??4ScriptPistonActionBeforeEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-     */
-    MCAPI struct ScriptModuleMinecraft::ScriptPistonActionBeforeEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptPistonActionBeforeEvent&&); // NOLINT
-    /**
-     * @symbol ??1ScriptPistonActionBeforeEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptPistonActionBeforeEvent(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptPistonActionBeforeEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptPistonActionBeforeEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptPistonActionBeforeEvent>
-    bind(); // NOLINT
+    bind();
+    /**
+     * @symbol ??4ScriptPistonActionBeforeEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
+     */
+    MCAPI struct ScriptModuleMinecraft::ScriptPistonActionBeforeEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptPistonActionBeforeEvent&&);
+    /**
+     * @symbol ??1ScriptPistonActionBeforeEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptPistonActionBeforeEvent();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

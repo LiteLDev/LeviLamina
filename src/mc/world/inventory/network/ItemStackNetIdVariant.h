@@ -10,70 +10,71 @@
 struct ItemStackNetIdVariant {
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ItemStackNetIdVariant\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant&&); // NOLINT
+    MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant&&);
     /**
      * @symbol ??0ItemStackNetIdVariant\@\@QEAA\@AEBU0\@\@Z
      */
-    MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant const&); // NOLINT
+    MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant const&);
     /**
      * @symbol ??0ItemStackNetIdVariant\@\@QEAA\@XZ
      */
-    MCAPI ItemStackNetIdVariant(); // NOLINT
+    MCAPI ItemStackNetIdVariant();
     /**
      * @symbol
      * ?deserialize\@ItemStackNetIdVariant\@\@QEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    MCAPI class Bedrock::Result<void, class std::error_code> deserialize(class ReadOnlyBinaryStream&); // NOLINT
+    MCAPI class Bedrock::Result<void, std::error_code> deserialize(class ReadOnlyBinaryStream&);
     /**
      * @symbol ?hasServerNetId\@ItemStackNetIdVariant\@\@QEBA_NXZ
      */
-    MCAPI bool hasServerNetId() const; // NOLINT
+    MCAPI bool hasServerNetId() const;
     /**
      * @symbol ?isValid\@ItemStackNetIdVariant\@\@QEBA_NXZ
      */
-    MCAPI bool isValid() const; // NOLINT
+    MCAPI bool isValid() const;
     /**
      * @symbol ??4ItemStackNetIdVariant\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct ItemStackNetIdVariant& operator=(struct ItemStackNetIdVariant&&); // NOLINT
+    MCAPI struct ItemStackNetIdVariant& operator=(struct ItemStackNetIdVariant&&);
     /**
      * @symbol ??4ItemStackNetIdVariant\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
-    MCAPI struct ItemStackNetIdVariant& operator=(struct ItemStackNetIdVariant const&); // NOLINT
+    MCAPI struct ItemStackNetIdVariant& operator=(struct ItemStackNetIdVariant const&);
     /**
      * @symbol ??4ItemStackNetIdVariant\@\@QEAAAEAU0\@AEBV?$TypedServerNetId\@UItemStackNetIdTag\@\@H$0A\@\@\@\@Z
      */
-    MCAPI struct ItemStackNetIdVariant&
-    operator=(class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const&); // NOLINT
+    MCAPI struct ItemStackNetIdVariant& operator=(class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const&);
     /**
      * @symbol
      * ??4ItemStackNetIdVariant\@\@QEAAAEAU0\@AEBV?$TypedClientNetId\@UItemStackLegacyRequestIdTag\@\@H$0A\@\@\@\@Z
      */
     MCAPI struct ItemStackNetIdVariant&
-    operator=(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const&); // NOLINT
+    operator=(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const&);
     /**
      * @symbol ??8ItemStackNetIdVariant\@\@QEBA_NAEBU0\@\@Z
      */
-    MCAPI bool operator==(struct ItemStackNetIdVariant const&) const; // NOLINT
+    MCAPI bool operator==(struct ItemStackNetIdVariant const&) const;
     /**
      * @symbol ?serialize\@ItemStackNetIdVariant\@\@QEBAXAEAVBinaryStream\@\@\@Z
      */
-    MCAPI void serialize(class BinaryStream&) const; // NOLINT
+    MCAPI void serialize(class BinaryStream&) const;
     /**
      * @symbol
      * ?toString\@ItemStackNetIdVariant\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCAPI std::string toString() const; // NOLINT
+    MCAPI std::string toString() const;
     /**
      * @symbol
      * ?tryGetServerNetId\@ItemStackNetIdVariant\@\@QEBAPEBV?$TypedServerNetId\@UItemStackNetIdTag\@\@H$0A\@\@\@XZ
      */
-    MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const* tryGetServerNetId() const; // NOLINT
+    MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const* tryGetServerNetId() const;
     /**
      * @symbol ??1ItemStackNetIdVariant\@\@QEAA\@XZ
      */
-    MCAPI ~ItemStackNetIdVariant(); // NOLINT
+    MCAPI ~ItemStackNetIdVariant();
+    // NOLINTEND
 };

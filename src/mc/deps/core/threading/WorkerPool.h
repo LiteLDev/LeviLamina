@@ -19,57 +19,63 @@ public:
     WorkerPool()                             = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORKERPOOL
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~WorkerPool(); // NOLINT
+    MCVAPI ~WorkerPool();
 #endif
     /**
      * @symbol
      * ??0WorkerPool\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVScheduler\@\@\@Z
      */
-    MCAPI WorkerPool(std::string, class Scheduler&); // NOLINT
+    MCAPI WorkerPool(std::string, class Scheduler&);
     /**
      * @symbol
      * ??0WorkerPool\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_KAEBVOSThreadPriority\@Threading\@Bedrock\@\@V?$optional\@_K\@2\@_NV?$optional\@H\@2\@\@Z
      */
     MCAPI
-    WorkerPool(std::string, unsigned __int64, class Bedrock::Threading::OSThreadPriority const&, class std::optional<unsigned __int64>, bool, class std::optional<int>); // NOLINT
+    WorkerPool(std::string, uint64_t, class Bedrock::Threading::OSThreadPriority const&, std::optional<uint64_t>, bool, std::optional<int>);
     /**
      * @symbol ?queue\@WorkerPool\@\@QEAAXV?$shared_ptr\@VBackgroundTaskBase\@\@\@std\@\@_N\@Z
      */
-    MCAPI void queue(class std::shared_ptr<class BackgroundTaskBase>, bool); // NOLINT
+    MCAPI void queue(std::shared_ptr<class BackgroundTaskBase>, bool);
     /**
      * @symbol ?size\@WorkerPool\@\@QEBA_KXZ
      */
-    MCAPI unsigned __int64 size() const; // NOLINT
+    MCAPI uint64_t size() const;
     /**
      * @symbol ?tryPop\@WorkerPool\@\@QEAA?AV?$shared_ptr\@VBackgroundTaskBase\@\@\@std\@\@H\@Z
      */
-    MCAPI class std::shared_ptr<class BackgroundTaskBase> tryPop(int); // NOLINT
+    MCAPI std::shared_ptr<class BackgroundTaskBase> tryPop(int);
+    // NOLINTEND
 
     // protected:
+    // NOLINTBEGIN
     /**
      * @symbol ?_registerPool\@WorkerPool\@\@KAXAEAV1\@\@Z
      */
-    MCAPI static void _registerPool(class WorkerPool&); // NOLINT
+    MCAPI static void _registerPool(class WorkerPool&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_checkPendingWork\@WorkerPool\@\@AEAA_NXZ
      */
-    MCAPI bool _checkPendingWork(); // NOLINT
+    MCAPI bool _checkPendingWork();
+    // NOLINTEND
 
 protected:
+    // NOLINTBEGIN
     /**
      * @symbol ?sAllPools\@WorkerPool\@\@1V?$SmallSet\@PEAVWorkerPool\@\@\@\@A
      */
-    MCAPI static class SmallSet<class WorkerPool*> sAllPools; // NOLINT
+    MCAPI static class SmallSet<class WorkerPool*> sAllPools;
     /**
      * @symbol ?sAllPoolsMutex\@WorkerPool\@\@1Vmutex\@std\@\@A
      */
-    MCAPI static class std::mutex sAllPoolsMutex; // NOLINT
-
-private:
+    MCAPI static std::mutex sAllPoolsMutex;
+    // NOLINTEND
 };

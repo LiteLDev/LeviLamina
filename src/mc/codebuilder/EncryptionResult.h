@@ -13,10 +13,12 @@ public:
     EncryptionResult()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1EncryptionResult\@CodeBuilder\@\@QEAA\@XZ
      */
-    MCAPI ~EncryptionResult(); // NOLINT
+    MCAPI ~EncryptionResult();
+    // NOLINTEND
 };
 
 }; // namespace CodeBuilder

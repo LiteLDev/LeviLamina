@@ -16,16 +16,18 @@ public:
     ScriptActorRemovedAfterEvent()                                               = delete;
 
 public:
-    /**
-     * @symbol ??1ScriptActorRemovedAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptActorRemovedAfterEvent(); // NOLINT
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?bind\@ScriptActorRemovedAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptActorRemovedAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorRemovedAfterEvent>
-    bind(); // NOLINT
+    bind();
+    /**
+     * @symbol ??1ScriptActorRemovedAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptActorRemovedAfterEvent();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

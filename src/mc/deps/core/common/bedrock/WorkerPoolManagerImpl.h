@@ -29,10 +29,12 @@ public:
         PoolEntry()                            = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1PoolEntry\@WorkerPoolManagerImpl\@Bedrock\@\@QEAA\@XZ
          */
-        MCAPI ~PoolEntry(); // NOLINT
+        MCAPI ~PoolEntry();
+        // NOLINTEND
     };
 
 public:
@@ -41,26 +43,28 @@ public:
     WorkerPoolManagerImpl(WorkerPoolManagerImpl const&)            = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_WORKERPOOLMANAGERIMPL
     /**
      * @symbol
      * ?createWorkerPool\@WorkerPoolManagerImpl\@Bedrock\@\@UEAA?AV?$shared_ptr\@VPoolHandleInterface\@WorkerPoolManager\@Bedrock\@\@\@std\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@4\@_KAEBVOSThreadPriority\@Threading\@2\@V?$optional\@_K\@4\@_NV?$optional\@H\@4\@\@Z
      */
-    MCVAPI class std::shared_ptr<class Bedrock::WorkerPoolManager::PoolHandleInterface>
-    createWorkerPool(std::string, unsigned __int64, class Bedrock::Threading::OSThreadPriority const&, class std::optional<unsigned __int64>, bool, class std::optional<int>); // NOLINT
+    MCVAPI std::shared_ptr<class Bedrock::WorkerPoolManager::PoolHandleInterface>
+    createWorkerPool(std::string, uint64_t, class Bedrock::Threading::OSThreadPriority const&, std::optional<uint64_t>, bool, std::optional<int>);
     /**
      * @symbol ?init\@WorkerPoolManagerImpl\@Bedrock\@\@UEAAXXZ
      */
-    MCVAPI void init(); // NOLINT
+    MCVAPI void init();
     /**
      * @symbol ?tick\@WorkerPoolManagerImpl\@Bedrock\@\@UEAAXXZ
      */
-    MCVAPI void tick(); // NOLINT
+    MCVAPI void tick();
 #endif
     /**
      * @symbol ??0WorkerPoolManagerImpl\@Bedrock\@\@QEAA\@XZ
      */
-    MCAPI WorkerPoolManagerImpl(); // NOLINT
+    MCAPI WorkerPoolManagerImpl();
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

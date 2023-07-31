@@ -11,14 +11,16 @@ public:
     ScreenHandlerHUD()                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?handleAction\@ScreenHandlerHUD\@\@MEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestAction\@\@\@Z
      */
-    virtual enum class ItemStackNetResult handleAction(class ItemStackRequestAction const&); // NOLINT
+    virtual enum class ItemStackNetResult handleAction(class ItemStackRequestAction const&);
+    // NOLINTEND
 };

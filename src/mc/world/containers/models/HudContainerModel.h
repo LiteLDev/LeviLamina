@@ -14,62 +14,64 @@ public:
     HudContainerModel()                                    = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol ?containerContentChanged\@HudContainerModel\@\@UEAAXH\@Z
      */
-    virtual void containerContentChanged(int); // NOLINT
+    virtual void containerContentChanged(int);
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1(); // NOLINT
+    virtual void __unk_vfn_1();
     /**
      * @vftbl 6
      * @symbol __unk_vfn_6
      */
-    virtual void __unk_vfn_6(); // NOLINT
+    virtual void __unk_vfn_6();
     /**
      * @vftbl 7
      * @symbol ?getContainerWeakRef\@HudContainerModel\@\@UEBA?AVContainerWeakRef\@\@XZ
      */
-    virtual class ContainerWeakRef getContainerWeakRef() const; // NOLINT
+    virtual class ContainerWeakRef getContainerWeakRef() const;
     /**
      * @vftbl 12
      * @symbol __unk_vfn_12
      */
-    virtual void __unk_vfn_12(); // NOLINT
+    virtual void __unk_vfn_12();
     /**
      * @vftbl 14
      * @symbol ?isValid\@HudContainerModel\@\@UEAA_NXZ
      */
-    virtual bool isValid(); // NOLINT
+    virtual bool isValid();
     /**
      * @vftbl 15
      * @symbol __unk_vfn_15
      */
-    virtual void __unk_vfn_15(); // NOLINT
+    virtual void __unk_vfn_15();
     /**
      * @vftbl 16
      * @symbol __unk_vfn_16
      */
-    virtual void __unk_vfn_16(); // NOLINT
+    virtual void __unk_vfn_16();
     /**
      * @vftbl 19
      * @symbol __unk_vfn_19
      */
-    virtual void __unk_vfn_19(); // NOLINT
+    virtual void __unk_vfn_19();
     /**
      * @vftbl 20
      * @symbol ?_getContainer\@HudContainerModel\@\@EEBAPEAVContainer\@\@XZ
      */
-    virtual class Container* _getContainer() const; // NOLINT
+    virtual class Container* _getContainer() const;
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_refreshContainer\@HudContainerModel\@\@AEAAXXZ
      */
-    MCAPI void _refreshContainer(); // NOLINT
-
-private:
+    MCAPI void _refreshContainer();
+    // NOLINTEND
 };

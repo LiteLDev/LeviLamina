@@ -18,10 +18,12 @@ public:
     ArrayNode()                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?setContents\@ArrayNode\@JSONObject\@Bedrock\@\@QEAA_NAEBVValueWrapper\@23\@\@Z
      */
-    MCAPI bool setContents(class Bedrock::JSONObject::ValueWrapper const&); // NOLINT
+    MCAPI bool setContents(class Bedrock::JSONObject::ValueWrapper const&);
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::JSONObject

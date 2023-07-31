@@ -11,8 +11,10 @@ public:
     MolangMaterialVariable()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1MolangMaterialVariable\@\@QEAA\@XZ
      */
-    MCAPI ~MolangMaterialVariable(); // NOLINT
+    MCAPI ~MolangMaterialVariable();
+    // NOLINTEND
 };

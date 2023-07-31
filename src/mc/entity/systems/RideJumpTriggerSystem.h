@@ -17,18 +17,20 @@ public:
     RideJumpTriggerSystem()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@RideJumpTriggerSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_tickRideJumpTriggerSystem\@RideJumpTriggerSystem\@\@CAXAEAVStrictEntityContext\@\@AEBUMoveInputComponent\@\@AEBUPassengerComponent\@\@AEAUJumpRidingScaleComponent\@\@AEAUVanillaClientGameplayComponent\@\@V?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBUVehicleComponent\@\@$$CBUSynchedActorDataComponent\@\@V?$Optional\@$$CBV?$FlagComponent\@UMobFlag\@\@\@\@\@\@V?$Optional\@$$CBV?$FlagComponent\@UOnGroundFlag\@\@\@\@\@\@V?$Optional\@$$CBUPassengerComponent\@\@\@\@\@\@AEAV?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UMobOnPlayerJumpRequestComponent\@\@USendPacketsComponent\@\@\@\@\@Z
      */
     MCAPI static void
-    _tickRideJumpTriggerSystem(class StrictEntityContext&, struct MoveInputComponent const&, struct PassengerComponent const&, struct JumpRidingScaleComponent&, struct VanillaClientGameplayComponent&, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct VehicleComponent const, struct SynchedActorDataComponent const, class Optional<class FlagComponent<struct MobFlag> const>, class Optional<class FlagComponent<struct OnGroundFlag> const>, class Optional<struct PassengerComponent const>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MobOnPlayerJumpRequestComponent, struct SendPacketsComponent>&); // NOLINT
-
-private:
+    _tickRideJumpTriggerSystem(class StrictEntityContext&, struct MoveInputComponent const&, struct PassengerComponent const&, struct JumpRidingScaleComponent&, struct VanillaClientGameplayComponent&, class ViewT<class StrictEntityContext, class EntityRegistryBase, struct VehicleComponent const, struct SynchedActorDataComponent const, class Optional<class FlagComponent<struct MobFlag> const>, class Optional<class FlagComponent<struct OnGroundFlag> const>, class Optional<struct PassengerComponent const>>, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct MobOnPlayerJumpRequestComponent, struct SendPacketsComponent>&);
+    // NOLINTEND
 };

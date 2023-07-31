@@ -13,10 +13,12 @@ public:
     TLSManager()                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getSharedInstance\@TLSManager\@CustomTLS\@Threading\@Bedrock\@\@SAAEAV1234\@XZ
      */
-    MCAPI static class Bedrock::Threading::CustomTLS::TLSManager& getSharedInstance(); // NOLINT
+    MCAPI static class Bedrock::Threading::CustomTLS::TLSManager& getSharedInstance();
+    // NOLINTEND
 };
 
 }; // namespace Bedrock::Threading::CustomTLS

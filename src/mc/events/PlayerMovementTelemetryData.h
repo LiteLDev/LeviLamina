@@ -10,16 +10,18 @@ public:
     PlayerMovementTelemetryData(PlayerMovementTelemetryData const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0PlayerMovementTelemetryData\@\@QEAA\@XZ
      */
-    MCAPI PlayerMovementTelemetryData(); // NOLINT
+    MCAPI PlayerMovementTelemetryData();
     /**
      * @symbol ?getAverage\@PlayerMovementTelemetryData\@\@QEBAMXZ
      */
-    MCAPI float getAverage() const; // NOLINT
+    MCAPI float getAverage() const;
     /**
      * @symbol ?reset\@PlayerMovementTelemetryData\@\@QEAAXXZ
      */
-    MCAPI void reset(); // NOLINT
+    MCAPI void reset();
+    // NOLINTEND
 };

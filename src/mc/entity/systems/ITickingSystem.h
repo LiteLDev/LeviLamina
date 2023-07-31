@@ -11,10 +11,12 @@ public:
     ITickingSystem()                                 = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITICKINGSYSTEM
     /**
      * @symbol ?singleTick\@ITickingSystem\@\@UEAAXAEAVEntityRegistry\@\@AEAVEntityContext\@\@\@Z
      */
-    MCVAPI void singleTick(class EntityRegistry&, class EntityContext&); // NOLINT
+    MCVAPI void singleTick(class EntityRegistry&, class EntityContext&);
 #endif
+    // NOLINTEND
 };

@@ -16,10 +16,11 @@ public:
     ResetPositionModeSystem()                                          = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createResetPositionModeSystem\@ResetPositionModeSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createResetPositionModeSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createResetPositionModeSystem();
     /**
      * @symbol
      * ?tickResetPositionModeSystem\@ResetPositionModeSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@\@\@UPlayerPositionModeComponent\@\@\@\@\@Z
@@ -29,5 +30,6 @@ public:
                                     class StrictEntityContext,
                                     class EntityRegistryBase,
                                     struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>>,
-                                    struct PlayerPositionModeComponent>); // NOLINT
+                                    struct PlayerPositionModeComponent>);
+    // NOLINTEND
 };

@@ -11,17 +11,18 @@ public:
     ServerPlayerCurrentMovementComponent()                                                       = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0ServerPlayerCurrentMovementComponent\@\@QEAA\@$$QEAU0\@\@Z
      */
-    MCAPI ServerPlayerCurrentMovementComponent(struct ServerPlayerCurrentMovementComponent&&); // NOLINT
+    MCAPI ServerPlayerCurrentMovementComponent(struct ServerPlayerCurrentMovementComponent&&);
     /**
      * @symbol ??4ServerPlayerCurrentMovementComponent\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
-    MCAPI struct ServerPlayerCurrentMovementComponent&
-    operator=(struct ServerPlayerCurrentMovementComponent&&); // NOLINT
+    MCAPI struct ServerPlayerCurrentMovementComponent& operator=(struct ServerPlayerCurrentMovementComponent&&);
     /**
      * @symbol ??1ServerPlayerCurrentMovementComponent\@\@QEAA\@XZ
      */
-    MCAPI ~ServerPlayerCurrentMovementComponent(); // NOLINT
+    MCAPI ~ServerPlayerCurrentMovementComponent();
+    // NOLINTEND
 };

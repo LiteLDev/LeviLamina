@@ -13,12 +13,14 @@ public:
     Writer()                         = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_JSON_WRITER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~Writer(); // NOLINT
+    MCVAPI ~Writer();
 #endif
+    // NOLINTEND
 };
 
 }; // namespace Json

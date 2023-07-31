@@ -19,15 +19,17 @@ public:
     RaidTriggerDefinition()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?buildSchema\@RaidTriggerDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VRaidTriggerDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      class RaidTriggerDefinition>>&); // NOLINT
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RaidTriggerDefinition>>&);
     /**
      * @symbol ?getStrictParsingVersion\@RaidTriggerDefinition\@\@SA?AVSemVersion\@\@XZ
      */
-    MCAPI static class SemVersion getStrictParsingVersion(); // NOLINT
+    MCAPI static class SemVersion getStrictParsingVersion();
+    // NOLINTEND
 };

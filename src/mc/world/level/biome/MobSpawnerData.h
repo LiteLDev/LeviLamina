@@ -10,12 +10,14 @@ public:
     MobSpawnerData()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0MobSpawnerData\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI MobSpawnerData(class MobSpawnerData const&); // NOLINT
+    MCAPI MobSpawnerData(class MobSpawnerData const&);
     /**
      * @symbol ??1MobSpawnerData\@\@QEAA\@XZ
      */
-    MCAPI ~MobSpawnerData(); // NOLINT
+    MCAPI ~MobSpawnerData();
+    // NOLINTEND
 };

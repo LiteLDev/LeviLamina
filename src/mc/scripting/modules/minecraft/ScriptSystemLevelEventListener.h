@@ -13,21 +13,23 @@ public:
     ScriptSystemLevelEventListener()                                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1(); // NOLINT
+    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol ?onRunSystemTick\@ScriptSystemLevelEventListener\@ScriptModuleMinecraft\@\@UEAA_NXZ
      */
-    virtual bool onRunSystemTick(); // NOLINT
+    virtual bool onRunSystemTick();
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

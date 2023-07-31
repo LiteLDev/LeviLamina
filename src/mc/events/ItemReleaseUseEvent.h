@@ -11,8 +11,10 @@ public:
     ItemReleaseUseEvent()                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ItemReleaseUseEvent\@\@QEAA\@XZ
      */
-    MCAPI ~ItemReleaseUseEvent(); // NOLINT
+    MCAPI ~ItemReleaseUseEvent();
+    // NOLINTEND
 };

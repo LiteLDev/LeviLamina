@@ -28,29 +28,31 @@ public:
     ScriptBlockInventoryComponentContainer()                                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 2
      * @symbol
      * ?getEmptySlotsCount\@ScriptBlockInventoryComponentContainer\@ScriptModuleMinecraft\@\@UEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
-    virtual class Scripting::Result<int> getEmptySlotsCount() const; // NOLINT
+    virtual class Scripting::Result<int> getEmptySlotsCount() const;
     /**
      * @vftbl 13
      * @symbol
      * ?_tryGetContainer\@ScriptBlockInventoryComponentContainer\@ScriptModuleMinecraft\@\@MEBAPEAVContainer\@\@XZ
      */
-    virtual class Container* _tryGetContainer() const; // NOLINT
+    virtual class Container* _tryGetContainer() const;
     /**
      * @vftbl 14
      * @symbol
      * ?_getItemContext\@ScriptBlockInventoryComponentContainer\@ScriptModuleMinecraft\@\@MEBA?AVItemContext\@\@H\@Z
      */
-    virtual class ItemContext _getItemContext(int) const; // NOLINT
+    virtual class ItemContext _getItemContext(int) const;
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

@@ -11,12 +11,14 @@ public:
     ManagedWanderingTraderComponent()                                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?initFromDefinition\@ManagedWanderingTraderComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void initFromDefinition(class Actor&); // NOLINT
+    MCAPI void initFromDefinition(class Actor&);
     /**
      * @symbol ?reloadComponent\@ManagedWanderingTraderComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
-    MCAPI void reloadComponent(class Actor&); // NOLINT
+    MCAPI void reloadComponent(class Actor&);
+    // NOLINTEND
 };

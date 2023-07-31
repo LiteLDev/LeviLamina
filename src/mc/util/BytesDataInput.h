@@ -11,40 +11,42 @@ public:
     BytesDataInput()                                 = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BYTESDATAINPUT
     /**
      * @symbol ?readByte\@BytesDataInput\@\@UEAADXZ
      */
-    MCVAPI char readByte(); // NOLINT
+    MCVAPI char readByte();
     /**
      * @symbol ?readDouble\@BytesDataInput\@\@UEAANXZ
      */
-    MCVAPI double readDouble(); // NOLINT
+    MCVAPI double readDouble();
     /**
      * @symbol ?readFloat\@BytesDataInput\@\@UEAAMXZ
      */
-    MCVAPI float readFloat(); // NOLINT
+    MCVAPI float readFloat();
     /**
      * @symbol ?readInt\@BytesDataInput\@\@UEAAHXZ
      */
-    MCVAPI int readInt(); // NOLINT
+    MCVAPI int readInt();
     /**
      * @symbol ?readLongLong\@BytesDataInput\@\@UEAA_JXZ
      */
-    MCVAPI __int64 readLongLong(); // NOLINT
+    MCVAPI int64_t readLongLong();
     /**
      * @symbol
      * ?readLongString\@BytesDataInput\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCVAPI std::string readLongString(); // NOLINT
+    MCVAPI std::string readLongString();
     /**
      * @symbol ?readShort\@BytesDataInput\@\@UEAAFXZ
      */
-    MCVAPI short readShort(); // NOLINT
+    MCVAPI short readShort();
     /**
      * @symbol
      * ?readString\@BytesDataInput\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    MCVAPI std::string readString(); // NOLINT
+    MCVAPI std::string readString();
 #endif
+    // NOLINTEND
 };

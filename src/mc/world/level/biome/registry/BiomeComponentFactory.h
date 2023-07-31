@@ -4,11 +4,6 @@
 
 class BiomeComponentFactory {
 public:
-    // BiomeComponentFactory inner types declare
-    // clang-format off
-
-    // clang-format on
-
     // BiomeComponentFactory inner types define
     enum class FactoryScope {};
 
@@ -19,17 +14,19 @@ public:
     BiomeComponentFactory()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0BiomeComponentFactory\@\@QEAA\@W4FactoryScope\@0\@\@Z
      */
-    MCAPI BiomeComponentFactory(enum class BiomeComponentFactory::FactoryScope); // NOLINT
+    MCAPI BiomeComponentFactory(enum class BiomeComponentFactory::FactoryScope);
     /**
      * @symbol
      * ?processDataComponents\@BiomeComponentFactory\@\@QEBAXAEAVBiome\@\@AEAVIWorldRegistriesProvider\@\@AEAVCompoundTag\@\@\@Z
      */
-    MCAPI void processDataComponents(class Biome&, class IWorldRegistriesProvider&, class CompoundTag&) const; // NOLINT
+    MCAPI void processDataComponents(class Biome&, class IWorldRegistriesProvider&, class CompoundTag&) const;
     /**
      * @symbol ?registrationFinished\@BiomeComponentFactory\@\@QEAAXXZ
      */
-    MCAPI void registrationFinished(); // NOLINT
+    MCAPI void registrationFinished();
+    // NOLINTEND
 };

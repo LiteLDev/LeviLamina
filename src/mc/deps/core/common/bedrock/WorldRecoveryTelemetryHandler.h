@@ -13,12 +13,14 @@ public:
     WorldRecoveryTelemetryHandler()                                                = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_WORLDRECOVERYTELEMETRYHANDLER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~WorldRecoveryTelemetryHandler(); // NOLINT
+    MCVAPI ~WorldRecoveryTelemetryHandler();
 #endif
+    // NOLINTEND
 };
 
 }; // namespace Bedrock

@@ -11,8 +11,10 @@ public:
     SubpackInfo()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1SubpackInfo\@\@QEAA\@XZ
      */
-    MCAPI ~SubpackInfo(); // NOLINT
+    MCAPI ~SubpackInfo();
+    // NOLINTEND
 };

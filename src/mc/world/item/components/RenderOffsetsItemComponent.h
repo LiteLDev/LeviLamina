@@ -20,10 +20,12 @@ public:
         ItemTransforms()                                 = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??8ItemTransforms\@RenderOffsetsItemComponent\@\@QEBA_NAEBU01\@\@Z
          */
-        MCAPI bool operator==(struct RenderOffsetsItemComponent::ItemTransforms const&) const; // NOLINT
+        MCAPI bool operator==(struct RenderOffsetsItemComponent::ItemTransforms const&) const;
+        // NOLINTEND
     };
 
     struct TRS {
@@ -35,10 +37,12 @@ public:
         TRS()                      = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??8TRS\@RenderOffsetsItemComponent\@\@QEBA_NAEBU01\@\@Z
          */
-        MCAPI bool operator==(struct RenderOffsetsItemComponent::TRS const&) const; // NOLINT
+        MCAPI bool operator==(struct RenderOffsetsItemComponent::TRS const&) const;
+        // NOLINTEND
     };
 
 public:
@@ -48,56 +52,58 @@ public:
     RenderOffsetsItemComponent()                                             = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?isNetworkComponent\@?$NetworkedItemComponent\@VRenderOffsetsItemComponent\@\@\@\@UEBA_NXZ
      */
-    virtual bool isNetworkComponent() const; // NOLINT
+    virtual bool isNetworkComponent() const;
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
-    virtual void __unk_vfn_2(); // NOLINT
+    virtual void __unk_vfn_2();
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3
      */
-    virtual void __unk_vfn_3(); // NOLINT
+    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol
      * ?buildNetworkTag\@?$NetworkedItemComponent\@VRenderOffsetsItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const; // NOLINT
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl 5
      * @symbol
      * ?initializeFromNetwork\@?$NetworkedItemComponent\@VRenderOffsetsItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
      */
-    virtual bool initializeFromNetwork(class CompoundTag const&); // NOLINT
+    virtual bool initializeFromNetwork(class CompoundTag const&);
     /**
      * @symbol ?bindType\@RenderOffsetsItemComponent\@\@SAXXZ
      */
-    MCAPI static void bindType(); // NOLINT
+    MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier\@RenderOffsetsItemComponent\@\@SAAEBVHashedString\@\@XZ
      */
-    MCAPI static class HashedString const& getIdentifier(); // NOLINT
-
-    // private:
+    MCAPI static class HashedString const& getIdentifier();
+    // NOLINTEND
 
 private:
+    // NOLINTBEGIN
     /**
      * @symbol ?Main_Hand_Defaults\@RenderOffsetsItemComponent\@\@0UItemTransforms\@1\@A
      */
-    MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Main_Hand_Defaults; // NOLINT
+    MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Main_Hand_Defaults;
     /**
      * @symbol ?Off_Hand_Defaults\@RenderOffsetsItemComponent\@\@0UItemTransforms\@1\@A
      */
-    MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Off_Hand_Defaults; // NOLINT
+    MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Off_Hand_Defaults;
+    // NOLINTEND
 };

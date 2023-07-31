@@ -11,10 +11,12 @@ public:
     IStructurePoolBlockPredicate()                                               = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ISTRUCTUREPOOLBLOCKPREDICATE
     /**
      * @symbol ?finalize\@IStructurePoolBlockPredicate\@\@UEAA_NAEAVBlockSource\@\@AEAVIRandom\@\@\@Z
      */
-    MCVAPI bool finalize(class BlockSource&, class IRandom&); // NOLINT
+    MCVAPI bool finalize(class BlockSource&, class IRandom&);
 #endif
+    // NOLINTEND
 };

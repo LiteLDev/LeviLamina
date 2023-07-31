@@ -13,10 +13,12 @@ public:
     ChatMessage()                              = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1ChatMessage\@CodeBuilder\@\@QEAA\@XZ
      */
-    MCAPI ~ChatMessage(); // NOLINT
+    MCAPI ~ChatMessage();
+    // NOLINTEND
 };
 
 }; // namespace CodeBuilder

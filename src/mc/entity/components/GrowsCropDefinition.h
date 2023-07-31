@@ -18,19 +18,21 @@ public:
     GrowsCropDefinition(GrowsCropDefinition const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0GrowsCropDefinition\@\@QEAA\@XZ
      */
-    MCAPI GrowsCropDefinition(); // NOLINT
-    /**
-     * @symbol ?initialize\@GrowsCropDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVGrowsCropComponent\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class GrowsCropComponent&) const; // NOLINT
+    MCAPI GrowsCropDefinition();
     /**
      * @symbol
      * ?buildSchema\@GrowsCropDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VGrowsCropDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      class GrowsCropDefinition>>&); // NOLINT
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GrowsCropDefinition>>&);
+    /**
+     * @symbol ?initialize\@GrowsCropDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVGrowsCropComponent\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class GrowsCropComponent&) const;
+    // NOLINTEND
 };

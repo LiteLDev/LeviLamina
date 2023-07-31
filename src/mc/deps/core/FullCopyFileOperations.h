@@ -20,21 +20,23 @@ public:
     FullCopyFileOperations()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?copyDirectory\@FullCopyFileOperations\@Core\@\@SA?AVResult\@2\@PEAVFileSystemImpl\@2\@AEBVPath\@2\@01\@Z
      */
     MCAPI static class Core::Result
-    copyDirectory(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&); // NOLINT
+    copyDirectory(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&);
     /**
      * @symbol ?copyFile\@FullCopyFileOperations\@Core\@\@SA?AVResult\@2\@PEAVFileSystemImpl\@2\@AEBVPath\@2\@01\@Z
      */
     MCAPI static class Core::Result
-    copyFile(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&); // NOLINT
+    copyFile(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&);
     /**
      * @symbol ?moveFile\@FullCopyFileOperations\@Core\@\@SA?AVResult\@2\@PEAVFileSystemImpl\@2\@AEBVPath\@2\@01\@Z
      */
     MCAPI static class Core::Result
-    moveFile(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&); // NOLINT
+    moveFile(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&);
+    // NOLINTEND
 };
 
 }; // namespace Core

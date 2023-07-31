@@ -11,9 +11,11 @@ public:
     ResetMoveDirectionJumpPendingSystem()                                                      = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?createResetMoveDirectionJumpPendingSystem\@ResetMoveDirectionJumpPendingSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createResetMoveDirectionJumpPendingSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createResetMoveDirectionJumpPendingSystem();
+    // NOLINTEND
 };

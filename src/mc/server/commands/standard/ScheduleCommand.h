@@ -22,10 +22,12 @@ public:
         FunctionInfo()                               = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1FunctionInfo\@ScheduleCommand\@\@QEAA\@XZ
          */
-        MCAPI ~FunctionInfo(); // NOLINT
+        MCAPI ~FunctionInfo();
+        // NOLINTEND
     };
 
 public:
@@ -35,36 +37,37 @@ public:
     ScheduleCommand()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?execute\@ScheduleCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
     /**
      * @symbol ?setup\@ScheduleCommand\@\@SAXAEAVCommandRegistry\@\@\@Z
      */
-    MCAPI static void setup(class CommandRegistry&); // NOLINT
+    MCAPI static void setup(class CommandRegistry&);
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?_delay\@ScheduleCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void _delay(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
+    MCAPI void _delay(class CommandOrigin const&, class CommandOutput&) const;
     /**
      * @symbol ?_onAreaLoaded\@ScheduleCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI void _onAreaLoaded(class CommandOrigin const&, class CommandOutput&) const; // NOLINT
+    MCAPI void _onAreaLoaded(class CommandOrigin const&, class CommandOutput&) const;
     /**
      * @symbol
      * ?_tryGetFunction\@ScheduleCommand\@\@AEBA?AUFunctionInfo\@1\@AEAVFunctionManager\@\@AEAVCommandOutput\@\@\@Z
      */
-    MCAPI struct ScheduleCommand::FunctionInfo
-    _tryGetFunction(class FunctionManager&, class CommandOutput&) const; // NOLINT
-
-private:
+    MCAPI struct ScheduleCommand::FunctionInfo _tryGetFunction(class FunctionManager&, class CommandOutput&) const;
+    // NOLINTEND
 };

@@ -11,8 +11,10 @@ public:
     ActorTerrainInterlockData()                                            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?setCreationTime\@ActorTerrainInterlockData\@\@QEAAXXZ
      */
-    MCAPI void setCreationTime(); // NOLINT
+    MCAPI void setCreationTime();
+    // NOLINTEND
 };

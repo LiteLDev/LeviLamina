@@ -11,12 +11,14 @@ public:
     GroundAndAirMoveSystem()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createAirMoveSystem\@GroundAndAirMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createAirMoveSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createAirMoveSystem();
     /**
      * @symbol ?createGroundMoveSystem\@GroundAndAirMoveSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createGroundMoveSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createGroundMoveSystem();
+    // NOLINTEND
 };

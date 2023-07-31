@@ -12,46 +12,48 @@ public:
     Blob(Blob const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0Blob\@mce\@\@QEAA\@XZ
      */
-    MCAPI Blob(); // NOLINT
+    MCAPI Blob();
     /**
      * @symbol ??0Blob\@mce\@\@QEAA\@_K\@Z
      */
-    MCAPI Blob(unsigned __int64); // NOLINT
+    MCAPI Blob(uint64_t);
     /**
      * @symbol ??0Blob\@mce\@\@QEAA\@$$QEAV01\@\@Z
      */
-    MCAPI Blob(class mce::Blob&&); // NOLINT
+    MCAPI Blob(class mce::Blob&&);
     /**
      * @symbol ?cbegin\@Blob\@mce\@\@QEBAPEBEXZ
      */
-    MCAPI unsigned char const* cbegin() const; // NOLINT
+    MCAPI unsigned char const* cbegin() const;
     /**
      * @symbol ?cend\@Blob\@mce\@\@QEBAPEBEXZ
      */
-    MCAPI unsigned char const* cend() const; // NOLINT
+    MCAPI unsigned char const* cend() const;
     /**
      * @symbol ?empty\@Blob\@mce\@\@QEBA_NXZ
      */
-    MCAPI bool empty() const; // NOLINT
+    MCAPI bool empty() const;
     /**
      * @symbol ??4Blob\@mce\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
-    MCAPI class mce::Blob& operator=(class mce::Blob&&); // NOLINT
+    MCAPI class mce::Blob& operator=(class mce::Blob&&);
     /**
      * @symbol ??1Blob\@mce\@\@QEAA\@XZ
      */
-    MCAPI ~Blob(); // NOLINT
+    MCAPI ~Blob();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?defaultDeleter\@Blob\@mce\@\@CAXPEAE\@Z
      */
-    MCAPI static void defaultDeleter(unsigned char*); // NOLINT
-
-private:
+    MCAPI static void defaultDeleter(unsigned char*);
+    // NOLINTEND
 };
 
 }; // namespace mce

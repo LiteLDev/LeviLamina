@@ -11,32 +11,34 @@ public:
     TargetNearbyComponent()                                        = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?getWasInsideRange\@TargetNearbyComponent\@\@QEBA_NXZ
      */
-    MCAPI bool getWasInsideRange() const; // NOLINT
+    MCAPI bool getWasInsideRange() const;
     /**
      * @symbol ?getWasOutsideRange\@TargetNearbyComponent\@\@QEBA_NXZ
      */
-    MCAPI bool getWasOutsideRange() const; // NOLINT
+    MCAPI bool getWasOutsideRange() const;
     /**
      * @symbol ?getWasSeenLastTick\@TargetNearbyComponent\@\@QEBA_NXZ
      */
-    MCAPI bool getWasSeenLastTick() const; // NOLINT
+    MCAPI bool getWasSeenLastTick() const;
     /**
      * @symbol ?setPreviousDistance\@TargetNearbyComponent\@\@QEAAXM\@Z
      */
-    MCAPI void setPreviousDistance(float); // NOLINT
+    MCAPI void setPreviousDistance(float);
     /**
      * @symbol ?setWasInsideRange\@TargetNearbyComponent\@\@QEAAX_N\@Z
      */
-    MCAPI void setWasInsideRange(bool); // NOLINT
+    MCAPI void setWasInsideRange(bool);
     /**
      * @symbol ?setWasOutsideRange\@TargetNearbyComponent\@\@QEAAX_N\@Z
      */
-    MCAPI void setWasOutsideRange(bool); // NOLINT
+    MCAPI void setWasOutsideRange(bool);
     /**
      * @symbol ?setWasSeenLastTick\@TargetNearbyComponent\@\@QEAAX_N\@Z
      */
-    MCAPI void setWasSeenLastTick(bool); // NOLINT
+    MCAPI void setWasSeenLastTick(bool);
+    // NOLINTEND
 };

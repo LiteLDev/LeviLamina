@@ -13,13 +13,15 @@ public:
     LabTableContainerScreenValidator(LabTableContainerScreenValidator const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @symbol ??0LabTableContainerScreenValidator\@\@QEAA\@XZ
      */
-    MCAPI LabTableContainerScreenValidator(); // NOLINT
+    MCAPI LabTableContainerScreenValidator();
+    // NOLINTEND
 };

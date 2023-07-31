@@ -21,10 +21,12 @@ public:
         DirectoryPickerResult()                                        = delete;
 
     public:
+        // NOLINTBEGIN
         /**
          * @symbol ??1DirectoryPickerResult\@FilePickerManager\@Bedrock\@\@QEAA\@XZ
          */
-        MCAPI ~DirectoryPickerResult(); // NOLINT
+        MCAPI ~DirectoryPickerResult();
+        // NOLINTEND
     };
 
 public:

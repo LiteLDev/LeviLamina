@@ -11,8 +11,10 @@ public:
     AdultRidingHeightOffsetComponent()                                                   = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?SITTING_ANIMATION_OFFSET\@AdultRidingHeightOffsetComponent\@\@2MB
      */
-    MCAPI static float const SITTING_ANIMATION_OFFSET; // NOLINT
+    MCAPI static float const SITTING_ANIMATION_OFFSET;
+    // NOLINTEND
 };

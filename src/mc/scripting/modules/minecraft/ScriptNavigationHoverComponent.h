@@ -18,27 +18,29 @@ public:
     ScriptNavigationHoverComponent()                                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTNAVIGATIONHOVERCOMPONENT
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~ScriptNavigationHoverComponent(); // NOLINT
+    MCVAPI ~ScriptNavigationHoverComponent();
 #endif
     /**
      * @symbol
      * ?bind\@ScriptNavigationHoverComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptNavigationHoverComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptNavigationHoverComponent>
-    bind(); // NOLINT
+    bind();
     /**
      * @symbol ?ComponentId\@ScriptNavigationHoverComponent\@ScriptModuleMinecraft\@\@2PEBDEB
      */
-    MCAPI static char const* ComponentId; // NOLINT
+    MCAPI static char const* ComponentId;
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

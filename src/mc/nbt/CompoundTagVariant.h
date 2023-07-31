@@ -11,24 +11,26 @@ public:
     CompoundTagVariant()                                     = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?emplace\@CompoundTagVariant\@\@QEAAAEAVTag\@\@$$QEAV2\@\@Z
      */
-    MCAPI class Tag& emplace(class Tag&&); // NOLINT
+    MCAPI class Tag& emplace(class Tag&&);
     /**
      * @symbol ?get\@CompoundTagVariant\@\@QEAAPEAVTag\@\@XZ
      */
-    MCAPI class Tag* get(); // NOLINT
+    MCAPI class Tag* get();
     /**
      * @symbol ?get\@CompoundTagVariant\@\@QEBAPEBVTag\@\@XZ
      */
-    MCAPI class Tag const* get() const; // NOLINT
+    MCAPI class Tag const* get() const;
     /**
      * @symbol ??CCompoundTagVariant\@\@QEBAPEBVTag\@\@XZ
      */
-    MCAPI class Tag const* operator->() const; // NOLINT
+    MCAPI class Tag const* operator->() const;
     /**
      * @symbol ??1CompoundTagVariant\@\@QEAA\@XZ
      */
-    MCAPI ~CompoundTagVariant(); // NOLINT
+    MCAPI ~CompoundTagVariant();
+    // NOLINTEND
 };

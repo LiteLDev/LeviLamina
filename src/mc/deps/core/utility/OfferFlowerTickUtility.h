@@ -3,9 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 namespace OfferFlowerTickUtility {
+// NOLINTBEGIN
 /**
  * @symbol ?offerFlower\@OfferFlowerTickUtility\@\@YAX_NAEAVActor\@\@H\@Z
  */
-MCAPI void offerFlower(bool, class Actor&, int); // NOLINT
+MCAPI void offerFlower(bool, class Actor&, int);
+// NOLINTEND
 
 }; // namespace OfferFlowerTickUtility

@@ -13,12 +13,12 @@ public:
     SnappyDecompressor()                                     = delete;
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol ?RefillTag\@SnappyDecompressor\@snappy\@\@AEAA_NXZ
      */
-    MCAPI bool RefillTag(); // NOLINT
-
-private:
+    MCAPI bool RefillTag();
+    // NOLINTEND
 };
 
 }; // namespace snappy

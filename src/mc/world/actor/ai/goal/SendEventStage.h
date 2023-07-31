@@ -11,8 +11,10 @@ public:
     SendEventStage()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1SendEventStage\@\@QEAA\@XZ
      */
-    MCAPI ~SendEventStage(); // NOLINT
+    MCAPI ~SendEventStage();
+    // NOLINTEND
 };

@@ -17,28 +17,30 @@ public:
     AllowListFile()                                = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0AllowListFile\@\@QEAA\@AEBVPath\@Core\@\@\@Z
      */
-    MCAPI AllowListFile(class Core::Path const&); // NOLINT
+    MCAPI AllowListFile(class Core::Path const&);
     /**
      * @symbol ?getAllowList\@AllowListFile\@\@QEBAAEAVAllowList\@\@XZ
      */
-    MCAPI class AllowList& getAllowList() const; // NOLINT
-    /**
-     * @symbol ?reload\@AllowListFile\@\@QEAA?AW4FileReadResult\@\@XZ
-     */
-    MCAPI enum class FileReadResult reload(); // NOLINT
-    /**
-     * @symbol ?syncToDisc\@AllowListFile\@\@QEAAXXZ
-     */
-    MCAPI void syncToDisc(); // NOLINT
-    /**
-     * @symbol ??1AllowListFile\@\@QEAA\@XZ
-     */
-    MCAPI ~AllowListFile(); // NOLINT
+    MCAPI class AllowList& getAllowList() const;
     /**
      * @symbol ?loadFromDefaultLocations\@AllowListFile\@\@SA?AV1\@AEAVIFileSystem\@Core\@\@\@Z
      */
-    MCAPI static class AllowListFile loadFromDefaultLocations(class Core::IFileSystem&); // NOLINT
+    MCAPI static class AllowListFile loadFromDefaultLocations(class Core::IFileSystem&);
+    /**
+     * @symbol ?reload\@AllowListFile\@\@QEAA?AW4FileReadResult\@\@XZ
+     */
+    MCAPI enum class FileReadResult reload();
+    /**
+     * @symbol ?syncToDisc\@AllowListFile\@\@QEAAXXZ
+     */
+    MCAPI void syncToDisc();
+    /**
+     * @symbol ??1AllowListFile\@\@QEAA\@XZ
+     */
+    MCAPI ~AllowListFile();
+    // NOLINTEND
 };

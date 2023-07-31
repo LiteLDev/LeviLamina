@@ -10,16 +10,18 @@ public:
     CommandIntegerRange(CommandIntegerRange const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0CommandIntegerRange\@\@QEAA\@HH_N\@Z
      */
-    MCAPI CommandIntegerRange(int, int, bool); // NOLINT
+    MCAPI CommandIntegerRange(int, int, bool);
     /**
      * @symbol ??0CommandIntegerRange\@\@QEAA\@XZ
      */
-    MCAPI CommandIntegerRange(); // NOLINT
+    MCAPI CommandIntegerRange();
     /**
      * @symbol ?isWithinRange\@CommandIntegerRange\@\@QEBA_NH\@Z
      */
-    MCAPI bool isWithinRange(int) const; // NOLINT
+    MCAPI bool isWithinRange(int) const;
+    // NOLINTEND
 };

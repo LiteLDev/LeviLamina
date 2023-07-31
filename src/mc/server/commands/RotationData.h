@@ -19,12 +19,13 @@ public:
     RotationData()                               = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ??0RotationData\@RotationCommandUtils\@\@QEAA\@AEBVRelativeFloat\@\@0AEBV?$optional\@VVec2\@\@\@std\@\@\@Z
      */
-    MCAPI
-    RotationData(class RelativeFloat const&, class RelativeFloat const&, class std::optional<class Vec2> const&); // NOLINT
+    MCAPI RotationData(class RelativeFloat const&, class RelativeFloat const&, std::optional<class Vec2> const&);
+    // NOLINTEND
 };
 
 }; // namespace RotationCommandUtils

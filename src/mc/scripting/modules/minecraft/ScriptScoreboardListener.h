@@ -23,34 +23,36 @@ public:
     ScriptScoreboardListener()                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1(); // NOLINT
+    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol
      * ?onObjectiveRemoved\@ScriptScoreboardListener\@ScriptModuleMinecraft\@\@UEAA?AW4EventResult\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual enum class EventResult onObjectiveRemoved(std::string const&); // NOLINT
+    virtual enum class EventResult onObjectiveRemoved(std::string const&);
     /**
      * @vftbl 3
      * @symbol
      * ?onScoreboardIdentityRemoved\@ScriptScoreboardListener\@ScriptModuleMinecraft\@\@UEAA?AW4EventResult\@\@AEBUScoreboardId\@\@\@Z
      */
-    virtual enum class EventResult onScoreboardIdentityRemoved(struct ScoreboardId const&); // NOLINT
+    virtual enum class EventResult onScoreboardIdentityRemoved(struct ScoreboardId const&);
     /**
      * @symbol
      * ??0ScriptScoreboardListener\@ScriptModuleMinecraft\@\@QEAA\@V?$WeakTypedObjectHandle\@VScriptScoreboard\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Z
      */
-    MCAPI ScriptScoreboardListener(class Scripting::WeakTypedObjectHandle<
-                                   class ScriptModuleMinecraft::ScriptScoreboard>); // NOLINT
+    MCAPI
+        ScriptScoreboardListener(class Scripting::WeakTypedObjectHandle<class ScriptModuleMinecraft::ScriptScoreboard>);
+    // NOLINTEND
 };
 
 }; // namespace ScriptModuleMinecraft

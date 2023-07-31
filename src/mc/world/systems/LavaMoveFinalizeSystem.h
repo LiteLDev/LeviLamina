@@ -11,8 +11,10 @@ public:
     LavaMoveFinalizeSystem()                                         = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createLavaMoveFinalizeSystem\@LavaMoveFinalizeSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createLavaMoveFinalizeSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createLavaMoveFinalizeSystem();
+    // NOLINTEND
 };

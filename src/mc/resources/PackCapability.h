@@ -28,10 +28,12 @@ public:
             Failed()                         = delete;
 
         public:
+            // NOLINTBEGIN
             /**
              * @symbol ??1Failed\@ValidationResult\@PackCapability\@\@QEAA\@XZ
              */
-            MCAPI ~Failed(); // NOLINT
+            MCAPI ~Failed();
+            // NOLINTEND
         };
 
         struct Succeeded {
@@ -43,10 +45,12 @@ public:
             Succeeded()                            = delete;
 
         public:
+            // NOLINTBEGIN
             /**
              * @symbol ??1Succeeded\@ValidationResult\@PackCapability\@\@QEAA\@XZ
              */
-            MCAPI ~Succeeded(); // NOLINT
+            MCAPI ~Succeeded();
+            // NOLINTEND
         };
 
     public:
@@ -63,8 +67,10 @@ public:
     PackCapability()                                 = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??1PackCapability\@\@QEAA\@XZ
      */
-    MCAPI ~PackCapability(); // NOLINT
+    MCAPI ~PackCapability();
+    // NOLINTEND
 };

@@ -19,20 +19,22 @@ public:
     GetInteractionPositionForBlockDefinition()                                                           = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0(); // NOLINT
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
      * @symbol ?load\@GetInteractionPositionForBlockDefinition\@\@UEAAXVValue\@Json\@\@AEBVBehaviorFactory\@\@\@Z
      */
-    virtual void load(class Json::Value, class BehaviorFactory const&); // NOLINT
+    virtual void load(class Json::Value, class BehaviorFactory const&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GETINTERACTIONPOSITIONFORBLOCKDEFINITION
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~GetInteractionPositionForBlockDefinition(); // NOLINT
+    MCVAPI ~GetInteractionPositionForBlockDefinition();
 #endif
+    // NOLINTEND
 };

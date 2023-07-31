@@ -11,14 +11,16 @@ public:
     OnStepOnTrigger()                                  = delete;
 
 public:
+    // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ONSTEPONTRIGGER
     /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~OnStepOnTrigger(); // NOLINT
+    MCVAPI ~OnStepOnTrigger();
 #endif
     /**
      * @symbol ??0OnStepOnTrigger\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI OnStepOnTrigger(class OnStepOnTrigger&&); // NOLINT
+    MCAPI OnStepOnTrigger(class OnStepOnTrigger&&);
+    // NOLINTEND
 };

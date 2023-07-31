@@ -18,18 +18,20 @@ public:
     PlayerTelemetry()                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?PopulateEvent\@PlayerTelemetry\@Events\@Social\@\@QEBAXAEAVEvent\@23\@\@Z
      */
-    MCAPI void PopulateEvent(class Social::Events::Event&) const; // NOLINT
+    MCAPI void PopulateEvent(class Social::Events::Event&) const;
     /**
      * @symbol ?ShouldSendEvent\@PlayerTelemetry\@Events\@Social\@\@QEBA_NXZ
      */
-    MCAPI bool ShouldSendEvent() const; // NOLINT
+    MCAPI bool ShouldSendEvent() const;
     /**
      * @symbol ??1PlayerTelemetry\@Events\@Social\@\@QEAA\@XZ
      */
-    MCAPI ~PlayerTelemetry(); // NOLINT
+    MCAPI ~PlayerTelemetry();
+    // NOLINTEND
 };
 
 }; // namespace Social::Events

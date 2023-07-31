@@ -18,19 +18,21 @@ public:
     LookAtDefinition(LookAtDefinition const&)            = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ??0LookAtDefinition\@\@QEAA\@XZ
      */
-    MCAPI LookAtDefinition(); // NOLINT
-    /**
-     * @symbol ?initialize\@LookAtDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVLookAtComponent\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class LookAtComponent&) const; // NOLINT
+    MCAPI LookAtDefinition();
     /**
      * @symbol
      * ?buildSchema\@LookAtDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VLookAtDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
-    buildSchema(class std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class LookAtDefinition>>&); // NOLINT
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class LookAtDefinition>>&);
+    /**
+     * @symbol ?initialize\@LookAtDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVLookAtComponent\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class LookAtComponent&) const;
+    // NOLINTEND
 };

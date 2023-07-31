@@ -11,18 +11,19 @@ public:
     SimulatedPlayerPostAIStepSystem()                                                  = delete;
 
 public:
+    // NOLINTBEGIN
     /**
      * @symbol ?createSystem\@SimulatedPlayerPostAIStepSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createSystem(); // NOLINT
+    MCAPI static struct TickingSystemWithInfo createSystem();
+    // NOLINTEND
 
     // private:
+    // NOLINTBEGIN
     /**
      * @symbol
      * ?_doSimulatedPlayerPostAIStepSystem\@SimulatedPlayerPostAIStepSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
      */
-    MCAPI static void
-    _doSimulatedPlayerPostAIStepSystem(class StrictEntityContext const&, class ActorOwnerComponent&); // NOLINT
-
-private:
+    MCAPI static void _doSimulatedPlayerPostAIStepSystem(class StrictEntityContext const&, class ActorOwnerComponent&);
+    // NOLINTEND
 };
