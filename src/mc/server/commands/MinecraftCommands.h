@@ -42,10 +42,6 @@ public:
      */
     MCAPI struct MCRESULT executeCommand(class CommandContext&, bool) const;
     /**
-     * @symbol ?getOutputType\@MinecraftCommands\@\@SA?AW4CommandOutputType\@\@AEBVCommandOrigin\@\@\@Z
-     */
-    MCAPI static enum class CommandOutputType getOutputType(class CommandOrigin const&);
-    /**
      * @symbol ?getRegistry\@MinecraftCommands\@\@QEAAAEAVCommandRegistry\@\@XZ
      */
     MCAPI class CommandRegistry& getRegistry();
@@ -53,10 +49,6 @@ public:
      * @symbol ?handleOutput\@MinecraftCommands\@\@QEBAXAEBVCommandOrigin\@\@AEBVCommandOutput\@\@\@Z
      */
     MCAPI void handleOutput(class CommandOrigin const&, class CommandOutput const&) const;
-    /**
-     * @symbol ?initBlockEnum\@MinecraftCommands\@\@SAXAEAVCommandRegistry\@\@AEBVBaseGameVersion\@\@\@Z
-     */
-    MCAPI static void initBlockEnum(class CommandRegistry&, class BaseGameVersion const&);
     /**
      * @symbol
      * ?initCoreEnums\@MinecraftCommands\@\@QEAAXVItemRegistryRef\@\@AEBVIWorldRegistriesProvider\@\@AEBVActorFactory\@\@AEBVExperiments\@\@AEBVBaseGameVersion\@\@\@Z
@@ -67,28 +59,6 @@ public:
      * @symbol ?initCoreEnumsServer\@MinecraftCommands\@\@QEAAXAEBVActorDefinitionGroup\@\@AEBVCameraPresets\@\@\@Z
      */
     MCAPI void initCoreEnumsServer(class ActorDefinitionGroup const&, class CameraPresets const&);
-    /**
-     * @symbol
-     * ?initEntityEnum\@MinecraftCommands\@\@SAXAEAVCommandRegistry\@\@AEBVActorFactory\@\@AEBVExperiments\@\@\@Z
-     */
-    MCAPI static void initEntityEnum(class CommandRegistry&, class ActorFactory const&, class Experiments const&);
-    /**
-     * @symbol
-     * ?initItemEnum\@MinecraftCommands\@\@SAXVItemRegistryRef\@\@AEAVCommandRegistry\@\@AEBVBaseGameVersion\@\@\@Z
-     */
-    MCAPI static void initItemEnum(class ItemRegistryRef, class CommandRegistry&, class BaseGameVersion const&);
-    /**
-     * @symbol ?initItemTagEnum\@MinecraftCommands\@\@SAXVItemRegistryRef\@\@AEAVCommandRegistry\@\@\@Z
-     */
-    MCAPI static void initItemTagEnum(class ItemRegistryRef, class CommandRegistry&);
-    /**
-     * @symbol ?initStructureFeatureEnum\@MinecraftCommands\@\@SAXAEAVCommandRegistry\@\@\@Z
-     */
-    MCAPI static void initStructureFeatureEnum(class CommandRegistry&);
-    /**
-     * @symbol ?registerSharedClientServerEnums\@MinecraftCommands\@\@SAXAEAVCommandRegistry\@\@\@Z
-     */
-    MCAPI static void registerSharedClientServerEnums(class CommandRegistry&);
     /**
      * @symbol ?requestCommandExecution\@MinecraftCommands\@\@QEAA?AUMCRESULT\@\@AEAVCommandContext\@\@_N\@Z
      */
@@ -126,5 +96,35 @@ public:
      * @symbol ?tick\@MinecraftCommands\@\@QEAAXXZ
      */
     MCAPI void tick();
+    /**
+     * @symbol ?getOutputType\@MinecraftCommands\@\@SA?AW4CommandOutputType\@\@AEBVCommandOrigin\@\@\@Z
+     */
+    MCAPI static enum class CommandOutputType getOutputType(class CommandOrigin const&);
+    /**
+     * @symbol ?initBlockEnum\@MinecraftCommands\@\@SAXAEAVCommandRegistry\@\@AEBVBaseGameVersion\@\@\@Z
+     */
+    MCAPI static void initBlockEnum(class CommandRegistry&, class BaseGameVersion const&);
+    /**
+     * @symbol
+     * ?initEntityEnum\@MinecraftCommands\@\@SAXAEAVCommandRegistry\@\@AEBVActorFactory\@\@AEBVExperiments\@\@\@Z
+     */
+    MCAPI static void initEntityEnum(class CommandRegistry&, class ActorFactory const&, class Experiments const&);
+    /**
+     * @symbol
+     * ?initItemEnum\@MinecraftCommands\@\@SAXVItemRegistryRef\@\@AEAVCommandRegistry\@\@AEBVBaseGameVersion\@\@\@Z
+     */
+    MCAPI static void initItemEnum(class ItemRegistryRef, class CommandRegistry&, class BaseGameVersion const&);
+    /**
+     * @symbol ?initItemTagEnum\@MinecraftCommands\@\@SAXVItemRegistryRef\@\@AEAVCommandRegistry\@\@\@Z
+     */
+    MCAPI static void initItemTagEnum(class ItemRegistryRef, class CommandRegistry&);
+    /**
+     * @symbol ?initStructureFeatureEnum\@MinecraftCommands\@\@SAXAEAVCommandRegistry\@\@\@Z
+     */
+    MCAPI static void initStructureFeatureEnum(class CommandRegistry&);
+    /**
+     * @symbol ?registerSharedClientServerEnums\@MinecraftCommands\@\@SAXAEAVCommandRegistry\@\@\@Z
+     */
+    MCAPI static void registerSharedClientServerEnums(class CommandRegistry&);
     // NOLINTEND
 };

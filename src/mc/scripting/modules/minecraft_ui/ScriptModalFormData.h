@@ -40,11 +40,6 @@ public:
      */
     MCAPI ScriptModalFormData();
     /**
-     * @symbol
-     * ?bind\@ScriptModalFormData\@ScriptModuleMinecraftServerUI\@\@SA?AV?$ClassBindingBuilder\@VScriptModalFormData\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptModalFormData> bind();
-    /**
      * @symbol ?buildJson\@ScriptModalFormData\@ScriptModuleMinecraftServerUI\@\@QEBA?AVValue\@Json\@\@XZ
      */
     MCAPI class Json::Value buildJson() const;
@@ -132,6 +127,11 @@ public:
      * @symbol ??1ScriptModalFormData\@ScriptModuleMinecraftServerUI\@\@QEAA\@XZ
      */
     MCAPI ~ScriptModalFormData();
+    /**
+     * @symbol
+     * ?bind\@ScriptModalFormData\@ScriptModuleMinecraftServerUI\@\@SA?AV?$ClassBindingBuilder\@VScriptModalFormData\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptModalFormData> bind();
     // NOLINTEND
 };
 

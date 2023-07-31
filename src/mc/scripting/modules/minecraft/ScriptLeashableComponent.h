@@ -51,11 +51,6 @@ public:
     MCAPI
     ScriptLeashableComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
     /**
-     * @symbol
-     * ?bind\@ScriptLeashableComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptLeashableComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptLeashableComponent> bind();
-    /**
      * @symbol ?getSoftDistance\@ScriptLeashableComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@M\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<float> getSoftDistance() const;
@@ -68,6 +63,11 @@ public:
      * @symbol ?unleash\@ScriptLeashableComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@X\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<void> unleash() const;
+    /**
+     * @symbol
+     * ?bind\@ScriptLeashableComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptLeashableComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptLeashableComponent> bind();
     /**
      * @symbol ?ComponentId\@ScriptLeashableComponent\@ScriptModuleMinecraft\@\@2PEBDEB
      */

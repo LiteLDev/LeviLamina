@@ -37,14 +37,14 @@ public:
     virtual bool validate(class Mob&) const;
     /**
      * @symbol
+     * ?initialize\@NearestAttackableTargetDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVNearestAttackableTargetGoal\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class NearestAttackableTargetGoal&) const;
+    /**
+     * @symbol
      * ?buildSchema\@NearestAttackableTargetDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VNearestAttackableTargetDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void
     buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class NearestAttackableTargetDefinition>>&);
-    /**
-     * @symbol
-     * ?initialize\@NearestAttackableTargetDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVNearestAttackableTargetGoal\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class NearestAttackableTargetGoal&) const;
     // NOLINTEND
 };

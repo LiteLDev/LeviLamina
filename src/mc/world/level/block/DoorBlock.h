@@ -364,10 +364,6 @@ public:
     getDoorBlocks(class IConstBlockSource const&, class BlockPos const&, class Block const*&, class Block const*&)
         const;
     /**
-     * @symbol ?getDoorFacing\@DoorBlock\@\@SAEH\@Z
-     */
-    MCAPI static unsigned char getDoorFacing(int);
-    /**
      * @symbol ?getDoorThickness\@DoorBlock\@\@QEBAMXZ
      */
     MCAPI float getDoorThickness() const;
@@ -379,5 +375,9 @@ public:
      * @symbol ?setToggled\@DoorBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVActor\@\@_N\@Z
      */
     MCAPI void setToggled(class BlockSource&, class BlockPos const&, class Actor*, bool) const;
+    /**
+     * @symbol ?getDoorFacing\@DoorBlock\@\@SAEH\@Z
+     */
+    MCAPI static unsigned char getDoorFacing(int);
     // NOLINTEND
 };

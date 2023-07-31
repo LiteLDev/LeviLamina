@@ -28,12 +28,6 @@ public:
      */
     MCAPI ScriptBlockHitInformation(struct ProjectileHitEvent const&, class Scripting::WeakLifetimeScope const&);
     /**
-     * @symbol
-     * ?bind\@ScriptBlockHitInformation\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptBlockHitInformation\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptBlockHitInformation>
-    bind();
-    /**
      * @symbol ??4ScriptBlockHitInformation\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptBlockHitInformation&
@@ -47,6 +41,12 @@ public:
      * @symbol ??1ScriptBlockHitInformation\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptBlockHitInformation();
+    /**
+     * @symbol
+     * ?bind\@ScriptBlockHitInformation\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptBlockHitInformation\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptBlockHitInformation>
+    bind();
     // NOLINTEND
 };
 

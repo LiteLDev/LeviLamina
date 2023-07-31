@@ -39,11 +39,6 @@ public:
     MCAPI class Scripting::StrongTypedObjectHandle<struct ScriptModuleMinecraftNet::ScriptNetRequest>
     addHeader(std::string const&, std::variant<std::string, class ScriptModuleMinecraftServerAdmin::ScriptSecretString> const&);
     /**
-     * @symbol
-     * ?bind\@ScriptNetRequest\@ScriptModuleMinecraftNet\@\@SA?AV?$ClassBindingBuilder\@UScriptNetRequest\@ScriptModuleMinecraftNet\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraftNet::ScriptNetRequest> bind();
-    /**
      * @symbol ??4ScriptNetRequest\@ScriptModuleMinecraftNet\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraftNet::ScriptNetRequest&
@@ -76,6 +71,11 @@ public:
      * @symbol ??1ScriptNetRequest\@ScriptModuleMinecraftNet\@\@QEAA\@XZ
      */
     MCAPI ~ScriptNetRequest();
+    /**
+     * @symbol
+     * ?bind\@ScriptNetRequest\@ScriptModuleMinecraftNet\@\@SA?AV?$ClassBindingBuilder\@UScriptNetRequest\@ScriptModuleMinecraftNet\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraftNet::ScriptNetRequest> bind();
     // NOLINTEND
 };
 

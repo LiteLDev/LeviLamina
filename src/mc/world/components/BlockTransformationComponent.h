@@ -21,13 +21,13 @@ public:
     public:
         // NOLINTBEGIN
         /**
-         * @symbol ?bindType\@RotationType\@BlockTransformationComponent\@\@SAXXZ
-         */
-        MCAPI static void bindType();
-        /**
          * @symbol ?rotationTypeFromVec3\@RotationType\@BlockTransformationComponent\@\@QEAAXAEBVVec3\@\@\@Z
          */
         MCAPI void rotationTypeFromVec3(class Vec3 const&);
+        /**
+         * @symbol ?bindType\@RotationType\@BlockTransformationComponent\@\@SAXXZ
+         */
+        MCAPI static void bindType();
         // NOLINTEND
     };
 

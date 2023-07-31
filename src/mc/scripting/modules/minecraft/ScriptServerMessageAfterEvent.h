@@ -22,12 +22,6 @@ public:
      */
     MCAPI ScriptServerMessageAfterEvent(struct ScriptModuleMinecraft::ScriptServerMessageAfterEvent&&);
     /**
-     * @symbol
-     * ?bind\@ScriptServerMessageAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptServerMessageAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptServerMessageAfterEvent>
-    bind();
-    /**
      * @symbol ??4ScriptServerMessageAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptServerMessageAfterEvent&
@@ -36,6 +30,12 @@ public:
      * @symbol ??1ScriptServerMessageAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptServerMessageAfterEvent();
+    /**
+     * @symbol
+     * ?bind\@ScriptServerMessageAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptServerMessageAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptServerMessageAfterEvent>
+    bind();
     // NOLINTEND
 };
 

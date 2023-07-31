@@ -20,11 +20,6 @@ public:
      */
     MCAPI ScriptNetHeader(struct ScriptModuleMinecraftNet::ScriptNetHeader const&);
     /**
-     * @symbol
-     * ?bind\@ScriptNetHeader\@ScriptModuleMinecraftNet\@\@SA?AV?$ClassBindingBuilder\@UScriptNetHeader\@ScriptModuleMinecraftNet\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraftNet::ScriptNetHeader> bind();
-    /**
      * @symbol ??4ScriptNetHeader\@ScriptModuleMinecraftNet\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraftNet::ScriptNetHeader&
@@ -38,6 +33,11 @@ public:
      * @symbol ??1ScriptNetHeader\@ScriptModuleMinecraftNet\@\@QEAA\@XZ
      */
     MCAPI ~ScriptNetHeader();
+    /**
+     * @symbol
+     * ?bind\@ScriptNetHeader\@ScriptModuleMinecraftNet\@\@SA?AV?$ClassBindingBuilder\@UScriptNetHeader\@ScriptModuleMinecraftNet\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraftNet::ScriptNetHeader> bind();
     // NOLINTEND
 };
 

@@ -16,16 +16,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol
-     * ?findNextSpawnBlockUnder\@Spawner\@\@SA_NAEBVBlockSource\@\@AEAVBlockPos\@\@W4MaterialType\@\@W4SpawnBlockRequirements\@\@\@Z
-     */
-    MCAPI static bool findNextSpawnBlockUnder(
-        class BlockSource const&,
-        class BlockPos&,
-        enum class MaterialType,
-        enum class SpawnBlockRequirements
-    );
-    /**
      * @symbol ?getSpawnRules\@Spawner\@\@QEBAPEBVActorSpawnRuleGroup\@\@XZ
      */
     MCAPI class ActorSpawnRuleGroup const* getSpawnRules() const;
@@ -37,10 +27,6 @@ public:
      * @symbol ?initializeServerSide\@Spawner\@\@QEAAXAEAVResourcePackManager\@\@AEAVIWorldRegistriesProvider\@\@\@Z
      */
     MCAPI void initializeServerSide(class ResourcePackManager&, class IWorldRegistriesProvider&);
-    /**
-     * @symbol ?isSpawnPositionOk\@Spawner\@\@SA_NAEBVMobSpawnRules\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@_N\@Z
-     */
-    MCAPI static bool isSpawnPositionOk(class MobSpawnRules const&, class BlockSource&, class BlockPos const&, bool);
     /**
      * @symbol ?postProcessSpawnMobs\@Spawner\@\@QEAAXAEAVBlockSource\@\@HHAEAVRandom\@\@\@Z
      */
@@ -83,6 +69,20 @@ public:
      * @symbol ?tick\@Spawner\@\@QEAAXAEAVBlockSource\@\@AEBVLevelChunk\@\@\@Z
      */
     MCAPI void tick(class BlockSource&, class LevelChunk const&);
+    /**
+     * @symbol
+     * ?findNextSpawnBlockUnder\@Spawner\@\@SA_NAEBVBlockSource\@\@AEAVBlockPos\@\@W4MaterialType\@\@W4SpawnBlockRequirements\@\@\@Z
+     */
+    MCAPI static bool findNextSpawnBlockUnder(
+        class BlockSource const&,
+        class BlockPos&,
+        enum class MaterialType,
+        enum class SpawnBlockRequirements
+    );
+    /**
+     * @symbol ?isSpawnPositionOk\@Spawner\@\@SA_NAEBVMobSpawnRules\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@_N\@Z
+     */
+    MCAPI static bool isSpawnPositionOk(class MobSpawnRules const&, class BlockSource&, class BlockPos const&, bool);
     // NOLINTEND
 
     // protected:
@@ -123,10 +123,6 @@ public:
      */
     MCAPI int _handlePopulationCap(class MobSpawnerData const*, class SpawnConditions const&, int);
     /**
-     * @symbol ?_isInsideAncientCity\@Spawner\@\@CA_NAEBVBlockSource\@\@VBlockPos\@\@\@Z
-     */
-    MCAPI static bool _isInsideAncientCity(class BlockSource const&, class BlockPos);
-    /**
      * @symbol ?_permuteId\@Spawner\@\@AEBAXAEAUActorDefinitionIdentifier\@\@AEBVMobSpawnRules\@\@AEAVRandom\@\@\@Z
      */
     MCAPI void _permuteId(struct ActorDefinitionIdentifier&, class MobSpawnRules const&, class Random&) const;
@@ -149,6 +145,10 @@ public:
      * @symbol ?_updateMobCounts\@Spawner\@\@AEAAXAEBUActorDefinitionIdentifier\@\@AEBVSpawnConditions\@\@\@Z
      */
     MCAPI void _updateMobCounts(struct ActorDefinitionIdentifier const&, class SpawnConditions const&);
+    /**
+     * @symbol ?_isInsideAncientCity\@Spawner\@\@CA_NAEBVBlockSource\@\@VBlockPos\@\@\@Z
+     */
+    MCAPI static bool _isInsideAncientCity(class BlockSource const&, class BlockPos);
     // NOLINTEND
 
 private:

@@ -57,6 +57,14 @@ public:
      */
     MCAPI class FunctionEntry* getFunction(std::string const&);
     /**
+     * @symbol ?load\@FunctionManager\@\@QEAAXAEAVResourcePackManager\@\@AEAVCommandRegistry\@\@\@Z
+     */
+    MCAPI void load(class ResourcePackManager&, class CommandRegistry&);
+    /**
+     * @symbol ?tick\@FunctionManager\@\@QEAAXXZ
+     */
+    MCAPI void tick();
+    /**
      * @symbol
      * ?getFunctionNameFromPath\@FunctionManager\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPath\@Core\@\@\@Z
      */
@@ -66,14 +74,6 @@ public:
      * ?getQueueOrderForCommandVersion\@FunctionManager\@\@SA?AW4FunctionQueueOrder\@\@W4CurrentCmdVersion\@\@\@Z
      */
     MCAPI static enum class FunctionQueueOrder getQueueOrderForCommandVersion(enum class CurrentCmdVersion);
-    /**
-     * @symbol ?load\@FunctionManager\@\@QEAAXAEAVResourcePackManager\@\@AEAVCommandRegistry\@\@\@Z
-     */
-    MCAPI void load(class ResourcePackManager&, class CommandRegistry&);
-    /**
-     * @symbol ?tick\@FunctionManager\@\@QEAAXXZ
-     */
-    MCAPI void tick();
     // NOLINTEND
 
     // protected:

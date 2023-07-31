@@ -40,12 +40,6 @@ public:
 #endif
     /**
      * @symbol
-     * ?bind\@ScriptEquipmentInventoryComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptEquipmentInventoryComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptEquipmentInventoryComponent>
-    bind();
-    /**
-     * @symbol
      * ?getEquipment\@ScriptEquipmentInventoryComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@V?$optional\@V?$StrongTypedObjectHandle\@VScriptItemStack\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@std\@\@\@Scripting\@\@W4EquipmentSlot\@\@\@Z
      */
     MCAPI class Scripting::Result<
@@ -64,6 +58,12 @@ public:
      */
     MCAPI class Scripting::Result<void>
     setEquipment(enum class EquipmentSlot, std::optional<class ScriptModuleMinecraft::ScriptItemStack> const&);
+    /**
+     * @symbol
+     * ?bind\@ScriptEquipmentInventoryComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptEquipmentInventoryComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptEquipmentInventoryComponent>
+    bind();
     /**
      * @symbol ?ComponentId\@ScriptEquipmentInventoryComponent\@ScriptModuleMinecraft\@\@2PEBDEB
      */

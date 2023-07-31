@@ -132,12 +132,6 @@ public:
         const;
     /**
      * @symbol
-     * ?lookup\@BasicSchema\@internal\@cereal\@\@SAAEBV123\@AEBUReflectionCtx\@3\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1\@Z
-     */
-    MCAPI static class cereal::internal::BasicSchema const&
-    lookup(struct cereal::ReflectionCtx const&, std::string const&, std::string const&);
-    /**
-     * @symbol
      * ?save\@BasicSchema\@internal\@cereal\@\@QEBA?AUResult\@23\@AEAUSchemaWriter\@3\@AEBVmeta_any\@entt\@\@AEBUSerializerTraits\@3\@AEAVSerializerContext\@3\@\@Z
      */
     MCAPI struct cereal::internal::Result
@@ -154,6 +148,12 @@ public:
     MCAPI struct cereal::internal::Result
     validate(struct cereal::SchemaReader&, class entt::meta_any&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&)
         const;
+    /**
+     * @symbol
+     * ?lookup\@BasicSchema\@internal\@cereal\@\@SAAEBV123\@AEBUReflectionCtx\@3\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1\@Z
+     */
+    MCAPI static class cereal::internal::BasicSchema const&
+    lookup(struct cereal::ReflectionCtx const&, std::string const&, std::string const&);
     // NOLINTEND
 
     // protected:

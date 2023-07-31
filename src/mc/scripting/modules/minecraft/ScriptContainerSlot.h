@@ -41,11 +41,6 @@ public:
      */
     MCAPI ScriptContainerSlot(class ScriptModuleMinecraft::ScriptContainerSlot const&);
     /**
-     * @symbol
-     * ?bind\@ScriptContainerSlot\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptContainerSlot\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptContainerSlot> bind();
-    /**
      * @symbol ?getAmount\@ScriptContainerSlot\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<int> getAmount() const;
@@ -156,6 +151,11 @@ public:
      * @symbol ??1ScriptContainerSlot\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptContainerSlot();
+    /**
+     * @symbol
+     * ?bind\@ScriptContainerSlot\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptContainerSlot\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptContainerSlot> bind();
     // NOLINTEND
 };
 

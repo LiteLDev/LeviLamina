@@ -33,17 +33,6 @@ public:
     MCAPI ScriptChatSendAfterEvent(struct ChatEvent const&, class Scripting::WeakLifetimeScope const&);
     /**
      * @symbol
-     * ?bind\@ScriptChatSendAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptChatSendAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptChatSendAfterEvent> bind();
-    /**
-     * @symbol
-     * ?bindV010\@ScriptChatSendAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptChatSendAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptChatSendAfterEvent>
-    bindV010();
-    /**
-     * @symbol
      * ?copyTo\@ScriptChatSendAfterEvent\@ScriptModuleMinecraft\@\@QEBAXAEAUChatEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@\@Z
      */
     MCAPI void copyTo(struct ChatEvent&, class Scripting::WeakLifetimeScope const&) const;
@@ -61,6 +50,17 @@ public:
      * @symbol ??1ScriptChatSendAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptChatSendAfterEvent();
+    /**
+     * @symbol
+     * ?bind\@ScriptChatSendAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptChatSendAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptChatSendAfterEvent> bind();
+    /**
+     * @symbol
+     * ?bindV010\@ScriptChatSendAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptChatSendAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptChatSendAfterEvent>
+    bindV010();
     // NOLINTEND
 };
 

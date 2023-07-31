@@ -38,14 +38,6 @@ public:
     MCVAPI class Item const* useTimeDepleted(class ItemStack&, class Player&, class Level&);
 #endif
     /**
-     * @symbol ?bindType\@FoodItemComponent\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
-     * @symbol ?getIdentifier\@FoodItemComponent\@\@SAAEBVHashedString\@\@XZ
-     */
-    MCAPI static class HashedString const& getIdentifier();
-    /**
      * @symbol ?getUsingConvertsToItemDescriptor\@FoodItemComponent\@\@QEBA?AVItemDescriptor\@\@XZ
      */
     MCAPI class ItemDescriptor getUsingConvertsToItemDescriptor() const;
@@ -53,6 +45,14 @@ public:
      * @symbol ??4FoodItemComponent\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
     MCAPI class FoodItemComponent& operator=(class FoodItemComponent const&);
+    /**
+     * @symbol ?bindType\@FoodItemComponent\@\@SAXXZ
+     */
+    MCAPI static void bindType();
+    /**
+     * @symbol ?getIdentifier\@FoodItemComponent\@\@SAAEBVHashedString\@\@XZ
+     */
+    MCAPI static class HashedString const& getIdentifier();
     /**
      * @symbol ?registerVersionUpgrades\@FoodItemComponent\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
      */

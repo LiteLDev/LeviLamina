@@ -69,14 +69,14 @@ public:
      */
     MCAPI PlanterItemComponent(class ComponentItem*, class Block const&);
     /**
-     * @symbol ?bindType\@PlanterItemComponent\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol
      * ?calculatePlacePos\@PlanterItemComponent\@\@QEBA_NAEBVItemStackBase\@\@AEAVActor\@\@AEAEAEAVBlockPos\@\@\@Z
      */
     MCAPI bool calculatePlacePos(class ItemStackBase const&, class Actor&, unsigned char&, class BlockPos&) const;
+    /**
+     * @symbol ?bindType\@PlanterItemComponent\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier\@PlanterItemComponent\@\@SAAEBVHashedString\@\@XZ
      */

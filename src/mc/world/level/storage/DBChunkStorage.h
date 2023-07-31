@@ -154,11 +154,6 @@ public:
     MCAPI bool _checkSubChunksUseAbsoluteIndices(class DBChunkStorageKey, class LevelChunk const&, bool&) const;
     /**
      * @symbol
-     * ?_deserializeChunkActorStorageKeys\@DBChunkStorage\@\@CA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEAVIDataInput\@\@\@Z
-     */
-    MCAPI static std::vector<std::string> _deserializeChunkActorStorageKeys(class IDataInput&);
-    /**
-     * @symbol
      * ?_deserializeIndependentActorStorage\@DBChunkStorage\@\@AEAAXAEAVLevelChunk\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void _deserializeIndependentActorStorage(class LevelChunk&, std::string const&);
@@ -235,6 +230,11 @@ public:
      * @symbol ?_writeDiscardChunksBatch\@DBChunkStorage\@\@AEAAXXZ
      */
     MCAPI void _writeDiscardChunksBatch();
+    /**
+     * @symbol
+     * ?_deserializeChunkActorStorageKeys\@DBChunkStorage\@\@CA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEAVIDataInput\@\@\@Z
+     */
+    MCAPI static std::vector<std::string> _deserializeChunkActorStorageKeys(class IDataInput&);
     // NOLINTEND
 
 private:

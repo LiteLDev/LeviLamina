@@ -48,11 +48,6 @@ public:
      */
     MCAPI void applyEffects(class Actor*);
     /**
-     * @symbol
-     * ?areAllEffectsAmbientOrInvisible\@MobEffectInstance\@\@SA_NAEBV?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@std\@\@\@Z
-     */
-    MCAPI static bool areAllEffectsAmbientOrInvisible(std::vector<class MobEffectInstance> const&);
-    /**
      * @symbol ?displaysOnScreenTextureAnimation\@MobEffectInstance\@\@QEBA_NXZ
      */
     MCAPI bool displaysOnScreenTextureAnimation() const;
@@ -60,11 +55,6 @@ public:
      * @symbol ?getAmplifier\@MobEffectInstance\@\@QEBAHXZ
      */
     MCAPI int getAmplifier() const;
-    /**
-     * @symbol
-     * ?getColorValue\@MobEffectInstance\@\@SA?AVColor\@mce\@\@AEBV?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@std\@\@\@Z
-     */
-    MCAPI static class mce::Color getColorValue(std::vector<class MobEffectInstance> const&);
     /**
      * @symbol ?getComponentName\@MobEffectInstance\@\@QEBAAEBVHashedString\@\@XZ
      */
@@ -111,10 +101,6 @@ public:
      * @symbol ?isEffectVisible\@MobEffectInstance\@\@QEBA_NXZ
      */
     MCAPI bool isEffectVisible() const;
-    /**
-     * @symbol ?load\@MobEffectInstance\@\@SA?AV1\@AEBVCompoundTag\@\@\@Z
-     */
-    MCAPI static class MobEffectInstance load(class CompoundTag const&);
     /**
      * @symbol ??9MobEffectInstance\@\@QEBA_NAEBV0\@\@Z
      */
@@ -168,6 +154,20 @@ public:
      * @symbol ??1MobEffectInstance\@\@QEAA\@XZ
      */
     MCAPI ~MobEffectInstance();
+    /**
+     * @symbol
+     * ?areAllEffectsAmbientOrInvisible\@MobEffectInstance\@\@SA_NAEBV?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@std\@\@\@Z
+     */
+    MCAPI static bool areAllEffectsAmbientOrInvisible(std::vector<class MobEffectInstance> const&);
+    /**
+     * @symbol
+     * ?getColorValue\@MobEffectInstance\@\@SA?AVColor\@mce\@\@AEBV?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@std\@\@\@Z
+     */
+    MCAPI static class mce::Color getColorValue(std::vector<class MobEffectInstance> const&);
+    /**
+     * @symbol ?load\@MobEffectInstance\@\@SA?AV1\@AEBVCompoundTag\@\@\@Z
+     */
+    MCAPI static class MobEffectInstance load(class CompoundTag const&);
     /**
      * @symbol ?MAX_AMPLIFIER_COUNT\@MobEffectInstance\@\@2HB
      */

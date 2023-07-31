@@ -12,10 +12,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ?bindType\@ComponentInfo\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ??4ComponentInfo\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
     MCAPI struct ComponentInfo& operator=(struct ComponentInfo const&);
@@ -27,5 +23,9 @@ public:
      * @symbol ??1ComponentInfo\@\@QEAA\@XZ
      */
     MCAPI ~ComponentInfo();
+    /**
+     * @symbol ?bindType\@ComponentInfo\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     // NOLINTEND
 };

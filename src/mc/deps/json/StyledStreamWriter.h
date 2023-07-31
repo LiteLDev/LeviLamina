@@ -39,11 +39,6 @@ public:
     // NOLINTBEGIN
     /**
      * @symbol
-     * ?normalizeEOL\@StyledStreamWriter\@Json\@\@CA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV34\@\@Z
-     */
-    MCAPI static std::string normalizeEOL(std::string const&);
-    /**
-     * @symbol
      * ?pushValue\@StyledStreamWriter\@Json\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void pushValue(std::string const&);
@@ -67,6 +62,11 @@ public:
      * @symbol ?writeValue\@StyledStreamWriter\@Json\@\@AEAAXAEBVValue\@2\@\@Z
      */
     MCAPI void writeValue(class Json::Value const&);
+    /**
+     * @symbol
+     * ?normalizeEOL\@StyledStreamWriter\@Json\@\@CA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV34\@\@Z
+     */
+    MCAPI static std::string normalizeEOL(std::string const&);
     // NOLINTEND
 };
 

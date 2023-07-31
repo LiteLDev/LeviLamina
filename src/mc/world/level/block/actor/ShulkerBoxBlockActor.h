@@ -75,13 +75,13 @@ public:
     MCAPI
     ShulkerBoxBlockActor(enum class BlockActorType, std::string const&, enum class BlockActorRendererId, class BlockPos const&);
     /**
-     * @symbol ?itemAllowedInSlot\@ShulkerBoxBlockActor\@\@SA_NHAEBVItemStackBase\@\@H\@Z
-     */
-    MCAPI static bool itemAllowedInSlot(int, class ItemStackBase const&, int);
-    /**
      * @symbol ?setFacingDir\@ShulkerBoxBlockActor\@\@QEAAXE\@Z
      */
     MCAPI void setFacingDir(unsigned char);
+    /**
+     * @symbol ?itemAllowedInSlot\@ShulkerBoxBlockActor\@\@SA_NHAEBVItemStackBase\@\@H\@Z
+     */
+    MCAPI static bool itemAllowedInSlot(int, class ItemStackBase const&, int);
     // NOLINTEND
 
     // private:

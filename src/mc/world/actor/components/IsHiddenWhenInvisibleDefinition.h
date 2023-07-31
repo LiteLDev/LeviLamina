@@ -21,13 +21,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol
-     * ?buildSchema\@IsHiddenWhenInvisibleDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UIsHiddenWhenInvisibleDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
-    MCAPI static void buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      struct IsHiddenWhenInvisibleDefinition>>&);
-    /**
      * @symbol ?initialize\@IsHiddenWhenInvisibleDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
     MCAPI void initialize(class EntityContext&) const;
@@ -35,5 +28,12 @@ public:
      * @symbol ?uninitialize\@IsHiddenWhenInvisibleDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
     MCAPI void uninitialize(class EntityContext&) const;
+    /**
+     * @symbol
+     * ?buildSchema\@IsHiddenWhenInvisibleDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UIsHiddenWhenInvisibleDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
+     */
+    MCAPI static void buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      struct IsHiddenWhenInvisibleDefinition>>&);
     // NOLINTEND
 };

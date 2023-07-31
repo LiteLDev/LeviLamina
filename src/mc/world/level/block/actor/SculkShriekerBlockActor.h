@@ -95,14 +95,6 @@ public:
      */
     MCAPI SculkShriekerBlockActor(class BlockPos const&);
     /**
-     * @symbol ?tryGet\@SculkShriekerBlockActor\@\@SAPEAV1\@AEAVBlockSource\@\@VBlockPos\@\@\@Z
-     */
-    MCAPI static class SculkShriekerBlockActor* tryGet(class BlockSource&, class BlockPos);
-    /**
-     * @symbol ?tryGetPlayerInHierarchy\@SculkShriekerBlockActor\@\@SAPEAVPlayer\@\@PEAVActor\@\@\@Z
-     */
-    MCAPI static class Player* tryGetPlayerInHierarchy(class Actor*);
-    /**
      * @symbol ?tryRespond\@SculkShriekerBlockActor\@\@QEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void tryRespond(class BlockSource&, class BlockPos const&);
@@ -110,6 +102,14 @@ public:
      * @symbol ?tryShriek\@SculkShriekerBlockActor\@\@QEAA_NAEAVBlockSource\@\@VBlockPos\@\@AEAVPlayer\@\@\@Z
      */
     MCAPI bool tryShriek(class BlockSource&, class BlockPos, class Player&);
+    /**
+     * @symbol ?tryGet\@SculkShriekerBlockActor\@\@SAPEAV1\@AEAVBlockSource\@\@VBlockPos\@\@\@Z
+     */
+    MCAPI static class SculkShriekerBlockActor* tryGet(class BlockSource&, class BlockPos);
+    /**
+     * @symbol ?tryGetPlayerInHierarchy\@SculkShriekerBlockActor\@\@SAPEAVPlayer\@\@PEAVActor\@\@\@Z
+     */
+    MCAPI static class Player* tryGetPlayerInHierarchy(class Actor*);
     // NOLINTEND
 
     // private:

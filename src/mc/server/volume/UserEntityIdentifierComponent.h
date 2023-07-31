@@ -36,6 +36,10 @@ public:
      */
     MCAPI class UserEntityIdentifierComponent& operator=(class UserEntityIdentifierComponent&&);
     /**
+     * @symbol ??1UserEntityIdentifierComponent\@\@QEAA\@XZ
+     */
+    MCAPI ~UserEntityIdentifierComponent();
+    /**
      * @symbol ?tryGetFromEntity\@UserEntityIdentifierComponent\@\@SAPEAV1\@AEAVEntityContext\@\@\@Z
      */
     MCAPI static class UserEntityIdentifierComponent* tryGetFromEntity(class EntityContext&);
@@ -43,9 +47,5 @@ public:
      * @symbol ?tryGetFromEntity\@UserEntityIdentifierComponent\@\@SAPEBV1\@AEBVEntityContext\@\@\@Z
      */
     MCAPI static class UserEntityIdentifierComponent const* tryGetFromEntity(class EntityContext const&);
-    /**
-     * @symbol ??1UserEntityIdentifierComponent\@\@QEAA\@XZ
-     */
-    MCAPI ~UserEntityIdentifierComponent();
     // NOLINTEND
 };

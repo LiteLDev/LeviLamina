@@ -82,10 +82,6 @@ public:
      */
     MCAPI void enableAutoSend(bool);
     /**
-     * @symbol ?getDebugSpatialPacketModifiers\@SpatialActorNetworkData\@\@SAAEAUDebugSpatialPacketModifiers\@1\@XZ
-     */
-    MCAPI static struct SpatialActorNetworkData::DebugSpatialPacketModifiers& getDebugSpatialPacketModifiers();
-    /**
      * @symbol ?handleClientData\@SpatialActorNetworkData\@\@QEAAXAEBVMoveActorAbsoluteData\@\@\@Z
      */
     MCAPI void handleClientData(class MoveActorAbsoluteData const&);
@@ -109,6 +105,10 @@ public:
      * @symbol ?teleportEntity\@SpatialActorNetworkData\@\@QEAAXAEBVVec3\@\@AEBVVec2\@\@M\@Z
      */
     MCAPI void teleportEntity(class Vec3 const&, class Vec2 const&, float);
+    /**
+     * @symbol ?getDebugSpatialPacketModifiers\@SpatialActorNetworkData\@\@SAAEAUDebugSpatialPacketModifiers\@1\@XZ
+     */
+    MCAPI static struct SpatialActorNetworkData::DebugSpatialPacketModifiers& getDebugSpatialPacketModifiers();
     // NOLINTEND
 
     // private:

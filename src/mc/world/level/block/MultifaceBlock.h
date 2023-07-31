@@ -294,6 +294,18 @@ public:
      */
     MCAPI MultifaceBlock(std::string const&, int, class Material const&);
     /**
+     * @symbol
+     * ?removeFace\@MultifaceBlock\@\@QEBAXAEAVIBlockWorldGenAPI\@\@PEAVBlockSource\@\@AEBVBlock\@\@AEBVBlockPos\@\@E_N\@Z
+     */
+    MCAPI void removeFace(
+        class IBlockWorldGenAPI&,
+        class BlockSource*,
+        class Block const&,
+        class BlockPos const&,
+        unsigned char,
+        bool
+    ) const;
+    /**
      * @symbol ?convertOldMultifaceToNewMultifaceValue\@MultifaceBlock\@\@SAHH\@Z
      */
     MCAPI static int convertOldMultifaceToNewMultifaceValue(int);
@@ -326,18 +338,6 @@ public:
      * @symbol ?hasFace\@MultifaceBlock\@\@SA_NAEBVBlock\@\@E\@Z
      */
     MCAPI static bool hasFace(class Block const&, unsigned char);
-    /**
-     * @symbol
-     * ?removeFace\@MultifaceBlock\@\@QEBAXAEAVIBlockWorldGenAPI\@\@PEAVBlockSource\@\@AEBVBlock\@\@AEBVBlockPos\@\@E_N\@Z
-     */
-    MCAPI void removeFace(
-        class IBlockWorldGenAPI&,
-        class BlockSource*,
-        class Block const&,
-        class BlockPos const&,
-        unsigned char,
-        bool
-    ) const;
     /**
      * @symbol ?MULTIFACE_ALL\@MultifaceBlock\@\@2HB
      */

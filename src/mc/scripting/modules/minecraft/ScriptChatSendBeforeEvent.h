@@ -25,6 +25,15 @@ public:
      */
     MCAPI ScriptChatSendBeforeEvent(struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent const&);
     /**
+     * @symbol ??4ScriptChatSendBeforeEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
+     */
+    MCAPI struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent&&);
+    /**
+     * @symbol ??1ScriptChatSendBeforeEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptChatSendBeforeEvent();
+    /**
      * @symbol
      * ?bind\@ScriptChatSendBeforeEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptChatSendBeforeEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
@@ -35,15 +44,6 @@ public:
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent>
     bindV010();
-    /**
-     * @symbol ??4ScriptChatSendBeforeEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-     */
-    MCAPI struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptChatSendBeforeEvent&&);
-    /**
-     * @symbol ??1ScriptChatSendBeforeEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptChatSendBeforeEvent();
     // NOLINTEND
 };
 

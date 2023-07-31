@@ -31,14 +31,14 @@ public:
      */
     MCAPI void _create(class Dimension&, class Random&, int, int);
     /**
-     * @symbol ?_fillCobblestone\@WoodlandMansionStart\@\@CAXAEBVBlockPos\@\@AEAVBlockSource\@\@\@Z
-     */
-    MCAPI static void _fillCobblestone(class BlockPos const&, class BlockSource&);
-    /**
      * @symbol
      * ?_makeStairs\@WoodlandMansionStart\@\@AEAAXAEBVBlockPos\@\@AEBVBlock\@\@EEAEAVBlockSource\@\@AEBVBoundingBox\@\@\@Z
      */
     MCAPI void
     _makeStairs(class BlockPos const&, class Block const&, unsigned char, unsigned char, class BlockSource&, class BoundingBox const&);
+    /**
+     * @symbol ?_fillCobblestone\@WoodlandMansionStart\@\@CAXAEBVBlockPos\@\@AEAVBlockSource\@\@\@Z
+     */
+    MCAPI static void _fillCobblestone(class BlockPos const&, class BlockSource&);
     // NOLINTEND
 };

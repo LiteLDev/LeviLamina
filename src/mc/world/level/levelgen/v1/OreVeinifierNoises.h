@@ -25,10 +25,6 @@ public:
      */
     MCAPI class XoroshiroPositionalRandomFactory const& getPositionalRandomFactory() const;
     /**
-     * @symbol ?make\@OreVeinifierNoises\@\@SA?AV1\@AEBVXoroshiroPositionalRandomFactory\@\@\@Z
-     */
-    MCAPI static class OreVeinifierNoises make(class XoroshiroPositionalRandomFactory const&);
-    /**
      * @symbol ?sampleGapNoise\@OreVeinifierNoises\@\@QEBAMMMM\@Z
      */
     MCAPI float sampleGapNoise(float, float, float) const;
@@ -48,6 +44,10 @@ public:
      * @symbol ??1OreVeinifierNoises\@\@QEAA\@XZ
      */
     MCAPI ~OreVeinifierNoises();
+    /**
+     * @symbol ?make\@OreVeinifierNoises\@\@SA?AV1\@AEBVXoroshiroPositionalRandomFactory\@\@\@Z
+     */
+    MCAPI static class OreVeinifierNoises make(class XoroshiroPositionalRandomFactory const&);
     // NOLINTEND
 
     // private:

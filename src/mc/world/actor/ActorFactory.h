@@ -42,10 +42,6 @@ public:
      */
     MCAPI void clearDefinitionGroup();
     /**
-     * @symbol ?clearEntityMappings\@ActorFactory\@\@SAXXZ
-     */
-    MCAPI static void clearEntityMappings();
-    /**
      * @symbol
      * ?createActor\@ActorFactory\@\@QEAA?AV?$OwnerPtrT\@UEntityRefTraits\@\@\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUActorDefinitionIdentifier\@\@PEAVActor\@\@AEBVVec3\@\@AEBVVec2\@\@\@Z
      */
@@ -82,16 +78,6 @@ public:
     MCAPI class OwnerPtrT<struct EntityRefTraits>
     createTransformedActor(struct ActorDefinitionIdentifier const&, class Actor*);
     /**
-     * @symbol
-     * ?fillFactoryData\@ActorFactory\@\@SAXAEBUActorDefinitionIdentifier\@\@0AEBV?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UActorFactoryData\@\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UActorFactoryData\@\@\@std\@\@\@2\@\@std\@\@AEAUActorFactoryData\@\@\@Z
-     */
-    MCAPI static void
-    fillFactoryData(struct ActorDefinitionIdentifier const&, struct ActorDefinitionIdentifier const&, std::unordered_map<std::string, struct ActorFactoryData> const&, struct ActorFactoryData&);
-    /**
-     * @symbol ?fixLegacyEntity\@ActorFactory\@\@SAPEAVActor\@\@AEAVBlockSource\@\@PEBVCompoundTag\@\@\@Z
-     */
-    MCAPI static class Actor* fixLegacyEntity(class BlockSource&, class CompoundTag const*);
-    /**
      * @symbol ?getGoalFactory\@ActorFactory\@\@QEAAAEAVActorGoalFactory\@\@XZ
      */
     MCAPI class ActorGoalFactory& getGoalFactory();
@@ -110,12 +96,6 @@ public:
      */
     MCAPI enum class ActorType lookupEntityType(struct ActorDefinitionIdentifier const&) const;
     /**
-     * @symbol
-     * ?registerEntityMapping\@ActorFactory\@\@SAXAEBW4ActorType\@\@_NAEBQ6A?AV?$unique_ptr\@VActor\@\@U?$default_delete\@VActor\@\@\@std\@\@\@std\@\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@ZV?$optional\@H\@4\@\@Z
-     */
-    MCAPI static void
-    registerEntityMapping(enum class ActorType const&, bool, std::unique_ptr<class Actor> (*const&)(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&), std::optional<int>);
-    /**
      * @symbol ?setDefinitionGroup\@ActorFactory\@\@QEAAXPEAVActorDefinitionGroup\@\@\@Z
      */
     MCAPI void setDefinitionGroup(class ActorDefinitionGroup*);
@@ -123,6 +103,26 @@ public:
      * @symbol ?setEntityInitializer\@ActorFactory\@\@QEAAXV?$shared_ptr\@VIEntityInitializer\@\@\@std\@\@\@Z
      */
     MCAPI void setEntityInitializer(std::shared_ptr<class IEntityInitializer>);
+    /**
+     * @symbol ?clearEntityMappings\@ActorFactory\@\@SAXXZ
+     */
+    MCAPI static void clearEntityMappings();
+    /**
+     * @symbol
+     * ?fillFactoryData\@ActorFactory\@\@SAXAEBUActorDefinitionIdentifier\@\@0AEBV?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UActorFactoryData\@\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UActorFactoryData\@\@\@std\@\@\@2\@\@std\@\@AEAUActorFactoryData\@\@\@Z
+     */
+    MCAPI static void
+    fillFactoryData(struct ActorDefinitionIdentifier const&, struct ActorDefinitionIdentifier const&, std::unordered_map<std::string, struct ActorFactoryData> const&, struct ActorFactoryData&);
+    /**
+     * @symbol ?fixLegacyEntity\@ActorFactory\@\@SAPEAVActor\@\@AEAVBlockSource\@\@PEBVCompoundTag\@\@\@Z
+     */
+    MCAPI static class Actor* fixLegacyEntity(class BlockSource&, class CompoundTag const*);
+    /**
+     * @symbol
+     * ?registerEntityMapping\@ActorFactory\@\@SAXAEBW4ActorType\@\@_NAEBQ6A?AV?$unique_ptr\@VActor\@\@U?$default_delete\@VActor\@\@\@std\@\@\@std\@\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@ZV?$optional\@H\@4\@\@Z
+     */
+    MCAPI static void
+    registerEntityMapping(enum class ActorType const&, bool, std::unique_ptr<class Actor> (*const&)(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&), std::optional<int>);
     // NOLINTEND
 
     // private:

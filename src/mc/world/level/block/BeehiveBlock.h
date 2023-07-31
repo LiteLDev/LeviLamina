@@ -278,10 +278,6 @@ public:
      */
     MCAPI BeehiveBlock(std::string const&, int);
     /**
-     * @symbol ?deliverNectar\@BeehiveBlock\@\@SAXAEAVBlockSource\@\@AEBVBlock\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI static void deliverNectar(class BlockSource&, class Block const&, class BlockPos const&);
-    /**
      * @symbol ?emitHoneyComb\@BeehiveBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void emitHoneyComb(class BlockSource&, class BlockPos const&) const;
@@ -290,13 +286,17 @@ public:
      */
     MCAPI void evictAll(class BlockSource&, class BlockPos const&, bool) const;
     /**
-     * @symbol ?hasHoneyToHarvest\@BeehiveBlock\@\@SA_NAEBVBlock\@\@\@Z
-     */
-    MCAPI static bool hasHoneyToHarvest(class Block const&);
-    /**
      * @symbol ?onPlayerPlace\@BeehiveBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void onPlayerPlace(class BlockSource&, class BlockPos const&) const;
+    /**
+     * @symbol ?deliverNectar\@BeehiveBlock\@\@SAXAEAVBlockSource\@\@AEBVBlock\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI static void deliverNectar(class BlockSource&, class Block const&, class BlockPos const&);
+    /**
+     * @symbol ?hasHoneyToHarvest\@BeehiveBlock\@\@SA_NAEBVBlock\@\@\@Z
+     */
+    MCAPI static bool hasHoneyToHarvest(class Block const&);
     /**
      * @symbol ?resetHoneyLevel\@BeehiveBlock\@\@SAXAEAVBlockSource\@\@AEBVBlock\@\@AEBVBlockPos\@\@\@Z
      */

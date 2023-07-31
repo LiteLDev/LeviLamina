@@ -90,16 +90,16 @@ public:
     MCAPI
     AttributeScriptActorComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&, class Attribute const&);
     /**
+     * @symbol ??4AttributeScriptActorComponent\@ScriptModuleMinecraft\@\@QEAAAEAV01\@AEBV01\@\@Z
+     */
+    MCAPI class ScriptModuleMinecraft::AttributeScriptActorComponent&
+    operator=(class ScriptModuleMinecraft::AttributeScriptActorComponent const&);
+    /**
      * @symbol
      * ?bind\@AttributeScriptActorComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VAttributeScriptActorComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::AttributeScriptActorComponent>
     bind();
-    /**
-     * @symbol ??4AttributeScriptActorComponent\@ScriptModuleMinecraft\@\@QEAAAEAV01\@AEBV01\@\@Z
-     */
-    MCAPI class ScriptModuleMinecraft::AttributeScriptActorComponent&
-    operator=(class ScriptModuleMinecraft::AttributeScriptActorComponent const&);
     // NOLINTEND
 };
 

@@ -13,10 +13,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ?bindType\@DefinitionTrigger\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ?canTrigger\@DefinitionTrigger\@\@QEBA_NAEAVRenderParams\@\@\@Z
      */
     MCAPI bool canTrigger(class RenderParams&) const;
@@ -24,5 +20,9 @@ public:
      * @symbol ??1DefinitionTrigger\@\@QEAA\@XZ
      */
     MCAPI ~DefinitionTrigger();
+    /**
+     * @symbol ?bindType\@DefinitionTrigger\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     // NOLINTEND
 };

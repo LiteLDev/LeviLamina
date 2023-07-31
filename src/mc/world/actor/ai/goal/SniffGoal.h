@@ -32,15 +32,15 @@ public:
          */
         MCAPI Definition();
         /**
+         * @symbol ?initialize\@Definition\@SniffGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
+         */
+        MCAPI void initialize(class EntityContext&, class SniffGoal&) const;
+        /**
          * @symbol
          * ?buildSchema\@Definition\@SniffGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDefinition\@SniffGoal\@\@\@JsonUtil\@\@\@4\@\@Z
          */
         MCAPI static void
         buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SniffGoal::Definition>>&);
-        /**
-         * @symbol ?initialize\@Definition\@SniffGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
-        MCAPI void initialize(class EntityContext&, class SniffGoal&) const;
         // NOLINTEND
     };
 

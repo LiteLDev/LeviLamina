@@ -16,12 +16,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol
-     * ?read\@ItemStackRequestBatch\@\@SA?AV?$Result\@V?$unique_ptr\@VItemStackRequestBatch\@\@U?$default_delete\@VItemStackRequestBatch\@\@\@std\@\@\@std\@\@Verror_code\@2\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
-     */
-    MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestBatch>, std::error_code>
-    read(class ReadOnlyBinaryStream&);
-    /**
      * @symbol ?write\@ItemStackRequestBatch\@\@QEBAXAEAVBinaryStream\@\@\@Z
      */
     MCAPI void write(class BinaryStream&) const;
@@ -29,5 +23,11 @@ public:
      * @symbol ??1ItemStackRequestBatch\@\@QEAA\@XZ
      */
     MCAPI ~ItemStackRequestBatch();
+    /**
+     * @symbol
+     * ?read\@ItemStackRequestBatch\@\@SA?AV?$Result\@V?$unique_ptr\@VItemStackRequestBatch\@\@U?$default_delete\@VItemStackRequestBatch\@\@\@std\@\@\@std\@\@Verror_code\@2\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     */
+    MCAPI static class Bedrock::Result<std::unique_ptr<class ItemStackRequestBatch>, std::error_code>
+    read(class ReadOnlyBinaryStream&);
     // NOLINTEND
 };

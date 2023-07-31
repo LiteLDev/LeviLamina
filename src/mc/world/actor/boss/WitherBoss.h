@@ -251,10 +251,6 @@ public:
      */
     MCAPI void awardSpawnWitherAchievement() const;
     /**
-     * @symbol ?canDestroy\@WitherBoss\@\@SA_NAEBVBlock\@\@W4WitherAttackType\@1\@\@Z
-     */
-    MCAPI static bool canDestroy(class Block const&, enum class WitherBoss::WitherAttackType);
-    /**
      * @symbol ?getHeadPos\@WitherBoss\@\@QEBA?AVVec3\@\@H\@Z
      */
     MCAPI class Vec3 getHeadPos(int) const;
@@ -314,6 +310,10 @@ public:
      * @symbol ?wantsToMove\@WitherBoss\@\@QEAA_NXZ
      */
     MCAPI bool wantsToMove();
+    /**
+     * @symbol ?canDestroy\@WitherBoss\@\@SA_NAEBVBlock\@\@W4WitherAttackType\@1\@\@Z
+     */
+    MCAPI static bool canDestroy(class Block const&, enum class WitherBoss::WitherAttackType);
     /**
      * @symbol ?MAX_HEALTH_CAP_UUID\@WitherBoss\@\@2VUUID\@mce\@\@B
      */

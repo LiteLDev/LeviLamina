@@ -43,11 +43,6 @@ public:
     MCAPI ScriptStringBlockProperty(class ScriptModuleMinecraft::ScriptStringBlockProperty&&);
     /**
      * @symbol
-     * ?bind\@ScriptStringBlockProperty\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptStringBlockProperty\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptStringBlockProperty> bind();
-    /**
-     * @symbol
      * ?getState\@ScriptStringBlockProperty\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<std::string> getState() const;
@@ -61,6 +56,11 @@ public:
      * ?setState\@ScriptStringBlockProperty\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<void> setState(std::string);
+    /**
+     * @symbol
+     * ?bind\@ScriptStringBlockProperty\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptStringBlockProperty\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptStringBlockProperty> bind();
     // NOLINTEND
 };
 

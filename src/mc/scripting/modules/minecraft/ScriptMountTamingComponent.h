@@ -50,14 +50,14 @@ public:
     MCAPI
     ScriptMountTamingComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
     /**
+     * @symbol ?setTamed\@ScriptMountTamingComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@X\@Scripting\@\@_N\@Z
+     */
+    MCAPI class Scripting::Result<void> setTamed(bool) const;
+    /**
      * @symbol
      * ?bind\@ScriptMountTamingComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptMountTamingComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMountTamingComponent> bind();
-    /**
-     * @symbol ?setTamed\@ScriptMountTamingComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@X\@Scripting\@\@_N\@Z
-     */
-    MCAPI class Scripting::Result<void> setTamed(bool) const;
     /**
      * @symbol ?ComponentId\@ScriptMountTamingComponent\@ScriptModuleMinecraft\@\@2PEBDEB
      */

@@ -49,11 +49,6 @@ public:
     MCAPI void indent();
     /**
      * @symbol
-     * ?normalizeEOL\@StyledWriter\@Json\@\@CA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV34\@\@Z
-     */
-    MCAPI static std::string normalizeEOL(std::string const&);
-    /**
-     * @symbol
      * ?pushValue\@StyledWriter\@Json\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void pushValue(std::string const&);
@@ -82,6 +77,11 @@ public:
      * ?writeWithIndent\@StyledWriter\@Json\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void writeWithIndent(std::string const&);
+    /**
+     * @symbol
+     * ?normalizeEOL\@StyledWriter\@Json\@\@CA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV34\@\@Z
+     */
+    MCAPI static std::string normalizeEOL(std::string const&);
     // NOLINTEND
 };
 

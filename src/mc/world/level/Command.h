@@ -74,21 +74,9 @@ public:
     // protected:
     // NOLINTBEGIN
     /**
-     * @symbol ?getPlayerFromOrigin\@Command\@\@KAPEAVPlayer\@\@AEBVCommandOrigin\@\@\@Z
-     */
-    MCAPI static class Player* getPlayerFromOrigin(class CommandOrigin const&);
-    /**
      * @symbol ?getRegistry\@Command\@\@IEBAAEBVCommandRegistry\@\@XZ
      */
     MCAPI class CommandRegistry const& getRegistry() const;
-    /**
-     * @symbol ?isTemplateLockedAction\@Command\@\@KA_NAEBVCommandOrigin\@\@\@Z
-     */
-    MCAPI static bool isTemplateLockedAction(class CommandOrigin const&);
-    /**
-     * @symbol ?isWildcard\@Command\@\@KA_NAEBVCommandSelectorBase\@\@\@Z
-     */
-    MCAPI static bool isWildcard(class CommandSelectorBase const&);
     /**
      * @symbol ?sendTelemetry\@Command\@\@IEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
@@ -97,6 +85,18 @@ public:
      * @symbol ?shouldSendTelemetry\@Command\@\@IEBA_NAEBVCommandOrigin\@\@\@Z
      */
     MCAPI bool shouldSendTelemetry(class CommandOrigin const&) const;
+    /**
+     * @symbol ?getPlayerFromOrigin\@Command\@\@KAPEAVPlayer\@\@AEBVCommandOrigin\@\@\@Z
+     */
+    MCAPI static class Player* getPlayerFromOrigin(class CommandOrigin const&);
+    /**
+     * @symbol ?isTemplateLockedAction\@Command\@\@KA_NAEBVCommandOrigin\@\@\@Z
+     */
+    MCAPI static bool isTemplateLockedAction(class CommandOrigin const&);
+    /**
+     * @symbol ?isWildcard\@Command\@\@KA_NAEBVCommandSelectorBase\@\@\@Z
+     */
+    MCAPI static bool isWildcard(class CommandSelectorBase const&);
     /**
      * @symbol ?validData\@Command\@\@KA_NHAEAGAEAVCommandOutput\@\@\@Z
      */

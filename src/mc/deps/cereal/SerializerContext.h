@@ -80,12 +80,6 @@ public:
      */
     MCAPI void consumeContext(class cereal::SerializerContext&&);
     /**
-     * @symbol
-     * ?contextString\@SerializerContext\@cereal\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@U?$pair\@W4ContextType\@SerializerContext\@cereal\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@V?$allocator\@U?$pair\@W4ContextType\@SerializerContext\@cereal\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@2\@\@4\@\@Z
-     */
-    MCAPI static std::string
-    contextString(std::vector<std::pair<enum class cereal::SerializerContext::ContextType, std::string>> const&);
-    /**
      * @symbol ?detachContext\@SerializerContext\@cereal\@\@QEAA?AV12\@XZ
      */
     MCAPI class cereal::SerializerContext detachContext();
@@ -118,6 +112,12 @@ public:
      * @symbol ??1SerializerContext\@cereal\@\@QEAA\@XZ
      */
     MCAPI ~SerializerContext();
+    /**
+     * @symbol
+     * ?contextString\@SerializerContext\@cereal\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@U?$pair\@W4ContextType\@SerializerContext\@cereal\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@V?$allocator\@U?$pair\@W4ContextType\@SerializerContext\@cereal\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@2\@\@4\@\@Z
+     */
+    MCAPI static std::string
+    contextString(std::vector<std::pair<enum class cereal::SerializerContext::ContextType, std::string>> const&);
     // NOLINTEND
 };
 

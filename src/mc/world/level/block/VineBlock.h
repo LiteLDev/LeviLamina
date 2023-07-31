@@ -300,10 +300,6 @@ public:
      */
     MCAPI VineBlock(std::string const&, int);
     /**
-     * @symbol ?getBlockForFace\@VineBlock\@\@SAAEBVBlock\@\@E\@Z
-     */
-    MCAPI static class Block const& getBlockForFace(unsigned char);
-    /**
      * @symbol ?growDown\@VineBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     MCAPI void growDown(class BlockSource&, class BlockPos const&, int) const;
@@ -315,6 +311,10 @@ public:
      * @symbol ?growUp\@VineBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     MCAPI void growUp(class BlockSource&, class BlockPos const&, int) const;
+    /**
+     * @symbol ?getBlockForFace\@VineBlock\@\@SAAEBVBlock\@\@E\@Z
+     */
+    MCAPI static class Block const& getBlockForFace(unsigned char);
     /**
      * @symbol ?isAcceptableNeighbour\@VineBlock\@\@SA_NAEBVBlock\@\@\@Z
      */

@@ -18,12 +18,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol
-     * ?bind\@ScriptPressurePlatePushAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptPressurePlatePushAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptPressurePlatePushAfterEvent>
-    bind();
-    /**
      * @symbol ??4ScriptPressurePlatePushAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptPressurePlatePushAfterEvent&
@@ -32,6 +26,12 @@ public:
      * @symbol ??1ScriptPressurePlatePushAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptPressurePlatePushAfterEvent();
+    /**
+     * @symbol
+     * ?bind\@ScriptPressurePlatePushAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptPressurePlatePushAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptPressurePlatePushAfterEvent>
+    bind();
     // NOLINTEND
 };
 

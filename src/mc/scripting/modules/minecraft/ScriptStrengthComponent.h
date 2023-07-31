@@ -31,11 +31,6 @@ public:
     MCVAPI ~ScriptStrengthComponent();
 #endif
     /**
-     * @symbol
-     * ?bind\@ScriptStrengthComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptStrengthComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptStrengthComponent> bind();
-    /**
      * @symbol ?getMax\@ScriptStrengthComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<int> getMax() const;
@@ -43,6 +38,11 @@ public:
      * @symbol ?getValue\@ScriptStrengthComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<int> getValue() const;
+    /**
+     * @symbol
+     * ?bind\@ScriptStrengthComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptStrengthComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptStrengthComponent> bind();
     /**
      * @symbol ?ComponentId\@ScriptStrengthComponent\@ScriptModuleMinecraft\@\@2PEBDEB
      */

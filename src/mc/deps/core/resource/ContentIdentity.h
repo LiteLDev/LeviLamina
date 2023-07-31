@@ -33,11 +33,6 @@ public:
      */
     MCAPI std::string asString() const;
     /**
-     * @symbol
-     * ?fromString\@ContentIdentity\@\@SA?AV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static class ContentIdentity fromString(std::string const&);
-    /**
      * @symbol ?getAsUUID\@ContentIdentity\@\@QEBAAEBVUUID\@mce\@\@XZ
      */
     MCAPI class mce::UUID const& getAsUUID() const;
@@ -61,6 +56,11 @@ public:
      * @symbol ??8ContentIdentity\@\@QEBA_NAEBV0\@\@Z
      */
     MCAPI bool operator==(class ContentIdentity const&) const;
+    /**
+     * @symbol
+     * ?fromString\@ContentIdentity\@\@SA?AV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static class ContentIdentity fromString(std::string const&);
     /**
      * @symbol ?EMPTY\@ContentIdentity\@\@2V1\@A
      */

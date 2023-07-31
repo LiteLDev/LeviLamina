@@ -36,12 +36,12 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ?bindType\@VolumeIdentifier\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ??8VolumeIdentifier\@\@QEBA_NAEBU0\@\@Z
      */
     MCAPI bool operator==(struct VolumeIdentifier const&) const;
+    /**
+     * @symbol ?bindType\@VolumeIdentifier\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     // NOLINTEND
 };

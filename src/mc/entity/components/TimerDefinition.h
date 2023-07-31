@@ -28,15 +28,15 @@ public:
      */
     MCAPI void addWeightedChoiceEntry(struct WeightChoiceEntry const&);
     /**
+     * @symbol ?initialize\@TimerDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVTimerComponent\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class TimerComponent&) const;
+    /**
      * @symbol
      * ?buildSchema\@TimerDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VTimerDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TimerDefinition>>&);
-    /**
-     * @symbol ?initialize\@TimerDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVTimerComponent\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class TimerComponent&) const;
     // NOLINTEND
 };

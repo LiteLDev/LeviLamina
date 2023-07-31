@@ -39,11 +39,6 @@ public:
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>
     addItem(class ScriptModuleMinecraft::ScriptItemStack const&) const;
     /**
-     * @symbol
-     * ?bind\@ScriptContainerWrapper\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptContainerWrapper\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptContainerWrapper> bind();
-    /**
      * @symbol ?clearAll\@ScriptContainerWrapper\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@X\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<void> clearAll() const;
@@ -92,6 +87,11 @@ public:
     MCAPI class Scripting::Result<
         class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>
     transferItem(int, class ScriptModuleMinecraft::ScriptContainerWrapper&) const;
+    /**
+     * @symbol
+     * ?bind\@ScriptContainerWrapper\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptContainerWrapper\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptContainerWrapper> bind();
     // NOLINTEND
 };
 

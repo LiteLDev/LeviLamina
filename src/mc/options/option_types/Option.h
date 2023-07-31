@@ -81,10 +81,6 @@ public:
      */
     MCAPI void notifyOptionValueChanged(bool);
     /**
-     * @symbol ?read\@Option\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEA_N\@Z
-     */
-    MCAPI static bool read(std::string const&, bool&);
-    /**
      * @symbol ?registerLock\@Option\@\@QEAA?AVSubscription\@PubSub\@Bedrock\@\@V?$function\@$$A6AXAEA_N\@Z\@std\@\@\@Z
      */
     MCAPI class Bedrock::PubSub::Subscription registerLock(std::function<void(bool&)>);
@@ -93,6 +89,10 @@ public:
      * ?registerObserver\@Option\@\@QEAA?AVSubscription\@PubSub\@Bedrock\@\@V?$function\@$$A6AXAEBVOption\@\@\@Z\@std\@\@\@Z
      */
     MCAPI class Bedrock::PubSub::Subscription registerObserver(std::function<void(class Option const&)>);
+    /**
+     * @symbol ?read\@Option\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEA_N\@Z
+     */
+    MCAPI static bool read(std::string const&, bool&);
     // NOLINTEND
 
     // private:

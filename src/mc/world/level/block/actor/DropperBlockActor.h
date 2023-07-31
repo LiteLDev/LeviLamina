@@ -29,6 +29,10 @@ public:
     MCVAPI std::string getName() const;
 #endif
     /**
+     * @symbol ?pushOutItems\@DropperBlockActor\@\@QEAA_NAEAVBlockSource\@\@\@Z
+     */
+    MCAPI bool pushOutItems(class BlockSource&);
+    /**
      * @symbol ?addItemsToContainerAndDepleteStack\@DropperBlockActor\@\@SA_NAEAVContainer\@\@AEAVItemStack\@\@HH\@Z
      */
     MCAPI static bool addItemsToContainerAndDepleteStack(class Container&, class ItemStack&, int, int);
@@ -36,9 +40,5 @@ public:
      * @symbol ?getContainerAt\@DropperBlockActor\@\@SAPEAVContainer\@\@AEAVBlockSource\@\@AEBVVec3\@\@\@Z
      */
     MCAPI static class Container* getContainerAt(class BlockSource&, class Vec3 const&);
-    /**
-     * @symbol ?pushOutItems\@DropperBlockActor\@\@QEAA_NAEAVBlockSource\@\@\@Z
-     */
-    MCAPI bool pushOutItems(class BlockSource&);
     // NOLINTEND
 };

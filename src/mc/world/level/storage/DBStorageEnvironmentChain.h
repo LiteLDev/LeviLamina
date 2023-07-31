@@ -33,15 +33,15 @@ public:
      */
     MCAPI class Core::Result isChainValid(bool) const;
     /**
+     * @symbol ??1DBStorageEnvironmentChain\@\@QEAA\@XZ
+     */
+    MCAPI ~DBStorageEnvironmentChain();
+    /**
      * @symbol
      * ?isContentKeyValid\@DBStorageEnvironmentChain\@\@SA_NPEAVEnv\@leveldb\@\@AEBVPath\@Core\@\@AEBVContentIdentity\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$shared_ptr\@VFileStorageArea\@Core\@\@\@8\@\@Z
      */
     MCAPI static bool
     isContentKeyValid(class leveldb::Env*, class Core::Path const&, class ContentIdentity const&, std::string const&, std::shared_ptr<class Core::FileStorageArea>);
-    /**
-     * @symbol ??1DBStorageEnvironmentChain\@\@QEAA\@XZ
-     */
-    MCAPI ~DBStorageEnvironmentChain();
     // NOLINTEND
 
     // private:

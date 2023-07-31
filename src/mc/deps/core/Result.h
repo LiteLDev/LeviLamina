@@ -31,10 +31,6 @@ public:
      */
     MCAPI bool catastrophic() const;
     /**
-     * @symbol ?either\@Result\@Core\@\@SA?AV12\@$$QEAV12\@0\@Z
-     */
-    MCAPI static class Core::Result either(class Core::Result&&, class Core::Result&&);
-    /**
      * @symbol ?failed\@Result\@Core\@\@QEBA_NXZ
      */
     MCAPI bool failed() const;
@@ -46,30 +42,6 @@ public:
      * @symbol ?ignoreError\@Result\@Core\@\@QEBAXXZ
      */
     MCAPI void ignoreError() const;
-    /**
-     * @symbol ?makeFailure\@Result\@Core\@\@SA?AV12\@$$QEAV?$function\@$$A6AXPEAVResult\@Core\@\@\@Z\@std\@\@\@Z
-     */
-    MCAPI static class Core::Result makeFailure(std::function<void(class Core::Result*)>&&);
-    /**
-     * @symbol ?makeFailure\@Result\@Core\@\@SA?AV12\@XZ
-     */
-    MCAPI static class Core::Result makeFailure();
-    /**
-     * @symbol ?makeFailureNotImplemented\@Result\@Core\@\@SA?AV12\@XZ
-     */
-    MCAPI static class Core::Result makeFailureNotImplemented();
-    /**
-     * @symbol ?makeFailureWithStringLiteral\@Result\@Core\@\@SA?AV12\@PEBD\@Z
-     */
-    MCAPI static class Core::Result makeFailureWithStringLiteral(char const*);
-    /**
-     * @symbol ?makeSuccess\@Result\@Core\@\@SA?AV12\@XZ
-     */
-    MCAPI static class Core::Result makeSuccess();
-    /**
-     * @symbol ?merge\@Result\@Core\@\@SA?AV12\@$$QEAV12\@0\@Z
-     */
-    MCAPI static class Core::Result merge(class Core::Result&&, class Core::Result&&);
     /**
      * @symbol ?message\@Result\@Core\@\@QEBAPEBDXZ
      */
@@ -102,6 +74,34 @@ public:
      * @symbol ??1Result\@Core\@\@QEAA\@XZ
      */
     MCAPI ~Result();
+    /**
+     * @symbol ?either\@Result\@Core\@\@SA?AV12\@$$QEAV12\@0\@Z
+     */
+    MCAPI static class Core::Result either(class Core::Result&&, class Core::Result&&);
+    /**
+     * @symbol ?makeFailure\@Result\@Core\@\@SA?AV12\@$$QEAV?$function\@$$A6AXPEAVResult\@Core\@\@\@Z\@std\@\@\@Z
+     */
+    MCAPI static class Core::Result makeFailure(std::function<void(class Core::Result*)>&&);
+    /**
+     * @symbol ?makeFailure\@Result\@Core\@\@SA?AV12\@XZ
+     */
+    MCAPI static class Core::Result makeFailure();
+    /**
+     * @symbol ?makeFailureNotImplemented\@Result\@Core\@\@SA?AV12\@XZ
+     */
+    MCAPI static class Core::Result makeFailureNotImplemented();
+    /**
+     * @symbol ?makeFailureWithStringLiteral\@Result\@Core\@\@SA?AV12\@PEBD\@Z
+     */
+    MCAPI static class Core::Result makeFailureWithStringLiteral(char const*);
+    /**
+     * @symbol ?makeSuccess\@Result\@Core\@\@SA?AV12\@XZ
+     */
+    MCAPI static class Core::Result makeSuccess();
+    /**
+     * @symbol ?merge\@Result\@Core\@\@SA?AV12\@$$QEAV12\@0\@Z
+     */
+    MCAPI static class Core::Result merge(class Core::Result&&, class Core::Result&&);
     // NOLINTEND
 };
 

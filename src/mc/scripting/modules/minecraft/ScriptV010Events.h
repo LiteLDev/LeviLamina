@@ -167,10 +167,6 @@ public:
      */
     MCAPI ScriptV010Events(class ScriptModuleMinecraft::ScriptV010Events&&);
     /**
-     * @symbol ?bind\@ScriptV010Events\@ScriptModuleMinecraft\@\@SAXAEAVModuleBindingBuilder\@Scripting\@\@\@Z
-     */
-    MCAPI static void bind(class Scripting::ModuleBindingBuilder&);
-    /**
      * @symbol
      * ?onActorCreated\@ScriptV010Events\@ScriptModuleMinecraft\@\@QEAAXAEAV?$StrongTypedObjectHandle\@UScriptActorCreateEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Z
      */
@@ -190,6 +186,10 @@ public:
      * ?registerListener\@ScriptV010Events\@ScriptModuleMinecraft\@\@QEAAXU?$TypedObjectHandle\@VScriptV010Events\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Z
      */
     MCAPI void registerListener(struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptV010Events>);
+    /**
+     * @symbol ?bind\@ScriptV010Events\@ScriptModuleMinecraft\@\@SAXAEAVModuleBindingBuilder\@Scripting\@\@\@Z
+     */
+    MCAPI static void bind(class Scripting::ModuleBindingBuilder&);
     // NOLINTEND
 };
 

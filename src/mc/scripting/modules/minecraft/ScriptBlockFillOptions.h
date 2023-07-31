@@ -17,11 +17,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol
-     * ?bind\@ScriptBlockFillOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptBlockFillOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptBlockFillOptions> bind();
-    /**
      * @symbol ??4ScriptBlockFillOptions\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptBlockFillOptions&
@@ -35,6 +30,11 @@ public:
      * @symbol ??1ScriptBlockFillOptions\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptBlockFillOptions();
+    /**
+     * @symbol
+     * ?bind\@ScriptBlockFillOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptBlockFillOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptBlockFillOptions> bind();
     // NOLINTEND
 };
 

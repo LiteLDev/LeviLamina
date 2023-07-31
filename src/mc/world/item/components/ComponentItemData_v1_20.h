@@ -23,6 +23,10 @@ public:
      */
     MCAPI ComponentItemData_v1_20(struct ComponentItemData_v1_20&&);
     /**
+     * @symbol ??1ComponentItemData_v1_20\@\@QEAA\@XZ
+     */
+    MCAPI ~ComponentItemData_v1_20();
+    /**
      * @symbol ?bindType\@ComponentItemData_v1_20\@\@SAXXZ
      */
     MCAPI static void bindType();
@@ -30,10 +34,6 @@ public:
      * @symbol ?upgrade\@ComponentItemData_v1_20\@\@SA?AU1\@AEAUComponentItemData_v1_19_83\@\@\@Z
      */
     MCAPI static struct ComponentItemData_v1_20 upgrade(struct ComponentItemData_v1_19_83&);
-    /**
-     * @symbol ??1ComponentItemData_v1_20\@\@QEAA\@XZ
-     */
-    MCAPI ~ComponentItemData_v1_20();
     /**
      * @symbol ?VERSION\@ComponentItemData_v1_20\@\@2VSemVersion\@\@B
      */

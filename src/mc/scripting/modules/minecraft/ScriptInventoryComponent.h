@@ -40,11 +40,6 @@ public:
 #endif
     /**
      * @symbol
-     * ?bind\@ScriptInventoryComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptInventoryComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptInventoryComponent> bind();
-    /**
-     * @symbol
      * ?getAdditionalSlotsPerStrength\@ScriptInventoryComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<int> getAdditionalSlotsPerStrength() const;
@@ -90,6 +85,11 @@ public:
      */
     MCAPI class ScriptModuleMinecraft::ScriptInventoryComponent&
     operator=(class ScriptModuleMinecraft::ScriptInventoryComponent&&);
+    /**
+     * @symbol
+     * ?bind\@ScriptInventoryComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptInventoryComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptInventoryComponent> bind();
     /**
      * @symbol ?ComponentId\@ScriptInventoryComponent\@ScriptModuleMinecraft\@\@2PEBDEB
      */

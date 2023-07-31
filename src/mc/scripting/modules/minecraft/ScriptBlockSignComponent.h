@@ -40,11 +40,6 @@ public:
 #endif
     /**
      * @symbol
-     * ?bind\@ScriptBlockSignComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockSignComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockSignComponent> bind();
-    /**
-     * @symbol
      * ?getRawText\@ScriptBlockSignComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$optional\@UScriptRawTextInterface\@ScriptModuleMinecraft\@\@\@std\@\@\@Scripting\@\@W4SignTextSide\@\@\@Z
      */
     MCAPI class Scripting::Result<std::optional<struct ScriptModuleMinecraft::ScriptRawTextInterface>>
@@ -83,6 +78,11 @@ public:
      * @symbol ?setWaxed\@ScriptBlockSignComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<void> setWaxed();
+    /**
+     * @symbol
+     * ?bind\@ScriptBlockSignComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockSignComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockSignComponent> bind();
     /**
      * @symbol ?ComponentId\@ScriptBlockSignComponent\@ScriptModuleMinecraft\@\@2PEBDEB
      */

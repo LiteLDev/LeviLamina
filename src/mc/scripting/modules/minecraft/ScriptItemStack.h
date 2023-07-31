@@ -38,28 +38,10 @@ public:
     MCAPI ScriptItemStack(class ScriptModuleMinecraft::ScriptItemStack const&);
     /**
      * @symbol
-     * ?bind\@ScriptItemStack\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptItemStack\@ScriptModuleMinecraft\@\@\@Scripting\@\@PEAVLevel\@\@AEBUVersion\@4\@\@Z
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemStack>
-    bind(class Level*, struct Scripting::Version const&);
-    /**
-     * @symbol
      * ?clone\@ScriptItemStack\@ScriptModuleMinecraft\@\@QEBA?AV?$StrongTypedObjectHandle\@VScriptItemStack\@ScriptModuleMinecraft\@\@\@Scripting\@\@VWeakLifetimeScope\@4\@\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>
         clone(class Scripting::WeakLifetimeScope) const;
-    /**
-     * @symbol
-     * ?createHandle\@ScriptItemStack\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptItemStack\@ScriptModuleMinecraft\@\@\@Scripting\@\@VWeakLifetimeScope\@4\@AEBVItemStackBase\@\@\@Z
-     */
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>
-    createHandle(class Scripting::WeakLifetimeScope, class ItemStackBase const&);
-    /**
-     * @symbol
-     * ?createOptionalHandle\@ScriptItemStack\@ScriptModuleMinecraft\@\@SA?AV?$optional\@V?$StrongTypedObjectHandle\@VScriptItemStack\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@std\@\@VWeakLifetimeScope\@Scripting\@\@AEBVItemStackBase\@\@\@Z
-     */
-    MCAPI static std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>
-    createOptionalHandle(class Scripting::WeakLifetimeScope, class ItemStackBase const&);
     /**
      * @symbol
      * ?getComponent\@ScriptItemStack\@ScriptModuleMinecraft\@\@QEAA?AV?$optional\@V?$StrongTypedObjectHandle\@VScriptItemComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@std\@\@VWeakLifetimeScope\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@4\@\@Z
@@ -160,6 +142,24 @@ public:
      * @symbol ??1ScriptItemStack\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptItemStack();
+    /**
+     * @symbol
+     * ?bind\@ScriptItemStack\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptItemStack\@ScriptModuleMinecraft\@\@\@Scripting\@\@PEAVLevel\@\@AEBUVersion\@4\@\@Z
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemStack>
+    bind(class Level*, struct Scripting::Version const&);
+    /**
+     * @symbol
+     * ?createHandle\@ScriptItemStack\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptItemStack\@ScriptModuleMinecraft\@\@\@Scripting\@\@VWeakLifetimeScope\@4\@AEBVItemStackBase\@\@\@Z
+     */
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>
+    createHandle(class Scripting::WeakLifetimeScope, class ItemStackBase const&);
+    /**
+     * @symbol
+     * ?createOptionalHandle\@ScriptItemStack\@ScriptModuleMinecraft\@\@SA?AV?$optional\@V?$StrongTypedObjectHandle\@VScriptItemStack\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@std\@\@VWeakLifetimeScope\@Scripting\@\@AEBVItemStackBase\@\@\@Z
+     */
+    MCAPI static std::optional<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>>
+    createOptionalHandle(class Scripting::WeakLifetimeScope, class ItemStackBase const&);
     // NOLINTEND
 };
 

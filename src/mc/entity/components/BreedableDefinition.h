@@ -41,13 +41,6 @@ public:
      */
     MCAPI void addParentCentricAttributeBlending(std::string const&);
     /**
-     * @symbol
-     * ?buildSchema\@BreedableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VBreedableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BreedableDefinition>>&);
-    /**
      * @symbol ?initialize\@BreedableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVBreedableComponent\@\@\@Z
      */
     MCAPI void initialize(class EntityContext&, class BreedableComponent&) const;
@@ -60,5 +53,12 @@ public:
      * @symbol ??1BreedableDefinition\@\@QEAA\@XZ
      */
     MCAPI ~BreedableDefinition();
+    /**
+     * @symbol
+     * ?buildSchema\@BreedableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VBreedableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
+     */
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BreedableDefinition>>&);
     // NOLINTEND
 };

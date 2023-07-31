@@ -30,15 +30,15 @@ public:
     public:
         // NOLINTBEGIN
         /**
+         * @symbol ?initialize\@GoHomeDefinition\@GoHomeGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
+         */
+        MCAPI void initialize(class EntityContext&, class GoHomeGoal&) const;
+        /**
          * @symbol
          * ?buildSchema\@GoHomeDefinition\@GoHomeGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VGoHomeDefinition\@GoHomeGoal\@\@\@JsonUtil\@\@\@4\@\@Z
          */
         MCAPI static void
         buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GoHomeGoal::GoHomeDefinition>>&);
-        /**
-         * @symbol ?initialize\@GoHomeDefinition\@GoHomeGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
-        MCAPI void initialize(class EntityContext&, class GoHomeGoal&) const;
         // NOLINTEND
     };
 

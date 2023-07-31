@@ -29,11 +29,6 @@ public:
     // NOLINTBEGIN
     /**
      * @symbol
-     * ?bind\@ScriptScoreboardObjective\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptScoreboardObjective\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptScoreboardObjective> bind();
-    /**
-     * @symbol
      * ?getDisplayName\@ScriptScoreboardObjective\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<std::string> getDisplayName() const;
@@ -106,6 +101,11 @@ public:
      * @symbol ??1ScriptScoreboardObjective\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptScoreboardObjective();
+    /**
+     * @symbol
+     * ?bind\@ScriptScoreboardObjective\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptScoreboardObjective\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptScoreboardObjective> bind();
     // NOLINTEND
 };
 

@@ -81,6 +81,10 @@ public:
      */
     MCAPI ItemComponent(class ComponentItem*);
     /**
+     * @symbol ?useOn\@ItemComponent\@\@QEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
+     */
+    MCAPI bool useOn(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&) const;
+    /**
      * @symbol ?bindItemComponentType\@ItemComponent\@\@SAXXZ
      */
     MCAPI static void bindItemComponentType();
@@ -88,9 +92,5 @@ public:
      * @symbol ?registerVersionUpgrades\@ItemComponent\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
      */
     MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet&);
-    /**
-     * @symbol ?useOn\@ItemComponent\@\@QEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
-     */
-    MCAPI bool useOn(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&) const;
     // NOLINTEND
 };

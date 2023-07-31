@@ -53,6 +53,10 @@ public:
      */
     MCAPI SoundEventRequest(struct SoundEventRequest&&);
     /**
+     * @symbol ??1SoundEventRequest\@\@QEAA\@XZ
+     */
+    MCAPI ~SoundEventRequest();
+    /**
      * @symbol
      * ?tryPlaySound\@SoundEventRequest\@\@SA?AV?$optional\@USoundEventRequest\@\@\@std\@\@V?$AutomaticID\@VDimension\@\@H\@\@AEBVSynchedActorData\@\@AEBUActorDefinitionIdentifier\@\@W4LevelSoundEvent\@\@AEBVVec3\@\@H\@Z
      */
@@ -64,9 +68,5 @@ public:
         class Vec3 const&,
         int
     );
-    /**
-     * @symbol ??1SoundEventRequest\@\@QEAA\@XZ
-     */
-    MCAPI ~SoundEventRequest();
     // NOLINTEND
 };

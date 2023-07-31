@@ -40,14 +40,14 @@ public:
      */
     MCAPI GameTestError(enum class gametest::GameTestErrorType, std::string const&);
     /**
+     * @symbol ??1GameTestError\@gametest\@\@QEAA\@XZ
+     */
+    MCAPI ~GameTestError();
+    /**
      * @symbol
      * ?bind\@GameTestError\@gametest\@\@SA?AV?$ErrorBindingBuilder\@UGameTestError\@gametest\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ErrorBindingBuilder<struct gametest::GameTestError> bind();
-    /**
-     * @symbol ??1GameTestError\@gametest\@\@QEAA\@XZ
-     */
-    MCAPI ~GameTestError();
     // NOLINTEND
 };
 

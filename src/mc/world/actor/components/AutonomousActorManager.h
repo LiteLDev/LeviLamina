@@ -75,10 +75,6 @@ public:
     // private:
     // NOLINTBEGIN
     /**
-     * @symbol ?_deduplicateDuplicateActorsFromList\@AutonomousActorManager\@\@CAXAEAVListTag\@\@\@Z
-     */
-    MCAPI static void _deduplicateDuplicateActorsFromList(class ListTag&);
-    /**
      * @symbol
      * ?_moveActiveAutonomousActorEntityToInactive\@AutonomousActorManager\@\@AEAAXAEAVActor\@\@AEAVLevelChunk\@\@\@Z
      */
@@ -91,5 +87,9 @@ public:
      * @symbol ?_saveAllAutonomousActors\@AutonomousActorManager\@\@AEAAXAEAVLevelStorage\@\@\@Z
      */
     MCAPI void _saveAllAutonomousActors(class LevelStorage&);
+    /**
+     * @symbol ?_deduplicateDuplicateActorsFromList\@AutonomousActorManager\@\@CAXAEAVListTag\@\@\@Z
+     */
+    MCAPI static void _deduplicateDuplicateActorsFromList(class ListTag&);
     // NOLINTEND
 };

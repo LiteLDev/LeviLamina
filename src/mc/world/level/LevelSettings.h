@@ -237,11 +237,6 @@ public:
      */
     MCAPI class LevelSettings& operator=(class LevelSettings&&);
     /**
-     * @symbol
-     * ?parseSeedString\@LevelSettings\@\@SA?AV?$optional\@VLevelSeed64\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
-     */
-    MCAPI static std::optional<class LevelSeed64> parseSeedString(std::string const&);
-    /**
      * @symbol ?setAdventureModeOverridesEnabled\@LevelSettings\@\@QEAAAEAV1\@_N\@Z
      */
     MCAPI class LevelSettings& setAdventureModeOverridesEnabled(bool);
@@ -362,5 +357,10 @@ public:
      * @symbol ??1LevelSettings\@\@QEAA\@XZ
      */
     MCAPI ~LevelSettings();
+    /**
+     * @symbol
+     * ?parseSeedString\@LevelSettings\@\@SA?AV?$optional\@VLevelSeed64\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
+     */
+    MCAPI static std::optional<class LevelSeed64> parseSeedString(std::string const&);
     // NOLINTEND
 };

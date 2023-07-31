@@ -70,6 +70,11 @@ public:
     // NOLINTBEGIN
     /**
      * @symbol
+     * ?_initializeComponents\@InternalComponentRegistry\@\@IEBAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
+     */
+    MCAPI void _initializeComponents(class Actor&, class CompoundTag const&, class DataLoadHelper&) const;
+    /**
+     * @symbol
      * ?_getComponentScope\@InternalComponentRegistry\@\@KAPEBVCompoundTag\@\@AEBV2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI static class CompoundTag const* _getComponentScope(class CompoundTag const&, std::string const&);
@@ -78,10 +83,5 @@ public:
      * ?_getOrCreateComponentScope\@InternalComponentRegistry\@\@KAAEAVCompoundTag\@\@AEAV2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI static class CompoundTag& _getOrCreateComponentScope(class CompoundTag&, std::string const&);
-    /**
-     * @symbol
-     * ?_initializeComponents\@InternalComponentRegistry\@\@IEBAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
-     */
-    MCAPI void _initializeComponents(class Actor&, class CompoundTag const&, class DataLoadHelper&) const;
     // NOLINTEND
 };

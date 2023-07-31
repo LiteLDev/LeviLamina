@@ -232,16 +232,6 @@ public:
      */
     MCAPI enum class ContainerType getContainerType() const;
     /**
-     * @symbol
-     * ?getContainerTypeId\@Container\@\@SA?AW4ContainerType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static enum class ContainerType getContainerTypeId(std::string const&);
-    /**
-     * @symbol
-     * ?getContainerTypeName\@Container\@\@SAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ContainerType\@\@\@Z
-     */
-    MCAPI static std::string const& getContainerTypeName(enum class ContainerType);
-    /**
      * @symbol ?getGameplayContainerType\@Container\@\@QEBA?AW4ContainerType\@\@XZ
      */
     MCAPI enum class ContainerType getGameplayContainerType() const;
@@ -273,6 +263,16 @@ public:
      * @symbol ?triggerTransactionChange\@Container\@\@QEAAXHAEBVItemStack\@\@0\@Z
      */
     MCAPI void triggerTransactionChange(int, class ItemStack const&, class ItemStack const&);
+    /**
+     * @symbol
+     * ?getContainerTypeId\@Container\@\@SA?AW4ContainerType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static enum class ContainerType getContainerTypeId(std::string const&);
+    /**
+     * @symbol
+     * ?getContainerTypeName\@Container\@\@SAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ContainerType\@\@\@Z
+     */
+    MCAPI static std::string const& getContainerTypeName(enum class ContainerType);
     // NOLINTEND
 
     // protected:

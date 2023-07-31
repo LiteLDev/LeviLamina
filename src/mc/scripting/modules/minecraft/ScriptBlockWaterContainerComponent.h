@@ -47,12 +47,6 @@ public:
     MCAPI class Scripting::Result<void> addDye(class ScriptModuleMinecraft::ScriptItemType const&);
     /**
      * @symbol
-     * ?bind\@ScriptBlockWaterContainerComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockWaterContainerComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockWaterContainerComponent>
-    bind();
-    /**
-     * @symbol
      * ?getCustomColor\@ScriptBlockWaterContainerComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@VScriptColor\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<class ScriptModuleMinecraft::ScriptColor> getCustomColor();
@@ -66,6 +60,12 @@ public:
      * ?setCustomColor\@ScriptBlockWaterContainerComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEBVScriptColor\@2\@\@Z
      */
     MCAPI class Scripting::Result<void> setCustomColor(class ScriptModuleMinecraft::ScriptColor const&);
+    /**
+     * @symbol
+     * ?bind\@ScriptBlockWaterContainerComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockWaterContainerComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockWaterContainerComponent>
+    bind();
     /**
      * @symbol
      * ?tryCreate\@ScriptBlockWaterContainerComponent\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptBlockWaterContainerComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEAVBlockSource\@\@VBlockPos\@\@AEBVWeakLifetimeScope\@4\@\@Z

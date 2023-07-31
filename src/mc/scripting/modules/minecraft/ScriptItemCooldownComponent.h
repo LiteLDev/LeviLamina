@@ -39,11 +39,6 @@ public:
     MCAPI ScriptItemCooldownComponent(class ScriptModuleMinecraft::ScriptItemCooldownComponent const&);
     /**
      * @symbol
-     * ?bind\@ScriptItemCooldownComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptItemCooldownComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemCooldownComponent> bind();
-    /**
-     * @symbol
      * ?getCooldownCategory\@ScriptItemCooldownComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<std::string> getCooldownCategory();
@@ -62,6 +57,11 @@ public:
      * ?startCooldown\@ScriptItemCooldownComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEAVScriptPlayer\@2\@\@Z
      */
     MCAPI class Scripting::Result<void> startCooldown(class ScriptModuleMinecraft::ScriptPlayer&);
+    /**
+     * @symbol
+     * ?bind\@ScriptItemCooldownComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptItemCooldownComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemCooldownComponent> bind();
     // NOLINTEND
 };
 

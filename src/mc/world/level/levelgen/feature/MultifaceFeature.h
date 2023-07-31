@@ -32,15 +32,15 @@ public:
     // private:
     // NOLINTBEGIN
     /**
-     * @symbol ?_getShuffledDirections\@MultifaceFeature\@\@CA?AV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@V23\@\@Z
-     */
-    MCAPI static std::vector<unsigned char> _getShuffledDirections(std::vector<unsigned char>);
-    /**
      * @symbol
      * ?_placeBlockIfPossible\@MultifaceFeature\@\@AEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@AEBV?$vector\@EV?$allocator\@E\@std\@\@\@3\@\@Z
      */
     MCAPI std::optional<class BlockPos>
     _placeBlockIfPossible(class BlockSource&, class BlockPos const&, class Random&, std::vector<unsigned char> const&)
         const;
+    /**
+     * @symbol ?_getShuffledDirections\@MultifaceFeature\@\@CA?AV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@V23\@\@Z
+     */
+    MCAPI static std::vector<unsigned char> _getShuffledDirections(std::vector<unsigned char>);
     // NOLINTEND
 };

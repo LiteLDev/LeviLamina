@@ -31,14 +31,14 @@ public:
     addDynamicPropertiesDefinition(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&);
     /**
      * @symbol
-     * ?bind\@ScriptActorType\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptActorType\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptActorType> bind();
-    /**
-     * @symbol
      * ?getId\@ScriptActorType\@ScriptModuleMinecraft\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string getId() const;
+    /**
+     * @symbol
+     * ?bind\@ScriptActorType\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptActorType\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptActorType> bind();
     // NOLINTEND
 };
 

@@ -69,13 +69,13 @@ public:
      */
     MCAPI class ItemInstance clone() const;
     /**
-     * @symbol ?fromTag\@ItemInstance\@\@SA?AV1\@AEBVCompoundTag\@\@\@Z
-     */
-    MCAPI static class ItemInstance fromTag(class CompoundTag const&);
-    /**
      * @symbol ??4ItemInstance\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
     MCAPI class ItemInstance& operator=(class ItemInstance const&);
+    /**
+     * @symbol ?fromTag\@ItemInstance\@\@SA?AV1\@AEBVCompoundTag\@\@\@Z
+     */
+    MCAPI static class ItemInstance fromTag(class CompoundTag const&);
     /**
      * @symbol ?EMPTY_ITEM\@ItemInstance\@\@2V1\@B
      */

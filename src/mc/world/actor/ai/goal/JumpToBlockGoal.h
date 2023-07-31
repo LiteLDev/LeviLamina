@@ -39,15 +39,15 @@ public:
          */
         MCAPI Definition();
         /**
+         * @symbol ?initialize\@Definition\@JumpToBlockGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
+         */
+        MCAPI void initialize(class EntityContext&, class JumpToBlockGoal&) const;
+        /**
          * @symbol
          * ?buildSchema\@Definition\@JumpToBlockGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDefinition\@JumpToBlockGoal\@\@\@JsonUtil\@\@\@4\@\@Z
          */
         MCAPI static void
         buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class JumpToBlockGoal::Definition>>&);
-        /**
-         * @symbol ?initialize\@Definition\@JumpToBlockGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
-        MCAPI void initialize(class EntityContext&, class JumpToBlockGoal&) const;
         // NOLINTEND
     };
 

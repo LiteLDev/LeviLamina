@@ -28,21 +28,21 @@ public:
      */
     MCAPI BlockDefinition(struct BlockDefinition const&);
     /**
+     * @symbol ??4BlockDefinition\@\@QEAAAEAU0\@$$QEAU0\@\@Z
+     */
+    MCAPI struct BlockDefinition& operator=(struct BlockDefinition&&);
+    /**
+     * @symbol ??1BlockDefinition\@\@QEAA\@XZ
+     */
+    MCAPI ~BlockDefinition();
+    /**
      * @symbol
      * ?createBlockAbstractCerealSchema\@BlockDefinition\@\@SA?AUSchema\@cereal\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI static struct cereal::Schema createBlockAbstractCerealSchema(std::string const&);
     /**
-     * @symbol ??4BlockDefinition\@\@QEAAAEAU0\@$$QEAU0\@\@Z
-     */
-    MCAPI struct BlockDefinition& operator=(struct BlockDefinition&&);
-    /**
      * @symbol ?registerBlockDefinitionTypes\@BlockDefinition\@\@SAXXZ
      */
     MCAPI static void registerBlockDefinitionTypes();
-    /**
-     * @symbol ??1BlockDefinition\@\@QEAA\@XZ
-     */
-    MCAPI ~BlockDefinition();
     // NOLINTEND
 };

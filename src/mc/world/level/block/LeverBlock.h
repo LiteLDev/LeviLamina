@@ -324,13 +324,13 @@ public:
      */
     MCAPI LeverBlock(std::string const&, int);
     /**
-     * @symbol ?getLeverFacing\@LeverBlock\@\@SA?AW4LeverDirection\@\@H\@Z
-     */
-    MCAPI static enum class LeverDirection getLeverFacing(int);
-    /**
      * @symbol ?toggle\@LeverBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@PEAVPlayer\@\@\@Z
      */
     MCAPI void toggle(class BlockSource&, class BlockPos const&, class Player*) const;
+    /**
+     * @symbol ?getLeverFacing\@LeverBlock\@\@SA?AW4LeverDirection\@\@H\@Z
+     */
+    MCAPI static enum class LeverDirection getLeverFacing(int);
     // NOLINTEND
 
     // private:

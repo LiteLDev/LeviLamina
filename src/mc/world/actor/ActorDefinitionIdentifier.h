@@ -129,13 +129,13 @@ public:
     // private:
     // NOLINTBEGIN
     /**
+     * @symbol ?_initialize\@ActorDefinitionIdentifier\@\@AEAAXXZ
+     */
+    MCAPI void _initialize();
+    /**
      * @symbol
      * ?_extractIdentifier\@ActorDefinitionIdentifier\@\@CAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAU1\@\@Z
      */
     MCAPI static void _extractIdentifier(std::string const&, struct ActorDefinitionIdentifier&);
-    /**
-     * @symbol ?_initialize\@ActorDefinitionIdentifier\@\@AEAAXXZ
-     */
-    MCAPI void _initialize();
     // NOLINTEND
 };

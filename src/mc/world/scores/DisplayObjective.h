@@ -13,10 +13,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ?deserialize\@DisplayObjective\@\@SA?AV1\@AEBVCompoundTag\@\@AEBVScoreboard\@\@\@Z
-     */
-    MCAPI static class DisplayObjective deserialize(class CompoundTag const&, class Scoreboard const&);
-    /**
      * @symbol
      * ?getBelowNameStringForId\@DisplayObjective\@\@QEBA?BV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUScoreboardId\@\@\@Z
      */
@@ -37,6 +33,10 @@ public:
      * @symbol ?isValid\@DisplayObjective\@\@QEBA_NXZ
      */
     MCAPI bool isValid() const;
+    /**
+     * @symbol ?deserialize\@DisplayObjective\@\@SA?AV1\@AEBVCompoundTag\@\@AEBVScoreboard\@\@\@Z
+     */
+    MCAPI static class DisplayObjective deserialize(class CompoundTag const&, class Scoreboard const&);
     /**
      * @symbol
      * ?serialize\@DisplayObjective\@\@SA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@AEBV1\@\@Z

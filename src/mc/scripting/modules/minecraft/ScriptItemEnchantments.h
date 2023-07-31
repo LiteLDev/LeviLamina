@@ -46,11 +46,6 @@ public:
     MCAPI bool addEnchantment(struct ScriptModuleMinecraft::ScriptItemEnchantmentInstance const&);
     /**
      * @symbol
-     * ?bind\@ScriptItemEnchantments\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptItemEnchantments\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemEnchantments> bind();
-    /**
-     * @symbol
      * ?canAddEnchantment\@ScriptItemEnchantments\@ScriptModuleMinecraft\@\@QEAA_NAEBUScriptItemEnchantmentInstance\@2\@\@Z
      */
     MCAPI bool canAddEnchantment(struct ScriptModuleMinecraft::ScriptItemEnchantmentInstance const&);
@@ -97,6 +92,11 @@ public:
      * @symbol ??1ScriptItemEnchantments\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptItemEnchantments();
+    /**
+     * @symbol
+     * ?bind\@ScriptItemEnchantments\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptItemEnchantments\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemEnchantments> bind();
     // NOLINTEND
 };
 

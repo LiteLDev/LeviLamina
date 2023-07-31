@@ -102,10 +102,6 @@ public:
      */
     MCAPI ScriptWorldBeforeEvents(class ScriptModuleMinecraft::ScriptWorldBeforeEvents&&);
     /**
-     * @symbol ?bind\@ScriptWorldBeforeEvents\@ScriptModuleMinecraft\@\@SAXAEAVModuleBindingBuilder\@Scripting\@\@\@Z
-     */
-    MCAPI static void bind(class Scripting::ModuleBindingBuilder&);
-    /**
      * @symbol ??4ScriptWorldBeforeEvents\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraft::ScriptWorldBeforeEvents&
@@ -114,6 +110,10 @@ public:
      * @symbol ?registerListeners\@ScriptWorldBeforeEvents\@ScriptModuleMinecraft\@\@QEAAXXZ
      */
     MCAPI void registerListeners();
+    /**
+     * @symbol ?bind\@ScriptWorldBeforeEvents\@ScriptModuleMinecraft\@\@SAXAEAVModuleBindingBuilder\@Scripting\@\@\@Z
+     */
+    MCAPI static void bind(class Scripting::ModuleBindingBuilder&);
     // NOLINTEND
 };
 

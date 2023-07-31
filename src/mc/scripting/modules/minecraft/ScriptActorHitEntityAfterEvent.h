@@ -18,12 +18,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol
-     * ?bind\@ScriptActorHitEntityAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptActorHitEntityAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent>
-    bind();
-    /**
      * @symbol ??4ScriptActorHitEntityAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent&
@@ -32,6 +26,12 @@ public:
      * @symbol ??1ScriptActorHitEntityAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptActorHitEntityAfterEvent();
+    /**
+     * @symbol
+     * ?bind\@ScriptActorHitEntityAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptActorHitEntityAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorHitEntityAfterEvent>
+    bind();
     // NOLINTEND
 };
 

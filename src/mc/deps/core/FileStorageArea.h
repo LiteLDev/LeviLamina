@@ -256,15 +256,15 @@ public:
      */
     MCAPI class Core::PathBuffer<std::string> const& getRootPath() const;
     /**
+     * @symbol ?removeStateListener\@FileStorageArea\@Core\@\@QEAAXPEAVStorageAreaStateListener\@2\@\@Z
+     */
+    MCAPI void removeStateListener(class Core::StorageAreaStateListener*);
+    /**
      * @symbol
      * ?getStorageAreaForPath\@FileStorageArea\@Core\@\@SA?AVResult\@2\@AEAV?$shared_ptr\@VFileStorageArea\@Core\@\@\@std\@\@AEBVPath\@2\@\@Z
      */
     MCAPI static class Core::Result
     getStorageAreaForPath(std::shared_ptr<class Core::FileStorageArea>&, class Core::Path const&);
-    /**
-     * @symbol ?removeStateListener\@FileStorageArea\@Core\@\@QEAAXPEAVStorageAreaStateListener\@2\@\@Z
-     */
-    MCAPI void removeStateListener(class Core::StorageAreaStateListener*);
     /**
      * @symbol ?teardown\@FileStorageArea\@Core\@\@SAXXZ
      */
@@ -300,12 +300,6 @@ public:
      */
     MCAPI class Core::Result _endTransaction(class Core::FileSystemImpl*, bool);
     /**
-     * @symbol
-     * ?_getStorageAreaForPathImpl\@FileStorageArea\@Core\@\@CA?AVResult\@2\@AEAV?$shared_ptr\@VFileStorageArea\@Core\@\@\@std\@\@AEBVPath\@2\@\@Z
-     */
-    MCAPI static class Core::Result
-    _getStorageAreaForPathImpl(std::shared_ptr<class Core::FileStorageArea>&, class Core::Path const&);
-    /**
      * @symbol ?_onDeleteFile\@FileStorageArea\@Core\@\@AEAAXAEBVPath\@2\@\@Z
      */
     MCAPI void _onDeleteFile(class Core::Path const&);
@@ -313,6 +307,12 @@ public:
      * @symbol ?_onWriteFile\@FileStorageArea\@Core\@\@AEAAXAEBVPath\@2\@\@Z
      */
     MCAPI void _onWriteFile(class Core::Path const&);
+    /**
+     * @symbol
+     * ?_getStorageAreaForPathImpl\@FileStorageArea\@Core\@\@CA?AVResult\@2\@AEAV?$shared_ptr\@VFileStorageArea\@Core\@\@\@std\@\@AEBVPath\@2\@\@Z
+     */
+    MCAPI static class Core::Result
+    _getStorageAreaForPathImpl(std::shared_ptr<class Core::FileStorageArea>&, class Core::Path const&);
     // NOLINTEND
 
 private:

@@ -45,14 +45,6 @@ public:
      */
     virtual bool initializeFromNetwork(class CompoundTag const&);
     /**
-     * @symbol ?bindType\@RepairableItemComponent\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
-     * @symbol ?getIdentifier\@RepairableItemComponent\@\@SAAEBVHashedString\@\@XZ
-     */
-    MCAPI static class HashedString const& getIdentifier();
-    /**
      * @symbol ?handleItemRepair\@RepairableItemComponent\@\@QEBA?AURepairItemResult\@\@AEAVItemStack\@\@0_N\@Z
      */
     MCAPI struct RepairItemResult handleItemRepair(class ItemStack&, class ItemStack&, bool) const;
@@ -60,6 +52,14 @@ public:
      * @symbol ?isValidRepairItem\@RepairableItemComponent\@\@QEBA_NAEBVItemStackBase\@\@\@Z
      */
     MCAPI bool isValidRepairItem(class ItemStackBase const&) const;
+    /**
+     * @symbol ?bindType\@RepairableItemComponent\@\@SAXXZ
+     */
+    MCAPI static void bindType();
+    /**
+     * @symbol ?getIdentifier\@RepairableItemComponent\@\@SAAEBVHashedString\@\@XZ
+     */
+    MCAPI static class HashedString const& getIdentifier();
     /**
      * @symbol ?registerVersionUpgrades\@RepairableItemComponent\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
      */

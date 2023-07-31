@@ -21,11 +21,6 @@ public:
      */
     MCAPI ArmorTrim(class HashedString, class HashedString);
     /**
-     * @symbol
-     * ?appendUpgradeHoverText\@ArmorTrim\@\@SAXAEBVItemStackBase\@\@AEAVLevel\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static void appendUpgradeHoverText(class ItemStackBase const&, class Level&, std::string&);
-    /**
      * @symbol ?getMaterialId\@ArmorTrim\@\@QEBA?AVHashedString\@\@XZ
      */
     MCAPI class HashedString getMaterialId() const;
@@ -34,6 +29,15 @@ public:
      */
     MCAPI class HashedString getPatternId() const;
     /**
+     * @symbol ??1ArmorTrim\@\@QEAA\@XZ
+     */
+    MCAPI ~ArmorTrim();
+    /**
+     * @symbol
+     * ?appendUpgradeHoverText\@ArmorTrim\@\@SAXAEBVItemStackBase\@\@AEAVLevel\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static void appendUpgradeHoverText(class ItemStackBase const&, class Level&, std::string&);
+    /**
      * @symbol ?getTrim\@ArmorTrim\@\@SA?AV?$optional\@VArmorTrim\@\@\@std\@\@AEBVItemStackBase\@\@\@Z
      */
     MCAPI static std::optional<class ArmorTrim> getTrim(class ItemStackBase const&);
@@ -41,10 +45,6 @@ public:
      * @symbol ?setTrim\@ArmorTrim\@\@SAXAEAVItemStackBase\@\@V1\@\@Z
      */
     MCAPI static void setTrim(class ItemStackBase&, class ArmorTrim);
-    /**
-     * @symbol ??1ArmorTrim\@\@QEAA\@XZ
-     */
-    MCAPI ~ArmorTrim();
     /**
      * @symbol ?TAG_TRIM\@ArmorTrim\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */

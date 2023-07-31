@@ -26,12 +26,6 @@ public:
      */
     MCAPI ScriptItemEnchantmentInstance(class EnchantmentInstance const&);
     /**
-     * @symbol
-     * ?bind\@ScriptItemEnchantmentInstance\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptItemEnchantmentInstance\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemEnchantmentInstance>
-    bind();
-    /**
      * @symbol ??4ScriptItemEnchantmentInstance\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptItemEnchantmentInstance&
@@ -40,6 +34,12 @@ public:
      * @symbol ??1ScriptItemEnchantmentInstance\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptItemEnchantmentInstance();
+    /**
+     * @symbol
+     * ?bind\@ScriptItemEnchantmentInstance\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptItemEnchantmentInstance\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemEnchantmentInstance>
+    bind();
     // NOLINTEND
 };
 

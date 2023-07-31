@@ -21,13 +21,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol
-     * ?buildSchema\@CanClimbDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UCanClimbDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct CanClimbDefinition>>&);
-    /**
      * @symbol ?initialize\@CanClimbDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
     MCAPI void initialize(class EntityContext&) const;
@@ -35,5 +28,12 @@ public:
      * @symbol ?uninitialize\@CanClimbDefinition\@\@QEBAXAEAVEntityContext\@\@\@Z
      */
     MCAPI void uninitialize(class EntityContext&) const;
+    /**
+     * @symbol
+     * ?buildSchema\@CanClimbDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UCanClimbDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
+     */
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct CanClimbDefinition>>&);
     // NOLINTEND
 };

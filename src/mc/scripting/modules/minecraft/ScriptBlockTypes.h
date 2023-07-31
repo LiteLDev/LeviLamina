@@ -29,15 +29,15 @@ public:
     MCAPI ScriptBlockTypes();
     /**
      * @symbol
-     * ?bind\@ScriptBlockTypes\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockTypes\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockTypes> bind();
-    /**
-     * @symbol
      * ?get\@ScriptBlockTypes\@ScriptModuleMinecraft\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptBlockType\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEAVWeakLifetimeScope\@4\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockType>
     get(class Scripting::WeakLifetimeScope&, std::string const&);
+    /**
+     * @symbol
+     * ?bind\@ScriptBlockTypes\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockTypes\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockTypes> bind();
     // NOLINTEND
 };
 

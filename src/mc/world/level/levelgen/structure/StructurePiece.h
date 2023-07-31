@@ -105,12 +105,6 @@ public:
      */
     MCAPI void addTerrainAdjustmentToken(std::shared_ptr<bool>);
     /**
-     * @symbol
-     * ?findCollisionPiece\@StructurePiece\@\@SAPEAV1\@AEBV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEBVBoundingBox\@\@\@Z
-     */
-    MCAPI static class StructurePiece*
-    findCollisionPiece(std::vector<std::unique_ptr<class StructurePiece>> const&, class BoundingBox const&);
-    /**
      * @symbol ?generateAirBox\@StructurePiece\@\@QEAAXAEAVBlockSource\@\@AEBVBoundingBox\@\@HHHHHH\@Z
      */
     MCAPI void generateAirBox(class BlockSource&, class BoundingBox const&, int, int, int, int, int, int);
@@ -165,11 +159,6 @@ public:
      */
     MCAPI unsigned short getOrientationData(class Block const*, unsigned short);
     /**
-     * @symbol
-     * ?getTotalWeight\@StructurePiece\@\@SAHAEBV?$vector\@VPieceWeight\@\@V?$allocator\@VPieceWeight\@\@\@std\@\@\@std\@\@\@Z
-     */
-    MCAPI static int getTotalWeight(std::vector<class PieceWeight> const&);
-    /**
      * @symbol ?getWorldY\@StructurePiece\@\@QEAAHH\@Z
      */
     MCAPI int getWorldY(int);
@@ -197,5 +186,16 @@ public:
      */
     MCAPI void
     maybeGenerateBlockIfNotFloating(class BlockSource&, class BoundingBox const&, class Random&, float, int, int, int, class Block const&);
+    /**
+     * @symbol
+     * ?findCollisionPiece\@StructurePiece\@\@SAPEAV1\@AEBV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEBVBoundingBox\@\@\@Z
+     */
+    MCAPI static class StructurePiece*
+    findCollisionPiece(std::vector<std::unique_ptr<class StructurePiece>> const&, class BoundingBox const&);
+    /**
+     * @symbol
+     * ?getTotalWeight\@StructurePiece\@\@SAHAEBV?$vector\@VPieceWeight\@\@V?$allocator\@VPieceWeight\@\@\@std\@\@\@std\@\@\@Z
+     */
+    MCAPI static int getTotalWeight(std::vector<class PieceWeight> const&);
     // NOLINTEND
 };

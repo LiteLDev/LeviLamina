@@ -201,10 +201,6 @@ public:
      */
     MCAPI ItemDescriptor(class ItemDescriptor&&);
     /**
-     * @symbol ?bindType\@ItemDescriptor\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ?forEachItemUntil\@ItemDescriptor\@\@QEBA_NV?$function\@$$A6A_NAEBVItem\@\@F\@Z\@std\@\@\@Z
      */
     MCAPI bool forEachItemUntil(std::function<bool(class Item const&, short)>) const;
@@ -287,6 +283,10 @@ public:
      * @symbol ?save\@ItemDescriptor\@\@QEBA?AV?$optional\@VCompoundTag\@\@\@std\@\@XZ
      */
     MCAPI std::optional<class CompoundTag> save() const;
+    /**
+     * @symbol ?bindType\@ItemDescriptor\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     // NOLINTEND
 
     // private:

@@ -42,11 +42,6 @@ public:
      */
     MCAPI ScriptBoolBlockProperty(class ScriptModuleMinecraft::ScriptBoolBlockProperty&&);
     /**
-     * @symbol
-     * ?bind\@ScriptBoolBlockProperty\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBoolBlockProperty\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBoolBlockProperty> bind();
-    /**
      * @symbol ?getState\@ScriptBoolBlockProperty\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@_N\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<bool> getState() const;
@@ -59,6 +54,11 @@ public:
      * @symbol ?setState\@ScriptBoolBlockProperty\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@_N\@Z
      */
     MCAPI class Scripting::Result<void> setState(bool);
+    /**
+     * @symbol
+     * ?bind\@ScriptBoolBlockProperty\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBoolBlockProperty\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBoolBlockProperty> bind();
     // NOLINTEND
 };
 

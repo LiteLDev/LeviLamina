@@ -57,12 +57,12 @@ public:
     // private:
     // NOLINTBEGIN
     /**
-     * @symbol ?_autoReject\@MountTamingComponent\@\@CA_NAEBVItemStack\@\@PEBVMountTameableDefinition\@\@\@Z
-     */
-    MCAPI static bool _autoReject(class ItemStack const&, class MountTameableDefinition const*);
-    /**
      * @symbol ?_feedItem\@MountTamingComponent\@\@AEAAXAEAVActor\@\@AEAVPlayer\@\@H\@Z
      */
     MCAPI void _feedItem(class Actor&, class Player&, int);
+    /**
+     * @symbol ?_autoReject\@MountTamingComponent\@\@CA_NAEBVItemStack\@\@PEBVMountTameableDefinition\@\@\@Z
+     */
+    MCAPI static bool _autoReject(class ItemStack const&, class MountTameableDefinition const*);
     // NOLINTEND
 };

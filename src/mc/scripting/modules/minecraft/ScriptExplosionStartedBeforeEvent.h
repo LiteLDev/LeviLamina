@@ -30,12 +30,6 @@ public:
      */
     MCAPI ScriptExplosionStartedBeforeEvent(struct ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent&&);
     /**
-     * @symbol
-     * ?bind\@ScriptExplosionStartedBeforeEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptExplosionStartedBeforeEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent>
-    bind();
-    /**
      * @symbol ??4ScriptExplosionStartedBeforeEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent&
@@ -49,6 +43,12 @@ public:
      * @symbol ??1ScriptExplosionStartedBeforeEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptExplosionStartedBeforeEvent();
+    /**
+     * @symbol
+     * ?bind\@ScriptExplosionStartedBeforeEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptExplosionStartedBeforeEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent>
+    bind();
     // NOLINTEND
 };
 

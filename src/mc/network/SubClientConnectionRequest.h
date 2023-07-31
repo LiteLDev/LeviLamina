@@ -23,11 +23,6 @@ public:
     MCAPI SubClientConnectionRequest(class SubClientConnectionRequest const&);
     /**
      * @symbol
-     * ?fromString\@SubClientConnectionRequest\@\@SA?AV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static class SubClientConnectionRequest fromString(std::string const&);
-    /**
-     * @symbol
      * ?getAnimatedImageData\@SubClientConnectionRequest\@\@QEBA?AV?$vector\@VAnimatedImageData\@\@V?$allocator\@VAnimatedImageData\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::vector<class AnimatedImageData> getAnimatedImageData() const;
@@ -200,6 +195,11 @@ public:
      * @symbol ??1SubClientConnectionRequest\@\@QEAA\@XZ
      */
     MCAPI ~SubClientConnectionRequest();
+    /**
+     * @symbol
+     * ?fromString\@SubClientConnectionRequest\@\@SA?AV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static class SubClientConnectionRequest fromString(std::string const&);
     // NOLINTEND
 
     // private:

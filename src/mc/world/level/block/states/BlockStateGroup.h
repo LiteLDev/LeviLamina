@@ -30,12 +30,6 @@ public:
      */
     MCAPI class BlockStateMeta const* getBlockStateFromName(std::string const&) const;
     /**
-     * @symbol
-     * ?loadBlockStateFromJson\@BlockStateGroup\@\@SA_NAEAUBlockStateDefinition\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVValue\@Json\@\@\@Z
-     */
-    MCAPI static bool
-    loadBlockStateFromJson(struct BlockStateDefinition&, std::string const&, class Json::Value const&);
-    /**
      * @symbol ?registerBlockStateDefinition\@BlockStateGroup\@\@QEAAXAEBUBlockStateDefinition\@\@\@Z
      */
     MCAPI void registerBlockStateDefinition(struct BlockStateDefinition const&);
@@ -47,6 +41,12 @@ public:
      * @symbol ?registerToBlock\@BlockStateGroup\@\@QEAAXAEAVBlockLegacy\@\@\@Z
      */
     MCAPI void registerToBlock(class BlockLegacy&);
+    /**
+     * @symbol
+     * ?loadBlockStateFromJson\@BlockStateGroup\@\@SA_NAEAUBlockStateDefinition\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVValue\@Json\@\@\@Z
+     */
+    MCAPI static bool
+    loadBlockStateFromJson(struct BlockStateDefinition&, std::string const&, class Json::Value const&);
     /**
      * @symbol ?MAX_ENUM_SIZE\@BlockStateGroup\@\@2HB
      */

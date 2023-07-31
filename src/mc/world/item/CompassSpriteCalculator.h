@@ -27,6 +27,18 @@ public:
      */
     MCAPI int getFrame() const;
     /**
+     * @symbol ?update\@CompassSpriteCalculator\@\@QEAAHAEAVActor\@\@_N\@Z
+     */
+    MCAPI int update(class Actor&, bool);
+    /**
+     * @symbol ?updateFromPosition\@CompassSpriteCalculator\@\@QEAAHPEBVBlockSource\@\@PEAVActor\@\@MMM_N2\@Z
+     */
+    MCAPI int updateFromPosition(class BlockSource const*, class Actor*, float, float, float, bool, bool);
+    /**
+     * @symbol ??1CompassSpriteCalculator\@\@QEAA\@XZ
+     */
+    MCAPI ~CompassSpriteCalculator();
+    /**
      * @symbol
      * ?isInLastDeathDimension\@CompassSpriteCalculator\@\@SA?AV?$function\@$$A6A_NPEBVBlockSource\@\@PEAVActor\@\@\@Z\@std\@\@XZ
      */
@@ -46,17 +58,5 @@ public:
      * ?pointTowardsSpawnPoint\@CompassSpriteCalculator\@\@SA?AV?$function\@$$A6A?AVBlockPos\@\@PEBVBlockSource\@\@PEAVActor\@\@\@Z\@std\@\@XZ
      */
     MCAPI static std::function<class BlockPos(class BlockSource const*, class Actor*)> pointTowardsSpawnPoint();
-    /**
-     * @symbol ?update\@CompassSpriteCalculator\@\@QEAAHAEAVActor\@\@_N\@Z
-     */
-    MCAPI int update(class Actor&, bool);
-    /**
-     * @symbol ?updateFromPosition\@CompassSpriteCalculator\@\@QEAAHPEBVBlockSource\@\@PEAVActor\@\@MMM_N2\@Z
-     */
-    MCAPI int updateFromPosition(class BlockSource const*, class Actor*, float, float, float, bool, bool);
-    /**
-     * @symbol ??1CompassSpriteCalculator\@\@QEAA\@XZ
-     */
-    MCAPI ~CompassSpriteCalculator();
     // NOLINTEND
 };

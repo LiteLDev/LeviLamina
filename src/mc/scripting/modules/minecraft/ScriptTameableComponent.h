@@ -50,11 +50,6 @@ public:
     MCAPI
     ScriptTameableComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
     /**
-     * @symbol
-     * ?bind\@ScriptTameableComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptTameableComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptTameableComponent> bind();
-    /**
      * @symbol ?getProbability\@ScriptTameableComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@M\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<float> getProbability() const;
@@ -67,6 +62,11 @@ public:
      * @symbol ?tame\@ScriptTameableComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@_N\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<bool> tame() const;
+    /**
+     * @symbol
+     * ?bind\@ScriptTameableComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptTameableComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptTameableComponent> bind();
     /**
      * @symbol ?ComponentId\@ScriptTameableComponent\@ScriptModuleMinecraft\@\@2PEBDEB
      */

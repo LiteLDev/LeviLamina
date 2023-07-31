@@ -37,10 +37,6 @@ public:
      */
     MCAPI class BlockPos above() const;
     /**
-     * @symbol ?bindType\@BlockPos\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ?neighbor\@BlockPos\@\@QEBA?AV1\@E\@Z
      */
     MCAPI class BlockPos neighbor(unsigned char) const;
@@ -76,6 +72,10 @@ public:
      * @symbol ?transform\@BlockPos\@\@QEBA?AV1\@W4Rotation\@\@W4Mirror\@\@AEBVVec3\@\@\@Z
      */
     MCAPI class BlockPos transform(enum class Rotation, enum class Mirror, class Vec3 const&) const;
+    /**
+     * @symbol ?bindType\@BlockPos\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     /**
      * @symbol ?MAX\@BlockPos\@\@2V1\@B
      */

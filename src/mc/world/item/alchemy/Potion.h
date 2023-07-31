@@ -44,11 +44,6 @@ public:
     MCAPI std::string effectPotencyToString(class MobEffectInstance const&) const;
     /**
      * @symbol
-     * ?getBasePotion\@Potion\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4PotionType\@1\@\@Z
-     */
-    MCAPI static std::string getBasePotion(enum class Potion::PotionType);
-    /**
-     * @symbol
      * ?getDescriptionId\@Potion\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string getDescriptionId() const;
@@ -83,6 +78,27 @@ public:
      */
     MCAPI std::string getPotentencyDescription(enum class Potion::PotionType, float) const;
     /**
+     * @symbol ?getPotionId\@Potion\@\@QEBAHXZ
+     */
+    MCAPI int getPotionId() const;
+    /**
+     * @symbol ?getPotionVariant\@Potion\@\@QEBA?AW4PotionVariant\@1\@XZ
+     */
+    MCAPI enum class Potion::PotionVariant getPotionVariant() const;
+    /**
+     * @symbol ?getPrefix\@Potion\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     */
+    MCAPI std::string getPrefix() const;
+    /**
+     * @symbol ??1Potion\@\@QEAA\@XZ
+     */
+    MCAPI ~Potion();
+    /**
+     * @symbol
+     * ?getBasePotion\@Potion\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4PotionType\@1\@\@Z
+     */
+    MCAPI static std::string getBasePotion(enum class Potion::PotionType);
+    /**
      * @symbol
      * ?getPotion\@Potion\@\@SA?AV?$shared_ptr\@$$CBVPotion\@\@\@std\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@3\@\@Z
      */
@@ -96,18 +112,6 @@ public:
      */
     MCAPI static int getPotionCount();
     /**
-     * @symbol ?getPotionId\@Potion\@\@QEBAHXZ
-     */
-    MCAPI int getPotionId() const;
-    /**
-     * @symbol ?getPotionVariant\@Potion\@\@QEBA?AW4PotionVariant\@1\@XZ
-     */
-    MCAPI enum class Potion::PotionVariant getPotionVariant() const;
-    /**
-     * @symbol ?getPrefix\@Potion\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string getPrefix() const;
-    /**
      * @symbol ?initPotions\@Potion\@\@SAXXZ
      */
     MCAPI static void initPotions();
@@ -115,10 +119,6 @@ public:
      * @symbol ?shutdownPotions\@Potion\@\@SAXXZ
      */
     MCAPI static void shutdownPotions();
-    /**
-     * @symbol ??1Potion\@\@QEAA\@XZ
-     */
-    MCAPI ~Potion();
     /**
      * @symbol ?Awkward\@Potion\@\@2V?$shared_ptr\@$$CBVPotion\@\@\@std\@\@B
      */

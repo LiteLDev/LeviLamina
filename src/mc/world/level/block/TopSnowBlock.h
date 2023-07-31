@@ -389,21 +389,9 @@ public:
      */
     MCAPI TopSnowBlock(std::string const&, int);
     /**
-     * @symbol ?buildSnowBlock\@TopSnowBlock\@\@SAAEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
-     */
-    MCAPI static class Block const& buildSnowBlock(class BlockSource&, class BlockPos const&, int, bool);
-    /**
-     * @symbol ?getCoveredBlock\@TopSnowBlock\@\@SAAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI static class Block const& getCoveredBlock(class BlockSource const&, class BlockPos const&);
-    /**
      * @symbol ?getResourceItemFromFalling\@TopSnowBlock\@\@QEBA?AVItemInstance\@\@XZ
      */
     MCAPI class ItemInstance getResourceItemFromFalling() const;
-    /**
-     * @symbol ?getSnowBlockToBuild\@TopSnowBlock\@\@SAAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
-     */
-    MCAPI static class Block const& getSnowBlockToBuild(class BlockSource const&, class BlockPos const&, int, bool);
     /**
      * @symbol ?melt\@TopSnowBlock\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
@@ -412,6 +400,18 @@ public:
      * @symbol ?startFallingIfLostSupport\@TopSnowBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     MCAPI void startFallingIfLostSupport(class BlockSource&, class BlockPos const&, class Random&) const;
+    /**
+     * @symbol ?buildSnowBlock\@TopSnowBlock\@\@SAAEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
+     */
+    MCAPI static class Block const& buildSnowBlock(class BlockSource&, class BlockPos const&, int, bool);
+    /**
+     * @symbol ?getCoveredBlock\@TopSnowBlock\@\@SAAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI static class Block const& getCoveredBlock(class BlockSource const&, class BlockPos const&);
+    /**
+     * @symbol ?getSnowBlockToBuild\@TopSnowBlock\@\@SAAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@H_N\@Z
+     */
+    MCAPI static class Block const& getSnowBlockToBuild(class BlockSource const&, class BlockPos const&, int, bool);
     // NOLINTEND
 
     // private:

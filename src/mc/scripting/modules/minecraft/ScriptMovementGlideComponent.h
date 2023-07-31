@@ -32,11 +32,6 @@ public:
 #endif
     /**
      * @symbol
-     * ?bind\@ScriptMovementGlideComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptMovementGlideComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMovementGlideComponent> bind();
-    /**
-     * @symbol
      * ?getSpeedWhenTurning\@ScriptMovementGlideComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@M\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<float> getSpeedWhenTurning() const;
@@ -45,6 +40,11 @@ public:
      * ?getStartSpeed\@ScriptMovementGlideComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@M\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<float> getStartSpeed() const;
+    /**
+     * @symbol
+     * ?bind\@ScriptMovementGlideComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptMovementGlideComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMovementGlideComponent> bind();
     /**
      * @symbol ?ComponentId\@ScriptMovementGlideComponent\@ScriptModuleMinecraft\@\@2PEBDEB
      */

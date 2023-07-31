@@ -13,10 +13,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ?bindType\@DynamicProperties\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ?deserialize\@DynamicProperties\@\@QEAAXAEBVCompoundTag\@\@\@Z
      */
     MCAPI void deserialize(class CompoundTag const&);
@@ -29,11 +25,6 @@ public:
      * ?getDynamicProperty\@DynamicProperties\@\@QEAAPEAV?$variant\@M_NV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@0\@Z
      */
     MCAPI std::variant<float, bool, std::string>* getDynamicProperty(std::string const&, std::string const&);
-    /**
-     * @symbol
-     * ?readFromLevelStorage\@DynamicProperties\@\@SA?AV?$unique_ptr\@VDynamicProperties\@\@U?$default_delete\@VDynamicProperties\@\@\@std\@\@\@std\@\@AEAVLevelStorage\@\@\@Z
-     */
-    MCAPI static std::unique_ptr<class DynamicProperties> readFromLevelStorage(class LevelStorage&);
     /**
      * @symbol ?registerLevelStorageManagerListener\@DynamicProperties\@\@QEAAXAEAVLevelStorageManager\@\@\@Z
      */
@@ -55,12 +46,6 @@ public:
     MCAPI void
     setDynamicProperty(std::string const&, std::variant<float, bool, std::string> const&, std::string const&);
     /**
-     * @symbol
-     * ?validateDynamicProperty\@DynamicProperties\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEBUDynamicPropertyDefinition\@\@AEBV23\@PEBV?$variant\@M_NV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@3\@\@Z
-     */
-    MCAPI static std::string
-    validateDynamicProperty(struct DynamicPropertyDefinition const*, std::string const&, std::variant<float, bool, std::string> const*);
-    /**
      * @symbol ?writeToLevelStorage\@DynamicProperties\@\@QEAAXAEAVLevelStorage\@\@\@Z
      */
     MCAPI void writeToLevelStorage(class LevelStorage&);
@@ -68,6 +53,21 @@ public:
      * @symbol ??1DynamicProperties\@\@QEAA\@XZ
      */
     MCAPI ~DynamicProperties();
+    /**
+     * @symbol ?bindType\@DynamicProperties\@\@SAXXZ
+     */
+    MCAPI static void bindType();
+    /**
+     * @symbol
+     * ?readFromLevelStorage\@DynamicProperties\@\@SA?AV?$unique_ptr\@VDynamicProperties\@\@U?$default_delete\@VDynamicProperties\@\@\@std\@\@\@std\@\@AEAVLevelStorage\@\@\@Z
+     */
+    MCAPI static std::unique_ptr<class DynamicProperties> readFromLevelStorage(class LevelStorage&);
+    /**
+     * @symbol
+     * ?validateDynamicProperty\@DynamicProperties\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEBUDynamicPropertyDefinition\@\@AEBV23\@PEBV?$variant\@M_NV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@3\@\@Z
+     */
+    MCAPI static std::string
+    validateDynamicProperty(struct DynamicPropertyDefinition const*, std::string const&, std::variant<float, bool, std::string> const*);
     /**
      * @symbol
      * ?STORAGE_TAG\@DynamicProperties\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B

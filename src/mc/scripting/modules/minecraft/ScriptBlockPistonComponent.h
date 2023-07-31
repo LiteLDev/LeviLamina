@@ -41,11 +41,6 @@ public:
 #endif
     /**
      * @symbol
-     * ?bind\@ScriptBlockPistonComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockPistonComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockPistonComponent> bind();
-    /**
-     * @symbol
      * ?getAttachedBlocks\@ScriptBlockPistonComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@V?$vector\@VVec3\@\@V?$allocator\@VVec3\@\@\@std\@\@\@std\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<std::vector<class Vec3>> getAttachedBlocks();
@@ -74,6 +69,11 @@ public:
      * @symbol ?isRetracting\@ScriptBlockPistonComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@_N\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<bool> isRetracting();
+    /**
+     * @symbol
+     * ?bind\@ScriptBlockPistonComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockPistonComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockPistonComponent> bind();
     /**
      * @symbol
      * ?tryCreate\@ScriptBlockPistonComponent\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptBlockPistonComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEAVBlockSource\@\@VBlockPos\@\@AEBVWeakLifetimeScope\@4\@\@Z

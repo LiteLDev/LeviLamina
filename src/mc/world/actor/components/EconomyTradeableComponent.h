@@ -70,10 +70,6 @@ public:
      */
     MCAPI void initFromDefinition();
     /**
-     * @symbol ?isUseNewTradeScreen\@EconomyTradeableComponent\@\@SA_NAEBVActor\@\@\@Z
-     */
-    MCAPI static bool isUseNewTradeScreen(class Actor const&);
-    /**
      * @symbol
      * ?loadDisplayName\@EconomyTradeableComponent\@\@QEAAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
@@ -146,6 +142,10 @@ public:
      * @symbol ?tryToTransferOldOffers\@EconomyTradeableComponent\@\@QEAAXPEAVMerchantRecipeList\@\@\@Z
      */
     MCAPI void tryToTransferOldOffers(class MerchantRecipeList*);
+    /**
+     * @symbol ?isUseNewTradeScreen\@EconomyTradeableComponent\@\@SA_NAEBVActor\@\@\@Z
+     */
+    MCAPI static bool isUseNewTradeScreen(class Actor const&);
     // NOLINTEND
 
     // private:

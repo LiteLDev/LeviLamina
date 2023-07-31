@@ -25,10 +25,6 @@ public:
      */
     MCAPI CreativeItemRegistry();
     /**
-     * @symbol ?current\@CreativeItemRegistry\@\@SAPEAV1\@XZ
-     */
-    MCAPI static class CreativeItemRegistry* current();
-    /**
      * @symbol ?findCreativeItemEntry\@CreativeItemRegistry\@\@QEAAPEAVCreativeItemEntry\@\@AEBVItemInstance\@\@\@Z
      */
     MCAPI class CreativeItemEntry* findCreativeItemEntry(class ItemInstance const&);
@@ -38,11 +34,6 @@ public:
      */
     MCAPI class CreativeItemEntry*
     findCreativeItemEntry(class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const&);
-    /**
-     * @symbol
-     * ?forEachCreativeItemInstance\@CreativeItemRegistry\@\@SAXV?$function\@$$A6A_NAEAVItemInstance\@\@\@Z\@std\@\@\@Z
-     */
-    MCAPI static void forEachCreativeItemInstance(std::function<bool(class ItemInstance&)>);
     /**
      * @symbol
      * ?getCreativeCategory\@CreativeItemRegistry\@\@QEAAPEAVCreativeItemGroupCategory\@\@W4CreativeItemCategory\@\@\@Z
@@ -79,11 +70,6 @@ public:
      */
     MCAPI void resetGroups();
     /**
-     * @symbol
-     * ?setCurrentRegistry\@CreativeItemRegistry\@\@SAX$$QEAV?$unique_ptr\@VCreativeItemRegistry\@\@U?$default_delete\@VCreativeItemRegistry\@\@\@std\@\@\@std\@\@\@Z
-     */
-    MCAPI static void setCurrentRegistry(std::unique_ptr<class CreativeItemRegistry>&&);
-    /**
      * @symbol ?updateItemEntry\@CreativeItemRegistry\@\@QEAAPEAVCreativeItemEntry\@\@IAEBVItemInstance\@\@\@Z
      */
     MCAPI class CreativeItemEntry* updateItemEntry(unsigned int, class ItemInstance const&);
@@ -91,6 +77,20 @@ public:
      * @symbol ?updateNetIdMap\@CreativeItemRegistry\@\@QEAAXXZ
      */
     MCAPI void updateNetIdMap();
+    /**
+     * @symbol ?current\@CreativeItemRegistry\@\@SAPEAV1\@XZ
+     */
+    MCAPI static class CreativeItemRegistry* current();
+    /**
+     * @symbol
+     * ?forEachCreativeItemInstance\@CreativeItemRegistry\@\@SAXV?$function\@$$A6A_NAEAVItemInstance\@\@\@Z\@std\@\@\@Z
+     */
+    MCAPI static void forEachCreativeItemInstance(std::function<bool(class ItemInstance&)>);
+    /**
+     * @symbol
+     * ?setCurrentRegistry\@CreativeItemRegistry\@\@SAX$$QEAV?$unique_ptr\@VCreativeItemRegistry\@\@U?$default_delete\@VCreativeItemRegistry\@\@\@std\@\@\@std\@\@\@Z
+     */
+    MCAPI static void setCurrentRegistry(std::unique_ptr<class CreativeItemRegistry>&&);
     /**
      * @symbol ?mCreativeListMutex\@CreativeItemRegistry\@\@2Vmutex\@std\@\@A
      */

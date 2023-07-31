@@ -866,22 +866,6 @@ public:
      */
     MCAPI Item(std::string const&, short);
     /**
-     * @symbol ?addCreativeItem\@Item\@\@SAXVItemRegistryRef\@\@AEBVBlock\@\@\@Z
-     */
-    MCAPI static void addCreativeItem(class ItemRegistryRef, class Block const&);
-    /**
-     * @symbol ?addCreativeItem\@Item\@\@SAXVItemRegistryRef\@\@AEBVItemStack\@\@\@Z
-     */
-    MCAPI static void addCreativeItem(class ItemRegistryRef, class ItemStack const&);
-    /**
-     * @symbol ?addCreativeItem\@Item\@\@SAXVItemRegistryRef\@\@AEBVItemInstance\@\@\@Z
-     */
-    MCAPI static void addCreativeItem(class ItemRegistryRef, class ItemInstance const&);
-    /**
-     * @symbol ?addLooseCreativeItems\@Item\@\@SAX_NAEBVBaseGameVersion\@\@VItemRegistryRef\@\@\@Z
-     */
-    MCAPI static void addLooseCreativeItems(bool, class BaseGameVersion const&, class ItemRegistryRef);
-    /**
      * @symbol ?addOnResetBAIcallback\@Item\@\@QEAAXAEBV?$function\@$$A6AXXZ\@std\@\@\@Z
      */
     MCAPI void addOnResetBAIcallback(std::function<void(void)> const&);
@@ -914,10 +898,6 @@ public:
      * @symbol ?destroySpeedBonus\@Item\@\@QEBAMAEBVItemStackBase\@\@\@Z
      */
     MCAPI float destroySpeedBonus(class ItemStackBase const&) const;
-    /**
-     * @symbol ?endCreativeItemDefinitions\@Item\@\@SAX_N\@Z
-     */
-    MCAPI static void endCreativeItemDefinitions(bool);
     /**
      * @symbol
      * ?getCommandNames\@Item\@\@QEBA?AV?$vector\@UCommandName\@\@V?$allocator\@UCommandName\@\@\@std\@\@\@std\@\@XZ
@@ -983,25 +963,9 @@ public:
      */
     MCAPI bool isElytra() const;
     /**
-     * @symbol ?isElytra\@Item\@\@SA_NAEBVItemDescriptor\@\@\@Z
-     */
-    MCAPI static bool isElytra(class ItemDescriptor const&);
-    /**
-     * @symbol ?isElytraBroken\@Item\@\@SA_NH\@Z
-     */
-    MCAPI static bool isElytraBroken(int);
-    /**
-     * @symbol ?isFlyEnabled\@Item\@\@SA_NAEBVItemInstance\@\@\@Z
-     */
-    MCAPI static bool isFlyEnabled(class ItemInstance const&);
-    /**
      * @symbol ?isNameTag\@Item\@\@QEBA_NXZ
      */
     MCAPI bool isNameTag() const;
-    /**
-     * @symbol ?isSameTypeAndItem\@Item\@\@SA_NAEBVItemStackBase\@\@0\@Z
-     */
-    MCAPI static bool isSameTypeAndItem(class ItemStackBase const&, class ItemStackBase const&);
     /**
      * @symbol ?isSeed\@Item\@\@QEBA_NXZ
      */
@@ -1048,14 +1012,6 @@ public:
      */
     MCAPI bool shouldDespawn() const;
     /**
-     * @symbol ?startCreativeItemDefinitions\@Item\@\@SAX_NPEAVCreativeItemRegistry\@\@\@Z
-     */
-    MCAPI static void startCreativeItemDefinitions(bool, class CreativeItemRegistry*);
-    /**
-     * @symbol ?toBlockId\@Item\@\@SA?AUNewBlockID\@\@F\@Z
-     */
-    MCAPI static struct NewBlockID toBlockId(short);
-    /**
      * @symbol ?updateCustomBlockEntityTag\@Item\@\@QEBA_NAEAVBlockSource\@\@AEAVItemStackBase\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool updateCustomBlockEntityTag(class BlockSource&, class ItemStackBase&, class BlockPos const&) const;
@@ -1064,6 +1020,50 @@ public:
      */
     MCAPI class InteractionResult
     useOn(class ItemStack&, class Actor&, int, int, int, unsigned char, class Vec3 const&) const;
+    /**
+     * @symbol ?addCreativeItem\@Item\@\@SAXVItemRegistryRef\@\@AEBVBlock\@\@\@Z
+     */
+    MCAPI static void addCreativeItem(class ItemRegistryRef, class Block const&);
+    /**
+     * @symbol ?addCreativeItem\@Item\@\@SAXVItemRegistryRef\@\@AEBVItemStack\@\@\@Z
+     */
+    MCAPI static void addCreativeItem(class ItemRegistryRef, class ItemStack const&);
+    /**
+     * @symbol ?addCreativeItem\@Item\@\@SAXVItemRegistryRef\@\@AEBVItemInstance\@\@\@Z
+     */
+    MCAPI static void addCreativeItem(class ItemRegistryRef, class ItemInstance const&);
+    /**
+     * @symbol ?addLooseCreativeItems\@Item\@\@SAX_NAEBVBaseGameVersion\@\@VItemRegistryRef\@\@\@Z
+     */
+    MCAPI static void addLooseCreativeItems(bool, class BaseGameVersion const&, class ItemRegistryRef);
+    /**
+     * @symbol ?endCreativeItemDefinitions\@Item\@\@SAX_N\@Z
+     */
+    MCAPI static void endCreativeItemDefinitions(bool);
+    /**
+     * @symbol ?isElytra\@Item\@\@SA_NAEBVItemDescriptor\@\@\@Z
+     */
+    MCAPI static bool isElytra(class ItemDescriptor const&);
+    /**
+     * @symbol ?isElytraBroken\@Item\@\@SA_NH\@Z
+     */
+    MCAPI static bool isElytraBroken(int);
+    /**
+     * @symbol ?isFlyEnabled\@Item\@\@SA_NAEBVItemInstance\@\@\@Z
+     */
+    MCAPI static bool isFlyEnabled(class ItemInstance const&);
+    /**
+     * @symbol ?isSameTypeAndItem\@Item\@\@SA_NAEBVItemStackBase\@\@0\@Z
+     */
+    MCAPI static bool isSameTypeAndItem(class ItemStackBase const&, class ItemStackBase const&);
+    /**
+     * @symbol ?startCreativeItemDefinitions\@Item\@\@SAX_NPEAVCreativeItemRegistry\@\@\@Z
+     */
+    MCAPI static void startCreativeItemDefinitions(bool, class CreativeItemRegistry*);
+    /**
+     * @symbol ?toBlockId\@Item\@\@SA?AUNewBlockID\@\@F\@Z
+     */
+    MCAPI static struct NewBlockID toBlockId(short);
     /**
      * @symbol
      * ?ICON_DESCRIPTION_PREFIX\@Item\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
@@ -1120,6 +1120,7 @@ private:
      * @symbol
      * ?mServerItemsUsedInCreativeItems\@Item\@\@0V?$unique_ptr\@V?$set\@FU?$less\@F\@std\@\@V?$allocator\@F\@2\@\@std\@\@U?$default_delete\@V?$set\@FU?$less\@F\@std\@\@V?$allocator\@F\@2\@\@std\@\@\@2\@\@std\@\@A
      */
-    MCAPI static std::unique_ptr<std::set<short>> mServerItemsUsedInCreativeItems;
+    MCAPI static std::unique_ptr < std::set<short>,
+        std::default_delete<std::set<short, std::less<short>>> mServerItemsUsedInCreativeItems;
     // NOLINTEND
 };

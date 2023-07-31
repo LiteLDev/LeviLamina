@@ -32,10 +32,6 @@ public:
      */
     MCAPI std::string const& asString() const;
     /**
-     * @symbol ?current\@GameVersion\@\@SA?AV1\@XZ
-     */
-    MCAPI static class GameVersion current();
-    /**
      * @symbol ??MGameVersion\@\@QEBA_NAEBV0\@\@Z
      */
     MCAPI bool operator<(class GameVersion const&) const;
@@ -56,5 +52,9 @@ public:
      * @symbol ??1GameVersion\@\@QEAA\@XZ
      */
     MCAPI ~GameVersion();
+    /**
+     * @symbol ?current\@GameVersion\@\@SA?AV1\@XZ
+     */
+    MCAPI static class GameVersion current();
     // NOLINTEND
 };

@@ -74,11 +74,6 @@ public:
      */
     MCAPI class Json::Value blocksToJson() const;
     /**
-     * @symbol
-     * ?create\@GameContext\@CodeBuilder\@\@SA?AV?$unique_ptr\@VGameContext\@CodeBuilder\@\@U?$default_delete\@VGameContext\@CodeBuilder\@\@\@std\@\@\@std\@\@V?$function\@$$A6APEAVILevel\@\@XZ\@4\@\@Z
-     */
-    MCAPI static std::unique_ptr<class CodeBuilder::GameContext> create(std::function<class ILevel*(void)>);
-    /**
      * @symbol ?itemsToJson\@GameContext\@CodeBuilder\@\@QEBA?AVValue\@Json\@\@XZ
      */
     MCAPI class Json::Value itemsToJson() const;
@@ -90,6 +85,11 @@ public:
      * @symbol ??1GameContext\@CodeBuilder\@\@QEAA\@XZ
      */
     MCAPI ~GameContext();
+    /**
+     * @symbol
+     * ?create\@GameContext\@CodeBuilder\@\@SA?AV?$unique_ptr\@VGameContext\@CodeBuilder\@\@U?$default_delete\@VGameContext\@CodeBuilder\@\@\@std\@\@\@std\@\@V?$function\@$$A6APEAVILevel\@\@XZ\@4\@\@Z
+     */
+    MCAPI static std::unique_ptr<class CodeBuilder::GameContext> create(std::function<class ILevel*(void)>);
     // NOLINTEND
 };
 

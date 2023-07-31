@@ -33,10 +33,6 @@ public:
      */
     MCAPI ResourceLocation();
     /**
-     * @symbol ?getEmptyLocation\@ResourceLocation\@\@SAAEBV1\@XZ
-     */
-    MCAPI static class ResourceLocation const& getEmptyLocation();
-    /**
      * @symbol
      * ?getFullPath\@ResourceLocation\@\@QEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
@@ -63,6 +59,10 @@ public:
      * @symbol ??1ResourceLocation\@\@QEAA\@XZ
      */
     MCAPI ~ResourceLocation();
+    /**
+     * @symbol ?getEmptyLocation\@ResourceLocation\@\@SAAEBV1\@XZ
+     */
+    MCAPI static class ResourceLocation const& getEmptyLocation();
     // NOLINTEND
 
     // private:

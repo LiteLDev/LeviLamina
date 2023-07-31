@@ -29,6 +29,10 @@ public:
     public:
         // NOLINTBEGIN
         /**
+         * @symbol ?initialize\@OfferFlowerDefinition\@OfferFlowerGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
+         */
+        MCAPI void initialize(class EntityContext&, class OfferFlowerGoal&) const;
+        /**
          * @symbol
          * ?buildSchema\@OfferFlowerDefinition\@OfferFlowerGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VOfferFlowerDefinition\@OfferFlowerGoal\@\@\@JsonUtil\@\@\@4\@\@Z
          */
@@ -38,10 +42,6 @@ public:
          * @symbol ?getStrictParsingVersion\@OfferFlowerDefinition\@OfferFlowerGoal\@\@SA?AVSemVersion\@\@XZ
          */
         MCAPI static class SemVersion getStrictParsingVersion();
-        /**
-         * @symbol ?initialize\@OfferFlowerDefinition\@OfferFlowerGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
-        MCAPI void initialize(class EntityContext&, class OfferFlowerGoal&) const;
         // NOLINTEND
     };
 

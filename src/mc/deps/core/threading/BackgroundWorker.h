@@ -59,10 +59,6 @@ public:
      */
     MCAPI uint64_t getApproximateTaskCount() const;
     /**
-     * @symbol ?getLocal\@BackgroundWorker\@\@SAPEAV1\@XZ
-     */
-    MCAPI static class BackgroundWorker* getLocal();
-    /**
      * @symbol ?getThreadId\@BackgroundWorker\@\@QEBA?AVid\@thread\@std\@\@XZ
      */
     MCAPI std::thread::id getThreadId() const;
@@ -90,6 +86,10 @@ public:
      * @symbol ?wake\@BackgroundWorker\@\@QEAAXXZ
      */
     MCAPI void wake();
+    /**
+     * @symbol ?getLocal\@BackgroundWorker\@\@SAPEAV1\@XZ
+     */
+    MCAPI static class BackgroundWorker* getLocal();
     // NOLINTEND
 
     // private:

@@ -71,11 +71,6 @@ public:
     MCAPI ScriptActionFormData();
     /**
      * @symbol
-     * ?bind\@ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@SA?AV?$ClassBindingBuilder\@VScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptActionFormData> bind();
-    /**
-     * @symbol
      * ?body\@ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@V?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@\@std\@\@\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptActionFormData>
@@ -132,6 +127,11 @@ public:
      * @symbol ??1ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@QEAA\@XZ
      */
     MCAPI ~ScriptActionFormData();
+    /**
+     * @symbol
+     * ?bind\@ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@SA?AV?$ClassBindingBuilder\@VScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptActionFormData> bind();
     // NOLINTEND
 };
 

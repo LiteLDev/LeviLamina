@@ -27,12 +27,6 @@ public:
      */
     MCAPI ScriptPlayerSoundOptions(struct ScriptModuleMinecraft::ScriptSoundOptions const&);
     /**
-     * @symbol
-     * ?bind\@ScriptPlayerSoundOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptPlayerSoundOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptPlayerSoundOptions>
-    bind();
-    /**
      * @symbol ?getPitch\@ScriptPlayerSoundOptions\@ScriptModuleMinecraft\@\@QEBAMXZ
      */
     MCAPI float getPitch() const;
@@ -55,6 +49,12 @@ public:
      * ?validate\@ScriptPlayerSoundOptions\@ScriptModuleMinecraft\@\@QEBA?AV?$optional\@UError\@Scripting\@\@\@std\@\@XZ
      */
     MCAPI std::optional<struct Scripting::Error> validate() const;
+    /**
+     * @symbol
+     * ?bind\@ScriptPlayerSoundOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptPlayerSoundOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptPlayerSoundOptions>
+    bind();
     // NOLINTEND
 };
 

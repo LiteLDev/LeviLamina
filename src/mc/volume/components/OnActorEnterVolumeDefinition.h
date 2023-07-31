@@ -13,10 +13,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ?bindType\@OnActorEnterVolumeDefinition\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ??4OnActorEnterVolumeDefinition\@\@QEAAAEAU0\@$$QEAU0\@\@Z
      */
     MCAPI struct OnActorEnterVolumeDefinition& operator=(struct OnActorEnterVolumeDefinition&&);
@@ -24,6 +20,10 @@ public:
      * @symbol ??1OnActorEnterVolumeDefinition\@\@QEAA\@XZ
      */
     MCAPI ~OnActorEnterVolumeDefinition();
+    /**
+     * @symbol ?bindType\@OnActorEnterVolumeDefinition\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     /**
      * @symbol
      * ?NAME\@OnActorEnterVolumeDefinition\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B

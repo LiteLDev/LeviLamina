@@ -29,16 +29,16 @@ public:
     public:
         // NOLINTBEGIN
         /**
+         * @symbol ?initialize\@Definition\@EquipItemComponent\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
+         */
+        MCAPI void initialize(class EntityContext&, class EquipItemComponent&) const;
+        /**
          * @symbol
          * ?buildSchema\@Definition\@EquipItemComponent\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDefinition\@EquipItemComponent\@\@\@JsonUtil\@\@\@std\@\@\@Z
          */
         MCAPI static void buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
                                           class JsonUtil::EmptyClass,
                                           class EquipItemComponent::Definition>>&);
-        /**
-         * @symbol ?initialize\@Definition\@EquipItemComponent\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
-        MCAPI void initialize(class EntityContext&, class EquipItemComponent&) const;
         // NOLINTEND
     };
 

@@ -48,18 +48,9 @@ public:
      */
     MCAPI struct FeatureTerrainAdjustments::Descriptions at(class ChunkPos const&);
     /**
-     * @symbol ?calculateContribution\@FeatureTerrainAdjustments\@\@SAMAEBUDescriptions\@1\@AEBVBlockPos\@\@M\@Z
-     */
-    MCAPI static float
-    calculateContribution(struct FeatureTerrainAdjustments::Descriptions const&, class BlockPos const&, float);
-    /**
      * @symbol ?garbageCollectDescriptions\@FeatureTerrainAdjustments\@\@QEAAXXZ
      */
     MCAPI void garbageCollectDescriptions();
-    /**
-     * @symbol ?getBeardKernel\@FeatureTerrainAdjustments\@\@SAAEAUBeardKernel\@\@XZ
-     */
-    MCAPI static struct BeardKernel& getBeardKernel();
     /**
      * @symbol
      * ?setBeardAndShaver\@FeatureTerrainAdjustments\@\@QEAA?AV?$shared_ptr\@_N\@std\@\@AEBVBoundingBox\@\@HMM\@Z
@@ -74,13 +65,22 @@ public:
      */
     MCAPI std::shared_ptr<bool> setBury(class BoundingBox const&);
     /**
-     * @symbol ?shouldDoTerrainAdjustments\@FeatureTerrainAdjustments\@\@SA_NAEBUDescriptions\@1\@\@Z
-     */
-    MCAPI static bool shouldDoTerrainAdjustments(struct FeatureTerrainAdjustments::Descriptions const&);
-    /**
      * @symbol ??1FeatureTerrainAdjustments\@\@QEAA\@XZ
      */
     MCAPI ~FeatureTerrainAdjustments();
+    /**
+     * @symbol ?calculateContribution\@FeatureTerrainAdjustments\@\@SAMAEBUDescriptions\@1\@AEBVBlockPos\@\@M\@Z
+     */
+    MCAPI static float
+    calculateContribution(struct FeatureTerrainAdjustments::Descriptions const&, class BlockPos const&, float);
+    /**
+     * @symbol ?getBeardKernel\@FeatureTerrainAdjustments\@\@SAAEAUBeardKernel\@\@XZ
+     */
+    MCAPI static struct BeardKernel& getBeardKernel();
+    /**
+     * @symbol ?shouldDoTerrainAdjustments\@FeatureTerrainAdjustments\@\@SA_NAEBUDescriptions\@1\@\@Z
+     */
+    MCAPI static bool shouldDoTerrainAdjustments(struct FeatureTerrainAdjustments::Descriptions const&);
     // NOLINTEND
 
     // private:

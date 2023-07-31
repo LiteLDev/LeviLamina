@@ -16,12 +16,12 @@ public:
      */
     MCAPI BlockMaterialInstanceProxy(struct BlockMaterialInstanceProxy const&);
     /**
-     * @symbol ?bindType\@BlockMaterialInstanceProxy\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ??1BlockMaterialInstanceProxy\@\@QEAA\@XZ
      */
     MCAPI ~BlockMaterialInstanceProxy();
+    /**
+     * @symbol ?bindType\@BlockMaterialInstanceProxy\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     // NOLINTEND
 };

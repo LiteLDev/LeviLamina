@@ -282,6 +282,22 @@ public:
      */
     MCAPI Horse(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
     /**
+     * @symbol ?getPostTravelType\@Horse\@\@QEAA?AW4HorsePostTravelType\@\@PEAVActor\@\@\@Z
+     */
+    MCAPI enum class HorsePostTravelType getPostTravelType(class Actor*);
+    /**
+     * @symbol ?postAiStep\@Horse\@\@QEAAXXZ
+     */
+    MCAPI void postAiStep();
+    /**
+     * @symbol ?postNormalTick\@Horse\@\@QEAAXXZ
+     */
+    MCAPI void postNormalTick();
+    /**
+     * @symbol ?postTravel\@Horse\@\@QEAAXPEAVActor\@\@_NW4HorsePostTravelType\@\@\@Z
+     */
+    MCAPI void postTravel(class Actor*, bool, enum class HorsePostTravelType);
+    /**
      * @symbol
      * ?getInterpolatedRidingOffset\@Horse\@\@SA?AVVec3\@\@AEBURenderRotationComponent\@\@AEBUStandAnimationComponent\@\@M\@Z
      */
@@ -302,22 +318,6 @@ public:
         float,
         float
     );
-    /**
-     * @symbol ?getPostTravelType\@Horse\@\@QEAA?AW4HorsePostTravelType\@\@PEAVActor\@\@\@Z
-     */
-    MCAPI enum class HorsePostTravelType getPostTravelType(class Actor*);
-    /**
-     * @symbol ?postAiStep\@Horse\@\@QEAAXXZ
-     */
-    MCAPI void postAiStep();
-    /**
-     * @symbol ?postNormalTick\@Horse\@\@QEAAXXZ
-     */
-    MCAPI void postNormalTick();
-    /**
-     * @symbol ?postTravel\@Horse\@\@QEAAXPEAVActor\@\@_NW4HorsePostTravelType\@\@\@Z
-     */
-    MCAPI void postTravel(class Actor*, bool, enum class HorsePostTravelType);
     /**
      * @symbol ?setHorseFlag\@Horse\@\@SAXVSynchedActorDataWriter\@\@W4HorseFlags\@\@_N\@Z
      */

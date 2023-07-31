@@ -292,10 +292,6 @@ public:
      */
     MCAPI CommandBlock(std::string const&, int, enum class CommandBlockMode);
     /**
-     * @symbol ?_getCommandBlockActor\@CommandBlock\@\@SAPEAVCommandBlockActor\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI static class CommandBlockActor* _getCommandBlockActor(class BlockSource&, class BlockPos const&);
-    /**
      * @symbol ?execute\@CommandBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void execute(class BlockSource&, class BlockPos const&) const;
@@ -307,6 +303,10 @@ public:
      * @symbol ?updateBlock\@CommandBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@W4CommandBlockMode\@\@_N\@Z
      */
     MCAPI void updateBlock(class BlockSource&, class BlockPos const&, enum class CommandBlockMode, bool) const;
+    /**
+     * @symbol ?_getCommandBlockActor\@CommandBlock\@\@SAPEAVCommandBlockActor\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI static class CommandBlockActor* _getCommandBlockActor(class BlockSource&, class BlockPos const&);
     // NOLINTEND
 
     // private:

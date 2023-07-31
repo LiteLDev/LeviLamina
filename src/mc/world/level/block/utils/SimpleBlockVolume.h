@@ -29,10 +29,6 @@ public:
      */
     MCAPI class SimpleBlockVolumeIterator begin() const;
     /**
-     * @symbol ?cerealBindTypes\@SimpleBlockVolume\@\@SAXXZ
-     */
-    MCAPI static void cerealBindTypes();
-    /**
      * @symbol ?contains\@SimpleBlockVolume\@\@QEBA_NAEBVBlockPos\@\@\@Z
      */
     MCAPI bool contains(class BlockPos const&) const;
@@ -100,6 +96,10 @@ public:
      * @symbol ?translated\@SimpleBlockVolume\@\@QEBA?AV1\@AEBU?$vec\@$02H$0A\@\@glm\@\@\@Z
      */
     MCAPI class SimpleBlockVolume translated(struct glm::vec<3, int, 0> const&) const;
+    /**
+     * @symbol ?cerealBindTypes\@SimpleBlockVolume\@\@SAXXZ
+     */
+    MCAPI static void cerealBindTypes();
     // NOLINTEND
 
     // protected:

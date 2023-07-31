@@ -40,10 +40,6 @@ public:
      */
     MCAPI bool Deserialize(class RakNet::BitStream*);
     /**
-     * @symbol ?FreeMemoryNoMutex\@RakString\@RakNet\@\@SAXXZ
-     */
-    MCAPI static void FreeMemoryNoMutex();
-    /**
      * @symbol ?GetLength\@RakString\@RakNet\@\@QEBA_KXZ
      */
     MCAPI uint64_t GetLength() const;
@@ -79,6 +75,10 @@ public:
      * @symbol ??1RakString\@RakNet\@\@QEAA\@XZ
      */
     MCAPI ~RakString();
+    /**
+     * @symbol ?FreeMemoryNoMutex\@RakString\@RakNet\@\@SAXXZ
+     */
+    MCAPI static void FreeMemoryNoMutex();
     /**
      * @symbol ?emptyString\@RakString\@RakNet\@\@2USharedString\@12\@A
      */

@@ -94,10 +94,6 @@ public:
      */
     MCAPI void addAdditionalSaveData(class CompoundTag&) const;
     /**
-     * @symbol ?initMolangParams\@ScatterParams\@\@SAXAEAVRenderParams\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
-     */
-    MCAPI static void initMolangParams(class RenderParams&, class BlockPos const&, class Random&);
-    /**
      * @symbol ?readAdditionalSaveData\@ScatterParams\@\@QEAAXAEBVCompoundTag\@\@\@Z
      */
     MCAPI void readAdditionalSaveData(class CompoundTag const&);
@@ -111,6 +107,10 @@ public:
      * @symbol ??1ScatterParams\@\@QEAA\@XZ
      */
     MCAPI ~ScatterParams();
+    /**
+     * @symbol ?initMolangParams\@ScatterParams\@\@SAXAEAVRenderParams\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
+     */
+    MCAPI static void initMolangParams(class RenderParams&, class BlockPos const&, class Random&);
     // NOLINTEND
 
     // private:

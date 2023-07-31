@@ -53,21 +53,6 @@ public:
      */
     MCAPI std::string const& asString() const;
     /**
-     * @symbol ?fromJson\@SemVersion\@\@SA?AW4MatchType\@1\@AEBVValue\@Json\@\@AEAV1\@W4ParseOption\@1\@\@Z
-     */
-    MCAPI static enum class SemVersion::MatchType
-    fromJson(class Json::Value const&, class SemVersion&, enum class SemVersion::ParseOption);
-    /**
-     * @symbol ?fromJsonArray\@SemVersion\@\@SA?AW4MatchType\@1\@AEBVValue\@Json\@\@AEAV1\@\@Z
-     */
-    MCAPI static enum class SemVersion::MatchType fromJsonArray(class Json::Value const&, class SemVersion&);
-    /**
-     * @symbol
-     * ?fromString\@SemVersion\@\@SA?AW4MatchType\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV1\@W4ParseOption\@1\@\@Z
-     */
-    MCAPI static enum class SemVersion::MatchType
-    fromString(std::string const&, class SemVersion&, enum class SemVersion::ParseOption);
-    /**
      * @symbol ?getMajor\@SemVersion\@\@QEBAGXZ
      */
     MCAPI unsigned short getMajor() const;
@@ -128,6 +113,21 @@ public:
      * @symbol ??1SemVersion\@\@QEAA\@XZ
      */
     MCAPI ~SemVersion();
+    /**
+     * @symbol ?fromJson\@SemVersion\@\@SA?AW4MatchType\@1\@AEBVValue\@Json\@\@AEAV1\@W4ParseOption\@1\@\@Z
+     */
+    MCAPI static enum class SemVersion::MatchType
+    fromJson(class Json::Value const&, class SemVersion&, enum class SemVersion::ParseOption);
+    /**
+     * @symbol ?fromJsonArray\@SemVersion\@\@SA?AW4MatchType\@1\@AEBVValue\@Json\@\@AEAV1\@\@Z
+     */
+    MCAPI static enum class SemVersion::MatchType fromJsonArray(class Json::Value const&, class SemVersion&);
+    /**
+     * @symbol
+     * ?fromString\@SemVersion\@\@SA?AW4MatchType\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV1\@W4ParseOption\@1\@\@Z
+     */
+    MCAPI static enum class SemVersion::MatchType
+    fromString(std::string const&, class SemVersion&, enum class SemVersion::ParseOption);
     /**
      * @symbol ?AnyVersionConstructor\@SemVersion\@\@2Uany_version_constructor\@1\@B
      */

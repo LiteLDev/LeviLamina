@@ -39,12 +39,6 @@ public:
     MCAPI ScriptItemDurabilityComponent(class ScriptModuleMinecraft::ScriptItemDurabilityComponent const&);
     /**
      * @symbol
-     * ?bind\@ScriptItemDurabilityComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptItemDurabilityComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemDurabilityComponent>
-    bind();
-    /**
-     * @symbol
      * ?getCurrentDamage\@ScriptItemDurabilityComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@H\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<int> getCurrentDamage();
@@ -73,6 +67,12 @@ public:
      * ?setCurrentDamage\@ScriptItemDurabilityComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@H\@Z
      */
     MCAPI class Scripting::Result<void> setCurrentDamage(int);
+    /**
+     * @symbol
+     * ?bind\@ScriptItemDurabilityComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptItemDurabilityComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemDurabilityComponent>
+    bind();
     // NOLINTEND
 };
 

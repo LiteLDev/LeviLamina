@@ -69,18 +69,6 @@ public:
     MCAPI ScriptDimension(class ScriptModuleMinecraft::ScriptDimension const&);
     /**
      * @symbol
-     * ?bind\@ScriptDimension\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptDimension\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptDimension> bind();
-    /**
-     * @symbol
-     * ?bindScriptWeatherType\@ScriptDimension\@ScriptModuleMinecraft\@\@SA?AV?$EnumBindingBuilder\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ScriptWeatherType\@ScriptDimension\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::
-        EnumBindingBuilder<std::string, enum class ScriptModuleMinecraft::ScriptDimension::ScriptWeatherType>
-        bindScriptWeatherType();
-    /**
-     * @symbol
      * ?createExplosion\@ScriptDimension\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@X\@Scripting\@\@AEBVVec3\@\@MV?$optional\@UScriptExplosionOptions\@ScriptModuleMinecraft\@\@\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<void>
@@ -178,18 +166,6 @@ public:
     MCAPI class Scripting::Result<std::string> getId() const;
     /**
      * @symbol
-     * ?getOrCreateHandle\@ScriptDimension\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptDimension\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$AutomaticID\@VDimension\@\@H\@\@AEAVLevel\@\@AEBVWeakLifetimeScope\@4\@\@Z
-     */
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDimension>
-    getOrCreateHandle(class AutomaticID<class Dimension, int>, class Level&, class Scripting::WeakLifetimeScope const&);
-    /**
-     * @symbol
-     * ?getOrCreateHandle\@ScriptDimension\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptDimension\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEAVDimension\@\@AEBVWeakLifetimeScope\@4\@\@Z
-     */
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDimension>
-    getOrCreateHandle(class Dimension&, class Scripting::WeakLifetimeScope const&);
-    /**
-     * @symbol
      * ?getPlayers\@ScriptDimension\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$vector\@V?$StrongTypedObjectHandle\@VScriptPlayer\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$allocator\@V?$StrongTypedObjectHandle\@VScriptPlayer\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@std\@\@\@std\@\@\@Scripting\@\@V?$optional\@UScriptActorQueryOptions\@ScriptModuleMinecraft\@\@\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<
@@ -273,6 +249,30 @@ public:
      */
     MCAPI void
     spawnParticle_V010(std::string const&, class Vec3 const&, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptMolangVariableMap>);
+    /**
+     * @symbol
+     * ?bind\@ScriptDimension\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptDimension\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptDimension> bind();
+    /**
+     * @symbol
+     * ?bindScriptWeatherType\@ScriptDimension\@ScriptModuleMinecraft\@\@SA?AV?$EnumBindingBuilder\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ScriptWeatherType\@ScriptDimension\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::
+        EnumBindingBuilder<std::string, enum class ScriptModuleMinecraft::ScriptDimension::ScriptWeatherType>
+        bindScriptWeatherType();
+    /**
+     * @symbol
+     * ?getOrCreateHandle\@ScriptDimension\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptDimension\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$AutomaticID\@VDimension\@\@H\@\@AEAVLevel\@\@AEBVWeakLifetimeScope\@4\@\@Z
+     */
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDimension>
+    getOrCreateHandle(class AutomaticID<class Dimension, int>, class Level&, class Scripting::WeakLifetimeScope const&);
+    /**
+     * @symbol
+     * ?getOrCreateHandle\@ScriptDimension\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptDimension\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEAVDimension\@\@AEBVWeakLifetimeScope\@4\@\@Z
+     */
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptDimension>
+    getOrCreateHandle(class Dimension&, class Scripting::WeakLifetimeScope const&);
     // NOLINTEND
 };
 

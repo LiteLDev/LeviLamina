@@ -34,10 +34,6 @@ public:
      */
     MCAPI bool getIsBoosting() const;
     /**
-     * @symbol ?getSpeedModifierUUID\@BoostableComponent\@\@SA?AVUUID\@mce\@\@XZ
-     */
-    MCAPI static class mce::UUID getSpeedModifierUUID();
-    /**
      * @symbol
      * ?itemUseText\@BoostableComponent\@\@QEAA_NAEBVPlayer\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -54,6 +50,10 @@ public:
      * @symbol ?setIsBoosting\@BoostableComponent\@\@QEAAX_N\@Z
      */
     MCAPI void setIsBoosting(bool);
+    /**
+     * @symbol ?getSpeedModifierUUID\@BoostableComponent\@\@SA?AVUUID\@mce\@\@XZ
+     */
+    MCAPI static class mce::UUID getSpeedModifierUUID();
     // NOLINTEND
 
 private:

@@ -20,11 +20,7 @@ public:
      * ??0VolumeDefinitionGroup\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@$$CBVVolumeComponentFactory\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
     MCAPI
-        VolumeDefinitionGroup(class gsl::not_null<class Bedrock::NonOwnerPointer<class VolumeComponentFactory const>>);
-    /**
-     * @symbol ?bindVolumeDefinitions\@VolumeDefinitionGroup\@\@SAXXZ
-     */
-    MCAPI static void bindVolumeDefinitions();
+    VolumeDefinitionGroup(class gsl::not_null<class Bedrock::NonOwnerPointer<class VolumeComponentFactory const>>);
     /**
      * @symbol ?loadDefinitions\@VolumeDefinitionGroup\@\@QEAAXAEBVResourcePackManager\@\@_N\@Z
      */
@@ -38,6 +34,10 @@ public:
      * @symbol ??1VolumeDefinitionGroup\@\@QEAA\@XZ
      */
     MCAPI ~VolumeDefinitionGroup();
+    /**
+     * @symbol ?bindVolumeDefinitions\@VolumeDefinitionGroup\@\@SAXXZ
+     */
+    MCAPI static void bindVolumeDefinitions();
     // NOLINTEND
 
     // private:

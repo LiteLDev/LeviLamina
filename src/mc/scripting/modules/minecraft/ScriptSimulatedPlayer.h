@@ -81,11 +81,6 @@ public:
     MCAPI class Scripting::Result<bool> attackEntity(class ScriptModuleMinecraft::ScriptActor const&) const;
     /**
      * @symbol
-     * ?bind\@ScriptSimulatedPlayer\@ScriptModuleGameTest\@\@SA?AV?$ClassBindingBuilder\@VScriptSimulatedPlayer\@ScriptModuleGameTest\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleGameTest::ScriptSimulatedPlayer> bind();
-    /**
-     * @symbol
      * ?breakBlock\@ScriptSimulatedPlayer\@ScriptModuleGameTest\@\@QEBA?AV?$Result\@_N\@Scripting\@\@AEBVVec3\@\@W4ScriptFacing\@ScriptModuleMinecraft\@\@\@Z
      */
     MCAPI class Scripting::Result<bool>
@@ -276,6 +271,11 @@ public:
     MCAPI class Scripting::Result<bool>
     useItemOnBlock(class ScriptModuleMinecraft::ScriptItemStack const&, class Vec3 const&, enum class ScriptModuleMinecraft::ScriptFacing, std::optional<class Vec3>)
         const;
+    /**
+     * @symbol
+     * ?bind\@ScriptSimulatedPlayer\@ScriptModuleGameTest\@\@SA?AV?$ClassBindingBuilder\@VScriptSimulatedPlayer\@ScriptModuleGameTest\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleGameTest::ScriptSimulatedPlayer> bind();
     // NOLINTEND
 
     // private:

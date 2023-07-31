@@ -17,11 +17,6 @@ public:
      */
     MCAPI KeyFrameTransform(float);
     /**
-     * @symbol ?computeCubicPolynomial\@KeyFrameTransform\@\@SAXPEAV1\@AEAV1\@10\@Z
-     */
-    MCAPI static void
-    computeCubicPolynomial(class KeyFrameTransform*, class KeyFrameTransform&, class KeyFrameTransform&, class KeyFrameTransform*);
-    /**
      * @symbol ??4KeyFrameTransform\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class KeyFrameTransform& operator=(class KeyFrameTransform&&);
@@ -41,5 +36,10 @@ public:
      * @symbol ??1KeyFrameTransform\@\@QEAA\@XZ
      */
     MCAPI ~KeyFrameTransform();
+    /**
+     * @symbol ?computeCubicPolynomial\@KeyFrameTransform\@\@SAXPEAV1\@AEAV1\@10\@Z
+     */
+    MCAPI static void
+    computeCubicPolynomial(class KeyFrameTransform*, class KeyFrameTransform&, class KeyFrameTransform&, class KeyFrameTransform*);
     // NOLINTEND
 };

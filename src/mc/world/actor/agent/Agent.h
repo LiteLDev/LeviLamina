@@ -289,10 +289,6 @@ public:
      */
     MCAPI bool isValidSlotNum(int);
     /**
-     * @symbol ?roundTeleportPos\@Agent\@\@SA?AVVec3\@\@AEBV2\@\@Z
-     */
-    MCAPI static class Vec3 roundTeleportPos(class Vec3 const&);
-    /**
      * @symbol ?setGameType\@Agent\@\@QEAAXW4GameType\@\@\@Z
      */
     MCAPI void setGameType(enum class GameType);
@@ -328,6 +324,10 @@ public:
      * @symbol ?tryFireCreateEvent\@Agent\@\@QEAAXAEAVPlayer\@\@\@Z
      */
     MCAPI void tryFireCreateEvent(class Player&);
+    /**
+     * @symbol ?roundTeleportPos\@Agent\@\@SA?AVVec3\@\@AEBV2\@\@Z
+     */
+    MCAPI static class Vec3 roundTeleportPos(class Vec3 const&);
     /**
      * @symbol ?tryGetFromEntity\@Agent\@\@SAPEAV1\@AEAVEntityContext\@\@_N\@Z
      */

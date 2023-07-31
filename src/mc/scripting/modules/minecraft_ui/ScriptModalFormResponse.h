@@ -18,12 +18,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol
-     * ?bind\@ScriptModalFormResponse\@ScriptModuleMinecraftServerUI\@\@SA?AV?$ClassBindingBuilder\@VScriptModalFormResponse\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptModalFormResponse>
-    bind();
-    /**
      * @symbol ??4ScriptModalFormResponse\@ScriptModuleMinecraftServerUI\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraftServerUI::ScriptModalFormResponse&
@@ -32,6 +26,12 @@ public:
      * @symbol ??1ScriptModalFormResponse\@ScriptModuleMinecraftServerUI\@\@QEAA\@XZ
      */
     MCAPI ~ScriptModalFormResponse();
+    /**
+     * @symbol
+     * ?bind\@ScriptModalFormResponse\@ScriptModuleMinecraftServerUI\@\@SA?AV?$ClassBindingBuilder\@VScriptModalFormResponse\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptModalFormResponse>
+    bind();
     // NOLINTEND
 };
 

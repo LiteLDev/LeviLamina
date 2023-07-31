@@ -81,11 +81,6 @@ public:
     // NOLINTBEGIN
     /**
      * @symbol
-     * ?_createConfigFromJson\@CommunitySiftProcessor\@\@CA?AUCommunitySiftConfig\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static struct CommunitySiftConfig _createConfigFromJson(std::string const&);
-    /**
-     * @symbol
      * ?_createRequest\@CommunitySiftProcessor\@\@AEAA?AV?$shared_ptr\@V?$IAsyncResult\@X\@Threading\@Bedrock\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@0PEAVIMinecraftEventing\@\@0W4TextProcessingEventOrigin\@\@V?$shared_ptr\@V?$vector\@U?$pair\@HV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@V?$allocator\@U?$pair\@HV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@2\@\@std\@\@\@3\@V?$shared_ptr\@V?$vector\@VValue\@Json\@\@V?$allocator\@VValue\@Json\@\@\@std\@\@\@std\@\@\@3\@_N0H\@Z
      */
     MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> _createRequest(
@@ -114,12 +109,6 @@ public:
     _processEvent(class Player const&, enum class TextProcessingEventOrigin, class UserEntityIdentifierComponent const*, std::string const&);
     /**
      * @symbol
-     * ?_processJsonEvents\@CommunitySiftProcessor\@\@CA?BV?$vector\@W4TextFilteringEvent\@Safety\@\@V?$allocator\@W4TextFilteringEvent\@Safety\@\@\@std\@\@\@std\@\@AEBV?$vector\@VValue\@Json\@\@V?$allocator\@VValue\@Json\@\@\@std\@\@\@3\@MW4ChatFloodingAction\@Safety\@\@\@Z
-     */
-    MCAPI static std::vector<enum class Safety::TextFilteringEvent> const
-    _processJsonEvents(std::vector<class Json::Value> const&, float, enum class Safety::ChatFloodingAction);
-    /**
-     * @symbol
      * ?_processMessages\@CommunitySiftProcessor\@\@AEAA?AVCallbackToken\@\@AEBVPlayer\@\@_NW4TextProcessingEventOrigin\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@6\@V?$function\@$$A6AXAEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEBV?$vector\@W4TextFilteringEvent\@Safety\@\@V?$allocator\@W4TextFilteringEvent\@Safety\@\@\@std\@\@\@2\@\@Z\@6\@\@Z
      */
     MCAPI class CallbackToken
@@ -134,5 +123,16 @@ public:
      * @symbol ?_validateCommunitySiftConfiguration\@CommunitySiftProcessor\@\@AEAA_NXZ
      */
     MCAPI bool _validateCommunitySiftConfiguration();
+    /**
+     * @symbol
+     * ?_createConfigFromJson\@CommunitySiftProcessor\@\@CA?AUCommunitySiftConfig\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static struct CommunitySiftConfig _createConfigFromJson(std::string const&);
+    /**
+     * @symbol
+     * ?_processJsonEvents\@CommunitySiftProcessor\@\@CA?BV?$vector\@W4TextFilteringEvent\@Safety\@\@V?$allocator\@W4TextFilteringEvent\@Safety\@\@\@std\@\@\@std\@\@AEBV?$vector\@VValue\@Json\@\@V?$allocator\@VValue\@Json\@\@\@std\@\@\@3\@MW4ChatFloodingAction\@Safety\@\@\@Z
+     */
+    MCAPI static std::vector<enum class Safety::TextFilteringEvent> const
+    _processJsonEvents(std::vector<class Json::Value> const&, float, enum class Safety::ChatFloodingAction);
     // NOLINTEND
 };

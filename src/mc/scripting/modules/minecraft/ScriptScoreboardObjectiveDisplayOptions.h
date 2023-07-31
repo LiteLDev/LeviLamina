@@ -18,16 +18,16 @@ public:
 public:
     // NOLINTBEGIN
     /**
+     * @symbol ??1ScriptScoreboardObjectiveDisplayOptions\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptScoreboardObjectiveDisplayOptions();
+    /**
      * @symbol
      * ?bind\@ScriptScoreboardObjectiveDisplayOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@VScriptScoreboardObjectiveDisplayOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::InterfaceBindingBuilder<
         class ScriptModuleMinecraft::ScriptScoreboardObjectiveDisplayOptions>
     bind();
-    /**
-     * @symbol ??1ScriptScoreboardObjectiveDisplayOptions\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptScoreboardObjectiveDisplayOptions();
     // NOLINTEND
 };
 

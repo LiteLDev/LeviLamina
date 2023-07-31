@@ -82,6 +82,10 @@ public:
      */
     virtual bool initializeFromNetwork(class CompoundTag const&);
     /**
+     * @symbol ?mineBlock\@DiggerItemComponent\@\@QEAA_NAEAVItemStack\@\@AEBVBlock\@\@HHHPEAVActor\@\@\@Z
+     */
+    MCAPI bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*);
+    /**
      * @symbol ?bindType\@DiggerItemComponent\@\@SAXXZ
      */
     MCAPI static void bindType();
@@ -89,9 +93,5 @@ public:
      * @symbol ?getIdentifier\@DiggerItemComponent\@\@SAAEBVHashedString\@\@XZ
      */
     MCAPI static class HashedString const& getIdentifier();
-    /**
-     * @symbol ?mineBlock\@DiggerItemComponent\@\@QEAA_NAEAVItemStack\@\@AEBVBlock\@\@HHHPEAVActor\@\@\@Z
-     */
-    MCAPI bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*);
     // NOLINTEND
 };

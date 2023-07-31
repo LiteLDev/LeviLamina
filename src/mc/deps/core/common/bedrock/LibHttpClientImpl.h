@@ -75,6 +75,22 @@ public:
           _convertResponse(class gsl::not_null<struct HC_CALL*>);
     /**
      * @symbol
+     * ?_retry\@LibHttpClientImpl\@Http\@Bedrock\@\@AEAA?AV?$shared_ptr\@V?$IAsyncResult\@VResponse\@Http\@Bedrock\@\@\@Threading\@Bedrock\@\@\@std\@\@V?$not_null\@PEAUHC_CALL\@\@\@gsl\@\@V?$duration\@_JU?$ratio\@$00$00\@std\@\@\@chrono\@5\@\@Z
+     */
+    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
+          _retry(class gsl::not_null<struct HC_CALL*>, std::chrono::seconds);
+    /**
+     * @symbol
+     * ?_tryGetResponseBody\@LibHttpClientImpl\@Http\@Bedrock\@\@AEAA?AV?$shared_ptr\@VIResponseBody\@Internal\@Http\@Bedrock\@\@\@std\@\@V?$not_null\@PEAUHC_CALL\@\@\@gsl\@\@\@Z
+     */
+    MCAPI std::shared_ptr<class Bedrock::Http::Internal::IResponseBody>
+          _tryGetResponseBody(class gsl::not_null<struct HC_CALL*>);
+    /**
+     * @symbol ?_untrack\@LibHttpClientImpl\@Http\@Bedrock\@\@AEAAXV?$not_null\@PEAUHC_CALL\@\@\@gsl\@\@\@Z
+     */
+    MCAPI void _untrack(class gsl::not_null<struct HC_CALL*>);
+    /**
+     * @symbol
      * ?_convertResponseBody\@LibHttpClientImpl\@Http\@Bedrock\@\@CAJV?$not_null\@PEAUHC_CALL\@\@\@gsl\@\@AEAVResponse\@23\@\@Z
      */
     MCAPI static long _convertResponseBody(class gsl::not_null<struct HC_CALL*>, class Bedrock::Http::Response&);
@@ -95,22 +111,6 @@ public:
      * @symbol ?_responseBodyWrite\@LibHttpClientImpl\@Http\@Bedrock\@\@CAJPEAUHC_CALL\@\@PEBE_KPEAX\@Z
      */
     MCAPI static long _responseBodyWrite(struct HC_CALL*, unsigned char const*, uint64_t, void*);
-    /**
-     * @symbol
-     * ?_retry\@LibHttpClientImpl\@Http\@Bedrock\@\@AEAA?AV?$shared_ptr\@V?$IAsyncResult\@VResponse\@Http\@Bedrock\@\@\@Threading\@Bedrock\@\@\@std\@\@V?$not_null\@PEAUHC_CALL\@\@\@gsl\@\@V?$duration\@_JU?$ratio\@$00$00\@std\@\@\@chrono\@5\@\@Z
-     */
-    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response>>
-          _retry(class gsl::not_null<struct HC_CALL*>, std::chrono::seconds);
-    /**
-     * @symbol
-     * ?_tryGetResponseBody\@LibHttpClientImpl\@Http\@Bedrock\@\@AEAA?AV?$shared_ptr\@VIResponseBody\@Internal\@Http\@Bedrock\@\@\@std\@\@V?$not_null\@PEAUHC_CALL\@\@\@gsl\@\@\@Z
-     */
-    MCAPI std::shared_ptr<class Bedrock::Http::Internal::IResponseBody>
-          _tryGetResponseBody(class gsl::not_null<struct HC_CALL*>);
-    /**
-     * @symbol ?_untrack\@LibHttpClientImpl\@Http\@Bedrock\@\@AEAAXV?$not_null\@PEAUHC_CALL\@\@\@gsl\@\@\@Z
-     */
-    MCAPI void _untrack(class gsl::not_null<struct HC_CALL*>);
     // NOLINTEND
 
 private:

@@ -12,10 +12,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ?bindType\@CompoundBlockVolume\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ?capacity\@CompoundBlockVolume\@\@QEBA_KXZ
      */
     MCAPI uint64_t capacity() const;
@@ -71,6 +67,10 @@ public:
      * @symbol ?volumeCount\@CompoundBlockVolume\@\@QEBA_KXZ
      */
     MCAPI uint64_t volumeCount() const;
+    /**
+     * @symbol ?bindType\@CompoundBlockVolume\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     // NOLINTEND
 
     // protected:

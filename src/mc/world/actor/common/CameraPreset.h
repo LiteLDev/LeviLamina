@@ -15,10 +15,6 @@ public:
      */
     MCAPI CameraPreset(struct CameraPreset const&);
     /**
-     * @symbol ?bindType\@CameraPreset\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ??4CameraPreset\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
     MCAPI struct CameraPreset& operator=(struct CameraPreset const&);
@@ -30,5 +26,9 @@ public:
      * @symbol ??1CameraPreset\@\@QEAA\@XZ
      */
     MCAPI ~CameraPreset();
+    /**
+     * @symbol ?bindType\@CameraPreset\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     // NOLINTEND
 };

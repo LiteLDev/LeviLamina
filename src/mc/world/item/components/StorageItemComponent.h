@@ -17,10 +17,6 @@ public:
      */
     MCAPI unsigned int calculateAddableCount(class ItemStack const&, class ItemStackBase const&) const;
     /**
-     * @symbol ?getIdentifier\@StorageItemComponent\@\@SAAEBVHashedString\@\@XZ
-     */
-    MCAPI static class HashedString const& getIdentifier();
-    /**
      * @symbol ?tryAddItemStack\@StorageItemComponent\@\@QEBA_NAEAVItemStack\@\@0\@Z
      */
     MCAPI bool tryAddItemStack(class ItemStack&, class ItemStack&) const;
@@ -40,6 +36,10 @@ public:
      * @symbol ?use\@StorageItemComponent\@\@QEBA_NAEAVItemStack\@\@AEAVPlayer\@\@\@Z
      */
     MCAPI bool use(class ItemStack&, class Player&) const;
+    /**
+     * @symbol ?getIdentifier\@StorageItemComponent\@\@SAAEBVHashedString\@\@XZ
+     */
+    MCAPI static class HashedString const& getIdentifier();
     /**
      * @symbol ?DEFAULT_MAX_CARRY_WEIGHT\@StorageItemComponent\@\@2IB
      */

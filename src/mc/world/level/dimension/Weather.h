@@ -140,18 +140,6 @@ public:
      */
     MCAPI Weather(class Dimension&, class IRandom&);
     /**
-     * @symbol ?calcLightningCycleTime\@Weather\@\@SAHAEAVIRandom\@\@\@Z
-     */
-    MCAPI static int calcLightningCycleTime(class IRandom&);
-    /**
-     * @symbol ?calcRainCycleTime\@Weather\@\@SAHAEAVIRandom\@\@\@Z
-     */
-    MCAPI static int calcRainCycleTime(class IRandom&);
-    /**
-     * @symbol ?calcRainDuration\@Weather\@\@SAHAEAVIRandom\@\@\@Z
-     */
-    MCAPI static int calcRainDuration(class IRandom&);
-    /**
      * @symbol ?calcSnowBlockDepth\@Weather\@\@QEBAHAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     MCAPI int calcSnowBlockDepth(class BlockSource&, class BlockPos const&, int) const;
@@ -192,10 +180,6 @@ public:
      */
     MCAPI bool isSnowingAt(class BlockSource&, class BlockPos const&) const;
     /**
-     * @symbol ?rebuildTopSnowToDepth\@Weather\@\@SAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
-     */
-    MCAPI static void rebuildTopSnowToDepth(class BlockSource&, class BlockPos const&, int);
-    /**
      * @symbol ?serverTick\@Weather\@\@QEAAXXZ
      */
     MCAPI void serverTick();
@@ -223,5 +207,21 @@ public:
      * @symbol ?tryToPlaceTopSnow\@Weather\@\@QEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@_N2\@Z
      */
     MCAPI bool tryToPlaceTopSnow(class BlockSource&, class BlockPos const&, bool, bool);
+    /**
+     * @symbol ?calcLightningCycleTime\@Weather\@\@SAHAEAVIRandom\@\@\@Z
+     */
+    MCAPI static int calcLightningCycleTime(class IRandom&);
+    /**
+     * @symbol ?calcRainCycleTime\@Weather\@\@SAHAEAVIRandom\@\@\@Z
+     */
+    MCAPI static int calcRainCycleTime(class IRandom&);
+    /**
+     * @symbol ?calcRainDuration\@Weather\@\@SAHAEAVIRandom\@\@\@Z
+     */
+    MCAPI static int calcRainDuration(class IRandom&);
+    /**
+     * @symbol ?rebuildTopSnowToDepth\@Weather\@\@SAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
+     */
+    MCAPI static void rebuildTopSnowToDepth(class BlockSource&, class BlockPos const&, int);
     // NOLINTEND
 };

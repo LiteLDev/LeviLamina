@@ -20,11 +20,6 @@ public:
      */
     MCAPI ScriptTeleportOptions(struct ScriptModuleMinecraft::ScriptTeleportOptions const&);
     /**
-     * @symbol
-     * ?bind\@ScriptTeleportOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptTeleportOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptTeleportOptions> bind();
-    /**
      * @symbol ??4ScriptTeleportOptions\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptTeleportOptions&
@@ -38,6 +33,11 @@ public:
      * @symbol ??1ScriptTeleportOptions\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptTeleportOptions();
+    /**
+     * @symbol
+     * ?bind\@ScriptTeleportOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptTeleportOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptTeleportOptions> bind();
     // NOLINTEND
 };
 

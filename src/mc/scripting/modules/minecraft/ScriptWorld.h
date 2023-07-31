@@ -61,11 +61,6 @@ public:
     );
     /**
      * @symbol
-     * ?bind\@ScriptWorld\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptWorld\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptWorld> bind();
-    /**
-     * @symbol
      * ?broadcastClientMessage\@ScriptWorld\@ScriptModuleMinecraft\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
     MCAPI void broadcastClientMessage(std::string const&, std::string const&);
@@ -204,6 +199,11 @@ public:
      * @symbol ??1ScriptWorld\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptWorld();
+    /**
+     * @symbol
+     * ?bind\@ScriptWorld\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptWorld\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptWorld> bind();
     // NOLINTEND
 
     // private:

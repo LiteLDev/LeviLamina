@@ -28,6 +28,10 @@ public:
      */
     MCAPI ScriptColor(class mce::Color const&);
     /**
+     * @symbol ?getColor\@ScriptColor\@ScriptModuleMinecraft\@\@QEBAAEBVColor\@mce\@\@XZ
+     */
+    MCAPI class mce::Color const& getColor() const;
+    /**
      * @symbol
      * ?bind\@ScriptColor\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@VScriptColor\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
@@ -37,10 +41,6 @@ public:
      * ?bindV010\@ScriptColor\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptColor\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptColor> bindV010();
-    /**
-     * @symbol ?getColor\@ScriptColor\@ScriptModuleMinecraft\@\@QEBAAEBVColor\@mce\@\@XZ
-     */
-    MCAPI class mce::Color const& getColor() const;
     // NOLINTEND
 };
 

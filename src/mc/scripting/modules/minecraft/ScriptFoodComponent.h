@@ -46,11 +46,6 @@ public:
      */
     MCAPI ScriptFoodComponent(class ScriptModuleMinecraft::ScriptFoodComponent const&);
     /**
-     * @symbol
-     * ?bind\@ScriptFoodComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptFoodComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptFoodComponent> bind();
-    /**
      * @symbol ?getCanAlwaysEat\@ScriptFoodComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@_N\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<bool> getCanAlwaysEat();
@@ -64,11 +59,6 @@ public:
     MCAPI class Scripting::Result<float> getSaturationModifier();
     /**
      * @symbol
-     * ?getTypeName\@ScriptFoodComponent\@ScriptModuleMinecraft\@\@SAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI static std::string const& getTypeName();
-    /**
-     * @symbol
      * ?getUsingConvertsToItem\@ScriptFoodComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<std::string> getUsingConvertsToItem();
@@ -77,6 +67,16 @@ public:
      */
     MCAPI class ScriptModuleMinecraft::ScriptFoodComponent&
     operator=(class ScriptModuleMinecraft::ScriptFoodComponent const&);
+    /**
+     * @symbol
+     * ?bind\@ScriptFoodComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptFoodComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptFoodComponent> bind();
+    /**
+     * @symbol
+     * ?getTypeName\@ScriptFoodComponent\@ScriptModuleMinecraft\@\@SAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     */
+    MCAPI static std::string const& getTypeName();
     // NOLINTEND
 };
 

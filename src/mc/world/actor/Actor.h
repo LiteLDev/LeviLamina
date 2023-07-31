@@ -1394,10 +1394,6 @@ public:
      */
     MCAPI Actor(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
     /**
-     * @symbol ?_moveRelative\@Actor\@\@SAXAEAVVec3\@\@MMMMM\@Z
-     */
-    MCAPI static void _moveRelative(class Vec3&, float, float, float, float, float);
-    /**
      * @symbol ?_sendDirtyActorData\@Actor\@\@QEAAXXZ
      */
     MCAPI void _sendDirtyActorData();
@@ -1440,10 +1436,6 @@ public:
      */
     MCAPI class Vec3 buildForward() const;
     /**
-     * @symbol ?buildForward\@Actor\@\@SA?AVVec3\@\@AEBUIActorMovementProxy\@\@\@Z
-     */
-    MCAPI static class Vec3 buildForward(struct IActorMovementProxy const&);
-    /**
      * @symbol ?burn\@Actor\@\@QEAAXH_N\@Z
      */
     MCAPI void burn(int, bool);
@@ -1463,11 +1455,6 @@ public:
      * @symbol ?canBeginOrContinueClimbingLadder\@Actor\@\@QEBA_NXZ
      */
     MCAPI bool canBeginOrContinueClimbingLadder() const;
-    /**
-     * @symbol ?canBeginOrContinueClimbingLadder\@Actor\@\@SA_NAEBUIActorMovementProxy\@\@AEBVIConstBlockSource\@\@\@Z
-     */
-    MCAPI static bool
-    canBeginOrContinueClimbingLadder(struct IActorMovementProxy const&, class IConstBlockSource const&);
     /**
      * @symbol ?canCurrentlySwim\@Actor\@\@QEBA_NXZ
      */
@@ -1628,18 +1615,6 @@ public:
      */
     MCAPI class BlockPos getBlockPosCurrentlyStandingOn(class Actor const*) const;
     /**
-     * @symbol
-     * ?getBlockPosCurrentlyStandingOn\@Actor\@\@SA?AVBlockPos\@\@AEBVVec3\@\@VAABB\@\@AEBVIConstBlockSource\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
-     */
-    MCAPI static class BlockPos
-    getBlockPosCurrentlyStandingOn(class Vec3 const&, class AABB, class IConstBlockSource const&, class optional_ref<class GetCollisionShapeInterface const>);
-    /**
-     * @symbol
-     * ?getBlockPosCurrentlyStandingOn\@Actor\@\@SA?AVBlockPos\@\@AEBUIActorMovementProxy\@\@PEBU3\@AEBVIConstBlockSource\@\@\@Z
-     */
-    MCAPI static class BlockPos
-    getBlockPosCurrentlyStandingOn(struct IActorMovementProxy const&, struct IActorMovementProxy const*, class IConstBlockSource const&);
-    /**
      * @symbol ?getBlockTarget\@Actor\@\@QEBA?AVBlockPos\@\@XZ
      */
     MCAPI class BlockPos getBlockTarget() const;
@@ -1655,11 +1630,6 @@ public:
      * @symbol ?getCarriedItemInSlotPreferredBy\@Actor\@\@QEBAAEBVItemStack\@\@AEBV2\@\@Z
      */
     MCAPI class ItemStack const& getCarriedItemInSlotPreferredBy(class ItemStack const&) const;
-    /**
-     * @symbol ?getCenter\@Actor\@\@SA?AVVec3\@\@MAEBUAABBShapeComponent\@\@AEBUStateVectorComponent\@\@M\@Z
-     */
-    MCAPI static class Vec3
-    getCenter(float, struct AABBShapeComponent const&, struct StateVectorComponent const&, float);
     /**
      * @symbol ?getChainedDamageEffects\@Actor\@\@QEBA_NXZ
      */
@@ -1725,12 +1695,6 @@ public:
      */
     MCAPI class MobEffectInstance const* getEffect(unsigned int) const;
     /**
-     * @symbol
-     * ?getEffect\@Actor\@\@SAPEBVMobEffectInstance\@\@AEBV?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@std\@\@AEBVMobEffect\@\@\@Z
-     */
-    MCAPI static class MobEffectInstance const*
-    getEffect(std::vector<class MobEffectInstance> const&, class MobEffect const&);
-    /**
      * @symbol ?getEntityData\@Actor\@\@QEBAAEBVSynchedActorDataEntityWrapper\@\@XZ
      */
     MCAPI class SynchedActorDataEntityWrapper const& getEntityData() const;
@@ -1795,10 +1759,6 @@ public:
      */
     MCAPI class Vec2 getInterpolatedRotation(float) const;
     /**
-     * @symbol ?getInterpolatedRotation\@Actor\@\@SA?AVVec2\@\@AEBV2\@0M\@Z
-     */
-    MCAPI static class Vec2 getInterpolatedRotation(class Vec2 const&, class Vec2 const&, float);
-    /**
      * @symbol ?getIsExperienceDropEnabled\@Actor\@\@QEBA_NXZ
      */
     MCAPI bool getIsExperienceDropEnabled() const;
@@ -1854,14 +1814,6 @@ public:
      * @symbol ?getLinks\@Actor\@\@QEBA?AV?$vector\@UActorLink\@\@V?$allocator\@UActorLink\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::vector<struct ActorLink> getLinks() const;
-    /**
-     * @symbol ?getLiquidAABB\@Actor\@\@SA?AVAABB\@\@AEBV2\@W4MaterialType\@\@\@Z
-     */
-    MCAPI static class AABB getLiquidAABB(class AABB const&, enum class MaterialType);
-    /**
-     * @symbol ?getLiquidFlowStrength\@Actor\@\@SAMW4MaterialType\@\@\@Z
-     */
-    MCAPI static float getLiquidFlowStrength(enum class MaterialType);
     /**
      * @symbol ?getMarkVariant\@Actor\@\@QEBAHXZ
      */
@@ -1990,10 +1942,6 @@ public:
      */
     MCAPI float getSpeedInMetersPerSecond() const;
     /**
-     * @symbol ?getStatusFlag\@Actor\@\@SA_NAEBVSynchedActorData\@\@W4ActorFlags\@\@\@Z
-     */
-    MCAPI static bool getStatusFlag(class SynchedActorData const&, enum class ActorFlags);
-    /**
      * @symbol ?getStrength\@Actor\@\@QEBAHXZ
      */
     MCAPI int getStrength() const;
@@ -2058,14 +2006,6 @@ public:
      * @symbol ?getViewVector\@Actor\@\@QEBA?AVVec3\@\@M\@Z
      */
     MCAPI class Vec3 getViewVector(float) const;
-    /**
-     * @symbol ?getViewVector\@Actor\@\@SA?AVVec3\@\@AEBUIActorMovementProxy\@\@M\@Z
-     */
-    MCAPI static class Vec3 getViewVector(struct IActorMovementProxy const&, float);
-    /**
-     * @symbol ?getViewVector\@Actor\@\@SA?AVVec3\@\@AEBVVec2\@\@0M\@Z
-     */
-    MCAPI static class Vec3 getViewVector(class Vec2 const&, class Vec2 const&, float);
     /**
      * @symbol ?getWeakEntity\@Actor\@\@QEBA?BV?$WeakRefT\@UEntityRefTraits\@\@\@\@XZ
      */
@@ -2272,14 +2212,6 @@ public:
      */
     MCAPI bool isImmersedInWater() const;
     /**
-     * @symbol ?isImmersedInWater\@Actor\@\@SA_NAEBUIActorMovementProxy\@\@\@Z
-     */
-    MCAPI static bool isImmersedInWater(struct IActorMovementProxy const&);
-    /**
-     * @symbol ?isImmobile\@Actor\@\@SA_NAEBUIActorMovementProxy\@\@\@Z
-     */
-    MCAPI static bool isImmobile(struct IActorMovementProxy const&);
-    /**
      * @symbol ?isInClouds\@Actor\@\@QEBA_NXZ
      */
     MCAPI bool isInClouds() const;
@@ -2303,10 +2235,6 @@ public:
      * @symbol ?isInScaffolding\@Actor\@\@QEBA_NXZ
      */
     MCAPI bool isInScaffolding() const;
-    /**
-     * @symbol ?isInScaffolding\@Actor\@\@SA_NAEBUIActorMovementProxy\@\@\@Z
-     */
-    MCAPI static bool isInScaffolding(struct IActorMovementProxy const&);
     /**
      * @symbol ?isInSnow\@Actor\@\@QEBA_NXZ
      */
@@ -2412,10 +2340,6 @@ public:
      */
     MCAPI bool isSitting() const;
     /**
-     * @symbol ?isSitting\@Actor\@\@SA_NAEBUIActorMovementProxy\@\@\@Z
-     */
-    MCAPI static bool isSitting(struct IActorMovementProxy const&);
-    /**
      * @symbol ?isSneaking\@Actor\@\@QEBA_NXZ
      */
     MCAPI bool isSneaking() const;
@@ -2431,10 +2355,6 @@ public:
      * @symbol ?isStanding\@Actor\@\@QEBA_NXZ
      */
     MCAPI bool isStanding() const;
-    /**
-     * @symbol ?isStanding\@Actor\@\@SA_NAEBUIActorMovementProxy\@\@\@Z
-     */
-    MCAPI static bool isStanding(struct IActorMovementProxy const&);
     /**
      * @symbol ?isSurvival\@Actor\@\@QEBA_NXZ
      */
@@ -2527,14 +2447,6 @@ public:
      * @symbol ?onClimbableBlock\@Actor\@\@QEBA_NXZ
      */
     MCAPI bool onClimbableBlock() const;
-    /**
-     * @symbol ?onClimbableBlock\@Actor\@\@SA_NAEBUIActorMovementProxy\@\@\@Z
-     */
-    MCAPI static bool onClimbableBlock(struct IActorMovementProxy const&);
-    /**
-     * @symbol ?onClimbableBlock\@Actor\@\@SA_NAEBUIActorMovementProxy\@\@AEBVIConstBlockSource\@\@\@Z
-     */
-    MCAPI static bool onClimbableBlock(struct IActorMovementProxy const&, class IConstBlockSource const&);
     /**
      * @symbol ?onOnewayCollision\@Actor\@\@QEAAXAEBVAABB\@\@\@Z
      */
@@ -2993,30 +2905,6 @@ public:
      */
     MCAPI std::optional<int> tryGetEquippableSlotForItem(class ItemDescriptor) const;
     /**
-     * @symbol ?tryGetFromComponent\@Actor\@\@SAPEAV1\@AEAVActorOwnerComponent\@\@_N\@Z
-     */
-    MCAPI static class Actor* tryGetFromComponent(class ActorOwnerComponent&, bool);
-    /**
-     * @symbol ?tryGetFromComponent\@Actor\@\@SAPEBV1\@AEBVActorOwnerComponent\@\@_N\@Z
-     */
-    MCAPI static class Actor const* tryGetFromComponent(class ActorOwnerComponent const&, bool);
-    /**
-     * @symbol ?tryGetFromEntity\@Actor\@\@SAPEAV1\@AEAVEntityContext\@\@_N\@Z
-     */
-    MCAPI static class Actor* tryGetFromEntity(class EntityContext&, bool);
-    /**
-     * @symbol ?tryGetFromEntity\@Actor\@\@SAPEBV1\@AEBVEntityContext\@\@_N\@Z
-     */
-    MCAPI static class Actor const* tryGetFromEntity(class EntityContext const&, bool);
-    /**
-     * @symbol ?tryGetFromEntity\@Actor\@\@SAPEAV1\@V?$StackRefResultT\@UEntityRefTraits\@\@\@\@_N\@Z
-     */
-    MCAPI static class Actor* tryGetFromEntity(class StackRefResultT<struct EntityRefTraits>, bool);
-    /**
-     * @symbol ?tryGetFromEntity\@Actor\@\@SAPEAV1\@AEBVStrictEntityContext\@\@AEAVEntityRegistry\@\@_N\@Z
-     */
-    MCAPI static class Actor* tryGetFromEntity(class StrictEntityContext const&, class EntityRegistry&, bool);
-    /**
      * @symbol ?updateAnimationComponentOnServer\@Actor\@\@QEAAXXZ
      */
     MCAPI void updateAnimationComponentOnServer();
@@ -3052,6 +2940,118 @@ public:
      * @symbol ?wasLoadedFromNBTThisFrame\@Actor\@\@QEBA_NXZ
      */
     MCAPI bool wasLoadedFromNBTThisFrame() const;
+    /**
+     * @symbol ?_moveRelative\@Actor\@\@SAXAEAVVec3\@\@MMMMM\@Z
+     */
+    MCAPI static void _moveRelative(class Vec3&, float, float, float, float, float);
+    /**
+     * @symbol ?buildForward\@Actor\@\@SA?AVVec3\@\@AEBUIActorMovementProxy\@\@\@Z
+     */
+    MCAPI static class Vec3 buildForward(struct IActorMovementProxy const&);
+    /**
+     * @symbol ?canBeginOrContinueClimbingLadder\@Actor\@\@SA_NAEBUIActorMovementProxy\@\@AEBVIConstBlockSource\@\@\@Z
+     */
+    MCAPI static bool
+    canBeginOrContinueClimbingLadder(struct IActorMovementProxy const&, class IConstBlockSource const&);
+    /**
+     * @symbol
+     * ?getBlockPosCurrentlyStandingOn\@Actor\@\@SA?AVBlockPos\@\@AEBVVec3\@\@VAABB\@\@AEBVIConstBlockSource\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@\@Z
+     */
+    MCAPI static class BlockPos
+    getBlockPosCurrentlyStandingOn(class Vec3 const&, class AABB, class IConstBlockSource const&, class optional_ref<class GetCollisionShapeInterface const>);
+    /**
+     * @symbol
+     * ?getBlockPosCurrentlyStandingOn\@Actor\@\@SA?AVBlockPos\@\@AEBUIActorMovementProxy\@\@PEBU3\@AEBVIConstBlockSource\@\@\@Z
+     */
+    MCAPI static class BlockPos
+    getBlockPosCurrentlyStandingOn(struct IActorMovementProxy const&, struct IActorMovementProxy const*, class IConstBlockSource const&);
+    /**
+     * @symbol ?getCenter\@Actor\@\@SA?AVVec3\@\@MAEBUAABBShapeComponent\@\@AEBUStateVectorComponent\@\@M\@Z
+     */
+    MCAPI static class Vec3
+    getCenter(float, struct AABBShapeComponent const&, struct StateVectorComponent const&, float);
+    /**
+     * @symbol
+     * ?getEffect\@Actor\@\@SAPEBVMobEffectInstance\@\@AEBV?$vector\@VMobEffectInstance\@\@V?$allocator\@VMobEffectInstance\@\@\@std\@\@\@std\@\@AEBVMobEffect\@\@\@Z
+     */
+    MCAPI static class MobEffectInstance const*
+    getEffect(std::vector<class MobEffectInstance> const&, class MobEffect const&);
+    /**
+     * @symbol ?getInterpolatedRotation\@Actor\@\@SA?AVVec2\@\@AEBV2\@0M\@Z
+     */
+    MCAPI static class Vec2 getInterpolatedRotation(class Vec2 const&, class Vec2 const&, float);
+    /**
+     * @symbol ?getLiquidAABB\@Actor\@\@SA?AVAABB\@\@AEBV2\@W4MaterialType\@\@\@Z
+     */
+    MCAPI static class AABB getLiquidAABB(class AABB const&, enum class MaterialType);
+    /**
+     * @symbol ?getLiquidFlowStrength\@Actor\@\@SAMW4MaterialType\@\@\@Z
+     */
+    MCAPI static float getLiquidFlowStrength(enum class MaterialType);
+    /**
+     * @symbol ?getStatusFlag\@Actor\@\@SA_NAEBVSynchedActorData\@\@W4ActorFlags\@\@\@Z
+     */
+    MCAPI static bool getStatusFlag(class SynchedActorData const&, enum class ActorFlags);
+    /**
+     * @symbol ?getViewVector\@Actor\@\@SA?AVVec3\@\@AEBUIActorMovementProxy\@\@M\@Z
+     */
+    MCAPI static class Vec3 getViewVector(struct IActorMovementProxy const&, float);
+    /**
+     * @symbol ?getViewVector\@Actor\@\@SA?AVVec3\@\@AEBVVec2\@\@0M\@Z
+     */
+    MCAPI static class Vec3 getViewVector(class Vec2 const&, class Vec2 const&, float);
+    /**
+     * @symbol ?isImmersedInWater\@Actor\@\@SA_NAEBUIActorMovementProxy\@\@\@Z
+     */
+    MCAPI static bool isImmersedInWater(struct IActorMovementProxy const&);
+    /**
+     * @symbol ?isImmobile\@Actor\@\@SA_NAEBUIActorMovementProxy\@\@\@Z
+     */
+    MCAPI static bool isImmobile(struct IActorMovementProxy const&);
+    /**
+     * @symbol ?isInScaffolding\@Actor\@\@SA_NAEBUIActorMovementProxy\@\@\@Z
+     */
+    MCAPI static bool isInScaffolding(struct IActorMovementProxy const&);
+    /**
+     * @symbol ?isSitting\@Actor\@\@SA_NAEBUIActorMovementProxy\@\@\@Z
+     */
+    MCAPI static bool isSitting(struct IActorMovementProxy const&);
+    /**
+     * @symbol ?isStanding\@Actor\@\@SA_NAEBUIActorMovementProxy\@\@\@Z
+     */
+    MCAPI static bool isStanding(struct IActorMovementProxy const&);
+    /**
+     * @symbol ?onClimbableBlock\@Actor\@\@SA_NAEBUIActorMovementProxy\@\@\@Z
+     */
+    MCAPI static bool onClimbableBlock(struct IActorMovementProxy const&);
+    /**
+     * @symbol ?onClimbableBlock\@Actor\@\@SA_NAEBUIActorMovementProxy\@\@AEBVIConstBlockSource\@\@\@Z
+     */
+    MCAPI static bool onClimbableBlock(struct IActorMovementProxy const&, class IConstBlockSource const&);
+    /**
+     * @symbol ?tryGetFromComponent\@Actor\@\@SAPEAV1\@AEAVActorOwnerComponent\@\@_N\@Z
+     */
+    MCAPI static class Actor* tryGetFromComponent(class ActorOwnerComponent&, bool);
+    /**
+     * @symbol ?tryGetFromComponent\@Actor\@\@SAPEBV1\@AEBVActorOwnerComponent\@\@_N\@Z
+     */
+    MCAPI static class Actor const* tryGetFromComponent(class ActorOwnerComponent const&, bool);
+    /**
+     * @symbol ?tryGetFromEntity\@Actor\@\@SAPEAV1\@AEAVEntityContext\@\@_N\@Z
+     */
+    MCAPI static class Actor* tryGetFromEntity(class EntityContext&, bool);
+    /**
+     * @symbol ?tryGetFromEntity\@Actor\@\@SAPEBV1\@AEBVEntityContext\@\@_N\@Z
+     */
+    MCAPI static class Actor const* tryGetFromEntity(class EntityContext const&, bool);
+    /**
+     * @symbol ?tryGetFromEntity\@Actor\@\@SAPEAV1\@V?$StackRefResultT\@UEntityRefTraits\@\@\@\@_N\@Z
+     */
+    MCAPI static class Actor* tryGetFromEntity(class StackRefResultT<struct EntityRefTraits>, bool);
+    /**
+     * @symbol ?tryGetFromEntity\@Actor\@\@SAPEAV1\@AEBVStrictEntityContext\@\@AEAVEntityRegistry\@\@_N\@Z
+     */
+    MCAPI static class Actor* tryGetFromEntity(class StrictEntityContext const&, class EntityRegistry&, bool);
     // NOLINTEND
 
     // protected:
@@ -3121,13 +3121,13 @@ public:
      */
     MCAPI void enableAutoSendPosRot(bool);
     /**
-     * @symbol ?getBlockWhenClimbing\@Actor\@\@KAAEBVBlock\@\@AEBUIActorMovementProxy\@\@\@Z
-     */
-    MCAPI static class Block const& getBlockWhenClimbing(struct IActorMovementProxy const&);
-    /**
      * @symbol ?updateWaterState\@Actor\@\@IEAAXXZ
      */
     MCAPI void updateWaterState();
+    /**
+     * @symbol ?getBlockWhenClimbing\@Actor\@\@KAAEBVBlock\@\@AEBUIActorMovementProxy\@\@\@Z
+     */
+    MCAPI static class Block const& getBlockWhenClimbing(struct IActorMovementProxy const&);
     // NOLINTEND
 
     // private:

@@ -28,14 +28,14 @@ public:
      */
     MCAPI bool isWaiting() const;
     /**
+     * @symbol ??1TaskResult\@\@QEAA\@XZ
+     */
+    MCAPI ~TaskResult();
+    /**
      * @symbol
      * ?requeueAfter\@TaskResult\@\@SA?AV1\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@chrono\@std\@\@\@Z
      */
     MCAPI static class TaskResult requeueAfter(std::chrono::nanoseconds);
-    /**
-     * @symbol ??1TaskResult\@\@QEAA\@XZ
-     */
-    MCAPI ~TaskResult();
     /**
      * @symbol ?Done\@TaskResult\@\@2V1\@B
      */

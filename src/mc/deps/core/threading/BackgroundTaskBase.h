@@ -80,10 +80,6 @@ public:
      */
     MCAPI bool canBeRunBy(std::thread::id) const;
     /**
-     * @symbol ?getCurrent\@BackgroundTaskBase\@\@SAPEAV1\@XZ
-     */
-    MCAPI static class BackgroundTaskBase* getCurrent();
-    /**
      * @symbol ?getGroup\@BackgroundTaskBase\@\@QEAAPEAVIBackgroundTaskOwner\@\@XZ
      */
     MCAPI class IBackgroundTaskOwner* getGroup();
@@ -138,6 +134,10 @@ public:
      * @symbol ?setSyncPriority\@BackgroundTaskBase\@\@QEAAXXZ
      */
     MCAPI void setSyncPriority();
+    /**
+     * @symbol ?getCurrent\@BackgroundTaskBase\@\@SAPEAV1\@XZ
+     */
+    MCAPI static class BackgroundTaskBase* getCurrent();
     // NOLINTEND
 
     // protected:

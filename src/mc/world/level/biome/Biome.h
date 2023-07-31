@@ -31,10 +31,6 @@ public:
     MCAPI class Biome&
     addTag(class HashedString, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>>&);
     /**
-     * @symbol ?buildCachedTemperatureNoise\@Biome\@\@SAXAEAVLevelChunk\@\@\@Z
-     */
-    MCAPI static void buildCachedTemperatureNoise(class LevelChunk&);
-    /**
      * @symbol ?cacheClientComponentData\@Biome\@\@QEAAXXZ
      */
     MCAPI void cacheClientComponentData();
@@ -164,6 +160,10 @@ public:
      */
     MCAPI void
     writePacketData(class CompoundTag&, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>>&);
+    /**
+     * @symbol ?buildCachedTemperatureNoise\@Biome\@\@SAXAEAVLevelChunk\@\@\@Z
+     */
+    MCAPI static void buildCachedTemperatureNoise(class LevelChunk&);
     /**
      * @symbol ?BACKCOMPAT_FOG_NAME\@Biome\@\@2V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@B
      */

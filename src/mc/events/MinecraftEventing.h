@@ -1681,6 +1681,15 @@ public:
      */
     MCAPI MinecraftEventing(class Core::Path const&);
     /**
+     * @symbol ?init\@MinecraftEventing\@\@QEAAXAEBV?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@\@Z
+     */
+    MCAPI void init(class Bedrock::NonOwnerPointer<class AppPlatform> const&);
+    /**
+     * @symbol
+     * ?initForDedicatedServer\@MinecraftEventing\@\@QEAAXAEBV?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@_N\@Z
+     */
+    MCAPI void initForDedicatedServer(class Bedrock::NonOwnerPointer<class AppPlatform> const&, bool);
+    /**
      * @symbol ?fireEventAwardAchievement\@MinecraftEventing\@\@SAXPEAVPlayer\@\@W4AchievementIds\@1\@\@Z
      */
     MCAPI static void fireEventAwardAchievement(class Player*, enum class MinecraftEventing::AchievementIds);
@@ -1756,15 +1765,6 @@ public:
      * ?fireEventSlashCommandExecuted\@MinecraftEventing\@\@SAXPEAVPlayer\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@HH1\@Z
      */
     MCAPI static void fireEventSlashCommandExecuted(class Player*, std::string const&, int, int, std::string const&);
-    /**
-     * @symbol ?init\@MinecraftEventing\@\@QEAAXAEBV?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@\@Z
-     */
-    MCAPI void init(class Bedrock::NonOwnerPointer<class AppPlatform> const&);
-    /**
-     * @symbol
-     * ?initForDedicatedServer\@MinecraftEventing\@\@QEAAXAEBV?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@_N\@Z
-     */
-    MCAPI void initForDedicatedServer(class Bedrock::NonOwnerPointer<class AppPlatform> const&, bool);
     // NOLINTEND
 
     // private:

@@ -26,13 +26,13 @@ public:
      */
     MCAPI char const* ToString() const;
     /**
-     * @symbol ?ToUint32\@RakNetGUID\@RakNet\@\@SAKAEBU12\@\@Z
-     */
-    MCAPI static unsigned long ToUint32(struct RakNet::RakNetGUID const&);
-    /**
      * @symbol ??8RakNetGUID\@RakNet\@\@QEBA_NAEBU01\@\@Z
      */
     MCAPI bool operator==(struct RakNet::RakNetGUID const&) const;
+    /**
+     * @symbol ?ToUint32\@RakNetGUID\@RakNet\@\@SAKAEBU12\@\@Z
+     */
+    MCAPI static unsigned long ToUint32(struct RakNet::RakNetGUID const&);
     // NOLINTEND
 };
 

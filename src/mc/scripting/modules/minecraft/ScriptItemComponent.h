@@ -44,15 +44,15 @@ public:
      */
     MCAPI ScriptItemComponent(class ScriptModuleMinecraft::ScriptItemComponent const&);
     /**
-     * @symbol
-     * ?bind\@ScriptItemComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptItemComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemComponent> bind();
-    /**
      * @symbol ??4ScriptItemComponent\@ScriptModuleMinecraft\@\@QEAAAEAV01\@AEBV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraft::ScriptItemComponent&
     operator=(class ScriptModuleMinecraft::ScriptItemComponent const&);
+    /**
+     * @symbol
+     * ?bind\@ScriptItemComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptItemComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemComponent> bind();
     // NOLINTEND
 
     // protected:

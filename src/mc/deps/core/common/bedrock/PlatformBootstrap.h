@@ -64,6 +64,23 @@ public:
     // protected:
     // NOLINTBEGIN
     /**
+     * @symbol ?_rawCreateDirectory_std\@PlatformBootstrap\@Bedrock\@\@IEAA?AUCreateDirectoryResult\@12\@PEBDPEAD_K\@Z
+     */
+    MCAPI struct Bedrock::PlatformBootstrap::CreateDirectoryResult
+    _rawCreateDirectory_std(char const*, char*, uint64_t);
+    /**
+     * @symbol
+     * ?_rawLoadFile_cstdio\@PlatformBootstrap\@Bedrock\@\@IEAA?AULoadResult\@12\@PEAD_KV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@PEBD01\@Z
+     */
+    MCAPI struct Bedrock::PlatformBootstrap::LoadResult
+    _rawLoadFile_cstdio(char*, uint64_t, std::string_view, char const*, char*, uint64_t);
+    /**
+     * @symbol
+     * ?_rawSaveFile_cstdio\@PlatformBootstrap\@Bedrock\@\@IEAA?AUSaveResult\@12\@PEBD_KV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@0PEAD1\@Z
+     */
+    MCAPI struct Bedrock::PlatformBootstrap::SaveResult
+    _rawSaveFile_cstdio(char const*, uint64_t, std::string_view, char const*, char*, uint64_t);
+    /**
      * @symbol
      * ?_makeCreateDirectoryError\@PlatformBootstrap\@Bedrock\@\@KA?AUCreateDirectoryResult\@12\@W4CreateDirectoryResultCode\@12\@PEAD_KPEBDZZ
      */
@@ -84,23 +101,6 @@ public:
      */
     MCAPI static struct Bedrock::PlatformBootstrap::SaveResult
     _makeSaveError(enum class Bedrock::PlatformBootstrap::SaveResultCode, char*, uint64_t, char const*, ...);
-    /**
-     * @symbol ?_rawCreateDirectory_std\@PlatformBootstrap\@Bedrock\@\@IEAA?AUCreateDirectoryResult\@12\@PEBDPEAD_K\@Z
-     */
-    MCAPI struct Bedrock::PlatformBootstrap::CreateDirectoryResult
-    _rawCreateDirectory_std(char const*, char*, uint64_t);
-    /**
-     * @symbol
-     * ?_rawLoadFile_cstdio\@PlatformBootstrap\@Bedrock\@\@IEAA?AULoadResult\@12\@PEAD_KV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@PEBD01\@Z
-     */
-    MCAPI struct Bedrock::PlatformBootstrap::LoadResult
-    _rawLoadFile_cstdio(char*, uint64_t, std::string_view, char const*, char*, uint64_t);
-    /**
-     * @symbol
-     * ?_rawSaveFile_cstdio\@PlatformBootstrap\@Bedrock\@\@IEAA?AUSaveResult\@12\@PEBD_KV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@0PEAD1\@Z
-     */
-    MCAPI struct Bedrock::PlatformBootstrap::SaveResult
-    _rawSaveFile_cstdio(char const*, uint64_t, std::string_view, char const*, char*, uint64_t);
     // NOLINTEND
 };
 

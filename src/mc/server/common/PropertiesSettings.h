@@ -220,21 +220,6 @@ public:
      */
     MCAPI bool isServerVisibleToLanDiscovery() const;
     /**
-     * @symbol
-     * ?parseBoolValue\@PropertiesSettings\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static bool parseBoolValue(std::string const&);
-    /**
-     * @symbol
-     * ?parseGameMode\@PropertiesSettings\@\@SA?AW4GameType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static enum class GameType parseGameMode(std::string const&);
-    /**
-     * @symbol
-     * ?parseInt32Value\@PropertiesSettings\@\@SAHAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static int parseInt32Value(std::string const&);
-    /**
      * @symbol ?texturePackRequired\@PropertiesSettings\@\@QEBA_NXZ
      */
     MCAPI bool texturePackRequired() const;
@@ -262,5 +247,20 @@ public:
      * @symbol ??1PropertiesSettings\@\@QEAA\@XZ
      */
     MCAPI ~PropertiesSettings();
+    /**
+     * @symbol
+     * ?parseBoolValue\@PropertiesSettings\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static bool parseBoolValue(std::string const&);
+    /**
+     * @symbol
+     * ?parseGameMode\@PropertiesSettings\@\@SA?AW4GameType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static enum class GameType parseGameMode(std::string const&);
+    /**
+     * @symbol
+     * ?parseInt32Value\@PropertiesSettings\@\@SAHAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static int parseInt32Value(std::string const&);
     // NOLINTEND
 };

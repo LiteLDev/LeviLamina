@@ -294,13 +294,13 @@ public:
      */
     MCAPI LiquidBlock(std::string const&, int, class Material const&);
     /**
-     * @symbol ?getHeightFromDepth\@LiquidBlock\@\@SAMH\@Z
-     */
-    MCAPI static float getHeightFromDepth(int);
-    /**
      * @symbol ?getTickDelay\@LiquidBlock\@\@QEBAHAEAVBlockSource\@\@\@Z
      */
     MCAPI int getTickDelay(class BlockSource&) const;
+    /**
+     * @symbol ?getHeightFromDepth\@LiquidBlock\@\@SAMH\@Z
+     */
+    MCAPI static float getHeightFromDepth(int);
     /**
      * @symbol
      * ?handleEntityInside\@LiquidBlock\@\@SAXAEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEAVVec3\@\@AEBVMaterial\@\@\@Z
@@ -316,14 +316,6 @@ public:
      */
     MCAPI void emitFizzParticle(class BlockSource&, class BlockPos const&) const;
     /**
-     * @symbol ?getDepth\@LiquidBlock\@\@KAHAEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVMaterial\@\@\@Z
-     */
-    MCAPI static int getDepth(class IConstBlockSource const&, class BlockPos const&, class Material const&);
-    /**
-     * @symbol ?getRenderedDepth\@LiquidBlock\@\@KAHAEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVMaterial\@\@\@Z
-     */
-    MCAPI static int getRenderedDepth(class IConstBlockSource const&, class BlockPos const&, class Material const&);
-    /**
      * @symbol ?solidify\@LiquidBlock\@\@IEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     MCAPI void solidify(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
@@ -331,17 +323,25 @@ public:
      * @symbol ?trySpreadFire\@LiquidBlock\@\@IEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@AEAVRandom\@\@\@Z
      */
     MCAPI void trySpreadFire(class BlockSource&, class BlockPos const&, class Random&) const;
+    /**
+     * @symbol ?getDepth\@LiquidBlock\@\@KAHAEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVMaterial\@\@\@Z
+     */
+    MCAPI static int getDepth(class IConstBlockSource const&, class BlockPos const&, class Material const&);
+    /**
+     * @symbol ?getRenderedDepth\@LiquidBlock\@\@KAHAEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVMaterial\@\@\@Z
+     */
+    MCAPI static int getRenderedDepth(class IConstBlockSource const&, class BlockPos const&, class Material const&);
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
     /**
-     * @symbol ?_getFlow\@LiquidBlock\@\@CA?AVVec3\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVMaterial\@\@\@Z
-     */
-    MCAPI static class Vec3 _getFlow(class IConstBlockSource const&, class BlockPos const&, class Material const&);
-    /**
      * @symbol ?_solidify\@LiquidBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
     MCAPI void _solidify(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    /**
+     * @symbol ?_getFlow\@LiquidBlock\@\@CA?AVVec3\@\@AEBVIConstBlockSource\@\@AEBVBlockPos\@\@AEBVMaterial\@\@\@Z
+     */
+    MCAPI static class Vec3 _getFlow(class IConstBlockSource const&, class BlockPos const&, class Material const&);
     // NOLINTEND
 };

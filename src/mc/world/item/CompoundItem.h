@@ -153,14 +153,14 @@ public:
     // private:
     // NOLINTBEGIN
     /**
+     * @symbol ?_registerSpecialCompound\@CompoundItem\@\@AEAAXAEBVItemInstance\@\@W4CompoundType\@\@\@Z
+     */
+    MCAPI void _registerSpecialCompound(class ItemInstance const&, enum class CompoundType);
+    /**
      * @symbol
      * ?_getName\@CompoundItem\@\@CA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4CompoundType\@\@\@Z
      */
     MCAPI static std::string _getName(enum class CompoundType);
-    /**
-     * @symbol ?_registerSpecialCompound\@CompoundItem\@\@AEAAXAEBVItemInstance\@\@W4CompoundType\@\@\@Z
-     */
-    MCAPI void _registerSpecialCompound(class ItemInstance const&, enum class CompoundType);
     // NOLINTEND
 
 private:

@@ -40,10 +40,6 @@ public:
      */
     MCAPI class PortalRecord const& addPortalRecord(class AutomaticID<class Dimension, int>, class PortalShape const&);
     /**
-     * @symbol ?canPortalReplaceBlock\@PortalForcer\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI static bool canPortalReplaceBlock(class BlockSource&, class BlockPos const&);
-    /**
      * @symbol ?createPortal\@PortalForcer\@\@QEAAAEBVPortalRecord\@\@AEBVActor\@\@H\@Z
      */
     MCAPI class PortalRecord const& createPortal(class Actor const&, int);
@@ -64,6 +60,10 @@ public:
      * @symbol ?removePortalRecord\@PortalForcer\@\@QEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void removePortalRecord(class BlockSource&, class BlockPos const&);
+    /**
+     * @symbol ?canPortalReplaceBlock\@PortalForcer\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI static bool canPortalReplaceBlock(class BlockSource&, class BlockPos const&);
     /**
      * @symbol ?MIN_PORTAL_REPLACE_BLOCK_FIX_VERSION\@PortalForcer\@\@2VBaseGameVersion\@\@B
      */

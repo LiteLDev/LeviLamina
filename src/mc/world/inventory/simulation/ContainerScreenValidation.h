@@ -56,12 +56,6 @@ public:
      */
     MCAPI void logServerAuthUntrustedFail(std::string const&) const;
     /**
-     * @symbol
-     * ?makeContainerScreenValidation\@ContainerScreenValidation\@\@SA?AV?$unique_ptr\@VContainerScreenValidation\@\@U?$default_delete\@VContainerScreenValidation\@\@\@std\@\@\@std\@\@AEBVContainerScreenContext\@\@W4ContainerValidationCaller\@\@V?$unordered_map\@W4ContainerEnumName\@\@V?$shared_ptr\@VContainer\@\@\@std\@\@U?$hash\@W4ContainerEnumName\@\@\@3\@U?$equal_to\@W4ContainerEnumName\@\@\@3\@V?$allocator\@U?$pair\@$$CBW4ContainerEnumName\@\@V?$shared_ptr\@VContainer\@\@\@std\@\@\@std\@\@\@3\@\@3\@\@Z
-     */
-    MCAPI static std::unique_ptr<class ContainerScreenValidation>
-    makeContainerScreenValidation(class ContainerScreenContext const&, enum class ContainerValidationCaller, std::unordered_map<enum class ContainerEnumName, std::shared_ptr<class Container>>);
-    /**
      * @symbol ?tryCommitActionResults\@ContainerScreenValidation\@\@QEAA_NXZ
      */
     MCAPI bool tryCommitActionResults();
@@ -97,6 +91,12 @@ public:
      */
     MCAPI struct ContainerValidationResult
     tryTransfer(struct ContainerValidationSlotData const&, struct ContainerValidationSlotData const&, int, bool);
+    /**
+     * @symbol
+     * ?makeContainerScreenValidation\@ContainerScreenValidation\@\@SA?AV?$unique_ptr\@VContainerScreenValidation\@\@U?$default_delete\@VContainerScreenValidation\@\@\@std\@\@\@std\@\@AEBVContainerScreenContext\@\@W4ContainerValidationCaller\@\@V?$unordered_map\@W4ContainerEnumName\@\@V?$shared_ptr\@VContainer\@\@\@std\@\@U?$hash\@W4ContainerEnumName\@\@\@3\@U?$equal_to\@W4ContainerEnumName\@\@\@3\@V?$allocator\@U?$pair\@$$CBW4ContainerEnumName\@\@V?$shared_ptr\@VContainer\@\@\@std\@\@\@std\@\@\@3\@\@3\@\@Z
+     */
+    MCAPI static std::unique_ptr<class ContainerScreenValidation>
+    makeContainerScreenValidation(class ContainerScreenContext const&, enum class ContainerValidationCaller, std::unordered_map<enum class ContainerEnumName, std::shared_ptr<class Container>>);
     // NOLINTEND
 
     // protected:

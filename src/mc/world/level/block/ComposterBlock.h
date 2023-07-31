@@ -339,15 +339,15 @@ public:
     MCAPI void _emitBoneMeal(class Level&, class BlockSource&, class BlockPos const&) const;
     /**
      * @symbol
-     * ?_getCompostableItems\@ComposterBlock\@\@CAAEBV?$unordered_map\@_KCU?$hash\@_K\@std\@\@U?$equal_to\@_K\@2\@V?$allocator\@U?$pair\@$$CB_KC\@std\@\@\@2\@\@std\@\@XZ
-     */
-    MCAPI static std::unordered_map<uint64_t, signed char> const& _getCompostableItems();
-    /**
-     * @symbol
      * ?_notifyClientComposterUsed\@ComposterBlock\@\@AEBAXAEBVPlayer\@\@FW4POIBlockInteractionType\@MinecraftEventing\@\@\@Z
      */
     MCAPI void
     _notifyClientComposterUsed(class Player const&, short, enum class MinecraftEventing::POIBlockInteractionType) const;
+    /**
+     * @symbol
+     * ?_getCompostableItems\@ComposterBlock\@\@CAAEBV?$unordered_map\@_KCU?$hash\@_K\@std\@\@U?$equal_to\@_K\@2\@V?$allocator\@U?$pair\@$$CB_KC\@std\@\@\@2\@\@std\@\@XZ
+     */
+    MCAPI static std::unordered_map<uint64_t, signed char> const& _getCompostableItems();
     // NOLINTEND
 
 private:

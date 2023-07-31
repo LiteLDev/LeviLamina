@@ -303,11 +303,6 @@ public:
     // private:
     // NOLINTBEGIN
     /**
-     * @symbol ?_growTreeRecursive\@ChorusFlowerBlock\@\@CAXAEAVBlockSource\@\@AEBVBlockPos\@\@1AEAVRandom\@\@HH\@Z
-     */
-    MCAPI static void
-    _growTreeRecursive(class BlockSource&, class BlockPos const&, class BlockPos const&, class Random&, int, int);
-    /**
      * @symbol ?_placeDeadFlower\@ChorusFlowerBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _placeDeadFlower(class BlockSource&, class BlockPos const&) const;
@@ -315,5 +310,10 @@ public:
      * @symbol ?_placeGrownFlower\@ChorusFlowerBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@H\@Z
      */
     MCAPI void _placeGrownFlower(class BlockSource&, class BlockPos const&, int) const;
+    /**
+     * @symbol ?_growTreeRecursive\@ChorusFlowerBlock\@\@CAXAEAVBlockSource\@\@AEBVBlockPos\@\@1AEAVRandom\@\@HH\@Z
+     */
+    MCAPI static void
+    _growTreeRecursive(class BlockSource&, class BlockPos const&, class BlockPos const&, class Random&, int, int);
     // NOLINTEND
 };

@@ -32,12 +32,12 @@ public:
      */
     MCAPI bool _attemptToTame(class Actor&, class Player&);
     /**
-     * @symbol ?_becomeTame\@TameableComponent\@\@CAXAEAVActor\@\@\@Z
-     */
-    MCAPI static void _becomeTame(class Actor&);
-    /**
      * @symbol ?_canTame\@TameableComponent\@\@AEAA_NAEAVActor\@\@AEAVPlayer\@\@\@Z
      */
     MCAPI bool _canTame(class Actor&, class Player&);
+    /**
+     * @symbol ?_becomeTame\@TameableComponent\@\@CAXAEAVActor\@\@\@Z
+     */
+    MCAPI static void _becomeTame(class Actor&);
     // NOLINTEND
 };

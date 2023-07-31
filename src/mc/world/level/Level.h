@@ -1648,17 +1648,9 @@ public:
     MCAPI
     Level(class gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface>> const&, class OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>>, class IMinecraftEventing&, bool, enum class SubClientId, class Scheduler&, class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class ResourcePackManager&, class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntityRegistryOwner>> const&, class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>, class ItemRegistryRef, std::weak_ptr<class BlockTypeRegistry>, bool, bool, struct NetworkPermissions const&, std::optional<class DimensionDefinitionGroup>);
     /**
-     * @symbol ?addLevelComponents\@Level\@\@SAXAEAVEntityContext\@\@AEAVIRandom\@\@_N\@Z
-     */
-    MCAPI static void addLevelComponents(class EntityContext&, class IRandom&, bool);
-    /**
      * @symbol ?canChangeDimension\@Level\@\@QEAA_NAEAVActor\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
     MCAPI bool canChangeDimension(class Actor&, class AutomaticID<class Dimension, int>);
-    /**
-     * @symbol ?createRandomSeed\@Level\@\@SAIXZ
-     */
-    MCAPI static unsigned int createRandomSeed();
     /**
      * @symbol ?earlyShutdownMainthread\@Level\@\@QEAAXXZ
      */
@@ -1710,15 +1702,6 @@ public:
         enum class CanJumpIntoNode
     );
     /**
-     * @symbol ?isUsableLevel\@Level\@\@SA_NAEBVILevel\@\@\@Z
-     */
-    MCAPI static bool isUsableLevel(class ILevel const&);
-    /**
-     * @symbol
-     * ?parseLevelSeed64\@Level\@\@SA?AVLevelSeed64\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static class LevelSeed64 parseLevelSeed64(std::string const&);
-    /**
      * @symbol
      * ?setClientLevelEventCoordinator\@Level\@\@QEAAX$$QEAV?$shared_ptr\@VClientLevelEventCoordinator\@\@\@std\@\@\@Z
      */
@@ -1741,6 +1724,23 @@ public:
      * @symbol ?transferActorToOwnedEntityLimbo\@Level\@\@QEAAXAEBVPlayer\@\@AEAVActor\@\@\@Z
      */
     MCAPI void transferActorToOwnedEntityLimbo(class Player const&, class Actor&);
+    /**
+     * @symbol ?addLevelComponents\@Level\@\@SAXAEAVEntityContext\@\@AEAVIRandom\@\@_N\@Z
+     */
+    MCAPI static void addLevelComponents(class EntityContext&, class IRandom&, bool);
+    /**
+     * @symbol ?createRandomSeed\@Level\@\@SAIXZ
+     */
+    MCAPI static unsigned int createRandomSeed();
+    /**
+     * @symbol ?isUsableLevel\@Level\@\@SA_NAEBVILevel\@\@\@Z
+     */
+    MCAPI static bool isUsableLevel(class ILevel const&);
+    /**
+     * @symbol
+     * ?parseLevelSeed64\@Level\@\@SA?AVLevelSeed64\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static class LevelSeed64 parseLevelSeed64(std::string const&);
     /**
      * @symbol ?OVERWORLD_PLAYER_COUNT_TAG\@Level\@\@2QBDB
      */
@@ -1777,12 +1777,6 @@ public:
      * @symbol ?_clearOwnedEntityLimboForPlayer\@Level\@\@AEAAXAEBVPlayer\@\@\@Z
      */
     MCAPI void _clearOwnedEntityLimboForPlayer(class Player const&);
-    /**
-     * @symbol
-     * ?_createLevelStorageManager\@Level\@\@CA?AV?$unique_ptr\@VLevelStorageManager\@\@U?$default_delete\@VLevelStorageManager\@\@\@std\@\@\@std\@\@V?$OwnerPtrT\@U?$SharePtrRefTraits\@VLevelStorage\@\@\@\@\@\@AEAVScheduler\@\@\@Z
-     */
-    MCAPI static std::unique_ptr<class LevelStorageManager>
-    _createLevelStorageManager(class OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>>, class Scheduler&);
     /**
      * @symbol ?_createMapSavedData\@Level\@\@AEAAAEAVMapItemSavedData\@\@AEBUActorUniqueID\@\@\@Z
      */
@@ -1828,10 +1822,6 @@ public:
      */
     MCAPI void _onGameplayUserRemoved(class EntityContext&);
     /**
-     * @symbol ?_onPollSaveGameStatistics\@Level\@\@CAXAEAVIMinecraftEventing\@\@AEAVLevelStorage\@\@\@Z
-     */
-    MCAPI static void _onPollSaveGameStatistics(class IMinecraftEventing&, class LevelStorage&);
-    /**
      * @symbol ?_onRemoveActorEntityReferences\@Level\@\@AEAAXAEAVActor\@\@\@Z
      */
     MCAPI void _onRemoveActorEntityReferences(class Actor&);
@@ -1871,5 +1861,15 @@ public:
      * @symbol ?processOwnedEntityLimboForPlayer\@Level\@\@AEAAXAEBVPlayer\@\@\@Z
      */
     MCAPI void processOwnedEntityLimboForPlayer(class Player const&);
+    /**
+     * @symbol
+     * ?_createLevelStorageManager\@Level\@\@CA?AV?$unique_ptr\@VLevelStorageManager\@\@U?$default_delete\@VLevelStorageManager\@\@\@std\@\@\@std\@\@V?$OwnerPtrT\@U?$SharePtrRefTraits\@VLevelStorage\@\@\@\@\@\@AEAVScheduler\@\@\@Z
+     */
+    MCAPI static std::unique_ptr<class LevelStorageManager>
+    _createLevelStorageManager(class OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>>, class Scheduler&);
+    /**
+     * @symbol ?_onPollSaveGameStatistics\@Level\@\@CAXAEAVIMinecraftEventing\@\@AEAVLevelStorage\@\@\@Z
+     */
+    MCAPI static void _onPollSaveGameStatistics(class IMinecraftEventing&, class LevelStorage&);
     // NOLINTEND
 };

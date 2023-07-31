@@ -85,10 +85,6 @@ public:
      */
     MCAPI MusicBlockActor(class BlockPos const&);
     /**
-     * @symbol ?getInstrumentIndex\@MusicBlockActor\@\@SA?AV?$optional\@H\@std\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI static std::optional<int> getInstrumentIndex(class BlockSource&, class BlockPos const&);
-    /**
      * @symbol ?playNote\@MusicBlockActor\@\@QEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void playNote(class BlockSource&, class BlockPos const&);
@@ -96,6 +92,10 @@ public:
      * @symbol ?tune\@MusicBlockActor\@\@QEAAXXZ
      */
     MCAPI void tune();
+    /**
+     * @symbol ?getInstrumentIndex\@MusicBlockActor\@\@SA?AV?$optional\@H\@std\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI static std::optional<int> getInstrumentIndex(class BlockSource&, class BlockPos const&);
     // NOLINTEND
 
     // private:

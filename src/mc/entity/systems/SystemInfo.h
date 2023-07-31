@@ -15,10 +15,6 @@ public:
      */
     MCAPI SystemInfo();
     /**
-     * @symbol ?bindType\@SystemInfo\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ??4SystemInfo\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
     MCAPI struct SystemInfo& operator=(struct SystemInfo const&);
@@ -30,5 +26,9 @@ public:
      * @symbol ??1SystemInfo\@\@QEAA\@XZ
      */
     MCAPI ~SystemInfo();
+    /**
+     * @symbol ?bindType\@SystemInfo\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     // NOLINTEND
 };

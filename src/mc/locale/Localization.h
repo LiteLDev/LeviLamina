@@ -46,16 +46,6 @@ public:
     MCAPI std::string getFullLanguageCode() const;
     /**
      * @symbol
-     * ?getLangFilePath\@Localization\@\@SA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static class Core::PathBuffer<std::string> getLangFilePath(std::string const&);
-    /**
-     * @symbol
-     * ?getLanguageCode\@Localization\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@\@Z
-     */
-    MCAPI static std::string getLanguageCode(std::string const&);
-    /**
-     * @symbol
      * ?loadFromPack\@Localization\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPackAccessStrategy\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@\@Z
      */
     MCAPI void loadFromPack(std::string const&, class PackAccessStrategy const&, std::vector<std::string> const&);
@@ -68,6 +58,16 @@ public:
      * @symbol ??1Localization\@\@QEAA\@XZ
      */
     MCAPI ~Localization();
+    /**
+     * @symbol
+     * ?getLangFilePath\@Localization\@\@SA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static class Core::PathBuffer<std::string> getLangFilePath(std::string const&);
+    /**
+     * @symbol
+     * ?getLanguageCode\@Localization\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@\@Z
+     */
+    MCAPI static std::string getLanguageCode(std::string const&);
     // NOLINTEND
 
     // protected:
@@ -84,11 +84,6 @@ public:
     MCAPI struct OptionalString _getSimple(std::string const&) const;
     /**
      * @symbol
-     * ?_isCommaSeperatedLanguage\@Localization\@\@KA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static bool _isCommaSeperatedLanguage(std::string const&);
-    /**
-     * @symbol
      * ?_parseFormattedString\@Localization\@\@IEBA?AUOptionalString\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI struct OptionalString _parseFormattedString(std::string const&) const;
@@ -97,5 +92,10 @@ public:
      * ?_replaceTokens\@Localization\@\@IEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@\@Z
      */
     MCAPI void _replaceTokens(std::string&, std::vector<std::string> const&) const;
+    /**
+     * @symbol
+     * ?_isCommaSeperatedLanguage\@Localization\@\@KA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static bool _isCommaSeperatedLanguage(std::string const&);
     // NOLINTEND
 };

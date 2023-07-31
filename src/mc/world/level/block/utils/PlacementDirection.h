@@ -145,6 +145,10 @@ public:
      */
     MCAPI PlacementDirection(bool, bool, float);
     /**
+     * @symbol ?setRotationOffset\@PlacementDirection\@BlockTrait\@\@QEAAXAEBM\@Z
+     */
+    MCAPI void setRotationOffset(float const&);
+    /**
      * @symbol ?bindType\@PlacementDirection\@BlockTrait\@\@SAXXZ
      */
     MCAPI static void bindType();
@@ -153,10 +157,6 @@ public:
      * ?getName\@PlacementDirection\@BlockTrait\@\@SAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI static std::string const& getName();
-    /**
-     * @symbol ?setRotationOffset\@PlacementDirection\@BlockTrait\@\@QEAAXAEBM\@Z
-     */
-    MCAPI void setRotationOffset(float const&);
     // NOLINTEND
 };
 

@@ -32,15 +32,15 @@ public:
          */
         MCAPI Definition();
         /**
+         * @symbol ?initialize\@Definition\@InvestigateSuspiciousLocationGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
+         */
+        MCAPI void initialize(class EntityContext&, class InvestigateSuspiciousLocationGoal&) const;
+        /**
          * @symbol
          * ?buildSchema\@Definition\@InvestigateSuspiciousLocationGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDefinition\@InvestigateSuspiciousLocationGoal\@\@\@JsonUtil\@\@\@4\@\@Z
          */
         MCAPI static void
         buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InvestigateSuspiciousLocationGoal::Definition>>&);
-        /**
-         * @symbol ?initialize\@Definition\@InvestigateSuspiciousLocationGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
-        MCAPI void initialize(class EntityContext&, class InvestigateSuspiciousLocationGoal&) const;
         // NOLINTEND
     };
 

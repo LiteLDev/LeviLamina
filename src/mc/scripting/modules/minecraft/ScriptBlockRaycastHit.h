@@ -31,11 +31,6 @@ public:
     MCAPI
     ScriptBlockRaycastHit(class BlockSource&, class BlockPos const&, unsigned char, class Vec3 const&, class Scripting::WeakLifetimeScope const&);
     /**
-     * @symbol
-     * ?bind\@ScriptBlockRaycastHit\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@VScriptBlockRaycastHit\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptBlockRaycastHit> bind();
-    /**
      * @symbol ??4ScriptBlockRaycastHit\@ScriptModuleMinecraft\@\@QEAAAEAV01\@AEBV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraft::ScriptBlockRaycastHit&
@@ -49,6 +44,11 @@ public:
      * @symbol ??1ScriptBlockRaycastHit\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptBlockRaycastHit();
+    /**
+     * @symbol
+     * ?bind\@ScriptBlockRaycastHit\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@VScriptBlockRaycastHit\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptBlockRaycastHit> bind();
     // NOLINTEND
 };
 

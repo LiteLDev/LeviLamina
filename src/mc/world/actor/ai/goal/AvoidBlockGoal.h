@@ -38,12 +38,6 @@ public:
          */
         MCAPI Definition();
         /**
-         * @symbol
-         * ?buildSchema\@Definition\@AvoidBlockGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDefinition\@AvoidBlockGoal\@\@\@JsonUtil\@\@\@4\@\@Z
-         */
-        MCAPI static void
-        buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AvoidBlockGoal::Definition>>&);
-        /**
          * @symbol ?initialize\@Definition\@AvoidBlockGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
          */
         MCAPI void initialize(class EntityContext&, class AvoidBlockGoal&) const;
@@ -57,6 +51,12 @@ public:
          * ?setTargetSelectionMethod\@Definition\@AvoidBlockGoal\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
          */
         MCAPI void setTargetSelectionMethod(std::string const&);
+        /**
+         * @symbol
+         * ?buildSchema\@Definition\@AvoidBlockGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDefinition\@AvoidBlockGoal\@\@\@JsonUtil\@\@\@4\@\@Z
+         */
+        MCAPI static void
+        buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AvoidBlockGoal::Definition>>&);
         // NOLINTEND
     };
 

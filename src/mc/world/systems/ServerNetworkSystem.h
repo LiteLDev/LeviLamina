@@ -43,15 +43,15 @@ public:
     // NOLINTBEGIN
     /**
      * @symbol
-     * ?_createConstructionDependencies\@ServerNetworkSystem\@\@CA?AUDependencies\@NetworkSystem\@\@PEAV1\@AEAVScheduler\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEBUNetworkSystemToggles\@\@V?$ServiceReference\@VServicesManager\@\@\@\@AEBVNetherNetTransportFactory\@\@AEBV?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@V?$function\@$$A6A_NXZ\@6\@V?$not_null\@V?$NonOwnerPointer\@VNetworkSessionOwner\@\@\@Bedrock\@\@\@gsl\@\@\@Z
-     */
-    MCAPI static struct NetworkSystem::Dependencies
-    _createConstructionDependencies(class ServerNetworkSystem*, class Scheduler&, std::vector<std::string> const&, struct NetworkSystemToggles const&, class ServiceReference<class ServicesManager>, class NetherNetTransportFactory const&, class Bedrock::NonOwnerPointer<class AppPlatform> const&, std::function<bool(void)>, class gsl::not_null<class Bedrock::NonOwnerPointer<class NetworkSessionOwner>>);
-    /**
-     * @symbol
      * ?_initNetworkStatistics\@ServerNetworkSystem\@\@AEAAXAEBUNetworkSystemToggles\@\@AEBV?$NonOwnerPointer\@VNetworkDebugManager\@\@\@Bedrock\@\@\@Z
      */
     MCAPI void
     _initNetworkStatistics(struct NetworkSystemToggles const&, class Bedrock::NonOwnerPointer<class NetworkDebugManager> const&);
+    /**
+     * @symbol
+     * ?_createConstructionDependencies\@ServerNetworkSystem\@\@CA?AUDependencies\@NetworkSystem\@\@PEAV1\@AEAVScheduler\@\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEBUNetworkSystemToggles\@\@V?$ServiceReference\@VServicesManager\@\@\@\@AEBVNetherNetTransportFactory\@\@AEBV?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@V?$function\@$$A6A_NXZ\@6\@V?$not_null\@V?$NonOwnerPointer\@VNetworkSessionOwner\@\@\@Bedrock\@\@\@gsl\@\@\@Z
+     */
+    MCAPI static struct NetworkSystem::Dependencies
+    _createConstructionDependencies(class ServerNetworkSystem*, class Scheduler&, std::vector<std::string> const&, struct NetworkSystemToggles const&, class ServiceReference<class ServicesManager>, class NetherNetTransportFactory const&, class Bedrock::NonOwnerPointer<class AppPlatform> const&, std::function<bool(void)>, class gsl::not_null<class Bedrock::NonOwnerPointer<class NetworkSessionOwner>>);
     // NOLINTEND
 };

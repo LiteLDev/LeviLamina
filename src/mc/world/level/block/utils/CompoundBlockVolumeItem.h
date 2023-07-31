@@ -13,10 +13,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ?bindType\@CompoundBlockVolumeItem\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ??9CompoundBlockVolumeItem\@\@QEBA_NAEBV0\@\@Z
      */
     MCAPI bool operator!=(class CompoundBlockVolumeItem const&) const;
@@ -24,5 +20,9 @@ public:
      * @symbol ??8CompoundBlockVolumeItem\@\@QEBA_NAEBV0\@\@Z
      */
     MCAPI bool operator==(class CompoundBlockVolumeItem const&) const;
+    /**
+     * @symbol ?bindType\@CompoundBlockVolumeItem\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     // NOLINTEND
 };

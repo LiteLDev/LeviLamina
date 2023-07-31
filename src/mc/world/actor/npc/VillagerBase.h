@@ -187,11 +187,6 @@ public:
 #endif
     /**
      * @symbol
-     * ?BiomeStrToEnum\@VillagerBase\@\@SA?AW4BiomeType\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static enum class VillagerBase::BiomeType BiomeStrToEnum(std::string const&);
-    /**
-     * @symbol
      * ??0VillagerBase\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI VillagerBase(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
@@ -223,6 +218,11 @@ public:
      * @symbol ?stopGoals\@VillagerBase\@\@QEAAXXZ
      */
     MCAPI void stopGoals();
+    /**
+     * @symbol
+     * ?BiomeStrToEnum\@VillagerBase\@\@SA?AW4BiomeType\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static enum class VillagerBase::BiomeType BiomeStrToEnum(std::string const&);
     // NOLINTEND
 
     // private:

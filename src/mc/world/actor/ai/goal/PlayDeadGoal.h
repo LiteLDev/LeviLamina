@@ -43,15 +43,15 @@ public:
          */
         MCAPI void addDamageCause(std::string const&);
         /**
+         * @symbol ?initialize\@Definition\@PlayDeadGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
+         */
+        MCAPI void initialize(class EntityContext&, class PlayDeadGoal&) const;
+        /**
          * @symbol
          * ?buildSchema\@Definition\@PlayDeadGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDefinition\@PlayDeadGoal\@\@\@JsonUtil\@\@\@4\@\@Z
          */
         MCAPI static void
         buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class PlayDeadGoal::Definition>>&);
-        /**
-         * @symbol ?initialize\@Definition\@PlayDeadGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
-        MCAPI void initialize(class EntityContext&, class PlayDeadGoal&) const;
         // NOLINTEND
     };
 

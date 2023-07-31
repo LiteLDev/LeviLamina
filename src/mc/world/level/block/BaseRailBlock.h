@@ -394,12 +394,12 @@ public:
     // private:
     // NOLINTBEGIN
     /**
-     * @symbol ?_createCircuitComponent\@BaseRailBlock\@\@CAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI static void _createCircuitComponent(class BlockSource&, class BlockPos const&);
-    /**
      * @symbol ?_updatePlacement\@BaseRailBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _updatePlacement(class BlockSource&, class BlockPos const&) const;
+    /**
+     * @symbol ?_createCircuitComponent\@BaseRailBlock\@\@CAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI static void _createCircuitComponent(class BlockSource&, class BlockPos const&);
     // NOLINTEND
 };

@@ -20,15 +20,6 @@ public:
      */
     MCAPI PathFinder(class BlockSource&, class NavigationComponent const&);
     /**
-     * @symbol ?_getStartPositionFlyingActor\@PathFinder\@\@SA?AVBlockPos\@\@AEBVIPathBlockSource\@\@V2\@_N2M\@Z
-     */
-    MCAPI static class BlockPos
-    _getStartPositionFlyingActor(class IPathBlockSource const&, class BlockPos, bool, bool, float);
-    /**
-     * @symbol ?extractPathingData\@PathFinder\@\@SA?AUActorPathingData\@\@AEAVActor\@\@W4ExtractionPurpose\@1\@\@Z
-     */
-    MCAPI static struct ActorPathingData extractPathingData(class Actor&, enum class PathFinder::ExtractionPurpose);
-    /**
      * @symbol
      * ?findPath\@PathFinder\@\@QEAA?AV?$unique_ptr\@VPath\@\@U?$default_delete\@VPath\@\@\@std\@\@\@std\@\@AEAVActor\@\@0M\@Z
      */
@@ -66,6 +57,15 @@ public:
      * @symbol ??1PathFinder\@\@QEAA\@XZ
      */
     MCAPI ~PathFinder();
+    /**
+     * @symbol ?_getStartPositionFlyingActor\@PathFinder\@\@SA?AVBlockPos\@\@AEBVIPathBlockSource\@\@V2\@_N2M\@Z
+     */
+    MCAPI static class BlockPos
+    _getStartPositionFlyingActor(class IPathBlockSource const&, class BlockPos, bool, bool, float);
+    /**
+     * @symbol ?extractPathingData\@PathFinder\@\@SA?AUActorPathingData\@\@AEAVActor\@\@W4ExtractionPurpose\@1\@\@Z
+     */
+    MCAPI static struct ActorPathingData extractPathingData(class Actor&, enum class PathFinder::ExtractionPurpose);
     /**
      * @symbol ?DEFAULT_DESC\@PathFinder\@\@2UPreferredPathDescription\@\@B
      */

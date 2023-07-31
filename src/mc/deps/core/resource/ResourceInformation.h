@@ -36,6 +36,14 @@ public:
     MCAPI
     ResourceInformation(std::string const&, class SemVersion const&, class mce::UUID const&, std::string const&, std::string const&, std::string const&);
     /**
+     * @symbol ?satisfies\@ResourceInformation\@\@QEBA_NAEBUPackIdVersion\@\@\@Z
+     */
+    MCAPI bool satisfies(struct PackIdVersion const&) const;
+    /**
+     * @symbol ??1ResourceInformation\@\@QEAA\@XZ
+     */
+    MCAPI ~ResourceInformation();
+    /**
      * @symbol
      * ?ResourceTypeFromString\@ResourceInformation\@\@SA?AW4ResourceType\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -45,13 +53,5 @@ public:
      * ?StringFromResourceType\@ResourceInformation\@\@SAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ResourceType\@1\@\@Z
      */
     MCAPI static std::string const& StringFromResourceType(enum class ResourceInformation::ResourceType);
-    /**
-     * @symbol ?satisfies\@ResourceInformation\@\@QEBA_NAEBUPackIdVersion\@\@\@Z
-     */
-    MCAPI bool satisfies(struct PackIdVersion const&) const;
-    /**
-     * @symbol ??1ResourceInformation\@\@QEAA\@XZ
-     */
-    MCAPI ~ResourceInformation();
     // NOLINTEND
 };

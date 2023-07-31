@@ -15,11 +15,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol
-     * ?fromHexString\@Color\@mce\@\@SA?AV12\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static class mce::Color fromHexString(std::string const&);
-    /**
      * @symbol ??8Color\@mce\@\@QEBA_NAEBV01\@\@Z
      */
     MCAPI bool operator==(class mce::Color const&) const;
@@ -36,6 +31,11 @@ public:
      * ?toHexString\@Color\@mce\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string toHexString() const;
+    /**
+     * @symbol
+     * ?fromHexString\@Color\@mce\@\@SA?AV12\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static class mce::Color fromHexString(std::string const&);
     /**
      * @symbol ?BLACK\@Color\@mce\@\@2V12\@B
      */

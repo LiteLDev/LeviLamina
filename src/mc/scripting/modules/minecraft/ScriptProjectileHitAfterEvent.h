@@ -39,12 +39,6 @@ public:
     MCAPI ScriptProjectileHitAfterEvent(struct ScriptModuleMinecraft::ScriptProjectileHitAfterEvent&&);
     /**
      * @symbol
-     * ?bind\@ScriptProjectileHitAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptProjectileHitAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptProjectileHitAfterEvent>
-    bind();
-    /**
-     * @symbol
      * ?getBlockHit\@ScriptProjectileHitAfterEvent\@ScriptModuleMinecraft\@\@QEBA?AV?$optional\@UScriptBlockHitInformation\@ScriptModuleMinecraft\@\@\@std\@\@XZ
      */
     MCAPI std::optional<struct ScriptModuleMinecraft::ScriptBlockHitInformation> getBlockHit() const;
@@ -62,6 +56,12 @@ public:
      * @symbol ??1ScriptProjectileHitAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptProjectileHitAfterEvent();
+    /**
+     * @symbol
+     * ?bind\@ScriptProjectileHitAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptProjectileHitAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptProjectileHitAfterEvent>
+    bind();
     // NOLINTEND
 };
 

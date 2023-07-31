@@ -48,6 +48,10 @@ public:
      */
     MCAPI FuelItemComponent(class ComponentItem*);
     /**
+     * @symbol ?setFuelDuration\@FuelItemComponent\@\@QEAAXM\@Z
+     */
+    MCAPI void setFuelDuration(float);
+    /**
      * @symbol ?bindType\@FuelItemComponent\@\@SAXXZ
      */
     MCAPI static void bindType();
@@ -55,9 +59,5 @@ public:
      * @symbol ?getIdentifier\@FuelItemComponent\@\@SAAEBVHashedString\@\@XZ
      */
     MCAPI static class HashedString const& getIdentifier();
-    /**
-     * @symbol ?setFuelDuration\@FuelItemComponent\@\@QEAAXM\@Z
-     */
-    MCAPI void setFuelDuration(float);
     // NOLINTEND
 };

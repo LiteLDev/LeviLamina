@@ -28,6 +28,18 @@ public:
      */
     MCAPI JournaledFile(std::function<class Core::Result(class Core::Path)>&&);
     /**
+     * @symbol ?open\@JournaledFile\@\@QEAA?AVResult\@Core\@\@VPath\@3\@VFileOpenMode\@3\@W4FileBufferingMode\@3\@\@Z
+     */
+    MCAPI class Core::Result open(class Core::Path, class Core::FileOpenMode, enum class Core::FileBufferingMode);
+    /**
+     * @symbol ?write\@JournaledFile\@\@QEAA?AVResult\@Core\@\@PEBX_K\@Z
+     */
+    MCAPI class Core::Result write(void const*, uint64_t);
+    /**
+     * @symbol ??1JournaledFile\@\@QEAA\@XZ
+     */
+    MCAPI ~JournaledFile();
+    /**
      * @symbol
      * ?findBackupPath\@JournaledFile\@\@SA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@VPath\@3\@\@Z
      */
@@ -42,10 +54,6 @@ public:
      */
     MCAPI static bool isOldFile(class Core::Path);
     /**
-     * @symbol ?open\@JournaledFile\@\@QEAA?AVResult\@Core\@\@VPath\@3\@VFileOpenMode\@3\@W4FileBufferingMode\@3\@\@Z
-     */
-    MCAPI class Core::Result open(class Core::Path, class Core::FileOpenMode, enum class Core::FileBufferingMode);
-    /**
      * @symbol
      * ?populateImportantFiles\@JournaledFile\@\@SAXVPath\@Core\@\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
      */
@@ -54,14 +62,6 @@ public:
      * @symbol ?replaceHeadFileWithBackup\@JournaledFile\@\@SA?AVResult\@Core\@\@VPath\@3\@\@Z
      */
     MCAPI static class Core::Result replaceHeadFileWithBackup(class Core::Path);
-    /**
-     * @symbol ?write\@JournaledFile\@\@QEAA?AVResult\@Core\@\@PEBX_K\@Z
-     */
-    MCAPI class Core::Result write(void const*, uint64_t);
-    /**
-     * @symbol ??1JournaledFile\@\@QEAA\@XZ
-     */
-    MCAPI ~JournaledFile();
     // NOLINTEND
 
     // private:

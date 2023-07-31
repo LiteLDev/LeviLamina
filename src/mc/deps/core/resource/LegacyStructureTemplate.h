@@ -31,25 +31,6 @@ public:
     MCAPI LegacyStructureTemplate();
     /**
      * @symbol
-     * ?_mapPropertyToExtraBlock\@LegacyStructureTemplate\@\@SAPEBVBlock\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
-     */
-    MCAPI static class Block const* _mapPropertyToExtraBlock(std::string const&, std::string const&);
-    /**
-     * @symbol
-     * ?_mapToBlock\@LegacyStructureTemplate\@\@SAPEBVBlock\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static class Block const* _mapToBlock(std::string const&);
-    /**
-     * @symbol ?_mapToData\@LegacyStructureTemplate\@\@SAAEBVBlock\@\@AEBV2\@AEBVLegacyStructureSettings\@\@\@Z
-     */
-    MCAPI static class Block const& _mapToData(class Block const&, class LegacyStructureSettings const&);
-    /**
-     * @symbol
-     * ?_mapToProperty\@LegacyStructureTemplate\@\@SAPEBVBlock\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0AEBV2\@\@Z
-     */
-    MCAPI static class Block const* _mapToProperty(std::string const&, std::string const&, class Block const&);
-    /**
-     * @symbol
      * ?calculateConnectedPosition\@LegacyStructureTemplate\@\@QEBA?AVBlockPos\@\@AEBVLegacyStructureSettings\@\@AEBV2\@01\@Z
      */
     MCAPI class BlockPos
@@ -71,12 +52,6 @@ public:
      */
     MCAPI class BlockPos getSize(enum class Rotation) const;
     /**
-     * @symbol
-     * ?getZeroPositionWithTransform\@LegacyStructureTemplate\@\@SA?AVBlockPos\@\@AEBV2\@W4Mirror\@\@W4Rotation\@\@HH\@Z
-     */
-    MCAPI static class BlockPos
-    getZeroPositionWithTransform(class BlockPos const&, enum class Mirror, enum class Rotation, int, int);
-    /**
      * @symbol ?load\@LegacyStructureTemplate\@\@QEAAXAEBVCompoundTag\@\@\@Z
      */
     MCAPI void load(class CompoundTag const&);
@@ -86,6 +61,31 @@ public:
      */
     MCAPI void
     placeInWorldChunk(class BlockSource&, class BlockPos const&, class LegacyStructureSettings&, class Random&);
+    /**
+     * @symbol
+     * ?_mapPropertyToExtraBlock\@LegacyStructureTemplate\@\@SAPEBVBlock\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
+     */
+    MCAPI static class Block const* _mapPropertyToExtraBlock(std::string const&, std::string const&);
+    /**
+     * @symbol
+     * ?_mapToBlock\@LegacyStructureTemplate\@\@SAPEBVBlock\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static class Block const* _mapToBlock(std::string const&);
+    /**
+     * @symbol ?_mapToData\@LegacyStructureTemplate\@\@SAAEBVBlock\@\@AEBV2\@AEBVLegacyStructureSettings\@\@\@Z
+     */
+    MCAPI static class Block const& _mapToData(class Block const&, class LegacyStructureSettings const&);
+    /**
+     * @symbol
+     * ?_mapToProperty\@LegacyStructureTemplate\@\@SAPEBVBlock\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0AEBV2\@\@Z
+     */
+    MCAPI static class Block const* _mapToProperty(std::string const&, std::string const&, class Block const&);
+    /**
+     * @symbol
+     * ?getZeroPositionWithTransform\@LegacyStructureTemplate\@\@SA?AVBlockPos\@\@AEBV2\@W4Mirror\@\@W4Rotation\@\@HH\@Z
+     */
+    MCAPI static class BlockPos
+    getZeroPositionWithTransform(class BlockPos const&, enum class Mirror, enum class Rotation, int, int);
     /**
      * @symbol ?transform\@LegacyStructureTemplate\@\@SA?AVBlockPos\@\@V2\@W4Mirror\@\@W4Rotation\@\@\@Z
      */

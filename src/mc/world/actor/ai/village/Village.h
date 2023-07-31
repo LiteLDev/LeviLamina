@@ -168,18 +168,6 @@ public:
      */
     MCAPI bool hasSpecificDweller(enum class DwellerRole, struct ActorUniqueID const&) const;
     /**
-     * @symbol ?isValidRegisteredPOI\@Village\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI static bool isValidRegisteredPOI(class BlockSource&, class BlockPos const&);
-    /**
-     * @symbol ?isVillagePOI\@Village\@\@SA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI static bool isVillagePOI(class BlockSource const&, class BlockPos const&);
-    /**
-     * @symbol ?isVillagePOI\@Village\@\@SA_NAEBVVillageManager\@\@AEBVBlock\@\@\@Z
-     */
-    MCAPI static bool isVillagePOI(class VillageManager const&, class Block const&);
-    /**
      * @symbol
      * ?loadDataByKey\@Village\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVCompoundTag\@\@\@Z
      */
@@ -247,6 +235,18 @@ public:
      * @symbol ?withinVillageBounds\@Village\@\@QEBA_NAEBVVec3\@\@M\@Z
      */
     MCAPI bool withinVillageBounds(class Vec3 const&, float) const;
+    /**
+     * @symbol ?isValidRegisteredPOI\@Village\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI static bool isValidRegisteredPOI(class BlockSource&, class BlockPos const&);
+    /**
+     * @symbol ?isVillagePOI\@Village\@\@SA_NAEBVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI static bool isVillagePOI(class BlockSource const&, class BlockPos const&);
+    /**
+     * @symbol ?isVillagePOI\@Village\@\@SA_NAEBVVillageManager\@\@AEBVBlock\@\@\@Z
+     */
+    MCAPI static bool isVillagePOI(class VillageManager const&, class Block const&);
     /**
      * @symbol ?DEBUG_DRAWING\@Village\@\@2_NA
      */

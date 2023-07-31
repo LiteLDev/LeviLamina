@@ -36,10 +36,6 @@ public:
      */
     MCAPI ScriptSystemBeforeEvents(class ScriptModuleMinecraft::ScriptSystemBeforeEvents&&);
     /**
-     * @symbol ?bind\@ScriptSystemBeforeEvents\@ScriptModuleMinecraft\@\@SAXAEAVModuleBindingBuilder\@Scripting\@\@\@Z
-     */
-    MCAPI static void bind(class Scripting::ModuleBindingBuilder&);
-    /**
      * @symbol
      * ?onBeforeWatchdogTerminate\@ScriptSystemBeforeEvents\@ScriptModuleMinecraft\@\@QEAAXV?$WeakTypedObjectHandle\@UScriptWatchdogTerminateBeforeEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Z
      */
@@ -60,6 +56,10 @@ public:
      * @symbol ??1ScriptSystemBeforeEvents\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptSystemBeforeEvents();
+    /**
+     * @symbol ?bind\@ScriptSystemBeforeEvents\@ScriptModuleMinecraft\@\@SAXAEAVModuleBindingBuilder\@Scripting\@\@\@Z
+     */
+    MCAPI static void bind(class Scripting::ModuleBindingBuilder&);
     // NOLINTEND
 };
 

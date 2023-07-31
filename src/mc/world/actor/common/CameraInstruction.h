@@ -63,13 +63,13 @@ public:
     public:
         // NOLINTBEGIN
         /**
-         * @symbol ?bindType\@FadeInstruction\@CameraInstruction\@\@SAXXZ
-         */
-        MCAPI static void bindType();
-        /**
          * @symbol ??8FadeInstruction\@CameraInstruction\@\@QEBA_NAEBU01\@\@Z
          */
         MCAPI bool operator==(struct CameraInstruction::FadeInstruction const&) const;
+        /**
+         * @symbol ?bindType\@FadeInstruction\@CameraInstruction\@\@SAXXZ
+         */
+        MCAPI static void bindType();
         // NOLINTEND
     };
 
@@ -124,10 +124,6 @@ public:
     public:
         // NOLINTBEGIN
         /**
-         * @symbol ?bindType\@SetInstruction\@CameraInstruction\@\@SAXXZ
-         */
-        MCAPI static void bindType();
-        /**
          * @symbol ??4SetInstruction\@CameraInstruction\@\@QEAAAEAU01\@AEBU01\@\@Z
          */
         MCAPI struct CameraInstruction::SetInstruction& operator=(struct CameraInstruction::SetInstruction const&);
@@ -139,6 +135,10 @@ public:
          * @symbol ??8SetInstruction\@CameraInstruction\@\@QEBA_NAEBU01\@\@Z
          */
         MCAPI bool operator==(struct CameraInstruction::SetInstruction const&) const;
+        /**
+         * @symbol ?bindType\@SetInstruction\@CameraInstruction\@\@SAXXZ
+         */
+        MCAPI static void bindType();
         // NOLINTEND
     };
 
@@ -151,12 +151,12 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ?bindType\@CameraInstruction\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ??8CameraInstruction\@\@QEBA_NAEBU0\@\@Z
      */
     MCAPI bool operator==(struct CameraInstruction const&) const;
+    /**
+     * @symbol ?bindType\@CameraInstruction\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     // NOLINTEND
 };

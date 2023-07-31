@@ -95,10 +95,6 @@ public:
      */
     MCAPI std::optional<bool> setCanPlaceOn(std::vector<std::string> const&);
     /**
-     * @symbol ?setEquipment\@ItemContext\@\@SAXAEBVItemStack\@\@W4EquipmentSlot\@\@AEAVMob\@\@\@Z
-     */
-    MCAPI static void setEquipment(class ItemStack const&, enum class EquipmentSlot, class Mob&);
-    /**
      * @symbol ?setItem\@ItemContext\@\@QEAA_NAEBVItemStack\@\@\@Z
      */
     MCAPI bool setItem(class ItemStack const&);
@@ -124,6 +120,10 @@ public:
      * @symbol ??1ItemContext\@\@QEAA\@XZ
      */
     MCAPI ~ItemContext();
+    /**
+     * @symbol ?setEquipment\@ItemContext\@\@SAXAEBVItemStack\@\@W4EquipmentSlot\@\@AEAVMob\@\@\@Z
+     */
+    MCAPI static void setEquipment(class ItemStack const&, enum class EquipmentSlot, class Mob&);
     // NOLINTEND
 
     // private:

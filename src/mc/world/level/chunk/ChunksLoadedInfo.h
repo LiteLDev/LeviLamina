@@ -14,6 +14,15 @@ public:
     // NOLINTBEGIN
     /**
      * @symbol
+     * ?getChunkViewSource\@ChunksLoadedInfo\@\@QEBA?AV?$unique_ptr\@VChunkViewSource\@\@U?$default_delete\@VChunkViewSource\@\@\@std\@\@\@std\@\@XZ
+     */
+    MCAPI std::unique_ptr<class ChunkViewSource> getChunkViewSource() const;
+    /**
+     * @symbol ?getChunksLoadedStatus\@ChunksLoadedInfo\@\@QEBA?AW4ChunksLoadedStatus\@\@XZ
+     */
+    MCAPI enum class ChunksLoadedStatus getChunksLoadedStatus() const;
+    /**
+     * @symbol
      * ?areAllChunksLoadedAndTicking\@ChunksLoadedInfo\@\@SA?AW4ChunksLoadedStatus\@\@AEBVDimension\@\@AEAVChunkSource\@\@AEBUBounds\@\@_NUTick\@\@_N\@Z
      */
     MCAPI static enum class ChunksLoadedStatus areAllChunksLoadedAndTicking(
@@ -38,14 +47,5 @@ public:
         bool,
         bool
     );
-    /**
-     * @symbol
-     * ?getChunkViewSource\@ChunksLoadedInfo\@\@QEBA?AV?$unique_ptr\@VChunkViewSource\@\@U?$default_delete\@VChunkViewSource\@\@\@std\@\@\@std\@\@XZ
-     */
-    MCAPI std::unique_ptr<class ChunkViewSource> getChunkViewSource() const;
-    /**
-     * @symbol ?getChunksLoadedStatus\@ChunksLoadedInfo\@\@QEBA?AW4ChunksLoadedStatus\@\@XZ
-     */
-    MCAPI enum class ChunksLoadedStatus getChunksLoadedStatus() const;
     // NOLINTEND
 };

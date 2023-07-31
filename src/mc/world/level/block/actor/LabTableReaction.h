@@ -22,12 +22,6 @@ public:
      */
     MCAPI void addResultItem(class ItemStack const&);
     /**
-     * @symbol
-     * ?createReaction\@LabTableReaction\@\@SA?AV?$unique_ptr\@VLabTableReaction\@\@U?$default_delete\@VLabTableReaction\@\@\@std\@\@\@std\@\@W4LabTableReactionType\@\@AEBVBlockPos\@\@_N\@Z
-     */
-    MCAPI static std::unique_ptr<class LabTableReaction>
-    createReaction(enum class LabTableReactionType, class BlockPos const&, bool);
-    /**
      * @symbol ?getReactionId\@LabTableReaction\@\@QEAAHXZ
      */
     MCAPI int getReactionId();
@@ -39,5 +33,11 @@ public:
      * @symbol ?tick\@LabTableReaction\@\@QEAA_NAEAVBlockSource\@\@\@Z
      */
     MCAPI bool tick(class BlockSource&);
+    /**
+     * @symbol
+     * ?createReaction\@LabTableReaction\@\@SA?AV?$unique_ptr\@VLabTableReaction\@\@U?$default_delete\@VLabTableReaction\@\@\@std\@\@\@std\@\@W4LabTableReactionType\@\@AEBVBlockPos\@\@_N\@Z
+     */
+    MCAPI static std::unique_ptr<class LabTableReaction>
+    createReaction(enum class LabTableReactionType, class BlockPos const&, bool);
     // NOLINTEND
 };

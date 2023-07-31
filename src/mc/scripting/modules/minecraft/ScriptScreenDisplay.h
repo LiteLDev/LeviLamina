@@ -26,11 +26,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol
-     * ?bind\@ScriptScreenDisplay\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptScreenDisplay\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptScreenDisplay> bind();
-    /**
      * @symbol ??4ScriptScreenDisplay\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptScreenDisplay&
@@ -63,6 +58,11 @@ public:
                    std::vector<
                        std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&)
         const;
+    /**
+     * @symbol
+     * ?bind\@ScriptScreenDisplay\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptScreenDisplay\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptScreenDisplay> bind();
     // NOLINTEND
 
     // private:

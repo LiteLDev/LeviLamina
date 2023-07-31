@@ -66,14 +66,6 @@ public:
     MCAPI enum class RakNet::RNS2BindResult
     BindSharedIPV4And6(struct RakNet::RNS2_BerkleyBindParameters*, char const*, unsigned int);
     /**
-     * @symbol ?GetSystemAddressIPV4And6\@RNS2_Berkley\@RakNet\@\@KAXHPEAUSystemAddress\@2\@\@Z
-     */
-    MCAPI static void GetSystemAddressIPV4And6(int, struct RakNet::SystemAddress*);
-    /**
-     * @symbol ?RecvFromLoop\@RNS2_Berkley\@RakNet\@\@KAIPEAX\@Z
-     */
-    MCAPI static unsigned int RecvFromLoop(void*);
-    /**
      * @symbol ?RecvFromLoopInt\@RNS2_Berkley\@RakNet\@\@IEAAIXZ
      */
     MCAPI unsigned int RecvFromLoopInt();
@@ -85,6 +77,14 @@ public:
      * @symbol ?SetSocketOptions\@RNS2_Berkley\@RakNet\@\@IEAAXXZ
      */
     MCAPI void SetSocketOptions();
+    /**
+     * @symbol ?GetSystemAddressIPV4And6\@RNS2_Berkley\@RakNet\@\@KAXHPEAUSystemAddress\@2\@\@Z
+     */
+    MCAPI static void GetSystemAddressIPV4And6(int, struct RakNet::SystemAddress*);
+    /**
+     * @symbol ?RecvFromLoop\@RNS2_Berkley\@RakNet\@\@KAIPEAX\@Z
+     */
+    MCAPI static unsigned int RecvFromLoop(void*);
     // NOLINTEND
 };
 

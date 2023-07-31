@@ -34,10 +34,6 @@ public:
      */
     MCAPI void clear_retry_state(unsigned int);
     /**
-     * @symbol ?create\@http_singleton\@httpclient\@xbox\@\@SAJPEAUHCInitArgs\@\@\@Z
-     */
-    MCAPI static long create(struct HCInitArgs*);
-    /**
      * @symbol ?get_retry_state\@http_singleton\@httpclient\@xbox\@\@QEAA?AUhttp_retry_after_api_state\@23\@I\@Z
      */
     MCAPI struct xbox::httpclient::http_retry_after_api_state get_retry_state(unsigned int);
@@ -55,6 +51,10 @@ public:
      * @symbol ??1http_singleton\@httpclient\@xbox\@\@QEAA\@XZ
      */
     MCAPI ~http_singleton();
+    /**
+     * @symbol ?create\@http_singleton\@httpclient\@xbox\@\@SAJPEAUHCInitArgs\@\@\@Z
+     */
+    MCAPI static long create(struct HCInitArgs*);
     // NOLINTEND
 
     // private:

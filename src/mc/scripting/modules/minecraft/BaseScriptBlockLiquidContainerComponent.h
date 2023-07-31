@@ -57,13 +57,6 @@ public:
     );
     /**
      * @symbol
-     * ?bind\@BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VBaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<
-        class ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent>
-    bind();
-    /**
-     * @symbol
      * ?getFillLevel\@BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@H\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<int> getFillLevel();
@@ -77,16 +70,17 @@ public:
      */
     MCAPI class ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent&
     operator=(class ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent&&);
+    /**
+     * @symbol
+     * ?bind\@BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VBaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<
+        class ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent>
+    bind();
     // NOLINTEND
 
     // protected:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_getActualCauldronLiquidType\@BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@KA?AW4ScriptFluidType\@2\@AEAVBlockSource\@\@VBlockPos\@\@\@Z
-     */
-    MCAPI static enum class ScriptModuleMinecraft::ScriptFluidType
-    _getActualCauldronLiquidType(class BlockSource&, class BlockPos);
     /**
      * @symbol ?_isValidLiquid\@BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@IEBA_NXZ
      */
@@ -96,6 +90,12 @@ public:
      * ?_tryGetCauldronBlockActor\@BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@IEAAPEAVCauldronBlockActor\@\@XZ
      */
     MCAPI class CauldronBlockActor* _tryGetCauldronBlockActor();
+    /**
+     * @symbol
+     * ?_getActualCauldronLiquidType\@BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@KA?AW4ScriptFluidType\@2\@AEAVBlockSource\@\@VBlockPos\@\@\@Z
+     */
+    MCAPI static enum class ScriptModuleMinecraft::ScriptFluidType
+    _getActualCauldronLiquidType(class BlockSource&, class BlockPos);
     // NOLINTEND
 };
 

@@ -81,26 +81,9 @@ public:
      */
     MCAPI class Scripting::Result<int> addLevels(int) const;
     /**
-     * @symbol
-     * ?bind\@ScriptPlayer\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptPlayer\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptPlayer> bind();
-    /**
      * @symbol ?calculateTotalXp\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@I\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<unsigned int> calculateTotalXp() const;
-    /**
-     * @symbol
-     * ?getHandle\@ScriptPlayer\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptPlayer\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBVPlayer\@\@AEBVWeakLifetimeScope\@4\@\@Z
-     */
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>
-    getHandle(class Player const&, class Scripting::WeakLifetimeScope const&);
-    /**
-     * @symbol
-     * ?getHandle\@ScriptPlayer\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptPlayer\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$StackRefResultT\@UEntityRefTraits\@\@\@\@AEBVWeakLifetimeScope\@4\@\@Z
-     */
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>
-    getHandle(class StackRefResultT<struct EntityRefTraits>, class Scripting::WeakLifetimeScope const&);
     /**
      * @symbol
      * ?getItemCooldownLeft\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -207,6 +190,23 @@ public:
      * @symbol ?tryGetPlayer\@ScriptPlayer\@ScriptModuleMinecraft\@\@QEBAPEAVPlayer\@\@XZ
      */
     MCAPI class Player* tryGetPlayer() const;
+    /**
+     * @symbol
+     * ?bind\@ScriptPlayer\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptPlayer\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptPlayer> bind();
+    /**
+     * @symbol
+     * ?getHandle\@ScriptPlayer\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptPlayer\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBVPlayer\@\@AEBVWeakLifetimeScope\@4\@\@Z
+     */
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>
+    getHandle(class Player const&, class Scripting::WeakLifetimeScope const&);
+    /**
+     * @symbol
+     * ?getHandle\@ScriptPlayer\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptPlayer\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$StackRefResultT\@UEntityRefTraits\@\@\@\@AEBVWeakLifetimeScope\@4\@\@Z
+     */
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptPlayer>
+    getHandle(class StackRefResultT<struct EntityRefTraits>, class Scripting::WeakLifetimeScope const&);
     // NOLINTEND
 
     // private:

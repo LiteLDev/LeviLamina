@@ -86,15 +86,6 @@ public:
         struct Brightness
     );
     /**
-     * @symbol
-     * ?computeAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits\@SubChunkRelighter\@\@SA?AV?$bitset\@$0DAAAA\@\@std\@\@XZ
-     */
-    MCAPI static std::bitset<196608> computeAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits();
-    /**
-     * @symbol ?computeOuterEdgeOfComputationBits\@SubChunkRelighter\@\@SA?AV?$bitset\@$0DAAAA\@\@std\@\@XZ
-     */
-    MCAPI static std::bitset<196608> computeOuterEdgeOfComputationBits();
-    /**
      * @symbol ?getBlock\@SubChunkRelighter\@\@QEAAXAEBVPos\@\@AEAPEBVBlock\@\@1\@Z
      */
     MCAPI void getBlock(class Pos const&, class Block const*&, class Block const*&);
@@ -118,10 +109,6 @@ public:
      */
     MCAPI void getTouchedSubChunks(std::vector<class Pos>&);
     /**
-     * @symbol ?initializeStatics\@SubChunkRelighter\@\@SAXXZ
-     */
-    MCAPI static void initializeStatics();
-    /**
      * @symbol ?setBlockLight\@SubChunkRelighter\@\@QEAAXAEBVPos\@\@UBrightness\@\@111\@Z
      */
     MCAPI void
@@ -132,10 +119,6 @@ public:
     MCAPI void
     setSkyLight(class Pos const&, struct Brightness, struct Brightness, struct Brightness, struct Brightness);
     /**
-     * @symbol ?shutdownStatics\@SubChunkRelighter\@\@SAXXZ
-     */
-    MCAPI static void shutdownStatics();
-    /**
      * @symbol ?update\@SubChunkRelighter\@\@QEAAXAEBVBlockPos\@\@_K\@Z
      */
     MCAPI void update(class BlockPos const&, uint64_t);
@@ -143,6 +126,23 @@ public:
      * @symbol ??1SubChunkRelighter\@\@QEAA\@XZ
      */
     MCAPI ~SubChunkRelighter();
+    /**
+     * @symbol
+     * ?computeAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits\@SubChunkRelighter\@\@SA?AV?$bitset\@$0DAAAA\@\@std\@\@XZ
+     */
+    MCAPI static std::bitset<196608> computeAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits();
+    /**
+     * @symbol ?computeOuterEdgeOfComputationBits\@SubChunkRelighter\@\@SA?AV?$bitset\@$0DAAAA\@\@std\@\@XZ
+     */
+    MCAPI static std::bitset<196608> computeOuterEdgeOfComputationBits();
+    /**
+     * @symbol ?initializeStatics\@SubChunkRelighter\@\@SAXXZ
+     */
+    MCAPI static void initializeStatics();
+    /**
+     * @symbol ?shutdownStatics\@SubChunkRelighter\@\@SAXXZ
+     */
+    MCAPI static void shutdownStatics();
     // NOLINTEND
 
     // private:

@@ -102,6 +102,14 @@ public:
      */
     virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
     /**
+     * @symbol ?getBaseColorInt\@BannerBlockActor\@\@QEBAEXZ
+     */
+    MCAPI unsigned char getBaseColorInt() const;
+    /**
+     * @symbol ?setItemValues\@BannerBlockActor\@\@QEAAXAEBVItemStackBase\@\@\@Z
+     */
+    MCAPI void setItemValues(class ItemStackBase const&);
+    /**
      * @symbol ?getBannerType\@BannerBlockActor\@\@SA?AW4BannerBlockType\@\@PEBVCompoundTag\@\@\@Z
      */
     MCAPI static enum class BannerBlockType getBannerType(class CompoundTag const*);
@@ -109,10 +117,6 @@ public:
      * @symbol ?getBaseColor\@BannerBlockActor\@\@SAHAEBVItemStack\@\@\@Z
      */
     MCAPI static int getBaseColor(class ItemStack const&);
-    /**
-     * @symbol ?getBaseColorInt\@BannerBlockActor\@\@QEBAEXZ
-     */
-    MCAPI unsigned char getBaseColorInt() const;
     /**
      * @symbol ?getPatternCount\@BannerBlockActor\@\@SAHPEBVCompoundTag\@\@\@Z
      */
@@ -125,10 +129,6 @@ public:
      * @symbol ?removeLastPattern\@BannerBlockActor\@\@SA_NAEAVItemStack\@\@AEAVPlayer\@\@\@Z
      */
     MCAPI static bool removeLastPattern(class ItemStack&, class Player&);
-    /**
-     * @symbol ?setItemValues\@BannerBlockActor\@\@QEAAXAEBVItemStackBase\@\@\@Z
-     */
-    MCAPI void setItemValues(class ItemStackBase const&);
     /**
      * @symbol ?MAX_PATTERNS\@BannerBlockActor\@\@2HB
      */

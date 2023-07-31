@@ -129,14 +129,18 @@ public:
      */
     MCAPI ActorDamageSource(enum class ActorDamageCause);
     /**
+     * @symbol ?getCause\@ActorDamageSource\@\@QEBA?AW4ActorDamageCause\@\@XZ
+     */
+    MCAPI enum class ActorDamageCause getCause() const;
+    /**
+     * @symbol ?setCause\@ActorDamageSource\@\@QEAAXW4ActorDamageCause\@\@\@Z
+     */
+    MCAPI void setCause(enum class ActorDamageCause);
+    /**
      * @symbol
      * ?generateDamageCauseCommandEnum\@ActorDamageSource\@\@SA?AV?$vector\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ActorDamageCause\@\@\@std\@\@V?$allocator\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ActorDamageCause\@\@\@std\@\@\@2\@\@std\@\@XZ
      */
     MCAPI static std::vector<std::pair<std::string, enum class ActorDamageCause>> generateDamageCauseCommandEnum();
-    /**
-     * @symbol ?getCause\@ActorDamageSource\@\@QEBA?AW4ActorDamageCause\@\@XZ
-     */
-    MCAPI enum class ActorDamageCause getCause() const;
     /**
      * @symbol ?isDamageCausedByMob\@ActorDamageSource\@\@SA_NW4ActorDamageCause\@\@\@Z
      */
@@ -151,9 +155,5 @@ public:
      * ?lookupCauseName\@ActorDamageSource\@\@SAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ActorDamageCause\@\@\@Z
      */
     MCAPI static std::string const& lookupCauseName(enum class ActorDamageCause);
-    /**
-     * @symbol ?setCause\@ActorDamageSource\@\@QEAAXW4ActorDamageCause\@\@\@Z
-     */
-    MCAPI void setCause(enum class ActorDamageCause);
     // NOLINTEND
 };

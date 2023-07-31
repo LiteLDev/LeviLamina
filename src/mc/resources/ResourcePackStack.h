@@ -51,12 +51,6 @@ public:
      */
     MCAPI void add(class PackInstance, class IResourcePackRepository const&, bool);
     /**
-     * @symbol
-     * ?deserialize\@ResourcePackStack\@\@SA?AV?$unique_ptr\@VResourcePackStack\@\@U?$default_delete\@VResourcePackStack\@\@\@std\@\@\@std\@\@AEAV?$basic_istream\@DU?$char_traits\@D\@std\@\@\@3\@AEBVIResourcePackRepository\@\@\@Z
-     */
-    MCAPI static std::unique_ptr<class ResourcePackStack>
-    deserialize(std::basic_istream<char, std::char_traits<char>>&, class IResourcePackRepository const&);
-    /**
      * @symbol ?getSplitStacks\@ResourcePackStack\@\@QEBAXAEAV1\@0\@Z
      */
     MCAPI void getSplitStacks(class ResourcePackStack&, class ResourcePackStack&) const;
@@ -81,6 +75,12 @@ public:
      * @symbol ?removeInvalidPacks\@ResourcePackStack\@\@QEAAXXZ
      */
     MCAPI void removeInvalidPacks();
+    /**
+     * @symbol
+     * ?deserialize\@ResourcePackStack\@\@SA?AV?$unique_ptr\@VResourcePackStack\@\@U?$default_delete\@VResourcePackStack\@\@\@std\@\@\@std\@\@AEAV?$basic_istream\@DU?$char_traits\@D\@std\@\@\@3\@AEBVIResourcePackRepository\@\@\@Z
+     */
+    MCAPI static std::unique_ptr<class ResourcePackStack>
+    deserialize(std::basic_istream<char, std::char_traits<char>>&, class IResourcePackRepository const&);
     // NOLINTEND
 
     // private:

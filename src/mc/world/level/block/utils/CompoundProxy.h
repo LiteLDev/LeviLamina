@@ -15,10 +15,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ?bindType\@CompoundProxy\@BlockDescriptorSerializer\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ?fromInt\@CompoundProxy\@BlockDescriptorSerializer\@\@QEAAXH\@Z
      */
     MCAPI void fromInt(int);
@@ -31,6 +27,10 @@ public:
      * @symbol ??1CompoundProxy\@BlockDescriptorSerializer\@\@QEAA\@XZ
      */
     MCAPI ~CompoundProxy();
+    /**
+     * @symbol ?bindType\@CompoundProxy\@BlockDescriptorSerializer\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     // NOLINTEND
 };
 

@@ -70,10 +70,6 @@ public:
      */
     MCAPI int getUpdateMerchantTimer() const;
     /**
-     * @symbol ?isUseNewTradeScreen\@LegacyTradeableComponent\@\@SA_NAEBVActor\@\@\@Z
-     */
-    MCAPI static bool isUseNewTradeScreen(class Actor const&);
-    /**
      * @symbol
      * ?loadDisplayName\@LegacyTradeableComponent\@\@QEAAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVActor\@\@\@Z
      */
@@ -139,6 +135,10 @@ public:
      * @symbol ??1LegacyTradeableComponent\@\@QEAA\@XZ
      */
     MCAPI ~LegacyTradeableComponent();
+    /**
+     * @symbol ?isUseNewTradeScreen\@LegacyTradeableComponent\@\@SA_NAEBVActor\@\@\@Z
+     */
+    MCAPI static bool isUseNewTradeScreen(class Actor const&);
     // NOLINTEND
 
     // private:

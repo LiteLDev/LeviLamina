@@ -20,13 +20,13 @@ public:
      */
     MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
     /**
-     * @symbol ?implInteraction\@BucketableComponent\@\@SAXAEAVActor\@\@AEAVPlayer\@\@\@Z
-     */
-    MCAPI static void implInteraction(class Actor&, class Player&);
-    /**
      * @symbol ?initFromDefinition\@BucketableComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void initFromDefinition(class Actor&);
+    /**
+     * @symbol ?implInteraction\@BucketableComponent\@\@SAXAEAVActor\@\@AEAVPlayer\@\@\@Z
+     */
+    MCAPI static void implInteraction(class Actor&, class Player&);
     // NOLINTEND
 
 private:

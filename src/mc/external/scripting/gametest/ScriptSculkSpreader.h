@@ -33,20 +33,9 @@ public:
     MCAPI void addCursorsWithOffset(class Vec3 const&, int);
     /**
      * @symbol
-     * ?bind\@ScriptSculkSpreader\@ScriptModuleGameTest\@\@SA?AV?$ClassBindingBuilder\@VScriptSculkSpreader\@ScriptModuleGameTest\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleGameTest::ScriptSculkSpreader> bind();
-    /**
-     * @symbol
      * ?getCursorPosition\@ScriptSculkSpreader\@ScriptModuleGameTest\@\@QEBA?AV?$Result\@VVec3\@\@\@Scripting\@\@H\@Z
      */
     MCAPI class Scripting::Result<class Vec3> getCursorPosition(int) const;
-    /**
-     * @symbol
-     * ?getHandle\@ScriptSculkSpreader\@ScriptModuleGameTest\@\@SA?AV?$StrongTypedObjectHandle\@VScriptSculkSpreader\@ScriptModuleGameTest\@\@\@Scripting\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVWeakLifetimeScope\@4\@\@Z
-     */
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptSculkSpreader>
-    getHandle(class BlockSource&, class BlockPos const&, class Scripting::WeakLifetimeScope const&);
     /**
      * @symbol ?getMaxCharge\@ScriptSculkSpreader\@ScriptModuleGameTest\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
@@ -67,6 +56,17 @@ public:
      * @symbol ??1ScriptSculkSpreader\@ScriptModuleGameTest\@\@QEAA\@XZ
      */
     MCAPI ~ScriptSculkSpreader();
+    /**
+     * @symbol
+     * ?bind\@ScriptSculkSpreader\@ScriptModuleGameTest\@\@SA?AV?$ClassBindingBuilder\@VScriptSculkSpreader\@ScriptModuleGameTest\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleGameTest::ScriptSculkSpreader> bind();
+    /**
+     * @symbol
+     * ?getHandle\@ScriptSculkSpreader\@ScriptModuleGameTest\@\@SA?AV?$StrongTypedObjectHandle\@VScriptSculkSpreader\@ScriptModuleGameTest\@\@\@Scripting\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVWeakLifetimeScope\@4\@\@Z
+     */
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleGameTest::ScriptSculkSpreader>
+    getHandle(class BlockSource&, class BlockPos const&, class Scripting::WeakLifetimeScope const&);
     // NOLINTEND
 };
 

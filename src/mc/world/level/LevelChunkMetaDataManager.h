@@ -25,24 +25,6 @@ public:
      */
     MCAPI std::shared_ptr<class LevelChunkMetaDataDictionary> getLevelChunkMetaDataDictionary() const;
     /**
-     * @symbol
-     * ?inferInitialMetaDataAfterDeserialization\@LevelChunkMetaDataManager\@\@SAXAEAVLevelChunk\@\@VLevelSeed64\@\@W4GeneratorType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$AutomaticID\@VDimension\@\@H\@\@AEBVDimensionHeightRange\@\@AEBVBaseGameVersion\@\@AEAVLevelChunkMetaData\@\@\@Z
-     */
-    MCAPI static void
-    inferInitialMetaDataAfterDeserialization(class LevelChunk&, class LevelSeed64, enum class GeneratorType, std::string const&, class AutomaticID<class Dimension, int>, class DimensionHeightRange const&, class BaseGameVersion const&, class LevelChunkMetaData&);
-    /**
-     * @symbol
-     * ?inferTargetMetaData\@LevelChunkMetaDataManager\@\@SAXAEBVBaseGameVersion\@\@V?$AutomaticID\@VDimension\@\@H\@\@AEAVLevelChunkMetaData\@\@\@Z
-     */
-    MCAPI static void
-    inferTargetMetaData(class BaseGameVersion const&, class AutomaticID<class Dimension, int>, class LevelChunkMetaData&);
-    /**
-     * @symbol
-     * ?initializeLevelChunkMetaData\@LevelChunkMetaDataManager\@\@SA?AV?$shared_ptr\@VLevelChunkMetaData\@\@\@std\@\@V?$AutomaticID\@VDimension\@\@H\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@AEBVDimensionHeightRange\@\@_NVLevelSeed64\@\@W4GeneratorType\@\@AEBVBaseGameVersion\@\@\@Z
-     */
-    MCAPI static std::shared_ptr<class LevelChunkMetaData>
-    initializeLevelChunkMetaData(class AutomaticID<class Dimension, int>, std::string const&, class DimensionHeightRange const&, bool, class LevelSeed64, enum class GeneratorType, class BaseGameVersion const&);
-    /**
      * @symbol ?registerOnNewDimensionCreated\@LevelChunkMetaDataManager\@\@QEAAXAEAVDimensionManager\@\@\@Z
      */
     MCAPI void registerOnNewDimensionCreated(class DimensionManager&);
@@ -60,6 +42,24 @@ public:
      * @symbol ??1LevelChunkMetaDataManager\@\@QEAA\@XZ
      */
     MCAPI ~LevelChunkMetaDataManager();
+    /**
+     * @symbol
+     * ?inferInitialMetaDataAfterDeserialization\@LevelChunkMetaDataManager\@\@SAXAEAVLevelChunk\@\@VLevelSeed64\@\@W4GeneratorType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$AutomaticID\@VDimension\@\@H\@\@AEBVDimensionHeightRange\@\@AEBVBaseGameVersion\@\@AEAVLevelChunkMetaData\@\@\@Z
+     */
+    MCAPI static void
+    inferInitialMetaDataAfterDeserialization(class LevelChunk&, class LevelSeed64, enum class GeneratorType, std::string const&, class AutomaticID<class Dimension, int>, class DimensionHeightRange const&, class BaseGameVersion const&, class LevelChunkMetaData&);
+    /**
+     * @symbol
+     * ?inferTargetMetaData\@LevelChunkMetaDataManager\@\@SAXAEBVBaseGameVersion\@\@V?$AutomaticID\@VDimension\@\@H\@\@AEAVLevelChunkMetaData\@\@\@Z
+     */
+    MCAPI static void
+    inferTargetMetaData(class BaseGameVersion const&, class AutomaticID<class Dimension, int>, class LevelChunkMetaData&);
+    /**
+     * @symbol
+     * ?initializeLevelChunkMetaData\@LevelChunkMetaDataManager\@\@SA?AV?$shared_ptr\@VLevelChunkMetaData\@\@\@std\@\@V?$AutomaticID\@VDimension\@\@H\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@AEBVDimensionHeightRange\@\@_NVLevelSeed64\@\@W4GeneratorType\@\@AEBVBaseGameVersion\@\@\@Z
+     */
+    MCAPI static std::shared_ptr<class LevelChunkMetaData>
+    initializeLevelChunkMetaData(class AutomaticID<class Dimension, int>, std::string const&, class DimensionHeightRange const&, bool, class LevelSeed64, enum class GeneratorType, class BaseGameVersion const&);
     // NOLINTEND
 
     // private:

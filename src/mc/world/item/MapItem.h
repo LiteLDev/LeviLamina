@@ -160,6 +160,10 @@ public:
      */
     MCAPI void blockTick(class ItemStack&, class BlockSource&, class BlockPos const&) const;
     /**
+     * @symbol ?update\@MapItem\@\@QEBAXAEAVLevel\@\@AEAVActor\@\@AEAVMapItemSavedData\@\@\@Z
+     */
+    MCAPI void update(class Level&, class Actor&, class MapItemSavedData&) const;
+    /**
      * @symbol ?doesDisplayPlayerMarkers\@MapItem\@\@SA_NAEBVItemStack\@\@\@Z
      */
     MCAPI static bool doesDisplayPlayerMarkers(class ItemStack const&);
@@ -198,10 +202,6 @@ public:
      * @symbol ?setMapNameIndex\@MapItem\@\@SAXAEAVItemStack\@\@H\@Z
      */
     MCAPI static void setMapNameIndex(class ItemStack&, int);
-    /**
-     * @symbol ?update\@MapItem\@\@QEBAXAEAVLevel\@\@AEAVActor\@\@AEAVMapItemSavedData\@\@\@Z
-     */
-    MCAPI void update(class Level&, class Actor&, class MapItemSavedData&) const;
     /**
      * @symbol ?TAG_MAP_INIT\@MapItem\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */

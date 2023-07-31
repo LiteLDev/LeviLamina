@@ -94,10 +94,6 @@ public:
      */
     MCAPI class GridArea<std::shared_ptr<class LevelChunk>>& getArea();
     /**
-     * @symbol ?getGenerateMode\@ChunkViewSource\@\@SA?AW4ChunkSourceViewGenerateMode\@\@_N0\@Z
-     */
-    MCAPI static enum class ChunkSourceViewGenerateMode getGenerateMode(bool, bool);
-    /**
      * @symbol
      * ?move\@ChunkViewSource\@\@QEAAXAEBVBlockPos\@\@H_NW4ChunkSourceViewGenerateMode\@\@V?$function\@$$A6AXV?$buffer_span_mut\@V?$shared_ptr\@VLevelChunk\@\@\@std\@\@\@\@V?$buffer_span\@I\@\@\@Z\@std\@\@PEBM\@Z
      */
@@ -121,5 +117,9 @@ public:
      */
     MCAPI void
     rebuildSpecificArea(struct Bounds const&, bool, std::function<void(class buffer_span_mut<std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>);
+    /**
+     * @symbol ?getGenerateMode\@ChunkViewSource\@\@SA?AW4ChunkSourceViewGenerateMode\@\@_N0\@Z
+     */
+    MCAPI static enum class ChunkSourceViewGenerateMode getGenerateMode(bool, bool);
     // NOLINTEND
 };

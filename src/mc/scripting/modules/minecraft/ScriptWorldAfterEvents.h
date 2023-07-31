@@ -414,6 +414,15 @@ public:
      */
     MCAPI ScriptWorldAfterEvents(class ScriptModuleMinecraft::ScriptWorldAfterEvents&&);
     /**
+     * @symbol ??4ScriptWorldAfterEvents\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
+     */
+    MCAPI class ScriptModuleMinecraft::ScriptWorldAfterEvents&
+    operator=(class ScriptModuleMinecraft::ScriptWorldAfterEvents&&);
+    /**
+     * @symbol ?registerListeners\@ScriptWorldAfterEvents\@ScriptModuleMinecraft\@\@QEAAX_N\@Z
+     */
+    MCAPI void registerListeners(bool);
+    /**
      * @symbol ?bind\@ScriptWorldAfterEvents\@ScriptModuleMinecraft\@\@SAXAEAVModuleBindingBuilder\@Scripting\@\@\@Z
      */
     MCAPI static void bind(class Scripting::ModuleBindingBuilder&);
@@ -423,15 +432,6 @@ public:
      */
     MCAPI static void
     generateOrderDocumentationForVersion(struct Scripting::ModuleDescriptor const&, class Json::Value&);
-    /**
-     * @symbol ??4ScriptWorldAfterEvents\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
-     */
-    MCAPI class ScriptModuleMinecraft::ScriptWorldAfterEvents&
-    operator=(class ScriptModuleMinecraft::ScriptWorldAfterEvents&&);
-    /**
-     * @symbol ?registerListeners\@ScriptWorldAfterEvents\@ScriptModuleMinecraft\@\@QEAAX_N\@Z
-     */
-    MCAPI void registerListeners(bool);
     /**
      * @symbol ?bindingName\@ScriptWorldAfterEvents\@ScriptModuleMinecraft\@\@2PEBDEB
      */

@@ -511,18 +511,9 @@ public:
     MCAPI bool
     _validateServerSchemaAndInitItem(class Json::Value&, class SemVersion const&, bool, class Experiments const&);
     /**
-     * @symbol ?buildAllPatchSchemas\@ComponentItem\@\@SAXAEAVCerealDocumentUpgrader\@\@\@Z
-     */
-    MCAPI static void buildAllPatchSchemas(class CerealDocumentUpgrader&);
-    /**
      * @symbol ?checkComponentDataForContentErrors\@ComponentItem\@\@QEBA_NXZ
      */
     MCAPI bool checkComponentDataForContentErrors() const;
-    /**
-     * @symbol
-     * ?createItemAbstractCerealSchema\@ComponentItem\@\@SA?AUSchema\@cereal\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static struct cereal::Schema createItemAbstractCerealSchema(std::string const&);
     /**
      * @symbol
      * ?executeTrigger\@ComponentItem\@\@QEBA_NAEAVItemStackBase\@\@AEBVDefinitionTrigger\@\@AEAVRenderParams\@\@\@Z
@@ -533,13 +524,22 @@ public:
      */
     MCAPI bool parseJsonEvents(class Json::Value const&, class SemVersion const&);
     /**
-     * @symbol ?registerItemComponentTypes\@ComponentItem\@\@SAXXZ
-     */
-    MCAPI static void registerItemComponentTypes();
-    /**
      * @symbol ?setCanDestroyInCreative\@ComponentItem\@\@QEAAX_N\@Z
      */
     MCAPI void setCanDestroyInCreative(bool);
+    /**
+     * @symbol ?buildAllPatchSchemas\@ComponentItem\@\@SAXAEAVCerealDocumentUpgrader\@\@\@Z
+     */
+    MCAPI static void buildAllPatchSchemas(class CerealDocumentUpgrader&);
+    /**
+     * @symbol
+     * ?createItemAbstractCerealSchema\@ComponentItem\@\@SA?AUSchema\@cereal\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static struct cereal::Schema createItemAbstractCerealSchema(std::string const&);
+    /**
+     * @symbol ?registerItemComponentTypes\@ComponentItem\@\@SAXXZ
+     */
+    MCAPI static void registerItemComponentTypes();
     /**
      * @symbol
      * ?upgradeJson\@ComponentItem\@\@SA_NAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPath\@Core\@\@V?$optional\@VSemVersion\@\@\@3\@\@Z

@@ -28,13 +28,6 @@ public:
      */
     MCAPI void addNameAction(struct NameAction const&);
     /**
-     * @symbol
-     * ?buildSchema\@NameableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VNameableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class NameableDefinition>>&);
-    /**
      * @symbol ?initialize\@NameableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVNameableComponent\@\@\@Z
      */
     MCAPI void initialize(class EntityContext&, class NameableComponent&) const;
@@ -42,5 +35,12 @@ public:
      * @symbol ??1NameableDefinition\@\@QEAA\@XZ
      */
     MCAPI ~NameableDefinition();
+    /**
+     * @symbol
+     * ?buildSchema\@NameableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VNameableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
+     */
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class NameableDefinition>>&);
     // NOLINTEND
 };

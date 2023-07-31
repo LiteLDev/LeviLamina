@@ -24,16 +24,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol
-     * ?bindV010\@ScriptMusicOptions\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptMusicOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptMusicOptions> bindV010();
-    /**
-     * @symbol
-     * ?bindV1\@ScriptMusicOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptMusicOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptMusicOptions> bindV1();
-    /**
      * @symbol ?getFade\@ScriptMusicOptions\@ScriptModuleMinecraft\@\@QEBAMXZ
      */
     MCAPI float getFade() const;
@@ -50,6 +40,16 @@ public:
      * ?validate\@ScriptMusicOptions\@ScriptModuleMinecraft\@\@QEBA?AV?$optional\@UError\@Scripting\@\@\@std\@\@XZ
      */
     MCAPI std::optional<struct Scripting::Error> validate() const;
+    /**
+     * @symbol
+     * ?bindV010\@ScriptMusicOptions\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptMusicOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptMusicOptions> bindV010();
+    /**
+     * @symbol
+     * ?bindV1\@ScriptMusicOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptMusicOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptMusicOptions> bindV1();
     /**
      * @symbol ?FADE_DEFAULT\@ScriptMusicOptions\@ScriptModuleMinecraft\@\@2MB
      */

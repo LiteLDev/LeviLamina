@@ -62,10 +62,6 @@ public:
      */
     MCAPI bool evaluateActor(class Actor const&, class VariantParameterList const&) const;
     /**
-     * @symbol ?initialize\@ActorFilterGroup\@\@SAXXZ
-     */
-    MCAPI static void initialize();
-    /**
      * @symbol ??4ActorFilterGroup\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class ActorFilterGroup& operator=(class ActorFilterGroup&&);
@@ -73,6 +69,10 @@ public:
      * @symbol ??4ActorFilterGroup\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
     MCAPI class ActorFilterGroup& operator=(class ActorFilterGroup const&);
+    /**
+     * @symbol ?initialize\@ActorFilterGroup\@\@SAXXZ
+     */
+    MCAPI static void initialize();
     // NOLINTEND
 
     // protected:

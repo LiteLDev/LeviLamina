@@ -80,10 +80,6 @@ public:
      */
     MCAPI float distanceToSqr(class AABB const&) const;
     /**
-     * @symbol ?fromPoints\@AABB\@\@SA?AV1\@AEBVVec3\@\@0\@Z
-     */
-    MCAPI static class AABB fromPoints(class Vec3 const&, class Vec3 const&);
-    /**
      * @symbol ?getBounds\@AABB\@\@QEBA?AVVec3\@\@XZ
      */
     MCAPI class Vec3 getBounds() const;
@@ -147,6 +143,10 @@ public:
      * @symbol ?translateCenterTo\@AABB\@\@QEAAAEAV1\@AEBVVec3\@\@\@Z
      */
     MCAPI class AABB& translateCenterTo(class Vec3 const&);
+    /**
+     * @symbol ?fromPoints\@AABB\@\@SA?AV1\@AEBVVec3\@\@0\@Z
+     */
+    MCAPI static class AABB fromPoints(class Vec3 const&, class Vec3 const&);
     /**
      * @symbol ?BLOCK_SHAPE\@AABB\@\@2V1\@B
      */

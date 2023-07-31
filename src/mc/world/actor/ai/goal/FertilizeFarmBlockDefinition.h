@@ -24,14 +24,14 @@ public:
      */
     MCAPI FertilizeFarmBlockDefinition();
     /**
+     * @symbol ?initialize\@FertilizeFarmBlockDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVFertilizeFarmBlockGoal\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class FertilizeFarmBlockGoal&) const;
+    /**
      * @symbol
      * ?buildSchema\@FertilizeFarmBlockDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VFertilizeFarmBlockDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void
     buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class FertilizeFarmBlockDefinition>>&);
-    /**
-     * @symbol ?initialize\@FertilizeFarmBlockDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVFertilizeFarmBlockGoal\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class FertilizeFarmBlockGoal&) const;
     // NOLINTEND
 };

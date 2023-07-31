@@ -43,6 +43,10 @@ public:
      */
     MCAPI VolumeDefinition();
     /**
+     * @symbol ??1VolumeDefinition\@\@QEAA\@XZ
+     */
+    MCAPI ~VolumeDefinition();
+    /**
      * @symbol ?bindType\@VolumeDefinition\@\@SAXXZ
      */
     MCAPI static void bindType();
@@ -54,10 +58,6 @@ public:
      * @symbol ?getMinSupportedVersion\@VolumeDefinition\@\@SAAEBVSemVersion\@\@XZ
      */
     MCAPI static class SemVersion const& getMinSupportedVersion();
-    /**
-     * @symbol ??1VolumeDefinition\@\@QEAA\@XZ
-     */
-    MCAPI ~VolumeDefinition();
     /**
      * @symbol ?NAME\@VolumeDefinition\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */

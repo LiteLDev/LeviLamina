@@ -125,11 +125,6 @@ public:
      */
     MCAPI class Actor const* getPositionEntity();
     /**
-     * @symbol
-     * ?load\@ExecuteContextCommandOrigin\@\@SA?AV?$unique_ptr\@VExecuteContextCommandOrigin\@\@U?$default_delete\@VExecuteContextCommandOrigin\@\@\@std\@\@\@std\@\@AEBVCompoundTag\@\@AEAVServerLevel\@\@\@Z
-     */
-    MCAPI static std::unique_ptr<class ExecuteContextCommandOrigin> load(class CompoundTag const&, class ServerLevel&);
-    /**
      * @symbol ?setDimension\@ExecuteContextCommandOrigin\@\@QEAAXAEBV?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
     MCAPI void setDimension(class AutomaticID<class Dimension, int> const&);
@@ -157,5 +152,10 @@ public:
      * @symbol ?setRotationEntity\@ExecuteContextCommandOrigin\@\@QEAAXAEBVActor\@\@\@Z
      */
     MCAPI void setRotationEntity(class Actor const&);
+    /**
+     * @symbol
+     * ?load\@ExecuteContextCommandOrigin\@\@SA?AV?$unique_ptr\@VExecuteContextCommandOrigin\@\@U?$default_delete\@VExecuteContextCommandOrigin\@\@\@std\@\@\@std\@\@AEBVCompoundTag\@\@AEAVServerLevel\@\@\@Z
+     */
+    MCAPI static std::unique_ptr<class ExecuteContextCommandOrigin> load(class CompoundTag const&, class ServerLevel&);
     // NOLINTEND
 };

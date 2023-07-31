@@ -27,11 +27,6 @@ public:
     MCAPI std::unordered_map<struct ActorUniqueID, std::vector<std::unique_ptr<class CompoundTag>>>&
           getOwnedActorsDimensionTransferLimbo();
     /**
-     * @symbol
-     * ?getOwnedEntityLimboStorageKeyForPlayer\@PlayerLimboActorManager\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UActorUniqueID\@\@\@Z
-     */
-    MCAPI static std::string getOwnedEntityLimboStorageKeyForPlayer(struct ActorUniqueID);
-    /**
      * @symbol ?loadAllOwnedLimboActors\@PlayerLimboActorManager\@\@QEAAXAEAVLevelStorage\@\@\@Z
      */
     MCAPI void loadAllOwnedLimboActors(class LevelStorage&);
@@ -43,5 +38,10 @@ public:
      * @symbol ??1PlayerLimboActorManager\@\@QEAA\@XZ
      */
     MCAPI ~PlayerLimboActorManager();
+    /**
+     * @symbol
+     * ?getOwnedEntityLimboStorageKeyForPlayer\@PlayerLimboActorManager\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UActorUniqueID\@\@\@Z
+     */
+    MCAPI static std::string getOwnedEntityLimboStorageKeyForPlayer(struct ActorUniqueID);
     // NOLINTEND
 };

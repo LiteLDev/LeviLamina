@@ -32,11 +32,6 @@ public:
      */
     MCAPI ScriptBlockLocationIterator(std::unique_ptr<class BaseBlockLocationIterator>);
     /**
-     * @symbol
-     * ?bind\@ScriptBlockLocationIterator\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockLocationIterator\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockLocationIterator> bind();
-    /**
      * @symbol ??4ScriptBlockLocationIterator\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraft::ScriptBlockLocationIterator&
@@ -45,6 +40,11 @@ public:
      * @symbol ??1ScriptBlockLocationIterator\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptBlockLocationIterator();
+    /**
+     * @symbol
+     * ?bind\@ScriptBlockLocationIterator\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockLocationIterator\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockLocationIterator> bind();
     // NOLINTEND
 };
 

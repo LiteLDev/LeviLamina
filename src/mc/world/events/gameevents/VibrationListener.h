@@ -72,19 +72,9 @@ public:
     // private:
     // NOLINTBEGIN
     /**
-     * @symbol ?_isVibrationOccluded\@VibrationListener\@\@CA_NAEAVBlockSource\@\@AEBVVec3\@\@1\@Z
-     */
-    MCAPI static bool _isVibrationOccluded(class BlockSource&, class Vec3 const&, class Vec3 const&);
-    /**
      * @symbol ?_requestVibrationParticle\@VibrationListener\@\@AEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@M\@Z
      */
     MCAPI void _requestVibrationParticle(class BlockSource&, class BlockPos const&, float);
-    /**
-     * @symbol
-     * ?_shouldIgnoreVibration\@VibrationListener\@\@CA_NAEAVBlockSource\@\@AEBVGameEvent\@\@AEBUGameEventContext\@\@\@Z
-     */
-    MCAPI static bool
-    _shouldIgnoreVibration(class BlockSource&, class GameEvent const&, struct GameEventContext const&);
     /**
      * @symbol ?_tickInternal\@VibrationListener\@\@AEAAXAEAVBlockSource\@\@\@Z
      */
@@ -95,5 +85,15 @@ public:
      */
     MCAPI void
     _trySendSneakCloseToSculkSensorEventPacket(class BlockSource&, class GameEvent const&, struct GameEventContext const&, class Vec3 const&);
+    /**
+     * @symbol ?_isVibrationOccluded\@VibrationListener\@\@CA_NAEAVBlockSource\@\@AEBVVec3\@\@1\@Z
+     */
+    MCAPI static bool _isVibrationOccluded(class BlockSource&, class Vec3 const&, class Vec3 const&);
+    /**
+     * @symbol
+     * ?_shouldIgnoreVibration\@VibrationListener\@\@CA_NAEAVBlockSource\@\@AEBVGameEvent\@\@AEBUGameEventContext\@\@\@Z
+     */
+    MCAPI static bool
+    _shouldIgnoreVibration(class BlockSource&, class GameEvent const&, struct GameEventContext const&);
     // NOLINTEND
 };

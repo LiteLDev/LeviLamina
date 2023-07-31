@@ -24,6 +24,10 @@ public:
      */
     MCAPI void addDefinitionData(class EntityContext&) const;
     /**
+     * @symbol ??1VolumeStorageDefinition\@VolumeInstanceData\@\@QEAA\@XZ
+     */
+    MCAPI ~VolumeStorageDefinition();
+    /**
      * @symbol ?bindType\@VolumeStorageDefinition\@VolumeInstanceData\@\@SAXXZ
      */
     MCAPI static void bindType();
@@ -31,10 +35,6 @@ public:
      * @symbol ?fromEntity\@VolumeStorageDefinition\@VolumeInstanceData\@\@SA?AU12\@AEBVEntityContext\@\@\@Z
      */
     MCAPI static struct VolumeInstanceData::VolumeStorageDefinition fromEntity(class EntityContext const&);
-    /**
-     * @symbol ??1VolumeStorageDefinition\@VolumeInstanceData\@\@QEAA\@XZ
-     */
-    MCAPI ~VolumeStorageDefinition();
     // NOLINTEND
 };
 

@@ -60,16 +60,6 @@ public:
         bool
     );
     /**
-     * @symbol
-     * ?buildCustomIconPath\@LevelSummary\@\@SA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@AEBVPath\@3\@\@Z
-     */
-    MCAPI static class Core::PathBuffer<std::string> buildCustomIconPath(class Core::Path const&);
-    /**
-     * @symbol
-     * ?buildWorldIconPath\@LevelSummary\@\@SA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@AEBVPath\@3\@\@Z
-     */
-    MCAPI static class Core::PathBuffer<std::string> buildWorldIconPath(class Core::Path const&);
-    /**
      * @symbol ??4LevelSummary\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
     MCAPI struct LevelSummary& operator=(struct LevelSummary const&);
@@ -82,6 +72,16 @@ public:
      * @symbol ??1LevelSummary\@\@QEAA\@XZ
      */
     MCAPI ~LevelSummary();
+    /**
+     * @symbol
+     * ?buildCustomIconPath\@LevelSummary\@\@SA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@AEBVPath\@3\@\@Z
+     */
+    MCAPI static class Core::PathBuffer<std::string> buildCustomIconPath(class Core::Path const&);
+    /**
+     * @symbol
+     * ?buildWorldIconPath\@LevelSummary\@\@SA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@AEBVPath\@3\@\@Z
+     */
+    MCAPI static class Core::PathBuffer<std::string> buildWorldIconPath(class Core::Path const&);
     /**
      * @symbol
      * ?CUSTOM_ICON_FILENAME\@LevelSummary\@\@2V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@B

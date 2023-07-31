@@ -67,10 +67,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ?buildOverworld\@TerrainShaper\@\@SA?AV1\@XZ
-     */
-    MCAPI static class TerrainShaper buildOverworld();
-    /**
      * @symbol ?factor\@TerrainShaper\@\@QEBAMMMM\@Z
      */
     MCAPI float factor(float, float, float) const;
@@ -82,6 +78,10 @@ public:
      * @symbol ?offset\@TerrainShaper\@\@QEBAMMMM\@Z
      */
     MCAPI float offset(float, float, float) const;
+    /**
+     * @symbol ?buildOverworld\@TerrainShaper\@\@SA?AV1\@XZ
+     */
+    MCAPI static class TerrainShaper buildOverworld();
     // NOLINTEND
 
     // private:

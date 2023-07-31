@@ -18,11 +18,6 @@ public:
      */
     MCAPI Objective(std::string const&, class ObjectiveCriteria const&);
     /**
-     * @symbol
-     * ?deserialize\@Objective\@\@SA?AV?$unique_ptr\@VObjective\@\@U?$default_delete\@VObjective\@\@\@std\@\@\@std\@\@AEBVCompoundTag\@\@AEAVScoreboard\@\@\@Z
-     */
-    MCAPI static std::unique_ptr<class Objective> deserialize(class CompoundTag const&, class Scoreboard&);
-    /**
      * @symbol ?getCriteria\@Objective\@\@QEBAAEBVObjectiveCriteria\@\@XZ
      */
     MCAPI class ObjectiveCriteria const& getCriteria() const;
@@ -58,14 +53,19 @@ public:
      */
     MCAPI bool hasScores() const;
     /**
+     * @symbol ??1Objective\@\@QEAA\@XZ
+     */
+    MCAPI ~Objective();
+    /**
+     * @symbol
+     * ?deserialize\@Objective\@\@SA?AV?$unique_ptr\@VObjective\@\@U?$default_delete\@VObjective\@\@\@std\@\@\@std\@\@AEBVCompoundTag\@\@AEAVScoreboard\@\@\@Z
+     */
+    MCAPI static std::unique_ptr<class Objective> deserialize(class CompoundTag const&, class Scoreboard&);
+    /**
      * @symbol
      * ?serialize\@Objective\@\@SA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@AEBV1\@\@Z
      */
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class Objective const&);
-    /**
-     * @symbol ??1Objective\@\@QEAA\@XZ
-     */
-    MCAPI ~Objective();
     // NOLINTEND
 
     // private:

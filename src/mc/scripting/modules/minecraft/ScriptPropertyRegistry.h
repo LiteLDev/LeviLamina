@@ -31,11 +31,6 @@ public:
     MCAPI ScriptPropertyRegistry(class ServerLevel&);
     /**
      * @symbol
-     * ?bind\@ScriptPropertyRegistry\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptPropertyRegistry\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptPropertyRegistry> bind();
-    /**
-     * @symbol
      * ?registerEntityTypeDynamicProperties\@ScriptPropertyRegistry\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEBVScriptDynamicPropertiesDefinition\@2\@AEAVScriptActorType\@2\@\@Z
      */
     MCAPI class Scripting::Result<void>
@@ -46,6 +41,11 @@ public:
      */
     MCAPI class Scripting::Result<void>
     registerWorldDynamicProperties(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&);
+    /**
+     * @symbol
+     * ?bind\@ScriptPropertyRegistry\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptPropertyRegistry\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptPropertyRegistry> bind();
     // NOLINTEND
 };
 

@@ -45,20 +45,20 @@ public:
      */
     virtual bool initializeFromNetwork(class CompoundTag const&);
     /**
-     * @symbol ?bindType\@DurabilityItemComponent\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ?getDamageChanceRange\@DurabilityItemComponent\@\@QEBA?AUIntRange\@\@XZ
      */
     MCAPI struct IntRange getDamageChanceRange() const;
     /**
-     * @symbol ?getIdentifier\@DurabilityItemComponent\@\@SAAEBVHashedString\@\@XZ
-     */
-    MCAPI static class HashedString const& getIdentifier();
-    /**
      * @symbol ?getMaxDamage\@DurabilityItemComponent\@\@QEBAHXZ
      */
     MCAPI int getMaxDamage() const;
+    /**
+     * @symbol ?bindType\@DurabilityItemComponent\@\@SAXXZ
+     */
+    MCAPI static void bindType();
+    /**
+     * @symbol ?getIdentifier\@DurabilityItemComponent\@\@SAAEBVHashedString\@\@XZ
+     */
+    MCAPI static class HashedString const& getIdentifier();
     // NOLINTEND
 };

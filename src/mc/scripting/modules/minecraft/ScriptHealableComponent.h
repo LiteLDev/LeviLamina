@@ -53,11 +53,6 @@ public:
     ScriptHealableComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
     /**
      * @symbol
-     * ?bind\@ScriptHealableComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptHealableComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptHealableComponent> bind();
-    /**
-     * @symbol
      * ?getFilters\@ScriptHealableComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@VActorFilterGroup\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<class ActorFilterGroup> getFilters() const;
@@ -70,6 +65,11 @@ public:
      * ?getItems\@ScriptHealableComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$vector\@UFeedItem\@\@V?$allocator\@UFeedItem\@\@\@std\@\@\@std\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<std::vector<struct FeedItem>> getItems() const;
+    /**
+     * @symbol
+     * ?bind\@ScriptHealableComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptHealableComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptHealableComponent> bind();
     /**
      * @symbol ?ComponentId\@ScriptHealableComponent\@ScriptModuleMinecraft\@\@2PEBDEB
      */

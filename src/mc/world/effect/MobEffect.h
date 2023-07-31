@@ -29,10 +29,6 @@ public:
          */
         MCAPI FactorCalculationData(struct MobEffect::FactorCalculationData const&);
         /**
-         * @symbol ?load\@FactorCalculationData\@MobEffect\@\@SA?AU12\@PEBVCompoundTag\@\@\@Z
-         */
-        MCAPI static struct MobEffect::FactorCalculationData load(class CompoundTag const*);
-        /**
          * @symbol
          * ?save\@FactorCalculationData\@MobEffect\@\@QEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
          */
@@ -41,6 +37,10 @@ public:
          * @symbol ??1FactorCalculationData\@MobEffect\@\@QEAA\@XZ
          */
         MCAPI ~FactorCalculationData();
+        /**
+         * @symbol ?load\@FactorCalculationData\@MobEffect\@\@SA?AU12\@PEBVCompoundTag\@\@\@Z
+         */
+        MCAPI static struct MobEffect::FactorCalculationData load(class CompoundTag const*);
         // NOLINTEND
     };
 
@@ -109,15 +109,6 @@ public:
      */
     MCAPI void addAttributeModifier(class Attribute const&, std::shared_ptr<class AttributeModifier>);
     /**
-     * @symbol ?getById\@MobEffect\@\@SAPEAV1\@I\@Z
-     */
-    MCAPI static class MobEffect* getById(unsigned int);
-    /**
-     * @symbol
-     * ?getByName\@MobEffect\@\@SAPEAV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static class MobEffect* getByName(std::string const&);
-    /**
      * @symbol
      * ?getDescriptionId\@MobEffect\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
@@ -132,18 +123,9 @@ public:
     MCAPI unsigned int getId() const;
     /**
      * @symbol
-     * ?getNameById\@MobEffect\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@I\@Z
-     */
-    MCAPI static std::string getNameById(unsigned int);
-    /**
-     * @symbol
      * ?getResourceName\@MobEffect\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string const& getResourceName() const;
-    /**
-     * @symbol ?initEffects\@MobEffect\@\@SAXPEAVResourcePackManager\@\@AEBVBaseGameVersion\@\@AEBVExperiments\@\@\@Z
-     */
-    MCAPI static void initEffects(class ResourcePackManager*, class BaseGameVersion const&, class Experiments const&);
     /**
      * @symbol ?isHarmful\@MobEffect\@\@QEBA_NXZ
      */
@@ -161,15 +143,33 @@ public:
      */
     MCAPI void setValueAmplifier(std::shared_ptr<class Amplifier>);
     /**
-     * @symbol ?shutdownEffects\@MobEffect\@\@SAXXZ
-     */
-    MCAPI static void shutdownEffects();
-    /**
      * @symbol
      * ?viewAttributeModifiers\@MobEffect\@\@QEBAAEBV?$vector\@U?$pair\@PEBVAttribute\@\@V?$shared_ptr\@VAttributeModifier\@\@\@std\@\@\@std\@\@V?$allocator\@U?$pair\@PEBVAttribute\@\@V?$shared_ptr\@VAttributeModifier\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@XZ
      */
     MCAPI std::vector<std::pair<class Attribute const*, std::shared_ptr<class AttributeModifier>>> const&
           viewAttributeModifiers() const;
+    /**
+     * @symbol ?getById\@MobEffect\@\@SAPEAV1\@I\@Z
+     */
+    MCAPI static class MobEffect* getById(unsigned int);
+    /**
+     * @symbol
+     * ?getByName\@MobEffect\@\@SAPEAV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static class MobEffect* getByName(std::string const&);
+    /**
+     * @symbol
+     * ?getNameById\@MobEffect\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@I\@Z
+     */
+    MCAPI static std::string getNameById(unsigned int);
+    /**
+     * @symbol ?initEffects\@MobEffect\@\@SAXPEAVResourcePackManager\@\@AEBVBaseGameVersion\@\@AEBVExperiments\@\@\@Z
+     */
+    MCAPI static void initEffects(class ResourcePackManager*, class BaseGameVersion const&, class Experiments const&);
+    /**
+     * @symbol ?shutdownEffects\@MobEffect\@\@SAXXZ
+     */
+    MCAPI static void shutdownEffects();
     /**
      * @symbol ?ABSORPTION\@MobEffect\@\@2PEAV1\@EA
      */

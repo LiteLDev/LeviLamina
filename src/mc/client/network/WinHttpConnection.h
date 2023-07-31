@@ -60,18 +60,6 @@ public:
      */
     MCAPI long HttpCallPerformAsync(struct XAsyncBlock*);
     /**
-     * @symbol
-     * ?Initialize\@WinHttpConnection\@httpclient\@xbox\@\@SA?AV?$Result\@V?$shared_ptr\@VWinHttpConnection\@httpclient\@xbox\@\@\@std\@\@\@\@PEAXPEAUHC_WEBSOCKET_OBSERVER\@\@PEBD2W4proxy_type\@23\@$$QEAUXPlatSecurityInformation\@23\@\@Z
-     */
-    MCAPI static class Result<std::shared_ptr<class xbox::httpclient::WinHttpConnection>>
-    Initialize(void*, struct HC_WEBSOCKET_OBSERVER*, char const*, char const*, enum class xbox::httpclient::proxy_type, struct xbox::httpclient::XPlatSecurityInformation&&);
-    /**
-     * @symbol
-     * ?Initialize\@WinHttpConnection\@httpclient\@xbox\@\@SA?AV?$Result\@V?$shared_ptr\@VWinHttpConnection\@httpclient\@xbox\@\@\@std\@\@\@\@PEAXPEAUHC_CALL\@\@W4proxy_type\@23\@$$QEAUXPlatSecurityInformation\@23\@\@Z
-     */
-    MCAPI static class Result<std::shared_ptr<class xbox::httpclient::WinHttpConnection>>
-    Initialize(void*, struct HC_CALL*, enum class xbox::httpclient::proxy_type, struct xbox::httpclient::XPlatSecurityInformation&&);
-    /**
      * @symbol ?WebSocketConnectAsync\@WinHttpConnection\@httpclient\@xbox\@\@QEAAJPEAUXAsyncBlock\@\@\@Z
      */
     MCAPI long WebSocketConnectAsync(struct XAsyncBlock*);
@@ -93,6 +81,18 @@ public:
         uint64_t,
         enum class _WINHTTP_WEB_SOCKET_BUFFER_TYPE
     );
+    /**
+     * @symbol
+     * ?Initialize\@WinHttpConnection\@httpclient\@xbox\@\@SA?AV?$Result\@V?$shared_ptr\@VWinHttpConnection\@httpclient\@xbox\@\@\@std\@\@\@\@PEAXPEAUHC_WEBSOCKET_OBSERVER\@\@PEBD2W4proxy_type\@23\@$$QEAUXPlatSecurityInformation\@23\@\@Z
+     */
+    MCAPI static class Result<std::shared_ptr<class xbox::httpclient::WinHttpConnection>>
+    Initialize(void*, struct HC_WEBSOCKET_OBSERVER*, char const*, char const*, enum class xbox::httpclient::proxy_type, struct xbox::httpclient::XPlatSecurityInformation&&);
+    /**
+     * @symbol
+     * ?Initialize\@WinHttpConnection\@httpclient\@xbox\@\@SA?AV?$Result\@V?$shared_ptr\@VWinHttpConnection\@httpclient\@xbox\@\@\@std\@\@\@\@PEAXPEAUHC_CALL\@\@W4proxy_type\@23\@$$QEAUXPlatSecurityInformation\@23\@\@Z
+     */
+    MCAPI static class Result<std::shared_ptr<class xbox::httpclient::WinHttpConnection>>
+    Initialize(void*, struct HC_CALL*, enum class xbox::httpclient::proxy_type, struct xbox::httpclient::XPlatSecurityInformation&&);
     // NOLINTEND
 
     // private:
@@ -110,11 +110,6 @@ public:
      */
     MCAPI void StartWinHttpClose();
     /**
-     * @symbol
-     * ?WebSocketConnectProvider\@WinHttpConnection\@httpclient\@xbox\@\@CAJW4XAsyncOp\@\@PEBUXAsyncProviderData\@\@\@Z
-     */
-    MCAPI static long WebSocketConnectProvider(enum class XAsyncOp, struct XAsyncProviderData const*);
-    /**
      * @symbol ?WebSocketReadAsync\@WinHttpConnection\@httpclient\@xbox\@\@AEAAJXZ
      */
     MCAPI long WebSocketReadAsync();
@@ -126,6 +121,19 @@ public:
      * @symbol ?WebSocketSendMessage\@WinHttpConnection\@httpclient\@xbox\@\@AEAAXAEBUWebSocketSendContext\@123\@\@Z
      */
     MCAPI void WebSocketSendMessage(struct xbox::httpclient::WinHttpConnection::WebSocketSendContext const&);
+    /**
+     * @symbol ?complete_task\@WinHttpConnection\@httpclient\@xbox\@\@AEAAXJI\@Z
+     */
+    MCAPI void complete_task(long, unsigned int);
+    /**
+     * @symbol ?on_websocket_disconnected\@WinHttpConnection\@httpclient\@xbox\@\@AEAAXG\@Z
+     */
+    MCAPI void on_websocket_disconnected(unsigned short);
+    /**
+     * @symbol
+     * ?WebSocketConnectProvider\@WinHttpConnection\@httpclient\@xbox\@\@CAJW4XAsyncOp\@\@PEBUXAsyncProviderData\@\@\@Z
+     */
+    MCAPI static long WebSocketConnectProvider(enum class XAsyncOp, struct XAsyncProviderData const*);
     /**
      * @symbol
      * ?WebSocketSendProvider\@WinHttpConnection\@httpclient\@xbox\@\@CAJW4XAsyncOp\@\@PEBUXAsyncProviderData\@\@\@Z
@@ -150,10 +158,6 @@ public:
     MCAPI static void
     callback_websocket_status_headers_available(void*, struct xbox::httpclient::WinHttpCallbackContext*);
     /**
-     * @symbol ?complete_task\@WinHttpConnection\@httpclient\@xbox\@\@AEAAXJI\@Z
-     */
-    MCAPI void complete_task(long, unsigned int);
-    /**
      * @symbol ?completion_callback\@WinHttpConnection\@httpclient\@xbox\@\@CAXPEAX_KK0K\@Z
      */
     MCAPI static void completion_callback(void*, uint64_t, unsigned long, void*, unsigned long);
@@ -161,10 +165,6 @@ public:
      * @symbol ?flush_response_buffer\@WinHttpConnection\@httpclient\@xbox\@\@CAJPEAV123\@\@Z
      */
     MCAPI static long flush_response_buffer(class xbox::httpclient::WinHttpConnection*);
-    /**
-     * @symbol ?on_websocket_disconnected\@WinHttpConnection\@httpclient\@xbox\@\@AEAAXG\@Z
-     */
-    MCAPI void on_websocket_disconnected(unsigned short);
     /**
      * @symbol ?parse_headers_string\@WinHttpConnection\@httpclient\@xbox\@\@CAXPEAUHC_CALL\@\@PEA_W\@Z
      */

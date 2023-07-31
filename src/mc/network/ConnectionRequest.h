@@ -23,11 +23,6 @@ public:
     MCAPI ConnectionRequest(class ConnectionRequest const&);
     /**
      * @symbol
-     * ?fromString\@ConnectionRequest\@\@SA?AV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static class ConnectionRequest fromString(std::string const&);
-    /**
-     * @symbol
      * ?getAnimatedImageData\@ConnectionRequest\@\@QEBA?AV?$vector\@VAnimatedImageData\@\@V?$allocator\@VAnimatedImageData\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::vector<class AnimatedImageData> getAnimatedImageData() const;
@@ -209,6 +204,11 @@ public:
      * @symbol ??1ConnectionRequest\@\@QEAA\@XZ
      */
     MCAPI ~ConnectionRequest();
+    /**
+     * @symbol
+     * ?fromString\@ConnectionRequest\@\@SA?AV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static class ConnectionRequest fromString(std::string const&);
     // NOLINTEND
 
     // private:

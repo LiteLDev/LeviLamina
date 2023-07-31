@@ -27,10 +27,6 @@ public:
      */
     MCAPI class AllowList& getAllowList() const;
     /**
-     * @symbol ?loadFromDefaultLocations\@AllowListFile\@\@SA?AV1\@AEAVIFileSystem\@Core\@\@\@Z
-     */
-    MCAPI static class AllowListFile loadFromDefaultLocations(class Core::IFileSystem&);
-    /**
      * @symbol ?reload\@AllowListFile\@\@QEAA?AW4FileReadResult\@\@XZ
      */
     MCAPI enum class FileReadResult reload();
@@ -42,5 +38,9 @@ public:
      * @symbol ??1AllowListFile\@\@QEAA\@XZ
      */
     MCAPI ~AllowListFile();
+    /**
+     * @symbol ?loadFromDefaultLocations\@AllowListFile\@\@SA?AV1\@AEAVIFileSystem\@Core\@\@\@Z
+     */
+    MCAPI static class AllowListFile loadFromDefaultLocations(class Core::IFileSystem&);
     // NOLINTEND
 };

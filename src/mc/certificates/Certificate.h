@@ -21,12 +21,6 @@ public:
      */
     MCAPI Certificate(class Certificate const&);
     /**
-     * @symbol
-     * ?createWrappedCertificate\@Certificate\@\@SA?AV?$unique_ptr\@VCertificate\@\@U?$default_delete\@VCertificate\@\@\@std\@\@\@std\@\@AEAVPrivateKeyManager\@\@_J1AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@_NPEBVValue\@Json\@\@V23\@\@Z
-     */
-    MCAPI static std::unique_ptr<class Certificate>
-    createWrappedCertificate(class PrivateKeyManager&, int64_t, int64_t, std::string const&, bool, class Json::Value const*, std::unique_ptr<class Certificate>);
-    /**
      * @symbol ?getExpirationDate\@Certificate\@\@QEBA_JXZ
      */
     MCAPI int64_t getExpirationDate() const;
@@ -65,6 +59,12 @@ public:
      * @symbol ??1Certificate\@\@QEAA\@XZ
      */
     MCAPI ~Certificate();
+    /**
+     * @symbol
+     * ?createWrappedCertificate\@Certificate\@\@SA?AV?$unique_ptr\@VCertificate\@\@U?$default_delete\@VCertificate\@\@\@std\@\@\@std\@\@AEAVPrivateKeyManager\@\@_J1AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@_NPEBVValue\@Json\@\@V23\@\@Z
+     */
+    MCAPI static std::unique_ptr<class Certificate>
+    createWrappedCertificate(class PrivateKeyManager&, int64_t, int64_t, std::string const&, bool, class Json::Value const*, std::unique_ptr<class Certificate>);
     // NOLINTEND
 
     // private:

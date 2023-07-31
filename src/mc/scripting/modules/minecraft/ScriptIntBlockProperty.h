@@ -42,11 +42,6 @@ public:
      */
     MCAPI ScriptIntBlockProperty(class ScriptModuleMinecraft::ScriptIntBlockProperty&&);
     /**
-     * @symbol
-     * ?bind\@ScriptIntBlockProperty\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptIntBlockProperty\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptIntBlockProperty> bind();
-    /**
      * @symbol ?getState\@ScriptIntBlockProperty\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<int> getState() const;
@@ -59,6 +54,11 @@ public:
      * @symbol ?setState\@ScriptIntBlockProperty\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@H\@Z
      */
     MCAPI class Scripting::Result<void> setState(int);
+    /**
+     * @symbol
+     * ?bind\@ScriptIntBlockProperty\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptIntBlockProperty\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptIntBlockProperty> bind();
     // NOLINTEND
 };
 

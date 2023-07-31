@@ -21,13 +21,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol
-     * ?buildSchema\@AreaAttackDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VAreaAttackDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AreaAttackDefinition>>&);
-    /**
      * @symbol ?initialize\@AreaAttackDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVAreaAttackComponent\@\@\@Z
      */
     MCAPI void initialize(class EntityContext&, class AreaAttackComponent&) const;
@@ -36,5 +29,12 @@ public:
      * ?setDamageCause\@AreaAttackDefinition\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void setDamageCause(std::string const&);
+    /**
+     * @symbol
+     * ?buildSchema\@AreaAttackDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VAreaAttackDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
+     */
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AreaAttackDefinition>>&);
     // NOLINTEND
 };

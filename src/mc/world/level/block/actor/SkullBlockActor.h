@@ -113,12 +113,6 @@ public:
      */
     MCAPI enum class SkullBlockActor::SkullType getSkullType() const;
     /**
-     * @symbol
-     * ?getSkullType\@SkullBlockActor\@\@SA?AV?$optional\@W4SkullType\@SkullBlockActor\@\@\@std\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI static std::optional<enum class SkullBlockActor::SkullType>
-    getSkullType(class BlockSource&, class BlockPos const&);
-    /**
      * @symbol ?setRotation\@SkullBlockActor\@\@QEAAXM\@Z
      */
     MCAPI void setRotation(float);
@@ -126,5 +120,11 @@ public:
      * @symbol ?setSkullType\@SkullBlockActor\@\@QEAAXH\@Z
      */
     MCAPI void setSkullType(int);
+    /**
+     * @symbol
+     * ?getSkullType\@SkullBlockActor\@\@SA?AV?$optional\@W4SkullType\@SkullBlockActor\@\@\@std\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI static std::optional<enum class SkullBlockActor::SkullType>
+    getSkullType(class BlockSource&, class BlockPos const&);
     // NOLINTEND
 };

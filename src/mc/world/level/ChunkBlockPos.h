@@ -21,6 +21,10 @@ public:
      */
     MCAPI ChunkBlockPos(class BlockPos const&, short);
     /**
+     * @symbol ?toPos\@ChunkBlockPos\@\@QEBA?AVPos\@\@XZ
+     */
+    MCAPI class Pos toPos() const;
+    /**
      * @symbol ?from2D\@ChunkBlockPos\@\@SA?AV1\@EE\@Z
      */
     MCAPI static class ChunkBlockPos from2D(unsigned char, unsigned char);
@@ -28,9 +32,5 @@ public:
      * @symbol ?fromLegacyIndex\@ChunkBlockPos\@\@SA?AV1\@G\@Z
      */
     MCAPI static class ChunkBlockPos fromLegacyIndex(unsigned short);
-    /**
-     * @symbol ?toPos\@ChunkBlockPos\@\@QEBA?AVPos\@\@XZ
-     */
-    MCAPI class Pos toPos() const;
     // NOLINTEND
 };

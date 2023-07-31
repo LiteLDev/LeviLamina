@@ -45,14 +45,6 @@ public:
      */
     virtual bool initializeFromNetwork(class CompoundTag const&);
     /**
-     * @symbol ?bindType\@WearableItemComponent\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
-     * @symbol ?getIdentifier\@WearableItemComponent\@\@SAAEBVHashedString\@\@XZ
-     */
-    MCAPI static class HashedString const& getIdentifier();
-    /**
      * @symbol ?getSlot\@WearableItemComponent\@\@QEBA?AW4EquipmentSlot\@\@XZ
      */
     MCAPI enum class EquipmentSlot getSlot() const;
@@ -60,5 +52,13 @@ public:
      * @symbol ?use\@WearableItemComponent\@\@QEBA_NAEAVItemStack\@\@AEAVPlayer\@\@\@Z
      */
     MCAPI bool use(class ItemStack&, class Player&) const;
+    /**
+     * @symbol ?bindType\@WearableItemComponent\@\@SAXXZ
+     */
+    MCAPI static void bindType();
+    /**
+     * @symbol ?getIdentifier\@WearableItemComponent\@\@SAAEBVHashedString\@\@XZ
+     */
+    MCAPI static class HashedString const& getIdentifier();
     // NOLINTEND
 };

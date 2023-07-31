@@ -16,10 +16,6 @@ public:
      */
     MCAPI WaterMovementComponent();
     /**
-     * @symbol ?getDefaultDragFactor\@WaterMovementComponent\@\@SAMXZ
-     */
-    MCAPI static float getDefaultDragFactor();
-    /**
      * @symbol ?getDragFactor\@WaterMovementComponent\@\@QEBAMXZ
      */
     MCAPI float getDragFactor() const;
@@ -27,5 +23,9 @@ public:
      * @symbol ?initFromDefinition\@WaterMovementComponent\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void initFromDefinition(class Actor&);
+    /**
+     * @symbol ?getDefaultDragFactor\@WaterMovementComponent\@\@SAMXZ
+     */
+    MCAPI static float getDefaultDragFactor();
     // NOLINTEND
 };

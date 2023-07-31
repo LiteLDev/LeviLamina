@@ -44,17 +44,6 @@ public:
     MCAPI ScriptItemUseOnAfterEvent(struct ScriptModuleMinecraft::ScriptItemUseOnAfterEvent const&);
     /**
      * @symbol
-     * ?bind\@ScriptItemUseOnAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptItemUseOnAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemUseOnAfterEvent> bind();
-    /**
-     * @symbol
-     * ?bindV010\@ScriptItemUseOnAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptItemUseOnAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemUseOnAfterEvent>
-    bindV010();
-    /**
-     * @symbol
      * ?getBlockLocation_V010\@ScriptItemUseOnAfterEvent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@VBlockPos\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<class BlockPos> getBlockLocation_V010() const;
@@ -68,6 +57,17 @@ public:
      */
     MCAPI struct ScriptModuleMinecraft::ScriptItemUseOnAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptItemUseOnAfterEvent&&);
+    /**
+     * @symbol
+     * ?bind\@ScriptItemUseOnAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptItemUseOnAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemUseOnAfterEvent> bind();
+    /**
+     * @symbol
+     * ?bindV010\@ScriptItemUseOnAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptItemUseOnAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemUseOnAfterEvent>
+    bindV010();
     // NOLINTEND
 };
 

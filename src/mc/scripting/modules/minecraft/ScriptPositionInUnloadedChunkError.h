@@ -27,15 +27,15 @@ public:
      */
     MCAPI ScriptPositionInUnloadedChunkError(class Vec3 const&);
     /**
+     * @symbol ??1ScriptPositionInUnloadedChunkError\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptPositionInUnloadedChunkError();
+    /**
      * @symbol
      * ?bind\@ScriptPositionInUnloadedChunkError\@ScriptModuleMinecraft\@\@SA?AV?$ErrorBindingBuilder\@UScriptPositionInUnloadedChunkError\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ErrorBindingBuilder<struct ScriptModuleMinecraft::ScriptPositionInUnloadedChunkError>
     bind();
-    /**
-     * @symbol ??1ScriptPositionInUnloadedChunkError\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptPositionInUnloadedChunkError();
     // NOLINTEND
 };
 

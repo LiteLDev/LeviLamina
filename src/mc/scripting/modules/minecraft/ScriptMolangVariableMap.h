@@ -27,11 +27,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol
-     * ?bind\@ScriptMolangVariableMap\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptMolangVariableMap\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMolangVariableMap> bind();
-    /**
      * @symbol ?getVariableMap\@ScriptMolangVariableMap\@ScriptModuleMinecraft\@\@QEAAAEAVMolangVariableMap\@\@XZ
      */
     MCAPI class MolangVariableMap& getVariableMap();
@@ -80,6 +75,11 @@ public:
      * @symbol ??1ScriptMolangVariableMap\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptMolangVariableMap();
+    /**
+     * @symbol
+     * ?bind\@ScriptMolangVariableMap\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptMolangVariableMap\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMolangVariableMap> bind();
     // NOLINTEND
 };
 

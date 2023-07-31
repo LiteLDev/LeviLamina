@@ -24,12 +24,6 @@ public:
      */
     MCAPI ScriptPlayAnimationOptions(struct ScriptModuleMinecraft::ScriptPlayAnimationOptions const&);
     /**
-     * @symbol
-     * ?bind\@ScriptPlayAnimationOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptPlayAnimationOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptPlayAnimationOptions>
-    bind();
-    /**
      * @symbol ??4ScriptPlayAnimationOptions\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptPlayAnimationOptions&
@@ -43,6 +37,12 @@ public:
      * @symbol ??1ScriptPlayAnimationOptions\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptPlayAnimationOptions();
+    /**
+     * @symbol
+     * ?bind\@ScriptPlayAnimationOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptPlayAnimationOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptPlayAnimationOptions>
+    bind();
     // NOLINTEND
 };
 

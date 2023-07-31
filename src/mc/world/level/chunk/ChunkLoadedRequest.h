@@ -35,12 +35,6 @@ public:
      */
     MCAPI bool areaContainsChunk(class LevelChunk const&) const;
     /**
-     * @symbol
-     * ?load\@ChunkLoadedRequest\@\@SA?AUDeserializedChunkLoadedRequest\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVCompoundTag\@\@AEAVICommandOriginLoader\@\@0\@Z
-     */
-    MCAPI static struct DeserializedChunkLoadedRequest
-    load(std::string const&, class CompoundTag const&, class ICommandOriginLoader&, std::string const&);
-    /**
      * @symbol ?serialize\@ChunkLoadedRequest\@\@QEAA?AVCompoundTag\@\@W4ChunkRequestListType\@\@\@Z
      */
     MCAPI class CompoundTag serialize(enum class ChunkRequestListType);
@@ -48,6 +42,12 @@ public:
      * @symbol ??1ChunkLoadedRequest\@\@QEAA\@XZ
      */
     MCAPI ~ChunkLoadedRequest();
+    /**
+     * @symbol
+     * ?load\@ChunkLoadedRequest\@\@SA?AUDeserializedChunkLoadedRequest\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVCompoundTag\@\@AEAVICommandOriginLoader\@\@0\@Z
+     */
+    MCAPI static struct DeserializedChunkLoadedRequest
+    load(std::string const&, class CompoundTag const&, class ICommandOriginLoader&, std::string const&);
     // NOLINTEND
 
     // private:

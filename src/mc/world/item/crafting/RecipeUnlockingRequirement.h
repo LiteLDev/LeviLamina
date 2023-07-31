@@ -40,13 +40,13 @@ public:
      */
     MCAPI bool isUnlockable() const;
     /**
+     * @symbol ??1RecipeUnlockingRequirement\@\@QEAA\@XZ
+     */
+    MCAPI ~RecipeUnlockingRequirement();
+    /**
      * @symbol
      * ?unlockingContextFromString\@RecipeUnlockingRequirement\@\@SA?AW4UnlockingContext\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI static enum class RecipeUnlockingRequirement::UnlockingContext unlockingContextFromString(std::string const&);
-    /**
-     * @symbol ??1RecipeUnlockingRequirement\@\@QEAA\@XZ
-     */
-    MCAPI ~RecipeUnlockingRequirement();
     // NOLINTEND
 };

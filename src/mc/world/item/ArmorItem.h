@@ -234,6 +234,10 @@ public:
      */
     MCAPI ArmorItem(std::string const&, int, class ArmorItem::ArmorMaterial const&, int, enum class ArmorSlot, bool);
     /**
+     * @symbol ?isTrimAllowed\@ArmorItem\@\@QEBA_NXZ
+     */
+    MCAPI bool isTrimAllowed() const;
+    /**
      * @symbol ?dispenseArmor\@ArmorItem\@\@SA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@EW4ArmorSlot\@\@\@Z
      */
     MCAPI static bool
@@ -246,10 +250,6 @@ public:
      * @symbol ?isDamageable\@ArmorItem\@\@SA_NAEBVItemDescriptor\@\@\@Z
      */
     MCAPI static bool isDamageable(class ItemDescriptor const&);
-    /**
-     * @symbol ?isTrimAllowed\@ArmorItem\@\@QEBA_NXZ
-     */
-    MCAPI bool isTrimAllowed() const;
     /**
      * @symbol ?CHAIN\@ArmorItem\@\@2VArmorMaterial\@1\@B
      */

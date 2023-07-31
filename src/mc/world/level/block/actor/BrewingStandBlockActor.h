@@ -105,10 +105,6 @@ public:
      */
     MCAPI int getFuelTotal() const;
     /**
-     * @symbol ?isFuel\@BrewingStandBlockActor\@\@SA_NAEBVItemDescriptor\@\@\@Z
-     */
-    MCAPI static bool isFuel(class ItemDescriptor const&);
-    /**
      * @symbol ?setBrewTime\@BrewingStandBlockActor\@\@QEAAXH\@Z
      */
     MCAPI void setBrewTime(int);
@@ -120,6 +116,10 @@ public:
      * @symbol ?setFuelTotal\@BrewingStandBlockActor\@\@QEAAXH\@Z
      */
     MCAPI void setFuelTotal(int);
+    /**
+     * @symbol ?isFuel\@BrewingStandBlockActor\@\@SA_NAEBVItemDescriptor\@\@\@Z
+     */
+    MCAPI static bool isFuel(class ItemDescriptor const&);
     // NOLINTEND
 
     // private:

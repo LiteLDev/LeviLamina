@@ -39,12 +39,6 @@ public:
 #endif
     /**
      * @symbol
-     * ?bind\@ScriptBlockInventoryComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockInventoryComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockInventoryComponent>
-    bind();
-    /**
-     * @symbol
      * ?getOrCreateContainer\@ScriptBlockInventoryComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@V?$StrongTypedObjectHandle\@VScriptContainerWrapper\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<
@@ -62,6 +56,12 @@ public:
      */
     MCAPI class ScriptModuleMinecraft::ScriptBlockInventoryComponent&
     operator=(class ScriptModuleMinecraft::ScriptBlockInventoryComponent&&);
+    /**
+     * @symbol
+     * ?bind\@ScriptBlockInventoryComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockInventoryComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockInventoryComponent>
+    bind();
     /**
      * @symbol ?ComponentId\@ScriptBlockInventoryComponent\@ScriptModuleMinecraft\@\@2PEBDEB
      */

@@ -172,12 +172,12 @@ public:
      */
     MCAPI Bat(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
     /**
-     * @symbol ?hasRestingBlockAbove\@Bat\@\@SA_NAEBVVec3\@\@AEBVBlockSource\@\@\@Z
-     */
-    MCAPI static bool hasRestingBlockAbove(class Vec3 const&, class BlockSource const&);
-    /**
      * @symbol ?postNormalTick\@Bat\@\@QEAAXXZ
      */
     MCAPI void postNormalTick();
+    /**
+     * @symbol ?hasRestingBlockAbove\@Bat\@\@SA_NAEBVVec3\@\@AEBVBlockSource\@\@\@Z
+     */
+    MCAPI static bool hasRestingBlockAbove(class Vec3 const&, class BlockSource const&);
     // NOLINTEND
 };

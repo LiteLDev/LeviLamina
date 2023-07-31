@@ -426,11 +426,6 @@ public:
      */
     MCAPI bool isValidAuxValue(int) const;
     /**
-     * @symbol
-     * ?isValidComponent\@ItemStackBase\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static bool isValidComponent(std::string const&);
-    /**
      * @symbol ?isWearableItem\@ItemStackBase\@\@QEBA_NXZ
      */
     MCAPI bool isWearableItem() const;
@@ -603,6 +598,11 @@ public:
      */
     MCAPI bool updateComponent(std::string const&, class Json::Value const&);
     /**
+     * @symbol
+     * ?isValidComponent\@ItemStackBase\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static bool isValidComponent(std::string const&);
+    /**
      * @symbol ?COMPARISONOPTIONS_RELEVANTUSERDATA\@ItemStackBase\@\@2UComparisonOptions\@1\@B
      */
     MCAPI static struct ItemStackBase::ComparisonOptions const COMPARISONOPTIONS_RELEVANTUSERDATA;
@@ -720,11 +720,6 @@ public:
      */
     MCAPI bool _isInstance(std::string_view) const;
     /**
-     * @symbol
-     * ?_loadBlocksForCanPlaceOnCanDestroy\@ItemStackBase\@\@CA_NAEAV?$vector\@PEBVBlockLegacy\@\@V?$allocator\@PEBVBlockLegacy\@\@\@std\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
-     */
-    MCAPI static bool _loadBlocksForCanPlaceOnCanDestroy(std::vector<class BlockLegacy const*>&, std::string const&);
-    /**
      * @symbol ?_loadItem\@ItemStackBase\@\@AEAAXAEBVCompoundTag\@\@\@Z
      */
     MCAPI void _loadItem(class CompoundTag const&);
@@ -741,6 +736,11 @@ public:
      * @symbol ?_updateCompareHashes\@ItemStackBase\@\@AEAAXXZ
      */
     MCAPI void _updateCompareHashes();
+    /**
+     * @symbol
+     * ?_loadBlocksForCanPlaceOnCanDestroy\@ItemStackBase\@\@CA_NAEAV?$vector\@PEBVBlockLegacy\@\@V?$allocator\@PEBVBlockLegacy\@\@\@std\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
+     */
+    MCAPI static bool _loadBlocksForCanPlaceOnCanDestroy(std::vector<class BlockLegacy const*>&, std::string const&);
     // NOLINTEND
 
 protected:

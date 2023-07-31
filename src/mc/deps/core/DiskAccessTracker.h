@@ -28,10 +28,6 @@ public:
      */
     MCAPI void addIgnoredPath(class Core::Path const&);
     /**
-     * @symbol ?getDiskAccessTracker\@DiskAccessTracker\@Core\@\@SAAEAV12\@XZ
-     */
-    MCAPI static class Core::DiskAccessTracker& getDiskAccessTracker();
-    /**
      * @symbol ?trackWriteAmount\@DiskAccessTracker\@Core\@\@QEAAXAEBVPath\@2\@_KW4WriteOperation\@2\@\@Z
      */
     MCAPI void trackWriteAmount(class Core::Path const&, uint64_t, enum class Core::WriteOperation);
@@ -39,6 +35,10 @@ public:
      * @symbol ?trackWriteOperation\@DiskAccessTracker\@Core\@\@QEAAXAEBVPath\@2\@W4WriteOperation\@2\@\@Z
      */
     MCAPI void trackWriteOperation(class Core::Path const&, enum class Core::WriteOperation);
+    /**
+     * @symbol ?getDiskAccessTracker\@DiskAccessTracker\@Core\@\@SAAEAV12\@XZ
+     */
+    MCAPI static class Core::DiskAccessTracker& getDiskAccessTracker();
     // NOLINTEND
 
     // private:

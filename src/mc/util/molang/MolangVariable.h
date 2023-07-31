@@ -17,6 +17,10 @@ public:
      */
     MCAPI MolangVariable(enum class MolangVariableIndex, class HashedString, struct MolangScriptArg);
     /**
+     * @symbol ??1MolangVariable\@\@QEAA\@XZ
+     */
+    MCAPI ~MolangVariable();
+    /**
      * @symbol ?getVariableIndex\@MolangVariable\@\@SA?AW4MolangVariableIndex\@\@_KPEBD_N\@Z
      */
     MCAPI static enum class MolangVariableIndex getVariableIndex(uint64_t, char const*, bool);
@@ -36,10 +40,6 @@ public:
      * @symbol ?processWaterMark\@MolangVariable\@\@SAXXZ
      */
     MCAPI static void processWaterMark();
-    /**
-     * @symbol ??1MolangVariable\@\@QEAA\@XZ
-     */
-    MCAPI ~MolangVariable();
     // NOLINTEND
 
     // private:

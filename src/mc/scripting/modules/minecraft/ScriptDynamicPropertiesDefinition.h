@@ -33,12 +33,6 @@ public:
     MCAPI ScriptDynamicPropertiesDefinition(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&);
     /**
      * @symbol
-     * ?bind\@ScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition>
-    bind();
-    /**
-     * @symbol
      * ?defineBoolean\@ScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@V?$StrongTypedObjectHandle\@VScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$optional\@_N\@6\@\@Z
      */
     MCAPI class Scripting::Result<
@@ -72,6 +66,12 @@ public:
      * @symbol ??1ScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptDynamicPropertiesDefinition();
+    /**
+     * @symbol
+     * ?bind\@ScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition>
+    bind();
     // NOLINTEND
 };
 

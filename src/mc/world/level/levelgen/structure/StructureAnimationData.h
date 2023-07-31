@@ -67,11 +67,6 @@ public:
      */
     MCAPI unsigned int getTotalBlocks() const;
     /**
-     * @symbol
-     * ?load\@StructureAnimationData\@\@SA?AV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVCompoundTag\@\@\@Z
-     */
-    MCAPI static class StructureAnimationData load(std::string const&, class CompoundTag const&);
-    /**
      * @symbol ?serialize\@StructureAnimationData\@\@QEAAAEAVCompoundTag\@\@AEAV2\@\@Z
      */
     MCAPI class CompoundTag& serialize(class CompoundTag&);
@@ -96,5 +91,10 @@ public:
      * @symbol ??1StructureAnimationData\@\@QEAA\@XZ
      */
     MCAPI ~StructureAnimationData();
+    /**
+     * @symbol
+     * ?load\@StructureAnimationData\@\@SA?AV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVCompoundTag\@\@\@Z
+     */
+    MCAPI static class StructureAnimationData load(std::string const&, class CompoundTag const&);
     // NOLINTEND
 };

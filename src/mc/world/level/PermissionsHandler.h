@@ -35,6 +35,14 @@ public:
      */
     MCAPI bool loadSaveData(class CompoundTag const&);
     /**
+     * @symbol ?setCommandPermissions\@PermissionsHandler\@\@QEAAXW4CommandPermissionLevel\@\@\@Z
+     */
+    MCAPI void setCommandPermissions(enum class CommandPermissionLevel);
+    /**
+     * @symbol ?setPlayerPermissions\@PermissionsHandler\@\@QEAAXW4PlayerPermissionLevel\@\@\@Z
+     */
+    MCAPI void setPlayerPermissions(enum class PlayerPermissionLevel);
+    /**
      * @symbol
      * ?playerPermissionLevelFromString\@PermissionsHandler\@\@SA?AW4PlayerPermissionLevel\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -44,14 +52,6 @@ public:
      * ?playerPermissionLevelToString\@PermissionsHandler\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBW4PlayerPermissionLevel\@\@\@Z
      */
     MCAPI static std::string playerPermissionLevelToString(enum class PlayerPermissionLevel const&);
-    /**
-     * @symbol ?setCommandPermissions\@PermissionsHandler\@\@QEAAXW4CommandPermissionLevel\@\@\@Z
-     */
-    MCAPI void setCommandPermissions(enum class CommandPermissionLevel);
-    /**
-     * @symbol ?setPlayerPermissions\@PermissionsHandler\@\@QEAAXW4PlayerPermissionLevel\@\@\@Z
-     */
-    MCAPI void setPlayerPermissions(enum class PlayerPermissionLevel);
     /**
      * @symbol
      * ?DIFF_COMMAND_PERMISSION\@PermissionsHandler\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B

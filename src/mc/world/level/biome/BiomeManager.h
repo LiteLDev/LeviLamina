@@ -56,12 +56,12 @@ public:
      */
     MCAPI void sendLevelBiomesRegistered();
     /**
-     * @symbol ?use3DBiomeMaps\@BiomeManager\@\@SA_NAEBVBaseGameVersion\@\@\@Z
-     */
-    MCAPI static bool use3DBiomeMaps(class BaseGameVersion const&);
-    /**
      * @symbol ??1BiomeManager\@\@QEAA\@XZ
      */
     MCAPI ~BiomeManager();
+    /**
+     * @symbol ?use3DBiomeMaps\@BiomeManager\@\@SA_NAEBVBaseGameVersion\@\@\@Z
+     */
+    MCAPI static bool use3DBiomeMaps(class BaseGameVersion const&);
     // NOLINTEND
 };

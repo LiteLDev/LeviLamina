@@ -238,11 +238,6 @@ public:
      */
     MCAPI float getOldSquishValue() const;
     /**
-     * @symbol
-     * ?getSpawnRulesCallback\@Slime\@\@SA?AV?$function\@$$A6A_NAEBVSpawnConditions\@\@AEAVBlockSource\@\@\@Z\@std\@\@XZ
-     */
-    MCAPI static std::function<bool(class SpawnConditions const&, class BlockSource&)> getSpawnRulesCallback();
-    /**
      * @symbol ?getSquishValue\@Slime\@\@QEBAMXZ
      */
     MCAPI float getSquishValue() const;
@@ -254,6 +249,11 @@ public:
      * @symbol ?preNormalTick\@Slime\@\@QEAAXXZ
      */
     MCAPI void preNormalTick();
+    /**
+     * @symbol
+     * ?getSpawnRulesCallback\@Slime\@\@SA?AV?$function\@$$A6A_NAEBVSpawnConditions\@\@AEAVBlockSource\@\@\@Z\@std\@\@XZ
+     */
+    MCAPI static std::function<bool(class SpawnConditions const&, class BlockSource&)> getSpawnRulesCallback();
     // NOLINTEND
 
     // protected:

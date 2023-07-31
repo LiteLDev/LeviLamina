@@ -21,19 +21,7 @@ public:
      * ??0Pack\@\@QEAA\@V?$unique_ptr\@VPackManifest\@\@U?$default_delete\@VPackManifest\@\@\@std\@\@\@std\@\@V?$unique_ptr\@VPackAccessStrategy\@\@U?$default_delete\@VPackAccessStrategy\@\@\@std\@\@\@2\@V?$unique_ptr\@VSubpackInfoCollection\@\@U?$default_delete\@VSubpackInfoCollection\@\@\@std\@\@\@2\@V?$unique_ptr\@VPackMetadata\@\@U?$default_delete\@VPackMetadata\@\@\@std\@\@\@2\@\@Z
      */
     MCAPI
-        Pack(std::unique_ptr<class PackManifest>, std::unique_ptr<class PackAccessStrategy>, std::unique_ptr<class SubpackInfoCollection>, std::unique_ptr<class PackMetadata>);
-    /**
-     * @symbol
-     * ?createPack\@Pack\@\@SA?AV?$unique_ptr\@VPack\@\@U?$default_delete\@VPack\@\@\@std\@\@\@std\@\@AEBVResourceLocation\@\@W4PackType\@\@W4PackOrigin\@\@AEAVIPackManifestFactory\@\@AEBV?$not_null\@V?$NonOwnerPointer\@$$CBVIContentKeyProvider\@\@\@Bedrock\@\@\@gsl\@\@PEAVPackSourceReport\@\@\@Z
-     */
-    MCAPI static std::unique_ptr<class Pack>
-    createPack(class ResourceLocation const&, enum class PackType, enum class PackOrigin, class IPackManifestFactory&, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&, class PackSourceReport*);
-    /**
-     * @symbol
-     * ?createPackMetadata\@Pack\@\@SA?AV?$unique_ptr\@VPackMetadata\@\@U?$default_delete\@VPackMetadata\@\@\@std\@\@\@std\@\@W4PackType\@\@AEAVPackManifest\@\@AEBVPackAccessStrategy\@\@AEAVPackReport\@\@\@Z
-     */
-    MCAPI static std::unique_ptr<class PackMetadata>
-    createPackMetadata(enum class PackType, class PackManifest&, class PackAccessStrategy const&, class PackReport&);
+    Pack(std::unique_ptr<class PackManifest>, std::unique_ptr<class PackAccessStrategy>, std::unique_ptr<class SubpackInfoCollection>, std::unique_ptr<class PackMetadata>);
     /**
      * @symbol ?getAccessStrategy\@Pack\@\@QEAAPEAVPackAccessStrategy\@\@XZ
      */
@@ -78,6 +66,18 @@ public:
      * @symbol ?unregisterPackUpdatedCallback\@Pack\@\@QEAAXPEAX\@Z
      */
     MCAPI void unregisterPackUpdatedCallback(void*);
+    /**
+     * @symbol
+     * ?createPack\@Pack\@\@SA?AV?$unique_ptr\@VPack\@\@U?$default_delete\@VPack\@\@\@std\@\@\@std\@\@AEBVResourceLocation\@\@W4PackType\@\@W4PackOrigin\@\@AEAVIPackManifestFactory\@\@AEBV?$not_null\@V?$NonOwnerPointer\@$$CBVIContentKeyProvider\@\@\@Bedrock\@\@\@gsl\@\@PEAVPackSourceReport\@\@\@Z
+     */
+    MCAPI static std::unique_ptr<class Pack>
+    createPack(class ResourceLocation const&, enum class PackType, enum class PackOrigin, class IPackManifestFactory&, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&, class PackSourceReport*);
+    /**
+     * @symbol
+     * ?createPackMetadata\@Pack\@\@SA?AV?$unique_ptr\@VPackMetadata\@\@U?$default_delete\@VPackMetadata\@\@\@std\@\@\@std\@\@W4PackType\@\@AEAVPackManifest\@\@AEBVPackAccessStrategy\@\@AEAVPackReport\@\@\@Z
+     */
+    MCAPI static std::unique_ptr<class PackMetadata>
+    createPackMetadata(enum class PackType, class PackManifest&, class PackAccessStrategy const&, class PackReport&);
     // NOLINTEND
 
 private:

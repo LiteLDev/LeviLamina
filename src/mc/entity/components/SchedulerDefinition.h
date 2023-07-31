@@ -24,13 +24,6 @@ public:
      */
     MCAPI SchedulerDefinition();
     /**
-     * @symbol
-     * ?buildSchema\@SchedulerDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VSchedulerDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SchedulerDefinition>>&);
-    /**
      * @symbol ?initialize\@SchedulerDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVSchedulerComponent\@\@\@Z
      */
     MCAPI void initialize(class EntityContext&, class SchedulerComponent&) const;
@@ -42,5 +35,12 @@ public:
      * @symbol ?setMinDelayTicks\@SchedulerDefinition\@\@QEAAXAEBM\@Z
      */
     MCAPI void setMinDelayTicks(float const&);
+    /**
+     * @symbol
+     * ?buildSchema\@SchedulerDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VSchedulerDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
+     */
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SchedulerDefinition>>&);
     // NOLINTEND
 };

@@ -28,6 +28,10 @@ public:
      */
     MCAPI class PlayerBlockActions& operator=(class PlayerBlockActions&&);
     /**
+     * @symbol ??1PlayerBlockActions\@\@QEAA\@XZ
+     */
+    MCAPI ~PlayerBlockActions();
+    /**
      * @symbol
      * ?read\@PlayerBlockActions\@\@SA?AV?$Result\@VPlayerBlockActions\@\@Verror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
@@ -36,9 +40,5 @@ public:
      * @symbol ?write\@PlayerBlockActions\@\@SAXAEBV1\@AEAVBinaryStream\@\@\@Z
      */
     MCAPI static void write(class PlayerBlockActions const&, class BinaryStream&);
-    /**
-     * @symbol ??1PlayerBlockActions\@\@QEAA\@XZ
-     */
-    MCAPI ~PlayerBlockActions();
     // NOLINTEND
 };

@@ -30,14 +30,14 @@ public:
     MCVAPI ~ScriptOnFireComponent();
 #endif
     /**
+     * @symbol ?getOnFireTicksRemaining\@ScriptOnFireComponent\@ScriptModuleMinecraft\@\@QEBAHXZ
+     */
+    MCAPI int getOnFireTicksRemaining() const;
+    /**
      * @symbol
      * ?bind\@ScriptOnFireComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptOnFireComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptOnFireComponent> bind();
-    /**
-     * @symbol ?getOnFireTicksRemaining\@ScriptOnFireComponent\@ScriptModuleMinecraft\@\@QEBAHXZ
-     */
-    MCAPI int getOnFireTicksRemaining() const;
     /**
      * @symbol ?ComponentId\@ScriptOnFireComponent\@ScriptModuleMinecraft\@\@2PEBDEB
      */

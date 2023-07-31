@@ -24,12 +24,6 @@ public:
      */
     MCAPI ScriptRawMessageScoreInterface(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface const&);
     /**
-     * @symbol
-     * ?bind\@ScriptRawMessageScoreInterface\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptRawMessageScoreInterface\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface>
-    bind();
-    /**
      * @symbol ??4ScriptRawMessageScoreInterface\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&
@@ -47,6 +41,12 @@ public:
      * @symbol ??1ScriptRawMessageScoreInterface\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptRawMessageScoreInterface();
+    /**
+     * @symbol
+     * ?bind\@ScriptRawMessageScoreInterface\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptRawMessageScoreInterface\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface>
+    bind();
     // NOLINTEND
 };
 

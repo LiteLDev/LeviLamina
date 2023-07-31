@@ -29,6 +29,10 @@ public:
     public:
         // NOLINTBEGIN
         /**
+         * @symbol ?initialize\@KnockbackRoarDefinition\@KnockbackRoarGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
+         */
+        MCAPI void initialize(class EntityContext&, class KnockbackRoarGoal&) const;
+        /**
          * @symbol
          * ?buildSchema\@KnockbackRoarDefinition\@KnockbackRoarGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VKnockbackRoarDefinition\@KnockbackRoarGoal\@\@\@JsonUtil\@\@\@4\@\@Z
          */
@@ -38,10 +42,6 @@ public:
          * @symbol ?getStrictParsingVersion\@KnockbackRoarDefinition\@KnockbackRoarGoal\@\@SA?AVSemVersion\@\@XZ
          */
         MCAPI static class SemVersion getStrictParsingVersion();
-        /**
-         * @symbol ?initialize\@KnockbackRoarDefinition\@KnockbackRoarGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
-        MCAPI void initialize(class EntityContext&, class KnockbackRoarGoal&) const;
         // NOLINTEND
     };
 

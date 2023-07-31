@@ -15,13 +15,13 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ?bindType\@ExpressionNodeProxy\@ExpressionNodeSerializer\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ??1ExpressionNodeProxy\@ExpressionNodeSerializer\@\@QEAA\@XZ
      */
     MCAPI ~ExpressionNodeProxy();
+    /**
+     * @symbol ?bindType\@ExpressionNodeProxy\@ExpressionNodeSerializer\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     // NOLINTEND
 };
 

@@ -12,10 +12,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ?bindType\@Dependencies\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ??4Dependencies\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
     MCAPI struct Dependencies& operator=(struct Dependencies const&);
@@ -27,5 +23,9 @@ public:
      * @symbol ??1Dependencies\@\@QEAA\@XZ
      */
     MCAPI ~Dependencies();
+    /**
+     * @symbol ?bindType\@Dependencies\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     // NOLINTEND
 };

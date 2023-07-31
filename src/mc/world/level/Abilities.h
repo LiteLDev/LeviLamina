@@ -40,17 +40,9 @@ public:
         enum class Ability::Options
     ) const;
     /**
-     * @symbol ?getAbilityName\@Abilities\@\@SAPEBDW4AbilitiesIndex\@\@\@Z
-     */
-    MCAPI static char const* getAbilityName(enum class AbilitiesIndex);
-    /**
      * @symbol ?getBool\@Abilities\@\@QEBA_NW4AbilitiesIndex\@\@\@Z
      */
     MCAPI bool getBool(enum class AbilitiesIndex) const;
-    /**
-     * @symbol ?getDefault\@Abilities\@\@SAAEBVAbility\@\@W4AbilitiesIndex\@\@\@Z
-     */
-    MCAPI static class Ability const& getDefault(enum class AbilitiesIndex);
     /**
      * @symbol ?getFloat\@Abilities\@\@QEBAMW4AbilitiesIndex\@\@\@Z
      */
@@ -63,11 +55,6 @@ public:
      * @symbol ?loadSaveData\@Abilities\@\@QEAA_NAEBVCompoundTag\@\@\@Z
      */
     MCAPI bool loadSaveData(class CompoundTag const&);
-    /**
-     * @symbol
-     * ?nameToAbilityIndex\@Abilities\@\@SA?AW4AbilitiesIndex\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static enum class AbilitiesIndex nameToAbilityIndex(std::string const&);
     /**
      * @symbol ??4Abilities\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
@@ -96,6 +83,19 @@ public:
      * @symbol ?unSet\@Abilities\@\@QEAAXW4AbilitiesIndex\@\@\@Z
      */
     MCAPI void unSet(enum class AbilitiesIndex);
+    /**
+     * @symbol ?getAbilityName\@Abilities\@\@SAPEBDW4AbilitiesIndex\@\@\@Z
+     */
+    MCAPI static char const* getAbilityName(enum class AbilitiesIndex);
+    /**
+     * @symbol ?getDefault\@Abilities\@\@SAAEBVAbility\@\@W4AbilitiesIndex\@\@\@Z
+     */
+    MCAPI static class Ability const& getDefault(enum class AbilitiesIndex);
+    /**
+     * @symbol
+     * ?nameToAbilityIndex\@Abilities\@\@SA?AW4AbilitiesIndex\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static enum class AbilitiesIndex nameToAbilityIndex(std::string const&);
     /**
      * @symbol
      * ?DIFF_ABILITIY_AT\@Abilities\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B

@@ -27,6 +27,11 @@ public:
      */
     MCAPI ScriptItemStartUseAfterEvent(struct ScriptModuleMinecraft::ScriptItemStartUseAfterEvent const&);
     /**
+     * @symbol ??4ScriptItemStartUseAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
+     */
+    MCAPI struct ScriptModuleMinecraft::ScriptItemStartUseAfterEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptItemStartUseAfterEvent&&);
+    /**
      * @symbol
      * ?bind\@ScriptItemStartUseAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptItemStartUseAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
@@ -38,11 +43,6 @@ public:
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemStartUseAfterEvent>
     bindV010();
-    /**
-     * @symbol ??4ScriptItemStartUseAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-     */
-    MCAPI struct ScriptModuleMinecraft::ScriptItemStartUseAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptItemStartUseAfterEvent&&);
     // NOLINTEND
 };
 

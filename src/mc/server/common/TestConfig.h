@@ -17,10 +17,6 @@ public:
      */
     MCAPI TestConfig(std::string const&);
     /**
-     * @symbol ?bindType\@TestConfig\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ?isLoaded\@TestConfig\@\@QEBA_NXZ
      */
     MCAPI bool isLoaded() const;
@@ -28,6 +24,10 @@ public:
      * @symbol ??1TestConfig\@\@QEAA\@XZ
      */
     MCAPI ~TestConfig();
+    /**
+     * @symbol ?bindType\@TestConfig\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     // NOLINTEND
 
     // private:

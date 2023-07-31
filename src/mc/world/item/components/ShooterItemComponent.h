@@ -99,14 +99,6 @@ public:
      */
     virtual bool initializeFromNetwork(class CompoundTag const&);
     /**
-     * @symbol ?bindType\@ShooterItemComponent\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
-     * @symbol ?getIdentifier\@ShooterItemComponent\@\@SAAEBVHashedString\@\@XZ
-     */
-    MCAPI static class HashedString const& getIdentifier();
-    /**
      * @symbol ?releaseUsing\@ShooterItemComponent\@\@QEBA_NAEAVItemStack\@\@PEAVPlayer\@\@H\@Z
      */
     MCAPI bool releaseUsing(class ItemStack&, class Player*, int) const;
@@ -118,6 +110,14 @@ public:
      * @symbol ?useTimeDepleted\@ShooterItemComponent\@\@QEBAXAEAVItemStack\@\@AEAVPlayer\@\@\@Z
      */
     MCAPI void useTimeDepleted(class ItemStack&, class Player&) const;
+    /**
+     * @symbol ?bindType\@ShooterItemComponent\@\@SAXXZ
+     */
+    MCAPI static void bindType();
+    /**
+     * @symbol ?getIdentifier\@ShooterItemComponent\@\@SAAEBVHashedString\@\@XZ
+     */
+    MCAPI static class HashedString const& getIdentifier();
     // NOLINTEND
 
     // private:

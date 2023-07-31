@@ -24,15 +24,15 @@ public:
      */
     MCAPI EntitySensorDefinition();
     /**
+     * @symbol ?initialize\@EntitySensorDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVEntitySensorComponent\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class EntitySensorComponent&) const;
+    /**
      * @symbol
      * ?buildSchema\@EntitySensorDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VEntitySensorDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EntitySensorDefinition>>&);
-    /**
-     * @symbol ?initialize\@EntitySensorDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVEntitySensorComponent\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class EntitySensorComponent&) const;
     // NOLINTEND
 };

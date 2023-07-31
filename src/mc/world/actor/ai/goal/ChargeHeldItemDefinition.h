@@ -21,14 +21,14 @@ public:
 public:
     // NOLINTBEGIN
     /**
+     * @symbol ?initialize\@ChargeHeldItemDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVChargeHeldItemGoal\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class ChargeHeldItemGoal&) const;
+    /**
      * @symbol
      * ?buildSchema\@ChargeHeldItemDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VChargeHeldItemDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void
     buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ChargeHeldItemDefinition>>&);
-    /**
-     * @symbol ?initialize\@ChargeHeldItemDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVChargeHeldItemGoal\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class ChargeHeldItemGoal&) const;
     // NOLINTEND
 };

@@ -334,10 +334,6 @@ public:
      */
     MCAPI void _hurtEntities(class gsl::span<class gsl::not_null<class Actor*>>) const;
     /**
-     * @symbol ?_isDragonImmuneBlock\@EnderDragon\@\@CA_NAEBVBlockLegacy\@\@\@Z
-     */
-    MCAPI static bool _isDragonImmuneBlock(class BlockLegacy const&);
-    /**
      * @symbol ?_knockBack\@EnderDragon\@\@AEBAXV?$span\@V?$not_null\@PEAVActor\@\@\@gsl\@\@$0?0\@gsl\@\@\@Z
      */
     MCAPI void _knockBack(class gsl::span<class gsl::not_null<class Actor*>>) const;
@@ -347,6 +343,10 @@ public:
      */
     MCAPI std::unique_ptr<class Path>
           _reconstructPath(class PathfinderNode&, class PathfinderNode&, enum class PathCompletionType);
+    /**
+     * @symbol ?_isDragonImmuneBlock\@EnderDragon\@\@CA_NAEBVBlockLegacy\@\@\@Z
+     */
+    MCAPI static bool _isDragonImmuneBlock(class BlockLegacy const&);
     // NOLINTEND
 
 private:

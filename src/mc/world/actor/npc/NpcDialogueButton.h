@@ -21,13 +21,13 @@ public:
      */
     MCAPI NpcDialogueButton();
     /**
+     * @symbol ??1NpcDialogueButton\@\@QEAA\@XZ
+     */
+    MCAPI ~NpcDialogueButton();
+    /**
      * @symbol
      * ?parse\@NpcDialogueButton\@\@SA?AU1\@AEBVValue\@Json\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
     MCAPI static struct NpcDialogueButton parse(class Json::Value const&, std::string const&, int);
-    /**
-     * @symbol ??1NpcDialogueButton\@\@QEAA\@XZ
-     */
-    MCAPI ~NpcDialogueButton();
     // NOLINTEND
 };

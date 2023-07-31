@@ -33,14 +33,14 @@ public:
      */
     MCAPI ScriptComponent(class Scripting::WeakLifetimeScope const&, std::string const&);
     /**
+     * @symbol ??4ScriptComponent\@ScriptModuleMinecraft\@\@QEAAAEAV01\@AEBV01\@\@Z
+     */
+    MCAPI class ScriptModuleMinecraft::ScriptComponent& operator=(class ScriptModuleMinecraft::ScriptComponent const&);
+    /**
      * @symbol
      * ?bind\@ScriptComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptComponent> bind();
-    /**
-     * @symbol ??4ScriptComponent\@ScriptModuleMinecraft\@\@QEAAAEAV01\@AEBV01\@\@Z
-     */
-    MCAPI class ScriptModuleMinecraft::ScriptComponent& operator=(class ScriptModuleMinecraft::ScriptComponent const&);
     // NOLINTEND
 };
 

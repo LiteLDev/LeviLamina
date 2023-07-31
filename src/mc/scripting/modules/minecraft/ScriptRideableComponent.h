@@ -59,11 +59,6 @@ public:
     MCAPI class Scripting::Result<bool> addPassenger(class ScriptModuleMinecraft::ScriptActor&) const;
     /**
      * @symbol
-     * ?bind\@ScriptRideableComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptRideableComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptRideableComponent> bind();
-    /**
-     * @symbol
      * ?ejectPassenger\@ScriptRideableComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@X\@Scripting\@\@AEAVScriptActor\@2\@\@Z
      */
     MCAPI class Scripting::Result<void> ejectPassenger(class ScriptModuleMinecraft::ScriptActor&) const;
@@ -117,6 +112,11 @@ public:
      * ?getSeats\@ScriptRideableComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$vector\@USeatDescription\@\@V?$allocator\@USeatDescription\@\@\@std\@\@\@std\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<std::vector<struct SeatDescription>> getSeats() const;
+    /**
+     * @symbol
+     * ?bind\@ScriptRideableComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptRideableComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptRideableComponent> bind();
     /**
      * @symbol ?ComponentId\@ScriptRideableComponent\@ScriptModuleMinecraft\@\@2PEBDEB
      */

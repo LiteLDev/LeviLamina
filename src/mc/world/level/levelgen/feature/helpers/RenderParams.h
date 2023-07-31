@@ -27,10 +27,6 @@ public:
      */
     MCAPI class Actor* getActorTarget(enum class FilterSubject) const;
     /**
-     * @symbol ?getRenderParams\@RenderParams\@\@SAAEAV1\@AEAVActor\@\@\@Z
-     */
-    MCAPI static class RenderParams& getRenderParams(class Actor&);
-    /**
      * @symbol
      * ?init\@RenderParams\@\@QEAAAEAV1\@PEAVBaseActorRenderContext\@\@PEAVActor\@\@PEAVAnimationComponent\@\@PEAVMolangVariableMap\@\@V?$shared_ptr\@VDataDrivenModel\@\@\@std\@\@MM\@Z
      */
@@ -55,5 +51,9 @@ public:
      * @symbol ??1RenderParams\@\@QEAA\@XZ
      */
     MCAPI ~RenderParams();
+    /**
+     * @symbol ?getRenderParams\@RenderParams\@\@SAAEAV1\@AEAVActor\@\@\@Z
+     */
+    MCAPI static class RenderParams& getRenderParams(class Actor&);
     // NOLINTEND
 };

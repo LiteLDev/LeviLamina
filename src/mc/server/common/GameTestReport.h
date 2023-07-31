@@ -13,12 +13,12 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ?bindType\@GameTestReport\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ??1GameTestReport\@\@QEAA\@XZ
      */
     MCAPI ~GameTestReport();
+    /**
+     * @symbol ?bindType\@GameTestReport\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     // NOLINTEND
 };

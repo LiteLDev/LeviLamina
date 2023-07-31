@@ -335,6 +335,10 @@ public:
      */
     MCAPI CauldronBlock(std::string const&, int);
     /**
+     * @symbol ?setLiquidLevel\@CauldronBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@HW4CauldronLiquidType\@\@\@Z
+     */
+    MCAPI void setLiquidLevel(class BlockSource&, class BlockPos const&, int, enum class CauldronLiquidType) const;
+    /**
      * @symbol ?canReceiveStalactiteDrip\@CauldronBlock\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@W4MaterialType\@\@\@Z
      */
     MCAPI static bool canReceiveStalactiteDrip(class BlockSource&, class BlockPos const&, enum class MaterialType);
@@ -342,10 +346,6 @@ public:
      * @symbol ?clampLiquidLevel\@CauldronBlock\@\@SAHH\@Z
      */
     MCAPI static int clampLiquidLevel(int);
-    /**
-     * @symbol ?setLiquidLevel\@CauldronBlock\@\@QEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@HW4CauldronLiquidType\@\@\@Z
-     */
-    MCAPI void setLiquidLevel(class BlockSource&, class BlockPos const&, int, enum class CauldronLiquidType) const;
     /**
      * @symbol ?spawnPotionParticles\@CauldronBlock\@\@SAXAEAVLevel\@\@AEBVVec3\@\@AEAVRandom\@\@HH\@Z
      */

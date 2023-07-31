@@ -32,13 +32,6 @@ public:
     ScriptDataDrivenActorTriggerBeforeEvent(class Actor&, std::string const&, std::vector<struct ActorDefinitionModifier>&, class Scripting::WeakLifetimeScope const&);
     /**
      * @symbol
-     * ?bind\@ScriptDataDrivenActorTriggerBeforeEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptDataDrivenActorTriggerBeforeEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<
-        struct ScriptModuleMinecraft::ScriptDataDrivenActorTriggerBeforeEvent>
-    bind();
-    /**
-     * @symbol
      * ?getModifiers\@ScriptDataDrivenActorTriggerBeforeEvent\@ScriptModuleMinecraft\@\@QEBA?AV?$vector\@UActorDefinitionModifier\@\@V?$allocator\@UActorDefinitionModifier\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::vector<struct ActorDefinitionModifier> getModifiers() const;
@@ -47,6 +40,13 @@ public:
      * ?setModifiers\@ScriptDataDrivenActorTriggerBeforeEvent\@ScriptModuleMinecraft\@\@QEAAXAEBV?$vector\@UActorDefinitionModifier\@\@V?$allocator\@UActorDefinitionModifier\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI void setModifiers(std::vector<struct ActorDefinitionModifier> const&);
+    /**
+     * @symbol
+     * ?bind\@ScriptDataDrivenActorTriggerBeforeEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptDataDrivenActorTriggerBeforeEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<
+        struct ScriptModuleMinecraft::ScriptDataDrivenActorTriggerBeforeEvent>
+    bind();
     // NOLINTEND
 };
 

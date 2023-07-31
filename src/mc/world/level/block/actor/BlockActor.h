@@ -320,16 +320,6 @@ public:
      */
     MCAPI bool isType(enum class BlockActorType) const;
     /**
-     * @symbol ?isType\@BlockActor\@\@SA_NAEAV1\@W4BlockActorType\@\@\@Z
-     */
-    MCAPI static bool isType(class BlockActor&, enum class BlockActorType);
-    /**
-     * @symbol
-     * ?loadStatic\@BlockActor\@\@SA?AV?$shared_ptr\@VBlockActor\@\@\@std\@\@AEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
-     */
-    MCAPI static std::shared_ptr<class BlockActor>
-    loadStatic(class Level&, class CompoundTag const&, class DataLoadHelper&);
-    /**
      * @symbol ?moveTo\@BlockActor\@\@QEAAXAEBVBlockPos\@\@\@Z
      */
     MCAPI void moveTo(class BlockPos const&);
@@ -349,6 +339,16 @@ public:
      * @symbol ?setMovable\@BlockActor\@\@QEAAX_N\@Z
      */
     MCAPI void setMovable(bool);
+    /**
+     * @symbol ?isType\@BlockActor\@\@SA_NAEAV1\@W4BlockActorType\@\@\@Z
+     */
+    MCAPI static bool isType(class BlockActor&, enum class BlockActorType);
+    /**
+     * @symbol
+     * ?loadStatic\@BlockActor\@\@SA?AV?$shared_ptr\@VBlockActor\@\@\@std\@\@AEAVLevel\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
+     */
+    MCAPI static std::shared_ptr<class BlockActor>
+    loadStatic(class Level&, class CompoundTag const&, class DataLoadHelper&);
     // NOLINTEND
 
     // protected:

@@ -13,11 +13,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol
-     * ?addMaterial\@Material\@\@SAXV?$unique_ptr\@VMaterial\@\@U?$default_delete\@VMaterial\@\@\@std\@\@\@std\@\@\@Z
-     */
-    MCAPI static void addMaterial(std::unique_ptr<class Material>);
-    /**
      * @symbol ?getBlocksMotion\@Material\@\@QEBA_NXZ
      */
     MCAPI bool getBlocksMotion() const;
@@ -26,17 +21,9 @@ public:
      */
     MCAPI bool getBlocksPrecipitation() const;
     /**
-     * @symbol ?getMaterial\@Material\@\@SAAEBV1\@W4MaterialType\@\@\@Z
-     */
-    MCAPI static class Material const& getMaterial(enum class MaterialType);
-    /**
      * @symbol ?getTranslucency\@Material\@\@QEBAMXZ
      */
     MCAPI float getTranslucency() const;
-    /**
-     * @symbol ?initMaterials\@Material\@\@SAXXZ
-     */
-    MCAPI static void initMaterials();
     /**
      * @symbol ?isAlwaysDestroyable\@Material\@\@QEBA_NXZ
      */
@@ -73,6 +60,19 @@ public:
      * @symbol ??8Material\@\@QEBA_NAEBV0\@\@Z
      */
     MCAPI bool operator==(class Material const&) const;
+    /**
+     * @symbol
+     * ?addMaterial\@Material\@\@SAXV?$unique_ptr\@VMaterial\@\@U?$default_delete\@VMaterial\@\@\@std\@\@\@std\@\@\@Z
+     */
+    MCAPI static void addMaterial(std::unique_ptr<class Material>);
+    /**
+     * @symbol ?getMaterial\@Material\@\@SAAEBV1\@W4MaterialType\@\@\@Z
+     */
+    MCAPI static class Material const& getMaterial(enum class MaterialType);
+    /**
+     * @symbol ?initMaterials\@Material\@\@SAXXZ
+     */
+    MCAPI static void initMaterials();
     /**
      * @symbol ?teardownMaterials\@Material\@\@SAXXZ
      */

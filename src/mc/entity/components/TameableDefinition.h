@@ -29,15 +29,15 @@ public:
      */
     MCAPI void addTamingItemByName(std::string const&);
     /**
+     * @symbol ?initialize\@TameableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVTameableComponent\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class TameableComponent&) const;
+    /**
      * @symbol
      * ?buildSchema\@TameableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VTameableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class TameableDefinition>>&);
-    /**
-     * @symbol ?initialize\@TameableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVTameableComponent\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class TameableComponent&) const;
     // NOLINTEND
 };

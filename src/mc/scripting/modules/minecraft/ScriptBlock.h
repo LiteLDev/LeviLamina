@@ -45,11 +45,6 @@ public:
     MCAPI ScriptBlock(class BlockSource&, class BlockPos, class Scripting::WeakLifetimeScope const&);
     /**
      * @symbol
-     * ?bind\@ScriptBlock\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlock\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlock> bind();
-    /**
-     * @symbol
      * ?canPlace\@ScriptBlock\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@_N\@Scripting\@\@AEBV?$variant\@V?$StrongTypedObjectHandle\@VScriptBlockType\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$StrongTypedObjectHandle\@VScriptBlockPermutation\@ScriptModuleMinecraft\@\@\@2\@\@std\@\@V?$optional\@W4ScriptFacing\@ScriptModuleMinecraft\@\@\@6\@\@Z
      */
     MCAPI class Scripting::Result<bool>
@@ -206,6 +201,11 @@ public:
      * @symbol ??1ScriptBlock\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptBlock();
+    /**
+     * @symbol
+     * ?bind\@ScriptBlock\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlock\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlock> bind();
     // NOLINTEND
 
     // private:

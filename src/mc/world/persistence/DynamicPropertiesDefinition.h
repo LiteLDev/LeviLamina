@@ -18,11 +18,6 @@ public:
     MCAPI void clear();
     /**
      * @symbol
-     * ?clearAll\@DynamicPropertiesDefinition\@\@SAXAEBV?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VActorDefinition\@\@U?$default_delete\@VActorDefinition\@\@\@std\@\@\@2\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VActorDefinition\@\@U?$default_delete\@VActorDefinition\@\@\@std\@\@\@2\@\@std\@\@\@2\@\@std\@\@\@Z
-     */
-    MCAPI static void clearAll(std::unordered_map<std::string, std::unique_ptr<class ActorDefinition>> const&);
-    /**
-     * @symbol
      * ?defineProperty\@DynamicPropertiesDefinition\@\@QEAA?AV?$optional\@W4DynamicPropertyDefinePropertyError\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@UDynamicPropertyDefinition\@\@\@Z
      */
     MCAPI std::optional<enum class DynamicPropertyDefinePropertyError>
@@ -42,6 +37,11 @@ public:
      * @symbol ??1DynamicPropertiesDefinition\@\@QEAA\@XZ
      */
     MCAPI ~DynamicPropertiesDefinition();
+    /**
+     * @symbol
+     * ?clearAll\@DynamicPropertiesDefinition\@\@SAXAEBV?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VActorDefinition\@\@U?$default_delete\@VActorDefinition\@\@\@std\@\@\@2\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VActorDefinition\@\@U?$default_delete\@VActorDefinition\@\@\@std\@\@\@2\@\@std\@\@\@2\@\@std\@\@\@Z
+     */
+    MCAPI static void clearAll(std::unordered_map<std::string, std::unique_ptr<class ActorDefinition>> const&);
     /**
      * @symbol ?ACTOR_TOTAL_DYNAMIC_PROPERTY_SIZE_LIMIT\@DynamicPropertiesDefinition\@\@2_KB
      */

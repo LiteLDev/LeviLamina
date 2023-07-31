@@ -34,14 +34,14 @@ public:
      */
     MCAPI DragonFlamingDefinition();
     /**
+     * @symbol ?initialize\@DragonFlamingDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVDragonFlamingGoal\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class DragonFlamingGoal&) const;
+    /**
      * @symbol
      * ?buildSchema\@DragonFlamingDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDragonFlamingDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void
     buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DragonFlamingDefinition>>&);
-    /**
-     * @symbol ?initialize\@DragonFlamingDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVDragonFlamingGoal\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class DragonFlamingGoal&) const;
     // NOLINTEND
 };

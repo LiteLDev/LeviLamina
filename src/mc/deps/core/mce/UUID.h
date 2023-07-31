@@ -19,6 +19,10 @@ public:
      */
     MCAPI std::string asString() const;
     /**
+     * @symbol ?isEmpty\@UUID\@mce\@\@QEBA_NXZ
+     */
+    MCAPI bool isEmpty() const;
+    /**
      * @symbol
      * ?canParse\@UUID\@mce\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -28,10 +32,6 @@ public:
      * ?fromString\@UUID\@mce\@\@SA?AV12\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI static class mce::UUID fromString(std::string const&);
-    /**
-     * @symbol ?isEmpty\@UUID\@mce\@\@QEBA_NXZ
-     */
-    MCAPI bool isEmpty() const;
     /**
      * @symbol
      * ?seedFromString\@UUID\@mce\@\@SA?AV12\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z

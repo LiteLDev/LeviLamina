@@ -25,12 +25,6 @@ public:
      */
     MCAPI ScriptActorHitAfterEvent(struct ScriptModuleMinecraft::ScriptActorHitAfterEvent&&);
     /**
-     * @symbol
-     * ?bindV010\@ScriptActorHitAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptActorHitAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorHitAfterEvent>
-    bindV010();
-    /**
      * @symbol ??4ScriptActorHitAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptActorHitAfterEvent&
@@ -39,6 +33,12 @@ public:
      * @symbol ??1ScriptActorHitAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptActorHitAfterEvent();
+    /**
+     * @symbol
+     * ?bindV010\@ScriptActorHitAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptActorHitAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorHitAfterEvent>
+    bindV010();
     // NOLINTEND
 };
 

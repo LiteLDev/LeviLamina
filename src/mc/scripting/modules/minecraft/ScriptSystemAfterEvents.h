@@ -85,16 +85,6 @@ public:
      */
     MCAPI ScriptSystemAfterEvents(class ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
     /**
-     * @symbol ?bind\@ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@SAXAEAVModuleBindingBuilder\@Scripting\@\@\@Z
-     */
-    MCAPI static void bind(class Scripting::ModuleBindingBuilder&);
-    /**
-     * @symbol
-     * ?generateOrderDocumentationForVersion\@ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@SAXAEBUModuleDescriptor\@Scripting\@\@AEAVValue\@Json\@\@\@Z
-     */
-    MCAPI static void
-    generateOrderDocumentationForVersion(struct Scripting::ModuleDescriptor const&, class Json::Value&);
-    /**
      * @symbol ?getScriptTickSignal\@ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@QEAAAEAVScriptTickSignal\@2\@XZ
      */
     MCAPI class ScriptModuleMinecraft::ScriptTickSignal& getScriptTickSignal();
@@ -119,6 +109,16 @@ public:
      * @symbol ??1ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptSystemAfterEvents();
+    /**
+     * @symbol ?bind\@ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@SAXAEAVModuleBindingBuilder\@Scripting\@\@\@Z
+     */
+    MCAPI static void bind(class Scripting::ModuleBindingBuilder&);
+    /**
+     * @symbol
+     * ?generateOrderDocumentationForVersion\@ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@SAXAEBUModuleDescriptor\@Scripting\@\@AEAVValue\@Json\@\@\@Z
+     */
+    MCAPI static void
+    generateOrderDocumentationForVersion(struct Scripting::ModuleDescriptor const&, class Json::Value&);
     // NOLINTEND
 };
 

@@ -103,6 +103,31 @@ public:
     MCAPI std::vector<class ChunkPos> findFarAwayStructures(class buffer_span<class ChunkPos>, unsigned int);
     /**
      * @symbol
+     * ?foreachIntersectingStructureStart\@StructureFeature\@\@QEAAXAEBVBoundingBox\@\@V?$function\@$$A6AXAEAVStructureStart\@\@\@Z\@std\@\@\@Z
+     */
+    MCAPI void foreachIntersectingStructureStart(class BoundingBox const&, std::function<void(class StructureStart&)>);
+    /**
+     * @symbol ?garbageCollectBlueprints\@StructureFeature\@\@QEAAXV?$buffer_span\@VChunkPos\@\@\@\@I\@Z
+     */
+    MCAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos>, unsigned int);
+    /**
+     * @symbol ?isInsideBoundingFeature\@StructureFeature\@\@QEAA_NHHH\@Z
+     */
+    MCAPI bool isInsideBoundingFeature(int, int, int);
+    /**
+     * @symbol ?postProcess\@StructureFeature\@\@QEAA_NAEAVBlockSource\@\@AEAVRandom\@\@HH\@Z
+     */
+    MCAPI bool postProcess(class BlockSource&, class Random&, int, int);
+    /**
+     * @symbol ?postProcessMobsAt\@StructureFeature\@\@QEAAXAEAVBlockSource\@\@HHAEAVRandom\@\@\@Z
+     */
+    MCAPI void postProcessMobsAt(class BlockSource&, int, int, class Random&);
+    /**
+     * @symbol ?waitForFeatureBlueprints\@StructureFeature\@\@QEAAXXZ
+     */
+    MCAPI void waitForFeatureBlueprints();
+    /**
+     * @symbol
      * ?findNearestFeaturePositionBySpacing\@StructureFeature\@\@SA_NAEAVDimension\@\@AEBVIPreliminarySurfaceProvider\@\@AEAV1\@AEBVBiomeSource\@\@AEBVBlockPos\@\@AEAV5\@HHH_NH6\@Z
      */
     MCAPI static bool findNearestFeaturePositionBySpacing(
@@ -120,39 +145,14 @@ public:
         bool
     );
     /**
-     * @symbol
-     * ?foreachIntersectingStructureStart\@StructureFeature\@\@QEAAXAEBVBoundingBox\@\@V?$function\@$$A6AXAEAVStructureStart\@\@\@Z\@std\@\@\@Z
-     */
-    MCAPI void foreachIntersectingStructureStart(class BoundingBox const&, std::function<void(class StructureStart&)>);
-    /**
-     * @symbol ?garbageCollectBlueprints\@StructureFeature\@\@QEAAXV?$buffer_span\@VChunkPos\@\@\@\@I\@Z
-     */
-    MCAPI void garbageCollectBlueprints(class buffer_span<class ChunkPos>, unsigned int);
-    /**
      * @symbol ?getChunkPosInSpace\@StructureFeature\@\@SA?AVChunkPos\@\@AEBV2\@AEAVRandom\@\@IHHH_N\@Z
      */
     MCAPI static class ChunkPos
     getChunkPosInSpace(class ChunkPos const&, class Random&, unsigned int, int, int, int, bool);
     /**
-     * @symbol ?isInsideBoundingFeature\@StructureFeature\@\@QEAA_NHHH\@Z
-     */
-    MCAPI bool isInsideBoundingFeature(int, int, int);
-    /**
-     * @symbol ?postProcess\@StructureFeature\@\@QEAA_NAEAVBlockSource\@\@AEAVRandom\@\@HH\@Z
-     */
-    MCAPI bool postProcess(class BlockSource&, class Random&, int, int);
-    /**
-     * @symbol ?postProcessMobsAt\@StructureFeature\@\@QEAAXAEAVBlockSource\@\@HHAEAVRandom\@\@\@Z
-     */
-    MCAPI void postProcessMobsAt(class BlockSource&, int, int, class Random&);
-    /**
      * @symbol ?setRandomSeedFor\@StructureFeature\@\@SAXAEAVRandom\@\@HHHI\@Z
      */
     MCAPI static void setRandomSeedFor(class Random&, int, int, int, unsigned int);
-    /**
-     * @symbol ?waitForFeatureBlueprints\@StructureFeature\@\@QEAAXXZ
-     */
-    MCAPI void waitForFeatureBlueprints();
     // NOLINTEND
 
     // protected:

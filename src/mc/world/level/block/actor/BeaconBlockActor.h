@@ -101,10 +101,6 @@ public:
      */
     MCAPI bool isEffectAvailable(int) const;
     /**
-     * @symbol ?isPaymentItem\@BeaconBlockActor\@\@SA_NAEBVItemDescriptor\@\@\@Z
-     */
-    MCAPI static bool isPaymentItem(class ItemDescriptor const&);
-    /**
      * @symbol ?isSecondaryAvailable\@BeaconBlockActor\@\@QEBA_NXZ
      */
     MCAPI bool isSecondaryAvailable() const;
@@ -116,6 +112,10 @@ public:
      * @symbol ?setSecondaryEffect\@BeaconBlockActor\@\@QEAA_NH\@Z
      */
     MCAPI bool setSecondaryEffect(int);
+    /**
+     * @symbol ?isPaymentItem\@BeaconBlockActor\@\@SA_NAEBVItemDescriptor\@\@\@Z
+     */
+    MCAPI static bool isPaymentItem(class ItemDescriptor const&);
     // NOLINTEND
 
     // private:

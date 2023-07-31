@@ -41,17 +41,22 @@ public:
      */
     MCAPI void loadActorAnimationControllersSync(class ResourcePackManager&);
     /**
-     * @symbol ?loadFormatVersion\@ActorAnimationControllerGroup\@\@SA_NAEBVValue\@Json\@\@AEAVSemVersion\@\@\@Z
-     */
-    MCAPI static bool loadFormatVersion(class Json::Value const&, class SemVersion&);
-    /**
      * @symbol ??1ActorAnimationControllerGroup\@\@QEAA\@XZ
      */
     MCAPI ~ActorAnimationControllerGroup();
+    /**
+     * @symbol ?loadFormatVersion\@ActorAnimationControllerGroup\@\@SA_NAEBVValue\@Json\@\@AEAVSemVersion\@\@\@Z
+     */
+    MCAPI static bool loadFormatVersion(class Json::Value const&, class SemVersion&);
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
+    /**
+     * @symbol
+     * ?_loadActorAnimationController\@ActorAnimationControllerGroup\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPath\@Core\@\@W4CurrentCmdVersion\@\@\@Z
+     */
+    MCAPI void _loadActorAnimationController(std::string const&, class Core::Path const&, enum class CurrentCmdVersion);
     /**
      * @symbol
      * ?_buildAnimationControllerFileSchema_v1_10_Or_Later\@ActorAnimationControllerGroup\@\@CA?AV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UActorAnimationControllerGroupParseMetaData\@\@\@JsonUtil\@\@\@std\@\@AEBVSemVersion\@\@\@Z
@@ -66,11 +71,6 @@ public:
      */
     MCAPI static std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, bool>>
     _buildAnimationControllerFileSchema_v1_8();
-    /**
-     * @symbol
-     * ?_loadActorAnimationController\@ActorAnimationControllerGroup\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPath\@Core\@\@W4CurrentCmdVersion\@\@\@Z
-     */
-    MCAPI void _loadActorAnimationController(std::string const&, class Core::Path const&, enum class CurrentCmdVersion);
     /**
      * @symbol ?upgrade_v1_8_to_v1_10\@ActorAnimationControllerGroup\@\@CA_NAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */

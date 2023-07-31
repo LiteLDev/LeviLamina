@@ -35,11 +35,6 @@ public:
     ScriptScoreboardIdentity(class IdentityDefinition const&, class Level const&, class Scripting::WeakLifetimeScope const&);
     /**
      * @symbol
-     * ?bind\@ScriptScoreboardIdentity\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptScoreboardIdentity\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptScoreboardIdentity> bind();
-    /**
-     * @symbol
      * ?getActor\@ScriptScoreboardIdentity\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>
@@ -62,6 +57,11 @@ public:
      * @symbol ??1ScriptScoreboardIdentity\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptScoreboardIdentity();
+    /**
+     * @symbol
+     * ?bind\@ScriptScoreboardIdentity\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptScoreboardIdentity\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptScoreboardIdentity> bind();
     // NOLINTEND
 };
 

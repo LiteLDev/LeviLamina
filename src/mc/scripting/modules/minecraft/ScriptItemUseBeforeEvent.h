@@ -41,6 +41,11 @@ public:
     MCAPI
     ScriptItemUseBeforeEvent(class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptItemStack>, struct ItemUseEvent&, class Scripting::WeakLifetimeScope const&);
     /**
+     * @symbol ??4ScriptItemUseBeforeEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
+     */
+    MCAPI struct ScriptModuleMinecraft::ScriptItemUseBeforeEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptItemUseBeforeEvent&&);
+    /**
      * @symbol
      * ?bind\@ScriptItemUseBeforeEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptItemUseBeforeEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
@@ -51,11 +56,6 @@ public:
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemUseBeforeEvent>
     bindV010();
-    /**
-     * @symbol ??4ScriptItemUseBeforeEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-     */
-    MCAPI struct ScriptModuleMinecraft::ScriptItemUseBeforeEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptItemUseBeforeEvent&&);
     // NOLINTEND
 };
 

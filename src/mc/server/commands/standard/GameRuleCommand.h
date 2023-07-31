@@ -62,11 +62,6 @@ public:
     // private:
     // NOLINTBEGIN
     /**
-     * @symbol
-     * ?createJsonIndex\@GameRuleCommand\@\@CAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVGameRule\@\@AEAVValue\@Json\@\@PEAV23\@\@Z
-     */
-    MCAPI static void createJsonIndex(std::string const&, class GameRule const&, class Json::Value&, std::string*);
-    /**
      * @symbol ?getGameRule\@GameRuleCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     MCAPI void getGameRule(class CommandOrigin const&, class CommandOutput&) const;
@@ -74,5 +69,10 @@ public:
      * @symbol ?setGameRule\@GameRuleCommand\@\@AEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     MCAPI void setGameRule(class CommandOrigin const&, class CommandOutput&) const;
+    /**
+     * @symbol
+     * ?createJsonIndex\@GameRuleCommand\@\@CAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVGameRule\@\@AEAVValue\@Json\@\@PEAV23\@\@Z
+     */
+    MCAPI static void createJsonIndex(std::string const&, class GameRule const&, class Json::Value&, std::string*);
     // NOLINTEND
 };

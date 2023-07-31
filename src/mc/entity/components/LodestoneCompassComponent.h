@@ -26,19 +26,9 @@ public:
     MCAPI int
     getAnimationFrame(std::variant<struct ActorUniqueID, std::pair<class BlockPos, class AutomaticID<class Dimension, int>>> const&, class BlockPos const&, class AutomaticID<class Dimension, int> const&);
     /**
-     * @symbol ?getSpinningAnimationFrame\@LodestoneCompassComponent\@\@SAHXZ
-     */
-    MCAPI static int getSpinningAnimationFrame();
-    /**
      * @symbol ?initialize\@LodestoneCompassComponent\@\@QEAAXAEBVPositionTrackingId\@\@\@Z
      */
     MCAPI void initialize(class PositionTrackingId const&);
-    /**
-     * @symbol
-     * ?makeCalculatorId\@LodestoneCompassComponent\@\@SA?AV?$variant\@UActorUniqueID\@\@U?$pair\@VBlockPos\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@std\@\@\@std\@\@AEBUActorUniqueID\@\@\@Z
-     */
-    MCAPI static std::variant<struct ActorUniqueID, std::pair<class BlockPos, class AutomaticID<class Dimension, int>>>
-    makeCalculatorId(struct ActorUniqueID const&);
     /**
      * @symbol ??4LodestoneCompassComponent\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
@@ -55,6 +45,16 @@ public:
      * @symbol ??1LodestoneCompassComponent\@\@QEAA\@XZ
      */
     MCAPI ~LodestoneCompassComponent();
+    /**
+     * @symbol ?getSpinningAnimationFrame\@LodestoneCompassComponent\@\@SAHXZ
+     */
+    MCAPI static int getSpinningAnimationFrame();
+    /**
+     * @symbol
+     * ?makeCalculatorId\@LodestoneCompassComponent\@\@SA?AV?$variant\@UActorUniqueID\@\@U?$pair\@VBlockPos\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@std\@\@\@std\@\@AEBUActorUniqueID\@\@\@Z
+     */
+    MCAPI static std::variant<struct ActorUniqueID, std::pair<class BlockPos, class AutomaticID<class Dimension, int>>>
+    makeCalculatorId(struct ActorUniqueID const&);
     // NOLINTEND
 
     // private:

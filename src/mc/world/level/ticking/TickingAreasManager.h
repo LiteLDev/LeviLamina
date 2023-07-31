@@ -59,10 +59,6 @@ public:
      */
     MCAPI unsigned int countStandaloneTickingAreas() const;
     /**
-     * @symbol ?getLimitCheck\@TickingAreasManager\@\@SA?AW4AreaLimitCheck\@1\@AEBVLevel\@\@_N\@Z
-     */
-    MCAPI static enum class TickingAreasManager::AreaLimitCheck getLimitCheck(class Level const&, bool);
-    /**
      * @symbol
      * ?getPendingStandaloneAreaDescriptions\@TickingAreasManager\@\@QEBA?AV?$vector\@UTickingAreaDescription\@\@V?$allocator\@UTickingAreaDescription\@\@\@std\@\@\@std\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
@@ -135,6 +131,10 @@ public:
      * @symbol ?update\@TickingAreasManager\@\@QEAAXAEAVLevel\@\@AEAVLevelStorage\@\@\@Z
      */
     MCAPI void update(class Level&, class LevelStorage&);
+    /**
+     * @symbol ?getLimitCheck\@TickingAreasManager\@\@SA?AW4AreaLimitCheck\@1\@AEBVLevel\@\@_N\@Z
+     */
+    MCAPI static enum class TickingAreasManager::AreaLimitCheck getLimitCheck(class Level const&, bool);
     // NOLINTEND
 
     // private:

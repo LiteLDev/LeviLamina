@@ -332,7 +332,7 @@ public:
      * ??0FileSystemImpl\@Core\@\@QEAA\@W4FileAccessType\@1\@V?$shared_ptr\@VFileStorageArea\@Core\@\@\@std\@\@W4TransactionFlags\@1\@V?$shared_ptr\@VFlatFileManifestTracker\@Core\@\@\@4\@\@Z
      */
     MCAPI
-        FileSystemImpl(enum class Core::FileAccessType, std::shared_ptr<class Core::FileStorageArea>, enum class Core::TransactionFlags, std::shared_ptr<class Core::FlatFileManifestTracker>);
+    FileSystemImpl(enum class Core::FileAccessType, std::shared_ptr<class Core::FileStorageArea>, enum class Core::TransactionFlags, std::shared_ptr<class Core::FlatFileManifestTracker>);
     /**
      * @symbol ?commit\@FileSystemImpl\@Core\@\@QEAA?AVResult\@2\@XZ
      */
@@ -394,10 +394,6 @@ public:
      */
     MCAPI bool isDirectoryPathAFlatFile(class Core::Path const&);
     /**
-     * @symbol ?isValidPath\@FileSystemImpl\@Core\@\@SA?AVResult\@2\@AEBVPath\@2\@\@Z
-     */
-    MCAPI static class Core::Result isValidPath(class Core::Path const&);
-    /**
      * @symbol
      * ?iterateOverDirectory\@FileSystemImpl\@Core\@\@QEAA?AVResult\@2\@AEBVPath\@2\@W4DirectoryIterationFlags\@2\@V?$function\@$$A6A?AVResult\@Core\@\@AEBUDirectoryIterationItem\@2\@\@Z\@std\@\@\@Z
      */
@@ -417,6 +413,10 @@ public:
      * @symbol ?renameFile\@FileSystemImpl\@Core\@\@QEAA?AVResult\@2\@AEBVPath\@2\@0\@Z
      */
     MCAPI class Core::Result renameFile(class Core::Path const&, class Core::Path const&);
+    /**
+     * @symbol ?isValidPath\@FileSystemImpl\@Core\@\@SA?AVResult\@2\@AEBVPath\@2\@\@Z
+     */
+    MCAPI static class Core::Result isValidPath(class Core::Path const&);
     // NOLINTEND
 
     // protected:

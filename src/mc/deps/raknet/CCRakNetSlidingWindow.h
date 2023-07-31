@@ -55,10 +55,6 @@ public:
      */
     MCAPI void Init(uint64_t, unsigned int);
     /**
-     * @symbol ?LessThan\@CCRakNetSlidingWindow\@RakNet\@\@SA_NUuint24_t\@2\@0\@Z
-     */
-    MCAPI static bool LessThan(struct RakNet::uint24_t, struct RakNet::uint24_t);
-    /**
      * @symbol ?OnAck\@CCRakNetSlidingWindow\@RakNet\@\@QEAAX_K0_NNNN1Uuint24_t\@2\@\@Z
      */
     MCAPI void OnAck(uint64_t, uint64_t, bool, double, double, double, bool, struct RakNet::uint24_t);
@@ -102,6 +98,10 @@ public:
      * @symbol ??1CCRakNetSlidingWindow\@RakNet\@\@QEAA\@XZ
      */
     MCAPI ~CCRakNetSlidingWindow();
+    /**
+     * @symbol ?LessThan\@CCRakNetSlidingWindow\@RakNet\@\@SA_NUuint24_t\@2\@0\@Z
+     */
+    MCAPI static bool LessThan(struct RakNet::uint24_t, struct RakNet::uint24_t);
     // NOLINTEND
 
     // protected:

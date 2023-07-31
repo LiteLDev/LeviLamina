@@ -48,6 +48,10 @@ public:
      */
     MCAPI BlockComponentFactory(class Experiments const&);
     /**
+     * @symbol ?initializeFactory\@BlockComponentFactory\@\@QEAAXAEBVExperiments\@\@\@Z
+     */
+    MCAPI void initializeFactory(class Experiments const&);
+    /**
      * @symbol ?addAllComponentUpgrades\@BlockComponentFactory\@\@SAXAEAVCerealDocumentUpgrader\@\@\@Z
      */
     MCAPI static void addAllComponentUpgrades(class CerealDocumentUpgrader&);
@@ -55,10 +59,6 @@ public:
      * @symbol ?bindAllComponentSchemas\@BlockComponentFactory\@\@SAXAEAVSchemaFactory\@cereal\@\@AEBVSemVersion\@\@\@Z
      */
     MCAPI static void bindAllComponentSchemas(class cereal::SchemaFactory&, class SemVersion const&);
-    /**
-     * @symbol ?initializeFactory\@BlockComponentFactory\@\@QEAAXAEBVExperiments\@\@\@Z
-     */
-    MCAPI void initializeFactory(class Experiments const&);
     /**
      * @symbol ?registerAllCerealDescriptions\@BlockComponentFactory\@\@SAXXZ
      */

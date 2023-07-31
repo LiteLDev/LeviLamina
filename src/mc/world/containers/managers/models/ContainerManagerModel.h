@@ -130,11 +130,6 @@ public:
      */
     MCAPI void _addContainer(std::shared_ptr<class ContainerModel>);
     /**
-     * @symbol
-     * ?_appendCopies\@ContainerManagerModel\@\@KAXAEAV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEBV23\@\@Z
-     */
-    MCAPI static void _appendCopies(std::vector<class ItemStack>&, std::vector<class ItemStack> const&);
-    /**
      * @symbol ?_containerScreenContext\@ContainerManagerModel\@\@IEAA?AVContainerScreenContext\@\@UActorUniqueID\@\@\@Z
      */
     MCAPI class ContainerScreenContext _containerScreenContext(struct ActorUniqueID);
@@ -151,5 +146,10 @@ public:
      * @symbol ?_isPlayerInRangeOfPosition\@ContainerManagerModel\@\@IEBA_NAEBVBlockPos\@\@M\@Z
      */
     MCAPI bool _isPlayerInRangeOfPosition(class BlockPos const&, float) const;
+    /**
+     * @symbol
+     * ?_appendCopies\@ContainerManagerModel\@\@KAXAEAV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEBV23\@\@Z
+     */
+    MCAPI static void _appendCopies(std::vector<class ItemStack>&, std::vector<class ItemStack> const&);
     // NOLINTEND
 };

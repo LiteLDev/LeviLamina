@@ -75,29 +75,6 @@ public:
      */
     MCAPI BlockDescriptor(class HashedString const&);
     /**
-     * @symbol
-     * ?anyMatch\@BlockDescriptor\@\@SA_NAEBV?$vector\@VBlockDescriptor\@\@V?$allocator\@VBlockDescriptor\@\@\@std\@\@\@std\@\@AEBV1\@\@Z
-     */
-    MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const&, class BlockDescriptor const&);
-    /**
-     * @symbol
-     * ?anyMatch\@BlockDescriptor\@\@SA_NAEBV?$vector\@VBlockDescriptor\@\@V?$allocator\@VBlockDescriptor\@\@\@std\@\@\@std\@\@AEBVBlock\@\@\@Z
-     */
-    MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const&, class Block const&);
-    /**
-     * @symbol ?bindType\@BlockDescriptor\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
-     * @symbol ?fromCompoundTag\@BlockDescriptor\@\@SA?AV1\@AEBVCompoundTag\@\@\@Z
-     */
-    MCAPI static class BlockDescriptor fromCompoundTag(class CompoundTag const&);
-    /**
-     * @symbol
-     * ?fromTagExpression\@BlockDescriptor\@\@SA?AV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4MolangVersion\@\@\@Z
-     */
-    MCAPI static class BlockDescriptor fromTagExpression(std::string const&, enum class MolangVersion);
-    /**
      * @symbol ?getBlockOrUnknownBlock\@BlockDescriptor\@\@QEBAAEBVBlock\@\@XZ
      */
     MCAPI class Block const& getBlockOrUnknownBlock() const;
@@ -161,6 +138,29 @@ public:
      * @symbol ??1BlockDescriptor\@\@QEAA\@XZ
      */
     MCAPI ~BlockDescriptor();
+    /**
+     * @symbol
+     * ?anyMatch\@BlockDescriptor\@\@SA_NAEBV?$vector\@VBlockDescriptor\@\@V?$allocator\@VBlockDescriptor\@\@\@std\@\@\@std\@\@AEBV1\@\@Z
+     */
+    MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const&, class BlockDescriptor const&);
+    /**
+     * @symbol
+     * ?anyMatch\@BlockDescriptor\@\@SA_NAEBV?$vector\@VBlockDescriptor\@\@V?$allocator\@VBlockDescriptor\@\@\@std\@\@\@std\@\@AEBVBlock\@\@\@Z
+     */
+    MCAPI static bool anyMatch(std::vector<class BlockDescriptor> const&, class Block const&);
+    /**
+     * @symbol ?bindType\@BlockDescriptor\@\@SAXXZ
+     */
+    MCAPI static void bindType();
+    /**
+     * @symbol ?fromCompoundTag\@BlockDescriptor\@\@SA?AV1\@AEBVCompoundTag\@\@\@Z
+     */
+    MCAPI static class BlockDescriptor fromCompoundTag(class CompoundTag const&);
+    /**
+     * @symbol
+     * ?fromTagExpression\@BlockDescriptor\@\@SA?AV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4MolangVersion\@\@\@Z
+     */
+    MCAPI static class BlockDescriptor fromTagExpression(std::string const&, enum class MolangVersion);
     /**
      * @symbol ?JSON_NAME_FIELD\@BlockDescriptor\@\@2QBDB
      */

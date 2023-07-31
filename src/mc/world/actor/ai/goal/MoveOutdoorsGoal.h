@@ -39,15 +39,15 @@ public:
          */
         MCAPI MoveOutdoorsDefinition();
         /**
+         * @symbol ?initialize\@MoveOutdoorsDefinition\@MoveOutdoorsGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
+         */
+        MCAPI void initialize(class EntityContext&, class MoveOutdoorsGoal&) const;
+        /**
          * @symbol
          * ?buildSchema\@MoveOutdoorsDefinition\@MoveOutdoorsGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VMoveOutdoorsDefinition\@MoveOutdoorsGoal\@\@\@JsonUtil\@\@\@4\@\@Z
          */
         MCAPI static void
         buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MoveOutdoorsGoal::MoveOutdoorsDefinition>>&);
-        /**
-         * @symbol ?initialize\@MoveOutdoorsDefinition\@MoveOutdoorsGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
-        MCAPI void initialize(class EntityContext&, class MoveOutdoorsGoal&) const;
         // NOLINTEND
     };
 

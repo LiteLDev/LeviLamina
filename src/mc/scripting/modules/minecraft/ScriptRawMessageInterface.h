@@ -28,24 +28,9 @@ public:
      */
     MCAPI ScriptRawMessageInterface(struct ScriptModuleMinecraft::ScriptRawMessageInterface const&);
     /**
-     * @symbol
-     * ?bind\@ScriptRawMessageInterface\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptRawMessageInterface>
-    bind();
-    /**
      * @symbol ?buildJsonObject\@ScriptRawMessageInterface\@ScriptModuleMinecraft\@\@QEBAXAEAVValue\@Json\@\@\@Z
      */
     MCAPI void buildJsonObject(class Json::Value&) const;
-    /**
-     * @symbol ?fromJSON\@ScriptRawMessageInterface\@ScriptModuleMinecraft\@\@SA?AU12\@AEBVValue\@Json\@\@\@Z
-     */
-    MCAPI static struct ScriptModuleMinecraft::ScriptRawMessageInterface fromJSON(class Json::Value const&);
-    /**
-     * @symbol
-     * ?fromString\@ScriptRawMessageInterface\@ScriptModuleMinecraft\@\@SA?AU12\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static struct ScriptModuleMinecraft::ScriptRawMessageInterface fromString(std::string const&);
     /**
      * @symbol ??4ScriptRawMessageInterface\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
@@ -62,13 +47,6 @@ public:
     MCAPI bool operator==(struct ScriptModuleMinecraft::ScriptRawMessageInterface const&) const;
     /**
      * @symbol
-     * ?rawTextStringsToRawText\@ScriptRawMessageInterface\@ScriptModuleMinecraft\@\@SA?AV?$vector\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@V?$allocator\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@\@std\@\@\@std\@\@AEBV?$vector\@V?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@\@std\@\@V?$allocator\@V?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@\@std\@\@\@2\@\@4\@\@Z
-     */
-    MCAPI static std::vector<struct ScriptModuleMinecraft::ScriptRawMessageInterface>
-    rawTextStringsToRawText(std::vector<
-                            std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>> const&);
-    /**
-     * @symbol
      * ?resolveAsJsonString\@ScriptRawMessageInterface\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Scripting\@\@AEAVActor\@\@W4CurrentCmdVersion\@\@\@Z
      */
     MCAPI class Scripting::Result<std::string> resolveAsJsonString(class Actor&, enum class CurrentCmdVersion) const;
@@ -80,6 +58,28 @@ public:
      * @symbol ??1ScriptRawMessageInterface\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptRawMessageInterface();
+    /**
+     * @symbol
+     * ?bind\@ScriptRawMessageInterface\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptRawMessageInterface>
+    bind();
+    /**
+     * @symbol ?fromJSON\@ScriptRawMessageInterface\@ScriptModuleMinecraft\@\@SA?AU12\@AEBVValue\@Json\@\@\@Z
+     */
+    MCAPI static struct ScriptModuleMinecraft::ScriptRawMessageInterface fromJSON(class Json::Value const&);
+    /**
+     * @symbol
+     * ?fromString\@ScriptRawMessageInterface\@ScriptModuleMinecraft\@\@SA?AU12\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static struct ScriptModuleMinecraft::ScriptRawMessageInterface fromString(std::string const&);
+    /**
+     * @symbol
+     * ?rawTextStringsToRawText\@ScriptRawMessageInterface\@ScriptModuleMinecraft\@\@SA?AV?$vector\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@V?$allocator\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@\@std\@\@\@std\@\@AEBV?$vector\@V?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@\@std\@\@V?$allocator\@V?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@\@std\@\@\@2\@\@4\@\@Z
+     */
+    MCAPI static std::vector<struct ScriptModuleMinecraft::ScriptRawMessageInterface>
+    rawTextStringsToRawText(std::vector<
+                            std::variant<std::string, struct ScriptModuleMinecraft::ScriptRawMessageInterface>> const&);
     // NOLINTEND
 };
 

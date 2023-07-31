@@ -101,11 +101,6 @@ public:
     MCAPI class buffer_span<unsigned int> getPixels() const;
     /**
      * @symbol
-     * ?getSerializationKey\@MapItemSavedData\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UActorUniqueID\@\@\@Z
-     */
-    MCAPI static std::string getSerializationKey(struct ActorUniqueID);
-    /**
-     * @symbol
      * ?getTrackedMapEntity\@MapItemSavedData\@\@QEAA?AV?$shared_ptr\@VMapItemTrackedActor\@\@\@std\@\@AEAVActor\@\@\@Z
      */
     MCAPI std::shared_ptr<class MapItemTrackedActor> getTrackedMapEntity(class Actor&);
@@ -207,6 +202,11 @@ public:
      * @symbol ??1MapItemSavedData\@\@QEAA\@XZ
      */
     MCAPI ~MapItemSavedData();
+    /**
+     * @symbol
+     * ?getSerializationKey\@MapItemSavedData\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UActorUniqueID\@\@\@Z
+     */
+    MCAPI static std::string getSerializationKey(struct ActorUniqueID);
     // NOLINTEND
 
     // private:

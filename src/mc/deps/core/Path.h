@@ -23,10 +23,6 @@ public:
      */
     MCAPI Path();
     /**
-     * @symbol ?makeFailure\@Path\@Core\@\@SA?AVResult\@2\@PEBD$$QEAV12\@\@Z
-     */
-    MCAPI static class Core::Result makeFailure(char const*, class Core::Path&&);
-    /**
      * @symbol ??8Path\@Core\@\@QEBA_NAEBV01\@\@Z
      */
     MCAPI bool operator==(class Core::Path const&) const;
@@ -34,6 +30,10 @@ public:
      * @symbol ??1Path\@Core\@\@QEAA\@XZ
      */
     MCAPI ~Path();
+    /**
+     * @symbol ?makeFailure\@Path\@Core\@\@SA?AVResult\@2\@PEBD$$QEAV12\@\@Z
+     */
+    MCAPI static class Core::Result makeFailure(char const*, class Core::Path&&);
     /**
      * @symbol ?EMPTY\@Path\@Core\@\@2V12\@B
      */

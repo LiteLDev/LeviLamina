@@ -16,12 +16,12 @@ public:
      */
     MCAPI NoodleCavifierNoises(class NoodleCavifierNoises const&);
     /**
-     * @symbol ?make\@NoodleCavifierNoises\@\@SA?AV1\@AEBVXoroshiroPositionalRandomFactory\@\@\@Z
-     */
-    MCAPI static class NoodleCavifierNoises make(class XoroshiroPositionalRandomFactory const&);
-    /**
      * @symbol ??1NoodleCavifierNoises\@\@QEAA\@XZ
      */
     MCAPI ~NoodleCavifierNoises();
+    /**
+     * @symbol ?make\@NoodleCavifierNoises\@\@SA?AV1\@AEBVXoroshiroPositionalRandomFactory\@\@\@Z
+     */
+    MCAPI static class NoodleCavifierNoises make(class XoroshiroPositionalRandomFactory const&);
     // NOLINTEND
 };

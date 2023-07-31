@@ -24,15 +24,15 @@ public:
      */
     MCAPI HomeDefinition();
     /**
+     * @symbol ?initialize\@HomeDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVHomeComponent\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class HomeComponent&) const;
+    /**
      * @symbol
      * ?buildSchema\@HomeDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VHomeDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HomeDefinition>>&);
-    /**
-     * @symbol ?initialize\@HomeDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVHomeComponent\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class HomeComponent&) const;
     // NOLINTEND
 };

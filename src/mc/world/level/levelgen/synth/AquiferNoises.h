@@ -21,13 +21,13 @@ public:
      */
     MCAPI AquiferNoises(class AquiferNoises const&);
     /**
-     * @symbol ?make\@AquiferNoises\@\@SA?AV1\@AEBVXoroshiroPositionalRandomFactory\@\@\@Z
-     */
-    MCAPI static class AquiferNoises make(class XoroshiroPositionalRandomFactory const&);
-    /**
      * @symbol ??1AquiferNoises\@\@QEAA\@XZ
      */
     MCAPI ~AquiferNoises();
+    /**
+     * @symbol ?make\@AquiferNoises\@\@SA?AV1\@AEBVXoroshiroPositionalRandomFactory\@\@\@Z
+     */
+    MCAPI static class AquiferNoises make(class XoroshiroPositionalRandomFactory const&);
     // NOLINTEND
 
     // private:

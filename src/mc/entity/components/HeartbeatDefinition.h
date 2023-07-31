@@ -21,15 +21,15 @@ public:
 public:
     // NOLINTBEGIN
     /**
+     * @symbol ?initialize\@HeartbeatDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVHeartbeatServerComponent\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class HeartbeatServerComponent&) const;
+    /**
      * @symbol
      * ?buildSchema\@HeartbeatDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VHeartbeatDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HeartbeatDefinition>>&);
-    /**
-     * @symbol ?initialize\@HeartbeatDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVHeartbeatServerComponent\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class HeartbeatServerComponent&) const;
     // NOLINTEND
 };

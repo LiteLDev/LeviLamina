@@ -1121,14 +1121,6 @@ public:
     MCAPI
     Player(class Level&, class PacketSender&, enum class GameType, class NetworkIdentifier const&, enum class SubClientId, class mce::UUID, std::string const&, std::string const&, std::unique_ptr<class Certificate>, class EntityContext&, std::string const&, std::string const&);
     /**
-     * @symbol ?_aiStep\@Player\@\@SAXAEAUIPlayerMovementProxy\@\@\@Z
-     */
-    MCAPI static void _aiStep(struct IPlayerMovementProxy&);
-    /**
-     * @symbol ?_causeFoodExhaustion\@Player\@\@SAXPEAVAttributeInstance\@\@_NM\@Z
-     */
-    MCAPI static void _causeFoodExhaustion(class AttributeInstance*, bool, float);
-    /**
      * @symbol ?broadcastPlayerSpawnedMobEvent\@Player\@\@QEAAXW4ActorType\@\@W4MobSpawnMethod\@\@\@Z
      */
     MCAPI void broadcastPlayerSpawnedMobEvent(enum class ActorType, enum class MobSpawnMethod);
@@ -1140,10 +1132,6 @@ public:
      * @symbol ?canDestroy\@Player\@\@QEBA_NAEBVBlock\@\@\@Z
      */
     MCAPI bool canDestroy(class Block const&) const;
-    /**
-     * @symbol ?canJump\@Player\@\@SA_NAEAUIPlayerMovementProxy\@\@\@Z
-     */
-    MCAPI static bool canJump(struct IPlayerMovementProxy&);
     /**
      * @symbol ?canSleep\@Player\@\@QEBA_NXZ
      */
@@ -1164,26 +1152,6 @@ public:
      * @symbol ?causeFoodExhaustion\@Player\@\@QEAAXM\@Z
      */
     MCAPI void causeFoodExhaustion(float);
-    /**
-     * @symbol
-     * ?checkAndFixSpawnPosition\@Player\@\@SA_NAEAVVec3\@\@V?$vector\@V?$not_null\@PEAVBlockSource\@\@\@gsl\@\@V?$allocator\@V?$not_null\@PEAVBlockSource\@\@\@gsl\@\@\@std\@\@\@std\@\@VAABB\@\@_N33333F\@Z
-     */
-    MCAPI static bool checkAndFixSpawnPosition(
-        class Vec3&,
-        std::vector<class gsl::not_null<class BlockSource*>>,
-        class AABB,
-        bool,
-        bool,
-        bool,
-        bool,
-        bool,
-        bool,
-        short
-    );
-    /**
-     * @symbol ?checkNeedAutoJump\@Player\@\@SA_NPEAUIPlayerMovementProxy\@\@MM\@Z
-     */
-    MCAPI static bool checkNeedAutoJump(struct IPlayerMovementProxy*, float, float);
     /**
      * @symbol ?clearRespawnPosition\@Player\@\@QEAAXXZ
      */
@@ -1436,10 +1404,6 @@ public:
      */
     MCAPI int getXpNeededForNextLevel() const;
     /**
-     * @symbol ?handleJumpEffects\@Player\@\@SAXAEAUIPlayerMovementProxy\@\@\@Z
-     */
-    MCAPI static void handleJumpEffects(struct IPlayerMovementProxy&);
-    /**
      * @symbol ?hasBedPosition\@Player\@\@QEBA_NXZ
      */
     MCAPI bool hasBedPosition() const;
@@ -1475,10 +1439,6 @@ public:
      * @symbol ?is2DPositionRelevant\@Player\@\@QEAA_NV?$AutomaticID\@VDimension\@\@H\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool is2DPositionRelevant(class AutomaticID<class Dimension, int>, class BlockPos const&);
-    /**
-     * @symbol ?isDangerousVolume\@Player\@\@SA_NAEAVBlockSource\@\@AEBVAABB\@\@_N\@Z
-     */
-    MCAPI static bool isDangerousVolume(class BlockSource&, class AABB const&, bool);
     /**
      * @symbol ?isFlying\@Player\@\@QEBA_NXZ
      */
@@ -1723,24 +1683,6 @@ public:
      */
     MCAPI bool take(class Actor&, int, int);
     /**
-     * @symbol
-     * ?tryGetFromComponent\@Player\@\@SAPEAV1\@AEBV?$FlagComponent\@UPlayerComponentFlag\@\@\@\@AEAVActorOwnerComponent\@\@_N\@Z
-     */
-    MCAPI static class Player*
-    tryGetFromComponent(class FlagComponent<struct PlayerComponentFlag> const&, class ActorOwnerComponent&, bool);
-    /**
-     * @symbol ?tryGetFromEntity\@Player\@\@SAPEAV1\@V?$StackRefResultT\@UEntityRefTraits\@\@\@\@_N\@Z
-     */
-    MCAPI static class Player* tryGetFromEntity(class StackRefResultT<struct EntityRefTraits>, bool);
-    /**
-     * @symbol ?tryGetFromEntity\@Player\@\@SAPEAV1\@AEAVEntityContext\@\@_N\@Z
-     */
-    MCAPI static class Player* tryGetFromEntity(class EntityContext&, bool);
-    /**
-     * @symbol ?tryGetFromEntity\@Player\@\@SAPEBV1\@AEBVEntityContext\@\@_N\@Z
-     */
-    MCAPI static class Player const* tryGetFromEntity(class EntityContext const&, bool);
-    /**
      * @symbol ?tryStartGliding\@Player\@\@QEAA_NXZ
      */
     MCAPI bool tryStartGliding();
@@ -1768,6 +1710,64 @@ public:
      * @symbol ?useSelectedItem\@Player\@\@QEAAXW4ItemUseMethod\@\@_N\@Z
      */
     MCAPI void useSelectedItem(enum class ItemUseMethod, bool);
+    /**
+     * @symbol ?_aiStep\@Player\@\@SAXAEAUIPlayerMovementProxy\@\@\@Z
+     */
+    MCAPI static void _aiStep(struct IPlayerMovementProxy&);
+    /**
+     * @symbol ?_causeFoodExhaustion\@Player\@\@SAXPEAVAttributeInstance\@\@_NM\@Z
+     */
+    MCAPI static void _causeFoodExhaustion(class AttributeInstance*, bool, float);
+    /**
+     * @symbol ?canJump\@Player\@\@SA_NAEAUIPlayerMovementProxy\@\@\@Z
+     */
+    MCAPI static bool canJump(struct IPlayerMovementProxy&);
+    /**
+     * @symbol
+     * ?checkAndFixSpawnPosition\@Player\@\@SA_NAEAVVec3\@\@V?$vector\@V?$not_null\@PEAVBlockSource\@\@\@gsl\@\@V?$allocator\@V?$not_null\@PEAVBlockSource\@\@\@gsl\@\@\@std\@\@\@std\@\@VAABB\@\@_N33333F\@Z
+     */
+    MCAPI static bool checkAndFixSpawnPosition(
+        class Vec3&,
+        std::vector<class gsl::not_null<class BlockSource*>>,
+        class AABB,
+        bool,
+        bool,
+        bool,
+        bool,
+        bool,
+        bool,
+        short
+    );
+    /**
+     * @symbol ?checkNeedAutoJump\@Player\@\@SA_NPEAUIPlayerMovementProxy\@\@MM\@Z
+     */
+    MCAPI static bool checkNeedAutoJump(struct IPlayerMovementProxy*, float, float);
+    /**
+     * @symbol ?handleJumpEffects\@Player\@\@SAXAEAUIPlayerMovementProxy\@\@\@Z
+     */
+    MCAPI static void handleJumpEffects(struct IPlayerMovementProxy&);
+    /**
+     * @symbol ?isDangerousVolume\@Player\@\@SA_NAEAVBlockSource\@\@AEBVAABB\@\@_N\@Z
+     */
+    MCAPI static bool isDangerousVolume(class BlockSource&, class AABB const&, bool);
+    /**
+     * @symbol
+     * ?tryGetFromComponent\@Player\@\@SAPEAV1\@AEBV?$FlagComponent\@UPlayerComponentFlag\@\@\@\@AEAVActorOwnerComponent\@\@_N\@Z
+     */
+    MCAPI static class Player*
+    tryGetFromComponent(class FlagComponent<struct PlayerComponentFlag> const&, class ActorOwnerComponent&, bool);
+    /**
+     * @symbol ?tryGetFromEntity\@Player\@\@SAPEAV1\@V?$StackRefResultT\@UEntityRefTraits\@\@\@\@_N\@Z
+     */
+    MCAPI static class Player* tryGetFromEntity(class StackRefResultT<struct EntityRefTraits>, bool);
+    /**
+     * @symbol ?tryGetFromEntity\@Player\@\@SAPEAV1\@AEAVEntityContext\@\@_N\@Z
+     */
+    MCAPI static class Player* tryGetFromEntity(class EntityContext&, bool);
+    /**
+     * @symbol ?tryGetFromEntity\@Player\@\@SAPEBV1\@AEBVEntityContext\@\@_N\@Z
+     */
+    MCAPI static class Player const* tryGetFromEntity(class EntityContext const&, bool);
     /**
      * @symbol ?DEFAULT_BB_HEIGHT\@Player\@\@2MB
      */
@@ -1906,10 +1906,6 @@ public:
      */
     MCAPI bool _chooseSpawnPositionWithinArea();
     /**
-     * @symbol ?_isDangerousBlock\@Player\@\@KA_NAEBVBlock\@\@_N\@Z
-     */
-    MCAPI static bool _isDangerousBlock(class Block const&, bool);
-    /**
      * @symbol ?_registerPlayerAttributes\@Player\@\@IEAAXXZ
      */
     MCAPI void _registerPlayerAttributes();
@@ -1933,6 +1929,10 @@ public:
      * @symbol ?checkSpawnBlock\@Player\@\@IEBA_NAEBVBlockSource\@\@\@Z
      */
     MCAPI bool checkSpawnBlock(class BlockSource const&) const;
+    /**
+     * @symbol ?_isDangerousBlock\@Player\@\@KA_NAEBVBlock\@\@_N\@Z
+     */
+    MCAPI static bool _isDangerousBlock(class Block const&, bool);
     // NOLINTEND
 
     // private:

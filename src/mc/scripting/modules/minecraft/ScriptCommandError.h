@@ -28,14 +28,14 @@ public:
      */
     MCAPI ScriptCommandError(std::string, struct MCRESULT const&);
     /**
+     * @symbol ??1ScriptCommandError\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptCommandError();
+    /**
      * @symbol
      * ?bind\@ScriptCommandError\@ScriptModuleMinecraft\@\@SA?AV?$ErrorBindingBuilder\@UScriptCommandError\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ErrorBindingBuilder<struct ScriptModuleMinecraft::ScriptCommandError> bind();
-    /**
-     * @symbol ??1ScriptCommandError\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptCommandError();
     // NOLINTEND
 };
 

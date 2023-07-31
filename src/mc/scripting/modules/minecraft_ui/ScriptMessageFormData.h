@@ -40,12 +40,6 @@ public:
     MCAPI ScriptMessageFormData();
     /**
      * @symbol
-     * ?bind\@ScriptMessageFormData\@ScriptModuleMinecraftServerUI\@\@SA?AV?$ClassBindingBuilder\@VScriptMessageFormData\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptMessageFormData>
-    bind();
-    /**
-     * @symbol
      * ?body\@ScriptMessageFormData\@ScriptModuleMinecraftServerUI\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptMessageFormData\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@V?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@\@std\@\@\@Z
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraftServerUI::ScriptMessageFormData>
@@ -114,6 +108,12 @@ public:
      * @symbol ??1ScriptMessageFormData\@ScriptModuleMinecraftServerUI\@\@QEAA\@XZ
      */
     MCAPI ~ScriptMessageFormData();
+    /**
+     * @symbol
+     * ?bind\@ScriptMessageFormData\@ScriptModuleMinecraftServerUI\@\@SA?AV?$ClassBindingBuilder\@VScriptMessageFormData\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerUI::ScriptMessageFormData>
+    bind();
     // NOLINTEND
 };
 

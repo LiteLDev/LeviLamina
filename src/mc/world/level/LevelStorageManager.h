@@ -26,7 +26,7 @@ public:
      * ??0LevelStorageManager\@\@QEAA\@V?$OwnerPtrT\@U?$SharePtrRefTraits\@VLevelStorage\@\@\@\@\@\@V?$unique_ptr\@VGameDataSaveTimer\@\@U?$default_delete\@VGameDataSaveTimer\@\@\@std\@\@\@std\@\@V?$unique_ptr\@VUserStorageChecker\@\@U?$default_delete\@VUserStorageChecker\@\@\@std\@\@\@3\@\@Z
      */
     MCAPI
-        LevelStorageManager(class OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>>, std::unique_ptr<class GameDataSaveTimer>, std::unique_ptr<class UserStorageChecker>);
+    LevelStorageManager(class OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>>, std::unique_ptr<class GameDataSaveTimer>, std::unique_ptr<class UserStorageChecker>);
     /**
      * @symbol ?getLevelStorage\@LevelStorageManager\@\@QEAAAEAVLevelStorage\@\@XZ
      */

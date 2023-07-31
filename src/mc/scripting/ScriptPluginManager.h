@@ -29,10 +29,6 @@ public:
         ScriptPluginManagerResult
         discoverPlugins(enum class ResourceInformation::ResourceType, class IScriptPluginSourceEnumerator const&, class ScriptPackConfigurationManager const&, std::vector<std::function<bool(class PackManifest const&, struct Scripting::ModuleDescriptor const&, struct Scripting::ModuleDescriptor const&, class ScriptPluginResult&)>> const&);
     /**
-     * @symbol ?getPackCapability\@ScriptPluginManager\@\@SA?AVPackCapability\@\@XZ
-     */
-    MCAPI static class PackCapability getPackCapability();
-    /**
      * @symbol
      * ?getPluginStats\@ScriptPluginManager\@\@QEBA?AV?$vector\@UScriptPluginStats\@\@V?$allocator\@UScriptPluginStats\@\@\@std\@\@\@std\@\@XZ
      */
@@ -45,6 +41,10 @@ public:
      * @symbol ?runAll\@ScriptPluginManager\@\@QEAA?AVScriptPluginManagerResult\@\@XZ
      */
     MCAPI class ScriptPluginManagerResult runAll();
+    /**
+     * @symbol ?getPackCapability\@ScriptPluginManager\@\@SA?AVPackCapability\@\@XZ
+     */
+    MCAPI static class PackCapability getPackCapability();
     // NOLINTEND
 
     // private:

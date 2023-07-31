@@ -24,14 +24,14 @@ public:
      */
     MCAPI ExploreOutskirtsDefinition();
     /**
+     * @symbol ?initialize\@ExploreOutskirtsDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVExploreOutskirtsGoal\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class ExploreOutskirtsGoal&) const;
+    /**
      * @symbol
      * ?buildSchema\@ExploreOutskirtsDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VExploreOutskirtsDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void
     buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ExploreOutskirtsDefinition>>&);
-    /**
-     * @symbol ?initialize\@ExploreOutskirtsDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVExploreOutskirtsGoal\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class ExploreOutskirtsGoal&) const;
     // NOLINTEND
 };

@@ -24,10 +24,6 @@ public:
      */
     MCAPI class Actor* getActorPtrFromPushedArray(uint64_t, uint64_t, bool&) const;
     /**
-     * @symbol ?getLocalThreadEvalParams\@MolangEvalParams\@\@SAAEAU1\@XZ
-     */
-    MCAPI static struct MolangEvalParams& getLocalThreadEvalParams();
-    /**
      * @symbol ?popActor\@MolangEvalParams\@\@QEAAPEAVActor\@\@XZ
      */
     MCAPI class Actor* popActor();
@@ -87,5 +83,9 @@ public:
      * @symbol ??1MolangEvalParams\@\@QEAA\@XZ
      */
     MCAPI ~MolangEvalParams();
+    /**
+     * @symbol ?getLocalThreadEvalParams\@MolangEvalParams\@\@SAAEAU1\@XZ
+     */
+    MCAPI static struct MolangEvalParams& getLocalThreadEvalParams();
     // NOLINTEND
 };

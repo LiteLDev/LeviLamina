@@ -13,13 +13,13 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ?rotate\@Vec2\@\@SA?AV1\@AEBV1\@M\@Z
-     */
-    MCAPI static class Vec2 rotate(class Vec2 const&, float);
-    /**
      * @symbol ?toString\@Vec2\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string toString() const;
+    /**
+     * @symbol ?rotate\@Vec2\@\@SA?AV1\@AEBV1\@M\@Z
+     */
+    MCAPI static class Vec2 rotate(class Vec2 const&, float);
     /**
      * @symbol ?LOWEST\@Vec2\@\@2V1\@B
      */

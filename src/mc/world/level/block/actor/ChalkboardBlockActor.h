@@ -186,6 +186,36 @@ public:
      */
     MCAPI ChalkboardBlockActor(class BlockPos const&);
     /**
+     * @symbol ?getChalkboardSize\@ChalkboardBlockActor\@\@QEBA?BW4ChalkboardSize\@\@XZ
+     */
+    MCAPI enum class ChalkboardSize const getChalkboardSize() const;
+    /**
+     * @symbol ?getLocked\@ChalkboardBlockActor\@\@QEBA_NXZ
+     */
+    MCAPI bool getLocked() const;
+    /**
+     * @symbol ?getRotation\@ChalkboardBlockActor\@\@QEBAHAEAVBlockSource\@\@\@Z
+     */
+    MCAPI int getRotation(class BlockSource&) const;
+    /**
+     * @symbol
+     * ?getText\@ChalkboardBlockActor\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     */
+    MCAPI std::string const& getText() const;
+    /**
+     * @symbol ?getTextCharCount\@ChalkboardBlockActor\@\@QEBAHXZ
+     */
+    MCAPI int getTextCharCount() const;
+    /**
+     * @symbol
+     * ?setText\@ChalkboardBlockActor\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI void setText(std::string const&);
+    /**
+     * @symbol ?validate\@ChalkboardBlockActor\@\@QEAAXAEAVBlockSource\@\@\@Z
+     */
+    MCAPI void validate(class BlockSource&);
+    /**
      * @symbol
      * ?calculateAllBlocks\@ChalkboardBlockActor\@\@SA?AV?$vector\@VBlockPos\@\@V?$allocator\@VBlockPos\@\@\@std\@\@\@std\@\@AEBVBlockPos\@\@W4ChalkboardSize\@\@H\@Z
      */
@@ -224,36 +254,6 @@ public:
         class ItemStack const&,
         std::string
     );
-    /**
-     * @symbol ?getChalkboardSize\@ChalkboardBlockActor\@\@QEBA?BW4ChalkboardSize\@\@XZ
-     */
-    MCAPI enum class ChalkboardSize const getChalkboardSize() const;
-    /**
-     * @symbol ?getLocked\@ChalkboardBlockActor\@\@QEBA_NXZ
-     */
-    MCAPI bool getLocked() const;
-    /**
-     * @symbol ?getRotation\@ChalkboardBlockActor\@\@QEBAHAEAVBlockSource\@\@\@Z
-     */
-    MCAPI int getRotation(class BlockSource&) const;
-    /**
-     * @symbol
-     * ?getText\@ChalkboardBlockActor\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string const& getText() const;
-    /**
-     * @symbol ?getTextCharCount\@ChalkboardBlockActor\@\@QEBAHXZ
-     */
-    MCAPI int getTextCharCount() const;
-    /**
-     * @symbol
-     * ?setText\@ChalkboardBlockActor\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI void setText(std::string const&);
-    /**
-     * @symbol ?validate\@ChalkboardBlockActor\@\@QEAAXAEAVBlockSource\@\@\@Z
-     */
-    MCAPI void validate(class BlockSource&);
     // NOLINTEND
 
     // private:

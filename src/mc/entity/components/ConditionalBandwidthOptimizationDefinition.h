@@ -32,13 +32,6 @@ public:
     MCAPI void addDefaultBandwidthOptimization(struct ConditionalBandwidthOptimization const&);
     /**
      * @symbol
-     * ?buildSchema\@ConditionalBandwidthOptimizationDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VConditionalBandwidthOptimizationDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
-    MCAPI static void buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
-                                      class JsonUtil::EmptyClass,
-                                      class ConditionalBandwidthOptimizationDefinition>>&);
-    /**
-     * @symbol
      * ?initialize\@ConditionalBandwidthOptimizationDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVConditionalBandwidthOptimizationComponent\@\@\@Z
      */
     MCAPI void initialize(class EntityContext&, class ConditionalBandwidthOptimizationComponent&) const;
@@ -46,5 +39,12 @@ public:
      * @symbol ??1ConditionalBandwidthOptimizationDefinition\@\@QEAA\@XZ
      */
     MCAPI ~ConditionalBandwidthOptimizationDefinition();
+    /**
+     * @symbol
+     * ?buildSchema\@ConditionalBandwidthOptimizationDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VConditionalBandwidthOptimizationDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
+     */
+    MCAPI static void buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<
+                                      class JsonUtil::EmptyClass,
+                                      class ConditionalBandwidthOptimizationDefinition>>&);
     // NOLINTEND
 };

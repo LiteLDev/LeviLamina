@@ -47,15 +47,15 @@ public:
     MCAPI int _getExperienceFromItem(class ItemStack const&) const;
     /**
      * @symbol
-     * ?_getResultItemWithNoEnchants\@CraftHandlerGrindstone\@\@CA?AVItemStack\@\@AEAV2\@AEBV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEA_N\@Z
-     */
-    MCAPI static class ItemStack
-    _getResultItemWithNoEnchants(class ItemStack&, std::vector<class ItemStack> const&, bool&);
-    /**
-     * @symbol
      * ?_resolveNetIdAndValidate\@CraftHandlerGrindstone\@\@AEAA_NW4ContainerEnumName\@\@EAEBUItemStackNetIdVariant\@\@\@Z
      */
     MCAPI bool
     _resolveNetIdAndValidate(enum class ContainerEnumName, unsigned char, struct ItemStackNetIdVariant const&);
+    /**
+     * @symbol
+     * ?_getResultItemWithNoEnchants\@CraftHandlerGrindstone\@\@CA?AVItemStack\@\@AEAV2\@AEBV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEA_N\@Z
+     */
+    MCAPI static class ItemStack
+    _getResultItemWithNoEnchants(class ItemStack&, std::vector<class ItemStack> const&, bool&);
     // NOLINTEND
 };

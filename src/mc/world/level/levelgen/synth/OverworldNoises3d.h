@@ -23,10 +23,6 @@ public:
      */
     MCAPI OverworldNoises3d(struct OverworldNoises3d const&);
     /**
-     * @symbol ?computeInitialDensity\@OverworldNoises3d\@\@SAMHMMM\@Z
-     */
-    MCAPI static float computeInitialDensity(int, float, float, float);
-    /**
      * @symbol
      * ?computeNoiseValues\@OverworldNoises3d\@\@QEBA?AUCacheEntry\@ChunkLocalNoiseCache\@\@AEBV?$DividedPos2d\@$03\@\@\@Z
      */
@@ -35,10 +31,6 @@ public:
      * @symbol ?computeOffsetAndFactor\@OverworldNoises3d\@\@QEBA?AUTerrainInfo\@\@AEBV?$DividedPos2d\@$03\@\@\@Z
      */
     MCAPI struct TerrainInfo computeOffsetAndFactor(class DividedPos2d<4> const&) const;
-    /**
-     * @symbol ?make\@OverworldNoises3d\@\@SA?AU1\@AEBVXoroshiroPositionalRandomFactory\@\@\@Z
-     */
-    MCAPI static struct OverworldNoises3d make(class XoroshiroPositionalRandomFactory const&);
     /**
      * @symbol ?sample\@OverworldNoises3d\@\@QEBA?AUTargetPoint\@\@VBlockPos\@\@\@Z
      */
@@ -51,6 +43,14 @@ public:
      * @symbol ??1OverworldNoises3d\@\@QEAA\@XZ
      */
     MCAPI ~OverworldNoises3d();
+    /**
+     * @symbol ?computeInitialDensity\@OverworldNoises3d\@\@SAMHMMM\@Z
+     */
+    MCAPI static float computeInitialDensity(int, float, float, float);
+    /**
+     * @symbol ?make\@OverworldNoises3d\@\@SA?AU1\@AEBVXoroshiroPositionalRandomFactory\@\@\@Z
+     */
+    MCAPI static struct OverworldNoises3d make(class XoroshiroPositionalRandomFactory const&);
     // NOLINTEND
 
     // private:

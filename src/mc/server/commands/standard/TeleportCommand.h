@@ -59,6 +59,12 @@ public:
     // NOLINTBEGIN
     /**
      * @symbol
+     * ?getFacingDirection\@TeleportCommand\@\@AEBA?AW4FacingResult\@RotationCommandUtils\@\@AEBVCommandOrigin\@\@AEAVCommandOutput\@\@AEAVVec3\@\@PEAVActor\@\@\@Z
+     */
+    MCAPI enum class RotationCommandUtils::FacingResult
+    getFacingDirection(class CommandOrigin const&, class CommandOutput&, class Vec3&, class Actor*) const;
+    /**
+     * @symbol
      * ?getCommandAreaForTargets\@TeleportCommand\@\@CA?AV?$unique_ptr\@VCommandArea\@\@U?$default_delete\@VCommandArea\@\@\@std\@\@\@std\@\@AEBVCommandOrigin\@\@AEBV?$CommandSelectorResults\@VActor\@\@\@\@VVec3\@\@H_N\@Z
      */
     MCAPI static std::unique_ptr<class CommandArea> getCommandAreaForTargets(
@@ -68,11 +74,5 @@ public:
         int,
         bool
     );
-    /**
-     * @symbol
-     * ?getFacingDirection\@TeleportCommand\@\@AEBA?AW4FacingResult\@RotationCommandUtils\@\@AEBVCommandOrigin\@\@AEAVCommandOutput\@\@AEAVVec3\@\@PEAVActor\@\@\@Z
-     */
-    MCAPI enum class RotationCommandUtils::FacingResult
-    getFacingDirection(class CommandOrigin const&, class CommandOutput&, class Vec3&, class Actor*) const;
     // NOLINTEND
 };

@@ -18,10 +18,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ?ResetDefaultLeatherColor\@DyeableComponent\@\@SAXXZ
-     */
-    MCAPI static void ResetDefaultLeatherColor();
-    /**
      * @symbol
      * ?appendFormattedHovertext\@DyeableComponent\@\@QEBAXAEBVItemStackBase\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
@@ -35,10 +31,6 @@ public:
      */
     MCAPI class mce::Color getColor(class CompoundTag const*, class ItemDescriptor const&) const;
     /**
-     * @symbol ?getIdentifier\@DyeableComponent\@\@SAAEBVHashedString\@\@XZ
-     */
-    MCAPI static class HashedString const& getIdentifier();
-    /**
      * @symbol ?hasCustomColor\@DyeableComponent\@\@QEBA_NAEBVItemStackBase\@\@\@Z
      */
     MCAPI bool hasCustomColor(class ItemStackBase const&) const;
@@ -46,6 +38,14 @@ public:
      * @symbol ?setColor\@DyeableComponent\@\@QEBAXAEAVItemStackBase\@\@AEBVColor\@mce\@\@\@Z
      */
     MCAPI void setColor(class ItemStackBase&, class mce::Color const&) const;
+    /**
+     * @symbol ?ResetDefaultLeatherColor\@DyeableComponent\@\@SAXXZ
+     */
+    MCAPI static void ResetDefaultLeatherColor();
+    /**
+     * @symbol ?getIdentifier\@DyeableComponent\@\@SAAEBVHashedString\@\@XZ
+     */
+    MCAPI static class HashedString const& getIdentifier();
     /**
      * @symbol ?DEFAULT_HORSE_LEATHER_COLOR\@DyeableComponent\@\@2VColor\@mce\@\@A
      */

@@ -22,12 +22,6 @@ public:
      */
     MCAPI ScriptSecretString(std::string);
     /**
-     * @symbol
-     * ?bind\@ScriptSecretString\@ScriptModuleMinecraftServerAdmin\@\@SA?AV?$ClassBindingBuilder\@VScriptSecretString\@ScriptModuleMinecraftServerAdmin\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerAdmin::ScriptSecretString>
-    bind();
-    /**
      * @symbol ??4ScriptSecretString\@ScriptModuleMinecraftServerAdmin\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraftServerAdmin::ScriptSecretString&
@@ -45,6 +39,12 @@ public:
      * @symbol ??1ScriptSecretString\@ScriptModuleMinecraftServerAdmin\@\@QEAA\@XZ
      */
     MCAPI ~ScriptSecretString();
+    /**
+     * @symbol
+     * ?bind\@ScriptSecretString\@ScriptModuleMinecraftServerAdmin\@\@SA?AV?$ClassBindingBuilder\@VScriptSecretString\@ScriptModuleMinecraftServerAdmin\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerAdmin::ScriptSecretString>
+    bind();
     // NOLINTEND
 };
 

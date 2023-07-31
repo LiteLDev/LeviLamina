@@ -37,20 +37,6 @@ public:
     ScriptDataDrivenActorTriggerAfterEvent(struct ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent&&);
     /**
      * @symbol
-     * ?bind\@ScriptDataDrivenActorTriggerAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptDataDrivenActorTriggerAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<
-        struct ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent>
-    bind();
-    /**
-     * @symbol
-     * ?bindV010\@ScriptDataDrivenActorTriggerAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptDataDrivenActorTriggerAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<
-        struct ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent>
-    bindV010();
-    /**
-     * @symbol
      * ?getModifiers\@ScriptDataDrivenActorTriggerAfterEvent\@ScriptModuleMinecraft\@\@QEBA?AV?$vector\@UActorDefinitionModifier\@\@V?$allocator\@UActorDefinitionModifier\@\@\@std\@\@\@std\@\@XZ
      */
     MCAPI std::vector<struct ActorDefinitionModifier> getModifiers() const;
@@ -63,6 +49,20 @@ public:
      * @symbol ??1ScriptDataDrivenActorTriggerAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptDataDrivenActorTriggerAfterEvent();
+    /**
+     * @symbol
+     * ?bind\@ScriptDataDrivenActorTriggerAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptDataDrivenActorTriggerAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<
+        struct ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent>
+    bind();
+    /**
+     * @symbol
+     * ?bindV010\@ScriptDataDrivenActorTriggerAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptDataDrivenActorTriggerAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<
+        struct ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEvent>
+    bindV010();
     // NOLINTEND
 };
 

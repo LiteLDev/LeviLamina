@@ -39,15 +39,15 @@ public:
     MCAPI PackManifestFactory(class PackCapabilityRegistry const&, class IPackTelemetry&);
     /**
      * @symbol
-     * ?contentKeyLookup\@PackManifestFactory\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@\@Z
-     */
-    MCAPI static std::string contentKeyLookup(std::string const&);
-    /**
-     * @symbol
      * ?create\@PackManifestFactory\@\@QEAA?AV?$unique_ptr\@VPackManifest\@\@U?$default_delete\@VPackManifest\@\@\@std\@\@\@std\@\@AEAVPackAccessStrategy\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@AEAVPackReport\@\@V23\@PEAVSubpackInfoCollection\@\@\@Z
      */
     MCAPI std::unique_ptr<class PackManifest>
     create(class PackAccessStrategy&, std::string const&, class PackReport&, std::unique_ptr<class PackManifest>, class SubpackInfoCollection*);
+    /**
+     * @symbol
+     * ?contentKeyLookup\@PackManifestFactory\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@\@Z
+     */
+    MCAPI static std::string contentKeyLookup(std::string const&);
     /**
      * @symbol
      * ?MANIFEST_LOG_PATH\@PackManifestFactory\@\@2V?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@B

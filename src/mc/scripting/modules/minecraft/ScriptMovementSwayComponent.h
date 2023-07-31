@@ -32,11 +32,6 @@ public:
 #endif
     /**
      * @symbol
-     * ?bind\@ScriptMovementSwayComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptMovementSwayComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMovementSwayComponent> bind();
-    /**
-     * @symbol
      * ?getSwayAmplitude\@ScriptMovementSwayComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@M\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<float> getSwayAmplitude() const;
@@ -45,6 +40,11 @@ public:
      * ?getSwayFrequency\@ScriptMovementSwayComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@M\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<float> getSwayFrequency() const;
+    /**
+     * @symbol
+     * ?bind\@ScriptMovementSwayComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptMovementSwayComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMovementSwayComponent> bind();
     /**
      * @symbol ?ComponentId\@ScriptMovementSwayComponent\@ScriptModuleMinecraft\@\@2PEBDEB
      */

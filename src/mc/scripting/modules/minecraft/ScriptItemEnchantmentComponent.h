@@ -40,12 +40,6 @@ public:
     MCAPI ScriptItemEnchantmentComponent(class ScriptModuleMinecraft::ScriptItemEnchantmentComponent const&);
     /**
      * @symbol
-     * ?bind\@ScriptItemEnchantmentComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptItemEnchantmentComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemEnchantmentComponent>
-    bind();
-    /**
-     * @symbol
      * ?getEnchantments\@ScriptItemEnchantmentComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$StrongTypedObjectHandle\@VScriptItemEnchantments\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<
@@ -66,6 +60,12 @@ public:
      * ?setEnchantments\@ScriptItemEnchantmentComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEBVScriptItemEnchantments\@2\@\@Z
      */
     MCAPI class Scripting::Result<void> setEnchantments(class ScriptModuleMinecraft::ScriptItemEnchantments const&);
+    /**
+     * @symbol
+     * ?bind\@ScriptItemEnchantmentComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptItemEnchantmentComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptItemEnchantmentComponent>
+    bind();
     // NOLINTEND
 };
 

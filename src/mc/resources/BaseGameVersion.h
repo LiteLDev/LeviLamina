@@ -35,11 +35,6 @@ public:
      */
     MCAPI std::string const& asString() const;
     /**
-     * @symbol
-     * ?fromString\@BaseGameVersion\@\@SA?AW4MatchType\@SemVersion\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV1\@\@Z
-     */
-    MCAPI static enum class SemVersion::MatchType fromString(std::string const&, class BaseGameVersion&);
-    /**
      * @symbol ?getMajor\@BaseGameVersion\@\@QEBAGXZ
      */
     MCAPI unsigned short getMajor() const;
@@ -99,6 +94,11 @@ public:
      * @symbol ??1BaseGameVersion\@\@QEAA\@XZ
      */
     MCAPI ~BaseGameVersion();
+    /**
+     * @symbol
+     * ?fromString\@BaseGameVersion\@\@SA?AW4MatchType\@SemVersion\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV1\@\@Z
+     */
+    MCAPI static enum class SemVersion::MatchType fromString(std::string const&, class BaseGameVersion&);
     /**
      * @symbol ?ANY\@BaseGameVersion\@\@2V1\@B
      */

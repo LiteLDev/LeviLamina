@@ -100,10 +100,6 @@ public:
      */
     MCAPI PerfContextTracker();
     /**
-     * @symbol ?getInstance\@PerfContextTracker\@\@SAAEAV1\@XZ
-     */
-    MCAPI static class PerfContextTracker& getInstance();
-    /**
      * @symbol ?incrementPacketReceivedInfo\@PerfContextTracker\@\@QEAAXI\@Z
      */
     MCAPI void incrementPacketReceivedInfo(unsigned int);
@@ -111,6 +107,10 @@ public:
      * @symbol ?incrementPacketSentInfo\@PerfContextTracker\@\@QEAAXI\@Z
      */
     MCAPI void incrementPacketSentInfo(unsigned int);
+    /**
+     * @symbol ?getInstance\@PerfContextTracker\@\@SAAEAV1\@XZ
+     */
+    MCAPI static class PerfContextTracker& getInstance();
     // NOLINTEND
 
     // private:

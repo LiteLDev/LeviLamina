@@ -35,13 +35,13 @@ public:
     public:
         // NOLINTBEGIN
         /**
-         * @symbol ?make\@Noises\@OverworldGeneratorMultinoise\@\@SA?AU12\@AEBVXoroshiroPositionalRandomFactory\@\@\@Z
-         */
-        MCAPI static struct OverworldGeneratorMultinoise::Noises make(class XoroshiroPositionalRandomFactory const&);
-        /**
          * @symbol ??1Noises\@OverworldGeneratorMultinoise\@\@QEAA\@XZ
          */
         MCAPI ~Noises();
+        /**
+         * @symbol ?make\@Noises\@OverworldGeneratorMultinoise\@\@SA?AU12\@AEBVXoroshiroPositionalRandomFactory\@\@\@Z
+         */
+        MCAPI static struct OverworldGeneratorMultinoise::Noises make(class XoroshiroPositionalRandomFactory const&);
         // NOLINTEND
     };
 

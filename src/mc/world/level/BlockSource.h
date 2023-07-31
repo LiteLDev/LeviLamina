@@ -354,25 +354,10 @@ public:
      */
     MCAPI bool containsAnySolidBlocking(class AABB const&) const;
     /**
-     * @symbol ?containsMaterial\@BlockSource\@\@SA_NAEBVIConstBlockSource\@\@AEBVAABB\@\@W4MaterialType\@\@\@Z
-     */
-    MCAPI static bool containsMaterial(class IConstBlockSource const&, class AABB const&, enum class MaterialType);
-    /**
      * @symbol ?countBlocksOfType\@BlockSource\@\@QEBA_KAEBVBlockDescriptor\@\@AEBVBlockPos\@\@1_K\@Z
      */
     MCAPI uint64_t
     countBlocksOfType(class BlockDescriptor const&, class BlockPos const&, class BlockPos const&, uint64_t) const;
-    /**
-     * @symbol
-     * ?doesIntersect\@BlockSource\@\@SA_NAEBVIConstBlockSource\@\@AEBVAABB\@\@AEBVGetCollisionShapeInterface\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@_N\@Z
-     */
-    MCAPI static bool doesIntersect(
-        class IConstBlockSource const&,
-        class AABB const&,
-        class GetCollisionShapeInterface const&,
-        std::vector<class AABB>&,
-        bool
-    );
     /**
      * @symbol
      * ?fetchActorIds\@BlockSource\@\@QEBAX_KAEBVAABB\@\@AEAV?$vector\@UActorUniqueID\@\@V?$allocator\@UActorUniqueID\@\@\@std\@\@\@std\@\@\@Z
@@ -796,6 +781,21 @@ public:
      * @symbol ?updateNeighborsAtExceptFromFacing\@BlockSource\@\@QEAAXAEBVBlockPos\@\@0H\@Z
      */
     MCAPI void updateNeighborsAtExceptFromFacing(class BlockPos const&, class BlockPos const&, int);
+    /**
+     * @symbol ?containsMaterial\@BlockSource\@\@SA_NAEBVIConstBlockSource\@\@AEBVAABB\@\@W4MaterialType\@\@\@Z
+     */
+    MCAPI static bool containsMaterial(class IConstBlockSource const&, class AABB const&, enum class MaterialType);
+    /**
+     * @symbol
+     * ?doesIntersect\@BlockSource\@\@SA_NAEBVIConstBlockSource\@\@AEBVAABB\@\@AEBVGetCollisionShapeInterface\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@std\@\@_N\@Z
+     */
+    MCAPI static bool doesIntersect(
+        class IConstBlockSource const&,
+        class AABB const&,
+        class GetCollisionShapeInterface const&,
+        std::vector<class AABB>&,
+        bool
+    );
     // NOLINTEND
 
     // protected:

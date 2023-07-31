@@ -23,6 +23,12 @@ public:
     MCAPI ProjectileFactory(class Level&);
     /**
      * @symbol
+     * ?shootProjectileFromDefinition\@ProjectileFactory\@\@QEAAPEAVActor\@\@AEBUActorDefinitionIdentifier\@\@PEAVMob\@\@VVec3\@\@HM\@Z
+     */
+    MCAPI class Actor*
+    shootProjectileFromDefinition(struct ActorDefinitionIdentifier const&, class Mob*, class Vec3, int, float);
+    /**
+     * @symbol
      * ?createSubcomponent\@ProjectileFactory\@\@SA?AV?$unique_ptr\@VOnHitSubcomponent\@\@U?$default_delete\@VOnHitSubcomponent\@\@\@std\@\@\@std\@\@AEAVValue\@Json\@\@AEBVSemVersion\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
      */
     MCAPI static std::unique_ptr<class OnHitSubcomponent>
@@ -31,12 +37,6 @@ public:
      * @symbol ?initFactory\@ProjectileFactory\@\@SAXXZ
      */
     MCAPI static void initFactory();
-    /**
-     * @symbol
-     * ?shootProjectileFromDefinition\@ProjectileFactory\@\@QEAAPEAVActor\@\@AEBUActorDefinitionIdentifier\@\@PEAVMob\@\@VVec3\@\@HM\@Z
-     */
-    MCAPI class Actor*
-    shootProjectileFromDefinition(struct ActorDefinitionIdentifier const&, class Mob*, class Vec3, int, float);
     /**
      * @symbol ?shutdown\@ProjectileFactory\@\@SAXXZ
      */

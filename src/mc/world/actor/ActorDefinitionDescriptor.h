@@ -28,32 +28,9 @@ public:
     MCAPI bool contains(class ActorDefinitionDescriptor const&) const;
     /**
      * @symbol
-     * ?executeEvent\@ActorDefinitionDescriptor\@\@SA_NAEAVActor\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVVariantParameterList\@\@\@Z
-     */
-    MCAPI static bool executeEvent(class Actor&, std::string const&, class VariantParameterList const&);
-    /**
-     * @symbol
-     * ?executeTrigger\@ActorDefinitionDescriptor\@\@SA_NAEAVActor\@\@AEBVActorDefinitionTrigger\@\@AEBVVariantParameterList\@\@\@Z
-     */
-    MCAPI static bool
-    executeTrigger(class Actor&, class ActorDefinitionTrigger const&, class VariantParameterList const&);
-    /**
-     * @symbol
      * ?findAttributeByName\@ActorDefinitionDescriptor\@\@QEBA?AV?$optional\@UActorDefinitionAttribute\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@\@Z
      */
     MCAPI std::optional<struct ActorDefinitionAttribute> findAttributeByName(std::string const&) const;
-    /**
-     * @symbol
-     * ?forceExecuteTrigger\@ActorDefinitionDescriptor\@\@SAXAEAVActor\@\@AEBVActorDefinitionTrigger\@\@AEBVVariantParameterList\@\@\@Z
-     */
-    MCAPI static void
-    forceExecuteTrigger(class Actor&, class ActorDefinitionTrigger const&, class VariantParameterList const&);
-    /**
-     * @symbol
-     * ?forceExecuteTriggerChain\@ActorDefinitionDescriptor\@\@SAXAEAVActor\@\@AEBVActorDefinitionTrigger\@\@AEAV?$vector\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$CBV12\@\@std\@\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$CBV12\@\@std\@\@\@2\@\@std\@\@AEBVVariantParameterList\@\@\@Z
-     */
-    MCAPI static void
-    forceExecuteTriggerChain(class Actor&, class ActorDefinitionTrigger const&, std::vector<std::pair<std::string const, std::string const>>&, class VariantParameterList const&);
     /**
      * @symbol ?hasComponent\@ActorDefinitionDescriptor\@\@QEBA_NAEBVHashedString\@\@\@Z
      */
@@ -90,6 +67,29 @@ public:
      * @symbol ??1ActorDefinitionDescriptor\@\@QEAA\@XZ
      */
     MCAPI ~ActorDefinitionDescriptor();
+    /**
+     * @symbol
+     * ?executeEvent\@ActorDefinitionDescriptor\@\@SA_NAEAVActor\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVVariantParameterList\@\@\@Z
+     */
+    MCAPI static bool executeEvent(class Actor&, std::string const&, class VariantParameterList const&);
+    /**
+     * @symbol
+     * ?executeTrigger\@ActorDefinitionDescriptor\@\@SA_NAEAVActor\@\@AEBVActorDefinitionTrigger\@\@AEBVVariantParameterList\@\@\@Z
+     */
+    MCAPI static bool
+    executeTrigger(class Actor&, class ActorDefinitionTrigger const&, class VariantParameterList const&);
+    /**
+     * @symbol
+     * ?forceExecuteTrigger\@ActorDefinitionDescriptor\@\@SAXAEAVActor\@\@AEBVActorDefinitionTrigger\@\@AEBVVariantParameterList\@\@\@Z
+     */
+    MCAPI static void
+    forceExecuteTrigger(class Actor&, class ActorDefinitionTrigger const&, class VariantParameterList const&);
+    /**
+     * @symbol
+     * ?forceExecuteTriggerChain\@ActorDefinitionDescriptor\@\@SAXAEAVActor\@\@AEBVActorDefinitionTrigger\@\@AEAV?$vector\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$CBV12\@\@std\@\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@$$CBV12\@\@std\@\@\@2\@\@std\@\@AEBVVariantParameterList\@\@\@Z
+     */
+    MCAPI static void
+    forceExecuteTriggerChain(class Actor&, class ActorDefinitionTrigger const&, std::vector<std::pair<std::string const, std::string const>>&, class VariantParameterList const&);
     // NOLINTEND
 
     // private:

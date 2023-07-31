@@ -29,14 +29,14 @@ public:
      */
     MCAPI ScriptEntityRaycastHit(class WeakEntityRef const&, float, class Scripting::WeakLifetimeScope const&);
     /**
+     * @symbol ??1ScriptEntityRaycastHit\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptEntityRaycastHit();
+    /**
      * @symbol
      * ?bind\@ScriptEntityRaycastHit\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@VScriptEntityRaycastHit\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::InterfaceBindingBuilder<class ScriptModuleMinecraft::ScriptEntityRaycastHit> bind();
-    /**
-     * @symbol ??1ScriptEntityRaycastHit\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptEntityRaycastHit();
     // NOLINTEND
 };
 

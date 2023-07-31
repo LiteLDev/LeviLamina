@@ -21,14 +21,6 @@ public:
      */
     MCAPI bool covers(class CommandVersion const&) const;
     /**
-     * @symbol ?getLatestCompatibleSemVersion\@CommandVersion\@\@SA?AVSemVersion\@\@H\@Z
-     */
-    MCAPI static class SemVersion getLatestCompatibleSemVersion(int);
-    /**
-     * @symbol ?getVersionMapping\@CommandVersion\@\@SA?BW4CurrentCmdVersion\@\@AEBVSemVersion\@\@\@Z
-     */
-    MCAPI static enum class CurrentCmdVersion const getVersionMapping(class SemVersion const&);
-    /**
      * @symbol ?isCompatible\@CommandVersion\@\@QEBA_NH\@Z
      */
     MCAPI bool isCompatible(int) const;
@@ -36,6 +28,14 @@ public:
      * @symbol ??9CommandVersion\@\@QEBA_NAEBV0\@\@Z
      */
     MCAPI bool operator!=(class CommandVersion const&) const;
+    /**
+     * @symbol ?getLatestCompatibleSemVersion\@CommandVersion\@\@SA?AVSemVersion\@\@H\@Z
+     */
+    MCAPI static class SemVersion getLatestCompatibleSemVersion(int);
+    /**
+     * @symbol ?getVersionMapping\@CommandVersion\@\@SA?BW4CurrentCmdVersion\@\@AEBVSemVersion\@\@\@Z
+     */
+    MCAPI static enum class CurrentCmdVersion const getVersionMapping(class SemVersion const&);
     /**
      * @symbol ?CurrentVersion\@CommandVersion\@\@2HB
      */

@@ -90,11 +90,6 @@ public:
         const;
     /**
      * @symbol
-     * ?_getNonSortableDisplaySlots\@ScoreboardCommand\@\@CA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEAVScoreboard\@\@\@Z
-     */
-    MCAPI static std::vector<std::string> _getNonSortableDisplaySlots(class Scoreboard&);
-    /**
-     * @symbol
      * ?_getObjective\@ScoreboardCommand\@\@AEBAPEAVObjective\@\@AEBVScoreboard\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_NAEAVCommandOutput\@\@\@Z
      */
     MCAPI class Objective* _getObjective(class Scoreboard const&, std::string const&, bool, class CommandOutput&) const;
@@ -122,11 +117,6 @@ public:
         class CommandOutput&,
         bool
     ) const;
-    /**
-     * @symbol
-     * ?_getSortableDisplaySlots\@ScoreboardCommand\@\@CA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEAVScoreboard\@\@\@Z
-     */
-    MCAPI static std::vector<std::string> _getSortableDisplaySlots(class Scoreboard&);
     /**
      * @symbol
      * ?addObjective\@ScoreboardCommand\@\@AEBAXAEAVScoreboard\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@11AEAVCommandOutput\@\@\@Z
@@ -200,5 +190,15 @@ public:
     MCAPI void
     testPlayerScore(struct ScoreboardId const&, class Objective&, std::function<std::string const&(struct ActorUniqueID)> const&, class CommandOutput&)
         const;
+    /**
+     * @symbol
+     * ?_getNonSortableDisplaySlots\@ScoreboardCommand\@\@CA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEAVScoreboard\@\@\@Z
+     */
+    MCAPI static std::vector<std::string> _getNonSortableDisplaySlots(class Scoreboard&);
+    /**
+     * @symbol
+     * ?_getSortableDisplaySlots\@ScoreboardCommand\@\@CA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEAVScoreboard\@\@\@Z
+     */
+    MCAPI static std::vector<std::string> _getSortableDisplaySlots(class Scoreboard&);
     // NOLINTEND
 };

@@ -194,10 +194,6 @@ public:
      */
     MCAPI ItemActor(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
     /**
-     * @symbol ?getLiquidAABB\@ItemActor\@\@SA?AVAABB\@\@AEBUAABBShapeComponent\@\@\@Z
-     */
-    MCAPI static class AABB getLiquidAABB(struct AABBShapeComponent const&);
-    /**
      * @symbol ?postNormalTick\@ItemActor\@\@QEAAXXZ
      */
     MCAPI void postNormalTick();
@@ -205,6 +201,10 @@ public:
      * @symbol ?setSourceEntity\@ItemActor\@\@QEAAXPEBVActor\@\@\@Z
      */
     MCAPI void setSourceEntity(class Actor const*);
+    /**
+     * @symbol ?getLiquidAABB\@ItemActor\@\@SA?AVAABB\@\@AEBUAABBShapeComponent\@\@\@Z
+     */
+    MCAPI static class AABB getLiquidAABB(struct AABBShapeComponent const&);
     /**
      * @symbol ?tryGetFromEntity\@ItemActor\@\@SAPEAV1\@AEAVEntityContext\@\@_N\@Z
      */

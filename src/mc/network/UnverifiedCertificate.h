@@ -26,11 +26,6 @@ public:
     MCAPI UnverifiedCertificate(class UnverifiedCertificate&&);
     /**
      * @symbol
-     * ?fromString\@UnverifiedCertificate\@\@SA?AV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static class UnverifiedCertificate fromString(std::string const&);
-    /**
-     * @symbol
      * ?getIdentityPublicKey\@UnverifiedCertificate\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string getIdentityPublicKey() const;
@@ -48,6 +43,11 @@ public:
      * @symbol ??1UnverifiedCertificate\@\@QEAA\@XZ
      */
     MCAPI ~UnverifiedCertificate();
+    /**
+     * @symbol
+     * ?fromString\@UnverifiedCertificate\@\@SA?AV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static class UnverifiedCertificate fromString(std::string const&);
     // NOLINTEND
 
     // private:

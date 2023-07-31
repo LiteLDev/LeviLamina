@@ -98,10 +98,6 @@ public:
      */
     MCAPI ChiseledBookshelfBlockActor(class BlockPos const&);
     /**
-     * @symbol ?allowedItem\@ChiseledBookshelfBlockActor\@\@SA_NAEBVItemStack\@\@\@Z
-     */
-    MCAPI static bool allowedItem(class ItemStack const&);
-    /**
      * @symbol ?getLastInteractedSlot\@ChiseledBookshelfBlockActor\@\@QEBAIXZ
      */
     MCAPI unsigned int getLastInteractedSlot() const;
@@ -109,6 +105,10 @@ public:
      * @symbol ?retrieveBook\@ChiseledBookshelfBlockActor\@\@QEAA?AVItemStack\@\@H\@Z
      */
     MCAPI class ItemStack retrieveBook(int);
+    /**
+     * @symbol ?allowedItem\@ChiseledBookshelfBlockActor\@\@SA_NAEBVItemStack\@\@\@Z
+     */
+    MCAPI static bool allowedItem(class ItemStack const&);
     /**
      * @symbol ?tryGet\@ChiseledBookshelfBlockActor\@\@SAPEAV1\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */

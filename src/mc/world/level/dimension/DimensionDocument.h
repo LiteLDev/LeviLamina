@@ -70,10 +70,6 @@ public:
         public:
             // NOLINTBEGIN
             /**
-             * @symbol ?bindType\@Components\@Dimension\@DimensionDocument\@\@SAXXZ
-             */
-            MCAPI static void bindType();
-            /**
              * @symbol ??4Components\@Dimension\@DimensionDocument\@\@QEAAAEAU012\@AEBU012\@\@Z
              */
             MCAPI struct DimensionDocument::Dimension::Components&
@@ -82,6 +78,10 @@ public:
              * @symbol ??1Components\@Dimension\@DimensionDocument\@\@QEAA\@XZ
              */
             MCAPI ~Components();
+            /**
+             * @symbol ?bindType\@Components\@Dimension\@DimensionDocument\@\@SAXXZ
+             */
+            MCAPI static void bindType();
             // NOLINTEND
         };
 
@@ -96,13 +96,13 @@ public:
         public:
             // NOLINTBEGIN
             /**
-             * @symbol ?bindType\@Description\@Dimension\@DimensionDocument\@\@SAXXZ
-             */
-            MCAPI static void bindType();
-            /**
              * @symbol ??1Description\@Dimension\@DimensionDocument\@\@QEAA\@XZ
              */
             MCAPI ~Description();
+            /**
+             * @symbol ?bindType\@Description\@Dimension\@DimensionDocument\@\@SAXXZ
+             */
+            MCAPI static void bindType();
             // NOLINTEND
         };
 
@@ -113,10 +113,6 @@ public:
 
     public:
         // NOLINTBEGIN
-        /**
-         * @symbol ?bindType\@Dimension\@DimensionDocument\@\@SAXXZ
-         */
-        MCAPI static void bindType();
         /**
          * @symbol ??4Dimension\@DimensionDocument\@\@QEAAAEAU01\@AEBU01\@\@Z
          */
@@ -129,6 +125,10 @@ public:
          * @symbol ??1Dimension\@DimensionDocument\@\@QEAA\@XZ
          */
         MCAPI ~Dimension();
+        /**
+         * @symbol ?bindType\@Dimension\@DimensionDocument\@\@SAXXZ
+         */
+        MCAPI static void bindType();
         // NOLINTEND
     };
 
@@ -144,12 +144,12 @@ public:
      */
     MCAPI DimensionDocument();
     /**
-     * @symbol ?bindType\@DimensionDocument\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ??1DimensionDocument\@\@QEAA\@XZ
      */
     MCAPI ~DimensionDocument();
+    /**
+     * @symbol ?bindType\@DimensionDocument\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     // NOLINTEND
 };

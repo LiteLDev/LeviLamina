@@ -130,10 +130,6 @@ public:
      */
     MCAPI bool applySeasonsPostProcess(class BlockSource&);
     /**
-     * @symbol ?borderBlocksAreEnabled\@LevelChunk\@\@SA_NXZ
-     */
-    MCAPI static bool borderBlocksAreEnabled();
-    /**
      * @symbol ?changeState\@LevelChunk\@\@QEAAXW4ChunkState\@\@0\@Z
      */
     MCAPI void changeState(enum class ChunkState, enum class ChunkState);
@@ -157,33 +153,6 @@ public:
      * @symbol ?clientSubChunkRequestGenerateLightingForSubChunk\@LevelChunk\@\@QEAAXAEAVChunkViewSource\@\@F\@Z
      */
     MCAPI void clientSubChunkRequestGenerateLightingForSubChunk(class ChunkViewSource&, short);
-    /**
-     * @symbol
-     * ?createNew\@LevelChunk\@\@SA?AV?$unique_ptr\@VLevelChunk\@\@ULevelChunkPhase1Deleter\@\@\@std\@\@AEAVDimension\@\@VChunkPos\@\@_NW4SubChunkInitMode\@\@\@Z
-     */
-    MCAPI static std::unique_ptr<class LevelChunk, struct LevelChunkPhase1Deleter>
-    createNew(class Dimension&, class ChunkPos, bool, enum class SubChunkInitMode);
-    /**
-     * @symbol
-     * ?deserialize2DData\@LevelChunk\@\@SA?AV?$tuple\@V?$array\@VChunkLocalHeight\@\@$0BAA\@\@std\@\@V?$array\@UBiomeChunkData\@\@$0BAA\@\@2\@\@std\@\@AEAVIDataInput\@\@\@Z
-     */
-    MCAPI static std::tuple<std::array<class ChunkLocalHeight, 256>, std::array<struct BiomeChunkData, 256>>
-    deserialize2DData(class IDataInput&);
-    /**
-     * @symbol
-     * ?deserialize3DBiomes\@LevelChunk\@\@SA?AU?$pair\@GV?$vector\@V?$unique_ptr\@V?$SubChunkStorage\@VBiome\@\@\@\@U?$default_delete\@V?$SubChunkStorage\@VBiome\@\@\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@V?$SubChunkStorage\@VBiome\@\@\@\@U?$default_delete\@V?$SubChunkStorage\@VBiome\@\@\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@\@std\@\@AEAVIDataInput\@\@AEBVBiomeRegistry\@\@GPEAVBiome\@\@\@Z
-     */
-    MCAPI static std::pair<unsigned short, std::vector<std::unique_ptr<class SubChunkStorage<class Biome>>>>
-    deserialize3DBiomes(class IDataInput&, class BiomeRegistry const&, unsigned short, class Biome*);
-    /**
-     * @symbol
-     * ?deserialize3DData\@LevelChunk\@\@SA?AV?$tuple\@V?$array\@VChunkLocalHeight\@\@$0BAA\@\@std\@\@GV?$vector\@V?$unique_ptr\@V?$SubChunkStorage\@VBiome\@\@\@\@U?$default_delete\@V?$SubChunkStorage\@VBiome\@\@\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@V?$SubChunkStorage\@VBiome\@\@\@\@U?$default_delete\@V?$SubChunkStorage\@VBiome\@\@\@\@\@std\@\@\@std\@\@\@2\@\@2\@\@std\@\@AEAVIDataInput\@\@AEBVBiomeRegistry\@\@GPEAVBiome\@\@\@Z
-     */
-    MCAPI static std::tuple<
-        std::array<class ChunkLocalHeight, 256>,
-        unsigned short,
-        std::vector<std::unique_ptr<class SubChunkStorage<class Biome>>>>
-    deserialize3DData(class IDataInput&, class BiomeRegistry const&, unsigned short, class Biome*);
     /**
      * @symbol ?deserializeBiomes\@LevelChunk\@\@QEAAXAEAVIDataInput\@\@\@Z
      */
@@ -218,12 +187,6 @@ public:
      */
     MCAPI void
     deserializeSubChunk(unsigned char, class IDataInput&, std::optional<signed char>, std::optional<struct DeserializationChanges*>);
-    /**
-     * @symbol
-     * ?deserializeSubChunk\@LevelChunk\@\@SAXAEAVIDataInput\@\@AEBVChunkPos\@\@V?$optional\@C\@std\@\@AEAUSubChunk\@\@AEAVBlockPalette\@\@V?$optional\@PEAUDeserializationChanges\@\@\@5\@\@Z
-     */
-    MCAPI static void
-    deserializeSubChunk(class IDataInput&, class ChunkPos const&, std::optional<signed char>, struct SubChunk&, class BlockPalette&, std::optional<struct DeserializationChanges*>);
     /**
      * @symbol
      * ?deserializeSubChunkBlockEntities\@LevelChunk\@\@QEAAXAEAVIDataInput\@\@AEAV?$unordered_map\@VChunkBlockPos\@\@V?$shared_ptr\@VBlockActor\@\@\@std\@\@U?$hash\@VChunkBlockPos\@\@\@3\@U?$equal_to\@VChunkBlockPos\@\@\@3\@V?$allocator\@U?$pair\@$$CBVChunkBlockPos\@\@V?$shared_ptr\@VBlockActor\@\@\@std\@\@\@std\@\@\@3\@\@std\@\@\@Z
@@ -270,10 +233,6 @@ public:
      * @symbol ?findLightningTarget\@LevelChunk\@\@QEAA?AVVec3\@\@AEBVBlockPos\@\@AEAVBlockSource\@\@\@Z
      */
     MCAPI class Vec3 findLightningTarget(class BlockPos const&, class BlockSource&);
-    /**
-     * @symbol ?flushGarbageCollector\@LevelChunk\@\@SAXXZ
-     */
-    MCAPI static void flushGarbageCollector();
     /**
      * @symbol ?generateOriginalLighting\@LevelChunk\@\@QEAA_NAEAVChunkViewSource\@\@_N\@Z
      */
@@ -475,11 +434,6 @@ public:
      */
     MCAPI class Biome const& getSurfaceBiome(class ChunkBlockPos) const;
     /**
-     * @symbol
-     * ?getTagAndSubIndexFromKey\@LevelChunk\@\@SA?AU?$pair\@W4LevelChunkTag\@\@F\@std\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@3\@\@Z
-     */
-    MCAPI static std::pair<enum class LevelChunkTag, short> getTagAndSubIndexFromKey(std::string_view);
-    /**
      * @symbol ?getTickQueue\@LevelChunk\@\@QEBAAEBVBlockTickingQueue\@\@XZ
      */
     MCAPI class BlockTickingQueue const& getTickQueue() const;
@@ -669,12 +623,6 @@ public:
         const;
     /**
      * @symbol
-     * ?serializeEntities\@LevelChunk\@\@SAXAEBV?$vector\@VWeakEntityRef\@\@V?$allocator\@VWeakEntityRef\@\@\@std\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@AEAV43\@_NV?$function\@$$A6AXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z\@3\@44\@Z
-     */
-    MCAPI static void
-    serializeEntities(std::vector<class WeakEntityRef> const&, std::string const&, std::string&, bool, std::function<void(std::string const&)>, std::function<void(std::string const&)>, std::function<void(std::string const&)>);
-    /**
-     * @symbol
      * ?serializeEntityRemovals\@LevelChunk\@\@QEAAXV?$function\@$$A6AXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z\@std\@\@\@Z
      */
     MCAPI void serializeEntityRemovals(std::function<void(std::string const&)>);
@@ -827,6 +775,58 @@ public:
      * @symbol ??1LevelChunk\@\@QEAA\@XZ
      */
     MCAPI ~LevelChunk();
+    /**
+     * @symbol ?borderBlocksAreEnabled\@LevelChunk\@\@SA_NXZ
+     */
+    MCAPI static bool borderBlocksAreEnabled();
+    /**
+     * @symbol
+     * ?createNew\@LevelChunk\@\@SA?AV?$unique_ptr\@VLevelChunk\@\@ULevelChunkPhase1Deleter\@\@\@std\@\@AEAVDimension\@\@VChunkPos\@\@_NW4SubChunkInitMode\@\@\@Z
+     */
+    MCAPI static std::unique_ptr<class LevelChunk, struct LevelChunkPhase1Deleter>
+    createNew(class Dimension&, class ChunkPos, bool, enum class SubChunkInitMode);
+    /**
+     * @symbol
+     * ?deserialize2DData\@LevelChunk\@\@SA?AV?$tuple\@V?$array\@VChunkLocalHeight\@\@$0BAA\@\@std\@\@V?$array\@UBiomeChunkData\@\@$0BAA\@\@2\@\@std\@\@AEAVIDataInput\@\@\@Z
+     */
+    MCAPI static std::tuple<std::array<class ChunkLocalHeight, 256>, std::array<struct BiomeChunkData, 256>>
+    deserialize2DData(class IDataInput&);
+    /**
+     * @symbol
+     * ?deserialize3DBiomes\@LevelChunk\@\@SA?AU?$pair\@GV?$vector\@V?$unique_ptr\@V?$SubChunkStorage\@VBiome\@\@\@\@U?$default_delete\@V?$SubChunkStorage\@VBiome\@\@\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@V?$SubChunkStorage\@VBiome\@\@\@\@U?$default_delete\@V?$SubChunkStorage\@VBiome\@\@\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@\@std\@\@AEAVIDataInput\@\@AEBVBiomeRegistry\@\@GPEAVBiome\@\@\@Z
+     */
+    MCAPI static std::pair<unsigned short, std::vector<std::unique_ptr<class SubChunkStorage<class Biome>>>>
+    deserialize3DBiomes(class IDataInput&, class BiomeRegistry const&, unsigned short, class Biome*);
+    /**
+     * @symbol
+     * ?deserialize3DData\@LevelChunk\@\@SA?AV?$tuple\@V?$array\@VChunkLocalHeight\@\@$0BAA\@\@std\@\@GV?$vector\@V?$unique_ptr\@V?$SubChunkStorage\@VBiome\@\@\@\@U?$default_delete\@V?$SubChunkStorage\@VBiome\@\@\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@V?$SubChunkStorage\@VBiome\@\@\@\@U?$default_delete\@V?$SubChunkStorage\@VBiome\@\@\@\@\@std\@\@\@std\@\@\@2\@\@2\@\@std\@\@AEAVIDataInput\@\@AEBVBiomeRegistry\@\@GPEAVBiome\@\@\@Z
+     */
+    MCAPI static std::tuple<
+        std::array<class ChunkLocalHeight, 256>,
+        unsigned short,
+        std::vector<std::unique_ptr<class SubChunkStorage<class Biome>>>>
+    deserialize3DData(class IDataInput&, class BiomeRegistry const&, unsigned short, class Biome*);
+    /**
+     * @symbol
+     * ?deserializeSubChunk\@LevelChunk\@\@SAXAEAVIDataInput\@\@AEBVChunkPos\@\@V?$optional\@C\@std\@\@AEAUSubChunk\@\@AEAVBlockPalette\@\@V?$optional\@PEAUDeserializationChanges\@\@\@5\@\@Z
+     */
+    MCAPI static void
+    deserializeSubChunk(class IDataInput&, class ChunkPos const&, std::optional<signed char>, struct SubChunk&, class BlockPalette&, std::optional<struct DeserializationChanges*>);
+    /**
+     * @symbol ?flushGarbageCollector\@LevelChunk\@\@SAXXZ
+     */
+    MCAPI static void flushGarbageCollector();
+    /**
+     * @symbol
+     * ?getTagAndSubIndexFromKey\@LevelChunk\@\@SA?AU?$pair\@W4LevelChunkTag\@\@F\@std\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@3\@\@Z
+     */
+    MCAPI static std::pair<enum class LevelChunkTag, short> getTagAndSubIndexFromKey(std::string_view);
+    /**
+     * @symbol
+     * ?serializeEntities\@LevelChunk\@\@SAXAEBV?$vector\@VWeakEntityRef\@\@V?$allocator\@VWeakEntityRef\@\@\@std\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@AEAV43\@_NV?$function\@$$A6AXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z\@3\@44\@Z
+     */
+    MCAPI static void
+    serializeEntities(std::vector<class WeakEntityRef> const&, std::string const&, std::string&, bool, std::function<void(std::string const&)>, std::function<void(std::string const&)>, std::function<void(std::string const&)>);
     // NOLINTEND
 
     // protected:

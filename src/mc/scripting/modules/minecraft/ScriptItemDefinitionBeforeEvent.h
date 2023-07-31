@@ -45,16 +45,16 @@ public:
      */
     MCAPI ScriptItemDefinitionBeforeEvent(struct ScriptModuleMinecraft::ScriptItemDefinitionBeforeEvent&&);
     /**
+     * @symbol ??4ScriptItemDefinitionBeforeEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
+     */
+    MCAPI struct ScriptModuleMinecraft::ScriptItemDefinitionBeforeEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptItemDefinitionBeforeEvent&&);
+    /**
      * @symbol
      * ?bind\@ScriptItemDefinitionBeforeEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptItemDefinitionBeforeEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptItemDefinitionBeforeEvent>
     bind();
-    /**
-     * @symbol ??4ScriptItemDefinitionBeforeEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-     */
-    MCAPI struct ScriptModuleMinecraft::ScriptItemDefinitionBeforeEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptItemDefinitionBeforeEvent&&);
     // NOLINTEND
 };
 

@@ -15,10 +15,6 @@ public:
      */
     MCAPI GameTestResult(struct GameTestResult const&);
     /**
-     * @symbol ?bindType\@GameTestResult\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ??4GameTestResult\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
     MCAPI struct GameTestResult& operator=(struct GameTestResult const&);
@@ -34,5 +30,9 @@ public:
      * @symbol ??1GameTestResult\@\@QEAA\@XZ
      */
     MCAPI ~GameTestResult();
+    /**
+     * @symbol ?bindType\@GameTestResult\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     // NOLINTEND
 };

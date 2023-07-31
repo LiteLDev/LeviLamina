@@ -48,14 +48,6 @@ public:
      */
     MCAPI IconItemComponent(class ComponentItem*);
     /**
-     * @symbol ?bindType\@IconItemComponent\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
-     * @symbol ?getIdentifier\@IconItemComponent\@\@SAAEBVHashedString\@\@XZ
-     */
-    MCAPI static class HashedString const& getIdentifier();
-    /**
      * @symbol ?setOwnerIcon\@IconItemComponent\@\@QEAAXXZ
      */
     MCAPI void setOwnerIcon();
@@ -64,5 +56,13 @@ public:
      * ?setTexturePath\@IconItemComponent\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void setTexturePath(std::string const&);
+    /**
+     * @symbol ?bindType\@IconItemComponent\@\@SAXXZ
+     */
+    MCAPI static void bindType();
+    /**
+     * @symbol ?getIdentifier\@IconItemComponent\@\@SAAEBVHashedString\@\@XZ
+     */
+    MCAPI static class HashedString const& getIdentifier();
     // NOLINTEND
 };

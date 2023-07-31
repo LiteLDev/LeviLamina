@@ -17,13 +17,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol
-     * ?bind\@ScriptActorApplyDamageByProjectileOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptActorApplyDamageByProjectileOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::InterfaceBindingBuilder<
-        struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions>
-    bind();
-    /**
      * @symbol ??4ScriptActorApplyDamageByProjectileOptions\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions&
@@ -41,6 +34,13 @@ public:
      * @symbol ??1ScriptActorApplyDamageByProjectileOptions\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptActorApplyDamageByProjectileOptions();
+    /**
+     * @symbol
+     * ?bind\@ScriptActorApplyDamageByProjectileOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptActorApplyDamageByProjectileOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::InterfaceBindingBuilder<
+        struct ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions>
+    bind();
     // NOLINTEND
 };
 

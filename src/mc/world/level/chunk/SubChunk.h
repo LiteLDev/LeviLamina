@@ -62,10 +62,6 @@ public:
     fetchBlocksInCylinder(class BlockPos const&, class BlockPos const&, unsigned int, unsigned int, std::function<bool(class Block const&)> const&, std::vector<class BlockDataFetchResult<class Block>>&)
         const;
     /**
-     * @symbol ?flushGarbageCollectors\@SubChunk\@\@SAXXZ
-     */
-    MCAPI static void flushGarbageCollectors();
-    /**
      * @symbol ?getLight\@SubChunk\@\@QEBA?AULightPair\@SubChunkBrightnessStorage\@\@G\@Z
      */
     MCAPI struct SubChunkBrightnessStorage::LightPair getLight(unsigned short) const;
@@ -154,6 +150,10 @@ public:
      * @symbol ??1SubChunk\@\@QEAA\@XZ
      */
     MCAPI ~SubChunk();
+    /**
+     * @symbol ?flushGarbageCollectors\@SubChunk\@\@SAXXZ
+     */
+    MCAPI static void flushGarbageCollectors();
     // NOLINTEND
 
     // protected:

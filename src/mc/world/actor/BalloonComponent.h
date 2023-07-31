@@ -32,10 +32,6 @@ public:
      */
     MCAPI class Actor* getAttachedActor(class Actor&);
     /**
-     * @symbol ?getBalloonForActor\@BalloonComponent\@\@SAPEAVActor\@\@AEBV2\@\@Z
-     */
-    MCAPI static class Actor* getBalloonForActor(class Actor const&);
-    /**
      * @symbol ?getMaxHeight\@BalloonComponent\@\@QEBAMXZ
      */
     MCAPI float getMaxHeight() const;
@@ -60,6 +56,10 @@ public:
      * @symbol ?shouldPop\@BalloonComponent\@\@QEAA_NAEAVActor\@\@AEA_N\@Z
      */
     MCAPI bool shouldPop(class Actor&, bool&);
+    /**
+     * @symbol ?getBalloonForActor\@BalloonComponent\@\@SAPEAVActor\@\@AEBV2\@\@Z
+     */
+    MCAPI static class Actor* getBalloonForActor(class Actor const&);
     /**
      * @symbol
      * ?ATTACHED_TAG\@BalloonComponent\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B

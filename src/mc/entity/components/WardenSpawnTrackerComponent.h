@@ -29,15 +29,6 @@ public:
     MCAPI void copyDataFrom(class WardenSpawnTrackerComponent const&);
     /**
      * @symbol
-     * ?getSoundEventForThreatLevel\@WardenSpawnTrackerComponent\@\@SA?AV?$optional\@W4LevelSoundEvent\@\@\@std\@\@H\@Z
-     */
-    MCAPI static std::optional<enum class LevelSoundEvent> getSoundEventForThreatLevel(int);
-    /**
-     * @symbol ?hasNearbyWarden\@WardenSpawnTrackerComponent\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI static bool hasNearbyWarden(class BlockSource&, class BlockPos const&);
-    /**
-     * @symbol
      * ?readAdditionalSaveData\@WardenSpawnTrackerComponent\@\@QEAAXAEAVActor\@\@AEBVCompoundTag\@\@AEAVDataLoadHelper\@\@\@Z
      */
     MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
@@ -49,6 +40,15 @@ public:
      * @symbol ?tryIncreaseThreatLevel\@WardenSpawnTrackerComponent\@\@QEAAHXZ
      */
     MCAPI int tryIncreaseThreatLevel();
+    /**
+     * @symbol
+     * ?getSoundEventForThreatLevel\@WardenSpawnTrackerComponent\@\@SA?AV?$optional\@W4LevelSoundEvent\@\@\@std\@\@H\@Z
+     */
+    MCAPI static std::optional<enum class LevelSoundEvent> getSoundEventForThreatLevel(int);
+    /**
+     * @symbol ?hasNearbyWarden\@WardenSpawnTrackerComponent\@\@SA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI static bool hasNearbyWarden(class BlockSource&, class BlockPos const&);
     /**
      * @symbol ?MAX_THREAT_LEVEL\@WardenSpawnTrackerComponent\@\@2HB
      */

@@ -213,15 +213,15 @@ public:
     MCAPI std::optional<class RecipeUnlockingRequirement>
     _loadUnlockingRequirementFromJson(class Json::Value const&, class SemVersion const&, std::string const&) const;
     /**
+     * @symbol ?extractRecipeFormatVersion\@Recipes\@\@IEAA?AVSemVersion\@\@AEBVValue\@Json\@\@\@Z
+     */
+    MCAPI class SemVersion extractRecipeFormatVersion(class Json::Value const&);
+    /**
      * @symbol
      * ?_normalizeRectangularRecipe\@Recipes\@\@KA?AUNormalizedRectangularRecipeResults\@1\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Z
      */
     MCAPI static struct Recipes::NormalizedRectangularRecipeResults
     _normalizeRectangularRecipe(std::vector<std::string> const&);
-    /**
-     * @symbol ?extractRecipeFormatVersion\@Recipes\@\@IEAA?AVSemVersion\@\@AEBVValue\@Json\@\@\@Z
-     */
-    MCAPI class SemVersion extractRecipeFormatVersion(class Json::Value const&);
     // NOLINTEND
 
     // private:

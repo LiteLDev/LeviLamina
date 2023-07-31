@@ -53,11 +53,6 @@ public:
     BaseScriptBlockComponent(class BlockActor&, class BlockSource&, class BlockPos, class Scripting::WeakLifetimeScope const&, std::string const&);
     /**
      * @symbol
-     * ?bind\@BaseScriptBlockComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VBaseScriptBlockComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::BaseScriptBlockComponent> bind();
-    /**
-     * @symbol
      * ?getBlock\@BaseScriptBlockComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$StrongTypedObjectHandle\@VScriptBlock\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlock> getBlock() const;
@@ -66,6 +61,11 @@ public:
      */
     MCAPI class ScriptModuleMinecraft::BaseScriptBlockComponent&
     operator=(class ScriptModuleMinecraft::BaseScriptBlockComponent const&);
+    /**
+     * @symbol
+     * ?bind\@BaseScriptBlockComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VBaseScriptBlockComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::BaseScriptBlockComponent> bind();
     // NOLINTEND
 
     // protected:

@@ -53,6 +53,10 @@ public:
      */
     MCAPI bool hasAnyClientSyncProperties() const;
     /**
+     * @symbol ??1PropertyGroup\@\@QEAA\@XZ
+     */
+    MCAPI ~PropertyGroup();
+    /**
      * @symbol
      * ?isValidEnumEntry\@PropertyGroup\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
@@ -63,10 +67,6 @@ public:
      */
     MCAPI static std::shared_ptr<class PropertyGroup const>
     loadPropertiesFromJson(class Json::Value const&, class SemVersion const&);
-    /**
-     * @symbol ??1PropertyGroup\@\@QEAA\@XZ
-     */
-    MCAPI ~PropertyGroup();
     /**
      * @symbol ?MAX_ENUM_SIZE\@PropertyGroup\@\@2_KB
      */
@@ -110,10 +110,6 @@ public:
      */
     MCAPI std::string const& _getFriendlyJsonTypeString(enum class PropertyMetadata::ContainedType);
     /**
-     * @symbol ?_getJsonPropertyType\@PropertyGroup\@\@CA?AW4ContainedType\@PropertyMetadata\@\@AEBVValue\@Json\@\@\@Z
-     */
-    MCAPI static enum class PropertyMetadata::ContainedType _getJsonPropertyType(class Json::Value const&);
-    /**
      * @symbol
      * ?_loadPropertyFromJson\@PropertyGroup\@\@AEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVValue\@Json\@\@W4MolangVersion\@\@_N\@Z
      */
@@ -126,5 +122,9 @@ public:
      * @symbol ?_validateDataType\@PropertyGroup\@\@AEAA_NAEBVValue\@Json\@\@W4ContainedType\@PropertyMetadata\@\@\@Z
      */
     MCAPI bool _validateDataType(class Json::Value const&, enum class PropertyMetadata::ContainedType);
+    /**
+     * @symbol ?_getJsonPropertyType\@PropertyGroup\@\@CA?AW4ContainedType\@PropertyMetadata\@\@AEBVValue\@Json\@\@\@Z
+     */
+    MCAPI static enum class PropertyMetadata::ContainedType _getJsonPropertyType(class Json::Value const&);
     // NOLINTEND
 };

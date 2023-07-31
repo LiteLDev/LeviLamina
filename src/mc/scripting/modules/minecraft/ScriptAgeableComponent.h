@@ -53,11 +53,6 @@ public:
     ScriptAgeableComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
     /**
      * @symbol
-     * ?bind\@ScriptAgeableComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptAgeableComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptAgeableComponent> bind();
-    /**
-     * @symbol
      * ?getDropItems\@ScriptAgeableComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<std::vector<std::string>> getDropItems() const;
@@ -75,6 +70,11 @@ public:
      * ?getGrowUp\@ScriptAgeableComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@VActorDefinitionTrigger\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<class ActorDefinitionTrigger> getGrowUp() const;
+    /**
+     * @symbol
+     * ?bind\@ScriptAgeableComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptAgeableComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptAgeableComponent> bind();
     /**
      * @symbol ?ComponentId\@ScriptAgeableComponent\@ScriptModuleMinecraft\@\@2PEBDEB
      */

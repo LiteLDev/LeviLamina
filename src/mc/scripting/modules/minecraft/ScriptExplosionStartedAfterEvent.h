@@ -37,12 +37,6 @@ public:
     MCAPI
     ScriptExplosionStartedAfterEvent(struct ExplosionStartedEvent const&, class Scripting::WeakLifetimeScope const&);
     /**
-     * @symbol
-     * ?bind\@ScriptExplosionStartedAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptExplosionStartedAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent>
-    bind();
-    /**
      * @symbol ?copyTo\@ScriptExplosionStartedAfterEvent\@ScriptModuleMinecraft\@\@QEBAXAEAUExplosionStartedEvent\@\@\@Z
      */
     MCAPI void copyTo(struct ExplosionStartedEvent&) const;
@@ -65,6 +59,12 @@ public:
      * @symbol ??1ScriptExplosionStartedAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptExplosionStartedAfterEvent();
+    /**
+     * @symbol
+     * ?bind\@ScriptExplosionStartedAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptExplosionStartedAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent>
+    bind();
     // NOLINTEND
 };
 

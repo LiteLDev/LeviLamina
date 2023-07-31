@@ -44,6 +44,10 @@ public:
      */
     virtual bool initializeFromNetwork(class CompoundTag const&);
     /**
+     * @symbol ?getMovementModifier\@ChargeableItemComponent\@\@QEBAMXZ
+     */
+    MCAPI float getMovementModifier() const;
+    /**
      * @symbol ?bindType\@ChargeableItemComponent\@\@SAXXZ
      */
     MCAPI static void bindType();
@@ -51,9 +55,5 @@ public:
      * @symbol ?getIdentifier\@ChargeableItemComponent\@\@SAAEBVHashedString\@\@XZ
      */
     MCAPI static class HashedString const& getIdentifier();
-    /**
-     * @symbol ?getMovementModifier\@ChargeableItemComponent\@\@QEBAMXZ
-     */
-    MCAPI float getMovementModifier() const;
     // NOLINTEND
 };

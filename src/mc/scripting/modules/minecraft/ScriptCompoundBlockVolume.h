@@ -23,6 +23,15 @@ public:
 public:
     // NOLINTBEGIN
     /**
+     * @symbol ??4ScriptCompoundBlockVolume\@ScriptModuleMinecraft\@\@QEAAAEAV01\@AEBV01\@\@Z
+     */
+    MCAPI class ScriptModuleMinecraft::ScriptCompoundBlockVolume&
+    operator=(class ScriptModuleMinecraft::ScriptCompoundBlockVolume const&);
+    /**
+     * @symbol ??1ScriptCompoundBlockVolume\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptCompoundBlockVolume();
+    /**
      * @symbol
      * ?bindClass\@ScriptCompoundBlockVolume\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptCompoundBlockVolume\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
@@ -35,15 +44,6 @@ public:
     MCAPI static class Scripting::
         EnumBindingBuilder<enum class CompoundBlockVolumeAction, enum class CompoundBlockVolumeAction>
         bindEnums();
-    /**
-     * @symbol ??4ScriptCompoundBlockVolume\@ScriptModuleMinecraft\@\@QEAAAEAV01\@AEBV01\@\@Z
-     */
-    MCAPI class ScriptModuleMinecraft::ScriptCompoundBlockVolume&
-    operator=(class ScriptModuleMinecraft::ScriptCompoundBlockVolume const&);
-    /**
-     * @symbol ??1ScriptCompoundBlockVolume\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptCompoundBlockVolume();
     // NOLINTEND
 };
 

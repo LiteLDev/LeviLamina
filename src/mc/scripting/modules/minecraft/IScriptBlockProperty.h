@@ -41,15 +41,15 @@ public:
     MCAPI
     IScriptBlockProperty(std::string, class BlockState const&, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>);
     /**
-     * @symbol
-     * ?bindV010\@IScriptBlockProperty\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VIScriptBlockProperty\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::IScriptBlockProperty> bindV010();
-    /**
      * @symbol ??4IScriptBlockProperty\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraft::IScriptBlockProperty&
     operator=(class ScriptModuleMinecraft::IScriptBlockProperty&&);
+    /**
+     * @symbol
+     * ?bindV010\@IScriptBlockProperty\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VIScriptBlockProperty\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::IScriptBlockProperty> bindV010();
     // NOLINTEND
 };
 

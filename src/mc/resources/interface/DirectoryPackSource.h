@@ -72,10 +72,6 @@ public:
      */
     MCAPI DirectoryPackSource(class Core::Path const&, enum class PackType, enum class PackOrigin, bool);
     /**
-     * @symbol ?checkAndRemoveIncompletePacks\@DirectoryPackSource\@\@SAXAEBVPath\@Core\@\@\@Z
-     */
-    MCAPI static void checkAndRemoveIncompletePacks(class Core::Path const&);
-    /**
      * @symbol
      * ?getPath\@DirectoryPackSource\@\@QEBAAEBV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Core\@\@XZ
      */
@@ -84,5 +80,9 @@ public:
      * @symbol ?removePack\@DirectoryPackSource\@\@QEAA_NAEBVPath\@Core\@\@\@Z
      */
     MCAPI bool removePack(class Core::Path const&);
+    /**
+     * @symbol ?checkAndRemoveIncompletePacks\@DirectoryPackSource\@\@SAXAEBVPath\@Core\@\@\@Z
+     */
+    MCAPI static void checkAndRemoveIncompletePacks(class Core::Path const&);
     // NOLINTEND
 };

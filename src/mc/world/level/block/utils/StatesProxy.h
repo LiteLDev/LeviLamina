@@ -20,10 +20,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ?bindType\@StatesProxy\@BlockDescriptorSerializer\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol
      * ?fromMap\@StatesProxy\@BlockDescriptorSerializer\@\@QEAAXAEBV?$map\@UStateNameProxy\@BlockDescriptorSerializer\@\@UCompoundProxy\@2\@U?$less\@UStateNameProxy\@BlockDescriptorSerializer\@\@\@std\@\@V?$allocator\@U?$pair\@$$CBUStateNameProxy\@BlockDescriptorSerializer\@\@UCompoundProxy\@2\@\@std\@\@\@5\@\@std\@\@\@Z
      */
@@ -40,16 +36,20 @@ public:
     MCAPI struct BlockDescriptorSerializer::StatesProxy&
     operator=(struct BlockDescriptorSerializer::StatesProxy const&);
     /**
+     * @symbol ??1StatesProxy\@BlockDescriptorSerializer\@\@QEAA\@XZ
+     */
+    MCAPI ~StatesProxy();
+    /**
+     * @symbol ?bindType\@StatesProxy\@BlockDescriptorSerializer\@\@SAXXZ
+     */
+    MCAPI static void bindType();
+    /**
      * @symbol
      * ?toMap\@StatesProxy\@BlockDescriptorSerializer\@\@SA?AV?$map\@UStateNameProxy\@BlockDescriptorSerializer\@\@UCompoundProxy\@2\@U?$less\@UStateNameProxy\@BlockDescriptorSerializer\@\@\@std\@\@V?$allocator\@U?$pair\@$$CBUStateNameProxy\@BlockDescriptorSerializer\@\@UCompoundProxy\@2\@\@std\@\@\@5\@\@std\@\@AEBU12\@\@Z
      */
     MCAPI static std::
         map<struct BlockDescriptorSerializer::StateNameProxy, struct BlockDescriptorSerializer::CompoundProxy>
         toMap(struct BlockDescriptorSerializer::StatesProxy const&);
-    /**
-     * @symbol ??1StatesProxy\@BlockDescriptorSerializer\@\@QEAA\@XZ
-     */
-    MCAPI ~StatesProxy();
     // NOLINTEND
 };
 

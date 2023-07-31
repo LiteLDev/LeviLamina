@@ -784,11 +784,6 @@ public:
      */
     MCAPI Mob(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
     /**
-     * @symbol ?_calcMoveRelativeSpeed\@Mob\@\@SAMAEAUIMobMovementProxy\@\@W4TravelType\@\@AEBVIConstBlockSource\@\@\@Z
-     */
-    MCAPI static float
-    _calcMoveRelativeSpeed(struct IMobMovementProxy&, enum class TravelType, class IConstBlockSource const&);
-    /**
      * @symbol ?_endJump\@Mob\@\@QEAAXXZ
      */
     MCAPI void _endJump();
@@ -867,12 +862,6 @@ public:
      */
     MCAPI struct JumpPreventionResult getJumpPrevention();
     /**
-     * @symbol
-     * ?getJumpPrevention\@Mob\@\@SA?AUJumpPreventionResult\@\@AEBUIMobMovementProxy\@\@AEBVIConstBlockSource\@\@\@Z
-     */
-    MCAPI static struct JumpPreventionResult
-    getJumpPrevention(struct IMobMovementProxy const&, class IConstBlockSource const&);
-    /**
      * @symbol ?getJumpTicks\@Mob\@\@QEBAHXZ
      */
     MCAPI int getJumpTicks() const;
@@ -928,10 +917,6 @@ public:
      * @symbol ?isGliding\@Mob\@\@QEBA_NXZ
      */
     MCAPI bool isGliding() const;
-    /**
-     * @symbol ?isImmobile\@Mob\@\@SA_NAEBUIActorMovementProxy\@\@\@Z
-     */
-    MCAPI static bool isImmobile(struct IActorMovementProxy const&);
     /**
      * @symbol ?isLayingEgg\@Mob\@\@QEBA_NXZ
      */
@@ -1022,10 +1007,6 @@ public:
      */
     MCAPI void setSpeedModifier(float);
     /**
-     * @symbol ?setSprinting\@Mob\@\@SAXAEAVBaseAttributeMap\@\@VSynchedActorDataWriter\@\@_N\@Z
-     */
-    MCAPI static void setSprinting(class BaseAttributeMap&, class SynchedActorDataWriter, bool);
-    /**
      * @symbol ?setSurfaceMob\@Mob\@\@QEAAX_N\@Z
      */
     MCAPI void setSurfaceMob(bool);
@@ -1046,14 +1027,6 @@ public:
      */
     MCAPI void setYBodyRotations(float, float);
     /**
-     * @symbol ?shouldApplyWaterGravity\@Mob\@\@SA_NAEBUIActorMovementProxy\@\@AEBVIConstBlockSource\@\@\@Z
-     */
-    MCAPI static bool shouldApplyWaterGravity(struct IActorMovementProxy const&, class IConstBlockSource const&);
-    /**
-     * @symbol ?shouldApplyWaterGravity\@Mob\@\@SA_NAEBUIActorMovementProxy\@\@\@Z
-     */
-    MCAPI static bool shouldApplyWaterGravity(struct IActorMovementProxy const&);
-    /**
      * @symbol ?snapToYBodyRot\@Mob\@\@QEAAXM\@Z
      */
     MCAPI void snapToYBodyRot(float);
@@ -1066,10 +1039,6 @@ public:
      */
     MCAPI void tryFrostWalk();
     /**
-     * @symbol ?tryGetFromEntity\@Mob\@\@SAPEAV1\@AEAVEntityContext\@\@_N\@Z
-     */
-    MCAPI static class Mob* tryGetFromEntity(class EntityContext&, bool);
-    /**
      * @symbol ?tryProcessSoulSpeed\@Mob\@\@QEAAXXZ
      */
     MCAPI void tryProcessSoulSpeed();
@@ -1077,6 +1046,37 @@ public:
      * @symbol ?tryUpdateAI\@Mob\@\@QEAAXXZ
      */
     MCAPI void tryUpdateAI();
+    /**
+     * @symbol ?_calcMoveRelativeSpeed\@Mob\@\@SAMAEAUIMobMovementProxy\@\@W4TravelType\@\@AEBVIConstBlockSource\@\@\@Z
+     */
+    MCAPI static float
+    _calcMoveRelativeSpeed(struct IMobMovementProxy&, enum class TravelType, class IConstBlockSource const&);
+    /**
+     * @symbol
+     * ?getJumpPrevention\@Mob\@\@SA?AUJumpPreventionResult\@\@AEBUIMobMovementProxy\@\@AEBVIConstBlockSource\@\@\@Z
+     */
+    MCAPI static struct JumpPreventionResult
+    getJumpPrevention(struct IMobMovementProxy const&, class IConstBlockSource const&);
+    /**
+     * @symbol ?isImmobile\@Mob\@\@SA_NAEBUIActorMovementProxy\@\@\@Z
+     */
+    MCAPI static bool isImmobile(struct IActorMovementProxy const&);
+    /**
+     * @symbol ?setSprinting\@Mob\@\@SAXAEAVBaseAttributeMap\@\@VSynchedActorDataWriter\@\@_N\@Z
+     */
+    MCAPI static void setSprinting(class BaseAttributeMap&, class SynchedActorDataWriter, bool);
+    /**
+     * @symbol ?shouldApplyWaterGravity\@Mob\@\@SA_NAEBUIActorMovementProxy\@\@AEBVIConstBlockSource\@\@\@Z
+     */
+    MCAPI static bool shouldApplyWaterGravity(struct IActorMovementProxy const&, class IConstBlockSource const&);
+    /**
+     * @symbol ?shouldApplyWaterGravity\@Mob\@\@SA_NAEBUIActorMovementProxy\@\@\@Z
+     */
+    MCAPI static bool shouldApplyWaterGravity(struct IActorMovementProxy const&);
+    /**
+     * @symbol ?tryGetFromEntity\@Mob\@\@SAPEAV1\@AEAVEntityContext\@\@_N\@Z
+     */
+    MCAPI static class Mob* tryGetFromEntity(class EntityContext&, bool);
     /**
      * @symbol ?ARMOR_DAMAGE_DIVISOR\@Mob\@\@2HB
      */

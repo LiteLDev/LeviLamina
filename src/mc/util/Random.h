@@ -61,10 +61,6 @@ public:
      */
     MCAPI Random();
     /**
-     * @symbol ?getThreadLocal\@Random\@\@SAAEAV1\@XZ
-     */
-    MCAPI static class Random& getThreadLocal();
-    /**
      * @symbol ?nextFloat\@Random\@\@QEAAMMM\@Z
      */
     MCAPI float nextFloat(float, float);
@@ -84,6 +80,10 @@ public:
      * @symbol ?nextIntInclusive\@Random\@\@QEAAHHH\@Z
      */
     MCAPI int nextIntInclusive(int, int);
+    /**
+     * @symbol ?getThreadLocal\@Random\@\@SAAEAV1\@XZ
+     */
+    MCAPI static class Random& getThreadLocal();
     // NOLINTEND
 
 private:

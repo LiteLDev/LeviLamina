@@ -40,14 +40,14 @@ public:
     _addPiece(std::vector<std::unique_ptr<class StructurePiece>>&, class PoolElementStructurePiece const&, class Random&, class BlockPos const&, enum class Rotation const&, class JigsawStructureRegistry const&, class Dimension&, class BlockVolume&, class BlockPos const&);
     /**
      * @symbol
+     * ?_tryPlacingPiece\@LegacyJigsawPlacement\@\@AEAA_NAEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEBVPoolElementStructurePiece\@\@AEAVRandom\@\@AEBVJigsawBlockInfo\@\@AEBVBoundingBox\@\@AEAV?$vector\@VBoundingBox\@\@V?$allocator\@VBoundingBox\@\@\@std\@\@\@3\@AEBVBlockPos\@\@PEBVStructureTemplatePool\@\@AEBVJigsawStructureRegistry\@\@AEAVDimension\@\@AEAVBlockVolume\@\@6\@Z
+     */
+    MCAPI bool _tryPlacingPiece(std::vector<std::unique_ptr<class StructurePiece>>&, class PoolElementStructurePiece const&, class Random&, class JigsawBlockInfo const&, class BoundingBox const&, std::vector<class BoundingBox>&, class BlockPos const&, class StructureTemplatePool const*, class JigsawStructureRegistry const&, class Dimension&, class BlockVolume&, class BlockPos const&);
+    /**
+     * @symbol
      * ?_setTerrainAdjustment\@LegacyJigsawPlacement\@\@CA?AV?$shared_ptr\@_N\@std\@\@W4AdjustmentEffect\@\@AEBVBoundingBox\@\@AEBUJigsawJunction\@\@AEAVDimension\@\@\@Z
      */
     MCAPI static std::shared_ptr<bool>
     _setTerrainAdjustment(enum class AdjustmentEffect, class BoundingBox const&, struct JigsawJunction const&, class Dimension&);
-    /**
-     * @symbol
-     * ?_tryPlacingPiece\@LegacyJigsawPlacement\@\@AEAA_NAEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@AEBVPoolElementStructurePiece\@\@AEAVRandom\@\@AEBVJigsawBlockInfo\@\@AEBVBoundingBox\@\@AEAV?$vector\@VBoundingBox\@\@V?$allocator\@VBoundingBox\@\@\@std\@\@\@3\@AEBVBlockPos\@\@PEBVStructureTemplatePool\@\@AEBVJigsawStructureRegistry\@\@AEAVDimension\@\@AEAVBlockVolume\@\@6\@Z
-     */
-    MCAPI bool _tryPlacingPiece(std::vector<std::unique_ptr<class StructurePiece>>&, class PoolElementStructurePiece const&, class Random&, class JigsawBlockInfo const&, class BoundingBox const&, std::vector<class BoundingBox>&, class BlockPos const&, class StructureTemplatePool const*, class JigsawStructureRegistry const&, class Dimension&, class BlockVolume&, class BlockPos const&);
     // NOLINTEND
 };

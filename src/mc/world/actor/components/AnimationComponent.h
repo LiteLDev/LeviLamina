@@ -53,17 +53,9 @@ public:
      */
     MCAPI class ModelPartLocator* getLocator(uint64_t const&);
     /**
-     * @symbol ?getReloadTimeStampClient\@AnimationComponent\@\@SA_KXZ
-     */
-    MCAPI static uint64_t getReloadTimeStampClient();
-    /**
      * @symbol ?getRenderParams\@AnimationComponent\@\@QEAAAEAVRenderParams\@\@XZ
      */
     MCAPI class RenderParams& getRenderParams();
-    /**
-     * @symbol ?incrementCurrentServerFrameIndex\@AnimationComponent\@\@SAXXZ
-     */
-    MCAPI static void incrementCurrentServerFrameIndex();
     /**
      * @symbol ?initInstanceSpecificAnimationData\@AnimationComponent\@\@QEAAXPEAVMolangVariableMap\@\@\@Z
      */
@@ -111,6 +103,14 @@ public:
      * @symbol ??1AnimationComponent\@\@QEAA\@XZ
      */
     MCAPI ~AnimationComponent();
+    /**
+     * @symbol ?getReloadTimeStampClient\@AnimationComponent\@\@SA_KXZ
+     */
+    MCAPI static uint64_t getReloadTimeStampClient();
+    /**
+     * @symbol ?incrementCurrentServerFrameIndex\@AnimationComponent\@\@SAXXZ
+     */
+    MCAPI static void incrementCurrentServerFrameIndex();
     // NOLINTEND
 
 private:

@@ -30,14 +30,14 @@ public:
      */
     MCAPI MeleeAttackDefinition();
     /**
+     * @symbol ?initialize\@MeleeAttackDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVMeleeAttackGoal\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class MeleeAttackGoal&) const;
+    /**
      * @symbol
      * ?buildSchema\@MeleeAttackDefinition\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VMeleeAttackDefinition\@\@\@JsonUtil\@\@\@3\@\@Z
      */
     MCAPI static void
     buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MeleeAttackDefinition>>&);
-    /**
-     * @symbol ?initialize\@MeleeAttackDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVMeleeAttackGoal\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class MeleeAttackGoal&) const;
     // NOLINTEND
 };

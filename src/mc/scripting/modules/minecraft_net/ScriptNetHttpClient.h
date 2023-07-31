@@ -69,11 +69,6 @@ public:
     MCAPI ScriptNetHttpClient(std::string const&, class Bedrock::NonOwnerPointer<class Scheduler>);
     /**
      * @symbol
-     * ?bind\@ScriptNetHttpClient\@ScriptModuleMinecraftNet\@\@SA?AV?$ClassBindingBuilder\@UScriptNetHttpClient\@ScriptModuleMinecraftNet\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraftNet::ScriptNetHttpClient> bind();
-    /**
-     * @symbol
      * ?cancelAll\@ScriptNetHttpClient\@ScriptModuleMinecraftNet\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void cancelAll(std::string const&);
@@ -104,6 +99,11 @@ public:
      * @symbol ??1ScriptNetHttpClient\@ScriptModuleMinecraftNet\@\@QEAA\@XZ
      */
     MCAPI ~ScriptNetHttpClient();
+    /**
+     * @symbol
+     * ?bind\@ScriptNetHttpClient\@ScriptModuleMinecraftNet\@\@SA?AV?$ClassBindingBuilder\@UScriptNetHttpClient\@ScriptModuleMinecraftNet\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraftNet::ScriptNetHttpClient> bind();
     // NOLINTEND
 };
 

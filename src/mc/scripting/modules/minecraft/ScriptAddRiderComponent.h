@@ -51,11 +51,6 @@ public:
     ScriptAddRiderComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
     /**
      * @symbol
-     * ?bind\@ScriptAddRiderComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptAddRiderComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptAddRiderComponent> bind();
-    /**
-     * @symbol
      * ?getEntityType\@ScriptAddRiderComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<std::string> getEntityType() const;
@@ -64,6 +59,11 @@ public:
      * ?getSpawnEvent\@ScriptAddRiderComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<std::string> getSpawnEvent() const;
+    /**
+     * @symbol
+     * ?bind\@ScriptAddRiderComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptAddRiderComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptAddRiderComponent> bind();
     /**
      * @symbol ?ComponentId\@ScriptAddRiderComponent\@ScriptModuleMinecraft\@\@2PEBDEB
      */

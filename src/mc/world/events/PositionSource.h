@@ -24,14 +24,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ?forActor\@PositionSource\@GameEvents\@\@SA?AV12\@UActorUniqueID\@\@W4ActorLocation\@\@\@Z
-     */
-    MCAPI static class GameEvents::PositionSource forActor(struct ActorUniqueID, enum class ActorLocation);
-    /**
-     * @symbol ?forFixedPos\@PositionSource\@GameEvents\@\@SA?AV12\@AEBVVec3\@\@\@Z
-     */
-    MCAPI static class GameEvents::PositionSource forFixedPos(class Vec3 const&);
-    /**
      * @symbol ?getPosition\@PositionSource\@GameEvents\@\@QEBA?AV?$optional\@VVec3\@\@\@std\@\@AEBVIBlockSource\@\@\@Z
      */
     MCAPI std::optional<class Vec3> getPosition(class IBlockSource const&) const;
@@ -39,6 +31,14 @@ public:
      * @symbol ?serializeTo\@PositionSource\@GameEvents\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */
     MCAPI void serializeTo(class CompoundTag&) const;
+    /**
+     * @symbol ?forActor\@PositionSource\@GameEvents\@\@SA?AV12\@UActorUniqueID\@\@W4ActorLocation\@\@\@Z
+     */
+    MCAPI static class GameEvents::PositionSource forActor(struct ActorUniqueID, enum class ActorLocation);
+    /**
+     * @symbol ?forFixedPos\@PositionSource\@GameEvents\@\@SA?AV12\@AEBVVec3\@\@\@Z
+     */
+    MCAPI static class GameEvents::PositionSource forFixedPos(class Vec3 const&);
     // NOLINTEND
 };
 

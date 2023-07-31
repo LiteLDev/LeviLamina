@@ -39,14 +39,6 @@ public:
      */
     MCAPI void _addNetherrackDripColumn(class Random&, class BlockSource&, class BlockPos);
     /**
-     * @symbol ?_getRandomFacingStairs\@RuinedPortalPiece\@\@CAAEBVBlock\@\@AEAVRandom\@\@AEBV2\@\@Z
-     */
-    MCAPI static class Block const& _getRandomFacingStairs(class Random&, class Block const&);
-    /**
-     * @symbol ?_isLava\@RuinedPortalPiece\@\@CA_NAEAVBlockSource\@\@VBlockPos\@\@\@Z
-     */
-    MCAPI static bool _isLava(class BlockSource&, class BlockPos);
-    /**
      * @symbol
      * ?_maybeReplaceBlock\@RuinedPortalPiece\@\@AEAAXAEAVRandom\@\@AEAVBlockSource\@\@VBlockPos\@\@AEBUPortalEnvironmentModifiers\@\@\@Z
      */
@@ -81,6 +73,14 @@ public:
      * ?_spreadNetherrack\@RuinedPortalPiece\@\@AEAAXAEAVRandom\@\@AEAVBlockSource\@\@AEBUPortalEnvironmentModifiers\@\@\@Z
      */
     MCAPI void _spreadNetherrack(class Random&, class BlockSource&, struct PortalEnvironmentModifiers const&);
+    /**
+     * @symbol ?_getRandomFacingStairs\@RuinedPortalPiece\@\@CAAEBVBlock\@\@AEAVRandom\@\@AEBV2\@\@Z
+     */
+    MCAPI static class Block const& _getRandomFacingStairs(class Random&, class Block const&);
+    /**
+     * @symbol ?_isLava\@RuinedPortalPiece\@\@CA_NAEAVBlockSource\@\@VBlockPos\@\@\@Z
+     */
+    MCAPI static bool _isLava(class BlockSource&, class BlockPos);
     /**
      * @symbol ?_willLavaFlowIn\@RuinedPortalPiece\@\@CA_NAEAVBlockSource\@\@VBlockPos\@\@\@Z
      */

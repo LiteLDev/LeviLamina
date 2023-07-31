@@ -171,10 +171,6 @@ public:
      */
     MCAPI bool DrainOneItem(struct OS::ThreadPoolActionStatus&);
     /**
-     * @symbol ?EraseQueue\@TaskQueuePortImpl\@\@CAXPEAV?$LocklessQueue\@UQueueEntry\@TaskQueuePortImpl\@\@\@\@\@Z
-     */
-    MCAPI static void EraseQueue(class LocklessQueue<struct TaskQueuePortImpl::QueueEntry>*);
-    /**
      * @symbol ?InitializeWaitRegistration\@TaskQueuePortImpl\@\@AEAAJPEAUWaitRegistration\@1\@\@Z
      */
     MCAPI long InitializeWaitRegistration(struct TaskQueuePortImpl::WaitRegistration*);
@@ -198,6 +194,10 @@ public:
      * @symbol ?Wait\@TaskQueuePortImpl\@\@AEAA_NPEAUITaskQueuePortContext\@\@I\@Z
      */
     MCAPI bool Wait(struct ITaskQueuePortContext*, unsigned int);
+    /**
+     * @symbol ?EraseQueue\@TaskQueuePortImpl\@\@CAXPEAV?$LocklessQueue\@UQueueEntry\@TaskQueuePortImpl\@\@\@\@\@Z
+     */
+    MCAPI static void EraseQueue(class LocklessQueue<struct TaskQueuePortImpl::QueueEntry>*);
     /**
      * @symbol ?WaitCallback\@TaskQueuePortImpl\@\@CAXPEAU_TP_CALLBACK_INSTANCE\@\@PEAXPEAU_TP_WAIT\@\@K\@Z
      */

@@ -60,10 +60,6 @@ public:
      */
     MCAPI enum class Mirror getMirror() const;
     /**
-     * @symbol ?getOrientedBounds\@StructureEditorData\@\@SA?AVBlockPos\@\@AEBV2\@W4Rotation\@\@\@Z
-     */
-    MCAPI static class BlockPos getOrientedBounds(class BlockPos const&, enum class Rotation);
-    /**
      * @symbol ?getPivot\@StructureEditorData\@\@QEBAAEBVVec3\@\@XZ
      */
     MCAPI class Vec3 const& getPivot() const;
@@ -181,6 +177,10 @@ public:
      * @symbol ??1StructureEditorData\@\@QEAA\@XZ
      */
     MCAPI ~StructureEditorData();
+    /**
+     * @symbol ?getOrientedBounds\@StructureEditorData\@\@SA?AVBlockPos\@\@AEBV2\@W4Rotation\@\@\@Z
+     */
+    MCAPI static class BlockPos getOrientedBounds(class BlockPos const&, enum class Rotation);
     /**
      * @symbol
      * ?DEFAULT_EXPORT_NAME\@StructureEditorData\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B

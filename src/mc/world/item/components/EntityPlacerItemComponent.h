@@ -72,13 +72,13 @@ public:
     MCVAPI bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, unsigned char) const;
 #endif
     /**
-     * @symbol ?bindType\@EntityPlacerItemComponent\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ?dispense\@EntityPlacerItemComponent\@\@QEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
     MCAPI bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
+    /**
+     * @symbol ?bindType\@EntityPlacerItemComponent\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier\@EntityPlacerItemComponent\@\@SAAEBVHashedString\@\@XZ
      */

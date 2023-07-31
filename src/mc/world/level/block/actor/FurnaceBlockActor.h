@@ -117,18 +117,6 @@ public:
      */
     MCAPI void checkForSmeltEverythingAchievement(class BlockSource&);
     /**
-     * @symbol ?getAvailableFuelSetCount\@FurnaceBlockActor\@\@SAHHAEBVItemStackBase\@\@\@Z
-     */
-    MCAPI static int getAvailableFuelSetCount(int, class ItemStackBase const&);
-    /**
-     * @symbol ?getBurnDuration\@FurnaceBlockActor\@\@SAMAEBVItemStackBase\@\@M\@Z
-     */
-    MCAPI static float getBurnDuration(class ItemStackBase const&, float);
-    /**
-     * @symbol ?getItemBurnDuration\@FurnaceBlockActor\@\@SAMAEBVItem\@\@M\@Z
-     */
-    MCAPI static float getItemBurnDuration(class Item const&, float);
-    /**
      * @symbol ?getLitDuration\@FurnaceBlockActor\@\@QEBAHXZ
      */
     MCAPI int getLitDuration() const;
@@ -145,17 +133,9 @@ public:
      */
     MCAPI int getTickCount() const;
     /**
-     * @symbol ?getXPRewardFromSmeltingItems\@FurnaceBlockActor\@\@SAHAEBVItemStackBase\@\@H\@Z
-     */
-    MCAPI static int getXPRewardFromSmeltingItems(class ItemStackBase const&, int);
-    /**
      * @symbol ?isEmptiedByHopper\@FurnaceBlockActor\@\@QEAA_NAEAVBlockSource\@\@\@Z
      */
     MCAPI bool isEmptiedByHopper(class BlockSource&);
-    /**
-     * @symbol ?isItemAllowedInFuelSlot\@FurnaceBlockActor\@\@SA_NHAEBVItemStackBase\@\@H\@Z
-     */
-    MCAPI static bool isItemAllowedInFuelSlot(int, class ItemStackBase const&, int);
     /**
      * @symbol ?onFurnaceBlockRemoved\@FurnaceBlockActor\@\@QEAAXAEAVBlockSource\@\@\@Z
      */
@@ -185,6 +165,26 @@ public:
      */
     MCAPI int withdrawStoredXPReward();
     /**
+     * @symbol ?getAvailableFuelSetCount\@FurnaceBlockActor\@\@SAHHAEBVItemStackBase\@\@\@Z
+     */
+    MCAPI static int getAvailableFuelSetCount(int, class ItemStackBase const&);
+    /**
+     * @symbol ?getBurnDuration\@FurnaceBlockActor\@\@SAMAEBVItemStackBase\@\@M\@Z
+     */
+    MCAPI static float getBurnDuration(class ItemStackBase const&, float);
+    /**
+     * @symbol ?getItemBurnDuration\@FurnaceBlockActor\@\@SAMAEBVItem\@\@M\@Z
+     */
+    MCAPI static float getItemBurnDuration(class Item const&, float);
+    /**
+     * @symbol ?getXPRewardFromSmeltingItems\@FurnaceBlockActor\@\@SAHAEBVItemStackBase\@\@H\@Z
+     */
+    MCAPI static int getXPRewardFromSmeltingItems(class ItemStackBase const&, int);
+    /**
+     * @symbol ?isItemAllowedInFuelSlot\@FurnaceBlockActor\@\@SA_NHAEBVItemStackBase\@\@H\@Z
+     */
+    MCAPI static bool isItemAllowedInFuelSlot(int, class ItemStackBase const&, int);
+    /**
      * @symbol ?BURN_INTERVAL\@FurnaceBlockActor\@\@2HB
      */
     MCAPI static int const BURN_INTERVAL;
@@ -207,17 +207,9 @@ public:
     // private:
     // NOLINTBEGIN
     /**
-     * @symbol ?_getXPRewardMultiplier\@FurnaceBlockActor\@\@CAMAEBVItemStackBase\@\@\@Z
-     */
-    MCAPI static float _getXPRewardMultiplier(class ItemStackBase const&);
-    /**
      * @symbol ?_refreshFurnaceBlockLitState\@FurnaceBlockActor\@\@AEAAXAEAVBlockSource\@\@\@Z
      */
     MCAPI void _refreshFurnaceBlockLitState(class BlockSource&);
-    /**
-     * @symbol ?_roundXPReward\@FurnaceBlockActor\@\@CAHM\@Z
-     */
-    MCAPI static int _roundXPReward(float);
     /**
      * @symbol ?burn\@FurnaceBlockActor\@\@AEAAXAEBVRecipes\@\@\@Z
      */
@@ -226,6 +218,14 @@ public:
      * @symbol ?canBurn\@FurnaceBlockActor\@\@AEAA_NAEBVRecipes\@\@\@Z
      */
     MCAPI bool canBurn(class Recipes const&);
+    /**
+     * @symbol ?_getXPRewardMultiplier\@FurnaceBlockActor\@\@CAMAEBVItemStackBase\@\@\@Z
+     */
+    MCAPI static float _getXPRewardMultiplier(class ItemStackBase const&);
+    /**
+     * @symbol ?_roundXPReward\@FurnaceBlockActor\@\@CAHM\@Z
+     */
+    MCAPI static int _roundXPReward(float);
     // NOLINTEND
 
 private:

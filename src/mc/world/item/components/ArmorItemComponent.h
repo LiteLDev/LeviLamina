@@ -44,13 +44,13 @@ public:
      */
     virtual bool initializeFromNetwork(class CompoundTag const&);
     /**
-     * @symbol ?bindType\@ArmorItemComponent\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ?getArmorTextureType\@ArmorItemComponent\@\@QEBA?AW4ArmorTextureType\@\@XZ
      */
     MCAPI enum class ArmorTextureType getArmorTextureType() const;
+    /**
+     * @symbol ?bindType\@ArmorItemComponent\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     /**
      * @symbol ?getIdentifier\@ArmorItemComponent\@\@SAAEBVHashedString\@\@XZ
      */

@@ -52,20 +52,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ?BinaryMessageFragmentFunc\@WebSocket\@httpclient\@xbox\@\@SAXPEAUHC_WEBSOCKET_OBSERVER\@\@PEBEI_NPEAX\@Z
-     */
-    MCAPI static void
-    BinaryMessageFragmentFunc(struct HC_WEBSOCKET_OBSERVER*, unsigned char const*, unsigned int, bool, void*);
-    /**
-     * @symbol ?BinaryMessageFunc\@WebSocket\@httpclient\@xbox\@\@SAXPEAUHC_WEBSOCKET_OBSERVER\@\@PEBEIPEAX\@Z
-     */
-    MCAPI static void BinaryMessageFunc(struct HC_WEBSOCKET_OBSERVER*, unsigned char const*, unsigned int, void*);
-    /**
-     * @symbol
-     * ?CloseFunc\@WebSocket\@httpclient\@xbox\@\@SAXPEAUHC_WEBSOCKET_OBSERVER\@\@W4HCWebSocketCloseStatus\@\@PEAX\@Z
-     */
-    MCAPI static void CloseFunc(struct HC_WEBSOCKET_OBSERVER*, enum class HCWebSocketCloseStatus, void*);
-    /**
      * @symbol
      * ?ConnectAsync\@WebSocket\@httpclient\@xbox\@\@QEAAJ$$QEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$http_stl_allocator\@D\@\@\@std\@\@0PEAUXAsyncBlock\@\@\@Z
      */
@@ -92,10 +78,6 @@ public:
      */
     MCAPI uint64_t MaxReceiveBufferSize() const;
     /**
-     * @symbol ?MessageFunc\@WebSocket\@httpclient\@xbox\@\@SAXPEAUHC_WEBSOCKET_OBSERVER\@\@PEBDPEAX\@Z
-     */
-    MCAPI static void MessageFunc(struct HC_WEBSOCKET_OBSERVER*, char const*, void*);
-    /**
      * @symbol ?ProxyDecryptsHttps\@WebSocket\@httpclient\@xbox\@\@QEBA?B_NXZ
      */
     MCAPI bool const ProxyDecryptsHttps() const;
@@ -113,6 +95,24 @@ public:
      * @symbol ?SendAsync\@WebSocket\@httpclient\@xbox\@\@QEAAJPEBDPEAUXAsyncBlock\@\@\@Z
      */
     MCAPI long SendAsync(char const*, struct XAsyncBlock*);
+    /**
+     * @symbol ?BinaryMessageFragmentFunc\@WebSocket\@httpclient\@xbox\@\@SAXPEAUHC_WEBSOCKET_OBSERVER\@\@PEBEI_NPEAX\@Z
+     */
+    MCAPI static void
+    BinaryMessageFragmentFunc(struct HC_WEBSOCKET_OBSERVER*, unsigned char const*, unsigned int, bool, void*);
+    /**
+     * @symbol ?BinaryMessageFunc\@WebSocket\@httpclient\@xbox\@\@SAXPEAUHC_WEBSOCKET_OBSERVER\@\@PEBEIPEAX\@Z
+     */
+    MCAPI static void BinaryMessageFunc(struct HC_WEBSOCKET_OBSERVER*, unsigned char const*, unsigned int, void*);
+    /**
+     * @symbol
+     * ?CloseFunc\@WebSocket\@httpclient\@xbox\@\@SAXPEAUHC_WEBSOCKET_OBSERVER\@\@W4HCWebSocketCloseStatus\@\@PEAX\@Z
+     */
+    MCAPI static void CloseFunc(struct HC_WEBSOCKET_OBSERVER*, enum class HCWebSocketCloseStatus, void*);
+    /**
+     * @symbol ?MessageFunc\@WebSocket\@httpclient\@xbox\@\@SAXPEAUHC_WEBSOCKET_OBSERVER\@\@PEBDPEAX\@Z
+     */
+    MCAPI static void MessageFunc(struct HC_WEBSOCKET_OBSERVER*, char const*, void*);
     // NOLINTEND
 
     // private:

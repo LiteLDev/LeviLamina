@@ -54,6 +54,16 @@ public:
     MCAPI std::vector<std::string> buildActorEventList() const;
     /**
      * @symbol
+     * ?tryGetDefinition\@ActorDefinitionGroup\@\@QEAA?AVActorDefinitionPtr\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI class ActorDefinitionPtr tryGetDefinition(std::string const&);
+    /**
+     * @symbol
+     * ?tryGetDefinitionGroup\@ActorDefinitionGroup\@\@QEAA?AVActorDefinitionPtr\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
+     */
+    MCAPI class ActorDefinitionPtr tryGetDefinitionGroup(std::string const&, std::string const&);
+    /**
+     * @symbol
      * ?forEachComponentOf\@ActorDefinitionGroup\@\@SAXAEAVValue\@Json\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$function\@$$A6AXAEAVValue\@Json\@\@0\@Z\@5\@\@Z
      */
     MCAPI static void
@@ -69,16 +79,6 @@ public:
      */
     MCAPI static bool
     loadActorDefinitionRuntimeIdentifier(class Json::Value const&, class SemVersion const&, std::string&);
-    /**
-     * @symbol
-     * ?tryGetDefinition\@ActorDefinitionGroup\@\@QEAA?AVActorDefinitionPtr\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI class ActorDefinitionPtr tryGetDefinition(std::string const&);
-    /**
-     * @symbol
-     * ?tryGetDefinitionGroup\@ActorDefinitionGroup\@\@QEAA?AVActorDefinitionPtr\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
-     */
-    MCAPI class ActorDefinitionPtr tryGetDefinitionGroup(std::string const&, std::string const&);
     /**
      * @symbol
      * ?tryReadEntityResourceFile\@ActorDefinitionGroup\@\@SA_NAEAVPackInstance\@\@AEBVPath\@Core\@\@AEAVValue\@Json\@\@\@Z

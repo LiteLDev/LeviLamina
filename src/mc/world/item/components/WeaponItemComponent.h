@@ -50,14 +50,6 @@ public:
      */
     MCAPI void appendFormattedHovertext(class ItemStackBase const&, std::string&, bool) const;
     /**
-     * @symbol ?bindType\@WeaponItemComponent\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
-     * @symbol ?getIdentifier\@WeaponItemComponent\@\@SAAEBVHashedString\@\@XZ
-     */
-    MCAPI static class HashedString const& getIdentifier();
-    /**
      * @symbol ?hitActor\@WeaponItemComponent\@\@QEBAXAEAVItemStack\@\@AEAVActor\@\@AEAVMob\@\@\@Z
      */
     MCAPI void hitActor(class ItemStack&, class Actor&, class Mob&) const;
@@ -69,5 +61,13 @@ public:
      * @symbol ?hurtActor\@WeaponItemComponent\@\@QEBAXAEAVItemStack\@\@AEAVActor\@\@AEAVMob\@\@\@Z
      */
     MCAPI void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
+    /**
+     * @symbol ?bindType\@WeaponItemComponent\@\@SAXXZ
+     */
+    MCAPI static void bindType();
+    /**
+     * @symbol ?getIdentifier\@WeaponItemComponent\@\@SAAEBVHashedString\@\@XZ
+     */
+    MCAPI static class HashedString const& getIdentifier();
     // NOLINTEND
 };

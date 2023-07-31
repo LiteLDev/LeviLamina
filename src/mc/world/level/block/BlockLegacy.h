@@ -1372,11 +1372,6 @@ public:
     MCAPI bool anyOf(std::initializer_list<class HashedString const>) const;
     /**
      * @symbol
-     * ?buildDescriptionIdFromNameInfo\@BlockLegacy\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUNameInfo\@1\@\@Z
-     */
-    MCAPI static std::string buildDescriptionIdFromNameInfo(struct BlockLegacy::NameInfo const&);
-    /**
-     * @symbol
      * ?clip\@BlockLegacy\@\@QEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_NAEBVAABB\@\@\@Z
      */
     MCAPI class HitResult
@@ -1390,11 +1385,6 @@ public:
      * @symbol ?createWeakPtr\@BlockLegacy\@\@QEBA?AV?$WeakPtr\@VBlockLegacy\@\@\@\@XZ
      */
     MCAPI class WeakPtr<class BlockLegacy> createWeakPtr() const;
-    /**
-     * @symbol
-     * ?extractBlockNameInfo\@BlockLegacy\@\@SA?AUNameInfo\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static struct BlockLegacy::NameInfo extractBlockNameInfo(std::string const&);
     /**
      * @symbol ?finalizeBlockComponentStorage\@BlockLegacy\@\@QEAAXXZ
      */
@@ -1430,12 +1420,6 @@ public:
      */
     MCAPI std::vector<struct CommandName> getCommandNames() const;
     /**
-     * @symbol
-     * ?getConnectedDirections\@BlockLegacy\@\@SA?AUHorizontalDirectionBits\@1\@AEBVBlock\@\@AEBVBlockPos\@\@AEBVIConstBlockSource\@\@\@Z
-     */
-    MCAPI static struct BlockLegacy::HorizontalDirectionBits
-    getConnectedDirections(class Block const&, class BlockPos const&, class IConstBlockSource const&);
-    /**
      * @symbol ?getCreativeCategory\@BlockLegacy\@\@QEBA?AW4CreativeItemCategory\@\@XZ
      */
     MCAPI enum class CreativeItemCategory getCreativeCategory() const;
@@ -1470,14 +1454,6 @@ public:
      * ?getNamespace\@BlockLegacy\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string const& getNamespace() const;
-    /**
-     * @symbol ?getPlacementFacingAll\@BlockLegacy\@\@SAEAEBVActor\@\@AEBVBlockPos\@\@M\@Z
-     */
-    MCAPI static unsigned char getPlacementFacingAll(class Actor const&, class BlockPos const&, float);
-    /**
-     * @symbol ?getPlacementFacingAllExceptAxisY\@BlockLegacy\@\@SAEAEBVActor\@\@AEBVBlockPos\@\@M\@Z
-     */
-    MCAPI static unsigned char getPlacementFacingAllExceptAxisY(class Actor const&, class BlockPos const&, float);
     /**
      * @symbol ?getRawNameHash\@BlockLegacy\@\@QEBAAEBVHashedString\@\@XZ
      */
@@ -1549,15 +1525,6 @@ public:
      * @symbol ?overrideBlockProperties\@BlockLegacy\@\@QEAAAEAV1\@W4BlockProperty\@\@\@Z
      */
     MCAPI class BlockLegacy& overrideBlockProperties(enum class BlockProperty);
-    /**
-     * @symbol ?popResource\@BlockLegacy\@\@SAPEAVItemActor\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVItemStack\@\@\@Z
-     */
-    MCAPI static class ItemActor* popResource(class BlockSource&, class BlockPos const&, class ItemStack const&);
-    /**
-     * @symbol
-     * ?popResource\@BlockLegacy\@\@SAPEAVItemActor\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVItemInstance\@\@\@Z
-     */
-    MCAPI static class ItemActor* popResource(class BlockSource&, class BlockPos const&, class ItemInstance const&);
     /**
      * @symbol ?setAllowsRunes\@BlockLegacy\@\@QEAAAEAV1\@_N\@Z
      */
@@ -1695,6 +1662,39 @@ public:
         const;
     /**
      * @symbol
+     * ?buildDescriptionIdFromNameInfo\@BlockLegacy\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUNameInfo\@1\@\@Z
+     */
+    MCAPI static std::string buildDescriptionIdFromNameInfo(struct BlockLegacy::NameInfo const&);
+    /**
+     * @symbol
+     * ?extractBlockNameInfo\@BlockLegacy\@\@SA?AUNameInfo\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static struct BlockLegacy::NameInfo extractBlockNameInfo(std::string const&);
+    /**
+     * @symbol
+     * ?getConnectedDirections\@BlockLegacy\@\@SA?AUHorizontalDirectionBits\@1\@AEBVBlock\@\@AEBVBlockPos\@\@AEBVIConstBlockSource\@\@\@Z
+     */
+    MCAPI static struct BlockLegacy::HorizontalDirectionBits
+    getConnectedDirections(class Block const&, class BlockPos const&, class IConstBlockSource const&);
+    /**
+     * @symbol ?getPlacementFacingAll\@BlockLegacy\@\@SAEAEBVActor\@\@AEBVBlockPos\@\@M\@Z
+     */
+    MCAPI static unsigned char getPlacementFacingAll(class Actor const&, class BlockPos const&, float);
+    /**
+     * @symbol ?getPlacementFacingAllExceptAxisY\@BlockLegacy\@\@SAEAEBVActor\@\@AEBVBlockPos\@\@M\@Z
+     */
+    MCAPI static unsigned char getPlacementFacingAllExceptAxisY(class Actor const&, class BlockPos const&, float);
+    /**
+     * @symbol ?popResource\@BlockLegacy\@\@SAPEAVItemActor\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVItemStack\@\@\@Z
+     */
+    MCAPI static class ItemActor* popResource(class BlockSource&, class BlockPos const&, class ItemStack const&);
+    /**
+     * @symbol
+     * ?popResource\@BlockLegacy\@\@SAPEAVItemActor\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@AEBVItemInstance\@\@\@Z
+     */
+    MCAPI static class ItemActor* popResource(class BlockSource&, class BlockPos const&, class ItemInstance const&);
+    /**
+     * @symbol
      * ?BLOCK_DESCRIPTION_PREFIX\@BlockLegacy\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
     MCAPI static std::string const BLOCK_DESCRIPTION_PREFIX;
@@ -1711,10 +1711,6 @@ public:
      */
     MCAPI enum class BlockShape _getBlockShape() const;
     /**
-     * @symbol ?createAABBWithPixelCoordinates\@BlockLegacy\@\@KA?AVAABB\@\@MMMMMM\@Z
-     */
-    MCAPI static class AABB createAABBWithPixelCoordinates(float, float, float, float, float, float);
-    /**
      * @symbol ?forEachBlockPermutationMutable\@BlockLegacy\@\@IEAA_NV?$function\@$$A6A_NAEAVBlock\@\@\@Z\@std\@\@\@Z
      */
     MCAPI bool forEachBlockPermutationMutable(std::function<bool(class Block&)>);
@@ -1722,6 +1718,10 @@ public:
      * @symbol ?getFriction\@BlockLegacy\@\@IEBAMXZ
      */
     MCAPI float getFriction() const;
+    /**
+     * @symbol ?createAABBWithPixelCoordinates\@BlockLegacy\@\@KA?AVAABB\@\@MMMMMM\@Z
+     */
+    MCAPI static class AABB createAABBWithPixelCoordinates(float, float, float, float, float, float);
     // NOLINTEND
 
     // private:

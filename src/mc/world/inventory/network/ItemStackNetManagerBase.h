@@ -87,12 +87,6 @@ public:
      */
     MCAPI ItemStackNetManagerBase(class Player&, bool, bool);
     /**
-     * @symbol
-     * ?_tryBeginClientLegacyTransactionRequest\@ItemStackNetManagerBase\@\@SA?AV?$final_action\@V?$function\@$$A6AXXZ\@std\@\@\@gsl\@\@PEAVPlayer\@\@\@Z
-     */
-    MCAPI static class gsl::final_action<std::function<void(void)>>
-    _tryBeginClientLegacyTransactionRequest(class Player*);
-    /**
      * @symbol ?getScreenContext\@ItemStackNetManagerBase\@\@QEBAAEBVContainerScreenContext\@\@XZ
      */
     MCAPI class ContainerScreenContext const& getScreenContext() const;
@@ -104,6 +98,12 @@ public:
      * @symbol ?isScreenOpen\@ItemStackNetManagerBase\@\@QEBA_NXZ
      */
     MCAPI bool isScreenOpen() const;
+    /**
+     * @symbol
+     * ?_tryBeginClientLegacyTransactionRequest\@ItemStackNetManagerBase\@\@SA?AV?$final_action\@V?$function\@$$A6AXXZ\@std\@\@\@gsl\@\@PEAVPlayer\@\@\@Z
+     */
+    MCAPI static class gsl::final_action<std::function<void(void)>>
+    _tryBeginClientLegacyTransactionRequest(class Player*);
     /**
      * @symbol
      * ?setPlayerContainer\@ItemStackNetManagerBase\@\@SA_NAEAVPlayer\@\@W4ContainerType\@\@HAEBVItemStack\@\@AEAV4\@AEBV?$function\@$$A6AXAEBVItemStack\@\@\@Z\@std\@\@\@Z

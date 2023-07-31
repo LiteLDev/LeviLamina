@@ -28,16 +28,6 @@ public:
      */
     MCAPI void addAction(class InventoryAction const&);
     /**
-     * @symbol ?checkTransactionItemsMatch\@InventoryTransaction\@\@SA_NAEBVItemStack\@\@0\@Z
-     */
-    MCAPI static bool checkTransactionItemsMatch(class ItemStack const&, class ItemStack const&);
-    /**
-     * @symbol
-     * ?deserialize\@InventoryTransaction\@\@SA?AV?$Result\@VInventoryTransaction\@\@Verror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
-     */
-    MCAPI static class Bedrock::Result<class InventoryTransaction, std::error_code>
-    deserialize(class ReadOnlyBinaryStream&);
-    /**
      * @symbol ?executeFull\@InventoryTransaction\@\@QEBA?AW4InventoryTransactionError\@\@AEAVPlayer\@\@_N\@Z
      */
     MCAPI enum class InventoryTransactionError executeFull(class Player&, bool) const;
@@ -50,11 +40,6 @@ public:
      * ?getActions\@InventoryTransaction\@\@QEBAAEBV?$vector\@VInventoryAction\@\@V?$allocator\@VInventoryAction\@\@\@std\@\@\@std\@\@AEBVInventorySource\@\@\@Z
      */
     MCAPI std::vector<class InventoryAction> const& getActions(class InventorySource const&) const;
-    /**
-     * @symbol
-     * ?getInventoryTransactionErrorName\@InventoryTransaction\@\@SA?BV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4InventoryTransactionError\@\@\@Z
-     */
-    MCAPI static std::string const getInventoryTransactionErrorName(enum class InventoryTransactionError);
     /**
      * @symbol
      * ?getVerifyFunction\@InventoryTransaction\@\@QEBA?AV?$function\@$$A6A?AW4InventoryTransactionError\@\@AEAVPlayer\@\@AEBVInventoryAction\@\@_N\@Z\@std\@\@AEBVInventorySource\@\@\@Z
@@ -77,6 +62,21 @@ public:
      * @symbol ??1InventoryTransaction\@\@QEAA\@XZ
      */
     MCAPI ~InventoryTransaction();
+    /**
+     * @symbol ?checkTransactionItemsMatch\@InventoryTransaction\@\@SA_NAEBVItemStack\@\@0\@Z
+     */
+    MCAPI static bool checkTransactionItemsMatch(class ItemStack const&, class ItemStack const&);
+    /**
+     * @symbol
+     * ?deserialize\@InventoryTransaction\@\@SA?AV?$Result\@VInventoryTransaction\@\@Verror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     */
+    MCAPI static class Bedrock::Result<class InventoryTransaction, std::error_code>
+    deserialize(class ReadOnlyBinaryStream&);
+    /**
+     * @symbol
+     * ?getInventoryTransactionErrorName\@InventoryTransaction\@\@SA?BV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4InventoryTransactionError\@\@\@Z
+     */
+    MCAPI static std::string const getInventoryTransactionErrorName(enum class InventoryTransactionError);
     // NOLINTEND
 
     // private:

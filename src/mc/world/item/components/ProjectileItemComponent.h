@@ -49,17 +49,9 @@ public:
      */
     MCAPI ProjectileItemComponent(class ComponentItem*, enum class ActorType, float);
     /**
-     * @symbol ?bindType\@ProjectileItemComponent\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ?dispense\@ProjectileItemComponent\@\@QEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */
     MCAPI bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
-    /**
-     * @symbol ?getIdentifier\@ProjectileItemComponent\@\@SAAEBVHashedString\@\@XZ
-     */
-    MCAPI static class HashedString const& getIdentifier();
     /**
      * @symbol ?getShootDir\@ProjectileItemComponent\@\@QEBA?AVVec3\@\@AEBVPlayer\@\@M\@Z
      */
@@ -70,5 +62,13 @@ public:
      */
     MCAPI class Actor*
     shootProjectile(class BlockSource&, class Vec3 const&, class Vec3 const&, float, class Player*) const;
+    /**
+     * @symbol ?bindType\@ProjectileItemComponent\@\@SAXXZ
+     */
+    MCAPI static void bindType();
+    /**
+     * @symbol ?getIdentifier\@ProjectileItemComponent\@\@SAAEBVHashedString\@\@XZ
+     */
+    MCAPI static class HashedString const& getIdentifier();
     // NOLINTEND
 };

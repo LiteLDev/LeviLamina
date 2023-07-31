@@ -374,6 +374,10 @@ public:
     // private:
     // NOLINTBEGIN
     /**
+     * @symbol ?_updateBlockThickness\@PointedDripstoneBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI void _updateBlockThickness(class BlockSource&, class BlockPos const&) const;
+    /**
      * @symbol
      * ?_calculateDripstoneThickness\@PointedDripstoneBlock\@\@CA?AW4DripstoneThickness\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@E_N\@Z
      */
@@ -461,9 +465,5 @@ public:
      * @symbol ?_mayPlaceStanding\@PointedDripstoneBlock\@\@CA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static bool _mayPlaceStanding(class BlockSource&, class BlockPos const&);
-    /**
-     * @symbol ?_updateBlockThickness\@PointedDripstoneBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI void _updateBlockThickness(class BlockSource&, class BlockPos const&) const;
     // NOLINTEND
 };

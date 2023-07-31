@@ -53,11 +53,6 @@ public:
     ScriptBreathableComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
     /**
      * @symbol
-     * ?bind\@ScriptBreathableComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBreathableComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBreathableComponent> bind();
-    /**
-     * @symbol
      * ?getBreatheBlocks\@ScriptBreathableComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$vector\@V?$StrongTypedObjectHandle\@VScriptBlockPermutation\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$allocator\@V?$StrongTypedObjectHandle\@VScriptBlockPermutation\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@std\@\@\@std\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<
@@ -111,6 +106,11 @@ public:
      * @symbol ?setAirSupply\@ScriptBreathableComponent\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@X\@Scripting\@\@F\@Z
      */
     MCAPI class Scripting::Result<void> setAirSupply(short) const;
+    /**
+     * @symbol
+     * ?bind\@ScriptBreathableComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBreathableComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBreathableComponent> bind();
     /**
      * @symbol ?ComponentId\@ScriptBreathableComponent\@ScriptModuleMinecraft\@\@2PEBDEB
      */

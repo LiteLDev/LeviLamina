@@ -67,16 +67,16 @@ public:
      */
     MCAPI ScriptInventoryComponentContainer(class ScriptModuleMinecraft::ScriptInventoryComponentContainer const&);
     /**
+     * @symbol ??4ScriptInventoryComponentContainer\@ScriptModuleMinecraft\@\@QEAAAEAV01\@AEBV01\@\@Z
+     */
+    MCAPI class ScriptModuleMinecraft::ScriptInventoryComponentContainer&
+    operator=(class ScriptModuleMinecraft::ScriptInventoryComponentContainer const&);
+    /**
      * @symbol
      * ?bindV010\@ScriptInventoryComponentContainer\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptInventoryComponentContainer\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptInventoryComponentContainer>
     bindV010();
-    /**
-     * @symbol ??4ScriptInventoryComponentContainer\@ScriptModuleMinecraft\@\@QEAAAEAV01\@AEBV01\@\@Z
-     */
-    MCAPI class ScriptModuleMinecraft::ScriptInventoryComponentContainer&
-    operator=(class ScriptModuleMinecraft::ScriptInventoryComponentContainer const&);
     // NOLINTEND
 };
 

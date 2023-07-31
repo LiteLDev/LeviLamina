@@ -142,7 +142,7 @@ public:
      * ??0FileSystem_windows\@Core\@\@AEAA\@W4FileAccessType\@1\@V?$shared_ptr\@VFileStorageArea\@Core\@\@\@std\@\@V?$shared_ptr\@VFlatFileManifestTracker\@Core\@\@\@4\@\@Z
      */
     MCAPI
-        FileSystem_windows(enum class Core::FileAccessType, std::shared_ptr<class Core::FileStorageArea>, std::shared_ptr<class Core::FlatFileManifestTracker>);
+    FileSystem_windows(enum class Core::FileAccessType, std::shared_ptr<class Core::FileStorageArea>, std::shared_ptr<class Core::FlatFileManifestTracker>);
     /**
      * @symbol
      * ?_iterateOverDirectoryWide\@FileSystem_windows\@Core\@\@AEAA?AVResult\@2\@AEBV?$basic_string\@_WU?$char_traits\@_W\@std\@\@V?$allocator\@_W\@2\@\@std\@\@W4DirectoryIterationFlags\@2\@V?$function\@$$A6A?AVResult\@Core\@\@AEBUDirectoryIterationItem\@2\@\@Z\@5\@\@Z

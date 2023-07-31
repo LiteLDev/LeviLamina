@@ -139,10 +139,6 @@ public:
      */
     MCAPI bool isServerInitializingCreativeItems() const;
     /**
-     * @symbol ?isUsingCombinedItemRegistry\@ItemRegistryRef\@\@SA_NXZ
-     */
-    MCAPI static bool isUsingCombinedItemRegistry();
-    /**
      * @symbol ?lockItemWorldCompatibilityMutex\@ItemRegistryRef\@\@QEBA?AVLockGuard\@1\@XZ
      */
     MCAPI class ItemRegistryRef::LockGuard lockItemWorldCompatibilityMutex() const;
@@ -227,10 +223,6 @@ public:
      */
     MCAPI void setServerInitializingCreativeItems(bool) const;
     /**
-     * @symbol ?setUseCombinedItemRegistryToggle\@ItemRegistryRef\@\@SAX_N\@Z
-     */
-    MCAPI static void setUseCombinedItemRegistryToggle(bool);
-    /**
      * @symbol ?shouldCheckForItemWorldCompatibility\@ItemRegistryRef\@\@QEBA_NXZ
      */
     MCAPI bool shouldCheckForItemWorldCompatibility() const;
@@ -252,6 +244,14 @@ public:
      * @symbol ??1ItemRegistryRef\@\@QEAA\@XZ
      */
     MCAPI ~ItemRegistryRef();
+    /**
+     * @symbol ?isUsingCombinedItemRegistry\@ItemRegistryRef\@\@SA_NXZ
+     */
+    MCAPI static bool isUsingCombinedItemRegistry();
+    /**
+     * @symbol ?setUseCombinedItemRegistryToggle\@ItemRegistryRef\@\@SAX_N\@Z
+     */
+    MCAPI static void setUseCombinedItemRegistryToggle(bool);
     // NOLINTEND
 
     // private:

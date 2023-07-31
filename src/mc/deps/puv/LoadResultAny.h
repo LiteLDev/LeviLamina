@@ -29,10 +29,6 @@ public:
      */
     MCAPI struct Puv::Logger& log();
     /**
-     * @symbol ?makeError\@LoadResultAny\@Puv\@\@SA?AV12\@ULogger\@2\@\@Z
-     */
-    MCAPI static class Puv::LoadResultAny makeError(struct Puv::Logger);
-    /**
      * @symbol ??BLoadResultAny\@Puv\@\@QEBA_NXZ
      */
     MCAPI operator bool() const;
@@ -44,6 +40,10 @@ public:
      * @symbol ??1LoadResultAny\@Puv\@\@QEAA\@XZ
      */
     MCAPI ~LoadResultAny();
+    /**
+     * @symbol ?makeError\@LoadResultAny\@Puv\@\@SA?AV12\@ULogger\@2\@\@Z
+     */
+    MCAPI static class Puv::LoadResultAny makeError(struct Puv::Logger);
     // NOLINTEND
 };
 

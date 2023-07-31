@@ -17,11 +17,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol
-     * ?bind\@ScriptDimensionLocation\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptDimensionLocation\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptDimensionLocation> bind();
-    /**
      * @symbol ??4ScriptDimensionLocation\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptDimensionLocation&
@@ -35,6 +30,11 @@ public:
      * @symbol ??1ScriptDimensionLocation\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptDimensionLocation();
+    /**
+     * @symbol
+     * ?bind\@ScriptDimensionLocation\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptDimensionLocation\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptDimensionLocation> bind();
     // NOLINTEND
 };
 

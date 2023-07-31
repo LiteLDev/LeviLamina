@@ -296,10 +296,6 @@ public:
     // protected:
     // NOLINTBEGIN
     /**
-     * @symbol ?_canBeLit\@AbstractCandleBlock\@\@KA_NAEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI static bool _canBeLit(class Block const&, class BlockSource&, class BlockPos const&);
-    /**
      * @symbol ?_checkForWaterlogging\@AbstractCandleBlock\@\@IEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _checkForWaterlogging(class BlockSource&, class BlockPos const&) const;
@@ -308,6 +304,10 @@ public:
      * ?_extinguish\@AbstractCandleBlock\@\@IEBAXPEAVActor\@\@AEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI void _extinguish(class Actor*, class Block const&, class BlockSource&, class BlockPos const&) const;
+    /**
+     * @symbol ?_canBeLit\@AbstractCandleBlock\@\@KA_NAEBVBlock\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI static bool _canBeLit(class Block const&, class BlockSource&, class BlockPos const&);
     /**
      * @symbol ?_isLit\@AbstractCandleBlock\@\@KA_NAEBVBlock\@\@\@Z
      */

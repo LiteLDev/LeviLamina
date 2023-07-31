@@ -18,6 +18,15 @@ public:
 public:
     // NOLINTBEGIN
     /**
+     * @symbol ??4ScriptPlayerLeaveAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
+     */
+    MCAPI struct ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&&);
+    /**
+     * @symbol ??1ScriptPlayerLeaveAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptPlayerLeaveAfterEvent();
+    /**
      * @symbol
      * ?bind\@ScriptPlayerLeaveAfterEvent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptPlayerLeaveAfterEvent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
@@ -28,15 +37,6 @@ public:
      */
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent>
     bindV010();
-    /**
-     * @symbol ??4ScriptPlayerLeaveAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-     */
-    MCAPI struct ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&&);
-    /**
-     * @symbol ??1ScriptPlayerLeaveAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptPlayerLeaveAfterEvent();
     // NOLINTEND
 };
 

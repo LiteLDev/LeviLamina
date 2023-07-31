@@ -29,15 +29,15 @@ public:
      */
     MCAPI void addDeathExpressionNode(class ExpressionNode const&);
     /**
+     * @symbol ?initialize\@ExperienceRewardDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVExperienceRewardComponent\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class ExperienceRewardComponent&) const;
+    /**
      * @symbol
      * ?buildSchema\@ExperienceRewardDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VExperienceRewardDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ExperienceRewardDefinition>>&);
-    /**
-     * @symbol ?initialize\@ExperienceRewardDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVExperienceRewardComponent\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class ExperienceRewardComponent&) const;
     // NOLINTEND
 };

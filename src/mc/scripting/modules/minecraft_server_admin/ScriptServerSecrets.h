@@ -37,12 +37,6 @@ public:
     ScriptServerSecrets(class Bedrock::NonOwnerPointer<class ScriptPackConfigurationManager>, struct Scripting::ContextConfig const&);
     /**
      * @symbol
-     * ?bind\@ScriptServerSecrets\@ScriptModuleMinecraftServerAdmin\@\@SA?AV?$ClassBindingBuilder\@VScriptServerSecrets\@ScriptModuleMinecraftServerAdmin\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerAdmin::ScriptServerSecrets>
-    bind();
-    /**
-     * @symbol
      * ?get\@ScriptServerSecrets\@ScriptModuleMinecraftServerAdmin\@\@QEBA?AV?$optional\@VScriptSecretString\@ScriptModuleMinecraftServerAdmin\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@4\@\@Z
      */
     MCAPI std::optional<class ScriptModuleMinecraftServerAdmin::ScriptSecretString> get(std::string const&) const;
@@ -51,6 +45,12 @@ public:
      * ?getAllSecretNames\@ScriptServerSecrets\@ScriptModuleMinecraftServerAdmin\@\@QEBA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
      */
     MCAPI std::vector<std::string> getAllSecretNames() const;
+    /**
+     * @symbol
+     * ?bind\@ScriptServerSecrets\@ScriptModuleMinecraftServerAdmin\@\@SA?AV?$ClassBindingBuilder\@VScriptServerSecrets\@ScriptModuleMinecraftServerAdmin\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerAdmin::ScriptServerSecrets>
+    bind();
     // NOLINTEND
 };
 

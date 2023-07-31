@@ -29,15 +29,15 @@ public:
     public:
         // NOLINTBEGIN
         /**
+         * @symbol ?initialize\@DrinkMilkDefinition\@DrinkMilkGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
+         */
+        MCAPI void initialize(class EntityContext&, class DrinkMilkGoal&) const;
+        /**
          * @symbol
          * ?buildSchema\@DrinkMilkDefinition\@DrinkMilkGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDrinkMilkDefinition\@DrinkMilkGoal\@\@\@JsonUtil\@\@\@4\@\@Z
          */
         MCAPI static void
         buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DrinkMilkGoal::DrinkMilkDefinition>>&);
-        /**
-         * @symbol ?initialize\@DrinkMilkDefinition\@DrinkMilkGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
-        MCAPI void initialize(class EntityContext&, class DrinkMilkGoal&) const;
         // NOLINTEND
     };
 

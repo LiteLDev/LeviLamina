@@ -22,15 +22,15 @@ public:
 public:
     // NOLINTBEGIN
     /**
+     * @symbol ??1TransactionFrame\@Core\@\@QEAA\@XZ
+     */
+    MCAPI ~TransactionFrame();
+    /**
      * @symbol
      * ?exec\@TransactionFrame\@Core\@\@SA?AVResult\@2\@W4FileAccessType\@2\@AEBVPath\@2\@AEBV?$function\@$$A6A?AVResult\@Core\@\@AEAVTransactionFrame\@2\@\@Z\@std\@\@\@Z
      */
     MCAPI static class Core::Result
     exec(enum class Core::FileAccessType, class Core::Path const&, std::function<class Core::Result(class Core::TransactionFrame&)> const&);
-    /**
-     * @symbol ??1TransactionFrame\@Core\@\@QEAA\@XZ
-     */
-    MCAPI ~TransactionFrame();
     // NOLINTEND
 
     // private:

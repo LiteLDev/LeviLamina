@@ -31,16 +31,16 @@ public:
     MCVAPI ~ScriptBlockLavaContainerComponent();
 #endif
     /**
+     * @symbol ??4ScriptBlockLavaContainerComponent\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
+     */
+    MCAPI class ScriptModuleMinecraft::ScriptBlockLavaContainerComponent&
+    operator=(class ScriptModuleMinecraft::ScriptBlockLavaContainerComponent&&);
+    /**
      * @symbol
      * ?bind\@ScriptBlockLavaContainerComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockLavaContainerComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockLavaContainerComponent>
     bind();
-    /**
-     * @symbol ??4ScriptBlockLavaContainerComponent\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
-     */
-    MCAPI class ScriptModuleMinecraft::ScriptBlockLavaContainerComponent&
-    operator=(class ScriptModuleMinecraft::ScriptBlockLavaContainerComponent&&);
     /**
      * @symbol ?ComponentId\@ScriptBlockLavaContainerComponent\@ScriptModuleMinecraft\@\@2PEBDEB
      */

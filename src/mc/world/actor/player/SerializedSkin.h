@@ -30,18 +30,10 @@ public:
      */
     MCAPI SerializedSkin(class SerializedSkin&&);
     /**
-     * @symbol ?createTrustedDefaultSerializedSkin\@SerializedSkin\@\@SA?AV1\@XZ
-     */
-    MCAPI static class SerializedSkin createTrustedDefaultSerializedSkin();
-    /**
      * @symbol
      * ?getName\@SerializedSkin\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string const& getName() const;
-    /**
-     * @symbol ?isSkinDisabled\@SerializedSkin\@\@SA_NAEBV1\@AEBVLevelData\@\@\@Z
-     */
-    MCAPI static bool isSkinDisabled(class SerializedSkin const&, class LevelData const&);
     /**
      * @symbol ?isTrustedSkin\@SerializedSkin\@\@QEBA_NXZ
      */
@@ -76,5 +68,13 @@ public:
      * @symbol ??1SerializedSkin\@\@QEAA\@XZ
      */
     MCAPI ~SerializedSkin();
+    /**
+     * @symbol ?createTrustedDefaultSerializedSkin\@SerializedSkin\@\@SA?AV1\@XZ
+     */
+    MCAPI static class SerializedSkin createTrustedDefaultSerializedSkin();
+    /**
+     * @symbol ?isSkinDisabled\@SerializedSkin\@\@SA_NAEBV1\@AEBVLevelData\@\@\@Z
+     */
+    MCAPI static bool isSkinDisabled(class SerializedSkin const&, class LevelData const&);
     // NOLINTEND
 };

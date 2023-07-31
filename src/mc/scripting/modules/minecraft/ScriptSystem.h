@@ -33,11 +33,6 @@ public:
      */
     MCAPI ScriptSystem(class Scripting::WeakLifetimeScope const&, class gsl::not_null<class ServerLevel*>);
     /**
-     * @symbol
-     * ?bind\@ScriptSystem\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptSystem\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptSystem> bind();
-    /**
      * @symbol ?clearRun\@ScriptSystem\@ScriptModuleMinecraft\@\@QEAAXI\@Z
      */
     MCAPI void clearRun(unsigned int);
@@ -71,6 +66,11 @@ public:
      * @symbol ??1ScriptSystem\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptSystem();
+    /**
+     * @symbol
+     * ?bind\@ScriptSystem\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptSystem\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptSystem> bind();
     // NOLINTEND
 };
 

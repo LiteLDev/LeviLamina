@@ -18,13 +18,13 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ?getLayers\@FlatWorldGeneratorOptions\@\@SA?AVValue\@Json\@\@AEBVLevelData\@\@\@Z
-     */
-    MCAPI static class Json::Value getLayers(class LevelData const&);
-    /**
      * @symbol ??1FlatWorldGeneratorOptions\@\@QEAA\@XZ
      */
     MCAPI ~FlatWorldGeneratorOptions();
+    /**
+     * @symbol ?getLayers\@FlatWorldGeneratorOptions\@\@SA?AVValue\@Json\@\@AEBVLevelData\@\@\@Z
+     */
+    MCAPI static class Json::Value getLayers(class LevelData const&);
     // NOLINTEND
 
     // protected:

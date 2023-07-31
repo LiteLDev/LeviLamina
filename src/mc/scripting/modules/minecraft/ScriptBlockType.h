@@ -31,11 +31,6 @@ public:
     MCAPI ScriptBlockType(class ScriptModuleMinecraft::ScriptBlockType const&);
     /**
      * @symbol
-     * ?bind\@ScriptBlockType\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockType\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockType> bind();
-    /**
-     * @symbol
      * ?createDefaultBlockPermutationV010\@ScriptBlockType\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$StrongTypedObjectHandle\@VScriptBlockPermutation\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<
@@ -51,12 +46,6 @@ public:
      */
     MCAPI std::string getId() const;
     /**
-     * @symbol
-     * ?getOrCreateHandle\@ScriptBlockType\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptBlockType\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBVWeakLifetimeScope\@4\@AEBVBlockLegacy\@\@\@Z
-     */
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockType>
-    getOrCreateHandle(class Scripting::WeakLifetimeScope const&, class BlockLegacy const&);
-    /**
      * @symbol ??4ScriptBlockType\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraft::ScriptBlockType& operator=(class ScriptModuleMinecraft::ScriptBlockType&&);
@@ -64,6 +53,17 @@ public:
      * @symbol ??1ScriptBlockType\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptBlockType();
+    /**
+     * @symbol
+     * ?bind\@ScriptBlockType\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockType\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockType> bind();
+    /**
+     * @symbol
+     * ?getOrCreateHandle\@ScriptBlockType\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptBlockType\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBVWeakLifetimeScope\@4\@AEBVBlockLegacy\@\@\@Z
+     */
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockType>
+    getOrCreateHandle(class Scripting::WeakLifetimeScope const&, class BlockLegacy const&);
     // NOLINTEND
 };
 

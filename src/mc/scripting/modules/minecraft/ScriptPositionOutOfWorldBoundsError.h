@@ -32,15 +32,15 @@ public:
      */
     MCAPI ScriptPositionOutOfWorldBoundsError(std::string const&, class Vec3 const&);
     /**
+     * @symbol ??1ScriptPositionOutOfWorldBoundsError\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptPositionOutOfWorldBoundsError();
+    /**
      * @symbol
      * ?bind\@ScriptPositionOutOfWorldBoundsError\@ScriptModuleMinecraft\@\@SA?AV?$ErrorBindingBuilder\@UScriptPositionOutOfWorldBoundsError\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ErrorBindingBuilder<struct ScriptModuleMinecraft::ScriptPositionOutOfWorldBoundsError>
     bind();
-    /**
-     * @symbol ??1ScriptPositionOutOfWorldBoundsError\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptPositionOutOfWorldBoundsError();
     // NOLINTEND
 };
 

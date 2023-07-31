@@ -18,14 +18,14 @@ public:
 public:
     // NOLINTBEGIN
     /**
+     * @symbol ??8ScriptBlockAreaSize\@ScriptModuleMinecraft\@\@QEBA_NAEBV01\@\@Z
+     */
+    MCAPI bool operator==(class ScriptModuleMinecraft::ScriptBlockAreaSize const&) const;
+    /**
      * @symbol
      * ?bind\@ScriptBlockAreaSize\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockAreaSize\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockAreaSize> bind();
-    /**
-     * @symbol ??8ScriptBlockAreaSize\@ScriptModuleMinecraft\@\@QEBA_NAEBV01\@\@Z
-     */
-    MCAPI bool operator==(class ScriptModuleMinecraft::ScriptBlockAreaSize const&) const;
     // NOLINTEND
 };
 

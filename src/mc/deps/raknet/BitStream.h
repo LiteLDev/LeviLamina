@@ -38,14 +38,6 @@ public:
      */
     MCAPI void IgnoreBytes(unsigned int);
     /**
-     * @symbol ?IsNetworkOrder\@BitStream\@RakNet\@\@SA_NXZ
-     */
-    MCAPI static bool IsNetworkOrder();
-    /**
-     * @symbol ?IsNetworkOrderInternal\@BitStream\@RakNet\@\@SA_NXZ
-     */
-    MCAPI static bool IsNetworkOrderInternal();
-    /**
      * @symbol ?PadWithZeroToByteLength\@BitStream\@RakNet\@\@QEAAXI\@Z
      */
     MCAPI void PadWithZeroToByteLength(unsigned int);
@@ -85,10 +77,6 @@ public:
      * @symbol ?ResetWritePointer\@BitStream\@RakNet\@\@QEAAXXZ
      */
     MCAPI void ResetWritePointer();
-    /**
-     * @symbol ?ReverseBytes\@BitStream\@RakNet\@\@SAXPEAE0I\@Z
-     */
-    MCAPI static void ReverseBytes(unsigned char*, unsigned char*, unsigned int);
     /**
      * @symbol ?SetWriteOffset\@BitStream\@RakNet\@\@QEAAXI\@Z
      */
@@ -137,6 +125,18 @@ public:
      * @symbol ??1BitStream\@RakNet\@\@QEAA\@XZ
      */
     MCAPI ~BitStream();
+    /**
+     * @symbol ?IsNetworkOrder\@BitStream\@RakNet\@\@SA_NXZ
+     */
+    MCAPI static bool IsNetworkOrder();
+    /**
+     * @symbol ?IsNetworkOrderInternal\@BitStream\@RakNet\@\@SA_NXZ
+     */
+    MCAPI static bool IsNetworkOrderInternal();
+    /**
+     * @symbol ?ReverseBytes\@BitStream\@RakNet\@\@SAXPEAE0I\@Z
+     */
+    MCAPI static void ReverseBytes(unsigned char*, unsigned char*, unsigned int);
     // NOLINTEND
 };
 

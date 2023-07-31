@@ -29,6 +29,10 @@ public:
     public:
         // NOLINTBEGIN
         /**
+         * @symbol ?initialize\@PlayDefinition\@PlayGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
+         */
+        MCAPI void initialize(class EntityContext&, class PlayGoal&) const;
+        /**
          * @symbol
          * ?buildSchema\@PlayDefinition\@PlayGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VPlayDefinition\@PlayGoal\@\@\@JsonUtil\@\@\@4\@\@Z
          */
@@ -38,10 +42,6 @@ public:
          * @symbol ?getStrictParsingVersion\@PlayDefinition\@PlayGoal\@\@SA?AVSemVersion\@\@XZ
          */
         MCAPI static class SemVersion getStrictParsingVersion();
-        /**
-         * @symbol ?initialize\@PlayDefinition\@PlayGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
-        MCAPI void initialize(class EntityContext&, class PlayGoal&) const;
         // NOLINTEND
     };
 

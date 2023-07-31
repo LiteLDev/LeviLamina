@@ -55,11 +55,6 @@ public:
     addObjective(std::string const&, std::string const&);
     /**
      * @symbol
-     * ?bind\@ScriptScoreboard\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptScoreboard\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptScoreboard> bind();
-    /**
-     * @symbol
      * ?clearObjectiveAtDisplaySlot\@ScriptScoreboard\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@V?$StrongTypedObjectHandle\@VScriptScoreboardObjective\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Scripting\@\@W4ScriptDisplayObjectiveSlotId\@2\@\@Z
      */
     MCAPI class Scripting::Result<
@@ -144,6 +139,11 @@ public:
                                             class Scripting::StrongTypedObjectHandle<
                                                 class ScriptModuleMinecraft::ScriptActor>,
                                             std::string> const&) const;
+    /**
+     * @symbol
+     * ?bind\@ScriptScoreboard\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptScoreboard\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptScoreboard> bind();
     // NOLINTEND
 
     // private:

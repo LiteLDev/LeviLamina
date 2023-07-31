@@ -8,6 +8,11 @@ import multiprocessing
 def format_file(file):
     print("formatting {0}".format(file))
     subprocess.run(["clang-format", "-i", file])
+    # change file from LF to CRLF
+    with open(file, "rb") as f:
+        content = f.read()
+    with open(file, "wb") as f:
+        f.write(content.replace(b"\n", b"\r\n"))
 
 
 def format_all():

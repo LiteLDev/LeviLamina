@@ -146,13 +146,13 @@ public:
      */
     MCAPI int getWidth() const;
     /**
-     * @symbol ?isAnyAuxValue\@Recipe\@\@SA_NAEBVItemDescriptor\@\@\@Z
-     */
-    MCAPI static bool isAnyAuxValue(class ItemDescriptor const&);
-    /**
      * @symbol ?setNetId\@Recipe\@\@QEAAXAEBV?$TypedServerNetId\@URecipeNetIdTag\@\@I$0A\@\@\@\@Z
      */
     MCAPI void setNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const&);
+    /**
+     * @symbol ?isAnyAuxValue\@Recipe\@\@SA_NAEBVItemDescriptor\@\@\@Z
+     */
+    MCAPI static bool isAnyAuxValue(class ItemDescriptor const&);
     // NOLINTEND
 
     // protected:

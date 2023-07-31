@@ -99,13 +99,13 @@ public:
     // NOLINTBEGIN
     /**
      * @symbol
-     * ?_makeBiomeSource\@NetherGenerator\@\@CA?AV?$unique_ptr\@VBiomeSource\@\@U?$default_delete\@VBiomeSource\@\@\@std\@\@\@std\@\@AEAVDimension\@\@\@Z
-     */
-    MCAPI static std::unique_ptr<class BiomeSource> _makeBiomeSource(class Dimension&);
-    /**
-     * @symbol
      * ?_prepareHeights\@NetherGenerator\@\@AEAAXAEAVBlockVolume\@\@AEBVChunkPos\@\@_NPEAV?$vector\@FV?$allocator\@F\@std\@\@\@std\@\@H\@Z
      */
     MCAPI void _prepareHeights(class BlockVolume&, class ChunkPos const&, bool, std::vector<short>*, int);
+    /**
+     * @symbol
+     * ?_makeBiomeSource\@NetherGenerator\@\@CA?AV?$unique_ptr\@VBiomeSource\@\@U?$default_delete\@VBiomeSource\@\@\@std\@\@\@std\@\@AEAVDimension\@\@\@Z
+     */
+    MCAPI static std::unique_ptr<class BiomeSource> _makeBiomeSource(class Dimension&);
     // NOLINTEND
 };

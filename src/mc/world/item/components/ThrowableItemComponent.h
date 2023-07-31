@@ -54,14 +54,6 @@ public:
      */
     MCAPI ThrowableItemComponent(class ComponentItem*, bool);
     /**
-     * @symbol ?bindType\@ThrowableItemComponent\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
-     * @symbol ?getIdentifier\@ThrowableItemComponent\@\@SAAEBVHashedString\@\@XZ
-     */
-    MCAPI static class HashedString const& getIdentifier();
-    /**
      * @symbol ?releaseUsing\@ThrowableItemComponent\@\@QEBA_NAEAVItemStack\@\@PEAVPlayer\@\@H\@Z
      */
     MCAPI bool releaseUsing(class ItemStack&, class Player*, int) const;
@@ -69,6 +61,14 @@ public:
      * @symbol ?use\@ThrowableItemComponent\@\@QEBA_NAEAVItemStack\@\@AEAVPlayer\@\@\@Z
      */
     MCAPI bool use(class ItemStack&, class Player&) const;
+    /**
+     * @symbol ?bindType\@ThrowableItemComponent\@\@SAXXZ
+     */
+    MCAPI static void bindType();
+    /**
+     * @symbol ?getIdentifier\@ThrowableItemComponent\@\@SAAEBVHashedString\@\@XZ
+     */
+    MCAPI static class HashedString const& getIdentifier();
     // NOLINTEND
 
     // private:

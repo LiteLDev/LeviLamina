@@ -51,14 +51,14 @@ public:
     MCVAPI std::error_code write(class gsl::span<unsigned char const>);
 #endif
     /**
+     * @symbol ?get\@BufferedResponseBody\@Http\@Bedrock\@\@QEBA?AV?$span\@$$CBE$0?0\@gsl\@\@XZ
+     */
+    MCAPI class gsl::span<unsigned char const> get() const;
+    /**
      * @symbol
      * ?create\@BufferedResponseBody\@Http\@Bedrock\@\@SA?AV?$shared_ptr\@VBufferedResponseBody\@Http\@Bedrock\@\@\@std\@\@XZ
      */
     MCAPI static std::shared_ptr<class Bedrock::Http::BufferedResponseBody> create();
-    /**
-     * @symbol ?get\@BufferedResponseBody\@Http\@Bedrock\@\@QEBA?AV?$span\@$$CBE$0?0\@gsl\@\@XZ
-     */
-    MCAPI class gsl::span<unsigned char const> get() const;
     // NOLINTEND
 };
 

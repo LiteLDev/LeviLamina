@@ -45,15 +45,15 @@ public:
          */
         MCAPI void addWeightedChoiceEntry(struct RandomSearchAndDigItemChoiceEntry const&);
         /**
+         * @symbol ?initialize\@Definition\@RandomSearchAndDigGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
+         */
+        MCAPI void initialize(class EntityContext&, class RandomSearchAndDigGoal&) const;
+        /**
          * @symbol
          * ?buildSchema\@Definition\@RandomSearchAndDigGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDefinition\@RandomSearchAndDigGoal\@\@\@JsonUtil\@\@\@4\@\@Z
          */
         MCAPI static void
         buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RandomSearchAndDigGoal::Definition>>&);
-        /**
-         * @symbol ?initialize\@Definition\@RandomSearchAndDigGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
-        MCAPI void initialize(class EntityContext&, class RandomSearchAndDigGoal&) const;
         // NOLINTEND
     };
 
@@ -123,12 +123,12 @@ public:
      */
     MCAPI void _emitDiggingParticles();
     /**
-     * @symbol ?_isValidTarget\@RandomSearchAndDigGoal\@\@CA_NAEBVBlockSource\@\@VBlockPos\@\@\@Z
-     */
-    MCAPI static bool _isValidTarget(class BlockSource const&, class BlockPos);
-    /**
      * @symbol ?_triggerEvent\@RandomSearchAndDigGoal\@\@AEBAXAEBVActorDefinitionTrigger\@\@\@Z
      */
     MCAPI void _triggerEvent(class ActorDefinitionTrigger const&) const;
+    /**
+     * @symbol ?_isValidTarget\@RandomSearchAndDigGoal\@\@CA_NAEBVBlockSource\@\@VBlockPos\@\@\@Z
+     */
+    MCAPI static bool _isValidTarget(class BlockSource const&, class BlockPos);
     // NOLINTEND
 };

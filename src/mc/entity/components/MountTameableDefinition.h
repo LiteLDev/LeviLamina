@@ -24,15 +24,15 @@ public:
      */
     MCAPI MountTameableDefinition();
     /**
+     * @symbol ?initialize\@MountTameableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVMountTamingComponent\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class MountTamingComponent&) const;
+    /**
      * @symbol
      * ?buildSchema\@MountTameableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VMountTameableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MountTameableDefinition>>&);
-    /**
-     * @symbol ?initialize\@MountTameableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVMountTamingComponent\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class MountTamingComponent&) const;
     // NOLINTEND
 };

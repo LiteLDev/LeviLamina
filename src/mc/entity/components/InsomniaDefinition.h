@@ -21,15 +21,15 @@ public:
 public:
     // NOLINTBEGIN
     /**
+     * @symbol ?initialize\@InsomniaDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVInsomniaComponent\@\@\@Z
+     */
+    MCAPI void initialize(class EntityContext&, class InsomniaComponent&) const;
+    /**
      * @symbol
      * ?buildSchema\@InsomniaDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VInsomniaDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
      */
     MCAPI static void
     buildSchema(std::shared_ptr<
                 class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InsomniaDefinition>>&);
-    /**
-     * @symbol ?initialize\@InsomniaDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVInsomniaComponent\@\@\@Z
-     */
-    MCAPI void initialize(class EntityContext&, class InsomniaComponent&) const;
     // NOLINTEND
 };

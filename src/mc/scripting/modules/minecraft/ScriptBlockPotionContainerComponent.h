@@ -36,12 +36,6 @@ public:
     MCVAPI ~ScriptBlockPotionContainerComponent();
 #endif
     /**
-     * @symbol
-     * ?bind\@ScriptBlockPotionContainerComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockPotionContainerComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockPotionContainerComponent>
-    bind();
-    /**
      * @symbol ??4ScriptBlockPotionContainerComponent\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */
     MCAPI class ScriptModuleMinecraft::ScriptBlockPotionContainerComponent&
@@ -51,6 +45,12 @@ public:
      * ?setPotionType\@ScriptBlockPotionContainerComponent\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEBVScriptItemStack\@2\@\@Z
      */
     MCAPI class Scripting::Result<void> setPotionType(class ScriptModuleMinecraft::ScriptItemStack const&);
+    /**
+     * @symbol
+     * ?bind\@ScriptBlockPotionContainerComponent\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptBlockPotionContainerComponent\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptBlockPotionContainerComponent>
+    bind();
     /**
      * @symbol ?ComponentId\@ScriptBlockPotionContainerComponent\@ScriptModuleMinecraft\@\@2PEBDEB
      */

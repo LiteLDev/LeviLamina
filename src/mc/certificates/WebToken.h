@@ -22,12 +22,6 @@ public:
      */
     MCAPI WebToken(std::string);
     /**
-     * @symbol
-     * ?createFromData\@WebToken\@\@SA?AV?$unique_ptr\@VWebToken\@\@U?$default_delete\@VWebToken\@\@\@std\@\@\@std\@\@AEBVValue\@Json\@\@AEBVPrivateKeyManager\@\@\@Z
-     */
-    MCAPI static std::unique_ptr<class WebToken>
-    createFromData(class Json::Value const&, class PrivateKeyManager const&);
-    /**
      * @symbol ?toString\@WebToken\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string toString() const;
@@ -40,15 +34,16 @@ public:
      * @symbol ??1WebToken\@\@QEAA\@XZ
      */
     MCAPI ~WebToken();
+    /**
+     * @symbol
+     * ?createFromData\@WebToken\@\@SA?AV?$unique_ptr\@VWebToken\@\@U?$default_delete\@VWebToken\@\@\@std\@\@\@std\@\@AEBVValue\@Json\@\@AEBVPrivateKeyManager\@\@\@Z
+     */
+    MCAPI static std::unique_ptr<class WebToken>
+    createFromData(class Json::Value const&, class PrivateKeyManager const&);
     // NOLINTEND
 
     // private:
     // NOLINTBEGIN
-    /**
-     * @symbol
-     * ?_DERToBinary\@WebToken\@\@CA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@H\@Z
-     */
-    MCAPI static std::string _DERToBinary(std::string const&, int);
     /**
      * @symbol
      * ?_parse\@WebToken\@\@AEAAXAEAVValue\@Json\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -59,5 +54,10 @@ public:
      * ?_signatureToDER\@WebToken\@\@AEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string _signatureToDER() const;
+    /**
+     * @symbol
+     * ?_DERToBinary\@WebToken\@\@CA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@H\@Z
+     */
+    MCAPI static std::string _DERToBinary(std::string const&, int);
     // NOLINTEND
 };

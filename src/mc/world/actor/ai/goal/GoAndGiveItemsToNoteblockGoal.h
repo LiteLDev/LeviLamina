@@ -38,15 +38,15 @@ public:
          */
         MCAPI Definition();
         /**
+         * @symbol ?initialize\@Definition\@GoAndGiveItemsToNoteblockGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
+         */
+        MCAPI void initialize(class EntityContext&, class GoAndGiveItemsToNoteblockGoal&) const;
+        /**
          * @symbol
          * ?buildSchema\@Definition\@GoAndGiveItemsToNoteblockGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDefinition\@GoAndGiveItemsToNoteblockGoal\@\@\@JsonUtil\@\@\@4\@\@Z
          */
         MCAPI static void
         buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GoAndGiveItemsToNoteblockGoal::Definition>>&);
-        /**
-         * @symbol ?initialize\@Definition\@GoAndGiveItemsToNoteblockGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
-        MCAPI void initialize(class EntityContext&, class GoAndGiveItemsToNoteblockGoal&) const;
         // NOLINTEND
     };
 

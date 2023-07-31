@@ -13,6 +13,10 @@ public:
 public:
     // NOLINTBEGIN
     /**
+     * @symbol ?getName\@Motive\@\@QEBA?BV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     */
+    MCAPI std::string const getName() const;
+    /**
      * @symbol
      * ?getAllMotivesAsList\@Motive\@\@SA?AV?$vector\@PEBVMotive\@\@V?$allocator\@PEBVMotive\@\@\@std\@\@\@std\@\@XZ
      */
@@ -22,10 +26,6 @@ public:
      * ?getMotiveByName\@Motive\@\@SAAEBV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI static class Motive const& getMotiveByName(std::string const&);
-    /**
-     * @symbol ?getName\@Motive\@\@QEBA?BV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string const getName() const;
     /**
      * @symbol ?mAlban\@Motive\@\@2V1\@B
      */

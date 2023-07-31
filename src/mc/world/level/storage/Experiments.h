@@ -32,10 +32,6 @@ public:
      */
     MCAPI bool Gametest() const;
     /**
-     * @symbol ?MinecraftExplorer\@Experiments\@\@SA_NXZ
-     */
-    MCAPI static bool MinecraftExplorer();
-    /**
      * @symbol ?RecipeUnlocking\@Experiments\@\@QEBA_NXZ
      */
     MCAPI bool RecipeUnlocking() const;
@@ -47,11 +43,6 @@ public:
      * @symbol ?UpcomingCreatorFeatures\@Experiments\@\@QEBA_NXZ
      */
     MCAPI bool UpcomingCreatorFeatures() const;
-    /**
-     * @symbol
-     * ?getExperimentTextID\@Experiments\@\@SAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4AllExperiments\@\@\@Z
-     */
-    MCAPI static std::string const& getExperimentTextID(enum class AllExperiments);
     /**
      * @symbol
      * ?getExperimentsActiveAsJSONList\@Experiments\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -66,11 +57,6 @@ public:
      * @symbol ?getTagData\@Experiments\@\@QEAAXAEBVCompoundTag\@\@\@Z
      */
     MCAPI void getTagData(class CompoundTag const&);
-    /**
-     * @symbol
-     * ?getToggleNames\@Experiments\@\@SAAEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
-     */
-    MCAPI static std::vector<std::string> const& getToggleNames();
     /**
      * @symbol ?isExperimentEnabled\@Experiments\@\@QEBA_NW4AllExperiments\@\@\@Z
      */
@@ -91,5 +77,19 @@ public:
      * @symbol ??1Experiments\@\@QEAA\@XZ
      */
     MCAPI ~Experiments();
+    /**
+     * @symbol ?MinecraftExplorer\@Experiments\@\@SA_NXZ
+     */
+    MCAPI static bool MinecraftExplorer();
+    /**
+     * @symbol
+     * ?getExperimentTextID\@Experiments\@\@SAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4AllExperiments\@\@\@Z
+     */
+    MCAPI static std::string const& getExperimentTextID(enum class AllExperiments);
+    /**
+     * @symbol
+     * ?getToggleNames\@Experiments\@\@SAAEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
+     */
+    MCAPI static std::vector<std::string> const& getToggleNames();
     // NOLINTEND
 };

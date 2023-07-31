@@ -25,17 +25,6 @@ public:
      */
     MCAPI ScriptActorQueryOptions(struct ScriptModuleMinecraft::ScriptActorQueryOptions&&);
     /**
-     * @symbol
-     * ?bindV010\@ScriptActorQueryOptions\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptActorQueryOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorQueryOptions> bindV010();
-    /**
-     * @symbol
-     * ?bindV1\@ScriptActorQueryOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptActorQueryOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptActorQueryOptions>
-    bindV1();
-    /**
      * @symbol ??4ScriptActorQueryOptions\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptActorQueryOptions&
@@ -49,6 +38,17 @@ public:
      * @symbol ??1ScriptActorQueryOptions\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptActorQueryOptions();
+    /**
+     * @symbol
+     * ?bindV010\@ScriptActorQueryOptions\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@UScriptActorQueryOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptModuleMinecraft::ScriptActorQueryOptions> bindV010();
+    /**
+     * @symbol
+     * ?bindV1\@ScriptActorQueryOptions\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptActorQueryOptions\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptActorQueryOptions>
+    bindV1();
     // NOLINTEND
 };
 

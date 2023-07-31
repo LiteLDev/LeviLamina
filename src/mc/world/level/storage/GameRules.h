@@ -124,11 +124,6 @@ public:
     // NOLINTBEGIN
     /**
      * @symbol
-     * ?_getMarketplaceGameRulesDefaultMap\@GameRules\@\@CAAEBV?$map\@UGameRuleId\@\@VGameRule\@\@U?$less\@UGameRuleId\@\@\@std\@\@V?$allocator\@U?$pair\@$$CBUGameRuleId\@\@VGameRule\@\@\@std\@\@\@4\@\@std\@\@XZ
-     */
-    MCAPI static std::map<struct GameRuleId, class GameRule> const& _getMarketplaceGameRulesDefaultMap();
-    /**
-     * @symbol
      * ?_registerRule\@GameRules\@\@AEAAAEAVGameRule\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UGameRuleId\@\@\@Z
      */
     MCAPI class GameRule& _registerRule(std::string const&, struct GameRuleId);
@@ -148,5 +143,10 @@ public:
      */
     MCAPI std::unique_ptr<class GameRulesChangedPacket>
     _setRule(struct GameRuleId, union GameRule::Value, enum class GameRule::Type, bool, bool*, bool*, class GameRule::ValidationError*);
+    /**
+     * @symbol
+     * ?_getMarketplaceGameRulesDefaultMap\@GameRules\@\@CAAEBV?$map\@UGameRuleId\@\@VGameRule\@\@U?$less\@UGameRuleId\@\@\@std\@\@V?$allocator\@U?$pair\@$$CBUGameRuleId\@\@VGameRule\@\@\@std\@\@\@4\@\@std\@\@XZ
+     */
+    MCAPI static std::map<struct GameRuleId, class GameRule> const& _getMarketplaceGameRulesDefaultMap();
     // NOLINTEND
 };

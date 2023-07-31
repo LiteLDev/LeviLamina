@@ -30,14 +30,14 @@ public:
     MCAPI ScriptActorIterator(std::vector<
                               class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>>&&);
     /**
+     * @symbol ??1ScriptActorIterator\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ~ScriptActorIterator();
+    /**
      * @symbol
      * ?bind\@ScriptActorIterator\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptActorIterator\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
      */
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptActorIterator> bind();
-    /**
-     * @symbol ??1ScriptActorIterator\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ~ScriptActorIterator();
     // NOLINTEND
 };
 

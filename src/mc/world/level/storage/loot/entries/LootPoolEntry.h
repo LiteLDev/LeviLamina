@@ -30,11 +30,6 @@ public:
     MCAPI void createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
     /**
      * @symbol
-     * ?deserialize\@LootPoolEntry\@\@SA?AV?$unique_ptr\@VLootPoolEntry\@\@U?$default_delete\@VLootPoolEntry\@\@\@std\@\@\@std\@\@AEBVValue\@Json\@\@\@Z
-     */
-    MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value const&);
-    /**
-     * @symbol
      * ?getConditions\@LootPoolEntry\@\@QEBAAEBV?$vector\@V?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VLootItemCondition\@\@U?$default_delete\@VLootItemCondition\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@XZ
      */
     MCAPI std::vector<std::unique_ptr<class LootItemCondition>> const& getConditions() const;
@@ -42,5 +37,10 @@ public:
      * @symbol ?getWeight\@LootPoolEntry\@\@QEBAHM\@Z
      */
     MCAPI int getWeight(float) const;
+    /**
+     * @symbol
+     * ?deserialize\@LootPoolEntry\@\@SA?AV?$unique_ptr\@VLootPoolEntry\@\@U?$default_delete\@VLootPoolEntry\@\@\@std\@\@\@std\@\@AEBVValue\@Json\@\@\@Z
+     */
+    MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value const&);
     // NOLINTEND
 };

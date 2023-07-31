@@ -24,10 +24,6 @@ public:
     public:
         // NOLINTBEGIN
         /**
-         * @symbol ?bindType\@CameraList\@CameraPresets\@\@SAXXZ
-         */
-        MCAPI static void bindType();
-        /**
          * @symbol ??4CameraList\@CameraPresets\@\@QEAAAEAU01\@AEBU01\@\@Z
          */
         MCAPI struct CameraPresets::CameraList& operator=(struct CameraPresets::CameraList const&);
@@ -35,6 +31,10 @@ public:
          * @symbol ??1CameraList\@CameraPresets\@\@QEAA\@XZ
          */
         MCAPI ~CameraList();
+        /**
+         * @symbol ?bindType\@CameraList\@CameraPresets\@\@SAXXZ
+         */
+        MCAPI static void bindType();
         // NOLINTEND
     };
 
@@ -60,11 +60,6 @@ public:
      */
     MCAPI std::optional<unsigned int> getCameraPresetIndex(std::string const&) const;
     /**
-     * @symbol
-     * ?isAllowedEaseTarget\@CameraPresets\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static bool isAllowedEaseTarget(std::string const&);
-    /**
      * @symbol ?isEmpty\@CameraPresets\@\@QEBA_NXZ
      */
     MCAPI bool isEmpty() const;
@@ -76,6 +71,11 @@ public:
      * @symbol ??4CameraPresets\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class CameraPresets& operator=(class CameraPresets&&);
+    /**
+     * @symbol
+     * ?isAllowedEaseTarget\@CameraPresets\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static bool isAllowedEaseTarget(std::string const&);
     // NOLINTEND
 
     // private:
@@ -86,12 +86,6 @@ public:
     MCAPI void _discardInvalidPresets();
     /**
      * @symbol
-     * ?_loadJsonFiles\@CameraPresets\@\@CAXAEAVResourcePackManager\@\@AEBV?$PathBuffer\@V?$StackString\@D$0EAA\@\@Core\@\@\@Core\@\@V?$function\@$$A6AXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVSemVersion\@\@0\@Z\@std\@\@\@Z
-     */
-    MCAPI static void
-    _loadJsonFiles(class ResourcePackManager&, class Core::PathBuffer<class Core::StackString<char, 1024>> const&, std::function<void(std::string const&, class SemVersion const&, std::string const&)>);
-    /**
-     * @symbol
      * ?_parseAndLoadCameraList\@CameraPresets\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVSemVersion\@\@0\@Z
      */
     MCAPI void _parseAndLoadCameraList(std::string const&, class SemVersion const&, std::string const&);
@@ -100,6 +94,12 @@ public:
      * ?_parseAndLoadCameraPreset\@CameraPresets\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVSemVersion\@\@0\@Z
      */
     MCAPI void _parseAndLoadCameraPreset(std::string const&, class SemVersion const&, std::string const&);
+    /**
+     * @symbol
+     * ?_loadJsonFiles\@CameraPresets\@\@CAXAEAVResourcePackManager\@\@AEBV?$PathBuffer\@V?$StackString\@D$0EAA\@\@Core\@\@\@Core\@\@V?$function\@$$A6AXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVSemVersion\@\@0\@Z\@std\@\@\@Z
+     */
+    MCAPI static void
+    _loadJsonFiles(class ResourcePackManager&, class Core::PathBuffer<class Core::StackString<char, 1024>> const&, std::function<void(std::string const&, class SemVersion const&, std::string const&)>);
     /**
      * @symbol ?_setupBindings\@CameraPresets\@\@CAXXZ
      */

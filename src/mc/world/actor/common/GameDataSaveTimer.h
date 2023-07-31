@@ -27,12 +27,6 @@ public:
     MCAPI std::chrono::time_point<std::chrono::steady_clock>
           calculateNextGameDataSaveTime(std::chrono::time_point<std::chrono::steady_clock>) const;
     /**
-     * @symbol
-     * ?calculateNextStorageCheckTime\@GameDataSaveTimer\@\@SA?AV?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@std\@\@V234\@\@Z
-     */
-    MCAPI static std::chrono::time_point<std::chrono::steady_clock>
-        calculateNextStorageCheckTime(std::chrono::time_point<std::chrono::steady_clock>);
-    /**
      * @symbol ?isNextGameDataSaveTimeSet\@GameDataSaveTimer\@\@QEBA_NXZ
      */
     MCAPI bool isNextGameDataSaveTimeSet() const;
@@ -85,5 +79,11 @@ public:
      * @symbol ??1GameDataSaveTimer\@\@QEAA\@XZ
      */
     MCAPI ~GameDataSaveTimer();
+    /**
+     * @symbol
+     * ?calculateNextStorageCheckTime\@GameDataSaveTimer\@\@SA?AV?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@std\@\@V234\@\@Z
+     */
+    MCAPI static std::chrono::time_point<std::chrono::steady_clock>
+        calculateNextStorageCheckTime(std::chrono::time_point<std::chrono::steady_clock>);
     // NOLINTEND
 };

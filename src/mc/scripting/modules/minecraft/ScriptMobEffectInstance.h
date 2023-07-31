@@ -26,11 +26,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol
-     * ?bind\@ScriptMobEffectInstance\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptMobEffectInstance\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMobEffectInstance> bind();
-    /**
      * @symbol ?getAmplifier\@ScriptMobEffectInstance\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@H\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<int> getAmplifier() const;
@@ -50,12 +45,6 @@ public:
     MCAPI class Scripting::Result<int> getDuration() const;
     /**
      * @symbol
-     * ?getHandle\@ScriptMobEffectInstance\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptMobEffectInstance\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBVActor\@\@IAEBVWeakLifetimeScope\@4\@\@Z
-     */
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptMobEffectInstance>
-    getHandle(class Actor const&, unsigned int, class Scripting::WeakLifetimeScope const&);
-    /**
-     * @symbol
      * ?getTypeId\@ScriptMobEffectInstance\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Scripting\@\@XZ
      */
     MCAPI class Scripting::Result<std::string> getTypeId() const;
@@ -64,6 +53,17 @@ public:
      */
     MCAPI class ScriptModuleMinecraft::ScriptMobEffectInstance&
     operator=(class ScriptModuleMinecraft::ScriptMobEffectInstance&&);
+    /**
+     * @symbol
+     * ?bind\@ScriptMobEffectInstance\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptMobEffectInstance\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptMobEffectInstance> bind();
+    /**
+     * @symbol
+     * ?getHandle\@ScriptMobEffectInstance\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptMobEffectInstance\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBVActor\@\@IAEBVWeakLifetimeScope\@4\@\@Z
+     */
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptMobEffectInstance>
+    getHandle(class Actor const&, unsigned int, class Scripting::WeakLifetimeScope const&);
     // NOLINTEND
 };
 

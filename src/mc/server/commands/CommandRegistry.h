@@ -575,11 +575,6 @@ public:
     ) const;
     /**
      * @symbol
-     * ?_removeStringQuotes\@CommandRegistry\@\@CA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@\@Z
-     */
-    MCAPI static std::string _removeStringQuotes(std::string const&);
-    /**
-     * @symbol
      * ?addChainedSubcommandValuesToExisting\@CommandRegistry\@\@AEAAXIAEBV?$vector\@U?$pair\@_KI\@std\@\@V?$allocator\@U?$pair\@_KI\@std\@\@\@2\@\@std\@\@\@Z
      */
     MCAPI void
@@ -589,12 +584,6 @@ public:
      * ?addEnumValuesToExisting\@CommandRegistry\@\@AEAAXIAEBV?$vector\@U?$pair\@_K_K\@std\@\@V?$allocator\@U?$pair\@_K_K\@std\@\@\@2\@\@std\@\@\@Z
      */
     MCAPI void addEnumValuesToExisting(unsigned int, std::vector<std::pair<uint64_t, uint64_t>> const&);
-    /**
-     * @symbol
-     * ?addNonEpsilonSymbols\@CommandRegistry\@\@CAXAEAV?$dense_set\@VSymbol\@CommandRegistry\@\@USymbolHasher\@2\@U?$equal_to\@VSymbol\@CommandRegistry\@\@\@std\@\@V?$allocator\@VSymbol\@CommandRegistry\@\@\@5\@\@entt\@\@AEBV23\@\@Z
-     */
-    MCAPI static void
-    addNonEpsilonSymbols(class entt::dense_set<class CommandRegistry::Symbol, struct CommandRegistry::SymbolHasher, std::equal_to<class CommandRegistry::Symbol>, std::allocator<class CommandRegistry::Symbol>>&, class entt::dense_set<class CommandRegistry::Symbol, struct CommandRegistry::SymbolHasher, std::equal_to<class CommandRegistry::Symbol>, std::allocator<class CommandRegistry::Symbol>> const&);
     /**
      * @symbol
      * ?addPostfix\@CommandRegistry\@\@AEAA?AVSymbol\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -648,10 +637,6 @@ public:
         uint64_t
     );
     /**
-     * @symbol ?buildOverload\@CommandRegistry\@\@CAXAEAUOverload\@1\@\@Z
-     */
-    MCAPI static void buildOverload(struct CommandRegistry::Overload&);
-    /**
      * @symbol ?buildParseTable\@CommandRegistry\@\@AEBAXI\@Z
      */
     MCAPI void buildParseTable(unsigned int) const;
@@ -674,16 +659,6 @@ public:
      */
     MCAPI bool
     checkOriginCommandFlags(class CommandOrigin const&, struct CommandFlag, enum class CommandPermissionLevel) const;
-    /**
-     * @symbol ?collapse\@CommandRegistry\@\@CAPEAUParseToken\@1\@AEAU21\@VSymbol\@1\@\@Z
-     */
-    MCAPI static struct CommandRegistry::ParseToken*
-    collapse(struct CommandRegistry::ParseToken&, class CommandRegistry::Symbol);
-    /**
-     * @symbol ?collapseOn\@CommandRegistry\@\@CAPEAUParseToken\@1\@AEAU21\@VSymbol\@1\@1\@Z
-     */
-    MCAPI static struct CommandRegistry::ParseToken*
-    collapseOn(struct CommandRegistry::ParseToken&, class CommandRegistry::Symbol, class CommandRegistry::Symbol);
     /**
      * @symbol
      * ?createCommand\@CommandRegistry\@\@AEBA?AV?$unique_ptr\@VCommand\@\@U?$default_delete\@VCommand\@\@\@std\@\@\@std\@\@AEBUParseToken\@1\@AEBVCommandOrigin\@\@HAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@\@Z
@@ -708,16 +683,6 @@ public:
     MCAPI std::string
     describe(struct CommandRegistry::Signature const&, std::string const&, struct CommandRegistry::Overload const&, unsigned int, unsigned int*, unsigned int*)
         const;
-    /**
-     * @symbol ?expand\@CommandRegistry\@\@CAPEAUParseToken\@1\@AEAU21\@VSymbol\@1\@\@Z
-     */
-    MCAPI static struct CommandRegistry::ParseToken*
-    expand(struct CommandRegistry::ParseToken&, class CommandRegistry::Symbol);
-    /**
-     * @symbol ?expandExcept\@CommandRegistry\@\@CAPEAUParseToken\@1\@AEAU21\@VSymbol\@1\@1\@Z
-     */
-    MCAPI static struct CommandRegistry::ParseToken*
-    expandExcept(struct CommandRegistry::ParseToken&, class CommandRegistry::Symbol, class CommandRegistry::Symbol);
     /**
      * @symbol
      * ?findCommand\@CommandRegistry\@\@AEAAPEAUSignature\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
@@ -744,11 +709,6 @@ public:
      */
     MCAPI class CommandRegistry::Symbol findPostfix(std::string const&) const;
     /**
-     * @symbol ?fold\@CommandRegistry\@\@CAPEAUParseToken\@1\@AEAU21\@VSymbol\@1\@1\@Z
-     */
-    MCAPI static struct CommandRegistry::ParseToken*
-    fold(struct CommandRegistry::ParseToken&, class CommandRegistry::Symbol, class CommandRegistry::Symbol);
-    /**
      * @symbol
      * ?forEachNonTerminal\@CommandRegistry\@\@AEBAXV?$function\@$$A6AXVSymbol\@CommandRegistry\@\@\@Z\@std\@\@\@Z
      */
@@ -766,11 +726,6 @@ public:
      * @symbol ?isValid\@CommandRegistry\@\@AEBA_NVSymbol\@1\@\@Z
      */
     MCAPI bool isValid(class CommandRegistry::Symbol) const;
-    /**
-     * @symbol ?kill\@CommandRegistry\@\@CAPEAUParseToken\@1\@AEAU21\@VSymbol\@1\@\@Z
-     */
-    MCAPI static struct CommandRegistry::ParseToken*
-    kill(struct CommandRegistry::ParseToken&, class CommandRegistry::Symbol);
     /**
      * @symbol ?originCanRun\@CommandRegistry\@\@AEBA_NAEBVCommandOrigin\@\@AEBUOverload\@1\@\@Z
      */
@@ -800,23 +755,6 @@ public:
     parseSelector(struct ActorSelectorArgs&, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&)
         const;
     /**
-     * @symbol
-     * ?readFloat\@CommandRegistry\@\@CA_NAEAMAEBUParseToken\@1\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@4\@\@Z
-     */
-    MCAPI static bool
-    readFloat(float&, struct CommandRegistry::ParseToken const&, std::string&, std::vector<std::string>&);
-    /**
-     * @symbol
-     * ?readInt\@CommandRegistry\@\@CA_NAEAHAEBUParseToken\@1\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@4\@\@Z
-     */
-    MCAPI static bool readInt(int&, struct CommandRegistry::ParseToken const&, std::string&, std::vector<std::string>&);
-    /**
-     * @symbol
-     * ?readRelativeCoordinate\@CommandRegistry\@\@CA_NAEA_NAEAMAEBUParseToken\@1\@_NAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@4\@\@Z
-     */
-    MCAPI static bool
-    readRelativeCoordinate(bool&, float&, struct CommandRegistry::ParseToken const&, bool, std::string&, std::vector<std::string>&);
-    /**
      * @symbol ?registerOverloadInternal\@CommandRegistry\@\@AEAAXAEAUSignature\@1\@AEAUOverload\@1\@\@Z
      */
     MCAPI void registerOverloadInternal(struct CommandRegistry::Signature&, struct CommandRegistry::Overload&);
@@ -833,6 +771,68 @@ public:
      * ?symbolToString\@CommandRegistry\@\@AEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VSymbol\@1\@\@Z
      */
     MCAPI std::string symbolToString(class CommandRegistry::Symbol) const;
+    /**
+     * @symbol
+     * ?_removeStringQuotes\@CommandRegistry\@\@CA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@\@Z
+     */
+    MCAPI static std::string _removeStringQuotes(std::string const&);
+    /**
+     * @symbol
+     * ?addNonEpsilonSymbols\@CommandRegistry\@\@CAXAEAV?$dense_set\@VSymbol\@CommandRegistry\@\@USymbolHasher\@2\@U?$equal_to\@VSymbol\@CommandRegistry\@\@\@std\@\@V?$allocator\@VSymbol\@CommandRegistry\@\@\@5\@\@entt\@\@AEBV23\@\@Z
+     */
+    MCAPI static void
+    addNonEpsilonSymbols(class entt::dense_set<class CommandRegistry::Symbol, struct CommandRegistry::SymbolHasher, std::equal_to<class CommandRegistry::Symbol>, std::allocator<class CommandRegistry::Symbol>>&, class entt::dense_set<class CommandRegistry::Symbol, struct CommandRegistry::SymbolHasher, std::equal_to<class CommandRegistry::Symbol>, std::allocator<class CommandRegistry::Symbol>> const&);
+    /**
+     * @symbol ?buildOverload\@CommandRegistry\@\@CAXAEAUOverload\@1\@\@Z
+     */
+    MCAPI static void buildOverload(struct CommandRegistry::Overload&);
+    /**
+     * @symbol ?collapse\@CommandRegistry\@\@CAPEAUParseToken\@1\@AEAU21\@VSymbol\@1\@\@Z
+     */
+    MCAPI static struct CommandRegistry::ParseToken*
+    collapse(struct CommandRegistry::ParseToken&, class CommandRegistry::Symbol);
+    /**
+     * @symbol ?collapseOn\@CommandRegistry\@\@CAPEAUParseToken\@1\@AEAU21\@VSymbol\@1\@1\@Z
+     */
+    MCAPI static struct CommandRegistry::ParseToken*
+    collapseOn(struct CommandRegistry::ParseToken&, class CommandRegistry::Symbol, class CommandRegistry::Symbol);
+    /**
+     * @symbol ?expand\@CommandRegistry\@\@CAPEAUParseToken\@1\@AEAU21\@VSymbol\@1\@\@Z
+     */
+    MCAPI static struct CommandRegistry::ParseToken*
+    expand(struct CommandRegistry::ParseToken&, class CommandRegistry::Symbol);
+    /**
+     * @symbol ?expandExcept\@CommandRegistry\@\@CAPEAUParseToken\@1\@AEAU21\@VSymbol\@1\@1\@Z
+     */
+    MCAPI static struct CommandRegistry::ParseToken*
+    expandExcept(struct CommandRegistry::ParseToken&, class CommandRegistry::Symbol, class CommandRegistry::Symbol);
+    /**
+     * @symbol ?fold\@CommandRegistry\@\@CAPEAUParseToken\@1\@AEAU21\@VSymbol\@1\@1\@Z
+     */
+    MCAPI static struct CommandRegistry::ParseToken*
+    fold(struct CommandRegistry::ParseToken&, class CommandRegistry::Symbol, class CommandRegistry::Symbol);
+    /**
+     * @symbol ?kill\@CommandRegistry\@\@CAPEAUParseToken\@1\@AEAU21\@VSymbol\@1\@\@Z
+     */
+    MCAPI static struct CommandRegistry::ParseToken*
+    kill(struct CommandRegistry::ParseToken&, class CommandRegistry::Symbol);
+    /**
+     * @symbol
+     * ?readFloat\@CommandRegistry\@\@CA_NAEAMAEBUParseToken\@1\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@4\@\@Z
+     */
+    MCAPI static bool
+    readFloat(float&, struct CommandRegistry::ParseToken const&, std::string&, std::vector<std::string>&);
+    /**
+     * @symbol
+     * ?readInt\@CommandRegistry\@\@CA_NAEAHAEBUParseToken\@1\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@4\@\@Z
+     */
+    MCAPI static bool readInt(int&, struct CommandRegistry::ParseToken const&, std::string&, std::vector<std::string>&);
+    /**
+     * @symbol
+     * ?readRelativeCoordinate\@CommandRegistry\@\@CA_NAEA_NAEAMAEBUParseToken\@1\@_NAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@4\@\@Z
+     */
+    MCAPI static bool
+    readRelativeCoordinate(bool&, float&, struct CommandRegistry::ParseToken const&, bool, std::string&, std::vector<std::string>&);
     // NOLINTEND
 
 private:

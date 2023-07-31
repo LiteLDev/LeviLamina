@@ -199,15 +199,15 @@ public:
      */
     MCAPI struct ActorDefinitionIdentifier _getActorID(class BlockSource&) const;
     /**
-     * @symbol ?_setAgentOwner\@ActorPlacerItem\@\@CAXAEAVPlayer\@\@AEAVAgent\@\@\@Z
-     */
-    MCAPI static void _setAgentOwner(class Player&, class Agent&);
-    /**
      * @symbol
      * ?_spawnActorAt\@ActorPlacerItem\@\@AEBAPEAVActor\@\@AEAVBlockSource\@\@AEBVVec3\@\@1AEBVItemStack\@\@PEAV2\@\@Z
      */
     MCAPI class Actor*
     _spawnActorAt(class BlockSource&, class Vec3 const&, class Vec3 const&, class ItemStack const&, class Actor*) const;
+    /**
+     * @symbol ?_setAgentOwner\@ActorPlacerItem\@\@CAXAEAVPlayer\@\@AEAVAgent\@\@\@Z
+     */
+    MCAPI static void _setAgentOwner(class Player&, class Agent&);
     // NOLINTEND
 
 private:

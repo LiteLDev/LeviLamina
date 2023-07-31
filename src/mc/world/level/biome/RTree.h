@@ -39,6 +39,19 @@ public:
          */
         MCAPI Node(class RTree::Node const&);
         /**
+         * @symbol ??4Node\@RTree\@\@QEAAAEAV01\@$$QEAV01\@\@Z
+         */
+        MCAPI class RTree::Node& operator=(class RTree::Node&&);
+        /**
+         * @symbol
+         * ?search\@Node\@RTree\@\@QEBAXAEBUTargetSpace\@ClimateUtils\@\@AEAU?$pair\@PEBVNode\@RTree\@\@_J\@std\@\@\@Z
+         */
+        MCAPI void search(struct ClimateUtils::TargetSpace const&, std::pair<class RTree::Node const*, int64_t>&) const;
+        /**
+         * @symbol ??1Node\@RTree\@\@QEAA\@XZ
+         */
+        MCAPI ~Node();
+        /**
          * @symbol
          * ?branch\@Node\@RTree\@\@SA?AV?$optional\@VNode\@RTree\@\@\@std\@\@$$QEAV?$vector\@VNode\@RTree\@\@V?$allocator\@VNode\@RTree\@\@\@std\@\@\@4\@\@Z
          */
@@ -49,23 +62,10 @@ public:
          */
         MCAPI static std::vector<class RTree::Node> bucketize(std::vector<class RTree::Node>&&);
         /**
-         * @symbol ??4Node\@RTree\@\@QEAAAEAV01\@$$QEAV01\@\@Z
-         */
-        MCAPI class RTree::Node& operator=(class RTree::Node&&);
-        /**
-         * @symbol
-         * ?search\@Node\@RTree\@\@QEBAXAEBUTargetSpace\@ClimateUtils\@\@AEAU?$pair\@PEBVNode\@RTree\@\@_J\@std\@\@\@Z
-         */
-        MCAPI void search(struct ClimateUtils::TargetSpace const&, std::pair<class RTree::Node const*, int64_t>&) const;
-        /**
          * @symbol
          * ?sort\@Node\@RTree\@\@SAXAEAV?$vector\@VNode\@RTree\@\@V?$allocator\@VNode\@RTree\@\@\@std\@\@\@std\@\@H_N\@Z
          */
         MCAPI static void sort(std::vector<class RTree::Node>&, int, bool);
-        /**
-         * @symbol ??1Node\@RTree\@\@QEAA\@XZ
-         */
-        MCAPI ~Node();
         // NOLINTEND
     };
 
@@ -78,14 +78,14 @@ public:
 public:
     // NOLINTBEGIN
     /**
+     * @symbol ??1RTree\@\@QEAA\@XZ
+     */
+    MCAPI ~RTree();
+    /**
      * @symbol
      * ?create\@RTree\@\@SA?AV?$optional\@VRTree\@\@\@std\@\@AEBV?$vector\@UBiomeNoiseTarget\@\@V?$allocator\@UBiomeNoiseTarget\@\@\@std\@\@\@3\@\@Z
      */
     MCAPI static std::optional<class RTree> create(std::vector<struct BiomeNoiseTarget> const&);
-    /**
-     * @symbol ??1RTree\@\@QEAA\@XZ
-     */
-    MCAPI ~RTree();
     // NOLINTEND
 
     // private:

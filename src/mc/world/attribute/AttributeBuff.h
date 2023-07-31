@@ -39,10 +39,6 @@ public:
     MCVAPI ~AttributeBuff();
 #endif
     /**
-     * @symbol ?buffTypeToDamageCause\@AttributeBuff\@\@SA?AW4ActorDamageCause\@\@W4AttributeBuffType\@\@\@Z
-     */
-    MCAPI static enum class ActorDamageCause buffTypeToDamageCause(enum class AttributeBuffType);
-    /**
      * @symbol ?getAmount\@AttributeBuff\@\@QEBAMXZ
      */
     MCAPI float getAmount() const;
@@ -82,6 +78,10 @@ public:
      * @symbol ?setValueAmplifier\@AttributeBuff\@\@QEAAXV?$shared_ptr\@VAmplifier\@\@\@std\@\@\@Z
      */
     MCAPI void setValueAmplifier(std::shared_ptr<class Amplifier>);
+    /**
+     * @symbol ?buffTypeToDamageCause\@AttributeBuff\@\@SA?AW4ActorDamageCause\@\@W4AttributeBuffType\@\@\@Z
+     */
+    MCAPI static enum class ActorDamageCause buffTypeToDamageCause(enum class AttributeBuffType);
     // NOLINTEND
 
     // protected:

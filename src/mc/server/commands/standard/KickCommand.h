@@ -52,15 +52,15 @@ public:
     MCAPI void _generateSuccessOutput(class CommandOutput&, std::string const&, std::string const&) const;
     /**
      * @symbol
-     * ?_kickPlayer\@KickCommand\@\@CAXPEAVMinecraft\@\@AEBVPlayer\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI static void _kickPlayer(class Minecraft*, class Player const&, std::string const&);
-    /**
-     * @symbol
      * ?_loopPlayers\@KickCommand\@\@AEBAPEBVPlayer\@\@AEBVCommandOrigin\@\@AEAVCommandOutput\@\@AEAVLevel\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@3V?$function\@$$A6A_NPEBVPlayer\@\@\@Z\@7\@\@Z
      */
     MCAPI class Player const*
     _loopPlayers(class CommandOrigin const&, class CommandOutput&, class Level&, std::string const&, std::string const&, std::function<bool(class Player const*)>)
         const;
+    /**
+     * @symbol
+     * ?_kickPlayer\@KickCommand\@\@CAXPEAVMinecraft\@\@AEBVPlayer\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI static void _kickPlayer(class Minecraft*, class Player const&, std::string const&);
     // NOLINTEND
 };

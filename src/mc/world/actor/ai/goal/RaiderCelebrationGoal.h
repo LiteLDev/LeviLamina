@@ -38,15 +38,15 @@ public:
         MCAPI void addCelebrationSoundByName(std::string const&);
         /**
          * @symbol
+         * ?initialize\@RaiderCelebrationDefinition\@RaiderCelebrationGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
+         */
+        MCAPI void initialize(class EntityContext&, class RaiderCelebrationGoal&) const;
+        /**
+         * @symbol
          * ?buildSchema\@RaiderCelebrationDefinition\@RaiderCelebrationGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VRaiderCelebrationDefinition\@RaiderCelebrationGoal\@\@\@JsonUtil\@\@\@4\@\@Z
          */
         MCAPI static void
         buildSchema(std::string const&, std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RaiderCelebrationGoal::RaiderCelebrationDefinition>>&);
-        /**
-         * @symbol
-         * ?initialize\@RaiderCelebrationDefinition\@RaiderCelebrationGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
-         */
-        MCAPI void initialize(class EntityContext&, class RaiderCelebrationGoal&) const;
         // NOLINTEND
     };
 

@@ -157,12 +157,6 @@ public:
     MCAPI class Scripting::Result<void> applyKnockback(class Actor&, float, float, float, float);
     /**
      * @symbol
-     * ?bind\@ScriptActor\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEAV?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VIComponentFactory\@ScriptModuleMinecraft\@\@U?$default_delete\@VIComponentFactory\@ScriptModuleMinecraft\@\@\@std\@\@\@2\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VIComponentFactory\@ScriptModuleMinecraft\@\@U?$default_delete\@VIComponentFactory\@ScriptModuleMinecraft\@\@\@std\@\@\@2\@\@std\@\@\@2\@\@std\@\@\@Z
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptActor>
-    bind(std::unordered_map<std::string, std::unique_ptr<class ScriptModuleMinecraft::IComponentFactory>>&);
-    /**
-     * @symbol
      * ?extinguishFire\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@_N\@Scripting\@\@AEAVActor\@\@V?$optional\@_N\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<bool> extinguishFire(class Actor&, std::optional<bool>);
@@ -240,24 +234,6 @@ public:
      * @symbol ?getFallDistance\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@M\@Scripting\@\@AEBVActor\@\@\@Z
      */
     MCAPI class Scripting::Result<float> getFallDistance(class Actor const&) const;
-    /**
-     * @symbol
-     * ?getHandle\@ScriptActor\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@PEBVActor\@\@AEBVWeakLifetimeScope\@4\@\@Z
-     */
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
-    getHandle(class Actor const*, class Scripting::WeakLifetimeScope const&);
-    /**
-     * @symbol
-     * ?getHandle\@ScriptActor\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@VWeakEntityRef\@\@AEBVWeakLifetimeScope\@4\@\@Z
-     */
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
-    getHandle(class WeakEntityRef, class Scripting::WeakLifetimeScope const&);
-    /**
-     * @symbol
-     * ?getHandle\@ScriptActor\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$StackRefResultT\@UEntityRefTraits\@\@\@\@AEBVWeakLifetimeScope\@4\@\@Z
-     */
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
-    getHandle(class StackRefResultT<struct EntityRefTraits>, class Scripting::WeakLifetimeScope const&);
     /**
      * @symbol
      * ?getHeadLocation\@ScriptActor\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@VVec3\@\@\@Scripting\@\@AEBVActor\@\@\@Z
@@ -509,16 +485,40 @@ public:
     MCAPI class Actor* tryGetActor() const;
     /**
      * @symbol
-     * ?tryGetActor\@ScriptActor\@ScriptModuleMinecraft\@\@SAPEAVActor\@\@AEBU?$TypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBVWeakLifetimeScope\@5\@\@Z
-     */
-    MCAPI static class Actor*
-    tryGetActor(struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptActor> const&, class Scripting::WeakLifetimeScope const&);
-    /**
-     * @symbol
      * ?tryTeleport\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@_N\@Scripting\@\@AEAVActor\@\@AEBVVec3\@\@AEBV?$optional\@UScriptTeleportOptions\@ScriptModuleMinecraft\@\@\@std\@\@\@Z
      */
     MCAPI class Scripting::Result<bool>
     tryTeleport(class Actor&, class Vec3 const&, std::optional<struct ScriptModuleMinecraft::ScriptTeleportOptions> const&);
+    /**
+     * @symbol
+     * ?bind\@ScriptActor\@ScriptModuleMinecraft\@\@SA?AV?$ClassBindingBuilder\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEAV?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VIComponentFactory\@ScriptModuleMinecraft\@\@U?$default_delete\@VIComponentFactory\@ScriptModuleMinecraft\@\@\@std\@\@\@2\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$unique_ptr\@VIComponentFactory\@ScriptModuleMinecraft\@\@U?$default_delete\@VIComponentFactory\@ScriptModuleMinecraft\@\@\@std\@\@\@2\@\@std\@\@\@2\@\@std\@\@\@Z
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraft::ScriptActor>
+    bind(std::unordered_map<std::string, std::unique_ptr<class ScriptModuleMinecraft::IComponentFactory>>&);
+    /**
+     * @symbol
+     * ?getHandle\@ScriptActor\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@PEBVActor\@\@AEBVWeakLifetimeScope\@4\@\@Z
+     */
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
+    getHandle(class Actor const*, class Scripting::WeakLifetimeScope const&);
+    /**
+     * @symbol
+     * ?getHandle\@ScriptActor\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@VWeakEntityRef\@\@AEBVWeakLifetimeScope\@4\@\@Z
+     */
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
+    getHandle(class WeakEntityRef, class Scripting::WeakLifetimeScope const&);
+    /**
+     * @symbol
+     * ?getHandle\@ScriptActor\@ScriptModuleMinecraft\@\@SA?AV?$StrongTypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$StackRefResultT\@UEntityRefTraits\@\@\@\@AEBVWeakLifetimeScope\@4\@\@Z
+     */
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptActor>
+    getHandle(class StackRefResultT<struct EntityRefTraits>, class Scripting::WeakLifetimeScope const&);
+    /**
+     * @symbol
+     * ?tryGetActor\@ScriptActor\@ScriptModuleMinecraft\@\@SAPEAVActor\@\@AEBU?$TypedObjectHandle\@VScriptActor\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBVWeakLifetimeScope\@5\@\@Z
+     */
+    MCAPI static class Actor*
+    tryGetActor(struct Scripting::TypedObjectHandle<class ScriptModuleMinecraft::ScriptActor> const&, class Scripting::WeakLifetimeScope const&);
     // NOLINTEND
 
     // protected:

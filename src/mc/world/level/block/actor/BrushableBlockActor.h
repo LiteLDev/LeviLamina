@@ -79,6 +79,10 @@ public:
      */
     MCAPI enum class BrushableBlockActor::BrushingState brush(class BlockSource&, class BlockPos const&, unsigned char);
     /**
+     * @symbol ?update\@BrushableBlockActor\@\@QEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI void update(class BlockSource&, class BlockPos const&);
+    /**
      * @symbol
      * ?getLootTableFromVariant\@BrushableBlockActor\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4Placement\@1\@\@Z
      */
@@ -87,10 +91,6 @@ public:
      * @symbol ?tryGet\@BrushableBlockActor\@\@SAPEAV1\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI static class BrushableBlockActor* tryGet(class BlockSource&, class BlockPos const&);
-    /**
-     * @symbol ?update\@BrushableBlockActor\@\@QEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI void update(class BlockSource&, class BlockPos const&);
     // NOLINTEND
 
     // private:

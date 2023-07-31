@@ -24,11 +24,6 @@ public:
      */
     MCAPI ScriptActorDamageSource(struct ScriptModuleMinecraft::ScriptActorDamageSource&&);
     /**
-     * @symbol
-     * ?bind\@ScriptActorDamageSource\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptActorDamageSource\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptActorDamageSource> bind();
-    /**
      * @symbol ??4ScriptActorDamageSource\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptActorDamageSource&
@@ -42,6 +37,11 @@ public:
      * @symbol ??1ScriptActorDamageSource\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */
     MCAPI ~ScriptActorDamageSource();
+    /**
+     * @symbol
+     * ?bind\@ScriptActorDamageSource\@ScriptModuleMinecraft\@\@SA?AV?$InterfaceBindingBuilder\@UScriptActorDamageSource\@ScriptModuleMinecraft\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::InterfaceBindingBuilder<struct ScriptModuleMinecraft::ScriptActorDamageSource> bind();
     // NOLINTEND
 };
 

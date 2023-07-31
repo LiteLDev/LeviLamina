@@ -37,12 +37,6 @@ public:
     ScriptServerVariables(class Bedrock::NonOwnerPointer<class ScriptPackConfigurationManager>, struct Scripting::ContextConfig const&);
     /**
      * @symbol
-     * ?bind\@ScriptServerVariables\@ScriptModuleMinecraftServerAdmin\@\@SA?AV?$ClassBindingBuilder\@VScriptServerVariables\@ScriptModuleMinecraftServerAdmin\@\@\@Scripting\@\@XZ
-     */
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerAdmin::ScriptServerVariables>
-    bind();
-    /**
-     * @symbol
      * ?get\@ScriptServerVariables\@ScriptModuleMinecraftServerAdmin\@\@QEBA?AV?$optional\@UJSON\@Scripting\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@4\@\@Z
      */
     MCAPI std::optional<struct Scripting::JSON> get(std::string const&) const;
@@ -51,6 +45,12 @@ public:
      * ?getAllVariableNames\@ScriptServerVariables\@ScriptModuleMinecraftServerAdmin\@\@QEBA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@XZ
      */
     MCAPI std::vector<std::string> getAllVariableNames() const;
+    /**
+     * @symbol
+     * ?bind\@ScriptServerVariables\@ScriptModuleMinecraftServerAdmin\@\@SA?AV?$ClassBindingBuilder\@VScriptServerVariables\@ScriptModuleMinecraftServerAdmin\@\@\@Scripting\@\@XZ
+     */
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptModuleMinecraftServerAdmin::ScriptServerVariables>
+    bind();
     // NOLINTEND
 };
 

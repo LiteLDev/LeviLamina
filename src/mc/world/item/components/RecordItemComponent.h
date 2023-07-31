@@ -54,10 +54,6 @@ public:
      */
     MCAPI void appendFormattedHovertext(std::string&) const;
     /**
-     * @symbol ?bindType\@RecordItemComponent\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ?getComparatorSignal\@RecordItemComponent\@\@QEBAHXZ
      */
     MCAPI int getComparatorSignal() const;
@@ -66,22 +62,26 @@ public:
      */
     MCAPI float getDuration() const;
     /**
-     * @symbol ?getIdentifier\@RecordItemComponent\@\@SAAEBVHashedString\@\@XZ
-     */
-    MCAPI static class HashedString const& getIdentifier();
-    /**
      * @symbol
      * ?getRecordDescription\@RecordItemComponent\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string getRecordDescription() const;
     /**
+     * @symbol ?getSound\@RecordItemComponent\@\@QEBA?AW4LevelSoundEvent\@\@XZ
+     */
+    MCAPI enum class LevelSoundEvent getSound() const;
+    /**
+     * @symbol ?bindType\@RecordItemComponent\@\@SAXXZ
+     */
+    MCAPI static void bindType();
+    /**
+     * @symbol ?getIdentifier\@RecordItemComponent\@\@SAAEBVHashedString\@\@XZ
+     */
+    MCAPI static class HashedString const& getIdentifier();
+    /**
      * @symbol
      * ?getRecordNameNoPrefix\@RecordItemComponent\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4LevelSoundEvent\@\@\@Z
      */
     MCAPI static std::string getRecordNameNoPrefix(enum class LevelSoundEvent);
-    /**
-     * @symbol ?getSound\@RecordItemComponent\@\@QEBA?AW4LevelSoundEvent\@\@XZ
-     */
-    MCAPI enum class LevelSoundEvent getSound() const;
     // NOLINTEND
 };

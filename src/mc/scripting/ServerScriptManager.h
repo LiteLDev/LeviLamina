@@ -142,13 +142,13 @@ public:
      */
     MCAPI void _registerEventHandlers(class Level&) const;
     /**
+     * @symbol ?_unregisterEventHandlers\@ServerScriptManager\@\@AEBAXAEAVLevel\@\@\@Z
+     */
+    MCAPI void _unregisterEventHandlers(class Level&) const;
+    /**
      * @symbol
      * ?_sendWorldInitializeEvent\@ServerScriptManager\@\@CAXAEAVServerLevel\@\@VWeakLifetimeScope\@Scripting\@\@\@Z
      */
     MCAPI static void _sendWorldInitializeEvent(class ServerLevel&, class Scripting::WeakLifetimeScope);
-    /**
-     * @symbol ?_unregisterEventHandlers\@ServerScriptManager\@\@AEBAXAEAVLevel\@\@\@Z
-     */
-    MCAPI void _unregisterEventHandlers(class Level&) const;
     // NOLINTEND
 };

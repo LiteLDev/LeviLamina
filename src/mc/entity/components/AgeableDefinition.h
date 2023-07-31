@@ -34,13 +34,6 @@ public:
      */
     MCAPI void addFeedItemByName(std::string const&);
     /**
-     * @symbol
-     * ?buildSchema\@AgeableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VAgeableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
-     */
-    MCAPI static void
-    buildSchema(std::shared_ptr<
-                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AgeableDefinition>>&);
-    /**
      * @symbol ?canGrowUp\@AgeableDefinition\@\@QEBA_NXZ
      */
     MCAPI bool canGrowUp() const;
@@ -52,5 +45,12 @@ public:
      * @symbol ?initialize\@AgeableDefinition\@\@QEBAXAEAVEntityContext\@\@AEAVAgeableComponent\@\@\@Z
      */
     MCAPI void initialize(class EntityContext&, class AgeableComponent&) const;
+    /**
+     * @symbol
+     * ?buildSchema\@AgeableDefinition\@\@SAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VAgeableDefinition\@\@\@JsonUtil\@\@\@std\@\@\@Z
+     */
+    MCAPI static void
+    buildSchema(std::shared_ptr<
+                class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class AgeableDefinition>>&);
     // NOLINTEND
 };

@@ -15,13 +15,13 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ?bindType\@BlockDescriptorProxy\@BlockDescriptorSerializer\@\@SAXXZ
-     */
-    MCAPI static void bindType();
-    /**
      * @symbol ??1BlockDescriptorProxy\@BlockDescriptorSerializer\@\@QEAA\@XZ
      */
     MCAPI ~BlockDescriptorProxy();
+    /**
+     * @symbol ?bindType\@BlockDescriptorProxy\@BlockDescriptorSerializer\@\@SAXXZ
+     */
+    MCAPI static void bindType();
     // NOLINTEND
 };
 

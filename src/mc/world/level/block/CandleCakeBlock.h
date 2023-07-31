@@ -319,14 +319,14 @@ public:
     // private:
     // NOLINTBEGIN
     /**
+     * @symbol ?_popCandle\@CandleCakeBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI void _popCandle(class BlockSource&, class BlockPos const&) const;
+    /**
      * @symbol
      * ?_forEachCandle\@CandleCakeBlock\@\@CAXAEBVBlock\@\@AEBVBlockPos\@\@V?$function\@$$A6AXAEBVVec3\@\@H\@Z\@std\@\@\@Z
      */
     MCAPI static void
     _forEachCandle(class Block const&, class BlockPos const&, std::function<void(class Vec3 const&, int)>);
-    /**
-     * @symbol ?_popCandle\@CandleCakeBlock\@\@AEBAXAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI void _popCandle(class BlockSource&, class BlockPos const&) const;
     // NOLINTEND
 };
