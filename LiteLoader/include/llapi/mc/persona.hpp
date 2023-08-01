@@ -46,7 +46,7 @@ struct ArmSize {
     using SizeInfoList = std::unordered_map<ArmSize::Type, SizeInfo>;
 };
 
-enum AnimatedTextureType : __int32 {
+enum class AnimatedTextureType : __int32 {
     None = 0x0,
     Face = 0x1,
     Body32x32 = 0x2,
