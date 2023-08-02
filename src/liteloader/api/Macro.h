@@ -8,8 +8,8 @@
 #endif
 #endif
 
-#ifndef LICAPI
-#define LICAPI extern "C" LLAPI
+#ifndef LLCAPI
+#define LLCAPI extern "C" LLAPI
 #endif
 
 #ifndef LL_UNUSED
