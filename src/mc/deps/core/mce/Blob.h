@@ -7,9 +7,26 @@ namespace mce {
 class Blob {
 
 public:
-    // prevent constructor by default
-    Blob& operator=(Blob const&) = delete;
-    Blob(Blob const&)            = delete;
+    using value_type     = uint8_t;
+    using size_type      = size_t;
+    using pointer        = value_type*;
+    using iterator       = value_type*;
+    using const_pointer  = value_type const*;
+    using const_iterator = value_type const*;
+
+    using delete_function = void (*)(pointer);
+
+    struct Deleter {
+    public:
+        delete_function m_func;
+        Deleter() { m_func = Blob::defaultDeleter; }
+        void operator()(pointer x) const { m_func(x); }
+    };
+
+    using pointer_type = std::unique_ptr<value_type[], Deleter>;
+
+    pointer_type mBlob; // this+0x0
+    size_type    mSize; // this+0x10
 
 public:
     // NOLINTBEGIN
@@ -20,7 +37,7 @@ public:
     /**
      * @symbol ??0Blob\@mce\@\@QEAA\@_K\@Z
      */
-    MCAPI Blob(uint64_t);
+    MCAPI Blob(size_type);
     /**
      * @symbol ??0Blob\@mce\@\@QEAA\@$$QEAV01\@\@Z
      */
@@ -28,11 +45,11 @@ public:
     /**
      * @symbol ?cbegin\@Blob\@mce\@\@QEBAPEBEXZ
      */
-    MCAPI unsigned char const* cbegin() const;
+    MCAPI const_iterator cbegin() const;
     /**
      * @symbol ?cend\@Blob\@mce\@\@QEBAPEBEXZ
      */
-    MCAPI unsigned char const* cend() const;
+    MCAPI const_iterator cend() const;
     /**
      * @symbol ?empty\@Blob\@mce\@\@QEBA_NXZ
      */
@@ -52,7 +69,7 @@ public:
     /**
      * @symbol ?defaultDeleter\@Blob\@mce\@\@CAXPEAE\@Z
      */
-    MCAPI static void defaultDeleter(unsigned char*);
+    MCAPI static void defaultDeleter(pointer);
     // NOLINTEND
 };
 

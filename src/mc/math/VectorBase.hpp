@@ -20,17 +20,17 @@ constexpr void unroll(Fn fn) {
     unroll_impl(fn, std::make_index_sequence<N>());
 }
 
-template <typename Fn, size_t N, typename T, typename... Args>
-constexpr void unrollWithArgs_impl(Fn fn) {
-    void(fn(N, T{}));
+template <size_t N, typename T, typename... Args>
+constexpr void unrollWithArgs_impl(auto fn) {
+    void(fn<T>(N));
     if constexpr (sizeof...(Args) > 0) {
-        unrollWithArgs_impl<Fn, N + 1, Args...>(fn);
+        unrollWithArgs_impl<N + 1, Args...>(fn);
     }
 }
 
-template <typename... Args, typename Fn>
-constexpr void unrollWithArgs(Fn fn) {
-    unrollWithArgs_impl<Fn, 0, Args...>(fn);
+template <typename... Args>
+constexpr void unrollWithArgs(auto fn) {
+    unrollWithArgs_impl<0, Args...>(fn);
 }
 
 template <std::size_t N, typename T, typename... Types>
@@ -60,8 +60,7 @@ public:
 
     [[nodiscard]] inline std::vector<T> getNeighbors() const {
         std::vector<T> res;
-        unrollWithArgs<Component...>([&](size_t axis, auto shit) constexpr {
-            using axis_type = decltype(shit);
+        unrollWithArgs<Component...>([&]<typename axis_type>(size_t axis) constexpr {
             unroll<2>([&](size_t iter) {
                 T tmp                     = *(static_cast<T const*>(this));
                 tmp.get<axis_type>(axis) += static_cast<axis_type>(iter * 2 - 1);
@@ -73,9 +72,8 @@ public:
 
     [[nodiscard]] inline std::string toString() const {
         std::string res("(");
-        unrollWithArgs<Component...>([&](size_t iter, auto shit) constexpr {
-            using axis_type  = decltype(shit);
-            res             += std::to_string(static_cast<T const*>(this)->get<axis_type>(iter)) +
+        unrollWithArgs<Component...>([&]<typename axis_type>(size_t iter) constexpr {
+            res += std::to_string(static_cast<T const*>(this)->get<axis_type>(iter)) +
                    ((iter < sizeof...(Component) - 1) ? ", " : ")");
         });
         return res;
@@ -83,9 +81,8 @@ public:
 
     [[nodiscard]] constexpr bool operator==(T const& b) const {
         bool res = true;
-        unrollWithArgs<Component...>([&](size_t iter, auto shit) constexpr {
-            using axis_type = decltype(shit);
-            res             = res && (b.get<axis_type>(iter) == static_cast<T const*>(this)->get<axis_type>(iter));
+        unrollWithArgs<Component...>([&]<typename axis_type>(size_t iter) constexpr {
+            res = res && (b.get<axis_type>(iter) == static_cast<T const*>(this)->get<axis_type>(iter));
         });
         return res;
     }
@@ -93,32 +90,28 @@ public:
     [[nodiscard]] constexpr bool operator!=(T const& b) const { return !(*(static_cast<T const*>(this)) == b); }
 
     constexpr T& operator+=(T const& b) {
-        unrollWithArgs<Component...>([&](size_t iter, auto shit) constexpr {
-            using axis_type                              = decltype(shit);
+        unrollWithArgs<Component...>([&]<typename axis_type>(size_t iter) constexpr {
             static_cast<T*>(this)->get<axis_type>(iter) += b.get<axis_type>(iter);
         });
         return static_cast<T&>(*(static_cast<T*>(this)));
     }
 
     constexpr T& operator-=(T const& b) {
-        unrollWithArgs<Component...>([&](size_t iter, auto shit) constexpr {
-            using axis_type                              = decltype(shit);
+        unrollWithArgs<Component...>([&]<typename axis_type>(size_t iter) constexpr {
             static_cast<T*>(this)->get<axis_type>(iter) -= b.get<axis_type>(iter);
         });
         return static_cast<T&>(*(static_cast<T*>(this)));
     }
 
     constexpr T& operator*=(T const& b) {
-        unrollWithArgs<Component...>([&](size_t iter, auto shit) constexpr {
-            using axis_type                              = decltype(shit);
+        unrollWithArgs<Component...>([&]<typename axis_type>(size_t iter) constexpr {
             static_cast<T*>(this)->get<axis_type>(iter) *= b.get<axis_type>(iter);
         });
         return static_cast<T&>(*(static_cast<T*>(this)));
     }
 
     constexpr T& operator/=(T const& b) {
-        unrollWithArgs<Component...>([&](size_t iter, auto shit) constexpr {
-            using axis_type                              = decltype(shit);
+        unrollWithArgs<Component...>([&]<typename axis_type>(size_t iter) constexpr {
             static_cast<T*>(this)->get<axis_type>(iter) /= b.get<axis_type>(iter);
         });
         return static_cast<T&>(*(static_cast<T*>(this)));
@@ -148,76 +141,70 @@ public:
         return tmp;
     }
 
-    template <typename V = T>
+    constexpr T& operator+=(first_type b)
         requires AllSame<Component...>
-    constexpr T& operator+=(first_type b) {
-        unrollWithArgs<Component...>([&](size_t iter, auto shit) constexpr {
+    {
+        unrollWithArgs<Component...>([&]<typename axis_type>(size_t iter) constexpr {
             static_cast<T*>(this)->get<first_type>(iter) += b;
         });
         return static_cast<T&>(*(static_cast<T*>(this)));
     }
 
 
-    template <typename V = T>
+    constexpr T& operator-=(first_type b)
         requires AllSame<Component...>
-    constexpr T& operator-=(first_type b) {
-        unrollWithArgs<Component...>([&](size_t iter, auto shit) constexpr {
+    {
+        unrollWithArgs<Component...>([&]<typename axis_type>(size_t iter) constexpr {
             static_cast<T*>(this)->get<first_type>(iter) -= b;
         });
         return static_cast<T&>(*(static_cast<T*>(this)));
     }
 
-
-    template <typename V = T>
+    constexpr T& operator*=(first_type b)
         requires AllSame<Component...>
-    constexpr T& operator*=(first_type b) {
-        unrollWithArgs<Component...>([&](size_t iter, auto shit) constexpr {
+    {
+        unrollWithArgs<Component...>([&]<typename axis_type>(size_t iter) constexpr {
             static_cast<T*>(this)->get<first_type>(iter) *= b;
         });
         return static_cast<T&>(*(static_cast<T*>(this)));
     }
 
-
-    template <typename V = T>
+    constexpr T& operator/=(first_type b)
         requires AllSame<Component...>
-    constexpr T& operator/=(first_type b) {
-        unrollWithArgs<Component...>([&](size_t iter, auto shit) constexpr {
+    {
+        unrollWithArgs<Component...>([&]<typename axis_type>(size_t iter) constexpr {
             static_cast<T*>(this)->get<first_type>(iter) /= b;
         });
         return static_cast<T&>(*(static_cast<T*>(this)));
     }
 
-
-    template <typename V = T>
+    [[nodiscard]] inline T operator+(first_type b) const
         requires AllSame<Component...>
-    [[nodiscard]] inline T operator+(first_type b) const {
+    {
         T tmp  = *(static_cast<T const*>(this));
         tmp   += b;
         return tmp;
     }
 
-
-    template <typename V = T>
+    [[nodiscard]] inline T operator-(first_type b) const
         requires AllSame<Component...>
-    [[nodiscard]] inline T operator-(first_type b) const {
+    {
         T tmp  = *(static_cast<T const*>(this));
         tmp   -= b;
         return tmp;
     }
 
-
-    template <typename V = T>
+    [[nodiscard]] inline T operator*(first_type b) const
         requires AllSame<Component...>
-    [[nodiscard]] inline T operator*(first_type b) const {
+    {
         T tmp  = *(static_cast<T const*>(this));
         tmp   *= b;
         return tmp;
     }
 
-
-    template <typename V = T>
+    [[nodiscard]] inline T operator/(first_type b) const
         requires AllSame<Component...>
-    [[nodiscard]] inline T operator/(first_type b) const {
+    {
         T tmp  = *(static_cast<T const*>(this));
         tmp   /= b;
         return tmp;
@@ -225,9 +212,8 @@ public:
 
     [[nodiscard]] inline double dot(T const& b) const {
         double res = 0.0;
-        unrollWithArgs<Component...>([&](size_t iter, auto shit) constexpr {
-            using axis_type  = decltype(shit);
-            res             += (double)(static_cast<T const*>(this)->get<axis_type>(iter)) * b.get<axis_type>(iter);
+        unrollWithArgs<Component...>([&]<typename axis_type>(size_t iter) constexpr {
+            res += (double)(static_cast<T const*>(this)->get<axis_type>(iter)) * b.get<axis_type>(iter);
         });
         return res;
     }
@@ -244,9 +230,9 @@ public:
 
     [[nodiscard]] inline double angle(T const& b) const { return acos(normalize().dot(b.normalize())); }
 
-    template <typename V = T>
+    [[nodiscard]] inline T normalize() const
         requires AllSame<Component...> && std::is_floating_point_v<first_type>
-    [[nodiscard]] inline T normalize() const {
+    {
         return *(static_cast<T const*>(this)) / static_cast<first_type>(length());
     }
 
@@ -259,8 +245,9 @@ public:
     [[nodiscard]] inline T div(T const& b) const { return *(static_cast<T const*>(this)) / b; }
 
     template <typename... Args>
+    [[nodiscard]] inline T add(Args... args) const
         requires AllSame<Component...> && (sizeof...(Args) > 0) && (sizeof...(Args) <= sizeof...(Component))
-    [[nodiscard]] inline T add(Args... args) const {
+    {
         T                                             tmp = *(static_cast<T const*>(this));
         const std::array<first_type, sizeof...(args)> vec = {args...};
         unroll<vec.size()>([&](size_t iter) { tmp.get<first_type>(iter) += vec[iter]; });
@@ -268,8 +255,9 @@ public:
     }
 
     template <typename... Args>
+    [[nodiscard]] inline T sub(Args... args) const
         requires AllSame<Component...> && (sizeof...(Args) > 0) && (sizeof...(Args) <= sizeof...(Component))
-    [[nodiscard]] inline T sub(Args... args) const {
+    {
         T                                             tmp = *(static_cast<T const*>(this));
         const std::array<first_type, sizeof...(args)> vec = {args...};
         unroll<vec.size()>([&](size_t iter) { tmp.get<first_type>(iter) -= vec[iter]; });
@@ -277,8 +265,9 @@ public:
     }
 
     template <typename... Args>
+    [[nodiscard]] inline T mul(Args... args) const
         requires AllSame<Component...> && (sizeof...(Args) > 0) && (sizeof...(Args) <= sizeof...(Component))
-    [[nodiscard]] inline T mul(Args... args) const {
+    {
         T                                             tmp = *(static_cast<T const*>(this));
         const std::array<first_type, sizeof...(args)> vec = {args...};
         unroll<vec.size()>([&](size_t iter) { tmp.get<first_type>(iter) *= vec[iter]; });
@@ -286,8 +275,9 @@ public:
     }
 
     template <typename... Args>
+    [[nodiscard]] inline T div(Args... args) const
         requires AllSame<Component...> && (sizeof...(Args) > 0) && (sizeof...(Args) <= sizeof...(Component))
-    [[nodiscard]] inline T div(Args... args) const {
+    {
         T                                             tmp = *(static_cast<T const*>(this));
         const std::array<first_type, sizeof...(args)> vec = {args...};
         unroll<vec.size()>([&](size_t iter) { tmp.get<first_type>(iter) /= vec[iter]; });
@@ -296,8 +286,7 @@ public:
 
     [[nodiscard]] inline static T min(T const& a, T const& b) {
         T tmp;
-        unrollWithArgs<Component...>([&](size_t iter, auto shit) constexpr {
-            using axis_type          = decltype(shit);
+        unrollWithArgs<Component...>([&]<typename axis_type>(size_t iter) constexpr {
             tmp.get<axis_type>(iter) = std::min<axis_type>(a.get<axis_type>(iter), b.get<axis_type>(iter));
         });
         return tmp;
@@ -305,8 +294,7 @@ public:
 
     [[nodiscard]] inline static T max(T const& a, T const& b) {
         T tmp;
-        unrollWithArgs<Component...>([&](size_t iter, auto shit) constexpr {
-            using axis_type          = decltype(shit);
+        unrollWithArgs<Component...>([&]<typename axis_type>(size_t iter) constexpr {
             tmp.get<axis_type>(iter) = std::max<axis_type>(a.get<axis_type>(iter), b.get<axis_type>(iter));
         });
         return tmp;
@@ -316,24 +304,21 @@ public:
 
     [[nodiscard]] inline bool operator>(const T& b) const { return lengthSqr() > b.lengthSqr(); }
 
-
-    template <typename V = T>
+    [[nodiscard]] constexpr first_type& operator[](size_t index)
         requires AllSame<Component...>
-    [[nodiscard]] constexpr first_type& operator[](size_t index) {
+    {
         return static_cast<T*>(this)->get<first_type>(index);
     }
 
-
-    template <typename V = T>
+    [[nodiscard]] constexpr first_type operator[](size_t index) const
         requires AllSame<Component...>
-    [[nodiscard]] constexpr first_type operator[](size_t index) const {
+    {
         return static_cast<T const*>(this)->get<first_type>(index);
     }
 
     [[nodiscard]] constexpr std::size_t hash() const {
         std::size_t res = 0;
-        unrollWithArgs<Component...>([&](size_t iter, auto shit) constexpr {
-            using axis_type = decltype(shit);
+        unrollWithArgs<Component...>([&]<typename axis_type>(size_t iter) constexpr {
             if constexpr (std::is_integral_v<axis_type>) {
                 hash_combine(static_cast<T const*>(this)->get<axis_type>(iter), res);
             } else {
