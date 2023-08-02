@@ -17,6 +17,7 @@ public:
     ItemStackDescriptor& operator=(ItemStackDescriptor const&) = delete;
     ItemStackDescriptor(ItemStackDescriptor const&)            = delete;
 
+    std::unique_ptr<CompoundTag, std::default_delete<CompoundTag>> mUserData; // this+0x18
 public:
     // NOLINTBEGIN
     /**

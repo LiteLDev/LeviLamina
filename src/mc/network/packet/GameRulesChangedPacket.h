@@ -5,15 +5,12 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/network/packet/GameRulesChangedPacketData.h"
 
 class GameRulesChangedPacket : public ::Packet {
 
 public:
-    // prevent constructor by default
-    GameRulesChangedPacket& operator=(GameRulesChangedPacket const&) = delete;
-    GameRulesChangedPacket(GameRulesChangedPacket const&)            = delete;
-    GameRulesChangedPacket()                                         = delete;
-
+    GameRulesChangedPacketData mRuleData; // this+0x30
 public:
     // NOLINTBEGIN
     /**

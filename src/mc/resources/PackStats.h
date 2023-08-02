@@ -5,8 +5,8 @@
 class PackStats {
 
 public:
-    // prevent constructor by default
-    PackStats& operator=(PackStats const&) = delete;
-    PackStats(PackStats const&)            = delete;
-    PackStats()                            = delete;
+    unsigned int mOverriddenEntityCount; // this+0x0
+    unsigned int mCustomEntityCount;     // this+0x4
+    unsigned int mCustomAnimationCount;  // this+0x8
+    unsigned int mCustomEffectCount;     // this+0xC
 };

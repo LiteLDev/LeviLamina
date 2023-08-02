@@ -5,11 +5,10 @@
 class Hopper {
 
 public:
-    // prevent constructor by default
-    Hopper& operator=(Hopper const&) = delete;
-    Hopper(Hopper const&)            = delete;
-    Hopper()                         = delete;
-
+    int  mCooldownTime;                // this+0x0
+    bool mTransferedFromChestMinecart; // this+0x4
+    bool mIsEntity;                    // this+0x5
+    int  mMoveItemSpeed;               // this+0x8
 public:
     // NOLINTBEGIN
     /**

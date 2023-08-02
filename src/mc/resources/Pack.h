@@ -1,18 +1,26 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
-class Pack {
+class Pack : public Bedrock::EnableNonOwnerReferences {
 
 public:
     // prevent constructor by default
     Pack& operator=(Pack const&) = delete;
     Pack(Pack const&)            = delete;
     Pack()                       = delete;
+
+    std::unique_ptr<class PackManifest>          mManifest;             // this+0x18
+    std::unique_ptr<class PackAccessStrategy>    mAccessStrategy;       // this+0x20
+    std::unique_ptr<class SubpackInfoCollection> mSubpackInfoStack;     // this+0x28
+    std::unique_ptr<class PackMetadata>          mMetadata;             // this+0x30
+    std::map<void*, std::function<void(Pack&)>>  mPackUpdatedCallbacks; // this+0x38
+    std::map<void*, std::function<void(Pack&)>>  mPackDeletedCallbacks; // this+0x48
 
 public:
     // NOLINTBEGIN

@@ -7,10 +7,7 @@ namespace PlayerCapabilities {
 struct IPlayerData {
 
 public:
-    // prevent constructor by default
-    IPlayerData& operator=(IPlayerData const&) = delete;
-    IPlayerData(IPlayerData const&)            = delete;
-    IPlayerData()                              = delete;
+    int (**_vptr_IPlayerData)(void);
 };
 
 }; // namespace PlayerCapabilities

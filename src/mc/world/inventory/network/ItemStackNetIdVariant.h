@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/item/components/ItemStackLegacyRequestIdTag.h"
+#include "mc/world/item/components/ItemStackNetIdTag.h"
+#include "mc/world/item/components/ItemStackRequestIdTag.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -10,6 +13,12 @@
 struct ItemStackNetIdVariant {
 
 public:
+    std::variant<
+        TypedServerNetId<struct ItemStackNetIdTag, int, 0>,
+        TypedClientNetId<struct ItemStackRequestIdTag, int, 0>,
+        TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0>>
+        id;
+
     // NOLINTBEGIN
     /**
      * @symbol ??0ItemStackNetIdVariant\@\@QEAA\@$$QEAU0\@\@Z

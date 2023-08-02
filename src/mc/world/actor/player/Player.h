@@ -46,6 +46,13 @@ public:
         // NOLINTEND
     };
 
+    union LevelSleepStatus {
+        int data; // this+0x0
+        struct {
+            char unknown;
+        } object; // this+0x0
+    };
+
 public:
     // prevent constructor by default
     Player& operator=(Player const&) = delete;

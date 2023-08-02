@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/config/ISharedController.h"
 
 // auto generated forward declare list
 // clang-format off

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/Tick.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/WeakPtr.h"
@@ -27,6 +28,23 @@ public:
         ComparisonOptions(ComparisonOptions const&)            = delete;
         ComparisonOptions()                                    = delete;
     };
+
+
+    WeakPtr<class Item>                   mItem;           // this+0x8
+    std::unique_ptr<class CompoundTag>    mUserData;       // this+0x10
+    class Block const*                    mBlock;          // this+0x18
+    short                                 mAuxValue;       // this+0x20
+    unsigned char                         mCount;          // this+0x22
+    bool                                  mValid;          // this+0x23
+    std::chrono::steady_clock::time_point mPickupTime;     // this+0x28
+    bool                                  mShowPickUp;     // this+0x30
+    bool                                  mWasPickedUp;    // this+0x31
+    std::vector<class BlockLegacy const*> mCanPlaceOn;     // this+0x38
+    uint64_t                              mCanPlaceOnHash; // this+0x50
+    std::vector<class BlockLegacy const*> mCanDestroy;     // this+0x58
+    uint64_t                              mCanDestroyHash; // this+0x70
+    class Tick                            mBlockingTick;   // this+0x78
+    std::unique_ptr<class ItemInstance>   mChargedItem;    // this+0x80
 
 public:
     // NOLINTBEGIN

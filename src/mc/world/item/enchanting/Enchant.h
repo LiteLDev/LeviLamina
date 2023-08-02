@@ -5,11 +5,103 @@
 class Enchant {
 public:
     // Enchant inner types define
-    enum class Frequency {};
+    enum class Frequency : int {
+        Common   = 30,
+        Uncommon = 10,
+        Rare     = 3,
+        VeryRare = 1,
+    };
 
-    enum class Slot {};
+    enum class Slot : int {
+        All           = -1,
+        None          = 0,
+        ArmorHead     = 1 << 0,
+        ArmorTorso    = 1 << 1,
+        ArmorFeet     = 1 << 2,
+        ArmorLegs     = 1 << 3,
+        Sword         = 1 << 4,
+        Bow           = 1 << 5,
+        Hoe           = 1 << 6,
+        Shears        = 1 << 7,
+        Flintsteel    = 1 << 8,
+        Axe           = 1 << 9,
+        Pickaxe       = 1 << 10,
+        Shovel        = 1 << 11,
+        FishingRod    = 1 << 12,
+        CarrotStick   = 1 << 13,
+        Elytra        = 1 << 14,
+        Spear         = 1 << 15,
+        Crossbow      = 1 << 16,
+        Shield        = 1 << 17,
+        CosmeticHead  = 1 << 18,
+        Compass       = 1 << 19,
+        MushroomStick = 1 << 20,
 
-    enum class Type {};
+        Armors   = ArmorHead | ArmorTorso | ArmorFeet | ArmorLegs,
+        Diggings = Hoe | Axe | Pickaxe | Shovel,
+        Tools    = Hoe | Shears | Flintsteel | Shield,
+    };
+
+    enum class Type : char {
+        ArmorAll            = 0x0,
+        ArmorFire           = 0x1,
+        ArmorFall           = 0x2,
+        ArmorExplosive      = 0x3,
+        ArmorProjectile     = 0x4,
+        ArmorThorns         = 0x5,
+        WaterBreath         = 0x6,
+        WaterSpeed          = 0x7,
+        WaterAffinity       = 0x8,
+        WeaponDamage        = 0x9,
+        WeaponUndead        = 0xA,
+        WeaponArthropod     = 0xB,
+        WeaponKnockback     = 0xC,
+        WeaponFire          = 0xD,
+        WeaponLoot          = 0xE,
+        MiningEfficiency    = 0xF,
+        MiningSilkTouch     = 0x10,
+        MiningDurability    = 0x11,
+        MiningLoot          = 0x12,
+        BowDamage           = 0x13,
+        BowKnockback        = 0x14,
+        BowFire             = 0x15,
+        BowInfinity         = 0x16,
+        FishingLoot         = 0x17,
+        FishingLure         = 0x18,
+        FrostWalker         = 0x19,
+        Mending             = 0x1A,
+        CurseBinding        = 0x1B,
+        CurseVanishing      = 0x1C,
+        TridentImpaling     = 0x1D,
+        TridentRiptide      = 0x1E,
+        TridentLoyalty      = 0x1F,
+        TridentChanneling   = 0x20,
+        CrossbowMultishot   = 0x21,
+        CrossbowPiercing    = 0x22,
+        CrossbowQuickCharge = 0x23,
+        SoulSpeed           = 0x24,
+        SwiftSneak          = 0x25,
+        NumEnchantments     = 0x26,
+        InvalidEnchantment  = 0x27,
+    };
+
+    enum class Activation : int {
+        Equipped = 0x0,
+        Held     = 0x1,
+        Self     = 0x2,
+        Count    = 0x3,
+        Invalid  = 0x4,
+    };
+
+    enum class CompatibilityID : int {
+        NonConflict  = 0x0,
+        Damage       = 0x1,
+        Gathering    = 0x2,
+        Protection   = 0x3,
+        Froststrider = 0x4,
+        Mendfinity   = 0x5,
+        Loyalriptide = 0x6,
+    };
 
 public:
     // prevent constructor by default

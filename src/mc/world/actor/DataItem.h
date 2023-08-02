@@ -63,11 +63,7 @@ public:
     [[nodiscard]] virtual std::unique_ptr<DataItem> clone() const;
 
     [[nodiscard]] T const& getData() const { return mValue; };
-    // T& getData()
-    //{
-    //     mDirty = true;
-    //     return mValue;
-    // };
+
     inline void setData(T const& value) {
         mDirty = true;
         mValue = value;
@@ -101,7 +97,7 @@ DataItemType const DataItem2<CompoundTag>::DATA_ITEM_TYPE = DataItemType::Compou
 template <>
 DataItemType const DataItem2<BlockPos>::DATA_ITEM_TYPE = DataItemType::BlockPos;
 template <>
-DataItemType const DataItem2<__int64>::DATA_ITEM_TYPE = DataItemType::Int64;
+DataItemType const DataItem2<int64_t>::DATA_ITEM_TYPE = DataItemType::Int64;
 template <>
 DataItemType const DataItem2<Vec3>::DATA_ITEM_TYPE = DataItemType::Vec3;
 
@@ -146,7 +142,7 @@ inline DataItem2<BlockPos>::DataItem2(unsigned short key, BlockPos const& value)
     //*(void**)this = dlsym_real("??_7?$DataItem2@VBlockPos@@@@6B@");
 }
 template <>
-inline DataItem2<__int64>::DataItem2(unsigned short key, __int64 const& value)
+inline DataItem2<int64_t>::DataItem2(unsigned short key, int64_t const& value)
 : DataItem(DATA_ITEM_TYPE, key), mValue(value) {
     //*(void**)this = dlsym_real("??_7?$DataItem2@_J@@6B@");
 }

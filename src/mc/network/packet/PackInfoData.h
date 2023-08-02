@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/resource/ContentIdentity.h"
+#include "mc/deps/core/resource/PackIdVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -10,10 +12,16 @@ namespace mce { class UUID; }
 struct PackInfoData {
 
 public:
-    // prevent constructor by default
-    PackInfoData& operator=(PackInfoData const&) = delete;
-    PackInfoData(PackInfoData const&)            = delete;
-    PackInfoData()                               = delete;
+    PackInfoData() = delete;
+
+    PackIdVersion   mPackIdVersion;       // this+0x0
+    uint64_t        mPackSize;            // this+0x88
+    std::string     mContentKey;          // this+0x90
+    std::string     mSubpackName;         // this+0xB0
+    ContentIdentity mContentIdentity;     // this+0xD0
+    bool            mHasScripts;          // this+0xE8
+    bool            mIsRayTracingCapable; // this+0xE9
+    bool            mHasExceptions;       // this+0xEA
 
 public:
     // NOLINTBEGIN

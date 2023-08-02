@@ -12,7 +12,18 @@ namespace persona {
 class ArmSize {
 public:
     // ArmSize inner types define
-    enum class Type {};
+    enum class Type : int64_t {
+        Slim    = 0,
+        Wide    = 1,
+        Count   = 2,
+        Unknown = 3,
+    };
+
+    using SizeInfoList = std::unordered_map<ArmSize::Type, SizeInfo>;
+
+    struct Proxy {
+        using constIterator = SizeInfoList::const_iterator;
+    };
 
 public:
     // prevent constructor by default
@@ -26,9 +37,7 @@ public:
      * @symbol
      * ?_getSizeInfoIteratorByType\@ArmSize\@persona\@\@KA?AV?$_List_const_iterator\@V?$_List_val\@U?$_List_simple_types\@U?$pair\@$$CBW4Type\@ArmSize\@persona\@\@USizeInfo\@3\@\@std\@\@\@std\@\@\@std\@\@\@std\@\@W4Type\@12\@\@Z
      */
-    MCAPI static std::_List_const_iterator<std::_List_val<
-        std::_List_simple_types<std::pair<enum class persona::ArmSize::Type const, struct persona::SizeInfo>>>>
-        _getSizeInfoIteratorByType(enum class persona::ArmSize::Type);
+    MCAPI static Proxy::constIterator _getSizeInfoIteratorByType(enum class persona::ArmSize::Type);
     // NOLINTEND
 
 private:
@@ -37,7 +46,7 @@ private:
      * @symbol
      * ?mInfoList\@ArmSize\@persona\@\@0V?$unordered_map\@W4Type\@ArmSize\@persona\@\@USizeInfo\@3\@U?$hash\@W4Type\@ArmSize\@persona\@\@\@std\@\@U?$equal_to\@W4Type\@ArmSize\@persona\@\@\@6\@V?$allocator\@U?$pair\@$$CBW4Type\@ArmSize\@persona\@\@USizeInfo\@3\@\@std\@\@\@6\@\@std\@\@B
      */
-    MCAPI static std::unordered_map<enum class persona::ArmSize::Type, struct persona::SizeInfo> const mInfoList;
+    MCAPI static SizeInfoList const mInfoList;
     // NOLINTEND
 };
 

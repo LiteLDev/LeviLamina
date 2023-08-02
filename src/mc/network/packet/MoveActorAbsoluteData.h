@@ -9,6 +9,13 @@ public:
     MoveActorAbsoluteData& operator=(MoveActorAbsoluteData const&) = delete;
     MoveActorAbsoluteData(MoveActorAbsoluteData const&)            = delete;
 
+    union Header {
+        unsigned char mRaw;                  // this+0x0
+        bool          mIsOnGround;           // this(bf)+0x0:0x0 len(0x1)
+        bool          mTeleported;           // this(bf)+0x0:0x1 len(0x1)
+        bool          mForceMoveLocalEntity; // this(bf)+0x0:0x2 len(0x1)
+    };
+
 public:
     // NOLINTBEGIN
     /**

@@ -5,10 +5,7 @@
 struct GameRuleId {
 
 public:
-    // prevent constructor by default
-    GameRuleId& operator=(GameRuleId const&) = delete;
-    GameRuleId(GameRuleId const&)            = delete;
-    GameRuleId()                             = delete;
+    int value;
 
 public:
     // NOLINTBEGIN

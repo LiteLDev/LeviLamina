@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/json/Writer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -9,12 +10,15 @@ namespace Json { class Value; }
 
 namespace Json {
 
-class FastWriter {
+class FastWriter : public Writer {
 
 public:
-    // prevent constructor by default
-    FastWriter& operator=(FastWriter const&) = delete;
-    FastWriter(FastWriter const&)            = delete;
+    std::string document_;
+    bool        yamlCompatibilityEnabled_;
+    bool        dropNullPlaceholders_;
+    bool        omitEndingLineFeed_;
+
+    ~FastWriter() override = default;
 
 public:
     // NOLINTBEGIN

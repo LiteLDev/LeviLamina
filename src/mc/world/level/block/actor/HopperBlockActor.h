@@ -1,8 +1,11 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/Container.h"
+#include "mc/world/actor/Hopper.h"
+#include "mc/world/level/block/actor/BlockActor.h"
 
-class HopperBlockActor {
+class HopperBlockActor : public BlockActor, Container, Hopper {
 
 public:
     // prevent constructor by default

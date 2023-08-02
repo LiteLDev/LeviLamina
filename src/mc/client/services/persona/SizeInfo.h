@@ -7,10 +7,8 @@ namespace persona {
 struct SizeInfo {
 
 public:
-    // prevent constructor by default
-    SizeInfo& operator=(SizeInfo const&) = delete;
-    SizeInfo(SizeInfo const&)            = delete;
-    SizeInfo()                           = delete;
+    std::string_view mSizeName;
+    std::string_view mSizeTexturePath;
 };
 
 }; // namespace persona

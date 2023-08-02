@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/mce/UUID.h"
+#include "mc/world/containers/ContainerID.h"
+#include "mc/world/item/NetworkItemStackDescriptor.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,10 +12,11 @@
 class CraftingEventPacket : public ::Packet {
 
 public:
-    // prevent constructor by default
-    CraftingEventPacket& operator=(CraftingEventPacket const&) = delete;
-    CraftingEventPacket(CraftingEventPacket const&)            = delete;
-
+    enum class ContainerID                        mContainerId;   // this+0x30
+    int                                           mContainerType; // this+0x34
+    mce::UUID                                     mRecipeId;      // this+0x38
+    std::vector<class NetworkItemStackDescriptor> mInputItems;    // this+0x48
+    std::vector<class NetworkItemStackDescriptor> mOutputItems;   // this+0x60
 public:
     // NOLINTBEGIN
     /**

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/json/Value.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,6 +16,22 @@ public:
     // prevent constructor by default
     ValueIteratorBase& operator=(ValueIteratorBase const&) = delete;
     ValueIteratorBase()                                    = delete;
+
+    using iterator_category = std::forward_iterator_tag;
+
+    Value::ObjectValues::iterator current_;
+    bool                          isNull_;
+
+    bool operator==(const ValueIteratorBase& other) const { return isEqual(other); }
+    bool operator!=(const ValueIteratorBase& other) const { return !isEqual(other); }
+
+
+    ValueIteratorBase& operator++() {
+        increment();
+        return *this;
+    }
+
+    Json::Value& operator*() const { return deref(); }
 
 public:
     // NOLINTBEGIN

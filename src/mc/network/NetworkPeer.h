@@ -31,15 +31,22 @@ public:
         High         = 0x3,
     };
 
-    using PacketRecvTimepoint = std::chrono::time_point<std::chrono::steady_clock>;
+    using PacketRecvTimepoint = std::chrono::steady_clock::time_point;
 
     struct NetworkStatus {
 
     public:
-        // prevent constructor by default
-        NetworkStatus& operator=(NetworkStatus const&) = delete;
-        NetworkStatus(NetworkStatus const&)            = delete;
-        NetworkStatus()                                = delete;
+        NetworkLoad mLoad;                   // this+0x0
+        int         mCurrentPing;            // this+0x4
+        int         mAveragePing;            // this+0x8
+        int         mApproximateMaxBps;      // this+0xC
+        float       mCurrentPacketLoss;      // this+0x10
+        float       mAveragePacketLoss;      // this+0x14
+        uint64_t    mTotalBytesReceived;     // this+0x18
+        uint64_t    mTotalBytesSent;         // this+0x20
+        uint64_t    mCurrentBytesSendBuffer; // this+0x28
+        int         mICEState;               // this+0x30
+        bool        mUsingRelays;            // this+0x34
     };
 
 public:
@@ -47,6 +54,8 @@ public:
     NetworkPeer& operator=(NetworkPeer const&) = delete;
     NetworkPeer(NetworkPeer const&)            = delete;
     NetworkPeer()                              = delete;
+
+    std::shared_ptr<NetworkPeer> mPeer; // this+0x8
 
 public:
     // NOLINTBEGIN

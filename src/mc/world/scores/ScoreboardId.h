@@ -5,6 +5,9 @@
 struct ScoreboardId {
 
 public:
+    int64_t mRawID; // this+0x0
+    class IdentityDefinition* mIdentityDef; // this+0x8
+
     // NOLINTBEGIN
     /**
      * @symbol ??0ScoreboardId\@\@QEAA\@_J\@Z

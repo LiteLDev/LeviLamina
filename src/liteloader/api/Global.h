@@ -9,7 +9,6 @@
 #define NOMINMAX
 #endif // NOMINMAX
 
-#define MCVAPI   __declspec(dllimport)
 #define MCINLINE inline
 
 #ifndef FMT_HEADER_ONLY

@@ -1,13 +1,13 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/actor/Hopper.h"
+#include "mc/world/level/BlockPos.h"
 
-class HopperComponent {
+class HopperComponent : public Hopper {
 
 public:
-    // prevent constructor by default
-    HopperComponent& operator=(HopperComponent const&) = delete;
-    HopperComponent(HopperComponent const&)            = delete;
+    class BlockPos mLastPosition;
 
 public:
     // NOLINTBEGIN

@@ -1,15 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/storage/GameRule.h"
 
 class GameRulesChangedPacketData {
 
 public:
-    // prevent constructor by default
-    GameRulesChangedPacketData& operator=(GameRulesChangedPacketData const&) = delete;
-    GameRulesChangedPacketData(GameRulesChangedPacketData const&)            = delete;
-    GameRulesChangedPacketData()                                             = delete;
-
+    std::vector<class GameRule> mRules; // this+0x0
 public:
     // NOLINTBEGIN
     /**

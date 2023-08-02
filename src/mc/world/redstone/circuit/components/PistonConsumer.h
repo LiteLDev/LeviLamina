@@ -8,9 +8,8 @@
 class PistonConsumer : public ::ConsumerComponent {
 
 public:
-    // prevent constructor by default
-    PistonConsumer& operator=(PistonConsumer const&) = delete;
-    PistonConsumer(PistonConsumer const&)            = delete;
+    enum class FaceID          mBlockedFace;
+    const CircuitComponentType mCircuitComponentType = CircuitComponentType::PistonConsumer;
 
 public:
     // NOLINTBEGIN

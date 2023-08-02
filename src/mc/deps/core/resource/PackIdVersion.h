@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/mce/UUID.h"
+#include "mc/deps/core/sem_ver/SemVersion.h"
+#include "mc/resources/PackType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -10,8 +13,9 @@ namespace mce { class UUID; }
 struct PackIdVersion {
 
 public:
-    // prevent constructor by default
-    PackIdVersion& operator=(PackIdVersion const&) = delete;
+    mce::UUID  mId;       // this+0x0
+    SemVersion mVersion;  // this+0x10
+    PackType   mPackType; // this+0x80
 
 public:
     // NOLINTBEGIN

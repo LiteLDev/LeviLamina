@@ -1,12 +1,15 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/world/actor/player/PlayerPermissionLevel.h"
+
 
 class PermissionsHandler {
 
 public:
-    // prevent constructor by default
-    PermissionsHandler& operator=(PermissionsHandler const&) = delete;
+    enum class CommandPermissionLevel mCommandPermissions; // this+0x0
+    enum class PlayerPermissionLevel  mPlayerPermissions;  // this+0x1
 
 public:
     // NOLINTBEGIN

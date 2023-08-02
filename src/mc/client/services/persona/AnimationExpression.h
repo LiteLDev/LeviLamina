@@ -4,6 +4,8 @@
 
 namespace persona {
 
-enum class AnimationExpression {};
-
+enum class AnimationExpression : int {
+    Linear   = 0x0,
+    Blinking = 0x1,
+};
 };

@@ -5,10 +5,7 @@
 struct PlayerScoreboardId {
 
 public:
-    // prevent constructor by default
-    PlayerScoreboardId& operator=(PlayerScoreboardId const&) = delete;
-    PlayerScoreboardId(PlayerScoreboardId const&)            = delete;
-
+    int64_t mActorUniqueId; // this+0x0
 public:
     // NOLINTBEGIN
     /**

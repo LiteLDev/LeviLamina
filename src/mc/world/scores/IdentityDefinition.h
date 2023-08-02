@@ -1,11 +1,27 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/ActorUniqueID.h"
+#include "mc/world/scores/PlayerScoreboardId.h"
+#include "mc/world/scores/ScoreboardId.h"
+
 
 class IdentityDefinition {
 public:
     // IdentityDefinition inner types define
-    enum class Type {};
+    enum class Type {
+        Invalid    = 0x0,
+        Player     = 0x1,
+        Entity     = 0x2,
+        FakePlayer = 0x3,
+    };
+
+    ScoreboardId       mScoreboardId;       // this+0x0
+    bool               mIsHiddenFakePlayer; // this+0x10
+    PlayerScoreboardId mPlayerId;           // this+0x18
+    ActorUniqueID      mEntityId;           // this+0x20
+    std::string        mPlayerName;         // this+0x28
+    Type               mIdentityType;       // this+0x48
 
 public:
     // prevent constructor by default

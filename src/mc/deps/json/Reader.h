@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/json/Features.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,16 +20,40 @@ public:
     class Token;
     // clang-format on
 
+    using Location = const char*;
+
     // Reader inner types define
-    enum class TokenType {};
+    enum class TokenType {
+        EndOfStream     = 0x0,
+        ObjectBegin     = 0x1,
+        ObjectEnd       = 0x2,
+        ArrayBegin      = 0x3,
+        ArrayEnd        = 0x4,
+        String          = 0x5,
+        Number          = 0x6,
+        True            = 0x7,
+        False           = 0x8,
+        Null            = 0x9,
+        ArraySeparator  = 0xA,
+        MemberSeparator = 0xB,
+        Comment         = 0xC,
+        Error           = 0xD,
+    };
+
+    class Token {
+
+    public:
+        TokenType type_;
+        Location  start_;
+        Location  end_;
+    };
 
     class ErrorInfo {
 
     public:
-        // prevent constructor by default
-        ErrorInfo& operator=(ErrorInfo const&) = delete;
-        ErrorInfo(ErrorInfo const&)            = delete;
-        ErrorInfo()                            = delete;
+        Token       token_;
+        std::string message_;
+        Location    extra_;
 
     public:
         // NOLINTBEGIN
@@ -39,19 +64,21 @@ public:
         // NOLINTEND
     };
 
-    class Token {
-
-    public:
-        // prevent constructor by default
-        Token& operator=(Token const&) = delete;
-        Token(Token const&)            = delete;
-        Token()                        = delete;
-    };
+    using Nodes  = std::stack<Value*>;
+    using Errors = std::deque<ErrorInfo>;
 
 public:
-    // prevent constructor by default
-    Reader& operator=(Reader const&) = delete;
-    Reader(Reader const&)            = delete;
+    Nodes          nodes_;
+    Errors         errors_;
+    std::string    document_;
+    Location       begin_;
+    Location       end_;
+    Location       current_;
+    Location       lastValueEnd_;
+    Json::Value*   lastValue_;
+    std::string    commentsBefore_;
+    Json::Features features_;
+    bool           collectComments_;
 
 public:
     // NOLINTBEGIN

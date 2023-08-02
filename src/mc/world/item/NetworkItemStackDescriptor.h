@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/inventory/network/ItemStackNetIdVariant.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -15,10 +16,12 @@ namespace Json { class Value; }
 class NetworkItemStackDescriptor : public ::ItemDescriptorCount {
 
 public:
-    // prevent constructor by default
-    NetworkItemStackDescriptor& operator=(NetworkItemStackDescriptor const&) = delete;
     NetworkItemStackDescriptor()                                             = delete;
 
+    bool                  mIncludeNetIds;  // this+0x18
+    ItemStackNetIdVariant mNetIdVariant;   // this+0x20
+    unsigned int          mBlockRuntimeId; // this+0x38
+    std::string           mUserDataBuffer; // this+0x40
 public:
     // NOLINTBEGIN
     /**

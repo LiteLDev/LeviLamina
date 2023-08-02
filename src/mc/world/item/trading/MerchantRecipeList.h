@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/item/crafting/MerchantRecipe.h"
 
 // auto generated inclusion list
 #include "mc/network/TypedServerNetId.h"
@@ -8,9 +9,8 @@
 class MerchantRecipeList {
 
 public:
-    // prevent constructor by default
-    MerchantRecipeList& operator=(MerchantRecipeList const&) = delete;
-    MerchantRecipeList(MerchantRecipeList const&)            = delete;
+    std::vector<class MerchantRecipe> mRecipeList;
+    std::vector<unsigned int>   mTierExpRequirements;
 
 public:
     // NOLINTBEGIN

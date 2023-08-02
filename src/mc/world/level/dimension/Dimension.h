@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/ChunkPos.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/OwnerPtrT.h"
@@ -24,10 +25,13 @@ public:
     struct PlayerReplicationStructures {
 
     public:
-        // prevent constructor by default
-        PlayerReplicationStructures& operator=(PlayerReplicationStructures const&) = delete;
-        PlayerReplicationStructures(PlayerReplicationStructures const&)            = delete;
-        PlayerReplicationStructures()                                              = delete;
+        struct PlayerAtChunk {
+            class ChunkPos chunkPos;    // this+0x0
+            unsigned short playerIndex; // this+0x8
+        };
+        std::unordered_map<class ChunkPos, std::vector<unsigned short>> mPlayersAtChunks;    // this+0x0
+        std::vector<PlayerAtChunk>                                      mPlayerInterestMap;  // this+0x40
+        std::vector<gsl::not_null<class ServerPlayer*>>                 unwrappedPlayerList; // this+0x58
 
     public:
         // NOLINTBEGIN
@@ -38,6 +42,8 @@ public:
         MCAPI void processReplicationForPlayers(std::vector<class WeakEntityRef> const&, class Dimension*);
         // NOLINTEND
     };
+
+#define ENABLE_VIRTUAL_FAKESYMBOL_DIMENSION
 
 public:
     // prevent constructor by default

@@ -15,6 +15,11 @@ public:
     ConnectionRequest& operator=(ConnectionRequest const&) = delete;
     ConnectionRequest()                                    = delete;
 
+    std::unique_ptr<class UnverifiedCertificate> mCertificateData;
+    std::unique_ptr<class Certificate>           mCertificate;
+    std::unique_ptr<class WebToken>              mRawToken;
+    unsigned char                        mClientSubId;
+
 public:
     // NOLINTBEGIN
     /**

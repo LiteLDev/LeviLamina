@@ -13,8 +13,7 @@ namespace Json { class Value; }
 class ItemDescriptorCount : public ::ItemDescriptor {
 
 public:
-    // prevent constructor by default
-    ItemDescriptorCount& operator=(ItemDescriptorCount const&) = delete;
+    unsigned short mStackSize; // this+0x10
 
 public:
     // NOLINTBEGIN

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/levelgen/GeneratorType.h"
 
 // auto generated inclusion list
 #include "mc/world/level/dimension/DimensionDocument.h"
@@ -16,17 +17,13 @@ public:
     struct DimensionDefinition {
 
     public:
-        // prevent constructor by default
-        DimensionDefinition& operator=(DimensionDefinition const&) = delete;
-        DimensionDefinition(DimensionDefinition const&)            = delete;
-        DimensionDefinition()                                      = delete;
+        int                      mHeightMinimum; // this+0x0
+        int                      mHeightMaximum; // this+0x4
+        enum class GeneratorType mGeneratorType; // this+0x8
     };
 
 public:
-    // prevent constructor by default
-    DimensionDefinitionGroup& operator=(DimensionDefinitionGroup const&) = delete;
-    DimensionDefinitionGroup(DimensionDefinitionGroup const&)            = delete;
-    DimensionDefinitionGroup()                                           = delete;
+    std::map<std::string, DimensionDefinitionGroup::DimensionDefinition> mDimensionDefinitions;
 
 public:
     // NOLINTBEGIN

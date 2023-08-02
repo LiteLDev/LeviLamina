@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/MinecraftPacketIds.h"
 
 class MinecraftPackets {
 

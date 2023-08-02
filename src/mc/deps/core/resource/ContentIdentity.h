@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/mce/UUID.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -10,6 +11,8 @@ namespace mce { class UUID; }
 class ContentIdentity {
 
 public:
+    mce::UUID uuid;
+    bool      valid;
     // NOLINTBEGIN
     /**
      * @symbol ??0ContentIdentity\@\@QEAA\@XZ

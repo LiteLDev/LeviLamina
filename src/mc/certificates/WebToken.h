@@ -11,13 +11,13 @@ namespace Json { class Value; }
 class WebToken {
 
 public:
-  std::string mHeader;
-  Json::Value mHeaderInfo;
-  std::string mData;
-  Json::Value mDataInfo;
-  std::string mSignature;
+    std::string mHeader;
+    Json::Value mHeaderInfo;
+    std::string mData;
+    Json::Value mDataInfo;
+    std::string mSignature;
 
-    WebToken()                           = delete;
+    WebToken() = delete;
 
 public:
     // NOLINTBEGIN

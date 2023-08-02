@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/item/components/ItemStackNetResult.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/data/BidirectionalUnorderedMap.h"
@@ -12,6 +13,10 @@ public:
     ItemStackNetResultMap& operator=(ItemStackNetResultMap const&) = delete;
     ItemStackNetResultMap(ItemStackNetResultMap const&)            = delete;
     ItemStackNetResultMap()                                        = delete;
+
+   static inline BidirectionalUnorderedMap<enum class ItemStackNetResult, std::string> const& getMap() {
+        return mMap;
+    }
 
 public:
     // NOLINTBEGIN

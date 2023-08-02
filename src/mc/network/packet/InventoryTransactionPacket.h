@@ -1,6 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/TypedClientNetId.h"
+#include "mc/world/containers/ContainerEnumName.h"
+#include "mc/world/inventory/transaction/ComplexInventoryTransaction.h"
+#include "mc/world/item/components/ItemStackLegacyRequestIdTag.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -12,6 +16,11 @@ public:
     // prevent constructor by default
     InventoryTransactionPacket& operator=(InventoryTransactionPacket const&) = delete;
     InventoryTransactionPacket(InventoryTransactionPacket const&)            = delete;
+
+    TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0>                     mLegacyRequestId;    // this+0x30
+    std::vector<std::pair<enum class ContainerEnumName, std::vector<unsigned char>>> mLegacySetItemSlots; // this+0x40
+    std::unique_ptr<class ComplexInventoryTransaction>                               mTransaction;        // this+0x58
+    bool                                                                             mIsClientSide;       // this+0x60
 
 public:
     // NOLINTBEGIN

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/json/ValueType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,13 +20,73 @@ public:
     class CZString;
     // clang-format on
 
+    friend class ValueIteratorBase;
+
+
+    using Int         = int32_t;
+    using UInt        = uint32_t;
+    using Int64       = int64_t;
+    using UInt64      = uint64_t;
+    using LargestInt  = Int64;
+    using LargestUInt = UInt64;
+    using ArrayIndex  = unsigned;
+
+    using iterator       = ValueIterator;
+    using const_iterator = ValueConstIterator;
+    using ObjectValues   = std::map<CZString, Value>;
+
     // Value inner types define
     class CZString {
 
     public:
-        // prevent constructor by default
-        CZString& operator=(CZString const&) = delete;
-        CZString()                           = delete;
+        enum class DuplicationPolicy : unsigned {
+            noDuplication   = 0,
+            duplicate       = 1,
+            duplicateOnCopy = 2,
+            Mask            = 3,
+        };
+        struct StringStorage {
+            DuplicationPolicy policy_ : 2;
+            unsigned          length_ : 30; // 1GB max
+        };
+
+        char const* cstr_;
+        union {
+            ArrayIndex    index_{};
+            StringStorage storage_;
+        };
+
+        CZString(char const* str, unsigned length, DuplicationPolicy allocate) : cstr_(str) {
+            storage_.policy_ = allocate;
+            storage_.length_ = length & 0x3FFFFFFF;
+        }
+        inline CZString& operator=(const CZString& other) {
+            if (this == &other) {
+                return *this;
+            }
+            cstr_  = other.cstr_;
+            index_ = other.index_;
+            return *this;
+        }
+
+        [[nodiscard]] constexpr std::strong_ordering operator<=>(CZString const& other) const {
+            if (!cstr_)
+                return index_ <=> other.index_;
+            unsigned this_len  = this->storage_.length_;
+            unsigned other_len = other.storage_.length_;
+            unsigned min_len   = std::min<unsigned>(this_len, other_len);
+            int      comp      = memcmp(this->cstr_, other.cstr_, min_len);
+
+            if (comp == 0)
+                return this_len <=> other_len;
+            return comp <=> 0;
+        }
+
+        [[nodiscard]] constexpr ArrayIndex  index() const { return index_; }
+        [[nodiscard]] constexpr const char* c_str() const { return cstr_; }
+        [[nodiscard]] constexpr bool        isStaticString() const {
+            return storage_.policy_ == DuplicationPolicy::noDuplication;
+        }
 
     public:
         // NOLINTBEGIN
@@ -39,6 +100,21 @@ public:
         MCAPI ~CZString();
         // NOLINTEND
     };
+
+    union ValueHolder {
+        int64_t                    int_;    // this+0x0
+        uint64_t                   uint_;   // this+0x0
+        double                     real_;   // this+0x0
+        bool                       bool_;   // this+0x0
+        char*                      string_; // this+0x0
+        std::map<CZString, Value>* map_;    // this+0x0
+    };
+
+    ValueHolder value_;
+    struct {
+        ValueType value_type_ : 8;
+        bool      allocated_ : 1;
+    } bits_;
 
 public:
     // prevent constructor by default

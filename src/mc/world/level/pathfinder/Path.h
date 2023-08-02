@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/NodeType.h"
+#include "mc/enums/PathCompletionType.h"
+#include "mc/world/level/BlockPos.h"
 
 class Path {
 public:
@@ -9,20 +12,22 @@ public:
     class Node;
     // clang-format on
 
+    using NodeArray = std::vector<class Node>;
+
     // Path inner types define
     class Node {
 
     public:
-        // prevent constructor by default
-        Node& operator=(Node const&) = delete;
-        Node(Node const&)            = delete;
-        Node()                       = delete;
+        BlockPos pos;
+        NodeType type;
+
+        Node(BlockPos const& pos, NodeType const& type) : pos(pos), type(type) {}
     };
 
 public:
-    // prevent constructor by default
-    Path& operator=(Path const&) = delete;
-    Path(Path const&)            = delete;
+    NodeArray          mNodes;
+    size_t             mIndex;
+    PathCompletionType mCompletionType;
 
 public:
     // NOLINTBEGIN
@@ -114,6 +119,6 @@ public:
      * @symbol
      * ?buildFromNodes\@Path\@\@AEAAX$$QEAV?$vector\@VNode\@Path\@\@V?$allocator\@VNode\@Path\@\@\@std\@\@\@std\@\@W4PathCompletionType\@\@\@Z
      */
-    MCAPI void buildFromNodes(std::vector<class Path::Node>&&, enum class PathCompletionType);
+    MCAPI void buildFromNodes(NodeArray&&, enum class PathCompletionType);
     // NOLINTEND
 };

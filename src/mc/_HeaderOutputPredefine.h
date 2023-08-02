@@ -1,6 +1,7 @@
 #pragma once
 
-#define MCAPI __declspec(dllimport)
+#define MCAPI  __declspec(dllimport)
+#define MCVAPI __declspec(dllimport)
 
 #include <algorithm>     // STL general algorithms
 #include <array>         // STL array container

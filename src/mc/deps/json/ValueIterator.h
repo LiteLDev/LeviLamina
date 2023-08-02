@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/json/ValueIteratorBase.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -9,14 +10,10 @@ namespace Json { class ValueConstIterator; }
 
 namespace Json {
 
-class ValueIterator {
+class ValueIterator : public ValueIteratorBase {
 
 public:
-    // prevent constructor by default
-    ValueIterator& operator=(ValueIterator const&) = delete;
-    ValueIterator()                                = delete;
 
-public:
     // NOLINTBEGIN
     /**
      * @symbol ??0ValueIterator\@Json\@\@QEAA\@AEBV01\@\@Z

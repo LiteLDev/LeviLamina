@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/resources/PackReport.h"
+#include "mc/resources/PackStats.h"
+#include "mc/resources/ResourcePack.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
@@ -14,8 +17,11 @@ namespace mce { class UUID; }
 class PackInstance {
 
 public:
-    // prevent constructor by default
-    PackInstance() = delete;
+    PackReport                                                        mPackReport;   // this+0x0
+    class PackSettings*                                               mPackSettings; // this+0x1B0
+    class gsl::not_null<Bedrock::NonOwnerPointer<class ResourcePack>> mPack;         // this+0x1B8
+    PackStats                                                         mStats;        // this+0x1C8
+    int                                                               mSubpackIndex; // this+0x1D8
 
 public:
     // NOLINTBEGIN

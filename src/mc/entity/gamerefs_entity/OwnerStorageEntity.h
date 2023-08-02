@@ -1,19 +1,31 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/EntityContext.h"
 
 class OwnerStorageEntity {
 public:
     // OwnerStorageEntity inner types define
-    enum class EmptyInit {};
+    enum class EmptyInit : int {
+        NoValue = 0x0,
+    };
 
-    enum class VariadicInit {};
+    enum class VariadicInit : int {
+        NonAmbiguous = 0x0,
+    };
+
+    std::optional<EntityContext> mContext;
+
+    template <class Entity, bool Unknown = false>
+    inline Entity* tryUnwrap() {
+        if (_hasValue()) {
+            return Entity::tryGetFromEntity(_getStackRef(), Unknown);
+        }
+        return nullptr;
+    }
 
 public:
-    // prevent constructor by default
-    OwnerStorageEntity& operator=(OwnerStorageEntity const&) = delete;
-    OwnerStorageEntity(OwnerStorageEntity const&)            = delete;
-    OwnerStorageEntity()                                     = delete;
+    OwnerStorageEntity() = delete;
 
     // protected:
     // NOLINTBEGIN

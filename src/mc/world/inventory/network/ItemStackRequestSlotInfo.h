@@ -1,15 +1,18 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/containers/ContainerEnumName.h"
+#include "mc/world/inventory/network/ItemStackNetIdVariant.h"
 
 struct ItemStackRequestSlotInfo {
 
 public:
     // prevent constructor by default
-    ItemStackRequestSlotInfo& operator=(ItemStackRequestSlotInfo const&) = delete;
-    ItemStackRequestSlotInfo(ItemStackRequestSlotInfo const&)            = delete;
     ItemStackRequestSlotInfo()                                           = delete;
 
+    ContainerEnumName     mOpenContainerNetId; // this+0x0
+    unsigned char         mSlot;               // this+0x1
+    ItemStackNetIdVariant mNetIdVariant;       // this+0x8
 public:
     // NOLINTBEGIN
     /**

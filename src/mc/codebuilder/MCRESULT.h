@@ -1,14 +1,16 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/codebuilder/MCCATEGORY.h"
 
 struct MCRESULT {
 
 public:
-    // prevent constructor by default
-    MCRESULT& operator=(MCRESULT const&) = delete;
-    MCRESULT(MCRESULT const&)            = delete;
-    MCRESULT()                           = delete;
+    bool                  mSuccess;
+    enum class MCCATEGORY mCategory;
+    uint16_t              mCode;
+
+    operator bool() { return mSuccess; }
 
 public:
     // NOLINTBEGIN

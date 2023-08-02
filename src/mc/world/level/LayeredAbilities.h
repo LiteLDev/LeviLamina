@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/PermissionsHandler.h"
+#include "mc/world/level/Abilities.h"
 
 // auto generated inclusion list
 #include "mc/world/actor/player/Ability.h"
@@ -8,6 +10,9 @@
 class LayeredAbilities {
 
 public:
+    class PermissionsHandler mPermissions;
+    std::array<Abilities, 5> mLayers;
+
     // NOLINTBEGIN
     /**
      * @symbol ??0LayeredAbilities\@\@QEAA\@XZ

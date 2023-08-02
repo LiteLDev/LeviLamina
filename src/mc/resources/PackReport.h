@@ -1,6 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/sem_ver/SemVersion.h"
+#include "mc/resources/PackError.h"
+#include "mc/deps/core/resource/ResourceLocation.h"
+#include "mc/deps/core/resource/PackIdVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -10,8 +14,16 @@ namespace Json { class Value; }
 class PackReport {
 
 public:
-    // prevent constructor by default
-    PackReport& operator=(PackReport const&) = delete;
+    ResourceLocation mLocation;
+    bool             mWasUpgraded;
+    bool             mAttemptedUpgrade;
+    PackErrors       mErrors;
+    PackErrors       mWarnings;
+    SemVersion       mRequiredBaseGameVersion;
+    std::string      mOriginalName;
+    std::string      mOriginalVersion;
+    PackIdVersion    mIdentity;
+    PackType         mPackType;
 
 public:
     // NOLINTBEGIN

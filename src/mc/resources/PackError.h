@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/resources/PackErrorType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -10,10 +11,11 @@ namespace Json { class Value; }
 class PackError {
 
 public:
-    // prevent constructor by default
-    PackError& operator=(PackError const&) = delete;
-    PackError(PackError const&)            = delete;
-    PackError()                            = delete;
+    PackError() = delete;
+
+    std::vector<std::string> mErrorParameters;
+    int                      mErrorValue;
+    PackErrorType            mPackErrorType;
 
 public:
     // NOLINTBEGIN
@@ -61,3 +63,5 @@ public:
     MCAPI void serialize(class Json::Value&);
     // NOLINTEND
 };
+
+using PackErrors = std::vector<std::shared_ptr<PackError>>;

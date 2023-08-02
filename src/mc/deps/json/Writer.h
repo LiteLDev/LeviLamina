@@ -1,16 +1,15 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/json/Value.h"
 
 namespace Json {
 
 class Writer {
 
 public:
-    // prevent constructor by default
-    Writer& operator=(Writer const&) = delete;
-    Writer(Writer const&)            = delete;
-    Writer()                         = delete;
+    virtual ~Writer() {}
+    virtual std::string write(Json::Value const& root) = 0;
 
 public:
     // NOLINTBEGIN

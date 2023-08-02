@@ -1,9 +1,13 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/resources/Pack.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
+#include "mc/resources/ResourceSignature.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -11,13 +15,21 @@ namespace Core { class Path; }
 namespace mce { class UUID; }
 // clang-format on
 
-class ResourcePack {
+class ResourcePack : public Bedrock::EnableNonOwnerReferences {
 
 public:
-    // prevent constructor by default
-    ResourcePack& operator=(ResourcePack const&) = delete;
-    ResourcePack(ResourcePack const&)            = delete;
-    ResourcePack()                               = delete;
+    bool                                                mHidden;                // this+0x18
+    bool                                                mError;                 // this+0x19
+    gsl::not_null<Bedrock::NonOwnerPointer<class Pack>> mPack;                  // this+0x20
+    std::unique_ptr<class PackAccessStrategy>           mSubpackAccessStrategy; // this+0x30
+    PackReport                                          mPackReport;            // this+0x38
+    std::vector<std::unique_ptr<class Pack>>            mSubPacks;              // this+0x1E8
+    std::vector<std::unique_ptr<class ResourcePack>>    mSubResourcePacks;      // this+0x200
+    Core::PathBuffer<std::string>                       mIconPath;              // this+0x218
+    double                                              mLoadTime;              // this+0x238
+    bool                                                mIsBaseGamePack;        // this+0x240
+    bool                                                mIsSlicePack;           // this+0x241
+    ResourceSignature                                   mResourceSignature;     // this+0x248
 
 public:
     // NOLINTBEGIN

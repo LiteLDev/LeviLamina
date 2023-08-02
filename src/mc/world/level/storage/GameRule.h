@@ -10,15 +10,19 @@ public:
     // clang-format on
 
     // GameRule inner types define
-    enum class Type {};
+    enum class Type : char {
+        Invalid = 0,
+        Bool    = 1,
+        Int     = 2,
+        Float   = 3,
+    };
 
     class ValidationError {
 
     public:
-        // prevent constructor by default
-        ValidationError& operator=(ValidationError const&) = delete;
-        ValidationError(ValidationError const&)            = delete;
-        ValidationError()                                  = delete;
+        bool                     mSuccess;
+        std::string              mErrorDescription;
+        std::vector<std::string> mErrorParameters;
 
     public:
         // NOLINTBEGIN
@@ -28,6 +32,26 @@ public:
         MCAPI ~ValidationError();
         // NOLINTEND
     };
+
+    union Value {
+        bool  boolVal;  // this+0x0
+        int   intVal;   // this+0x0
+        float floatVal; // this+0x0
+    };
+
+    using TagDataNotFoundCallback = std::function<void(GameRule&)>;
+    using ValidateValueCallback   = std::function<bool(GameRule::Value const&, GameRule::ValidationError*)>;
+
+    bool                    mShouldSave;            // this+0x0
+    GameRule::Type          mType;                  // this+0x1
+    GameRule::Value         mValue;                 // this+0x4
+    std::string             mName;                  // this+0x8
+    bool                    mAllowUseInCommand;     // this+0x28
+    bool                    mIsDefaultSet;          // this+0x29
+    bool                    mRequiresCheats;        // this+0x2A
+    bool                    mCanBeModifiedByPlayer; // this+0x2B
+    TagDataNotFoundCallback mTagNotFoundCallback;   // this+0x30
+    ValidateValueCallback   mValidateValueCallback; // this+0x70
 
 public:
     // prevent constructor by default
@@ -110,13 +134,12 @@ public:
     /**
      * @symbol ?setTagDataNotFoundCallback\@GameRule\@\@QEAAAEAV1\@V?$function\@$$A6AXAEAVGameRule\@\@\@Z\@std\@\@\@Z
      */
-    MCAPI class GameRule& setTagDataNotFoundCallback(std::function<void(class GameRule&)>);
+    MCAPI class GameRule& setTagDataNotFoundCallback(TagDataNotFoundCallback);
     /**
      * @symbol
      * ?setValidateValueCallback\@GameRule\@\@QEAAAEAV1\@V?$function\@$$A6A_NAEBTValue\@GameRule\@\@PEAVValidationError\@2\@\@Z\@std\@\@\@Z
      */
-    MCAPI class GameRule&
-        setValidateValueCallback(std::function<bool(union GameRule::Value const&, class GameRule::ValidationError*)>);
+    MCAPI class GameRule& setValidateValueCallback(ValidateValueCallback);
     /**
      * @symbol ??1GameRule\@\@QEAA\@XZ
      */

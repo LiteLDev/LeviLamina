@@ -8,9 +8,12 @@
 class ConsumerComponent : public ::BaseCircuitComponent {
 
 public:
-    // prevent constructor by default
-    ConsumerComponent& operator=(ConsumerComponent const&) = delete;
-    ConsumerComponent(ConsumerComponent const&)            = delete;
+    bool                       mSecondaryPowered;
+    bool                       mPropagatePower;
+    bool                       mPromotedToProducer;
+    bool                       mAcceptHalfPulse;
+    bool                       mAcceptSameDirection;
+    const CircuitComponentType mCircuitComponentType = CircuitComponentType::ConsumerComponent;
 
 public:
     // NOLINTBEGIN

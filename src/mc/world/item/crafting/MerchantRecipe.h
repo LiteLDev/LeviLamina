@@ -1,12 +1,30 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/RecipeNetIdTag.h"
+#include "mc/network/TypedServerNetId.h"
+#include "mc/world/item/ItemInstance.h"
 
 class MerchantRecipe {
 
 public:
     // prevent constructor by default
     MerchantRecipe() = delete;
+
+    class ItemInstance                                mBuyA;             // this+0x0
+    class ItemInstance                                mBuyB;             // this+0x88
+    class ItemInstance                                mSell;             // this+0x110
+    int                                               mTier;             // this+0x198
+    int                                               mUses;             // this+0x19C
+    int                                               mMaxUses;          // this+0x1A0
+    unsigned int                                      mTraderExp;        // this+0x1A4
+    bool                                              mRewardExp;        // this+0x1A8
+    int                                               mDemand;           // this+0x1AC
+    int                                               mBuyCountA;        // this+0x1B0
+    int                                               mBuyCountB;        // this+0x1B4
+    float                                             mPriceMultiplierA; // this+0x1B8
+    float                                             mPriceMultiplierB; // this+0x1BC
+    TypedServerNetId<RecipeNetIdTag, unsigned int, 0> mRecipeNetId;      // this+0x1C0
 
 public:
     // NOLINTBEGIN

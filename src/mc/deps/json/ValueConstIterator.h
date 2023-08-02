@@ -1,16 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/json/ValueIteratorBase.h"
 
 namespace Json {
 
-class ValueConstIterator {
+class ValueConstIterator : public ValueIteratorBase {
 
-public:
-    // prevent constructor by default
-    ValueConstIterator& operator=(ValueConstIterator const&) = delete;
-    ValueConstIterator(ValueConstIterator const&)            = delete;
-    ValueConstIterator()                                     = delete;
 };
 
 }; // namespace Json

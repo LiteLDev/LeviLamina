@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/json/Value.h"
+#include "mc/resources/PackSetting.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -10,10 +12,10 @@ namespace Json { class Value; }
 class PackSettings {
 
 public:
-    // prevent constructor by default
-    PackSettings& operator=(PackSettings const&) = delete;
-    PackSettings(PackSettings const&)            = delete;
     PackSettings()                               = delete;
+
+    Json::Value                                  mSettings; // this+0x0
+    std::unordered_map<std::string, PackSetting> mPackSettings; // this+0x10
 
 public:
     // NOLINTBEGIN

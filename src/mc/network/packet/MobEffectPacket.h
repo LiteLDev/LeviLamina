@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/ActorRuntimeID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,12 +10,25 @@
 class MobEffectPacket : public ::Packet {
 public:
     // MobEffectPacket inner types define
-    enum class Event {};
+    enum class Event : char {
+        Invalid = 0x0,
+        Add     = 0x1,
+        Update  = 0x2,
+        Remove  = 0x3,
+    };
 
 public:
     // prevent constructor by default
     MobEffectPacket& operator=(MobEffectPacket const&) = delete;
     MobEffectPacket(MobEffectPacket const&)            = delete;
+
+
+    ActorRuntimeID   mRuntimeId;           // this+0x30
+    int              mEffectDurationTicks; // this+0x38
+    enum class Event mEventId;             // this+0x3C
+    int              mEffectId;            // this+0x40
+    int              mEffectAmplifier;     // this+0x44
+    bool             mShowParticles;       // this+0x48
 
 public:
     // NOLINTBEGIN

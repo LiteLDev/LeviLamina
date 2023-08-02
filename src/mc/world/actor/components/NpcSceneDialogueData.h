@@ -1,19 +1,26 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/actor/player/INpcDialogueData.h"
+#include "mc/entity/WeakEntityRef.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace npc { struct ActionContainer; }
 // clang-format on
 
-class NpcSceneDialogueData {
+class NpcSceneDialogueData : public INpcDialogueData {
 
 public:
     // prevent constructor by default
     NpcSceneDialogueData& operator=(NpcSceneDialogueData const&) = delete;
     NpcSceneDialogueData(NpcSceneDialogueData const&)            = delete;
     NpcSceneDialogueData()                                       = delete;
+
+    WeakEntityRef mOwner;     // this+0x8
+    std::string   mSceneName; // this+0x20
+
+#define ENABLE_VIRTUAL_FAKESYMBOL_NPCSCENEDIALOGUEDATA
 
 public:
     // NOLINTBEGIN

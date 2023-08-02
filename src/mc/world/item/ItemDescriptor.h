@@ -19,7 +19,14 @@ public:
     // clang-format on
 
     // ItemDescriptor inner types define
-    enum class InternalType {};
+    enum class InternalType : char {
+        Invalid      = 0x0,
+        Default      = 0x1,
+        Molang       = 0x2,
+        ItemTag      = 0x3,
+        Deferred     = 0x4,
+        ComplexAlias = 0x5,
+    };
 
     struct BaseDescriptor {
 
@@ -123,11 +130,8 @@ public:
     struct ItemEntry {
 
     public:
-        // prevent constructor by default
-        ItemEntry& operator=(ItemEntry const&) = delete;
-        ItemEntry(ItemEntry const&)            = delete;
-        ItemEntry()                            = delete;
-
+        const class Item* mItem;     // this+0x0
+        short             mAuxValue; // this+0x8
     public:
         // NOLINTBEGIN
         /**
@@ -136,6 +140,8 @@ public:
         MCAPI class Block const* getBlock() const;
         // NOLINTEND
     };
+
+    std::unique_ptr<ItemDescriptor::BaseDescriptor> mImpl;
 
 public:
     // NOLINTBEGIN

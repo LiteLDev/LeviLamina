@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/HardcodedSpawnAreaType.h"
+#include "mc/world/level/levelgen/structure/BoundingBox.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/UniqueLock.h"
@@ -19,24 +21,24 @@ public:
     // clang-format on
 
     // LevelChunk inner types define
-    enum class Finalization {};
+    enum class Finalization : int {
+        NeedsInstaticking = 0x0,
+        NeedsPopulation   = 0x1,
+        Done              = 0x2,
+    };
 
     struct HardcodedSpawningArea {
 
     public:
-        // prevent constructor by default
-        HardcodedSpawningArea& operator=(HardcodedSpawningArea const&) = delete;
-        HardcodedSpawningArea(HardcodedSpawningArea const&)            = delete;
-        HardcodedSpawningArea()                                        = delete;
+        class BoundingBox                 aabb;
+        enum class HardcodedSpawnAreaType type;
     };
 
     class Neighbors {
 
     public:
-        // prevent constructor by default
-        Neighbors& operator=(Neighbors const&) = delete;
-        Neighbors(Neighbors const&)            = delete;
-
+        static const int COUNT = 0x8; // constant
+        unsigned char    mNeighbors;  // this+0x0
     public:
         // NOLINTBEGIN
         /**

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/systems/ResourceFileSystem.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
@@ -14,9 +15,10 @@ namespace Json { class Value; }
 class ResourceLocation {
 
 public:
-    // prevent constructor by default
-    ResourceLocation& operator=(ResourceLocation const&) = delete;
-    ResourceLocation(ResourceLocation const&)            = delete;
+    ResourceFileSystem            mFileSystem; // this+0x0
+    Core::PathBuffer<std::string> mPath;       // this+0x8
+    uint64_t                      mPathHash;   // this+0x28
+    uint64_t                      mFullHash;   // this+0x30
 
 public:
     // NOLINTBEGIN

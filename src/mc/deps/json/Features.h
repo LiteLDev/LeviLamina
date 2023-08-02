@@ -7,10 +7,8 @@ namespace Json {
 class Features {
 
 public:
-    // prevent constructor by default
-    Features& operator=(Features const&) = delete;
-    Features(Features const&)            = delete;
-    Features()                           = delete;
+    bool strictRoot_;
+    bool allowNumericKeys_;
 
 public:
     // NOLINTBEGIN

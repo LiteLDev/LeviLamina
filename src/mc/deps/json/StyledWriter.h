@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/json/Writer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -9,12 +10,19 @@ namespace Json { class Value; }
 
 namespace Json {
 
-class StyledWriter {
+class StyledWriter : public Writer {
 
 public:
-    // prevent constructor by default
-    StyledWriter& operator=(StyledWriter const&) = delete;
-    StyledWriter(StyledWriter const&)            = delete;
+    using ChildValues = std::vector<std::string>;
+
+    ChildValues  childValues_;
+    std::string  document_;
+    std::string  indentString_;
+    unsigned int rightMargin_;
+    unsigned int indentSize_;
+    bool         addChildValues_;
+
+    ~StyledWriter() override = default;
 
 public:
     // NOLINTBEGIN

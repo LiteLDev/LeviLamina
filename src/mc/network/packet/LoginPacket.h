@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/ConnectionRequest.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -12,6 +13,9 @@ public:
     // prevent constructor by default
     LoginPacket& operator=(LoginPacket const&) = delete;
     LoginPacket(LoginPacket const&)            = delete;
+
+    int32_t                                  mClientNetworkVersion;
+    std::unique_ptr<class ConnectionRequest> mConnectionRequest;
 
 public:
     // NOLINTBEGIN
