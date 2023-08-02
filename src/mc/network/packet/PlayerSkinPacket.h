@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/mce/UUID.h"
+#include "mc/world/actor/player/SerializedSkin.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +11,10 @@
 class PlayerSkinPacket : public ::Packet {
 
 public:
+    mce::UUID      mUUID;
+    SerializedSkin mSkin;
+    std::string    mLocalizedNewSkinName;
+    std::string    mLocalizedOldSkinName;
     // prevent constructor by default
     PlayerSkinPacket& operator=(PlayerSkinPacket const&) = delete;
     PlayerSkinPacket(PlayerSkinPacket const&)            = delete;

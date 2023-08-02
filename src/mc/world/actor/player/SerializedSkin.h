@@ -1,6 +1,15 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/client/services/persona/ArmSize.h"
+#include "mc/deps/core/mce/Color.h"
+#include "mc/deps/core/mce/Image.h"
+#include "mc/deps/core/sem_ver/SemVersion.h"
+#include "mc/deps/core_graphics/helpers/TintMapColor.h"
+#include "mc/deps/json/Value.h"
+#include "mc/world/actor/player/AnimatedImageData.h"
+#include "mc/world/actor/player/SerializedPersonaPieceHandle.h"
+
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -13,6 +22,30 @@ public:
         False = 0x1,
         True  = 0x2,
     };
+
+    std::string mId;
+    std::string mPlayFabId;
+    std::string mFullId;
+    std::string mResourcePatch;
+    std::string mDefaultGeometryName;
+    mce::Image mSkinImage;
+    mce::Image mCapeImage;
+    std::vector<AnimatedImageData> mSkinAnimatedImages;
+    Json::Value mGeometryData;
+    SemVersion mGeometryDataEngineVersion;
+    Json::Value mGeometryDataMutable;
+    std::string mAnimationData;
+    std::string mCapeId;
+    std::vector<SerializedPersonaPieceHandle> mPersonaPieces;
+    persona::ArmSize::Type mArmSizeType;
+    std::unordered_map<persona::PieceType, TintMapColor> mPieceTintColors;
+    mce::Color mSkinColor;
+    TrustedSkinFlag mIsTrustedSkin;
+    bool mIsPremium;
+    bool mIsPersona;
+    bool mIsPersonaCapeOnClassicSkin;
+    bool mIsPrimaryUser;
+    bool mOverridesPlayerAppearance;
 
     // NOLINTBEGIN
     /**
