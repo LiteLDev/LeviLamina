@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/packet/SerializedAbilitiesData.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,7 @@
 class UpdateAbilitiesPacket : public ::Packet {
 
 public:
+    SerializedAbilitiesData mData;
     // prevent constructor by default
     UpdateAbilitiesPacket& operator=(UpdateAbilitiesPacket const&) = delete;
     UpdateAbilitiesPacket(UpdateAbilitiesPacket const&)            = delete;

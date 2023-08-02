@@ -9,9 +9,15 @@
 class SimpleEventPacket : public ::Packet {
 public:
     // SimpleEventPacket inner types define
-    enum class Subtype {};
+    enum class Subtype : int {
+        UninitializedSubtype        = 0x0,
+        EnableCommands              = 0x1,
+        DisableCommands             = 0x2,
+        UnlockWorldTemplateSettings = 0x3,
+    };
 
 public:
+    SimpleEventPacket::Subtype mSubtype;
     // prevent constructor by default
     SimpleEventPacket& operator=(SimpleEventPacket const&) = delete;
     SimpleEventPacket(SimpleEventPacket const&)            = delete;

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/ObjectiveSortOrder.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,11 @@
 class SetDisplayObjectivePacket : public ::Packet {
 
 public:
+    std::string        mDisplaySlotName;
+    std::string        mObjectiveName;
+    std::string        mObjectiveDisplayName;
+    std::string        mCriteriaName;
+    ObjectiveSortOrder mSortOrder;
     // prevent constructor by default
     SetDisplayObjectivePacket& operator=(SetDisplayObjectivePacket const&) = delete;
     SetDisplayObjectivePacket(SetDisplayObjectivePacket const&)            = delete;

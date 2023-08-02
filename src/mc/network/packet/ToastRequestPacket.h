@@ -9,6 +9,8 @@
 class ToastRequestPacket : public ::Packet {
 
 public:
+    std::string mTitle;
+    std::string mContent;
     // prevent constructor by default
     ToastRequestPacket& operator=(ToastRequestPacket const&) = delete;
     ToastRequestPacket(ToastRequestPacket const&)            = delete;

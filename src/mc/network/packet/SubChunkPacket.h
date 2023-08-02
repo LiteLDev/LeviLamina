@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/SubChunkPos.h"
+#include "mc/world/level/dimension/Dimension.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -17,13 +19,28 @@ public:
     // clang-format on
 
     // SubChunkPacket inner types define
-    enum class HeightMapDataType {};
+    enum class HeightMapDataType : char {
+        NoData     = 0x0,
+        HasData    = 0x1,
+        AllTooHigh = 0x2,
+        AllTooLow  = 0x3,
+    };
 
-    enum class SubChunkRequestResult {};
+    enum class SubChunkRequestResult : char {
+        Undefined             = 0x0,
+        Success               = 0x1,
+        LevelChunkDoesntExist = 0x2,
+        WrongDimension        = 0x3,
+        PlayerDoesntExist     = 0x4,
+        IndexOutOfBounds      = 0x5,
+        SuccessAllAir         = 0x6,
+    };
 
     class HeightmapData {
 
     public:
+        HeightMapDataType                               mHeightMapType;
+        std::array<std::array<signed char, 16UL>, 16UL> mSubchunkHeightMap;
         // prevent constructor by default
         HeightmapData& operator=(HeightmapData const&) = delete;
         HeightmapData(HeightmapData const&)            = delete;
@@ -42,9 +59,26 @@ public:
         // NOLINTEND
     };
 
+    struct SubChunkPosOffset {
+
+    public:
+        int8_t mX;
+        int8_t mY;
+        int8_t mZ;
+        // prevent constructor by default
+        SubChunkPosOffset& operator=(SubChunkPosOffset const&) = delete;
+        SubChunkPosOffset(SubChunkPosOffset const&)            = delete;
+        SubChunkPosOffset()                                    = delete;
+    };
+
     struct SubChunkPacketData {
 
     public:
+        const SubChunkPosOffset mSubChunkPosOffset;
+        std::string             mSerializedSubChunk;
+        SubChunkRequestResult   mResult;
+        HeightmapData           mHeightMapData;
+        uint64_t                mBlobId;
         // prevent constructor by default
         SubChunkPacketData& operator=(SubChunkPacketData const&) = delete;
         SubChunkPacketData(SubChunkPacketData const&)            = delete;
@@ -56,14 +90,11 @@ public:
          * @symbol
          * ??0SubChunkPacketData\@SubChunkPacket\@\@QEAA\@AEBUSubChunkPosOffset\@1\@W4SubChunkRequestResult\@1\@\@Z
          */
-        MCAPI SubChunkPacketData(
-            struct SubChunkPacket::SubChunkPosOffset const&,
-            enum class SubChunkPacket::SubChunkRequestResult
-        );
+        MCAPI SubChunkPacketData(SubChunkPosOffset const&, SubChunkRequestResult);
         /**
          * @symbol ??0SubChunkPacketData\@SubChunkPacket\@\@QEAA\@$$QEAU01\@\@Z
          */
-        MCAPI SubChunkPacketData(struct SubChunkPacket::SubChunkPacketData&&);
+        MCAPI SubChunkPacketData(SubChunkPacketData&&);
         /**
          * @symbol ??1SubChunkPacketData\@SubChunkPacket\@\@QEAA\@XZ
          */
@@ -71,16 +102,11 @@ public:
         // NOLINTEND
     };
 
-    struct SubChunkPosOffset {
-
-    public:
-        // prevent constructor by default
-        SubChunkPosOffset& operator=(SubChunkPosOffset const&) = delete;
-        SubChunkPosOffset(SubChunkPosOffset const&)            = delete;
-        SubChunkPosOffset()                                    = delete;
-    };
-
 public:
+    bool                            mCacheEnabled;
+    AutomaticID<Dimension, int>     mDimensionType;
+    std::vector<SubChunkPacketData> mSubChunkData;
+    SubChunkPos                     mCenterPos;
     // prevent constructor by default
     SubChunkPacket& operator=(SubChunkPacket const&) = delete;
     SubChunkPacket(SubChunkPacket const&)            = delete;

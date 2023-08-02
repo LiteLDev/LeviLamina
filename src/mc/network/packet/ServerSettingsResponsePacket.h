@@ -9,6 +9,8 @@
 class ServerSettingsResponsePacket : public ::Packet {
 
 public:
+    uint32_t    mFormId;
+    std::string mFormJSON;
     // prevent constructor by default
     ServerSettingsResponsePacket& operator=(ServerSettingsResponsePacket const&) = delete;
     ServerSettingsResponsePacket(ServerSettingsResponsePacket const&)            = delete;

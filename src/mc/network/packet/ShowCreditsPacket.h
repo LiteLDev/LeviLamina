@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/ActorRuntimeID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,9 +10,14 @@
 class ShowCreditsPacket : public ::Packet {
 public:
     // ShowCreditsPacket inner types define
-    enum class CreditsState {};
+    enum class CreditsState : int {
+        Start    = 0x0,
+        Finished = 0x1,
+    };
 
 public:
+    ActorRuntimeID                  mPlayerID;
+    ShowCreditsPacket::CreditsState mCreditsState;
     // prevent constructor by default
     ShowCreditsPacket& operator=(ShowCreditsPacket const&) = delete;
     ShowCreditsPacket(ShowCreditsPacket const&)            = delete;

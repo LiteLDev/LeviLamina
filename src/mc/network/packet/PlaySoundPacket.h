@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/NetworkBlockPosition.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,10 @@
 class PlaySoundPacket : public ::Packet {
 
 public:
+    std::string mName;
+    NetworkBlockPosition mPos;
+    float mVolume;
+    float mPitch;
     // prevent constructor by default
     PlaySoundPacket& operator=(PlaySoundPacket const&) = delete;
     PlaySoundPacket(PlaySoundPacket const&)            = delete;

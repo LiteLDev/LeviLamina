@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/TextPacketType.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -15,6 +16,13 @@ namespace PlayerCapabilities { struct ISharedController; }
 class TextPacket : public ::Packet {
 
 public:
+    TextPacketType           mType;
+    std::string              mAuthor;
+    std::string              mMessage;
+    std::vector<std::string> params;
+    bool                     mLocalize;
+    std::string              mXuid;
+    std::string              mPlatformId;
     // prevent constructor by default
     TextPacket& operator=(TextPacket const&) = delete;
     TextPacket(TextPacket const&)            = delete;

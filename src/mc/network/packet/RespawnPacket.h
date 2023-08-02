@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/math/Vec3.h"
+#include "mc/world/ActorRuntimeID.h"
+#include "mc/world/actor/player/PlayerRespawnState.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +12,9 @@
 class RespawnPacket : public ::Packet {
 
 public:
+    Vec3               mPos;
+    PlayerRespawnState mState;
+    ActorRuntimeID     mRuntimeId;
     // prevent constructor by default
     RespawnPacket& operator=(RespawnPacket const&) = delete;
     RespawnPacket(RespawnPacket const&)            = delete;

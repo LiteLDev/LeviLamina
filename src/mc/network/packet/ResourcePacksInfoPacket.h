@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/packet/PacksInfoData.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,7 @@
 class ResourcePacksInfoPacket : public ::Packet {
 
 public:
+    PacksInfoData mData;
     // prevent constructor by default
     ResourcePacksInfoPacket& operator=(ResourcePacksInfoPacket const&) = delete;
     ResourcePacksInfoPacket(ResourcePacksInfoPacket const&)            = delete;

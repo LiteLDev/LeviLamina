@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/resources/PackType.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,13 @@
 class ResourcePackDataInfoPacket : public ::Packet {
 
 public:
+    std::string mResourceName;
+    uint32_t    mChunkSize;
+    int         mNbChunks;
+    uint64_t    mFileSize;
+    std::string mFileHash;
+    PackType    mPackType;
+    bool        mIsPremium;
     // prevent constructor by default
     ResourcePackDataInfoPacket& operator=(ResourcePackDataInfoPacket const&) = delete;
     ResourcePackDataInfoPacket(ResourcePackDataInfoPacket const&)            = delete;

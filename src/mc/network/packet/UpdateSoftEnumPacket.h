@@ -1,14 +1,19 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/SoftEnumUpdateType.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/network/packet/Packet.h"
+#include <string>
 
 class UpdateSoftEnumPacket : public ::Packet {
 
 public:
+    std::string              mEnumName;
+    std::vector<std::string> mValues;
+    SoftEnumUpdateType       mType;
     // prevent constructor by default
     UpdateSoftEnumPacket& operator=(UpdateSoftEnumPacket const&) = delete;
     UpdateSoftEnumPacket(UpdateSoftEnumPacket const&)            = delete;

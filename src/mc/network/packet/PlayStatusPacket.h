@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/PlayStatus.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,7 @@
 class PlayStatusPacket : public ::Packet {
 
 public:
+    PlayStatus status;
     // prevent constructor by default
     PlayStatusPacket& operator=(PlayStatusPacket const&) = delete;
     PlayStatusPacket(PlayStatusPacket const&)            = delete;

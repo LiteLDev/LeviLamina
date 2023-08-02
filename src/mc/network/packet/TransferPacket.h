@@ -9,6 +9,8 @@
 class TransferPacket : public ::Packet {
 
 public:
+    std::string mServerAddress;
+    int         mServerPort;
     // prevent constructor by default
     TransferPacket& operator=(TransferPacket const&) = delete;
     TransferPacket(TransferPacket const&)            = delete;

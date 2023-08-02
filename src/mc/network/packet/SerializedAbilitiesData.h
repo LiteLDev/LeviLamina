@@ -1,6 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/world/ActorUniqueID.h"
+#include "mc/world/actor/player/PlayerPermissionLevel.h"
+
 
 struct SerializedAbilitiesData {
 public:
@@ -10,11 +14,22 @@ public:
     // clang-format on
 
     // SerializedAbilitiesData inner types define
-    enum class SerializedAbilitiesLayer {};
+    enum class SerializedAbilitiesLayer : short {
+        CustomCache = 0x0,
+        Base        = 0x1,
+        Spectator   = 0x2,
+        Commands    = 0x3,
+        Editor      = 0x4,
+    };
 
     struct SerializedLayer {
 
     public:
+        SerializedAbilitiesLayer mSerializedLayer;
+        uint32_t                 mAbilitiesSet;
+        uint32_t                 mAbilityValues;
+        float                    mFlySpeed;
+        float                    mWalkSpeed;
         // prevent constructor by default
         SerializedLayer& operator=(SerializedLayer const&) = delete;
         SerializedLayer(SerializedLayer const&)            = delete;
@@ -22,6 +37,10 @@ public:
     };
 
 public:
+    ActorUniqueID                mTargetPlayer;
+    CommandPermissionLevel       mCommandPermissions;
+    PlayerPermissionLevel        mPlayerPermissions;
+    std::vector<SerializedLayer> mLayers;
     // prevent constructor by default
     SerializedAbilitiesData& operator=(SerializedAbilitiesData const&) = delete;
     SerializedAbilitiesData(SerializedAbilitiesData const&)            = delete;
