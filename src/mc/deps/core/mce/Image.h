@@ -1,22 +1,42 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace mce { enum class ImageFormat; }
-namespace mce { enum class ImageUsage; }
-// clang-format on
+#include "Blob.h"
+#include "ImageFormat.h"
+#include "ImageUsage.h"
 
 namespace mce {
 
 struct Image {
 
 public:
-    // prevent constructor by default
-    Image& operator=(Image const&) = delete;
-    Image(Image const&)            = delete;
-    Image()                        = delete;
+    ImageFormat imageFormat{};       // 0x0
+    uint32_t    mWidth{}, mHeight{}; // 0x4, 0x8
+    ImageUsage  mUsage{};            // 0xC
+    Blob        mImageBytes;         // 0x10
+
+    explicit inline Image(Blob&& data) : mImageBytes(std::move(data)) {}
+
+    inline Image() = default;
+
+    inline void copyRawImage(Blob const& blob) { mImageBytes = blob.clone(); }
+
+    inline void setImageDescription(unsigned width, unsigned height, ImageFormat format, ImageUsage usage) {
+        this->mWidth      = width;
+        this->mHeight     = height;
+        this->imageFormat = format;
+        this->mUsage      = usage;
+    }
+
+    inline void setRawImage(Blob&& buffer) { mImageBytes = std::move(buffer); }
+
+    Image(const Image& a1) {
+        imageFormat = a1.imageFormat;
+        mWidth      = a1.mWidth;
+        mHeight     = a1.mHeight;
+        mUsage      = a1.mUsage;
+        mImageBytes = a1.mImageBytes.clone();
+    }
 
 public:
     // NOLINTBEGIN
