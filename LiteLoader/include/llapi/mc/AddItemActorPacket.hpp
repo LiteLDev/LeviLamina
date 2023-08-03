@@ -24,6 +24,7 @@ class AddItemActorPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
     std::vector<std::unique_ptr<DataItem>> mData;
     SynchedActorDataEntityWrapper *mEntityData;
     ActorUniqueID mId;
