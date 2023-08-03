@@ -7,6 +7,9 @@
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
 #include "Packet.hpp"
+#include "DataItem.hpp"
+#include "SynchedActorDataEntityWrapper.hpp"
+#include "NetworkItemStackDescriptor.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -21,6 +24,14 @@ class AddItemActorPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+    std::vector<std::unique_ptr<DataItem>> mData;
+    SynchedActorDataEntityWrapper *mEntityData;
+    ActorUniqueID mId;
+    ActorRuntimeID mRuntimeId;
+    NetworkItemStackDescriptor mItem;
+    Vec3 mPos;
+    Vec3 mVelocity;
+    bool mIsFromFishing;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADDITEMACTORPACKET
