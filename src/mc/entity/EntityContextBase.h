@@ -13,6 +13,9 @@ public:
     [[nodiscard]] class entt::basic_registry<EntityId>& _enttRegistry() {
         return mRegistry.mRegistry;
     }
+    [[nodiscard]] class entt::basic_registry<EntityId> const& _enttRegistry() const {
+        return mRegistry.mRegistry;
+    }
 public:
     // NOLINTBEGIN
     /**
