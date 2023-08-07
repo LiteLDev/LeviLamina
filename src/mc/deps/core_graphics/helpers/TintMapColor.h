@@ -1,13 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/mce/Color.h"
 
 class TintMapColor {
 
 public:
-    // prevent constructor by default
-    TintMapColor& operator=(TintMapColor const&) = delete;
-    TintMapColor(TintMapColor const&)            = delete;
+    std::array<mce::Color, 4> colors;
 
 public:
     // NOLINTBEGIN

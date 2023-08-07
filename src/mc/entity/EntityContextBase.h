@@ -21,8 +21,7 @@ public:
     /**
      * @symbol ??0EntityContextBase\@\@QEAA\@AEAVEntityRegistryBase\@\@VEntityId\@\@\@Z
      */
-    MCAPI
-    EntityContextBase(class EntityRegistryBase&, class EntityId);
+    MCAPI EntityContextBase(class EntityRegistryBase&, class EntityId);
     /**
      * @symbol ?isValid\@EntityContextBase\@\@QEBA_NXZ
      */

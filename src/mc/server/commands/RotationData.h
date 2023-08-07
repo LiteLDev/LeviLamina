@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/math/Vec2.h"
+#include "mc/server/commands/RelativeFloat.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,10 +15,11 @@ namespace RotationCommandUtils {
 class RotationData {
 
 public:
-    // prevent constructor by default
-    RotationData& operator=(RotationData const&) = delete;
-    RotationData(RotationData const&)            = delete;
-    RotationData()                               = delete;
+    RelativeFloat       mRotX;
+    RelativeFloat       mRotY;
+    std::optional<Vec2> mCommandOriginRotation;
+
+    RotationData() = delete;
 
 public:
     // NOLINTBEGIN

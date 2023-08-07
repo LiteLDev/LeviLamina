@@ -13,9 +13,7 @@ namespace Json { class Value; }
 class RecipeIngredient : public ::ItemDescriptorCount {
 
 public:
-    // prevent constructor by default
-    RecipeIngredient& operator=(RecipeIngredient const&) = delete;
-    RecipeIngredient()                                   = delete;
+    RecipeIngredient() = delete;
 
 public:
     // NOLINTBEGIN

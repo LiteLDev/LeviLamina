@@ -1,13 +1,19 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/BlockPos.h"
 
 class StructureTemplateData {
 
 public:
-    // prevent constructor by default
-    StructureTemplateData& operator=(StructureTemplateData const&) = delete;
-    StructureTemplateData(StructureTemplateData const&)            = delete;
+    int (**_vptr_StructureTemplateData)(void);
+    int                                                          mFormatVersion;
+    BlockPos                                                     mSize;
+    BlockPos                                                     mStructureWorldOrigin;
+    std::vector<int>                                             mBlockIndices;
+    std::vector<int>                                             mExtraBlockIndices;
+    std::unordered_map<std::string, class StructureBlockPalette> mPalettes;
+    std::vector<std::unique_ptr<class CompoundTag>>              mEntityData;
 
 public:
     // NOLINTBEGIN

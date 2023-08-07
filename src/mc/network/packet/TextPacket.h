@@ -16,13 +16,13 @@ namespace PlayerCapabilities { struct ISharedController; }
 class TextPacket : public ::Packet {
 
 public:
-    TextPacketType           mType;
-    std::string              mAuthor;
-    std::string              mMessage;
-    std::vector<std::string> params;
-    bool                     mLocalize;
-    std::string              mXuid;
-    std::string              mPlatformId;
+    TextPacketType           mType;       // this+0x30
+    std::string              mAuthor;     // this+0x38
+    std::string              mMessage;    // this+0x58
+    std::vector<std::string> params;      // this+0x78
+    bool                     mLocalize;   // this+0x90
+    std::string              mXuid;       // this+0x98
+    std::string              mPlatformId; // this+0xB8
     // prevent constructor by default
     TextPacket& operator=(TextPacket const&) = delete;
     TextPacket(TextPacket const&)            = delete;

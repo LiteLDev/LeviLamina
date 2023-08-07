@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/client/services/persona/ArmSize.h"
 #include "mc/deps/core/mce/Color.h"
-#include "mc/deps/core/mce/Image.h"
 #include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/deps/core_graphics/helpers/TintMapColor.h"
 #include "mc/deps/json/Value.h"
@@ -17,35 +16,35 @@
 class SerializedSkin {
 
 public:
-    enum TrustedSkinFlag : char {
+    enum class TrustedSkinFlag : char {
         Unset = 0x0,
         False = 0x1,
         True  = 0x2,
     };
 
-    std::string mId;
-    std::string mPlayFabId;
-    std::string mFullId;
-    std::string mResourcePatch;
-    std::string mDefaultGeometryName;
-    mce::Image mSkinImage;
-    mce::Image mCapeImage;
-    std::vector<AnimatedImageData> mSkinAnimatedImages;
-    Json::Value mGeometryData;
-    SemVersion mGeometryDataEngineVersion;
-    Json::Value mGeometryDataMutable;
-    std::string mAnimationData;
-    std::string mCapeId;
-    std::vector<SerializedPersonaPieceHandle> mPersonaPieces;
-    persona::ArmSize::Type mArmSizeType;
+    std::string                                          mId;
+    std::string                                          mPlayFabId;
+    std::string                                          mFullId;
+    std::string                                          mResourcePatch;
+    std::string                                          mDefaultGeometryName;
+    mce::Image                                           mSkinImage;
+    mce::Image                                           mCapeImage;
+    std::vector<AnimatedImageData>                       mSkinAnimatedImages;
+    Json::Value                                          mGeometryData;
+    SemVersion                                           mGeometryDataEngineVersion;
+    Json::Value                                          mGeometryDataMutable;
+    std::string                                          mAnimationData;
+    std::string                                          mCapeId;
+    std::vector<SerializedPersonaPieceHandle>            mPersonaPieces;
+    persona::ArmSize::Type                               mArmSizeType;
     std::unordered_map<persona::PieceType, TintMapColor> mPieceTintColors;
-    mce::Color mSkinColor;
-    TrustedSkinFlag mIsTrustedSkin;
-    bool mIsPremium;
-    bool mIsPersona;
-    bool mIsPersonaCapeOnClassicSkin;
-    bool mIsPrimaryUser;
-    bool mOverridesPlayerAppearance;
+    mce::Color                                           mSkinColor;
+    TrustedSkinFlag                                      mIsTrustedSkin;
+    bool                                                 mIsPremium;
+    bool                                                 mIsPersona;
+    bool                                                 mIsPersonaCapeOnClassicSkin;
+    bool                                                 mIsPrimaryUser;
+    bool                                                 mOverridesPlayerAppearance;
 
     // NOLINTBEGIN
     /**

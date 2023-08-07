@@ -10,10 +10,7 @@ namespace Json { class Value; }
 class ActorSpawnRuleBase {
 
 public:
-    // prevent constructor by default
-    ActorSpawnRuleBase& operator=(ActorSpawnRuleBase const&) = delete;
-    ActorSpawnRuleBase(ActorSpawnRuleBase const&)            = delete;
-    ActorSpawnRuleBase()                                     = delete;
+    std::unordered_map<std::string, int> mSpawnDelayStartMap; // this+0x8
 
 public:
     // NOLINTBEGIN

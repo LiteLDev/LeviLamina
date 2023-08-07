@@ -13,15 +13,10 @@ public:
     struct LightPair {
 
     public:
-        // prevent constructor by default
-        LightPair& operator=(LightPair const&) = delete;
-        LightPair(LightPair const&)            = delete;
-        LightPair()                            = delete;
+        unsigned char blockLight : 4;
+        unsigned char skyLight : 4;
     };
 
 public:
-    // prevent constructor by default
-    SubChunkBrightnessStorage& operator=(SubChunkBrightnessStorage const&) = delete;
-    SubChunkBrightnessStorage(SubChunkBrightnessStorage const&)            = delete;
-    SubChunkBrightnessStorage()                                            = delete;
+    std::array<LightPair, 2048> mLightValues; // this+0x0
 };

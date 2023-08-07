@@ -1,13 +1,28 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/EntityRegistryRefTraits.h"
+#include "mc/common/wrapper/WeakRefT.h"
+#include "mc/entity/gamerefs_entity/StackResultStorageEntity.h"
 
 class WeakStorageEntity {
 public:
     // WeakStorageEntity inner types define
-    enum class EmptyInit {};
+    enum class EmptyInit : int {
+        NoValue = 0,
+    };
 
-    enum class VariadicInit {};
+    enum class VariadicInit : int {
+        NonAmbiguous = 0,
+    };
+
+    WeakRefT<EntityRegistryRefTraits> mRegistry;
+    class EntityId                    mEntity;
+
+    template <class Entity, bool Unknown = false>
+    inline Entity* tryUnwrap() {
+        return StackResultStorageEntity(*this).tryUnwrap<Entity, Unknown>();
+    }
 
 public:
     // prevent constructor by default

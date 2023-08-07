@@ -8,9 +8,16 @@
 class RedstoneTorchCapacitor : public ::ProducerComponent {
 
 public:
-    // prevent constructor by default
-    RedstoneTorchCapacitor& operator=(RedstoneTorchCapacitor const&) = delete;
-    RedstoneTorchCapacitor(RedstoneTorchCapacitor const&)            = delete;
+    class State {
+        bool mOn;
+        bool mHalfFrame;
+        bool mChanged;
+    };
+    RedstoneTorchCapacitor*    mNextOrder;
+    int                        mSelfPowerCount;
+    State                      mState[2];
+    bool                       mCanReigniteFromBurnout;
+    const CircuitComponentType mCircuitComponentType = CircuitComponentType::RedstoneTorchCapacitor;
 
 public:
     // NOLINTBEGIN

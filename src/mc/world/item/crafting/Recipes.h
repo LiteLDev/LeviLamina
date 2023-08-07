@@ -1,6 +1,10 @@
 #pragma once
 
+#include <utility>
+
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/string/HashedString.h"
+#include "mc/world/item/crafting/RecipeIngredient.h"
 
 // auto generated inclusion list
 #include "mc/network/TypedServerNetId.h"
@@ -25,10 +29,10 @@ public:
     struct FurnaceRecipeKey {
 
     public:
-        // prevent constructor by default
-        FurnaceRecipeKey& operator=(FurnaceRecipeKey const&) = delete;
-        FurnaceRecipeKey(FurnaceRecipeKey const&)            = delete;
-        FurnaceRecipeKey()                                   = delete;
+        int          mID;
+        HashedString mTag;
+
+        inline FurnaceRecipeKey(int aux, HashedString tag) : mID(aux), mTag(std::move(tag)) {}
 
     public:
         // NOLINTBEGIN
@@ -42,6 +46,11 @@ public:
     struct NormalizedRectangularRecipeResults {
 
     public:
+        int         mWidth;
+        int         mHeight;
+        std::string mNormalizedResult;
+        std::string mWarning;
+
         // prevent constructor by default
         NormalizedRectangularRecipeResults& operator=(NormalizedRectangularRecipeResults const&) = delete;
         NormalizedRectangularRecipeResults(NormalizedRectangularRecipeResults const&)            = delete;
@@ -59,10 +68,16 @@ public:
     class Type {
 
     public:
-        // prevent constructor by default
-        Type& operator=(Type const&) = delete;
-        Type(Type const&)            = delete;
-        Type()                       = delete;
+        class Item const*  mItem;
+        class Block const* mBlock;
+        RecipeIngredient   mIngredient;
+        char               mC;
+
+        inline Type(std::string const& name, char label, int aux, unsigned short count)
+        : mIngredient(name, aux, count), mC(label) {
+            mItem  = mIngredient.getItem();
+            mBlock = mIngredient.getBlock();
+        }
 
     public:
         // NOLINTBEGIN

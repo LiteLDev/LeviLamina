@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/levelgen/structure/PackInstance.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
@@ -8,6 +9,9 @@
 class ResourcePackStack {
 
 public:
+    std::vector<class PackInstance>         mStack;            // this+0x8
+    std::unique_ptr<class PackSourceReport> mPackSourceReport; // this+0x20
+
     // prevent constructor by default
     ResourcePackStack& operator=(ResourcePackStack const&) = delete;
     ResourcePackStack(ResourcePackStack const&)            = delete;

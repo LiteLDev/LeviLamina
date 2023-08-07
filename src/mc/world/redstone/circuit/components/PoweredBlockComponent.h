@@ -8,10 +8,9 @@
 class PoweredBlockComponent : public ::BaseCircuitComponent {
 
 public:
-    // prevent constructor by default
-    PoweredBlockComponent& operator=(PoweredBlockComponent const&) = delete;
-    PoweredBlockComponent(PoweredBlockComponent const&)            = delete;
-    PoweredBlockComponent()                                        = delete;
+    bool                       mPromotedToProducer;
+    bool                       mAllowAsPowerSource;
+    const CircuitComponentType mCircuitComponentType = CircuitComponentType::PoweredBlockComponent;
 
 public:
     // NOLINTBEGIN

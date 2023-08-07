@@ -4,6 +4,7 @@
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/resources/Pack.h"
+#include "mc/resources/PackReport.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
@@ -22,7 +23,7 @@ public:
     bool                                                mError;                 // this+0x19
     gsl::not_null<Bedrock::NonOwnerPointer<class Pack>> mPack;                  // this+0x20
     std::unique_ptr<class PackAccessStrategy>           mSubpackAccessStrategy; // this+0x30
-    PackReport                                          mPackReport;            // this+0x38
+    class PackReport                                    mPackReport;            // this+0x38
     std::vector<std::unique_ptr<class Pack>>            mSubPacks;              // this+0x1E8
     std::vector<std::unique_ptr<class ResourcePack>>    mSubResourcePacks;      // this+0x200
     Core::PathBuffer<std::string>                       mIconPath;              // this+0x218

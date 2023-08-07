@@ -47,6 +47,8 @@ public:
     ServerNetworkHandler(ServerNetworkHandler const&)            = delete;
     ServerNetworkHandler()                                       = delete;
 
+#define ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKHANDLER
+
 public:
     // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKHANDLER

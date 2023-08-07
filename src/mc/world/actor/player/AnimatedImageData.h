@@ -1,18 +1,23 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/mce/Image.h"
+#include "mc/client/services/persona/AnimatedTextureType.h"
+#include "mc/client/services/persona/AnimationExpression.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace mce { struct Image; }
-namespace persona { enum class AnimatedTextureType; }
-namespace persona { enum class AnimationExpression; }
 // clang-format on
 
 class AnimatedImageData {
 
 public:
-    // prevent constructor by default
+    persona::AnimatedTextureType mType;
+    persona::AnimationExpression mAnimationExpression;
+    mce::Image                   mImage;
+    float                        mFrames;
+
     AnimatedImageData() = delete;
 
 public:

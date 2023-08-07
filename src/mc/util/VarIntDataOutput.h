@@ -1,14 +1,16 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/util/BytesDataOutput.h"
 
-class VarIntDataOutput {
+class VarIntDataOutput : public BytesDataOutput {
 
 public:
-    // prevent constructor by default
-    VarIntDataOutput& operator=(VarIntDataOutput const&) = delete;
-    VarIntDataOutput(VarIntDataOutput const&)            = delete;
-    VarIntDataOutput()                                   = delete;
+    class BinaryStream* mStream; // this+0x8
+
+    VarIntDataOutput(class BinaryStream* bs) : mStream(bs) {}
+
+    VarIntDataOutput() = delete;
 
 public:
     // NOLINTBEGIN

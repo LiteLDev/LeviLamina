@@ -5,10 +5,13 @@
 class SynchedActorDataEntityWrapper {
 
 public:
-    // prevent constructor by default
-    SynchedActorDataEntityWrapper& operator=(SynchedActorDataEntityWrapper const&) = delete;
-    SynchedActorDataEntityWrapper(SynchedActorDataEntityWrapper const&)            = delete;
-    SynchedActorDataEntityWrapper()                                                = delete;
+    int (**_vptr_SynchedActorDataEntityWrapper)(void);
+    gsl::not_null<class SynchedActorDataComponent*> mData;
+
+    template <typename T>
+    MCAPI void define(unsigned short, T const&);
+    template <typename T>
+    MCAPI void set(unsigned short, T const&);
 
 public:
     // NOLINTBEGIN

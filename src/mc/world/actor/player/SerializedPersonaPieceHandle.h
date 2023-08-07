@@ -1,19 +1,24 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/client/services/persona/PieceType.h"
+#include "mc/deps/core/mce/UUID.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace mce { class UUID; }
-namespace persona { enum class PieceType; }
 // clang-format on
 
 class SerializedPersonaPieceHandle {
 
 public:
-    // prevent constructor by default
-    SerializedPersonaPieceHandle(SerializedPersonaPieceHandle const&) = delete;
-    SerializedPersonaPieceHandle()                                    = delete;
+    std::string        mPieceId;
+    persona::PieceType mPieceType;
+    mce::UUID          mPackId;
+    bool               mIsDefaultPiece;
+    std::string        mProductId;
+
+    SerializedPersonaPieceHandle() = delete;
 
 public:
     // NOLINTBEGIN

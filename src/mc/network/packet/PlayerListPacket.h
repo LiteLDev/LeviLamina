@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/packet/PlayerListEntry.h"
+#include "mc/world/actor/player/PlayerListPacketType.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,9 +11,8 @@
 class PlayerListPacket : public ::Packet {
 
 public:
-    // prevent constructor by default
-    PlayerListPacket& operator=(PlayerListPacket const&) = delete;
-    PlayerListPacket(PlayerListPacket const&)            = delete;
+    std::vector<PlayerListEntry> mEntries;
+    PlayerListPacketType         mAction;
 
 public:
     // NOLINTBEGIN

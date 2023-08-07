@@ -1,15 +1,19 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/actor/ActorSpawnRuleBase.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
 // clang-format on
 
-class SpawnGroupRegistry {
+class SpawnGroupRegistry : public ActorSpawnRuleBase {
 
 public:
+    std::vector<std::unique_ptr<class SpawnGroupData>>     mSpawnGroupRegistry; // this+0x48
+    std::unordered_map<std::string, class SpawnGroupData*> mSpawnGroupLookupMap; // this+0x60
+
     // prevent constructor by default
     SpawnGroupRegistry& operator=(SpawnGroupRegistry const&) = delete;
     SpawnGroupRegistry(SpawnGroupRegistry const&)            = delete;

@@ -5,6 +5,8 @@
 class SimpleSparseContainer {
 
 public:
+#define ENABLE_VIRTUAL_FAKESYMBOL_SIMPLESPARSECONTAINER
+
     // prevent constructor by default
     SimpleSparseContainer& operator=(SimpleSparseContainer const&) = delete;
     SimpleSparseContainer(SimpleSparseContainer const&)            = delete;

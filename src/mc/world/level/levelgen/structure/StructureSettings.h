@@ -1,12 +1,39 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/AnimationMode.h"
+#include "mc/enums/Mirror.h"
+#include "mc/enums/Rotation.h"
+#include "mc/math/Vec3.h"
+#include "mc/world/ActorUniqueID.h"
+#include "mc/world/level/BlockPos.h"
 
 class StructureSettings {
 
 public:
-    // prevent constructor by default
-    StructureSettings(StructureSettings const&) = delete;
+    std::string   mPaletteName;                               // this+0x0
+    bool          mIgnoreEntities;                            // this+0x20
+    bool          mReloadActorEquipment;                      // this+0x21
+    bool          mIgnoreBlocks;                              // this+0x22
+    bool          mIsWaterLogged;                             // this+0x23
+    bool          mIgnoreJigsawBlocks;                        // this+0x24
+    bool          mAllowNonTickingPlayerAndTickingAreaChunks; // this+0x25
+    BlockPos      mStructureSize;                             // this+0x28
+    BlockPos      mStructureOffset;                           // this+0x34
+    Vec3          mPivot;                                     // this+0x40
+    ActorUniqueID mLastTouchedByPlayer;                       // this+0x50
+    Rotation      mRotation;                                  // this+0x58
+    Mirror        mMirror;                                    // this+0x59
+    AnimationMode mAnimationMode;                             // this+0x5A
+    float         mAnimationSeconds;                          // this+0x5C
+    float         mIntegrityValue;                            // this+0x60
+    unsigned int  mIntegritySeed;                             // this+0x64
+
+    inline StructureSettings(BlockPos const& size, bool ignoreEntities, bool ignoreBlocks) : StructureSettings() {
+        setIgnoreBlocks(ignoreBlocks);
+        setIgnoreEntities(ignoreEntities);
+        setStructureSize(size);
+    };
 
 public:
     // NOLINTBEGIN

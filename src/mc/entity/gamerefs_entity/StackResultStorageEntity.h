@@ -1,10 +1,21 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/EntityContext.h"
 
 class StackResultStorageEntity {
 
 public:
+    std::optional<EntityContext> mContext;
+
+    template <class Entity, bool Unknown = false>
+    inline Entity* tryUnwrap() {
+        if (_hasValue()) {
+            return Entity::tryGetFromEntity(_getStackRef(), Unknown);
+        }
+        return nullptr;
+    }
+
     // prevent constructor by default
     StackResultStorageEntity& operator=(StackResultStorageEntity const&) = delete;
     StackResultStorageEntity(StackResultStorageEntity const&)            = delete;

@@ -8,9 +8,21 @@
 class RepeaterCapacitor : public ::SidePoweredComponent {
 
 public:
-    // prevent constructor by default
-    RepeaterCapacitor& operator=(RepeaterCapacitor const&) = delete;
-    RepeaterCapacitor(RepeaterCapacitor const&)            = delete;
+    enum class States {
+        Off       = 0x0,
+        On        = 0x1,
+        OffLocked = 0x2,
+        Onlocked  = 0x3,
+    };
+    States                     mOnStates[5];
+    int                        mInsertAt;
+    bool                       mPowered;
+    bool                       mNextPower;
+    bool                       mLocked;
+    int                        mPulseCount;
+    bool                       mPulse;
+    bool                       mNextPulse;
+    const CircuitComponentType mCircuitComponentType = CircuitComponentType::RepeaterCapacitor;
 
 public:
     // NOLINTBEGIN

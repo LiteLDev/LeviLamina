@@ -1,6 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/mce/UUID.h"
+#include "mc/enums/BuildPlatform.h"
+#include "mc/world/ActorUniqueID.h"
+#include "mc/world/actor/player/SerializedSkin.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -13,9 +17,15 @@ namespace mce { class UUID; }
 class PlayerListEntry {
 
 public:
-    // prevent constructor by default
-    PlayerListEntry& operator=(PlayerListEntry const&) = delete;
-    PlayerListEntry(PlayerListEntry const&)            = delete;
+    ActorUniqueID  mId;
+    mce::UUID      mUUID;
+    std::string    mName;
+    std::string    mXUID;
+    std::string    mPlatformOnlineId;
+    BuildPlatform  mBuildPlatform;
+    SerializedSkin mSkin;
+    bool           mIsTeacher;
+    bool           mIsHost;
 
 public:
     // NOLINTBEGIN

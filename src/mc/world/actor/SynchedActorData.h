@@ -5,9 +5,16 @@
 class SynchedActorData {
 
 public:
-    // prevent constructor by default
-    SynchedActorData& operator=(SynchedActorData const&) = delete;
-    SynchedActorData(SynchedActorData const&)            = delete;
+    int (**_vptr_SynchedActorData)(void);
+
+    std::vector<std::unique_ptr<class DataItem>> mItemsArray; // this+0x8
+    unsigned short                               minIdxDirty; // this+0x20
+    unsigned short                               maxIdxDirty; // this+0x22
+
+    template <typename T>
+    MCAPI void define(unsigned short, T const&);
+    template <typename T>
+    MCAPI void set(unsigned short, T const&);
 
 public:
     // NOLINTBEGIN

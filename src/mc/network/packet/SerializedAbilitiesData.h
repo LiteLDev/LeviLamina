@@ -25,11 +25,11 @@ public:
     struct SerializedLayer {
 
     public:
-        SerializedAbilitiesLayer mSerializedLayer;
-        uint32_t                 mAbilitiesSet;
-        uint32_t                 mAbilityValues;
-        float                    mFlySpeed;
-        float                    mWalkSpeed;
+        SerializedAbilitiesLayer mSerializedLayer; // this+0x0
+        uint32_t                 mAbilitiesSet;    // this+0x4
+        uint32_t                 mAbilityValues;   // this+0x8
+        float                    mFlySpeed;        // this+0xC
+        float                    mWalkSpeed;       // this+0x10
         // prevent constructor by default
         SerializedLayer& operator=(SerializedLayer const&) = delete;
         SerializedLayer(SerializedLayer const&)            = delete;
@@ -37,10 +37,10 @@ public:
     };
 
 public:
-    ActorUniqueID                mTargetPlayer;
-    CommandPermissionLevel       mCommandPermissions;
-    PlayerPermissionLevel        mPlayerPermissions;
-    std::vector<SerializedLayer> mLayers;
+    ActorUniqueID                mTargetPlayer;       // this+0x0
+    CommandPermissionLevel       mCommandPermissions; // this+0x8
+    PlayerPermissionLevel        mPlayerPermissions;  // this+0x9
+    std::vector<SerializedLayer> mLayers;             // this+0x10
     // prevent constructor by default
     SerializedAbilitiesData& operator=(SerializedAbilitiesData const&) = delete;
     SerializedAbilitiesData(SerializedAbilitiesData const&)            = delete;

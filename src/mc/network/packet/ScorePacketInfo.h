@@ -9,17 +9,15 @@
 struct ScorePacketInfo {
 
 public:
-    ScoreboardId             mScoreboardId;
-    std::string              mObjectiveName;
-    int                      mScoreValue;
-    IdentityDefinition::Type mIdentityType;
-    PlayerScoreboardId       mPlayerId;
-    ActorUniqueID            mEntityId;
-    std::string              mFakePlayerName;
-    // prevent constructor by default
-    ScorePacketInfo& operator=(ScorePacketInfo const&) = delete;
-    ScorePacketInfo(ScorePacketInfo const&)            = delete;
-    ScorePacketInfo()                                  = delete;
+    ScoreboardId             mScoreboardId;   // this+0x0
+    std::string              mObjectiveName;  // this+0x10
+    int                      mScoreValue;     // this+0x30
+    IdentityDefinition::Type mIdentityType;   // this+0x34
+    PlayerScoreboardId       mPlayerId;       // this+0x38
+    ActorUniqueID            mEntityId;       // this+0x40
+    std::string              mFakePlayerName; // this+0x48
+
+    ScorePacketInfo() = delete;
 
 public:
     // NOLINTBEGIN

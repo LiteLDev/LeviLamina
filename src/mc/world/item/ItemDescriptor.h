@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/item/ItemTag.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/WeakPtr.h"
@@ -31,10 +32,9 @@ public:
     struct BaseDescriptor {
 
     public:
-        // prevent constructor by default
-        BaseDescriptor& operator=(BaseDescriptor const&) = delete;
-        BaseDescriptor(BaseDescriptor const&)            = delete;
-        BaseDescriptor()                                 = delete;
+        ItemTag mItemTag;
+
+        BaseDescriptor() = delete;
 
     public:
         // NOLINTBEGIN

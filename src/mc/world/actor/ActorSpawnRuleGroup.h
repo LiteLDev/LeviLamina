@@ -1,19 +1,17 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/actor/ActorSpawnRuleBase.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
 // clang-format on
 
-class ActorSpawnRuleGroup {
+class ActorSpawnRuleGroup : public ActorSpawnRuleBase {
 
 public:
-    // prevent constructor by default
-    ActorSpawnRuleGroup& operator=(ActorSpawnRuleGroup const&) = delete;
-    ActorSpawnRuleGroup(ActorSpawnRuleGroup const&)            = delete;
-    ActorSpawnRuleGroup()                                      = delete;
+    std::unordered_map<std::string, int> mCategoryLookup; // this+0x48
 
 public:
     // NOLINTBEGIN

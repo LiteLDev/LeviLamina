@@ -14,7 +14,8 @@ enum class CircuitComponentType : int64_t {
     TransporterComponent  = 1ull << 20,
     CapacitorComponent    = 1ull << 21,
 
-    PistonConsumer         = 1 | ConsumerComponent,
+    PistonConsumer = 1 | ConsumerComponent,
+
     ComparatorCapacitor    = 1 | CapacitorComponent,
     PulseCapacitor         = 2 | CapacitorComponent,
     RedstoneTorchCapacitor = 3 | CapacitorComponent,

@@ -5,16 +5,15 @@
 class RelativeFloat {
 
 public:
-    // prevent constructor by default
-    RelativeFloat& operator=(RelativeFloat const&) = delete;
-    RelativeFloat(RelativeFloat const&)            = delete;
+    float mOffset;
+    bool  mRelative;
 
 public:
     // NOLINTBEGIN
     /**
      * @symbol ??0RelativeFloat\@\@QEAA\@M_N\@Z
      */
-    MCAPI RelativeFloat(float, bool);
+    MCAPI RelativeFloat(float value, bool isRelative = true);
     /**
      * @symbol ??0RelativeFloat\@\@QEAA\@XZ
      */
@@ -22,7 +21,7 @@ public:
     /**
      * @symbol ?getValue\@RelativeFloat\@\@QEBAMM\@Z
      */
-    MCAPI float getValue(float) const;
+    MCAPI float getValue(float center = 0) const;
     /**
      * @symbol ?isRelative\@RelativeFloat\@\@QEBA_NXZ
      */

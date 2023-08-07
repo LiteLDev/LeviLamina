@@ -1,14 +1,15 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/biome/MobSpawnRules.h"
 
 class SpawnGroupData {
 
 public:
-    // prevent constructor by default
-    SpawnGroupData& operator=(SpawnGroupData const&) = delete;
-    SpawnGroupData(SpawnGroupData const&)            = delete;
-    SpawnGroupData()                                 = delete;
+    std::string                      mIdentifier;
+    std::vector<class MobSpawnRules> mSpawnRules;
+
+    SpawnGroupData() = delete;
 
 public:
     // NOLINTBEGIN

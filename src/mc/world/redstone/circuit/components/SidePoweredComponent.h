@@ -9,10 +9,7 @@
 class SidePoweredComponent : public ::ProducerComponent {
 
 public:
-    // prevent constructor by default
-    SidePoweredComponent& operator=(SidePoweredComponent const&) = delete;
-    SidePoweredComponent(SidePoweredComponent const&)            = delete;
-    SidePoweredComponent()                                       = delete;
+    CircuitComponentList mSideComponents;
 
 public:
     // NOLINTBEGIN

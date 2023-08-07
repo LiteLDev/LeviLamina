@@ -8,9 +8,8 @@
 class TransporterComponent : public ::BaseCircuitComponent {
 
 public:
-    // prevent constructor by default
-    TransporterComponent& operator=(TransporterComponent const&) = delete;
-    TransporterComponent(TransporterComponent const&)            = delete;
+    int                        mNextStrength;
+    const CircuitComponentType mCircuitComponentType = CircuitComponentType::TransporterComponent;
 
 public:
     // NOLINTBEGIN

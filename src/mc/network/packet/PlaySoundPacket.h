@@ -10,10 +10,10 @@
 class PlaySoundPacket : public ::Packet {
 
 public:
-    std::string mName;
+    std::string          mName;
     NetworkBlockPosition mPos;
-    float mVolume;
-    float mPitch;
+    float                mVolume;
+    float                mPitch;
     // prevent constructor by default
     PlaySoundPacket& operator=(PlaySoundPacket const&) = delete;
     PlaySoundPacket(PlaySoundPacket const&)            = delete;

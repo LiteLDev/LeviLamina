@@ -15,10 +15,8 @@ namespace ScriptModuleMinecraft {
 struct ScriptNavigationResult {
 
 public:
-    // prevent constructor by default
-    ScriptNavigationResult& operator=(ScriptNavigationResult const&) = delete;
-    ScriptNavigationResult(ScriptNavigationResult const&)            = delete;
-    ScriptNavigationResult()                                         = delete;
+    bool                        mIsFullPath; // this+0x0
+    std::vector<class BlockPos> mPath;       // this+0x8
 
 public:
     // NOLINTBEGIN

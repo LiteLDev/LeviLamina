@@ -1,16 +1,28 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/item/crafting/RecipeIngredient.h"
 
 class RecipeUnlockingRequirement {
 public:
     // RecipeUnlockingRequirement inner types define
-    enum class UnlockingContext {};
+    enum class UnlockingContext : int {
+        None               = 0x0,
+        AlwaysUnlocked     = 0x1,
+        PlayerInWater      = 0x2,
+        PlayerHasManyItems = 0x3,
+    };
+
+    enum class UnlockingRule : int {
+        Invalid       = 0x0,
+        ByIngredients = 0x1,
+        ByContext     = 0x2,
+    };
 
 public:
-    // prevent constructor by default
-    RecipeUnlockingRequirement& operator=(RecipeUnlockingRequirement const&) = delete;
-    RecipeUnlockingRequirement(RecipeUnlockingRequirement const&)            = delete;
+    RecipeUnlockingRequirement::UnlockingRule    mRule;
+    RecipeUnlockingRequirement::UnlockingContext mContext;
+    std::vector<class RecipeIngredient>          mValidIngredients;
 
 public:
     // NOLINTBEGIN

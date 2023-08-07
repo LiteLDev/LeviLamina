@@ -1,15 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/util/IDataOutput.h"
 
-class BytesDataOutput {
+class BytesDataOutput : public IDataOutput {
 
 public:
-    // prevent constructor by default
-    BytesDataOutput& operator=(BytesDataOutput const&) = delete;
-    BytesDataOutput(BytesDataOutput const&)            = delete;
-    BytesDataOutput()                                  = delete;
-
+#define ENABLE_VIRTUAL_FAKESYMBOL_BYTESDATAOUTPUT
 public:
     // NOLINTBEGIN
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BYTESDATAOUTPUT
