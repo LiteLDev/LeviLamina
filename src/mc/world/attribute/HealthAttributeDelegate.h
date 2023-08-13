@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class HealthAttributeDelegate {
+// auto generated inclusion list
+#include "mc/world/attribute/AttributeInstanceDelegate.h"
+
+class HealthAttributeDelegate : public ::AttributeInstanceDelegate {
 
 public:
     // prevent constructor by default
@@ -22,11 +25,6 @@ public:
      * @symbol ?tick\@HealthAttributeDelegate\@\@UEAAXXZ
      */
     virtual void tick();
-    /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
     /**
      * @vftbl 3
      * @symbol ?willChange\@HealthAttributeDelegate\@\@UEAA_NMMAEBVAttributeBuff\@\@\@Z

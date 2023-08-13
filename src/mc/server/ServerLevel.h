@@ -9,13 +9,14 @@
 #include "mc/common/wrapper/SharePtrRefTraits.h"
 #include "mc/common/wrapper/WeakRefT.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/world/level/Level.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace PositionTrackingDB { class PositionTrackingDBServer; }
 // clang-format on
 
-class ServerLevel {
+class ServerLevel : public ::Level {
 
 public:
     // prevent constructor by default

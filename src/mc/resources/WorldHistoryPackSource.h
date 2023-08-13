@@ -4,8 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/resources/PackSource.h"
 
-class WorldHistoryPackSource {
+class WorldHistoryPackSource : public ::PackSource {
 
 public:
     // prevent constructor by default
@@ -22,14 +23,14 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?forEachPackConst\@WorldHistoryPackSource\@\@UEBAXV?$function\@$$A6AXAEBVPack\@\@\@Z\@std\@\@\@Z
      */
-    virtual void __unk_vfn_1();
+    virtual void forEachPackConst(std::function<void(class Pack const&)>) const;
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?forEachPack\@WorldHistoryPackSource\@\@UEAAXV?$function\@$$A6AXAEAVPack\@\@\@Z\@std\@\@\@Z
      */
-    virtual void __unk_vfn_2();
+    virtual void forEachPack(std::function<void(class Pack&)>);
     /**
      * @vftbl 3
      * @symbol ?getPackOrigin\@WorldHistoryPackSource\@\@UEBA?AW4PackOrigin\@\@XZ
@@ -47,16 +48,6 @@ public:
      */
     virtual class PackSourceReport
     load(class IPackManifestFactory&, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>> const&);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_WORLDHISTORYPACKSOURCE
-    /**
-     * @symbol ?forEachPack\@WorldHistoryPackSource\@\@UEAAXV?$function\@$$A6AXAEAVPack\@\@\@Z\@std\@\@\@Z
-     */
-    MCVAPI void forEachPack(std::function<void(class Pack&)>);
-    /**
-     * @symbol ?forEachPackConst\@WorldHistoryPackSource\@\@UEBAXV?$function\@$$A6AXAEBVPack\@\@\@Z\@std\@\@\@Z
-     */
-    MCVAPI void forEachPackConst(std::function<void(class Pack const&)>) const;
-#endif
     // NOLINTEND
 
     // private:

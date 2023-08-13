@@ -39,22 +39,22 @@ public:
     virtual void deleteChildren();
     /**
      * @vftbl 2
-     * @symbol ?write\@StringTag\@\@UEBAXAEAVIDataOutput\@\@\@Z
+     * @symbol ?write\@DoubleTag\@\@UEBAXAEAVIDataOutput\@\@\@Z
      */
     virtual void write(class IDataOutput&) const = 0;
     /**
      * @vftbl 3
-     * @symbol ?load\@StringTag\@\@UEAAXAEAVIDataInput\@\@\@Z
+     * @symbol ?load\@DoubleTag\@\@UEAAXAEAVIDataInput\@\@\@Z
      */
     virtual void load(class IDataInput&) = 0;
     /**
      * @vftbl 4
-     * @symbol ?toString\@StringTag\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     * @symbol ?toString\@DoubleTag\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string toString() const = 0;
     /**
      * @vftbl 5
-     * @symbol ?getId\@StringTag\@\@UEBA?AW4Type\@Tag\@\@XZ
+     * @symbol ?getId\@DoubleTag\@\@UEBA?AW4Type\@Tag\@\@XZ
      */
     virtual enum class Tag::Type getId() const = 0;
     /**
@@ -75,12 +75,12 @@ public:
     virtual void print(std::string const&, class PrintStream&) const;
     /**
      * @vftbl 9
-     * @symbol ?copy\@StringTag\@\@UEBA?AV?$unique_ptr\@VTag\@\@U?$default_delete\@VTag\@\@\@std\@\@\@std\@\@XZ
+     * @symbol ?copy\@DoubleTag\@\@UEBA?AV?$unique_ptr\@VTag\@\@U?$default_delete\@VTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class Tag> copy() const = 0;
     /**
      * @vftbl 10
-     * @symbol ?hash\@StringTag\@\@UEBA_KXZ
+     * @symbol ?hash\@DoubleTag\@\@UEBA_KXZ
      */
     virtual uint64_t hash() const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAG

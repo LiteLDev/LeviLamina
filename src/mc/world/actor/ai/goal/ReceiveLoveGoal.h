@@ -2,7 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ReceiveLoveGoal {
+// auto generated inclusion list
+#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ai/goal/Goal.h"
+
+class ReceiveLoveGoal : public ::Goal {
 
 public:
     // prevent constructor by default
@@ -19,29 +23,14 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?canUse\@ReceiveLoveGoal\@\@UEAA_NXZ
      */
-    virtual void __unk_vfn_1();
+    virtual bool canUse();
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?canContinueToUse\@ReceiveLoveGoal\@\@UEAA_NXZ
      */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4();
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
-    virtual void __unk_vfn_5();
+    virtual bool canContinueToUse();
     /**
      * @vftbl 6
      * @symbol ?tick\@ReceiveLoveGoal\@\@UEAAXXZ
@@ -53,16 +42,6 @@ public:
      * ?appendDebugInfo\@ReceiveLoveGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string&) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RECEIVELOVEGOAL
-    /**
-     * @symbol ?canContinueToUse\@ReceiveLoveGoal\@\@UEAA_NXZ
-     */
-    MCVAPI bool canContinueToUse();
-    /**
-     * @symbol ?canUse\@ReceiveLoveGoal\@\@UEAA_NXZ
-     */
-    MCVAPI bool canUse();
-#endif
     /**
      * @symbol ??0ReceiveLoveGoal\@\@QEAA\@AEAVVillagerBase\@\@\@Z
      */

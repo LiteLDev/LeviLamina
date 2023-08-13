@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class AgentBodyControl {
+// auto generated inclusion list
+#include "mc/world/actor/BodyControl.h"
+
+class AgentBodyControl : public ::BodyControl {
 
 public:
     // prevent constructor by default

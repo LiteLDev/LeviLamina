@@ -20,13 +20,13 @@ public:
      */
     MCAPI ScriptActorHurtAfterEvent(struct ScriptModuleMinecraft::ScriptActorHurtAfterEvent const&);
     /**
-     * @symbol ??0ScriptActorHurtAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
-     */
-    MCAPI ScriptActorHurtAfterEvent();
-    /**
      * @symbol ??0ScriptActorHurtAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@$$QEAU01\@\@Z
      */
     MCAPI ScriptActorHurtAfterEvent(struct ScriptModuleMinecraft::ScriptActorHurtAfterEvent&&);
+    /**
+     * @symbol ??0ScriptActorHurtAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
+     */
+    MCAPI ScriptActorHurtAfterEvent();
     /**
      * @symbol ??4ScriptActorHurtAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */

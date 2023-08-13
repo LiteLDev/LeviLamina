@@ -4,8 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
+#include "mc/resources/interface/IPackManifestFactory.h"
 
-class PackManifestFactory {
+class PackManifestFactory : public ::IPackManifestFactory {
 
 public:
     // prevent constructor by default

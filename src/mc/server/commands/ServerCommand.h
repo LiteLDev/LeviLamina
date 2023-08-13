@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/Command.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Safety { enum class TextFilteringEvent; }
 // clang-format on
 
-class ServerCommand {
+class ServerCommand : public ::Command {
 
 public:
     // prevent constructor by default

@@ -89,7 +89,7 @@ public:
     /**
      * @symbol ?Schedule\@LevelDbEnv\@\@UEAAXP6AXPEAX\@Z0\@Z
      */
-    MCVAPI void Schedule(void (*)(void*), void*);
+    MCVAPI void Schedule(void(__cdecl*)(void*), void*);
     /**
      * @symbol ?SleepForMicroseconds\@LevelDbEnv\@\@UEAAXH\@Z
      */
@@ -97,7 +97,7 @@ public:
     /**
      * @symbol ?StartThread\@LevelDbEnv\@\@UEAAXP6AXPEAX\@Z0\@Z
      */
-    MCVAPI void StartThread(void (*)(void*), void*);
+    MCVAPI void StartThread(void(__cdecl*)(void*), void*);
     /**
      * @symbol ?UnlockFile\@LevelDbEnv\@\@UEAA?AVStatus\@leveldb\@\@PEAVFileLock\@3\@\@Z
      */

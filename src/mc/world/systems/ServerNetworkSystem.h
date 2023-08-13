@@ -7,7 +7,7 @@
 #include "mc/services/ServiceReference.h"
 #include "mc/world/systems/NetworkSystem.h"
 
-class ServerNetworkSystem {
+class ServerNetworkSystem : public ::NetworkSystem {
 
 public:
     // prevent constructor by default

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class GameEventMovementTrackingSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class GameEventMovementTrackingSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

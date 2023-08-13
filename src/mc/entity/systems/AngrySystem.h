@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class AngrySystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class AngrySystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

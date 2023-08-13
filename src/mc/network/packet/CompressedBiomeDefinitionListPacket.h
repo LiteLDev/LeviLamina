@@ -49,12 +49,12 @@ public:
     MCVAPI ~CompressedBiomeDefinitionListPacket();
 #endif
     /**
-     * @symbol ??0CompressedBiomeDefinitionListPacket\@\@QEAA\@VCompoundTag\@\@\@Z
-     */
-    MCAPI CompressedBiomeDefinitionListPacket(class CompoundTag);
-    /**
      * @symbol ??0CompressedBiomeDefinitionListPacket\@\@QEAA\@XZ
      */
     MCAPI CompressedBiomeDefinitionListPacket();
+    /**
+     * @symbol ??0CompressedBiomeDefinitionListPacket\@\@QEAA\@VCompoundTag\@\@\@Z
+     */
+    MCAPI CompressedBiomeDefinitionListPacket(class CompoundTag);
     // NOLINTEND
 };

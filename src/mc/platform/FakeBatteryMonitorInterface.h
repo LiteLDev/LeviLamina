@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class FakeBatteryMonitorInterface {
+// auto generated inclusion list
+#include "mc/platform/battery/BatteryMonitorInterface.h"
+
+class FakeBatteryMonitorInterface : public ::BatteryMonitorInterface {
 
 public:
     // prevent constructor by default

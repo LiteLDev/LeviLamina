@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ContainerManagerModel {
+// auto generated inclusion list
+#include "mc/world/containers/managers/IContainerManager.h"
+
+class ContainerManagerModel : public ::IContainerManager {
 
 public:
     // prevent constructor by default
@@ -43,32 +46,6 @@ public:
      */
     virtual void serverInitItemStackIds();
     /**
-     * @vftbl 6
-     * @symbol
-     * ?getItemCopies\@FurnaceContainerManagerModel\@\@UEBA?AV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@XZ
-     */
-    virtual std::vector<class ItemStack> getItemCopies() const = 0;
-    /**
-     * @vftbl 7
-     * @symbol ?setSlot\@FurnaceContainerManagerModel\@\@UEAAXHAEBVItemStack\@\@_N\@Z
-     */
-    virtual void setSlot(int, class ItemStack const&, bool) = 0;
-    /**
-     * @vftbl 8
-     * @symbol ?getSlot\@FurnaceContainerManagerModel\@\@UEBAAEBVItemStack\@\@H\@Z
-     */
-    virtual class ItemStack const& getSlot(int) const = 0;
-    /**
-     * @vftbl 9
-     * @symbol ?setData\@ElementConstructorContainerManagerModel\@\@UEAAXHH\@Z
-     */
-    virtual void setData(int, int) = 0;
-    /**
-     * @vftbl 10
-     * @symbol ?broadcastChanges\@FurnaceContainerManagerModel\@\@UEAAXXZ
-     */
-    virtual void broadcastChanges() = 0;
-    /**
      * @vftbl 11
      * @symbol ?tick\@ContainerManagerModel\@\@MEAA_NXZ
      */
@@ -100,7 +77,7 @@ public:
     virtual bool isValid(float);
     /**
      * @vftbl 17
-     * @symbol ?_postInit\@DispenserContainerManagerModel\@\@MEAA?AVContainerScreenContext\@\@XZ
+     * @symbol ?_postInit\@HorseContainerManagerModel\@\@MEAA?AVContainerScreenContext\@\@XZ
      */
     virtual class ContainerScreenContext _postInit() = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CONTAINERMANAGERMODEL

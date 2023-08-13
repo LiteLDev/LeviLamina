@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class LootItemActorHasVariantCondition {
+// auto generated inclusion list
+#include "mc/world/level/storage/loot/predicates/LootItemCondition.h"
+
+class LootItemActorHasVariantCondition : public ::LootItemCondition {
 
 public:
     // prevent constructor by default

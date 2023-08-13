@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/gametest/framework/IGameTestListener.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace gametest { class BaseGameTestInstance; }
@@ -16,7 +19,7 @@ public:
     // clang-format on
 
     // GameTestNetworkAdapter inner types define
-    class GameTestNetworkListener {
+    class GameTestNetworkListener : public ::gametest::IGameTestListener {
 
     public:
         // prevent constructor by default

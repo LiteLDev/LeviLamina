@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class DamageOverTimeSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class DamageOverTimeSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

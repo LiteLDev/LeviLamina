@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class TickWorldDescription {
+// auto generated inclusion list
+#include "mc/world/actor/ActorComponentDescription.h"
+
+class TickWorldDescription : public ::ActorComponentDescription {
 
 public:
     // prevent constructor by default

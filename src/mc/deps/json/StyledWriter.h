@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
 #include "mc/deps/json/Writer.h"
 
 // auto generated forward declare list
@@ -10,7 +12,7 @@ namespace Json { class Value; }
 
 namespace Json {
 
-class StyledWriter : public Writer {
+class StyledWriter : public ::Json::Writer {
 
 public:
     using ChildValues = std::vector<std::string>;

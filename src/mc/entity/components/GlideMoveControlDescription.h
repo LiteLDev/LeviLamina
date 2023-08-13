@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class GlideMoveControlDescription {
+// auto generated inclusion list
+#include "mc/entity/components/MoveControlDescription.h"
+
+class GlideMoveControlDescription : public ::MoveControlDescription {
 
 public:
     // prevent constructor by default

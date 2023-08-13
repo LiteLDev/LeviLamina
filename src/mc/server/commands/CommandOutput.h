@@ -12,13 +12,13 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0CommandOutput\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI CommandOutput(class CommandOutput const&);
-    /**
      * @symbol ??0CommandOutput\@\@QEAA\@W4CommandOutputType\@\@\@Z
      */
     MCAPI CommandOutput(enum class CommandOutputType);
+    /**
+     * @symbol ??0CommandOutput\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI CommandOutput(class CommandOutput const&);
     /**
      * @symbol
      * ?addToResultList\@CommandOutput\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVActor\@\@\@Z

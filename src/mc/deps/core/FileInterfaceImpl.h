@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/IFile.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Result; }
@@ -9,7 +12,7 @@ namespace Core { class Result; }
 
 namespace Core {
 
-class FileInterfaceImpl {
+class FileInterfaceImpl : public ::Core::IFile {
 
 public:
     // prevent constructor by default

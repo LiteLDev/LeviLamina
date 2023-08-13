@@ -97,6 +97,7 @@ public:
 
     inline explicit operator std::string_view() const { return std::string_view(str); }
 
+public:
     // NOLINTBEGIN
     /**
      * @symbol ?bindType\@HashedString\@\@SAXXZ

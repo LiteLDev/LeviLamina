@@ -82,9 +82,9 @@ public:
         virtual void __unk_vfn_0();
         /**
          * @vftbl 1
-         * @symbol __unk_vfn_1
+         * @symbol ?onLevelTickEnd\@ScriptDeferredEventListener\@\@UEAAXXZ
          */
-        virtual void __unk_vfn_1();
+        virtual void onLevelTickEnd();
         /**
          * @vftbl 2
          * @symbol __unk_vfn_2
@@ -101,6 +101,18 @@ public:
          * @symbol __unk_vfn_4
          */
         virtual void __unk_vfn_4();
+        /**
+         * @vftbl 5
+         * @symbol
+         * ?onPreFlushAfterEvents\@?$IScriptScriptDeferredEventListener\@VScriptWorldAfterEvents\@ScriptModuleMinecraft\@\@\@ScriptModuleMinecraft\@\@UEAAXXZ
+         */
+        virtual void onPreFlushAfterEvents();
+        /**
+         * @vftbl 6
+         * @symbol
+         * ?onPostFlushAfterEvents\@?$IScriptScriptDeferredEventListener\@VScriptWorldAfterEvents\@ScriptModuleMinecraft\@\@\@ScriptModuleMinecraft\@\@UEAAXXZ
+         */
+        virtual void onPostFlushAfterEvents();
         // NOLINTEND
     };
 
@@ -405,14 +417,14 @@ public:
     MCVAPI ~ScriptWorldAfterEvents();
 #endif
     /**
+     * @symbol ??0ScriptWorldAfterEvents\@ScriptModuleMinecraft\@\@QEAA\@$$QEAV01\@\@Z
+     */
+    MCAPI ScriptWorldAfterEvents(class ScriptModuleMinecraft::ScriptWorldAfterEvents&&);
+    /**
      * @symbol
      * ??0ScriptWorldAfterEvents\@ScriptModuleMinecraft\@\@QEAA\@AEBVWeakLifetimeScope\@Scripting\@\@V?$not_null\@PEAVLevel\@\@\@gsl\@\@\@Z
      */
     MCAPI ScriptWorldAfterEvents(class Scripting::WeakLifetimeScope const&, class gsl::not_null<class Level*>);
-    /**
-     * @symbol ??0ScriptWorldAfterEvents\@ScriptModuleMinecraft\@\@QEAA\@$$QEAV01\@\@Z
-     */
-    MCAPI ScriptWorldAfterEvents(class ScriptModuleMinecraft::ScriptWorldAfterEvents&&);
     /**
      * @symbol ??4ScriptWorldAfterEvents\@ScriptModuleMinecraft\@\@QEAAAEAV01\@$$QEAV01\@\@Z
      */

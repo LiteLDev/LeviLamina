@@ -39,13 +39,13 @@ public:
         enum class SolidityCheckType
     );
     /**
-     * @symbol ?getPosTowards\@RandomPos\@\@SA_NAEAVVec3\@\@AEAVMob\@\@HHAEBV2\@\@Z
-     */
-    MCAPI static bool getPosTowards(class Vec3&, class Mob&, int, int, class Vec3 const&);
-    /**
      * @symbol ?getPosTowards\@RandomPos\@\@SA_NAEAVRandom\@\@AEAVVec3\@\@AEAVMob\@\@HHAEBV3\@\@Z
      */
     MCAPI static bool getPosTowards(class Random&, class Vec3&, class Mob&, int, int, class Vec3 const&);
+    /**
+     * @symbol ?getPosTowards\@RandomPos\@\@SA_NAEAVVec3\@\@AEAVMob\@\@HHAEBV2\@\@Z
+     */
+    MCAPI static bool getPosTowards(class Vec3&, class Mob&, int, int, class Vec3 const&);
     /**
      * @symbol ?getSpawnPos\@RandomPos\@\@SA_NAEAVBlockSource\@\@AEAVRandom\@\@AEAVVec3\@\@HHH\@Z
      */
@@ -87,14 +87,14 @@ public:
         enum class SolidityCheckType
     );
     /**
+     * @symbol ?snapToGround\@RandomPos\@\@CA_NAEAVBlockPos\@\@HHHV?$function\@$$A6A_NAEAVBlockPos\@\@\@Z\@std\@\@\@Z
+     */
+    MCAPI static bool snapToGround(class BlockPos&, int, int, int, std::function<bool(class BlockPos&)>);
+    /**
      * @symbol ?snapToGround\@RandomPos\@\@CA_NAEAVBlockPos\@\@AEAVMob\@\@HAEBUIntRange\@\@W4SolidityCheckType\@\@\@Z
      */
     MCAPI static bool
     snapToGround(class BlockPos&, class Mob&, int, struct IntRange const&, enum class SolidityCheckType);
-    /**
-     * @symbol ?snapToGround\@RandomPos\@\@CA_NAEAVBlockPos\@\@HHHV?$function\@$$A6A_NAEAVBlockPos\@\@\@Z\@std\@\@\@Z
-     */
-    MCAPI static bool snapToGround(class BlockPos&, int, int, int, std::function<bool(class BlockPos&)>);
     /**
      * @symbol ?snapToGround\@RandomPos\@\@CA_NAEAVBlockPos\@\@HHV?$function\@$$A6A_NAEAVBlockPos\@\@\@Z\@std\@\@\@Z
      */

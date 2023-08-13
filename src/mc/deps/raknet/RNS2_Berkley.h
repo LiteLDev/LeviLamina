@@ -2,17 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/raknet/IRNS2_Berkley.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace RakNet { enum class RNS2BindResult; }
 namespace RakNet { struct RNS2_BerkleyBindParameters; }
-namespace RakNet { struct RNS2_SendParameters; }
 namespace RakNet { struct SystemAddress; }
 // clang-format on
 
 namespace RakNet {
 
-class RNS2_Berkley {
+class RNS2_Berkley : public ::RakNet::IRNS2_Berkley {
 
 public:
     // prevent constructor by default
@@ -26,23 +28,17 @@ public:
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0() = 0;
     /**
      * @vftbl 1
-     * @symbol ?Send\@RNS2_Windows\@RakNet\@\@UEAAHPEAURNS2_SendParameters\@2\@PEBDI\@Z
+     * @symbol __unk_vfn_1
      */
-    virtual int Send(struct RakNet::RNS2_SendParameters*, char const*, unsigned int) = 0;
+    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol ?SetMulticastInterface\@RNS2_Berkley\@RakNet\@\@UEAAXH\@Z
      */
     virtual void SetMulticastInterface(int);
-    /**
-     * @vftbl 3
-     * @symbol ?Bind\@RNS2_Windows\@RakNet\@\@UEAA?AW4RNS2BindResult\@2\@PEAURNS2_BerkleyBindParameters\@2\@PEBDI\@Z
-     */
-    virtual enum class RakNet::RNS2BindResult
-    Bind(struct RakNet::RNS2_BerkleyBindParameters*, char const*, unsigned int) = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKNET_RNS2_BERKLEY
     /**
      * @symbol __unk_destructor_-1

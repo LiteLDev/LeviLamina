@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ItemStackRequestActionCraftBase {
+// auto generated inclusion list
+#include "mc/world/inventory/network/ItemStackRequestAction.h"
+
+class ItemStackRequestActionCraftBase : public ::ItemStackRequestAction {
 
 public:
     // prevent constructor by default

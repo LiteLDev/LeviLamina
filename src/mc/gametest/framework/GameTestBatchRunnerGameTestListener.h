@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/gametest/framework/IGameTestListener.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace gametest { class BaseGameTestInstance; }
@@ -9,7 +12,7 @@ namespace gametest { class BaseGameTestInstance; }
 
 namespace gametest {
 
-class GameTestBatchRunnerGameTestListener {
+class GameTestBatchRunnerGameTestListener : public ::gametest::IGameTestListener {
 
 public:
     // prevent constructor by default
@@ -19,17 +22,6 @@ public:
 
 public:
     // NOLINTBEGIN
-    /**
-     * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
-    virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol
-     * ?onTestStructureLoaded\@GameTestBatchRunnerGameTestListener\@gametest\@\@UEAAXAEAVBaseGameTestInstance\@2\@\@Z
-     */
-    virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETEST_GAMETESTBATCHRUNNERGAMETESTLISTENER
     /**
      * @symbol ?onTestFailed\@GameTestBatchRunnerGameTestListener\@gametest\@\@UEAAXAEAVBaseGameTestInstance\@2\@\@Z
@@ -44,6 +36,11 @@ public:
      * ?onTestRetryFinished\@GameTestBatchRunnerGameTestListener\@gametest\@\@UEAAXAEAVBaseGameTestInstance\@2\@\@Z
      */
     MCVAPI void onTestRetryFinished(class gametest::BaseGameTestInstance&);
+    /**
+     * @symbol
+     * ?onTestStructureLoaded\@GameTestBatchRunnerGameTestListener\@gametest\@\@UEAAXAEAVBaseGameTestInstance\@2\@\@Z
+     */
+    MCVAPI void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
 #endif
     // NOLINTEND
 };

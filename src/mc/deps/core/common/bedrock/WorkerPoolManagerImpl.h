@@ -12,7 +12,7 @@ namespace Bedrock::Threading { class OSThreadPriority; }
 
 namespace Bedrock {
 
-class WorkerPoolManagerImpl {
+class WorkerPoolManagerImpl : public ::Bedrock::WorkerPoolManager {
 public:
     // WorkerPoolManagerImpl inner types declare
     // clang-format off

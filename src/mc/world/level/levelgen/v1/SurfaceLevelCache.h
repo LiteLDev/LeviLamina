@@ -4,8 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/data/DividedPos2d.h"
+#include "mc/world/level/levelgen/v1/IPreliminarySurfaceProvider.h"
 
-class SurfaceLevelCache {
+class SurfaceLevelCache : public ::IPreliminarySurfaceProvider {
 
 public:
     // prevent constructor by default

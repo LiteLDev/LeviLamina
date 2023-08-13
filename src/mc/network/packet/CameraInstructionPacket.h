@@ -55,12 +55,12 @@ public:
     MCVAPI ~CameraInstructionPacket();
 #endif
     /**
-     * @symbol ??0CameraInstructionPacket\@\@QEAA\@AEBUCameraInstruction\@\@\@Z
-     */
-    MCAPI CameraInstructionPacket(struct CameraInstruction const&);
-    /**
      * @symbol ??0CameraInstructionPacket\@\@QEAA\@XZ
      */
     MCAPI CameraInstructionPacket();
+    /**
+     * @symbol ??0CameraInstructionPacket\@\@QEAA\@AEBUCameraInstruction\@\@\@Z
+     */
+    MCAPI CameraInstructionPacket(struct CameraInstruction const&);
     // NOLINTEND
 };

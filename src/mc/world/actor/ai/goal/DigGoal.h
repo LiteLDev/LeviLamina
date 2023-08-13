@@ -4,13 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
+#include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-class DigGoal {
+class DigGoal : public ::Goal {
 public:
     // DigGoal inner types declare
     // clang-format off
@@ -20,7 +23,7 @@ public:
     // DigGoal inner types define
     enum class CanUseResult {};
 
-    class Definition {
+    class Definition : public ::BaseGoalDefinition {
 
     public:
         // prevent constructor by default
@@ -29,6 +32,11 @@ public:
 
     public:
         // NOLINTBEGIN
+        /**
+         * @vftbl 0
+         * @symbol __unk_vfn_0
+         */
+        virtual void __unk_vfn_0();
         /**
          * @symbol ??0Definition\@DigGoal\@\@QEAA\@XZ
          */
@@ -69,11 +77,6 @@ public:
      * @symbol ?canContinueToUse\@DigGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol ?start\@DigGoal\@\@UEAAXXZ

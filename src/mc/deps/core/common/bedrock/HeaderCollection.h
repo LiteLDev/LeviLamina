@@ -13,13 +13,13 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0HeaderCollection\@Http\@Bedrock\@\@QEAA\@AEBV012\@\@Z
-     */
-    MCAPI HeaderCollection(class Bedrock::Http::HeaderCollection const&);
-    /**
      * @symbol ??0HeaderCollection\@Http\@Bedrock\@\@QEAA\@XZ
      */
     MCAPI HeaderCollection();
+    /**
+     * @symbol ??0HeaderCollection\@Http\@Bedrock\@\@QEAA\@AEBV012\@\@Z
+     */
+    MCAPI HeaderCollection(class Bedrock::Http::HeaderCollection const&);
     /**
      * @symbol
      * ?add\@HeaderCollection\@Http\@Bedrock\@\@QEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z

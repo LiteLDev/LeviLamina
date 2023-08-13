@@ -4,8 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/world/AutomaticID.h"
+#include "mc/world/ContainerContentChangeListener.h"
 
-class ContainerComponent {
+class ContainerComponent : public ::ContainerContentChangeListener {
 
 public:
     // prevent constructor by default

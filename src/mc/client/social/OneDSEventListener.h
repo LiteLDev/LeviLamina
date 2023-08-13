@@ -73,13 +73,13 @@ public:
      */
     MCAPI void AddPartA(std::string const&, class Json::Value&, bool);
     /**
-     * @symbol ?AddPartC\@OneDSEventListener\@Events\@Social\@\@AEAAXAEBVEvent\@23\@AEAVValue\@Json\@\@\@Z
-     */
-    MCAPI void AddPartC(class Social::Events::Event const&, class Json::Value&);
-    /**
      * @symbol ?AddPartC\@OneDSEventListener\@Events\@Social\@\@AEAAXAEBVSummaryEvent\@23\@AEAVValue\@Json\@\@\@Z
      */
     MCAPI void AddPartC(class Social::Events::SummaryEvent const&, class Json::Value&);
+    /**
+     * @symbol ?AddPartC\@OneDSEventListener\@Events\@Social\@\@AEAAXAEBVEvent\@23\@AEAVValue\@Json\@\@\@Z
+     */
+    MCAPI void AddPartC(class Social::Events::Event const&, class Json::Value&);
     /**
      * @symbol ?_sendBatch\@OneDSEventListener\@Events\@Social\@\@AEAA_NXZ
      */

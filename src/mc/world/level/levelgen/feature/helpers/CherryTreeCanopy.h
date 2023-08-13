@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/levelgen/feature/helpers/ITreeCanopy.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace TreeHelper { struct TreeParams; }
 // clang-format on
 
-class CherryTreeCanopy {
+class CherryTreeCanopy : public ::ITreeCanopy {
 
 public:
     // prevent constructor by default

@@ -266,13 +266,13 @@ public:
      */
     MCVAPI void stopGliding();
     /**
-     * @symbol ?tryAsPlayer\@DirectPlayerMovementProxy\@\@UEAAPEAUIPlayerMovementProxy\@\@XZ
-     */
-    MCVAPI struct IPlayerMovementProxy* tryAsPlayer();
-    /**
      * @symbol ?tryAsPlayer\@DirectPlayerMovementProxy\@\@UEBAPEBUIPlayerMovementProxy\@\@XZ
      */
     MCVAPI struct IPlayerMovementProxy const* tryAsPlayer() const;
+    /**
+     * @symbol ?tryAsPlayer\@DirectPlayerMovementProxy\@\@UEAAPEAUIPlayerMovementProxy\@\@XZ
+     */
+    MCVAPI struct IPlayerMovementProxy* tryAsPlayer();
     /**
      * @symbol ?tryGetPlayerActionComponent\@DirectPlayerMovementProxy\@\@UEAAPEAUPlayerActionComponent\@\@XZ
      */

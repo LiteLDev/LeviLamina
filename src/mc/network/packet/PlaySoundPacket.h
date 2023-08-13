@@ -54,13 +54,13 @@ public:
     MCVAPI ~PlaySoundPacket();
 #endif
     /**
-     * @symbol ??0PlaySoundPacket\@\@QEAA\@XZ
-     */
-    MCAPI PlaySoundPacket();
-    /**
      * @symbol
      * ??0PlaySoundPacket\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVVec3\@\@MM\@Z
      */
     MCAPI PlaySoundPacket(std::string, class Vec3 const&, float, float);
+    /**
+     * @symbol ??0PlaySoundPacket\@\@QEAA\@XZ
+     */
+    MCAPI PlaySoundPacket();
     // NOLINTEND
 };

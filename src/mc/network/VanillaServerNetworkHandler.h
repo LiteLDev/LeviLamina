@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class VanillaServerNetworkHandler {
+// auto generated inclusion list
+#include "mc/network/GameSpecificNetEventCallback.h"
+
+class VanillaServerNetworkHandler : public ::GameSpecificNetEventCallback {
 
 public:
     // prevent constructor by default

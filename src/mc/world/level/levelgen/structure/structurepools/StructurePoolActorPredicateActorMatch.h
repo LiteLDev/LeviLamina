@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class StructurePoolActorPredicateActorMatch {
+// auto generated inclusion list
+#include "mc/world/level/levelgen/structure/structurepools/IStructurePoolActorPredicate.h"
+
+class StructurePoolActorPredicateActorMatch : public ::IStructurePoolActorPredicate {
 
 public:
     // prevent constructor by default

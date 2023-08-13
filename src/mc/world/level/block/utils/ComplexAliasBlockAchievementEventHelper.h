@@ -21,8 +21,8 @@ getPostComplexAliasBlockToPreSplitBlockInfo(std::string const&);
  * ?makePostComplexAliasBlockToPreSplitBlockMap\@ComplexAliasBlockAchievementEventHelper\@\@YA?AV?$unordered_map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UComplexAliasBlockPreSplitBlockInfo\@ComplexAliasBlockAchievementEventHelper\@\@U?$hash\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@U?$equal_to\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UComplexAliasBlockPreSplitBlockInfo\@ComplexAliasBlockAchievementEventHelper\@\@\@std\@\@\@2\@\@std\@\@XZ
  */
 MCAPI
-std::unordered_map<std::string, struct ComplexAliasBlockAchievementEventHelper::ComplexAliasBlockPreSplitBlockInfo>
-makePostComplexAliasBlockToPreSplitBlockMap();
+    std::unordered_map<std::string, struct ComplexAliasBlockAchievementEventHelper::ComplexAliasBlockPreSplitBlockInfo>
+    makePostComplexAliasBlockToPreSplitBlockMap();
 // NOLINTEND
 
 }; // namespace ComplexAliasBlockAchievementEventHelper

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
+#include "mc/scripting/modules/minecraft/ScriptComponent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,7 +19,7 @@ namespace Scripting { struct Error; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptActorComponent {
+class ScriptActorComponent : public ::ScriptModuleMinecraft::ScriptComponent {
 
 public:
     // prevent constructor by default

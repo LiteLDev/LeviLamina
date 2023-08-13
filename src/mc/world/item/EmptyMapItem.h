@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/item/Item.h"
+#include "mc/world/item/ComplexItem.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -11,7 +11,7 @@ namespace Json { class Value; }
 namespace mce { class Color; }
 // clang-format on
 
-class EmptyMapItem : public ::Item {
+class EmptyMapItem : public ::ComplexItem {
 
 public:
     // prevent constructor by default
@@ -123,12 +123,6 @@ public:
      * ?getInteractText\@EmptyMapItem\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVPlayer\@\@\@Z
      */
     virtual std::string getInteractText(class Player const&) const;
-    /**
-     * @vftbl 136
-     * @symbol
-     * ?getUpdatePacket\@ComplexItem\@\@UEBA?AV?$unique_ptr\@VPacket\@\@U?$default_delete\@VPacket\@\@\@std\@\@\@std\@\@AEBVItemStack\@\@AEAVLevel\@\@AEAVActor\@\@\@Z
-     */
-    virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const&, class Level&, class Actor&) const;
     /**
      * @symbol ??0EmptyMapItem\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@F\@Z
      */

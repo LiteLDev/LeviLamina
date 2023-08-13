@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ExperienceRewardCommitObject {
+// auto generated inclusion list
+#include "mc/world/inventory/simulation/ContainerValidationCommitObject.h"
+
+class ExperienceRewardCommitObject : public ::ContainerValidationCommitObject {
 
 public:
     // prevent constructor by default

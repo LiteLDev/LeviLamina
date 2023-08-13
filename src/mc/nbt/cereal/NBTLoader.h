@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class NBTLoader {
+// auto generated inclusion list
+#include "mc/deps/cereal/BasicLoader.h"
+
+class NBTLoader : public ::cereal::BasicLoader {
 
 public:
     // prevent constructor by default

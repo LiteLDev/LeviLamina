@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class CommandDispatcher {
+// auto generated inclusion list
+#include "mc/server/commands/functions/ICommandDispatcher.h"
+
+class CommandDispatcher : public ::ICommandDispatcher {
 
 public:
     // prevent constructor by default

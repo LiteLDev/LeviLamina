@@ -311,14 +311,14 @@ public:
      */
     MCVAPI int GetSplitMessageProgressInterval() const;
     /**
+     * @symbol ?GetStatistics\@RakPeer\@RakNet\@\@UEAA_NIPEAURakNetStatistics\@2\@\@Z
+     */
+    MCVAPI bool GetStatistics(unsigned int, struct RakNet::RakNetStatistics*);
+    /**
      * @symbol ?GetStatistics\@RakPeer\@RakNet\@\@UEAAPEAURakNetStatistics\@2\@USystemAddress\@2\@PEAU32\@\@Z
      */
     MCVAPI struct RakNet::RakNetStatistics*
     GetStatistics(struct RakNet::SystemAddress, struct RakNet::RakNetStatistics*);
-    /**
-     * @symbol ?GetStatistics\@RakPeer\@RakNet\@\@UEAA_NIPEAURakNetStatistics\@2\@\@Z
-     */
-    MCVAPI bool GetStatistics(unsigned int, struct RakNet::RakNetStatistics*);
     /**
      * @symbol
      * ?GetStatisticsList\@RakPeer\@RakNet\@\@UEAAXAEAV?$List\@USystemAddress\@RakNet\@\@\@DataStructures\@\@AEAV?$List\@URakNetGUID\@RakNet\@\@\@4\@AEAV?$List\@URakNetStatistics\@RakNet\@\@\@4\@\@Z
@@ -381,13 +381,13 @@ public:
      */
     MCVAPI void OnRNS2Recv(struct RakNet::RNS2RecvStruct*);
     /**
-     * @symbol ?Ping\@RakPeer\@RakNet\@\@UEAAXUSystemAddress\@2\@\@Z
-     */
-    MCVAPI void Ping(struct RakNet::SystemAddress);
-    /**
      * @symbol ?Ping\@RakPeer\@RakNet\@\@UEAA_NPEBDG_NI\@Z
      */
     MCVAPI bool Ping(char const*, unsigned short, bool, unsigned int);
+    /**
+     * @symbol ?Ping\@RakPeer\@RakNet\@\@UEAAXUSystemAddress\@2\@\@Z
+     */
+    MCVAPI void Ping(struct RakNet::SystemAddress);
     /**
      * @symbol ?PushBackPacket\@RakPeer\@RakNet\@\@UEAAXPEAUPacket\@2\@_N\@Z
      */
@@ -472,7 +472,7 @@ public:
     /**
      * @symbol ?SetIncomingDatagramEventHandler\@RakPeer\@RakNet\@\@UEAAXP6A_NPEAURNS2RecvStruct\@2\@\@Z\@Z
      */
-    MCVAPI void SetIncomingDatagramEventHandler(bool (*)(struct RakNet::RNS2RecvStruct*));
+    MCVAPI void SetIncomingDatagramEventHandler(bool(__cdecl*)(struct RakNet::RNS2RecvStruct*));
     /**
      * @symbol ?SetIncomingPassword\@RakPeer\@RakNet\@\@UEAAXPEBDH\@Z
      */
@@ -516,7 +516,7 @@ public:
     /**
      * @symbol ?SetUserUpdateThread\@RakPeer\@RakNet\@\@UEAAXP6AXPEAVRakPeerInterface\@2\@PEAX\@Z1\@Z
      */
-    MCVAPI void SetUserUpdateThread(void (*)(class RakNet::RakPeerInterface*, void*), void*);
+    MCVAPI void SetUserUpdateThread(void(__cdecl*)(class RakNet::RakPeerInterface*, void*), void*);
     /**
      * @symbol ?Shutdown\@RakPeer\@RakNet\@\@UEAAXIEW4PacketPriority\@\@\@Z
      */

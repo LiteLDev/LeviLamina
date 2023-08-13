@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ClientLevelEventCoordinator {
+// auto generated inclusion list
+#include "mc/world/level/LevelEventCoordinator.h"
+
+class ClientLevelEventCoordinator : public ::LevelEventCoordinator {
 
 public:
     // prevent constructor by default

@@ -67,7 +67,7 @@ public:
     /**
      * @symbol ?_eraseGoals\@GoalSelectorComponent\@\@AEAAXP6A_NAEAU?$pair\@GVPrioritizedGoal\@\@\@std\@\@\@Z\@Z
      */
-    MCAPI void _eraseGoals(bool (*)(std::pair<unsigned short, class PrioritizedGoal>&));
+    MCAPI void _eraseGoals(bool(__cdecl*)(std::pair<unsigned short, class PrioritizedGoal>&));
     /**
      * @symbol
      * ?_findGoalByKey\@GoalSelectorComponent\@\@AEBA?AV?$_Vector_const_iterator\@V?$_Vector_val\@U?$_Simple_types\@U?$pair\@GVPrioritizedGoal\@\@\@std\@\@\@std\@\@\@std\@\@\@std\@\@G\@Z

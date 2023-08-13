@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/Command.h"
+
 // auto generated forward declare list
 // clang-format off
 class CommandOrigin;
@@ -11,7 +14,7 @@ class CommandRegistry;
 
 namespace AgentCommands {
 
-class Inspect {
+class Inspect : public ::Command {
 
 public:
     // prevent constructor by default
@@ -26,11 +29,6 @@ public:
      * @symbol __unk_vfn_0
      */
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
-    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol ?execute\@Inspect\@AgentCommands\@\@EEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z

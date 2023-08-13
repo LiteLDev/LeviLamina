@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class InventoryMenu {
+// auto generated inclusion list
+#include "mc/world/inventory/BaseContainerMenu.h"
+
+class InventoryMenu : public ::BaseContainerMenu {
 
 public:
     // prevent constructor by default

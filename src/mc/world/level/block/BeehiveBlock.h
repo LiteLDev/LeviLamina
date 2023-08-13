@@ -4,14 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/optional_ref.h"
-#include "mc/world/level/block/ActorBlock.h"
+#include "mc/world/level/block/FaceDirectionalActorBlock.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace mce { class Color; }
 // clang-format on
 
-class BeehiveBlock : public ::ActorBlock {
+class BeehiveBlock : public ::FaceDirectionalActorBlock {
 
 public:
     // prevent constructor by default

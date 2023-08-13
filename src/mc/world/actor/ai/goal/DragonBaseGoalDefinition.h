@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class DragonBaseGoalDefinition {
+// auto generated inclusion list
+#include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
+
+class DragonBaseGoalDefinition : public ::BaseGoalDefinition {
 
 public:
     // prevent constructor by default

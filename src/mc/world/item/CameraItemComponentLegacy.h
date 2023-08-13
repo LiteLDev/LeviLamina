@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/components/ICameraItemComponent.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
 // clang-format on
 
-class CameraItemComponentLegacy {
+class CameraItemComponentLegacy : public ::ICameraItemComponent {
 public:
     // CameraItemComponentLegacy inner types define
     enum class UseAction {};

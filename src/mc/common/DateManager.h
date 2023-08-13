@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class DateManager {
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+
+class DateManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // DateManager inner types define
     enum class TimeZoneType {};

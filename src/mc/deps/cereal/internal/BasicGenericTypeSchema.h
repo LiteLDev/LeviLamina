@@ -27,6 +27,11 @@ public:
 
 public:
     // NOLINTBEGIN
+    /**
+     * @vftbl 4
+     * @symbol __unk_vfn_4
+     */
+    virtual void __unk_vfn_4();
     // NOLINTEND
 
     // protected:

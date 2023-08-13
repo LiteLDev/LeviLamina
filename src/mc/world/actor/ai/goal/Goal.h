@@ -18,12 +18,12 @@ public:
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0() = 0;
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?canUse\@BaseMoveToBlockGoal\@\@UEAA_NXZ
      */
-    virtual void __unk_vfn_1();
+    virtual bool canUse() = 0;
     /**
      * @vftbl 2
      * @symbol ?canContinueToUse\@Goal\@\@UEAA_NXZ
@@ -36,47 +36,37 @@ public:
     virtual bool canBeInterrupted();
     /**
      * @vftbl 4
-     * @symbol __unk_vfn_4
+     * @symbol ?start\@Goal\@\@UEAAXXZ
      */
-    virtual void __unk_vfn_4() = 0;
+    virtual void start();
     /**
      * @vftbl 5
-     * @symbol __unk_vfn_5
+     * @symbol ?stop\@Goal\@\@UEAAXXZ
      */
-    virtual void __unk_vfn_5();
+    virtual void stop();
     /**
      * @vftbl 6
-     * @symbol __unk_vfn_6
+     * @symbol ?tick\@Goal\@\@UEAAXXZ
      */
-    virtual void __unk_vfn_6();
+    virtual void tick();
     /**
      * @vftbl 7
-     * @symbol __unk_vfn_7
+     * @symbol
+     * ?appendDebugInfo\@ScaredGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void __unk_vfn_7();
+    virtual void appendDebugInfo(std::string&) const = 0;
     /**
      * @vftbl 8
      * @symbol ?isTargetGoal\@Goal\@\@UEBA_NXZ
      */
     virtual bool isTargetGoal() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOAL
     /**
+     * @vftbl 9
      * @symbol ?onPlayerDimensionChanged\@Goal\@\@UEAAXPEAVPlayer\@\@V?$AutomaticID\@VDimension\@\@H\@\@1\@Z
      */
-    MCVAPI void
+    virtual void
     onPlayerDimensionChanged(class Player*, class AutomaticID<class Dimension, int>, class AutomaticID<class Dimension, int>);
-    /**
-     * @symbol ?start\@Goal\@\@UEAAXXZ
-     */
-    MCVAPI void start();
-    /**
-     * @symbol ?stop\@Goal\@\@UEAAXXZ
-     */
-    MCVAPI void stop();
-    /**
-     * @symbol ?tick\@Goal\@\@UEAAXXZ
-     */
-    MCVAPI void tick();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_GOAL
     /**
      * @symbol __unk_destructor_-1
      */

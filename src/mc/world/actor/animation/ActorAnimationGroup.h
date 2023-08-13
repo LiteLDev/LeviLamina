@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
 // clang-format on
 
-class ActorAnimationGroup {
+class ActorAnimationGroup : public ::Bedrock::EnableNonOwnerReferences {
 
 public:
     // prevent constructor by default

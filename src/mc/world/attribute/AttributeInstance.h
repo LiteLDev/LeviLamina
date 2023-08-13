@@ -83,26 +83,26 @@ public:
     MCAPI class AttributeModifier getModifier(class mce::UUID const&) const;
     /**
      * @symbol
-     * ?getModifiers\@AttributeInstance\@\@QEBA?AV?$vector\@VAttributeModifier\@\@V?$allocator\@VAttributeModifier\@\@\@std\@\@\@std\@\@XZ
-     */
-    MCAPI std::vector<class AttributeModifier> getModifiers() const;
-    /**
-     * @symbol
      * ?getModifiers\@AttributeInstance\@\@QEBA?AV?$vector\@VAttributeModifier\@\@V?$allocator\@VAttributeModifier\@\@\@std\@\@\@std\@\@H\@Z
      */
     MCAPI std::vector<class AttributeModifier> getModifiers(int) const;
     /**
-     * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NAEBVAttributeModifier\@\@\@Z
+     * @symbol
+     * ?getModifiers\@AttributeInstance\@\@QEBA?AV?$vector\@VAttributeModifier\@\@V?$allocator\@VAttributeModifier\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI bool hasModifier(class AttributeModifier const&) const;
+    MCAPI std::vector<class AttributeModifier> getModifiers() const;
+    /**
+     * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@\@Z
+     */
+    MCAPI bool hasModifier(std::shared_ptr<class AttributeModifier>) const;
     /**
      * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NAEBVUUID\@mce\@\@\@Z
      */
     MCAPI bool hasModifier(class mce::UUID const&) const;
     /**
-     * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@\@Z
+     * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NAEBVAttributeModifier\@\@\@Z
      */
-    MCAPI bool hasModifier(std::shared_ptr<class AttributeModifier>) const;
+    MCAPI bool hasModifier(class AttributeModifier const&) const;
     /**
      * @symbol ?hasModifiers\@AttributeInstance\@\@QEBA_NXZ
      */
@@ -111,6 +111,10 @@ public:
      * @symbol ?hasTemporalBuffs\@AttributeInstance\@\@QEBA_NXZ
      */
     MCAPI bool hasTemporalBuffs() const;
+    /**
+     * @symbol ?inheritFrom\@AttributeInstance\@\@QEAAXAEBV1\@PEAVBaseAttributeMap\@\@\@Z
+     */
+    MCAPI void inheritFrom(class AttributeInstance const&, class BaseAttributeMap*);
     /**
      * @symbol ?isValid\@AttributeInstance\@\@QEBA_NXZ
      */
@@ -136,10 +140,6 @@ public:
      */
     MCAPI void removeBuffs();
     /**
-     * @symbol ?removeModifier\@AttributeInstance\@\@QEAAXV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@\@Z
-     */
-    MCAPI void removeModifier(std::shared_ptr<class AttributeModifier>);
-    /**
      * @symbol ?removeModifier\@AttributeInstance\@\@QEAA_NAEBVUUID\@mce\@\@\@Z
      */
     MCAPI bool removeModifier(class mce::UUID const&);
@@ -147,6 +147,10 @@ public:
      * @symbol ?removeModifier\@AttributeInstance\@\@QEAAXAEBVAttributeModifier\@\@\@Z
      */
     MCAPI void removeModifier(class AttributeModifier const&);
+    /**
+     * @symbol ?removeModifier\@AttributeInstance\@\@QEAAXV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@\@Z
+     */
+    MCAPI void removeModifier(std::shared_ptr<class AttributeModifier>);
     /**
      * @symbol ?removeModifiers\@AttributeInstance\@\@QEAAXXZ
      */

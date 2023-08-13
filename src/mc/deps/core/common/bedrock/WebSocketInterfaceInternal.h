@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/WebSocketInterface.h"
+
 // auto generated forward declare list
 // clang-format off
 enum class HCWebSocketCloseStatus;
@@ -12,7 +15,7 @@ struct XAsyncBlock;
 
 namespace Bedrock::Http {
 
-class WebSocketInterfaceInternal {
+class WebSocketInterfaceInternal : public ::Bedrock::Http::WebSocketInterface {
 
 public:
     // prevent constructor by default

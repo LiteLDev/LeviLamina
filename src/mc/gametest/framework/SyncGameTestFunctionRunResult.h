@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/gametest/framework/IGameTestFunctionRunResult.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace gametest { struct GameTestError; }
@@ -9,7 +12,7 @@ namespace gametest { struct GameTestError; }
 
 namespace gametest {
 
-class SyncGameTestFunctionRunResult {
+class SyncGameTestFunctionRunResult : public ::gametest::IGameTestFunctionRunResult {
 
 public:
     // prevent constructor by default

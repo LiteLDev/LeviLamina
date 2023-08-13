@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/deps/core/common/bedrock/IAsyncResult.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
@@ -12,7 +13,7 @@ namespace Core { class FilePathManager; }
 namespace Core { class Path; }
 // clang-format on
 
-class FileArchiver {
+class FileArchiver : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // FileArchiver inner types declare
     // clang-format off
@@ -86,16 +87,16 @@ public:
     MCAPI FileArchiver(class Scheduler&, class ILevelListCache&, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager>> const&, class IResourcePackRepository&, bool, std::unique_ptr<class FileArchiver::IWorldConverter>, class gsl::not_null<class Bedrock::NonOwnerPointer<class IContentKeyProvider const>>, class gsl::not_null<class Bedrock::NonOwnerPointer<class LevelDbEnv>>, std::function<void(std::string const&)>);
     /**
      * @symbol
-     * ?exportPack\@FileArchiver\@\@QEAA?AV?$shared_ptr\@V?$IAsyncResult\@UResult\@FileArchiver\@\@\@Threading\@Bedrock\@\@\@std\@\@AEBVPath\@Core\@\@0\@Z
-     */
-    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<struct FileArchiver::Result>>
-          exportPack(class Core::Path const&, class Core::Path const&);
-    /**
-     * @symbol
      * ?exportPack\@FileArchiver\@\@QEAAXAEBVPath\@Core\@\@0V?$function\@$$A6AXAEAUResult\@FileArchiver\@\@\@Z\@std\@\@\@Z
      */
     MCAPI void
     exportPack(class Core::Path const&, class Core::Path const&, std::function<void(struct FileArchiver::Result&)>);
+    /**
+     * @symbol
+     * ?exportPack\@FileArchiver\@\@QEAA?AV?$shared_ptr\@V?$IAsyncResult\@UResult\@FileArchiver\@\@\@Threading\@Bedrock\@\@\@std\@\@AEBVPath\@Core\@\@0\@Z
+     */
+    MCAPI std::shared_ptr<class Bedrock::Threading::IAsyncResult<struct FileArchiver::Result>>
+          exportPack(class Core::Path const&, class Core::Path const&);
     /**
      * @symbol
      * ?setWorldConverter\@FileArchiver\@\@QEAAXV?$unique_ptr\@VIWorldConverter\@FileArchiver\@\@U?$default_delete\@VIWorldConverter\@FileArchiver\@\@\@std\@\@\@std\@\@\@Z

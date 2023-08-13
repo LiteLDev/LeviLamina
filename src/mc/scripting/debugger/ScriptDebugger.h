@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/server/commands/standard/IScriptDebugger.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { class IDebuggerController; }
 // clang-format on
 
-class ScriptDebugger {
+class ScriptDebugger : public ::IScriptDebugger {
 
 public:
     // prevent constructor by default

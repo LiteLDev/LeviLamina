@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class InsideBlockNotifierSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class InsideBlockNotifierSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

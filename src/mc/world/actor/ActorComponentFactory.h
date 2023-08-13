@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ActorComponentFactory {
+// auto generated inclusion list
+#include "mc/entity/factory/EntityComponentFactoryJson.h"
+
+class ActorComponentFactory : public ::EntityComponentFactoryJson {
 
 public:
     // prevent constructor by default

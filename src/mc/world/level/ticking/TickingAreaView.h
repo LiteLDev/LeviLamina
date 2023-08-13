@@ -4,8 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/world/AutomaticID.h"
+#include "mc/world/level/ticking/ITickingAreaView.h"
 
-class TickingAreaView {
+class TickingAreaView : public ::ITickingAreaView {
 
 public:
     // prevent constructor by default

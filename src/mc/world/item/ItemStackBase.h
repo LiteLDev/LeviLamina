@@ -407,14 +407,14 @@ public:
      */
     MCAPI bool isOffhandItem() const;
     /**
+     * @symbol ?isOneOfBlockInstances\@ItemStackBase\@\@QEBA_NV?$initializer_list\@$$CBVHashedString\@\@\@std\@\@\@Z
+     */
+    MCAPI bool isOneOfBlockInstances(std::initializer_list<class HashedString const>) const;
+    /**
      * @symbol
      * ?isOneOfBlockInstances\@ItemStackBase\@\@QEBA_NAEBV?$vector\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@V?$allocator\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@\@2\@\@std\@\@\@Z
      */
     MCAPI bool isOneOfBlockInstances(std::vector<std::reference_wrapper<class HashedString const>> const&) const;
-    /**
-     * @symbol ?isOneOfBlockInstances\@ItemStackBase\@\@QEBA_NV?$initializer_list\@$$CBVHashedString\@\@\@std\@\@\@Z
-     */
-    MCAPI bool isOneOfBlockInstances(std::initializer_list<class HashedString const>) const;
     /**
      * @symbol ?isOneOfInstances\@ItemStackBase\@\@QEBA_NV?$initializer_list\@$$CBVHashedString\@\@\@std\@\@_N\@Z
      */
@@ -448,13 +448,13 @@ public:
      */
     MCAPI bool isWearableItem() const;
     /**
-     * @symbol ?load\@ItemStackBase\@\@QEAAXAEBVCompoundTag\@\@AEAVLevel\@\@\@Z
-     */
-    MCAPI void load(class CompoundTag const&, class Level&);
-    /**
      * @symbol ?load\@ItemStackBase\@\@QEAAXAEBVCompoundTag\@\@\@Z
      */
     MCAPI void load(class CompoundTag const&);
+    /**
+     * @symbol ?load\@ItemStackBase\@\@QEAAXAEBVCompoundTag\@\@AEAVLevel\@\@\@Z
+     */
+    MCAPI void load(class CompoundTag const&, class Level&);
     /**
      * @symbol ?matches\@ItemStackBase\@\@QEBA_NAEBV1\@\@Z
      */
@@ -500,13 +500,13 @@ public:
      */
     MCAPI void resetHoverName();
     /**
-     * @symbol ?sameItem\@ItemStackBase\@\@QEBA_NAEBV1\@AEBUComparisonOptions\@1\@\@Z
-     */
-    MCAPI bool sameItem(class ItemStackBase const&, struct ItemStackBase::ComparisonOptions const&) const;
-    /**
      * @symbol ?sameItem\@ItemStackBase\@\@QEBA_NHH\@Z
      */
     MCAPI bool sameItem(int, int) const;
+    /**
+     * @symbol ?sameItem\@ItemStackBase\@\@QEBA_NAEBV1\@AEBUComparisonOptions\@1\@\@Z
+     */
+    MCAPI bool sameItem(class ItemStackBase const&, struct ItemStackBase::ComparisonOptions const&) const;
     /**
      * @symbol ?sameItemAndAux\@ItemStackBase\@\@QEBA_NAEBV1\@\@Z
      */
@@ -672,10 +672,6 @@ public:
      */
     MCAPI ItemStackBase(class Item const&, int, int, class CompoundTag const*);
     /**
-     * @symbol ??0ItemStackBase\@\@IEAA\@AEBV0\@\@Z
-     */
-    MCAPI ItemStackBase(class ItemStackBase const&);
-    /**
      * @symbol ??0ItemStackBase\@\@IEAA\@XZ
      */
     MCAPI ItemStackBase();
@@ -687,6 +683,10 @@ public:
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBVBlockLegacy\@\@H\@Z
      */
     MCAPI ItemStackBase(class BlockLegacy const&, int);
+    /**
+     * @symbol ??0ItemStackBase\@\@IEAA\@AEBV0\@\@Z
+     */
+    MCAPI ItemStackBase(class ItemStackBase const&);
     /**
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBVRecipeIngredient\@\@\@Z
      */
@@ -701,6 +701,10 @@ public:
      */
     MCAPI bool _setItem(int, bool);
     /**
+     * @symbol ?init\@ItemStackBase\@\@IEAAXHHH_N\@Z
+     */
+    MCAPI void init(int, int, int, bool);
+    /**
      * @symbol ?init\@ItemStackBase\@\@IEAAXAEBVBlockLegacy\@\@H\@Z
      */
     MCAPI void init(class BlockLegacy const&, int);
@@ -708,10 +712,6 @@ public:
      * @symbol ?init\@ItemStackBase\@\@IEAAXAEBVItem\@\@HHPEBVCompoundTag\@\@_N\@Z
      */
     MCAPI void init(class Item const&, int, int, class CompoundTag const*, bool);
-    /**
-     * @symbol ?init\@ItemStackBase\@\@IEAAXHHH_N\@Z
-     */
-    MCAPI void init(int, int, int, bool);
     /**
      * @symbol ??4ItemStackBase\@\@IEAAAEAV0\@AEBV0\@\@Z
      */

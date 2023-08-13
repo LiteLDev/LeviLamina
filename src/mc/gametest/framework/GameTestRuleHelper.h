@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/gametest/framework/IGameTestRuleHelper.h"
+
 // auto generated forward declare list
 // clang-format off
 class ILevel;
@@ -9,7 +12,7 @@ class ILevel;
 
 namespace gametest {
 
-class GameTestRuleHelper {
+class GameTestRuleHelper : public ::gametest::IGameTestRuleHelper {
 
 public:
     // prevent constructor by default

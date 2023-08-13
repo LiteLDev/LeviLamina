@@ -5,9 +5,10 @@
 // auto generated inclusion list
 #include "mc/common/wrapper/OwnerPtrT.h"
 #include "mc/common/wrapper/StackRefResultT.h"
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/world/AutomaticID.h"
 
-class VolumeEntityManager {
+class VolumeEntityManager : public ::Bedrock::EnableNonOwnerReferences {
 
 public:
     // prevent constructor by default

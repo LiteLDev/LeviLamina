@@ -2,7 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class RangedAttackGoal {
+// auto generated inclusion list
+#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ai/goal/Goal.h"
+
+class RangedAttackGoal : public ::Goal {
 
 public:
     // prevent constructor by default
@@ -27,11 +31,6 @@ public:
      * @symbol ?canContinueToUse\@RangedAttackGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol ?start\@RangedAttackGoal\@\@UEAAXXZ

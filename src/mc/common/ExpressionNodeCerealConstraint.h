@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cereal/Constraint.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { class SerializerContext; }
 // clang-format on
 
-class ExpressionNodeCerealConstraint {
+class ExpressionNodeCerealConstraint : public ::cereal::Constraint {
 
 public:
     // prevent constructor by default

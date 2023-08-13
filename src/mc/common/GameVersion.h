@@ -11,10 +11,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0GameVersion\@\@QEAA\@XZ
-     */
-    MCAPI GameVersion();
-    /**
      * @symbol ??0GameVersion\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI GameVersion(class GameVersion const&);
@@ -26,6 +22,10 @@ public:
      * @symbol ??0GameVersion\@\@QEAA\@AEBVListTag\@\@\@Z
      */
     MCAPI GameVersion(class ListTag const&);
+    /**
+     * @symbol ??0GameVersion\@\@QEAA\@XZ
+     */
+    MCAPI GameVersion();
     /**
      * @symbol
      * ?asString\@GameVersion\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ

@@ -12,7 +12,7 @@ class EntityContext;
 
 namespace VanillaSurfaceBuilders {
 
-class NetherSurfaceBuilder {
+class NetherSurfaceBuilder : public ::ISurfaceBuilder {
 
 public:
     // prevent constructor by default

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BannerPattern {
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+
+class BannerPattern : public ::Bedrock::EnableNonOwnerReferences {
 
 public:
     // prevent constructor by default

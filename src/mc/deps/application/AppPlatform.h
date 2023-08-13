@@ -357,7 +357,7 @@ public:
      * @symbol
      * ?getModalErrorMessageProc\@AppPlatform\@\@UEAAP6A?AW4AssertDialogResponse\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@ZXZ
      */
-    MCVAPI enum class AssertDialogResponse (*)(std::string const&, std::string const&) getModalErrorMessageProc();
+    MCVAPI enum class AssertDialogResponse(__cdecl*)(std::string const&, std::string const&) getModalErrorMessageProc();
     /**
      * @symbol
      * ?getModelName\@AppPlatform\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ

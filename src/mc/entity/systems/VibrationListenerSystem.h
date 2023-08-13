@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class VibrationListenerSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class VibrationListenerSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

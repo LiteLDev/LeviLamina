@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/components/OnHitSubcomponent.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
 // clang-format on
 
-class IgniteSubcomponent {
+class IgniteSubcomponent : public ::OnHitSubcomponent {
 
 public:
     // prevent constructor by default
@@ -23,14 +26,14 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?readfromJSON\@IgniteSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
      */
-    virtual void __unk_vfn_1();
+    virtual void readfromJSON(class Json::Value&, class SemVersion const&);
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?writetoJSON\@IgniteSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
      */
-    virtual void __unk_vfn_2();
+    virtual void writetoJSON(class Json::Value&) const;
     /**
      * @vftbl 3
      * @symbol ?doOnHitEffect\@IgniteSubcomponent\@\@UEAAXAEAVActor\@\@AEAVProjectileComponent\@\@\@Z
@@ -41,16 +44,6 @@ public:
      * @symbol ?getName\@IgniteSubcomponent\@\@UEAAPEBDXZ
      */
     virtual char const* getName();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IGNITESUBCOMPONENT
-    /**
-     * @symbol ?readfromJSON\@IgniteSubcomponent\@\@UEAAXAEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z
-     */
-    MCVAPI void readfromJSON(class Json::Value&, class SemVersion const&);
-    /**
-     * @symbol ?writetoJSON\@IgniteSubcomponent\@\@UEBAXAEAVValue\@Json\@\@\@Z
-     */
-    MCVAPI void writetoJSON(class Json::Value&) const;
-#endif
     /**
      * @symbol ??0IgniteSubcomponent\@\@QEAA\@XZ
      */

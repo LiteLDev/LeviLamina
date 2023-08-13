@@ -4,13 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
+#include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-class EquipItemGoal {
+class EquipItemGoal : public ::Goal {
 public:
     // EquipItemGoal inner types declare
     // clang-format off
@@ -18,7 +21,7 @@ public:
     // clang-format on
 
     // EquipItemGoal inner types define
-    class Definition {
+    class Definition : public ::BaseGoalDefinition {
 
     public:
         // prevent constructor by default
@@ -28,6 +31,11 @@ public:
 
     public:
         // NOLINTBEGIN
+        /**
+         * @vftbl 0
+         * @symbol __unk_vfn_0
+         */
+        virtual void __unk_vfn_0();
         /**
          * @symbol ?initialize\@Definition\@EquipItemGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
          */
@@ -64,21 +72,6 @@ public:
      * @symbol ?canContinueToUse\@EquipItemGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4();
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
-    virtual void __unk_vfn_5();
     /**
      * @vftbl 6
      * @symbol ?tick\@EquipItemGoal\@\@UEAAXXZ

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class NpcI18nObserver {
+// auto generated inclusion list
+#include "mc/locale/I18nObserver.h"
+
+class NpcI18nObserver : public ::I18nObserver {
 
 public:
     // prevent constructor by default

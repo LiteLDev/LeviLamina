@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/deps/core/data/SmallSet.h"
 
 // auto generated forward declare list
@@ -10,7 +11,7 @@
 namespace Bedrock::Threading { class OSThreadPriority; }
 // clang-format on
 
-class WorkerPool {
+class WorkerPool : public ::Bedrock::EnableNonOwnerReferences {
 
 public:
     // prevent constructor by default

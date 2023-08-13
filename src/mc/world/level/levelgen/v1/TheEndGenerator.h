@@ -7,7 +7,7 @@
 #include "mc/deps/core/utility/MultidimensionalArray.h"
 #include "mc/world/level/levelgen/WorldGenerator.h"
 
-class TheEndGenerator {
+class TheEndGenerator : public ::WorldGenerator {
 
 public:
     // prevent constructor by default

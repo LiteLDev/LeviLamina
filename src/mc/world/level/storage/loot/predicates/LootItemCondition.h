@@ -17,6 +17,16 @@ public:
 
 public:
     // NOLINTBEGIN
+    /**
+     * @vftbl 0
+     * @symbol __unk_vfn_0
+     */
+    virtual void __unk_vfn_0();
+    /**
+     * @vftbl 1
+     * @symbol ?applies\@LootItemKilledByPlayerCondition\@\@UEAA_NAEAVRandom\@\@AEAVLootTableContext\@\@\@Z
+     */
+    virtual bool applies(class Random&, class LootTableContext&) = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTITEMCONDITION
     /**
      * @symbol __unk_destructor_-1

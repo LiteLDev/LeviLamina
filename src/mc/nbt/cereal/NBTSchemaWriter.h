@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cereal/SchemaWriter.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct SerializerTraits; }
 // clang-format on
 
-class NBTSchemaWriter {
+class NBTSchemaWriter : public ::cereal::SchemaWriter {
 public:
     // NBTSchemaWriter inner types declare
     // clang-format off
@@ -145,6 +148,14 @@ public:
      */
     MCVAPI bool write(double, struct cereal::SerializerTraits const&);
     /**
+     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NIAEBUSerializerTraits\@cereal\@\@\@Z
+     */
+    MCVAPI bool write(unsigned int, struct cereal::SerializerTraits const&);
+    /**
+     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NHAEBUSerializerTraits\@cereal\@\@\@Z
+     */
+    MCVAPI bool write(int, struct cereal::SerializerTraits const&);
+    /**
      * @symbol ?write\@NBTSchemaWriter\@\@UEAA_N_NAEBUSerializerTraits\@cereal\@\@\@Z
      */
     MCVAPI bool write(bool, struct cereal::SerializerTraits const&);
@@ -164,14 +175,6 @@ public:
      * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NFAEBUSerializerTraits\@cereal\@\@\@Z
      */
     MCVAPI bool write(short, struct cereal::SerializerTraits const&);
-    /**
-     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NIAEBUSerializerTraits\@cereal\@\@\@Z
-     */
-    MCVAPI bool write(unsigned int, struct cereal::SerializerTraits const&);
-    /**
-     * @symbol ?write\@NBTSchemaWriter\@\@UEAA_NHAEBUSerializerTraits\@cereal\@\@\@Z
-     */
-    MCVAPI bool write(int, struct cereal::SerializerTraits const&);
     /**
      * @symbol __unk_destructor_-1
      */

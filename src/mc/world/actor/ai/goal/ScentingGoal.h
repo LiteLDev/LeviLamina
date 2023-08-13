@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ai/goal/BaseTimedActorFlagDefinition.h"
 #include "mc/world/actor/ai/goal/BaseTimedActorFlagGoal.h"
 
 // auto generated forward declare list
@@ -19,7 +21,7 @@ public:
     // clang-format on
 
     // ScentingGoal inner types define
-    class Definition {
+    class Definition : public ::BaseTimedActorFlagDefinition {
 
     public:
         // prevent constructor by default
@@ -29,6 +31,11 @@ public:
 
     public:
         // NOLINTBEGIN
+        /**
+         * @vftbl 0
+         * @symbol __unk_vfn_0
+         */
+        virtual void __unk_vfn_0();
         /**
          * @symbol
          * ?buildSchema\@Definition\@ScentingGoal\@\@SAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@VDefinition\@ScentingGoal\@\@\@JsonUtil\@\@\@4\@\@Z
@@ -51,11 +58,6 @@ public:
      * @symbol __unk_vfn_0
      */
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
     /**
      * @symbol ??0ScentingGoal\@\@QEAA\@AEAVMob\@\@\@Z
      */

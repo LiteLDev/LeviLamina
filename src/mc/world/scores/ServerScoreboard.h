@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ServerScoreboard {
+// auto generated inclusion list
+#include "mc/world/scores/Scoreboard.h"
+
+class ServerScoreboard : public ::Scoreboard {
 
 public:
     // prevent constructor by default

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class CombatRegenerationListener {
+// auto generated inclusion list
+#include "mc/world/events/ActorEventListener.h"
+
+class CombatRegenerationListener : public ::ActorEventListener {
 
 public:
     // prevent constructor by default

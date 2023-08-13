@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/item/Item.h"
+#include "mc/world/item/RangedWeaponItem.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -11,7 +11,7 @@ namespace Json { class Value; }
 namespace mce { class Color; }
 // clang-format on
 
-class CrossbowItem : public ::Item {
+class CrossbowItem : public ::RangedWeaponItem {
 
 public:
     // prevent constructor by default

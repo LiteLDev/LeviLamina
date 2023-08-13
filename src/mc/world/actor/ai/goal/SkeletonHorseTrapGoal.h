@@ -2,7 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class SkeletonHorseTrapGoal {
+// auto generated inclusion list
+#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ai/goal/Goal.h"
+
+class SkeletonHorseTrapGoal : public ::Goal {
 
 public:
     // prevent constructor by default
@@ -23,25 +27,10 @@ public:
      */
     virtual bool canUse();
     /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
      * @vftbl 4
      * @symbol ?start\@SkeletonHorseTrapGoal\@\@UEAAXXZ
      */
     virtual void start();
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
-    virtual void __unk_vfn_5();
     /**
      * @vftbl 6
      * @symbol ?tick\@SkeletonHorseTrapGoal\@\@UEAAXXZ

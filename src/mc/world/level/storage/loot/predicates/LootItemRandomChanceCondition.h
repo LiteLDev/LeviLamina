@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class LootItemRandomChanceCondition {
+// auto generated inclusion list
+#include "mc/world/level/storage/loot/predicates/LootItemCondition.h"
+
+class LootItemRandomChanceCondition : public ::LootItemCondition {
 
 public:
     // prevent constructor by default

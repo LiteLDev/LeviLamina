@@ -140,13 +140,13 @@ public:
      */
     MCAPI static struct glm::mat<3, 3, float, 0> getRotationMatrix(unsigned char, enum class Facing::Rotation);
     /**
-     * @symbol ?getShuffledDirections\@Facing\@\@SA?AV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@XZ
-     */
-    MCAPI static std::vector<unsigned char> getShuffledDirections();
-    /**
      * @symbol ?getShuffledDirections\@Facing\@\@SA?AV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@AEAVRandom\@\@\@Z
      */
     MCAPI static std::vector<unsigned char> getShuffledDirections(class Random&);
+    /**
+     * @symbol ?getShuffledDirections\@Facing\@\@SA?AV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@XZ
+     */
+    MCAPI static std::vector<unsigned char> getShuffledDirections();
     /**
      * @symbol ?getStepX\@Facing\@\@SAHE\@Z
      */

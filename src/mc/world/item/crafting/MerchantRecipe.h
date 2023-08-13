@@ -33,13 +33,13 @@ public:
      */
     MCAPI MerchantRecipe(class MerchantRecipe const&);
     /**
-     * @symbol ??0MerchantRecipe\@\@QEAA\@AEBVItemInstance\@\@00\@Z
-     */
-    MCAPI MerchantRecipe(class ItemInstance const&, class ItemInstance const&, class ItemInstance const&);
-    /**
      * @symbol ??0MerchantRecipe\@\@QEAA\@AEBVItemInstance\@\@0\@Z
      */
     MCAPI MerchantRecipe(class ItemInstance const&, class ItemInstance const&);
+    /**
+     * @symbol ??0MerchantRecipe\@\@QEAA\@AEBVItemInstance\@\@00\@Z
+     */
+    MCAPI MerchantRecipe(class ItemInstance const&, class ItemInstance const&, class ItemInstance const&);
     /**
      * @symbol ?calculateDemandPrices\@MerchantRecipe\@\@QEAAXHHH_N\@Z
      */

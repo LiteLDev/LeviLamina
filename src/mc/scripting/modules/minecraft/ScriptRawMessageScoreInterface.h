@@ -16,23 +16,23 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0ScriptRawMessageScoreInterface\@ScriptModuleMinecraft\@\@QEAA\@$$QEAU01\@\@Z
-     */
-    MCAPI ScriptRawMessageScoreInterface(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&&);
-    /**
      * @symbol ??0ScriptRawMessageScoreInterface\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
      */
     MCAPI ScriptRawMessageScoreInterface(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface const&);
     /**
-     * @symbol ??4ScriptRawMessageScoreInterface\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
+     * @symbol ??0ScriptRawMessageScoreInterface\@ScriptModuleMinecraft\@\@QEAA\@$$QEAU01\@\@Z
      */
-    MCAPI struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&
-    operator=(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&&);
+    MCAPI ScriptRawMessageScoreInterface(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&&);
     /**
      * @symbol ??4ScriptRawMessageScoreInterface\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&
     operator=(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface const&);
+    /**
+     * @symbol ??4ScriptRawMessageScoreInterface\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
+     */
+    MCAPI struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&
+    operator=(struct ScriptModuleMinecraft::ScriptRawMessageScoreInterface&&);
     /**
      * @symbol ??8ScriptRawMessageScoreInterface\@ScriptModuleMinecraft\@\@QEBA_NAEBU01\@\@Z
      */

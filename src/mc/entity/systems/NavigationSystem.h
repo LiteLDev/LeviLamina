@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class NavigationSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class NavigationSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

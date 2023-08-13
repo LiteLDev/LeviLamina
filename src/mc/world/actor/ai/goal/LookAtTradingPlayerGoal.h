@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/AutomaticID.h"
 #include "mc/world/actor/ai/goal/LookAtActorGoal.h"
 
 class LookAtTradingPlayerGoal : public ::LookAtActorGoal {
@@ -30,11 +31,6 @@ public:
      * @symbol ?canContinueToUse\@LookAtTradingPlayerGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
     /**
      * @vftbl 7
      * @symbol

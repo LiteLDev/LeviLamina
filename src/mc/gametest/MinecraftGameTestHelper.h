@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/common/bedrock/BaseGameTestHelper.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -12,7 +13,7 @@ namespace ScriptModuleMinecraft { enum class ScriptFacing; }
 namespace gametest { struct GameTestError; }
 // clang-format on
 
-class MinecraftGameTestHelper {
+class MinecraftGameTestHelper : public ::gametest::BaseGameTestHelper {
 
 public:
     // prevent constructor by default

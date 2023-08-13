@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class TerrainBurstReactionComponent {
+// auto generated inclusion list
+#include "mc/world/level/block/actor/LabTableReactionComponent.h"
+
+class TerrainBurstReactionComponent : public ::LabTableReactionComponent {
 
 public:
     // prevent constructor by default

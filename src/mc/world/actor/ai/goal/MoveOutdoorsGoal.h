@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/BaseMoveToBlockGoal.h"
 
 // auto generated forward declare list
@@ -19,7 +21,7 @@ public:
     // clang-format on
 
     // MoveOutdoorsGoal inner types define
-    class MoveOutdoorsDefinition {
+    class MoveOutdoorsDefinition : public ::BaseGoalDefinition {
 
     public:
         // prevent constructor by default
@@ -28,6 +30,11 @@ public:
 
     public:
         // NOLINTBEGIN
+        /**
+         * @vftbl 0
+         * @symbol __unk_vfn_0
+         */
+        virtual void __unk_vfn_0();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MOVEOUTDOORSGOAL_MOVEOUTDOORSDEFINITION
         /**
          * @symbol __unk_destructor_-1
@@ -70,11 +77,6 @@ public:
      */
     virtual bool canUse();
     /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
      * @vftbl 4
      * @symbol ?start\@MoveOutdoorsGoal\@\@UEAAXXZ
      */
@@ -90,16 +92,6 @@ public:
      * ?appendDebugInfo\@MoveOutdoorsGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
-    /**
-     * @vftbl 9
-     * @symbol __unk_vfn_9
-     */
-    virtual void __unk_vfn_9();
     /**
      * @vftbl 11
      * @symbol ?isValidTarget\@MoveOutdoorsGoal\@\@UEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z

@@ -24,7 +24,7 @@ public:
     /**
      * @symbol ?Initialize\@WaitTimer\@OS\@\@QEAAJPEAXP6AX0\@Z\@Z
      */
-    MCAPI long Initialize(void*, void (*)(void*));
+    MCAPI long Initialize(void*, void(__cdecl*)(void*));
     /**
      * @symbol ?Start\@WaitTimer\@OS\@\@QEAAX_K\@Z
      */

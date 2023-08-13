@@ -16,6 +16,10 @@ public:
      */
     MCAPI JigsawEditorData();
     /**
+     * @symbol ??0JigsawEditorData\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI JigsawEditorData(class JigsawEditorData&&);
+    /**
      * @symbol
      * ??0JigsawEditorData\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@000W4JigsawJointType\@\@\@Z
      */
@@ -26,10 +30,6 @@ public:
         std::string const&,
         enum class JigsawJointType
     );
-    /**
-     * @symbol ??0JigsawEditorData\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI JigsawEditorData(class JigsawEditorData&&);
     /**
      * @symbol
      * ?getFinalBlock\@JigsawEditorData\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ

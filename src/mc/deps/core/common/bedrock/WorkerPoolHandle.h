@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/common/bedrock/WorkerPoolManager.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +13,7 @@ class WorkerPool;
 
 namespace Bedrock {
 
-class WorkerPoolHandle {
+class WorkerPoolHandle : public ::Bedrock::WorkerPoolManager::PoolHandleInterface {
 
 public:
     // prevent constructor by default

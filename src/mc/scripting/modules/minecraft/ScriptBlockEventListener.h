@@ -9,7 +9,6 @@
 // clang-format off
 class Actor;
 class Block;
-class BlockEventListener;
 class BlockPos;
 class Dimension;
 class Player;

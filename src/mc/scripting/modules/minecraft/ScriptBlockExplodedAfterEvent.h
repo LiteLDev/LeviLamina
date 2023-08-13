@@ -17,13 +17,13 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0ScriptBlockExplodedAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
-     */
-    MCAPI ScriptBlockExplodedAfterEvent(struct ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent const&);
-    /**
      * @symbol ??0ScriptBlockExplodedAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@$$QEAU01\@\@Z
      */
     MCAPI ScriptBlockExplodedAfterEvent(struct ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent&&);
+    /**
+     * @symbol ??0ScriptBlockExplodedAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
+     */
+    MCAPI ScriptBlockExplodedAfterEvent(struct ScriptModuleMinecraft::ScriptBlockExplodedAfterEvent const&);
     /**
      * @symbol ??4ScriptBlockExplodedAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */

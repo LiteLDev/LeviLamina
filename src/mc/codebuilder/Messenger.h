@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/codebuilder/IMessenger.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -23,7 +24,7 @@ namespace Json { class Value; }
 
 namespace CodeBuilder {
 
-class Messenger {
+class Messenger : public ::CodeBuilder::IMessenger {
 
 public:
     // prevent constructor by default

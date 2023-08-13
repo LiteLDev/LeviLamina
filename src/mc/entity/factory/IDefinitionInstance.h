@@ -16,12 +16,12 @@ public:
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0() = 0;
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
      */
-    virtual void __unk_vfn_1() = 0;
+    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
@@ -44,9 +44,9 @@ public:
     virtual void __unk_vfn_5() = 0;
     /**
      * @vftbl 6
-     * @symbol ?getDefinitionTypeId\@?$DefinitionInstance\@UWaterMovementDescription\@\@\@\@UEBAGXZ
+     * @symbol __unk_vfn_6
      */
-    virtual unsigned short getDefinitionTypeId() const = 0;
+    virtual void __unk_vfn_6() = 0;
     /**
      * @vftbl 7
      * @symbol ?getRuntimeTypeId\@IDefinitionInstance\@\@UEBAGXZ

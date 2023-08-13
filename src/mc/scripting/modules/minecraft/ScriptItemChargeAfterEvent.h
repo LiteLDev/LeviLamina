@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
+#include "mc/scripting/modules/minecraft/ScriptItemEvent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,7 +15,7 @@ struct ItemChargeEvent;
 
 namespace ScriptModuleMinecraft {
 
-class ScriptItemChargeAfterEvent {
+class ScriptItemChargeAfterEvent : public ::ScriptModuleMinecraft::ScriptItemEvent {
 
 public:
     // prevent constructor by default

@@ -67,13 +67,13 @@ public:
      */
     MCAPI BlockDescriptor(class BlockDescriptor&&);
     /**
-     * @symbol ??0BlockDescriptor\@\@QEAA\@XZ
-     */
-    MCAPI BlockDescriptor();
-    /**
      * @symbol ??0BlockDescriptor\@\@QEAA\@AEBVHashedString\@\@\@Z
      */
     MCAPI BlockDescriptor(class HashedString const&);
+    /**
+     * @symbol ??0BlockDescriptor\@\@QEAA\@XZ
+     */
+    MCAPI BlockDescriptor();
     /**
      * @symbol ?getBlockOrUnknownBlock\@BlockDescriptor\@\@QEBAAEBVBlock\@\@XZ
      */

@@ -2,12 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ai/goal/Goal.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace mce { class UUID; }
 // clang-format on
 
-class DrinkPotionGoal {
+class DrinkPotionGoal : public ::Goal {
 
 public:
     // prevent constructor by default
@@ -32,11 +36,6 @@ public:
      * @symbol ?canContinueToUse\@DrinkPotionGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol ?start\@DrinkPotionGoal\@\@UEAAXXZ

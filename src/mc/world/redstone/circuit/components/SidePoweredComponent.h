@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/redstone/circuit/components/CapacitorComponent.h"
 #include "mc/world/redstone/circuit/components/CircuitComponentList.h"
-#include "mc/world/redstone/circuit/components/ProducerComponent.h"
 
-class SidePoweredComponent : public ::ProducerComponent {
+class SidePoweredComponent : public ::CapacitorComponent {
 
 public:
     CircuitComponentList mSideComponents;

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class FixedBiomeSource {
+// auto generated inclusion list
+#include "mc/world/level/levelgen/v1/BiomeSource.h"
+
+class FixedBiomeSource : public ::BiomeSource {
 
 public:
     // prevent constructor by default

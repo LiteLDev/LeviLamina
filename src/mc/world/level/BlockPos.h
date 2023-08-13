@@ -15,13 +15,13 @@ public:
      */
     MCAPI BlockPos(float, float, float);
     /**
-     * @symbol ??0BlockPos\@\@QEAA\@AEBVChunkPos\@\@H\@Z
-     */
-    MCAPI BlockPos(class ChunkPos const&, int);
-    /**
      * @symbol ??0BlockPos\@\@QEAA\@AEBVSubChunkPos\@\@\@Z
      */
     MCAPI BlockPos(class SubChunkPos const&);
+    /**
+     * @symbol ??0BlockPos\@\@QEAA\@AEBVChunkPos\@\@H\@Z
+     */
+    MCAPI BlockPos(class ChunkPos const&, int);
     /**
      * @symbol ??0BlockPos\@\@QEAA\@AEBVChunkPos\@\@AEBVChunkBlockPos\@\@F\@Z
      */

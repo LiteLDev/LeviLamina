@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ConsumeItemNode {
+// auto generated inclusion list
+#include "mc/world/actor/bhave/node/BehaviorNode.h"
+
+class ConsumeItemNode : public ::BehaviorNode {
 
 public:
     // prevent constructor by default

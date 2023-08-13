@@ -5,8 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/core/data/DividedPos2d.h"
 #include "mc/deps/core/utility/MultidimensionalArray.h"
+#include "mc/world/level/levelgen/v1/OverworldGenerator.h"
 
-class OverworldGeneratorMultinoise {
+class OverworldGeneratorMultinoise : public ::OverworldGenerator {
 public:
     // OverworldGeneratorMultinoise inner types declare
     // clang-format off

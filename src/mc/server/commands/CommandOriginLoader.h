@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class CommandOriginLoader {
+// auto generated inclusion list
+#include "mc/server/commands/ICommandOriginLoader.h"
+
+class CommandOriginLoader : public ::ICommandOriginLoader {
 
 public:
     // prevent constructor by default

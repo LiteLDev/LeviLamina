@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
 #include "mc/world/actor/ActorSpawnRuleBase.h"
 
 // auto generated forward declare list
@@ -8,7 +10,7 @@
 namespace Json { class Value; }
 // clang-format on
 
-class SpawnGroupRegistry : public ActorSpawnRuleBase {
+class SpawnGroupRegistry : public ::ActorSpawnRuleBase {
 
 public:
     std::vector<std::unique_ptr<class SpawnGroupData>>     mSpawnGroupRegistry; // this+0x48

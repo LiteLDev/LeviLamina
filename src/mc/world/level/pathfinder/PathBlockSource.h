@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class PathBlockSource {
+// auto generated inclusion list
+#include "mc/world/level/pathfinder/IPathBlockSource.h"
+
+class PathBlockSource : public ::IPathBlockSource {
 
 public:
     // prevent constructor by default

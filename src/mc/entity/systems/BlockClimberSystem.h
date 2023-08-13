@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BlockClimberSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class BlockClimberSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

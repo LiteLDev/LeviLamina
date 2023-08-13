@@ -21,6 +21,47 @@ public:
 
     public:
         // NOLINTBEGIN
+        /**
+         * @vftbl 0
+         * @symbol __unk_vfn_0
+         */
+        virtual void __unk_vfn_0();
+        /**
+         * @vftbl 1
+         * @symbol ?fetchAnyInteractablePlayer\@WorldAccessor\@DespawnComponent\@\@UEBAPEAVPlayer\@\@AEBVVec3\@\@M\@Z
+         */
+        virtual class Player* fetchAnyInteractablePlayer(class Vec3 const&, float) const = 0;
+        /**
+         * @vftbl 2
+         * @symbol ?getChunkTickRange\@WorldAccessor\@DespawnComponent\@\@UEBAIXZ
+         */
+        virtual unsigned int getChunkTickRange() const = 0;
+        /**
+         * @vftbl 3
+         * @symbol ?areChunksFullyLoaded\@WorldAccessor\@DespawnComponent\@\@UEBA_NAEBVBlockPos\@\@H\@Z
+         */
+        virtual bool areChunksFullyLoaded(class BlockPos const&, int) const = 0;
+        /**
+         * @vftbl 4
+         * @symbol ?hasUntickedNeighborChunk\@WorldAccessor\@DespawnComponent\@\@UEBA_NAEBVChunkPos\@\@H\@Z
+         */
+        virtual bool hasUntickedNeighborChunk(class ChunkPos const&, int) const = 0;
+        /**
+         * @vftbl 5
+         * @symbol ?getChanceRandomize\@WorldAccessor\@DespawnComponent\@\@UEAAAEAVRandomize\@\@XZ
+         */
+        virtual class Randomize& getChanceRandomize() = 0;
+        /**
+         * @vftbl 6
+         * @symbol
+         * ?getActorNoActionTime\@WorldAccessor\@DespawnComponent\@\@UEBA?AV?$optional\@H\@std\@\@AEBVActor\@\@\@Z
+         */
+        virtual std::optional<int> getActorNoActionTime(class Actor const&) const = 0;
+        /**
+         * @vftbl 7
+         * @symbol ?resetActorNoActionTime\@WorldAccessor\@DespawnComponent\@\@UEAAXAEAVActor\@\@\@Z
+         */
+        virtual void resetActorNoActionTime(class Actor&) = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DESPAWNCOMPONENT_IWORLDACCESSOR
         /**
          * @symbol __unk_destructor_-1
@@ -30,7 +71,7 @@ public:
         // NOLINTEND
     };
 
-    class WorldAccessor {
+    class WorldAccessor : public ::DespawnComponent::IWorldAccessor {
 
     public:
         // prevent constructor by default

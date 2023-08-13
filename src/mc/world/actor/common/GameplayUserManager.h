@@ -4,13 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/OwnerPtrT.h"
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
-class GameplayUserManager {
+class GameplayUserManager : public ::Bedrock::EnableNonOwnerReferences {
 
 public:
     // prevent constructor by default

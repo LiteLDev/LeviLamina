@@ -7,7 +7,7 @@
 
 namespace Bedrock::Http {
 
-class BinaryRequestBody {
+class BinaryRequestBody : public ::Bedrock::Http::Internal::IRequestBody {
 
 public:
     // prevent constructor by default

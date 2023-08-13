@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class DespawnSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class DespawnSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

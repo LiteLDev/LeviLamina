@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/config/ISharedController.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace PlayerCapabilities { struct IPlayerData; }
@@ -9,7 +12,7 @@ namespace PlayerCapabilities { struct IPlayerData; }
 
 namespace PlayerCapabilities {
 
-class SharedController {
+class SharedController : public ::PlayerCapabilities::ISharedController {
 
 public:
     // prevent constructor by default

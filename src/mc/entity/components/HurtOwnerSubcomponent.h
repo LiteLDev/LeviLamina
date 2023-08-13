@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/components/OnHitSubcomponent.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
 // clang-format on
 
-class HurtOwnerSubcomponent {
+class HurtOwnerSubcomponent : public ::OnHitSubcomponent {
 
 public:
     // prevent constructor by default

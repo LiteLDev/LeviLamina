@@ -15,13 +15,13 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0Result\@Core\@\@QEAA\@_NV?$function\@$$A6AXPEAVResult\@Core\@\@\@Z\@std\@\@\@Z
-     */
-    MCAPI Result(bool, std::function<void(class Core::Result*)>);
-    /**
      * @symbol ??0Result\@Core\@\@QEAA\@$$QEAV01\@\@Z
      */
     MCAPI Result(class Core::Result&&);
+    /**
+     * @symbol ??0Result\@Core\@\@QEAA\@_NV?$function\@$$A6AXPEAVResult\@Core\@\@\@Z\@std\@\@\@Z
+     */
+    MCAPI Result(bool, std::function<void(class Core::Result*)>);
     /**
      * @symbol ?architecturalProblem\@Result\@Core\@\@QEBAXXZ
      */

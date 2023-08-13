@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class SimpleRandom {
+// auto generated inclusion list
+#include "mc/math/IRandom.h"
+
+class SimpleRandom : public ::IRandom {
 
 public:
     // prevent constructor by default

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BreathableSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class BreathableSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

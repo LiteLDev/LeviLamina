@@ -5,13 +5,14 @@
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/core/StackString.h"
+#include "mc/deps/core/secure_storage/SecureStorage.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
 // clang-format on
 
-class FileSecureStorage {
+class FileSecureStorage : public ::SecureStorage {
 public:
     // FileSecureStorage inner types declare
     // clang-format off
@@ -20,30 +21,6 @@ public:
     // clang-format on
 
     // FileSecureStorage inner types define
-    class FileStorageSystem {
-
-    public:
-        // prevent constructor by default
-        FileStorageSystem& operator=(FileStorageSystem const&) = delete;
-        FileStorageSystem(FileStorageSystem const&)            = delete;
-        FileStorageSystem()                                    = delete;
-
-    public:
-        // NOLINTBEGIN
-        /**
-         * @vftbl 0
-         * @symbol
-         * ?getData\@FileStorageSystem\@FileSecureStorage\@\@UEAA_NAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VPath\@Core\@\@\@Z
-         */
-        virtual bool getData(std::string&, class Core::Path);
-        /**
-         * @vftbl 1
-         * @symbol
-         * ?setData\@FileStorageSystem\@FileSecureStorage\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VPath\@Core\@\@\@Z
-         */
-        virtual void setData(std::string const&, class Core::Path);
-        // NOLINTEND
-    };
 
     class StorageSystem {
 
@@ -65,6 +42,31 @@ public:
          * @vftbl 1
          * @symbol
          * ?setData\@StorageSystem\@FileSecureStorage\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VPath\@Core\@\@\@Z
+         */
+        virtual void setData(std::string const&, class Core::Path);
+        // NOLINTEND
+    };
+
+    class FileStorageSystem : public ::FileSecureStorage::StorageSystem {
+
+    public:
+        // prevent constructor by default
+        FileStorageSystem& operator=(FileStorageSystem const&) = delete;
+        FileStorageSystem(FileStorageSystem const&)            = delete;
+        FileStorageSystem()                                    = delete;
+
+    public:
+        // NOLINTBEGIN
+        /**
+         * @vftbl 0
+         * @symbol
+         * ?getData\@FileStorageSystem\@FileSecureStorage\@\@UEAA_NAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VPath\@Core\@\@\@Z
+         */
+        virtual bool getData(std::string&, class Core::Path);
+        /**
+         * @vftbl 1
+         * @symbol
+         * ?setData\@FileStorageSystem\@FileSecureStorage\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VPath\@Core\@\@\@Z
          */
         virtual void setData(std::string const&, class Core::Path);
         // NOLINTEND

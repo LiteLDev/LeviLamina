@@ -31,13 +31,13 @@ public:
     MCVAPI ~HugeMushroomFeature();
 #endif
     /**
-     * @symbol ??0HugeMushroomFeature\@\@QEAA\@XZ
-     */
-    MCAPI HugeMushroomFeature();
-    /**
      * @symbol ??0HugeMushroomFeature\@\@QEAA\@H\@Z
      */
     MCAPI HugeMushroomFeature(int);
+    /**
+     * @symbol ??0HugeMushroomFeature\@\@QEAA\@XZ
+     */
+    MCAPI HugeMushroomFeature();
     /**
      * @symbol ?placeFixed\@HugeMushroomFeature\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@HH\@Z
      */

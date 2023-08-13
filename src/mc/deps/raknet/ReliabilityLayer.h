@@ -144,15 +144,15 @@ public:
     MCAPI struct RakNet::InternalPacket* AllocateFromInternalPacketPool();
     /**
      * @symbol
+     * ?BuildPacketFromSplitPacketList\@ReliabilityLayer\@RakNet\@\@AEAAPEAUInternalPacket\@2\@PEAUSplitPacketChannel\@2\@_K\@Z
+     */
+    MCAPI struct RakNet::InternalPacket* BuildPacketFromSplitPacketList(struct RakNet::SplitPacketChannel*, uint64_t);
+    /**
+     * @symbol
      * ?BuildPacketFromSplitPacketList\@ReliabilityLayer\@RakNet\@\@AEAAPEAUInternalPacket\@2\@G_KPEAVRakNetSocket2\@2\@AEAUSystemAddress\@2\@PEAVRakNetRandom\@2\@AEAVBitStream\@2\@\@Z
      */
     MCAPI struct RakNet::InternalPacket*
     BuildPacketFromSplitPacketList(unsigned short, uint64_t, class RakNet::RakNetSocket2*, struct RakNet::SystemAddress&, class RakNet::RakNetRandom*, class RakNet::BitStream&);
-    /**
-     * @symbol
-     * ?BuildPacketFromSplitPacketList\@ReliabilityLayer\@RakNet\@\@AEAAPEAUInternalPacket\@2\@PEAUSplitPacketChannel\@2\@_K\@Z
-     */
-    MCAPI struct RakNet::InternalPacket* BuildPacketFromSplitPacketList(struct RakNet::SplitPacketChannel*, uint64_t);
     /**
      * @symbol ?ClearPacketsAndDatagrams\@ReliabilityLayer\@RakNet\@\@AEAAXXZ
      */

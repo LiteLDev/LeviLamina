@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/social/IEventListener.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -15,7 +16,7 @@ namespace Social::Events { class SummaryEvent; }
 
 namespace Social::Events {
 
-class AggregationEventListener {
+class AggregationEventListener : public ::Social::Events::IEventListener {
 
 public:
     // prevent constructor by default
@@ -38,22 +39,10 @@ public:
     virtual void
     recordEvent(class Social::Events::Event const&, class Bedrock::NonOwnerPointer<class AppPlatform> const&);
     /**
-     * @vftbl 2
-     * @symbol
-     * ?recordSummaryEvent\@OneDSEventListener\@Events\@Social\@\@UEAAXAEBVSummaryEvent\@23\@AEBV?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@\@Z
-     */
-    virtual void
-    recordSummaryEvent(class Social::Events::SummaryEvent const&, class Bedrock::NonOwnerPointer<class AppPlatform> const&);
-    /**
      * @vftbl 3
      * @symbol ?sendEvents\@AggregationEventListener\@Events\@Social\@\@UEAAX_N\@Z
      */
     virtual void sendEvents(bool);
-    /**
-     * @vftbl 4
-     * @symbol ?getEventTagsFilter\@OneDSEventListener\@Events\@Social\@\@UEBAHXZ
-     */
-    virtual int getEventTagsFilter() const = 0;
     /**
      * @vftbl 5
      * @symbol ?stopDebugEventLogging\@AggregationEventListener\@Events\@Social\@\@UEAAXXZ
@@ -61,7 +50,7 @@ public:
     virtual void stopDebugEventLogging();
     /**
      * @vftbl 6
-     * @symbol ?sendEvent\@OneDSEventListener\@Events\@Social\@\@UEAAXAEBVEvent\@23\@\@Z
+     * @symbol ?sendEvent\@MaelstromEventLogger\@Events\@Social\@\@UEAAXAEBVEvent\@23\@\@Z
      */
     virtual void sendEvent(class Social::Events::Event const&) = 0;
     /**

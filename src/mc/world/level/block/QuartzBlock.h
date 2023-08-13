@@ -4,14 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/optional_ref.h"
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/RotatedPillarBlock.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace mce { class Color; }
 // clang-format on
 
-class QuartzBlock : public ::BlockLegacy {
+class QuartzBlock : public ::RotatedPillarBlock {
 
 public:
     // prevent constructor by default

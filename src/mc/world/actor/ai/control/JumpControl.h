@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class JumpControl {
+// auto generated inclusion list
+#include "mc/world/actor/ai/control/Control.h"
+
+class JumpControl : public ::Control {
 
 public:
     // prevent constructor by default
@@ -18,9 +21,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?initializeInternal\@JumpControl\@\@UEAAXAEAVMob\@\@PEAUJumpControlDescription\@\@\@Z
      */
-    virtual void __unk_vfn_1();
+    virtual void initializeInternal(class Mob&, struct JumpControlDescription*);
     /**
      * @vftbl 2
      * @symbol
@@ -34,35 +37,30 @@ public:
     virtual void tick(class JumpControlComponent&, class Mob&);
     /**
      * @vftbl 4
-     * @symbol __unk_vfn_4
+     * @symbol ?getJumpDelay\@JumpControl\@\@MEBAHAEBVJumpControlComponent\@\@\@Z
      */
-    virtual void __unk_vfn_4();
+    virtual int getJumpDelay(class JumpControlComponent const&) const;
     /**
      * @vftbl 5
      * @symbol ?getJumpPower\@JumpControl\@\@MEBAMAEBVJumpControlComponent\@\@\@Z
      */
     virtual float getJumpPower(class JumpControlComponent const&) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUMPCONTROL
     /**
-     * @symbol ?getJumpDelay\@JumpControl\@\@MEBAHAEBVJumpControlComponent\@\@\@Z
-     */
-    MCVAPI int getJumpDelay(class JumpControlComponent const&) const;
-    /**
+     * @vftbl 6
      * @symbol ?getJumpType\@JumpControl\@\@MEBA?AW4JumpType\@\@AEBVJumpControlComponent\@\@\@Z
      */
-    MCVAPI enum class JumpType getJumpType(class JumpControlComponent const&) const;
+    virtual enum class JumpType getJumpType(class JumpControlComponent const&) const;
     /**
-     * @symbol ?initializeInternal\@JumpControl\@\@UEAAXAEAVMob\@\@PEAUJumpControlDescription\@\@\@Z
-     */
-    MCVAPI void initializeInternal(class Mob&, struct JumpControlDescription*);
-    /**
-     * @symbol ?resetSpeedModifier\@JumpControl\@\@MEAAXAEBVJumpControlComponent\@\@AEAVMob\@\@\@Z
-     */
-    MCVAPI void resetSpeedModifier(class JumpControlComponent const&, class Mob&);
-    /**
+     * @vftbl 7
      * @symbol ?setJumpType\@JumpControl\@\@MEAAXAEAVJumpControlComponent\@\@W4JumpType\@\@\@Z
      */
-    MCVAPI void setJumpType(class JumpControlComponent&, enum class JumpType);
+    virtual void setJumpType(class JumpControlComponent&, enum class JumpType);
+    /**
+     * @vftbl 8
+     * @symbol ?resetSpeedModifier\@JumpControl\@\@MEAAXAEBVJumpControlComponent\@\@AEAVMob\@\@\@Z
+     */
+    virtual void resetSpeedModifier(class JumpControlComponent const&, class Mob&);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_JUMPCONTROL
     /**
      * @symbol __unk_destructor_-1
      */

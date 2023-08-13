@@ -33,7 +33,7 @@ public:
      * @vftbl 3
      * @symbol ?AppendAndTakeOwnership\@UncheckedByteArraySink\@snappy\@\@UEAAXPEAD_KP6AXPEAXPEBD1\@Z2\@Z
      */
-    virtual void AppendAndTakeOwnership(char*, uint64_t, void (*)(void*, char const*, uint64_t), void*);
+    virtual void AppendAndTakeOwnership(char*, uint64_t, void(__cdecl*)(void*, char const*, uint64_t), void*);
     /**
      * @vftbl 4
      * @symbol ?GetAppendBufferVariable\@UncheckedByteArraySink\@snappy\@\@UEAAPEAD_K0PEAD0PEA_K\@Z

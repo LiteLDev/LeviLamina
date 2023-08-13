@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ProjectileDescription {
+// auto generated inclusion list
+#include "mc/world/actor/ActorComponentDescription.h"
+
+class ProjectileDescription : public ::ActorComponentDescription {
 
 public:
     // prevent constructor by default

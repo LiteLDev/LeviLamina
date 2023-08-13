@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class UnknownBlockTypeRegistry {
+// auto generated inclusion list
+#include "mc/world/level/block/registry/IUnknownBlockTypeRegistry.h"
+
+class UnknownBlockTypeRegistry : public ::IUnknownBlockTypeRegistry {
 
 public:
     // prevent constructor by default

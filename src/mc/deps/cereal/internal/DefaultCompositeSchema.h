@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/internal/BasicCompositeSchema.h"
 #include "mc/deps/cereal/internal/BasicSchema.h"
 
 // auto generated forward declare list
@@ -18,7 +19,7 @@ namespace cereal::internal { struct Result; }
 
 namespace cereal::internal {
 
-class DefaultCompositeSchema {
+class DefaultCompositeSchema : public ::cereal::internal::BasicCompositeSchema {
 
 public:
     // prevent constructor by default
@@ -52,11 +53,6 @@ public:
     virtual struct cereal::internal::Result
     doSave(struct cereal::SchemaWriter&, class entt::meta_any const&, struct cereal::SerializerTraits const&, class cereal::SerializerContext&)
         const;
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol __unk_vfn_4

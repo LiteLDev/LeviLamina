@@ -13,7 +13,7 @@ namespace Bedrock { class DataStore; }
 
 namespace Bedrock {
 
-class ApplicationDataStores {
+class ApplicationDataStores : public ::Bedrock::IApplicationDataStores {
 
 public:
     // prevent constructor by default

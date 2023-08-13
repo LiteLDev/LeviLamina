@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/AutomaticID.h"
 #include "mc/world/actor/ai/goal/FindCoverGoal.h"
 
 class FleeSunGoal : public ::FindCoverGoal {
@@ -25,16 +26,6 @@ public:
      * @symbol ?canUse\@FleeSunGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 6
-     * @symbol __unk_vfn_6
-     */
-    virtual void __unk_vfn_6();
     /**
      * @vftbl 7
      * @symbol

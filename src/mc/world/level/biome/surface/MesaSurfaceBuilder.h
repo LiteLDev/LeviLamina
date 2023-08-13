@@ -18,7 +18,7 @@ struct SurfaceMaterialBlocks;
 
 namespace VanillaSurfaceBuilders {
 
-class MesaSurfaceBuilder {
+class MesaSurfaceBuilder : public ::ISurfaceBuilder {
 
 public:
     // prevent constructor by default

@@ -49,12 +49,12 @@ public:
     MCVAPI ~CompletedUsingItemPacket();
 #endif
     /**
-     * @symbol ??0CompletedUsingItemPacket\@\@QEAA\@XZ
-     */
-    MCAPI CompletedUsingItemPacket();
-    /**
      * @symbol ??0CompletedUsingItemPacket\@\@QEAA\@FH\@Z
      */
     MCAPI CompletedUsingItemPacket(short, int);
+    /**
+     * @symbol ??0CompletedUsingItemPacket\@\@QEAA\@XZ
+     */
+    MCAPI CompletedUsingItemPacket();
     // NOLINTEND
 };

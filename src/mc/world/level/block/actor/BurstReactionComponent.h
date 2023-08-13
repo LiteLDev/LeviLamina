@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BurstReactionComponent {
+// auto generated inclusion list
+#include "mc/world/level/block/actor/LabTableReactionComponent.h"
+
+class BurstReactionComponent : public ::LabTableReactionComponent {
 
 public:
     // prevent constructor by default

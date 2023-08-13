@@ -2,7 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BaseMoveToGoal {
+// auto generated inclusion list
+#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ai/goal/Goal.h"
+
+class BaseMoveToGoal : public ::Goal {
 
 public:
     // prevent constructor by default
@@ -28,11 +32,6 @@ public:
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
      * @vftbl 4
      * @symbol ?start\@BaseMoveToGoal\@\@UEAAXXZ
      */
@@ -48,29 +47,13 @@ public:
      */
     virtual void tick();
     /**
-     * @vftbl 7
-     * @symbol
-     * ?appendDebugInfo\@RaidGardenGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    virtual void appendDebugInfo(std::string&) const = 0;
-    /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
-    /**
-     * @vftbl 9
-     * @symbol __unk_vfn_9
-     */
-    virtual void __unk_vfn_9();
-    /**
      * @vftbl 10
      * @symbol ?hasReachedTarget\@BaseMoveToGoal\@\@UEBA_NXZ
      */
     virtual bool hasReachedTarget() const;
     /**
      * @vftbl 11
-     * @symbol ?isValidTarget\@RaidGardenGoal\@\@UEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     * @symbol ?isValidTarget\@DropItemForGoal\@\@UEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     virtual bool isValidTarget(class BlockSource&, class BlockPos const&) = 0;
     /**

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ScriptPluginPackSourceEnumerator {
+// auto generated inclusion list
+#include "mc/scripting/IScriptPluginSourceEnumerator.h"
+
+class ScriptPluginPackSourceEnumerator : public ::IScriptPluginSourceEnumerator {
 
 public:
     // prevent constructor by default

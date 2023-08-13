@@ -9,6 +9,7 @@ class RakWebSocketDataFrame;
 enum class CloseStatusCode;
 enum class WSConnectionResult;
 namespace Automation { class AutomationClient; }
+namespace CodeBuilder { class GameContext; }
 namespace CodeBuilder { enum class EncryptionCipherMode; }
 namespace CodeBuilder { struct ChatMessage; }
 namespace CodeBuilder { struct ChatSubscription; }
@@ -124,6 +125,11 @@ public:
      * @symbol ?disconnect\@AutomationSession\@Automation\@\@QEAAXXZ
      */
     MCAPI void disconnect();
+    /**
+     * @symbol
+     * ?getGameContext\@AutomationSession\@Automation\@\@QEBA?AV?$shared_ptr\@VGameContext\@CodeBuilder\@\@\@std\@\@XZ
+     */
+    MCAPI std::shared_ptr<class CodeBuilder::GameContext> getGameContext() const;
     /**
      * @symbol ?isConnecting\@AutomationSession\@Automation\@\@QEAA_NXZ
      */

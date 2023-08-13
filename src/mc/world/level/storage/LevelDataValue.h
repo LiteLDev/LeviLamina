@@ -20,17 +20,17 @@ public:
     public:
         // NOLINTBEGIN
         /**
-         * @symbol ??0Tag\@LevelDataValue\@\@QEAA\@$$QEAVCompoundTag\@\@\@Z
+         * @symbol ??0Tag\@LevelDataValue\@\@QEAA\@XZ
          */
-        MCAPI Tag(class CompoundTag&&);
+        MCAPI Tag();
         /**
          * @symbol ??0Tag\@LevelDataValue\@\@QEAA\@$$QEAU01\@\@Z
          */
         MCAPI Tag(struct LevelDataValue::Tag&&);
         /**
-         * @symbol ??0Tag\@LevelDataValue\@\@QEAA\@XZ
+         * @symbol ??0Tag\@LevelDataValue\@\@QEAA\@$$QEAVCompoundTag\@\@\@Z
          */
-        MCAPI Tag();
+        MCAPI Tag(class CompoundTag&&);
         /**
          * @symbol ??4Tag\@LevelDataValue\@\@QEAAAEAU01\@$$QEAU01\@\@Z
          */

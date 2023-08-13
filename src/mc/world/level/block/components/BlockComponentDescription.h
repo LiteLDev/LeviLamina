@@ -33,24 +33,27 @@ public:
     virtual std::string const& getName() const;
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?initializeComponent\@BlockComponentDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
-    virtual void __unk_vfn_2();
+    virtual void initializeComponent(class EntityContext&) const;
     /**
      * @vftbl 3
-     * @symbol __unk_vfn_3
+     * @symbol ?initializeComponent\@BlockComponentDescription\@\@UEBAXAEAVBlockComponentStorage\@\@\@Z
      */
-    virtual void __unk_vfn_3();
+    virtual void initializeComponent(class BlockComponentStorage&) const;
     /**
      * @vftbl 4
-     * @symbol __unk_vfn_4
+     * @symbol ?initializeComponentFromCode\@BlockComponentDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
-    virtual void __unk_vfn_4();
+    virtual void initializeComponentFromCode(class EntityContext&) const;
     /**
      * @vftbl 5
-     * @symbol __unk_vfn_5
+     * @symbol
+     * ?buildSchema\@BlockComponentDescription\@\@UEBAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UBlockComponentGroupDescription\@\@\@JsonUtil\@\@\@std\@\@AEBVBlockComponentFactory\@\@\@Z
      */
-    virtual void __unk_vfn_5();
+    virtual void
+    buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>>&, class BlockComponentFactory const&)
+        const;
     /**
      * @vftbl 6
      * @symbol ?isNetworkComponent\@BlockComponentDescription\@\@UEBA_NXZ
@@ -62,34 +65,17 @@ public:
      * ?buildNetworkTag\@BlockComponentDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCOMPONENTDESCRIPTION
     /**
-     * @symbol
-     * ?buildSchema\@BlockComponentDescription\@\@UEBAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UBlockComponentGroupDescription\@\@\@JsonUtil\@\@\@std\@\@AEBVBlockComponentFactory\@\@\@Z
-     */
-    MCVAPI void
-    buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>>&, class BlockComponentFactory const&)
-        const;
-    /**
-     * @symbol ?handleVersionBasedInitialization\@BlockComponentDescription\@\@UEAAXAEBVSemVersion\@\@\@Z
-     */
-    MCVAPI void handleVersionBasedInitialization(class SemVersion const&);
-    /**
-     * @symbol ?initializeComponent\@BlockComponentDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
-     */
-    MCVAPI void initializeComponent(class EntityContext&) const;
-    /**
-     * @symbol ?initializeComponent\@BlockComponentDescription\@\@UEBAXAEAVBlockComponentStorage\@\@\@Z
-     */
-    MCVAPI void initializeComponent(class BlockComponentStorage&) const;
-    /**
-     * @symbol ?initializeComponentFromCode\@BlockComponentDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
-     */
-    MCVAPI void initializeComponentFromCode(class EntityContext&) const;
-    /**
+     * @vftbl 8
      * @symbol ?initializeFromNetwork\@BlockComponentDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
      */
-    MCVAPI void initializeFromNetwork(class CompoundTag const&);
+    virtual void initializeFromNetwork(class CompoundTag const&);
+    /**
+     * @vftbl 9
+     * @symbol ?handleVersionBasedInitialization\@BlockComponentDescription\@\@UEAAXAEBVSemVersion\@\@\@Z
+     */
+    virtual void handleVersionBasedInitialization(class SemVersion const&);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKCOMPONENTDESCRIPTION
     /**
      * @symbol __unk_destructor_-1
      */

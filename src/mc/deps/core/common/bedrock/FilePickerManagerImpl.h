@@ -13,7 +13,7 @@ namespace Bedrock { class DirectoryPickerConfig; }
 
 namespace Bedrock {
 
-class FilePickerManagerImpl {
+class FilePickerManagerImpl : public ::Bedrock::FilePickerManager {
 
 public:
     // prevent constructor by default

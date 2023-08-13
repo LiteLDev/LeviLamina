@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/Command.h"
+#include "mc/server/commands/standard/MessagingCommand.h"
 
-class TitleCommand : public ::Command {
+class TitleCommand : public ::MessagingCommand {
 
 public:
     // prevent constructor by default
@@ -21,7 +21,7 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 1
+     * @vftbl 2
      * @symbol ?execute\@TitleCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;

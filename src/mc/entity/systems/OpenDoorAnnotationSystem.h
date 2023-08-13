@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class OpenDoorAnnotationSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class OpenDoorAnnotationSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

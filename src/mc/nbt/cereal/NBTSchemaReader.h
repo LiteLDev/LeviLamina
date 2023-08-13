@@ -2,13 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cereal/SchemaReader.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { enum class SchemaReaderState; }
 namespace cereal { struct SerializerTraits; }
 // clang-format on
 
-class NBTSchemaReader {
+class NBTSchemaReader : public ::cereal::SchemaReader {
 
 public:
     // prevent constructor by default
@@ -131,6 +134,11 @@ public:
      * @symbol ?pop\@NBTSchemaReader\@\@UEAAXAEBUSerializerTraits\@cereal\@\@\@Z
      */
     virtual void pop(struct cereal::SerializerTraits const&);
+    /**
+     * @vftbl 22
+     * @symbol ?isSequenceReader\@SchemaReader\@cereal\@\@UEBA_NXZ
+     */
+    virtual bool isSequenceReader() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NBTSCHEMAREADER
     /**
      * @symbol ?asInt16\@NBTSchemaReader\@\@UEAA?AV?$optional\@F\@std\@\@AEBUSerializerTraits\@cereal\@\@\@Z

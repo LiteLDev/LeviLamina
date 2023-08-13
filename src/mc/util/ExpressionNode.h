@@ -21,10 +21,6 @@ public:
      */
     MCAPI ExpressionNode(std::string const&, enum class MolangVersion, class gsl::span<class HashedString const>);
     /**
-     * @symbol ??0ExpressionNode\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI ExpressionNode(class ExpressionNode const&);
-    /**
      * @symbol
      * ??0ExpressionNode\@\@QEAA\@AEBVValue\@Json\@\@W4MolangVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z
      */
@@ -35,13 +31,17 @@ public:
      */
     MCAPI ExpressionNode(std::string const&, class SemVersion const&, class gsl::span<class HashedString const>);
     /**
-     * @symbol ??0ExpressionNode\@\@QEAA\@M\@Z
+     * @symbol ??0ExpressionNode\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI ExpressionNode(float);
+    MCAPI ExpressionNode(class ExpressionNode const&);
     /**
      * @symbol ??0ExpressionNode\@\@QEAA\@AEAUMolangScriptArg\@\@W4ExpressionOp\@\@\@Z
      */
     MCAPI ExpressionNode(struct MolangScriptArg&, enum class ExpressionOp);
+    /**
+     * @symbol ??0ExpressionNode\@\@QEAA\@M\@Z
+     */
+    MCAPI ExpressionNode(float);
     /**
      * @symbol ??0ExpressionNode\@\@QEAA\@$$QEAV0\@\@Z
      */
@@ -65,14 +65,14 @@ public:
     MCAPI struct MolangScriptArg const& evalGeneric(class RenderParams&) const;
     /**
      * @symbol
-     * ?getExpressionString\@ExpressionNode\@\@QEBA?BV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string const getExpressionString() const;
-    /**
-     * @symbol
      * ?getExpressionString\@ExpressionNode\@\@QEAAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     MCAPI std::string const& getExpressionString();
+    /**
+     * @symbol
+     * ?getExpressionString\@ExpressionNode\@\@QEBA?BV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     */
+    MCAPI std::string const getExpressionString() const;
     /**
      * @symbol ?getMolangVersion\@ExpressionNode\@\@QEBA?BW4MolangVersion\@\@XZ
      */
@@ -108,13 +108,13 @@ public:
      */
     MCAPI bool isValid() const;
     /**
-     * @symbol ?link\@ExpressionNode\@\@QEBA?AW4MolangCompileResult\@\@W4MolangVersion\@\@\@Z
-     */
-    MCAPI enum class MolangCompileResult link(enum class MolangVersion) const;
-    /**
      * @symbol ?link\@ExpressionNode\@\@QEBA?AW4MolangCompileResult\@\@XZ
      */
     MCAPI enum class MolangCompileResult link() const;
+    /**
+     * @symbol ?link\@ExpressionNode\@\@QEBA?AW4MolangCompileResult\@\@W4MolangVersion\@\@\@Z
+     */
+    MCAPI enum class MolangCompileResult link(enum class MolangVersion) const;
     /**
      * @symbol ?moveConstantChildToValueIfFloatOrHashType\@ExpressionNode\@\@QEAAXH\@Z
      */

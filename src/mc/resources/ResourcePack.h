@@ -1,14 +1,14 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/resources/Pack.h"
 #include "mc/resources/PackReport.h"
+#include "mc/resources/ResourceSignature.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
-#include "mc/resources/ResourceSignature.h"
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,7 +16,7 @@ namespace Core { class Path; }
 namespace mce { class UUID; }
 // clang-format on
 
-class ResourcePack : public Bedrock::EnableNonOwnerReferences {
+class ResourcePack : public ::Bedrock::EnableNonOwnerReferences {
 
 public:
     bool                                                mHidden;                // this+0x18

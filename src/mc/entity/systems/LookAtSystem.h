@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class LookAtSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class LookAtSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

@@ -27,15 +27,15 @@ public:
      * @symbol ?endRequest\@ScreenHandlerBase\@\@UEAA?AW4ItemStackNetResult\@\@XZ
      */
     virtual enum class ItemStackNetResult endRequest();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCREENHANDLERBASE
     /**
+     * @vftbl 3
      * @symbol ?endRequestBatch\@ScreenHandlerBase\@\@UEAAXXZ
      */
-    MCVAPI void endRequestBatch();
+    virtual void endRequestBatch();
     /**
+     * @vftbl 4
      * @symbol ?postRequest\@ScreenHandlerBase\@\@UEAAX_N\@Z
      */
-    MCVAPI void postRequest(bool);
-#endif
+    virtual void postRequest(bool);
     // NOLINTEND
 };

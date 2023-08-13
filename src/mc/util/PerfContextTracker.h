@@ -65,7 +65,7 @@ public:
         // NOLINTEND
     };
 
-    class Timer {
+    class Timer : public ::PerfContextTracker::Duration {
 
     public:
         // prevent constructor by default

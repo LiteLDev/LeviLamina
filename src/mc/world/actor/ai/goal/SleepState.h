@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class SleepState {
+// auto generated inclusion list
+#include "mc/world/actor/ai/goal/PetSleepWithOwnerState.h"
+
+class SleepState : public ::PetSleepWithOwnerState {
 
 public:
     // prevent constructor by default
@@ -19,9 +22,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?tick\@SleepState\@\@UEAAXXZ
+     * @symbol __unk_vfn_1
      */
-    virtual void tick();
+    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
@@ -32,5 +35,11 @@ public:
      * @symbol ?stop\@SleepState\@\@UEAAXXZ
      */
     virtual void stop();
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SLEEPSTATE
+    /**
+     * @symbol ?tick\@SleepState\@\@UEAAXXZ
+     */
+    MCVAPI void tick();
+#endif
     // NOLINTEND
 };

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::JSONObject { class Node; }
@@ -11,7 +14,7 @@ namespace Core { class Path; }
 
 namespace Bedrock {
 
-class DataStore {
+class DataStore : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // DataStore inner types declare
     // clang-format off
@@ -121,9 +124,36 @@ public:
         Viewer& operator=(Viewer const&) = delete;
         Viewer(Viewer const&)            = delete;
         Viewer()                         = delete;
+
+    public:
+        // NOLINTBEGIN
+        /**
+         * @vftbl 0
+         * @symbol __unk_vfn_0
+         */
+        virtual void __unk_vfn_0();
+        /**
+         * @vftbl 1
+         * @symbol
+         * ?getOwningDataStore\@EditorImpl\@DataStore\@Bedrock\@\@UEBA?AV?$not_null\@PEBVDataStore\@Bedrock\@\@\@gsl\@\@XZ
+         */
+        virtual class gsl::not_null<class Bedrock::DataStore const*> getOwningDataStore() const = 0;
+        /**
+         * @vftbl 2
+         * @symbol
+         * ?getOwningDataStore\@EditorImpl\@DataStore\@Bedrock\@\@UEAA?AV?$not_null\@PEAVDataStore\@Bedrock\@\@\@gsl\@\@XZ
+         */
+        virtual class gsl::not_null<class Bedrock::DataStore*> getOwningDataStore() = 0;
+        /**
+         * @vftbl 3
+         * @symbol
+         * ?getValueForKey\@EditorImpl\@DataStore\@Bedrock\@\@UEBAPEBVNode\@JSONObject\@3\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
+         */
+        virtual class Bedrock::JSONObject::Node const* getValueForKey(std::string_view) const = 0;
+        // NOLINTEND
     };
 
-    class ViewerImpl {
+    class ViewerImpl : public ::Bedrock::DataStore::Viewer {
 
     public:
         // prevent constructor by default

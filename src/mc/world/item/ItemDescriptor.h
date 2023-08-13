@@ -41,7 +41,7 @@ public:
         /**
          * @vftbl 0
          * @symbol
-         * ?clone\@ComplexAliasDescriptor\@\@UEBA?AV?$unique_ptr\@UBaseDescriptor\@ItemDescriptor\@\@U?$default_delete\@UBaseDescriptor\@ItemDescriptor\@\@\@std\@\@\@std\@\@XZ
+         * ?clone\@ItemTagDescriptor\@\@UEBA?AV?$unique_ptr\@UBaseDescriptor\@ItemDescriptor\@\@U?$default_delete\@UBaseDescriptor\@ItemDescriptor\@\@\@std\@\@\@std\@\@XZ
          */
         virtual std::unique_ptr<struct ItemDescriptor::BaseDescriptor> clone() const = 0;
         /**
@@ -51,7 +51,7 @@ public:
         virtual bool sameItems(struct ItemDescriptor::BaseDescriptor const&, bool) const;
         /**
          * @vftbl 2
-         * @symbol ?sameItem\@ComplexAliasDescriptor\@\@UEBA_NAEBUItemEntry\@ItemDescriptor\@\@_N\@Z
+         * @symbol ?sameItem\@ItemTagDescriptor\@\@UEBA_NAEBUItemEntry\@ItemDescriptor\@\@_N\@Z
          */
         virtual bool sameItem(struct ItemDescriptor::ItemEntry const&, bool) const = 0;
         /**
@@ -74,12 +74,12 @@ public:
         /**
          * @vftbl 6
          * @symbol
-         * ?toMap\@ComplexAliasDescriptor\@\@UEBA?AV?$map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@U?$less\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@\@std\@\@\@2\@\@std\@\@XZ
+         * ?toMap\@ItemTagDescriptor\@\@UEBA?AV?$map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@U?$less\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V12\@\@std\@\@\@2\@\@std\@\@XZ
          */
         virtual std::map<std::string, std::string> toMap() const = 0;
         /**
          * @vftbl 7
-         * @symbol ?save\@ComplexAliasDescriptor\@\@UEBA?AV?$optional\@VCompoundTag\@\@\@std\@\@XZ
+         * @symbol ?save\@ItemTagDescriptor\@\@UEBA?AV?$optional\@VCompoundTag\@\@\@std\@\@XZ
          */
         virtual std::optional<class CompoundTag> save() const = 0;
         /**
@@ -89,12 +89,12 @@ public:
         virtual void serialize(class Json::Value&) const;
         /**
          * @vftbl 9
-         * @symbol ?serialize\@ComplexAliasDescriptor\@\@UEBAXAEAVBinaryStream\@\@\@Z
+         * @symbol ?serialize\@ItemTagDescriptor\@\@UEBAXAEAVBinaryStream\@\@\@Z
          */
         virtual void serialize(class BinaryStream&) const = 0;
         /**
          * @vftbl 10
-         * @symbol ?getType\@ComplexAliasDescriptor\@\@UEBA?AW4InternalType\@ItemDescriptor\@\@XZ
+         * @symbol ?getType\@ItemTagDescriptor\@\@UEBA?AW4InternalType\@ItemDescriptor\@\@XZ
          */
         virtual enum class ItemDescriptor::InternalType getType() const = 0;
         /**
@@ -104,7 +104,7 @@ public:
         virtual bool isValid() const;
         /**
          * @vftbl 12
-         * @symbol ?getHash\@ComplexAliasDescriptor\@\@UEBA_KXZ
+         * @symbol ?getHash\@ItemTagDescriptor\@\@UEBA_KXZ
          */
         virtual uint64_t getHash() const = 0;
         /**
@@ -183,10 +183,6 @@ public:
      */
     MCAPI ItemDescriptor(class ReadOnlyBinaryStream&);
     /**
-     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBUItemTag\@\@\@Z
-     */
-    MCAPI ItemDescriptor(struct ItemTag const&);
-    /**
      * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVItem\@\@H\@Z
      */
     MCAPI ItemDescriptor(class Item const&, int);
@@ -195,17 +191,21 @@ public:
      */
     MCAPI ItemDescriptor(class BlockLegacy const&);
     /**
-     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVValue\@Json\@\@AEBVSemVersion\@\@\@Z
-     */
-    MCAPI ItemDescriptor(class Json::Value const&, class SemVersion const&);
-    /**
      * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVBlock\@\@\@Z
      */
     MCAPI ItemDescriptor(class Block const&);
     /**
+     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBUItemTag\@\@\@Z
+     */
+    MCAPI ItemDescriptor(struct ItemTag const&);
+    /**
      * @symbol ??0ItemDescriptor\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI ItemDescriptor(class ItemDescriptor&&);
+    /**
+     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVValue\@Json\@\@AEBVSemVersion\@\@\@Z
+     */
+    MCAPI ItemDescriptor(class Json::Value const&, class SemVersion const&);
     /**
      * @symbol ?forEachItemUntil\@ItemDescriptor\@\@QEBA_NV?$function\@$$A6A_NAEBVItem\@\@F\@Z\@std\@\@\@Z
      */
@@ -266,13 +266,13 @@ public:
      */
     MCAPI bool isValid(bool) const;
     /**
-     * @symbol ??4ItemDescriptor\@\@QEAAXAEBV0\@\@Z
-     */
-    MCAPI void operator=(class ItemDescriptor const&);
-    /**
      * @symbol ??4ItemDescriptor\@\@QEAAX$$QEAV0\@\@Z
      */
     MCAPI void operator=(class ItemDescriptor&&);
+    /**
+     * @symbol ??4ItemDescriptor\@\@QEAAXAEBV0\@\@Z
+     */
+    MCAPI void operator=(class ItemDescriptor const&);
     /**
      * @symbol ??8ItemDescriptor\@\@QEBA_NAEBV0\@\@Z
      */

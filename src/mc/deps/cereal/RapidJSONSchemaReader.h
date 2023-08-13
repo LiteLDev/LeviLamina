@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cereal/SchemaReader.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { enum class SchemaReaderState; }
@@ -10,7 +13,7 @@ namespace cereal { struct SerializerTraits; }
 
 namespace cereal {
 
-class RapidJSONSchemaReader {
+class RapidJSONSchemaReader : public ::cereal::SchemaReader {
 
 public:
     // prevent constructor by default
@@ -133,6 +136,11 @@ public:
      * @symbol ?pop\@RapidJSONSchemaReader\@cereal\@\@UEAAXAEBUSerializerTraits\@2\@\@Z
      */
     virtual void pop(struct cereal::SerializerTraits const&);
+    /**
+     * @vftbl 22
+     * @symbol ?isSequenceReader\@SchemaReader\@cereal\@\@UEBA_NXZ
+     */
+    virtual bool isSequenceReader() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREAL_RAPIDJSONSCHEMAREADER
     /**
      * @symbol ?length\@RapidJSONSchemaReader\@cereal\@\@UEAA_KAEBUSerializerTraits\@2\@\@Z

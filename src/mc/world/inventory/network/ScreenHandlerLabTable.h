@@ -3,9 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/inventory/network/ScreenHandlerBase.h"
 #include "mc/world/item/components/ItemStackRequestActionDataless.h"
 
-class ScreenHandlerLabTable {
+class ScreenHandlerLabTable : public ::ScreenHandlerBase {
 
 public:
     // prevent constructor by default
@@ -30,11 +31,6 @@ public:
      * @symbol ?endRequest\@ScreenHandlerLabTable\@\@MEAA?AW4ItemStackNetResult\@\@XZ
      */
     virtual enum class ItemStackNetResult endRequest();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol ?postRequest\@ScreenHandlerLabTable\@\@MEAAX_N\@Z

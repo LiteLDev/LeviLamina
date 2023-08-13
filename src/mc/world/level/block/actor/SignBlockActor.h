@@ -30,13 +30,13 @@ public:
     public:
         // NOLINTBEGIN
         /**
-         * @symbol ??0CachedLineData\@SignBlockActor\@\@QEAA\@$$QEAU01\@\@Z
-         */
-        MCAPI CachedLineData(struct SignBlockActor::CachedLineData&&);
-        /**
          * @symbol ??0CachedLineData\@SignBlockActor\@\@QEAA\@XZ
          */
         MCAPI CachedLineData();
+        /**
+         * @symbol ??0CachedLineData\@SignBlockActor\@\@QEAA\@$$QEAU01\@\@Z
+         */
+        MCAPI CachedLineData(struct SignBlockActor::CachedLineData&&);
         /**
          * @symbol ??1CachedLineData\@SignBlockActor\@\@QEAA\@XZ
          */
@@ -335,14 +335,14 @@ public:
     MCAPI void setIsGlowing(enum class SignTextSide, bool);
     /**
      * @symbol
-     * ?setMessageForServerScripingOnly\@SignBlockActor\@\@QEAAXW4SignTextSide\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1\@Z
-     */
-    MCAPI void setMessageForServerScripingOnly(enum class SignTextSide, std::string, std::string);
-    /**
-     * @symbol
      * ?setMessageForServerScripingOnly\@SignBlockActor\@\@QEAAXW4SignTextSide\@\@VTextObjectRoot\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void setMessageForServerScripingOnly(enum class SignTextSide, class TextObjectRoot, std::string);
+    /**
+     * @symbol
+     * ?setMessageForServerScripingOnly\@SignBlockActor\@\@QEAAXW4SignTextSide\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1\@Z
+     */
+    MCAPI void setMessageForServerScripingOnly(enum class SignTextSide, std::string, std::string);
     /**
      * @symbol ?setSignTextColor\@SignBlockActor\@\@QEAAXW4SignTextSide\@\@AEBVColor\@mce\@\@\@Z
      */

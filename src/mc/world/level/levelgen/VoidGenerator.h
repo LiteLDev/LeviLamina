@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/WorldGenerator.h"
 
-class VoidGenerator {
+class VoidGenerator : public ::WorldGenerator {
 
 public:
     // prevent constructor by default

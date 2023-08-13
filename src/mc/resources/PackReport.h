@@ -28,6 +28,10 @@ public:
 public:
     // NOLINTBEGIN
     /**
+     * @symbol ??0PackReport\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI PackReport(class PackReport&&);
+    /**
      * @symbol ??0PackReport\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI PackReport(class PackReport const&);
@@ -35,10 +39,6 @@ public:
      * @symbol ??0PackReport\@\@QEAA\@XZ
      */
     MCAPI PackReport();
-    /**
-     * @symbol ??0PackReport\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI PackReport(class PackReport&&);
     /**
      * @symbol
      * ?getErrors\@PackReport\@\@QEBAAEBV?$vector\@V?$shared_ptr\@VPackError\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VPackError\@\@\@std\@\@\@2\@\@std\@\@XZ

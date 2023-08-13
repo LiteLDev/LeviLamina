@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ShiftedDurationAmplifier {
+// auto generated inclusion list
+#include "mc/world/attribute/Amplifier.h"
+
+class ShiftedDurationAmplifier : public ::Amplifier {
 
 public:
     // prevent constructor by default
@@ -17,11 +20,6 @@ public:
      * @symbol __unk_vfn_0
      */
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
-    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol ?shouldBuff\@ShiftedDurationAmplifier\@\@UEBA_NHH\@Z

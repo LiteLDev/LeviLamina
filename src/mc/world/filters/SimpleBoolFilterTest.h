@@ -10,7 +10,7 @@
 namespace Json { class Value; }
 // clang-format on
 
-class SimpleBoolFilterTest {
+class SimpleBoolFilterTest : public ::FilterTest {
 
 public:
     // prevent constructor by default

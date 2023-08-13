@@ -32,13 +32,13 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0ScriptModalFormData\@ScriptModuleMinecraftServerUI\@\@QEAA\@$$QEAV01\@\@Z
-     */
-    MCAPI ScriptModalFormData(class ScriptModuleMinecraftServerUI::ScriptModalFormData&&);
-    /**
      * @symbol ??0ScriptModalFormData\@ScriptModuleMinecraftServerUI\@\@QEAA\@XZ
      */
     MCAPI ScriptModalFormData();
+    /**
+     * @symbol ??0ScriptModalFormData\@ScriptModuleMinecraftServerUI\@\@QEAA\@$$QEAV01\@\@Z
+     */
+    MCAPI ScriptModalFormData(class ScriptModuleMinecraftServerUI::ScriptModalFormData&&);
     /**
      * @symbol ?buildJson\@ScriptModalFormData\@ScriptModuleMinecraftServerUI\@\@QEBA?AVValue\@Json\@\@XZ
      */

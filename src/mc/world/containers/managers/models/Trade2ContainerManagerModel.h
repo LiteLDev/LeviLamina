@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/containers/managers/models/ContainerManagerModel.h"
+#include "mc/world/containers/managers/models/LevelContainerManagerModel.h"
 
-class Trade2ContainerManagerModel : public ::ContainerManagerModel {
+class Trade2ContainerManagerModel : public ::LevelContainerManagerModel {
 
 public:
     // prevent constructor by default

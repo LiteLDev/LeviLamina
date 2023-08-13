@@ -32,19 +32,20 @@ public:
     virtual class Objective* clearDisplayObjective(std::string const&);
     /**
      * @vftbl 3
-     * @symbol __unk_vfn_3
+     * @symbol ?createScoreboardId\@Scoreboard\@\@UEAAAEBUScoreboardId\@\@AEBVPlayer\@\@\@Z
      */
-    virtual void __unk_vfn_3();
+    virtual struct ScoreboardId const& createScoreboardId(class Player const&);
     /**
      * @vftbl 4
-     * @symbol __unk_vfn_4
+     * @symbol ?createScoreboardId\@Scoreboard\@\@UEAAAEBUScoreboardId\@\@AEBVActor\@\@\@Z
      */
-    virtual void __unk_vfn_4();
+    virtual struct ScoreboardId const& createScoreboardId(class Actor const&);
     /**
      * @vftbl 5
-     * @symbol __unk_vfn_5
+     * @symbol
+     * ?createScoreboardId\@Scoreboard\@\@UEAAAEBUScoreboardId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void __unk_vfn_5();
+    virtual struct ScoreboardId const& createScoreboardId(std::string const&);
     /**
      * @vftbl 6
      * @symbol ?onObjectiveAdded\@Scoreboard\@\@UEAAXAEBVObjective\@\@\@Z
@@ -62,77 +63,40 @@ public:
     virtual void onScoreChanged(struct ScoreboardId const&, class Objective const&);
     /**
      * @vftbl 9
-     * @symbol __unk_vfn_9
+     * @symbol ?onPlayerScoreRemoved\@Scoreboard\@\@UEAAXAEBUScoreboardId\@\@AEBVObjective\@\@\@Z
      */
-    virtual void __unk_vfn_9();
+    virtual void onPlayerScoreRemoved(struct ScoreboardId const&, class Objective const&);
     /**
      * @vftbl 10
-     * @symbol __unk_vfn_10
+     * @symbol ?onPlayerJoined\@Scoreboard\@\@UEAAXAEBVPlayer\@\@\@Z
      */
-    virtual void __unk_vfn_10();
+    virtual void onPlayerJoined(class Player const&);
     /**
      * @vftbl 11
-     * @symbol __unk_vfn_11
+     * @symbol ?onPlayerIdentityUpdated\@Scoreboard\@\@UEAAXAEBUPlayerScoreboardId\@\@\@Z
      */
-    virtual void __unk_vfn_11();
+    virtual void onPlayerIdentityUpdated(struct PlayerScoreboardId const&);
     /**
      * @vftbl 12
-     * @symbol __unk_vfn_12
+     * @symbol ?tick\@Scoreboard\@\@UEAAXXZ
      */
-    virtual void __unk_vfn_12();
+    virtual void tick();
     /**
      * @vftbl 13
-     * @symbol __unk_vfn_13
+     * @symbol ?setPacketSender\@Scoreboard\@\@UEAAXPEAVPacketSender\@\@\@Z
      */
-    virtual void __unk_vfn_13();
+    virtual void setPacketSender(class PacketSender*);
     /**
      * @vftbl 14
-     * @symbol __unk_vfn_14
+     * @symbol ?writeToLevelStorage\@Scoreboard\@\@UEAAXXZ
      */
-    virtual void __unk_vfn_14();
+    virtual void writeToLevelStorage();
     /**
      * @vftbl 15
      * @symbol ?isClientSide\@Scoreboard\@\@MEBA_NXZ
      */
     virtual bool isClientSide() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARD
-    /**
-     * @symbol ?createScoreboardId\@Scoreboard\@\@UEAAAEBUScoreboardId\@\@AEBVActor\@\@\@Z
-     */
-    MCVAPI struct ScoreboardId const& createScoreboardId(class Actor const&);
-    /**
-     * @symbol
-     * ?createScoreboardId\@Scoreboard\@\@UEAAAEBUScoreboardId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCVAPI struct ScoreboardId const& createScoreboardId(std::string const&);
-    /**
-     * @symbol ?createScoreboardId\@Scoreboard\@\@UEAAAEBUScoreboardId\@\@AEBVPlayer\@\@\@Z
-     */
-    MCVAPI struct ScoreboardId const& createScoreboardId(class Player const&);
-    /**
-     * @symbol ?onPlayerIdentityUpdated\@Scoreboard\@\@UEAAXAEBUPlayerScoreboardId\@\@\@Z
-     */
-    MCVAPI void onPlayerIdentityUpdated(struct PlayerScoreboardId const&);
-    /**
-     * @symbol ?onPlayerJoined\@Scoreboard\@\@UEAAXAEBVPlayer\@\@\@Z
-     */
-    MCVAPI void onPlayerJoined(class Player const&);
-    /**
-     * @symbol ?onPlayerScoreRemoved\@Scoreboard\@\@UEAAXAEBUScoreboardId\@\@AEBVObjective\@\@\@Z
-     */
-    MCVAPI void onPlayerScoreRemoved(struct ScoreboardId const&, class Objective const&);
-    /**
-     * @symbol ?setPacketSender\@Scoreboard\@\@UEAAXPEAVPacketSender\@\@\@Z
-     */
-    MCVAPI void setPacketSender(class PacketSender*);
-    /**
-     * @symbol ?tick\@Scoreboard\@\@UEAAXXZ
-     */
-    MCVAPI void tick();
-    /**
-     * @symbol ?writeToLevelStorage\@Scoreboard\@\@UEAAXXZ
-     */
-    MCVAPI void writeToLevelStorage();
     /**
      * @symbol __unk_destructor_-1
      */
@@ -279,12 +243,6 @@ public:
     modifyPlayerScore(bool&, class ScoreboardIdentityRef*, class Objective&, int, enum class PlayerScoreSetFunction);
     /**
      * @symbol
-     * ?registerScoreboardIdentity\@Scoreboard\@\@QEAAAEBVScoreboardIdentityRef\@\@AEBUScoreboardId\@\@AEBUActorUniqueID\@\@\@Z
-     */
-    MCAPI class ScoreboardIdentityRef const&
-    registerScoreboardIdentity(struct ScoreboardId const&, struct ActorUniqueID const&);
-    /**
-     * @symbol
      * ?registerScoreboardIdentity\@Scoreboard\@\@QEAAAEBVScoreboardIdentityRef\@\@AEBUScoreboardId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class ScoreboardIdentityRef const& registerScoreboardIdentity(struct ScoreboardId const&, std::string const&);
@@ -299,18 +257,24 @@ public:
     MCAPI class ScoreboardIdentityRef const&
     registerScoreboardIdentity(struct ScoreboardId const&, struct PlayerScoreboardId const&);
     /**
+     * @symbol
+     * ?registerScoreboardIdentity\@Scoreboard\@\@QEAAAEBVScoreboardIdentityRef\@\@AEBUScoreboardId\@\@AEBUActorUniqueID\@\@\@Z
+     */
+    MCAPI class ScoreboardIdentityRef const&
+    registerScoreboardIdentity(struct ScoreboardId const&, struct ActorUniqueID const&);
+    /**
      * @symbol ?removeObjective\@Scoreboard\@\@QEAA_NPEAVObjective\@\@\@Z
      */
     MCAPI bool removeObjective(class Objective*);
-    /**
-     * @symbol ?removeScoreListener\@Scoreboard\@\@QEAAXAEBVPlayer\@\@\@Z
-     */
-    MCAPI void removeScoreListener(class Player const&);
     /**
      * @symbol
      * ?removeScoreListener\@Scoreboard\@\@QEAAXAEBVPlayer\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void removeScoreListener(class Player const&, std::string const&);
+    /**
+     * @symbol ?removeScoreListener\@Scoreboard\@\@QEAAXAEBVPlayer\@\@\@Z
+     */
+    MCAPI void removeScoreListener(class Player const&);
     /**
      * @symbol ?replaceFakePlayer\@Scoreboard\@\@QEAAXAEBUScoreboardId\@\@AEBUPlayerScoreboardId\@\@\@Z
      */

@@ -307,13 +307,13 @@ public:
      */
     MCAPI void setXuid(std::string const&);
     /**
-     * @symbol ?simulateAttack\@SimulatedPlayer\@\@QEAA_NXZ
-     */
-    MCAPI bool simulateAttack();
-    /**
      * @symbol ?simulateAttack\@SimulatedPlayer\@\@QEAA_NPEAVActor\@\@\@Z
      */
     MCAPI bool simulateAttack(class Actor*);
+    /**
+     * @symbol ?simulateAttack\@SimulatedPlayer\@\@QEAA_NXZ
+     */
+    MCAPI bool simulateAttack();
     /**
      * @symbol
      * ?simulateDestroyBlock\@SimulatedPlayer\@\@QEAA_NAEBVBlockPos\@\@W4ScriptFacing\@ScriptModuleMinecraft\@\@\@Z
@@ -336,13 +336,13 @@ public:
      */
     MCAPI bool simulateInteract(class BlockPos const&, enum class ScriptModuleMinecraft::ScriptFacing);
     /**
-     * @symbol ?simulateInteract\@SimulatedPlayer\@\@QEAA_NXZ
-     */
-    MCAPI bool simulateInteract();
-    /**
      * @symbol ?simulateInteract\@SimulatedPlayer\@\@QEAA_NAEAVActor\@\@\@Z
      */
     MCAPI bool simulateInteract(class Actor&);
+    /**
+     * @symbol ?simulateInteract\@SimulatedPlayer\@\@QEAA_NXZ
+     */
+    MCAPI bool simulateInteract();
     /**
      * @symbol ?simulateJump\@SimulatedPlayer\@\@QEAA_NXZ
      */
@@ -352,6 +352,10 @@ public:
      */
     MCAPI void simulateLocalMove(class Vec3 const&, float);
     /**
+     * @symbol ?simulateLookAt\@SimulatedPlayer\@\@QEAAXAEBVBlockPos\@\@\@Z
+     */
+    MCAPI void simulateLookAt(class BlockPos const&);
+    /**
      * @symbol ?simulateLookAt\@SimulatedPlayer\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void simulateLookAt(class Actor&);
@@ -359,10 +363,6 @@ public:
      * @symbol ?simulateLookAt\@SimulatedPlayer\@\@QEAAXAEBVVec3\@\@\@Z
      */
     MCAPI void simulateLookAt(class Vec3 const&);
-    /**
-     * @symbol ?simulateLookAt\@SimulatedPlayer\@\@QEAAXAEBVBlockPos\@\@\@Z
-     */
-    MCAPI void simulateLookAt(class BlockPos const&);
     /**
      * @symbol ?simulateMoveToLocation\@SimulatedPlayer\@\@QEAAXAEBVVec3\@\@M\@Z
      */

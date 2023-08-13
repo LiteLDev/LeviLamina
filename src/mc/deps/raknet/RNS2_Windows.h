@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/raknet/RNS2_Berkley.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace RakNet { enum class RNS2BindResult; }
@@ -14,7 +11,7 @@ namespace RakNet { struct RNS2_SendParameters; }
 
 namespace RakNet {
 
-class RNS2_Windows : public ::RakNet::RNS2_Berkley {
+class RNS2_Windows {
 
 public:
     // prevent constructor by default
@@ -34,6 +31,11 @@ public:
      * @symbol ?Send\@RNS2_Windows\@RakNet\@\@UEAAHPEAURNS2_SendParameters\@2\@PEBDI\@Z
      */
     virtual int Send(struct RakNet::RNS2_SendParameters*, char const*, unsigned int);
+    /**
+     * @vftbl 2
+     * @symbol ?SetMulticastInterface\@RNS2_Berkley\@RakNet\@\@UEAAXH\@Z
+     */
+    virtual void SetMulticastInterface(int);
     /**
      * @vftbl 3
      * @symbol ?Bind\@RNS2_Windows\@RakNet\@\@UEAA?AW4RNS2BindResult\@2\@PEAURNS2_BerkleyBindParameters\@2\@PEBDI\@Z

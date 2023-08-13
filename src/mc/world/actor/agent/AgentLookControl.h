@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class AgentLookControl {
+// auto generated inclusion list
+#include "mc/world/actor/ai/control/LookControl.h"
+
+class AgentLookControl : public ::LookControl {
 
 public:
     // prevent constructor by default

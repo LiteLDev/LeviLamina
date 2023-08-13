@@ -32,15 +32,15 @@ public:
     MCAPI
     PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, std::string const&, bool, class PackSettings*);
     /**
-     * @symbol ??0PackInstance\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI PackInstance(class PackInstance const&);
-    /**
      * @symbol
      * ??0PackInstance\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VResourcePack\@\@\@Bedrock\@\@\@gsl\@\@H_NPEAVPackSettings\@\@\@Z
      */
     MCAPI
     PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, int, bool, class PackSettings*);
+    /**
+     * @symbol ??0PackInstance\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI PackInstance(class PackInstance const&);
     /**
      * @symbol ?forEachIn\@PackInstance\@\@QEBAXAEBVPath\@Core\@\@V?$function\@$$A6AXAEBVPath\@Core\@\@\@Z\@std\@\@_N\@Z
      */
@@ -55,13 +55,13 @@ public:
      */
     MCAPI double getLoadTime() const;
     /**
-     * @symbol ?getManifest\@PackInstance\@\@QEAAAEAVPackManifest\@\@XZ
-     */
-    MCAPI class PackManifest& getManifest();
-    /**
      * @symbol ?getManifest\@PackInstance\@\@QEBAAEBVPackManifest\@\@XZ
      */
     MCAPI class PackManifest const& getManifest() const;
+    /**
+     * @symbol ?getManifest\@PackInstance\@\@QEAAAEAVPackManifest\@\@XZ
+     */
+    MCAPI class PackManifest& getManifest();
     /**
      * @symbol ?getPackCategory\@PackInstance\@\@QEBA?AW4PackCategory\@\@XZ
      */

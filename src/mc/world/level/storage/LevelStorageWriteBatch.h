@@ -86,13 +86,13 @@ public:
     MCVAPI ~LevelStorageWriteBatch();
 #endif
     /**
-     * @symbol ??0LevelStorageWriteBatch\@\@QEAA\@XZ
-     */
-    MCAPI LevelStorageWriteBatch();
-    /**
      * @symbol ??0LevelStorageWriteBatch\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI LevelStorageWriteBatch(class LevelStorageWriteBatch&&);
+    /**
+     * @symbol ??0LevelStorageWriteBatch\@\@QEAA\@XZ
+     */
+    MCAPI LevelStorageWriteBatch();
     /**
      * @symbol ?addFlushCallback\@LevelStorageWriteBatch\@\@QEAAXV?$function\@$$A6AXXZ\@std\@\@\@Z
      */

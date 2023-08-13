@@ -63,12 +63,12 @@ public:
     MCAPI
     ClientboundDebugRendererPacket(std::string, class mce::Color const&, class Vec3 const&, std::chrono::milliseconds);
     /**
-     * @symbol ??0ClientboundDebugRendererPacket\@\@QEAA\@XZ
-     */
-    MCAPI ClientboundDebugRendererPacket();
-    /**
      * @symbol ??0ClientboundDebugRendererPacket\@\@QEAA\@W4Type\@0\@\@Z
      */
     MCAPI ClientboundDebugRendererPacket(enum class ClientboundDebugRendererPacket::Type);
+    /**
+     * @symbol ??0ClientboundDebugRendererPacket\@\@QEAA\@XZ
+     */
+    MCAPI ClientboundDebugRendererPacket();
     // NOLINTEND
 };

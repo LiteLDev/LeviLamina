@@ -35,14 +35,14 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0ScriptBlock\@ScriptModuleMinecraft\@\@QEAA\@$$QEAV01\@\@Z
-     */
-    MCAPI ScriptBlock(class ScriptModuleMinecraft::ScriptBlock&&);
-    /**
      * @symbol
      * ??0ScriptBlock\@ScriptModuleMinecraft\@\@QEAA\@AEAVBlockSource\@\@VBlockPos\@\@AEBVWeakLifetimeScope\@Scripting\@\@\@Z
      */
     MCAPI ScriptBlock(class BlockSource&, class BlockPos, class Scripting::WeakLifetimeScope const&);
+    /**
+     * @symbol ??0ScriptBlock\@ScriptModuleMinecraft\@\@QEAA\@$$QEAV01\@\@Z
+     */
+    MCAPI ScriptBlock(class ScriptModuleMinecraft::ScriptBlock&&);
     /**
      * @symbol
      * ?canPlace\@ScriptBlock\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@_N\@Scripting\@\@AEBV?$variant\@V?$StrongTypedObjectHandle\@VScriptBlockType\@ScriptModuleMinecraft\@\@\@Scripting\@\@V?$StrongTypedObjectHandle\@VScriptBlockPermutation\@ScriptModuleMinecraft\@\@\@2\@\@std\@\@V?$optional\@W4ScriptFacing\@ScriptModuleMinecraft\@\@\@6\@\@Z

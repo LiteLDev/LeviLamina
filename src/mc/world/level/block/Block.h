@@ -61,13 +61,13 @@ public:
      */
     MCAPI void animateTick(class BlockSource&, class BlockPos const&, class Random&) const;
     /**
-     * @symbol ?asItemInstance\@Block\@\@QEBA?AVItemInstance\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@_N\@Z
-     */
-    MCAPI class ItemInstance asItemInstance(class BlockSource&, class BlockPos const&, bool) const;
-    /**
      * @symbol ?asItemInstance\@Block\@\@QEBA?AVItemInstance\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI class ItemInstance asItemInstance(class BlockSource&, class BlockPos const&) const;
+    /**
+     * @symbol ?asItemInstance\@Block\@\@QEBA?AVItemInstance\@\@AEAVBlockSource\@\@AEBVBlockPos\@\@_N\@Z
+     */
+    MCAPI class ItemInstance asItemInstance(class BlockSource&, class BlockPos const&, bool) const;
     /**
      * @symbol ?attack\@Block\@\@QEBA_NPEAVPlayer\@\@AEBVBlockPos\@\@\@Z
      */
@@ -100,13 +100,13 @@ public:
      */
     MCAPI bool canBeBrokenFromFalling() const;
     /**
-     * @symbol ?canBeBuiltOver\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlockItem\@\@\@Z
-     */
-    MCAPI bool canBeBuiltOver(class BlockSource&, class BlockPos const&, class BlockItem const&) const;
-    /**
      * @symbol ?canBeBuiltOver\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI bool canBeBuiltOver(class BlockSource&, class BlockPos const&) const;
+    /**
+     * @symbol ?canBeBuiltOver\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBVBlockItem\@\@\@Z
+     */
+    MCAPI bool canBeBuiltOver(class BlockSource&, class BlockPos const&, class BlockItem const&) const;
     /**
      * @symbol ?canBeFertilized\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@AEBV1\@\@Z
      */
@@ -172,16 +172,16 @@ public:
      */
     MCAPI bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
     /**
-     * @symbol ?clip\@Block\@\@QEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_N\@Z
-     */
-    MCAPI class HitResult
-    clip(class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, bool) const;
-    /**
      * @symbol ?clip\@Block\@\@QEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_NAEBVAABB\@\@\@Z
      */
     MCAPI class HitResult
     clip(class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, bool, class AABB const&)
         const;
+    /**
+     * @symbol ?clip\@Block\@\@QEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_N\@Z
+     */
+    MCAPI class HitResult
+    clip(class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, bool) const;
     /**
      * @symbol ?computeRawSerializationIdHashForNetwork\@Block\@\@QEBAIXZ
      */
@@ -551,13 +551,13 @@ public:
      */
     MCAPI bool mayPick(class BlockSource const&, bool) const;
     /**
-     * @symbol ?mayPlace\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI bool mayPlace(class BlockSource&, class BlockPos const&) const;
-    /**
      * @symbol ?mayPlace\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     MCAPI bool mayPlace(class BlockSource&, class BlockPos const&, unsigned char) const;
+    /**
+     * @symbol ?mayPlace\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI bool mayPlace(class BlockSource&, class BlockPos const&) const;
     /**
      * @symbol ?mayPlaceOn\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */

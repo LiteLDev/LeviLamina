@@ -30,13 +30,13 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0IdentityDefinition\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI IdentityDefinition(class IdentityDefinition&&);
-    /**
      * @symbol ??0IdentityDefinition\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI IdentityDefinition(class IdentityDefinition const&);
+    /**
+     * @symbol ??0IdentityDefinition\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI IdentityDefinition(class IdentityDefinition&&);
     /**
      * @symbol ?getEntityId\@IdentityDefinition\@\@QEBAAEBUActorUniqueID\@\@XZ
      */

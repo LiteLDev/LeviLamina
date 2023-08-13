@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/level/levelgen/WorldGenerator.h"
 
-class OverworldGenerator {
+class OverworldGenerator : public ::WorldGenerator {
 public:
     // OverworldGenerator inner types declare
     // clang-format off

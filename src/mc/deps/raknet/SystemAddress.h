@@ -60,13 +60,13 @@ public:
      */
     MCAPI SystemAddress(char const*, unsigned short);
     /**
-     * @symbol ?ToString\@SystemAddress\@RakNet\@\@QEBAPEBD_ND\@Z
-     */
-    MCAPI char const* ToString(bool, char) const;
-    /**
      * @symbol ?ToString\@SystemAddress\@RakNet\@\@QEBAX_NPEADD\@Z
      */
     MCAPI void ToString(bool, char*, char) const;
+    /**
+     * @symbol ?ToString\@SystemAddress\@RakNet\@\@QEBAPEBD_ND\@Z
+     */
+    MCAPI char const* ToString(bool, char) const;
     /**
      * @symbol ?ToString_Old\@SystemAddress\@RakNet\@\@QEBAX_NPEADD\@Z
      */

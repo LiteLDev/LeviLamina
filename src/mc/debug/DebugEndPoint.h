@@ -2,12 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/debug/log/ContentLogEndPoint.h"
+#include "mc/resources/ResourcePackListener.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
 // clang-format on
 
-class DebugEndPoint {
+class DebugEndPoint : public ::ContentLogEndPoint {
 public:
     // DebugEndPoint inner types declare
     // clang-format off
@@ -15,7 +19,7 @@ public:
     // clang-format on
 
     // DebugEndPoint inner types define
-    class VanillaWorldChecker {
+    class VanillaWorldChecker : public ::ResourcePackListener {
 
     public:
         // prevent constructor by default

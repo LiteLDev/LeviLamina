@@ -6,6 +6,7 @@
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
+#include "mc/scripting/modules/minecraft/IScriptBlockProperty.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +16,7 @@ namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptIntBlockProperty {
+class ScriptIntBlockProperty : public ::ScriptModuleMinecraft::IScriptBlockProperty {
 
 public:
     // prevent constructor by default

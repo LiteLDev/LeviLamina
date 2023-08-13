@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class FunctionAction {
+// auto generated inclusion list
+#include "mc/world/level/chunk/IRequestAction.h"
+
+class FunctionAction : public ::IRequestAction {
 
 public:
     // prevent constructor by default

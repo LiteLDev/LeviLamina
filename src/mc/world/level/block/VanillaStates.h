@@ -527,13 +527,13 @@ MCAPI extern class BlockStateVariant<int> const WeirdoDirection;
  */
 MCAPI extern class BlockStateVariant<enum class WoodType> const WoodType;
 /**
- * @symbol ?getState\@VanillaStates\@\@YAPEBVBlockState\@\@AEBVHashedString\@\@\@Z
- */
-MCAPI class BlockState const* getState(class HashedString const&);
-/**
  * @symbol ?getState\@VanillaStates\@\@YAPEBVBlockState\@\@AEBVHashedString\@\@AEAUCachedBlockStateMapPtr\@1\@\@Z
  */
 MCAPI class BlockState const* getState(class HashedString const&, struct VanillaStates::CachedBlockStateMapPtr&);
+/**
+ * @symbol ?getState\@VanillaStates\@\@YAPEBVBlockState\@\@AEBVHashedString\@\@\@Z
+ */
+MCAPI class BlockState const* getState(class HashedString const&);
 /**
  * @symbol ?registerStates\@VanillaStates\@\@YAXXZ
  */

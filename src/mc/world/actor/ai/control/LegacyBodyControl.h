@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class LegacyBodyControl {
+// auto generated inclusion list
+#include "mc/world/actor/BodyControl.h"
+
+class LegacyBodyControl : public ::BodyControl {
 
 public:
     // prevent constructor by default

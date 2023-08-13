@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class FeatureToggles {
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+
+class FeatureToggles : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // FeatureToggles inner types declare
     // clang-format off

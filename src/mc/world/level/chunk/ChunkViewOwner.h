@@ -12,13 +12,13 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0ChunkViewOwner\@\@QEAA\@AEBVNetworkIdentifier\@\@W4SubClientId\@\@\@Z
-     */
-    MCAPI ChunkViewOwner(class NetworkIdentifier const&, enum class SubClientId);
-    /**
      * @symbol ??0ChunkViewOwner\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI ChunkViewOwner(class ChunkViewOwner const&);
+    /**
+     * @symbol ??0ChunkViewOwner\@\@QEAA\@AEBVNetworkIdentifier\@\@W4SubClientId\@\@\@Z
+     */
+    MCAPI ChunkViewOwner(class NetworkIdentifier const&, enum class SubClientId);
     /**
      * @symbol ?getHash\@ChunkViewOwner\@\@QEBA_KXZ
      */

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class OnFireServerSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/OnFireSystem.h"
+
+class OnFireServerSystem : public ::OnFireSystem {
 
 public:
     // prevent constructor by default

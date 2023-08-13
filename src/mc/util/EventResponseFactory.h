@@ -11,6 +11,21 @@ public:
 
 public:
     // NOLINTBEGIN
+    /**
+     * @vftbl 0
+     * @symbol __unk_vfn_0
+     */
+    virtual void __unk_vfn_0();
+    /**
+     * @vftbl 1
+     * @symbol ?initializeFactory\@ItemEventResponseFactory\@\@UEAAXAEBVExperiments\@\@\@Z
+     */
+    virtual void initializeFactory(class Experiments const&) = 0;
+    /**
+     * @vftbl 2
+     * @symbol ?initSchema\@ItemEventResponseFactory\@\@UEAAXXZ
+     */
+    virtual void initSchema() = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_EVENTRESPONSEFACTORY
     /**
      * @symbol __unk_destructor_-1

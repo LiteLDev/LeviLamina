@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class DropperBlockActor {
+// auto generated inclusion list
+#include "mc/world/level/block/actor/DispenserBlockActor.h"
+
+class DropperBlockActor : public ::DispenserBlockActor {
 
 public:
     // prevent constructor by default

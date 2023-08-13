@@ -55,12 +55,12 @@ public:
     MCVAPI ~RespawnPacket();
 #endif
     /**
-     * @symbol ??0RespawnPacket\@\@QEAA\@XZ
-     */
-    MCAPI RespawnPacket();
-    /**
      * @symbol ??0RespawnPacket\@\@QEAA\@AEBVVec3\@\@AEBW4PlayerRespawnState\@\@\@Z
      */
     MCAPI RespawnPacket(class Vec3 const&, enum class PlayerRespawnState const&);
+    /**
+     * @symbol ??0RespawnPacket\@\@QEAA\@XZ
+     */
+    MCAPI RespawnPacket();
     // NOLINTEND
 };

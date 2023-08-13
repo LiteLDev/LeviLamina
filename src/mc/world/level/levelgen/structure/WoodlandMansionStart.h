@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class WoodlandMansionStart {
+// auto generated inclusion list
+#include "mc/world/level/levelgen/structure/StructureStart.h"
+
+class WoodlandMansionStart : public ::StructureStart {
 
 public:
     // prevent constructor by default

@@ -21,7 +21,7 @@ public:
     /**
      * @symbol ?Initialize\@ThreadPool\@OS\@\@QEAAJPEAXP6AX0AEAUThreadPoolActionStatus\@2\@\@Z\@Z
      */
-    MCAPI long Initialize(void*, void (*)(void*, struct OS::ThreadPoolActionStatus&));
+    MCAPI long Initialize(void*, void(__cdecl*)(void*, struct OS::ThreadPoolActionStatus&));
     /**
      * @symbol ?Submit\@ThreadPool\@OS\@\@QEAAXXZ
      */

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BrushableBlockActor {
+// auto generated inclusion list
+#include "mc/world/level/block/actor/RandomizableBlockActorContainer.h"
+
+class BrushableBlockActor : public ::RandomizableBlockActorContainer {
 public:
     // BrushableBlockActor inner types define
     enum class BrushingState {};

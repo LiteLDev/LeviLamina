@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class WorldSessionEndPoint {
+// auto generated inclusion list
+#include "mc/deps/core/debug/log/ContentLogEndPoint.h"
+
+class WorldSessionEndPoint : public ::ContentLogEndPoint {
 
 public:
     // prevent constructor by default

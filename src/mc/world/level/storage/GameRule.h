@@ -7,6 +7,7 @@ public:
     // GameRule inner types declare
     // clang-format off
     class ValidationError;
+    union Value;
     // clang-format on
 
     // GameRule inner types define

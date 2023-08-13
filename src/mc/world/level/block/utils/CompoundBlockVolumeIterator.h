@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class CompoundBlockVolumeIterator {
+// auto generated inclusion list
+#include "mc/world/level/block/utils/BaseBlockLocationIterator.h"
+
+class CompoundBlockVolumeIterator : public ::BaseBlockLocationIterator {
 
 public:
     // prevent constructor by default

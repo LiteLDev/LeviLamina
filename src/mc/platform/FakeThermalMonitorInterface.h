@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class FakeThermalMonitorInterface {
+// auto generated inclusion list
+#include "mc/platform/thermal/ThermalMonitorInterface.h"
+
+class FakeThermalMonitorInterface : public ::ThermalMonitorInterface {
 
 public:
     // prevent constructor by default

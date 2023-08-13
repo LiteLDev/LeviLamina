@@ -28,12 +28,12 @@ public:
     /**
      * @vftbl 1
      * @symbol
-     * ?assemble\@ShapelessRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@AEAVCraftingContext\@\@\@Z
+     * ?assemble\@ShulkerBoxRecipe\@\@UEBAAEBV?$vector\@VItemInstance\@\@V?$allocator\@VItemInstance\@\@\@std\@\@\@std\@\@AEAVCraftingContainer\@\@AEAVCraftingContext\@\@\@Z
      */
     virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&, class CraftingContext&) const = 0;
     /**
      * @vftbl 2
-     * @symbol ?getCraftingSize\@DecoratedPotRecipe\@\@UEBAHXZ
+     * @symbol ?getCraftingSize\@BannerAddPatternRecipe\@\@UEBAHXZ
      */
     virtual int getCraftingSize() const = 0;
     /**
@@ -59,7 +59,7 @@ public:
     virtual bool matches(class CraftingContainer const&, class CraftingContext const&) const = 0;
     /**
      * @vftbl 7
-     * @symbol ?size\@DecoratedPotRecipe\@\@UEBAHXZ
+     * @symbol ?size\@BannerAddPatternRecipe\@\@UEBAHXZ
      */
     virtual int size() const = 0;
     /**

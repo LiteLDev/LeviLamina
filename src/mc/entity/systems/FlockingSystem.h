@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class FlockingSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class FlockingSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

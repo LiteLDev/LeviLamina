@@ -6,9 +6,10 @@
 #include "mc/common/wrapper/OwnerPtrT.h"
 #include "mc/common/wrapper/StackRefResultT.h"
 #include "mc/common/wrapper/WeakRefT.h"
+#include "mc/volume/VolumeEntityManager.h"
 #include "mc/world/AutomaticID.h"
 
-class VolumeEntityManagerServer {
+class VolumeEntityManagerServer : public ::VolumeEntityManager {
 public:
     // VolumeEntityManagerServer inner types define
     enum class CreateVolumeResult {};

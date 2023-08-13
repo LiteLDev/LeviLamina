@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/FileImpl.h"
 #include "mc/deps/core/PathBuffer.h"
 
 // auto generated forward declare list
@@ -16,7 +17,7 @@ namespace Core { class Result; }
 
 namespace Core {
 
-class FlatFile {
+class FlatFile : public ::Core::FileImpl {
 
 public:
     // prevent constructor by default

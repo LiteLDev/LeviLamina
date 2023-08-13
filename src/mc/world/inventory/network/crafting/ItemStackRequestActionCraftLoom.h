@@ -4,8 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/world/inventory/network/crafting/ItemStackRequestActionCraftBase.h"
 
-class ItemStackRequestActionCraftLoom {
+class ItemStackRequestActionCraftLoom : public ::ItemStackRequestActionCraftBase {
 
 public:
     // prevent constructor by default
@@ -21,19 +22,19 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?getCraftAction\@ItemStackRequestActionCraftBase\@\@UEBAPEBV1\@XZ
      */
-    virtual void __unk_vfn_1();
+    virtual class ItemStackRequestActionCraftBase const* getCraftAction() const;
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?getFilteredStringIndex\@ItemStackRequestAction\@\@UEBAHXZ
      */
-    virtual void __unk_vfn_2();
+    virtual int getFilteredStringIndex() const;
     /**
      * @vftbl 3
-     * @symbol __unk_vfn_3
+     * @symbol ?postLoadItems_DEPRECATEDASKTYLAING\@ItemStackRequestActionCraftBase\@\@UEAAXAEAVBlockPalette\@\@_N\@Z
      */
-    virtual void __unk_vfn_3();
+    virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette&, bool);
     /**
      * @vftbl 4
      * @symbol ?_write\@ItemStackRequestActionCraftLoom\@\@UEBAXAEAVBinaryStream\@\@\@Z

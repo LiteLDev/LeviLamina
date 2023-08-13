@@ -17,13 +17,13 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0PropertyBag\@\@QEAA\@XZ
-     */
-    MCAPI PropertyBag();
-    /**
      * @symbol ??0PropertyBag\@\@QEAA\@AEBVValue\@Json\@\@\@Z
      */
     MCAPI PropertyBag(class Json::Value const&);
+    /**
+     * @symbol ??0PropertyBag\@\@QEAA\@XZ
+     */
+    MCAPI PropertyBag();
     /**
      * @symbol ?toJsonValue\@PropertyBag\@\@QEBAAEBVValue\@Json\@\@XZ
      */

@@ -7,6 +7,7 @@
 #include "mc/common/wrapper/StackRefResultT.h"
 #include "mc/common/wrapper/optional_ref.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/entity/gamerefs_entity/IEntityRegistryOwner.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +16,7 @@ namespace Core { class FilePathManager; }
 namespace mce { class UUID; }
 // clang-format on
 
-class Minecraft {
+class Minecraft : public ::IEntityRegistryOwner {
 
 public:
     // prevent constructor by default

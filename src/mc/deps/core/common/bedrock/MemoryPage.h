@@ -45,8 +45,8 @@ public:
      * @symbol ?_allocate\@MemoryPage\@JSONObject\@Bedrock\@\@AEAAPEAXP8123\@EAA_K_K0\@ZP8123\@EAAPEAX00\@Z00\@Z
      */
     MCAPI void* _allocate(
-        uint64_t (Bedrock::JSONObject::MemoryPage::*)(uint64_t, uint64_t),
-        void* (Bedrock::JSONObject::MemoryPage::*)(uint64_t, uint64_t),
+        uint64_t (__cdecl Bedrock::JSONObject::MemoryPage::*)(uint64_t, uint64_t),
+        void* (__cdecl Bedrock::JSONObject::MemoryPage::*)(uint64_t, uint64_t),
         uint64_t,
         uint64_t
     );

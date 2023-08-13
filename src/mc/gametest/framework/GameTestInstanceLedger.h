@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/gametest/framework/IGameTestListener.h"
 #include "mc/world/AutomaticID.h"
 
 // auto generated forward declare list
@@ -10,7 +11,7 @@
 namespace gametest { class BaseGameTestInstance; }
 // clang-format on
 
-class GameTestInstanceLedger {
+class GameTestInstanceLedger : public ::gametest::IGameTestListener {
 
 public:
     // prevent constructor by default

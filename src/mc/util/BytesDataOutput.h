@@ -1,9 +1,11 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
 #include "mc/util/IDataOutput.h"
 
-class BytesDataOutput : public IDataOutput {
+class BytesDataOutput : public ::IDataOutput {
 
 public:
 #define ENABLE_VIRTUAL_FAKESYMBOL_BYTESDATAOUTPUT

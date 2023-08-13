@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ScreenHandlerBeacon {
+// auto generated inclusion list
+#include "mc/world/inventory/network/ScreenHandlerBase.h"
+
+class ScreenHandlerBeacon : public ::ScreenHandlerBase {
 
 public:
     // prevent constructor by default
@@ -27,11 +30,6 @@ public:
      * @symbol ?endRequest\@ScreenHandlerBeacon\@\@MEAA?AW4ItemStackNetResult\@\@XZ
      */
     virtual enum class ItemStackNetResult endRequest();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol ?postRequest\@ScreenHandlerBeacon\@\@MEAAX_N\@Z

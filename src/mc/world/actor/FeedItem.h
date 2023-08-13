@@ -20,13 +20,13 @@ public:
     public:
         // NOLINTBEGIN
         /**
-         * @symbol ??4Effect\@FeedItem\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-         */
-        MCAPI struct FeedItem::Effect& operator=(struct FeedItem::Effect&&);
-        /**
          * @symbol ??4Effect\@FeedItem\@\@QEAAAEAU01\@AEBU01\@\@Z
          */
         MCAPI struct FeedItem::Effect& operator=(struct FeedItem::Effect const&);
+        /**
+         * @symbol ??4Effect\@FeedItem\@\@QEAAAEAU01\@$$QEAU01\@\@Z
+         */
+        MCAPI struct FeedItem::Effect& operator=(struct FeedItem::Effect&&);
         /**
          * @symbol ??1Effect\@FeedItem\@\@QEAA\@XZ
          */

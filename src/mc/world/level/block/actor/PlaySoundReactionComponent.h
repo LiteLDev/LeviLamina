@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class PlaySoundReactionComponent {
+// auto generated inclusion list
+#include "mc/world/level/block/actor/LabTableReactionComponent.h"
+
+class PlaySoundReactionComponent : public ::LabTableReactionComponent {
 
 public:
     // prevent constructor by default

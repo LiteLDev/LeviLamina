@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ServerContentKeyProvider {
+// auto generated inclusion list
+#include "mc/resources/IContentAccessibilityProvider.h"
+
+class ServerContentKeyProvider : public ::IContentAccessibilityProvider {
 
 public:
     // prevent constructor by default
@@ -25,9 +28,10 @@ public:
     virtual std::string getContentKey(class ContentIdentity const&) const;
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol
+     * ?getAlternateContentKey\@IContentKeyProvider\@\@UEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVContentIdentity\@\@\@Z
      */
-    virtual void __unk_vfn_2();
+    virtual std::string getAlternateContentKey(class ContentIdentity const&) const;
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3

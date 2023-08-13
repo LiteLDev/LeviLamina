@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
+#include "mc/scripting/modules/minecraft/IComponentFactory.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,7 +15,7 @@ namespace Scripting { class WeakLifetimeScope; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptInventoryComponentFactory {
+class ScriptInventoryComponentFactory : public ::ScriptModuleMinecraft::IComponentFactory {
 
 public:
     // prevent constructor by default

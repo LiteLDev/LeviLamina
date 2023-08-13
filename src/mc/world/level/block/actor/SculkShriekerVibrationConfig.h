@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class SculkShriekerVibrationConfig {
+// auto generated inclusion list
+#include "mc/world/events/gameevents/VibrationListenerConfig.h"
+
+class SculkShriekerVibrationConfig : public ::VibrationListenerConfig {
 
 public:
     // prevent constructor by default

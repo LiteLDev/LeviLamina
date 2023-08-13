@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class PackSettingsError {
+// auto generated inclusion list
+#include "mc/resources/PackError.h"
+
+class PackSettingsError : public ::PackError {
 
 public:
     // prevent constructor by default

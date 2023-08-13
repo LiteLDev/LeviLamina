@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ScreenHandlerHUD {
+// auto generated inclusion list
+#include "mc/world/inventory/network/ScreenHandlerBase.h"
+
+class ScreenHandlerHUD : public ::ScreenHandlerBase {
 
 public:
     // prevent constructor by default

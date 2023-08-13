@@ -283,6 +283,6 @@ public:
      * @symbol
      * ?_sortAndPacketizeEvents\@NetworkSystem\@\@AEAA_NAEAVNetworkConnection\@\@V?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@std\@\@\@Z
      */
-    MCAPI bool _sortAndPacketizeEvents(class NetworkConnection&, std::chrono::time_point<std::chrono::steady_clock>);
+    MCAPI bool _sortAndPacketizeEvents(class NetworkConnection&, std::chrono::steady_clock::time_point);
     // NOLINTEND
 };

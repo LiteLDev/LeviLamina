@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class IllagerBeastBlockedDescription {
+// auto generated inclusion list
+#include "mc/world/actor/ActorComponentDescription.h"
+
+class IllagerBeastBlockedDescription : public ::ActorComponentDescription {
 
 public:
     // prevent constructor by default

@@ -64,25 +64,25 @@ public:
      */
     MCAPI struct MCRESULT requestCommandExecution(class CommandContext&, bool);
     /**
-     * @symbol ?runCommand\@MinecraftCommands\@\@QEAAXAEAVCommand\@\@AEAVCommandOrigin\@\@\@Z
-     */
-    MCAPI void runCommand(class Command&, class CommandOrigin&);
-    /**
      * @symbol
      * ?runCommand\@MinecraftCommands\@\@QEAAXAEBVHashedString\@\@AEAVCommandOrigin\@\@W4CurrentCmdVersion\@\@\@Z
      */
     MCAPI void runCommand(class HashedString const&, class CommandOrigin&, enum class CurrentCmdVersion);
     /**
-     * @symbol
-     * ?runOrDeferCommand\@MinecraftCommands\@\@QEAAXAEBVHashedString\@\@AEAVCommandOrigin\@\@W4CurrentCmdVersion\@\@\@Z
+     * @symbol ?runCommand\@MinecraftCommands\@\@QEAAXAEAVCommand\@\@AEAVCommandOrigin\@\@\@Z
      */
-    MCAPI void runOrDeferCommand(class HashedString const&, class CommandOrigin&, enum class CurrentCmdVersion);
+    MCAPI void runCommand(class Command&, class CommandOrigin&);
     /**
      * @symbol
      * ?runOrDeferCommand\@MinecraftCommands\@\@QEAAXV?$not_null\@PEAVCommand\@\@\@gsl\@\@AEAVCommandOrigin\@\@W4CurrentCmdVersion\@\@\@Z
      */
     MCAPI void
     runOrDeferCommand(class gsl::not_null<class Command*>, class CommandOrigin&, enum class CurrentCmdVersion);
+    /**
+     * @symbol
+     * ?runOrDeferCommand\@MinecraftCommands\@\@QEAAXAEBVHashedString\@\@AEAVCommandOrigin\@\@W4CurrentCmdVersion\@\@\@Z
+     */
+    MCAPI void runOrDeferCommand(class HashedString const&, class CommandOrigin&, enum class CurrentCmdVersion);
     /**
      * @symbol
      * ?setRegistryNetworkUpdateCallback\@MinecraftCommands\@\@QEBAXV?$function\@$$A6AXAEBVPacket\@\@\@Z\@std\@\@\@Z

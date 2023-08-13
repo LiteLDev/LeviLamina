@@ -68,10 +68,6 @@ public:
     MCVAPI ~ChunkViewSource();
 #endif
     /**
-     * @symbol ??0ChunkViewSource\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI ChunkViewSource(class ChunkViewSource const&);
-    /**
      * @symbol ??0ChunkViewSource\@\@QEAA\@AEAVChunkSource\@\@W4LoadMode\@1\@\@Z
      */
     MCAPI ChunkViewSource(class ChunkSource&, enum class ChunkSource::LoadMode);
@@ -81,6 +77,10 @@ public:
      */
     MCAPI
     ChunkViewSource(class ChunkSource&, class LevelChunkGridAreaElement<std::weak_ptr<class LevelChunk>>&, struct Bounds const&);
+    /**
+     * @symbol ??0ChunkViewSource\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI ChunkViewSource(class ChunkViewSource const&);
     /**
      * @symbol ?clear\@ChunkViewSource\@\@QEAAXXZ
      */

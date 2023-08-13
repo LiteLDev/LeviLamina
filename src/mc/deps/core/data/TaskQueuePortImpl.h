@@ -55,6 +55,21 @@ public:
 public:
     // NOLINTBEGIN
     /**
+     * @vftbl 0
+     * @symbol __unk_vfn_0
+     */
+    virtual void __unk_vfn_0();
+    /**
+     * @vftbl 1
+     * @symbol ?Release\@?$Api\@$00UITaskQueuePort\@\@\@\@UEAAIXZ
+     */
+    virtual unsigned int Release();
+    /**
+     * @vftbl 2
+     * @symbol ?QueryApi\@?$Api\@$00UITaskQueuePort\@\@\@\@UEAAJW4ApiId\@\@PEAPEAX\@Z
+     */
+    virtual long QueryApi(enum class ApiId, void**);
+    /**
      * @vftbl 3
      * @symbol ?GetHandle\@TaskQueuePortImpl\@\@UEAAPEAUXTaskQueuePortObject\@\@XZ
      */
@@ -63,14 +78,14 @@ public:
      * @vftbl 4
      * @symbol ?QueueItem\@TaskQueuePortImpl\@\@UEAAJPEAUITaskQueuePortContext\@\@IPEAXP6AX1_N\@Z\@Z
      */
-    virtual long QueueItem(struct ITaskQueuePortContext*, unsigned int, void*, void (*)(void*, bool));
+    virtual long QueueItem(struct ITaskQueuePortContext*, unsigned int, void*, void(__cdecl*)(void*, bool));
     /**
      * @vftbl 5
      * @symbol
      * ?RegisterWaitHandle\@TaskQueuePortImpl\@\@UEAAJPEAUITaskQueuePortContext\@\@PEAX1P6AX1_N\@ZPEAUXTaskQueueRegistrationToken\@\@\@Z
      */
     virtual long
-    RegisterWaitHandle(struct ITaskQueuePortContext*, void*, void*, void (*)(void*, bool), struct XTaskQueueRegistrationToken*);
+    RegisterWaitHandle(struct ITaskQueuePortContext*, void*, void*, void(__cdecl*)(void*, bool), struct XTaskQueueRegistrationToken*);
     /**
      * @vftbl 6
      * @symbol ?UnregisterWaitHandle\@TaskQueuePortImpl\@\@UEAAXUXTaskQueueRegistrationToken\@\@\@Z
@@ -80,7 +95,7 @@ public:
      * @vftbl 7
      * @symbol ?PrepareTerminate\@TaskQueuePortImpl\@\@UEAAJPEAUITaskQueuePortContext\@\@PEAXP6AX1\@ZPEAPEAX\@Z
      */
-    virtual long PrepareTerminate(struct ITaskQueuePortContext*, void*, void (*)(void*), void**);
+    virtual long PrepareTerminate(struct ITaskQueuePortContext*, void*, void(__cdecl*)(void*), void**);
     /**
      * @vftbl 8
      * @symbol ?CancelTermination\@TaskQueuePortImpl\@\@UEAAXPEAX\@Z
@@ -136,6 +151,11 @@ public:
      * @symbol __unk_vfn_18
      */
     virtual void __unk_vfn_18();
+    /**
+     * @vftbl 19
+     * @symbol ?QueryApiImpl\@?$Api\@$00UITaskQueuePort\@\@\@\@MEAAPEAXW4ApiId\@\@\@Z
+     */
+    virtual void* QueryApiImpl(enum class ApiId);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_TASKQUEUEPORTIMPL
     /**
      * @symbol __unk_destructor_-1

@@ -4,8 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/world/AutomaticID.h"
+#include "mc/world/level/saveddata/SavedData.h"
 
-class PortalForcer {
+class PortalForcer : public ::SavedData {
 
 public:
     // prevent constructor by default

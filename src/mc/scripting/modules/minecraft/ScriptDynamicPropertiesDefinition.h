@@ -24,13 +24,13 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0ScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@QEAA\@$$QEAV01\@\@Z
-     */
-    MCAPI ScriptDynamicPropertiesDefinition(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&&);
-    /**
      * @symbol ??0ScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@QEAA\@AEBV01\@\@Z
      */
     MCAPI ScriptDynamicPropertiesDefinition(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const&);
+    /**
+     * @symbol ??0ScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@QEAA\@$$QEAV01\@\@Z
+     */
+    MCAPI ScriptDynamicPropertiesDefinition(class ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition&&);
     /**
      * @symbol
      * ?defineBoolean\@ScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@V?$StrongTypedObjectHandle\@VScriptDynamicPropertiesDefinition\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$optional\@_N\@6\@\@Z

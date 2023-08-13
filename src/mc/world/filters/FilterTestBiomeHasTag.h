@@ -28,7 +28,7 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?setup\@SimpleTagIDFilterTest\@\@UEAA_NAEBUDefinition\@FilterTest\@\@AEBUFilterInputs\@\@\@Z
+     * @symbol ?setup\@ActorHasEquipmentTest\@\@UEAA_NAEBUDefinition\@FilterTest\@\@AEBUFilterInputs\@\@\@Z
      */
     virtual bool setup(struct FilterTest::Definition const&, struct FilterInputs const&);
     /**
@@ -48,12 +48,12 @@ public:
     virtual std::string_view getName() const;
     /**
      * @vftbl 5
-     * @symbol ?_serializeDomain\@FilterTest\@\@MEBA?AVValue\@Json\@\@XZ
+     * @symbol ?_serializeDomain\@ActorHasEquipmentTest\@\@MEBA?AVValue\@Json\@\@XZ
      */
     virtual class Json::Value _serializeDomain() const;
     /**
      * @vftbl 6
-     * @symbol ?_serializeValue\@SimpleTagIDFilterTest\@\@MEBA?AVValue\@Json\@\@XZ
+     * @symbol ?_serializeValue\@ActorBoolPropertyTest\@\@MEBA?AVValue\@Json\@\@XZ
      */
     virtual class Json::Value _serializeValue() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILTERTESTBIOMEHASTAG

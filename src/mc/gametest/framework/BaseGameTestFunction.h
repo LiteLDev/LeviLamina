@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace gametest { class BaseGameTestHelper; }
+namespace gametest { class IGameTestFunctionContext; }
+namespace gametest { class IGameTestFunctionRunResult; }
+// clang-format on
+
 namespace gametest {
 
 class BaseGameTestFunction {
@@ -14,6 +21,25 @@ public:
 
 public:
     // NOLINTBEGIN
+    /**
+     * @vftbl 0
+     * @symbol __unk_vfn_0
+     */
+    virtual void __unk_vfn_0();
+    /**
+     * @vftbl 1
+     * @symbol
+     * ?createContext\@BaseScriptGameTestFunction\@ScriptModuleGameTest\@\@UEBA?AV?$unique_ptr\@VIGameTestFunctionContext\@gametest\@\@U?$default_delete\@VIGameTestFunctionContext\@gametest\@\@\@std\@\@\@std\@\@AEAVBaseGameTestHelper\@gametest\@\@\@Z
+     */
+    virtual std::unique_ptr<class gametest::IGameTestFunctionContext>
+    createContext(class gametest::BaseGameTestHelper&) const = 0;
+    /**
+     * @vftbl 2
+     * @symbol
+     * ?run\@ScriptAsyncGameTestFunction\@ScriptModuleGameTest\@\@UEBA?AV?$unique_ptr\@VIGameTestFunctionRunResult\@gametest\@\@U?$default_delete\@VIGameTestFunctionRunResult\@gametest\@\@\@std\@\@\@std\@\@AEAVBaseGameTestHelper\@gametest\@\@AEAVIGameTestFunctionContext\@6\@\@Z
+     */
+    virtual std::unique_ptr<class gametest::IGameTestFunctionRunResult>
+    run(class gametest::BaseGameTestHelper&, class gametest::IGameTestFunctionContext&) const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_GAMETEST_BASEGAMETESTFUNCTION
     /**
      * @symbol __unk_destructor_-1

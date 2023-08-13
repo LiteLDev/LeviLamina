@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class MoveControl {
+// auto generated inclusion list
+#include "mc/world/actor/ai/control/Control.h"
+
+class MoveControl : public ::Control {
 
 public:
     // prevent constructor by default

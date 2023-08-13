@@ -53,7 +53,7 @@ MCAPI extern bool gShouldPresentDialog;
 /**
  * @symbol ?gp_assert_handler\@DebugUtils\@\@3V?$ServiceOverrider\@P6A_NAEBUAssertHandlerContext\@\@AEA_N\@Z\@\@A
  */
-MCAPI extern class ServiceOverrider<bool (*)(struct AssertHandlerContext const&, bool&)> gp_assert_handler;
+MCAPI extern class ServiceOverrider<bool(__cdecl*)(struct AssertHandlerContext const&, bool&)> gp_assert_handler;
 /**
  * @symbol ?handleAssert\@DebugUtils\@\@YA_NPEBD0AEA_NH00ZZ
  */

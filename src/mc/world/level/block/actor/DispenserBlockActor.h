@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class DispenserBlockActor {
+// auto generated inclusion list
+#include "mc/world/level/block/actor/RandomizableBlockActorContainer.h"
+
+class DispenserBlockActor : public ::RandomizableBlockActorContainer {
 
 public:
     // prevent constructor by default

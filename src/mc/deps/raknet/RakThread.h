@@ -17,7 +17,7 @@ public:
     /**
      * @symbol ?Create\@RakThread\@RakNet\@\@SAHP6AIPEAX\@Z0H\@Z
      */
-    MCAPI static int Create(unsigned int (*)(void*), void*, int);
+    MCAPI static int Create(unsigned int(__cdecl*)(void*), void*, int);
     // NOLINTEND
 };
 

@@ -2,9 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/FileStream.h"
+
 namespace Core {
 
-class InputFileStream {
+class InputFileStream : public ::Core::FileStream {
 
 public:
     // prevent constructor by default

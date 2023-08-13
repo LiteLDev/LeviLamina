@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Core { class FileSystemImpl; }
-namespace Core { class FileSystem_windows; }
 namespace Core { class Path; }
 namespace Core { class Result; }
 namespace Core { enum class FileAccessType; }

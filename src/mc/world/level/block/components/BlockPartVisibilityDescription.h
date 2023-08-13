@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BlockPartVisibilityDescription {
+// auto generated inclusion list
+#include "mc/world/level/block/components/BlockComponentDescription.h"
+
+class BlockPartVisibilityDescription : public ::BlockComponentDescription {
 
 public:
     // prevent constructor by default

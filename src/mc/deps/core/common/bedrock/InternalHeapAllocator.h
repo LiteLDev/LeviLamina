@@ -2,9 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/IMemoryAllocator.h"
+
 namespace Bedrock::Memory {
 
-class InternalHeapAllocator {
+class InternalHeapAllocator : public ::Bedrock::Memory::IMemoryAllocator {
 
 public:
     // prevent constructor by default

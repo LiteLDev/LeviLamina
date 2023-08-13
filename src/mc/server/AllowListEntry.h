@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/server/IJsonSerializable.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
 // clang-format on
 
-class AllowListEntry {
+class AllowListEntry : public ::IJsonSerializable {
 
 public:
     // prevent constructor by default

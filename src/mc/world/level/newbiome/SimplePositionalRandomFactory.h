@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class SimplePositionalRandomFactory {
+// auto generated inclusion list
+#include "mc/math/IPositionalRandomFactory.h"
+
+class SimplePositionalRandomFactory : public ::IPositionalRandomFactory {
 
 public:
     // prevent constructor by default

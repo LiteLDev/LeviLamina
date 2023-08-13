@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cereal/Constraint.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { class SerializerContext; }
@@ -9,7 +12,7 @@ namespace cereal { class SerializerContext; }
 
 namespace cereal {
 
-class StringConstraint {
+class StringConstraint : public ::cereal::Constraint {
 
 public:
     // prevent constructor by default
@@ -29,13 +32,13 @@ public:
     MCVAPI ~StringConstraint();
 #endif
     /**
-     * @symbol ??0StringConstraint\@cereal\@\@QEAA\@XZ
-     */
-    MCAPI StringConstraint();
-    /**
      * @symbol ??0StringConstraint\@cereal\@\@QEAA\@AEBV01\@\@Z
      */
     MCAPI StringConstraint(class cereal::StringConstraint const&);
+    /**
+     * @symbol ??0StringConstraint\@cereal\@\@QEAA\@XZ
+     */
+    MCAPI StringConstraint();
     /**
      * @symbol ??0StringConstraint\@cereal\@\@QEAA\@$$QEAV01\@\@Z
      */

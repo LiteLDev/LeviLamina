@@ -4,13 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/world/actor/ai/goal/MoveTowardsRestrictionDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-class MoveTowardsDwellingRestrictionDefinition {
+class MoveTowardsDwellingRestrictionDefinition : public ::MoveTowardsRestrictionDefinition {
 
 public:
     // prevent constructor by default
@@ -19,6 +20,11 @@ public:
 
 public:
     // NOLINTBEGIN
+    /**
+     * @vftbl 0
+     * @symbol __unk_vfn_0
+     */
+    virtual void __unk_vfn_0();
     /**
      * @symbol ??0MoveTowardsDwellingRestrictionDefinition\@\@QEAA\@XZ
      */

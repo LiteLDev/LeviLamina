@@ -288,11 +288,6 @@ public:
     MCAPI class Dimension& getDimension() const;
     /**
      * @symbol
-     * ?getEntities\@LevelChunk\@\@QEBAXW4ActorType\@\@AEBVAABB\@\@AEAV?$vector\@PEAVActor\@\@V?$allocator\@PEAVActor\@\@\@std\@\@\@std\@\@_N\@Z
-     */
-    MCAPI void getEntities(enum class ActorType, class AABB const&, std::vector<class Actor*>&, bool) const;
-    /**
-     * @symbol
      * ?getEntities\@LevelChunk\@\@QEBAXV?$span\@V?$not_null\@PEBVActor\@\@\@gsl\@\@$0?0\@gsl\@\@AEBVAABB\@\@AEAV?$vector\@PEAVActor\@\@V?$allocator\@PEAVActor\@\@\@std\@\@\@std\@\@_N\@Z
      */
     MCAPI void getEntities(
@@ -301,6 +296,11 @@ public:
         std::vector<class Actor*>&,
         bool
     ) const;
+    /**
+     * @symbol
+     * ?getEntities\@LevelChunk\@\@QEBAXW4ActorType\@\@AEBVAABB\@\@AEAV?$vector\@PEAVActor\@\@V?$allocator\@PEAVActor\@\@\@std\@\@\@std\@\@_N\@Z
+     */
+    MCAPI void getEntities(enum class ActorType, class AABB const&, std::vector<class Actor*>&, bool) const;
     /**
      * @symbol ?getEntity\@LevelChunk\@\@QEBAPEAVActor\@\@AEBUActorUniqueID\@\@\@Z
      */
@@ -424,13 +424,13 @@ public:
      */
     MCAPI std::atomic<enum class ChunkState> const& getState() const;
     /**
-     * @symbol ?getSubChunk\@LevelChunk\@\@QEBAPEBUSubChunk\@\@F\@Z
-     */
-    MCAPI struct SubChunk const* getSubChunk(short) const;
-    /**
      * @symbol ?getSubChunk\@LevelChunk\@\@QEAAPEAUSubChunk\@\@F\@Z
      */
     MCAPI struct SubChunk* getSubChunk(short);
+    /**
+     * @symbol ?getSubChunk\@LevelChunk\@\@QEBAPEBUSubChunk\@\@F\@Z
+     */
+    MCAPI struct SubChunk const* getSubChunk(short) const;
     /**
      * @symbol ?getSurfaceBiome\@LevelChunk\@\@QEBAAEBVBiome\@\@VChunkBlockPos\@\@\@Z
      */

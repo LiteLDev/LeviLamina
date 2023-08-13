@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ItemEventListener;
 enum class EventResult;
 namespace ScriptModuleMinecraft { class IScriptAfterEvents; }
 namespace Scripting { class WeakLifetimeScope; }

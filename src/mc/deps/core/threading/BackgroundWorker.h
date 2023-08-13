@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/threading/ITaskExecutionContext.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::Threading { class OSThreadPriority; }
 // clang-format on
 
-class BackgroundWorker {
+class BackgroundWorker : public ::ITaskExecutionContext {
 public:
     // BackgroundWorker inner types define
     enum class RunOneResult {};

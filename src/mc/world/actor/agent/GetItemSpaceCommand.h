@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/Command.h"
+#include "mc/world/actor/agent/Command.h"
 
 namespace AgentCommands {
 
-class GetItemSpaceCommand : public ::Command {
+class GetItemSpaceCommand : public ::AgentCommands::Command {
 
 public:
     // prevent constructor by default
@@ -32,11 +32,6 @@ public:
      * @symbol ?isDone\@GetItemSpaceCommand\@AgentCommands\@\@UEAA_NXZ
      */
     virtual bool isDone();
-    /**
-     * @vftbl 3
-     * @symbol ?tick\@Command\@AgentCommands\@\@UEAAXXZ
-     */
-    virtual void tick();
     /**
      * @vftbl 4
      * @symbol ?fireCommandDoneEvent\@GetItemSpaceCommand\@AgentCommands\@\@UEAAXXZ

@@ -26,14 +26,14 @@ public:
      */
     MCAPI GameTestError(struct gametest::GameTestError const&);
     /**
-     * @symbol ??0GameTestError\@gametest\@\@QEAA\@$$QEAU01\@\@Z
-     */
-    MCAPI GameTestError(struct gametest::GameTestError&&);
-    /**
      * @symbol
      * ??0GameTestError\@gametest\@\@QEAA\@W4GameTestErrorType\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@4\@\@Z
      */
     MCAPI GameTestError(enum class gametest::GameTestErrorType, std::string const&, std::vector<std::string>);
+    /**
+     * @symbol ??0GameTestError\@gametest\@\@QEAA\@$$QEAU01\@\@Z
+     */
+    MCAPI GameTestError(struct gametest::GameTestError&&);
     /**
      * @symbol
      * ??0GameTestError\@gametest\@\@QEAA\@W4GameTestErrorType\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z

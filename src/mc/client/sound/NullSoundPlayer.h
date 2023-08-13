@@ -4,13 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
+#include "mc/deps/core/sound/SoundPlayerInterface.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
 // clang-format on
 
-class NullSoundPlayer {
+class NullSoundPlayer : public ::SoundPlayerInterface {
 
 public:
     // prevent constructor by default

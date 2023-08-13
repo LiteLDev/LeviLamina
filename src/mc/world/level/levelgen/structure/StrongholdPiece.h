@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class StrongholdPiece {
+// auto generated inclusion list
+#include "mc/world/level/levelgen/structure/StructurePiece.h"
+
+class StrongholdPiece : public ::StructurePiece {
 public:
     // StrongholdPiece inner types define
     enum class SmallDoorType {};

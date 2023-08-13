@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/ai/goal/RamGoalItemDropperInterface.h"
+
 // auto generated forward declare list
 // clang-format off
 class Vec3;
@@ -9,7 +12,7 @@ class Vec3;
 
 namespace RamAttackGoalUtils {
 
-class RamGoalItemDropperImpl {
+class RamGoalItemDropperImpl : public ::RamAttackGoalUtils::RamGoalItemDropperInterface {
 
 public:
     // prevent constructor by default

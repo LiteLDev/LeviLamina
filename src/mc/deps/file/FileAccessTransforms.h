@@ -12,15 +12,20 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FILEACCESSTRANSFORMS
     /**
+     * @vftbl 0
+     * @symbol __unk_vfn_0
+     */
+    virtual void __unk_vfn_0();
+    /**
+     * @vftbl 1
      * @symbol ?readTransform\@FileAccessTransforms\@\@UEBA_NAEAV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@\@Z
      */
-    MCVAPI bool readTransform(std::vector<unsigned char>&) const;
+    virtual bool readTransform(std::vector<unsigned char>&) const;
     /**
+     * @vftbl 2
      * @symbol ?writeTransform\@FileAccessTransforms\@\@UEBA_NAEAV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@\@Z
      */
-    MCVAPI bool writeTransform(std::vector<unsigned char>&) const;
-#endif
+    virtual bool writeTransform(std::vector<unsigned char>&) const;
     // NOLINTEND
 };

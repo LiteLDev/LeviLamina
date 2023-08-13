@@ -12,7 +12,7 @@ class EntityContext;
 
 namespace VanillaSurfaceBuilders {
 
-class OceanFrozenSurfaceBuilder {
+class OceanFrozenSurfaceBuilder : public ::ISurfaceBuilder {
 
 public:
     // prevent constructor by default

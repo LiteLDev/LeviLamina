@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class MoveControlSwayDescription {
+// auto generated inclusion list
+#include "mc/entity/components/MoveControlDescription.h"
+
+class MoveControlSwayDescription : public ::MoveControlDescription {
 
 public:
     // prevent constructor by default

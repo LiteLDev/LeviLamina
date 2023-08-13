@@ -2,9 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+
 namespace Bedrock {
 
-class WorldRecoveryTelemetryHandler {
+class WorldRecoveryTelemetryHandler : public ::Bedrock::EnableNonOwnerReferences {
 
 public:
     // prevent constructor by default

@@ -49,13 +49,13 @@ public:
     MCVAPI ~FilterTextPacket();
 #endif
     /**
-     * @symbol ??0FilterTextPacket\@\@QEAA\@XZ
-     */
-    MCAPI FilterTextPacket();
-    /**
      * @symbol
      * ??0FilterTextPacket\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
     MCAPI FilterTextPacket(std::string const&, bool);
+    /**
+     * @symbol ??0FilterTextPacket\@\@QEAA\@XZ
+     */
+    MCAPI FilterTextPacket();
     // NOLINTEND
 };

@@ -55,13 +55,13 @@ public:
      */
     MCAPI Blob();
     /**
-     * @symbol ??0Blob\@mce\@\@QEAA\@_K\@Z
-     */
-    MCAPI Blob(size_type);
-    /**
      * @symbol ??0Blob\@mce\@\@QEAA\@$$QEAV01\@\@Z
      */
     MCAPI Blob(class mce::Blob&&);
+    /**
+     * @symbol ??0Blob\@mce\@\@QEAA\@_K\@Z
+     */
+    MCAPI Blob(size_type);
     /**
      * @symbol ?cbegin\@Blob\@mce\@\@QEBAPEBEXZ
      */

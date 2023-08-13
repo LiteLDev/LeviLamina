@@ -15,7 +15,7 @@ enum class BlockColor;
 
 namespace VanillaSurfaceBuilders {
 
-class LegacyMesaSurfaceBuilder {
+class LegacyMesaSurfaceBuilder : public ::ISurfaceBuilder {
 
 public:
     // prevent constructor by default

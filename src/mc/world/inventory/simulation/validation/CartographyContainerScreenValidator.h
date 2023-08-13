@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class CartographyContainerScreenValidator {
+// auto generated inclusion list
+#include "mc/world/inventory/simulation/ContainerScreenValidatorBase.h"
+
+class CartographyContainerScreenValidator : public ::ContainerScreenValidatorBase {
 
 public:
     // prevent constructor by default
@@ -16,11 +19,6 @@ public:
      * @symbol __unk_vfn_0
      */
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
-    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol ?isCraftingImplemented\@CartographyContainerScreenValidator\@\@UEAA_NXZ

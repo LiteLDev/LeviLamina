@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BurnsInDaylightSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class BurnsInDaylightSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

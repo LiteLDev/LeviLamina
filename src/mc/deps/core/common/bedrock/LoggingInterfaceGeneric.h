@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/LoggingInterface.h"
+
 // auto generated forward declare list
 // clang-format off
 enum class HCTraceLevel;
@@ -9,7 +12,7 @@ enum class HCTraceLevel;
 
 namespace Bedrock::Http {
 
-class LoggingInterfaceGeneric {
+class LoggingInterfaceGeneric : public ::Bedrock::Http::LoggingInterface {
 
 public:
     // prevent constructor by default

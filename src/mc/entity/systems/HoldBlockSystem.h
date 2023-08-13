@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class HoldBlockSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class HoldBlockSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default
@@ -22,11 +25,12 @@ public:
      * @symbol ?registerEvents\@HoldBlockSystem\@\@UEAAXAEAV?$basic_dispatcher\@V?$allocator\@X\@std\@\@\@entt\@\@\@Z
      */
     virtual void registerEvents(class entt::basic_dispatcher<std::allocator<void>>&);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_HOLDBLOCKSYSTEM
     /**
-     * @vftbl 2
      * @symbol ?tick\@HoldBlockSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
-    virtual void tick(class EntityRegistry&);
+    MCVAPI void tick(class EntityRegistry&);
+#endif
     // NOLINTEND
 
     // private:

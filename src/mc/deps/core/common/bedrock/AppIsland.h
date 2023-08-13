@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/IIslandCore.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock { class ActivationArguments; }
@@ -9,7 +12,7 @@ namespace Bedrock { class ActivationArguments; }
 
 namespace Bedrock {
 
-class AppIsland {
+class AppIsland : public ::Bedrock::IIslandCore {
 
 public:
     // prevent constructor by default

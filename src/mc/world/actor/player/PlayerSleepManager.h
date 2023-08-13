@@ -46,10 +46,6 @@ public:
      * @symbol __unk_vfn_6
      */
     virtual void __unk_vfn_6();
-    /**
-     * @symbol ?getPlayerSleepStatus\@PlayerSleepManager\@\@QEBAAEBUPlayerSleepStatus\@\@XZ
-     */
-    MCAPI struct PlayerSleepStatus const& getPlayerSleepStatus() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERSLEEPMANAGER
     /**
      * @symbol __unk_destructor_-1

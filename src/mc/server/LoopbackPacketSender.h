@@ -4,8 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/OwnerPtrT.h"
+#include "mc/network/PacketSender.h"
 
-class LoopbackPacketSender {
+class LoopbackPacketSender : public ::PacketSender {
 
 public:
     // prevent constructor by default

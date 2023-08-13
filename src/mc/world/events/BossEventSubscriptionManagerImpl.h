@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/events/BossEventSubscriptionManager.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
-class BossEventSubscriptionManagerImpl {
+class BossEventSubscriptionManagerImpl : public ::BossEventSubscriptionManager {
 
 public:
     // prevent constructor by default

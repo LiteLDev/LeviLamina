@@ -30,10 +30,6 @@ public:
     MCVAPI ~ScriptItemDefinitionAfterEvent();
 #endif
     /**
-     * @symbol ??0ScriptItemDefinitionAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
-     */
-    MCAPI ScriptItemDefinitionAfterEvent(struct ScriptModuleMinecraft::ScriptItemDefinitionAfterEvent const&);
-    /**
      * @symbol
      * ??0ScriptItemDefinitionAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@V?$StrongTypedObjectHandle\@VScriptItemStack\@ScriptModuleMinecraft\@\@\@Scripting\@\@AEBUItemDefinitionEventTriggeredEvent\@\@AEBVWeakLifetimeScope\@3\@\@Z
      */
@@ -43,6 +39,10 @@ public:
      * @symbol ??0ScriptItemDefinitionAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@$$QEAU01\@\@Z
      */
     MCAPI ScriptItemDefinitionAfterEvent(struct ScriptModuleMinecraft::ScriptItemDefinitionAfterEvent&&);
+    /**
+     * @symbol ??0ScriptItemDefinitionAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
+     */
+    MCAPI ScriptItemDefinitionAfterEvent(struct ScriptModuleMinecraft::ScriptItemDefinitionAfterEvent const&);
     /**
      * @symbol ??4ScriptItemDefinitionAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
      */

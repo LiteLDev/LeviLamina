@@ -11,13 +11,13 @@ public:
      */
     MCAPI BlockDescription(struct BlockDescription&&);
     /**
-     * @symbol ??0BlockDescription\@\@QEAA\@AEBU0\@\@Z
-     */
-    MCAPI BlockDescription(struct BlockDescription const&);
-    /**
      * @symbol ??0BlockDescription\@\@QEAA\@XZ
      */
     MCAPI BlockDescription();
+    /**
+     * @symbol ??0BlockDescription\@\@QEAA\@AEBU0\@\@Z
+     */
+    MCAPI BlockDescription(struct BlockDescription const&);
     /**
      * @symbol ??4BlockDescription\@\@QEAAAEAU0\@AEBU0\@\@Z
      */

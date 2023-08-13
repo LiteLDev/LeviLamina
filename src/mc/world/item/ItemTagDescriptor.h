@@ -38,11 +38,6 @@ public:
      */
     virtual bool sameItem(struct ItemDescriptor::ItemEntry const&, bool) const;
     /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
      * @vftbl 4
      * @symbol ?getItem\@ItemTagDescriptor\@\@UEBA?AUItemEntry\@ItemDescriptor\@\@XZ
      */
@@ -78,11 +73,6 @@ public:
      * @symbol ?getType\@ItemTagDescriptor\@\@UEBA?AW4InternalType\@ItemDescriptor\@\@XZ
      */
     virtual enum class ItemDescriptor::InternalType getType() const;
-    /**
-     * @vftbl 11
-     * @symbol __unk_vfn_11
-     */
-    virtual void __unk_vfn_11();
     /**
      * @vftbl 12
      * @symbol ?getHash\@ItemTagDescriptor\@\@UEBA_KXZ

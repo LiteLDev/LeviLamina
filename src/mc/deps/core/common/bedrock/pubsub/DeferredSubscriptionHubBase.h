@@ -14,7 +14,7 @@ namespace Bedrock::PubSub { enum class ConnectPosition; }
 
 namespace Bedrock::PubSub {
 
-class DeferredSubscriptionHubBase {
+class DeferredSubscriptionHubBase : public ::Bedrock::PubSub::DeferredSubscriptionHub {
 
 public:
     // prevent constructor by default
@@ -41,11 +41,6 @@ public:
      */
     virtual uint64_t runDeferredEventsForDuration(std::chrono::milliseconds);
     /**
-     * @vftbl 3
-     * @symbol ?flushPendingEvents\@PriorityDeferredSubscriptionHub\@PubSub\@Bedrock\@\@UEAAXXZ
-     */
-    virtual void flushPendingEvents() = 0;
-    /**
      * @vftbl 4
      * @symbol ?clear\@DeferredSubscriptionHubBase\@PubSub\@Bedrock\@\@UEAAXXZ
      */
@@ -66,23 +61,10 @@ public:
      */
     virtual bool empty() const;
     /**
-     * @vftbl 8
-     * @symbol
-     * ?getHubType\@PriorityDeferredSubscriptionHub\@PubSub\@Bedrock\@\@UEBA?AW4HubType\@DeferredSubscriptionHub\@23\@XZ
-     */
-    virtual enum class Bedrock::PubSub::DeferredSubscriptionHub::HubType getHubType() const = 0;
-    /**
      * @vftbl 9
      * @symbol ?_join\@DeferredSubscriptionHubBase\@PubSub\@Bedrock\@\@EEAAX$$QEAVDeferredSubscription\@23\@\@Z
      */
     virtual void _join(class Bedrock::PubSub::DeferredSubscription&&);
-    /**
-     * @vftbl 10
-     * @symbol
-     * ?_enqueue\@PriorityDeferredSubscriptionHub\@PubSub\@Bedrock\@\@EEAAXV?$function\@$$A6AXXZ\@std\@\@W4ConnectPosition\@23\@V?$optional\@H\@5\@\@Z
-     */
-    virtual void
-        _enqueue(std::function<void(void)>, enum class Bedrock::PubSub::ConnectPosition, std::optional<int>) = 0;
     /**
      * @vftbl 11
      * @symbol ?_runOneEvent\@PriorityDeferredSubscriptionHub\@PubSub\@Bedrock\@\@EEAA_NXZ

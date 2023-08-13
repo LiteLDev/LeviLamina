@@ -5,9 +5,9 @@
 // auto generated inclusion list
 #include "mc/network/packet/SetTitlePacket.h"
 #include "mc/server/commands/CommandSelectorResults.h"
-#include "mc/world/level/Command.h"
+#include "mc/server/commands/standard/MessagingCommand.h"
 
-class TitleRawCommand : public ::Command {
+class TitleRawCommand : public ::MessagingCommand {
 
 public:
     // prevent constructor by default
@@ -23,7 +23,7 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 1
+     * @vftbl 2
      * @symbol ?execute\@TitleRawCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;

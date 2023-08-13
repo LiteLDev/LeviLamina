@@ -49,7 +49,7 @@ MCAPI struct cereal::internal::Result getMapperAndLoad(
     class entt::meta_any&,
     struct cereal::SerializerTraits const&,
     class cereal::SerializerContext&,
-    bool (*)(int64_t, class entt::meta_any&)
+    bool(__cdecl*)(int64_t, class entt::meta_any&)
 );
 /**
  * @symbol
@@ -67,17 +67,19 @@ MCAPI std::pair<std::string, std::string>
  * @symbol
  * ?iterateAssociativeContainer\@internal\@cereal\@\@YA?AUResult\@12\@AEBUReflectionCtx\@2\@P6A?AU312\@0AEBVmeta_type\@entt\@\@AEBVBasicSchema\@12\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVmeta_any\@6\@AEAUSchemaReader\@2\@AEBUSerializerTraits\@2\@AEBVmeta_any\@6\@AEAVSerializerContext\@2\@\@Z1112254678\@Z
  */
-MCAPI struct cereal::internal::Result
-iterateAssociativeContainer(struct cereal::ReflectionCtx const&, struct cereal::internal::Result (*)(struct cereal::ReflectionCtx const&, class entt::meta_type const&, class cereal::internal::BasicSchema const&, std::string const&, class entt::meta_any&, struct cereal::SchemaReader&, struct cereal::SerializerTraits const&, class entt::meta_any const&, class cereal::SerializerContext&), class entt::meta_type const&, class entt::meta_type const&, class entt::meta_type const&, class cereal::internal::BasicSchema const&, class cereal::internal::BasicSchema const&, struct cereal::SchemaReader&, class entt::meta_any&, struct cereal::SerializerTraits const&, class entt::meta_any const&, class cereal::SerializerContext&);
-/**
- * @symbol
- * ?iterateSequenceContainer\@internal\@cereal\@\@YA?AUResult\@12\@AEBVBasicSchema\@12\@P6A?AU312\@0AEAUSchemaReader\@2\@AEAVmeta_any\@entt\@\@AEBUSerializerTraits\@2\@AEBV67\@AEAVSerializerContext\@2\@\@ZAEBVmeta_type\@7\@12345\@Z
- */
 MCAPI struct
     cereal::
         internal::
             Result
-            iterateSequenceContainer(class cereal::internal::BasicSchema const&, struct cereal::internal::Result (*)(class cereal::internal::BasicSchema const&, struct cereal::SchemaReader&, class entt::meta_any&, struct cereal::SerializerTraits const&, class entt::meta_any const&, class cereal::SerializerContext&), class entt::meta_type const&, struct cereal::SchemaReader&, class entt::meta_any&, struct cereal::SerializerTraits const&, class entt::meta_any const&, class cereal::SerializerContext&);
+            iterateAssociativeContainer(struct cereal::ReflectionCtx const&, struct cereal::internal::Result(__cdecl*)(struct cereal::ReflectionCtx const&, class entt::meta_type const&, class cereal::internal::BasicSchema const&, std::string const&, class entt::meta_any&, struct cereal::SchemaReader&, struct cereal::SerializerTraits const&, class entt::meta_any const&, class cereal::SerializerContext&), class entt::meta_type const&, class entt::meta_type const&, class entt::meta_type const&, class cereal::internal::BasicSchema const&, class cereal::internal::BasicSchema const&, struct cereal::SchemaReader&, class entt::meta_any&, struct cereal::SerializerTraits const&, class entt::meta_any const&, class cereal::SerializerContext&);
+/**
+ * @symbol
+ * ?iterateSequenceContainer\@internal\@cereal\@\@YA?AUResult\@12\@AEBVBasicSchema\@12\@P6A?AU312\@0AEAUSchemaReader\@2\@AEAVmeta_any\@entt\@\@AEBUSerializerTraits\@2\@AEBV67\@AEAVSerializerContext\@2\@\@ZAEBVmeta_type\@7\@12345\@Z
+ */
+MCAPI struct cereal::
+    internal::
+        Result
+        iterateSequenceContainer(class cereal::internal::BasicSchema const&, struct cereal::internal::Result(__cdecl*)(class cereal::internal::BasicSchema const&, struct cereal::SchemaReader&, class entt::meta_any&, struct cereal::SerializerTraits const&, class entt::meta_any const&, class cereal::SerializerContext&), class entt::meta_type const&, struct cereal::SchemaReader&, class entt::meta_any&, struct cereal::SerializerTraits const&, class entt::meta_any const&, class cereal::SerializerContext&);
 /**
  * @symbol
  * ?loadMapElement\@internal\@cereal\@\@YA?AUResult\@12\@AEBUReflectionCtx\@2\@AEBVmeta_type\@entt\@\@AEBVBasicSchema\@12\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVmeta_any\@6\@AEAUSchemaReader\@2\@AEBUSerializerTraits\@2\@AEBVmeta_any\@6\@AEAVSerializerContext\@2\@\@Z

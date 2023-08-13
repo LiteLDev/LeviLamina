@@ -15,10 +15,6 @@ public:
     bool      valid;
     // NOLINTBEGIN
     /**
-     * @symbol ??0ContentIdentity\@\@QEAA\@XZ
-     */
-    MCAPI ContentIdentity();
-    /**
      * @symbol ??0ContentIdentity\@\@QEAA\@AEBVUUID\@mce\@\@\@Z
      */
     MCAPI ContentIdentity(class mce::UUID const&);
@@ -30,6 +26,10 @@ public:
      * @symbol ??0ContentIdentity\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI ContentIdentity(class ContentIdentity const&);
+    /**
+     * @symbol ??0ContentIdentity\@\@QEAA\@XZ
+     */
+    MCAPI ContentIdentity();
     /**
      * @symbol
      * ?asString\@ContentIdentity\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ

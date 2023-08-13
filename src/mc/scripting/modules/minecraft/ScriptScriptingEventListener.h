@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ScriptingEventListener;
 enum class EventResult;
 struct ScriptCommandMessageEvent;
 struct ScriptingNotificationEvent;
@@ -35,8 +34,7 @@ public:
     virtual enum class EventResult onEvent(struct ScriptCommandMessageEvent const&);
     /**
      * @vftbl 2
-     * @symbol
-     * ?onEvent\@?$EventListenerDispatcher\@VScriptingEventListener\@\@\@\@MEAA?AW4EventResult\@\@AEBUScriptingNotificationEvent\@\@\@Z
+     * @symbol ?onEvent\@ScriptingEventListener\@\@UEAA?AW4EventResult\@\@AEBUScriptingNotificationEvent\@\@\@Z
      */
     virtual enum class EventResult onEvent(struct ScriptingNotificationEvent const&);
     // NOLINTEND

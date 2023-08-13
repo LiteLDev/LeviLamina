@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/levelgen/structure/StructurePiece.h"
+#include "mc/world/level/levelgen/structure/ScatteredFeaturePiece.h"
 
-class SwamplandHut : public ::StructurePiece {
+class SwamplandHut : public ::ScatteredFeaturePiece {
 
 public:
     // prevent constructor by default

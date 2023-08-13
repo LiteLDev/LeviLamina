@@ -2,7 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BreatheAirGoal {
+// auto generated inclusion list
+#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ai/goal/Goal.h"
+
+class BreatheAirGoal : public ::Goal {
 
 public:
     // prevent constructor by default
@@ -37,11 +41,6 @@ public:
      * @symbol ?start\@BreatheAirGoal\@\@UEAAXXZ
      */
     virtual void start();
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
-    virtual void __unk_vfn_5();
     /**
      * @vftbl 6
      * @symbol ?tick\@BreatheAirGoal\@\@UEAAXXZ

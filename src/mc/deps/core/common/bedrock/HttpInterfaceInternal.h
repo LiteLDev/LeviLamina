@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/HttpInterface.h"
+
 // auto generated forward declare list
 // clang-format off
 struct HC_CALL;
@@ -11,7 +14,7 @@ struct XAsyncBlock;
 
 namespace Bedrock::Http {
 
-class HttpInterfaceInternal {
+class HttpInterfaceInternal : public ::Bedrock::Http::HttpInterface {
 
 public:
     // prevent constructor by default

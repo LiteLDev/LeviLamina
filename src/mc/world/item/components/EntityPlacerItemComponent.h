@@ -19,9 +19,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?checkComponentDataForContentErrors\@ItemComponent\@\@UEBA_NXZ
      */
-    virtual void __unk_vfn_1();
+    virtual bool checkComponentDataForContentErrors() const;
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
@@ -29,19 +29,18 @@ public:
     virtual void __unk_vfn_2();
     /**
      * @vftbl 3
-     * @symbol __unk_vfn_3
+     * @symbol ?isNetworkComponent\@ChargeableItemComponent\@\@UEBA_NXZ
      */
-    virtual void __unk_vfn_3();
+    virtual bool isNetworkComponent() const;
     /**
      * @vftbl 4
      * @symbol
-     * ?buildNetworkTag\@?$NetworkedItemComponent\@VEntityPlacerItemComponent\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
+     * ?buildNetworkTag\@ChargeableItemComponent\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl 5
-     * @symbol
-     * ?initializeFromNetwork\@?$NetworkedItemComponent\@VEntityPlacerItemComponent\@\@\@\@UEAA_NAEBVCompoundTag\@\@\@Z
+     * @symbol ?initializeFromNetwork\@ChargeableItemComponent\@\@UEAA_NAEBVCompoundTag\@\@\@Z
      */
     virtual bool initializeFromNetwork(class CompoundTag const&);
     /**
@@ -51,26 +50,20 @@ public:
     virtual void handleVersionBasedInitialization(class SemVersion const&);
     /**
      * @vftbl 7
-     * @symbol __unk_vfn_7
+     * @symbol ?initializeComponent\@ItemComponent\@\@UEBAXXZ
      */
-    virtual void __unk_vfn_7();
+    virtual void initializeComponent() const;
     /**
      * @vftbl 8
-     * @symbol __unk_vfn_8
+     * @symbol ?_canUseOn\@EntityPlacerItemComponent\@\@MEBA_NAEBVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@E\@Z
      */
-    virtual void __unk_vfn_8();
+    virtual bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, unsigned char) const;
     /**
      * @vftbl 9
      * @symbol
      * ?_useOn\@EntityPlacerItemComponent\@\@MEBA_NAEAVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@EAEBVVec3\@\@\@Z
      */
     virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ENTITYPLACERITEMCOMPONENT
-    /**
-     * @symbol ?_canUseOn\@EntityPlacerItemComponent\@\@MEBA_NAEBVItemStack\@\@AEAVActor\@\@AEBVBlockPos\@\@E\@Z
-     */
-    MCVAPI bool _canUseOn(class ItemStack const&, class Actor&, class BlockPos const&, unsigned char) const;
-#endif
     /**
      * @symbol ?dispense\@EntityPlacerItemComponent\@\@QEBA_NAEAVBlockSource\@\@AEAVContainer\@\@HAEBVVec3\@\@E\@Z
      */

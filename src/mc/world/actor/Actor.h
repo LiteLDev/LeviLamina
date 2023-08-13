@@ -7,9 +7,10 @@
 #include "mc/common/wrapper/StackRefResultT.h"
 #include "mc/common/wrapper/WeakRefT.h"
 #include "mc/common/wrapper/optional_ref.h"
+#include "mc/entity/utilities/ActorStatusProvider.h"
 #include "mc/world/AutomaticID.h"
 
-class Actor {
+class Actor : public ::ActorStatusProvider {
 public:
     // Actor inner types define
     enum class InitializationMethod {};
@@ -1386,13 +1387,13 @@ public:
     MCVAPI ~Actor();
 #endif
     /**
-     * @symbol ??0Actor\@\@QEAA\@AEAVILevel\@\@AEAVEntityContext\@\@\@Z
-     */
-    MCAPI Actor(class ILevel&, class EntityContext&);
-    /**
      * @symbol ??0Actor\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Actor(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    /**
+     * @symbol ??0Actor\@\@QEAA\@AEAVILevel\@\@AEAVEntityContext\@\@\@Z
+     */
+    MCAPI Actor(class ILevel&, class EntityContext&);
     /**
      * @symbol ?_sendDirtyActorData\@Actor\@\@QEAAXXZ
      */
@@ -1528,13 +1529,13 @@ public:
      */
     MCAPI float distanceTo(class Vec3 const&) const;
     /**
-     * @symbol ?distanceToSqr\@Actor\@\@QEBAMAEBV1\@\@Z
-     */
-    MCAPI float distanceToSqr(class Actor const&) const;
-    /**
      * @symbol ?distanceToSqr\@Actor\@\@QEBAMAEBVVec3\@\@\@Z
      */
     MCAPI float distanceToSqr(class Vec3 const&) const;
+    /**
+     * @symbol ?distanceToSqr\@Actor\@\@QEBAMAEBV1\@\@Z
+     */
+    MCAPI float distanceToSqr(class Actor const&) const;
     /**
      * @symbol ?dropLeash\@Actor\@\@QEAAX_N0\@Z
      */
@@ -1591,13 +1592,13 @@ public:
      */
     MCAPI std::vector<class MobEffectInstance> const& getAllEffects() const;
     /**
-     * @symbol ?getArmorContainer\@Actor\@\@QEBAAEBVSimpleContainer\@\@XZ
-     */
-    MCAPI class SimpleContainer const& getArmorContainer() const;
-    /**
      * @symbol ?getArmorContainer\@Actor\@\@QEAAAEAVSimpleContainer\@\@XZ
      */
     MCAPI class SimpleContainer& getArmorContainer();
+    /**
+     * @symbol ?getArmorContainer\@Actor\@\@QEBAAEBVSimpleContainer\@\@XZ
+     */
+    MCAPI class SimpleContainer const& getArmorContainer() const;
     /**
      * @symbol ?getAttachPos\@Actor\@\@QEBA?AVVec3\@\@W4ActorLocation\@\@M\@Z
      */
@@ -1695,13 +1696,13 @@ public:
      */
     MCAPI class MobEffectInstance const* getEffect(unsigned int) const;
     /**
-     * @symbol ?getEntityData\@Actor\@\@QEBAAEBVSynchedActorDataEntityWrapper\@\@XZ
-     */
-    MCAPI class SynchedActorDataEntityWrapper const& getEntityData() const;
-    /**
      * @symbol ?getEntityData\@Actor\@\@QEAAAEAVSynchedActorDataEntityWrapper\@\@XZ
      */
     MCAPI class SynchedActorDataEntityWrapper& getEntityData();
+    /**
+     * @symbol ?getEntityData\@Actor\@\@QEBAAEBVSynchedActorDataEntityWrapper\@\@XZ
+     */
+    MCAPI class SynchedActorDataEntityWrapper const& getEntityData() const;
     /**
      * @symbol ?getEntityRegistry\@Actor\@\@QEAA?AV?$StackRefResultT\@UEntityRegistryRefTraits\@\@\@\@XZ
      */
@@ -1727,13 +1728,13 @@ public:
      */
     MCAPI class Actor* getFirstPassenger() const;
     /**
-     * @symbol ?getHandContainer\@Actor\@\@QEBAAEBVSimpleContainer\@\@XZ
-     */
-    MCAPI class SimpleContainer const& getHandContainer() const;
-    /**
      * @symbol ?getHandContainer\@Actor\@\@QEAAAEAVSimpleContainer\@\@XZ
      */
     MCAPI class SimpleContainer& getHandContainer();
+    /**
+     * @symbol ?getHandContainer\@Actor\@\@QEBAAEBVSimpleContainer\@\@XZ
+     */
+    MCAPI class SimpleContainer const& getHandContainer() const;
     /**
      * @symbol ?getHealth\@Actor\@\@QEBAHXZ
      */
@@ -1795,13 +1796,13 @@ public:
      */
     MCAPI struct ActorUniqueID getLeashHolder() const;
     /**
-     * @symbol ?getLevel\@Actor\@\@QEBAAEBVLevel\@\@XZ
-     */
-    MCAPI class Level const& getLevel() const;
-    /**
      * @symbol ?getLevel\@Actor\@\@QEAAAEAVLevel\@\@XZ
      */
     MCAPI class Level& getLevel();
+    /**
+     * @symbol ?getLevel\@Actor\@\@QEBAAEBVLevel\@\@XZ
+     */
+    MCAPI class Level const& getLevel() const;
     /**
      * @symbol ?getLevelTimeStamp\@Actor\@\@QEBA_KXZ
      */
@@ -2324,13 +2325,13 @@ public:
      */
     MCAPI bool isResting() const;
     /**
-     * @symbol ?isRiding\@Actor\@\@QEBA_NPEAV1\@\@Z
-     */
-    MCAPI bool isRiding(class Actor*) const;
-    /**
      * @symbol ?isRiding\@Actor\@\@QEBA_NXZ
      */
     MCAPI bool isRiding() const;
+    /**
+     * @symbol ?isRiding\@Actor\@\@QEBA_NPEAV1\@\@Z
+     */
+    MCAPI bool isRiding(class Actor*) const;
     /**
      * @symbol ?isSheared\@Actor\@\@QEBA_NXZ
      */
@@ -2468,10 +2469,6 @@ public:
      */
     MCAPI void playMovementSound();
     /**
-     * @symbol ?playSound\@Actor\@\@QEAAXAEBVIConstBlockSource\@\@W4LevelSoundEvent\@\@AEBVVec3\@\@H\@Z
-     */
-    MCAPI void playSound(class IConstBlockSource const&, enum class LevelSoundEvent, class Vec3 const&, int);
-    /**
      * @symbol ?playSound\@Actor\@\@QEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@H\@Z
      */
     MCAPI void playSound(enum class LevelSoundEvent, class Vec3 const&, int);
@@ -2479,6 +2476,10 @@ public:
      * @symbol ?playSound\@Actor\@\@QEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@AEBVBlock\@\@\@Z
      */
     MCAPI void playSound(enum class LevelSoundEvent, class Vec3 const&, class Block const&);
+    /**
+     * @symbol ?playSound\@Actor\@\@QEAAXAEBVIConstBlockSource\@\@W4LevelSoundEvent\@\@AEBVVec3\@\@H\@Z
+     */
+    MCAPI void playSound(class IConstBlockSource const&, enum class LevelSoundEvent, class Vec3 const&, int);
     /**
      * @symbol ?positionAllPassengers\@Actor\@\@QEAAXXZ
      */

@@ -4,13 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/file/IFileAccess.h"
+#include "mc/deps/file/IFileReadAccess.h"
+#include "mc/deps/file/IFileWriteAccess.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
 // clang-format on
 
-class MemoryMappedFileAccess {
+class MemoryMappedFileAccess : public ::IFileAccess {
 public:
     // MemoryMappedFileAccess inner types declare
     // clang-format off
@@ -20,7 +23,7 @@ public:
     // clang-format on
 
     // MemoryMappedFileAccess inner types define
-    class MemoryMappedFileReadAccess {
+    class MemoryMappedFileReadAccess : public ::IFileReadAccess {
 
     public:
         // prevent constructor by default
@@ -49,7 +52,7 @@ public:
         // NOLINTEND
     };
 
-    class MemoryMappedFileWriteAccess {
+    class MemoryMappedFileWriteAccess : public ::IFileWriteAccess {
 
     public:
         // prevent constructor by default

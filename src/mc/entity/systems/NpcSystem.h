@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace NpcComponents { struct LeaveMenuCountdown; }
 // clang-format on
 
-class NpcSystem {
+class NpcSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

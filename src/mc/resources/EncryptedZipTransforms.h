@@ -4,8 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/file/FileAccessTransforms.h"
 
-class EncryptedZipTransforms {
+class EncryptedZipTransforms : public ::FileAccessTransforms {
 
 public:
     // prevent constructor by default

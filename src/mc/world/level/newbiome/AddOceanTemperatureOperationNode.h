@@ -3,10 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/newbiome/OperationNodeBase.h"
 #include "mc/world/level/newbiome/WorkingData.h"
 
-class AddOceanTemperatureOperationNode : public ::OperationNodeDetails::OperationNodeBase {
+class AddOceanTemperatureOperationNode {
 
 public:
     // prevent constructor by default
@@ -21,6 +20,11 @@ public:
      * @symbol __unk_vfn_0
      */
     virtual void __unk_vfn_0();
+    /**
+     * @vftbl 1
+     * @symbol ?init\@OperationNodeBase\@OperationNodeDetails\@\@UEAAX_J\@Z
+     */
+    virtual void init(int64_t);
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
