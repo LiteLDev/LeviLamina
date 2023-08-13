@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class HurtOnConditionSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class HurtOnConditionSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

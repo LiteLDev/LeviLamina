@@ -11,7 +11,7 @@
 namespace Json { class Value; }
 // clang-format on
 
-class FlatWorldGenerator {
+class FlatWorldGenerator : public ::WorldGenerator {
 
 public:
     // prevent constructor by default

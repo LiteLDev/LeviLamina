@@ -776,13 +776,13 @@ public:
     MCVAPI ~Mob();
 #endif
     /**
-     * @symbol ??0Mob\@\@QEAA\@AEAVLevel\@\@AEAVEntityContext\@\@\@Z
-     */
-    MCAPI Mob(class Level&, class EntityContext&);
-    /**
      * @symbol ??0Mob\@\@QEAA\@PEAVActorDefinitionGroup\@\@AEBUActorDefinitionIdentifier\@\@AEAVEntityContext\@\@\@Z
      */
     MCAPI Mob(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
+    /**
+     * @symbol ??0Mob\@\@QEAA\@AEAVLevel\@\@AEAVEntityContext\@\@\@Z
+     */
+    MCAPI Mob(class Level&, class EntityContext&);
     /**
      * @symbol ?_endJump\@Mob\@\@QEAAXXZ
      */

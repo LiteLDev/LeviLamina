@@ -15,6 +15,16 @@ public:
 
 public:
     // NOLINTBEGIN
+    /**
+     * @vftbl 0
+     * @symbol __unk_vfn_0
+     */
+    virtual void __unk_vfn_0();
+    /**
+     * @vftbl 1
+     * @symbol ?onEvent\@ActorEventListener\@\@UEAA?AW4EventResult\@\@AEBUActorNotificationEvent\@\@\@Z
+     */
+    virtual enum class EventResult onEvent(struct ActorNotificationEvent const&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOREVENTLISTENER
     /**
      * @symbol ?onActorAttackedActor\@ActorEventListener\@\@UEAA?AW4EventResult\@\@AEAVActor\@\@0\@Z
@@ -70,10 +80,6 @@ public:
      * @symbol ?onActorTick\@ActorEventListener\@\@UEAA?AW4EventResult\@\@AEAVActor\@\@\@Z
      */
     MCVAPI enum class EventResult onActorTick(class Actor&);
-    /**
-     * @symbol ?onEvent\@ActorEventListener\@\@UEAA?AW4EventResult\@\@AEBUActorNotificationEvent\@\@\@Z
-     */
-    MCVAPI enum class EventResult onEvent(struct ActorNotificationEvent const&);
     /**
      * @symbol __unk_destructor_-1
      */

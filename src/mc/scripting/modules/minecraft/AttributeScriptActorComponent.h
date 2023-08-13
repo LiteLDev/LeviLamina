@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
+#include "mc/scripting/modules/minecraft/ScriptActorComponent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +16,7 @@ namespace Scripting { class WeakLifetimeScope; }
 
 namespace ScriptModuleMinecraft {
 
-class AttributeScriptActorComponent {
+class AttributeScriptActorComponent : public ::ScriptModuleMinecraft::ScriptActorComponent {
 
 public:
     // prevent constructor by default
@@ -80,15 +81,15 @@ public:
      */
     virtual class Scripting::Result<void> resetToDefaultValue() const;
     /**
-     * @symbol ??0AttributeScriptActorComponent\@ScriptModuleMinecraft\@\@QEAA\@AEBV01\@\@Z
-     */
-    MCAPI AttributeScriptActorComponent(class ScriptModuleMinecraft::AttributeScriptActorComponent const&);
-    /**
      * @symbol
      * ??0AttributeScriptActorComponent\@ScriptModuleMinecraft\@\@QEAA\@AEBVWeakEntityRef\@\@AEBVWeakLifetimeScope\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVAttribute\@\@\@Z
      */
     MCAPI
     AttributeScriptActorComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&, class Attribute const&);
+    /**
+     * @symbol ??0AttributeScriptActorComponent\@ScriptModuleMinecraft\@\@QEAA\@AEBV01\@\@Z
+     */
+    MCAPI AttributeScriptActorComponent(class ScriptModuleMinecraft::AttributeScriptActorComponent const&);
     /**
      * @symbol ??4AttributeScriptActorComponent\@ScriptModuleMinecraft\@\@QEAAAEAV01\@AEBV01\@\@Z
      */

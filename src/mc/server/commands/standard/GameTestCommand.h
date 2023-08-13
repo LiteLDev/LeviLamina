@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/Command.h"
+#include "mc/server/commands/ServerCommand.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace gametest { struct TestParameters; }
 // clang-format on
 
-class GameTestCommand : public ::Command {
+class GameTestCommand : public ::ServerCommand {
 
 public:
     // prevent constructor by default
@@ -27,6 +27,11 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
+     * @symbol ?collectOptionalArguments\@Command\@\@MEAA_NXZ
+     */
+    virtual bool collectOptionalArguments();
+    /**
+     * @vftbl 2
      * @symbol ?execute\@GameTestCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class AmbientSoundServerSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class AmbientSoundServerSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

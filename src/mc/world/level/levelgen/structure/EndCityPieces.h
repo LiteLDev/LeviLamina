@@ -21,6 +21,25 @@ public:
     // EndCityPieces inner types define
     enum class SectionType {};
 
+    class SectionGenerator {
+
+    public:
+        // prevent constructor by default
+        SectionGenerator& operator=(SectionGenerator const&) = delete;
+        SectionGenerator(SectionGenerator const&)            = delete;
+        SectionGenerator()                                   = delete;
+
+    public:
+        // NOLINTBEGIN
+        /**
+         * @vftbl 0
+         * @symbol
+         * ?generate\@FatTowerGenerator\@EndCityPieces\@\@UEAA_NV?$not_null\@V?$NonOwnerPointer\@VStructureManager\@\@\@Bedrock\@\@\@gsl\@\@AEBV?$vector\@V?$unique_ptr\@VSectionGenerator\@EndCityPieces\@\@U?$default_delete\@VSectionGenerator\@EndCityPieces\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VSectionGenerator\@EndCityPieces\@\@U?$default_delete\@VSectionGenerator\@EndCityPieces\@\@\@std\@\@\@std\@\@\@2\@\@std\@\@HPEAVEndCityPiece\@2\@AEBVBlockPos\@\@AEAV?$vector\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@V?$allocator\@V?$unique_ptr\@VStructurePiece\@\@U?$default_delete\@VStructurePiece\@\@\@std\@\@\@std\@\@\@2\@\@6\@AEAVRandom\@\@\@Z
+         */
+        virtual bool generate(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::vector<std::unique_ptr<class EndCityPieces::SectionGenerator>> const&, int, class EndCityPieces::EndCityPiece*, class BlockPos const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&) = 0;
+        // NOLINTEND
+    };
+
     class EndCityPiece : public ::TemplateStructurePiece {
 
     public:
@@ -76,7 +95,7 @@ public:
         // NOLINTEND
     };
 
-    class FatTowerGenerator {
+    class FatTowerGenerator : public ::EndCityPieces::SectionGenerator {
 
     public:
         // prevent constructor by default
@@ -95,7 +114,7 @@ public:
         // NOLINTEND
     };
 
-    class HouseTowerGenerator {
+    class HouseTowerGenerator : public ::EndCityPieces::SectionGenerator {
 
     public:
         // prevent constructor by default
@@ -114,16 +133,7 @@ public:
         // NOLINTEND
     };
 
-    class SectionGenerator {
-
-    public:
-        // prevent constructor by default
-        SectionGenerator& operator=(SectionGenerator const&) = delete;
-        SectionGenerator(SectionGenerator const&)            = delete;
-        SectionGenerator()                                   = delete;
-    };
-
-    class TowerBridgeGenerator {
+    class TowerBridgeGenerator : public ::EndCityPieces::SectionGenerator {
 
     public:
         // prevent constructor by default
@@ -142,7 +152,7 @@ public:
         // NOLINTEND
     };
 
-    class TowerGenerator {
+    class TowerGenerator : public ::EndCityPieces::SectionGenerator {
 
     public:
         // prevent constructor by default

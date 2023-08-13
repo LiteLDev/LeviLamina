@@ -19,21 +19,21 @@ public:
      */
     MCAPI HashedString(class HashedString const&);
     /**
-     * @symbol ??0HashedString\@\@QEAA\@_KPEBD\@Z
-     */
-    MCAPI HashedString(uint64_t, char const*);
-    /**
      * @symbol ??0HashedString\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI HashedString(class HashedString&&);
+    /**
+     * @symbol ??0HashedString\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI HashedString(std::string const&);
     /**
      * @symbol ??0HashedString\@\@QEAA\@PEBD\@Z
      */
     MCAPI HashedString(char const*);
     /**
-     * @symbol ??0HashedString\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * @symbol ??0HashedString\@\@QEAA\@_KPEBD\@Z
      */
-    MCAPI HashedString(std::string const&);
+    MCAPI HashedString(uint64_t, char const*);
     /**
      * @symbol ?c_str\@HashedString\@\@QEBAPEBDXZ
      */

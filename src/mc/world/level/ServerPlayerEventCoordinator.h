@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ServerPlayerEventCoordinator {
+// auto generated inclusion list
+#include "mc/world/events/PlayerEventCoordinator.h"
+
+class ServerPlayerEventCoordinator : public ::PlayerEventCoordinator {
 
 public:
     // prevent constructor by default

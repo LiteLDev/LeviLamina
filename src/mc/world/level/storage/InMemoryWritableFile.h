@@ -27,16 +27,16 @@ public:
      * @symbol ?Close\@InMemoryWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
      */
     virtual class leveldb::Status Close();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INMEMORYWRITABLEFILE
     /**
+     * @vftbl 3
      * @symbol ?Flush\@InMemoryWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
      */
-    MCVAPI class leveldb::Status Flush();
+    virtual class leveldb::Status Flush();
     /**
+     * @vftbl 4
      * @symbol ?Sync\@InMemoryWritableFile\@\@UEAA?AVStatus\@leveldb\@\@XZ
      */
-    MCVAPI class leveldb::Status Sync();
-#endif
+    virtual class leveldb::Status Sync();
     /**
      * @symbol ??0InMemoryWritableFile\@\@QEAA\@V?$shared_ptr\@VInMemoryFile\@\@\@std\@\@\@Z
      */

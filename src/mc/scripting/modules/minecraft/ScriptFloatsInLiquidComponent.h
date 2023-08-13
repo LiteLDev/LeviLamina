@@ -2,12 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/scripting/modules/minecraft/ScriptActorComponent.h"
-
 namespace ScriptModuleMinecraft {
 
-class ScriptFloatsInLiquidComponent : public ::ScriptModuleMinecraft::ScriptActorComponent {
+class ScriptFloatsInLiquidComponent {
 
 public:
     // prevent constructor by default
@@ -22,6 +19,11 @@ public:
      * @symbol __unk_vfn_0
      */
     virtual void __unk_vfn_0();
+    /**
+     * @vftbl 1
+     * @symbol ?_isValid\@BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@MEBA_NXZ
+     */
+    virtual bool _isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTFLOATSINLIQUIDCOMPONENT
     /**
      * @symbol __unk_destructor_-1

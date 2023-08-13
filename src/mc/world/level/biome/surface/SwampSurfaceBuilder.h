@@ -12,7 +12,7 @@ class EntityContext;
 
 namespace VanillaSurfaceBuilders {
 
-class SwampSurfaceBuilder {
+class SwampSurfaceBuilder : public ::ISurfaceBuilder {
 
 public:
     // prevent constructor by default

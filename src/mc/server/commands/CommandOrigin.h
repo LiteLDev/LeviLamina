@@ -200,15 +200,15 @@ public:
     MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const&, int) const;
     /**
      * @symbol
+     * ?getAreaAtWithBuffer\@CommandOrigin\@\@QEBA?AV?$unique_ptr\@VCommandArea\@\@U?$default_delete\@VCommandArea\@\@\@std\@\@\@std\@\@AEBVBlockPos\@\@H\@Z
+     */
+    MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const&, int) const;
+    /**
+     * @symbol
      * ?getAreaAtWithBuffer\@CommandOrigin\@\@QEBA?AV?$unique_ptr\@VCommandArea\@\@U?$default_delete\@VCommandArea\@\@\@std\@\@\@std\@\@AEBVBlockPos\@\@0H_N\@Z
      */
     MCAPI std::unique_ptr<class CommandArea>
           getAreaAtWithBuffer(class BlockPos const&, class BlockPos const&, int, bool) const;
-    /**
-     * @symbol
-     * ?getAreaAtWithBuffer\@CommandOrigin\@\@QEBA?AV?$unique_ptr\@VCommandArea\@\@U?$default_delete\@VCommandArea\@\@\@std\@\@\@std\@\@AEBVBlockPos\@\@H\@Z
-     */
-    MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const&, int) const;
     /**
      * @symbol
      * ?fromCommandOriginData\@CommandOrigin\@\@SA?AV?$unique_ptr\@VCommandOrigin\@\@U?$default_delete\@VCommandOrigin\@\@\@std\@\@\@std\@\@AEBUCommandOriginData\@\@AEBV?$NonOwnerPointer\@VILevel\@\@\@Bedrock\@\@AEBVNetworkIdentifier\@\@W4SubClientId\@\@\@Z

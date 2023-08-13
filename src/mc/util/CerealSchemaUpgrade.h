@@ -21,12 +21,13 @@ public:
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0() = 0;
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol
+     * ?previousSchema\@BlockLightDampening11910Upgrade\@BlockLightDampeningVersioning\@\@UEBAXAEAVSchemaFactory\@cereal\@\@\@Z
      */
-    virtual void __unk_vfn_1();
+    virtual void previousSchema(class cereal::SchemaFactory&) const = 0;
     /**
      * @vftbl 2
      * @symbol

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class SculkVeinMultifaceSpreader {
+// auto generated inclusion list
+#include "mc/world/level/block/MultifaceSpreader.h"
+
+class SculkVeinMultifaceSpreader : public ::MultifaceSpreader {
 
 public:
     // prevent constructor by default

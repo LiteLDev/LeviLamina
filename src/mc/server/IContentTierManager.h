@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class IContentTierManager {
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+
+class IContentTierManager : public ::Bedrock::EnableNonOwnerReferences {
 
 public:
     // prevent constructor by default

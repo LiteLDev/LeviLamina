@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ClientReplayStatePolicy {
+// auto generated inclusion list
+#include "mc/entity/components/IReplayStatePolicy.h"
+
+class ClientReplayStatePolicy : public ::IReplayStatePolicy {
 
 public:
     // prevent constructor by default

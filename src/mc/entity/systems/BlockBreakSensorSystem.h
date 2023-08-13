@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BlockBreakSensorSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class BlockBreakSensorSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

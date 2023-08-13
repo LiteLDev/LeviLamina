@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/item/crafting/Recipe.h"
+#include "mc/world/item/crafting/MultiRecipe.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace mce { class UUID; }
 // clang-format on
 
-class MapCloningRecipe : public ::Recipe {
+class MapCloningRecipe : public ::MultiRecipe {
 
 public:
     // prevent constructor by default

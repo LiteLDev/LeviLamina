@@ -1362,14 +1362,14 @@ public:
      */
     MCAPI class BlockLegacy& addTrait(class BlockTrait::ITrait const&);
     /**
+     * @symbol ?anyOf\@BlockLegacy\@\@QEBA_NV?$initializer_list\@$$CBVHashedString\@\@\@std\@\@\@Z
+     */
+    MCAPI bool anyOf(std::initializer_list<class HashedString const>) const;
+    /**
      * @symbol
      * ?anyOf\@BlockLegacy\@\@QEBA_NAEBV?$vector\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@V?$allocator\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@\@2\@\@std\@\@\@Z
      */
     MCAPI bool anyOf(std::vector<std::reference_wrapper<class HashedString const>> const&) const;
-    /**
-     * @symbol ?anyOf\@BlockLegacy\@\@QEBA_NV?$initializer_list\@$$CBVHashedString\@\@\@std\@\@\@Z
-     */
-    MCAPI bool anyOf(std::initializer_list<class HashedString const>) const;
     /**
      * @symbol
      * ?clip\@BlockLegacy\@\@QEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_NAEBVAABB\@\@\@Z
@@ -1642,13 +1642,13 @@ public:
      */
     MCAPI void setSolid(bool);
     /**
-     * @symbol ?setVisualShape\@BlockLegacy\@\@QEAAXAEBVAABB\@\@\@Z
-     */
-    MCAPI void setVisualShape(class AABB const&);
-    /**
      * @symbol ?setVisualShape\@BlockLegacy\@\@QEAAXAEBVVec3\@\@0\@Z
      */
     MCAPI void setVisualShape(class Vec3 const&, class Vec3 const&);
+    /**
+     * @symbol ?setVisualShape\@BlockLegacy\@\@QEAAXAEBVAABB\@\@\@Z
+     */
+    MCAPI void setVisualShape(class AABB const&);
     /**
      * @symbol ?tryGetStateFromLegacyData\@BlockLegacy\@\@QEBAPEBVBlock\@\@G_N\@Z
      */

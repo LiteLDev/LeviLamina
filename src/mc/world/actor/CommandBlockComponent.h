@@ -12,13 +12,13 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0CommandBlockComponent\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI CommandBlockComponent(class CommandBlockComponent&&);
-    /**
      * @symbol ??0CommandBlockComponent\@\@QEAA\@XZ
      */
     MCAPI CommandBlockComponent();
+    /**
+     * @symbol ??0CommandBlockComponent\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI CommandBlockComponent(class CommandBlockComponent&&);
     /**
      * @symbol ?addAdditionalSaveData\@CommandBlockComponent\@\@QEBAXAEAVCompoundTag\@\@\@Z
      */

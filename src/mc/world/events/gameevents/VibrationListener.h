@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/events/gameevents/GameEventListener.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace GameEvents { class PositionSource; }
 // clang-format on
 
-class VibrationListener {
+class VibrationListener : public ::GameEventListener {
 public:
     // VibrationListener inner types define
     enum class OwnerType {};
@@ -41,6 +44,11 @@ public:
      * @symbol ?getRange\@VibrationListener\@\@UEBAIXZ
      */
     virtual unsigned int getRange() const;
+    /**
+     * @vftbl 4
+     * @symbol ?getDeliveryMode\@GameEventListener\@\@UEBA?AW4DeliveryMode\@1\@XZ
+     */
+    virtual enum class GameEventListener::DeliveryMode getDeliveryMode() const;
     /**
      * @symbol
      * ??0VibrationListener\@\@QEAA\@$$QEAV?$unique_ptr\@VVibrationListenerConfig\@\@U?$default_delete\@VVibrationListenerConfig\@\@\@std\@\@\@std\@\@VPositionSource\@GameEvents\@\@IW4OwnerType\@0\@\@Z

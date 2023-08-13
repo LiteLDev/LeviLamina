@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace AgentComponents { class CommandCooldown; }
 // clang-format on
 
-class AgentCommandSystem {
+class AgentCommandSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

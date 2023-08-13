@@ -43,6 +43,21 @@ public:
 
 public:
     // NOLINTBEGIN
+    /**
+     * @vftbl 0
+     * @symbol __unk_vfn_0
+     */
+    virtual void __unk_vfn_0();
+    /**
+     * @vftbl 1
+     * @symbol ?toNBT\@?$BlockStateVariant\@_N\@\@UEBAXAEAVCompoundTag\@\@H\@Z
+     */
+    virtual void toNBT(class CompoundTag&, int) const = 0;
+    /**
+     * @vftbl 2
+     * @symbol ?fromNBT\@?$BlockStateVariant\@_N\@\@UEBA_NAEBVCompoundTag\@\@AEAH\@Z
+     */
+    virtual bool fromNBT(class CompoundTag const&, int&) const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSTATE
     /**
      * @symbol __unk_destructor_-1

@@ -48,13 +48,13 @@ public:
      */
     MCAPI void _propagateSubtractiveBlockLight();
     /**
-     * @symbol ?_propagateSubtractiveSkyLight\@SubChunkRelighter\@\@QEAAXUSubChunkLightIndex\@\@E\@Z
-     */
-    MCAPI void _propagateSubtractiveSkyLight(struct SubChunkLightIndex, unsigned char);
-    /**
      * @symbol ?_propagateSubtractiveSkyLight\@SubChunkRelighter\@\@QEAAXXZ
      */
     MCAPI void _propagateSubtractiveSkyLight();
+    /**
+     * @symbol ?_propagateSubtractiveSkyLight\@SubChunkRelighter\@\@QEAAXUSubChunkLightIndex\@\@E\@Z
+     */
+    MCAPI void _propagateSubtractiveSkyLight(struct SubChunkLightIndex, unsigned char);
     /**
      * @symbol ?_setLightHelper\@SubChunkRelighter\@\@QEAAXUSubChunkLightIndex\@\@UBrightness\@\@111II\@Z
      */

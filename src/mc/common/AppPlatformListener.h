@@ -12,6 +12,41 @@ public:
 
 public:
     // NOLINTBEGIN
+    /**
+     * @vftbl 0
+     * @symbol __unk_vfn_0
+     */
+    virtual void __unk_vfn_0();
+    /**
+     * @vftbl 1
+     * @symbol __unk_vfn_1
+     */
+    virtual void __unk_vfn_1();
+    /**
+     * @vftbl 2
+     * @symbol __unk_vfn_2
+     */
+    virtual void __unk_vfn_2();
+    /**
+     * @vftbl 3
+     * @symbol __unk_vfn_3
+     */
+    virtual void __unk_vfn_3();
+    /**
+     * @vftbl 4
+     * @symbol __unk_vfn_4
+     */
+    virtual void __unk_vfn_4();
+    /**
+     * @vftbl 5
+     * @symbol __unk_vfn_5
+     */
+    virtual void __unk_vfn_5();
+    /**
+     * @vftbl 6
+     * @symbol ?onAppResumed\@AppPlatformListener\@\@UEAAXXZ
+     */
+    virtual void onAppResumed();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_APPPLATFORMLISTENER
     /**
      * @symbol ?onAppFocusGained\@AppPlatformListener\@\@UEAAXXZ
@@ -29,10 +64,6 @@ public:
      * @symbol ?onAppPreSuspended\@AppPlatformListener\@\@UEAAXXZ
      */
     MCVAPI void onAppPreSuspended();
-    /**
-     * @symbol ?onAppResumed\@AppPlatformListener\@\@UEAAXXZ
-     */
-    MCVAPI void onAppResumed();
     /**
      * @symbol ?onAppSurfaceCreated\@AppPlatformListener\@\@UEAAXXZ
      */

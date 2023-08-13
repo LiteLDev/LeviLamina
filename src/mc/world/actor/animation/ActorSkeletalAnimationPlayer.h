@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ActorSkeletalAnimationPlayer {
+// auto generated inclusion list
+#include "mc/world/actor/animation/ActorAnimationPlayer.h"
+
+class ActorSkeletalAnimationPlayer : public ::ActorAnimationPlayer {
 
 public:
     // prevent constructor by default

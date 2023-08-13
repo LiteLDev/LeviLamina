@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class LootItemKilledByPlayerOrPetsCondition {
+// auto generated inclusion list
+#include "mc/world/level/storage/loot/predicates/LootItemCondition.h"
+
+class LootItemKilledByPlayerOrPetsCondition : public ::LootItemCondition {
 
 public:
     // prevent constructor by default

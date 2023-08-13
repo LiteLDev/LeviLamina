@@ -23,28 +23,28 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?getCraftAction\@ItemStackRequestAction\@\@UEBAPEBVItemStackRequestActionCraftBase\@\@XZ
      */
-    virtual void __unk_vfn_1();
+    virtual class ItemStackRequestActionCraftBase const* getCraftAction() const;
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?getFilteredStringIndex\@ItemStackRequestAction\@\@UEBAHXZ
      */
-    virtual void __unk_vfn_2();
+    virtual int getFilteredStringIndex() const;
     /**
      * @vftbl 3
-     * @symbol __unk_vfn_3
+     * @symbol ?postLoadItems_DEPRECATEDASKTYLAING\@ItemStackRequestActionCraftBase\@\@UEAAXAEAVBlockPalette\@\@_N\@Z
      */
-    virtual void __unk_vfn_3();
+    virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette&, bool);
     /**
      * @vftbl 4
-     * @symbol ?_write\@ItemStackRequestActionTransferBase\@\@MEBAXAEAVBinaryStream\@\@\@Z
+     * @symbol ?_write\@ItemStackRequestActionCraftRecipeAuto\@\@UEBAXAEAVBinaryStream\@\@\@Z
      */
     virtual void _write(class BinaryStream&) const;
     /**
      * @vftbl 5
      * @symbol
-     * ?_read\@ItemStackRequestActionTransferBase\@\@MEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * ?_read\@ItemStackRequestActionCraftRecipeAuto\@\@UEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
     // NOLINTEND

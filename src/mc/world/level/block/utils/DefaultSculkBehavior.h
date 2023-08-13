@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class DefaultSculkBehavior {
+// auto generated inclusion list
+#include "mc/world/level/block/SculkBehavior.h"
+
+class DefaultSculkBehavior : public ::SculkBehavior {
 
 public:
     // prevent constructor by default

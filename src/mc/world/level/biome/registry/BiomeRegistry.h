@@ -7,13 +7,14 @@
 #include "mc/common/TagRegistry.h"
 #include "mc/common/wrapper/IDType.h"
 #include "mc/common/wrapper/StackRefResultT.h"
+#include "mc/entity/gamerefs_entity/IEntityRegistryOwner.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
 // clang-format on
 
-class BiomeRegistry {
+class BiomeRegistry : public ::IEntityRegistryOwner {
 public:
     // BiomeRegistry inner types declare
     // clang-format off

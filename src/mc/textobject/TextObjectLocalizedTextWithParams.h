@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/textobject/ITextObject.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
 // clang-format on
 
-class TextObjectLocalizedTextWithParams {
+class TextObjectLocalizedTextWithParams : public ::ITextObject {
 
 public:
     // prevent constructor by default

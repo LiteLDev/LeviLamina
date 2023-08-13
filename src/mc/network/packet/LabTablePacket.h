@@ -52,13 +52,13 @@ public:
     MCVAPI ~LabTablePacket();
 #endif
     /**
-     * @symbol ??0LabTablePacket\@\@QEAA\@AEBVBlockPos\@\@W4LabTableReactionType\@\@\@Z
-     */
-    MCAPI LabTablePacket(class BlockPos const&, enum class LabTableReactionType);
-    /**
      * @symbol ??0LabTablePacket\@\@QEAA\@XZ
      */
     MCAPI LabTablePacket();
+    /**
+     * @symbol ??0LabTablePacket\@\@QEAA\@AEBVBlockPos\@\@W4LabTableReactionType\@\@\@Z
+     */
+    MCAPI LabTablePacket(class BlockPos const&, enum class LabTableReactionType);
     /**
      * @symbol ??0LabTablePacket\@\@QEAA\@W4Type\@0\@AEBVBlockPos\@\@\@Z
      */

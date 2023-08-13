@@ -14,14 +14,14 @@ namespace TreeHelper { struct TreeParams; }
 namespace TreeHelper {
 // NOLINTBEGIN
 /**
+ * @symbol ?isValidTreePosition\@TreeHelper\@\@YA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
+ */
+MCAPI bool isValidTreePosition(class IBlockWorldGenAPI const&, class BlockPos const&);
+/**
  * @symbol ?isValidTreePosition\@TreeHelper\@\@YA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEBUTreeParams\@1\@\@Z
  */
 MCAPI bool
 isValidTreePosition(class IBlockWorldGenAPI const&, class BlockPos const&, struct TreeHelper::TreeParams const&);
-/**
- * @symbol ?isValidTreePosition\@TreeHelper\@\@YA_NAEBVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@\@Z
- */
-MCAPI bool isValidTreePosition(class IBlockWorldGenAPI const&, class BlockPos const&);
 /**
  * @symbol
  * ?placeBaseBlock\@TreeHelper\@\@YA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEBV?$vector\@VBlockDescriptor\@\@V?$allocator\@VBlockDescriptor\@\@\@std\@\@\@3\@\@Z

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class DwellerDescription {
+// auto generated inclusion list
+#include "mc/world/actor/ActorComponentDescription.h"
+
+class DwellerDescription : public ::ActorComponentDescription {
 
 public:
     // prevent constructor by default

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class DynamicJumpControlDescription {
+// auto generated inclusion list
+#include "mc/world/actor/ai/control/JumpControlDescription.h"
+
+class DynamicJumpControlDescription : public ::JumpControlDescription {
 
 public:
     // prevent constructor by default

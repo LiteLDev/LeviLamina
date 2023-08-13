@@ -49,14 +49,14 @@ public:
     MCVAPI ~AnimateEntityPacket();
 #endif
     /**
+     * @symbol ??0AnimateEntityPacket\@\@QEAA\@XZ
+     */
+    MCAPI AnimateEntityPacket();
+    /**
      * @symbol
      * ??0AnimateEntityPacket\@\@QEAA\@AEBV?$vector\@VActorRuntimeID\@\@V?$allocator\@VActorRuntimeID\@\@\@std\@\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@2\@1M1W4MolangVersion\@\@1\@Z
      */
     MCAPI
     AnimateEntityPacket(std::vector<class ActorRuntimeID> const&, std::string const&, std::string const&, float, std::string const&, enum class MolangVersion, std::string const&);
-    /**
-     * @symbol ??0AnimateEntityPacket\@\@QEAA\@XZ
-     */
-    MCAPI AnimateEntityPacket();
     // NOLINTEND
 };

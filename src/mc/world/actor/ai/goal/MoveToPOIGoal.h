@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/AutomaticID.h"
 #include "mc/world/actor/ai/goal/BaseMoveToGoal.h"
 
 class MoveToPOIGoal : public ::BaseMoveToGoal {
@@ -26,11 +27,6 @@ public:
      */
     virtual bool canUse();
     /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
      * @vftbl 5
      * @symbol ?stop\@MoveToPOIGoal\@\@UEAAXXZ
      */
@@ -46,16 +42,6 @@ public:
      * ?appendDebugInfo\@MoveToPOIGoal\@\@UEBAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void appendDebugInfo(std::string&) const;
-    /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
-    /**
-     * @vftbl 9
-     * @symbol __unk_vfn_9
-     */
-    virtual void __unk_vfn_9();
     /**
      * @vftbl 11
      * @symbol ?isValidTarget\@MoveToPOIGoal\@\@UEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z

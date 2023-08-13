@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/BlockSourceListener.h"
+#include "mc/world/level/LevelListener.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +15,7 @@ namespace gametest { class IGameTestListener; }
 namespace gametest { struct TestParameters; }
 // clang-format on
 
-class MinecraftGameTest : public ::BlockSourceListener {
+class MinecraftGameTest : public ::LevelListener {
 
 public:
     // prevent constructor by default
@@ -111,11 +111,6 @@ public:
      */
     virtual void __unk_vfn_18();
     /**
-     * @vftbl 19
-     * @symbol __unk_vfn_19
-     */
-    virtual void __unk_vfn_19();
-    /**
      * @vftbl 20
      * @symbol __unk_vfn_20
      */
@@ -126,16 +121,16 @@ public:
      */
     virtual void __unk_vfn_21();
     /**
-     * @vftbl 22
-     * @symbol __unk_vfn_22
-     */
-    virtual void __unk_vfn_22();
-    /**
      * @vftbl 23
      * @symbol
      * ?onLevelDestruction\@MinecraftGameTest\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void onLevelDestruction(std::string const&);
+    /**
+     * @vftbl 24
+     * @symbol __unk_vfn_24
+     */
+    virtual void __unk_vfn_24();
     /**
      * @symbol ??0MinecraftGameTest\@\@QEAA\@AEAVLevel\@\@\@Z
      */

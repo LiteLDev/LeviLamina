@@ -12,15 +12,22 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEGOALDEFINITION
     /**
-     * @symbol ?validate\@BaseGoalDefinition\@\@UEBA_NAEAVMob\@\@\@Z
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    MCVAPI bool validate(class Mob&) const;
+    virtual void __unk_vfn_0();
     /**
+     * @vftbl 1
      * @symbol ?validateMobType\@BaseGoalDefinition\@\@UEBA_NAEAVMob\@\@\@Z
      */
-    MCVAPI bool validateMobType(class Mob&) const;
+    virtual bool validateMobType(class Mob&) const;
+    /**
+     * @vftbl 2
+     * @symbol ?validate\@BaseGoalDefinition\@\@UEBA_NAEAVMob\@\@\@Z
+     */
+    virtual bool validate(class Mob&) const;
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BASEGOALDEFINITION
     /**
      * @symbol __unk_destructor_-1
      */

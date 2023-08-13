@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/gametest/framework/IGameTestHelperProvider.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace gametest { class BaseGameTestHelper; }
@@ -9,7 +12,7 @@ namespace gametest { class BaseGameTestInstance; }
 namespace gametest { class IGameTestHelperProvider; }
 // clang-format on
 
-class MinecraftGameTestHelperProvider {
+class MinecraftGameTestHelperProvider : public ::gametest::IGameTestHelperProvider {
 
 public:
     // prevent constructor by default

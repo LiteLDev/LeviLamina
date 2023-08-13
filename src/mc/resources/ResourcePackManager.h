@@ -5,13 +5,14 @@
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/core/resource/ResourceLoader.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
 // clang-format on
 
-class ResourcePackManager {
+class ResourcePackManager : public ::ResourceLoader {
 
 public:
     // prevent constructor by default

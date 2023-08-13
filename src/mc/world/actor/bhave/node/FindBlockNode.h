@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class FindBlockNode {
+// auto generated inclusion list
+#include "mc/world/actor/bhave/node/BehaviorNode.h"
+
+class FindBlockNode : public ::BehaviorNode {
 
 public:
     // prevent constructor by default

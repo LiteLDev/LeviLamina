@@ -12,7 +12,7 @@ class EntityContext;
 
 namespace VanillaSurfaceBuilders {
 
-class OverworldDefaultSurfaceBuilder {
+class OverworldDefaultSurfaceBuilder : public ::ISurfaceBuilder {
 
 public:
     // prevent constructor by default

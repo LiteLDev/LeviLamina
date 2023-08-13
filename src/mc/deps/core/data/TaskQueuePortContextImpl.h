@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class TaskQueuePortContextImpl {
+// auto generated inclusion list
+#include "mc/common/ITaskQueuePortContext.h"
+
+class TaskQueuePortContextImpl : public ::ITaskQueuePortContext {
 
 public:
     // prevent constructor by default

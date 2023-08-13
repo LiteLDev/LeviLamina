@@ -26,7 +26,7 @@ public:
      * ??0LevelStorageManager\@\@QEAA\@V?$OwnerPtrT\@U?$SharePtrRefTraits\@VLevelStorage\@\@\@\@\@\@V?$unique_ptr\@VGameDataSaveTimer\@\@U?$default_delete\@VGameDataSaveTimer\@\@\@std\@\@\@std\@\@V?$unique_ptr\@VUserStorageChecker\@\@U?$default_delete\@VUserStorageChecker\@\@\@std\@\@\@3\@\@Z
      */
     MCAPI
-    LevelStorageManager(class OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>>, std::unique_ptr<class GameDataSaveTimer>, std::unique_ptr<class UserStorageChecker>);
+        LevelStorageManager(class OwnerPtrT<struct SharePtrRefTraits<class LevelStorage>>, std::unique_ptr<class GameDataSaveTimer>, std::unique_ptr<class UserStorageChecker>);
     /**
      * @symbol ?getLevelStorage\@LevelStorageManager\@\@QEAAAEAVLevelStorage\@\@XZ
      */
@@ -95,12 +95,12 @@ public:
      * @symbol
      * ?save\@LevelStorageManager\@\@QEAAXV?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@std\@\@\@Z
      */
-    MCAPI void save(std::chrono::time_point<std::chrono::steady_clock>);
+    MCAPI void save(std::chrono::steady_clock::time_point);
     /**
      * @symbol
      * ?saveGameData\@LevelStorageManager\@\@QEAAXV?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@std\@\@\@Z
      */
-    MCAPI void saveGameData(std::chrono::time_point<std::chrono::steady_clock>);
+    MCAPI void saveGameData(std::chrono::steady_clock::time_point);
     /**
      * @symbol ?saveLevelData\@LevelStorageManager\@\@QEAAXXZ
      */
@@ -109,12 +109,12 @@ public:
      * @symbol
      * ?trySaveGameData\@LevelStorageManager\@\@QEAAXV?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@std\@\@\@Z
      */
-    MCAPI void trySaveGameData(std::chrono::time_point<std::chrono::steady_clock>);
+    MCAPI void trySaveGameData(std::chrono::steady_clock::time_point);
     /**
      * @symbol
      * ?tryStartGameDataSaveTimerIfNotSet\@LevelStorageManager\@\@QEAAXV?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@std\@\@\@Z
      */
-    MCAPI void tryStartGameDataSaveTimerIfNotSet(std::chrono::time_point<std::chrono::steady_clock>);
+    MCAPI void tryStartGameDataSaveTimerIfNotSet(std::chrono::steady_clock::time_point);
     /**
      * @symbol ??1LevelStorageManager\@\@QEAA\@XZ
      */

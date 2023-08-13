@@ -5,13 +5,14 @@
 // auto generated inclusion list
 #include "mc/common/wrapper/SharePtrRefTraits.h"
 #include "mc/common/wrapper/WeakRefT.h"
+#include "mc/world/level/ticking/ITickingArea.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace mce { class UUID; }
 // clang-format on
 
-class TickingArea {
+class TickingArea : public ::ITickingArea {
 
 public:
     // prevent constructor by default

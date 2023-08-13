@@ -2,12 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/file/IFileAccess.h"
+#include "mc/deps/file/IFileReadAccess.h"
+#include "mc/deps/file/IFileWriteAccess.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
 // clang-format on
 
-class FileSystemFileAccess {
+class FileSystemFileAccess : public ::IFileAccess {
 public:
     // FileSystemFileAccess inner types declare
     // clang-format off
@@ -16,7 +21,7 @@ public:
     // clang-format on
 
     // FileSystemFileAccess inner types define
-    class FileSystemFileReadAccess {
+    class FileSystemFileReadAccess : public ::IFileReadAccess {
 
     public:
         // prevent constructor by default
@@ -39,7 +44,7 @@ public:
         // NOLINTEND
     };
 
-    class FileSystemFileWriteAccess {
+    class FileSystemFileWriteAccess : public ::IFileWriteAccess {
 
     public:
         // prevent constructor by default

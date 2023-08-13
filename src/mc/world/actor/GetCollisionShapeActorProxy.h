@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class GetCollisionShapeActorProxy {
+// auto generated inclusion list
+#include "mc/world/level/block/utils/GetCollisionShapeInterface.h"
+
+class GetCollisionShapeActorProxy : public ::GetCollisionShapeInterface {
 
 public:
     // prevent constructor by default

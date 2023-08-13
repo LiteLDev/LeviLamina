@@ -274,12 +274,12 @@ public:
     virtual void __unk_vfn_183();
     /**
      * @vftbl 192
-     * @symbol ?getMultifaceBlock\@GlowLichenBlock\@\@UEBAAEBVBlock\@\@XZ
+     * @symbol ?getMultifaceBlock\@SculkVeinBlock\@\@UEBAAEBVBlock\@\@XZ
      */
     virtual class Block const& getMultifaceBlock() const = 0;
     /**
      * @vftbl 193
-     * @symbol ?getMultifaceSpreader\@GlowLichenBlock\@\@UEBAAEBVMultifaceSpreader\@\@XZ
+     * @symbol ?getMultifaceSpreader\@SculkVeinBlock\@\@UEBAAEBVMultifaceSpreader\@\@XZ
      */
     virtual class MultifaceSpreader const& getMultifaceSpreader() const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MULTIFACEBLOCK

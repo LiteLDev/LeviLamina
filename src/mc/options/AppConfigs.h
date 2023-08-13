@@ -3,9 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
-class AppConfigs {
+class AppConfigs : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // AppConfigs inner types define
     enum class MaelstromEduUsabilityStatus {};

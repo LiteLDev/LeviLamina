@@ -2,7 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class MoveTowardsTargetGoal {
+// auto generated inclusion list
+#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ai/goal/Goal.h"
+
+class MoveTowardsTargetGoal : public ::Goal {
 
 public:
     // prevent constructor by default
@@ -28,11 +32,6 @@ public:
      */
     virtual bool canContinueToUse();
     /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
      * @vftbl 4
      * @symbol ?start\@MoveTowardsTargetGoal\@\@UEAAXXZ
      */
@@ -42,11 +41,6 @@ public:
      * @symbol ?stop\@MoveTowardsTargetGoal\@\@UEAAXXZ
      */
     virtual void stop();
-    /**
-     * @vftbl 6
-     * @symbol __unk_vfn_6
-     */
-    virtual void __unk_vfn_6();
     /**
      * @vftbl 7
      * @symbol

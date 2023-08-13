@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BlockAABBComponentData {
+// auto generated inclusion list
+#include "mc/world/level/block/utils/BlockComponentBase.h"
+
+class BlockAABBComponentData : public ::BlockComponentBase {
 
 public:
     // prevent constructor by default

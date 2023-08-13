@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/storage/loot/predicates/LootItemCondition.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
 // clang-format on
 
-class LootItemActorKilledCondition {
+class LootItemActorKilledCondition : public ::LootItemCondition {
 
 public:
     // prevent constructor by default

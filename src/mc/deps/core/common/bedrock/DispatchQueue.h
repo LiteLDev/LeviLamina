@@ -40,6 +40,42 @@ public:
          */
         virtual void __unk_vfn_0();
         /**
+         * @vftbl 1
+         * @symbol
+         * ?getStatus\@?$AsyncResultBase\@VResponse\@Http\@Bedrock\@\@\@Threading\@Bedrock\@\@UEBA?AW4AsyncStatus\@23\@XZ
+         */
+        virtual enum class Bedrock::Threading::AsyncStatus getStatus() const;
+        /**
+         * @vftbl 2
+         * @symbol
+         * ?getError\@?$AsyncResultBase\@VResponse\@Http\@Bedrock\@\@\@Threading\@Bedrock\@\@UEBA?AVerror_code\@std\@\@XZ
+         */
+        virtual std::error_code getError() const;
+        /**
+         * @vftbl 3
+         * @symbol
+         * ?getException\@?$AsyncResultBase\@VResponse\@Http\@Bedrock\@\@\@Threading\@Bedrock\@\@UEBA?AVexception_ptr\@std\@\@XZ
+         */
+        virtual std::exception_ptr getException() const;
+        /**
+         * @vftbl 4
+         * @symbol
+         * ?getResult\@?$AsyncResultBase\@VResponse\@Http\@Bedrock\@\@\@Threading\@Bedrock\@\@UEBA?AVResponse\@Http\@3\@XZ
+         */
+        virtual class Bedrock::Http::Response getResult() const;
+        /**
+         * @vftbl 5
+         * @symbol ?cancel\@?$AsyncResultBase\@VResponse\@Http\@Bedrock\@\@\@Threading\@Bedrock\@\@UEAAXXZ
+         */
+        virtual void cancel();
+        /**
+         * @vftbl 6
+         * @symbol
+         * ?addOnComplete\@?$AsyncResultBase\@VResponse\@Http\@Bedrock\@\@\@Threading\@Bedrock\@\@UEAAXV?$function\@$$A6AXAEBV?$IAsyncResult\@VResponse\@Http\@Bedrock\@\@\@Threading\@Bedrock\@\@\@Z\@std\@\@\@Z
+         */
+        virtual void addOnComplete(std::function<
+                                   void(class Bedrock::Threading::IAsyncResult<class Bedrock::Http::Response> const&)>);
+        /**
          * @vftbl 7
          * @symbol ?_cancel\@AsyncQueueResult\@DispatchQueue\@Http\@Bedrock\@\@UEAAXXZ
          */

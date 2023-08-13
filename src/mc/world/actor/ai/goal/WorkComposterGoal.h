@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/AutomaticID.h"
 #include "mc/world/actor/ai/goal/WorkGoal.h"
 
 class WorkComposterGoal : public ::WorkGoal {
@@ -21,25 +22,10 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
      * @vftbl 4
      * @symbol ?start\@WorkComposterGoal\@\@UEAAXXZ
      */
     virtual void start();
-    /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
-    /**
-     * @vftbl 9
-     * @symbol __unk_vfn_9
-     */
-    virtual void __unk_vfn_9();
     /**
      * @vftbl 18
      * @symbol ?useWorkstation\@WorkComposterGoal\@\@UEAAXXZ

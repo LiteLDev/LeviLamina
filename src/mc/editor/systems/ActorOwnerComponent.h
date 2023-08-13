@@ -13,14 +13,14 @@ public:
 public:
     // NOLINTBEGIN
     /**
+     * @symbol ??0ActorOwnerComponent\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI ActorOwnerComponent(class ActorOwnerComponent&&);
+    /**
      * @symbol
      * ??0ActorOwnerComponent\@\@QEAA\@V?$unique_ptr\@VActor\@\@U?$default_delete\@VActor\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI ActorOwnerComponent(std::unique_ptr<class Actor>);
-    /**
-     * @symbol ??0ActorOwnerComponent\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI ActorOwnerComponent(class ActorOwnerComponent&&);
     /**
      * @symbol ?getActor\@ActorOwnerComponent\@\@QEBAAEAVActor\@\@XZ
      */

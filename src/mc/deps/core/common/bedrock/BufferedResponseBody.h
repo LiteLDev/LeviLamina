@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/IResponseBody.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::Http { enum class ResponseBodyType; }
@@ -9,7 +12,7 @@ namespace Bedrock::Http { enum class ResponseBodyType; }
 
 namespace Bedrock::Http {
 
-class BufferedResponseBody {
+class BufferedResponseBody : public ::Bedrock::Http::Internal::IResponseBody {
 
 public:
     // prevent constructor by default

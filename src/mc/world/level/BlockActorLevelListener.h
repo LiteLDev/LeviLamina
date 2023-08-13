@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/BlockSourceListener.h"
+#include "mc/world/level/LevelListener.h"
 
-class BlockActorLevelListener : public ::BlockSourceListener {
+class BlockActorLevelListener : public ::LevelListener {
 
 public:
     // prevent constructor by default
@@ -119,6 +119,11 @@ public:
      * @symbol ?onChunkUnloaded\@BlockActorLevelListener\@\@UEAAXAEAVLevelChunk\@\@\@Z
      */
     virtual void onChunkUnloaded(class LevelChunk&);
+    /**
+     * @vftbl 24
+     * @symbol __unk_vfn_24
+     */
+    virtual void __unk_vfn_24();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKACTORLEVELLISTENER
     /**
      * @symbol __unk_destructor_-1

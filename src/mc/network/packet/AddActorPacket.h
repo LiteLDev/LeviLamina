@@ -4,9 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/network/packet/Packet.h"
+#include "mc/network/packet/AddActorBasePacket.h"
 
-class AddActorPacket : public ::Packet {
+class AddActorPacket : public ::AddActorBasePacket {
 
 public:
     // prevent constructor by default
@@ -37,6 +37,22 @@ public:
      */
     virtual void write(class BinaryStream&) const;
     /**
+     * @vftbl 4
+     * @symbol
+     * ?read\@AvailableActorIdentifiersPacket\@\@UEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     */
+    virtual class Bedrock::Result<void, std::error_code> read(class ReadOnlyBinaryStream&);
+    /**
+     * @vftbl 5
+     * @symbol ?disallowBatching\@Packet\@\@UEBA_NXZ
+     */
+    virtual bool disallowBatching() const;
+    /**
+     * @vftbl 6
+     * @symbol ?isValid\@Packet\@\@UEBA_NXZ
+     */
+    virtual bool isValid() const;
+    /**
      * @vftbl 7
      * @symbol
      * ?_read\@AddActorPacket\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
@@ -49,12 +65,12 @@ public:
     MCVAPI ~AddActorPacket();
 #endif
     /**
-     * @symbol ??0AddActorPacket\@\@QEAA\@XZ
-     */
-    MCAPI AddActorPacket();
-    /**
      * @symbol ??0AddActorPacket\@\@QEAA\@AEAVActor\@\@\@Z
      */
     MCAPI AddActorPacket(class Actor&);
+    /**
+     * @symbol ??0AddActorPacket\@\@QEAA\@XZ
+     */
+    MCAPI AddActorPacket();
     // NOLINTEND
 };

@@ -7,6 +7,7 @@
 #include "mc/common/wrapper/SharePtrRefTraits.h"
 #include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/world/level/storage/LevelStorageSource.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +16,7 @@ namespace Core { class Path; }
 namespace Core { class Result; }
 // clang-format on
 
-class ExternalFileLevelStorageSource {
+class ExternalFileLevelStorageSource : public ::LevelStorageSource {
 
 public:
     // prevent constructor by default

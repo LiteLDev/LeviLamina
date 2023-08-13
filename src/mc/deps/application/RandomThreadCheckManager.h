@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class RandomThreadCheckManager {
+// auto generated inclusion list
+#include "mc/common/AppPlatformListener.h"
+
+class RandomThreadCheckManager : public ::AppPlatformListener {
 
 public:
     // prevent constructor by default

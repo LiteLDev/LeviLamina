@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ITreeFeature {
+// auto generated inclusion list
+#include "mc/world/level/levelgen/feature/IFeature.h"
+
+class ITreeFeature : public ::IFeature {
 
 public:
     // prevent constructor by default

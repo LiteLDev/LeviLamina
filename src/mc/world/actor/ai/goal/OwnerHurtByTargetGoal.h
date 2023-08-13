@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/AutomaticID.h"
 #include "mc/world/actor/ai/goal/target/TargetGoal.h"
 
 class OwnerHurtByTargetGoal : public ::TargetGoal {
@@ -30,16 +31,6 @@ public:
      * @symbol ?start\@OwnerHurtByTargetGoal\@\@UEAAXXZ
      */
     virtual void start();
-    /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
-    /**
-     * @vftbl 9
-     * @symbol __unk_vfn_9
-     */
-    virtual void __unk_vfn_9();
     /**
      * @symbol
      * ??0OwnerHurtByTargetGoal\@\@QEAA\@AEAVMob\@\@AEBV?$vector\@UMobDescriptor\@\@V?$allocator\@UMobDescriptor\@\@\@std\@\@\@std\@\@\@Z

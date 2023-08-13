@@ -25,13 +25,13 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0ScriptNetRequest\@ScriptModuleMinecraftNet\@\@QEAA\@AEBU01\@\@Z
-     */
-    MCAPI ScriptNetRequest(struct ScriptModuleMinecraftNet::ScriptNetRequest const&);
-    /**
      * @symbol ??0ScriptNetRequest\@ScriptModuleMinecraftNet\@\@QEAA\@$$QEAU01\@\@Z
      */
     MCAPI ScriptNetRequest(struct ScriptModuleMinecraftNet::ScriptNetRequest&&);
+    /**
+     * @symbol ??0ScriptNetRequest\@ScriptModuleMinecraftNet\@\@QEAA\@AEBU01\@\@Z
+     */
+    MCAPI ScriptNetRequest(struct ScriptModuleMinecraftNet::ScriptNetRequest const&);
     /**
      * @symbol
      * ?addHeader\@ScriptNetRequest\@ScriptModuleMinecraftNet\@\@QEAA?AV?$StrongTypedObjectHandle\@UScriptNetRequest\@ScriptModuleMinecraftNet\@\@\@Scripting\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VScriptSecretString\@ScriptModuleMinecraftServerAdmin\@\@\@6\@\@Z

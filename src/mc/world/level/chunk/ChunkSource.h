@@ -3,12 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/deps/core/data/GridArea.h"
 #include "mc/deps/core/utility/buffer_span.h"
 #include "mc/deps/core/utility/buffer_span_mut.h"
 #include "mc/world/level/LevelChunkGridAreaElement.h"
 
-class ChunkSource {
+class ChunkSource : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // ChunkSource inner types define
     enum class LoadMode {};

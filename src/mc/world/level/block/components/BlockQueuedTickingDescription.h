@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/json/JsonSchemaObjectNode.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace JsonUtil { class EmptyClass; }
+// clang-format on
+
 struct BlockQueuedTickingDescription {
 
 public:
@@ -24,11 +32,6 @@ public:
     virtual std::string const& getName() const;
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
      * @symbol ?initializeComponent\@BlockQueuedTickingDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
     virtual void initializeComponent(class EntityContext&) const;

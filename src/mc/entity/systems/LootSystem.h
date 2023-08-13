@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class LootSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class LootSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default
@@ -22,10 +25,11 @@ public:
      * @symbol ?registerEvents\@LootSystem\@\@UEAAXAEAV?$basic_dispatcher\@V?$allocator\@X\@std\@\@\@entt\@\@\@Z
      */
     virtual void registerEvents(class entt::basic_dispatcher<std::allocator<void>>&);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTSYSTEM
     /**
-     * @vftbl 2
      * @symbol ?tick\@LootSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
-    virtual void tick(class EntityRegistry&);
+    MCVAPI void tick(class EntityRegistry&);
+#endif
     // NOLINTEND
 };

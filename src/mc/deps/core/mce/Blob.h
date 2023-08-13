@@ -18,13 +18,13 @@ public:
      */
     MCAPI Blob();
     /**
-     * @symbol ??0Blob\@mce\@\@QEAA\@_K\@Z
-     */
-    MCAPI Blob(uint64_t);
-    /**
      * @symbol ??0Blob\@mce\@\@QEAA\@$$QEAV01\@\@Z
      */
     MCAPI Blob(class mce::Blob&&);
+    /**
+     * @symbol ??0Blob\@mce\@\@QEAA\@_K\@Z
+     */
+    MCAPI Blob(uint64_t);
     /**
      * @symbol ?cbegin\@Blob\@mce\@\@QEBAPEBEXZ
      */

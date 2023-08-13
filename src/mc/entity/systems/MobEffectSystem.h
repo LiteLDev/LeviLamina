@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class MobEffectSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class MobEffectSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

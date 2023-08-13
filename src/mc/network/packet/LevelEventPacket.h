@@ -49,6 +49,10 @@ public:
     MCVAPI ~LevelEventPacket();
 #endif
     /**
+     * @symbol ??0LevelEventPacket\@\@QEAA\@W4LevelEvent\@\@MMMH\@Z
+     */
+    MCAPI LevelEventPacket(enum class LevelEvent, float, float, float, int);
+    /**
      * @symbol ??0LevelEventPacket\@\@QEAA\@XZ
      */
     MCAPI LevelEventPacket();
@@ -56,9 +60,5 @@ public:
      * @symbol ??0LevelEventPacket\@\@QEAA\@W4LevelEvent\@\@AEBVVec3\@\@H\@Z
      */
     MCAPI LevelEventPacket(enum class LevelEvent, class Vec3 const&, int);
-    /**
-     * @symbol ??0LevelEventPacket\@\@QEAA\@W4LevelEvent\@\@MMMH\@Z
-     */
-    MCAPI LevelEventPacket(enum class LevelEvent, float, float, float, int);
     // NOLINTEND
 };

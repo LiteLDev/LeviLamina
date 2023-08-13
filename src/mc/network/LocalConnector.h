@@ -11,7 +11,7 @@ namespace RakNet { struct SystemAddress; }
 namespace Social { class GameConnectionInfo; }
 // clang-format on
 
-class LocalConnector {
+class LocalConnector : public ::Connector {
 
 public:
     // prevent constructor by default

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class LoadingProgressTickingSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class LoadingProgressTickingSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

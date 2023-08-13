@@ -6,7 +6,7 @@
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
-#include "mc/scripting/modules/minecraft/ScriptContainer.h"
+#include "mc/scripting/modules/minecraft/ScriptInventoryComponentContainer.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,7 +22,7 @@ namespace Scripting { class WeakLifetimeScope; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptPlayerInventoryComponentContainer : public ::ScriptModuleMinecraft::ScriptContainer {
+class ScriptPlayerInventoryComponentContainer : public ::ScriptModuleMinecraft::ScriptInventoryComponentContainer {
 
 public:
     // prevent constructor by default

@@ -23,14 +23,14 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0ScriptChatSendAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@$$QEAU01\@\@Z
-     */
-    MCAPI ScriptChatSendAfterEvent(struct ScriptModuleMinecraft::ScriptChatSendAfterEvent&&);
-    /**
      * @symbol
      * ??0ScriptChatSendAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@AEBUChatEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@\@Z
      */
     MCAPI ScriptChatSendAfterEvent(struct ChatEvent const&, class Scripting::WeakLifetimeScope const&);
+    /**
+     * @symbol ??0ScriptChatSendAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@$$QEAU01\@\@Z
+     */
+    MCAPI ScriptChatSendAfterEvent(struct ScriptModuleMinecraft::ScriptChatSendAfterEvent&&);
     /**
      * @symbol
      * ?copyTo\@ScriptChatSendAfterEvent\@ScriptModuleMinecraft\@\@QEBAXAEAUChatEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@\@Z

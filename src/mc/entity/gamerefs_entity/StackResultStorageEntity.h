@@ -13,13 +13,13 @@ public:
     // protected:
     // NOLINTBEGIN
     /**
-     * @symbol ??0StackResultStorageEntity\@\@IEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI StackResultStorageEntity(class StackResultStorageEntity&&);
-    /**
      * @symbol ??0StackResultStorageEntity\@\@IEAA\@AEBVWeakStorageEntity\@\@\@Z
      */
     MCAPI StackResultStorageEntity(class WeakStorageEntity const&);
+    /**
+     * @symbol ??0StackResultStorageEntity\@\@IEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI StackResultStorageEntity(class StackResultStorageEntity&&);
     /**
      * @symbol ??0StackResultStorageEntity\@\@IEAA\@AEBVOwnerStorageEntity\@\@\@Z
      */

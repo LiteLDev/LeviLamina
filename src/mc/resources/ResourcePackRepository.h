@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/resources/IResourcePackRepository.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +14,7 @@ namespace Core { class Path; }
 namespace mce { class UUID; }
 // clang-format on
 
-class ResourcePackRepository {
+class ResourcePackRepository : public ::IResourcePackRepository {
 public:
     // ResourcePackRepository inner types declare
     // clang-format off

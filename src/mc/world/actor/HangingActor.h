@@ -179,17 +179,17 @@ public:
     virtual void setDir(int);
     /**
      * @vftbl 255
-     * @symbol ?getWidth\@LeashFenceKnotActor\@\@UEBAHXZ
+     * @symbol ?getWidth\@Painting\@\@UEBAHXZ
      */
     virtual int getWidth() const = 0;
     /**
      * @vftbl 256
-     * @symbol ?getHeight\@LeashFenceKnotActor\@\@UEBAHXZ
+     * @symbol ?getHeight\@Painting\@\@UEBAHXZ
      */
     virtual int getHeight() const = 0;
     /**
      * @vftbl 257
-     * @symbol ?dropItem\@LeashFenceKnotActor\@\@UEAAXXZ
+     * @symbol ?dropItem\@Painting\@\@UEAAXXZ
      */
     virtual void dropItem() = 0;
     /**

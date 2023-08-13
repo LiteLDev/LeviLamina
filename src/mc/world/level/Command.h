@@ -58,13 +58,13 @@ public:
      */
     MCAPI static bool shouldUseCommandOriginRotation(class CommandOrigin const&, int);
     /**
-     * @symbol ?validRange\@Command\@\@SA_NHHHAEAVCommandOutput\@\@\@Z
-     */
-    MCAPI static bool validRange(int, int, int, class CommandOutput&);
-    /**
      * @symbol ?validRange\@Command\@\@SA_NMMMAEAVCommandOutput\@\@\@Z
      */
     MCAPI static bool validRange(float, float, float, class CommandOutput&);
+    /**
+     * @symbol ?validRange\@Command\@\@SA_NHHHAEAVCommandOutput\@\@\@Z
+     */
+    MCAPI static bool validRange(int, int, int, class CommandOutput&);
     /**
      * @symbol ?WILDCARD_TOKEN\@Command\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */

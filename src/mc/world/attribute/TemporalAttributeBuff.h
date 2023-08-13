@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class TemporalAttributeBuff {
+// auto generated inclusion list
+#include "mc/world/attribute/AttributeBuff.h"
+
+class TemporalAttributeBuff : public ::AttributeBuff {
 
 public:
     // prevent constructor by default

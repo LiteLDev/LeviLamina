@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class PlayerContainerSetter {
+// auto generated inclusion list
+#include "mc/world/inventory/network/IPlayerContainerSetter.h"
+
+class PlayerContainerSetter : public ::IPlayerContainerSetter {
 
 public:
     // prevent constructor by default

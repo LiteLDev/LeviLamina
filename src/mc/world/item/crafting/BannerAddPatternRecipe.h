@@ -4,14 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
-#include "mc/world/item/crafting/Recipe.h"
+#include "mc/world/item/crafting/MultiRecipe.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace mce { class UUID; }
 // clang-format on
 
-class BannerAddPatternRecipe : public ::Recipe {
+class BannerAddPatternRecipe : public ::MultiRecipe {
 
 public:
     // prevent constructor by default

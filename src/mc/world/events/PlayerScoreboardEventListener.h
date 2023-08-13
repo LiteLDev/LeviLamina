@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class PlayerScoreboardEventListener {
+// auto generated inclusion list
+#include "mc/world/events/ScoreboardEventListener.h"
+
+class PlayerScoreboardEventListener : public ::ScoreboardEventListener {
 
 public:
     // prevent constructor by default
@@ -16,21 +19,6 @@ public:
      * @symbol __unk_vfn_0
      */
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
-    virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol

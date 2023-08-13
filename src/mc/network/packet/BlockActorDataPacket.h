@@ -43,12 +43,12 @@ public:
      */
     virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
     /**
-     * @symbol ??0BlockActorDataPacket\@\@QEAA\@XZ
-     */
-    MCAPI BlockActorDataPacket();
-    /**
      * @symbol ??0BlockActorDataPacket\@\@QEAA\@AEBVBlockPos\@\@VCompoundTag\@\@\@Z
      */
     MCAPI BlockActorDataPacket(class BlockPos const&, class CompoundTag);
+    /**
+     * @symbol ??0BlockActorDataPacket\@\@QEAA\@XZ
+     */
+    MCAPI BlockActorDataPacket();
     // NOLINTEND
 };

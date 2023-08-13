@@ -21,6 +21,10 @@ public:
     public:
         // NOLINTBEGIN
         /**
+         * @symbol ??0Property\@JsonValidator\@\@QEAA\@XZ
+         */
+        MCAPI Property();
+        /**
          * @symbol ??0Property\@JsonValidator\@\@QEAA\@AEBV01\@\@Z
          */
         MCAPI Property(class JsonValidator::Property const&);
@@ -28,10 +32,6 @@ public:
          * @symbol ??0Property\@JsonValidator\@\@QEAA\@$$QEAV01\@\@Z
          */
         MCAPI Property(class JsonValidator::Property&&);
-        /**
-         * @symbol ??0Property\@JsonValidator\@\@QEAA\@XZ
-         */
-        MCAPI Property();
         /**
          * @symbol ?addChildProperty\@Property\@JsonValidator\@\@QEAAAEAV12\@AEBV12\@\@Z
          */
@@ -51,13 +51,13 @@ public:
          */
         MCAPI class JsonValidator::Property& description(std::string const&);
         /**
-         * @symbol ??4Property\@JsonValidator\@\@QEAAAEAV01\@AEBV01\@\@Z
-         */
-        MCAPI class JsonValidator::Property& operator=(class JsonValidator::Property const&);
-        /**
          * @symbol ??4Property\@JsonValidator\@\@QEAAAEAV01\@$$QEAV01\@\@Z
          */
         MCAPI class JsonValidator::Property& operator=(class JsonValidator::Property&&);
+        /**
+         * @symbol ??4Property\@JsonValidator\@\@QEAAAEAV01\@AEBV01\@\@Z
+         */
+        MCAPI class JsonValidator::Property& operator=(class JsonValidator::Property const&);
         /**
          * @symbol
          * ??AProperty\@JsonValidator\@\@QEAAAEAV01\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z

@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-// clang-format on
-
 class IFileChunkUploader {
 public:
     // IFileChunkUploader inner types define
@@ -23,7 +18,7 @@ public:
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual void __unk_vfn_0() = 0;
     /**
      * @vftbl 1
      * @symbol __unk_vfn_1
@@ -31,11 +26,9 @@ public:
     virtual void __unk_vfn_1();
     /**
      * @vftbl 2
-     * @symbol
-     * ?initFileUploader\@ServerFileChunkUploader\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUFileInfo\@\@HAEBVValue\@Json\@\@V?$function\@$$A6AX_N\@Z\@3\@\@Z
+     * @symbol __unk_vfn_2
      */
-    virtual void
-    initFileUploader(std::string const&, struct FileInfo const&, int, class Json::Value const&, std::function<void(bool)>) = 0;
+    virtual void __unk_vfn_2();
     /**
      * @vftbl 3
      * @symbol
@@ -64,9 +57,9 @@ public:
     uploadStream(struct FileInfo const&, uint64_t, std::string const&, std::function<void(enum class IFileChunkUploader::UploadStreamResult)>);
     /**
      * @vftbl 7
-     * @symbol ?canCancelUpload\@ServerFileChunkUploader\@\@UEBA_NAEBUFileInfo\@\@\@Z
+     * @symbol __unk_vfn_7
      */
-    virtual bool canCancelUpload(struct FileInfo const&) const = 0;
+    virtual void __unk_vfn_7() = 0;
     /**
      * @vftbl 8
      * @symbol __unk_vfn_8
@@ -74,14 +67,14 @@ public:
     virtual void __unk_vfn_8() = 0;
     /**
      * @vftbl 9
-     * @symbol ?getInitErrorCode\@ServerFileChunkUploader\@\@UEBA?AW4UploadError\@\@XZ
+     * @symbol __unk_vfn_9
      */
-    virtual enum class UploadError getInitErrorCode() const = 0;
+    virtual void __unk_vfn_9() = 0;
     /**
      * @vftbl 10
-     * @symbol ?getUploadProgress\@ServerFileChunkUploader\@\@UEBAMAEBUFileInfo\@\@\@Z
+     * @symbol __unk_vfn_10
      */
-    virtual float getUploadProgress(struct FileInfo const&) const = 0;
+    virtual void __unk_vfn_10() = 0;
     /**
      * @vftbl 11
      * @symbol ?getChunkInfo\@IFileChunkUploader\@\@UEBA?AUFileChunkInfo\@\@AEBUFileInfo\@\@H\@Z

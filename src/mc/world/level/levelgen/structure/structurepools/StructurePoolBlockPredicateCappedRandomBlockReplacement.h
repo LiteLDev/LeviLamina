@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class StructurePoolBlockPredicateCappedRandomBlockReplacement {
+// auto generated inclusion list
+#include "mc/world/level/levelgen/structure/structurepools/IStructurePoolBlockPredicate.h"
+
+class StructurePoolBlockPredicateCappedRandomBlockReplacement : public ::IStructurePoolBlockPredicate {
 
 public:
     // prevent constructor by default

@@ -4,13 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/world/actor/player/PlayerSleepManager.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
-class ServerPlayerSleepManager {
+class ServerPlayerSleepManager : public ::PlayerSleepManager {
 
 public:
     // prevent constructor by default

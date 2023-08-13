@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ActorAnimationControllerStatePlayer {
+// auto generated inclusion list
+#include "mc/world/actor/animation/ActorAnimationPlayer.h"
+
+class ActorAnimationControllerStatePlayer : public ::ActorAnimationPlayer {
 
 public:
     // prevent constructor by default
@@ -33,20 +36,17 @@ public:
      */
     virtual void resetAnimation();
     /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
      * @vftbl 4
-     * @symbol __unk_vfn_4
+     * @symbol
+     * ?bindParticleEffects\@ActorAnimationControllerStatePlayer\@\@UEAAXAEBV?$unordered_map\@VHashedString\@\@V1\@U?$hash\@VHashedString\@\@\@std\@\@U?$equal_to\@VHashedString\@\@\@3\@V?$allocator\@U?$pair\@$$CBVHashedString\@\@V1\@\@std\@\@\@3\@\@std\@\@\@Z
      */
-    virtual void __unk_vfn_4();
+    virtual void bindParticleEffects(std::unordered_map<class HashedString, class HashedString> const&);
     /**
      * @vftbl 5
-     * @symbol __unk_vfn_5
+     * @symbol
+     * ?bindSoundEffects\@ActorAnimationControllerStatePlayer\@\@UEAAXAEBV?$unordered_map\@VHashedString\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@U?$hash\@VHashedString\@\@\@3\@U?$equal_to\@VHashedString\@\@\@3\@V?$allocator\@U?$pair\@$$CBVHashedString\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@3\@\@std\@\@\@Z
      */
-    virtual void __unk_vfn_5();
+    virtual void bindSoundEffects(std::unordered_map<class HashedString, std::string> const&);
     /**
      * @vftbl 6
      * @symbol ?hasAnimationFinished\@ActorAnimationControllerStatePlayer\@\@UEBA_NXZ
@@ -68,18 +68,6 @@ public:
      * @symbol ?getRawName\@ActorAnimationControllerStatePlayer\@\@UEBAAEBVHashedString\@\@XZ
      */
     virtual class HashedString const& getRawName() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTORANIMATIONCONTROLLERSTATEPLAYER
-    /**
-     * @symbol
-     * ?bindParticleEffects\@ActorAnimationControllerStatePlayer\@\@UEAAXAEBV?$unordered_map\@VHashedString\@\@V1\@U?$hash\@VHashedString\@\@\@std\@\@U?$equal_to\@VHashedString\@\@\@3\@V?$allocator\@U?$pair\@$$CBVHashedString\@\@V1\@\@std\@\@\@3\@\@std\@\@\@Z
-     */
-    MCVAPI void bindParticleEffects(std::unordered_map<class HashedString, class HashedString> const&);
-    /**
-     * @symbol
-     * ?bindSoundEffects\@ActorAnimationControllerStatePlayer\@\@UEAAXAEBV?$unordered_map\@VHashedString\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@U?$hash\@VHashedString\@\@\@3\@U?$equal_to\@VHashedString\@\@\@3\@V?$allocator\@U?$pair\@$$CBVHashedString\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@3\@\@std\@\@\@Z
-     */
-    MCVAPI void bindSoundEffects(std::unordered_map<class HashedString, std::string> const&);
-#endif
     /**
      * @symbol
      * ??0ActorAnimationControllerStatePlayer\@\@QEAA\@AEBVHashedString\@\@AEAVActorAnimationControllerPlayer\@\@V?$shared_ptr\@VActorAnimationControllerState\@\@\@std\@\@AEAVAnimationComponent\@\@AEBVExpressionNode\@\@AEAV?$set\@VHashedString\@\@U?$hash\@VHashedString\@\@\@std\@\@V?$allocator\@VHashedString\@\@\@3\@\@4\@\@Z

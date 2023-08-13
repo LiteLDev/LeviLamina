@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ItemReactionComponent {
+// auto generated inclusion list
+#include "mc/world/level/block/actor/LabTableReactionComponent.h"
+
+class ItemReactionComponent : public ::LabTableReactionComponent {
 
 public:
     // prevent constructor by default

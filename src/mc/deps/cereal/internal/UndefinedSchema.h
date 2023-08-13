@@ -11,6 +11,7 @@ namespace cereal { class SerializerContext; }
 namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
 namespace cereal { struct SerializerTraits; }
+namespace cereal::internal { class BasicSchema; }
 namespace cereal::internal { struct Result; }
 // clang-format on
 
@@ -42,6 +43,11 @@ public:
     virtual struct cereal::internal::Result
     doLoad(struct cereal::SchemaReader&, class entt::meta_any&, struct cereal::SerializerTraits const&, class entt::meta_any const&, class cereal::SerializerContext&)
         const;
+    /**
+     * @vftbl 4
+     * @symbol __unk_vfn_4
+     */
+    virtual void __unk_vfn_4();
     /**
      * @symbol ?instance\@UndefinedSchema\@internal\@cereal\@\@SAAEBV123\@XZ
      */

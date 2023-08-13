@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/network/RakPeerHelper.h"
+#include "mc/network/ServerLocator.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +14,7 @@ namespace RakNet { struct Packet; }
 namespace RakNet { struct RakNetGUID; }
 // clang-format on
 
-class RakNetServerLocator {
+class RakNetServerLocator : public ::ServerLocator {
 public:
     // RakNetServerLocator inner types declare
     // clang-format off
@@ -193,8 +194,7 @@ public:
      * @symbol
      * ??0RakNetServerLocator\@\@QEAA\@AEAVRakNetConnector\@\@AEAVIPSupportInterface\@RakPeerHelper\@\@V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@_NW4RakNetServerLANVisibility\@\@W4PermissionLAN\@\@W4PermissionIPv6\@\@AEBV?$NonOwnerPointer\@VAppPlatform\@\@\@Bedrock\@\@V?$function\@$$A6A?AV?$unique_ptr\@VRakPeerInterface\@RakNet\@\@P6AXPEAV12\@\@Z\@std\@\@XZ\@5\@\@Z
      */
-    MCAPI
-    RakNetServerLocator(class RakNetConnector&, class RakPeerHelper::IPSupportInterface&, std::vector<std::string>, bool, enum class RakNetServerLANVisibility, enum class PermissionLAN, enum class PermissionIPv6, class Bedrock::NonOwnerPointer<class AppPlatform> const&, std::function<std::unique_ptr<class RakNet::RakPeerInterface, void (*)(class RakNet::RakPeerInterface*)>(void)>);
+    MCAPI RakNetServerLocator(class RakNetConnector&, class RakPeerHelper::IPSupportInterface&, std::vector<std::string>, bool, enum class RakNetServerLANVisibility, enum class PermissionLAN, enum class PermissionIPv6, class Bedrock::NonOwnerPointer<class AppPlatform> const&, std::function<std::unique_ptr<class RakNet::RakPeerInterface, void(__cdecl*)(class RakNet::RakPeerInterface*)>(void)>);
     /**
      * @symbol
      * ?parseUnconnectedPongPacketData\@RakNetServerLocator\@\@SA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@\@Z

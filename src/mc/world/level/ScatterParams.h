@@ -42,13 +42,13 @@ public:
          */
         MCAPI CoordinateRange();
         /**
-         * @symbol ??0CoordinateRange\@ScatterParams\@\@QEAA\@AEBU01\@\@Z
-         */
-        MCAPI CoordinateRange(struct ScatterParams::CoordinateRange const&);
-        /**
          * @symbol ??0CoordinateRange\@ScatterParams\@\@QEAA\@$$QEAU01\@\@Z
          */
         MCAPI CoordinateRange(struct ScatterParams::CoordinateRange&&);
+        /**
+         * @symbol ??0CoordinateRange\@ScatterParams\@\@QEAA\@AEBU01\@\@Z
+         */
+        MCAPI CoordinateRange(struct ScatterParams::CoordinateRange const&);
         /**
          * @symbol ?_eval\@CoordinateRange\@ScatterParams\@\@QEBAHHHAEAIAEAVRandom\@\@\@Z
          */

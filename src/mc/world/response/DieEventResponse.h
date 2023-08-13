@@ -5,13 +5,14 @@
 // auto generated inclusion list
 #include "mc/deps/core/data/Factory.h"
 #include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/world/response/EventResponse.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-class DieEventResponse {
+class DieEventResponse : public ::EventResponse {
 
 public:
     // prevent constructor by default

@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/json/JsonSchemaObjectNode.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace JsonUtil { class EmptyClass; }
+// clang-format on
+
 struct BlockCollisionBoxDescription {
 
 public:
@@ -25,11 +33,6 @@ public:
     virtual std::string const& getName() const;
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
      * @symbol ?initializeComponent\@BlockCollisionBoxDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
     virtual void initializeComponent(class EntityContext&) const;
@@ -38,11 +41,6 @@ public:
      * @symbol ?initializeComponentFromCode\@BlockCollisionBoxDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
     virtual void initializeComponentFromCode(class EntityContext&) const;
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
-    virtual void __unk_vfn_5();
     /**
      * @vftbl 6
      * @symbol ?isNetworkComponent\@BlockCollisionBoxDescription\@\@UEBA_NXZ

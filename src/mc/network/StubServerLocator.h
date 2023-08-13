@@ -4,8 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/network/ServerLocator.h"
 
-class StubServerLocator {
+class StubServerLocator : public ::ServerLocator {
 
 public:
     // prevent constructor by default
@@ -19,16 +20,6 @@ public:
      * @symbol __unk_vfn_0
      */
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
-    virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
     /**
      * @vftbl 3
      * @symbol
@@ -61,14 +52,15 @@ public:
     virtual void stopServerDiscovery();
     /**
      * @vftbl 7
-     * @symbol __unk_vfn_7
+     * @symbol ?addCustomServer\@StubServerLocator\@\@UEAAXAEBVAsynchronousIPResolver\@\@H\@Z
      */
-    virtual void __unk_vfn_7();
+    virtual void addCustomServer(class AsynchronousIPResolver const&, int);
     /**
      * @vftbl 8
-     * @symbol __unk_vfn_8
+     * @symbol
+     * ?addCustomServer\@StubServerLocator\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
      */
-    virtual void __unk_vfn_8();
+    virtual void addCustomServer(std::string const&, int);
     /**
      * @vftbl 9
      * @symbol
@@ -87,14 +79,14 @@ public:
     virtual void update();
     /**
      * @vftbl 12
-     * @symbol __unk_vfn_12
+     * @symbol ?isIPv4Supported\@StubServerLocator\@\@UEBA_NXZ
      */
-    virtual void __unk_vfn_12();
+    virtual bool isIPv4Supported() const;
     /**
      * @vftbl 13
-     * @symbol __unk_vfn_13
+     * @symbol ?isIPv6Supported\@StubServerLocator\@\@UEBA_NXZ
      */
-    virtual void __unk_vfn_13();
+    virtual bool isIPv6Supported() const;
     /**
      * @vftbl 14
      * @symbol
@@ -108,23 +100,6 @@ public:
      */
     virtual void checkCanConnectToCustomServerAsync(std::string, int, std::function<void(bool)>);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_STUBSERVERLOCATOR
-    /**
-     * @symbol ?addCustomServer\@StubServerLocator\@\@UEAAXAEBVAsynchronousIPResolver\@\@H\@Z
-     */
-    MCVAPI void addCustomServer(class AsynchronousIPResolver const&, int);
-    /**
-     * @symbol
-     * ?addCustomServer\@StubServerLocator\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@H\@Z
-     */
-    MCVAPI void addCustomServer(std::string const&, int);
-    /**
-     * @symbol ?isIPv4Supported\@StubServerLocator\@\@UEBA_NXZ
-     */
-    MCVAPI bool isIPv4Supported() const;
-    /**
-     * @symbol ?isIPv6Supported\@StubServerLocator\@\@UEBA_NXZ
-     */
-    MCVAPI bool isIPv6Supported() const;
     /**
      * @symbol __unk_destructor_-1
      */

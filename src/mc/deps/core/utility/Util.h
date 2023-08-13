@@ -56,14 +56,14 @@ MCAPI struct Util::FormattedString allocateVFormat(char const*, char*);
 MCAPI std::string base64_decode(std::string const&);
 /**
  * @symbol
- * ?base64_encode\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEBE_K_N\@Z
- */
-MCAPI std::string base64_encode(unsigned char const*, uint64_t, bool);
-/**
- * @symbol
  * ?base64_encode\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@_N\@Z
  */
 MCAPI std::string base64_encode(std::string const&, bool);
+/**
+ * @symbol
+ * ?base64_encode\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEBE_K_N\@Z
+ */
+MCAPI std::string base64_encode(unsigned char const*, uint64_t, bool);
 /**
  * @symbol
  * ?base64url_decode\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V23\@\@Z
@@ -267,8 +267,8 @@ MCAPI std::vector<std::string> splitLines(
     std::vector<std::string> const&,
     bool,
     bool,
-    std::basic_istream<char, std::char_traits<char>>& (*)(std::basic_istream<char, std::char_traits<char>>&,
-                                                          std::string&)
+    std::basic_istream<char, std::char_traits<char>>&(__cdecl*)(std::basic_istream<char, std::char_traits<char>>&,
+                                                                std::string&)
 );
 /**
  * @symbol
@@ -294,14 +294,14 @@ MCAPI bool stringContains(std::string const&, char);
  */
 MCAPI std::string& stringReplace(std::string&, std::string const&, std::string const&, int);
 /**
- * @symbol ?stringTrim\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@\@Z
- */
-MCAPI std::string stringTrim(std::string const&);
-/**
  * @symbol
  * ?stringTrim\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@0\@Z
  */
 MCAPI std::string stringTrim(std::string const&, std::string const&);
+/**
+ * @symbol ?stringTrim\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@\@Z
+ */
+MCAPI std::string stringTrim(std::string const&);
 /**
  * @symbol ?stripBOM\@Util\@\@YAXAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
  */
@@ -348,18 +348,18 @@ MCAPI void toLowerInPlace(std::string&);
  */
 MCAPI std::string toPascalCase(std::string const&, char);
 /**
- * @symbol
- * ?toString\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$basic_string\@_WU?$char_traits\@_W\@std\@\@V?$allocator\@_W\@2\@\@3\@\@Z
+ * @symbol ?toString\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@\@Z
  */
-MCAPI std::string toString(std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>> const&);
+MCAPI std::string toString(std::string const&);
 /**
  * @symbol ?toString\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@MH\@Z
  */
 MCAPI std::string toString(float, int);
 /**
- * @symbol ?toString\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@\@Z
+ * @symbol
+ * ?toString\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$basic_string\@_WU?$char_traits\@_W\@std\@\@V?$allocator\@_W\@2\@\@3\@\@Z
  */
-MCAPI std::string toString(std::string const&);
+MCAPI std::string toString(std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>> const&);
 /**
  * @symbol
  * ?toStringWithPaddedZeroes\@Util\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@IE\@Z

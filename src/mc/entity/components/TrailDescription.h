@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class TrailDescription {
+// auto generated inclusion list
+#include "mc/world/actor/ActorComponentDescription.h"
+
+class TrailDescription : public ::ActorComponentDescription {
 
 public:
     // prevent constructor by default

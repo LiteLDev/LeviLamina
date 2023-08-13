@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class StructurePoolBlockPredicateAlwaysTrue {
+// auto generated inclusion list
+#include "mc/world/level/levelgen/structure/structurepools/IStructurePoolBlockPredicate.h"
+
+class StructurePoolBlockPredicateAlwaysTrue : public ::IStructurePoolBlockPredicate {
 
 public:
     // prevent constructor by default

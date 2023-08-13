@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/item/Item.h"
+#include "mc/world/item/ComplexItem.h"
 #include "mc/world/level/saveddata/maps/MapItemSavedData.h"
 
 // auto generated forward declare list
@@ -12,7 +12,7 @@ namespace Json { class Value; }
 namespace mce { class Color; }
 // clang-format on
 
-class MapItem : public ::Item {
+class MapItem : public ::ComplexItem {
 
 public:
     // prevent constructor by default

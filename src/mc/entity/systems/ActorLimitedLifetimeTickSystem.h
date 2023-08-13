@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ActorLimitedLifetimeTickSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class ActorLimitedLifetimeTickSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

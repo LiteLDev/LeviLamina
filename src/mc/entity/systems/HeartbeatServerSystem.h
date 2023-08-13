@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class HeartbeatServerSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class HeartbeatServerSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

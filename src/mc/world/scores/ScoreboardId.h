@@ -11,13 +11,13 @@ public:
      */
     MCAPI ScoreboardId(int64_t);
     /**
-     * @symbol ??0ScoreboardId\@\@QEAA\@XZ
-     */
-    MCAPI ScoreboardId();
-    /**
      * @symbol ??0ScoreboardId\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI ScoreboardId(struct ScoreboardId const&);
+    /**
+     * @symbol ??0ScoreboardId\@\@QEAA\@XZ
+     */
+    MCAPI ScoreboardId();
     /**
      * @symbol ?getHash\@ScoreboardId\@\@QEBA_KXZ
      */

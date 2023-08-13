@@ -7,14 +7,11 @@ struct BlockBakedMaterialDataComponent {
 public:
     // prevent constructor by default
     BlockBakedMaterialDataComponent& operator=(BlockBakedMaterialDataComponent const&) = delete;
+    BlockBakedMaterialDataComponent(BlockBakedMaterialDataComponent const&)            = delete;
     BlockBakedMaterialDataComponent()                                                  = delete;
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ??0BlockBakedMaterialDataComponent\@\@QEAA\@AEBU0\@\@Z
-     */
-    MCAPI BlockBakedMaterialDataComponent(struct BlockBakedMaterialDataComponent const&);
     /**
      * @symbol ?isSolidOpaque\@BlockBakedMaterialDataComponent\@\@QEBA_NXZ
      */

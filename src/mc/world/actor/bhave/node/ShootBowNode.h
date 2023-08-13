@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ShootBowNode {
+// auto generated inclusion list
+#include "mc/world/actor/bhave/node/BehaviorNode.h"
+
+class ShootBowNode : public ::BehaviorNode {
 
 public:
     // prevent constructor by default

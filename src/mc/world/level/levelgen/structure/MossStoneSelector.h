@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class MossStoneSelector {
+// auto generated inclusion list
+#include "mc/world/level/levelgen/structure/BlockSelector.h"
+
+class MossStoneSelector : public ::BlockSelector {
 
 public:
     // prevent constructor by default

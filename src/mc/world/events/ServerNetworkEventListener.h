@@ -12,16 +12,21 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERNETWORKEVENTLISTENER
     /**
+     * @vftbl 0
+     * @symbol __unk_vfn_0
+     */
+    virtual void __unk_vfn_0();
+    /**
+     * @vftbl 1
      * @symbol
      * ?onEvent\@ServerNetworkEventListener\@\@UEAA?AW4EventResult\@\@AEBUServerNetworkGameplayNotificationEvent\@\@\@Z
      */
-    MCVAPI enum class EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const&);
+    virtual enum class EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const&);
     /**
+     * @vftbl 2
      * @symbol ?onMessage\@ServerNetworkEventListener\@\@UEAA?AW4EventResult\@\@AEBUMessageEvent\@\@\@Z
      */
-    MCVAPI enum class EventResult onMessage(struct MessageEvent const&);
-#endif
+    virtual enum class EventResult onMessage(struct MessageEvent const&);
     // NOLINTEND
 };

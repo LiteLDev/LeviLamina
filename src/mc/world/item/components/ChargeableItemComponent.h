@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ChargeableItemComponent {
+// auto generated inclusion list
+#include "mc/world/item/components/ItemComponent.h"
+
+class ChargeableItemComponent : public ::ItemComponent {
 
 public:
     // prevent constructor by default
@@ -18,20 +21,15 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 1
-     * @symbol ?isNetworkComponent\@ChargeableItemComponent\@\@UEBA_NXZ
-     */
-    virtual bool isNetworkComponent() const;
-    /**
      * @vftbl 2
      * @symbol __unk_vfn_2
      */
     virtual void __unk_vfn_2();
     /**
      * @vftbl 3
-     * @symbol __unk_vfn_3
+     * @symbol ?isNetworkComponent\@ChargeableItemComponent\@\@UEBA_NXZ
      */
-    virtual void __unk_vfn_3();
+    virtual bool isNetworkComponent() const;
     /**
      * @vftbl 4
      * @symbol

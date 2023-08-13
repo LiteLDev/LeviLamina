@@ -4,8 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/data/BidirectionalUnorderedMap.h"
+#include "mc/world/containers/SparseContainer.h"
 
-class SparseContainerClient {
+class SparseContainerClient : public ::SparseContainer {
 public:
     // SparseContainerClient inner types define
     enum class PushSlotPredictionResult {};

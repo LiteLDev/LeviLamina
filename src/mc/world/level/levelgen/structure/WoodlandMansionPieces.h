@@ -22,7 +22,68 @@ public:
     // clang-format on
 
     // WoodlandMansionPieces inner types define
-    class FirstFloorRoomCollection {
+
+    class FloorRoomCollection {
+
+    public:
+        // prevent constructor by default
+        FloorRoomCollection& operator=(FloorRoomCollection const&) = delete;
+        FloorRoomCollection(FloorRoomCollection const&)            = delete;
+        FloorRoomCollection()                                      = delete;
+
+    public:
+        // NOLINTBEGIN
+        /**
+         * @vftbl 0
+         * @symbol __unk_vfn_0
+         */
+        virtual void __unk_vfn_0();
+        /**
+         * @vftbl 1
+         * @symbol
+         * ?get1x1\@FirstFloorRoomCollection\@WoodlandMansionPieces\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVRandom\@\@\@Z
+         */
+        virtual std::string get1x1(class Random&) = 0;
+        /**
+         * @vftbl 2
+         * @symbol
+         * ?get1x1Secret\@SecondFloorRoomCollection\@WoodlandMansionPieces\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVRandom\@\@\@Z
+         */
+        virtual std::string get1x1Secret(class Random&) = 0;
+        /**
+         * @vftbl 3
+         * @symbol
+         * ?get1x2SideEntrance\@FirstFloorRoomCollection\@WoodlandMansionPieces\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVRandom\@\@_N\@Z
+         */
+        virtual std::string get1x2SideEntrance(class Random&, bool) = 0;
+        /**
+         * @vftbl 4
+         * @symbol
+         * ?get1x2FrontEntrance\@FirstFloorRoomCollection\@WoodlandMansionPieces\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVRandom\@\@_N\@Z
+         */
+        virtual std::string get1x2FrontEntrance(class Random&, bool) = 0;
+        /**
+         * @vftbl 5
+         * @symbol
+         * ?get1x2Secret\@FirstFloorRoomCollection\@WoodlandMansionPieces\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVRandom\@\@\@Z
+         */
+        virtual std::string get1x2Secret(class Random&) = 0;
+        /**
+         * @vftbl 6
+         * @symbol
+         * ?get2x2\@FirstFloorRoomCollection\@WoodlandMansionPieces\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVRandom\@\@\@Z
+         */
+        virtual std::string get2x2(class Random&) = 0;
+        /**
+         * @vftbl 7
+         * @symbol
+         * ?get2x2Secret\@SecondFloorRoomCollection\@WoodlandMansionPieces\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVRandom\@\@\@Z
+         */
+        virtual std::string get2x2Secret(class Random&) = 0;
+        // NOLINTEND
+    };
+
+    class FirstFloorRoomCollection : public ::WoodlandMansionPieces::FloorRoomCollection {
 
     public:
         // prevent constructor by default
@@ -80,15 +141,6 @@ public:
          */
         virtual std::string get2x2Secret(class Random&);
         // NOLINTEND
-    };
-
-    class FloorRoomCollection {
-
-    public:
-        // prevent constructor by default
-        FloorRoomCollection& operator=(FloorRoomCollection const&) = delete;
-        FloorRoomCollection(FloorRoomCollection const&)            = delete;
-        FloorRoomCollection()                                      = delete;
     };
 
     class MansionGrid {
@@ -230,7 +282,7 @@ public:
         // NOLINTEND
     };
 
-    class SecondFloorRoomCollection {
+    class SecondFloorRoomCollection : public ::WoodlandMansionPieces::FloorRoomCollection {
 
     public:
         // prevent constructor by default

@@ -145,7 +145,7 @@ public:
      * @symbol
      * ?tick\@PredictedMovementComponent\@\@QEAAXAEBV?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@std\@\@\@Z
      */
-    MCAPI void tick(std::chrono::time_point<std::chrono::steady_clock> const&);
+    MCAPI void tick(std::chrono::steady_clock::time_point const&);
     /**
      * @symbol ??1PredictedMovementComponent\@\@QEAA\@XZ
      */
@@ -166,12 +166,12 @@ public:
      * @symbol
      * ?_tickNextPosition\@PredictedMovementComponent\@\@AEAAXAEBV?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@std\@\@\@Z
      */
-    MCAPI void _tickNextPosition(std::chrono::time_point<std::chrono::steady_clock> const&);
+    MCAPI void _tickNextPosition(std::chrono::steady_clock::time_point const&);
     /**
      * @symbol
      * ?_tryInterpolate\@PredictedMovementComponent\@\@AEAA_NAEBV?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@std\@\@\@Z
      */
-    MCAPI bool _tryInterpolate(std::chrono::time_point<std::chrono::steady_clock> const&);
+    MCAPI bool _tryInterpolate(std::chrono::steady_clock::time_point const&);
     // NOLINTEND
 
 private:

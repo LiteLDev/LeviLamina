@@ -17,13 +17,13 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0ScriptActorQueryOptions\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
-     */
-    MCAPI ScriptActorQueryOptions(struct ScriptModuleMinecraft::ScriptActorQueryOptions const&);
-    /**
      * @symbol ??0ScriptActorQueryOptions\@ScriptModuleMinecraft\@\@QEAA\@$$QEAU01\@\@Z
      */
     MCAPI ScriptActorQueryOptions(struct ScriptModuleMinecraft::ScriptActorQueryOptions&&);
+    /**
+     * @symbol ??0ScriptActorQueryOptions\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
+     */
+    MCAPI ScriptActorQueryOptions(struct ScriptModuleMinecraft::ScriptActorQueryOptions const&);
     /**
      * @symbol ??4ScriptActorQueryOptions\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */

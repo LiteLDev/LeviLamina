@@ -8,7 +8,6 @@ class ActivationUri;
 class CommandOrigin;
 class IMinecraftApp;
 namespace Automation { class AutomationSession; }
-namespace CodeBuilder { class GameContext; }
 namespace CodeBuilder { struct AgentMessage; }
 namespace CodeBuilder { struct ChatMessage; }
 namespace CodeBuilder { struct CommandMessage; }
@@ -77,11 +76,6 @@ public:
      * ?getDefaultSession\@AutomationClient\@Automation\@\@QEAA?AV?$shared_ptr\@VAutomationSession\@Automation\@\@\@std\@\@XZ
      */
     MCAPI std::shared_ptr<class Automation::AutomationSession> getDefaultSession();
-    /**
-     * @symbol
-     * ?getGameContext\@AutomationClient\@Automation\@\@QEBA?AV?$shared_ptr\@VGameContext\@CodeBuilder\@\@\@std\@\@XZ
-     */
-    MCAPI std::shared_ptr<class CodeBuilder::GameContext> getGameContext() const;
     /**
      * @symbol
      * ?getSessionForCommand\@AutomationClient\@Automation\@\@QEAA?AV?$shared_ptr\@VAutomationSession\@Automation\@\@\@std\@\@AEBVCommandOrigin\@\@\@Z

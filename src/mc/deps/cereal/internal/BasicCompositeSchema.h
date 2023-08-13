@@ -34,11 +34,6 @@ public:
      */
     virtual void __unk_vfn_4();
     /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
-    virtual void __unk_vfn_5();
-    /**
      * @vftbl 6
      * @symbol
      * ?addParent\@BasicCompositeSchema\@internal\@cereal\@\@UEAAXV?$unique_ptr\@VBasicSchema\@internal\@cereal\@\@U?$default_delete\@VBasicSchema\@internal\@cereal\@\@\@std\@\@\@std\@\@\@Z
@@ -51,29 +46,33 @@ public:
      */
     virtual void
     addSetter(std::string const&, std::string const&, std::unique_ptr<class cereal::internal::BasicSchema>);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREAL_INTERNAL_BASICCOMPOSITESCHEMA
     /**
-     * @symbol
-     * ?addDeprecatedMember\@BasicCompositeSchema\@internal\@cereal\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
-     */
-    MCVAPI void addDeprecatedMember(std::string const&, std::string const&);
-    /**
+     * @vftbl 8
      * @symbol
      * ?addMember\@BasicCompositeSchema\@internal\@cereal\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@USerializerTraits\@3\@V?$unique_ptr\@VBasicSchema\@internal\@cereal\@\@U?$default_delete\@VBasicSchema\@internal\@cereal\@\@\@std\@\@\@5\@\@Z
      */
-    MCVAPI void
+    virtual void
     addMember(std::string const&, struct cereal::SerializerTraits, std::unique_ptr<class cereal::internal::BasicSchema>);
     /**
+     * @vftbl 9
      * @symbol
      * ?addRequiredMember\@BasicCompositeSchema\@internal\@cereal\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@USerializerTraits\@3\@V?$unique_ptr\@VBasicSchema\@internal\@cereal\@\@U?$default_delete\@VBasicSchema\@internal\@cereal\@\@\@std\@\@\@5\@\@Z
      */
-    MCVAPI void
+    virtual void
     addRequiredMember(std::string const&, struct cereal::SerializerTraits, std::unique_ptr<class cereal::internal::BasicSchema>);
     /**
+     * @vftbl 10
+     * @symbol
+     * ?addDeprecatedMember\@BasicCompositeSchema\@internal\@cereal\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
+     */
+    virtual void addDeprecatedMember(std::string const&, std::string const&);
+    /**
+     * @vftbl 11
      * @symbol
      * ?customError\@BasicCompositeSchema\@internal\@cereal\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
-    MCVAPI void customError(std::string const&, std::string const&);
+    virtual void customError(std::string const&, std::string const&);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREAL_INTERNAL_BASICCOMPOSITESCHEMA
     /**
      * @symbol __unk_destructor_-1
      */

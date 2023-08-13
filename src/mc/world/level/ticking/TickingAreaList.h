@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class TickingAreaList {
+// auto generated inclusion list
+#include "mc/world/level/ticking/TickingAreaListBase.h"
+
+class TickingAreaList : public ::TickingAreaListBase {
 
 public:
     // prevent constructor by default

@@ -26,10 +26,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0SubChunk\@\@QEAA\@PEBVBlock\@\@_N1AEAVSpinLock\@\@C\@Z
-     */
-    MCAPI SubChunk(class Block const*, bool, bool, class SpinLock&, signed char);
-    /**
      * @symbol ??0SubChunk\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI SubChunk(struct SubChunk&&);
@@ -37,6 +33,10 @@ public:
      * @symbol ??0SubChunk\@\@QEAA\@XZ
      */
     MCAPI SubChunk();
+    /**
+     * @symbol ??0SubChunk\@\@QEAA\@PEBVBlock\@\@_N1AEAVSpinLock\@\@C\@Z
+     */
+    MCAPI SubChunk(class Block const*, bool, bool, class SpinLock&, signed char);
     /**
      * @symbol
      * ?deserialize\@SubChunk\@\@QEAAXAEAVIDataInput\@\@AEBVBlockPalette\@\@AEBVSubChunkPos\@\@V?$optional\@PEAUDeserializationChanges\@\@\@std\@\@\@Z

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ShiftedValueAmplifier {
+// auto generated inclusion list
+#include "mc/world/attribute/Amplifier.h"
+
+class ShiftedValueAmplifier : public ::Amplifier {
 
 public:
     // prevent constructor by default

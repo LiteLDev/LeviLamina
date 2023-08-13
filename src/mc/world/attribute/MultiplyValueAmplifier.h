@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class MultiplyValueAmplifier {
+// auto generated inclusion list
+#include "mc/world/attribute/Amplifier.h"
+
+class MultiplyValueAmplifier : public ::Amplifier {
 
 public:
     // prevent constructor by default

@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Connection { enum class DisconnectFailReason; }
 // clang-format on
 
-class NetEventCallback {
+class NetEventCallback : public ::Bedrock::EnableNonOwnerReferences {
 
 public:
     // prevent constructor by default

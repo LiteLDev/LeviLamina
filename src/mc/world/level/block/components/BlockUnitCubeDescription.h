@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/json/JsonSchemaObjectNode.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace JsonUtil { class EmptyClass; }
+// clang-format on
+
 struct BlockUnitCubeDescription {
 
 public:
@@ -25,24 +33,9 @@ public:
     virtual std::string const& getName() const;
     /**
      * @vftbl 2
-     * @symbol ?initializeFromNetwork\@BlockUnitCubeDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
-     */
-    virtual void initializeFromNetwork(class CompoundTag const&);
-    /**
-     * @vftbl 3
      * @symbol ?initializeComponent\@BlockUnitCubeDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
     virtual void initializeComponent(class EntityContext&) const;
-    /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4();
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
-    virtual void __unk_vfn_5();
     /**
      * @vftbl 6
      * @symbol ?isNetworkComponent\@BlockUnitCubeDescription\@\@UEBA_NXZ
@@ -54,6 +47,11 @@ public:
      * ?buildNetworkTag\@BlockUnitCubeDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /**
+     * @vftbl 8
+     * @symbol ?initializeFromNetwork\@BlockUnitCubeDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
+     */
+    virtual void initializeFromNetwork(class CompoundTag const&);
     /**
      * @symbol ?bindType\@BlockUnitCubeDescription\@\@SAXXZ
      */

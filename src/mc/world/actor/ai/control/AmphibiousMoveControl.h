@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/actor/ai/control/MoveControl.h"
+#include "mc/world/actor/ai/control/GenericMoveControl.h"
 
-class AmphibiousMoveControl : public ::MoveControl {
+class AmphibiousMoveControl : public ::GenericMoveControl {
 
 public:
     // prevent constructor by default

@@ -2,20 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/level/Command.h"
-
 // auto generated forward declare list
 // clang-format off
-class CommandOrigin;
-class CommandOutput;
 class Vec3;
 namespace AgentComponents { enum class Direction; }
 // clang-format on
 
 namespace AgentCommands {
 
-class Command : public ::Command {
+class Command {
 
 public:
     // prevent constructor by default
@@ -31,10 +26,15 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 2
+     * @vftbl 1
      * @symbol ?execute\@Command\@AgentCommands\@\@UEAAXXZ
      */
     virtual void execute();
+    /**
+     * @vftbl 2
+     * @symbol ?isDone\@TillCommand\@AgentCommands\@\@UEAA_NXZ
+     */
+    virtual bool isDone() = 0;
     /**
      * @vftbl 3
      * @symbol ?tick\@Command\@AgentCommands\@\@UEAAXXZ

@@ -16,20 +16,6 @@ struct LevelSummary {
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0LevelSummary\@\@QEAA\@AEBU0\@\@Z
-     */
-    MCAPI LevelSummary(struct LevelSummary const&);
-    /**
-     * @symbol
-     * ??0LevelSummary\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVLevelData\@\@AEBVPath\@Core\@\@2_N\@Z
-     */
-    MCAPI
-    LevelSummary(std::string const&, class LevelData const&, class Core::Path const&, class Core::Path const&, bool);
-    /**
-     * @symbol ??0LevelSummary\@\@QEAA\@XZ
-     */
-    MCAPI LevelSummary();
-    /**
      * @symbol
      * ??0LevelSummary\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0_JW4GameType\@\@W4Difficulty\@\@VLevelSeed64\@\@H_K_N6W4GamePublishSetting\@Social\@\@6W4EducationEditionOffer\@\@AEBVGameVersion\@\@9W4StorageVersion\@\@AEBVPath\@Core\@\@AEBVContentIdentity\@\@0_NAEBUEduSharedUriResource\@\@AEBVExperiments\@\@AEBVBaseGameVersion\@\@6\@Z
      */
@@ -59,6 +45,20 @@ public:
         class BaseGameVersion const&,
         bool
     );
+    /**
+     * @symbol ??0LevelSummary\@\@QEAA\@AEBU0\@\@Z
+     */
+    MCAPI LevelSummary(struct LevelSummary const&);
+    /**
+     * @symbol
+     * ??0LevelSummary\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVLevelData\@\@AEBVPath\@Core\@\@2_N\@Z
+     */
+    MCAPI
+    LevelSummary(std::string const&, class LevelData const&, class Core::Path const&, class Core::Path const&, bool);
+    /**
+     * @symbol ??0LevelSummary\@\@QEAA\@XZ
+     */
+    MCAPI LevelSummary();
     /**
      * @symbol ??4LevelSummary\@\@QEAAAEAU0\@AEBU0\@\@Z
      */

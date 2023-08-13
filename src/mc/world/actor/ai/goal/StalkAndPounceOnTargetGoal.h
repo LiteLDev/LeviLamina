@@ -2,7 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class StalkAndPounceOnTargetGoal {
+// auto generated inclusion list
+#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ai/goal/Goal.h"
+
+class StalkAndPounceOnTargetGoal : public ::Goal {
 
 public:
     // prevent constructor by default

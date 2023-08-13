@@ -6,6 +6,7 @@
 #include "mc/deps/json/JsonParseState.h"
 #include "mc/deps/json/JsonSchemaObjectNode.h"
 #include "mc/world/level/levelgen/feature/ConcreteFeatureHolder.h"
+#include "mc/world/level/levelgen/feature/ITreeFeature.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +14,7 @@ namespace FeatureLoading { struct FeatureRootParseContext; }
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-class VanillaTreeFeature {
+class VanillaTreeFeature : public ::ITreeFeature {
 
 public:
     // prevent constructor by default
@@ -35,6 +36,12 @@ public:
      */
     virtual std::optional<class BlockPos>
     place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /**
+     * @vftbl 2
+     * @symbol
+     * ?isValidPlacement\@IFeature\@\@UEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    virtual bool isValidPlacement(std::string const&);
     // NOLINTEND
 
     // private:

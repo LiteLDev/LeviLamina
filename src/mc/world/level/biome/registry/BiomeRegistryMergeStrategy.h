@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BiomeRegistryMergeStrategy {
+// auto generated inclusion list
+#include "mc/resources/ResourcePackMergeStrategy.h"
+
+class BiomeRegistryMergeStrategy : public ::ResourcePackMergeStrategy {
 
 public:
     // prevent constructor by default

@@ -58,17 +58,17 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@QEAA\@AEBV01\@\@Z
+     * @symbol ??0ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@QEAA\@XZ
      */
-    MCAPI ScriptActionFormData(class ScriptModuleMinecraftServerUI::ScriptActionFormData const&);
+    MCAPI ScriptActionFormData();
     /**
      * @symbol ??0ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@QEAA\@$$QEAV01\@\@Z
      */
     MCAPI ScriptActionFormData(class ScriptModuleMinecraftServerUI::ScriptActionFormData&&);
     /**
-     * @symbol ??0ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@QEAA\@XZ
+     * @symbol ??0ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@QEAA\@AEBV01\@\@Z
      */
-    MCAPI ScriptActionFormData();
+    MCAPI ScriptActionFormData(class ScriptModuleMinecraftServerUI::ScriptActionFormData const&);
     /**
      * @symbol
      * ?body\@ScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@QEAA?AV?$StrongTypedObjectHandle\@VScriptActionFormData\@ScriptModuleMinecraftServerUI\@\@\@Scripting\@\@V?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@UScriptRawMessageInterface\@ScriptModuleMinecraft\@\@\@std\@\@\@Z

@@ -3,9 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
-class ValidatorRegistry {
+class ValidatorRegistry : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // ValidatorRegistry inner types declare
     // clang-format off

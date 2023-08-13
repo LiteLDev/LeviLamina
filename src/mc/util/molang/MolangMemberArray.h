@@ -30,6 +30,10 @@ public:
      */
     MCAPI MolangMemberArray(enum class MolangStruct_RGB, class mce::Color const&);
     /**
+     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_MinAndMax\@\@$$QEAU0\@1\@Z
+     */
+    MCAPI MolangMemberArray(enum class MolangStruct_MinAndMax, struct MolangMemberArray&&, struct MolangMemberArray&&);
+    /**
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_XYZ\@\@AEBVVec3\@\@\@Z
      */
     MCAPI MolangMemberArray(enum class MolangStruct_XYZ, class Vec3 const&);
@@ -54,10 +58,6 @@ public:
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_XY\@\@AEBVVec2\@\@\@Z
      */
     MCAPI MolangMemberArray(enum class MolangStruct_XY, class Vec2 const&);
-    /**
-     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_MinAndMax\@\@$$QEAU0\@1\@Z
-     */
-    MCAPI MolangMemberArray(enum class MolangStruct_MinAndMax, struct MolangMemberArray&&, struct MolangMemberArray&&);
     /**
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_PoseIndexAndHurtTime\@\@HH\@Z
      */

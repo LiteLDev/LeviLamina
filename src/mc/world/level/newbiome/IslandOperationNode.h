@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/newbiome/OperationNodeBase.h"
 #include "mc/world/level/newbiome/WorkingData.h"
 
 // auto generated forward declare list
@@ -11,7 +10,7 @@
 namespace OperationNodeValues { enum class Terrain; }
 // clang-format on
 
-class IslandOperationNode : public ::OperationNodeDetails::OperationNodeBase {
+class IslandOperationNode {
 
 public:
     // prevent constructor by default
@@ -26,6 +25,11 @@ public:
      * @symbol __unk_vfn_0
      */
     virtual void __unk_vfn_0();
+    /**
+     * @vftbl 1
+     * @symbol ?init\@OperationNodeBase\@OperationNodeDetails\@\@UEAAX_J\@Z
+     */
+    virtual void init(int64_t);
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2

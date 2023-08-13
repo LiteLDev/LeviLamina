@@ -2,9 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/SharedRecursiveMutexBase.h"
+
 namespace Bedrock::Threading {
 
-class SharedRecursiveMutex {
+class SharedRecursiveMutex : public ::Bedrock::Threading::SharedRecursiveMutexBase {
 
 public:
     // prevent constructor by default

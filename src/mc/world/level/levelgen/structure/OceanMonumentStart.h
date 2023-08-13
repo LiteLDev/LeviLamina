@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class OceanMonumentStart {
+// auto generated inclusion list
+#include "mc/world/level/levelgen/structure/StructureStart.h"
+
+class OceanMonumentStart : public ::StructureStart {
 
 public:
     // prevent constructor by default

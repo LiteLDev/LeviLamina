@@ -12,17 +12,17 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0AABB\@\@QEAA\@AEBVVec3\@\@0\@Z
+     * @symbol ??0AABB\@\@QEAA\@AEBVVec3\@\@M\@Z
      */
-    MCAPI AABB(class Vec3 const&, class Vec3 const&);
+    MCAPI AABB(class Vec3 const&, float);
     /**
      * @symbol ??0AABB\@\@QEAA\@MMMMMM\@Z
      */
     MCAPI AABB(float, float, float, float, float, float);
     /**
-     * @symbol ??0AABB\@\@QEAA\@AEBVVec3\@\@M\@Z
+     * @symbol ??0AABB\@\@QEAA\@AEBVVec3\@\@0\@Z
      */
-    MCAPI AABB(class Vec3 const&, float);
+    MCAPI AABB(class Vec3 const&, class Vec3 const&);
     /**
      * @symbol ?axisInside\@AABB\@\@QEBA?AVVec3\@\@AEBV1\@V2\@\@Z
      */
@@ -60,13 +60,13 @@ public:
      */
     MCAPI class AABB cloneAndTransformByMatrix(class Matrix const&) const;
     /**
-     * @symbol ?contains\@AABB\@\@QEBA_NAEBVVec3\@\@\@Z
-     */
-    MCAPI bool contains(class Vec3 const&) const;
-    /**
      * @symbol ?contains\@AABB\@\@QEBA_NAEBV1\@\@Z
      */
     MCAPI bool contains(class AABB const&) const;
+    /**
+     * @symbol ?contains\@AABB\@\@QEBA_NAEBVVec3\@\@\@Z
+     */
+    MCAPI bool contains(class Vec3 const&) const;
     /**
      * @symbol ?distanceTo\@AABB\@\@QEBAMAEBV1\@\@Z
      */
@@ -100,13 +100,13 @@ public:
      */
     MCAPI bool intersectSegment(class Vec3 const&, class Vec3 const&, class Vec3&, class Vec3&) const;
     /**
-     * @symbol ?intersects\@AABB\@\@QEBA_NAEBVVec3\@\@0\@Z
-     */
-    MCAPI bool intersects(class Vec3 const&, class Vec3 const&) const;
-    /**
      * @symbol ?intersects\@AABB\@\@QEBA_NAEBV1\@\@Z
      */
     MCAPI bool intersects(class AABB const&) const;
+    /**
+     * @symbol ?intersects\@AABB\@\@QEBA_NAEBVVec3\@\@0\@Z
+     */
+    MCAPI bool intersects(class Vec3 const&, class Vec3 const&) const;
     /**
      * @symbol ?intersectsInner\@AABB\@\@QEBA_NAEBV1\@\@Z
      */
@@ -128,13 +128,13 @@ public:
      */
     MCAPI bool operator==(class AABB const&) const;
     /**
-     * @symbol ?set\@AABB\@\@QEAAAEAV1\@MMMMMM\@Z
-     */
-    MCAPI class AABB& set(float, float, float, float, float, float);
-    /**
      * @symbol ?set\@AABB\@\@QEAAAEAV1\@AEBV1\@\@Z
      */
     MCAPI class AABB& set(class AABB const&);
+    /**
+     * @symbol ?set\@AABB\@\@QEAAAEAV1\@MMMMMM\@Z
+     */
+    MCAPI class AABB& set(float, float, float, float, float, float);
     /**
      * @symbol ?set\@AABB\@\@QEAAAEAV1\@AEBVVec3\@\@0\@Z
      */

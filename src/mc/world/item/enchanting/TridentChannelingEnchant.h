@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/item/enchanting/Enchant.h"
 
-class TridentChannelingEnchant {
+class TridentChannelingEnchant : public ::Enchant {
 
 public:
     // prevent constructor by default
@@ -36,10 +36,30 @@ public:
      */
     virtual int getMaxCost(int) const;
     /**
-     * @vftbl 4
+     * @vftbl 5
      * @symbol ?getMaxLevel\@TridentChannelingEnchant\@\@UEBAHXZ
      */
     virtual int getMaxLevel() const;
+    /**
+     * @vftbl 10
+     * @symbol __unk_vfn_10
+     */
+    virtual void __unk_vfn_10();
+    /**
+     * @vftbl 11
+     * @symbol __unk_vfn_11
+     */
+    virtual void __unk_vfn_11();
+    /**
+     * @vftbl 12
+     * @symbol __unk_vfn_12
+     */
+    virtual void __unk_vfn_12();
+    /**
+     * @vftbl 13
+     * @symbol __unk_vfn_13
+     */
+    virtual void __unk_vfn_13();
     /**
      * @symbol
      * ??0TridentChannelingEnchant\@\@QEAA\@W4Type\@Enchant\@\@W4Frequency\@2\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@2H_NH\@Z

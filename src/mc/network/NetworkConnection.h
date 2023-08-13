@@ -44,7 +44,7 @@ public:
      * ??0NetworkConnection\@\@QEAA\@AEBVNetworkIdentifier\@\@V?$shared_ptr\@VNetworkPeer\@\@\@std\@\@V?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@3\@_NV?$NonOwnerPointer\@VIPacketObserver\@\@\@Bedrock\@\@AEAVScheduler\@\@\@Z
      */
     MCAPI
-    NetworkConnection(class NetworkIdentifier const&, std::shared_ptr<class NetworkPeer>, std::chrono::time_point<std::chrono::steady_clock>, bool, class Bedrock::NonOwnerPointer<class IPacketObserver>, class Scheduler&);
+    NetworkConnection(class NetworkIdentifier const&, std::shared_ptr<class NetworkPeer>, std::chrono::steady_clock::time_point, bool, class Bedrock::NonOwnerPointer<class IPacketObserver>, class Scheduler&);
     /**
      * @symbol ?disconnect\@NetworkConnection\@\@QEAAXXZ
      */
@@ -54,7 +54,7 @@ public:
      * ?receivePacket\@NetworkConnection\@\@QEAA?AW4DataStatus\@NetworkPeer\@\@AEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVNetworkSystem\@\@AEBV?$shared_ptr\@V?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@std\@\@\@5\@\@Z
      */
     MCAPI enum class NetworkPeer::DataStatus
-    receivePacket(std::string&, class NetworkSystem&, std::shared_ptr<std::chrono::time_point<std::chrono::steady_clock>> const&);
+    receivePacket(std::string&, class NetworkSystem&, std::shared_ptr<std::chrono::steady_clock::time_point> const&);
     /**
      * @symbol ?update\@NetworkConnection\@\@QEAAXXZ
      */

@@ -29,10 +29,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol
-     * ?onServerLevelInitialized\@ServerScriptManager\@\@UEAA?AW4EventResult\@\@AEAVServerInstance\@\@AEAVLevel\@\@\@Z
+     * @symbol __unk_vfn_1
      */
-    virtual enum class EventResult onServerLevelInitialized(class ServerInstance&, class Level&);
+    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2
@@ -95,6 +94,11 @@ public:
      */
     virtual enum class EventResult onEvent(struct ServerInstanceNotificationEvent const&);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERSCRIPTMANAGER
+    /**
+     * @symbol
+     * ?onServerLevelInitialized\@ServerScriptManager\@\@UEAA?AW4EventResult\@\@AEAVServerInstance\@\@AEAVLevel\@\@\@Z
+     */
+    MCVAPI enum class EventResult onServerLevelInitialized(class ServerInstance&, class Level&);
     /**
      * @symbol __unk_destructor_-1
      */

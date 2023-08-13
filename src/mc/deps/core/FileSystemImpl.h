@@ -74,35 +74,29 @@ public:
     virtual uint64_t getTransactionWriteSizeLimit() const;
     /**
      * @vftbl 7
-     * @symbol
-     * ?_openFile\@FileSystem_windows\@Core\@\@MEAA?AVResult\@2\@AEAV?$unique_ptr\@VFileImpl\@Core\@\@U?$default_delete\@VFileImpl\@Core\@\@\@std\@\@\@std\@\@AEBVPath\@2\@VFileOpenMode\@2\@W4FileBufferingMode\@2\@\@Z
+     * @symbol __unk_vfn_7
      */
-    virtual class Core::Result _openFile(
-        std::unique_ptr<class Core::FileImpl>&,
-        class Core::Path const&,
-        class Core::FileOpenMode,
-        enum class Core::FileBufferingMode
-    ) = 0;
+    virtual void __unk_vfn_7() = 0;
     /**
      * @vftbl 8
-     * @symbol ?_fileExists\@FileSystem_windows\@Core\@\@MEAA_NAEBVPath\@2\@\@Z
+     * @symbol __unk_vfn_8
      */
-    virtual bool _fileExists(class Core::Path const&) = 0;
+    virtual void __unk_vfn_8() = 0;
     /**
      * @vftbl 9
-     * @symbol ?_deleteFile\@FileSystem_windows\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@\@Z
+     * @symbol __unk_vfn_9
      */
-    virtual class Core::Result _deleteFile(class Core::Path const&) = 0;
+    virtual void __unk_vfn_9() = 0;
     /**
      * @vftbl 10
-     * @symbol ?_getFileSize\@FileSystem_windows\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@PEA_K\@Z
+     * @symbol __unk_vfn_10
      */
-    virtual class Core::Result _getFileSize(class Core::Path const&, uint64_t*) = 0;
+    virtual void __unk_vfn_10() = 0;
     /**
      * @vftbl 11
-     * @symbol ?_renameFile\@FileSystem_windows\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@0\@Z
+     * @symbol __unk_vfn_11
      */
-    virtual class Core::Result _renameFile(class Core::Path const&, class Core::Path const&) = 0;
+    virtual void __unk_vfn_11() = 0;
     /**
      * @vftbl 12
      * @symbol ?_createEmptyFile\@FileSystemImpl\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@\@Z
@@ -127,9 +121,9 @@ public:
     virtual class Core::Result _readFileData(class Core::Path const&, std::vector<unsigned char>&);
     /**
      * @vftbl 16
-     * @symbol ?_createOneDirectory\@FileSystem_windows\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@\@Z
+     * @symbol __unk_vfn_16
      */
-    virtual class Core::Result _createOneDirectory(class Core::Path const&) = 0;
+    virtual void __unk_vfn_16() = 0;
     /**
      * @vftbl 17
      * @symbol ?_createOneDirectoryIfNotExisting\@FileSystemImpl\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@\@Z
@@ -142,14 +136,14 @@ public:
     virtual class Core::Result _createDirectoryRecursively(class Core::Path const&);
     /**
      * @vftbl 19
-     * @symbol ?_directoryExists\@FileSystem_windows\@Core\@\@MEAA_NAEBVPath\@2\@\@Z
+     * @symbol __unk_vfn_19
      */
-    virtual bool _directoryExists(class Core::Path const&) = 0;
+    virtual void __unk_vfn_19() = 0;
     /**
      * @vftbl 20
-     * @symbol ?_deleteEmptyDirectory\@FileSystem_windows\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@\@Z
+     * @symbol __unk_vfn_20
      */
-    virtual class Core::Result _deleteEmptyDirectory(class Core::Path const&) = 0;
+    virtual void __unk_vfn_20() = 0;
     /**
      * @vftbl 21
      * @symbol ?_deleteDirectoryAndContentsRecursively\@FileSystemImpl\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@\@Z
@@ -167,16 +161,14 @@ public:
     virtual class Core::Result _deleteRecursively(class Core::Path const&, enum class Core::FileType);
     /**
      * @vftbl 24
-     * @symbol ?_renameDirectory\@FileSystem_windows\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@0\@Z
+     * @symbol __unk_vfn_24
      */
-    virtual class Core::Result _renameDirectory(class Core::Path const&, class Core::Path const&) = 0;
+    virtual void __unk_vfn_24() = 0;
     /**
      * @vftbl 25
-     * @symbol
-     * ?_iterateOverDirectory\@FileSystem_windows\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@W4DirectoryIterationFlags\@2\@V?$function\@$$A6A?AVResult\@Core\@\@AEBUDirectoryIterationItem\@2\@\@Z\@std\@\@\@Z
+     * @symbol __unk_vfn_25
      */
-    virtual class Core::Result
-    _iterateOverDirectory(class Core::Path const&, enum class Core::DirectoryIterationFlags, std::function<class Core::Result(struct Core::DirectoryIterationItem const&)>) = 0;
+    virtual void __unk_vfn_25() = 0;
     /**
      * @vftbl 26
      * @symbol
@@ -210,9 +202,9 @@ public:
     virtual class Core::Result _copyDirectoryAndContentsRecursively(class Core::Path const&, class Core::Path const&);
     /**
      * @vftbl 31
-     * @symbol ?_fileOrDirectoryExists\@FileSystem_windows\@Core\@\@MEAA_NAEBVPath\@2\@\@Z
+     * @symbol __unk_vfn_31
      */
-    virtual bool _fileOrDirectoryExists(class Core::Path const&) = 0;
+    virtual void __unk_vfn_31() = 0;
     /**
      * @vftbl 32
      * @symbol ?_getFileOrDirectorySize\@FileSystemImpl\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@PEA_K\@Z
@@ -220,9 +212,9 @@ public:
     virtual class Core::Result _getFileOrDirectorySize(class Core::Path const&, uint64_t*);
     /**
      * @vftbl 33
-     * @symbol ?_getEntryType\@FileSystem_windows\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@AEAW4FileType\@2\@\@Z
+     * @symbol __unk_vfn_33
      */
-    virtual class Core::Result _getEntryType(class Core::Path const&, enum class Core::FileType&) = 0;
+    virtual void __unk_vfn_33();
     /**
      * @vftbl 34
      * @symbol __unk_vfn_34
@@ -232,7 +224,7 @@ public:
      * @vftbl 35
      * @symbol __unk_vfn_35
      */
-    virtual void __unk_vfn_35();
+    virtual void __unk_vfn_35() = 0;
     /**
      * @vftbl 36
      * @symbol ?_createFlatFile\@FileSystemImpl\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@0\@Z
@@ -280,14 +272,14 @@ public:
     virtual class Core::Result _flatFileGetFileSize(class Core::Path const&, class Core::Path const&, uint64_t*);
     /**
      * @vftbl 44
-     * @symbol ?_getLastModificationTime\@FileSystem_windows\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@PEA_J\@Z
+     * @symbol __unk_vfn_44
      */
-    virtual class Core::Result _getLastModificationTime(class Core::Path const&, int64_t*) = 0;
+    virtual void __unk_vfn_44() = 0;
     /**
      * @vftbl 45
-     * @symbol ?_copyTimeAndAccessRights\@FileSystem_windows\@Core\@\@MEAA?AVResult\@2\@AEBVPath\@2\@0\@Z
+     * @symbol __unk_vfn_45
      */
-    virtual class Core::Result _copyTimeAndAccessRights(class Core::Path const&, class Core::Path const&) = 0;
+    virtual void __unk_vfn_45() = 0;
     /**
      * @vftbl 46
      * @symbol ?_endTransaction\@FileSystemImpl\@Core\@\@MEAA?AVResult\@2\@XZ
@@ -332,7 +324,7 @@ public:
      * ??0FileSystemImpl\@Core\@\@QEAA\@W4FileAccessType\@1\@V?$shared_ptr\@VFileStorageArea\@Core\@\@\@std\@\@W4TransactionFlags\@1\@V?$shared_ptr\@VFlatFileManifestTracker\@Core\@\@\@4\@\@Z
      */
     MCAPI
-    FileSystemImpl(enum class Core::FileAccessType, std::shared_ptr<class Core::FileStorageArea>, enum class Core::TransactionFlags, std::shared_ptr<class Core::FlatFileManifestTracker>);
+        FileSystemImpl(enum class Core::FileAccessType, std::shared_ptr<class Core::FileStorageArea>, enum class Core::TransactionFlags, std::shared_ptr<class Core::FlatFileManifestTracker>);
     /**
      * @symbol ?commit\@FileSystemImpl\@Core\@\@QEAA?AVResult\@2\@XZ
      */

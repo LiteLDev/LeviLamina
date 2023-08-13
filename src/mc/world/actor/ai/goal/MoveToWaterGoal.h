@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/AutomaticID.h"
 #include "mc/world/actor/ai/goal/MoveToLiquidGoal.h"
 
 class MoveToWaterGoal : public ::MoveToLiquidGoal {
@@ -20,21 +21,6 @@ public:
      * @symbol __unk_vfn_0
      */
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
-    /**
-     * @vftbl 9
-     * @symbol __unk_vfn_9
-     */
-    virtual void __unk_vfn_9();
     /**
      * @symbol ??0MoveToWaterGoal\@\@QEAA\@AEAVMob\@\@MHHHM\@Z
      */

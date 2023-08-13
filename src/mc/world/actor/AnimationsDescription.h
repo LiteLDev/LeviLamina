@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class AnimationsDescription {
+// auto generated inclusion list
+#include "mc/world/actor/ActorComponentDescription.h"
+
+class AnimationsDescription : public ::ActorComponentDescription {
 
 public:
     // prevent constructor by default

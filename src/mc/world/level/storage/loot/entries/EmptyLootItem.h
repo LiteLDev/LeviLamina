@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class EmptyLootItem {
+// auto generated inclusion list
+#include "mc/world/level/storage/loot/entries/LootPoolEntry.h"
+
+class EmptyLootItem : public ::LootPoolEntry {
 
 public:
     // prevent constructor by default

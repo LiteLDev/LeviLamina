@@ -3,9 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/network/TypedServerNetId.h"
 
-class CreativeItemRegistry {
+class CreativeItemRegistry : public ::Bedrock::EnableNonOwnerReferences {
 
 public:
     // prevent constructor by default
@@ -25,15 +26,15 @@ public:
      */
     MCAPI CreativeItemRegistry();
     /**
-     * @symbol ?findCreativeItemEntry\@CreativeItemRegistry\@\@QEAAPEAVCreativeItemEntry\@\@AEBVItemInstance\@\@\@Z
-     */
-    MCAPI class CreativeItemEntry* findCreativeItemEntry(class ItemInstance const&);
-    /**
      * @symbol
      * ?findCreativeItemEntry\@CreativeItemRegistry\@\@QEAAPEAVCreativeItemEntry\@\@AEBV?$TypedServerNetId\@UCreativeItemNetIdTag\@\@I$0A\@\@\@\@Z
      */
     MCAPI class CreativeItemEntry*
     findCreativeItemEntry(class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const&);
+    /**
+     * @symbol ?findCreativeItemEntry\@CreativeItemRegistry\@\@QEAAPEAVCreativeItemEntry\@\@AEBVItemInstance\@\@\@Z
+     */
+    MCAPI class CreativeItemEntry* findCreativeItemEntry(class ItemInstance const&);
     /**
      * @symbol
      * ?getCreativeCategory\@CreativeItemRegistry\@\@QEAAPEAVCreativeItemGroupCategory\@\@W4CreativeItemCategory\@\@\@Z

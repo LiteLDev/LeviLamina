@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class WorldTemplatePackManifest {
+// auto generated inclusion list
+#include "mc/resources/PackManifest.h"
+
+class WorldTemplatePackManifest : public ::PackManifest {
 
 public:
     // prevent constructor by default

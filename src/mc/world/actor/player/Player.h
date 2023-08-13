@@ -1161,13 +1161,13 @@ public:
      */
     MCAPI void dropCursorSelectedItemOnDeath();
     /**
-     * @symbol ?eat\@Player\@\@QEAAXAEBVItemStack\@\@\@Z
-     */
-    MCAPI void eat(class ItemStack const&);
-    /**
      * @symbol ?eat\@Player\@\@QEAAXHM\@Z
      */
     MCAPI void eat(int, float);
+    /**
+     * @symbol ?eat\@Player\@\@QEAAXAEBVItemStack\@\@\@Z
+     */
+    MCAPI void eat(class ItemStack const&);
     /**
      * @symbol ?equippedArmorItemCanBeMoved\@Player\@\@QEBA_NAEBVItemStack\@\@\@Z
      */
@@ -1182,13 +1182,13 @@ public:
      */
     MCAPI bool forceAllowEating() const;
     /**
-     * @symbol ?getAbilities\@Player\@\@QEAAAEAVLayeredAbilities\@\@XZ
-     */
-    MCAPI class LayeredAbilities& getAbilities();
-    /**
      * @symbol ?getAbilities\@Player\@\@QEBAAEBVLayeredAbilities\@\@XZ
      */
     MCAPI class LayeredAbilities const& getAbilities() const;
+    /**
+     * @symbol ?getAbilities\@Player\@\@QEAAAEAVLayeredAbilities\@\@XZ
+     */
+    MCAPI class LayeredAbilities& getAbilities();
     /**
      * @symbol ?getAgent\@Player\@\@QEBAPEAVAgent\@\@XZ
      */
@@ -1276,13 +1276,13 @@ public:
      */
     MCAPI std::string getItemInteractText(class Item const&) const;
     /**
-     * @symbol ?getItemStackNetManager\@Player\@\@QEAAPEAVItemStackNetManagerBase\@\@XZ
-     */
-    MCAPI class ItemStackNetManagerBase* getItemStackNetManager();
-    /**
      * @symbol ?getItemStackNetManager\@Player\@\@QEBAPEBVItemStackNetManagerBase\@\@XZ
      */
     MCAPI class ItemStackNetManagerBase const* getItemStackNetManager() const;
+    /**
+     * @symbol ?getItemStackNetManager\@Player\@\@QEAAPEAVItemStackNetManagerBase\@\@XZ
+     */
+    MCAPI class ItemStackNetManagerBase* getItemStackNetManager();
     /**
      * @symbol ?getLuck\@Player\@\@QEAAMXZ
      */
@@ -1355,13 +1355,13 @@ public:
      */
     MCAPI std::string const& getServerId() const;
     /**
-     * @symbol ?getSkin\@Player\@\@QEAAAEAVSerializedSkin\@\@XZ
-     */
-    MCAPI class SerializedSkin& getSkin();
-    /**
      * @symbol ?getSkin\@Player\@\@QEBAAEBVSerializedSkin\@\@XZ
      */
     MCAPI class SerializedSkin const& getSkin() const;
+    /**
+     * @symbol ?getSkin\@Player\@\@QEAAAEAVSerializedSkin\@\@XZ
+     */
+    MCAPI class SerializedSkin& getSkin();
     /**
      * @symbol ?getSleepRotation\@Player\@\@QEBAMXZ
      */
@@ -1375,13 +1375,13 @@ public:
      */
     MCAPI class BlockPos const& getSpawnPosition() const;
     /**
-     * @symbol ?getSupplies\@Player\@\@QEBAAEBVPlayerInventory\@\@XZ
-     */
-    MCAPI class PlayerInventory const& getSupplies() const;
-    /**
      * @symbol ?getSupplies\@Player\@\@QEAAAEAVPlayerInventory\@\@XZ
      */
     MCAPI class PlayerInventory& getSupplies();
+    /**
+     * @symbol ?getSupplies\@Player\@\@QEBAAEBVPlayerInventory\@\@XZ
+     */
+    MCAPI class PlayerInventory const& getSupplies() const;
     /**
      * @symbol
      * ?getTrackedBosses\@Player\@\@QEAAAEBV?$vector\@UActorUniqueID\@\@V?$allocator\@UActorUniqueID\@\@\@std\@\@\@std\@\@XZ
@@ -1493,17 +1493,6 @@ public:
     MCAPI void passengerCheckMovementStats();
     /**
      * @symbol
-     * ?playPredictiveSynchronizedSound\@Player\@\@QEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@AEBUActorDefinitionIdentifier\@\@H_N\@Z
-     */
-    MCAPI void playPredictiveSynchronizedSound(
-        enum class LevelSoundEvent,
-        class Vec3 const&,
-        struct ActorDefinitionIdentifier const&,
-        int,
-        bool
-    );
-    /**
-     * @symbol
      * ?playPredictiveSynchronizedSound\@Player\@\@QEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@AEBVBlock\@\@AEBUActorDefinitionIdentifier\@\@_N\@Z
      */
     MCAPI void playPredictiveSynchronizedSound(
@@ -1511,6 +1500,17 @@ public:
         class Vec3 const&,
         class Block const&,
         struct ActorDefinitionIdentifier const&,
+        bool
+    );
+    /**
+     * @symbol
+     * ?playPredictiveSynchronizedSound\@Player\@\@QEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@AEBUActorDefinitionIdentifier\@\@H_N\@Z
+     */
+    MCAPI void playPredictiveSynchronizedSound(
+        enum class LevelSoundEvent,
+        class Vec3 const&,
+        struct ActorDefinitionIdentifier const&,
+        int,
         bool
     );
     /**
@@ -1757,13 +1757,13 @@ public:
     MCAPI static class Player*
     tryGetFromComponent(class FlagComponent<struct PlayerComponentFlag> const&, class ActorOwnerComponent&, bool);
     /**
-     * @symbol ?tryGetFromEntity\@Player\@\@SAPEAV1\@V?$StackRefResultT\@UEntityRefTraits\@\@\@\@_N\@Z
-     */
-    MCAPI static class Player* tryGetFromEntity(class StackRefResultT<struct EntityRefTraits>, bool);
-    /**
      * @symbol ?tryGetFromEntity\@Player\@\@SAPEAV1\@AEAVEntityContext\@\@_N\@Z
      */
     MCAPI static class Player* tryGetFromEntity(class EntityContext&, bool);
+    /**
+     * @symbol ?tryGetFromEntity\@Player\@\@SAPEAV1\@V?$StackRefResultT\@UEntityRefTraits\@\@\@\@_N\@Z
+     */
+    MCAPI static class Player* tryGetFromEntity(class StackRefResultT<struct EntityRefTraits>, bool);
     /**
      * @symbol ?tryGetFromEntity\@Player\@\@SAPEBV1\@AEBVEntityContext\@\@_N\@Z
      */

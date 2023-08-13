@@ -4,8 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/resources/PackSource.h"
 
-class CompositePackSource {
+class CompositePackSource : public ::PackSource {
 
 public:
     // prevent constructor by default
@@ -29,16 +30,6 @@ public:
      * @symbol ?forEachPack\@CompositePackSource\@\@UEAAXV?$function\@$$A6AXAEAVPack\@\@\@Z\@std\@\@\@Z
      */
     virtual void forEachPack(std::function<void(class Pack&)>);
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4();
     /**
      * @vftbl 5
      * @symbol

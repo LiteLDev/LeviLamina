@@ -4,9 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/IAsyncResult.h"
+#include "mc/deps/core/threading/IBackgroundTaskOwner.h"
 #include "mc/deps/core/threading/TaskStartInfoEx.h"
 
-class InternalTaskGroup {
+class InternalTaskGroup : public ::IBackgroundTaskOwner {
 
 public:
     // prevent constructor by default

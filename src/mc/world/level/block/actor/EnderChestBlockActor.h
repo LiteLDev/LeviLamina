@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class EnderChestBlockActor {
+// auto generated inclusion list
+#include "mc/world/level/block/actor/ChestBlockActor.h"
+
+class EnderChestBlockActor : public ::ChestBlockActor {
 
 public:
     // prevent constructor by default

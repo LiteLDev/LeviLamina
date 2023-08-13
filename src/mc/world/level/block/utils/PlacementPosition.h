@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/block/utils/IGetPlacementBlockCallback.h"
+#include "mc/world/level/block/utils/ITrait.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -14,7 +18,7 @@ class Vec3;
 
 namespace BlockTrait {
 
-class PlacementPosition {
+class PlacementPosition : public ::BlockTrait::ITrait {
 public:
     // PlacementPosition inner types declare
     // clang-format off
@@ -43,7 +47,7 @@ public:
         // NOLINTEND
     };
 
-    class UpdateBlockFaceGetPlacementBlockCallback {
+    class UpdateBlockFaceGetPlacementBlockCallback : public ::BlockTrait::IGetPlacementBlockCallback {
 
     public:
         // prevent constructor by default
@@ -74,7 +78,7 @@ public:
         // NOLINTEND
     };
 
-    class UpdateVerticalHalfGetPlacementBlockCallback {
+    class UpdateVerticalHalfGetPlacementBlockCallback : public ::BlockTrait::IGetPlacementBlockCallback {
 
     public:
         // prevent constructor by default

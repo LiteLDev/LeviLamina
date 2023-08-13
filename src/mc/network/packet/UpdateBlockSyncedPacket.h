@@ -4,9 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/network/packet/Packet.h"
+#include "mc/network/packet/UpdateBlockPacket.h"
 
-class UpdateBlockSyncedPacket : public ::Packet {
+class UpdateBlockSyncedPacket : public ::UpdateBlockPacket {
 
 public:
     // prevent constructor by default

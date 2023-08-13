@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class HopMoveControl {
+// auto generated inclusion list
+#include "mc/world/actor/ai/control/MoveControl.h"
+
+class HopMoveControl : public ::MoveControl {
 
 public:
     // prevent constructor by default
@@ -16,11 +19,6 @@ public:
      * @symbol __unk_vfn_0
      */
     virtual void __unk_vfn_0();
-    /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
-    virtual void __unk_vfn_1();
     /**
      * @vftbl 2
      * @symbol ?tick\@HopMoveControl\@\@MEAAXAEAVMoveControlComponent\@\@AEAVMob\@\@\@Z

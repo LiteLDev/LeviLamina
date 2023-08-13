@@ -20,15 +20,14 @@ public:
     /**
      * @vftbl 1
      * @symbol
-     * ?onEvent\@ScriptActorEventListener\@ScriptModuleMinecraft\@\@UEAA?AW4EventResult\@\@AEBUActorRemoveEffectEvent\@\@\@Z
-     */
-    virtual enum class EventResult onEvent(struct ActorRemoveEffectEvent const&);
-    /**
-     * @vftbl 2
-     * @symbol
      * ?onEvent\@?$EventListenerDispatcher\@VActorEventListener\@\@\@\@MEAA?AW4EventResult\@\@AEBUActorNotificationEvent\@\@\@Z
      */
     virtual enum class EventResult onEvent(struct ActorNotificationEvent const&);
+    /**
+     * @vftbl 2
+     * @symbol __unk_vfn_2
+     */
+    virtual void __unk_vfn_2();
     /**
      * @vftbl 3
      * @symbol __unk_vfn_3

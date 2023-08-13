@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class AddActorBasePacket {
+// auto generated inclusion list
+#include "mc/network/packet/Packet.h"
+
+class AddActorBasePacket : public ::Packet {
 
 public:
     // prevent constructor by default

@@ -4,13 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
+#include "mc/world/actor/ai/goal/Goal.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-class DrinkMilkGoal {
+class DrinkMilkGoal : public ::Goal {
 public:
     // DrinkMilkGoal inner types declare
     // clang-format off
@@ -18,7 +21,7 @@ public:
     // clang-format on
 
     // DrinkMilkGoal inner types define
-    class DrinkMilkDefinition {
+    class DrinkMilkDefinition : public ::BaseGoalDefinition {
 
     public:
         // prevent constructor by default
@@ -28,6 +31,11 @@ public:
 
     public:
         // NOLINTBEGIN
+        /**
+         * @vftbl 0
+         * @symbol __unk_vfn_0
+         */
+        virtual void __unk_vfn_0();
         /**
          * @symbol ?initialize\@DrinkMilkDefinition\@DrinkMilkGoal\@\@QEBAXAEAVEntityContext\@\@AEAV2\@\@Z
          */
@@ -64,11 +72,6 @@ public:
      * @symbol ?canContinueToUse\@DrinkMilkGoal\@\@UEAA_NXZ
      */
     virtual bool canContinueToUse();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol ?start\@DrinkMilkGoal\@\@UEAAXXZ

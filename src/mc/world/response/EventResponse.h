@@ -34,9 +34,9 @@ public:
     virtual std::string const& getName() const;
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?executeAction\@SetBlockProperty\@\@UEBAXAEAVRenderParams\@\@\@Z
      */
-    virtual void __unk_vfn_2() = 0;
+    virtual void executeAction(class RenderParams&) const = 0;
     /**
      * @vftbl 3
      * @symbol

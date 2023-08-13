@@ -4,13 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/world/module/GameModuleServer.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace VanillaSystemsRegistration { struct RegistrationOptions; }
 // clang-format on
 
-class VanillaGameModuleServer {
+class VanillaGameModuleServer : public ::GameModuleServer {
 
 public:
     // prevent constructor by default

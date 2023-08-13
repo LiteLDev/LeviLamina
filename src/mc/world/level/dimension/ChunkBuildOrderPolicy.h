@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ChunkBuildOrderPolicy {
+// auto generated inclusion list
+#include "mc/world/level/dimension/ChunkBuildOrderPolicyBase.h"
+
+class ChunkBuildOrderPolicy : public ::ChunkBuildOrderPolicyBase {
 
 public:
     // prevent constructor by default

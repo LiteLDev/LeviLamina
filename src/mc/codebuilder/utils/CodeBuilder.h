@@ -10,21 +10,21 @@ namespace Json { class Value; }
 namespace Util::CodeBuilder {
 // NOLINTBEGIN
 /**
- * @symbol ?createObject\@CodeBuilder\@Util\@\@YA?AVValue\@Json\@\@AEBVBlock\@\@H\@Z
- */
-MCAPI class Json::Value createObject(class Block const&, int);
-/**
  * @symbol ?createObject\@CodeBuilder\@Util\@\@YA?AVValue\@Json\@\@AEBVPlayer\@\@\@Z
  */
 MCAPI class Json::Value createObject(class Player const&);
 /**
- * @symbol ?createObject\@CodeBuilder\@Util\@\@YA?AVValue\@Json\@\@AEBVItemStack\@\@\@Z
- */
-MCAPI class Json::Value createObject(class ItemStack const&);
-/**
  * @symbol ?createObject\@CodeBuilder\@Util\@\@YA?AVValue\@Json\@\@AEBVItemDescriptor\@\@\@Z
  */
 MCAPI class Json::Value createObject(class ItemDescriptor const&);
+/**
+ * @symbol ?createObject\@CodeBuilder\@Util\@\@YA?AVValue\@Json\@\@AEBVBlock\@\@H\@Z
+ */
+MCAPI class Json::Value createObject(class Block const&, int);
+/**
+ * @symbol ?createObject\@CodeBuilder\@Util\@\@YA?AVValue\@Json\@\@AEBVItemStack\@\@\@Z
+ */
+MCAPI class Json::Value createObject(class ItemStack const&);
 /**
  * @symbol ?createObject\@CodeBuilder\@Util\@\@YA?AVValue\@Json\@\@AEBVCommandOutput\@\@\@Z
  */

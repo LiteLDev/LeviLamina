@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class CommandBlockDescription {
+// auto generated inclusion list
+#include "mc/world/actor/ActorComponentDescription.h"
+
+class CommandBlockDescription : public ::ActorComponentDescription {
 
 public:
     // prevent constructor by default

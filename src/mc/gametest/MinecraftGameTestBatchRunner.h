@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/gametest/framework/BaseGameTestBatchRunner.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace gametest { class BaseGameTestFunction; }
@@ -9,7 +12,7 @@ namespace gametest { class BaseGameTestInstance; }
 namespace gametest { class GameTestTicker; }
 // clang-format on
 
-class MinecraftGameTestBatchRunner {
+class MinecraftGameTestBatchRunner : public ::gametest::BaseGameTestBatchRunner {
 
 public:
     // prevent constructor by default

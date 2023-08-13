@@ -4,8 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/entity/systems/ITickingSystem.h"
 
-class EntityEnterVolumeSystem {
+class EntityEnterVolumeSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

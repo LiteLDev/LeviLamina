@@ -21,19 +21,19 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?getCraftAction\@ItemStackRequestActionCraftBase\@\@UEBAPEBV1\@XZ
      */
-    virtual void __unk_vfn_1();
+    virtual class ItemStackRequestActionCraftBase const* getCraftAction() const;
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?getFilteredStringIndex\@ItemStackRequestAction\@\@UEBAHXZ
      */
-    virtual void __unk_vfn_2();
+    virtual int getFilteredStringIndex() const;
     /**
      * @vftbl 3
-     * @symbol __unk_vfn_3
+     * @symbol ?postLoadItems_DEPRECATEDASKTYLAING\@ItemStackRequestActionCraftBase\@\@UEAAXAEAVBlockPalette\@\@_N\@Z
      */
-    virtual void __unk_vfn_3();
+    virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette&, bool);
     /**
      * @vftbl 4
      * @symbol ?_write\@ItemStackRequestActionCraftRecipeAuto\@\@UEBAXAEAVBinaryStream\@\@\@Z
@@ -45,6 +45,11 @@ public:
      * ?_read\@ItemStackRequestActionCraftRecipeAuto\@\@UEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     virtual class Bedrock::Result<void, std::error_code> _read(class ReadOnlyBinaryStream&);
+    /**
+     * @vftbl 6
+     * @symbol ?getRecipeNetId\@ItemStackRequestActionCraftGrindstone\@\@UEBAAEBUItemStackNetIdVariant\@\@XZ
+     */
+    virtual struct ItemStackNetIdVariant const& getRecipeNetId() const;
     /**
      * @symbol ??0ItemStackRequestActionCraftRecipeAuto\@\@QEAA\@XZ
      */

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class EnvironmentSensorSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class EnvironmentSensorSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

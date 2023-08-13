@@ -3,9 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/IBlockWorldGenAPI.h"
 #include "mc/world/level/block/utils/BlockDataFetchResult.h"
 
-class WorldBlockTarget {
+class WorldBlockTarget : public ::IBlockWorldGenAPI {
 
 public:
     // prevent constructor by default

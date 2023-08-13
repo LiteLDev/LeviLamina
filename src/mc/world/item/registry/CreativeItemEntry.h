@@ -3,9 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/network/TypedServerNetId.h"
 
-class CreativeItemEntry {
+class CreativeItemEntry : public ::Bedrock::EnableNonOwnerReferences {
 
 public:
     // prevent constructor by default

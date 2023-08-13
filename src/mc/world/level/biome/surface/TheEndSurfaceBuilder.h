@@ -12,7 +12,7 @@ class EntityContext;
 
 namespace VanillaSurfaceBuilders {
 
-class TheEndSurfaceBuilder {
+class TheEndSurfaceBuilder : public ::ISurfaceBuilder {
 
 public:
     // prevent constructor by default

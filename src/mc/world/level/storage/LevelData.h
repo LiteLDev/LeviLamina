@@ -20,14 +20,6 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0LevelData\@\@QEAA\@_N\@Z
-     */
-    MCAPI LevelData(bool);
-    /**
-     * @symbol ??0LevelData\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI LevelData(class LevelData&&);
-    /**
      * @symbol
      * ??0LevelData\@\@QEAA\@AEBVLevelSettings\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4GeneratorType\@\@AEBVBlockPos\@\@_NW4EducationEditionOffer\@\@MM\@Z
      */
@@ -41,6 +33,14 @@ public:
         float,
         float
     );
+    /**
+     * @symbol ??0LevelData\@\@QEAA\@_N\@Z
+     */
+    MCAPI LevelData(bool);
+    /**
+     * @symbol ??0LevelData\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI LevelData(class LevelData&&);
     /**
      * @symbol ?achievementsWillBeDisabledOnLoad\@LevelData\@\@QEBA_NXZ
      */
@@ -134,13 +134,13 @@ public:
      */
     MCAPI bool getEmoteChatMuted() const;
     /**
-     * @symbol ?getExperiments\@LevelData\@\@QEBAAEBVExperiments\@\@XZ
-     */
-    MCAPI class Experiments const& getExperiments() const;
-    /**
      * @symbol ?getExperiments\@LevelData\@\@QEAAAEAVExperiments\@\@XZ
      */
     MCAPI class Experiments& getExperiments();
+    /**
+     * @symbol ?getExperiments\@LevelData\@\@QEBAAEBVExperiments\@\@XZ
+     */
+    MCAPI class Experiments const& getExperiments() const;
     /**
      * @symbol ?getFlatWorldGeneratorOptions\@LevelData\@\@QEBAAEBVValue\@Json\@\@XZ
      */
@@ -154,13 +154,13 @@ public:
      */
     MCAPI enum class Difficulty getGameDifficulty() const;
     /**
-     * @symbol ?getGameRules\@LevelData\@\@QEBAAEBVGameRules\@\@XZ
-     */
-    MCAPI class GameRules const& getGameRules() const;
-    /**
      * @symbol ?getGameRules\@LevelData\@\@QEAAAEAVGameRules\@\@XZ
      */
     MCAPI class GameRules& getGameRules();
+    /**
+     * @symbol ?getGameRules\@LevelData\@\@QEBAAEBVGameRules\@\@XZ
+     */
+    MCAPI class GameRules const& getGameRules() const;
     /**
      * @symbol ?getGameType\@LevelData\@\@QEBA?AW4GameType\@\@XZ
      */

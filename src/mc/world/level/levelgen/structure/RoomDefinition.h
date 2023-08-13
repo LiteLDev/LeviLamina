@@ -12,13 +12,13 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0RoomDefinition\@\@QEAA\@H\@Z
-     */
-    MCAPI RoomDefinition(int);
-    /**
      * @symbol ??0RoomDefinition\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI RoomDefinition(class RoomDefinition const&);
+    /**
+     * @symbol ??0RoomDefinition\@\@QEAA\@H\@Z
+     */
+    MCAPI RoomDefinition(int);
     /**
      * @symbol ?findSource\@RoomDefinition\@\@QEAA_NH\@Z
      */

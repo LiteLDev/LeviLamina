@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class XoroshiroRandom {
+// auto generated inclusion list
+#include "mc/math/IRandom.h"
+
+class XoroshiroRandom : public ::IRandom {
 
 public:
     // prevent constructor by default

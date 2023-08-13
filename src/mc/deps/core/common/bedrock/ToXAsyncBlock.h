@@ -30,6 +30,38 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
+     * @vftbl 1
+     * @symbol ?getStatus\@?$AsyncResultBase\@PEAUXAsyncBlock\@\@\@Threading\@Bedrock\@\@UEBA?AW4AsyncStatus\@23\@XZ
+     */
+    virtual enum class Bedrock::Threading::AsyncStatus getStatus() const;
+    /**
+     * @vftbl 2
+     * @symbol ?getError\@?$AsyncResultBase\@PEAUXAsyncBlock\@\@\@Threading\@Bedrock\@\@UEBA?AVerror_code\@std\@\@XZ
+     */
+    virtual std::error_code getError() const;
+    /**
+     * @vftbl 3
+     * @symbol
+     * ?getException\@?$AsyncResultBase\@PEAUXAsyncBlock\@\@\@Threading\@Bedrock\@\@UEBA?AVexception_ptr\@std\@\@XZ
+     */
+    virtual std::exception_ptr getException() const;
+    /**
+     * @vftbl 4
+     * @symbol ?getResult\@?$AsyncResultBase\@PEAUXAsyncBlock\@\@\@Threading\@Bedrock\@\@UEBAPEAUXAsyncBlock\@\@XZ
+     */
+    virtual struct XAsyncBlock* getResult() const;
+    /**
+     * @vftbl 5
+     * @symbol ?cancel\@?$AsyncResultBase\@PEAUXAsyncBlock\@\@\@Threading\@Bedrock\@\@UEAAXXZ
+     */
+    virtual void cancel();
+    /**
+     * @vftbl 6
+     * @symbol
+     * ?addOnComplete\@?$AsyncResultBase\@PEAUXAsyncBlock\@\@\@Threading\@Bedrock\@\@UEAAXV?$function\@$$A6AXAEBV?$IAsyncResult\@PEAUXAsyncBlock\@\@\@Threading\@Bedrock\@\@\@Z\@std\@\@\@Z
+     */
+    virtual void addOnComplete(std::function<void(class Bedrock::Threading::IAsyncResult<struct XAsyncBlock*> const&)>);
+    /**
      * @symbol
      * ?create\@ToXAsyncBlock\@AsyncResult\@Threading\@Bedrock\@\@SA?AV?$shared_ptr\@VToXAsyncBlock\@AsyncResult\@Threading\@Bedrock\@\@\@std\@\@PEAUXTaskQueueObject\@\@\@Z
      */

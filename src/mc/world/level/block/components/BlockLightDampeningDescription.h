@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/json/JsonSchemaObjectNode.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace JsonUtil { class EmptyClass; }
+// clang-format on
+
 struct BlockLightDampeningDescription {
 
 public:
@@ -24,25 +32,10 @@ public:
      */
     virtual std::string const& getName() const;
     /**
-     * @vftbl 2
+     * @vftbl 3
      * @symbol ?initializeComponent\@BlockLightDampeningDescription\@\@UEBAXAEAVBlockComponentStorage\@\@\@Z
      */
     virtual void initializeComponent(class BlockComponentStorage&) const;
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4();
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
-    virtual void __unk_vfn_5();
     /**
      * @vftbl 6
      * @symbol ?isNetworkComponent\@BlockLightDampeningDescription\@\@UEBA_NXZ

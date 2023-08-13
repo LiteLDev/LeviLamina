@@ -2,7 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class AgentCommandExecutionGoal {
+// auto generated inclusion list
+#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ai/goal/Goal.h"
+
+class AgentCommandExecutionGoal : public ::Goal {
 
 public:
     // prevent constructor by default
@@ -23,11 +27,6 @@ public:
      */
     virtual bool canUse();
     /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
      * @vftbl 3
      * @symbol ?canBeInterrupted\@AgentCommandExecutionGoal\@\@UEAA_NXZ
      */
@@ -42,11 +41,6 @@ public:
      * @symbol ?stop\@AgentCommandExecutionGoal\@\@UEAAXXZ
      */
     virtual void stop();
-    /**
-     * @vftbl 6
-     * @symbol __unk_vfn_6
-     */
-    virtual void __unk_vfn_6();
     /**
      * @vftbl 7
      * @symbol

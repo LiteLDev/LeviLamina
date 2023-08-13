@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class CustomBlockStateVariant {
+// auto generated inclusion list
+#include "mc/world/level/block/utils/BlockState.h"
+
+class CustomBlockStateVariant : public ::BlockState {
 
 public:
     // prevent constructor by default

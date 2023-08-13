@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class VarIntDataOutput {
+// auto generated inclusion list
+#include "mc/util/BytesDataOutput.h"
+
+class VarIntDataOutput : public ::BytesDataOutput {
 
 public:
     // prevent constructor by default
@@ -19,14 +22,14 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?writeString\@VarIntDataOutput\@\@UEAAXV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    virtual void __unk_vfn_1();
+    virtual void writeString(std::string_view);
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?writeLongString\@VarIntDataOutput\@\@UEAAXV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    virtual void __unk_vfn_2();
+    virtual void writeLongString(std::string_view);
     /**
      * @vftbl 3
      * @symbol ?writeFloat\@VarIntDataOutput\@\@UEAAXM\@Z
@@ -63,14 +66,6 @@ public:
      */
     virtual void writeBytes(void const*, uint64_t);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VARINTDATAOUTPUT
-    /**
-     * @symbol ?writeLongString\@VarIntDataOutput\@\@UEAAXV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
-     */
-    MCVAPI void writeLongString(std::string_view);
-    /**
-     * @symbol ?writeString\@VarIntDataOutput\@\@UEAAXV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
-     */
-    MCVAPI void writeString(std::string_view);
     /**
      * @symbol __unk_destructor_-1
      */

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BlastFurnaceBlockActor {
+// auto generated inclusion list
+#include "mc/world/level/block/actor/FurnaceBlockActor.h"
+
+class BlastFurnaceBlockActor : public ::FurnaceBlockActor {
 
 public:
     // prevent constructor by default

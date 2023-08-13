@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ContainerModel {
+// auto generated inclusion list
+#include "mc/world/ContainerContentChangeListener.h"
+
+class ContainerModel : public ::ContainerContentChangeListener {
 
 public:
     // prevent constructor by default

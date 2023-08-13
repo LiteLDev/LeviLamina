@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/server/commands/CommandChainedSubcommand.h"
 #include "mc/server/commands/CommandSelector.h"
 #include "mc/world/level/Command.h"
 
@@ -14,7 +15,7 @@ public:
     // clang-format on
 
     // NewExecuteCommand inner types define
-    class ExecuteChainedSubcommand : public ::Command {
+    class ExecuteChainedSubcommand : public ::CommandChainedSubcommand {
     public:
         // ExecuteChainedSubcommand inner types define
         enum class Subcommand {};
@@ -187,7 +188,7 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 1
+     * @vftbl 2
      * @symbol ?execute\@NewExecuteCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;

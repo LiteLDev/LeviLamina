@@ -52,7 +52,7 @@ public:
      * @symbol
      * ?getLastPlayerUpdate\@BossComponent\@\@QEBA?AV?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@std\@\@XZ
      */
-    MCAPI std::chrono::time_point<std::chrono::steady_clock> getLastPlayerUpdate() const;
+    MCAPI std::chrono::steady_clock::time_point getLastPlayerUpdate() const;
     /**
      * @symbol
      * ?getName\@BossComponent\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
@@ -111,7 +111,7 @@ public:
      * @symbol
      * ?setLastPlayerUpdate\@BossComponent\@\@QEAAXV?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@std\@\@\@Z
      */
-    MCAPI void setLastPlayerUpdate(std::chrono::time_point<std::chrono::steady_clock>);
+    MCAPI void setLastPlayerUpdate(std::chrono::steady_clock::time_point);
     /**
      * @symbol
      * ?setName\@BossComponent\@\@QEAAXAEAVActor\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z

@@ -4,9 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/network/TypedServerNetId.h"
+#include "mc/world/inventory/network/crafting/CraftHandlerBase.h"
 #include "mc/world/item/components/ItemStackRequestActionCraft.h"
 
-class CraftHandlerTrade {
+class CraftHandlerTrade : public ::CraftHandlerBase {
 
 public:
     // prevent constructor by default
@@ -28,16 +29,6 @@ public:
      */
     virtual enum class ItemStackNetResult
     handleConsumedItem(enum class ContainerEnumName, unsigned char, class ItemStack const&);
-    /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol

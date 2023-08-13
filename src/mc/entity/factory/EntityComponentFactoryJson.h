@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class EntityComponentFactoryJson {
+// auto generated inclusion list
+#include "mc/entity/factory/EntityComponentFactoryBase.h"
+
+class EntityComponentFactoryJson : public ::EntityComponentFactoryBase {
 
 public:
     // prevent constructor by default

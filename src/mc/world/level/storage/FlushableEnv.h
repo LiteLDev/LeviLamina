@@ -20,25 +20,25 @@ public:
     /**
      * @vftbl 1
      * @symbol
-     * ?NewSequentialFile\@EnvWrapper\@leveldb\@\@UEAA?AVStatus\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVSequentialFile\@2\@\@Z
+     * ?NewSequentialFile\@InMemoryEnv\@\@UEAA?AVStatus\@leveldb\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVSequentialFile\@3\@\@Z
      */
     virtual class leveldb::Status NewSequentialFile(std::string const&, class leveldb::SequentialFile**);
     /**
      * @vftbl 2
      * @symbol
-     * ?NewRandomAccessFile\@EnvWrapper\@leveldb\@\@UEAA?AVStatus\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVRandomAccessFile\@2\@\@Z
+     * ?NewRandomAccessFile\@InMemoryEnv\@\@UEAA?AVStatus\@leveldb\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVRandomAccessFile\@3\@\@Z
      */
     virtual class leveldb::Status NewRandomAccessFile(std::string const&, class leveldb::RandomAccessFile**);
     /**
      * @vftbl 3
      * @symbol
-     * ?NewWritableFile\@EnvWrapper\@leveldb\@\@UEAA?AVStatus\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVWritableFile\@2\@\@Z
+     * ?NewWritableFile\@InMemoryEnv\@\@UEAA?AVStatus\@leveldb\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVWritableFile\@3\@\@Z
      */
     virtual class leveldb::Status NewWritableFile(std::string const&, class leveldb::WritableFile**);
     /**
      * @vftbl 4
      * @symbol
-     * ?NewAppendableFile\@EnvWrapper\@leveldb\@\@UEAA?AVStatus\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVWritableFile\@2\@\@Z
+     * ?NewAppendableFile\@Env\@leveldb\@\@UEAA?AVStatus\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAPEAVWritableFile\@2\@\@Z
      */
     virtual class leveldb::Status NewAppendableFile(std::string const&, class leveldb::WritableFile**);
     /**
@@ -50,13 +50,13 @@ public:
     /**
      * @vftbl 6
      * @symbol
-     * ?GetChildren\@EnvWrapper\@leveldb\@\@UEAA?AVStatus\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@5\@\@Z
+     * ?GetChildren\@InMemoryEnv\@\@UEAA?AVStatus\@leveldb\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@5\@\@Z
      */
     virtual class leveldb::Status GetChildren(std::string const&, std::vector<std::string>*);
     /**
      * @vftbl 7
      * @symbol
-     * ?DeleteFileA\@EnvWrapper\@leveldb\@\@UEAA?AVStatus\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     * ?DeleteFileA\@InMemoryEnv\@\@UEAA?AVStatus\@leveldb\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual class leveldb::Status DeleteFileA(std::string const&);
     /**
@@ -80,7 +80,7 @@ public:
     /**
      * @vftbl 11
      * @symbol
-     * ?RenameFile\@EnvWrapper\@leveldb\@\@UEAA?AVStatus\@2\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
+     * ?RenameFile\@InMemoryEnv\@\@UEAA?AVStatus\@leveldb\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
      */
     virtual class leveldb::Status RenameFile(std::string const&, std::string const&);
     /**
@@ -98,12 +98,12 @@ public:
      * @vftbl 14
      * @symbol ?Schedule\@EnvWrapper\@leveldb\@\@UEAAXP6AXPEAX\@Z0\@Z
      */
-    virtual void Schedule(void (*)(void*), void*);
+    virtual void Schedule(void(__cdecl*)(void*), void*);
     /**
      * @vftbl 15
      * @symbol ?StartThread\@EnvWrapper\@leveldb\@\@UEAAXP6AXPEAX\@Z0\@Z
      */
-    virtual void StartThread(void (*)(void*), void*);
+    virtual void StartThread(void(__cdecl*)(void*), void*);
     /**
      * @vftbl 16
      * @symbol
@@ -126,6 +126,11 @@ public:
      * @symbol ?SleepForMicroseconds\@EnvWrapper\@leveldb\@\@UEAAXH\@Z
      */
     virtual void SleepForMicroseconds(int);
+    /**
+     * @vftbl 20
+     * @symbol ?flushToPermanentStorage\@InMemoryEnv\@\@UEAAXXZ
+     */
+    virtual void flushToPermanentStorage() = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLUSHABLEENV
     /**
      * @symbol __unk_destructor_-1

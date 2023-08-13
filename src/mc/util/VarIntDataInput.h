@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class VarIntDataInput {
+// auto generated inclusion list
+#include "mc/util/BytesDataInput.h"
+
+class VarIntDataInput : public ::BytesDataInput {
 
 public:
     // prevent constructor by default
@@ -19,14 +22,16 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol
+     * ?readString\@VarIntDataInput\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual void __unk_vfn_1();
+    virtual std::string readString();
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol
+     * ?readLongString\@VarIntDataInput\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual void __unk_vfn_2();
+    virtual std::string readLongString();
     /**
      * @vftbl 3
      * @symbol ?readFloat\@VarIntDataInput\@\@UEAAMXZ
@@ -68,16 +73,6 @@ public:
      */
     virtual uint64_t numBytesLeft() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_VARINTDATAINPUT
-    /**
-     * @symbol
-     * ?readLongString\@VarIntDataInput\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCVAPI std::string readLongString();
-    /**
-     * @symbol
-     * ?readString\@VarIntDataInput\@\@UEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCVAPI std::string readString();
     /**
      * @symbol __unk_destructor_-1
      */

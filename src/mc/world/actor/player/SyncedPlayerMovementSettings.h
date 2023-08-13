@@ -12,12 +12,12 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0SyncedPlayerMovementSettings\@\@QEAA\@AEBUPlayerMovementSettings\@\@\@Z
-     */
-    MCAPI SyncedPlayerMovementSettings(struct PlayerMovementSettings const&);
-    /**
      * @symbol ??0SyncedPlayerMovementSettings\@\@QEAA\@XZ
      */
     MCAPI SyncedPlayerMovementSettings();
+    /**
+     * @symbol ??0SyncedPlayerMovementSettings\@\@QEAA\@AEBUPlayerMovementSettings\@\@\@Z
+     */
+    MCAPI SyncedPlayerMovementSettings(struct PlayerMovementSettings const&);
     // NOLINTEND
 };

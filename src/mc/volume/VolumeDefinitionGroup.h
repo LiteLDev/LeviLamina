@@ -20,7 +20,7 @@ public:
      * ??0VolumeDefinitionGroup\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@$$CBVVolumeComponentFactory\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */
     MCAPI
-    VolumeDefinitionGroup(class gsl::not_null<class Bedrock::NonOwnerPointer<class VolumeComponentFactory const>>);
+        VolumeDefinitionGroup(class gsl::not_null<class Bedrock::NonOwnerPointer<class VolumeComponentFactory const>>);
     /**
      * @symbol ?loadDefinitions\@VolumeDefinitionGroup\@\@QEAAXAEBVResourcePackManager\@\@_N\@Z
      */

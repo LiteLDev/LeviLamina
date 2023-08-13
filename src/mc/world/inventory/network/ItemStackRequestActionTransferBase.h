@@ -4,8 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/world/inventory/network/ItemStackRequestAction.h"
 
-class ItemStackRequestActionTransferBase {
+class ItemStackRequestActionTransferBase : public ::ItemStackRequestAction {
 
 public:
     // prevent constructor by default

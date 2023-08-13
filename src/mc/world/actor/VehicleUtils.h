@@ -25,6 +25,10 @@ public:
     VehicleUtils(VehicleUtils const&)            = delete;
     VehicleUtils()                               = delete;
 
+    using PatternStrategyPtr = std::optional<
+        class
+        Vec3> (*)(struct VehicleUtils::VehicleDirections const&, std::function<bool(class Vec3 const&, class Vec3 const&)>);
+
 public:
     // NOLINTBEGIN
     /**
@@ -41,18 +45,12 @@ public:
      * @symbol
      * ?getActivatorRailExitPatternStrategy\@VehicleUtils\@\@SAP6A?AV?$optional\@VVec3\@\@\@std\@\@AEBUVehicleDirections\@1\@V?$function\@$$A6A_NAEBVVec3\@\@0\@Z\@3\@\@ZAEBVBaseGameVersion\@\@\@Z
      */
-    MCAPI static std::optional<
-        class
-        Vec3> (*)(struct VehicleUtils::VehicleDirections const&, std::function<bool(class Vec3 const&, class Vec3 const&)>)
-        getActivatorRailExitPatternStrategy(class BaseGameVersion const&);
+    MCAPI static PatternStrategyPtr getActivatorRailExitPatternStrategy(class BaseGameVersion const&);
     /**
      * @symbol
      * ?getActorExitPatternStrategy\@VehicleUtils\@\@SAP6A?AV?$optional\@VVec3\@\@\@std\@\@AEBUVehicleDirections\@1\@V?$function\@$$A6A_NAEBVVec3\@\@0\@Z\@3\@\@ZAEBVBaseGameVersion\@\@\@Z
      */
-    MCAPI static std::optional<
-        class
-        Vec3> (*)(struct VehicleUtils::VehicleDirections const&, std::function<bool(class Vec3 const&, class Vec3 const&)>)
-        getActorExitPatternStrategy(class BaseGameVersion const&);
+    MCAPI static PatternStrategyPtr getActorExitPatternStrategy(class BaseGameVersion const&);
     /**
      * @symbol ?ignoredExitCollisionBlock\@VehicleUtils\@\@SA_NAEBVBlock\@\@\@Z
      */

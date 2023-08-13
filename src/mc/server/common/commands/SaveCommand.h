@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/Command.h"
+#include "mc/server/commands/ServerCommand.h"
 
-class SaveCommand : public ::Command {
+class SaveCommand : public ::ServerCommand {
 public:
     // SaveCommand inner types define
     enum class State {};
@@ -25,6 +25,11 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
+     * @symbol ?collectOptionalArguments\@Command\@\@MEAA_NXZ
+     */
+    virtual bool collectOptionalArguments();
+    /**
+     * @vftbl 2
      * @symbol ?execute\@SaveCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
      */
     virtual void execute(class CommandOrigin const&, class CommandOutput&) const;

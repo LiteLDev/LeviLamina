@@ -13,14 +13,14 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0ReplayStateComponent\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI ReplayStateComponent(class ReplayStateComponent&&);
-    /**
      * @symbol
      * ??0ReplayStateComponent\@\@QEAA\@V?$unique_ptr\@VActorHistory\@\@U?$default_delete\@VActorHistory\@\@\@std\@\@\@std\@\@V?$unique_ptr\@UIReplayStatePolicy\@\@U?$default_delete\@UIReplayStatePolicy\@\@\@std\@\@\@2\@\@Z
      */
     MCAPI ReplayStateComponent(std::unique_ptr<class ActorHistory>, std::unique_ptr<struct IReplayStatePolicy>);
+    /**
+     * @symbol ??0ReplayStateComponent\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI ReplayStateComponent(class ReplayStateComponent&&);
     /**
      * @symbol ?getCurrentTick\@ReplayStateComponent\@\@QEBA_KXZ
      */

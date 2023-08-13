@@ -11,23 +11,23 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0NavigationComponent\@\@QEAA\@XZ
-     */
-    MCAPI NavigationComponent();
-    /**
      * @symbol ??0NavigationComponent\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI NavigationComponent(class NavigationComponent const&);
     /**
-     * @symbol
-     * ?createPath\@NavigationComponent\@\@QEAA?AV?$unique_ptr\@VPath\@\@U?$default_delete\@VPath\@\@\@std\@\@\@std\@\@AEAVMob\@\@AEBVVec3\@\@\@Z
+     * @symbol ??0NavigationComponent\@\@QEAA\@XZ
      */
-    MCAPI std::unique_ptr<class Path> createPath(class Mob&, class Vec3 const&);
+    MCAPI NavigationComponent();
     /**
      * @symbol
      * ?createPath\@NavigationComponent\@\@QEAA?AV?$unique_ptr\@VPath\@\@U?$default_delete\@VPath\@\@\@std\@\@\@std\@\@AEAVMob\@\@AEAVActor\@\@\@Z
      */
     MCAPI std::unique_ptr<class Path> createPath(class Mob&, class Actor&);
+    /**
+     * @symbol
+     * ?createPath\@NavigationComponent\@\@QEAA?AV?$unique_ptr\@VPath\@\@U?$default_delete\@VPath\@\@\@std\@\@\@std\@\@AEAVMob\@\@AEBVVec3\@\@\@Z
+     */
+    MCAPI std::unique_ptr<class Path> createPath(class Mob&, class Vec3 const&);
     /**
      * @symbol ?getAvoidDamageBlocks\@NavigationComponent\@\@QEBA_NXZ
      */

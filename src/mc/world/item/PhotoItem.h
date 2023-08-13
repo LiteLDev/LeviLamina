@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class PhotoItem {
+// auto generated inclusion list
+#include "mc/world/item/Item.h"
+
+class PhotoItem : public ::Item {
 
 public:
     // prevent constructor by default

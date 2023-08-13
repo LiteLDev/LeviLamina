@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class NBTSaver {
+// auto generated inclusion list
+#include "mc/deps/cereal/BasicSaver.h"
+
+class NBTSaver : public ::cereal::BasicSaver {
 
 public:
     // prevent constructor by default

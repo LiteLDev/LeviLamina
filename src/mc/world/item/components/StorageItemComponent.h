@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class StorageItemComponent {
+// auto generated inclusion list
+#include "mc/world/item/components/ItemComponent.h"
+
+class StorageItemComponent : public ::ItemComponent {
 
 public:
     // prevent constructor by default

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class CelebrateHuntSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class CelebrateHuntSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

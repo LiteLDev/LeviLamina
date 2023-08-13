@@ -68,10 +68,6 @@ public:
      */
     MCAPI long WebSocketDisconnect(enum class HCWebSocketCloseStatus);
     /**
-     * @symbol ?WebSocketSendMessageAsync\@WinHttpConnection\@httpclient\@xbox\@\@QEAAJPEAUXAsyncBlock\@\@PEBD\@Z
-     */
-    MCAPI long WebSocketSendMessageAsync(struct XAsyncBlock*, char const*);
-    /**
      * @symbol
      * ?WebSocketSendMessageAsync\@WinHttpConnection\@httpclient\@xbox\@\@QEAAJPEAUXAsyncBlock\@\@PEBE_KW4_WINHTTP_WEB_SOCKET_BUFFER_TYPE\@\@\@Z
      */
@@ -81,6 +77,10 @@ public:
         uint64_t,
         enum class _WINHTTP_WEB_SOCKET_BUFFER_TYPE
     );
+    /**
+     * @symbol ?WebSocketSendMessageAsync\@WinHttpConnection\@httpclient\@xbox\@\@QEAAJPEAUXAsyncBlock\@\@PEBD\@Z
+     */
+    MCAPI long WebSocketSendMessageAsync(struct XAsyncBlock*, char const*);
     /**
      * @symbol
      * ?Initialize\@WinHttpConnection\@httpclient\@xbox\@\@SA?AV?$Result\@V?$shared_ptr\@VWinHttpConnection\@httpclient\@xbox\@\@\@std\@\@\@\@PEAXPEAUHC_WEBSOCKET_OBSERVER\@\@PEBD2W4proxy_type\@23\@$$QEAUXPlatSecurityInformation\@23\@\@Z

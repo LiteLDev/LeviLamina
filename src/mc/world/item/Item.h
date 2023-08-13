@@ -32,14 +32,14 @@ public:
         // NOLINTBEGIN
         /**
          * @symbol
-         * ??0ScopedCreativeGroup\@Item\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEBVBlock\@\@PEBVCompoundTag\@\@\@Z
-         */
-        MCAPI ScopedCreativeGroup(std::string const&, class Block const*, class CompoundTag const*);
-        /**
-         * @symbol
          * ??0ScopedCreativeGroup\@Item\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVItemInstance\@\@\@Z
          */
         MCAPI ScopedCreativeGroup(std::string const&, class ItemInstance const&);
+        /**
+         * @symbol
+         * ??0ScopedCreativeGroup\@Item\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEBVBlock\@\@PEBVCompoundTag\@\@\@Z
+         */
+        MCAPI ScopedCreativeGroup(std::string const&, class Block const*, class CompoundTag const*);
         /**
          * @symbol
          * ??0ScopedCreativeGroup\@Item\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEAV1\@FPEBVCompoundTag\@\@\@Z
@@ -870,13 +870,13 @@ public:
      */
     MCAPI void addOnResetBAIcallback(std::function<void(void)> const&);
     /**
-     * @symbol ?addTag\@Item\@\@QEAAAEAV1\@AEBUItemTag\@\@\@Z
-     */
-    MCAPI class Item& addTag(struct ItemTag const&);
-    /**
      * @symbol ?addTag\@Item\@\@QEAAAEAV1\@AEBVHashedString\@\@\@Z
      */
     MCAPI class Item& addTag(class HashedString const&);
+    /**
+     * @symbol ?addTag\@Item\@\@QEAAAEAV1\@AEBUItemTag\@\@\@Z
+     */
+    MCAPI class Item& addTag(struct ItemTag const&);
     /**
      * @symbol
      * ?addTags\@Item\@\@QEAAAEAV1\@V?$initializer_list\@V?$reference_wrapper\@$$CBUItemTag\@\@\@std\@\@\@std\@\@\@Z

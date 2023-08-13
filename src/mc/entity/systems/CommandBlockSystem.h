@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class CommandBlockSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class CommandBlockSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

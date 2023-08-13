@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/redstone/circuit/components/ProducerComponent.h"
+#include "mc/world/redstone/circuit/components/CapacitorComponent.h"
 
-class PulseCapacitor : public ::ProducerComponent {
+class PulseCapacitor : public ::CapacitorComponent {
 
 public:
     // prevent constructor by default

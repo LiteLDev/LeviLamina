@@ -20,15 +20,15 @@ public:
     MCAPI static int toUtf8(wchar_t const*, int, char*, int);
     /**
      * @symbol
-     * ?toUtf8\@StringConversions\@Core\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEB_WH\@Z
-     */
-    MCAPI static std::string toUtf8(wchar_t const*, int);
-    /**
-     * @symbol
      * ?toUtf8\@StringConversions\@Core\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$basic_string\@_WU?$char_traits\@_W\@std\@\@V?$allocator\@_W\@2\@\@4\@\@Z
      */
     MCAPI static std::string
     toUtf8(std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>> const&);
+    /**
+     * @symbol
+     * ?toUtf8\@StringConversions\@Core\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@PEB_WH\@Z
+     */
+    MCAPI static std::string toUtf8(wchar_t const*, int);
     /**
      * @symbol
      * ?toWide\@StringConversions\@Core\@\@SA?AV?$basic_string\@_WU?$char_traits\@_W\@std\@\@V?$allocator\@_W\@2\@\@std\@\@PEBDH\@Z

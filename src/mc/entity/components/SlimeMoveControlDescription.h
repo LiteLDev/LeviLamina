@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class SlimeMoveControlDescription {
+// auto generated inclusion list
+#include "mc/entity/components/MoveControlDescription.h"
+
+class SlimeMoveControlDescription : public ::MoveControlDescription {
 
 public:
     // prevent constructor by default

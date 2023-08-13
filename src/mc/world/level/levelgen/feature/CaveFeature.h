@@ -2,13 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/levelgen/feature/IFeature.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace CaveFeatureUtils { struct CarverConfiguration; }
 namespace CaveFeatureUtils { struct CarvingParameters; }
 // clang-format on
 
-class CaveFeature {
+class CaveFeature : public ::IFeature {
 public:
     // CaveFeature inner types declare
     // clang-format off

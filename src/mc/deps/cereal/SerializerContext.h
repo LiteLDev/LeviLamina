@@ -64,13 +64,13 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0SerializerContext\@cereal\@\@QEAA\@XZ
-     */
-    MCAPI SerializerContext();
-    /**
      * @symbol ??0SerializerContext\@cereal\@\@QEAA\@AEBV01\@\@Z
      */
     MCAPI SerializerContext(class cereal::SerializerContext const&);
+    /**
+     * @symbol ??0SerializerContext\@cereal\@\@QEAA\@XZ
+     */
+    MCAPI SerializerContext();
     /**
      * @symbol ?clear\@SerializerContext\@cereal\@\@QEAAXXZ
      */

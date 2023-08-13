@@ -259,13 +259,13 @@ public:
      */
     MCAPI class Player* fetchNearestAttackablePlayer(class Actor&, float);
     /**
-     * @symbol ?fetchNearestInteractablePlayer\@Dimension\@\@QEBAPEAVPlayer\@\@AEBVVec3\@\@M\@Z
-     */
-    MCAPI class Player* fetchNearestInteractablePlayer(class Vec3 const&, float) const;
-    /**
      * @symbol ?fetchNearestInteractablePlayer\@Dimension\@\@QEBAPEAVPlayer\@\@AEAVActor\@\@M\@Z
      */
     MCAPI class Player* fetchNearestInteractablePlayer(class Actor&, float) const;
+    /**
+     * @symbol ?fetchNearestInteractablePlayer\@Dimension\@\@QEBAPEAVPlayer\@\@AEBVVec3\@\@M\@Z
+     */
+    MCAPI class Player* fetchNearestInteractablePlayer(class Vec3 const&, float) const;
     /**
      * @symbol
      * ?fetchNearestPlayer\@Dimension\@\@QEBAPEAVPlayer\@\@AEBVVec3\@\@M_NV?$function\@$$A6A_NAEBVPlayer\@\@\@Z\@std\@\@\@Z

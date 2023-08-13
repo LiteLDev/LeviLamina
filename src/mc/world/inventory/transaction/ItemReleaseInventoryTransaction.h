@@ -4,8 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/world/inventory/transaction/ComplexInventoryTransaction.h"
 
-class ItemReleaseInventoryTransaction {
+class ItemReleaseInventoryTransaction : public ::ComplexInventoryTransaction {
 public:
     // ItemReleaseInventoryTransaction inner types define
     enum class ActionType {};

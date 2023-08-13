@@ -24,9 +24,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?init\@OperationNodeBase\@OperationNodeDetails\@\@UEAAX_J\@Z
      */
-    virtual void __unk_vfn_1();
+    virtual void init(int64_t);
     /**
      * @vftbl 2
      * @symbol __unk_vfn_2

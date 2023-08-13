@@ -83,13 +83,13 @@ public:
     MCAPI std::vector<std::reference_wrapper<class HashedString const>> const&
           getComplexAliasSplitNames(class HashedString const&) const;
     /**
-     * @symbol ?getItem\@ItemRegistryRef\@\@QEBA?AV?$WeakPtr\@VItem\@\@\@\@F\@Z
-     */
-    MCAPI class WeakPtr<class Item> getItem(short) const;
-    /**
      * @symbol ?getItem\@ItemRegistryRef\@\@QEBA?AV?$WeakPtr\@VItem\@\@\@\@AEBVHashedString\@\@\@Z
      */
     MCAPI class WeakPtr<class Item> getItem(class HashedString const&) const;
+    /**
+     * @symbol ?getItem\@ItemRegistryRef\@\@QEBA?AV?$WeakPtr\@VItem\@\@\@\@F\@Z
+     */
+    MCAPI class WeakPtr<class Item> getItem(short) const;
     /**
      * @symbol ?getItemCount\@ItemRegistryRef\@\@QEBAHXZ
      */
@@ -143,10 +143,6 @@ public:
      */
     MCAPI class ItemRegistryRef::LockGuard lockItemWorldCompatibilityMutex() const;
     /**
-     * @symbol ?lookupByName\@ItemRegistryRef\@\@QEBA?AV?$WeakPtr\@VItem\@\@\@\@AEBVHashedString\@\@\@Z
-     */
-    MCAPI class WeakPtr<class Item> lookupByName(class HashedString const&) const;
-    /**
      * @symbol
      * ?lookupByName\@ItemRegistryRef\@\@QEBA?AV?$WeakPtr\@VItem\@\@\@\@AEAHV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
@@ -156,6 +152,10 @@ public:
      * ?lookupByName\@ItemRegistryRef\@\@QEBA?AV?$WeakPtr\@VItem\@\@\@\@AEAH0V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
     MCAPI class WeakPtr<class Item> lookupByName(int&, int&, std::string_view) const;
+    /**
+     * @symbol ?lookupByName\@ItemRegistryRef\@\@QEBA?AV?$WeakPtr\@VItem\@\@\@\@AEBVHashedString\@\@\@Z
+     */
+    MCAPI class WeakPtr<class Item> lookupByName(class HashedString const&) const;
     /**
      * @symbol
      * ?lookupByNameNoAlias\@ItemRegistryRef\@\@QEBA?AV?$WeakPtr\@VItem\@\@\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z

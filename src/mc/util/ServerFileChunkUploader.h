@@ -10,7 +10,7 @@
 namespace Json { class Value; }
 // clang-format on
 
-class ServerFileChunkUploader : public ::IFileChunkUploader {
+class ServerFileChunkUploader {
 
 public:
     // prevent constructor by default
@@ -56,6 +56,13 @@ public:
      */
     virtual void
     uploadChunk(struct FileInfo const&, struct FileChunkInfo const&, std::vector<unsigned char> const&, std::function<void(bool)>);
+    /**
+     * @vftbl 6
+     * @symbol
+     * ?uploadStream\@IFileChunkUploader\@\@UEAAXAEBUFileInfo\@\@_KAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$function\@$$A6AXW4UploadStreamResult\@IFileChunkUploader\@\@\@Z\@4\@\@Z
+     */
+    virtual void
+    uploadStream(struct FileInfo const&, uint64_t, std::string const&, std::function<void(enum class IFileChunkUploader::UploadStreamResult)>);
     /**
      * @vftbl 7
      * @symbol ?canCancelUpload\@ServerFileChunkUploader\@\@UEBA_NAEBUFileInfo\@\@\@Z

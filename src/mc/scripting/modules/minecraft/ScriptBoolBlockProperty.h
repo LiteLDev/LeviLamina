@@ -6,6 +6,7 @@
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
+#include "mc/scripting/modules/minecraft/IScriptBlockProperty.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +16,7 @@ namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptBoolBlockProperty {
+class ScriptBoolBlockProperty : public ::ScriptModuleMinecraft::IScriptBlockProperty {
 
 public:
     // prevent constructor by default
@@ -32,15 +33,15 @@ public:
     MCVAPI ~ScriptBoolBlockProperty();
 #endif
     /**
+     * @symbol ??0ScriptBoolBlockProperty\@ScriptModuleMinecraft\@\@QEAA\@$$QEAV01\@\@Z
+     */
+    MCAPI ScriptBoolBlockProperty(class ScriptModuleMinecraft::ScriptBoolBlockProperty&&);
+    /**
      * @symbol
      * ??0ScriptBoolBlockProperty\@ScriptModuleMinecraft\@\@QEAA\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVBlockState\@\@V?$vector\@_NV?$allocator\@_N\@std\@\@\@3\@V?$StrongTypedObjectHandle\@VScriptBlockPermutation\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@Z
      */
     MCAPI
     ScriptBoolBlockProperty(std::string, class BlockState const&, std::vector<bool>, class Scripting::StrongTypedObjectHandle<class ScriptModuleMinecraft::ScriptBlockPermutation>);
-    /**
-     * @symbol ??0ScriptBoolBlockProperty\@ScriptModuleMinecraft\@\@QEAA\@$$QEAV01\@\@Z
-     */
-    MCAPI ScriptBoolBlockProperty(class ScriptModuleMinecraft::ScriptBoolBlockProperty&&);
     /**
      * @symbol ?getState\@ScriptBoolBlockProperty\@ScriptModuleMinecraft\@\@QEBA?AV?$Result\@_N\@Scripting\@\@XZ
      */

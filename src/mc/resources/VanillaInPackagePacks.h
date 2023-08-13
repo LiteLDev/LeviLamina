@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/resources/IInPackagePacks.h"
 
-class VanillaInPackagePacks {
+class VanillaInPackagePacks : public ::IInPackagePacks {
 
 public:
     // prevent constructor by default

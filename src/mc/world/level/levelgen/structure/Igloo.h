@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/levelgen/structure/StructurePiece.h"
+#include "mc/world/level/levelgen/structure/ScatteredFeaturePiece.h"
 
-class Igloo : public ::StructurePiece {
+class Igloo : public ::ScatteredFeaturePiece {
 
 public:
     // prevent constructor by default

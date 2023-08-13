@@ -68,11 +68,6 @@ public:
     );
     /**
      * @symbol
-     * ?getInterpolatedPosition\@InterpolatedRidingPositionCalculationHelper\@\@SA?AVVec3\@\@AEBUStateVectorComponent\@\@M\@Z
-     */
-    MCAPI static class Vec3 getInterpolatedPosition(struct StateVectorComponent const&, float);
-    /**
-     * @symbol
      * ?getInterpolatedPosition\@InterpolatedRidingPositionCalculationHelper\@\@SA?AVVec3\@\@AEBVStrictEntityContext\@\@AEBV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@$$CBUActorRotationComponent\@\@$$CBURenderRotationComponent\@\@$$CBUStateVectorComponent\@\@$$CBUSynchedActorDataComponent\@\@\@\@M\@Z
      */
     MCAPI static class Vec3 getInterpolatedPosition(
@@ -86,5 +81,10 @@ public:
             struct SynchedActorDataComponent const> const&,
         float
     );
+    /**
+     * @symbol
+     * ?getInterpolatedPosition\@InterpolatedRidingPositionCalculationHelper\@\@SA?AVVec3\@\@AEBUStateVectorComponent\@\@M\@Z
+     */
+    MCAPI static class Vec3 getInterpolatedPosition(struct StateVectorComponent const&, float);
     // NOLINTEND
 };

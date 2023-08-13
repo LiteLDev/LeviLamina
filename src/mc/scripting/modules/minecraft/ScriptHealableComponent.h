@@ -9,8 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class ActorFilterGroup;
-class HealableComponent;
-class HealableDefinition;
 class WeakEntityRef;
 namespace Scripting { class WeakLifetimeScope; }
 struct FeedItem;
@@ -35,8 +33,7 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol
-     * ?_isValid\@?$ECSScriptActorComponent\@VHealableComponent\@\@VHealableDefinition\@\@\@ScriptModuleMinecraft\@\@MEBA_NXZ
+     * @symbol ?_isValid\@BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@MEBA_NXZ
      */
     virtual bool _isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTHEALABLECOMPONENT

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class AllayVibrationConfig {
+// auto generated inclusion list
+#include "mc/world/events/gameevents/VibrationListenerConfig.h"
+
+class AllayVibrationConfig : public ::VibrationListenerConfig {
 
 public:
     // prevent constructor by default
@@ -35,6 +38,11 @@ public:
      * ?shouldListen\@AllayVibrationConfig\@\@UEAA_NAEAVBlockSource\@\@AEBVGameEvent\@\@AEBUGameEventContext\@\@\@Z
      */
     virtual bool shouldListen(class BlockSource&, class GameEvent const&, struct GameEventContext const&);
+    /**
+     * @vftbl 4
+     * @symbol ?onSerializableDataChanged\@VibrationListenerConfig\@\@UEAAXAEAVBlockSource\@\@\@Z
+     */
+    virtual void onSerializableDataChanged(class BlockSource&);
     /**
      * @symbol ??0AllayVibrationConfig\@\@QEAA\@AEAVActor\@\@G\@Z
      */

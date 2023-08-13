@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class TargetNearbySystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class TargetNearbySystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

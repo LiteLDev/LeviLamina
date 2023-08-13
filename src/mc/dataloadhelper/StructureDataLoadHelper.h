@@ -5,8 +5,9 @@
 // auto generated inclusion list
 #include "mc/world/Direction.h"
 #include "mc/world/actor/InternalComponentRegistry.h"
+#include "mc/world/level/levelgen/structure/DataLoadHelper.h"
 
-class StructureDataLoadHelper {
+class StructureDataLoadHelper : public ::DataLoadHelper {
 
 public:
     // prevent constructor by default

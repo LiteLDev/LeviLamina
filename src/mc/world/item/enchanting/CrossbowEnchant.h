@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/item/enchanting/Enchant.h"
 
-class CrossbowEnchant {
+class CrossbowEnchant : public ::Enchant {
 
 public:
     // prevent constructor by default
@@ -36,35 +36,10 @@ public:
      */
     virtual int getMaxCost(int) const;
     /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4();
-    /**
      * @vftbl 5
      * @symbol ?getMaxLevel\@CrossbowEnchant\@\@UEBAHXZ
      */
     virtual int getMaxLevel() const;
-    /**
-     * @vftbl 6
-     * @symbol __unk_vfn_6
-     */
-    virtual void __unk_vfn_6();
-    /**
-     * @vftbl 7
-     * @symbol __unk_vfn_7
-     */
-    virtual void __unk_vfn_7();
-    /**
-     * @vftbl 8
-     * @symbol __unk_vfn_8
-     */
-    virtual void __unk_vfn_8();
-    /**
-     * @vftbl 9
-     * @symbol __unk_vfn_9
-     */
-    virtual void __unk_vfn_9();
     /**
      * @vftbl 10
      * @symbol __unk_vfn_10

@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/debug/log/ContentLogEndPoint.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
 // clang-format on
 
-class ContentLogFileEndPoint {
+class ContentLogFileEndPoint : public ::ContentLogEndPoint {
 
 public:
     // prevent constructor by default

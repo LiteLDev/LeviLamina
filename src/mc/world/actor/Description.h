@@ -14,7 +14,7 @@ public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol ?getJsonName\@BehaviorTreeDescription\@\@UEBAPEBDXZ
+     * @symbol ?getJsonName\@NavigationFlyDescription\@\@UEBAPEBDXZ
      */
     virtual char const* getJsonName() const = 0;
     /**

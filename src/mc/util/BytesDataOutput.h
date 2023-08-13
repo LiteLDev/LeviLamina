@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BytesDataOutput {
+// auto generated inclusion list
+#include "mc/util/IDataOutput.h"
+
+class BytesDataOutput : public ::IDataOutput {
 
 public:
     // prevent constructor by default

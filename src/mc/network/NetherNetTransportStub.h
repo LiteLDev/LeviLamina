@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/network/INetherNetTransportInterface.h"
 #include "mc/network/IWebRTCSignalingInterface.h"
 
 // auto generated forward declare list
@@ -16,7 +17,7 @@ namespace NetherNet { struct NetworkID; }
 namespace NetherNet { struct SessionState; }
 // clang-format on
 
-class NetherNetTransportStub {
+class NetherNetTransportStub : public ::NetherNet::INetherNetTransportInterface {
 
 public:
     // prevent constructor by default

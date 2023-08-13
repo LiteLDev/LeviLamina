@@ -25,6 +25,6 @@ private:
      * @symbol
      * ?mTimeToResetWarning\@LowMemoryWatcher\@\@0V?$time_point\@Usteady_clock\@chrono\@std\@\@V?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@23\@\@chrono\@std\@\@A
      */
-    MCAPI static std::chrono::time_point<std::chrono::steady_clock> mTimeToResetWarning;
+    MCAPI static std::chrono::steady_clock::time_point mTimeToResetWarning;
     // NOLINTEND
 };

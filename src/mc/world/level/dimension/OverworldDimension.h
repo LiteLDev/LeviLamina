@@ -4,13 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/world/AutomaticID.h"
+#include "mc/world/level/dimension/Dimension.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace mce { class Color; }
 // clang-format on
 
-class OverworldDimension {
+class OverworldDimension : public ::Dimension {
 
 public:
     // prevent constructor by default

@@ -67,10 +67,6 @@ public:
      */
     MCAPI ItemStack();
     /**
-     * @symbol ??0ItemStack\@\@QEAA\@AEBVItem\@\@HHPEBVCompoundTag\@\@\@Z
-     */
-    MCAPI ItemStack(class Item const&, int, int, class CompoundTag const*);
-    /**
      * @symbol ??0ItemStack\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@HHPEBVCompoundTag\@\@\@Z
      */
     MCAPI ItemStack(std::string_view, int, int, class CompoundTag const*);
@@ -86,6 +82,10 @@ public:
      * @symbol ??0ItemStack\@\@QEAA\@AEBVBlockLegacy\@\@H\@Z
      */
     MCAPI ItemStack(class BlockLegacy const&, int);
+    /**
+     * @symbol ??0ItemStack\@\@QEAA\@AEBVItem\@\@HHPEBVCompoundTag\@\@\@Z
+     */
+    MCAPI ItemStack(class Item const&, int, int, class CompoundTag const*);
     /**
      * @symbol ?_assignNetIdVariant\@ItemStack\@\@QEBAXAEBV1\@\@Z
      */

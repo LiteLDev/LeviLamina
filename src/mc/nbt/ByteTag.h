@@ -61,12 +61,12 @@ public:
     MCVAPI ~ByteTag();
 #endif
     /**
-     * @symbol ??0ByteTag\@\@QEAA\@XZ
-     */
-    MCAPI ByteTag();
-    /**
      * @symbol ??0ByteTag\@\@QEAA\@E\@Z
      */
     MCAPI ByteTag(unsigned char);
+    /**
+     * @symbol ??0ByteTag\@\@QEAA\@XZ
+     */
+    MCAPI ByteTag();
     // NOLINTEND
 };

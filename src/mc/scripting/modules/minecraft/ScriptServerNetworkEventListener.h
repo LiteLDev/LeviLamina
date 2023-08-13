@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ServerNetworkEventListener;
 enum class EventResult;
 namespace ScriptModuleMinecraft { class IScriptAfterEvents; }
 namespace Scripting { class WeakLifetimeScope; }
@@ -36,7 +35,7 @@ public:
     /**
      * @vftbl 1
      * @symbol
-     * ?onEvent\@?$EventListenerDispatcher\@VServerNetworkEventListener\@\@\@\@MEAA?AW4EventResult\@\@AEBUServerNetworkGameplayNotificationEvent\@\@\@Z
+     * ?onEvent\@ServerNetworkEventListener\@\@UEAA?AW4EventResult\@\@AEBUServerNetworkGameplayNotificationEvent\@\@\@Z
      */
     virtual enum class EventResult onEvent(struct ServerNetworkGameplayNotificationEvent const&);
     /**

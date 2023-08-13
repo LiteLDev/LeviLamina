@@ -16,52 +16,53 @@ public:
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0() = 0;
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?nextInt\@DelegatingRandom\@NoiseUtils\@\@UEAAHXZ
      */
-    virtual void __unk_vfn_1() = 0;
+    virtual int nextInt() = 0;
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?nextInt\@DelegatingRandom\@NoiseUtils\@\@UEAAHH\@Z
      */
-    virtual void __unk_vfn_2() = 0;
+    virtual int nextInt(int) = 0;
     /**
      * @vftbl 3
-     * @symbol __unk_vfn_3
+     * @symbol ?nextLong\@DelegatingRandom\@NoiseUtils\@\@UEAA_JXZ
      */
-    virtual void __unk_vfn_3() = 0;
+    virtual int64_t nextLong() = 0;
     /**
      * @vftbl 4
-     * @symbol __unk_vfn_4
+     * @symbol ?nextBoolean\@DelegatingRandom\@NoiseUtils\@\@UEAA_NXZ
      */
-    virtual void __unk_vfn_4() = 0;
+    virtual bool nextBoolean() = 0;
     /**
      * @vftbl 5
-     * @symbol __unk_vfn_5
+     * @symbol ?nextFloat\@DoublesForFloatsRandom\@NoiseUtils\@\@UEAAMXZ
      */
-    virtual void __unk_vfn_5() = 0;
+    virtual float nextFloat() = 0;
     /**
      * @vftbl 6
-     * @symbol __unk_vfn_6
+     * @symbol ?nextDouble\@DelegatingRandom\@NoiseUtils\@\@UEAANXZ
      */
-    virtual void __unk_vfn_6() = 0;
+    virtual double nextDouble() = 0;
     /**
      * @vftbl 7
-     * @symbol __unk_vfn_7
+     * @symbol ?nextGaussianDouble\@XoroshiroRandom\@\@UEAANXZ
      */
-    virtual void __unk_vfn_7() = 0;
+    virtual double nextGaussianDouble() = 0;
     /**
      * @vftbl 8
-     * @symbol __unk_vfn_8
+     * @symbol ?consumeCount\@DelegatingRandom\@NoiseUtils\@\@UEAAXI\@Z
      */
-    virtual void __unk_vfn_8() = 0;
+    virtual void consumeCount(unsigned int) = 0;
     /**
      * @vftbl 9
-     * @symbol __unk_vfn_9
+     * @symbol
+     * ?fork\@DelegatingRandom\@NoiseUtils\@\@UEAA?AV?$unique_ptr\@VIRandom\@\@U?$default_delete\@VIRandom\@\@\@std\@\@\@std\@\@XZ
      */
-    virtual void __unk_vfn_9();
+    virtual std::unique_ptr<class IRandom> fork() = 0;
     /**
      * @vftbl 10
      * @symbol

@@ -4,13 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/network/PacketObserver.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace RakNet { struct RakNetStatistics; }
 // clang-format on
 
-class NetworkStatistics {
+class NetworkStatistics : public ::PacketObserver {
 
 public:
     // prevent constructor by default

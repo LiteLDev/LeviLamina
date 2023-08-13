@@ -2,13 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
 namespace Json { class Value; }
 // clang-format on
 
-class ActorDefinitionGroup {
+class ActorDefinitionGroup : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // ActorDefinitionGroup inner types declare
     // clang-format off

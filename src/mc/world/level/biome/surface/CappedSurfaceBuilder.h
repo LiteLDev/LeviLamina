@@ -15,7 +15,7 @@ class Pos;
 
 namespace VanillaSurfaceBuilders {
 
-class CappedSurfaceBuilder {
+class CappedSurfaceBuilder : public ::ISurfaceBuilder {
 public:
     // CappedSurfaceBuilder inner types declare
     // clang-format off

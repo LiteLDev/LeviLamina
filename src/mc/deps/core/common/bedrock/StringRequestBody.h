@@ -2,9 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/BinaryRequestBody.h"
+
 namespace Bedrock::Http {
 
-class StringRequestBody {
+class StringRequestBody : public ::Bedrock::Http::BinaryRequestBody {
 
 public:
     // prevent constructor by default

@@ -45,9 +45,9 @@ public:
         virtual void __unk_vfn_0();
         /**
          * @vftbl 1
-         * @symbol __unk_vfn_1
+         * @symbol ?onLevelTickEnd\@ScriptDeferredEventListener\@\@UEAAXXZ
          */
-        virtual void __unk_vfn_1();
+        virtual void onLevelTickEnd();
         /**
          * @vftbl 2
          * @symbol __unk_vfn_2
@@ -64,6 +64,18 @@ public:
          * ?onFlushSystemAfterEvents\@ScriptSystemAfterEventsDeferredEventListener\@ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@UEAA_NXZ
          */
         virtual bool onFlushSystemAfterEvents();
+        /**
+         * @vftbl 5
+         * @symbol
+         * ?onPreFlushAfterEvents\@?$IScriptScriptDeferredEventListener\@VScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@\@ScriptModuleMinecraft\@\@UEAAXXZ
+         */
+        virtual void onPreFlushAfterEvents();
+        /**
+         * @vftbl 6
+         * @symbol
+         * ?onPostFlushAfterEvents\@?$IScriptScriptDeferredEventListener\@VScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@\@ScriptModuleMinecraft\@\@UEAAXXZ
+         */
+        virtual void onPostFlushAfterEvents();
         // NOLINTEND
     };
 
@@ -76,14 +88,14 @@ public:
 public:
     // NOLINTBEGIN
     /**
+     * @symbol ??0ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@QEAA\@$$QEAV01\@\@Z
+     */
+    MCAPI ScriptSystemAfterEvents(class ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
+    /**
      * @symbol
      * ??0ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@QEAA\@AEBVWeakLifetimeScope\@Scripting\@\@V?$not_null\@PEAVServerLevel\@\@\@gsl\@\@\@Z
      */
     MCAPI ScriptSystemAfterEvents(class Scripting::WeakLifetimeScope const&, class gsl::not_null<class ServerLevel*>);
-    /**
-     * @symbol ??0ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@QEAA\@$$QEAV01\@\@Z
-     */
-    MCAPI ScriptSystemAfterEvents(class ScriptModuleMinecraft::ScriptSystemAfterEvents&&);
     /**
      * @symbol ?getScriptTickSignal\@ScriptSystemAfterEvents\@ScriptModuleMinecraft\@\@QEAAAEAVScriptTickSignal\@2\@XZ
      */

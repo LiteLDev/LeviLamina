@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class GrowCropSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class GrowCropSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

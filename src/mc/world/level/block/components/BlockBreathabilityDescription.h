@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/json/JsonSchemaObjectNode.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace JsonUtil { class EmptyClass; }
+// clang-format on
+
 struct BlockBreathabilityDescription {
 
 public:
@@ -23,26 +31,6 @@ public:
      * ?getName\@BlockBreathabilityDescription\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
     virtual std::string const& getName() const;
-    /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4();
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
-    virtual void __unk_vfn_5();
     /**
      * @vftbl 6
      * @symbol ?isNetworkComponent\@BlockBreathabilityDescription\@\@UEBA_NXZ

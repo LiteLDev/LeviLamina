@@ -96,10 +96,6 @@ public:
     MCVAPI ~FileStdStreamBuf();
 #endif
     /**
-     * @symbol ??0FileStdStreamBuf\@Core\@\@QEAA\@_K\@Z
-     */
-    MCAPI FileStdStreamBuf(uint64_t);
-    /**
      * @symbol ?close\@FileStdStreamBuf\@Core\@\@QEAAXXZ
      */
     MCAPI void close();

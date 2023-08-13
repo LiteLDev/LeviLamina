@@ -9,7 +9,6 @@
 // clang-format off
 class Actor;
 class Level;
-class LevelEventListener;
 class Player;
 enum class EventResult;
 namespace ScriptModuleMinecraft { class IScriptAfterEvents; }

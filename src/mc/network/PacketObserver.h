@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class PacketObserver {
+// auto generated inclusion list
+#include "mc/network/IPacketObserver.h"
+
+class PacketObserver : public ::IPacketObserver {
 public:
     // PacketObserver inner types declare
     // clang-format off
@@ -52,30 +55,22 @@ public:
     virtual void packetReceivedFrom(class NetworkIdentifier const&, class Packet const&, unsigned int);
     /**
      * @vftbl 3
-     * @symbol __unk_vfn_3
+     * @symbol
+     * ?dataSentTo\@PacketObserver\@\@UEAAXAEBVNetworkIdentifier\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    virtual void __unk_vfn_3();
+    virtual void dataSentTo(class NetworkIdentifier const&, std::string_view);
     /**
      * @vftbl 4
-     * @symbol __unk_vfn_4
+     * @symbol
+     * ?dataReceivedFrom\@PacketObserver\@\@UEAAXAEBVNetworkIdentifier\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void __unk_vfn_4();
+    virtual void dataReceivedFrom(class NetworkIdentifier const&, std::string const&);
     /**
      * @vftbl 5
      * @symbol ?reset\@PacketObserver\@\@UEAAXXZ
      */
     virtual void reset();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKETOBSERVER
-    /**
-     * @symbol
-     * ?dataReceivedFrom\@PacketObserver\@\@UEAAXAEBVNetworkIdentifier\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCVAPI void dataReceivedFrom(class NetworkIdentifier const&, std::string const&);
-    /**
-     * @symbol
-     * ?dataSentTo\@PacketObserver\@\@UEAAXAEBVNetworkIdentifier\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
-     */
-    MCVAPI void dataSentTo(class NetworkIdentifier const&, std::string_view);
     /**
      * @symbol __unk_destructor_-1
      */

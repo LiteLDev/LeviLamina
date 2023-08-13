@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BoostableSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class BoostableSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

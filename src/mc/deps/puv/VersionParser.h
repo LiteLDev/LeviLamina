@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/puv/ParserBase.h"
+
 // auto generated forward declare list
 // clang-format off
 class SemVersion;
@@ -9,7 +12,7 @@ class SemVersion;
 
 namespace Puv {
 
-class VersionParser {
+class VersionParser : public ::Puv::ParserBase {
 
 public:
     // prevent constructor by default

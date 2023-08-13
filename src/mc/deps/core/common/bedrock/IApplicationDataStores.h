@@ -2,9 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+
 namespace Bedrock {
 
-class IApplicationDataStores {
+class IApplicationDataStores : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // IApplicationDataStores inner types define
     enum class DataStores {};

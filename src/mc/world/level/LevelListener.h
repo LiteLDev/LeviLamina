@@ -40,6 +40,107 @@ public:
      * @symbol __unk_vfn_4
      */
     virtual void __unk_vfn_4();
+    /**
+     * @vftbl 6
+     * @symbol __unk_vfn_6
+     */
+    virtual void __unk_vfn_6();
+    /**
+     * @vftbl 7
+     * @symbol __unk_vfn_7
+     */
+    virtual void __unk_vfn_7();
+    /**
+     * @vftbl 8
+     * @symbol __unk_vfn_8
+     */
+    virtual void __unk_vfn_8();
+    /**
+     * @vftbl 9
+     * @symbol __unk_vfn_9
+     */
+    virtual void __unk_vfn_9();
+    /**
+     * @vftbl 10
+     * @symbol __unk_vfn_10
+     */
+    virtual void __unk_vfn_10();
+    /**
+     * @vftbl 11
+     * @symbol __unk_vfn_11
+     */
+    virtual void __unk_vfn_11();
+    /**
+     * @vftbl 12
+     * @symbol __unk_vfn_12
+     */
+    virtual void __unk_vfn_12();
+    /**
+     * @vftbl 13
+     * @symbol __unk_vfn_13
+     */
+    virtual void __unk_vfn_13();
+    /**
+     * @vftbl 14
+     * @symbol __unk_vfn_14
+     */
+    virtual void __unk_vfn_14();
+    /**
+     * @vftbl 15
+     * @symbol __unk_vfn_15
+     */
+    virtual void __unk_vfn_15();
+    /**
+     * @vftbl 16
+     * @symbol __unk_vfn_16
+     */
+    virtual void __unk_vfn_16();
+    /**
+     * @vftbl 17
+     * @symbol __unk_vfn_17
+     */
+    virtual void __unk_vfn_17();
+    /**
+     * @vftbl 18
+     * @symbol __unk_vfn_18
+     */
+    virtual void __unk_vfn_18();
+    /**
+     * @vftbl 19
+     * @symbol ?onChunkLoaded\@LevelListener\@\@UEAAXAEAVChunkSource\@\@AEAVLevelChunk\@\@\@Z
+     */
+    virtual void onChunkLoaded(class ChunkSource&, class LevelChunk&);
+    /**
+     * @vftbl 20
+     * @symbol __unk_vfn_20
+     */
+    virtual void __unk_vfn_20();
+    /**
+     * @vftbl 21
+     * @symbol __unk_vfn_21
+     */
+    virtual void __unk_vfn_21();
+    /**
+     * @vftbl 22
+     * @symbol ?onChunkUnloaded\@LevelListener\@\@UEAAXAEAVLevelChunk\@\@\@Z
+     */
+    virtual void onChunkUnloaded(class LevelChunk&);
+    /**
+     * @vftbl 23
+     * @symbol
+     * ?onLevelDestruction\@LevelListener\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    virtual void onLevelDestruction(std::string const&);
+    /**
+     * @vftbl 24
+     * @symbol __unk_vfn_24
+     */
+    virtual void __unk_vfn_24();
+    /**
+     * @vftbl 25
+     * @symbol ?levelEvent\@LevelListener\@\@UEAAXW4LevelEvent\@\@AEBVVec3\@\@H\@Z
+     */
+    virtual void levelEvent(enum class LevelEvent, class Vec3 const&, int);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LEVELLISTENER
     /**
      * @symbol
@@ -72,21 +173,9 @@ public:
      */
     MCVAPI void levelEvent(enum class LevelEvent, class CompoundTag const&);
     /**
-     * @symbol ?levelEvent\@LevelListener\@\@UEAAXW4LevelEvent\@\@AEBVVec3\@\@H\@Z
-     */
-    MCVAPI void levelEvent(enum class LevelEvent, class Vec3 const&, int);
-    /**
-     * @symbol ?onChunkLoaded\@LevelListener\@\@UEAAXAEAVChunkSource\@\@AEAVLevelChunk\@\@\@Z
-     */
-    MCVAPI void onChunkLoaded(class ChunkSource&, class LevelChunk&);
-    /**
      * @symbol ?onChunkReloaded\@LevelListener\@\@UEAAXAEAVChunkSource\@\@AEAVLevelChunk\@\@\@Z
      */
     MCVAPI void onChunkReloaded(class ChunkSource&, class LevelChunk&);
-    /**
-     * @symbol ?onChunkUnloaded\@LevelListener\@\@UEAAXAEAVLevelChunk\@\@\@Z
-     */
-    MCVAPI void onChunkUnloaded(class LevelChunk&);
     /**
      * @symbol ?onEntityAdded\@LevelListener\@\@UEAAXAEAVActor\@\@\@Z
      */
@@ -95,11 +184,6 @@ public:
      * @symbol ?onEntityRemoved\@LevelListener\@\@UEAAXAEAVActor\@\@\@Z
      */
     MCVAPI void onEntityRemoved(class Actor&);
-    /**
-     * @symbol
-     * ?onLevelDestruction\@LevelListener\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCVAPI void onLevelDestruction(std::string const&);
     /**
      * @symbol ?onSubChunkLoaded\@LevelListener\@\@UEAAXAEAVChunkSource\@\@AEAVLevelChunk\@\@F_N\@Z
      */

@@ -16,10 +16,6 @@ public:
     // protected:
     // NOLINTBEGIN
     /**
-     * @symbol ??0WeakStorageFeature\@\@IEAA\@W4EmptyInit\@0\@\@Z
-     */
-    MCAPI WeakStorageFeature(enum class WeakStorageFeature::EmptyInit);
-    /**
      * @symbol ??0WeakStorageFeature\@\@IEAA\@$$QEAV0\@\@Z
      */
     MCAPI WeakStorageFeature(class WeakStorageFeature&&);
@@ -27,6 +23,10 @@ public:
      * @symbol ??0WeakStorageFeature\@\@IEAA\@AEBVOwnerStorageFeature\@\@\@Z
      */
     MCAPI WeakStorageFeature(class OwnerStorageFeature const&);
+    /**
+     * @symbol ??0WeakStorageFeature\@\@IEAA\@W4EmptyInit\@0\@\@Z
+     */
+    MCAPI WeakStorageFeature(enum class WeakStorageFeature::EmptyInit);
     /**
      * @symbol ?_isSet\@WeakStorageFeature\@\@IEBA_NXZ
      */

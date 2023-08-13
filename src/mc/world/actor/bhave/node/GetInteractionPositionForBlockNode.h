@@ -4,8 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/world/Facing.h"
+#include "mc/world/actor/bhave/node/BehaviorNode.h"
 
-class GetInteractionPositionForBlockNode {
+class GetInteractionPositionForBlockNode : public ::BehaviorNode {
 
 public:
     // prevent constructor by default

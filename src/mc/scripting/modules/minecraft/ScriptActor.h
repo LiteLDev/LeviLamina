@@ -115,13 +115,13 @@ public:
     MCVAPI ~ScriptActor();
 #endif
     /**
-     * @symbol ??0ScriptActor\@ScriptModuleMinecraft\@\@QEAA\@$$QEAV01\@\@Z
-     */
-    MCAPI ScriptActor(class ScriptModuleMinecraft::ScriptActor&&);
-    /**
      * @symbol ??0ScriptActor\@ScriptModuleMinecraft\@\@QEAA\@AEBVActor\@\@AEBVWeakLifetimeScope\@Scripting\@\@\@Z
      */
     MCAPI ScriptActor(class Actor const&, class Scripting::WeakLifetimeScope const&);
+    /**
+     * @symbol ??0ScriptActor\@ScriptModuleMinecraft\@\@QEAA\@$$QEAV01\@\@Z
+     */
+    MCAPI ScriptActor(class ScriptModuleMinecraft::ScriptActor&&);
     /**
      * @symbol
      * ?addEffect\@ScriptActor\@ScriptModuleMinecraft\@\@QEAA?AV?$Result\@X\@Scripting\@\@AEAVActor\@\@AEBV?$variant\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$StrongTypedObjectHandle\@VScriptEffectType\@ScriptModuleMinecraft\@\@\@Scripting\@\@\@std\@\@HAEBV?$optional\@UScriptEntityEffectOptions\@ScriptModuleMinecraft\@\@\@7\@\@Z

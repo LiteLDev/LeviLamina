@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/config/IPlayerData.h"
+
 // auto generated forward declare list
 // clang-format off
 class Player;
@@ -10,7 +13,7 @@ enum class AbilitiesIndex;
 
 namespace PlayerCapabilities {
 
-class PlayerData {
+class PlayerData : public ::PlayerCapabilities::IPlayerData {
 
 public:
     // prevent constructor by default

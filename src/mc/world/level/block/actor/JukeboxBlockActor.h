@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class JukeboxBlockActor {
+// auto generated inclusion list
+#include "mc/world/level/block/actor/RandomizableBlockActorContainer.h"
+
+class JukeboxBlockActor : public ::RandomizableBlockActorContainer {
 
 public:
     // prevent constructor by default

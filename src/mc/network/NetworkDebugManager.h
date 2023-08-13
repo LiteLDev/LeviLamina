@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class NetworkDebugManager {
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+
+class NetworkDebugManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // NetworkDebugManager inner types declare
     // clang-format off

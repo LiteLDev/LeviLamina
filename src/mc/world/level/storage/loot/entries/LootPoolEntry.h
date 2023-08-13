@@ -17,6 +17,12 @@ public:
 
 public:
     // NOLINTBEGIN
+    /**
+     * @vftbl 0
+     * @symbol
+     * ?_createItem\@LootTableEntry\@\@MEAA_NAEAV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@AEAVRandom\@\@AEAVLootTableContext\@\@\@Z
+     */
+    virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&) = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_LOOTPOOLENTRY
     /**
      * @symbol __unk_destructor_-1

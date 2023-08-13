@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/certificates/KeyManager.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Crypto::Asymmetric { enum class System; }
 // clang-format on
 
-class PrivateKeyManager {
+class PrivateKeyManager : public ::KeyManager {
 
 public:
     // prevent constructor by default

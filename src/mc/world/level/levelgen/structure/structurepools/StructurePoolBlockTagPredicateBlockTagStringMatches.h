@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class StructurePoolBlockTagPredicateBlockTagStringMatches {
+// auto generated inclusion list
+#include "mc/world/level/levelgen/structure/structurepools/IStructurePoolBlockTagPredicate.h"
+
+class StructurePoolBlockTagPredicateBlockTagStringMatches : public ::IStructurePoolBlockTagPredicate {
 
 public:
     // prevent constructor by default

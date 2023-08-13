@@ -20,15 +20,15 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0ResourceInformation\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI ResourceInformation(class ResourceInformation const&);
-    /**
      * @symbol
      * ??0ResourceInformation\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVSemVersion\@\@AEBVUUID\@mce\@\@W4ResourceType\@0\@00\@Z
      */
     MCAPI
     ResourceInformation(std::string const&, class SemVersion const&, class mce::UUID const&, enum class ResourceInformation::ResourceType, std::string const&, std::string const&);
+    /**
+     * @symbol ??0ResourceInformation\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI ResourceInformation(class ResourceInformation const&);
     /**
      * @symbol
      * ??0ResourceInformation\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVSemVersion\@\@AEBVUUID\@mce\@\@000\@Z

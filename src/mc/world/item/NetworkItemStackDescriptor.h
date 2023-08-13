@@ -33,10 +33,6 @@ public:
     MCVAPI ~NetworkItemStackDescriptor();
 #endif
     /**
-     * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@AEBVItemStack\@\@\@Z
-     */
-    MCAPI NetworkItemStackDescriptor(class ItemStack const&);
-    /**
      * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor const&);
@@ -44,6 +40,10 @@ public:
      * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@AEBVItemStackDescriptor\@\@\@Z
      */
     MCAPI NetworkItemStackDescriptor(class ItemStackDescriptor const&);
+    /**
+     * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@AEBVItemStack\@\@\@Z
+     */
+    MCAPI NetworkItemStackDescriptor(class ItemStack const&);
     /**
      * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@$$QEAV0\@\@Z
      */

@@ -28,15 +28,15 @@ public:
      */
     MCAPI ScriptPistonActionAfterEvent(struct PistonActionEvent const&, class Scripting::WeakLifetimeScope const&);
     /**
-     * @symbol ??4ScriptPistonActionAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
-     */
-    MCAPI struct ScriptModuleMinecraft::ScriptPistonActionAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptPistonActionAfterEvent const&);
-    /**
      * @symbol ??4ScriptPistonActionAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptPistonActionAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptPistonActionAfterEvent&&);
+    /**
+     * @symbol ??4ScriptPistonActionAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
+     */
+    MCAPI struct ScriptModuleMinecraft::ScriptPistonActionAfterEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptPistonActionAfterEvent const&);
     /**
      * @symbol ??1ScriptPistonActionAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */

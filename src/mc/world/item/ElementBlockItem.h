@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/item/AuxDataBlockItem.h"
+#include "mc/world/item/ChemistryAuxDataBlockItem.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -11,7 +11,7 @@ namespace Json { class Value; }
 namespace mce { class Color; }
 // clang-format on
 
-class ElementBlockItem : public ::AuxDataBlockItem {
+class ElementBlockItem : public ::ChemistryAuxDataBlockItem {
 
 public:
     // prevent constructor by default

@@ -26,13 +26,13 @@ public:
     MCVAPI ~NpcComponent();
 #endif
     /**
-     * @symbol ??0NpcComponent\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI NpcComponent(class NpcComponent&&);
-    /**
      * @symbol ??0NpcComponent\@\@QEAA\@XZ
      */
     MCAPI NpcComponent();
+    /**
+     * @symbol ??0NpcComponent\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI NpcComponent(class NpcComponent&&);
     /**
      * @symbol ?addAdditionalSaveData\@NpcComponent\@\@QEBAXAEAVCompoundTag\@\@AEBVActor\@\@\@Z
      */

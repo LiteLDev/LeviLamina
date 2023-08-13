@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class RailActivatorSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class RailActivatorSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

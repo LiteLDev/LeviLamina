@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cereal/Constraint.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { class SerializerContext; }
@@ -9,7 +12,7 @@ namespace cereal { class SerializerContext; }
 
 namespace cereal {
 
-class NumericConstraint {
+class NumericConstraint : public ::cereal::Constraint {
 
 public:
     // prevent constructor by default

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BarrelBlockActor {
+// auto generated inclusion list
+#include "mc/world/level/block/actor/ChestBlockActor.h"
+
+class BarrelBlockActor : public ::ChestBlockActor {
 
 public:
     // prevent constructor by default

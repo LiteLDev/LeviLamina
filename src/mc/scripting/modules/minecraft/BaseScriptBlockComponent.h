@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
+#include "mc/scripting/modules/minecraft/ScriptComponent.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,7 +18,7 @@ namespace Scripting { class WeakLifetimeScope; }
 
 namespace ScriptModuleMinecraft {
 
-class BaseScriptBlockComponent {
+class BaseScriptBlockComponent : public ::ScriptModuleMinecraft::ScriptComponent {
 
 public:
     // prevent constructor by default

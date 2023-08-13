@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class FitDoubleXRoom {
+// auto generated inclusion list
+#include "mc/world/level/levelgen/structure/MonumentRoomFitter.h"
+
+class FitDoubleXRoom : public ::MonumentRoomFitter {
 
 public:
     // prevent constructor by default

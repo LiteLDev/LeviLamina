@@ -4,8 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/world/AutomaticID.h"
+#include "mc/world/level/dimension/Dimension.h"
 
-class TheEndDimension {
+class TheEndDimension : public ::Dimension {
 
 public:
     // prevent constructor by default

@@ -114,13 +114,13 @@ public:
     /**
      * @vftbl 13
      * @symbol
-     * ?_tryGetContainer\@ScriptPlayerInventoryComponentContainer\@ScriptModuleMinecraft\@\@MEBAPEAVContainer\@\@XZ
+     * ?_tryGetContainer\@ScriptBlockInventoryComponentContainer\@ScriptModuleMinecraft\@\@MEBAPEAVContainer\@\@XZ
      */
     virtual class Container* _tryGetContainer() const = 0;
     /**
      * @vftbl 14
      * @symbol
-     * ?_getItemContext\@ScriptPlayerInventoryComponentContainer\@ScriptModuleMinecraft\@\@MEBA?AVItemContext\@\@H\@Z
+     * ?_getItemContext\@ScriptBlockInventoryComponentContainer\@ScriptModuleMinecraft\@\@MEBA?AVItemContext\@\@H\@Z
      */
     virtual class ItemContext _getItemContext(int) const = 0;
     /**

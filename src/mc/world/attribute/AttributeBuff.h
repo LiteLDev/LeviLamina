@@ -19,12 +19,12 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?isInstantaneous\@InstantaneousAttributeBuff\@\@UEBA_NXZ
+     * @symbol ?isInstantaneous\@TemporalAttributeBuff\@\@UEBA_NXZ
      */
     virtual bool isInstantaneous() const = 0;
     /**
      * @vftbl 2
-     * @symbol ?isSerializable\@InstantaneousAttributeBuff\@\@UEBA_NXZ
+     * @symbol ?isSerializable\@TemporalAttributeBuff\@\@UEBA_NXZ
      */
     virtual bool isSerializable() const = 0;
     /**

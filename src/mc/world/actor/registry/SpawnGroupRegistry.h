@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/ActorSpawnRuleBase.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
 // clang-format on
 
-class SpawnGroupRegistry {
+class SpawnGroupRegistry : public ::ActorSpawnRuleBase {
 
 public:
     // prevent constructor by default

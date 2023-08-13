@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class SelectorBehaviorNode {
+// auto generated inclusion list
+#include "mc/world/actor/bhave/node/BehaviorNode.h"
+
+class SelectorBehaviorNode : public ::BehaviorNode {
 
 public:
     // prevent constructor by default

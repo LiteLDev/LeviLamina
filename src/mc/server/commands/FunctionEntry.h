@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class FunctionEntry {
+// auto generated inclusion list
+#include "mc/server/commands/functions/IFunctionEntry.h"
+
+class FunctionEntry : public ::IFunctionEntry {
 
 public:
     // prevent constructor by default

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/json/Writer.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
@@ -9,7 +12,7 @@ namespace Json { class Value; }
 
 namespace Json {
 
-class StyledWriter {
+class StyledWriter : public ::Json::Writer {
 
 public:
     // prevent constructor by default

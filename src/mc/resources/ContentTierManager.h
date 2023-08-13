@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ContentTierManager {
+// auto generated inclusion list
+#include "mc/server/IContentTierManager.h"
+
+class ContentTierManager : public ::IContentTierManager {
 
 public:
     // prevent constructor by default

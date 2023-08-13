@@ -49,12 +49,12 @@ public:
     MCVAPI ~SetCommandsEnabledPacket();
 #endif
     /**
-     * @symbol ??0SetCommandsEnabledPacket\@\@QEAA\@XZ
-     */
-    MCAPI SetCommandsEnabledPacket();
-    /**
      * @symbol ??0SetCommandsEnabledPacket\@\@QEAA\@_N\@Z
      */
     MCAPI SetCommandsEnabledPacket(bool);
+    /**
+     * @symbol ??0SetCommandsEnabledPacket\@\@QEAA\@XZ
+     */
+    MCAPI SetCommandsEnabledPacket();
     // NOLINTEND
 };

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ActorMotionSyncSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class ActorMotionSyncSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

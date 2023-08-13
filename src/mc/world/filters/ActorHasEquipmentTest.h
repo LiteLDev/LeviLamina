@@ -10,7 +10,7 @@
 namespace Json { class Value; }
 // clang-format on
 
-class ActorHasEquipmentTest {
+class ActorHasEquipmentTest : public ::FilterTest {
 
 public:
     // prevent constructor by default
@@ -35,11 +35,6 @@ public:
      * @symbol ?evaluate\@ActorHasEquipmentTest\@\@UEBA_NAEBUFilterContext\@\@\@Z
      */
     virtual bool evaluate(struct FilterContext const&) const;
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol ?getName\@ActorHasEquipmentTest\@\@UEBA?AV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@XZ

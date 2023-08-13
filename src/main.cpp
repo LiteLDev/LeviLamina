@@ -1,3 +1,3 @@
-#include "include_all.h"
-
-int main() { return 0; }
+#include "include_all.h"
+
+int main() { return 0; }

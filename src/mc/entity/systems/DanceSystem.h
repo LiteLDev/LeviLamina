@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class DanceSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class DanceSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

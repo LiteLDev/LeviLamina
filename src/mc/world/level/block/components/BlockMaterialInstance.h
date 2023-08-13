@@ -15,13 +15,13 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??4BlockMaterialInstance\@\@QEAAAEAU0\@$$QEAU0\@\@Z
-     */
-    MCAPI struct BlockMaterialInstance& operator=(struct BlockMaterialInstance&&);
-    /**
      * @symbol ??4BlockMaterialInstance\@\@QEAAAEAU0\@AEBU0\@\@Z
      */
     MCAPI struct BlockMaterialInstance& operator=(struct BlockMaterialInstance const&);
+    /**
+     * @symbol ??4BlockMaterialInstance\@\@QEAAAEAU0\@$$QEAU0\@\@Z
+     */
+    MCAPI struct BlockMaterialInstance& operator=(struct BlockMaterialInstance&&);
     /**
      * @symbol ??1BlockMaterialInstance\@\@QEAA\@XZ
      */

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/resources/interface/IWorldTemplateManager.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +13,7 @@ namespace Core { class FilePathManager; }
 namespace mce { class UUID; }
 // clang-format on
 
-class WorldTemplateManager {
+class WorldTemplateManager : public ::IWorldTemplateManager {
 
 public:
     // prevent constructor by default

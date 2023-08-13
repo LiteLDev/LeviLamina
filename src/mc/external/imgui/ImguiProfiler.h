@@ -14,7 +14,17 @@ public:
     // clang-format on
 
     // ImguiProfiler inner types define
-    class ManualTimer {
+
+    class Timer {
+
+    public:
+        // prevent constructor by default
+        Timer& operator=(Timer const&) = delete;
+        Timer(Timer const&)            = delete;
+        Timer()                        = delete;
+    };
+
+    class ManualTimer : public ::ImguiProfiler::Timer {
 
     public:
         // prevent constructor by default
@@ -125,7 +135,7 @@ public:
         // NOLINTEND
     };
 
-    class ScopedTimer {
+    class ScopedTimer : public ::ImguiProfiler::Timer {
 
     public:
         // prevent constructor by default
@@ -146,15 +156,6 @@ public:
          */
         MCAPI ScopedTimer(char const*, char const*, bool);
         // NOLINTEND
-    };
-
-    class Timer {
-
-    public:
-        // prevent constructor by default
-        Timer& operator=(Timer const&) = delete;
-        Timer(Timer const&)            = delete;
-        Timer()                        = delete;
     };
 
 public:

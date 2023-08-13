@@ -33,13 +33,13 @@ public:
      */
     MCAPI static bool applyEnchant(class ItemStackBase&, enum class Enchant::Type, int, bool);
     /**
-     * @symbol ?canEnchant\@EnchantUtils\@\@SA?AUEnchantResult\@\@AEBVItemStackBase\@\@W4Type\@Enchant\@\@H_N\@Z
-     */
-    MCAPI static struct EnchantResult canEnchant(class ItemStackBase const&, enum class Enchant::Type, int, bool);
-    /**
      * @symbol ?canEnchant\@EnchantUtils\@\@SA?AUEnchantResult\@\@AEBVItemStackBase\@\@AEBVEnchantmentInstance\@\@_N\@Z
      */
     MCAPI static struct EnchantResult canEnchant(class ItemStackBase const&, class EnchantmentInstance const&, bool);
+    /**
+     * @symbol ?canEnchant\@EnchantUtils\@\@SA?AUEnchantResult\@\@AEBVItemStackBase\@\@W4Type\@Enchant\@\@H_N\@Z
+     */
+    MCAPI static struct EnchantResult canEnchant(class ItemStackBase const&, enum class Enchant::Type, int, bool);
     /**
      * @symbol ?combineEnchantedItems\@EnchantUtils\@\@SAHAEBVItemStack\@\@0AEAV2\@_N\@Z
      */
@@ -151,13 +151,13 @@ public:
      */
     MCAPI static bool isCurse(enum class Enchant::Type);
     /**
-     * @symbol ?randomlyEnchant\@EnchantUtils\@\@SAXAEAVItemStack\@\@HH_N\@Z
-     */
-    MCAPI static void randomlyEnchant(class ItemStack&, int, int, bool);
-    /**
      * @symbol ?randomlyEnchant\@EnchantUtils\@\@SAXAEAVItemInstance\@\@HH_N\@Z
      */
     MCAPI static void randomlyEnchant(class ItemInstance&, int, int, bool);
+    /**
+     * @symbol ?randomlyEnchant\@EnchantUtils\@\@SAXAEAVItemStack\@\@HH_N\@Z
+     */
+    MCAPI static void randomlyEnchant(class ItemStack&, int, int, bool);
     /**
      * @symbol ?removeEnchants\@EnchantUtils\@\@SAXAEAVItemStack\@\@\@Z
      */

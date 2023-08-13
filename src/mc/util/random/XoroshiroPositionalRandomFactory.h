@@ -4,13 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/ThreadLocalObject.h"
+#include "mc/math/IPositionalRandomFactory.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Crypto::Hash { class md5; }
 // clang-format on
 
-class XoroshiroPositionalRandomFactory {
+class XoroshiroPositionalRandomFactory : public ::IPositionalRandomFactory {
 
 public:
     // prevent constructor by default

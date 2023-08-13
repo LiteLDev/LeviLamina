@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/json/JsonSchemaObjectNode.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace JsonUtil { class EmptyClass; }
+// clang-format on
+
 struct BlockGeometryDescription {
 
 public:
@@ -24,14 +32,14 @@ public:
     virtual std::string const& getName() const;
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
      * @symbol ?initializeComponent\@BlockGeometryDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
     virtual void initializeComponent(class EntityContext&) const;
+    /**
+     * @vftbl 3
+     * @symbol ?initializeComponent\@BlockComponentDescription\@\@UEBAXAEAVBlockComponentStorage\@\@\@Z
+     */
+    virtual void initializeComponent(class BlockComponentStorage&) const;
     /**
      * @vftbl 4
      * @symbol ?initializeComponentFromCode\@BlockGeometryDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
@@ -39,24 +47,26 @@ public:
     virtual void initializeComponentFromCode(class EntityContext&) const;
     /**
      * @vftbl 5
-     * @symbol __unk_vfn_5
+     * @symbol
+     * ?buildSchema\@BlockComponentDescription\@\@UEBAXAEAV?$shared_ptr\@V?$JsonSchemaObjectNode\@VEmptyClass\@JsonUtil\@\@UBlockComponentGroupDescription\@\@\@JsonUtil\@\@\@std\@\@AEBVBlockComponentFactory\@\@\@Z
      */
-    virtual void __unk_vfn_5();
+    virtual void
+    buildSchema(std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>>&, class BlockComponentFactory const&)
+        const;
     /**
      * @vftbl 6
-     * @symbol ?isNetworkComponent\@?$NetworkedBlockComponentDescription\@UBlockGeometryDescription\@\@\@\@UEBA_NXZ
+     * @symbol ?isNetworkComponent\@BlockCollisionBoxDescription\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
      * @vftbl 7
      * @symbol
-     * ?buildNetworkTag\@?$NetworkedBlockComponentDescription\@UBlockGeometryDescription\@\@\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
+     * ?buildNetworkTag\@BlockComponentDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
      * @vftbl 8
-     * @symbol
-     * ?initializeFromNetwork\@?$NetworkedBlockComponentDescription\@UBlockGeometryDescription\@\@\@\@UEAAXAEBVCompoundTag\@\@\@Z
+     * @symbol ?initializeFromNetwork\@BlockUnitCubeDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
      */
     virtual void initializeFromNetwork(class CompoundTag const&);
     /**

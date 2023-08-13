@@ -13,6 +13,7 @@ namespace cereal { struct ReflectionCtx; }
 namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
 namespace cereal { struct SerializerTraits; }
+namespace cereal::internal { class BasicSchema; }
 namespace cereal::internal { struct Result; }
 // clang-format on
 
@@ -28,6 +29,11 @@ public:
 
 public:
     // NOLINTBEGIN
+    /**
+     * @vftbl 4
+     * @symbol __unk_vfn_4
+     */
+    virtual void __unk_vfn_4();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_CEREAL_INTERNAL_BASICTAGSEQUENCESCHEMA
     /**
      * @symbol __unk_destructor_-1

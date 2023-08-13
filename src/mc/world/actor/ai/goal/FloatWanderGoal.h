@@ -2,7 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class FloatWanderGoal {
+// auto generated inclusion list
+#include "mc/world/AutomaticID.h"
+#include "mc/world/actor/ai/goal/Goal.h"
+
+class FloatWanderGoal : public ::Goal {
 
 public:
     // prevent constructor by default
@@ -22,26 +26,6 @@ public:
      * @symbol ?canUse\@FloatWanderGoal\@\@UEAA_NXZ
      */
     virtual bool canUse();
-    /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4();
-    /**
-     * @vftbl 5
-     * @symbol __unk_vfn_5
-     */
-    virtual void __unk_vfn_5();
     /**
      * @vftbl 6
      * @symbol ?tick\@FloatWanderGoal\@\@UEAAXXZ

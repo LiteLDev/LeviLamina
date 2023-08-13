@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class EconomyTradeableDescription {
+// auto generated inclusion list
+#include "mc/world/actor/ActorComponentDescription.h"
+
+class EconomyTradeableDescription : public ::ActorComponentDescription {
 
 public:
     // prevent constructor by default

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ActorAnimationControllerPlayer {
+// auto generated inclusion list
+#include "mc/world/actor/animation/ActorAnimationPlayer.h"
+
+class ActorAnimationControllerPlayer : public ::ActorAnimationPlayer {
 
 public:
     // prevent constructor by default
@@ -32,11 +35,6 @@ public:
      * @symbol ?resetAnimation\@ActorAnimationControllerPlayer\@\@UEAAXXZ
      */
     virtual void resetAnimation();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
     /**
      * @vftbl 4
      * @symbol

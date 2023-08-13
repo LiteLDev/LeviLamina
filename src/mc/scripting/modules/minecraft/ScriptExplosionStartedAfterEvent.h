@@ -46,15 +46,15 @@ public:
      */
     MCAPI std::vector<class Vec3> getImpactedBlocks() const;
     /**
-     * @symbol ??4ScriptExplosionStartedAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
-     */
-    MCAPI struct ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent&
-    operator=(struct ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent&&);
-    /**
      * @symbol ??4ScriptExplosionStartedAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@AEBU01\@\@Z
      */
     MCAPI struct ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent&
     operator=(struct ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent const&);
+    /**
+     * @symbol ??4ScriptExplosionStartedAfterEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
+     */
+    MCAPI struct ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent&
+    operator=(struct ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent&&);
     /**
      * @symbol ??1ScriptExplosionStartedAfterEvent\@ScriptModuleMinecraft\@\@QEAA\@XZ
      */

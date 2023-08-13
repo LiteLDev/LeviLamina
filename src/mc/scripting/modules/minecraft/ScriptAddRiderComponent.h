@@ -8,8 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class AddRiderComponent;
-class AddRiderDefinition;
 class WeakEntityRef;
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
@@ -33,8 +31,7 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol
-     * ?_isValid\@?$ECSScriptActorComponent\@VAddRiderComponent\@\@VAddRiderDefinition\@\@\@ScriptModuleMinecraft\@\@MEBA_NXZ
+     * @symbol ?_isValid\@BaseScriptBlockLiquidContainerComponent\@ScriptModuleMinecraft\@\@MEBA_NXZ
      */
     virtual bool _isValid() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCRIPTMODULEMINECRAFT_SCRIPTADDRIDERCOMPONENT

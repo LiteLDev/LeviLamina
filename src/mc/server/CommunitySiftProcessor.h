@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/IAsyncResult.h"
+#include "mc/server/TextFilteringProcessor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +13,7 @@ namespace Safety { enum class ChatFloodingAction; }
 namespace Safety { enum class TextFilteringEvent; }
 // clang-format on
 
-class CommunitySiftProcessor {
+class CommunitySiftProcessor : public ::TextFilteringProcessor {
 
 public:
     // prevent constructor by default

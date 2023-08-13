@@ -28,7 +28,7 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol ?setup\@SimpleBoolFilterTest\@\@UEAA_NAEBUDefinition\@FilterTest\@\@AEBUFilterInputs\@\@\@Z
+     * @symbol ?setup\@ActorHasEquipmentTest\@\@UEAA_NAEBUDefinition\@FilterTest\@\@AEBUFilterInputs\@\@\@Z
      */
     virtual bool setup(struct FilterTest::Definition const&, struct FilterInputs const&);
     /**
@@ -38,9 +38,9 @@ public:
     virtual bool evaluate(struct FilterContext const&) const;
     /**
      * @vftbl 3
-     * @symbol __unk_vfn_3
+     * @symbol ?finalizeParsedValue\@FilterTest\@\@UEAAXAEAVIWorldRegistriesProvider\@\@\@Z
      */
-    virtual void __unk_vfn_3();
+    virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
     /**
      * @vftbl 4
      * @symbol ?getName\@ActorIsPersistentTest\@\@UEBA?AV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@XZ
@@ -48,12 +48,12 @@ public:
     virtual std::string_view getName() const;
     /**
      * @vftbl 5
-     * @symbol ?_serializeDomain\@FilterTest\@\@MEBA?AVValue\@Json\@\@XZ
+     * @symbol ?_serializeDomain\@ActorHasEquipmentTest\@\@MEBA?AVValue\@Json\@\@XZ
      */
     virtual class Json::Value _serializeDomain() const;
     /**
      * @vftbl 6
-     * @symbol ?_serializeValue\@SimpleBoolFilterTest\@\@MEBA?AVValue\@Json\@\@XZ
+     * @symbol ?_serializeValue\@ActorBoolPropertyTest\@\@MEBA?AVValue\@Json\@\@XZ
      */
     virtual class Json::Value _serializeValue() const;
     // NOLINTEND

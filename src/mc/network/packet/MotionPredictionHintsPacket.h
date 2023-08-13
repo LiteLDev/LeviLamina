@@ -49,12 +49,12 @@ public:
     MCVAPI ~MotionPredictionHintsPacket();
 #endif
     /**
-     * @symbol ??0MotionPredictionHintsPacket\@\@QEAA\@XZ
-     */
-    MCAPI MotionPredictionHintsPacket();
-    /**
      * @symbol ??0MotionPredictionHintsPacket\@\@QEAA\@AEBVActor\@\@\@Z
      */
     MCAPI MotionPredictionHintsPacket(class Actor const&);
+    /**
+     * @symbol ??0MotionPredictionHintsPacket\@\@QEAA\@XZ
+     */
+    MCAPI MotionPredictionHintsPacket();
     // NOLINTEND
 };

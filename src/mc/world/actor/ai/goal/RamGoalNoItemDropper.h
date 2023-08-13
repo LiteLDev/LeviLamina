@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/ai/goal/RamGoalItemDropperInterface.h"
+
 // auto generated forward declare list
 // clang-format off
 class Vec3;
@@ -9,7 +12,7 @@ class Vec3;
 
 namespace RamAttackGoalUtils {
 
-class RamGoalNoItemDropper {
+class RamGoalNoItemDropper : public ::RamAttackGoalUtils::RamGoalItemDropperInterface {
 
 public:
     // prevent constructor by default
@@ -19,20 +22,26 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAMATTACKGOALUTILS_RAMGOALNOITEMDROPPER
     /**
-     * @symbol ?checkForHornDropOnCollision\@RamGoalNoItemDropper\@RamAttackGoalUtils\@\@UEAAXVVec3\@\@\@Z
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    MCVAPI void checkForHornDropOnCollision(class Vec3);
+    virtual void __unk_vfn_0();
     /**
-     * @symbol ?dontDropHorn\@RamGoalNoItemDropper\@RamAttackGoalUtils\@\@UEAAXXZ
-     */
-    MCVAPI void dontDropHorn();
-    /**
+     * @vftbl 1
      * @symbol ?tryDropHorn\@RamGoalNoItemDropper\@RamAttackGoalUtils\@\@UEBAXVVec3\@\@\@Z
      */
-    MCVAPI void tryDropHorn(class Vec3) const;
-#endif
+    virtual void tryDropHorn(class Vec3) const;
+    /**
+     * @vftbl 2
+     * @symbol ?checkForHornDropOnCollision\@RamGoalNoItemDropper\@RamAttackGoalUtils\@\@UEAAXVVec3\@\@\@Z
+     */
+    virtual void checkForHornDropOnCollision(class Vec3);
+    /**
+     * @vftbl 3
+     * @symbol ?dontDropHorn\@RamGoalNoItemDropper\@RamAttackGoalUtils\@\@UEAAXXZ
+     */
+    virtual void dontDropHorn();
     // NOLINTEND
 };
 

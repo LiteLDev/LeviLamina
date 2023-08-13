@@ -4,13 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/world/level/block/components/BlockComponentDescription.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-class BlockUnwalkableDescription {
+class BlockUnwalkableDescription : public ::BlockComponentDescription {
 
 public:
     // prevent constructor by default
@@ -33,19 +34,9 @@ public:
     virtual std::string const& getName() const;
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
      * @symbol ?initializeComponent\@BlockUnwalkableDescription\@\@UEBAXAEAVEntityContext\@\@\@Z
      */
     virtual void initializeComponent(class EntityContext&) const;
-    /**
-     * @vftbl 4
-     * @symbol __unk_vfn_4
-     */
-    virtual void __unk_vfn_4();
     /**
      * @vftbl 5
      * @symbol

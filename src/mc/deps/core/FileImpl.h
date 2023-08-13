@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/PathBuffer.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Core { class FileOpenMode; }
@@ -25,57 +28,58 @@ public:
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0() = 0;
+    virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol
+     * ?_getPath\@FlatFile\@Core\@\@UEBA?AV?$PathBuffer\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@XZ
      */
-    virtual void __unk_vfn_1() = 0;
+    virtual class Core::PathBuffer<std::string> _getPath() const = 0;
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?_getBlockSize\@FlatFile\@Core\@\@UEBA_KXZ
      */
-    virtual void __unk_vfn_2() = 0;
+    virtual uint64_t _getBlockSize() const = 0;
     /**
      * @vftbl 3
-     * @symbol __unk_vfn_3
+     * @symbol ?_isOpen\@FlatFile\@Core\@\@UEAA_NXZ
      */
-    virtual void __unk_vfn_3() = 0;
+    virtual bool _isOpen() = 0;
     /**
      * @vftbl 4
-     * @symbol __unk_vfn_4
+     * @symbol ?_close\@FlatFile\@Core\@\@UEAA?AVResult\@2\@XZ
      */
-    virtual void __unk_vfn_4() = 0;
+    virtual class Core::Result _close() = 0;
     /**
      * @vftbl 5
-     * @symbol __unk_vfn_5
+     * @symbol ?_read\@FlatFile\@Core\@\@UEAA?AVResult\@2\@PEAX_KPEA_K\@Z
      */
-    virtual void __unk_vfn_5() = 0;
+    virtual class Core::Result _read(void*, uint64_t, uint64_t*) = 0;
     /**
      * @vftbl 6
-     * @symbol __unk_vfn_6
+     * @symbol ?_readExactly\@FlatFile\@Core\@\@UEAA?AVResult\@2\@PEAX_K\@Z
      */
-    virtual void __unk_vfn_6() = 0;
+    virtual class Core::Result _readExactly(void*, uint64_t) = 0;
     /**
      * @vftbl 7
-     * @symbol __unk_vfn_7
+     * @symbol ?_skip\@FlatFile\@Core\@\@UEAA?AVResult\@2\@_K\@Z
      */
-    virtual void __unk_vfn_7() = 0;
+    virtual class Core::Result _skip(uint64_t) = 0;
     /**
      * @vftbl 8
-     * @symbol __unk_vfn_8
+     * @symbol ?_readAtPosition\@FlatFile\@Core\@\@UEAA?AVResult\@2\@_KPEAX0PEA_K\@Z
      */
-    virtual void __unk_vfn_8() = 0;
+    virtual class Core::Result _readAtPosition(uint64_t, void*, uint64_t, uint64_t*) = 0;
     /**
      * @vftbl 9
-     * @symbol __unk_vfn_9
+     * @symbol ?_getPosition\@FlatFile\@Core\@\@UEAA?AVResult\@2\@PEA_K\@Z
      */
-    virtual void __unk_vfn_9() = 0;
+    virtual class Core::Result _getPosition(uint64_t*) = 0;
     /**
      * @vftbl 10
-     * @symbol __unk_vfn_10
+     * @symbol ?_setPosition\@FlatFile\@Core\@\@UEAA?AVResult\@2\@_K\@Z
      */
-    virtual void __unk_vfn_10() = 0;
+    virtual class Core::Result _setPosition(uint64_t) = 0;
     /**
      * @vftbl 11
      * @symbol __unk_vfn_11
@@ -88,14 +92,14 @@ public:
     virtual void __unk_vfn_12() = 0;
     /**
      * @vftbl 13
-     * @symbol __unk_vfn_13
+     * @symbol ?_getSize\@FlatFile\@Core\@\@UEAA?AVResult\@2\@PEA_K\@Z
      */
-    virtual void __unk_vfn_13() = 0;
+    virtual class Core::Result _getSize(uint64_t*) = 0;
     /**
      * @vftbl 14
-     * @symbol __unk_vfn_14
+     * @symbol ?_getRemainingSize\@FlatFile\@Core\@\@UEAA?AVResult\@2\@PEA_K\@Z
      */
-    virtual void __unk_vfn_14();
+    virtual class Core::Result _getRemainingSize(uint64_t*) = 0;
     /**
      * @vftbl 15
      * @symbol ?_setInitialFileSize\@FileImpl\@Core\@\@MEAA?AVResult\@2\@_K\@Z

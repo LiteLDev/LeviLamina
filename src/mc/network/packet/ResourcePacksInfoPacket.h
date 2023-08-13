@@ -49,13 +49,13 @@ public:
     MCVAPI ~ResourcePacksInfoPacket();
 #endif
     /**
-     * @symbol ??0ResourcePacksInfoPacket\@\@QEAA\@XZ
-     */
-    MCAPI ResourcePacksInfoPacket();
-    /**
      * @symbol
      * ??0ResourcePacksInfoPacket\@\@QEAA\@_NAEAV?$vector\@UPackInfoData\@\@V?$allocator\@UPackInfoData\@\@\@std\@\@\@std\@\@10\@Z
      */
     MCAPI ResourcePacksInfoPacket(bool, std::vector<struct PackInfoData>&, std::vector<struct PackInfoData>&, bool);
+    /**
+     * @symbol ??0ResourcePacksInfoPacket\@\@QEAA\@XZ
+     */
+    MCAPI ResourcePacksInfoPacket();
     // NOLINTEND
 };

@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ItemEventResponseFactory {
+// auto generated inclusion list
+#include "mc/util/EventResponseFactory.h"
+
+class ItemEventResponseFactory : public ::EventResponseFactory {
 
 public:
     // prevent constructor by default

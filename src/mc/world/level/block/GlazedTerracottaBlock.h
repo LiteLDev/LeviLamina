@@ -4,14 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/optional_ref.h"
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/FaceDirectionalBlock.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace mce { class Color; }
 // clang-format on
 
-class GlazedTerracottaBlock : public ::BlockLegacy {
+class GlazedTerracottaBlock : public ::FaceDirectionalBlock {
 
 public:
     // prevent constructor by default

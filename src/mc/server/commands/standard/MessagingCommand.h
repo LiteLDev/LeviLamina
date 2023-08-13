@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/Command.h"
+#include "mc/server/commands/ServerCommand.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Safety { enum class TextFilteringEvent; }
 // clang-format on
 
-class MessagingCommand : public ::Command {
+class MessagingCommand : public ::ServerCommand {
 
 public:
     // prevent constructor by default
@@ -25,6 +25,16 @@ public:
      * @symbol __unk_vfn_0
      */
     virtual void __unk_vfn_0();
+    /**
+     * @vftbl 1
+     * @symbol ?collectOptionalArguments\@Command\@\@MEAA_NXZ
+     */
+    virtual bool collectOptionalArguments();
+    /**
+     * @vftbl 2
+     * @symbol ?execute\@TakePictureCommand\@\@UEBAXAEBVCommandOrigin\@\@AEAVCommandOutput\@\@\@Z
+     */
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_MESSAGINGCOMMAND
     /**
      * @symbol __unk_destructor_-1

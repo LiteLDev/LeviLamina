@@ -2,13 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/gametest/framework/IGameTestListener.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace gametest { class BaseGameTestInstance; }
 namespace gametest { struct GameTestError; }
 // clang-format on
 
-class DedicatedServerGameTestRunnerListener {
+class DedicatedServerGameTestRunnerListener : public ::gametest::IGameTestListener {
 
 public:
     // prevent constructor by default

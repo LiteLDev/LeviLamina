@@ -22,6 +22,12 @@ public:
      * @symbol ?isDataEqual\@DataItem\@\@UEBA_NAEBV1\@\@Z
      */
     virtual bool isDataEqual(class DataItem const&) const;
+    /**
+     * @vftbl 2
+     * @symbol
+     * ?clone\@?$DataItem2\@H\@\@UEBA?AV?$unique_ptr\@VDataItem\@\@U?$default_delete\@VDataItem\@\@\@std\@\@\@std\@\@XZ
+     */
+    virtual std::unique_ptr<class DataItem> clone() const = 0;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_DATAITEM
     /**
      * @symbol __unk_destructor_-1

@@ -11,13 +11,13 @@ public:
 public:
     // NOLINTBEGIN
     /**
-     * @symbol ??0ThirdPartyInfo\@\@QEAA\@XZ
-     */
-    MCAPI ThirdPartyInfo();
-    /**
      * @symbol ??0ThirdPartyInfo\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI ThirdPartyInfo(class ThirdPartyInfo const&);
+    /**
+     * @symbol ??0ThirdPartyInfo\@\@QEAA\@XZ
+     */
+    MCAPI ThirdPartyInfo();
     /**
      * @symbol ??1ThirdPartyInfo\@\@QEAA\@XZ
      */

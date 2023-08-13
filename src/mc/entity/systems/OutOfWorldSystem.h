@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class OutOfWorldSystem {
+// auto generated inclusion list
+#include "mc/entity/systems/ITickingSystem.h"
+
+class OutOfWorldSystem : public ::ITickingSystem {
 
 public:
     // prevent constructor by default

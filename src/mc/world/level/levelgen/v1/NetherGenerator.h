@@ -6,7 +6,7 @@
 #include "mc/deps/core/utility/MultidimensionalArray.h"
 #include "mc/world/level/levelgen/WorldGenerator.h"
 
-class NetherGenerator {
+class NetherGenerator : public ::WorldGenerator {
 public:
     // NetherGenerator inner types declare
     // clang-format off

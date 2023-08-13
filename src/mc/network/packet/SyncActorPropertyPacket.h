@@ -49,12 +49,12 @@ public:
     MCVAPI ~SyncActorPropertyPacket();
 #endif
     /**
-     * @symbol ??0SyncActorPropertyPacket\@\@QEAA\@XZ
-     */
-    MCAPI SyncActorPropertyPacket();
-    /**
      * @symbol ??0SyncActorPropertyPacket\@\@QEAA\@AEBVHashedString\@\@AEBVPropertyGroupManager\@\@\@Z
      */
     MCAPI SyncActorPropertyPacket(class HashedString const&, class PropertyGroupManager const&);
+    /**
+     * @symbol ??0SyncActorPropertyPacket\@\@QEAA\@XZ
+     */
+    MCAPI SyncActorPropertyPacket();
     // NOLINTEND
 };

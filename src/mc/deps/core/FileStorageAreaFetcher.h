@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/IFileStorageAreaFetcher.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Core { class FileStorageArea; }
@@ -11,7 +14,7 @@ namespace Core { class Result; }
 
 namespace Core {
 
-class FileStorageAreaFetcher {
+class FileStorageAreaFetcher : public ::Core::IFileStorageAreaFetcher {
 
 public:
     // prevent constructor by default

@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/player/INpcDialogueData.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace npc { struct ActionContainer; }
 // clang-format on
 
-class NpcSceneDialogueData {
+class NpcSceneDialogueData : public ::INpcDialogueData {
 
 public:
     // prevent constructor by default
@@ -30,9 +33,10 @@ public:
     virtual std::string const& getDialogueText() const;
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol
+     * ?getRawDialogueText\@INpcDialogueData\@\@UEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
      */
-    virtual void __unk_vfn_2();
+    virtual std::string const& getRawDialogueText() const;
     /**
      * @vftbl 3
      * @symbol
@@ -66,6 +70,21 @@ public:
      * @symbol ?getActorUniqueID\@NpcSceneDialogueData\@\@UEAA?AUActorUniqueID\@\@XZ
      */
     virtual struct ActorUniqueID getActorUniqueID();
+    /**
+     * @vftbl 9
+     * @symbol __unk_vfn_9
+     */
+    virtual void __unk_vfn_9();
+    /**
+     * @vftbl 10
+     * @symbol __unk_vfn_10
+     */
+    virtual void __unk_vfn_10();
+    /**
+     * @vftbl 11
+     * @symbol ?isRemoteFire\@INpcDialogueData\@\@UEAA_NXZ
+     */
+    virtual bool isRemoteFire();
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_NPCSCENEDIALOGUEDATA
     /**
      * @symbol ?getActionsContainer\@NpcSceneDialogueData\@\@UEAAPEAUActionContainer\@npc\@\@XZ

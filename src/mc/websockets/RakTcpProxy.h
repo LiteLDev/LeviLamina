@@ -2,13 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/websockets/TcpProxy.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace RakNet { struct Packet; }
 namespace RakNet { struct SystemAddress; }
 // clang-format on
 
-class RakTcpProxy {
+class RakTcpProxy : public ::TcpProxy {
 
 public:
     // prevent constructor by default
