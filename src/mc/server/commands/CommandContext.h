@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/commands/CommandOrigin.h"
 #include "mc/server/commands/CommandVersion.h"
-#include "mc/websockets/CommandOrigin.h"
 
 class CommandContext {
 
