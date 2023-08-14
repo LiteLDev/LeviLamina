@@ -1,30 +1,11 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/math/VectorBase.hpp"
 
-class ChunkPos : public VectorBase<ChunkPos, int, int> {
+class ChunkPos : public int2 {
 
 public:
-    int x, z;
-    ChunkPos() = default;
-    ChunkPos(int ix, int iz) : x(ix), z(iz){};
-
-    template <typename T>
-    [[nodiscard]] constexpr T& get(size_t index) {
-        if (index==1) {
-            return z;
-        }
-        return x;
-    }
-
-    template <typename T>
-    [[nodiscard]] constexpr T get(size_t index) const {
-        if (index == 1) {
-            return z;
-        }
-        return x;
-    }
+    using int2::int2;
 
 public:
     // NOLINTBEGIN

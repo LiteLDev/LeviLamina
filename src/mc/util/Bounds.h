@@ -2,8 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/world/Pos.h"
+#include "mc/world/level/levelgen/structure/BoundingBox.h"
 
-struct Bounds {
+struct Bounds : public BoundingBox {
 public:
     // Bounds inner types define
     enum class Option {
@@ -11,18 +12,10 @@ public:
         Flatten = 0x1,
     };
 
-    struct Iterator {
-        class Pos            mPos;
-        struct Bounds const* mBounds;
-        int                  mIdx;
-    };
-
-    class Pos mMin;
-    class Pos mMax;
-    class Pos mDim;
-    int       mArea;
-    int       mVolume;
-    int       mSide;
+    class Pos dim;
+    int       area;
+    int       volume;
+    int       side;
 
     Bounds() = delete;
 

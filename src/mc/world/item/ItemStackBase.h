@@ -34,7 +34,7 @@ public:
     std::unique_ptr<class CompoundTag>    mUserData;       // this+0x10
     class Block const*                    mBlock;          // this+0x18
     short                                 mAuxValue;       // this+0x20
-    unsigned char                         mCount;          // this+0x22
+    uint8_t                               mCount;          // this+0x22
     bool                                  mValid;          // this+0x23
     std::chrono::steady_clock::time_point mPickupTime;     // this+0x28
     bool                                  mShowPickUp;     // this+0x30

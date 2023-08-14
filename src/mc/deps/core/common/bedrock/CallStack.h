@@ -53,7 +53,8 @@ public:
     struct FrameWithContext {
 
     public:
-        char filler[80];                             = delete;
+        uint8_t filler[80];
+        FrameWithContext() = delete;
 
     public:
         // NOLINTBEGIN

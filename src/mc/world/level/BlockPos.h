@@ -2,9 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BlockPos {
+class BlockPos : public int3{
 
 public:
+    using int3::int3;
     // NOLINTBEGIN
     /**
      * @symbol ??0BlockPos\@\@QEAA\@AEBVVec3\@\@\@Z
@@ -39,18 +40,6 @@ public:
      */
     MCAPI operator class Vec3() const;
     /**
-     * @symbol ??9BlockPos\@\@QEBA_NAEBV0\@\@Z
-     */
-    MCAPI bool operator!=(class BlockPos const&) const;
-    /**
-     * @symbol ??HBlockPos\@\@QEBA?AV0\@AEBV0\@\@Z
-     */
-    MCAPI class BlockPos operator+(class BlockPos const&) const;
-    /**
-     * @symbol ??8BlockPos\@\@QEBA_NAEBV0\@\@Z
-     */
-    MCAPI bool operator==(class BlockPos const&) const;
-    /**
      * @symbol ?randomSeed\@BlockPos\@\@QEBAHXZ
      */
     MCAPI int randomSeed() const;
@@ -58,10 +47,6 @@ public:
      * @symbol ?relative\@BlockPos\@\@QEBA?AV1\@EH\@Z
      */
     MCAPI class BlockPos relative(unsigned char, int) const;
-    /**
-     * @symbol ?toString\@BlockPos\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string toString() const;
     /**
      * @symbol ?transform\@BlockPos\@\@QEBA?AV1\@W4Rotation\@\@W4Mirror\@\@AEBVVec3\@\@\@Z
      */

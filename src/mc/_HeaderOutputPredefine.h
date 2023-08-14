@@ -85,3 +85,5 @@
 #include "rapidjson/schema.h"
 #include "rapidjson/stringbuffer.h"
 #include "rapidjson/writer.h"
+
+#include "mc/math/vector/Vecs.h" // for vector types

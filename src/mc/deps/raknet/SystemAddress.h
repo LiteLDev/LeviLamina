@@ -8,7 +8,7 @@ struct SystemAddress {
 
 public:
     struct {
-        char filler[0x80];
+        uint8_t filler[0x80];
     } address;                  // this+0x0
     unsigned short debugPort;   // this+0x80
     unsigned short systemIndex; // this+0x82

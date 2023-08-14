@@ -20,9 +20,6 @@ public:
     };
 
     struct ConstructorToken {
-
-    public:
-        char gap;
     };
 
     std::mutex                                      mLegacyBlockStatesConversionWarningMutex;

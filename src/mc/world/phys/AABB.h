@@ -1,13 +1,46 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/math/Vec3.h"
 
-class AABB {
+class AABB : public CommutativeGroup<AABB, Vec3, Vec3> {
 
 public:
-    // prevent constructor by default
-    AABB(AABB const&) = delete;
-    AABB()            = delete;
+    union {
+        Vec3 min, x, r, s;
+    };
+    union {
+        Vec3 max, y, g, t, z, b, p;
+    };
+
+    constexpr AABB() noexcept : min(Vec3::MIN), max(Vec3::MIN){};
+    constexpr AABB(class AABB const& k) noexcept : min(k.min), max(k.max){};
+    constexpr AABB(class Vec3 const& min, class Vec3 const& max) noexcept : min(min), max(max){};
+
+    constexpr AABB& merge(AABB const& a) noexcept {
+        *this = AABB{::min(a.min, min), ::max(a.max, max)};
+        return *this;
+    }
+
+    constexpr AABB& merge(Vec3 const& a) noexcept {
+        *this = AABB{::min(a, min), ::max(a, max)};
+        return *this;
+    }
+
+    template <typename T>
+    [[nodiscard]] constexpr T& get(size_t index) noexcept {
+        if (index == 1) {
+            return (T&)z;
+        }
+        return (T&)x;
+    }
+    template <typename T>
+    [[nodiscard]] constexpr T const& get(size_t index) const noexcept {
+        if (index == 1) {
+            return (T)z;
+        }
+        return (T)x;
+    }
 
 public:
     // NOLINTBEGIN
@@ -19,10 +52,6 @@ public:
      * @symbol ??0AABB\@\@QEAA\@MMMMMM\@Z
      */
     MCAPI AABB(float, float, float, float, float, float);
-    /**
-     * @symbol ??0AABB\@\@QEAA\@AEBVVec3\@\@0\@Z
-     */
-    MCAPI AABB(class Vec3 const&, class Vec3 const&);
     /**
      * @symbol ?axisInside\@AABB\@\@QEBA?AVVec3\@\@AEBV1\@V2\@\@Z
      */

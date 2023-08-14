@@ -4,7 +4,7 @@
 #include <string>
 
 template <class Fn, size_t... N>
-constexpr void unroll_impl(Fn fn, std::integer_sequence<size_t, N...> iter) {
+constexpr void unroll_impl(Fn fn, std::integer_sequence<size_t, N...>) {
     (void(fn(N)), ...);
 }
 
@@ -12,22 +12,6 @@ template <size_t N, class Fn>
 constexpr void unroll(Fn fn) {
     unroll_impl(fn, std::make_index_sequence<N>());
 }
-
-//     for (size_t i = 0; i < 100; i += 10) {
-//         unroll<10>([&](size_t iter) { out += rand(); });
-//     }
-
-// template <class T, class _t_type_, size_t N>
-// class VectorBase {
-//    public:
-// using _t_type_ = decltype(T::operator[](size_t));
-
-// inline _t_type_& operator[](size_t index) { return static_cast<_t_type_&>(static_cast<T&>(*this)[index]); }
-//
-// inline _t_type_ operator[](size_t index) const {
-//     return static_cast<_t_type_>(static_cast<T const&>(*this)[index]);
-// }
-
 #define FAKE_CRTP(T, _t_type_, N)                                                                                  \
     inline std::vector<T> getNeighbors() const {                                                                   \
         std::vector<T> res;                                                                                        \

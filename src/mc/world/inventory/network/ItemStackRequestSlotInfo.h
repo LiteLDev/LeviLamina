@@ -11,7 +11,7 @@ public:
     ItemStackRequestSlotInfo()                                           = delete;
 
     ContainerEnumName     mOpenContainerNetId; // this+0x0
-    unsigned char         mSlot;               // this+0x1
+    uint8_t               mSlot;               // this+0x1
     ItemStackNetIdVariant mNetIdVariant;       // this+0x8
 public:
     // NOLINTBEGIN

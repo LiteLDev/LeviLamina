@@ -1,42 +1,11 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/math/VectorBase.hpp"
 
-class SubChunkPos : public VectorBase<SubChunkPos, int, int, int> {
+class SubChunkPos : public int3 {
 
 public:
-    int x;
-    int y;
-    int z;
-
-    SubChunkPos() = default;
-
-    inline SubChunkPos(int ix, int iy, int iz) : x(ix), y(iy), z(iz) {}
-
-    template <typename T>
-    [[nodiscard]] constexpr T& get(size_t index) {
-        switch (index) {
-        case 1:
-            return y;
-        case 2:
-            return z;
-        default:
-            return x;
-        }
-    }
-
-    template <typename T>
-    [[nodiscard]] constexpr T get(size_t index) const {
-        switch (index) {
-        case 1:
-            return y;
-        case 2:
-            return z;
-        default:
-            return x;
-        }
-    }
+    using int3::int3;
 
 public:
     // NOLINTBEGIN

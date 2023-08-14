@@ -2,22 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class Vec3 {
+class Vec3: public float3 {
 
 public:
+    using float3::float3;
     // NOLINTBEGIN
-    /**
-     * @symbol ??0Vec3\@\@QEAA\@MMM\@Z
-     */
-    MCAPI Vec3(float, float, float);
-    /**
-     * @symbol ?abs\@Vec3\@\@QEBA?AV1\@XZ
-     */
-    MCAPI class Vec3 abs() const;
-    /**
-     * @symbol ?ceil\@Vec3\@\@QEBA?AV1\@XZ
-     */
-    MCAPI class Vec3 ceil() const;
     /**
      * @symbol ?distanceToLineSquared\@Vec3\@\@QEBAMAEBV1\@0\@Z
      */
@@ -35,53 +24,13 @@ public:
      */
     MCAPI bool isNear(class Vec3 const&, float) const;
     /**
-     * @symbol ?length\@Vec3\@\@QEBAMXZ
-     */
-    MCAPI float length() const;
-    /**
-     * @symbol ?lengthSquared\@Vec3\@\@QEBAMXZ
-     */
-    MCAPI float lengthSquared() const;
-    /**
      * @symbol ?maxComponent\@Vec3\@\@QEBAMXZ
      */
     MCAPI float maxComponent() const;
     /**
-     * @symbol ?normalized\@Vec3\@\@QEBA?AV1\@XZ
-     */
-    MCAPI class Vec3 normalized() const;
-    /**
-     * @symbol ??XVec3\@\@QEAAAEAV0\@M\@Z
-     */
-    MCAPI class Vec3& operator*=(float);
-    /**
-     * @symbol ??HVec3\@\@QEBA?AV0\@AEBV0\@\@Z
-     */
-    MCAPI class Vec3 operator+(class Vec3 const&) const;
-    /**
-     * @symbol ??YVec3\@\@QEAAAEAV0\@AEBV0\@\@Z
-     */
-    MCAPI class Vec3& operator+=(class Vec3 const&);
-    /**
-     * @symbol ??GVec3\@\@QEBA?AV0\@XZ
-     */
-    MCAPI class Vec3 operator-() const;
-    /**
-     * @symbol ??8Vec3\@\@QEBA_NAEBV0\@\@Z
-     */
-    MCAPI bool operator==(class Vec3 const&) const;
-    /**
-     * @symbol ?toString\@Vec3\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string toString() const;
-    /**
      * @symbol ?xz\@Vec3\@\@QEBA?AV1\@XZ
      */
     MCAPI class Vec3 xz() const;
-    /**
-     * @symbol ?clamp\@Vec3\@\@SA?AV1\@AEBV1\@00\@Z
-     */
-    MCAPI static class Vec3 clamp(class Vec3 const&, class Vec3 const&, class Vec3 const&);
     /**
      * @symbol ?directionFromRotation\@Vec3\@\@SA?AV1\@AEBVVec2\@\@\@Z
      */

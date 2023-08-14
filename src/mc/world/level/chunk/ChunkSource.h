@@ -27,7 +27,7 @@ public:
     // std::atomic<bool>            mShuttingDown;          // this+0x48
     // void*                        unknownPtr              // this+0x50
 
-    char filler[0x58 - sizeof(Bedrock::EnableNonOwnerReferences)];
+    uint8_t filler[0x58 - sizeof(Bedrock::EnableNonOwnerReferences)];
 
 public:
     // prevent constructor by default

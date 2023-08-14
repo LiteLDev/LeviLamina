@@ -2,13 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class Vec4 {
+class Vec4: public float4 {
 
 public:
-    // prevent constructor by default
-    Vec4& operator=(Vec4 const&) = delete;
-    Vec4(Vec4 const&)            = delete;
-    Vec4()                       = delete;
+    using float4::float4;
 
 public:
     // NOLINTBEGIN

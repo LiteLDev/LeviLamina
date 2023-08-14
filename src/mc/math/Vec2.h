@@ -1,37 +1,14 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/math/VectorBase.hpp"
 
-class Vec2 : public VectorBase<Vec2, float, float> {
+class Vec2 : public float2 {
 
 public:
-    float x, y;
-    Vec2() = default;
-    Vec2(float a, float b) : x(a), y(b){};
-
-    template <typename T>
-    [[nodiscard]] constexpr T& get(size_t index) {
-        if (index==1){
-            return y;
-        }
-        return x;
-    }
-
-    template <typename T>
-    [[nodiscard]] constexpr T get(size_t index) const {
-        if (index == 1) {
-            return y;
-        }
-        return x;
-    }
+    using float2::float2;
 
 public:
     // NOLINTBEGIN
-    /**
-     * @symbol ?toString\@Vec2\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
-     */
-    MCAPI std::string toString() const;
     /**
      * @symbol ?rotate\@Vec2\@\@SA?AV1\@AEBV1\@M\@Z
      */
@@ -74,12 +51,3 @@ public:
     MCAPI static class Vec2 const ZERO;
     // NOLINTEND
 };
-
-namespace std {
-
-template <>
-struct hash<Vec2> {
-    std::size_t operator()(Vec2 const& pos) const noexcept { return pos.hash(); }
-};
-
-} // namespace std

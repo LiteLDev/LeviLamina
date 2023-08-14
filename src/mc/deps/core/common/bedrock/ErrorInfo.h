@@ -14,7 +14,7 @@ public:
 
 private:
     E    error;
-    char filler[0x30]{};
+    uint8_t filler[0x30]{};
 };
 
 }; // namespace Bedrock

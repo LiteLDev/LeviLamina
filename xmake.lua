@@ -54,7 +54,7 @@ target("LiteLoader")
     set_pcxxheader("src/liteloader/api/Global.h")
     add_headerfiles("src/(**.h)", "src/(**.hpp)", "src/(**.inl)", "src/mc/old/(**.hpp)", "src/mc/old/(**.inl)")
     add_includedirs("./src","./src/mc/old")
-    add_cxflags("/utf-8", "/permissive-", "/EHa", "/W3")
+    add_cxflags("/utf-8", "/permissive-", "/EHa", "/W4")
     add_defines(
         "UNICODE", "LITELOADER_EXPORTS", "WIN32_LEAN_AND_MEAN", 
         "CPPHTTPLIB_OPENSSL_SUPPORT", "_AMD64_", "NOMINMAX", 
