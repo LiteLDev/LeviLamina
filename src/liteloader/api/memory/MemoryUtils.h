@@ -36,35 +36,35 @@ LLAPI FuncPtr resolveSymbol(const char* symbol);
 LLAPI FuncPtr resolveSignature(const char* signature);
 
 template <uintptr_t off, typename RTN = void, typename... Args>
-auto inline virtualCall(void const* _this, Args&&... args) -> RTN {
+auto constexpr virtualCall(void const* _this, Args&&... args) -> RTN {
     return (*(RTN(**)(void const*, Args&&...))(*(uintptr_t*)_this + off))(_this, std::forward<Args>(args)...);
 }
 
 template <typename T, uintptr_t off>
-inline T& dAccess(void* ptr) {
+constexpr T& dAccess(void* ptr) {
     return *(T*)(reinterpret_cast<uintptr_t>(ptr) + off);
 }
 
 template <typename T, uintptr_t off>
-inline T const& dAccess(void const* ptr) {
+constexpr T const& dAccess(void const* ptr) {
     return *(T*)(((uintptr_t)ptr) + off);
 }
 
 template <typename T>
-inline T& dAccess(void* ptr, uintptr_t off) {
+constexpr T& dAccess(void* ptr, uintptr_t off) {
     return *(T*)(((uintptr_t)ptr) + off);
 }
 
 template <typename T>
-inline const T& dAccess(void const* ptr, uintptr_t off) {
+constexpr const T& dAccess(void const* ptr, uintptr_t off) {
     return *(T*)(((uintptr_t)ptr) + off);
 }
 
 template <FixedString symbol>
-inline FuncPtr symbolCache = resolveSymbol(symbol);
+constexpr FuncPtr symbolCache = resolveSymbol(symbol);
 
 template <FixedString signature>
-inline FuncPtr signatureCache = resolveSignature(signature);
+constexpr FuncPtr signatureCache = resolveSignature(signature);
 
 } // namespace ll::memory
 

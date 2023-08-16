@@ -584,25 +584,6 @@ class buffer_span;
 template <typename T>
 class buffer_span_mut;
 
-template <typename T>
-class optional_ref {
-    T* value;
-
-public:
-    inline T* get() const {
-        if (*this)
-            return value;
-        return nullptr;
-    }
-    // inline T* set(T const& val)
-    //{
-    //     *value = &val;
-    // }
-    inline T& operator*() const { return *value; }
-    inline T* operator->() const { return value; }
-    inline operator bool() const { return value != nullptr; }
-};
-
 namespace cg {
 class ImageBuffer;
 };

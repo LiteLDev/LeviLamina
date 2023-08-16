@@ -60,7 +60,7 @@ public:
             storage_.policy_ = allocate;
             storage_.length_ = length & 0x3FFFFFFF;
         }
-        inline CZString& operator=(const CZString& other) {
+        constexpr CZString& operator=(const CZString& other) {
             if (this == &other) {
                 return *this;
             }

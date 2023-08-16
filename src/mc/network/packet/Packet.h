@@ -22,7 +22,7 @@ public:
     const IPacketHandlerDispatcher*     mHandler      = nullptr;                                        // this+0x20
     enum class Compressibility          mCompressible = Compressibility::Compressible;                  // this+0x28
 
-    inline explicit Packet(
+    constexpr explicit Packet(
         enum class PacketPriority           priority    = PacketPriority::Medium,
         enum class NetworkPeer::Reliability reliability = NetworkPeer::Reliability::ReliableOrdered,
         enum class SubClientId              clientSubId = SubClientId::PrimaryClient,

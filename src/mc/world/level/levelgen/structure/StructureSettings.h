@@ -29,7 +29,7 @@ public:
     float         mIntegrityValue;                            // this+0x60
     unsigned int  mIntegritySeed;                             // this+0x64
 
-    inline StructureSettings(BlockPos const& size, bool ignoreEntities, bool ignoreBlocks) : StructureSettings() {
+    constexpr StructureSettings(BlockPos const& size, bool ignoreEntities, bool ignoreBlocks) : StructureSettings() {
         setIgnoreBlocks(ignoreBlocks);
         setIgnoreEntities(ignoreEntities);
         setStructureSize(size);

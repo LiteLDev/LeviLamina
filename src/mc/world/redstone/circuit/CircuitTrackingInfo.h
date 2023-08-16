@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/enums/CircuitComponentType.h"
 #include "mc/enums/FaceID.h"
-#include "mc/world/redstone/circuit/components/BaseCircuitComponent.h"
 #include "mc/world/level/BlockPos.h"
+#include "mc/world/redstone/circuit/components/BaseCircuitComponent.h"
 
 class CircuitTrackingInfo {
 
@@ -16,7 +16,7 @@ public:
         enum class FaceID               mDirection;
         enum class CircuitComponentType mTypeID;
 
-        inline Entry(class BaseCircuitComponent* component, const BlockPos& pos) {
+        constexpr Entry(class BaseCircuitComponent* component, const BlockPos& pos) {
             mComponent = component;
             mDirection = (FaceID)component->getDirection();
             mPos       = pos;

@@ -12,6 +12,10 @@
 #define LLCAPI extern "C" LLAPI
 #endif
 
+#ifndef LLNDAPI
+#define LLNDAPI [[nodiscard]] LLAPI
+#endif
+
 #ifndef LL_UNUSED
 #define LL_UNUSED [[maybe_unused]]
 #endif

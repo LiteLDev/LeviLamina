@@ -9,5 +9,5 @@ public:
     T1        mRawId;
     static T1 sNextRawId;
     TypedServerNetId(T1 const& rawId) : mRawId(rawId) {}
-    inline explicit operator T1() { return mRawId; }
+    constexpr explicit operator T1() { return mRawId; }
 };

@@ -8,7 +8,7 @@ struct ItemStackRequestSlotInfo {
 
 public:
     // prevent constructor by default
-    ItemStackRequestSlotInfo()                                           = delete;
+    ItemStackRequestSlotInfo() = delete;
 
     ContainerEnumName     mOpenContainerNetId; // this+0x0
     uint8_t               mSlot;               // this+0x1

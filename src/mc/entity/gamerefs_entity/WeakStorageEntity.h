@@ -20,7 +20,7 @@ public:
     class EntityId                    mEntity;
 
     template <class Entity, bool Unknown = false>
-    inline Entity* tryUnwrap() {
+    constexpr Entity* tryUnwrap() {
         return StackResultStorageEntity(*this).tryUnwrap<Entity, Unknown>();
     }
 

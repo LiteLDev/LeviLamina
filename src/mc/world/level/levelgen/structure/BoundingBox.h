@@ -4,6 +4,8 @@
 #include "mc/enums/Rotation.h"
 #include "mc/world/level/BlockPos.h"
 
+class AABB;
+
 class BoundingBox : public CommutativeGroup<BoundingBox, BlockPos, BlockPos> {
 
 public:
@@ -84,6 +86,8 @@ public:
         }
         return (T)x;
     }
+
+    LLAPI explicit operator class AABB() const;
 
 public:
     // NOLINTBEGIN

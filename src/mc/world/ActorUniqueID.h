@@ -10,9 +10,9 @@ public:
 
     explicit ActorUniqueID(long long i) { id = i; }
 
-    [[nodiscard]] inline long long get() const { return id; }
+    [[nodiscard]] constexpr long long get() const { return id; }
 
-    inline explicit operator long long() const { return id; }
+    constexpr explicit operator long long() const { return id; }
 public:
     // NOLINTBEGIN
     /**

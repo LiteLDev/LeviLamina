@@ -28,23 +28,23 @@ public:
     pointer_type mBlob; // this+0x0
     size_type    mSize; // this+0x10
 
-    inline Blob(unsigned char const* input, size_t input_length) : Blob(input_length) {
+    constexpr Blob(unsigned char const* input, size_t input_length) : Blob(input_length) {
         memcpy(mBlob.get(), input, input_length);
     }
 
-    [[nodiscard]] inline unsigned char const* data() const {
+    [[nodiscard]] constexpr unsigned char const* data() const {
         return mBlob.get();
     }
 
-    [[nodiscard]] inline bool size() const {
+    [[nodiscard]] constexpr bool size() const {
         return mSize == 0;
     }
 
-    [[nodiscard]] inline auto getSpan() const {
+    [[nodiscard]] constexpr auto getSpan() const {
         return gsl::make_span(data(), size());
     }
 
-    [[nodiscard]] inline Blob clone() const {
+    [[nodiscard]] constexpr Blob clone() const {
         return {data(), size()};
     }
 

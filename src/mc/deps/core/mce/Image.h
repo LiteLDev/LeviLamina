@@ -15,20 +15,20 @@ public:
     ImageUsage  mUsage{};            // 0xC
     Blob        mImageBytes;         // 0x10
 
-    explicit inline Image(Blob&& data) : mImageBytes(std::move(data)) {}
+    explicit constexpr Image(Blob&& data) : mImageBytes(std::move(data)) {}
 
-    inline Image() = default;
+    constexpr Image() = default;
 
-    inline void copyRawImage(Blob const& blob) { mImageBytes = blob.clone(); }
+    constexpr void copyRawImage(Blob const& blob) { mImageBytes = blob.clone(); }
 
-    inline void setImageDescription(unsigned width, unsigned height, ImageFormat format, ImageUsage usage) {
+    constexpr void setImageDescription(unsigned width, unsigned height, ImageFormat format, ImageUsage usage) {
         this->mWidth      = width;
         this->mHeight     = height;
         this->imageFormat = format;
         this->mUsage      = usage;
     }
 
-    inline void setRawImage(Blob&& buffer) { mImageBytes = std::move(buffer); }
+    constexpr void setRawImage(Blob&& buffer) { mImageBytes = std::move(buffer); }
 
     Image(const Image& a1) {
         imageFormat = a1.imageFormat;

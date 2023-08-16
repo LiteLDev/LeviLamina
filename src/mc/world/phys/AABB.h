@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/math/Vec3.h"
 
+class BoundingBox;
+
 class AABB : public CommutativeGroup<AABB, Vec3, Vec3> {
 
 public:
@@ -41,6 +43,8 @@ public:
         }
         return (T)x;
     }
+
+    LLAPI explicit operator class BoundingBox() const;
 
 public:
     // NOLINTBEGIN

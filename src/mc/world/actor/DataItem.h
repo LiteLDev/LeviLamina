@@ -18,19 +18,19 @@ public:
     bool                    mDirty = true;
 
     template <typename T>
-    inline T const& getData() const;
+    constexpr T const& getData() const;
     template <typename T>
-    inline T& getData();
+    constexpr T& getData();
     template <typename T>
-    inline bool setData(T const& value);
+    constexpr bool setData(T const& value);
 
     DataItem(DataItemType type, unsigned short id) : mId(id), mType(type) {}
 
     template <typename T>
-    inline static std::unique_ptr<DataItem> create(unsigned short key, T const& value);
+    constexpr static std::unique_ptr<DataItem> create(unsigned short key, T const& value);
 
     template <typename T>
-    inline static std::unique_ptr<DataItem> create(enum class ActorDataIDs key, T const& value);
+    constexpr static std::unique_ptr<DataItem> create(enum class ActorDataIDs key, T const& value);
 
 public:
     // NOLINTBEGIN
@@ -70,16 +70,16 @@ public:
 
     [[nodiscard]] T const& getData() const { return mValue; };
 
-    inline void setData(T const& value) {
+    constexpr void setData(T const& value) {
         mDirty = true;
         mValue = value;
     }
-    inline DataItem2<T>& operator=(T const& value) {
+    constexpr DataItem2<T>& operator=(T const& value) {
         setData(value);
         return *this;
     }
-    inline DataItem2(unsigned short key, T const& value) = delete;
-    inline static std::unique_ptr<DataItem> create(unsigned short key, T const& value) {
+    constexpr DataItem2(unsigned short key, T const& value) = delete;
+    constexpr static std::unique_ptr<DataItem> create(unsigned short key, T const& value) {
         return std::unique_ptr<DataItem>(new DataItem2(key, value));
     }
     static DataItemType const DATA_ITEM_TYPE;
@@ -108,58 +108,58 @@ template <>
 DataItemType const DataItem2<Vec3>::DATA_ITEM_TYPE = DataItemType::Vec3;
 
 template <>
-inline void DataItem2<CompoundTag>::setData(CompoundTag const& value) {
+constexpr void DataItem2<CompoundTag>::setData(CompoundTag const& value) {
     mValue.deepCopy(value);
 }
 
 template <>
-inline DataItem2<signed char>::DataItem2(unsigned short key, signed char const& value)
+constexpr DataItem2<signed char>::DataItem2(unsigned short key, signed char const& value)
 : DataItem(DATA_ITEM_TYPE, key), mValue(value) {
     //*(void**)this = dlsym_real("??_7?$DataItem2@C@@6B@");
 }
 template <>
-inline DataItem2<short>::DataItem2(unsigned short key, short const& value)
+constexpr DataItem2<short>::DataItem2(unsigned short key, short const& value)
 : DataItem(DATA_ITEM_TYPE, key), mValue(value) {
     //*(void**)this = dlsym_real("??_7?$DataItem2@F@@6B@");
 }
 template <>
-inline DataItem2<int>::DataItem2(unsigned short key, int const& value) : DataItem(DATA_ITEM_TYPE, key), mValue(value) {
+constexpr DataItem2<int>::DataItem2(unsigned short key, int const& value) : DataItem(DATA_ITEM_TYPE, key), mValue(value) {
     //*(void**)this = dlsym_real("??_7?$DataItem2@M@@6B@");
 }
 template <>
-inline DataItem2<float>::DataItem2(unsigned short key, float const& value)
+constexpr DataItem2<float>::DataItem2(unsigned short key, float const& value)
 : DataItem(DATA_ITEM_TYPE, key), mValue(value) {
     //*(void**)this = dlsym_real("??_7?$DataItem2@M@@6B@");
 }
 template <>
-inline DataItem2<std::string>::DataItem2(unsigned short key, std::string const& value) // NOLINT
+constexpr DataItem2<std::string>::DataItem2(unsigned short key, std::string const& value) // NOLINT
 : DataItem(DATA_ITEM_TYPE, key), mValue(value) {
     //*(void**)this = dlsym_real("??_7?$DataItem2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@6B@");
 }
 template <>
-inline DataItem2<class CompoundTag>::DataItem2(unsigned short key, class CompoundTag const& value)
+constexpr DataItem2<class CompoundTag>::DataItem2(unsigned short key, class CompoundTag const& value)
 : DataItem(DATA_ITEM_TYPE, key) {
     mValue.deepCopy(value);
     //*(void**)this = dlsym_real("??_7?$DataItem2@VCompoundTag@@@@6B@");
 }
 template <>
-inline DataItem2<BlockPos>::DataItem2(unsigned short key, BlockPos const& value)
+constexpr DataItem2<BlockPos>::DataItem2(unsigned short key, BlockPos const& value)
 : DataItem(DATA_ITEM_TYPE, key), mValue(value) {
     //*(void**)this = dlsym_real("??_7?$DataItem2@VBlockPos@@@@6B@");
 }
 template <>
-inline DataItem2<int64_t>::DataItem2(unsigned short key, int64_t const& value)
+constexpr DataItem2<int64_t>::DataItem2(unsigned short key, int64_t const& value)
 : DataItem(DATA_ITEM_TYPE, key), mValue(value) {
     //*(void**)this = dlsym_real("??_7?$DataItem2@_J@@6B@");
 }
 template <>
-inline DataItem2<Vec3>::DataItem2(unsigned short key, Vec3 const& value)
+constexpr DataItem2<Vec3>::DataItem2(unsigned short key, Vec3 const& value)
 : DataItem(DATA_ITEM_TYPE, key), mValue(value) {
     //*(void**)this = dlsym_real("??_7?$DataItem2@VVec3@@@@6B@");
 }
 
 template <typename T>
-inline T const& DataItem::getData() const {
+constexpr T const& DataItem::getData() const {
     if (this->mType == DataItem2<T>::DATA_ITEM_TYPE)
         return ((DataItem2<T>*)this)->mValue;
     // throw("DataItemType Not Match");
@@ -167,7 +167,7 @@ inline T const& DataItem::getData() const {
 }
 
 template <typename T>
-inline T& DataItem::getData() {
+constexpr T& DataItem::getData() {
     if (this->mType == DataItem2<T>::DATA_ITEM_TYPE)
         return ((DataItem2<T>*)this)->mValue;
     // throw("DataItemType Not Match");
@@ -175,7 +175,7 @@ inline T& DataItem::getData() {
 }
 
 template <typename T>
-inline bool DataItem::setData(T const& value) {
+constexpr bool DataItem::setData(T const& value) {
     if (this->mType != DataItem2<T>::DATA_ITEM_TYPE)
         return false;
     ((DataItem2<T>*)this)->setData(value);
@@ -183,11 +183,11 @@ inline bool DataItem::setData(T const& value) {
 }
 
 template <typename T>
-inline static std::unique_ptr<DataItem> DataItem::create(unsigned short key, T const& value) {
+constexpr static std::unique_ptr<DataItem> DataItem::create(unsigned short key, T const& value) {
     return std::unique_ptr<DataItem>(new DataItem2(key, value));
 }
 
 template <typename T>
-inline static std::unique_ptr<DataItem> DataItem::create(ActorDataIDs key, T const& value) {
+constexpr static std::unique_ptr<DataItem> DataItem::create(ActorDataIDs key, T const& value) {
     return std::unique_ptr<DataItem>(new DataItem2((unsigned short)key, value));
 }

@@ -7,8 +7,8 @@ class ActorRuntimeID {
 public:
     uint64_t id;
 
-    [[nodiscard]] inline uint64_t get() const { return id; }
+    constexpr ActorRuntimeID() : id(0) {}
+    constexpr ActorRuntimeID(uint64_t x) : id(x) {} // NOLINT
 
-    inline explicit operator uint64_t() const { return id; }
-
+    constexpr operator uint64_t() const { return id; } // NOLINT
 };

@@ -29,7 +29,7 @@ public:
         return static_cast<T&>(*(static_cast<T*>(this)));
     }
 
-    [[nodiscard]] inline T operator+(T const& b) const noexcept
+    [[nodiscard]] constexpr T operator+(T const& b) const noexcept
         requires(!IsCommutativeGroup<first_type>)
     {
         T tmp  = *(static_cast<T const*>(this));
@@ -37,7 +37,7 @@ public:
         return tmp;
     }
 
-    [[nodiscard]] inline T operator-(T const& b) const noexcept
+    [[nodiscard]] constexpr T operator-(T const& b) const noexcept
         requires(!IsCommutativeGroup<first_type>)
     {
         T tmp  = *(static_cast<T const*>(this));
@@ -64,7 +64,7 @@ public:
     }
 
     template <std::convertible_to<first_type> V>
-    [[nodiscard]] inline T operator+(V const& b) const noexcept
+    [[nodiscard]] constexpr T operator+(V const& b) const noexcept
     {
         T tmp  = *(static_cast<T const*>(this));
         tmp    += static_cast<first_type>(b);
@@ -72,32 +72,32 @@ public:
     }
 
     template <std::convertible_to<first_type> V>
-    [[nodiscard]] inline T operator-(V const& b) const noexcept
+    [[nodiscard]] constexpr T operator-(V const& b) const noexcept
     {
         T tmp  = *(static_cast<T const*>(this));
         tmp    -= static_cast<first_type>(b);
         return tmp;
     }
 
-    [[nodiscard]] inline T add(T const& b) const noexcept
+    [[nodiscard]] constexpr T add(T const& b) const noexcept
         requires(!IsCommutativeGroup<first_type>)
     {
         return *(static_cast<T const*>(this)) + b;
     }
 
-    [[nodiscard]] inline T sub(T const& b) const noexcept
+    [[nodiscard]] constexpr T sub(T const& b) const noexcept
         requires(!IsCommutativeGroup<first_type>)
     {
         return *(static_cast<T const*>(this)) - b;
     }
 
     template <std::convertible_to<first_type> V>
-    [[nodiscard]] inline T add(V const& b) const noexcept {
+    [[nodiscard]] constexpr T add(V const& b) const noexcept {
         return *(static_cast<T const*>(this)) + static_cast<first_type>(b);
     }
 
     template <std::convertible_to<first_type> V>
-    [[nodiscard]] inline T sub(V const& b) const noexcept {
+    [[nodiscard]] constexpr T sub(V const& b) const noexcept {
         return *(static_cast<T const*>(this)) - static_cast<first_type>(b);
     }
 };

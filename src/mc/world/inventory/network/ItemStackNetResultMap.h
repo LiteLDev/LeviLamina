@@ -14,7 +14,7 @@ public:
     ItemStackNetResultMap(ItemStackNetResultMap const&)            = delete;
     ItemStackNetResultMap()                                        = delete;
 
-   static inline BidirectionalUnorderedMap<enum class ItemStackNetResult, std::string> const& getMap() {
+   static constexpr BidirectionalUnorderedMap<enum class ItemStackNetResult, std::string> const& getMap() {
         return mMap;
     }
 

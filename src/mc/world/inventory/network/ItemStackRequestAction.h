@@ -16,7 +16,7 @@ public:
 
     enum class ItemStackRequestActionType mActionType; // this+0x8
 
-    static inline BidirectionalUnorderedMap<enum class ItemStackRequestActionType, std::string> const&
+    static constexpr BidirectionalUnorderedMap<enum class ItemStackRequestActionType, std::string> const&
     getActionTypeMap() {
         return actionTypeMap;
     }

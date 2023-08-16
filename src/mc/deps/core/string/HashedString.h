@@ -55,7 +55,7 @@ public:
     }
 
     // Accessors
-    [[nodiscard]] inline const char* c_str() const noexcept { return str.c_str(); }
+    [[nodiscard]] constexpr const char* c_str() const noexcept { return str.c_str(); }
 
     [[nodiscard]] constexpr const std::string& getString() const noexcept { return str; }
 
@@ -93,9 +93,9 @@ public:
     constexpr std::strong_ordering operator<=>(const HashedString& other) const noexcept { return str <=> other.str; }
 
     // Convertors
-    inline explicit operator std::string() const { return str; }
+    constexpr explicit operator std::string() const { return str; }
 
-    inline explicit operator std::string_view() const { return std::string_view(str); }
+    constexpr explicit operator std::string_view() const { return std::string_view(str); }
 
 public:
     // NOLINTBEGIN

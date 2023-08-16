@@ -29,6 +29,8 @@ namespace mce { class UUID; }
 class Level {
 
 public:
+    LLNDAPI static class BlockSource& getBlockSource(int dimId);
+
     // prevent constructor by default
     Level& operator=(Level const&) = delete;
     Level(Level const&)            = delete;

@@ -32,7 +32,7 @@ public:
         int          mID;
         HashedString mTag;
 
-        inline FurnaceRecipeKey(int aux, HashedString tag) : mID(aux), mTag(std::move(tag)) {}
+        constexpr FurnaceRecipeKey(int aux, HashedString tag) : mID(aux), mTag(std::move(tag)) {}
 
     public:
         // NOLINTBEGIN
@@ -73,7 +73,7 @@ public:
         RecipeIngredient   mIngredient;
         char               mC;
 
-        inline Type(std::string const& name, char label, int aux, unsigned short count)
+        constexpr Type(std::string const& name, char label, int aux, unsigned short count)
         : mIngredient(name, aux, count), mC(label) {
             mItem  = mIngredient.getItem();
             mBlock = mIngredient.getBlock();

@@ -10,7 +10,7 @@ class EntityContext : public EntityContextBase {
 
 public:
     template <class T>
-    inline T* tryGetComponent() const {
+    constexpr T* tryGetComponent() const {
         return const_cast<T*>(_enttRegistry().try_get<T>(_getEntityId()));
     }
 

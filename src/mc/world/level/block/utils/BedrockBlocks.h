@@ -2,6 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+class Block;
+
 namespace BedrockBlocks {
 // NOLINTBEGIN
 /**

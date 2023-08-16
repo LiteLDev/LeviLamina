@@ -9,7 +9,7 @@ public:
     std::optional<EntityContext> mContext;
 
     template <class Entity, bool Unknown = false>
-    inline Entity* tryUnwrap() {
+    constexpr Entity* tryUnwrap() {
         if (_hasValue()) {
             return Entity::tryGetFromEntity(_getStackRef(), Unknown);
         }

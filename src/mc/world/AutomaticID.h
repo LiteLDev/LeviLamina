@@ -4,12 +4,15 @@
 
 template <typename A, typename T>
 class AutomaticID {
-    T id;
 
 public:
-    AutomaticID() { id = 0; }
+    T id;
 
-    explicit AutomaticID(T x) { id = x; }
+    using Type = A;
 
-    inline explicit operator T() const { return id; }
+    constexpr AutomaticID() : id(0) {}
+
+    constexpr AutomaticID(T x) : id(x) {} // NOLINT
+
+    constexpr operator T() const { return id; } // NOLINT
 };

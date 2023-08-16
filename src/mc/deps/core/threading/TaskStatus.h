@@ -30,7 +30,7 @@ public:
     /**
      * @symbol ??BTaskStatus\@\@QEBA?AW4Value\@0\@XZ
      */
-    MCAPI operator enum TaskStatus::Value() const;
+    MCAPI operator enum class TaskStatus::Value() const;
     /**
      * @symbol ?toAsyncStatus\@TaskStatus\@\@QEBA?AW4AsyncStatus\@Threading\@Bedrock\@\@XZ
      */

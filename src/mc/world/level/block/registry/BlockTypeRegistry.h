@@ -101,7 +101,7 @@ public:
     BlockTypeRegistry(BlockTypeRegistry const&)            = delete;
     BlockTypeRegistry()                                    = delete;
 
-    inline static std::map<class HashedString, class SharedPtr<class BlockLegacy>>& getBlockLookupMap() {
+    constexpr static std::map<class HashedString, class SharedPtr<class BlockLegacy>>& getBlockLookupMap() {
         return mBlockLookupMap;
     }
 public:

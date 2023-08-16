@@ -9,7 +9,7 @@ class UUID {
 public:
     uint64_t a, b;
 
-    explicit inline operator bool() const { return !isEmpty(); }
+    explicit constexpr operator bool() const { return !isEmpty(); }
     UUID() = delete;
     // LLAPI UUID();
     UUID(uint64_t a, uint64_t b) : a(a), b(b) {}

@@ -87,3 +87,7 @@
 #include "rapidjson/writer.h"
 
 #include "mc/math/vector/Vecs.h" // for vector types
+
+#include "liteloader/api/Macro.h" // for LLAPI
+
+#include "mc/common/wrapper/optional_ref.h" // replace optional<reference_wrapper<>>

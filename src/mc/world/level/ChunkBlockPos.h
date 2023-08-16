@@ -20,7 +20,7 @@ public:
       z(static_cast<int8_t>((std::is_floating_point_v<T2>) ? floor(z) : z)),
       y(static_cast<short>((std::is_floating_point_v<T1>) ? floor(y) : y)){};
 
-    [[nodiscard]] inline unsigned short toLegacyIndex() const noexcept {
+    [[nodiscard]] constexpr unsigned short toLegacyIndex() const noexcept {
         return static_cast<unsigned short>((y.mVal & 0xF) + 16 * (z + 16 * x));
     }
 
