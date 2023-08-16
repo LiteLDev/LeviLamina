@@ -61,10 +61,10 @@ constexpr const T& dAccess(void const* ptr, uintptr_t off) {
 }
 
 template <FixedString symbol>
-constexpr FuncPtr symbolCache = resolveSymbol(symbol);
+inline FuncPtr symbolCache = resolveSymbol(symbol);
 
 template <FixedString signature>
-constexpr FuncPtr signatureCache = resolveSignature(signature);
+inline FuncPtr signatureCache = resolveSignature(signature);
 
 } // namespace ll::memory
 
