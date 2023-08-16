@@ -20,7 +20,7 @@ class WeakEntityRef : public WeakRefT<struct EntityRefTraits> {
 
 #define AFTER_EXTRA
 // Add Member There
-
+    char filler[24];
 #define DISABLE_CONSTRUCTOR_PREVENTION_WEAKENTITYREF
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEAKENTITYREF
