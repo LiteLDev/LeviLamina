@@ -64,7 +64,7 @@ public:
     LLAPI bool hasTag(const string& tag);
     LLAPI bool hurtEntity(float damage, ActorDamageCause damageCause = ActorDamageCause::Override);
     LLAPI bool teleport(Vec3 to, int dimID, float x, float y);
-    LLAPI bool teleport(Vec3 pos,int dimid);
+    LLAPI bool teleport(Vec3 pos,int dimID);
     LLAPI ItemStack* getHandSlot();
     LLAPI bool rename(const string& name);
     LLAPI std::unique_ptr<CompoundTag> getNbt();

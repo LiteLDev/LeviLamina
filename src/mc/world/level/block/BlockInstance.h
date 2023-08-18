@@ -7,10 +7,10 @@
 class BlockInstance {
 public:
     BlockPos                          pos;
-    AutomaticID<class Dimension, int> dimId;
+    AutomaticID<class Dimension, int> dimID;
 
     LLAPI BlockInstance();
-    inline BlockInstance(BlockPos const& pos, int dimId) : pos(pos), dimId(dimId){};
+    inline BlockInstance(BlockPos const& pos, int dimID) : pos(pos), dimID(dimID){};
 
     LLNDAPI class BlockSource& getBlockSource() const;
 

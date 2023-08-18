@@ -125,7 +125,7 @@ SimulatedPlayer::create(std::string const& name, class AutomaticID<class Dimensi
         // pos.y = pos.y + 1.62001;
         // player->setPos(pos);
         // player->setRespawnReady(pos);
-        // player->setSpawnBlockRespawnPosition(bpos, dimId);
+        // player->setSpawnBlockRespawnPosition(bpos, dimID);
         player->setLocalPlayerAsInitialized();
         player->doInitialSpawn();
     }

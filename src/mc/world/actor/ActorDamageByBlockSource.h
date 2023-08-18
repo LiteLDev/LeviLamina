@@ -8,10 +8,7 @@
 class ActorDamageByBlockSource : public ::ActorDamageSource {
 
 public:
-    // prevent constructor by default
-    ActorDamageByBlockSource& operator=(ActorDamageByBlockSource const&) = delete;
-    ActorDamageByBlockSource(ActorDamageByBlockSource const&)            = delete;
-    ActorDamageByBlockSource()                                           = delete;
+    class Block const* mBlock{};
 
 public:
     // NOLINTBEGIN

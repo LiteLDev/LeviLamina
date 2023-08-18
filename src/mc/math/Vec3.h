@@ -2,10 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class Vec3: public float3 {
+class Vec3 : public floatN3<Vec3> {
 
 public:
-    using float3::float3;
+    using floatN3::floatN3;
     // NOLINTBEGIN
     /**
      * @symbol ?distanceToLineSquared\@Vec3\@\@QEBAMAEBV1\@0\@Z

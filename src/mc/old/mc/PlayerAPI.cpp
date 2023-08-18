@@ -311,19 +311,19 @@ bool Player::transferServer(const string& address, unsigned short port) { return
 
 std::pair<BlockPos, int> Player::getRespawnPosition() {
     BlockPos bp    = getSpawnPosition();
-    int      dimId = getSpawnDimension();
-    if (dimId == 3) { // has no bed.
+    int      dimID = getSpawnDimension();
+    if (dimID == 3) { // has no bed.
         bp    = getExpectedSpawnPosition();
-        dimId = getExpectedSpawnDimensionId();
+        dimID = getExpectedSpawnDimensionId();
     }
 
     if (bp.y >= 32767) {
-        auto region = Level::getBlockSource(dimId);
+        auto region = Level::getBlockSource(dimID);
         if (region)
             bp = region->getHeightmapPos(bp);
     }
 
-    return {bp, dimId};
+    return {bp, dimID};
 }
 
 std::unique_ptr<CompoundTag> Player::getNbt() { return CompoundTag::fromPlayer(this); }

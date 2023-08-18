@@ -18,6 +18,8 @@ public:
 
     constexpr optional_ref(std::nullopt_t) noexcept {}
 
+    constexpr optional_ref(std::nullptr_t) noexcept {}
+
     template <typename U, typename = std::enable_if_t<IsCompatibleV<U>>>
     constexpr optional_ref(const std::optional<U>& o)
         requires(std::is_const_v<T>)
@@ -35,8 +37,6 @@ public:
     template <typename U, typename = std::enable_if_t<IsCompatibleV<U>>>
     constexpr optional_ref(U& r) : ptr_(std::addressof(r)) {}
 
-    constexpr optional_ref(std::nullptr_t) = delete;
-
     template <typename U = T, typename = std::enable_if_t<std::is_const_v<U>>>
     constexpr optional_ref(optional_ref<std::remove_const_t<U>> rhs) : ptr_(rhs.as_ptr()) {}
 
@@ -44,7 +44,11 @@ public:
 
     optional_ref& operator=(const optional_ref&) = delete;
 
-    [[nodiscard]] constexpr bool has_value() const { return ptr_; }
+    [[nodiscard]] constexpr explicit operator bool() const noexcept { return ptr_!=nullptr; }
+
+    [[nodiscard]] constexpr bool has_value() const noexcept { return ptr_ != nullptr; }
+
+    [[nodiscard]] constexpr T* as_ptr() const noexcept { return ptr_; }
 
     constexpr T* operator->() const {
         if (!has_value()) {
@@ -62,8 +66,6 @@ public:
     [[nodiscard]] constexpr T& value() const { return get(); }
 
     [[nodiscard]] constexpr T& operator*() const { return get(); }
-
-    [[nodiscard]] constexpr T* as_ptr() const noexcept { return ptr_; }
 
     template <class T2>
     [[nodiscard]] constexpr std::remove_cv_t<T> value_or(T2&& right) const&

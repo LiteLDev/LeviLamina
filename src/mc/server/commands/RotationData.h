@@ -27,7 +27,7 @@ public:
      * @symbol
      * ??0RotationData\@RotationCommandUtils\@\@QEAA\@AEBVRelativeFloat\@\@0AEBV?$optional\@VVec2\@\@\@std\@\@\@Z
      */
-    MCAPI RotationData(class RelativeFloat const&, class RelativeFloat const&, std::optional<class Vec2> const&);
+    MCAPI RotationData(class RelativeFloat const& x, class RelativeFloat const& y, std::optional<class Vec2> const& originRot = std::nullopt);
     // NOLINTEND
 };
 

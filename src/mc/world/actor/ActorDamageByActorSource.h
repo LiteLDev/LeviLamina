@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/utilities/ActorCategory.h"
+#include "mc/entity/utilities/ActorType.h"
+#include "mc/world/ActorUniqueID.h"
 
 // auto generated inclusion list
 #include "mc/world/actor/ActorDamageSource.h"
@@ -8,10 +11,13 @@
 class ActorDamageByActorSource : public ::ActorDamageSource {
 
 public:
-    // prevent constructor by default
-    ActorDamageByActorSource& operator=(ActorDamageByActorSource const&) = delete;
-    ActorDamageByActorSource(ActorDamageByActorSource const&)            = delete;
-    ActorDamageByActorSource()                                           = delete;
+    class BlockSource const* mRegion;           // this+0x10
+    bool                     mIsWorldBuilder;   // this+0x18
+    bool                     mIsCreative;       // this+0x19
+    class ActorUniqueID      mEntityID;         // this+0x20
+    enum class ActorType     mEntityType;       // this+0x28
+    enum class ActorCategory mEntityCategories; // this+0x2C
+    std::string              mEntityNameTag;    // this+0x30
 
 public:
     // NOLINTBEGIN

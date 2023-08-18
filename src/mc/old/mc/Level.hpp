@@ -84,10 +84,10 @@ public:
     /**
      * @brief Get all entities in a dimension.
      *
-     * @param dimId The dimension ID of the dimension (Overworld: 0; Nether: 1; Ender: 2)
+     * @param dimID The dimension ID of the dimension (Overworld: 0; Nether: 1; Ender: 2)
      * @return A list containing all entities in the dimension
      */
-    LLAPI static std::vector<Actor*> getAllEntities(int dimId);
+    LLAPI static std::vector<Actor*> getAllEntities(int dimID);
 
     /**
      * @brief Get all entities.
@@ -100,56 +100,56 @@ public:
      * @brief Spawn a mob.
      *
      * @param pos The position of the mob
-     * @param dimId The dimension ID of the dimension of the mob (Overworld: 0; Nether: 1; Ender: 2)
+     * @param dimID The dimension ID of the dimension of the mob (Overworld: 0; Nether: 1; Ender: 2)
      * @param typeName The type of the mob
      * @return The mob spawned, `nullptr` if failed to spawn
      */
-    LLAPI static Actor* spawnMob(Vec3 pos, int dimId, std::string typeName);
+    LLAPI static Actor* spawnMob(Vec3 pos, int dimID, std::string typeName);
 
-    LLAPI static Actor* spawnItem(Vec3 pos, int dimId, ItemStack* item);
-    LLAPI static bool createExplosion(Vec3 pos, int dimId, Actor* source, float radius, bool createFire, bool canBreak, float maxResistance = 3.40282347e+38);
+    LLAPI static Actor* spawnItem(Vec3 pos, int dimID, ItemStack* item);
+    LLAPI static bool createExplosion(Vec3 pos, int dimID, Actor* source, float radius, bool createFire, bool canBreak, float maxResistance = 3.40282347e+38);
     // LLAPI static class MapItemSavedData* getMapSavedData(struct ActorUniqueID a0);
 
     /**
      * @brief Clone a mob.
      *
      * @param pos The position of the cloned mob
-     * @param dimId The dimension ID of the dimension of the cloned mob (Overworld: 0; Nether: 1; Ender: 2)
+     * @param dimID The dimension ID of the dimension of the cloned mob (Overworld: 0; Nether: 1; Ender: 2)
      * @param ac The mob to be cloned
      * @return The cloned mob, `nullptr` if failed to clone
      */
-    LLAPI static Actor* cloneMob(Vec3 pos, int dimId, Actor* ac);
+    LLAPI static Actor* cloneMob(Vec3 pos, int dimID, Actor* ac);
 
     // Block
-    LLAPI static Block* getBlock(BlockPos* pos, int dimId);
+    LLAPI static Block* getBlock(BlockPos* pos, int dimID);
     LLAPI static Block* getBlock(BlockPos* pos, BlockSource* blockSource);
 
     /**
      * @brief Get a block by a position
      *
      * @param pos The position of the block
-     * @param dimId The dimension ID of the dimension of the block (Overworld: 0; Nether: 1; Ender: 2)
+     * @param dimID The dimension ID of the dimension of the block (Overworld: 0; Nether: 1; Ender: 2)
      * @return The block to get, `nullptr` if failed to get
      */
-    LLAPI static Block* getBlock(const BlockPos& pos, int dimId);
+    LLAPI static Block* getBlock(const BlockPos& pos, int dimID);
 
     LLAPI static Block* getBlock(const BlockPos& pos, BlockSource* blockSource);
-    LLAPI static Block* getBlockEx(const BlockPos& pos, int dimId);
-    LLAPI static BlockInstance getBlockInstance(BlockPos* pos, int dimId);
+    LLAPI static Block* getBlockEx(const BlockPos& pos, int dimID);
+    LLAPI static BlockInstance getBlockInstance(BlockPos* pos, int dimID);
     LLAPI static BlockInstance getBlockInstance(BlockPos* pos, BlockSource* blockSource);
-    LLAPI static BlockInstance getBlockInstance(const BlockPos& pos, int dimId);
+    LLAPI static BlockInstance getBlockInstance(const BlockPos& pos, int dimID);
     LLAPI static BlockInstance getBlockInstance(const BlockPos& pos, BlockSource* blockSource);
-    LLAPI static BlockActor* getBlockEntity(BlockPos* pos, int dimId);
+    LLAPI static BlockActor* getBlockEntity(BlockPos* pos, int dimID);
     LLAPI static BlockActor* getBlockEntity(BlockPos* pos, BlockSource* blockSource);
 
     /**
      * @brief Get the block entity of a block by a position
      *
      * @param pos The position of the block
-     * @param dimId The dimension ID of the dimension of the block (Overworld: 0; Nether: 1; Ender: 2)
+     * @param dimID The dimension ID of the dimension of the block (Overworld: 0; Nether: 1; Ender: 2)
      * @return The block entity to get, `nullptr` if failed to get
      */
-    LLAPI static BlockActor* getBlockEntity(const BlockPos& pos, int dimId);
+    LLAPI static BlockActor* getBlockEntity(const BlockPos& pos, int dimID);
 
     LLAPI static BlockActor* getBlockEntity(const BlockPos& pos, BlockSource* blockSource);
 
@@ -192,10 +192,10 @@ public:
     /**
      * @brief Get a block source.
      * 
-     * @param dimid The dimension ID of the dimension of the block source (Overworld: 0; Nether: 1; Ender: 2)
+     * @param dimID The dimension ID of the dimension of the block source (Overworld: 0; Nether: 1; Ender: 2)
      * @return The block source to get, `nullptr` if failed to get
      */
-    LLAPI static BlockSource* getBlockSource(int dimid);
+    LLAPI static BlockSource* getBlockSource(int dimID);
 
     LLAPI static BlockSource* getBlockSource(Actor* actor);
     // LLAPI static BlockPalette* getBlockPalette();

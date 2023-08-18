@@ -2,10 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class Vec2 : public float2 {
+class Vec2 : public floatN2<Vec2> {
 
 public:
-    using float2::float2;
+    using floatN2::floatN2;
 
 public:
     // NOLINTBEGIN

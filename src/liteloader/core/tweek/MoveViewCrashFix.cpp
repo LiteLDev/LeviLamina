@@ -51,10 +51,10 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
     "?moveSpawnView@Player@@QEAAXAEBVVec3@@V?$AutomaticID@VDimension@@H@@@Z",
     void,
     class Vec3 const&                       pos,
-    class AutomaticID<class Dimension, int> dimid
+    class AutomaticID<class Dimension, int> dimID
 ) {
     if (validPosition(pos))
-        return origin(pos, dimid);
+        return origin(pos, dimID);
     fixPlayerPosition(this, false);
 }
 

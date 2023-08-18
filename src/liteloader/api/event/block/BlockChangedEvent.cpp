@@ -35,9 +35,9 @@ LL_AUTO_TYPED_INSTANCE_HOOK(
 ) {
     using EventManager = EventManager<BlockChangedEvent>;
 
-    int  dimId                 = this->getDimensionId();
-    auto previousBlockInstance = BlockInstance::createBlockInstance(beforeBlock, *blockPos, dimId);
-    auto newBlockInstance      = BlockInstance::createBlockInstance(afterBlock, *blockPos, dimId);
+    int  dimID                 = this->getDimensionId();
+    auto previousBlockInstance = BlockInstance::createBlockInstance(beforeBlock, *blockPos, dimID);
+    auto newBlockInstance      = BlockInstance::createBlockInstance(afterBlock, *blockPos, dimID);
 
     BlockChangedEvent event(previousBlockInstance, newBlockInstance);
     EventManager::fireEvent(event);

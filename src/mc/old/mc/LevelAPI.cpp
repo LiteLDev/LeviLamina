@@ -47,18 +47,18 @@ BlockSource* Level::getBlockSource(int dimID) {
 
 BlockSource* Level::getBlockSource(Actor* ac) { return const_cast<BlockSource*>(&ac->getRegionConst()); }
 
-Block* Level::getBlock(BlockPos* pos, int dimId) { return getBlock(*pos, Level::getBlockSource(dimId)); }
+Block* Level::getBlock(BlockPos* pos, int dimID) { return getBlock(*pos, Level::getBlockSource(dimID)); }
 
 Block* Level::getBlock(BlockPos* pos, BlockSource* blockSource) { return (Block*)&(blockSource->getBlock(*pos)); }
 
-Block* Level::getBlock(const BlockPos& pos, int dimId) { return getBlock(pos, Level::getBlockSource(dimId)); }
+Block* Level::getBlock(const BlockPos& pos, int dimID) { return getBlock(pos, Level::getBlockSource(dimID)); }
 
 Block* Level::getBlock(const BlockPos& pos, BlockSource* blockSource) { return (Block*)&(blockSource->getBlock(pos)); }
 
 
 // Return nullptr when failing to get block
-Block* Level::getBlockEx(const BlockPos& pos, int dimId) {
-    auto dim = (Dimension*)Global<Level>->getDimension(dimId).mHandle.lock().get();
+Block* Level::getBlockEx(const BlockPos& pos, int dimID) {
+    auto dim = (Dimension*)Global<Level>->getDimension(dimID).mHandle.lock().get();
     if (!dim)
         return nullptr;
 
@@ -75,7 +75,7 @@ Block* Level::getBlockEx(const BlockPos& pos, int dimId) {
     return const_cast<Block*>(&lc->getBlock(cbpos));
 }
 
-BlockInstance Level::getBlockInstance(BlockPos* pos, int dimId) { return {*pos, dimId}; }
+BlockInstance Level::getBlockInstance(BlockPos* pos, int dimID) { return {*pos, dimID}; }
 
 BlockInstance Level::getBlockInstance(BlockPos* pos, BlockSource* blockSource) {
     return {*pos, blockSource->getDimensionId()};
@@ -87,14 +87,14 @@ BlockInstance Level::getBlockInstance(const BlockPos& pos, BlockSource* blockSou
     return {pos, blockSource->getDimensionId()};
 }
 
-BlockActor* Level::getBlockEntity(BlockPos* pos, int dimId) {
-    return getBlockEntity(pos, Level::getBlockSource(dimId));
+BlockActor* Level::getBlockEntity(BlockPos* pos, int dimID) {
+    return getBlockEntity(pos, Level::getBlockSource(dimID));
 }
 
 BlockActor* Level::getBlockEntity(BlockPos* pos, BlockSource* blockSource) { return blockSource->getBlockEntity(*pos); }
 
-BlockActor* Level::getBlockEntity(const BlockPos& pos, int dimId) {
-    return getBlockEntity((BlockPos*)&pos, Level::getBlockSource(dimId));
+BlockActor* Level::getBlockEntity(const BlockPos& pos, int dimID) {
+    return getBlockEntity((BlockPos*)&pos, Level::getBlockSource(dimID));
 }
 
 BlockActor* Level::getBlockEntity(const BlockPos& pos, BlockSource* blockSource) {
@@ -201,10 +201,10 @@ std::vector<Player*> Level::getAllPlayers() {
     }
 }
 
-std::vector<Actor*> Level::getAllEntities(int dimId) {
+std::vector<Actor*> Level::getAllEntities(int dimID) {
     try {
         Level*     lv  = Global<Level>;
-        Dimension* dim = (Dimension*)lv->getDimension(dimId).mHandle.lock().get();
+        Dimension* dim = (Dimension*)lv->getDimension(dimID).mHandle.lock().get();
         if (!dim)
             return {};
         auto& list =
@@ -283,16 +283,16 @@ Player* Level::getPlayer(ActorUniqueID id) {
     );
 }
 
-Actor* Level::spawnMob(Vec3 pos, int dimId, std::string name) {
+Actor* Level::spawnMob(Vec3 pos, int dimID, std::string name) {
 
     Spawner* sp = &Global<Level>->getSpawner();
-    return sp->spawnMob(pos, dimId, std::move(name));
+    return sp->spawnMob(pos, dimID, std::move(name));
 }
 #include "mc/ListTag.hpp"
 #include "mc/FloatTag.hpp"
-Actor* Level::cloneMob(Vec3 pos, int dimId, Actor* ac) {
+Actor* Level::cloneMob(Vec3 pos, int dimID, Actor* ac) {
     Spawner* sp  = &Global<Level>->getSpawner();
-    Mob*     mob = sp->spawnMob(pos, dimId, std::move(ac->getTypeName()));
+    Mob*     mob = sp->spawnMob(pos, dimID, std::move(ac->getTypeName()));
     auto     nbt = ac->getNbt();
     nbt->getList("Pos")->get(0)->asFloatTag()->set(pos.x);
     nbt->getList("Pos")->get(1)->asFloatTag()->set(pos.y);
@@ -301,14 +301,14 @@ Actor* Level::cloneMob(Vec3 pos, int dimId, Actor* ac) {
     return mob;
 }
 
-Actor* Level::spawnItem(Vec3 pos, int dimId, ItemStack* item) {
+Actor* Level::spawnItem(Vec3 pos, int dimID, ItemStack* item) {
     Spawner* sp = &Global<Level>->getSpawner();
-    return sp->spawnItem(pos, dimId, item);
+    return sp->spawnItem(pos, dimID, item);
 }
 
 bool Level::createExplosion(
     Vec3   pos,
-    int    dimId,
+    int    dimID,
     Actor* source,
     float  radius,
     bool   createFire,
@@ -316,7 +316,7 @@ bool Level::createExplosion(
     float  maxResistance
 ) {
     Global<Level>->explode(
-        *Level::getBlockSource(dimId), source, pos, radius, createFire, canBreak, maxResistance, false
+        *Level::getBlockSource(dimID), source, pos, radius, createFire, canBreak, maxResistance, false
     );
     return true;
 }

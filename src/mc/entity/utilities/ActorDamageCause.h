@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class ActorDamageCause {
+enum class ActorDamageCause : int {
     None            = -1,
     Override        = 0x0,
     Contact         = 0x1,

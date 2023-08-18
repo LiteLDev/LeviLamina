@@ -2,10 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ChunkPos : public int2 {
+class ChunkPos : public intN2<ChunkPos> {
 
 public:
-    using int2::int2;
+    using intN2::intN2;
 
 public:
     // NOLINTBEGIN

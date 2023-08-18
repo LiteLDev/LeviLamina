@@ -14,7 +14,7 @@ public:
     // prevent constructor by default
     MobEffectInstance() = delete;
 
-    unsigned int                     mId;                              // this+0x0
+    MobEffect::EffectType            mId;                              // this+0x0
     int                              mDuration;                        // this+0x4
     int                              mDurationEasy;                    // this+0x8
     int                              mDurationNormal;                  // this+0xC
@@ -31,7 +31,7 @@ public:
     /**
      * @symbol ??0MobEffectInstance\@\@QEAA\@IHH\@Z
      */
-    MCAPI MobEffectInstance(unsigned int, int, int);
+    MCAPI MobEffectInstance(unsigned int type, int duration, int amplifier);
     /**
      * @symbol ??0MobEffectInstance\@\@QEAA\@IHHHHH_N00\@Z
      */
@@ -39,7 +39,14 @@ public:
     /**
      * @symbol ??0MobEffectInstance\@\@QEAA\@IHH_N00\@Z
      */
-    MCAPI MobEffectInstance(unsigned int, int, int, bool, bool, bool);
+    MCAPI MobEffectInstance(
+        unsigned int type,
+        int          duration,
+        int          amplifier,
+        bool         ambient,
+        bool         showParticles,
+        bool         showAnimation
+    );
     /**
      * @symbol ??0MobEffectInstance\@\@QEAA\@AEBV0\@\@Z
      */
@@ -47,11 +54,11 @@ public:
     /**
      * @symbol ??0MobEffectInstance\@\@QEAA\@IH\@Z
      */
-    MCAPI MobEffectInstance(unsigned int, int);
+    MCAPI MobEffectInstance(unsigned int type, int duration);
     /**
      * @symbol ??0MobEffectInstance\@\@QEAA\@I\@Z
      */
-    MCAPI MobEffectInstance(unsigned int);
+    MCAPI MobEffectInstance(unsigned int type);
     /**
      * @symbol ??0MobEffectInstance\@\@QEAA\@$$QEAV0\@\@Z
      */

@@ -5,6 +5,10 @@
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
+class BlockPos;
+class Vec3;
+class Player;
+class Actor;
 // clang-format on
 
 namespace CommandUtils {

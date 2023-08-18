@@ -10,10 +10,7 @@
 class DefaultDataLoadHelper : public ::DataLoadHelper {
 
 public:
-    // prevent constructor by default
-    DefaultDataLoadHelper& operator=(DefaultDataLoadHelper const&) = delete;
-    DefaultDataLoadHelper(DefaultDataLoadHelper const&)            = delete;
-    DefaultDataLoadHelper()                                        = delete;
+    LLAPI static DefaultDataLoadHelper globalHelper;
 
 public:
     // NOLINTBEGIN

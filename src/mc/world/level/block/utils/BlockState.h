@@ -41,7 +41,6 @@ public:
     BlockState(BlockState const&)            = delete;
     BlockState()                             = delete;
 
-    int (**_vptr_BlockState)(void);
     size_t const             mID;
     size_t const             mVariationCount;
     class HashedString const mName;

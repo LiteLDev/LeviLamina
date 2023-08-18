@@ -19,8 +19,8 @@
 
 // NOLINTBEGIN
 
-#define VEC2_IMPL_(NAME, TYPE, BASE)                                                                                   \
-    class NAME : public BASE<NAME, TYPE, TYPE> {                                                                       \
+#define VEC2_IMPL_(NAME, BNAME, TYPE, BASE)                                                                            \
+    class NAME : public BASE<BNAME, TYPE, TYPE> {                                                                      \
     public:                                                                                                            \
         VEC_X_MEMBER_(TYPE);                                                                                           \
         union {                                                                                                        \
@@ -63,11 +63,10 @@
             }                                                                                                          \
             return (T)x;                                                                                               \
         }                                                                                                              \
-    };                                                                                                                 \
-    using TYPE##2 = NAME
+    }
 
-#define VEC3_IMPL_(NAME, TYPE, BASE)                                                                                   \
-    class NAME : public BASE<NAME, TYPE, TYPE, TYPE> {                                                                 \
+#define VEC3_IMPL_(NAME, BNAME, TYPE, BASE)                                                                            \
+    class NAME : public BASE<BNAME, TYPE, TYPE, TYPE> {                                                                \
     public:                                                                                                            \
         VEC_X_MEMBER_(TYPE);                                                                                           \
         VEC_Y_MEMBER_(TYPE);                                                                                           \
@@ -120,11 +119,10 @@
                 return (T)x;                                                                                           \
             }                                                                                                          \
         }                                                                                                              \
-    };                                                                                                                 \
-    using TYPE##3 = NAME
+    }
 
-#define VEC4_IMPL_(NAME, TYPE, BASE)                                                                                   \
-    class NAME : public BASE<NAME, TYPE, TYPE, TYPE, TYPE> {                                                           \
+#define VEC4_IMPL_(NAME, BNAME, TYPE, BASE)                                                                            \
+    class NAME : public BASE<BNAME, TYPE, TYPE, TYPE, TYPE> {                                                          \
     public:                                                                                                            \
         VEC_X_MEMBER_(TYPE);                                                                                           \
         VEC_Y_MEMBER_(TYPE);                                                                                           \
@@ -189,8 +187,7 @@
                 return (T)x;                                                                                           \
             }                                                                                                          \
         }                                                                                                              \
-    };                                                                                                                 \
-    using TYPE##4 = NAME
+    }
 
 
 // NOLINTEND

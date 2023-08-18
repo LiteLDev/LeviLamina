@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/commands/CommandPositionFloat.h"
+#include "mc/server/commands/FacingResult.h"
+#include "mc/server/commands/RelativeFloat.h"
 
 // auto generated inclusion list
 #include "mc/server/commands/CommandSelectorResults.h"
@@ -16,10 +19,30 @@ namespace RotationCommandUtils { enum class FacingResult; }
 class TeleportCommand : public ::Command {
 
 public:
-    // prevent constructor by default
-    TeleportCommand& operator=(TeleportCommand const&) = delete;
-    TeleportCommand(TeleportCommand const&)            = delete;
-    TeleportCommand()                                  = delete;
+    std::function<void(
+        Actor&,
+        Vec3,
+        Vec3*,
+        AutomaticID<Dimension, int>,
+        const std::optional<RotationCommandUtils::RotationData>&,
+        int
+    )>
+        mApplyTeleport; // this+0x20
+
+    class CommandSelector<Actor>       mTargets;               // this+0x60
+    class CommandSelector<Actor>       mDestinationEntity;     // this+0x128
+    CommandPositionFloat               mDestinationPos;        // this+0x1F0
+    class CommandSelector<Actor>       mFacingEntity;          // this+0x200
+    CommandPositionFloat               mFacingPos;             // this+0x2C8
+    RelativeFloat                      mYRot;                  // this+0x2D8
+    RelativeFloat                      mXRot;                  // this+0x2E0
+    RotationCommandUtils::FacingResult mHaveFacing;            // this+0x2E8
+    bool                               mDestinationIsPosition; // this+0x2EC
+    bool                               mIsUsingRotation;       // this+0x2ED
+    bool                               mFacingIsPosition;      // this+0x2EE
+    bool                               mCheckForBlocks;        // this+0x2EF
+
+    TeleportCommand() = delete;
 
 public:
     // NOLINTBEGIN

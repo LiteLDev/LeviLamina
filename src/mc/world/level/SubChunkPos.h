@@ -2,10 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class SubChunkPos : public int3 {
+class SubChunkPos : public intN3<SubChunkPos> {
 
 public:
-    using int3::int3;
+    using intN3::intN3;
 
 public:
     // NOLINTBEGIN

@@ -8,11 +8,12 @@
 class ActorDamageByChildActorSource : public ::ActorDamageByActorSource {
 
 public:
-    // prevent constructor by default
-    ActorDamageByChildActorSource& operator=(ActorDamageByChildActorSource const&) = delete;
-    ActorDamageByChildActorSource(ActorDamageByChildActorSource const&)            = delete;
-    ActorDamageByChildActorSource()                                                = delete;
-
+    bool          mDamagingActorIsWorldBuilder; // this+0x50
+    bool          mDamagingActorIsCreative;     // this+0x51
+    ActorUniqueID mDamagingActorId;             // this+0x58
+    ActorType     mDamagingActorType;           // this+0x60
+    ActorCategory mDamagingActorCategories;     // this+0x64
+    std::string   mDamagingActorNameTag;        // this+0x68
 public:
     // NOLINTBEGIN
     /**

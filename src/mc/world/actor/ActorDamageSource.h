@@ -1,14 +1,12 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/utilities/ActorDamageCause.h"
 
 class ActorDamageSource {
 
 public:
-    // prevent constructor by default
-    ActorDamageSource& operator=(ActorDamageSource const&) = delete;
-    ActorDamageSource(ActorDamageSource const&)            = delete;
-    ActorDamageSource()                                    = delete;
+    enum class ActorDamageCause mCause;
 
 public:
     // NOLINTBEGIN

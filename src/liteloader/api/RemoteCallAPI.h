@@ -169,13 +169,13 @@ struct NumberType {
 
 struct WorldPosType {
     Vec3 pos = Vec3::ZERO;
-    int dimId = 3; // VanillaDimensions::Undefined;
-    WorldPosType(Vec3 const& pos, int dimId = 3)
+    int dimID = 3; // VanillaDimensions::Undefined;
+    WorldPosType(Vec3 const& pos, int dimID = 3)
     : pos(pos)
-    , dimId(dimId){};
+    , dimID(dimID){};
     WorldPosType(std::pair<Vec3, int> const& pos)
     : pos(pos.first)
-    , dimId(pos.second){};
+    , dimID(pos.second){};
     template <typename RTN>
     inline RTN get() = delete;
     template <>
@@ -188,23 +188,23 @@ struct WorldPosType {
     };
     template <>
     inline std::pair<Vec3, int> get() {
-        return std::make_pair(pos, dimId);
+        return std::make_pair(pos, dimID);
     };
     template <>
     inline std::pair<BlockPos, int> get() {
-        return std::make_pair(BlockPos(pos), dimId);
+        return std::make_pair(BlockPos(pos), dimID);
     };
 };
 
 struct BlockPosType {
     BlockPos pos = BlockPos::ZERO;
-    int dimId = 0;
-    BlockPosType(BlockPos const& pos, int dimId = 0)
+    int dimID = 0;
+    BlockPosType(BlockPos const& pos, int dimID = 0)
     : pos(pos)
-    , dimId(dimId){};
+    , dimID(dimID){};
     BlockPosType(std::pair<BlockPos, int> const& pos)
     : pos(pos.first)
-    , dimId(pos.second){};
+    , dimID(pos.second){};
     template <typename RTN>
     inline RTN get() = delete;
     template <>
@@ -213,7 +213,7 @@ struct BlockPosType {
     };
     template <>
     inline std::pair<BlockPos, int> get() {
-        return std::make_pair(pos, dimId);
+        return std::make_pair(pos, dimID);
     };
     template <>
     inline Vec3 get() {
@@ -221,7 +221,7 @@ struct BlockPosType {
     };
     template <>
     inline std::pair<Vec3, int> get() {
-        return std::make_pair(pos.toVec3(), dimId);
+        return std::make_pair(pos.toVec3(), dimID);
     };
 };
 

@@ -30,10 +30,10 @@ class StructureTemplate {
 public:
 #define DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURETEMPLATE
     LLAPI static StructureTemplate* fromTag(std::string name, CompoundTag const& tag);
-    LLAPI static StructureTemplate* fromWorld(std::string name, int dimid, BlockPos p1, BlockPos p2, bool ignoreEntities = true, bool ignoreBlocks = false);
+    LLAPI static StructureTemplate* fromWorld(std::string name, int dimID, BlockPos p1, BlockPos p2, bool ignoreEntities = true, bool ignoreBlocks = false);
     //LLAPI bool load(CompoundTag const& tag);
     LLAPI std::unique_ptr<CompoundTag> toTag();
-    LLAPI bool toWorld(int dimid, BlockPos const& p1, Mirror mirror = Mirror::None_15, Rotation rotation = Rotation::None_14);
+    LLAPI bool toWorld(int dimID, BlockPos const& p1, Mirror mirror = Mirror::None_15, Rotation rotation = Rotation::None_14);
     LLAPI StructureTemplateData* getData();
 
 #undef AFTER_EXTRA

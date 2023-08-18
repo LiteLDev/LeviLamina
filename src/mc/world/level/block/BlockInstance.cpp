@@ -6,9 +6,9 @@
 #include "mc/world/level/dimension/VanillaDimensions.h"
 #include "mc/world/level/level.h"
 
-BlockInstance::BlockInstance() : pos(BlockPos::MIN), dimId(VanillaDimensions::Undefined) {}
+BlockInstance::BlockInstance() : pos(BlockPos::MIN), dimID(VanillaDimensions::Undefined) {}
 
-class BlockSource& BlockInstance::getBlockSource() const { return Level::getBlockSource(dimId); }
+class BlockSource& BlockInstance::getBlockSource() const { return Level::getBlockSource(dimID); }
 
 bool BlockInstance::hasBlock() const { return getBlockSource().hasBlock(pos); }
 
@@ -34,6 +34,6 @@ optional_ref<class BlockActor const> BlockInstance::getBlockEntity() const {
 
 BlockInstance::operator bool() const { return *this == BlockInstance::Null; }
 
-bool BlockInstance::operator==(BlockInstance const& b) const { return b.pos == pos && b.dimId == dimId; }
+bool BlockInstance::operator==(BlockInstance const& b) const { return b.pos == pos && b.dimID == dimID; }
 
 BlockInstance const BlockInstance::Null = BlockInstance();

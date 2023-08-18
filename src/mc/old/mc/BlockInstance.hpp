@@ -15,12 +15,12 @@ class BlockInstance
     Block* block;
     BlockPos pos;
     int dim;
-    LLAPI BlockInstance(Block* block, BlockPos pos, int dimid);
-    LLAPI BlockInstance(BlockPos pos, int dimid = 0);
+    LLAPI BlockInstance(Block* block, BlockPos pos, int dimID);
+    LLAPI BlockInstance(BlockPos pos, int dimID = 0);
 
 public:
     LLAPI BlockInstance() = default;
-    LLAPI static BlockInstance createBlockInstance(Block* block, BlockPos pos, int dimId);
+    LLAPI static BlockInstance createBlockInstance(Block* block, BlockPos pos, int dimID);
 
     LLAPI Block* getBlock();
     LLAPI BlockPos getPosition();

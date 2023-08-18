@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/util/molang/MolangVersion.h"
+#include "mc/deps/core/string/HashedString.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -10,6 +12,8 @@ namespace Json { class Value; }
 class ExpressionNode {
 
 public:
+    uint8_t filler[240];
+
     // NOLINTBEGIN
     /**
      * @symbol ??0ExpressionNode\@\@QEAA\@XZ
@@ -19,12 +23,21 @@ public:
      * @symbol
      * ??0ExpressionNode\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4MolangVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z
      */
-    MCAPI ExpressionNode(std::string const&, enum class MolangVersion, class gsl::span<class HashedString const>);
+    MCAPI
+    ExpressionNode(
+        std::string const&       expression,
+        enum class MolangVersion version          = MolangVersion::Latest,
+        class gsl::span<class HashedString const> = gsl::span<class HashedString const>{{HashedString{"default"}}}
+    );
     /**
      * @symbol
      * ??0ExpressionNode\@\@QEAA\@AEBVValue\@Json\@\@W4MolangVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z
      */
-    MCAPI ExpressionNode(class Json::Value const&, enum class MolangVersion, class gsl::span<class HashedString const>);
+    MCAPI ExpressionNode(
+        class Json::Value const&,
+        enum class MolangVersion version          = MolangVersion::Latest,
+        class gsl::span<class HashedString const> = gsl::span<class HashedString const>{{HashedString{"default"}}}
+    );
     /**
      * @symbol
      * ??0ExpressionNode\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVSemVersion\@\@V?$span\@$$CBVHashedString\@\@$0?0\@gsl\@\@\@Z

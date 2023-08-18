@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/utilities/ActorDamageCause.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/SharePtrRefTraits.h"
@@ -13,9 +14,59 @@
 class Actor : public ::ActorStatusProvider {
 public:
     // Actor inner types define
-    enum class InitializationMethod {};
+    enum class InitializationMethod {
+        Invalid     = 0x0,
+        Loaded      = 0x1,
+        Spawned     = 0x2,
+        Born        = 0x3,
+        Transformed = 0x4,
+        Updated     = 0x5,
+        Event       = 0x6,
+        Legacy      = 0x7,
+    };
 
 public:
+    LLNDAPI class EntityContext&       getEntityContext();
+    LLNDAPI class EntityContext const& getEntityContext() const;
+
+    LLAPI void refresh();
+
+    LLNDAPI std::string const& getTypeName() const;
+
+    LLNDAPI class Vec3 getFeetPos() const;
+
+    LLNDAPI class BlockPos getFeetBlockPos() const;
+
+    LLNDAPI bool isSimulatedPlayer() const;
+    LLNDAPI bool isPlayer(bool allowSimulatedPlayer = true) const;
+    LLNDAPI bool isItemActor() const;
+    LLNDAPI bool isOnGround() const;
+
+    LLAPI void setOnFire(int time, bool isEffect = true);
+    LLAPI void stopFire();
+
+    LLNDAPI float getSpeed() const;
+
+    LLAPI bool hurt(
+        float               damage,
+        ActorDamageCause    cause    = ActorDamageCause::Override,
+        optional_ref<Actor> attacker = std::nullopt
+    );
+
+    LLAPI bool teleport(class Vec3 const& pos, int dimID, class Vec2 const& rotation);
+    LLAPI bool teleport(class Vec3 const& pos, int dimID);
+
+    LLAPI void setName(std::string const& name);
+
+    LLNDAPI float quickEvalMolangScript(std::string const& expression);
+
+    LLNDAPI std::unique_ptr<CompoundTag> saveToNBT() const;
+
+    LLAPI bool loadFromNBT(class CompoundTag const& nbt);
+
+    template <typename T>
+    MCAPI T* tryGetComponent() const;
+
     // prevent constructor by default
     Actor& operator=(Actor const&) = delete;
     Actor(Actor const&)            = delete;

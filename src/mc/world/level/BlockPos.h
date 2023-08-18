@@ -2,10 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class BlockPos : public int3{
+class BlockPos : public intN3<BlockPos> {
 
 public:
-    using int3::int3;
+    using intN3::intN3;
     // NOLINTBEGIN
     /**
      * @symbol ??0BlockPos\@\@QEAA\@AEBVVec3\@\@\@Z
