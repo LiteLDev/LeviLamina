@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/enums/CircuitComponentType.h"
-#include "mc/enums/FaceID.h"
+#include "mc/enums/FacingID.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/redstone/circuit/components/BaseCircuitComponent.h"
 
@@ -13,12 +13,12 @@ public:
     public:
         class BaseCircuitComponent*     mComponent;
         class BlockPos                  mPos;
-        enum class FaceID               mDirection;
+        enum class FacingID               mDirection;
         enum class CircuitComponentType mTypeID;
 
         constexpr Entry(class BaseCircuitComponent* component, const BlockPos& pos) {
             mComponent = component;
-            mDirection = (FaceID)component->getDirection();
+            mDirection = (FacingID)component->getDirection();
             mPos       = pos;
             mTypeID    = component->getCircuitComponentGroupType();
         }

@@ -8,7 +8,7 @@
 class PistonConsumer : public ::ConsumerComponent {
 
 public:
-    enum class FaceID          mBlockedFace;
+    enum class FacingID        mBlockedFace;
     const CircuitComponentType mCircuitComponentType = CircuitComponentType::PistonConsumer;
 
 public:

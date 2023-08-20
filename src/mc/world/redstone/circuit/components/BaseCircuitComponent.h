@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/enums/CircuitComponentType.h"
-#include "mc/enums/FaceID.h"
+#include "mc/enums/FacingID.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list
@@ -20,7 +20,7 @@ public:
     class BlockPos                  mChunkPosition;
     bool                            mShouldEvaluate;
     int                             mStrength;
-    enum class FaceID               mDirection;
+    enum class FacingID               mDirection;
     bool                            mAllowPowerUp;
     bool                            mAllowPowerDown;
     bool                            mRemoved;

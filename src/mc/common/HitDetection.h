@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+class Vec3;
+class AABB;
+class Actor;
+class Player;
+
 namespace HitDetection {
 // NOLINTBEGIN
 /**

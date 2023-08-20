@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/serialize/serialize.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,9 +10,32 @@
 class BinaryStream : public ::ReadOnlyBinaryStream {
 
 public:
+    std::string  mOwnedBuffer;
+    std::string* mBuffer;
+
     // prevent constructor by default
     BinaryStream& operator=(BinaryStream const&) = delete;
     BinaryStream(BinaryStream const&)            = delete;
+
+    template <typename T>
+    inline void writeType(T const& x) {
+        serialize<T>::write(x, *this);
+    }
+
+    template <>
+    MCAPI void writeType(struct CommandOriginData const&);
+    template <>
+    MCAPI void writeType(std::vector<std::unique_ptr<class DataItem>> const&);
+    template <>
+    MCAPI void writeType(class NetworkItemStackDescriptor const&);
+    template <>
+    MCAPI void writeType(class MoveActorAbsoluteData const&);
+    template <>
+    MCAPI void writeType(class NetworkItemInstanceDescriptor const&);
+    template <>
+    MCAPI void writeType(struct ItemStackRequestSlotInfo const&);
+    template <>
+    MCAPI void writeType(class RecipeIngredient const&);
 
 public:
     // NOLINTBEGIN

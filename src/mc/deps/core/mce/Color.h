@@ -4,13 +4,10 @@
 
 namespace mce {
 
-class Color {
+class Color : public floatN4<Color>{
 
 public:
-    // prevent constructor by default
-    Color& operator=(Color const&) = delete;
-    Color(Color const&)            = delete;
-    Color()                        = delete;
+    using floatN4::floatN4;
 
 public:
     // NOLINTBEGIN

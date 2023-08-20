@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/biome/VanillaBiomeTypes.h"
 
 // auto generated inclusion list
 #include "mc/common/InheritanceTree.h"
@@ -40,6 +41,8 @@ public:
     };
 
 public:
+    LLNDAPI std::vector<class Biome*> lookupByType(enum class VanillaBiomeTypes type) const;
+
     // prevent constructor by default
     BiomeRegistry& operator=(BiomeRegistry const&) = delete;
     BiomeRegistry(BiomeRegistry const&)            = delete;

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/FaceID.h"
+#include "mc/enums/FacingID.h"
 #include "mc/world/level/BlockPos.h"
 
 class CircuitComponentList {
@@ -18,7 +18,7 @@ public:
         class BaseCircuitComponent* mComponent = nullptr;
         int                         mDampening{};
         class BlockPos              mPos;
-        enum class FaceID           mDirection = FaceID::Unknown;
+        enum class FacingID           mDirection = FacingID::Unknown;
         bool                        mDirectlyPowered{};
         int                         mData{};
 

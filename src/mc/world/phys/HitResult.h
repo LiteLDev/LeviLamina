@@ -1,6 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/WeakEntityRef.h"
+#include "mc/enums/FacingID.h"
+#include "mc/math/Vec3.h"
+#include "mc/world/level/BlockPos.h"
 
 class HitResult {
 
@@ -12,15 +16,29 @@ public:
         NoHit            = 0x3,
     };
 
+
+    Vec3          mStartPos;     // this+0x0
+    Vec3          mRayDir;       // this+0xC
+    HitResultType mType;         // this+0x18
+    FacingID      mFacing;       // this+0x1C
+    BlockPos      mBlock;        // this+0x20
+    Vec3          mPos;          // this+0x2C
+    WeakEntityRef mEntity;       // this+0x38
+    bool          mIsHitLiquid;  // this+0x50
+    FacingID      mLiquidFacing; // this+0x51
+    BlockPos      mLiquid;       // this+0x54
+    Vec3          mLiquidPos;    // this+0x60
+    bool          mIndirectHit;  // this+0x6C
+
     // NOLINTBEGIN
     /**
      * @symbol ??0HitResult\@\@QEAA\@AEBVVec3\@\@0AEAVActor\@\@\@Z
      */
-    MCAPI HitResult(class Vec3 const&, class Vec3 const&, class Actor&);
+    MCAPI HitResult(class Vec3 const& startPos, class Vec3 const& rayDir, class Actor& actor);
     /**
      * @symbol ??0HitResult\@\@QEAA\@AEBVVec3\@\@0AEAVActor\@\@0\@Z
      */
-    MCAPI HitResult(class Vec3 const&, class Vec3 const&, class Actor&, class Vec3 const&);
+    MCAPI HitResult(class Vec3 const& startPos, class Vec3 const& rayDir, class Actor& actor, class Vec3 const& hitPos);
     /**
      * @symbol ??0HitResult\@\@QEAA\@AEBV0\@\@Z
      */
@@ -32,7 +50,7 @@ public:
     /**
      * @symbol ??0HitResult\@\@QEAA\@AEBVVec3\@\@00\@Z
      */
-    MCAPI HitResult(class Vec3 const&, class Vec3 const&, class Vec3 const&);
+    MCAPI HitResult(class Vec3 const& startPos, class Vec3 const& rayDir, class Vec3 const& hitPos);
     /**
      * @symbol ??0HitResult\@\@QEAA\@AEBVVec3\@\@0AEBVBlockPos\@\@E0\@Z
      */

@@ -44,6 +44,12 @@ public:
         return (T)x;
     }
 
+    [[nodiscard]] bool contains(Vec3 const& a) const noexcept { return a.ge(min).all() && a.le(max).all(); }
+
+    [[nodiscard]] bool contains(AABB const& a) const noexcept {
+        return a.min.ge(min).all() && a.max.le(max).all();
+    }
+
     LLAPI explicit operator class BoundingBox() const;
 
 public:
@@ -92,14 +98,6 @@ public:
      * @symbol ?cloneAndTransformByMatrix\@AABB\@\@QEBA?AV1\@AEBVMatrix\@\@\@Z
      */
     MCAPI class AABB cloneAndTransformByMatrix(class Matrix const&) const;
-    /**
-     * @symbol ?contains\@AABB\@\@QEBA_NAEBV1\@\@Z
-     */
-    MCAPI bool contains(class AABB const&) const;
-    /**
-     * @symbol ?contains\@AABB\@\@QEBA_NAEBVVec3\@\@\@Z
-     */
-    MCAPI bool contains(class Vec3 const&) const;
     /**
      * @symbol ?distanceTo\@AABB\@\@QEBAMAEBV1\@\@Z
      */

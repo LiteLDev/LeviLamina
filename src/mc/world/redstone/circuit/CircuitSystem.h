@@ -21,7 +21,7 @@ public:
         class BlockPos const&           pos,
         class BlockSource*              pSource,
         enum class CircuitComponentType type,
-        enum class FaceID               direction
+        enum class FacingID               direction
     ) {
         if (mLockGraph) {
             if (!mSceneGraph.getComponent(pos, type))

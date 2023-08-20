@@ -155,7 +155,7 @@ public:
     [[nodiscard]] constexpr V as() const noexcept
         requires(V::size() == size() && std::convertible_to<T, V>)
     {
-        return V{*this};
+        return static_cast<V>(*this);
     }
 
     [[nodiscard]] constexpr class boolN<sizeof...(Components)> eq(T const& b) const noexcept

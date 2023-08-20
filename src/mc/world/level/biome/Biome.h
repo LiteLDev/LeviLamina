@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/mce/Color.h"
+#include "mc/deps/core/string/HashedString.h"
 
 // auto generated inclusion list
 #include "mc/common/TagRegistry.h"
@@ -14,9 +16,48 @@ namespace mce { class Color; }
 class Biome {
 public:
     // Biome inner types define
-    enum class BiomeTempCategory {};
+    enum class BiomeTempCategory : int {
+        Ocean  = 0x0,
+        Cold   = 0x1,
+        Medium = 0x2,
+        Warm   = 0x3,
+    };
 
 public:
+    // clang-format off
+    [[nodiscard]] constexpr HashedString const& getHash()     const { return ll::memory::dAccess<HashedString>(this, 0x8); }
+    [[nodiscard]] constexpr int   getDebugMapColor()          const { return ll::memory::dAccess<int>(this, 0x38); }
+    [[nodiscard]] constexpr int   getDebugMapOddColor()       const { return ll::memory::dAccess<int>(this, 0x3C); }
+    [[nodiscard]] constexpr float getTemperature()            const { return ll::memory::dAccess<float>(this, 0x40); }
+    //[[nodiscard]]constexpr float getDownfall()              const { return ll::memory::dAccess<float>(this, 0x44); }
+    [[nodiscard]] constexpr float getRedSporeDensity()        const { return ll::memory::dAccess<float>(this, 0x48); }
+    [[nodiscard]] constexpr float getBlueSporeDensity()       const { return ll::memory::dAccess<float>(this, 0x4C); }
+    [[nodiscard]] constexpr float getAshDensity()             const { return ll::memory::dAccess<float>(this, 0x50); }
+    [[nodiscard]] constexpr float getWhiteAshDensity()        const { return ll::memory::dAccess<float>(this, 0x54); }
+    [[nodiscard]] constexpr float getSnowAccumulation()       const { return ll::memory::dAccess<float>(this, 0x58); }
+    [[nodiscard]] constexpr float getFoliageSnow()            const { return ll::memory::dAccess<float>(this, 0x5C); }
+    [[nodiscard]] constexpr float getMinSnowLevel()           const { return ll::memory::dAccess<float>(this, 0x60); }
+    [[nodiscard]] constexpr float getMaxSnowLevel()           const { return ll::memory::dAccess<float>(this, 0x64); }
+    [[nodiscard]] constexpr float getDepth()                  const { return ll::memory::dAccess<float>(this, 0x68); }
+    [[nodiscard]] constexpr float getScale()                  const { return ll::memory::dAccess<float>(this, 0x6C); }
+    [[nodiscard]] constexpr mce::Color const& getWaterColor() const { return ll::memory::dAccess<mce::Color>(this, 0x70); }
+    [[nodiscard]] constexpr float getWaterTransparency()      const { return ll::memory::dAccess<float>(this, 0x80); }
+    [[nodiscard]] constexpr bool  getRain()                   const { return ll::memory::dAccess<bool>(this, 0x84); }
+    [[nodiscard]] constexpr int   getId()                     const { return ll::memory::dAccess<int>(this, 0x88); }
+    // clang-format on
+
+    // WeakRefT<SharePtrRefTraits<FogDefinition const>> mFogDefinition;   // this+0x90
+    // OceanRuinConfiguration                           mOceanRuinConfig; // this+0xA0
+    // std::vector<MobSpawnerData, std::allocator<MobSpawnerData>> mMobs; // this+0xB0
+
+    // PerlinSimplexNoise         mTemperatureNoise;       // this+0xC8
+    // PerlinSimplexNoise         mFrozenTemperatureNoise; // this+0xF0
+    // OwnerPtrT<EntityRefTraits> mEntity;                 // this+0x118
+    // PerlinSimplexNoise         mBiomeInfoNoise;         // this+0x130
+    // Biome::CachedClientComponentData mCachedClientComponentData;
+
+    [[nodiscard]] constexpr std::string const& getName() const { return getHash().getString(); }
+
     // prevent constructor by default
     Biome& operator=(Biome const&) = delete;
     Biome(Biome const&)            = delete;

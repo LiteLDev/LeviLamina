@@ -2,6 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/entity/utilities/ActorDamageCause.h"
+#include "mc/world/phys/HitResult.h"
+#include "mc/world/actor/common/ClipDefaults.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/SharePtrRefTraits.h"
@@ -35,6 +37,8 @@ public:
 
     LLNDAPI class Vec3 getFeetPos() const;
 
+    LLNDAPI class Vec3 getHeadPos() const;
+
     LLNDAPI class BlockPos getFeetBlockPos() const;
 
     LLNDAPI bool isSimulatedPlayer() const;
@@ -45,13 +49,21 @@ public:
     LLAPI void setOnFire(int time, bool isEffect = true);
     LLAPI void stopFire();
 
-    LLNDAPI float getSpeed() const;
+    LLNDAPI float getPosDeltaPerSecLength() const;
 
     LLAPI bool hurt(
         float               damage,
         ActorDamageCause    cause    = ActorDamageCause::Override,
         optional_ref<Actor> attacker = std::nullopt
     );
+
+    LLNDAPI class HitResult traceRay(
+        float                                                                          tMax         = 5.5f,
+        bool                                                                           includeActor = true,
+        bool                                                                           includeBlock = true,
+        std::function<bool(class BlockSource const&, class Block const&, bool)> const& blockCheckFunction =
+            ClipDefaults::CHECK_ALL_PICKABLE_BLOCKS
+    ) const;
 
     LLAPI bool teleport(class Vec3 const& pos, int dimID, class Vec2 const& rotation);
     LLAPI bool teleport(class Vec3 const& pos, int dimID);
@@ -60,12 +72,12 @@ public:
 
     LLNDAPI float quickEvalMolangScript(std::string const& expression);
 
-    LLNDAPI std::unique_ptr<CompoundTag> saveToNBT() const;
+    LLNDAPI std::unique_ptr<class CompoundTag> saveToNBT() const;
 
     LLAPI bool loadFromNBT(class CompoundTag const& nbt);
 
     template <typename T>
-    MCAPI T* tryGetComponent() const;
+    MCAPI T* tryGetComponent();
 
     // prevent constructor by default
     Actor& operator=(Actor const&) = delete;
@@ -198,7 +210,7 @@ public:
      * @vftbl 24
      * @symbol ?getPosExtrapolated\@Actor\@\@UEBA?BVVec3\@\@M\@Z
      */
-    virtual class Vec3 const getPosExtrapolated(float) const;
+    virtual class Vec3 const getPosExtrapolated(float lerpFactor = 0.0f) const;
     /**
      * @vftbl 25
      * @symbol ?getFiringPos\@Actor\@\@UEBA?AVVec3\@\@XZ
@@ -208,22 +220,22 @@ public:
      * @vftbl 26
      * @symbol ?getInterpolatedRidingPosition\@Actor\@\@UEBA?AVVec3\@\@M\@Z
      */
-    virtual class Vec3 getInterpolatedRidingPosition(float) const;
+    virtual class Vec3 getInterpolatedRidingPosition(float lerpFactor = 0.0f) const;
     /**
      * @vftbl 27
      * @symbol ?getInterpolatedBodyRot\@Actor\@\@UEBAMM\@Z
      */
-    virtual float getInterpolatedBodyRot(float) const;
+    virtual float getInterpolatedBodyRot(float lerpFactor = 0.0f) const;
     /**
      * @vftbl 28
      * @symbol ?getInterpolatedHeadRot\@Actor\@\@UEBAMM\@Z
      */
-    virtual float getInterpolatedHeadRot(float) const;
+    virtual float getInterpolatedHeadRot(float lerpFactor = 0.0f) const;
     /**
      * @vftbl 29
      * @symbol ?getInterpolatedBodyYaw\@Actor\@\@UEBAMM\@Z
      */
-    virtual float getInterpolatedBodyYaw(float) const;
+    virtual float getInterpolatedBodyYaw(float lerpFactor = 0.0f) const;
     /**
      * @vftbl 30
      * @symbol ?getYawSpeedInDegreesPerSecond\@Actor\@\@UEBAMXZ
@@ -233,7 +245,7 @@ public:
      * @vftbl 31
      * @symbol ?getInterpolatedWalkAnimSpeed\@Actor\@\@UEBAMM\@Z
      */
-    virtual float getInterpolatedWalkAnimSpeed(float) const;
+    virtual float getInterpolatedWalkAnimSpeed(float lerpFactor = 0.0f) const;
     /**
      * @vftbl 32
      * @symbol ?getInterpolatedRidingOffset\@Actor\@\@UEBA?AVVec3\@\@MH\@Z
@@ -434,7 +446,7 @@ public:
      * @vftbl 70
      * @symbol ?getHeadLookVector\@Actor\@\@UEBA?AVVec3\@\@M\@Z
      */
-    virtual class Vec3 getHeadLookVector(float) const;
+    virtual class Vec3 getHeadLookVector(float lerpFactor = 0.0f) const;
     /**
      * @vftbl 71
      * @symbol __unk_vfn_71
@@ -1653,7 +1665,7 @@ public:
     /**
      * @symbol ?getAttachPos\@Actor\@\@QEBA?AVVec3\@\@W4ActorLocation\@\@M\@Z
      */
-    MCAPI class Vec3 getAttachPos(enum class ActorLocation, float) const;
+    MCAPI class Vec3 getAttachPos(enum class ActorLocation, float lerpFactor = 0.0f) const;
     /**
      * @symbol ?getAttributes\@Actor\@\@QEBA?AV?$not_null\@PEBVBaseAttributeMap\@\@\@gsl\@\@XZ
      */
@@ -1805,11 +1817,11 @@ public:
     /**
      * @symbol ?getInterpolatedPosition\@Actor\@\@QEBA?AVVec3\@\@M\@Z
      */
-    MCAPI class Vec3 getInterpolatedPosition(float) const;
+    MCAPI class Vec3 getInterpolatedPosition(float lerpFactor = 0.0f) const;
     /**
      * @symbol ?getInterpolatedRotation\@Actor\@\@QEBA?AVVec2\@\@M\@Z
      */
-    MCAPI class Vec2 getInterpolatedRotation(float) const;
+    MCAPI class Vec2 getInterpolatedRotation(float lerpFactor = 0.0f) const;
     /**
      * @symbol ?getIsExperienceDropEnabled\@Actor\@\@QEBA_NXZ
      */
@@ -2057,7 +2069,7 @@ public:
     /**
      * @symbol ?getViewVector\@Actor\@\@QEBA?AVVec3\@\@M\@Z
      */
-    MCAPI class Vec3 getViewVector(float) const;
+    MCAPI class Vec3 getViewVector(float lerpFactor = 0.0f) const;
     /**
      * @symbol ?getWeakEntity\@Actor\@\@QEBA?BV?$WeakRefT\@UEntityRefTraits\@\@\@\@XZ
      */

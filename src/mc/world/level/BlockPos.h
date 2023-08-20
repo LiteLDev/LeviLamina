@@ -2,10 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+class AABB;
+class BoundingBox;
+class Vec3;
+
 class BlockPos : public intN3<BlockPos> {
 
 public:
     using intN3::intN3;
+
+    LLNDAPI operator class AABB() const;
+    LLNDAPI operator class BoundingBox() const;
+
+    LLNDAPI class Vec3 bottomCenter() const;
+    LLNDAPI class Vec3 center() const;
+
     // NOLINTBEGIN
     /**
      * @symbol ??0BlockPos\@\@QEAA\@AEBVVec3\@\@\@Z

@@ -337,9 +337,17 @@ public:
      * @symbol
      * ?clip\@BlockSource\@\@QEBA?AVHitResult\@\@AEBVVec3\@\@0_N1H11PEAVPlayer\@\@AEBV?$function\@$$A6A_NAEBVBlockSource\@\@AEBVBlock\@\@_N\@Z\@std\@\@\@Z
      */
-    MCAPI class HitResult
-    clip(class Vec3 const&, class Vec3 const&, bool, bool, int, bool, bool, class Player*, std::function<bool(class BlockSource const&, class Block const&, bool)> const&)
-        const;
+    MCAPI class HitResult clip(
+        class Vec3 const&                                                              startPos,
+        class Vec3 const&                                                              endPos,
+        bool                                                                           includeLiquid,
+        bool                                                                           solidOnly,
+        int                                                                            maxManhattanDis,
+        bool                                                                           ignoreBorderBlock,
+        bool                                                                           fullOnly,
+        class Player*                                                                  player,
+        std::function<bool(class BlockSource const&, class Block const&, bool)> const& blockCheckFunction
+    ) const;
     /**
      * @symbol
      * ?containsAnyBlockInBox\@BlockSource\@\@QEAA_NAEBVBoundingBox\@\@V?$function\@$$A6A_NAEBVBlock\@\@\@Z\@std\@\@\@Z

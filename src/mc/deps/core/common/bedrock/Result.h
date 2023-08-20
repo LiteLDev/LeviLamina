@@ -5,7 +5,7 @@
 
 namespace Bedrock {
 
-template <typename T, typename Err>
+template <typename T, typename Err = std::error_code>
 class Result {
 
 private:
@@ -43,7 +43,7 @@ public:
     }
 };
 
-template <class Err>
+template <typename Err>
 class Result<void, Err> {
 
 private:

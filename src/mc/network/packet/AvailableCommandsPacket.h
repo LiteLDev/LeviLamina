@@ -137,7 +137,21 @@ public:
         // NOLINTEND
     };
 
+    std::vector<std::string>           mEnumValues;       // 48
+    std::vector<std::string>           mPostfixes;        // 48+24=72
+    std::vector<EnumData>              mEnums;            // 48+24*2=96
+    std::vector<std::string>           mSubcommandValues; // 48+24*3=120
+    std::vector<ChainedSubcommandData> mSubcommands;      // 48+24*4=144
+    std::vector<CommandData>           mCommands;         // 48+24*5=168
+    std::vector<SoftEnumData>          mSoftEnums;        // 48+24*6=192
+    std::vector<ConstrainedValueData>  mConstraints;      // 48+24*7=216
+
 public:
+    LLNDAPI std::vector<std::string> getEnumNames() const;
+    LLNDAPI std::vector<std::string> getSoftEnumNames() const;
+    LLNDAPI std::vector<std::string> getEnumValues(std::string const& name) const;
+    LLNDAPI std::vector<std::string> getSoftEnumValues(std::string const& name) const;
+
     // prevent constructor by default
     AvailableCommandsPacket& operator=(AvailableCommandsPacket const&) = delete;
     AvailableCommandsPacket(AvailableCommandsPacket const&)            = delete;

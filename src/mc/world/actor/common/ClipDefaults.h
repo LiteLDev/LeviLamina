@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+class BlockSource;
+class Block;
+
 namespace ClipDefaults {
 // NOLINTBEGIN
 /**

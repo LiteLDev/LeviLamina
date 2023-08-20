@@ -90,4 +90,6 @@
 
 #include "liteloader/api/Macro.h" // for LLAPI
 
+#include "liteloader/api/memory/MemoryUtils.h" // for dAccess
+
 #include "mc/common/wrapper/optional_ref.h" // replace optional<reference_wrapper<>>

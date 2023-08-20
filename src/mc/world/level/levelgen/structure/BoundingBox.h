@@ -79,6 +79,7 @@ public:
         }
         return (T&)x;
     }
+
     template <typename T>
     [[nodiscard]] constexpr T const& get(size_t index) const noexcept {
         if (index == 1) {
@@ -87,7 +88,13 @@ public:
         return (T)x;
     }
 
-    LLAPI explicit operator class AABB() const;
+    [[nodiscard]] bool contains(BlockPos const& a) const noexcept { return a.ge(min).all() && a.le(max).all(); }
+
+    [[nodiscard]] bool contains(BoundingBox const& a) const noexcept {
+        return a.min.ge(min).all() && a.max.le(max).all();
+    }
+
+    LLNDAPI operator class AABB() const; // NOLINT
 
 public:
     // NOLINTBEGIN
