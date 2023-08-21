@@ -48,7 +48,8 @@ optional_ref<Block const> tryGetFromRegistry(std::string const& name, Block::Blo
     }
     std::vector<BlockTypeRegistry::BlockComplexAliasBlockState> stateList;
     for (auto& state : states) {
-        auto* stateBase = rawPtr->getBlockState(nameHash);
+        HashedString stateNameHash{state.first};
+        auto*        stateBase = rawPtr->getBlockState(stateNameHash);
         if (stateBase == nullptr) {
             continue;
         }
@@ -67,11 +68,13 @@ optional_ref<Block const> tryGetFromRegistry(std::string const& name, Block::Blo
         case 3:
             stateNBT.putString(state.first, std::get<3>(state.second));
             break;
+        default:
+            break;
         }
         if (!stateBase->fromNBT(stateNBT, value)) {
             continue;
         }
-        stateList.emplace_back(nameHash, value);
+        stateList.emplace_back(stateNameHash, value);
     }
     return BlockTypeRegistry::lookupByName(nameHash, stateList);
 }
