@@ -11,6 +11,8 @@
 
 class BlockSource {
 
+#define ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSOURCE
+
 public:
     // prevent constructor by default
     BlockSource& operator=(BlockSource const&) = delete;

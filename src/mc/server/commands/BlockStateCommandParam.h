@@ -5,11 +5,17 @@
 class BlockStateCommandParam {
 
 public:
-    // prevent constructor by default
-    BlockStateCommandParam& operator=(BlockStateCommandParam const&) = delete;
-    BlockStateCommandParam(BlockStateCommandParam const&)            = delete;
-    BlockStateCommandParam()                                         = delete;
+    enum class Type : int {
+        Integer = 0x0,
+        Float   = 0x1,
+        Bool    = 0x2,
+        String  = 0x3,
+        Invalid = 0x4,
+    };
 
+    std::string     mBlockState; // this+0x0
+    std::string     mValue;      // this+0x20
+    enum class Type mType;       // this+0x40
 public:
     // NOLINTBEGIN
     /**

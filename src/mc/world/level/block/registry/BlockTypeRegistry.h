@@ -32,6 +32,8 @@ public:
     public:
         class HashedString stateName;
         int                value;
+        BlockComplexAliasBlockState(HashedString const& stateName, int value) noexcept
+        : stateName(stateName), value(value) {}
 
     public:
         // NOLINTBEGIN
@@ -103,13 +105,13 @@ public:
 
     constexpr static std::map<class HashedString, class SharedPtr<class BlockLegacy>>& getBlockLookupMap() {
         return mBlockLookupMap;
-    }
-public:
-    // NOLINTBEGIN
-    /**
-     * @symbol ?computeBlockTypeRegistryChecksum\@BlockTypeRegistry\@\@SA_KAEBVBaseGameVersion\@\@\@Z
-     */
-    MCAPI static uint64_t computeBlockTypeRegistryChecksum(class BaseGameVersion const&);
+    } public :
+        // NOLINTBEGIN
+        /**
+         * @symbol ?computeBlockTypeRegistryChecksum\@BlockTypeRegistry\@\@SA_KAEBVBaseGameVersion\@\@\@Z
+         */
+        MCAPI static uint64_t
+        computeBlockTypeRegistryChecksum(class BaseGameVersion const&);
     /**
      * @symbol ?finalizeBlockComponentStorage\@BlockTypeRegistry\@\@SAXXZ
      */
@@ -131,7 +133,7 @@ public:
     /**
      * @symbol ?getDefaultBlockState\@BlockTypeRegistry\@\@SAAEBVBlock\@\@AEBVHashedString\@\@_N\@Z
      */
-    MCAPI static class Block const& getDefaultBlockState(class HashedString const&, bool);
+    MCAPI static class Block const& getDefaultBlockState(class HashedString const&, bool unknown = true);
     /**
      * @symbol ?getEntityRegistry\@BlockTypeRegistry\@\@SA?AV?$StackRefResultT\@UEntityRegistryRefTraits\@\@\@\@XZ
      */
@@ -159,11 +161,11 @@ public:
     /**
      * @symbol ?lookupByName\@BlockTypeRegistry\@\@SA?AV?$WeakPtr\@VBlockLegacy\@\@\@\@AEBVHashedString\@\@_N\@Z
      */
-    MCAPI static class WeakPtr<class BlockLegacy> lookupByName(class HashedString const&, bool);
+    MCAPI static class WeakPtr<class BlockLegacy> lookupByName(class HashedString const&, bool unknown = true);
     /**
      * @symbol ?lookupByName\@BlockTypeRegistry\@\@SAPEBVBlock\@\@AEBVHashedString\@\@H_N\@Z
      */
-    MCAPI static class Block const* lookupByName(class HashedString const&, int, bool);
+    MCAPI static class Block const* lookupByName(class HashedString const&, int, bool unknown = true);
     /**
      * @symbol
      * ?lookupByName\@BlockTypeRegistry\@\@SAPEBVBlock\@\@AEBVHashedString\@\@AEBV?$vector\@UBlockComplexAliasBlockState\@BlockTypeRegistry\@\@V?$allocator\@UBlockComplexAliasBlockState\@BlockTypeRegistry\@\@\@std\@\@\@std\@\@_N\@Z
@@ -171,7 +173,7 @@ public:
     MCAPI static class Block const* lookupByName(
         class HashedString const&,
         std::vector<struct BlockTypeRegistry::BlockComplexAliasBlockState> const&,
-        bool
+        bool unknown = true
     );
     /**
      * @symbol ?prepareBlocks\@BlockTypeRegistry\@\@SAXI\@Z
@@ -203,8 +205,12 @@ public:
      * @symbol
      * ?_lookupByNameImpl\@BlockTypeRegistry\@\@CA?AULookupByNameImplReturnType\@1\@AEBVHashedString\@\@HW4LookupByNameImplResolve\@1\@_N\@Z
      */
-    MCAPI static struct LookupByNameImplReturnType
-    _lookupByNameImpl(class HashedString const&, int, enum class BlockTypeRegistry::LookupByNameImplResolve, bool);
+    MCAPI static struct LookupByNameImplReturnType _lookupByNameImpl(
+        class HashedString const&,
+        int,
+        enum class BlockTypeRegistry::LookupByNameImplResolve,
+        bool unknown = true
+    );
     // NOLINTEND
 
 private:

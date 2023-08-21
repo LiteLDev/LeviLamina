@@ -31,6 +31,8 @@ class Level {
 public:
     LLNDAPI static class BlockSource& getBlockSource(int dimID);
 
+#define ENABLE_VIRTUAL_FAKESYMBOL_LEVEL
+
     // prevent constructor by default
     Level& operator=(Level const&) = delete;
     Level(Level const&)            = delete;

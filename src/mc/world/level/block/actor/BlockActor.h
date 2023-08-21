@@ -1,10 +1,21 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/block/utils/BlockActorType.h"
 
 class BlockActor {
 
 public:
+    LLAPI void refresh(optional_ref<class BlockSource> blockSource = std::nullopt);
+
+    LLNDAPI std::unique_ptr<class CompoundTag> saveToNBT() const;
+
+    LLAPI void loadFromNBT(class CompoundTag const& nbt, optional_ref<class BlockSource> blockSource = std::nullopt);
+
+    LLNDAPI static std::shared_ptr<BlockActor> create(class CompoundTag const& nbt);
+
+    LLNDAPI static std::shared_ptr<BlockActor> create(class CompoundTag const& nbt, class BlockPos const& pos);
+
     // prevent constructor by default
     BlockActor& operator=(BlockActor const&) = delete;
     BlockActor(BlockActor const&)            = delete;

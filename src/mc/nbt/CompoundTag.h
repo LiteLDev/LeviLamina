@@ -24,9 +24,9 @@ public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~CompoundTag();
     /**
      * @vftbl 2
      * @symbol ?write\@CompoundTag\@\@UEBAXAEAVIDataOutput\@\@\@Z
@@ -69,12 +69,6 @@ public:
      * @symbol ?hash\@CompoundTag\@\@UEBA_KXZ
      */
     virtual uint64_t hash() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_COMPOUNDTAG
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~CompoundTag();
-#endif
     /**
      * @symbol ??0CompoundTag\@\@QEAA\@$$QEAV0\@\@Z
      */

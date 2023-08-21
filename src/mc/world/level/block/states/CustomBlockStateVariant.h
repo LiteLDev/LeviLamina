@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/utils/BlockState.h"
+#include "mc/world/level/block/states/BlockState.h"
 
 class CustomBlockStateVariant : public ::BlockState {
 
@@ -17,9 +17,9 @@ public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~CustomBlockStateVariant();
     /**
      * @vftbl 1
      * @symbol ?toNBT\@CustomBlockStateVariant\@\@UEBAXAEAVCompoundTag\@\@H\@Z

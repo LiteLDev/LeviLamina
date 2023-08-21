@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+class IDataOutput;
+class IDataInput;
+class PrintStream;
+
 class Tag {
 public:
     // Tag inner types define

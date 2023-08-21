@@ -6,6 +6,7 @@
 // clang-format off
 namespace BlockSerializationUtils { enum class NBTState; }
 namespace BlockSerializationUtils { struct NbtToBlockCache; }
+class CompoundTag;
 // clang-format on
 
 namespace BlockSerializationUtils {

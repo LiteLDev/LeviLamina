@@ -14,6 +14,18 @@ namespace mce { class Color; }
 class Block {
 
 public:
+    using BlockStateValueType = std::variant<int, float, bool, std::string>;
+    using BlockStatesType     = std::unordered_map<std::string, BlockStateValueType>;
+
+    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(unsigned int runtimeID);
+    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string const& name);
+    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string const& name, unsigned short legacyData);
+    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string const& name, BlockStatesType const& states);
+    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(class CompoundTag const& nbt);
+
+    LLNDAPI std::string const& getTypeName() const;
+    LLNDAPI short              getBlockItemId() const;
+
     // prevent constructor by default
     Block& operator=(Block const&) = delete;
     Block(Block const&)            = delete;
