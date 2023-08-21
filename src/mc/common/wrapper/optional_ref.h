@@ -1,6 +1,6 @@
 #pragma once
 
-#include "mc/_HeaderOutputPredefine.h"
+#include <optional>
 
 template <typename T>
 class optional_ref {
@@ -14,7 +14,7 @@ private:
         std::is_same_v<std::decay_t<T>, std::decay_t<U>> && std::is_convertible_v<U*, T*>;
 
 public:
-    constexpr optional_ref() noexcept {}
+    constexpr optional_ref() noexcept = default;
 
     constexpr optional_ref(std::nullopt_t) noexcept {}
 
@@ -90,19 +90,24 @@ public:
     }
 
     template <class... Types>
-    constexpr auto operator()(Types&&... _Args) const
-        noexcept(noexcept(std::invoke(*ptr_, static_cast<Types&&>(_Args)...)))
-            -> decltype(std::invoke(*ptr_, static_cast<Types&&>(_Args)...)) {
-        return std::invoke(*ptr_, static_cast<Types&&>(_Args)...);
+    constexpr auto operator()(Types&&... args) const
+        noexcept(noexcept(std::invoke(*ptr_, static_cast<Types&&>(args)...)))
+            -> decltype(std::invoke(*ptr_, static_cast<Types&&>(args)...)) {
+        return std::invoke(*ptr_, static_cast<Types&&>(args)...);
     }
 };
+
 template <typename T>
 optional_ref(const T&) -> optional_ref<const T>;
+
 template <typename T>
 optional_ref(T&) -> optional_ref<T>;
+
 template <typename T>
 optional_ref(const std::optional<T>&) -> optional_ref<const T>;
+
 template <typename T>
 optional_ref(std::optional<T>&) -> optional_ref<T>;
+
 template <typename T>
 optional_ref(T*) -> optional_ref<T>;
