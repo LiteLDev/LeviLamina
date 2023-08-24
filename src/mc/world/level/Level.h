@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/BlockSourceListener.h"
+#include "mc/world/level/IWorldRegistriesProvider.h"
+#include "mc/world/level/ILevel.h"
 
 // auto generated inclusion list
 #include "mc/common/TagRegistry.h"
@@ -26,10 +29,9 @@ namespace mce { class Color; }
 namespace mce { class UUID; }
 // clang-format on
 
-class Level {
+class Level : public ILevel, public BlockSourceListener, public IWorldRegistriesProvider {
 
 public:
-    LLNDAPI static class BlockSource& getBlockSource(int dimID);
 
 #define ENABLE_VIRTUAL_FAKESYMBOL_LEVEL
 

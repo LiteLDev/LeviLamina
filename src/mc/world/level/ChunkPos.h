@@ -5,6 +5,10 @@
 class ChunkPos : public intN2<ChunkPos> {
 
 public:
+    template <std::floating_point T0, std::floating_point T1>
+    LLNDAPI constexpr ChunkPos(T0 x, T1 z)
+    : intN2((static_cast<int>(std::floor(x)) >> 4), (static_cast<int>(std::floor(z)) >> 4)) {}
+
     using intN2::intN2;
 
 public:

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/string/HashedString.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/WeakPtr.h"
@@ -54,10 +55,9 @@ public:
     struct NameInfo {
 
     public:
-        // prevent constructor by default
-        NameInfo& operator=(NameInfo const&) = delete;
-        NameInfo(NameInfo const&)            = delete;
-        NameInfo()                           = delete;
+        HashedString mRawName;       // this+0x0
+        std::string  mNamespaceName; // this+0x30
+        HashedString mFullName;      // this+0x50
 
     public:
         // NOLINTBEGIN
@@ -156,6 +156,8 @@ public:
     };
 
 public:
+    LLNDAPI std::string const& getTypeName() const;
+
     // prevent constructor by default
     BlockLegacy& operator=(BlockLegacy const&) = delete;
     BlockLegacy(BlockLegacy const&)            = delete;

@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/utilities/ActorType.h"
+#include "mc/world/level/IBlockSource.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/SharePtrRefTraits.h"
@@ -9,11 +11,20 @@
 #include "mc/world/AutomaticID.h"
 #include "mc/world/level/block/utils/BlockDataFetchResult.h"
 
-class BlockSource {
+class Actor;
+
+class BlockSource : public IBlockSource, public std::enable_shared_from_this<BlockSource> {
 
 #define ENABLE_VIRTUAL_FAKESYMBOL_BLOCKSOURCE
 
 public:
+    LLNDAPI std::vector<class Actor*> getEntities(
+        class AABB const& range,
+        float             extendDistance = 2.0f,
+        ActorType         actorType      = ActorType::TypeMask,
+        bool              ignoreType     = false
+    ) const;
+
     // prevent constructor by default
     BlockSource& operator=(BlockSource const&) = delete;
     BlockSource(BlockSource const&)            = delete;

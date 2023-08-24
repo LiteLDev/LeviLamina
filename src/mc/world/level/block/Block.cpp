@@ -13,13 +13,10 @@ std::string const& Block::getTypeName() const { return getName().getString(); }
 short Block::getBlockItemId() const { return getLegacyBlock().getBlockItemId(); }
 
 optional_ref<Block const> tryGetFromRegistry(unsigned int runtimeID) {
-
     auto& res = Global<Level>->getBlockPalette().getBlock(runtimeID);
-
     if (res.getRuntimeId() != runtimeID) {
         return nullptr;
     }
-
     return res;
 }
 optional_ref<Block const> tryGetFromRegistry(std::string const& name) {

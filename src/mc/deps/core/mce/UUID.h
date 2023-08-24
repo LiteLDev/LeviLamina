@@ -9,10 +9,11 @@ class UUID {
 public:
     uint64_t a, b;
 
-    explicit constexpr operator bool() const { return !isEmpty(); }
-    UUID() = delete;
-    // LLAPI UUID();
     UUID(uint64_t a, uint64_t b) : a(a), b(b) {}
+
+    LLNDAPI UUID();
+
+    explicit constexpr operator bool() const { return !isEmpty(); }
 
 public:
     // NOLINTBEGIN

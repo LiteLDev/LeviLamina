@@ -18,6 +18,8 @@ namespace PositionTrackingDB { class PositionTrackingDBServer; }
 
 class ServerLevel : public ::Level {
 
+#define ENABLE_VIRTUAL_FAKESYMBOL_SERVERLEVEL
+
 public:
     // prevent constructor by default
     ServerLevel& operator=(ServerLevel const&) = delete;

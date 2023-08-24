@@ -33,6 +33,7 @@
 #include <map>           // STL map container
 #include <memory>        // STL unique_ptr, shared_ptr, weak_ptr
 #include <mutex>         // STL mutual exclusion primitives
+#include <numbers>       // numbers standard header
 #include <optional>      // STL optional type
 #include <ostream>       // Basic output stream classes
 #include <queue>         // STL queue and priority_queue container

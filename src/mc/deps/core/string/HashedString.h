@@ -18,13 +18,13 @@ public:
     }
 
     // Constructors
-    constexpr explicit HashedString(std::nullptr_t = nullptr) noexcept : hash(0), lastMatch(nullptr) {}
+    constexpr HashedString(std::nullptr_t = nullptr) noexcept : hash(0), lastMatch(nullptr) {} // NOLINT
 
     constexpr HashedString(uint64_t h, const char* str) noexcept : hash(h), str(str), lastMatch(nullptr) {}
 
-    constexpr explicit HashedString(const char* str) noexcept : hash(computeHash(str)), str(str), lastMatch(nullptr) {}
+    constexpr HashedString(const char* str) noexcept : hash(computeHash(str)), str(str), lastMatch(nullptr) {} // NOLINT
 
-    constexpr explicit HashedString(const std::string& str) noexcept
+    constexpr HashedString(const std::string& str) noexcept // NOLINT
     : hash(computeHash(str)), str(str), lastMatch(nullptr) {}
 
     constexpr HashedString(const HashedString& other) noexcept : hash(other.hash), str(other.str), lastMatch(nullptr) {}

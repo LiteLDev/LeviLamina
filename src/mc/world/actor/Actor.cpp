@@ -7,6 +7,7 @@
 #include "mc/entity/utilities/ActorCategory.h"
 #include "mc/entity/utilities/ActorCollision.h"
 #include "mc/entity/utilities/ActorLocation.h"
+#include "mc/entity/utilities/ActorType.h"
 #include "mc/math/Vec2.h"
 #include "mc/math/Vec3.h"
 #include "mc/nbt/CompoundTag.h"
@@ -16,6 +17,7 @@
 #include "mc/server/commands/standard/TeleportCommand.h"
 #include "mc/server/commands/standard/TeleportTarget.h"
 #include "mc/util/ExpressionNode.h"
+#include "mc/world/actor/ActorClassTree.h"
 #include "mc/world/actor/ActorDamageByActorSource.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/level/BlockPos.h"
@@ -25,6 +27,8 @@ class EntityContext&       Actor::getEntityContext() { return ll::memory::dAcces
 class EntityContext const& Actor::getEntityContext() const { return ll::memory::dAccess<EntityContext>(this, 8); }
 
 void Actor::refresh() { _sendDirtyActorData(); }
+
+bool Actor::isInstanceOf(enum class ActorType type) const { return ActorClassTree::isInstanceOf(*this, type); }
 
 std::string const& Actor::getTypeName() const { return getActorIdentifier().getCanonicalName(); }
 

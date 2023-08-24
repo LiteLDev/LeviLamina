@@ -50,15 +50,45 @@ GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, cosh)
 GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, exp)
 GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, fabs)
 GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, floor)
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, fmod)
 GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, log)
 GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, log2)
 GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, log10)
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, modf)
-GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, pow)
 GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, round)
 GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, sin)
 GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, sinh)
 GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, sqrt)
 GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, tan)
 GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, tanh)
+
+// GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, fmod)
+// GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, modf)
+// GEN_VEC_BASIC_MATH_FUNC1(IsFloatN, pow)
+
+
+
+template <IsFloatN T>
+[[nodiscard]] constexpr T fmod(T const& a, T const& b) noexcept {
+    T tmp;
+    T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
+        tmp.template get<axis_type>(iter) = fmod(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
+    });
+    return tmp;
+}
+
+template <IsFloatN T>
+[[nodiscard]] constexpr T modf(T const& a, T const& b) noexcept {
+    T tmp;
+    T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
+        tmp.template get<axis_type>(iter) = modf(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
+    });
+    return tmp;
+}
+
+template <IsFloatN T>
+[[nodiscard]] constexpr T pow(T const& a, T const& b) noexcept {
+    T tmp;
+    T::forEachComponent([&]<typename axis_type>(size_t iter) constexpr {
+        tmp.template get<axis_type>(iter) = pow(a.template get<axis_type>(iter), b.template get<axis_type>(iter));
+    });
+    return tmp;
+}

@@ -33,6 +33,8 @@ public:
 
     LLAPI void refresh();
 
+    LLNDAPI bool isInstanceOf(enum class ActorType type) const;
+
     LLNDAPI std::string const& getTypeName() const;
 
     LLNDAPI class Vec3 getFeetPos() const;
