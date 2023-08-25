@@ -25,11 +25,13 @@ LLAPI int hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPriori
 LLAPI bool unhook(FuncPtr target, FuncPtr detour);
 
 template <typename T>
-LLAPI FuncPtr resolveIdentifier(T identifier)
+inline FuncPtr resolveIdentifier(T identifier)
     requires std::is_function_v<std::remove_pointer_t<T>>
 {
     return reinterpret_cast<FuncPtr>(identifier);
 }
+
+inline FuncPtr resolveIdentifier(uintptr_t identifier) { return reinterpret_cast<FuncPtr>(identifier); }
 
 /**
  * @brief Get the pointer of a function by identifier.
