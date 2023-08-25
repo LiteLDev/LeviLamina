@@ -1,6 +1,7 @@
 #pragma once
 
 #include <memory>
+#include <type_traits>
 
 #include "liteloader/api/Macro.h"
 #include "liteloader/api/memory/MemoryUtils.h"
@@ -18,6 +19,13 @@ enum class HookPriority : int {
 LLAPI int hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPriority priority);
 
 LLAPI bool unhook(FuncPtr target, FuncPtr detour);
+
+template <typename T>
+LLAPI FuncPtr resolveIdentifier(T identifier)
+    requires std::is_function_v<std::remove_pointer_t<T>>
+{
+    return reinterpret_cast<FuncPtr>(identifier);
+}
 
 /**
  * @brief Get the pointer of a function by identifier.
