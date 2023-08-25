@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/math/Vec2.h"
+#include "mc/math/Vec3.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
@@ -21,6 +23,25 @@ namespace mce { class UUID; }
 class SimulatedPlayer : public ::ServerPlayer {
 
 public:
+    LLAPI static optional_ref<SimulatedPlayer> create(
+        std::string const&                      name,
+        class Vec3 const&                       pos      = Vec3::MIN,
+        class AutomaticID<class Dimension, int> dimID    = 0,
+        class Vec2 const&                       rotation = Vec2::ZERO
+    );
+
+    [[nodiscard]] inline bool simulateSneaking() {
+        setSneaking(true);
+        return isSneaking();
+    };
+    [[nodiscard]] inline bool simulateStopSneaking() {
+        setSneaking(false);
+        return !isSneaking();
+    };
+    inline bool simulateUseItem() { return simulateUseItemInSlot(getSelectedItemSlot()); };
+
+    LLAPI bool simulateDestroyLookAt(float handLength = 5.5f);
+
     // prevent constructor by default
     SimulatedPlayer& operator=(SimulatedPlayer const&) = delete;
     SimulatedPlayer(SimulatedPlayer const&)            = delete;

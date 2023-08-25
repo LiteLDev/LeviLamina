@@ -609,7 +609,7 @@ public:
     /**
      * @symbol ?postLoad\@ServerPlayer\@\@QEAAX_N\@Z
      */
-    MCAPI void postLoad(bool);
+    MCAPI void postLoad(bool isNewPlayer);
     /**
      * @symbol ?postReplicationTick\@ServerPlayer\@\@QEAAXAEBUTick\@\@\@Z
      */

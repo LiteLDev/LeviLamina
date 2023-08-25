@@ -5,23 +5,16 @@
 #include "mc/enums/FacingID.h"
 #include "mc/math/Vec3.h"
 #include "mc/world/level/BlockPos.h"
+#include "mc/world/phys/HitResultType.h"
 
 class HitResult {
 
 public:
-    enum class HitResultType : int {
-        Tile             = 0x0,
-        Entity           = 0x1,
-        EntityOutOfRange = 0x2,
-        NoHit            = 0x3,
-    };
-
-
     Vec3          mStartPos;     // this+0x0
     Vec3          mRayDir;       // this+0xC
     HitResultType mType;         // this+0x18
     FacingID      mFacing;       // this+0x1C
-    BlockPos      mBlock;        // this+0x20
+    BlockPos      mBlockPos;     // this+0x20
     Vec3          mPos;          // this+0x2C
     WeakEntityRef mEntity;       // this+0x38
     bool          mIsHitLiquid;  // this+0x50

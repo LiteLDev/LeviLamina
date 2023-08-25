@@ -114,9 +114,9 @@ class HitResult Actor::traceRay(
             blockCheckFunction
         )};
 
-        if (result.mType != HitResult::HitResultType::Entity ||
-            (blockRes.mType == HitResult::HitResultType::Tile &&
-             origin.distanceTo(blockRes.mPos) < origin.distanceTo(result.mPos))) {
+        if (result.mType != HitResultType::Entity ||
+            (blockRes.mType == HitResultType::Tile && origin.distanceTo(blockRes.mPos) < origin.distanceTo(result.mPos)
+            )) {
             result = std::move(blockRes);
         }
     }
