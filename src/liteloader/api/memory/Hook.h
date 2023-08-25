@@ -8,12 +8,16 @@
 
 namespace ll::memory {
 
+/**
+ * @brief Hook priority enum.
+ * @details The lower priority, the hook will be executed earlier
+ */
 enum class HookPriority : int {
-    Highest = 0,
-    High    = 100,
+    Lowest  = 0,
+    Low     = 100,
     Normal  = 200,
-    Low     = 300,
-    Lowest  = 400,
+    High    = 300,
+    Highest = 400,
 };
 
 LLAPI int hook(FuncPtr target, FuncPtr detour, FuncPtr* originalFunc, HookPriority priority);
