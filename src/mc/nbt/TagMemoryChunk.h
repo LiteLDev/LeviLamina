@@ -5,9 +5,16 @@
 struct TagMemoryChunk {
 
 public:
-    size_t                           mElements;
-    size_t                           mSize;
-    std::unique_ptr<unsigned char[]> mBuffer;
+    size_t                     mElements{0};
+    size_t                     mSize{0};
+    std::unique_ptr<uint8_t[]> mBuffer;
+
+    LLNDAPI TagMemoryChunk(uint8_t data[], size_t size);
+    LLNDAPI TagMemoryChunk(const TagMemoryChunk& a1);
+    LLNDAPI TagMemoryChunk(TagMemoryChunk&& a1) noexcept;
+
+    LLAPI TagMemoryChunk& operator=(const TagMemoryChunk& a1);
+    LLAPI TagMemoryChunk& operator=(TagMemoryChunk&& a1) noexcept;
 
 public:
     // NOLINTBEGIN

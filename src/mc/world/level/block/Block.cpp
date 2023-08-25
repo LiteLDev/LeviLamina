@@ -7,6 +7,7 @@
 #include "mc/world/level/block/registry/BlockTypeRegistry.h"
 #include "mc/world/level/block/states/BlockState.h"
 #include "mc/world/level/block/utils/BlockSerializationUtils.h"
+#include "mc/world/level/block/utils/VanillaBlockConversion.h"
 
 std::string const& Block::getTypeName() const { return getName().getString(); }
 
@@ -28,6 +29,13 @@ optional_ref<Block const> tryGetFromRegistry(std::string const& name) {
 }
 optional_ref<Block const> tryGetFromRegistry(std::string const& name, unsigned short legacyData) {
     auto blockLegacyPtr = BlockTypeRegistry::lookupByName(HashedString{name});
+    if (!blockLegacyPtr) {
+        return nullptr;
+    }
+    return blockLegacyPtr->getStateFromLegacyData(legacyData);
+}
+optional_ref<Block const> tryGetFromRegistry(unsigned int legacyBlockID, unsigned short legacyData) {
+    auto blockLegacyPtr = VanillaBlockConversion::getBlockTypeFromLegacyId(legacyBlockID);
     if (!blockLegacyPtr) {
         return nullptr;
     }

@@ -14,6 +14,11 @@ namespace mce { class UUID; }
 class Mob : public ::Actor {
 
 public:
+    inline void refreshInventory() {
+        sendInventory(true);
+        sendArmor(std::bitset<4>{"1111"});
+    }
+
     // prevent constructor by default
     Mob& operator=(Mob const&) = delete;
     Mob(Mob const&)            = delete;
