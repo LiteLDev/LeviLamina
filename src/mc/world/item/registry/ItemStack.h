@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/inventory/network/ItemStackNetIdVariant.h"
 
 // auto generated inclusion list
 #include "mc/network/TypedClientNetId.h"
@@ -10,6 +11,8 @@
 class ItemStack : public ::ItemStackBase {
 
 public:
+    ItemStackNetIdVariant mNetIdVariant;
+
     // NOLINTBEGIN
     /**
      * @vftbl 0
@@ -69,7 +72,8 @@ public:
     /**
      * @symbol ??0ItemStack\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@HHPEBVCompoundTag\@\@\@Z
      */
-    MCAPI ItemStack(std::string_view, int, int, class CompoundTag const*);
+    MCAPI
+    ItemStack(std::string_view name, int count = 1, int auxValue = 0, class CompoundTag const* userData = nullptr);
     /**
      * @symbol ??0ItemStack\@\@QEAA\@AEBV0\@\@Z
      */
@@ -77,15 +81,16 @@ public:
     /**
      * @symbol ??0ItemStack\@\@QEAA\@AEBVBlock\@\@HPEBVCompoundTag\@\@\@Z
      */
-    MCAPI ItemStack(class Block const&, int, class CompoundTag const*);
+    MCAPI ItemStack(class Block const& block, int count = 1, class CompoundTag const* userData = nullptr);
     /**
      * @symbol ??0ItemStack\@\@QEAA\@AEBVBlockLegacy\@\@H\@Z
      */
-    MCAPI ItemStack(class BlockLegacy const&, int);
+    MCAPI ItemStack(class BlockLegacy const& blockLegacy, int count = 1);
     /**
      * @symbol ??0ItemStack\@\@QEAA\@AEBVItem\@\@HHPEBVCompoundTag\@\@\@Z
      */
-    MCAPI ItemStack(class Item const&, int, int, class CompoundTag const*);
+    MCAPI
+    ItemStack(class Item const& item, int count = 1, int auxValue = 0, class CompoundTag const* userData = nullptr);
     /**
      * @symbol ?_assignNetIdVariant\@ItemStack\@\@QEBAXAEBV1\@\@Z
      */
@@ -134,7 +139,7 @@ public:
     /**
      * @symbol ?mineBlock\@ItemStack\@\@QEAAXAEBVBlock\@\@HHHPEAVMob\@\@\@Z
      */
-    MCAPI void mineBlock(class Block const&, int, int, int, class Mob*);
+    MCAPI void mineBlock(class Block const& block, int x, int y, int z, class Mob* owner);
     /**
      * @symbol ??4ItemStack\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
@@ -170,7 +175,8 @@ public:
     /**
      * @symbol ?useOn\@ItemStack\@\@QEAA?AVInteractionResult\@\@AEAVActor\@\@HHHEAEBVVec3\@\@\@Z
      */
-    MCAPI class InteractionResult useOn(class Actor&, int, int, int, unsigned char, class Vec3 const&);
+    MCAPI class InteractionResult
+    useOn(class Actor& entity, int x, int y, int z, unsigned char face, class Vec3 const& clickPos);
     /**
      * @symbol ?useTimeDepleted\@ItemStack\@\@QEAA?AW4ItemUseMethod\@\@PEAVLevel\@\@PEAVPlayer\@\@\@Z
      */

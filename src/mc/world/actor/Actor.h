@@ -27,6 +27,9 @@ public:
         Legacy      = 0x7,
     };
 
+    // vptr 8
+    uint8_t filler[1176]; // IDA isAffectedByWaterBottle
+
 public:
     LLNDAPI class EntityContext&       getEntityContext();
     LLNDAPI class EntityContext const& getEntityContext() const;

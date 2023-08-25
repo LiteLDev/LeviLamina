@@ -16,6 +16,12 @@ public:
     [[nodiscard]] class entt::basic_registry<EntityId> const& _enttRegistry() const {
         return mRegistry.mRegistry;
     }
+
+    template <class T>
+    constexpr T* tryGetComponent() const {
+        return const_cast<T*>(_enttRegistry().try_get<T>(_getEntityId()));
+    }
+
 public:
     // NOLINTBEGIN
     /**

@@ -39,19 +39,25 @@ public:
      * @symbol
      * ?spawnItem\@Spawner\@\@QEAAPEAVItemActor\@\@AEAVBlockSource\@\@AEBVItemStack\@\@PEAVActor\@\@AEBVVec3\@\@H\@Z
      */
-    MCAPI class ItemActor* spawnItem(class BlockSource&, class ItemStack const&, class Actor*, class Vec3 const&, int);
+    MCAPI class ItemActor* spawnItem(
+        class BlockSource& blockSource,
+        class ItemStack const&,
+        class Actor*      spawner,
+        class Vec3 const& pos,
+        int               throwTime = 0
+    );
     /**
      * @symbol
      * ?spawnMob\@Spawner\@\@QEAAPEAVMob\@\@AEAVBlockSource\@\@AEBUActorDefinitionIdentifier\@\@PEAVActor\@\@AEBVVec3\@\@_N44\@Z
      */
     MCAPI class Mob* spawnMob(
-        class BlockSource&,
-        struct ActorDefinitionIdentifier const&,
-        class Actor*,
-        class Vec3 const&,
-        bool,
-        bool,
-        bool
+        class BlockSource&                      blockSource,
+        struct ActorDefinitionIdentifier const& id,
+        class Actor*                            spawner,
+        class Vec3 const&                       pos,
+        bool                                    naturalSpawn = false,
+        bool                                    surface      = true,
+        bool                                    fromSpawner  = false
     );
     /**
      * @symbol

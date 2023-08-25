@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/math/Vec2.h"
+#include "mc/math/Vec3.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/OwnerPtrT.h"
@@ -45,38 +48,50 @@ public:
      * @symbol
      * ?createActor\@ActorFactory\@\@QEAA?AV?$OwnerPtrT\@UEntityRefTraits\@\@\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUActorDefinitionIdentifier\@\@PEAVActor\@\@AEBVVec3\@\@AEBVVec2\@\@\@Z
      */
-    MCAPI class OwnerPtrT<struct EntityRefTraits>
-    createActor(std::string const&, struct ActorDefinitionIdentifier const&, class Actor*, class Vec3 const&, class Vec2 const&);
+    MCAPI class OwnerPtrT<struct EntityRefTraits> createActor(
+        std::string const&                      method,
+        struct ActorDefinitionIdentifier const& identifier,
+        class Actor*                            spawner,
+        class Vec3 const&                       pos,
+        class Vec2 const&                       rot = Vec2::ZERO
+    );
     /**
      * @symbol
      * ?createBornActor\@ActorFactory\@\@QEAA?AV?$OwnerPtrT\@UEntityRefTraits\@\@\@\@AEBUActorDefinitionIdentifier\@\@PEAVActor\@\@\@Z
      */
     MCAPI class OwnerPtrT<struct EntityRefTraits>
-    createBornActor(struct ActorDefinitionIdentifier const&, class Actor*);
+    createBornActor(struct ActorDefinitionIdentifier const& identifier, class Actor* parent);
     /**
      * @symbol
      * ?createBornActor\@ActorFactory\@\@QEAA?AV?$OwnerPtrT\@UEntityRefTraits\@\@\@\@AEBUActorDefinitionIdentifier\@\@AEBVBlockPos\@\@\@Z
      */
     MCAPI class OwnerPtrT<struct EntityRefTraits>
-    createBornActor(struct ActorDefinitionIdentifier const&, class BlockPos const&);
+    createBornActor(struct ActorDefinitionIdentifier const& identifier, class BlockPos const& pos);
     /**
      * @symbol
      * ?createSpawnedActor\@ActorFactory\@\@QEAA?AV?$OwnerPtrT\@UEntityRefTraits\@\@\@\@AEBUActorDefinitionIdentifier\@\@PEAVActor\@\@AEBVVec3\@\@AEBVVec2\@\@\@Z
      */
-    MCAPI class OwnerPtrT<struct EntityRefTraits>
-    createSpawnedActor(struct ActorDefinitionIdentifier const&, class Actor*, class Vec3 const&, class Vec2 const&);
+    MCAPI class OwnerPtrT<struct EntityRefTraits> createSpawnedActor(
+        struct ActorDefinitionIdentifier const& identifier,
+        class Actor*                            spawner,
+        class Vec3 const&                       pos,
+        class Vec2 const&                       rot = Vec2::ZERO
+    );
     /**
      * @symbol
      * ?createSummonedActor\@ActorFactory\@\@QEAA?AV?$OwnerPtrT\@UEntityRefTraits\@\@\@\@AEBUActorDefinitionIdentifier\@\@PEAVActor\@\@AEBVVec3\@\@\@Z
      */
-    MCAPI class OwnerPtrT<struct EntityRefTraits>
-    createSummonedActor(struct ActorDefinitionIdentifier const&, class Actor*, class Vec3 const&);
+    MCAPI class OwnerPtrT<struct EntityRefTraits> createSummonedActor(
+        struct ActorDefinitionIdentifier const& identifier,
+        class Actor*                            spawner,
+        class Vec3 const&                       pos
+    );
     /**
      * @symbol
      * ?createTransformedActor\@ActorFactory\@\@QEAA?AV?$OwnerPtrT\@UEntityRefTraits\@\@\@\@AEBUActorDefinitionIdentifier\@\@PEAVActor\@\@\@Z
      */
     MCAPI class OwnerPtrT<struct EntityRefTraits>
-    createTransformedActor(struct ActorDefinitionIdentifier const&, class Actor*);
+    createTransformedActor(struct ActorDefinitionIdentifier const& identifier, class Actor* from);
     /**
      * @symbol ?getGoalFactory\@ActorFactory\@\@QEAAAEAVActorGoalFactory\@\@XZ
      */

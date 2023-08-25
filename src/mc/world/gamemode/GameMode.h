@@ -2,9 +2,40 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+class Player;
+
 class GameMode {
 
 public:
+    // Player&                               mPlayer;                       // this+0x8
+    // BlockPos                              mDestroyBlockPos;              // this+0x10
+    // unsigned char                         mDestroyBlockFace;             // this+0x1C
+    // float                                 mOldDestroyProgress;           // this+0x20
+    // float                                 mDestroyProgress;              // this+0x24
+    // double                                mLastDestroyTime;              // this+0x28
+    // float                                 mDistanceTravelled;            // this+0x30
+    // Vec3                                  mPlayerLastPosition;           // this+0x34
+    // BlockPos                              mLastBuiltBlockPosition;       // this+0x40
+    // bool                                  mLastBuildBlockWasInteractive; // this+0x4C
+    // bool                                  mLastBuildBlockWasSnappable;   // this+0x4D
+    // float                                 mMinPlayerSpeed;               // this+0x50
+    // int                                   mContinueBreakBlockCount;      // this+0x54
+    // std::chrono::steady_clock::time_point mLastBuildTime;                // this+0x58
+    // std::chrono::steady_clock::time_point mNoDestroyUntil;               // this+0x60
+    // std::chrono::steady_clock::time_point mNoDestroySoundUntil;          // this+0x68
+    // std::chrono::milliseconds             creativeDestructionTickDelay;  // this+0x70
+    // std::chrono::milliseconds             buildingTickDelay;             // this+0x78
+    // std::chrono::milliseconds             destroySoundDelay;             // this+0x80
+    // bool                                  mHasBuildDirection;            // this+0x88
+    // bool                                  mHasLastBuiltPosition;         // this+0x89
+    // unsigned char                         mContinueFacing;               // this+0x8A
+    // BlockPos                              mBuildDirection;               // this+0x8C
+    // BlockPos                              mNextBuildPos;                 // this+0x98
+    // std::unique_ptr<IGameModeTimer>       mTimer;                        // this+0xA8
+    // std::unique_ptr<IGameModeMessenger>   mMessenger;                    // this+0xB0
+
+    [[nodiscard]] constexpr class Player& getPlayer() const { return *ll::memory::dAccess<Player*>(this, 0x8); }
+
     // prevent constructor by default
     GameMode& operator=(GameMode const&) = delete;
     GameMode(GameMode const&)            = delete;

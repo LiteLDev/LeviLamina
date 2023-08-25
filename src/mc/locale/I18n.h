@@ -54,12 +54,15 @@ public:
      * @symbol
      * ?get\@I18n\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@PEBVLocalization\@\@\@Z
      */
-    MCAPI static std::string get(std::string const&, class Localization const*);
+    MCAPI static std::string get(std::string const& key, class Localization const* language = mCurrentLanguage);
     /**
      * @symbol
      * ?get\@I18n\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@AEBV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@PEBVLocalization\@\@\@Z
      */
-    MCAPI static std::string get(std::string const&, std::vector<std::string> const&, class Localization const*);
+    MCAPI static std::string
+    get(std::string const&              key,
+        std::vector<std::string> const& args,
+        class Localization const*       language = mCurrentLanguage);
     /**
      * @symbol ?getCurrentLanguage\@I18n\@\@SA?AV?$optional_ref\@$$CBVLocalization\@\@\@\@XZ
      */

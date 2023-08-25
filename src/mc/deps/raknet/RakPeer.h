@@ -94,10 +94,6 @@ public:
     };
 
 public:
-    SystemAddress getAdr(NetworkIdentifier const& ni) {
-        RakNetGUID const& guid = dAccess<RakNetGUID>(&ni, 8);
-        return RakPeer::GetSystemAddressFromGuid(guid);
-    }
 
     // prevent constructor by default
     RakPeer& operator=(RakPeer const&) = delete;

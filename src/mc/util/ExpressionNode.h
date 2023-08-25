@@ -12,7 +12,7 @@ namespace Json { class Value; }
 class ExpressionNode {
 
 public:
-    uint8_t filler[240];
+    uint8_t filler[200];
 
     // NOLINTBEGIN
     /**

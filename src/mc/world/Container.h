@@ -9,6 +9,8 @@
 class Container {
 
 public:
+    LLNDAPI inline std::string const& getTypeName() const { return getContainerTypeName(getContainerType()); }
+
     // prevent constructor by default
     Container& operator=(Container const&) = delete;
     Container()                            = delete;

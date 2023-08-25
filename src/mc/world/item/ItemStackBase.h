@@ -21,14 +21,10 @@ public:
 
     // ItemStackBase inner types define
     struct ComparisonOptions {
-
     public:
-        // prevent constructor by default
-        ComparisonOptions& operator=(ComparisonOptions const&) = delete;
-        ComparisonOptions(ComparisonOptions const&)            = delete;
-        ComparisonOptions()                                    = delete;
+        bool mCompareAux;
+        bool mCompareRelevantUserData;
     };
-
 
     WeakPtr<class Item>                   mItem;           // this+0x8
     std::unique_ptr<class CompoundTag>    mUserData;       // this+0x10
@@ -45,6 +41,9 @@ public:
     uint64_t                              mCanDestroyHash; // this+0x70
     class Tick                            mBlockingTick;   // this+0x78
     std::unique_ptr<class ItemInstance>   mChargedItem;    // this+0x80
+
+    LLNDAPI std::string getTypeName() const;
+    LLNDAPI std::string getDescriptionName() const;
 
 public:
     // NOLINTBEGIN
@@ -666,11 +665,11 @@ public:
      * @symbol
      * ??0ItemStackBase\@\@IEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@HHPEBVCompoundTag\@\@\@Z
      */
-    MCAPI ItemStackBase(std::string_view, int, int, class CompoundTag const*);
+    MCAPI ItemStackBase(std::string_view name, int count = 1, int auxValue = 0, class CompoundTag const* userData = nullptr);
     /**
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBVItem\@\@HHPEBVCompoundTag\@\@\@Z
      */
-    MCAPI ItemStackBase(class Item const&, int, int, class CompoundTag const*);
+    MCAPI ItemStackBase(class Item const& item, int count = 1, int auxValue = 0, class CompoundTag const* userData = nullptr);
     /**
      * @symbol ??0ItemStackBase\@\@IEAA\@XZ
      */
@@ -678,11 +677,11 @@ public:
     /**
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBVBlock\@\@HPEBVCompoundTag\@\@\@Z
      */
-    MCAPI ItemStackBase(class Block const&, int, class CompoundTag const*);
+    MCAPI ItemStackBase(class Block const& block, int count = 1, class CompoundTag const* userData = nullptr);
     /**
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBVBlockLegacy\@\@H\@Z
      */
-    MCAPI ItemStackBase(class BlockLegacy const&, int);
+    MCAPI ItemStackBase(class BlockLegacy const& blockLegacy, int count = 1);
     /**
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBV0\@\@Z
      */

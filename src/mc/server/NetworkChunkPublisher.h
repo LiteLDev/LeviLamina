@@ -8,9 +8,17 @@ namespace ClientBlobCache::Server { class ActiveTransfersManager; }
 namespace ClientBlobCache::Server { class TransferBuilder; }
 // clang-format on
 
+class ChunkViewSource;
+
 class NetworkChunkPublisher {
 
 public:
+    [[nodiscard]] constexpr class ChunkViewSource* getChunkViewSource() const {
+        // in function NetworkChunkPublisher::clearRegion
+        // - Call ChunkViewSource::clear(ChunkViewSource* this);
+        return ll::memory::dAccess<std::unique_ptr<class ChunkViewSource>>(this, 0xE0).get();
+    }
+
     // prevent constructor by default
     NetworkChunkPublisher& operator=(NetworkChunkPublisher const&) = delete;
     NetworkChunkPublisher(NetworkChunkPublisher const&)            = delete;

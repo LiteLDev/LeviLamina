@@ -9,12 +9,6 @@
 class EntityContext : public EntityContextBase {
 
 public:
-    template <class T>
-    constexpr T* tryGetComponent() const {
-        return const_cast<T*>(_enttRegistry().try_get<T>(_getEntityId()));
-    }
-
-public:
     // NOLINTBEGIN
     /**
      * @symbol ??0EntityContext\@\@QEAA\@AEAVEntityRegistry\@\@VEntityId\@\@\@Z
