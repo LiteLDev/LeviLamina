@@ -51,7 +51,7 @@ public:
      * ?createDirectoryPackSource\@PackSourceFactory\@\@UEAAAEAVDirectoryPackSource\@\@AEBVPath\@Core\@\@W4PackType\@\@W4PackOrigin\@\@_N\@Z
      */
     virtual class DirectoryPackSource&
-    createDirectoryPackSource(class Core::Path const&, enum class PackType, enum class PackOrigin, bool);
+    createDirectoryPackSource(class Core::Path const&, enum class PackType, enum class PackOrigin, bool isDevDirectory = false);
     /**
      * @vftbl 4
      * @symbol

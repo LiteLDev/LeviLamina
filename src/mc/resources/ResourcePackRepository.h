@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/resources/PackType.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
@@ -79,6 +80,8 @@ public:
     };
 
 public:
+    LLAPI void setCustomResourcePackPath(const std::string& path, PackType type);
+
     // prevent constructor by default
     ResourcePackRepository& operator=(ResourcePackRepository const&) = delete;
     ResourcePackRepository(ResourcePackRepository const&)            = delete;
@@ -88,9 +91,9 @@ public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~ResourcePackRepository();
     /**
      * @vftbl 1
      * @symbol
@@ -370,12 +373,6 @@ public:
      * @symbol ?isInitialized\@ResourcePackRepository\@\@UEAA_NXZ
      */
     virtual bool isInitialized();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RESOURCEPACKREPOSITORY
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~ResourcePackRepository();
-#endif
     /**
      * @symbol
      * ??0ResourcePackRepository\@\@QEAA\@AEAVIMinecraftEventing\@\@AEAVPackManifestFactory\@\@AEBV?$not_null\@V?$NonOwnerPointer\@VIContentAccessibilityProvider\@\@\@Bedrock\@\@\@gsl\@\@AEBV?$not_null\@V?$NonOwnerPointer\@VFilePathManager\@Core\@\@\@Bedrock\@\@\@4\@AEAVPackSourceFactory\@\@_N\@Z

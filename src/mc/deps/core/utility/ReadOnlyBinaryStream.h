@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/serialize/serialize.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -8,6 +9,33 @@
 class ReadOnlyBinaryStream {
 
 public:
+    size_t             mReadPointer;   // this+0x8
+    bool               mHasOverflowed; // this+0x10
+    std::string        mOwnedBuffer;   // this+0x18
+    const std::string* mBuffer;        // this+0x38
+
+    template <typename T>
+    inline void readType(T& x) {
+        auto res = serialize<T>::read(*this);
+        if (res.has_value()) {
+            x = res.value();
+        }
+    }
+    template <>
+    MCAPI void readType(struct CommandOriginData&);
+    template <>
+    MCAPI void readType(class Experiments&);
+    template <>
+    MCAPI void readType(struct ItemStackRequestSlotInfo&);
+    template <>
+    MCAPI void readType(class MoveActorAbsoluteData&);
+    template <>
+    MCAPI void readType(class NetworkItemStackDescriptor&);
+    template <>
+    MCAPI void readType(class StructureSettings&);
+    template <>
+    MCAPI void readType(std::vector<std::unique_ptr<class DataItem>>&);
+
     // prevent constructor by default
     ReadOnlyBinaryStream& operator=(ReadOnlyBinaryStream const&) = delete;
     ReadOnlyBinaryStream(ReadOnlyBinaryStream const&)            = delete;
@@ -17,20 +45,14 @@ public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~ReadOnlyBinaryStream();
     /**
      * @vftbl 1
      * @symbol ?read\@ReadOnlyBinaryStream\@\@EEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@PEAX_K\@Z
      */
     virtual class Bedrock::Result<void, std::error_code> read(void*, uint64_t);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_READONLYBINARYSTREAM
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~ReadOnlyBinaryStream();
-#endif
     /**
      * @symbol
      * ??0ReadOnlyBinaryStream\@\@QEAA\@$$QEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z

@@ -1,7 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/network/serialize/serialize.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -41,15 +40,9 @@ public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
-     */
-    virtual void __unk_vfn_0();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BINARYSTREAM
-    /**
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~BinaryStream();
-#endif
+    virtual ~BinaryStream();
     /**
      * @symbol ??0BinaryStream\@\@QEAA\@XZ
      */

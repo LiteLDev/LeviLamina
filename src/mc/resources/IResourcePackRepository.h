@@ -24,9 +24,9 @@ public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~IResourcePackRepository();
     /**
      * @vftbl 1
      * @symbol
@@ -307,11 +307,6 @@ public:
      * @symbol ?isInitialized\@ResourcePackRepository\@\@UEAA_NXZ
      */
     virtual bool isInitialized() = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IRESOURCEPACKREPOSITORY
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~IResourcePackRepository();
-#endif
+
     // NOLINTEND
 };
