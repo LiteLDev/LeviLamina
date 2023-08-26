@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/network/NetworkIdentifier.h"
 #include "mc/enums/SubClientId.h"
+#include "mc/deps/core/mce/UUID.h"
 
 // auto generated forward declare list
 // clang-format off

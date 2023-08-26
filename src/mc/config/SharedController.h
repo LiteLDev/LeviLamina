@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/config/SharedData.h"
 
 // auto generated inclusion list
 #include "mc/config/ISharedController.h"
@@ -15,6 +16,8 @@ namespace PlayerCapabilities {
 class SharedController : public ::PlayerCapabilities::ISharedController {
 
 public:
+    std::unique_ptr<struct PlayerCapabilities::ISharedData> mShared;
+
     // prevent constructor by default
     SharedController& operator=(SharedController const&) = delete;
     SharedController(SharedController const&)            = delete;

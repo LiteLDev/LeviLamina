@@ -93,25 +93,29 @@ public:
         /**
          * @symbol ??0LookupByNameImplReturnType\@BlockTypeRegistry\@\@QEAA\@V?$WeakPtr\@VBlockLegacy\@\@\@\@H_N\@Z
          */
-        MCAPI LookupByNameImplReturnType(class WeakPtr<class BlockLegacy>, int, bool);
+        MCAPI LookupByNameImplReturnType(class WeakPtr<class BlockLegacy>, int data, bool resolveBlock);
         // NOLINTEND
     };
 
 public:
+// clang-format off
+    constexpr static std::map<class HashedString, class SharedPtr<class BlockLegacy>>& getBlockLookupMap() {
+        return mBlockLookupMap;
+    }
+// clang-format on
+
+
     // prevent constructor by default
     BlockTypeRegistry& operator=(BlockTypeRegistry const&) = delete;
     BlockTypeRegistry(BlockTypeRegistry const&)            = delete;
     BlockTypeRegistry()                                    = delete;
 
-    constexpr static std::map<class HashedString, class SharedPtr<class BlockLegacy>>& getBlockLookupMap() {
-        return mBlockLookupMap;
-    } public :
-        // NOLINTBEGIN
-        /**
-         * @symbol ?computeBlockTypeRegistryChecksum\@BlockTypeRegistry\@\@SA_KAEBVBaseGameVersion\@\@\@Z
-         */
-        MCAPI static uint64_t
-        computeBlockTypeRegistryChecksum(class BaseGameVersion const&);
+public :
+    // NOLINTBEGIN
+    /**
+     * @symbol ?computeBlockTypeRegistryChecksum\@BlockTypeRegistry\@\@SA_KAEBVBaseGameVersion\@\@\@Z
+     */
+    MCAPI static uint64_t computeBlockTypeRegistryChecksum(class BaseGameVersion const&);
     /**
      * @symbol ?finalizeBlockComponentStorage\@BlockTypeRegistry\@\@SAXXZ
      */
@@ -133,7 +137,7 @@ public:
     /**
      * @symbol ?getDefaultBlockState\@BlockTypeRegistry\@\@SAAEBVBlock\@\@AEBVHashedString\@\@_N\@Z
      */
-    MCAPI static class Block const& getDefaultBlockState(class HashedString const&, bool unknown = true);
+    MCAPI static class Block const& getDefaultBlockState(class HashedString const&, bool logNotFound = false);
     /**
      * @symbol ?getEntityRegistry\@BlockTypeRegistry\@\@SA?AV?$StackRefResultT\@UEntityRegistryRefTraits\@\@\@\@XZ
      */
@@ -161,11 +165,11 @@ public:
     /**
      * @symbol ?lookupByName\@BlockTypeRegistry\@\@SA?AV?$WeakPtr\@VBlockLegacy\@\@\@\@AEBVHashedString\@\@_N\@Z
      */
-    MCAPI static class WeakPtr<class BlockLegacy> lookupByName(class HashedString const&, bool unknown = true);
+    MCAPI static class WeakPtr<class BlockLegacy> lookupByName(class HashedString const&, bool logNotFound = false);
     /**
      * @symbol ?lookupByName\@BlockTypeRegistry\@\@SAPEBVBlock\@\@AEBVHashedString\@\@H_N\@Z
      */
-    MCAPI static class Block const* lookupByName(class HashedString const&, int, bool unknown = true);
+    MCAPI static class Block const* lookupByName(class HashedString const&, int data, bool logNotFound = false);
     /**
      * @symbol
      * ?lookupByName\@BlockTypeRegistry\@\@SAPEBVBlock\@\@AEBVHashedString\@\@AEBV?$vector\@UBlockComplexAliasBlockState\@BlockTypeRegistry\@\@V?$allocator\@UBlockComplexAliasBlockState\@BlockTypeRegistry\@\@\@std\@\@\@std\@\@_N\@Z
@@ -173,7 +177,7 @@ public:
     MCAPI static class Block const* lookupByName(
         class HashedString const&,
         std::vector<struct BlockTypeRegistry::BlockComplexAliasBlockState> const&,
-        bool unknown = true
+        bool logNotFound = false
     );
     /**
      * @symbol ?prepareBlocks\@BlockTypeRegistry\@\@SAXI\@Z
@@ -206,10 +210,10 @@ public:
      * ?_lookupByNameImpl\@BlockTypeRegistry\@\@CA?AULookupByNameImplReturnType\@1\@AEBVHashedString\@\@HW4LookupByNameImplResolve\@1\@_N\@Z
      */
     MCAPI static struct LookupByNameImplReturnType _lookupByNameImpl(
-        class HashedString const&,
-        int,
-        enum class BlockTypeRegistry::LookupByNameImplResolve,
-        bool unknown = true
+        class HashedString const& name,
+        int                                                   data,
+        enum class BlockTypeRegistry::LookupByNameImplResolve resolve,
+        bool                                                  logNotFound = false
     );
     // NOLINTEND
 

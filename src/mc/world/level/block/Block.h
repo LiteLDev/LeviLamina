@@ -24,8 +24,9 @@ public:
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string const& name, BlockStatesType const& states);
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(class CompoundTag const& nbt);
 
-    LLNDAPI std::string const& getTypeName() const;
-    LLNDAPI short              getBlockItemId() const;
+    [[nodiscard]] inline std::string const& getTypeName() const { return getName().getString(); }
+
+    [[nodiscard]] inline  short getBlockItemId() const { return getLegacyBlock().getBlockItemId(); }
 
     // prevent constructor by default
     Block& operator=(Block const&) = delete;

@@ -158,6 +158,9 @@ public:
 public:
     LLNDAPI std::string const& getTypeName() const;
 
+    LLNDAPI static optional_ref<BlockLegacy> tryGetFromRegistry(std::string const& name);
+    LLNDAPI static optional_ref<BlockLegacy> tryGetFromRegistry(unsigned int legacyBlockID);
+
     // prevent constructor by default
     BlockLegacy& operator=(BlockLegacy const&) = delete;
     BlockLegacy(BlockLegacy const&)            = delete;
@@ -1654,7 +1657,7 @@ public:
     /**
      * @symbol ?tryGetStateFromLegacyData\@BlockLegacy\@\@QEBAPEBVBlock\@\@G_N\@Z
      */
-    MCAPI class Block const* tryGetStateFromLegacyData(unsigned short, bool) const;
+    MCAPI class Block const* tryGetStateFromLegacyData(unsigned short, bool unknown = false) const;
     /**
      * @symbol
      * ?updateTallestCollisionShape\@BlockLegacy\@\@QEBA_NAEBVBlock\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVAABB\@\@V?$optional_ref\@$$CBVGetCollisionShapeInterface\@\@\@\@AEAV5\@AEBVVec3\@\@AEAM\@Z

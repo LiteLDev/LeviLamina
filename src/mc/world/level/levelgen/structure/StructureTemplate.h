@@ -1,6 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/Mirror.h"
+#include "mc/enums/Rotation.h"
+#include "mc/world/level/block/registry/IUnknownBlockTypeRegistry.h"
+#include "mc/world/level/levelgen/structure/StructureTemplateData.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
@@ -8,6 +12,15 @@
 class StructureTemplate {
 
 public:
+    std::string                                         mName;                  // this+0x0
+    StructureTemplateData                               mStructureTemplateData; // this+0x20
+    uint8_t                                             mStructureVersion;      // this+0xD0
+    Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry> mUnknownBlockRegistry;
+
+    LLAPI void
+    placeInWorld(BlockPos const& minCorner, int dimID, Mirror mirror = Mirror::None, Rotation rotation = Rotation::None)
+        const;
+
     // prevent constructor by default
     StructureTemplate& operator=(StructureTemplate const&) = delete;
     StructureTemplate(StructureTemplate const&)            = delete;
@@ -84,10 +97,10 @@ public:
     MCAPI void placeInWorld(
         class BlockSource&,
         class BlockPalette const&,
-        class BlockPos const&,
+        class BlockPos const& pos,
         class StructureSettings const&,
         class StructureTelemetryServerData*,
-        bool
+        bool updateItemData = true
     ) const;
     /**
      * @symbol ?placeNextSegmentInWorld\@StructureTemplate\@\@QEBAXAEAVStructureAnimationData\@\@AEBVBlockPalette\@\@\@Z
@@ -113,23 +126,28 @@ public:
     /**
      * @symbol ?_fillBlockInfo\@StructureTemplate\@\@AEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@11\@Z
      */
-    MCAPI void _fillBlockInfo(class BlockSource&, class BlockPos const&, class BlockPos const&, class BlockPos const&);
+    MCAPI void _fillBlockInfo(
+        class BlockSource&,
+        class BlockPos const& minCorner,
+        class BlockPos const& maxCorner,
+        class BlockPos const& size
+    );
     /**
      * @symbol ?_fillEntityList\@StructureTemplate\@\@AEAAXAEAVBlockSource\@\@AEBVBlockPos\@\@1\@Z
      */
-    MCAPI void _fillEntityList(class BlockSource&, class BlockPos const&, class BlockPos const&);
+    MCAPI void _fillEntityList(class BlockSource&, class BlockPos const& minCorner, class BlockPos const& maxCorner);
     /**
      * @symbol ?_placeEntitiesInWorld\@StructureTemplate\@\@AEBAXAEAVBlockSource\@\@AEAVDataLoadHelper\@\@_N\@Z
      */
-    MCAPI void _placeEntitiesInWorld(class BlockSource&, class DataLoadHelper&, bool) const;
+    MCAPI void _placeEntitiesInWorld(class BlockSource&, class DataLoadHelper&, bool shouldReloadActorEquipment) const;
     /**
      * @symbol
      * ?_placeNextBlockSegmentInWorld\@StructureTemplate\@\@AEBAXAEAVBlockSource\@\@_K1AEBVStructureSettings\@\@AEAVDataLoadHelper\@\@AEBVStructureBlockPalette\@\@AEBVBlockPalette\@\@VBlockPos\@\@AEBV7\@AEBVVec3\@\@W4Rotation\@\@W4Mirror\@\@MIPEAVStructureTelemetryServerData\@\@_N_N\@Z
      */
     MCAPI void _placeNextBlockSegmentInWorld(
         class BlockSource&,
-        uint64_t,
-        uint64_t,
+        uint64_t startPlacement,
+        uint64_t endPlacement,
         class StructureSettings const&,
         class DataLoadHelper&,
         class StructureBlockPalette const&,
@@ -139,11 +157,11 @@ public:
         class Vec3 const&,
         enum class Rotation,
         enum class Mirror,
-        float,
-        unsigned int,
+        float        integrityValue,
+        unsigned int integritySeed,
         class StructureTelemetryServerData*,
-        bool,
-        bool
+        bool updateItemData,
+        bool ignoreJigsawBlocks
     ) const;
     // NOLINTEND
 };

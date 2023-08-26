@@ -7,12 +7,18 @@
 enum class ChatRestrictionLevel;
 struct GameRuleId;
 // clang-format on
+class Level;
 
 namespace PlayerCapabilities {
 
-struct SharedData {
+struct ISharedData {
+};
+
+struct SharedData : public ISharedData {
 
 public:
+    const Level *mLevel;
+
     // prevent constructor by default
     SharedData& operator=(SharedData const&) = delete;
     SharedData(SharedData const&)            = delete;

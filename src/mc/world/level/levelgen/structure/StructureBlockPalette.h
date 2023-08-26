@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/nbt/CompoundTag.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
@@ -12,10 +13,18 @@ public:
     struct BlockPositionData;
     // clang-format on
 
+    struct TickingQueueData {
+    public:
+        int mTickDelay;
+    };
+
     // StructureBlockPalette inner types define
     struct BlockPositionData {
 
     public:
+        std::unique_ptr<CompoundTag> mBlockEntityData;
+        std::vector<StructureBlockPalette::TickingQueueData> mTickData;
+
         // prevent constructor by default
         BlockPositionData& operator=(BlockPositionData const&) = delete;
         BlockPositionData()                                    = delete;
@@ -38,6 +47,9 @@ public:
     };
 
 public:
+    std::vector<std::unique_ptr<CompoundTag>> mStructurePaletteIdToSerializationId;
+    std::unordered_map<unsigned long,StructureBlockPalette::BlockPositionData> mBlockPositionData;
+
     // prevent constructor by default
     StructureBlockPalette& operator=(StructureBlockPalette const&) = delete;
     StructureBlockPalette(StructureBlockPalette const&)            = delete;
@@ -71,9 +83,7 @@ public:
      * @symbol
      * ?getBlock\@StructureBlockPalette\@\@QEBAAEBVBlock\@\@AEBVBlockPalette\@\@_KV?$NonOwnerPointer\@VIUnknownBlockTypeRegistry\@\@\@Bedrock\@\@\@Z
      */
-    MCAPI class Block const&
-    getBlock(class BlockPalette const&, uint64_t, class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry>)
-        const;
+    MCAPI class Block const& getBlock(class BlockPalette const&, uint64_t, class Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry>) const;
     /**
      * @symbol ?getBlockPositionData\@StructureBlockPalette\@\@QEBAPEBUBlockPositionData\@1\@_K\@Z
      */

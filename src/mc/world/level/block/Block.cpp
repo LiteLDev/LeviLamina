@@ -9,39 +9,35 @@
 #include "mc/world/level/block/utils/BlockSerializationUtils.h"
 #include "mc/world/level/block/utils/VanillaBlockConversion.h"
 
-std::string const& Block::getTypeName() const { return getName().getString(); }
-
-short Block::getBlockItemId() const { return getLegacyBlock().getBlockItemId(); }
-
-optional_ref<Block const> tryGetFromRegistry(unsigned int runtimeID) {
+optional_ref<Block const> Block::tryGetFromRegistry(unsigned int runtimeID) {
     auto& res = Global<Level>->getBlockPalette().getBlock(runtimeID);
     if (res.getRuntimeId() != runtimeID) {
         return nullptr;
     }
     return res;
 }
-optional_ref<Block const> tryGetFromRegistry(std::string const& name) {
+optional_ref<Block const> Block::tryGetFromRegistry(std::string const& name) {
     auto blockLegacyPtr = BlockTypeRegistry::lookupByName(HashedString{name});
     if (!blockLegacyPtr) {
         return nullptr;
     }
     return blockLegacyPtr->getDefaultState();
 }
-optional_ref<Block const> tryGetFromRegistry(std::string const& name, unsigned short legacyData) {
+optional_ref<Block const> Block::tryGetFromRegistry(std::string const& name, unsigned short legacyData) {
     auto blockLegacyPtr = BlockTypeRegistry::lookupByName(HashedString{name});
     if (!blockLegacyPtr) {
         return nullptr;
     }
-    return blockLegacyPtr->getStateFromLegacyData(legacyData);
+    return blockLegacyPtr->tryGetStateFromLegacyData(legacyData);
 }
-optional_ref<Block const> tryGetFromRegistry(unsigned int legacyBlockID, unsigned short legacyData) {
+optional_ref<Block const> Block::tryGetFromRegistry(unsigned int legacyBlockID, unsigned short legacyData) {
     auto blockLegacyPtr = VanillaBlockConversion::getBlockTypeFromLegacyId(legacyBlockID);
     if (!blockLegacyPtr) {
         return nullptr;
     }
-    return blockLegacyPtr->getStateFromLegacyData(legacyData);
+    return blockLegacyPtr->tryGetStateFromLegacyData(legacyData);
 }
-optional_ref<Block const> tryGetFromRegistry(std::string const& name, Block::BlockStatesType const& states) {
+optional_ref<Block const> Block::tryGetFromRegistry(std::string const& name, Block::BlockStatesType const& states) {
     HashedString nameHash{name};
     auto         blockLegacyPtr = BlockTypeRegistry::lookupByName(nameHash);
     if (!blockLegacyPtr) {
@@ -83,6 +79,6 @@ optional_ref<Block const> tryGetFromRegistry(std::string const& name, Block::Blo
     }
     return BlockTypeRegistry::lookupByName(nameHash, stateList);
 }
-optional_ref<Block const> tryGetFromRegistry(class CompoundTag const& nbt) {
+optional_ref<Block const> Block::tryGetFromRegistry(class CompoundTag const& nbt) {
     return BlockSerializationUtils::tryGetBlockFromNBT(nbt, nullptr).second;
 }

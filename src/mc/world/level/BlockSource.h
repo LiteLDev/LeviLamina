@@ -353,13 +353,13 @@ public:
     MCAPI class HitResult clip(
         class Vec3 const&                                                              startPos,
         class Vec3 const&                                                              endPos,
-        bool                                                                           includeLiquid,
+        bool                                                                           checkAgainstLiquid,
         bool                                                                           solidOnly,
         int                                                                            maxManhattanDis,
         bool                                                                           ignoreBorderBlock,
         bool                                                                           fullOnly,
         class Player*                                                                  player,
-        std::function<bool(class BlockSource const&, class Block const&, bool)> const& blockCheckFunction
+        std::function<bool(class BlockSource const&, class Block const&, bool)> const& shouldCheckBlock
     ) const;
     /**
      * @symbol
