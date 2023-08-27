@@ -16,6 +16,9 @@ namespace Editor { class IEditorPlayer; }
 namespace mce { class UUID; }
 // clang-format on
 
+class NetworkIdentifier;
+class Certificate;
+
 class Player : public ::Mob {
 public:
     // Player inner types declare
@@ -54,6 +57,14 @@ public:
     };
 
 public:
+    LLNDAPI optional_ref<NetworkIdentifier> getNetworkIdentifier() const;
+    LLNDAPI optional_ref<Certificate> getCertificate() const;
+
+    LLNDAPI std::string getRealName() const;
+    LLNDAPI int getAvgPing() const;
+    LLNDAPI int getLastPing() const;
+    LLNDAPI std::string getIPAndPort() const;
+
     // prevent constructor by default
     Player& operator=(Player const&) = delete;
     Player(Player const&)            = delete;
