@@ -94,6 +94,8 @@ public:
         return a.min.ge(min).all() && a.max.le(max).all();
     }
 
+    [[nodiscard]] BlockPos getSideLength() const noexcept { return max - min + 1; }
+
     LLNDAPI operator class AABB() const; // NOLINT
 
 public:

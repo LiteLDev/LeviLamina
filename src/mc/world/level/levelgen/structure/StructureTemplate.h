@@ -4,10 +4,14 @@
 #include "mc/enums/Mirror.h"
 #include "mc/enums/Rotation.h"
 #include "mc/world/level/block/registry/IUnknownBlockTypeRegistry.h"
+#include "mc/world/level/levelgen/structure/BoundingBox.h"
 #include "mc/world/level/levelgen/structure/StructureTemplateData.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+
+class BlockSource;
+class BlockPos;
 
 class StructureTemplate {
 
@@ -17,9 +21,28 @@ public:
     uint8_t                                             mStructureVersion;      // this+0xD0
     Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry> mUnknownBlockRegistry;
 
-    LLAPI void
-    placeInWorld(BlockPos const& minCorner, int dimID, Mirror mirror = Mirror::None, Rotation rotation = Rotation::None)
-        const;
+    inline bool load(class CompoundTag const& nbt) { mStructureTemplateData.load(nbt); }
+
+    LLAPI void placeInWorld(
+        BlockSource&    blockSource,
+        BlockPos const& minCorner,
+        Mirror          mirror         = Mirror::None,
+        Rotation        rotation       = Rotation::None,
+        bool            ignoreBlocks   = false,
+        bool            ignoreEntities = false
+    ) const;
+
+    // nullptr if invalid nbt
+    LLNDAPI static std::unique_ptr<StructureTemplate> create(std::string name, CompoundTag const& tag);
+
+    // always success
+    LLNDAPI static std::unique_ptr<StructureTemplate> create(
+        std::string        name,
+        BlockSource&       blockSource,
+        BoundingBox const& boundingBox,
+        bool               ignoreBlocks   = false,
+        bool               ignoreEntities = false
+    );
 
     // prevent constructor by default
     StructureTemplate& operator=(StructureTemplate const&) = delete;
@@ -30,9 +53,9 @@ public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~StructureTemplate();
     /**
      * @vftbl 1
      * @symbol ?clear\@StructureTemplate\@\@UEAAXXZ
@@ -48,12 +71,6 @@ public:
      * @symbol ?_allowReadActor\@StructureTemplate\@\@MEBA_NAEBVActor\@\@\@Z
      */
     virtual bool _allowReadActor(class Actor const&) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTURETEMPLATE
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~StructureTemplate();
-#endif
     /**
      * @symbol
      * ??0StructureTemplate\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@V?$NonOwnerPointer\@VIUnknownBlockTypeRegistry\@\@\@Bedrock\@\@\@Z
@@ -99,8 +116,8 @@ public:
         class BlockPalette const&,
         class BlockPos const& pos,
         class StructureSettings const&,
-        class StructureTelemetryServerData*,
-        bool updateItemData = true
+        class StructureTelemetryServerData* = nullptr,
+        bool updateItemData                 = true
     ) const;
     /**
      * @symbol ?placeNextSegmentInWorld\@StructureTemplate\@\@QEBAXAEAVStructureAnimationData\@\@AEBVBlockPalette\@\@\@Z

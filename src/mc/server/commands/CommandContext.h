@@ -16,7 +16,8 @@ public:
     std::unique_ptr<CommandOrigin> mOrigin;
     int                            mVersion = CommandVersion::CurrentVersion;
 
-    std::string&         getCmd() { return mCommand; }
+    std::string&                       getCmd() { return mCommand; }
+    std::string const&                 getCmd() const { return mCommand; }
     [[nodiscard]] class CommandOrigin& getOrigin() const { return *mOrigin; }
 
     template <typename T>

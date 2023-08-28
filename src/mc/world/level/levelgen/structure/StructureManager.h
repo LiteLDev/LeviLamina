@@ -11,6 +11,16 @@
 class StructureManager : public ::Bedrock::EnableNonOwnerReferences {
 
 public:
+    std::shared_mutex mRepositoryMutex; // this+0x18
+    std::unordered_map<std::string, std::unique_ptr<class LegacyStructureTemplate>>
+                                                                              mLegacyStructureRepository; // this+0x20
+    std::unordered_map<std::string, std::unique_ptr<class StructureTemplate>> mStructureRepository;       // this+0x60
+    std::vector<std::unique_ptr<class StructureAnimationData>>                mStructurePlacementQueue;   // this+0xA0
+    uint32_t                                                  mStructurePlacementSaveCounter;             // this+0xB8
+    Bedrock::NonOwnerPointer<class IUnknownBlockTypeRegistry> mUnknownBlockRegistry;                      // this+0xC0
+    const Bedrock::NonOwnerPointer<class ResourcePackManager> mPackManager;
+
+
     // prevent constructor by default
     StructureManager& operator=(StructureManager const&) = delete;
     StructureManager(StructureManager const&)            = delete;

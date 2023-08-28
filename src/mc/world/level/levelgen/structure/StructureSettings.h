@@ -29,10 +29,13 @@ public:
     float         mIntegrityValue;                            // this+0x60
     unsigned int  mIntegritySeed;                             // this+0x64
 
-    constexpr StructureSettings(BlockPos const& size, bool ignoreEntities, bool ignoreBlocks) : StructureSettings() {
+    inline StructureSettings(BlockPos const& size, bool ignoreBlocks, bool ignoreEntities) : StructureSettings() {
         setIgnoreBlocks(ignoreBlocks);
         setIgnoreEntities(ignoreEntities);
         setStructureSize(size);
+        setStructureOffset({0});
+        setAllowNonTickingPlayerAndTickingAreaChunks(true);
+        mIsWaterLogged = true;
     };
 
 public:
