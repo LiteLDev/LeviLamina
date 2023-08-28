@@ -2,8 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/world/level/BlockSourceListener.h"
-#include "mc/world/level/IWorldRegistriesProvider.h"
 #include "mc/world/level/ILevel.h"
+#include "mc/world/level/IWorldRegistriesProvider.h"
+#include "mc/world/level/storage/LevelData.h"
 
 // auto generated inclusion list
 #include "mc/common/TagRegistry.h"
@@ -29,11 +30,33 @@ namespace mce { class Color; }
 namespace mce { class UUID; }
 // clang-format on
 
+class BlockSource;
+class Dimension;
+class Player;
+class Actor;
+
 class Level : public ILevel, public BlockSourceListener, public IWorldRegistriesProvider {
 
-public:
-
 #define ENABLE_VIRTUAL_FAKESYMBOL_LEVEL
+
+public:
+    [[nodiscard]] inline std::string const& getLevelName() const { return getLevelData().getLevelName(); }
+    [[nodiscard]] inline std::string        getLevelPath() const { return "./worlds/" + getLevelName(); }
+
+    [[nodiscard]] inline optional_ref<Dimension> getDimensionOptRef(AutomaticID<class Dimension, int> dimID) const {
+        return getDimension(dimID).get();
+    }
+
+    LLNDAPI optional_ref<Player> getPlayerByNameOrXUID(std::string const& info) const;
+
+    // LLAPI void broadcastText(const std::string& text, TextType type) const;
+    // LLAPI void broadcastTitle(const std::string& text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) const;
+
+    // LLAPI void sendPacketForAllPlayers(Packet& pkt) const;
+
+    // LLAPI bool executeCommandAs(Player* player, const std::string& cmd) const;
+    // LLAPI std::pair<bool, std::string> executeCommandEx(const std::string& cmd) const;
+    // LLAPI bool executeCommand(const std::string& cmd) const;
 
     // prevent constructor by default
     Level& operator=(Level const&) = delete;
@@ -272,7 +295,7 @@ public:
     /**
      * @symbol ?destroyBlock\@Level\@\@UEAA_NAEAVBlockSource\@\@AEBVBlockPos\@\@_N\@Z
      */
-    MCVAPI bool destroyBlock(class BlockSource&, class BlockPos const&, bool);
+    MCVAPI bool destroyBlock(class BlockSource&, class BlockPos const&, bool dropResources);
     /**
      * @symbol ?digestServerItemComponents\@Level\@\@UEAAXAEBVItemComponentPacket\@\@\@Z
      */
@@ -289,11 +312,20 @@ public:
     /**
      * @symbol ?expandMapByID\@Level\@\@UEAA?AUActorUniqueID\@\@U2\@_N\@Z
      */
-    MCVAPI struct ActorUniqueID expandMapByID(struct ActorUniqueID, bool);
+    MCVAPI struct ActorUniqueID expandMapByID(struct ActorUniqueID, bool wasInit);
     /**
      * @symbol ?explode\@Level\@\@UEAAXAEAVBlockSource\@\@PEAVActor\@\@AEBVVec3\@\@M_N3M3\@Z
      */
-    MCVAPI void explode(class BlockSource&, class Actor*, class Vec3 const&, float, bool, bool, float, bool);
+    MCVAPI void explode(
+        class BlockSource& blockSource,
+        class Actor*       source,
+        class Vec3 const&  pos,
+        float              explosionRadius,
+        bool               fire,
+        bool               breaksBlocks,
+        float              maxResistance,
+        bool               allowUnderwater
+    );
     /**
      * @symbol ?explode\@Level\@\@UEAAXAEAVExplosion\@\@\@Z
      */
@@ -305,7 +337,7 @@ public:
     /**
      * @symbol ?fetchEntity\@Level\@\@UEBAPEAVActor\@\@UActorUniqueID\@\@_N\@Z
      */
-    MCVAPI class Actor* fetchEntity(struct ActorUniqueID, bool) const;
+    MCVAPI class Actor* fetchEntity(struct ActorUniqueID, bool getRemoved = false) const;
     /**
      * @symbol
      * ?findPath\@Level\@\@UEAA?AV?$unique_ptr\@VPath\@\@U?$default_delete\@VPath\@\@\@std\@\@\@std\@\@AEAVActor\@\@0AEAVNavigationComponent\@\@\@Z
@@ -912,7 +944,7 @@ public:
     /**
      * @symbol ?getRuntimeEntity\@Level\@\@UEBAPEAVActor\@\@VActorRuntimeID\@\@_N\@Z
      */
-    MCVAPI class Actor* getRuntimeEntity(class ActorRuntimeID, bool) const;
+    MCVAPI class Actor* getRuntimeEntity(class ActorRuntimeID, bool getRemoved = false) const;
     /**
      * @symbol ?getRuntimePlayer\@Level\@\@UEBAPEAVPlayer\@\@VActorRuntimeID\@\@\@Z
      */
@@ -1254,8 +1286,8 @@ public:
         class Vec3 const&,
         int,
         struct ActorDefinitionIdentifier const&,
-        bool,
-        bool
+        bool isBabyMob,
+        bool isGlobal
     );
     /**
      * @symbol ?playSound\@Level\@\@UEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@MM\@Z
@@ -1271,19 +1303,25 @@ public:
         class Vec3 const&,
         int,
         struct ActorDefinitionIdentifier const&,
-        bool,
-        bool
+        bool isBabyMob,
+        bool isGlobal
     );
     /**
      * @symbol
      * ?playSound\@Level\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVVec3\@\@MM\@Z
      */
-    MCVAPI void playSound(std::string const&, class Vec3 const&, float, float);
+    MCVAPI void playSound(std::string const&, class Vec3 const&, float volume, float pitch);
     /**
      * @symbol ?playSound\@Level\@\@UEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@HAEBUActorDefinitionIdentifier\@\@_N3\@Z
      */
-    MCVAPI void
-    playSound(enum class LevelSoundEvent, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool);
+    MCVAPI void playSound(
+        enum class LevelSoundEvent,
+        class Vec3 const&,
+        int,
+        struct ActorDefinitionIdentifier const&,
+        bool isBabyMob,
+        bool isGlobal
+    );
     /**
      * @symbol
      * ?playSynchronizedSound\@Level\@\@UEAAXAEAVBlockSource\@\@W4LevelSoundEvent\@\@AEBVVec3\@\@AEBVBlock\@\@AEBUActorDefinitionIdentifier\@\@_N5\@Z
@@ -1294,8 +1332,8 @@ public:
         class Vec3 const&,
         class Block const&,
         struct ActorDefinitionIdentifier const&,
-        bool,
-        bool
+        bool isBabyMob,
+        bool isGlobal
     );
     /**
      * @symbol
@@ -1307,8 +1345,8 @@ public:
         class Vec3 const&,
         int,
         struct ActorDefinitionIdentifier const&,
-        bool,
-        bool
+        bool isBabyMob,
+        bool isGlobal
     );
     /**
      * @symbol
@@ -1320,8 +1358,8 @@ public:
         class Vec3 const&,
         int,
         struct ActorDefinitionIdentifier const&,
-        bool,
-        bool
+        bool isBabyMob,
+        bool isGlobal
     );
     /**
      * @symbol ?potionSplash\@Level\@\@UEAAXAEBVVec3\@\@AEBVColor\@mce\@\@_N\@Z

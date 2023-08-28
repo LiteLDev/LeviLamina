@@ -14,9 +14,9 @@ public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~IRandom();
     /**
      * @vftbl 1
      * @symbol ?nextInt\@DelegatingRandom\@NoiseUtils\@\@UEAAHXZ
@@ -69,11 +69,5 @@ public:
      * ?forkPositional\@IRandom\@\@UEAA?AV?$unique_ptr\@VIPositionalRandomFactory\@\@U?$default_delete\@VIPositionalRandomFactory\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_IRANDOM
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~IRandom();
-#endif
     // NOLINTEND
 };

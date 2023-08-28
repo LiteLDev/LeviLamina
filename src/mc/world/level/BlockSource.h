@@ -12,6 +12,10 @@
 #include "mc/world/level/block/utils/BlockDataFetchResult.h"
 
 class Actor;
+class Container;
+class BlockPos;
+class ItemStack;
+class Mob;
 
 class BlockSource : public IBlockSource, public std::enable_shared_from_this<BlockSource> {
 
@@ -24,6 +28,20 @@ public:
         ActorType         actorType      = ActorType::TypeMask,
         bool              ignoreType     = false
     ) const;
+
+    LLNDAPI optional_ref<Container> tryGetContainer(BlockPos const& pos) const;
+
+    LLAPI optional_ref<Actor> cloneActor(
+        Actor const&                                     origin,
+        Vec3 const&                                      pos,
+        std::optional<AutomaticID<class Dimension, int>> dimID = std::nullopt
+    ) const;
+
+    LLAPI bool destroyBlock(
+        BlockPos const&         pos,
+        optional_ref<ItemStack> tool      = std::nullopt,
+        optional_ref<Mob>       toolOwner = std::nullopt
+    );
 
     // prevent constructor by default
     BlockSource& operator=(BlockSource const&) = delete;

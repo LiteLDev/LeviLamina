@@ -19,9 +19,9 @@ public:
     WeakRefT<EntityRegistryRefTraits> mRegistry;
     class EntityId                    mEntity;
 
-    template <class Entity, bool Unknown = false>
+    template <class Entity, bool IncludeRemoved = false>
     constexpr Entity* tryUnwrap() {
-        return StackResultStorageEntity(*this).tryUnwrap<Entity, Unknown>();
+        return StackResultStorageEntity(*this).tryUnwrap<Entity, IncludeRemoved>();
     }
 
 public:

@@ -11,8 +11,6 @@ public:
         EnableNonOwnerReferences* mPtr;
     };
 
-    void* unknownPtr;
-
     std::shared_ptr<ControlBlock> mControlBlock; // this+0x8
 
     // prevent constructor by default
@@ -20,12 +18,11 @@ public:
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BEDROCK_ENABLENONOWNERREFERENCES
     /**
+     * @vftbl 0
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~EnableNonOwnerReferences();
-#endif
+    virtual ~EnableNonOwnerReferences();
     /**
      * @symbol ??0EnableNonOwnerReferences\@Bedrock\@\@QEAA\@XZ
      */

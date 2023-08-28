@@ -4,6 +4,7 @@
 #include "mc/math/Vec2.h"
 #include "mc/math/Vec3.h"
 #include "mc/world/level/BlockPos.h"
+#include "mc/entity/EntityRefTraits.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/OwnerPtrT.h"

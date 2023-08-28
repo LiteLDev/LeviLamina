@@ -1,61 +1,75 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/deps/core/common/bedrock/ThreadOwner.h"
+#include "mc/deps/core/math/Random.h"
+#include "mc/math/IRandom.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/ThreadLocalObject.h"
 
-class Random {
+class Random : public IRandom, public Bedrock::EnableNonOwnerReferences {
 
 public:
+    Bedrock::Application::ThreadOwner<Core::Random> mRandom; // this+0x20
+
     // prevent constructor by default
     Random& operator=(Random const&) = delete;
     Random(Random const&)            = delete;
 
 public:
     // NOLINTBEGIN
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RANDOM
     /**
-     * @symbol ?consumeCount\@Random\@\@UEAAXI\@Z
-     */
-    MCVAPI void consumeCount(unsigned int);
-    /**
-     * @symbol ?fork\@Random\@\@UEAA?AV?$unique_ptr\@VIRandom\@\@U?$default_delete\@VIRandom\@\@\@std\@\@\@std\@\@XZ
-     */
-    MCVAPI std::unique_ptr<class IRandom> fork();
-    /**
-     * @symbol ?nextBoolean\@Random\@\@UEAA_NXZ
-     */
-    MCVAPI bool nextBoolean();
-    /**
-     * @symbol ?nextDouble\@Random\@\@UEAANXZ
-     */
-    MCVAPI double nextDouble();
-    /**
-     * @symbol ?nextFloat\@Random\@\@UEAAMXZ
-     */
-    MCVAPI float nextFloat();
-    /**
-     * @symbol ?nextGaussianDouble\@Random\@\@UEAANXZ
-     */
-    MCVAPI double nextGaussianDouble();
-    /**
-     * @symbol ?nextInt\@Random\@\@UEAAHH\@Z
-     */
-    MCVAPI int nextInt(int);
-    /**
-     * @symbol ?nextInt\@Random\@\@UEAAHXZ
-     */
-    MCVAPI int nextInt();
-    /**
-     * @symbol ?nextLong\@Random\@\@UEAA_JXZ
-     */
-    MCVAPI int64_t nextLong();
-    /**
+     * @vftbl 0
      * @symbol __unk_destructor_-1
      */
-    MCVAPI ~Random();
-#endif
+    virtual ~Random();
+    /**
+     * @vftbl 1
+     * @symbol ?nextInt\@Random\@\@UEAAHXZ
+     */
+    virtual int nextInt();
+    /**
+     * @vftbl 2
+     * @symbol ?nextInt\@Random\@\@UEAAHH\@Z
+     */
+    virtual int nextInt(int);
+    /**
+     * @vftbl 3
+     * @symbol ?nextLong\@Random\@\@UEAA_JXZ
+     */
+    virtual int64_t nextLong();
+    /**
+     * @vftbl 4
+     * @symbol ?nextBoolean\@Random\@\@UEAA_NXZ
+     */
+    virtual bool nextBoolean();
+    /**
+     * @vftbl 5
+     * @symbol ?nextFloat\@Random\@\@UEAAMXZ
+     */
+    virtual float nextFloat();
+    /**
+     * @vftbl 6
+     * @symbol ?nextDouble\@Random\@\@UEAANXZ
+     */
+    virtual double nextDouble();
+    /**
+     * @vftbl 7
+     * @symbol ?nextGaussianDouble\@Random\@\@UEAANXZ
+     */
+    virtual double nextGaussianDouble();
+    /**
+     * @vftbl 8
+     * @symbol ?consumeCount\@Random\@\@UEAAXI\@Z
+     */
+    virtual void consumeCount(unsigned int);
+    /**
+     * @vftbl 9
+     * @symbol ?fork\@Random\@\@UEAA?AV?$unique_ptr\@VIRandom\@\@U?$default_delete\@VIRandom\@\@\@std\@\@\@std\@\@XZ
+     */
+    virtual std::unique_ptr<class IRandom> fork();
     /**
      * @symbol ??0Random\@\@QEAA\@XZ
      */

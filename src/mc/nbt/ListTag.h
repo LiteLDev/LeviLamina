@@ -12,6 +12,14 @@ public:
 
     List      mList;
     Tag::Type mType;
+
+    optional_ref<Tag> operator[](size_t index) const {
+        if (mList.size() <= index) {
+            return nullptr;
+        }
+        return mList[index].get();
+    }
+
 public:
     // NOLINTBEGIN
     /**

@@ -20,6 +20,7 @@ public:
     using TagMap = std::map<std::string, class CompoundTagVariant>;
 
     TagMap mTags;
+
 public:
     // NOLINTBEGIN
     /**
@@ -99,9 +100,7 @@ public:
      * @symbol
      * ?contains\@CompoundTag\@\@QEBA_NV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@W4Type\@Tag\@\@\@Z
      */
-    MCAPI bool                                                                                            // NOLINT
-        contains(std::string_view, enum class Tag::Type) // NOLINT
-        const;
+    MCAPI bool contains(std::string_view, enum class Tag::Type) const;
     /**
      * @symbol ?contains\@CompoundTag\@\@QEBA_NV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
@@ -135,8 +134,7 @@ public:
      * @symbol
      * ?getByteArray\@CompoundTag\@\@QEBAAEBUTagMemoryChunk\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI struct TagMemoryChunk const&                                                         // NOLINT
-        getByteArray(std::string_view) const;
+    MCAPI struct TagMemoryChunk const& getByteArray(std::string_view) const;
     /**
      * @symbol
      * ?getByteTag\@CompoundTag\@\@QEAAPEAVByteTag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
@@ -145,8 +143,7 @@ public:
     /**
      * @symbol ?getCompound\@CompoundTag\@\@QEBAPEBV1\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI class CompoundTag const*                                                            // NOLINT
-        getCompound(std::string_view) const;
+    MCAPI class CompoundTag const* getCompound(std::string_view) const;
     /**
      * @symbol ?getCompound\@CompoundTag\@\@QEAAPEAV1\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
@@ -167,8 +164,7 @@ public:
      * @symbol
      * ?getInt64Tag\@CompoundTag\@\@QEBAPEBVInt64Tag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI class Int64Tag const*                                                               // NOLINT
-        getInt64Tag(std::string_view) const;
+    MCAPI class Int64Tag const* getInt64Tag(std::string_view) const;
     /**
      * @symbol
      * ?getInt64Tag\@CompoundTag\@\@QEAAPEAVInt64Tag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
@@ -183,13 +179,11 @@ public:
      * @symbol
      * ?getIntTag\@CompoundTag\@\@QEBAPEBVIntTag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI class IntTag const*                                                               // NOLINT
-        getIntTag(std::string_view) const;
+    MCAPI class IntTag const* getIntTag(std::string_view) const;
     /**
      * @symbol ?getList\@CompoundTag\@\@QEBAPEBVListTag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI class ListTag const*                                                            // NOLINT
-        getList(std::string_view) const;
+    MCAPI class ListTag const* getList(std::string_view) const;
     /**
      * @symbol ?getList\@CompoundTag\@\@QEAAPEAVListTag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
@@ -202,20 +196,17 @@ public:
      * @symbol
      * ?getShortTag\@CompoundTag\@\@QEBAPEBVShortTag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI class ShortTag const*                                                               // NOLINT
-        getShortTag(std::string_view) const;
+    MCAPI class ShortTag const* getShortTag(std::string_view) const;
     /**
      * @symbol
      * ?getString\@CompoundTag\@\@QEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@3\@\@Z
      */
-    MCAPI std::string const&                                                                  // NOLINT
-          getString(std::string_view) const;
+    MCAPI std::string const& getString(std::string_view) const;
     /**
      * @symbol
      * ?getStringTag\@CompoundTag\@\@QEBAPEBVStringTag\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
-    MCAPI class StringTag const*                                                               // NOLINT
-        getStringTag(std::string_view) const;
+    MCAPI class StringTag const* getStringTag(std::string_view) const;
     /**
      * @symbol ?isEmpty\@CompoundTag\@\@QEBA_NXZ
      */
@@ -288,7 +279,7 @@ public:
      * @symbol
      * ?rawView\@CompoundTag\@\@QEBAAEBV?$map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VCompoundTagVariant\@\@U?$less\@X\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@VCompoundTagVariant\@\@\@std\@\@\@2\@\@std\@\@XZ
      */
-    MCAPI class std::map<std::string,class CompoundTagVariant,std::less<void>> const& rawView() const;
+    MCAPI class std::map<std::string, class CompoundTagVariant, std::less<void>> const& rawView() const;
     /**
      * @symbol ?remove\@CompoundTag\@\@QEAA_NV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */

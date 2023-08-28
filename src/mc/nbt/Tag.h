@@ -24,6 +24,15 @@ public:
         IntArray  = 0xB,
     };
 
+    template <typename T>
+    optional_ref<T> as() const {
+        return dynamic_cast<T const*>(this);
+    }
+    template <typename T>
+    optional_ref<T> as() {
+        return dynamic_cast<T*>(this);
+    }
+
 public:
     // prevent constructor by default
     Tag& operator=(Tag const&) = delete;

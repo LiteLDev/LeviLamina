@@ -16,13 +16,15 @@ public:
 
     std::optional<EntityContext> mContext;
 
-    template <class Entity, bool Unknown = false>
+    template <class Entity, bool IncludeRemoved = false>
     constexpr Entity* tryUnwrap() {
         if (_hasValue()) {
-            return Entity::tryGetFromEntity(_getStackRef(), Unknown);
+            return Entity::tryGetFromEntity(_getStackRef(), IncludeRemoved);
         }
         return nullptr;
     }
+
+    operator bool() const { return _hasValue(); } // NOLINT
 
 public:
     OwnerStorageEntity() = delete;

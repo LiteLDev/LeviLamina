@@ -10,7 +10,7 @@ public:
     enum class MCCATEGORY mCategory;
     uint16_t              mCode;
 
-    operator bool() { return mSuccess; }
+    operator bool() const { return mSuccess; } // NOLINT
 
 public:
     // NOLINTBEGIN
