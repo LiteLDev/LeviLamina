@@ -18,19 +18,19 @@ public:
     bool                    mDirty = true;
 
     template <typename T>
-    constexpr T const& getData() const;
+    inline optional_ref<T const> getData() const;
     template <typename T>
-    constexpr T& getData();
+    inline optional_ref<T> getData();
     template <typename T>
-    constexpr bool setData(T const& value);
+    inline bool setData(T const& value);
 
     DataItem(DataItemType type, unsigned short id) : mId(id), mType(type) {}
 
     template <typename T>
-    constexpr static std::unique_ptr<DataItem> create(unsigned short key, T const& value);
+    inline static std::unique_ptr<DataItem> create(unsigned short key, T const& value);
 
     template <typename T>
-    constexpr static std::unique_ptr<DataItem> create(enum class ActorDataIDs key, T const& value);
+    inline static std::unique_ptr<DataItem> create(enum class ActorDataIDs key, T const& value);
 
 public:
     // NOLINTBEGIN
@@ -66,21 +66,21 @@ class DataItem2 : public DataItem {
     friend class DataItem;
 
 public:
-    [[nodiscard]] virtual std::unique_ptr<DataItem> clone() const;
+    [[nodiscard]] std::unique_ptr<DataItem> clone() const override;
 
     [[nodiscard]] T const& getData() const { return mValue; };
 
-    constexpr void setData(T const& value) {
+    inline void setData(T const& value) {
         mDirty = true;
         mValue = value;
     }
-    constexpr DataItem2<T>& operator=(T const& value) {
+    inline DataItem2<T>& operator=(T const& value) {
         setData(value);
         return *this;
     }
-    constexpr DataItem2(unsigned short key, T const& value) = delete;
-    constexpr static std::unique_ptr<DataItem> create(unsigned short key, T const& value) {
-        return std::unique_ptr<DataItem>(new DataItem2(key, value));
+    inline DataItem2(unsigned short key, T const& value) = delete;
+    inline static std::unique_ptr<DataItem> create(unsigned short key, T const& value) {
+        return std::make_unique<DataItem>(key, value);
     }
     static DataItemType const DATA_ITEM_TYPE;
 };
@@ -108,74 +108,55 @@ template <>
 DataItemType const DataItem2<Vec3>::DATA_ITEM_TYPE = DataItemType::Vec3;
 
 template <>
-constexpr void DataItem2<CompoundTag>::setData(CompoundTag const& value) {
+inline void DataItem2<CompoundTag>::setData(CompoundTag const& value) {
     mValue.deepCopy(value);
 }
 
 template <>
-constexpr DataItem2<signed char>::DataItem2(unsigned short key, signed char const& value)
-: DataItem(DATA_ITEM_TYPE, key), mValue(value) {
-    //*(void**)this = dlsym_real("??_7?$DataItem2@C@@6B@");
-}
+inline DataItem2<signed char>::DataItem2(unsigned short key, signed char const& value)
+: DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
 template <>
-constexpr DataItem2<short>::DataItem2(unsigned short key, short const& value)
-: DataItem(DATA_ITEM_TYPE, key), mValue(value) {
-    //*(void**)this = dlsym_real("??_7?$DataItem2@F@@6B@");
-}
+inline DataItem2<short>::DataItem2(unsigned short key, short const& value)
+: DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
 template <>
-constexpr DataItem2<int>::DataItem2(unsigned short key, int const& value) : DataItem(DATA_ITEM_TYPE, key), mValue(value) {
-    //*(void**)this = dlsym_real("??_7?$DataItem2@M@@6B@");
-}
+inline DataItem2<int>::DataItem2(unsigned short key, int const& value) : DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
 template <>
-constexpr DataItem2<float>::DataItem2(unsigned short key, float const& value)
-: DataItem(DATA_ITEM_TYPE, key), mValue(value) {
-    //*(void**)this = dlsym_real("??_7?$DataItem2@M@@6B@");
-}
+inline DataItem2<float>::DataItem2(unsigned short key, float const& value)
+: DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
 template <>
-constexpr DataItem2<std::string>::DataItem2(unsigned short key, std::string const& value) // NOLINT
-: DataItem(DATA_ITEM_TYPE, key), mValue(value) {
-    //*(void**)this = dlsym_real("??_7?$DataItem2@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@6B@");
-}
+inline DataItem2<std::string>::DataItem2(unsigned short key, std::string const& value) // NOLINT
+: DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
 template <>
-constexpr DataItem2<class CompoundTag>::DataItem2(unsigned short key, class CompoundTag const& value)
+inline DataItem2<class CompoundTag>::DataItem2(unsigned short key, class CompoundTag const& value)
 : DataItem(DATA_ITEM_TYPE, key) {
     mValue.deepCopy(value);
-    //*(void**)this = dlsym_real("??_7?$DataItem2@VCompoundTag@@@@6B@");
 }
 template <>
-constexpr DataItem2<BlockPos>::DataItem2(unsigned short key, BlockPos const& value)
-: DataItem(DATA_ITEM_TYPE, key), mValue(value) {
-    //*(void**)this = dlsym_real("??_7?$DataItem2@VBlockPos@@@@6B@");
-}
+inline DataItem2<BlockPos>::DataItem2(unsigned short key, BlockPos const& value)
+: DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
 template <>
-constexpr DataItem2<int64_t>::DataItem2(unsigned short key, int64_t const& value)
-: DataItem(DATA_ITEM_TYPE, key), mValue(value) {
-    //*(void**)this = dlsym_real("??_7?$DataItem2@_J@@6B@");
-}
+inline DataItem2<int64_t>::DataItem2(unsigned short key, int64_t const& value)
+: DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
 template <>
-constexpr DataItem2<Vec3>::DataItem2(unsigned short key, Vec3 const& value)
-: DataItem(DATA_ITEM_TYPE, key), mValue(value) {
-    //*(void**)this = dlsym_real("??_7?$DataItem2@VVec3@@@@6B@");
-}
+inline DataItem2<Vec3>::DataItem2(unsigned short key, Vec3 const& value)
+: DataItem(DATA_ITEM_TYPE, key), mValue(value) {}
 
 template <typename T>
-constexpr T const& DataItem::getData() const {
+inline optional_ref<T const> DataItem::getData() const {
     if (this->mType == DataItem2<T>::DATA_ITEM_TYPE)
         return ((DataItem2<T>*)this)->mValue;
-    // throw("DataItemType Not Match");
-    return *(T*)0;
+    return nullptr;
 }
 
 template <typename T>
-constexpr T& DataItem::getData() {
+inline optional_ref<T> DataItem::getData() {
     if (this->mType == DataItem2<T>::DATA_ITEM_TYPE)
         return ((DataItem2<T>*)this)->mValue;
-    // throw("DataItemType Not Match");
-    return *(T*)0;
+    return nullptr;
 }
 
 template <typename T>
-constexpr bool DataItem::setData(T const& value) {
+inline bool DataItem::setData(T const& value) {
     if (this->mType != DataItem2<T>::DATA_ITEM_TYPE)
         return false;
     ((DataItem2<T>*)this)->setData(value);
@@ -183,11 +164,11 @@ constexpr bool DataItem::setData(T const& value) {
 }
 
 template <typename T>
-constexpr static std::unique_ptr<DataItem> DataItem::create(unsigned short key, T const& value) {
-    return std::unique_ptr<DataItem>(new DataItem2(key, value));
+inline static std::unique_ptr<DataItem> DataItem::create(unsigned short key, T const& value) {
+    return std::unique_ptr<DataItem2>(key, value);
 }
 
 template <typename T>
-constexpr static std::unique_ptr<DataItem> DataItem::create(ActorDataIDs key, T const& value) {
-    return std::unique_ptr<DataItem>(new DataItem2((unsigned short)key, value));
+inline static std::unique_ptr<DataItem> DataItem::create(ActorDataIDs key, T const& value) {
+    return std::unique_ptr<DataItem2>((unsigned short)key, value);
 }
