@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/resources/ResourcePackResponse.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,9 @@
 class ResourcePackClientResponsePacket : public ::Packet {
 
 public:
+    std::set<std::string> mDownloadingPacks; // this+0x30
+    ResourcePackResponse  mResponse;         // this+0x40
+
     // prevent constructor by default
     ResourcePackClientResponsePacket& operator=(ResourcePackClientResponsePacket const&) = delete;
     ResourcePackClientResponsePacket(ResourcePackClientResponsePacket const&)            = delete;

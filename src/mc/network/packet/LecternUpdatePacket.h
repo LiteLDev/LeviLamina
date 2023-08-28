@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../NetworkBlockPosition.h"
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
@@ -9,6 +10,11 @@
 class LecternUpdatePacket : public ::Packet {
 
 public:
+    int                  mPage;           // this+0x30
+    int                  mTotalPages;     // this+0x34
+    bool                 mShouldDropBook; // this+0x38
+    NetworkBlockPosition mPos;            // this+0x3C
+
     // prevent constructor by default
     LecternUpdatePacket& operator=(LecternUpdatePacket const&) = delete;
     LecternUpdatePacket(LecternUpdatePacket const&)            = delete;

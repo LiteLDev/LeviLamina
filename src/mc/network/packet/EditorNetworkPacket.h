@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/nbt/CompoundTag.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,8 @@
 class EditorNetworkPacket : public ::Packet {
 
 public:
+    CompoundTag mBinaryPayload; // this+0x30
+
     // prevent constructor by default
     EditorNetworkPacket& operator=(EditorNetworkPacket const&) = delete;
     EditorNetworkPacket(EditorNetworkPacket const&)            = delete;

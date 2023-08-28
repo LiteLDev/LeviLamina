@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/nbt/CompoundTag.h"
+#include "mc/world/level/levelgen/structure/StructureTemplateResponseType.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +11,10 @@
 class StructureTemplateDataResponsePacket : public ::Packet {
 
 public:
+    std::string                   mStructureName; // this+0x30
+    std::unique_ptr<CompoundTag>  mStructureTag;  // this+0x50
+    StructureTemplateResponseType mResponseType;  // this+0x58
+
     // prevent constructor by default
     StructureTemplateDataResponsePacket& operator=(StructureTemplateDataResponsePacket const&) = delete;
     StructureTemplateDataResponsePacket(StructureTemplateDataResponsePacket const&)            = delete;

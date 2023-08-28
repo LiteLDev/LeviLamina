@@ -9,6 +9,9 @@
 class CodeBuilderPacket : public ::Packet {
 
 public:
+    std::string mURL;                   // this+0x30
+    bool        mShouldOpenCodeBuilder; // this+0x50
+
     // prevent constructor by default
     CodeBuilderPacket& operator=(CodeBuilderPacket const&) = delete;
     CodeBuilderPacket(CodeBuilderPacket const&)            = delete;

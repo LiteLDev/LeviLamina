@@ -9,6 +9,8 @@
 class SetCommandsEnabledPacket : public ::Packet {
 
 public:
+    bool mCommandsEnabled; // this+0x30
+
     // prevent constructor by default
     SetCommandsEnabledPacket& operator=(SetCommandsEnabledPacket const&) = delete;
     SetCommandsEnabledPacket(SetCommandsEnabledPacket const&)            = delete;

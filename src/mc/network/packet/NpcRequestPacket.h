@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/ActorRuntimeID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,9 +10,23 @@
 class NpcRequestPacket : public ::Packet {
 public:
     // NpcRequestPacket inner types define
-    enum class RequestType {};
+    enum class RequestType : unsigned char {
+        SetActions             = 0x0,
+        ExecuteAction          = 0x1,
+        ExecuteClosingCommands = 0x2,
+        SetName                = 0x3,
+        SetSkin                = 0x4,
+        SetInteractText        = 0x5,
+        ExecuteOpeningCommands = 0x6,
+    };
 
 public:
+    ActorRuntimeID mId;          // this+0x30
+    RequestType    mType;        // this+0x38
+    std::string    mActions;     // this+0x40
+    unsigned char  mActionIndex; // this+0x60
+    std::string    mSceneName;   // this+0x68
+
     // prevent constructor by default
     NpcRequestPacket& operator=(NpcRequestPacket const&) = delete;
     NpcRequestPacket(NpcRequestPacket const&)            = delete;

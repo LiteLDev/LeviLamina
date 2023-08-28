@@ -12,11 +12,12 @@
 class CraftingEventPacket : public ::Packet {
 
 public:
-    enum class ContainerID                        mContainerId;   // this+0x30
-    int                                           mContainerType; // this+0x34
-    mce::UUID                                     mRecipeId;      // this+0x38
-    std::vector<class NetworkItemStackDescriptor> mInputItems;    // this+0x48
-    std::vector<class NetworkItemStackDescriptor> mOutputItems;   // this+0x60
+    ContainerID                             mContainerId;   // this+0x30
+    int                                     mContainerType; // this+0x34
+    mce::UUID                               mRecipeId;      // this+0x38
+    std::vector<NetworkItemStackDescriptor> mInputItems;    // this+0x48
+    std::vector<NetworkItemStackDescriptor> mOutputItems;   // this+0x60
+
 public:
     // NOLINTBEGIN
     /**

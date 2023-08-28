@@ -1,6 +1,11 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/sem_ver/SemVersion.h"
+#include "mc/nbt/CompoundTag.h"
+#include "mc/network/NetworkBlockPosition.h"
+#include "mc/world/AutomaticID.h"
+#include "mc/world/level/dimension/Dimension.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +14,14 @@
 class AddVolumeEntityPacket : public ::AddEntityPacket {
 
 public:
+    CompoundTag                 mComponents;     // this+0x30
+    std::string                 mJsonIdentifier; // this+0x68
+    std::string                 mInstanceName;   // this+0x88
+    NetworkBlockPosition        mMinBounds;      // this+0xa8
+    NetworkBlockPosition        mMaxBounds;      // this+0xb4
+    AutomaticID<Dimension, int> mDimensionType;  // this+0xc0
+    SemVersion                  mEngineVersion;  // this+0xc8
+
     // prevent constructor by default
     AddVolumeEntityPacket& operator=(AddVolumeEntityPacket const&) = delete;
     AddVolumeEntityPacket(AddVolumeEntityPacket const&)            = delete;

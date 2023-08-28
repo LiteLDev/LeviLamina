@@ -9,6 +9,9 @@
 class FilterTextPacket : public ::Packet {
 
 public:
+    std::string mText;       // this+0x30
+    bool        mFromServer; // this+0x50
+
     // prevent constructor by default
     FilterTextPacket& operator=(FilterTextPacket const&) = delete;
     FilterTextPacket(FilterTextPacket const&)            = delete;

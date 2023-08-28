@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/resources/BaseGameVersion.h"
+#include "mc/world/level/PackInstanceId.h"
+#include "mc/world/level/storage/ExperimentStorage.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +12,12 @@
 class ResourcePackStackPacket : public ::Packet {
 
 public:
+    std::vector<PackInstanceId> mAddOnIdsAndVersions;       // this+0x30
+    std::vector<PackInstanceId> mTexturePackIdsAndVersions; // this+0x48
+    BaseGameVersion             mBaseGameVersion;           // this+0x60
+    bool                        mTexturePackRequired;       // this+0xD8
+    ExperimentStorage           mExperiments;               // this+0xE0
+
     // prevent constructor by default
     ResourcePackStackPacket& operator=(ResourcePackStackPacket const&) = delete;
     ResourcePackStackPacket(ResourcePackStackPacket const&)            = delete;

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/SimulationType.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,8 @@
 class SimulationTypePacket : public ::Packet {
 
 public:
+    SimulationType mSimType; // this+0x30
+
     // prevent constructor by default
     SimulationTypePacket& operator=(SimulationTypePacket const&) = delete;
     SimulationTypePacket(SimulationTypePacket const&)            = delete;

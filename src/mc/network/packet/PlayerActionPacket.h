@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/network/NetworkBlockPosition.h"
-#include "mc/world/actor/player/PlayerActionType.h"
 #include "mc/world/ActorRuntimeID.h"
+#include "mc/world/actor/player/PlayerActionType.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -12,16 +12,16 @@
 class PlayerActionPacket : public ::Packet {
 
 public:
-    // prevent constructor by default
-    PlayerActionPacket& operator=(PlayerActionPacket const&) = delete;
-    PlayerActionPacket(PlayerActionPacket const&)            = delete;
-
     NetworkBlockPosition mPos;       // this+0x30
     NetworkBlockPosition mResultPos; // this+0x3C
     int                  mFace;      // this+0x48
     PlayerActionType     mAction;    // this+0x4C
     ActorRuntimeID       mRuntimeId; // this+0x50
     bool                 unk88;      // this+0x58
+
+    // prevent constructor by default
+    PlayerActionPacket& operator=(PlayerActionPacket const&) = delete;
+    PlayerActionPacket(PlayerActionPacket const&)            = delete;
 
 public:
     // NOLINTBEGIN

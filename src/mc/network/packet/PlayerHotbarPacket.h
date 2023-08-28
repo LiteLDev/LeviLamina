@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/containers/ContainerID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,10 @@
 class PlayerHotbarPacket : public ::Packet {
 
 public:
+    unsigned int mSelectedSlot;     // this+0x30
+    bool         mShouldSelectSlot; // this+0x34
+    ContainerID  mContainerId;      // this+0x35
+
     // prevent constructor by default
     PlayerHotbarPacket& operator=(PlayerHotbarPacket const&) = delete;
     PlayerHotbarPacket(PlayerHotbarPacket const&)            = delete;

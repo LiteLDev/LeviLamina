@@ -30,6 +30,7 @@ public:
         uint32_t                 mAbilityValues;   // this+0x8
         float                    mFlySpeed;        // this+0xC
         float                    mWalkSpeed;       // this+0x10
+
         // prevent constructor by default
         SerializedLayer& operator=(SerializedLayer const&) = delete;
         SerializedLayer(SerializedLayer const&)            = delete;
@@ -41,6 +42,7 @@ public:
     CommandPermissionLevel       mCommandPermissions; // this+0x8
     PlayerPermissionLevel        mPlayerPermissions;  // this+0x9
     std::vector<SerializedLayer> mLayers;             // this+0x10
+
     // prevent constructor by default
     SerializedAbilitiesData& operator=(SerializedAbilitiesData const&) = delete;
     SerializedAbilitiesData(SerializedAbilitiesData const&)            = delete;

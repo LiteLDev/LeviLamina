@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/GameType.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,8 @@
 class SetPlayerGameTypePacket : public ::Packet {
 
 public:
+    GameType mPlayerGameType; // this+0x30
+
     // prevent constructor by default
     SetPlayerGameTypePacket& operator=(SetPlayerGameTypePacket const&) = delete;
     SetPlayerGameTypePacket(SetPlayerGameTypePacket const&)            = delete;

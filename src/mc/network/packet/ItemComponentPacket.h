@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/nbt/CompoundTag.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,8 @@
 class ItemComponentPacket : public ::Packet {
 
 public:
+    std::vector<std::pair<std::string, CompoundTag>> mItems; // this+0x30
+
     // prevent constructor by default
     ItemComponentPacket& operator=(ItemComponentPacket const&) = delete;
     ItemComponentPacket(ItemComponentPacket const&)            = delete;

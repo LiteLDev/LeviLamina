@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/MultiplayerSettingsPacketType.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,8 @@
 class MultiplayerSettingsPacket : public ::Packet {
 
 public:
+    MultiplayerSettingsPacketType mPacketType; // this+0x30
+
     // prevent constructor by default
     MultiplayerSettingsPacket& operator=(MultiplayerSettingsPacket const&) = delete;
     MultiplayerSettingsPacket(MultiplayerSettingsPacket const&)            = delete;

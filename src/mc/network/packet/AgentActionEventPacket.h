@@ -1,19 +1,20 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/json/Value.h"
+#include "mc/enums/AgentActionType.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/network/packet/Packet.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Json { class Value; }
-// clang-format on
-
 class AgentActionEventPacket : public ::Packet {
 
 public:
+    AgentActionType mAction;    // this+0x2c
+    std::string     mRequestId; // this+0x30
+    Json::Value     mResponse;  // this+0x50
+
     // prevent constructor by default
     AgentActionEventPacket& operator=(AgentActionEventPacket const&) = delete;
     AgentActionEventPacket(AgentActionEventPacket const&)            = delete;

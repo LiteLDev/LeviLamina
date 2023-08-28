@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/nbt/CompoundTag.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,9 @@
 class LevelEventGenericPacket : public ::Packet {
 
 public:
+    int                          mEventId; // this+0x30
+    std::unique_ptr<CompoundTag> mData;    // this+0x38
+
     // prevent constructor by default
     LevelEventGenericPacket& operator=(LevelEventGenericPacket const&) = delete;
     LevelEventGenericPacket(LevelEventGenericPacket const&)            = delete;

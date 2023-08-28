@@ -1,14 +1,30 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/ChunkPos.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/network/packet/Packet.h"
 
 class LevelChunkPacket : public ::Packet {
+public:
+    struct SubChunkMetadata {
+        unsigned long long blobId; // this+0x0
+    };
 
 public:
+    ChunkPos           mPos;                           // this+0x30
+    bool               mCacheEnabled;                  // this+0x38
+    bool               mIsChunkInTickRange;            // this+0x39
+    std::string        mSerializedChunk;               // this+0x40
+    unsigned long long mSubChunksCount;                // this+0x60
+    bool               isClientPacket;                 // this+0x68
+    bool               mClientNeedsToRequestSubchunks; // this+0x69
+    int                mClientRequestSubChunkLimit;    // this+0x6c
+
+    std::vector<SubChunkMetadata> mCacheMetadata; // this+0x70
+
     // prevent constructor by default
     LevelChunkPacket& operator=(LevelChunkPacket const&) = delete;
     LevelChunkPacket(LevelChunkPacket const&)            = delete;

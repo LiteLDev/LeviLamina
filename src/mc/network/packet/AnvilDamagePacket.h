@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../NetworkBlockPosition.h"
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
@@ -9,6 +10,9 @@
 class AnvilDamagePacket : public ::Packet {
 
 public:
+    int                  mDamage;   // this+0x2c
+    NetworkBlockPosition mPosition; // this+0x30
+
     // prevent constructor by default
     AnvilDamagePacket& operator=(AnvilDamagePacket const&) = delete;
     AnvilDamagePacket(AnvilDamagePacket const&)            = delete;

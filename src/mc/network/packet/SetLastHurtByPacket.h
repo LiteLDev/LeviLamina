@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/utilities/ActorType.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,8 @@
 class SetLastHurtByPacket : public ::Packet {
 
 public:
+    ActorType mLastHurtBy; // this+0x30
+
     // prevent constructor by default
     SetLastHurtByPacket& operator=(SetLastHurtByPacket const&) = delete;
     SetLastHurtByPacket(SetLastHurtByPacket const&)            = delete;

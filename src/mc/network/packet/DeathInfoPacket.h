@@ -9,6 +9,8 @@
 class DeathInfoPacket : public ::Packet {
 
 public:
+    std::pair<std::string, std::vector<std::string>> mDeathCauseMessage; // this+0x30
+
     // prevent constructor by default
     DeathInfoPacket& operator=(DeathInfoPacket const&) = delete;
     DeathInfoPacket(DeathInfoPacket const&)            = delete;

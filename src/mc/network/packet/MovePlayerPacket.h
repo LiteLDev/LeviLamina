@@ -2,11 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/entity/components/PlayerPositionModeComponent.h"
+#include "mc/events/MinecraftEventing.h"
 #include "mc/math/Vec2.h"
 #include "mc/math/Vec3.h"
 #include "mc/world/ActorRuntimeID.h"
 #include "mc/world/level/Tick.h"
-#include "mc/events/MinecraftEventing.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -16,10 +16,6 @@
 class MovePlayerPacket : public ::Packet {
 
 public:
-    // prevent constructor by default
-    MovePlayerPacket& operator=(MovePlayerPacket const&) = delete;
-    MovePlayerPacket(MovePlayerPacket const&)            = delete;
-
     ActorRuntimeID                            mPlayerID;         // this+0x30
     Vec3                                      mPos;              // this+0x38
     Vec2                                      mRot;              // this+0x44
@@ -30,6 +26,10 @@ public:
     MinecraftEventing::TeleportationCause     mCause;            // this+0x60
     int                                       mSourceEntityType; // this+0x64 // maybe enum class ActorType ?
     Tick                                      mTick;             // this+0x68
+
+    // prevent constructor by default
+    MovePlayerPacket& operator=(MovePlayerPacket const&) = delete;
+    MovePlayerPacket(MovePlayerPacket const&)            = delete;
 
 public:
     // NOLINTBEGIN

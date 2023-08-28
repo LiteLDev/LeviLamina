@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/LabTableReactionType.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,9 +11,17 @@
 class LabTablePacket : public ::Packet {
 public:
     // LabTablePacket inner types define
-    enum class Type {};
+    enum class Type : unsigned char {
+        StartCombine  = 0x0,
+        StartReaction = 0x1,
+        Reset         = 0x2,
+    };
 
 public:
+    Type                 mType;     // this+0x30
+    BlockPos             mPos;      // this+0x34
+    LabTableReactionType mReaction; // this+0x40
+
     // prevent constructor by default
     LabTablePacket& operator=(LabTablePacket const&) = delete;
     LabTablePacket(LabTablePacket const&)            = delete;

@@ -9,6 +9,8 @@
 class RemoveObjectivePacket : public ::Packet {
 
 public:
+    std::string mObjectiveName; // this+0x30
+
     // prevent constructor by default
     RemoveObjectivePacket& operator=(RemoveObjectivePacket const&) = delete;
     RemoveObjectivePacket(RemoveObjectivePacket const&)            = delete;

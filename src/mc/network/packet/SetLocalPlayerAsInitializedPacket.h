@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/ActorRuntimeID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,8 @@
 class SetLocalPlayerAsInitializedPacket : public ::Packet {
 
 public:
+    ActorRuntimeID mPlayerID; // this+0x30
+
     // prevent constructor by default
     SetLocalPlayerAsInitializedPacket& operator=(SetLocalPlayerAsInitializedPacket const&) = delete;
     SetLocalPlayerAsInitializedPacket(SetLocalPlayerAsInitializedPacket const&)            = delete;

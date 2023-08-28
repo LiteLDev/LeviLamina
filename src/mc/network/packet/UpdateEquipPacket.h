@@ -1,6 +1,10 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/nbt/CompoundTag.h"
+#include "mc/world/ActorUniqueID.h"
+#include "mc/world/containers/ContainerID.h"
+#include "mc/world/containers/ContainerType.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +13,12 @@
 class UpdateEquipPacket : public ::Packet {
 
 public:
+    ContainerID   mContainerId;    // this+0x30
+    ContainerType mType;           // this+0x31
+    int           mSize;           // this+0x34
+    ActorUniqueID mEntityUniqueID; // this+0x38
+    CompoundTag   mData;           // this+0x40
+
     // prevent constructor by default
     UpdateEquipPacket& operator=(UpdateEquipPacket const&) = delete;
     UpdateEquipPacket(UpdateEquipPacket const&)            = delete;

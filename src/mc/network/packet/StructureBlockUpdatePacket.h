@@ -1,6 +1,8 @@
 #pragma once
 
+#include "../NetworkBlockPosition.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/levelgen/structure/StructureEditorData.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +11,11 @@
 class StructureBlockUpdatePacket : public ::Packet {
 
 public:
+    NetworkBlockPosition mBlockPos;      // this+0x30
+    StructureEditorData  mData;          // this+0x40
+    bool                 mTrigger;       // this+0xF0
+    bool                 mIsWaterlogged; // this+0xF1
+
     // prevent constructor by default
     StructureBlockUpdatePacket& operator=(StructureBlockUpdatePacket const&) = delete;
 

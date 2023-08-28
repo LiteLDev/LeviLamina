@@ -10,6 +10,8 @@
 class FeatureRegistryPacket : public ::Packet {
 
 public:
+    std::vector<FeatureRegistry::FeatureBinaryJsonFormat> mFeaturesData; // this+0x30
+
     // prevent constructor by default
     FeatureRegistryPacket& operator=(FeatureRegistryPacket const&) = delete;
     FeatureRegistryPacket(FeatureRegistryPacket const&)            = delete;

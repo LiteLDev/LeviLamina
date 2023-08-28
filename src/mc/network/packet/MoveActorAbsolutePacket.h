@@ -1,5 +1,6 @@
 #pragma once
 
+#include "MoveActorAbsoluteData.h"
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
@@ -9,6 +10,8 @@
 class MoveActorAbsolutePacket : public ::Packet {
 
 public:
+    MoveActorAbsoluteData mMoveData; // this+0x30
+
     // prevent constructor by default
     MoveActorAbsolutePacket& operator=(MoveActorAbsolutePacket const&) = delete;
     MoveActorAbsolutePacket(MoveActorAbsolutePacket const&)            = delete;

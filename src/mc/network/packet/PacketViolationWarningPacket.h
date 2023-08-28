@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/resources/PacketViolationSeverity.h"
+#include "mc/resources/PacketViolationType.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +11,11 @@
 class PacketViolationWarningPacket : public ::Packet {
 
 public:
+    PacketViolationType     mViolationType;     // this+0x30
+    PacketViolationSeverity mViolationSeverity; // this+0x34
+    MinecraftPacketIds      mViolatingPacketId; // this+0x38
+    std::string             mViolationContext;  // this+0x40
+
     // prevent constructor by default
     PacketViolationWarningPacket& operator=(PacketViolationWarningPacket const&) = delete;
     PacketViolationWarningPacket(PacketViolationWarningPacket const&)            = delete;

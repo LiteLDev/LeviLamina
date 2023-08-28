@@ -9,7 +9,8 @@
 class ServerToClientHandshakePacket : public ::Packet {
 
 public:
-    std::string mData;
+    std::string mData; // this+0x30
+
     // prevent constructor by default
     ServerToClientHandshakePacket& operator=(ServerToClientHandshakePacket const&) = delete;
     ServerToClientHandshakePacket(ServerToClientHandshakePacket const&)            = delete;

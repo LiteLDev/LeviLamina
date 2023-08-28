@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/math/Vec2.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,10 @@
 class PlayerInputPacket : public ::Packet {
 
 public:
+    Vec2 mMov;        // this+0x30
+    bool mIsJumping;  // this+0x38
+    bool mIsSneaking; // this+0x39
+
     // prevent constructor by default
     PlayerInputPacket& operator=(PlayerInputPacket const&) = delete;
     PlayerInputPacket(PlayerInputPacket const&)            = delete;

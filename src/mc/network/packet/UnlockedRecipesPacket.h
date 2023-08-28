@@ -9,9 +9,17 @@
 class UnlockedRecipesPacket : public ::Packet {
 public:
     // UnlockedRecipesPacket inner types define
-    enum class PacketType {};
+    enum class PacketType : int {
+        Empty                    = 0x0,
+        InitiallyUnlockedRecipes = 0x1,
+        NewlyUnlockedRecipes     = 0x2,
+        RemoveUnlockedRecipes    = 0x3,
+        RemoveAllUnlockedRecipes = 0x4,
+    };
 
 public:
+    PacketType mPacketType; // this+0x30
+
     // prevent constructor by default
     UnlockedRecipesPacket& operator=(UnlockedRecipesPacket const&) = delete;
     UnlockedRecipesPacket(UnlockedRecipesPacket const&)            = delete;

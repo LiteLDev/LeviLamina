@@ -1,6 +1,20 @@
 #pragma once
 
+#include "ActorLink.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/mce/UUID.h"
+#include "mc/enums/BuildPlatform.h"
+#include "mc/enums/GameType.h"
+#include "mc/math/Vec2.h"
+#include "mc/math/Vec3.h"
+#include "mc/world/ActorRuntimeID.h"
+#include "mc/world/ActorUniqueID.h"
+#include "mc/world/actor/DataItem.h"
+#include "mc/world/actor/SynchedActorDataEntityWrapper.h"
+#include "mc/world/actor/state/PropertySyncData.h"
+#include "mc/world/item/NetworkItemStackDescriptor.h"
+#include "mc/world/level/LayeredAbilities.h"
+
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +23,26 @@
 class AddPlayerPacket : public ::AddActorBasePacket {
 
 public:
+    std::vector<ActorLink>                 mLinks;            // this+0x30
+    std::string                            mName;             // this+0x48
+    mce::UUID                              mUuid;             // this+0x68
+    ActorUniqueID                          mEntityId;         // this+0x78
+    ActorRuntimeID                         mRuntimeId;        // this+0x80
+    std::string                            mPlatformOnlineId; // this+0x88
+    Vec3                                   mPos;              // this+0xa8
+    Vec3                                   mVelocity;         // this+0xb4
+    Vec2                                   mRot;              // this+0xc0
+    float                                  mYHeadRot;         // this+0xc8
+    std::vector<std::unique_ptr<DataItem>> mUnpack;           // this+0xd0
+    LayeredAbilities                       mAbilities;        // this+0xe8
+    std::string                            mDeviceId;         // this+0x560
+    BuildPlatform                          mBuildPlatform;    // this+0x580
+    GameType                               mPlayerGameType;   // this+0x584
+
+    NetworkItemStackDescriptor          mCarriedItem;       // this+0x588
+    const SynchedActorDataEntityWrapper mEntityData;        // this+0x5e0
+    PropertySyncData                    mSynchedProperties; // this+0x5e8
+
     // prevent constructor by default
     AddPlayerPacket& operator=(AddPlayerPacket const&) = delete;
     AddPlayerPacket(AddPlayerPacket const&)            = delete;

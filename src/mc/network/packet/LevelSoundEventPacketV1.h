@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/utilities/ActorType.h"
+#include "mc/events/LevelSoundEvent.h"
+#include "mc/math/Vec3.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +12,13 @@
 class LevelSoundEventPacketV1 : public ::Packet {
 
 public:
+    LevelSoundEvent mEventId;    // this+0x30
+    Vec3            mPos;        // this+0x34
+    int             mData;       // this+0x40
+    ActorType       mEntityType; // this+0x44
+    bool            mIsBabyMob;  // this+0x48
+    bool            mIsGlobal;   // this+0x49
+
     // prevent constructor by default
     LevelSoundEventPacketV1& operator=(LevelSoundEventPacketV1 const&) = delete;
     LevelSoundEventPacketV1(LevelSoundEventPacketV1 const&)            = delete;

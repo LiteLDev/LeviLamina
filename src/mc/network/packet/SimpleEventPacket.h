@@ -17,7 +17,8 @@ public:
     };
 
 public:
-    SimpleEventPacket::Subtype mSubtype;
+    Subtype mSubtype; // this+0x30
+
     // prevent constructor by default
     SimpleEventPacket& operator=(SimpleEventPacket const&) = delete;
     SimpleEventPacket(SimpleEventPacket const&)            = delete;

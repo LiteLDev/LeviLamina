@@ -11,8 +11,8 @@
 class PlayerListPacket : public ::Packet {
 
 public:
-    std::vector<PlayerListEntry> mEntries;
-    PlayerListPacketType         mAction;
+    std::vector<PlayerListEntry> mEntries; // this+0x30
+    PlayerListPacketType         mAction;  // this+0x48
 
 public:
     // NOLINTBEGIN

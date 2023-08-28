@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/actor/ActorInfo.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,8 @@
 class AvailableActorIdentifiersPacket : public ::Packet {
 
 public:
+    std::vector<ActorInfo> mIdentifierList; // this+0x30
+
     // prevent constructor by default
     AvailableActorIdentifiersPacket& operator=(AvailableActorIdentifiersPacket const&) = delete;
     AvailableActorIdentifiersPacket(AvailableActorIdentifiersPacket const&)            = delete;

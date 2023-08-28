@@ -9,6 +9,8 @@
 class ChunkRadiusUpdatedPacket : public ::Packet {
 
 public:
+    int mChunkRadius; // this+0x30
+
     // prevent constructor by default
     ChunkRadiusUpdatedPacket& operator=(ChunkRadiusUpdatedPacket const&) = delete;
     ChunkRadiusUpdatedPacket(ChunkRadiusUpdatedPacket const&)            = delete;

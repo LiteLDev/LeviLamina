@@ -1,6 +1,10 @@
 #pragma once
 
+#include "SubChunkPacket.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/AutomaticID.h"
+#include "mc/world/level/SubChunkPos.h"
+#include "mc/world/level/dimension/Dimension.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +13,15 @@
 class SubChunkRequestPacket : public ::Packet {
 
 public:
+    AutomaticID<Dimension, int>                    mDimensionType;      // this+0x30
+    std::vector<SubChunkPos>                       mSubChunkPos;        // this+0x38
+    std::vector<SubChunkPacket::SubChunkPosOffset> mSubChunkPosOffsets; // this+0x50
+    unsigned int                                   mRequestCount;       // this+0x68
+    SubChunkPos                                    mCenterPos;          // this+0x6C
+
+    bool mArePositionsAbsolute; // this+0x78
+
+
     // prevent constructor by default
     SubChunkRequestPacket& operator=(SubChunkRequestPacket const&) = delete;
     SubChunkRequestPacket(SubChunkRequestPacket const&)            = delete;

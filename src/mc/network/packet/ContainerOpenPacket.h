@@ -1,6 +1,10 @@
 #pragma once
 
+#include "../NetworkBlockPosition.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/ActorUniqueID.h"
+#include "mc/world/containers/ContainerID.h"
+#include "mc/world/containers/ContainerType.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +13,11 @@
 class ContainerOpenPacket : public ::Packet {
 
 public:
+    ContainerID          mContainerId;    // this+0x30
+    ContainerType        mType;           // this+0x31
+    NetworkBlockPosition mPos;            // this+0x34
+    ActorUniqueID        mEntityUniqueID; // this+0x40
+
     // prevent constructor by default
     ContainerOpenPacket& operator=(ContainerOpenPacket const&) = delete;
     ContainerOpenPacket(ContainerOpenPacket const&)            = delete;

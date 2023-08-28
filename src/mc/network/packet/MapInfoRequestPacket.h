@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/ActorUniqueID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,9 @@
 class MapInfoRequestPacket : public ::Packet {
 
 public:
+    ActorUniqueID                                        mMapId;        // this+0x30
+    std::vector<std::pair<unsigned int, unsigned short>> mClientPixels; // this+0x38
+
     // prevent constructor by default
     MapInfoRequestPacket& operator=(MapInfoRequestPacket const&) = delete;
     MapInfoRequestPacket(MapInfoRequestPacket const&)            = delete;

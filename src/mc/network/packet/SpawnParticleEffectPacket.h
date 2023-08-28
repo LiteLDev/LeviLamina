@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/math/Vec3.h"
+#include "mc/world/ActorUniqueID.h"
+#include "mc/world/level/MolangVariableMap.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +12,12 @@
 class SpawnParticleEffectPacket : public ::Packet {
 
 public:
+    unsigned char                    mVanillaDimensionId; // this+0x30
+    ActorUniqueID                    mActorId;            // this+0x38
+    Vec3                             mPos;                // this+0x40
+    std::string                      mEffectName;         // this+0x50
+    std::optional<MolangVariableMap> mMolangVariables;    // this+0x70
+
     // prevent constructor by default
     SpawnParticleEffectPacket& operator=(SpawnParticleEffectPacket const&) = delete;
     SpawnParticleEffectPacket(SpawnParticleEffectPacket const&)            = delete;

@@ -11,12 +11,12 @@
 class BlockActorDataPacket : public ::Packet {
 
 public:
+    NetworkBlockPosition mPos;  // this+0x2c
+    CompoundTag          mData; // this+0x38
+
     // prevent constructor by default
     BlockActorDataPacket& operator=(BlockActorDataPacket const&) = delete;
     BlockActorDataPacket(BlockActorDataPacket const&)            = delete;
-
-    class NetworkBlockPosition mPos;
-    class CompoundTag          mData;
 
 public:
     // NOLINTBEGIN

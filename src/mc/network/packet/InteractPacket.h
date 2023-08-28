@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/math/Vec3.h"
+#include "mc/world/ActorRuntimeID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,9 +11,19 @@
 class InteractPacket : public ::Packet {
 public:
     // InteractPacket inner types define
-    enum class Action {};
+    enum class Action : unsigned char {
+        Invalid        = 0x0,
+        StopRiding     = 0x3,
+        InteractUpdate = 0x4,
+        NpcOpen        = 0x5,
+        OpenInventory  = 0x6,
+    };
 
 public:
+    InteractPacket::Action mAction;   // this+0x30
+    ActorRuntimeID         mTargetId; // this+0x38
+    Vec3                   mPos;      // this+0x40
+
     // prevent constructor by default
     InteractPacket& operator=(InteractPacket const&) = delete;
     InteractPacket(InteractPacket const&)            = delete;

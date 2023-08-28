@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/nbt/CompoundTag.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,8 @@
 class CameraInstructionPacket : public ::Packet {
 
 public:
+    CompoundTag mData; // this+0x30
+
     // prevent constructor by default
     CameraInstructionPacket& operator=(CameraInstructionPacket const&) = delete;
     CameraInstructionPacket(CameraInstructionPacket const&)            = delete;

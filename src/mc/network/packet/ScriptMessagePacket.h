@@ -9,6 +9,9 @@
 class ScriptMessagePacket : public ::Packet {
 
 public:
+    std::string mMessageId;    // this+0x30
+    std::string mMessageValue; // this+0x50
+
     // prevent constructor by default
     ScriptMessagePacket& operator=(ScriptMessagePacket const&) = delete;
     ScriptMessagePacket(ScriptMessagePacket const&)            = delete;

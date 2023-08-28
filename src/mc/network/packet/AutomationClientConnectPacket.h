@@ -1,5 +1,6 @@
 #pragma once
 
+#include "WebSocketPacketData.h"
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
@@ -9,6 +10,8 @@
 class AutomationClientConnectPacket : public ::Packet {
 
 public:
+    WebSocketPacketData mWebSocketData; // this+0x30
+
     // prevent constructor by default
     AutomationClientConnectPacket& operator=(AutomationClientConnectPacket const&) = delete;
     AutomationClientConnectPacket(AutomationClientConnectPacket const&)            = delete;

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/containers/ContainerID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,10 @@
 class ContainerSetDataPacket : public ::Packet {
 
 public:
+    int         mId;          // this+0x30
+    int         mValue;       // this+0x34
+    ContainerID mContainerId; // this+0x38
+
     // prevent constructor by default
     ContainerSetDataPacket& operator=(ContainerSetDataPacket const&) = delete;
     ContainerSetDataPacket(ContainerSetDataPacket const&)            = delete;

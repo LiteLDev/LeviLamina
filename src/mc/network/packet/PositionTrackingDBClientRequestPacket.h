@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/PositionTrackingId.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,14 @@
 class PositionTrackingDBClientRequestPacket : public ::Packet {
 
 public:
+    enum class Action : unsigned char {
+        Query = 0x0,
+    };
+
+public:
+    Action             mAction; // this+0x30
+    PositionTrackingId mId;     // this+0x34
+
     // prevent constructor by default
     PositionTrackingDBClientRequestPacket& operator=(PositionTrackingDBClientRequestPacket const&) = delete;
     PositionTrackingDBClientRequestPacket(PositionTrackingDBClientRequestPacket const&)            = delete;

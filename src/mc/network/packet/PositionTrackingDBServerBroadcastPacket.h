@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/nbt/CompoundTag.h"
+#include "mc/world/level/PositionTrackingId.h"
+
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +12,17 @@
 class PositionTrackingDBServerBroadcastPacket : public ::Packet {
 
 public:
+    enum Action : unsigned char {
+        Update   = 0x0,
+        Destroy  = 0x1,
+        NotFound = 0x2,
+    };
+
+public:
+    Action             mAction; // this+0x30
+    PositionTrackingId mId;     // this+0x34
+    CompoundTag        mData;   // this+0x38
+
     // prevent constructor by default
     PositionTrackingDBServerBroadcastPacket& operator=(PositionTrackingDBServerBroadcastPacket const&) = delete;
     PositionTrackingDBServerBroadcastPacket(PositionTrackingDBServerBroadcastPacket const&)            = delete;

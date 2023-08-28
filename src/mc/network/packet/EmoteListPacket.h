@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/mce/UUID.h"
+#include "mc/world/ActorRuntimeID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +11,9 @@
 class EmoteListPacket : public ::Packet {
 
 public:
+    ActorRuntimeID         mRuntimeId;     // this+0x30
+    std::vector<mce::UUID> mEmotePieceIds; // this+0x38
+
     // prevent constructor by default
     EmoteListPacket& operator=(EmoteListPacket const&) = delete;
     EmoteListPacket(EmoteListPacket const&)            = delete;

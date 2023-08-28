@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/inventory/network/ItemStackRequestBatch.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,8 @@
 class ItemStackRequestPacket : public ::Packet {
 
 public:
+    std::unique_ptr<ItemStackRequestBatch> mRequestBatch; // this+0x30
+
     // prevent constructor by default
     ItemStackRequestPacket& operator=(ItemStackRequestPacket const&) = delete;
     ItemStackRequestPacket(ItemStackRequestPacket const&)            = delete;

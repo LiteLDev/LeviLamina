@@ -9,6 +9,10 @@
 class GuiDataPickItemPacket : public ::Packet {
 
 public:
+    std::string mItemName;       // this+0x30
+    std::string mItemEffectName; // this+0x50
+    int         mSlot;           // this+0x70
+
     // prevent constructor by default
     GuiDataPickItemPacket& operator=(GuiDataPickItemPacket const&) = delete;
     GuiDataPickItemPacket(GuiDataPickItemPacket const&)            = delete;

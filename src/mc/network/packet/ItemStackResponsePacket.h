@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/inventory/network/ItemStackResponseInfo.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,8 @@
 class ItemStackResponsePacket : public ::Packet {
 
 public:
+	std::vector<ItemStackResponseInfo> mResponses; // this+0x30
+
     // prevent constructor by default
     ItemStackResponsePacket& operator=(ItemStackResponsePacket const&) = delete;
     ItemStackResponsePacket(ItemStackResponsePacket const&)            = delete;

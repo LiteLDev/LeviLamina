@@ -9,6 +9,8 @@
 class AddBehaviorTreePacket : public ::Packet {
 
 public:
+    std::string mJsonInput; // this+0x30
+
     // prevent constructor by default
     AddBehaviorTreePacket& operator=(AddBehaviorTreePacket const&) = delete;
     AddBehaviorTreePacket(AddBehaviorTreePacket const&)            = delete;

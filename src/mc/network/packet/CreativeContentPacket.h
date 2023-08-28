@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/item/NetworkItemInstanceDescriptor.h"
+#include "mc/world/item/registry/CreativeItemEntry.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +11,17 @@
 class CreativeContentPacket : public ::Packet {
 
 public:
+    // CreativeContentPacket inner types define
+    struct CreativeItemEntryDescription {
+        TypedServerNetId<CreativeItemNetIdTag, unsigned int, 0> mCreativeItemNetId; // this+0x0
+        NetworkItemInstanceDescriptor                           mItemDescriptor;    // this+0x8
+        unsigned int                                            mIndex;             // this+0x48
+    };
+
+public:
+    const std::vector<CreativeItemEntry>&     mWriteEntries;          // this+0x30
+    std::vector<CreativeItemEntryDescription> mReadEntryDescriptions; // this+0x38
+
     // prevent constructor by default
     CreativeContentPacket& operator=(CreativeContentPacket const&) = delete;
     CreativeContentPacket(CreativeContentPacket const&)            = delete;

@@ -20,9 +20,9 @@ public:
         RowLeft          = 0x81,
     };
 
-    ActorRuntimeID mRuntimeId;
-    Action         mAction;
-    float          mData;
+    ActorRuntimeID        mRuntimeId; // this+0x30
+    AnimatePacket::Action mAction;    // this+0x38
+    float                 mData;      // this+0x3C
 
 public:
     // NOLINTBEGIN

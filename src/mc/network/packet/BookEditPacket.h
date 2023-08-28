@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/BookEditAction.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,14 @@
 class BookEditPacket : public ::Packet {
 
 public:
+    BookEditAction mAction;     // this+0x30
+    int            mBookSlot;   // this+0x34
+    int            mPageIndex1; // this+0x38
+    int            mPageIndex2; // this+0x3C
+    std::string    mText1;      // this+0x40
+    std::string    mText2;      // this+0x60
+    std::string    mText3;      // this+0x80
+
     // prevent constructor by default
     BookEditPacket& operator=(BookEditPacket const&) = delete;
 

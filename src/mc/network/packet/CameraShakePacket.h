@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/CameraShakeAction.h"
+#include "mc/enums/CameraShakeType.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +11,11 @@
 class CameraShakePacket : public ::Packet {
 
 public:
+    float             mIntensity;   // this+0x30
+    float             mSeconds;     // this+0x34
+    CameraShakeType   mShakeType;   // this+0x38
+    CameraShakeAction mShakeAction; // this+0x39
+
     // prevent constructor by default
     CameraShakePacket& operator=(CameraShakePacket const&) = delete;
     CameraShakePacket(CameraShakePacket const&)            = delete;

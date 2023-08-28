@@ -17,15 +17,16 @@ namespace mce { class UUID; }
 class PlayerListEntry {
 
 public:
-    ActorUniqueID  mId;
-    mce::UUID      mUUID;
-    std::string    mName;
-    std::string    mXUID;
-    std::string    mPlatformOnlineId;
-    BuildPlatform  mBuildPlatform;
-    SerializedSkin mSkin;
-    bool           mIsTeacher;
-    bool           mIsHost;
+    ActorUniqueID  mId;               // this+0x0
+    mce::UUID      mUUID;             // this+0x8
+    std::string    mName;             // this+0x18
+    std::string    mXUID;             // this+0x38
+    std::string    mPlatformOnlineId; // this+0x58
+    BuildPlatform  mBuildPlatform;    // this+0x78
+    SerializedSkin mSkin;             // this+0x80
+    bool           mIsTeacher;        // this+0x2E8
+    bool           mIsHost;           // this+0x2E9
+
 
 public:
     // NOLINTBEGIN

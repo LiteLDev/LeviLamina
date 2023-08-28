@@ -103,10 +103,11 @@ public:
     };
 
 public:
-    bool                            mCacheEnabled;
-    AutomaticID<Dimension, int>     mDimensionType;
-    std::vector<SubChunkPacketData> mSubChunkData;
-    SubChunkPos                     mCenterPos;
+    bool                            mCacheEnabled;  // this+0x30
+    AutomaticID<Dimension, int>     mDimensionType; // this+0x34
+    std::vector<SubChunkPacketData> mSubChunkData;  // this+0x38
+    SubChunkPos                     mCenterPos;     // this+0x50
+
     // prevent constructor by default
     SubChunkPacket& operator=(SubChunkPacket const&) = delete;
     SubChunkPacket(SubChunkPacket const&)            = delete;

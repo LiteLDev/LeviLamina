@@ -9,6 +9,9 @@
 class SettingsCommandPacket : public ::Packet {
 
 public:
+    std::string mCommandString; // this+0x30
+    bool        mSupressOutput; // this+0x50
+
     // prevent constructor by default
     SettingsCommandPacket& operator=(SettingsCommandPacket const&) = delete;
     SettingsCommandPacket(SettingsCommandPacket const&)            = delete;

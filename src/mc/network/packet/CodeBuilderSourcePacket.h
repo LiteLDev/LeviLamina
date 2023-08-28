@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/codebuilder/Category.h"
+#include "mc/codebuilder/Operation.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +11,10 @@
 class CodeBuilderSourcePacket : public ::Packet {
 
 public:
+    CodeBuilderStorageQueryOptions::Operation mOperation; // this+0x30
+    CodeBuilderStorageQueryOptions::Category  mCategory;  // this+0x31
+    std::string                                mValue;     // this+0x38
+
     // prevent constructor by default
     CodeBuilderSourcePacket& operator=(CodeBuilderSourcePacket const&) = delete;
     CodeBuilderSourcePacket(CodeBuilderSourcePacket const&)            = delete;

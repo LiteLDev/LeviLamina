@@ -9,6 +9,9 @@
 class ClientCacheBlobStatusPacket : public ::Packet {
 
 public:
+    std::vector<unsigned long long> mMissingIds; // this+0x30
+    std::vector<unsigned long long> mFoundIds;   // this+0x48
+
     // prevent constructor by default
     ClientCacheBlobStatusPacket& operator=(ClientCacheBlobStatusPacket const&) = delete;
     ClientCacheBlobStatusPacket(ClientCacheBlobStatusPacket const&)            = delete;

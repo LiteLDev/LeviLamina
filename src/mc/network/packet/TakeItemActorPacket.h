@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/ActorRuntimeID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,9 @@
 class TakeItemActorPacket : public ::Packet {
 
 public:
+    ActorRuntimeID mItemId;  // this+0x30
+    ActorRuntimeID mActorId; // this+0x38
+
     // prevent constructor by default
     TakeItemActorPacket& operator=(TakeItemActorPacket const&) = delete;
     TakeItemActorPacket(TakeItemActorPacket const&)            = delete;

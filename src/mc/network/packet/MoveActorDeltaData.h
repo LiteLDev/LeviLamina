@@ -5,11 +5,6 @@
 class MoveActorDeltaData {
 
 public:
-    // prevent constructor by default
-    MoveActorDeltaData& operator=(MoveActorDeltaData const&) = delete;
-    MoveActorDeltaData(MoveActorDeltaData const&)            = delete;
-    MoveActorDeltaData()                                     = delete;
-
     union Header {
         unsigned short mRaw;                   // this+0x0
         bool           mContainsPositionX;     // this(bf)+0x0:0x0 len(0x1)
@@ -22,4 +17,9 @@ public:
         bool           mTeleported;            // this(bf)+0x0:0x7 len(0x1)
         bool           mForceMoveLocalEntity;  // this(bf)+0x1:0x0 len(0x1)
     };
+
+    // prevent constructor by default
+    MoveActorDeltaData& operator=(MoveActorDeltaData const&) = delete;
+    MoveActorDeltaData(MoveActorDeltaData const&)            = delete;
+    MoveActorDeltaData()                                     = delete;
 };

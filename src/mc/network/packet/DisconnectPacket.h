@@ -9,6 +9,9 @@
 class DisconnectPacket : public ::Packet {
 
 public:
+    bool        mSkipMessage; // this+0x30
+    std::string mMessage;     // this+0x38
+
     // prevent constructor by default
     DisconnectPacket& operator=(DisconnectPacket const&) = delete;
     DisconnectPacket(DisconnectPacket const&)            = delete;

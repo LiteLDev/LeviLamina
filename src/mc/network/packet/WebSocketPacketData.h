@@ -8,6 +8,8 @@
 struct WebSocketPacketData {
 
 public:
+    std::string mIP; // this+0x0
+
     // prevent constructor by default
     WebSocketPacketData& operator=(WebSocketPacketData const&) = delete;
     WebSocketPacketData(WebSocketPacketData const&)            = delete;

@@ -10,7 +10,8 @@
 class PlayStatusPacket : public ::Packet {
 
 public:
-    PlayStatus status;
+    PlayStatus mStatus; // this+0x30
+
     // prevent constructor by default
     PlayStatusPacket& operator=(PlayStatusPacket const&) = delete;
     PlayStatusPacket(PlayStatusPacket const&)            = delete;

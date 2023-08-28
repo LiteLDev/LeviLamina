@@ -1,6 +1,8 @@
 #pragma once
 
+#include "ScoreboardIdentityPacketInfo.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/ScoreboardIdentityPacketType.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +11,9 @@
 class SetScoreboardIdentityPacket : public ::Packet {
 
 public:
+    ScoreboardIdentityPacketType              mType;         // this+0x30
+    std::vector<ScoreboardIdentityPacketInfo> mIdentityInfo; // this+0x38
+
     // prevent constructor by default
     SetScoreboardIdentityPacket& operator=(SetScoreboardIdentityPacket const&) = delete;
     SetScoreboardIdentityPacket(SetScoreboardIdentityPacket const&)            = delete;

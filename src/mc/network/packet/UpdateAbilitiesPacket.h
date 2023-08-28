@@ -10,7 +10,8 @@
 class UpdateAbilitiesPacket : public ::Packet {
 
 public:
-    SerializedAbilitiesData mData;
+    SerializedAbilitiesData mData; // this+0x30
+
     // prevent constructor by default
     UpdateAbilitiesPacket& operator=(UpdateAbilitiesPacket const&) = delete;
     UpdateAbilitiesPacket(UpdateAbilitiesPacket const&)            = delete;

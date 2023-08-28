@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/math/Vec3.h"
+#include "mc/world/ActorRuntimeID.h"
+#include "mc/world/ActorUniqueID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +12,12 @@
 class AddPaintingPacket : public ::AddActorBasePacket {
 
 public:
+    ActorUniqueID  mEntityId;  // this+0x30
+    ActorRuntimeID mRuntimeId; // this+0x38
+    Vec3           mPos;       // this+0x40
+    int            mDir;       // this+0x4c
+    std::string    mMotive;    // this+0x50
+
     // prevent constructor by default
     AddPaintingPacket& operator=(AddPaintingPacket const&) = delete;
     AddPaintingPacket(AddPaintingPacket const&)            = delete;

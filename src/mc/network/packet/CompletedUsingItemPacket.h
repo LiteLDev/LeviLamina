@@ -9,6 +9,9 @@
 class CompletedUsingItemPacket : public ::Packet {
 
 public:
+    short mItemId;        // this+0x30
+    int   mItemUseMethod; // this+0x34
+
     // prevent constructor by default
     CompletedUsingItemPacket& operator=(CompletedUsingItemPacket const&) = delete;
     CompletedUsingItemPacket(CompletedUsingItemPacket const&)            = delete;

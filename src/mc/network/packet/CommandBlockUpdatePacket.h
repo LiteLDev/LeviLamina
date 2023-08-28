@@ -1,6 +1,9 @@
 #pragma once
 
+#include "../NetworkBlockPosition.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/commands/CommandBlockMode.h"
+#include "mc/world/ActorRuntimeID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +12,19 @@
 class CommandBlockUpdatePacket : public ::Packet {
 
 public:
+    NetworkBlockPosition mBlockPos;           // this+0x30
+    CommandBlockMode     mMode;               // this+0x3C
+    bool                 mRedstoneMode;       // this+0x3E
+    bool                 mIsConditional;      // this+0x3F
+    ActorRuntimeID       mEntityId;           // this+0x40
+    std::string          mCommand;            // this+0x48
+    std::string          mLastOutput;         // this+0x68
+    std::string          mName;               // this+0x88
+    int                  mTickDelay;          // this+0xA8
+    bool                 mTrackOutput;        // this+0xAC
+    bool                 mExecuteOnFirstTick; // this+0xAD
+    bool                 mIsBlock;            // this+0xAE
+
     // prevent constructor by default
     CommandBlockUpdatePacket& operator=(CommandBlockUpdatePacket const&) = delete;
 

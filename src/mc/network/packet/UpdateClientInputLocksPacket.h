@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/math/Vec3.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,9 @@
 class UpdateClientInputLocksPacket : public ::Packet {
 
 public:
+    int  mInputLockComponentData; // this+0x30
+    Vec3 mServerPos;              // this+0x34
+
     // prevent constructor by default
     UpdateClientInputLocksPacket& operator=(UpdateClientInputLocksPacket const&) = delete;
     UpdateClientInputLocksPacket(UpdateClientInputLocksPacket const&)            = delete;

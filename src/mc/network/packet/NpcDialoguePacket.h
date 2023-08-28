@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/ActorUniqueID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,9 +10,19 @@
 class NpcDialoguePacket : public ::Packet {
 public:
     // NpcDialoguePacket inner types define
-    enum class NpcDialogueActionType {};
+    enum class NpcDialogueActionType : int {
+        Open  = 0x0,
+        Close = 0x1,
+    };
 
 public:
+    ActorUniqueID         mNpcId;                 // this+0x30
+    NpcDialogueActionType mNpcDialogueActionType; // this+0x38
+    std::string           mDialogue;              // this+0x40
+    std::string           mSceneName;             // this+0x60
+    std::string           mNpcName;               // this+0x80
+    std::string           mActionJSON;            // this+0xA0
+
     // prevent constructor by default
     NpcDialoguePacket& operator=(NpcDialoguePacket const&) = delete;
     NpcDialoguePacket(NpcDialoguePacket const&)            = delete;

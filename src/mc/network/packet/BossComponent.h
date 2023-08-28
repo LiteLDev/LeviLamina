@@ -1,15 +1,28 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/mce/UUID.h"
+#include "mc/enums/BossBarColor.h"
+#include "mc/enums/BossBarOverlay.h"
 
 // auto generated forward declare list
-// clang-format off
-namespace mce { class UUID; }
-// clang-format on
 
 class BossComponent {
 
 public:
+    std::string                           mName;              // this+0x0
+    bool                                  mHealthBarVisible;  // this+0x20
+    float                                 mHealthPercent;     // this+0x24
+    bool                                  mShouldDarkenSky;   // this+0x28
+    bool                                  mCreateWorldFog;    // this+0x29
+    BossBarColor                          mColor;             // this+0x2c
+    BossBarOverlay                        mOverlay;           // this+0x30
+    int                                   mPlayersRegistered; // this+0x34
+    int                                   mLastHealth;        // this+0x38
+    int                                   mHudRangeSquared;   // this+0x3c
+    std::chrono::steady_clock::time_point mLastPlayerUpdate;  // this+0x40
+    std::unordered_map<mce::UUID, int>    mPlayerParty;       // this+0x48
+
     // prevent constructor by default
     BossComponent& operator=(BossComponent const&) = delete;
     BossComponent(BossComponent const&)            = delete;

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/ActorBlockSyncMessage.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,8 @@
 class UpdateBlockSyncedPacket : public ::UpdateBlockPacket {
 
 public:
+    ActorBlockSyncMessage mEntityBlockSyncMessage; // this+0x48
+
     // prevent constructor by default
     UpdateBlockSyncedPacket& operator=(UpdateBlockSyncedPacket const&) = delete;
     UpdateBlockSyncedPacket(UpdateBlockSyncedPacket const&)            = delete;

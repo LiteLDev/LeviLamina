@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/containers/managers/models/ItemEnchantOption.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,8 @@
 class PlayerEnchantOptionsPacket : public ::Packet {
 
 public:
+    std::vector<ItemEnchantOption> mOptions; // this+0x30
+
     // prevent constructor by default
     PlayerEnchantOptionsPacket& operator=(PlayerEnchantOptionsPacket const&) = delete;
     PlayerEnchantOptionsPacket(PlayerEnchantOptionsPacket const&)            = delete;

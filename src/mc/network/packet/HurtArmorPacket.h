@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/utilities/ActorDamageCause.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,10 @@
 class HurtArmorPacket : public ::Packet {
 
 public:
+    ActorDamageCause mCause;      // this+0x30
+    int              mDmg;        // this+0x34
+    std::bitset<4>   mArmorSlots; // this+0x38
+
     // prevent constructor by default
     HurtArmorPacket& operator=(HurtArmorPacket const&) = delete;
     HurtArmorPacket(HurtArmorPacket const&)            = delete;

@@ -9,6 +9,8 @@
 class ClientCacheStatusPacket : public ::Packet {
 
 public:
+    bool mEnabled; // this+0x30
+
     // prevent constructor by default
     ClientCacheStatusPacket& operator=(ClientCacheStatusPacket const&) = delete;
     ClientCacheStatusPacket(ClientCacheStatusPacket const&)            = delete;

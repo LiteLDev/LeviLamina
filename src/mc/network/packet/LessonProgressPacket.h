@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/LessonAction.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,10 @@
 class LessonProgressPacket : public ::Packet {
 
 public:
+    LessonAction mAction;     // this+0x30
+    int          mScore;      // this+0x34
+    std::string  mActivityId; // this+0x38
+
     // prevent constructor by default
     LessonProgressPacket& operator=(LessonProgressPacket const&) = delete;
     LessonProgressPacket(LessonProgressPacket const&)            = delete;

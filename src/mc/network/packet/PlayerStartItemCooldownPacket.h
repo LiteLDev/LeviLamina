@@ -9,6 +9,9 @@
 class PlayerStartItemCooldownPacket : public ::Packet {
 
 public:
+    std::string mItemCategory;  // this+0x30
+    int         mDurationTicks; // this+0x50
+
     // prevent constructor by default
     PlayerStartItemCooldownPacket& operator=(PlayerStartItemCooldownPacket const&) = delete;
     PlayerStartItemCooldownPacket(PlayerStartItemCooldownPacket const&)            = delete;

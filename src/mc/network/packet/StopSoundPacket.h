@@ -9,6 +9,9 @@
 class StopSoundPacket : public ::Packet {
 
 public:
+    std::string mName;    // this+0x30
+    bool        mStopAll; // this+0x50
+
     // prevent constructor by default
     StopSoundPacket& operator=(StopSoundPacket const&) = delete;
     StopSoundPacket(StopSoundPacket const&)            = delete;

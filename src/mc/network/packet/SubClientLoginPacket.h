@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "../SubClientConnectionRequest.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,8 @@
 class SubClientLoginPacket : public ::Packet {
 
 public:
+    std::unique_ptr<SubClientConnectionRequest> mConnectionRequest; // this+0x30
+
     // prevent constructor by default
     SubClientLoginPacket& operator=(SubClientLoginPacket const&) = delete;
     SubClientLoginPacket(SubClientLoginPacket const&)            = delete;

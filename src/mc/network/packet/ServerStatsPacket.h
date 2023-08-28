@@ -9,6 +9,9 @@
 class ServerStatsPacket : public ::Packet {
 
 public:
+    float mServerTime;  // this+0x30
+    float mNetworkTime; // this+0x34
+
     // prevent constructor by default
     ServerStatsPacket& operator=(ServerStatsPacket const&) = delete;
     ServerStatsPacket(ServerStatsPacket const&)            = delete;

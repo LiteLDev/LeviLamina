@@ -11,9 +11,10 @@
 class UpdateSoftEnumPacket : public ::Packet {
 
 public:
-    std::string              mEnumName;
-    std::vector<std::string> mValues;
-    SoftEnumUpdateType       mType;
+    std::string              mEnumName; // this+0x30
+    std::vector<std::string> mValues;   // this+0x50
+    SoftEnumUpdateType       mType;     // this+0x68
+
     // prevent constructor by default
     UpdateSoftEnumPacket& operator=(UpdateSoftEnumPacket const&) = delete;
     UpdateSoftEnumPacket(UpdateSoftEnumPacket const&)            = delete;

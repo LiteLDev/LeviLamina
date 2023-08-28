@@ -9,6 +9,9 @@
 class PlayerArmorDamagePacket : public ::Packet {
 
 public:
+    std::bitset<4>       mSlots;   // this+0x30
+    std::array<short, 4> mDamages; // this+0x34
+
     // prevent constructor by default
     PlayerArmorDamagePacket& operator=(PlayerArmorDamagePacket const&) = delete;
     PlayerArmorDamagePacket(PlayerArmorDamagePacket const&)            = delete;

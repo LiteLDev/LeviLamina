@@ -1,6 +1,8 @@
 #pragma once
 
+#include "ScorePacketInfo.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/ScorePacketType.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +11,9 @@
 class SetScorePacket : public ::Packet {
 
 public:
+    ScorePacketType              mType;      // this+0x30
+    std::vector<ScorePacketInfo> mScoreInfo; // this+0x38
+
     // prevent constructor by default
     SetScorePacket& operator=(SetScorePacket const&) = delete;
     SetScorePacket(SetScorePacket const&)            = delete;

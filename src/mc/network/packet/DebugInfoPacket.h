@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/ActorUniqueID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,9 @@
 class DebugInfoPacket : public ::Packet {
 
 public:
+    std::string   mData;    // this+0x30
+    ActorUniqueID mActorId; // this+0x50
+
     // prevent constructor by default
     DebugInfoPacket& operator=(DebugInfoPacket const&) = delete;
     DebugInfoPacket(DebugInfoPacket const&)            = delete;

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/Difficulty.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,8 @@
 class SetDifficultyPacket : public ::Packet {
 
 public:
+    Difficulty mDifficulty; // this+0x30
+
     // prevent constructor by default
     SetDifficultyPacket& operator=(SetDifficultyPacket const&) = delete;
     SetDifficultyPacket(SetDifficultyPacket const&)            = delete;

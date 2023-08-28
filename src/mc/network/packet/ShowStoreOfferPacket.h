@@ -9,6 +9,10 @@
 class ShowStoreOfferPacket : public ::Packet {
 
 public:
+    std::string mOfferId;     // this+0x30
+    std::string mContentType; // this+0x50
+    bool        mShowAll;     // this+0x70
+
     // prevent constructor by default
     ShowStoreOfferPacket& operator=(ShowStoreOfferPacket const&) = delete;
     ShowStoreOfferPacket(ShowStoreOfferPacket const&)            = delete;

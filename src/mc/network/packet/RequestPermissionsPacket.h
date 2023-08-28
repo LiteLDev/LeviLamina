@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/ActorUniqueID.h"
+#include "mc/world/actor/player/PlayerPermissionLevel.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +11,10 @@
 class RequestPermissionsPacket : public ::Packet {
 
 public:
+    ActorUniqueID         mTargetPlayerId;        // this+0x30
+    PlayerPermissionLevel mPlayerPermissions;     // this+0x38
+    unsigned short        mCustomPermissionFlags; // this+0x3A
+
     // prevent constructor by default
     RequestPermissionsPacket& operator=(RequestPermissionsPacket const&) = delete;
     RequestPermissionsPacket(RequestPermissionsPacket const&)            = delete;

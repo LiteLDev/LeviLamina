@@ -1,6 +1,17 @@
 #pragma once
 
+#include "ActorLink.h"
+#include "SyncedAttribute.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/math/Vec2.h"
+#include "mc/math/Vec3.h"
+#include "mc/world/ActorRuntimeID.h"
+#include "mc/world/ActorUniqueID.h"
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
+#include "mc/world/actor/SynchedActorDataEntityWrapper.h"
+#include "mc/world/actor/state/PropertySyncData.h"
+#include "mc/world/attribute/AttributeInstanceHandle.h"
+
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +20,22 @@
 class AddActorPacket : public ::AddActorBasePacket {
 
 public:
+    std::vector<ActorLink> mLinks;         // this+0x30
+    Vec3                   mPos;           // this+0x48
+    Vec3                   mVelocity;      // this+0x54
+    Vec2                   mRot;           // this+0x60
+    float                  mYHeadRotation; // this+0x68
+    float                  mYBodyRotation; // this+0x6C
+
+    ActorUniqueID                          mEntityId;          // this+0x70
+    ActorRuntimeID                         mRuntimeId;         // this+0x78
+    SynchedActorDataEntityWrapper*         mEntityData;        // this+0x80
+    std::vector<std::unique_ptr<DataItem>> mData;              // this+0x88
+    ActorDefinitionIdentifier              mType;              // this+0xA0
+    PropertySyncData                       mSynchedProperties; // this+0x150
+    std::vector<AttributeInstanceHandle>   mAttributeHandles;  // this+0x180
+    std::vector<SyncedAttribute>           mAttributes;        // this+0x198
+
     // prevent constructor by default
     AddActorPacket& operator=(AddActorPacket const&) = delete;
     AddActorPacket(AddActorPacket const&)            = delete;

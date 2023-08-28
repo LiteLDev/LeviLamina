@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/commands/CommandOriginData.h"
+#include "mc/server/commands/CommandOutput.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +11,9 @@
 class CommandOutputPacket : public ::Packet {
 
 public:
+    CommandOriginData mOriginData; // this+0x30
+    CommandOutput     mOutput;     // this+0x70
+
     // prevent constructor by default
     CommandOutputPacket& operator=(CommandOutputPacket const&) = delete;
     CommandOutputPacket(CommandOutputPacket const&)            = delete;

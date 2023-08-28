@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/commands/CommandOriginData.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
@@ -10,6 +11,10 @@
 class CommandRequestPacket : public ::Packet {
 
 public:
+    std::string       mCommand;        // this+0x30
+    CommandOriginData mOrigin;         // this+0x50
+    bool              mInternalSource; // this+0x90
+
     // prevent constructor by default
     CommandRequestPacket& operator=(CommandRequestPacket const&) = delete;
     CommandRequestPacket(CommandRequestPacket const&)            = delete;

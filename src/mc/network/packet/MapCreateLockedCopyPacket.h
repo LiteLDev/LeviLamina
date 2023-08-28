@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/ActorUniqueID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,9 @@
 class MapCreateLockedCopyPacket : public ::Packet {
 
 public:
+    ActorUniqueID mOriginalMapId; // this+0x30
+    ActorUniqueID mNewMapId;      // this+0x38
+
     // prevent constructor by default
     MapCreateLockedCopyPacket& operator=(MapCreateLockedCopyPacket const&) = delete;
     MapCreateLockedCopyPacket(MapCreateLockedCopyPacket const&)            = delete;

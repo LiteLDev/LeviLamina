@@ -10,11 +10,11 @@
 class BiomeDefinitionListPacket : public ::Packet {
 
 public:
+    CompoundTag mBiomeData; // this+0x30
+
     // prevent constructor by default
     BiomeDefinitionListPacket& operator=(BiomeDefinitionListPacket const&) = delete;
     BiomeDefinitionListPacket(BiomeDefinitionListPacket const&)            = delete;
-
-    class CompoundTag mBiomeData;
 
 public:
     // NOLINTBEGIN

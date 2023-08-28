@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/ActorRuntimeID.h"
+#include "mc/world/actor/DataItem.h"
+#include "mc/world/actor/state/PropertySyncData.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +12,12 @@
 class SetActorDataPacket : public ::Packet {
 
 public:
+    ActorRuntimeID     mId;   // this+0x30
+    unsigned long long mTick; // this+0x38
+
+    std::vector<std::unique_ptr<DataItem>> mPackedItems;       // this+0x40
+    PropertySyncData                       mSynchedProperties; // this+0x58
+
     // prevent constructor by default
     SetActorDataPacket& operator=(SetActorDataPacket const&) = delete;
     SetActorDataPacket(SetActorDataPacket const&)            = delete;

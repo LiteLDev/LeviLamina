@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/ActorUniqueID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,8 @@
 class RemoveActorPacket : public ::Packet {
 
 public:
+    ActorUniqueID mEntityId; // this+0x30
+
     // prevent constructor by default
     RemoveActorPacket& operator=(RemoveActorPacket const&) = delete;
     RemoveActorPacket(RemoveActorPacket const&)            = delete;

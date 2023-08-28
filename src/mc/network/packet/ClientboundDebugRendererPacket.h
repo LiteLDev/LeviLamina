@@ -1,22 +1,34 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/mce/Color.h"
+#include "mc/math/Vec3.h"
+
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/network/packet/Packet.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace mce { class Color; }
-// clang-format on
-
 class ClientboundDebugRendererPacket : public ::Packet {
 public:
     // ClientboundDebugRendererPacket inner types define
-    enum class Type {};
+    enum class Type : unsigned int {
+        Invalid            = 0x0,
+        ClearDebugMarkers  = 0x1,
+        AddDebugMarkerCube = 0x2,
+    };
+
+    struct DebugMarkerData {
+        std::string               text;     // this+0x0
+        Vec3                      position; // this+0x20
+        mce::Color                color;    // this+0x2C
+        std::chrono::milliseconds duration; // this+0x40
+    };
 
 public:
+    ClientboundDebugRendererPacket::Type                           mType;            // this+0x30
+    std::optional<ClientboundDebugRendererPacket::DebugMarkerData> mDebugMarkerData; // this+0x38
+
     // prevent constructor by default
     ClientboundDebugRendererPacket& operator=(ClientboundDebugRendererPacket const&) = delete;
     ClientboundDebugRendererPacket(ClientboundDebugRendererPacket const&)            = delete;

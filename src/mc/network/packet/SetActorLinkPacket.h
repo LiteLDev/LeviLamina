@@ -1,5 +1,6 @@
 #pragma once
 
+#include "ActorLink.h"
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
@@ -9,6 +10,8 @@
 class SetActorLinkPacket : public ::Packet {
 
 public:
+    ActorLink mLink; // this+0x30
+
     // prevent constructor by default
     SetActorLinkPacket& operator=(SetActorLinkPacket const&) = delete;
     SetActorLinkPacket(SetActorLinkPacket const&)            = delete;

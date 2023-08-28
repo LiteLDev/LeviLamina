@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/ActorRuntimeID.h"
+#include "mc/world/item/NetworkItemStackDescriptor.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +11,13 @@
 class MobArmorEquipmentPacket : public ::Packet {
 
 public:
+    NetworkItemStackDescriptor mHead;  // this+0x30
+    NetworkItemStackDescriptor mTorso; // this+0x90
+    NetworkItemStackDescriptor mLegs;  // this+0xF0
+    NetworkItemStackDescriptor mFeet;  // this+0x150
+
+    ActorRuntimeID mRuntimeId; // this+0x1B0
+
     // prevent constructor by default
     MobArmorEquipmentPacket& operator=(MobArmorEquipmentPacket const&) = delete;
     MobArmorEquipmentPacket(MobArmorEquipmentPacket const&)            = delete;

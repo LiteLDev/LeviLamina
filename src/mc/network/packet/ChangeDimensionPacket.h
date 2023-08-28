@@ -2,6 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/math/Vec3.h"
+#include "mc/world/level/dimension/Dimension.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -11,13 +12,13 @@
 class ChangeDimensionPacket : public ::Packet {
 
 public:
+    AutomaticID<Dimension, int> mDimensionId; // this+0x30
+    Vec3                        mPos;         // this+0x34
+    bool                        mRespawn;     // this+0x40
+
     // prevent constructor by default
     ChangeDimensionPacket& operator=(ChangeDimensionPacket const&) = delete;
     ChangeDimensionPacket(ChangeDimensionPacket const&)            = delete;
-
-    class AutomaticID<class Dimension, int> dimensionId;
-    class Vec3                              position;
-    bool                                    respawn;
 
 public:
     // NOLINTBEGIN

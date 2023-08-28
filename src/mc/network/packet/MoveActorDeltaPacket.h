@@ -1,5 +1,6 @@
 #pragma once
 
+#include "MoveActorDeltaData.h"
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
@@ -9,6 +10,8 @@
 class MoveActorDeltaPacket : public ::Packet {
 
 public:
+    MoveActorDeltaData mMoveData; // this+0x30
+
     // prevent constructor by default
     MoveActorDeltaPacket& operator=(MoveActorDeltaPacket const&) = delete;
     MoveActorDeltaPacket(MoveActorDeltaPacket const&)            = delete;

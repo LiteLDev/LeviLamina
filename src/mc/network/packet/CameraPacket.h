@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/ActorUniqueID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,9 @@
 class CameraPacket : public ::Packet {
 
 public:
+    ActorUniqueID mCameraId;       // this+0x30
+    ActorUniqueID mTargetPlayerId; // this+0x38
+
     // prevent constructor by default
     CameraPacket& operator=(CameraPacket const&) = delete;
     CameraPacket(CameraPacket const&)            = delete;

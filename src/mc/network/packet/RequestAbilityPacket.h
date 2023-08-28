@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/AbilitiesIndex.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,9 +10,17 @@
 class RequestAbilityPacket : public ::Packet {
 public:
     // RequestAbilityPacket inner types define
-    enum class Type {};
+    enum class Type : unsigned char {
+        Unset = 0x0,
+        Bool  = 0x1,
+        Float = 0x2,
+    };
 
 public:
+    AbilitiesIndex            mAbility;   // this+0x30
+    Type                      mValueType; // this+0x32
+    std::variant<bool, float> mValue;     // this+0x34
+
     // prevent constructor by default
     RequestAbilityPacket& operator=(RequestAbilityPacket const&) = delete;
     RequestAbilityPacket(RequestAbilityPacket const&)            = delete;

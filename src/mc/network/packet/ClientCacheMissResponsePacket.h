@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/blob_cache/Blob.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,9 @@
 class ClientCacheMissResponsePacket : public ::Packet {
 
 public:
+    std::vector<std::shared_ptr<ClientBlobCache::Server::Blob>> mWriteMissingContent;    // this+0x30
+    std::unordered_map<unsigned long long, std::string>         mReceivedMissingContent; // this+0x48
+
     // prevent constructor by default
     ClientCacheMissResponsePacket& operator=(ClientCacheMissResponsePacket const&) = delete;
     ClientCacheMissResponsePacket(ClientCacheMissResponsePacket const&)            = delete;

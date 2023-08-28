@@ -16,8 +16,9 @@ public:
     };
 
 public:
-    ActorRuntimeID                  mPlayerID;
-    ShowCreditsPacket::CreditsState mCreditsState;
+    ActorRuntimeID mPlayerID;     // this+0x30
+    CreditsState   mCreditsState; // this+0x38
+
     // prevent constructor by default
     ShowCreditsPacket& operator=(ShowCreditsPacket const&) = delete;
     ShowCreditsPacket(ShowCreditsPacket const&)            = delete;

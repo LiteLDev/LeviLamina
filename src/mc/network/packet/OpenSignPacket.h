@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../NetworkBlockPosition.h"
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
@@ -9,6 +10,9 @@
 class OpenSignPacket : public ::Packet {
 
 public:
+    NetworkBlockPosition mPos;         // this+0x30
+    bool                 mIsFrontSide; // this+0x3C
+
     // prevent constructor by default
     OpenSignPacket& operator=(OpenSignPacket const&) = delete;
     OpenSignPacket(OpenSignPacket const&)            = delete;

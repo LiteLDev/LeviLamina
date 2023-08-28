@@ -16,10 +16,8 @@ public:
     struct FeatureBinaryJsonFormat {
 
     public:
-        // prevent constructor by default
-        FeatureBinaryJsonFormat& operator=(FeatureBinaryJsonFormat const&) = delete;
-        FeatureBinaryJsonFormat(FeatureBinaryJsonFormat const&)            = delete;
-        FeatureBinaryJsonFormat()                                          = delete;
+        std::string featureName;      // this+0x0
+        std::string binaryJsonOutput; // this+0x20
 
     public:
         // NOLINTBEGIN

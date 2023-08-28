@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
-#include "mc/network/packet/Packet.h"
 #include "mc/network/packet/GameRulesChangedPacketData.h"
+#include "mc/network/packet/Packet.h"
 
 class GameRulesChangedPacket : public ::Packet {
 

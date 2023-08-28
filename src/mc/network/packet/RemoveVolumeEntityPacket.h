@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/AutomaticID.h"
+#include "mc/world/level/dimension/Dimension.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +11,8 @@
 class RemoveVolumeEntityPacket : public ::RemoveEntityPacket {
 
 public:
+    AutomaticID<Dimension, int> mDimensionType; // this+0x38
+
     // prevent constructor by default
     RemoveVolumeEntityPacket& operator=(RemoveVolumeEntityPacket const&) = delete;
     RemoveVolumeEntityPacket(RemoveVolumeEntityPacket const&)            = delete;

@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/string/HashedString.h"
+#include "mc/world/ActorRuntimeID.h"
+#include "mc/world/actor/monster/AttributeModifier.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -8,15 +11,17 @@
 
 class UpdateAttributesPacket : public ::Packet {
 public:
-    // UpdateAttributesPacket inner types declare
-    // clang-format off
-    struct AttributeData;
-    // clang-format on
-
     // UpdateAttributesPacket inner types define
     struct AttributeData {
 
     public:
+        float                          mCurrentValue; // this+0x0
+        float                          mMinValue;     // this+0x4
+        float                          mMaxValue;     // this+0x8
+        float                          mDefaultValue; // this+0xC
+        HashedString                   mName;         // this+0x10
+        std::vector<AttributeModifier> mModifiers;    // this+0x40
+
         // prevent constructor by default
         AttributeData& operator=(AttributeData const&) = delete;
         AttributeData(AttributeData const&)            = delete;
@@ -27,7 +32,7 @@ public:
         /**
          * @symbol ??0AttributeData\@UpdateAttributesPacket\@\@QEAA\@$$QEAU01\@\@Z
          */
-        MCAPI AttributeData(struct UpdateAttributesPacket::AttributeData&&);
+        MCAPI AttributeData(struct AttributeData&&);
         /**
          * @symbol
          * ?read\@AttributeData\@UpdateAttributesPacket\@\@QEAA?AV?$Result\@XVerror_code\@std\@\@\@Bedrock\@\@AEAVReadOnlyBinaryStream\@\@\@Z
@@ -41,6 +46,10 @@ public:
     };
 
 public:
+    ActorRuntimeID             mRuntimeId;     // this+0x30
+    std::vector<AttributeData> mAttributeData; // this+0x38
+    unsigned long long         mTick;          // this+0x50
+
     // prevent constructor by default
     UpdateAttributesPacket& operator=(UpdateAttributesPacket const&) = delete;
     UpdateAttributesPacket(UpdateAttributesPacket const&)            = delete;

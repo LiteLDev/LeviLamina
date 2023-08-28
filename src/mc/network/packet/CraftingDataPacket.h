@@ -1,5 +1,9 @@
 #pragma once
 
+#include "ContainerMixDataEntry.h"
+#include "CraftingDataEntry.h"
+#include "PotionMixDataEntry.h"
+#include "MaterialReducerDataEntry.h"
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
@@ -9,6 +13,12 @@
 class CraftingDataPacket : public ::Packet {
 
 public:
+    std::vector<CraftingDataEntry>        mCraftingEntries;        // this+0x30
+    std::vector<PotionMixDataEntry>       mPotionMixEntries;       // this+0x48
+    std::vector<ContainerMixDataEntry>    mContainerMixEntries;    // this+0x60
+    std::vector<MaterialReducerDataEntry> mMaterialReducerEntries; // this+0x78
+    bool                                  mClearRecipes;           // this+0x90
+
     // prevent constructor by default
     CraftingDataPacket& operator=(CraftingDataPacket const&) = delete;
     CraftingDataPacket(CraftingDataPacket const&)            = delete;

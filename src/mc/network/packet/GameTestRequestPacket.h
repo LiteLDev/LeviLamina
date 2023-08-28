@@ -1,19 +1,18 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/gametest/framework/TestParameters.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/network/packet/Packet.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace gametest { struct TestParameters; }
-// clang-format on
-
 class GameTestRequestPacket : public ::Packet {
 
 public:
+    std::string              mTestName; // this+0x30
+    gametest::TestParameters mParams;   // this+0x50
+
     // prevent constructor by default
     GameTestRequestPacket& operator=(GameTestRequestPacket const&) = delete;
     GameTestRequestPacket(GameTestRequestPacket const&)            = delete;

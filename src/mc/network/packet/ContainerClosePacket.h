@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/containers/ContainerID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,9 @@
 class ContainerClosePacket : public ::Packet {
 
 public:
+    ContainerID mContainerId;          // this+0x30
+    bool        mServerInitiatedClose; // this+0x31
+
     // prevent constructor by default
     ContainerClosePacket& operator=(ContainerClosePacket const&) = delete;
     ContainerClosePacket(ContainerClosePacket const&)            = delete;

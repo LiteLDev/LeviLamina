@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/EntityNetId.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,8 @@
 class EntityServerPacket : public ::Packet {
 
 public:
+    EntityNetId mEntityNetId; // this+0x30
+
     // prevent constructor by default
     EntityServerPacket& operator=(EntityServerPacket const&) = delete;
     EntityServerPacket(EntityServerPacket const&)            = delete;

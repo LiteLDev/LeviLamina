@@ -9,6 +9,8 @@
 class TickingAreasLoadStatusPacket : public ::Packet {
 
 public:
+    bool mWaitingForPreload; // this+0x30
+
     // prevent constructor by default
     TickingAreasLoadStatusPacket& operator=(TickingAreasLoadStatusPacket const&) = delete;
     TickingAreasLoadStatusPacket(TickingAreasLoadStatusPacket const&)            = delete;

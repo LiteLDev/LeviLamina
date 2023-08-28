@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/math/Vec3.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,10 @@
 class LevelEventPacket : public ::Packet {
 
 public:
+    int  mEventId; // this+0x30
+    Vec3 mPos;     // this+0x34
+    int  mData;    // this+0x40
+
     // prevent constructor by default
     LevelEventPacket& operator=(LevelEventPacket const&) = delete;
     LevelEventPacket(LevelEventPacket const&)            = delete;

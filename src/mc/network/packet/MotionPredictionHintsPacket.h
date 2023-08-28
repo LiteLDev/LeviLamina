@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/math/Vec3.h"
+#include "mc/world/ActorRuntimeID.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +11,10 @@
 class MotionPredictionHintsPacket : public ::Packet {
 
 public:
+    ActorRuntimeID mRuntimeId; // this+0x30
+    Vec3           mMotion;    // this+0x38
+    bool           mOnGround;  // this+0x44
+
     // prevent constructor by default
     MotionPredictionHintsPacket& operator=(MotionPredictionHintsPacket const&) = delete;
     MotionPredictionHintsPacket(MotionPredictionHintsPacket const&)            = delete;

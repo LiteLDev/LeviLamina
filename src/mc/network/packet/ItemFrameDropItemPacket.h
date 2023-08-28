@@ -1,6 +1,8 @@
 #pragma once
 
+#include "../NetworkBlockPosition.h"
 #include "mc/_HeaderOutputPredefine.h"
+
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +11,8 @@
 class ItemFrameDropItemPacket : public ::Packet {
 
 public:
+    NetworkBlockPosition mPos; // this+0x30
+
     // prevent constructor by default
     ItemFrameDropItemPacket& operator=(ItemFrameDropItemPacket const&) = delete;
     ItemFrameDropItemPacket(ItemFrameDropItemPacket const&)            = delete;

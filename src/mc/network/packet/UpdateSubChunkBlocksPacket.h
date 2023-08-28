@@ -1,6 +1,8 @@
 #pragma once
 
+#include "../NetworkBlockPosition.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/ActorBlockSyncMessage.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -8,16 +10,36 @@
 
 class UpdateSubChunkBlocksPacket : public ::Packet {
 public:
-    // UpdateSubChunkBlocksPacket inner types declare
-    // clang-format off
-    struct BlocksChangedInfo;
-    struct NetworkBlockInfo;
-    // clang-format on
-
     // UpdateSubChunkBlocksPacket inner types define
+
+    struct NetworkBlockInfo {
+
+    public:
+        NetworkBlockPosition  mPos;         // this+0x0
+        unsigned int          mRuntimeId;   // this+0xC
+        unsigned char         mUpdateFlags; // this+0x10
+        ActorBlockSyncMessage mSyncMessage; // this+0x18
+
+        // prevent constructor by default
+        NetworkBlockInfo& operator=(NetworkBlockInfo const&) = delete;
+        NetworkBlockInfo(NetworkBlockInfo const&)            = delete;
+        NetworkBlockInfo()                                   = delete;
+
+    public:
+        // NOLINTBEGIN
+        /**
+         * @symbol ??1NetworkBlockInfo\@UpdateSubChunkBlocksPacket\@\@QEAA\@XZ
+         */
+        MCAPI ~NetworkBlockInfo();
+        // NOLINTEND
+    };
+
     struct BlocksChangedInfo {
 
     public:
+        std::vector<NetworkBlockInfo> mStandards; // this+0x0
+        std::vector<NetworkBlockInfo> mExtras;    // this+0x18
+
         // prevent constructor by default
         BlocksChangedInfo& operator=(BlocksChangedInfo const&) = delete;
         BlocksChangedInfo(BlocksChangedInfo const&)            = delete;
@@ -41,24 +63,10 @@ public:
         // NOLINTEND
     };
 
-    struct NetworkBlockInfo {
-
-    public:
-        // prevent constructor by default
-        NetworkBlockInfo& operator=(NetworkBlockInfo const&) = delete;
-        NetworkBlockInfo(NetworkBlockInfo const&)            = delete;
-        NetworkBlockInfo()                                   = delete;
-
-    public:
-        // NOLINTBEGIN
-        /**
-         * @symbol ??1NetworkBlockInfo\@UpdateSubChunkBlocksPacket\@\@QEAA\@XZ
-         */
-        MCAPI ~NetworkBlockInfo();
-        // NOLINTEND
-    };
-
 public:
+    BlocksChangedInfo    mBlocksChanged;         // this+0x30
+    NetworkBlockPosition mSubChunkBlockPosition; // this+0x60
+
     // prevent constructor by default
     UpdateSubChunkBlocksPacket& operator=(UpdateSubChunkBlocksPacket const&) = delete;
     UpdateSubChunkBlocksPacket(UpdateSubChunkBlocksPacket const&)            = delete;

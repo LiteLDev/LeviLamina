@@ -1,8 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/ModalFormCancelReason.h"
 #include "mc/deps/json/Value.h"
+#include "mc/enums/ModalFormCancelReason.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -11,13 +11,13 @@
 class ModalFormResponsePacket : public ::Packet {
 
 public:
+    unsigned int                         mFormId;           // this+0x30
+    std::optional<Json::Value>           mJSONResponse;     // this+0x38
+    std::optional<ModalFormCancelReason> mFormCancelReason; // this+0x50
+
     // prevent constructor by default
     ModalFormResponsePacket& operator=(ModalFormResponsePacket const&) = delete;
     ModalFormResponsePacket(ModalFormResponsePacket const&)            = delete;
-
-    unsigned int                         mFormId;
-    std::optional<Json::Value>           mJSONResponse;
-    std::optional<ModalFormCancelReason> mFormCancelReason;
 
 public:
     // NOLINTBEGIN

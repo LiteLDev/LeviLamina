@@ -1,6 +1,15 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/entity/components/PackedItemUseLegacyInventoryTransaction.h"
+#include "mc/entity/components/PlayerBlockActions.h"
+#include "mc/enums/ClientPlayMode.h"
+#include "mc/enums/InputMode.h"
+#include "mc/enums/NewInteractionModel.h"
+#include "mc/math/Vec2.h"
+#include "mc/math/Vec3.h"
+#include "mc/world/inventory/network/ItemStackRequestAction.h"
+#include "mc/world/inventory/network/ItemStackRequestData.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -12,6 +21,22 @@ public:
     enum class InputData {};
 
 public:
+    Vec2                                                     mRot;                 // this+0x30
+    Vec3                                                     mPos;                 // this+0x38
+    float                                                    mYHeadRot;            // this+0x44
+    Vec3                                                     mPosDelta;            // this+0x48
+    Vec2                                                     mMove;                // this+0x54
+    Vec3                                                     mGazeDir;             // this+0x5C
+    std::bitset<37>                                          mInputData;           // this+0x68
+    InputMode                                                mInputMode;           // this+0x70
+    ClientPlayMode                                           mPlayMode;            // this+0x74
+    NewInteractionModel                                      mNewInteractionModel; // this+0x78
+    unsigned __int64                                         mClientTick;          // this+0x80
+    std::unique_ptr<PackedItemUseLegacyInventoryTransaction> mItemUseTransaction;  // this+0x88
+    std::unique_ptr<ItemStackRequestData>                    mItemStackRequest;    // this+0x90
+    PlayerBlockActions                                       mPlayerBlockActions;  // this+0x98
+
+
     // prevent constructor by default
     PlayerAuthInputPacket& operator=(PlayerAuthInputPacket const&) = delete;
     PlayerAuthInputPacket(PlayerAuthInputPacket const&)            = delete;

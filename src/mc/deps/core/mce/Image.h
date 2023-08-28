@@ -1,9 +1,9 @@
 #pragma once
 
-#include "mc/_HeaderOutputPredefine.h"
 #include "Blob.h"
 #include "ImageFormat.h"
 #include "ImageUsage.h"
+#include "mc/_HeaderOutputPredefine.h"
 
 namespace mce {
 
@@ -15,11 +15,11 @@ public:
     ImageUsage  mUsage{};            // 0xC
     Blob        mImageBytes;         // 0x10
 
-    explicit constexpr Image(Blob&& data) : mImageBytes(std::move(data)) {}
+    explicit Image(Blob&& data) : mImageBytes(std::move(data)) {}
 
-    constexpr Image() = default;
+    Image() = default;
 
-    constexpr void copyRawImage(Blob const& blob) { mImageBytes = blob.clone(); }
+    void copyRawImage(Blob const& blob) { mImageBytes = blob.clone(); }
 
     constexpr void setImageDescription(unsigned width, unsigned height, ImageFormat format, ImageUsage usage) {
         this->mWidth      = width;

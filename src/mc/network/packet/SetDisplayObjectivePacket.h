@@ -10,11 +10,12 @@
 class SetDisplayObjectivePacket : public ::Packet {
 
 public:
-    std::string        mDisplaySlotName;
-    std::string        mObjectiveName;
-    std::string        mObjectiveDisplayName;
-    std::string        mCriteriaName;
-    ObjectiveSortOrder mSortOrder;
+    std::string        mDisplaySlotName;      // this+0x30
+    std::string        mObjectiveName;        // this+0x50
+    std::string        mObjectiveDisplayName; // this+0x70
+    std::string        mCriteriaName;         // this+0x90
+    ObjectiveSortOrder mSortOrder;            // this+0xB0
+
     // prevent constructor by default
     SetDisplayObjectivePacket& operator=(SetDisplayObjectivePacket const&) = delete;
     SetDisplayObjectivePacket(SetDisplayObjectivePacket const&)            = delete;

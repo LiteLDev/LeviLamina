@@ -9,6 +9,9 @@
 class ResourcePackChunkRequestPacket : public ::Packet {
 
 public:
+    std::string mResourceName; // this+0x30
+    int         mChunk;        // this+0x50
+
     // prevent constructor by default
     ResourcePackChunkRequestPacket& operator=(ResourcePackChunkRequestPacket const&) = delete;
     ResourcePackChunkRequestPacket(ResourcePackChunkRequestPacket const&)            = delete;

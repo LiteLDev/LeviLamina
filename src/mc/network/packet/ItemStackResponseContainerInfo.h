@@ -1,10 +1,15 @@
 #pragma once
 
+#include "ItemStackResponseSlotInfo.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/containers/ContainerEnumName.h"
 
 struct ItemStackResponseContainerInfo {
 
 public:
+    ContainerEnumName                      mOpenContainerNetId; // this+0x0
+    std::vector<ItemStackResponseSlotInfo> mSlots;              // this+0x8
+
     // prevent constructor by default
     ItemStackResponseContainerInfo& operator=(ItemStackResponseContainerInfo const&) = delete;
     ItemStackResponseContainerInfo(ItemStackResponseContainerInfo const&)            = delete;

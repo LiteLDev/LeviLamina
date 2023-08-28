@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/EducationLevelSettings.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,8 @@
 class EducationSettingsPacket : public ::Packet {
 
 public:
+    EducationLevelSettings mEducationLevelSettings;
+
     // prevent constructor by default
     EducationSettingsPacket& operator=(EducationSettingsPacket const&) = delete;
     EducationSettingsPacket(EducationSettingsPacket const&)            = delete;

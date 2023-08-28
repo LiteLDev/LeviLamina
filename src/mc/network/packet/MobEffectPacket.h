@@ -18,17 +18,16 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    MobEffectPacket& operator=(MobEffectPacket const&) = delete;
-    MobEffectPacket(MobEffectPacket const&)            = delete;
-
-
     ActorRuntimeID   mRuntimeId;           // this+0x30
     int              mEffectDurationTicks; // this+0x38
     enum class Event mEventId;             // this+0x3C
     int              mEffectId;            // this+0x40
     int              mEffectAmplifier;     // this+0x44
     bool             mShowParticles;       // this+0x48
+
+    // prevent constructor by default
+    MobEffectPacket& operator=(MobEffectPacket const&) = delete;
+    MobEffectPacket(MobEffectPacket const&)            = delete;
 
 public:
     // NOLINTBEGIN

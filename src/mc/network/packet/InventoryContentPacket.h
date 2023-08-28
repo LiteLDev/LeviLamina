@@ -1,6 +1,8 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/containers/ContainerID.h"
+#include "mc/world/item/NetworkItemStackDescriptor.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +11,9 @@
 class InventoryContentPacket : public ::Packet {
 
 public:
+    ContainerID                             mInventoryId; // this+0x30
+    std::vector<NetworkItemStackDescriptor> mSlots;       // this+0x38
+
     // prevent constructor by default
     InventoryContentPacket& operator=(InventoryContentPacket const&) = delete;
     InventoryContentPacket(InventoryContentPacket const&)            = delete;

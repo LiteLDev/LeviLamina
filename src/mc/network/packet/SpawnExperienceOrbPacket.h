@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/math/Vec3.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -9,6 +10,9 @@
 class SpawnExperienceOrbPacket : public ::Packet {
 
 public:
+    Vec3 mPos;   // this+0x30
+    int  mCount; // this+0x3C
+
     // prevent constructor by default
     SpawnExperienceOrbPacket& operator=(SpawnExperienceOrbPacket const&) = delete;
     SpawnExperienceOrbPacket(SpawnExperienceOrbPacket const&)            = delete;

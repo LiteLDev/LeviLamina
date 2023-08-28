@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../NetworkSettingOptions.h"
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
@@ -9,6 +10,8 @@
 class NetworkSettingsPacket : public ::Packet {
 
 public:
+    NetworkSettingOptions mNetworkSettings; // this+0x30
+
     // prevent constructor by default
     NetworkSettingsPacket& operator=(NetworkSettingsPacket const&) = delete;
     NetworkSettingsPacket(NetworkSettingsPacket const&)            = delete;

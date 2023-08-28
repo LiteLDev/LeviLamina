@@ -9,6 +9,8 @@
 class PlayerFogPacket : public ::Packet {
 
 public:
+    std::vector<std::string> mFogStack; // this+0x30
+
     // prevent constructor by default
     PlayerFogPacket& operator=(PlayerFogPacket const&) = delete;
     PlayerFogPacket(PlayerFogPacket const&)            = delete;

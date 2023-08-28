@@ -1,6 +1,9 @@
 #pragma once
 
+#include "../NetworkBlockPosition.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/enums/SpawnPositionType.h"
+#include "mc/world/level/dimension/Dimension.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
@@ -10,6 +13,11 @@
 class SetSpawnPositionPacket : public ::Packet {
 
 public:
+    NetworkBlockPosition        mPos;           // this+0x30
+    SpawnPositionType           mSpawnPosType;  // this+0x3C
+    AutomaticID<Dimension, int> mDimensionType; // this+0x40
+    NetworkBlockPosition        mSpawnBlockPos; // this+0x44
+
     // prevent constructor by default
     SetSpawnPositionPacket& operator=(SetSpawnPositionPacket const&) = delete;
     SetSpawnPositionPacket(SetSpawnPositionPacket const&)            = delete;

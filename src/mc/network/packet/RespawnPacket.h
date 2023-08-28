@@ -12,9 +12,10 @@
 class RespawnPacket : public ::Packet {
 
 public:
-    Vec3               mPos;
-    PlayerRespawnState mState;
-    ActorRuntimeID     mRuntimeId;
+    Vec3               mPos;       // this+0x30
+    PlayerRespawnState mState;     // this+0x3C
+    ActorRuntimeID     mRuntimeId; // this+0x40
+
     // prevent constructor by default
     RespawnPacket& operator=(RespawnPacket const&) = delete;
     RespawnPacket(RespawnPacket const&)            = delete;

@@ -35,6 +35,7 @@ public:
             mCompressible = Compressibility::Incompressible;
         }
     }
+
 public:
     // NOLINTBEGIN
     /**

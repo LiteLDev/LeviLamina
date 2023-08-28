@@ -9,6 +9,10 @@
 class GameTestResultsPacket : public ::Packet {
 
 public:
+    std::string mTestName;  // this+0x30
+    std::string mError;     // this+0x50
+    bool        mSucceeded; // this+0x70
+
     // prevent constructor by default
     GameTestResultsPacket& operator=(GameTestResultsPacket const&) = delete;
     GameTestResultsPacket(GameTestResultsPacket const&)            = delete;

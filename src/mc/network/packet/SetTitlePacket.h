@@ -22,6 +22,14 @@ public:
     };
 
 public:
+    TitleType   mType;             // this+0x30
+    std::string mTitleText;        // this+0x38
+    int         mFadeInTime;       // this+0x58
+    int         mStayTime;         // this+0x5C
+    int         mFadeOutTime;      // this+0x60
+    std::string mXuid;             // this+0x68
+    std::string mPlatformOnlineId; // this+0x88
+
     // prevent constructor by default
     SetTitlePacket& operator=(SetTitlePacket const&) = delete;
 
