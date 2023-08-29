@@ -4,7 +4,7 @@
 
 namespace Json {
 
-enum class ValType : int {
+enum class ValueType : int {
     Null    = 0x0,
     Int     = 0x1,
     Uint    = 0x2,

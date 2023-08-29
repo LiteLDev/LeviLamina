@@ -2,7 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/enums/Compressibility.h"
-#include "mc/enums/SubClientId.h"
 #include "mc/network/IPacketHandlerDispatcher.h"
 #include "mc/network/NetworkPeer.h"
 #include "mc/resources/PacketPriority.h"
@@ -15,20 +14,20 @@
 class Packet {
 
 public:
-    static const bool                   SHARE_WITH_HANDLER = false;                                     // constant
-    enum class PacketPriority           mPriority          = PacketPriority::Medium;                    // this+0x8
-    enum class NetworkPeer::Reliability mReliability       = NetworkPeer::Reliability::ReliableOrdered; // this+0xC
-    enum class SubClientId              mClientSubId       = SubClientId::PrimaryClient;                // this+0x10
-    bool                                mIsHandled         = false;                                     // this+0x11
-    NetworkPeer::PacketRecvTimepoint    mReceiveTimepoint;                                              // this+0x18
-    const IPacketHandlerDispatcher*     mHandler      = nullptr;                                        // this+0x20
-    enum class Compressibility          mCompressible = Compressibility::Compressible;                  // this+0x28
+    static const bool                SHARE_WITH_HANDLER = false;                                     // constant
+    PacketPriority                   mPriority          = PacketPriority::Medium;                    // this+0x8
+    NetworkPeer::Reliability         mReliability       = NetworkPeer::Reliability::ReliableOrdered; // this+0xC
+    SubClientId                      mClientSubId       = SubClientId::PrimaryClient;                // this+0x10
+    bool                             mIsHandled         = false;                                     // this+0x11
+    NetworkPeer::PacketRecvTimepoint mReceiveTimepoint;                                              // this+0x18
+    const IPacketHandlerDispatcher*  mHandler      = nullptr;                                        // this+0x20
+    Compressibility                  mCompressible = Compressibility::Compressible;                  // this+0x28
 
     constexpr explicit Packet(
-        enum class PacketPriority           priority    = PacketPriority::Medium,
-        enum class NetworkPeer::Reliability reliability = NetworkPeer::Reliability::ReliableOrdered,
-        enum class SubClientId              clientSubId = SubClientId::PrimaryClient,
-        bool                                compress    = true
+        PacketPriority           priority    = PacketPriority::Medium,
+        NetworkPeer::Reliability reliability = NetworkPeer::Reliability::ReliableOrdered,
+        SubClientId              clientSubId = SubClientId::PrimaryClient,
+        bool                     compress    = true
     )
     : mPriority(priority), mReliability(reliability), mClientSubId(clientSubId) {
         if (compress) {
