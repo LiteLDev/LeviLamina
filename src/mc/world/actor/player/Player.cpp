@@ -1,11 +1,13 @@
 #include "mc/world/actor/player/Player.h"
 
+#include "mc/nbt/CompoundTag.h"
 #include "mc/server/volume/UserEntityIdentifierComponent.h"
 
 #include "mc/certificates/ExtendedCertificate.h"
 #include "mc/certificates/WebToken.h"
 
 #include "mc/world/Minecraft.h"
+#include "mc/world/level/Level.h"
 #include "mc/world/systems/NetworkSystem.h"
 
 #include "mc/network/ConnectionRequest.h"
@@ -17,6 +19,7 @@
 #include "mc/locale/Localization.h"
 
 #include "liteloader/api/GlobalServiceAPI.h"
+
 
 optional_ref<NetworkIdentifier> Player::getNetworkIdentifier() const {
     auto* ueic = const_cast<Player*>(this)->tryGetComponent<UserEntityIdentifierComponent>();
@@ -40,7 +43,6 @@ std::string Player::getRealName() const {
     }
 
     auto certificate = getCertificate();
-
     if (!certificate) {
         return getName();
     }
@@ -48,40 +50,63 @@ std::string Player::getRealName() const {
     return ExtendedCertificate::getIdentityName(*certificate);
 }
 
-int Player::getAvgPing() const {
-    if (isSimulatedPlayer()) {
-        return -1;
+std::string Player::getUuid() const {
+    auto ueic = const_cast<Player*>(this)->tryGetComponent<UserEntityIdentifierComponent>();
+    if (!ueic) {
+        return "";
     }
-    auto networkIdentifier = getNetworkIdentifier();
-
-    if (!networkIdentifier) {
-        return -1;
-    }
-
-    return Global<Minecraft>->getNetworkSystem().getPeerForUser(*networkIdentifier)->getNetworkStatus().mAveragePing;
+    return ueic->mClientUUID.asString();
 }
 
-int Player::getLastPing() const {
+std::optional<std::string> Player::getIPAndPort() const {
+
     if (isSimulatedPlayer()) {
-        return -1;
+        return std::nullopt;
     }
+
     auto networkIdentifier = getNetworkIdentifier();
-
     if (!networkIdentifier) {
-        return -1;
+        return std::nullopt;
     }
 
-    return Global<Minecraft>->getNetworkSystem().getPeerForUser(*networkIdentifier)->getNetworkStatus().mCurrentPing;
-}
-
-std::string Player::getIPAndPort() const {
-    if (isSimulatedPlayer()) {
-        return "127.0.0.1:0";
-    }
-    auto networkIdentifier = getNetworkIdentifier();
-
-    if (!networkIdentifier) {
-        return "127.0.0.1:0";
-    }
     return networkIdentifier->getIPAndPort();
+}
+
+std::optional<std::string> Player::getDeviceId() const {
+    if (isSimulatedPlayer()) {
+        return std::nullopt;
+    }
+
+    auto networkIdentifier = getNetworkIdentifier();
+    if (!networkIdentifier) {
+        return std::nullopt;
+    }
+
+    return Global<ServerNetworkHandler>->fetchConnectionRequest(*networkIdentifier).getDeviceId();
+}
+
+std::optional<SubClientId> Player::getClientSubId() const {
+    auto ueic = const_cast<Player*>(this)->tryGetComponent<UserEntityIdentifierComponent>();
+    if (!ueic) {
+        return std::nullopt;
+    }
+    return ueic->mClientSubId;
+}
+
+std::optional<NetworkPeer::NetworkStatus> Player::getNetworkStatus() const {
+    if (isSimulatedPlayer()) {
+        return std::nullopt;
+    }
+
+    auto networkIdentifier = getNetworkIdentifier();
+    if (!networkIdentifier) {
+        return std::nullopt;
+    }
+
+    auto peer = Global<Minecraft>->getNetworkSystem().getPeerForUser(*networkIdentifier);
+    if (!peer) {
+        return std::nullopt;
+    }
+
+    return peer->getNetworkStatus();
 }

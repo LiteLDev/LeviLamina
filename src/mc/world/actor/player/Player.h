@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/network/NetworkPeer.h"
 
 // auto generated inclusion list
 #include "mc/common/wrapper/BedSleepingResult.h"
@@ -90,9 +91,13 @@ public:
     LLNDAPI optional_ref<Certificate> getCertificate() const;
 
     LLNDAPI std::string getRealName() const;
-    LLNDAPI int getAvgPing() const;
-    LLNDAPI int getLastPing() const;
-    LLNDAPI std::string getIPAndPort() const;
+    LLNDAPI std::string getUuid() const;
+
+    LLNDAPI std::optional<std::string> getIPAndPort() const;
+    LLNDAPI std::optional<std::string> getDeviceId() const;
+    LLNDAPI std::optional<SubClientId> getClientSubId() const;
+
+    LLNDAPI std::optional<NetworkPeer::NetworkStatus> getNetworkStatus() const;
 
     // prevent constructor by default
     Player& operator=(Player const&) = delete;
