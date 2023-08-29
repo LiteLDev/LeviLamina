@@ -1,5 +1,6 @@
 #include "mc/world/level/levelgen/structure/StructureTemplate.h"
 #include "liteloader/api/GlobalServiceAPI.h"
+#include "mc/world/level/BlockPalette.h"
 #include "mc/world/level/Level.h"
 #include "mc/world/level/levelgen/structure/StructureManager.h"
 #include "mc/world/level/levelgen/structure/StructureSettings.h"
@@ -25,7 +26,7 @@ std::unique_ptr<StructureTemplate> StructureTemplate::create(std::string name, C
 
     auto res = std::make_unique<StructureTemplate>(name, unknownBlockRegistry);
 
-    bool success = res->load(tag);
+    bool success{res->load(tag)};
 
     if (!success) {
         return nullptr;
@@ -38,8 +39,8 @@ std::unique_ptr<StructureTemplate> StructureTemplate::create(
     std::string        name,
     BlockSource&       blockSource,
     BoundingBox const& boundingBox,
-    bool               ignoreBlocks   = false,
-    bool               ignoreEntities = false
+    bool               ignoreBlocks,
+    bool               ignoreEntities
 ) {
 
     auto& unknownBlockRegistry = Global<StructureManager>->mUnknownBlockRegistry;

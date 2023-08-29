@@ -52,7 +52,7 @@ struct LLConfig {
     bool                     enableParticleAPI              = false;
     bool                     enableFixAbility               = true;
     std::vector<std::string> outputFilterRegex              = {};
-    std::map<string, string> resourcePackEncryptionMap      = {};
+    std::map<std::string, std::string> resourcePackEncryptionMap      = {};
 };
 
 struct LLRuntimeConfig {
@@ -78,4 +78,4 @@ bool SaveLLConfig();
 #define ZIP_PROGRAM_PATH           "./plugins/LiteLoader/7z/7za.exe"
 #define ADDON_INSTALL_TEMP_DIR     "./plugins/LiteLoader/Temp/"
 #define ADDON_INSTALL_MAX_WAIT     30000
-#define VALID_ADDON_FILE_EXTENSION std::set<string>({".mcpack", ".mcaddon", ".zip"})
+#define VALID_ADDON_FILE_EXTENSION std::set<std::string>({".mcpack", ".mcaddon", ".zip"})

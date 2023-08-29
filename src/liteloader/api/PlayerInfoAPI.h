@@ -14,7 +14,7 @@ namespace PlayerInfo {
 
 struct Info {
     std::string name; ///< Real name(xbox)
-    xuid_t xuid;      ///< Xuid(online-mode is required)
+    std::string xuid; ///< Xuid(online-mode is required)
     std::string uuid; ///< UUID
 };
 
@@ -32,7 +32,7 @@ LLAPI std::optional<Info> findByName(const std::string& name);
  * @param  xuid  The player xuid
  * @return std::optional<Info>  The info
  */
-LLAPI std::optional<Info> findByXuid(const xuid_t& xuid);
+LLAPI std::optional<Info> findByXuid(const std::string& xuid);
 
 /**
  * @brief Find the information of a player by UUID.
@@ -60,8 +60,9 @@ LLAPI std::vector<Info> getAllPlayerInfo();
 LLAPI bool insert(std::string name, std::string xuid, std::string uuid);
 LLAPI std::string getXuid(std::string name);
 LLAPI std::string getUUID(std::string name);
-LLAPI std::string getUUIDByXuid(xuid_t xuid) ;
+LLAPI std::string getUUIDByXuid(std::string xuid);
 LLAPI std::string fromXuid(std::string xuid);
 LLAPI std::string fromUUID(std::string uuid);
-LLAPI void forEachInfo(std::function<bool(std::string_view name, std::string_view xuid, std::string_view uuid)> callback);
+LLAPI void forEachInfo(std::function<bool(std::string_view name, std::string_view xuid, std::string_view uuid)> callback
+);
 } // namespace PlayerInfo

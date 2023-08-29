@@ -5,12 +5,12 @@
 // auto generated inclusion list
 #include "mc/common/InvertableFilter.h"
 #include "mc/deps/core/common/bedrock/typeid_t.h"
-#include "mc/entity/flags/CommandTypeFlag.h"
 #include "mc/enums/SemanticConstraint.h"
 #include "mc/server/commands/CommandLexer.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/server/commands/CommandSelector.h"
 #include "mc/server/commands/CommandStatus.h"
+#include "mc/server/commands/flags/CommandTypeFlag.h"
 
 // auto generated forward declare list
 // clang-format off

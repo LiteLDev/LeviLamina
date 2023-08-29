@@ -8,7 +8,7 @@
 #include <regex>
 
 #include "liteloader/api/LoggerAPI.h"
-#include "mc/world/actor/player/Player.h"
+#include "mc/Player.hpp"
 #include "liteloader/api/utils/Hash.h"
 
 #include "liteloader/core/Config.h"
@@ -94,7 +94,7 @@ bool checkLogLevel(int level, int outLevel) {
     return false;
 }
 #define H do_hash
-fmt::text_style getModeColor(const std::string& a1) {
+fmt::text_style getModeColor(const string& a1) {
     if (!ll::globalConfig.colorLog)
         return {};
     switch (H(a1.c_str())) {
@@ -187,12 +187,12 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream& o) {
             }
         }
 
-        // if (checkLogLevel(o.logger->playerLevel, o.level) && o.logger->player && Player::isValid(o.logger->player) &&
-        //     (ll::globalConfig.onlyFilterConsoleOutput || !filterBanned)) {
-        //     o.logger->player->sendTextPacket(
-        //         fmt::format(fmt::runtime(o.playerFormat), fmt::localtime(_time64(nullptr)), o.levelPrefix, title, text)
-        //     );
-        // }
+        if (checkLogLevel(o.logger->playerLevel, o.level) && o.logger->player && Player::isValid(o.logger->player) &&
+            (ll::globalConfig.onlyFilterConsoleOutput || !filterBanned)) {
+            o.logger->player->sendTextPacket(
+                fmt::format(fmt::runtime(o.playerFormat), fmt::localtime(_time64(nullptr)), o.levelPrefix, title, text)
+            );
+        }
 
         o.os.str("");
         o.os.clear();

@@ -41,7 +41,7 @@ public:
     uint64_t                              mCanPlaceOnHash; // this+0x50
     std::vector<class BlockLegacy const*> mCanDestroy;     // this+0x58
     uint64_t                              mCanDestroyHash; // this+0x70
-    class Tick                            mBlockingTick;   // this+0x78
+    Tick                                  mBlockingTick;   // this+0x78
     std::unique_ptr<class ItemInstance>   mChargedItem;    // this+0x80
 
     LLNDAPI std::string getTypeName() const;
@@ -667,11 +667,13 @@ public:
      * @symbol
      * ??0ItemStackBase\@\@IEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@HHPEBVCompoundTag\@\@\@Z
      */
-    MCAPI ItemStackBase(std::string_view name, int count = 1, int auxValue = 0, class CompoundTag const* userData = nullptr);
+    MCAPI
+    ItemStackBase(std::string_view name, int count = 1, int auxValue = 0, class CompoundTag const* userData = nullptr);
     /**
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBVItem\@\@HHPEBVCompoundTag\@\@\@Z
      */
-    MCAPI ItemStackBase(class Item const& item, int count = 1, int auxValue = 0, class CompoundTag const* userData = nullptr);
+    MCAPI
+    ItemStackBase(class Item const& item, int count = 1, int auxValue = 0, class CompoundTag const* userData = nullptr);
     /**
      * @symbol ??0ItemStackBase\@\@IEAA\@XZ
      */

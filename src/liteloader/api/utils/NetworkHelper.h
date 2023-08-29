@@ -10,8 +10,8 @@ LLAPI void SplitHttpUrl(const std::string& url, std::string& host, std::string& 
 
 // Http Post (async)
 // [param] void callback(status, data)
-LLAPI bool HttpPost(const string& url, const httplib::Headers& headers, const string& data, const string& type, const std::function<void(int, string)>& callback, int timeout = -1);
-LLAPI bool HttpPost(const string& url, const string& data, const string& type, const std::function<void(int, string)>& callback, int timeout = -1);
+LLAPI bool HttpPost(const std::string& url, const httplib::Headers& headers, const std::string& data, const std::string& type, const std::function<void(int, std::string)>& callback, int timeout = -1);
+LLAPI bool HttpPost(const std::string& url, const std::string& data, const std::string& type, const std::function<void(int, std::string)>& callback, int timeout = -1);
 // Http Get (async)
 // [param] void callback(status, data)
 LLAPI bool HttpGet(const std::string& url, const httplib::Headers& headers, const std::function<void(int, std::string)>& callback, int timeout = -1);

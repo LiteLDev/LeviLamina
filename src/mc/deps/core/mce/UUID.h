@@ -13,7 +13,7 @@ public:
 
     LLNDAPI UUID();
 
-    explicit constexpr operator bool() const { return !isEmpty(); }
+    explicit inline operator bool() const { return !isEmpty(); }
 
 public:
     // NOLINTBEGIN

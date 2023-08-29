@@ -14,7 +14,7 @@
 using namespace std;
 
 std::string ll::getDataPath(const std::string& pluginName) {
-    string dataPath = "plugins\\LiteLoader\\" + pluginName;
+    std::string dataPath = "plugins\\LiteLoader\\" + pluginName;
     if (!filesystem::exists(str2wstr(dataPath))) {
         std::error_code ec;
         filesystem::create_directories(str2wstr(dataPath), ec);
@@ -57,7 +57,7 @@ bool ll::Version::operator<(ll::Version b) {
 bool ll::Version::operator==(ll::Version b) { return major == b.major && minor == b.minor && revision == b.revision; }
 
 std::string ll::Version::toString(bool needStatus) {
-    string res = to_string(major) + "." + to_string(minor) + "." + to_string(revision);
+    std::string res = to_string(major) + "." + to_string(minor) + "." + to_string(revision);
     if (needStatus) {
         if (status == Status::Beta)
             res += " - Beta";
@@ -152,7 +152,7 @@ bool LL::Version::operator<(LL::Version b) {
 bool LL::Version::operator==(LL::Version b) { return major == b.major && minor == b.minor && revision == b.revision; }
 
 std::string LL::Version::toString(bool needStatus) {
-    string res = to_string(major) + "." + to_string(minor) + "." + to_string(revision);
+    std::string res = to_string(major) + "." + to_string(minor) + "." + to_string(revision);
     if (needStatus) {
         if (status == Status::Beta)
             res += " - Beta";

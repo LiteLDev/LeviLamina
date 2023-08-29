@@ -68,14 +68,14 @@ void inline from_json(const nlohmann::json& j, LLConfig& conf) {
     conf.language                  = j.value("Language", "system");
     conf.resourcePackEncryptionMap = j.value(
         "ResourcePackEncryption",
-        map<string, string>{
+        map<std::string, std::string>{
             {"UUID", "KEY"}
     }
     );
 
     auto& tempMap = conf.resourcePackEncryptionMap;
     for (const auto& x : tempMap) {
-        string tempUuid = x.first;
+        std::string tempUuid = x.first;
         transform(tempUuid.begin(), tempUuid.end(), tempUuid.begin(), ::toupper);
         tempMap.erase(x.first);
         tempMap.insert({tempUuid, x.second});

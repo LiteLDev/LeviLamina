@@ -1,9 +1,16 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/enums/FacingID.h"
 
 namespace ScriptModuleMinecraft {
 
-using ScriptFacing = ::FacingID;
+enum class ScriptFacing : int8_t {
+    Unknown = -1,
+    Down    = 0,
+    Up      = 1,
+    North   = 2,
+    South   = 3,
+    West    = 4,
+    East    = 5,
+};
 };

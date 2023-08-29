@@ -73,12 +73,12 @@ bool WriteAllFile(const std::string& filePath, const std::string& content, bool 
     return true;
 }
 
-vector<string> GetFileNameList(const std::string& dir) {
+std::vector<std::string> GetFileNameList(const std::string& dir) {
     std::filesystem::directory_entry d(dir);
     if (!d.is_directory())
         return {};
 
-    vector<string> list;
+    std::vector<std::string> list;
     std::filesystem::directory_iterator deps(d);
     for (auto& i : deps) {
         list.push_back(UTF82String(i.path().filename().u8string()));
@@ -86,7 +86,7 @@ vector<string> GetFileNameList(const std::string& dir) {
     return list;
 }
 
-bool CreateDirs(const string path) {
+bool CreateDirs(const std::string& path) {
     std::error_code ec;
     auto ret = std::filesystem::create_directories(std::filesystem::path(str2wstr(path)), ec);
     if (ec.value() != 0) {

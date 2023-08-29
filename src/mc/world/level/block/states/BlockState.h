@@ -44,7 +44,7 @@ public:
     size_t const             mID;
     size_t const             mVariationCount;
     class HashedString const mName;
-    class StateListNode      mNode;
+    StateListNode            mNode;
 
 public:
     // NOLINTBEGIN

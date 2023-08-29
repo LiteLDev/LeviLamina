@@ -19,79 +19,79 @@ public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~DefaultDataLoadHelper() = default;
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?loadPosition\@DefaultDataLoadHelper\@\@UEAA?AVVec3\@\@AEBV2\@\@Z
      */
-    virtual void __unk_vfn_1();
+    virtual class Vec3 loadPosition(class Vec3 const&);
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?loadBlockPosition\@DefaultDataLoadHelper\@\@UEAA?AVBlockPos\@\@AEBV2\@\@Z
      */
-    virtual void __unk_vfn_2();
+    virtual class BlockPos loadBlockPosition(class BlockPos const&);
     /**
      * @vftbl 3
-     * @symbol __unk_vfn_3
+     * @symbol ?loadBlockPositionOffset\@DefaultDataLoadHelper\@\@UEAA?AVBlockPos\@\@AEBV2\@\@Z
      */
-    virtual void __unk_vfn_3();
+    virtual class BlockPos loadBlockPositionOffset(class BlockPos const&);
     /**
      * @vftbl 4
-     * @symbol __unk_vfn_4
+     * @symbol ?loadRotationDegreesX\@DefaultDataLoadHelper\@\@UEAAMM\@Z
      */
-    virtual void __unk_vfn_4();
+    virtual float loadRotationDegreesX(float);
     /**
      * @vftbl 5
-     * @symbol __unk_vfn_5
+     * @symbol ?loadRotationDegreesY\@DefaultDataLoadHelper\@\@UEAAMM\@Z
      */
-    virtual void __unk_vfn_5();
+    virtual float loadRotationDegreesY(float);
     /**
      * @vftbl 6
-     * @symbol __unk_vfn_6
+     * @symbol ?loadRotationRadiansX\@DefaultDataLoadHelper\@\@UEAAMM\@Z
      */
-    virtual void __unk_vfn_6();
+    virtual float loadRotationRadiansX(float);
     /**
      * @vftbl 7
-     * @symbol __unk_vfn_7
+     * @symbol ?loadRotationRadiansY\@DefaultDataLoadHelper\@\@UEAAMM\@Z
      */
-    virtual void __unk_vfn_7();
+    virtual float loadRotationRadiansY(float);
     /**
      * @vftbl 8
-     * @symbol __unk_vfn_8
+     * @symbol ?loadFacingID\@DefaultDataLoadHelper\@\@UEAAEE\@Z
      */
-    virtual void __unk_vfn_8();
+    virtual unsigned char loadFacingID(unsigned char);
     /**
      * @vftbl 9
-     * @symbol __unk_vfn_9
+     * @symbol ?loadDirection\@DefaultDataLoadHelper\@\@UEAA?AVVec3\@\@AEBV2\@\@Z
      */
-    virtual void __unk_vfn_9();
+    virtual class Vec3 loadDirection(class Vec3 const&);
     /**
      * @vftbl 10
-     * @symbol __unk_vfn_10
+     * @symbol ?loadDirection\@DefaultDataLoadHelper\@\@UEAA?AW4Type\@Direction\@\@W423\@\@Z
      */
-    virtual void __unk_vfn_10();
+    virtual enum class Direction::Type loadDirection(enum class Direction::Type);
     /**
      * @vftbl 11
-     * @symbol __unk_vfn_11
+     * @symbol ?loadRotation\@DefaultDataLoadHelper\@\@UEAA?AW4Rotation\@\@W42\@\@Z
      */
-    virtual void __unk_vfn_11();
+    virtual enum class Rotation loadRotation(enum class Rotation);
     /**
      * @vftbl 12
-     * @symbol __unk_vfn_12
+     * @symbol ?loadMirror\@DefaultDataLoadHelper\@\@UEAA?AW4Mirror\@\@W42\@\@Z
      */
-    virtual void __unk_vfn_12();
+    virtual enum class Mirror loadMirror(enum class Mirror);
     /**
      * @vftbl 13
-     * @symbol __unk_vfn_13
+     * @symbol ?loadActorUniqueID\@DefaultDataLoadHelper\@\@UEAA?AUActorUniqueID\@\@U2\@\@Z
      */
-    virtual void __unk_vfn_13();
+    virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
     /**
      * @vftbl 14
-     * @symbol __unk_vfn_14
+     * @symbol ?loadOwnerID\@DefaultDataLoadHelper\@\@UEAA?AUActorUniqueID\@\@U2\@\@Z
      */
-    virtual void __unk_vfn_14();
+    virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
     /**
      * @vftbl 15
      * @symbol
@@ -109,63 +109,5 @@ public:
      * @symbol ?shouldResetTime\@DefaultDataLoadHelper\@\@UEAA_NXZ
      */
     virtual bool shouldResetTime();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DEFAULTDATALOADHELPER
-    /**
-     * @symbol ?loadActorUniqueID\@DefaultDataLoadHelper\@\@UEAA?AUActorUniqueID\@\@U2\@\@Z
-     */
-    MCVAPI struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
-    /**
-     * @symbol ?loadBlockPosition\@DefaultDataLoadHelper\@\@UEAA?AVBlockPos\@\@AEBV2\@\@Z
-     */
-    MCVAPI class BlockPos loadBlockPosition(class BlockPos const&);
-    /**
-     * @symbol ?loadBlockPositionOffset\@DefaultDataLoadHelper\@\@UEAA?AVBlockPos\@\@AEBV2\@\@Z
-     */
-    MCVAPI class BlockPos loadBlockPositionOffset(class BlockPos const&);
-    /**
-     * @symbol ?loadDirection\@DefaultDataLoadHelper\@\@UEAA?AW4Type\@Direction\@\@W423\@\@Z
-     */
-    MCVAPI enum class Direction::Type loadDirection(enum class Direction::Type);
-    /**
-     * @symbol ?loadDirection\@DefaultDataLoadHelper\@\@UEAA?AVVec3\@\@AEBV2\@\@Z
-     */
-    MCVAPI class Vec3 loadDirection(class Vec3 const&);
-    /**
-     * @symbol ?loadFacingID\@DefaultDataLoadHelper\@\@UEAAEE\@Z
-     */
-    MCVAPI unsigned char loadFacingID(unsigned char);
-    /**
-     * @symbol ?loadMirror\@DefaultDataLoadHelper\@\@UEAA?AW4Mirror\@\@W42\@\@Z
-     */
-    MCVAPI enum class Mirror loadMirror(enum class Mirror);
-    /**
-     * @symbol ?loadOwnerID\@DefaultDataLoadHelper\@\@UEAA?AUActorUniqueID\@\@U2\@\@Z
-     */
-    MCVAPI struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
-    /**
-     * @symbol ?loadPosition\@DefaultDataLoadHelper\@\@UEAA?AVVec3\@\@AEBV2\@\@Z
-     */
-    MCVAPI class Vec3 loadPosition(class Vec3 const&);
-    /**
-     * @symbol ?loadRotation\@DefaultDataLoadHelper\@\@UEAA?AW4Rotation\@\@W42\@\@Z
-     */
-    MCVAPI enum class Rotation loadRotation(enum class Rotation);
-    /**
-     * @symbol ?loadRotationDegreesX\@DefaultDataLoadHelper\@\@UEAAMM\@Z
-     */
-    MCVAPI float loadRotationDegreesX(float);
-    /**
-     * @symbol ?loadRotationDegreesY\@DefaultDataLoadHelper\@\@UEAAMM\@Z
-     */
-    MCVAPI float loadRotationDegreesY(float);
-    /**
-     * @symbol ?loadRotationRadiansX\@DefaultDataLoadHelper\@\@UEAAMM\@Z
-     */
-    MCVAPI float loadRotationRadiansX(float);
-    /**
-     * @symbol ?loadRotationRadiansY\@DefaultDataLoadHelper\@\@UEAAMM\@Z
-     */
-    MCVAPI float loadRotationRadiansY(float);
-#endif
     // NOLINTEND
 };

@@ -22,9 +22,9 @@ public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~StructureDataLoadHelper();
     /**
      * @vftbl 1
      * @symbol ?loadPosition\@StructureDataLoadHelper\@\@UEAA?AVVec3\@\@AEBV2\@\@Z
@@ -42,9 +42,9 @@ public:
     virtual class BlockPos loadBlockPositionOffset(class BlockPos const&);
     /**
      * @vftbl 4
-     * @symbol __unk_vfn_4
+     * @symbol ?loadRotationDegreesX\@StructureDataLoadHelper\@\@UEAAMM\@Z
      */
-    virtual void __unk_vfn_4();
+    virtual float loadRotationDegreesX(float);
     /**
      * @vftbl 5
      * @symbol ?loadRotationDegreesY\@StructureDataLoadHelper\@\@UEAAMM\@Z
@@ -52,9 +52,9 @@ public:
     virtual float loadRotationDegreesY(float);
     /**
      * @vftbl 6
-     * @symbol __unk_vfn_6
+     * @symbol ?loadRotationRadiansX\@StructureDataLoadHelper\@\@UEAAMM\@Z
      */
-    virtual void __unk_vfn_6();
+    virtual float loadRotationRadiansX(float);
     /**
      * @vftbl 7
      * @symbol ?loadRotationRadiansY\@StructureDataLoadHelper\@\@UEAAMM\@Z
@@ -117,20 +117,6 @@ public:
      * @symbol ?_generateNewID\@StructureDataLoadHelper\@\@MEAA?AUActorUniqueID\@\@XZ
      */
     virtual struct ActorUniqueID _generateNewID();
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRUCTUREDATALOADHELPER
-    /**
-     * @symbol ?loadRotationDegreesX\@StructureDataLoadHelper\@\@UEAAMM\@Z
-     */
-    MCVAPI float loadRotationDegreesX(float);
-    /**
-     * @symbol ?loadRotationRadiansX\@StructureDataLoadHelper\@\@UEAAMM\@Z
-     */
-    MCVAPI float loadRotationRadiansX(float);
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~StructureDataLoadHelper();
-#endif
     /**
      * @symbol
      * ??0StructureDataLoadHelper\@\@QEAA\@AEBVBlockPos\@\@0AEBVVec3\@\@UActorUniqueID\@\@W4Rotation\@\@W4Mirror\@\@AEAVLevel\@\@\@Z

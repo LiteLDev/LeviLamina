@@ -23,7 +23,7 @@ public:
     uint8_t                                             mStructureVersion;      // this+0xD0
     Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry> mUnknownBlockRegistry;
 
-    inline bool load(class CompoundTag const& nbt) { mStructureTemplateData.load(nbt); }
+    inline bool load(class CompoundTag const& nbt) { return mStructureTemplateData.load(nbt); }
 
     LLAPI void placeInWorld(
         BlockSource&    blockSource,

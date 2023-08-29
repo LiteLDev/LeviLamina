@@ -88,21 +88,21 @@ namespace ll::perm {
          * @param  xuid  The xuid of the member(player) to check.
          * @return bool  True if the role has the member, false otherwise.
          */
-        virtual bool hasMember(const xuid_t& xuid) const = 0;
+        virtual bool hasMember(const std::string& xuid) const = 0;
 
         /**
          * @brief Add the member to the role.
          * 
          * @param xuid  The xuid of the member(player) to add.
          */
-        virtual void addMember(const xuid_t& xuid) = 0;
+        virtual void addMember(const std::string& xuid) = 0;
 
         /**
          * @brief Remove the member from the role.
          * 
          * @param xuid  The xuid of the member(player) to remove.
          */
-        virtual void removeMember(const xuid_t& xuid) = 0;
+        virtual void removeMember(const std::string& xuid) = 0;
 
         /**
          * @brief Get the permissions of the role(non-const).
@@ -188,13 +188,13 @@ namespace ll::perm {
         GeneralRole& operator=(const GeneralRole& other) = default;
         GeneralRole& operator=(GeneralRole&& other) = default;
 
-        virtual bool hasMember(const xuid_t& xuid) const {
+        virtual bool hasMember(const std::string& xuid) const {
             return this->members.contains(xuid);
         }
-        virtual void addMember(const xuid_t& xuid) {
+        virtual void addMember(const std::string& xuid) {
             this->members.push_back(xuid);
         }
-        virtual void removeMember(const xuid_t& xuid) {
+        virtual void removeMember(const std::string& xuid) {
             this->members.erase(std::remove(this->members.begin(), this->members.end(), xuid), this->members.end());
         }
 
@@ -218,13 +218,13 @@ namespace ll::perm {
         EveryoneRole& operator=(const EveryoneRole& other) = default;
         EveryoneRole& operator=(EveryoneRole&& other) = default;
 
-        virtual bool hasMember(const xuid_t& xuid) const {
+        virtual bool hasMember(const std::string& xuid) const {
             return true;
         }
-        virtual void addMember(const xuid_t& xuid) {
+        virtual void addMember(const std::string& xuid) {
             throw std::runtime_error("You cannot add a member to a everyone permission role");
         }
-        virtual void removeMember(const xuid_t& xuid) {
+        virtual void removeMember(const std::string& xuid) {
             throw std::runtime_error("You cannot remove a member from a everyone permission role");
         }
 
@@ -256,13 +256,13 @@ namespace ll::perm {
             }
         }
 
-        virtual bool hasMember(const xuid_t& xuid) const {
+        virtual bool hasMember(const std::string& xuid) const {
             return this->members.contains(xuid);
         }
-        virtual void addMember(const xuid_t& xuid) {
+        virtual void addMember(const std::string& xuid) {
             this->members.push_back(xuid);
         }
-        virtual void removeMember(const xuid_t& xuid) {
+        virtual void removeMember(const std::string& xuid) {
             this->members.erase(std::remove(this->members.begin(), this->members.end(), xuid), this->members.end());
         }
 

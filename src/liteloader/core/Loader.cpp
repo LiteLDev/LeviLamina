@@ -14,7 +14,7 @@
 #include "liteloader/api/I18nAPI.h"
 #include "liteloader/api/LLAPI.h"
 #include "liteloader/api/LoggerAPI.h"
-#include "liteloader/api/ParticleAPI.h"
+// #include "liteloader/api/ParticleAPI.h"
 #include "liteloader/api/PermissionAPI.h"
 
 #include "liteloader/core/Config.h"
@@ -76,90 +76,6 @@ constexpr auto DEFAULT_ROOT_PACKAGE_JSON =
     "license" : "LGPL-3.0"
 })";
 
-// inline bool isExistScriptPlugin() {
-//     std::vector<string> scriptExts = LLSE_VALID_PLUGIN_EXTENSIONS;
-//     filesystem::directory_iterator ent("plugins");
-//     for (auto& file : ent) {
-//         if (!file.is_regular_file())
-//             continue;
-//
-//         filesystem::path path = file.path();
-//         string ext = UTF82String(path.extension().u8string());
-//         if (ext != ".dll") {
-//             // Process Shell link file
-//             if (ext == ".lnk") // Shell link file
-//             {
-//                 ShellLinkFile lnk(path.wstring());
-//                 path = lnk.getPathW();
-//                 if (!filesystem::is_regular_file(path))
-//                     continue;
-//                 ext = UTF82String(path.extension().u8string());
-//             }
-//
-//             if ((!ext.empty() && std::find(scriptExts.begin(), scriptExts.end(), ext) != scriptExts.end()) ||
-//                 ext == LLSE_PLUGIN_PACKAGE_EXTENSION)
-//                 return true;
-//         }
-//     }
-//     return false;
-// }
-//
-// inline bool isExistNodeJsPlugin() {
-//     if (!filesystem::exists(LLSE_NODEJS_ROOT_DIR))
-//         return false;
-//
-//     bool exist = false;
-//     filesystem::directory_iterator ent(LLSE_NODEJS_ROOT_DIR);
-//     for (auto& file : ent) {
-//         if (file.is_directory() && filesystem::exists(file.path() / "package.json")) {
-//             exist = true;
-//             break;
-//         }
-//     }
-//     return exist;
-// }
-//
-// inline void initNodeJsDirectories() {
-//     // Check & Create nodejs directories
-//     if (!filesystem::exists(LLSE_NODEJS_ROOT_DIR)) {
-//         filesystem::create_directories(LLSE_NODEJS_ROOT_DIR);
-//     }
-//     auto node_modules_path = filesystem::path(LLSE_NODEJS_ROOT_DIR) / "node_modules";
-//     if (!filesystem::exists(node_modules_path)) {
-//         filesystem::create_directories(node_modules_path);
-//     }
-//     auto package_json_path = filesystem::path(LLSE_NODEJS_ROOT_DIR) / "package.json";
-//     if (!filesystem::exists(package_json_path)) {
-//         ofstream fout(package_json_path.c_str());
-//         fout << DEFAULT_ROOT_PACKAGE_JSON;
-//         ll::logger.warn(tr("ll.loader.initNodeJsDirectories.created"));
-//     }
-// }
-//
-// inline void loadScriptEngine() {
-//     std::string llVersion = GetFileVersionString(GetCurrentModule(), true);
-//     for (const string& backend : LLSE_VALID_BACKENDS) {
-//         std::string path = "plugins/LiteLoader/LiteLoader." + backend + ".dll";
-//         std::string version = GetFileVersionString(path, true);
-//         if (!filesystem::exists(path)) {
-//             continue;
-//         }
-//         if (version != llVersion) {
-//             ll::logger.warn(tr("ll.loader.loadScriptEngine.error.versionNotMatch", version, backend, llVersion));
-//         }
-//         auto lib = LoadLibrary(str2wstr(path).c_str()); // eg. LiteLoader.Js.dll
-//         if (lib) {
-//             ll::logger.info(tr("ll.loader.loadScriptEngine.success", backend));
-//             // Fake Register
-//             RegisterPlugin(lib, "ScriptEngine-" + backend, "ScriptEngine-" + backend, LITELOADER_VERSION,
-//                            {{"GitHub", "https://github.com/LiteLDev/LiteLoaderBDS"}});
-//         } else {
-//             ll::logger.error("Fail to load ScriptEngine for {}!", backend);
-//             ll::logger.error("Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
-//         }
-//     }
-// }
-
 inline void loadDotNETEngine() {
     std::string path = "plugins/LiteLoader/LiteLoader.NET.dll";
     auto        lib  = LoadLibrary(str2wstr(path).c_str());
@@ -182,14 +98,14 @@ inline void loadDotNETEngine() {
 }
 
 inline void loadParticleApi() {
-    std::string path = "plugins/LiteLoader/ParticleAPI.dll";
-    auto        lib  = LoadLibrary(str2wstr(path).c_str());
-    if (lib) {
-        ParticleCUI::init(lib);
-    } else {
-        ll::logger.error("Fail to load ParticleAPI!");
-        ll::logger.error("Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
-    }
+    // std::string path = "plugins/LiteLoader/ParticleAPI.dll";
+    // auto        lib  = LoadLibrary(str2wstr(path).c_str());
+    // if (lib) {
+    //     ParticleCUI::init(lib);
+    // } else {
+    //     ll::logger.error("Fail to load ParticleAPI!");
+    //     ll::logger.error("Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
+    // }
 }
 
 void ll::LoadMain() {
@@ -210,12 +126,12 @@ void ll::LoadMain() {
 
         // Skip Wrong file path
         auto strPath = UTF82String(path.u8string());
-        if (strPath == "LiteLoader.dll" || strPath.find("LiteXLoader") != string::npos) {
+        if (strPath == "LiteLoader.dll" || strPath.find("LiteXLoader") != std::string::npos) {
             continue;
         }
 
         // Process Shell link file
-        string ext         = UTF82String(path.extension().u8string());
+        std::string ext         = UTF82String(path.extension().u8string());
         bool   isShellLink = false;
         if (ext == ".lnk") { // Shell link file
             ShellLinkFile lnk(path.wstring());
@@ -233,14 +149,14 @@ void ll::LoadMain() {
         }
 
         // LLMoney load check
-        if (strPath.find("LLMoney.dll") != string::npos) {
+        if (strPath.find("LLMoney.dll") != std::string::npos) {
             if (!globalConfig.enableEconomyCore) {
                 continue;
             }
         }
 
         // Avoid preloaded plugin
-        string pluginFileName = UTF82String(path.filename().u8string());
+        std::string pluginFileName = UTF82String(path.filename().u8string());
         bool   loaded         = false;
         for (auto& p : preloadList)
             if (p.find(pluginFileName) != std::wstring::npos) {

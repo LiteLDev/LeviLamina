@@ -21,10 +21,10 @@ class DynPermissionAPI {
     using FuncRegisterPermission = void (*)(const std::string&, const std::string&);
     using FuncDeletePermission = void (*)(const std::string&);
     using FuncPermissionExists = bool (*)(const std::string&);
-    using FuncCheckPermission = bool (*)(const xuid_t&, const std::string&);
-    using FuncIsMemberOf = bool (*)(const xuid_t&, const std::string&);
-    using FuncGetPlayerRoles = void (*)(const xuid_t&, ll::perm::Roles&);
-    using FuncGetPlayerPermissions = void (*)(const xuid_t&, ll::perm::Permissions&);
+    using FuncCheckPermission = bool (*)(const std::string&, const std::string&);
+    using FuncIsMemberOf = bool (*)(const std::string&, const std::string&);
+    using FuncGetPlayerRoles = void (*)(const std::string&, ll::perm::Roles&);
+    using FuncGetPlayerPermissions = void (*)(const std::string&, ll::perm::Permissions&);
     using FuncSaveData = void (*)();
 
     HMODULE handle = nullptr;
@@ -209,7 +209,7 @@ public:
      * @param  name  The name of the Permission.
      * @return bool  True If the player has the Permission, false otherwise.
      */
-    bool checkPermission(const xuid_t& xuid, const std::string& name) {
+    bool checkPermission(const std::string& xuid, const std::string& name) {
         if (funcCheckPermission == nullptr) {
             throw std::runtime_error("Function not found");
         }
@@ -223,7 +223,7 @@ public:
      * @param  name  The name of the role.
      * @return bool  True If the player is a member of the role, false otherwise.
      */
-    bool isMemberOf(const xuid_t& xuid, const std::string& name) {
+    bool isMemberOf(const std::string& xuid, const std::string& name) {
         if (funcIsMemberOf == nullptr) {
             throw std::runtime_error("Function not found");
         }
@@ -236,7 +236,7 @@ public:
      * @param  xuid         The xuid of the player.
      * @return PERM::Roles  The roles of the player.
      */
-    ll::perm::Roles getPlayerRoles(const xuid_t& xuid) {
+    ll::perm::Roles getPlayerRoles(const std::string& xuid) {
         if (funcGetPlayerRoles == nullptr) {
             throw std::runtime_error("Function not found");
         }
@@ -251,7 +251,7 @@ public:
      * @param  xuid               The xuid of the player.
      * @return PERM::Permissions  The permissions of the player.
      */
-    ll::perm::Permissions getPlayerPermissions(const xuid_t& xuid) {
+    ll::perm::Permissions getPlayerPermissions(const std::string& xuid) {
         if (funcGetPlayerPermissions == nullptr) {
             throw std::runtime_error("Function not found");
         }
@@ -412,7 +412,7 @@ public:
      * }
      * @endcode
      */
-    static bool checkPermission(const xuid_t& xuid, const std::string& name) {
+    static bool checkPermission(const std::string& xuid, const std::string& name) {
         return api.checkPermission(xuid, name);
     }
 
@@ -424,7 +424,7 @@ public:
      * @return bool  True If the player is member of the role, false otherwise.
      * @throws std::invalid_argument  If the role does not exist.
      */
-    static bool isMemberOf(const xuid_t& xuid, const std::string& name) {
+    static bool isMemberOf(const std::string& xuid, const std::string& name) {
         return api.isMemberOf(xuid, name);
     }
 
@@ -434,7 +434,7 @@ public:
      * @param  xuid         The xuid of the player.
      * @return PERM::Roles  The roles of the player.
      */
-    static ll::perm::Roles getPlayerRoles(const xuid_t& xuid) {
+    static ll::perm::Roles getPlayerRoles(const std::string& xuid) {
         return api.getPlayerRoles(xuid);
     }
 
@@ -444,7 +444,7 @@ public:
      * @param  xuid               The xuid of the player.
      * @return PERM::Permissions  The permissions of the player.
      */
-    static ll::perm::Permissions getPlayerPermissions(const xuid_t& xuid) {
+    static ll::perm::Permissions getPlayerPermissions(const std::string& xuid) {
         return api.getPlayerPermissions(xuid);
     }
 

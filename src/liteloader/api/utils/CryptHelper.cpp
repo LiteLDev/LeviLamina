@@ -26,10 +26,10 @@ unsigned char *oldMD5(const unsigned char *d, size_t n, unsigned char *md)
     return md;
 }
 
-string CalcMD5(const string& str) {
+std::string CalcMD5(const std::string& str) {
     unsigned char md5[MD5_DIGEST_LENGTH];
     const char map[] = "0123456789abcdef";
-    string hexmd5;
+    std::string hexmd5;
 
     oldMD5((const unsigned char*)str.c_str(), str.length(), md5);
     for (size_t i = 0; i < MD5_DIGEST_LENGTH; ++i) {
@@ -40,10 +40,10 @@ string CalcMD5(const string& str) {
     return hexmd5;
 }
 
-string CalcSHA1(const string& str) {
+std::string CalcSHA1(const std::string& str) {
     unsigned char sha1[SHA_DIGEST_LENGTH];
     const char map[] = "0123456789abcdef";
-    string hexsha1;
+    std::string hexsha1;
 
     SHA1((const unsigned char*)str.c_str(), str.length(), sha1);
     for (size_t i = 0; i < SHA_DIGEST_LENGTH; ++i) {

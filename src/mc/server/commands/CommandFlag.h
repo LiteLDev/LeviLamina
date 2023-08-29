@@ -1,6 +1,15 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/server/commands/flags/CommandAsyncFlag.h"
+#include "mc/server/commands/flags/CommandCheatFlag.h"
+#include "mc/server/commands/flags/CommandEditorFlag.h"
+#include "mc/server/commands/flags/CommandExecuteFlag.h"
+#include "mc/server/commands/flags/CommandSyncFlag.h"
+#include "mc/server/commands/flags/CommandTypeFlag.h"
+#include "mc/server/commands/flags/CommandUsageFlag.h"
+#include "mc/server/commands/flags/CommandVisibilityFlag.h"
+
 
 enum class CommandFlagValue : unsigned short {
     None                         = 0,
@@ -16,50 +25,6 @@ enum class CommandFlagValue : unsigned short {
     NoEditor                     = 1 << 9,
     Hidden                       = HiddenFromPlayerOrigin | HiddenFromCommandBlockOrigin,
     Removed                      = Hidden | HiddenFromAutomationOrigin,
-};
-
-enum class CommandUsageFlag : unsigned short {
-    Normal = 0,
-    Test   = 1 << 0,
-};
-
-enum class CommandVisibilityFlag : unsigned short {
-    Visible                      = 0,
-    HiddenFromCommandBlockOrigin = 1 << 1,
-    HiddenFromPlayerOrigin       = 1 << 2,
-    HiddenFromAutomationOrigin   = 1 << 3,
-    Hidden                       = HiddenFromPlayerOrigin | HiddenFromCommandBlockOrigin,
-    Removed                      = Hidden | HiddenFromAutomationOrigin,
-};
-
-enum class CommandSyncFlag : unsigned short {
-    Synced = 0,
-    Local  = 1 << 4,
-};
-
-enum class CommandExecuteFlag : unsigned short {
-    Allowed    = 0,
-    Disallowed = 1 << 5,
-};
-
-enum class CommandTypeFlag : unsigned short {
-    None    = 0,
-    Message = 1 << 6,
-};
-
-enum class CommandCheatFlag : unsigned short {
-    Cheat    = 0,
-    NotCheat = 1 << 7,
-};
-
-enum class CommandAsyncFlag : unsigned short {
-    Synch = 0,
-    Async = 1 << 8,
-};
-
-enum class CommandEditorFlag : unsigned short {
-    Editor   = 0,
-    NoEditor = 1 << 9,
 };
 
 struct CommandFlag {

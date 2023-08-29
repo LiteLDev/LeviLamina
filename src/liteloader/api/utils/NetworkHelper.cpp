@@ -13,13 +13,13 @@
 
 using namespace std;
 
-void SplitHttpUrl(const std::string& url, string& host, string& path) {
+void SplitHttpUrl(const std::string& url, std::string& host, std::string& path) {
     host = url;
 
-    bool foundProtocol = host.find('/') != string::npos;
+    bool foundProtocol = host.find('/') != std::string::npos;
 
     auto splitPos = host.find('/', foundProtocol ? host.find('/') + 2 : 0); // 查找协议后的第一个/分割host与路径
-    if (splitPos == string::npos) {
+    if (splitPos == std::string::npos) {
         path = "/";
     } else {
         path = host.substr(splitPos);
@@ -27,17 +27,17 @@ void SplitHttpUrl(const std::string& url, string& host, string& path) {
     }
 }
 
-bool HttpGet(const string& url, const function<void(int, string)>& callback, int timeout) {
+bool HttpGet(const std::string& url, const function<void(int, std::string)>& callback, int timeout) {
     return HttpGet(url, {}, callback, timeout);
 }
 
 bool HttpGet(
-    const string&                      url,
+    const std::string&                      url,
     const httplib::Headers&            headers,
-    const function<void(int, string)>& callback,
+    const function<void(int, std::string)>& callback,
     int                                timeout
 ) {
-    string host, path;
+    std::string host, path;
     SplitHttpUrl(url, host, path);
 
     auto* cli = new httplib::Client(host.c_str());
@@ -78,24 +78,24 @@ bool HttpGet(
 }
 
 bool HttpPost(
-    const string&                           url,
-    const string&                           data,
-    const string&                           type,
-    const std::function<void(int, string)>& callback,
+    const std::string&                           url,
+    const std::string&                           data,
+    const std::string&                           type,
+    const std::function<void(int, std::string)>& callback,
     int                                     timeout
 ) {
     return HttpPost(url, {}, data, type, callback);
 }
 
 bool HttpPost(
-    const string&                           url,
+    const std::string&                           url,
     const httplib::Headers&                 headers,
-    const string&                           data,
-    const string&                           type,
-    const std::function<void(int, string)>& callback,
+    const std::string&                           data,
+    const std::string&                           type,
+    const std::function<void(int, std::string)>& callback,
     int                                     timeout
 ) {
-    string host, path;
+    std::string host, path;
     SplitHttpUrl(url, host, path);
     auto* cli = new httplib::Client(host.c_str());
     if (!cli->is_valid()) {
@@ -133,7 +133,7 @@ bool HttpPost(
 }
 
 bool HttpGetSync(const std::string& url, int* statusRtn, std::string* dataRtn, int timeout) {
-    string host, path;
+    std::string host, path;
     SplitHttpUrl(url, host, path);
 
     httplib::Client cli(host.c_str());

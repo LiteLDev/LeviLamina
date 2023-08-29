@@ -19,12 +19,12 @@ public:
     constexpr AABB(class AABB const& k) noexcept : min(k.min), max(k.max){};
     constexpr AABB(class Vec3 const& min, class Vec3 const& max) noexcept : min(min), max(max){};
 
-    constexpr AABB& merge(AABB const& a) noexcept {
+    inline AABB& merge(AABB const& a) noexcept {
         *this = AABB{::min(a.min, min), ::max(a.max, max)};
         return *this;
     }
 
-    constexpr AABB& merge(Vec3 const& a) noexcept {
+    inline AABB& merge(Vec3 const& a) noexcept {
         *this = AABB{::min(a, min), ::max(a, max)};
         return *this;
     }

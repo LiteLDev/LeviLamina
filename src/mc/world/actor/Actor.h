@@ -89,8 +89,8 @@ public:
             ClipDefaults::CHECK_ALL_PICKABLE_BLOCKS
     ) const;
 
-    LLAPI bool teleport(class Vec3 const& pos, int dimID, class Vec2 const& rotation);
-    LLAPI bool teleport(class Vec3 const& pos, int dimID);
+    LLAPI void teleport(class Vec3 const& pos, int dimID, class Vec2 const& rotation);
+    LLAPI void teleport(class Vec3 const& pos, int dimID);
 
     LLAPI void setName(std::string const& name);
 

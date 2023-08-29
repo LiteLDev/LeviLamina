@@ -52,8 +52,9 @@ target("LiteLoader")
     set_symbols("debug")
     set_exceptions("none")
     set_pcxxheader("src/liteloader/api/Global.h")
-    add_headerfiles("src/(**.h)", "src/(**.hpp)", "src/(**.inl)", "src/mc/old/(**.hpp)", "src/mc/old/(**.inl)")
-    add_includedirs("./src","./src/mc/old")
+    set_pcxxheader("src/mc/_HeaderOutputPredefine.h")
+    add_headerfiles("src/(**.h)", "src/(**.hpp)")
+    add_includedirs("./src")
     add_cxflags("/utf-8", "/permissive-", "/EHa", "/W4")
     add_defines(
         "UNICODE", "LITELOADER_EXPORTS", "WIN32_LEAN_AND_MEAN", 
@@ -61,7 +62,7 @@ target("LiteLoader")
         "_CRT_SECURE_NO_WARNINGS"
     )
     add_shflags("/DELAYLOAD:bedrock_server.dll")
-    add_files("src/**.cpp", "src/**.rc")
+    add_files("src/**.cpp")
     -- xmake-repo
     add_packages("asio", "cpp-httplib", "entt", "fmt", "gsl", "gtest", "leveldb", "mariadb-connector-c", "magic_enum", "nlohmann_json", "openssl", "rapidjson")
     -- liteldev-repo

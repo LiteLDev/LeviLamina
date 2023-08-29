@@ -7,6 +7,8 @@
 #include "mc/common/wrapper/StructureBlockPaletteLoadResult.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
+class BlockPalette;
+
 class StructureBlockPalette {
 public:
     // StructureBlockPalette inner types declare

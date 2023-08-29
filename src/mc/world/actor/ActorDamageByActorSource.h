@@ -17,7 +17,7 @@ public:
     class BlockSource const* mRegion;           // this+0x10
     bool                     mIsWorldBuilder;   // this+0x18
     bool                     mIsCreative;       // this+0x19
-    class ActorUniqueID      mEntityID;         // this+0x20
+    ActorUniqueID            mEntityID;         // this+0x20
     enum class ActorType     mEntityType;       // this+0x28
     enum class ActorCategory mEntityCategories; // this+0x2C
     std::string              mEntityNameTag;    // this+0x30

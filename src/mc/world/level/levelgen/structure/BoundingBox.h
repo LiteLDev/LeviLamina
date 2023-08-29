@@ -23,18 +23,18 @@ public:
     constexpr BoundingBox(BlockPos const& min, BlockPos const& max) noexcept : min(min), max(max){};
 
     constexpr void forEachBlockInBox(std::function<void(const BlockPos&)>&& todo) const {
-        for (int y = min.y; y <= max.y; ++y)
-            for (int x = min.x; x <= max.x; ++x)
-                for (int z = min.z; z <= max.z; ++z) {
-                    todo(BlockPos{x, y, z});
+        for (int dy = min.y; dy <= max.y; ++dy)
+            for (int dx = min.x; dx <= max.x; ++dx)
+                for (int dz = min.z; dz <= max.z; ++dz) {
+                    todo(BlockPos{dx, dy, dz});
                 }
     }
 
     constexpr bool forEachBlockInBox(std::function<bool(const BlockPos&)>&& todo) const {
-        for (int y = min.y; y <= max.y; ++y)
-            for (int x = min.x; x <= max.x; ++x)
-                for (int z = min.z; z <= max.z; ++z) {
-                    if (!todo(BlockPos{x, y, z})) {
+        for (int dy = min.y; dy <= max.y; ++dy)
+            for (int dx = min.x; dx <= max.x; ++dx)
+                for (int dz = min.z; dz <= max.z; ++dz) {
+                    if (!todo(BlockPos{dx, dy, dz})) {
                         return false;
                     }
                 }
@@ -43,20 +43,20 @@ public:
 
     constexpr void forEachBlockInBox(std::function<void(const BlockPos&, size_t)>&& todo) const {
         size_t i = 0;
-        for (int y = min.y; y <= max.y; ++y)
-            for (int x = min.x; x <= max.x; ++x)
-                for (int z = min.z; z <= max.z; ++z) {
-                    todo(BlockPos{x, y, z}, i);
+        for (int dy = min.y; dy <= max.y; ++dy)
+            for (int dx = min.x; dx <= max.x; ++dx)
+                for (int dz = min.z; dz <= max.z; ++dz) {
+                    todo(BlockPos{dx, dy, dz}, i);
                     i++;
                 }
     }
 
     constexpr bool forEachBlockInBox(std::function<bool(const BlockPos&, size_t)>&& todo) const {
         size_t i = 0;
-        for (int y = min.y; y <= max.y; ++y)
-            for (int x = min.x; x <= max.x; ++x)
-                for (int z = min.z; z <= max.z; ++z) {
-                    if (!todo(BlockPos{x, y, z}, i)) {
+        for (int dy = min.y; dy <= max.y; ++dy)
+            for (int dx = min.x; dx <= max.x; ++dx)
+                for (int dz = min.z; dz <= max.z; ++dz) {
+                    if (!todo(BlockPos{dx, dy, dz}, i)) {
                         return false;
                     }
                     i++;
