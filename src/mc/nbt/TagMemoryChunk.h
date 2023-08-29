@@ -10,11 +10,11 @@ public:
     std::unique_ptr<uint8_t[]> mBuffer;
 
     LLNDAPI TagMemoryChunk(uint8_t data[], size_t size);
-    LLNDAPI TagMemoryChunk(const TagMemoryChunk& a1);
-    LLNDAPI TagMemoryChunk(TagMemoryChunk&& a1) noexcept;
+    LLNDAPI TagMemoryChunk(const TagMemoryChunk&);
+    LLNDAPI TagMemoryChunk(TagMemoryChunk&&) noexcept;
 
-    LLAPI TagMemoryChunk& operator=(const TagMemoryChunk& a1);
-    LLAPI TagMemoryChunk& operator=(TagMemoryChunk&& a1) noexcept;
+    LLAPI TagMemoryChunk& operator=(const TagMemoryChunk&);
+    LLAPI TagMemoryChunk& operator=(TagMemoryChunk&&) noexcept;
 
 public:
     // NOLINTBEGIN

@@ -10,13 +10,20 @@ class Int64Tag : public ::Tag {
 public:
     int64_t data;
 
+    Int64Tag& operator=(int64_t value) {
+        data = value;
+        return *this;
+    }
+
+    operator int64_t() const { return data; }
+
 public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~Int64Tag() = default;
     /**
      * @vftbl 2
      * @symbol ?write\@Int64Tag\@\@UEBAXAEAVIDataOutput\@\@\@Z

@@ -11,13 +11,20 @@ class IntArrayTag : public ::Tag {
 public:
     TagMemoryChunk data;
 
+    IntArrayTag& operator=(TagMemoryChunk const& value) {
+        data = value;
+        return *this;
+    }
+
+    operator TagMemoryChunk() const { return data; }
+
 public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~IntArrayTag() = default;
     /**
      * @vftbl 2
      * @symbol ?write\@IntArrayTag\@\@UEBAXAEAVIDataOutput\@\@\@Z

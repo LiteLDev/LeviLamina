@@ -10,13 +10,20 @@ class FloatTag : public ::Tag {
 public:
     float data;
 
+    FloatTag& operator=(float value) {
+        data = value;
+        return *this;
+    }
+
+    operator float() const { return data; }
+
 public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~FloatTag() = default;
     /**
      * @vftbl 2
      * @symbol ?write\@FloatTag\@\@UEBAXAEAVIDataOutput\@\@\@Z
@@ -52,12 +59,6 @@ public:
      * @symbol ?hash\@FloatTag\@\@UEBA_KXZ
      */
     virtual uint64_t hash() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_FLOATTAG
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~FloatTag();
-#endif
     /**
      * @symbol ??0FloatTag\@\@QEAA\@XZ
      */

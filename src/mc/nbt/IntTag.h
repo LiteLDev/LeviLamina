@@ -10,13 +10,20 @@ class IntTag : public ::Tag {
 public:
     int data;
 
+    IntTag& operator=(int value) {
+        data = value;
+        return *this;
+    }
+
+    operator int() const { return data; }
+
 public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~IntTag() = default;
     /**
      * @vftbl 2
      * @symbol ?write\@IntTag\@\@UEBAXAEAVIDataOutput\@\@\@Z
@@ -52,12 +59,6 @@ public:
      * @symbol ?hash\@IntTag\@\@UEBA_KXZ
      */
     virtual uint64_t hash() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTTAG
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~IntTag();
-#endif
     /**
      * @symbol ??0IntTag\@\@QEAA\@H\@Z
      */

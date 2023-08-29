@@ -59,7 +59,7 @@ BlockSource::cloneActor(Actor const& origin, Vec3 const& pos, std::optional<Auto
 
     if (nbtPos) {
         for (auto i : {0, 1, 2}) {
-            nbtPos[i].as<FloatTag>()->data = pos[i];
+            nbtPos[i].as<FloatTag>() = pos[i];
         }
     }
 

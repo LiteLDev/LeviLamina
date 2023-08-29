@@ -21,6 +21,16 @@ public:
 
     TagMap mTags;
 
+    template <typename T>
+    inline T const* get(std::string_view key) const {
+        return dynamic_cast<T const*>(get(key));
+    };
+
+    template <typename T>
+    inline T* get(std::string_view key) {
+        return dynamic_cast<T*>(get(key));
+    };
+
 public:
     // NOLINTBEGIN
     /**

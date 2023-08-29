@@ -14,6 +14,7 @@
 class Actor;
 class Container;
 class BlockPos;
+class Vec3;
 class ItemStack;
 class Mob;
 

@@ -11,13 +11,20 @@ class ByteArrayTag : public ::Tag {
 public:
     TagMemoryChunk data;
 
+    ByteArrayTag& operator=(TagMemoryChunk const& value) {
+        data = value;
+        return *this;
+    }
+
+    operator TagMemoryChunk() const { return data; }
+
 public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~ByteArrayTag() = default;
     /**
      * @vftbl 2
      * @symbol ?write\@ByteArrayTag\@\@UEBAXAEAVIDataOutput\@\@\@Z

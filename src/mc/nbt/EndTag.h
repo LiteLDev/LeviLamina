@@ -11,9 +11,9 @@ public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~EndTag() = default;
     /**
      * @vftbl 2
      * @symbol ?write\@EndTag\@\@UEBAXAEAVIDataOutput\@\@\@Z

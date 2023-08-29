@@ -10,13 +10,20 @@ class ShortTag : public ::Tag {
 public:
     short data;
 
+    ShortTag& operator=(short value) {
+        data = value;
+        return *this;
+    }
+
+    operator short() const { return data; }
+
 public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~ShortTag() = default;
     /**
      * @vftbl 2
      * @symbol ?write\@ShortTag\@\@UEBAXAEAVIDataOutput\@\@\@Z

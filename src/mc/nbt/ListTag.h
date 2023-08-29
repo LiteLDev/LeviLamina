@@ -13,20 +13,15 @@ public:
     List      mList;
     Tag::Type mType;
 
-    optional_ref<Tag> operator[](size_t index) const {
-        if (mList.size() <= index) {
-            return nullptr;
-        }
-        return mList[index].get();
-    }
+    Tag& operator[](size_t index) const { return *mList[index]; }
 
 public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~ListTag() = default;
     /**
      * @vftbl 1
      * @symbol ?deleteChildren\@ListTag\@\@UEAAXXZ
@@ -73,12 +68,6 @@ public:
      * @symbol ?hash\@ListTag\@\@UEBA_KXZ
      */
     virtual uint64_t hash() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_LISTTAG
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~ListTag();
-#endif
     /**
      * @symbol ??0ListTag\@\@QEAA\@XZ
      */

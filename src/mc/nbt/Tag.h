@@ -24,14 +24,37 @@ public:
         IntArray  = 0xB,
     };
 
+
     template <typename T>
-    optional_ref<T> as() const {
-        return dynamic_cast<T const*>(this);
+    T const* as_ptr() const {
+       return dynamic_cast<T const*>(this);
     }
     template <typename T>
-    optional_ref<T> as() {
-        return dynamic_cast<T*>(this);
+    T* as_ptr() {
+       return dynamic_cast<T*>(this);
     }
+    template <typename T>
+    T const& as() const {
+        auto* res = dynamic_cast<T const*>(this);
+        if(res){
+            return *res;
+        }
+        throw std::runtime_error("Invalid Tag As");
+    }
+    template <typename T>
+    T& as() {
+        auto* res = dynamic_cast<T*>(this);
+        if(res){
+            return *res;
+        }
+        throw std::runtime_error("Invalid Tag As");
+    }
+
+    LLNDAPI Tag&       operator[](size_t index);
+    LLNDAPI Tag const& operator[](size_t index) const;
+
+    LLNDAPI Tag&       operator[](std::string_view index);
+    LLNDAPI Tag const& operator[](std::string_view index) const;
 
 public:
     // prevent constructor by default
@@ -42,9 +65,9 @@ public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~Tag() = default;
     /**
      * @vftbl 1
      * @symbol ?deleteChildren\@Tag\@\@UEAAXXZ
@@ -96,12 +119,6 @@ public:
      * @symbol ?hash\@DoubleTag\@\@UEBA_KXZ
      */
     virtual uint64_t hash() const = 0;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_TAG
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~Tag();
-#endif
     /**
      * @symbol
      * ?getTagName\@Tag\@\@SA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4Type\@1\@\@Z

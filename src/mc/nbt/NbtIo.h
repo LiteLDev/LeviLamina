@@ -5,12 +5,6 @@
 class NbtIo {
 
 public:
-    // prevent constructor by default
-    NbtIo& operator=(NbtIo const&) = delete;
-    NbtIo(NbtIo const&)            = delete;
-    NbtIo()                        = delete;
-
-public:
     // NOLINTBEGIN
     /**
      * @symbol

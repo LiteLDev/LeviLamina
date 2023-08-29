@@ -10,13 +10,20 @@ class DoubleTag : public ::Tag {
 public:
     double data;
 
+    DoubleTag& operator=(double value) {
+        data = value;
+        return *this;
+    }
+
+    operator double() const { return data; }
+
 public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~DoubleTag() = default;
     /**
      * @vftbl 2
      * @symbol ?write\@DoubleTag\@\@UEBAXAEAVIDataOutput\@\@\@Z

@@ -8,15 +8,22 @@
 class ByteTag : public ::Tag {
 
 public:
-    unsigned char data;
+    uint8_t data;
+
+    ByteTag& operator=(uint8_t value) {
+        data = value;
+        return *this;
+    }
+
+    operator uint8_t() const { return data; }
 
 public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~ByteTag() = default;
     /**
      * @vftbl 2
      * @symbol ?write\@ByteTag\@\@UEBAXAEAVIDataOutput\@\@\@Z
@@ -52,16 +59,10 @@ public:
      * @symbol ?hash\@ByteTag\@\@UEBA_KXZ
      */
     virtual uint64_t hash() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BYTETAG
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~ByteTag();
-#endif
     /**
      * @symbol ??0ByteTag\@\@QEAA\@E\@Z
      */
-    MCAPI ByteTag(unsigned char);
+    MCAPI ByteTag(uint8_t);
     /**
      * @symbol ??0ByteTag\@\@QEAA\@XZ
      */

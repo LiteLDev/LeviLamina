@@ -10,13 +10,20 @@ class StringTag : public ::Tag {
 public:
     std::string data;
 
+    StringTag& operator=(std::string const& value) {
+        data = value;
+        return *this;
+    }
+
+    operator std::string() const { return data; }
+
 public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~StringTag() = default;
     /**
      * @vftbl 2
      * @symbol ?write\@StringTag\@\@UEBAXAEAVIDataOutput\@\@\@Z
@@ -52,12 +59,6 @@ public:
      * @symbol ?hash\@StringTag\@\@UEBA_KXZ
      */
     virtual uint64_t hash() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRINGTAG
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~StringTag();
-#endif
     /**
      * @symbol ??0StringTag\@\@QEAA\@XZ
      */
