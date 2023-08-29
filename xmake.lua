@@ -42,7 +42,7 @@ add_requires("symbolprovider v1.0.1")
 if has_config("localbdslibrary") then
     add_requires("localbdslibrary")
 else
-    add_requires("bdslibrary 1.19.63.01")
+    add_requires("bdslibrary 1.20.15.01")
 end
 
 target("LiteLoader")
