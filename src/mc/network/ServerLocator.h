@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/enums/GameType.h"
 #include "mc/network/NetworkEnableDisableListener.h"
 
 class ServerLocator : public ::NetworkEnableDisableListener {

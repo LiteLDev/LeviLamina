@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/BossBarColor.h"
+#include "mc/world/events/BossEventUpdateType.h"
+
 class RaidBossComponent {
 
 public:

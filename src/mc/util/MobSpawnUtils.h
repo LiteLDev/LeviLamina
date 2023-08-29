@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace MobSpawnUtils { enum class SurfaceDetectionType; }
-template<typename T0> class OwnerPtrT;
-// clang-format on
+// auto generated inclusion list
+#include "mc/common/wrapper/OwnerPtrT.h"
+#include "mc/util/SurfaceDetectionType.h"
 
 namespace MobSpawnUtils {
 // NOLINTBEGIN

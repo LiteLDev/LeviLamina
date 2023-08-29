@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/TypedRuntimeId.h"
+#include "mc/world/containers/ActorContainerType.h"
 
 class ContainerWeakRef {
 

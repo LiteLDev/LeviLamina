@@ -2,6 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/Mirror.h"
+#include "mc/enums/Rotation.h"
+
+// auto generated forward declare list
+// clang-format off
+class AABB;
+class BlockPos;
+class BlockSource;
+class BoundingBox;
+class Level;
+class StructureBlockActor;
+class StructureEditorData;
+class StructureTemplate;
+class Vec3;
+// clang-format on
+
 namespace gametest::StructureUtils {
 // NOLINTBEGIN
 /**

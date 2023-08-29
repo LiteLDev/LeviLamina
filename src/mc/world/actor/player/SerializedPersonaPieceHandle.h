@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/services/persona/PieceType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace mce { class UUID; }
-namespace persona { enum class PieceType; }
 // clang-format on
 
 class SerializedPersonaPieceHandle {

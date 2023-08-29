@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/wrapper/OwnerPtrT.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/entity/utilities/ActorType.h"
 
 class ActorFactory {
 

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/entity/utilities/ActorType.h"
 #include "mc/world/AutomaticID.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"

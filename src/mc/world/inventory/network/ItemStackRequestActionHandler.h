@@ -6,6 +6,8 @@
 #include "mc/network/TypedClientNetId.h"
 #include "mc/network/TypedServerNetId.h"
 #include "mc/world/TypedRuntimeId.h"
+#include "mc/world/containers/ContainerEnumName.h"
+#include "mc/world/item/components/ItemStackNetResult.h"
 
 class ItemStackRequestActionHandler {
 public:

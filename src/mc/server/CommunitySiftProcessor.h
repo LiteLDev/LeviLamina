@@ -4,13 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/IAsyncResult.h"
+#include "mc/enums/safety/ChatFloodingAction.h"
+#include "mc/events/TextFilteringEvent.h"
 #include "mc/server/TextFilteringProcessor.h"
+#include "mc/world/events/TextProcessingEventOrigin.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
-namespace Safety { enum class ChatFloodingAction; }
-namespace Safety { enum class TextFilteringEvent; }
 // clang-format on
 
 class CommunitySiftProcessor : public ::TextFilteringProcessor {

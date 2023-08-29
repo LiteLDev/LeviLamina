@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/molang/MolangVersion.h"
+
 class MolangVersionMapping {
 
 public:

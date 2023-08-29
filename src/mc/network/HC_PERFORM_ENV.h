@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/Result.h"
+#include "mc/network/HCWebSocketCloseStatus.h"
+#include "mc/network/XAsyncOp.h"
 #include "mc/network/http_alloc_deleter.h"
 #include "mc/network/http_stl_allocator.h"
 

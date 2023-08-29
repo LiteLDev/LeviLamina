@@ -5,6 +5,8 @@
 // auto generated forward declare list
 // clang-format off
 namespace Puv { class LoadResultAny; }
+namespace Puv { class ParserBase; }
+namespace Puv { class Upgrader; }
 // clang-format on
 
 namespace Puv::internal {

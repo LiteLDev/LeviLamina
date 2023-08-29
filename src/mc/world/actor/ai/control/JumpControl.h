@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/JumpType.h"
 #include "mc/world/actor/ai/control/Control.h"
 
 class JumpControl : public ::Control {

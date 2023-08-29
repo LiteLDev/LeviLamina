@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/InputMode.h"
 #include "mc/world/gamemode/GameMode.h"
 
 class SurvivalMode : public ::GameMode {

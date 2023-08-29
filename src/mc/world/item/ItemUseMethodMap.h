@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/data/BidirectionalUnorderedMap.h"
+#include "mc/world/item/components/ItemUseMethod.h"
 
 class ItemUseMethodMap {
 
@@ -28,6 +29,6 @@ private:
      * @symbol
      * ?mMap\@ItemUseMethodMap\@\@0V?$BidirectionalUnorderedMap\@W4ItemUseMethod\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@\@B
      */
-    MCAPI static class BidirectionalUnorderedMap<enum class ItemUseMethod, std::string> const mMap;
+    MCAPI static class BidirectionalUnorderedMap<::ItemUseMethod, std::string> const mMap;
     // NOLINTEND
 };

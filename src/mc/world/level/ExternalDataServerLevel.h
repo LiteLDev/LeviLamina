@@ -4,6 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/enums/ClientPlayMode.h"
+#include "mc/enums/GameType.h"
+#include "mc/enums/InputMode.h"
 
 struct ExternalDataServerLevel {
 

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/enums/CreativeItemCategory.h"
 
 // auto generated forward declare list
 // clang-format off

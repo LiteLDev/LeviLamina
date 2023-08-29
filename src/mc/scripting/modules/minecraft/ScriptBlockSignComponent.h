@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/SignTextSide.h"
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
 #include "mc/scripting/modules/minecraft/BaseScriptBlockComponent.h"
+#include "mc/world/item/components/ItemColor.h"
 
 // auto generated forward declare list
 // clang-format off
-enum class ItemColor;
-enum class SignTextSide;
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace ScriptModuleMinecraft { struct ScriptRawTextInterface; }
 // clang-format on

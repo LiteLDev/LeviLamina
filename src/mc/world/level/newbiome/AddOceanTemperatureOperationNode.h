@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/biome/BiomeTemperatureCategory.h"
 #include "mc/world/level/newbiome/WorkingData.h"
 
 class AddOceanTemperatureOperationNode {

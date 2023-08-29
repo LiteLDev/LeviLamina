@@ -6,12 +6,16 @@
 #include "mc/common/wrapper/OwnerPtrT.h"
 #include "mc/common/wrapper/optional_ref.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/enums/ParticleType.h"
+#include "mc/enums/SubClientId.h"
+#include "mc/enums/connection/DisconnectFailReason.h"
 #include "mc/services/ServiceReference.h"
+#include "mc/world/actor/player/PlayerPermissionLevel.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Automation { class AutomationClient; }
-namespace Connection { enum class DisconnectFailReason; }
 namespace Social { class MultiplayerServiceManager; }
 namespace mce { class UUID; }
 // clang-format on

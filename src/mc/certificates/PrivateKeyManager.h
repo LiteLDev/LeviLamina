@@ -4,11 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/certificates/KeyManager.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Crypto::Asymmetric { enum class System; }
-// clang-format on
+#include "mc/deps/crypto/asymmetric/System.h"
 
 class PrivateKeyManager : public ::KeyManager {
 

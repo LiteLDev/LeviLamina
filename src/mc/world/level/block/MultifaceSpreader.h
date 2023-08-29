@@ -106,12 +106,12 @@ public:
      * @symbol
      * ?ALL_SPREAD_TYPES\@MultifaceSpreader\@\@2V?$vector\@W4SpreadType\@MultifaceSpreader\@\@V?$allocator\@W4SpreadType\@MultifaceSpreader\@\@\@std\@\@\@std\@\@B
      */
-    MCAPI static std::vector<enum class MultifaceSpreader::SpreadType> const ALL_SPREAD_TYPES;
+    MCAPI static std::vector<::MultifaceSpreader::SpreadType> const ALL_SPREAD_TYPES;
     /**
      * @symbol
      * ?SAME_POSITION_ONLY\@MultifaceSpreader\@\@2V?$vector\@W4SpreadType\@MultifaceSpreader\@\@V?$allocator\@W4SpreadType\@MultifaceSpreader\@\@\@std\@\@\@std\@\@B
      */
-    MCAPI static std::vector<enum class MultifaceSpreader::SpreadType> const SAME_POSITION_ONLY;
+    MCAPI static std::vector<::MultifaceSpreader::SpreadType> const SAME_POSITION_ONLY;
     // NOLINTEND
 
     // protected:

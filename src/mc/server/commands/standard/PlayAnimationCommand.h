@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/molang/MolangVersion.h"
 #include "mc/world/level/Command.h"
 
 class PlayAnimationCommand : public ::Command {
@@ -42,6 +43,6 @@ private:
     /**
      * @symbol ?mStopExpressionVersion\@PlayAnimationCommand\@\@0W4MolangVersion\@\@B
      */
-    MCAPI static enum class MolangVersion const mStopExpressionVersion;
+    MCAPI static ::MolangVersion const mStopExpressionVersion;
     // NOLINTEND
 };

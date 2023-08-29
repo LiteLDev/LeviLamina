@@ -3,7 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/entity/utilities/ActorLocation.h"
+#include "mc/enums/AbilitiesIndex.h"
+#include "mc/enums/SubClientId.h"
 #include "mc/server/commands/CommandOrigin.h"
+#include "mc/server/commands/CommandOriginType.h"
+#include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/world/AutomaticID.h"
 
 // auto generated forward declare list

@@ -3,15 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/network/ERelayServerConfigurationResult.h"
+#include "mc/network/ESendType.h"
 #include "mc/network/INetherNetTransportInterface.h"
 #include "mc/network/IWebRTCSignalingInterface.h"
+#include "mc/network/SignalingHostConnectionStatus.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace NetherNet { class IWebRTCSignalingInterface; }
-namespace NetherNet { enum class ERelayServerConfigurationResult; }
-namespace NetherNet { enum class ESendType; }
-namespace NetherNet { enum class SignalingHostConnectionStatus; }
 namespace NetherNet { struct NetherNetTransportServerConfiguration; }
 namespace NetherNet { struct NetworkID; }
 namespace NetherNet { struct SessionState; }

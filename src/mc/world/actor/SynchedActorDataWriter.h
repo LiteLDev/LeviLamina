@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/utilities/ActorFlags.h"
+
 class SynchedActorDataWriter {
 
 public:

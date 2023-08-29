@@ -4,7 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/optional_ref.h"
+#include "mc/enums/FertilizerType.h"
+#include "mc/enums/Flip.h"
+#include "mc/enums/MaterialType.h"
+#include "mc/enums/TorchFacing.h"
 #include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/utils/BlockProperty.h"
+#include "mc/world/level/block/utils/BlockRenderLayer.h"
+#include "mc/world/level/block/utils/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -320,7 +327,7 @@ private:
     /**
      * @symbol ?DATA_FROM_FACING\@TorchBlock\@\@0QBW4TorchFacing\@\@B
      */
-    MCAPI static enum class TorchFacing const DATA_FROM_FACING[];
+    MCAPI static ::TorchFacing const DATA_FROM_FACING[];
     /**
      * @symbol ?FACING_FROM_DATA\@TorchBlock\@\@0QBGB
      */

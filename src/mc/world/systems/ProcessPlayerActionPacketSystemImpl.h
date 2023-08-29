@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-template<typename T0> class FlagComponent;
-template<typename T0> class Optional;
-// clang-format on
+// auto generated inclusion list
+#include "mc/common/wrapper/Optional.h"
+#include "mc/world/components/FlagComponent.h"
 
 namespace ProcessPlayerActionPacketSystemImpl {
 // NOLINTBEGIN

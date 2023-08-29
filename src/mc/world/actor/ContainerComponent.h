@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/AutomaticID.h"
 #include "mc/world/ContainerContentChangeListener.h"
+#include "mc/world/containers/ContainerType.h"
 
 class ContainerComponent : public ::ContainerContentChangeListener {
 

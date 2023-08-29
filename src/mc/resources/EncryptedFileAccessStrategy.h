@@ -3,9 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/PackAccessAssetGenerationResult.h"
 #include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/resources/DirectoryPackAccessStrategy.h"
+#include "mc/resources/PackAccessStrategyType.h"
 
 // auto generated forward declare list
 // clang-format off

@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/UnzipResult.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
 class IFileAccess;
 namespace Core { class Path; }
-namespace Core::ZipUtils { enum class UnzipResult; }
 // clang-format on
 
 namespace Core {

@@ -5,13 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/LockGuard.h"
 #include "mc/world/level/block/utils/BlockDataFetchResult.h"
+#include "mc/world/level/chunk/PruneType.h"
 #include "mc/world/level/chunk/SubChunkBrightnessStorage.h"
 #include "mc/world/level/chunk/SubChunkStorage.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace SubChunkStorageUnit { enum class PruneType; }
-// clang-format on
 
 struct SubChunk {
 public:

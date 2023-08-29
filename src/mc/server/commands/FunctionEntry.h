@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/FunctionQueueOrder.h"
+#include "mc/enums/FunctionState.h"
 #include "mc/server/commands/functions/IFunctionEntry.h"
 
 class FunctionEntry : public ::IFunctionEntry {

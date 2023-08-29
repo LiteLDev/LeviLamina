@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/systems/ResourceFileSystem.h"
+
 class ResourceUtil {
 
 public:

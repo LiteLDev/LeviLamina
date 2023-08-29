@@ -8,6 +8,7 @@
 #include "mc/deps/core/utility/buffer_span_mut.h"
 #include "mc/world/level/LevelChunkGridAreaElement.h"
 #include "mc/world/level/chunk/ChunkSource.h"
+#include "mc/world/level/chunk/ChunkSourceViewGenerateMode.h"
 
 class ChunkViewSource : public ::ChunkSource {
 

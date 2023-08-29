@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/enums/CreativeItemCategory.h"
 #include "mc/network/TypedServerNetId.h"
 
 class CreativeItemRegistry : public ::Bedrock::EnableNonOwnerReferences {

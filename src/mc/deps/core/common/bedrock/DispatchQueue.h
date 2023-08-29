@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/common/bedrock/AsyncStatus.h"
 #include "mc/deps/core/common/bedrock/DispatcherProcess.h"
 #include "mc/deps/core/common/bedrock/IAsyncResult.h"
 
@@ -11,7 +12,6 @@
 namespace Bedrock::Http { class DispatcherProcess; }
 namespace Bedrock::Http { class Request; }
 namespace Bedrock::Http { class Response; }
-namespace Bedrock::Threading { enum class AsyncStatus; }
 // clang-format on
 
 namespace Bedrock::Http {

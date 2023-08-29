@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/PathBuffer.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
-namespace Core { template<typename T0> class PathBuffer; }
 // clang-format on
 
 namespace PlayerDataSystem {

@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/EquipmentSlot.h"
+#include "mc/world/item/components/ItemLockMode.h"
+
 class ItemContext {
 
 public:

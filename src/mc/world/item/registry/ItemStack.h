@@ -6,6 +6,7 @@
 #include "mc/network/TypedClientNetId.h"
 #include "mc/network/TypedServerNetId.h"
 #include "mc/world/item/ItemStackBase.h"
+#include "mc/world/item/components/ItemUseMethod.h"
 
 class ItemStack : public ::ItemStackBase {
 

@@ -2,8 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/cereal/internal/BasicSchema.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace cereal { class Constraint; }
 namespace cereal { class SerializerContext; }
 namespace cereal { class SerializerEnumMapping; }
 namespace cereal { struct ReflectionCtx; }
@@ -11,6 +15,8 @@ namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
 namespace cereal { struct SerializerTraits; }
 namespace cereal::internal { class BasicSchema; }
+namespace cereal::internal { class UndefinedSchema; }
+namespace cereal::internal { struct ReflectionContext; }
 namespace cereal::internal { struct Result; }
 // clang-format on
 

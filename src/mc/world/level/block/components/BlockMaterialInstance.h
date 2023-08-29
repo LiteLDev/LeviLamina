@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/data/BidirectionalUnorderedMap.h"
+#include "mc/world/level/block/utils/BlockRenderLayer.h"
 
 struct BlockMaterialInstance {
 
@@ -30,12 +31,11 @@ public:
      * @symbol
      * ?blockRenderLayerEnumValues\@BlockMaterialInstance\@\@2V?$initializer_list\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4BlockRenderLayer\@\@\@std\@\@\@std\@\@B
      */
-    MCAPI static std::initializer_list<std::pair<std::string, enum class BlockRenderLayer>> const
-        blockRenderLayerEnumValues;
+    MCAPI static std::initializer_list<std::pair<std::string, ::BlockRenderLayer>> const blockRenderLayerEnumValues;
     /**
      * @symbol
      * ?renderLayerNameBiMap\@BlockMaterialInstance\@\@2V?$BidirectionalUnorderedMap\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4BlockRenderLayer\@\@\@\@B
      */
-    MCAPI static class BidirectionalUnorderedMap<std::string, enum class BlockRenderLayer> const renderLayerNameBiMap;
+    MCAPI static class BidirectionalUnorderedMap<std::string, ::BlockRenderLayer> const renderLayerNameBiMap;
     // NOLINTEND
 };

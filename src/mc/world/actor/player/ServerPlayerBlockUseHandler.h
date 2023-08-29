@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock { template<typename T0> class NonOwnerPointer; }
-namespace ServerPlayerBlockUseHandler { enum class PredictionValidationError; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/world/actor/player/PredictionValidationError.h"
 
 namespace ServerPlayerBlockUseHandler {
 // NOLINTBEGIN

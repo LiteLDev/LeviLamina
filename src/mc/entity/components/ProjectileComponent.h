@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/Difficulty.h"
+#include "mc/enums/ProjectileAnchor.h"
+#include "mc/events/LevelSoundEvent.h"
+
 class ProjectileComponent {
 public:
     // ProjectileComponent inner types define

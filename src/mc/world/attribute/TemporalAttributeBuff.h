@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/AttributeBuffType.h"
 #include "mc/world/attribute/AttributeBuff.h"
 
 class TemporalAttributeBuff : public ::AttributeBuff {

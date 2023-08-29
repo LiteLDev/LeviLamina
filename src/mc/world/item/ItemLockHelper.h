@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/components/ItemLockMode.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }

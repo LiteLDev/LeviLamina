@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/utilities/ActorAnimationType.h"
+#include "mc/enums/SkeletalHierarchyIndex.h"
+
 class ActorAnimationPlayer {
 
 public:

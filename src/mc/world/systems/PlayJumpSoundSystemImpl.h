@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-template<typename T0, typename T1, typename... T2> class ViewT;
-template<typename T0, typename T1> class OptionalComponentWrapper;
-// clang-format on
+// auto generated inclusion list
+#include "mc/common/wrapper/OptionalComponentWrapper.h"
+#include "mc/common/wrapper/ViewT.h"
 
 namespace PlayJumpSoundSystemImpl {
 // NOLINTBEGIN

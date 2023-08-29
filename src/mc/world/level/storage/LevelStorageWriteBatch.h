@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace DBHelpers { enum class Category; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/enums/d_b_helpers/Category.h"
 
 class LevelStorageWriteBatch {
 public:

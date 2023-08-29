@@ -2,10 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-template<typename T0> class optional_ref;
-// clang-format on
+// auto generated inclusion list
+#include "mc/common/wrapper/optional_ref.h"
+#include "mc/entity/utilities/ActorLocation.h"
 
 namespace GetAttachPositionUtility {
 // NOLINTBEGIN

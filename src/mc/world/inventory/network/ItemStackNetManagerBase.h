@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/network/TypedClientNetId.h"
+#include "mc/world/containers/ContainerEnumName.h"
+#include "mc/world/containers/ContainerType.h"
 
 class ItemStackNetManagerBase {
 

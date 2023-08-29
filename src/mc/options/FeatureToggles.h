@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/enums/FeatureOptionID.h"
+#include "mc/enums/FeatureOptionTabID.h"
 
 class FeatureToggles : public ::Bedrock::EnableNonOwnerReferences {
 public:

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/BossBarColor.h"
+#include "mc/enums/BossBarOverlay.h"
+#include "mc/world/events/BossEventUpdateType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace mce { class UUID; }

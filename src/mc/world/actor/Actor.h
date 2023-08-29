@@ -7,8 +7,27 @@
 #include "mc/common/wrapper/StackRefResultT.h"
 #include "mc/common/wrapper/WeakRefT.h"
 #include "mc/common/wrapper/optional_ref.h"
+#include "mc/entity/utilities/ActorCategory.h"
+#include "mc/entity/utilities/ActorDamageCause.h"
+#include "mc/entity/utilities/ActorFlags.h"
+#include "mc/entity/utilities/ActorLocation.h"
 #include "mc/entity/utilities/ActorStatusProvider.h"
+#include "mc/entity/utilities/ActorType.h"
+#include "mc/enums/AnimationComponentGroupType.h"
+#include "mc/enums/ArmorMaterialType.h"
+#include "mc/enums/ArmorSlot.h"
+#include "mc/enums/ArmorTextureType.h"
+#include "mc/enums/EquipmentSlot.h"
+#include "mc/enums/HandSlot.h"
+#include "mc/enums/InputMode.h"
+#include "mc/enums/MaterialType.h"
+#include "mc/enums/NewInteractionModel.h"
+#include "mc/enums/PaletteColor.h"
+#include "mc/events/ActorEvent.h"
+#include "mc/events/LevelSoundEvent.h"
+#include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/world/AutomaticID.h"
+#include "mc/world/item/components/ItemUseMethod.h"
 
 class Actor : public ::ActorStatusProvider {
 public:
@@ -1489,13 +1508,13 @@ public:
      */
     MCAPI void clearFishingHookID();
     /**
-     * @symbol ?closerThan\@Actor\@\@QEBA_NAEBV1\@M\@Z
-     */
-    MCAPI bool closerThan(class Actor const&, float) const;
-    /**
      * @symbol ?closerThan\@Actor\@\@QEBA_NAEBV1\@MM\@Z
      */
     MCAPI bool closerThan(class Actor const&, float, float) const;
+    /**
+     * @symbol ?closerThan\@Actor\@\@QEBA_NAEBV1\@M\@Z
+     */
+    MCAPI bool closerThan(class Actor const&, float) const;
     /**
      * @symbol ?consumeItem\@Actor\@\@QEAAXAEAVItemActor\@\@H\@Z
      */
@@ -1696,13 +1715,13 @@ public:
      */
     MCAPI class MobEffectInstance const* getEffect(unsigned int) const;
     /**
-     * @symbol ?getEntityData\@Actor\@\@QEAAAEAVSynchedActorDataEntityWrapper\@\@XZ
-     */
-    MCAPI class SynchedActorDataEntityWrapper& getEntityData();
-    /**
      * @symbol ?getEntityData\@Actor\@\@QEBAAEBVSynchedActorDataEntityWrapper\@\@XZ
      */
     MCAPI class SynchedActorDataEntityWrapper const& getEntityData() const;
+    /**
+     * @symbol ?getEntityData\@Actor\@\@QEAAAEAVSynchedActorDataEntityWrapper\@\@XZ
+     */
+    MCAPI class SynchedActorDataEntityWrapper& getEntityData();
     /**
      * @symbol ?getEntityRegistry\@Actor\@\@QEAA?AV?$StackRefResultT\@UEntityRegistryRefTraits\@\@\@\@XZ
      */
@@ -1728,13 +1747,13 @@ public:
      */
     MCAPI class Actor* getFirstPassenger() const;
     /**
-     * @symbol ?getHandContainer\@Actor\@\@QEAAAEAVSimpleContainer\@\@XZ
-     */
-    MCAPI class SimpleContainer& getHandContainer();
-    /**
      * @symbol ?getHandContainer\@Actor\@\@QEBAAEBVSimpleContainer\@\@XZ
      */
     MCAPI class SimpleContainer const& getHandContainer() const;
+    /**
+     * @symbol ?getHandContainer\@Actor\@\@QEAAAEAVSimpleContainer\@\@XZ
+     */
+    MCAPI class SimpleContainer& getHandContainer();
     /**
      * @symbol ?getHealth\@Actor\@\@QEBAHXZ
      */
@@ -1796,13 +1815,13 @@ public:
      */
     MCAPI struct ActorUniqueID getLeashHolder() const;
     /**
-     * @symbol ?getLevel\@Actor\@\@QEAAAEAVLevel\@\@XZ
-     */
-    MCAPI class Level& getLevel();
-    /**
      * @symbol ?getLevel\@Actor\@\@QEBAAEBVLevel\@\@XZ
      */
     MCAPI class Level const& getLevel() const;
+    /**
+     * @symbol ?getLevel\@Actor\@\@QEAAAEAVLevel\@\@XZ
+     */
+    MCAPI class Level& getLevel();
     /**
      * @symbol ?getLevelTimeStamp\@Actor\@\@QEBA_KXZ
      */
@@ -1931,13 +1950,13 @@ public:
      */
     MCAPI class Vec2 getSlideOffset() const;
     /**
-     * @symbol ?getSpatialNetworkData\@Actor\@\@QEAAAEAVSpatialActorNetworkData\@\@XZ
-     */
-    MCAPI class SpatialActorNetworkData& getSpatialNetworkData();
-    /**
      * @symbol ?getSpatialNetworkData\@Actor\@\@QEBAAEBVSpatialActorNetworkData\@\@XZ
      */
     MCAPI class SpatialActorNetworkData const& getSpatialNetworkData() const;
+    /**
+     * @symbol ?getSpatialNetworkData\@Actor\@\@QEAAAEAVSpatialActorNetworkData\@\@XZ
+     */
+    MCAPI class SpatialActorNetworkData& getSpatialNetworkData();
     /**
      * @symbol ?getSpeedInMetersPerSecond\@Actor\@\@QEBAMXZ
      */
@@ -2469,10 +2488,6 @@ public:
      */
     MCAPI void playMovementSound();
     /**
-     * @symbol ?playSound\@Actor\@\@QEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@H\@Z
-     */
-    MCAPI void playSound(enum class LevelSoundEvent, class Vec3 const&, int);
-    /**
      * @symbol ?playSound\@Actor\@\@QEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@AEBVBlock\@\@\@Z
      */
     MCAPI void playSound(enum class LevelSoundEvent, class Vec3 const&, class Block const&);
@@ -2480,6 +2495,10 @@ public:
      * @symbol ?playSound\@Actor\@\@QEAAXAEBVIConstBlockSource\@\@W4LevelSoundEvent\@\@AEBVVec3\@\@H\@Z
      */
     MCAPI void playSound(class IConstBlockSource const&, enum class LevelSoundEvent, class Vec3 const&, int);
+    /**
+     * @symbol ?playSound\@Actor\@\@QEAAXW4LevelSoundEvent\@\@AEBVVec3\@\@H\@Z
+     */
+    MCAPI void playSound(enum class LevelSoundEvent, class Vec3 const&, int);
     /**
      * @symbol ?positionAllPassengers\@Actor\@\@QEAAXXZ
      */

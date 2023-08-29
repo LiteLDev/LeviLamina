@@ -3,19 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/levelgen/structure/List.h"
+#include "mc/deps/raknet/ConnectionAttemptResult.h"
+#include "mc/deps/raknet/ConnectionState.h"
+#include "mc/deps/raknet/StartupResult.h"
+#include "mc/deps/raknet/data_structures/List.h"
+#include "mc/resources/PacketPriority.h"
+#include "mc/resources/PacketReliability.h"
 
 // auto generated forward declare list
 // clang-format off
-enum class PacketPriority;
-enum class PacketReliability;
 namespace RakNet { class BitStream; }
 namespace RakNet { class PluginInterface2; }
 namespace RakNet { class RakNetSocket2; }
 namespace RakNet { class RakPeerInterface; }
-namespace RakNet { enum class ConnectionAttemptResult; }
-namespace RakNet { enum class ConnectionState; }
-namespace RakNet { enum class StartupResult; }
 namespace RakNet { struct AddressOrGUID; }
 namespace RakNet { struct NetworkAdapter; }
 namespace RakNet { struct Packet; }

@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace mce { enum class ImageFormat; }
-namespace mce { enum class ImageUsage; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/mce/ImageFormat.h"
+#include "mc/deps/core/mce/ImageUsage.h"
 
 namespace mce {
 

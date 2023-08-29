@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/AutomaticID.h"
+#include "mc/world/level/levelgen/GeneratorType.h"
 
 class LevelChunkMetaDataManager {
 

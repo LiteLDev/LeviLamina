@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/SimpleContainer.h"
+#include "mc/world/containers/ContainerType.h"
 
 class SimplePlayerContainer : public ::SimpleContainer {
 

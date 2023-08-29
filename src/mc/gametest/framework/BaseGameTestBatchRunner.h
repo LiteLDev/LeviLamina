@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/Rotation.h"
+
 // auto generated forward declare list
 // clang-format off
 class TestSummaryDisplayer;
-enum class Rotation;
 namespace gametest { class BaseGameTestFunction; }
 namespace gametest { class BaseGameTestInstance; }
 namespace gametest { class GameTestBatch; }

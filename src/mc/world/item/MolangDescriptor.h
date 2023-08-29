@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/util/molang/MolangVersion.h"
 #include "mc/world/item/ItemDescriptor.h"
 
 // auto generated forward declare list

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/systems/ResourceFileSystem.h"
+
 namespace ResourceLoaders {
 // NOLINTBEGIN
 /**
@@ -37,7 +40,7 @@ MCAPI extern class BackwardsCompatTextureGroup backCompatGroup;
  * @symbol
  * ?loaders\@ResourceLoaders\@\@3V?$map\@W4ResourceFileSystem\@\@V?$unique_ptr\@VResourceLoader\@\@U?$default_delete\@VResourceLoader\@\@\@std\@\@\@std\@\@U?$less\@W4ResourceFileSystem\@\@\@3\@V?$allocator\@U?$pair\@$$CBW4ResourceFileSystem\@\@V?$unique_ptr\@VResourceLoader\@\@U?$default_delete\@VResourceLoader\@\@\@std\@\@\@std\@\@\@std\@\@\@3\@\@std\@\@A
  */
-MCAPI extern std::map<enum class ResourceFileSystem, std::unique_ptr<class ResourceLoader>> loaders;
+MCAPI extern std::map<::ResourceFileSystem, std::unique_ptr<class ResourceLoader>> loaders;
 /**
  * @symbol
  * ?supportedImageExtensions\@ResourceLoaders\@\@3V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@B

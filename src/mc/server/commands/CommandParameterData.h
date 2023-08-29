@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/typeid_t.h"
+#include "mc/server/commands/CommandParameterDataType.h"
+#include "mc/server/commands/CommandParameterOption.h"
 #include "mc/server/commands/CommandRegistry.h"
 
 class CommandParameterData {

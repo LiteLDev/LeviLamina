@@ -3,18 +3,32 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/social/MultiplayerServiceIdentifier.h"
+#include "mc/deps/core/FileAccessType.h"
 #include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/core/StackString.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/enums/ARVRPlatform.h"
+#include "mc/enums/AppFocusState.h"
+#include "mc/enums/AssertDialogResponse.h"
+#include "mc/enums/BuildPlatform.h"
+#include "mc/enums/DeviceSunsetTier.h"
+#include "mc/enums/FullscreenMode.h"
+#include "mc/enums/InputMode.h"
+#include "mc/enums/OperationMode.h"
+#include "mc/enums/OsVersion.h"
+#include "mc/enums/PlatformType.h"
+#include "mc/enums/UIScalingRules.h"
+#include "mc/enums/VRControllerType.h"
+#include "mc/network/NetworkConnectionType.h"
+#include "mc/world/systems/ResourceFileSystem.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock { struct PlatformRuntimeInfo; }
 namespace Core { class FileStorageArea; }
 namespace Core { class Path; }
-namespace Core { enum class FileAccessType; }
 namespace Social { class MultiplayerService; }
-namespace Social { enum class MultiplayerServiceIdentifier; }
 namespace Webview { class PlatformArguments; }
 namespace mce { class UUID; }
 // clang-format on
@@ -151,13 +165,13 @@ public:
     MCVAPI std::shared_ptr<class Core::FileStorageArea>
            createLoggingStorageArea(enum class Core::FileAccessType, class Core::Path const&);
     /**
-     * @symbol ?createUserInput\@AppPlatform\@\@UEAAXXZ
-     */
-    MCVAPI void createUserInput();
-    /**
      * @symbol ?createUserInput\@AppPlatform\@\@UEAAXH\@Z
      */
     MCVAPI void createUserInput(int);
+    /**
+     * @symbol ?createUserInput\@AppPlatform\@\@UEAAXXZ
+     */
+    MCVAPI void createUserInput();
     /**
      * @symbol
      * ?createWebview\@AppPlatform\@\@UEBA?AV?$shared_ptr\@VWebviewInterface\@\@\@std\@\@$$QEAVPlatformArguments\@Webview\@\@\@Z

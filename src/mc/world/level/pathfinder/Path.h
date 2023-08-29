@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/NodeType.h"
+#include "mc/enums/PathCompletionType.h"
+
 class Path {
 public:
     // Path inner types declare

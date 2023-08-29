@@ -2,9 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/LogLevel.h"
+
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock { enum class LogLevel; }
 namespace Bedrock { struct CallStack; }
 // clang-format on
 

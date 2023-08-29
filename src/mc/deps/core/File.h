@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/FileBufferingMode.h"
 #include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/core/StackString.h"
 
@@ -11,7 +12,6 @@
 namespace Core { class FileOpenMode; }
 namespace Core { class Path; }
 namespace Core { class Result; }
-namespace Core { enum class FileBufferingMode; }
 // clang-format on
 
 namespace Core {

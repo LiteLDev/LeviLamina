@@ -2,13 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/external/scripting/ClassBindingBuilder.h"
+#include "mc/external/scripting/InterfaceBindingBuilder.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { struct ScriptActorDataDrivenTriggerEventSignalOptions; }
 namespace ScriptModuleMinecraft { struct ScriptActorEventSignalOptions; }
 namespace Scripting { class ModuleBindingBuilder; }
-namespace Scripting { template<typename T0> class ClassBindingBuilder; }
-namespace Scripting { template<typename T0> class InterfaceBindingBuilder; }
 // clang-format on
 
 namespace ScriptModuleMinecraft::ScriptSignals {

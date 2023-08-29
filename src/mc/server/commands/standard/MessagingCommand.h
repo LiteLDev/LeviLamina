@@ -3,12 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/events/TextFilteringEvent.h"
 #include "mc/server/commands/ServerCommand.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Safety { enum class TextFilteringEvent; }
-// clang-format on
 
 class MessagingCommand : public ::ServerCommand {
 

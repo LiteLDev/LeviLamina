@@ -5,10 +5,15 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/ErrorInfo.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/enums/SubClientId.h"
+#include "mc/enums/TrackerType.h"
+#include "mc/enums/TransportLayer.h"
+#include "mc/enums/connection/DisconnectFailReason.h"
+#include "mc/resources/PacketViolationResponse.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Connection { enum class DisconnectFailReason; }
 namespace RakNet { struct RakNetStatistics; }
 namespace Social { class GameConnectionInfo; }
 // clang-format on

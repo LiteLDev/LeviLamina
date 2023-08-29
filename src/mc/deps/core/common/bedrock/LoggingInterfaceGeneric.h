@@ -4,11 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/LoggingInterface.h"
-
-// auto generated forward declare list
-// clang-format off
-enum class HCTraceLevel;
-// clang-format on
+#include "mc/network/HCTraceLevel.h"
 
 namespace Bedrock::Http {
 

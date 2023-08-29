@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/resources/IInPackagePacks.h"
+#include "mc/resources/PackType.h"
 
 class VanillaInPackagePacks : public ::IInPackagePacks {
 

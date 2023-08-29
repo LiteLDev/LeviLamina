@@ -4,11 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/IResponseBody.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::Http { enum class ResponseBodyType; }
-// clang-format on
+#include "mc/deps/core/common/bedrock/ResponseBodyType.h"
 
 namespace Bedrock::Http {
 

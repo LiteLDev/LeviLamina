@@ -2,12 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/json/CommentPlacement.h"
+#include "mc/deps/json/ValueType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Json { class ValueConstIterator; }
 namespace Json { class ValueIterator; }
-namespace Json { enum class CommentPlacement; }
-namespace Json { enum class ValueType; }
 // clang-format on
 
 namespace Json {

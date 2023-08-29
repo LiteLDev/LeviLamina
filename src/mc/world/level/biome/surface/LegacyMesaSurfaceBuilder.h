@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/world/level/biome/surface/ISurfaceBuilder.h"
+#include "mc/world/level/block/utils/BlockColor.h"
 
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
 class PerlinSimplexNoise;
 class Random;
-enum class BlockColor;
 // clang-format on
 
 namespace VanillaSurfaceBuilders {

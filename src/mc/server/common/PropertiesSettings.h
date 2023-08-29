@@ -2,6 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/ChatRestrictionLevel.h"
+#include "mc/enums/Difficulty.h"
+#include "mc/enums/GameType.h"
+#include "mc/enums/LogLevel.h"
+#include "mc/resources/PacketCompressionAlgorithm.h"
+#include "mc/server/commands/CommandPermissionLevel.h"
+#include "mc/world/actor/player/PlayerPermissionLevel.h"
+
 class PropertiesSettings {
 
 public:

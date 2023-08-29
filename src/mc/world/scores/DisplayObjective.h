@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/ObjectiveSortOrder.h"
+
 class DisplayObjective {
 
 public:

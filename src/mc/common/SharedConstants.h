@@ -2,25 +2,28 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace CodeBuilder { enum class ProtocolVersion; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/codebuilder/ProtocolVersion.h"
+#include "mc/entity/utilities/ActorDigestFormat.h"
+#include "mc/enums/BlendVersion.h"
+#include "mc/enums/StorageVersion.h"
+#include "mc/world/level/LevelChunkFormat.h"
+#include "mc/world/level/chunk/SubChunkFormat.h"
 
 namespace SharedConstants {
 // NOLINTBEGIN
 /**
  * @symbol ?CodeBuilderProtocolVersion\@SharedConstants\@\@3W4ProtocolVersion\@CodeBuilder\@\@B
  */
-MCAPI extern enum class CodeBuilder::ProtocolVersion const CodeBuilderProtocolVersion;
+MCAPI extern ::CodeBuilder::ProtocolVersion const CodeBuilderProtocolVersion;
 /**
  * @symbol ?CurrentActorDigestFormat\@SharedConstants\@\@3W4ActorDigestFormat\@\@B
  */
-MCAPI extern enum class ActorDigestFormat const CurrentActorDigestFormat;
+MCAPI extern ::ActorDigestFormat const CurrentActorDigestFormat;
 /**
  * @symbol ?CurrentBlendVersion\@SharedConstants\@\@3W4BlendVersion\@\@B
  */
-MCAPI extern enum class BlendVersion const CurrentBlendVersion;
+MCAPI extern ::BlendVersion const CurrentBlendVersion;
 /**
  * @symbol ?CurrentGameSemVersion\@SharedConstants\@\@3VSemVersion\@\@B
  */
@@ -28,15 +31,15 @@ MCAPI extern class SemVersion const CurrentGameSemVersion;
 /**
  * @symbol ?CurrentLevelChunkFormat\@SharedConstants\@\@3W4LevelChunkFormat\@\@B
  */
-MCAPI extern enum class LevelChunkFormat const CurrentLevelChunkFormat;
+MCAPI extern ::LevelChunkFormat const CurrentLevelChunkFormat;
 /**
  * @symbol ?CurrentStorageVersion\@SharedConstants\@\@3W4StorageVersion\@\@B
  */
-MCAPI extern enum class StorageVersion const CurrentStorageVersion;
+MCAPI extern ::StorageVersion const CurrentStorageVersion;
 /**
  * @symbol ?CurrentSubChunkFormat\@SharedConstants\@\@3W4SubChunkFormat\@\@B
  */
-MCAPI extern enum class SubChunkFormat const CurrentSubChunkFormat;
+MCAPI extern ::SubChunkFormat const CurrentSubChunkFormat;
 /**
  * @symbol ?DevInitiallyMuteMusic\@SharedConstants\@\@3_NB
  */

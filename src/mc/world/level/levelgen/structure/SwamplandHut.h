@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/ScatteredFeaturePiece.h"
+#include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
 class SwamplandHut : public ::ScatteredFeaturePiece {
 

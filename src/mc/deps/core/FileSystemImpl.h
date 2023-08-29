@@ -3,7 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/CrossStorageCopyMode.h"
+#include "mc/deps/core/DirectoryIterationFlags.h"
+#include "mc/deps/core/FileAccessType.h"
+#include "mc/deps/core/FileBufferingMode.h"
+#include "mc/deps/core/FileType.h"
 #include "mc/deps/core/PathBuffer.h"
+#include "mc/deps/core/TransactionFlags.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,12 +20,6 @@ namespace Core { class FileStorageArea; }
 namespace Core { class FlatFileManifestTracker; }
 namespace Core { class Path; }
 namespace Core { class Result; }
-namespace Core { enum class CrossStorageCopyMode; }
-namespace Core { enum class DirectoryIterationFlags; }
-namespace Core { enum class FileAccessType; }
-namespace Core { enum class FileBufferingMode; }
-namespace Core { enum class FileType; }
-namespace Core { enum class TransactionFlags; }
 namespace Core { struct DirectoryIterationItem; }
 namespace Core { struct ExcludedPath; }
 namespace Core { struct PendingWrite; }

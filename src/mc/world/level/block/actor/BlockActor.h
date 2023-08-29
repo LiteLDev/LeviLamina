@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/block/utils/BlockActorType.h"
+
 class BlockActor {
 
 public:
@@ -374,11 +377,11 @@ private:
      * @symbol
      * ?mClassIdMap\@BlockActor\@\@0V?$map\@W4BlockActorType\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@U?$less\@W4BlockActorType\@\@\@3\@V?$allocator\@U?$pair\@$$CBW4BlockActorType\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@std\@\@\@3\@\@std\@\@B
      */
-    MCAPI static std::map<enum class BlockActorType, std::string> const mClassIdMap;
+    MCAPI static std::map<::BlockActorType, std::string> const mClassIdMap;
     /**
      * @symbol
      * ?mIdClassMap\@BlockActor\@\@0V?$map\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4BlockActorType\@\@U?$less\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@V?$allocator\@U?$pair\@$$CBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4BlockActorType\@\@\@std\@\@\@2\@\@std\@\@B
      */
-    MCAPI static std::map<std::string, enum class BlockActorType> const mIdClassMap;
+    MCAPI static std::map<std::string, ::BlockActorType> const mIdClassMap;
     // NOLINTEND
 };

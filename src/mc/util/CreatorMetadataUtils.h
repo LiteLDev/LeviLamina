@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/AllExperiments.h"
+#include "mc/external/scripting/Privilege.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
 namespace Json { class Value; }
 namespace Scripting { class ScriptEngine; }
-namespace Scripting { enum class Privilege; }
 namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ModuleBindingBundle; }
 namespace Scripting { struct SupportedBindingModule; }

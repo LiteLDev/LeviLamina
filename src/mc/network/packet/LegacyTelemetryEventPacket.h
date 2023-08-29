@@ -4,9 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/entity/utilities/ActorDamageCause.h"
+#include "mc/entity/utilities/ActorType.h"
+#include "mc/enums/MinecraftPacketIds.h"
 #include "mc/events/MinecraftEventing.h"
 #include "mc/network/packet/Packet.h"
 #include "mc/world/AutomaticID.h"
+#include "mc/world/events/MovementEventType.h"
 
 class LegacyTelemetryEventPacket : public ::Packet {
 public:

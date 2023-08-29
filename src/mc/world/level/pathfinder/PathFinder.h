@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/CanClimbIntoNode.h"
+#include "mc/enums/CanJumpIntoNode.h"
+#include "mc/enums/NodeType.h"
+#include "mc/enums/PathCompletionType.h"
+#include "mc/world/level/block/utils/BlockProperty.h"
+
 class PathFinder {
 public:
     // PathFinder inner types define

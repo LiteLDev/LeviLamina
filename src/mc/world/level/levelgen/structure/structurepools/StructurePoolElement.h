@@ -4,6 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/enums/PostProcessSettings.h"
+#include "mc/enums/Projection.h"
+#include "mc/enums/Rotation.h"
 
 class StructurePoolElement {
 public:

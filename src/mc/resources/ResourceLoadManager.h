@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/resources/ResourceLoadType.h"
 
 class ResourceLoadManager : public ::Bedrock::EnableNonOwnerReferences {
 

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/deps/core/data/BidirectionalUnorderedMap.h"
+#include "mc/world/item/components/ItemStackRequestActionType.h"
 
 class ItemStackRequestAction {
 
@@ -80,7 +81,6 @@ private:
      * @symbol
      * ?actionTypeMap\@ItemStackRequestAction\@\@0V?$BidirectionalUnorderedMap\@W4ItemStackRequestActionType\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@\@B
      */
-    MCAPI static class BidirectionalUnorderedMap<enum class ItemStackRequestActionType, std::string> const
-        actionTypeMap;
+    MCAPI static class BidirectionalUnorderedMap<::ItemStackRequestActionType, std::string> const actionTypeMap;
     // NOLINTEND
 };

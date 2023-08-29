@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/wrapper/ResultCode.h"
+
 // auto generated forward declare list
 // clang-format off
 class PositionTrackingId;
 namespace PositionTrackingDB { class TrackingRecord; }
-namespace PositionTrackingDB { enum class ResultCode; }
 // clang-format on
 
 namespace PositionTrackingDB {

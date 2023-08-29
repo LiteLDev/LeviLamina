@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/enums/EducationEditionOffer.h"
 #include "mc/options/AppConfigs.h"
 
 class VanillaAppConfigs : public ::AppConfigs {

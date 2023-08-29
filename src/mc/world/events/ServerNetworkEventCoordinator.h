@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/CoordinatorResult.h"
 #include "mc/events/MutableServerNetworkGameplayEvent.h"
 #include "mc/world/events/EventRef.h"
 

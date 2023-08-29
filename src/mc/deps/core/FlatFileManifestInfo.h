@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/FileType.h"
 #include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/core/common/bedrock/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class ReadOnlyBinaryStream;
-namespace Core { enum class FileType; }
 // clang-format on
 
 namespace Core {

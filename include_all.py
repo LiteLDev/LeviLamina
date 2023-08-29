@@ -10,12 +10,14 @@ def find_file(path):
 
 
 TEMPLATE = """
+// clang-format off
 #ifndef __INCLUDE_ALL_H__
 #define __INCLUDE_ALL_H__
 
 {0}
 
 #endif
+// clang-format on
 """
 
 if __name__ == "__main__":

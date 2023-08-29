@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/Rotation.h"
 #include "mc/world/AutomaticID.h"
 
 // auto generated forward declare list
@@ -13,7 +14,6 @@ class BoundingBox;
 class Dimension;
 class Vec3;
 class WeakEntityRef;
-enum class Rotation;
 namespace gametest { class BaseGameTestFunction; }
 namespace gametest { class GameTestSequence; }
 namespace gametest { class IGameTestHelperProvider; }

@@ -2,12 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Crypto::Asymmetric { enum class Padding; }
-namespace Crypto::Asymmetric { enum class PubKeyFormat; }
-namespace Crypto::Hash { enum class HashType; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/crypto/asymmetric/Padding.h"
+#include "mc/deps/crypto/asymmetric/PubKeyFormat.h"
+#include "mc/deps/crypto/hash/HashType.h"
 
 namespace Crypto::Asymmetric {
 

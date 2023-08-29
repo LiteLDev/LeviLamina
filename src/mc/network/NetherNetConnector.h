@@ -4,14 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/network/Connector.h"
+#include "mc/network/ERelayServerConfigurationResult.h"
+#include "mc/network/ESendType.h"
+#include "mc/network/ESessionError.h"
 #include "mc/network/IWebRTCSignalingInterface.h"
+#include "mc/network/SignalingHostConnectionStatus.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace NetherNet { enum class ERelayServerConfigurationResult; }
-namespace NetherNet { enum class ESendType; }
-namespace NetherNet { enum class ESessionError; }
-namespace NetherNet { enum class SignalingHostConnectionStatus; }
 namespace NetherNet { struct NetworkID; }
 namespace NetherNet { struct SessionState; }
 namespace Social { class GameConnectionInfo; }

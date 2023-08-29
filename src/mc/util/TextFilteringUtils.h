@@ -2,10 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Safety { enum class TextFilteringEvent; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/enums/SubClientId.h"
+#include "mc/events/TextFilteringEvent.h"
 
 class TextFilteringUtils {
 

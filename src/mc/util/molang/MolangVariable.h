@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/molang/MolangVariableIndex.h"
+
 class MolangVariable {
 
 public:
@@ -60,22 +63,21 @@ private:
      * @symbol
      * ?mIndexToVariableNameMap\@MolangVariable\@\@0V?$unordered_map\@W4MolangVariableIndex\@\@VHashedString\@\@U?$hash\@W4MolangVariableIndex\@\@\@std\@\@U?$equal_to\@W4MolangVariableIndex\@\@\@4\@V?$allocator\@U?$pair\@$$CBW4MolangVariableIndex\@\@VHashedString\@\@\@std\@\@\@4\@\@std\@\@A
      */
-    MCAPI static std::unordered_map<enum class MolangVariableIndex, class HashedString> mIndexToVariableNameMap;
+    MCAPI static std::unordered_map<::MolangVariableIndex, class HashedString> mIndexToVariableNameMap;
     /**
      * @symbol
      * ?mIndexToVariableNameMap_LowWaterMark\@MolangVariable\@\@0V?$unordered_map\@W4MolangVariableIndex\@\@VHashedString\@\@U?$hash\@W4MolangVariableIndex\@\@\@std\@\@U?$equal_to\@W4MolangVariableIndex\@\@\@4\@V?$allocator\@U?$pair\@$$CBW4MolangVariableIndex\@\@VHashedString\@\@\@std\@\@\@4\@\@std\@\@A
      */
-    MCAPI static std::unordered_map<enum class MolangVariableIndex, class HashedString>
-        mIndexToVariableNameMap_LowWaterMark;
+    MCAPI static std::unordered_map<::MolangVariableIndex, class HashedString> mIndexToVariableNameMap_LowWaterMark;
     /**
      * @symbol
      * ?mVariableNameToIndexMap\@MolangVariable\@\@0V?$unordered_map\@_KW4MolangVariableIndex\@\@U?$hash\@_K\@std\@\@U?$equal_to\@_K\@3\@V?$allocator\@U?$pair\@$$CB_KW4MolangVariableIndex\@\@\@std\@\@\@3\@\@std\@\@A
      */
-    MCAPI static std::unordered_map<uint64_t, enum class MolangVariableIndex> mVariableNameToIndexMap;
+    MCAPI static std::unordered_map<uint64_t, ::MolangVariableIndex> mVariableNameToIndexMap;
     /**
      * @symbol
      * ?mVariableNameToIndexMap_LowWaterMark\@MolangVariable\@\@0V?$unordered_map\@_KW4MolangVariableIndex\@\@U?$hash\@_K\@std\@\@U?$equal_to\@_K\@3\@V?$allocator\@U?$pair\@$$CB_KW4MolangVariableIndex\@\@\@std\@\@\@3\@\@std\@\@A
      */
-    MCAPI static std::unordered_map<uint64_t, enum class MolangVariableIndex> mVariableNameToIndexMap_LowWaterMark;
+    MCAPI static std::unordered_map<uint64_t, ::MolangVariableIndex> mVariableNameToIndexMap_LowWaterMark;
     // NOLINTEND
 };

@@ -2,15 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/codebuilder/EncryptionCipherMode.h"
+#include "mc/common/wrapper/WSConnectionResult.h"
+#include "mc/enums/CloseStatusCode.h"
+
 // auto generated forward declare list
 // clang-format off
 class CommandOrigin;
 class RakWebSocketDataFrame;
-enum class CloseStatusCode;
-enum class WSConnectionResult;
 namespace Automation { class AutomationClient; }
 namespace CodeBuilder { class GameContext; }
-namespace CodeBuilder { enum class EncryptionCipherMode; }
 namespace CodeBuilder { struct ChatMessage; }
 namespace CodeBuilder { struct ChatSubscription; }
 namespace CodeBuilder { struct CommandRequest; }

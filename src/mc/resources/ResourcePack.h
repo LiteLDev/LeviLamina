@@ -5,6 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/resources/PackCategory.h"
+#include "mc/resources/PackOrigin.h"
+#include "mc/resources/PackType.h"
 
 // auto generated forward declare list
 // clang-format off

@@ -2,12 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/utilities/ActorLocation.h"
+
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
 class IBlockSource;
 class Vec3;
-enum class ActorLocation;
 struct ActorUniqueID;
 // clang-format on
 

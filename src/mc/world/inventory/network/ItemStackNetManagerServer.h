@@ -5,6 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/network/TypedClientNetId.h"
+#include "mc/world/containers/ContainerEnumName.h"
+#include "mc/world/containers/ContainerType.h"
+#include "mc/world/events/TextProcessingEventOrigin.h"
 #include "mc/world/inventory/network/ItemStackNetManagerBase.h"
 
 class ItemStackNetManagerServer : public ::ItemStackNetManagerBase {

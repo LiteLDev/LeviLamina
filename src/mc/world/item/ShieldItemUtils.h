@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/utilities/ActorDamageCause.h"
+
 class ShieldItemUtils {
 
 public:
@@ -24,6 +27,6 @@ private:
      * @symbol
      * ?mAlwaysBlockableDamageCauses\@ShieldItemUtils\@\@0V?$vector\@W4ActorDamageCause\@\@V?$allocator\@W4ActorDamageCause\@\@\@std\@\@\@std\@\@B
      */
-    MCAPI static std::vector<enum class ActorDamageCause> const mAlwaysBlockableDamageCauses;
+    MCAPI static std::vector<::ActorDamageCause> const mAlwaysBlockableDamageCauses;
     // NOLINTEND
 };

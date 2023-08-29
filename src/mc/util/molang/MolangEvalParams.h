@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/ThreadLocalObject.h"
+#include "mc/util/molang/MolangVariableIndex.h"
 
 struct MolangEvalParams {
 

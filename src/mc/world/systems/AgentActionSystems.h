@@ -2,14 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/EntityModifierT.h"
+#include "mc/world/components/FlagComponent.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace AgentComponents { class CommandCooldown; }
 namespace AgentComponents { struct ActionDetails; }
 namespace AgentComponents { struct AnimationShrugFlag; }
 namespace AgentComponents { struct ExecutingFlag; }
-template<typename T0, typename T1, typename... T2> class EntityModifierT;
-template<typename T0> class FlagComponent;
 // clang-format on
 
 namespace AgentActionSystems {

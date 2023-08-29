@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Bedrock::Threading::Burst::Details { template<typename T0> struct WorkerTaskStats; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/WorkerTaskStats.h"
 
 namespace Bedrock::Threading::Burst::Details {
 // NOLINTBEGIN

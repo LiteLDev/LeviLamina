@@ -6,7 +6,9 @@
 #include "mc/common/wrapper/OwnerPtrT.h"
 #include "mc/common/wrapper/SharePtrRefTraits.h"
 #include "mc/common/wrapper/WeakRefT.h"
+#include "mc/enums/LimboEntitiesVersion.h"
 #include "mc/world/AutomaticID.h"
+#include "mc/world/level/block/utils/BlockChangedEventTarget.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -542,7 +544,7 @@ public:
     /**
      * @symbol ?CurrentLimboEntitiesVersion\@Dimension\@\@2W4LimboEntitiesVersion\@\@B
      */
-    MCAPI static enum class LimboEntitiesVersion const CurrentLimboEntitiesVersion;
+    MCAPI static ::LimboEntitiesVersion const CurrentLimboEntitiesVersion;
     /**
      * @symbol ?LOW_CPU_PACKET_BLOCK_LIMIT\@Dimension\@\@2IB
      */

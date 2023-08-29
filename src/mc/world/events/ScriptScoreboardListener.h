@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/WeakTypedObjectHandle.h"
+#include "mc/world/events/EventResult.h"
 #include "mc/world/events/ScoreboardEventListener.h"
 
 // auto generated forward declare list
 // clang-format off
-enum class EventResult;
 namespace ScriptModuleMinecraft { class ScriptScoreboard; }
 struct ScoreboardId;
 // clang-format on

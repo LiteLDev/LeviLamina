@@ -5,11 +5,7 @@
 // auto generated inclusion list
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/EnumBindingBuilder.h"
-
-// auto generated forward declare list
-// clang-format off
-enum class CompoundBlockVolumeAction;
-// clang-format on
+#include "mc/world/level/block/utils/CompoundBlockVolumeAction.h"
 
 namespace ScriptModuleMinecraft {
 

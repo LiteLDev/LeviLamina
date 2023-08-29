@@ -4,8 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/optional_ref.h"
+#include "mc/enums/CauldronLiquidType.h"
+#include "mc/enums/FertilizerType.h"
+#include "mc/enums/Flip.h"
+#include "mc/enums/MaterialType.h"
+#include "mc/events/LevelEvent.h"
 #include "mc/events/MinecraftEventing.h"
 #include "mc/world/level/block/ActorBlock.h"
+#include "mc/world/level/block/utils/BlockProperty.h"
+#include "mc/world/level/block/utils/BlockRenderLayer.h"
+#include "mc/world/level/block/utils/BlockSupportType.h"
 
 // auto generated forward declare list
 // clang-format off

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/events/LevelSoundEvent.h"
 #include "mc/world/AutomaticID.h"
 
 // auto generated forward declare list

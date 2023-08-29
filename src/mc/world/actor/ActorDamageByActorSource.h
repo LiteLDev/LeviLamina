@@ -3,6 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/entity/utilities/ActorCategory.h"
+#include "mc/entity/utilities/ActorDamageCause.h"
+#include "mc/entity/utilities/ActorType.h"
 #include "mc/world/actor/ActorDamageSource.h"
 
 class ActorDamageByActorSource : public ::ActorDamageSource {

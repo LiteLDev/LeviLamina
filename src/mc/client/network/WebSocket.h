@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/network/HCWebSocketCloseStatus.h"
+#include "mc/network/XAsyncOp.h"
 #include "mc/network/http_stl_allocator.h"
 
 // auto generated forward declare list
 // clang-format off
-enum class HCWebSocketCloseStatus;
-enum class XAsyncOp;
 namespace xbox::httpclient { struct HeaderCompare; }
 struct HC_WEBSOCKET_OBSERVER;
 struct XAsyncBlock;

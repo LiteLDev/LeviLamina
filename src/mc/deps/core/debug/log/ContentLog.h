@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/LogArea.h"
+#include "mc/enums/LogAreaID.h"
+#include "mc/enums/LogLevel.h"
+
 class ContentLog {
 public:
     // ContentLog inner types declare

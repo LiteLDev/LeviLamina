@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/AnimationMode.h"
+#include "mc/enums/Mirror.h"
+#include "mc/enums/Rotation.h"
+#include "mc/world/level/levelgen/structure/StructureBlockType.h"
+#include "mc/world/level/levelgen/structure/StructureRedstoneSaveMode.h"
+
 class StructureEditorData {
 
 public:
@@ -214,6 +221,6 @@ private:
     /**
      * @symbol ?DEFAULT_STRUCTURE_TYPE\@StructureEditorData\@\@0W4StructureBlockType\@\@B
      */
-    MCAPI static enum class StructureBlockType const DEFAULT_STRUCTURE_TYPE;
+    MCAPI static ::StructureBlockType const DEFAULT_STRUCTURE_TYPE;
     // NOLINTEND
 };

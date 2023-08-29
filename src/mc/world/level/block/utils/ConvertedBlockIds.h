@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+// clang-format on
+
 namespace BlockTraitConversionUtils::ConvertedBlockIds {
 // NOLINTBEGIN
 /**

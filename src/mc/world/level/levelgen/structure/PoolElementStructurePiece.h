@@ -3,7 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/AdjustmentEffect.h"
+#include "mc/enums/Rotation.h"
 #include "mc/world/level/levelgen/structure/StructurePiece.h"
+#include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
 class PoolElementStructurePiece : public ::StructurePiece {
 

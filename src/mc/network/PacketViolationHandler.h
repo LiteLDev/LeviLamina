@@ -4,7 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/ErrorInfo.h"
+#include "mc/enums/MinecraftPacketIds.h"
 #include "mc/external/nonstd/expected.h"
+#include "mc/resources/PacketViolationResponse.h"
 
 class PacketViolationHandler {
 public:

@@ -6,6 +6,9 @@
 #include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/core/common/bedrock/IAsyncResult.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/enums/CompactionStatus.h"
+#include "mc/enums/StorageVersion.h"
+#include "mc/enums/d_b_helpers/Category.h"
 #include "mc/world/level/storage/LevelStorage.h"
 #include "mc/world/level/storage/LevelStorageWriteBatch.h"
 
@@ -13,7 +16,6 @@
 // clang-format off
 namespace Core { class Path; }
 namespace Core { struct LevelStorageResult; }
-namespace DBHelpers { enum class Category; }
 // clang-format on
 
 class DBStorage : public ::LevelStorage {

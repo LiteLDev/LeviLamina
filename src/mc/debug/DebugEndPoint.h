@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/debug/log/ContentLogEndPoint.h"
+#include "mc/enums/LogArea.h"
+#include "mc/enums/LogLevel.h"
 #include "mc/resources/ResourcePackListener.h"
 
 // auto generated forward declare list
@@ -124,6 +126,6 @@ private:
      * @symbol
      * ?mAssertAreas\@DebugEndPoint\@\@0V?$unordered_map\@W4LogArea\@\@_NU?$hash\@W4LogArea\@\@\@std\@\@U?$equal_to\@W4LogArea\@\@\@3\@V?$allocator\@U?$pair\@$$CBW4LogArea\@\@_N\@std\@\@\@3\@\@std\@\@B
      */
-    MCAPI static std::unordered_map<enum class LogArea, bool> const mAssertAreas;
+    MCAPI static std::unordered_map<::LogArea, bool> const mAssertAreas;
     // NOLINTEND
 };

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/ThermalState.h"
 #include "mc/platform/thermal/ThermalMonitorInterface.h"
 
 class FakeThermalMonitorInterface : public ::ThermalMonitorInterface {

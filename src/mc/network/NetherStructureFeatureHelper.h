@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/levelgen/structure/StructureFeatureType.h"
+
 namespace NetherStructureFeatureHelper {
 // NOLINTBEGIN
 /**

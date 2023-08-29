@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/CircuitComponentType.h"
+
 class CircuitSceneGraph {
 public:
     // CircuitSceneGraph inner types declare

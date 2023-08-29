@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/SchemaReader.h"
+#include "mc/deps/cereal/SchemaReaderState.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { enum class SchemaReaderState; }
 namespace cereal { struct SerializerTraits; }
 // clang-format on
 

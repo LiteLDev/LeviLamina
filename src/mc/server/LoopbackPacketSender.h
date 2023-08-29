@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/common/wrapper/OwnerPtrT.h"
+#include "mc/enums/SubClientId.h"
 #include "mc/network/PacketSender.h"
 
 class LoopbackPacketSender : public ::PacketSender {

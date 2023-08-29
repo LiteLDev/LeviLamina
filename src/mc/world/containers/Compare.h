@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class AttributeInstance;
+class DataItem;
+class MobEffectInstance;
+// clang-format on
+
 namespace ActorContainerDiffHelperImpl::Compare {
 // NOLINTBEGIN
 /**

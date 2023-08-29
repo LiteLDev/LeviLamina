@@ -6,6 +6,7 @@
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
+#include "mc/scripting/modules/minecraft/ScriptDisplayObjectiveSlotId.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,7 +19,6 @@ namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardIdentity; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardObjective; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardObjectiveDisplayOptions; }
-namespace ScriptModuleMinecraft { enum class ScriptDisplayObjectiveSlotId; }
 namespace Scripting { class WeakLifetimeScope; }
 struct ScoreboardId;
 // clang-format on

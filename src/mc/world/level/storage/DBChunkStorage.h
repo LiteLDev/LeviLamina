@@ -4,7 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/ThreadLocalObject.h"
+#include "mc/entity/utilities/ActorDigestFormat.h"
 #include "mc/world/AutomaticID.h"
+#include "mc/world/level/LevelChunkFormat.h"
 #include "mc/world/level/chunk/ChunkSource.h"
 #include "mc/world/level/chunk/LevelChunk.h"
 #include "mc/world/level/storage/ConsoleChunkBlender.h"

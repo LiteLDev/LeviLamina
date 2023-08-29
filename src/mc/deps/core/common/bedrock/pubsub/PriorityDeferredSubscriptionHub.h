@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/common/bedrock/pubsub/ConnectPosition.h"
 #include "mc/deps/core/common/bedrock/pubsub/DeferredSubscriptionHub.h"
 #include "mc/deps/core/common/bedrock/pubsub/DeferredSubscriptionHubBase.h"
 
@@ -10,7 +11,6 @@
 // clang-format off
 namespace Bedrock::PubSub { class DeferredSubscription; }
 namespace Bedrock::PubSub { class RawSubscription; }
-namespace Bedrock::PubSub { enum class ConnectPosition; }
 // clang-format on
 
 namespace Bedrock::PubSub {

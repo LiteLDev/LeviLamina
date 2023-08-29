@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/world/events/EventResult.h"
 
 class ServerInstanceEventListener {
 

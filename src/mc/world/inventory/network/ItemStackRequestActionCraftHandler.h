@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/components/ItemStackNetResult.h"
+#include "mc/world/item/components/ItemStackRequestActionType.h"
+
 class ItemStackRequestActionCraftHandler {
 
 public:

@@ -96,6 +96,6 @@ private:
      * @symbol
      * ?VALID_ENCHANTMENTS\@MeleeWeaponEnchant\@\@0V?$vector\@W4Type\@Enchant\@\@V?$allocator\@W4Type\@Enchant\@\@\@std\@\@\@std\@\@B
      */
-    MCAPI static std::vector<enum class Enchant::Type> const VALID_ENCHANTMENTS;
+    MCAPI static std::vector<::Enchant::Type> const VALID_ENCHANTMENTS;
     // NOLINTEND
 };

@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/config/IPlayerData.h"
+#include "mc/enums/AbilitiesIndex.h"
 
 // auto generated forward declare list
 // clang-format off
 class Player;
-enum class AbilitiesIndex;
 // clang-format on
 
 namespace PlayerCapabilities {

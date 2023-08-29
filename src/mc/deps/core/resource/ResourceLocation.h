@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
+#include "mc/world/systems/ResourceFileSystem.h"
 
 // auto generated forward declare list
 // clang-format off

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/events/gameevents/GameEventListener.h"
+#include "mc/world/level/block/utils/BlockActorType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -66,7 +67,7 @@ public:
     /**
      * @symbol ?TypeId\@SculkCatalystBlockActor\@\@2W4BlockActorType\@\@B
      */
-    MCAPI static enum class BlockActorType const TypeId;
+    MCAPI static ::BlockActorType const TypeId;
     /**
      * @symbol
      * ?TypeString\@SculkCatalystBlockActor\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B

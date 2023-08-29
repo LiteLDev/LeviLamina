@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/DirectoryIterationFlags.h"
+#include "mc/deps/core/FileBufferingMode.h"
 #include "mc/deps/core/PathBuffer.h"
 
 // auto generated forward declare list
@@ -14,8 +16,6 @@ namespace Core { class FlatFileManifestTracker; }
 namespace Core { class FlatFileSearchResult; }
 namespace Core { class Path; }
 namespace Core { class Result; }
-namespace Core { enum class DirectoryIterationFlags; }
-namespace Core { enum class FileBufferingMode; }
 namespace Core { struct DirectoryIterationItem; }
 namespace Core { struct ExcludedPath; }
 // clang-format on

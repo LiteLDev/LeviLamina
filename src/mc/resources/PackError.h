@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/resources/PackErrorType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }

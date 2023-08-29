@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/FilterParamOption.h"
+#include "mc/enums/FilterParamRequirement.h"
+#include "mc/enums/FilterParamType.h"
+
 struct FilterParamDefinition {
 
 public:

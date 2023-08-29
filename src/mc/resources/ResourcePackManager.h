@@ -6,6 +6,7 @@
 #include "mc/deps/core/PathBuffer.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/deps/core/resource/ResourceLoader.h"
+#include "mc/resources/ResourcePackStackType.h"
 
 // auto generated forward declare list
 // clang-format off

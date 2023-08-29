@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace glm { template<int T0, typename T1, int T2> struct vec; }
-// clang-format on
+// auto generated inclusion list
+#include "mc/external/glm/vec.h"
 
 namespace glm::vec3_const {
 // NOLINTBEGIN

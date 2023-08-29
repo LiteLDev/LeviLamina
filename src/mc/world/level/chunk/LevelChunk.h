@@ -6,8 +6,16 @@
 #include "mc/deps/core/common/bedrock/UniqueLock.h"
 #include "mc/deps/core/utility/buffer_span.h"
 #include "mc/deps/core/utility/buffer_span_mut.h"
+#include "mc/entity/utilities/ActorType.h"
+#include "mc/enums/HardcodedSpawnAreaType.h"
 #include "mc/network/packet/SubChunkPacket.h"
+#include "mc/world/level/LevelChunkFormat.h"
+#include "mc/world/level/LevelChunkNeighbor.h"
+#include "mc/world/level/LevelChunkTag.h"
 #include "mc/world/level/block/utils/VolumeOf.h"
+#include "mc/world/level/chunk/ChunkState.h"
+#include "mc/world/level/chunk/ChunkTerrainDataState.h"
+#include "mc/world/level/chunk/SubChunkInitMode.h"
 #include "mc/world/level/chunk/SubChunkStorage.h"
 
 class LevelChunk {
@@ -67,7 +75,7 @@ public:
          * @symbol
          * ?sOffsetMap\@Neighbors\@LevelChunk\@\@2V?$array\@U?$pair\@W4LevelChunkNeighbor\@\@VChunkPos\@\@\@std\@\@$07\@std\@\@B
          */
-        MCAPI static std::array<std::pair<enum class LevelChunkNeighbor, class ChunkPos>, 8> const sOffsetMap;
+        MCAPI static std::array<std::pair<::LevelChunkNeighbor, class ChunkPos>, 8> const sOffsetMap;
         // NOLINTEND
     };
 
@@ -392,13 +400,13 @@ public:
      */
     MCAPI class ChunkPos const& getPosition() const;
     /**
-     * @symbol ?getPreWorldGenHeightmap\@LevelChunk\@\@QEBA?AVChunkLocalHeight\@\@AEBVChunkBlockPos\@\@\@Z
-     */
-    MCAPI class ChunkLocalHeight getPreWorldGenHeightmap(class ChunkBlockPos const&) const;
-    /**
      * @symbol ?getPreWorldGenHeightmap\@LevelChunk\@\@QEBA?AVHeightmapWrapper\@\@XZ
      */
     MCAPI class HeightmapWrapper getPreWorldGenHeightmap() const;
+    /**
+     * @symbol ?getPreWorldGenHeightmap\@LevelChunk\@\@QEBA?AVChunkLocalHeight\@\@AEBVChunkBlockPos\@\@\@Z
+     */
+    MCAPI class ChunkLocalHeight getPreWorldGenHeightmap(class ChunkBlockPos const&) const;
     /**
      * @symbol
      * ?getPreservedBlockEntities\@LevelChunk\@\@QEBAAEBV?$vector\@V?$shared_ptr\@VBlockActor\@\@\@std\@\@V?$allocator\@V?$shared_ptr\@VBlockActor\@\@\@std\@\@\@2\@\@std\@\@XZ
@@ -422,25 +430,25 @@ public:
      */
     MCAPI std::atomic<enum class ChunkState> const& getState() const;
     /**
-     * @symbol ?getSubChunk\@LevelChunk\@\@QEAAPEAUSubChunk\@\@F\@Z
-     */
-    MCAPI struct SubChunk* getSubChunk(short);
-    /**
      * @symbol ?getSubChunk\@LevelChunk\@\@QEBAPEBUSubChunk\@\@F\@Z
      */
     MCAPI struct SubChunk const* getSubChunk(short) const;
+    /**
+     * @symbol ?getSubChunk\@LevelChunk\@\@QEAAPEAUSubChunk\@\@F\@Z
+     */
+    MCAPI struct SubChunk* getSubChunk(short);
     /**
      * @symbol ?getSurfaceBiome\@LevelChunk\@\@QEBAAEBVBiome\@\@VChunkBlockPos\@\@\@Z
      */
     MCAPI class Biome const& getSurfaceBiome(class ChunkBlockPos) const;
     /**
-     * @symbol ?getTickQueue\@LevelChunk\@\@QEBAAEBVBlockTickingQueue\@\@XZ
-     */
-    MCAPI class BlockTickingQueue const& getTickQueue() const;
-    /**
      * @symbol ?getTickQueue\@LevelChunk\@\@QEAAAEAVBlockTickingQueue\@\@XZ
      */
     MCAPI class BlockTickingQueue& getTickQueue();
+    /**
+     * @symbol ?getTickQueue\@LevelChunk\@\@QEBAAEBVBlockTickingQueue\@\@XZ
+     */
+    MCAPI class BlockTickingQueue const& getTickQueue() const;
     /**
      * @symbol ?getTopRainBlockPos\@LevelChunk\@\@QEAA?BVBlockPos\@\@AEBVChunkBlockPos\@\@\@Z
      */

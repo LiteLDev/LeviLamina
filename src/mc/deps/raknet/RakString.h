@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/levelgen/structure/List.h"
+#include "mc/deps/raknet/data_structures/List.h"
 
 // auto generated forward declare list
 // clang-format off

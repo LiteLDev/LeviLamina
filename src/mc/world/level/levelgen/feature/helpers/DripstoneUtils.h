@@ -2,9 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/DripstoneThickness.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace DripstoneUtils { struct PointedDripstoneBasePos; }
+namespace ValueProviders { struct UniformFloat; }
 // clang-format on
 
 namespace DripstoneUtils {

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/codebuilder/IMessenger.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/enums/AgentActionType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,7 +18,6 @@ class ItemInstance;
 class LevelChunk;
 class Mob;
 class Player;
-enum class AgentActionType;
 namespace CodeBuilder { class IClient; }
 namespace Json { class Value; }
 // clang-format on

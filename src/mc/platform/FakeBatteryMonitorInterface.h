@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/BatteryStatus.h"
 #include "mc/platform/battery/BatteryMonitorInterface.h"
 
 class FakeBatteryMonitorInterface : public ::BatteryMonitorInterface {

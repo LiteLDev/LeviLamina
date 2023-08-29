@@ -6,6 +6,19 @@
 #include "mc/world/level/biome/components/vanilla/MountainAttributes.h"
 #include "mc/world/level/biome/surface/ISurfaceBuilder.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+class BlockVolume;
+class HeightmapWrapper;
+class Pos;
+class Random;
+struct SurfaceMaterialAdjustmentEvaluated;
+struct SurfaceMaterialAttributes;
+struct SurfaceMaterialBlocks;
+// clang-format on
+
 namespace VanillaSurfaceBuilders::Utils {
 // NOLINTBEGIN
 /**

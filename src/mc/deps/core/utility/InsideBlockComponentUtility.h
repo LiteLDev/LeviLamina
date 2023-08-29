@@ -2,10 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-template<typename T0> struct InsideBlockWithPosAndBlockComponent;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/components/InsideBlockWithPosAndBlockComponent.h"
 
 namespace InsideBlockComponentUtility {
 // NOLINTBEGIN

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/entity/utilities/ActorSelectorType.h"
 #include "mc/external/scripting/Result.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
 #include "mc/server/commands/CommandSelectorResults.h"
@@ -13,7 +14,6 @@ class Actor;
 class Dimension;
 class Level;
 class Player;
-enum class ActorSelectorType;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptActorIterator; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }

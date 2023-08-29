@@ -4,6 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/world/ContainerContentChangeListener.h"
+#include "mc/world/containers/ContainerCategory.h"
+#include "mc/world/containers/ContainerEnumName.h"
+#include "mc/world/containers/ContainerExpandStatus.h"
 
 class ContainerModel : public ::ContainerContentChangeListener {
 

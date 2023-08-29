@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/enums/GameType.h"
+#include "mc/enums/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
 
 // auto generated forward declare list

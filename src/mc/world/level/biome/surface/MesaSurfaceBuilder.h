@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/biome/surface/ISurfaceBuilder.h"
+#include "mc/world/level/block/utils/BlockColor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -11,7 +12,6 @@ class BlockPos;
 class BlockVolume;
 class EntityContext;
 class Random;
-enum class BlockColor;
 struct MesaSurfaceBlocks;
 struct SurfaceMaterialBlocks;
 // clang-format on

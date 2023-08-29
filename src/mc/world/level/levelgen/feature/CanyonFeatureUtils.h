@@ -2,9 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/levelgen/feature/TerrainGenVersion.h"
+
 // auto generated forward declare list
 // clang-format off
-namespace CanyonFeatureUtils { enum class TerrainGenVersion; }
 namespace CanyonFeatureUtils { struct CanyonConfiguration; }
 // clang-format on
 

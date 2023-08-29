@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/TagRegistry.h"
 #include "mc/common/wrapper/IDType.h"
+#include "mc/world/level/biome/VanillaBiomeTypes.h"
 
 // auto generated forward declare list
 // clang-format off

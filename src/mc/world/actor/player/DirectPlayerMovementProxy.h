@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/AbilitiesIndex.h"
+#include "mc/enums/LoadingState.h"
+#include "mc/enums/Side.h"
+
 class DirectPlayerMovementProxy {
 
 public:

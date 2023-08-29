@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/block/utils/BlockActorType.h"
+
 class BlockActorFactory {
 
 public:
@@ -31,7 +34,7 @@ private:
      * ?mCustomBlockEntityCreation\@BlockActorFactory\@\@0V?$vector\@U?$pair\@W4BlockActorType\@\@V?$function\@$$A6A?AV?$shared_ptr\@VBlockActor\@\@\@std\@\@AEBVBlockPos\@\@\@Z\@std\@\@\@std\@\@V?$allocator\@U?$pair\@W4BlockActorType\@\@V?$function\@$$A6A?AV?$shared_ptr\@VBlockActor\@\@\@std\@\@AEBVBlockPos\@\@\@Z\@std\@\@\@std\@\@\@2\@\@std\@\@A
      */
     MCAPI static std::vector<
-        std::pair<enum class BlockActorType, std::function<std::shared_ptr<class BlockActor>(class BlockPos const&)>>>
+        std::pair<::BlockActorType, std::function<std::shared_ptr<class BlockActor>(class BlockPos const&)>>>
         mCustomBlockEntityCreation;
     // NOLINTEND
 };

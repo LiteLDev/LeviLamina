@@ -10,6 +10,7 @@
 #include "mc/external/scripting/Result.h"
 #include "mc/external/scripting/StrongTypedObjectHandle.h"
 #include "mc/external/scripting/TypedObjectHandle.h"
+#include "mc/scripting/modules/minecraft/ScriptActorLifetimeState.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -28,7 +29,6 @@ namespace ScriptModuleMinecraft { class ScriptEntityRaycastHit; }
 namespace ScriptModuleMinecraft { class ScriptMobEffectInstance; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardIdentity; }
 namespace ScriptModuleMinecraft { class ScriptVector; }
-namespace ScriptModuleMinecraft { enum class ScriptActorLifetimeState; }
 namespace ScriptModuleMinecraft { struct ScriptActorApplyDamageByProjectileOptions; }
 namespace ScriptModuleMinecraft { struct ScriptActorApplyDamageOptions; }
 namespace ScriptModuleMinecraft { struct ScriptBlockRaycastOptions; }

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/wrapper/ResultCode.h"
 #include "mc/world/AutomaticID.h"
 
 // auto generated forward declare list
@@ -14,7 +15,6 @@ class PositionTrackingDBClientRequestPacket;
 class PositionTrackingId;
 class Scheduler;
 namespace PositionTrackingDB { class TrackingRecord; }
-namespace PositionTrackingDB { enum class ResultCode; }
 // clang-format on
 
 namespace PositionTrackingDB {

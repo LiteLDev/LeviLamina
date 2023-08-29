@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/events/PerfContextEvent.h"
+
 class PerfContextTracker {
 public:
     // PerfContextTracker inner types declare

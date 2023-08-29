@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/ThreadLocalObject.h"
+#include "mc/enums/SubClientId.h"
 
 class BlockRegistryManager {
 
@@ -19,8 +20,7 @@ private:
      * @symbol
      * ?mClientIdRegistryMap\@BlockRegistryManager\@\@0V?$unordered_map\@W4SubClientId\@\@V?$weak_ptr\@VBlockTypeRegistry\@\@\@std\@\@U?$hash\@W4SubClientId\@\@\@3\@U?$equal_to\@W4SubClientId\@\@\@3\@V?$allocator\@U?$pair\@$$CBW4SubClientId\@\@V?$weak_ptr\@VBlockTypeRegistry\@\@\@std\@\@\@std\@\@\@3\@\@std\@\@A
      */
-    MCAPI static std::unordered_map<enum class SubClientId, std::weak_ptr<class BlockTypeRegistry>>
-        mClientIdRegistryMap;
+    MCAPI static std::unordered_map<::SubClientId, std::weak_ptr<class BlockTypeRegistry>> mClientIdRegistryMap;
     /**
      * @symbol ?mClientRegistry\@BlockRegistryManager\@\@0V?$weak_ptr\@VBlockTypeRegistry\@\@\@std\@\@A
      */

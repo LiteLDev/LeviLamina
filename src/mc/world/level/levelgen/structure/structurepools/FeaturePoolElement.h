@@ -5,6 +5,9 @@
 // auto generated inclusion list
 #include "mc/common/wrapper/WeakRefT.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/enums/PostProcessSettings.h"
+#include "mc/enums/Projection.h"
+#include "mc/enums/Rotation.h"
 #include "mc/world/level/levelgen/structure/structurepools/StructurePoolElement.h"
 
 class FeaturePoolElement : public ::StructurePoolElement {

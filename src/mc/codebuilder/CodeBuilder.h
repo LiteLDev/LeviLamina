@@ -2,14 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/codebuilder/EncryptionCipherMode.h"
+#include "mc/codebuilder/GameContext.h"
+#include "mc/codebuilder/RequestPurpose.h"
+#include "mc/codebuilder/ResponsePurpose.h"
+#include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/enums/AgentActionType.h"
+
 // auto generated forward declare list
 // clang-format off
-namespace CodeBuilder { enum class EncryptionCipherMode; }
-namespace CodeBuilder { enum class RequestPurpose; }
-namespace CodeBuilder { enum class ResponsePurpose; }
+namespace Automation { class AutomationClient; }
+namespace CodeBuilder { class GameContext; }
+namespace CodeBuilder { class IClient; }
+namespace CodeBuilder { class IMessenger; }
+namespace CodeBuilder { class IRequestHandler; }
 namespace CodeBuilder { struct AgentMessage; }
 namespace CodeBuilder { struct ChatMessage; }
+namespace CodeBuilder { struct ChatSubscription; }
 namespace CodeBuilder { struct CommandMessage; }
+namespace CodeBuilder { struct CommandRequest; }
 namespace CodeBuilder { struct DataMessage; }
 namespace CodeBuilder { struct EncryptionResult; }
 namespace CodeBuilder { struct ErrorMessage; }

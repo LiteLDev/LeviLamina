@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/buffer_span.h"
 #include "mc/world/level/levelgen/WorldGenerator.h"
+#include "mc/world/level/levelgen/structure/StructureFeatureType.h"
 
 // auto generated forward declare list
 // clang-format off

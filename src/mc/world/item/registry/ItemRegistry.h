@@ -5,6 +5,8 @@
 // auto generated inclusion list
 #include "mc/common/wrapper/SharedPtr.h"
 #include "mc/common/wrapper/WeakPtr.h"
+#include "mc/resources/PackType.h"
+#include "mc/world/item/components/ItemVersion.h"
 
 // auto generated forward declare list
 // clang-format off

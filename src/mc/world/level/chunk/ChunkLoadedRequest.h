@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/chunk/ChunkRequestListType.h"
+#include "mc/world/level/chunk/ChunksLoadedStatus.h"
+
 class ChunkLoadedRequest {
 
 public:

@@ -2,10 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/services/persona/ArmSize.h"
+#include "mc/client/services/persona/PieceType.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace mce { class Color; }
 namespace mce { class UUID; }
-namespace persona { enum class PieceType; }
+namespace persona { struct PersonaCharacterHandle; }
+namespace persona { struct SizeInfo; }
 // clang-format on
 
 namespace persona {

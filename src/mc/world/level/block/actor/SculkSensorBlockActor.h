@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/utils/BlockActorType.h"
 
 class SculkSensorBlockActor : public ::BlockActor {
 

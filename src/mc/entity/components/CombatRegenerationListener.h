@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/events/ActorEventListener.h"
+#include "mc/world/events/EventResult.h"
 
 class CombatRegenerationListener : public ::ActorEventListener {
 

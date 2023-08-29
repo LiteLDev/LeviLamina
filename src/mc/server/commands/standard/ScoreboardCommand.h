@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/ObjectiveSortOrder.h"
 #include "mc/server/commands/WildcardCommandSelector.h"
+#include "mc/world/actor/player/PlayerScoreSetFunction.h"
 #include "mc/world/level/Command.h"
 
 class ScoreboardCommand : public ::Command {

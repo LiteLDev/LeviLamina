@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/components/agent/Direction.h"
+
 // auto generated forward declare list
 // clang-format off
 class Vec3;
-namespace AgentComponents { enum class Direction; }
 // clang-format on
 
 namespace AgentCommands {

@@ -3,7 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/CoralColor.h"
 #include "mc/world/level/block/BlockLegacy.h"
+
+// auto generated forward declare list
+// clang-format off
+class Block;
+// clang-format on
 
 namespace VanillaComplexAliasBlockUtils::Coral {
 // NOLINTBEGIN

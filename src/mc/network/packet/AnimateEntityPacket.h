@@ -4,7 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/enums/MinecraftPacketIds.h"
 #include "mc/network/packet/Packet.h"
+#include "mc/util/molang/MolangVersion.h"
 
 class AnimateEntityPacket : public ::Packet {
 

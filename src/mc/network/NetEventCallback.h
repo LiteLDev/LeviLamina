@@ -4,11 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Connection { enum class DisconnectFailReason; }
-// clang-format on
+#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/enums/connection/DisconnectFailReason.h"
+#include "mc/resources/PacketViolationResponse.h"
 
 class NetEventCallback : public ::Bedrock::EnableNonOwnerReferences {
 

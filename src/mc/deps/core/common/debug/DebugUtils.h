@@ -2,11 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/pubsub/Publisher.h"
+#include "mc/services/ServiceOverrider.h"
+
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::PubSub { template<typename T0, typename T1> class Publisher; }
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
-template<typename T0> class ServiceOverrider;
 // clang-format on
 
 namespace DebugUtils {

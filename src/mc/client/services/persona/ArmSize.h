@@ -37,7 +37,7 @@ private:
      * @symbol
      * ?mInfoList\@ArmSize\@persona\@\@0V?$unordered_map\@W4Type\@ArmSize\@persona\@\@USizeInfo\@3\@U?$hash\@W4Type\@ArmSize\@persona\@\@\@std\@\@U?$equal_to\@W4Type\@ArmSize\@persona\@\@\@6\@V?$allocator\@U?$pair\@$$CBW4Type\@ArmSize\@persona\@\@USizeInfo\@3\@\@std\@\@\@6\@\@std\@\@B
      */
-    MCAPI static std::unordered_map<enum class persona::ArmSize::Type, struct persona::SizeInfo> const mInfoList;
+    MCAPI static std::unordered_map<::persona::ArmSize::Type, struct persona::SizeInfo> const mInfoList;
     // NOLINTEND
 };
 

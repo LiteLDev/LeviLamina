@@ -2,13 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/debug/LogCategory.h"
+#include "mc/deps/core/common/debug/LogChannel.h"
+#include "mc/deps/core/common/debug/LogRule.h"
+#include "mc/enums/LogAreaID.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock { class ScopeExit; }
 namespace BedrockLog { class LogAreaFilter; }
-namespace BedrockLog { enum class LogCategory; }
-namespace BedrockLog { enum class LogChannel; }
-namespace BedrockLog { enum class LogRule; }
 namespace BedrockLog { struct LogDetails; }
 namespace Core { class Path; }
 // clang-format on

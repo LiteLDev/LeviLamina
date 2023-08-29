@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/debug/log/ContentLogEndPoint.h"
+#include "mc/enums/LogArea.h"
+#include "mc/enums/LogLevel.h"
 
 // auto generated forward declare list
 // clang-format off

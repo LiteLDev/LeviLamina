@@ -3,8 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/GameType.h"
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
+#include "mc/scripting/modules/minecraft/ScriptFacing.h"
 #include "mc/scripting/modules/minecraft/ScriptPlayer.h"
 
 // auto generated forward declare list
@@ -15,10 +17,8 @@ class Player;
 class SimulatedPlayer;
 class Vec2;
 class Vec3;
-enum class GameType;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
-namespace ScriptModuleMinecraft { enum class ScriptFacing; }
 namespace ScriptModuleMinecraft { struct ScriptNavigationResult; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace gametest { class BaseGameTestHelper; }

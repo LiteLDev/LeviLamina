@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
 #include "mc/deps/core/data/BidirectionalUnorderedMap.h"
+#include "mc/enums/InventoryTransactionError.h"
 
 class InventoryTransaction {
 
@@ -93,7 +94,7 @@ private:
      * @symbol
      * ?inventoryTransactionErrorMap\@InventoryTransaction\@\@0V?$BidirectionalUnorderedMap\@W4InventoryTransactionError\@\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@\@B
      */
-    MCAPI static class BidirectionalUnorderedMap<enum class InventoryTransactionError, std::string> const
+    MCAPI static class BidirectionalUnorderedMap<::InventoryTransactionError, std::string> const
         inventoryTransactionErrorMap;
     // NOLINTEND
 };

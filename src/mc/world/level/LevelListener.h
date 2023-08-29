@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/ParticleType.h"
+#include "mc/events/LevelEvent.h"
 #include "mc/world/level/BlockSourceListener.h"
 
 // auto generated forward declare list

@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/WebSocketInterface.h"
+#include "mc/network/HCWebSocketCloseStatus.h"
 
 // auto generated forward declare list
 // clang-format off
-enum class HCWebSocketCloseStatus;
 struct HC_PERFORM_ENV;
 struct HC_WEBSOCKET_OBSERVER;
 struct XAsyncBlock;

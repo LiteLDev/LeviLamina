@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/DirectoryIterationFlags.h"
+#include "mc/deps/core/FileType.h"
 #include "mc/deps/core/PathBuffer.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
 namespace Core { class PathPart; }
-namespace Core { enum class DirectoryIterationFlags; }
-namespace Core { enum class FileType; }
 // clang-format on
 
 namespace Core {

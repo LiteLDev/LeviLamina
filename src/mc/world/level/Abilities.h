@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/AbilitiesIndex.h"
 #include "mc/world/actor/player/Ability.h"
+#include "mc/world/actor/player/PlayerPermissionLevel.h"
 
 class Abilities {
 

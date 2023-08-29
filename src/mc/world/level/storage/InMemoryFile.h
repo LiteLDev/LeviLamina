@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/PathBuffer.h"
+#include "mc/enums/InMemoryAccessMode.h"
 
 class InMemoryFile {
 

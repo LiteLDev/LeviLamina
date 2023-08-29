@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/wrapper/MolangCompileResult.h"
+#include "mc/enums/ExpressionOp.h"
+#include "mc/util/molang/MolangQueryFunctionReturnType.h"
+#include "mc/util/molang/MolangVariableIndex.h"
+#include "mc/util/molang/MolangVersion.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
@@ -191,7 +198,7 @@ public:
      * @symbol
      * ?mAliasOpTokens\@ExpressionNode\@\@2V?$vector\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ExpressionOp\@\@\@std\@\@V?$allocator\@U?$pair\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4ExpressionOp\@\@\@std\@\@\@2\@\@std\@\@A
      */
-    MCAPI static std::vector<std::pair<std::string, enum class ExpressionOp>> mAliasOpTokens;
+    MCAPI static std::vector<std::pair<std::string, ::ExpressionOp>> mAliasOpTokens;
     /**
      * @symbol
      * ?mExpressionOpTokens\@ExpressionNode\@\@2V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@A

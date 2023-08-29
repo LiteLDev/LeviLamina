@@ -4,11 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/external/scripting/EnumBindingBuilder.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace ScriptModuleMinecraft { enum class ScriptScoreboardIdentityType_t; }
-// clang-format on
+#include "mc/scripting/modules/minecraft/ScriptScoreboardIdentityType_t.h"
 
 namespace ScriptModuleMinecraft {
 

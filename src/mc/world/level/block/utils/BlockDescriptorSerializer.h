@@ -5,6 +5,9 @@
 // auto generated forward declare list
 // clang-format off
 namespace BlockDescriptorSerializer { struct BlockDescriptorProxy; }
+namespace BlockDescriptorSerializer { struct CompoundProxy; }
+namespace BlockDescriptorSerializer { struct StateNameProxy; }
+namespace BlockDescriptorSerializer { struct StatesProxy; }
 // clang-format on
 
 namespace BlockDescriptorSerializer {

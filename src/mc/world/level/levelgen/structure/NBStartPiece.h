@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/structure/NBBridgeCrossing.h"
+#include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
 class NBStartPiece : public ::NBBridgeCrossing {
 

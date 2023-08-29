@@ -6,6 +6,7 @@
 #include "mc/deps/file/IFileAccess.h"
 #include "mc/deps/file/IFileReadAccess.h"
 #include "mc/deps/file/IFileWriteAccess.h"
+#include "mc/world/systems/FileSystemMode.h"
 
 // auto generated forward declare list
 // clang-format off

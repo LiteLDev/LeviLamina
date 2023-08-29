@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/Result.h"
+#include "mc/world/actor/player/PlayerActionType.h"
 
 class PlayerBlockActions {
 

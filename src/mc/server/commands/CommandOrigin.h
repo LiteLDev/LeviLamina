@@ -4,6 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/enums/AbilitiesIndex.h"
+#include "mc/enums/SubClientId.h"
+#include "mc/server/commands/CommandOriginType.h"
+#include "mc/server/commands/CommandPermissionLevel.h"
 
 // auto generated forward declare list
 // clang-format off

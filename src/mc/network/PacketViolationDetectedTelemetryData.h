@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/MinecraftPacketIds.h"
+#include "mc/resources/PacketViolationResponse.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Social::Events { class Event; }

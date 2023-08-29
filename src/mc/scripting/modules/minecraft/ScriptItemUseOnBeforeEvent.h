@@ -29,6 +29,10 @@ public:
     MCVAPI ~ScriptItemUseOnBeforeEvent();
 #endif
     /**
+     * @symbol ??0ScriptItemUseOnBeforeEvent\@ScriptModuleMinecraft\@\@QEAA\@$$QEAU01\@\@Z
+     */
+    MCAPI ScriptItemUseOnBeforeEvent(struct ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent&&);
+    /**
      * @symbol
      * ??0ScriptItemUseOnBeforeEvent\@ScriptModuleMinecraft\@\@QEAA\@AEAUItemUseOnEvent\@\@AEBVWeakLifetimeScope\@Scripting\@\@\@Z
      */
@@ -37,10 +41,6 @@ public:
      * @symbol ??0ScriptItemUseOnBeforeEvent\@ScriptModuleMinecraft\@\@QEAA\@AEBU01\@\@Z
      */
     MCAPI ScriptItemUseOnBeforeEvent(struct ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent const&);
-    /**
-     * @symbol ??0ScriptItemUseOnBeforeEvent\@ScriptModuleMinecraft\@\@QEAA\@$$QEAU01\@\@Z
-     */
-    MCAPI ScriptItemUseOnBeforeEvent(struct ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent&&);
     /**
      * @symbol ??4ScriptItemUseOnBeforeEvent\@ScriptModuleMinecraft\@\@QEAAAEAU01\@$$QEAU01\@\@Z
      */

@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/enums/ClientInputLockCategory.h"
+#include "mc/enums/ClientInputLockType.h"
+
 struct ClientInputLockComponent {
 
 public:

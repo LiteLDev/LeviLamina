@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/SignTextSide.h"
 #include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/utils/BlockActorType.h"
 
 // auto generated forward declare list
 // clang-format off

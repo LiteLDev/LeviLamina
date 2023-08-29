@@ -3,17 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/enums/CauldronLiquidType.h"
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/external/scripting/Result.h"
 #include "mc/scripting/modules/minecraft/BaseScriptBlockComponent.h"
+#include "mc/scripting/modules/minecraft/ScriptFluidType.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 class BlockSource;
 class CauldronBlockActor;
-enum class CauldronLiquidType;
-namespace ScriptModuleMinecraft { enum class ScriptFluidType; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 

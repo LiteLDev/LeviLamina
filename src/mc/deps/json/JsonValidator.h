@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/json/ValueType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
-namespace Json { enum class ValueType; }
 // clang-format on
 
 class JsonValidator {

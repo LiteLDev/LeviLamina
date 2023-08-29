@@ -4,6 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
+#include "mc/enums/ArmorSlot.h"
+#include "mc/enums/GameType.h"
+#include "mc/gametest/framework/GameTestErrorType.h"
+#include "mc/scripting/modules/minecraft/ScriptFacing.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,13 +22,9 @@ class ItemStack;
 class Mob;
 class SimulatedPlayer;
 class Vec3;
-enum class ArmorSlot;
-enum class GameType;
 namespace ScriptModuleGameTest { class ScriptGameTestConnectivity; }
-namespace ScriptModuleMinecraft { enum class ScriptFacing; }
 namespace gametest { class BaseGameTestInstance; }
 namespace gametest { class GameTestSequence; }
-namespace gametest { enum class GameTestErrorType; }
 namespace gametest { struct GameTestError; }
 struct ActorDefinitionIdentifier;
 // clang-format on

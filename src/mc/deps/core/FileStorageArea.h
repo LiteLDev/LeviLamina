@@ -3,7 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/FileAccessType.h"
 #include "mc/deps/core/PathBuffer.h"
+#include "mc/deps/core/TransactionFlags.h"
+#include "mc/deps/core/WriteOperation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,9 +16,6 @@ namespace Core { class Path; }
 namespace Core { class Result; }
 namespace Core { class StorageAreaStateListener; }
 namespace Core { class StorageAreasTree; }
-namespace Core { enum class FileAccessType; }
-namespace Core { enum class TransactionFlags; }
-namespace Core { enum class WriteOperation; }
 // clang-format on
 
 namespace Core {

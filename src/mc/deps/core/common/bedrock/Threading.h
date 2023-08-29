@@ -2,10 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/common/bedrock/AsyncErrc.h"
+#include "mc/deps/core/common/bedrock/AsyncStatus.h"
+#include "mc/deps/core/common/bedrock/IAsyncResult.h"
+#include "mc/deps/core/common/bedrock/WorkerTaskStats.h"
+
 // auto generated forward declare list
 // clang-format off
+class Scheduler;
+class WorkerPool;
 namespace Bedrock::Threading { class AssignedThread; }
-namespace Bedrock::Threading { enum class AsyncErrc; }
+namespace Bedrock::Threading { class OSThreadPriority; }
+namespace Bedrock::Threading::AsyncResult { class ToXAsyncBlock; }
+namespace Bedrock::Threading::CustomTLS { class TLSManager; }
+struct XAsyncBlock;
+struct XTaskQueueObject;
 // clang-format on
 
 namespace Bedrock::Threading {

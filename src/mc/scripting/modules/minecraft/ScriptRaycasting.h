@@ -4,6 +4,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class BlockSource;
+class Vec3;
 namespace ScriptModuleMinecraft { struct ScriptBlockRaycastOptions; }
 namespace ScriptModuleMinecraft { struct ScriptEntityRaycastOptions; }
 namespace ScriptModuleMinecraft::ScriptRaycasting { struct BlockHitInfo; }

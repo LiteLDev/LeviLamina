@@ -4,6 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
+#include "mc/deps/raknet/RakNetServerLANVisibility.h"
+#include "mc/enums/GameType.h"
+#include "mc/enums/LocatorStateChangeRequest.h"
+#include "mc/enums/PermissionIPv6.h"
+#include "mc/enums/PermissionLAN.h"
 #include "mc/network/RakPeerHelper.h"
 #include "mc/network/ServerLocator.h"
 

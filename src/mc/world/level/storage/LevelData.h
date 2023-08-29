@@ -2,11 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/client/social/GamePublishSetting.h"
+#include "mc/enums/ChatRestrictionLevel.h"
+#include "mc/enums/DaylightCycle.h"
+#include "mc/enums/Difficulty.h"
+#include "mc/enums/EducationEditionOffer.h"
+#include "mc/enums/GameType.h"
+#include "mc/enums/StorageVersion.h"
+#include "mc/enums/WorldVersion.h"
+#include "mc/network/NetherWorldType.h"
+#include "mc/world/level/levelgen/GeneratorType.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
 namespace RakNet { class BitStream; }
-namespace Social { enum class GamePublishSetting; }
 // clang-format on
 
 class LevelData {
@@ -34,13 +45,13 @@ public:
         float
     );
     /**
-     * @symbol ??0LevelData\@\@QEAA\@_N\@Z
-     */
-    MCAPI LevelData(bool);
-    /**
      * @symbol ??0LevelData\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI LevelData(class LevelData&&);
+    /**
+     * @symbol ??0LevelData\@\@QEAA\@_N\@Z
+     */
+    MCAPI LevelData(bool);
     /**
      * @symbol ?achievementsWillBeDisabledOnLoad\@LevelData\@\@QEBA_NXZ
      */
@@ -104,13 +115,13 @@ public:
      */
     MCAPI class Abilities& getDefaultAbilities();
     /**
-     * @symbol ?getDefaultPermissions\@LevelData\@\@QEBAAEBVPermissionsHandler\@\@XZ
-     */
-    MCAPI class PermissionsHandler const& getDefaultPermissions() const;
-    /**
      * @symbol ?getDefaultPermissions\@LevelData\@\@QEAAAEAVPermissionsHandler\@\@XZ
      */
     MCAPI class PermissionsHandler& getDefaultPermissions();
+    /**
+     * @symbol ?getDefaultPermissions\@LevelData\@\@QEBAAEBVPermissionsHandler\@\@XZ
+     */
+    MCAPI class PermissionsHandler const& getDefaultPermissions() const;
     /**
      * @symbol ?getEduSharedUriResource\@LevelData\@\@QEBAAEBVCompoundTag\@\@XZ
      */

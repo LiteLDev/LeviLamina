@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/molang/MolangVersion.h"
 #include "mc/world/actor/state/PropertyMetadata.h"
 
 // auto generated forward declare list

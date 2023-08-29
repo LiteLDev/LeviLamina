@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/components/ItemColor.h"
+
 class DyeColorUtil {
 
 public:
@@ -39,6 +42,6 @@ public:
     /**
      * @symbol ?mColorMap\@DyeColorUtil\@\@2V?$array\@W4ItemColor\@\@$0BE\@\@std\@\@B
      */
-    MCAPI static std::array<enum class ItemColor, 20> const mColorMap;
+    MCAPI static std::array<::ItemColor, 20> const mColorMap;
     // NOLINTEND
 };

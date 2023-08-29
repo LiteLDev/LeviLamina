@@ -8,10 +8,11 @@
 #include "mc/common/wrapper/optional_ref.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 #include "mc/entity/gamerefs_entity/IEntityRegistryOwner.h"
+#include "mc/enums/SubClientId.h"
+#include "mc/enums/connection/DisconnectFailReason.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Connection { enum class DisconnectFailReason; }
 namespace Core { class FilePathManager; }
 namespace mce { class UUID; }
 // clang-format on
