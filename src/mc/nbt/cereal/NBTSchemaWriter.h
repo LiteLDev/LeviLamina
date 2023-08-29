@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace cereal { struct SchemaWriter; }
 namespace cereal { struct SerializerTraits; }
 // clang-format on
 

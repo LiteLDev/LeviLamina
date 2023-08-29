@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class ILevel;
+namespace gametest { class IGameTestRuleHelper; }
 // clang-format on
 
 namespace gametest {

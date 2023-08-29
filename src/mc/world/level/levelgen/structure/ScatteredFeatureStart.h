@@ -12,6 +12,7 @@ class BlockSource;
 class BoundingBox;
 class IPreliminarySurfaceProvider;
 class Random;
+class StructureStart;
 // clang-format on
 
 namespace RandomScatteredLargeFeatureDetails {

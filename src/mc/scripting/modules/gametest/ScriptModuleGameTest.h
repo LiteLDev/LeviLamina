@@ -32,11 +32,13 @@ namespace ScriptModuleMinecraft { class ScriptBlockType; }
 namespace ScriptModuleMinecraft { class ScriptDimension; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
+namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace ScriptModuleMinecraft { struct ScriptNavigationResult; }
 namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct Error; }
 namespace Scripting { struct Version; }
+namespace gametest { class BaseGameTestFunction; }
 namespace gametest { class BaseGameTestHelper; }
 namespace gametest { class GameTestSequence; }
 namespace gametest { class IGameTestFunctionContext; }

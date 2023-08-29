@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct PreferredPathDescription {
+// auto generated inclusion list
+#include "mc/world/actor/ActorComponentDescription.h"
+
+struct PreferredPathDescription : public ::ActorComponentDescription {
 
 public:
     // prevent constructor by default

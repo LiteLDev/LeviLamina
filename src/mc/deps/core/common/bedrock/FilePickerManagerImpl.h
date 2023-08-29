@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock { class DirectoryPickerConfig; }
+namespace Bedrock { class FilePickerManager; }
 // clang-format on
 
 namespace Bedrock {

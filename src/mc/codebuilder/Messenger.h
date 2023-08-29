@@ -19,6 +19,7 @@ class LevelChunk;
 class Mob;
 class Player;
 namespace CodeBuilder { class IClient; }
+namespace CodeBuilder { class IMessenger; }
 namespace Json { class Value; }
 // clang-format on
 

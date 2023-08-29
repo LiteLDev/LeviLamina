@@ -14,12 +14,29 @@ class ItemDescriptor {
 public:
     // ItemDescriptor inner types declare
     // clang-format off
-    struct BaseDescriptor;
     struct ItemEntry;
+    struct BaseDescriptor;
     // clang-format on
 
     // ItemDescriptor inner types define
     enum class InternalType {};
+
+    struct ItemEntry {
+
+    public:
+        // prevent constructor by default
+        ItemEntry& operator=(ItemEntry const&) = delete;
+        ItemEntry(ItemEntry const&)            = delete;
+        ItemEntry()                            = delete;
+
+    public:
+        // NOLINTBEGIN
+        /**
+         * @symbol ?getBlock\@ItemEntry\@ItemDescriptor\@\@QEBAPEBVBlock\@\@XZ
+         */
+        MCAPI class Block const* getBlock() const;
+        // NOLINTEND
+    };
 
     struct BaseDescriptor {
 
@@ -117,23 +134,6 @@ public:
          */
         MCVAPI ~BaseDescriptor();
 #endif
-        // NOLINTEND
-    };
-
-    struct ItemEntry {
-
-    public:
-        // prevent constructor by default
-        ItemEntry& operator=(ItemEntry const&) = delete;
-        ItemEntry(ItemEntry const&)            = delete;
-        ItemEntry()                            = delete;
-
-    public:
-        // NOLINTBEGIN
-        /**
-         * @symbol ?getBlock\@ItemEntry\@ItemDescriptor\@\@QEBAPEBVBlock\@\@XZ
-         */
-        MCAPI class Block const* getBlock() const;
         // NOLINTEND
     };
 

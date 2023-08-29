@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/external/scripting/ScriptDeferredEventListener.h"
 
+// auto generated forward declare list
+// clang-format off
+class ScriptDeferredEventListener;
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class ScriptSystemLevelEventListener : public ::ScriptDeferredEventListener {

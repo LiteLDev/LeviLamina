@@ -7,6 +7,11 @@
 #include "mc/external/scripting/Result.h"
 #include "mc/scripting/modules/minecraft/MovementScriptActorComponent.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleMinecraft { class MovementScriptActorComponent; }
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class ScriptMovementSkipComponent : public ::ScriptModuleMinecraft::MovementScriptActorComponent {

@@ -80,7 +80,7 @@ public:
         // NOLINTEND
     };
 
-    struct RearrangedStateCollection {
+    struct RearrangedStateCollection : public ::BlockLegacy::AlteredStateCollection {
 
     public:
         // prevent constructor by default
@@ -113,7 +113,7 @@ public:
         // NOLINTEND
     };
 
-    struct RemovedStateCollection {
+    struct RemovedStateCollection : public ::BlockLegacy::AlteredStateCollection {
     public:
         // RemovedStateCollection inner types declare
         // clang-format off

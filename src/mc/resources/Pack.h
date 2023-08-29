@@ -9,6 +9,11 @@
 #include "mc/resources/PackOrigin.h"
 #include "mc/resources/PackType.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
 class Pack : public ::Bedrock::EnableNonOwnerReferences {
 
 public:

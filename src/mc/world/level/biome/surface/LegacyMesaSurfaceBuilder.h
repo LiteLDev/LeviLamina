@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
+class ISurfaceBuilder;
 class PerlinSimplexNoise;
 class Random;
 // clang-format on

@@ -10,6 +10,7 @@
 class Block;
 class BlockVolume;
 class EntityContext;
+class ISurfaceBuilder;
 class Pos;
 // clang-format on
 

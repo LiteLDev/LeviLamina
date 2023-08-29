@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace PlayerCapabilities { struct IPlayerData; }
+namespace PlayerCapabilities { struct ISharedController; }
 // clang-format on
 
 namespace PlayerCapabilities {

@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Vec3;
+namespace RamAttackGoalUtils { class RamGoalItemDropperInterface; }
 // clang-format on
 
 namespace RamAttackGoalUtils {

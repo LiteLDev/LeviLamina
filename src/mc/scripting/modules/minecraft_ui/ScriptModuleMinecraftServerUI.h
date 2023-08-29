@@ -18,6 +18,7 @@ namespace Json { class Value; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace ScriptModuleMinecraftServerUI { class BaseScriptFormResponse; }
+namespace ScriptModuleMinecraftServerUI { class IControl; }
 namespace ScriptModuleMinecraftServerUI { class ScriptActionFormData; }
 namespace ScriptModuleMinecraftServerUI { class ScriptActionFormResponse; }
 namespace ScriptModuleMinecraftServerUI { class ScriptFormRejectError; }

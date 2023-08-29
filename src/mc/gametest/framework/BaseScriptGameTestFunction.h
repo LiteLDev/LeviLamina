@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { class WeakLifetimeScope; }
+namespace gametest { class BaseGameTestFunction; }
 namespace gametest { class BaseGameTestHelper; }
 namespace gametest { class IGameTestFunctionContext; }
 namespace gametest { class IGameTestFunctionRunResult; }

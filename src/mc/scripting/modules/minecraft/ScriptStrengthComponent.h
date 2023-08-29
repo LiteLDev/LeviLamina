@@ -7,6 +7,11 @@
 #include "mc/external/scripting/Result.h"
 #include "mc/scripting/modules/minecraft/ScriptActorComponent.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleMinecraft { class ScriptActorComponent; }
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class ScriptStrengthComponent : public ::ScriptModuleMinecraft::ScriptActorComponent {

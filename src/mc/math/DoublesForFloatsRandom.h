@@ -9,6 +9,7 @@
 // clang-format off
 class IPositionalRandomFactory;
 class IRandom;
+namespace NoiseUtils { class DelegatingRandom; }
 // clang-format on
 
 namespace NoiseUtils {

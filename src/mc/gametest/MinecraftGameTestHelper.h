@@ -12,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleGameTest { class ScriptGameTestConnectivity; }
+namespace gametest { class BaseGameTestHelper; }
 namespace gametest { struct GameTestError; }
 // clang-format on
 

@@ -6,6 +6,11 @@
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 #include "mc/deps/core/common/bedrock/NonOwnerPointer.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
 class ValidatorRegistry : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // ValidatorRegistry inner types declare

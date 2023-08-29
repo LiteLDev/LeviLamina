@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptItemComponent; }
 struct FloatRange;
 // clang-format on
 

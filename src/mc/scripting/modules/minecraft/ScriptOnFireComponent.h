@@ -6,6 +6,11 @@
 #include "mc/external/scripting/ClassBindingBuilder.h"
 #include "mc/scripting/modules/minecraft/ScriptActorComponent.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleMinecraft { class ScriptActorComponent; }
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class ScriptOnFireComponent : public ::ScriptModuleMinecraft::ScriptActorComponent {

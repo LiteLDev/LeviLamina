@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BlockPlacementFilterComponent {
+// auto generated inclusion list
+#include "mc/world/level/block/utils/BlockComponentBase.h"
+
+struct BlockPlacementFilterComponent : public ::BlockComponentBase {
 
 public:
     // prevent constructor by default

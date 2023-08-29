@@ -29,11 +29,11 @@ public:
     struct ParseRule;
     struct ParseTable;
     struct ParseToken;
+    struct Signature;
+    class Symbol;
     class Parser;
     struct RegistryState;
-    struct Signature;
     struct SoftEnum;
-    class Symbol;
     struct SymbolHasher;
     // clang-format on
 
@@ -174,6 +174,48 @@ public:
         // NOLINTEND
     };
 
+    struct Signature {
+
+    public:
+        // prevent constructor by default
+        Signature& operator=(Signature const&) = delete;
+        Signature(Signature const&)            = delete;
+        Signature()                            = delete;
+
+    public:
+        // NOLINTBEGIN
+        /**
+         * @symbol ??0Signature\@CommandRegistry\@\@QEAA\@$$QEAU01\@\@Z
+         */
+        MCAPI Signature(struct CommandRegistry::Signature&&);
+        /**
+         * @symbol ??1Signature\@CommandRegistry\@\@QEAA\@XZ
+         */
+        MCAPI ~Signature();
+        // NOLINTEND
+    };
+
+    class Symbol {
+
+    public:
+        // prevent constructor by default
+        Symbol& operator=(Symbol const&) = delete;
+        Symbol(Symbol const&)            = delete;
+        Symbol()                         = delete;
+
+    public:
+        // NOLINTBEGIN
+        /**
+         * @symbol ?toIndex\@Symbol\@CommandRegistry\@\@QEBA_KXZ
+         */
+        MCAPI uint64_t toIndex() const;
+        /**
+         * @symbol ?value\@Symbol\@CommandRegistry\@\@QEBAHXZ
+         */
+        MCAPI int value() const;
+        // NOLINTEND
+    };
+
     class Parser {
 
     public:
@@ -260,27 +302,6 @@ public:
         // NOLINTEND
     };
 
-    struct Signature {
-
-    public:
-        // prevent constructor by default
-        Signature& operator=(Signature const&) = delete;
-        Signature(Signature const&)            = delete;
-        Signature()                            = delete;
-
-    public:
-        // NOLINTBEGIN
-        /**
-         * @symbol ??0Signature\@CommandRegistry\@\@QEAA\@$$QEAU01\@\@Z
-         */
-        MCAPI Signature(struct CommandRegistry::Signature&&);
-        /**
-         * @symbol ??1Signature\@CommandRegistry\@\@QEAA\@XZ
-         */
-        MCAPI ~Signature();
-        // NOLINTEND
-    };
-
     struct SoftEnum {
 
     public:
@@ -296,27 +317,6 @@ public:
          * ??0SoftEnum\@CommandRegistry\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@3\@\@Z
          */
         MCAPI SoftEnum(std::string const&, std::vector<std::string>);
-        // NOLINTEND
-    };
-
-    class Symbol {
-
-    public:
-        // prevent constructor by default
-        Symbol& operator=(Symbol const&) = delete;
-        Symbol(Symbol const&)            = delete;
-        Symbol()                         = delete;
-
-    public:
-        // NOLINTBEGIN
-        /**
-         * @symbol ?toIndex\@Symbol\@CommandRegistry\@\@QEBA_KXZ
-         */
-        MCAPI uint64_t toIndex() const;
-        /**
-         * @symbol ?value\@Symbol\@CommandRegistry\@\@QEBAHXZ
-         */
-        MCAPI int value() const;
         // NOLINTEND
     };
 

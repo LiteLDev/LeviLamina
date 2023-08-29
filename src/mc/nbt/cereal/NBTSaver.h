@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/cereal/BasicSaver.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { class BasicSaver; }
+// clang-format on
+
 class NBTSaver : public ::cereal::BasicSaver {
 
 public:

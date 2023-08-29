@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace gametest { class BaseGameTestInstance; }
+namespace gametest { class IGameTestListener; }
 namespace gametest { class MultipleTestTracker; }
 // clang-format on
 

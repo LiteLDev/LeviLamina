@@ -14,6 +14,7 @@
 class Actor;
 class Player;
 class Vec3;
+namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { struct ScriptDimensionLocation; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerSoundOptions; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }

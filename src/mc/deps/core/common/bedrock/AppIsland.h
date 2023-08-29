@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock { class ActivationArguments; }
+namespace Bedrock { class IIslandCore; }
 // clang-format on
 
 namespace Bedrock {

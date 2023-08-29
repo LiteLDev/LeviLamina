@@ -6,6 +6,11 @@
 #include "mc/deps/core/common/bedrock/IResponseBody.h"
 #include "mc/deps/core/common/bedrock/ResponseBodyType.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::Http::Internal { class IResponseBody; }
+// clang-format on
+
 namespace Bedrock::Http {
 
 class BufferedResponseBody : public ::Bedrock::Http::Internal::IResponseBody {

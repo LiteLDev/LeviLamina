@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::PubSub::Detail { class PublisherDisconnector; }
 namespace Bedrock::PubSub::Detail { class SubscriptionBodyBase; }
 // clang-format on
 

@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock::Http { class WebSocketInterface; }
 struct HC_PERFORM_ENV;
 struct HC_WEBSOCKET_OBSERVER;
 struct XAsyncBlock;

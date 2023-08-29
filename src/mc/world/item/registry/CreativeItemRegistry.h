@@ -7,6 +7,11 @@
 #include "mc/enums/CreativeItemCategory.h"
 #include "mc/network/TypedServerNetId.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
 class CreativeItemRegistry : public ::Bedrock::EnableNonOwnerReferences {
 
 public:

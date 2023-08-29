@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/common/bedrock/BinaryRequestBody.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::Http { class BinaryRequestBody; }
+// clang-format on
+
 namespace Bedrock::Http {
 
 class StringRequestBody : public ::Bedrock::Http::BinaryRequestBody {

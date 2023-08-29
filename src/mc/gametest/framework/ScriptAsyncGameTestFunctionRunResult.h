@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace gametest { class IGameTestFunctionRunResult; }
 namespace gametest { struct GameTestError; }
 // clang-format on
 

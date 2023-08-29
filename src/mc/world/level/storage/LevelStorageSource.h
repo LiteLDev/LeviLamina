@@ -11,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
 namespace Core { class Path; }
 namespace Core { class Result; }
 // clang-format on

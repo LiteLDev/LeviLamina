@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
+class ISurfaceBuilder;
 // clang-format on
 
 namespace VanillaSurfaceBuilders {

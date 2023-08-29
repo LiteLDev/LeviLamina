@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockState;
+namespace ScriptModuleMinecraft { class IScriptBlockProperty; }
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 // clang-format on
 

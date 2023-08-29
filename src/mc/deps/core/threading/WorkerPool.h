@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
 namespace Bedrock::Threading { class OSThreadPriority; }
 // clang-format on
 

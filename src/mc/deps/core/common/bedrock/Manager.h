@@ -10,6 +10,7 @@
 // clang-format off
 class IMinecraftApp;
 namespace Automation { class AutomationClient; }
+namespace CodeBuilder { class IManager; }
 namespace CodeBuilder { class IMessenger; }
 // clang-format on
 

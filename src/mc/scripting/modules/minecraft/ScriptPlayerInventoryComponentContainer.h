@@ -16,6 +16,7 @@ class WeakEntityRef;
 namespace ScriptModuleMinecraft { class ScriptContainer; }
 namespace ScriptModuleMinecraft { class ScriptContainerSlot; }
 namespace ScriptModuleMinecraft { class ScriptContainerWrapper; }
+namespace ScriptModuleMinecraft { class ScriptInventoryComponentContainer; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on

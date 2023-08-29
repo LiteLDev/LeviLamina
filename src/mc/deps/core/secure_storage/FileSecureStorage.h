@@ -16,12 +16,11 @@ class FileSecureStorage : public ::SecureStorage {
 public:
     // FileSecureStorage inner types declare
     // clang-format off
-    class FileStorageSystem;
     class StorageSystem;
+    class FileStorageSystem;
     // clang-format on
 
     // FileSecureStorage inner types define
-
     class StorageSystem {
 
     public:

@@ -18,6 +18,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace RakNet { class BitStream; }
+namespace RakNet { class IRNS2_Berkley; }
 namespace RakNet { class PluginInterface2; }
 namespace RakNet { class RakNetRandom; }
 namespace RakNet { class RakNetSocket2; }

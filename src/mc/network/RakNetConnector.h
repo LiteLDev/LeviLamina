@@ -52,7 +52,7 @@ public:
         // NOLINTEND
     };
 
-    struct ConnectionCallbacks {
+    struct ConnectionCallbacks : public ::Connector::ConnectionCallbacks {
 
     public:
         // prevent constructor by default

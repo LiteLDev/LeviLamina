@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BlockRandomTickingComponent {
+// auto generated inclusion list
+#include "mc/world/level/block/utils/BlockComponentBase.h"
+
+struct BlockRandomTickingComponent : public ::BlockComponentBase {
 
 public:
     // prevent constructor by default

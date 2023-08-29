@@ -7,6 +7,11 @@
 #include "mc/events/TextFilteringEvent.h"
 #include "mc/world/events/TextProcessingEventOrigin.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
 class TextFilteringProcessor : public ::Bedrock::EnableNonOwnerReferences {
 
 public:

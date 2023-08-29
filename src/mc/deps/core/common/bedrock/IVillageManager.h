@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
 namespace mce { class UUID; }
 // clang-format on
 

@@ -11,6 +11,11 @@
 #include "mc/world/level/chunk/ChunkSourceViewGenerateMode.h"
 #include "mc/world/level/chunk/ChunkState.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
 class ChunkSource : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // ChunkSource inner types define

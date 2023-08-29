@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
+namespace ScriptModuleMinecraftServerUI { class IControl; }
 // clang-format on
 
 namespace ScriptModuleMinecraftServerUI {

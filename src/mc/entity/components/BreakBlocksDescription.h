@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BreakBlocksDescription {
+// auto generated inclusion list
+#include "mc/world/actor/ActorComponentDescription.h"
+
+struct BreakBlocksDescription : public ::ActorComponentDescription {
 
 public:
     // prevent constructor by default

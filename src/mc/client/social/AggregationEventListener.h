@@ -11,6 +11,7 @@
 class AppPlatform;
 namespace Core { class Path; }
 namespace Social::Events { class Event; }
+namespace Social::Events { class IEventListener; }
 namespace Social::Events { class SummaryEvent; }
 // clang-format on
 

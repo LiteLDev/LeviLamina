@@ -11,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace NetherNet { class INetherNetTransportInterface; }
 namespace NetherNet { class IWebRTCSignalingInterface; }
 namespace NetherNet { struct NetherNetTransportServerConfiguration; }
 namespace NetherNet { struct NetworkID; }

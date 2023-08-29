@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace RakNet { class IRNS2_Berkley; }
 namespace RakNet { struct RNS2_BerkleyBindParameters; }
 namespace RakNet { struct SystemAddress; }
 // clang-format on

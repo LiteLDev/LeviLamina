@@ -11,6 +11,7 @@
 class BlockPos;
 class BlockVolume;
 class EntityContext;
+class ISurfaceBuilder;
 class Random;
 struct MesaSurfaceBlocks;
 struct SurfaceMaterialBlocks;

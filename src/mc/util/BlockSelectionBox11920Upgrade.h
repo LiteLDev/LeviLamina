@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class CerealSchemaUpgrade;
 namespace cereal { class SchemaFactory; }
 // clang-format on
 

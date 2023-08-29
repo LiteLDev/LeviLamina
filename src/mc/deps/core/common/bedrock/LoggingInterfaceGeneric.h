@@ -6,6 +6,11 @@
 #include "mc/deps/core/common/bedrock/LoggingInterface.h"
 #include "mc/network/HCTraceLevel.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock::Http { class LoggingInterface; }
+// clang-format on
+
 namespace Bedrock::Http {
 
 class LoggingInterfaceGeneric : public ::Bedrock::Http::LoggingInterface {

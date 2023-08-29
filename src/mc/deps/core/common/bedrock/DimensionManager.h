@@ -12,6 +12,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
 namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 

@@ -19,6 +19,7 @@ class Vec2;
 class Vec3;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace ScriptModuleMinecraft { struct ScriptNavigationResult; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace gametest { class BaseGameTestHelper; }

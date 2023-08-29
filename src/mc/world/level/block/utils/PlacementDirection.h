@@ -14,6 +14,8 @@ class BlockLegacy;
 class BlockPos;
 class CompoundTag;
 class Vec3;
+namespace BlockTrait { class IGetPlacementBlockCallback; }
+namespace BlockTrait { class ITrait; }
 // clang-format on
 
 namespace BlockTrait {

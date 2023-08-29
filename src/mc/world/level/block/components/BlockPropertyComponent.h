@@ -3,9 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/block/utils/BlockComponentBase.h"
 #include "mc/world/level/block/utils/BlockProperty.h"
 
-struct BlockPropertyComponent {
+struct BlockPropertyComponent : public ::BlockComponentBase {
 
 public:
     // prevent constructor by default

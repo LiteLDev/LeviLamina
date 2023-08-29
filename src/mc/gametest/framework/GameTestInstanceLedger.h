@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace gametest { class BaseGameTestInstance; }
+namespace gametest { class IGameTestListener; }
 // clang-format on
 
 class GameTestInstanceLedger : public ::gametest::IGameTestListener {

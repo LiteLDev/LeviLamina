@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BlockBakedMaterialDataComponent {
+// auto generated inclusion list
+#include "mc/world/level/block/utils/BlockComponentBase.h"
+
+struct BlockBakedMaterialDataComponent : public ::BlockComponentBase {
 
 public:
     // prevent constructor by default

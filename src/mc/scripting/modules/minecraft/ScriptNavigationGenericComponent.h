@@ -7,6 +7,11 @@
 #include "mc/external/scripting/Result.h"
 #include "mc/scripting/modules/minecraft/NavigationScriptActorComponent.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleMinecraft { class NavigationScriptActorComponent; }
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class ScriptNavigationGenericComponent : public ::ScriptModuleMinecraft::NavigationScriptActorComponent {

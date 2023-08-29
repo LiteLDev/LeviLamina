@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct TransformationDescription {
+// auto generated inclusion list
+#include "mc/world/actor/ActorComponentDescription.h"
+
+struct TransformationDescription : public ::ActorComponentDescription {
 
 public:
     // prevent constructor by default

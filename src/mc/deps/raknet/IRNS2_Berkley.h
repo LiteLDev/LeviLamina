@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/raknet/RakNetSocket2.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace RakNet { class RakNetSocket2; }
+// clang-format on
+
 namespace RakNet {
 
 class IRNS2_Berkley : public ::RakNet::RakNetSocket2 {

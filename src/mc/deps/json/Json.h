@@ -15,6 +15,7 @@ namespace Json { class Value; }
 namespace Json { class ValueConstIterator; }
 namespace Json { class ValueIterator; }
 namespace Json { class ValueIteratorBase; }
+namespace Json { class Writer; }
 // clang-format on
 
 namespace Json {

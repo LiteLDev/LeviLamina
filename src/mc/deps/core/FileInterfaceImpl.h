@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Core { class IFile; }
 namespace Core { class Result; }
 // clang-format on
 

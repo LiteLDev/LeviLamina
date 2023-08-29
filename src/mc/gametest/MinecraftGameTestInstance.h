@@ -6,6 +6,11 @@
 #include "mc/gametest/framework/BaseGameTestInstance.h"
 #include "mc/world/AutomaticID.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace gametest { class BaseGameTestInstance; }
+// clang-format on
+
 class MinecraftGameTestInstance : public ::gametest::BaseGameTestInstance {
 
 public:

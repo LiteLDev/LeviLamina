@@ -4,13 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/json/JsonSchemaObjectNode.h"
+#include "mc/world/level/block/components/BlockComponentDescription.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
-struct BlockUnitCubeDescription {
+struct BlockUnitCubeDescription : public ::BlockComponentDescription {
 
 public:
     // prevent constructor by default

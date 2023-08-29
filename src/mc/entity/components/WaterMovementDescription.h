@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct WaterMovementDescription {
+// auto generated inclusion list
+#include "mc/world/actor/ActorComponentDescription.h"
+
+struct WaterMovementDescription : public ::ActorComponentDescription {
 
 public:
     // prevent constructor by default

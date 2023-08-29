@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersion;
+namespace Puv { class ParserBase; }
 // clang-format on
 
 namespace Puv {

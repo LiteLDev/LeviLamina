@@ -6,6 +6,11 @@
 #include "mc/common/wrapper/OwnerPtrT.h"
 #include "mc/deps/core/common/bedrock/EnableNonOwnerReferences.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
 class ActorGarbageCollector : public ::Bedrock::EnableNonOwnerReferences {
 
 public:

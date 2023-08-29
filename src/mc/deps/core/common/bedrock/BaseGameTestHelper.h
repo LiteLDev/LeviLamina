@@ -22,6 +22,7 @@ class ItemStack;
 class Mob;
 class SimulatedPlayer;
 class Vec3;
+namespace Bedrock { class EnableNonOwnerReferences; }
 namespace ScriptModuleGameTest { class ScriptGameTestConnectivity; }
 namespace gametest { class BaseGameTestInstance; }
 namespace gametest { class GameTestSequence; }

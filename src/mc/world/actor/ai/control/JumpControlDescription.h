@@ -2,7 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct JumpControlDescription {
+// auto generated inclusion list
+#include "mc/world/actor/ActorComponentDescription.h"
+
+struct JumpControlDescription : public ::ActorComponentDescription {
 
 public:
     // prevent constructor by default

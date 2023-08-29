@@ -8,6 +8,11 @@
 #include "mc/enums/connection/DisconnectFailReason.h"
 #include "mc/resources/PacketViolationResponse.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
+// clang-format on
+
 class NetEventCallback : public ::Bedrock::EnableNonOwnerReferences {
 
 public:

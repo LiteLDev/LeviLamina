@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Bedrock { class EnableNonOwnerReferences; }
 namespace Bedrock::JSONObject { class Node; }
 namespace Bedrock::JSONObject { class ValueWrapper; }
 namespace Core { class Path; }

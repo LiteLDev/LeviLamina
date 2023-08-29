@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ScoreboardEventListener;
 namespace ScriptModuleMinecraft { class ScriptScoreboard; }
 struct ScoreboardId;
 // clang-format on

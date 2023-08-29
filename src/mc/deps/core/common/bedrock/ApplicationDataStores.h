@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock { class DataStore; }
+namespace Bedrock { class IApplicationDataStores; }
 // clang-format on
 
 namespace Bedrock {

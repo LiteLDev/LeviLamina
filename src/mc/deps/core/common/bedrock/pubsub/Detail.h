@@ -10,6 +10,7 @@
 namespace Bedrock::PubSub { class SubscriptionContext; }
 namespace Bedrock::PubSub::Detail { class DispatchTargets; }
 namespace Bedrock::PubSub::Detail { class PublisherBase; }
+namespace Bedrock::PubSub::Detail { class PublisherDisconnector; }
 namespace Bedrock::PubSub::Detail { class SubscriptionBodyBase; }
 // clang-format on
 

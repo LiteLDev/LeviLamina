@@ -11,6 +11,7 @@
 namespace ScriptModuleGameTest { class ScriptGameTestHelper; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace gametest { class BaseGameTestHelper; }
+namespace gametest { class IGameTestFunctionContext; }
 // clang-format on
 
 namespace ScriptModuleGameTest {

@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::PubSub { class DeferredSubscription; }
+namespace Bedrock::PubSub { class DeferredSubscriptionHubBase; }
 namespace Bedrock::PubSub { class RawSubscription; }
 // clang-format on
 

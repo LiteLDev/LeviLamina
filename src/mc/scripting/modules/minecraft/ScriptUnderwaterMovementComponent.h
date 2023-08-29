@@ -7,6 +7,11 @@
 #include "mc/external/scripting/Result.h"
 #include "mc/scripting/modules/minecraft/AttributeScriptActorComponent.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleMinecraft { class AttributeScriptActorComponent; }
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class ScriptUnderwaterMovementComponent : public ::ScriptModuleMinecraft::AttributeScriptActorComponent {

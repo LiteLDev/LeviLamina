@@ -7,8 +7,9 @@
 #include "mc/enums/ClientPlayMode.h"
 #include "mc/enums/GameType.h"
 #include "mc/enums/InputMode.h"
+#include "mc/world/level/ExternalDataInterface.h"
 
-struct ExternalDataServerLevel {
+struct ExternalDataServerLevel : public ::ExternalDataInterface {
 
 public:
     // prevent constructor by default

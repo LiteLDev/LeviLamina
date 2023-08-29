@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace PositionTrackingDB { class AsyncOperationBase; }
 namespace PositionTrackingDB { class PositionTrackingDBServer; }
 namespace PositionTrackingDB { class TrackingRecord; }
 // clang-format on

@@ -7,6 +7,11 @@
 #include "mc/external/scripting/Result.h"
 #include "mc/scripting/modules/minecraft/BaseScriptBlockLiquidContainerComponent.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleMinecraft { class BaseScriptBlockLiquidContainerComponent; }
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 class ScriptBlockLavaContainerComponent : public ::ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponent {

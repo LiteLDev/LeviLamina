@@ -13,6 +13,7 @@ namespace Core { class Path; }
 namespace Json { class Value; }
 namespace RakNet { struct SystemAddress; }
 namespace Social { class GameConnectionInfo; }
+namespace Social::Events { class AggregationEventListener; }
 namespace Social::Events { class Event; }
 namespace Social::Events { class IEventListener; }
 namespace Social::Events { class Property; }
