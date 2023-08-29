@@ -8,18 +8,16 @@
 class StringByteInput : public ::BytesDataInput {
 
 public:
-    // prevent constructor by default
-    StringByteInput& operator=(StringByteInput const&) = delete;
-    StringByteInput(StringByteInput const&)            = delete;
-    StringByteInput()                                  = delete;
+    size_t           mIdx;
+    std::string_view mBuffer;
 
 public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~StringByteInput();
     /**
      * @vftbl 1
      * @symbol
@@ -72,11 +70,5 @@ public:
      * @symbol ?numBytesLeft\@StringByteInput\@\@UEBA_KXZ
      */
     virtual uint64_t numBytesLeft() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRINGBYTEINPUT
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~StringByteInput();
-#endif
     // NOLINTEND
 };

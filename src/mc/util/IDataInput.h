@@ -5,18 +5,12 @@
 class IDataInput {
 
 public:
-    // prevent constructor by default
-    IDataInput& operator=(IDataInput const&) = delete;
-    IDataInput(IDataInput const&)            = delete;
-    IDataInput()                             = delete;
-
-public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
      * @symbol __unk_vfn_0
      */
-    virtual void __unk_vfn_0();
+    virtual ~IDataInput() = default;
     /**
      * @vftbl 1
      * @symbol

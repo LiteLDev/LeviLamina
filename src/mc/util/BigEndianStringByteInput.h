@@ -8,18 +8,12 @@
 class BigEndianStringByteInput : public ::StringByteInput {
 
 public:
-    // prevent constructor by default
-    BigEndianStringByteInput& operator=(BigEndianStringByteInput const&) = delete;
-    BigEndianStringByteInput(BigEndianStringByteInput const&)            = delete;
-    BigEndianStringByteInput()                                           = delete;
-
-public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~BigEndianStringByteInput();
     /**
      * @vftbl 3
      * @symbol ?readFloat\@BigEndianStringByteInput\@\@UEAAMXZ
@@ -55,11 +49,5 @@ public:
      * @symbol ?readBigEndianBytes\@BigEndianStringByteInput\@\@UEAA_NPEAX_K\@Z
      */
     virtual bool readBigEndianBytes(void*, uint64_t);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_BIGENDIANSTRINGBYTEINPUT
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~BigEndianStringByteInput();
-#endif
     // NOLINTEND
 };

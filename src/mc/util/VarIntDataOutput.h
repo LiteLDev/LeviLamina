@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/utility/BinaryStream.h"
 
 // auto generated inclusion list
 #include "mc/util/BytesDataOutput.h"
@@ -8,9 +9,9 @@
 class VarIntDataOutput : public ::BytesDataOutput {
 
 public:
-    class BinaryStream* mStream; // this+0x8
+    BinaryStream* mStream;
 
-    VarIntDataOutput(class BinaryStream* bs) : mStream(bs) {}
+    explicit VarIntDataOutput(class BinaryStream* bs) : mStream(bs) {}
 
     VarIntDataOutput() = delete;
 

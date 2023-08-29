@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/utility/ReadOnlyBinaryStream.h"
 
 // auto generated inclusion list
 #include "mc/util/BytesDataInput.h"
@@ -8,18 +9,19 @@
 class VarIntDataInput : public ::BytesDataInput {
 
 public:
-    // prevent constructor by default
-    VarIntDataInput& operator=(VarIntDataInput const&) = delete;
-    VarIntDataInput(VarIntDataInput const&)            = delete;
-    VarIntDataInput()                                  = delete;
+    ReadOnlyBinaryStream* mStream;
+
+    explicit VarIntDataInput(class ReadOnlyBinaryStream* bs) : mStream(bs) {}
+
+    VarIntDataInput() = delete;
 
 public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~VarIntDataInput();
     /**
      * @vftbl 1
      * @symbol
@@ -72,11 +74,5 @@ public:
      * @symbol ?numBytesLeft\@VarIntDataInput\@\@UEBA_KXZ
      */
     virtual uint64_t numBytesLeft() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_VARINTDATAINPUT
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~VarIntDataInput();
-#endif
     // NOLINTEND
 };

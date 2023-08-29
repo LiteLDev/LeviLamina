@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/raknet/BitStream.h"
 
 // auto generated inclusion list
 #include "mc/util/BytesDataInput.h"
@@ -8,18 +9,15 @@
 class RakDataInput : public ::BytesDataInput {
 
 public:
-    // prevent constructor by default
-    RakDataInput& operator=(RakDataInput const&) = delete;
-    RakDataInput(RakDataInput const&)            = delete;
-    RakDataInput()                               = delete;
+    RakNet::BitStream* mBitStream;
 
 public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~RakDataInput();
     /**
      * @vftbl 1
      * @symbol
@@ -72,11 +70,5 @@ public:
      * @symbol ?numBytesLeft\@RakDataInput\@\@UEBA_KXZ
      */
     virtual uint64_t numBytesLeft() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_RAKDATAINPUT
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~RakDataInput();
-#endif
     // NOLINTEND
 };

@@ -8,18 +8,15 @@
 class StringByteOutput : public ::BytesDataOutput {
 
 public:
-    // prevent constructor by default
-    StringByteOutput& operator=(StringByteOutput const&) = delete;
-    StringByteOutput(StringByteOutput const&)            = delete;
-    StringByteOutput()                                   = delete;
+  std::string *mBuffer;
 
 public:
     // NOLINTBEGIN
     /**
      * @vftbl 0
-     * @symbol __unk_vfn_0
+     * @symbol __unk_destructor_-1
      */
-    virtual void __unk_vfn_0();
+    virtual ~StringByteOutput();
     /**
      * @vftbl 1
      * @symbol ?writeString\@BytesDataOutput\@\@UEAAXV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
@@ -65,11 +62,5 @@ public:
      * @symbol ?writeBytes\@StringByteOutput\@\@UEAAXPEBX_K\@Z
      */
     virtual void writeBytes(void const*, uint64_t);
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_STRINGBYTEOUTPUT
-    /**
-     * @symbol __unk_destructor_-1
-     */
-    MCVAPI ~StringByteOutput();
-#endif
     // NOLINTEND
 };
